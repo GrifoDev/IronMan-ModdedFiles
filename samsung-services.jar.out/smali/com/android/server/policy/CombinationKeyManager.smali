@@ -1228,7 +1228,7 @@
     :goto_1
     iget-object v2, p0, Lcom/android/server/policy/CombinationKeyManager;->mPWM:Lcom/android/server/policy/PhoneWindowManager;
 
-    const/2 v2, 0x1
+    const/4 v2, 0x1
 
     if-eqz v2, :cond_6
 
