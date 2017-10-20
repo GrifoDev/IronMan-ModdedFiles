@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="notification_action_list_height">38.0dip</dimen>
+    <dimen name="notification_content_margin_top">34.0dip</dimen>
+    <dimen name="notification_content_margin_bottom">13.0dip</dimen>
+    <dimen name="notification_header_background_height">40.0dip</dimen>
+    <dimen name="notification_subtext_size">12.0sp</dimen>
+    <dimen name="notification_header_top_margin">6.0dip</dimen>
+    <dimen name="notification_right_icon_top_margin">37.0dip</dimen>
+    <dimen name="notification_header_height">28.0dip</dimen>
+</resources>

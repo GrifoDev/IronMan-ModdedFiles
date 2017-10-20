@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="tw_fota_upgade_gear_width">282.0dip</dimen>
+    <dimen name="tw_fota_upgade_gear_height">280.0dip</dimen>
+    <dimen name="tw_fota_upgade_gear_margin_top">307.0dip</dimen>
+    <dimen name="tw_fota_upgade_gear_margin_bottom">169.0dip</dimen>
+    <dimen name="tw_fota_upgade_msg_width">596.0dip</dimen>
+    <dimen name="tw_fota_upgade_msg_title_text_size">32.0dip</dimen>
+    <dimen name="tw_fota_upgade_msg_progress_text_size">26.0dip</dimen>
+    <dimen name="tw_fota_upgade_msg_title_margin_bottom">4.0dip</dimen>
+    <dimen name="tw_fota_upgade_msg_progress_margin_bottom">45.0dip</dimen>
+    <dimen name="tw_pointer_spot_hovering_spen_knox_desktop_resize_dark_hotspot">10.5dip</dimen>
+    <dimen name="tw_pointer_spot_hovering_mouse_knox_desktop_default_hotspot">5.5dip</dimen>
+</resources>

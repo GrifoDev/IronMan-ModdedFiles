@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:layout_gravity="center_horizontal" android:orientation="vertical" android:layout_width="@dimen/sem_color_picker_used_color_group_width" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/sem_color_picker_used_color_group_margin_horizontal" android:layout_marginTop="@dimen/sem_color_picker_used_color_group_margin_top" android:layout_marginRight="@dimen/sem_color_picker_used_color_group_margin_horizontal"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <View android:background="@color/sem_color_picker_used_color_group_divider_color" android:layout_width="fill_parent" android:layout_height="@dimen/sem_color_picker_used_color_group_divider_height" android:layout_marginBottom="@dimen/sem_color_picker_used_color_group_divider_margin_bottom" />
+    <TextView android:textSize="@dimen/sem_color_picker_used_color_group_text_size" android:textColor="@color/sem_color_picker_used_color_item_text_color" android:gravity="start|center" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/sem_color_picker_recently_used_colors" android:fontFamily="sec-roboto" />
+    <LinearLayout android:gravity="center_horizontal" android:id="@id/sem_color_picker_used_color_item_list_layout" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/sem_color_picker_used_color_item_margin_top">
+        <View android:layout_width="@dimen/sem_color_picker_used_color_item_size" android:layout_height="@dimen/sem_color_picker_used_color_item_size" android:layout_marginEnd="@dimen/sem_color_picker_used_color_item_margin_middle" />
+        <View android:layout_width="@dimen/sem_color_picker_used_color_item_size" android:layout_height="@dimen/sem_color_picker_used_color_item_size" android:layout_marginEnd="@dimen/sem_color_picker_used_color_item_margin_middle" />
+        <View android:layout_width="@dimen/sem_color_picker_used_color_item_size" android:layout_height="@dimen/sem_color_picker_used_color_item_size" android:layout_marginEnd="@dimen/sem_color_picker_used_color_item_margin_middle" />
+        <View android:layout_width="@dimen/sem_color_picker_used_color_item_size" android:layout_height="@dimen/sem_color_picker_used_color_item_size" android:layout_marginEnd="@dimen/sem_color_picker_used_color_item_margin_middle" />
+        <View android:layout_width="@dimen/sem_color_picker_used_color_item_size" android:layout_height="@dimen/sem_color_picker_used_color_item_size" android:layout_marginEnd="@dimen/sem_color_picker_used_color_item_margin_middle" />
+        <View android:layout_width="@dimen/sem_color_picker_used_color_item_size" android:layout_height="@dimen/sem_color_picker_used_color_item_size" />
+    </LinearLayout>
+</LinearLayout>
