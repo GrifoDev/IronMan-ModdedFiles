@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:clipChildren="false" android:layout_width="fill_parent" android:layout_height="wrap_content" android:paddingStart="24.0dip"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <View android:id="@id/volume_DefaulVolumeControlDivider" android:background="#ffe6e6e6" android:layout_width="fill_parent" android:layout_height="2.0px" />
+    <TextView android:textAppearance="@style/TextAppearance.Volume.Header" android:ellipsize="end" android:id="@id/volume_DefaulVolumeControlTitle" android:paddingTop="4.0dip" android:paddingBottom="8.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/default_volume_control_title" android:maxLines="1" />
+    <Switch android:textSize="13.0sp" android:textColor="#ff979797" android:id="@id/volume_DefaulVolumeControlSwitch" android:paddingBottom="8.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/default_volume_control_summary" android:switchPadding="15.0dip" android:fontFamily="roboto-regular" android:layout_marginEnd="16.0dip" />
+</LinearLayout>

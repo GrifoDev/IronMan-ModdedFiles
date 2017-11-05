@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="select_logpersist_titles">
+        <item>ଅଫ୍</item>
+        <item>ସମସ୍ତ</item>
+        <item>ରେଡିଓ ବ୍ୟତୀତ ସମସ୍ତ</item>
+        <item>କେବଳ କର୍ନେଲ୍</item>
+    </string-array>
+    <string-array name="battery_labels">
+        <item>0%</item>
+        <item>50%</item>
+        <item>100%</item>
+    </string-array>
+</resources>

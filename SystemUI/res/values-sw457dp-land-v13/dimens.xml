@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="kg_message_area_padding_side">212.0dip</dimen>
+    <dimen name="kg_security_input_box_side_margin">228.0dip</dimen>
+    <dimen name="kg_security_ime_button_side_margin">190.0dip</dimen>
+    <dimen name="kg_fmm_info_margin_top">18.0dip</dimen>
+    <dimen name="kg_fmm_locked_area_width">467.0dip</dimen>
+    <dimen name="kg_fmm_contact_area_side_margin">31.0dip</dimen>
+    <dimen name="kg_fmm_message_area_margin_side">31.0dip</dimen>
+    <dimen name="kg_fmm_owner_phone_num_end_margin">12.0dip</dimen>
+    <dimen name="kg_fmm_owner_message_max_width">430.0dip</dimen>
+</resources>

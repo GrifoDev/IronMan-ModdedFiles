@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="select_logpersist_titles">
+        <item>Desactivado</item>
+        <item>Todo</item>
+        <item>Todo excepto radio</item>
+        <item>Solo kernel</item>
+    </string-array>
+    <string-array name="battery_labels">
+        <item>0%</item>
+        <item>50%</item>
+        <item>100%</item>
+    </string-array>
+</resources>
