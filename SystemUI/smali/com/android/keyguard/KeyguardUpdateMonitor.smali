@@ -9850,7 +9850,17 @@
 .end method
 
 .method public deliverIrisRootView(Landroid/view/ViewGroup;)V
-    .locals 5
+    .locals 6
+
+    const-string v0, "hide_iris"
+
+    const/4 v1, 0x0
+
+    invoke-static {v0, v1}, Lcom/android/wubydax/GearUtils;->getDbIntForKey(Ljava/lang/String;I)I
+
+    move-result v0
+
+    if-nez v0, :cond_3
 
     const/4 v4, 0x0
 
@@ -14259,14 +14269,30 @@
 .end method
 
 .method public isUnlockCompleted()Z
-    .locals 1
+    .locals 3
 
+    const/4 v1, 0x0
+
+    const-string v2, "fingerprint.unlock"
+
+    invoke-static {v2, v1}, Landroid/os/SystemProperties;->getInt(Ljava/lang/String;I)I
+
+    move-result v1
+
+    if-eqz v1, :cond_0
+
+    const/4 v0, 0x1
+
+    goto :goto_0
+
+    :cond_0
     iget-object v0, p0, Lcom/android/keyguard/KeyguardUpdateMonitor;->mStrongAuthTracker:Lcom/android/keyguard/KeyguardUpdateMonitor$StrongAuthTracker;
 
     invoke-virtual {v0}, Lcom/android/keyguard/KeyguardUpdateMonitor$StrongAuthTracker;->hasUserAuthenticatedSinceBoot()Z
 
     move-result v0
 
+    :goto_0
     return v0
 .end method
 
@@ -14393,6 +14419,16 @@
 
 .method public isUnlockingWithBiometricAllowed()Z
     .locals 6
+
+    const-string v0, "fingerprint.unlock"
+
+    const v1, 0x0
+
+    invoke-static {v0, v1}, Landroid/os/SystemProperties;->getInt(Ljava/lang/String;I)I
+
+    move-result v0
+
+    if-nez v0, :cond_0
 
     const/4 v0, 0x0
 
