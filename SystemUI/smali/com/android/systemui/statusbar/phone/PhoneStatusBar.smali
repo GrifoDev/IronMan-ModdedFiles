@@ -22711,7 +22711,7 @@
 .method public onContentChanged(Ljava/lang/String;)V
     .locals 1
 
-    const-string v0, "hide_battery"
+    const-string v0, "hide_battery_stock"
 
     invoke-virtual {v0, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
@@ -22854,7 +22854,7 @@
     invoke-virtual {p0}, Lcom/android/systemui/statusbar/phone/PhoneStatusBar;->setNotificationColors()V
 
     :cond_c
-    const-string v0, "statusbar_clock_color"
+    const-string v0, "clock_color"
 
     invoke-virtual {v0, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
@@ -22865,7 +22865,7 @@
     invoke-virtual {p0}, Lcom/android/systemui/statusbar/phone/PhoneStatusBar;->setStatusbarClockColor()V
 
     :cond_d
-    const-string v0, "statusbar_icon_color"
+    const-string v0, "status_icons_color"
 
     invoke-virtual {v0, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
@@ -22876,7 +22876,7 @@
     invoke-virtual {p0}, Lcom/android/systemui/statusbar/phone/PhoneStatusBar;->setStatusbarIconColor()V
 
     :cond_e
-    const-string v0, "notification_icon_color"
+    const-string v0, "notification_icons_color"
 
     invoke-virtual {v0, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
@@ -22887,7 +22887,7 @@
     invoke-virtual {p0}, Lcom/android/systemui/statusbar/phone/PhoneStatusBar;->setNotificationIconColor()V
 
     :cond_f
-    const-string v0, "statusbar_battery_percent_color"
+    const-string v0, "battery_percent_color"
 
     invoke-virtual {v0, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
@@ -25307,7 +25307,7 @@
 
     invoke-direct {v3}, Ljava/util/ArrayList;-><init>()V
 
-    const-string v4, "hide_battery"
+    const-string v4, "hide_battery_stock"
 
     invoke-virtual {v3, v4}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
@@ -25359,19 +25359,19 @@
 
     invoke-virtual {v3, v4}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    const-string v4, "statusbar_clock_color"
+    const-string v4, "clock_color"
 
     invoke-virtual {v3, v4}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    const-string v4, "statusbar_icon_color"
+    const-string v4, "status_icons_color"
 
     invoke-virtual {v3, v4}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    const-string v4, "notification_icon_color"
+    const-string v4, "notification_icons_color"
 
     invoke-virtual {v3, v4}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    const-string v4, "statusbar_battery_percent_color"
+    const-string v4, "battery_percent_color"
 
     invoke-virtual {v3, v4}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
@@ -27945,7 +27945,7 @@
 
     move-result v3
 
-    const-string v8, "notification_icon_color"
+    const-string v8, "notification_icons_color"
 
     const/4 v9, -0x1
 
@@ -28587,7 +28587,7 @@
 
     if-eqz v1, :cond_0
 
-    const-string v2, "statusbar_battery_percent_color"
+    const-string v2, "battery_percent_color"
 
     const/4 v3, -0x1
 
@@ -28626,7 +28626,7 @@
 
     if-eqz v1, :cond_0
 
-    const-string v2, "statusbar_clock_color"
+    const-string v2, "clock_color"
 
     const/4 v3, -0x1
 
@@ -28655,7 +28655,7 @@
 
     move-result v3
 
-    const-string v8, "statusbar_icon_color"
+    const-string v8, "status_icons_color"
 
     const/4 v9, -0x1
 
@@ -31522,7 +31522,7 @@
 .method updateBatteryView()V
     .locals 3
 
-    const-string v0, "hide_battery"
+    const-string v0, "hide_battery_stock"
 
     const/4 v1, 0x0
 
