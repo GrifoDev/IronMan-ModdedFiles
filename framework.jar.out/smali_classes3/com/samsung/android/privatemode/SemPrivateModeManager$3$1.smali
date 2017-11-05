@@ -1,4 +1,4 @@
-.class Lcom/samsung/android/privatemode/SemPrivateModeManager$2$1;
+.class Lcom/samsung/android/privatemode/SemPrivateModeManager$3$1;
 .super Ljava/lang/Object;
 .source "SemPrivateModeManager.java"
 
@@ -8,7 +8,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/samsung/android/privatemode/SemPrivateModeManager$2;->onServiceConnected(Landroid/content/ComponentName;Landroid/os/IBinder;)V
+    value = Lcom/samsung/android/privatemode/SemPrivateModeManager$3;->onServiceConnected(Landroid/content/ComponentName;Landroid/os/IBinder;)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -18,14 +18,14 @@
 
 
 # instance fields
-.field final synthetic this$1:Lcom/samsung/android/privatemode/SemPrivateModeManager$2;
+.field final synthetic this$1:Lcom/samsung/android/privatemode/SemPrivateModeManager$3;
 
 
 # direct methods
-.method constructor <init>(Lcom/samsung/android/privatemode/SemPrivateModeManager$2;)V
+.method constructor <init>(Lcom/samsung/android/privatemode/SemPrivateModeManager$3;)V
     .locals 0
 
-    iput-object p1, p0, Lcom/samsung/android/privatemode/SemPrivateModeManager$2$1;->this$1:Lcom/samsung/android/privatemode/SemPrivateModeManager$2;
+    iput-object p1, p0, Lcom/samsung/android/privatemode/SemPrivateModeManager$3$1;->this$1:Lcom/samsung/android/privatemode/SemPrivateModeManager$3;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -71,9 +71,9 @@
     :catch_0
     move-exception v0
 
-    iget-object v1, p0, Lcom/samsung/android/privatemode/SemPrivateModeManager$2$1;->this$1:Lcom/samsung/android/privatemode/SemPrivateModeManager$2;
+    iget-object v1, p0, Lcom/samsung/android/privatemode/SemPrivateModeManager$3$1;->this$1:Lcom/samsung/android/privatemode/SemPrivateModeManager$3;
 
-    iget-object v1, v1, Lcom/samsung/android/privatemode/SemPrivateModeManager$2;->this$0:Lcom/samsung/android/privatemode/SemPrivateModeManager;
+    iget-object v1, v1, Lcom/samsung/android/privatemode/SemPrivateModeManager$3;->this$0:Lcom/samsung/android/privatemode/SemPrivateModeManager;
 
     const-string/jumbo v2, "bindPrivateModeManager"
 

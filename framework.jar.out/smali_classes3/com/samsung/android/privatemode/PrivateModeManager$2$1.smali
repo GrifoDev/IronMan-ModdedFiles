@@ -1,4 +1,4 @@
-.class Lcom/samsung/android/privatemode/PrivateModeManager$1$1;
+.class Lcom/samsung/android/privatemode/PrivateModeManager$2$1;
 .super Ljava/lang/Object;
 .source "PrivateModeManager.java"
 
@@ -8,7 +8,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/samsung/android/privatemode/PrivateModeManager$1;->onServiceConnected(Landroid/content/ComponentName;Landroid/os/IBinder;)V
+    value = Lcom/samsung/android/privatemode/PrivateModeManager$2;->onServiceConnected(Landroid/content/ComponentName;Landroid/os/IBinder;)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -18,14 +18,14 @@
 
 
 # instance fields
-.field final synthetic this$1:Lcom/samsung/android/privatemode/PrivateModeManager$1;
+.field final synthetic this$1:Lcom/samsung/android/privatemode/PrivateModeManager$2;
 
 
 # direct methods
-.method constructor <init>(Lcom/samsung/android/privatemode/PrivateModeManager$1;)V
+.method constructor <init>(Lcom/samsung/android/privatemode/PrivateModeManager$2;)V
     .locals 0
 
-    iput-object p1, p0, Lcom/samsung/android/privatemode/PrivateModeManager$1$1;->this$1:Lcom/samsung/android/privatemode/PrivateModeManager$1;
+    iput-object p1, p0, Lcom/samsung/android/privatemode/PrivateModeManager$2$1;->this$1:Lcom/samsung/android/privatemode/PrivateModeManager$2;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -71,9 +71,9 @@
     :catch_0
     move-exception v0
 
-    iget-object v1, p0, Lcom/samsung/android/privatemode/PrivateModeManager$1$1;->this$1:Lcom/samsung/android/privatemode/PrivateModeManager$1;
+    iget-object v1, p0, Lcom/samsung/android/privatemode/PrivateModeManager$2$1;->this$1:Lcom/samsung/android/privatemode/PrivateModeManager$2;
 
-    iget-object v1, v1, Lcom/samsung/android/privatemode/PrivateModeManager$1;->this$0:Lcom/samsung/android/privatemode/PrivateModeManager;
+    iget-object v1, v1, Lcom/samsung/android/privatemode/PrivateModeManager$2;->this$0:Lcom/samsung/android/privatemode/PrivateModeManager;
 
     const-string/jumbo v2, "bindPrivateModeManager"
 
