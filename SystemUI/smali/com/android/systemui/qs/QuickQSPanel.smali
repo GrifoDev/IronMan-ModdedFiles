@@ -28,6 +28,10 @@
 
 .field private final mNumTiles:Lcom/android/systemui/tuner/TunerService$Tunable;
 
+.field public mQuickQSNumber:I
+
+.field public mQuickQSNumberLandscape:I
+
 
 # direct methods
 .method static synthetic -get0()I
@@ -46,6 +50,10 @@
     invoke-direct {p0, p1, p2}, Lcom/android/systemui/qs/QSPanel;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
 
     iput v3, p0, Lcom/android/systemui/qs/QuickQSPanel;->mLastOrientation:I
+
+    iput v3, p0, Lcom/android/systemui/qs/QuickQSPanel;->mQuickQSNumber:I
+
+    iput v3, p0, Lcom/android/systemui/qs/QuickQSPanel;->mQuickQSNumberLandscape:I
 
     new-instance v1, Lcom/android/systemui/qs/QuickQSPanel$1;
 
@@ -189,7 +197,7 @@
 .end method
 
 .method public getNumQuickTiles(Landroid/content/Context;)I
-    .locals 8
+    .locals 9
 
     const v7, 0x7f0c0031
 
@@ -222,7 +230,7 @@
 
     if-eqz v0, :cond_1
 
-    const/16 v4, 0x8
+    const v4, 0x8
 
     return v4
 
@@ -248,6 +256,8 @@
 
     move-result v6
 
+    iget v6, p0, Lcom/android/systemui/qs/QuickQSPanel;->mQuickQSNumberLandscape:I
+
     invoke-virtual {v4, v5, v6}, Lcom/android/systemui/tuner/TunerService;->getValue(Ljava/lang/String;I)I
 
     move-result v4
@@ -268,6 +278,8 @@
     invoke-virtual {v6, v7}, Landroid/content/res/Resources;->getInteger(I)I
 
     move-result v6
+
+    iget v6, p0, Lcom/android/systemui/qs/QuickQSPanel;->mQuickQSNumber:I
 
     invoke-virtual {v4, v5, v6}, Lcom/android/systemui/tuner/TunerService;->getValue(Ljava/lang/String;I)I
 
@@ -416,6 +428,20 @@
     invoke-super {p0, p1, v0}, Lcom/android/systemui/qs/QSPanel;->onTuningChanged(Ljava/lang/String;Ljava/lang/String;)V
 
     :cond_0
+    return-void
+.end method
+
+.method public reloadQuickQsTiles()V
+    .locals 1
+
+    iget-object v0, p0, Lcom/android/systemui/qs/QuickQSPanel;->mContext:Landroid/content/Context;
+
+    invoke-virtual {p0, v0}, Lcom/android/systemui/qs/QuickQSPanel;->getNumQuickTiles(Landroid/content/Context;)I
+
+    move-result v0
+
+    invoke-virtual {p0, v0}, Lcom/android/systemui/qs/QuickQSPanel;->setMaxTiles(I)V
+
     return-void
 .end method
 

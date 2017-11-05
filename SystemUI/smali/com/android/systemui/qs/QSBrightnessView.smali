@@ -14,6 +14,10 @@
 .end annotation
 
 
+# static fields
+.field public static mQsBrightnessIconColor:I
+
+
 # instance fields
 .field protected final TAG:Ljava/lang/String;
 
@@ -74,7 +78,7 @@
 .end method
 
 .method public constructor <init>(Landroid/content/Context;ILcom/android/systemui/qs/QSPanel;)V
-    .locals 7
+    .locals 8
 
     const/16 v3, 0x8
 
@@ -139,6 +143,8 @@
     invoke-direct {v4}, Landroid/os/Handler;-><init>()V
 
     invoke-direct {v0, p0, v4}, Lcom/android/systemui/qs/QSBrightnessView$1;-><init>(Lcom/android/systemui/qs/QSBrightnessView;Landroid/os/Handler;)V
+
+    invoke-virtual {p0}, Lcom/android/systemui/qs/QSBrightnessView;->setQsBrightnessIconColor()V
 
     iput-object v0, p0, Lcom/android/systemui/qs/QSBrightnessView;->mSettingsObserver:Landroid/database/ContentObserver;
 
@@ -226,6 +232,15 @@
 
     iget-object v5, p0, Lcom/android/systemui/qs/QSBrightnessView;->mIcon:Landroid/widget/ImageView;
 
+    sget-boolean v6, Lcom/android/systemui/SystemUIRune;->mAllowQsColorChange:Z
+
+    if-eqz v6, :cond_0
+
+    sget v6, Lcom/android/systemui/qs/QSBrightnessView;->mQsBrightnessIconColor:I
+
+    invoke-virtual {v5, v6}, Landroid/widget/ImageView;->setColorFilter(I)V
+
+    :cond_0
     iget-object v6, p0, Lcom/android/systemui/qs/QSBrightnessView;->mSlider:Lcom/android/systemui/settings/ToggleSlider;
 
     invoke-direct {v0, v4, v5, v6}, Lcom/android/systemui/settings/BrightnessController;-><init>(Landroid/content/Context;Landroid/widget/ImageView;Lcom/android/systemui/settings/ToggleSlider;)V
@@ -262,7 +277,7 @@
 
     move-result v0
 
-    if-ne v0, v1, :cond_0
+    if-ne v0, v1, :cond_2
 
     move v0, v1
 
@@ -289,6 +304,17 @@
 
     iput-object v0, p0, Lcom/android/systemui/qs/QSBrightnessView;->mBrightnessDetailButton:Landroid/widget/ImageView;
 
+    iget-object v0, p0, Lcom/android/systemui/qs/QSBrightnessView;->mBrightnessDetailButton:Landroid/widget/ImageView;
+
+    sget-boolean v6, Lcom/android/systemui/SystemUIRune;->mAllowQsColorChange:Z
+
+    if-eqz v6, :cond_1
+
+    sget v6, Lcom/android/systemui/qs/QSBrightnessView;->mQsBrightnessIconColor:I
+
+    invoke-virtual {v0, v6}, Landroid/widget/ImageView;->setColorFilter(I)V
+
+    :cond_1
     iget-object v0, p0, Lcom/android/systemui/qs/QSBrightnessView;->mBrightnessDetail:Lcom/android/systemui/settings/BrightnessDetail;
 
     invoke-virtual {v0, p3}, Lcom/android/systemui/settings/BrightnessDetail;->setQsPanel(Lcom/android/systemui/qs/QSPanel;)V
@@ -327,19 +353,25 @@
 
     move-result v1
 
-    if-eqz v1, :cond_1
+    if-eqz v1, :cond_3
+
+    invoke-virtual {p0}, Lcom/android/systemui/qs/QSBrightnessView;->tweaksHideSlider()Z
+
+    move-result v1
+
+    if-nez v1, :cond_3
 
     :goto_1
     invoke-virtual {v0, v2}, Landroid/view/View;->setVisibility(I)V
 
     return-void
 
-    :cond_0
+    :cond_2
     move v0, v2
 
     goto :goto_0
 
-    :cond_1
+    :cond_3
     move v2, v3
 
     goto :goto_1
@@ -1106,4 +1138,34 @@
     invoke-virtual {v0, v1}, Landroid/view/ViewGroup;->setDescendantFocusability(I)V
 
     goto :goto_0
+.end method
+
+.method setQsBrightnessIconColor()V
+    .locals 2
+
+    const-string v0, "qs_slider_color"
+
+    const v1, -0xdadadb
+
+    invoke-static {v0, v1}, Lcom/android/wubydax/GearUtils;->getDbIntForKey(Ljava/lang/String;I)I
+
+    move-result v0
+
+    sput v0, Lcom/android/systemui/qs/QSBrightnessView;->mQsBrightnessIconColor:I
+
+    return-void
+.end method
+
+.method tweaksHideSlider()Z
+    .locals 2
+
+    const-string v0, "hide_brightness_slider"
+
+    const v1, 0x0
+
+    invoke-static {v0, v1}, Lcom/android/wubydax/GearUtils;->getDbIntForKey(Ljava/lang/String;I)I
+
+    move-result v0
+
+    return v0
 .end method

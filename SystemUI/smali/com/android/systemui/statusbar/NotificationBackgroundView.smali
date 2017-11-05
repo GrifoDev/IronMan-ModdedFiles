@@ -240,25 +240,46 @@
 .end method
 
 .method public setTint(I)V
-    .locals 2
+    .locals 5
 
-    if-eqz p1, :cond_0
+    sget-boolean v0, Lcom/android/systemui/SystemUIRune;->mAllowNotificationColorChange:Z
 
+    if-eqz v0, :cond_2
+
+    sget v2, Lcom/android/systemui/statusbar/phone/PhoneStatusBar;->mNotifBackgroundColor:I
+
+    :goto_0
     iget-object v0, p0, Lcom/android/systemui/statusbar/NotificationBackgroundView;->mBackground:Landroid/graphics/drawable/Drawable;
 
     sget-object v1, Landroid/graphics/PorterDuff$Mode;->SRC_ATOP:Landroid/graphics/PorterDuff$Mode;
 
-    invoke-virtual {v0, p1, v1}, Landroid/graphics/drawable/Drawable;->setColorFilter(ILandroid/graphics/PorterDuff$Mode;)V
+    invoke-virtual {v0, v2, v1}, Landroid/graphics/drawable/Drawable;->setColorFilter(ILandroid/graphics/PorterDuff$Mode;)V
 
-    :goto_0
+    sget-boolean v4, Lcom/android/systemui/statusbar/phone/PhoneStatusBar;->mAllowTransNotifs:Z
+
+    if-eqz v4, :cond_0
+
+    sget v3, Lcom/android/systemui/statusbar/phone/PhoneStatusBar;->mNotifBackgroundAlpha:I
+
+    invoke-virtual {v0, v3}, Landroid/graphics/drawable/Drawable;->setAlpha(I)V
+
+    :cond_0
+    :goto_1
     invoke-virtual {p0}, Lcom/android/systemui/statusbar/NotificationBackgroundView;->invalidate()V
 
     return-void
 
-    :cond_0
+    :cond_1
     iget-object v0, p0, Lcom/android/systemui/statusbar/NotificationBackgroundView;->mBackground:Landroid/graphics/drawable/Drawable;
 
     invoke-virtual {v0}, Landroid/graphics/drawable/Drawable;->clearColorFilter()V
+
+    goto :goto_1
+
+    :cond_2
+    if-eqz p1, :cond_1
+
+    move v2, p1
 
     goto :goto_0
 .end method

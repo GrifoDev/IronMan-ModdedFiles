@@ -1921,6 +1921,8 @@
     <public type="drawable" name="indicator_code_lock_point_area_default_holo" id="0x7f02084a" />
     <public type="drawable" name="indicator_code_lock_point_area_green_holo" id="0x7f02084b" />
     <public type="drawable" name="indicator_code_lock_point_area_red_holo" id="0x7f02084c" />
+    <public type="drawable" name="notification_material_bg_dim_tweak" id="0x7f02084d" />
+    <public type="drawable" name="notification_material_bg_tweak" id="0x7f02084e" />
     <public type="drawable" name="search_panel_scrim" id="0x7f0205e9" />
     <public type="drawable" name="recents_help_lock_task" id="0x7f0204b6" />
     <public type="drawable" name="recents_help_longpress" id="0x7f0204b8" />
@@ -7959,6 +7961,8 @@
     <public type="string" name="airplane_mode_tts_text" id="0x7f0f081e" />
     <public type="string" name="all_noti_readout" id="0x7f0f081f" />
     <public type="string" name="all_noti_readout2" id="0x7f0f0820" />
+    <public type="string" name="APKTOOL_DUMMY_822" id="0x7f0f0822" />
+    <public type="string" name="APKTOOL_DUMMY_823" id="0x7f0f0823" />
     <public type="string" name="car_lockscreen_disclaimer_title" id="0x7f0f0827" />
     <public type="string" name="car_lockscreen_disclaimer_text" id="0x7f0f0828" />
     <public type="string" name="pip_close" id="0x7f0f0829" />
@@ -8609,8 +8613,6 @@
     <public type="string" name="taskbar_context_menu_clear_notification" id="0x7f0f0aae" />
     <public type="string" name="taskbar_context_menu_open_desk_notification_view" id="0x7f0f0aaf" />
     <public type="string" name="taskbar_context_menu_close_desk_notification_view" id="0x7f0f0ab0" />
-    <public type="string" name="APKTOOL_DUMMY_822" id="0x7f0f0822" />
-    <public type="string" name="APKTOOL_DUMMY_823" id="0x7f0f0823" />
     <public type="string" name="status_bar_date_formatter" id="0x7f0f02da" />
     <public type="string" name="toast_rotation_locked" id="0x7f0f0821" />
     <public type="string" name="clear_cover_wday_day" id="0x7f0f0017" />
@@ -10829,6 +10831,11 @@
     <public type="id" name="screen_grid" id="0x7f13057b" />
     <public type="id" name="brightness_control_on_top" id="0x7f13057c" />
     <public type="id" name="contact_us" id="0x7f13057d" />
+    <public type="id" name="center_clock" id="0x7f13057e" />
+    <public type="id" name="left_clock" id="0x7f13057f" />
+    <public type="id" name="system_icon_area2" id="0x7f130580" />
+    <public type="id" name="backgroundImageView" id="0x7f130581" />
+    <public type="id" name="qs_drag_handle_background" id="0x7f130582" />
     <public type="plurals" name="status_bar_accessibility_recent_apps" id="0x7f140000" />
     <public type="plurals" name="notification_group_overflow_description" id="0x7f140001" />
     <public type="plurals" name="kg_password_wrong_pin_code" id="0x7f140002" />

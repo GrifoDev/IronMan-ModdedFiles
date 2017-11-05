@@ -502,7 +502,7 @@
 .end method
 
 .method public getNotificationHeader()Landroid/view/NotificationHeaderView;
-    .locals 1
+    .locals 2
 
     iget-object v0, p0, Lcom/android/systemui/statusbar/notification/NotificationHeaderViewWrapper;->mNotificationHeader:Landroid/view/NotificationHeaderView;
 

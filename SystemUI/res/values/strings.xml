@@ -2212,6 +2212,8 @@ Please note that in order to enable your emergency calls (e.g., such as 112 call
     <string name="airplane_mode_tts_text">Airplane mode</string>
     <string name="all_noti_readout" formatted="false">%s %s notification</string>
     <string name="all_noti_readout2" formatted="false">%s %s notifications</string>
+    <item type="string" name="APKTOOL_DUMMY_822">false</item>
+    <item type="string" name="APKTOOL_DUMMY_823">false</item>
     <string name="car_lockscreen_disclaimer_title">Drive safely</string>
     <string name="car_lockscreen_disclaimer_text">Stay fully aware of driving conditions and always obey applicable laws. Directions may be inaccurate, incomplete, dangerous, not suitable, prohibited, or involve crossing administrative areas. Business information may also be inaccurate or incomplete. Data is not real-time, and location accuracy cannot be guaranteed. Do not handle your mobile device or use apps not intended for Android Auto while driving.</string>
     <string name="pip_close">Close PIP</string>
@@ -2967,6 +2969,4 @@ Try again in 1 second"</string>
     <string name="taskbar_context_menu_clear_notification">Clear</string>
     <string name="taskbar_context_menu_open_desk_notification_view">Show notifications</string>
     <string name="taskbar_context_menu_close_desk_notification_view">Hide notifications</string>
-    <item type="string" name="APKTOOL_DUMMY_822">false</item>
-    <item type="string" name="APKTOOL_DUMMY_823">false</item>
 </resources>

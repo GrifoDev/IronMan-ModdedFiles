@@ -2,6 +2,9 @@
 .super Landroid/widget/LinearLayout;
 .source "SplitClockView.java"
 
+# interfaces
+.implements Landroid/view/View$OnClickListener;
+
 
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
@@ -15,6 +18,8 @@
 .field private mAmPmView:Landroid/widget/TextClock;
 
 .field private mAmPmViewFront:Landroid/widget/TextClock;
+
+.field private final mContext:Landroid/content/Context;
 
 .field private mIntentReceiver:Landroid/content/BroadcastReceiver;
 
@@ -42,6 +47,8 @@
     invoke-direct {v0, p0}, Lcom/android/systemui/statusbar/policy/SplitClockView$1;-><init>(Lcom/android/systemui/statusbar/policy/SplitClockView;)V
 
     iput-object v0, p0, Lcom/android/systemui/statusbar/policy/SplitClockView;->mIntentReceiver:Landroid/content/BroadcastReceiver;
+
+    iput-object p1, p0, Lcom/android/systemui/statusbar/policy/SplitClockView;->mContext:Landroid/content/Context;
 
     return-void
 .end method
@@ -184,6 +191,31 @@
 
     :cond_10
     return v6
+.end method
+
+.method private startClockActivity()V
+    .locals 3
+
+    iget-object v1, p0, Lcom/android/systemui/statusbar/policy/SplitClockView;->mContext:Landroid/content/Context;
+
+    invoke-virtual {v1}, Landroid/content/Context;->getPackageManager()Landroid/content/pm/PackageManager;
+
+    move-result-object v1
+
+    const-string v2, "com.sec.android.app.clockpackage"
+
+    invoke-virtual {v1, v2}, Landroid/content/pm/PackageManager;->getLaunchIntentForPackage(Ljava/lang/String;)Landroid/content/Intent;
+
+    move-result-object v0
+
+    if-eqz v0, :cond_0
+
+    iget-object v1, p0, Lcom/android/systemui/statusbar/policy/SplitClockView;->mContext:Landroid/content/Context;
+
+    invoke-virtual {v1, v0}, Landroid/content/Context;->startActivity(Landroid/content/Intent;)V
+
+    :cond_0
+    return-void
 .end method
 
 .method private updatePatterns()V
@@ -466,6 +498,26 @@
 
 
 # virtual methods
+.method public getClockTweak()Z
+    .locals 3
+
+    iget-object v0, p0, Lcom/android/systemui/statusbar/policy/SplitClockView;->mContext:Landroid/content/Context;
+
+    invoke-virtual {v0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
+
+    move-result-object v0
+
+    const-string/jumbo v1, "clock_onclick"
+
+    const/4 v2, 0x0
+
+    invoke-static {v0, v1, v2}, Landroid/provider/Settings$System;->getInt(Landroid/content/ContentResolver;Ljava/lang/String;I)I
+
+    move-result v0
+
+    return v0
+.end method
+
 .method protected onAttachedToWindow()V
     .locals 6
 
@@ -514,6 +566,19 @@
     return-void
 .end method
 
+.method public onClick(Landroid/view/View;)V
+    .locals 2
+
+    iget-object v0, p0, Lcom/android/systemui/statusbar/policy/SplitClockView;->mTimeView:Landroid/widget/TextClock;
+
+    if-ne p1, v0, :cond_0
+
+    invoke-direct {p0}, Lcom/android/systemui/statusbar/policy/SplitClockView;->startClockActivity()V
+
+    :cond_0
+    return-void
+.end method
+
 .method protected onDetachedFromWindow()V
     .locals 2
 
@@ -531,7 +596,7 @@
 .end method
 
 .method protected onFinishInflate()V
-    .locals 2
+    .locals 3
 
     const/4 v1, 0x1
 
@@ -569,6 +634,15 @@
 
     iget-object v0, p0, Lcom/android/systemui/statusbar/policy/SplitClockView;->mTimeView:Landroid/widget/TextClock;
 
+    invoke-virtual {p0}, Lcom/android/systemui/statusbar/policy/SplitClockView;->getClockTweak()Z
+
+    move-result v2
+
+    if-eqz v2, :cond_0
+
+    invoke-virtual {v0, p0}, Landroid/widget/TextClock;->setOnClickListener(Landroid/view/View$OnClickListener;)V
+
+    :cond_0
     invoke-virtual {v0, v1}, Landroid/widget/TextClock;->setShowCurrentUserTime(Z)V
 
     iget-object v0, p0, Lcom/android/systemui/statusbar/policy/SplitClockView;->mAmPmView:Landroid/widget/TextClock;

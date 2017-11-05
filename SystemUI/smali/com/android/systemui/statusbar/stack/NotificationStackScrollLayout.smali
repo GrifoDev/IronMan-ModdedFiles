@@ -7110,7 +7110,17 @@
 .end method
 
 .method private updateBackgroundDimming()V
-    .locals 9
+    .locals 12
+
+    iget-object v11, p0, Lcom/android/systemui/statusbar/stack/NotificationStackScrollLayout;->mPhoneStatusBar:Lcom/android/systemui/statusbar/phone/PhoneStatusBar;
+
+    invoke-virtual {v11}, Lcom/android/systemui/statusbar/phone/PhoneStatusBar;->isKeyguardState()Z
+
+    move-result v11
+
+    sget-boolean v9, Lcom/android/systemui/statusbar/phone/PhoneStatusBar;->mAllowTransNotifs:Z
+
+    sget-boolean v10, Lcom/android/systemui/SystemUIRune;->mAllowNotificationColorChange:Z
 
     const/high16 v6, 0x3f800000    # 1.0f
 
@@ -7144,7 +7154,7 @@
 
     move-result v4
 
-    if-eqz v4, :cond_3
+    if-eqz v4, :cond_5
 
     iget-object v4, p0, Lcom/android/systemui/statusbar/stack/NotificationStackScrollLayout;->mPhoneStatusBar:Lcom/android/systemui/statusbar/phone/PhoneStatusBar;
 
@@ -7177,7 +7187,7 @@
 
     const/4 v5, 0x5
 
-    if-ne v4, v5, :cond_2
+    if-ne v4, v5, :cond_4
 
     iget-object v4, p0, Lcom/android/systemui/statusbar/stack/NotificationStackScrollLayout;->mContext:Landroid/content/Context;
 
@@ -7189,7 +7199,7 @@
 
     move-result v4
 
-    if-eqz v4, :cond_2
+    if-eqz v4, :cond_4
 
     :cond_1
     iget v2, p0, Lcom/android/systemui/statusbar/stack/NotificationStackScrollLayout;->mStackScrollerBGOnWhiteKeyguard:I
@@ -7197,20 +7207,43 @@
     :goto_0
     iget-object v4, p0, Lcom/android/systemui/statusbar/stack/NotificationStackScrollLayout;->mBackgroundPaint:Landroid/graphics/Paint;
 
+    if-eqz v10, :cond_3
+
+    if-nez v11, :cond_2
+
+    if-eqz v9, :cond_3
+
+    :cond_2
+    const/4 v2, 0x0
+
+    :cond_3
     invoke-virtual {v4, v2}, Landroid/graphics/Paint;->setColor(I)V
 
     invoke-virtual {p0}, Lcom/android/systemui/statusbar/stack/NotificationStackScrollLayout;->invalidate()V
 
     return-void
 
-    :cond_2
+    :cond_4
     iget v2, p0, Lcom/android/systemui/statusbar/stack/NotificationStackScrollLayout;->mStackScrollerBGOnKeyguard:I
 
     goto :goto_0
 
-    :cond_3
+    :cond_5
+    if-eqz v10, :cond_6
+
+    if-nez v11, :cond_7
+
+    if-nez v9, :cond_7
+
+    :cond_6
     const/high16 v4, 0x437f0000    # 255.0f
 
+    goto :goto_1
+
+    :cond_7
+    const/4 v4, 0x0
+
+    :goto_1
     mul-float/2addr v4, v0
 
     invoke-static {v3}, Landroid/graphics/Color;->alpha(I)I
@@ -7227,8 +7260,21 @@
 
     iget v5, p0, Lcom/android/systemui/statusbar/stack/NotificationStackScrollLayout;->mBackgroundFadeAmount:F
 
+    if-eqz v10, :cond_8
+
+    if-nez v11, :cond_9
+
+    if-nez v9, :cond_9
+
+    :cond_8
     iget v6, p0, Lcom/android/systemui/statusbar/stack/NotificationStackScrollLayout;->mBgColor:I
 
+    goto :goto_2
+
+    :cond_9
+    const/4 v6, 0x0
+
+    :goto_2
     invoke-static {v6}, Landroid/graphics/Color;->red(I)I
 
     move-result v6
@@ -7251,8 +7297,21 @@
 
     iget v6, p0, Lcom/android/systemui/statusbar/stack/NotificationStackScrollLayout;->mBackgroundFadeAmount:F
 
+    if-eqz v10, :cond_a
+
+    if-nez v11, :cond_b
+
+    if-nez v9, :cond_b
+
+    :cond_a
     iget v7, p0, Lcom/android/systemui/statusbar/stack/NotificationStackScrollLayout;->mBgColor:I
 
+    goto :goto_3
+
+    :cond_b
+    const/4 v7, 0x0
+
+    :goto_3
     invoke-static {v7}, Landroid/graphics/Color;->green(I)I
 
     move-result v7
@@ -7275,8 +7334,21 @@
 
     iget v7, p0, Lcom/android/systemui/statusbar/stack/NotificationStackScrollLayout;->mBackgroundFadeAmount:F
 
+    if-eqz v10, :cond_c
+
+    if-nez v11, :cond_d
+
+    if-nez v9, :cond_d
+
+    :cond_c
     iget v8, p0, Lcom/android/systemui/statusbar/stack/NotificationStackScrollLayout;->mBgColor:I
 
+    goto :goto_4
+
+    :cond_d
+    const/4 v8, 0x0
+
+    :goto_4
     invoke-static {v8}, Landroid/graphics/Color;->blue(I)I
 
     move-result v8

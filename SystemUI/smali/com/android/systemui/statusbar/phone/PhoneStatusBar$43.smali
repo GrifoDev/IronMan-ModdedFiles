@@ -153,5 +153,9 @@
 
     invoke-virtual {v1, v2}, Lcom/android/systemui/statusbar/phone/BaseStatusBarHeader;->setActivityStarter(Lcom/android/systemui/statusbar/phone/ActivityStarter;)V
 
+    invoke-virtual {v2}, Lcom/android/systemui/statusbar/phone/PhoneStatusBar;->initializeColorSettings()V
+
+    invoke-virtual {v2}, Lcom/android/systemui/statusbar/phone/PhoneStatusBar;->initializeMods()V
+
     return-void
 .end method

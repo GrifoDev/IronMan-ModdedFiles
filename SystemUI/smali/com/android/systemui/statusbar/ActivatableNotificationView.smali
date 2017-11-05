@@ -257,7 +257,7 @@
 .end method
 
 .method public constructor <init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
-    .locals 6
+    .locals 7
 
     const v5, 0x3f4ccccd    # 0.8f
 
@@ -357,6 +357,13 @@
 
     move-result v0
 
+    sget-boolean v6, Lcom/android/systemui/SystemUIRune;->mAllowNotificationColorChange:Z
+
+    if-eqz v6, :cond_0
+
+    sget v0, Lcom/android/systemui/statusbar/phone/PhoneStatusBar;->mNotifBackgroundColor:I
+
+    :cond_0
     iput v0, p0, Lcom/android/systemui/statusbar/ActivatableNotificationView;->mNormalColor:I
 
     const v0, 0x7f0b00d4
@@ -1014,6 +1021,34 @@
     const/4 v2, 0x2
 
     goto :goto_0
+.end method
+
+.method private setNotificationBackgrounds()V
+    .locals 6
+
+    iget-object v0, p0, Lcom/android/systemui/statusbar/ActivatableNotificationView;->mBackgroundNormal:Lcom/android/systemui/statusbar/NotificationBackgroundView;
+
+    const v1, 0x7f020397
+
+    invoke-virtual {v0, v1}, Lcom/android/systemui/statusbar/NotificationBackgroundView;->setCustomBackground(I)V
+
+    iget-object v0, p0, Lcom/android/systemui/statusbar/ActivatableNotificationView;->mBackgroundDimmed:Lcom/android/systemui/statusbar/NotificationBackgroundView;
+
+    const v2, 0x7f020398
+
+    sget-boolean v4, Lcom/android/systemui/SystemUIRune;->mAllowNotificationColorChange:Z
+
+    if-eqz v4, :cond_0
+
+    invoke-virtual {v0, v1}, Lcom/android/systemui/statusbar/NotificationBackgroundView;->setCustomBackground(I)V
+
+    goto :goto_0
+
+    :cond_0
+    invoke-virtual {v0, v2}, Lcom/android/systemui/statusbar/NotificationBackgroundView;->setCustomBackground(I)V
+
+    :goto_0
+    return-void
 .end method
 
 .method private startActivateAnimation(Z)V
@@ -1900,17 +1935,7 @@
 
     iput-object v0, p0, Lcom/android/systemui/statusbar/ActivatableNotificationView;->mBackgroundDimmed:Lcom/android/systemui/statusbar/NotificationBackgroundView;
 
-    iget-object v0, p0, Lcom/android/systemui/statusbar/ActivatableNotificationView;->mBackgroundNormal:Lcom/android/systemui/statusbar/NotificationBackgroundView;
-
-    const v1, 0x7f020397
-
-    invoke-virtual {v0, v1}, Lcom/android/systemui/statusbar/NotificationBackgroundView;->setCustomBackground(I)V
-
-    iget-object v0, p0, Lcom/android/systemui/statusbar/ActivatableNotificationView;->mBackgroundDimmed:Lcom/android/systemui/statusbar/NotificationBackgroundView;
-
-    const v1, 0x7f020398
-
-    invoke-virtual {v0, v1}, Lcom/android/systemui/statusbar/NotificationBackgroundView;->setCustomBackground(I)V
+    invoke-direct {p0}, Lcom/android/systemui/statusbar/ActivatableNotificationView;->setNotificationBackgrounds()V
 
     invoke-virtual {p0}, Lcom/android/systemui/statusbar/ActivatableNotificationView;->updateBackground()V
 
@@ -2018,6 +2043,27 @@
     move-result v0
 
     goto :goto_0
+.end method
+
+.method public onWindowFocusChanged(Z)V
+    .locals 1
+
+    invoke-super {p0, p1}, Lcom/android/systemui/statusbar/ExpandableOutlineView;->onWindowFocusChanged(Z)V
+
+    if-eqz p1, :cond_0
+
+    invoke-virtual {p0}, Lcom/android/systemui/statusbar/ActivatableNotificationView;->getVisibility()I
+
+    move-result v0
+
+    if-nez v0, :cond_0
+
+    invoke-direct {p0}, Lcom/android/systemui/statusbar/ActivatableNotificationView;->setNotificationBackgrounds()V
+
+    invoke-virtual {p0}, Lcom/android/systemui/statusbar/ActivatableNotificationView;->updateBackgroundTint()V
+
+    :cond_0
+    return-void
 .end method
 
 .method public performAddAnimation(JJ)V

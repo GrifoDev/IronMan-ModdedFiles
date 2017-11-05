@@ -47,6 +47,8 @@
 
 .field protected static mIsDeskMode:Z
 
+.field public static mKeyguardState:Z
+
 
 # instance fields
 .field protected hasVisibleNotification:Z
@@ -5726,6 +5728,8 @@
     invoke-static {v0}, Lcom/android/systemui/statusbar/StatusBarState;->isKeyguardState(I)Z
 
     move-result v0
+
+    sput-boolean v0, Lcom/android/systemui/statusbar/BaseStatusBar;->mKeyguardState:Z
 
     return v0
 .end method

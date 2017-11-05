@@ -12,5 +12,8 @@
             <com.android.systemui.statusbar.policy.Clock android:textAppearance="@style/TextAppearance.StatusBar.Clock" android:gravity="start|center" android:id="@id/clock" android:layout_width="wrap_content" android:layout_height="fill_parent" android:singleLine="true" android:paddingStart="@dimen/status_bar_clock_starting_padding" android:paddingEnd="@dimen/status_bar_clock_end_padding" />
         </com.android.keyguard.AlphaOptimizedLinearLayout>
     </LinearLayout>
+    <com.android.keyguard.AlphaOptimizedLinearLayout android:gravity="center" android:orientation="horizontal" android:id="@id/system_icon_area2" android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <com.android.systemui.statusbar.policy.Clock android:textAppearance="@style/TextAppearance.StatusBar.Clock" android:gravity="center" android:id="@id/center_clock" android:layout_width="wrap_content" android:layout_height="fill_parent" android:singleLine="true" />
+    </com.android.keyguard.AlphaOptimizedLinearLayout>
     <ViewStub android:id="@id/emergency_cryptkeeper_text" android:layout="@layout/emergency_cryptkeeper_text" android:layout_width="wrap_content" android:layout_height="fill_parent" />
 </com.android.systemui.statusbar.phone.PhoneStatusBarView>
