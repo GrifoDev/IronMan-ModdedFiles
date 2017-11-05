@@ -1144,7 +1144,7 @@
 .method public onContentChanged(Ljava/lang/String;)V
     .locals 1
 
-    const-string v0, "tweaks_quick_qs_buttons"
+    const-string v0, "quick_qs_buttons"
 
     invoke-virtual {v0, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
@@ -1554,7 +1554,7 @@
 
     invoke-direct {v3}, Ljava/util/ArrayList;-><init>()V
 
-    const-string v4, "tweaks_quick_qs_buttons"
+    const-string v4, "quick_qs_buttons"
 
     invoke-virtual {v3, v4}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
@@ -1810,7 +1810,7 @@
 .method setQuickQsIcons()V
     .locals 3
 
-    const-string v0, "tweaks_quick_qs_buttons"
+    const-string v0, "quick_qs_buttons"
 
     const/4 v1, 0x6
 
@@ -1827,7 +1827,7 @@
     invoke-virtual {v1}, Lcom/android/systemui/qs/QuickQSPanel;->reloadQuickQsTiles()V
 
     :cond_0
-    const-string v0, "tweaks_quick_qs_buttons_landscape"
+    const-string v0, "quick_qs_buttons_landscape"
 
     const/4 v1, 0x6
 
