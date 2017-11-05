@@ -23020,7 +23020,7 @@
     invoke-virtual {p0}, Lcom/android/systemui/statusbar/phone/PhoneStatusBar;->setNotificationColors()V
 
     :cond_1a
-    const-string v0, "disable_persistent_notifications"
+    const-string v0, "ongoing_notifications"
 
     invoke-virtual {v0, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
@@ -25415,7 +25415,7 @@
 
     invoke-virtual {v3, v4}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    const-string v4, "disable_persistent_notifications"
+    const-string v4, "ongoing_notifications"
 
     invoke-virtual {v3, v4}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
