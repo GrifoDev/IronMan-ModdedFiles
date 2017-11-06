@@ -31633,7 +31633,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_0
+    if-nez v0, :cond_0
 
     const v0, 0x8
 
