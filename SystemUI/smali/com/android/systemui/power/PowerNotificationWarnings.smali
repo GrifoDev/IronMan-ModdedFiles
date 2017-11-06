@@ -7207,11 +7207,11 @@
 
     move-result v0
 
-    if-eqz v0, :cond_lg
+    if-eqz v0, :cond_c
 
     invoke-direct {p0, v2}, Lcom/android/systemui/power/PowerNotificationWarnings;->showChargingNotification(I)V
 
-    :cond_lg
+    :cond_c
     return-void
 .end method
 

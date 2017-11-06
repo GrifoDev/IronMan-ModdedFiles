@@ -533,6 +533,8 @@
     <public type="attr" name="instance" id="0x7f010212" />
     <public type="attr" name="secret" id="0x7f010213" />
     <public type="attr" name="destination" id="0x7f010214" />
+    <public type="attr" name="viewLocation" id="0x7f010215" />
+    <public type="attr" name="viewLocation2" id="0x7f010216" />
     <public type="drawable" name="android" id="0x7f020058" />
     <public type="drawable" name="cactus1" id="0x7f02006d" />
     <public type="drawable" name="cactus2" id="0x7f02006e" />
@@ -1923,6 +1925,45 @@
     <public type="drawable" name="indicator_code_lock_point_area_red_holo" id="0x7f02084c" />
     <public type="drawable" name="notification_material_bg_dim_tweak" id="0x7f02084d" />
     <public type="drawable" name="notification_material_bg_tweak" id="0x7f02084e" />
+    <public type="drawable" name="ACube" id="0x7f02084f" />
+    <public type="drawable" name="AlienTwerking" id="0x7f020850" />
+    <public type="drawable" name="BMLogoBlack" id="0x7f020851" />
+    <public type="drawable" name="BMLogoBlue" id="0x7f020852" />
+    <public type="drawable" name="BMLogoYellow" id="0x7f020853" />
+    <public type="drawable" name="BadKoolAid" id="0x7f020854" />
+    <public type="drawable" name="BadSkeleton" id="0x7f020855" />
+    <public type="drawable" name="BattleStance" id="0x7f020856" />
+    <public type="drawable" name="BicLighter" id="0x7f020857" />
+    <public type="drawable" name="Bird" id="0x7f020858" />
+    <public type="drawable" name="BoobShoots" id="0x7f020859" />
+    <public type="drawable" name="BrianPeanutButterJelyTime" id="0x7f02085a" />
+    <public type="drawable" name="ButtShake" id="0x7f02085b" />
+    <public type="drawable" name="Butterfly" id="0x7f02085c" />
+    <public type="drawable" name="Cats" id="0x7f02085d" />
+    <public type="drawable" name="ChesterCheto" id="0x7f02085e" />
+    <public type="drawable" name="CoolAPe" id="0x7f02085f" />
+    <public type="drawable" name="DancingElsa" id="0x7f020860" />
+    <public type="drawable" name="DoubleMeaning" id="0x7f020861" />
+    <public type="drawable" name="Eyeball" id="0x7f020862" />
+    <public type="drawable" name="MM" id="0x7f020863" />
+    <public type="drawable" name="PifWithBacon" id="0x7f020864" />
+    <public type="drawable" name="PleaseNo" id="0x7f020865" />
+    <public type="drawable" name="RotatingSkeletonOnChair" id="0x7f020866" />
+    <public type="drawable" name="SkeletonCuttingFood" id="0x7f020867" />
+    <public type="drawable" name="SkeletonNoIceCream" id="0x7f020868" />
+    <public type="drawable" name="SkeletonWave" id="0x7f020869" />
+    <public type="drawable" name="SkeltonEatingChetos" id="0x7f02086a" />
+    <public type="drawable" name="Stitch" id="0x7f02086b" />
+    <public type="drawable" name="StitchBraHead" id="0x7f02086c" />
+    <public type="drawable" name="StitchDrop" id="0x7f02086d" />
+    <public type="drawable" name="WaitingSkeleton" id="0x7f02086e" />
+    <public type="drawable" name="WalkingDeadBirth" id="0x7f02086f" />
+    <public type="drawable" name="WalkingWolf" id="0x7f020870" />
+    <public type="drawable" name="WavingFroven" id="0x7f020871" />
+    <public type="drawable" name="dynamic_status_bar_drawable_gradient" id="0x7f020872" />
+    <public type="drawable" name="ic_gear_power" id="0x7f020873" />
+    <public type="drawable" name="notification_material_bg_dim_round" id="0x7f020874" />
+    <public type="drawable" name="notification_material_bg_round" id="0x7f020875" />
     <public type="drawable" name="search_panel_scrim" id="0x7f0205e9" />
     <public type="drawable" name="recents_help_lock_task" id="0x7f0204b6" />
     <public type="drawable" name="recents_help_longpress" id="0x7f0204b8" />
@@ -2622,6 +2663,9 @@
     <public type="drawable" name="tw_stat_sys_battery_incompatible_vzw" id="0x7f0207ea" />
     <public type="drawable" name="wallpaper_default_01" id="0x7f020824" />
     <public type="drawable" name="wallpaper_default_01_thumbnail" id="0x7f020825" />
+    <public type="drawable" name="stat_sys_network_traffic_down" id="0x7f020876" />
+    <public type="drawable" name="stat_sys_network_traffic_up" id="0x7f020877" />
+    <public type="drawable" name="stat_sys_network_traffic_updown" id="0x7f020878" />
     <public type="drawable" name="abc_btn_check_to_on_mtrl_000" id="0x7f020004" />
     <public type="drawable" name="abc_btn_check_to_on_mtrl_015" id="0x7f020005" />
     <public type="drawable" name="abc_btn_radio_to_on_mtrl_000" id="0x7f020009" />
@@ -3126,6 +3170,7 @@
     <public type="layout" name="zen_mode_condition" id="0x7f0401d1" />
     <public type="layout" name="zen_mode_panel" id="0x7f0401d2" />
     <public type="layout" name="keyguard_eca" id="0x7f0401d3" />
+    <public type="layout" name="ram" id="0x7f0401d4" />
     <public type="layout" name="recents_on_tv" id="0x7f040164" />
     <public type="layout" name="recents_tv_card_info_field" id="0x7f04016d" />
     <public type="layout" name="recents_tv_empty" id="0x7f04016e" />
@@ -5908,6 +5953,8 @@
     <public type="dimen" name="desk_panel_view_notification_bg_radius" id="0x7f0d06ae" />
     <public type="dimen" name="desk_panal_view_bottom_margin" id="0x7f0d06af" />
     <public type="dimen" name="desk_network_speed_width" id="0x7f0d06b0" />
+    <public type="dimen" name="net_traffic_single_text_size" id="0x7f0d06b1" />
+    <public type="dimen" name="net_traffic_multi_text_size" id="0x7f0d06b2" />
     <public type="dimen" name="wallpaper_item_width" id="0x7f0d00bc" />
     <public type="dimen" name="wallpaper_item_height" id="0x7f0d00bd" />
     <public type="dimen" name="mw_button_margin" id="0x7f0d003f" />
@@ -8613,6 +8660,8 @@
     <public type="string" name="taskbar_context_menu_clear_notification" id="0x7f0f0aae" />
     <public type="string" name="taskbar_context_menu_open_desk_notification_view" id="0x7f0f0aaf" />
     <public type="string" name="taskbar_context_menu_close_desk_notification_view" id="0x7f0f0ab0" />
+    <public type="string" name="service_background_processes" id="0x7f0f0ab2" />
+    <public type="string" name="service_foreground_processes" id="0x7f0f0ab3" />
     <public type="string" name="status_bar_date_formatter" id="0x7f0f02da" />
     <public type="string" name="toast_rotation_locked" id="0x7f0f0821" />
     <public type="string" name="clear_cover_wday_day" id="0x7f0f0017" />
@@ -10836,6 +10885,19 @@
     <public type="id" name="system_icon_area2" id="0x7f130580" />
     <public type="id" name="backgroundImageView" id="0x7f130581" />
     <public type="id" name="qs_drag_handle_background" id="0x7f130582" />
+    <public type="id" name="battbar_no_pulldown_below" id="0x7f130583" />
+    <public type="id" name="recents_quick_launch" id="0x7f130584" />
+    <public type="id" name="dynamic_status_bar_color" id="0x7f130585" />
+    <public type="id" name="dynamic_status_bar_filter" id="0x7f130586" />
+    <public type="id" name="dynamic_status_bar_gradient" id="0x7f130587" />
+    <public type="id" name="dynamic_status_bar" id="0x7f130588" />
+    <public type="id" name="ram_bar" id="0x7f130589" />
+    <public type="id" name="foregroundText" id="0x7f13058a" />
+    <public type="id" name="backgroundText" id="0x7f13058b" />
+    <public type="id" name="recents_matrix_anim" id="0x7f13058c" />
+    <public type="id" name="gif_animation" id="0x7f13058d" />
+    <public type="id" name="blur_background_image_view_recents" id="0x7f13058e" />
+    <public type="id" name="network_traffic" id="0x7f13058f" />
     <public type="plurals" name="status_bar_accessibility_recent_apps" id="0x7f140000" />
     <public type="plurals" name="notification_group_overflow_description" id="0x7f140001" />
     <public type="plurals" name="kg_password_wrong_pin_code" id="0x7f140002" />

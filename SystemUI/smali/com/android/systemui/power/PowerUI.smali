@@ -2363,6 +2363,7 @@
     return-void
 .end method
 
+
 # virtual methods
 .method CriticalBatteryWarningPercentageNumber()I
     .locals 4
