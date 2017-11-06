@@ -93,7 +93,13 @@
 
 .field private mLightModeIconColorSingleTone:I
 
+.field private mNetspeedColor:I
+
+.field private mNetspeedTint:I
+
 .field protected mNetspeedView:Lcom/android/systemui/statusbar/policy/NetspeedView;
+
+.field private mNetworkTraffic:Lcom/android/wubydax/NetworkTraffic;
 
 .field protected mNotificationIconAreaController:Lcom/android/systemui/statusbar/phone/NotificationIconAreaController;
 
@@ -188,7 +194,7 @@
 .end method
 
 .method public constructor <init>(Landroid/content/Context;Landroid/view/View;Landroid/view/View;Lcom/android/systemui/statusbar/phone/PhoneStatusBar;)V
-    .locals 10
+    .locals 11
 
     const v8, 0x7f13019d
 
@@ -402,6 +408,22 @@
     check-cast v2, Lcom/android/systemui/BatteryMeterView;
 
     iput-object v2, p0, Lcom/android/systemui/statusbar/phone/StatusBarIconController;->mBatteryMeterView:Lcom/android/systemui/BatteryMeterView;
+
+    const-string v9, "network_traffic"
+
+    const-string v10, "id"
+
+    invoke-static {v9, v10}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
+
+    invoke-virtual {p2, v2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
+
+    move-result-object v2
+
+    check-cast v2, Lcom/android/wubydax/NetworkTraffic;
+
+    iput-object v2, p0, Lcom/android/systemui/statusbar/phone/StatusBarIconController;->mNetworkTraffic:Lcom/android/wubydax/NetworkTraffic;
 
     invoke-virtual {p3, v4}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -1186,6 +1208,14 @@
 
     iput v0, p0, Lcom/android/systemui/statusbar/phone/StatusBarIconController;->mNotificationIconTint:I
 
+    iget v0, p0, Lcom/android/systemui/statusbar/phone/StatusBarIconController;->mNetspeedColor:I
+
+    invoke-direct {p0, p1, v0}, Lcom/android/systemui/statusbar/phone/StatusBarIconController;->getTintInternal(FI)I
+
+    move-result v0
+
+    iput v0, p0, Lcom/android/systemui/statusbar/phone/StatusBarIconController;->mNetspeedTint:I
+
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/StatusBarIconController;->mNotificationIconAreaController:Lcom/android/systemui/statusbar/phone/NotificationIconAreaController;
 
     iget v1, p0, Lcom/android/systemui/statusbar/phone/StatusBarIconController;->mNotificationIconTint:I
@@ -1694,6 +1724,12 @@
 
     :goto_1
     invoke-virtual {v4, v2}, Lcom/android/systemui/BatteryMeterView;->setDarkIntensity(F)V
+
+    iget-object v2, p0, Lcom/android/systemui/statusbar/phone/StatusBarIconController;->mNetworkTraffic:Lcom/android/wubydax/NetworkTraffic;
+
+    iget v4, p0, Lcom/android/systemui/statusbar/phone/StatusBarIconController;->mDarkIntensity:F
+
+    invoke-virtual {v2, v4}, Lcom/android/wubydax/NetworkTraffic;->setDarkIntensity(F)V
 
     iget-object v2, p0, Lcom/android/systemui/statusbar/phone/StatusBarIconController;->mClock:Lcom/android/systemui/statusbar/policy/Clock;
 
@@ -3136,6 +3172,16 @@
     .locals 0
 
     iput-object p1, p0, Lcom/android/systemui/statusbar/phone/StatusBarIconController;->mKeyguardSignalCluster:Lcom/android/systemui/statusbar/SignalClusterView;
+
+    return-void
+.end method
+
+.method public setNetspeedTint(I)V
+    .locals 0
+
+    iput p1, p0, Lcom/android/systemui/statusbar/phone/StatusBarIconController;->mNetspeedColor:I
+
+    iput p1, p0, Lcom/android/systemui/statusbar/phone/StatusBarIconController;->mNetspeedTint:I
 
     return-void
 .end method

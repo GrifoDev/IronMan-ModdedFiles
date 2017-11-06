@@ -2,6 +2,7 @@
 <com.android.systemui.statusbar.phone.NotificationPanelView android:id="@id/notification_panel" android:background="@android:color/transparent" android:layout_width="fill_parent" android:layout_height="fill_parent"
   xmlns:android="http://schemas.android.com/apk/res/android"
   xmlns:systemui="http://schemas.android.com/apk/res/com.android.systemui">
+    <com.android.systemui.statusbar.phone.PhoneStatusBarBlurImageView android:id="@id/backgroundImageView" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="fill_parent" android:scaleType="centerCrop" />
     <FrameLayout android:id="@id/cover_holder_for_notification" android:background="@android:color/black" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="fill_parent" android:statusBarColor="@android:color/transparent" />
     <ViewStub android:id="@id/keyguard_status_view_stub" android:layout_width="fill_parent" android:layout_height="wrap_content" />
     <ViewStub android:id="@id/keyguard_iris_text_preview_stub" android:layout_width="fill_parent" android:layout_height="wrap_content" />
@@ -30,4 +31,6 @@
             <TextView android:textAppearance="@style/TextAppearance.StatusBar.Expanded.CarrierLabelZVV" android:ellipsize="marquee" android:gravity="center" android:id="@id/text_slot2" android:focusable="false" android:layout_width="wrap_content" android:layout_height="fill_parent" android:scrollHorizontally="true" android:singleLine="false" android:drawableLeft="@drawable/quick_panel_icon_preffered_slot_2" android:drawablePadding="5.0dip" android:marqueeRepeatLimit="marquee_forever" />
         </LinearLayout>
     </LinearLayout>
+    <com.android.systemui.statusbar.policy.BatteryBarController android:visibility="gone" android:layout_width="fill_parent" android:layout_height="1.0dip" systemui:viewLocation="1" />
+    <com.android.systemui.statusbar.policy.BatteryBarController android:layout_gravity="bottom|center" android:id="@id/battbar_no_pulldown_below" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="1.0dip" systemui:viewLocation2="1" />
 </com.android.systemui.statusbar.phone.NotificationPanelView>

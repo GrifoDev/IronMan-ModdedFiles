@@ -395,7 +395,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .locals 10
+    .locals 11
 
     const v7, 0x138e4
 
@@ -541,26 +541,21 @@
 
     sput v0, Lcom/android/systemui/SystemUIRune;->MAX_SIGNAL_LEVEL:I
 
-    const-string/jumbo v0, "LTE"
+    const-string v6, "LTEIcon"
 
-    invoke-static {}, Lcom/samsung/android/feature/SemCscFeature;->getInstance()Lcom/samsung/android/feature/SemCscFeature;
+    const/4 v7, 0x1
 
-    move-result-object v3
+    invoke-static {v6, v7}, Lcom/android/wubydax/GearUtils;->getDbIntForKey(Ljava/lang/String;I)I
 
-    const-string/jumbo v4, "CscFeature_SystemUI_ConfigOverrideDataIcon"
+    move-result v6
 
-    const-string/jumbo v5, ""
+    if-eqz v6, :cond_lg
 
-    invoke-virtual {v3, v4, v5}, Lcom/samsung/android/feature/SemCscFeature;->getString(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    const/4 v6, 0x1
 
-    move-result-object v3
+    sput-boolean v6, Lcom/android/systemui/SystemUIRune;->DISPLAY_LTE_INSTEAD_OF_4G_ICON:Z
 
-    invoke-virtual {v0, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v0
-
-    sput-boolean v0, Lcom/android/systemui/SystemUIRune;->DISPLAY_LTE_INSTEAD_OF_4G_ICON:Z
-
+    :cond_lg
     const-string/jumbo v0, "DCM"
 
     sget-object v3, Lcom/android/systemui/SystemUIRune;->STATUSBAR_ICON_BRANDING:Ljava/lang/String;
@@ -2929,18 +2924,28 @@
 
     sput-boolean v0, Lcom/android/systemui/SystemUIRune;->SUPPORT_FLIGHTMODE_ENABLED_POPUP:Z
 
-    invoke-static {}, Lcom/samsung/android/feature/SemCscFeature;->getInstance()Lcom/samsung/android/feature/SemCscFeature;
+    const/4 v6, 0x1
 
-    move-result-object v0
+    const-string v7, "data_usage_visibility"
 
-    const-string/jumbo v3, "CscFeature_SystemUI_SupportDataUsageViewOnQuickPanel"
+    invoke-static {v7, v6}, Lcom/android/wubydax/GearUtils;->getDbIntForKey(Ljava/lang/String;I)I
 
-    invoke-virtual {v0, v3, v1}, Lcom/samsung/android/feature/SemCscFeature;->getBoolean(Ljava/lang/String;Z)Z
+    move-result v7
 
-    move-result v0
+    if-nez v7, :cond_lg2
+
+    const/4 v0, 0x0
 
     sput-boolean v0, Lcom/android/systemui/SystemUIRune;->SUPPORT_QUICKPANEL_DATAUSAGE:Z
 
+    goto :goto_lg
+
+    :cond_lg2
+    const/4 v0, 0x1
+
+    sput-boolean v0, Lcom/android/systemui/SystemUIRune;->SUPPORT_QUICKPANEL_DATAUSAGE:Z
+
+    :goto_lg
     const-string/jumbo v0, "CTC"
 
     sget-object v3, Lcom/android/systemui/SystemUIRune;->STATUSBAR_ICON_BRANDING:Ljava/lang/String;

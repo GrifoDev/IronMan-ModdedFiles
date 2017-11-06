@@ -2969,4 +2969,6 @@ Try again in 1 second"</string>
     <string name="taskbar_context_menu_clear_notification">Clear</string>
     <string name="taskbar_context_menu_open_desk_notification_view">Show notifications</string>
     <string name="taskbar_context_menu_close_desk_notification_view">Hide notifications</string>
+    <string name="service_background_processes">%1$s free</string>
+    <string name="service_foreground_processes">%1$s used</string>
 </resources>

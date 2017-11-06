@@ -1702,4 +1702,6 @@
     <dimen name="desk_panel_view_notification_bg_radius">6.0px</dimen>
     <dimen name="desk_panal_view_bottom_margin">12.0dip</dimen>
     <dimen name="desk_network_speed_width">74.0dip</dimen>
+    <dimen name="net_traffic_single_text_size">12.0dip</dimen>
+    <dimen name="net_traffic_multi_text_size">9.0dip</dimen>
 </resources>

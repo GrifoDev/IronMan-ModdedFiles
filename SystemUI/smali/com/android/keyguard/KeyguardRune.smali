@@ -165,7 +165,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .locals 6
+    .locals 9
 
     const/4 v2, 0x1
 
@@ -580,6 +580,21 @@
 
     sput v0, Lcom/android/keyguard/KeyguardRune;->CONFIG_STATUSBAR_SIDE_PADDING:I
 
+    const-string v6, "s_eight_style"
+
+    const/4 v7, 0x1
+
+    invoke-static {v6, v7}, Lcom/android/wubydax/GearUtils;->getDbIntForKey(Ljava/lang/String;I)I
+
+    move-result v6
+
+    if-eqz v6, :cond_lg
+
+    const/4 v6, 0x1
+
+    sput-boolean v6, Lcom/android/keyguard/KeyguardRune;->SUPPORT_SERVICEBOX:Z
+
+    :cond_lg
     invoke-static {}, Lcom/samsung/android/feature/SemFloatingFeature;->getInstance()Lcom/samsung/android/feature/SemFloatingFeature;
 
     move-result-object v0
