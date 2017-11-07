@@ -305,7 +305,7 @@
 .end method
 
 .method private refreshViews()V
-    .locals 5
+    .locals 12
 
     const-string/jumbo v0, "LocationControllerImpl"
 
@@ -345,11 +345,11 @@
 
     iget-boolean v0, p0, Lcom/android/systemui/statusbar/policy/LocationControllerImpl;->mAreActiveLocationRequests:Z
 
-    if-eqz v0, :cond_1
+    if-eqz v0, :cond_b
 
     iget-boolean v0, p0, Lcom/android/systemui/statusbar/policy/LocationControllerImpl;->isPaused:Z
 
-    if-nez v0, :cond_0
+    if-nez v0, :cond_a
 
     iget-object v0, p0, Lcom/android/systemui/statusbar/policy/LocationControllerImpl;->mStatusBarManager:Landroid/app/StatusBarManager;
 
@@ -363,24 +363,175 @@
 
     move-result-object v2
 
+    const/4 v7, 0x1
+
+    const-string v8, "switch_location"
+
+    invoke-static {v8, v7}, Lcom/android/wubydax/GearUtils;->getDbIntForKey(Ljava/lang/String;I)I
+
+    move-result v8
+
+    if-eqz v8, :cond_9
+
+    const v9, 0x1
+
+    if-eq v8, v9, :cond_9
+
+    const v9, 0x2
+
+    if-eq v8, v9, :cond_0
+
+    const v9, 0x3
+
+    if-eq v8, v9, :cond_1
+
+    const v9, 0x4
+
+    if-eq v8, v9, :cond_2
+
+    const v9, 0x5
+
+    if-eq v8, v9, :cond_3
+
+    const v9, 0x6
+
+    if-eq v8, v9, :cond_4
+
+    const v9, 0x7
+
+    if-eq v8, v9, :cond_5
+
+    const v9, 0x8
+
+    if-eq v8, v9, :cond_6
+
+    const v9, 0x9
+
+    if-eq v8, v9, :cond_7
+
+    const v9, 0xa
+
+    if-eq v8, v9, :cond_8
+
+    :cond_0
+    const-string v10, "stat_sys_location1"
+
+    const-string v11, "drawable"
+
+    invoke-static {v10, v11}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v3
+
+    goto :goto_0
+
+    :cond_1
+    const-string v10, "stat_sys_location2"
+
+    const-string v11, "drawable"
+
+    invoke-static {v10, v11}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v3
+
+    goto :goto_0
+
+    :cond_2
+    const-string v10, "stat_sys_location3"
+
+    const-string v11, "drawable"
+
+    invoke-static {v10, v11}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v3
+
+    goto :goto_0
+
+    :cond_3
+    const-string v10, "stat_sys_location4"
+
+    const-string v11, "drawable"
+
+    invoke-static {v10, v11}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v3
+
+    goto :goto_0
+
+    :cond_4
+    const-string v10, "stat_sys_location5"
+
+    const-string v11, "drawable"
+
+    invoke-static {v10, v11}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v3
+
+    goto :goto_0
+
+    :cond_5
+    const-string v10, "stat_sys_location6"
+
+    const-string v11, "drawable"
+
+    invoke-static {v10, v11}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v3
+
+    goto :goto_0
+
+    :cond_6
+    const-string v10, "stat_sys_location7"
+
+    const-string v11, "drawable"
+
+    invoke-static {v10, v11}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v3
+
+    goto :goto_0
+
+    :cond_7
+    const-string v10, "stat_sys_location8"
+
+    const-string v11, "drawable"
+
+    invoke-static {v10, v11}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v3
+
+    goto :goto_0
+
+    :cond_8
+    const-string v10, "stat_sys_location9"
+
+    const-string v11, "drawable"
+
+    invoke-static {v10, v11}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v3
+
+    goto :goto_0
+
+    :cond_9
     const v3, 0x7f02066f
 
+    :goto_0
     const/4 v4, 0x0
 
     invoke-virtual {v0, v1, v3, v4, v2}, Landroid/app/StatusBarManager;->setIcon(Ljava/lang/String;IILjava/lang/String;)V
 
-    :cond_0
-    :goto_0
+    :cond_a
+    :goto_1
     return-void
 
-    :cond_1
+    :cond_b
     iget-object v0, p0, Lcom/android/systemui/statusbar/policy/LocationControllerImpl;->mStatusBarManager:Landroid/app/StatusBarManager;
 
     iget-object v1, p0, Lcom/android/systemui/statusbar/policy/LocationControllerImpl;->mSlotLocation:Ljava/lang/String;
 
     invoke-virtual {v0, v1}, Landroid/app/StatusBarManager;->removeIcon(Ljava/lang/String;)V
 
-    goto :goto_0
+    goto :goto_1
 .end method
 
 .method private updateActiveLocationRequests()V

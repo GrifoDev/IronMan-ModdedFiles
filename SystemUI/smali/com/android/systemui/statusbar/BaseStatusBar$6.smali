@@ -322,13 +322,11 @@
 
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/android/systemui/statusbar/BaseStatusBar$6;->this$0:Lcom/android/systemui/statusbar/BaseStatusBar;
+    move-object/from16 v0, p0
 
-    move-object/from16 v21, v0
+    invoke-direct {v0}, Lcom/android/systemui/statusbar/BaseStatusBar$6;->is_allowed_reply_ls()Z
 
-    move-object/from16 v0, v21
-
-    iget-boolean v0, v0, Lcom/android/systemui/statusbar/BaseStatusBar;->mAllowLockscreenRemoteInput:Z
+    move-result v0
 
     move/from16 v21, v0
 
@@ -685,6 +683,35 @@
     const/16 v21, 0x1
 
     return v21
+.end method
+
+.method private is_allowed_reply_ls()Z
+    .locals 6
+
+    iget-object v0, p0, Lcom/android/systemui/statusbar/BaseStatusBar$6;->this$0:Lcom/android/systemui/statusbar/BaseStatusBar;
+
+    iget-object v0, v0, Lcom/android/systemui/statusbar/BaseStatusBar;->mContext:Landroid/content/Context;
+
+    invoke-virtual {v0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
+
+    move-result-object v0
+
+    const-string v1, "lock_screen_allow_remote_input"
+
+    const v2, 0x0
+
+    invoke-static {v0, v1, v2}, Landroid/provider/Settings$System;->getInt(Landroid/content/ContentResolver;Ljava/lang/String;I)I
+
+    move-result v2
+
+    const/4 v3, 0x0
+
+    if-eqz v2, :cond_0
+
+    const/4 v3, 0x1
+
+    :cond_0
+    return v3
 .end method
 
 .method private logActionClick(Landroid/view/View;)V
