@@ -3171,6 +3171,7 @@
     <public type="layout" name="zen_mode_panel" id="0x7f0401d2" />
     <public type="layout" name="keyguard_eca" id="0x7f0401d3" />
     <public type="layout" name="ram" id="0x7f0401d4" />
+    <public type="layout" name="gear_info_item_layout" id="0x7f0401d5" />
     <public type="layout" name="recents_on_tv" id="0x7f040164" />
     <public type="layout" name="recents_tv_card_info_field" id="0x7f04016d" />
     <public type="layout" name="recents_tv_empty" id="0x7f04016e" />
@@ -9415,6 +9416,8 @@
     <public type="array" name="lockscreen_num_pad_klondike" id="0x7f11003b" />
     <public type="array" name="month_name" id="0x7f11003c" />
     <public type="array" name="tile_ids" id="0x7f11003d" />
+    <public type="array" name="device_info_keys" id="0x7f11003e" />
+    <public type="array" name="device_info_titles" id="0x7f11003f" />
     <public type="bool" name="config_isSViewCover2" id="0x7f120000" />
     <public type="bool" name="force_only_clock_page" id="0x7f120001" />
     <public type="bool" name="enable_pbap_pce_profile" id="0x7f120002" />
@@ -10898,6 +10901,11 @@
     <public type="id" name="gif_animation" id="0x7f13058d" />
     <public type="id" name="blur_background_image_view_recents" id="0x7f13058e" />
     <public type="id" name="network_traffic" id="0x7f13058f" />
+    <public type="id" name="left_signal" id="0x7f130590" />
+    <public type="id" name="attrValue" id="0x7f130591" />
+    <public type="id" name="gear_bottom_layout" id="0x7f130592" />
+    <public type="id" name="attrName" id="0x7f130593" />
+    <public type="id" name="clock2" id="0x7f130594" />
     <public type="plurals" name="status_bar_accessibility_recent_apps" id="0x7f140000" />
     <public type="plurals" name="notification_group_overflow_description" id="0x7f140001" />
     <public type="plurals" name="kg_password_wrong_pin_code" id="0x7f140002" />

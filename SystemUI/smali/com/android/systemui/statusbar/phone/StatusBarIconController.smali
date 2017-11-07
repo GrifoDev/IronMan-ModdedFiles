@@ -4,7 +4,6 @@
 
 # interfaces
 .implements Lcom/android/systemui/tuner/TunerService$Tunable;
-.implements Landroid/view/View$OnClickListener;
 
 
 # annotations
@@ -36,11 +35,15 @@
 
 .field protected mBatteryText:Landroid/widget/TextView;
 
-.field private mCenterClock:Lcom/android/systemui/statusbar/policy/Clock;
-
 .field private mClock:Lcom/android/systemui/statusbar/policy/Clock;
 
+.field private mClock2:Lcom/android/systemui/statusbar/policy/Clock;
+
+.field private mClockCenter:Lcom/android/systemui/statusbar/policy/Clock;
+
 .field private mClockColor:I
+
+.field private mClockLeft:Lcom/android/systemui/statusbar/policy/Clock;
 
 .field private mClockTint:I
 
@@ -88,8 +91,6 @@
 .field private mKeyguardSignalCluster:Lcom/android/systemui/statusbar/SignalClusterView;
 
 .field private mKeyguardTwoPhoneModeIcon:Landroid/widget/ImageView;
-
-.field private mLeftClock:Lcom/android/systemui/statusbar/policy/Clock;
 
 .field private mLightModeIconColorSingleTone:I
 
@@ -559,53 +560,36 @@
 
     iput-object v2, p0, Lcom/android/systemui/statusbar/phone/StatusBarIconController;->mClock:Lcom/android/systemui/statusbar/policy/Clock;
 
-    invoke-virtual {p0}, Lcom/android/systemui/statusbar/phone/StatusBarIconController;->getClockTweak()Z
+    const v2, 0x7f130594
 
-    move-result v9
+    invoke-virtual {p2, v2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
-    if-eqz v9, :cond_5
+    move-result-object v2
 
-    invoke-virtual {v2, p0}, Lcom/android/systemui/statusbar/policy/Clock;->setOnClickListener(Landroid/view/View$OnClickListener;)V
+    check-cast v2, Lcom/android/systemui/statusbar/policy/Clock;
 
-    :cond_5
-    const v1, 0x7f13057e
+    iput-object v2, p0, Lcom/android/systemui/statusbar/phone/StatusBarIconController;->mClock2:Lcom/android/systemui/statusbar/policy/Clock;
 
-    invoke-virtual {p2, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
+    const v2, 0x7f13057f
 
-    move-result-object v1
+    invoke-virtual {p2, v2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
-    check-cast v1, Lcom/android/systemui/statusbar/policy/Clock;
+    move-result-object v2
 
-    iput-object v1, p0, Lcom/android/systemui/statusbar/phone/StatusBarIconController;->mCenterClock:Lcom/android/systemui/statusbar/policy/Clock;
+    check-cast v2, Lcom/android/systemui/statusbar/policy/Clock;
 
-    invoke-virtual {p0}, Lcom/android/systemui/statusbar/phone/StatusBarIconController;->getClockTweak()Z
+    iput-object v2, p0, Lcom/android/systemui/statusbar/phone/StatusBarIconController;->mClockLeft:Lcom/android/systemui/statusbar/policy/Clock;
 
-    move-result v9
+    const v2, 0x7f13057e
 
-    if-eqz v9, :cond_6
+    invoke-virtual {p2, v2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
-    invoke-virtual {v1, p0}, Lcom/android/systemui/statusbar/policy/Clock;->setOnClickListener(Landroid/view/View$OnClickListener;)V
+    move-result-object v2
 
-    :cond_6
-    const v1, 0x7f13057f
+    check-cast v2, Lcom/android/systemui/statusbar/policy/Clock;
 
-    invoke-virtual {p2, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
+    iput-object v2, p0, Lcom/android/systemui/statusbar/phone/StatusBarIconController;->mClockCenter:Lcom/android/systemui/statusbar/policy/Clock;
 
-    move-result-object v1
-
-    check-cast v1, Lcom/android/systemui/statusbar/policy/Clock;
-
-    iput-object v1, p0, Lcom/android/systemui/statusbar/phone/StatusBarIconController;->mLeftClock:Lcom/android/systemui/statusbar/policy/Clock;
-
-    invoke-virtual {p0}, Lcom/android/systemui/statusbar/phone/StatusBarIconController;->getClockTweak()Z
-
-    move-result v9
-
-    if-eqz v9, :cond_7
-
-    invoke-virtual {v1, p0}, Lcom/android/systemui/statusbar/policy/Clock;->setOnClickListener(Landroid/view/View$OnClickListener;)V
-
-    :cond_7
     const v2, 0x7f13029d
 
     invoke-virtual {p3, v2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
@@ -618,7 +602,7 @@
 
     sget-boolean v2, Lcom/android/systemui/SystemUIRune;->SUPPORT_REAL_TIME_NETWORK_SPEED:Z
 
-    if-eqz v2, :cond_8
+    if-eqz v2, :cond_5
 
     invoke-virtual {p2, v6}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -636,7 +620,7 @@
 
     iput-object v2, p0, Lcom/android/systemui/statusbar/phone/StatusBarIconController;->mKeyguardNetspeedView:Lcom/android/systemui/statusbar/policy/NetspeedView;
 
-    :cond_8
+    :cond_5
     const v2, 0x7f0b00ea
 
     invoke-virtual {p1, v2}, Landroid/content/Context;->getColor(I)I
@@ -1192,13 +1176,13 @@
 
     iput v0, p0, Lcom/android/systemui/statusbar/phone/StatusBarIconController;->mStatusIconTint:I
 
-    iget v0, p0, Lcom/android/systemui/statusbar/phone/StatusBarIconController;->mPercentColor:I
+    iget v0, p0, Lcom/android/systemui/statusbar/phone/StatusBarIconController;->mNetspeedColor:I
 
     invoke-direct {p0, p1, v0}, Lcom/android/systemui/statusbar/phone/StatusBarIconController;->getTintInternal(FI)I
 
     move-result v0
 
-    iput v0, p0, Lcom/android/systemui/statusbar/phone/StatusBarIconController;->mPercentTint:I
+    iput v0, p0, Lcom/android/systemui/statusbar/phone/StatusBarIconController;->mNetspeedTint:I
 
     iget v0, p0, Lcom/android/systemui/statusbar/phone/StatusBarIconController;->mNotificationIconColor:I
 
@@ -1208,13 +1192,13 @@
 
     iput v0, p0, Lcom/android/systemui/statusbar/phone/StatusBarIconController;->mNotificationIconTint:I
 
-    iget v0, p0, Lcom/android/systemui/statusbar/phone/StatusBarIconController;->mNetspeedColor:I
+    iget v0, p0, Lcom/android/systemui/statusbar/phone/StatusBarIconController;->mPercentColor:I
 
     invoke-direct {p0, p1, v0}, Lcom/android/systemui/statusbar/phone/StatusBarIconController;->getTintInternal(FI)I
 
     move-result v0
 
-    iput v0, p0, Lcom/android/systemui/statusbar/phone/StatusBarIconController;->mNetspeedTint:I
+    iput v0, p0, Lcom/android/systemui/statusbar/phone/StatusBarIconController;->mPercentTint:I
 
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/StatusBarIconController;->mNotificationIconAreaController:Lcom/android/systemui/statusbar/phone/NotificationIconAreaController;
 
@@ -1224,31 +1208,6 @@
 
     invoke-virtual {p0}, Lcom/android/systemui/statusbar/phone/StatusBarIconController;->applyIconTint()V
 
-    return-void
-.end method
-
-.method private startClockActivity()V
-    .locals 3
-
-    iget-object v1, p0, Lcom/android/systemui/statusbar/phone/StatusBarIconController;->mContext:Landroid/content/Context;
-
-    invoke-virtual {v1}, Landroid/content/Context;->getPackageManager()Landroid/content/pm/PackageManager;
-
-    move-result-object v1
-
-    const-string v2, "com.sec.android.app.clockpackage"
-
-    invoke-virtual {v1, v2}, Landroid/content/pm/PackageManager;->getLaunchIntentForPackage(Ljava/lang/String;)Landroid/content/Intent;
-
-    move-result-object v0
-
-    if-eqz v0, :cond_0
-
-    iget-object v1, p0, Lcom/android/systemui/statusbar/phone/StatusBarIconController;->mContext:Landroid/content/Context;
-
-    invoke-virtual {v1, v0}, Landroid/content/Context;->startActivity(Landroid/content/Intent;)V
-
-    :cond_0
     return-void
 .end method
 
@@ -1654,9 +1613,7 @@
 .end method
 
 .method protected applyIconTint()V
-    .locals 8
-
-    invoke-virtual {p0}, Lcom/android/systemui/statusbar/phone/StatusBarIconController;->updateClockPosition()V
+    .locals 7
 
     const/4 v3, 0x0
 
@@ -1718,7 +1675,7 @@
 
     move-result v2
 
-    if-eqz v2, :cond_6
+    if-eqz v2, :cond_3
 
     iget v2, p0, Lcom/android/systemui/statusbar/phone/StatusBarIconController;->mDarkIntensity:F
 
@@ -1745,11 +1702,11 @@
 
     invoke-virtual {v2, v4}, Lcom/android/systemui/statusbar/policy/Clock;->setTextColor(I)V
 
-    iget-object v2, p0, Lcom/android/systemui/statusbar/phone/StatusBarIconController;->mCenterClock:Lcom/android/systemui/statusbar/policy/Clock;
+    iget-object v2, p0, Lcom/android/systemui/statusbar/phone/StatusBarIconController;->mClock2:Lcom/android/systemui/statusbar/policy/Clock;
 
     iget-object v4, p0, Lcom/android/systemui/statusbar/phone/StatusBarIconController;->mTintArea:Landroid/graphics/Rect;
 
-    iget-object v5, p0, Lcom/android/systemui/statusbar/phone/StatusBarIconController;->mCenterClock:Lcom/android/systemui/statusbar/policy/Clock;
+    iget-object v5, p0, Lcom/android/systemui/statusbar/phone/StatusBarIconController;->mClock2:Lcom/android/systemui/statusbar/policy/Clock;
 
     iget v6, p0, Lcom/android/systemui/statusbar/phone/StatusBarIconController;->mClockTint:I
 
@@ -1757,16 +1714,13 @@
 
     move-result v4
 
-    if-eqz v2, :cond_1
-
     invoke-virtual {v2, v4}, Lcom/android/systemui/statusbar/policy/Clock;->setTextColor(I)V
 
-    :cond_1
-    iget-object v2, p0, Lcom/android/systemui/statusbar/phone/StatusBarIconController;->mLeftClock:Lcom/android/systemui/statusbar/policy/Clock;
+    iget-object v2, p0, Lcom/android/systemui/statusbar/phone/StatusBarIconController;->mClockLeft:Lcom/android/systemui/statusbar/policy/Clock;
 
     iget-object v4, p0, Lcom/android/systemui/statusbar/phone/StatusBarIconController;->mTintArea:Landroid/graphics/Rect;
 
-    iget-object v5, p0, Lcom/android/systemui/statusbar/phone/StatusBarIconController;->mLeftClock:Lcom/android/systemui/statusbar/policy/Clock;
+    iget-object v5, p0, Lcom/android/systemui/statusbar/phone/StatusBarIconController;->mClockLeft:Lcom/android/systemui/statusbar/policy/Clock;
 
     iget v6, p0, Lcom/android/systemui/statusbar/phone/StatusBarIconController;->mClockTint:I
 
@@ -1774,37 +1728,45 @@
 
     move-result v4
 
-    if-eqz v2, :cond_2
+    invoke-virtual {v2, v4}, Lcom/android/systemui/statusbar/policy/Clock;->setTextColor(I)V
+
+    iget-object v2, p0, Lcom/android/systemui/statusbar/phone/StatusBarIconController;->mClockCenter:Lcom/android/systemui/statusbar/policy/Clock;
+
+    iget-object v4, p0, Lcom/android/systemui/statusbar/phone/StatusBarIconController;->mTintArea:Landroid/graphics/Rect;
+
+    iget-object v5, p0, Lcom/android/systemui/statusbar/phone/StatusBarIconController;->mClockCenter:Lcom/android/systemui/statusbar/policy/Clock;
+
+    iget v6, p0, Lcom/android/systemui/statusbar/phone/StatusBarIconController;->mClockTint:I
+
+    invoke-static {v4, v5, v6}, Lcom/android/systemui/statusbar/phone/StatusBarIconController;->getTint(Landroid/graphics/Rect;Landroid/view/View;I)I
+
+    move-result v4
 
     invoke-virtual {v2, v4}, Lcom/android/systemui/statusbar/policy/Clock;->setTextColor(I)V
 
-    :cond_2
     iget-object v2, p0, Lcom/android/systemui/statusbar/phone/StatusBarIconController;->mKeyguardClock:Lcom/android/systemui/statusbar/policy/Clock;
 
     iget-object v4, p0, Lcom/android/systemui/statusbar/phone/StatusBarIconController;->mTintArea:Landroid/graphics/Rect;
 
     iget-object v5, p0, Lcom/android/systemui/statusbar/phone/StatusBarIconController;->mKeyguardClock:Lcom/android/systemui/statusbar/policy/Clock;
 
-    iget v6, p0, Lcom/android/systemui/statusbar/phone/StatusBarIconController;->mIconTint:I
+    iget v6, p0, Lcom/android/systemui/statusbar/phone/StatusBarIconController;->mClockTint:I
 
     invoke-static {v4, v5, v6}, Lcom/android/systemui/statusbar/phone/StatusBarIconController;->getTint(Landroid/graphics/Rect;Landroid/view/View;I)I
 
     move-result v4
 
-    if-eqz v2, :cond_3
-
     invoke-virtual {v2, v4}, Lcom/android/systemui/statusbar/policy/Clock;->setTextColor(I)V
 
-    :cond_3
     sget-boolean v2, Lcom/android/systemui/SystemUIRune;->SUPPORT_SEC_BATTERY_GUI:Z
 
-    if-eqz v2, :cond_4
+    if-eqz v2, :cond_1
 
     iget v2, p0, Lcom/android/systemui/statusbar/phone/StatusBarIconController;->mDarkIntensity:F
 
     invoke-direct {p0, v2}, Lcom/android/systemui/statusbar/phone/StatusBarIconController;->setBatteryViewAlpha(F)V
 
-    :cond_4
+    :cond_1
     iget-object v2, p0, Lcom/android/systemui/statusbar/phone/StatusBarIconController;->mBatteryText:Landroid/widget/TextView;
 
     iget-object v4, p0, Lcom/android/systemui/statusbar/phone/StatusBarIconController;->mTintArea:Landroid/graphics/Rect;
@@ -1835,11 +1797,11 @@
 
     sget-boolean v2, Lcom/android/systemui/SystemUIRune;->SUPPORT_TWO_PHONE:Z
 
-    if-eqz v2, :cond_5
+    if-eqz v2, :cond_2
 
     iget-object v2, p0, Lcom/android/systemui/statusbar/phone/StatusBarIconController;->mTwoPhoneModeIcon:Landroid/widget/ImageView;
 
-    if-eqz v2, :cond_5
+    if-eqz v2, :cond_2
 
     iget-object v2, p0, Lcom/android/systemui/statusbar/phone/StatusBarIconController;->mTwoPhoneModeIcon:Landroid/widget/ImageView;
 
@@ -1851,7 +1813,7 @@
 
     invoke-virtual {v2, v4}, Landroid/widget/ImageView;->setImageTintList(Landroid/content/res/ColorStateList;)V
 
-    :cond_5
+    :cond_2
     const/4 v0, 0x0
 
     :goto_2
@@ -1861,7 +1823,7 @@
 
     move-result v2
 
-    if-ge v0, v2, :cond_7
+    if-ge v0, v2, :cond_4
 
     iget-object v2, p0, Lcom/android/systemui/statusbar/phone/StatusBarIconController;->mStatusIconsKeyguard:Landroid/widget/LinearLayout;
 
@@ -1889,12 +1851,12 @@
 
     goto :goto_2
 
-    :cond_6
+    :cond_3
     move v2, v3
 
     goto/16 :goto_1
 
-    :cond_7
+    :cond_4
     iget-object v2, p0, Lcom/android/systemui/statusbar/phone/StatusBarIconController;->mKeyguardSignalCluster:Lcom/android/systemui/statusbar/SignalClusterView;
 
     iget v4, p0, Lcom/android/systemui/statusbar/phone/StatusBarIconController;->mIconTint:I
@@ -1915,11 +1877,11 @@
 
     move-result v4
 
-    if-eqz v4, :cond_8
+    if-eqz v4, :cond_5
 
     iget v3, p0, Lcom/android/systemui/statusbar/phone/StatusBarIconController;->mDarkIntensity:F
 
-    :cond_8
+    :cond_5
     invoke-virtual {v2, v3}, Lcom/android/systemui/BatteryMeterView;->setDarkIntensity(F)V
 
     iget-object v2, p0, Lcom/android/systemui/statusbar/phone/StatusBarIconController;->mKeyguardCarrierText:Landroid/widget/TextView;
@@ -1936,7 +1898,7 @@
 
     move-result v2
 
-    if-nez v2, :cond_9
+    if-nez v2, :cond_6
 
     const-string/jumbo v2, "BOTH"
 
@@ -1946,12 +1908,12 @@
 
     move-result v2
 
-    if-eqz v2, :cond_a
+    if-eqz v2, :cond_7
 
-    :cond_9
+    :cond_6
     iget-object v2, p0, Lcom/android/systemui/statusbar/phone/StatusBarIconController;->mKeyguardOperatorLogoView:Landroid/widget/ImageView;
 
-    if-eqz v2, :cond_a
+    if-eqz v2, :cond_7
 
     iget-object v2, p0, Lcom/android/systemui/statusbar/phone/StatusBarIconController;->mKeyguardOperatorLogoView:Landroid/widget/ImageView;
 
@@ -1963,14 +1925,14 @@
 
     invoke-virtual {v2, v3}, Landroid/widget/ImageView;->setImageTintList(Landroid/content/res/ColorStateList;)V
 
-    :cond_a
+    :cond_7
     sget-boolean v2, Lcom/android/systemui/SystemUIRune;->SUPPORT_TWO_PHONE:Z
 
-    if-eqz v2, :cond_b
+    if-eqz v2, :cond_8
 
     iget-object v2, p0, Lcom/android/systemui/statusbar/phone/StatusBarIconController;->mKeyguardTwoPhoneModeIcon:Landroid/widget/ImageView;
 
-    if-eqz v2, :cond_b
+    if-eqz v2, :cond_8
 
     iget-object v2, p0, Lcom/android/systemui/statusbar/phone/StatusBarIconController;->mKeyguardTwoPhoneModeIcon:Landroid/widget/ImageView;
 
@@ -1982,32 +1944,32 @@
 
     invoke-virtual {v2, v3}, Landroid/widget/ImageView;->setImageTintList(Landroid/content/res/ColorStateList;)V
 
-    :cond_b
+    :cond_8
     sget-boolean v2, Lcom/android/systemui/SystemUIRune;->SUPPORT_REAL_TIME_NETWORK_SPEED:Z
 
-    if-eqz v2, :cond_c
+    if-eqz v2, :cond_9
 
     iget-object v2, p0, Lcom/android/systemui/statusbar/phone/StatusBarIconController;->mNetspeedView:Lcom/android/systemui/statusbar/policy/NetspeedView;
 
-    if-eqz v2, :cond_c
+    if-eqz v2, :cond_9
 
     iget-object v2, p0, Lcom/android/systemui/statusbar/phone/StatusBarIconController;->mKeyguardNetspeedView:Lcom/android/systemui/statusbar/policy/NetspeedView;
 
-    if-eqz v2, :cond_c
+    if-eqz v2, :cond_9
 
     iget-object v2, p0, Lcom/android/systemui/statusbar/phone/StatusBarIconController;->mNetspeedView:Lcom/android/systemui/statusbar/policy/NetspeedView;
 
-    iget v3, p0, Lcom/android/systemui/statusbar/phone/StatusBarIconController;->mIconTint:I
+    iget v3, p0, Lcom/android/systemui/statusbar/phone/StatusBarIconController;->mNetspeedTint:I
 
     invoke-virtual {v2, v3}, Lcom/android/systemui/statusbar/policy/NetspeedView;->setTextColor(I)V
 
     iget-object v2, p0, Lcom/android/systemui/statusbar/phone/StatusBarIconController;->mKeyguardNetspeedView:Lcom/android/systemui/statusbar/policy/NetspeedView;
 
-    iget v3, p0, Lcom/android/systemui/statusbar/phone/StatusBarIconController;->mIconTint:I
+    iget v3, p0, Lcom/android/systemui/statusbar/phone/StatusBarIconController;->mNetspeedTint:I
 
     invoke-virtual {v2, v3}, Lcom/android/systemui/statusbar/policy/NetspeedView;->setTextColor(I)V
 
-    :cond_c
+    :cond_9
     return-void
 .end method
 
@@ -2280,26 +2242,6 @@
     return-void
 .end method
 
-.method public getClockTweak()Z
-    .locals 3
-
-    iget-object v0, p0, Lcom/android/systemui/statusbar/phone/StatusBarIconController;->mContext:Landroid/content/Context;
-
-    invoke-virtual {v0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
-
-    move-result-object v0
-
-    const-string/jumbo v1, "clock_onclick"
-
-    const/4 v2, 0x0
-
-    invoke-static {v0, v1, v2}, Landroid/provider/Settings$System;->getInt(Landroid/content/ContentResolver;Ljava/lang/String;I)I
-
-    move-result v0
-
-    return v0
-.end method
-
 .method protected handleSet(ILcom/android/internal/statusbar/StatusBarIcon;)V
     .locals 3
 
@@ -2409,14 +2351,6 @@
     move-result v0
 
     iput v0, p0, Lcom/android/systemui/statusbar/phone/StatusBarIconController;->mIconHPadding:I
-
-    return-void
-.end method
-
-.method public onClick(Landroid/view/View;)V
-    .locals 2
-
-    invoke-direct {p0}, Lcom/android/systemui/statusbar/phone/StatusBarIconController;->startClockActivity()V
 
     return-void
 .end method
@@ -3444,139 +3378,6 @@
     invoke-virtual {v0, v2}, Landroid/widget/TextView;->setVisibility(I)V
 
     goto :goto_0
-.end method
-
-.method updateClockPosition()V
-    .locals 7
-
-    iget-object v0, p0, Lcom/android/systemui/statusbar/phone/StatusBarIconController;->mContext:Landroid/content/Context;
-
-    invoke-virtual {v0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
-
-    move-result-object v0
-
-    const-string/jumbo v1, "clock_position"
-
-    const/4 v2, 0x0
-
-    invoke-static {v0, v1, v2}, Landroid/provider/Settings$System;->getInt(Landroid/content/ContentResolver;Ljava/lang/String;I)I
-
-    move-result v2
-
-    const/4 v3, 0x1
-
-    const/4 v4, 0x2
-
-    const/4 v5, 0x3
-
-    const/4 v6, 0x0
-
-    const/16 v1, 0x8
-
-    if-eqz v2, :cond_c
-
-    if-eq v2, v3, :cond_0
-
-    if-eq v2, v4, :cond_4
-
-    if-eq v2, v5, :cond_8
-
-    :cond_0
-    iget-object v0, p0, Lcom/android/systemui/statusbar/phone/StatusBarIconController;->mClock:Lcom/android/systemui/statusbar/policy/Clock;
-
-    if-eqz v0, :cond_1
-
-    invoke-virtual {v0, v1}, Landroid/widget/TextView;->setVisibility(I)V
-
-    :cond_1
-    iget-object v0, p0, Lcom/android/systemui/statusbar/phone/StatusBarIconController;->mCenterClock:Lcom/android/systemui/statusbar/policy/Clock;
-
-    if-eqz v0, :cond_2
-
-    invoke-virtual {v0, v6}, Landroid/widget/TextView;->setVisibility(I)V
-
-    :cond_2
-    iget-object v0, p0, Lcom/android/systemui/statusbar/phone/StatusBarIconController;->mLeftClock:Lcom/android/systemui/statusbar/policy/Clock;
-
-    if-eqz v0, :cond_3
-
-    invoke-virtual {v0, v1}, Landroid/widget/TextView;->setVisibility(I)V
-
-    :cond_3
-    goto :goto_0
-
-    :cond_4
-    iget-object v0, p0, Lcom/android/systemui/statusbar/phone/StatusBarIconController;->mClock:Lcom/android/systemui/statusbar/policy/Clock;
-
-    if-eqz v0, :cond_5
-
-    invoke-virtual {v0, v1}, Landroid/widget/TextView;->setVisibility(I)V
-
-    :cond_5
-    iget-object v0, p0, Lcom/android/systemui/statusbar/phone/StatusBarIconController;->mCenterClock:Lcom/android/systemui/statusbar/policy/Clock;
-
-    if-eqz v0, :cond_6
-
-    invoke-virtual {v0, v1}, Landroid/widget/TextView;->setVisibility(I)V
-
-    :cond_6
-    iget-object v0, p0, Lcom/android/systemui/statusbar/phone/StatusBarIconController;->mLeftClock:Lcom/android/systemui/statusbar/policy/Clock;
-
-    if-eqz v0, :cond_7
-
-    invoke-virtual {v0, v6}, Landroid/widget/TextView;->setVisibility(I)V
-
-    :cond_7
-    goto :goto_0
-
-    :cond_8
-    iget-object v0, p0, Lcom/android/systemui/statusbar/phone/StatusBarIconController;->mClock:Lcom/android/systemui/statusbar/policy/Clock;
-
-    if-eqz v0, :cond_9
-
-    invoke-virtual {v0, v1}, Landroid/widget/TextView;->setVisibility(I)V
-
-    :cond_9
-    iget-object v0, p0, Lcom/android/systemui/statusbar/phone/StatusBarIconController;->mCenterClock:Lcom/android/systemui/statusbar/policy/Clock;
-
-    if-eqz v0, :cond_a
-
-    invoke-virtual {v0, v1}, Landroid/widget/TextView;->setVisibility(I)V
-
-    :cond_a
-    iget-object v0, p0, Lcom/android/systemui/statusbar/phone/StatusBarIconController;->mLeftClock:Lcom/android/systemui/statusbar/policy/Clock;
-
-    if-eqz v0, :cond_b
-
-    invoke-virtual {v0, v1}, Landroid/widget/TextView;->setVisibility(I)V
-
-    :cond_b
-    goto :goto_0
-
-    :cond_c
-    iget-object v0, p0, Lcom/android/systemui/statusbar/phone/StatusBarIconController;->mClock:Lcom/android/systemui/statusbar/policy/Clock;
-
-    if-eqz v0, :cond_d
-
-    invoke-virtual {v0, v6}, Landroid/widget/TextView;->setVisibility(I)V
-
-    :cond_d
-    iget-object v0, p0, Lcom/android/systemui/statusbar/phone/StatusBarIconController;->mCenterClock:Lcom/android/systemui/statusbar/policy/Clock;
-
-    if-eqz v0, :cond_e
-
-    invoke-virtual {v0, v1}, Landroid/widget/TextView;->setVisibility(I)V
-
-    :cond_e
-    iget-object v0, p0, Lcom/android/systemui/statusbar/phone/StatusBarIconController;->mLeftClock:Lcom/android/systemui/statusbar/policy/Clock;
-
-    if-eqz v0, :cond_f
-
-    invoke-virtual {v0, v1}, Landroid/widget/TextView;->setVisibility(I)V
-
-    :cond_f
-    :goto_0
-    return-void
 .end method
 
 .method public updateNetspeedViewVisibility(Z)V
