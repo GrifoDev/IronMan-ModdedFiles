@@ -1369,4 +1369,7 @@
     <item type="id" name="gif_animation">false</item>
     <item type="id" name="blur_background_image_view_recents">false</item>
     <item type="id" name="network_traffic">false</item>
+    <item type="id" name="attrValue">false</item>
+    <item type="id" name="gear_bottom_layout">false</item>
+    <item type="id" name="attrName">false</item>
 </resources>
