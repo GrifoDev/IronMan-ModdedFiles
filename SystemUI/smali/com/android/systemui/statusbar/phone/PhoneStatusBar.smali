@@ -23104,7 +23104,7 @@
     invoke-virtual {p0}, Lcom/android/systemui/statusbar/phone/PhoneStatusBar;->reloadNotifs()V
 
     :cond_1c
-    const-string v0, "allow_transparent_notifications"
+    const-string v0, "notification_transparency"
 
     invoke-virtual {v0, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
@@ -25485,7 +25485,7 @@
 
     invoke-virtual {v3, v4}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    const-string v4, "allow_transparent_notifications"
+    const-string v4, "notification_transparency"
 
     invoke-virtual {v3, v4}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
@@ -27872,7 +27872,7 @@
 
     sput v2, Lcom/android/systemui/statusbar/phone/PhoneStatusBar;->mNotifBackgroundColor:I
 
-    const-string v1, "allow_transparent_notifications"
+    const-string v1, "notification_transparency"
 
     const/4 v2, 0x0
 
