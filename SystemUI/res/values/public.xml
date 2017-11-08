@@ -2049,6 +2049,7 @@
     <public type="drawable" name="stat_sys_signal_4_7_auto_rotate" id="0x7f020924" />
     <public type="drawable" name="stat_sys_signal_4_8_auto_rotate" id="0x7f020926" />
     <public type="drawable" name="stat_sys_signal_4_9_auto_rotate" id="0x7f020928" />
+    <public type="drawable" name="abstract2" id="0x7f02096b" />
     <public type="drawable" name="search_panel_scrim" id="0x7f0205e9" />
     <public type="drawable" name="recents_help_lock_task" id="0x7f0204b6" />
     <public type="drawable" name="recents_help_longpress" id="0x7f0204b8" />
