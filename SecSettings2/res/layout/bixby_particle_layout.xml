@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout android:id="@id/particle_full_layout" android:layout_width="wrap_content" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <com.samsung.android.settings.vzwsetupwizardbixby.bixby.hq.vi.BixbyUserSayingView android:layout_gravity="center" android:id="@id/listening_view" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+    <ImageView android:layout_gravity="center" android:id="@id/logo_intro_view" android:layout_width="48.0dip" android:layout_height="48.0dip" />
+    <com.samsung.android.settings.vzwsetupwizardbixby.bixby.hq.ParticleView android:layout_gravity="center" android:id="@id/particle_view" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+    <ImageView android:layout_gravity="center" android:id="@id/light_view" android:layout_width="48.0dip" android:layout_height="48.0dip" android:alpha="0.0" />
+    <FrameLayout android:layout_gravity="center" android:id="@id/logo_process_layout" android:layout_width="48.0dip" android:layout_height="48.0dip">
+        <ImageView android:layout_gravity="center" android:id="@id/logo_process_bg" android:layout_width="fill_parent" android:layout_height="fill_parent" android:src="@drawable/bixby_circle_white" />
+        <ImageView android:layout_gravity="center" android:id="@id/logo_process_view" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+    </FrameLayout>
+    <View android:layout_gravity="center" android:clickable="false" android:layout_width="48.0dip" android:layout_height="48.0dip" />
+</FrameLayout>

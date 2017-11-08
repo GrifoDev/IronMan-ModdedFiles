@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout android:id="@id/particle_full_layout" android:layout_width="wrap_content" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <com.samsung.android.settings.face.bixbysetupwizard.BixbyUserSayingView android:layout_gravity="center" android:id="@id/listening_view" android:layout_width="@dimen/facelock_bixby_setupwizard_icon_view_area" android:layout_height="@dimen/facelock_bixby_setupwizard_icon_view_area" />
+    <com.samsung.android.settings.face.bixbysetupwizard.BixbyIconView android:id="@id/bixby_icon_view" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+    <FrameLayout android:layout_gravity="center" android:id="@id/logo_process_layout" android:layout_width="@dimen/facelock_bixby_setupwizard_icon_view_framelayout_width" android:layout_height="@dimen/facelock_bixby_setupwizard_icon_view_framelayout_height">
+        <ImageView android:layout_gravity="center" android:id="@id/logo_process_bg" android:layout_width="fill_parent" android:layout_height="fill_parent" android:src="@drawable/circle_white" />
+        <ImageView android:layout_gravity="center" android:id="@id/logo_process_view" android:layout_width="@dimen/facelock_bixby_setupwizard_log_image_width" android:layout_height="@dimen/facelock_bixby_setupwizard_log_image_height" />
+    </FrameLayout>
+</FrameLayout>

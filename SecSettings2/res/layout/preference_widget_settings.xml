@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:gravity="center_vertical" android:layout_width="wrap_content" android:layout_height="wrap_content" android:paddingEnd="?android:scrollbarSize"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <View android:layout_gravity="center_vertical" android:id="@id/preference_divider" android:background="@color/list_divider_color" android:visibility="gone" android:layout_width="@dimen/list_divider_height" android:layout_height="@dimen/list_divider_vertical_height" android:layout_marginStart="@dimen/list_divider_padding" android:layout_marginEnd="@dimen/list_divider_padding" />
+    <ImageView android:layout_gravity="center_vertical" android:id="@id/settings_button" android:background="@drawable/dashboard_favorite_view_bg" android:layout_width="wrap_content" android:layout_height="wrap_content" android:contentDescription="@string/settings_button" style="@style/list_item_config_icon" />
+</LinearLayout>
