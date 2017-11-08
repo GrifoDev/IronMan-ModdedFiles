@@ -1373,5 +1373,7 @@
     <item type="id" name="attrValue">false</item>
     <item type="id" name="gear_bottom_layout">false</item>
     <item type="id" name="attrName">false</item>
+    <item type="id" name="killer_mem_info">false</item>
+    <item type="id" name="killer_clean_button">false</item>
     <item type="id" name="clock2">false</item>
 </resources>
