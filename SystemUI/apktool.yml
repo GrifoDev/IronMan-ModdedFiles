@@ -3,7 +3,6 @@ apkFileName: SystemUI.apk
 compressionType: false
 doNotCompress:
 - arsc
-- META-INF/maven/com.google.code.gson/gson/pom.properties
 - qmg
 - webp
 isFrameworkApk: false
