@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:id="@id/agif_recommend_list" android:background="@color/agif_button_bg_color" android:paddingTop="@dimen/agif_recommend_padding_top" android:paddingBottom="@dimen/agif_recommend_padding_bottom" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_marginStart="@dimen/agif_contents_padding" android:layout_marginEnd="@dimen/agif_contents_padding"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <com.android.incallui.agif.AgifGridView android:id="@id/agif_recommend_view" android:layout_width="fill_parent" android:layout_height="wrap_content" android:horizontalSpacing="@dimen/agif_contents_padding" android:verticalSpacing="@dimen/agif_contents_padding" android:stretchMode="columnWidth" android:numColumns="3" android:layout_alignParentTop="true" />
+    <com.android.incallui.widget.SecMoreButton android:id="@id/find_more" android:focusable="true" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="@dimen/agif_recommend_botton_height" android:minWidth="0.0dip" android:text="@string/agif_pickers_more" android:layout_alignParentBottom="true" android:layout_alignParentEnd="true" style="@style/AgifFindMoreText" />
+</RelativeLayout>

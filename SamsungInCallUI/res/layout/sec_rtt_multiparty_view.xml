@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:id="@id/rtt_view" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_marginBottom="@dimen/rtt_view_margin_bottom"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:id="@id/indicator_area" android:background="@color/rtt_container_bg" android:layout_width="fill_parent" android:layout_height="@dimen/indicator_area_height" />
+    <LinearLayout android:id="@id/topmargin_area" android:background="@color/rtt_container_bg" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="@dimen/sec_dialpad_container_margin_top" android:layout_below="@id/indicator_area" />
+    <LinearLayout android:orientation="vertical" android:id="@id/rtt_container" android:background="@color/rtt_container_bg" android:layout_width="fill_parent" android:layout_height="@dimen/rtt_callcard_view_height" android:layout_below="@id/topmargin_area" android:paddingStart="@dimen/rtt_callcard_view_paddingStart">
+        <RelativeLayout android:id="@id/menu_container" android:layout_width="fill_parent" android:layout_height="wrap_content">
+            <RelativeLayout android:layout_width="fill_parent" android:layout_height="wrap_content" android:layoutDirection="locale" android:paddingEnd="@dimen/sec_menu_button_view_margin_right_tablet">
+                <LinearLayout android:id="@id/onScreenMenuContainer" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_alignParentEnd="true">
+                    <com.android.incallui.widget.SecMenuImageButton android:id="@id/onScreenMenuIcon" android:visibility="gone" android:tint="@color/sec_dialpad_menu_icon_color" android:contentDescription="@string/onscreenOverflowText" style="@style/SecVoiceMenuIcon" />
+                </LinearLayout>
+                <View android:id="@id/onScreenMenuBtnView" android:layout_width="0.0dip" android:layout_height="0.0dip" android:layout_marginTop="@dimen/sec_menu_button_view_margin_top" android:layout_marginEnd="@dimen/sec_menu_button_view_margin_right" android:layout_alignParentEnd="true" />
+            </RelativeLayout>
+            <ImageView android:gravity="center_vertical" android:id="@id/HdWifiIcon" android:layout_width="wrap_content" android:layout_height="@dimen/sec_call_state_layout_height" android:src="@drawable/call_hd_voice" android:layout_centerVertical="true" android:paddingEnd="@dimen/rtt_hdwifi_icon_paddingEnd" />
+            <RelativeLayout android:id="@id/elapsedTime_container" android:clipChildren="false" android:clipToPadding="false" android:layout_width="wrap_content" android:layout_height="@dimen/sec_call_state_layout_height" android:layout_marginTop="@dimen/sec_call_state_layout_margin_top" android:layout_centerVertical="true" android:layoutDirection="locale" android:layout_toEndOf="@id/HdWifiIcon">
+                <TextView android:textSize="@dimen/sec_call_elapsed_time_text_size" android:textColor="@color/sec_dialpad_elapsed_time_text_color" android:id="@id/elapsedTime" android:focusable="true" android:visibility="visible" android:layout_width="wrap_content" android:layout_height="wrap_content" android:maxLines="1" android:layout_centerVertical="true" android:fontFamily="sans-serif" android:layoutDirection="locale" />
+                <TextView android:textSize="@dimen/sec_call_elapsed_time_text_size" android:textStyle="bold" android:textColor="@color/rtt_msg_text_color" android:layout_gravity="center_vertical" android:id="@id/name" android:layout_width="wrap_content" android:layout_height="wrap_content" android:maxWidth="@dimen/sec_primary_call_name_maxwidth" android:singleLine="true" android:layout_centerVertical="true" android:fontFamily="sans-serif" android:paddingStart="@dimen/rtt_name_paddingStart" android:layout_toEndOf="@id/elapsedTime" />
+            </RelativeLayout>
+        </RelativeLayout>
+    </LinearLayout>
+    <View android:layout_marginStart="0.0dip" android:layout_marginEnd="0.0dip" style="@style/SecDialpadHorizontalDividerStyle" />
+    <LinearLayout android:id="@id/rtt_secondary_container" android:background="@color/rtt_container_bg" android:layout_width="fill_parent" android:layout_height="50.0dip" android:paddingStart="@dimen/rtt_callcard_view_paddingStart">
+        <RelativeLayout android:layout_width="wrap_content" android:layout_height="fill_parent">
+            <RelativeLayout android:id="@id/Secondarymenu_container" android:background="@color/rtt_container_bg" android:layout_width="wrap_content" android:layout_height="@dimen/rtt_callcard_view_height" android:layout_centerVertical="true">
+                <RelativeLayout android:id="@id/SecondaryHDiconcontainer" android:layout_width="wrap_content" android:layout_height="fill_parent">
+                    <ImageView android:gravity="center_vertical" android:id="@id/secondaryHdWifiIcon" android:layout_width="wrap_content" android:layout_height="@dimen/sec_call_state_layout_height" android:src="@drawable/call_hd_voice" android:layout_centerVertical="true" android:paddingEnd="@dimen/rtt_hdwifi_icon_paddingEnd" />
+                </RelativeLayout>
+                <RelativeLayout android:id="@id/secondarynamecontainer" android:clipChildren="false" android:clipToPadding="false" android:layout_width="wrap_content" android:layout_height="@dimen/sec_call_state_layout_height" android:layout_marginTop="@dimen/sec_call_state_layout_margin_top" android:layout_centerVertical="true" android:layoutDirection="locale" android:layout_toEndOf="@id/SecondaryHDiconcontainer">
+                    <TextView android:textSize="@dimen/sec_multiparty_call_label_text_size" android:textColor="@color/sec_dialpad_elapsed_time_text_color" android:id="@id/secondaryLabel" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/onHold" android:importantForAccessibility="no" android:fontFamily="sans-serif" android:textDirection="ltr" />
+                    <TextView android:textSize="@dimen/sec_call_elapsed_time_text_size" android:textStyle="bold" android:textColor="@color/rtt_msg_text_color" android:layout_gravity="center_vertical" android:id="@id/secondaryname" android:layout_width="wrap_content" android:layout_height="wrap_content" android:maxWidth="@dimen/sec_primary_call_name_maxwidth" android:singleLine="true" android:layout_centerVertical="true" android:fontFamily="sans-serif" android:paddingStart="@dimen/rtt_name_paddingStart" android:layout_toEndOf="@id/secondaryLabel" />
+                </RelativeLayout>
+            </RelativeLayout>
+            <RelativeLayout android:layout_width="wrap_content" android:layout_height="wrap_content" android:paddingEnd="@dimen/rtt_multiparty_button_paddingEnd" android:layout_toEndOf="@id/Secondarymenu_container">
+                <LinearLayout android:background="@drawable/sec_voicecall_mask_bg" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_centerVertical="true" android:layout_alignParentEnd="true">
+                    <com.android.incallui.widget.SecVoiceConferenceButton android:enabled="false" android:id="@id/rttmergeButton" android:text="@string/secOnscreenMergeText" android:drawableTop="@drawable/rtt_multiparty_btn_merge_icon" android:contentDescription="@string/secOnscreenMergeText" style="@style/SecMultipartyRttButton" />
+                    <com.android.incallui.widget.SecVoiceConferenceButton android:id="@id/rttswapButton" android:text="@string/secOnscreenSwapText" android:drawableTop="@drawable/rtt_multiparty_btn_swap_icon" android:contentDescription="@string/secOnscreenSwapText" android:layout_marginStart="@dimen/sec_call_merge_button_right_margin" style="@style/SecMultipartyRttButton" />
+                </LinearLayout>
+            </RelativeLayout>
+        </RelativeLayout>
+    </LinearLayout>
+    <View android:layout_marginStart="0.0dip" android:layout_marginEnd="0.0dip" style="@style/SecDialpadHorizontalDividerStyle" />
+    <include layout="@layout/sec_rttchat_view" />
+    <View android:layout_marginStart="0.0dip" android:layout_marginEnd="0.0dip" style="@style/SecDialpadHorizontalDividerStyle" />
+</LinearLayout>

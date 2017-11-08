@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:state_enabled="false">
+        <bitmap android:src="@drawable/sec_incall_button_rtt_icon" android:alpha="0.4" />
+    </item>
+    <item android:drawable="@drawable/sec_incall_button_rtt_icon" />
+</selector>

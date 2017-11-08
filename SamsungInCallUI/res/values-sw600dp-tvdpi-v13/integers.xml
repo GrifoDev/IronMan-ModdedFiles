@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <integer name="vga_button_portrait_weight_between_end_call_center_and_display_bottom">42</integer>
+    <integer name="vga_button_portrait_weight_between_video_bottom_and_display_bottom">85</integer>
+    <integer name="vga_button_portrait_weight_between_video_bottom_and_display_bottom_land">160</integer>
+</resources>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.android.incallui.agif.StickerSettingItem android:gravity="center_vertical" android:background="?android:selectableItemBackground" android:focusable="false" android:clickable="true" android:layout_width="fill_parent" android:layout_height="fill_parent" android:minHeight="?android:listPreferredItemHeight" android:paddingEnd="@dimen/sticker_setting_list_padding_end"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <RelativeLayout android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <CheckBox android:id="@id/list_check_box" android:background="@null" android:focusable="false" android:visibility="gone" android:clickable="false" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_centerVertical="true" android:layout_marginStart="@dimen/sticker_setting_list_check_box_margin_side" android:layout_marginEnd="@dimen/sticker_setting_list_check_box_margin_side" android:layout_alignParentStart="true" />
+        <RelativeLayout android:id="@id/list_package_container" android:layout_width="wrap_content" android:layout_height="fill_parent" android:layout_alignWithParentIfMissing="true" android:layout_toEndOf="@id/list_check_box">
+            <ImageView android:id="@id/list_tray_icon" android:layout_width="@dimen/sticker_setting_list_tray_size" android:layout_height="@dimen/sticker_setting_list_tray_size" android:layout_centerVertical="true" android:layout_marginStart="@dimen/sticker_setting_list_tray_margin_start" android:layout_marginEnd="@dimen/sticker_setting_list_check_box_margin_side" />
+            <RelativeLayout android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_centerVertical="true" android:layout_toEndOf="@id/list_tray_icon">
+                <TextView android:textAppearance="?android:textAppearanceListItem" android:ellipsize="end" android:id="@id/list_title" android:layout_width="wrap_content" android:layout_height="wrap_content" android:singleLine="true" android:layout_marginStart="@dimen/sticker_setting_list_text_margin_start" />
+                <TextView android:textAppearance="?android:textAppearanceListItemSecondary" android:ellipsize="end" android:id="@id/list_artist" android:layout_width="wrap_content" android:layout_height="wrap_content" android:singleLine="true" android:layout_below="@id/list_title" android:layout_marginStart="@dimen/sticker_setting_list_text_margin_start" />
+            </RelativeLayout>
+        </RelativeLayout>
+    </RelativeLayout>
+</com.android.incallui.agif.StickerSettingItem>

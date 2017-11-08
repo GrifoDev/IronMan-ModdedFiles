@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:id="@id/agif_recent_view" android:layout_width="fill_parent" android:layout_height="wrap_content" android:paddingStart="@dimen/agif_contents_padding" android:paddingEnd="@dimen/agif_contents_padding"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <ImageView android:layout_gravity="center_horizontal" android:layout_width="@dimen/agif_no_recent_gif_size" android:layout_height="@dimen/agif_no_recent_gif_size" android:src="@drawable/voicecall_gif_icon_sticker" android:tint="@color/agif_no_recent_icon_color" />
+    <TextView android:textSize="@dimen/agif_no_recent_title_text_size" android:textColor="@color/agif_no_recent_text_color" android:gravity="center" android:id="@id/agif_no_recent_title" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/agif_no_recent_title_margin_top" android:text="@string/agif_pickers_no_recent_title" android:fontFamily="sec-roboto-light" />
+    <TextView android:textSize="@dimen/agif_no_recent_message_text_size" android:textColor="@color/agif_no_recent_text_color" android:gravity="center" android:id="@id/agif_no_recent_message" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/agif_no_recent_message_margin_top" android:text="@string/agif_pickers_no_recent_message" android:fontFamily="sec-roboto-light" />
+</LinearLayout>

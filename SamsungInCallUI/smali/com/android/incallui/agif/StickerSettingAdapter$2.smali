@@ -1,0 +1,95 @@
+.class Lcom/android/incallui/agif/StickerSettingAdapter$2;
+.super Ljava/lang/Object;
+
+# interfaces
+.implements Landroid/view/View$OnClickListener;
+
+
+# annotations
+.annotation system Ldalvik/annotation/EnclosingMethod;
+    value = Lcom/android/incallui/agif/StickerSettingAdapter;->getView(ILandroid/view/View;Landroid/view/ViewGroup;)Landroid/view/View;
+.end annotation
+
+.annotation system Ldalvik/annotation/InnerClass;
+    accessFlags = 0x0
+    name = null
+.end annotation
+
+
+# instance fields
+.field final synthetic this$0:Lcom/android/incallui/agif/StickerSettingAdapter;
+
+.field final synthetic val$contents:Lcom/android/incallui/agif/StickerSettingActivity$StickerOrderInfo;
+
+.field final synthetic val$listItem:Lcom/android/incallui/agif/StickerSettingItem;
+
+
+# direct methods
+.method constructor <init>(Lcom/android/incallui/agif/StickerSettingAdapter;Lcom/android/incallui/agif/StickerSettingActivity$StickerOrderInfo;Lcom/android/incallui/agif/StickerSettingItem;)V
+    .locals 0
+
+    iput-object p1, p0, Lcom/android/incallui/agif/StickerSettingAdapter$2;->this$0:Lcom/android/incallui/agif/StickerSettingAdapter;
+
+    iput-object p2, p0, Lcom/android/incallui/agif/StickerSettingAdapter$2;->val$contents:Lcom/android/incallui/agif/StickerSettingActivity$StickerOrderInfo;
+
+    iput-object p3, p0, Lcom/android/incallui/agif/StickerSettingAdapter$2;->val$listItem:Lcom/android/incallui/agif/StickerSettingItem;
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    return-void
+.end method
+
+
+# virtual methods
+.method public onClick(Landroid/view/View;)V
+    .locals 2
+
+    const/4 v0, 0x1
+
+    iget-object v1, p0, Lcom/android/incallui/agif/StickerSettingAdapter$2;->this$0:Lcom/android/incallui/agif/StickerSettingAdapter;
+
+    invoke-static {v1}, Lcom/android/incallui/agif/StickerSettingAdapter;->access$100(Lcom/android/incallui/agif/StickerSettingAdapter;)I
+
+    move-result v1
+
+    if-eq v1, v0, :cond_0
+
+    iget-object v1, p0, Lcom/android/incallui/agif/StickerSettingAdapter$2;->val$contents:Lcom/android/incallui/agif/StickerSettingActivity$StickerOrderInfo;
+
+    iget-boolean v1, v1, Lcom/android/incallui/agif/StickerSettingActivity$StickerOrderInfo;->isPreload:Z
+
+    if-eqz v1, :cond_1
+
+    :cond_0
+    :goto_0
+    return-void
+
+    :cond_1
+    iget-object v1, p0, Lcom/android/incallui/agif/StickerSettingAdapter$2;->val$listItem:Lcom/android/incallui/agif/StickerSettingItem;
+
+    invoke-virtual {v1}, Lcom/android/incallui/agif/StickerSettingItem;->getCheckBox()Landroid/widget/CheckBox;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Landroid/widget/CheckBox;->isChecked()Z
+
+    move-result v1
+
+    if-nez v1, :cond_2
+
+    :goto_1
+    iget-object v1, p0, Lcom/android/incallui/agif/StickerSettingAdapter$2;->val$contents:Lcom/android/incallui/agif/StickerSettingActivity$StickerOrderInfo;
+
+    iput-boolean v0, v1, Lcom/android/incallui/agif/StickerSettingActivity$StickerOrderInfo;->isChecked:Z
+
+    iget-object v1, p0, Lcom/android/incallui/agif/StickerSettingAdapter$2;->val$listItem:Lcom/android/incallui/agif/StickerSettingItem;
+
+    invoke-virtual {v1, v0}, Lcom/android/incallui/agif/StickerSettingItem;->setChecked(Z)V
+
+    goto :goto_0
+
+    :cond_2
+    const/4 v0, 0x0
+
+    goto :goto_1
+.end method

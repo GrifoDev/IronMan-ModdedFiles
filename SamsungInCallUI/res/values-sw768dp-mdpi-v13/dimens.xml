@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="reject_call_with_msg_list_item_text_size">17.0sp</dimen>
+    <dimen name="reject_with_msg_item_text_min_height">44.0dip</dimen>
+</resources>
