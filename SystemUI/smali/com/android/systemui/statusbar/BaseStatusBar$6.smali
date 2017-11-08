@@ -696,7 +696,7 @@
 
     move-result-object v0
 
-    const-string v1, "lock_screen_allow_remote_input"
+    const-string v1, "lock_screen_allow_input"
 
     const v2, 0x0
 

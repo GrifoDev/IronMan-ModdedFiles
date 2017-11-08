@@ -3416,6 +3416,7 @@
     <public type="layout" name="ram" id="0x7f0401d4" />
     <public type="layout" name="gear_info_item_layout" id="0x7f0401d5" />
     <public type="layout" name="killer_layout" id="0x7f0401d6" />
+    <public type="layout" name="next_alarm_lockscreen" id="0x7f0401d7" />
     <public type="layout" name="recents_on_tv" id="0x7f040164" />
     <public type="layout" name="recents_tv_card_info_field" id="0x7f04016d" />
     <public type="layout" name="recents_tv_empty" id="0x7f04016e" />
@@ -11157,6 +11158,7 @@
     <public type="id" name="clock2" id="0x7f130594" />
     <public type="id" name="killer_mem_info" id="0x7f130595" />
     <public type="id" name="killer_clean_button" id="0x7f130596" />
+    <public type="id" name="next_alarm_toggle" id="0x7f130597" />
     <public type="plurals" name="status_bar_accessibility_recent_apps" id="0x7f140000" />
     <public type="plurals" name="notification_group_overflow_description" id="0x7f140001" />
     <public type="plurals" name="kg_password_wrong_pin_code" id="0x7f140002" />

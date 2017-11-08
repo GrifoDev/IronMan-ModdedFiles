@@ -1339,6 +1339,11 @@
         <item>users</item>
         <item>emergencymode</item>
         <item>subscreen</item>
+        <item>rebootrecovery</item>
+        <item>quickreboot</item>
+        <item>screenshot</item>
+        <item>screenrec</item>
+        <item>flashlight</item>
     </string-array>
     <string-array name="config_telephonyHardware">
         <item>0,modem,0,0,0,1,1,1</item>
