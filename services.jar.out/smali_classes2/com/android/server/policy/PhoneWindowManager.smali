@@ -254,6 +254,8 @@
 
 .field static final mTmpVisibleFrame:Landroid/graphics/Rect;
 
+.field static mUnlockNavBarHeight:Z
+
 .field static sApplicationLaunchKeyCategories:Landroid/util/SparseArray;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -11484,6 +11486,28 @@
     return v0
 .end method
 
+.method public allowNavBarHeightTweak()V
+    .locals 2
+
+    iget-object v1, p0, Lcom/android/server/policy/PhoneWindowManager;->mContext:Landroid/content/Context;
+
+    invoke-virtual {v1}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
+
+    move-result-object v1
+
+    const-string/jumbo p0, "custom_navbar_height"
+
+    const/4 v0, 0x0
+
+    invoke-static {v1, p0, v0}, Landroid/provider/Settings$System;->getInt(Landroid/content/ContentResolver;Ljava/lang/String;I)I
+
+    move-result v0
+
+    sput-boolean v0, Lcom/android/server/policy/PhoneWindowManager;->mUnlockNavBarHeight:Z
+
+    return-void
+.end method
+
 .method public applyPostLayoutPolicyLw(Landroid/view/WindowManagerPolicy$WindowState;Landroid/view/WindowManager$LayoutParams;Landroid/view/WindowManagerPolicy$WindowState;)V
     .locals 21
 
@@ -20067,8 +20091,30 @@
     return v0
 .end method
 
+.method public getNavBarHeightTweak()V
+    .locals 2
+
+    iget-object v1, p0, Lcom/android/server/policy/PhoneWindowManager;->mContext:Landroid/content/Context;
+
+    invoke-virtual {v1}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
+
+    move-result-object v1
+
+    const-string/jumbo p0, "navbar_height"
+
+    const v0, 0x90
+
+    invoke-static {v1, p0, v0}, Landroid/provider/Settings$System;->getInt(Landroid/content/ContentResolver;Ljava/lang/String;I)I
+
+    move-result v0
+
+    sput v0, Lcom/android/server/policy/PhoneWindowManager;->mCustomNavBarHeight:I
+
+    return-void
+.end method
+
 .method public getNavigationBarHeight(II)I
-    .locals 1
+    .locals 3
 
     iget-object v0, p0, Lcom/android/server/policy/PhoneWindowManager;->mSPWM:Lcom/android/server/policy/SamsungWindowManagerPolicy;
 
@@ -20095,6 +20141,13 @@
 
     aget v0, v0, p1
 
+    sget-boolean v2, Lcom/android/server/policy/PhoneWindowManager;->mUnlockNavBarHeight:Z
+
+    if-eqz v2, :cond_1
+
+    sget v0, Lcom/android/server/policy/PhoneWindowManager;->mCustomNavBarHeight:I
+
+    :cond_1
     return v0
 .end method
 
@@ -20320,6 +20373,28 @@
     iget-object v1, p0, Lcom/android/server/policy/PhoneWindowManager;->mPersonaManagerService:Lcom/android/server/pm/PersonaManagerService;
 
     return-object v1
+.end method
+
+.method public getRotationTweak()V
+    .locals 2
+
+    iget-object v1, p0, Lcom/android/server/policy/PhoneWindowManager;->mContext:Landroid/content/Context;
+
+    invoke-virtual {v1}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
+
+    move-result-object v1
+
+    const-string/jumbo p0, "all_rotations"
+
+    const/4 v0, 0x0
+
+    invoke-static {v1, p0, v0}, Landroid/provider/Settings$System;->getInt(Landroid/content/ContentResolver;Ljava/lang/String;I)I
+
+    move-result v0
+
+    sput-boolean v0, Lcom/android/server/policy/PhoneWindowManager;->mAllowAllRotations:Z
+
+    return-void
 .end method
 
 .method public getSamsungPolicy()Lcom/android/server/policy/SamsungWindowManagerPolicy;
@@ -37314,6 +37389,12 @@
     const/4 v8, 0x2
 
     const/4 v9, 0x1
+
+    invoke-virtual {p0}, Lcom/android/server/policy/PhoneWindowManager;->allowNavBarHeightTweak()V
+
+    invoke-virtual {p0}, Lcom/android/server/policy/PhoneWindowManager;->getNavBarHeightTweak()V
+
+    invoke-virtual {p0}, Lcom/android/server/policy/PhoneWindowManager;->getRotationTweak()V
 
     iget-object v10, p0, Lcom/android/server/policy/PhoneWindowManager;->mContext:Landroid/content/Context;
 
