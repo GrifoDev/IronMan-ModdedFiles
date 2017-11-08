@@ -269,6 +269,8 @@
 
 
 # instance fields
+.field mAbsPhoneWindownManager:Lcom/android/server/policy/PhoneWindowManagers$KeyPolicy;
+
 .field mAccelerometerDefault:Z
 
 .field mAccessibilityManager:Landroid/view/accessibility/AccessibilityManager;
@@ -761,6 +763,8 @@
 .field mScreenshotConnection:Landroid/content/ServiceConnection;
 
 .field final mScreenshotLock:Ljava/lang/Object;
+
+.field mScreenshotReceiver:Landroid/content/BroadcastReceiver;
 
 .field private final mScreenshotRunnable:Lcom/android/server/policy/PhoneWindowManager$ScreenshotRunnable;
 
@@ -1577,6 +1581,12 @@
     invoke-direct/range {v0 .. v7}, Lcom/android/server/policy/BarController;-><init>(Ljava/lang/String;IIIIII)V
 
     iput-object v0, p0, Lcom/android/server/policy/PhoneWindowManager;->mNavigationBarController:Lcom/android/server/policy/BarController;
+
+    new-instance v0, Lcom/android/server/policy/PhoneWindowManager$Torch;
+
+    invoke-direct {v0, p0}, Lcom/android/server/policy/PhoneWindowManager$Torch;-><init>(Lcom/android/server/policy/PhoneWindowManager;)V
+
+    iput-object v0, p0, Lcom/android/server/policy/PhoneWindowManager;->mScreenshotReceiver:Landroid/content/BroadcastReceiver;
 
     new-instance v0, Lcom/android/server/policy/PhoneWindowManager$4;
 
@@ -21479,6 +21489,16 @@
 .method public init(Landroid/content/Context;Landroid/view/IWindowManager;Landroid/view/WindowManagerPolicy$WindowManagerFuncs;)V
     .locals 25
 
+    new-instance v2, Lcom/android/server/policy/PhoneWindowManagers$KeyPolicy;
+
+    move-object/from16 v0, p1
+
+    invoke-direct {v2, v0}, Lcom/android/server/policy/PhoneWindowManagers$KeyPolicy;-><init>(Landroid/content/Context;)V
+
+    move-object/from16 v1, p0
+
+    iput-object v2, v1, Lcom/android/server/policy/PhoneWindowManager;->mAbsPhoneWindownManager:Lcom/android/server/policy/PhoneWindowManagers$KeyPolicy;
+
     move-object/from16 v0, p1
 
     move-object/from16 v1, p0
@@ -22621,6 +22641,22 @@
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/android/server/policy/PhoneWindowManager;->mDreamReceiver:Landroid/content/BroadcastReceiver;
+
+    move-object/from16 v0, p1
+
+    move-object/from16 v1, v19
+
+    invoke-virtual {v0, v2, v1}, Landroid/content/Context;->registerReceiver(Landroid/content/BroadcastReceiver;Landroid/content/IntentFilter;)Landroid/content/Intent;
+
+    const-string v2, "android.intent.action.ScreenShot"
+
+    move-object/from16 v0, v19
+
+    invoke-virtual {v0, v2}, Landroid/content/IntentFilter;->addAction(Ljava/lang/String;)V
+
+    move-object/from16 v0, p0
+
+    iget-object v2, v0, Lcom/android/server/policy/PhoneWindowManager;->mScreenshotReceiver:Landroid/content/BroadcastReceiver;
 
     move-object/from16 v0, p1
 
