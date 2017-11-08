@@ -1844,7 +1844,7 @@
 .end method
 
 .method private generateActionButton(Landroid/app/Notification$Action;ZZ)Landroid/widget/RemoteViews;
-    .locals 12
+    .locals 14
 
     const/4 v2, 0x1
 
@@ -1902,7 +1902,7 @@
     invoke-virtual {v0, v10, v1}, Landroid/widget/RemoteViews;->setRemoteInputs(I[Landroid/app/RemoteInput;)V
 
     :cond_1
-    if-eqz p2, :cond_a
+    if-eqz p2, :cond_b
 
     iget-object v5, p0, Landroid/app/Notification$Builder;->mContext:Landroid/content/Context;
 
@@ -2001,6 +2001,29 @@
     goto :goto_3
 
     :cond_9
+    sget v9, Landroid/app/Notification$Builder;->mAllowNotificationColorChange:I
+
+    if-eqz v9, :cond_a
+
+    iget-object v1, p0, Landroid/app/Notification$Builder;->mContext:Landroid/content/Context;
+
+    invoke-virtual {v1}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
+
+    move-result-object v1
+
+    const-string/jumbo v12, "notification_screenshot_text_color"
+
+    const v13, -0xa38b80
+
+    invoke-static {v1, v12, v13}, Landroid/provider/Settings$System;->getInt(Landroid/content/ContentResolver;Ljava/lang/String;I)I
+
+    move-result v1
+
+    invoke-virtual {v0, v10, v1}, Landroid/widget/RemoteViews;->setTextColor(II)V
+
+    :cond_a
+    goto :goto_5
+
     iget-object v1, p0, Landroid/app/Notification$Builder;->mN:Landroid/app/Notification;
 
     iget v1, v1, Landroid/app/Notification;->color:I
@@ -2013,9 +2036,10 @@
 
     invoke-virtual {v0, v10, v1}, Landroid/widget/RemoteViews;->setTextColor(II)V
 
+    :goto_5
     goto :goto_4
 
-    :cond_a
+    :cond_b
     iget-object v1, p1, Landroid/app/Notification$Action;->title:Ljava/lang/CharSequence;
 
     invoke-direct {p0, v1}, Landroid/app/Notification$Builder;->processLegacyText(Ljava/lang/CharSequence;)Ljava/lang/CharSequence;
@@ -2024,6 +2048,29 @@
 
     invoke-virtual {v0, v10, v1}, Landroid/widget/RemoteViews;->setTextViewText(ILjava/lang/CharSequence;)V
 
+    sget v9, Landroid/app/Notification$Builder;->mAllowNotificationColorChange:I
+
+    if-eqz v9, :cond_c
+
+    iget-object v1, p0, Landroid/app/Notification$Builder;->mContext:Landroid/content/Context;
+
+    invoke-virtual {v1}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
+
+    move-result-object v1
+
+    const-string/jumbo v12, "notification_screenshot_text_color"
+
+    const v13, -0xa38b80
+
+    invoke-static {v1, v12, v13}, Landroid/provider/Settings$System;->getInt(Landroid/content/ContentResolver;Ljava/lang/String;I)I
+
+    move-result v1
+
+    invoke-virtual {v0, v10, v1}, Landroid/widget/RemoteViews;->setTextColor(II)V
+
+    :cond_c
+    goto :goto_6
+
     iget-object v1, p0, Landroid/app/Notification$Builder;->mN:Landroid/app/Notification;
 
     iget v1, v1, Landroid/app/Notification;->color:I
@@ -2036,6 +2083,7 @@
 
     invoke-virtual {v0, v10, v1}, Landroid/widget/RemoteViews;->setTextColor(II)V
 
+    :goto_6
     goto :goto_4
 .end method
 
