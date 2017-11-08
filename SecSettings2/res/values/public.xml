@@ -3676,6 +3676,7 @@
     <public type="xml" name="zen_mode_schedule_rule_settings" id="0x7f08016e" />
     <public type="xml" name="zen_mode_settings" id="0x7f08016f" />
     <public type="xml" name="zen_mode_visual_interruptions_settings" id="0x7f080170" />
+    <public type="xml" name="led_indicator_settings" id="0x7f080171" />
     <public type="raw" name="accessibility_screen_magnification" id="0x7f090000" />
     <public type="raw" name="dummy_data_for_oem_v2" id="0x7f090001" />
     <public type="raw" name="fingerprint_location_animation" id="0x7f090002" />
@@ -13854,6 +13855,17 @@
     <public type="string" name="msa_msg_connect_to_mobile_network" id="0x7f0b1ee1" />
     <public type="string" name="msa_btn_accept" id="0x7f0b1ee2" />
     <public type="string" name="msa_btn_decline" id="0x7f0b1ee3" />
+    <public type="string" name="notification_reminder_led_toast" id="0x7f0b1ee4" />
+    <public type="string" name="led_indicator_charging" id="0x7f0b1ee5" />
+    <public type="string" name="led_indicator_charging_summary" id="0x7f0b1ee6" />
+    <public type="string" name="led_indicator_notifications" id="0x7f0b1ee7" />
+    <public type="string" name="led_indicator_notifications_summary" id="0x7f0b1ee8" />
+    <public type="string" name="led_indicator_voice_recording" id="0x7f0b1ee9" />
+    <public type="string" name="led_indicator_voice_recording_summary" id="0x7f0b1eea" />
+    <public type="string" name="led_indicator_incoming_notification" id="0x7f0b1eeb" />
+    <public type="string" name="led_indicator_incoming_notification_summary" id="0x7f0b1eec" />
+    <public type="string" name="led_indicator_low_battery" id="0x7f0b1eed" />
+    <public type="string" name="led_indicator_low_battery_summary" id="0x7f0b1eee" />
     <public type="string" name="legacy_dhcp_client_summary" id="0x7f0b01f3" />
     <public type="string" name="screen_off_pocket_title" id="0x7f0b12e8" />
     <public type="string" name="screen_off_pocket_summary" id="0x7f0b12e9" />
@@ -19606,6 +19618,7 @@
     <public type="id" name="action_done" id="0x7f110a23" />
     <public type="id" name="vpn_create" id="0x7f110a24" />
     <public type="id" name="wifi_wps" id="0x7f110a25" />
+    <public type="id" name="led_indicator_settings" id="0x7f110a26" />
     <public type="fraction" name="fingerprint_sensor_location_fraction_x" id="0x7f120000" />
     <public type="fraction" name="fingerprint_sensor_location_fraction_y" id="0x7f120001" />
     <public type="plurals" name="data_saver_unrestricted_summary_chn" id="0x7f130000" />
