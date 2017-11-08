@@ -8699,7 +8699,7 @@
 
     invoke-interface {v7, p1}, Lcom/android/server/wm/IWindowManagerServiceBridge;->restoreSizeDensityIfNeeded(Lcom/android/server/wm/DisplayContent;)V
 
-    sget-boolean v12, Landroid/os/Build;->renovateHeroDevice:Z
+    sget-boolean v12, Landroid/os/Build;->renovateHeroSeries:Z
 
     if-nez v12, :cond_5
 
