@@ -234,6 +234,10 @@
 
 .field static localLOGV:Z
 
+.field static mAllowAllRotations:Z
+
+.field static mCustomNavBarHeight:I
+
 .field static final mTmpContentFrame:Landroid/graphics/Rect;
 
 .field static final mTmpDecorFrame:Landroid/graphics/Rect;
