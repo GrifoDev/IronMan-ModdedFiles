@@ -37,7 +37,8 @@
         Lcom/android/server/policy/SamsungPhoneWindowManager$ServiceConnectionForCaptureEffect;,
         Lcom/android/server/policy/SamsungPhoneWindowManager$SettingsObserver;,
         Lcom/android/server/policy/SamsungPhoneWindowManager$TakeScreenShotRunnable;,
-        Lcom/android/server/policy/SamsungPhoneWindowManager$WakeupPreventionObserver;
+        Lcom/android/server/policy/SamsungPhoneWindowManager$WakeupPreventionObserver;,
+        Lcom/android/server/policy/SamsungPhoneWindowManager$KillApp;
     }
 .end annotation
 
@@ -460,9 +461,13 @@
 
 .field private mIsWakeupPrevention:Z
 
+.field mKHandler:Landroid/os/Handler;
+
 .field private mKeyEventInjectionThread:Ljava/lang/Thread;
 
 .field mKeyguardDelegate:Lcom/android/server/policy/keyguard/KeyguardServiceDelegate;
+
+.field mKillProcess:Ljava/lang/Runnable;
 
 .field private mKnoxCustomSystemManager:Lcom/samsung/android/knox/custom/SystemManager;
 
@@ -608,7 +613,11 @@
 
 .field private mRecentConsumed:Z
 
+.field private mRecentKill:I
+
 .field mReconfigureDebugReceiver:Landroid/content/BroadcastReceiver;
+
+.field private mRemoveFromRecent:I
 
 .field private final mRotationForQuickAccess:Ljava/lang/Runnable;
 
@@ -1190,6 +1199,10 @@
 
     iput-object v0, p0, Lcom/android/server/policy/SamsungPhoneWindowManager;->mServiceAquireLock:Ljava/lang/Object;
 
+    iput v2, p0, Lcom/android/server/policy/SamsungPhoneWindowManager;->mRecentKill:I
+
+    iput v2, p0, Lcom/android/server/policy/SamsungPhoneWindowManager;->mRemoveFromRecent:I
+
     iput-object v3, p0, Lcom/android/server/policy/SamsungPhoneWindowManager;->mComponentNameOfDoubleTapLaunchCommandIntent:Landroid/content/ComponentName;
 
     iput-boolean v2, p0, Lcom/android/server/policy/SamsungPhoneWindowManager;->mBootCompleted:Z
@@ -1663,6 +1676,18 @@
     iput-object v0, p0, Lcom/android/server/policy/SamsungPhoneWindowManager;->mReconfigureDebugReceiver:Landroid/content/BroadcastReceiver;
 
     iput-boolean v2, p0, Lcom/android/server/policy/SamsungPhoneWindowManager;->mChangedTouchableArea:Z
+
+    new-instance v0, Landroid/os/Handler;
+
+    invoke-direct {v0}, Landroid/os/Handler;-><init>()V
+
+    iput-object v0, p0, Lcom/android/server/policy/SamsungPhoneWindowManager;->mKHandler:Landroid/os/Handler;
+
+    new-instance v0, Lcom/android/server/policy/SamsungPhoneWindowManager$KillApp;
+
+    invoke-direct {v0, p0}, Lcom/android/server/policy/SamsungPhoneWindowManager$KillApp;-><init>(Lcom/android/server/policy/SamsungPhoneWindowManager;)V
+
+    iput-object v0, p0, Lcom/android/server/policy/SamsungPhoneWindowManager;->mKillProcess:Ljava/lang/Runnable;
 
     iput-boolean v2, p0, Lcom/android/server/policy/SamsungPhoneWindowManager;->mIsDesktopMode:Z
 
@@ -6037,6 +6062,36 @@
     goto :goto_0
 .end method
 
+.method private updateMySettings()V
+    .locals 3
+
+    iget-object v0, p0, Lcom/android/server/policy/SamsungPhoneWindowManager;->mContext:Landroid/content/Context;
+
+    invoke-virtual {v0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
+
+    move-result-object v0
+
+    const-string/jumbo v1, "remove_killed_apps_from_recents"
+
+    const/4 v2, 0x0
+
+    invoke-static {v0, v1, v2}, Landroid/provider/Settings$System;->getInt(Landroid/content/ContentResolver;Ljava/lang/String;I)I
+
+    move-result v1
+
+    iput v1, p0, Lcom/android/server/policy/SamsungPhoneWindowManager;->mRemoveFromRecent:I
+
+    const-string/jumbo v1, "recent_key"
+
+    invoke-static {v0, v1, v2}, Landroid/provider/Settings$System;->getInt(Landroid/content/ContentResolver;Ljava/lang/String;I)I
+
+    move-result v1
+
+    iput v1, p0, Lcom/android/server/policy/SamsungPhoneWindowManager;->mRecentKill:I
+
+    return-void
+.end method
+
 .method private updateNavigationBarIconColorLw(Landroid/view/WindowManagerPolicy$WindowState;Landroid/view/WindowManagerPolicy$WindowState;)I
     .locals 5
 
@@ -9421,6 +9476,33 @@
     return-void
 .end method
 
+.method public diKillApp()V
+    .locals 3
+
+    iget-object v1, p0, Lcom/android/server/policy/SamsungPhoneWindowManager;->mPWM:Lcom/android/server/policy/PhoneWindowManager;
+
+    invoke-virtual {v1}, Lcom/android/server/policy/PhoneWindowManager;->isScreenOn()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    invoke-virtual {v1}, Lcom/android/server/policy/PhoneWindowManager;->isKeyguardLocked()Z
+
+    move-result v1
+
+    if-nez v1, :cond_0
+
+    iget-object v2, p0, Lcom/android/server/policy/SamsungPhoneWindowManager;->mKHandler:Landroid/os/Handler;
+
+    iget-object v0, p0, Lcom/android/server/policy/SamsungPhoneWindowManager;->mKillProcess:Ljava/lang/Runnable;
+
+    invoke-virtual {v2, v0}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
+
+    :cond_0
+    return-void
+.end method
+
 .method public downloadForSGA(Ljava/lang/String;)V
     .locals 4
 
@@ -11427,6 +11509,14 @@
     return-object v0
 .end method
 
+.method public getRemoveFromRecent()I
+    .locals 2
+
+    iget v0, p0, Lcom/android/server/policy/SamsungPhoneWindowManager;->mRemoveFromRecent:I
+
+    return v0
+.end method
+
 .method public getRotationLockOrientation()I
     .locals 2
 
@@ -11788,26 +11878,15 @@
 
     move-result v5
 
-    if-eqz v5, :cond_2
+    if-eqz v5, :cond_1
 
     invoke-virtual {p0}, Lcom/android/server/policy/SamsungPhoneWindowManager;->isAccessiblityEnabled()Z
 
     move-result v5
 
-    if-eqz v5, :cond_2
-
-    :try_start_0
-    sget-boolean v5, Lcom/android/server/policy/SamsungPhoneWindowManager;->SAFE_DEBUG:Z
-
     if-eqz v5, :cond_1
 
-    const-string/jumbo v5, "SamsungPhoneWindowManager"
-
-    const-string/jumbo v6, "Recent longpress used in Lock task mode"
-
-    invoke-static {v5, v6}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
-    :cond_1
+    :try_start_0
     invoke-static {}, Landroid/app/ActivityManagerNative;->getDefault()Landroid/app/IActivityManager;
 
     move-result-object v0
@@ -11822,28 +11901,22 @@
     :catch_0
     move-exception v1
 
-    const-string/jumbo v5, "SamsungPhoneWindowManager"
-
-    const-string/jumbo v6, "Unable to reach activity manager"
-
-    invoke-static {v5, v6, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
-
     goto :goto_0
 
-    :cond_2
+    :cond_1
     iput-boolean v8, p0, Lcom/android/server/policy/SamsungPhoneWindowManager;->mRecentConsumed:Z
 
-    iget-boolean v5, p0, Lcom/android/server/policy/SamsungPhoneWindowManager;->mHasFakeMenuKeyRecent:Z
+    iget v5, p0, Lcom/android/server/policy/SamsungPhoneWindowManager;->mRecentKill:I
 
-    if-eqz v5, :cond_3
+    if-eqz v5, :cond_2
 
-    const/16 v5, 0x52
+    if-ne v5, v8, :cond_3
 
-    invoke-direct {p0, v5}, Lcom/android/server/policy/SamsungPhoneWindowManager;->injectionKeyEvent(I)V
+    invoke-virtual {p0}, Lcom/android/server/policy/SamsungPhoneWindowManager;->diKillApp()V
 
     return v8
 
-    :cond_3
+    :cond_2
     sget-boolean v5, Lcom/samsung/android/framework/feature/MultiWindowFeatures;->SAMSUNG_MULTIWINDOW_DYNAMIC_ENABLED:Z
 
     if-eqz v5, :cond_c
@@ -11906,6 +11979,15 @@
     invoke-direct {v6, p0}, Lcom/android/server/policy/SamsungPhoneWindowManager$29;-><init>(Lcom/android/server/policy/SamsungPhoneWindowManager;)V
 
     invoke-virtual {v5, v6}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
+
+    return v8
+
+    :cond_3
+    const/16 v7, 0x52
+
+    const/4 v3, 0x1
+
+    invoke-direct {p0, v7, v3}, Lcom/android/server/policy/SamsungPhoneWindowManager;->injectionKeyEvent(IZ)V
 
     return v8
 
@@ -33992,6 +34074,10 @@
 
     :cond_1c
     monitor-exit v34
+
+    move-object/from16 v0, p0
+
+    invoke-direct {v0}, Lcom/android/server/policy/SamsungPhoneWindowManager;->updateMySettings()V
 
     return-void
 
