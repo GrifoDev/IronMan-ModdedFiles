@@ -4,6 +4,7 @@
 
 # interfaces
 .implements Lcom/android/keyguard/servicebox/pages/clock/KeyguardClockBase;
+.implements Lcom/android/wubydax/GearContentObserver$OnContentChangedListener;
 
 
 # instance fields
@@ -12,6 +13,8 @@
 .field private mDateShamsiView:Lcom/android/keyguard/KeyguardTextView;
 
 .field private mDateView:Lcom/android/keyguard/KeyguardTextClock;
+
+.field private mGearContentObserver:Lcom/android/wubydax/GearContentObserver;
 
 .field private mPCalUtil:Lcom/android/keyguard/servicebox/pages/clock/PersianCalendarUtil;
 
@@ -57,6 +60,78 @@
     invoke-direct {v0, p1}, Lcom/android/keyguard/servicebox/pages/clock/PersianCalendarUtil;-><init>(Landroid/content/Context;)V
 
     iput-object v0, p0, Lcom/android/keyguard/servicebox/pages/clock/KeyguardSingleVerticalClockView;->mPCalUtil:Lcom/android/keyguard/servicebox/pages/clock/PersianCalendarUtil;
+
+    :cond_0
+    return-void
+.end method
+
+.method private registerGearObserver()V
+    .locals 7
+
+    new-instance v3, Lcom/android/wubydax/GearContentObserver;
+
+    new-instance v4, Landroid/os/Handler;
+
+    invoke-direct {v4}, Landroid/os/Handler;-><init>()V
+
+    invoke-direct {v3, v4, p0}, Lcom/android/wubydax/GearContentObserver;-><init>(Landroid/os/Handler;Lcom/android/wubydax/GearContentObserver$OnContentChangedListener;)V
+
+    iput-object v3, p0, Lcom/android/keyguard/servicebox/pages/clock/KeyguardSingleVerticalClockView;->mGearContentObserver:Lcom/android/wubydax/GearContentObserver;
+
+    iget-object v3, p0, Lcom/android/keyguard/servicebox/pages/clock/KeyguardSingleVerticalClockView;->mContext:Landroid/content/Context;
+
+    invoke-virtual {v3}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
+
+    move-result-object v1
+
+    new-instance v0, Ljava/util/ArrayList;
+
+    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
+
+    const-string v3, "kg_enable_lockscreen_color"
+
+    invoke-virtual {v0, v3}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+
+    const-string v3, "kg_clock_hours_color"
+
+    invoke-virtual {v0, v3}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+
+    const-string v3, "kg_clock_minutes_color"
+
+    invoke-virtual {v0, v3}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+
+    const-string v3, "kg_clock_date_color"
+
+    invoke-virtual {v0, v3}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+
+    invoke-virtual {v0}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
+
+    move-result-object v3
+
+    :goto_0
+    invoke-interface {v3}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v4
+
+    if-eqz v4, :cond_0
+
+    invoke-interface {v3}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v2
+
+    check-cast v2, Ljava/lang/String;
+
+    invoke-static {v2}, Landroid/provider/Settings$System;->getUriFor(Ljava/lang/String;)Landroid/net/Uri;
+
+    move-result-object v4
+
+    const/4 v5, 0x0
+
+    iget-object v6, p0, Lcom/android/keyguard/servicebox/pages/clock/KeyguardSingleVerticalClockView;->mGearContentObserver:Lcom/android/wubydax/GearContentObserver;
+
+    invoke-virtual {v1, v4, v5, v6}, Landroid/content/ContentResolver;->registerContentObserver(Landroid/net/Uri;ZLandroid/database/ContentObserver;)V
+
+    goto :goto_0
 
     :cond_0
     return-void
@@ -119,6 +194,63 @@
 
     invoke-virtual {p0, v1}, Lcom/android/keyguard/servicebox/pages/clock/KeyguardSingleVerticalClockView;->setBackground(Landroid/graphics/drawable/Drawable;)V
 
+    return-void
+.end method
+
+.method public onContentChanged(Ljava/lang/String;)V
+    .locals 1
+
+    const-string v0, "kg_enable_lockscreen_color"
+
+    invoke-virtual {v0, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    invoke-virtual {p0}, Lcom/android/keyguard/servicebox/pages/clock/KeyguardSingleVerticalClockView;->updateChildViewsLook()V
+
+    goto :goto_0
+
+    :cond_0
+    const-string v0, "kg_clock_hours_color"
+
+    invoke-virtual {v0, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_1
+
+    invoke-virtual {p0}, Lcom/android/keyguard/servicebox/pages/clock/KeyguardSingleVerticalClockView;->setClockDateColors()V
+
+    goto :goto_0
+
+    :cond_1
+    const-string v0, "kg_clock_minutes_color"
+
+    invoke-virtual {v0, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_2
+
+    invoke-virtual {p0}, Lcom/android/keyguard/servicebox/pages/clock/KeyguardSingleVerticalClockView;->setClockDateColors()V
+
+    goto :goto_0
+
+    :cond_2
+    const-string v0, "kg_clock_date_color"
+
+    invoke-virtual {v0, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_3
+
+    invoke-virtual {p0}, Lcom/android/keyguard/servicebox/pages/clock/KeyguardSingleVerticalClockView;->setClockDateColors()V
+
+    :cond_3
+    :goto_0
     return-void
 .end method
 
@@ -195,6 +327,10 @@
     iget-object v0, p0, Lcom/android/keyguard/servicebox/pages/clock/KeyguardSingleVerticalClockView;->mTimeMinView:Lcom/android/keyguard/KeyguardTextClockForUser;
 
     invoke-virtual {v0, v1}, Lcom/android/keyguard/KeyguardTextClockForUser;->setElegantTextHeight(Z)V
+
+    invoke-direct {p0}, Lcom/android/keyguard/servicebox/pages/clock/KeyguardSingleVerticalClockView;->registerGearObserver()V
+
+    invoke-virtual {p0}, Lcom/android/keyguard/servicebox/pages/clock/KeyguardSingleVerticalClockView;->setClockDateColors()V
 
     return-void
 .end method
@@ -492,6 +628,82 @@
     return-void
 .end method
 
+.method setClockDateColors()V
+    .locals 3
+
+    const-string v0, "kg_enable_lockscreen_color"
+
+    const v1, 0x0
+
+    invoke-static {v0, v1}, Lcom/android/wubydax/GearUtils;->getDbIntForKey(Ljava/lang/String;I)I
+
+    move-result v0
+
+    if-eqz v0, :cond_3
+
+    iget-object v0, p0, Lcom/android/keyguard/servicebox/pages/clock/KeyguardSingleVerticalClockView;->mTimeHourView:Lcom/android/keyguard/KeyguardTextClockForUser;
+
+    if-eqz v0, :cond_0
+
+    const-string v1, "kg_clock_hours_color"
+
+    const v2, -0x50506
+
+    invoke-static {v1, v2}, Lcom/android/wubydax/GearUtils;->getDbIntForKey(Ljava/lang/String;I)I
+
+    move-result v1
+
+    invoke-virtual {v0, v1}, Landroid/widget/TextClock;->setTextColor(I)V
+
+    :cond_0
+    iget-object v0, p0, Lcom/android/keyguard/servicebox/pages/clock/KeyguardSingleVerticalClockView;->mTimeMinView:Lcom/android/keyguard/KeyguardTextClockForUser;
+
+    if-eqz v0, :cond_1
+
+    const-string v1, "kg_clock_minutes_color"
+
+    const v2, -0x50506
+
+    invoke-static {v1, v2}, Lcom/android/wubydax/GearUtils;->getDbIntForKey(Ljava/lang/String;I)I
+
+    move-result v1
+
+    invoke-virtual {v0, v1}, Landroid/widget/TextClock;->setTextColor(I)V
+
+    :cond_1
+    iget-object v0, p0, Lcom/android/keyguard/servicebox/pages/clock/KeyguardSingleVerticalClockView;->mDateView:Lcom/android/keyguard/KeyguardTextClock;
+
+    if-eqz v0, :cond_2
+
+    const-string v1, "kg_clock_date_color"
+
+    const v2, -0x50506
+
+    invoke-static {v1, v2}, Lcom/android/wubydax/GearUtils;->getDbIntForKey(Ljava/lang/String;I)I
+
+    move-result v1
+
+    invoke-virtual {v0, v1}, Lcom/android/keyguard/KeyguardTextClock;->setTextColor(I)V
+
+    :cond_2
+    iget-object v0, p0, Lcom/android/keyguard/servicebox/pages/clock/KeyguardSingleVerticalClockView;->mDateShamsiView:Lcom/android/keyguard/KeyguardTextView;
+
+    if-eqz v0, :cond_3
+
+    const-string v1, "kg_clock_date_color"
+
+    const v2, -0x50506
+
+    invoke-static {v1, v2}, Lcom/android/wubydax/GearUtils;->getDbIntForKey(Ljava/lang/String;I)I
+
+    move-result v1
+
+    invoke-virtual {v0, v1}, Lcom/android/keyguard/KeyguardTextView;->setTextColor(I)V
+
+    :cond_3
+    return-void
+.end method
+
 .method public setClockVisibility(I)V
     .locals 1
 
@@ -604,6 +816,8 @@
     iget-object v1, p0, Lcom/android/keyguard/servicebox/pages/clock/KeyguardSingleVerticalClockView;->mTimeMinView:Lcom/android/keyguard/KeyguardTextClockForUser;
 
     invoke-virtual {v0, v1}, Lcom/android/keyguard/util/ViewStyleUtils;->setTextFontEffect(Landroid/widget/TextView;)V
+
+    invoke-virtual {p0}, Lcom/android/keyguard/servicebox/pages/clock/KeyguardSingleVerticalClockView;->setClockDateColors()V
 
     return-void
 .end method
