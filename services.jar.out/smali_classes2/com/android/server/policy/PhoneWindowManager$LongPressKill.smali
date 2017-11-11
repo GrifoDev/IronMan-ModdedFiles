@@ -204,7 +204,7 @@
 
     move-result-object v1
 
-    if-eqz v1, :cond_3
+    if-eqz v1, :cond_2
 
     invoke-interface {v1}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
@@ -214,7 +214,7 @@
 
     move-result v4
 
-    if-eqz v4, :cond_3
+    if-eqz v4, :cond_2
 
     invoke-interface {v1}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
@@ -236,23 +236,17 @@
 
     move-result v6
 
-    if-nez v6, :cond_1
+    if-nez v6, :cond_0
 
     invoke-direct {p0, v5}, Lcom/android/server/policy/PhoneWindowManager$KillApp;->isHomeApplication(Ljava/lang/String;)Z
 
     move-result v6
 
-    if-nez v6, :cond_2
+    if-nez v6, :cond_1
 
     const-string v2, "Killed : "
 
-    invoke-virtual {v10}, Lcom/android/server/policy/PhoneWindowManager;->getRemoveFromRecent()I
-
-    move-result v1
-
     :try_start_0
-    if-eqz v1, :cond_0
-
     iget v6, v9, Landroid/app/ActivityManager$RunningTaskInfo;->id:I
 
     const v1, 0x1
@@ -265,19 +259,18 @@
 
     goto :goto_0
 
-    :cond_0
     invoke-virtual {v11, v5}, Landroid/app/ActivityManager;->forceStopPackage(Ljava/lang/String;)V
 
     goto :goto_0
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    :cond_1
+    :cond_0
     const-string v2, "White listed : "
 
     goto :goto_0
 
-    :cond_2
+    :cond_1
     const-string v2, "Home application: "
 
     :goto_0
@@ -327,7 +320,7 @@
 
     invoke-virtual {v10, v3, v3, v5}, Lcom/android/server/policy/PhoneWindowManager;->performHapticFeedbackLw(Landroid/view/WindowManagerPolicy$WindowState;IZ)Z
 
-    :cond_3
+    :cond_2
     :goto_1
     return-void
 
