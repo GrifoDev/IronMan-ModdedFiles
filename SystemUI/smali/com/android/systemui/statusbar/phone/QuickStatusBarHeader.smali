@@ -1155,6 +1155,17 @@
     invoke-virtual {p0}, Lcom/android/systemui/statusbar/phone/QuickStatusBarHeader;->setQuickQsIcons()V
 
     :cond_0
+    const-string v0, "quick_qs_buttons_landscape"
+
+    invoke-virtual {v0, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_1
+
+    invoke-virtual {p0}, Lcom/android/systemui/statusbar/phone/QuickStatusBarHeader;->setQuickQsIcons()V
+
+    :cond_1
     return-void
 .end method
 
@@ -1555,6 +1566,10 @@
     invoke-direct {v3}, Ljava/util/ArrayList;-><init>()V
 
     const-string v4, "quick_qs_buttons"
+
+    invoke-virtual {v3, v4}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+
+    const-string v4, "quick_qs_buttons_landscape"
 
     invoke-virtual {v3, v4}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
