@@ -197,7 +197,7 @@
 
     sget-object v0, Lcom/android/keyguard/KeyguardRune;->CMAS_OPERATOR_NAME:Ljava/lang/String;
 
-    if-nez v0, :cond_1
+    if-nez v0, :cond_0
 
     move v0, v1
 
@@ -228,7 +228,7 @@
 
     sget-object v0, Lcom/android/keyguard/KeyguardRune;->CARRIER_SECURITY_POLICY:Ljava/lang/String;
 
-    if-nez v0, :cond_2
+    if-nez v0, :cond_1
 
     move v0, v1
 
@@ -237,7 +237,7 @@
 
     sget-object v0, Lcom/android/keyguard/KeyguardRune;->CARRIER_SECURITY_POLICY:Ljava/lang/String;
 
-    if-nez v0, :cond_3
+    if-nez v0, :cond_2
 
     move v0, v1
 
@@ -250,7 +250,7 @@
 
     sget-object v0, Lcom/android/keyguard/KeyguardRune;->CARRIER_SECURITY_POLICY:Ljava/lang/String;
 
-    if-nez v0, :cond_4
+    if-nez v0, :cond_3
 
     move v0, v1
 
@@ -285,7 +285,7 @@
 
     sget-object v0, Lcom/android/keyguard/KeyguardRune;->CARRIER_SECURITY_POLICY:Ljava/lang/String;
 
-    if-nez v0, :cond_5
+    if-nez v0, :cond_4
 
     move v0, v1
 
@@ -306,7 +306,7 @@
 
     sget-object v0, Lcom/android/keyguard/KeyguardRune;->CARRIER_TEXT_DISPLAY_POLICY:Ljava/lang/String;
 
-    if-nez v0, :cond_6
+    if-nez v0, :cond_5
 
     move v0, v1
 
@@ -315,7 +315,7 @@
 
     sget-object v0, Lcom/android/keyguard/KeyguardRune;->CARRIER_TEXT_DISPLAY_POLICY:Ljava/lang/String;
 
-    if-nez v0, :cond_7
+    if-nez v0, :cond_6
 
     move v0, v1
 
@@ -324,7 +324,7 @@
 
     sget-object v0, Lcom/android/keyguard/KeyguardRune;->CARRIER_TEXT_DISPLAY_POLICY:Ljava/lang/String;
 
-    if-nez v0, :cond_8
+    if-nez v0, :cond_7
 
     move v0, v1
 
@@ -333,7 +333,7 @@
 
     sget-object v0, Lcom/android/keyguard/KeyguardRune;->CARRIER_TEXT_DISPLAY_POLICY:Ljava/lang/String;
 
-    if-nez v0, :cond_9
+    if-nez v0, :cond_8
 
     move v0, v1
 
@@ -342,7 +342,7 @@
 
     sget-object v0, Lcom/android/keyguard/KeyguardRune;->CARRIER_TEXT_DISPLAY_POLICY:Ljava/lang/String;
 
-    if-nez v0, :cond_a
+    if-nez v0, :cond_9
 
     move v0, v1
 
@@ -351,7 +351,7 @@
 
     sget-object v0, Lcom/android/keyguard/KeyguardRune;->CARRIER_TEXT_DISPLAY_POLICY:Ljava/lang/String;
 
-    if-nez v0, :cond_b
+    if-nez v0, :cond_a
 
     move v0, v1
 
@@ -360,7 +360,7 @@
 
     sget-object v0, Lcom/android/keyguard/KeyguardRune;->CARRIER_TEXT_DISPLAY_POLICY:Ljava/lang/String;
 
-    if-nez v0, :cond_c
+    if-nez v0, :cond_b
 
     move v0, v1
 
@@ -369,7 +369,7 @@
 
     sget-object v0, Lcom/android/keyguard/KeyguardRune;->CARRIER_TEXT_DISPLAY_POLICY:Ljava/lang/String;
 
-    if-nez v0, :cond_d
+    if-nez v0, :cond_c
 
     move v0, v1
 
@@ -378,7 +378,7 @@
 
     sget-object v0, Lcom/android/keyguard/KeyguardRune;->CARRIER_TEXT_DISPLAY_POLICY:Ljava/lang/String;
 
-    if-nez v0, :cond_e
+    if-nez v0, :cond_d
 
     move v0, v1
 
@@ -387,7 +387,7 @@
 
     sget-object v0, Lcom/android/keyguard/KeyguardRune;->CARRIER_TEXT_DISPLAY_POLICY:Ljava/lang/String;
 
-    if-nez v0, :cond_f
+    if-nez v0, :cond_e
 
     move v0, v1
 
@@ -408,7 +408,7 @@
 
     sget-object v0, Lcom/android/keyguard/KeyguardRune;->EMERGENCY_CALL_BUTTON_POLICY:Ljava/lang/String;
 
-    if-nez v0, :cond_10
+    if-nez v0, :cond_f
 
     move v0, v1
 
@@ -417,7 +417,7 @@
 
     sget-object v0, Lcom/android/keyguard/KeyguardRune;->EMERGENCY_CALL_BUTTON_POLICY:Ljava/lang/String;
 
-    if-nez v0, :cond_11
+    if-nez v0, :cond_10
 
     move v0, v1
 
@@ -466,7 +466,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_12
+    if-eqz v0, :cond_11
 
     move v0, v1
 
@@ -487,7 +487,7 @@
 
     sget-object v0, Lcom/android/keyguard/KeyguardRune;->CONFIG_DMN_TYPE:Ljava/lang/String;
 
-    if-nez v0, :cond_13
+    if-nez v0, :cond_12
 
     move v0, v1
 
@@ -516,7 +516,7 @@
 
     move-result v0
 
-    if-le v0, v2, :cond_14
+    if-le v0, v2, :cond_13
 
     move v0, v2
 
@@ -537,7 +537,7 @@
 
     sget-boolean v0, Lcom/android/keyguard/KeyguardRune;->SUPPORT_KOR_USIM_TEXT:Z
 
-    if-eqz v0, :cond_15
+    if-eqz v0, :cond_14
 
     move v0, v2
 
@@ -580,28 +580,15 @@
 
     sput v0, Lcom/android/keyguard/KeyguardRune;->CONFIG_STATUSBAR_SIDE_PADDING:I
 
-    const-string v6, "s_eight_style"
-
-    const/4 v7, 0x1
-
-    invoke-static {v6, v7}, Lcom/android/wubydax/GearUtils;->getDbIntForKey(Ljava/lang/String;I)I
-
-    move-result v6
-
-    if-eqz v6, :cond_0
-
-    const/4 v6, 0x1
-
-    sput-boolean v6, Lcom/android/keyguard/KeyguardRune;->SUPPORT_SERVICEBOX:Z
-
-    :cond_0
     invoke-static {}, Lcom/samsung/android/feature/SemFloatingFeature;->getInstance()Lcom/samsung/android/feature/SemFloatingFeature;
 
     move-result-object v0
 
-    const-string/jumbo v3, "SEC_FLOATING_FEATURE_COMMON_SUPPORT_SERVICEBOX"
+    const-string v0, "s_eight_style"
 
-    invoke-virtual {v0, v3}, Lcom/samsung/android/feature/SemFloatingFeature;->getBoolean(Ljava/lang/String;)Z
+    const/4 v3, 0x1
+
+    invoke-static {v0, v3}, Lcom/android/wubydax/GearUtils;->getDbIntForKey(Ljava/lang/String;I)I
 
     move-result v0
 
@@ -649,7 +636,7 @@
 
     const/4 v3, 0x3
 
-    if-ne v0, v3, :cond_16
+    if-ne v0, v3, :cond_15
 
     move v0, v2
 
@@ -772,7 +759,7 @@
 
     sget-boolean v0, Lcom/android/keyguard/KeyguardRune;->SUPPORT_MOTION_WALLPAPER:Z
 
-    if-eqz v0, :cond_17
+    if-eqz v0, :cond_16
 
     invoke-static {}, Lcom/samsung/android/feature/SemFloatingFeature;->getInstance()Lcom/samsung/android/feature/SemFloatingFeature;
 
@@ -795,7 +782,7 @@
 
     sget-boolean v0, Lcom/android/keyguard/KeyguardRune;->SUPPORT_INFINITY_WALLPAPER:Z
 
-    if-eqz v0, :cond_18
+    if-eqz v0, :cond_17
 
     invoke-static {}, Lcom/samsung/android/feature/SemFloatingFeature;->getInstance()Lcom/samsung/android/feature/SemFloatingFeature;
 
@@ -976,7 +963,7 @@
 
     const v3, 0x1e8480
 
-    if-le v0, v3, :cond_19
+    if-le v0, v3, :cond_18
 
     const/16 v0, 0x3e8
 
@@ -1021,7 +1008,7 @@
 
     sget-object v0, Lcom/android/keyguard/KeyguardRune;->mConfigLockTimeoutSetting:Ljava/lang/String;
 
-    if-nez v0, :cond_1a
+    if-nez v0, :cond_19
 
     move v0, v1
 
@@ -1112,7 +1099,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_1b
+    if-eqz v0, :cond_1a
 
     :goto_1a
     sput-boolean v1, Lcom/android/keyguard/KeyguardRune;->IS_NO_SHIP:Z
@@ -1123,7 +1110,7 @@
 
     return-void
 
-    :cond_1
+    :cond_0
     sget-object v0, Lcom/android/keyguard/KeyguardRune;->CMAS_OPERATOR_NAME:Ljava/lang/String;
 
     const-string/jumbo v3, "us"
@@ -1134,7 +1121,7 @@
 
     goto/16 :goto_0
 
-    :cond_2
+    :cond_1
     sget-object v0, Lcom/android/keyguard/KeyguardRune;->CARRIER_SECURITY_POLICY:Ljava/lang/String;
 
     const-string/jumbo v3, "SupportSimPermanentDisable"
@@ -1145,7 +1132,7 @@
 
     goto/16 :goto_1
 
-    :cond_3
+    :cond_2
     sget-object v0, Lcom/android/keyguard/KeyguardRune;->CARRIER_SECURITY_POLICY:Ljava/lang/String;
 
     const-string/jumbo v3, "UseTMOSIMPINLock"
@@ -1156,7 +1143,7 @@
 
     goto/16 :goto_2
 
-    :cond_4
+    :cond_3
     sget-object v0, Lcom/android/keyguard/KeyguardRune;->CARRIER_SECURITY_POLICY:Ljava/lang/String;
 
     const-string/jumbo v3, "FactoryResetProtectionWarning"
@@ -1167,7 +1154,7 @@
 
     goto/16 :goto_3
 
-    :cond_5
+    :cond_4
     sget-object v0, Lcom/android/keyguard/KeyguardRune;->CARRIER_SECURITY_POLICY:Ljava/lang/String;
 
     const-string/jumbo v3, "UseSamsungAccountAuth"
@@ -1178,7 +1165,7 @@
 
     goto/16 :goto_4
 
-    :cond_6
+    :cond_5
     sget-object v0, Lcom/android/keyguard/KeyguardRune;->CARRIER_TEXT_DISPLAY_POLICY:Ljava/lang/String;
 
     const-string/jumbo v3, "UseCdmaCardText"
@@ -1189,7 +1176,7 @@
 
     goto/16 :goto_5
 
-    :cond_7
+    :cond_6
     sget-object v0, Lcom/android/keyguard/KeyguardRune;->CARRIER_TEXT_DISPLAY_POLICY:Ljava/lang/String;
 
     const-string/jumbo v3, "DisplayPlmnOnBottom"
@@ -1200,7 +1187,7 @@
 
     goto/16 :goto_6
 
-    :cond_8
+    :cond_7
     sget-object v0, Lcom/android/keyguard/KeyguardRune;->CARRIER_TEXT_DISPLAY_POLICY:Ljava/lang/String;
 
     const-string/jumbo v3, "BlockCarrierTextWhenSimNotReady"
@@ -1211,7 +1198,7 @@
 
     goto/16 :goto_7
 
-    :cond_9
+    :cond_8
     sget-object v0, Lcom/android/keyguard/KeyguardRune;->CARRIER_TEXT_DISPLAY_POLICY:Ljava/lang/String;
 
     const-string/jumbo v3, "DisplayUsimText"
@@ -1222,7 +1209,7 @@
 
     goto/16 :goto_8
 
-    :cond_a
+    :cond_9
     sget-object v0, Lcom/android/keyguard/KeyguardRune;->CARRIER_TEXT_DISPLAY_POLICY:Ljava/lang/String;
 
     const-string/jumbo v3, "UseSKTSimText"
@@ -1233,7 +1220,7 @@
 
     goto/16 :goto_9
 
-    :cond_b
+    :cond_a
     sget-object v0, Lcom/android/keyguard/KeyguardRune;->CARRIER_TEXT_DISPLAY_POLICY:Ljava/lang/String;
 
     const-string/jumbo v3, "UseKTTSimText"
@@ -1244,7 +1231,7 @@
 
     goto/16 :goto_a
 
-    :cond_c
+    :cond_b
     sget-object v0, Lcom/android/keyguard/KeyguardRune;->CARRIER_TEXT_DISPLAY_POLICY:Ljava/lang/String;
 
     const-string/jumbo v3, "UseDCMSimLockText"
@@ -1255,7 +1242,7 @@
 
     goto/16 :goto_b
 
-    :cond_d
+    :cond_c
     sget-object v0, Lcom/android/keyguard/KeyguardRune;->CARRIER_TEXT_DISPLAY_POLICY:Ljava/lang/String;
 
     const-string/jumbo v3, "UseKDDISimText"
@@ -1266,7 +1253,7 @@
 
     goto/16 :goto_c
 
-    :cond_e
+    :cond_d
     sget-object v0, Lcom/android/keyguard/KeyguardRune;->CARRIER_TEXT_DISPLAY_POLICY:Ljava/lang/String;
 
     const-string/jumbo v3, "UseDefaultPlmnValueFromNetwork"
@@ -1277,7 +1264,7 @@
 
     goto/16 :goto_d
 
-    :cond_f
+    :cond_e
     sget-object v0, Lcom/android/keyguard/KeyguardRune;->CARRIER_TEXT_DISPLAY_POLICY:Ljava/lang/String;
 
     const-string/jumbo v3, "UseFixedPlmnValueForUSC"
@@ -1288,7 +1275,7 @@
 
     goto/16 :goto_e
 
-    :cond_10
+    :cond_f
     sget-object v0, Lcom/android/keyguard/KeyguardRune;->EMERGENCY_CALL_BUTTON_POLICY:Ljava/lang/String;
 
     const-string/jumbo v3, "MoveToCallList"
@@ -1299,7 +1286,7 @@
 
     goto/16 :goto_f
 
-    :cond_11
+    :cond_10
     sget-object v0, Lcom/android/keyguard/KeyguardRune;->EMERGENCY_CALL_BUTTON_POLICY:Ljava/lang/String;
 
     const-string/jumbo v3, "DisableEmergencyCallWhenOffline"
@@ -1310,12 +1297,12 @@
 
     goto/16 :goto_10
 
-    :cond_12
+    :cond_11
     move v0, v2
 
     goto/16 :goto_11
 
-    :cond_13
+    :cond_12
     sget-object v0, Lcom/android/keyguard/KeyguardRune;->CONFIG_DMN_TYPE:Ljava/lang/String;
 
     const-string/jumbo v3, "Softphone"
@@ -1326,37 +1313,37 @@
 
     goto/16 :goto_12
 
-    :cond_14
+    :cond_13
     move v0, v1
 
     goto/16 :goto_13
 
-    :cond_15
+    :cond_14
     move v0, v1
 
     goto/16 :goto_14
 
-    :cond_16
+    :cond_15
     move v0, v1
 
     goto/16 :goto_15
 
-    :cond_17
+    :cond_16
     move v0, v1
 
     goto/16 :goto_16
 
-    :cond_18
+    :cond_17
     move v0, v1
 
     goto/16 :goto_17
 
-    :cond_19
+    :cond_18
     const/16 v0, 0x5dc
 
     goto/16 :goto_18
 
-    :cond_1a
+    :cond_19
     sget-object v0, Lcom/android/keyguard/KeyguardRune;->mConfigLockTimeoutSetting:Ljava/lang/String;
 
     const-string/jumbo v3, "10min"
@@ -1367,7 +1354,7 @@
 
     goto/16 :goto_19
 
-    :cond_1b
+    :cond_1a
     move v1, v2
 
     goto/16 :goto_1a
