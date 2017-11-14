@@ -63,7 +63,7 @@
 
 # virtual methods
 .method public getColorFromColorType(I)I
-    .locals 4
+    .locals 10
 
     const/4 v1, 0x0
 
@@ -93,6 +93,7 @@
 
     move-result v2
 
+    :goto_1
     return v2
 
     :pswitch_1
@@ -120,64 +121,170 @@
     goto :goto_0
 
     :pswitch_3
-    if-eqz v0, :cond_2
+    if-eqz v0, :cond_3
 
     sget v1, Lcom/android/keyguard/R$color;->theme_clock_date_color:I
 
-    goto :goto_0
+    const/4 v7, 0x0
+
+    const-string v8, "kg_enable_lockscreen_color"
+
+    invoke-static {v8, v7}, Lcom/android/wubydax/GearUtils;->getDbIntForKey(Ljava/lang/String;I)I
+
+    move-result v9
+
+    if-eqz v9, :cond_2
+
+    goto/16 :goto_2
 
     :cond_2
-    sget v1, Lcom/android/keyguard/R$color;->backup_default_theme_clock_date_color:I
-
-    goto :goto_0
-
-    :pswitch_4
-    if-eqz v0, :cond_3
-
-    sget v1, Lcom/android/keyguard/R$color;->theme_pin_digit_text_color:I
-
     goto :goto_0
 
     :cond_3
-    sget v1, Lcom/android/keyguard/R$color;->backup_default_theme_pin_digit_text_color:I
+    sget v1, Lcom/android/keyguard/R$color;->backup_default_theme_clock_date_color:I
 
-    goto :goto_0
+    const/4 v7, 0x0
 
-    :pswitch_5
-    if-eqz v0, :cond_4
+    const-string v8, "kg_enable_lockscreen_color"
 
-    sget v1, Lcom/android/keyguard/R$color;->theme_pin_text_color:I
+    invoke-static {v8, v7}, Lcom/android/wubydax/GearUtils;->getDbIntForKey(Ljava/lang/String;I)I
 
-    goto :goto_0
+    move-result v9
+
+    if-eqz v9, :cond_4
+
+    goto :goto_2
 
     :cond_4
-    sget v1, Lcom/android/keyguard/R$color;->backup_default_theme_pin_text_color:I
-
     goto :goto_0
 
-    :pswitch_6
-    if-eqz v0, :cond_5
-
-    sget v1, Lcom/android/keyguard/R$color;->theme_pin_klondike_text_color:I
-
-    goto :goto_0
-
-    :cond_5
-    sget v1, Lcom/android/keyguard/R$color;->backup_default_theme_pin_klondike_text_color:I
-
-    goto :goto_0
-
-    :pswitch_7
+    :pswitch_4
     if-eqz v0, :cond_6
 
-    sget v1, Lcom/android/keyguard/R$color;->theme_keyguard_dex_emergency_text_color:I
+    sget v1, Lcom/android/keyguard/R$color;->theme_pin_digit_text_color:I
 
+    const/4 v7, 0x0
+
+    const-string v8, "kg_enable_lockscreen_color"
+
+    invoke-static {v8, v7}, Lcom/android/wubydax/GearUtils;->getDbIntForKey(Ljava/lang/String;I)I
+
+    move-result v9
+
+    if-eqz v9, :cond_5
+
+    goto/16 :goto_3
+
+    :cond_5
     goto :goto_0
 
     :cond_6
+    sget v1, Lcom/android/keyguard/R$color;->backup_default_theme_pin_digit_text_color:I
+
+    const/4 v7, 0x0
+
+    const-string v8, "kg_enable_lockscreen_color"
+
+    invoke-static {v8, v7}, Lcom/android/wubydax/GearUtils;->getDbIntForKey(Ljava/lang/String;I)I
+
+    move-result v9
+
+    if-eqz v9, :cond_7
+
+    goto :goto_3
+
+    :cond_7
+    goto :goto_0
+
+    :pswitch_5
+    if-eqz v0, :cond_9
+
+    sget v1, Lcom/android/keyguard/R$color;->theme_pin_text_color:I
+
+    const/4 v7, 0x0
+
+    const-string v8, "kg_enable_lockscreen_color"
+
+    invoke-static {v8, v7}, Lcom/android/wubydax/GearUtils;->getDbIntForKey(Ljava/lang/String;I)I
+
+    move-result v9
+
+    if-eqz v9, :cond_8
+
+    goto :goto_3
+
+    :cond_8
+    goto :goto_0
+
+    :cond_9
+    sget v1, Lcom/android/keyguard/R$color;->backup_default_theme_pin_text_color:I
+
+    const/4 v7, 0x0
+
+    const-string v8, "kg_enable_lockscreen_color"
+
+    invoke-static {v8, v7}, Lcom/android/wubydax/GearUtils;->getDbIntForKey(Ljava/lang/String;I)I
+
+    move-result v9
+
+    if-eqz v9, :cond_a
+
+    goto :goto_3
+
+    :cond_a
+    goto :goto_0
+
+    :pswitch_6
+    if-eqz v0, :cond_c
+
+    sget v1, Lcom/android/keyguard/R$color;->theme_pin_klondike_text_color:I
+
+    const/4 v7, 0x0
+
+    const-string v8, "kg_enable_lockscreen_color"
+
+    invoke-static {v8, v7}, Lcom/android/wubydax/GearUtils;->getDbIntForKey(Ljava/lang/String;I)I
+
+    move-result v9
+
+    if-eqz v9, :cond_b
+
+    goto :goto_3
+
+    :cond_b
+    goto :goto_0
+
+    :cond_c
+    sget v1, Lcom/android/keyguard/R$color;->backup_default_theme_pin_klondike_text_color:I
+
+    const/4 v7, 0x0
+
+    const-string v8, "kg_enable_lockscreen_color"
+
+    invoke-static {v8, v7}, Lcom/android/wubydax/GearUtils;->getDbIntForKey(Ljava/lang/String;I)I
+
+    move-result v9
+
+    if-eqz v9, :cond_d
+
+    goto :goto_3
+
+    :cond_d
+    goto/16 :goto_0
+
+    :pswitch_7
+    if-eqz v0, :cond_e
+
+    sget v1, Lcom/android/keyguard/R$color;->theme_keyguard_dex_emergency_text_color:I
+
+    goto/16 :goto_0
+
+    :cond_e
     sget v1, Lcom/android/keyguard/R$color;->backup_default_theme_keyguard_dex_emergency_text_color:I
 
-    goto :goto_0
+    goto/16 :goto_0
+
+    nop
 
     :pswitch_data_0
     .packed-switch 0x0
@@ -190,6 +297,64 @@
         :pswitch_0
         :pswitch_7
     .end packed-switch
+
+    :goto_2
+    iget-object v2, p0, Lcom/android/keyguard/util/ViewStyleUtils;->mContext:Landroid/content/Context;
+
+    invoke-virtual {v2}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
+
+    move-result-object v2
+
+    const/4 v3, 0x0
+
+    invoke-virtual {v2, v1, v3}, Landroid/content/res/Resources;->getColor(ILandroid/content/res/Resources$Theme;)I
+
+    move-result v2
+
+    iget-object v4, p0, Lcom/android/keyguard/util/ViewStyleUtils;->mContext:Landroid/content/Context;
+
+    invoke-virtual {v4}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
+
+    move-result-object v4
+
+    const-string v5, "keyguard_helptext_custom_text_color"
+
+    const v6, -0x50506
+
+    invoke-static {v4, v5, v6}, Landroid/provider/Settings$System;->getInt(Landroid/content/ContentResolver;Ljava/lang/String;I)I
+
+    move-result v2
+
+    goto/16 :goto_1
+
+    :goto_3
+    iget-object v2, p0, Lcom/android/keyguard/util/ViewStyleUtils;->mContext:Landroid/content/Context;
+
+    invoke-virtual {v2}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
+
+    move-result-object v2
+
+    const/4 v3, 0x0
+
+    invoke-virtual {v2, v1, v3}, Landroid/content/res/Resources;->getColor(ILandroid/content/res/Resources$Theme;)I
+
+    move-result v2
+
+    iget-object v4, p0, Lcom/android/keyguard/util/ViewStyleUtils;->mContext:Landroid/content/Context;
+
+    invoke-virtual {v4}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
+
+    move-result-object v4
+
+    const-string v5, "keyguard_pindigit_custom_text_color"
+
+    const v6, -0x50506
+
+    invoke-static {v4, v5, v6}, Landroid/provider/Settings$System;->getInt(Landroid/content/ContentResolver;Ljava/lang/String;I)I
+
+    move-result v2
+
+    goto/16 :goto_1
 .end method
 
 .method public getCurrentLookType()I

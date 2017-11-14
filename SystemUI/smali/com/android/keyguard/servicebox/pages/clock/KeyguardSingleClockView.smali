@@ -911,6 +911,8 @@
 
     invoke-virtual {v0, v1}, Lcom/android/keyguard/util/ViewStyleUtils;->setTextFontEffect(Landroid/widget/TextView;)V
 
+    invoke-virtual {p0}, Lcom/android/keyguard/servicebox/pages/clock/KeyguardSingleClockView;->setClockDateColors()V
+
     return-void
 .end method
 
