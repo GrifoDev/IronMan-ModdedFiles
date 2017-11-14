@@ -11159,6 +11159,7 @@
     <public type="id" name="killer_mem_info" id="0x7f130595" />
     <public type="id" name="killer_clean_button" id="0x7f130596" />
     <public type="id" name="next_alarm_toggle" id="0x7f130597" />
+    <public type="id" name="CustomBg" id="0x7f130598" />
     <public type="plurals" name="status_bar_accessibility_recent_apps" id="0x7f140000" />
     <public type="plurals" name="notification_group_overflow_description" id="0x7f140001" />
     <public type="plurals" name="kg_password_wrong_pin_code" id="0x7f140002" />
