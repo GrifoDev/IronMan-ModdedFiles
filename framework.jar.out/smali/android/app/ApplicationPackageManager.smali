@@ -7554,37 +7554,59 @@
 .end method
 
 .method private putCachedIcon(Landroid/app/ApplicationPackageManager$ResourceName;Landroid/graphics/drawable/Drawable;)V
-    .locals 4
+    .locals 5
 
-    sget-object v1, Landroid/app/ApplicationPackageManager;->sSync:Ljava/lang/Object;
+    sget-object v2, Landroid/app/ApplicationPackageManager;->sSync:Ljava/lang/Object;
 
-    monitor-enter v1
+    monitor-enter v2
 
     :try_start_0
-    sget-object v0, Landroid/app/ApplicationPackageManager;->sIconCache:Landroid/util/ArrayMap;
+    sget-object v1, Landroid/app/ApplicationPackageManager;->sIconCache:Landroid/util/ArrayMap;
 
-    new-instance v2, Ljava/lang/ref/WeakReference;
+    new-instance v3, Ljava/lang/ref/WeakReference;
 
     invoke-virtual {p2}, Landroid/graphics/drawable/Drawable;->getConstantState()Landroid/graphics/drawable/Drawable$ConstantState;
 
-    move-result-object v3
+    move-result-object v4
 
-    invoke-direct {v2, v3}, Ljava/lang/ref/WeakReference;-><init>(Ljava/lang/Object;)V
+    invoke-direct {v3, v4}, Ljava/lang/ref/WeakReference;-><init>(Ljava/lang/Object;)V
 
-    invoke-virtual {v0, p1, v2}, Landroid/util/ArrayMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v1, p1, v3}, Landroid/util/ArrayMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
     :try_end_0
+    .catch Ljava/lang/ArrayIndexOutOfBoundsException; {:try_start_0 .. :try_end_0} :catch_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    monitor-exit v1
+    :goto_0
+    monitor-exit v2
 
     return-void
 
-    :catchall_0
+    :catch_0
     move-exception v0
 
-    monitor-exit v1
+    :try_start_1
+    const-string/jumbo v1, "ApplicationPackageManager"
 
-    throw v0
+    const-string/jumbo v3, "Failed to put cached drawable state"
+
+    invoke-static {v1, v3, v0}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
+
+    new-instance v1, Landroid/util/ArrayMap;
+
+    invoke-direct {v1}, Landroid/util/ArrayMap;-><init>()V
+
+    sput-object v1, Landroid/app/ApplicationPackageManager;->sIconCache:Landroid/util/ArrayMap;
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+
+    goto :goto_0
+
+    :catchall_0
+    move-exception v1
+
+    monitor-exit v2
+
+    throw v1
 .end method
 
 .method private putCachedString(Landroid/app/ApplicationPackageManager$ResourceName;Ljava/lang/CharSequence;)V
@@ -11805,7 +11827,7 @@
 
     move-result v1
 
-    if-ne v0, v1, :cond_4
+    if-ne v0, v1, :cond_3
 
     const/4 v11, 0x1
 
@@ -11871,12 +11893,12 @@
 
     iget-object v0, v0, Landroid/app/ContextImpl;->mMainThread:Landroid/app/ActivityThread;
 
-    if-eqz v11, :cond_5
+    if-eqz v11, :cond_4
 
     iget-object v1, p1, Landroid/content/pm/ApplicationInfo;->sourceDir:Ljava/lang/String;
 
     :goto_2
-    if-eqz v11, :cond_6
+    if-eqz v11, :cond_5
 
     iget-object v2, p1, Landroid/content/pm/ApplicationInfo;->splitSourceDirs:[Ljava/lang/String;
 
@@ -11891,7 +11913,7 @@
 
     move-result-object v10
 
-    if-eqz v10, :cond_3
+    if-eqz v10, :cond_6
 
     iget-object v0, p1, Landroid/content/pm/ApplicationInfo;->packageName:Ljava/lang/String;
 
@@ -11911,10 +11933,9 @@
     :try_end_1
     .catch Landroid/content/res/Resources$NotFoundException; {:try_start_1 .. :try_end_1} :catch_1
 
-    :cond_3
     return-object v10
 
-    :cond_4
+    :cond_3
     const/4 v11, 0x0
 
     goto :goto_0
@@ -11966,13 +11987,13 @@
 
     goto :goto_1
 
-    :cond_5
+    :cond_4
     :try_start_2
     iget-object v1, p1, Landroid/content/pm/ApplicationInfo;->publicSourceDir:Ljava/lang/String;
 
     goto :goto_2
 
-    :cond_6
+    :cond_5
     iget-object v2, p1, Landroid/content/pm/ApplicationInfo;->splitPublicSourceDirs:[Ljava/lang/String;
     :try_end_2
     .catch Landroid/content/res/Resources$NotFoundException; {:try_start_2 .. :try_end_2} :catch_1
@@ -12009,6 +12030,33 @@
     invoke-virtual {v9, v7}, Landroid/content/pm/PackageManager$NameNotFoundException;->initCause(Ljava/lang/Throwable;)Ljava/lang/Throwable;
 
     throw v9
+
+    :cond_6
+    new-instance v0, Landroid/content/pm/PackageManager$NameNotFoundException;
+
+    new-instance v1, Ljava/lang/StringBuilder;
+
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string/jumbo v2, "Resouce cannot found "
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    iget-object v2, p1, Landroid/content/pm/ApplicationInfo;->publicSourceDir:Ljava/lang/String;
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-direct {v0, v1}, Landroid/content/pm/PackageManager$NameNotFoundException;-><init>(Ljava/lang/String;)V
+
+    throw v0
 .end method
 
 .method public getResourcesForApplication(Ljava/lang/String;)Landroid/content/res/Resources;

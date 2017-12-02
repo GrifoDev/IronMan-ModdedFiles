@@ -2943,8 +2943,6 @@
 .method public final windowPositionLost_uiRtSync(J)V
     .locals 11
 
-    const/4 v3, 0x0
-
     iget-object v0, p0, Landroid/view/SurfaceView;->mSession:Landroid/view/IWindowSession;
 
     iget-object v1, p0, Landroid/view/SurfaceView;->mWindow:Landroid/view/SurfaceView$MyWindow;
@@ -2961,7 +2959,9 @@
 
     if-eqz v2, :cond_3
 
-    iput-boolean v3, p0, Landroid/view/SurfaceView;->mRtHandlingPositionUpdates:Z
+    const/4 v2, 0x0
+
+    iput-boolean v2, p0, Landroid/view/SurfaceView;->mRtHandlingPositionUpdates:Z
 
     iget-object v2, p0, Landroid/view/SurfaceView;->mTmpRect:Landroid/graphics/Rect;
 
@@ -3024,89 +3024,6 @@
 
     :cond_4
     :try_start_0
-    iget-object v2, p0, Landroid/view/SurfaceView;->mLocation:[I
-
-    invoke-virtual {p0, v2}, Landroid/view/SurfaceView;->getLocationInWindow([I)V
-
-    iget-object v2, p0, Landroid/view/SurfaceView;->mLocation:[I
-
-    const/4 v3, 0x0
-
-    aget v2, v2, v3
-
-    iput v2, p0, Landroid/view/SurfaceView;->mWindowSpaceLeft:I
-
-    iget-object v2, p0, Landroid/view/SurfaceView;->mLocation:[I
-
-    const/4 v3, 0x1
-
-    aget v2, v2, v3
-
-    iput v2, p0, Landroid/view/SurfaceView;->mWindowSpaceTop:I
-
-    iget-object v2, p0, Landroid/view/SurfaceView;->mLocation:[I
-
-    invoke-virtual {p0}, Landroid/view/SurfaceView;->getWidth()I
-
-    move-result v3
-
-    iget-object v4, p0, Landroid/view/SurfaceView;->mLayout:Landroid/view/WindowManager$LayoutParams;
-
-    iput v3, v4, Landroid/view/WindowManager$LayoutParams;->width:I
-
-    const/4 v4, 0x0
-
-    aput v3, v2, v4
-
-    iget-object v2, p0, Landroid/view/SurfaceView;->mLocation:[I
-
-    invoke-virtual {p0}, Landroid/view/SurfaceView;->getHeight()I
-
-    move-result v3
-
-    iget-object v4, p0, Landroid/view/SurfaceView;->mLayout:Landroid/view/WindowManager$LayoutParams;
-
-    iput v3, v4, Landroid/view/WindowManager$LayoutParams;->height:I
-
-    const/4 v4, 0x1
-
-    aput v3, v2, v4
-
-    iget-object v2, p0, Landroid/view/SurfaceView;->mLocation:[I
-
-    invoke-virtual {p0, v2}, Landroid/view/SurfaceView;->transformFromViewToWindowSpace([I)V
-
-    iget-object v2, p0, Landroid/view/SurfaceView;->mWinFrame:Landroid/graphics/Rect;
-
-    iget v3, p0, Landroid/view/SurfaceView;->mWindowSpaceLeft:I
-
-    iget v4, p0, Landroid/view/SurfaceView;->mWindowSpaceTop:I
-
-    iget-object v5, p0, Landroid/view/SurfaceView;->mLocation:[I
-
-    const/4 v6, 0x0
-
-    aget v5, v5, v6
-
-    iget-object v6, p0, Landroid/view/SurfaceView;->mLocation:[I
-
-    const/4 v7, 0x1
-
-    aget v6, v6, v7
-
-    invoke-virtual {v2, v3, v4, v5, v6}, Landroid/graphics/Rect;->set(IIII)V
-
-    iget-object v2, p0, Landroid/view/SurfaceView;->mTranslator:Landroid/content/res/CompatibilityInfo$Translator;
-
-    if-eqz v2, :cond_5
-
-    iget-object v2, p0, Landroid/view/SurfaceView;->mTranslator:Landroid/content/res/CompatibilityInfo$Translator;
-
-    iget-object v3, p0, Landroid/view/SurfaceView;->mWinFrame:Landroid/graphics/Rect;
-
-    invoke-virtual {v2, v3}, Landroid/content/res/CompatibilityInfo$Translator;->translateRectInAppWindowToScreen(Landroid/graphics/Rect;)V
-
-    :cond_5
     iget-object v2, p0, Landroid/view/SurfaceView;->mTmpRect:Landroid/graphics/Rect;
 
     iget v2, v2, Landroid/graphics/Rect;->left:I

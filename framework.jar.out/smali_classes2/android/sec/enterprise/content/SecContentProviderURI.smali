@@ -440,6 +440,8 @@
 
 .field public static final KNOXCUSTOMMANAGERSERVICEPOLICY2:Ljava/lang/String; = "KnoxCustomManagerService2"
 
+.field public static final KNOXCUSTOMMANAGERSERVICE_AIRGESTUREOPTIONSTATE_METHOD:Ljava/lang/String; = "getAirGestureOptionState"
+
 .field public static final KNOXCUSTOMMANAGERSERVICE_APPBLOCKDOWNLOADNAMESPACES_METHOD:Ljava/lang/String; = "getAppBlockDownloadNamespaces"
 
 .field public static final KNOXCUSTOMMANAGERSERVICE_APPBLOCKDOWNLOADSTATE_METHOD:Ljava/lang/String; = "getAppBlockDownloadState"

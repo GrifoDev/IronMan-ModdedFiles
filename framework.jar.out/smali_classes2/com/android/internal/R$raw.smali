@@ -29,19 +29,19 @@
 
 .field public static final direction_lock_beep_up:I = 0x1100008
 
-.field public static final edge_collapse_frag:I = 0x1100021
+.field public static final edge_collapse_frag:I = 0x1100022
 
-.field public static final edge_collapse_vert:I = 0x1100022
+.field public static final edge_collapse_vert:I = 0x1100023
 
-.field public static final edge_unite_frag:I = 0x1100023
+.field public static final edge_unite_frag:I = 0x1100024
 
-.field public static final edge_unite_vert:I = 0x1100024
+.field public static final edge_unite_vert:I = 0x1100025
 
-.field public static final fallbacknoti:I = 0x1100025
+.field public static final fallbacknoti:I = 0x1100026
 
-.field public static final fallbackring:I = 0x1100026
+.field public static final fallbackring:I = 0x1100027
 
-.field public static final incognito_mode_start_page:I = 0x110004f
+.field public static final incognito_mode_start_page:I = 0x1100050
 
 .field public static final loaderror:I = 0x1100000
 

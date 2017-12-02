@@ -34,7 +34,7 @@
 
 .field static final TRANSACTION_enterFreeformTask:I = 0x27
 
-.field static final TRANSACTION_exitDockedMode:I = 0x35
+.field static final TRANSACTION_exitDockedMode:I = 0x36
 
 .field static final TRANSACTION_exitMultiWindow:I = 0x1
 
@@ -68,9 +68,11 @@
 
 .field static final TRANSACTION_isSnapTargetHideStatusbar:I = 0x33
 
+.field static final TRANSACTION_isSnapTargetTranslucentNavigationBar:I = 0x34
+
 .field static final TRANSACTION_isSnapWindowRunning:I = 0x32
 
-.field static final TRANSACTION_isSnapWindowTarget:I = 0x34
+.field static final TRANSACTION_isSnapWindowTarget:I = 0x35
 
 .field static final TRANSACTION_isStatusBarVisible:I = 0x19
 
@@ -78,17 +80,17 @@
 
 .field static final TRANSACTION_maximizeStackByDivider:I = 0x13
 
-.field static final TRANSACTION_maximizeTopTask:I = 0x39
+.field static final TRANSACTION_maximizeTopTask:I = 0x3a
 
 .field static final TRANSACTION_minimizeAllFreeform:I = 0x3
 
 .field static final TRANSACTION_minimizeOhterFreeforms:I = 0x4
 
-.field static final TRANSACTION_minimizeSearchedTask:I = 0x37
+.field static final TRANSACTION_minimizeSearchedTask:I = 0x38
 
 .field static final TRANSACTION_minimizeTask:I = 0x5
 
-.field static final TRANSACTION_minimizeTopTask:I = 0x38
+.field static final TRANSACTION_minimizeTopTask:I = 0x39
 
 .field static final TRANSACTION_moveActivityTaskToBack:I = 0x9
 
@@ -98,17 +100,17 @@
 
 .field static final TRANSACTION_registerMultiWindowServiceCallback:I = 0xa
 
-.field static final TRANSACTION_removeFocusedTask:I = 0x3b
+.field static final TRANSACTION_removeFocusedTask:I = 0x3c
 
 .field static final TRANSACTION_removeFreeformTasks:I = 0x1f
 
-.field static final TRANSACTION_removeSearchedTask:I = 0x3a
+.field static final TRANSACTION_removeSearchedTask:I = 0x3b
 
 .field static final TRANSACTION_removeTaskIfNeeded:I = 0x12
 
 .field static final TRANSACTION_reportMinimizeContainerBounds:I = 0x20
 
-.field static final TRANSACTION_resizeDockedStack:I = 0x3c
+.field static final TRANSACTION_resizeDockedStack:I = 0x3d
 
 .field static final TRANSACTION_rotateFreeformTask:I = 0x6
 
@@ -136,7 +138,7 @@
 
 .field static final TRANSACTION_startDividerDragging:I = 0x25
 
-.field static final TRANSACTION_startFreeform:I = 0x36
+.field static final TRANSACTION_startFreeform:I = 0x37
 
 .field static final TRANSACTION_startResizingFreeformTask:I = 0x15
 
@@ -2043,13 +2045,7 @@
 
     invoke-virtual {v0, v1}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
-    invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
-
-    move-result v4
-
-    move-object/from16 v0, p0
-
-    invoke-virtual {v0, v4}, Lcom/samsung/android/multiwindow/IMultiWindowManager$Stub;->isSnapWindowTarget(I)Z
+    invoke-virtual/range {p0 .. p0}, Lcom/samsung/android/multiwindow/IMultiWindowManager$Stub;->isSnapTargetTranslucentNavigationBar()Z
 
     move-result v26
 
@@ -2084,7 +2080,13 @@
 
     invoke-virtual {v0, v1}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
-    invoke-virtual/range {p0 .. p0}, Lcom/samsung/android/multiwindow/IMultiWindowManager$Stub;->exitDockedMode()Z
+    invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
+
+    move-result v4
+
+    move-object/from16 v0, p0
+
+    invoke-virtual {v0, v4}, Lcom/samsung/android/multiwindow/IMultiWindowManager$Stub;->isSnapWindowTarget(I)Z
 
     move-result v26
 
@@ -2119,6 +2121,41 @@
 
     invoke-virtual {v0, v1}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
+    invoke-virtual/range {p0 .. p0}, Lcom/samsung/android/multiwindow/IMultiWindowManager$Stub;->exitDockedMode()Z
+
+    move-result v26
+
+    invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
+
+    if-eqz v26, :cond_23
+
+    const/16 v28, 0x1
+
+    :goto_23
+    move-object/from16 v0, p3
+
+    move/from16 v1, v28
+
+    invoke-virtual {v0, v1}, Landroid/os/Parcel;->writeInt(I)V
+
+    const/16 v28, 0x1
+
+    return v28
+
+    :cond_23
+    const/16 v28, 0x0
+
+    goto :goto_23
+
+    :sswitch_37
+    const-string/jumbo v28, "com.samsung.android.multiwindow.IMultiWindowManager"
+
+    move-object/from16 v0, p2
+
+    move-object/from16 v1, v28
+
+    invoke-virtual {v0, v1}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
+
     invoke-virtual/range {p0 .. p0}, Lcom/samsung/android/multiwindow/IMultiWindowManager$Stub;->startFreeform()I
 
     move-result v23
@@ -2135,7 +2172,7 @@
 
     return v28
 
-    :sswitch_37
+    :sswitch_38
     const-string/jumbo v28, "com.samsung.android.multiwindow.IMultiWindowManager"
 
     move-object/from16 v0, p2
@@ -2166,41 +2203,6 @@
 
     return v28
 
-    :sswitch_38
-    const-string/jumbo v28, "com.samsung.android.multiwindow.IMultiWindowManager"
-
-    move-object/from16 v0, p2
-
-    move-object/from16 v1, v28
-
-    invoke-virtual {v0, v1}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
-
-    invoke-virtual/range {p0 .. p0}, Lcom/samsung/android/multiwindow/IMultiWindowManager$Stub;->minimizeTopTask()Z
-
-    move-result v26
-
-    invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
-
-    if-eqz v26, :cond_23
-
-    const/16 v28, 0x1
-
-    :goto_23
-    move-object/from16 v0, p3
-
-    move/from16 v1, v28
-
-    invoke-virtual {v0, v1}, Landroid/os/Parcel;->writeInt(I)V
-
-    const/16 v28, 0x1
-
-    return v28
-
-    :cond_23
-    const/16 v28, 0x0
-
-    goto :goto_23
-
     :sswitch_39
     const-string/jumbo v28, "com.samsung.android.multiwindow.IMultiWindowManager"
 
@@ -2210,7 +2212,7 @@
 
     invoke-virtual {v0, v1}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
-    invoke-virtual/range {p0 .. p0}, Lcom/samsung/android/multiwindow/IMultiWindowManager$Stub;->maximizeTopTask()Z
+    invoke-virtual/range {p0 .. p0}, Lcom/samsung/android/multiwindow/IMultiWindowManager$Stub;->minimizeTopTask()Z
 
     move-result v26
 
@@ -2245,13 +2247,7 @@
 
     invoke-virtual {v0, v1}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
-    invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readString()Ljava/lang/String;
-
-    move-result-object v11
-
-    move-object/from16 v0, p0
-
-    invoke-virtual {v0, v11}, Lcom/samsung/android/multiwindow/IMultiWindowManager$Stub;->removeSearchedTask(Ljava/lang/String;)Z
+    invoke-virtual/range {p0 .. p0}, Lcom/samsung/android/multiwindow/IMultiWindowManager$Stub;->maximizeTopTask()Z
 
     move-result v26
 
@@ -2286,7 +2282,13 @@
 
     invoke-virtual {v0, v1}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
-    invoke-virtual/range {p0 .. p0}, Lcom/samsung/android/multiwindow/IMultiWindowManager$Stub;->removeFocusedTask()Z
+    invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readString()Ljava/lang/String;
+
+    move-result-object v11
+
+    move-object/from16 v0, p0
+
+    invoke-virtual {v0, v11}, Lcom/samsung/android/multiwindow/IMultiWindowManager$Stub;->removeSearchedTask(Ljava/lang/String;)Z
 
     move-result v26
 
@@ -2313,6 +2315,41 @@
     goto :goto_26
 
     :sswitch_3c
+    const-string/jumbo v28, "com.samsung.android.multiwindow.IMultiWindowManager"
+
+    move-object/from16 v0, p2
+
+    move-object/from16 v1, v28
+
+    invoke-virtual {v0, v1}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
+
+    invoke-virtual/range {p0 .. p0}, Lcom/samsung/android/multiwindow/IMultiWindowManager$Stub;->removeFocusedTask()Z
+
+    move-result v26
+
+    invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
+
+    if-eqz v26, :cond_27
+
+    const/16 v28, 0x1
+
+    :goto_27
+    move-object/from16 v0, p3
+
+    move/from16 v1, v28
+
+    invoke-virtual {v0, v1}, Landroid/os/Parcel;->writeInt(I)V
+
+    const/16 v28, 0x1
+
+    return v28
+
+    :cond_27
+    const/16 v28, 0x0
+
+    goto :goto_27
+
+    :sswitch_3d
     const-string/jumbo v28, "com.samsung.android.multiwindow.IMultiWindowManager"
 
     move-object/from16 v0, p2
@@ -2399,6 +2436,7 @@
         0x3a -> :sswitch_3a
         0x3b -> :sswitch_3b
         0x3c -> :sswitch_3c
+        0x3d -> :sswitch_3d
         0x5f4e5446 -> :sswitch_0
     .end sparse-switch
 .end method

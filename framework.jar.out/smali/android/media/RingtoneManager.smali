@@ -1338,7 +1338,7 @@
     return-object v0
 .end method
 
-.method protected static getCurrentProfileContentResolver(Landroid/content/Context;)Landroid/content/ContentResolver;
+.method public static getCurrentProfileContentResolver(Landroid/content/Context;)Landroid/content/ContentResolver;
     .locals 9
 
     :try_start_0

@@ -6390,7 +6390,7 @@
 
     iput-wide v0, v2, Lcom/android/internal/os/BatteryStatsImpl$Uid;->mCurStepUserTime:J
 
-    if-nez v4, :cond_49
+    if-nez v4, :cond_4b
 
     move-object/from16 v0, p0
 
@@ -6916,6 +6916,49 @@
     :cond_48
     move-object/from16 v0, p0
 
+    iget-object v0, v0, Lcom/android/internal/os/BatteryStatsImpl$Uid;->mProcessStateTimer:[Lcom/android/internal/os/BatteryStatsImpl$StopwatchTimer;
+
+    move-object/from16 v28, v0
+
+    if-eqz v28, :cond_4a
+
+    const/4 v7, 0x0
+
+    :goto_28
+    const/16 v28, 0x6
+
+    move/from16 v0, v28
+
+    if-ge v7, v0, :cond_4a
+
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcom/android/internal/os/BatteryStatsImpl$Uid;->mProcessStateTimer:[Lcom/android/internal/os/BatteryStatsImpl$StopwatchTimer;
+
+    move-object/from16 v28, v0
+
+    aget-object v28, v28, v7
+
+    if-eqz v28, :cond_49
+
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcom/android/internal/os/BatteryStatsImpl$Uid;->mProcessStateTimer:[Lcom/android/internal/os/BatteryStatsImpl$StopwatchTimer;
+
+    move-object/from16 v28, v0
+
+    aget-object v28, v28, v7
+
+    invoke-virtual/range {v28 .. v28}, Lcom/android/internal/os/BatteryStatsImpl$StopwatchTimer;->detach()V
+
+    :cond_49
+    add-int/lit8 v7, v7, 0x1
+
+    goto :goto_28
+
+    :cond_4a
+    move-object/from16 v0, p0
+
     iget-object v0, v0, Lcom/android/internal/os/BatteryStatsImpl$Uid;->mMobileRadioApWakeupCount:Lcom/android/internal/os/BatteryStatsImpl$LongSamplingCounter;
 
     move-object/from16 v28, v0
@@ -6930,18 +6973,18 @@
 
     invoke-static/range {v28 .. v28}, Lcom/android/internal/os/BatteryStatsImpl;->-wrap1(Lcom/android/internal/os/BatteryStatsImpl$LongSamplingCounter;)V
 
-    :cond_49
-    if-eqz v4, :cond_4a
+    :cond_4b
+    if-eqz v4, :cond_4c
 
     const/16 v28, 0x0
 
-    :goto_28
+    :goto_29
     return v28
 
-    :cond_4a
+    :cond_4c
     const/16 v28, 0x1
 
-    goto :goto_28
+    goto :goto_29
 .end method
 
 .method public updateUidProcessStateLocked(I)V

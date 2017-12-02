@@ -133,128 +133,225 @@
 .end method
 
 .method public static addUserAuthArgs(Landroid/security/keymaster/KeymasterArguments;ZIZZ)V
-    .locals 10
+    .locals 16
 
     if-nez p1, :cond_0
 
-    const v1, 0x700001f7
+    const v11, 0x700001f7
 
-    invoke-virtual {p0, v1}, Landroid/security/keymaster/KeymasterArguments;->addBoolean(I)V
+    move-object/from16 v0, p0
+
+    invoke-virtual {v0, v11}, Landroid/security/keymaster/KeymasterArguments;->addBoolean(I)V
 
     return-void
 
     :cond_0
-    const/4 v1, -0x1
+    const/4 v11, -0x1
 
-    if-ne p2, v1, :cond_4
+    move/from16 v0, p2
+
+    if-ne v0, v11, :cond_8
 
     invoke-static {}, Landroid/security/KeyStore;->getApplicationContext()Landroid/content/Context;
 
-    move-result-object v1
+    move-result-object v11
 
-    const-class v8, Landroid/hardware/fingerprint/FingerprintManager;
+    const-class v14, Landroid/hardware/fingerprint/FingerprintManager;
 
-    invoke-virtual {v1, v8}, Landroid/content/Context;->getSystemService(Ljava/lang/Class;)Ljava/lang/Object;
+    invoke-virtual {v11, v14}, Landroid/content/Context;->getSystemService(Ljava/lang/Class;)Ljava/lang/Object;
 
-    move-result-object v0
+    move-result-object v3
 
-    check-cast v0, Landroid/hardware/fingerprint/FingerprintManager;
+    check-cast v3, Landroid/hardware/fingerprint/FingerprintManager;
 
-    if-eqz v0, :cond_1
+    if-eqz v3, :cond_1
 
-    invoke-virtual {v0}, Landroid/hardware/fingerprint/FingerprintManager;->getAuthenticatorId()J
+    invoke-virtual {v3}, Landroid/hardware/fingerprint/FingerprintManager;->getAuthenticatorId()J
 
-    move-result-wide v2
+    move-result-wide v4
 
     :goto_0
-    const-wide/16 v8, 0x0
+    invoke-static {}, Landroid/security/KeyStore;->getApplicationContext()Landroid/content/Context;
 
-    cmp-long v1, v2, v8
+    move-result-object v11
 
-    if-nez v1, :cond_2
+    invoke-static {v11}, Lcom/samsung/android/camera/iris/SemIrisManager;->getSemIrisManager(Landroid/content/Context;)Lcom/samsung/android/camera/iris/SemIrisManager;
 
-    new-instance v1, Ljava/lang/IllegalStateException;
+    move-result-object v10
 
-    const-string/jumbo v8, "At least one fingerprint must be enrolled to create keys requiring user authentication for every use"
+    if-eqz v10, :cond_2
 
-    invoke-direct {v1, v8}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+    invoke-virtual {v10}, Lcom/samsung/android/camera/iris/SemIrisManager;->getAuthenticatorId()J
 
-    throw v1
+    move-result-wide v6
+
+    :goto_1
+    const-wide/16 v14, 0x0
+
+    cmp-long v11, v4, v14
+
+    if-nez v11, :cond_3
+
+    const-wide/16 v14, 0x0
+
+    cmp-long v11, v6, v14
+
+    if-nez v11, :cond_3
+
+    new-instance v11, Ljava/lang/IllegalStateException;
+
+    const-string/jumbo v14, "At least one fingerprint/iris must be enrolled to create keys requiring user authentication for every use"
+
+    invoke-direct {v11, v14}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+
+    throw v11
 
     :cond_1
-    const-wide/16 v2, 0x0
+    const-wide/16 v4, 0x0
 
     goto :goto_0
 
     :cond_2
-    if-eqz p4, :cond_3
-
-    move-wide v6, v2
-
-    :goto_1
-    invoke-static {v6, v7}, Landroid/security/keymaster/KeymasterArguments;->toUint64(J)Ljava/math/BigInteger;
-
-    move-result-object v1
-
-    const v8, -0x5ffffe0a
-
-    invoke-virtual {p0, v8, v1}, Landroid/security/keymaster/KeymasterArguments;->addUnsignedLong(ILjava/math/BigInteger;)V
-
-    const v1, 0x100001f8
-
-    const/4 v8, 0x2
-
-    invoke-virtual {p0, v1, v8}, Landroid/security/keymaster/KeymasterArguments;->addEnum(II)V
-
-    if-eqz p3, :cond_5
-
-    new-instance v1, Ljava/security/ProviderException;
-
-    const-string/jumbo v8, "Key validity extension while device is on-body is not supported for keys requiring fingerprint authentication"
-
-    invoke-direct {v1, v8}, Ljava/security/ProviderException;-><init>(Ljava/lang/String;)V
-
-    throw v1
-
-    :cond_3
-    invoke-static {}, Landroid/security/keystore/KeymasterUtils;->getRootSid()J
-
-    move-result-wide v6
+    const-wide/16 v6, 0x0
 
     goto :goto_1
 
-    :cond_4
-    invoke-static {}, Landroid/security/keystore/KeymasterUtils;->getRootSid()J
+    :cond_3
+    const/4 v2, 0x0
 
-    move-result-wide v4
+    if-eqz p4, :cond_6
+
+    const-wide/16 v14, 0x0
+
+    cmp-long v11, v4, v14
+
+    if-eqz v11, :cond_4
 
     invoke-static {v4, v5}, Landroid/security/keymaster/KeymasterArguments;->toUint64(J)Ljava/math/BigInteger;
 
-    move-result-object v1
+    move-result-object v11
 
-    const v8, -0x5ffffe0a
+    const v14, -0x5ffffe0a
 
-    invoke-virtual {p0, v8, v1}, Landroid/security/keymaster/KeymasterArguments;->addUnsignedLong(ILjava/math/BigInteger;)V
+    move-object/from16 v0, p0
 
-    const v1, 0x100001f8
+    invoke-virtual {v0, v14, v11}, Landroid/security/keymaster/KeymasterArguments;->addUnsignedLong(ILjava/math/BigInteger;)V
 
-    const/4 v8, 0x3
+    const/4 v2, 0x2
 
-    invoke-virtual {p0, v1, v8}, Landroid/security/keymaster/KeymasterArguments;->addEnum(II)V
+    :cond_4
+    const-wide/16 v14, 0x0
 
-    int-to-long v8, p2
+    cmp-long v11, v6, v14
 
-    const v1, 0x300001f9
+    if-eqz v11, :cond_5
 
-    invoke-virtual {p0, v1, v8, v9}, Landroid/security/keymaster/KeymasterArguments;->addUnsignedInt(IJ)V
+    invoke-static {v6, v7}, Landroid/security/keymaster/KeymasterArguments;->toUint64(J)Ljava/math/BigInteger;
 
-    if-eqz p3, :cond_5
+    move-result-object v11
 
-    const v1, 0x700001fa
+    const v14, -0x5ffffe0a
 
-    invoke-virtual {p0, v1}, Landroid/security/keymaster/KeymasterArguments;->addBoolean(I)V
+    move-object/from16 v0, p0
+
+    invoke-virtual {v0, v14, v11}, Landroid/security/keymaster/KeymasterArguments;->addUnsignedLong(ILjava/math/BigInteger;)V
+
+    or-int/lit8 v2, v2, 0x4
 
     :cond_5
+    :goto_2
+    const v11, 0x100001f8
+
+    move-object/from16 v0, p0
+
+    invoke-virtual {v0, v11, v2}, Landroid/security/keymaster/KeymasterArguments;->addEnum(II)V
+
+    if-eqz p3, :cond_9
+
+    new-instance v11, Ljava/security/ProviderException;
+
+    const-string/jumbo v14, "Key validity extension while device is on-body is not supported for keys requiring fingerprint authentication"
+
+    invoke-direct {v11, v14}, Ljava/security/ProviderException;-><init>(Ljava/lang/String;)V
+
+    throw v11
+
+    :cond_6
+    invoke-static {}, Landroid/security/keystore/KeymasterUtils;->getRootSid()J
+
+    move-result-wide v12
+
+    invoke-static {v12, v13}, Landroid/security/keymaster/KeymasterArguments;->toUint64(J)Ljava/math/BigInteger;
+
+    move-result-object v11
+
+    const v14, -0x5ffffe0a
+
+    move-object/from16 v0, p0
+
+    invoke-virtual {v0, v14, v11}, Landroid/security/keymaster/KeymasterArguments;->addUnsignedLong(ILjava/math/BigInteger;)V
+
+    const-wide/16 v14, 0x0
+
+    cmp-long v11, v4, v14
+
+    if-eqz v11, :cond_7
+
+    const/4 v2, 0x2
+
+    :cond_7
+    const-wide/16 v14, 0x0
+
+    cmp-long v11, v6, v14
+
+    if-eqz v11, :cond_5
+
+    or-int/lit8 v2, v2, 0x4
+
+    goto :goto_2
+
+    :cond_8
+    invoke-static {}, Landroid/security/keystore/KeymasterUtils;->getRootSid()J
+
+    move-result-wide v8
+
+    invoke-static {v8, v9}, Landroid/security/keymaster/KeymasterArguments;->toUint64(J)Ljava/math/BigInteger;
+
+    move-result-object v11
+
+    const v14, -0x5ffffe0a
+
+    move-object/from16 v0, p0
+
+    invoke-virtual {v0, v14, v11}, Landroid/security/keymaster/KeymasterArguments;->addUnsignedLong(ILjava/math/BigInteger;)V
+
+    const v11, 0x100001f8
+
+    const/4 v14, 0x7
+
+    move-object/from16 v0, p0
+
+    invoke-virtual {v0, v11, v14}, Landroid/security/keymaster/KeymasterArguments;->addEnum(II)V
+
+    move/from16 v0, p2
+
+    int-to-long v14, v0
+
+    const v11, 0x300001f9
+
+    move-object/from16 v0, p0
+
+    invoke-virtual {v0, v11, v14, v15}, Landroid/security/keymaster/KeymasterArguments;->addUnsignedInt(IJ)V
+
+    if-eqz p3, :cond_9
+
+    const v11, 0x700001fa
+
+    move-object/from16 v0, p0
+
+    invoke-virtual {v0, v11}, Landroid/security/keymaster/KeymasterArguments;->addBoolean(I)V
+
+    :cond_9
     return-void
 .end method
 

@@ -220,6 +220,8 @@
 
 .field private mTextSize:I
 
+.field private mToast:Landroid/widget/Toast;
+
 .field private mToastText:Ljava/lang/String;
 
 .field private mTopSelectionDividerTop:I
@@ -372,7 +374,15 @@
     return v0
 .end method
 
-.method static synthetic -get24(Lcom/samsung/android/widget/SemNumberPickerSpinnerDelegate;)Ljava/lang/String;
+.method static synthetic -get24(Lcom/samsung/android/widget/SemNumberPickerSpinnerDelegate;)Landroid/widget/Toast;
+    .locals 1
+
+    iget-object v0, p0, Lcom/samsung/android/widget/SemNumberPickerSpinnerDelegate;->mToast:Landroid/widget/Toast;
+
+    return-object v0
+.end method
+
+.method static synthetic -get25(Lcom/samsung/android/widget/SemNumberPickerSpinnerDelegate;)Ljava/lang/String;
     .locals 1
 
     iget-object v0, p0, Lcom/samsung/android/widget/SemNumberPickerSpinnerDelegate;->mToastText:Ljava/lang/String;
@@ -380,7 +390,7 @@
     return-object v0
 .end method
 
-.method static synthetic -get25(Lcom/samsung/android/widget/SemNumberPickerSpinnerDelegate;)I
+.method static synthetic -get26(Lcom/samsung/android/widget/SemNumberPickerSpinnerDelegate;)I
     .locals 1
 
     iget v0, p0, Lcom/samsung/android/widget/SemNumberPickerSpinnerDelegate;->mTopSelectionDividerTop:I
@@ -388,7 +398,7 @@
     return v0
 .end method
 
-.method static synthetic -get26(Lcom/samsung/android/widget/SemNumberPickerSpinnerDelegate;)I
+.method static synthetic -get27(Lcom/samsung/android/widget/SemNumberPickerSpinnerDelegate;)I
     .locals 1
 
     iget v0, p0, Lcom/samsung/android/widget/SemNumberPickerSpinnerDelegate;->mValue:I
@@ -396,7 +406,7 @@
     return v0
 .end method
 
-.method static synthetic -get27(Lcom/samsung/android/widget/SemNumberPickerSpinnerDelegate;)Z
+.method static synthetic -get28(Lcom/samsung/android/widget/SemNumberPickerSpinnerDelegate;)Z
     .locals 1
 
     iget-boolean v0, p0, Lcom/samsung/android/widget/SemNumberPickerSpinnerDelegate;->mWrapSelectorWheel:Z
@@ -506,6 +516,14 @@
     iput-boolean p1, p0, Lcom/samsung/android/widget/SemNumberPickerSpinnerDelegate;->mReservedStartAnimation:Z
 
     return p1
+.end method
+
+.method static synthetic -set6(Lcom/samsung/android/widget/SemNumberPickerSpinnerDelegate;Landroid/widget/Toast;)Landroid/widget/Toast;
+    .locals 0
+
+    iput-object p1, p0, Lcom/samsung/android/widget/SemNumberPickerSpinnerDelegate;->mToast:Landroid/widget/Toast;
+
+    return-object p1
 .end method
 
 .method static synthetic -wrap0(Lcom/samsung/android/widget/SemNumberPickerSpinnerDelegate;)Z

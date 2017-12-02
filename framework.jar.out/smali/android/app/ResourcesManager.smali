@@ -1358,9 +1358,9 @@
     goto/16 :goto_1
 
     :catch_0
-    move-exception v16
+    move-exception v15
 
-    invoke-virtual/range {v16 .. v16}, Landroid/os/RemoteException;->printStackTrace()V
+    invoke-virtual {v15}, Landroid/os/RemoteException;->printStackTrace()V
 
     goto :goto_2
 
@@ -1470,7 +1470,7 @@
 
     invoke-virtual {v0, v2}, Landroid/content/res/Resources;->setImpl(Landroid/content/res/ResourcesImpl;)V
     :try_end_1
-    .catch Landroid/content/res/Resources$NotFoundException; {:try_start_1 .. :try_end_1} :catch_1
+    .catch Ljava/lang/NullPointerException; {:try_start_1 .. :try_end_1} :catch_1
 
     :cond_7
     :goto_4
@@ -1479,7 +1479,7 @@
     goto :goto_3
 
     :catch_1
-    move-exception v15
+    move-exception v16
 
     const-string/jumbo v2, "ResourcesManager"
 
@@ -1627,7 +1627,7 @@
 
     invoke-virtual {v0, v2}, Landroid/content/res/Resources;->setImpl(Landroid/content/res/ResourcesImpl;)V
     :try_end_2
-    .catch Landroid/content/res/Resources$NotFoundException; {:try_start_2 .. :try_end_2} :catch_2
+    .catch Ljava/lang/NullPointerException; {:try_start_2 .. :try_end_2} :catch_2
 
     :cond_a
     :goto_6
@@ -1636,7 +1636,7 @@
     goto :goto_5
 
     :catch_2
-    move-exception v15
+    move-exception v16
 
     const-string/jumbo v2, "ResourcesManager"
 
@@ -1905,9 +1905,9 @@
     goto/16 :goto_8
 
     :catch_3
-    move-exception v16
+    move-exception v15
 
-    invoke-virtual/range {v16 .. v16}, Landroid/os/RemoteException;->printStackTrace()V
+    invoke-virtual {v15}, Landroid/os/RemoteException;->printStackTrace()V
 
     goto :goto_9
 
@@ -2017,7 +2017,7 @@
 
     invoke-virtual {v0, v2}, Landroid/content/res/Resources;->setImpl(Landroid/content/res/ResourcesImpl;)V
     :try_end_4
-    .catch Landroid/content/res/Resources$NotFoundException; {:try_start_4 .. :try_end_4} :catch_4
+    .catch Ljava/lang/NullPointerException; {:try_start_4 .. :try_end_4} :catch_4
 
     :cond_13
     :goto_b
@@ -2026,7 +2026,7 @@
     goto :goto_a
 
     :catch_4
-    move-exception v15
+    move-exception v16
 
     const-string/jumbo v2, "ResourcesManager"
 
@@ -2174,7 +2174,7 @@
 
     invoke-virtual {v0, v2}, Landroid/content/res/Resources;->setImpl(Landroid/content/res/ResourcesImpl;)V
     :try_end_5
-    .catch Landroid/content/res/Resources$NotFoundException; {:try_start_5 .. :try_end_5} :catch_5
+    .catch Ljava/lang/NullPointerException; {:try_start_5 .. :try_end_5} :catch_5
 
     :cond_16
     :goto_d
@@ -2183,7 +2183,7 @@
     goto :goto_c
 
     :catch_5
-    move-exception v15
+    move-exception v16
 
     const-string/jumbo v2, "ResourcesManager"
 

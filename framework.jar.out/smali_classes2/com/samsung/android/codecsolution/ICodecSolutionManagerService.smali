@@ -79,7 +79,7 @@
     .end annotation
 .end method
 
-.method public abstract setMhdrEnable(I)V
+.method public abstract setMhdrEnable(IZ)V
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;
@@ -87,7 +87,7 @@
     .end annotation
 .end method
 
-.method public abstract setMhdrMetaData(IIII)V
+.method public abstract setMhdrMetaData(IIIII)V
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;
@@ -135,7 +135,7 @@
     .end annotation
 .end method
 
-.method public abstract startMhdrService(ILjava/lang/String;I)V
+.method public abstract startMhdr(Lcom/samsung/android/codecsolution/ICodecClient;ILjava/lang/String;Z)I
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;
@@ -159,7 +159,7 @@
     .end annotation
 .end method
 
-.method public abstract stopMhdrService()V
+.method public abstract stopMhdr(I)V
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;

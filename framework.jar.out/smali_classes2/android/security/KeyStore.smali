@@ -2749,159 +2749,208 @@
 .end method
 
 .method public getInvalidKeyException(Ljava/lang/String;ILandroid/security/KeyStoreException;)Ljava/security/InvalidKeyException;
-    .locals 12
+    .locals 17
 
-    invoke-virtual {p3}, Landroid/security/KeyStoreException;->getErrorCode()I
+    invoke-virtual/range {p3 .. p3}, Landroid/security/KeyStoreException;->getErrorCode()I
 
-    move-result v0
+    move-result v2
 
-    sparse-switch v0, :sswitch_data_0
+    sparse-switch v2, :sswitch_data_0
 
-    new-instance v0, Ljava/security/InvalidKeyException;
+    new-instance v2, Ljava/security/InvalidKeyException;
 
-    const-string/jumbo v1, "Keystore operation failed"
+    const-string/jumbo v3, "Keystore operation failed"
 
-    invoke-direct {v0, v1, p3}, Ljava/security/InvalidKeyException;-><init>(Ljava/lang/String;Ljava/lang/Throwable;)V
+    move-object/from16 v0, p3
 
-    return-object v0
+    invoke-direct {v2, v3, v0}, Ljava/security/InvalidKeyException;-><init>(Ljava/lang/String;Ljava/lang/Throwable;)V
+
+    return-object v2
 
     :sswitch_0
-    new-instance v0, Landroid/security/keystore/UserNotAuthenticatedException;
+    new-instance v2, Landroid/security/keystore/UserNotAuthenticatedException;
 
-    invoke-direct {v0}, Landroid/security/keystore/UserNotAuthenticatedException;-><init>()V
+    invoke-direct {v2}, Landroid/security/keystore/UserNotAuthenticatedException;-><init>()V
 
-    return-object v0
+    return-object v2
 
     :sswitch_1
-    new-instance v0, Landroid/security/keystore/KeyExpiredException;
+    new-instance v2, Landroid/security/keystore/KeyExpiredException;
 
-    invoke-direct {v0}, Landroid/security/keystore/KeyExpiredException;-><init>()V
+    invoke-direct {v2}, Landroid/security/keystore/KeyExpiredException;-><init>()V
 
-    return-object v0
+    return-object v2
 
     :sswitch_2
-    new-instance v0, Landroid/security/keystore/KeyNotYetValidException;
+    new-instance v2, Landroid/security/keystore/KeyNotYetValidException;
 
-    invoke-direct {v0}, Landroid/security/keystore/KeyNotYetValidException;-><init>()V
+    invoke-direct {v2}, Landroid/security/keystore/KeyNotYetValidException;-><init>()V
 
-    return-object v0
+    return-object v2
 
     :sswitch_3
-    new-instance v5, Landroid/security/keymaster/KeyCharacteristics;
+    new-instance v7, Landroid/security/keymaster/KeyCharacteristics;
 
-    invoke-direct {v5}, Landroid/security/keymaster/KeyCharacteristics;-><init>()V
+    invoke-direct {v7}, Landroid/security/keymaster/KeyCharacteristics;-><init>()V
 
-    const/4 v2, 0x0
+    const/4 v4, 0x0
 
-    const/4 v3, 0x0
+    const/4 v5, 0x0
 
-    move-object v0, p0
+    move-object/from16 v2, p0
 
-    move-object v1, p1
+    move-object/from16 v3, p1
 
-    move v4, p2
+    move/from16 v6, p2
 
-    invoke-virtual/range {v0 .. v5}, Landroid/security/KeyStore;->getKeyCharacteristics(Ljava/lang/String;Landroid/security/keymaster/KeymasterBlob;Landroid/security/keymaster/KeymasterBlob;ILandroid/security/keymaster/KeyCharacteristics;)I
+    invoke-virtual/range {v2 .. v7}, Landroid/security/KeyStore;->getKeyCharacteristics(Ljava/lang/String;Landroid/security/keymaster/KeymasterBlob;Landroid/security/keymaster/KeymasterBlob;ILandroid/security/keymaster/KeyCharacteristics;)I
 
-    move-result v8
+    move-result v10
 
-    const/4 v0, 0x1
+    const/4 v2, 0x1
 
-    if-eq v8, v0, :cond_0
+    if-eq v10, v2, :cond_0
 
-    new-instance v0, Ljava/security/InvalidKeyException;
+    new-instance v2, Ljava/security/InvalidKeyException;
 
-    const-string/jumbo v1, "Failed to obtained key characteristics"
+    const-string/jumbo v3, "Failed to obtained key characteristics"
 
-    invoke-static {v8}, Landroid/security/KeyStore;->getKeyStoreException(I)Landroid/security/KeyStoreException;
+    invoke-static {v10}, Landroid/security/KeyStore;->getKeyStoreException(I)Landroid/security/KeyStoreException;
 
-    move-result-object v2
+    move-result-object v4
 
-    invoke-direct {v0, v1, v2}, Ljava/security/InvalidKeyException;-><init>(Ljava/lang/String;Ljava/lang/Throwable;)V
+    invoke-direct {v2, v3, v4}, Ljava/security/InvalidKeyException;-><init>(Ljava/lang/String;Ljava/lang/Throwable;)V
 
-    return-object v0
+    return-object v2
 
     :cond_0
-    const v0, -0x5ffffe0a
+    const v2, -0x5ffffe0a
 
-    invoke-virtual {v5, v0}, Landroid/security/keymaster/KeyCharacteristics;->getUnsignedLongs(I)Ljava/util/List;
+    invoke-virtual {v7, v2}, Landroid/security/keymaster/KeyCharacteristics;->getUnsignedLongs(I)Ljava/util/List;
 
-    move-result-object v9
+    move-result-object v11
 
-    invoke-interface {v9}, Ljava/util/List;->isEmpty()Z
+    invoke-interface {v11}, Ljava/util/List;->isEmpty()Z
 
-    move-result v0
+    move-result v2
 
-    if-eqz v0, :cond_1
+    if-eqz v2, :cond_1
 
-    new-instance v0, Landroid/security/keystore/KeyPermanentlyInvalidatedException;
+    new-instance v2, Landroid/security/keystore/KeyPermanentlyInvalidatedException;
 
-    invoke-direct {v0}, Landroid/security/keystore/KeyPermanentlyInvalidatedException;-><init>()V
+    invoke-direct {v2}, Landroid/security/keystore/KeyPermanentlyInvalidatedException;-><init>()V
 
-    return-object v0
+    return-object v2
 
     :cond_1
     invoke-static {}, Landroid/security/GateKeeper;->getSecureUserId()J
 
-    move-result-wide v10
+    move-result-wide v14
 
-    const-wide/16 v0, 0x0
+    const-wide/16 v2, 0x0
 
-    cmp-long v0, v10, v0
+    cmp-long v2, v14, v2
 
-    if-eqz v0, :cond_2
+    if-eqz v2, :cond_2
 
-    invoke-static {v10, v11}, Landroid/security/keymaster/KeymasterArguments;->toUint64(J)Ljava/math/BigInteger;
+    invoke-static {v14, v15}, Landroid/security/keymaster/KeymasterArguments;->toUint64(J)Ljava/math/BigInteger;
 
-    move-result-object v0
+    move-result-object v2
 
-    invoke-interface {v9, v0}, Ljava/util/List;->contains(Ljava/lang/Object;)Z
+    invoke-interface {v11, v2}, Ljava/util/List;->contains(Ljava/lang/Object;)Z
 
-    move-result v0
+    move-result v2
 
-    if-eqz v0, :cond_2
+    if-eqz v2, :cond_2
 
-    new-instance v0, Landroid/security/keystore/UserNotAuthenticatedException;
+    new-instance v2, Landroid/security/keystore/UserNotAuthenticatedException;
 
-    invoke-direct {v0}, Landroid/security/keystore/UserNotAuthenticatedException;-><init>()V
+    invoke-direct {v2}, Landroid/security/keystore/UserNotAuthenticatedException;-><init>()V
 
-    return-object v0
+    return-object v2
 
     :cond_2
-    invoke-direct {p0}, Landroid/security/KeyStore;->getFingerprintOnlySid()J
+    invoke-direct/range {p0 .. p0}, Landroid/security/KeyStore;->getFingerprintOnlySid()J
 
-    move-result-wide v6
+    move-result-wide v8
 
-    const-wide/16 v0, 0x0
+    const-wide/16 v2, 0x0
 
-    cmp-long v0, v6, v0
+    cmp-long v2, v8, v2
 
-    if-eqz v0, :cond_3
+    if-eqz v2, :cond_3
 
-    invoke-static {v6, v7}, Landroid/security/keymaster/KeymasterArguments;->toUint64(J)Ljava/math/BigInteger;
+    invoke-static {v8, v9}, Landroid/security/keymaster/KeymasterArguments;->toUint64(J)Ljava/math/BigInteger;
 
-    move-result-object v0
+    move-result-object v2
 
-    invoke-interface {v9, v0}, Ljava/util/List;->contains(Ljava/lang/Object;)Z
+    invoke-interface {v11, v2}, Ljava/util/List;->contains(Ljava/lang/Object;)Z
 
-    move-result v0
+    move-result v2
 
-    if-eqz v0, :cond_3
+    if-eqz v2, :cond_3
 
-    new-instance v0, Landroid/security/keystore/UserNotAuthenticatedException;
+    new-instance v2, Landroid/security/keystore/UserNotAuthenticatedException;
 
-    invoke-direct {v0}, Landroid/security/keystore/UserNotAuthenticatedException;-><init>()V
+    invoke-direct {v2}, Landroid/security/keystore/UserNotAuthenticatedException;-><init>()V
 
-    return-object v0
+    return-object v2
 
     :cond_3
-    new-instance v0, Landroid/security/keystore/KeyPermanentlyInvalidatedException;
+    invoke-static {}, Landroid/security/KeyStore;->getApplicationContext()Landroid/content/Context;
 
-    invoke-direct {v0}, Landroid/security/keystore/KeyPermanentlyInvalidatedException;-><init>()V
+    move-result-object v2
 
-    return-object v0
+    invoke-static {v2}, Lcom/samsung/android/camera/iris/SemIrisManager;->getSemIrisManager(Landroid/content/Context;)Lcom/samsung/android/camera/iris/SemIrisManager;
 
-    nop
+    move-result-object v16
+
+    if-eqz v16, :cond_4
+
+    invoke-virtual/range {v16 .. v16}, Lcom/samsung/android/camera/iris/SemIrisManager;->getAuthenticatorId()J
+
+    move-result-wide v12
+
+    :goto_0
+    const-wide/16 v2, 0x0
+
+    cmp-long v2, v12, v2
+
+    if-eqz v2, :cond_5
+
+    invoke-static {v12, v13}, Landroid/security/keymaster/KeymasterArguments;->toUint64(J)Ljava/math/BigInteger;
+
+    move-result-object v2
+
+    invoke-interface {v11, v2}, Ljava/util/List;->contains(Ljava/lang/Object;)Z
+
+    move-result v2
+
+    if-eqz v2, :cond_5
+
+    const-string/jumbo v2, "KeyStore"
+
+    const-string/jumbo v3, "UserNotAuthenticatedException because of Iris"
+
+    invoke-static {v2, v3}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    new-instance v2, Landroid/security/keystore/UserNotAuthenticatedException;
+
+    invoke-direct {v2}, Landroid/security/keystore/UserNotAuthenticatedException;-><init>()V
+
+    return-object v2
+
+    :cond_4
+    const-wide/16 v12, 0x0
+
+    goto :goto_0
+
+    :cond_5
+    new-instance v2, Landroid/security/keystore/KeyPermanentlyInvalidatedException;
+
+    invoke-direct {v2}, Landroid/security/keystore/KeyPermanentlyInvalidatedException;-><init>()V
+
+    return-object v2
 
     :sswitch_data_0
     .sparse-switch

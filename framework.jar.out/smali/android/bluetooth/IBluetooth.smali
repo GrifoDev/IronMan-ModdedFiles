@@ -665,6 +665,14 @@
     .end annotation
 .end method
 
+.method public abstract setBootState(Z)V
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+.end method
+
 .method public abstract setBrEdrRxFrequency(II)Z
     .annotation system Ldalvik/annotation/Throws;
         value = {

@@ -6,6 +6,8 @@
 # static fields
 .field public static final HW_AUTH_FINGERPRINT:I = 0x2
 
+.field public static final HW_AUTH_IRIS:I = 0x4
+
 .field public static final HW_AUTH_PASSWORD:I = 0x1
 
 .field public static final KM_ALGORITHM_AES:I = 0x20

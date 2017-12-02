@@ -324,6 +324,8 @@
 
 .field private mPid:I
 
+.field mSCPMHelper:Landroid/media/ISCPMHelper;
+
 .field private mScreenOnWhilePlaying:Z
 
 .field private mSelectedSubtitleTrackIndex:I
@@ -686,6 +688,8 @@
     iput v2, p0, Landroid/media/MediaPlayer;->mIsVideo:I
 
     iput-boolean v2, p0, Landroid/media/MediaPlayer;->mIsStart:Z
+
+    iput-object v3, p0, Landroid/media/MediaPlayer;->mSCPMHelper:Landroid/media/ISCPMHelper;
 
     const-string/jumbo v1, ""
 
@@ -1514,6 +1518,60 @@
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
     throw v3
+.end method
+
+.method private getPackageNamesFromPid(I)[Ljava/lang/String;
+    .locals 5
+
+    :try_start_0
+    invoke-static {}, Landroid/app/ActivityManagerNative;->getDefault()Landroid/app/IActivityManager;
+
+    move-result-object v3
+
+    invoke-interface {v3}, Landroid/app/IActivityManager;->getRunningAppProcesses()Ljava/util/List;
+
+    move-result-object v3
+
+    invoke-interface {v3}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
+
+    move-result-object v2
+
+    :cond_0
+    invoke-interface {v2}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v3
+
+    if-eqz v3, :cond_1
+
+    invoke-interface {v2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Landroid/app/ActivityManager$RunningAppProcessInfo;
+
+    iget v3, v1, Landroid/app/ActivityManager$RunningAppProcessInfo;->pid:I
+
+    if-ne v3, p1, :cond_0
+
+    iget-object v3, v1, Landroid/app/ActivityManager$RunningAppProcessInfo;->pkgList:[Ljava/lang/String;
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
+
+    return-object v3
+
+    :catch_0
+    move-exception v0
+
+    const-string/jumbo v3, "MediaPlayer"
+
+    const-string/jumbo v4, "ActivityManager.getRunningAppProcesses() failed"
+
+    invoke-static {v3, v4}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
+
+    :cond_1
+    const/4 v3, 0x0
+
+    return-object v3
 .end method
 
 .method private native getParameter(ILandroid/os/Parcel;)V
@@ -2460,7 +2518,7 @@
 .end method
 
 .method private setDataSource(Ljava/lang/String;[Ljava/lang/String;[Ljava/lang/String;)V
-    .locals 8
+    .locals 17
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;,
@@ -2470,141 +2528,276 @@
         }
     .end annotation
 
-    invoke-static {p1}, Landroid/net/Uri;->parse(Ljava/lang/String;)Landroid/net/Uri;
+    invoke-static/range {p1 .. p1}, Landroid/net/Uri;->parse(Ljava/lang/String;)Landroid/net/Uri;
 
-    move-result-object v5
+    move-result-object v13
 
-    invoke-virtual {v5}, Landroid/net/Uri;->getScheme()Ljava/lang/String;
+    invoke-virtual {v13}, Landroid/net/Uri;->getScheme()Ljava/lang/String;
 
-    move-result-object v4
+    move-result-object v11
 
-    const-string/jumbo v6, "file"
+    const-string/jumbo v14, "file"
 
-    invoke-virtual {v6, v4}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v14, v11}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move-result v6
+    move-result v14
 
-    if-eqz v6, :cond_3
+    if-eqz v14, :cond_3
 
-    invoke-virtual {v5}, Landroid/net/Uri;->getPath()Ljava/lang/String;
+    invoke-virtual {v13}, Landroid/net/Uri;->getPath()Ljava/lang/String;
 
     move-result-object p1
 
     :cond_0
-    const-string/jumbo v6, "file://"
+    const-string/jumbo v14, "file://"
 
-    invoke-virtual {p1, v6}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
+    move-object/from16 v0, p1
 
-    move-result v6
+    invoke-virtual {v0, v14}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
 
-    if-eqz v6, :cond_1
+    move-result v14
 
-    const-string/jumbo v6, "file://"
+    if-eqz v14, :cond_1
 
-    const-string/jumbo v7, ""
+    const-string/jumbo v14, "file://"
 
-    invoke-virtual {p1, v6, v7}, Ljava/lang/String;->replaceFirst(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    const-string/jumbo v15, ""
+
+    move-object/from16 v0, p1
+
+    invoke-virtual {v0, v14, v15}, Ljava/lang/String;->replaceFirst(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object p1
 
     :cond_1
-    const-string/jumbo v6, ".sdp"
+    const-string/jumbo v14, ".sdp"
 
-    invoke-virtual {p1, v6}, Ljava/lang/String;->endsWith(Ljava/lang/String;)Z
+    move-object/from16 v0, p1
 
-    move-result v6
+    invoke-virtual {v0, v14}, Ljava/lang/String;->endsWith(Ljava/lang/String;)Z
 
-    if-nez v6, :cond_2
+    move-result v14
 
-    const-string/jumbo v6, ".SDP"
+    if-nez v14, :cond_2
 
-    invoke-virtual {p1, v6}, Ljava/lang/String;->endsWith(Ljava/lang/String;)Z
+    const-string/jumbo v14, ".SDP"
 
-    move-result v6
+    move-object/from16 v0, p1
 
-    if-eqz v6, :cond_4
+    invoke-virtual {v0, v14}, Ljava/lang/String;->endsWith(Ljava/lang/String;)Z
+
+    move-result v14
+
+    if-eqz v14, :cond_8
 
     :cond_2
-    const-string/jumbo v6, "/storage/emulated/"
+    const-string/jumbo v14, "/storage/emulated/"
 
-    const-string/jumbo v7, "/data/media/"
+    const-string/jumbo v15, "/data/media/"
 
-    invoke-virtual {p1, v6, v7}, Ljava/lang/String;->replaceFirst(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    move-object/from16 v0, p1
 
-    move-result-object v3
+    invoke-virtual {v0, v14, v15}, Ljava/lang/String;->replaceFirst(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
-    invoke-direct {p0, v3}, Landroid/media/MediaPlayer;->registerMediaMapping(Ljava/lang/String;)V
+    move-result-object v9
 
-    invoke-static {p1}, Landroid/media/MediaHTTPService;->createHttpServiceBinderIfNecessary(Ljava/lang/String;)Landroid/os/IBinder;
+    move-object/from16 v0, p0
 
-    move-result-object v6
+    invoke-direct {v0, v9}, Landroid/media/MediaPlayer;->registerMediaMapping(Ljava/lang/String;)V
 
-    invoke-direct {p0, v6, v3, p2, p3}, Landroid/media/MediaPlayer;->nativeSetDataSource(Landroid/os/IBinder;Ljava/lang/String;[Ljava/lang/String;[Ljava/lang/String;)V
+    invoke-static/range {p1 .. p1}, Landroid/media/MediaHTTPService;->createHttpServiceBinderIfNecessary(Ljava/lang/String;)Landroid/os/IBinder;
+
+    move-result-object v14
+
+    move-object/from16 v0, p0
+
+    move-object/from16 v1, p2
+
+    move-object/from16 v2, p3
+
+    invoke-direct {v0, v14, v9, v1, v2}, Landroid/media/MediaPlayer;->nativeSetDataSource(Landroid/os/IBinder;Ljava/lang/String;[Ljava/lang/String;[Ljava/lang/String;)V
 
     return-void
 
     :cond_3
-    if-eqz v4, :cond_0
+    if-eqz v11, :cond_0
 
-    invoke-direct {p0, p1}, Landroid/media/MediaPlayer;->registerMediaMapping(Ljava/lang/String;)V
+    invoke-direct/range {p0 .. p1}, Landroid/media/MediaPlayer;->registerMediaMapping(Ljava/lang/String;)V
 
-    invoke-static {p1}, Landroid/media/MediaHTTPService;->createHttpServiceBinderIfNecessary(Ljava/lang/String;)Landroid/os/IBinder;
+    const-string/jumbo v14, "http://"
+
+    move-object/from16 v0, p1
+
+    invoke-virtual {v0, v14}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
+
+    move-result v14
+
+    if-nez v14, :cond_4
+
+    const-string/jumbo v14, "https://"
+
+    move-object/from16 v0, p1
+
+    invoke-virtual {v0, v14}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
+
+    move-result v14
+
+    if-eqz v14, :cond_7
+
+    :cond_4
+    invoke-static {}, Landroid/app/ActivityThread;->currentApplication()Landroid/app/Application;
+
+    move-result-object v4
+
+    const-string/jumbo v14, "SCPMHelper"
+
+    invoke-static {v14}, Landroid/os/ServiceManager;->getService(Ljava/lang/String;)Landroid/os/IBinder;
+
+    move-result-object v14
+
+    invoke-static {v14}, Landroid/media/ISCPMHelper$Stub;->asInterface(Landroid/os/IBinder;)Landroid/media/ISCPMHelper;
+
+    move-result-object v12
+
+    move-object/from16 v0, p0
+
+    iget v14, v0, Landroid/media/MediaPlayer;->mPid:I
+
+    move-object/from16 v0, p0
+
+    invoke-direct {v0, v14}, Landroid/media/MediaPlayer;->getPackageNamesFromPid(I)[Ljava/lang/String;
+
+    move-result-object v10
+
+    if-nez v12, :cond_5
+
+    const-string/jumbo v14, "MediaPlayer"
+
+    const-string/jumbo v15, "scpmHelper is null"
+
+    invoke-static {v14, v15}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
+
+    :cond_5
+    if-eqz v12, :cond_6
+
+    const/4 v14, 0x0
+
+    aget-object v14, v10, v14
+
+    if-eqz v14, :cond_6
+
+    const/4 v14, 0x0
+
+    :try_start_0
+    aget-object v14, v10, v14
+
+    invoke-interface {v12, v14}, Landroid/media/ISCPMHelper;->getPackageInfo(Ljava/lang/String;)V
+    :try_end_0
+    .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
+
+    :cond_6
+    :goto_0
+    const-string/jumbo v14, "MediaPlayer"
+
+    new-instance v15, Ljava/lang/StringBuilder;
+
+    invoke-direct {v15}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string/jumbo v16, "App packageName is = "
+
+    invoke-virtual/range {v15 .. v16}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v15
+
+    const/16 v16, 0x0
+
+    aget-object v16, v10, v16
+
+    invoke-virtual/range {v15 .. v16}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v15
+
+    invoke-virtual {v15}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v15
+
+    invoke-static {v14, v15}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
+
+    :cond_7
+    invoke-static/range {p1 .. p1}, Landroid/media/MediaHTTPService;->createHttpServiceBinderIfNecessary(Ljava/lang/String;)Landroid/os/IBinder;
+
+    move-result-object v14
+
+    move-object/from16 v0, p0
+
+    move-object/from16 v1, p1
+
+    move-object/from16 v2, p2
+
+    move-object/from16 v3, p3
+
+    invoke-direct {v0, v14, v1, v2, v3}, Landroid/media/MediaPlayer;->nativeSetDataSource(Landroid/os/IBinder;Ljava/lang/String;[Ljava/lang/String;[Ljava/lang/String;)V
+
+    return-void
+
+    :cond_8
+    new-instance v7, Ljava/io/File;
+
+    move-object/from16 v0, p1
+
+    invoke-direct {v7, v0}, Ljava/io/File;-><init>(Ljava/lang/String;)V
+
+    invoke-virtual {v7}, Ljava/io/File;->exists()Z
+
+    move-result v14
+
+    if-eqz v14, :cond_b
+
+    new-instance v8, Ljava/io/FileInputStream;
+
+    invoke-direct {v8, v7}, Ljava/io/FileInputStream;-><init>(Ljava/io/File;)V
+
+    :try_start_1
+    invoke-virtual {v8}, Ljava/io/FileInputStream;->getFD()Ljava/io/FileDescriptor;
 
     move-result-object v6
 
-    invoke-direct {p0, v6, p1, p2, p3}, Landroid/media/MediaPlayer;->nativeSetDataSource(Landroid/os/IBinder;Ljava/lang/String;[Ljava/lang/String;[Ljava/lang/String;)V
+    move-object/from16 v0, p0
 
-    return-void
+    invoke-virtual {v0, v6}, Landroid/media/MediaPlayer;->setDataSource(Ljava/io/FileDescriptor;)V
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    :cond_4
-    new-instance v1, Ljava/io/File;
+    if-eqz v8, :cond_9
 
-    invoke-direct {v1, p1}, Ljava/io/File;-><init>(Ljava/lang/String;)V
+    invoke-virtual {v8}, Ljava/io/FileInputStream;->close()V
 
-    invoke-virtual {v1}, Ljava/io/File;->exists()Z
-
-    move-result v6
-
-    if-eqz v6, :cond_7
-
-    new-instance v2, Ljava/io/FileInputStream;
-
-    invoke-direct {v2, v1}, Ljava/io/FileInputStream;-><init>(Ljava/io/File;)V
-
-    :try_start_0
-    invoke-virtual {v2}, Ljava/io/FileInputStream;->getFD()Ljava/io/FileDescriptor;
-
-    move-result-object v0
-
-    invoke-virtual {p0, v0}, Landroid/media/MediaPlayer;->setDataSource(Ljava/io/FileDescriptor;)V
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    if-eqz v2, :cond_5
-
-    invoke-virtual {v2}, Ljava/io/FileInputStream;->close()V
-
-    :cond_5
+    :cond_9
     return-void
 
     :catchall_0
-    move-exception v6
+    move-exception v14
 
-    if-eqz v2, :cond_6
+    if-eqz v8, :cond_a
 
-    invoke-virtual {v2}, Ljava/io/FileInputStream;->close()V
+    invoke-virtual {v8}, Ljava/io/FileInputStream;->close()V
 
-    :cond_6
-    throw v6
+    :cond_a
+    throw v14
 
-    :cond_7
-    new-instance v6, Ljava/io/IOException;
+    :cond_b
+    new-instance v14, Ljava/io/IOException;
 
-    const-string/jumbo v7, "setDataSource failed."
+    const-string/jumbo v15, "setDataSource failed."
 
-    invoke-direct {v6, v7}, Ljava/io/IOException;-><init>(Ljava/lang/String;)V
+    invoke-direct {v14, v15}, Ljava/io/IOException;-><init>(Ljava/lang/String;)V
 
-    throw v6
+    throw v14
+
+    :catch_0
+    move-exception v5
+
+    goto :goto_0
 .end method
 
 .method private declared-synchronized setSubtitleAnchor()V

@@ -6828,7 +6828,7 @@
 
     move-result v8
 
-    if-eqz p2, :cond_1c
+    if-eqz p2, :cond_1a
 
     invoke-virtual/range {p0 .. p0}, Lcom/android/internal/app/ResolverActivity;->getUserId()I
 
@@ -6842,7 +6842,7 @@
 
     move-result v3
 
-    if-eqz v3, :cond_14
+    if-eqz v3, :cond_12
 
     const-string/jumbo v3, "ResolverActivity"
 
@@ -6879,7 +6879,7 @@
 
     iget-boolean v3, v0, Landroid/content/pm/ResolveInfo;->handleAllWebDataURI:Z
 
-    if-eqz v3, :cond_16
+    if-eqz v3, :cond_14
 
     move-object/from16 v0, v42
 
@@ -6909,7 +6909,7 @@
 
     :cond_10
     :goto_8
-    if-eqz p1, :cond_1e
+    if-eqz p1, :cond_1f
 
     move-object/from16 v0, p0
 
@@ -7002,31 +7002,47 @@
 
     move-result v48
 
+    invoke-direct/range {p0 .. p0}, Lcom/android/internal/app/ResolverActivity;->isForKnoxNFC()Z
+
+    move-result v3
+
+    if-eqz v3, :cond_1c
+
+    move-object/from16 v0, v46
+
+    iget-object v3, v0, Landroid/content/pm/ResolveInfo;->activityInfo:Landroid/content/pm/ActivityInfo;
+
+    iget-object v3, v3, Landroid/content/pm/ActivityInfo;->applicationInfo:Landroid/content/pm/ApplicationInfo;
+
+    iget v3, v3, Landroid/content/pm/ApplicationInfo;->uid:I
+
+    invoke-static {v3}, Landroid/os/UserHandle;->getUserId(I)I
+
+    move-result v49
+
     const-string/jumbo v3, "ResolverActivity"
 
     new-instance v7, Ljava/lang/StringBuilder;
 
     invoke-direct {v7}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string/jumbo v9, "from "
+    const-string/jumbo v9, "Launch NFC app "
 
     invoke-virtual {v7, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v7
 
-    move/from16 v0, v31
-
-    invoke-virtual {v7, v0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    invoke-virtual {v7, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
     move-result-object v7
 
-    const-string/jumbo v9, " to "
+    const-string/jumbo v9, " for container "
 
     invoke-virtual {v7, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v7
 
-    move/from16 v0, v48
+    move/from16 v0, v49
 
     invoke-virtual {v7, v0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
@@ -7038,154 +7054,30 @@
 
     invoke-static {v3, v7}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    move/from16 v0, v48
+    new-instance v3, Landroid/os/UserHandle;
 
-    move/from16 v1, v31
+    move/from16 v0, v49
 
-    if-ne v0, v1, :cond_12
+    invoke-direct {v3, v0}, Landroid/os/UserHandle;-><init>(I)V
 
-    invoke-static/range {v31 .. v31}, Lcom/samsung/android/knox/SemPersonaManager;->isSecureFolderId(I)Z
+    const/4 v7, 0x0
 
-    move-result v3
+    move-object/from16 v0, p1
 
-    if-eqz v3, :cond_12
+    move-object/from16 v1, p0
 
-    invoke-static/range {v31 .. v31}, Ljava/lang/String;->valueOf(I)Ljava/lang/String;
+    invoke-interface {v0, v1, v7, v3}, Lcom/android/internal/app/ResolverActivity$TargetInfo;->startAsUser(Landroid/app/Activity;Landroid/os/Bundle;Landroid/os/UserHandle;)Z
 
-    move-result-object v3
-
-    const-string/jumbo v7, "SHARE_VIA"
-
-    const-string/jumbo v9, "TO_APPS_INSIDE_SECURE_FOLDER"
-
-    move-object/from16 v0, p0
-
-    invoke-direct {v0, v3, v7, v9}, Lcom/android/internal/app/ResolverActivity;->updateKnoxSettingsDb(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
-
-    :cond_12
-    if-eqz p2, :cond_1e
-
-    if-eqz v10, :cond_1e
-
-    move-object/from16 v0, p0
-
-    iget-object v3, v0, Lcom/android/internal/app/ResolverActivity;->mSShareCommon:Lcom/samsung/android/share/SShareCommon;
-
-    sget v7, Lcom/samsung/android/share/SShareConstants;->SUPPORT_RESOLVER_GUIDE:I
-
-    invoke-virtual {v3, v7}, Lcom/samsung/android/share/SShareCommon;->isFeatureSupported(I)Z
-
-    move-result v3
-
-    if-eqz v3, :cond_1e
-
-    invoke-virtual {v10}, Landroid/content/Intent;->getAction()Ljava/lang/String;
-
-    move-result-object v3
-
-    const-string/jumbo v7, "android.intent.action.MAIN"
-
-    if-ne v3, v7, :cond_13
-
-    invoke-virtual {v10}, Landroid/content/Intent;->getCategories()Ljava/util/Set;
-
-    move-result-object v3
-
-    if-eqz v3, :cond_13
-
-    invoke-virtual {v10}, Landroid/content/Intent;->getCategories()Ljava/util/Set;
-
-    move-result-object v3
-
-    const-string/jumbo v7, "android.intent.category.HOME"
-
-    invoke-interface {v3, v7}, Ljava/util/Set;->contains(Ljava/lang/Object;)Z
-
-    move-result v3
-
-    if-eqz v3, :cond_13
-
-    new-instance v20, Landroid/content/Intent;
-
-    invoke-direct/range {v20 .. v20}, Landroid/content/Intent;-><init>()V
-
-    const-string/jumbo v3, "com.sec.android.intent.action.LAUNCHER_CHANGED"
-
-    move-object/from16 v0, v20
-
-    invoke-virtual {v0, v3}, Landroid/content/Intent;->setAction(Ljava/lang/String;)Landroid/content/Intent;
-
-    const-string/jumbo v3, "com.android.systemui"
-
-    move-object/from16 v0, v20
-
-    invoke-virtual {v0, v3}, Landroid/content/Intent;->setPackage(Ljava/lang/String;)Landroid/content/Intent;
-
-    invoke-virtual/range {p0 .. p0}, Lcom/android/internal/app/ResolverActivity;->getBaseContext()Landroid/content/Context;
-
-    move-result-object v3
-
-    move-object/from16 v0, v20
-
-    invoke-virtual {v3, v0}, Landroid/content/Context;->sendBroadcast(Landroid/content/Intent;)V
-
-    :cond_13
-    new-instance v32, Lcom/android/internal/app/ResolverGuideDialogFragment;
-
-    invoke-interface/range {p1 .. p1}, Lcom/android/internal/app/ResolverActivity$TargetInfo;->getDisplayLabel()Ljava/lang/CharSequence;
-
-    move-result-object v3
-
-    invoke-interface {v3}, Ljava/lang/CharSequence;->toString()Ljava/lang/String;
-
-    move-result-object v3
-
-    move-object/from16 v0, v32
-
-    invoke-direct {v0, v3}, Lcom/android/internal/app/ResolverGuideDialogFragment;-><init>(Ljava/lang/String;)V
-
-    new-instance v3, Lcom/android/internal/app/ResolverActivity$5;
-
-    move-object/from16 v0, p0
-
-    move-object/from16 v1, p1
-
-    invoke-direct {v3, v0, v1}, Lcom/android/internal/app/ResolverActivity$5;-><init>(Lcom/android/internal/app/ResolverActivity;Lcom/android/internal/app/ResolverActivity$TargetInfo;)V
-
-    move-object/from16 v0, v32
-
-    invoke-virtual {v0, v3}, Lcom/android/internal/app/ResolverGuideDialogFragment;->setOnClickListener(Landroid/content/DialogInterface$OnClickListener;)V
-
-    new-instance v3, Lcom/android/internal/app/ResolverActivity$6;
-
-    move-object/from16 v0, p0
-
-    invoke-direct {v3, v0}, Lcom/android/internal/app/ResolverActivity$6;-><init>(Lcom/android/internal/app/ResolverActivity;)V
-
-    move-object/from16 v0, v32
-
-    invoke-virtual {v0, v3}, Lcom/android/internal/app/ResolverGuideDialogFragment;->setOnDismissListener(Landroid/content/DialogInterface$OnDismissListener;)V
-
-    invoke-virtual/range {p0 .. p0}, Lcom/android/internal/app/ResolverActivity;->getFragmentManager()Landroid/app/FragmentManager;
-
-    move-result-object v3
-
-    const-string/jumbo v7, "ResolverGuideDialogFragment"
-
-    move-object/from16 v0, v32
-
-    invoke-virtual {v0, v3, v7}, Lcom/android/internal/app/ResolverGuideDialogFragment;->show(Landroid/app/FragmentManager;Ljava/lang/String;)V
-
-    const/4 v3, 0x0
+    const/4 v3, 0x1
 
     return v3
 
-    :cond_14
+    :cond_12
     invoke-direct/range {p0 .. p0}, Lcom/android/internal/app/ResolverActivity;->isForKnoxNFC()Z
 
     move-result v3
 
-    if-eqz v3, :cond_15
+    if-eqz v3, :cond_13
 
     const-string/jumbo v3, "ResolverActivity"
 
@@ -7235,7 +7127,7 @@
 
     goto/16 :goto_7
 
-    :cond_15
+    :cond_13
     invoke-virtual {v10}, Landroid/content/Intent;->getComponent()Landroid/content/ComponentName;
 
     move-result-object v3
@@ -7246,7 +7138,7 @@
 
     goto/16 :goto_7
 
-    :cond_16
+    :cond_14
     invoke-virtual {v10}, Landroid/content/Intent;->getComponent()Landroid/content/ComponentName;
 
     move-result-object v26
@@ -7255,14 +7147,14 @@
 
     move-result-object v40
 
-    if-eqz v27, :cond_17
+    if-eqz v27, :cond_15
 
     invoke-virtual/range {v27 .. v27}, Landroid/net/Uri;->getScheme()Ljava/lang/String;
 
     move-result-object v28
 
     :goto_9
-    if-eqz v28, :cond_19
+    if-eqz v28, :cond_17
 
     const-string/jumbo v3, "http"
 
@@ -7272,7 +7164,7 @@
 
     move-result v3
 
-    if-nez v3, :cond_18
+    if-nez v3, :cond_16
 
     const-string/jumbo v3, "https"
 
@@ -7283,7 +7175,7 @@
     move-result v35
 
     :goto_a
-    if-eqz v19, :cond_1a
+    if-eqz v19, :cond_18
 
     const-string/jumbo v3, "android.intent.action.VIEW"
 
@@ -7294,7 +7186,7 @@
     move-result v36
 
     :goto_b
-    if-eqz v25, :cond_1b
+    if-eqz v25, :cond_19
 
     const-string/jumbo v3, "android.intent.category.BROWSABLE"
 
@@ -7323,32 +7215,32 @@
 
     goto/16 :goto_8
 
-    :cond_17
+    :cond_15
     const/16 v28, 0x0
 
     goto :goto_9
 
-    :cond_18
+    :cond_16
     const/16 v35, 0x1
 
     goto :goto_a
 
-    :cond_19
+    :cond_17
     const/16 v35, 0x0
 
     goto :goto_a
 
-    :cond_1a
+    :cond_18
     const/16 v36, 0x0
 
     goto :goto_b
 
-    :cond_1b
+    :cond_19
     const/16 v33, 0x0
 
     goto :goto_c
 
-    :cond_1c
+    :cond_1a
     :try_start_1
     const-string/jumbo v3, "ResolverActivity"
 
@@ -7376,7 +7268,7 @@
 
     move-result v3
 
-    if-eqz v3, :cond_1d
+    if-eqz v3, :cond_1b
 
     const-string/jumbo v3, "ResolverActivity"
 
@@ -7428,7 +7320,7 @@
 
     invoke-virtual {v10, v3, v0}, Landroid/content/Intent;->putIntegerArrayListExtra(Ljava/lang/String;Ljava/util/ArrayList;)Landroid/content/Intent;
 
-    :cond_1d
+    :cond_1b
     invoke-static {}, Landroid/app/AppGlobals;->getPackageManager()Landroid/content/pm/IPackageManager;
 
     move-result-object v9
@@ -7486,7 +7378,186 @@
 
     goto/16 :goto_8
 
+    :cond_1c
+    const-string/jumbo v3, "ResolverActivity"
+
+    new-instance v7, Ljava/lang/StringBuilder;
+
+    invoke-direct {v7}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string/jumbo v9, "from "
+
+    invoke-virtual {v7, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v7
+
+    move/from16 v0, v31
+
+    invoke-virtual {v7, v0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v7
+
+    const-string/jumbo v9, " to "
+
+    invoke-virtual {v7, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v7
+
+    move/from16 v0, v48
+
+    invoke-virtual {v7, v0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v7
+
+    invoke-virtual {v7}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v7
+
+    invoke-static {v3, v7}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    move/from16 v0, v48
+
+    move/from16 v1, v31
+
+    if-ne v0, v1, :cond_1d
+
+    invoke-static/range {v31 .. v31}, Lcom/samsung/android/knox/SemPersonaManager;->isSecureFolderId(I)Z
+
+    move-result v3
+
+    if-eqz v3, :cond_1d
+
+    invoke-static/range {v31 .. v31}, Ljava/lang/String;->valueOf(I)Ljava/lang/String;
+
+    move-result-object v3
+
+    const-string/jumbo v7, "SHARE_VIA"
+
+    const-string/jumbo v9, "TO_APPS_INSIDE_SECURE_FOLDER"
+
+    move-object/from16 v0, p0
+
+    invoke-direct {v0, v3, v7, v9}, Lcom/android/internal/app/ResolverActivity;->updateKnoxSettingsDb(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
+
+    :cond_1d
+    if-eqz p2, :cond_1f
+
+    if-eqz v10, :cond_1f
+
+    move-object/from16 v0, p0
+
+    iget-object v3, v0, Lcom/android/internal/app/ResolverActivity;->mSShareCommon:Lcom/samsung/android/share/SShareCommon;
+
+    sget v7, Lcom/samsung/android/share/SShareConstants;->SUPPORT_RESOLVER_GUIDE:I
+
+    invoke-virtual {v3, v7}, Lcom/samsung/android/share/SShareCommon;->isFeatureSupported(I)Z
+
+    move-result v3
+
+    if-eqz v3, :cond_1f
+
+    invoke-virtual {v10}, Landroid/content/Intent;->getAction()Ljava/lang/String;
+
+    move-result-object v3
+
+    const-string/jumbo v7, "android.intent.action.MAIN"
+
+    if-ne v3, v7, :cond_1e
+
+    invoke-virtual {v10}, Landroid/content/Intent;->getCategories()Ljava/util/Set;
+
+    move-result-object v3
+
+    if-eqz v3, :cond_1e
+
+    invoke-virtual {v10}, Landroid/content/Intent;->getCategories()Ljava/util/Set;
+
+    move-result-object v3
+
+    const-string/jumbo v7, "android.intent.category.HOME"
+
+    invoke-interface {v3, v7}, Ljava/util/Set;->contains(Ljava/lang/Object;)Z
+
+    move-result v3
+
+    if-eqz v3, :cond_1e
+
+    new-instance v20, Landroid/content/Intent;
+
+    invoke-direct/range {v20 .. v20}, Landroid/content/Intent;-><init>()V
+
+    const-string/jumbo v3, "com.sec.android.intent.action.LAUNCHER_CHANGED"
+
+    move-object/from16 v0, v20
+
+    invoke-virtual {v0, v3}, Landroid/content/Intent;->setAction(Ljava/lang/String;)Landroid/content/Intent;
+
+    const-string/jumbo v3, "com.android.systemui"
+
+    move-object/from16 v0, v20
+
+    invoke-virtual {v0, v3}, Landroid/content/Intent;->setPackage(Ljava/lang/String;)Landroid/content/Intent;
+
+    invoke-virtual/range {p0 .. p0}, Lcom/android/internal/app/ResolverActivity;->getBaseContext()Landroid/content/Context;
+
+    move-result-object v3
+
+    move-object/from16 v0, v20
+
+    invoke-virtual {v3, v0}, Landroid/content/Context;->sendBroadcast(Landroid/content/Intent;)V
+
     :cond_1e
+    new-instance v32, Lcom/android/internal/app/ResolverGuideDialogFragment;
+
+    invoke-interface/range {p1 .. p1}, Lcom/android/internal/app/ResolverActivity$TargetInfo;->getDisplayLabel()Ljava/lang/CharSequence;
+
+    move-result-object v3
+
+    invoke-interface {v3}, Ljava/lang/CharSequence;->toString()Ljava/lang/String;
+
+    move-result-object v3
+
+    move-object/from16 v0, v32
+
+    invoke-direct {v0, v3}, Lcom/android/internal/app/ResolverGuideDialogFragment;-><init>(Ljava/lang/String;)V
+
+    new-instance v3, Lcom/android/internal/app/ResolverActivity$5;
+
+    move-object/from16 v0, p0
+
+    move-object/from16 v1, p1
+
+    invoke-direct {v3, v0, v1}, Lcom/android/internal/app/ResolverActivity$5;-><init>(Lcom/android/internal/app/ResolverActivity;Lcom/android/internal/app/ResolverActivity$TargetInfo;)V
+
+    move-object/from16 v0, v32
+
+    invoke-virtual {v0, v3}, Lcom/android/internal/app/ResolverGuideDialogFragment;->setOnClickListener(Landroid/content/DialogInterface$OnClickListener;)V
+
+    new-instance v3, Lcom/android/internal/app/ResolverActivity$6;
+
+    move-object/from16 v0, p0
+
+    invoke-direct {v3, v0}, Lcom/android/internal/app/ResolverActivity$6;-><init>(Lcom/android/internal/app/ResolverActivity;)V
+
+    move-object/from16 v0, v32
+
+    invoke-virtual {v0, v3}, Lcom/android/internal/app/ResolverGuideDialogFragment;->setOnDismissListener(Landroid/content/DialogInterface$OnDismissListener;)V
+
+    invoke-virtual/range {p0 .. p0}, Lcom/android/internal/app/ResolverActivity;->getFragmentManager()Landroid/app/FragmentManager;
+
+    move-result-object v3
+
+    const-string/jumbo v7, "ResolverGuideDialogFragment"
+
+    move-object/from16 v0, v32
+
+    invoke-virtual {v0, v3, v7}, Lcom/android/internal/app/ResolverGuideDialogFragment;->show(Landroid/app/FragmentManager;Ljava/lang/String;)V
+
+    const/4 v3, 0x0
+
+    return v3
+
+    :cond_1f
     invoke-direct/range {p0 .. p1}, Lcom/android/internal/app/ResolverActivity;->safelyStartActivtyAfterAnimation(Lcom/android/internal/app/ResolverActivity$TargetInfo;)V
 
     const/4 v3, 0x1

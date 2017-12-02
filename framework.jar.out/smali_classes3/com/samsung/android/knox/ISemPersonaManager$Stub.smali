@@ -130,6 +130,8 @@
 
 .field static final TRANSACTION_getLastKeyguardUnlockTime:I = 0x5a
 
+.field static final TRANSACTION_getMoveToKnoxMenuList:I = 0xa6
+
 .field static final TRANSACTION_getMoveToKnoxStatus:I = 0x18
 
 .field static final TRANSACTION_getMyknoxId:I = 0x9a
@@ -413,7 +415,7 @@
 .end method
 
 .method public onTransact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
-    .locals 62
+    .locals 63
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;
@@ -573,11 +575,11 @@
 
     invoke-virtual {v0, v1, v2}, Lcom/samsung/android/knox/ISemPersonaManager$Stub;->inState(Lcom/samsung/android/knox/SemPersonaState;I)Z
 
-    move-result v59
+    move-result v60
 
     invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
 
-    if-eqz v59, :cond_3
+    if-eqz v60, :cond_3
 
     const/4 v5, 0x1
 
@@ -722,11 +724,11 @@
 
     invoke-virtual {v0, v1, v2, v3}, Lcom/samsung/android/knox/ISemPersonaManager$Stub;->setAttribute(Landroid/content/pm/PersonaAttribute;ZI)Z
 
-    move-result v59
+    move-result v60
 
     invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
 
-    if-eqz v59, :cond_8
+    if-eqz v60, :cond_8
 
     const/4 v5, 0x1
 
@@ -790,11 +792,11 @@
 
     invoke-virtual {v0, v1, v2}, Lcom/samsung/android/knox/ISemPersonaManager$Stub;->isAttribute(Landroid/content/pm/PersonaAttribute;I)Z
 
-    move-result v59
+    move-result v60
 
     invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
 
-    if-eqz v59, :cond_a
+    if-eqz v60, :cond_a
 
     const/4 v5, 0x1
 
@@ -838,11 +840,11 @@
 
     invoke-virtual {v0, v1}, Lcom/samsung/android/knox/ISemPersonaManager$Stub;->registerUser(Landroid/content/pm/IPersonaCallback;)Z
 
-    move-result v59
+    move-result v60
 
     invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
 
-    if-eqz v59, :cond_b
+    if-eqz v60, :cond_b
 
     const/4 v5, 0x1
 
@@ -969,11 +971,11 @@
 
     invoke-virtual {v0, v4, v1}, Lcom/samsung/android/knox/ISemPersonaManager$Stub;->switchPersonaAndLaunch(ILandroid/content/Intent;)Z
 
-    move-result v59
+    move-result v60
 
     invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
 
-    if-eqz v59, :cond_e
+    if-eqz v60, :cond_e
 
     const/4 v5, 0x1
 
@@ -1011,11 +1013,11 @@
 
     invoke-virtual {v0, v4}, Lcom/samsung/android/knox/ISemPersonaManager$Stub;->launchPersonaHome(I)Z
 
-    move-result v59
+    move-result v60
 
     invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
 
-    if-eqz v59, :cond_f
+    if-eqz v60, :cond_f
 
     const/4 v5, 0x1
 
@@ -1071,11 +1073,11 @@
 
     invoke-virtual/range {p0 .. p0}, Lcom/samsung/android/knox/ISemPersonaManager$Stub;->isFOTAUpgrade()Z
 
-    move-result v59
+    move-result v60
 
     invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
 
-    if-eqz v59, :cond_10
+    if-eqz v60, :cond_10
 
     const/4 v5, 0x1
 
@@ -1102,11 +1104,11 @@
 
     invoke-virtual/range {p0 .. p0}, Lcom/samsung/android/knox/ISemPersonaManager$Stub;->needToSkipResetOnReboot()Z
 
-    move-result v59
+    move-result v60
 
     invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
 
-    if-eqz v59, :cond_11
+    if-eqz v60, :cond_11
 
     const/4 v5, 0x1
 
@@ -1146,13 +1148,13 @@
 
     invoke-virtual {v0, v1}, Lcom/samsung/android/knox/ISemPersonaManager$Stub;->getPersonas(Z)Ljava/util/List;
 
-    move-result-object v57
+    move-result-object v58
 
     invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
 
     move-object/from16 v0, p3
 
-    move-object/from16 v1, v57
+    move-object/from16 v1, v58
 
     invoke-virtual {v0, v1}, Landroid/os/Parcel;->writeTypedList(Ljava/util/List;)V
 
@@ -1229,11 +1231,11 @@
 
     invoke-virtual {v0, v4}, Lcom/samsung/android/knox/ISemPersonaManager$Stub;->exists(I)Z
 
-    move-result v59
+    move-result v60
 
     invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
 
-    if-eqz v59, :cond_14
+    if-eqz v60, :cond_14
 
     const/4 v5, 0x1
 
@@ -1277,13 +1279,13 @@
 
     invoke-virtual {v0, v4, v1}, Lcom/samsung/android/knox/ISemPersonaManager$Stub;->getPersonasForUser(IZ)Ljava/util/List;
 
-    move-result-object v57
+    move-result-object v58
 
     invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
 
     move-object/from16 v0, p3
 
-    move-object/from16 v1, v57
+    move-object/from16 v1, v58
 
     invoke-virtual {v0, v1}, Landroid/os/Parcel;->writeTypedList(Ljava/util/List;)V
 
@@ -1322,13 +1324,13 @@
 
     invoke-virtual {v0, v4, v1}, Lcom/samsung/android/knox/ISemPersonaManager$Stub;->getPersonasForCreator(IZ)Ljava/util/List;
 
-    move-result-object v57
+    move-result-object v58
 
     invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
 
     move-object/from16 v0, p3
 
-    move-object/from16 v1, v57
+    move-object/from16 v1, v58
 
     invoke-virtual {v0, v1}, Landroid/os/Parcel;->writeTypedList(Ljava/util/List;)V
 
@@ -1529,11 +1531,11 @@
 
     invoke-virtual/range {p0 .. p0}, Lcom/samsung/android/knox/ISemPersonaManager$Stub;->getMoveToKnoxStatus()Z
 
-    move-result v59
+    move-result v60
 
     invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
 
-    if-eqz v59, :cond_1a
+    if-eqz v60, :cond_1a
 
     const/4 v5, 0x1
 
@@ -1680,11 +1682,11 @@
 
     invoke-virtual {v0, v4, v1}, Lcom/samsung/android/knox/ISemPersonaManager$Stub;->installApplications(ILjava/util/List;)Z
 
-    move-result v59
+    move-result v60
 
     invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
 
-    if-eqz v59, :cond_1b
+    if-eqz v60, :cond_1b
 
     const/4 v5, 0x1
 
@@ -1856,11 +1858,11 @@
 
     invoke-virtual {v0, v1}, Lcom/samsung/android/knox/ISemPersonaManager$Stub;->registerKnoxModeChangeObserver(Landroid/content/pm/IKnoxModeChangeObserver;)Z
 
-    move-result v59
+    move-result v60
 
     invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
 
-    if-eqz v59, :cond_1e
+    if-eqz v60, :cond_1e
 
     const/4 v5, 0x1
 
@@ -1899,11 +1901,11 @@
 
     invoke-virtual {v0, v1}, Lcom/samsung/android/knox/ISemPersonaManager$Stub;->registerSystemPersonaObserver(Landroid/content/pm/ISystemPersonaObserver;)Z
 
-    move-result v59
+    move-result v60
 
     invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
 
-    if-eqz v59, :cond_1f
+    if-eqz v60, :cond_1f
 
     const/4 v5, 0x1
 
@@ -2150,13 +2152,13 @@
 
     invoke-virtual {v0, v1}, Lcom/samsung/android/knox/ISemPersonaManager$Stub;->getUserManagedPersonas(Z)Ljava/util/List;
 
-    move-result-object v57
+    move-result-object v58
 
     invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
 
     move-object/from16 v0, p3
 
-    move-object/from16 v1, v57
+    move-object/from16 v1, v58
 
     invoke-virtual {v0, v1}, Landroid/os/Parcel;->writeTypedList(Ljava/util/List;)V
 
@@ -2199,11 +2201,11 @@
 
     invoke-virtual/range {p0 .. p0}, Lcom/samsung/android/knox/ISemPersonaManager$Stub;->handleHomeShow()Z
 
-    move-result v59
+    move-result v60
 
     invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
 
-    if-eqz v59, :cond_22
+    if-eqz v60, :cond_22
 
     const/4 v5, 0x1
 
@@ -2236,11 +2238,11 @@
 
     invoke-virtual {v0, v4}, Lcom/samsung/android/knox/ISemPersonaManager$Stub;->isSessionExpired(I)Z
 
-    move-result v59
+    move-result v60
 
     invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
 
-    if-eqz v59, :cond_23
+    if-eqz v60, :cond_23
 
     const/4 v5, 0x1
 
@@ -2277,11 +2279,11 @@
 
     invoke-virtual {v0, v4, v7}, Lcom/samsung/android/knox/ISemPersonaManager$Stub;->adminLockPersona(ILjava/lang/String;)Z
 
-    move-result v59
+    move-result v60
 
     invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
 
-    if-eqz v59, :cond_24
+    if-eqz v60, :cond_24
 
     const/4 v5, 0x1
 
@@ -2314,11 +2316,11 @@
 
     invoke-virtual {v0, v4}, Lcom/samsung/android/knox/ISemPersonaManager$Stub;->adminUnLockPersona(I)Z
 
-    move-result v59
+    move-result v60
 
     invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
 
-    if-eqz v59, :cond_25
+    if-eqz v60, :cond_25
 
     const/4 v5, 0x1
 
@@ -2345,13 +2347,13 @@
 
     invoke-virtual/range {p0 .. p0}, Lcom/samsung/android/knox/ISemPersonaManager$Stub;->getPersonaIds()[I
 
-    move-result-object v61
+    move-result-object v62
 
     invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
 
     move-object/from16 v0, p3
 
-    move-object/from16 v1, v61
+    move-object/from16 v1, v62
 
     invoke-virtual {v0, v1}, Landroid/os/Parcel;->writeIntArray([I)V
 
@@ -2374,11 +2376,11 @@
 
     invoke-virtual {v0, v4}, Lcom/samsung/android/knox/ISemPersonaManager$Stub;->settingSyncAllowed(I)Z
 
-    move-result v59
+    move-result v60
 
     invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
 
-    if-eqz v59, :cond_26
+    if-eqz v60, :cond_26
 
     const/4 v5, 0x1
 
@@ -2479,13 +2481,13 @@
 
     invoke-virtual {v0, v6, v1}, Lcom/samsung/android/knox/ISemPersonaManager$Stub;->getAppListForPersona(Ljava/lang/String;I)Ljava/util/List;
 
-    move-result-object v58
+    move-result-object v59
 
     invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
 
     move-object/from16 v0, p3
 
-    move-object/from16 v1, v58
+    move-object/from16 v1, v59
 
     invoke-virtual {v0, v1}, Landroid/os/Parcel;->writeStringList(Ljava/util/List;)V
 
@@ -2585,11 +2587,11 @@
 
     invoke-virtual {v0, v4, v7}, Lcom/samsung/android/knox/ISemPersonaManager$Stub;->savePasswordInTima(ILjava/lang/String;)Z
 
-    move-result v59
+    move-result v60
 
     invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
 
-    if-eqz v59, :cond_27
+    if-eqz v60, :cond_27
 
     const/4 v5, 0x1
 
@@ -2622,11 +2624,11 @@
 
     invoke-virtual {v0, v6}, Lcom/samsung/android/knox/ISemPersonaManager$Stub;->resetPassword(Ljava/lang/String;)Z
 
-    move-result v59
+    move-result v60
 
     invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
 
-    if-eqz v59, :cond_28
+    if-eqz v60, :cond_28
 
     const/4 v5, 0x1
 
@@ -2719,11 +2721,11 @@
 
     invoke-virtual {v0, v6, v1}, Lcom/samsung/android/knox/ISemPersonaManager$Stub;->isPackageInInstallWhiteList(Ljava/lang/String;I)Z
 
-    move-result v59
+    move-result v60
 
     invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
 
-    if-eqz v59, :cond_29
+    if-eqz v60, :cond_29
 
     const/4 v5, 0x1
 
@@ -2756,13 +2758,13 @@
 
     invoke-virtual {v0, v4}, Lcom/samsung/android/knox/ISemPersonaManager$Stub;->getPackagesFromInstallWhiteList(I)Ljava/util/List;
 
-    move-result-object v58
+    move-result-object v59
 
     invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
 
     move-object/from16 v0, p3
 
-    move-object/from16 v1, v58
+    move-object/from16 v1, v59
 
     invoke-virtual {v0, v1}, Landroid/os/Parcel;->writeStringList(Ljava/util/List;)V
 
@@ -2945,13 +2947,13 @@
 
     invoke-virtual {v0, v4, v1}, Lcom/samsung/android/knox/ISemPersonaManager$Stub;->getDisabledHomeLaunchers(IZ)Ljava/util/List;
 
-    move-result-object v58
+    move-result-object v59
 
     invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
 
     move-object/from16 v0, p3
 
-    move-object/from16 v1, v58
+    move-object/from16 v1, v59
 
     invoke-virtual {v0, v1}, Landroid/os/Parcel;->writeStringList(Ljava/util/List;)V
 
@@ -2979,11 +2981,11 @@
 
     invoke-virtual {v0, v4}, Lcom/samsung/android/knox/ISemPersonaManager$Stub;->disablePersonaKeyGuard(I)Z
 
-    move-result v59
+    move-result v60
 
     invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
 
-    if-eqz v59, :cond_2c
+    if-eqz v60, :cond_2c
 
     const/4 v5, 0x1
 
@@ -3016,11 +3018,11 @@
 
     invoke-virtual {v0, v4}, Lcom/samsung/android/knox/ISemPersonaManager$Stub;->enablePersonaKeyGuard(I)Z
 
-    move-result v59
+    move-result v60
 
     invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
 
-    if-eqz v59, :cond_2d
+    if-eqz v60, :cond_2d
 
     const/4 v5, 0x1
 
@@ -3113,11 +3115,11 @@
 
     invoke-virtual {v0, v4}, Lcom/samsung/android/knox/ISemPersonaManager$Stub;->isKioskModeEnabled(I)Z
 
-    move-result v59
+    move-result v60
 
     invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
 
-    if-eqz v59, :cond_2f
+    if-eqz v60, :cond_2f
 
     const/4 v5, 0x1
 
@@ -3144,11 +3146,11 @@
 
     invoke-virtual/range {p0 .. p0}, Lcom/samsung/android/knox/ISemPersonaManager$Stub;->isKioskContainerExistOnDevice()Z
 
-    move-result v59
+    move-result v60
 
     invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
 
-    if-eqz v59, :cond_30
+    if-eqz v60, :cond_30
 
     const/4 v5, 0x1
 
@@ -3229,11 +3231,11 @@
 
     invoke-virtual {v0, v4, v1}, Lcom/samsung/android/knox/ISemPersonaManager$Stub;->resetPersonaOnReboot(IZ)Z
 
-    move-result v59
+    move-result v60
 
     invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
 
-    if-eqz v59, :cond_33
+    if-eqz v60, :cond_33
 
     const/4 v5, 0x1
 
@@ -3287,11 +3289,11 @@
 
     invoke-virtual {v0, v4, v7, v1, v2}, Lcom/samsung/android/knox/ISemPersonaManager$Stub;->updatePersonaInfo(ILjava/lang/String;II)Z
 
-    move-result v59
+    move-result v60
 
     invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
 
-    if-eqz v59, :cond_34
+    if-eqz v60, :cond_34
 
     const/4 v5, 0x1
 
@@ -3324,11 +3326,11 @@
 
     invoke-virtual {v0, v4}, Lcom/samsung/android/knox/ISemPersonaManager$Stub;->isResetPersonaOnRebootEnabled(I)Z
 
-    move-result v59
+    move-result v60
 
     invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
 
-    if-eqz v59, :cond_35
+    if-eqz v60, :cond_35
 
     const/4 v5, 0x1
 
@@ -3477,11 +3479,11 @@
 
     invoke-virtual {v0, v4}, Lcom/samsung/android/knox/ISemPersonaManager$Stub;->getKeyguardShowState(I)Z
 
-    move-result v59
+    move-result v60
 
     invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
 
-    if-eqz v59, :cond_37
+    if-eqz v60, :cond_37
 
     const/4 v5, 0x1
 
@@ -3514,11 +3516,11 @@
 
     invoke-virtual {v0, v4}, Lcom/samsung/android/knox/ISemPersonaManager$Stub;->isKnoxKeyguardShown(I)Z
 
-    move-result v59
+    move-result v60
 
     invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
 
-    if-eqz v59, :cond_38
+    if-eqz v60, :cond_38
 
     const/4 v5, 0x1
 
@@ -3545,11 +3547,11 @@
 
     invoke-virtual/range {p0 .. p0}, Lcom/samsung/android/knox/ISemPersonaManager$Stub;->isBlurCompatible()Z
 
-    move-result v59
+    move-result v60
 
     invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
 
-    if-eqz v59, :cond_39
+    if-eqz v60, :cond_39
 
     const/4 v5, 0x1
 
@@ -3639,11 +3641,11 @@
 
     invoke-virtual {v0, v4}, Lcom/samsung/android/knox/ISemPersonaManager$Stub;->getIsFingerAsSupplement(I)Z
 
-    move-result v59
+    move-result v60
 
     invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
 
-    if-eqz v59, :cond_3a
+    if-eqz v60, :cond_3a
 
     const/4 v5, 0x1
 
@@ -3769,11 +3771,11 @@
 
     invoke-virtual {v0, v4}, Lcom/samsung/android/knox/ISemPersonaManager$Stub;->getIsUnlockedAfterTurnOn(I)Z
 
-    move-result v59
+    move-result v60
 
     invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
 
-    if-eqz v59, :cond_3c
+    if-eqz v60, :cond_3c
 
     const/4 v5, 0x1
 
@@ -3843,11 +3845,11 @@
 
     invoke-virtual {v0, v4}, Lcom/samsung/android/knox/ISemPersonaManager$Stub;->getIsQuickAccessUIEnabled(I)Z
 
-    move-result v59
+    move-result v60
 
     invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
 
-    if-eqz v59, :cond_3e
+    if-eqz v60, :cond_3e
 
     const/4 v5, 0x1
 
@@ -3917,11 +3919,11 @@
 
     invoke-virtual {v0, v4}, Lcom/samsung/android/knox/ISemPersonaManager$Stub;->getIsFingerTimeout(I)Z
 
-    move-result v59
+    move-result v60
 
     invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
 
-    if-eqz v59, :cond_40
+    if-eqz v60, :cond_40
 
     const/4 v5, 0x1
 
@@ -3991,11 +3993,11 @@
 
     invoke-virtual {v0, v4}, Lcom/samsung/android/knox/ISemPersonaManager$Stub;->getIsIrisTimeout(I)Z
 
-    move-result v59
+    move-result v60
 
     invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
 
-    if-eqz v59, :cond_42
+    if-eqz v60, :cond_42
 
     const/4 v5, 0x1
 
@@ -4065,11 +4067,11 @@
 
     invoke-virtual {v0, v4}, Lcom/samsung/android/knox/ISemPersonaManager$Stub;->getIsFingerReset(I)Z
 
-    move-result v59
+    move-result v60
 
     invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
 
-    if-eqz v59, :cond_44
+    if-eqz v60, :cond_44
 
     const/4 v5, 0x1
 
@@ -4139,11 +4141,11 @@
 
     invoke-virtual {v0, v4}, Lcom/samsung/android/knox/ISemPersonaManager$Stub;->getIsIrisReset(I)Z
 
-    move-result v59
+    move-result v60
 
     invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
 
-    if-eqz v59, :cond_46
+    if-eqz v60, :cond_46
 
     const/4 v5, 0x1
 
@@ -4213,11 +4215,11 @@
 
     invoke-virtual {v0, v4}, Lcom/samsung/android/knox/ISemPersonaManager$Stub;->getIsAdminLockedJustBefore(I)Z
 
-    move-result v59
+    move-result v60
 
     invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
 
-    if-eqz v59, :cond_48
+    if-eqz v60, :cond_48
 
     const/4 v5, 0x1
 
@@ -4287,11 +4289,11 @@
 
     invoke-virtual {v0, v4}, Lcom/samsung/android/knox/ISemPersonaManager$Stub;->getIsFingerIdentifyFailed(I)Z
 
-    move-result v59
+    move-result v60
 
     invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
 
-    if-eqz v59, :cond_4a
+    if-eqz v60, :cond_4a
 
     const/4 v5, 0x1
 
@@ -4417,11 +4419,11 @@
 
     invoke-virtual {v0, v4}, Lcom/samsung/android/knox/ISemPersonaManager$Stub;->isFingerSupplementActivated(I)Z
 
-    move-result v59
+    move-result v60
 
     invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
 
-    if-eqz v59, :cond_4c
+    if-eqz v60, :cond_4c
 
     const/4 v5, 0x1
 
@@ -4454,11 +4456,11 @@
 
     invoke-virtual {v0, v4}, Lcom/samsung/android/knox/ISemPersonaManager$Stub;->isFingerLockscreenActivated(I)Z
 
-    move-result v59
+    move-result v60
 
     invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
 
-    if-eqz v59, :cond_4d
+    if-eqz v60, :cond_4d
 
     const/4 v5, 0x1
 
@@ -4491,11 +4493,11 @@
 
     invoke-virtual {v0, v4}, Lcom/samsung/android/knox/ISemPersonaManager$Stub;->isIrisLockscreenActivated(I)Z
 
-    move-result v59
+    move-result v60
 
     invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
 
-    if-eqz v59, :cond_4e
+    if-eqz v60, :cond_4e
 
     const/4 v5, 0x1
 
@@ -4620,11 +4622,11 @@
 
     invoke-virtual {v0, v6, v1}, Lcom/samsung/android/knox/ISemPersonaManager$Stub;->canAccess(Ljava/lang/String;I)Z
 
-    move-result v59
+    move-result v60
 
     invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
 
-    if-eqz v59, :cond_51
+    if-eqz v60, :cond_51
 
     const/4 v5, 0x1
 
@@ -4823,11 +4825,11 @@
 
     invoke-virtual/range {v20 .. v25}, Lcom/samsung/android/knox/ISemPersonaManager$Stub;->mountOldContainer(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;II)Z
 
-    move-result v59
+    move-result v60
 
     invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
 
-    if-eqz v59, :cond_52
+    if-eqz v60, :cond_52
 
     const/4 v5, 0x1
 
@@ -4860,11 +4862,11 @@
 
     invoke-virtual {v0, v6}, Lcom/samsung/android/knox/ISemPersonaManager$Stub;->unmountOldContainer(Ljava/lang/String;)Z
 
-    move-result v59
+    move-result v60
 
     invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
 
-    if-eqz v59, :cond_53
+    if-eqz v60, :cond_53
 
     const/4 v5, 0x1
 
@@ -4901,11 +4903,11 @@
 
     invoke-virtual {v0, v4, v7}, Lcom/samsung/android/knox/ISemPersonaManager$Stub;->verifyKnoxBackupPin(ILjava/lang/String;)Z
 
-    move-result v59
+    move-result v60
 
     invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
 
-    if-eqz v59, :cond_54
+    if-eqz v60, :cond_54
 
     const/4 v5, 0x1
 
@@ -5131,11 +5133,11 @@
 
     invoke-virtual {v0, v4}, Lcom/samsung/android/knox/ISemPersonaManager$Stub;->isNFCAllowed(I)Z
 
-    move-result v59
+    move-result v60
 
     invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
 
-    if-eqz v59, :cond_57
+    if-eqz v60, :cond_57
 
     const/4 v5, 0x1
 
@@ -5211,11 +5213,11 @@
 
     invoke-virtual {v0, v4}, Lcom/samsung/android/knox/ISemPersonaManager$Stub;->isEnabledFingerprintIndex(I)Z
 
-    move-result v59
+    move-result v60
 
     invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
 
-    if-eqz v59, :cond_59
+    if-eqz v60, :cond_59
 
     const/4 v5, 0x1
 
@@ -5248,13 +5250,13 @@
 
     invoke-virtual {v0, v4}, Lcom/samsung/android/knox/ISemPersonaManager$Stub;->getFingerprintIndex(I)[I
 
-    move-result-object v61
+    move-result-object v62
 
     invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
 
     move-object/from16 v0, p3
 
-    move-object/from16 v1, v61
+    move-object/from16 v1, v62
 
     invoke-virtual {v0, v1}, Landroid/os/Parcel;->writeIntArray([I)V
 
@@ -5277,13 +5279,13 @@
 
     invoke-virtual {v0, v4}, Lcom/samsung/android/knox/ISemPersonaManager$Stub;->getFingerprintHash(I)Ljava/util/List;
 
-    move-result-object v58
+    move-result-object v59
 
     invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
 
     move-object/from16 v0, p3
 
-    move-object/from16 v1, v58
+    move-object/from16 v1, v59
 
     invoke-virtual {v0, v1}, Landroid/os/Parcel;->writeStringList(Ljava/util/List;)V
 
@@ -5498,13 +5500,13 @@
 
     invoke-virtual/range {p0 .. p0}, Lcom/samsung/android/knox/ISemPersonaManager$Stub;->getContainerHideUsageStatsApps()Ljava/util/List;
 
-    move-result-object v58
+    move-result-object v59
 
     invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
 
     move-object/from16 v0, p3
 
-    move-object/from16 v1, v58
+    move-object/from16 v1, v59
 
     invoke-virtual {v0, v1}, Landroid/os/Parcel;->writeStringList(Ljava/util/List;)V
 
@@ -5542,13 +5544,13 @@
 
     invoke-virtual/range {p0 .. p0}, Lcom/samsung/android/knox/ISemPersonaManager$Stub;->getNonSecureAppList()Ljava/util/List;
 
-    move-result-object v58
+    move-result-object v59
 
     invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
 
     move-object/from16 v0, p3
 
-    move-object/from16 v1, v58
+    move-object/from16 v1, v59
 
     invoke-virtual {v0, v1}, Landroid/os/Parcel;->writeStringList(Ljava/util/List;)V
 
@@ -5580,11 +5582,11 @@
 
     invoke-virtual/range {p0 .. p0}, Lcom/samsung/android/knox/ISemPersonaManager$Stub;->isFotaUpgradeVersionChanged()Z
 
-    move-result v59
+    move-result v60
 
     invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
 
-    if-eqz v59, :cond_5b
+    if-eqz v60, :cond_5b
 
     const/4 v5, 0x1
 
@@ -5690,13 +5692,13 @@
 
     invoke-virtual {v0, v4}, Lcom/samsung/android/knox/ISemPersonaManager$Stub;->getECBadge(I)[B
 
-    move-result-object v60
+    move-result-object v61
 
     invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
 
     move-object/from16 v0, p3
 
-    move-object/from16 v1, v60
+    move-object/from16 v1, v61
 
     invoke-virtual {v0, v1}, Landroid/os/Parcel;->writeByteArray([B)V
 
@@ -5719,13 +5721,13 @@
 
     invoke-virtual {v0, v4}, Lcom/samsung/android/knox/ISemPersonaManager$Stub;->getECIcon(I)[B
 
-    move-result-object v60
+    move-result-object v61
 
     invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
 
     move-object/from16 v0, p3
 
-    move-object/from16 v1, v60
+    move-object/from16 v1, v61
 
     invoke-virtual {v0, v1}, Landroid/os/Parcel;->writeByteArray([B)V
 
@@ -5748,11 +5750,11 @@
 
     invoke-virtual {v0, v4}, Lcom/samsung/android/knox/ISemPersonaManager$Stub;->isECContainer(I)Z
 
-    move-result v59
+    move-result v60
 
     invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
 
-    if-eqz v59, :cond_5c
+    if-eqz v60, :cond_5c
 
     const/4 v5, 0x1
 
@@ -5820,11 +5822,11 @@
 
     invoke-virtual {v0, v6, v1}, Lcom/samsung/android/knox/ISemPersonaManager$Stub;->isPossibleAddAppsToContainer(Ljava/lang/String;I)Z
 
-    move-result v59
+    move-result v60
 
     invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
 
-    if-eqz v59, :cond_5d
+    if-eqz v60, :cond_5d
 
     const/4 v5, 0x1
 
@@ -5880,13 +5882,13 @@
 
     invoke-virtual {v0, v4}, Lcom/samsung/android/knox/ISemPersonaManager$Stub;->getContainerAppIcon(I)[B
 
-    move-result-object v60
+    move-result-object v61
 
     invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
 
     move-object/from16 v0, p3
 
-    move-object/from16 v1, v60
+    move-object/from16 v1, v61
 
     invoke-virtual {v0, v1}, Landroid/os/Parcel;->writeByteArray([B)V
 
@@ -5957,11 +5959,11 @@
 
     invoke-virtual/range {p0 .. p0}, Lcom/samsung/android/knox/ISemPersonaManager$Stub;->isKnoxMultiWindowExist()Z
 
-    move-result v59
+    move-result v60
 
     invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
 
-    if-eqz v59, :cond_5e
+    if-eqz v60, :cond_5e
 
     const/4 v5, 0x1
 
@@ -6017,11 +6019,11 @@
 
     invoke-virtual/range {p0 .. p0}, Lcom/samsung/android/knox/ISemPersonaManager$Stub;->isBootCompleted()Z
 
-    move-result v59
+    move-result v60
 
     invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
 
-    if-eqz v59, :cond_5f
+    if-eqz v60, :cond_5f
 
     const/4 v5, 0x1
 
@@ -6054,11 +6056,11 @@
 
     invoke-virtual {v0, v4}, Lcom/samsung/android/knox/ISemPersonaManager$Stub;->isExternalStorageEnabled(I)Z
 
-    move-result v59
+    move-result v60
 
     invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
 
-    if-eqz v59, :cond_60
+    if-eqz v60, :cond_60
 
     const/4 v5, 0x1
 
@@ -6091,13 +6093,13 @@
 
     invoke-virtual {v0, v4}, Lcom/samsung/android/knox/ISemPersonaManager$Stub;->getAppPackageNamesAllWhiteLists(I)Ljava/util/List;
 
-    move-result-object v58
+    move-result-object v59
 
     invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
 
     move-object/from16 v0, p3
 
-    move-object/from16 v1, v58
+    move-object/from16 v1, v59
 
     invoke-virtual {v0, v1}, Landroid/os/Parcel;->writeStringList(Ljava/util/List;)V
 
@@ -6135,11 +6137,11 @@
 
     invoke-virtual {v0, v1}, Lcom/samsung/android/knox/ISemPersonaManager$Stub;->startActivityThroughPersona(Landroid/content/Intent;)Z
 
-    move-result v59
+    move-result v60
 
     invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
 
-    if-eqz v59, :cond_62
+    if-eqz v60, :cond_62
 
     const/4 v5, 0x1
 
@@ -6192,11 +6194,11 @@
 
     invoke-virtual {v0, v1}, Lcom/samsung/android/knox/ISemPersonaManager$Stub;->broadcastIntentThroughPersona(Landroid/content/Intent;)Z
 
-    move-result v59
+    move-result v60
 
     invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
 
-    if-eqz v59, :cond_64
+    if-eqz v60, :cond_64
 
     const/4 v5, 0x1
 
@@ -6291,6 +6293,35 @@
     const/16 v46, 0x0
 
     goto :goto_66
+
+    :sswitch_a6
+    const-string/jumbo v5, "com.samsung.android.knox.ISemPersonaManager"
+
+    move-object/from16 v0, p2
+
+    invoke-virtual {v0, v5}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
+
+    invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
+
+    move-result v4
+
+    move-object/from16 v0, p0
+
+    invoke-virtual {v0, v4}, Lcom/samsung/android/knox/ISemPersonaManager$Stub;->getMoveToKnoxMenuList(I)Ljava/util/List;
+
+    move-result-object v57
+
+    invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
+
+    move-object/from16 v0, p3
+
+    move-object/from16 v1, v57
+
+    invoke-virtual {v0, v1}, Landroid/os/Parcel;->writeTypedList(Ljava/util/List;)V
+
+    const/4 v5, 0x1
+
+    return v5
 
     nop
 
@@ -6461,6 +6492,7 @@
         0xa3 -> :sswitch_a3
         0xa4 -> :sswitch_a4
         0xa5 -> :sswitch_a5
+        0xa6 -> :sswitch_a6
         0x5f4e5446 -> :sswitch_0
     .end sparse-switch
 .end method

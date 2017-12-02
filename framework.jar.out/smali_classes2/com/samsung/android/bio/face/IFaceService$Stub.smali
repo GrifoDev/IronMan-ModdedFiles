@@ -58,11 +58,13 @@
 
 .field static final TRANSACTION_requestSessionOpen:I = 0x10
 
-.field static final TRANSACTION_resetAuthenticationTimeout:I = 0x14
+.field static final TRANSACTION_resetAuthenticationTimeout:I = 0x15
 
 .field static final TRANSACTION_resetTimeout:I = 0xe
 
 .field static final TRANSACTION_setActiveUser:I = 0xf
+
+.field static final TRANSACTION_updateSecureID:I = 0x14
 
 .field static final TRANSACTION_updateSecureUserID:I = 0x13
 
@@ -871,7 +873,15 @@
 
     invoke-virtual {v0, v5}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
-    invoke-virtual/range {p0 .. p0}, Lcom/samsung/android/bio/face/IFaceService$Stub;->resetAuthenticationTimeout()Z
+    invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->createByteArray()[B
+
+    move-result-object v36
+
+    move-object/from16 v0, p0
+
+    move-object/from16 v1, v36
+
+    invoke-virtual {v0, v1}, Lcom/samsung/android/bio/face/IFaceService$Stub;->updateSecureID([B)Z
 
     move-result v43
 
@@ -895,6 +905,39 @@
 
     goto :goto_7
 
+    :sswitch_15
+    const-string/jumbo v5, "com.samsung.android.bio.face.IFaceService"
+
+    move-object/from16 v0, p2
+
+    invoke-virtual {v0, v5}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
+
+    invoke-virtual/range {p0 .. p0}, Lcom/samsung/android/bio/face/IFaceService$Stub;->resetAuthenticationTimeout()Z
+
+    move-result v43
+
+    invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
+
+    if-eqz v43, :cond_8
+
+    const/4 v5, 0x1
+
+    :goto_8
+    move-object/from16 v0, p3
+
+    invoke-virtual {v0, v5}, Landroid/os/Parcel;->writeInt(I)V
+
+    const/4 v5, 0x1
+
+    return v5
+
+    :cond_8
+    const/4 v5, 0x0
+
+    goto :goto_8
+
+    nop
+
     :sswitch_data_0
     .sparse-switch
         0x1 -> :sswitch_1
@@ -917,6 +960,7 @@
         0x12 -> :sswitch_12
         0x13 -> :sswitch_13
         0x14 -> :sswitch_14
+        0x15 -> :sswitch_15
         0x5f4e5446 -> :sswitch_0
     .end sparse-switch
 .end method

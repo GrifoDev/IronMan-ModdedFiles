@@ -25,6 +25,8 @@
 
 .field private mApStatus:I
 
+.field private mContext:Landroid/content/Context;
+
 .field private mExtLibParser:Lcom/samsung/android/contextaware/dataprovider/sensorhubprovider/TypeParser;
 
 .field private mLibParser:Lcom/samsung/android/contextaware/dataprovider/sensorhubprovider/TypeParser;
@@ -639,9 +641,16 @@
 
     const/4 v3, 0x0
 
+    iget-object v1, p0, Lcom/samsung/android/contextaware/dataprovider/sensorhubprovider/SensorHubParserProvider;->mContext:Landroid/content/Context;
+
+    if-nez v1, :cond_0
+
+    iput-object p1, p0, Lcom/samsung/android/contextaware/dataprovider/sensorhubprovider/SensorHubParserProvider;->mContext:Landroid/content/Context;
+
+    :cond_0
     iget-object v1, p0, Lcom/samsung/android/contextaware/dataprovider/sensorhubprovider/SensorHubParserProvider;->mSensorHubManager:Lcom/samsung/android/sensorhub/SensorHubManager;
 
-    if-nez v1, :cond_2
+    if-nez v1, :cond_3
 
     const-string/jumbo v1, "sensorhub"
 
@@ -655,7 +664,7 @@
 
     iget-object v1, p0, Lcom/samsung/android/contextaware/dataprovider/sensorhubprovider/SensorHubParserProvider;->mSensorHubManager:Lcom/samsung/android/sensorhub/SensorHubManager;
 
-    if-nez v1, :cond_0
+    if-nez v1, :cond_1
 
     const-string/jumbo v1, "mSensorHubManager is null."
 
@@ -663,7 +672,7 @@
 
     return-void
 
-    :cond_0
+    :cond_1
     new-instance v1, Landroid/os/HandlerThread;
 
     const-string/jumbo v2, "CAESHubEvtHler"
@@ -682,7 +691,7 @@
 
     move-result-object v0
 
-    if-nez v0, :cond_1
+    if-nez v0, :cond_2
 
     iget-object v1, p0, Lcom/samsung/android/contextaware/dataprovider/sensorhubprovider/SensorHubParserProvider;->handlerThread:Landroid/os/HandlerThread;
 
@@ -700,7 +709,7 @@
 
     return-void
 
-    :cond_1
+    :cond_2
     iget-object v1, p0, Lcom/samsung/android/contextaware/dataprovider/sensorhubprovider/SensorHubParserProvider;->mSensorHubManager:Lcom/samsung/android/sensorhub/SensorHubManager;
 
     iget-object v2, p0, Lcom/samsung/android/contextaware/dataprovider/sensorhubprovider/SensorHubParserProvider;->mSensorHubListener:Lcom/samsung/android/sensorhub/SensorHubEventListener;
@@ -719,7 +728,7 @@
 
     invoke-virtual {v1, v2, v3, v5, v4}, Lcom/samsung/android/sensorhub/SensorHubManager;->registerListener(Lcom/samsung/android/sensorhub/SensorHubEventListener;Lcom/samsung/android/sensorhub/SensorHub;ILandroid/os/Handler;)Z
 
-    :cond_2
+    :cond_3
     new-instance v1, Lcom/samsung/android/contextaware/dataprovider/sensorhubprovider/LibTypeParser;
 
     invoke-direct {v1}, Lcom/samsung/android/contextaware/dataprovider/sensorhubprovider/LibTypeParser;-><init>()V
@@ -777,6 +786,99 @@
     invoke-static {v1}, Lcom/samsung/android/contextaware/utilbundle/logger/CaLogger;->error(Ljava/lang/String;)V
 
     :cond_0
+    return-void
+.end method
+
+.method public reInitialize()V
+    .locals 6
+
+    const/4 v3, 0x0
+
+    iget-object v1, p0, Lcom/samsung/android/contextaware/dataprovider/sensorhubprovider/SensorHubParserProvider;->mSensorHubManager:Lcom/samsung/android/sensorhub/SensorHubManager;
+
+    if-eqz v1, :cond_0
+
+    iget-object v1, p0, Lcom/samsung/android/contextaware/dataprovider/sensorhubprovider/SensorHubParserProvider;->mSensorHubManager:Lcom/samsung/android/sensorhub/SensorHubManager;
+
+    iget-object v2, p0, Lcom/samsung/android/contextaware/dataprovider/sensorhubprovider/SensorHubParserProvider;->mSensorHubListener:Lcom/samsung/android/sensorhub/SensorHubEventListener;
+
+    invoke-virtual {v1, v2}, Lcom/samsung/android/sensorhub/SensorHubManager;->unregisterListener(Lcom/samsung/android/sensorhub/SensorHubEventListener;)V
+
+    iput-object v3, p0, Lcom/samsung/android/contextaware/dataprovider/sensorhubprovider/SensorHubParserProvider;->mSensorHubManager:Lcom/samsung/android/sensorhub/SensorHubManager;
+
+    const-string/jumbo v1, "unregister current listener and destroy sensorhubevent connection "
+
+    invoke-static {v1}, Lcom/samsung/android/contextaware/utilbundle/logger/CaLogger;->error(Ljava/lang/String;)V
+
+    :cond_0
+    iget-object v1, p0, Lcom/samsung/android/contextaware/dataprovider/sensorhubprovider/SensorHubParserProvider;->mContext:Landroid/content/Context;
+
+    const-string/jumbo v2, "sensorhub"
+
+    invoke-virtual {v1, v2}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Lcom/samsung/android/sensorhub/SensorHubManager;
+
+    iput-object v1, p0, Lcom/samsung/android/contextaware/dataprovider/sensorhubprovider/SensorHubParserProvider;->mSensorHubManager:Lcom/samsung/android/sensorhub/SensorHubManager;
+
+    iget-object v1, p0, Lcom/samsung/android/contextaware/dataprovider/sensorhubprovider/SensorHubParserProvider;->mSensorHubManager:Lcom/samsung/android/sensorhub/SensorHubManager;
+
+    if-nez v1, :cond_1
+
+    const-string/jumbo v1, "mSensorHubManager is null."
+
+    invoke-static {v1}, Lcom/samsung/android/contextaware/utilbundle/logger/CaLogger;->error(Ljava/lang/String;)V
+
+    return-void
+
+    :cond_1
+    iget-object v1, p0, Lcom/samsung/android/contextaware/dataprovider/sensorhubprovider/SensorHubParserProvider;->handlerThread:Landroid/os/HandlerThread;
+
+    invoke-virtual {v1}, Landroid/os/HandlerThread;->getLooper()Landroid/os/Looper;
+
+    move-result-object v0
+
+    if-nez v0, :cond_2
+
+    iget-object v1, p0, Lcom/samsung/android/contextaware/dataprovider/sensorhubprovider/SensorHubParserProvider;->handlerThread:Landroid/os/HandlerThread;
+
+    invoke-virtual {v1}, Landroid/os/HandlerThread;->quitSafely()Z
+
+    iput-object v3, p0, Lcom/samsung/android/contextaware/dataprovider/sensorhubprovider/SensorHubParserProvider;->handlerThread:Landroid/os/HandlerThread;
+
+    sget-object v1, Lcom/samsung/android/contextaware/manager/ContextAwareServiceErrors;->ERROR_LOOPER_NULL_EXCEPTION:Lcom/samsung/android/contextaware/manager/ContextAwareServiceErrors;
+
+    invoke-virtual {v1}, Lcom/samsung/android/contextaware/manager/ContextAwareServiceErrors;->getMessage()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-static {v1}, Lcom/samsung/android/contextaware/utilbundle/logger/CaLogger;->error(Ljava/lang/String;)V
+
+    return-void
+
+    :cond_2
+    iget-object v1, p0, Lcom/samsung/android/contextaware/dataprovider/sensorhubprovider/SensorHubParserProvider;->mSensorHubManager:Lcom/samsung/android/sensorhub/SensorHubManager;
+
+    iget-object v2, p0, Lcom/samsung/android/contextaware/dataprovider/sensorhubprovider/SensorHubParserProvider;->mSensorHubListener:Lcom/samsung/android/sensorhub/SensorHubEventListener;
+
+    iget-object v3, p0, Lcom/samsung/android/contextaware/dataprovider/sensorhubprovider/SensorHubParserProvider;->mSensorHubManager:Lcom/samsung/android/sensorhub/SensorHubManager;
+
+    const/4 v4, 0x1
+
+    invoke-virtual {v3, v4}, Lcom/samsung/android/sensorhub/SensorHubManager;->getDefaultSensorHub(I)Lcom/samsung/android/sensorhub/SensorHub;
+
+    move-result-object v3
+
+    new-instance v4, Landroid/os/Handler;
+
+    invoke-direct {v4, v0}, Landroid/os/Handler;-><init>(Landroid/os/Looper;)V
+
+    const/4 v5, 0x0
+
+    invoke-virtual {v1, v2, v3, v5, v4}, Lcom/samsung/android/sensorhub/SensorHubManager;->registerListener(Lcom/samsung/android/sensorhub/SensorHubEventListener;Lcom/samsung/android/sensorhub/SensorHub;ILandroid/os/Handler;)Z
+
     return-void
 .end method
 

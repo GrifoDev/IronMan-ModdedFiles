@@ -396,13 +396,13 @@
 .end method
 
 .method private sendCallStatusToSensorHub(I)V
-    .locals 4
-
-    const/4 v3, 0x2
+    .locals 3
 
     const/4 v2, 0x0
 
-    new-array v0, v3, [B
+    const/4 v1, 0x2
+
+    new-array v0, v1, [B
 
     int-to-byte v1, p1
 
@@ -412,25 +412,13 @@
 
     aput-byte v2, v0, v1
 
-    invoke-static {}, Lcom/samsung/android/contextaware/utilbundle/SensorHubCommManager;->getInstance()Lcom/samsung/android/contextaware/utilbundle/SensorHubCommManager;
+    const/16 v1, -0x4c
 
-    move-result-object v1
+    const/16 v2, 0x11
 
-    new-array v2, v3, [B
-
-    fill-array-data v2, :array_0
-
-    invoke-virtual {v1, v0, v2}, Lcom/samsung/android/contextaware/utilbundle/SensorHubCommManager;->sendCmdToSensorHub([B[B)I
+    invoke-direct {p0, v0, v1, v2}, Lcom/samsung/android/contextaware/utilbundle/CaTelephonyManager;->sendCmdToSensorHub([BBB)V
 
     return-void
-
-    nop
-
-    :array_0
-    .array-data 1
-        -0x4ct
-        0x11t
-    .end array-data
 .end method
 
 .method private sendCellInfoToSensorHub()V
@@ -578,17 +566,11 @@
     :goto_0
     if-eqz v10, :cond_1
 
-    invoke-static {}, Lcom/samsung/android/contextaware/utilbundle/SensorHubCommManager;->getInstance()Lcom/samsung/android/contextaware/utilbundle/SensorHubCommManager;
+    const/16 v12, -0x3f
 
-    move-result-object v12
+    const/16 v13, 0x11
 
-    const/4 v13, 0x2
-
-    new-array v13, v13, [B
-
-    fill-array-data v13, :array_0
-
-    invoke-virtual {v12, v2, v13}, Lcom/samsung/android/contextaware/utilbundle/SensorHubCommManager;->sendCmdToSensorHub([B[B)I
+    invoke-direct {p0, v2, v12, v13}, Lcom/samsung/android/contextaware/utilbundle/CaTelephonyManager;->sendCmdToSensorHub([BBB)V
 
     :cond_1
     return-void
@@ -691,14 +673,28 @@
     const/4 v10, 0x1
 
     goto :goto_0
+.end method
 
-    nop
+.method private sendCmdToSensorHub([BBB)V
+    .locals 2
 
-    :array_0
-    .array-data 1
-        -0x3ft
-        0x11t
-    .end array-data
+    invoke-static {}, Lcom/samsung/android/contextaware/manager/ContextAwareService;->getCAEService()Lcom/samsung/android/contextaware/manager/ContextAwareService;
+
+    move-result-object v0
+
+    if-eqz v0, :cond_0
+
+    invoke-virtual {v0, p1, p2, p3}, Lcom/samsung/android/contextaware/manager/ContextAwareService;->sendTelephonyCmdToSensorHub([BBB)V
+
+    :goto_0
+    return-void
+
+    :cond_0
+    const-string/jumbo v1, "CAE is null"
+
+    invoke-static {v1}, Lcom/samsung/android/contextaware/utilbundle/logger/CaLogger;->info(Ljava/lang/String;)V
+
+    goto :goto_0
 .end method
 
 

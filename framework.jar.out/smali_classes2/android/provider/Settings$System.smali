@@ -884,6 +884,8 @@
 
 .field public static final PREFERED_VIDEO_CALL:Ljava/lang/String; = "prefered_video_call"
 
+.field public static final PREFERRED_RTT_FONT_SETTING:Ljava/lang/String; = "preferred_rtt_font_setting"
+
 .field public static final PREMIUM_WATCH_DISPLAY_SIGNATURE:Ljava/lang/String; = "premium_watch_display_signature"
 
 .field public static final PREMIUM_WATCH_DUAL_CLOCK:Ljava/lang/String; = "premium_watch_dual_clock"
@@ -962,6 +964,8 @@
 .field public static final RINGTONE_CACHE_URI:Landroid/net/Uri;
 
 .field private static final RINGTONE_VALIDATOR:Landroid/provider/Settings$System$Validator;
+
+.field public static final RTT_SYSTEM_FONT_SETTING:Ljava/lang/String; = "rtt_system_font_setting"
 
 .field public static final SAFETYCARE_DISASTER_POPUP:Ljava/lang/String; = "safetycare_disaster_popup"
 
@@ -1112,6 +1116,8 @@
 .field public static final SEM_GREYSCALE_MODE:Ljava/lang/String; = "greyscale_mode"
 
 .field public static final SEM_HAPTIC_FEEDBACK_EXTRA:Ljava/lang/String; = "haptic_feedback_extra"
+
+.field public static final SEM_HDR_CERTIFICATE_SCREEN_BRIGHTNESS:Ljava/lang/String; = "hdr_certificate_screen_brightness"
 
 .field public static final SEM_HEARING_AID:Ljava/lang/String; = "hearing_aid"
 

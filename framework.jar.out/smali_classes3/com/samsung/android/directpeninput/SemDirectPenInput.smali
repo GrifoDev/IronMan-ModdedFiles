@@ -4262,7 +4262,7 @@
 
     const-string/jumbo v2, "DirectPenInput"
 
-    const-string/jumbo v3, "Caencel to show directpeninput cue because mParentView is null"
+    const-string/jumbo v3, "Cancel to show directpeninput cue because mParentView is null"
 
     invoke-static {v2, v3}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
@@ -4271,16 +4271,29 @@
     :cond_1
     iget-object v2, p0, Lcom/samsung/android/directpeninput/SemDirectPenInput;->mParentView:Landroid/view/View;
 
+    instance-of v2, v2, Landroid/widget/EditText;
+
+    if-nez v2, :cond_2
+
+    invoke-direct {p0}, Lcom/samsung/android/directpeninput/SemDirectPenInput;->checkUseSamsungIME()Z
+
+    move-result v2
+
+    if-eqz v2, :cond_5
+
+    :cond_2
+    iget-object v2, p0, Lcom/samsung/android/directpeninput/SemDirectPenInput;->mParentView:Landroid/view/View;
+
     invoke-virtual {v2}, Landroid/view/View;->getVisibility()I
 
     move-result v2
 
-    if-nez v2, :cond_2
+    if-nez v2, :cond_3
 
     const/4 v1, 0x1
 
-    :cond_2
-    if-eqz v1, :cond_3
+    :cond_3
+    if-eqz v1, :cond_4
 
     iget-object v2, p0, Lcom/samsung/android/directpeninput/SemDirectPenInput;->mParentView:Landroid/view/View;
 
@@ -4290,7 +4303,7 @@
 
     instance-of v2, v2, Landroid/view/View;
 
-    if-eqz v2, :cond_3
+    if-eqz v2, :cond_4
 
     iget-object v2, p0, Lcom/samsung/android/directpeninput/SemDirectPenInput;->mParentView:Landroid/view/View;
 
@@ -4304,8 +4317,8 @@
 
     move-result v1
 
-    :cond_3
-    if-nez v1, :cond_4
+    :cond_4
+    if-nez v1, :cond_6
 
     const-string/jumbo v2, "DirectPenInput"
 
@@ -4315,14 +4328,23 @@
 
     return-void
 
-    :cond_4
+    :cond_5
+    const-string/jumbo v2, "DirectPenInput"
+
+    const-string/jumbo v3, "Cancel to show directpeninput cue because mParentView is not instanceof EditText and Samsung Keyboard is not used"
+
+    invoke-static {v2, v3}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    return-void
+
+    :cond_6
     invoke-direct {p0}, Lcom/samsung/android/directpeninput/SemDirectPenInput;->createPopupCue()V
 
     const/4 v0, 0x0
 
     iget-boolean v2, p0, Lcom/samsung/android/directpeninput/SemDirectPenInput;->mIsMultiLineEditor:Z
 
-    if-eqz v2, :cond_5
+    if-eqz v2, :cond_7
 
     const/4 v0, 0x2
 
@@ -4335,7 +4357,7 @@
 
     return-void
 
-    :cond_5
+    :cond_7
     const/4 v0, 0x1
 
     goto :goto_0

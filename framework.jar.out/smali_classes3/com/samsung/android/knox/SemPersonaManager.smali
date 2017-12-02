@@ -7725,7 +7725,7 @@
 .end method
 
 .method public getMoveToKnoxMenuList(Landroid/content/Context;)Ljava/util/ArrayList;
-    .locals 14
+    .locals 5
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -7738,435 +7738,53 @@
         }
     .end annotation
 
-    new-instance v10, Ljava/util/ArrayList;
+    new-instance v2, Ljava/util/ArrayList;
 
-    invoke-direct {v10}, Ljava/util/ArrayList;-><init>()V
+    invoke-direct {v2}, Ljava/util/ArrayList;-><init>()V
 
-    const/4 v3, 0x0
+    const/16 v3, 0xe6
 
-    const/16 v11, 0xe6
+    invoke-static {v3}, Lcom/samsung/android/knox/SemPersonaManager;->isKnoxVersionSupported(I)Z
 
-    invoke-static {v11}, Lcom/samsung/android/knox/SemPersonaManager;->isKnoxVersionSupported(I)Z
+    move-result v3
 
-    move-result v11
+    if-nez v3, :cond_0
 
-    if-nez v11, :cond_0
-
-    return-object v10
+    return-object v2
 
     :cond_0
-    invoke-virtual {p1}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
+    iget-object v3, p0, Lcom/samsung/android/knox/SemPersonaManager;->mService:Lcom/samsung/android/knox/ISemPersonaManager;
 
-    move-result-object v11
+    if-eqz v3, :cond_1
 
-    const-string/jumbo v12, "emergency_mode"
+    :try_start_0
+    invoke-virtual {p1}, Landroid/content/Context;->getUserId()I
 
-    const/4 v13, 0x0
+    move-result v0
 
-    invoke-static {v11, v12, v13}, Landroid/provider/Settings$System;->getInt(Landroid/content/ContentResolver;Ljava/lang/String;I)I
+    iget-object v3, p0, Lcom/samsung/android/knox/SemPersonaManager;->mService:Lcom/samsung/android/knox/ISemPersonaManager;
 
-    move-result v11
+    invoke-interface {v3, v0}, Lcom/samsung/android/knox/ISemPersonaManager;->getMoveToKnoxMenuList(I)Ljava/util/List;
 
-    const/4 v12, 0x1
+    move-result-object v3
 
-    if-ne v11, v12, :cond_1
+    check-cast v3, Ljava/util/ArrayList;
+    :try_end_0
+    .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    return-object v10
+    return-object v3
+
+    :catch_0
+    move-exception v1
+
+    sget-object v3, Lcom/samsung/android/knox/SemPersonaManager;->TAG:Ljava/lang/String;
+
+    const-string/jumbo v4, "Failed to call Persona service:getMoveToKnoxMenuList"
+
+    invoke-static {v3, v4, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
     :cond_1
-    const-string/jumbo v11, "persona"
-
-    invoke-virtual {p1, v11}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
-
-    move-result-object v6
-
-    check-cast v6, Lcom/samsung/android/knox/SemPersonaManager;
-
-    invoke-virtual {v6}, Lcom/samsung/android/knox/SemPersonaManager;->getPersonaIds()[I
-
-    move-result-object v8
-
-    if-eqz v8, :cond_2
-
-    array-length v11, v8
-
-    if-nez v11, :cond_3
-
-    :cond_2
-    return-object v10
-
-    :cond_3
-    array-length v11, v8
-
-    if-lez v11, :cond_f
-
-    const/4 v4, 0x0
-
-    invoke-virtual {p1}, Landroid/content/Context;->getUserId()I
-
-    move-result v11
-
-    if-nez v11, :cond_e
-
-    invoke-static {p1}, Lcom/samsung/android/knox/SemPersonaManager;->isKioskModeEnabled(Landroid/content/Context;)Z
-
-    move-result v11
-
-    if-eqz v11, :cond_4
-
-    return-object v10
-
-    :cond_4
-    const/4 v2, 0x0
-
-    :goto_0
-    array-length v11, v8
-
-    if-ge v2, v11, :cond_f
-
-    aget v11, v8, v2
-
-    invoke-virtual {p0, v11}, Lcom/samsung/android/knox/SemPersonaManager;->getPersonaInfo(I)Lcom/samsung/android/knox/SemPersonaInfo;
-
-    move-result-object v7
-
-    if-eqz v7, :cond_6
-
-    iget-boolean v11, v7, Lcom/samsung/android/knox/SemPersonaInfo;->removePersona:Z
-
-    if-eqz v11, :cond_6
-
-    sget-object v11, Lcom/samsung/android/knox/SemPersonaManager;->TAG:Ljava/lang/String;
-
-    new-instance v12, Ljava/lang/StringBuilder;
-
-    invoke-direct {v12}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string/jumbo v13, "Deleting Personal : "
-
-    invoke-virtual {v12, v13}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v12
-
-    aget v13, v8, v2
-
-    invoke-virtual {v12, v13}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v12
-
-    invoke-virtual {v12}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v12
-
-    invoke-static {v11, v12}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
-    :cond_5
-    :goto_1
-    add-int/lit8 v2, v2, 0x1
-
-    goto :goto_0
-
-    :cond_6
-    new-instance v5, Landroid/os/Bundle;
-
-    invoke-direct {v5}, Landroid/os/Bundle;-><init>()V
-
-    const-string/jumbo v11, "move-file-to-container"
-
-    aget v12, v8, v2
-
-    const/4 v13, 0x0
-
-    invoke-static {p1, v11, v13, v12}, Lcom/samsung/android/knox/SemPersonaManager;->isSupported(Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;I)Z
-
-    move-result v11
-
-    if-eqz v11, :cond_8
-
-    const-string/jumbo v3, "true"
-
-    :goto_2
-    aget v11, v8, v2
-
-    invoke-static {v11}, Lcom/samsung/android/knox/SemPersonaManager;->isSecureFolderId(I)Z
-
-    move-result v11
-
-    if-eqz v11, :cond_a
-
-    invoke-virtual {p1}, Landroid/content/Context;->getPackageManager()Landroid/content/pm/PackageManager;
-
-    move-result-object v9
-
-    new-instance v0, Landroid/content/ComponentName;
-
-    const-string/jumbo v11, "com.sec.knox.switcher"
-
-    const-string/jumbo v12, "com.sec.knox.switcher.SwitchSfActivity"
-
-    invoke-direct {v0, v11, v12}, Landroid/content/ComponentName;-><init>(Ljava/lang/String;Ljava/lang/String;)V
-
-    new-instance v1, Landroid/content/ComponentName;
-
-    const-string/jumbo v11, "com.samsung.knox.securefolder"
-
-    const-string/jumbo v12, "com.samsung.knox.securefolder.switcher.SwitchSfActivity"
-
-    invoke-direct {v1, v11, v12}, Landroid/content/ComponentName;-><init>(Ljava/lang/String;Ljava/lang/String;)V
-
-    invoke-virtual {v9, v0}, Landroid/content/pm/PackageManager;->getComponentEnabledSetting(Landroid/content/ComponentName;)I
-
-    move-result v11
-
-    const/4 v12, 0x1
-
-    if-eq v11, v12, :cond_7
-
-    invoke-virtual {v9, v1}, Landroid/content/pm/PackageManager;->getComponentEnabledSetting(Landroid/content/ComponentName;)I
-
-    move-result v11
-
-    const/4 v12, 0x1
-
-    if-ne v11, v12, :cond_9
-
-    :cond_7
-    sget-object v11, Lcom/samsung/android/knox/SemPersonaManager;->TAG:Ljava/lang/String;
-
-    const-string/jumbo v12, "is secure folder"
-
-    invoke-static {v11, v12}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
-    const-string/jumbo v11, "com.sec.knox.moveto.name"
-
-    aget v12, v8, v2
-
-    invoke-virtual {v6, v12, p1}, Lcom/samsung/android/knox/SemPersonaManager;->getContainerName(ILandroid/content/Context;)Ljava/lang/String;
-
-    move-result-object v12
-
-    invoke-virtual {v5, v11, v12}, Landroid/os/BaseBundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
-
-    const-string/jumbo v11, "com.sec.knox.moveto.containerType"
-
-    const/16 v12, 0x3ea
-
-    invoke-virtual {v5, v11, v12}, Landroid/os/BaseBundle;->putInt(Ljava/lang/String;I)V
-
-    const-string/jumbo v11, "com.sec.knox.moveto.containerId"
-
-    aget v12, v8, v2
-
-    invoke-virtual {v5, v11, v12}, Landroid/os/BaseBundle;->putInt(Ljava/lang/String;I)V
-
-    :goto_3
-    if-eqz v5, :cond_5
-
-    const-string/jumbo v11, "com.sec.knox.moveto.isSupportMoveTo"
-
-    invoke-virtual {v5, v11, v3}, Landroid/os/BaseBundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
-
-    invoke-virtual {v10, v5}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
-
-    goto :goto_1
-
-    :cond_8
-    const-string/jumbo v3, "false"
-
-    goto :goto_2
-
-    :cond_9
-    const/4 v5, 0x0
-
-    goto :goto_3
-
-    :cond_a
-    aget v11, v8, v2
-
-    invoke-virtual {p0, v11}, Lcom/samsung/android/knox/SemPersonaManager;->isECContainer(I)Z
-
-    move-result v11
-
-    if-eqz v11, :cond_b
-
-    sget-object v11, Lcom/samsung/android/knox/SemPersonaManager;->TAG:Ljava/lang/String;
-
-    const-string/jumbo v12, "is enterprise contianer"
-
-    invoke-static {v11, v12}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
-    const-string/jumbo v11, "com.sec.knox.moveto.name"
-
-    aget v12, v8, v2
-
-    invoke-virtual {p0, v12}, Lcom/samsung/android/knox/SemPersonaManager;->getECName(I)Ljava/lang/String;
-
-    move-result-object v12
-
-    invoke-virtual {v5, v11, v12}, Landroid/os/BaseBundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
-
-    const-string/jumbo v11, "com.sec.knox.moveto.containerType"
-
-    const/16 v12, 0x3e8
-
-    invoke-virtual {v5, v11, v12}, Landroid/os/BaseBundle;->putInt(Ljava/lang/String;I)V
-
-    const-string/jumbo v11, "com.sec.knox.moveto.containerId"
-
-    aget v12, v8, v2
-
-    invoke-virtual {v5, v11, v12}, Landroid/os/BaseBundle;->putInt(Ljava/lang/String;I)V
-
-    goto :goto_3
-
-    :cond_b
-    aget v11, v8, v2
-
-    invoke-static {v11}, Lcom/samsung/android/knox/SemPersonaManager;->isBBCContainer(I)Z
-
-    move-result v11
-
-    if-eqz v11, :cond_c
-
-    sget-object v11, Lcom/samsung/android/knox/SemPersonaManager;->TAG:Ljava/lang/String;
-
-    const-string/jumbo v12, "is BBCContainer"
-
-    invoke-static {v11, v12}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
-    goto/16 :goto_1
-
-    :cond_c
-    sget-object v11, Lcom/samsung/android/knox/SemPersonaManager;->TAG:Ljava/lang/String;
-
-    const-string/jumbo v12, "is knox"
-
-    invoke-static {v11, v12}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
-    if-nez v4, :cond_d
-
-    const/4 v4, 0x1
-
-    const-string/jumbo v11, "com.sec.knox.moveto.name"
-
-    const-string/jumbo v12, "Knox"
-
-    invoke-virtual {v5, v11, v12}, Landroid/os/BaseBundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
-
-    const-string/jumbo v11, "com.sec.knox.moveto.containerType"
-
-    const/16 v12, 0x3e9
-
-    invoke-virtual {v5, v11, v12}, Landroid/os/BaseBundle;->putInt(Ljava/lang/String;I)V
-
-    const-string/jumbo v11, "com.sec.knox.moveto.containerId"
-
-    const/4 v12, -0x1
-
-    invoke-virtual {v5, v11, v12}, Landroid/os/BaseBundle;->putInt(Ljava/lang/String;I)V
-
-    goto :goto_3
-
-    :cond_d
-    const/4 v5, 0x0
-
-    goto :goto_3
-
-    :cond_e
-    invoke-virtual {p1}, Landroid/content/Context;->getUserId()I
-
-    move-result v11
-
-    invoke-static {v11}, Lcom/samsung/android/knox/SemPersonaManager;->isKnoxId(I)Z
-
-    move-result v11
-
-    if-eqz v11, :cond_f
-
-    invoke-static {p1}, Lcom/samsung/android/knox/SemPersonaManager;->isKioskModeEnabled(Landroid/content/Context;)Z
-
-    move-result v11
-
-    if-nez v11, :cond_f
-
-    new-instance v5, Landroid/os/Bundle;
-
-    invoke-direct {v5}, Landroid/os/Bundle;-><init>()V
-
-    const-string/jumbo v11, "com.sec.knox.moveto.name"
-
-    invoke-virtual {p1}, Landroid/content/Context;->getUserId()I
-
-    move-result v12
-
-    invoke-virtual {v6, v12, p1}, Lcom/samsung/android/knox/SemPersonaManager;->getContainerName(ILandroid/content/Context;)Ljava/lang/String;
-
-    move-result-object v12
-
-    invoke-virtual {v5, v11, v12}, Landroid/os/BaseBundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
-
-    invoke-virtual {p1}, Landroid/content/Context;->getUserId()I
-
-    move-result v11
-
-    invoke-static {v11}, Lcom/samsung/android/knox/SemPersonaManager;->isSecureFolderId(I)Z
-
-    move-result v11
-
-    if-eqz v11, :cond_10
-
-    const-string/jumbo v11, "com.sec.knox.moveto.containerType"
-
-    const/16 v12, 0x3eb
-
-    invoke-virtual {v5, v11, v12}, Landroid/os/BaseBundle;->putInt(Ljava/lang/String;I)V
-
-    :goto_4
-    const-string/jumbo v11, "com.sec.knox.moveto.containerId"
-
-    const/4 v12, -0x1
-
-    invoke-virtual {v5, v11, v12}, Landroid/os/BaseBundle;->putInt(Ljava/lang/String;I)V
-
-    const-string/jumbo v11, "move-file-to-owner"
-
-    invoke-virtual {p1}, Landroid/content/Context;->getUserId()I
-
-    move-result v12
-
-    const/4 v13, 0x0
-
-    invoke-static {p1, v11, v13, v12}, Lcom/samsung/android/knox/SemPersonaManager;->isSupported(Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;I)Z
-
-    move-result v11
-
-    if-eqz v11, :cond_11
-
-    const-string/jumbo v3, "true"
-
-    :goto_5
-    const-string/jumbo v11, "com.sec.knox.moveto.isSupportMoveTo"
-
-    invoke-virtual {v5, v11, v3}, Landroid/os/BaseBundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
-
-    invoke-virtual {v10, v5}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
-
-    :cond_f
-    return-object v10
-
-    :cond_10
-    const-string/jumbo v11, "com.sec.knox.moveto.containerType"
-
-    const/16 v12, 0x3ec
-
-    invoke-virtual {v5, v11, v12}, Landroid/os/BaseBundle;->putInt(Ljava/lang/String;I)V
-
-    goto :goto_4
-
-    :cond_11
-    const-string/jumbo v3, "false"
-
-    goto :goto_5
+    return-object v2
 .end method
 
 .method public getMoveToKnoxStatus()Z

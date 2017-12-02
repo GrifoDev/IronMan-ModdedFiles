@@ -181,90 +181,23 @@
 .end method
 
 .method public final sendCurTimeToSensorHub()V
-    .locals 7
+    .locals 2
 
-    const/4 v6, 0x2
+    invoke-static {}, Lcom/samsung/android/contextaware/manager/ContextAwareService;->getCAEService()Lcom/samsung/android/contextaware/manager/ContextAwareService;
 
-    const/4 v5, 0x1
+    move-result-object v0
 
-    const/4 v4, 0x0
+    if-eqz v0, :cond_0
 
-    const/4 v3, 0x3
+    invoke-virtual {v0}, Lcom/samsung/android/contextaware/manager/ContextAwareService;->sendCurTimeToSensorHub()V
 
-    new-array v0, v3, [B
-
-    invoke-static {}, Lcom/samsung/android/contextaware/utilbundle/CaCurrentUtcTimeManager;->getInstance()Lcom/samsung/android/contextaware/utilbundle/CaCurrentUtcTimeManager;
-
-    move-result-object v3
-
-    invoke-virtual {v3}, Lcom/samsung/android/contextaware/utilbundle/CaCurrentUtcTimeManager;->getUtcTime()[I
-
-    move-result-object v2
-
-    aget v3, v2, v4
-
-    invoke-static {v3, v5}, Lcom/samsung/android/contextaware/utilbundle/CaConvertUtil;->intToByteArr(II)[B
-
-    move-result-object v3
-
-    aget-byte v3, v3, v4
-
-    aput-byte v3, v0, v4
-
-    aget v3, v2, v5
-
-    invoke-static {v3, v5}, Lcom/samsung/android/contextaware/utilbundle/CaConvertUtil;->intToByteArr(II)[B
-
-    move-result-object v3
-
-    aget-byte v3, v3, v4
-
-    aput-byte v3, v0, v5
-
-    aget v3, v2, v6
-
-    invoke-static {v3, v5}, Lcom/samsung/android/contextaware/utilbundle/CaConvertUtil;->intToByteArr(II)[B
-
-    move-result-object v3
-
-    aget-byte v3, v3, v4
-
-    aput-byte v3, v0, v6
-
-    invoke-static {}, Lcom/samsung/android/contextaware/utilbundle/SensorHubCommManager;->getInstance()Lcom/samsung/android/contextaware/utilbundle/SensorHubCommManager;
-
-    move-result-object v3
-
-    new-array v4, v6, [B
-
-    fill-array-data v4, :array_0
-
-    invoke-virtual {v3, v0, v4}, Lcom/samsung/android/contextaware/utilbundle/SensorHubCommManager;->sendCmdToSensorHub([B[B)I
-
-    move-result v1
-
-    sget-object v3, Lcom/samsung/android/contextaware/dataprovider/sensorhubprovider/SensorHubErrors;->SUCCESS:Lcom/samsung/android/contextaware/dataprovider/sensorhubprovider/SensorHubErrors;
-
-    invoke-virtual {v3}, Lcom/samsung/android/contextaware/dataprovider/sensorhubprovider/SensorHubErrors;->getCode()I
-
-    move-result v3
-
-    if-eq v1, v3, :cond_0
-
-    invoke-static {v1}, Lcom/samsung/android/contextaware/dataprovider/sensorhubprovider/SensorHubErrors;->getMessage(I)Ljava/lang/String;
-
-    move-result-object v3
-
-    invoke-static {v3}, Lcom/samsung/android/contextaware/utilbundle/logger/CaLogger;->error(Ljava/lang/String;)V
-
-    :cond_0
+    :goto_0
     return-void
 
-    nop
+    :cond_0
+    const-string/jumbo v1, "CAE is null"
 
-    :array_0
-    .array-data 1
-        -0x3ft
-        0xet
-    .end array-data
+    invoke-static {v1}, Lcom/samsung/android/contextaware/utilbundle/logger/CaLogger;->info(Ljava/lang/String;)V
+
+    goto :goto_0
 .end method

@@ -97,6 +97,16 @@
 
     iput-object v1, v0, Lcom/android/internal/net/VpnConfig;->searchDomains:Ljava/util/List;
 
+    iget-object v1, v0, Lcom/android/internal/net/VpnConfig;->allowedUids:Ljava/util/List;
+
+    const-class v4, Ljava/lang/Integer;
+
+    invoke-virtual {v4}, Ljava/lang/Class;->getClassLoader()Ljava/lang/ClassLoader;
+
+    move-result-object v4
+
+    invoke-virtual {p1, v1, v4}, Landroid/os/Parcel;->readList(Ljava/util/List;Ljava/lang/ClassLoader;)V
+
     invoke-virtual {p1}, Landroid/os/Parcel;->createStringArrayList()Ljava/util/ArrayList;
 
     move-result-object v1

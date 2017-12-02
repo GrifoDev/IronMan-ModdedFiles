@@ -176,11 +176,11 @@
 
     const/4 v3, 0x0
 
+    const-string/jumbo v1, "com.samsung.android.fast"
+
     invoke-virtual {p0}, Landroid/content/Context;->getPackageName()Ljava/lang/String;
 
-    move-result-object v1
-
-    const-string/jumbo v2, "com.samsung.android.fast"
+    move-result-object v2
 
     invoke-virtual {v1, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
@@ -209,7 +209,7 @@
     :cond_0
     const-string/jumbo v1, "VpnService"
 
-    const-string/jumbo v2, "Secure Wi-Fi packagename is same but signature is not same!"
+    const-string/jumbo v2, "Secure Wi-Fi signature mismatched"
 
     invoke-static {v1, v2}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 

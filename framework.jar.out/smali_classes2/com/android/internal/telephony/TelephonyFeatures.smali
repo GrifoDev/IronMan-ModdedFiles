@@ -4,6 +4,8 @@
 
 
 # static fields
+.field public static final IS_USA_OPEN:Z
+
 .field static final LOG_TAG:Ljava/lang/String; = "TelephonyFeatures"
 
 .field static final NTCTYPE_COUNTRY:I = 0x3
@@ -108,6 +110,14 @@
     move-result-object v0
 
     sput-object v0, Lcom/android/internal/telephony/TelephonyFeatures;->SALES_CODE:Ljava/lang/String;
+
+    const-string/jumbo v0, "ro.ril.usa_open"
+
+    invoke-static {v0, v3}, Landroid/os/SystemProperties;->getBoolean(Ljava/lang/String;Z)Z
+
+    move-result v0
+
+    sput-boolean v0, Lcom/android/internal/telephony/TelephonyFeatures;->IS_USA_OPEN:Z
 
     const-string/jumbo v0, "persist.radio.multisim.config"
 
@@ -604,7 +614,7 @@
 
     if-nez v0, :cond_3
 
-    const-string/jumbo v0, "LRA"
+    const-string/jumbo v0, "CCT"
 
     sget-object v1, Lcom/android/internal/telephony/TelephonyFeatures;->mSubOperator:Ljava/lang/String;
 
@@ -615,6 +625,10 @@
     if-eqz v0, :cond_0
 
     :cond_3
+    sget-boolean v0, Lcom/android/internal/telephony/TelephonyFeatures;->IS_USA_OPEN:Z
+
+    if-nez v0, :cond_0
+
     invoke-static {}, Lcom/samsung/android/feature/SemCscFeature;->getInstance()Lcom/samsung/android/feature/SemCscFeature;
 
     move-result-object v0
@@ -918,6 +932,157 @@
     goto :goto_0
 
     :cond_1
+    return v3
+.end method
+
+.method public static isKdiSim(I)Z
+    .locals 5
+
+    const/4 v4, 0x1
+
+    const/4 v3, 0x0
+
+    const/16 v0, 0x16
+
+    new-array v0, v0, [Ljava/lang/String;
+
+    const-string/jumbo v1, "44050"
+
+    aput-object v1, v0, v3
+
+    const-string/jumbo v1, "44051"
+
+    aput-object v1, v0, v4
+
+    const-string/jumbo v1, "44007"
+
+    const/4 v2, 0x2
+
+    aput-object v1, v0, v2
+
+    const-string/jumbo v1, "44008"
+
+    const/4 v2, 0x3
+
+    aput-object v1, v0, v2
+
+    const-string/jumbo v1, "44052"
+
+    const/4 v2, 0x4
+
+    aput-object v1, v0, v2
+
+    const-string/jumbo v1, "44053"
+
+    const/4 v2, 0x5
+
+    aput-object v1, v0, v2
+
+    const-string/jumbo v1, "44054"
+
+    const/4 v2, 0x6
+
+    aput-object v1, v0, v2
+
+    const-string/jumbo v1, "44055"
+
+    const/4 v2, 0x7
+
+    aput-object v1, v0, v2
+
+    const-string/jumbo v1, "44056"
+
+    const/16 v2, 0x8
+
+    aput-object v1, v0, v2
+
+    const-string/jumbo v1, "44070"
+
+    const/16 v2, 0x9
+
+    aput-object v1, v0, v2
+
+    const-string/jumbo v1, "44071"
+
+    const/16 v2, 0xa
+
+    aput-object v1, v0, v2
+
+    const-string/jumbo v1, "44072"
+
+    const/16 v2, 0xb
+
+    aput-object v1, v0, v2
+
+    const-string/jumbo v1, "44073"
+
+    const/16 v2, 0xc
+
+    aput-object v1, v0, v2
+
+    const-string/jumbo v1, "44074"
+
+    const/16 v2, 0xd
+
+    aput-object v1, v0, v2
+
+    const-string/jumbo v1, "44075"
+
+    const/16 v2, 0xe
+
+    aput-object v1, v0, v2
+
+    const-string/jumbo v1, "44076"
+
+    const/16 v2, 0xf
+
+    aput-object v1, v0, v2
+
+    const-string/jumbo v1, "44077"
+
+    const/16 v2, 0x10
+
+    aput-object v1, v0, v2
+
+    const-string/jumbo v1, "44078"
+
+    const/16 v2, 0x11
+
+    aput-object v1, v0, v2
+
+    const-string/jumbo v1, "44079"
+
+    const/16 v2, 0x12
+
+    aput-object v1, v0, v2
+
+    const-string/jumbo v1, "44088"
+
+    const/16 v2, 0x13
+
+    aput-object v1, v0, v2
+
+    const-string/jumbo v1, "44089"
+
+    const/16 v2, 0x14
+
+    aput-object v1, v0, v2
+
+    const-string/jumbo v1, "44170"
+
+    const/16 v2, 0x15
+
+    aput-object v1, v0, v2
+
+    invoke-static {p0, v0}, Lcom/android/internal/telephony/TelephonyFeatures;->isIccOperatorNumericSpecific(I[Ljava/lang/String;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    return v4
+
+    :cond_0
     return v3
 .end method
 

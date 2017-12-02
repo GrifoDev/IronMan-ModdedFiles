@@ -36,6 +36,8 @@
 
 .field public isCachedPhotoCurrent:Z
 
+.field public isKnoxUser:Z
+
 .field public lookupKey:Ljava/lang/String;
 
 .field private mIsEmergency:Z
@@ -236,6 +238,10 @@
 
     iput-wide v6, v1, Lcom/android/internal/telephony/CallerInfo;->userType:J
 
+    const/4 v5, 0x0
+
+    iput-boolean v5, v1, Lcom/android/internal/telephony/CallerInfo;->isKnoxUser:Z
+
     sget-boolean v5, Lcom/android/internal/telephony/CallerInfo;->VDBG:Z
 
     if-eqz v5, :cond_0
@@ -247,13 +253,13 @@
     invoke-static {v5, v6}, Landroid/telephony/Rlog;->v(Ljava/lang/String;Ljava/lang/String;)I
 
     :cond_0
-    if-eqz p2, :cond_9
+    if-eqz p2, :cond_b
 
     invoke-interface {p2}, Landroid/database/Cursor;->moveToFirst()Z
 
     move-result v5
 
-    if-eqz v5, :cond_8
+    if-eqz v5, :cond_a
 
     const-string/jumbo v5, "display_name"
 
@@ -359,7 +365,7 @@
 
     const/4 v5, -0x1
 
-    if-eq v0, v5, :cond_b
+    if-eq v0, v5, :cond_d
 
     invoke-interface {p2, v0}, Landroid/database/Cursor;->getLong(I)J
 
@@ -375,7 +381,7 @@
 
     move-result v5
 
-    if-eqz v5, :cond_a
+    if-eqz v5, :cond_c
 
     :cond_5
     :goto_0
@@ -390,6 +396,24 @@
     iput-wide v6, v1, Lcom/android/internal/telephony/CallerInfo;->userType:J
 
     :cond_6
+    invoke-static {v2, v3}, Landroid/provider/ContactsContract$Contacts;->isKnoxContactId(J)Z
+
+    move-result v5
+
+    if-nez v5, :cond_7
+
+    invoke-static {v2, v3}, Landroid/provider/ContactsContract$Contacts;->isSecureFolderContactId(J)Z
+
+    move-result v5
+
+    if-eqz v5, :cond_8
+
+    :cond_7
+    const/4 v5, 0x1
+
+    iput-boolean v5, v1, Lcom/android/internal/telephony/CallerInfo;->isKnoxUser:Z
+
+    :cond_8
     :goto_1
     const-string/jumbo v5, "lookup"
 
@@ -399,7 +423,7 @@
 
     const/4 v5, -0x1
 
-    if-eq v0, v5, :cond_7
+    if-eq v0, v5, :cond_9
 
     invoke-interface {p2, v0}, Landroid/database/Cursor;->getString(I)Ljava/lang/String;
 
@@ -407,7 +431,7 @@
 
     iput-object v5, v1, Lcom/android/internal/telephony/CallerInfo;->lookupKey:Ljava/lang/String;
 
-    :cond_7
+    :cond_9
     const-string/jumbo v5, "photo_uri"
 
     invoke-interface {p2, v5}, Landroid/database/Cursor;->getColumnIndex(Ljava/lang/String;)I
@@ -416,13 +440,13 @@
 
     const/4 v5, -0x1
 
-    if-eq v0, v5, :cond_c
+    if-eq v0, v5, :cond_e
 
     invoke-interface {p2, v0}, Landroid/database/Cursor;->getString(I)Ljava/lang/String;
 
     move-result-object v5
 
-    if-eqz v5, :cond_c
+    if-eqz v5, :cond_e
 
     invoke-interface {p2, v0}, Landroid/database/Cursor;->getString(I)Ljava/lang/String;
 
@@ -443,13 +467,13 @@
 
     const/4 v5, -0x1
 
-    if-eq v0, v5, :cond_e
+    if-eq v0, v5, :cond_10
 
     invoke-interface {p2, v0}, Landroid/database/Cursor;->getString(I)Ljava/lang/String;
 
     move-result-object v5
 
-    if-eqz v5, :cond_e
+    if-eqz v5, :cond_10
 
     invoke-interface {p2, v0}, Landroid/database/Cursor;->getString(I)Ljava/lang/String;
 
@@ -459,7 +483,7 @@
 
     move-result v5
 
-    if-eqz v5, :cond_d
+    if-eqz v5, :cond_f
 
     sget-object v5, Landroid/net/Uri;->EMPTY:Landroid/net/Uri;
 
@@ -474,7 +498,7 @@
 
     const/4 v5, -0x1
 
-    if-eq v0, v5, :cond_10
+    if-eq v0, v5, :cond_12
 
     invoke-interface {p2, v0}, Landroid/database/Cursor;->getInt(I)I
 
@@ -482,7 +506,7 @@
 
     const/4 v6, 0x1
 
-    if-ne v5, v6, :cond_f
+    if-ne v5, v6, :cond_11
 
     const/4 v5, 0x1
 
@@ -493,12 +517,12 @@
 
     iput-boolean v5, v1, Lcom/android/internal/telephony/CallerInfo;->contactExists:Z
 
-    :cond_8
+    :cond_a
     invoke-interface {p2}, Landroid/database/Cursor;->close()V
 
     const/4 p2, 0x0
 
-    :cond_9
+    :cond_b
     const/4 v5, 0x0
 
     iput-boolean v5, v1, Lcom/android/internal/telephony/CallerInfo;->needUpdate:Z
@@ -515,7 +539,7 @@
 
     return-object v1
 
-    :cond_a
+    :cond_c
     iput-wide v2, v1, Lcom/android/internal/telephony/CallerInfo;->contactIdOrZero:J
 
     sget-boolean v5, Lcom/android/internal/telephony/CallerInfo;->VDBG:Z
@@ -548,7 +572,7 @@
 
     goto/16 :goto_0
 
-    :cond_b
+    :cond_d
     const-string/jumbo v5, "CallerInfo"
 
     new-instance v6, Ljava/lang/StringBuilder;
@@ -573,14 +597,14 @@
 
     goto/16 :goto_1
 
-    :cond_c
+    :cond_e
     const/4 v5, 0x0
 
     iput-object v5, v1, Lcom/android/internal/telephony/CallerInfo;->contactDisplayPhotoUri:Landroid/net/Uri;
 
     goto/16 :goto_2
 
-    :cond_d
+    :cond_f
     invoke-interface {p2, v0}, Landroid/database/Cursor;->getString(I)Ljava/lang/String;
 
     move-result-object v5
@@ -593,19 +617,19 @@
 
     goto :goto_3
 
-    :cond_e
+    :cond_10
     const/4 v5, 0x0
 
     iput-object v5, v1, Lcom/android/internal/telephony/CallerInfo;->contactRingtoneUri:Landroid/net/Uri;
 
     goto :goto_3
 
-    :cond_f
+    :cond_11
     const/4 v5, 0x0
 
     goto :goto_4
 
-    :cond_10
+    :cond_12
     const/4 v5, 0x0
 
     goto :goto_4

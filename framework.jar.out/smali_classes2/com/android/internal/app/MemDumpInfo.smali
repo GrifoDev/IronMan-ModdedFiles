@@ -28,6 +28,8 @@
 
 
 # instance fields
+.field public IsDex:I
+
 .field private cached_count:J
 
 .field private empty_count:J

@@ -56,13 +56,13 @@
 
 .field static final TRANSACTION_showSmartFittingButton:I = 0x12
 
-.field static final TRANSACTION_startMhdrService:I = 0x1
+.field static final TRANSACTION_startMhdr:I = 0x1
 
 .field static final TRANSACTION_startMhdrUiMixing:I = 0x5
 
 .field static final TRANSACTION_startSmartFittingService:I = 0x8
 
-.field static final TRANSACTION_stopMhdrService:I = 0x2
+.field static final TRANSACTION_stopMhdr:I = 0x2
 
 .field static final TRANSACTION_stopMhdrUiMixing:I = 0x6
 
@@ -127,359 +127,505 @@
 .end method
 
 .method public onTransact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
-    .locals 10
+    .locals 14
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;
         }
     .end annotation
 
-    const/4 v9, 0x1
-
     sparse-switch p1, :sswitch_data_0
 
-    invoke-super {p0, p1, p2, p3, p4}, Landroid/os/Binder;->onTransact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
+    invoke-super/range {p0 .. p4}, Landroid/os/Binder;->onTransact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
 
-    move-result v8
+    move-result v1
 
-    return v8
+    return v1
 
     :sswitch_0
-    const-string/jumbo v8, "com.samsung.android.codecsolution.ICodecSolutionManagerService"
+    const-string/jumbo v1, "com.samsung.android.codecsolution.ICodecSolutionManagerService"
 
-    invoke-virtual {p3, v8}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
+    move-object/from16 v0, p3
 
-    return v9
+    invoke-virtual {v0, v1}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
+
+    const/4 v1, 0x1
+
+    return v1
 
     :sswitch_1
-    const-string/jumbo v8, "com.samsung.android.codecsolution.ICodecSolutionManagerService"
+    const-string/jumbo v1, "com.samsung.android.codecsolution.ICodecSolutionManagerService"
 
-    invoke-virtual {p2, v8}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
+    move-object/from16 v0, p2
 
-    invoke-virtual {p2}, Landroid/os/Parcel;->readInt()I
+    invoke-virtual {v0, v1}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
-    move-result v0
-
-    invoke-virtual {p2}, Landroid/os/Parcel;->readString()Ljava/lang/String;
-
-    move-result-object v3
-
-    invoke-virtual {p2}, Landroid/os/Parcel;->readInt()I
-
-    move-result v4
-
-    invoke-virtual {p0, v0, v3, v4}, Lcom/samsung/android/codecsolution/ICodecSolutionManagerService$Stub;->startMhdrService(ILjava/lang/String;I)V
-
-    invoke-virtual {p3}, Landroid/os/Parcel;->writeNoException()V
-
-    return v9
-
-    :sswitch_2
-    const-string/jumbo v8, "com.samsung.android.codecsolution.ICodecSolutionManagerService"
-
-    invoke-virtual {p2, v8}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
-
-    invoke-virtual {p0}, Lcom/samsung/android/codecsolution/ICodecSolutionManagerService$Stub;->stopMhdrService()V
-
-    invoke-virtual {p3}, Landroid/os/Parcel;->writeNoException()V
-
-    return v9
-
-    :sswitch_3
-    const-string/jumbo v8, "com.samsung.android.codecsolution.ICodecSolutionManagerService"
-
-    invoke-virtual {p2, v8}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
-
-    invoke-virtual {p2}, Landroid/os/Parcel;->readInt()I
-
-    move-result v0
-
-    invoke-virtual {p0, v0}, Lcom/samsung/android/codecsolution/ICodecSolutionManagerService$Stub;->setMhdrEnable(I)V
-
-    invoke-virtual {p3}, Landroid/os/Parcel;->writeNoException()V
-
-    return v9
-
-    :sswitch_4
-    const-string/jumbo v8, "com.samsung.android.codecsolution.ICodecSolutionManagerService"
-
-    invoke-virtual {p2, v8}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
-
-    invoke-virtual {p2}, Landroid/os/Parcel;->readInt()I
-
-    move-result v0
-
-    invoke-virtual {p2}, Landroid/os/Parcel;->readInt()I
-
-    move-result v2
-
-    invoke-virtual {p2}, Landroid/os/Parcel;->readInt()I
-
-    move-result v4
-
-    invoke-virtual {p2}, Landroid/os/Parcel;->readInt()I
-
-    move-result v5
-
-    invoke-virtual {p0, v0, v2, v4, v5}, Lcom/samsung/android/codecsolution/ICodecSolutionManagerService$Stub;->setMhdrMetaData(IIII)V
-
-    invoke-virtual {p3}, Landroid/os/Parcel;->writeNoException()V
-
-    return v9
-
-    :sswitch_5
-    const-string/jumbo v8, "com.samsung.android.codecsolution.ICodecSolutionManagerService"
-
-    invoke-virtual {p2, v8}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
-
-    invoke-virtual {p0}, Lcom/samsung/android/codecsolution/ICodecSolutionManagerService$Stub;->startMhdrUiMixing()V
-
-    invoke-virtual {p3}, Landroid/os/Parcel;->writeNoException()V
-
-    return v9
-
-    :sswitch_6
-    const-string/jumbo v8, "com.samsung.android.codecsolution.ICodecSolutionManagerService"
-
-    invoke-virtual {p2, v8}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
-
-    invoke-virtual {p0}, Lcom/samsung/android/codecsolution/ICodecSolutionManagerService$Stub;->stopMhdrUiMixing()V
-
-    invoke-virtual {p3}, Landroid/os/Parcel;->writeNoException()V
-
-    return v9
-
-    :sswitch_7
-    const-string/jumbo v8, "com.samsung.android.codecsolution.ICodecSolutionManagerService"
-
-    invoke-virtual {p2, v8}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
-
-    invoke-virtual {p0}, Lcom/samsung/android/codecsolution/ICodecSolutionManagerService$Stub;->isMhdrStarted()I
-
-    move-result v6
-
-    invoke-virtual {p3}, Landroid/os/Parcel;->writeNoException()V
-
-    invoke-virtual {p3, v6}, Landroid/os/Parcel;->writeInt(I)V
-
-    return v9
-
-    :sswitch_8
-    const-string/jumbo v8, "com.samsung.android.codecsolution.ICodecSolutionManagerService"
-
-    invoke-virtual {p2, v8}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
-
-    invoke-virtual {p0}, Lcom/samsung/android/codecsolution/ICodecSolutionManagerService$Stub;->startSmartFittingService()V
-
-    invoke-virtual {p3}, Landroid/os/Parcel;->writeNoException()V
-
-    return v9
-
-    :sswitch_9
-    const-string/jumbo v8, "com.samsung.android.codecsolution.ICodecSolutionManagerService"
-
-    invoke-virtual {p2, v8}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
-
-    invoke-virtual {p0}, Lcom/samsung/android/codecsolution/ICodecSolutionManagerService$Stub;->stopSmartFittingService()V
-
-    invoke-virtual {p3}, Landroid/os/Parcel;->writeNoException()V
-
-    return v9
-
-    :sswitch_a
-    const-string/jumbo v8, "com.samsung.android.codecsolution.ICodecSolutionManagerService"
-
-    invoke-virtual {p2, v8}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
-
-    invoke-virtual {p2}, Landroid/os/Parcel;->readInt()I
-
-    move-result v0
-
-    invoke-virtual {p0, v0}, Lcom/samsung/android/codecsolution/ICodecSolutionManagerService$Stub;->setSmartFittingPid(I)V
-
-    invoke-virtual {p3}, Landroid/os/Parcel;->writeNoException()V
-
-    return v9
-
-    :sswitch_b
-    const-string/jumbo v8, "com.samsung.android.codecsolution.ICodecSolutionManagerService"
-
-    invoke-virtual {p2, v8}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
-
-    invoke-virtual {p2}, Landroid/os/Parcel;->readInt()I
-
-    move-result v0
-
-    invoke-virtual {p0, v0}, Lcom/samsung/android/codecsolution/ICodecSolutionManagerService$Stub;->setSmartFittingMode(I)V
-
-    invoke-virtual {p3}, Landroid/os/Parcel;->writeNoException()V
-
-    return v9
-
-    :sswitch_c
-    const-string/jumbo v8, "com.samsung.android.codecsolution.ICodecSolutionManagerService"
-
-    invoke-virtual {p2, v8}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
-
-    invoke-virtual {p0}, Lcom/samsung/android/codecsolution/ICodecSolutionManagerService$Stub;->getSmartFittingMode()I
-
-    move-result v6
-
-    invoke-virtual {p3}, Landroid/os/Parcel;->writeNoException()V
-
-    invoke-virtual {p3, v6}, Landroid/os/Parcel;->writeInt(I)V
-
-    return v9
-
-    :sswitch_d
-    const-string/jumbo v8, "com.samsung.android.codecsolution.ICodecSolutionManagerService"
-
-    invoke-virtual {p2, v8}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
-
-    invoke-virtual {p2}, Landroid/os/Parcel;->readInt()I
-
-    move-result v0
-
-    invoke-virtual {p0, v0}, Lcom/samsung/android/codecsolution/ICodecSolutionManagerService$Stub;->setSecVideoUseSmartFitting(I)V
-
-    invoke-virtual {p3}, Landroid/os/Parcel;->writeNoException()V
-
-    return v9
-
-    :sswitch_e
-    const-string/jumbo v8, "com.samsung.android.codecsolution.ICodecSolutionManagerService"
-
-    invoke-virtual {p2, v8}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
-
-    invoke-virtual {p2}, Landroid/os/Parcel;->readInt()I
-
-    move-result v0
-
-    invoke-virtual {p0, v0}, Lcom/samsung/android/codecsolution/ICodecSolutionManagerService$Stub;->updateblackbarstatus(I)V
-
-    invoke-virtual {p3}, Landroid/os/Parcel;->writeNoException()V
-
-    return v9
-
-    :sswitch_f
-    const-string/jumbo v8, "com.samsung.android.codecsolution.ICodecSolutionManagerService"
-
-    invoke-virtual {p2, v8}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
-
-    invoke-virtual {p0}, Lcom/samsung/android/codecsolution/ICodecSolutionManagerService$Stub;->checkblackbarstatus()I
-
-    move-result v6
-
-    invoke-virtual {p3}, Landroid/os/Parcel;->writeNoException()V
-
-    invoke-virtual {p3, v6}, Landroid/os/Parcel;->writeInt(I)V
-
-    return v9
-
-    :sswitch_10
-    const-string/jumbo v8, "com.samsung.android.codecsolution.ICodecSolutionManagerService"
-
-    invoke-virtual {p2, v8}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
-
-    invoke-virtual {p2}, Landroid/os/Parcel;->readInt()I
-
-    move-result v0
-
-    invoke-virtual {p0, v0}, Lcom/samsung/android/codecsolution/ICodecSolutionManagerService$Stub;->setWhiteListStatus(I)V
-
-    invoke-virtual {p3}, Landroid/os/Parcel;->writeNoException()V
-
-    return v9
-
-    :sswitch_11
-    const-string/jumbo v8, "com.samsung.android.codecsolution.ICodecSolutionManagerService"
-
-    invoke-virtual {p2, v8}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
-
-    invoke-virtual {p0}, Lcom/samsung/android/codecsolution/ICodecSolutionManagerService$Stub;->getWhiteListStatus()I
-
-    move-result v6
-
-    invoke-virtual {p3}, Landroid/os/Parcel;->writeNoException()V
-
-    invoke-virtual {p3, v6}, Landroid/os/Parcel;->writeInt(I)V
-
-    return v9
-
-    :sswitch_12
-    const-string/jumbo v8, "com.samsung.android.codecsolution.ICodecSolutionManagerService"
-
-    invoke-virtual {p2, v8}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
-
-    invoke-virtual {p0}, Lcom/samsung/android/codecsolution/ICodecSolutionManagerService$Stub;->showSmartFittingButton()V
-
-    invoke-virtual {p3}, Landroid/os/Parcel;->writeNoException()V
-
-    return v9
-
-    :sswitch_13
-    const-string/jumbo v8, "com.samsung.android.codecsolution.ICodecSolutionManagerService"
-
-    invoke-virtual {p2, v8}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
-
-    invoke-virtual {p0}, Lcom/samsung/android/codecsolution/ICodecSolutionManagerService$Stub;->hideSmartFittingButton()V
-
-    invoke-virtual {p3}, Landroid/os/Parcel;->writeNoException()V
-
-    return v9
-
-    :sswitch_14
-    const-string/jumbo v8, "com.samsung.android.codecsolution.ICodecSolutionManagerService"
-
-    invoke-virtual {p2, v8}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
-
-    invoke-virtual {p2}, Landroid/os/Parcel;->readString()Ljava/lang/String;
+    invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readStrongBinder()Landroid/os/IBinder;
 
     move-result-object v1
 
-    invoke-virtual {p0, v1}, Lcom/samsung/android/codecsolution/ICodecSolutionManagerService$Stub;->reportMediaStatisticsEvent(Ljava/lang/String;)V
+    invoke-static {v1}, Lcom/samsung/android/codecsolution/ICodecClient$Stub;->asInterface(Landroid/os/IBinder;)Lcom/samsung/android/codecsolution/ICodecClient;
 
-    invoke-virtual {p3}, Landroid/os/Parcel;->writeNoException()V
+    move-result-object v7
 
-    return v9
+    invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
 
-    :sswitch_15
-    const-string/jumbo v8, "com.samsung.android.codecsolution.ICodecSolutionManagerService"
+    move-result v3
 
-    invoke-virtual {p2, v8}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
+    invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
-    invoke-virtual {p0}, Lcom/samsung/android/codecsolution/ICodecSolutionManagerService$Stub;->isDesktopMode()Z
+    move-result-object v10
 
-    move-result v7
+    invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
 
-    invoke-virtual {p3}, Landroid/os/Parcel;->writeNoException()V
+    move-result v1
 
-    if-eqz v7, :cond_0
+    if-eqz v1, :cond_0
 
-    move v8, v9
+    const/4 v11, 0x1
 
     :goto_0
-    invoke-virtual {p3, v8}, Landroid/os/Parcel;->writeInt(I)V
+    invoke-virtual {p0, v7, v3, v10, v11}, Lcom/samsung/android/codecsolution/ICodecSolutionManagerService$Stub;->startMhdr(Lcom/samsung/android/codecsolution/ICodecClient;ILjava/lang/String;Z)I
 
-    return v9
+    move-result v12
+
+    invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
+
+    move-object/from16 v0, p3
+
+    invoke-virtual {v0, v12}, Landroid/os/Parcel;->writeInt(I)V
+
+    const/4 v1, 0x1
+
+    return v1
 
     :cond_0
-    const/4 v8, 0x0
+    const/4 v11, 0x0
 
     goto :goto_0
 
-    :sswitch_16
-    const-string/jumbo v8, "com.samsung.android.codecsolution.ICodecSolutionManagerService"
+    :sswitch_2
+    const-string/jumbo v1, "com.samsung.android.codecsolution.ICodecSolutionManagerService"
 
-    invoke-virtual {p2, v8}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
+    move-object/from16 v0, p2
+
+    invoke-virtual {v0, v1}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
+
+    invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
+
+    move-result v2
+
+    invoke-virtual {p0, v2}, Lcom/samsung/android/codecsolution/ICodecSolutionManagerService$Stub;->stopMhdr(I)V
+
+    invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
+
+    const/4 v1, 0x1
+
+    return v1
+
+    :sswitch_3
+    const-string/jumbo v1, "com.samsung.android.codecsolution.ICodecSolutionManagerService"
+
+    move-object/from16 v0, p2
+
+    invoke-virtual {v0, v1}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
+
+    invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
+
+    move-result v2
+
+    invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
+
+    move-result v1
+
+    if-eqz v1, :cond_1
+
+    const/4 v9, 0x1
+
+    :goto_1
+    invoke-virtual {p0, v2, v9}, Lcom/samsung/android/codecsolution/ICodecSolutionManagerService$Stub;->setMhdrEnable(IZ)V
+
+    invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
+
+    const/4 v1, 0x1
+
+    return v1
+
+    :cond_1
+    const/4 v9, 0x0
+
+    goto :goto_1
+
+    :sswitch_4
+    const-string/jumbo v1, "com.samsung.android.codecsolution.ICodecSolutionManagerService"
+
+    move-object/from16 v0, p2
+
+    invoke-virtual {v0, v1}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
+
+    invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
+
+    move-result v2
+
+    invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
+
+    move-result v3
+
+    invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
+
+    move-result v4
+
+    invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
+
+    move-result v5
+
+    invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
+
+    move-result v6
+
+    move-object v1, p0
+
+    invoke-virtual/range {v1 .. v6}, Lcom/samsung/android/codecsolution/ICodecSolutionManagerService$Stub;->setMhdrMetaData(IIIII)V
+
+    invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
+
+    const/4 v1, 0x1
+
+    return v1
+
+    :sswitch_5
+    const-string/jumbo v1, "com.samsung.android.codecsolution.ICodecSolutionManagerService"
+
+    move-object/from16 v0, p2
+
+    invoke-virtual {v0, v1}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
+
+    invoke-virtual {p0}, Lcom/samsung/android/codecsolution/ICodecSolutionManagerService$Stub;->startMhdrUiMixing()V
+
+    invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
+
+    const/4 v1, 0x1
+
+    return v1
+
+    :sswitch_6
+    const-string/jumbo v1, "com.samsung.android.codecsolution.ICodecSolutionManagerService"
+
+    move-object/from16 v0, p2
+
+    invoke-virtual {v0, v1}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
+
+    invoke-virtual {p0}, Lcom/samsung/android/codecsolution/ICodecSolutionManagerService$Stub;->stopMhdrUiMixing()V
+
+    invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
+
+    const/4 v1, 0x1
+
+    return v1
+
+    :sswitch_7
+    const-string/jumbo v1, "com.samsung.android.codecsolution.ICodecSolutionManagerService"
+
+    move-object/from16 v0, p2
+
+    invoke-virtual {v0, v1}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
+
+    invoke-virtual {p0}, Lcom/samsung/android/codecsolution/ICodecSolutionManagerService$Stub;->isMhdrStarted()I
+
+    move-result v12
+
+    invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
+
+    move-object/from16 v0, p3
+
+    invoke-virtual {v0, v12}, Landroid/os/Parcel;->writeInt(I)V
+
+    const/4 v1, 0x1
+
+    return v1
+
+    :sswitch_8
+    const-string/jumbo v1, "com.samsung.android.codecsolution.ICodecSolutionManagerService"
+
+    move-object/from16 v0, p2
+
+    invoke-virtual {v0, v1}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
+
+    invoke-virtual {p0}, Lcom/samsung/android/codecsolution/ICodecSolutionManagerService$Stub;->startSmartFittingService()V
+
+    invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
+
+    const/4 v1, 0x1
+
+    return v1
+
+    :sswitch_9
+    const-string/jumbo v1, "com.samsung.android.codecsolution.ICodecSolutionManagerService"
+
+    move-object/from16 v0, p2
+
+    invoke-virtual {v0, v1}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
+
+    invoke-virtual {p0}, Lcom/samsung/android/codecsolution/ICodecSolutionManagerService$Stub;->stopSmartFittingService()V
+
+    invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
+
+    const/4 v1, 0x1
+
+    return v1
+
+    :sswitch_a
+    const-string/jumbo v1, "com.samsung.android.codecsolution.ICodecSolutionManagerService"
+
+    move-object/from16 v0, p2
+
+    invoke-virtual {v0, v1}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
+
+    invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
+
+    move-result v2
+
+    invoke-virtual {p0, v2}, Lcom/samsung/android/codecsolution/ICodecSolutionManagerService$Stub;->setSmartFittingPid(I)V
+
+    invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
+
+    const/4 v1, 0x1
+
+    return v1
+
+    :sswitch_b
+    const-string/jumbo v1, "com.samsung.android.codecsolution.ICodecSolutionManagerService"
+
+    move-object/from16 v0, p2
+
+    invoke-virtual {v0, v1}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
+
+    invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
+
+    move-result v2
+
+    invoke-virtual {p0, v2}, Lcom/samsung/android/codecsolution/ICodecSolutionManagerService$Stub;->setSmartFittingMode(I)V
+
+    invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
+
+    const/4 v1, 0x1
+
+    return v1
+
+    :sswitch_c
+    const-string/jumbo v1, "com.samsung.android.codecsolution.ICodecSolutionManagerService"
+
+    move-object/from16 v0, p2
+
+    invoke-virtual {v0, v1}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
+
+    invoke-virtual {p0}, Lcom/samsung/android/codecsolution/ICodecSolutionManagerService$Stub;->getSmartFittingMode()I
+
+    move-result v12
+
+    invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
+
+    move-object/from16 v0, p3
+
+    invoke-virtual {v0, v12}, Landroid/os/Parcel;->writeInt(I)V
+
+    const/4 v1, 0x1
+
+    return v1
+
+    :sswitch_d
+    const-string/jumbo v1, "com.samsung.android.codecsolution.ICodecSolutionManagerService"
+
+    move-object/from16 v0, p2
+
+    invoke-virtual {v0, v1}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
+
+    invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
+
+    move-result v2
+
+    invoke-virtual {p0, v2}, Lcom/samsung/android/codecsolution/ICodecSolutionManagerService$Stub;->setSecVideoUseSmartFitting(I)V
+
+    invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
+
+    const/4 v1, 0x1
+
+    return v1
+
+    :sswitch_e
+    const-string/jumbo v1, "com.samsung.android.codecsolution.ICodecSolutionManagerService"
+
+    move-object/from16 v0, p2
+
+    invoke-virtual {v0, v1}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
+
+    invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
+
+    move-result v2
+
+    invoke-virtual {p0, v2}, Lcom/samsung/android/codecsolution/ICodecSolutionManagerService$Stub;->updateblackbarstatus(I)V
+
+    invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
+
+    const/4 v1, 0x1
+
+    return v1
+
+    :sswitch_f
+    const-string/jumbo v1, "com.samsung.android.codecsolution.ICodecSolutionManagerService"
+
+    move-object/from16 v0, p2
+
+    invoke-virtual {v0, v1}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
+
+    invoke-virtual {p0}, Lcom/samsung/android/codecsolution/ICodecSolutionManagerService$Stub;->checkblackbarstatus()I
+
+    move-result v12
+
+    invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
+
+    move-object/from16 v0, p3
+
+    invoke-virtual {v0, v12}, Landroid/os/Parcel;->writeInt(I)V
+
+    const/4 v1, 0x1
+
+    return v1
+
+    :sswitch_10
+    const-string/jumbo v1, "com.samsung.android.codecsolution.ICodecSolutionManagerService"
+
+    move-object/from16 v0, p2
+
+    invoke-virtual {v0, v1}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
+
+    invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
+
+    move-result v2
+
+    invoke-virtual {p0, v2}, Lcom/samsung/android/codecsolution/ICodecSolutionManagerService$Stub;->setWhiteListStatus(I)V
+
+    invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
+
+    const/4 v1, 0x1
+
+    return v1
+
+    :sswitch_11
+    const-string/jumbo v1, "com.samsung.android.codecsolution.ICodecSolutionManagerService"
+
+    move-object/from16 v0, p2
+
+    invoke-virtual {v0, v1}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
+
+    invoke-virtual {p0}, Lcom/samsung/android/codecsolution/ICodecSolutionManagerService$Stub;->getWhiteListStatus()I
+
+    move-result v12
+
+    invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
+
+    move-object/from16 v0, p3
+
+    invoke-virtual {v0, v12}, Landroid/os/Parcel;->writeInt(I)V
+
+    const/4 v1, 0x1
+
+    return v1
+
+    :sswitch_12
+    const-string/jumbo v1, "com.samsung.android.codecsolution.ICodecSolutionManagerService"
+
+    move-object/from16 v0, p2
+
+    invoke-virtual {v0, v1}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
+
+    invoke-virtual {p0}, Lcom/samsung/android/codecsolution/ICodecSolutionManagerService$Stub;->showSmartFittingButton()V
+
+    invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
+
+    const/4 v1, 0x1
+
+    return v1
+
+    :sswitch_13
+    const-string/jumbo v1, "com.samsung.android.codecsolution.ICodecSolutionManagerService"
+
+    move-object/from16 v0, p2
+
+    invoke-virtual {v0, v1}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
+
+    invoke-virtual {p0}, Lcom/samsung/android/codecsolution/ICodecSolutionManagerService$Stub;->hideSmartFittingButton()V
+
+    invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
+
+    const/4 v1, 0x1
+
+    return v1
+
+    :sswitch_14
+    const-string/jumbo v1, "com.samsung.android.codecsolution.ICodecSolutionManagerService"
+
+    move-object/from16 v0, p2
+
+    invoke-virtual {v0, v1}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
+
+    invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readString()Ljava/lang/String;
+
+    move-result-object v8
+
+    invoke-virtual {p0, v8}, Lcom/samsung/android/codecsolution/ICodecSolutionManagerService$Stub;->reportMediaStatisticsEvent(Ljava/lang/String;)V
+
+    invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
+
+    const/4 v1, 0x1
+
+    return v1
+
+    :sswitch_15
+    const-string/jumbo v1, "com.samsung.android.codecsolution.ICodecSolutionManagerService"
+
+    move-object/from16 v0, p2
+
+    invoke-virtual {v0, v1}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
+
+    invoke-virtual {p0}, Lcom/samsung/android/codecsolution/ICodecSolutionManagerService$Stub;->isDesktopMode()Z
+
+    move-result v13
+
+    invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
+
+    if-eqz v13, :cond_2
+
+    const/4 v1, 0x1
+
+    :goto_2
+    move-object/from16 v0, p3
+
+    invoke-virtual {v0, v1}, Landroid/os/Parcel;->writeInt(I)V
+
+    const/4 v1, 0x1
+
+    return v1
+
+    :cond_2
+    const/4 v1, 0x0
+
+    goto :goto_2
+
+    :sswitch_16
+    const-string/jumbo v1, "com.samsung.android.codecsolution.ICodecSolutionManagerService"
+
+    move-object/from16 v0, p2
+
+    invoke-virtual {v0, v1}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
     invoke-virtual {p0}, Lcom/samsung/android/codecsolution/ICodecSolutionManagerService$Stub;->debug()V
 
-    invoke-virtual {p3}, Landroid/os/Parcel;->writeNoException()V
+    invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
 
-    return v9
+    const/4 v1, 0x1
 
-    nop
+    return v1
 
     :sswitch_data_0
     .sparse-switch

@@ -552,6 +552,46 @@
     goto :goto_1
 .end method
 
+.method public static final getCAEService()Lcom/samsung/android/contextaware/manager/ContextAwareService;
+    .locals 4
+
+    const/4 v1, 0x0
+
+    :try_start_0
+    const-string/jumbo v3, "context_aware"
+
+    invoke-static {v3}, Landroid/os/ServiceManager;->getService(Ljava/lang/String;)Landroid/os/IBinder;
+
+    move-result-object v3
+
+    move-object v0, v3
+
+    check-cast v0, Lcom/samsung/android/contextaware/manager/ContextAwareService;
+
+    move-object v1, v0
+
+    if-nez v1, :cond_0
+
+    const-string/jumbo v3, "CAE Service is null"
+
+    invoke-static {v3}, Lcom/samsung/android/contextaware/utilbundle/logger/CaLogger;->info(Ljava/lang/String;)V
+    :try_end_0
+    .catch Ljava/lang/ClassCastException; {:try_start_0 .. :try_end_0} :catch_0
+
+    :cond_0
+    :goto_0
+    return-object v1
+
+    :catch_0
+    move-exception v2
+
+    const-string/jumbo v3, "CAE class not match"
+
+    invoke-static {v3}, Lcom/samsung/android/contextaware/utilbundle/logger/CaLogger;->info(Ljava/lang/String;)V
+
+    goto :goto_0
+.end method
+
 .method private isUsableService(Lcom/samsung/android/contextaware/manager/ContextAwareService$Listener;I)Z
     .locals 2
 
@@ -1615,6 +1655,350 @@
     invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v0
+
+    invoke-static {v0}, Lcom/samsung/android/contextaware/utilbundle/logger/CaLogger;->warning(Ljava/lang/String;)V
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    iget-object v0, p0, Lcom/samsung/android/contextaware/manager/ContextAwareService;->mMutex:Ljava/util/concurrent/locks/ReentrantLock;
+
+    invoke-virtual {v0}, Ljava/util/concurrent/locks/ReentrantLock;->unlock()V
+
+    return-void
+
+    :catchall_0
+    move-exception v0
+
+    iget-object v1, p0, Lcom/samsung/android/contextaware/manager/ContextAwareService;->mMutex:Ljava/util/concurrent/locks/ReentrantLock;
+
+    invoke-virtual {v1}, Ljava/util/concurrent/locks/ReentrantLock;->unlock()V
+
+    throw v0
+.end method
+
+.method public sendApStatusToSensorHub(I)V
+    .locals 4
+
+    const/4 v2, 0x2
+
+    const/4 v3, 0x0
+
+    new-array v0, v2, [B
+
+    int-to-byte v2, p1
+
+    aput-byte v2, v0, v3
+
+    const/4 v2, 0x1
+
+    aput-byte v3, v0, v2
+
+    iget-object v2, p0, Lcom/samsung/android/contextaware/manager/ContextAwareService;->mMutex:Ljava/util/concurrent/locks/ReentrantLock;
+
+    invoke-virtual {v2}, Ljava/util/concurrent/locks/ReentrantLock;->lock()V
+
+    :try_start_0
+    new-instance v2, Ljava/lang/StringBuilder;
+
+    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string/jumbo v3, "[apStat 01] Mutex is locked for sending AP Status "
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    invoke-virtual {v2, p1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-static {v2}, Lcom/samsung/android/contextaware/utilbundle/logger/CaLogger;->warning(Ljava/lang/String;)V
+
+    invoke-static {}, Lcom/samsung/android/contextaware/utilbundle/SensorHubCommManager;->getInstance()Lcom/samsung/android/contextaware/utilbundle/SensorHubCommManager;
+
+    move-result-object v2
+
+    const/4 v3, 0x2
+
+    new-array v3, v3, [B
+
+    fill-array-data v3, :array_0
+
+    invoke-virtual {v2, v0, v3}, Lcom/samsung/android/contextaware/utilbundle/SensorHubCommManager;->sendCmdToSensorHub([B[B)I
+
+    move-result v1
+
+    sget-object v2, Lcom/samsung/android/contextaware/dataprovider/sensorhubprovider/SensorHubErrors;->SUCCESS:Lcom/samsung/android/contextaware/dataprovider/sensorhubprovider/SensorHubErrors;
+
+    invoke-virtual {v2}, Lcom/samsung/android/contextaware/dataprovider/sensorhubprovider/SensorHubErrors;->getCode()I
+
+    move-result v2
+
+    if-eq v1, v2, :cond_0
+
+    invoke-static {v1}, Lcom/samsung/android/contextaware/dataprovider/sensorhubprovider/SensorHubErrors;->getMessage(I)Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-static {v2}, Lcom/samsung/android/contextaware/utilbundle/logger/CaLogger;->error(Ljava/lang/String;)V
+
+    :cond_0
+    new-instance v2, Ljava/lang/StringBuilder;
+
+    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string/jumbo v3, "[apStat 02] Mutex is unlocked for sending AP Status "
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    invoke-virtual {v2, p1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-static {v2}, Lcom/samsung/android/contextaware/utilbundle/logger/CaLogger;->warning(Ljava/lang/String;)V
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    iget-object v2, p0, Lcom/samsung/android/contextaware/manager/ContextAwareService;->mMutex:Ljava/util/concurrent/locks/ReentrantLock;
+
+    invoke-virtual {v2}, Ljava/util/concurrent/locks/ReentrantLock;->unlock()V
+
+    return-void
+
+    :catchall_0
+    move-exception v2
+
+    iget-object v3, p0, Lcom/samsung/android/contextaware/manager/ContextAwareService;->mMutex:Ljava/util/concurrent/locks/ReentrantLock;
+
+    invoke-virtual {v3}, Ljava/util/concurrent/locks/ReentrantLock;->unlock()V
+
+    throw v2
+
+    nop
+
+    :array_0
+    .array-data 1
+        -0x4ct
+        0xdt
+    .end array-data
+.end method
+
+.method public final sendCurTimeToSensorHub()V
+    .locals 7
+
+    const/4 v6, 0x2
+
+    const/4 v5, 0x1
+
+    const/4 v4, 0x0
+
+    const/4 v3, 0x3
+
+    new-array v0, v3, [B
+
+    invoke-static {}, Lcom/samsung/android/contextaware/utilbundle/CaCurrentUtcTimeManager;->getInstance()Lcom/samsung/android/contextaware/utilbundle/CaCurrentUtcTimeManager;
+
+    move-result-object v3
+
+    invoke-virtual {v3}, Lcom/samsung/android/contextaware/utilbundle/CaCurrentUtcTimeManager;->getUtcTime()[I
+
+    move-result-object v2
+
+    aget v3, v2, v4
+
+    invoke-static {v3, v5}, Lcom/samsung/android/contextaware/utilbundle/CaConvertUtil;->intToByteArr(II)[B
+
+    move-result-object v3
+
+    aget-byte v3, v3, v4
+
+    aput-byte v3, v0, v4
+
+    aget v3, v2, v5
+
+    invoke-static {v3, v5}, Lcom/samsung/android/contextaware/utilbundle/CaConvertUtil;->intToByteArr(II)[B
+
+    move-result-object v3
+
+    aget-byte v3, v3, v4
+
+    aput-byte v3, v0, v5
+
+    aget v3, v2, v6
+
+    invoke-static {v3, v5}, Lcom/samsung/android/contextaware/utilbundle/CaConvertUtil;->intToByteArr(II)[B
+
+    move-result-object v3
+
+    aget-byte v3, v3, v4
+
+    aput-byte v3, v0, v6
+
+    iget-object v3, p0, Lcom/samsung/android/contextaware/manager/ContextAwareService;->mMutex:Ljava/util/concurrent/locks/ReentrantLock;
+
+    invoke-virtual {v3}, Ljava/util/concurrent/locks/ReentrantLock;->lock()V
+
+    :try_start_0
+    const-string/jumbo v3, "[curTime 01] Mutex is locked for sending current time"
+
+    invoke-static {v3}, Lcom/samsung/android/contextaware/utilbundle/logger/CaLogger;->warning(Ljava/lang/String;)V
+
+    invoke-static {}, Lcom/samsung/android/contextaware/utilbundle/SensorHubCommManager;->getInstance()Lcom/samsung/android/contextaware/utilbundle/SensorHubCommManager;
+
+    move-result-object v3
+
+    const/4 v4, 0x2
+
+    new-array v4, v4, [B
+
+    fill-array-data v4, :array_0
+
+    invoke-virtual {v3, v0, v4}, Lcom/samsung/android/contextaware/utilbundle/SensorHubCommManager;->sendCmdToSensorHub([B[B)I
+
+    move-result v1
+
+    sget-object v3, Lcom/samsung/android/contextaware/dataprovider/sensorhubprovider/SensorHubErrors;->SUCCESS:Lcom/samsung/android/contextaware/dataprovider/sensorhubprovider/SensorHubErrors;
+
+    invoke-virtual {v3}, Lcom/samsung/android/contextaware/dataprovider/sensorhubprovider/SensorHubErrors;->getCode()I
+
+    move-result v3
+
+    if-eq v1, v3, :cond_0
+
+    invoke-static {v1}, Lcom/samsung/android/contextaware/dataprovider/sensorhubprovider/SensorHubErrors;->getMessage(I)Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-static {v3}, Lcom/samsung/android/contextaware/utilbundle/logger/CaLogger;->error(Ljava/lang/String;)V
+
+    :cond_0
+    const-string/jumbo v3, "[curTime 02] Mutex is unlocked for sending current time"
+
+    invoke-static {v3}, Lcom/samsung/android/contextaware/utilbundle/logger/CaLogger;->warning(Ljava/lang/String;)V
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    iget-object v3, p0, Lcom/samsung/android/contextaware/manager/ContextAwareService;->mMutex:Ljava/util/concurrent/locks/ReentrantLock;
+
+    invoke-virtual {v3}, Ljava/util/concurrent/locks/ReentrantLock;->unlock()V
+
+    return-void
+
+    :catchall_0
+    move-exception v3
+
+    iget-object v4, p0, Lcom/samsung/android/contextaware/manager/ContextAwareService;->mMutex:Ljava/util/concurrent/locks/ReentrantLock;
+
+    invoke-virtual {v4}, Ljava/util/concurrent/locks/ReentrantLock;->unlock()V
+
+    throw v3
+
+    nop
+
+    :array_0
+    .array-data 1
+        -0x3ft
+        0xet
+    .end array-data
+.end method
+
+.method public final sendPCPositiontoSensorHub([BBB)I
+    .locals 4
+
+    const/4 v0, -0x1
+
+    iget-object v1, p0, Lcom/samsung/android/contextaware/manager/ContextAwareService;->mMutex:Ljava/util/concurrent/locks/ReentrantLock;
+
+    invoke-virtual {v1}, Ljava/util/concurrent/locks/ReentrantLock;->lock()V
+
+    :try_start_0
+    const-string/jumbo v1, "[PCPos 01] Mutex is locked for sending passive current position"
+
+    invoke-static {v1}, Lcom/samsung/android/contextaware/utilbundle/logger/CaLogger;->warning(Ljava/lang/String;)V
+
+    invoke-static {}, Lcom/samsung/android/contextaware/utilbundle/SensorHubCommManager;->getInstance()Lcom/samsung/android/contextaware/utilbundle/SensorHubCommManager;
+
+    move-result-object v1
+
+    const/4 v2, 0x2
+
+    new-array v2, v2, [B
+
+    const/4 v3, 0x0
+
+    aput-byte p2, v2, v3
+
+    const/4 v3, 0x1
+
+    aput-byte p3, v2, v3
+
+    invoke-virtual {v1, p1, v2}, Lcom/samsung/android/contextaware/utilbundle/SensorHubCommManager;->sendCmdToSensorHub([B[B)I
+
+    move-result v0
+
+    const-string/jumbo v1, "[PCPos 02] Mutex is unlocked for sending passive current position"
+
+    invoke-static {v1}, Lcom/samsung/android/contextaware/utilbundle/logger/CaLogger;->warning(Ljava/lang/String;)V
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    iget-object v1, p0, Lcom/samsung/android/contextaware/manager/ContextAwareService;->mMutex:Ljava/util/concurrent/locks/ReentrantLock;
+
+    invoke-virtual {v1}, Ljava/util/concurrent/locks/ReentrantLock;->unlock()V
+
+    return v0
+
+    :catchall_0
+    move-exception v1
+
+    iget-object v2, p0, Lcom/samsung/android/contextaware/manager/ContextAwareService;->mMutex:Ljava/util/concurrent/locks/ReentrantLock;
+
+    invoke-virtual {v2}, Ljava/util/concurrent/locks/ReentrantLock;->unlock()V
+
+    throw v1
+.end method
+
+.method public final sendTelephonyCmdToSensorHub([BBB)V
+    .locals 3
+
+    iget-object v0, p0, Lcom/samsung/android/contextaware/manager/ContextAwareService;->mMutex:Ljava/util/concurrent/locks/ReentrantLock;
+
+    invoke-virtual {v0}, Ljava/util/concurrent/locks/ReentrantLock;->lock()V
+
+    :try_start_0
+    const-string/jumbo v0, "[telStat 01] Mutex is locked for sending telephony state"
+
+    invoke-static {v0}, Lcom/samsung/android/contextaware/utilbundle/logger/CaLogger;->warning(Ljava/lang/String;)V
+
+    invoke-static {}, Lcom/samsung/android/contextaware/utilbundle/SensorHubCommManager;->getInstance()Lcom/samsung/android/contextaware/utilbundle/SensorHubCommManager;
+
+    move-result-object v0
+
+    const/4 v1, 0x2
+
+    new-array v1, v1, [B
+
+    const/4 v2, 0x0
+
+    aput-byte p2, v1, v2
+
+    const/4 v2, 0x1
+
+    aput-byte p3, v1, v2
+
+    invoke-virtual {v0, p1, v1}, Lcom/samsung/android/contextaware/utilbundle/SensorHubCommManager;->sendCmdToSensorHub([B[B)I
+
+    const-string/jumbo v0, "[telStat 02] Mutex is unlocked for sending telephony state"
 
     invoke-static {v0}, Lcom/samsung/android/contextaware/utilbundle/logger/CaLogger;->warning(Ljava/lang/String;)V
     :try_end_0

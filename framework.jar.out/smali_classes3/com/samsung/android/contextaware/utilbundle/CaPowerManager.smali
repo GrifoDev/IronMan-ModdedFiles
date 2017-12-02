@@ -156,58 +156,25 @@
 .end method
 
 .method private sendApStatusToSensorHub(I)V
-    .locals 5
+    .locals 2
 
-    const/4 v4, 0x2
+    invoke-static {}, Lcom/samsung/android/contextaware/manager/ContextAwareService;->getCAEService()Lcom/samsung/android/contextaware/manager/ContextAwareService;
 
-    const/4 v3, 0x0
+    move-result-object v0
 
-    new-array v0, v4, [B
+    if-eqz v0, :cond_0
 
-    int-to-byte v2, p1
+    invoke-virtual {v0, p1}, Lcom/samsung/android/contextaware/manager/ContextAwareService;->sendApStatusToSensorHub(I)V
 
-    aput-byte v2, v0, v3
-
-    const/4 v2, 0x1
-
-    aput-byte v3, v0, v2
-
-    invoke-static {}, Lcom/samsung/android/contextaware/utilbundle/SensorHubCommManager;->getInstance()Lcom/samsung/android/contextaware/utilbundle/SensorHubCommManager;
-
-    move-result-object v2
-
-    new-array v3, v4, [B
-
-    fill-array-data v3, :array_0
-
-    invoke-virtual {v2, v0, v3}, Lcom/samsung/android/contextaware/utilbundle/SensorHubCommManager;->sendCmdToSensorHub([B[B)I
-
-    move-result v1
-
-    sget-object v2, Lcom/samsung/android/contextaware/dataprovider/sensorhubprovider/SensorHubErrors;->SUCCESS:Lcom/samsung/android/contextaware/dataprovider/sensorhubprovider/SensorHubErrors;
-
-    invoke-virtual {v2}, Lcom/samsung/android/contextaware/dataprovider/sensorhubprovider/SensorHubErrors;->getCode()I
-
-    move-result v2
-
-    if-eq v1, v2, :cond_0
-
-    invoke-static {v1}, Lcom/samsung/android/contextaware/dataprovider/sensorhubprovider/SensorHubErrors;->getMessage(I)Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-static {v2}, Lcom/samsung/android/contextaware/utilbundle/logger/CaLogger;->error(Ljava/lang/String;)V
-
-    :cond_0
+    :goto_0
     return-void
 
-    nop
+    :cond_0
+    const-string/jumbo v1, "CAE is null"
 
-    :array_0
-    .array-data 1
-        -0x4ct
-        0xdt
-    .end array-data
+    invoke-static {v1}, Lcom/samsung/android/contextaware/utilbundle/logger/CaLogger;->info(Ljava/lang/String;)V
+
+    goto :goto_0
 .end method
 
 

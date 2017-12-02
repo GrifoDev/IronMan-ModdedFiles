@@ -179,6 +179,14 @@
     .end annotation
 .end method
 
+.method public abstract updateSecureID([B)Z
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+.end method
+
 .method public abstract updateSecureUserID([B)Z
     .annotation system Ldalvik/annotation/Throws;
         value = {

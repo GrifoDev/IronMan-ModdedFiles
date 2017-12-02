@@ -183,6 +183,14 @@
     .end annotation
 .end method
 
+.method public abstract isSnapTargetTranslucentNavigationBar()Z
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+.end method
+
 .method public abstract isSnapWindowRunning()Z
     .annotation system Ldalvik/annotation/Throws;
         value = {

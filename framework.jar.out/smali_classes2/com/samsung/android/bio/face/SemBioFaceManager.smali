@@ -2302,6 +2302,57 @@
     goto :goto_0
 .end method
 
+.method public updateSecureID([B)Z
+    .locals 4
+
+    const/4 v3, 0x0
+
+    invoke-direct {p0}, Lcom/samsung/android/bio/face/SemBioFaceManager;->ensureServiceConnected()Z
+
+    move-result v1
+
+    if-nez v1, :cond_0
+
+    return v3
+
+    :cond_0
+    iget-object v1, p0, Lcom/samsung/android/bio/face/SemBioFaceManager;->mService:Lcom/samsung/android/bio/face/IFaceService;
+
+    if-eqz v1, :cond_1
+
+    :try_start_0
+    iget-object v1, p0, Lcom/samsung/android/bio/face/SemBioFaceManager;->mService:Lcom/samsung/android/bio/face/IFaceService;
+
+    invoke-interface {v1, p1}, Lcom/samsung/android/bio/face/IFaceService;->updateSecureID([B)Z
+    :try_end_0
+    .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
+
+    move-result v1
+
+    return v1
+
+    :catch_0
+    move-exception v0
+
+    const-string/jumbo v1, "SemBioFaceManager"
+
+    const-string/jumbo v2, "Remote exception in updateSecureID()"
+
+    invoke-static {v1, v2}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
+
+    :goto_0
+    return v3
+
+    :cond_1
+    const-string/jumbo v1, "SemBioFaceManager"
+
+    const-string/jumbo v2, "updateSecureID(): Service not connected!"
+
+    invoke-static {v1, v2}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
+
+    goto :goto_0
+.end method
+
 .method public updateSecureUserID([B)Z
     .locals 4
 

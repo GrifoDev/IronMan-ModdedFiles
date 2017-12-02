@@ -167,167 +167,245 @@
 .end method
 
 .method private allocArrays(I)V
-    .locals 4
+    .locals 5
 
-    iget-object v1, p0, Landroid/util/ArrayMap;->mHashes:[I
+    iget-object v2, p0, Landroid/util/ArrayMap;->mHashes:[I
 
-    sget-object v2, Landroid/util/ArrayMap;->EMPTY_IMMUTABLE_INTS:[I
+    sget-object v3, Landroid/util/ArrayMap;->EMPTY_IMMUTABLE_INTS:[I
 
-    if-ne v1, v2, :cond_0
+    if-ne v2, v3, :cond_0
 
-    new-instance v1, Ljava/lang/UnsupportedOperationException;
+    new-instance v2, Ljava/lang/UnsupportedOperationException;
 
-    const-string/jumbo v2, "ArrayMap is immutable"
+    const-string/jumbo v3, "ArrayMap is immutable"
 
-    invoke-direct {v1, v2}, Ljava/lang/UnsupportedOperationException;-><init>(Ljava/lang/String;)V
+    invoke-direct {v2, v3}, Ljava/lang/UnsupportedOperationException;-><init>(Ljava/lang/String;)V
 
-    throw v1
+    throw v2
 
     :cond_0
-    const/16 v1, 0x8
+    const/16 v2, 0x8
 
-    if-ne p1, v1, :cond_3
+    if-ne p1, v2, :cond_3
 
-    const-class v2, Landroid/util/ArrayMap;
+    const-class v3, Landroid/util/ArrayMap;
 
-    monitor-enter v2
+    monitor-enter v3
 
     :try_start_0
-    sget-object v1, Landroid/util/ArrayMap;->mTwiceBaseCache:[Ljava/lang/Object;
+    sget-object v2, Landroid/util/ArrayMap;->mTwiceBaseCache:[Ljava/lang/Object;
 
-    if-eqz v1, :cond_1
+    if-eqz v2, :cond_1
 
     sget-object v0, Landroid/util/ArrayMap;->mTwiceBaseCache:[Ljava/lang/Object;
 
     iput-object v0, p0, Landroid/util/ArrayMap;->mArray:[Ljava/lang/Object;
-
-    const/4 v1, 0x0
-
-    aget-object v1, v0, v1
-
-    check-cast v1, [Ljava/lang/Object;
-
-    sput-object v1, Landroid/util/ArrayMap;->mTwiceBaseCache:[Ljava/lang/Object;
-
-    const/4 v1, 0x1
-
-    aget-object v1, v0, v1
-
-    check-cast v1, [I
-
-    iput-object v1, p0, Landroid/util/ArrayMap;->mHashes:[I
-
-    const/4 v1, 0x0
-
-    const/4 v3, 0x1
-
-    aput-object v1, v0, v3
-
-    const/4 v1, 0x0
-
-    const/4 v3, 0x0
-
-    aput-object v1, v0, v3
-
-    sget v1, Landroid/util/ArrayMap;->mTwiceBaseCacheSize:I
-
-    add-int/lit8 v1, v1, -0x1
-
-    sput v1, Landroid/util/ArrayMap;->mTwiceBaseCacheSize:I
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    monitor-exit v2
-
-    return-void
-
-    :cond_1
-    monitor-exit v2
-
-    :cond_2
-    new-array v1, p1, [I
-
-    iput-object v1, p0, Landroid/util/ArrayMap;->mHashes:[I
-
-    shl-int/lit8 v1, p1, 0x1
-
-    new-array v1, v1, [Ljava/lang/Object;
-
-    iput-object v1, p0, Landroid/util/ArrayMap;->mArray:[Ljava/lang/Object;
-
-    return-void
-
-    :catchall_0
-    move-exception v1
-
-    monitor-exit v2
-
-    throw v1
-
-    :cond_3
-    const/4 v1, 0x4
-
-    if-ne p1, v1, :cond_2
-
-    const-class v2, Landroid/util/ArrayMap;
-
-    monitor-enter v2
+    const/4 v2, 0x0
 
     :try_start_1
-    sget-object v1, Landroid/util/ArrayMap;->mBaseCache:[Ljava/lang/Object;
+    aget-object v2, v0, v2
 
-    if-eqz v1, :cond_1
+    check-cast v2, [Ljava/lang/Object;
+
+    sput-object v2, Landroid/util/ArrayMap;->mTwiceBaseCache:[Ljava/lang/Object;
+
+    const/4 v2, 0x1
+
+    aget-object v2, v0, v2
+
+    check-cast v2, [I
+
+    iput-object v2, p0, Landroid/util/ArrayMap;->mHashes:[I
+
+    const/4 v2, 0x0
+
+    const/4 v4, 0x1
+
+    aput-object v2, v0, v4
+
+    const/4 v2, 0x0
+
+    const/4 v4, 0x0
+
+    aput-object v2, v0, v4
+
+    sget v2, Landroid/util/ArrayMap;->mTwiceBaseCacheSize:I
+
+    add-int/lit8 v2, v2, -0x1
+
+    sput v2, Landroid/util/ArrayMap;->mTwiceBaseCacheSize:I
+    :try_end_1
+    .catch Ljava/lang/ClassCastException; {:try_start_1 .. :try_end_1} :catch_0
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+
+    :goto_0
+    monitor-exit v3
+
+    return-void
+
+    :catch_0
+    move-exception v1
+
+    :try_start_2
+    new-array v2, p1, [I
+
+    iput-object v2, p0, Landroid/util/ArrayMap;->mHashes:[I
+
+    shl-int/lit8 v2, p1, 0x1
+
+    new-array v2, v2, [Ljava/lang/Object;
+
+    iput-object v2, p0, Landroid/util/ArrayMap;->mArray:[Ljava/lang/Object;
+
+    const/4 v2, 0x0
+
+    sput-object v2, Landroid/util/ArrayMap;->mTwiceBaseCache:[Ljava/lang/Object;
+
+    const/4 v2, 0x0
+
+    sput v2, Landroid/util/ArrayMap;->mTwiceBaseCacheSize:I
+
+    const-string/jumbo v2, "ArrayMap"
+
+    const-string/jumbo v4, "ClassCastException occured"
+
+    invoke-static {v2, v4}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    invoke-virtual {v1}, Ljava/lang/ClassCastException;->printStackTrace()V
+    :try_end_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_0
+
+    goto :goto_0
+
+    :catchall_0
+    move-exception v2
+
+    monitor-exit v3
+
+    throw v2
+
+    :cond_1
+    monitor-exit v3
+
+    :cond_2
+    new-array v2, p1, [I
+
+    iput-object v2, p0, Landroid/util/ArrayMap;->mHashes:[I
+
+    shl-int/lit8 v2, p1, 0x1
+
+    new-array v2, v2, [Ljava/lang/Object;
+
+    iput-object v2, p0, Landroid/util/ArrayMap;->mArray:[Ljava/lang/Object;
+
+    return-void
+
+    :cond_3
+    const/4 v2, 0x4
+
+    if-ne p1, v2, :cond_2
+
+    const-class v3, Landroid/util/ArrayMap;
+
+    monitor-enter v3
+
+    :try_start_3
+    sget-object v2, Landroid/util/ArrayMap;->mBaseCache:[Ljava/lang/Object;
+
+    if-eqz v2, :cond_1
 
     sget-object v0, Landroid/util/ArrayMap;->mBaseCache:[Ljava/lang/Object;
 
     iput-object v0, p0, Landroid/util/ArrayMap;->mArray:[Ljava/lang/Object;
+    :try_end_3
+    .catchall {:try_start_3 .. :try_end_3} :catchall_1
 
-    const/4 v1, 0x0
+    const/4 v2, 0x0
 
-    aget-object v1, v0, v1
+    :try_start_4
+    aget-object v2, v0, v2
 
-    check-cast v1, [Ljava/lang/Object;
+    check-cast v2, [Ljava/lang/Object;
 
-    sput-object v1, Landroid/util/ArrayMap;->mBaseCache:[Ljava/lang/Object;
+    sput-object v2, Landroid/util/ArrayMap;->mBaseCache:[Ljava/lang/Object;
 
-    const/4 v1, 0x1
+    const/4 v2, 0x1
 
-    aget-object v1, v0, v1
+    aget-object v2, v0, v2
 
-    check-cast v1, [I
+    check-cast v2, [I
 
-    iput-object v1, p0, Landroid/util/ArrayMap;->mHashes:[I
+    iput-object v2, p0, Landroid/util/ArrayMap;->mHashes:[I
 
-    const/4 v1, 0x0
+    const/4 v2, 0x0
 
-    const/4 v3, 0x1
+    const/4 v4, 0x1
 
-    aput-object v1, v0, v3
+    aput-object v2, v0, v4
 
-    const/4 v1, 0x0
+    const/4 v2, 0x0
 
-    const/4 v3, 0x0
+    const/4 v4, 0x0
 
-    aput-object v1, v0, v3
+    aput-object v2, v0, v4
 
-    sget v1, Landroid/util/ArrayMap;->mBaseCacheSize:I
+    sget v2, Landroid/util/ArrayMap;->mBaseCacheSize:I
 
-    add-int/lit8 v1, v1, -0x1
+    add-int/lit8 v2, v2, -0x1
 
-    sput v1, Landroid/util/ArrayMap;->mBaseCacheSize:I
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_1
+    sput v2, Landroid/util/ArrayMap;->mBaseCacheSize:I
+    :try_end_4
+    .catch Ljava/lang/ClassCastException; {:try_start_4 .. :try_end_4} :catch_1
+    .catchall {:try_start_4 .. :try_end_4} :catchall_1
 
-    monitor-exit v2
+    :goto_1
+    monitor-exit v3
 
     return-void
 
-    :catchall_1
+    :catch_1
     move-exception v1
 
-    monitor-exit v2
+    :try_start_5
+    new-array v2, p1, [I
 
-    throw v1
+    iput-object v2, p0, Landroid/util/ArrayMap;->mHashes:[I
+
+    shl-int/lit8 v2, p1, 0x1
+
+    new-array v2, v2, [Ljava/lang/Object;
+
+    iput-object v2, p0, Landroid/util/ArrayMap;->mArray:[Ljava/lang/Object;
+
+    const/4 v2, 0x0
+
+    sput-object v2, Landroid/util/ArrayMap;->mBaseCache:[Ljava/lang/Object;
+
+    const/4 v2, 0x0
+
+    sput v2, Landroid/util/ArrayMap;->mBaseCacheSize:I
+
+    const-string/jumbo v2, "ArrayMap"
+
+    const-string/jumbo v4, "ClassCastException occured"
+
+    invoke-static {v2, v4}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    invoke-virtual {v1}, Ljava/lang/ClassCastException;->printStackTrace()V
+    :try_end_5
+    .catchall {:try_start_5 .. :try_end_5} :catchall_1
+
+    goto :goto_1
+
+    :catchall_1
+    move-exception v2
+
+    monitor-exit v3
+
+    throw v2
 .end method
 
 .method private static freeArrays([I[Ljava/lang/Object;I)V

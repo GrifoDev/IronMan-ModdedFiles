@@ -6145,6 +6145,12 @@
 
     move-result-object v14
 
+    if-eqz v14, :cond_2
+
+    invoke-direct/range {p0 .. p0}, Lcom/android/internal/widget/LockPatternUtils;->getLockSettings()Lcom/android/internal/widget/ILockSettings;
+
+    move-result-object v14
+
     move-object/from16 v0, p1
 
     move-object/from16 v1, p2
@@ -6153,11 +6159,12 @@
 
     invoke-interface {v14, v0, v1, v2}, Lcom/android/internal/widget/ILockSettings;->setLockPassword(Ljava/lang/String;Ljava/lang/String;I)V
 
+    :cond_2
     const/high16 v14, 0x70000
 
     move/from16 v0, p3
 
-    if-ne v0, v14, :cond_2
+    if-ne v0, v14, :cond_3
 
     const/4 v14, 0x0
 
@@ -6165,7 +6172,7 @@
 
     invoke-virtual {v0, v14}, Lcom/android/internal/widget/LockPatternUtils;->setCredentialRequiredToDecrypt(Z)V
 
-    :cond_2
+    :cond_3
     const-string/jumbo v14, "ro.boot.ucs_mode"
 
     const-string/jumbo v15, "0"
@@ -6174,7 +6181,7 @@
 
     move-result-object v13
 
-    if-nez p4, :cond_5
+    if-nez p4, :cond_6
 
     const/4 v14, 0x0
 
@@ -6184,13 +6191,13 @@
 
     move-result v14
 
-    if-nez v14, :cond_3
+    if-nez v14, :cond_4
 
     invoke-static {}, Lcom/android/internal/widget/LockPatternUtils;->isDeviceEncryptionEnabled()Z
 
     move-result v14
 
-    if-eqz v14, :cond_3
+    if-eqz v14, :cond_4
 
     const-string/jumbo v14, "2"
 
@@ -6198,28 +6205,28 @@
 
     move-result v14
 
-    if-eqz v14, :cond_7
+    if-eqz v14, :cond_8
 
-    :cond_3
+    :cond_4
     const/high16 v14, 0x20000
 
-    if-ne v4, v14, :cond_8
+    if-ne v4, v14, :cond_9
 
     const/4 v7, 0x1
 
     :goto_1
     const/high16 v14, 0x30000
 
-    if-ne v4, v14, :cond_9
+    if-ne v4, v14, :cond_a
 
     const/4 v8, 0x1
 
     :goto_2
-    if-nez v7, :cond_4
+    if-nez v7, :cond_5
 
-    if-eqz v8, :cond_a
+    if-eqz v8, :cond_b
 
-    :cond_4
+    :cond_5
     const/4 v12, 0x3
 
     :goto_3
@@ -6229,7 +6236,7 @@
 
     invoke-direct {v0, v12, v1}, Lcom/android/internal/widget/LockPatternUtils;->updateEncryptionPassword(ILjava/lang/String;)V
 
-    :cond_5
+    :cond_6
     :goto_4
     move-object/from16 v0, p0
 
@@ -6257,11 +6264,11 @@
 
     move-result-object v9
 
-    if-nez v9, :cond_6
+    if-nez v9, :cond_7
 
     const-string/jumbo v9, ""
 
-    :cond_6
+    :cond_7
     move-object/from16 v0, p0
 
     move/from16 v1, p4
@@ -6270,7 +6277,7 @@
 
     move-result v10
 
-    if-nez v10, :cond_b
+    if-nez v10, :cond_c
 
     const-string/jumbo v9, ""
 
@@ -6297,27 +6304,27 @@
 
     goto/16 :goto_0
 
-    :cond_7
+    :cond_8
     invoke-virtual/range {p0 .. p0}, Lcom/android/internal/widget/LockPatternUtils;->clearEncryptionPassword()V
 
     goto :goto_4
 
-    :cond_8
+    :cond_9
     const/4 v7, 0x0
 
     goto :goto_1
 
-    :cond_9
+    :cond_a
     const/4 v8, 0x0
 
     goto :goto_2
 
-    :cond_a
+    :cond_b
     const/4 v12, 0x0
 
     goto :goto_3
 
-    :cond_b
+    :cond_c
     move-object/from16 v0, p0
 
     move-object/from16 v1, p1

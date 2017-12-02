@@ -158,6 +158,8 @@
 
 .field static final TRANSACTION_getDefaultBrowserPackageName:I = 0xa2
 
+.field static final TRANSACTION_getDexoptState:I = 0xce
+
 .field static final TRANSACTION_getDisplayChooserResolveInfo:I = 0xe
 
 .field static final TRANSACTION_getEphemeralApplicationCookie:I = 0xc1
@@ -9264,6 +9266,35 @@
 
     return v6
 
+    :sswitch_ce
+    const-string/jumbo v6, "android.content.pm.IPackageManager"
+
+    move-object/from16 v0, p2
+
+    invoke-virtual {v0, v6}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
+
+    invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readString()Ljava/lang/String;
+
+    move-result-object v13
+
+    move-object/from16 v0, p0
+
+    invoke-virtual {v0, v13}, Landroid/content/pm/IPackageManager$Stub;->getDexoptState(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v104
+
+    invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
+
+    move-object/from16 v0, p3
+
+    move-object/from16 v1, v104
+
+    invoke-virtual {v0, v1}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
+
+    const/4 v6, 0x1
+
+    return v6
+
     nop
 
     :sswitch_data_0
@@ -9473,6 +9504,7 @@
         0xcb -> :sswitch_cb
         0xcc -> :sswitch_cc
         0xcd -> :sswitch_cd
+        0xce -> :sswitch_ce
         0x5f4e5446 -> :sswitch_0
     .end sparse-switch
 .end method

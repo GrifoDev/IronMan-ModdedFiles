@@ -97,6 +97,17 @@
     .end annotation
 .end field
 
+.field public allowedUids:Ljava/util/List;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Ljava/util/List",
+            "<",
+            "Ljava/lang/Integer;",
+            ">;"
+        }
+    .end annotation
+.end field
+
 .field public blocking:Z
 
 .field public configureIntent:Landroid/app/PendingIntent;
@@ -211,6 +222,12 @@
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
     iput-object v0, p0, Lcom/android/internal/net/VpnConfig;->routes:Ljava/util/List;
+
+    new-instance v0, Ljava/util/ArrayList;
+
+    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
+
+    iput-object v0, p0, Lcom/android/internal/net/VpnConfig;->allowedUids:Ljava/util/List;
 
     const-wide/16 v0, -0x1
 
@@ -1291,6 +1308,10 @@
     iget-object v0, p0, Lcom/android/internal/net/VpnConfig;->searchDomains:Ljava/util/List;
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeStringList(Ljava/util/List;)V
+
+    iget-object v0, p0, Lcom/android/internal/net/VpnConfig;->allowedUids:Ljava/util/List;
+
+    invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeList(Ljava/util/List;)V
 
     iget-object v0, p0, Lcom/android/internal/net/VpnConfig;->allowedApplications:Ljava/util/List;
 

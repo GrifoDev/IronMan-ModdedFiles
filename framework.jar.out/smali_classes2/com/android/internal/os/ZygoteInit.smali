@@ -26,7 +26,7 @@
 
 .field private static final LOG_BOOT_PROGRESS_PRELOAD_START:I = 0xbcc
 
-.field private static final PARALLEL_LOAD:Z = true
+.field private static PARALLEL_LOAD:Z = false
 
 .field private static final PRELOADED_CLASSES:Ljava/lang/String; = "/system/etc/preloaded-classes"
 
@@ -199,7 +199,9 @@
 .method static constructor <clinit>()V
     .locals 4
 
-    const/4 v3, 0x0
+    const/4 v3, 0x1
+
+    const/4 v2, 0x0
 
     const-string/jumbo v0, "64m"
 
@@ -211,7 +213,7 @@
 
     add-int/lit8 v1, v1, -0x1
 
-    invoke-virtual {v0, v3, v1}, Ljava/lang/String;->substring(II)Ljava/lang/String;
+    invoke-virtual {v0, v2, v1}, Ljava/lang/String;->substring(II)Ljava/lang/String;
 
     move-result-object v0
 
@@ -227,23 +229,25 @@
 
     sput v0, Lcom/android/internal/os/ZygoteInit;->PRELOAD_GC_THRESHOLD:I
 
-    sput-boolean v3, Lcom/android/internal/os/ZygoteInit;->isSecondaryZygoteReady:Z
+    sput-boolean v3, Lcom/android/internal/os/ZygoteInit;->PARALLEL_LOAD:Z
 
-    sput-boolean v3, Lcom/android/internal/os/ZygoteInit;->isParallelThreadRunning:Z
+    sput-boolean v2, Lcom/android/internal/os/ZygoteInit;->isSecondaryZygoteReady:Z
 
-    sput-boolean v3, Lcom/android/internal/os/ZygoteInit;->isPreloadComplete:Z
+    sput-boolean v2, Lcom/android/internal/os/ZygoteInit;->isParallelThreadRunning:Z
 
-    sput-boolean v3, Lcom/android/internal/os/ZygoteInit;->primaryZygoteThreadRunning:Z
+    sput-boolean v2, Lcom/android/internal/os/ZygoteInit;->isPreloadComplete:Z
 
-    sput-boolean v3, Lcom/android/internal/os/ZygoteInit;->zygoteAgentRunning:Z
+    sput-boolean v2, Lcom/android/internal/os/ZygoteInit;->primaryZygoteThreadRunning:Z
 
-    sput-boolean v3, Lcom/android/internal/os/ZygoteInit;->parallelPCThread1running:Z
+    sput-boolean v2, Lcom/android/internal/os/ZygoteInit;->zygoteAgentRunning:Z
 
-    sput-boolean v3, Lcom/android/internal/os/ZygoteInit;->parallelPCThread2running:Z
+    sput-boolean v2, Lcom/android/internal/os/ZygoteInit;->parallelPCThread1running:Z
 
-    sput-boolean v3, Lcom/android/internal/os/ZygoteInit;->parallelPCThread3running:Z
+    sput-boolean v2, Lcom/android/internal/os/ZygoteInit;->parallelPCThread2running:Z
 
-    sput v3, Lcom/android/internal/os/ZygoteInit;->numberOfPreloadClasses:I
+    sput-boolean v2, Lcom/android/internal/os/ZygoteInit;->parallelPCThread3running:Z
+
+    sput v2, Lcom/android/internal/os/ZygoteInit;->numberOfPreloadClasses:I
 
     const/16 v0, 0x378
 
@@ -263,23 +267,21 @@
 
     const-string/jumbo v1, "android.database.CursorWindow"
 
-    aput-object v1, v0, v3
+    aput-object v1, v0, v2
 
     const-string/jumbo v1, "android.database.CursorWindow$1"
 
-    const/4 v2, 0x1
-
-    aput-object v1, v0, v2
+    aput-object v1, v0, v3
 
     sput-object v0, Lcom/android/internal/os/ZygoteInit;->postLoadClasses:[Ljava/lang/String;
 
-    sput v3, Lcom/android/internal/os/ZygoteInit;->thread1time:I
+    sput v2, Lcom/android/internal/os/ZygoteInit;->thread1time:I
 
-    sput v3, Lcom/android/internal/os/ZygoteInit;->thread2time:I
+    sput v2, Lcom/android/internal/os/ZygoteInit;->thread2time:I
 
-    sput v3, Lcom/android/internal/os/ZygoteInit;->thread3time:I
+    sput v2, Lcom/android/internal/os/ZygoteInit;->thread3time:I
 
-    sput v3, Lcom/android/internal/os/ZygoteInit;->threadMtime:I
+    sput v2, Lcom/android/internal/os/ZygoteInit;->threadMtime:I
 
     return-void
 .end method
@@ -1265,6 +1267,12 @@
 
     if-eqz v6, :cond_8
 
+    const-string/jumbo v7, "persist.sys.ppr"
+
+    const-string/jumbo v8, "true"
+
+    invoke-static {v7, v8}, Landroid/os/SystemProperties;->set(Ljava/lang/String;Ljava/lang/String;)V
+
     invoke-static {v0, v5}, Lcom/android/internal/os/ZygoteInit;->startSystemServer(Ljava/lang/String;Ljava/lang/String;)Z
 
     :cond_8
@@ -1288,7 +1296,7 @@
     .catch Lcom/android/internal/os/ZygoteInit$MethodAndArgsCaller; {:try_start_2 .. :try_end_2} :catch_0
     .catch Ljava/lang/Throwable; {:try_start_2 .. :try_end_2} :catch_1
 
-    goto :goto_3
+    goto/16 :goto_3
 .end method
 
 .method static parallelpreloadClasses()V
@@ -2868,15 +2876,36 @@
 
     invoke-static {v4, v5}, Landroid/os/Trace;->traceEnd(J)V
 
+    const-string/jumbo v1, "persist.sys.ppr"
+
+    invoke-static {v1, v7}, Landroid/os/SystemProperties;->getBoolean(Ljava/lang/String;Z)Z
+
+    move-result v1
+
+    if-nez v1, :cond_1
+
+    const-string/jumbo v1, "Zygote"
+
+    const-string/jumbo v2, "bootperf: PARALLEL_LOAD = false"
+
+    invoke-static {v1, v2}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
+
+    sput-boolean v6, Lcom/android/internal/os/ZygoteInit;->PARALLEL_LOAD:Z
+
+    :cond_1
     sget-boolean v1, Lcom/android/internal/os/ZygoteInit;->primaryZygoteThreadRunning:Z
 
-    if-eqz v1, :cond_1
+    if-eqz v1, :cond_2
+
+    sget-boolean v1, Lcom/android/internal/os/ZygoteInit;->PARALLEL_LOAD:Z
+
+    if-eqz v1, :cond_2
 
     sget-boolean v1, Lcom/android/internal/os/ZygoteInit;->zygoteAgentRunning:Z
 
-    if-eqz v1, :cond_3
+    if-eqz v1, :cond_4
 
-    :cond_1
+    :cond_2
     const-string/jumbo v1, "PreloadClasses"
 
     invoke-static {v4, v5, v1}, Landroid/os/Trace;->traceBegin(JLjava/lang/String;)V
@@ -2918,7 +2947,7 @@
     :goto_0
     sget-boolean v1, Lcom/android/internal/os/ZygoteInit;->primaryZygoteThreadRunning:Z
 
-    if-eqz v1, :cond_2
+    if-eqz v1, :cond_3
 
     const-string/jumbo v1, "Zygote"
 
@@ -2932,10 +2961,10 @@
 
     invoke-static {v1, v2}, Landroid/os/SystemProperties;->set(Ljava/lang/String;Ljava/lang/String;)V
 
-    :cond_2
+    :cond_3
     return-void
 
-    :cond_3
+    :cond_4
     const-string/jumbo v1, "Zygote"
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -2996,7 +3025,7 @@
 
     sget-boolean v1, Lcom/android/internal/os/ZygoteInit;->primaryZygoteThreadRunning:Z
 
-    if-eqz v1, :cond_4
+    if-eqz v1, :cond_5
 
     const-string/jumbo v1, "Zygote"
 
@@ -3004,12 +3033,12 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    :cond_4
+    :cond_5
     invoke-static {}, Lcom/android/internal/os/ZygoteInit;->preloadResources()V
 
     sget-boolean v1, Lcom/android/internal/os/ZygoteInit;->primaryZygoteThreadRunning:Z
 
-    if-eqz v1, :cond_5
+    if-eqz v1, :cond_6
 
     const-string/jumbo v1, "Zygote"
 
@@ -3017,7 +3046,7 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    :cond_5
+    :cond_6
     invoke-static {}, Lcom/android/internal/os/ZygoteInit;->preloadSharedLibraries()V
 
     invoke-static {}, Lcom/android/internal/os/ZygoteInit;->preloadTextResources()V

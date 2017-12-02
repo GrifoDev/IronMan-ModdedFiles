@@ -483,6 +483,24 @@
     .end annotation
 .end method
 
+.method public abstract getMoveToKnoxMenuList(I)Ljava/util/List;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(I)",
+            "Ljava/util/List",
+            "<",
+            "Landroid/os/Bundle;",
+            ">;"
+        }
+    .end annotation
+
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+.end method
+
 .method public abstract getMoveToKnoxStatus()Z
     .annotation system Ldalvik/annotation/Throws;
         value = {

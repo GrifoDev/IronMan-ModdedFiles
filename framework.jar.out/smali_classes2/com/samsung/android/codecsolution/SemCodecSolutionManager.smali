@@ -172,27 +172,6 @@
     goto :goto_0
 .end method
 
-.method public setMetaData(IIII)V
-    .locals 2
-
-    :try_start_0
-    iget-object v1, p0, Lcom/samsung/android/codecsolution/SemCodecSolutionManager;->mService:Lcom/samsung/android/codecsolution/ICodecSolutionManagerService;
-
-    invoke-interface {v1, p1, p2, p3, p4}, Lcom/samsung/android/codecsolution/ICodecSolutionManagerService;->setMhdrMetaData(IIII)V
-    :try_end_0
-    .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
-
-    :goto_0
-    return-void
-
-    :catch_0
-    move-exception v0
-
-    invoke-virtual {v0}, Ljava/lang/Throwable;->printStackTrace()V
-
-    goto :goto_0
-.end method
-
 .method public setSecVideoUseSmartFitting(I)V
     .locals 2
 
@@ -277,29 +256,6 @@
     goto :goto_0
 .end method
 
-.method public startMhdrService(ILjava/lang/String;)V
-    .locals 3
-
-    :try_start_0
-    iget-object v1, p0, Lcom/samsung/android/codecsolution/SemCodecSolutionManager;->mService:Lcom/samsung/android/codecsolution/ICodecSolutionManagerService;
-
-    const/4 v2, 0x0
-
-    invoke-interface {v1, p1, p2, v2}, Lcom/samsung/android/codecsolution/ICodecSolutionManagerService;->startMhdrService(ILjava/lang/String;I)V
-    :try_end_0
-    .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
-
-    :goto_0
-    return-void
-
-    :catch_0
-    move-exception v0
-
-    invoke-virtual {v0}, Ljava/lang/Throwable;->printStackTrace()V
-
-    goto :goto_0
-.end method
-
 .method public startSmartFittingService()V
     .locals 2
 
@@ -307,27 +263,6 @@
     iget-object v1, p0, Lcom/samsung/android/codecsolution/SemCodecSolutionManager;->mService:Lcom/samsung/android/codecsolution/ICodecSolutionManagerService;
 
     invoke-interface {v1}, Lcom/samsung/android/codecsolution/ICodecSolutionManagerService;->startSmartFittingService()V
-    :try_end_0
-    .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
-
-    :goto_0
-    return-void
-
-    :catch_0
-    move-exception v0
-
-    invoke-virtual {v0}, Ljava/lang/Throwable;->printStackTrace()V
-
-    goto :goto_0
-.end method
-
-.method public stopMhdrService()V
-    .locals 2
-
-    :try_start_0
-    iget-object v1, p0, Lcom/samsung/android/codecsolution/SemCodecSolutionManager;->mService:Lcom/samsung/android/codecsolution/ICodecSolutionManagerService;
-
-    invoke-interface {v1}, Lcom/samsung/android/codecsolution/ICodecSolutionManagerService;->stopMhdrService()V
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 

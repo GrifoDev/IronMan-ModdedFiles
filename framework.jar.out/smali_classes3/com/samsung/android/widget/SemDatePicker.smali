@@ -7153,7 +7153,7 @@
 
     check-cast v3, Lcom/samsung/android/widget/SemSimpleMonthView;
 
-    if-eqz v3, :cond_6
+    if-eqz v3, :cond_5
 
     invoke-virtual/range {p0 .. p0}, Lcom/samsung/android/widget/SemDatePicker;->getMinMonth()I
 

@@ -1274,13 +1274,13 @@
 .end method
 
 .method public handleTouchEvent(IFF)V
-    .locals 25
+    .locals 26
 
     invoke-static {}, Landroid/widget/TextView;->-get16()Z
 
-    move-result v19
+    move-result v20
 
-    if-nez v19, :cond_0
+    if-nez v20, :cond_0
 
     return-void
 
@@ -1289,23 +1289,50 @@
 
     iget-object v0, v0, Landroid/widget/TextView$MagnifierView;->mOriginView:Landroid/widget/TextView;
 
-    move-object/from16 v19, v0
+    move-object/from16 v20, v0
+
+    invoke-virtual/range {v20 .. v20}, Landroid/view/View;->getRootView()Landroid/view/View;
+
+    move-result-object v3
+
+    invoke-virtual {v3}, Landroid/view/View;->getApplicationWindowToken()Landroid/os/IBinder;
+
+    move-result-object v20
+
+    invoke-virtual {v3}, Landroid/view/View;->getWindowToken()Landroid/os/IBinder;
+
+    move-result-object v21
+
+    move-object/from16 v0, v20
+
+    move-object/from16 v1, v21
+
+    if-eq v0, v1, :cond_1
+
+    return-void
+
+    :cond_1
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Landroid/widget/TextView$MagnifierView;->mOriginView:Landroid/widget/TextView;
+
+    move-object/from16 v20, v0
 
     move-object/from16 v0, p0
 
     iget-object v0, v0, Landroid/widget/TextView$MagnifierView;->mStopDraw:Ljava/lang/Runnable;
 
-    move-object/from16 v20, v0
+    move-object/from16 v21, v0
 
-    invoke-virtual/range {v19 .. v20}, Landroid/view/View;->removeCallbacks(Ljava/lang/Runnable;)Z
+    invoke-virtual/range {v20 .. v21}, Landroid/view/View;->removeCallbacks(Ljava/lang/Runnable;)Z
 
     move-object/from16 v0, p0
 
     iget-boolean v0, v0, Landroid/widget/TextView$MagnifierView;->mIsFirstTouchDown:Z
 
-    move/from16 v19, v0
+    move/from16 v20, v0
 
-    if-eqz v19, :cond_2
+    if-eqz v20, :cond_3
 
     move/from16 v0, p3
 
@@ -1315,80 +1342,80 @@
 
     invoke-direct/range {p0 .. p0}, Landroid/widget/TextView$MagnifierView;->isOneHandedMode()Z
 
-    move-result v19
+    move-result v20
 
-    if-eqz v19, :cond_3
+    if-eqz v20, :cond_4
 
     move-object/from16 v0, p0
 
     iget-object v0, v0, Landroid/widget/TextView$MagnifierView;->mContext:Landroid/content/Context;
 
-    move-object/from16 v19, v0
+    move-object/from16 v20, v0
 
-    invoke-virtual/range {v19 .. v19}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
+    invoke-virtual/range {v20 .. v20}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
+
+    move-result-object v20
+
+    const-string/jumbo v21, "reduce_screen_running_info"
+
+    invoke-static/range {v20 .. v21}, Landroid/provider/Settings$System;->getString(Landroid/content/ContentResolver;Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v4
+
+    :try_start_0
+    const-string/jumbo v20, ";"
+
+    move-object/from16 v0, v20
+
+    invoke-virtual {v4, v0}, Ljava/lang/String;->split(Ljava/lang/String;)[Ljava/lang/String;
 
     move-result-object v19
 
-    const-string/jumbo v20, "reduce_screen_running_info"
-
-    invoke-static/range {v19 .. v20}, Landroid/provider/Settings$System;->getString(Landroid/content/ContentResolver;Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v3
-
-    :try_start_0
-    const-string/jumbo v19, ";"
-
-    move-object/from16 v0, v19
-
-    invoke-virtual {v3, v0}, Ljava/lang/String;->split(Ljava/lang/String;)[Ljava/lang/String;
-
-    move-result-object v18
-
     move-object/from16 v0, p0
 
     iget-object v0, v0, Landroid/widget/TextView$MagnifierView;->defaultOffsetInOneHandedMode:[I
 
-    move-object/from16 v19, v0
-
-    const/16 v20, 0x0
-
-    aget-object v20, v18, v20
-
-    invoke-static/range {v20 .. v20}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
-
-    move-result v20
+    move-object/from16 v20, v0
 
     const/16 v21, 0x0
 
-    aput v20, v19, v21
+    aget-object v21, v19, v21
+
+    invoke-static/range {v21 .. v21}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
+
+    move-result v21
+
+    const/16 v22, 0x0
+
+    aput v21, v20, v22
 
     move-object/from16 v0, p0
 
     iget-object v0, v0, Landroid/widget/TextView$MagnifierView;->defaultOffsetInOneHandedMode:[I
 
-    move-object/from16 v19, v0
-
-    const/16 v20, 0x1
-
-    aget-object v20, v18, v20
-
-    invoke-static/range {v20 .. v20}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
-
-    move-result v20
+    move-object/from16 v20, v0
 
     const/16 v21, 0x1
 
-    aput v20, v19, v21
+    aget-object v21, v19, v21
 
-    const/16 v19, 0x2
+    invoke-static/range {v21 .. v21}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
 
-    aget-object v19, v18, v19
+    move-result v21
 
-    invoke-static/range {v19 .. v19}, Ljava/lang/Float;->parseFloat(Ljava/lang/String;)F
+    const/16 v22, 0x1
 
-    move-result v19
+    aput v21, v20, v22
 
-    move/from16 v0, v19
+    const/16 v20, 0x2
+
+    aget-object v20, v19, v20
+
+    invoke-static/range {v20 .. v20}, Ljava/lang/Float;->parseFloat(Ljava/lang/String;)F
+
+    move-result v20
+
+    move/from16 v0, v20
 
     move-object/from16 v1, p0
 
@@ -1403,36 +1430,36 @@
 
     iget-object v0, v0, Landroid/widget/TextView$MagnifierView;->mHideAnimator:Landroid/animation/ValueAnimator;
 
-    move-object/from16 v19, v0
+    move-object/from16 v20, v0
 
-    if-eqz v19, :cond_1
+    if-eqz v20, :cond_2
 
     move-object/from16 v0, p0
 
     iget-object v0, v0, Landroid/widget/TextView$MagnifierView;->mHideAnimator:Landroid/animation/ValueAnimator;
 
-    move-object/from16 v19, v0
+    move-object/from16 v20, v0
 
-    invoke-virtual/range {v19 .. v19}, Landroid/animation/ValueAnimator;->cancel()V
+    invoke-virtual/range {v20 .. v20}, Landroid/animation/ValueAnimator;->cancel()V
 
-    :cond_1
-    const/16 v19, 0x0
+    :cond_2
+    const/16 v20, 0x0
 
-    move/from16 v0, v19
+    move/from16 v0, v20
 
     move-object/from16 v1, p0
 
     iput-boolean v0, v1, Landroid/widget/TextView$MagnifierView;->mDrawing:Z
 
-    const/16 v19, 0x0
+    const/16 v20, 0x0
 
-    move/from16 v0, v19
+    move/from16 v0, v20
 
     move-object/from16 v1, p0
 
     iput-boolean v0, v1, Landroid/widget/TextView$MagnifierView;->mIsFirstTouchDown:Z
 
-    :cond_2
+    :cond_3
     move/from16 v0, p1
 
     move-object/from16 v1, p0
@@ -1455,9 +1482,9 @@
 
     iget v0, v0, Landroid/widget/TextView$MagnifierView;->mAction:I
 
-    move/from16 v19, v0
+    move/from16 v20, v0
 
-    packed-switch v19, :pswitch_data_0
+    packed-switch v20, :pswitch_data_0
 
     :goto_1
     return-void
@@ -1465,42 +1492,42 @@
     :catch_0
     move-exception v2
 
-    const-string/jumbo v19, "TextView"
+    const-string/jumbo v20, "TextView"
 
-    const-string/jumbo v20, "MagnifierView, Exception occured during getting the settings value at the one-handed mode."
+    const-string/jumbo v21, "MagnifierView, Exception occured during getting the settings value at the one-handed mode."
 
-    invoke-static/range {v19 .. v20}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static/range {v20 .. v21}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
     return-void
 
-    :cond_3
+    :cond_4
     move-object/from16 v0, p0
 
     iget-object v0, v0, Landroid/widget/TextView$MagnifierView;->defaultOffsetInOneHandedMode:[I
 
-    move-object/from16 v19, v0
-
-    const/16 v20, 0x0
+    move-object/from16 v20, v0
 
     const/16 v21, 0x0
 
-    aput v20, v19, v21
+    const/16 v22, 0x0
+
+    aput v21, v20, v22
 
     move-object/from16 v0, p0
 
     iget-object v0, v0, Landroid/widget/TextView$MagnifierView;->defaultOffsetInOneHandedMode:[I
 
-    move-object/from16 v19, v0
+    move-object/from16 v20, v0
 
-    const/16 v20, 0x0
+    const/16 v21, 0x0
 
-    const/16 v21, 0x1
+    const/16 v22, 0x1
 
-    aput v20, v19, v21
+    aput v21, v20, v22
 
-    const/high16 v19, 0x3f800000    # 1.0f
+    const/high16 v20, 0x3f800000    # 1.0f
 
-    move/from16 v0, v19
+    move/from16 v0, v20
 
     move-object/from16 v1, p0
 
@@ -1513,131 +1540,131 @@
 
     iget-object v0, v0, Landroid/widget/TextView$MagnifierView;->mShowAnimator:Landroid/animation/ValueAnimator;
 
-    move-object/from16 v19, v0
+    move-object/from16 v20, v0
 
-    if-eqz v19, :cond_4
-
-    move-object/from16 v0, p0
-
-    iget-object v0, v0, Landroid/widget/TextView$MagnifierView;->mShowAnimator:Landroid/animation/ValueAnimator;
-
-    move-object/from16 v19, v0
-
-    invoke-virtual/range {v19 .. v19}, Landroid/animation/ValueAnimator;->isStarted()Z
-
-    move-result v19
-
-    if-eqz v19, :cond_4
+    if-eqz v20, :cond_5
 
     move-object/from16 v0, p0
 
     iget-object v0, v0, Landroid/widget/TextView$MagnifierView;->mShowAnimator:Landroid/animation/ValueAnimator;
 
-    move-object/from16 v19, v0
+    move-object/from16 v20, v0
 
-    invoke-virtual/range {v19 .. v19}, Landroid/animation/Animator;->isPaused()Z
+    invoke-virtual/range {v20 .. v20}, Landroid/animation/ValueAnimator;->isStarted()Z
 
-    move-result v19
+    move-result v20
 
-    if-eqz v19, :cond_5
+    if-eqz v20, :cond_5
 
-    :cond_4
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Landroid/widget/TextView$MagnifierView;->mShowAnimator:Landroid/animation/ValueAnimator;
+
+    move-object/from16 v20, v0
+
+    invoke-virtual/range {v20 .. v20}, Landroid/animation/Animator;->isPaused()Z
+
+    move-result v20
+
+    if-eqz v20, :cond_6
+
+    :cond_5
     :goto_2
     move-object/from16 v0, p0
 
     iget-boolean v0, v0, Landroid/widget/TextView$MagnifierView;->mDrawing:Z
 
-    move/from16 v19, v0
+    move/from16 v20, v0
 
-    if-eqz v19, :cond_7
+    if-eqz v20, :cond_8
 
     return-void
-
-    :cond_5
-    move-object/from16 v0, p0
-
-    iget v0, v0, Landroid/widget/TextView$MagnifierView;->mRawY:F
-
-    move/from16 v19, v0
-
-    move-object/from16 v0, p0
-
-    iget v0, v0, Landroid/widget/TextView$MagnifierView;->mFirstTouchedRawY:F
-
-    move/from16 v20, v0
-
-    move-object/from16 v0, p0
-
-    iget v0, v0, Landroid/widget/TextView$MagnifierView;->VI_VERTICAL_OFFSET:I
-
-    move/from16 v21, v0
-
-    move/from16 v0, v21
-
-    int-to-float v0, v0
-
-    move/from16 v21, v0
-
-    const/high16 v22, 0x40000000    # 2.0f
-
-    div-float v21, v21, v22
-
-    sub-float v20, v20, v21
-
-    cmpg-float v19, v19, v20
-
-    if-ltz v19, :cond_6
-
-    move-object/from16 v0, p0
-
-    iget v0, v0, Landroid/widget/TextView$MagnifierView;->mRawY:F
-
-    move/from16 v19, v0
-
-    move-object/from16 v0, p0
-
-    iget v0, v0, Landroid/widget/TextView$MagnifierView;->mFirstTouchedRawY:F
-
-    move/from16 v20, v0
-
-    move-object/from16 v0, p0
-
-    iget v0, v0, Landroid/widget/TextView$MagnifierView;->VI_VERTICAL_OFFSET:I
-
-    move/from16 v21, v0
-
-    move/from16 v0, v21
-
-    int-to-float v0, v0
-
-    move/from16 v21, v0
-
-    const/high16 v22, 0x40000000    # 2.0f
-
-    div-float v21, v21, v22
-
-    add-float v20, v20, v21
-
-    cmpl-float v19, v19, v20
-
-    if-lez v19, :cond_4
 
     :cond_6
     move-object/from16 v0, p0
 
+    iget v0, v0, Landroid/widget/TextView$MagnifierView;->mRawY:F
+
+    move/from16 v20, v0
+
+    move-object/from16 v0, p0
+
+    iget v0, v0, Landroid/widget/TextView$MagnifierView;->mFirstTouchedRawY:F
+
+    move/from16 v21, v0
+
+    move-object/from16 v0, p0
+
+    iget v0, v0, Landroid/widget/TextView$MagnifierView;->VI_VERTICAL_OFFSET:I
+
+    move/from16 v22, v0
+
+    move/from16 v0, v22
+
+    int-to-float v0, v0
+
+    move/from16 v22, v0
+
+    const/high16 v23, 0x40000000    # 2.0f
+
+    div-float v22, v22, v23
+
+    sub-float v21, v21, v22
+
+    cmpg-float v20, v20, v21
+
+    if-ltz v20, :cond_7
+
+    move-object/from16 v0, p0
+
+    iget v0, v0, Landroid/widget/TextView$MagnifierView;->mRawY:F
+
+    move/from16 v20, v0
+
+    move-object/from16 v0, p0
+
+    iget v0, v0, Landroid/widget/TextView$MagnifierView;->mFirstTouchedRawY:F
+
+    move/from16 v21, v0
+
+    move-object/from16 v0, p0
+
+    iget v0, v0, Landroid/widget/TextView$MagnifierView;->VI_VERTICAL_OFFSET:I
+
+    move/from16 v22, v0
+
+    move/from16 v0, v22
+
+    int-to-float v0, v0
+
+    move/from16 v22, v0
+
+    const/high16 v23, 0x40000000    # 2.0f
+
+    div-float v22, v22, v23
+
+    add-float v21, v21, v22
+
+    cmpl-float v20, v20, v21
+
+    if-lez v20, :cond_5
+
+    :cond_7
+    move-object/from16 v0, p0
+
     iget-object v0, v0, Landroid/widget/TextView$MagnifierView;->mShowAnimator:Landroid/animation/ValueAnimator;
 
-    move-object/from16 v19, v0
+    move-object/from16 v20, v0
 
-    invoke-virtual/range {v19 .. v19}, Landroid/animation/ValueAnimator;->pause()V
+    invoke-virtual/range {v20 .. v20}, Landroid/animation/ValueAnimator;->pause()V
 
     move-object/from16 v0, p0
 
     iget v0, v0, Landroid/widget/TextView$MagnifierView;->VERTICAL_OFFSET:I
 
-    move/from16 v19, v0
+    move/from16 v20, v0
 
-    move/from16 v0, v19
+    move/from16 v0, v20
 
     move-object/from16 v1, p0
 
@@ -1647,49 +1674,29 @@
 
     iget-object v0, v0, Landroid/widget/TextView$MagnifierView;->mRectDst:Landroid/graphics/RectF;
 
-    move-object/from16 v19, v0
+    move-object/from16 v20, v0
 
     move-object/from16 v0, p0
 
     iget v0, v0, Landroid/widget/TextView$MagnifierView;->mPositionX:F
-
-    move/from16 v20, v0
-
-    move-object/from16 v0, p0
-
-    iget v0, v0, Landroid/widget/TextView$MagnifierView;->mPositionY:F
 
     move/from16 v21, v0
 
     move-object/from16 v0, p0
 
-    iget v0, v0, Landroid/widget/TextView$MagnifierView;->mPositionX:F
+    iget v0, v0, Landroid/widget/TextView$MagnifierView;->mPositionY:F
 
     move/from16 v22, v0
 
     move-object/from16 v0, p0
 
+    iget v0, v0, Landroid/widget/TextView$MagnifierView;->mPositionX:F
+
+    move/from16 v23, v0
+
+    move-object/from16 v0, p0
+
     iget v0, v0, Landroid/widget/TextView$MagnifierView;->mMagnifierViewWidth:I
-
-    move/from16 v23, v0
-
-    move/from16 v0, v23
-
-    int-to-float v0, v0
-
-    move/from16 v23, v0
-
-    add-float v22, v22, v23
-
-    move-object/from16 v0, p0
-
-    iget v0, v0, Landroid/widget/TextView$MagnifierView;->mPositionY:F
-
-    move/from16 v23, v0
-
-    move-object/from16 v0, p0
-
-    iget v0, v0, Landroid/widget/TextView$MagnifierView;->mMagnifierViewHeight:I
 
     move/from16 v24, v0
 
@@ -1701,341 +1708,365 @@
 
     add-float v23, v23, v24
 
-    invoke-virtual/range {v19 .. v23}, Landroid/graphics/RectF;->set(FFFF)V
+    move-object/from16 v0, p0
+
+    iget v0, v0, Landroid/widget/TextView$MagnifierView;->mPositionY:F
+
+    move/from16 v24, v0
+
+    move-object/from16 v0, p0
+
+    iget v0, v0, Landroid/widget/TextView$MagnifierView;->mMagnifierViewHeight:I
+
+    move/from16 v25, v0
+
+    move/from16 v0, v25
+
+    int-to-float v0, v0
+
+    move/from16 v25, v0
+
+    add-float v24, v24, v25
+
+    invoke-virtual/range {v20 .. v24}, Landroid/graphics/RectF;->set(FFFF)V
 
     invoke-virtual/range {p0 .. p0}, Landroid/widget/TextView$MagnifierView;->getMagnifierScreen()V
 
     goto/16 :goto_2
 
-    :cond_7
+    :cond_8
     invoke-direct/range {p0 .. p0}, Landroid/widget/TextView$MagnifierView;->tuneOffset()V
 
-    const/16 v19, 0x2
+    const/16 v20, 0x2
 
-    move/from16 v0, v19
+    move/from16 v0, v20
+
+    new-array v0, v0, [I
+
+    move-object/from16 v16, v0
+
+    const/16 v20, 0x2
+
+    move/from16 v0, v20
 
     new-array v15, v0, [I
 
-    const/16 v19, 0x2
+    move-object/from16 v0, p0
 
-    move/from16 v0, v19
+    iget-object v0, v0, Landroid/widget/TextView$MagnifierView;->mOriginView:Landroid/widget/TextView;
 
-    new-array v14, v0, [I
+    move-object/from16 v20, v0
+
+    move-object/from16 v0, v20
+
+    move-object/from16 v1, v16
+
+    invoke-virtual {v0, v1}, Landroid/view/View;->getLocationOnScreen([I)V
 
     move-object/from16 v0, p0
 
     iget-object v0, v0, Landroid/widget/TextView$MagnifierView;->mOriginView:Landroid/widget/TextView;
 
-    move-object/from16 v19, v0
+    move-object/from16 v20, v0
 
-    move-object/from16 v0, v19
+    move-object/from16 v0, v20
 
-    invoke-virtual {v0, v15}, Landroid/view/View;->getLocationOnScreen([I)V
-
-    move-object/from16 v0, p0
-
-    iget-object v0, v0, Landroid/widget/TextView$MagnifierView;->mOriginView:Landroid/widget/TextView;
-
-    move-object/from16 v19, v0
-
-    move-object/from16 v0, v19
-
-    invoke-virtual {v0, v14}, Landroid/view/View;->getLocationInWindow([I)V
-
-    const/16 v19, 0x0
-
-    aget v19, v15, v19
+    invoke-virtual {v0, v15}, Landroid/view/View;->getLocationInWindow([I)V
 
     const/16 v20, 0x0
 
-    aget v20, v14, v20
+    aget v20, v16, v20
 
-    sub-int v12, v19, v20
+    const/16 v21, 0x0
 
-    const/16 v19, 0x1
+    aget v21, v15, v21
 
-    aget v19, v15, v19
+    sub-int v13, v20, v21
 
     const/16 v20, 0x1
 
-    aget v20, v14, v20
+    aget v20, v16, v20
 
-    sub-int v13, v19, v20
+    const/16 v21, 0x1
+
+    aget v21, v15, v21
+
+    sub-int v14, v20, v21
 
     move-object/from16 v0, p0
 
     iget v0, v0, Landroid/widget/TextView$MagnifierView;->mRawX:F
 
-    move/from16 v19, v0
-
-    int-to-float v0, v12
-
     move/from16 v20, v0
 
-    sub-float v19, v19, v20
+    int-to-float v0, v13
+
+    move/from16 v21, v0
+
+    sub-float v20, v20, v21
 
     move-object/from16 v0, p0
 
     iget v0, v0, Landroid/widget/TextView$MagnifierView;->mMagnifierViewWidth:I
 
-    move/from16 v20, v0
+    move/from16 v21, v0
 
-    move/from16 v0, v20
+    move/from16 v0, v21
 
     int-to-float v0, v0
 
-    move/from16 v20, v0
+    move/from16 v21, v0
 
-    const/high16 v21, 0x40000000    # 2.0f
+    const/high16 v22, 0x40000000    # 2.0f
 
-    div-float v20, v20, v21
+    div-float v21, v21, v22
 
-    sub-float v16, v19, v20
+    sub-float v17, v20, v21
 
     move-object/from16 v0, p0
 
     iget v0, v0, Landroid/widget/TextView$MagnifierView;->mRawY:F
 
-    move/from16 v19, v0
-
-    int-to-float v0, v13
-
     move/from16 v20, v0
 
-    sub-float v19, v19, v20
+    int-to-float v0, v14
+
+    move/from16 v21, v0
+
+    sub-float v20, v20, v21
 
     move-object/from16 v0, p0
 
     iget v0, v0, Landroid/widget/TextView$MagnifierView;->mVerticalOffset:I
 
-    move/from16 v20, v0
+    move/from16 v21, v0
 
-    move/from16 v0, v20
+    move/from16 v0, v21
 
     int-to-float v0, v0
 
-    move/from16 v20, v0
+    move/from16 v21, v0
 
-    sub-float v19, v19, v20
+    sub-float v20, v20, v21
 
     move-object/from16 v0, p0
 
     iget v0, v0, Landroid/widget/TextView$MagnifierView;->mMagnifierViewHeight:I
 
-    move/from16 v20, v0
+    move/from16 v21, v0
 
-    move/from16 v0, v20
+    move/from16 v0, v21
 
     int-to-float v0, v0
 
-    move/from16 v20, v0
+    move/from16 v21, v0
 
-    sub-float v17, v19, v20
+    sub-float v18, v20, v21
 
-    const/16 v19, 0x0
+    const/16 v20, 0x0
 
-    aget v19, v15, v19
+    aget v20, v16, v20
 
-    sub-int v19, v19, v12
-
-    move-object/from16 v0, p0
-
-    iget-object v0, v0, Landroid/widget/TextView$MagnifierView;->mOriginView:Landroid/widget/TextView;
-
-    move-object/from16 v20, v0
-
-    invoke-virtual/range {v20 .. v20}, Landroid/widget/TextView;->getCompoundPaddingStart()I
-
-    move-result v20
-
-    add-int v19, v19, v20
-
-    move/from16 v0, v19
-
-    int-to-float v8, v0
-
-    const/16 v19, 0x1
-
-    aget v19, v15, v19
-
-    sub-int v19, v19, v13
+    sub-int v20, v20, v13
 
     move-object/from16 v0, p0
 
     iget-object v0, v0, Landroid/widget/TextView$MagnifierView;->mOriginView:Landroid/widget/TextView;
 
-    move-object/from16 v20, v0
+    move-object/from16 v21, v0
 
-    invoke-virtual/range {v20 .. v20}, Landroid/widget/TextView;->getCompoundPaddingTop()I
+    invoke-virtual/range {v21 .. v21}, Landroid/widget/TextView;->getCompoundPaddingStart()I
 
-    move-result v20
+    move-result v21
 
-    add-int v19, v19, v20
+    add-int v20, v20, v21
 
-    move-object/from16 v0, p0
-
-    iget v0, v0, Landroid/widget/TextView$MagnifierView;->mVerticalOffset:I
-
-    move/from16 v20, v0
-
-    sub-int v19, v19, v20
-
-    move-object/from16 v0, p0
-
-    iget v0, v0, Landroid/widget/TextView$MagnifierView;->mMagnifierViewHeight:I
-
-    move/from16 v20, v0
-
-    sub-int v19, v19, v20
-
-    move/from16 v0, v19
+    move/from16 v0, v20
 
     int-to-float v9, v0
 
-    const/16 v19, 0x0
+    const/16 v20, 0x1
 
-    aget v19, v15, v19
+    aget v20, v16, v20
 
-    sub-int v19, v19, v12
-
-    move-object/from16 v0, p0
-
-    iget-object v0, v0, Landroid/widget/TextView$MagnifierView;->mOriginView:Landroid/widget/TextView;
-
-    move-object/from16 v20, v0
-
-    invoke-virtual/range {v20 .. v20}, Landroid/view/View;->getMeasuredWidth()I
-
-    move-result v20
-
-    add-int v19, v19, v20
+    sub-int v20, v20, v14
 
     move-object/from16 v0, p0
 
     iget-object v0, v0, Landroid/widget/TextView$MagnifierView;->mOriginView:Landroid/widget/TextView;
 
-    move-object/from16 v20, v0
+    move-object/from16 v21, v0
 
-    invoke-virtual/range {v20 .. v20}, Landroid/widget/TextView;->getCompoundPaddingEnd()I
+    invoke-virtual/range {v21 .. v21}, Landroid/widget/TextView;->getCompoundPaddingTop()I
 
-    move-result v20
+    move-result v21
 
-    sub-int v19, v19, v20
+    add-int v20, v20, v21
+
+    move-object/from16 v0, p0
+
+    iget v0, v0, Landroid/widget/TextView$MagnifierView;->mVerticalOffset:I
+
+    move/from16 v21, v0
+
+    sub-int v20, v20, v21
+
+    move-object/from16 v0, p0
+
+    iget v0, v0, Landroid/widget/TextView$MagnifierView;->mMagnifierViewHeight:I
+
+    move/from16 v21, v0
+
+    sub-int v20, v20, v21
+
+    move/from16 v0, v20
+
+    int-to-float v10, v0
+
+    const/16 v20, 0x0
+
+    aget v20, v16, v20
+
+    sub-int v20, v20, v13
+
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Landroid/widget/TextView$MagnifierView;->mOriginView:Landroid/widget/TextView;
+
+    move-object/from16 v21, v0
+
+    invoke-virtual/range {v21 .. v21}, Landroid/view/View;->getMeasuredWidth()I
+
+    move-result v21
+
+    add-int v20, v20, v21
+
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Landroid/widget/TextView$MagnifierView;->mOriginView:Landroid/widget/TextView;
+
+    move-object/from16 v21, v0
+
+    invoke-virtual/range {v21 .. v21}, Landroid/widget/TextView;->getCompoundPaddingEnd()I
+
+    move-result v21
+
+    sub-int v20, v20, v21
 
     move-object/from16 v0, p0
 
     iget v0, v0, Landroid/widget/TextView$MagnifierView;->mMagnifierViewWidth:I
 
-    move/from16 v20, v0
+    move/from16 v21, v0
 
-    sub-int v19, v19, v20
+    sub-int v20, v20, v21
 
-    move/from16 v0, v19
+    move/from16 v0, v20
 
-    int-to-float v4, v0
+    int-to-float v5, v0
 
-    const/16 v19, 0x1
+    const/16 v20, 0x1
 
-    aget v19, v15, v19
+    aget v20, v16, v20
 
-    sub-int v19, v19, v13
-
-    move-object/from16 v0, p0
-
-    iget-object v0, v0, Landroid/widget/TextView$MagnifierView;->mOriginView:Landroid/widget/TextView;
-
-    move-object/from16 v20, v0
-
-    invoke-virtual/range {v20 .. v20}, Landroid/view/View;->getMeasuredHeight()I
-
-    move-result v20
-
-    add-int v19, v19, v20
+    sub-int v20, v20, v14
 
     move-object/from16 v0, p0
 
     iget-object v0, v0, Landroid/widget/TextView$MagnifierView;->mOriginView:Landroid/widget/TextView;
 
-    move-object/from16 v20, v0
+    move-object/from16 v21, v0
 
-    invoke-virtual/range {v20 .. v20}, Landroid/widget/TextView;->getCompoundPaddingBottom()I
+    invoke-virtual/range {v21 .. v21}, Landroid/view/View;->getMeasuredHeight()I
 
-    move-result v20
+    move-result v21
 
-    sub-int v19, v19, v20
+    add-int v20, v20, v21
+
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Landroid/widget/TextView$MagnifierView;->mOriginView:Landroid/widget/TextView;
+
+    move-object/from16 v21, v0
+
+    invoke-virtual/range {v21 .. v21}, Landroid/widget/TextView;->getCompoundPaddingBottom()I
+
+    move-result v21
+
+    sub-int v20, v20, v21
 
     move-object/from16 v0, p0
 
     iget v0, v0, Landroid/widget/TextView$MagnifierView;->mVerticalOffset:I
 
-    move/from16 v20, v0
+    move/from16 v21, v0
 
-    sub-int v19, v19, v20
+    sub-int v20, v20, v21
 
     move-object/from16 v0, p0
 
     iget v0, v0, Landroid/widget/TextView$MagnifierView;->mMagnifierViewHeight:I
 
-    move/from16 v20, v0
+    move/from16 v21, v0
 
-    sub-int v19, v19, v20
+    sub-int v20, v20, v21
 
-    move/from16 v0, v19
+    move/from16 v0, v20
 
-    int-to-float v5, v0
-
-    const/16 v19, 0x0
-
-    cmpg-float v19, v5, v19
-
-    if-gez v19, :cond_8
-
-    const/4 v5, 0x0
-
-    :cond_8
-    move/from16 v0, v16
-
-    invoke-static {v0, v8}, Ljava/lang/Math;->max(FF)F
-
-    move-result v19
+    int-to-float v6, v0
 
     const/16 v20, 0x0
 
-    invoke-static/range {v19 .. v20}, Ljava/lang/Math;->max(FF)F
+    cmpg-float v20, v6, v20
 
-    move-result v19
+    if-gez v20, :cond_9
 
-    move/from16 v0, v19
+    const/4 v6, 0x0
 
-    invoke-static {v0, v4}, Ljava/lang/Math;->min(FF)F
+    :cond_9
+    move/from16 v0, v17
 
-    move-result v19
+    invoke-static {v0, v9}, Ljava/lang/Math;->max(FF)F
 
-    move/from16 v0, v19
+    move-result v20
+
+    const/16 v21, 0x0
+
+    invoke-static/range {v20 .. v21}, Ljava/lang/Math;->max(FF)F
+
+    move-result v20
+
+    move/from16 v0, v20
+
+    invoke-static {v0, v5}, Ljava/lang/Math;->min(FF)F
+
+    move-result v20
+
+    move/from16 v0, v20
 
     move-object/from16 v1, p0
 
     iput v0, v1, Landroid/widget/TextView$MagnifierView;->mPositionX:F
 
-    move/from16 v0, v17
+    move/from16 v0, v18
 
-    invoke-static {v0, v9}, Ljava/lang/Math;->max(FF)F
+    invoke-static {v0, v10}, Ljava/lang/Math;->max(FF)F
 
-    move-result v19
+    move-result v20
 
-    const/16 v20, 0x0
+    const/16 v21, 0x0
 
-    invoke-static/range {v19 .. v20}, Ljava/lang/Math;->max(FF)F
+    invoke-static/range {v20 .. v21}, Ljava/lang/Math;->max(FF)F
 
-    move-result v19
+    move-result v20
 
-    move/from16 v0, v19
+    move/from16 v0, v20
 
-    invoke-static {v0, v5}, Ljava/lang/Math;->min(FF)F
+    invoke-static {v0, v6}, Ljava/lang/Math;->min(FF)F
 
-    move-result v19
+    move-result v20
 
-    move/from16 v0, v19
+    move/from16 v0, v20
 
     move-object/from16 v1, p0
 
@@ -2045,233 +2076,217 @@
 
     iget-object v0, v0, Landroid/widget/TextView$MagnifierView;->mTruncated:[F
 
-    move-object/from16 v19, v0
+    move-object/from16 v20, v0
 
     move-object/from16 v0, p0
 
     iget v0, v0, Landroid/widget/TextView$MagnifierView;->mPositionX:F
 
-    move/from16 v20, v0
+    move/from16 v21, v0
 
-    sub-float v20, v16, v20
+    sub-float v21, v17, v21
 
-    const/16 v21, 0x0
+    const/16 v22, 0x0
 
-    aput v20, v19, v21
+    aput v21, v20, v22
 
     move-object/from16 v0, p0
 
     iget-object v0, v0, Landroid/widget/TextView$MagnifierView;->mTruncated:[F
 
-    move-object/from16 v19, v0
+    move-object/from16 v20, v0
 
     move-object/from16 v0, p0
 
     iget v0, v0, Landroid/widget/TextView$MagnifierView;->mPositionY:F
 
-    move/from16 v20, v0
+    move/from16 v21, v0
 
-    sub-float v20, v20, v17
+    sub-float v21, v21, v18
 
-    const/16 v21, 0x1
+    const/16 v22, 0x1
 
-    aput v20, v19, v21
-
-    move-object/from16 v0, p0
-
-    iget-object v0, v0, Landroid/widget/TextView$MagnifierView;->mTransitionOffset:[F
-
-    move-object/from16 v19, v0
-
-    move-object/from16 v0, p0
-
-    iget-object v0, v0, Landroid/widget/TextView$MagnifierView;->mTruncated:[F
-
-    move-object/from16 v20, v0
-
-    const/16 v21, 0x0
-
-    aget v20, v20, v21
-
-    const/high16 v21, -0x40800000    # -1.0f
-
-    mul-float v20, v20, v21
-
-    const/16 v21, 0x0
-
-    aput v20, v19, v21
+    aput v21, v20, v22
 
     move-object/from16 v0, p0
 
     iget-object v0, v0, Landroid/widget/TextView$MagnifierView;->mTransitionOffset:[F
 
-    move-object/from16 v19, v0
+    move-object/from16 v20, v0
 
     move-object/from16 v0, p0
 
     iget-object v0, v0, Landroid/widget/TextView$MagnifierView;->mTruncated:[F
 
+    move-object/from16 v21, v0
+
+    const/16 v22, 0x0
+
+    aget v21, v21, v22
+
+    const/high16 v22, -0x40800000    # -1.0f
+
+    mul-float v21, v21, v22
+
+    const/16 v22, 0x0
+
+    aput v21, v20, v22
+
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Landroid/widget/TextView$MagnifierView;->mTransitionOffset:[F
+
     move-object/from16 v20, v0
 
-    const/16 v21, 0x1
+    move-object/from16 v0, p0
 
-    aget v20, v20, v21
+    iget-object v0, v0, Landroid/widget/TextView$MagnifierView;->mTruncated:[F
 
-    const/high16 v21, -0x40800000    # -1.0f
+    move-object/from16 v21, v0
 
-    mul-float v20, v20, v21
+    const/16 v22, 0x1
 
-    const/16 v21, 0x1
+    aget v21, v21, v22
 
-    aput v20, v19, v21
+    const/high16 v22, -0x40800000    # -1.0f
 
-    const/16 v19, 0x0
+    mul-float v21, v21, v22
 
-    aget v19, v15, v19
+    const/16 v22, 0x1
+
+    aput v21, v20, v22
+
+    const/16 v20, 0x0
+
+    aget v20, v16, v20
 
     move-object/from16 v0, p0
 
     iget-object v0, v0, Landroid/widget/TextView$MagnifierView;->mOriginView:Landroid/widget/TextView;
 
-    move-object/from16 v20, v0
+    move-object/from16 v21, v0
 
-    invoke-virtual/range {v20 .. v20}, Landroid/widget/TextView;->getCompoundPaddingStart()I
+    invoke-virtual/range {v21 .. v21}, Landroid/widget/TextView;->getCompoundPaddingStart()I
 
-    move-result v20
+    move-result v21
 
-    add-int v19, v19, v20
+    add-int v20, v20, v21
 
-    move/from16 v0, v19
-
-    int-to-float v10, v0
-
-    const/16 v19, 0x1
-
-    aget v19, v15, v19
-
-    move-object/from16 v0, p0
-
-    iget-object v0, v0, Landroid/widget/TextView$MagnifierView;->mOriginView:Landroid/widget/TextView;
-
-    move-object/from16 v20, v0
-
-    invoke-virtual/range {v20 .. v20}, Landroid/widget/TextView;->getCompoundPaddingTop()I
-
-    move-result v20
-
-    add-int v19, v19, v20
-
-    move/from16 v0, v19
+    move/from16 v0, v20
 
     int-to-float v11, v0
 
-    const/16 v19, 0x0
+    const/16 v20, 0x1
 
-    aget v19, v15, v19
-
-    move-object/from16 v0, p0
-
-    iget-object v0, v0, Landroid/widget/TextView$MagnifierView;->mOriginView:Landroid/widget/TextView;
-
-    move-object/from16 v20, v0
-
-    invoke-virtual/range {v20 .. v20}, Landroid/view/View;->getMeasuredWidth()I
-
-    move-result v20
-
-    add-int v19, v19, v20
+    aget v20, v16, v20
 
     move-object/from16 v0, p0
 
     iget-object v0, v0, Landroid/widget/TextView$MagnifierView;->mOriginView:Landroid/widget/TextView;
 
-    move-object/from16 v20, v0
+    move-object/from16 v21, v0
 
-    invoke-virtual/range {v20 .. v20}, Landroid/widget/TextView;->getCompoundPaddingEnd()I
+    invoke-virtual/range {v21 .. v21}, Landroid/widget/TextView;->getCompoundPaddingTop()I
 
-    move-result v20
+    move-result v21
 
-    sub-int v19, v19, v20
+    add-int v20, v20, v21
 
-    move/from16 v0, v19
+    move/from16 v0, v20
 
-    int-to-float v6, v0
+    int-to-float v12, v0
 
-    const/16 v19, 0x1
+    const/16 v20, 0x0
 
-    aget v19, v15, v19
-
-    move-object/from16 v0, p0
-
-    iget-object v0, v0, Landroid/widget/TextView$MagnifierView;->mOriginView:Landroid/widget/TextView;
-
-    move-object/from16 v20, v0
-
-    invoke-virtual/range {v20 .. v20}, Landroid/view/View;->getMeasuredHeight()I
-
-    move-result v20
-
-    add-int v19, v19, v20
+    aget v20, v16, v20
 
     move-object/from16 v0, p0
 
     iget-object v0, v0, Landroid/widget/TextView$MagnifierView;->mOriginView:Landroid/widget/TextView;
 
-    move-object/from16 v20, v0
+    move-object/from16 v21, v0
 
-    invoke-virtual/range {v20 .. v20}, Landroid/widget/TextView;->getCompoundPaddingBottom()I
+    invoke-virtual/range {v21 .. v21}, Landroid/view/View;->getMeasuredWidth()I
 
-    move-result v20
+    move-result v21
 
-    sub-int v19, v19, v20
+    add-int v20, v20, v21
 
-    move/from16 v0, v19
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Landroid/widget/TextView$MagnifierView;->mOriginView:Landroid/widget/TextView;
+
+    move-object/from16 v21, v0
+
+    invoke-virtual/range {v21 .. v21}, Landroid/widget/TextView;->getCompoundPaddingEnd()I
+
+    move-result v21
+
+    sub-int v20, v20, v21
+
+    move/from16 v0, v20
 
     int-to-float v7, v0
+
+    const/16 v20, 0x1
+
+    aget v20, v16, v20
+
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Landroid/widget/TextView$MagnifierView;->mOriginView:Landroid/widget/TextView;
+
+    move-object/from16 v21, v0
+
+    invoke-virtual/range {v21 .. v21}, Landroid/view/View;->getMeasuredHeight()I
+
+    move-result v21
+
+    add-int v20, v20, v21
+
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Landroid/widget/TextView$MagnifierView;->mOriginView:Landroid/widget/TextView;
+
+    move-object/from16 v21, v0
+
+    invoke-virtual/range {v21 .. v21}, Landroid/widget/TextView;->getCompoundPaddingBottom()I
+
+    move-result v21
+
+    sub-int v20, v20, v21
+
+    move/from16 v0, v20
+
+    int-to-float v8, v0
 
     move-object/from16 v0, p0
 
     iget-object v0, v0, Landroid/widget/TextView$MagnifierView;->mTruncated:[F
 
-    move-object/from16 v19, v0
-
-    const/16 v20, 0x0
-
-    aget v19, v19, v20
-
-    const/16 v20, 0x0
-
-    cmpl-float v19, v19, v20
-
-    if-eqz v19, :cond_a
-
-    move-object/from16 v0, p0
-
-    iget-object v0, v0, Landroid/widget/TextView$MagnifierView;->mTransitionOffset:[F
-
-    move-object/from16 v19, v0
-
-    const/16 v20, 0x0
+    move-object/from16 v20, v0
 
     const/16 v21, 0x0
 
-    aput v20, v19, v21
+    aget v20, v20, v21
 
-    move-object/from16 v0, p0
+    const/16 v21, 0x0
 
-    iget v0, v0, Landroid/widget/TextView$MagnifierView;->mRawX:F
+    cmpl-float v20, v20, v21
 
-    move/from16 v19, v0
-
-    cmpg-float v19, v19, v10
-
-    if-gez v19, :cond_9
+    if-eqz v20, :cond_b
 
     move-object/from16 v0, p0
 
     iget-object v0, v0, Landroid/widget/TextView$MagnifierView;->mTransitionOffset:[F
 
-    move-object/from16 v19, v0
+    move-object/from16 v20, v0
+
+    const/16 v21, 0x0
+
+    const/16 v22, 0x0
+
+    aput v21, v20, v22
 
     move-object/from16 v0, p0
 
@@ -2279,118 +2294,85 @@
 
     move/from16 v20, v0
 
-    sub-float v20, v10, v20
+    cmpg-float v20, v20, v11
 
-    const/16 v21, 0x0
-
-    aput v20, v19, v21
-
-    :cond_9
-    move-object/from16 v0, p0
-
-    iget v0, v0, Landroid/widget/TextView$MagnifierView;->mRawX:F
-
-    move/from16 v19, v0
-
-    cmpl-float v19, v19, v6
-
-    if-lez v19, :cond_a
+    if-gez v20, :cond_a
 
     move-object/from16 v0, p0
 
     iget-object v0, v0, Landroid/widget/TextView$MagnifierView;->mTransitionOffset:[F
 
-    move-object/from16 v19, v0
+    move-object/from16 v20, v0
 
     move-object/from16 v0, p0
 
     iget v0, v0, Landroid/widget/TextView$MagnifierView;->mRawX:F
 
-    move/from16 v20, v0
+    move/from16 v21, v0
 
-    sub-float v20, v6, v20
+    sub-float v21, v11, v21
 
-    const/16 v21, 0x0
+    const/16 v22, 0x0
 
-    aput v20, v19, v21
+    aput v21, v20, v22
 
     :cond_a
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Landroid/widget/TextView$MagnifierView;->mTruncated:[F
-
-    move-object/from16 v19, v0
-
-    const/16 v20, 0x1
-
-    aget v19, v19, v20
-
-    const/16 v20, 0x0
-
-    cmpl-float v19, v19, v20
-
-    if-eqz v19, :cond_c
-
-    move-object/from16 v0, p0
-
-    iget-object v0, v0, Landroid/widget/TextView$MagnifierView;->mTransitionOffset:[F
-
-    move-object/from16 v19, v0
-
-    const/16 v20, 0x0
-
-    const/16 v21, 0x1
-
-    aput v20, v19, v21
-
-    move-object/from16 v0, p0
-
-    iget v0, v0, Landroid/widget/TextView$MagnifierView;->mRawY:F
-
-    move/from16 v19, v0
-
-    cmpg-float v19, v19, v11
-
-    if-gez v19, :cond_b
-
-    move-object/from16 v0, p0
-
-    iget-object v0, v0, Landroid/widget/TextView$MagnifierView;->mTransitionOffset:[F
-
-    move-object/from16 v19, v0
-
-    move-object/from16 v0, p0
-
-    iget v0, v0, Landroid/widget/TextView$MagnifierView;->mRawY:F
+    iget v0, v0, Landroid/widget/TextView$MagnifierView;->mRawX:F
 
     move/from16 v20, v0
 
-    sub-float v20, v11, v20
+    cmpl-float v20, v20, v7
 
-    const/high16 v21, -0x40800000    # -1.0f
+    if-lez v20, :cond_b
 
-    mul-float v20, v20, v21
+    move-object/from16 v0, p0
 
-    const/16 v21, 0x1
+    iget-object v0, v0, Landroid/widget/TextView$MagnifierView;->mTransitionOffset:[F
 
-    aput v20, v19, v21
+    move-object/from16 v20, v0
+
+    move-object/from16 v0, p0
+
+    iget v0, v0, Landroid/widget/TextView$MagnifierView;->mRawX:F
+
+    move/from16 v21, v0
+
+    sub-float v21, v7, v21
+
+    const/16 v22, 0x0
+
+    aput v21, v20, v22
 
     :cond_b
     move-object/from16 v0, p0
 
-    iget v0, v0, Landroid/widget/TextView$MagnifierView;->mRawY:F
+    iget-object v0, v0, Landroid/widget/TextView$MagnifierView;->mTruncated:[F
 
-    move/from16 v19, v0
+    move-object/from16 v20, v0
 
-    cmpl-float v19, v19, v7
+    const/16 v21, 0x1
 
-    if-lez v19, :cond_c
+    aget v20, v20, v21
+
+    const/16 v21, 0x0
+
+    cmpl-float v20, v20, v21
+
+    if-eqz v20, :cond_d
 
     move-object/from16 v0, p0
 
     iget-object v0, v0, Landroid/widget/TextView$MagnifierView;->mTransitionOffset:[F
 
-    move-object/from16 v19, v0
+    move-object/from16 v20, v0
+
+    const/16 v21, 0x0
+
+    const/16 v22, 0x1
+
+    aput v21, v20, v22
 
     move-object/from16 v0, p0
 
@@ -2398,17 +2380,66 @@
 
     move/from16 v20, v0
 
-    sub-float v20, v7, v20
+    cmpg-float v20, v20, v12
 
-    const/high16 v21, -0x40800000    # -1.0f
+    if-gez v20, :cond_c
 
-    mul-float v20, v20, v21
+    move-object/from16 v0, p0
 
-    const/16 v21, 0x1
+    iget-object v0, v0, Landroid/widget/TextView$MagnifierView;->mTransitionOffset:[F
 
-    aput v20, v19, v21
+    move-object/from16 v20, v0
+
+    move-object/from16 v0, p0
+
+    iget v0, v0, Landroid/widget/TextView$MagnifierView;->mRawY:F
+
+    move/from16 v21, v0
+
+    sub-float v21, v12, v21
+
+    const/high16 v22, -0x40800000    # -1.0f
+
+    mul-float v21, v21, v22
+
+    const/16 v22, 0x1
+
+    aput v21, v20, v22
 
     :cond_c
+    move-object/from16 v0, p0
+
+    iget v0, v0, Landroid/widget/TextView$MagnifierView;->mRawY:F
+
+    move/from16 v20, v0
+
+    cmpl-float v20, v20, v8
+
+    if-lez v20, :cond_d
+
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Landroid/widget/TextView$MagnifierView;->mTransitionOffset:[F
+
+    move-object/from16 v20, v0
+
+    move-object/from16 v0, p0
+
+    iget v0, v0, Landroid/widget/TextView$MagnifierView;->mRawY:F
+
+    move/from16 v21, v0
+
+    sub-float v21, v8, v21
+
+    const/high16 v22, -0x40800000    # -1.0f
+
+    mul-float v21, v21, v22
+
+    const/16 v22, 0x1
+
+    aput v21, v20, v22
+
+    :cond_d
     invoke-direct/range {p0 .. p0}, Landroid/widget/TextView$MagnifierView;->updatePosition()V
 
     invoke-virtual/range {p0 .. p0}, Landroid/widget/TextView$MagnifierView;->getMagnifierScreen()V
@@ -2416,9 +2447,9 @@
     goto/16 :goto_1
 
     :pswitch_1
-    const/16 v19, 0x0
+    const/16 v20, 0x0
 
-    move/from16 v0, v19
+    move/from16 v0, v20
 
     move-object/from16 v1, p0
 
@@ -2428,17 +2459,15 @@
 
     iget-object v0, v0, Landroid/widget/TextView$MagnifierView;->mUpdateHandler:Landroid/widget/TextView$MagnifierView$UpdateMagnifierHandler;
 
-    move-object/from16 v19, v0
+    move-object/from16 v20, v0
 
-    const/16 v20, 0x65
+    const/16 v21, 0x65
 
-    invoke-virtual/range {v19 .. v20}, Landroid/os/Handler;->removeMessages(I)V
+    invoke-virtual/range {v20 .. v21}, Landroid/os/Handler;->removeMessages(I)V
 
     invoke-direct/range {p0 .. p0}, Landroid/widget/TextView$MagnifierView;->dismiss()V
 
     goto/16 :goto_1
-
-    nop
 
     :pswitch_data_0
     .packed-switch 0x0

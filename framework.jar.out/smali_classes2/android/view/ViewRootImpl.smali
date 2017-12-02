@@ -9049,6 +9049,8 @@
 
     invoke-virtual {v4, v10}, Landroid/graphics/Rect;->set(Landroid/graphics/Rect;)V
 
+    const/16 v33, 0x1
+
     :cond_3b
     if-nez v42, :cond_69
 

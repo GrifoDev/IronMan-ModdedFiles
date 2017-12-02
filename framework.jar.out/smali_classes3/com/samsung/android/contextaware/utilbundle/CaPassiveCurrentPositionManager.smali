@@ -160,6 +160,32 @@
     return-void
 .end method
 
+.method private static sendCmdToSensorHub([BBB)I
+    .locals 3
+
+    invoke-static {}, Lcom/samsung/android/contextaware/manager/ContextAwareService;->getCAEService()Lcom/samsung/android/contextaware/manager/ContextAwareService;
+
+    move-result-object v0
+
+    const/4 v1, -0x1
+
+    if-eqz v0, :cond_0
+
+    invoke-virtual {v0, p0, p1, p2}, Lcom/samsung/android/contextaware/manager/ContextAwareService;->sendPCPositiontoSensorHub([BBB)I
+
+    move-result v1
+
+    :goto_0
+    return v1
+
+    :cond_0
+    const-string/jumbo v2, "CAE is null"
+
+    invoke-static {v2}, Lcom/samsung/android/contextaware/utilbundle/logger/CaLogger;->info(Ljava/lang/String;)V
+
+    goto :goto_0
+.end method
+
 .method public static sendPositionToSensorHub(I[IDDDDFFI)I
     .locals 8
 
@@ -369,29 +395,15 @@
 
     invoke-static {v4, v5, v2, v3, v6}, Ljava/lang/System;->arraycopy([BI[BII)V
 
-    invoke-static {}, Lcom/samsung/android/contextaware/utilbundle/SensorHubCommManager;->getInstance()Lcom/samsung/android/contextaware/utilbundle/SensorHubCommManager;
+    const/16 v4, -0x3f
 
-    move-result-object v4
+    const/16 v5, 0x16
 
-    const/4 v5, 0x2
-
-    new-array v5, v5, [B
-
-    fill-array-data v5, :array_0
-
-    invoke-virtual {v4, v2, v5}, Lcom/samsung/android/contextaware/utilbundle/SensorHubCommManager;->sendCmdToSensorHub([B[B)I
+    invoke-static {v2, v4, v5}, Lcom/samsung/android/contextaware/utilbundle/CaPassiveCurrentPositionManager;->sendCmdToSensorHub([BBB)I
 
     move-result v4
 
     return v4
-
-    nop
-
-    :array_0
-    .array-data 1
-        -0x3ft
-        0x16t
-    .end array-data
 .end method
 
 .method private unregisterGpsListener()V

@@ -72,6 +72,9 @@
 .method public abstract isSnapTargetHideStatusbar()Z
 .end method
 
+.method public abstract isSnapTargetTranslucentNavigationBar()Z
+.end method
+
 .method public abstract isSnapWindowRunning()Z
 .end method
 

@@ -1056,19 +1056,11 @@
 .end method
 
 .method private handleMessage(Landroid/os/Message;)V
-    .locals 14
+    .locals 10
 
-    const/4 v13, 0x2
+    iget v5, p1, Landroid/os/Message;->what:I
 
-    const v12, 0x3ecccccd    # 0.4f
-
-    const/4 v0, 0x0
-
-    const/4 v5, 0x1
-
-    iget v6, p1, Landroid/os/Message;->what:I
-
-    packed-switch v6, :pswitch_data_0
+    packed-switch v5, :pswitch_data_0
 
     :cond_0
     :goto_0
@@ -1107,92 +1099,98 @@
 
     iget-wide v8, p0, Landroid/widget/ScrollView;->mHoverScrollTimeInterval:J
 
-    cmp-long v6, v6, v8
+    cmp-long v5, v6, v8
 
-    if-ltz v6, :cond_0
+    if-ltz v5, :cond_0
 
-    iget v6, p0, Landroid/widget/ScrollView;->HOVERSCROLL_SPEED:F
+    iget v5, p0, Landroid/widget/ScrollView;->HOVERSCROLL_SPEED:F
 
-    iget-object v7, p0, Landroid/widget/ScrollView;->mContext:Landroid/content/Context;
+    iget-object v6, p0, Landroid/widget/ScrollView;->mContext:Landroid/content/Context;
 
-    invoke-virtual {v7}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
+    invoke-virtual {v6}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
-    move-result-object v7
+    move-result-object v6
 
-    invoke-virtual {v7}, Landroid/content/res/Resources;->getDisplayMetrics()Landroid/util/DisplayMetrics;
+    invoke-virtual {v6}, Landroid/content/res/Resources;->getDisplayMetrics()Landroid/util/DisplayMetrics;
 
-    move-result-object v7
+    move-result-object v6
 
-    invoke-static {v5, v6, v7}, Landroid/util/TypedValue;->applyDimension(IFLandroid/util/DisplayMetrics;)F
+    const/4 v7, 0x1
 
-    move-result v6
+    invoke-static {v7, v5, v6}, Landroid/util/TypedValue;->applyDimension(IFLandroid/util/DisplayMetrics;)F
 
-    const/high16 v7, 0x3f000000    # 0.5f
+    move-result v5
 
-    add-float/2addr v6, v7
+    const/high16 v6, 0x3f000000    # 0.5f
 
-    float-to-int v6, v6
+    add-float/2addr v5, v6
 
-    iput v6, p0, Landroid/widget/ScrollView;->mHoverScrollSpeed:I
+    float-to-int v5, v5
+
+    iput v5, p0, Landroid/widget/ScrollView;->mHoverScrollSpeed:I
 
     iget-wide v6, p0, Landroid/widget/ScrollView;->mHoverRecognitionDurationTime:J
 
     const-wide/16 v8, 0x2
 
-    cmp-long v6, v6, v8
+    cmp-long v5, v6, v8
 
-    if-lez v6, :cond_2
+    if-lez v5, :cond_2
 
     iget-wide v6, p0, Landroid/widget/ScrollView;->mHoverRecognitionDurationTime:J
 
     const-wide/16 v8, 0x4
 
-    cmp-long v6, v6, v8
+    cmp-long v5, v6, v8
 
-    if-gez v6, :cond_2
+    if-gez v5, :cond_2
+
+    iget v5, p0, Landroid/widget/ScrollView;->mHoverScrollSpeed:I
 
     iget v6, p0, Landroid/widget/ScrollView;->mHoverScrollSpeed:I
 
-    iget v7, p0, Landroid/widget/ScrollView;->mHoverScrollSpeed:I
+    int-to-double v6, v6
 
-    int-to-double v8, v7
+    const-wide v8, 0x3fb999999999999aL    # 0.1
 
-    const-wide v10, 0x3fb999999999999aL    # 0.1
+    mul-double/2addr v6, v8
 
-    mul-double/2addr v8, v10
+    double-to-int v6, v6
 
-    double-to-int v7, v8
+    add-int/2addr v5, v6
 
-    add-int/2addr v6, v7
-
-    iput v6, p0, Landroid/widget/ScrollView;->mHoverScrollSpeed:I
+    iput v5, p0, Landroid/widget/ScrollView;->mHoverScrollSpeed:I
 
     :cond_1
     :goto_1
-    iget v6, p0, Landroid/widget/ScrollView;->mHoverScrollDirection:I
+    iget v5, p0, Landroid/widget/ScrollView;->mHoverScrollDirection:I
 
-    if-ne v6, v13, :cond_4
+    const/4 v6, 0x2
 
-    iget v6, p0, Landroid/widget/ScrollView;->mHoverScrollSpeed:I
+    if-ne v5, v6, :cond_4
 
-    mul-int/lit8 v1, v6, -0x1
+    iget v5, p0, Landroid/widget/ScrollView;->mHoverScrollSpeed:I
+
+    mul-int/lit8 v1, v5, -0x1
 
     :goto_2
     if-gez v1, :cond_5
 
-    iget v6, p0, Landroid/widget/ScrollView;->mScrollY:I
+    iget v5, p0, Landroid/widget/ScrollView;->mScrollY:I
 
-    if-lez v6, :cond_5
+    if-lez v5, :cond_5
 
     invoke-direct {p0, v1}, Landroid/widget/ScrollView;->flingWithoutAcc(I)V
 
-    iget-object v6, p0, Landroid/widget/ScrollView;->mHoverHandler:Landroid/widget/ScrollView$HoverScrollHandler;
+    iget-object v5, p0, Landroid/widget/ScrollView;->mHoverHandler:Landroid/widget/ScrollView$HoverScrollHandler;
 
-    iget v7, p0, Landroid/widget/ScrollView;->HOVERSCROLL_DELAY:I
+    iget v6, p0, Landroid/widget/ScrollView;->HOVERSCROLL_DELAY:I
 
-    int-to-long v8, v7
+    int-to-long v6, v6
 
-    invoke-virtual {v6, v5, v8, v9}, Landroid/widget/ScrollView$HoverScrollHandler;->sendEmptyMessageDelayed(IJ)Z
+    const/4 v8, 0x1
+
+    invoke-virtual {v5, v8, v6, v7}, Landroid/widget/ScrollView$HoverScrollHandler;->sendEmptyMessageDelayed(IJ)Z
 
     goto :goto_0
 
@@ -1201,33 +1199,33 @@
 
     const-wide/16 v8, 0x4
 
-    cmp-long v6, v6, v8
+    cmp-long v5, v6, v8
 
-    if-ltz v6, :cond_3
+    if-ltz v5, :cond_3
 
     iget-wide v6, p0, Landroid/widget/ScrollView;->mHoverRecognitionDurationTime:J
 
     const-wide/16 v8, 0x5
 
-    cmp-long v6, v6, v8
+    cmp-long v5, v6, v8
 
-    if-gez v6, :cond_3
+    if-gez v5, :cond_3
+
+    iget v5, p0, Landroid/widget/ScrollView;->mHoverScrollSpeed:I
 
     iget v6, p0, Landroid/widget/ScrollView;->mHoverScrollSpeed:I
 
-    iget v7, p0, Landroid/widget/ScrollView;->mHoverScrollSpeed:I
+    int-to-double v6, v6
 
-    int-to-double v8, v7
+    const-wide v8, 0x3fc999999999999aL    # 0.2
 
-    const-wide v10, 0x3fc999999999999aL    # 0.2
+    mul-double/2addr v6, v8
 
-    mul-double/2addr v8, v10
+    double-to-int v6, v6
 
-    double-to-int v7, v8
+    add-int/2addr v5, v6
 
-    add-int/2addr v6, v7
-
-    iput v6, p0, Landroid/widget/ScrollView;->mHoverScrollSpeed:I
+    iput v5, p0, Landroid/widget/ScrollView;->mHoverScrollSpeed:I
 
     goto :goto_1
 
@@ -1236,51 +1234,53 @@
 
     const-wide/16 v8, 0x5
 
-    cmp-long v6, v6, v8
+    cmp-long v5, v6, v8
 
-    if-ltz v6, :cond_1
+    if-ltz v5, :cond_1
+
+    iget v5, p0, Landroid/widget/ScrollView;->mHoverScrollSpeed:I
 
     iget v6, p0, Landroid/widget/ScrollView;->mHoverScrollSpeed:I
 
-    iget v7, p0, Landroid/widget/ScrollView;->mHoverScrollSpeed:I
+    int-to-double v6, v6
 
-    int-to-double v8, v7
+    const-wide v8, 0x3fd3333333333333L    # 0.3
 
-    const-wide v10, 0x3fd3333333333333L    # 0.3
+    mul-double/2addr v6, v8
 
-    mul-double/2addr v8, v10
+    double-to-int v6, v6
 
-    double-to-int v7, v8
+    add-int/2addr v5, v6
 
-    add-int/2addr v6, v7
-
-    iput v6, p0, Landroid/widget/ScrollView;->mHoverScrollSpeed:I
+    iput v5, p0, Landroid/widget/ScrollView;->mHoverScrollSpeed:I
 
     goto :goto_1
 
     :cond_4
-    iget v6, p0, Landroid/widget/ScrollView;->mHoverScrollSpeed:I
+    iget v5, p0, Landroid/widget/ScrollView;->mHoverScrollSpeed:I
 
-    mul-int/lit8 v1, v6, 0x1
+    mul-int/lit8 v1, v5, 0x1
 
     goto :goto_2
 
     :cond_5
     if-lez v1, :cond_6
 
-    iget v6, p0, Landroid/widget/ScrollView;->mScrollY:I
+    iget v5, p0, Landroid/widget/ScrollView;->mScrollY:I
 
-    if-ge v6, v3, :cond_6
+    if-ge v5, v3, :cond_6
 
     invoke-direct {p0, v1}, Landroid/widget/ScrollView;->flingWithoutAcc(I)V
 
-    iget-object v6, p0, Landroid/widget/ScrollView;->mHoverHandler:Landroid/widget/ScrollView$HoverScrollHandler;
+    iget-object v5, p0, Landroid/widget/ScrollView;->mHoverHandler:Landroid/widget/ScrollView$HoverScrollHandler;
 
-    iget v7, p0, Landroid/widget/ScrollView;->HOVERSCROLL_DELAY:I
+    iget v6, p0, Landroid/widget/ScrollView;->HOVERSCROLL_DELAY:I
 
-    int-to-long v8, v7
+    int-to-long v6, v6
 
-    invoke-virtual {v6, v5, v8, v9}, Landroid/widget/ScrollView$HoverScrollHandler;->sendEmptyMessageDelayed(IJ)Z
+    const/4 v8, 0x1
+
+    invoke-virtual {v5, v8, v6, v7}, Landroid/widget/ScrollView$HoverScrollHandler;->sendEmptyMessageDelayed(IJ)Z
 
     goto/16 :goto_0
 
@@ -1289,154 +1289,180 @@
 
     move-result v2
 
-    if-eqz v2, :cond_9
+    if-eqz v2, :cond_8
 
-    if-ne v2, v5, :cond_7
+    const/4 v5, 0x1
 
-    if-lez v3, :cond_7
+    if-ne v2, v5, :cond_9
 
-    move v0, v5
+    if-lez v3, :cond_9
+
+    const/4 v0, 0x1
+
+    :goto_3
+    if-eqz v0, :cond_7
+
+    iget-boolean v5, p0, Landroid/widget/ScrollView;->mIsHoverOverscrolled:Z
+
+    if-eqz v5, :cond_a
 
     :cond_7
-    :goto_3
-    if-eqz v0, :cond_8
-
-    iget-boolean v6, p0, Landroid/widget/ScrollView;->mIsHoverOverscrolled:Z
-
-    if-eqz v6, :cond_a
-
-    :cond_8
     :goto_4
     if-nez v0, :cond_0
 
-    iget-boolean v6, p0, Landroid/widget/ScrollView;->mIsHoverOverscrolled:Z
+    iget-boolean v5, p0, Landroid/widget/ScrollView;->mIsHoverOverscrolled:Z
 
-    if-nez v6, :cond_0
+    if-nez v5, :cond_0
+
+    const/4 v5, 0x1
 
     iput-boolean v5, p0, Landroid/widget/ScrollView;->mIsHoverOverscrolled:Z
 
     goto/16 :goto_0
 
+    :cond_8
+    const/4 v0, 0x1
+
+    goto :goto_3
+
     :cond_9
-    move v0, v5
+    const/4 v0, 0x0
 
     goto :goto_3
 
     :cond_a
-    iget-object v6, p0, Landroid/widget/ScrollView;->mEdgeGlowTop:Landroid/widget/EdgeEffect;
+    iget-object v5, p0, Landroid/widget/ScrollView;->mEdgeGlowTop:Landroid/widget/EdgeEffect;
 
-    if-eqz v6, :cond_b
+    if-eqz v5, :cond_b
 
-    iget v6, p0, Landroid/widget/ScrollView;->mHoverScrollDirection:I
+    iget v5, p0, Landroid/widget/ScrollView;->mHoverScrollDirection:I
 
-    if-ne v6, v13, :cond_d
+    const/4 v6, 0x2
+
+    if-ne v5, v6, :cond_d
 
     invoke-virtual {p0}, Landroid/widget/ScrollView;->getWidth()I
 
-    move-result v6
+    move-result v5
 
-    iget v7, p0, Landroid/widget/ScrollView;->mPaddingLeft:I
+    iget v6, p0, Landroid/widget/ScrollView;->mPaddingLeft:I
 
-    sub-int/2addr v6, v7
+    sub-int/2addr v5, v6
 
-    iget v7, p0, Landroid/widget/ScrollView;->mPaddingRight:I
+    iget v6, p0, Landroid/widget/ScrollView;->mPaddingRight:I
 
-    sub-int v4, v6, v7
+    sub-int v4, v5, v6
 
-    iget-object v6, p0, Landroid/widget/ScrollView;->mEdgeGlowTop:Landroid/widget/EdgeEffect;
+    iget-object v5, p0, Landroid/widget/ScrollView;->mEdgeGlowTop:Landroid/widget/EdgeEffect;
 
     invoke-virtual {p0}, Landroid/widget/ScrollView;->getHeight()I
 
-    move-result v7
-
-    invoke-virtual {v6, v4, v7}, Landroid/widget/EdgeEffect;->setSize(II)V
-
-    iget-object v6, p0, Landroid/widget/ScrollView;->mEdgeGlowTop:Landroid/widget/EdgeEffect;
-
-    invoke-virtual {v6, v12}, Landroid/widget/EdgeEffect;->onPull(F)V
-
-    iget-object v6, p0, Landroid/widget/ScrollView;->mEdgeGlowBottom:Landroid/widget/EdgeEffect;
-
-    invoke-virtual {v6}, Landroid/widget/EdgeEffect;->isFinished()Z
-
     move-result v6
 
-    if-nez v6, :cond_b
+    invoke-virtual {v5, v4, v6}, Landroid/widget/EdgeEffect;->setSize(II)V
 
-    iget-object v6, p0, Landroid/widget/ScrollView;->mEdgeGlowBottom:Landroid/widget/EdgeEffect;
+    iget-object v5, p0, Landroid/widget/ScrollView;->mEdgeGlowTop:Landroid/widget/EdgeEffect;
 
-    invoke-virtual {v6}, Landroid/widget/EdgeEffect;->onRelease()V
+    const v6, 0x3ecccccd    # 0.4f
+
+    const/high16 v7, 0x3f000000    # 0.5f
+
+    const/4 v8, 0x0
+
+    invoke-virtual {v5, v6, v7, v8}, Landroid/widget/EdgeEffect;->onPullCallOnRelease(FFI)V
+
+    iget-object v5, p0, Landroid/widget/ScrollView;->mEdgeGlowBottom:Landroid/widget/EdgeEffect;
+
+    invoke-virtual {v5}, Landroid/widget/EdgeEffect;->isFinished()Z
+
+    move-result v5
+
+    if-nez v5, :cond_b
+
+    iget-object v5, p0, Landroid/widget/ScrollView;->mEdgeGlowBottom:Landroid/widget/EdgeEffect;
+
+    invoke-virtual {v5}, Landroid/widget/EdgeEffect;->onRelease()V
 
     :cond_b
     :goto_5
-    iget-object v6, p0, Landroid/widget/ScrollView;->mEdgeGlowTop:Landroid/widget/EdgeEffect;
+    iget-object v5, p0, Landroid/widget/ScrollView;->mEdgeGlowTop:Landroid/widget/EdgeEffect;
 
-    if-eqz v6, :cond_c
+    if-eqz v5, :cond_c
 
-    iget-object v6, p0, Landroid/widget/ScrollView;->mEdgeGlowTop:Landroid/widget/EdgeEffect;
+    iget-object v5, p0, Landroid/widget/ScrollView;->mEdgeGlowTop:Landroid/widget/EdgeEffect;
 
-    invoke-virtual {v6}, Landroid/widget/EdgeEffect;->isFinished()Z
+    invoke-virtual {v5}, Landroid/widget/EdgeEffect;->isFinished()Z
 
-    move-result v6
+    move-result v5
 
-    if-eqz v6, :cond_e
+    if-eqz v5, :cond_e
 
-    iget-object v6, p0, Landroid/widget/ScrollView;->mEdgeGlowBottom:Landroid/widget/EdgeEffect;
+    iget-object v5, p0, Landroid/widget/ScrollView;->mEdgeGlowBottom:Landroid/widget/EdgeEffect;
 
-    invoke-virtual {v6}, Landroid/widget/EdgeEffect;->isFinished()Z
+    invoke-virtual {v5}, Landroid/widget/EdgeEffect;->isFinished()Z
 
-    move-result v6
+    move-result v5
 
-    if-eqz v6, :cond_e
+    if-eqz v5, :cond_e
 
     :cond_c
     :goto_6
+    const/4 v5, 0x1
+
     iput-boolean v5, p0, Landroid/widget/ScrollView;->mIsHoverOverscrolled:Z
 
     goto :goto_4
 
     :cond_d
-    iget v6, p0, Landroid/widget/ScrollView;->mHoverScrollDirection:I
+    iget v5, p0, Landroid/widget/ScrollView;->mHoverScrollDirection:I
 
-    if-ne v6, v5, :cond_b
+    const/4 v6, 0x1
+
+    if-ne v5, v6, :cond_b
 
     invoke-virtual {p0}, Landroid/widget/ScrollView;->getWidth()I
 
-    move-result v6
+    move-result v5
 
-    iget v7, p0, Landroid/widget/ScrollView;->mPaddingLeft:I
+    iget v6, p0, Landroid/widget/ScrollView;->mPaddingLeft:I
 
-    sub-int/2addr v6, v7
+    sub-int/2addr v5, v6
 
-    iget v7, p0, Landroid/widget/ScrollView;->mPaddingRight:I
+    iget v6, p0, Landroid/widget/ScrollView;->mPaddingRight:I
 
-    sub-int v4, v6, v7
+    sub-int v4, v5, v6
 
-    iget-object v6, p0, Landroid/widget/ScrollView;->mEdgeGlowBottom:Landroid/widget/EdgeEffect;
+    iget-object v5, p0, Landroid/widget/ScrollView;->mEdgeGlowBottom:Landroid/widget/EdgeEffect;
 
     invoke-virtual {p0}, Landroid/widget/ScrollView;->getHeight()I
 
-    move-result v7
+    move-result v6
 
-    invoke-virtual {v6, v4, v7}, Landroid/widget/EdgeEffect;->setSize(II)V
+    invoke-virtual {v5, v4, v6}, Landroid/widget/EdgeEffect;->setSize(II)V
 
-    iget-object v6, p0, Landroid/widget/ScrollView;->mEdgeGlowBottom:Landroid/widget/EdgeEffect;
+    iget-object v5, p0, Landroid/widget/ScrollView;->mEdgeGlowBottom:Landroid/widget/EdgeEffect;
 
-    invoke-virtual {v6, v12}, Landroid/widget/EdgeEffect;->onPull(F)V
+    const v6, 0x3ecccccd    # 0.4f
+
+    const/high16 v7, 0x3f000000    # 0.5f
+
+    const/4 v8, 0x0
+
+    invoke-virtual {v5, v6, v7, v8}, Landroid/widget/EdgeEffect;->onPullCallOnRelease(FFI)V
 
     invoke-direct {p0}, Landroid/widget/ScrollView;->semShowGoToTop()V
 
-    iget-object v6, p0, Landroid/widget/ScrollView;->mEdgeGlowTop:Landroid/widget/EdgeEffect;
+    iget-object v5, p0, Landroid/widget/ScrollView;->mEdgeGlowTop:Landroid/widget/EdgeEffect;
 
-    invoke-virtual {v6}, Landroid/widget/EdgeEffect;->isFinished()Z
+    invoke-virtual {v5}, Landroid/widget/EdgeEffect;->isFinished()Z
 
-    move-result v6
+    move-result v5
 
-    if-nez v6, :cond_b
+    if-nez v5, :cond_b
 
-    iget-object v6, p0, Landroid/widget/ScrollView;->mEdgeGlowTop:Landroid/widget/EdgeEffect;
+    iget-object v5, p0, Landroid/widget/ScrollView;->mEdgeGlowTop:Landroid/widget/EdgeEffect;
 
-    invoke-virtual {v6}, Landroid/widget/EdgeEffect;->onRelease()V
+    invoke-virtual {v5}, Landroid/widget/EdgeEffect;->onRelease()V
 
     goto :goto_5
 
@@ -1444,8 +1470,6 @@
     invoke-virtual {p0}, Landroid/widget/ScrollView;->invalidate()V
 
     goto :goto_6
-
-    nop
 
     :pswitch_data_0
     .packed-switch 0x1
@@ -4174,7 +4198,9 @@
 
     div-float/2addr v10, v11
 
-    invoke-virtual {v8, v9, v10}, Landroid/widget/EdgeEffect;->onPull(FF)V
+    const/16 v11, 0x96
+
+    invoke-virtual {v8, v9, v10, v11}, Landroid/widget/EdgeEffect;->onPullCallOnRelease(FFI)V
 
     invoke-virtual {p0}, Landroid/widget/ScrollView;->getWidth()I
 
@@ -5569,9 +5595,11 @@
 .end method
 
 .method public onGenericMotionEvent(Landroid/view/MotionEvent;)Z
-    .locals 11
+    .locals 13
 
-    const v10, 0x3ecccccd    # 0.4f
+    const/high16 v12, 0x3f000000    # 0.5f
+
+    const v11, 0x3ecccccd    # 0.4f
 
     const/4 v9, 0x0
 
@@ -5670,29 +5698,29 @@
     :goto_2
     if-eqz v0, :cond_0
 
-    cmpl-float v7, v6, v9
+    cmpl-float v8, v6, v9
 
-    if-lez v7, :cond_8
+    if-lez v8, :cond_8
 
-    iget v7, p0, Landroid/widget/ScrollView;->mScrollY:I
+    iget v8, p0, Landroid/widget/ScrollView;->mScrollY:I
 
-    if-gtz v7, :cond_8
+    if-gtz v8, :cond_8
 
-    iget-object v7, p0, Landroid/widget/ScrollView;->mEdgeGlowTop:Landroid/widget/EdgeEffect;
+    iget-object v8, p0, Landroid/widget/ScrollView;->mEdgeGlowTop:Landroid/widget/EdgeEffect;
 
     invoke-virtual {p0}, Landroid/widget/ScrollView;->getWidth()I
 
-    move-result v8
+    move-result v9
 
     invoke-virtual {p0}, Landroid/widget/ScrollView;->getHeight()I
 
-    move-result v9
+    move-result v10
 
-    invoke-virtual {v7, v8, v9}, Landroid/widget/EdgeEffect;->setSize(II)V
+    invoke-virtual {v8, v9, v10}, Landroid/widget/EdgeEffect;->setSize(II)V
 
-    iget-object v7, p0, Landroid/widget/ScrollView;->mEdgeGlowTop:Landroid/widget/EdgeEffect;
+    iget-object v8, p0, Landroid/widget/ScrollView;->mEdgeGlowTop:Landroid/widget/EdgeEffect;
 
-    invoke-virtual {v7, v10}, Landroid/widget/EdgeEffect;->onPull(F)V
+    invoke-virtual {v8, v11, v12, v7}, Landroid/widget/EdgeEffect;->onPullCallOnRelease(FFI)V
 
     iget-object v7, p0, Landroid/widget/ScrollView;->mEdgeGlowBottom:Landroid/widget/EdgeEffect;
 
@@ -5735,31 +5763,31 @@
     goto :goto_2
 
     :cond_8
-    cmpg-float v7, v6, v9
+    cmpg-float v8, v6, v9
 
-    if-gez v7, :cond_5
+    if-gez v8, :cond_5
 
     invoke-direct {p0}, Landroid/widget/ScrollView;->canScrollDown()Z
 
-    move-result v7
+    move-result v8
 
-    if-nez v7, :cond_5
+    if-nez v8, :cond_5
 
-    iget-object v7, p0, Landroid/widget/ScrollView;->mEdgeGlowBottom:Landroid/widget/EdgeEffect;
+    iget-object v8, p0, Landroid/widget/ScrollView;->mEdgeGlowBottom:Landroid/widget/EdgeEffect;
 
     invoke-virtual {p0}, Landroid/widget/ScrollView;->getWidth()I
 
-    move-result v8
+    move-result v9
 
     invoke-virtual {p0}, Landroid/widget/ScrollView;->getHeight()I
 
-    move-result v9
+    move-result v10
 
-    invoke-virtual {v7, v8, v9}, Landroid/widget/EdgeEffect;->setSize(II)V
+    invoke-virtual {v8, v9, v10}, Landroid/widget/EdgeEffect;->setSize(II)V
 
-    iget-object v7, p0, Landroid/widget/ScrollView;->mEdgeGlowBottom:Landroid/widget/EdgeEffect;
+    iget-object v8, p0, Landroid/widget/ScrollView;->mEdgeGlowBottom:Landroid/widget/EdgeEffect;
 
-    invoke-virtual {v7, v10}, Landroid/widget/EdgeEffect;->onPull(F)V
+    invoke-virtual {v8, v11, v12, v7}, Landroid/widget/EdgeEffect;->onPullCallOnRelease(FFI)V
 
     invoke-direct {p0}, Landroid/widget/ScrollView;->semShowGoToTop()V
 

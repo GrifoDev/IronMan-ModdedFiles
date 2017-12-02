@@ -23,6 +23,8 @@
 
 .field public static final DA_PROFILE_ID_PROPERTY_NAME:Ljava/lang/String; = "sys.dualapp.profile_id"
 
+.field private static final DCM_LIVEUX_PACKAGE_NAME:Ljava/lang/String; = "com.nttdocomo.android.dhome"
+
 .field static final DUAL_APP_WHITELIST_PACKAGES:[Ljava/lang/String;
 
 .field static final DUAL_APP_WHITELIST_PACKAGES_FOR_CHINA:[Ljava/lang/String;
@@ -304,7 +306,7 @@
 
     sput-object v0, Lcom/samsung/android/app/SemDualAppManager;->DUAL_APP_WHITELIST_PACKAGES_FOR_CHINA:[Ljava/lang/String;
 
-    const/16 v0, 0xb
+    const/16 v0, 0xc
 
     new-array v0, v0, [Ljava/lang/String;
 
@@ -361,6 +363,12 @@
     const-string/jumbo v1, "com.yandex.launcher"
 
     const/16 v2, 0xa
+
+    aput-object v1, v0, v2
+
+    const-string/jumbo v1, "com.nttdocomo.android.dhome"
+
+    const/16 v2, 0xb
 
     aput-object v1, v0, v2
 

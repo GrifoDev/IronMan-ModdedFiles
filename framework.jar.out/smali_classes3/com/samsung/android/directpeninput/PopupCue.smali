@@ -1689,10 +1689,6 @@
 
     if-ne v8, v9, :cond_6
 
-    iget v8, v2, Landroid/graphics/Rect;->left:I
-
-    if-nez v8, :cond_6
-
     iget v8, v4, Landroid/graphics/Rect;->top:I
 
     invoke-direct {p0}, Lcom/samsung/android/directpeninput/PopupCue;->getStatusBarHeight()I

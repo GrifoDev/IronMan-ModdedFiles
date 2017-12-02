@@ -263,7 +263,7 @@
 
     iget-object v3, p0, Lcom/samsung/android/multiwindow/IMultiWindowManager$Stub$Proxy;->mRemote:Landroid/os/IBinder;
 
-    const/16 v4, 0x35
+    const/16 v4, 0x36
 
     const/4 v5, 0x0
 
@@ -1374,6 +1374,69 @@
     throw v3
 .end method
 
+.method public isSnapTargetTranslucentNavigationBar()Z
+    .locals 6
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+
+    invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
+
+    move-result-object v0
+
+    invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
+
+    move-result-object v1
+
+    :try_start_0
+    const-string/jumbo v3, "com.samsung.android.multiwindow.IMultiWindowManager"
+
+    invoke-virtual {v0, v3}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
+
+    iget-object v3, p0, Lcom/samsung/android/multiwindow/IMultiWindowManager$Stub$Proxy;->mRemote:Landroid/os/IBinder;
+
+    const/16 v4, 0x34
+
+    const/4 v5, 0x0
+
+    invoke-interface {v3, v4, v0, v1, v5}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
+
+    invoke-virtual {v1}, Landroid/os/Parcel;->readException()V
+
+    invoke-virtual {v1}, Landroid/os/Parcel;->readInt()I
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    move-result v3
+
+    if-eqz v3, :cond_0
+
+    const/4 v2, 0x1
+
+    :goto_0
+    invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
+
+    invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
+
+    return v2
+
+    :cond_0
+    const/4 v2, 0x0
+
+    goto :goto_0
+
+    :catchall_0
+    move-exception v3
+
+    invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
+
+    invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
+
+    throw v3
+.end method
+
 .method public isSnapWindowRunning()Z
     .locals 6
     .annotation system Ldalvik/annotation/Throws;
@@ -1462,7 +1525,7 @@
 
     iget-object v3, p0, Lcom/samsung/android/multiwindow/IMultiWindowManager$Stub$Proxy;->mRemote:Landroid/os/IBinder;
 
-    const/16 v4, 0x34
+    const/16 v4, 0x35
 
     const/4 v5, 0x0
 
@@ -1699,7 +1762,7 @@
 
     iget-object v3, p0, Lcom/samsung/android/multiwindow/IMultiWindowManager$Stub$Proxy;->mRemote:Landroid/os/IBinder;
 
-    const/16 v4, 0x39
+    const/16 v4, 0x3a
 
     const/4 v5, 0x0
 
@@ -1880,7 +1943,7 @@
 
     iget-object v3, p0, Lcom/samsung/android/multiwindow/IMultiWindowManager$Stub$Proxy;->mRemote:Landroid/os/IBinder;
 
-    const/16 v4, 0x37
+    const/16 v4, 0x38
 
     const/4 v5, 0x0
 
@@ -1984,7 +2047,7 @@
 
     iget-object v3, p0, Lcom/samsung/android/multiwindow/IMultiWindowManager$Stub$Proxy;->mRemote:Landroid/os/IBinder;
 
-    const/16 v4, 0x38
+    const/16 v4, 0x39
 
     const/4 v5, 0x0
 
@@ -2307,7 +2370,7 @@
 
     iget-object v3, p0, Lcom/samsung/android/multiwindow/IMultiWindowManager$Stub$Proxy;->mRemote:Landroid/os/IBinder;
 
-    const/16 v4, 0x3b
+    const/16 v4, 0x3c
 
     const/4 v5, 0x0
 
@@ -2437,7 +2500,7 @@
 
     iget-object v3, p0, Lcom/samsung/android/multiwindow/IMultiWindowManager$Stub$Proxy;->mRemote:Landroid/os/IBinder;
 
-    const/16 v4, 0x3a
+    const/16 v4, 0x3b
 
     const/4 v5, 0x0
 
@@ -2644,7 +2707,7 @@
 
     iget-object v2, p0, Lcom/samsung/android/multiwindow/IMultiWindowManager$Stub$Proxy;->mRemote:Landroid/os/IBinder;
 
-    const/16 v3, 0x3c
+    const/16 v3, 0x3d
 
     const/4 v4, 0x0
 
@@ -3476,7 +3539,7 @@
 
     iget-object v3, p0, Lcom/samsung/android/multiwindow/IMultiWindowManager$Stub$Proxy;->mRemote:Landroid/os/IBinder;
 
-    const/16 v4, 0x36
+    const/16 v4, 0x37
 
     const/4 v5, 0x0
 

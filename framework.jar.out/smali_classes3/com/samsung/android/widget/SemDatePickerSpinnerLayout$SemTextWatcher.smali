@@ -1427,13 +1427,13 @@
 
     move-result v14
 
-    if-ge v14, v5, :cond_1c
+    if-ge v14, v5, :cond_1d
 
     move-object/from16 v0, p0
 
     iget v14, v0, Lcom/samsung/android/widget/SemDatePickerSpinnerLayout$SemTextWatcher;->mMaxLen:I
 
-    if-ne v5, v14, :cond_1c
+    if-ne v5, v14, :cond_1d
 
     if-lt v11, v13, :cond_17
 
@@ -1465,7 +1465,7 @@
 
     move-result v14
 
-    if-eqz v14, :cond_1a
+    if-eqz v14, :cond_1b
 
     move-object/from16 v0, p0
 
@@ -1482,6 +1482,8 @@
     add-int/lit8 v6, v14, -0x1
 
     :goto_3
+    if-ne v11, v12, :cond_19
+
     move-object/from16 v0, p0
 
     iget-object v14, v0, Lcom/samsung/android/widget/SemDatePickerSpinnerLayout$SemTextWatcher;->this$0:Lcom/samsung/android/widget/SemDatePickerSpinnerLayout;
@@ -1492,6 +1494,7 @@
 
     invoke-virtual {v14}, Ljava/util/Calendar;->clear()V
 
+    :cond_19
     move-object/from16 v0, p0
 
     iget-object v14, v0, Lcom/samsung/android/widget/SemDatePickerSpinnerLayout$SemTextWatcher;->this$0:Lcom/samsung/android/widget/SemDatePickerSpinnerLayout;
@@ -1534,7 +1537,7 @@
 
     move-result v14
 
-    if-nez v14, :cond_19
+    if-nez v14, :cond_1a
 
     move-object/from16 v0, p0
 
@@ -1556,9 +1559,9 @@
 
     move-result v14
 
-    if-eqz v14, :cond_1b
+    if-eqz v14, :cond_1c
 
-    :cond_19
+    :cond_1a
     const/4 v14, 0x0
 
     const/4 v15, 0x3
@@ -1575,7 +1578,7 @@
 
     return-void
 
-    :cond_1a
+    :cond_1b
     move-object/from16 v0, p0
 
     iget-object v14, v0, Lcom/samsung/android/widget/SemDatePickerSpinnerLayout$SemTextWatcher;->this$0:Lcom/samsung/android/widget/SemDatePickerSpinnerLayout;
@@ -1590,12 +1593,12 @@
 
     goto :goto_3
 
-    :cond_1b
+    :cond_1c
     invoke-direct/range {p0 .. p0}, Lcom/samsung/android/widget/SemDatePickerSpinnerLayout$SemTextWatcher;->changeFocus()V
 
     goto/16 :goto_1
 
-    :cond_1c
+    :cond_1d
     const-wide/high16 v14, 0x4024000000000000L    # 10.0
 
     add-int/lit8 v16, v5, -0x1
@@ -1620,7 +1623,7 @@
 
     const/4 v14, 0x1
 
-    if-eq v5, v14, :cond_1d
+    if-eq v5, v14, :cond_1e
 
     add-int/lit8 v14, v5, -0x1
 
@@ -1630,16 +1633,16 @@
 
     move-result-object v8
 
-    :cond_1d
+    :cond_1e
     div-int v14, v13, v4
 
-    if-lt v11, v14, :cond_1e
+    if-lt v11, v14, :cond_1f
 
     div-int v14, v12, v4
 
     if-le v11, v14, :cond_5
 
-    :cond_1e
+    :cond_1f
     add-int/lit8 v14, v5, -0x1
 
     move-object/from16 v0, p0

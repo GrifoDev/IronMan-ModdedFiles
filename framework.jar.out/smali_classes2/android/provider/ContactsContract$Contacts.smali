@@ -65,12 +65,20 @@
 
 .field public static final ENTERPRISE_CONTENT_FILTER_URI:Landroid/net/Uri;
 
+.field public static final KNOX_CONTACT_ID_BASE:J
+
+.field public static final KNOX_CONTACT_ID_OFFSET:J = 0x1dcd6500L
+
 .field public static final QUERY_PARAMETER_VCARD_NO_PHOTO:Ljava/lang/String; = "no_photo"
+
+.field public static final SECURE_FOLDER_CONTACT_ID_BASE:J
+
+.field public static final SECURE_FOLDER_CONTACT_ID_OFFSET:J = 0x29b92700L
 
 
 # direct methods
 .method static constructor <clinit>()V
-    .locals 2
+    .locals 4
 
     sget-object v0, Landroid/provider/ContactsContract;->AUTHORITY_URI:Landroid/net/Uri;
 
@@ -185,6 +193,22 @@
     const-wide/32 v0, 0x3b9aca00
 
     sput-wide v0, Landroid/provider/ContactsContract$Contacts;->ENTERPRISE_CONTACT_ID_BASE:J
+
+    sget-wide v0, Landroid/provider/ContactsContract$Contacts;->ENTERPRISE_CONTACT_ID_BASE:J
+
+    const-wide/32 v2, 0x1dcd6500
+
+    add-long/2addr v0, v2
+
+    sput-wide v0, Landroid/provider/ContactsContract$Contacts;->KNOX_CONTACT_ID_BASE:J
+
+    sget-wide v0, Landroid/provider/ContactsContract$Contacts;->ENTERPRISE_CONTACT_ID_BASE:J
+
+    const-wide/32 v2, 0x29b92700
+
+    add-long/2addr v0, v2
+
+    sput-wide v0, Landroid/provider/ContactsContract$Contacts;->SECURE_FOLDER_CONTACT_ID_BASE:J
 
     const-string/jumbo v0, "c-"
 
@@ -314,6 +338,52 @@
     const/4 v0, 0x0
 
     sget-wide v2, Landroid/provider/ContactsContract$Contacts;->ENTERPRISE_CONTACT_ID_BASE:J
+
+    cmp-long v1, p0, v2
+
+    if-ltz v1, :cond_0
+
+    const-wide v2, 0x7fffffff80000000L
+
+    cmp-long v1, p0, v2
+
+    if-gez v1, :cond_0
+
+    const/4 v0, 0x1
+
+    :cond_0
+    return v0
+.end method
+
+.method public static isKnoxContactId(J)Z
+    .locals 4
+
+    const/4 v0, 0x0
+
+    sget-wide v2, Landroid/provider/ContactsContract$Contacts;->KNOX_CONTACT_ID_BASE:J
+
+    cmp-long v1, p0, v2
+
+    if-ltz v1, :cond_0
+
+    sget-wide v2, Landroid/provider/ContactsContract$Contacts;->SECURE_FOLDER_CONTACT_ID_BASE:J
+
+    cmp-long v1, p0, v2
+
+    if-gez v1, :cond_0
+
+    const/4 v0, 0x1
+
+    :cond_0
+    return v0
+.end method
+
+.method public static isSecureFolderContactId(J)Z
+    .locals 4
+
+    const/4 v0, 0x0
+
+    sget-wide v2, Landroid/provider/ContactsContract$Contacts;->SECURE_FOLDER_CONTACT_ID_BASE:J
 
     cmp-long v1, p0, v2
 
