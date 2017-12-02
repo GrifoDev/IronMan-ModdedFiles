@@ -4,14 +4,8 @@ Created-By: 1.0 (Android SignApk)
 Name: assets/databases/SysScope.db
 SHA1-Digest: S5o5SoAZTadHpJTGUbQfDgE9cBs=
 
-Name: lib/arm64-v8a/libcordon.so
-SHA1-Digest: sOUTdZnnyKqQZV+aHM+O1/j41QU=
-
-Name: lib/armeabi/libcordon.so
-SHA1-Digest: WTF2gNcM0/r3otaYgdiC/BiP65c=
-
 Name: AndroidManifest.xml
-SHA1-Digest: xLNuunwSApIYSbJeSaCAI9VmVec=
+SHA1-Digest: 0kT6kS7iAOhZ2mVoduesyybWtqM=
 
 Name: SEC-INF/buildConfirm.crt
 SHA1-Digest: rzhOt9eAouxefH7GQUAHHm1HIuI=
@@ -26,7 +20,7 @@ Name: res/layout/main.xml
 SHA1-Digest: zCuxTVmY206HEsIqrqTFIdUuQ3w=
 
 Name: SEC-INF/buildinfo.xml
-SHA1-Digest: bfoAGl7fJZ6qTILtbYX8zAyeYfI=
+SHA1-Digest: /Mn5H8bJ8hHYp+hMvAgDN452YUY=
 
 Name: resources.arsc
 SHA1-Digest: sEPkytDeUsbyvDb0bSn7qSjW0OY=

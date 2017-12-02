@@ -1,19 +1,13 @@
 Signature-Version: 1.0
 X-Android-APK-Signed: 2
-SHA1-Digest-Manifest: eRGqCV5dhJ3Y+Q7+BWu5+WzqsmA=
+SHA1-Digest-Manifest: uDZRW8SmY+S1s+4MbtAK6JSWhws=
 Created-By: 1.0 (Android SignApk)
 
 Name: assets/databases/SysScope.db
 SHA1-Digest: nBxjYdDmcaH6hVvn6D+cXcV7EU0=
 
-Name: lib/arm64-v8a/libcordon.so
-SHA1-Digest: IBTqh3f9ZmqxhECzIHtv0DsG1wM=
-
-Name: lib/armeabi/libcordon.so
-SHA1-Digest: i4drKRHRbKlYM5HL/objEQS6/qY=
-
 Name: AndroidManifest.xml
-SHA1-Digest: b3I/A01c5gkTwPyJrg4W2Fm1BsE=
+SHA1-Digest: NoLCg/ZwMJbo7wKFonBCj+cZbbI=
 
 Name: SEC-INF/buildConfirm.crt
 SHA1-Digest: ir36zvd3F1FnMg/xKS909hQVlS8=
@@ -28,7 +22,7 @@ Name: res/layout/main.xml
 SHA1-Digest: cpXDlaH2c29Au0ol5WGr75dVuTE=
 
 Name: SEC-INF/buildinfo.xml
-SHA1-Digest: 2IT0d/bfV3C+75++KzZn63YIjR8=
+SHA1-Digest: paIaG6VGcE/R+HRL1qMY/yMr5f0=
 
 Name: resources.arsc
 SHA1-Digest: /N5xoyL0VrE2pjrmVUMzzgIiWJs=
