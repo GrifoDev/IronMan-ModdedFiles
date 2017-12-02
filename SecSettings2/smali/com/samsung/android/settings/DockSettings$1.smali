@@ -48,7 +48,7 @@
 
     iget-object v1, p0, Lcom/samsung/android/settings/DockSettings$1;->this$0:Lcom/samsung/android/settings/DockSettings;
 
-    invoke-static {v1, p2}, Lcom/samsung/android/settings/DockSettings;->-wrap1(Lcom/samsung/android/settings/DockSettings;Landroid/content/Intent;)V
+    invoke-static {v1, p2}, Lcom/samsung/android/settings/DockSettings;->-wrap2(Lcom/samsung/android/settings/DockSettings;Landroid/content/Intent;)V
 
     :cond_0
     return-void

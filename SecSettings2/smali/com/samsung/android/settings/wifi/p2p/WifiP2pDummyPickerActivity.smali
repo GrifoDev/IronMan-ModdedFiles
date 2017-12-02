@@ -116,7 +116,7 @@
 
     const/4 v8, -0x1
 
-    const v6, 0x7f110970
+    const v6, 0x7f110973
 
     invoke-virtual {p0, v6}, Lcom/samsung/android/settings/wifi/p2p/WifiP2pDummyPickerActivity;->findViewById(I)Landroid/view/View;
 
@@ -126,7 +126,7 @@
 
     iput-object v6, p0, Lcom/samsung/android/settings/wifi/p2p/WifiP2pDummyPickerActivity;->blankLayout:Landroid/widget/LinearLayout;
 
-    const v6, 0x7f110971
+    const v6, 0x7f110974
 
     invoke-virtual {p0, v6}, Lcom/samsung/android/settings/wifi/p2p/WifiP2pDummyPickerActivity;->findViewById(I)Landroid/view/View;
 
@@ -136,7 +136,7 @@
 
     iput-object v6, p0, Lcom/samsung/android/settings/wifi/p2p/WifiP2pDummyPickerActivity;->left:Landroid/widget/RelativeLayout;
 
-    const v6, 0x7f110974
+    const v6, 0x7f110977
 
     invoke-virtual {p0, v6}, Lcom/samsung/android/settings/wifi/p2p/WifiP2pDummyPickerActivity;->findViewById(I)Landroid/view/View;
 
@@ -146,7 +146,7 @@
 
     iput-object v6, p0, Lcom/samsung/android/settings/wifi/p2p/WifiP2pDummyPickerActivity;->right:Landroid/widget/RelativeLayout;
 
-    const v6, 0x7f110972
+    const v6, 0x7f110975
 
     invoke-virtual {p0, v6}, Lcom/samsung/android/settings/wifi/p2p/WifiP2pDummyPickerActivity;->findViewById(I)Landroid/view/View;
 
@@ -206,7 +206,7 @@
 
     move-result-object v7
 
-    const v8, 0x7f020621
+    const v8, 0x7f020623
 
     invoke-virtual {v7, v8}, Landroid/content/res/Resources;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 
@@ -220,7 +220,7 @@
 
     move-result-object v7
 
-    const v8, 0x7f020623
+    const v8, 0x7f020625
 
     invoke-virtual {v7, v8}, Landroid/content/res/Resources;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 
@@ -269,7 +269,7 @@
 
     move-result-object v7
 
-    const v8, 0x7f020620
+    const v8, 0x7f020622
 
     invoke-virtual {v7, v8}, Landroid/content/res/Resources;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 
@@ -283,7 +283,7 @@
 
     move-result-object v7
 
-    const v8, 0x7f020622
+    const v8, 0x7f020624
 
     invoke-virtual {v7, v8}, Landroid/content/res/Resources;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 
@@ -421,7 +421,7 @@
 
     invoke-super {p0, p1}, Landroid/app/Activity;->onCreate(Landroid/os/Bundle;)V
 
-    const v1, 0x7f0403c1
+    const v1, 0x7f0403c4
 
     invoke-virtual {p0, v1}, Lcom/samsung/android/settings/wifi/p2p/WifiP2pDummyPickerActivity;->setContentView(I)V
 

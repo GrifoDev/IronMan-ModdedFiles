@@ -766,7 +766,7 @@
 
     move-result-object v12
 
-    invoke-static {p0, v12}, Lcom/android/settings/vpn2/VpnSettings;->isSecureWifiSignature(Landroid/content/Context;Ljava/lang/String;)Z
+    invoke-static {p0, v12}, Lcom/android/settings/vpn2/VpnSettings;->isSecureWifiPackage(Landroid/content/Context;Ljava/lang/String;)Z
 
     move-result v12
 
@@ -790,14 +790,14 @@
     return-object v10
 .end method
 
-.method private static isSecureWifiSignature(Landroid/content/Context;Ljava/lang/String;)Z
+.method private static isSecureWifiPackage(Landroid/content/Context;Ljava/lang/String;)Z
     .locals 4
 
     const/4 v3, 0x0
 
     const-string/jumbo v1, "com.samsung.android.fast"
 
-    invoke-virtual {p1, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v1, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v1
 
@@ -824,7 +824,7 @@
     :cond_0
     const-string/jumbo v1, "VpnSettings"
 
-    const-string/jumbo v2, "Secure Wi-Fi packagename is same but signature is not matched!"
+    const-string/jumbo v2, "Secure Wi-Fi signature mismatched"
 
     invoke-static {v1, v2}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
@@ -1063,7 +1063,7 @@
 .method protected getHelpResource()I
     .locals 1
 
-    const v0, 0x7f0b1bba
+    const v0, 0x7f0b1bcc
 
     return v0
 .end method
@@ -1199,7 +1199,7 @@
     :goto_0
     invoke-virtual {p0, v0}, Lcom/android/settings/vpn2/VpnSettings;->setHasOptionsMenu(Z)V
 
-    const v0, 0x7f08014b
+    const v0, 0x7f08014d
 
     invoke-virtual {p0, v0}, Lcom/android/settings/vpn2/VpnSettings;->addPreferencesFromResource(I)V
 
@@ -1321,7 +1321,7 @@
     return v7
 
     :pswitch_data_0
-    .packed-switch 0x7f110a24
+    .packed-switch 0x7f110a27
         :pswitch_0
     .end packed-switch
 .end method
@@ -1674,7 +1674,7 @@
 
     move-result v3
 
-    const v4, 0x7f110a24
+    const v4, 0x7f110a27
 
     if-ne v3, v4, :cond_1
 
@@ -1781,7 +1781,7 @@
 
     move-result-object v2
 
-    const v3, 0x7f0b1b31
+    const v3, 0x7f0b1b43
 
     invoke-virtual {v2, v3}, Landroid/widget/TextView;->setText(I)V
 

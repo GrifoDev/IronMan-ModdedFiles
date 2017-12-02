@@ -618,7 +618,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f02067f
+    const v2, 0x7f020681
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 
@@ -638,7 +638,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f020681
+    const v2, 0x7f020683
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 
@@ -657,7 +657,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f0204ba
+    const v2, 0x7f0204bc
 
     invoke-virtual {v1, v2, v3}, Landroid/content/res/Resources;->getDrawable(ILandroid/content/res/Resources$Theme;)Landroid/graphics/drawable/Drawable;
 
@@ -675,7 +675,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f02067d
+    const v2, 0x7f02067f
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 
@@ -1386,7 +1386,7 @@
 
     invoke-direct {v0, p0}, Landroid/widget/FrameLayout;-><init>(Landroid/content/Context;)V
 
-    const v2, 0x7f11098e
+    const v2, 0x7f110991
 
     invoke-virtual {v0, v2}, Landroid/widget/FrameLayout;->setId(I)V
 
@@ -2110,7 +2110,7 @@
 
     const/4 v3, 0x1
 
-    const v0, 0x7f110763
+    const v0, 0x7f110765
 
     invoke-virtual {p0, v0}, Lcom/samsung/android/settings/wifi/WifiSecSetupActivity;->findViewById(I)Landroid/view/View;
 
@@ -2156,7 +2156,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f0b08e7
+    const v2, 0x7f0b08f2
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -2182,7 +2182,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f0204b8
+    const v2, 0x7f0204ba
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 
@@ -2753,11 +2753,11 @@
 .method private updateLayoutComponent(Landroid/content/res/Configuration;)V
     .locals 15
 
-    const v11, 0x7f0403cd
+    const v11, 0x7f0403d0
 
     invoke-virtual {p0, v11}, Lcom/samsung/android/settings/wifi/WifiSecSetupActivity;->setContentView(I)V
 
-    const v11, 0x7f11097c
+    const v11, 0x7f11097f
 
     invoke-virtual {p0, v11}, Lcom/samsung/android/settings/wifi/WifiSecSetupActivity;->findViewById(I)Landroid/view/View;
 
@@ -2765,7 +2765,7 @@
 
     iput-object v11, p0, Lcom/samsung/android/settings/wifi/WifiSecSetupActivity;->mView:Landroid/view/View;
 
-    const v11, 0x7f11097e
+    const v11, 0x7f110981
 
     invoke-virtual {p0, v11}, Lcom/samsung/android/settings/wifi/WifiSecSetupActivity;->findViewById(I)Landroid/view/View;
 
@@ -2775,7 +2775,7 @@
 
     iput-object v11, p0, Lcom/samsung/android/settings/wifi/WifiSecSetupActivity;->mSmallHeaderLayout:Landroid/widget/LinearLayout;
 
-    const v11, 0x7f110982
+    const v11, 0x7f110985
 
     invoke-virtual {p0, v11}, Lcom/samsung/android/settings/wifi/WifiSecSetupActivity;->findViewById(I)Landroid/view/View;
 
@@ -2797,7 +2797,7 @@
 
     invoke-virtual {v11, v12}, Landroid/widget/LinearLayout;->setVisibility(I)V
 
-    const v11, 0x7f110983
+    const v11, 0x7f110986
 
     invoke-virtual {p0, v11}, Lcom/samsung/android/settings/wifi/WifiSecSetupActivity;->findViewById(I)Landroid/view/View;
 
@@ -2807,7 +2807,7 @@
 
     iput-object v11, p0, Lcom/samsung/android/settings/wifi/WifiSecSetupActivity;->mWifiDevice:Landroid/widget/ImageView;
 
-    const v11, 0x7f11080c
+    const v11, 0x7f11080e
 
     invoke-virtual {p0, v11}, Lcom/samsung/android/settings/wifi/WifiSecSetupActivity;->findViewById(I)Landroid/view/View;
 
@@ -2817,7 +2817,7 @@
 
     iput-object v11, p0, Lcom/samsung/android/settings/wifi/WifiSecSetupActivity;->mTitleView:Landroid/widget/TextView;
 
-    const v11, 0x7f11095f
+    const v11, 0x7f110962
 
     invoke-virtual {p0, v11}, Lcom/samsung/android/settings/wifi/WifiSecSetupActivity;->findViewById(I)Landroid/view/View;
 
@@ -2866,7 +2866,7 @@
 
     if-nez v11, :cond_0
 
-    const v11, 0x7f11097d
+    const v11, 0x7f110980
 
     invoke-virtual {p0, v11}, Lcom/samsung/android/settings/wifi/WifiSecSetupActivity;->findViewById(I)Landroid/view/View;
 
@@ -2894,7 +2894,7 @@
 
     invoke-virtual {v10, v2}, Landroid/widget/FrameLayout;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
 
-    const v11, 0x7f110989
+    const v11, 0x7f11098c
 
     invoke-virtual {p0, v11}, Lcom/samsung/android/settings/wifi/WifiSecSetupActivity;->findViewById(I)Landroid/view/View;
 
@@ -2926,7 +2926,7 @@
 
     :cond_0
     :goto_1
-    const v11, 0x7f11098c
+    const v11, 0x7f11098f
 
     invoke-virtual {p0, v11}, Lcom/samsung/android/settings/wifi/WifiSecSetupActivity;->findViewById(I)Landroid/view/View;
 
@@ -2943,7 +2943,7 @@
     :goto_2
     invoke-virtual {v8, v11}, Landroid/view/View;->setVisibility(I)V
 
-    const v11, 0x7f11072e
+    const v11, 0x7f110730
 
     invoke-virtual {p0, v11}, Lcom/samsung/android/settings/wifi/WifiSecSetupActivity;->findViewById(I)Landroid/view/View;
 
@@ -2990,7 +2990,7 @@
 
     if-nez v11, :cond_2
 
-    const v11, 0x7f110984
+    const v11, 0x7f110987
 
     invoke-virtual {p0, v11}, Lcom/samsung/android/settings/wifi/WifiSecSetupActivity;->findViewById(I)Landroid/view/View;
 
@@ -3008,43 +3008,43 @@
 
     iget-object v12, p0, Lcom/samsung/android/settings/wifi/WifiSecSetupActivity;->mEffectImageList:Ljava/util/ArrayList;
 
-    const v11, 0x7f110985
-
-    invoke-virtual {p0, v11}, Lcom/samsung/android/settings/wifi/WifiSecSetupActivity;->findViewById(I)Landroid/view/View;
-
-    move-result-object v11
-
-    check-cast v11, Landroid/widget/ImageView;
-
-    invoke-virtual {v12, v11}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
-
-    iget-object v12, p0, Lcom/samsung/android/settings/wifi/WifiSecSetupActivity;->mEffectImageList:Ljava/util/ArrayList;
-
-    const v11, 0x7f110986
-
-    invoke-virtual {p0, v11}, Lcom/samsung/android/settings/wifi/WifiSecSetupActivity;->findViewById(I)Landroid/view/View;
-
-    move-result-object v11
-
-    check-cast v11, Landroid/widget/ImageView;
-
-    invoke-virtual {v12, v11}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
-
-    iget-object v12, p0, Lcom/samsung/android/settings/wifi/WifiSecSetupActivity;->mEffectImageList:Ljava/util/ArrayList;
-
-    const v11, 0x7f110987
-
-    invoke-virtual {p0, v11}, Lcom/samsung/android/settings/wifi/WifiSecSetupActivity;->findViewById(I)Landroid/view/View;
-
-    move-result-object v11
-
-    check-cast v11, Landroid/widget/ImageView;
-
-    invoke-virtual {v12, v11}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
-
-    iget-object v12, p0, Lcom/samsung/android/settings/wifi/WifiSecSetupActivity;->mEffectImageList:Ljava/util/ArrayList;
-
     const v11, 0x7f110988
+
+    invoke-virtual {p0, v11}, Lcom/samsung/android/settings/wifi/WifiSecSetupActivity;->findViewById(I)Landroid/view/View;
+
+    move-result-object v11
+
+    check-cast v11, Landroid/widget/ImageView;
+
+    invoke-virtual {v12, v11}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+
+    iget-object v12, p0, Lcom/samsung/android/settings/wifi/WifiSecSetupActivity;->mEffectImageList:Ljava/util/ArrayList;
+
+    const v11, 0x7f110989
+
+    invoke-virtual {p0, v11}, Lcom/samsung/android/settings/wifi/WifiSecSetupActivity;->findViewById(I)Landroid/view/View;
+
+    move-result-object v11
+
+    check-cast v11, Landroid/widget/ImageView;
+
+    invoke-virtual {v12, v11}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+
+    iget-object v12, p0, Lcom/samsung/android/settings/wifi/WifiSecSetupActivity;->mEffectImageList:Ljava/util/ArrayList;
+
+    const v11, 0x7f11098a
+
+    invoke-virtual {p0, v11}, Lcom/samsung/android/settings/wifi/WifiSecSetupActivity;->findViewById(I)Landroid/view/View;
+
+    move-result-object v11
+
+    check-cast v11, Landroid/widget/ImageView;
+
+    invoke-virtual {v12, v11}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+
+    iget-object v12, p0, Lcom/samsung/android/settings/wifi/WifiSecSetupActivity;->mEffectImageList:Ljava/util/ArrayList;
+
+    const v11, 0x7f11098b
 
     invoke-virtual {p0, v11}, Lcom/samsung/android/settings/wifi/WifiSecSetupActivity;->findViewById(I)Landroid/view/View;
 
@@ -3067,7 +3067,7 @@
 
     iput-object v11, p0, Lcom/samsung/android/settings/wifi/WifiSecSetupActivity;->mBottomButtonArea:Landroid/widget/RelativeLayout;
 
-    const v11, 0x7f11098f
+    const v11, 0x7f110992
 
     invoke-virtual {p0, v11}, Lcom/samsung/android/settings/wifi/WifiSecSetupActivity;->findViewById(I)Landroid/view/View;
 
@@ -3086,7 +3086,7 @@
     invoke-virtual {v11, p0}, Landroid/widget/LinearLayout;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
     :cond_3
-    const v11, 0x7f110990
+    const v11, 0x7f110993
 
     invoke-virtual {p0, v11}, Lcom/samsung/android/settings/wifi/WifiSecSetupActivity;->findViewById(I)Landroid/view/View;
 
@@ -3096,7 +3096,7 @@
 
     iput-object v11, p0, Lcom/samsung/android/settings/wifi/WifiSecSetupActivity;->previousButtonImage:Landroid/widget/ImageView;
 
-    const v11, 0x7f110991
+    const v11, 0x7f110994
 
     invoke-virtual {p0, v11}, Lcom/samsung/android/settings/wifi/WifiSecSetupActivity;->findViewById(I)Landroid/view/View;
 
@@ -3112,7 +3112,7 @@
 
     move-result-object v12
 
-    const v13, 0x7f0b0f09
+    const v13, 0x7f0b0f18
 
     invoke-virtual {v12, v13}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -3124,7 +3124,7 @@
 
     invoke-virtual {v11, v12}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    const v11, 0x7f110992
+    const v11, 0x7f110995
 
     invoke-virtual {p0, v11}, Lcom/samsung/android/settings/wifi/WifiSecSetupActivity;->findViewById(I)Landroid/view/View;
 
@@ -3138,7 +3138,7 @@
 
     invoke-virtual {v11, p0}, Landroid/widget/LinearLayout;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    const v11, 0x7f110993
+    const v11, 0x7f110996
 
     invoke-virtual {p0, v11}, Lcom/samsung/android/settings/wifi/WifiSecSetupActivity;->findViewById(I)Landroid/view/View;
 
@@ -3156,7 +3156,7 @@
 
     move-result-object v12
 
-    const v13, 0x7f0b051c
+    const v13, 0x7f0b051d
 
     invoke-virtual {v12, v13}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -3200,7 +3200,7 @@
 
     move-result-object v12
 
-    const v13, 0x7f0b051c
+    const v13, 0x7f0b051d
 
     invoke-virtual {v12, v13}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -3217,7 +3217,7 @@
     invoke-virtual {v11, v6}, Landroid/widget/TextView;->setContentDescription(Ljava/lang/CharSequence;)V
 
     :cond_4
-    const v11, 0x7f1103f4
+    const v11, 0x7f1103f6
 
     invoke-virtual {p0, v11}, Lcom/samsung/android/settings/wifi/WifiSecSetupActivity;->findViewById(I)Landroid/view/View;
 
@@ -3268,7 +3268,7 @@
 
     move-result-object v12
 
-    const v13, 0x7f0b0f09
+    const v13, 0x7f0b0f18
 
     invoke-virtual {v12, v13}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -3325,7 +3325,7 @@
 
     invoke-virtual {v11, v12}, Landroid/widget/TextView;->setSelected(Z)V
 
-    const v11, 0x7f11072e
+    const v11, 0x7f110730
 
     invoke-virtual {p0, v11}, Lcom/samsung/android/settings/wifi/WifiSecSetupActivity;->findViewById(I)Landroid/view/View;
 
@@ -3335,7 +3335,7 @@
 
     iput-object v11, p0, Lcom/samsung/android/settings/wifi/WifiSecSetupActivity;->mSwitchBarView:Landroid/view/View;
 
-    const v11, 0x7f11098d
+    const v11, 0x7f110990
 
     invoke-virtual {p0, v11}, Lcom/samsung/android/settings/wifi/WifiSecSetupActivity;->findViewById(I)Landroid/view/View;
 
@@ -3382,7 +3382,7 @@
 
     move-result-object v12
 
-    const v13, 0x7f020527
+    const v13, 0x7f020529
 
     invoke-virtual {v12, v13}, Landroid/content/res/Resources;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 
@@ -3509,7 +3509,7 @@
 
     invoke-virtual {v11, v12}, Landroid/widget/RelativeLayout;->setVisibility(I)V
 
-    const v11, 0x7f11098a
+    const v11, 0x7f11098d
 
     invoke-virtual {p0, v11}, Lcom/samsung/android/settings/wifi/WifiSecSetupActivity;->findViewById(I)Landroid/view/View;
 
@@ -3521,7 +3521,7 @@
 
     invoke-virtual {v9, v11}, Landroid/widget/LinearLayout;->setVisibility(I)V
 
-    const v11, 0x7f11097f
+    const v11, 0x7f110982
 
     invoke-virtual {p0, v11}, Lcom/samsung/android/settings/wifi/WifiSecSetupActivity;->findViewById(I)Landroid/view/View;
 
@@ -3531,7 +3531,7 @@
 
     iput-object v11, p0, Lcom/samsung/android/settings/wifi/WifiSecSetupActivity;->mWifiDevice:Landroid/widget/ImageView;
 
-    const v11, 0x7f110980
+    const v11, 0x7f110983
 
     invoke-virtual {p0, v11}, Lcom/samsung/android/settings/wifi/WifiSecSetupActivity;->findViewById(I)Landroid/view/View;
 
@@ -3541,7 +3541,7 @@
 
     iput-object v11, p0, Lcom/samsung/android/settings/wifi/WifiSecSetupActivity;->mTitleView:Landroid/widget/TextView;
 
-    const v11, 0x7f110981
+    const v11, 0x7f110984
 
     invoke-virtual {p0, v11}, Lcom/samsung/android/settings/wifi/WifiSecSetupActivity;->findViewById(I)Landroid/view/View;
 
@@ -3836,7 +3836,7 @@
 
     const/4 v3, 0x0
 
-    const v5, 0x7f0b1534
+    const v5, 0x7f0b1545
 
     move-object v0, p0
 
@@ -3972,9 +3972,9 @@
 
     invoke-static {v2, v3}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    const v1, 0x7f0b158b
+    const v1, 0x7f0b159d
 
-    const v2, 0x7f0b158b
+    const v2, 0x7f0b159d
 
     invoke-static {v2}, Lcom/samsung/android/settings/wifi/WifiSecSetupActivity$WifiSkipDialog;->newInstance(I)Lcom/samsung/android/settings/wifi/WifiSecSetupActivity$WifiSkipDialog;
 
@@ -4024,7 +4024,7 @@
     goto/16 :goto_0
 
     :pswitch_data_0
-    .packed-switch 0x7f11098f
+    .packed-switch 0x7f110992
         :pswitch_1
         :pswitch_0
         :pswitch_0
@@ -4409,9 +4409,9 @@
     goto/16 :goto_1
 
     :cond_9
-    const v2, 0x7f0b0ef5
+    const v2, 0x7f0b0f04
 
-    const v3, 0x7f0b0ef5
+    const v3, 0x7f0b0f04
 
     invoke-static {v3}, Lcom/samsung/android/settings/wifi/WifiSecSetupActivity$FrpWarningDialog;->newInstance(I)Lcom/samsung/android/settings/wifi/WifiSecSetupActivity$FrpWarningDialog;
 

@@ -170,6 +170,8 @@
     <string name="wifi_allow_scan_with_traffic_summary">根据使用的流量自动允许或拒绝 <cst>Wi-Fi</cst> 漫游扫描</string>
     <string name="select_logd_size_title">用于记录的缓冲区大小</string>
     <string name="select_logd_size_dialog_title">选择每个记录缓冲区的最大空间</string>
+    <string name="dev_logpersist_clear_warning_title">是否清除永久日志存储？</string>
+    <string name="dev_logpersist_clear_warning_message">在关闭永久记录时，日志数据将被删除。</string>
     <string name="select_logpersist_title">永久存储记录数据</string>
     <string name="select_logpersist_dialog_title">选择用于永久存储的记录缓冲区</string>
     <string name="select_usb_configuration_title">USB 配置</string>
@@ -981,6 +983,7 @@
     <string name="bluetooth_avc_available_description">所连接的蓝牙设备支持媒体音量同步，且由蓝牙设备设置的音量水平将与您的手机同步。</string>
     <string name="bluetooth_enter_pin_msg">输入蓝牙密码与%s配对(尝试 0000 或 1234)。</string>
     <string name="bluetooth_pin_maximum_number_message">已达到最大字符数</string>
+    <string name="bluetooth_frp_permission_message">此通话无法使用蓝牙设备</string>
     <string name="settings_menu_done">完成</string>
     <string name="usb_tethering_unavailable_subtext_tmo">USB 未连接</string>
     <string name="usb_tethering_available_subtext_tmo">已连接 USB，选择即可进行网络共享。</string>
@@ -1475,12 +1478,12 @@
     <string name="navigationbar_order_mirrored">返回按钮 - 主屏幕按钮 - 最近使用按钮</string>
     <string name="navigationbar_unlock_with_home_btn_title">用主屏幕按钮解锁</string>
     <string name="navigationbar_unlock_with_home_btn_summary">在息屏时用力按下主屏幕按钮可跳过锁定屏幕直接进入主屏幕</string>
-    <string name="navigationbar_unlock_with_home_btn_disable_summary">【压力感应锁定】关闭时不可用</string>
+    <string name="navigationbar_unlock_with_home_btn_disable_summary">【用力按主屏幕按钮】关闭时不可用</string>
     <string name="navigationbar_category_button">按钮</string>
     <string name="navigationbar_pressure_sensitivity_title">用力按主屏幕按钮</string>
     <string name="navigationbar_pressure_sensitivity_summary">在主屏幕按钮隐藏时，按下按钮需比平时更用力。</string>
     <string name="navigationbar_pressure_sensitivity_level_summary">压力等级：%1$d 级 (最高 %2$d 级)</string>
-    <string name="navigationbar_pressure_sensitivity_description_off">在主屏幕按钮隐藏时，按下按钮需比平时更用力。</string>
+    <string name="navigationbar_pressure_sensitivity_description_off">调整用力按主屏幕按钮时所需的压力值</string>
     <string name="navigationbar_pressure_low">较轻</string>
     <string name="navigationbar_pressure_high">较强</string>
     <string name="navigationbar_hide_bar">显示和隐藏按钮</string>
@@ -1703,7 +1706,11 @@
     <string name="crypt_keeper_confirm_title">确认加密</string>
     <string name="crypt_keeper_final_desc">加密您的设备无法逆转，并且如果该过程中断，数据将会丢失。加密可能需要长达一个小时或更长时间，在此期间，您的设备将会重启几次，并且您将无法使用它。</string>
     <string name="crypt_keeper_setup_title">正在加密…</string>
-    <string name="crypt_keeper_warn_wipe">您还可尝试启动设备 %d 次，之后将重置为出厂默认设置。这将清除包括文件和已下载应用程序在内的所有数据。</string>
+    <string name="crypt_keeper_warn_wipe">"您还可以尝试 %1$d 次，如再输错您的手机将重置为出厂默认设置。这将彻底删除包括文件和已下载应用程序在内的所有数据。
+
+如果您的手机已重置，您可能需要输入与此手机相关联的%2$s信息 (邮件地址和密码) 才能重新使用。"</string>
+    <string name="crypt_keeper_samsung_account">三星帐户</string>
+    <string name="crypt_keeper_google_account">Google 帐户</string>
     <string name="crypt_keeper_failed_title">加密失败</string>
     <string name="crypt_keeper_failed_summary">无法启动您的设备。加密过程已被中断。您需要将设备重置为出厂默认设置。这将清除您的所有数据。</string>
     <string name="crypt_keeper_data_corrupted_title">设备存储已损坏</string>
@@ -1722,10 +1729,13 @@
     <string name="cryptkeeper_wrong_pin">输入了不正确的数字密码</string>
     <string name="cryptkeeper_wrong_direction">方向绘制不正确</string>
     <string name="checking_decryption">验证…</string>
-    <string name="crypt_keeper_last_warn_wipe">您还可尝试启动设备 1 次，之后将重置为出厂默认设置。这将清除包括文件和已下载应用程序在内的所有数据。</string>
+    <string name="crypt_keeper_last_warn_wipe">"您还可以尝试 1 次，如再输错，您的手机将重置为出厂默认设置。这将彻底删除所有数据，包括文件和已下载的应用程序。
+
+如果您的手机已重置，您可能需要输入与此手机相关联的%s信息 (邮件地址和密码) 才能重新使用。"</string>
     <string name="crypt_keeper_failed_title_dec">解密失败</string>
     <string name="crypt_keeper_failed_summary_dec">由于中断无法完成解密。使用前进行出厂数据重置（删除所有数据）。</string>
     <string name="crypt_keeper_set_screen_lock_type">设置屏幕锁类型</string>
+    <string name="crypt_keeper_warning_keyboard_cover_does_not_work">键盘保护盖在手机重启后不工作</string>
     <string name="encryption_interstitial_message">"您可以通过要求在手机开机时输入%s来进一步保护该手机。这有助于在手机丢失或被盗时保护您的数据。根据设备访问各种功能 (如电子邮件同步) 的加密政策，部分应用程序可能要求安全启动。
 
 在手机启动之前，您不会收到任何来电、信息或通知，而且闹钟也不会响起。"</string>
@@ -1970,6 +1980,12 @@
     <string name="lockpassword_confirm_your_pin_with_fingerprint">使用指纹或输入当前数字密码。</string>
     <string name="lockpassword_confirm_your_pattern_with_fingerprint">使用指纹或画出当前图案。</string>
     <string name="lockpassword_confirm_your_password_with_fingerprint">使用指纹或输入当前混合密码。</string>
+    <string name="lockpassword_confirm_your_pin_with_iris">请使用虹膜或输入您当前的数字密码。</string>
+    <string name="lockpassword_confirm_your_pattern_with_iris">请使用虹膜或画出您当前的图案。</string>
+    <string name="lockpassword_confirm_your_password_with_iris">请使用虹膜或输入您当前的混合密码。</string>
+    <string name="lockpassword_confirm_your_pin_with_biometrics">请使用生物识别或输入数字密码。</string>
+    <string name="lockpassword_confirm_your_pattern_with_biometrics">请使用生物识别或绘出图案。</string>
+    <string name="lockpassword_confirm_your_password_with_biometrics">请使用生物识别或输入混合密码。</string>
     <string name="lockpassword_confirm_your_pin_instead_of_fingerprint">请您输入数字密码来代替使用指纹识别。</string>
     <string name="lockpassword_confirm_your_pattern_instead_of_fingerprint">请您绘制图案来代替使用指纹识别。</string>
     <string name="lockpassword_confirm_your_password_instead_of_fingerprint">请您输入混合密码来代替使用指纹识别。</string>
@@ -2044,6 +2060,7 @@
     <string name="face_status_timeout">超时。请稍后再试。</string>
     <string name="okay">确定</string>
     <string name="face_samsung_account_button">使用三星帐户</string>
+    <string name="face_galaxy_account_button">使用盖乐世帐户</string>
     <string name="face_error_DB_corrupted">您的面部数据出现问题。请重新注册您的面部。</string>
     <string name="face_error_DB_corrupted_popup_title">重新注册您的面部</string>
     <string name="face_error_timeout">未检测到您的面部。</string>
@@ -2154,7 +2171,7 @@
     <string name="biometrics_backup_locktype_title">设置虹膜安全</string>
     <string name="biometrics_register_your_iris">注册您的虹膜。</string>
     <string name="biometrics_backup_locktype_summary">若要使用虹膜解锁设备，您必须设置图案、数字密码或混合密码。</string>
-    <string name="biometrics_backup_locktype_message">若要使用虹膜解锁您的手机或进行安全验证，您需要：</string>
+    <string name="biometrics_backup_locktype_message">若要使用虹膜解锁您的手机或在应用程序中验证身份，您需要：</string>
     <string name="iris_delete_popup_title">是否移除虹膜数据？</string>
     <string name="iris_delete_popup_message">是否移除虹膜数据？</string>
     <string name="iris_delete_popup_message_with_related_func">使用虹膜的各项功能将被关闭。</string>
@@ -2230,6 +2247,9 @@
     <string name="biometrics_dex_cant_use_msg">无法在 Samsung DeX 中使用%s</string>
     <string name="biometrics_dex_closed_to_switch">已关闭%s来切换至 Samsung DeX</string>
     <string name="biometircs_dex_cant_use_toast">%s无法在 Samsung Dex 中运行。请尝试在手机模式下运行。</string>
+    <string name="iris_guide_text_preview">请看这里来使用虹膜</string>
+    <string name="iris_guide_enable_toggle">点击此处使用虹膜</string>
+    <string name="iris_cannot_verify">无法验证虹膜</string>
     <string name="knox_twofactor_bio_description">请选择用于解锁 %s 的生物识别锁定类型和第二锁定类型。</string>
     <string name="fingerprint_registered">已注册的指纹将用于选中的解锁方法</string>
     <string name="knox_twofactor_description">请选择生物识别以及用于解锁%s的第二种锁定类型。</string>
@@ -3091,6 +3111,7 @@
     <string name="easy_mode_app_help">通过更简单的主屏幕布局和更大的屏幕图标来轻松使用您的设备。</string>
     <string name="easy_mode_app_help_dream_1">使用简单的主屏幕布局和更大的屏幕图标。</string>
     <string name="easy_mode_app_help_dream_2">您对主屏幕所做的任何自定义将被舍弃，且屏幕缩放将设为最大。</string>
+    <string name="easy_mode_app_help_3rd_launcher">若应用简易模式，屏幕中的项目显示会变大。如果您未使用 TouchWiz 主页，则您的主屏幕布局将不会改变，但屏幕缩放将设为大，且字体大小设为中等。</string>
     <string name="security_warning_content">您可通过设置混合密码、数字密码或解锁屏幕图案保护您的隐私。</string>
     <string name="lock_setting_weather_desc">若要查看或更改天气设置，请点击下方的【天气设置】。</string>
     <string name="lock_setting_weather_btn">天气设置</string>
@@ -3944,7 +3965,7 @@
     <string name="wfd_descrpition_playsound">播放声音</string>
     <string name="wfd_is_not_supported">不支持此功能。</string>
     <string name="usbtethering_notify_wifi_is_on_title">是否关闭 <cst>Wi-Fi</cst>？</string>
-    <string name="usbtethering_notify_wifi_is_on"><cst>Wi-Fi</cst> 和【USB 网络共享】无法同时开启。请关闭 <cst>Wi-Fi</cst>。</string>
+    <string name="usbtethering_notify_wifi_is_on"><cst>Wi-Fi</cst> 和 USB 网络共享无法同时启用。将关闭 <cst>Wi-Fi</cst>。</string>
     <string name="disable_multi_window_dialog_text">将禁用多窗口并将关闭在弹出窗口中打开的所有应用程序。</string>
     <string name="keyguard_password_attempt_count_pin_code">还有%d次机会。</string>
     <string name="keyguard_password_attempts_count_pin_code">还有 %d 次机会。</string>
@@ -4152,6 +4173,7 @@
     <string name="hdmi_mode_title">HDMI 模式</string>
     <string name="hdmi_mode_dex">Samsung DeX</string>
     <string name="hdmi_mode_mirroring">屏幕共享</string>
+    <string name="hdmi_mode_not_available_while_cover_attached">装上保护盖时%s不可用</string>
     <string name="screen_timeout_for_dex">Samsung DeX 的屏幕自动熄灭时间</string>
     <string name="show_virtual_keyboard_for_dex">在 Samsung DeX 中显示屏幕键盘</string>
     <string name="comma">，</string>
@@ -4488,7 +4510,7 @@
     <string name="date_picker_title">日期</string>
     <string name="time_picker_title">时间</string>
     <string name="lock_after_timeout">自动锁定</string>
-    <string name="lock_after_timeout_summary">在屏幕关闭%s后自动锁定屏幕</string>
+    <string name="lock_after_timeout_summary">在屏幕关闭 %s后自动锁定手机</string>
     <string name="lock_after_timeout_summary_with_exception">除由 %2$s 保持解锁时外，在屏幕自动关闭 %1$s 后锁定屏幕。</string>
     <string name="show_owner_info_on_lockscreen_label">在锁屏上显示设备所有者的信息</string>
     <string name="owner_info_settings_title">所有者信息</string>
@@ -4636,6 +4658,8 @@
     <string name="wifi_empty_list_user_restricted">您没有更改 <cst>Wi-Fi</cst> 设置的权限。</string>
     <string name="wifi_setup_wps">自动设置（WPS）</string>
     <string name="wifi_show_advanced">显示高级选项</string>
+    <string name="wifi_advanced_toggle_description_expanded">双击可收起。</string>
+    <string name="wifi_advanced_toggle_description_collapsed">双击可展开。</string>
     <string name="wifi_wps_setup_title">WPS设置</string>
     <string name="wifi_wps_setup_msg">正在启动 WPS…</string>
     <string name="wifi_wps_onstart_pbc">轻敲您的路由器上的 <cst>Wi-Fi</cst> 保护设置按钮。其可能被叫做 WPS 或含有此符号：</string>
@@ -4667,6 +4691,10 @@
     <string name="wifi_shared">已分享</string>
     <string name="wifi_unchanged">（未更改）</string>
     <string name="wifi_unspecified">(未指定)</string>
+    <string name="wifi_select_cert">选择证书</string>
+    <string name="wifi_do_not_provide_eap_user_cert">不提供</string>
+    <string name="wifi_do_not_validate_eap_server">不验证</string>
+    <string name="wifi_do_not_validate_eap_server_warning">未指定证书。您的连接将不具私密性。</string>
     <string name="wifi_scan_always_turnon_message">即使在 <cst>Wi-Fi</cst> 关闭时，%s 也会请求扫描 <cst>Wi-Fi</cst> 网络的许可，以提高位置精确度，并用于其他用途。是否对所有应用程序允许该功能？</string>
     <string name="wifi_scan_always_confirm_allow">允许</string>
     <string name="wifi_scan_always_confirm_deny">拒绝</string>
@@ -4805,7 +4833,7 @@
     <string name="fcc_equipment_id">设备 ID</string>
     <string name="baseband_version">基带版本</string>
     <string name="kernel_version">内核版本</string>
-    <string name="build_number">版本号</string>
+    <string name="build_number">编译编号</string>
     <string name="selinux_status">Android 的 SE 状态</string>
     <string name="device_info_not_available">无法使用</string>
     <string name="device_status_activity_title">状态</string>
@@ -4999,9 +5027,9 @@
     <string name="restore_default_apn_completed">APN设置重置为默认值。</string>
     <string name="reset_network_desc">这将重置所有网络设置，包括：</string>
     <string name="reset_network_button_text">恢复默认设置</string>
-    <string name="reset_network_final_desc">将重置所有连接设置。此操作不可撤消。</string>
+    <string name="reset_network_final_desc">所有网络设置将重置。此操作不可撤消。</string>
     <string name="reset_network_final_button_text">恢复默认设置</string>
-    <string name="reset_network_complete_toast">连接设置已重置</string>
+    <string name="reset_network_complete_toast">已重置网络设置</string>
     <string name="master_clear_title">恢复出厂设置</string>
     <string name="master_clear_accounts">您当前已登录以下帐户：</string>
     <string name="master_clear_other_users_present">也将删除属于该设备上其他用户的数据。</string>
@@ -6114,6 +6142,7 @@
     <string name="set_data_limit">设置流量限制</string>
     <string name="data_limit">流量限制</string>
     <string name="data_usage_template">%2$s 期间已使用 %1$s</string>
+    <string name="data_usage_template_wifi">过去 30 天已使用 %s</string>
     <string name="data_usage_other_apps">共同使用数据的相关应用程序</string>
     <string name="data_saver_title">流量节省</string>
     <string name="unrestricted_data_saver">在启用【流量节省】时允许应用程序</string>
@@ -6164,6 +6193,7 @@
     <string name="legacy_dhcp_client_summary">使用 Lollipop 的 DHCP 客户端，而不是新的 Android DHCP 客户端。</string>
     <string name="screen_off_pocket_title">保持屏幕关闭</string>
     <string name="screen_off_pocket_summary">防止设备放在口袋或包中等较暗的地方时意外打开屏幕</string>
+    <string name="noApplications">所有与此操作关联的应用程序都已被禁用、阻止或者尚未安装。</string>
     <string name="confirm_reset_shortcut_manager_throttling_title">重置快捷方式管理器速度限制器</string>
     <string name="confirm_reset_shortcut_manager_throttling_message">将重置快捷方式管理器中的速度限制器的计数器。</string>
 </resources>

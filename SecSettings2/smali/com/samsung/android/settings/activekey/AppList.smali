@@ -539,7 +539,7 @@
 
     move-result-object v5
 
-    const v6, 0x7f02050a
+    const v6, 0x7f02050c
 
     invoke-virtual {v5, v6}, Landroid/content/res/Resources;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 
@@ -571,7 +571,7 @@
 
     move-result-object v5
 
-    const v6, 0x7f0206af
+    const v6, 0x7f0206b1
 
     invoke-virtual {v5, v6}, Landroid/content/res/Resources;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 
@@ -589,7 +589,7 @@
 
     new-instance v2, Lcom/samsung/android/settings/activekey/AppList$AppListAdapter;
 
-    const v5, 0x7f040191
+    const v5, 0x7f040192
 
     const/4 v6, 0x0
 
@@ -646,7 +646,7 @@
     :cond_7
     new-instance v8, Lcom/samsung/android/settings/activekey/AppList$AppListAdapter;
 
-    const v11, 0x7f040191
+    const v11, 0x7f040192
 
     const/4 v12, 0x0
 

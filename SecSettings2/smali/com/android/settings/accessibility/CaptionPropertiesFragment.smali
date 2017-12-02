@@ -245,7 +245,7 @@
 .method public static applyCaptionProperties(Landroid/view/accessibility/CaptioningManager;Lcom/android/internal/widget/SubtitleView;Landroid/view/View;I)V
     .locals 8
 
-    const v7, 0x7f0b1941
+    const v7, 0x7f0b1953
 
     invoke-virtual {p1, p3}, Lcom/android/internal/widget/SubtitleView;->setStyle(I)V
 
@@ -4850,7 +4850,7 @@
 
     aput v12, v1, v12
 
-    const v9, 0x7f0b1945
+    const v9, 0x7f0b1957
 
     invoke-virtual {p0, v9}, Lcom/android/settings/accessibility/CaptionPropertiesFragment;->getString(I)Ljava/lang/String;
 
@@ -5158,7 +5158,7 @@
 .method private refreshPreviewText()V
     .locals 10
 
-    const v9, 0x7f0b1940
+    const v9, 0x7f0b1952
 
     invoke-virtual {p0}, Lcom/android/settings/accessibility/CaptionPropertiesFragment;->getActivity()Landroid/app/Activity;
 
@@ -5934,7 +5934,7 @@
 
     move-result-object v4
 
-    const v5, 0x7f0f0346
+    const v5, 0x7f0f0345
 
     invoke-virtual {v4, v5}, Landroid/content/res/Resources;->getInteger(I)I
 
@@ -5975,7 +5975,7 @@
 
     move-result-object v4
 
-    const v5, 0x7f0f0342
+    const v5, 0x7f0f0341
 
     invoke-virtual {v4, v5}, Landroid/content/res/Resources;->getInteger(I)I
 
@@ -6019,7 +6019,7 @@
 
     move-result-object v4
 
-    const v5, 0x7f0f0340
+    const v5, 0x7f0f033f
 
     invoke-virtual {v4, v5}, Landroid/content/res/Resources;->getInteger(I)I
 

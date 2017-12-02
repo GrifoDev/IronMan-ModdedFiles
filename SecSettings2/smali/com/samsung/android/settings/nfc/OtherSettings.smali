@@ -164,7 +164,11 @@
 .end method
 
 .method public onClick(Landroid/view/View;)V
-    .locals 4
+    .locals 6
+
+    const/4 v5, 0x1
+
+    const/4 v4, 0x0
 
     sget-boolean v1, Lcom/samsung/android/settings/nfc/OtherSettings;->DBG:Z
 
@@ -193,13 +197,9 @@
 
     iget-object v1, p0, Lcom/samsung/android/settings/nfc/OtherSettings;->screen:Landroid/preference/PreferenceScreen;
 
-    const/4 v2, 0x0
+    invoke-virtual {v1, v4}, Landroid/preference/PreferenceScreen;->setEnabled(Z)V
 
-    invoke-virtual {v1, v2}, Landroid/preference/PreferenceScreen;->setEnabled(Z)V
-
-    const/4 v1, 0x1
-
-    iput-boolean v1, p0, Lcom/samsung/android/settings/nfc/OtherSettings;->isDisabled:Z
+    iput-boolean v5, p0, Lcom/samsung/android/settings/nfc/OtherSettings;->isDisabled:Z
 
     iget-object v1, v0, Lcom/samsung/android/settings/nfc/OtherBackend$OtherAppInfo;->componentName:Landroid/content/ComponentName;
 
@@ -258,6 +258,16 @@
     invoke-static {v1, v2, v3}, Lcom/android/settings/Utils;->insertEventLog(Landroid/content/Context;II)V
 
     invoke-virtual {p0}, Lcom/samsung/android/settings/nfc/OtherSettings;->refresh()V
+
+    sget-boolean v1, Lcom/samsung/android/settings/nfc/OtherSettings;->isSupportFelica:Z
+
+    if-eqz v1, :cond_2
+
+    iget-object v1, p0, Lcom/samsung/android/settings/nfc/OtherSettings;->screen:Landroid/preference/PreferenceScreen;
+
+    invoke-virtual {v1, v5}, Landroid/preference/PreferenceScreen;->setEnabled(Z)V
+
+    iput-boolean v4, p0, Lcom/samsung/android/settings/nfc/OtherSettings;->isDisabled:Z
 
     :cond_2
     return-void
@@ -374,7 +384,7 @@
 
     iget-object v1, p0, Lcom/samsung/android/settings/nfc/OtherSettings;->mInflater:Landroid/view/LayoutInflater;
 
-    const v2, 0x7f0401bc
+    const v2, 0x7f0401bf
 
     const/4 v3, 0x0
 
@@ -671,11 +681,11 @@
 
     invoke-direct {v8, v1}, Landroid/preference/Preference;-><init>(Landroid/content/Context;)V
 
-    const v1, 0x7f0401e5
+    const v1, 0x7f0401e8
 
     invoke-virtual {v8, v1}, Landroid/preference/Preference;->setLayoutResource(I)V
 
-    const v1, 0x7f0b1236
+    const v1, 0x7f0b1246
 
     invoke-virtual {p0, v1}, Lcom/samsung/android/settings/nfc/OtherSettings;->getString(I)Ljava/lang/String;
 
@@ -791,7 +801,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f1105b8
+    const v2, 0x7f1105ba
 
     invoke-virtual {v1, v2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -803,7 +813,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f1105b7
+    const v2, 0x7f1105b9
 
     invoke-virtual {v1, v2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -815,7 +825,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f1105b5
+    const v2, 0x7f1105b7
 
     invoke-virtual {v1, v2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -852,7 +862,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f05003f
+    const v2, 0x7f05003e
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 
@@ -910,7 +920,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f1105b6
+    const v2, 0x7f1105b8
 
     invoke-virtual {v1, v2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -922,7 +932,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f1105b5
+    const v2, 0x7f1105b7
 
     invoke-virtual {v1, v2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -934,7 +944,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f1105b7
+    const v2, 0x7f1105b9
 
     invoke-virtual {v1, v2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -953,7 +963,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f05003e
+    const v2, 0x7f05003d
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 

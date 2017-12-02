@@ -195,7 +195,7 @@
 .method protected onCreate(Landroid/os/Bundle;)V
     .locals 9
 
-    const v8, 0x7f1102dd
+    const v8, 0x7f1102df
 
     const/4 v7, 0x0
 
@@ -297,7 +297,7 @@
 
     iget-object v4, p0, Lcom/samsung/android/settings/wifi/CMCCChargeWarningDialog;->mInflater:Landroid/view/LayoutInflater;
 
-    const v5, 0x7f0403b8
+    const v5, 0x7f0403bb
 
     const/4 v6, 0x0
 
@@ -311,7 +311,7 @@
 
     move-result-object v4
 
-    const v5, 0x7f0b0ecb
+    const v5, 0x7f0b0eda
 
     invoke-virtual {v4, v5}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -323,7 +323,7 @@
 
     move-result-object v4
 
-    const v5, 0x7f0b0ebb
+    const v5, 0x7f0b0eca
 
     invoke-virtual {v4, v5}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -337,7 +337,7 @@
 
     move-result-object v4
 
-    const v5, 0x7f0b0ec9
+    const v5, 0x7f0b0ed8
 
     invoke-virtual {v4, v5}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 

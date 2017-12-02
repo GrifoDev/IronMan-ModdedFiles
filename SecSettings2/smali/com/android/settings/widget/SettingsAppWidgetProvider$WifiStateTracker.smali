@@ -107,7 +107,7 @@
 .method public getButtonDescription()I
     .locals 1
 
-    const v0, 0x7f0b1a15
+    const v0, 0x7f0b1a27
 
     return v0
 .end method
@@ -115,7 +115,7 @@
 .method public getButtonId()I
     .locals 1
 
-    const v0, 0x7f11088f
+    const v0, 0x7f110891
 
     return v0
 .end method
@@ -125,13 +125,13 @@
 
     if-eqz p1, :cond_0
 
-    const v0, 0x7f0201ba
+    const v0, 0x7f0201b8
 
     :goto_0
     return v0
 
     :cond_0
-    const v0, 0x7f0201b9
+    const v0, 0x7f0201b7
 
     goto :goto_0
 .end method
@@ -139,7 +139,7 @@
 .method public getContainerId()I
     .locals 1
 
-    const v0, 0x7f11088e
+    const v0, 0x7f110890
 
     return v0
 .end method
@@ -147,7 +147,7 @@
 .method public getIndicatorId()I
     .locals 1
 
-    const v0, 0x7f110890
+    const v0, 0x7f110892
 
     return v0
 .end method

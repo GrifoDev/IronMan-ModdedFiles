@@ -904,7 +904,7 @@
 
     if-ne v4, v10, :cond_17
 
-    const v6, 0x7f0b1cf6
+    const v6, 0x7f0b1d08
 
     invoke-virtual {p0, v6}, Lcom/android/settings/datausage/DataUsageSummary;->getString(I)Ljava/lang/String;
 
@@ -1072,7 +1072,7 @@
     goto/16 :goto_7
 
     :cond_17
-    const v6, 0x7f0b1cf7
+    const v6, 0x7f0b1d09
 
     invoke-virtual {p0, v6}, Lcom/android/settings/datausage/DataUsageSummary;->getString(I)Ljava/lang/String;
 
@@ -1702,7 +1702,7 @@
 
     aput-object v7, v6, v5
 
-    const v7, 0x7f0b11df
+    const v7, 0x7f0b11ee
 
     invoke-virtual {p0, v7, v6}, Lcom/android/settings/datausage/DataUsageSummary;->getString(I[Ljava/lang/Object;)Ljava/lang/String;
 
@@ -1799,7 +1799,7 @@
 
     invoke-direct {v0, v1}, Landroid/app/AlertDialog$Builder;-><init>(Landroid/content/Context;)V
 
-    const v1, 0x7f0b05b7
+    const v1, 0x7f0b05b8
 
     invoke-virtual {v0, v1}, Landroid/app/AlertDialog$Builder;->setTitle(I)Landroid/app/AlertDialog$Builder;
 
@@ -2164,7 +2164,7 @@
 
     if-gtz v14, :cond_c
 
-    const v14, 0x7f0b1e25
+    const v14, 0x7f0b1e37
 
     :goto_3
     const/16 v16, 0x2
@@ -2364,7 +2364,7 @@
     goto/16 :goto_2
 
     :cond_c
-    const v14, 0x7f0b1e26
+    const v14, 0x7f0b1e38
 
     goto/16 :goto_3
 
@@ -2389,7 +2389,7 @@
 
     aput-object v10, v15, v16
 
-    const v16, 0x7f0b05b9
+    const v16, 0x7f0b05ba
 
     move-object/from16 v0, p0
 
@@ -3593,7 +3593,7 @@
     :cond_f
     if-eqz v6, :cond_25
 
-    const v17, 0x7f0b1e22
+    const v17, 0x7f0b1e34
 
     :goto_8
     move/from16 v0, v17
@@ -4067,12 +4067,12 @@
     :cond_25
     if-eqz v7, :cond_26
 
-    const v17, 0x7f0b1e23
+    const v17, 0x7f0b1e35
 
     goto/16 :goto_8
 
     :cond_26
-    const v17, 0x7f0b1e24
+    const v17, 0x7f0b1e36
 
     goto/16 :goto_8
 .end method
@@ -4121,7 +4121,7 @@
 
     if-eqz v0, :cond_0
 
-    const v0, 0x7f040227
+    const v0, 0x7f04022a
 
     const/4 v1, 0x0
 
@@ -4353,7 +4353,7 @@
     :pswitch_1
     const-string/jumbo v2, "com.android.settings.datausage.DataUsageHelp"
 
-    const v3, 0x7f0b1ba7
+    const v3, 0x7f0b1bb9
 
     const/4 v5, 0x0
 
@@ -4380,7 +4380,7 @@
     nop
 
     :pswitch_data_0
-    .packed-switch 0x7f110a01
+    .packed-switch 0x7f110a04
         :pswitch_0
         :pswitch_2
         :pswitch_1
@@ -4570,7 +4570,7 @@
 
     move-result-object v5
 
-    const v6, 0x7f0f0499
+    const v6, 0x7f0f0498
 
     invoke-virtual {v5, v6}, Landroid/content/res/Resources;->getInteger(I)I
 
@@ -4584,7 +4584,7 @@
 
     move-result-object v5
 
-    const v6, 0x7f0f04a3
+    const v6, 0x7f0f04a2
 
     invoke-virtual {v5, v6}, Landroid/content/res/Resources;->getInteger(I)I
 
@@ -4624,7 +4624,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f0f0499
+    const v2, 0x7f0f0498
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getInteger(I)I
 
@@ -4638,7 +4638,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f0f04a0
+    const v2, 0x7f0f049f
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getInteger(I)I
 
@@ -4701,7 +4701,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f0b11d4
+    const v2, 0x7f0b11e3
 
     invoke-virtual {v1, v2}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -4743,7 +4743,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f0f0499
+    const v2, 0x7f0f0498
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getInteger(I)I
 
@@ -4757,7 +4757,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f0f04a1
+    const v2, 0x7f0f04a0
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getInteger(I)I
 
@@ -4818,7 +4818,7 @@
 
     const/4 v2, 0x0
 
-    const v3, 0x7f0b11d1
+    const v3, 0x7f0b11e0
 
     const/4 v4, 0x0
 
@@ -4843,7 +4843,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f0f0499
+    const v2, 0x7f0f0498
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getInteger(I)I
 
@@ -4857,7 +4857,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f0f049f
+    const v2, 0x7f0f049e
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getInteger(I)I
 
@@ -5231,7 +5231,7 @@
 
     const/4 v4, 0x0
 
-    const v2, 0x7f110a01
+    const v2, 0x7f110a04
 
     invoke-interface {p1, v2}, Landroid/view/Menu;->findItem(I)Landroid/view/MenuItem;
 
@@ -5242,7 +5242,7 @@
     invoke-interface {v1, v4}, Landroid/view/MenuItem;->setVisible(Z)Landroid/view/MenuItem;
 
     :cond_0
-    const v2, 0x7f110a03
+    const v2, 0x7f110a06
 
     invoke-interface {p1, v2}, Landroid/view/Menu;->findItem(I)Landroid/view/MenuItem;
 
@@ -5260,7 +5260,7 @@
 
     :cond_1
     :goto_0
-    const v2, 0x7f110a02
+    const v2, 0x7f110a05
 
     invoke-interface {p1, v2}, Landroid/view/Menu;->findItem(I)Landroid/view/MenuItem;
 
@@ -5455,7 +5455,7 @@
 
     if-ne v4, v9, :cond_5
 
-    const v5, 0x7f0b1cf6
+    const v5, 0x7f0b1d08
 
     invoke-virtual {p0, v5}, Lcom/android/settings/datausage/DataUsageSummary;->getString(I)Ljava/lang/String;
 
@@ -5589,7 +5589,7 @@
 
     move-result-object v6
 
-    const v7, 0x7f0f0499
+    const v7, 0x7f0f0498
 
     invoke-virtual {v6, v7}, Landroid/content/res/Resources;->getInteger(I)I
 
@@ -5607,7 +5607,7 @@
     return-void
 
     :cond_5
-    const v5, 0x7f0b1cf7
+    const v5, 0x7f0b1d09
 
     invoke-virtual {p0, v5}, Lcom/android/settings/datausage/DataUsageSummary;->getString(I)Ljava/lang/String;
 

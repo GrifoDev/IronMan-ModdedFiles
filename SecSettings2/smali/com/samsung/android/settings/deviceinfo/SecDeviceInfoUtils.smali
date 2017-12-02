@@ -423,7 +423,7 @@
 
     move-result-object v7
 
-    const v8, 0x7f0b12ff
+    const v8, 0x7f0b1310
 
     invoke-virtual {v7, v8}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -901,6 +901,23 @@
 .method public static getDeviceFccId(Landroid/content/Context;)Ljava/lang/String;
     .locals 7
 
+    invoke-static {}, Lcom/android/settings/Utils;->isLDUModel()Z
+
+    move-result v4
+
+    if-eqz v4, :cond_0
+
+    invoke-static {}, Lcom/android/settings/Utils;->isChinaModel()Z
+
+    move-result v4
+
+    if-eqz v4, :cond_0
+
+    const-string/jumbo v4, ""
+
+    return-object v4
+
+    :cond_0
     invoke-static {}, Lcom/samsung/android/feature/SemFloatingFeature;->getInstance()Lcom/samsung/android/feature/SemFloatingFeature;
 
     move-result-object v4
@@ -921,16 +938,16 @@
 
     move-result v4
 
-    if-eqz v4, :cond_0
+    if-eqz v4, :cond_1
 
     return-object v1
 
-    :cond_0
+    :cond_1
     invoke-static {}, Lcom/android/settings/Utils;->isLDUModel()Z
 
     move-result v4
 
-    if-eqz v4, :cond_2
+    if-eqz v4, :cond_3
 
     const-string/jumbo v4, "a3x"
 
@@ -938,7 +955,7 @@
 
     move-result v4
 
-    if-nez v4, :cond_1
+    if-nez v4, :cond_2
 
     const-string/jumbo v4, "a5x"
 
@@ -946,7 +963,7 @@
 
     move-result v4
 
-    if-nez v4, :cond_1
+    if-nez v4, :cond_2
 
     const-string/jumbo v4, "a7x"
 
@@ -954,14 +971,14 @@
 
     move-result v4
 
-    if-eqz v4, :cond_2
+    if-eqz v4, :cond_3
 
-    :cond_1
+    :cond_2
     const-string/jumbo v4, ""
 
     return-object v4
 
-    :cond_2
+    :cond_3
     invoke-virtual {p0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
     move-result-object v4
@@ -974,7 +991,7 @@
 
     aput-object v1, v5, v6
 
-    const v6, 0x7f0b05cd
+    const v6, 0x7f0b05ce
 
     invoke-virtual {v4, v6, v5}, Landroid/content/res/Resources;->getString(I[Ljava/lang/Object;)Ljava/lang/String;
 
@@ -990,18 +1007,18 @@
 
     move-result v4
 
-    if-eqz v4, :cond_3
+    if-eqz v4, :cond_4
 
     const-string/jumbo v4, "N"
 
     invoke-virtual {v0, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    :cond_3
+    :cond_4
     invoke-static {}, Lcom/android/settings/Utils;->isDreamProject()Z
 
     move-result v4
 
-    if-nez v4, :cond_4
+    if-nez v4, :cond_5
 
     sget-object v4, Landroid/os/Build;->MODEL:Ljava/lang/String;
 
@@ -1009,7 +1026,7 @@
 
     move-result v4
 
-    if-eqz v4, :cond_4
+    if-eqz v4, :cond_5
 
     sget-object v4, Landroid/os/Build;->MODEL:Ljava/lang/String;
 
@@ -1017,13 +1034,13 @@
 
     move-result v4
 
-    if-eqz v4, :cond_4
+    if-eqz v4, :cond_5
 
     const-string/jumbo v4, "D"
 
     invoke-virtual {v0, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    :cond_4
+    :cond_5
     invoke-static {}, Lcom/samsung/android/feature/SemCscFeature;->getInstance()Lcom/samsung/android/feature/SemCscFeature;
 
     move-result-object v4
@@ -2317,13 +2334,13 @@
 
     move-result-object v11
 
-    const v12, 0x7f0401dc
+    const v12, 0x7f0401df
 
     invoke-virtual {v11, v12, v14}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;)Landroid/view/View;
 
     move-result-object v10
 
-    const v11, 0x7f1105ef
+    const v11, 0x7f1105f1
 
     invoke-virtual {v10, v11}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 

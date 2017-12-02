@@ -1239,7 +1239,7 @@
 
     invoke-super {p0, p1}, Landroid/preference/PreferenceActivity;->onCreate(Landroid/os/Bundle;)V
 
-    const v2, 0x7f0400c4
+    const v2, 0x7f0400c5
 
     invoke-virtual {p0, v2}, Lcom/samsung/android/settings/datausage/networkconnect/DataWarningLimitActivity;->setContentView(I)V
 
@@ -1265,7 +1265,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f0400c5
+    const v2, 0x7f0400c6
 
     const/4 v3, 0x0
 
@@ -1275,7 +1275,7 @@
 
     move-result-object v0
 
-    const v2, 0x7f1102a6
+    const v2, 0x7f1102a8
 
     invoke-virtual {p0, v2}, Lcom/samsung/android/settings/datausage/networkconnect/DataWarningLimitActivity;->findViewById(I)Landroid/view/View;
 
@@ -1285,7 +1285,7 @@
 
     iput-object v2, p0, Lcom/samsung/android/settings/datausage/networkconnect/DataWarningLimitActivity;->mSwitchBar:Landroid/widget/LinearLayout;
 
-    const v2, 0x7f1102a8
+    const v2, 0x7f1102aa
 
     invoke-virtual {p0, v2}, Lcom/samsung/android/settings/datausage/networkconnect/DataWarningLimitActivity;->findViewById(I)Landroid/view/View;
 
@@ -1307,7 +1307,7 @@
 
     invoke-virtual {v2, v3}, Landroid/widget/LinearLayout;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    const v2, 0x7f1102a7
+    const v2, 0x7f1102a9
 
     invoke-virtual {p0, v2}, Lcom/samsung/android/settings/datausage/networkconnect/DataWarningLimitActivity;->findViewById(I)Landroid/view/View;
 
@@ -1317,7 +1317,7 @@
 
     iput-object v2, p0, Lcom/samsung/android/settings/datausage/networkconnect/DataWarningLimitActivity;->mSwitchtext:Landroid/widget/TextView;
 
-    const v2, 0x7f1102aa
+    const v2, 0x7f1102ac
 
     invoke-virtual {v0, v2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -1630,7 +1630,7 @@
 
     iget-object v8, p0, Lcom/samsung/android/settings/datausage/networkconnect/DataWarningLimitActivity;->mMobileText:Landroid/widget/TextView;
 
-    const v9, 0x7f0b0ed3
+    const v9, 0x7f0b0ee2
 
     invoke-virtual {p0, v9}, Lcom/samsung/android/settings/datausage/networkconnect/DataWarningLimitActivity;->getString(I)Ljava/lang/String;
 
@@ -1646,7 +1646,7 @@
 
     if-eqz v0, :cond_5
 
-    const v8, 0x7f0b1cf6
+    const v8, 0x7f0b1d08
 
     :goto_3
     invoke-virtual {v9, v8}, Landroid/widget/TextView;->setText(I)V
@@ -1683,7 +1683,7 @@
 
     iget-object v8, p0, Lcom/samsung/android/settings/datausage/networkconnect/DataWarningLimitActivity;->mMobileText:Landroid/widget/TextView;
 
-    const v9, 0x7f0b0ed3
+    const v9, 0x7f0b0ee2
 
     invoke-virtual {p0, v9}, Lcom/samsung/android/settings/datausage/networkconnect/DataWarningLimitActivity;->getString(I)Ljava/lang/String;
 
@@ -1723,7 +1723,7 @@
 
     move-result-object v9
 
-    const v10, 0x7f0f04d5
+    const v10, 0x7f0f04d4
 
     invoke-virtual {v9, v10}, Landroid/content/res/Resources;->getInteger(I)I
 
@@ -1737,7 +1737,7 @@
 
     move-result-object v8
 
-    const v9, 0x7f0f04d5
+    const v9, 0x7f0f04d4
 
     invoke-virtual {v8, v9}, Landroid/content/res/Resources;->getInteger(I)I
 
@@ -1749,7 +1749,7 @@
 
     move-result-object v8
 
-    const v9, 0x7f0f04d8
+    const v9, 0x7f0f04d7
 
     invoke-virtual {v8, v9}, Landroid/content/res/Resources;->getInteger(I)I
 
@@ -1788,7 +1788,7 @@
     throw v8
 
     :cond_5
-    const v8, 0x7f0b1cf7
+    const v8, 0x7f0b1d09
 
     goto/16 :goto_3
 

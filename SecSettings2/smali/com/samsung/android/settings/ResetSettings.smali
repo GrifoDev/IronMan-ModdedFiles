@@ -61,7 +61,7 @@
 
     iget-object v0, p0, Lcom/samsung/android/settings/ResetSettings;->mContentView:Landroid/view/View;
 
-    const v1, 0x7f110706
+    const v1, 0x7f110708
 
     invoke-virtual {v0, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -121,7 +121,7 @@
 
     move-result-object v1
 
-    const v3, 0x7f0b0da5
+    const v3, 0x7f0b0db4
 
     const/4 v6, 0x0
 
@@ -141,7 +141,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f0f039e
+    const v1, 0x7f0f039d
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getInteger(I)I
 
@@ -212,7 +212,7 @@
 .method public onCreateView(Landroid/view/LayoutInflater;Landroid/view/ViewGroup;Landroid/os/Bundle;)Landroid/view/View;
     .locals 2
 
-    const v0, 0x7f040278
+    const v0, 0x7f04027b
 
     const/4 v1, 0x0
 

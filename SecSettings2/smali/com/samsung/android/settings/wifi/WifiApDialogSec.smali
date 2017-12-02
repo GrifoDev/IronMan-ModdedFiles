@@ -2155,7 +2155,7 @@
 
     move-result-object v2
 
-    const v3, 0x7f04039c
+    const v3, 0x7f04039f
 
     invoke-direct {v0, v1, v3, v2}, Landroid/widget/ArrayAdapter;-><init>(Landroid/content/Context;I[Ljava/lang/Object;)V
 
@@ -2206,7 +2206,7 @@
 .method private showSecurityFields()V
     .locals 6
 
-    const v5, 0x7f1108c5
+    const v5, 0x7f1108c7
 
     const/16 v4, 0x8
 
@@ -2214,7 +2214,7 @@
 
     iget-object v1, p0, Lcom/samsung/android/settings/wifi/WifiApDialogSec;->mView:Landroid/view/View;
 
-    const v2, 0x7f1108cc
+    const v2, 0x7f1108ce
 
     invoke-virtual {v1, v2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -3128,7 +3128,7 @@
 
     iget-object v0, p0, Lcom/samsung/android/settings/wifi/WifiApDialogSec;->mView:Landroid/view/View;
 
-    const v1, 0x7f1108c4
+    const v1, 0x7f1108c6
 
     invoke-virtual {v0, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -3325,7 +3325,7 @@
 
     iget-object v8, p0, Lcom/samsung/android/settings/wifi/WifiApDialogSec;->mContext:Landroid/content/Context;
 
-    const v9, 0x7f0b10d8
+    const v9, 0x7f0b10e7
 
     invoke-virtual {v8, v9}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -3403,7 +3403,7 @@
     :sswitch_2
     iget-object v6, p0, Lcom/samsung/android/settings/wifi/WifiApDialogSec;->mView:Landroid/view/View;
 
-    const v9, 0x7f1108d1
+    const v9, 0x7f1108d3
 
     invoke-virtual {v6, v9}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -3675,13 +3675,13 @@
 
     :sswitch_data_0
     .sparse-switch
-        0x7f1108c6 -> :sswitch_0
-        0x7f1108ca -> :sswitch_1
-        0x7f1108d0 -> :sswitch_2
-        0x7f1108d4 -> :sswitch_5
-        0x7f1108d7 -> :sswitch_3
-        0x7f1108d9 -> :sswitch_4
-        0x7f1108e1 -> :sswitch_6
+        0x7f1108c8 -> :sswitch_0
+        0x7f1108cc -> :sswitch_1
+        0x7f1108d2 -> :sswitch_2
+        0x7f1108d6 -> :sswitch_5
+        0x7f1108d9 -> :sswitch_3
+        0x7f1108db -> :sswitch_4
+        0x7f1108e3 -> :sswitch_6
     .end sparse-switch
 .end method
 
@@ -3692,7 +3692,7 @@
 
     move-result-object v17
 
-    const v18, 0x7f040390
+    const v18, 0x7f040393
 
     const/16 v19, 0x0
 
@@ -3718,7 +3718,7 @@
 
     move-result-object v17
 
-    const v18, 0x7f040391
+    const v18, 0x7f040394
 
     const/16 v19, 0x0
 
@@ -3738,7 +3738,7 @@
 
     move-object/from16 v17, v0
 
-    const v18, 0x7f1108e2
+    const v18, 0x7f1108e4
 
     invoke-virtual/range {v17 .. v18}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -3774,7 +3774,7 @@
 
     move-object/from16 v17, v0
 
-    const v18, 0x7f1108cb
+    const v18, 0x7f1108cd
 
     invoke-virtual/range {v17 .. v18}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -3820,7 +3820,7 @@
 
     move-object/from16 v17, v0
 
-    const v18, 0x7f1108c4
+    const v18, 0x7f1108c6
 
     invoke-virtual/range {v17 .. v18}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -3892,7 +3892,7 @@
 
     move-object/from16 v17, v0
 
-    const v18, 0x7f11059a
+    const v18, 0x7f11059c
 
     invoke-virtual/range {v17 .. v18}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -3908,7 +3908,7 @@
 
     move-object/from16 v17, v0
 
-    const v18, 0x7f1108c3
+    const v18, 0x7f1108c5
 
     invoke-virtual/range {v17 .. v18}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -3928,7 +3928,7 @@
 
     move-object/from16 v17, v0
 
-    const v18, 0x7f1108c8
+    const v18, 0x7f1108ca
 
     invoke-virtual/range {v17 .. v18}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -3948,7 +3948,7 @@
 
     move-object/from16 v17, v0
 
-    const v18, 0x7f0b1550
+    const v18, 0x7f0b1561
 
     invoke-virtual/range {v17 .. v18}, Landroid/widget/EditText;->setHint(I)V
 
@@ -3958,7 +3958,7 @@
 
     move-object/from16 v17, v0
 
-    const v18, 0x7f110872
+    const v18, 0x7f110874
 
     invoke-virtual/range {v17 .. v18}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -3978,7 +3978,7 @@
 
     move-object/from16 v17, v0
 
-    const v18, 0x7f1108cd
+    const v18, 0x7f1108cf
 
     invoke-virtual/range {v17 .. v18}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -4008,7 +4008,7 @@
 
     move-object/from16 v17, v0
 
-    const v18, 0x7f1108c9
+    const v18, 0x7f1108cb
 
     invoke-virtual/range {v17 .. v18}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -4038,7 +4038,7 @@
 
     move-object/from16 v17, v0
 
-    const v18, 0x7f1108ca
+    const v18, 0x7f1108cc
 
     invoke-virtual/range {v17 .. v18}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -4064,7 +4064,7 @@
 
     move-object/from16 v18, v0
 
-    const v19, 0x7f0b0fbc
+    const v19, 0x7f0b0fcb
 
     invoke-static/range {v18 .. v19}, Lcom/samsung/android/settings/WifiApUtils;->getString(Landroid/content/Context;I)Ljava/lang/String;
 
@@ -4106,7 +4106,7 @@
 
     move-object/from16 v17, v0
 
-    const v18, 0x7f1108ce
+    const v18, 0x7f1108d0
 
     invoke-virtual/range {v17 .. v18}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -4136,7 +4136,7 @@
 
     move-object/from16 v17, v0
 
-    const v18, 0x7f1108cf
+    const v18, 0x7f1108d1
 
     invoke-virtual/range {v17 .. v18}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -4166,7 +4166,7 @@
 
     move-object/from16 v17, v0
 
-    const v18, 0x7f1108e0
+    const v18, 0x7f1108e2
 
     invoke-virtual/range {v17 .. v18}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -4186,7 +4186,7 @@
 
     move-object/from16 v17, v0
 
-    const v18, 0x7f1108e1
+    const v18, 0x7f1108e3
 
     invoke-virtual/range {v17 .. v18}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -4226,7 +4226,7 @@
 
     move-result-object v18
 
-    const v19, 0x7f0b12db
+    const v19, 0x7f0b12eb
 
     invoke-virtual/range {v18 .. v19}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -4266,7 +4266,7 @@
 
     move-object/from16 v17, v0
 
-    const v18, 0x7f1108d0
+    const v18, 0x7f1108d2
 
     invoke-virtual/range {v17 .. v18}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -4298,7 +4298,7 @@
 
     move-object/from16 v17, v0
 
-    const v18, 0x7f1108da
+    const v18, 0x7f1108dc
 
     invoke-virtual/range {v17 .. v18}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -4362,7 +4362,7 @@
 
     move-object/from16 v17, v0
 
-    const v18, 0x7f1108d6
+    const v18, 0x7f1108d8
 
     invoke-virtual/range {v17 .. v18}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -4382,7 +4382,7 @@
 
     move-object/from16 v17, v0
 
-    const v18, 0x7f1108d8
+    const v18, 0x7f1108da
 
     invoke-virtual/range {v17 .. v18}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -4402,7 +4402,7 @@
 
     move-object/from16 v17, v0
 
-    const v18, 0x7f1108d3
+    const v18, 0x7f1108d5
 
     invoke-virtual/range {v17 .. v18}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -4422,7 +4422,7 @@
 
     move-object/from16 v17, v0
 
-    const v18, 0x7f1108d7
+    const v18, 0x7f1108d9
 
     invoke-virtual/range {v17 .. v18}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -4442,7 +4442,7 @@
 
     move-object/from16 v17, v0
 
-    const v18, 0x7f1108d9
+    const v18, 0x7f1108db
 
     invoke-virtual/range {v17 .. v18}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -4462,7 +4462,7 @@
 
     move-object/from16 v17, v0
 
-    const v18, 0x7f1108d4
+    const v18, 0x7f1108d6
 
     invoke-virtual/range {v17 .. v18}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -4518,7 +4518,7 @@
 
     move-object/from16 v17, v0
 
-    const v18, 0x7f1108db
+    const v18, 0x7f1108dd
 
     invoke-virtual/range {v17 .. v18}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -4538,7 +4538,7 @@
 
     move-object/from16 v17, v0
 
-    const v18, 0x7f1108d5
+    const v18, 0x7f1108d7
 
     invoke-virtual/range {v17 .. v18}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -4558,7 +4558,7 @@
 
     move-object/from16 v17, v0
 
-    const v18, 0x7f1108d2
+    const v18, 0x7f1108d4
 
     invoke-virtual/range {v17 .. v18}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -4685,7 +4685,7 @@
 
     :cond_0
     :goto_1
-    const v17, 0x7f0b1584
+    const v17, 0x7f0b1596
 
     move/from16 v0, v17
 
@@ -4711,7 +4711,7 @@
 
     invoke-virtual {v0, v1, v2, v3}, Lcom/samsung/android/settings/wifi/WifiApDialogSec;->setButton(ILjava/lang/CharSequence;Landroid/content/DialogInterface$OnClickListener;)V
 
-    const v17, 0x7f0b1586
+    const v17, 0x7f0b1598
 
     move/from16 v0, v17
 
@@ -4791,7 +4791,7 @@
 
     move-object/from16 v18, v0
 
-    const v19, 0x7f0b10dc
+    const v19, 0x7f0b10eb
 
     invoke-static/range {v18 .. v19}, Lcom/samsung/android/settings/WifiApUtils;->getString(Landroid/content/Context;I)Ljava/lang/String;
 
@@ -5105,7 +5105,7 @@
 
     move-object/from16 v17, v0
 
-    const v18, 0x7f1108c6
+    const v18, 0x7f1108c8
 
     invoke-virtual/range {v17 .. v18}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -5132,7 +5132,7 @@
 
     move-object/from16 v17, v0
 
-    const v18, 0x7f1108c6
+    const v18, 0x7f1108c8
 
     invoke-virtual/range {v17 .. v18}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -5185,7 +5185,7 @@
 
     move-object/from16 v17, v0
 
-    const v18, 0x7f1108dd
+    const v18, 0x7f1108df
 
     invoke-virtual/range {v17 .. v18}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -5853,7 +5853,7 @@
 
     move-object/from16 v18, v0
 
-    const v19, 0x7f0b10d7
+    const v19, 0x7f0b10e6
 
     invoke-static/range {v18 .. v19}, Lcom/samsung/android/settings/WifiApUtils;->getString(Landroid/content/Context;I)Ljava/lang/String;
 
@@ -5975,7 +5975,7 @@
 
     move-object/from16 v17, v0
 
-    const v18, 0x7f04039c
+    const v18, 0x7f04039f
 
     move-object/from16 v0, v17
 
@@ -6069,7 +6069,7 @@
 
     move-object/from16 v17, v0
 
-    const v18, 0x7f1108df
+    const v18, 0x7f1108e1
 
     invoke-virtual/range {v17 .. v18}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -6246,7 +6246,7 @@
 
     move-object/from16 v17, v0
 
-    const v18, 0x7f04039c
+    const v18, 0x7f04039f
 
     move-object/from16 v0, v17
 
@@ -6368,7 +6368,7 @@
 
     move-object/from16 v17, v0
 
-    const v18, 0x7f1108dc
+    const v18, 0x7f1108de
 
     invoke-virtual/range {v17 .. v18}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -6397,7 +6397,7 @@
 
     move-object/from16 v17, v0
 
-    const v18, 0x7f1108de
+    const v18, 0x7f1108e0
 
     invoke-virtual/range {v17 .. v18}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -6495,7 +6495,7 @@
 
     if-nez v4, :cond_3
 
-    const v4, 0x7f0b0f63
+    const v4, 0x7f0b0f72
 
     invoke-virtual {v1, v4}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -6675,7 +6675,7 @@
 
     if-nez v4, :cond_7
 
-    const v4, 0x7f0b0f63
+    const v4, 0x7f0b0f72
 
     invoke-virtual {v1, v4}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -6942,12 +6942,12 @@
 
     :sswitch_data_0
     .sparse-switch
-        0x7f1108c4 -> :sswitch_0
-        0x7f1108cb -> :sswitch_1
-        0x7f1108da -> :sswitch_2
-        0x7f1108db -> :sswitch_3
-        0x7f1108dd -> :sswitch_4
-        0x7f1108df -> :sswitch_5
+        0x7f1108c6 -> :sswitch_0
+        0x7f1108cd -> :sswitch_1
+        0x7f1108dc -> :sswitch_2
+        0x7f1108dd -> :sswitch_3
+        0x7f1108df -> :sswitch_4
+        0x7f1108e1 -> :sswitch_5
     .end sparse-switch
 .end method
 
@@ -7003,7 +7003,7 @@
 
     iget-object v0, p0, Lcom/samsung/android/settings/wifi/WifiApDialogSec;->mView:Landroid/view/View;
 
-    const v2, 0x7f1108c4
+    const v2, 0x7f1108c6
 
     invoke-virtual {v0, v2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -7016,7 +7016,7 @@
     :cond_0
     iget-object v0, p0, Lcom/samsung/android/settings/wifi/WifiApDialogSec;->mView:Landroid/view/View;
 
-    const v2, 0x7f1108ca
+    const v2, 0x7f1108cc
 
     invoke-virtual {v0, v2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -7075,7 +7075,7 @@
 
     iget-object v0, p0, Lcom/samsung/android/settings/wifi/WifiApDialogSec;->mView:Landroid/view/View;
 
-    const v2, 0x7f1108c6
+    const v2, 0x7f1108c8
 
     invoke-virtual {v0, v2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -7089,7 +7089,7 @@
 
     iget-object v0, p0, Lcom/samsung/android/settings/wifi/WifiApDialogSec;->mView:Landroid/view/View;
 
-    const v2, 0x7f1108d0
+    const v2, 0x7f1108d2
 
     invoke-virtual {v0, v2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -7139,7 +7139,7 @@
 
     iget-object v0, p0, Lcom/samsung/android/settings/wifi/WifiApDialogSec;->mView:Landroid/view/View;
 
-    const v2, 0x7f1108c6
+    const v2, 0x7f1108c8
 
     invoke-virtual {v0, v2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -7153,7 +7153,7 @@
 
     iget-object v0, p0, Lcom/samsung/android/settings/wifi/WifiApDialogSec;->mView:Landroid/view/View;
 
-    const v2, 0x7f1108d0
+    const v2, 0x7f1108d2
 
     invoke-virtual {v0, v2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -7196,13 +7196,13 @@
 .method public show()V
     .locals 3
 
-    const v2, 0x7f1108d1
+    const v2, 0x7f1108d3
 
     invoke-super {p0}, Landroid/app/AlertDialog;->show()V
 
     iget-object v0, p0, Lcom/samsung/android/settings/wifi/WifiApDialogSec;->mView:Landroid/view/View;
 
-    const v1, 0x7f1108d0
+    const v1, 0x7f1108d2
 
     invoke-virtual {v0, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -7277,7 +7277,7 @@
 
     move-result-object v2
 
-    const v3, 0x7f040394
+    const v3, 0x7f040397
 
     const/4 v4, 0x0
 
@@ -7289,7 +7289,7 @@
 
     iget-object v2, p0, Lcom/samsung/android/settings/wifi/WifiApDialogSec;->customView:Landroid/view/View;
 
-    const v3, 0x7f1108ea
+    const v3, 0x7f1108ec
 
     invoke-virtual {v2, v3}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -7301,7 +7301,7 @@
 
     iget-object v2, p0, Lcom/samsung/android/settings/wifi/WifiApDialogSec;->customView:Landroid/view/View;
 
-    const v3, 0x7f1108a2
+    const v3, 0x7f1108a4
 
     invoke-virtual {v2, v3}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -7313,7 +7313,7 @@
 
     iget-object v2, p0, Lcom/samsung/android/settings/wifi/WifiApDialogSec;->customView:Landroid/view/View;
 
-    const v3, 0x7f1108e9
+    const v3, 0x7f1108eb
 
     invoke-virtual {v2, v3}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -7323,7 +7323,7 @@
 
     iget-object v2, p0, Lcom/samsung/android/settings/wifi/WifiApDialogSec;->mContext:Landroid/content/Context;
 
-    const v3, 0x7f0b101c
+    const v3, 0x7f0b102b
 
     invoke-static {v2, v3}, Lcom/samsung/android/settings/WifiApUtils;->getString(Landroid/content/Context;I)Ljava/lang/String;
 
@@ -7333,7 +7333,7 @@
 
     iget-object v2, p0, Lcom/samsung/android/settings/wifi/WifiApDialogSec;->mContext:Landroid/content/Context;
 
-    const v3, 0x7f0b101a
+    const v3, 0x7f0b1029
 
     invoke-static {v2, v3}, Lcom/samsung/android/settings/WifiApUtils;->getString(Landroid/content/Context;I)Ljava/lang/String;
 
@@ -7349,7 +7349,7 @@
 
     invoke-direct {v2, p0}, Lcom/samsung/android/settings/wifi/WifiApDialogSec$6;-><init>(Lcom/samsung/android/settings/wifi/WifiApDialogSec;)V
 
-    const v3, 0x7f0b1852
+    const v3, 0x7f0b1864
 
     invoke-virtual {v0, v3, v2}, Landroid/app/AlertDialog$Builder;->setPositiveButton(ILandroid/content/DialogInterface$OnClickListener;)Landroid/app/AlertDialog$Builder;
 

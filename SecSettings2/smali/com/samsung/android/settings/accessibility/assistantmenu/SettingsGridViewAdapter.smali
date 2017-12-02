@@ -189,7 +189,7 @@
 .method public getView(ILandroid/view/View;Landroid/view/ViewGroup;)Landroid/view/View;
     .locals 9
 
-    const v8, 0x7f110799
+    const v8, 0x7f11079b
 
     iget-object v5, p0, Lcom/samsung/android/settings/accessibility/assistantmenu/SettingsGridViewAdapter;->mItemArray:Ljava/util/ArrayList;
 
@@ -213,7 +213,7 @@
 
     move-result-object p2
 
-    const v5, 0x7f11079a
+    const v5, 0x7f11079c
 
     invoke-virtual {p2, v5}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -235,7 +235,7 @@
 
     invoke-virtual {v0, v5}, Landroid/widget/ImageView;->setImageResource(I)V
 
-    const v5, 0x7f11079c
+    const v5, 0x7f11079e
 
     invoke-virtual {p2, v5}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -243,7 +243,7 @@
 
     check-cast v2, Landroid/widget/ImageView;
 
-    const v5, 0x7f11079b
+    const v5, 0x7f11079d
 
     invoke-virtual {p2, v5}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -276,7 +276,7 @@
     invoke-virtual {v2, v5}, Landroid/widget/ImageView;->setScaleType(Landroid/widget/ImageView$ScaleType;)V
 
     :goto_0
-    const v5, 0x7f1105ec
+    const v5, 0x7f1105ee
 
     invoke-virtual {p2, v5}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 

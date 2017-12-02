@@ -295,7 +295,7 @@
 
     new-array v1, v5, [Ljava/lang/CharSequence;
 
-    const v2, 0x7f0b06a1
+    const v2, 0x7f0b06a2
 
     invoke-virtual {p0, v2}, Lcom/samsung/android/settings/navigationbar/NavigationBarSettings;->getString(I)Ljava/lang/String;
 
@@ -303,7 +303,7 @@
 
     aput-object v2, v1, v3
 
-    const v2, 0x7f0b06a2
+    const v2, 0x7f0b06a3
 
     invoke-virtual {p0, v2}, Lcom/samsung/android/settings/navigationbar/NavigationBarSettings;->getString(I)Ljava/lang/String;
 
@@ -647,7 +647,7 @@
 
     if-eqz v4, :cond_c
 
-    const v7, 0x7f0b06ba
+    const v7, 0x7f0b06bb
 
     invoke-virtual {p0, v7}, Lcom/samsung/android/settings/navigationbar/NavigationBarSettings;->getString(I)Ljava/lang/String;
 
@@ -688,7 +688,7 @@
     goto :goto_4
 
     :cond_c
-    const v5, 0x7f0b06b9
+    const v5, 0x7f0b06ba
 
     invoke-virtual {p0, v5}, Lcom/samsung/android/settings/navigationbar/NavigationBarSettings;->getString(I)Ljava/lang/String;
 
@@ -884,7 +884,7 @@
 
     if-eqz v4, :cond_c
 
-    const v6, 0x7f0b06ba
+    const v6, 0x7f0b06bb
 
     invoke-virtual {p0, v6}, Lcom/samsung/android/settings/navigationbar/NavigationBarSettings;->getString(I)Ljava/lang/String;
 
@@ -1037,7 +1037,7 @@
     :cond_b
     iget-object v6, p0, Lcom/samsung/android/settings/navigationbar/NavigationBarSettings;->mUnlockWithHomeBtnPref:Landroid/preference/SwitchPreference;
 
-    const v7, 0x7f0b06b6
+    const v7, 0x7f0b06b7
 
     invoke-virtual {p0, v7}, Lcom/samsung/android/settings/navigationbar/NavigationBarSettings;->getString(I)Ljava/lang/String;
 
@@ -1052,7 +1052,7 @@
     goto/16 :goto_6
 
     :cond_c
-    const v6, 0x7f0b06b9
+    const v6, 0x7f0b06ba
 
     invoke-virtual {p0, v6}, Lcom/samsung/android/settings/navigationbar/NavigationBarSettings;->getString(I)Ljava/lang/String;
 

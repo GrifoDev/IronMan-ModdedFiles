@@ -170,6 +170,8 @@
     <string name="wifi_allow_scan_with_traffic_summary">אשר או דחה באופן אוטומטי סריקות נדידה של Wi-Fi, בהתאם לכמות השימוש בנתונים.</string>
     <string name="select_logd_size_title">גודל מאגר לרישום ביומן</string>
     <string name="select_logd_size_dialog_title">בחירת גודל מרבי למאגר של כל רשומה</string>
+    <string name="dev_logpersist_clear_warning_title">האם לנקות אחסון יומן שנותר?</string>
+    <string name="dev_logpersist_clear_warning_message">נתוני הרישום ביומן יימחקו כאשר רושם היומן המשתייר יכבה.</string>
     <string name="select_logpersist_title">שמור נתוני יומן לצמיתות</string>
     <string name="select_logpersist_dialog_title">בחר מאגרי יומנים לשמירת קבע</string>
     <string name="select_usb_configuration_title">תצורת USB</string>
@@ -982,6 +984,7 @@
     <string name="bluetooth_avc_available_description">מכשיר ה-Bluetooth המחובר תומך בסינכרון עוצמת קול במדיה, לכן עוצמת הקול שתיקבע במכשיר ה-Bluetooth תסתנכרן עם הטלפון שלך.</string>
     <string name="bluetooth_enter_pin_msg">הקלד PIN להתאמה עם %s (נסה את 0000 או 1234).</string>
     <string name="bluetooth_pin_maximum_number_message">הגעת למספר התווים המרבי המותר.</string>
+    <string name="bluetooth_frp_permission_message">לא ניתן להשתמש במכשיר Bluetooth לשיחה זאת.</string>
     <string name="settings_menu_done">בצע</string>
     <string name="usb_tethering_unavailable_subtext_tmo">USB not connected</string>
     <string name="usb_tethering_available_subtext_tmo">USB connected, check to tether</string>
@@ -1481,7 +1484,7 @@ Where Can I Find More Information About the 3rd Party's Policies? Separately, if
     <string name="navigationbar_pressure_sensitivity_title">לחץ לחיצה חזקה על מקש הבית</string>
     <string name="navigationbar_pressure_sensitivity_summary">השתמש בלחצן הבית גם כשהוא מוסתר, באמצעות לחיצה חזקה מהרגיל.</string>
     <string name="navigationbar_pressure_sensitivity_level_summary">מידת הלחץ: %1$d מתוך %2$d</string>
-    <string name="navigationbar_pressure_sensitivity_description_off">השתמש בלחצן הבית גם כשהוא מוסתר, באמצעות לחיצה חזקה מהרגיל.</string>
+    <string name="navigationbar_pressure_sensitivity_description_off">התאם את מידת הלחץ שתידרש ללחיצה ארוכה על לחצן הבית.</string>
     <string name="navigationbar_pressure_low">גבוהה</string>
     <string name="navigationbar_pressure_high">נמוכה יותר</string>
     <string name="navigationbar_hide_bar">לחצן הצגה והסתרה</string>
@@ -1704,7 +1707,11 @@ Where Can I Find More Information About the 3rd Party's Policies? Separately, if
     <string name="crypt_keeper_confirm_title">אשר הצפנה</string>
     <string name="crypt_keeper_final_desc">הצפנת המכשיר היא תהליך בלתי הפיך; הפסקת התהליך תוך כדי ביצוע תגרום לאובדן נתונים. תהליך ההצפנה עשוי להימשך שעה ומעלה, ובמהלכו תתבצע הפעלה מחדש של המכשיר מספר פעמים ולא תוכל להשתמש בו.</string>
     <string name="crypt_keeper_setup_title">מצפין…</string>
-    <string name="crypt_keeper_warn_wipe">לרשותך עוד %d ניסיונות לאתחול המכשיר; לאחר מכן יתבצע בו איפוס להגדרות ברירת המחדל של היצרן. דבר זה יגרום למחיקת כל הנתונים, כולל קבצים ויישומים שהורדת.</string>
+    <string name="crypt_keeper_warn_wipe">"לרשותך עוד %1$d ניסיונות; לאחריהם, יתבצע בטלפון שלך איפוס להגדרות ברירת המחדל של היצרן. פעולה זו תמחק את כל הנתונים, כולל קבצים ויישומים שהורדת.
+
+אם יתבצע איפוס בטלפון שלך, ייתכן שתצטרך להזין מחדש את פרטי %2$s (כתובת דוא״ל וסיסמה) המשויכים לטלפון זה כדי לשוב ולהשתמש בו."</string>
+    <string name="crypt_keeper_samsung_account">Samsung Account</string>
+    <string name="crypt_keeper_google_account">חשבון Google</string>
     <string name="crypt_keeper_failed_title">ההצפנה נכשלה</string>
     <string name="crypt_keeper_failed_summary">לא ניתן לאתחל את המכשיר שלך. תהליך ההצפנה הופסק לפני סיומו. עליך לאפס את המכשיר להגדרות ברירת המחדל של היצרן. פעולה זו תביא למחיקת כל הנתונים שלך.</string>
     <string name="crypt_keeper_data_corrupted_title">אחסון המכשיר פגום</string>
@@ -1723,10 +1730,13 @@ Where Can I Find More Information About the 3rd Party's Policies? Separately, if
     <string name="cryptkeeper_wrong_pin">הוזן קוד PIN שגוי</string>
     <string name="cryptkeeper_wrong_direction">צויר כיוון שגוי</string>
     <string name="checking_decryption">מאמת…</string>
-    <string name="crypt_keeper_last_warn_wipe">לרשותך עוד ניסיון אחד בלבד להפעיל את המכשיר; לאחר מכן יתבצע בו איפוס להגדרות ברירת המחדל של היצרן. דבר זה יגרום למחיקת כל הנתונים, כולל קבצים ויישומים שהורדת.</string>
+    <string name="crypt_keeper_last_warn_wipe">"לרשותך עוד ניסיון אחד; לאחריו, יתבצע בטלפון שלך איפוס להגדרות ברירת המחדל של היצרן. דבר זה ימחק את כל הנתונים, כולל קבצים ויישומים שהורדת.
+
+אם יבוצע בטלפון שלך איפוס, ייתכן שתצטרך להזין מחדש את פרטי %s (כתובת דוא״ל וסיסמה) המשויכים לטלפון זה כדי לשוב ולהשתמש בו."</string>
     <string name="crypt_keeper_failed_title_dec">ההצפנה נכשלה.</string>
     <string name="crypt_keeper_failed_summary_dec">לא ניתן להשלים את הפענוח בשל הפרעה. בצע איפוס לנתוני היצרן (מחיקת כל הנתונים שלך) לפני השימוש.</string>
     <string name="crypt_keeper_set_screen_lock_type">הגדר סוג נעילת מסך</string>
+    <string name="crypt_keeper_warning_keyboard_cover_does_not_work">"לאחר הפעלה מחדש של הטלפון,התכונה 'כיסוי מקלדת' לא תפעל."</string>
     <string name="encryption_interstitial_message">"תוכל להגביר את ההגנה על טלפון זה על ידי דרישה להזנת %s כדי לאפשר את המשך האתחול. דבר זה יסייע להגן על הנתונים השמורים בטלפון שלך במקרה של אובדן או גניבה. ייתכן שביישומים מסוימים יידרש 'אתחול מאובטח', בהתאם למדיניות 'הצפנת המכשיר' ביחס לגישה אל תכונות כמו סינכרון דוא״ל.
 
 עד לסיום אתחול הטלפון, לא תקבל שיחות, הודעות או התראות ואף התראה לא תושמע."</string>
@@ -1971,6 +1981,12 @@ You will also need it when:"</string>
     <string name="lockpassword_confirm_your_pin_with_fingerprint">השתמש בטביעת אצבע או הזן את קוד PIN הנוכחי.</string>
     <string name="lockpassword_confirm_your_pattern_with_fingerprint">השתמש בטביעת אצבע או צייר את הדפוס הנוכחי.</string>
     <string name="lockpassword_confirm_your_password_with_fingerprint">השתמש בטביעת אצבע או הזן את הסיסמה הנוכחית.</string>
+    <string name="lockpassword_confirm_your_pin_with_iris">השתמש בנתוני קשתיות או הזן את קוד PIN הנוכחי.</string>
+    <string name="lockpassword_confirm_your_pattern_with_iris">השתמש בנתוני קשתיות או צייר את הדפוס הנוכחי.</string>
+    <string name="lockpassword_confirm_your_password_with_iris">השתמש בנתוני קשתיות או הזן את הסיסמה הנוכחית.</string>
+    <string name="lockpassword_confirm_your_pin_with_biometrics">היעזר בנתונים ביומטריים או הזן קוד PIN.</string>
+    <string name="lockpassword_confirm_your_pattern_with_biometrics">היעזר בנתונים ביומטריים או צייר דפוס.</string>
+    <string name="lockpassword_confirm_your_password_with_biometrics">היעזר בנתונים ביומטריים או הזן סיסמה.</string>
     <string name="lockpassword_confirm_your_pin_instead_of_fingerprint">הזן קוד PIN במקום להשתמש בזיהוי טביעות אצבע.</string>
     <string name="lockpassword_confirm_your_pattern_instead_of_fingerprint">צייר את הדפוס שלך במקום להשתמש בזיהוי טביעות אצבע.</string>
     <string name="lockpassword_confirm_your_password_instead_of_fingerprint">הזן את סיסמתך במקום להשתמש בזיהוי טביעות אצבע.</string>
@@ -2045,6 +2061,7 @@ You will also need it when:"</string>
     <string name="face_status_timeout">זמן קצוב. נסה מאוחר יותר.</string>
     <string name="okay">אישור</string>
     <string name="face_samsung_account_button">השתמש ב-Samsung Account</string>
+    <string name="face_galaxy_account_button">השתמש ב-Galaxy Account</string>
     <string name="face_error_DB_corrupted">אירעה בעיה בנתוני הפנים שלך. רשום את הפנים שלך שוב.</string>
     <string name="face_error_DB_corrupted_popup_title">רישום חוזר של פניך</string>
     <string name="face_error_timeout">פניך לא זוהו.</string>
@@ -2155,7 +2172,7 @@ You will also need it when:"</string>
     <string name="biometrics_backup_locktype_title">הגדרת אבטחה באמצעות נתוני קשתית</string>
     <string name="biometrics_register_your_iris">רשום את הקשתיות שלך.</string>
     <string name="biometrics_backup_locktype_summary">כדי לבטל את נעילת המכשיר בעזרת נתוני קשתיות, עליך להגדיר דפוס, קוד PIN או סיסמה.</string>
-    <string name="biometrics_backup_locktype_message">כדי לבטל את נעילת הטלפון או לבצע אימות מאובטח בעזרת נתוני קשתיות, תצטרך:</string>
+    <string name="biometrics_backup_locktype_message">כדי לבטל את נעילת הטלפון או לבצע אימות עצמי ביישומים בעזרת נתוני קשתיות, תצטרך:</string>
     <string name="iris_delete_popup_title">האם להסיר נתוני קשתיות?</string>
     <string name="iris_delete_popup_message">האם להסיר נתוני קשתיות?</string>
     <string name="iris_delete_popup_message_with_related_func">תכונות המשתמשות בזיהוי קשתיות יושבתו.</string>
@@ -2231,6 +2248,9 @@ You will also need it when:"</string>
     <string name="biometrics_dex_cant_use_msg">לא ניתן להשתמש ב-%s ב-Samsung DeX.</string>
     <string name="biometrics_dex_closed_to_switch">%s נסגר כדי לעבור אל Samsung DeX.</string>
     <string name="biometircs_dex_cant_use_toast">לא ניתן להפעיל את %s ב-Samsung DeX. נסה להפעיל במצב טלפון.</string>
+    <string name="iris_guide_text_preview">הבט לכאן לשימוש בקשתיות</string>
+    <string name="iris_guide_enable_toggle">הקש כאן לשימוש בנתוני קשתיות</string>
+    <string name="iris_cannot_verify">לא ניתן לאמת קשתיות</string>
     <string name="knox_twofactor_bio_description">בחר סוג נעילה ביומטרית וסוג נעילה נוסף לביטול הנעילה של %s.</string>
     <string name="fingerprint_registered">טביעות האצבע הרשומות ישמשו להפעלת שיטת ביטול הנעילה שנבחרה.</string>
     <string name="knox_twofactor_description">בחר נתונים ביומטריים וסוג נעילה נוסף לביטול הנעילה של %s.</string>
@@ -3093,6 +3113,7 @@ Mobile data will be turned off."</string>
     <string name="easy_mode_app_help">פשט את השימוש במכשיר שלך בעזרת פריסה פשוטה יותר של מסך הבית והגדלת הפריטים המוצגים במסך.</string>
     <string name="easy_mode_app_help_dream_1">השתמש בפריסה פשוטה של מסך הבית ובפריטים גדולים יותר במסך.</string>
     <string name="easy_mode_app_help_dream_2">"התאמות אישיות שביצעת במסך הבית יושלכו, ו'זום מסך' יוגדר לגודל המרבי."</string>
+    <string name="easy_mode_app_help_3rd_launcher">"החל מצב 'קל' כדי לקבל פריטים גדולים יותר במסך. אם אינך משתמש ב-TouchWiz Home, פריסת מסך הבית שלך לא תשתנה אך רמת ההגדלה של המסך תהיה גדולה וגודל הגופן יהיה בינוני."</string>
     <string name="security_warning_content">תוכל להגן על הפרטיות שלך על ידי הגדרת סיסמה, קוד PIN או דפוס לביטול נעילת המסך</string>
     <string name="lock_setting_weather_desc">"כדי להציג או לשנות הגדרות מזג אוויר, הקש על 'הגדרות מזג אוויר' להלן."</string>
     <string name="lock_setting_weather_btn">הגדרות מזג אוויר</string>
@@ -3946,7 +3967,7 @@ Wi-Fi מופעל."</string>
     <string name="wfd_descrpition_playsound">השמע צליל.</string>
     <string name="wfd_is_not_supported">אין תמיכה בתכונה זו.</string>
     <string name="usbtethering_notify_wifi_is_on_title">האם לכבות Wi-Fi?</string>
-    <string name="usbtethering_notify_wifi_is_on">"לא ניתן להפעיל במקביל Wi-Fi ו'קשירה באמצעות USB'. כבה Wi-Fi."</string>
+    <string name="usbtethering_notify_wifi_is_on">"לא ניתן להפעיל במקביל Wi-Fi ו'חיבור באמצעות USB'. ה-Wi-Fi יכבה."</string>
     <string name="disable_multi_window_dialog_text">"הפונקציה 'חלונות מרובים' תושבת וכל היישומים הפתוחים בחלונות קופצים ייסגרו."</string>
     <string name="keyguard_password_attempt_count_pin_code">נותר ניסיון %d.</string>
     <string name="keyguard_password_attempts_count_pin_code">נותרו %d ניסיונות.</string>
@@ -4154,6 +4175,7 @@ Wi-Fi מופעל."</string>
     <string name="hdmi_mode_title">מצב HDMI</string>
     <string name="hdmi_mode_dex">Samsung DeX</string>
     <string name="hdmi_mode_mirroring">Screen Mirroring</string>
+    <string name="hdmi_mode_not_available_while_cover_attached">%s לא זמין כאשר הכיסוי מחובר.</string>
     <string name="screen_timeout_for_dex">זמן עד כיבוי מסך ב-Samsung DeX</string>
     <string name="show_virtual_keyboard_for_dex">הצג מקלדת במסך ב-Samsung DeX</string>
     <string name="comma">,</string>
@@ -4462,7 +4484,7 @@ Wi-Fi מופעל."</string>
     <string name="date_picker_title">תאריך</string>
     <string name="time_picker_title">שעה</string>
     <string name="lock_after_timeout">נעל באופן אוטומטי</string>
-    <string name="lock_after_timeout_summary">נעל את המסך %s לאחר הכיבוי האוטומטי.</string>
+    <string name="lock_after_timeout_summary">נעל את הטלפון %s לאחר הכיבוי האוטומטי.</string>
     <string name="lock_after_timeout_summary_with_exception">נעל את המסך %1$s לאחר הכיבוי האוטומטי, אלא אם המסך הושאר לא נעול על ידי %2$s.</string>
     <string name="show_owner_info_on_lockscreen_label">הצג את פרטי בעל המכשיר במסך הנעילה.</string>
     <string name="owner_info_settings_title">פרטי בעלים</string>
@@ -4610,6 +4632,8 @@ Wi-Fi מופעל."</string>
     <string name="wifi_empty_list_user_restricted">אין לך הרשאה לשנות את הגדרות ה-Wi-Fi.</string>
     <string name="wifi_setup_wps">הגדרה אוטומטית (WPS)</string>
     <string name="wifi_show_advanced">הצג אפשרויות מתקדמות</string>
+    <string name="wifi_advanced_toggle_description_expanded">הקש הקשה כפולה כדי לכווץ.</string>
+    <string name="wifi_advanced_toggle_description_collapsed">הקש הקשה כפולה כדי להרחיב.</string>
     <string name="wifi_wps_setup_title">הגדרת WPS</string>
     <string name="wifi_wps_setup_msg">מפעיל WPS…</string>
     <string name="wifi_wps_onstart_pbc">לחץ על לחצן הגדרת ה-Wi-Fi המוגן בנתב שלך. הוא עשוי להיקרא WPS או להכיל את הסמל הזה:</string>
@@ -4641,6 +4665,10 @@ Wi-Fi מופעל."</string>
     <string name="wifi_shared">משותף</string>
     <string name="wifi_unchanged">(ללא שינוי)</string>
     <string name="wifi_unspecified">(לא מצוין)</string>
+    <string name="wifi_select_cert">בחר אישור</string>
+    <string name="wifi_do_not_provide_eap_user_cert">אל תספק</string>
+    <string name="wifi_do_not_validate_eap_server">אל תאמת</string>
+    <string name="wifi_do_not_validate_eap_server_warning">לא צוין אישור. החיבור שלך לא יהיה פרטי.</string>
     <string name="wifi_scan_always_turnon_message">%s מבקש הרשאה לבצע סריקה לאיתור רשתות Wi-Fi גם כאשר ה-Wi-Fi כבוי, כדי לשפר את מידת הדיוק של המיקום ולמטרות נוספות. לאפשר זאת עבור כל היישומים?</string>
     <string name="wifi_scan_always_confirm_allow">אפשר</string>
     <string name="wifi_scan_always_confirm_deny">דחה</string>
@@ -4975,9 +5003,9 @@ Wi-Fi מופעל."</string>
     <string name="restore_default_apn_completed">איפוס הגדרות APN לברירת מחדל.</string>
     <string name="reset_network_desc">פעולה זו תגרום לאיפוס כל הגדרות הרשת, כולל הגדרות:</string>
     <string name="reset_network_button_text">איפוס הגדרות</string>
-    <string name="reset_network_final_desc">כל הגדרות החיבור יתאפסו. לא ניתן לבטל פעולה זו.</string>
+    <string name="reset_network_final_desc">כל הגדרות הרשת יאופסו. לא ניתן לבטל פעולה זו.</string>
     <string name="reset_network_final_button_text">איפוס הגדרות</string>
-    <string name="reset_network_complete_toast">הגדרות החיבור אופסו.</string>
+    <string name="reset_network_complete_toast">בוצע איפוס של הגדרות הרשת.</string>
     <string name="master_clear_title">איפוס לנתוני יצרן</string>
     <string name="master_clear_accounts">כרגע, אתה מחובר לחשבונות הבאים:</string>
     <string name="master_clear_other_users_present">המחיקה תכלול גם נתונים השייכים לאנשים אחרים המשתמשים במכשיר זה.</string>
@@ -6090,6 +6118,7 @@ If the device has multiple users, using this shortcut on the lock screen tempora
     <string name="set_data_limit">הגדר הקצבת נתונים</string>
     <string name="data_limit">מגבלת נתונים</string>
     <string name="data_usage_template">%1$s נוצלו בתקופה %2$s</string>
+    <string name="data_usage_template_wifi">%s נוצלו ב-30 הימים האחרונים</string>
     <string name="data_usage_other_apps">יישומים קשורים נכללו בשימוש</string>
     <string name="data_saver_title">חוסך הנתונים</string>
     <string name="unrestricted_data_saver">"אפשר פעולת יישום כאשר 'חוסך הנתונים' מופעל"</string>
@@ -6140,6 +6169,7 @@ If the device has multiple users, using this shortcut on the lock screen tempora
     <string name="legacy_dhcp_client_summary">‏השתמש בלקוח DHCP של Lollipop במקום לקוח DHCP החדש של Android.</string>
     <string name="screen_off_pocket_title">השאר מסך כבוי</string>
     <string name="screen_off_pocket_summary">מנע הפעלה מקרית של המסך כאשר המכשיר נמצא במקום חשוך, כמו כיס או תיק.</string>
+    <string name="noApplications">כל היישומים הקשורים בפעולה זו הושבתו, נחסמו או שאינם מותקנים.</string>
     <string name="confirm_reset_shortcut_manager_throttling_title">"איפוס מגביל הקצב של 'מנהל קיצורי הדרך'"</string>
     <string name="confirm_reset_shortcut_manager_throttling_message">"כעת יבוצע איפוס במוניים של מגביל הקצב ב'מנהל קיצורי הדרך'."</string>
 </resources>

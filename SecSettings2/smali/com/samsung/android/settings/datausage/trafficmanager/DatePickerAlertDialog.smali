@@ -110,7 +110,7 @@
 
     move-result-object v6
 
-    const v0, 0x7f0400b5
+    const v0, 0x7f0400b6
 
     invoke-virtual {v6, v0, v2}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;)Landroid/view/View;
 
@@ -150,7 +150,7 @@
 
     iget-object v0, p0, Lcom/samsung/android/settings/datausage/trafficmanager/DatePickerAlertDialog;->themeContext:Landroid/content/Context;
 
-    const v1, 0x7f0b0509
+    const v1, 0x7f0b050a
 
     invoke-virtual {v0, v1}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -162,7 +162,7 @@
 
     iget-object v0, p0, Lcom/samsung/android/settings/datausage/trafficmanager/DatePickerAlertDialog;->themeContext:Landroid/content/Context;
 
-    const v1, 0x7f0b0508
+    const v1, 0x7f0b0509
 
     invoke-virtual {v0, v1}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -170,7 +170,7 @@
 
     invoke-virtual {p0, v8, v0, p0}, Lcom/samsung/android/settings/datausage/trafficmanager/DatePickerAlertDialog;->setButton(ILjava/lang/CharSequence;Landroid/content/DialogInterface$OnClickListener;)V
 
-    const v0, 0x7f110277
+    const v0, 0x7f110279
 
     invoke-virtual {v7, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -212,7 +212,7 @@
 
     const v6, 0x1020011
 
-    const v4, 0x7f110275
+    const v4, 0x7f110277
 
     invoke-virtual {p1, v4}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -230,7 +230,7 @@
 
     move-result-object v4
 
-    const v5, 0x7f0b12b4
+    const v5, 0x7f0b12c4
 
     invoke-virtual {v4, v5}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -262,7 +262,7 @@
 
     move-result-object v4
 
-    const v5, 0x7f0b12b5
+    const v5, 0x7f0b12c5
 
     invoke-virtual {v4, v5}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -641,7 +641,7 @@
 
     move-result-object v4
 
-    const v5, 0x7f0b12b4
+    const v5, 0x7f0b12c4
 
     invoke-virtual {v4, v5}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -659,7 +659,7 @@
 
     move-result-object v4
 
-    const v5, 0x7f0b12b4
+    const v5, 0x7f0b12c4
 
     invoke-virtual {v4, v5}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -756,7 +756,7 @@
 
     move-result-object v4
 
-    const v5, 0x7f0b12b7
+    const v5, 0x7f0b12c7
 
     invoke-virtual {v4, v5}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 

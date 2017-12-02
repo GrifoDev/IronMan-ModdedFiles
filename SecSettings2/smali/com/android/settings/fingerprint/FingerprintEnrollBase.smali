@@ -65,7 +65,7 @@
 .method protected getLayout()Lcom/android/setupwizardlib/GlifLayout;
     .locals 1
 
-    const v0, 0x7f1103bc
+    const v0, 0x7f1103be
 
     invoke-virtual {p0, v0}, Lcom/android/settings/fingerprint/FingerprintEnrollBase;->findViewById(I)Landroid/view/View;
 

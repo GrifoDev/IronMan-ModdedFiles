@@ -153,7 +153,7 @@
 .method initswitchBtn()V
     .locals 8
 
-    const v7, 0x7f02064c
+    const v7, 0x7f02064e
 
     const/4 v3, 0x0
 
@@ -181,7 +181,7 @@
 
     iget-object v5, p0, Lcom/samsung/android/settings/display/ScreenResolutionSettings;->mActionBar:Landroid/app/ActionBar;
 
-    const v6, 0x7f0400a3
+    const v6, 0x7f0400a4
 
     invoke-virtual {v5, v6}, Landroid/app/ActionBar;->setCustomView(I)V
 
@@ -213,7 +213,7 @@
 
     if-eqz v5, :cond_0
 
-    const v5, 0x7f110238
+    const v5, 0x7f11023a
 
     invoke-virtual {v1, v5}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -221,12 +221,12 @@
 
     check-cast v2, Landroid/widget/LinearLayout;
 
-    const v5, 0x7f020110
+    const v5, 0x7f02010e
 
     invoke-virtual {v2, v5}, Landroid/widget/LinearLayout;->setBackgroundResource(I)V
 
     :cond_0
-    const v5, 0x7f110239
+    const v5, 0x7f11023b
 
     invoke-virtual {v1, v5}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -242,7 +242,7 @@
 
     invoke-static {v5, v6}, Lcom/android/settings/Utils;->setMaxFontScale(Landroid/content/Context;Landroid/widget/Button;)V
 
-    const v5, 0x7f11023a
+    const v5, 0x7f11023c
 
     invoke-virtual {v1, v5}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -268,7 +268,7 @@
 
     iget-object v5, p0, Lcom/samsung/android/settings/display/ScreenResolutionSettings;->mSaveButton:Landroid/widget/Button;
 
-    const v6, 0x7f0b0510
+    const v6, 0x7f0b0511
 
     invoke-virtual {p0, v6}, Lcom/samsung/android/settings/display/ScreenResolutionSettings;->getString(I)Ljava/lang/String;
 
@@ -344,7 +344,7 @@
 
     iput-object v1, p0, Lcom/samsung/android/settings/display/ScreenResolutionSettings;->mContext:Landroid/content/Context;
 
-    const v1, 0x7f0800dc
+    const v1, 0x7f0800de
 
     invoke-virtual {p0, v1}, Lcom/samsung/android/settings/display/ScreenResolutionSettings;->addPreferencesFromResource(I)V
 

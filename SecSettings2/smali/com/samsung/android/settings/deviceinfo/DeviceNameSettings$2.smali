@@ -35,29 +35,61 @@
 
 # virtual methods
 .method public onEditorAction(Landroid/widget/TextView;ILandroid/view/KeyEvent;)Z
-    .locals 1
+    .locals 3
+
+    const/4 v1, 0x0
 
     packed-switch p2, :pswitch_data_0
 
+    :cond_0
     :goto_0
-    const/4 v0, 0x0
+    if-eqz v1, :cond_1
 
-    return v0
+    const/4 v2, 0x0
+
+    return v2
 
     :pswitch_0
-    iget-object v0, p0, Lcom/samsung/android/settings/deviceinfo/DeviceNameSettings$2;->this$0:Lcom/samsung/android/settings/deviceinfo/DeviceNameSettings;
+    iget-object v2, p0, Lcom/samsung/android/settings/deviceinfo/DeviceNameSettings$2;->this$0:Lcom/samsung/android/settings/deviceinfo/DeviceNameSettings;
 
-    invoke-virtual {v0}, Lcom/samsung/android/settings/deviceinfo/DeviceNameSettings;->saveDeviceName()V
+    invoke-static {v2}, Lcom/samsung/android/settings/deviceinfo/DeviceNameSettings;->-get2(Lcom/samsung/android/settings/deviceinfo/DeviceNameSettings;)Landroid/widget/EditText;
 
-    iget-object v0, p0, Lcom/samsung/android/settings/deviceinfo/DeviceNameSettings$2;->this$0:Lcom/samsung/android/settings/deviceinfo/DeviceNameSettings;
+    move-result-object v2
 
-    invoke-static {v0}, Lcom/samsung/android/settings/deviceinfo/DeviceNameSettings;->-get0(Lcom/samsung/android/settings/deviceinfo/DeviceNameSettings;)Landroid/app/AlertDialog;
+    invoke-virtual {v2}, Landroid/widget/EditText;->getText()Landroid/text/Editable;
+
+    move-result-object v2
+
+    invoke-interface {v2}, Landroid/text/Editable;->toString()Ljava/lang/String;
 
     move-result-object v0
 
-    invoke-virtual {v0}, Landroid/app/AlertDialog;->dismiss()V
+    invoke-static {v0}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
+
+    move-result v2
+
+    if-nez v2, :cond_0
+
+    iget-object v2, p0, Lcom/samsung/android/settings/deviceinfo/DeviceNameSettings$2;->this$0:Lcom/samsung/android/settings/deviceinfo/DeviceNameSettings;
+
+    invoke-virtual {v2}, Lcom/samsung/android/settings/deviceinfo/DeviceNameSettings;->saveDeviceName()V
+
+    iget-object v2, p0, Lcom/samsung/android/settings/deviceinfo/DeviceNameSettings$2;->this$0:Lcom/samsung/android/settings/deviceinfo/DeviceNameSettings;
+
+    invoke-static {v2}, Lcom/samsung/android/settings/deviceinfo/DeviceNameSettings;->-get0(Lcom/samsung/android/settings/deviceinfo/DeviceNameSettings;)Landroid/app/AlertDialog;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Landroid/app/AlertDialog;->dismiss()V
+
+    const/4 v1, 0x1
 
     goto :goto_0
+
+    :cond_1
+    const/4 v2, 0x1
+
+    return v2
 
     :pswitch_data_0
     .packed-switch 0x6

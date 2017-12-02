@@ -53,7 +53,7 @@
 
     iput-object v0, p0, Lcom/samsung/android/settings/lockscreen/FaceWidgetDragCell;->mTitle:Landroid/widget/TextView;
 
-    const v0, 0x7f1103ab
+    const v0, 0x7f1103ad
 
     invoke-virtual {p0, v0}, Lcom/samsung/android/settings/lockscreen/FaceWidgetDragCell;->findViewById(I)Landroid/view/View;
 

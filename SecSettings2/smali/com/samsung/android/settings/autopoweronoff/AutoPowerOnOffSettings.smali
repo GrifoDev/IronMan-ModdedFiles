@@ -567,7 +567,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f0f0408
+    const v1, 0x7f0f0407
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getInteger(I)I
 
@@ -821,7 +821,7 @@
 .method public onPreferenceChange(Landroid/preference/Preference;Ljava/lang/Object;)Z
     .locals 8
 
-    const v7, 0x7f0f0408
+    const v7, 0x7f0f0407
 
     const/4 v4, 0x0
 
@@ -887,7 +887,7 @@
 
     move-result-object v6
 
-    const v7, 0x7f0f0409
+    const v7, 0x7f0f0408
 
     invoke-virtual {v6, v7}, Landroid/content/res/Resources;->getInteger(I)I
 
@@ -979,7 +979,7 @@
 
     move-result-object v6
 
-    const v7, 0x7f0f040a
+    const v7, 0x7f0f0409
 
     invoke-virtual {v6, v7}, Landroid/content/res/Resources;->getInteger(I)I
 

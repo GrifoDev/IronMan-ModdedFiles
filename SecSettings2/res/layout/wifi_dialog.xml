@@ -37,9 +37,7 @@
                 <LinearLayout android:id="@id/l_ca_cert" android:visibility="gone" style="@style/wifi_dialog_spinner_layout_style">
                     <TextView android:text="@string/wifi_eap_ca_cert" style="@style/wifi_item_dialog_label" />
                     <Spinner android:id="@id/ca_cert" android:prompt="@string/wifi_eap_ca_cert" style="@style/wifi_spinner_item_content" />
-                </LinearLayout>
-                <LinearLayout android:id="@id/no_ca_cert_warning" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content" style="@style/wifi_item">
-                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/wifi_do_not_validate_eap_server_warning" style="@style/wifi_item_warning" />
+                    <TextView android:id="@id/no_ca_cert_warning" android:visibility="gone" android:text="@string/wifi_do_not_validate_eap_server_warning" style="@style/wifi_item_error_text" />
                 </LinearLayout>
                 <LinearLayout android:id="@id/l_domain" android:layout_width="fill_parent" android:layout_height="wrap_content" style="@style/wifi_item">
                     <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/wifi_eap_domain" style="@style/wifi_item_label" />
@@ -86,8 +84,8 @@
         <LinearLayout android:id="@id/auto_reconnect_layout" android:visibility="gone" style="@style/wifi_dialog_checkbox_layout_style">
             <CheckBox android:id="@id/auto_reconnect" android:checked="true" android:text="@string/wifi_auto_reconnect" style="@style/wifi_dialog_checkbox_style" />
         </LinearLayout>
-        <LinearLayout android:id="@id/wifi_advanced_checkbox_layout" android:visibility="gone" android:layout_height="wrap_content" android:contentDescription="@string/wifi_advanced_toggle_description_collapsed" android:importantForAccessibility="yes" style="@style/wifi_dialog_checkbox_layout_style">
-            <CheckBox android:id="@id/wifi_advanced_togglebox" android:text="@string/wifi_show_advanced" android:importantForAccessibility="noHideDescendants" style="@style/wifi_dialog_checkbox_style" />
+        <LinearLayout android:id="@id/wifi_advanced_checkbox_layout" android:visibility="gone" android:layout_height="wrap_content" style="@style/wifi_dialog_checkbox_layout_style">
+            <CheckBox android:id="@id/wifi_advanced_togglebox" android:text="@string/wifi_show_advanced" style="@style/wifi_dialog_checkbox_style" />
         </LinearLayout>
         <LinearLayout android:id="@id/wifi_advanced_fields" android:visibility="gone" style="@style/wifi_section">
             <LinearLayout android:id="@id/ip_fields" android:visibility="gone" style="@style/wifi_dialog_spinner_layout_style">
@@ -134,6 +132,7 @@
                 <LinearLayout style="@style/wifi_dialog_edit_layout_style">
                     <TextView android:text="@string/proxy_hostname_label" style="@style/wifi_item_dialog_label" />
                     <EditText android:id="@id/proxy_hostname" android:hint="@string/proxy_hostname_hint" android:singleLine="true" android:inputType="textNoSuggestions" android:privateImeOptions="inputType=PredictionOff;disableEmoticonInput=true;defaultInputmode=english" style="@style/wifi_item_edit_content" />
+                    <TextView android:id="@id/wifi_proxy_host_error_text" android:visibility="gone" style="@style/wifi_item_error_text" />
                 </LinearLayout>
                 <LinearLayout style="@style/wifi_dialog_edit_layout_style">
                     <TextView android:text="@string/proxy_port_label" style="@style/wifi_item_dialog_label" />

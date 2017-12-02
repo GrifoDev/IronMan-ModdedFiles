@@ -170,6 +170,8 @@
     <string name="wifi_allow_scan_with_traffic_summary">Lejo ose refuzo automatikisht skanimet për Wi-Fi në bredhje, në bazë të sasisë së të dhënave të përdorura.</string>
     <string name="select_logd_size_title">Madh. e buffer për logim</string>
     <string name="select_logd_size_dialog_title">Përzgjidh madhësinë maksimale për çdo buffer logu</string>
+    <string name="dev_logpersist_clear_warning_title">Pastroj magazinën e loguesit të përhershëm?</string>
+    <string name="dev_logpersist_clear_warning_message">Të dhënat e loguesit do të hiqen kur loguesi i përhershëm të fiket.</string>
     <string name="select_logpersist_title">Ruaj të dhënat e logimit</string>
     <string name="select_logpersist_dialog_title">Zgjidh që zbutësit e logimit të ruhen</string>
     <string name="select_usb_configuration_title">Konfigurimi USB</string>
@@ -981,6 +983,7 @@ Mund ta ndryshosh këtë më vonë që nga cilësimet Bluetooth."</string>
     <string name="bluetooth_avc_available_description">Pajisja e lidhur Bluetooth e mbështet Sinkronizimin e volumit media dhe niveli i volumit i cilësuar nga pajisja Bluetooth do të sinkronizohet me telefonin.</string>
     <string name="bluetooth_enter_pin_msg">"Fut kodin PIN për t'u çiftuar me %s (provo 0000 ose 1234)."</string>
     <string name="bluetooth_pin_maximum_number_message">U arrit numri maksimal i shenjave.</string>
+    <string name="bluetooth_frp_permission_message">S’mund të përdorësh pajisje Bluetooth për këtë thirrje.</string>
     <string name="settings_menu_done">Kryer</string>
     <string name="usb_tethering_unavailable_subtext_tmo">USB not connected</string>
     <string name="usb_tethering_available_subtext_tmo">USB connected, check to tether</string>
@@ -1480,7 +1483,7 @@ Trokit mbi OK për të lejuar që ndriçimi të rritet mbi nivelet e sigurisë."
     <string name="navigationbar_pressure_sensitivity_title">Shtyp mbi Butonin Bazë</string>
     <string name="navigationbar_pressure_sensitivity_summary">Përdor Butonin bazë kur është fshehur, duke shtypur më fort se zakonisht.</string>
     <string name="navigationbar_pressure_sensitivity_level_summary">Niveli i trysnisë: %1$d nga %2$d</string>
-    <string name="navigationbar_pressure_sensitivity_description_off">Përdor Butonin bazë kur është fshehur, duke shtypur më fort se zakonisht.</string>
+    <string name="navigationbar_pressure_sensitivity_description_off">Përshtat forcën e shtypjes që dëshiron të aplikosh mbi Butonin Bazë.</string>
     <string name="navigationbar_pressure_low">Më lehtë</string>
     <string name="navigationbar_pressure_high">Më fort</string>
     <string name="navigationbar_hide_bar">Shfaqe dhe fshihe butonin</string>
@@ -1619,7 +1622,7 @@ Trokit mbi OK për të lejuar që ndriçimi të rritet mbi nivelet e sigurisë."
     <string name="crypt_keeper_decrypt_title">Dekripto pajisjen</string>
     <string name="crypt_keeper_decrypt_summary">Pajisja e enkriptuar.</string>
     <string name="crypt_keeper_type_pin">PIN</string>
-    <string name="crypt_keeper_type_pattern">Motivi</string>
+    <string name="crypt_keeper_type_pattern">motiv</string>
     <string name="crypt_keeper_type_password">Fjalëkalimi</string>
     <string name="crypt_keeper_type_direction">Bllokim me drejtime</string>
     <string name="crypt_keeper_confirm_title_dec">Konfirmo dekriptimin</string>
@@ -1703,7 +1706,11 @@ Enkriptimi kërkon një orë ose më shumë. Para se të fillosh, sigurohu që b
     <string name="crypt_keeper_confirm_title">Konfiguro enkriptimin</string>
     <string name="crypt_keeper_final_desc">Enkriptimi i pajisjes nuk mund të zhbëhet dhe nëse ndërpritet procesi, do të humbasin të dhëna. Enkriptimi mund të kërkojë një orë ose më shumë, kohë gjatë së cilës pajisja jote do të riniset disa herë dhe ti nuk do të jesh në gjendje ta përdorësh.</string>
     <string name="crypt_keeper_setup_title">Në enkriptim…</string>
-    <string name="crypt_keeper_warn_wipe">Të kanë mbetur %d orvatje për ta nisur pajisjen, para se kjo të resetohet në parazgjedhjet e fabrikës. Kjo do t‘i fshijë të gjitha të dhënat, përfshi skedarët dhe app-et e shkarkuara.</string>
+    <string name="crypt_keeper_warn_wipe">"Të kanë mbetur edhe %1$d orvatje para se telefoni yt të resetohet në parazgjedhjet e fabrikës. Kjo do t’i fshijë të gjitha të dhënat, përfshi skedarët dhe app-et e shkarkuara.
+
+Në qoftë se telefoni yt resetohet, duhet të futësh informacionin për %2$s (adresën e-postare dhe fjalëkalimin) që i bashkëlidhet këtij telefoni, që të mund ta përdorësh sërish."</string>
+    <string name="crypt_keeper_samsung_account">Samsung account</string>
+    <string name="crypt_keeper_google_account">Llogaria Google</string>
     <string name="crypt_keeper_failed_title">Enkriptimi dështoi</string>
     <string name="crypt_keeper_failed_summary">Nuk mund të nis pajisjen. Procesi i enkriptimit u ndërpre. Duhet ta resetosh pajisjen në parazgjedhjet e fabrikës. Kjo do t‘i fshijë të gjitha të dhënat.</string>
     <string name="crypt_keeper_data_corrupted_title">Magazina e pajisjes është e dëmtuar</string>
@@ -1722,10 +1729,13 @@ Enkriptimi kërkon një orë ose më shumë. Para se të fillosh, sigurohu që b
     <string name="cryptkeeper_wrong_pin">U fut një PIN i pasaktë</string>
     <string name="cryptkeeper_wrong_direction">Drejtimi u vizatua gabim</string>
     <string name="checking_decryption">Po verifikoj…</string>
-    <string name="crypt_keeper_last_warn_wipe">Të ka mbetur vetëm 1 orvatje për ta nisur pajisjen, para se kjo të resetohet në parazgjedhjet e fabrikës. Resetimi do t‘i fshijë të gjitha të dhënat, përfshi skedarët dhe app-et e shkarkuara.</string>
+    <string name="crypt_keeper_last_warn_wipe">"Të ka mbetur edhe 1 orvatje para se telefoni yt të resetohet në parazgjedhjet e fabrikës. Kjo do t’i fshijë të gjitha të dhënat, përfshi skedarët dhe app-et e shkarkuara.
+
+Në qoftë se telefoni yt resetohet, duhet të futësh informacionin për %s (adresën e-postare dhe fjalëkalimin) që i bashkëlidhet këtij telefoni, që të mund ta përdorësh sërish."</string>
     <string name="crypt_keeper_failed_title_dec">Deshifrimi dështoi.</string>
     <string name="crypt_keeper_failed_summary_dec">Nuk mund ta përfundoj dekriptimin për shkak të ndërprerjes. Kryej një ricilësim me të dhënat e fabrikës (duke i fshirë të gjitha të dhënat) para përdorimit.</string>
     <string name="crypt_keeper_set_screen_lock_type">Cilëso llojin e bllokimit</string>
+    <string name="crypt_keeper_warning_keyboard_cover_does_not_work">Mbulesa tastierë nuk do të punojë pasi të riniset telefoni.</string>
     <string name="encryption_interstitial_message">"Mund ta mbrosh më mirë këtë telefon duke kërkuar që të futet %s para se të niset telefoni. Kjo ndihmon për t’i mbrojtur të dhënat në qoftë se telefoni të humb ose ta vjedhin. Disa app-e mund të kërkojnë Nisje të sigurt në bazë të politikave të Enkriptimit të pajisjes, për të marrë akses në funksionalitete të tilla si sinkronizimi i e-postës.
 
 Nuk do të marrësh thirrje, mesazhe dhe njoftime dhe alarmet nuk do të bien, derisa telefoni të jetë nisur."</string>
@@ -1970,6 +1980,12 @@ You will also need it when:"</string>
     <string name="lockpassword_confirm_your_pin_with_fingerprint">Përdor një shenjë gishti ose fut PIN-in e tanishëm.</string>
     <string name="lockpassword_confirm_your_pattern_with_fingerprint">Përdor një shenjë gishti ose vizato motivin e tanishëm.</string>
     <string name="lockpassword_confirm_your_password_with_fingerprint">Përdor një shenjë gishti ose fut fjalëkalimin e tanishëm.</string>
+    <string name="lockpassword_confirm_your_pin_with_iris">Përdor iriset ose fut PIN-in tënd të tanishëm.</string>
+    <string name="lockpassword_confirm_your_pattern_with_iris">Përdor iriset ose vizato motivin tënd të tanishëm.</string>
+    <string name="lockpassword_confirm_your_password_with_iris">Përdor iriset ose fut fjalëkalimin tënd të tanishëm.</string>
+    <string name="lockpassword_confirm_your_pin_with_biometrics">Përdor biometrikën ose fut PIN-in.</string>
+    <string name="lockpassword_confirm_your_pattern_with_biometrics">Përdor biometrikën ose vizato motivin.</string>
+    <string name="lockpassword_confirm_your_password_with_biometrics">Përdor biometrikën ose fut fjalëkalimin.</string>
     <string name="lockpassword_confirm_your_pin_instead_of_fingerprint">Fut PIN-in, në vend që të përdorësh njohjen me shenjë gishti.</string>
     <string name="lockpassword_confirm_your_pattern_instead_of_fingerprint">Vizato motivin, në vend që të përdorësh njohjen me shenjë gishti.</string>
     <string name="lockpassword_confirm_your_password_instead_of_fingerprint">Fut fjalëkalimin, në vend që të përdorësh njohjen me shenjë gishti.</string>
@@ -2044,6 +2060,7 @@ Përzgjidh si dëshiron ta zhbllokosh telefonin. Zhbllokimi me fytyrë dhe Zhbll
     <string name="face_status_timeout">Afatpritja kaloi. Provo më vonë.</string>
     <string name="okay">OK</string>
     <string name="face_samsung_account_button">Përdor Samsung account</string>
+    <string name="face_galaxy_account_button">Përdor llogarinë Galaxy</string>
     <string name="face_error_DB_corrupted">Pati një problem me të dhënat e fytyrës. Regjistroje fytyrën sërish.</string>
     <string name="face_error_DB_corrupted_popup_title">Regjistroje fytyrën sërish</string>
     <string name="face_error_timeout">Fytyra jote nuk u pikas.</string>
@@ -2154,7 +2171,7 @@ Ndiz Zhbllokimin me irise, që të përdorësh biometrikën ose %s për ta zhbll
     <string name="biometrics_backup_locktype_title">Konfiguro sigurinë me irise</string>
     <string name="biometrics_register_your_iris">Regjistro iriset.</string>
     <string name="biometrics_backup_locktype_summary">Për ta zhbllokuar pajisjen me anë të iriseve, duhet të cilësosh një motiv, PIN ose fjalëkalim.</string>
-    <string name="biometrics_backup_locktype_message">Për të përdorur iriset për të zhbllokuar telefonin ose për verifikim të sigurt, duhet të:</string>
+    <string name="biometrics_backup_locktype_message">Për të përdorur iriset për të zhbllokuar telefonin ose për të verifikuar veten në app-et, duhet të veprosh si vijon:</string>
     <string name="iris_delete_popup_title">T’i heq të dhënat e iriseve?</string>
     <string name="iris_delete_popup_message">T’i heq të dhënat e iriseve?</string>
     <string name="iris_delete_popup_message_with_related_func">Funksionalitetet që përdorin irise do të fiken.</string>
@@ -2230,6 +2247,9 @@ Përzgjidh si dëshiron ta zhbllokosh telefonin. Zhbllokimi me iris dhe Zhblloki
     <string name="biometrics_dex_cant_use_msg">S’mund të përdorësh %s në Samsung DeX.</string>
     <string name="biometrics_dex_closed_to_switch">%s u mbyll, për të kaluar në Samsung DeX.</string>
     <string name="biometircs_dex_cant_use_toast">%s nuk mund të punojë në Samsung DeX. Provoje me regjimin telefon.</string>
+    <string name="iris_guide_text_preview">Shih këtu për iriset</string>
+    <string name="iris_guide_enable_toggle">Trokit për të përdorur iriset</string>
+    <string name="iris_cannot_verify">S‘i verifikova dot iriset</string>
     <string name="knox_twofactor_bio_description">Përzgjidh llojin e bllokimit biometrik dhe një lloj të dytë bllokimi për ta zhbllokuar %s.</string>
     <string name="fingerprint_registered">Shenjat e gishtave të regjistruara do të përdoren me metodën e përzgjedhur të zhbllokimit.</string>
     <string name="knox_twofactor_description">Përzgjidh biometrikën dhe një lloj të dytë bllokimi për ta zhbllokuar %s.</string>
@@ -3092,6 +3112,7 @@ Provo përsëri."</string>
     <string name="easy_mode_app_help">Përdore pajisjen më me lehtësi, me një strukturë të thjeshtuar të ekranit bazë dhe objekte më të mëdha në ekran.</string>
     <string name="easy_mode_app_help_dream_1">Përdor një strukturë të thjeshtuar të Ekranit bazë dhe objekte më të mëdha në ekran.</string>
     <string name="easy_mode_app_help_dream_2">Çdo personalizim që ke bërë në Ekranin bazë do të hidhet tej dhe Zoom-i në ekran do të cilësohet në maksimum.</string>
+    <string name="easy_mode_app_help_3rd_launcher">Zbato Regjimin e lehtë për t’i parë gjërat më të mëdha në ekran. Nëse nuk po e përdor bazën TouchWiz, struktura e Ekranit tënd bazë nuk do të ndryshojë, por zoom-i në ekran do të cilësohet si i madh dhe madhësia e fontit do të cilësohet si mesatare.</string>
     <string name="security_warning_content">Mund ta mbrosh privatësinë duke konfiguruar një fjalëkalim, PIN ose motiv për ta zhbllokuar ekranin</string>
     <string name="lock_setting_weather_desc">Për të parë ose ndryshuar cilësimet e motit, trokit mbi CILËSIMET E MOTIT më poshtë.</string>
     <string name="lock_setting_weather_btn">Cilësimet e motit</string>
@@ -3338,7 +3359,7 @@ Downloading via mobile networks may result in additional charges depending on yo
     <string name="disable_hovering_title">Paaftëso pamjen ajrore</string>
     <string name="disable_hovering_summary">Pamja ajrore dhe TalkBack nuk mund të aftësohen të dyja. Pamja ajrore do të çaktivizohet.</string>
     <string name="pen_settings_pen_input">Futje direkt me penë</string>
-    <string name="action_memo_onoff_screen_title">Memo ekrani fikur</string>
+    <string name="action_memo_onoff_screen_title">Memo me ekranin fikur</string>
     <string name="screen_off_note_summary">Shkruaj shënime kur ekrani është i fikur. Thjesht hiqe S Pen nga vendi dhe fillo të shkruash.</string>
     <string name="screen_off_note_summary_jpn">Krijo shënime duke shkëputur S Pen kur ekrani është fikur dhe pastaj duke shkruar në ekran. Memot me ekran të fikur do të ruhen te Galaxy Notes.</string>
     <string name="screen_off_note_summary_no_detach">Krijo shënime duke shtypur butonin e Penës, duke trokitur mbi ekran kur ky është i fikur dhe pastaj duke shkruar mbi të. Memot me ekran të fikur do të ruhen te Samsung Notes.</string>
@@ -3945,7 +3966,7 @@ Shpërndarësja celulare konsumon më shumë energji nga bateria dhe rrit përdo
     <string name="wfd_descrpition_playsound">Luaj tingull.</string>
     <string name="wfd_is_not_supported">Ky funksion nuk mbështetet.</string>
     <string name="usbtethering_notify_wifi_is_on_title">Ta fik Wi-Fi?</string>
-    <string name="usbtethering_notify_wifi_is_on">Wi-Fi dhe tetherimi USB nuk mund të ndizen njëkohësisht. Fike Wi-Fi.</string>
+    <string name="usbtethering_notify_wifi_is_on">Wi-Fi dhe tetherimi USB nuk mund të ndizen njëkohësisht. Wi-Fi do të fiket.</string>
     <string name="disable_multi_window_dialog_text">Multi-window do të paaftësohet dhe të gjitha app-et e hapura në dritare kërcyese do të mbyllen.</string>
     <string name="keyguard_password_attempt_count_pin_code">%d perpjekje te mbetura.</string>
     <string name="keyguard_password_attempts_count_pin_code">%d perpjekje te mbetura.</string>
@@ -4153,6 +4174,7 @@ Marrja e SMS-ve"</string>
     <string name="hdmi_mode_title">Regjimi HDMI</string>
     <string name="hdmi_mode_dex">Samsung DeX</string>
     <string name="hdmi_mode_mirroring">Screen Mirroring</string>
+    <string name="hdmi_mode_not_available_while_cover_attached">%s nuk është në dispozicion, kur është montuar mbulesa.</string>
     <string name="screen_timeout_for_dex">Afati i ekranit për Samsung DeX</string>
     <string name="show_virtual_keyboard_for_dex">Trego tastierën në ekran në Samsung DeX</string>
     <string name="comma">,</string>
@@ -4461,7 +4483,7 @@ Mund ta ndryshosh këtë më vonë që nga cilësimet Bluetooth."</string>
     <string name="date_picker_title">Data</string>
     <string name="time_picker_title">Ora</string>
     <string name="lock_after_timeout">Kyç automatikisht</string>
-    <string name="lock_after_timeout_summary">Blloko ekranin %s pasi të fiket automatikisht.</string>
+    <string name="lock_after_timeout_summary">Bllokoje telefonin %s pasi ekrani të fiket automatikisht.</string>
     <string name="lock_after_timeout_summary_with_exception">Blloko ekranin %1$s pasi të fiket automatikisht, përveçse kur mbahet i zhbllokuar nga %2$s.</string>
     <string name="show_owner_info_on_lockscreen_label">Shfaq informacion për pronarin e pajisjes në ekranin e bllokimit.</string>
     <string name="owner_info_settings_title">Informacion për pronarin</string>
@@ -4609,6 +4631,8 @@ Për të përmirësuar saktësinë e vendndodhjes, app-et dhe shërbimet mund t�
     <string name="wifi_empty_list_user_restricted">Nuk ke leje për të ndryshuar cilësimet Wi-Fi.</string>
     <string name="wifi_setup_wps">Konfigurim automatik (WPS)</string>
     <string name="wifi_show_advanced">Trego opsionet e avancuara</string>
+    <string name="wifi_advanced_toggle_description_expanded">Dy-trokit për të palosur.</string>
+    <string name="wifi_advanced_toggle_description_collapsed">Dy-trokit për të shpalosur.</string>
     <string name="wifi_wps_setup_title">Instalim i WPS-së</string>
     <string name="wifi_wps_setup_msg">Duke nisur WPS…</string>
     <string name="wifi_wps_onstart_pbc">Trokit mbi butonin e konfigurimit të mbrojtur Wi-Fi në rrugëzues. Ai mund të quhet WPS ose të përmbajë këtë simbol:</string>
@@ -4640,6 +4664,10 @@ Për të përmirësuar saktësinë e vendndodhjes, app-et dhe shërbimet mund t�
     <string name="wifi_shared">Përbashkuar</string>
     <string name="wifi_unchanged">(i pandryshuar)</string>
     <string name="wifi_unspecified">(Papërcaktuar)</string>
+    <string name="wifi_select_cert">Përzgjidh certifikatën</string>
+    <string name="wifi_do_not_provide_eap_user_cert">Mos e ofro</string>
+    <string name="wifi_do_not_validate_eap_server">Mos e vleftëso</string>
+    <string name="wifi_do_not_validate_eap_server_warning">Nuk është specifikuar ndonjë certifikatë. Lidhja jote nuk do të jetë private.</string>
     <string name="wifi_scan_always_turnon_message">%s po kërkon leje për të skanuar për rrjete Wi-Fi edhe kur Wi-Fi është fikur, në mënyrë që të përmirësojë saktësinë e vendndodhjes dhe për qëllime të tjera. Ta lejoj këtë për të gjitha aplikacionet?</string>
     <string name="wifi_scan_always_confirm_allow">Lejo</string>
     <string name="wifi_scan_always_confirm_deny">Refuzo</string>
@@ -4974,9 +5002,9 @@ Shih se mos përdor një kartë SD ose një magazinë USB më të shpejtë, për
     <string name="restore_default_apn_completed">Cilësimet e APN u rivendosën në të parazgjedhura.</string>
     <string name="reset_network_desc">"Kjo do t'i resetojë të gjitha cilësimet e rrjetit, përfshi ato për:"</string>
     <string name="reset_network_button_text">Ricilëso cilësimet</string>
-    <string name="reset_network_final_desc">Të gjitha cilësimet e lidhjeve do të resetohen. Ky veprim nuk mund të zhbëhet.</string>
+    <string name="reset_network_final_desc">Të gjitha cilësimet e rrjetit do të resetohen. Ky veprim nuk mund të zhbëhet.</string>
     <string name="reset_network_final_button_text">Ricilëso cilësimet</string>
-    <string name="reset_network_complete_toast">Cilësimet e lidhjes u resetuan.</string>
+    <string name="reset_network_complete_toast">Cilësimet e rrjetit u resetuan.</string>
     <string name="master_clear_title">Ricilësim në parametrat e fabrikës</string>
     <string name="master_clear_accounts">Aktualisht je identifikuar në llogaritë e mëposhtme:</string>
     <string name="master_clear_other_users_present">Edhe të dhënat që u përkasin përdoruesve të tjerë në këtë pajisje do të fshihen.</string>
@@ -6089,6 +6117,7 @@ Nuk do të marrësh thirrje, mesazhe ose njoftime dhe alarmet nuk do të bien, d
     <string name="set_data_limit">Cilëso cakun e të dhënave</string>
     <string name="data_limit">Caku i të dhënave</string>
     <string name="data_usage_template">%1$s përdorur midis %2$s</string>
+    <string name="data_usage_template_wifi">%s përdorur 30 ditët e fundit</string>
     <string name="data_usage_other_apps">App-et e ndërlidhura</string>
     <string name="data_saver_title">Kursyesi i të dhënave</string>
     <string name="unrestricted_data_saver">Lejo app-in kur Kursyesi ndezur</string>
@@ -6139,6 +6168,7 @@ Nuk do të marrësh thirrje, mesazhe ose njoftime dhe alarmet nuk do të bien, d
     <string name="legacy_dhcp_client_summary">Përdor klientin DHCP nga Lollipop në vend të klientit të ri DHCP të Androidit.</string>
     <string name="screen_off_pocket_title">Mbaje ekranin të fikur</string>
     <string name="screen_off_pocket_summary">Mos e lër ekranin të ndizet pa dashur kur pajisja është në një vend të errët, si në xhep ose në çantë.</string>
+    <string name="noApplications">Të gjitha app-et e bashkëlidhura me këtë veprim janë paaftësuar, bllokuar ose nuk janë instaluar.</string>
     <string name="confirm_reset_shortcut_manager_throttling_title">Reseto kufizuesin e shpejtësisë të Menaxherit të shkurtoreve</string>
     <string name="confirm_reset_shortcut_manager_throttling_message">Numëruesit e kufizuesit të shpejtësisë të Menaxherit të shkurtoreve do të resetohen.</string>
 </resources>

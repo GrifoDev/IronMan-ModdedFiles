@@ -100,7 +100,7 @@
 
     iput v4, p0, Lcom/android/settings/UCSCryptKeeperTask$StateMachine;->state:I
 
-    const v0, 0x7f0b1ebb
+    const v0, 0x7f0b1ece
 
     :goto_0
     iget-object v2, p0, Lcom/android/settings/UCSCryptKeeperTask$StateMachine;->this$0:Lcom/android/settings/UCSCryptKeeperTask;
@@ -194,7 +194,7 @@
     return-void
 
     :cond_2
-    const v0, 0x7f0b1ec2
+    const v0, 0x7f0b1ed5
 
     goto :goto_0
 
@@ -213,7 +213,7 @@
 
     iput v6, p0, Lcom/android/settings/UCSCryptKeeperTask$StateMachine;->state:I
 
-    const v0, 0x7f0b1ebc
+    const v0, 0x7f0b1ecf
 
     :goto_3
     iget-object v2, p0, Lcom/android/settings/UCSCryptKeeperTask$StateMachine;->this$0:Lcom/android/settings/UCSCryptKeeperTask;
@@ -223,7 +223,7 @@
     goto :goto_1
 
     :cond_4
-    const v0, 0x7f0b12df
+    const v0, 0x7f0b12ef    # 1.84861E38f
 
     goto :goto_3
 
@@ -244,7 +244,7 @@
 
     iput v2, p0, Lcom/android/settings/UCSCryptKeeperTask$StateMachine;->state:I
 
-    const v0, 0x7f0b07a2
+    const v0, 0x7f0b07a5
 
     iget-object v2, p0, Lcom/android/settings/UCSCryptKeeperTask$StateMachine;->this$0:Lcom/android/settings/UCSCryptKeeperTask;
 
@@ -259,9 +259,9 @@
     :cond_6
     iput v4, p0, Lcom/android/settings/UCSCryptKeeperTask$StateMachine;->state:I
 
-    const v0, 0x7f0b17d2
+    const v0, 0x7f0b17e4
 
-    const v1, 0x7f0b1ebb
+    const v1, 0x7f0b1ece
 
     iget-object v2, p0, Lcom/android/settings/UCSCryptKeeperTask$StateMachine;->this$0:Lcom/android/settings/UCSCryptKeeperTask;
 
@@ -323,7 +323,7 @@
 
     aget v2, p1, v4
 
-    const v3, 0x7f0b1eba
+    const v3, 0x7f0b1ecd
 
     invoke-virtual {v1, v3, v2}, Lcom/android/settings/UCSCryptKeeperTask;->getUCSFailedAttemptMessage(II)Ljava/lang/CharSequence;
 

@@ -586,7 +586,7 @@
 
     move-result-object v5
 
-    const v11, 0x7f0206af
+    const v11, 0x7f0206b1
 
     invoke-virtual {v5, v11}, Landroid/content/res/Resources;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 
@@ -819,7 +819,7 @@
 
     move-result-object v3
 
-    const v4, 0x7f11054c
+    const v4, 0x7f11054e
 
     invoke-virtual {v3, v4}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -841,7 +841,7 @@
 
     move-result-object v3
 
-    const v4, 0x7f11054a
+    const v4, 0x7f11054c
 
     invoke-virtual {v3, v4}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -878,7 +878,7 @@
 
     move-result-object v3
 
-    const v4, 0x7f0f0413
+    const v4, 0x7f0f0412
 
     invoke-virtual {v3, v4}, Landroid/content/res/Resources;->getInteger(I)I
 
@@ -951,7 +951,7 @@
     goto/16 :goto_0
 
     :cond_2
-    const v3, 0x7f0b0a2c
+    const v3, 0x7f0b0a3a
 
     invoke-virtual {v0, v3}, Landroid/widget/TextView;->setText(I)V
 
@@ -961,7 +961,7 @@
 .method public onCreateView(Landroid/view/LayoutInflater;Landroid/view/ViewGroup;Landroid/os/Bundle;)Landroid/view/View;
     .locals 2
 
-    const v0, 0x7f04018f
+    const v0, 0x7f040190
 
     const/4 v1, 0x0
 

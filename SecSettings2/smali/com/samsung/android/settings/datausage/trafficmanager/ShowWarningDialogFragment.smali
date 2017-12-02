@@ -101,7 +101,7 @@
 
     move-result-object v9
 
-    const v10, 0x7f040378
+    const v10, 0x7f04037b
 
     invoke-virtual {v9, v10, v12, v11}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;Z)Landroid/view/View;
 
@@ -125,7 +125,7 @@
 
     invoke-virtual {v2, v8}, Landroid/app/AlertDialog$Builder;->setView(Landroid/view/View;)Landroid/app/AlertDialog$Builder;
 
-    const v9, 0x7f110374
+    const v9, 0x7f110376
 
     invoke-virtual {v8, v9}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 

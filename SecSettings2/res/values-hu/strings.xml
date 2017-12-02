@@ -170,6 +170,8 @@
     <string name="wifi_allow_scan_with_traffic_summary">Roaming Wi-Fi-keresések automatikus be- vagy kikapcsolása a felhasznált adatmennyiség alapján.</string>
     <string name="select_logd_size_title">Naplópufferek mérete</string>
     <string name="select_logd_size_dialog_title">Válassza ki az egyes naplópufferek maximális méretét</string>
+    <string name="dev_logpersist_clear_warning_title">Törli a tartós naplótárolót?</string>
+    <string name="dev_logpersist_clear_warning_message">A tartós naplózó kikapcsolásakor a naplózó adatai törlődnek.</string>
     <string name="select_logpersist_title">Naplóadatok tartós tárolása</string>
     <string name="select_logpersist_dialog_title">Tartósan tárolandó naplópufferek kivál.</string>
     <string name="select_usb_configuration_title">USB-konfiguráció</string>
@@ -982,6 +984,7 @@ Előfordulhat, hogy a 2 csatlakoztatott eszköz hangja között apróbb eltéré
     <string name="bluetooth_avc_available_description">A csatlakoztatott Bluetooth-eszköz támogatja a Médiahangerő szinkronizálása funkciót, és a Bluetooth-eszköz által beállított hangerő szinkronizálódik a telefonnal.</string>
     <string name="bluetooth_enter_pin_msg">Adja meg a PIN-t a(z) %s eszköz párosításához. (Próbálkozzon a 0000 vagy az 1234 kóddal.)</string>
     <string name="bluetooth_pin_maximum_number_message">Elérte a karakterek maximális számát.</string>
+    <string name="bluetooth_frp_permission_message">Ehhez a híváshoz nem használható Bluetooth-eszköz.</string>
     <string name="settings_menu_done">Kész</string>
     <string name="usb_tethering_unavailable_subtext_tmo">USB not connected</string>
     <string name="usb_tethering_available_subtext_tmo">USB connected, check to tether</string>
@@ -1481,7 +1484,7 @@ Az OK gombot megérintve engedélyezheti a fényerő biztonságosnál magasabb s
     <string name="navigationbar_pressure_sensitivity_title">Kezdőlap gomb erős nyomása</string>
     <string name="navigationbar_pressure_sensitivity_summary">Az elrejtett Kezdőlap gombot a szokásosnál erősebben megnyomva használhatja.</string>
     <string name="navigationbar_pressure_sensitivity_level_summary">Nyomásszint: %2$d/%1$d</string>
-    <string name="navigationbar_pressure_sensitivity_description_off">Az elrejtett Kezdőlap gombot a szokásosnál erősebben megnyomva használhatja.</string>
+    <string name="navigationbar_pressure_sensitivity_description_off">Beállíthatja a Kezdőlap gomb erős megnyomáshoz szükséges nyomáserőt.</string>
     <string name="navigationbar_pressure_low">Érzékenyebb</string>
     <string name="navigationbar_pressure_high">Kevésbé érzékeny</string>
     <string name="navigationbar_hide_bar">Gomb mutatása és rejtése</string>
@@ -1620,7 +1623,7 @@ Az OK gombot megérintve engedélyezheti a fényerő biztonságosnál magasabb s
     <string name="crypt_keeper_decrypt_title">Eszköz dekódolása</string>
     <string name="crypt_keeper_decrypt_summary">Eszköz dekódolva.</string>
     <string name="crypt_keeper_type_pin">PIN</string>
-    <string name="crypt_keeper_type_pattern">Minta</string>
+    <string name="crypt_keeper_type_pattern">minta</string>
     <string name="crypt_keeper_type_password">Jelszó</string>
     <string name="crypt_keeper_type_direction">Irányzár</string>
     <string name="crypt_keeper_confirm_title_dec">Dekódolás jóváhagyása</string>
@@ -1704,7 +1707,11 @@ A titkosítás egy óránál is tovább tarthat. A kezdés előtt töltse fel az
     <string name="crypt_keeper_confirm_title">Titkosítás jóváhagyása</string>
     <string name="crypt_keeper_final_desc">Az eszköz titkosítása nem vonható vissza, a művelet a megszakítása pedig adatvesztést okoz. A titkosítás egy órát vagy ennél hosszabb időt is igénybe vehet, melynek során az eszköz többször újraindul; a folyamat során az eszköz nem használható.</string>
     <string name="crypt_keeper_setup_title">Titkosítás…</string>
-    <string name="crypt_keeper_warn_wipe">Még %d próbálkozása van az eszköz indítására. Ennek sikertelensége esetén visszaállnak a gyári alapértelmezések. Ebben az esetben minden adat törlődik az eszközről, a fájlokat és a letöltött alkalmazásokat is beleértve.</string>
+    <string name="crypt_keeper_warn_wipe">"Már csak %1$d próbálkozása maradt, mielőtt visszaállnának a telefon gyári alapértelmezett beállításai. Ebben az esetben minden adat törlődik az eszközről, a fájlokat és a letöltött alkalmazásokat is beleértve.
+
+A telefon visszaállítása után előfordulhat, hogy a telefon újbóli használatához meg kell adni a %2$s ehhez a telefonhoz társított adatait (az e-mail-címet és a jelszót)."</string>
+    <string name="crypt_keeper_samsung_account">Samsung account</string>
+    <string name="crypt_keeper_google_account">Google-fiók</string>
     <string name="crypt_keeper_failed_title">Nem sikerült titkosítani</string>
     <string name="crypt_keeper_failed_summary">Nem lehet elindítani az eszközt. A titkosítási folyamatot megszakították. Vissza kell állítania az eszköz gyári alapértelmezett beállításait. Ezzel minden adatot törölni fog.</string>
     <string name="crypt_keeper_data_corrupted_title">Az eszköz tárhelye sérült</string>
@@ -1723,10 +1730,13 @@ A titkosítás egy óránál is tovább tarthat. A kezdés előtt töltse fel az
     <string name="cryptkeeper_wrong_pin">Helytelen PIN megadva</string>
     <string name="cryptkeeper_wrong_direction">Helytelenül rajzolt irány</string>
     <string name="checking_decryption">Ellenőrzés…</string>
-    <string name="crypt_keeper_last_warn_wipe">Még csak 1 próbálkozása maradt az eszköz indítására. Ennek sikertelensége esetén visszaállnak a gyári alapértelmezések. Ebben az esetben minden adat törlődik az eszközről, a fájlokat és a letöltött alkalmazásokat is beleértve.</string>
+    <string name="crypt_keeper_last_warn_wipe">"Már csak 1 próbálkozása maradt, mielőtt visszaállnának a telefon gyári alapértelmezett beállításai. Ebben az esetben minden adat törlődik az eszközről, a fájlokat és a letöltött alkalmazásokat is beleértve.
+
+A telefon visszaállítása után előfordulhat, hogy a telefon újbóli használatához meg kell adni a %s ehhez a telefonhoz társított adatait (az e-mail-címet és a jelszót)."</string>
     <string name="crypt_keeper_failed_title_dec">Visszafejtési hiba</string>
     <string name="crypt_keeper_failed_summary_dec">A dekódolás megszakítás miatt nem fejezhető be. A használathoz vissza kell állítani a gyári adatokat (minden adat törlődik).</string>
     <string name="crypt_keeper_set_screen_lock_type">Képernyőzár típusának beá.</string>
+    <string name="crypt_keeper_warning_keyboard_cover_does_not_work">A telefon újraindítása után nem fog működni a billentyűzetes tok.</string>
     <string name="encryption_interstitial_message">"Tovább javíthatja a telefon védelmét a(z) %s bekérésével az eszköz indításához. Ez segíti az elveszett vagy ellopott eszközön található adatok védelmét. A funkciókhoz, például az e-mail-szinkronizáláshoz való hozzáférésre vonatkozó eszköztitkosítási házirend értelmében egyes alkalmazások Biztonságos indítást igényelhetnek.
 
 Amíg az eszköz el nem indul, nem fogadhat hívást, üzenetet és értesítést, és nem szólalnak meg a jelzések."</string>
@@ -1971,6 +1981,12 @@ You will also need it when:"</string>
     <string name="lockpassword_confirm_your_pin_with_fingerprint">Használja ujjlenyomatát, vagy adja meg a jelenlegi PIN-kódot.</string>
     <string name="lockpassword_confirm_your_pattern_with_fingerprint">Használja ujjlenyomatát, vagy rajzolja le a jelenlegi mintát.</string>
     <string name="lockpassword_confirm_your_password_with_fingerprint">Használja ujjlenyomatát, vagy adja meg a jelenlegi jelszót.</string>
+    <string name="lockpassword_confirm_your_pin_with_iris">Használja az íriszeit, vagy adja meg a jelenlegi PIN-kódot.</string>
+    <string name="lockpassword_confirm_your_pattern_with_iris">Használja az íriszeit, vagy rajzolja le a jelenlegi mintát.</string>
+    <string name="lockpassword_confirm_your_password_with_iris">Használja az íriszeit, vagy adja meg a jelenlegi jelszót.</string>
+    <string name="lockpassword_confirm_your_pin_with_biometrics">Használja biometrikus adatait, vagy adja meg a PIN-kódot.</string>
+    <string name="lockpassword_confirm_your_pattern_with_biometrics">Használja biometrikus adatait, vagy rajzolja le a mintát.</string>
+    <string name="lockpassword_confirm_your_password_with_biometrics">Használja biometrikus adatait, vagy adja meg a jelszót.</string>
     <string name="lockpassword_confirm_your_pin_instead_of_fingerprint">Az ujjlenyomat-felismerés helyett adja meg a PIN-kódot.</string>
     <string name="lockpassword_confirm_your_pattern_instead_of_fingerprint">Az ujjlenyomat-felismerés helyett rajzolja le a mintát.</string>
     <string name="lockpassword_confirm_your_password_instead_of_fingerprint">Az ujjlenyomat-felismerés helyett adja meg a jelszót.</string>
@@ -2045,6 +2061,7 @@ Válassza ki, hogyan szeretné feloldani a telefon zárolását. A Feloldás arc
     <string name="face_status_timeout">Időtúllépés. Próbálja meg később.</string>
     <string name="okay">OK</string>
     <string name="face_samsung_account_button">Samsung account haszn.</string>
+    <string name="face_galaxy_account_button">Galaxy-fiók használata</string>
     <string name="face_error_DB_corrupted">Probléma lépett fel az arcadatokkal. Regisztrálja újra az arcát.</string>
     <string name="face_error_DB_corrupted_popup_title">Regisztrálja újra az arcát</string>
     <string name="face_error_timeout">Az eszköz nem ismerte fel az arcát.</string>
@@ -2155,7 +2172,7 @@ Ha biometrikus adatok vagy %s segítségével szeretné feloldani a telefont, ka
     <string name="biometrics_backup_locktype_title">Íriszalapú védelem beállítása</string>
     <string name="biometrics_register_your_iris">Regisztrálja íriszeit.</string>
     <string name="biometrics_backup_locktype_summary">Ha az íriszeit szeretné használni az eszköz zárolásának feloldásához, akkor egy mintát, PIN-kódot vagy jelszót is be kell állítania.</string>
-    <string name="biometrics_backup_locktype_message">A telefon íriszekkel való feloldásához, illetve a biztonságos hitelesítéshez tegye a következőket:</string>
+    <string name="biometrics_backup_locktype_message">Ha íriszeivel szeretné feloldani a telefont, illetve azonosítani magát az alkalmazásokban, tegye a következőket:</string>
     <string name="iris_delete_popup_title">Törli az íriszadatokat?</string>
     <string name="iris_delete_popup_message">Törli az íriszadatokat?</string>
     <string name="iris_delete_popup_message_with_related_func">Az íriszeket használó funkciók kikapcsolnak.</string>
@@ -2231,6 +2248,9 @@ Válassza ki, hogyan szeretné feloldani a telefon zárolását. A Feloldás ír
     <string name="biometrics_dex_cant_use_msg">A Samsung DeX-ben nem használható a(z) %s.</string>
     <string name="biometrics_dex_closed_to_switch">A(z) %s bezáródott, hogy át lehessen kapcsolni a Samsung DeX-re.</string>
     <string name="biometircs_dex_cant_use_toast">A(z) %s nem fut a Samsung DeX módban. Próbálja meg telefon módban futtatni.</string>
+    <string name="iris_guide_text_preview">Íriszazon.hoz nézz. ide</string>
+    <string name="iris_guide_enable_toggle">Érint. meg az íriszei haszn.hoz</string>
+    <string name="iris_cannot_verify">Nem sikerült az íriszek ellenőrzése</string>
     <string name="knox_twofactor_bio_description">Válassza ki a(z) %s feloldásához használni kívánt biometrikus, illetve másodlagos zár típusát.</string>
     <string name="fingerprint_registered">A regisztrált ujjlenyomatok használatban lesznek a kiválasztott feloldási módszerrel.</string>
     <string name="knox_twofactor_description">Válassza ki biometrikus adatait és a(z) %s feloldásához használni kívánt másodlagos zár típusát.</string>
@@ -3093,6 +3113,7 @@ Próbálja újra."</string>
     <string name="easy_mode_app_help">Az egyszerűbb elrendezésű kezdőképernyő és a képernyőn megjelenő nagyobb elemek megkönnyítik az eszköz használatát.</string>
     <string name="easy_mode_app_help_dream_1">Egyszerű elrendezésű kezdőképernyőt és nagyobb képernyőelemeket használ.</string>
     <string name="easy_mode_app_help_dream_2">A kezdőképernyő minden eddigi testreszabását elveti, és a Képernyő nagyítása maximumra áll.</string>
+    <string name="easy_mode_app_help_3rd_launcher">Egyszerű üzemmód beállítása a képernyőn megjelenő nagyobb elemekhez. Ha nem a TouchWiz kezdőképernyőt használja, a kezdőképernyő elrendezése nem változik, a képernyőt azonban nagy nagyításra, a betűméretet pedig közepesre állítja be a rendszer.</string>
     <string name="security_warning_content">Az adatvédelem érdekében beállíthat jelszót, PIN-kódot vagy mintát a képernyő feloldásához</string>
     <string name="lock_setting_weather_desc">Az időjárási beállítások megjelenítéséhez vagy módosításához érintse meg alább az IDŐJÁRÁSI BEÁLLÍTÁSOK gombot.</string>
     <string name="lock_setting_weather_btn">Időjárási beállítások</string>
@@ -3334,12 +3355,12 @@ Downloading via mobile networks may result in additional charges depending on yo
     <string name="smart_bonding_popup_msg_wifi_data_btn">Wi-Fi és mobil int.k. bekapcs.</string>
     <string name="smart_bonding_toast_msg_airplane">Engedélyezett %1$s mellett nem használható a letöltésgyorsító. Próbálja újra a(z) %2$s letiltása után.</string>
     <string name="air_button_title">Gyors funkciók</string>
-    <string name="pen_settings_title">S Toll</string>
+    <string name="pen_settings_title">S Pen</string>
     <string name="hovering_title">Rámutatás</string>
     <string name="disable_hovering_title">Rámutatás letiltása</string>
     <string name="disable_hovering_summary">A rámutatás és a TalkBack nem engedélyezhető egyszerre. A rámutatás le lesz tiltva.</string>
     <string name="pen_settings_pen_input">Közvetlen tollbemenet</string>
-    <string name="action_memo_onoff_screen_title">Jegyz. kik. k.nyőn</string>
+    <string name="action_memo_onoff_screen_title">Jegyzet a kikapcsolt képernyőn</string>
     <string name="screen_off_note_summary">Jegyzetek írása a kikapcsolt képernyőre. Csak húzza ki az S Pen-t, és kezdjen írni.</string>
     <string name="screen_off_note_summary_jpn">Jegyzeteléshez kikapcsolt képernyő mellett húzza ki az S Tollat, és írjon a képernyőre. A kikapcsolt képernyőre írt jegyzeteket az eszköz a Galaxy Notes alkalmazásba menti.</string>
     <string name="screen_off_note_summary_no_detach">Jegyzeteléshez nyomja meg a toll gombját, érintse meg a kikapcsolt képernyőt, majd írjon rá. A kikapcsolt képernyőre írt jegyzeteket az eszköz a Samsung Notes alkalmazásba menti.</string>
@@ -3385,7 +3406,7 @@ Downloading via mobile networks may result in additional charges depending on yo
     <string name="loss_prevention_alert_title">Jelzés</string>
     <string name="battery_saving_msg">Kímélheti az akkumulátort azzal, hogy nem próbálja észlelni az S Pen-t, amikor a telefonban van.</string>
     <string name="enable_button_text">Engedélyezés</string>
-    <string name="spen_summary">Az S Toll funkcióinak kezelése.</string>
+    <string name="spen_summary">Az S Pen funkcióinak kezelése.</string>
     <string name="hongbao_guide_title">"Gyorsabban és értesítés kíséretében érkeznek meg a piros WeChat-borítékok. A funkció használatához nyissa meg a WeChat alkalmazást, és:
 - Kapcsolja be az Új üzenetek jelzése funkciót.
 - Kapcsolja be az Értesítési központot.
@@ -3946,7 +3967,7 @@ A Mobil hotspot használata esetén gyorsabban merül az akkumulátor, és megn�
     <string name="wfd_descrpition_playsound">Hang lejátszása.</string>
     <string name="wfd_is_not_supported">Ez a funkció nem támogatott.</string>
     <string name="usbtethering_notify_wifi_is_on_title">Kikapcsolja a Wi-Fi-t?</string>
-    <string name="usbtethering_notify_wifi_is_on">A Wi-Fi és az USB-internetmegosztás nem kapcsolható be egyszerre. Kapcsolja ki a Wi-Fi-t.</string>
+    <string name="usbtethering_notify_wifi_is_on">A Wi-Fi és az USB-internetmegosztás nem kapcsolható be egyszerre. A Wi-Fi ki fog kapcsolni.</string>
     <string name="disable_multi_window_dialog_text">A Több ablak funkció kikapcsol, és bezáródnak az előugró ablakokban megnyitott alkalmazások.</string>
     <string name="keyguard_password_attempt_count_pin_code">%d kísérlet maradt.</string>
     <string name="keyguard_password_attempts_count_pin_code">%d kísérlet maradt.</string>
@@ -4154,6 +4175,7 @@ SMS fogadása"</string>
     <string name="hdmi_mode_title">HDMI-üzemmód</string>
     <string name="hdmi_mode_dex">Samsung DeX</string>
     <string name="hdmi_mode_mirroring">Screen Mirroring</string>
+    <string name="hdmi_mode_not_available_while_cover_attached">A(z) %s nem használható akkor, amikor fel van helyezve a tok.</string>
     <string name="screen_timeout_for_dex">Samsung DeX képernyő-időkorlátja</string>
     <string name="show_virtual_keyboard_for_dex">Képernyő-billentyűzet mutatása a Samsung DeX-ben</string>
     <string name="comma">,</string>
@@ -4462,7 +4484,7 @@ Ezt később módosíthatja a Bluetooth-beállításokban."</string>
     <string name="date_picker_title">Dátum</string>
     <string name="time_picker_title">Idő</string>
     <string name="lock_after_timeout">Automatikus lezárás</string>
-    <string name="lock_after_timeout_summary">A képernyő az automatikus kikapcsolása után %s elteltével zárolódik.</string>
+    <string name="lock_after_timeout_summary">A telefon a képernyő automatikus kikapcsolása után %s elteltével zárolódik.</string>
     <string name="lock_after_timeout_summary_with_exception">A képernyő a kikapcsolása után %1$scel zárolódik, hacsak fel nem oldja a(z) %2$s segítségével.</string>
     <string name="show_owner_info_on_lockscreen_label">A zárolt képernyőn megjelennek az eszköz tulajdonosának adatai.</string>
     <string name="owner_info_settings_title">Tulajdonos adatai</string>
@@ -4610,6 +4632,8 @@ A helymeghatározás pontosságának javítása érdekében az alkalmazások és
     <string name="wifi_empty_list_user_restricted">Önnek nincs engedélye a Wi-Fi-beállítások módosítására.</string>
     <string name="wifi_setup_wps">Automatikus beállítás (WPS)</string>
     <string name="wifi_show_advanced">Speciális opciók megjelenítése</string>
+    <string name="wifi_advanced_toggle_description_expanded">Érintse meg kétszer az összecsukáshoz.</string>
+    <string name="wifi_advanced_toggle_description_collapsed">Érintse meg kétszer a kibontáshoz.</string>
     <string name="wifi_wps_setup_title">WPS beállítása</string>
     <string name="wifi_wps_setup_msg">WPS indítása…</string>
     <string name="wifi_wps_onstart_pbc">Érintse meg a router Védett Wi-Fi beállítás gombját. A WPS rövidítés vagy a következő szimbólum szerepelhet rajta:</string>
@@ -4641,6 +4665,10 @@ A helymeghatározás pontosságának javítása érdekében az alkalmazások és
     <string name="wifi_shared">Megosztva</string>
     <string name="wifi_unchanged">(nem módosult)</string>
     <string name="wifi_unspecified">(Nincs megadva)</string>
+    <string name="wifi_select_cert">Tanúsítvány kiválasztása</string>
+    <string name="wifi_do_not_provide_eap_user_cert">Nem biztosítja</string>
+    <string name="wifi_do_not_validate_eap_server">Nem érvényesíti</string>
+    <string name="wifi_do_not_validate_eap_server_warning">Nem adott meg tanúsítványt. A kapcsolat nem lesz titkosítva.</string>
     <string name="wifi_scan_always_turnon_message">A(z) %s engedélyt kér arra, hogy kikapcsolt Wi-Fi mellett is kereshessen Wi-Fi-hálózatokat a helymeghatározás pontosságának javítása és egyéb célok érdekében. Engedélyezi ezt valamennyi alkalmazás számára?</string>
     <string name="wifi_scan_always_confirm_allow">Engedélyez</string>
     <string name="wifi_scan_always_confirm_deny">Elutasítás</string>
@@ -4975,9 +5003,9 @@ A teljesítmény javítása érdekében mérlegelje egy gyorsabb SD-kártya vagy
     <string name="restore_default_apn_completed">Visszaálltak az alapértelmezett hozzáférésipontnév-beállítások.</string>
     <string name="reset_network_desc">Ezzel minden hálózati beállítást visszaállít, többek között a következőket is:</string>
     <string name="reset_network_button_text">Alapbeállítás visszaállítása</string>
-    <string name="reset_network_final_desc">Visszaállítja a kapcsolatbeállításokat. A műveletet nem lehet visszavonni.</string>
+    <string name="reset_network_final_desc">Minden hálózati beállítás visszaáll az alapértékre. A műveletet nem lehet visszavonni.</string>
     <string name="reset_network_final_button_text">Alapbeállítás visszaállítása</string>
-    <string name="reset_network_complete_toast">Visszaállította a kapcsolatbeállításokat.</string>
+    <string name="reset_network_complete_toast">Hálózati beállítások visszaállítva.</string>
     <string name="master_clear_title">Gyári adatok visszaállítása</string>
     <string name="master_clear_accounts">Jelenleg a következő fiókokba van bejelentkezve:</string>
     <string name="master_clear_other_users_present">Az egyéb felhasználók adatait is törli az eszközről.</string>
@@ -6090,6 +6118,7 @@ Amíg az eszköz el nem indul, nem fogadhat hívást, üzenetet és értesítés
     <string name="set_data_limit">Adatkorlát beállítása</string>
     <string name="data_limit">Adatkorlát</string>
     <string name="data_usage_template">%1$s adatot használt fel a(z) %2$s időszakban</string>
+    <string name="data_usage_template_wifi">Az elmúlt 30 napban %s-ot használt</string>
     <string name="data_usage_other_apps">Kapcsolódó alk.ok használata is</string>
     <string name="data_saver_title">Adattakarékos üzemmód</string>
     <string name="unrestricted_data_saver">Alk. eng. Adattakarékos módban</string>
@@ -6140,6 +6169,7 @@ Amíg az eszköz el nem indul, nem fogadhat hívást, üzenetet és értesítés
     <string name="legacy_dhcp_client_summary">A Lollipop DHCP-kliensének használata az új androidos DHCP-kliens helyett.</string>
     <string name="screen_off_pocket_title">Maradjon kikap. a képer.</string>
     <string name="screen_off_pocket_summary">A képernyő véletlen bekapcsolásának megakadályozása sötét helyeken, például táskában vagy zsebben.</string>
+    <string name="noApplications">A művelethez társított alkalmazások kikapcsolt, illetve blokkolt állapotban vannak, vagy nincsenek telepítve.</string>
     <string name="confirm_reset_shortcut_manager_throttling_title">Parancsikon-kezelő sebességkorlátozójának visszaállítása</string>
     <string name="confirm_reset_shortcut_manager_throttling_message">Visszaállítja a Parancsikon-kezelő sebességkorlátozójának számlálóit.</string>
 </resources>

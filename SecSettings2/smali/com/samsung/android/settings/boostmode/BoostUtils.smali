@@ -672,7 +672,7 @@
 
     if-ne p1, v1, :cond_0
 
-    const v1, 0x7f0b0cb5
+    const v1, 0x7f0b0cc3
 
     invoke-virtual {p0, v1}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -686,7 +686,7 @@
 
     if-ne p1, v1, :cond_1
 
-    const v1, 0x7f0b0cb3
+    const v1, 0x7f0b0cc1
 
     invoke-virtual {p0, v1}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -695,7 +695,7 @@
     goto :goto_0
 
     :cond_1
-    const v1, 0x7f0b0cb1
+    const v1, 0x7f0b0cbf
 
     invoke-virtual {p0, v1}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -965,6 +965,34 @@
 
     :cond_0
     return v2
+.end method
+
+.method public static isRemoveGameLauncher(Landroid/content/Context;)Z
+    .locals 1
+
+    invoke-static {}, Lcom/android/settings/Utils;->isChinaModel()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    const-string/jumbo v0, "com.samsung.android.game.gamehome"
+
+    invoke-static {p0, v0}, Lcom/android/settings/Utils;->hasPackage(Landroid/content/Context;Ljava/lang/String;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_1
+
+    :cond_0
+    const/4 v0, 0x0
+
+    return v0
+
+    :cond_1
+    const/4 v0, 0x1
+
+    return v0
 .end method
 
 .method public static isSupportNewUhqUpscaler()Z
@@ -2196,6 +2224,12 @@
     invoke-static {p0, v9}, Lcom/samsung/android/settings/boostmode/BoostUtils;->setGameToolsEnabled(Landroid/content/Context;Z)V
 
     :cond_1
+    invoke-static {p0}, Lcom/samsung/android/settings/boostmode/BoostUtils;->isRemoveGameLauncher(Landroid/content/Context;)Z
+
+    move-result v9
+
+    if-nez v9, :cond_2
+
     const-string/jumbo v9, "pbm_game_launcher"
 
     invoke-static {p0, v9, p1}, Lcom/samsung/android/settings/boostmode/BoostUtils;->getBoostModeValue(Landroid/content/Context;Ljava/lang/String;I)I
@@ -2389,9 +2423,9 @@
 
     if-ne v0, v2, :cond_2
 
-    const v16, 0x7f0205b2
+    const v16, 0x7f0205b4
 
-    const v2, 0x7f0b0cae
+    const v2, 0x7f0b0cbc
 
     move-object/from16 v0, p0
 
@@ -2414,7 +2448,7 @@
 
     move-result-object v2
 
-    const v3, 0x7f0b0cb7
+    const v3, 0x7f0b0cc5
 
     move-object/from16 v0, p0
 
@@ -2514,7 +2548,7 @@
 
     aput-object v13, v3, v5
 
-    const v5, 0x7f0b0cad
+    const v5, 0x7f0b0cbb
 
     move-object/from16 v0, p0
 
@@ -2548,7 +2582,7 @@
 
     move-result-object v2
 
-    const v3, 0x7f0b0cc0
+    const v3, 0x7f0b0cce
 
     move-object/from16 v0, p0
 
@@ -2564,7 +2598,7 @@
 
     move-result-object v2
 
-    const v3, 0x7f0b04fa
+    const v3, 0x7f0b04fb
 
     move-object/from16 v0, p0
 
@@ -2657,9 +2691,9 @@
 
     if-ne v0, v2, :cond_3
 
-    const v16, 0x7f0205b3
+    const v16, 0x7f0205b5
 
-    const v2, 0x7f0b0caf
+    const v2, 0x7f0b0cbd
 
     move-object/from16 v0, p0
 
@@ -2670,9 +2704,9 @@
     goto/16 :goto_0
 
     :cond_3
-    const v16, 0x7f0205b1
+    const v16, 0x7f0205b3
 
-    const v2, 0x7f0b0cb0
+    const v2, 0x7f0b0cbe
 
     move-object/from16 v0, p0
 
@@ -2706,7 +2740,7 @@
 .method public static showTurnOffPSM(Landroid/content/Context;Landroid/app/AlertDialog;IZLjava/lang/String;Lcom/samsung/android/settings/powersaving/BrightnessSolutionManager;)V
     .locals 6
 
-    const v5, 0x7f0b0c67
+    const v5, 0x7f0b0c75
 
     const/4 v4, 0x0
 
@@ -2739,7 +2773,7 @@
 
     aput-object v2, v1, v3
 
-    const v2, 0x7f0b0cb9
+    const v2, 0x7f0b0cc7
 
     invoke-virtual {p0, v2, v1}, Landroid/content/Context;->getString(I[Ljava/lang/Object;)Ljava/lang/String;
 
@@ -2757,7 +2791,7 @@
 
     aput-object v2, v1, v4
 
-    const v2, 0x7f0b0cb8
+    const v2, 0x7f0b0cc6
 
     invoke-virtual {p0, v2, v1}, Landroid/content/Context;->getString(I[Ljava/lang/Object;)Ljava/lang/String;
 
@@ -2771,7 +2805,7 @@
 
     invoke-direct {v1, p5, p0, p2, p4}, Lcom/samsung/android/settings/boostmode/BoostUtils$1;-><init>(Lcom/samsung/android/settings/powersaving/BrightnessSolutionManager;Landroid/content/Context;ILjava/lang/String;)V
 
-    const v2, 0x7f0b0d35
+    const v2, 0x7f0b0d43
 
     invoke-virtual {v0, v2, v1}, Landroid/app/AlertDialog$Builder;->setPositiveButton(ILandroid/content/DialogInterface$OnClickListener;)Landroid/app/AlertDialog$Builder;
 
@@ -2885,7 +2919,7 @@
 
     invoke-virtual {v9, v11, v12}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/io/Serializable;)Landroid/content/Intent;
 
-    if-eqz p2, :cond_3
+    if-eqz p2, :cond_4
 
     const-string/jumbo v11, "smartmanager"
 
@@ -2895,15 +2929,15 @@
 
     move-result v11
 
-    if-eqz v11, :cond_3
+    if-eqz v11, :cond_4
 
     :cond_0
     :goto_0
-    if-nez p1, :cond_4
+    if-nez p1, :cond_5
 
     const/4 v11, 0x2
 
-    if-ne v1, v11, :cond_4
+    if-ne v1, v11, :cond_5
 
     :goto_1
     const-string/jumbo v11, "pbm_video_enhancer"
@@ -2955,13 +2989,19 @@
     invoke-virtual {v9, v11, v12}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/io/Serializable;)Landroid/content/Intent;
 
     :cond_1
-    if-nez p1, :cond_5
+    if-nez p1, :cond_6
 
     const/4 v11, 0x1
 
-    if-ne v1, v11, :cond_5
+    if-ne v1, v11, :cond_6
 
     :goto_2
+    invoke-static {p0}, Lcom/samsung/android/settings/boostmode/BoostUtils;->isRemoveGameLauncher(Landroid/content/Context;)Z
+
+    move-result v11
+
+    if-nez v11, :cond_2
+
     const-string/jumbo v11, "pbm_game_launcher"
 
     move/from16 v0, p1
@@ -2986,11 +3026,12 @@
 
     invoke-virtual {v9, v11, v12}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/io/Serializable;)Landroid/content/Intent;
 
+    :cond_2
     invoke-static {p0}, Lcom/samsung/android/settings/boostmode/BoostUtils;->isNavigationBarExist(Landroid/content/Context;)Z
 
     move-result v11
 
-    if-nez v11, :cond_2
+    if-nez v11, :cond_3
 
     const-string/jumbo v11, "pbm_game_tools"
 
@@ -3016,7 +3057,7 @@
 
     invoke-virtual {v9, v11, v12}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/io/Serializable;)Landroid/content/Intent;
 
-    :cond_2
+    :cond_3
     const-string/jumbo v11, "key_next_boost_mode"
 
     move/from16 v0, p1
@@ -3039,7 +3080,7 @@
 
     return-void
 
-    :cond_3
+    :cond_4
     invoke-static {p0}, Lcom/android/settings/Utils;->getCurrentResolution(Landroid/content/Context;)I
 
     move-result v11
@@ -3064,7 +3105,7 @@
 
     goto/16 :goto_0
 
-    :cond_4
+    :cond_5
     const/4 v11, 0x2
 
     move/from16 v0, p1
@@ -3073,12 +3114,12 @@
 
     goto/16 :goto_1
 
-    :cond_5
+    :cond_6
     const/4 v11, 0x1
 
     move/from16 v0, p1
 
-    if-ne v0, v11, :cond_2
+    if-ne v0, v11, :cond_3
 
     goto :goto_2
 .end method

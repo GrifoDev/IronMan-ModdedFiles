@@ -70,7 +70,7 @@
 
     move-result-object v5
 
-    const v6, 0x7f0401f9
+    const v6, 0x7f0401fc
 
     invoke-virtual {v5, v6, v7}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;)Landroid/view/View;
 
@@ -101,7 +101,7 @@
 
     check-cast v2, Landroid/widget/TextView;
 
-    const v6, 0x7f110213
+    const v6, 0x7f110215
 
     invoke-virtual {v4, v6}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 

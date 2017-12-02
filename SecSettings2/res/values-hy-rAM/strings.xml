@@ -170,6 +170,8 @@
     <string name="wifi_allow_scan_with_traffic_summary">Թույլ տալ կամ մերժել Wi-Fi ռոումինգի ինքնաբերաբար տեսածրումներն օգտագործված տվյալների քանակի հիման վրա:</string>
     <string name="select_logd_size_title">Բուֆերի չափը գրանցման հր</string>
     <string name="select_logd_size_dialog_title">Ընտրել յուրաքանչյուր գրանցման բուֆերի առավելագույն չափը</string>
+    <string name="dev_logpersist_clear_warning_title">Մաքրե՞լ մշտական գրանցիչի պահոցը:</string>
+    <string name="dev_logpersist_clear_warning_message">Գրանցիչի տվյալները կվերացվեն, երբ մշտական գրանցիչն անջատվի:</string>
     <string name="select_logpersist_title">Տևական պահել մատյանի տվյալները</string>
     <string name="select_logpersist_dialog_title">Ընտրել գրանց. բուֆերներ՝ տևական պահելու հր</string>
     <string name="select_usb_configuration_title">USB կազմաձև</string>
@@ -982,6 +984,7 @@ Wi-Fi-ն ու Bluetooth-ը նույնպես կանջատվեն, բայց կար�
     <string name="bluetooth_avc_available_description">Կապակցված Bluetooth սարքն ապահովում է Մեդիա ֆայլի ձայնի ուժգնության համաժամացում, և Bluetooth սարքում դրված ուժգնության մակարդակը կհամաժամացվի Ձեր հեռախոսի հետ:</string>
     <string name="bluetooth_enter_pin_msg">%s-ի հետ զուգտակելու համար մուտքագրեք PIN (փորձեք 0000 կամ 1234):</string>
     <string name="bluetooth_pin_maximum_number_message">Հասել է նիշերի առավելագույն քանակին:</string>
+    <string name="bluetooth_frp_permission_message">Հնարավոր չէ Bluetooth սարք օգտագործել այս կանչի համար:</string>
     <string name="settings_menu_done">Կատարված է</string>
     <string name="usb_tethering_unavailable_subtext_tmo">USB not connected</string>
     <string name="usb_tethering_available_subtext_tmo">USB connected, check to tether</string>
@@ -1481,7 +1484,7 @@ Where Can I Find More Information About the 3rd Party's Policies? Separately, if
     <string name="navigationbar_pressure_sensitivity_title">Ուժեղ սեղմել Սկզբի կոճակը</string>
     <string name="navigationbar_pressure_sensitivity_summary">Օգտագործել Սկզբի կոճակը, երբ այն թաքցված է՝ սովորականից ավելի ուժեղ սեղմելով:</string>
     <string name="navigationbar_pressure_sensitivity_level_summary">Ճնշման մակարդակը՝ %1$d՝ %2$d-ից</string>
-    <string name="navigationbar_pressure_sensitivity_description_off">Օգտագործել Սկզբի կոճակը, երբ այն թաքցված է՝ սովորականից ավելի ուժեղ սեղմելով:</string>
+    <string name="navigationbar_pressure_sensitivity_description_off">Կարգավորել Սկզբի կոճակն ուժեղ սեղմելու համար անհրաժեշտ ճնշումը:</string>
     <string name="navigationbar_pressure_low">Ավելի թեթև</string>
     <string name="navigationbar_pressure_high">Ավելի ուժեղ</string>
     <string name="navigationbar_hide_bar">Ցույց տալու և թաքցնելու կոճակ</string>
@@ -1620,7 +1623,7 @@ Where Can I Find More Information About the 3rd Party's Policies? Separately, if
     <string name="crypt_keeper_decrypt_title">Վերծանել սարքը</string>
     <string name="crypt_keeper_decrypt_summary">Սարքը վերծանվեց:</string>
     <string name="crypt_keeper_type_pin">PIN</string>
-    <string name="crypt_keeper_type_pattern">Նախշ</string>
+    <string name="crypt_keeper_type_pattern">նախշ</string>
     <string name="crypt_keeper_type_password">Գաղտնաբառ</string>
     <string name="crypt_keeper_type_direction">Կողպում ուղղությամբ</string>
     <string name="crypt_keeper_confirm_title_dec">Հաստատել վերծանումը</string>
@@ -1704,7 +1707,11 @@ Where Can I Find More Information About the 3rd Party's Policies? Separately, if
     <string name="crypt_keeper_confirm_title">Հաստատել ծածկագրումը</string>
     <string name="crypt_keeper_final_desc">Ձեր սարքի ծածկագրումն անշրջելի է, և տվյալները կկորչեն, եթե գործընթացն ընդհատվի: Ծածկագրումը կարող է տևել մեկ ժամ կամ ավելի, որի ընթացքում Ձեր սարքը կվերագործարկվի մի քանի անգամ, և Դուք չեք կարողանա այն օգտագործել:</string>
     <string name="crypt_keeper_setup_title">Ծածկագրվում է…</string>
-    <string name="crypt_keeper_warn_wipe">Ձեզ %d փորձ է մնացել սարքը գործարկելու համար, նախքան այն կհետադարձվի իր գործարանային կանխադրվածքներին: Այդ դեպքում կջնջվեն բոլոր տվյալները, ներառյալ ֆայլերը և ներբեռնված ծրագրերը:</string>
+    <string name="crypt_keeper_warn_wipe">"%1$d փորձ է մնացել, նախքան հեռախոսը կհետադարձվի իր գործարանային կանխադրվածքներին: Այդ դեպքում կջնջվեն բոլոր տվյալները, ներառյալ ֆայլերը և ներբեռնված ծրագրերը:
+
+Եթե հեռախոսը հետադարձվի, գուցե կարիք լինի մուտքագրելու այս հեռախոսի հետ կապված %2$s-ի տվյալները (էլփոստի հասցեն և գաղտնաբառը), որպեսզի նորից կարողանաք այն օգտագործել:"</string>
+    <string name="crypt_keeper_samsung_account">Samsung account</string>
+    <string name="crypt_keeper_google_account">Google հաշիվ</string>
     <string name="crypt_keeper_failed_title">Ծածկագրումը ձախողվեց</string>
     <string name="crypt_keeper_failed_summary">Անհնար է գործարկել Ձեր սարքը: Ծածկագրման գործընթացն ընդհատվել էր: Անհրաժեշտ է Ձեր սարքը հետադարձել գործարանային կանխադրվածքներին: Այդ դեպքում Ձեր բոլոր տվյալները կջնջվեն:</string>
     <string name="crypt_keeper_data_corrupted_title">Սարքի պահոցը վնասված է</string>
@@ -1723,10 +1730,13 @@ Where Can I Find More Information About the 3rd Party's Policies? Separately, if
     <string name="cryptkeeper_wrong_pin">Սխալ PIN է մուտքագրվել</string>
     <string name="cryptkeeper_wrong_direction">Սխալ ուղղություն է գծված</string>
     <string name="checking_decryption">Ճշտում է…</string>
-    <string name="crypt_keeper_last_warn_wipe">Ձեզ ընդամենը 1 փորձ է մնացել սարքը գործարկելու համար, նախքան այն կհետադարձվի իր գործարանային կանխադրվածքներին: Այդ դեպքում կջնջվեն բոլոր տվյալները, ներառյալ ֆայլերը և ներբեռնված ծրագրերը:</string>
+    <string name="crypt_keeper_last_warn_wipe">"1 փորձ է մնացել, նախքան հեռախոսը կհետադարձվի իր գործարանային կանխադրվածքներին: Այդ դեպքում կջնջվեն բոլոր տվյալները, ներառյալ ֆայլերը և ներբեռնված ծրագրերը:
+
+Եթե հեռախոսը հետադարձվի, գուցե կարիք լինի մուտքագրելու այս հեռախոսի հետ կապված %s-ի տվյալները (էլփոստի հասցեն և գաղտնաբառը), որպեսզի նորից կարողանաք այն օգտագործել:"</string>
     <string name="crypt_keeper_failed_title_dec">Վերծանումը ձախողվեց:</string>
     <string name="crypt_keeper_failed_summary_dec">Անհնար է ավարտել վերծանումը՝ ընդհատման պատճառով: Օգտագործելուց առաջ կատարեք գործարանային տվյալների հետադարձում (որը կջնջի բոլոր տվյալները):</string>
     <string name="crypt_keeper_set_screen_lock_type">Դնել էկրանի կողպման տեսակը</string>
+    <string name="crypt_keeper_warning_keyboard_cover_does_not_work">Ստեղնաշարի շապիկը չի աշխատի հեռախոսը վերագործարկելուց հետո:</string>
     <string name="encryption_interstitial_message">"Կարող եք այս հեռախոսն ապահովել լրացուցիչ պաշտպանությամբ՝ պահանջելով, որ Ձեր %s-ը մուտքագրվի նախքան հեռախոսի գործարկումը: Դա կօգնի պաշտպանել Ձեր տվյալները, եթե հեռախոսը կորչի կամ գողացվի: Հնարավոր է՝ որոշ ծրագրեր Անվտանգ գործարկում պահանջեն՝ համաձայն Սարքի ծածկագրման քաղաքականության, որպեսզի մուտք ունենան դեպի գործառական հնարավորություններ, օրինակ՝ էլփոստի համաժամացում:
 
 Դուք չեք ստանա կանչեր, հաղորդագրություններ կամ ծանուցումներ, և տագնապները չեն հնչի, քանի դեռ հեռախոսը չի գործարկվել:"</string>
@@ -1971,6 +1981,12 @@ You will also need it when:"</string>
     <string name="lockpassword_confirm_your_pin_with_fingerprint">Ընթացիկ PIN-ը մուտքագրելու համար օգտագործել մատնահետք:</string>
     <string name="lockpassword_confirm_your_pattern_with_fingerprint">Ընթացիկ նախշը գծելու համար օգտագործել մատնահետք:</string>
     <string name="lockpassword_confirm_your_password_with_fingerprint">Ընթացիկ գաղտնաբառը մուտքագրելու համար օգտագործել մատնահետք:</string>
+    <string name="lockpassword_confirm_your_pin_with_iris">Օգտագործեք ծիածանաթաղանթները կամ մուտքագրեք Ձեր ընթացիկ PIN-ը:</string>
+    <string name="lockpassword_confirm_your_pattern_with_iris">Օգտագործեք ծիածանաթաղանթները կամ գծեք Ձեր ընթացիկ նախշը:</string>
+    <string name="lockpassword_confirm_your_password_with_iris">Օգտագործեք ծիածանաթաղանթները կամ մուտքագրեք Ձեր ընթացիկ գաղտնաբառը:</string>
+    <string name="lockpassword_confirm_your_pin_with_biometrics">Օգտագործեք կենսաչափական տվյալներ կամ մուտքագրեք Ձեր PIN-ը:</string>
+    <string name="lockpassword_confirm_your_pattern_with_biometrics">Օգտագործեք կենսաչափական տվյալներ կամ գծեք Ձեր նախշը:</string>
+    <string name="lockpassword_confirm_your_password_with_biometrics">Օգտագործեք կենսաչափական տվյալներ կամ մուտքագրեք Ձեր գաղտնաբառը:</string>
     <string name="lockpassword_confirm_your_pin_instead_of_fingerprint">Մուտքագրեք Ձեր PIN-ը՝ մատնահետքի ճանաչում օգտագործելու փոխարեն:</string>
     <string name="lockpassword_confirm_your_pattern_instead_of_fingerprint">Գծեք Ձեր նախշը՝ մատնահետքի ճանաչում օգտագործելու փոխարեն:</string>
     <string name="lockpassword_confirm_your_password_instead_of_fingerprint">Մուտքագրեք Ձեր գաղտնաբառը՝ մատնահետքի ճանաչում օգտագործելու փոխարեն:</string>
@@ -2044,7 +2060,8 @@ You will also need it when:"</string>
     <string name="face_backup_wrong_password">Սխալ պահեստային գաղտնաբառ</string>
     <string name="face_status_timeout">Ժամանակը սպառվել է: Փորձեք ավելի ուշ:</string>
     <string name="okay">OK</string>
-    <string name="face_samsung_account_button">Օգտ. Samsung account</string>
+    <string name="face_samsung_account_button">Օգտագործել Samsung account</string>
+    <string name="face_galaxy_account_button">Օգտագործել Galaxy հաշիվ</string>
     <string name="face_error_DB_corrupted">Դեմքի տվյալների հետ կապված խնդիր էր առաջացել: Նորից գրանցեք Ձեր դեմքը:</string>
     <string name="face_error_DB_corrupted_popup_title">Նորից գրանցեք Ձեր դեմքը</string>
     <string name="face_error_timeout">Ձեր դեմքը չհայտնաբերվեց:</string>
@@ -2155,7 +2172,7 @@ You will also need it when:"</string>
     <string name="biometrics_backup_locktype_title">Նախադրել ծիածանաթաղանթի անվտանգությունը</string>
     <string name="biometrics_register_your_iris">Գրանցեք Ձեր ծիածանաթաղանթները:</string>
     <string name="biometrics_backup_locktype_summary">Ծիածանաթաղանթները սարքն արգելաբացելու նպատակով օգտագործելու համար պետք է դնեք նախշ, PIN կամ գաղտնաբառ:</string>
-    <string name="biometrics_backup_locktype_message">Ձեր ծիածանաթաղանթները հեռախոսի արգելաբացման կամ ապահով ստուգման նպատակով օգտագործելու համար անհրաժեշտ կլինի՝</string>
+    <string name="biometrics_backup_locktype_message">Ծիածանաթաղանթները հեռախոսի արգելաբացման կամ ծրագրերում ինքնության հաստատման նպատակով օգտագործելու համար անհրաժեշտ կլինի՝</string>
     <string name="iris_delete_popup_title">Հեռացնե՞լ ծիածանաթաղանթի տվյալները:</string>
     <string name="iris_delete_popup_message">Հեռացնե՞լ ծիածանաթաղանթի տվյալները:</string>
     <string name="iris_delete_popup_message_with_related_func">Ծիածանաթաղանթներ օգտագործող գործառույթները կանջատվեն:</string>
@@ -2231,6 +2248,9 @@ You will also need it when:"</string>
     <string name="biometrics_dex_cant_use_msg">Հնարավոր չէ %s օգտագործել Samsung DeX-ում:</string>
     <string name="biometrics_dex_closed_to_switch">%s-ը փակվեց Samsung DeX-ն անցնելու համար:</string>
     <string name="biometircs_dex_cant_use_toast">Հնարավոր չէ %s գործարկել Samsung DeX-ում: Փորձեք գործարկել հեռախոսի ռեժիմում:</string>
+    <string name="iris_guide_text_preview">Նայեք՝ ծիածնթաղանթ օգտ.</string>
+    <string name="iris_guide_enable_toggle">Թակ. այստեղ՝ ծիածնթղնթներ օգտ.</string>
+    <string name="iris_cannot_verify">Չհաջողվեց ստուգել ծիածանաթաղանթները</string>
     <string name="knox_twofactor_bio_description">Ընտրեք Ձեր կենսաչափական կողպման տեսակն ու երկրորդ կողպման տեսակը՝ %s արգելաբացելու համար:</string>
     <string name="fingerprint_registered">Գրանցված մատնահետքերը կօգտագործվեն ընտրված ապակողպման եղանակով:</string>
     <string name="knox_twofactor_description">Ընտրեք Ձեր կենսաչափական տվյալները և երկրորդ կողպման տեսակը՝ %s արգելաբացելու համար:</string>
@@ -3093,6 +3113,7 @@ Mobile data will be turned off."</string>
     <string name="easy_mode_app_help">Հիմնական էկրանի ավելի պարզ դասավորվածքի և էկրանի վրայի ավելի մեծ տարրերի միջոցով հեշտացրեք սարքի օգտագործումը:</string>
     <string name="easy_mode_app_help_dream_1">Օգտագործեք Հիմնական էկրանի պարզ դասավորվածք և էկրանի վրայի ավելի մեծ տարրեր:</string>
     <string name="easy_mode_app_help_dream_2">Հիմնական էկրանի ցանկացած ընտրակայում կհեռացվի, և Էկրանի մասշտաբավորումը կդրվի «առավելագույն»:</string>
+    <string name="easy_mode_app_help_3rd_launcher">Էկրանի վրայի մեծ տարրերի համար կիրառել Հեշտ ռեժիմը: TouchWiz հիմնական չօգտագործելու դեպքում Հիմնական էկրանի դասավորվածքը չի փոխվի, բայց էկրանի մասշտաբը կդրվի «մեծ», իսկ տառաչափը՝ «միջին»:</string>
     <string name="security_warning_content">Դուք կարող եք Ձեր գաղտնիությունը պաշտպանել՝ գաղտնաբառ, PIN կամ նախշ դնելով էկրանի արգելաբացման համար</string>
     <string name="lock_setting_weather_desc">Եղանակի տեսության դրվածքները դիտելու կամ փոխելու համար ստորև թակել ԵՂԱՆԱԿԻ ԴՐՎԱԾՔՆԵՐԸ:</string>
     <string name="lock_setting_weather_btn">Եղանակի դրվածքներ</string>
@@ -3339,7 +3360,7 @@ Downloading via mobile networks may result in additional charges depending on yo
     <string name="disable_hovering_title">Կասեցնել օդային դիտումը</string>
     <string name="disable_hovering_summary">Օդային դիտումը և TalkBack-ը չեն կարող երկուսը միասին ընձեռվել: Օդային դիտումը կկասեցվի:</string>
     <string name="pen_settings_pen_input">Անմիջական գրչով ներմուծ.</string>
-    <string name="action_memo_onoff_screen_title">Անջտծ էկրանի հշգր</string>
+    <string name="action_memo_onoff_screen_title">Անջատված էկրանի հուշագիր</string>
     <string name="screen_off_note_summary">Գրեք նշումներ, երբ էկրանն անջատված է: Պարզապես հեռացրեք S Pen-ը և սկսեք գրել:</string>
     <string name="screen_off_note_summary_jpn">Ստեղծեք նշումներ՝ S Pen-ն արձակելով, երբ էկրանն անջատված է, այնուհետև էկրանի վրա գրելով: Անջատված էկրանի հուշագրերը կպահպանվեն Galaxy Notes-ում:</string>
     <string name="screen_off_note_summary_no_detach">Ստեղծեք նշումներ՝ սեղմելով Գրչի կոճակը, անջատված ժամանակ էկրանը թակելով, այնուհետև էկրանին գրելով: Անջատված էկրանի հուշագրերը կպահպանվեն Samsung Notes-ում:</string>
@@ -3946,7 +3967,7 @@ Wi-Fi-ը հիմա միացված է:"</string>
     <string name="wfd_descrpition_playsound">Վերարտադրել ձայն:</string>
     <string name="wfd_is_not_supported">Այս գործառույթը չի ապահովվում:</string>
     <string name="usbtethering_notify_wifi_is_on_title">Անջատե՞լ Wi-Fi-ը:</string>
-    <string name="usbtethering_notify_wifi_is_on">Wi-Fi-ը և USB տեղակապումը չեն կարող միաժամանակ միացված լինել: Անջատեք Wi-Fi-ը:</string>
+    <string name="usbtethering_notify_wifi_is_on">Wi-Fi-ը և USB տեղակապումը չեն կարող միաժամանակ միացված լինել: Wi-Fi-ը կանջատվի:</string>
     <string name="disable_multi_window_dialog_text">Բազմակի պատուհանը կկասեցվի, և ելնող պատուհաններում բաց բոլոր ծրագրերը կփակվեն:</string>
     <string name="keyguard_password_attempt_count_pin_code">Մնացել է %d փորձ:</string>
     <string name="keyguard_password_attempts_count_pin_code">Մնացել է %d փորձ:</string>
@@ -4154,6 +4175,7 @@ SMS-ի ստացում"</string>
     <string name="hdmi_mode_title">HDMI ռեժիմ</string>
     <string name="hdmi_mode_dex">Samsung DeX</string>
     <string name="hdmi_mode_mirroring">Screen Mirroring</string>
+    <string name="hdmi_mode_not_available_while_cover_attached">%s-ը մատչելի չէ, երբ շապիկը կցված է:</string>
     <string name="screen_timeout_for_dex">Էկրանի պարապ. Samsung DeX-ի հր</string>
     <string name="show_virtual_keyboard_for_dex">Ցույց տալ էկրանի ստեղնաշար Samsung DeX-ում</string>
     <string name="comma">,</string>
@@ -4462,7 +4484,7 @@ SMS-ի ստացում"</string>
     <string name="date_picker_title">Ամսաթիվ</string>
     <string name="time_picker_title">Ժամանակ</string>
     <string name="lock_after_timeout">Կողպել ինքնաբերաբար</string>
-    <string name="lock_after_timeout_summary">Էկրանը կողպել ինքնաբերաբար անջատումից %s անց:</string>
+    <string name="lock_after_timeout_summary">Հեռախոսը կողպել էկրանի ինքնաբերաբար անջատումից %s անց:</string>
     <string name="lock_after_timeout_summary_with_exception">Էկրանը կողպել ինքնաբերաբար անջատումից %1$s հետո, բացի երբ արգելաբացված է %2$s-ի կողմից:</string>
     <string name="show_owner_info_on_lockscreen_label">Ցույց տալ սարքի տիրոջ մասին տեղեկությունները կողպված էկրանի վրա:</string>
     <string name="owner_info_settings_title">Տիրոջ տվյալներ</string>
@@ -4610,6 +4632,8 @@ SMS-ի ստացում"</string>
     <string name="wifi_empty_list_user_restricted">Դուք չունեք Wi-Fi-ի դրվածքները փոխելու թույլտվություն:</string>
     <string name="wifi_setup_wps">Ինքնաբերական նախադրում (WPS)</string>
     <string name="wifi_show_advanced">Ցույց տալ ընդլայնված ընտրանքները</string>
+    <string name="wifi_advanced_toggle_description_expanded">Կրկնակի թակեք կոծկելու համար:</string>
+    <string name="wifi_advanced_toggle_description_collapsed">Կրկնակի թակեք ընդարձակելու համար:</string>
     <string name="wifi_wps_setup_title">WPS-ի նախադրում</string>
     <string name="wifi_wps_setup_msg">Սկսվում է WPS…</string>
     <string name="wifi_wps_onstart_pbc">Ձեր երթուղավորիչի վրա թակեք Wi-Fi պաշտպանված նախադրման կոճակը: Այն կարող է կոչվել WPS կամ պարունակել այս սիմվոլը՝</string>
@@ -4641,6 +4665,10 @@ SMS-ի ստացում"</string>
     <string name="wifi_shared">Համօգտագործվող</string>
     <string name="wifi_unchanged">(անփոփոխ)</string>
     <string name="wifi_unspecified">(Չսահմանված)</string>
+    <string name="wifi_select_cert">Ընտրել վկայական</string>
+    <string name="wifi_do_not_provide_eap_user_cert">Չտրամադրել</string>
+    <string name="wifi_do_not_validate_eap_server">Չվավերացնել</string>
+    <string name="wifi_do_not_validate_eap_server_warning">Ոչ մի վկայական չի սահմանվել: Ձեր միացումը գաղտնի չի լինի:</string>
     <string name="wifi_scan_always_turnon_message">%s ծրագիրը տեղորոշման ճշգրտությունը մեծացնելու և այլ նպատակներով հարցնում է Wi-Fi ցանցերի առկայությունը տեսածրելու թույլատվություն, նույնիսկ երբ Wi-Fi-ն անջատված է. դա թույլ տա՞լ բոլոր ծրագրերի համար:</string>
     <string name="wifi_scan_always_confirm_allow">Թույլ տալ</string>
     <string name="wifi_scan_always_confirm_deny">Մերժել</string>
@@ -4975,9 +5003,9 @@ SMS-ի ստացում"</string>
     <string name="restore_default_apn_completed">APN-ի դրվածքները հետադարձվել են կանխադրվածի:</string>
     <string name="reset_network_desc">Դա կհետադարձի ցանցի բոլոր դրվածքները, ներառյալ հետևյալի համար՝</string>
     <string name="reset_network_button_text">Զրոյացնել կայանքները</string>
-    <string name="reset_network_final_desc">Միացման բոլոր դրվածքները կհետադարձվեն: Այս գործողությունը չի կարող ետարկվել:</string>
+    <string name="reset_network_final_desc">Ցանցի բոլոր դրվածքները կհետադարձվեն: Այս գործողությունը չի կարող ետարկվել:</string>
     <string name="reset_network_final_button_text">Զրոյացնել կայանքները</string>
-    <string name="reset_network_complete_toast">Միացման դրվածքները հետադարձվեցին:</string>
+    <string name="reset_network_complete_toast">Ցանցի դրվածքները հետադարձվեցին:</string>
     <string name="master_clear_title">Գործարանային տվյալները վերականգնված են</string>
     <string name="master_clear_accounts">Ներկա պահին Դուք մտել եք հետևյալ հաշիվները՝</string>
     <string name="master_clear_other_users_present">Այս սարքից կջնջվեն նաև այլ օգտվողների պատկանող տվյալները:</string>
@@ -6090,6 +6118,7 @@ If the device has multiple users, using this shortcut on the lock screen tempora
     <string name="set_data_limit">Դնել տվյալների սահմանաչափ</string>
     <string name="data_limit">Տվյալների սահմանաչափ</string>
     <string name="data_usage_template">%1$s է օգտագործվել հետևյալ ժամանակաշրջանում՝ %2$s</string>
+    <string name="data_usage_template_wifi">%s է օգտագործվել վերջին 30 օրում</string>
     <string name="data_usage_other_apps">Օգտ. մեջ ներառված առնչ. ծրգրեր</string>
     <string name="data_saver_title">Տվյալների խնայիչ</string>
     <string name="unrestricted_data_saver">Թ. տալ ծր., երբ Տվ. խնայ. միաց.</string>
@@ -6140,6 +6169,7 @@ If the device has multiple users, using this shortcut on the lock screen tempora
     <string name="legacy_dhcp_client_summary">Օգտագործել Lollipop-ի DHCP ծրագիրը՝ նոր Android DHCP ծրագրի փոխարեն:</string>
     <string name="screen_off_pocket_title">Էկրանը պահել անջատված</string>
     <string name="screen_off_pocket_summary">Թույլ չտալ էկրանի պատահական միացում, երբ սարքը մութ տեղում է, օրինակ՝ գրպանում կամ պայուսակում:</string>
+    <string name="noApplications">Այս գործողության հետ կապված բոլոր ծրագրերը կասեցված են, արգելափակված են կամ տեղադրված չեն:</string>
     <string name="confirm_reset_shortcut_manager_throttling_title">Հետադարձել Դյուրանցումների կառավարչի արագության սահմանափակիչը</string>
     <string name="confirm_reset_shortcut_manager_throttling_message">Դյուրանցումների կառավարչի արագության սահմանափակիչի հաշվիչները կհետադարձվեն:</string>
 </resources>

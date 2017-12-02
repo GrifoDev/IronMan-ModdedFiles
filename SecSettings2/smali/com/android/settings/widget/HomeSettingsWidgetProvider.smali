@@ -226,7 +226,7 @@
 
     move-result-object v4
 
-    const v5, 0x7f040144
+    const v5, 0x7f040145
 
     invoke-direct {v3, v4, v5}, Landroid/widget/RemoteViews;-><init>(Ljava/lang/String;I)V
 
@@ -253,7 +253,7 @@
 
     move-result-object v4
 
-    const v5, 0x7f110433
+    const v5, 0x7f110435
 
     invoke-virtual {v3, v5, v4}, Landroid/widget/RemoteViews;->setOnClickPendingIntent(ILandroid/app/PendingIntent;)V
 

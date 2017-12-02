@@ -40,7 +40,7 @@
 .end method
 
 .method public onAuthenticationError(ILjava/lang/CharSequence;)V
-    .locals 4
+    .locals 3
 
     const-string/jumbo v0, "FcstFaceAuthenticateDialog"
 
@@ -104,23 +104,6 @@
     :cond_1
     iget-object v0, p0, Lcom/samsung/android/settings/face/FaceAuthenticateDialog$1;->this$0:Lcom/samsung/android/settings/face/FaceAuthenticateDialog;
 
-    invoke-static {v0}, Lcom/samsung/android/settings/face/FaceAuthenticateDialog;->-get10(Lcom/samsung/android/settings/face/FaceAuthenticateDialog;)Landroid/widget/TextView;
-
-    move-result-object v0
-
-    if-eqz v0, :cond_2
-
-    iget-object v0, p0, Lcom/samsung/android/settings/face/FaceAuthenticateDialog$1;->this$0:Lcom/samsung/android/settings/face/FaceAuthenticateDialog;
-
-    invoke-static {v0}, Lcom/samsung/android/settings/face/FaceAuthenticateDialog;->-get10(Lcom/samsung/android/settings/face/FaceAuthenticateDialog;)Landroid/widget/TextView;
-
-    move-result-object v0
-
-    invoke-virtual {v0, p2}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
-
-    :cond_2
-    iget-object v0, p0, Lcom/samsung/android/settings/face/FaceAuthenticateDialog$1;->this$0:Lcom/samsung/android/settings/face/FaceAuthenticateDialog;
-
     invoke-static {v0}, Lcom/samsung/android/settings/face/FaceAuthenticateDialog;->-get9(Lcom/samsung/android/settings/face/FaceAuthenticateDialog;)Landroid/os/Handler;
 
     move-result-object v0
@@ -129,9 +112,7 @@
 
     invoke-direct {v1, p0, p1}, Lcom/samsung/android/settings/face/FaceAuthenticateDialog$1$1;-><init>(Lcom/samsung/android/settings/face/FaceAuthenticateDialog$1;I)V
 
-    const-wide/16 v2, 0x3e8
-
-    invoke-virtual {v0, v1, v2, v3}, Landroid/os/Handler;->postDelayed(Ljava/lang/Runnable;J)Z
+    invoke-virtual {v0, v1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
     invoke-super {p0, p1, p2}, Lcom/samsung/android/bio/face/SemBioFaceManager$AuthenticationCallback;->onAuthenticationError(ILjava/lang/CharSequence;)V
 
@@ -139,7 +120,7 @@
 .end method
 
 .method public onAuthenticationFailed()V
-    .locals 4
+    .locals 2
 
     const-string/jumbo v0, "FcstFaceAuthenticateDialog"
 
@@ -147,25 +128,6 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    iget-object v0, p0, Lcom/samsung/android/settings/face/FaceAuthenticateDialog$1;->this$0:Lcom/samsung/android/settings/face/FaceAuthenticateDialog;
-
-    invoke-static {v0}, Lcom/samsung/android/settings/face/FaceAuthenticateDialog;->-get10(Lcom/samsung/android/settings/face/FaceAuthenticateDialog;)Landroid/widget/TextView;
-
-    move-result-object v0
-
-    if-eqz v0, :cond_0
-
-    iget-object v0, p0, Lcom/samsung/android/settings/face/FaceAuthenticateDialog$1;->this$0:Lcom/samsung/android/settings/face/FaceAuthenticateDialog;
-
-    invoke-static {v0}, Lcom/samsung/android/settings/face/FaceAuthenticateDialog;->-get10(Lcom/samsung/android/settings/face/FaceAuthenticateDialog;)Landroid/widget/TextView;
-
-    move-result-object v0
-
-    const v1, 0x7f0b08cc
-
-    invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(I)V
-
-    :cond_0
     iget-object v0, p0, Lcom/samsung/android/settings/face/FaceAuthenticateDialog$1;->this$0:Lcom/samsung/android/settings/face/FaceAuthenticateDialog;
 
     invoke-static {v0}, Lcom/samsung/android/settings/face/FaceAuthenticateDialog;->-get9(Lcom/samsung/android/settings/face/FaceAuthenticateDialog;)Landroid/os/Handler;
@@ -176,9 +138,7 @@
 
     invoke-direct {v1, p0}, Lcom/samsung/android/settings/face/FaceAuthenticateDialog$1$2;-><init>(Lcom/samsung/android/settings/face/FaceAuthenticateDialog$1;)V
 
-    const-wide/16 v2, 0x3e8
-
-    invoke-virtual {v0, v1, v2, v3}, Landroid/os/Handler;->postDelayed(Ljava/lang/Runnable;J)Z
+    invoke-virtual {v0, v1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
     invoke-super {p0}, Lcom/samsung/android/bio/face/SemBioFaceManager$AuthenticationCallback;->onAuthenticationFailed()V
 

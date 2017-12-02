@@ -35,7 +35,7 @@
 
     if-nez p1, :cond_0
 
-    const v1, 0x7f0401ff
+    const v1, 0x7f040202
 
     invoke-virtual {p0, v1, v2}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;)Landroid/view/View;
 
@@ -49,7 +49,7 @@
 
     check-cast v1, Landroid/view/ViewGroup;
 
-    const v2, 0x7f040383
+    const v2, 0x7f040386
 
     invoke-virtual {p0, v2, v1}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;)Landroid/view/View;
 
@@ -79,7 +79,7 @@
 
     iput-object v1, v0, Lcom/android/settings/applications/AppViewHolder;->appIcon:Landroid/widget/ImageView;
 
-    const v1, 0x7f11089d
+    const v1, 0x7f11089f
 
     invoke-virtual {p1, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -89,7 +89,7 @@
 
     iput-object v1, v0, Lcom/android/settings/applications/AppViewHolder;->summary:Landroid/widget/TextView;
 
-    const v1, 0x7f11089e
+    const v1, 0x7f1108a0
 
     invoke-virtual {p1, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 

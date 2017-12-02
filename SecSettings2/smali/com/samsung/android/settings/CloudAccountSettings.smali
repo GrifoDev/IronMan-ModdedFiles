@@ -135,7 +135,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f0f03fa
+    const v1, 0x7f0f03f9
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getInteger(I)I
 
@@ -183,7 +183,7 @@
 
     iput-object v0, v1, Lcom/samsung/android/settings/SettingsPreferenceFragmentLinkData;->intent:Landroid/content/Intent;
 
-    const v2, 0x7f0b1416
+    const v2, 0x7f0b1427
 
     iput v2, v1, Lcom/samsung/android/settings/SettingsPreferenceFragmentLinkData;->titleRes:I
 
@@ -236,7 +236,7 @@
 
     move-result-object v4
 
-    const v5, 0x7f0b0d14
+    const v5, 0x7f0b0d22
 
     invoke-virtual {v4, v5}, Landroid/preference/Preference;->setSummary(I)V
 
@@ -509,7 +509,7 @@
 
     move-result-object v5
 
-    const v6, 0x7f0b1207
+    const v6, 0x7f0b1217
 
     invoke-virtual {v5, v6}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -601,7 +601,7 @@
 
     const/4 v10, 0x0
 
-    const v12, 0x7f0b0d78
+    const v12, 0x7f0b0d87
 
     invoke-virtual {p0, v12}, Lcom/samsung/android/settings/CloudAccountSettings;->getString(I)Ljava/lang/String;
 
@@ -615,7 +615,7 @@
 
     aput-object v2, v12, v13
 
-    const v13, 0x7f0b0521
+    const v13, 0x7f0b0522
 
     invoke-virtual {p0, v13, v12}, Lcom/samsung/android/settings/CloudAccountSettings;->getString(I[Ljava/lang/Object;)Ljava/lang/String;
 
@@ -645,7 +645,7 @@
 
     invoke-direct {v13, p0}, Lcom/samsung/android/settings/CloudAccountSettings$5;-><init>(Lcom/samsung/android/settings/CloudAccountSettings;)V
 
-    const v14, 0x7f0b06ff
+    const v14, 0x7f0b0700
 
     invoke-virtual {v12, v14, v13}, Landroid/app/AlertDialog$Builder;->setPositiveButton(ILandroid/content/DialogInterface$OnClickListener;)Landroid/app/AlertDialog$Builder;
 
@@ -751,7 +751,7 @@
 
     const/4 v4, 0x0
 
-    const v12, 0x7f0b0562
+    const v12, 0x7f0b0563
 
     invoke-virtual {p0, v12}, Lcom/samsung/android/settings/CloudAccountSettings;->getString(I)Ljava/lang/String;
 
@@ -765,7 +765,7 @@
 
     aput-object v2, v12, v13
 
-    const v13, 0x7f0b0526
+    const v13, 0x7f0b0527
 
     invoke-virtual {p0, v13, v12}, Lcom/samsung/android/settings/CloudAccountSettings;->getString(I[Ljava/lang/Object;)Ljava/lang/String;
 
@@ -779,7 +779,7 @@
 
     aput-object v2, v12, v13
 
-    const v13, 0x7f0b0527
+    const v13, 0x7f0b0528
 
     invoke-virtual {p0, v13, v12}, Lcom/samsung/android/settings/CloudAccountSettings;->getString(I[Ljava/lang/Object;)Ljava/lang/String;
 
@@ -813,7 +813,7 @@
 
     invoke-direct {v13, p0}, Lcom/samsung/android/settings/CloudAccountSettings$7;-><init>(Lcom/samsung/android/settings/CloudAccountSettings;)V
 
-    const v14, 0x7f0b06ff
+    const v14, 0x7f0b0700
 
     invoke-virtual {v12, v14, v13}, Landroid/app/AlertDialog$Builder;->setPositiveButton(ILandroid/content/DialogInterface$OnClickListener;)Landroid/app/AlertDialog$Builder;
 
@@ -840,7 +840,7 @@
 
     move-result-object v13
 
-    const v14, 0x7f0f03fb
+    const v14, 0x7f0f03fa
 
     invoke-virtual {v13, v14}, Landroid/content/res/Resources;->getInteger(I)I
 
@@ -887,23 +887,13 @@
     :try_start_3
     new-instance v8, Landroid/content/Intent;
 
-    const-string/jumbo v12, "com.samsung.android.scloud"
-
-    invoke-direct {v8, v12}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
-
-    const-string/jumbo v12, "android.intent.action.MAIN"
-
-    invoke-virtual {v8, v12}, Landroid/content/Intent;->setAction(Ljava/lang/String;)Landroid/content/Intent;
+    invoke-direct {v8}, Landroid/content/Intent;-><init>()V
 
     const-string/jumbo v12, "com.samsung.android.scloud"
 
     const-string/jumbo v13, "com.samsung.android.scloud.app.ui.splash.SplashActivity"
 
     invoke-virtual {v8, v12, v13}, Landroid/content/Intent;->setClassName(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
-
-    const/high16 v12, 0x10000000
-
-    invoke-virtual {v8, v12}, Landroid/content/Intent;->addFlags(I)Landroid/content/Intent;
 
     invoke-virtual {p0, v8}, Lcom/samsung/android/settings/CloudAccountSettings;->startActivity(Landroid/content/Intent;)V
     :try_end_3
@@ -928,7 +918,7 @@
 
     move-result-object v13
 
-    const v14, 0x7f0f03fc
+    const v14, 0x7f0f03fb
 
     invoke-virtual {v13, v14}, Landroid/content/res/Resources;->getInteger(I)I
 

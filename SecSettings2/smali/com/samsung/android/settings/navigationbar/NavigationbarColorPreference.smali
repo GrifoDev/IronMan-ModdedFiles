@@ -153,7 +153,7 @@
 
     iput-object p1, p0, Lcom/samsung/android/settings/navigationbar/NavigationbarColorPreference;->mContext:Landroid/content/Context;
 
-    const v0, 0x7f0401af
+    const v0, 0x7f0401b0
 
     invoke-virtual {p0, v0}, Lcom/samsung/android/settings/navigationbar/NavigationbarColorPreference;->setLayoutResource(I)V
 
@@ -817,7 +817,7 @@
 
     iget-object v5, p0, Lcom/samsung/android/settings/navigationbar/NavigationbarColorPreference;->mContext:Landroid/content/Context;
 
-    const v6, 0x7f020187
+    const v6, 0x7f020185
 
     invoke-virtual {v5, v6}, Landroid/content/Context;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 
@@ -847,7 +847,7 @@
 
     iget-object v5, p0, Lcom/samsung/android/settings/navigationbar/NavigationbarColorPreference;->mContext:Landroid/content/Context;
 
-    const v6, 0x7f020188
+    const v6, 0x7f020186
 
     invoke-virtual {v5, v6}, Landroid/content/Context;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 
@@ -868,7 +868,7 @@
     :cond_1
     iget-object v5, p0, Lcom/samsung/android/settings/navigationbar/NavigationbarColorPreference;->mContext:Landroid/content/Context;
 
-    const v6, 0x7f020189
+    const v6, 0x7f020187
 
     invoke-virtual {v5, v6}, Landroid/content/Context;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 
@@ -1070,7 +1070,7 @@
 
     iput-object v0, p0, Lcom/samsung/android/settings/navigationbar/NavigationbarColorPreference;->mAdapter:Lcom/samsung/android/settings/navigationbar/NavigationbarColorPreference$CustomGrid;
 
-    const v0, 0x7f1104e1
+    const v0, 0x7f1104e3
 
     invoke-virtual {p1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -1086,7 +1086,7 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/GridView;->setAdapter(Landroid/widget/ListAdapter;)V
 
-    const v0, 0x7f1105a0
+    const v0, 0x7f1105a2
 
     invoke-virtual {p1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -1096,7 +1096,7 @@
 
     iput-object v0, p0, Lcom/samsung/android/settings/navigationbar/NavigationbarColorPreference;->mPreviewBg:Landroid/widget/ImageView;
 
-    const v0, 0x7f1105a2
+    const v0, 0x7f1105a4
 
     invoke-virtual {p1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 

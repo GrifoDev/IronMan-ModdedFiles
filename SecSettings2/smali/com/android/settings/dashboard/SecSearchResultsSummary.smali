@@ -1275,21 +1275,11 @@
 
     const/4 v5, 0x0
 
-    const v2, 0x7f0402a9
+    const v2, 0x7f0402ac
 
     invoke-virtual {p1, v2, p2, v5}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;Z)Landroid/view/View;
 
     move-result-object v1
-
-    const v2, 0x7f110725
-
-    invoke-virtual {v1, v2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
-
-    move-result-object v2
-
-    check-cast v2, Landroid/view/ViewGroup;
-
-    iput-object v2, p0, Lcom/android/settings/dashboard/SecSearchResultsSummary;->mLayoutSuggestions:Landroid/view/ViewGroup;
 
     const v2, 0x7f110727
 
@@ -1299,9 +1289,19 @@
 
     check-cast v2, Landroid/view/ViewGroup;
 
+    iput-object v2, p0, Lcom/android/settings/dashboard/SecSearchResultsSummary;->mLayoutSuggestions:Landroid/view/ViewGroup;
+
+    const v2, 0x7f110729
+
+    invoke-virtual {v1, v2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
+
+    move-result-object v2
+
+    check-cast v2, Landroid/view/ViewGroup;
+
     iput-object v2, p0, Lcom/android/settings/dashboard/SecSearchResultsSummary;->mLayoutResults:Landroid/view/ViewGroup;
 
-    const v2, 0x7f110732
+    const v2, 0x7f110734
 
     invoke-virtual {v1, v2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -1311,7 +1311,7 @@
 
     iput-object v2, p0, Lcom/android/settings/dashboard/SecSearchResultsSummary;->mNoResults:Landroid/view/ViewGroup;
 
-    const v2, 0x7f11054a
+    const v2, 0x7f11054c
 
     invoke-virtual {v1, v2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -1321,7 +1321,7 @@
 
     iput-object v2, p0, Lcom/android/settings/dashboard/SecSearchResultsSummary;->mLoading:Landroid/view/ViewGroup;
 
-    const v2, 0x7f110731
+    const v2, 0x7f110733
 
     invoke-virtual {v1, v2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -1363,7 +1363,7 @@
 
     invoke-virtual {v2, v0}, Lcom/android/settings/SettingsActivity;->updateOptionMenu(Landroid/view/Menu;)Z
 
-    const v2, 0x7f110a15
+    const v2, 0x7f110a18
 
     invoke-interface {v0, v2}, Landroid/view/Menu;->findItem(I)Landroid/view/MenuItem;
 
@@ -1394,7 +1394,7 @@
     invoke-virtual {v2, v3}, Landroid/widget/Toolbar;->setNavigationOnClickListener(Landroid/view/View$OnClickListener;)V
 
     :goto_0
-    const v2, 0x7f110728
+    const v2, 0x7f11072a
 
     invoke-virtual {v1, v2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -1424,7 +1424,7 @@
 
     invoke-virtual {v2, v3}, Landroid/widget/ListView;->setOnItemClickListener(Landroid/widget/AdapterView$OnItemClickListener;)V
 
-    const v2, 0x7f110726
+    const v2, 0x7f110728
 
     invoke-virtual {v1, v2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -1464,7 +1464,7 @@
 
     iget-object v3, p0, Lcom/android/settings/dashboard/SecSearchResultsSummary;->mSuggestionsListView:Landroid/widget/ListView;
 
-    const v4, 0x7f0402ab
+    const v4, 0x7f0402ae
 
     invoke-virtual {v2, v4, v3, v5}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;Z)Landroid/view/View;
 

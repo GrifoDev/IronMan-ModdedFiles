@@ -170,6 +170,8 @@
     <string name="wifi_allow_scan_with_traffic_summary">Пайдаланылған деректер көлемінің негізінде Wi-Fi роумингін сканерлеуге автоматты түрде рұқсат беру немесе бас тарту.</string>
     <string name="select_logd_size_title">Тіркеуге арн. буфер өлш.</string>
     <string name="select_logd_size_dialog_title">Әр лог буферінің ең үлкен көлемін таңдау</string>
+    <string name="dev_logpersist_clear_warning_title">Тұрақты тіркегіш жадын тазалау керек пе?</string>
+    <string name="dev_logpersist_clear_warning_message">Тұрақты тіркегіш өшкен кезде, тіркегіш деректері жойылады.</string>
     <string name="select_logpersist_title">Журнал деректерін үнемі сақтау</string>
     <string name="select_logpersist_dialog_title">Үнемі сақталатын журнал буферлерін таңдау</string>
     <string name="select_usb_configuration_title">USB конфигурациясы</string>
@@ -982,6 +984,7 @@ Wi-Fi және Bluetooth опциялары да өшеді, бірақ олар
     <string name="bluetooth_avc_available_description">Қосылған Bluetooth құрылғысы “Мультимедиа дыбысының деңгейін синхрондау” функциясына қолдау көрсетеді, сондықтан Bluetooth құрылғысы арқылы орнатылған дыбыс деңгейі телефоныңызбен синхрондалады.</string>
     <string name="bluetooth_enter_pin_msg">%s құрылғысымен жұптастыру үшін PIN кодын енгізіңіз (0000 немесе 1234 енгізіп көріңіз)</string>
     <string name="bluetooth_pin_maximum_number_message">Ең көп таңбалар санына жетті.</string>
+    <string name="bluetooth_frp_permission_message">Осы қоңырау үшін Bluetooth құрылғысын пайдалану мүмкін емес.</string>
     <string name="settings_menu_done">Аяқталды</string>
     <string name="usb_tethering_unavailable_subtext_tmo">USB not connected</string>
     <string name="usb_tethering_available_subtext_tmo">USB connected, check to tether</string>
@@ -1481,7 +1484,7 @@ Samsung жарнамасының идентификаторын мобильді
     <string name="navigationbar_pressure_sensitivity_title">“Бастапқы” түймесін қатты басу</string>
     <string name="navigationbar_pressure_sensitivity_summary">“Бастапқы” түймесі жасырулы кезде оны әдеттегіден қаттырақ басу арқылы пайдаланыңыз.</string>
     <string name="navigationbar_pressure_sensitivity_level_summary">Қысым деңгейі: %2$d ішінен %1$d</string>
-    <string name="navigationbar_pressure_sensitivity_description_off">“Бастапқы” түймесі жасырулы кезде оны әдеттегіден қаттырақ басу арқылы пайдаланыңыз.</string>
+    <string name="navigationbar_pressure_sensitivity_description_off">“Бастапқы” түймесін қатты басу үшін қажетті қысым мөлшерін реттеу.</string>
     <string name="navigationbar_pressure_low">Жайырақ</string>
     <string name="navigationbar_pressure_high">Қаттырақ</string>
     <string name="navigationbar_hide_bar">Түймені көрсету және жасыру</string>
@@ -1620,7 +1623,7 @@ Samsung жарнамасының идентификаторын мобильді
     <string name="crypt_keeper_decrypt_title">Құрылғыны шифрсыздандыру</string>
     <string name="crypt_keeper_decrypt_summary">Құрылғы шифрланды.</string>
     <string name="crypt_keeper_type_pin">PIN</string>
-    <string name="crypt_keeper_type_pattern">Үлгі</string>
+    <string name="crypt_keeper_type_pattern">үлгі</string>
     <string name="crypt_keeper_type_password">Кілтсөз</string>
     <string name="crypt_keeper_type_direction">Бағыт құлпы</string>
     <string name="crypt_keeper_confirm_title_dec">Шифрсыздандыруды растау</string>
@@ -1704,7 +1707,11 @@ Samsung жарнамасының идентификаторын мобильді
     <string name="crypt_keeper_confirm_title">Шифрлауды растау</string>
     <string name="crypt_keeper_final_desc">Құрылғыны шифрлау кері өзгертілмейді және процесс үзіліп кетсе деректер жоғалады. Шифрлау құрылғыңыз бірнеше уақыт қайта қосылатын және оны пайдалану мүмкін болмайтын кезде бір сағат немесе одан көп уақыт алуы мүмкін.</string>
     <string name="crypt_keeper_setup_title">Шифрлануда…</string>
-    <string name="crypt_keeper_warn_wipe">Егер құрылғы жұмысын бастау тағы %d рет сәтсіз болса, құрылғы өзінің зауыттық әдепкі параметрлеріне ысырылады. Бұл әрекет барлық деректерді, оған қоса, файлдар мен жүктелген қолданбаларды өшіреді.</string>
+    <string name="crypt_keeper_warn_wipe">"Телефоныңыз өзінің зауыттық әдепкі параметрлеріне қалпына келтірілгенге дейін сізде %1$d әрекет қалды. Бұл барлық деректерді, оның ішінде файлдар мен жүктелген қолданбаларды қоса өшіреді.
+
+Егер телефоныңыз бастапқы қалпына келтірілсе, онда оны қайта пайдалана алу үшін осы телефонмен байланыстырылған %2$s ақпаратын (электрондық пошта мекенжайы және құпиясөз) енгізуіңіз қажет болуы мүмкін."</string>
+    <string name="crypt_keeper_samsung_account">Samsung account</string>
+    <string name="crypt_keeper_google_account">Google есептік жазбасы</string>
     <string name="crypt_keeper_failed_title">Шифрланбады</string>
     <string name="crypt_keeper_failed_summary">Құрылғы жұмысын бастау мүмкін болмады. Шифрлау процесі үзілді. Құрылғыны зауыттық әдепкі параметрлерге ысыру қажет. Бұл әрекет барлық деректерді өшіреді.</string>
     <string name="crypt_keeper_data_corrupted_title">Құрылғы жады бүлінген</string>
@@ -1723,11 +1730,14 @@ Samsung жарнамасының идентификаторын мобильді
     <string name="cryptkeeper_wrong_pin">Қате PIN енгізілді</string>
     <string name="cryptkeeper_wrong_direction">Қате бағыт сызылды</string>
     <string name="checking_decryption">Расталуда…</string>
-    <string name="crypt_keeper_last_warn_wipe">Құрылғы әдепкі зауыттық параметрлеріне қалпына келтірілмегенше, жұмысты бастау үшін сізде 1 әрекет қалды. Бұл файлдар мен жүктелген қолданбалар сияқты барлық деректерді өшіреді.</string>
+    <string name="crypt_keeper_last_warn_wipe">"Телефоныңыз өзінің зауыттық әдепкі параметрлеріне қалпына келтірілгенге дейін, сізде 1 әрекет қалды. Бұл барлық деректерді, оның ішінде файлдар мен жүктеп алынған қолданбаларды қоса өшіреді.
+
+Егер телефоныңыз бастапқы қалпына келтірілсе, оны қайта пайдалану үшін осы телефонмен байланыстырылған %s ақпаратын (электрондық пошта мекенжайы және құпиясөз) енгізуіңіз қажет болуы мүмкін."</string>
     <string name="crypt_keeper_failed_title_dec">"Сипаттау
 үзіліп кетті."</string>
     <string name="crypt_keeper_failed_summary_dec">Үзілуден шифрсыздандыруды аяқтау мүмкін емес. Пайдаланудан бұрын зауыттық деректерді (барлық деректерді өшіре отырып) қалпына келтіріңіз.</string>
     <string name="crypt_keeper_set_screen_lock_type">Экран құлыптау түрін орнату</string>
+    <string name="crypt_keeper_warning_keyboard_cover_does_not_work">Телефон өшіріліп, қайта қосылғаннан кейін пернетақта жаппасы жұмыс істемейді.</string>
     <string name="encryption_interstitial_message">"Телефон жұмысы басталғанша, телефонды %s енгізуді сұрау арқылы қорғауға болады. Бұл телефон жоғалған не ұрланған кезде деректерді қорғауға көмектеседі. Электрондық поштаны синхрондау сияқты мүмкіндіктерге қатынасу үшін, құрылғыны шифрлау саясаттарына сәйкес кейбір қолданбалар қауіпсіз бастауды сұрауы мүмкін.
 
 Телефон жұмысы басталмағанша, сіз қоңырауларды, хабарларды не хабарландыруларды алмайсыз және сигналдар ойнатылмайды."</string>
@@ -1972,6 +1982,12 @@ You will also need it when:"</string>
     <string name="lockpassword_confirm_your_pin_with_fingerprint">Саусақ ізін пайдаланыңыз немесе ағымдағы PIN кодты енгізіңіз.</string>
     <string name="lockpassword_confirm_your_pattern_with_fingerprint">Саусақ ізін пайдаланыңыз немесе ағымдағы үлгіні сызыңыз.</string>
     <string name="lockpassword_confirm_your_password_with_fingerprint">Саусақ ізін пайдаланыңыз немесе ағымдағы құпия сөзді енгізіңіз.</string>
+    <string name="lockpassword_confirm_your_pin_with_iris">Көзіңіздің қабықтарын пайдаланыңыз немесе ағымдағы PIN кодты енгізіңіз.</string>
+    <string name="lockpassword_confirm_your_pattern_with_iris">Көзіңіздің қабықтарын пайдаланыңыз немесе ағымдағы үлгіні сызыңыз.</string>
+    <string name="lockpassword_confirm_your_password_with_iris">Көзіңіздің қабықтарын пайдаланыңыз немесе ағымдағы құпиясөзді енгізіңіз.</string>
+    <string name="lockpassword_confirm_your_pin_with_biometrics">Биометриялық деректерді пайдаланыңыз немесе PIN кодты енгізіңіз.</string>
+    <string name="lockpassword_confirm_your_pattern_with_biometrics">Биометриялық деректерді пайдаланыңыз немесе үлгіні сызыңыз.</string>
+    <string name="lockpassword_confirm_your_password_with_biometrics">Биометриялық деректерді пайдаланыңыз немесе құпиясөзді енгізіңіз.</string>
     <string name="lockpassword_confirm_your_pin_instead_of_fingerprint">Саусақ ізін тану әдісін пайдаланудың орнына PIN кодты енгізіңіз.</string>
     <string name="lockpassword_confirm_your_pattern_instead_of_fingerprint">Саусақ ізін тану әдісін пайдаланудың орнына үлгіні сызыңыз.</string>
     <string name="lockpassword_confirm_your_password_instead_of_fingerprint">Саусақ ізін тану әдісін пайдаланудың орнына құпиясөзді енгізіңіз.</string>
@@ -2046,6 +2062,7 @@ You will also need it when:"</string>
     <string name="face_status_timeout">Уақыт бітті. Кейінірек қайталаңыз.</string>
     <string name="okay">OK</string>
     <string name="face_samsung_account_button">Samsung account қолдану</string>
+    <string name="face_galaxy_account_button">Galaxy ес.жазбаны қолдану</string>
     <string name="face_error_DB_corrupted">Бет деректеріңіз бойынша мәселе туындады. Бетіңізді қайта тіркеңіз.</string>
     <string name="face_error_DB_corrupted_popup_title">Бетіңізді қайта тіркеңіз</string>
     <string name="face_error_timeout">Бетіңіз анықталмаған.</string>
@@ -2156,7 +2173,7 @@ Galaxy есептік жазбаңызды қосып, төмендегі пар
     <string name="biometrics_backup_locktype_title">Көздің мөлбір қабығы қауіпсіздігін орнату</string>
     <string name="biometrics_register_your_iris">Көзіңіздің қабықтарын тіркеңіз.</string>
     <string name="biometrics_backup_locktype_summary">Құрылғының құлпын ашу мақсатында көзіңіздің қабықтарын пайдалану үшін, үлгіні, PIN кодты немесе құпиясөзді орнатуыңыз қажет.</string>
-    <string name="biometrics_backup_locktype_message">Телефоныңыздың құлпын ашу немесе қауіпсіз растау мақсатында көзіңіздің қабықтарын пайдалану үшін келесі әрекеттерді орындауыңыз қажет:</string>
+    <string name="biometrics_backup_locktype_message">Телефоныңыздың құлпын ашу мақсатында көзіңіздің қабықтарын пайдалану немесе қолданбаларда өзіңізді растау үшін келесі әрекеттерді орындауыңыз қажет:</string>
     <string name="iris_delete_popup_title">Көз қабығының деректерін жою керек пе?</string>
     <string name="iris_delete_popup_message">Көз қабығының деректерін жою керек пе?</string>
     <string name="iris_delete_popup_message_with_related_func">Көздің қабықтарын пайдаланатын мүмкіндіктер өшіріледі.</string>
@@ -2232,6 +2249,9 @@ Galaxy есептік жазбаңызды қосып, төмендегі пар
     <string name="biometrics_dex_cant_use_msg">Samsung DeX қолданбасында %s пайдалану мүмкін емес.</string>
     <string name="biometrics_dex_closed_to_switch">%s Samsung DeX қолданбасына ауысу үшін жабылды.</string>
     <string name="biometircs_dex_cant_use_toast">%s қолданбасын Samsung DeX режимінде іске қосу мүмкін емес. Телефон режимінде іске қосып көріңіз.</string>
+    <string name="iris_guide_text_preview">Көз қабығы үшін қарау</string>
+    <string name="iris_guide_enable_toggle">Көз қабықтарын қолдануға түрту</string>
+    <string name="iris_cannot_verify">Көз қабықтарын тексеру мүмкін болмады</string>
     <string name="knox_twofactor_bio_description">%s құлпын ашу үшін, биометрлік құлыптау түрі мен екінші құлыптау түрін таңдаңыз.</string>
     <string name="fingerprint_registered">Тіркелген саусақ іздері таңдалған құлыптан шығару әдісімен пайдаланылады.</string>
     <string name="knox_twofactor_description">%s құлпын ашу үшін биометриялық деректеріңіз бен екінші құлыптау түрін таңдаңыз.</string>
@@ -3094,6 +3114,7 @@ Mobile data will be turned off."</string>
     <string name="easy_mode_app_help">Қарапайым бастапқы экран құрылымы мен үлкенірек экрандық элементтер көмегімен құрылғыны оңай пайдаланыңыз.</string>
     <string name="easy_mode_app_help_dream_1">Бастапқы экранның қарапайым құрылымын және үлкенірек экрандық элементтерді пайдаланыңыз.</string>
     <string name="easy_mode_app_help_dream_2">Бастапқы экранға жасалған кез келген баптаулар алынып тасталынады және экран масштабы ең үлкен мәнге орнатылады.</string>
+    <string name="easy_mode_app_help_3rd_launcher">Үлкенірек экран элементтері үшін жеңіл режимді қолданыңыз. Егер TouchWiz бастапқы беті пайдаланылмаса, бастапқы экран құрылымы өзгермейді, бірақ экран масштабы үлкен мәнге, ал қаріп өлшемі орташа мәнге қойылады.</string>
     <string name="security_warning_content">Сіз экран құлпы ретінде құпиясөзді, PIN кодты немесе үлгіні орнату арқылы құпиялылығыңызды қорғай аласыз</string>
     <string name="lock_setting_weather_desc">Ауа райы параметрлерін көру немесе өзгерту үшін, төмендегі АУА РАЙЫ ПАРАМЕТРЛЕРІ түймесін түртіңіз.</string>
     <string name="lock_setting_weather_btn">Ауа райы параметрлері</string>
@@ -3340,7 +3361,7 @@ Downloading via mobile networks may result in additional charges depending on yo
     <string name="disable_hovering_title">Әуеден көру режимі өшірілген</string>
     <string name="disable_hovering_summary">Әуеден көру режимі мен Talkback мүмкіндіктерін бірге қосу мүмкін емес. Әуеден көру өшіріледі.</string>
     <string name="pen_settings_pen_input">Тікелей қалам енгізу</string>
-    <string name="action_memo_onoff_screen_title">Экр.өшіру жазбасы</string>
+    <string name="action_memo_onoff_screen_title">Өшірілген экран хабарламасы</string>
     <string name="screen_off_note_summary">Экран өшірулі кезде жазбаларды жазыңыз. Жай ғана S Pen қаламын алып, жазуды бастаңыз.</string>
     <string name="screen_off_note_summary_jpn">Экран өшірулі кезде S Pen қаламын алып, экранда жазу арқылы жазбаларды жасаңыз. Өшірулі экран жазбасы Galaxy Notes қолданбасында сақталады.</string>
     <string name="screen_off_note_summary_no_detach">Қалам түймесін басу, өшірілген кезде экранды түрту және онда жазу арқылы жазбалар жасаңыз. Өшірулі экранның жазбалары Samsung Notes қолданбасында сақталады.</string>
@@ -3947,7 +3968,7 @@ You will switch back to Wi-Fi Sharing when a Wi-Fi network becomes available."</
     <string name="wfd_descrpition_playsound">Дыбысты ойнатыңыз.</string>
     <string name="wfd_is_not_supported">Бұл функцияға қолдау көрсетілмейді.</string>
     <string name="usbtethering_notify_wifi_is_on_title">Wi-Fi желісін өшіру керек пе?</string>
-    <string name="usbtethering_notify_wifi_is_on">Wi-Fi мен USB байланыстыру функцияларын бір уақытта қосуға болмайды. Wi-Fi функциясын өшіріңіз.</string>
+    <string name="usbtethering_notify_wifi_is_on">Wi-Fi және USB модем режимі опцияларын бір уақытта қосу мүмкін емес. Wi-Fi өшіріледі.</string>
     <string name="disable_multi_window_dialog_text">Бірнеше терезе өшіріліп, қалқымалы терезелерде ашылған барлық бағдарламалар жабылады.</string>
     <string name="keyguard_password_attempt_count_pin_code">%d әрекеттену аяқталды.</string>
     <string name="keyguard_password_attempts_count_pin_code">%d әрекеттену аяқталды.</string>
@@ -4155,6 +4176,7 @@ SMS қабылдау"</string>
     <string name="hdmi_mode_title">HDMI режимі</string>
     <string name="hdmi_mode_dex">Samsung DeX</string>
     <string name="hdmi_mode_mirroring">Screen Mirroring</string>
+    <string name="hdmi_mode_not_available_while_cover_attached">%s қақпағы бар кезде қолжетімді емес.</string>
     <string name="screen_timeout_for_dex">Samsung DeX экран уақыты бітті</string>
     <string name="show_virtual_keyboard_for_dex">Samsung DeX қызметінде экрандық пернетақта көрсету</string>
     <string name="comma">,</string>
@@ -4464,7 +4486,7 @@ SMS қабылдау"</string>
     <string name="date_picker_title">Күні</string>
     <string name="time_picker_title">Уақыт</string>
     <string name="lock_after_timeout">Автоматты түрде құлыптау</string>
-    <string name="lock_after_timeout_summary">%s экранын автоматты түрде өшкеннен кейін құлыптау.</string>
+    <string name="lock_after_timeout_summary">Экран автоматты түрде өшкеннен кейін %s ішінде телефонды құлыптаңыз.</string>
     <string name="lock_after_timeout_summary_with_exception">%1$s экранын автоматты түрде өшкеннен кейін құлыптаңыз, %2$s арқылы құлыптан шығарылғаннан басқа.</string>
     <string name="show_owner_info_on_lockscreen_label">Құлыптау экранындағы құрылғы иесінің ақпаратын көрсетіңіз.</string>
     <string name="owner_info_settings_title">Иесі туралы ақпарат</string>
@@ -4612,6 +4634,8 @@ SMS қабылдау"</string>
     <string name="wifi_empty_list_user_restricted">Сізде Wi-Fi параметрлерін өзгерту рұқсатыңыз жоқ.</string>
     <string name="wifi_setup_wps">Автоматты түрде орнату (WPS)</string>
     <string name="wifi_show_advanced">Қосымша параметрлерді көрсету</string>
+    <string name="wifi_advanced_toggle_description_expanded">Қайыру үшін екі рет түртіңіз.</string>
+    <string name="wifi_advanced_toggle_description_collapsed">Кеңейту үшін екі рет түртіңіз.</string>
     <string name="wifi_wps_setup_title">WPS орнату</string>
     <string name="wifi_wps_setup_msg">WPS іске қосылуда…</string>
     <string name="wifi_wps_onstart_pbc">Маршрутизатордағы Wi-Fi қорғалған орнату түймесін түртіңіз. Ол WPS деп аталуы мүмкін немесе келесі таңбалардан тұтуы мүмкін:</string>
@@ -4643,6 +4667,10 @@ SMS қабылдау"</string>
     <string name="wifi_shared">Ортақ</string>
     <string name="wifi_unchanged">(өзгертілген)</string>
     <string name="wifi_unspecified">(Көрсетілмеген)</string>
+    <string name="wifi_select_cert">Сертификатты таңдау</string>
+    <string name="wifi_do_not_provide_eap_user_cert">Қамтамасыз етпеу</string>
+    <string name="wifi_do_not_validate_eap_server">Тексермеу</string>
+    <string name="wifi_do_not_validate_eap_server_warning">Ешқандай сертификат көрсетілмеген. Қосылымыңыз жеке болмайды.</string>
     <string name="wifi_scan_always_turnon_message">Орналасу дәлдігін жақсарту және басқа мақсаттар үшін тіпті Wi-Fi өшірілгенде де %s Wi-Fi желілерін қарап шығу рұқсатын сұрауда. Бұған барлық бағдарлама үшін рұқсат бересіз бе?</string>
     <string name="wifi_scan_always_confirm_allow">Рұқсат</string>
     <string name="wifi_scan_always_confirm_deny">Бас тарту</string>
@@ -4977,9 +5005,9 @@ SMS қабылдау"</string>
     <string name="restore_default_apn_completed">APN параметрлерінің зауыттық мәндері қалпына келтірілді.</string>
     <string name="reset_network_desc">Бұл барлық желі параметрлерін қалпына келтіреді, оның ішінде келесілер үшін:</string>
     <string name="reset_network_button_text">Реттеу алып тастау</string>
-    <string name="reset_network_final_desc">Барлық қосылым параметрлері қалпына келтіріледі. Бұл әрекеттен бас тарту мүмкін емес.</string>
+    <string name="reset_network_final_desc">Барлық желі параметрлері бастапқы қалпына келтіріледі. Бұл әрекеттен бас тарту мүмкін емес.</string>
     <string name="reset_network_final_button_text">Реттеу алып тастау</string>
-    <string name="reset_network_complete_toast">Қосылым параметрлері қалпына келтірілді.</string>
+    <string name="reset_network_complete_toast">Желі параметрлері бастапқы қалпына келтірілді.</string>
     <string name="master_clear_title">Зауыттық деректер қалпына келтірілген</string>
     <string name="master_clear_accounts">Сіз қазір мына есептік жазбаларға кірдіңіз:</string>
     <string name="master_clear_other_users_present">Осы құрылғыдағы басқа пайдаланушыларға тиесілі деректер де өшіріледі.</string>
@@ -6092,6 +6120,7 @@ If the device has multiple users, using this shortcut on the lock screen tempora
     <string name="set_data_limit">Деректер шегін орнату</string>
     <string name="data_limit">Деректер шектеуі</string>
     <string name="data_usage_template">%2$s аралығында %1$s пайдаланылды</string>
+    <string name="data_usage_template_wifi">Соңғы 30 күнде %s пайдаланылды</string>
     <string name="data_usage_other_apps">Пайдаланудағы қатысты қолданба</string>
     <string name="data_saver_title">Деректерді сақтаушы</string>
     <string name="unrestricted_data_saver">Сақтағыш қос-да қолд.рұқсат ету</string>
@@ -6142,6 +6171,7 @@ If the device has multiple users, using this shortcut on the lock screen tempora
     <string name="legacy_dhcp_client_summary">Жаңа Android DHCP клиентінің орнына Lollipop ішіндегі DHCP клиентін пайдалану</string>
     <string name="screen_off_pocket_title">Экранды өшірулі сақтау</string>
     <string name="screen_off_pocket_summary">Құрылғы қалта не сөмке сияқты қараңғы орында болған кезде, экранның кенеттен қосылып кетуіне жол бермеу.</string>
+    <string name="noApplications">Бұл әрекетпен байланысты барлық қолданбалар өшірілген, бұғатталған немесе орнатылмаған.</string>
     <string name="confirm_reset_shortcut_manager_throttling_title">Shortcut Manager жылдамдықты шектеушісін қалпына келтіру</string>
     <string name="confirm_reset_shortcut_manager_throttling_message">Shortcut Manager жылдамдықты шектеушісінің есептегіштері қалпына келтіріледі.</string>
 </resources>

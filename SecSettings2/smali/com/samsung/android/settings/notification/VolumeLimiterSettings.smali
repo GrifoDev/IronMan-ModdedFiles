@@ -269,7 +269,7 @@
 
     const-string/jumbo v2, "volume_limiter_value"
 
-    const/16 v3, 0xf
+    const/16 v3, 0x9
 
     invoke-static {v1, v2, v3}, Landroid/provider/Settings$System;->getInt(Landroid/content/ContentResolver;Ljava/lang/String;I)I
 
@@ -399,7 +399,7 @@
 
     aput-object v6, v4, v5
 
-    const v6, 0x7f0b1498
+    const v6, 0x7f0b14a9
 
     invoke-virtual {p0, v6, v4}, Lcom/samsung/android/settings/notification/VolumeLimiterSettings;->getString(I[Ljava/lang/Object;)Ljava/lang/String;
 
@@ -447,7 +447,7 @@
     :cond_2
     iget-object v5, p0, Lcom/samsung/android/settings/notification/VolumeLimiterSettings;->mHeaderText:Landroid/widget/TextView;
 
-    const v6, 0x7f0b0a36
+    const v6, 0x7f0b0a44
 
     invoke-virtual {v5, v6}, Landroid/widget/TextView;->setText(I)V
 
@@ -500,7 +500,7 @@
 
     aput-object v1, v0, v2
 
-    const v1, 0x7f0b1498
+    const v1, 0x7f0b14a9
 
     invoke-virtual {p0, v1, v0}, Lcom/samsung/android/settings/notification/VolumeLimiterSettings;->getString(I[Ljava/lang/Object;)Ljava/lang/String;
 
@@ -527,7 +527,7 @@
 
     aput-object v1, v0, v2
 
-    const v1, 0x7f0b149b
+    const v1, 0x7f0b14ac
 
     invoke-virtual {p0, v1, v0}, Lcom/samsung/android/settings/notification/VolumeLimiterSettings;->getString(I[Ljava/lang/Object;)Ljava/lang/String;
 
@@ -874,7 +874,7 @@
 
     iput-object v1, p0, Lcom/samsung/android/settings/notification/VolumeLimiterSettings;->mAudioManager:Landroid/media/AudioManager;
 
-    const v1, 0x7f080148
+    const v1, 0x7f08014a
 
     invoke-virtual {p0, v1}, Lcom/samsung/android/settings/notification/VolumeLimiterSettings;->addPreferencesFromResource(I)V
 
@@ -1376,7 +1376,7 @@
 
     invoke-direct {v5, v6}, Landroid/app/AlertDialog$Builder;-><init>(Landroid/content/Context;)V
 
-    const v6, 0x7f0b17cd
+    const v6, 0x7f0b17df
 
     invoke-virtual {v5, v6}, Landroid/app/AlertDialog$Builder;->setTitle(I)Landroid/app/AlertDialog$Builder;
 

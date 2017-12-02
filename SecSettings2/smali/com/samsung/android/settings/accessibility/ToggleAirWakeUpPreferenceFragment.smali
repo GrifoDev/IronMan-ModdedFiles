@@ -99,7 +99,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f0f0360
+    const v1, 0x7f0f035f
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getInteger(I)I
 
@@ -190,13 +190,13 @@
 
     invoke-virtual {v5}, Landroid/view/ViewGroup;->removeAllViewsInLayout()V
 
-    const v6, 0x7f040200
+    const v6, 0x7f040203
 
     invoke-virtual {v2, v6, v5}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;)Landroid/view/View;
 
     move-result-object v1
 
-    const v6, 0x7f11064f
+    const v6, 0x7f110651
 
     invoke-virtual {v1, v6}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -223,7 +223,7 @@
     invoke-virtual {v0}, Landroid/graphics/drawable/AnimationDrawable;->start()V
 
     :cond_0
-    const v6, 0x7f110562
+    const v6, 0x7f110564
 
     invoke-virtual {v1, v6}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -264,13 +264,13 @@
 
     const/4 v4, 0x0
 
-    const v3, 0x7f040200
+    const v3, 0x7f040203
 
     invoke-virtual {p1, v3, p2, v4}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;Z)Landroid/view/View;
 
     move-result-object v1
 
-    const v3, 0x7f11064f
+    const v3, 0x7f110651
 
     invoke-virtual {v1, v3}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 

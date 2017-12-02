@@ -170,6 +170,8 @@
     <string name="wifi_allow_scan_with_traffic_summary">ဒေတာအသုံးပြုမှု ပမာဏပေါ်တွင် အခြေခံသည့် Wi-Fi အခြားကွန်ယက် ရှာဖွေမှုများကို အလိုအလျောက် ခွင့်ပြုပါ (သို့) ငြင်းဆိုပါ။</string>
     <string name="select_logd_size_title">မှတ်တမ်းတင်ခြင်းအတွက် ဘာဖာအရွယ်</string>
     <string name="select_logd_size_dialog_title">မှတ်တမ်းဘာဖာတစ်ခုစီ၏ အကြီးဆုံး အရွယ်ကို ရွေးပါ</string>
+    <string name="dev_logpersist_clear_warning_title">ပြဿနာဆက်ဖြစ်နေသည့် လော့ဂါ သိုလှောင်ခန်းကို ရှင်းပစ်မလား?</string>
+    <string name="dev_logpersist_clear_warning_message">ပြဿနာဆက်ဖြစ်နေသည့် လော့ဂါကို ပိတ်လိုက်သည့်အခါ လော့ဂါဒေတာကို ဖျက်ပစ်ပါမည်။</string>
     <string name="select_logpersist_title">မှတ်တမ်းဒေတာကို ဆက်တိုက်သိမ်းပါ</string>
     <string name="select_logpersist_dialog_title">ဆက်တိုက်သိမ်းမည့် မှတ်တမ်း ကြားခံနယ်များကို ရွေးပါ</string>
     <string name="select_usb_configuration_title">USB စီစဉ်ဖွဲ့စည်းမှု</string>
@@ -982,6 +984,7 @@ Wi-Fi နှင့်ဘလူးတုသ်ကို ပိတ်လိုက�
     <string name="bluetooth_avc_available_description">ချိတ်ဆက်ထားသည့် ဘလူးတုသ်ကိရိယာက မီဒီယာသံ တိုးကျယ်ဆင့်ခ်လုပ်ခြင်းကို ပံ့ပိုးပေးပြီး ဘလူးတုသ်ကိရိယာမှ သတ်မှတ်ထားသော အသံအတိုးအကျယ်ကို သင့်ဖုန်းနှင့်အတူ ဆင့်ခ်လုပ်ပါမည်။</string>
     <string name="bluetooth_enter_pin_msg">%s ဖြင့်တွဲရန် PIN ထည့်ပါ (၀၀၀၀ သို့မဟုတ် ၁၂၃၄ စမ်းကြည့်ပါ)။</string>
     <string name="bluetooth_pin_maximum_number_message">အက္ခရာ အရေအတွက် အများဆုံးသို့ ရောက်ပါပြီ။</string>
+    <string name="bluetooth_frp_permission_message">ဤခေါ်ဖုန်းအတွက် ဘလူးတုသ်ကိရိယာကို သုံး၍ မရနိုင်ပါ။</string>
     <string name="settings_menu_done">ပြီးပါပြီ</string>
     <string name="usb_tethering_unavailable_subtext_tmo">USB not connected</string>
     <string name="usb_tethering_available_subtext_tmo">USB connected, check to tether</string>
@@ -1481,7 +1484,7 @@ Where Can I Find More Information About the 3rd Party's Policies? Separately, if
     <string name="navigationbar_pressure_sensitivity_title">ပင်မခလုတ်ကို ခပ်ပြင်းပြင်း နှိပ်ပါ</string>
     <string name="navigationbar_pressure_sensitivity_summary">ပင်မခလုတ်အား ဖျောက်ထားချိန်တွင် ပုံမှန်ထက် ပိုပြင်းထန်စွာဖိနှိပ်ထားခြင်းဖြင့် အသုံးပြုပါ။</string>
     <string name="navigationbar_pressure_sensitivity_level_summary">ဖိအား အဆင့် : %2$d ၏ %1$d</string>
-    <string name="navigationbar_pressure_sensitivity_description_off">ပင်မခလုတ်အား ဖျောက်ထားချိန်တွင် ပုံမှန်ထက် ပိုပြင်းထန်စွာဖိနှိပ်ထားခြင်းဖြင့် အသုံးပြုပါ။</string>
+    <string name="navigationbar_pressure_sensitivity_description_off">ပင်မခလုတ်ကို ခပ်ပြင်းပြင်းဖိရန် လိုအပ်သည့် ဖိအားပမာဏကို ချိန်ညှိပါ။</string>
     <string name="navigationbar_pressure_low">ပို၍ အရောင်ဖျော့</string>
     <string name="navigationbar_pressure_high">ပိုပြင်းထန်</string>
     <string name="navigationbar_hide_bar">ခလုတ် ပြရန်နှင့် ဝှက်ရန်</string>
@@ -1620,7 +1623,7 @@ Where Can I Find More Information About the 3rd Party's Policies? Separately, if
     <string name="crypt_keeper_decrypt_title">ကိရိယာကိုမြှုပ်ထားပါ</string>
     <string name="crypt_keeper_decrypt_summary">ကိရိယာကို မြှုပ်ထားသည်</string>
     <string name="crypt_keeper_type_pin">PIN</string>
-    <string name="crypt_keeper_type_pattern">ပုံစံ</string>
+    <string name="crypt_keeper_type_pattern">မျဉ်းဆွဲပုံစံ</string>
     <string name="crypt_keeper_type_password">စကားဝှက်</string>
     <string name="crypt_keeper_type_direction">ဦးတည်ချက် သော့ချထားသည်</string>
     <string name="crypt_keeper_confirm_title_dec">ဖော်ခြင်းကို အတည်ပြုပါ</string>
@@ -1704,7 +1707,11 @@ Where Can I Find More Information About the 3rd Party's Policies? Separately, if
     <string name="crypt_keeper_confirm_title">မြှုပ်နှံခြင်းကို အတည်ပြုပါ</string>
     <string name="crypt_keeper_final_desc">သင့်ကိရိယာ ပြန်ဖော်ခြင်းကို နောက်ပြန်လှည့်၍ မရဘဲ လုပ်ငန်းစဉ် နှောက်ယှက်ခံရပါက ဒေတာ ဆုံးရှုံးမည်။ ပြန်ဖော်ခြင်းမှာ တစ်နာရီ (သို့) ထို့ထက်ပိုကြာနိုင်ပြီး ထိုအတောအတွင်း ကိရိယာ အကြိမ်ကြိမ် ပြန်စမည်ဖြစ်ပြီး ၎င်းကို မသုံးနိုင်ပါ။</string>
     <string name="crypt_keeper_setup_title">မြှုပ်နှံနေသည်…</string>
-    <string name="crypt_keeper_warn_wipe">သင့်ကိရိယာကို စက်ရုံထုတ် မူရင်းပါ သတ်မှတ်ချက်များသို့ ပြန်လည်သတ်မှတ်ခြင်းမပြုမီ သင့်တွင် ကြိုးပမ်းခွင့် %d ကြိမ် ကျန်သေးသည်။ ဤအရာသည် ဖိုင်များနှင့် ဒေါင်းလုတ်လုပ်ထားသည့် အက်ပ်များအပါအဝင် ဒေတာအားလုံးကိုဖျက်သွားမည်။</string>
+    <string name="crypt_keeper_warn_wipe">"သင့်ဖုန်းအား စက်ရုံထုတ် မူရင်းသတ်မှတ်ချက်များသို့ ပြန်လည်မသတ်မှတ်မီ %1$d ကြိမ် ကြိုးစားရန် ကျန်သည်။ ယင်းက ဖိုင်များနှင့် ဒေါင်းလုတ်လုပ်ထားသော အက်ပ်များအပါအဝင် ဒေတာအားလုံးကို ဖျက်ပစ်ပါမည်။
+
+သင့်ဖုန်းကို ပြန်လည်သတ်မှတ်လျှင် ၎င်းကို ထပ်မံအသုံးပြုနိုင်ရန် ဤဖုန်းနှင့် ဆက်နွယ်ထားသော %2$s အချက်အလက်များ (အီးမေးလ်လိပ်စာနှင့် စကားဝှက်) ကို ထည့်ဖို့ လိုနိုင်သည်။"</string>
+    <string name="crypt_keeper_samsung_account">Samsung account</string>
+    <string name="crypt_keeper_google_account">Google account</string>
     <string name="crypt_keeper_failed_title">မြှုပ်ထားခြင်း မအောင်မြင်ပါ</string>
     <string name="crypt_keeper_failed_summary">သင့်ကိရိယာကို စတင်၍ မရနိုင်ပါ။ ကုဒ်ပြောင်းမြှုပ်မှု လုပ်ငန်းစဉ် အနှောင့်အယှက်ဖြစ်ပွားထားသည်။ သင့်ကိရိယာကို စက်ရုံထုတ် မူရင်းပါပုံစံ သတ်မှတ်ချက်များသို့ ပြန်လည်သတ်မှတ်ရန်လိုအပ်သည်။ ဤအရာသည် သင်၏ဒေတာအားလုံးကို ဖျက်သွားမည်။</string>
     <string name="crypt_keeper_data_corrupted_title">ကိရိယာသိုလှောင်ခန်း ပျက်စီးနေသည်</string>
@@ -1723,10 +1730,13 @@ Where Can I Find More Information About the 3rd Party's Policies? Separately, if
     <string name="cryptkeeper_wrong_pin">မှားနေသည့် PIN ထည့်ထားသည်</string>
     <string name="cryptkeeper_wrong_direction">မမှန်မကန် ရေးဆွဲထားသည့် ဦးတည်ချက်</string>
     <string name="checking_decryption">မှန်ကန်မှု စစ်နေသည်…</string>
-    <string name="crypt_keeper_last_warn_wipe">သင့်ကိရိယာကို ၎င်း၏ စက်ရုံထုတ် မူရင်းပါ သတ်မှတ်ချက်များသို့ ပြန်မသတ်မှတ်မီ သင့်တွင် စဖွင့်နိုင်ခွင့် ၁ ကြိမ် ကျန်နေသေးသည်။ ၎င်းက ဖိုင်များနှင့် ဒေါင်းလုတ်ထားသော အက်ပ်များ အပါအဝင်၊ ဒေတာအားလုံးကို ဖျက်ပါမည်။</string>
+    <string name="crypt_keeper_last_warn_wipe">"သင့်ဖုန်းအား စက်ရုံထုတ် မူရင်းသတ်မှတ်ချက်များသို့ ပြန်လည်မသတ်မှတ်မီ ၁ ကြိမ် ကြိုးစားရန် ကျန်သည်။ ယင်းက ဖိုင်များနှင့် ဒေါင်းလုတ်လုပ်ထားသော အက်ပ်များအပါအဝင် ဒေတာအားလုံးကို ဖျက်ပစ်ပါမည်။
+
+သင့်ဖုန်းကို ပြန်လည်သတ်မှတ်လျှင် ၎င်းကို ထပ်မံအသုံးပြုနိုင်ရန် ဤဖုန်းနှင့် ဆက်နွယ်ထားသော %s အချက်အလက်များ (အီးမေးလ်လိပ်စာနှင့် စကားဝှက်) ကို ထည့်ဖို့ လိုနိုင်သည်။"</string>
     <string name="crypt_keeper_failed_title_dec">ပြန်ဖော်ခြင်း မအောင်မြင်ပါ။</string>
     <string name="crypt_keeper_failed_summary_dec">အပြတ်အတောက်ရှိသဖြင့် ဖော်ခြင်း မပြီးစီးပါ။ အသုံးမပြုမီ (ဒေတာ အားလုံး ဖျက်ခြင်း) စက်ရုံဒေတာ ပြန်သတ်မှတ်ခြင်းကို ဆောင်ရွက်ပါ။</string>
     <string name="crypt_keeper_set_screen_lock_type">ဖန်သားပြင် သော့အမျိုးအစား စီစဉ်ပါ</string>
+    <string name="crypt_keeper_warning_keyboard_cover_does_not_work">ဖုန်းကို ပိတ်၍ပြန်ဖွင့်ပြီးနောက် ကီးဘုတ်ကာဗာက အလုပ်လုပ်မည် မဟုတ်ပါ။</string>
     <string name="encryption_interstitial_message">"ဖုန်း စတင်မလုပ်ဆောင်မီ %s ကို ထည့်ခိုင်းခြင်းဖြင့် ဤဖုန်းကို နောက်ထပ် ကာကွယ်နိုင်သည်။ ဖုန်းပျောက်ဆုံး (သို့) အခိုးခံရလျှင် ယင်းက သင့်ဒေတာကို ကာကွယ်ရန် ကူညီပေးသည်။ အီးမေးလ်ဆင့်ခ်ကဲ့သို့ အင်္ဂါရပ်များကို ဝင်ရောက်သုံးစွဲခြင်းအတွက် ကိရိယာကုဒ်ပြောင်းခြင်းဆိုင်ရာ မူဝါဒများအရ အက်ပ်အချို့က လုံခြုံစိတ်ချရသော စတင်လုပ်ဆောင်မှုကို လိုအပ်နိုင်သည်။
 
 ဖုန်း စတင်မလုပ်ဆောင်မချင်း ဖုန်းခေါ်ဆိုမှုများ၊ မက်ဆေ့ချ်များ သို့မဟုတ် အသိပေးချက်များကို လက်ခံ ရရှိမည်မဟုတ်ဘဲ နှိုးစက်များ အသံမြည်မည် မဟုတ်ပါ။"</string>
@@ -1971,6 +1981,12 @@ You will also need it when:"</string>
     <string name="lockpassword_confirm_your_pin_with_fingerprint">လက်ဗွေရာတစ်ခု အသုံးပြုပါ (သို့) လက်ရှိ PIN ထည့်သွင်းပါ။</string>
     <string name="lockpassword_confirm_your_pattern_with_fingerprint">လက်ဗွေရာတစ်ခု (သို့) လက်ရှိပုံစံရေးဆွဲပါ။</string>
     <string name="lockpassword_confirm_your_password_with_fingerprint">လက်ဗွေရာတစ်ခု အသုံးပြုပါ (သို့) လက်ရှိစကားဝှက် ထည့်သွင်းပါ။</string>
+    <string name="lockpassword_confirm_your_pin_with_iris">သင့်မျက်ဝန်းများကို သုံးပါ (သို့) လက်ရှိသုံး PIN ကို ထည့်ပါ။</string>
+    <string name="lockpassword_confirm_your_pattern_with_iris">သင့်မျက်ဝန်းများကို သုံးပါ (သို့) လက်ရှိသုံး ပုံစံကို ရေးဆွဲပါ။</string>
+    <string name="lockpassword_confirm_your_password_with_iris">သင့်မျက်ဝန်းများကို သုံးပါ (သို့) လက်ရှိသုံး စကားဝှက်ကို ထည့်ပါ။</string>
+    <string name="lockpassword_confirm_your_pin_with_biometrics">ဇီဝရုပ်လက္ခဏာများကို အသုံးပြုပါ (သို့) PIN ထည့်သွင်းပါ။</string>
+    <string name="lockpassword_confirm_your_pattern_with_biometrics">ဇီဝရုပ်က္ခဏာများကို အသုံးပြုပါ (သို့) ပုံစံ ရေးဆွဲပါ။</string>
+    <string name="lockpassword_confirm_your_password_with_biometrics">ဇီဝရုပ်လက္ခဏာများကို အသုံးပြုပါ (သို့) စကားဝှက် ထည့်သွင်းပါ။</string>
     <string name="lockpassword_confirm_your_pin_instead_of_fingerprint">လက်ဗွေရာမှတ်သားမှု အသုံးပြုမည့်အစား သင်၏ PIN ထည့်သွင်းပါ။</string>
     <string name="lockpassword_confirm_your_pattern_instead_of_fingerprint">လက်ဗွေရာမှတ်သားမှု အသုံးပြုမည့်အစား သင်၏ပုံစံကို ရေးဆွဲပါ။</string>
     <string name="lockpassword_confirm_your_password_instead_of_fingerprint">လက်ဗွေရာမှတ်သားမှု အသုံးပြုမည့်အစား သင်၏စကားဝှက်ကို ထည့်သွင်းပါ။</string>
@@ -2045,6 +2061,7 @@ You will also need it when:"</string>
     <string name="face_status_timeout">အချိန်ကုန်လွန်ပါပြီ။ နောက်မှပြန်ကြိုးစားပါ။</string>
     <string name="okay">အိုကေ</string>
     <string name="face_samsung_account_button">Samsung account ကို သုံးပါ</string>
+    <string name="face_galaxy_account_button">Galaxy account ကို သုံးပါ</string>
     <string name="face_error_DB_corrupted">သင့်မျက်နှာဒေတာတွင် ပြဿနာတစ်ခုရှိနေပါသည်။ သင့်မျက်နှာကို ထပ်မံ၍မှတ်ပုံတင်ပါ။</string>
     <string name="face_error_DB_corrupted_popup_title">သင့်မျက်နှာကို ထပ်မံမှတ်ပုံတင်ပါ</string>
     <string name="face_error_timeout">သင့်မျက်နှာကို ရှာမတွေ့ပါ။</string>
@@ -2155,7 +2172,7 @@ You will also need it when:"</string>
     <string name="biometrics_backup_locktype_title">မျက်ဝန်း လုံခြုံရေး သတ်မှတ်လုပ်ဆောင်ပါ</string>
     <string name="biometrics_register_your_iris">သင့်မျက်ဝန်းများကို မှတ်ပုံတင်ပါ။</string>
     <string name="biometrics_backup_locktype_summary">ကိရိယာသော့ဖွင့်ရန်အတွက် သင့်မျက်ဝန်းများအသုံးပြုရန် ပုံစံ၊ PIN (သို့) စကားဝှက်တစ်ခု သတ်မှတ်ရမည်။</string>
-    <string name="biometrics_backup_locktype_message">သင့်မျက်ဝန်းများကို သုံးပြီး သင့်ဖုန်းကို သော့ဖွင့်ရန် သို့မဟုတ် လုံခြုံသော စိစစ်အတည်ပြုခြင်းအတွက် အောက်ပါကို သင် လုပ်ဆောင်ရန်လိုသည် :</string>
+    <string name="biometrics_backup_locktype_message">သင့်ဖုန်းကို သော့ဖွင့်ရန် သို့မဟုတ် အက်ပ်များတွင် သင့်ကိုယ်သင် စိစစ်အတည်ပြုရန်အတွက် သင့်မျက်ဝန်းများကို အသုံးပြုရန် ဖော်ပြပါကို လုပ်ဆောင်ရန်လိုပါသည် :</string>
     <string name="iris_delete_popup_title">မျက်ဝန်း ဒေတာကို ဖယ်ရှားမလား?</string>
     <string name="iris_delete_popup_message">မျက်ဝန်း ဒေတာကို ဖယ်ရှားမလား?</string>
     <string name="iris_delete_popup_message_with_related_func">မျက်ဝန်းများကို အသုံးပြုသော အင်္ဂါရပ်များကို ပိတ်လိုက်ပါမည်။</string>
@@ -2231,6 +2248,9 @@ You will also need it when:"</string>
     <string name="biometrics_dex_cant_use_msg">Samsung DeX တွင် %s ကို သုံး၍မရနိုင်ပါ။</string>
     <string name="biometrics_dex_closed_to_switch">Samsung DeX သို့ပြောင်းရန် %s ကိုပိတ်ထားသည်။</string>
     <string name="biometircs_dex_cant_use_toast">Samsung DeX တွင် %s က အလုပ်မလုပ်ပါ။ ဖုန်းအနေအထားတွင် လုပ်ဆောင်ကြည့်ပါ။</string>
+    <string name="iris_guide_text_preview">မျက်ဝန်းများသုံးရန် ဤနေရာကို ကြည့်ပါ</string>
+    <string name="iris_guide_enable_toggle">မျက်ဝန်းများသုံးရန် ဤနေရာတွင် နှိပ်ပါ</string>
+    <string name="iris_cannot_verify">မျက်ဝန်းများကို အတည်ပြု၍မရပါ</string>
     <string name="knox_twofactor_bio_description">%s ကိုသော့ဖွင့်ရန် လက်ဗွေနှိပ်စနစ် သော့အမျိုးအစားနှင့် ဒုတိယသော့အမျိုးအစားကိုရွေးချယ်ပါ။</string>
     <string name="fingerprint_registered">မှတ်ပုံတင်ထားသည့် လက်ဗွေများကို ရွေးထားသည့် သော့ဖွင့် နည်းဖြင့် သုံးမည်။</string>
     <string name="knox_twofactor_description">%s ကို သော့ဖွင့်ရန် သင်၏ ဇီဝရုပ်လက္ခဏာများ သို့မဟုတ် ဒုတိယ သော့ခတ် အမျိုးအစားတစ်ခုကို ရွေးချယ်ပါ။</string>
@@ -3092,6 +3112,7 @@ Samsung Connect တပ်ဆင်ထားလျှင်၊ သင်ဖုန
     <string name="easy_mode_app_help">ပို၍ ရိုးရှင်းသော ပင်မဖန်သားပြင် အခင်းအကျင်းပုံစံနှင့် ဖန်သားပြင်ပေါ်ရှိ ပိုမိုကြီးမားသော အိုင်တမ်တို့ဖြင့် သင့်ကိရိယာကို ပို၍လွယ်ကူစွာ အသုံးပြုပါ။</string>
     <string name="easy_mode_app_help_dream_1">သာမန် ပင်မဖန်သားပြင်ပုံစံတစ်ခုနှင့် ပိုကြီးသော ဖန်သားပြင်ပေါ်အိုင်တမ်များကို သုံးပါ။</string>
     <string name="easy_mode_app_help_dream_2">ပင်မ ဖန်သားပြင်တွင် လုပ်ထားသော အထူးစိတ်ကြိုက်အရာတိုင်းကို စွန့်ပစ်ပြီး၊ ဖန်သားပြင်ချုံ့ချဲ့နှုန်းကို အမြင့်ဆုံးသို့ သတ်မှတ်ပါမည်။</string>
+    <string name="easy_mode_app_help_3rd_launcher">ပို၍ကြီးသော ဖန်သားပြင်-ပေါ်ရှိ အိုင်တမ်များအတွက် အလွယ်သုံးအနေအထားကို အသုံးချပါ။ TouchWiz ပင်မကို အသုံးမပြုလျှင်၊ သင့်ပင်မဖန်သားပြင် လေးအောက်ပုံစံ ပြောင်းသွားမည်မဟုတ်ပါ၊ သို့သော် ဖန်သားပြင်ဇူးမ်ကို အကြီးပုံစံတွင် သတ်မှတ်မည်ဖြစ်ပြီး၊ ဖောင့်အရွယ်ကို အလတ်သို့ သတ်မှတ်ပါမည်။</string>
     <string name="security_warning_content">ဖန်သားပြင် သော့ဖွင့်ရန်အတွက် စကားဝှက်၊ PIN၊ (သို့) သော့ဖွင့်မျဉ်းပုံစံတစ်ခု သတ်မှတ်ခြင်းဖြင့် သင့်ကိုယ်ရေးလုံခြုံမှုကို ကာကွယ်နိုင်သည်</string>
     <string name="lock_setting_weather_desc">ရာသီဥတု သတ်မှတ်ချက်များကို ကြည့်ရန် (သို့) ပြောင်းရန်၊ အောက်ရှိ “ရာသီဥတု သတ်မှတ်ချက်များ” ကိုနှိပ်ပါ။</string>
     <string name="lock_setting_weather_btn">ရာသီဥတုဆက်တင်များ</string>
@@ -3945,7 +3966,7 @@ Wi-Fi ကို ယခု ဖွင့်ထားသည်။"</string>
     <string name="wfd_descrpition_playsound">အသံ ဖွင့်ရန်။</string>
     <string name="wfd_is_not_supported">ဤလုပ်ဆောင်ချက်ကို ပံ့ပိုးမပေးပါ။</string>
     <string name="usbtethering_notify_wifi_is_on_title">Wi-Fi ပိတ်မလား?</string>
-    <string name="usbtethering_notify_wifi_is_on">Wi-Fi နှင့် USB အင်တာနက်မျှသုံးနည်းကို တစ်ပြိုင်နက် ဖွင့်၍မရပါ။ Wi-Fi ပိတ်ပါ။</string>
+    <string name="usbtethering_notify_wifi_is_on">Wi-Fi နှင့် USB ကွန်ရက်မျှဝေခြင်းကို တစ်ပြိုင်နက် ဖွင့်၍မရပါ။ Wi-Fi ကို ပိတ်ပါလိမ့်မည်။</string>
     <string name="disable_multi_window_dialog_text">Multi window ကို ပိတ်သွားမည်ဖြစ်ပြီး ပေါ့-အပ် ဝင်းဒိုးများတွင် ဖွင့်ထားသော အက်ပ်အားလုံးကို ပိတ်ပစ်မည်။</string>
     <string name="keyguard_password_attempt_count_pin_code">%d ကြိမ် ကြိုးစားရန် ကျန်ပါသေးသည်။</string>
     <string name="keyguard_password_attempts_count_pin_code">%d ကြိမ် ကြိုးစားရန် ကျန်ပါသေးသည်။</string>
@@ -4153,6 +4174,7 @@ SMS ရရှိခြင်း"</string>
     <string name="hdmi_mode_title">HDMI အနေအထား</string>
     <string name="hdmi_mode_dex">Samsung DeX</string>
     <string name="hdmi_mode_mirroring">Screen Mirroring</string>
+    <string name="hdmi_mode_not_available_while_cover_attached">ကာဗာ တွဲသုံးနေစဉ် %s ကို မသုံးနိုင်ပါ။</string>
     <string name="screen_timeout_for_dex">Samsung DeX အတွက် ဖန်သားပြင် လုပ်ဆောင်ချိန် ကုန်သွားသည်</string>
     <string name="show_virtual_keyboard_for_dex">Samsung DeX ထဲတွင် ဖန်သားပြင်-ပေါ် ကီးဘုတ်ကို ပြပါ</string>
     <string name="comma">၊</string>
@@ -4461,7 +4483,7 @@ SMS ရရှိခြင်း"</string>
     <string name="date_picker_title">နေ့စွဲ</string>
     <string name="time_picker_title">အချိန်</string>
     <string name="lock_after_timeout">အလိုအလျောက် သော့ပိတ်ပါ</string>
-    <string name="lock_after_timeout_summary">အလိုအလျောက် ဖန်သားပြင် ပိတ်သွားပြီးနောက် ၎င်း %s ကို သော့ပိတ်ပါ။</string>
+    <string name="lock_after_timeout_summary">ဖန်သားပြင် ပိတ်သွားပြီးနောက်တွင် သင့်ဖုန်း %s ကို အလိုအလျောက် သော့ခတ်ပါ။</string>
     <string name="lock_after_timeout_summary_with_exception">%2$s အားဖြင့် သော့ဖွင့်ထားသော အခါမှလွဲ၍ အလိုအလျောက် ပိတ်သွားပြီးနောက် %1$s ဖန်သားပြင်ကို သော့ပိတ်ပါ။</string>
     <string name="show_owner_info_on_lockscreen_label">သော့ဖန်သားပြင်ပေါ်တွင် ကိရိယာ ပိုင်ရှင်၏ အချက်အလက် ပြပါ။</string>
     <string name="owner_info_settings_title">ပိုင်ဆိုင်သူ၏ အချက်အလက်များ</string>
@@ -4609,6 +4631,8 @@ SMS ရရှိခြင်း"</string>
     <string name="wifi_empty_list_user_restricted">Wi-Fi သတ်မှတ်ချက်များကို ပြောင်းခွင့်မရှိပါ။</string>
     <string name="wifi_setup_wps">အလိုအလျောက် ဖွဲ့စည်းခြင်း (WPS)</string>
     <string name="wifi_show_advanced">အဆင့်မြင့် ရွေးချယ်စရာ ပြပါ</string>
+    <string name="wifi_advanced_toggle_description_expanded">ခေါက်သိမ်းရန် နှစ်ခါနှိပ်ပါ။</string>
+    <string name="wifi_advanced_toggle_description_collapsed">ချဲ့ထုတ်ရန် နှစ်ခါနှိပ်ပါ။</string>
     <string name="wifi_wps_setup_title">WPS တပ်ဆင်ခြင်း</string>
     <string name="wifi_wps_setup_msg">WPS စတင်နေသည်…</string>
     <string name="wifi_wps_onstart_pbc">သင့် ရောက်ဒါပေါ်မှ Wi-Fi ကာကွယ်မှုရှိသည့် ဆက်တပ်ခလုတ်အား နှိပ်ပါ။ ယင်းအား WPS ဟုခေါ်နိုင်သည် သို့မဟုတ် ဤသင်္ကေတပါနိုင်သည်:</string>
@@ -4640,6 +4664,10 @@ SMS ရရှိခြင်း"</string>
     <string name="wifi_shared">မျှဝေပြီး ပါပြီ</string>
     <string name="wifi_unchanged">(မပြောင်းပါ)</string>
     <string name="wifi_unspecified">(သတ်မှတ်ချက်မရှိ)</string>
+    <string name="wifi_select_cert">ဆာတီဖီကိတ် ရွေးချယ်ပါ</string>
+    <string name="wifi_do_not_provide_eap_user_cert">မပေးပါနှင့်</string>
+    <string name="wifi_do_not_validate_eap_server">စိစစ်အတည်မပြုပါနှင့်</string>
+    <string name="wifi_do_not_validate_eap_server_warning">မည်သည့် ဆာတီဖီကိတ်ကိုမှ မသတ်မှတ်ထားပါ။ သင့်ချိတ်ဆက်မှုသည် သီးသန့်ဖြစ်မည် မဟုတ်ပါ။</string>
     <string name="wifi_scan_always_turnon_message">တည်နေရာ တိကျမှန်ကန်မှုကို တိုးမြှင့်ရန်နှင့် အခြားရည်ရွယ်ချက်များအတွက် Wi-Fi ကို ပိတ်ထားစဉ်တွင်ပင် Wi-Fi ကွန်ယက်များကို စကင်ဖတ် ရှာဖွေရန် %s သည် ခွင့်ပြုချက်တောင်းနေသည်။ ဤအရာကို အပလီကေးရှင်း အားလုံးအတွက် ခွင့်ပြုမည်လား?</string>
     <string name="wifi_scan_always_confirm_allow">ခွင့်ပြုပါ</string>
     <string name="wifi_scan_always_confirm_deny">ငြင်းဆိုပါ</string>
@@ -4974,9 +5002,9 @@ SMS ရရှိခြင်း"</string>
     <string name="restore_default_apn_completed">APN ဆက်တင်များကို ကြိုတင်စီစဉ်ထားသည့် အနေအထားသို့ ပြန်လည်သတ်မှတ်ပါ။</string>
     <string name="reset_network_desc">ဤအရာသည် ကွန်ယက်သတ်မှတ်ချက်အားလုံးကို ပြန်လည်သတ်မှတ်သွားမည်ဖြစ်သည်၊ သတ်မှတ်ရာတွင် ပါဝင်သည်တို့မှာ :</string>
     <string name="reset_network_button_text">သတ်မှတ်ချက်များ ပြန်လည်သတ်မှတ်ပါ</string>
-    <string name="reset_network_final_desc">ချတ်ဆက်မှု သတ်မှတ်ချက်အားလုံးကို ပြန်လည်သတ်မှတ်သွားမည်။ ဤလုပ်ဆောင်ချက်ကို မပြီးမပြတ်ထားရှိ၍ မရနိုင်ပါ။</string>
+    <string name="reset_network_final_desc">ကွန်ရက် သတ်မှတ်ချက်အားလုံးကို ပြန်လည်သတ်မှတ်ပါမည်။ ဤလုပ်ဆောင်ချက်ကို နောက်ပြန်ဆုတ်၍ မရနိုင်ပါ။</string>
     <string name="reset_network_final_button_text">သတ်မှတ်ချက်များ ပြန်လည်သတ်မှတ်ပါ</string>
-    <string name="reset_network_complete_toast">ချိတ်ဆက်မှု သတ်မှတ်ချက်များ ပြန်သတ်မှတ်ပြီးပါပြီ။</string>
+    <string name="reset_network_complete_toast">ကွန်ရက်သတ်မှတ်ချက်များကို ပြန်လည်သတ်မှတ်ထားသည်။</string>
     <string name="master_clear_title">ဖုန်းအသစ်ကဲ့သို့ ပြန်လည်ပြုလုပ်ခြင်း</string>
     <string name="master_clear_accounts">လက်ရှိ အောက်ပါအကောင့်များထဲသို့ သင် ဆိုင်းအင်ဝင်ထားသည် :</string>
     <string name="master_clear_other_users_present">ဤကိရိယာပေါ်မှ အခြားသုံးစွဲသူများနှင့် သက်ဆိုင်သည့် ဒေတာကိုလည်း ဖျက်သွားမည်။</string>
@@ -6089,6 +6117,7 @@ If the device has multiple users, using this shortcut on the lock screen tempora
     <string name="set_data_limit">ဒေတာ ကန့်သတ်ချက်ကို သတ်မှတ်ပါ</string>
     <string name="data_limit">ဒေတာ အကန့်အသတ်</string>
     <string name="data_usage_template">%1$s ကိ %2$s ကြား၌ အသုံးပြုထားသည်</string>
+    <string name="data_usage_template_wifi">%s ကို ပြီးခဲ့သော ရက်ပေါင်း ၃၀ အတွင်း သုံးခဲ့သည်</string>
     <string name="data_usage_other_apps">သက်ဆိုင်သော အက်ပ်များကို အသုံးပြုမှုထဲ၌ ထည့်ထားသည်</string>
     <string name="data_saver_title">ဒေတာဆာဗာ</string>
     <string name="unrestricted_data_saver">ဒေတာချွေတာကို ဖွင့်ထားစဉ် အက်ပ်ကို ခွင့်ပြုပါ</string>
@@ -6139,6 +6168,7 @@ If the device has multiple users, using this shortcut on the lock screen tempora
     <string name="legacy_dhcp_client_summary">Android DHCP ကလိုင်းယင့် အသစ် အစား Lollipop မှ DHCP ကလိုင်းယင့်အား သုံးပါ။</string>
     <string name="screen_off_pocket_title">ဖန်သားပြင် ဆက်ပိတ်ထားပါ</string>
     <string name="screen_off_pocket_summary">ကိရိယာသည် အိတ်ကပ် (သို့) အိတ်တစ်လုံးအတွင်းကဲ့သို့ မှောင်နေသည့်နေရာတွင်ရှိသည့်အခါ မတော်တဆ ဖန်သားပြင် ပွင့်နေခြင်းမှ ကာကွယ်ပါ။</string>
+    <string name="noApplications">ပိတ်ထားသည့်၊ ပိတ်ဆီးထားသည့်၊ (သို့) ထည့်သွင်းမထားသည့် ဤလုပ်ဆောင်ချက်နှင့် အက်ပ်များအားလုံး ဆက်စပ်မှုရှိသည်။</string>
     <string name="confirm_reset_shortcut_manager_throttling_title">ကြားဖြတ်မန်နေဂျာ နှုန်းကန့်သတ်စနစ်ကို ပြန်လည်သတ်မှတ်ပါ</string>
     <string name="confirm_reset_shortcut_manager_throttling_message">ရှော့ကဒ်မန်နေဂျာ နှုန်းကန့်သတ်စနစ် ရေတွက်စက်များကို ပြန်လည်သတ်မှတ်ပါမည်။</string>
 </resources>

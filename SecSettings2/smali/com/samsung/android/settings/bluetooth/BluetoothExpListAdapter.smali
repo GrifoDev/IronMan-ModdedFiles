@@ -136,7 +136,7 @@
 
     iget-object v0, p0, Lcom/samsung/android/settings/bluetooth/BluetoothExpListAdapter;->mDiscoveryHelpMsgPreferenceGroup:Lcom/samsung/android/settings/bluetooth/BluetoothDevicePreferenceGroup;
 
-    const v1, 0x7f040209
+    const v1, 0x7f04020c
 
     invoke-virtual {v0, v1}, Lcom/samsung/android/settings/bluetooth/BluetoothDevicePreferenceGroup;->setLayoutResource(I)V
 
@@ -150,7 +150,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f0b1357
+    const v2, 0x7f0b1368
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -169,7 +169,7 @@
     :cond_1
     iget-object v0, p0, Lcom/samsung/android/settings/bluetooth/BluetoothExpListAdapter;->mDiscoveryHelpMsgPreferenceGroup:Lcom/samsung/android/settings/bluetooth/BluetoothDevicePreferenceGroup;
 
-    const v1, 0x7f04020a
+    const v1, 0x7f04020d
 
     invoke-virtual {v0, v1}, Lcom/samsung/android/settings/bluetooth/BluetoothDevicePreferenceGroup;->setLayoutResource(I)V
 
@@ -193,7 +193,7 @@
 
     iget-object v0, p0, Lcom/samsung/android/settings/bluetooth/BluetoothExpListAdapter;->mNoItemPreferenceGroup:Lcom/samsung/android/settings/bluetooth/BluetoothDevicePreferenceGroup;
 
-    const v1, 0x7f040203
+    const v1, 0x7f040206
 
     invoke-virtual {v0, v1}, Lcom/samsung/android/settings/bluetooth/BluetoothDevicePreferenceGroup;->setLayoutResource(I)V
 
@@ -388,7 +388,7 @@
 
     if-nez p4, :cond_4
 
-    const v3, 0x7f040204
+    const v3, 0x7f040207
 
     iget-object v8, p0, Lcom/samsung/android/settings/bluetooth/BluetoothExpListAdapter;->mContext:Landroid/content/Context;
 
@@ -396,7 +396,7 @@
 
     if-eqz v8, :cond_0
 
-    const v3, 0x7f040205
+    const v3, 0x7f040208
 
     :cond_0
     iget-object v8, p0, Lcom/samsung/android/settings/bluetooth/BluetoothExpListAdapter;->mLayoutInflater:Landroid/view/LayoutInflater;
@@ -443,7 +443,7 @@
 
     iput-object v8, v1, Lcom/samsung/android/settings/bluetooth/BluetoothExpListAdapter$ViewHolder;->summary:Landroid/widget/TextView;
 
-    const v8, 0x7f110658
+    const v8, 0x7f11065a
 
     invoke-virtual {v7, v8}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -453,7 +453,7 @@
 
     iput-object v8, v1, Lcom/samsung/android/settings/bluetooth/BluetoothExpListAdapter$ViewHolder;->details:Landroid/widget/ImageView;
 
-    const v8, 0x7f110657
+    const v8, 0x7f110659
 
     invoke-virtual {v7, v8}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -1040,11 +1040,11 @@
 
     move-result v13
 
-    const v14, 0x7f040203
+    const v14, 0x7f040206
 
     if-ne v13, v14, :cond_7
 
-    const v13, 0x7f110654
+    const v13, 0x7f110656
 
     invoke-virtual {v12, v13}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -1054,7 +1054,7 @@
 
     iput-object v13, v5, Lcom/samsung/android/settings/bluetooth/BluetoothExpListAdapter$ViewHolder;->linearLayout:Landroid/widget/LinearLayout;
 
-    const v13, 0x7f110655
+    const v13, 0x7f110657
 
     invoke-virtual {v12, v13}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -1064,7 +1064,7 @@
 
     iput-object v13, v5, Lcom/samsung/android/settings/bluetooth/BluetoothExpListAdapter$ViewHolder;->title:Landroid/widget/TextView;
 
-    const v13, 0x7f110656
+    const v13, 0x7f110658
 
     invoke-virtual {v12, v13}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -1289,7 +1289,7 @@
     invoke-virtual {v12, v13}, Landroid/view/View;->setVisibility(I)V
 
     :goto_4
-    const v13, 0x7f110653
+    const v13, 0x7f110655
 
     invoke-virtual {v12, v13}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -1344,7 +1344,7 @@
 
     if-eqz v13, :cond_8
 
-    const v13, 0x7f110670
+    const v13, 0x7f110672
 
     invoke-virtual {v12, v13}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -1468,7 +1468,7 @@
 
     iget-object v1, p0, Lcom/samsung/android/settings/bluetooth/BluetoothExpListAdapter;->mContext:Landroid/content/Context;
 
-    const v2, 0x7f0b14d1
+    const v2, 0x7f0b14e2
 
     invoke-virtual {v1, v2}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -1507,7 +1507,7 @@
 
     iget-object v1, p0, Lcom/samsung/android/settings/bluetooth/BluetoothExpListAdapter;->mContext:Landroid/content/Context;
 
-    const v2, 0x7f0b14d0
+    const v2, 0x7f0b14e1
 
     invoke-virtual {v1, v2}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 

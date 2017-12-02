@@ -120,6 +120,12 @@
 
     if-nez v0, :cond_0
 
+    invoke-static {}, Lcom/android/settings/Utils;->isDomesticOPENModel()Z
+
+    move-result v0
+
+    if-nez v0, :cond_0
+
     invoke-static {}, Lcom/samsung/android/feature/SemCscFeature;->getInstance()Lcom/samsung/android/feature/SemCscFeature;
 
     move-result-object v0
@@ -158,6 +164,12 @@
     if-nez v0, :cond_1
 
     invoke-static {}, Lcom/android/settings/Utils;->isDomesticLGTModel()Z
+
+    move-result v0
+
+    if-nez v0, :cond_1
+
+    invoke-static {}, Lcom/android/settings/Utils;->isDomesticOPENModel()Z
 
     move-result v0
 
@@ -351,7 +363,7 @@
 
     const/4 v5, 0x0
 
-    const v4, 0x7f0b1ad7
+    const v4, 0x7f0b1ae9
 
     invoke-virtual {p1, v5}, Landroid/app/AlertDialog$Builder;->setTitle(Ljava/lang/CharSequence;)Landroid/app/AlertDialog$Builder;
 
@@ -361,7 +373,7 @@
 
     move-result-object v2
 
-    const v3, 0x7f0b0b67
+    const v3, 0x7f0b0b75
 
     invoke-virtual {v2, v3, p0}, Landroid/app/AlertDialog$Builder;->setPositiveButton(ILandroid/content/DialogInterface$OnClickListener;)Landroid/app/AlertDialog$Builder;
 
@@ -375,7 +387,7 @@
 
     move-result-object v0
 
-    const v2, 0x7f0b0b68
+    const v2, 0x7f0b0b76
 
     invoke-virtual {p1, v2}, Landroid/app/AlertDialog$Builder;->setTitle(I)Landroid/app/AlertDialog$Builder;
 
@@ -400,7 +412,7 @@
     if-eqz v2, :cond_1
 
     :cond_0
-    const v2, 0x7f0b1ae3
+    const v2, 0x7f0b1af5
 
     invoke-virtual {p1, v2}, Landroid/app/AlertDialog$Builder;->setTitle(I)Landroid/app/AlertDialog$Builder;
 
@@ -409,21 +421,28 @@
 
     move-result v2
 
-    if-eqz v2, :cond_2
+    if-nez v2, :cond_2
 
-    const v2, 0x7f0b0b5f
+    invoke-static {}, Lcom/android/settings/Utils;->isDomesticOPENModel()Z
+
+    move-result v2
+
+    if-eqz v2, :cond_3
+
+    :cond_2
+    const v2, 0x7f0b0b6d
 
     invoke-virtual {p1, v2}, Landroid/app/AlertDialog$Builder;->setMessage(I)Landroid/app/AlertDialog$Builder;
 
     :goto_0
     return-void
 
-    :cond_2
+    :cond_3
     invoke-static {}, Lcom/android/settings/Utils;->isDomesticKTTModel()Z
 
     move-result v2
 
-    if-eqz v2, :cond_4
+    if-eqz v2, :cond_5
 
     invoke-static {}, Lcom/samsung/android/feature/SemCscFeature;->getInstance()Lcom/samsung/android/feature/SemCscFeature;
 
@@ -435,54 +454,54 @@
 
     move-result v2
 
-    if-eqz v2, :cond_3
+    if-eqz v2, :cond_4
 
-    const v2, 0x7f0b0b60
-
-    invoke-virtual {p1, v2}, Landroid/app/AlertDialog$Builder;->setMessage(I)Landroid/app/AlertDialog$Builder;
-
-    goto :goto_0
-
-    :cond_3
-    const v2, 0x7f0b0b61
+    const v2, 0x7f0b0b6e
 
     invoke-virtual {p1, v2}, Landroid/app/AlertDialog$Builder;->setMessage(I)Landroid/app/AlertDialog$Builder;
 
     goto :goto_0
 
     :cond_4
-    invoke-static {}, Lcom/android/settings/Utils;->isDomesticLGTModel()Z
-
-    move-result v2
-
-    if-eqz v2, :cond_5
-
-    const v2, 0x7f0b0b62
+    const v2, 0x7f0b0b6f
 
     invoke-virtual {p1, v2}, Landroid/app/AlertDialog$Builder;->setMessage(I)Landroid/app/AlertDialog$Builder;
 
     goto :goto_0
 
     :cond_5
+    invoke-static {}, Lcom/android/settings/Utils;->isDomesticLGTModel()Z
+
+    move-result v2
+
+    if-eqz v2, :cond_6
+
+    const v2, 0x7f0b0b70
+
+    invoke-virtual {p1, v2}, Landroid/app/AlertDialog$Builder;->setMessage(I)Landroid/app/AlertDialog$Builder;
+
+    goto :goto_0
+
+    :cond_6
     const-string/jumbo v2, "VZW"
 
     invoke-virtual {v2, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v2
 
-    if-eqz v2, :cond_7
+    if-eqz v2, :cond_8
 
     invoke-virtual {p0}, Lcom/android/settings/datausage/CellDataPreference;->isSupportVoLTEForVZW()Z
 
     move-result v2
 
-    if-eqz v2, :cond_6
+    if-eqz v2, :cond_7
 
     invoke-virtual {p0}, Lcom/android/settings/datausage/CellDataPreference;->getContext()Landroid/content/Context;
 
     move-result-object v2
 
-    const v3, 0x7f0b0b65
+    const v3, 0x7f0b0b73
 
     invoke-virtual {v2, v3}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -493,12 +512,12 @@
 
     goto :goto_0
 
-    :cond_6
+    :cond_7
     invoke-virtual {p0}, Lcom/android/settings/datausage/CellDataPreference;->getContext()Landroid/content/Context;
 
     move-result-object v2
 
-    const v3, 0x7f0b0b64
+    const v3, 0x7f0b0b72
 
     invoke-virtual {v2, v3}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -506,7 +525,7 @@
 
     goto :goto_1
 
-    :cond_7
+    :cond_8
     invoke-static {}, Lcom/samsung/android/feature/SemCscFeature;->getInstance()Lcom/samsung/android/feature/SemCscFeature;
 
     move-result-object v2
@@ -517,29 +536,29 @@
 
     move-result v2
 
-    if-eqz v2, :cond_8
+    if-eqz v2, :cond_9
 
     invoke-virtual {p1, v4}, Landroid/app/AlertDialog$Builder;->setMessage(I)Landroid/app/AlertDialog$Builder;
 
     goto :goto_0
 
-    :cond_8
+    :cond_9
     const-string/jumbo v2, "DCM"
 
     invoke-virtual {v2, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v2
 
-    if-eqz v2, :cond_9
+    if-eqz v2, :cond_a
 
-    const v2, 0x7f0b0b63
+    const v2, 0x7f0b0b71
 
     invoke-virtual {p1, v2}, Landroid/app/AlertDialog$Builder;->setMessage(I)Landroid/app/AlertDialog$Builder;
 
     goto :goto_0
 
-    :cond_9
-    const v2, 0x7f0b0b66
+    :cond_a
+    const v2, 0x7f0b0b74
 
     invoke-virtual {p1, v2}, Landroid/app/AlertDialog$Builder;->setMessage(I)Landroid/app/AlertDialog$Builder;
 
@@ -549,7 +568,7 @@
 .method private showEnableDialog(Landroid/app/AlertDialog$Builder;)V
     .locals 3
 
-    const v0, 0x7f0b1ae3
+    const v0, 0x7f0b1af5
 
     invoke-virtual {p1, v0}, Landroid/app/AlertDialog$Builder;->setTitle(I)Landroid/app/AlertDialog$Builder;
 
@@ -571,43 +590,50 @@
 
     move-result v0
 
-    if-eqz v0, :cond_0
+    if-nez v0, :cond_0
 
-    const v0, 0x7f0b0b5b
+    invoke-static {}, Lcom/android/settings/Utils;->isDomesticOPENModel()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_1
+
+    :cond_0
+    const v0, 0x7f0b0b69
 
     invoke-virtual {p1, v0}, Landroid/app/AlertDialog$Builder;->setMessage(I)Landroid/app/AlertDialog$Builder;
 
     :goto_0
     return-void
 
-    :cond_0
-    invoke-static {}, Lcom/android/settings/Utils;->isDomesticKTTModel()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_1
-
-    const v0, 0x7f0b0b5c
-
-    invoke-virtual {p1, v0}, Landroid/app/AlertDialog$Builder;->setMessage(I)Landroid/app/AlertDialog$Builder;
-
-    goto :goto_0
-
     :cond_1
-    invoke-static {}, Lcom/android/settings/Utils;->isDomesticLGTModel()Z
+    invoke-static {}, Lcom/android/settings/Utils;->isDomesticKTTModel()Z
 
     move-result v0
 
     if-eqz v0, :cond_2
 
-    const v0, 0x7f0b0b5d
+    const v0, 0x7f0b0b6a
 
     invoke-virtual {p1, v0}, Landroid/app/AlertDialog$Builder;->setMessage(I)Landroid/app/AlertDialog$Builder;
 
     goto :goto_0
 
     :cond_2
-    const v0, 0x7f0b0def
+    invoke-static {}, Lcom/android/settings/Utils;->isDomesticLGTModel()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_3
+
+    const v0, 0x7f0b0b6b
+
+    invoke-virtual {p1, v0}, Landroid/app/AlertDialog$Builder;->setMessage(I)Landroid/app/AlertDialog$Builder;
+
+    goto :goto_0
+
+    :cond_3
+    const v0, 0x7f0b0dfe
 
     invoke-virtual {p1, v0}, Landroid/app/AlertDialog$Builder;->setMessage(I)Landroid/app/AlertDialog$Builder;
 
@@ -643,14 +669,14 @@
 
     move-result-object v3
 
-    const v5, 0x7f0b1c1b
+    const v5, 0x7f0b1c2d
 
     invoke-virtual {v3, v5}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
     move-result-object v2
 
     :goto_0
-    const v3, 0x7f0b1685
+    const v3, 0x7f0b1697
 
     invoke-virtual {p1, v3}, Landroid/app/AlertDialog$Builder;->setTitle(I)Landroid/app/AlertDialog$Builder;
 
@@ -681,7 +707,7 @@
 
     aput-object v2, v6, v3
 
-    const v3, 0x7f0b1686
+    const v3, 0x7f0b1698    # 1.8488E38f
 
     invoke-virtual {v5, v3, v6}, Landroid/content/Context;->getString(I[Ljava/lang/Object;)Ljava/lang/String;
 
@@ -689,11 +715,11 @@
 
     invoke-virtual {p1, v3}, Landroid/app/AlertDialog$Builder;->setMessage(Ljava/lang/CharSequence;)Landroid/app/AlertDialog$Builder;
 
-    const v3, 0x7f0b08d5
+    const v3, 0x7f0b08df
 
     invoke-virtual {p1, v3, p0}, Landroid/app/AlertDialog$Builder;->setPositiveButton(ILandroid/content/DialogInterface$OnClickListener;)Landroid/app/AlertDialog$Builder;
 
-    const v3, 0x7f0b13d6
+    const v3, 0x7f0b13e7
 
     invoke-virtual {p1, v3, v4}, Landroid/app/AlertDialog$Builder;->setNegativeButton(ILandroid/content/DialogInterface$OnClickListener;)Landroid/app/AlertDialog$Builder;
 
@@ -1243,7 +1269,7 @@
 
     move-result-object v2
 
-    const v5, 0x7f0f0499
+    const v5, 0x7f0f0498
 
     invoke-virtual {v2, v5}, Landroid/content/res/Resources;->getInteger(I)I
 
@@ -1257,7 +1283,7 @@
 
     move-result-object v2
 
-    const v5, 0x7f0f049c
+    const v5, 0x7f0f049b
 
     invoke-virtual {v2, v5}, Landroid/content/res/Resources;->getInteger(I)I
 
@@ -1453,7 +1479,7 @@
 
     invoke-direct {p0}, Lcom/android/settings/datausage/CellDataPreference;->updateEnabled()V
 
-    const v0, 0x7f0b0b5a
+    const v0, 0x7f0b0b68
 
     invoke-virtual {p0, v0}, Lcom/android/settings/datausage/CellDataPreference;->setSummary(I)V
 

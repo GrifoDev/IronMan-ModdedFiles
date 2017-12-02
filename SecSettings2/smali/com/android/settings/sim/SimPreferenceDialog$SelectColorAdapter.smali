@@ -173,7 +173,7 @@
 
     invoke-virtual {v7, v8}, Landroid/graphics/Paint;->setStrokeWidth(F)V
 
-    const v7, 0x7f110785
+    const v7, 0x7f110787
 
     invoke-virtual {v5, v7}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -183,7 +183,7 @@
 
     iput-object v7, v1, Lcom/android/settings/sim/SimPreferenceDialog$SelectColorAdapter$ViewHolder;->label:Landroid/widget/TextView;
 
-    const v7, 0x7f110784
+    const v7, 0x7f110786
 
     invoke-virtual {v5, v7}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 

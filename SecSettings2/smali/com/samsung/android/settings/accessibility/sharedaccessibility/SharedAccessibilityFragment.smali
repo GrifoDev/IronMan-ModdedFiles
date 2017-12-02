@@ -205,7 +205,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f0f038d
+    const v1, 0x7f0f038c
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getInteger(I)I
 
@@ -227,7 +227,7 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    const v0, 0x7f080122
+    const v0, 0x7f080124
 
     invoke-virtual {p0, v0}, Lcom/samsung/android/settings/accessibility/sharedaccessibility/SharedAccessibilityFragment;->addPreferencesFromResource(I)V
 

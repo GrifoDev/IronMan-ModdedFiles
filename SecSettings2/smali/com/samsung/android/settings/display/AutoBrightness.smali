@@ -172,19 +172,19 @@
 
     move-result-object v3
 
-    const v4, 0x7f0b0654
+    const v4, 0x7f0b0655
 
     invoke-virtual {v3, v4}, Landroid/app/AlertDialog$Builder;->setTitle(I)Landroid/app/AlertDialog$Builder;
 
     move-result-object v3
 
-    const v4, 0x7f0b0655
+    const v4, 0x7f0b0656
 
     invoke-virtual {v3, v4}, Landroid/app/AlertDialog$Builder;->setMessage(I)Landroid/app/AlertDialog$Builder;
 
     move-result-object v3
 
-    const v4, 0x7f0b1853
+    const v4, 0x7f0b1865
 
     invoke-virtual {p0, v4}, Lcom/samsung/android/settings/display/AutoBrightness;->getString(I)Ljava/lang/String;
 
@@ -198,7 +198,7 @@
 
     move-result-object v3
 
-    const v4, 0x7f0b050c
+    const v4, 0x7f0b050d
 
     invoke-virtual {p0, v4}, Lcom/samsung/android/settings/display/AutoBrightness;->getString(I)Ljava/lang/String;
 
@@ -332,7 +332,7 @@
 
     iget-object v0, p0, Lcom/samsung/android/settings/display/AutoBrightness;->mAutoBrightnessDesc:Lcom/samsung/android/settings/UnclickablePreference;
 
-    const v1, 0x7f0b0651
+    const v1, 0x7f0b0652
 
     invoke-virtual {v0, v1}, Lcom/samsung/android/settings/UnclickablePreference;->setSummary(I)V
 

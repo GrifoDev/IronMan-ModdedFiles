@@ -170,6 +170,8 @@
     <string name="wifi_allow_scan_with_traffic_summary">დაუშვით ან უარყავით Wi-Fi როუმინგის ავტომატური ძებნა, გამოყენებული მონაცემების რაოდენობის მიხედვით.</string>
     <string name="select_logd_size_title">ბუფერის ზომა ჩაწერისთვის</string>
     <string name="select_logd_size_dialog_title">აირჩიეთ თითოეული ბუფერული ჩანაწერის მაქსიმალური ზომა</string>
+    <string name="dev_logpersist_clear_warning_title">გასუფთავდეს ჟურნალის ჩამწერის საცავი?</string>
+    <string name="dev_logpersist_clear_warning_message">ჟურნალის ჩამწერის მონაცემები წაიშლება, როდესაც ჟურნალის მუდმივი ჩამწერი გამოირთვება.</string>
     <string name="select_logpersist_title">ჟურნალის მონაცემების შენახვა</string>
     <string name="select_logpersist_dialog_title">აირჩიეთ ჩანაწერის ბუფერები, რომ შეინახოთ</string>
     <string name="select_usb_configuration_title">USB კონფიგურაცია</string>
@@ -982,6 +984,7 @@ Wi-Fi და Bluetooth ასევე გამოირთვება, მა
     <string name="bluetooth_avc_available_description">დაკავშირებულ Bluetooth მოწყობილობას აქვს „მედიის ხმის სინქრონიზაციისა“ მხარდაჭერა და Bluetooth მოწყობილობის მიერ დაყენებული ხმის სიმაღლე დასინქრონდება ტელეფონთან.</string>
     <string name="bluetooth_enter_pin_msg">ჩაწერეთ „%s“–თან დაწყვილების PIN (მოსინჯეთ 0000 ან 1234).</string>
     <string name="bluetooth_pin_maximum_number_message">მიღწეულია სიმბოლოების მაქსიმალური რაოდენობა.</string>
+    <string name="bluetooth_frp_permission_message">ამ ზარისთვის Bluetooth მოწყობილობის გამოყენება შეუძლებელია.</string>
     <string name="settings_menu_done">შესრულებულია</string>
     <string name="usb_tethering_unavailable_subtext_tmo">USB not connected</string>
     <string name="usb_tethering_available_subtext_tmo">USB connected, check to tether</string>
@@ -1481,7 +1484,7 @@ Where Can I Find More Information About the 3rd Party's Policies? Separately, if
     <string name="navigationbar_pressure_sensitivity_title">დააჭირე საწყისი გვერდის კლავიშს</string>
     <string name="navigationbar_pressure_sensitivity_summary">როცა „საწყის გვერდზე გადასვლის ღილაკი“ დამალულია, მისი გამოიყენება შეგიძლიათ ჩვეულებრივზე უფრო მაგრად დაჭერით.</string>
     <string name="navigationbar_pressure_sensitivity_level_summary">წნევის დონე: %1$d/%2$d</string>
-    <string name="navigationbar_pressure_sensitivity_description_off">როცა „საწყის გვერდზე გადასვლის ღილაკი“ დამალულია, მისი გამოიყენება შეგიძლიათ ჩვეულებრივზე უფრო მაგრად დაჭერით.</string>
+    <string name="navigationbar_pressure_sensitivity_description_off">შეარჩიეთ დაჭერის დონე, რომელიც საჭიროა „საწყის გვერდზე გადასვლის“ კლავიშზე დასაჭერად.</string>
     <string name="navigationbar_pressure_low">უფრო მსუბუქი</string>
     <string name="navigationbar_pressure_high">უფრო ძლიერი</string>
     <string name="navigationbar_hide_bar">ჩვენებისა და დამალვის ღილაკი</string>
@@ -1704,7 +1707,11 @@ Where Can I Find More Information About the 3rd Party's Policies? Separately, if
     <string name="crypt_keeper_confirm_title">დაადასტურეთ დაშიფვრა</string>
     <string name="crypt_keeper_final_desc">მოწყობილობის დაშიფვრის პროცესი შეუქცევადია და შეიძლება დაიკარგოს მონაცემები, ამ პროცესის შეწყვეტის შემთხვევაში. დაშიფვრას შეიძლება დასჭირდეს საათი ან მეტი და ამ დროის განმავლობაში აპარატი რამდენჯერმე გადაიტვირთება და ვერ გამოიყენებთ მას.</string>
     <string name="crypt_keeper_setup_title">მიმდინარეობს დაშიფვრა…</string>
-    <string name="crypt_keeper_warn_wipe">დარჩენილია მოწყობილობის ჩატვირთვის %d მცდელობა, სანამ დაბრუნდება ნაგულისხმევი ქარხნული პარამეტრები. ამით წაიშლება ყველა მონაცემი, მათ შორის ფაილები და ჩამოტვირთული აპლიკაციები.</string>
+    <string name="crypt_keeper_warn_wipe">"დარჩა %1$d მცდელობა, სანამ დაბრუნდება ტელეფონის ნაგულისხმევი პარამეტრები. ამით წაიშლება ყველა მონაცემი, მათ შორის ფაილები და ჩამოტვირთული აპლიკაციები.
+
+თუ ტელეფონში დაბრუნდება საწყისი პარამეტრები, შეიძლება დაგჭირდეთ %2$s-ის ინფორმაციის (ელფოსტის მისამართისა და პაროლის) შეყვანა, რომელიც დაკავშირებულია ამ ტელეფონთან, რომ კვლავ შეძლოთ მისი გამოყენება."</string>
+    <string name="crypt_keeper_samsung_account">Samsung account</string>
+    <string name="crypt_keeper_google_account">Google ანგარიში</string>
     <string name="crypt_keeper_failed_title">ვერ დაიშიფრა</string>
     <string name="crypt_keeper_failed_summary">მოწყობილობის ჩატვირთვა შეუძლებელია. დაშიფვრის პროცესი შეწყდა. მოწყობილობაში უნდა დააბრუნოთ ქარხნული პარამეტრები. ეს წაშლის ყველა თქვენს მონაცემს.</string>
     <string name="crypt_keeper_data_corrupted_title">მოწყობილობის საცავი დაზიანებულია</string>
@@ -1723,10 +1730,13 @@ Where Can I Find More Information About the 3rd Party's Policies? Separately, if
     <string name="cryptkeeper_wrong_pin">შეყვანილი PIN არასწორია</string>
     <string name="cryptkeeper_wrong_direction">დახაზული მიმართულება არასწორია</string>
     <string name="checking_decryption">შემოწმება…</string>
-    <string name="crypt_keeper_last_warn_wipe">დარჩენილია მოწყობილობის ჩატვირთვის მხოლოდ 1 მცდელობა, სანამ დაბრუნდება ნაგულისხმევი ქარხნული პარამეტრები. ამით წაიშლება ყველა მონაცემი, მათ შორის ფაილები და ჩამოტვირთული აპლიკაციები.</string>
+    <string name="crypt_keeper_last_warn_wipe">"დარჩა 1 მცდელობა, სანამ დაბრუნდება ტელეფონის ნაგულისხმევი პარამეტრები. ამით წაიშლება ყველა მონაცემი, მათ შორის ფაილები და ჩამოტვირთული აპლიკაციები.
+
+თუ ტელეფონში დაბრუნდება საწყისი პარამეტრები, შეიძლება დაგჭირდეთ %s-ის ინფორმაციის (ელფოსტის მისამართისა და პაროლის) შეყვანა, რომელიც დაკავშირებულია ამ ტელეფონთან, რომ კვლავ შეძლოთ მისი გამოყენება."</string>
     <string name="crypt_keeper_failed_title_dec">ვერ გაიშიფრა.</string>
     <string name="crypt_keeper_failed_summary_dec">გაშიფვრა ვერ შესრულდა შეწყვეტის გამო. გამოყენებამდე დააბრუნეთ ქარხნული პარამეტრები (ყველა მონაცემი წაიშლება).</string>
     <string name="crypt_keeper_set_screen_lock_type">დააყენე ეკრანის დაბლოკვის ტიპი</string>
+    <string name="crypt_keeper_warning_keyboard_cover_does_not_work">კლავიატურის ყდა არ იმუშავებს ტელეფონის გადატვირთვის შემდეგ.</string>
     <string name="encryption_interstitial_message">"შეგიძლიათ კიდევ უფრო მეტად დაიცვათ ეს ტელეფონი, რისთვისაც უნდა დააყენოთ, რომ ტელეფონის ჩატვირთვამდე მოითხოვებოდეს %s. ეს ხელს შეუწყობს თქვენს მონაცემთა დაცვას, ტელეფონის დაკარგვის ან მოპარვის შემთხვევაში. „მოწყობილობის დაშიფვრის პოლიტიკის თანახმად“, ზოგიერთი აპლიკაციისთვის შეიძლება საჭირო იყოს „უსაფრთხო ჩატვირთვა“, რათა განახორციელოს წვდომა ისეთ ფუნქციებზე, როგორიცაა ელფოსტის სინქრონიზაცია.
 
 თქვენ არ მიიღებთ ზარებს, წერილებს ან შეტყობინებებს და სიგნალები არ გაისმება, სანამ ტელეფონი არ ჩაირთვება."</string>
@@ -1971,6 +1981,12 @@ You will also need it when:"</string>
     <string name="lockpassword_confirm_your_pin_with_fingerprint">გამოიყენეთ თითის ანაბეჭდი, ან შეიყვანეთ ამჟამინდელი PIN.</string>
     <string name="lockpassword_confirm_your_pattern_with_fingerprint">გამოიყენეთ თითის ანაბეჭდი, ან მოხაზეთ ამჟამინდელი ნიმუში.</string>
     <string name="lockpassword_confirm_your_password_with_fingerprint">გამოიყენეთ თითის ანაბეჭდი, ან შეიყვანეთ ამჟამინდელი პაროლი.</string>
+    <string name="lockpassword_confirm_your_pin_with_iris">გამოიყენეთ თვალის ირისები, ან შეიყვანეთ ამჟამინდელი PIN.</string>
+    <string name="lockpassword_confirm_your_pattern_with_iris">გამოიყენეთ თვალის ირისები, ან მოხაზეთ ამჟამინდელი ნიმუში.</string>
+    <string name="lockpassword_confirm_your_password_with_iris">გამოიყენეთ თვალის ირისები, ან შეიყვანეთ ამჟამინდელი პაროლი.</string>
+    <string name="lockpassword_confirm_your_pin_with_biometrics">გამოიყენეთ ბიომეტრული მონაცემები, ან შეიყვანეთ PIN.</string>
+    <string name="lockpassword_confirm_your_pattern_with_biometrics">გამოიყენეთ ბიომეტრული მონაცემები, ან მოხაზეთ ნიმუში.</string>
+    <string name="lockpassword_confirm_your_password_with_biometrics">გამოიყენეთ ბიომეტრული მონაცემები, ან შეიყვანეთ პაროლი.</string>
     <string name="lockpassword_confirm_your_pin_instead_of_fingerprint">შეიყვანეთ PIN, თითის ანაბეჭდის ამოცნობის ნაცვლად.</string>
     <string name="lockpassword_confirm_your_pattern_instead_of_fingerprint">მოხაზეთ ნიმუში, თითის ანაბეჭდის ამოცნობის ნაცვლად.</string>
     <string name="lockpassword_confirm_your_password_instead_of_fingerprint">შეიყვანეთ პაროლი, თითის ანაბეჭდის ამოცნობის ნაცვლად.</string>
@@ -2045,6 +2061,7 @@ You will also need it when:"</string>
     <string name="face_status_timeout">დრო გავიდა. ცადეთ მოგვიანებით.</string>
     <string name="okay">OK</string>
     <string name="face_samsung_account_button">გამოიყენე Samsung account</string>
+    <string name="face_galaxy_account_button">გამოიყენე Galaxy ანგარიში</string>
     <string name="face_error_DB_corrupted">პრობლემაა სახის მონაცემებთან დაკავშირებით. თავიდან დაარეგისტრირეთ თქვენი სახე.</string>
     <string name="face_error_DB_corrupted_popup_title">თავიდან დაარეგისტრირეთ თქვენი სახე</string>
     <string name="face_error_timeout">სახის ამოცნობა ვერ შესრულდა.</string>
@@ -2155,7 +2172,7 @@ You will also need it when:"</string>
     <string name="biometrics_backup_locktype_title">თვალის ირისით დაცვის დაყენება</string>
     <string name="biometrics_register_your_iris">დაარეგისტრირეთ თქვენი თვალის ირისები.</string>
     <string name="biometrics_backup_locktype_summary">იმისათვის რომ თვალის ირისები გამოიყენოთ მოწყობილობის განსაბლოკად, უნდა დააყენოთ ნიმუში, PIN, ან პაროლი.</string>
-    <string name="biometrics_backup_locktype_message">იმისათვის, რომ ტელეფონის განსაბლოკად ან უსაფრთხოდ დასამოწმებლად გამოიყენოთ თვალის ირისები, საჭიროა:</string>
+    <string name="biometrics_backup_locktype_message">იმისათვის, რომ ტელეფონის განსაბლოკად ან აპლიკაციებში თქვენი პირადობის დასამოწმებლად გამოიყენოთ თვალის ირისები, საჭიროა:</string>
     <string name="iris_delete_popup_title">წაიშალოს თვალის ირისის მონაცემები?</string>
     <string name="iris_delete_popup_message">წაიშალოს თვალის ირისის მონაცემები?</string>
     <string name="iris_delete_popup_message_with_related_func">თვალის ირისების გამომყენებელი ფუნქციები გამოირთვება.</string>
@@ -2231,6 +2248,9 @@ You will also need it when:"</string>
     <string name="biometrics_dex_cant_use_msg">%s ვერ გამოიყენება Samsung DeX-ში.</string>
     <string name="biometrics_dex_closed_to_switch">%s დაიხურება, Samsung DeX-ზე გადასართავად.</string>
     <string name="biometircs_dex_cant_use_toast">%s ვერ გაეშვება Samsung DeX-ში. სცადეთ ტელეფონის რეჟიმში გაშვება.</string>
+    <string name="iris_guide_text_preview">შეხედე, თვალის ამოსაცნ.</string>
+    <string name="iris_guide_enable_toggle">თვალის ირისებისთვის, შეეხეთ აქ</string>
+    <string name="iris_cannot_verify">თვალის ირისები ვერ დამოწმდა</string>
     <string name="knox_twofactor_bio_description">აირჩიეთ ბიომეტრული დაბლოკვის ტიპი და დაბლოკვის მეორე ტიპი, რომ განბლოკოთ %s.</string>
     <string name="fingerprint_registered">რეგისტრირებული თითის ანაბეჭდი გამოყენებული იქნება განბლოკვის შერჩეული მეთოდით.</string>
     <string name="knox_twofactor_description">აირჩიეთ ბიომეტრული მონაცემები და დაბლოკვის მეორე ტიპი, რომლითაც განიბლოკება %s.</string>
@@ -3093,6 +3113,7 @@ Mobile data will be turned off."</string>
     <string name="easy_mode_app_help">უფრო მარტივად გამოიყენეთ თქვენი მოწყობილობა, საწყისი ეკრანის უფრო მარტივი განლაგებითა და ეკრანზე დიდი გამოსახულებებით.</string>
     <string name="easy_mode_app_help_dream_1">გამოიყენეთ „საწყისი ეკრანის“ მარტივი განლაგება და უფრო დიდი გამოსახულებები ეკრანზე.</string>
     <string name="easy_mode_app_help_dream_2">ყველაფერი, რაც შეარჩიეთ „საწყისი ეკრანისთვის“, გაუქმდება და „ეკრანის ზომა“ გახდება მაქსიმალური.</string>
+    <string name="easy_mode_app_help_3rd_launcher">ეკრანზე ნაჩვენები შედარებით დიდი გამოსახულებებისთვის გამოიყენეთ „მარტივი რეჟიმი“. თუ არ გამოიყენებთ TouchWiz Home-ს, თქვენი „საწყისი ეკრანის“ განლაგება არ შეიცვლება, მაგრამ დაყენდება ეკრანის დიდი ზომა და შრიფტის საშუალო ზომა.</string>
     <string name="security_warning_content">კონფიდენციალურობის დაცვა შეგიძლიათ ეკრანის გასახსნელად პაროლის, PIN-ის ან ნიმუშის დაყენებით</string>
     <string name="lock_setting_weather_desc">ამინდის ინფორმაციის პარამეტრების შესაცვლელად, შეეხეთ ქვემოთ მოცემულ „ამინდის პარამეტრებს“.</string>
     <string name="lock_setting_weather_btn">ამინდის პარამეტრები</string>
@@ -3339,7 +3360,7 @@ Downloading via mobile networks may result in additional charges depending on yo
     <string name="disable_hovering_title">ჰაერით გადახედვის გამორთვა</string>
     <string name="disable_hovering_summary">ჰაერით გადახედვა და TalkBack ერთად ვერ გააქტიურდება. ჰაერით გადახედვა გამოირთვება.</string>
     <string name="pen_settings_pen_input">პირდაპირ კალმით წერა</string>
-    <string name="action_memo_onoff_screen_title">ეკრანის შეხსენება</string>
+    <string name="action_memo_onoff_screen_title">სამახსოვროს წაღება ეკრანიდან</string>
     <string name="screen_off_note_summary">შენიშვნები ჩაწერეთ, როცა ეკრანი გამორთულია. ამისთვის საკმარისია მოაცილოთ S Pen და დაიწყოთ წერა.</string>
     <string name="screen_off_note_summary_jpn">შექმენით შენიშვნები, რისთვისაც აიღეთ S Pen, როდესაც ეკრანი გამორთულია და შემდეგ დაწერეთ ეკრანზე. ეკრანიდან წაღებული სამახსოვროები შეინახება Galaxy Notes-ში.</string>
     <string name="screen_off_note_summary_no_detach">შენიშვნების შესაქმნელად, დააჭირეთ „კალმის“ ღილაკს, შეეხეთ ეკრანს, როდესაც ის გამორთულია და დაწერეთ მასზე. ეკრანიდან წაღებული სამახსოვროები შეინახება Samsung Notes-ში.</string>
@@ -3946,7 +3967,7 @@ Wi-Fi ჩართულია ახლა."</string>
     <string name="wfd_descrpition_playsound">დაუკარით ხმა.</string>
     <string name="wfd_is_not_supported">ამ ფუნქციის მხარდაჭერა არ არის.</string>
     <string name="usbtethering_notify_wifi_is_on_title">გამოირთოს Wi-Fi?</string>
-    <string name="usbtethering_notify_wifi_is_on">USB მობილური ინტერნეტი და Wi-Fi ერთდროულად ვერ ჩაირთვება. გამორთე Wi-Fi.</string>
+    <string name="usbtethering_notify_wifi_is_on">მობილური ინტერნეტის USB-თი გაზიარება და Wi-Fi ერთდროულად ვერ ჩაირთვება. Wi-Fi გამოირთვება.</string>
     <string name="disable_multi_window_dialog_text">მულტი–ფანჯრის რეჟიმი გამოირთვება და დაიხურება სარკმლებში გახსნილი ყველა აპლიკაცია.</string>
     <string name="keyguard_password_attempt_count_pin_code">%d ცდა დარჩა.</string>
     <string name="keyguard_password_attempts_count_pin_code">%d ცდა დარჩა.</string>
@@ -4154,6 +4175,7 @@ SMS-ის მიღება"</string>
     <string name="hdmi_mode_title">HDMI რეჟიმი</string>
     <string name="hdmi_mode_dex">Samsung DeX</string>
     <string name="hdmi_mode_mirroring">Screen Mirroring</string>
+    <string name="hdmi_mode_not_available_while_cover_attached">%s მიუწვდომელია, როდესაც ყდა მიმაგრებულია.</string>
     <string name="screen_timeout_for_dex">ეკრანის დრო Samsung DeX-თვის</string>
     <string name="show_virtual_keyboard_for_dex">ეკრანზე ნაჩვენები კლავიატურა Samsung DeX-ში</string>
     <string name="comma">,</string>
@@ -4462,7 +4484,7 @@ SMS-ის მიღება"</string>
     <string name="date_picker_title">თარიღი</string>
     <string name="time_picker_title">დრო</string>
     <string name="lock_after_timeout">ავტომატური დაბლოკვა</string>
-    <string name="lock_after_timeout_summary">ეკრანი დაიბლოკოს, როცა მისი ავტომატური ჩაქრობიდან გავა %s.</string>
+    <string name="lock_after_timeout_summary">ტელეფონის დაიბლოკოს, როდესაც ეკრანის ავტომატური გამორთვიდან გავა %s.</string>
     <string name="lock_after_timeout_summary_with_exception">დაბლოკეთ ეკრანის %1$s, მას შემდეგ რაც ის გამოირთვება ავტომატურად, თუ ის არ არის დაბლოკილი %2$s-ით.</string>
     <string name="show_owner_info_on_lockscreen_label">გამოჩნდეს მოწყობილობის მფლობელის ინფორმაცია დაბლოკილ ეკრანზე.</string>
     <string name="owner_info_settings_title">მფლობელის ინფორმაცია</string>
@@ -4610,6 +4632,8 @@ SMS-ის მიღება"</string>
     <string name="wifi_empty_list_user_restricted">თქვენ არ გაქვთ Wi-Fi პარამეტრების შეცვლის ნებართვა.</string>
     <string name="wifi_setup_wps">ავტომატური ინსტალაცია (WPS)</string>
     <string name="wifi_show_advanced">დამატებითი ოფციების ჩვენება</string>
+    <string name="wifi_advanced_toggle_description_expanded">შეეხეთ ორჯერ და აიკეცება.</string>
+    <string name="wifi_advanced_toggle_description_collapsed">შეეხეთ ორჯერ და გაიშლება.</string>
     <string name="wifi_wps_setup_title">WPS პარამეტრები</string>
     <string name="wifi_wps_setup_msg">იწყება WPS…</string>
     <string name="wifi_wps_onstart_pbc">შეეხეთ Wi-Fi-ის დაცულ ინსტალაციის ღილაკს როუტერზე. მისი სახელი შეიძლება იყოს WPS, ან შეიძლება შეიცავდეს ამ სიმბოლოს:</string>
@@ -4641,6 +4665,10 @@ SMS-ის მიღება"</string>
     <string name="wifi_shared">გაზიარებული</string>
     <string name="wifi_unchanged">(შეუცვლელი)</string>
     <string name="wifi_unspecified">(დაუზუსტებელი)</string>
+    <string name="wifi_select_cert">აირჩიეთ სერტიფიკატი</string>
+    <string name="wifi_do_not_provide_eap_user_cert">არ მიეწოდოს</string>
+    <string name="wifi_do_not_validate_eap_server">არ დამოწმდეს</string>
+    <string name="wifi_do_not_validate_eap_server_warning">სერტიფიკატი არ არის მითითებული. თქვენი კავშირი ვერ იქნება პირადი.</string>
     <string name="wifi_scan_always_turnon_message">%s ითხოვს ნებართვას Wi-Fi ქსელების მოსაძებნად, მაშინაც კი, როცა Wi-Fi გამორთულია, ლოკაციის სიზუსტის გასაუმჯობესებლად და სხვა მიზნებისთვის. ნებას დართავთ ყველა აპლიკაციისთვის?</string>
     <string name="wifi_scan_always_confirm_allow">ნებართვა</string>
     <string name="wifi_scan_always_confirm_deny">უარყოფა</string>
@@ -4975,9 +5003,9 @@ SMS-ის მიღება"</string>
     <string name="restore_default_apn_completed">საწყისი APN პარამეტრების დაბრუნება.</string>
     <string name="reset_network_desc">ამით შეიცვლება ქსელის ყველა პარამეტრი, მათ შორის:</string>
     <string name="reset_network_button_text">პარამეტრების გადატვირთვა</string>
-    <string name="reset_network_final_desc">შეიცვლება კავშირის ყველა პარამეტრი. ამ მოქმედების გაუქმება შეუძლებელია.</string>
+    <string name="reset_network_final_desc">დაბრუნდება ქსელის ყველა საწყისი პარამეტრი. ამ მოქმედების გაუქმება შეუძლებელია.</string>
     <string name="reset_network_final_button_text">პარამეტრების გადატვირთვა</string>
-    <string name="reset_network_complete_toast">კავშირის პარამეტრები შეიცვალა.</string>
+    <string name="reset_network_complete_toast">ქსელის პარამეტრები შეიცვალა.</string>
     <string name="master_clear_title">ქარხნული მონაცემების დაბრუნება</string>
     <string name="master_clear_accounts">ამჟამად შესული ხართ შემდეგი ანგარიშით:</string>
     <string name="master_clear_other_users_present">ამ მოწყობილობაში ასევე წაიშლება მონაცემები, რომლებიც ეკუთვნის სხვა მომხმარებლებს.</string>
@@ -6090,6 +6118,7 @@ If the device has multiple users, using this shortcut on the lock screen tempora
     <string name="set_data_limit">მონაცემთა ლიმიტის დაყენება</string>
     <string name="data_limit">მონაცემთა ლიმიტი</string>
     <string name="data_usage_template">%1$s გამოყენებულია პერიოდში: %2$s</string>
+    <string name="data_usage_template_wifi">%s გამოყენებულია ბოლო 30 დღეში</string>
     <string name="data_usage_other_apps">სათანადო აპები შედის გამოყენ.</string>
     <string name="data_saver_title">მონაცემთა დაზოგვა</string>
     <string name="unrestricted_data_saver">აპი, როცა მონაცემთა დაზოგვა ჩრთ</string>
@@ -6140,6 +6169,7 @@ If the device has multiple users, using this shortcut on the lock screen tempora
     <string name="legacy_dhcp_client_summary">ახალი Android DHCP კლიენტის ნაცვლად, Lollipop-ის DHCP კლიენტის გამოყენება.</string>
     <string name="screen_off_pocket_title">ეკრანი დარჩეს გამორთული</string>
     <string name="screen_off_pocket_summary">აკრძალეთ ეკრანის შემთხვევითი ჩართვა, როდესაც მოწყობილობა სიბნელეშია, მაგალითად, ჯიბეში ან ჩანთაში.</string>
+    <string name="noApplications">ამ მოქმედებასთან დაკავშირებული ყველა აპლიკაცია გამორთულია, დაბლოკილია, ან არ არის დაინსტალირებული.</string>
     <string name="confirm_reset_shortcut_manager_throttling_title">Shortcut Manager-ის სიჩქარის შეზღუდვის შეცვლა</string>
     <string name="confirm_reset_shortcut_manager_throttling_message">Shortcut Manager-ის სიჩქარის შემზღუდავის მთვლელი შეიცვლება.</string>
 </resources>

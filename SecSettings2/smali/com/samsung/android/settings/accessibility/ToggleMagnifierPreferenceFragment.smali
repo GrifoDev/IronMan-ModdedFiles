@@ -359,7 +359,7 @@
 
     move-result-object v8
 
-    const v9, 0x7f0b04fa
+    const v9, 0x7f0b04fb
 
     invoke-virtual {v8, v9}, Landroid/app/Activity;->getString(I)Ljava/lang/String;
 
@@ -650,7 +650,7 @@
 
     iput-object v6, p0, Lcom/samsung/android/settings/accessibility/ToggleMagnifierPreferenceFragment;->ctx:Landroid/content/Context;
 
-    const v6, 0x7f0800c6
+    const v6, 0x7f0800c8
 
     invoke-virtual {p0, v6}, Lcom/samsung/android/settings/accessibility/ToggleMagnifierPreferenceFragment;->addPreferencesFromResource(I)V
 
@@ -1045,7 +1045,7 @@
 
     move-result-object v3
 
-    const v4, 0x7f0f032d
+    const v4, 0x7f0f032c
 
     invoke-virtual {v3, v4}, Landroid/content/res/Resources;->getInteger(I)I
 
@@ -1108,7 +1108,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f0f032d
+    const v2, 0x7f0f032c
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getInteger(I)I
 

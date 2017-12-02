@@ -156,7 +156,7 @@
     nop
 
     :pswitch_data_0
-    .packed-switch 0x7f0b04ce
+    .packed-switch 0x7f0b04cf
         :pswitch_1
         :pswitch_0
     .end packed-switch

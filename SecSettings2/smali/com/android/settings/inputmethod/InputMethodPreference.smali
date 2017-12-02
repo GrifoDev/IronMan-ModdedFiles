@@ -87,7 +87,7 @@
 
     iput-object v5, p0, Lcom/android/settings/inputmethod/InputMethodPreference;->mDialog:Landroid/app/AlertDialog;
 
-    const v3, 0x7f040354
+    const v3, 0x7f040357
 
     invoke-virtual {p0, v3}, Lcom/android/settings/inputmethod/InputMethodPreference;->setLayoutResource(I)V
 
@@ -285,7 +285,7 @@
 .end method
 
 .method private isImeEnabler()Z
-    .locals 2
+    .locals 3
 
     const/4 v0, 0x0
 
@@ -294,6 +294,14 @@
     move-result v1
 
     if-eqz v1, :cond_0
+
+    invoke-virtual {p0}, Lcom/android/settings/inputmethod/InputMethodPreference;->getWidgetLayoutResource()I
+
+    move-result v1
+
+    const v2, 0x7f040243
+
+    if-eq v1, v2, :cond_0
 
     const/4 v0, 0x1
 
@@ -381,7 +389,7 @@
 
     invoke-virtual {v0, v2}, Landroid/app/AlertDialog$Builder;->setCancelable(Z)Landroid/app/AlertDialog$Builder;
 
-    const v2, 0x7f0b1d18
+    const v2, 0x7f0b1d2a
 
     invoke-virtual {v1, v2}, Landroid/content/Context;->getText(I)Ljava/lang/CharSequence;
 
@@ -450,7 +458,7 @@
 
     invoke-virtual {v0, v5}, Landroid/app/AlertDialog$Builder;->setCancelable(Z)Landroid/app/AlertDialog$Builder;
 
-    const v3, 0x7f0b0568
+    const v3, 0x7f0b0569
 
     invoke-virtual {v0, v3}, Landroid/app/AlertDialog$Builder;->setTitle(I)Landroid/app/AlertDialog$Builder;
 
@@ -476,7 +484,7 @@
 
     aput-object v2, v3, v4
 
-    const v4, 0x7f0b18ba
+    const v4, 0x7f0b18cc
 
     invoke-virtual {v1, v4, v3}, Landroid/content/Context;->getString(I[Ljava/lang/Object;)Ljava/lang/String;
 
@@ -619,7 +627,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f0f03b8
+    const v2, 0x7f0f03b7
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getInteger(I)I
 
@@ -711,7 +719,7 @@
 
     move-result-object v5
 
-    const v6, 0x7f0f03b6
+    const v6, 0x7f0f03b5
 
     invoke-virtual {v5, v6}, Landroid/content/res/Resources;->getInteger(I)I
 
@@ -756,7 +764,7 @@
 
     aput-object v5, v4, v6
 
-    const v5, 0x7f0b18be
+    const v5, 0x7f0b18d0
 
     invoke-virtual {v0, v5, v4}, Landroid/content/Context;->getString(I[Ljava/lang/Object;)Ljava/lang/String;
 

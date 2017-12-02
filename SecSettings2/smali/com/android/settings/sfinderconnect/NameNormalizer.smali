@@ -52,65 +52,153 @@
 .end method
 
 .method private static ensureCollators()V
-    .locals 5
+    .locals 7
 
-    const/4 v4, 0x1
+    const/4 v6, 0x1
 
     invoke-static {}, Ljava/util/Locale;->getDefault()Ljava/util/Locale;
 
-    move-result-object v1
+    move-result-object v2
 
-    if-eqz v1, :cond_0
+    if-eqz v2, :cond_0
 
-    sget-object v2, Lcom/android/settings/sfinderconnect/NameNormalizer;->sCollatorLocale:Ljava/util/Locale;
+    sget-object v3, Lcom/android/settings/sfinderconnect/NameNormalizer;->sCollatorLocale:Ljava/util/Locale;
 
-    invoke-virtual {v1, v2}, Ljava/util/Locale;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v2, v3}, Ljava/util/Locale;->equals(Ljava/lang/Object;)Z
 
-    move-result v2
+    move-result v3
 
-    if-eqz v2, :cond_1
+    if-eqz v3, :cond_1
 
     :cond_0
     return-void
 
     :cond_1
-    sput-object v1, Lcom/android/settings/sfinderconnect/NameNormalizer;->sCollatorLocale:Ljava/util/Locale;
+    sput-object v2, Lcom/android/settings/sfinderconnect/NameNormalizer;->sCollatorLocale:Ljava/util/Locale;
 
-    invoke-static {v1}, Lcom/android/settings/sfinderconnect/NameNormalizer;->getCollatorLocale(Ljava/util/Locale;)Ljava/util/Locale;
+    invoke-static {v2}, Lcom/android/settings/sfinderconnect/NameNormalizer;->getCollatorLocale(Ljava/util/Locale;)Ljava/util/Locale;
 
     move-result-object v0
 
+    :try_start_0
     invoke-static {v0}, Ljava/text/Collator;->getInstance(Ljava/util/Locale;)Ljava/text/Collator;
 
-    move-result-object v2
+    move-result-object v3
 
-    check-cast v2, Ljava/text/RuleBasedCollator;
+    check-cast v3, Ljava/text/RuleBasedCollator;
 
-    sput-object v2, Lcom/android/settings/sfinderconnect/NameNormalizer;->sCachedCompressingCollator:Ljava/text/RuleBasedCollator;
+    sput-object v3, Lcom/android/settings/sfinderconnect/NameNormalizer;->sCachedCompressingCollator:Ljava/text/RuleBasedCollator;
+    :try_end_0
+    .catch Ljava/lang/IllegalArgumentException; {:try_start_0 .. :try_end_0} :catch_0
 
-    sget-object v2, Lcom/android/settings/sfinderconnect/NameNormalizer;->sCachedCompressingCollator:Ljava/text/RuleBasedCollator;
+    :goto_0
+    sget-object v3, Lcom/android/settings/sfinderconnect/NameNormalizer;->sCachedCompressingCollator:Ljava/text/RuleBasedCollator;
 
-    const/4 v3, 0x0
+    if-eqz v3, :cond_2
 
-    invoke-virtual {v2, v3}, Ljava/text/RuleBasedCollator;->setStrength(I)V
+    sget-object v3, Lcom/android/settings/sfinderconnect/NameNormalizer;->sCachedCompressingCollator:Ljava/text/RuleBasedCollator;
 
-    sget-object v2, Lcom/android/settings/sfinderconnect/NameNormalizer;->sCachedCompressingCollator:Ljava/text/RuleBasedCollator;
+    const/4 v4, 0x0
 
-    invoke-virtual {v2, v4}, Ljava/text/RuleBasedCollator;->setDecomposition(I)V
+    invoke-virtual {v3, v4}, Ljava/text/RuleBasedCollator;->setStrength(I)V
 
+    sget-object v3, Lcom/android/settings/sfinderconnect/NameNormalizer;->sCachedCompressingCollator:Ljava/text/RuleBasedCollator;
+
+    invoke-virtual {v3, v6}, Ljava/text/RuleBasedCollator;->setDecomposition(I)V
+
+    :cond_2
+    :try_start_1
     invoke-static {v0}, Ljava/text/Collator;->getInstance(Ljava/util/Locale;)Ljava/text/Collator;
 
-    move-result-object v2
+    move-result-object v3
 
-    check-cast v2, Ljava/text/RuleBasedCollator;
+    check-cast v3, Ljava/text/RuleBasedCollator;
 
-    sput-object v2, Lcom/android/settings/sfinderconnect/NameNormalizer;->sCachedComplexityCollator:Ljava/text/RuleBasedCollator;
+    sput-object v3, Lcom/android/settings/sfinderconnect/NameNormalizer;->sCachedComplexityCollator:Ljava/text/RuleBasedCollator;
+    :try_end_1
+    .catch Ljava/lang/IllegalArgumentException; {:try_start_1 .. :try_end_1} :catch_1
 
-    sget-object v2, Lcom/android/settings/sfinderconnect/NameNormalizer;->sCachedComplexityCollator:Ljava/text/RuleBasedCollator;
+    :goto_1
+    sget-object v3, Lcom/android/settings/sfinderconnect/NameNormalizer;->sCachedComplexityCollator:Ljava/text/RuleBasedCollator;
 
-    invoke-virtual {v2, v4}, Ljava/text/RuleBasedCollator;->setStrength(I)V
+    if-eqz v3, :cond_3
 
+    sget-object v3, Lcom/android/settings/sfinderconnect/NameNormalizer;->sCachedComplexityCollator:Ljava/text/RuleBasedCollator;
+
+    invoke-virtual {v3, v6}, Ljava/text/RuleBasedCollator;->setStrength(I)V
+
+    :cond_3
     return-void
+
+    :catch_0
+    move-exception v1
+
+    const-string/jumbo v3, "NameNormalizer"
+
+    new-instance v4, Ljava/lang/StringBuilder;
+
+    invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string/jumbo v5, "IllegalArgumentException occured: "
+
+    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v4
+
+    invoke-virtual {v4, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    move-result-object v4
+
+    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v4
+
+    invoke-static {v3, v4}, Landroid/util/secutil/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
+
+    invoke-static {v0}, Ljava/text/Collator;->getInstance(Ljava/util/Locale;)Ljava/text/Collator;
+
+    move-result-object v3
+
+    check-cast v3, Ljava/text/RuleBasedCollator;
+
+    sput-object v3, Lcom/android/settings/sfinderconnect/NameNormalizer;->sCachedCompressingCollator:Ljava/text/RuleBasedCollator;
+
+    goto :goto_0
+
+    :catch_1
+    move-exception v1
+
+    const-string/jumbo v3, "NameNormalizer"
+
+    new-instance v4, Ljava/lang/StringBuilder;
+
+    invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string/jumbo v5, "IllegalArgumentException occured: "
+
+    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v4
+
+    invoke-virtual {v4, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    move-result-object v4
+
+    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v4
+
+    invoke-static {v3, v4}, Landroid/util/secutil/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
+
+    invoke-static {v0}, Ljava/text/Collator;->getInstance(Ljava/util/Locale;)Ljava/text/Collator;
+
+    move-result-object v3
+
+    check-cast v3, Ljava/text/RuleBasedCollator;
+
+    sput-object v3, Lcom/android/settings/sfinderconnect/NameNormalizer;->sCachedComplexityCollator:Ljava/text/RuleBasedCollator;
+
+    goto :goto_1
 .end method
 
 .method static getCollatorLocale(Ljava/util/Locale;)Ljava/util/Locale;
@@ -426,52 +514,52 @@
 .end method
 
 .method public static normalize(Ljava/lang/String;)Ljava/lang/String;
-    .locals 5
+    .locals 6
 
     invoke-static {}, Ljava/util/Locale;->getDefault()Ljava/util/Locale;
 
-    move-result-object v1
+    move-result-object v2
 
-    if-nez v1, :cond_0
+    if-nez v2, :cond_0
 
     return-object p0
 
     :cond_0
-    invoke-virtual {v1}, Ljava/util/Locale;->toString()Ljava/lang/String;
+    invoke-virtual {v2}, Ljava/util/Locale;->toString()Ljava/lang/String;
 
-    move-result-object v2
+    move-result-object v3
 
-    const-string/jumbo v3, "zh"
+    const-string/jumbo v4, "zh"
 
-    invoke-virtual {v2, v3}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
+    invoke-virtual {v3, v4}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
 
-    move-result v2
+    move-result v3
 
-    if-nez v2, :cond_1
+    if-nez v3, :cond_1
 
-    invoke-virtual {v1}, Ljava/util/Locale;->toString()Ljava/lang/String;
+    invoke-virtual {v2}, Ljava/util/Locale;->toString()Ljava/lang/String;
 
-    move-result-object v2
+    move-result-object v3
 
-    const-string/jumbo v3, "ko"
+    const-string/jumbo v4, "ko"
 
-    invoke-virtual {v2, v3}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
+    invoke-virtual {v3, v4}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
 
-    move-result v2
+    move-result v3
 
-    if-nez v2, :cond_1
+    if-nez v3, :cond_1
 
-    invoke-virtual {v1}, Ljava/util/Locale;->toString()Ljava/lang/String;
+    invoke-virtual {v2}, Ljava/util/Locale;->toString()Ljava/lang/String;
 
-    move-result-object v2
+    move-result-object v3
 
-    const-string/jumbo v3, "ja"
+    const-string/jumbo v4, "ja"
 
-    invoke-virtual {v2, v3}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
+    invoke-virtual {v3, v4}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
 
-    move-result v2
+    move-result v3
 
-    if-eqz v2, :cond_2
+    if-eqz v3, :cond_2
 
     :cond_1
     return-object p0
@@ -479,50 +567,65 @@
     :cond_2
     invoke-static {}, Lcom/android/settings/sfinderconnect/NameNormalizer;->getCompressingCollator()Ljava/text/RuleBasedCollator;
 
-    move-result-object v2
-
-    new-instance v3, Ljava/lang/StringBuilder;
-
-    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string/jumbo v4, " "
-
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    invoke-virtual {v3, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v3
-
-    invoke-virtual {v2, v3}, Ljava/text/RuleBasedCollator;->getCollationKey(Ljava/lang/String;)Ljava/text/CollationKey;
-
     move-result-object v0
 
-    invoke-virtual {v0}, Ljava/text/CollationKey;->toByteArray()[B
+    if-nez v0, :cond_3
 
-    move-result-object v2
+    const-string/jumbo v3, "NameNormalizer"
 
-    if-nez v2, :cond_3
+    const-string/jumbo v4, "getCompressingCollator is null"
 
-    const-string/jumbo v2, ""
+    invoke-static {v3, v4}, Landroid/util/secutil/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    return-object v2
+    return-object p0
 
     :cond_3
-    invoke-virtual {v0}, Ljava/text/CollationKey;->toByteArray()[B
+    invoke-static {}, Lcom/android/settings/sfinderconnect/NameNormalizer;->getCompressingCollator()Ljava/text/RuleBasedCollator;
 
-    move-result-object v2
+    move-result-object v3
 
-    const/4 v3, 0x1
+    new-instance v4, Ljava/lang/StringBuilder;
 
-    invoke-static {v2, v3}, Lcom/android/settings/sfinderconnect/Hex;->encodeHex([BZ)Ljava/lang/String;
+    invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
 
-    move-result-object v2
+    const-string/jumbo v5, " "
 
-    return-object v2
+    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v4
+
+    invoke-virtual {v4, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v4
+
+    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v4
+
+    invoke-virtual {v3, v4}, Ljava/text/RuleBasedCollator;->getCollationKey(Ljava/lang/String;)Ljava/text/CollationKey;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/text/CollationKey;->toByteArray()[B
+
+    move-result-object v3
+
+    if-nez v3, :cond_4
+
+    const-string/jumbo v3, ""
+
+    return-object v3
+
+    :cond_4
+    invoke-virtual {v1}, Ljava/text/CollationKey;->toByteArray()[B
+
+    move-result-object v3
+
+    const/4 v4, 0x1
+
+    invoke-static {v3, v4}, Lcom/android/settings/sfinderconnect/Hex;->encodeHex([BZ)Ljava/lang/String;
+
+    move-result-object v3
+
+    return-object v3
 .end method

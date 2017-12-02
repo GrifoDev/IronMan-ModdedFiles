@@ -185,7 +185,7 @@
 .method protected onCreate(Landroid/os/Bundle;)V
     .locals 8
 
-    const v7, 0x7f1102dd
+    const v7, 0x7f1102df
 
     const/4 v6, 0x0
 
@@ -289,7 +289,7 @@
 
     iget-object v3, p0, Lcom/samsung/android/settings/wifi/connectionhandler/WifiSelectHandlerActivity;->mInflater:Landroid/view/LayoutInflater;
 
-    const v4, 0x7f0403b1
+    const v4, 0x7f0403b4
 
     const/4 v5, 0x0
 
@@ -303,7 +303,7 @@
 
     move-result-object v3
 
-    const v4, 0x7f0b0eb7
+    const v4, 0x7f0b0ec6
 
     invoke-virtual {v3, v4}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -315,7 +315,7 @@
 
     move-result-object v3
 
-    const v4, 0x7f0b0511
+    const v4, 0x7f0b0512
 
     invoke-virtual {v3, v4}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -329,7 +329,7 @@
 
     move-result-object v3
 
-    const v4, 0x7f0b0508
+    const v4, 0x7f0b0509
 
     invoke-virtual {v3, v4}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -343,7 +343,7 @@
 
     move-result-object v3
 
-    const v4, 0x7f0b0ebf
+    const v4, 0x7f0b0ece
 
     invoke-virtual {v3, v4}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 

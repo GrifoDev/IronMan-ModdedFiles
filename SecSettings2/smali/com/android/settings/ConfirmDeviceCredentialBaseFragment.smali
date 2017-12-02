@@ -4,6 +4,7 @@
 
 # interfaces
 .implements Lcom/android/settings/fingerprint/FingerprintUiHelper$Callback;
+.implements Lcom/samsung/android/settings/iris/IrisUiHelper$Callback;
 
 
 # annotations
@@ -17,7 +18,11 @@
 # instance fields
 .field private mAllowFpAuthentication:Z
 
+.field private mAllowIrisAuthentication:Z
+
 .field protected mCancelButton:Landroid/widget/Button;
+
+.field private mCancellationSignal:Landroid/os/CancellationSignal;
 
 .field protected mEffectiveUserId:I
 
@@ -28,6 +33,14 @@
 .field protected mFingerprintIcon:Landroid/widget/ImageView;
 
 .field protected final mHandler:Landroid/os/Handler;
+
+.field private mIrisHelper:Lcom/samsung/android/settings/iris/IrisUiHelper;
+
+.field protected mIrisManager:Lcom/samsung/android/camera/iris/SemIrisManager;
+
+.field protected mIrisPreview:Landroid/widget/TextView;
+
+.field protected mIrisPreviewLayout:Landroid/widget/LinearLayout;
 
 .field protected mIsStrongAuthRequired:Z
 
@@ -55,6 +68,10 @@
     invoke-direct {v0}, Landroid/os/Handler;-><init>()V
 
     iput-object v0, p0, Lcom/android/settings/ConfirmDeviceCredentialBaseFragment;->mHandler:Landroid/os/Handler;
+
+    const/4 v0, 0x0
+
+    iput-object v0, p0, Lcom/android/settings/ConfirmDeviceCredentialBaseFragment;->mCancellationSignal:Landroid/os/CancellationSignal;
 
     new-instance v0, Lcom/android/settings/ConfirmDeviceCredentialBaseFragment$1;
 
@@ -147,7 +164,7 @@
 
     move-result-object v5
 
-    const v6, 0x7f11059e
+    const v6, 0x7f1105a0
 
     invoke-virtual {v5, v6}, Landroid/app/Activity;->findViewById(I)Landroid/view/View;
 
@@ -180,7 +197,7 @@
 
     invoke-virtual {p1, v5}, Landroid/view/View;->setBackground(Landroid/graphics/drawable/Drawable;)V
 
-    const v5, 0x7f1101f9
+    const v5, 0x7f1101fb
 
     invoke-virtual {p1, v5}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -194,7 +211,7 @@
 
     move-result-object v5
 
-    const v6, 0x7f0206ab
+    const v6, 0x7f0206ad
 
     invoke-virtual {v5, v6}, Landroid/content/res/Resources;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 
@@ -267,9 +284,9 @@
 
     move-result-object v1
 
-    new-instance v2, Lcom/android/settings/ConfirmDeviceCredentialBaseFragment$2;
+    new-instance v2, Lcom/android/settings/ConfirmDeviceCredentialBaseFragment$3;
 
-    invoke-direct {v2, p0, p4}, Lcom/android/settings/ConfirmDeviceCredentialBaseFragment$2;-><init>(Lcom/android/settings/ConfirmDeviceCredentialBaseFragment;Z)V
+    invoke-direct {v2, p0, p4}, Lcom/android/settings/ConfirmDeviceCredentialBaseFragment$3;-><init>(Lcom/android/settings/ConfirmDeviceCredentialBaseFragment;Z)V
 
     invoke-virtual {v1, p3, v2}, Landroid/app/AlertDialog$Builder;->setPositiveButton(ILandroid/content/DialogInterface$OnClickListener;)Landroid/app/AlertDialog$Builder;
 
@@ -456,150 +473,243 @@
 .end method
 
 .method public onCreate(Landroid/os/Bundle;)V
-    .locals 7
+    .locals 9
 
-    const/4 v3, 0x0
+    const/4 v8, 0x1
+
+    const/4 v4, 0x0
 
     invoke-super {p0, p1}, Lcom/android/settings/OptionsMenuFragment;->onCreate(Landroid/os/Bundle;)V
 
     invoke-virtual {p0}, Lcom/android/settings/ConfirmDeviceCredentialBaseFragment;->getActivity()Landroid/app/Activity;
 
-    move-result-object v4
+    move-result-object v5
 
-    invoke-virtual {v4}, Landroid/app/Activity;->getIntent()Landroid/content/Intent;
+    invoke-virtual {v5}, Landroid/app/Activity;->getIntent()Landroid/content/Intent;
 
-    move-result-object v4
+    move-result-object v5
 
-    const-string/jumbo v5, "com.android.settings.ConfirmCredentials.allowFpAuthentication"
+    const-string/jumbo v6, "com.android.settings.ConfirmCredentials.allowFpAuthentication"
 
-    invoke-virtual {v4, v5, v3}, Landroid/content/Intent;->getBooleanExtra(Ljava/lang/String;Z)Z
+    invoke-virtual {v5, v6, v4}, Landroid/content/Intent;->getBooleanExtra(Ljava/lang/String;Z)Z
 
-    move-result v4
+    move-result v5
 
-    iput-boolean v4, p0, Lcom/android/settings/ConfirmDeviceCredentialBaseFragment;->mAllowFpAuthentication:Z
-
-    invoke-virtual {p0}, Lcom/android/settings/ConfirmDeviceCredentialBaseFragment;->getActivity()Landroid/app/Activity;
-
-    move-result-object v4
-
-    invoke-virtual {v4}, Landroid/app/Activity;->getIntent()Landroid/content/Intent;
-
-    move-result-object v4
-
-    const-string/jumbo v5, "return_credentials"
-
-    invoke-virtual {v4, v5, v3}, Landroid/content/Intent;->getBooleanExtra(Ljava/lang/String;Z)Z
-
-    move-result v4
-
-    iput-boolean v4, p0, Lcom/android/settings/ConfirmDeviceCredentialBaseFragment;->mReturnCredentials:Z
+    iput-boolean v5, p0, Lcom/android/settings/ConfirmDeviceCredentialBaseFragment;->mAllowFpAuthentication:Z
 
     invoke-virtual {p0}, Lcom/android/settings/ConfirmDeviceCredentialBaseFragment;->getActivity()Landroid/app/Activity;
 
-    move-result-object v4
+    move-result-object v5
 
-    invoke-virtual {v4}, Landroid/app/Activity;->getIntent()Landroid/content/Intent;
+    invoke-virtual {v5}, Landroid/app/Activity;->getIntent()Landroid/content/Intent;
+
+    move-result-object v5
+
+    const-string/jumbo v6, "com.android.settings.ConfirmCredentials.allowIrisAuthentication"
+
+    invoke-virtual {v5, v6, v4}, Landroid/content/Intent;->getBooleanExtra(Ljava/lang/String;Z)Z
+
+    move-result v5
+
+    iput-boolean v5, p0, Lcom/android/settings/ConfirmDeviceCredentialBaseFragment;->mAllowIrisAuthentication:Z
+
+    invoke-virtual {p0}, Lcom/android/settings/ConfirmDeviceCredentialBaseFragment;->getActivity()Landroid/app/Activity;
+
+    move-result-object v5
+
+    invoke-virtual {v5}, Landroid/app/Activity;->getIntent()Landroid/content/Intent;
+
+    move-result-object v5
+
+    const-string/jumbo v6, "return_credentials"
+
+    invoke-virtual {v5, v6, v4}, Landroid/content/Intent;->getBooleanExtra(Ljava/lang/String;Z)Z
+
+    move-result v5
+
+    iput-boolean v5, p0, Lcom/android/settings/ConfirmDeviceCredentialBaseFragment;->mReturnCredentials:Z
+
+    invoke-virtual {p0}, Lcom/android/settings/ConfirmDeviceCredentialBaseFragment;->getActivity()Landroid/app/Activity;
+
+    move-result-object v5
+
+    invoke-virtual {v5}, Landroid/app/Activity;->getIntent()Landroid/content/Intent;
 
     move-result-object v0
 
     invoke-virtual {p0}, Lcom/android/settings/ConfirmDeviceCredentialBaseFragment;->getActivity()Landroid/app/Activity;
 
-    move-result-object v4
+    move-result-object v5
 
     invoke-virtual {v0}, Landroid/content/Intent;->getExtras()Landroid/os/Bundle;
 
-    move-result-object v5
+    move-result-object v6
 
-    invoke-static {v4, v5}, Lcom/android/settings/Utils;->getUserIdFromBundle(Landroid/content/Context;Landroid/os/Bundle;)I
+    invoke-static {v5, v6}, Lcom/android/settings/Utils;->getUserIdFromBundle(Landroid/content/Context;Landroid/os/Bundle;)I
 
-    move-result v4
+    move-result v5
 
-    iput v4, p0, Lcom/android/settings/ConfirmDeviceCredentialBaseFragment;->mUserId:I
-
-    invoke-virtual {p0}, Lcom/android/settings/ConfirmDeviceCredentialBaseFragment;->getActivity()Landroid/app/Activity;
-
-    move-result-object v4
-
-    invoke-static {v4}, Landroid/os/UserManager;->get(Landroid/content/Context;)Landroid/os/UserManager;
-
-    move-result-object v2
-
-    iget v4, p0, Lcom/android/settings/ConfirmDeviceCredentialBaseFragment;->mUserId:I
-
-    invoke-virtual {v2, v4}, Landroid/os/UserManager;->getCredentialOwnerProfile(I)I
-
-    move-result v4
-
-    iput v4, p0, Lcom/android/settings/ConfirmDeviceCredentialBaseFragment;->mEffectiveUserId:I
-
-    new-instance v4, Lcom/android/internal/widget/LockPatternUtils;
+    iput v5, p0, Lcom/android/settings/ConfirmDeviceCredentialBaseFragment;->mUserId:I
 
     invoke-virtual {p0}, Lcom/android/settings/ConfirmDeviceCredentialBaseFragment;->getActivity()Landroid/app/Activity;
 
     move-result-object v5
 
-    invoke-direct {v4, v5}, Lcom/android/internal/widget/LockPatternUtils;-><init>(Landroid/content/Context;)V
+    invoke-static {v5}, Landroid/os/UserManager;->get(Landroid/content/Context;)Landroid/os/UserManager;
 
-    iput-object v4, p0, Lcom/android/settings/ConfirmDeviceCredentialBaseFragment;->mLockPatternUtils:Lcom/android/internal/widget/LockPatternUtils;
-
-    invoke-direct {p0}, Lcom/android/settings/ConfirmDeviceCredentialBaseFragment;->isFingerprintDisallowedByStrongAuth()Z
-
-    move-result v4
-
-    iput-boolean v4, p0, Lcom/android/settings/ConfirmDeviceCredentialBaseFragment;->mIsStrongAuthRequired:Z
-
-    iget-object v4, p0, Lcom/android/settings/ConfirmDeviceCredentialBaseFragment;->mLockPatternUtils:Lcom/android/internal/widget/LockPatternUtils;
+    move-result-object v3
 
     iget v5, p0, Lcom/android/settings/ConfirmDeviceCredentialBaseFragment;->mUserId:I
 
-    const/4 v6, 0x1
+    invoke-virtual {v3, v5}, Landroid/os/UserManager;->getCredentialOwnerProfile(I)I
 
-    invoke-virtual {v4, v6, v5}, Lcom/android/internal/widget/LockPatternUtils;->getBiometricLockscreen(II)I
+    move-result v5
 
-    move-result v4
+    iput v5, p0, Lcom/android/settings/ConfirmDeviceCredentialBaseFragment;->mEffectiveUserId:I
 
-    if-eqz v4, :cond_2
+    new-instance v5, Lcom/android/internal/widget/LockPatternUtils;
+
+    invoke-virtual {p0}, Lcom/android/settings/ConfirmDeviceCredentialBaseFragment;->getActivity()Landroid/app/Activity;
+
+    move-result-object v6
+
+    invoke-direct {v5, v6}, Lcom/android/internal/widget/LockPatternUtils;-><init>(Landroid/content/Context;)V
+
+    iput-object v5, p0, Lcom/android/settings/ConfirmDeviceCredentialBaseFragment;->mLockPatternUtils:Lcom/android/internal/widget/LockPatternUtils;
+
+    invoke-virtual {p0}, Lcom/android/settings/ConfirmDeviceCredentialBaseFragment;->getContext()Landroid/content/Context;
+
+    move-result-object v5
+
+    invoke-static {v5}, Lcom/samsung/android/camera/iris/SemIrisManager;->getSemIrisManager(Landroid/content/Context;)Lcom/samsung/android/camera/iris/SemIrisManager;
+
+    move-result-object v5
+
+    iput-object v5, p0, Lcom/android/settings/ConfirmDeviceCredentialBaseFragment;->mIrisManager:Lcom/samsung/android/camera/iris/SemIrisManager;
+
+    invoke-direct {p0}, Lcom/android/settings/ConfirmDeviceCredentialBaseFragment;->isFingerprintDisallowedByStrongAuth()Z
+
+    move-result v5
+
+    iput-boolean v5, p0, Lcom/android/settings/ConfirmDeviceCredentialBaseFragment;->mIsStrongAuthRequired:Z
+
+    iget-object v5, p0, Lcom/android/settings/ConfirmDeviceCredentialBaseFragment;->mLockPatternUtils:Lcom/android/internal/widget/LockPatternUtils;
+
+    iget v6, p0, Lcom/android/settings/ConfirmDeviceCredentialBaseFragment;->mUserId:I
+
+    invoke-virtual {v5, v8, v6}, Lcom/android/internal/widget/LockPatternUtils;->getBiometricLockscreen(II)I
+
+    move-result v5
+
+    if-eqz v5, :cond_5
 
     const/4 v1, 0x1
 
     :goto_0
-    iget-boolean v4, p0, Lcom/android/settings/ConfirmDeviceCredentialBaseFragment;->mAllowFpAuthentication:Z
+    iget-object v5, p0, Lcom/android/settings/ConfirmDeviceCredentialBaseFragment;->mLockPatternUtils:Lcom/android/internal/widget/LockPatternUtils;
 
-    if-eqz v4, :cond_0
+    iget v6, p0, Lcom/android/settings/ConfirmDeviceCredentialBaseFragment;->mUserId:I
+
+    const/16 v7, 0x10
+
+    invoke-virtual {v5, v7, v6}, Lcom/android/internal/widget/LockPatternUtils;->getBiometricLockscreen(II)I
+
+    move-result v5
+
+    if-eqz v5, :cond_6
+
+    const/4 v2, 0x1
+
+    :goto_1
+    iget-boolean v5, p0, Lcom/android/settings/ConfirmDeviceCredentialBaseFragment;->mAllowFpAuthentication:Z
+
+    if-eqz v5, :cond_0
 
     invoke-direct {p0}, Lcom/android/settings/ConfirmDeviceCredentialBaseFragment;->isFingerprintDisabledByAdmin()Z
 
-    move-result v4
+    move-result v5
 
-    if-eqz v4, :cond_3
+    if-eqz v5, :cond_7
 
     :cond_0
-    :goto_1
-    move v1, v3
+    :goto_2
+    move v1, v4
 
     :cond_1
     iput-boolean v1, p0, Lcom/android/settings/ConfirmDeviceCredentialBaseFragment;->mAllowFpAuthentication:Z
 
-    return-void
+    iget-boolean v5, p0, Lcom/android/settings/ConfirmDeviceCredentialBaseFragment;->mAllowIrisAuthentication:Z
+
+    if-eqz v5, :cond_2
+
+    invoke-virtual {p0}, Lcom/android/settings/ConfirmDeviceCredentialBaseFragment;->getActivity()Landroid/app/Activity;
+
+    move-result-object v5
+
+    iget v6, p0, Lcom/android/settings/ConfirmDeviceCredentialBaseFragment;->mUserId:I
+
+    invoke-static {v5, v6}, Lcom/android/settings/Utils;->isIrisDisabled(Landroid/content/Context;I)Z
+
+    move-result v5
+
+    if-eqz v5, :cond_8
 
     :cond_2
+    :goto_3
+    move v2, v4
+
+    :cond_3
+    iput-boolean v2, p0, Lcom/android/settings/ConfirmDeviceCredentialBaseFragment;->mAllowIrisAuthentication:Z
+
+    iget-boolean v4, p0, Lcom/android/settings/ConfirmDeviceCredentialBaseFragment;->mAllowIrisAuthentication:Z
+
+    if-eqz v4, :cond_4
+
+    invoke-virtual {p0}, Lcom/android/settings/ConfirmDeviceCredentialBaseFragment;->getActivity()Landroid/app/Activity;
+
+    move-result-object v4
+
+    invoke-virtual {v4, v8}, Landroid/app/Activity;->setRequestedOrientation(I)V
+
+    :cond_4
+    return-void
+
+    :cond_5
     const/4 v1, 0x0
 
     goto :goto_0
 
-    :cond_3
-    iget-boolean v4, p0, Lcom/android/settings/ConfirmDeviceCredentialBaseFragment;->mReturnCredentials:Z
-
-    if-nez v4, :cond_0
-
-    iget-boolean v4, p0, Lcom/android/settings/ConfirmDeviceCredentialBaseFragment;->mIsStrongAuthRequired:Z
-
-    if-eqz v4, :cond_1
+    :cond_6
+    const/4 v2, 0x0
 
     goto :goto_1
+
+    :cond_7
+    iget-boolean v5, p0, Lcom/android/settings/ConfirmDeviceCredentialBaseFragment;->mReturnCredentials:Z
+
+    if-nez v5, :cond_0
+
+    iget-boolean v5, p0, Lcom/android/settings/ConfirmDeviceCredentialBaseFragment;->mIsStrongAuthRequired:Z
+
+    if-eqz v5, :cond_1
+
+    goto :goto_2
+
+    :cond_8
+    iget-boolean v5, p0, Lcom/android/settings/ConfirmDeviceCredentialBaseFragment;->mReturnCredentials:Z
+
+    if-eqz v5, :cond_3
+
+    goto :goto_3
 .end method
 
 .method public onFingerprintIconVisibilityChanged(Z)V
+    .locals 0
+
+    return-void
+.end method
+
+.method public onIrisVisibilityChanged(Z)V
     .locals 0
 
     return-void
@@ -623,6 +733,23 @@
     invoke-virtual {v0}, Lcom/android/settings/fingerprint/FingerprintUiHelper;->stopListening()V
 
     :cond_0
+    iget-object v0, p0, Lcom/android/settings/ConfirmDeviceCredentialBaseFragment;->mIrisHelper:Lcom/samsung/android/settings/iris/IrisUiHelper;
+
+    if-eqz v0, :cond_1
+
+    iget-object v0, p0, Lcom/android/settings/ConfirmDeviceCredentialBaseFragment;->mIrisHelper:Lcom/samsung/android/settings/iris/IrisUiHelper;
+
+    invoke-virtual {v0}, Lcom/samsung/android/settings/iris/IrisUiHelper;->isListening()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_1
+
+    iget-object v0, p0, Lcom/android/settings/ConfirmDeviceCredentialBaseFragment;->mIrisHelper:Lcom/samsung/android/settings/iris/IrisUiHelper;
+
+    invoke-virtual {v0}, Lcom/samsung/android/settings/iris/IrisUiHelper;->stopListening()V
+
+    :cond_1
     iget-object v0, p0, Lcom/android/settings/ConfirmDeviceCredentialBaseFragment;->mHandler:Landroid/os/Handler;
 
     const/4 v1, 0x0
@@ -649,47 +776,102 @@
 .end method
 
 .method public onViewCreated(Landroid/view/View;Landroid/os/Bundle;)V
-    .locals 5
+    .locals 7
 
     invoke-super {p0, p1, p2}, Lcom/android/settings/OptionsMenuFragment;->onViewCreated(Landroid/view/View;Landroid/os/Bundle;)V
 
-    const v1, 0x7f1101fd
+    const v0, 0x7f1101f9
 
-    invoke-virtual {p1, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
+    invoke-virtual {p1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
+
+    move-result-object v0
+
+    check-cast v0, Landroid/widget/LinearLayout;
+
+    iput-object v0, p0, Lcom/android/settings/ConfirmDeviceCredentialBaseFragment;->mIrisPreviewLayout:Landroid/widget/LinearLayout;
+
+    const v0, 0x7f1101fa
+
+    invoke-virtual {p1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
+
+    move-result-object v0
+
+    check-cast v0, Landroid/widget/TextView;
+
+    iput-object v0, p0, Lcom/android/settings/ConfirmDeviceCredentialBaseFragment;->mIrisPreview:Landroid/widget/TextView;
+
+    const v0, 0x7f1101ff
+
+    invoke-virtual {p1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
+
+    move-result-object v0
+
+    check-cast v0, Landroid/widget/Button;
+
+    iput-object v0, p0, Lcom/android/settings/ConfirmDeviceCredentialBaseFragment;->mCancelButton:Landroid/widget/Button;
+
+    const v0, 0x7f110201
+
+    invoke-virtual {p1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
+
+    move-result-object v0
+
+    check-cast v0, Landroid/widget/ImageView;
+
+    iput-object v0, p0, Lcom/android/settings/ConfirmDeviceCredentialBaseFragment;->mFingerprintIcon:Landroid/widget/ImageView;
+
+    new-instance v1, Lcom/android/settings/fingerprint/FingerprintUiHelper;
+
+    iget-object v2, p0, Lcom/android/settings/ConfirmDeviceCredentialBaseFragment;->mFingerprintIcon:Landroid/widget/ImageView;
+
+    const v0, 0x7f110200
+
+    invoke-virtual {p1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
+
+    move-result-object v0
+
+    check-cast v0, Landroid/widget/TextView;
+
+    iget v3, p0, Lcom/android/settings/ConfirmDeviceCredentialBaseFragment;->mEffectiveUserId:I
+
+    invoke-direct {v1, v2, v0, p0, v3}, Lcom/android/settings/fingerprint/FingerprintUiHelper;-><init>(Landroid/widget/ImageView;Landroid/widget/TextView;Lcom/android/settings/fingerprint/FingerprintUiHelper$Callback;I)V
+
+    iput-object v1, p0, Lcom/android/settings/ConfirmDeviceCredentialBaseFragment;->mFingerprintHelper:Lcom/android/settings/fingerprint/FingerprintUiHelper;
+
+    iget-object v0, p0, Lcom/android/settings/ConfirmDeviceCredentialBaseFragment;->mIrisPreview:Landroid/widget/TextView;
+
+    if-eqz v0, :cond_0
+
+    new-instance v0, Lcom/samsung/android/settings/iris/IrisUiHelper;
+
+    invoke-virtual {p0}, Lcom/android/settings/ConfirmDeviceCredentialBaseFragment;->getActivity()Landroid/app/Activity;
 
     move-result-object v1
 
-    check-cast v1, Landroid/widget/Button;
+    iget-object v2, p0, Lcom/android/settings/ConfirmDeviceCredentialBaseFragment;->mIrisPreviewLayout:Landroid/widget/LinearLayout;
 
-    iput-object v1, p0, Lcom/android/settings/ConfirmDeviceCredentialBaseFragment;->mCancelButton:Landroid/widget/Button;
+    iget-object v3, p0, Lcom/android/settings/ConfirmDeviceCredentialBaseFragment;->mIrisPreview:Landroid/widget/TextView;
 
-    const v1, 0x7f1101ff
+    iget v5, p0, Lcom/android/settings/ConfirmDeviceCredentialBaseFragment;->mEffectiveUserId:I
 
-    invoke-virtual {p1, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
+    move-object v4, p0
 
-    move-result-object v1
+    invoke-direct/range {v0 .. v5}, Lcom/samsung/android/settings/iris/IrisUiHelper;-><init>(Landroid/content/Context;Landroid/widget/LinearLayout;Landroid/widget/TextView;Lcom/samsung/android/settings/iris/IrisUiHelper$Callback;I)V
 
-    check-cast v1, Landroid/widget/ImageView;
+    iput-object v0, p0, Lcom/android/settings/ConfirmDeviceCredentialBaseFragment;->mIrisHelper:Lcom/samsung/android/settings/iris/IrisUiHelper;
 
-    iput-object v1, p0, Lcom/android/settings/ConfirmDeviceCredentialBaseFragment;->mFingerprintIcon:Landroid/widget/ImageView;
+    iget-object v0, p0, Lcom/android/settings/ConfirmDeviceCredentialBaseFragment;->mIrisPreviewLayout:Landroid/widget/LinearLayout;
 
-    new-instance v2, Lcom/android/settings/fingerprint/FingerprintUiHelper;
+    new-instance v1, Lcom/android/settings/ConfirmDeviceCredentialBaseFragment$2;
 
-    iget-object v3, p0, Lcom/android/settings/ConfirmDeviceCredentialBaseFragment;->mFingerprintIcon:Landroid/widget/ImageView;
+    invoke-direct {v1, p0}, Lcom/android/settings/ConfirmDeviceCredentialBaseFragment$2;-><init>(Lcom/android/settings/ConfirmDeviceCredentialBaseFragment;)V
 
-    const v1, 0x7f1101fe
+    invoke-virtual {v0, v1}, Landroid/widget/LinearLayout;->setOnTouchListener(Landroid/view/View$OnTouchListener;)V
 
-    invoke-virtual {p1, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
+    :cond_0
+    invoke-virtual {p0}, Lcom/android/settings/ConfirmDeviceCredentialBaseFragment;->getActivity()Landroid/app/Activity;
 
-    move-result-object v1
-
-    check-cast v1, Landroid/widget/TextView;
-
-    iget v4, p0, Lcom/android/settings/ConfirmDeviceCredentialBaseFragment;->mEffectiveUserId:I
-
-    invoke-direct {v2, v3, v1, p0, v4}, Lcom/android/settings/fingerprint/FingerprintUiHelper;-><init>(Landroid/widget/ImageView;Landroid/widget/TextView;Lcom/android/settings/fingerprint/FingerprintUiHelper$Callback;I)V
-
-    iput-object v2, p0, Lcom/android/settings/ConfirmDeviceCredentialBaseFragment;->mFingerprintHelper:Lcom/android/settings/fingerprint/FingerprintUiHelper;
+    move-result-object v0
 
     invoke-virtual {p0}, Lcom/android/settings/ConfirmDeviceCredentialBaseFragment;->getActivity()Landroid/app/Activity;
 
@@ -699,49 +881,45 @@
 
     move-result-object v2
 
-    invoke-virtual {p0}, Lcom/android/settings/ConfirmDeviceCredentialBaseFragment;->getActivity()Landroid/app/Activity;
+    invoke-virtual {v2}, Landroid/app/Activity;->getIntent()Landroid/content/Intent;
 
-    move-result-object v3
+    move-result-object v2
 
-    invoke-virtual {v3}, Landroid/app/Activity;->getIntent()Landroid/content/Intent;
+    invoke-virtual {v2}, Landroid/content/Intent;->getExtras()Landroid/os/Bundle;
 
-    move-result-object v3
+    move-result-object v2
 
-    invoke-virtual {v3}, Landroid/content/Intent;->getExtras()Landroid/os/Bundle;
-
-    move-result-object v3
-
-    invoke-static {v2, v3}, Lcom/android/settings/Utils;->getUserIdFromBundle(Landroid/content/Context;Landroid/os/Bundle;)I
-
-    move-result v2
-
-    invoke-static {v1, v2}, Lcom/android/settings/Utils;->getCredentialOwnerUserId(Landroid/content/Context;I)I
-
-    move-result v0
-
-    invoke-virtual {p0}, Lcom/android/settings/ConfirmDeviceCredentialBaseFragment;->getActivity()Landroid/app/Activity;
-
-    move-result-object v1
-
-    invoke-static {v1}, Landroid/os/UserManager;->get(Landroid/content/Context;)Landroid/os/UserManager;
-
-    move-result-object v1
-
-    invoke-static {v1, v0}, Lcom/android/settings/Utils;->isManagedProfile(Landroid/os/UserManager;I)Z
+    invoke-static {v1, v2}, Lcom/android/settings/Utils;->getUserIdFromBundle(Landroid/content/Context;Landroid/os/Bundle;)I
 
     move-result v1
 
-    if-eqz v1, :cond_0
+    invoke-static {v0, v1}, Lcom/android/settings/Utils;->getCredentialOwnerUserId(Landroid/content/Context;I)I
 
-    const/16 v1, 0x64
+    move-result v6
 
-    if-ge v0, v1, :cond_0
+    invoke-virtual {p0}, Lcom/android/settings/ConfirmDeviceCredentialBaseFragment;->getActivity()Landroid/app/Activity;
 
-    invoke-direct {p0, p1, v0}, Lcom/android/settings/ConfirmDeviceCredentialBaseFragment;->setWorkChallengeBackground(Landroid/view/View;I)V
+    move-result-object v0
+
+    invoke-static {v0}, Landroid/os/UserManager;->get(Landroid/content/Context;)Landroid/os/UserManager;
+
+    move-result-object v0
+
+    invoke-static {v0, v6}, Lcom/android/settings/Utils;->isManagedProfile(Landroid/os/UserManager;I)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_1
+
+    const/16 v0, 0x64
+
+    if-ge v6, v0, :cond_1
+
+    invoke-direct {p0, p1, v6}, Lcom/android/settings/ConfirmDeviceCredentialBaseFragment;->setWorkChallengeBackground(Landroid/view/View;I)V
 
     invoke-virtual {p0}, Lcom/android/settings/ConfirmDeviceCredentialBaseFragment;->applyWorkProfileStyle()V
 
-    :cond_0
+    :cond_1
     return-void
 .end method
 
@@ -751,12 +929,43 @@
     return-void
 .end method
 
+.method protected refreshIrisAuthentication()V
+    .locals 1
+
+    iget-object v0, p0, Lcom/android/settings/ConfirmDeviceCredentialBaseFragment;->mIrisHelper:Lcom/samsung/android/settings/iris/IrisUiHelper;
+
+    if-eqz v0, :cond_0
+
+    iget-object v0, p0, Lcom/android/settings/ConfirmDeviceCredentialBaseFragment;->mIrisHelper:Lcom/samsung/android/settings/iris/IrisUiHelper;
+
+    invoke-virtual {v0}, Lcom/samsung/android/settings/iris/IrisUiHelper;->isListening()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_1
+
+    iget-object v0, p0, Lcom/android/settings/ConfirmDeviceCredentialBaseFragment;->mIrisHelper:Lcom/samsung/android/settings/iris/IrisUiHelper;
+
+    invoke-virtual {v0}, Lcom/samsung/android/settings/iris/IrisUiHelper;->stopListening()V
+
+    :cond_0
+    :goto_0
+    return-void
+
+    :cond_1
+    iget-object v0, p0, Lcom/android/settings/ConfirmDeviceCredentialBaseFragment;->mIrisHelper:Lcom/samsung/android/settings/iris/IrisUiHelper;
+
+    invoke-virtual {v0}, Lcom/samsung/android/settings/iris/IrisUiHelper;->startListening()V
+
+    goto :goto_0
+.end method
+
 .method protected refreshLockScreen()V
     .locals 2
 
     iget-boolean v0, p0, Lcom/android/settings/ConfirmDeviceCredentialBaseFragment;->mAllowFpAuthentication:Z
 
-    if-eqz v0, :cond_2
+    if-eqz v0, :cond_3
 
     iget-object v0, p0, Lcom/android/settings/ConfirmDeviceCredentialBaseFragment;->mFingerprintHelper:Lcom/android/settings/fingerprint/FingerprintUiHelper;
 
@@ -764,11 +973,25 @@
 
     :cond_0
     :goto_0
+    iget-object v0, p0, Lcom/android/settings/ConfirmDeviceCredentialBaseFragment;->mIrisHelper:Lcom/samsung/android/settings/iris/IrisUiHelper;
+
+    if-eqz v0, :cond_1
+
+    iget-boolean v0, p0, Lcom/android/settings/ConfirmDeviceCredentialBaseFragment;->mAllowIrisAuthentication:Z
+
+    if-eqz v0, :cond_4
+
+    iget-object v0, p0, Lcom/android/settings/ConfirmDeviceCredentialBaseFragment;->mIrisHelper:Lcom/samsung/android/settings/iris/IrisUiHelper;
+
+    invoke-virtual {v0}, Lcom/samsung/android/settings/iris/IrisUiHelper;->startListening()V
+
+    :cond_1
+    :goto_1
     invoke-virtual {p0}, Lcom/android/settings/ConfirmDeviceCredentialBaseFragment;->isProfileChallenge()Z
 
     move-result v0
 
-    if-eqz v0, :cond_1
+    if-eqz v0, :cond_2
 
     iget-object v0, p0, Lcom/android/settings/ConfirmDeviceCredentialBaseFragment;->mLockPatternUtils:Lcom/android/internal/widget/LockPatternUtils;
 
@@ -780,10 +1003,10 @@
 
     invoke-virtual {p0, v0}, Lcom/android/settings/ConfirmDeviceCredentialBaseFragment;->updateErrorMessage(I)V
 
-    :cond_1
+    :cond_2
     return-void
 
-    :cond_2
+    :cond_3
     iget-object v0, p0, Lcom/android/settings/ConfirmDeviceCredentialBaseFragment;->mFingerprintHelper:Lcom/android/settings/fingerprint/FingerprintUiHelper;
 
     invoke-virtual {v0}, Lcom/android/settings/fingerprint/FingerprintUiHelper;->isListening()Z
@@ -797,6 +1020,21 @@
     invoke-virtual {v0}, Lcom/android/settings/fingerprint/FingerprintUiHelper;->stopListening()V
 
     goto :goto_0
+
+    :cond_4
+    iget-object v0, p0, Lcom/android/settings/ConfirmDeviceCredentialBaseFragment;->mIrisHelper:Lcom/samsung/android/settings/iris/IrisUiHelper;
+
+    invoke-virtual {v0}, Lcom/samsung/android/settings/iris/IrisUiHelper;->isListening()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_1
+
+    iget-object v0, p0, Lcom/android/settings/ConfirmDeviceCredentialBaseFragment;->mIrisHelper:Lcom/samsung/android/settings/iris/IrisUiHelper;
+
+    invoke-virtual {v0}, Lcom/samsung/android/settings/iris/IrisUiHelper;->stopListening()V
+
+    goto :goto_1
 .end method
 
 .method protected reportFailedAttempt()V
@@ -1032,7 +1270,7 @@
 
     move-result-object v4
 
-    const v5, 0x7f0b1491
+    const v5, 0x7f0b14a2
 
     invoke-virtual {v4, v5}, Landroid/app/Activity;->getString(I)Ljava/lang/String;
 
@@ -1080,7 +1318,7 @@
 
     aput-object v6, v5, v8
 
-    const v6, 0x7f0b1490
+    const v6, 0x7f0b14a1
 
     invoke-virtual {v4, v6, v5}, Landroid/app/Activity;->getString(I[Ljava/lang/Object;)Ljava/lang/String;
 
@@ -1100,13 +1338,13 @@
 
     move-result-object v4
 
-    const v5, 0x7f0b1495
+    const v5, 0x7f0b14a6
 
     invoke-virtual {v4, v5}, Landroid/app/Activity;->getString(I)Ljava/lang/String;
 
     move-result-object v1
 
-    const v4, 0x7f0b1496
+    const v4, 0x7f0b14a7
 
     invoke-direct {p0, v6, v1, v4, v8}, Lcom/android/settings/ConfirmDeviceCredentialBaseFragment;->showDialog(Ljava/lang/String;Ljava/lang/String;IZ)V
 

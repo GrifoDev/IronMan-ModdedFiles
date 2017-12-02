@@ -93,7 +93,7 @@
 
     move-result-object v5
 
-    const v6, 0x7f110525
+    const v6, 0x7f110527
 
     invoke-virtual {v5, v6}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -147,7 +147,7 @@
 
     move-result-object v5
 
-    const v6, 0x7f110526
+    const v6, 0x7f110528
 
     invoke-virtual {v5, v6}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 

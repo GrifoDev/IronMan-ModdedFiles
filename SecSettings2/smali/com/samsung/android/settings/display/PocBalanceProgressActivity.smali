@@ -393,7 +393,7 @@
 
     const/4 v8, 0x0
 
-    const v4, 0x7f110616
+    const v4, 0x7f110618
 
     invoke-virtual {p0, v4}, Lcom/samsung/android/settings/display/PocBalanceProgressActivity;->findViewById(I)Landroid/view/View;
 
@@ -418,7 +418,7 @@
     iput-boolean v8, p0, Lcom/samsung/android/settings/display/PocBalanceProgressActivity;->bIsForceWatingForShortModel:Z
 
     :goto_0
-    const v4, 0x7f0b0665
+    const v4, 0x7f0b0666
 
     invoke-virtual {p0, v4}, Lcom/samsung/android/settings/display/PocBalanceProgressActivity;->getString(I)Ljava/lang/String;
 
@@ -597,7 +597,7 @@
 
     move-result-object v3
 
-    const v4, 0x7f0b066b
+    const v4, 0x7f0b066c
 
     invoke-virtual {p0, v4}, Lcom/samsung/android/settings/display/PocBalanceProgressActivity;->getString(I)Ljava/lang/String;
 
@@ -607,7 +607,7 @@
 
     move-result-object v3
 
-    const v4, 0x7f0b066c
+    const v4, 0x7f0b066d
 
     invoke-virtual {p0, v4}, Lcom/samsung/android/settings/display/PocBalanceProgressActivity;->getString(I)Ljava/lang/String;
 
@@ -621,7 +621,7 @@
 
     move-result-object v3
 
-    const v4, 0x7f0b0539
+    const v4, 0x7f0b053a
 
     invoke-virtual {p0, v4}, Lcom/samsung/android/settings/display/PocBalanceProgressActivity;->getString(I)Ljava/lang/String;
 
@@ -714,13 +714,13 @@
 
     move-result-object v3
 
-    const v4, 0x7f0b0671
+    const v4, 0x7f0b0672
 
     invoke-virtual {v3, v4}, Landroid/app/AlertDialog$Builder;->setTitle(I)Landroid/app/AlertDialog$Builder;
 
     move-result-object v3
 
-    const v4, 0x7f0b0670
+    const v4, 0x7f0b0671
 
     invoke-virtual {p0, v4}, Lcom/samsung/android/settings/display/PocBalanceProgressActivity;->getString(I)Ljava/lang/String;
 
@@ -730,7 +730,7 @@
 
     move-result-object v3
 
-    const v4, 0x7f0b0511
+    const v4, 0x7f0b0512
 
     invoke-virtual {p0, v4}, Lcom/samsung/android/settings/display/PocBalanceProgressActivity;->getString(I)Ljava/lang/String;
 
@@ -1383,7 +1383,7 @@
 
     invoke-virtual {v0, v2}, Landroid/view/View;->setSystemUiVisibility(I)V
 
-    const v3, 0x7f0401ee
+    const v3, 0x7f0401f1
 
     invoke-virtual {p0, v3}, Lcom/samsung/android/settings/display/PocBalanceProgressActivity;->setContentView(I)V
 
@@ -1429,7 +1429,7 @@
 
     iput-object v3, p0, Lcom/samsung/android/settings/display/PocBalanceProgressActivity;->mProgressBar:Landroid/widget/ProgressBar;
 
-    const v3, 0x7f110618
+    const v3, 0x7f11061a
 
     invoke-virtual {p0, v3}, Lcom/samsung/android/settings/display/PocBalanceProgressActivity;->findViewById(I)Landroid/view/View;
 

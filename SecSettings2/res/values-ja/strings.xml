@@ -170,6 +170,8 @@
     <string name="wifi_allow_scan_with_traffic_summary">データの使用量に基づいて、Wi-Fiローミングスキャンを自動的に許可または拒否します。</string>
     <string name="select_logd_size_title">ログのバッファサイズ</string>
     <string name="select_logd_size_dialog_title">各ログバッファの最大サイズを選択</string>
+    <string name="dev_logpersist_clear_warning_title">常時ロガーストレージを消去しますか？</string>
+    <string name="dev_logpersist_clear_warning_message">常時ロガーをOFFにすると、ロガーデータは削除されます。</string>
     <string name="select_logpersist_title">ログデータを常に保存</string>
     <string name="select_logpersist_dialog_title">常に保存するログバッファを選択</string>
     <string name="select_usb_configuration_title">USB設定</string>
@@ -982,6 +984,7 @@ Wi-FiとBluetoothもOFFになりますが、設定またはクイック設定パ
     <string name="bluetooth_avc_available_description">接続されたBluetoothデバイスは[メディア音量の同期]に対応しているため、Bluetoothデバイスで設定された音量レベルを端末と同期します。</string>
     <string name="bluetooth_enter_pin_msg">%sとペアリングするためのPIN(0000または1234)を入力してください。</string>
     <string name="bluetooth_pin_maximum_number_message">最大文字数に達しました。</string>
+    <string name="bluetooth_frp_permission_message">この通話でBluetoothデバイスを使用することはできません。</string>
     <string name="settings_menu_done">完了</string>
     <string name="usb_tethering_unavailable_subtext_tmo">USB未接続</string>
     <string name="usb_tethering_available_subtext_tmo">USB接続中、テザリング可能</string>
@@ -1072,7 +1075,7 @@ Wi-FiとBluetoothもOFFになりますが、設定またはクイック設定パ
     <string name="finger_sensor_gesture_title">指紋センサーのジェスチャー</string>
     <string name="finger_sensor_gesture_summary">指紋センサーでアプリや機能を起動または終了します。</string>
     <string name="finger_sensor_gesture_summary_noapp">指紋センサーで通知パネルを開閉します。</string>
-    <string name="finger_sensor_gesture_description">指紋センサーを上下にスワイプすると、通知パネルを開閉できます。(センサーが指紋を検出している場合、この機能は一時停止されます。)</string>
+    <string name="finger_sensor_gesture_description">指紋センサーを上下にスワイプすると、通知パネルを開閉できます。(センサーが指紋を検出しているとき、この機能は一時停止されます。)</string>
     <string name="open_samsung_pay_title">Samsung Payを起動</string>
     <string name="open_samsung_pay_summary">ホーム画面からSamsung Payを起動するには、指紋センサーで上にスワイプします。</string>
     <string name="common_edit">編集</string>
@@ -1481,7 +1484,7 @@ Samsungは本プライバシー規約の本文に記載されているとおり�
     <string name="navigationbar_pressure_sensitivity_title">ホームボタンの押し込み</string>
     <string name="navigationbar_pressure_sensitivity_summary">ホームボタンが表示されていないときでも、ホームボタンを強く押し込むことで使用できるようになります。</string>
     <string name="navigationbar_pressure_sensitivity_level_summary">圧力レベル: %1$d/%2$d</string>
-    <string name="navigationbar_pressure_sensitivity_description_off">ホームボタンが表示されていないときでも、ホームボタンを強く押し込むことで使用できるようになります。</string>
+    <string name="navigationbar_pressure_sensitivity_description_off">ホームボタンの押し込みに必要な圧力を調整します。</string>
     <string name="navigationbar_pressure_low">より軽い</string>
     <string name="navigationbar_pressure_high">より強い</string>
     <string name="navigationbar_hide_bar">表示/非表示ボタン</string>
@@ -1651,7 +1654,7 @@ Samsungは本プライバシー規約の本文に記載されているとおり�
     <string name="sdcard_decrypt_title_summary">外部SDカードは暗号化済み</string>
     <string name="sdcard_no_title_summary">外部SDカードが未挿入</string>
     <string name="sdcard_restrict_title_summary">セキュリティポリシーにより制限</string>
-    <string name="sdcard_encrypt_description">"外部SDカードを暗号化することができます。暗号化されたSDカードは、暗号化に使用した端末でのみ読み取ることができます。暗号化処理を開始するには、[外部SDカードを暗号化]をタップしてください。
+    <string name="sdcard_encrypt_description">"外部SDカードを暗号化することができます。暗号化された外部SDカードは、暗号化に使用した端末でのみ読み取ることができます。暗号化処理を開始するには、[外部SDカードを暗号化]をタップしてください。
 
 暗号化には1時間以上かかる可能性があります。開始する前に、バッテリーが十分に充電された状態であることを確認し、暗号化が完了するまで端末の充電を継続してください。暗号化処理中は、外部SDカードを使用できません。端末を工場出荷時の状態にリセットすると、暗号化された外部SDカードの読み取りはできなくなります。"</string>
     <string name="sdcard_decrypt_description">"復号処理を開始するには、[外部SDカードを復号]をタップしてください。外部SDカードは、暗号化に使用した端末でのみ復号できます。
@@ -1669,7 +1672,7 @@ Samsungは本プライバシー規約の本文に記載されているとおり�
     <string name="sdcard_enc_dec_select">"この外部SDカードを暗号化または復号することができます。暗号化された外部SDカードは、暗号化に使用した端末でのみ読み取りおよび復号することができます。
 
 データ量によっては、暗号化または復号に時間がかかる可能性があります。開始する前に、バッテリーが十分に充電された状態であることを確認し、暗号化または復号が完了するまで端末の充電を継続してください。暗号化または復号処理中は、外部SDカードを使用できません。端末を工場出荷時の状態にリセットすると、暗号化された外部SDカードの読み取りはできなくなります。"</string>
-    <string name="sdcard_not_inserted">外部SDカードが挿入されていません。SDカードを挿入した後に再度実行してください。</string>
+    <string name="sdcard_not_inserted">外部SDカードが挿入されていません。外部SDカードを挿入した後に再度実行してください。</string>
     <string name="sdcard_policy_need_encrypt">"セキュリティポリシーにより、暗号化されていない外部SDカードの使用は制限されています。暗号化処理を開始するには、[外部SDカードを暗号化]をタップしてください。暗号化されたSDカードは、暗号化に使用した端末でのみ読み取ることができます。
 
 データ量によっては、暗号化に時間がかかる可能性があります。開始する前に、バッテリーが十分に充電された状態であることを確認し、暗号化が完了するまで端末の充電を継続してください。暗号化処理中は、外部SDカードを使用できません。端末を工場出荷時の状態にリセットすると、暗号化された外部SDカードの読み取りはできなくなります。"</string>
@@ -1704,7 +1707,11 @@ Samsungは本プライバシー規約の本文に記載されているとおり�
     <string name="crypt_keeper_confirm_title">暗号化の確認</string>
     <string name="crypt_keeper_final_desc">端末の暗号化を開始すると操作を戻すことができなくなり、途中で中断するとデータが失われます。暗号化には1時間以上かかる場合があります。暗号化の処理中は端末が数回再起動されるため、端末の使用ができなくなります。</string>
     <string name="crypt_keeper_setup_title">暗号化中…</string>
-    <string name="crypt_keeper_warn_wipe">端末の起動にあと%d回失敗すると、端末が工場出荷時の状態にリセットされ、ファイルおよびダウンロードしたアプリを含む全てのデータが削除されます。</string>
+    <string name="crypt_keeper_warn_wipe">"あと%1$d回失敗すると、端末が工場出荷時の状態にリセットされ、ファイルおよびダウンロードしたアプリを含む全てのデータが削除されます。
+
+端末をリセットすると、再度使用できるようにするためには、この端末に関連付けられた%2$s情報(Eメールアドレスとパスワード)を入力する必要がある場合があります。"</string>
+    <string name="crypt_keeper_samsung_account">Samsungアカウント</string>
+    <string name="crypt_keeper_google_account">Googleアカウント</string>
     <string name="crypt_keeper_failed_title">暗号化に失敗しました。</string>
     <string name="crypt_keeper_failed_summary">端末を起動できません。暗号化処理が中断されています。端末を工場出荷時の状態にリセットする必要があります。リセットすると、全てのデータが削除されます。</string>
     <string name="crypt_keeper_data_corrupted_title">システムメモリ(本体)が破損</string>
@@ -1723,10 +1730,13 @@ Samsungは本プライバシー規約の本文に記載されているとおり�
     <string name="cryptkeeper_wrong_pin">入力したPINが正しくありません</string>
     <string name="cryptkeeper_wrong_direction">入力したスワイプ方向が正しくありません</string>
     <string name="checking_decryption">認証中…</string>
-    <string name="crypt_keeper_last_warn_wipe">端末の起動にあと1回失敗すると、端末が工場出荷時の状態にリセットされ、ファイルおよびダウンロードしたアプリを含む全てのデータが削除されます。</string>
+    <string name="crypt_keeper_last_warn_wipe">"あと1回失敗すると、端末が工場出荷時の状態にリセットされ、ファイルおよびダウンロードしたアプリを含む全てのデータが削除されます。
+
+端末をリセットすると、再度使用できるようにするためには、この端末に関連付けられた%s情報(Eメールアドレスとパスワード)を入力する必要がある場合があります。"</string>
     <string name="crypt_keeper_failed_title_dec">復号に失敗しました。</string>
     <string name="crypt_keeper_failed_summary_dec">中断したため、復号を完了できませんでした。使用前に工場出荷状態に初期化（全データの消去）を行ってください。</string>
     <string name="crypt_keeper_set_screen_lock_type">画面ロックの種類を設定</string>
+    <string name="crypt_keeper_warning_keyboard_cover_does_not_work">端末を再起動した後、キーボードカバーは機能しなくなります。</string>
     <string name="encryption_interstitial_message">"端末を起動する際に%sの入力を要求することで、端末をより安全に保護することができます。この機能は、端末が紛失または盗難された場合に、データの保護に役立ちます。Eメール同期などの機能にアクセスするための端末の暗号化ポリシーにより、一部のアプリを使用するためには、[安全な起動]を使用している必要があります。
 
 端末を起動するまで、着信、メッセージ、通知は受信せず、アラームは鳴動しません。"</string>
@@ -1792,7 +1802,7 @@ Samsungは本プライバシー規約の本文に記載されているとおり�
     <string name="fingerprint_chooselock_help_text_2">設定したロック方法を忘れないようにしてください。端末を再起動した後、あるいは端末が24時間以上使用されなかった場合、端末のロックを解除する際に必要になります。</string>
     <string name="fingerprint_chooselock_help_text_2_tablet">設定したロック方法を忘れないようにしてください。タブレットを再起動した後、あるいはタブレットが%d時間以上使用されなかった場合、タブレットのロックを解除する際に必要になります。</string>
     <string name="fingerprint_lock_setup_title">指紋認証セキュリティを設定</string>
-    <string name="fingerprint_lock_setup_desc">端末のロック解除またはアプリのユーザー認証に指紋を使用するには、以下を設定する必要があります。</string>
+    <string name="fingerprint_lock_setup_desc">端末のロック解除またはアプリのユーザー認証に指紋認証を使用するには、以下を設定する必要があります。</string>
     <string name="fingerprint_lock_setup_desc_tablet">タブレットのロック解除または安全な認証に指紋認証を使用するには、以下を設定する必要があります。</string>
     <string name="fingerprint_lock_setup_desc_2">最低1つの指紋を登録します。</string>
     <string name="fingerprint_register_place_your_finger">指紋をスキャン</string>
@@ -1950,7 +1960,7 @@ Samsungは本プライバシー規約の本文に記載されているとおり�
     <string name="fingerscanner_dialog_confirm">確認</string>
     <string name="fingerscanner_password_prev_button">前へ</string>
     <string name="fingerscanner_password_description">指紋認証を使用できない場合、ユーザー認証にバックアップパスワードを使用することができます。</string>
-    <string name="fingerscanner_confirm_backup_password">バックアップパスワードを確認してください。</string>
+    <string name="fingerscanner_confirm_backup_password">確認のため、バックアップパスワードを再度入力してください。</string>
     <string name="fingerscanner_confirm_passwords_dont_match">入力したバックアップパスワードが正しくありません。</string>
     <string name="fingerscanner_keyboard_toast_msg">%sを有効にするには、端末からキーボードカバーを取り外してください。</string>
     <string name="fingerscanner_keyboard_dialog_msg">キーボードカバーが装着されている間は、%1$sを使用できません。%2$sは無効になります。</string>
@@ -1971,6 +1981,12 @@ Samsungは本プライバシー規約の本文に記載されているとおり�
     <string name="lockpassword_confirm_your_pin_with_fingerprint">指紋認証を使用するか、現在のPINを入力してください。</string>
     <string name="lockpassword_confirm_your_pattern_with_fingerprint">指紋認証を使用するか、現在のパターンを入力してください。</string>
     <string name="lockpassword_confirm_your_password_with_fingerprint">指紋認証を使用するか、現在のパスワードを入力してください。</string>
+    <string name="lockpassword_confirm_your_pin_with_iris">虹彩認証を使用するか、現在のPINを入力してください。</string>
+    <string name="lockpassword_confirm_your_pattern_with_iris">虹彩認証を使用するか、現在のパターンを入力してください。</string>
+    <string name="lockpassword_confirm_your_password_with_iris">虹彩認証を使用するか、現在のパスワードを入力してください。</string>
+    <string name="lockpassword_confirm_your_pin_with_biometrics">生体認証を使用するか、PINを入力してください。</string>
+    <string name="lockpassword_confirm_your_pattern_with_biometrics">生体認証を使用するか、パターンを入力してください。</string>
+    <string name="lockpassword_confirm_your_password_with_biometrics">生体認証を使用するか、パスワードを入力してください。</string>
     <string name="lockpassword_confirm_your_pin_instead_of_fingerprint">指紋認証を使用する代わりに、PINを入力してください。</string>
     <string name="lockpassword_confirm_your_pattern_instead_of_fingerprint">指紋認証を使用する代わりに、パターンを入力してください。</string>
     <string name="lockpassword_confirm_your_password_instead_of_fingerprint">指紋認証を使用する代わりに、パスワードを入力してください。</string>
@@ -2045,6 +2061,7 @@ Samsungは本プライバシー規約の本文に記載されているとおり�
     <string name="face_status_timeout">タイムアウトになりました。後ほどお試しください。</string>
     <string name="okay">OK</string>
     <string name="face_samsung_account_button">Samsungｱｶｳﾝﾄを使用</string>
+    <string name="face_galaxy_account_button">Galaxyアカウントを使用</string>
     <string name="face_error_DB_corrupted">顔データに問題がありました。顔を再度登録してください。</string>
     <string name="face_error_DB_corrupted_popup_title">顔を再度登録</string>
     <string name="face_error_timeout">顔を認識できませんでした。</string>
@@ -2156,7 +2173,7 @@ Galaxyアカウントを追加して、以下の設定を変更してくださ�
     <string name="biometrics_backup_locktype_title">虹彩認証セキュリティを設定</string>
     <string name="biometrics_register_your_iris">虹彩を登録します。</string>
     <string name="biometrics_backup_locktype_summary">端末のロック解除に虹彩認証を使用するには、パターン、PIN、またはパスワードを設定する必要があります。</string>
-    <string name="biometrics_backup_locktype_message">端末のロック解除または安全な認証に虹彩認証を使用するには、以下を設定する必要があります。</string>
+    <string name="biometrics_backup_locktype_message">端末のロック解除またはアプリのユーザー認証に虹彩認証を使用するには、以下を設定する必要があります。</string>
     <string name="iris_delete_popup_title">虹彩データを削除しますか？</string>
     <string name="iris_delete_popup_message">虹彩データを削除しますか？</string>
     <string name="iris_delete_popup_message_with_related_func">虹彩認証を使用する機能をOFFにします。</string>
@@ -2190,23 +2207,23 @@ Galaxyアカウントを追加して、以下の設定を変更してくださ�
     <string name="iris_no_eye_detected">目を検出できませんでした。</string>
     <string name="lockscreen_samsung_pass_summary">ユーザー名とパスワードの代わりに生体認証を使用してユーザー認証を行います。</string>
     <string name="disclaimer_dialog_title">免責事項</string>
-    <string name="disclaimer_dialog_body_1">"虹彩認識に関する注意事項
+    <string name="disclaimer_dialog_body_1">"虹彩認証に関する注意事項
 "</string>
-    <string name="disclaimer_dialog_body_2">"虹彩認識カメラとLEDを使用する前に、以下の注意事項に留意してください。
-- 眼を保護するために、虹彩認識時は画面から20 cm以上離れてください。
-- 承認されていない画面プロテクター(プライバシー保護フィルム、強化ガラスプロテクターなど)を本デバイスに取り付けないでください。このようなプロテクターを取り付けると、虹彩認識LEDに近づいてもLEDの電源がオフにならないことがあります。
+    <string name="disclaimer_dialog_body_2">"虹彩認証カメラとLEDを使用する前に、以下の注意事項に留意してください。
+- 眼を保護するために、虹彩認証時は画面から20 cm以上離れてください。
+- 承認されていない画面プロテクター(プライバシー保護フィルム、強化ガラスプロテクターなど)を本デバイスに取り付けないでください。このようなプロテクターを取り付けると、虹彩認証LEDに近づいてもLEDの電源がオフにならないことがあります。
 "</string>
-    <string name="disclaimer_dialog_body_2_us">"虹彩認識カメラとLEDを使用する前に、以下の注意事項に留意してください。
-- 眼を保護するために、虹彩認識時は画面から8インチ以上離れてください。
-- 承認されていない画面プロテクター(プライバシー保護フィルム、強化ガラスプロテクターなど)を本デバイスに取り付けないでください。このようなプロテクターを取り付けると、虹彩認識LEDに近づいてもLEDの電源がオフにならないことがあります。
+    <string name="disclaimer_dialog_body_2_us">"虹彩認証カメラとLEDを使用する前に、以下の注意事項に留意してください。
+- 眼を保護するために、虹彩認証時は画面から20 cm以上離れてください。
+- 承認されていない画面プロテクター(プライバシー保護フィルム、強化ガラスプロテクターなど)を本デバイスに取り付けないでください。このようなプロテクターを取り付けると、虹彩認証LEDに近づいてもLEDの電源がオフにならないことがあります。
 "</string>
-    <string name="disclaimer_dialog_body_3">"- 虹彩認識を幼児に対して使用しないでください。使用すると、幼児の視力が低下するおそれがあります。
-- めまい、発作、意識喪失、失神などのてんかん性の症状を経験したことのある方、または家族がこのような症状を経験したことのある方は、虹彩スキャナーを使用する前に医者に相談してください。
+    <string name="disclaimer_dialog_body_3">"- 虹彩認証を幼児に対して使用しないでください。使用すると、幼児の視力が低下するおそれがあります。
+- めまい、発作、意識喪失、失神などのてんかん性の症状を経験したことのある方、または家族がこのような症状を経験したことのある方は、虹彩認証を使用する前に医者に相談してください。
 - 虹彩スキャナーは医療デバイスとして使用することを意図したものではなく、虹彩スキャナーでローカルに収集および保存される生体データは、医療(診断、治療、または予防)を目的としたものではありません。
 本デバイスでは、代替セキュリティオプションを利用できます。この機能を使用する際は、使用上の注意事項すべてに従ってください。詳細については、オンラインサポートコンテンツを参照するか、www.samsung.comにアクセスしてください。"</string>
-    <string name="disclaimer_dialog_body_4">"より良い虹彩認識のために
+    <string name="disclaimer_dialog_body_4">"虹彩認識率をより良くするために
 "</string>
-    <string name="disclaimer_dialog_body_5">"以下の場合、本デバイスで虹彩を認識できないことがあります。
+    <string name="disclaimer_dialog_body_5">"以下の場合、本デバイスで虹彩認証ができないことがあります。
 1.何らかの形で虹彩が隠れている場合(眼鏡、直射日光、まぶたが下がっている、眼の手術または病気)。
 2.カメラまたはLEDとの間に何かがある場合(画面プロテクター、汚れ、カメラの損傷)。
 3.虹彩を記録したときと照明が大きく異なる場合(部屋がより明るい、など)。
@@ -2232,6 +2249,9 @@ Galaxyアカウントを追加して、以下の設定を変更してくださ�
     <string name="biometrics_dex_cant_use_msg">Samsung DeXでは%sを使用できません。</string>
     <string name="biometrics_dex_closed_to_switch">Samsung DeXに切り替えるために、%sを終了しました。</string>
     <string name="biometircs_dex_cant_use_toast">%sは、Samsung DeXでは実行できません。モバイル端末モードで実行してください。</string>
+    <string name="iris_guide_text_preview">ここを見ると認証します</string>
+    <string name="iris_guide_enable_toggle">ここをタップして虹彩認証を使用</string>
+    <string name="iris_cannot_verify">虹彩の認証に失敗</string>
     <string name="knox_twofactor_bio_description">%sのロックを解除する生体認証の種類と、2番目に使用するロックの種類を選択してください。</string>
     <string name="fingerprint_registered">登録した指紋は選択したロック解除方法で使用できます。</string>
     <string name="knox_twofactor_description">%sのロック解除に使用する生体認証と、2番目に使用するロックの種類を選択してください。</string>
@@ -2415,7 +2435,7 @@ Galaxyアカウントを追加して、以下の設定を変更してくださ�
     <string name="biometrics_with_auto_wakeup_summary">アプリにより画面がONになるときに、顔または虹彩認証でロックを解除することを端末に許可します。この機能は、画面ON時の端末のロック解除に顔または虹彩認証が設定されている場合にのみ動作します。</string>
     <string name="dualclock_settings_title">デュアル時計</string>
     <string name="roamingclock_settings_title">ローミング時計</string>
-    <string name="dualclock_settings_summary">ローミング時に現在の都市とホーム都市のタイムゾーンを両方表示します。</string>
+    <string name="dualclock_settings_summary">ローミング時に現在地の都市とホーム都市のタイムゾーンを両方表示します。</string>
     <string name="set_home_city">ホームタイムゾーン</string>
     <string name="contact_info_settings_title">連絡先情報</string>
     <string name="show_contact_info_on_lockscreen_label">ロック画面に電話番号やEメールアドレスなどの情報を表示します。</string>
@@ -2742,7 +2762,7 @@ NFC決済およびモバイル決済サービスによっては、別の標準�
     <string name="vibrate_on_touch_summary">特定のボタンをタップまたは長押ししたときに、振動します。</string>
     <string name="key_tap_feedback_category">キータップ時の設定</string>
     <string name="touch_sounds_summary">画面上の特定のアイテムをタッチしたときに操作音を再生します。</string>
-    <string name="dial_pad_tones_summary">ダイヤルキーパッドでキーをタップするときに操作音を再生します。</string>
+    <string name="dial_pad_tones_summary">ダイヤルキーパッドをタップしたときに操作音を再生します。</string>
     <string name="screen_locking_sounds_summary">画面ロックおよびロック解除をしたときに操作音を再生します。</string>
     <string name="tap_to_start">バイブパターンを作成するには、ここをタップしてください</string>
     <string name="charging_sounds_summary">充電器を接続したときに音を再生します。</string>
@@ -2857,7 +2877,7 @@ Samsung Connectがインストールされている場合、端末のメイン�
     <string name="sound_temporary_mute">一時的に消音</string>
     <string name="sound_temporary_mute_summary">端末のサウンドモードを[%s]に戻すまでの消音時間を設定します。</string>
     <string name="sound_mute_duration">消音時間</string>
-    <string name="mute_interval_time_remaining">消音(残り%s)</string>
+    <string name="mute_interval_time_remaining">サイレント(残り%s)</string>
     <string name="phone_vibration_default">標準</string>
     <string name="phone_vibration_title">バイブパターン</string>
     <string name="phone_vibration_create">パターンの作成</string>
@@ -3094,6 +3114,7 @@ Samsung Connectがインストールされている場合、端末のメイン�
     <string name="easy_mode_app_help">シンプルなホーム画面レイアウトと画面上のアイテムを大きくして、端末をより簡単に使用できます。</string>
     <string name="easy_mode_app_help_dream_1">シンプルなホーム画面レイアウトと大きなアイコンを使用します。</string>
     <string name="easy_mode_app_help_dream_2">ホーム画面で行ったカスタマイズは破棄され、画面のズームは最大に設定されます。</string>
+    <string name="easy_mode_app_help_3rd_launcher">かんたんモードを適用すると、画面のアイテムが大きく表示されます。TouchWizホームを使用していない場合、ホーム画面のレイアウトは変更されませんが、画面のズームは[大]に設定され、フォントサイズは[中]に設定されます。</string>
     <string name="security_warning_content">画面のロック解除にパスワード、PIN、またはパターンを設定して、プライバシーを保護することができます。</string>
     <string name="lock_setting_weather_desc">天気情報の設定を確認または変更するには、以下の[天気設定]をタップしてください。</string>
     <string name="lock_setting_weather_btn">天気設定</string>
@@ -3371,7 +3392,7 @@ Samsung Connectがインストールされている場合、端末のメイン�
     <string name="apps_and_functions_summary">アプリまたは機能の選択なし</string>
     <string name="pen_feedback_pen_haptic_title">バイブ</string>
     <string name="pen_feedback_pen_haptic_summary">Sペンを挿入または取り外すときに端末を振動させます。</string>
-    <string name="pen_application_none">何もしない</string>
+    <string name="pen_application_none">動作なし</string>
     <string name="pen_detachment_option_action_memo">アクションメモ</string>
     <string name="pen_detachment_option_handwriting_memo">ノートを作成</string>
     <string name="pen_detachment_option_air_command">エアコマンドを起動</string>
@@ -4155,6 +4176,7 @@ SMS受信"</string>
     <string name="hdmi_mode_title">HDMIモード</string>
     <string name="hdmi_mode_dex">Samsung DeX</string>
     <string name="hdmi_mode_mirroring">Screen Mirroring</string>
+    <string name="hdmi_mode_not_available_while_cover_attached">カバーを装着しているときは、%sを利用できません。</string>
     <string name="screen_timeout_for_dex">Samsung DeXの画面タイムアウト</string>
     <string name="show_virtual_keyboard_for_dex">Samsung DeXにオンスクリーンキーボードを表示</string>
     <string name="comma">、</string>
@@ -4511,7 +4533,7 @@ SMS受信"</string>
     <string name="date_picker_title">日付</string>
     <string name="time_picker_title">時刻</string>
     <string name="lock_after_timeout">自動ロック</string>
-    <string name="lock_after_timeout_summary">画面が自動的にOFFになってから%s後に画面をロックします。</string>
+    <string name="lock_after_timeout_summary">画面がOFFになってから%s後に端末を自動的にロックします。</string>
     <string name="lock_after_timeout_summary_with_exception">%2$sでロックが解除された場合を除き、画面が自動的にOFFになってから%1$s後に画面をロック</string>
     <string name="show_owner_info_on_lockscreen_label">ロック画面にオーナー情報を表示します。</string>
     <string name="owner_info_settings_title">オーナー情報</string>
@@ -4658,6 +4680,8 @@ SMS受信"</string>
     <string name="wifi_empty_list_wifi_off">利用可能なネットワークのリストをここに表示するには、Wi-FiをONにしてください。</string>
     <string name="wifi_setup_wps">自動設定(WPS)</string>
     <string name="wifi_show_advanced">拡張オプションを表示</string>
+    <string name="wifi_advanced_toggle_description_expanded">非表示にするにはダブルタップしてください。</string>
+    <string name="wifi_advanced_toggle_description_collapsed">展開するにはダブルタップしてください。</string>
     <string name="wifi_wps_setup_title">WPS設定</string>
     <string name="wifi_wps_setup_msg">WPSを起動中…</string>
     <string name="wifi_wps_onstart_pbc">ルーターのWPSボタンを押してください。ボタンには「WPS」と書いてあるか、以下のようなマークが表示されています。</string>
@@ -4689,6 +4713,10 @@ SMS受信"</string>
     <string name="wifi_shared">共有中</string>
     <string name="wifi_unchanged">(変更なし)</string>
     <string name="wifi_unspecified">(設定なし)</string>
+    <string name="wifi_select_cert">証明書を選択</string>
+    <string name="wifi_do_not_provide_eap_user_cert">提供しない</string>
+    <string name="wifi_do_not_validate_eap_server">認証しない</string>
+    <string name="wifi_do_not_validate_eap_server_warning">証明書が指定されていません。接続はプライベートになりません。</string>
     <string name="wifi_scan_always_turnon_message">%sは、位置情報の精度向上およびその他の目的のため、Wi-FiがOFFの場合でもWi-Fiネットワークをスキャンする許可を要求しています。全てのアプリケーションにこれを許可しますか？</string>
     <string name="wifi_scan_always_confirm_allow">許可</string>
     <string name="wifi_scan_always_confirm_deny">拒否</string>
@@ -4787,7 +4815,7 @@ SMS受信"</string>
     <string name="brightness_title">明るさ</string>
     <string name="auto_brightness_summary">周辺環境に合わせて画面の明るさレベルを最適化</string>
     <string name="screen_timeout">画面のタイムアウト</string>
-    <string name="screen_timeout_summary">操作が行われない状態で%1$s経過後</string>
+    <string name="screen_timeout_summary">%1$s以上操作が無い場合</string>
     <string name="wallpaper_settings_title">壁紙</string>
     <string name="wallpaper_settings_fragment_title">壁紙を選択</string>
     <string name="screensaver_settings_title">スクリーンセーバー</string>
@@ -5021,9 +5049,9 @@ SMS受信"</string>
     <string name="restore_default_apn_completed">APN設定をお買い上げ時の状態にリセットしました。</string>
     <string name="reset_network_desc">この操作は、以下の設定を含む全てのネットワーク設定をリセットします。</string>
     <string name="reset_network_button_text">設定をリセット</string>
-    <string name="reset_network_final_desc">全ての接続設定をリセットします。この操作を途中で中止することはできません。</string>
+    <string name="reset_network_final_desc">全てのネットワーク設定をリセットします。この操作を途中で中止することはできません。</string>
     <string name="reset_network_final_button_text">設定をリセット</string>
-    <string name="reset_network_complete_toast">接続設定をリセットしました。</string>
+    <string name="reset_network_complete_toast">ネットワーク設定をリセットしました。</string>
     <string name="master_clear_title">工場出荷状態に初期化</string>
     <string name="master_clear_accounts">現在、以下のアカウントにサインインしています。</string>
     <string name="master_clear_other_users_present">この端末にある他のユーザーが所有するデータも消去されます。</string>
@@ -6136,6 +6164,7 @@ SMS受信"</string>
     <string name="set_data_limit">データ制限を設定</string>
     <string name="data_limit">データ制限</string>
     <string name="data_usage_template">%2$sの間に%1$s使用</string>
+    <string name="data_usage_template_wifi">過去30日間で%s使用</string>
     <string name="data_usage_other_apps">使用量に含まれる関連アプリ</string>
     <string name="data_saver_title">データセーバー</string>
     <string name="unrestricted_data_saver">ﾃﾞｰﾀｾｰﾊﾞｰON時にﾃﾞｰﾀ使用を許可</string>
@@ -6150,8 +6179,8 @@ SMS受信"</string>
     <string name="default_spell_checker">標準スペルチェッカー</string>
     <string name="spell_checker_not_selected">なし</string>
     <string name="special_access">特別なアクセス</string>
-    <string name="reset_shortcut_manager_throttling">ShortcutManager APIの通話制限をリセットします。</string>
-    <string name="reset_shortcut_manager_throttling_complete">ShortcutManager APIの通話制限をﾘｾｯﾄ</string>
+    <string name="reset_shortcut_manager_throttling">ShortcutManager APIの通話制限をﾘｾｯﾄ</string>
+    <string name="reset_shortcut_manager_throttling_complete">ShortcutManager APIの通話制限をリセットしました。</string>
     <string name="developer_density_summary">%ddp</string>
     <string name="developer_smallest_width">最小幅</string>
     <string name="premium_sms_none">プレミアムSMSサービスを使用できるアプリはありません</string>
@@ -6186,6 +6215,7 @@ SMS受信"</string>
     <string name="legacy_dhcp_client_summary">新しいAndroid DHCPクライアントの代わりにLollipopのDHCPクライアントを使用します。</string>
     <string name="screen_off_pocket_title">画面OFFの状態を維持</string>
     <string name="screen_off_pocket_summary">端末がポケットやバッグの中などの暗い場所にあるときに、画面が誤ってONにならないようにします。</string>
+    <string name="noApplications">この操作に関連付けられた全てのアプリは、無効化またはブロックされているか、インストールされていません。</string>
     <string name="confirm_reset_shortcut_manager_throttling_title">ショートカットマネージャーのレート制限をリセット</string>
     <string name="confirm_reset_shortcut_manager_throttling_message">ショートカットマネージャーのレート制限のカウンターをリセットします。</string>
 </resources>

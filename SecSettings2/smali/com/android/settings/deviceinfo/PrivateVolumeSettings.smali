@@ -157,7 +157,7 @@
 .method static constructor <clinit>()V
     .locals 6
 
-    const v5, 0x7f0b1702
+    const v5, 0x7f0b1714
 
     const-string/jumbo v0, "InternalStorage"
 
@@ -173,15 +173,15 @@
 
     sput-object v0, Lcom/android/settings/deviceinfo/PrivateVolumeSettings;->ITEMS_NO_SHOW_SHARED:[I
 
-    const v0, 0x7f0b16bb
+    const v0, 0x7f0b16cd
 
-    const v1, 0x7f0b16b9
+    const v1, 0x7f0b16cb
 
-    const v2, 0x7f0b05f7
+    const v2, 0x7f0b05f8
 
-    const v3, 0x7f0b05f6
+    const v3, 0x7f0b05f7
 
-    const v4, 0x7f0b1707
+    const v4, 0x7f0b1719
 
     filled-new-array {v0, v1, v2, v3, v4}, [I
 
@@ -189,9 +189,9 @@
 
     sput-object v0, Lcom/android/settings/deviceinfo/PrivateVolumeSettings;->ITEMS_SHOW_SHARED:[I
 
-    const v0, 0x7f0b05f8
+    const v0, 0x7f0b05f9
 
-    const v1, 0x7f0b1705
+    const v1, 0x7f0b1717
 
     filled-new-array {v5, v0, v1}, [I
 
@@ -211,13 +211,13 @@
 
     :array_0
     .array-data 4
-        0x7f0b16bb
-        0x7f0b16b9
-        0x7f0b05f7
-        0x7f0b1702
+        0x7f0b16cd
+        0x7f0b16cb
         0x7f0b05f8
-        0x7f0b1705
-        0x7f0b1707
+        0x7f0b1714
+        0x7f0b05f9
+        0x7f0b1717
+        0x7f0b1719
     .end array-data
 .end method
 
@@ -366,13 +366,13 @@
 
     aget v2, v1, v0
 
-    const v3, 0x7f0b05f6
+    const v3, 0x7f0b05f7
 
     if-eq v2, v3, :cond_1
 
     aget v2, v1, v0
 
-    const v3, 0x7f0b05f8
+    const v3, 0x7f0b05f9
 
     if-ne v2, v3, :cond_6
 
@@ -405,7 +405,7 @@
     :cond_6
     aget v2, v1, v0
 
-    const v3, 0x7f0b1705
+    const v3, 0x7f0b1717
 
     if-ne v2, v3, :cond_2
 
@@ -450,7 +450,7 @@
     invoke-virtual {v0, v1}, Lcom/android/settings/deviceinfo/StorageItemPreference;->setKey(Ljava/lang/String;)V
 
     :goto_1
-    const v1, 0x7f0b16bb
+    const v1, 0x7f0b16cd
 
     if-ne p2, v1, :cond_2
 
@@ -494,7 +494,7 @@
     goto :goto_1
 
     :cond_2
-    const v1, 0x7f0b16b9
+    const v1, 0x7f0b16cb
 
     if-ne p2, v1, :cond_3
 
@@ -505,7 +505,7 @@
     goto :goto_2
 
     :cond_3
-    const v1, 0x7f0b05f7
+    const v1, 0x7f0b05f8
 
     if-ne p2, v1, :cond_4
 
@@ -516,7 +516,7 @@
     goto :goto_2
 
     :cond_4
-    const v1, 0x7f0b16bc
+    const v1, 0x7f0b16ce
 
     invoke-virtual {v0, v1}, Lcom/android/settings/deviceinfo/StorageItemPreference;->setSummary(I)V
 
@@ -726,7 +726,7 @@
 
     move-result-object v4
 
-    const v5, 0x7f0b05fa
+    const v5, 0x7f0b05fb
 
     invoke-virtual {v4, v5}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -773,7 +773,7 @@
 
     move-result-object v4
 
-    const v5, 0x7f0b0d18
+    const v5, 0x7f0b0d26
 
     invoke-virtual {v4, v5}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -817,7 +817,7 @@
 
     move-result-object v4
 
-    const v5, 0x7f0b04ff
+    const v5, 0x7f0b0500
 
     invoke-virtual {v4, v5}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -1018,114 +1018,169 @@
 .end method
 
 .method private mmsSize()J
-    .locals 18
-
-    const-wide/16 v12, 0x0
+    .locals 20
 
     const-wide/16 v14, 0x0
 
     const-wide/16 v16, 0x0
 
-    const-string/jumbo v9, "dbdata/databases/com.android.providers.telephony"
+    const-wide/16 v18, 0x0
 
-    const-string/jumbo v8, "mmssms.db"
+    const-string/jumbo v12, "dbdata/databases/com.android.providers.telephony"
+
+    const-string/jumbo v11, "mmssms.db"
+
+    const/4 v10, 0x0
+
+    invoke-virtual/range {p0 .. p0}, Lcom/android/settings/deviceinfo/PrivateVolumeSettings;->getContext()Landroid/content/Context;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
+
+    move-result-object v3
+
+    invoke-virtual/range {p0 .. p0}, Lcom/android/settings/deviceinfo/PrivateVolumeSettings;->getContext()Landroid/content/Context;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Landroid/content/Context;->getApplicationContext()Landroid/content/Context;
+
+    move-result-object v2
+
+    const-string/jumbo v4, "content://mms/part/"
+
+    invoke-static {v4}, Landroid/net/Uri;->parse(Ljava/lang/String;)Landroid/net/Uri;
+
+    move-result-object v4
+
+    const/4 v5, 0x3
+
+    new-array v5, v5, [Ljava/lang/String;
+
+    const-string/jumbo v6, "_data"
 
     const/4 v7, 0x0
 
-    invoke-virtual/range {p0 .. p0}, Lcom/android/settings/deviceinfo/PrivateVolumeSettings;->getContext()Landroid/content/Context;
+    aput-object v6, v5, v7
 
-    move-result-object v0
+    const-string/jumbo v6, "_id"
 
-    invoke-virtual {v0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
+    const/4 v7, 0x1
 
-    move-result-object v1
+    aput-object v6, v5, v7
 
-    invoke-virtual/range {p0 .. p0}, Lcom/android/settings/deviceinfo/PrivateVolumeSettings;->getContext()Landroid/content/Context;
+    const-string/jumbo v6, "text"
 
-    move-result-object v0
+    const/4 v7, 0x2
 
-    invoke-virtual {v0}, Landroid/content/Context;->getApplicationContext()Landroid/content/Context;
-
-    move-result-object v0
-
-    sget-object v2, Landroid/provider/Telephony$Mms;->CONTENT_URI:Landroid/net/Uri;
-
-    const/4 v3, 0x1
-
-    new-array v3, v3, [Ljava/lang/String;
-
-    const-string/jumbo v4, "m_size"
-
-    const/4 v5, 0x0
-
-    aput-object v4, v3, v5
-
-    const/4 v4, 0x0
-
-    const/4 v5, 0x0
+    aput-object v6, v5, v7
 
     const/4 v6, 0x0
 
-    invoke-static/range {v0 .. v6}, Landroid/database/sqlite/SqliteWrapper;->query(Landroid/content/Context;Landroid/content/ContentResolver;Landroid/net/Uri;[Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Ljava/lang/String;)Landroid/database/Cursor;
+    const/4 v7, 0x0
 
-    move-result-object v7
+    const/4 v8, 0x0
 
-    if-eqz v7, :cond_1
+    invoke-static/range {v2 .. v8}, Landroid/database/sqlite/SqliteWrapper;->query(Landroid/content/Context;Landroid/content/ContentResolver;Landroid/net/Uri;[Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Ljava/lang/String;)Landroid/database/Cursor;
 
-    invoke-interface {v7}, Landroid/database/Cursor;->moveToFirst()Z
+    move-result-object v10
 
-    move-result v0
+    if-eqz v10, :cond_2
 
-    if-eqz v0, :cond_1
+    invoke-interface {v10}, Landroid/database/Cursor;->moveToFirst()Z
 
-    const-wide/16 v14, 0x0
+    move-result v2
 
-    :cond_0
-    const/4 v0, 0x0
+    if-eqz v2, :cond_2
 
-    invoke-interface {v7, v0}, Landroid/database/Cursor;->getInt(I)I
-
-    move-result v0
-
-    int-to-long v2, v0
-
-    add-long/2addr v14, v2
-
-    invoke-interface {v7}, Landroid/database/Cursor;->moveToNext()Z
-
-    move-result v0
-
-    if-nez v0, :cond_0
-
-    :cond_1
-    if-eqz v7, :cond_2
-
-    invoke-interface {v7}, Landroid/database/Cursor;->close()V
-
-    :cond_2
-    new-instance v10, Ljava/io/File;
-
-    invoke-direct {v10, v9, v8}, Ljava/io/File;-><init>(Ljava/lang/String;Ljava/lang/String;)V
-
-    invoke-virtual {v10}, Ljava/io/File;->exists()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_3
-
-    invoke-virtual {v10}, Ljava/io/File;->length()J
-
-    move-result-wide v16
-
-    :goto_0
-    add-long v12, v14, v16
-
-    return-wide v12
-
-    :cond_3
     const-wide/16 v16, 0x0
 
+    :cond_0
+    const/4 v2, 0x0
+
+    invoke-interface {v10, v2}, Landroid/database/Cursor;->getString(I)Ljava/lang/String;
+
+    move-result-object v2
+
+    if-nez v2, :cond_4
+
+    const/4 v2, 0x2
+
+    invoke-interface {v10, v2}, Landroid/database/Cursor;->getString(I)Ljava/lang/String;
+
+    move-result-object v9
+
+    invoke-static {v9}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
+
+    move-result v2
+
+    if-nez v2, :cond_1
+
+    invoke-virtual {v9}, Ljava/lang/String;->getBytes()[B
+
+    move-result-object v2
+
+    array-length v2, v2
+
+    int-to-long v4, v2
+
+    add-long v16, v16, v4
+
+    :cond_1
+    :goto_0
+    invoke-interface {v10}, Landroid/database/Cursor;->moveToNext()Z
+
+    move-result v2
+
+    if-nez v2, :cond_0
+
+    :cond_2
+    if-eqz v10, :cond_3
+
+    invoke-interface {v10}, Landroid/database/Cursor;->close()V
+
+    :cond_3
+    new-instance v13, Ljava/io/File;
+
+    invoke-direct {v13, v12, v11}, Ljava/io/File;-><init>(Ljava/lang/String;Ljava/lang/String;)V
+
+    invoke-virtual {v13}, Ljava/io/File;->exists()Z
+
+    move-result v2
+
+    if-eqz v2, :cond_5
+
+    invoke-virtual {v13}, Ljava/io/File;->length()J
+
+    move-result-wide v18
+
+    :goto_1
+    add-long v14, v16, v18
+
+    return-wide v14
+
+    :cond_4
+    const/4 v2, 0x1
+
+    invoke-interface {v10, v2}, Landroid/database/Cursor;->getInt(I)I
+
+    move-result v2
+
+    move-object/from16 v0, p0
+
+    invoke-virtual {v0, v2}, Lcom/android/settings/deviceinfo/PrivateVolumeSettings;->calcMmsAttachmentSize(I)J
+
+    move-result-wide v4
+
+    add-long v16, v16, v4
+
     goto :goto_0
+
+    :cond_5
+    const-wide/16 v18, 0x0
+
+    goto :goto_1
 .end method
 
 .method private setTitle()V
@@ -1139,7 +1194,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f0b05f6
+    const v1, 0x7f0b05f7
 
     invoke-virtual {v0, v1}, Landroid/app/Activity;->setTitle(I)V
 
@@ -1435,18 +1490,18 @@
     :sswitch_data_0
     .sparse-switch
         0x0 -> :sswitch_c
-        0x7f0b05f6 -> :sswitch_b
-        0x7f0b05f7 -> :sswitch_a
-        0x7f0b05f8 -> :sswitch_1
-        0x7f0b05f9 -> :sswitch_7
-        0x7f0b16b9 -> :sswitch_9
-        0x7f0b16bb -> :sswitch_8
-        0x7f0b1702 -> :sswitch_0
-        0x7f0b1703 -> :sswitch_2
-        0x7f0b1704 -> :sswitch_3
-        0x7f0b1705 -> :sswitch_4
-        0x7f0b1706 -> :sswitch_6
-        0x7f0b1707 -> :sswitch_5
+        0x7f0b05f7 -> :sswitch_b
+        0x7f0b05f8 -> :sswitch_a
+        0x7f0b05f9 -> :sswitch_1
+        0x7f0b05fa -> :sswitch_7
+        0x7f0b16cb -> :sswitch_9
+        0x7f0b16cd -> :sswitch_8
+        0x7f0b1714 -> :sswitch_0
+        0x7f0b1715 -> :sswitch_2
+        0x7f0b1716 -> :sswitch_3
+        0x7f0b1717 -> :sswitch_4
+        0x7f0b1718 -> :sswitch_6
+        0x7f0b1719 -> :sswitch_5
     .end sparse-switch
 .end method
 
@@ -1488,6 +1543,76 @@
 
 
 # virtual methods
+.method calcMmsAttachmentSize(I)J
+    .locals 5
+
+    const/4 v1, 0x0
+
+    :try_start_0
+    invoke-virtual {p0}, Lcom/android/settings/deviceinfo/PrivateVolumeSettings;->getContext()Landroid/content/Context;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
+
+    move-result-object v2
+
+    new-instance v3, Ljava/lang/StringBuilder;
+
+    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string/jumbo v4, "content://mms/part/"
+
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    invoke-virtual {v3, p1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-static {v3}, Landroid/net/Uri;->parse(Ljava/lang/String;)Landroid/net/Uri;
+
+    move-result-object v3
+
+    const-string/jumbo v4, "r"
+
+    invoke-virtual {v2, v3, v4}, Landroid/content/ContentResolver;->openAssetFileDescriptor(Landroid/net/Uri;Ljava/lang/String;)Landroid/content/res/AssetFileDescriptor;
+    :try_end_0
+    .catch Ljava/io/FileNotFoundException; {:try_start_0 .. :try_end_0} :catch_0
+
+    move-result-object v1
+
+    :goto_0
+    if-eqz v1, :cond_0
+
+    invoke-virtual {v1}, Landroid/content/res/AssetFileDescriptor;->getParcelFileDescriptor()Landroid/os/ParcelFileDescriptor;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Landroid/os/ParcelFileDescriptor;->getStatSize()J
+
+    move-result-wide v2
+
+    return-wide v2
+
+    :catch_0
+    move-exception v0
+
+    invoke-virtual {v0}, Ljava/io/FileNotFoundException;->printStackTrace()V
+
+    goto :goto_0
+
+    :cond_0
+    const-wide/16 v2, 0x0
+
+    return-wide v2
+.end method
+
 .method protected getMetricsCategory()I
     .locals 1
 
@@ -1673,7 +1798,7 @@
 
     iput-object v1, p0, Lcom/android/settings/deviceinfo/PrivateVolumeSettings;->mCurrentUser:Landroid/content/pm/UserInfo;
 
-    const v1, 0x7f0b16e2
+    const v1, 0x7f0b16f4
 
     invoke-direct {p0, v1}, Lcom/android/settings/deviceinfo/PrivateVolumeSettings;->buildAction(I)Landroid/preference/Preference;
 
@@ -1825,7 +1950,7 @@
 
     move-result-object v2
 
-    const v3, 0x7f0b16d9
+    const v3, 0x7f0b16eb
 
     move-object v0, p0
 
@@ -1852,7 +1977,7 @@
 
     move-result-object v2
 
-    const v3, 0x7f0b16da
+    const v3, 0x7f0b16ec
 
     move-object v0, p0
 
@@ -1897,7 +2022,7 @@
     nop
 
     :pswitch_data_0
-    .packed-switch 0x7f110a1b
+    .packed-switch 0x7f110a1e
         :pswitch_0
         :pswitch_1
         :pswitch_2
@@ -2042,7 +2167,7 @@
 
     const/4 v5, 0x0
 
-    const v6, 0x7f0b1702
+    const v6, 0x7f0b1714
 
     const/4 v7, 0x0
 
@@ -2063,7 +2188,7 @@
 
     move-result-object v3
 
-    const v5, 0x7f0f03d3
+    const v5, 0x7f0f03d2
 
     invoke-virtual {v3, v5}, Landroid/content/res/Resources;->getInteger(I)I
 
@@ -2106,7 +2231,7 @@
 
     move-result-object v3
 
-    const v5, 0x7f0f03d3
+    const v5, 0x7f0f03d2
 
     invoke-virtual {v3, v5}, Landroid/content/res/Resources;->getInteger(I)I
 
@@ -2149,7 +2274,7 @@
 
     move-result-object v3
 
-    const v5, 0x7f0f03d4
+    const v5, 0x7f0f03d3
 
     invoke-virtual {v3, v5}, Landroid/content/res/Resources;->getInteger(I)I
 
@@ -2225,7 +2350,7 @@
 
     move-result-object v3
 
-    const v5, 0x7f0f03d5
+    const v5, 0x7f0f03d4
 
     invoke-virtual {v3, v5}, Landroid/content/res/Resources;->getInteger(I)I
 
@@ -2313,7 +2438,7 @@
 
     move-result-object v3
 
-    const v5, 0x7f0f03d6
+    const v5, 0x7f0f03d5
 
     invoke-virtual {v3, v5}, Landroid/content/res/Resources;->getInteger(I)I
 
@@ -2381,7 +2506,7 @@
 
     move-result-object v3
 
-    const v5, 0x7f0f03d7
+    const v5, 0x7f0f03d6
 
     invoke-virtual {v3, v5}, Landroid/content/res/Resources;->getInteger(I)I
 
@@ -2444,7 +2569,7 @@
 
     move-result-object v7
 
-    const v8, 0x7f0b1e9b
+    const v8, 0x7f0b1eae
 
     const/4 v9, 0x0
 
@@ -2474,7 +2599,7 @@
 
     move-result-object v3
 
-    const v5, 0x7f0f03d3
+    const v5, 0x7f0f03d2
 
     invoke-virtual {v3, v5}, Landroid/content/res/Resources;->getInteger(I)I
 
@@ -2537,7 +2662,7 @@
 
     move-result-object v7
 
-    const v8, 0x7f0b05f6
+    const v8, 0x7f0b05f7
 
     const/4 v9, 0x0
 
@@ -2568,17 +2693,17 @@
     :sswitch_data_0
     .sparse-switch
         0x0 -> :sswitch_b
-        0x7f0b05f6 -> :sswitch_a
-        0x7f0b05f8 -> :sswitch_9
-        0x7f0b05f9 -> :sswitch_8
-        0x7f0b16e0 -> :sswitch_6
-        0x7f0b16e2 -> :sswitch_7
-        0x7f0b1702 -> :sswitch_0
-        0x7f0b1703 -> :sswitch_1
-        0x7f0b1704 -> :sswitch_2
-        0x7f0b1705 -> :sswitch_3
-        0x7f0b1706 -> :sswitch_5
-        0x7f0b1707 -> :sswitch_4
+        0x7f0b05f7 -> :sswitch_a
+        0x7f0b05f9 -> :sswitch_9
+        0x7f0b05fa -> :sswitch_8
+        0x7f0b16f2 -> :sswitch_6
+        0x7f0b16f4 -> :sswitch_7
+        0x7f0b1714 -> :sswitch_0
+        0x7f0b1715 -> :sswitch_1
+        0x7f0b1716 -> :sswitch_2
+        0x7f0b1717 -> :sswitch_3
+        0x7f0b1718 -> :sswitch_5
+        0x7f0b1719 -> :sswitch_4
     .end sparse-switch
 .end method
 
@@ -2598,37 +2723,37 @@
     return-void
 
     :cond_0
-    const v7, 0x7f110a1b
+    const v7, 0x7f110a1e
 
     invoke-interface {p1, v7}, Landroid/view/Menu;->findItem(I)Landroid/view/MenuItem;
 
     move-result-object v5
 
-    const v7, 0x7f110a1c
+    const v7, 0x7f110a1f
 
     invoke-interface {p1, v7}, Landroid/view/Menu;->findItem(I)Landroid/view/MenuItem;
 
     move-result-object v3
 
-    const v7, 0x7f110a1d
+    const v7, 0x7f110a20
 
     invoke-interface {p1, v7}, Landroid/view/Menu;->findItem(I)Landroid/view/MenuItem;
 
     move-result-object v6
 
-    const v7, 0x7f110a1e
+    const v7, 0x7f110a21
 
     invoke-interface {p1, v7}, Landroid/view/Menu;->findItem(I)Landroid/view/MenuItem;
 
     move-result-object v0
 
-    const v7, 0x7f110a1f
+    const v7, 0x7f110a22
 
     invoke-interface {p1, v7}, Landroid/view/Menu;->findItem(I)Landroid/view/MenuItem;
 
     move-result-object v2
 
-    const v7, 0x7f110a20
+    const v7, 0x7f110a23
 
     invoke-interface {p1, v7}, Landroid/view/Menu;->findItem(I)Landroid/view/MenuItem;
 
@@ -2669,7 +2794,7 @@
     invoke-interface {v1, v7}, Landroid/view/MenuItem;->setVisible(Z)Landroid/view/MenuItem;
 
     :goto_0
-    const v7, 0x7f0b16db
+    const v7, 0x7f0b16ed
 
     invoke-interface {v0, v7}, Landroid/view/MenuItem;->setTitle(I)Landroid/view/MenuItem;
 
@@ -3069,6 +3194,12 @@
     if-le v0, v1, :cond_4
 
     :cond_8
+    invoke-virtual/range {v24 .. v24}, Landroid/content/pm/UserInfo;->isDualAppProfile()Z
+
+    move-result v25
+
+    if-nez v25, :cond_4
+
     invoke-static {v6}, Lcom/samsung/android/knox/SemPersonaManager;->isKioskModeEnabled(Landroid/content/Context;)Z
 
     move-result v25
@@ -3240,7 +3371,7 @@
 
     move-object/from16 v25, v0
 
-    const v26, 0x7f0b16ef
+    const v26, 0x7f0b1701
 
     move-object/from16 v0, p0
 
@@ -3310,7 +3441,7 @@
 
     aput-object v27, v26, v28
 
-    const v27, 0x7f0b16f0
+    const v27, 0x7f0b1702
 
     move-object/from16 v0, p0
 
@@ -3676,7 +3807,7 @@
 
     if-lez v25, :cond_19
 
-    const v25, 0x7f0b16eb
+    const v25, 0x7f0b16fd
 
     move-object/from16 v0, p0
 
@@ -3784,7 +3915,7 @@
     invoke-direct {v0, v14, v1}, Lcom/android/settings/deviceinfo/PrivateVolumeSettings;->addCategory(Landroid/preference/PreferenceGroup;Ljava/lang/CharSequence;)Landroid/preference/PreferenceCategory;
 
     :cond_19
-    const v25, 0x7f0b1706
+    const v25, 0x7f0b1718
 
     const/16 v26, 0x0
 
@@ -3833,7 +3964,7 @@
 
     :cond_1b
     :goto_c
-    const v25, 0x7f0b16e0
+    const v25, 0x7f0b16f2
 
     move-object/from16 v0, p0
 
@@ -3864,7 +3995,7 @@
     invoke-direct {v0, v14, v1}, Lcom/android/settings/deviceinfo/PrivateVolumeSettings;->addPreference(Landroid/preference/PreferenceGroup;Landroid/preference/Preference;)V
 
     :cond_1c
-    const v25, 0x7f0b16e2
+    const v25, 0x7f0b16f4
 
     move-object/from16 v0, p0
 
@@ -3960,7 +4091,7 @@
     goto :goto_d
 
     :cond_1d
-    const v25, 0x7f0b05f9
+    const v25, 0x7f0b05fa
 
     const/16 v26, 0x0
 

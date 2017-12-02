@@ -227,7 +227,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f0f03f2
+    const v1, 0x7f0f03f1
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getInteger(I)I
 
@@ -269,7 +269,7 @@
 
     if-eqz v0, :cond_0
 
-    const v1, 0x7f0b072f
+    const v1, 0x7f0b0730
 
     invoke-virtual {v0, v1}, Landroid/app/ActionBar;->setTitle(I)V
 
@@ -286,7 +286,7 @@
 .method public onCreateView(Landroid/view/LayoutInflater;Landroid/view/ViewGroup;Landroid/os/Bundle;)Landroid/view/View;
     .locals 3
 
-    const v1, 0x7f0400dd
+    const v1, 0x7f0400de
 
     const/4 v2, 0x0
 
@@ -294,7 +294,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f1102da
+    const v1, 0x7f1102dc
 
     invoke-virtual {v0, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -483,7 +483,7 @@
 
     aput-object v5, v4, v6
 
-    const v5, 0x7f0b0731
+    const v5, 0x7f0b0732
 
     invoke-virtual {p0, v5, v4}, Lcom/samsung/android/settings/devicevisibility/DeviceVisibilitySettings;->getString(I[Ljava/lang/Object;)Ljava/lang/String;
 
@@ -573,7 +573,7 @@
 
     move-result-object v5
 
-    const v8, 0x7f0f03f2
+    const v8, 0x7f0f03f1
 
     invoke-virtual {v5, v8}, Landroid/content/res/Resources;->getInteger(I)I
 
@@ -583,7 +583,7 @@
 
     move-result-object v5
 
-    const v9, 0x7f0f03f4
+    const v9, 0x7f0f03f3
 
     invoke-virtual {v5, v9}, Landroid/content/res/Resources;->getInteger(I)I
 

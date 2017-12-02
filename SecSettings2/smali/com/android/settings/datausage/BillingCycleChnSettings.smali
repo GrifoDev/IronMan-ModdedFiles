@@ -1252,7 +1252,7 @@
 
     move-result-object v9
 
-    const v10, 0x7f0b1cf7
+    const v10, 0x7f0b1d09
 
     invoke-virtual {v9, v10}, Landroid/app/Activity;->getString(I)Ljava/lang/String;
 
@@ -1319,7 +1319,7 @@
 
     move-result-object v10
 
-    const v11, 0x7f0b1af4
+    const v11, 0x7f0b1b06
 
     invoke-virtual {v10, v11}, Landroid/app/Activity;->getString(I)Ljava/lang/String;
 
@@ -1646,7 +1646,7 @@
 
     iput-object v1, p0, Lcom/android/settings/datausage/BillingCycleChnSettings;->mShp:Landroid/content/SharedPreferences;
 
-    const v1, 0x7f08013b
+    const v1, 0x7f08013d
 
     invoke-virtual {p0, v1}, Lcom/android/settings/datausage/BillingCycleChnSettings;->addPreferencesFromResource(I)V
 
@@ -1812,7 +1812,7 @@
 
     move-result-object v3
 
-    const v6, 0x7f0f04be
+    const v6, 0x7f0f04bd
 
     invoke-virtual {v3, v6}, Landroid/content/res/Resources;->getInteger(I)I
 
@@ -1826,7 +1826,7 @@
 
     move-result-object v3
 
-    const v6, 0x7f0f04c3
+    const v6, 0x7f0f04c2
 
     invoke-virtual {v3, v6}, Landroid/content/res/Resources;->getInteger(I)I
 
@@ -1937,7 +1937,7 @@
 
     move-result-object v2
 
-    const v3, 0x7f0f04be
+    const v3, 0x7f0f04bd
 
     invoke-virtual {v2, v3}, Landroid/content/res/Resources;->getInteger(I)I
 
@@ -1951,7 +1951,7 @@
 
     move-result-object v2
 
-    const v3, 0x7f0f04c4
+    const v3, 0x7f0f04c3
 
     invoke-virtual {v2, v3}, Landroid/content/res/Resources;->getInteger(I)I
 
@@ -1982,7 +1982,7 @@
 
     move-result-object v2
 
-    const v3, 0x7f0f04be
+    const v3, 0x7f0f04bd
 
     invoke-virtual {v2, v3}, Landroid/content/res/Resources;->getInteger(I)I
 
@@ -1996,7 +1996,7 @@
 
     move-result-object v2
 
-    const v3, 0x7f0f04c2
+    const v3, 0x7f0f04c1
 
     invoke-virtual {v2, v3}, Landroid/content/res/Resources;->getInteger(I)I
 
@@ -2036,7 +2036,7 @@
 
     const/4 v2, 0x0
 
-    const v3, 0x7f0b11c1
+    const v3, 0x7f0b11d0
 
     const/4 v4, 0x0
 
@@ -2066,7 +2066,7 @@
 
     const/4 v3, 0x0
 
-    const v4, 0x7f0b11c1
+    const v4, 0x7f0b11d0
 
     const/4 v5, 0x0
 
@@ -2101,7 +2101,7 @@
 
     const/4 v4, 0x0
 
-    const v5, 0x7f0b11c1
+    const v5, 0x7f0b11d0
 
     const/4 v6, 0x0
 
@@ -2130,7 +2130,7 @@
 
     const/4 v3, 0x0
 
-    const v4, 0x7f0b11c1
+    const v4, 0x7f0b11d0
 
     const/4 v5, 0x0
 
@@ -2155,7 +2155,7 @@
 
     move-result-object v2
 
-    const v3, 0x7f0f04be
+    const v3, 0x7f0f04bd
 
     invoke-virtual {v2, v3}, Landroid/content/res/Resources;->getInteger(I)I
 
@@ -2169,7 +2169,7 @@
 
     move-result-object v2
 
-    const v3, 0x7f0f04c1
+    const v3, 0x7f0f04c0
 
     invoke-virtual {v2, v3}, Landroid/content/res/Resources;->getInteger(I)I
 
@@ -2230,7 +2230,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f0f04be
+    const v2, 0x7f0f04bd
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getInteger(I)I
 
@@ -2272,7 +2272,7 @@
 
     move-result-object v3
 
-    const v6, 0x7f0f04be
+    const v6, 0x7f0f04bd
 
     invoke-virtual {v3, v6}, Landroid/content/res/Resources;->getInteger(I)I
 
@@ -2286,7 +2286,7 @@
 
     move-result-object v3
 
-    const v6, 0x7f0f04c0
+    const v6, 0x7f0f04bf
 
     invoke-virtual {v3, v6}, Landroid/content/res/Resources;->getInteger(I)I
 

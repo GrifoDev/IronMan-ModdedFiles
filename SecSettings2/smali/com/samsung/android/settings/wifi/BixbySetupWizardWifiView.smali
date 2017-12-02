@@ -73,7 +73,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f0b1ed8
+    const v1, 0x7f0b1eeb
 
     invoke-virtual {v0, v1}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -89,7 +89,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f0b1ed7
+    const v1, 0x7f0b1eea
 
     invoke-virtual {v0, v1}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -119,7 +119,7 @@
         }
     .end annotation
 
-    const v3, 0x7f1109c4
+    const v3, 0x7f1109c7
 
     new-instance v0, Ljava/util/HashMap;
 
@@ -129,7 +129,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f0b11a9
+    const v2, 0x7f0b11b8
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -139,7 +139,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f1109c2
+    const v2, 0x7f1109c5
 
     invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
@@ -161,7 +161,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f1109c6
+    const v2, 0x7f1109c9
 
     invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
@@ -173,7 +173,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f0b0f13
+    const v2, 0x7f0b0f22
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -193,7 +193,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f0b13c1
+    const v2, 0x7f0b13d2
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 

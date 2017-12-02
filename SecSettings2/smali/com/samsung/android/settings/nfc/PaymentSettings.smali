@@ -81,6 +81,22 @@
     return-object v0
 .end method
 
+.method static synthetic -get3(Lcom/samsung/android/settings/nfc/PaymentSettings;)Landroid/preference/PreferenceScreen;
+    .locals 1
+
+    iget-object v0, p0, Lcom/samsung/android/settings/nfc/PaymentSettings;->screen:Landroid/preference/PreferenceScreen;
+
+    return-object v0
+.end method
+
+.method static synthetic -set0(Lcom/samsung/android/settings/nfc/PaymentSettings;Z)Z
+    .locals 0
+
+    iput-boolean p1, p0, Lcom/samsung/android/settings/nfc/PaymentSettings;->isDisabled:Z
+
+    return p1
+.end method
+
 .method static constructor <clinit>()V
     .locals 2
 
@@ -203,7 +219,7 @@
 .end method
 
 .method public onClick(Landroid/view/View;)V
-    .locals 4
+    .locals 6
 
     sget-boolean v1, Lcom/samsung/android/settings/nfc/PaymentSettings;->DBG:Z
 
@@ -222,7 +238,7 @@
 
     instance-of v1, v1, Lcom/samsung/android/settings/nfc/PaymentBackend$PaymentAppInfo;
 
-    if-eqz v1, :cond_3
+    if-eqz v1, :cond_4
 
     invoke-virtual {p1}, Landroid/view/View;->getTag()Ljava/lang/Object;
 
@@ -232,7 +248,7 @@
 
     iget-boolean v1, v0, Lcom/samsung/android/settings/nfc/PaymentBackend$PaymentAppInfo;->isDefault:Z
 
-    if-nez v1, :cond_3
+    if-nez v1, :cond_4
 
     iget-object v1, p0, Lcom/samsung/android/settings/nfc/PaymentSettings;->screen:Landroid/preference/PreferenceScreen;
 
@@ -244,9 +260,26 @@
 
     iput-boolean v1, p0, Lcom/samsung/android/settings/nfc/PaymentSettings;->isDisabled:Z
 
+    sget-boolean v1, Lcom/samsung/android/settings/nfc/PaymentSettings;->isSupportFelica:Z
+
+    if-eqz v1, :cond_1
+
+    new-instance v1, Landroid/os/Handler;
+
+    invoke-direct {v1}, Landroid/os/Handler;-><init>()V
+
+    new-instance v2, Lcom/samsung/android/settings/nfc/PaymentSettings$4;
+
+    invoke-direct {v2, p0}, Lcom/samsung/android/settings/nfc/PaymentSettings$4;-><init>(Lcom/samsung/android/settings/nfc/PaymentSettings;)V
+
+    const-wide/16 v4, 0x12c
+
+    invoke-virtual {v1, v2, v4, v5}, Landroid/os/Handler;->postDelayed(Ljava/lang/Runnable;J)Z
+
+    :cond_1
     iget-object v1, v0, Lcom/samsung/android/settings/nfc/PaymentBackend$PaymentAppInfo;->componentName:Landroid/content/ComponentName;
 
-    if-eqz v1, :cond_2
+    if-eqz v1, :cond_3
 
     iget-object v1, p0, Lcom/samsung/android/settings/nfc/PaymentSettings;->mPaymentBackend:Lcom/samsung/android/settings/nfc/PaymentBackend;
 
@@ -258,7 +291,7 @@
 
     sget-boolean v1, Lcom/samsung/android/settings/nfc/PaymentSettings;->DBG:Z
 
-    if-eqz v1, :cond_1
+    if-eqz v1, :cond_2
 
     const-string/jumbo v1, "PaymentSettings"
 
@@ -284,7 +317,7 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    :cond_1
+    :cond_2
     iget-object v1, p0, Lcom/samsung/android/settings/nfc/PaymentSettings;->mPaymentBackend:Lcom/samsung/android/settings/nfc/PaymentBackend;
 
     iget-object v2, v0, Lcom/samsung/android/settings/nfc/PaymentBackend$PaymentAppInfo;->componentName:Landroid/content/ComponentName;
@@ -293,7 +326,7 @@
 
     sget-object v1, Lcom/samsung/android/settings/nfc/PaymentSettings;->PaymentAppName_backup:Landroid/content/ComponentName;
 
-    if-eqz v1, :cond_4
+    if-eqz v1, :cond_5
 
     sget-object v1, Lcom/samsung/android/settings/nfc/PaymentSettings;->PaymentAppName_backup:Landroid/content/ComponentName;
 
@@ -303,16 +336,16 @@
 
     move-result v1
 
-    if-eqz v1, :cond_4
+    if-eqz v1, :cond_5
 
-    :cond_2
+    :cond_3
     :goto_0
     invoke-virtual {p0}, Lcom/samsung/android/settings/nfc/PaymentSettings;->refresh()V
 
-    :cond_3
+    :cond_4
     return-void
 
-    :cond_4
+    :cond_5
     invoke-virtual {p0}, Lcom/samsung/android/settings/nfc/PaymentSettings;->getResources()Landroid/content/res/Resources;
 
     move-result-object v1
@@ -457,7 +490,7 @@
 
     if-nez v2, :cond_1
 
-    const v2, 0x7f0b0b7e
+    const v2, 0x7f0b0b8c
 
     invoke-interface {p1, v2}, Landroid/view/Menu;->add(I)Landroid/view/MenuItem;
 
@@ -501,7 +534,7 @@
 
     iget-object v1, p0, Lcom/samsung/android/settings/nfc/PaymentSettings;->mInflater:Landroid/view/LayoutInflater;
 
-    const v2, 0x7f0401bf
+    const v2, 0x7f0401c2
 
     const/4 v3, 0x0
 
@@ -877,11 +910,11 @@
 
     invoke-direct {v9, v2}, Landroid/preference/Preference;-><init>(Landroid/content/Context;)V
 
-    const v2, 0x7f0401e5
+    const v2, 0x7f0401e8
 
     invoke-virtual {v9, v2}, Landroid/preference/Preference;->setLayoutResource(I)V
 
-    const v2, 0x7f0b0b77
+    const v2, 0x7f0b0b85
 
     move-object/from16 v0, p0
 
@@ -1000,7 +1033,7 @@
 
     move-result-object v2
 
-    const v3, 0x7f1105b8
+    const v3, 0x7f1105ba
 
     invoke-virtual {v2, v3}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -1012,7 +1045,7 @@
 
     move-result-object v2
 
-    const v3, 0x7f1105b7
+    const v3, 0x7f1105b9
 
     invoke-virtual {v2, v3}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -1024,7 +1057,7 @@
 
     move-result-object v2
 
-    const v3, 0x7f1105b5
+    const v3, 0x7f1105b7
 
     invoke-virtual {v2, v3}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -1063,7 +1096,7 @@
 
     move-result-object v2
 
-    const v3, 0x7f05003f
+    const v3, 0x7f05003e
 
     invoke-virtual {v2, v3}, Landroid/content/res/Resources;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 
@@ -1151,7 +1184,7 @@
 
     move-result-object v2
 
-    const v3, 0x7f1105b6
+    const v3, 0x7f1105b8
 
     invoke-virtual {v2, v3}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -1163,7 +1196,7 @@
 
     move-result-object v2
 
-    const v3, 0x7f1105b5
+    const v3, 0x7f1105b7
 
     invoke-virtual {v2, v3}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -1175,7 +1208,7 @@
 
     move-result-object v2
 
-    const v3, 0x7f1105b7
+    const v3, 0x7f1105b9
 
     invoke-virtual {v2, v3}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -1194,7 +1227,7 @@
 
     move-result-object v2
 
-    const v3, 0x7f05003e
+    const v3, 0x7f05003d
 
     invoke-virtual {v2, v3}, Landroid/content/res/Resources;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 

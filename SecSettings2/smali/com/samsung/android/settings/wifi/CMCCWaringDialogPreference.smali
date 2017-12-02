@@ -98,7 +98,7 @@
 
     invoke-virtual {p0, v0}, Lcom/samsung/android/settings/wifi/CMCCWaringDialogPreference;->setDialogLayoutResource(I)V
 
-    const v0, 0x7f0b0ebb
+    const v0, 0x7f0b0eca
 
     invoke-virtual {p0, v0}, Lcom/samsung/android/settings/wifi/CMCCWaringDialogPreference;->setPositiveButtonText(I)V
 
@@ -551,7 +551,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f0b0eda
+    const v1, 0x7f0b0ee9
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 

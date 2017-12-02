@@ -44,6 +44,8 @@
 
 .field private mTemporaryMuteObserver:Landroid/database/ContentObserver;
 
+.field private mTimer:Landroid/os/CountDownTimer;
+
 .field private mVibrate:Lcom/samsung/android/settings/notification/RadioPreference;
 
 
@@ -86,6 +88,22 @@
     iget-object v0, p0, Lcom/samsung/android/settings/notification/SoundModeSettings;->mMuteIntervalOn:Landroid/preference/SwitchPreference;
 
     return-object v0
+.end method
+
+.method static synthetic -get5(Lcom/samsung/android/settings/notification/SoundModeSettings;)Landroid/os/CountDownTimer;
+    .locals 1
+
+    iget-object v0, p0, Lcom/samsung/android/settings/notification/SoundModeSettings;->mTimer:Landroid/os/CountDownTimer;
+
+    return-object v0
+.end method
+
+.method static synthetic -set0(Lcom/samsung/android/settings/notification/SoundModeSettings;Landroid/os/CountDownTimer;)Landroid/os/CountDownTimer;
+    .locals 0
+
+    iput-object p1, p0, Lcom/samsung/android/settings/notification/SoundModeSettings;->mTimer:Landroid/os/CountDownTimer;
+
+    return-object p1
 .end method
 
 .method static synthetic -wrap0(Lcom/samsung/android/settings/notification/SoundModeSettings;)Landroid/content/ContentResolver;
@@ -245,7 +263,7 @@
 
     if-ne v3, v13, :cond_0
 
-    const v8, 0x7f0b0c24
+    const v8, 0x7f0b0c32
 
     invoke-virtual {p0, v8}, Lcom/samsung/android/settings/notification/SoundModeSettings;->getString(I)Ljava/lang/String;
 
@@ -308,7 +326,7 @@
 
     aput-object v7, v9, v11
 
-    const v10, 0x7f0b0c31
+    const v10, 0x7f0b0c3f
 
     invoke-virtual {v8, v10, v9}, Landroid/content/Context;->getString(I[Ljava/lang/Object;)Ljava/lang/String;
 
@@ -384,7 +402,7 @@
     invoke-virtual {v0}, Landroid/preference/PreferenceScreen;->removeAll()V
 
     :cond_0
-    const v1, 0x7f08012c
+    const v1, 0x7f08012e
 
     invoke-virtual {p0, v1}, Lcom/samsung/android/settings/notification/SoundModeSettings;->addPreferencesFromResource(I)V
 
@@ -506,7 +524,7 @@
 
     aput-object v3, v2, v7
 
-    const v3, 0x7f0b0c24
+    const v3, 0x7f0b0c32
 
     invoke-virtual {p0, v3}, Lcom/samsung/android/settings/notification/SoundModeSettings;->getString(I)Ljava/lang/String;
 
@@ -697,9 +715,9 @@
 .method private updateControls()V
     .locals 14
 
-    const v13, 0x7f0b0c2f
+    const v13, 0x7f0b0c3d
 
-    const v12, 0x7f0b0c2d
+    const v12, 0x7f0b0c3b
 
     const/16 v10, 0x21
 
@@ -997,7 +1015,7 @@
 
     iget-object v9, p0, Lcom/samsung/android/settings/notification/SoundModeSettings;->mContext:Landroid/content/Context;
 
-    const v10, 0x7f0b0c2c
+    const v10, 0x7f0b0c3a
 
     invoke-virtual {v9, v10}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -1026,7 +1044,7 @@
 
     iget-object v9, p0, Lcom/samsung/android/settings/notification/SoundModeSettings;->mContext:Landroid/content/Context;
 
-    const v10, 0x7f0b160b
+    const v10, 0x7f0b161d
 
     invoke-virtual {v9, v10}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -1187,7 +1205,7 @@
 
     invoke-virtual {v1, v2}, Landroid/view/Window;->setSoftInputMode(I)V
 
-    const v1, 0x7f0b0c30
+    const v1, 0x7f0b0c3e
 
     invoke-virtual {v0, v1}, Lcom/samsung/android/app/SemTimePickerDialog;->setTitle(I)V
 
@@ -1206,6 +1224,15 @@
 
     invoke-direct {p0}, Lcom/samsung/android/settings/notification/SoundModeSettings;->releaseListenersAndObserver()V
 
+    iget-object v0, p0, Lcom/samsung/android/settings/notification/SoundModeSettings;->mTimer:Landroid/os/CountDownTimer;
+
+    if-eqz v0, :cond_0
+
+    iget-object v0, p0, Lcom/samsung/android/settings/notification/SoundModeSettings;->mTimer:Landroid/os/CountDownTimer;
+
+    invoke-virtual {v0}, Landroid/os/CountDownTimer;->cancel()V
+
+    :cond_0
     iget-object v0, p0, Lcom/samsung/android/settings/notification/SoundModeSettings;->mEmSettingsManager:Lcom/samsung/android/settings/bixby/EmSettingsManager;
 
     const-string/jumbo v1, "SoundsModeSettings"

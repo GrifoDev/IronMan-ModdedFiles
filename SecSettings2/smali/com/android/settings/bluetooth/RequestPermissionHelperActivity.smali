@@ -126,7 +126,7 @@
 
     if-eqz v1, :cond_0
 
-    const v1, 0x7f0b135f
+    const v1, 0x7f0b1370
 
     invoke-virtual {p0, v1}, Lcom/android/settings/bluetooth/RequestPermissionHelperActivity;->getString(I)Ljava/lang/String;
 
@@ -143,7 +143,7 @@
     iput-object v1, p0, Lcom/android/settings/bluetooth/RequestPermissionHelperActivity;->mEventId:Ljava/lang/String;
 
     :goto_0
-    const v1, 0x7f0b12f8
+    const v1, 0x7f0b1309
 
     invoke-virtual {p0, v1}, Lcom/android/settings/bluetooth/RequestPermissionHelperActivity;->getString(I)Ljava/lang/String;
 
@@ -153,7 +153,7 @@
 
     iput-object p0, v0, Lcom/android/internal/app/AlertController$AlertParams;->mPositiveButtonListener:Landroid/content/DialogInterface$OnClickListener;
 
-    const v1, 0x7f0b12f9
+    const v1, 0x7f0b130a
 
     invoke-virtual {p0, v1}, Lcom/android/settings/bluetooth/RequestPermissionHelperActivity;->getString(I)Ljava/lang/String;
 
@@ -172,7 +172,7 @@
 
     if-nez v1, :cond_1
 
-    const v1, 0x7f0b1366
+    const v1, 0x7f0b1377
 
     invoke-virtual {p0, v1}, Lcom/android/settings/bluetooth/RequestPermissionHelperActivity;->getString(I)Ljava/lang/String;
 
@@ -204,7 +204,7 @@
 
     aput-object v2, v1, v3
 
-    const v2, 0x7f0b1365
+    const v2, 0x7f0b1376
 
     invoke-virtual {p0, v2, v1}, Lcom/android/settings/bluetooth/RequestPermissionHelperActivity;->getString(I[Ljava/lang/Object;)Ljava/lang/String;
 

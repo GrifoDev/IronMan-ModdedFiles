@@ -190,7 +190,7 @@
 
     new-instance v1, Lcom/android/settings/display/AppGridView$AppsAdapter;
 
-    const v2, 0x7f040298
+    const v2, 0x7f04029b
 
     const v3, 0x1020014
 

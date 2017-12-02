@@ -1167,7 +1167,7 @@
 
     if-eqz v6, :cond_0
 
-    const v6, 0x7f0b1c7c
+    const v6, 0x7f0b1c8e
 
     invoke-virtual {p0, v6}, Lcom/android/settings/notification/NotificationSettingsBase;->getString(I)Ljava/lang/String;
 
@@ -1186,7 +1186,7 @@
     invoke-direct {p0, v3, v4, v6}, Lcom/android/settings/notification/NotificationSettingsBase;->setRestrictedIfNotificationFeaturesDisabled(Ljava/lang/CharSequence;Ljava/lang/CharSequence;I)V
 
     :cond_0
-    const v6, 0x7f0b1c7d
+    const v6, 0x7f0b1c8f
 
     invoke-virtual {p0, v6}, Lcom/android/settings/notification/NotificationSettingsBase;->getString(I)Ljava/lang/String;
 
@@ -1206,7 +1206,7 @@
 
     invoke-direct {p0, v1, v2, v6}, Lcom/android/settings/notification/NotificationSettingsBase;->setRestrictedIfNotificationFeaturesDisabled(Ljava/lang/CharSequence;Ljava/lang/CharSequence;I)V
 
-    const v6, 0x7f0b1c7e
+    const v6, 0x7f0b1c90
 
     invoke-virtual {p0, v6}, Lcom/android/settings/notification/NotificationSettingsBase;->getString(I)Ljava/lang/String;
 
@@ -1302,7 +1302,7 @@
 
     iget-object v0, p0, Lcom/android/settings/notification/NotificationSettingsBase;->mContext:Landroid/content/Context;
 
-    const v1, 0x7f0b1855
+    const v1, 0x7f0b1867
 
     const/4 v2, 0x0
 

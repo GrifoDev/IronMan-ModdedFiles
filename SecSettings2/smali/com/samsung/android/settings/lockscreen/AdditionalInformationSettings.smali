@@ -148,7 +148,7 @@
 
     if-nez v0, :cond_0
 
-    const v0, 0x7f1103ac
+    const v0, 0x7f1103ae
 
     invoke-virtual {p1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -191,7 +191,7 @@
 
     iget-object v0, p0, Lcom/samsung/android/settings/lockscreen/AdditionalInformationSettings;->mDndAnimator:Lcom/samsung/android/animation/SemDragAndDropListAnimator;
 
-    const v1, 0x7f020382
+    const v1, 0x7f020380
 
     invoke-virtual {v0, v1}, Lcom/samsung/android/animation/SemDragAndDropListAnimator;->setDragGrabHandleDrawable(I)V
 
@@ -321,7 +321,7 @@
 
     move-result-object v2
 
-    const v3, 0x7f0b0a43
+    const v3, 0x7f0b0a51
 
     invoke-virtual {v2, v3}, Landroid/app/Activity;->setTitle(I)V
 
@@ -333,7 +333,7 @@
 
     move-result-object v2
 
-    const v3, 0x7f0b0a3a
+    const v3, 0x7f0b0a48
 
     invoke-virtual {v2, v3}, Landroid/app/Activity;->setTitle(I)V
 
@@ -495,7 +495,7 @@
 
     const/4 v1, 0x1
 
-    const v2, 0x7f0b0a43
+    const v2, 0x7f0b0a51
 
     invoke-interface {p1, v3, v1, v3, v2}, Landroid/view/Menu;->add(IIII)Landroid/view/MenuItem;
 
@@ -529,7 +529,7 @@
 
     check-cast v5, Landroid/view/ViewGroup;
 
-    const v6, 0x7f040103
+    const v6, 0x7f040104
 
     invoke-virtual {p1, v6, v5}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;)Landroid/view/View;
 
@@ -575,7 +575,7 @@
 
     iget-object v5, p0, Lcom/samsung/android/settings/lockscreen/AdditionalInformationSettings;->imgView:Landroid/widget/ImageView;
 
-    const v6, 0x7f0204ab
+    const v6, 0x7f0204ad
 
     invoke-virtual {v5, v6}, Landroid/widget/ImageView;->setBackgroundResource(I)V
 
@@ -618,7 +618,7 @@
 
     iget-object v5, p0, Lcom/samsung/android/settings/lockscreen/AdditionalInformationSettings;->textView:Landroid/widget/TextView;
 
-    const v6, 0x7f0b0a3c
+    const v6, 0x7f0b0a4a
 
     invoke-virtual {v5, v6}, Landroid/widget/TextView;->setText(I)V
 
@@ -635,7 +635,7 @@
 
     iget-object v5, p0, Lcom/samsung/android/settings/lockscreen/AdditionalInformationSettings;->imgView:Landroid/widget/ImageView;
 
-    const v6, 0x7f0204ad
+    const v6, 0x7f0204af
 
     invoke-virtual {v5, v6}, Landroid/widget/ImageView;->setBackgroundResource(I)V
 
@@ -644,7 +644,7 @@
     :cond_2
     iget-object v5, p0, Lcom/samsung/android/settings/lockscreen/AdditionalInformationSettings;->imgView:Landroid/widget/ImageView;
 
-    const v6, 0x7f0204ac
+    const v6, 0x7f0204ae
 
     invoke-virtual {v5, v6}, Landroid/widget/ImageView;->setBackgroundResource(I)V
 
@@ -653,7 +653,7 @@
     :cond_3
     iget-object v5, p0, Lcom/samsung/android/settings/lockscreen/AdditionalInformationSettings;->textView:Landroid/widget/TextView;
 
-    const v6, 0x7f0b0a3e
+    const v6, 0x7f0b0a4c
 
     invoke-virtual {v5, v6}, Landroid/widget/TextView;->setText(I)V
 

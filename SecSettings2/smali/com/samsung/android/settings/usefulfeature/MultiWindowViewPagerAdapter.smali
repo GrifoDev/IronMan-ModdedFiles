@@ -58,15 +58,15 @@
 .method private setDescriptions()V
     .locals 9
 
-    const v8, 0x7f0b0b2f
+    const v8, 0x7f0b0b3d
 
-    const v7, 0x7f02040d
+    const v7, 0x7f02040b
 
-    const v6, 0x7f02040c
+    const v6, 0x7f02040a
 
-    const v5, 0x7f02040b
+    const v5, 0x7f020409
 
-    const v4, 0x7f0b0b2e
+    const v4, 0x7f0b0b3c
 
     new-instance v0, Lcom/samsung/android/settings/usefulfeature/MultiWindowViewPagerAdapter$Description;
 
@@ -106,7 +106,7 @@
 
     iput-object v2, v0, Lcom/samsung/android/settings/usefulfeature/MultiWindowViewPagerAdapter$Description;->key:Ljava/lang/String;
 
-    const v2, 0x7f0b0b32
+    const v2, 0x7f0b0b40
 
     iput v2, v0, Lcom/samsung/android/settings/usefulfeature/MultiWindowViewPagerAdapter$Description;->title:I
 
@@ -164,7 +164,7 @@
 
     iget-object v2, p0, Lcom/samsung/android/settings/usefulfeature/MultiWindowViewPagerAdapter;->context:Landroid/content/Context;
 
-    const v3, 0x7f0b0b30
+    const v3, 0x7f0b0b3e
 
     invoke-virtual {v2, v3}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -192,7 +192,7 @@
 
     iput-object v2, v0, Lcom/samsung/android/settings/usefulfeature/MultiWindowViewPagerAdapter$Description;->key:Ljava/lang/String;
 
-    const v2, 0x7f0b0b2b
+    const v2, 0x7f0b0b39
 
     iput v2, v0, Lcom/samsung/android/settings/usefulfeature/MultiWindowViewPagerAdapter$Description;->title:I
 
@@ -253,7 +253,7 @@
 
     iget-object v3, p0, Lcom/samsung/android/settings/usefulfeature/MultiWindowViewPagerAdapter;->context:Landroid/content/Context;
 
-    const v4, 0x7f0b0b30
+    const v4, 0x7f0b0b3e
 
     invoke-virtual {v3, v4}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -271,7 +271,7 @@
 
     iget-object v3, p0, Lcom/samsung/android/settings/usefulfeature/MultiWindowViewPagerAdapter;->context:Landroid/content/Context;
 
-    const v4, 0x7f0b0b31
+    const v4, 0x7f0b0b3f
 
     invoke-virtual {v3, v4}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -339,7 +339,7 @@
 
     iput-object v2, v0, Lcom/samsung/android/settings/usefulfeature/MultiWindowViewPagerAdapter$Description;->key:Ljava/lang/String;
 
-    const v2, 0x7f0b0b28
+    const v2, 0x7f0b0b36
 
     iput v2, v0, Lcom/samsung/android/settings/usefulfeature/MultiWindowViewPagerAdapter$Description;->title:I
 
@@ -349,14 +349,14 @@
 
     if-eqz v2, :cond_7
 
-    const v2, 0x7f020408
+    const v2, 0x7f020406
 
     iput v2, v0, Lcom/samsung/android/settings/usefulfeature/MultiWindowViewPagerAdapter$Description;->animation:I
 
     :goto_2
     iget-object v2, p0, Lcom/samsung/android/settings/usefulfeature/MultiWindowViewPagerAdapter;->context:Landroid/content/Context;
 
-    const v3, 0x7f0b0b29
+    const v3, 0x7f0b0b37
 
     invoke-virtual {v2, v3}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -373,14 +373,14 @@
     :cond_7
     if-eqz v1, :cond_8
 
-    const v2, 0x7f020405
+    const v2, 0x7f020403
 
     iput v2, v0, Lcom/samsung/android/settings/usefulfeature/MultiWindowViewPagerAdapter$Description;->animation:I
 
     goto :goto_2
 
     :cond_8
-    const v2, 0x7f020402
+    const v2, 0x7f020400
 
     iput v2, v0, Lcom/samsung/android/settings/usefulfeature/MultiWindowViewPagerAdapter$Description;->animation:I
 
@@ -497,7 +497,7 @@
 
     iget-object v4, p0, Lcom/samsung/android/settings/usefulfeature/MultiWindowViewPagerAdapter;->mInflater:Landroid/view/LayoutInflater;
 
-    const v5, 0x7f0401e2
+    const v5, 0x7f0401e5
 
     invoke-virtual {v4, v5, v8}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;)Landroid/view/View;
 
@@ -509,7 +509,7 @@
 
     invoke-virtual {v3, v4}, Landroid/view/View;->setTag(Ljava/lang/Object;)V
 
-    const v4, 0x7f1105fe
+    const v4, 0x7f110600
 
     invoke-virtual {v3, v4}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -517,7 +517,7 @@
 
     check-cast v2, Landroid/widget/TextView;
 
-    const v4, 0x7f1105ff
+    const v4, 0x7f110601
 
     invoke-virtual {v3, v4}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -525,7 +525,7 @@
 
     check-cast v1, Landroid/widget/TextView;
 
-    const v4, 0x7f1105fd
+    const v4, 0x7f1105ff
 
     invoke-virtual {v3, v4}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 

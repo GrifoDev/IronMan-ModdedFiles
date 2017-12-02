@@ -28,9 +28,7 @@
 .method public isApplicable(Landroid/content/Context;)Z
     .locals 1
 
-    invoke-static {p1}, Lcom/android/settings/Utils;->isVoiceCapable(Landroid/content/Context;)Z
-
-    move-result v0
+    const/4 v0, 0x1
 
     return v0
 .end method

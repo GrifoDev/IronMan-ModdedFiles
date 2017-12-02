@@ -604,7 +604,7 @@
 
     invoke-super {p0, p1}, Lcom/samsung/android/settings/SecSettingsPreferenceFragment;->onCreate(Landroid/os/Bundle;)V
 
-    const v3, 0x7f0800b8
+    const v3, 0x7f0800ba
 
     invoke-virtual {p0, v3}, Lcom/samsung/android/settings/datausage/trafficmanager/OperatorSettingActivity;->addPreferencesFromResource(I)V
 
@@ -895,9 +895,9 @@
 .method public onPreferenceChange(Landroid/preference/Preference;Ljava/lang/Object;)Z
     .locals 11
 
-    const v10, 0x7f0f04d3
+    const v10, 0x7f0f04d2
 
-    const v9, 0x7f0f04cf
+    const v9, 0x7f0f04ce
 
     const/4 v8, 0x1
 
@@ -1068,7 +1068,7 @@
 
     move-result-object v5
 
-    const v6, 0x7f0f04d1
+    const v6, 0x7f0f04d0
 
     invoke-virtual {v5, v6}, Landroid/content/res/Resources;->getInteger(I)I
 
@@ -1663,7 +1663,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f0f04cf
+    const v2, 0x7f0f04ce
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getInteger(I)I
 

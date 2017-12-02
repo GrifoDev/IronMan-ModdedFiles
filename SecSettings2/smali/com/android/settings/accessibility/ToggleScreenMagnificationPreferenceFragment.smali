@@ -187,7 +187,7 @@
 
     iget-object v0, p0, Lcom/android/settings/accessibility/ToggleScreenMagnificationPreferenceFragment;->mVideoPreference:Lcom/android/settings/accessibility/ToggleScreenMagnificationPreferenceFragment$VideoPreference;
 
-    const v1, 0x7f0402b1
+    const v1, 0x7f0402b4
 
     invoke-virtual {v0, v1}, Lcom/android/settings/accessibility/ToggleScreenMagnificationPreferenceFragment$VideoPreference;->setLayoutResource(I)V
 
@@ -388,7 +388,7 @@
 
     iget-object v0, p0, Lcom/android/settings/accessibility/ToggleScreenMagnificationPreferenceFragment;->mVideoPreference:Lcom/android/settings/accessibility/ToggleScreenMagnificationPreferenceFragment$VideoPreference;
 
-    const v1, 0x7f0402b1
+    const v1, 0x7f0402b4
 
     invoke-virtual {v0, v1}, Lcom/android/settings/accessibility/ToggleScreenMagnificationPreferenceFragment$VideoPreference;->setLayoutResource(I)V
 
@@ -480,7 +480,7 @@
 
     move-result-object v10
 
-    const v11, 0x7f0b1916
+    const v11, 0x7f0b1928
 
     invoke-virtual {v10, v11}, Landroid/app/Activity;->getString(I)Ljava/lang/String;
 
@@ -551,7 +551,7 @@
 
     invoke-direct {v9, p0}, Lcom/android/settings/accessibility/ToggleScreenMagnificationPreferenceFragment$5;-><init>(Lcom/android/settings/accessibility/ToggleScreenMagnificationPreferenceFragment;)V
 
-    const v10, 0x7f0b04fa
+    const v10, 0x7f0b04fb
 
     invoke-virtual {v8, v10, v9}, Landroid/app/AlertDialog$Builder;->setPositiveButton(ILandroid/content/DialogInterface$OnClickListener;)Landroid/app/AlertDialog$Builder;
 
@@ -699,7 +699,7 @@
 
     move-result-object v2
 
-    const v3, 0x7f0f0333
+    const v3, 0x7f0f0332
 
     invoke-virtual {v2, v3}, Landroid/content/res/Resources;->getInteger(I)I
 
@@ -737,7 +737,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f11073e
+    const v2, 0x7f110740
 
     invoke-virtual {v1, v2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 

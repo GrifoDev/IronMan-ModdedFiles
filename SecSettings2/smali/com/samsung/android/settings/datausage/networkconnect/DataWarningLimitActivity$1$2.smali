@@ -49,7 +49,7 @@
 
     move-result-object v2
 
-    const v3, 0x7f0f04d5
+    const v3, 0x7f0f04d4
 
     invoke-virtual {v2, v3}, Landroid/content/res/Resources;->getInteger(I)I
 
@@ -67,7 +67,7 @@
 
     move-result-object v2
 
-    const v3, 0x7f0f04da
+    const v3, 0x7f0f04d9
 
     invoke-virtual {v2, v3}, Landroid/content/res/Resources;->getInteger(I)I
 

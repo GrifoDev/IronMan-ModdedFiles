@@ -136,9 +136,9 @@
 .method private getDescriptionString()Ljava/lang/String;
     .locals 11
 
-    const v10, 0x7f0b0d4b
+    const v10, 0x7f0b0d5a
 
-    const v9, 0x7f0b0d47
+    const v9, 0x7f0b0d56
 
     const/4 v7, 0x1
 
@@ -158,7 +158,7 @@
 
     iget-object v5, p0, Lcom/samsung/android/settings/handwritingsearch/HandwritingLanguagePreference;->mContext:Landroid/content/Context;
 
-    const v6, 0x7f0b0d4e
+    const v6, 0x7f0b0d5d
 
     invoke-virtual {v5, v6}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -224,7 +224,7 @@
     :cond_1
     iget-object v5, p0, Lcom/samsung/android/settings/handwritingsearch/HandwritingLanguagePreference;->mContext:Landroid/content/Context;
 
-    const v6, 0x7f0b0d4d
+    const v6, 0x7f0b0d5c
 
     invoke-virtual {v5, v6}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -277,7 +277,7 @@
 
     aput-object v4, v6, v8
 
-    const v7, 0x7f0b0d4c
+    const v7, 0x7f0b0d5b
 
     invoke-virtual {v5, v7, v6}, Landroid/content/Context;->getString(I[Ljava/lang/Object;)Ljava/lang/String;
 
@@ -292,7 +292,7 @@
 
     aput-object v4, v6, v8
 
-    const v7, 0x7f0b0d4a
+    const v7, 0x7f0b0d59
 
     invoke-virtual {v5, v7, v6}, Landroid/content/Context;->getString(I[Ljava/lang/Object;)Ljava/lang/String;
 
@@ -339,7 +339,7 @@
 
     aput-object v7, v6, v8
 
-    const v7, 0x7f0b0d49
+    const v7, 0x7f0b0d58
 
     invoke-virtual {v5, v7, v6}, Landroid/content/Context;->getString(I[Ljava/lang/Object;)Ljava/lang/String;
 
@@ -1353,7 +1353,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f0f03c5
+    const v1, 0x7f0f03c4
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getInteger(I)I
 
@@ -1417,7 +1417,7 @@
 .method public onCreateView(Landroid/view/LayoutInflater;Landroid/view/ViewGroup;Landroid/os/Bundle;)Landroid/view/View;
     .locals 3
 
-    const v1, 0x7f04013e
+    const v1, 0x7f04013f
 
     const/4 v2, 0x0
 
@@ -1425,7 +1425,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f11042c
+    const v1, 0x7f11042e
 
     invoke-virtual {v0, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -1435,7 +1435,7 @@
 
     iput-object v1, p0, Lcom/samsung/android/settings/handwritingsearch/HandwritingLanguagePreference;->mTextView:Landroid/widget/TextView;
 
-    const v1, 0x7f11042d
+    const v1, 0x7f11042f
 
     invoke-virtual {v0, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -1445,7 +1445,7 @@
 
     iput-object v1, p0, Lcom/samsung/android/settings/handwritingsearch/HandwritingLanguagePreference;->mListView:Landroid/widget/ListView;
 
-    const v1, 0x7f11042f
+    const v1, 0x7f110431
 
     invoke-virtual {v0, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -1455,7 +1455,7 @@
 
     iput-object v1, p0, Lcom/samsung/android/settings/handwritingsearch/HandwritingLanguagePreference;->mMoreButton:Lcom/samsung/android/settings/widget/BottomBarButton;
 
-    const v1, 0x7f11042e
+    const v1, 0x7f110430
 
     invoke-virtual {v0, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -1687,7 +1687,7 @@
 
     iget-object v13, p0, Lcom/samsung/android/settings/handwritingsearch/HandwritingLanguagePreference;->mContext:Landroid/content/Context;
 
-    const v14, 0x7f040185
+    const v14, 0x7f040186
 
     invoke-direct {v12, v13, v14, v0}, Lcom/samsung/android/settings/handwritingsearch/HandwritingLanguagePreference$HandwritingLanguageListAdapter;-><init>(Landroid/content/Context;I[Lcom/samsung/android/settings/handwritingsearch/HandwritingLanguagePreference$LanguageInfo;)V
 

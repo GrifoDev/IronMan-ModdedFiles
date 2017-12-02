@@ -37,7 +37,7 @@
 .method public run()V
     .locals 10
 
-    const/4 v7, 0x0
+    const/4 v9, 0x0
 
     iget-object v5, p0, Lcom/samsung/android/settings/notification/PriorityNotiAppList$2;->this$0:Lcom/samsung/android/settings/notification/PriorityNotiAppList;
 
@@ -49,7 +49,7 @@
 
     move-result-object v5
 
-    if-eqz v5, :cond_2
+    if-eqz v5, :cond_1
 
     iget-object v5, p0, Lcom/samsung/android/settings/notification/PriorityNotiAppList$2;->this$0:Lcom/samsung/android/settings/notification/PriorityNotiAppList;
 
@@ -61,7 +61,7 @@
 
     move-result v5
 
-    if-nez v5, :cond_2
+    if-nez v5, :cond_1
 
     iget-object v5, p0, Lcom/samsung/android/settings/notification/PriorityNotiAppList$2;->this$0:Lcom/samsung/android/settings/notification/PriorityNotiAppList;
 
@@ -69,7 +69,7 @@
 
     move-result-object v5
 
-    const v6, 0x7f0b184b
+    const v6, 0x7f0b185d
 
     invoke-virtual {v5, v6}, Landroid/widget/TextView;->setText(I)V
 
@@ -85,7 +85,7 @@
 
     move-result v5
 
-    if-eqz v5, :cond_5
+    if-eqz v5, :cond_6
 
     iget-object v5, p0, Lcom/samsung/android/settings/notification/PriorityNotiAppList$2;->this$0:Lcom/samsung/android/settings/notification/PriorityNotiAppList;
 
@@ -103,7 +103,7 @@
 
     move-result v5
 
-    if-eqz v5, :cond_6
+    if-eqz v5, :cond_7
 
     iget-object v5, p0, Lcom/samsung/android/settings/notification/PriorityNotiAppList$2;->this$0:Lcom/samsung/android/settings/notification/PriorityNotiAppList;
 
@@ -115,7 +115,7 @@
 
     move-result v5
 
-    if-lez v5, :cond_3
+    if-lez v5, :cond_4
 
     iget-object v5, p0, Lcom/samsung/android/settings/notification/PriorityNotiAppList$2;->this$0:Lcom/samsung/android/settings/notification/PriorityNotiAppList;
 
@@ -123,7 +123,7 @@
 
     move-result-object v5
 
-    invoke-virtual {v5, v7}, Lcom/samsung/android/settings/bixby/EmSettingsManager;->getParamString(I)Ljava/lang/String;
+    invoke-virtual {v5, v9}, Lcom/samsung/android/settings/bixby/EmSettingsManager;->getParamString(I)Ljava/lang/String;
 
     move-result-object v2
 
@@ -140,7 +140,7 @@
 
     move-result v5
 
-    if-ge v1, v5, :cond_3
+    if-ge v1, v5, :cond_4
 
     iget-object v5, p0, Lcom/samsung/android/settings/notification/PriorityNotiAppList$2;->this$0:Lcom/samsung/android/settings/notification/PriorityNotiAppList;
 
@@ -160,33 +160,55 @@
 
     move-result-object v4
 
-    if-eqz v2, :cond_1
+    if-eqz v2, :cond_3
 
     invoke-virtual {v4, v2}, Ljava/lang/String;->equalsIgnoreCase(Ljava/lang/String;)Z
 
     move-result v5
 
-    if-eqz v5, :cond_1
+    if-eqz v5, :cond_3
 
     iget-boolean v5, v0, Lcom/samsung/android/settings/notification/PriorityNotiAppList$AppRow;->priority:Z
 
-    if-nez v5, :cond_1
+    if-nez v5, :cond_2
 
     iget-object v5, p0, Lcom/samsung/android/settings/notification/PriorityNotiAppList$2;->this$0:Lcom/samsung/android/settings/notification/PriorityNotiAppList;
 
-    invoke-virtual {v5}, Lcom/samsung/android/settings/notification/PriorityNotiAppList;->getListView()Landroid/widget/ListView;
+    invoke-static {v5}, Lcom/samsung/android/settings/notification/PriorityNotiAppList;->-get4(Lcom/samsung/android/settings/notification/PriorityNotiAppList;)Lcom/android/settings/notification/NotificationBackend;
 
     move-result-object v5
 
-    iget-object v6, p0, Lcom/samsung/android/settings/notification/PriorityNotiAppList$2;->this$0:Lcom/samsung/android/settings/notification/PriorityNotiAppList;
+    iget-object v6, v0, Lcom/samsung/android/settings/notification/PriorityNotiAppList$AppRow;->pkg:Ljava/lang/String;
 
-    invoke-virtual {v6}, Lcom/samsung/android/settings/notification/PriorityNotiAppList;->getView()Landroid/view/View;
+    iget v7, v0, Lcom/samsung/android/settings/notification/PriorityNotiAppList$AppRow;->uid:I
 
-    move-result-object v6
+    const/4 v8, 0x1
 
-    int-to-long v8, v1
+    invoke-virtual {v5, v6, v7, v8}, Lcom/android/settings/notification/NotificationBackend;->setBypassZenMode(Ljava/lang/String;IZ)Z
 
-    invoke-virtual {v5, v6, v1, v8, v9}, Landroid/widget/ListView;->performItemClick(Landroid/view/View;IJ)Z
+    iget-object v5, p0, Lcom/samsung/android/settings/notification/PriorityNotiAppList$2;->this$0:Lcom/samsung/android/settings/notification/PriorityNotiAppList;
+
+    invoke-static {v5}, Lcom/samsung/android/settings/notification/PriorityNotiAppList;->-get6(Lcom/samsung/android/settings/notification/PriorityNotiAppList;)Lcom/samsung/android/settings/bixby/EmSettingsManager;
+
+    move-result-object v5
+
+    const-string/jumbo v6, "PriorityAppNotificationsOn"
+
+    const-string/jumbo v7, "AlreadyOn"
+
+    const-string/jumbo v8, "no"
+
+    invoke-virtual {v5, v6, v7, v8}, Lcom/samsung/android/settings/bixby/EmSettingsManager;->setNlgScreenParam(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
+
+    iget-object v5, p0, Lcom/samsung/android/settings/notification/PriorityNotiAppList$2;->this$0:Lcom/samsung/android/settings/notification/PriorityNotiAppList;
+
+    invoke-static {v5}, Lcom/samsung/android/settings/notification/PriorityNotiAppList;->-get6(Lcom/samsung/android/settings/notification/PriorityNotiAppList;)Lcom/samsung/android/settings/bixby/EmSettingsManager;
+
+    move-result-object v5
+
+    const-string/jumbo v6, "PriorityAppNotifications"
+
+    invoke-virtual {v5, v6}, Lcom/samsung/android/settings/bixby/EmSettingsManager;->requestNlg(Ljava/lang/String;)V
 
     iget-object v5, p0, Lcom/samsung/android/settings/notification/PriorityNotiAppList$2;->this$0:Lcom/samsung/android/settings/notification/PriorityNotiAppList;
 
@@ -198,12 +220,32 @@
 
     invoke-virtual {v5, v6}, Lcom/samsung/android/settings/bixby/EmSettingsManager;->sendResponse(Lcom/samsung/android/sdk/bixby/BixbyApi$ResponseResults;)V
 
+    iget-object v5, p0, Lcom/samsung/android/settings/notification/PriorityNotiAppList$2;->this$0:Lcom/samsung/android/settings/notification/PriorityNotiAppList;
+
+    invoke-static {v5}, Lcom/samsung/android/settings/notification/PriorityNotiAppList;->-get6(Lcom/samsung/android/settings/notification/PriorityNotiAppList;)Lcom/samsung/android/settings/bixby/EmSettingsManager;
+
+    move-result-object v5
+
+    invoke-virtual {v5, v9}, Lcom/samsung/android/settings/bixby/EmSettingsManager;->setPendingState(Z)V
+
+    iget-object v5, p0, Lcom/samsung/android/settings/notification/PriorityNotiAppList$2;->this$0:Lcom/samsung/android/settings/notification/PriorityNotiAppList;
+
+    invoke-static {v5}, Lcom/samsung/android/settings/notification/PriorityNotiAppList;->-get7(Lcom/samsung/android/settings/notification/PriorityNotiAppList;)Landroid/os/Handler;
+
+    move-result-object v5
+
+    iget-object v6, p0, Lcom/samsung/android/settings/notification/PriorityNotiAppList$2;->this$0:Lcom/samsung/android/settings/notification/PriorityNotiAppList;
+
+    invoke-static {v6}, Lcom/samsung/android/settings/notification/PriorityNotiAppList;->-get12(Lcom/samsung/android/settings/notification/PriorityNotiAppList;)Ljava/lang/Runnable;
+
+    move-result-object v6
+
+    invoke-virtual {v5, v6}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
+
+    :goto_2
+    return-void
+
     :cond_1
-    add-int/lit8 v1, v1, 0x1
-
-    goto :goto_1
-
-    :cond_2
     iget-object v5, p0, Lcom/samsung/android/settings/notification/PriorityNotiAppList$2;->this$0:Lcom/samsung/android/settings/notification/PriorityNotiAppList;
 
     invoke-virtual {v5}, Lcom/samsung/android/settings/notification/PriorityNotiAppList;->getView()Landroid/view/View;
@@ -226,11 +268,35 @@
 
     move-result-object v5
 
-    invoke-virtual {v5, v7}, Landroid/widget/ListView;->setSelection(I)V
+    invoke-virtual {v5, v9}, Landroid/widget/ListView;->setSelection(I)V
 
     goto/16 :goto_0
 
-    :cond_3
+    :cond_2
+    iget-object v5, p0, Lcom/samsung/android/settings/notification/PriorityNotiAppList$2;->this$0:Lcom/samsung/android/settings/notification/PriorityNotiAppList;
+
+    invoke-static {v5}, Lcom/samsung/android/settings/notification/PriorityNotiAppList;->-get6(Lcom/samsung/android/settings/notification/PriorityNotiAppList;)Lcom/samsung/android/settings/bixby/EmSettingsManager;
+
+    move-result-object v5
+
+    const-string/jumbo v6, "PriorityAppNotificationsOn"
+
+    const-string/jumbo v7, "AlreadyOn"
+
+    const-string/jumbo v8, "yes"
+
+    invoke-virtual {v5, v6, v7, v8}, Lcom/samsung/android/settings/bixby/EmSettingsManager;->setNlgScreenParam(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
+
+    iget-object v5, p0, Lcom/samsung/android/settings/notification/PriorityNotiAppList$2;->this$0:Lcom/samsung/android/settings/notification/PriorityNotiAppList;
+
+    invoke-static {v5}, Lcom/samsung/android/settings/notification/PriorityNotiAppList;->-get6(Lcom/samsung/android/settings/notification/PriorityNotiAppList;)Lcom/samsung/android/settings/bixby/EmSettingsManager;
+
+    move-result-object v5
+
+    const-string/jumbo v6, "PriorityAppNotifications"
+
+    invoke-virtual {v5, v6}, Lcom/samsung/android/settings/bixby/EmSettingsManager;->requestNlg(Ljava/lang/String;)V
+
     iget-object v5, p0, Lcom/samsung/android/settings/notification/PriorityNotiAppList$2;->this$0:Lcom/samsung/android/settings/notification/PriorityNotiAppList;
 
     invoke-static {v5}, Lcom/samsung/android/settings/notification/PriorityNotiAppList;->-get6(Lcom/samsung/android/settings/notification/PriorityNotiAppList;)Lcom/samsung/android/settings/bixby/EmSettingsManager;
@@ -241,27 +307,53 @@
 
     invoke-virtual {v5, v6}, Lcom/samsung/android/settings/bixby/EmSettingsManager;->sendResponse(Lcom/samsung/android/sdk/bixby/BixbyApi$ResponseResults;)V
 
-    :cond_4
-    :goto_2
     iget-object v5, p0, Lcom/samsung/android/settings/notification/PriorityNotiAppList$2;->this$0:Lcom/samsung/android/settings/notification/PriorityNotiAppList;
 
     invoke-static {v5}, Lcom/samsung/android/settings/notification/PriorityNotiAppList;->-get6(Lcom/samsung/android/settings/notification/PriorityNotiAppList;)Lcom/samsung/android/settings/bixby/EmSettingsManager;
 
     move-result-object v5
 
-    invoke-virtual {v5, v7}, Lcom/samsung/android/settings/bixby/EmSettingsManager;->setPendingState(Z)V
+    invoke-virtual {v5, v9}, Lcom/samsung/android/settings/bixby/EmSettingsManager;->setPendingState(Z)V
+
+    goto :goto_2
+
+    :cond_3
+    add-int/lit8 v1, v1, 0x1
+
+    goto/16 :goto_1
+
+    :cond_4
+    iget-object v5, p0, Lcom/samsung/android/settings/notification/PriorityNotiAppList$2;->this$0:Lcom/samsung/android/settings/notification/PriorityNotiAppList;
+
+    invoke-static {v5}, Lcom/samsung/android/settings/notification/PriorityNotiAppList;->-get6(Lcom/samsung/android/settings/notification/PriorityNotiAppList;)Lcom/samsung/android/settings/bixby/EmSettingsManager;
+
+    move-result-object v5
+
+    sget-object v6, Lcom/samsung/android/settings/bixby/EmSettingsManager;->EM_RESPONSE_RESULT_FAILURE:Lcom/samsung/android/sdk/bixby/BixbyApi$ResponseResults;
+
+    invoke-virtual {v5, v6}, Lcom/samsung/android/settings/bixby/EmSettingsManager;->sendResponse(Lcom/samsung/android/sdk/bixby/BixbyApi$ResponseResults;)V
 
     :cond_5
-    return-void
+    :goto_3
+    iget-object v5, p0, Lcom/samsung/android/settings/notification/PriorityNotiAppList$2;->this$0:Lcom/samsung/android/settings/notification/PriorityNotiAppList;
+
+    invoke-static {v5}, Lcom/samsung/android/settings/notification/PriorityNotiAppList;->-get6(Lcom/samsung/android/settings/notification/PriorityNotiAppList;)Lcom/samsung/android/settings/bixby/EmSettingsManager;
+
+    move-result-object v5
+
+    invoke-virtual {v5, v9}, Lcom/samsung/android/settings/bixby/EmSettingsManager;->setPendingState(Z)V
 
     :cond_6
+    return-void
+
+    :cond_7
     const-string/jumbo v5, "PriorityAppNotificationsOff"
 
     invoke-virtual {v3, v5}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v5
 
-    if-eqz v5, :cond_4
+    if-eqz v5, :cond_5
 
     iget-object v5, p0, Lcom/samsung/android/settings/notification/PriorityNotiAppList$2;->this$0:Lcom/samsung/android/settings/notification/PriorityNotiAppList;
 
@@ -273,7 +365,7 @@
 
     move-result v5
 
-    if-lez v5, :cond_8
+    if-lez v5, :cond_a
 
     iget-object v5, p0, Lcom/samsung/android/settings/notification/PriorityNotiAppList$2;->this$0:Lcom/samsung/android/settings/notification/PriorityNotiAppList;
 
@@ -281,13 +373,13 @@
 
     move-result-object v5
 
-    invoke-virtual {v5, v7}, Lcom/samsung/android/settings/bixby/EmSettingsManager;->getParamString(I)Ljava/lang/String;
+    invoke-virtual {v5, v9}, Lcom/samsung/android/settings/bixby/EmSettingsManager;->getParamString(I)Ljava/lang/String;
 
     move-result-object v2
 
     const/4 v1, 0x0
 
-    :goto_3
+    :goto_4
     iget-object v5, p0, Lcom/samsung/android/settings/notification/PriorityNotiAppList$2;->this$0:Lcom/samsung/android/settings/notification/PriorityNotiAppList;
 
     invoke-static {v5}, Lcom/samsung/android/settings/notification/PriorityNotiAppList;->-get3(Lcom/samsung/android/settings/notification/PriorityNotiAppList;)Lcom/samsung/android/settings/notification/PriorityNotiAppList$NotificationAppAdapter;
@@ -298,7 +390,7 @@
 
     move-result v5
 
-    if-ge v1, v5, :cond_8
+    if-ge v1, v5, :cond_a
 
     iget-object v5, p0, Lcom/samsung/android/settings/notification/PriorityNotiAppList$2;->this$0:Lcom/samsung/android/settings/notification/PriorityNotiAppList;
 
@@ -318,33 +410,53 @@
 
     move-result-object v4
 
-    if-eqz v2, :cond_7
+    if-eqz v2, :cond_9
 
     invoke-virtual {v4, v2}, Ljava/lang/String;->equalsIgnoreCase(Ljava/lang/String;)Z
 
     move-result v5
 
-    if-eqz v5, :cond_7
+    if-eqz v5, :cond_9
 
     iget-boolean v5, v0, Lcom/samsung/android/settings/notification/PriorityNotiAppList$AppRow;->priority:Z
 
-    if-eqz v5, :cond_7
+    if-eqz v5, :cond_8
 
     iget-object v5, p0, Lcom/samsung/android/settings/notification/PriorityNotiAppList$2;->this$0:Lcom/samsung/android/settings/notification/PriorityNotiAppList;
 
-    invoke-virtual {v5}, Lcom/samsung/android/settings/notification/PriorityNotiAppList;->getListView()Landroid/widget/ListView;
+    invoke-static {v5}, Lcom/samsung/android/settings/notification/PriorityNotiAppList;->-get4(Lcom/samsung/android/settings/notification/PriorityNotiAppList;)Lcom/android/settings/notification/NotificationBackend;
 
     move-result-object v5
 
-    iget-object v6, p0, Lcom/samsung/android/settings/notification/PriorityNotiAppList$2;->this$0:Lcom/samsung/android/settings/notification/PriorityNotiAppList;
+    iget-object v6, v0, Lcom/samsung/android/settings/notification/PriorityNotiAppList$AppRow;->pkg:Ljava/lang/String;
 
-    invoke-virtual {v6}, Lcom/samsung/android/settings/notification/PriorityNotiAppList;->getView()Landroid/view/View;
+    iget v7, v0, Lcom/samsung/android/settings/notification/PriorityNotiAppList$AppRow;->uid:I
 
-    move-result-object v6
+    invoke-virtual {v5, v6, v7, v9}, Lcom/android/settings/notification/NotificationBackend;->setBypassZenMode(Ljava/lang/String;IZ)Z
 
-    int-to-long v8, v1
+    iget-object v5, p0, Lcom/samsung/android/settings/notification/PriorityNotiAppList$2;->this$0:Lcom/samsung/android/settings/notification/PriorityNotiAppList;
 
-    invoke-virtual {v5, v6, v1, v8, v9}, Landroid/widget/ListView;->performItemClick(Landroid/view/View;IJ)Z
+    invoke-static {v5}, Lcom/samsung/android/settings/notification/PriorityNotiAppList;->-get6(Lcom/samsung/android/settings/notification/PriorityNotiAppList;)Lcom/samsung/android/settings/bixby/EmSettingsManager;
+
+    move-result-object v5
+
+    const-string/jumbo v6, "PriorityAppNotificationsOff"
+
+    const-string/jumbo v7, "AlreadyOff"
+
+    const-string/jumbo v8, "no"
+
+    invoke-virtual {v5, v6, v7, v8}, Lcom/samsung/android/settings/bixby/EmSettingsManager;->setNlgScreenParam(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
+
+    iget-object v5, p0, Lcom/samsung/android/settings/notification/PriorityNotiAppList$2;->this$0:Lcom/samsung/android/settings/notification/PriorityNotiAppList;
+
+    invoke-static {v5}, Lcom/samsung/android/settings/notification/PriorityNotiAppList;->-get6(Lcom/samsung/android/settings/notification/PriorityNotiAppList;)Lcom/samsung/android/settings/bixby/EmSettingsManager;
+
+    move-result-object v5
+
+    const-string/jumbo v6, "PriorityAppNotifications"
+
+    invoke-virtual {v5, v6}, Lcom/samsung/android/settings/bixby/EmSettingsManager;->requestNlg(Ljava/lang/String;)V
 
     iget-object v5, p0, Lcom/samsung/android/settings/notification/PriorityNotiAppList$2;->this$0:Lcom/samsung/android/settings/notification/PriorityNotiAppList;
 
@@ -356,12 +468,56 @@
 
     invoke-virtual {v5, v6}, Lcom/samsung/android/settings/bixby/EmSettingsManager;->sendResponse(Lcom/samsung/android/sdk/bixby/BixbyApi$ResponseResults;)V
 
-    :cond_7
-    add-int/lit8 v1, v1, 0x1
+    iget-object v5, p0, Lcom/samsung/android/settings/notification/PriorityNotiAppList$2;->this$0:Lcom/samsung/android/settings/notification/PriorityNotiAppList;
 
-    goto :goto_3
+    invoke-static {v5}, Lcom/samsung/android/settings/notification/PriorityNotiAppList;->-get6(Lcom/samsung/android/settings/notification/PriorityNotiAppList;)Lcom/samsung/android/settings/bixby/EmSettingsManager;
+
+    move-result-object v5
+
+    invoke-virtual {v5, v9}, Lcom/samsung/android/settings/bixby/EmSettingsManager;->setPendingState(Z)V
+
+    iget-object v5, p0, Lcom/samsung/android/settings/notification/PriorityNotiAppList$2;->this$0:Lcom/samsung/android/settings/notification/PriorityNotiAppList;
+
+    invoke-static {v5}, Lcom/samsung/android/settings/notification/PriorityNotiAppList;->-get7(Lcom/samsung/android/settings/notification/PriorityNotiAppList;)Landroid/os/Handler;
+
+    move-result-object v5
+
+    iget-object v6, p0, Lcom/samsung/android/settings/notification/PriorityNotiAppList$2;->this$0:Lcom/samsung/android/settings/notification/PriorityNotiAppList;
+
+    invoke-static {v6}, Lcom/samsung/android/settings/notification/PriorityNotiAppList;->-get12(Lcom/samsung/android/settings/notification/PriorityNotiAppList;)Ljava/lang/Runnable;
+
+    move-result-object v6
+
+    invoke-virtual {v5, v6}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
+
+    :goto_5
+    return-void
 
     :cond_8
+    iget-object v5, p0, Lcom/samsung/android/settings/notification/PriorityNotiAppList$2;->this$0:Lcom/samsung/android/settings/notification/PriorityNotiAppList;
+
+    invoke-static {v5}, Lcom/samsung/android/settings/notification/PriorityNotiAppList;->-get6(Lcom/samsung/android/settings/notification/PriorityNotiAppList;)Lcom/samsung/android/settings/bixby/EmSettingsManager;
+
+    move-result-object v5
+
+    const-string/jumbo v6, "PriorityAppNotificationsOff"
+
+    const-string/jumbo v7, "AlreadyOff"
+
+    const-string/jumbo v8, "yes"
+
+    invoke-virtual {v5, v6, v7, v8}, Lcom/samsung/android/settings/bixby/EmSettingsManager;->setNlgScreenParam(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
+
+    iget-object v5, p0, Lcom/samsung/android/settings/notification/PriorityNotiAppList$2;->this$0:Lcom/samsung/android/settings/notification/PriorityNotiAppList;
+
+    invoke-static {v5}, Lcom/samsung/android/settings/notification/PriorityNotiAppList;->-get6(Lcom/samsung/android/settings/notification/PriorityNotiAppList;)Lcom/samsung/android/settings/bixby/EmSettingsManager;
+
+    move-result-object v5
+
+    const-string/jumbo v6, "PriorityAppNotifications"
+
+    invoke-virtual {v5, v6}, Lcom/samsung/android/settings/bixby/EmSettingsManager;->requestNlg(Ljava/lang/String;)V
+
     iget-object v5, p0, Lcom/samsung/android/settings/notification/PriorityNotiAppList$2;->this$0:Lcom/samsung/android/settings/notification/PriorityNotiAppList;
 
     invoke-static {v5}, Lcom/samsung/android/settings/notification/PriorityNotiAppList;->-get6(Lcom/samsung/android/settings/notification/PriorityNotiAppList;)Lcom/samsung/android/settings/bixby/EmSettingsManager;
@@ -372,5 +528,31 @@
 
     invoke-virtual {v5, v6}, Lcom/samsung/android/settings/bixby/EmSettingsManager;->sendResponse(Lcom/samsung/android/sdk/bixby/BixbyApi$ResponseResults;)V
 
-    goto :goto_2
+    iget-object v5, p0, Lcom/samsung/android/settings/notification/PriorityNotiAppList$2;->this$0:Lcom/samsung/android/settings/notification/PriorityNotiAppList;
+
+    invoke-static {v5}, Lcom/samsung/android/settings/notification/PriorityNotiAppList;->-get6(Lcom/samsung/android/settings/notification/PriorityNotiAppList;)Lcom/samsung/android/settings/bixby/EmSettingsManager;
+
+    move-result-object v5
+
+    invoke-virtual {v5, v9}, Lcom/samsung/android/settings/bixby/EmSettingsManager;->setPendingState(Z)V
+
+    goto :goto_5
+
+    :cond_9
+    add-int/lit8 v1, v1, 0x1
+
+    goto/16 :goto_4
+
+    :cond_a
+    iget-object v5, p0, Lcom/samsung/android/settings/notification/PriorityNotiAppList$2;->this$0:Lcom/samsung/android/settings/notification/PriorityNotiAppList;
+
+    invoke-static {v5}, Lcom/samsung/android/settings/notification/PriorityNotiAppList;->-get6(Lcom/samsung/android/settings/notification/PriorityNotiAppList;)Lcom/samsung/android/settings/bixby/EmSettingsManager;
+
+    move-result-object v5
+
+    sget-object v6, Lcom/samsung/android/settings/bixby/EmSettingsManager;->EM_RESPONSE_RESULT_FAILURE:Lcom/samsung/android/sdk/bixby/BixbyApi$ResponseResults;
+
+    invoke-virtual {v5, v6}, Lcom/samsung/android/settings/bixby/EmSettingsManager;->sendResponse(Lcom/samsung/android/sdk/bixby/BixbyApi$ResponseResults;)V
+
+    goto/16 :goto_3
 .end method

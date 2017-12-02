@@ -170,6 +170,8 @@
     <string name="wifi_allow_scan_with_traffic_summary">Salli tai estä vieraiden Wi-Fi-verkkojen tarkistus käytetyn datamäärän perusteella.</string>
     <string name="select_logd_size_title">Kirjauksen puskurikoko</string>
     <string name="select_logd_size_dialog_title">Valitse kunkin lokipuskurin enimmäiskoko</string>
+    <string name="dev_logpersist_clear_warning_title">Tyhjennä pysyvän lokityökalun tallennustila?</string>
+    <string name="dev_logpersist_clear_warning_message">Lokityökalun tiedot poistetaan, kun pysyvä lokityökalu poistetaan käytöstä.</string>
     <string name="select_logpersist_title">Tallenna lokitiedot pysyvästi</string>
     <string name="select_logpersist_dialog_title">Valitse lokipuskurit pysyvään tallennukseen</string>
     <string name="select_usb_configuration_title">USB-määritys</string>
@@ -982,6 +984,7 @@ Kaksi yhdistettyä laitetta voivat toistaa äänen hieman eri tavalla."</string>
     <string name="bluetooth_avc_available_description">Yhdistetty Bluetooth-laite tukee Mediasisältöjen äänenvoimakkuuden synkronointi -toimintoa, ja Bluetooth-laitteen asettama äänenvoimakkuustaso synkronoidaan puhelimen kanssa.</string>
     <string name="bluetooth_enter_pin_msg">Muodosta pariliitos laitteen %s kanssa antamalla PIN-koodi (esim. 0000 tai 1234).</string>
     <string name="bluetooth_pin_maximum_number_message">Merkkien enimmäismäärä on saavutettu.</string>
+    <string name="bluetooth_frp_permission_message">Tähän puheluun ei voi käyttää Bluetooth-laitetta.</string>
     <string name="settings_menu_done">Valmis</string>
     <string name="usb_tethering_unavailable_subtext_tmo">USB not connected</string>
     <string name="usb_tethering_available_subtext_tmo">USB connected, check to tether</string>
@@ -1481,7 +1484,7 @@ Napauta OK, jos haluat sallia kirkkauden nostamisen turvallisen tason yläpuolel
     <string name="navigationbar_pressure_sensitivity_title">Paina kotipainiketta voimakkaasti</string>
     <string name="navigationbar_pressure_sensitivity_summary">Käytä kotipainiketta sen ollessa piilotettuna painamalla tavallista voimakkaammin.</string>
     <string name="navigationbar_pressure_sensitivity_level_summary">Painetaso: %1$d/%2$d</string>
-    <string name="navigationbar_pressure_sensitivity_description_off">Käytä kotipainiketta sen ollessa piilotettuna painamalla tavallista voimakkaammin.</string>
+    <string name="navigationbar_pressure_sensitivity_description_off">Säädä kotipainikkeen voimakkaaseen painamiseen tarvittavan paineen määrää.</string>
     <string name="navigationbar_pressure_low">Kevyempi</string>
     <string name="navigationbar_pressure_high">Voimakkaampi</string>
     <string name="navigationbar_hide_bar">Näytä ja piilota painike</string>
@@ -1620,7 +1623,7 @@ Napauta OK, jos haluat sallia kirkkauden nostamisen turvallisen tason yläpuolel
     <string name="crypt_keeper_decrypt_title">Poista laitteen salaus</string>
     <string name="crypt_keeper_decrypt_summary">Laite salattu.</string>
     <string name="crypt_keeper_type_pin">PIN-koodi</string>
-    <string name="crypt_keeper_type_pattern">Kuvio</string>
+    <string name="crypt_keeper_type_pattern">kuvio</string>
     <string name="crypt_keeper_type_password">Salasana</string>
     <string name="crypt_keeper_type_direction">Suuntalukitus</string>
     <string name="crypt_keeper_confirm_title_dec">Vahvista salauksen purkaminen</string>
@@ -1704,7 +1707,11 @@ Salaus kestää vähintään tunnin. Varmista ennen aloittamista, että akku on 
     <string name="crypt_keeper_confirm_title">Vahvista salaus</string>
     <string name="crypt_keeper_final_desc">Laitteen salaamista ei voi kumota, ja jos keskeytät prosessin, tietoja menetetään. Salaaminen voi kestää yli tunnin, minkä aikana laite käynnistetään useamman kerran uudelleen, eikä sitä voi käyttää.</string>
     <string name="crypt_keeper_setup_title">Salataan…</string>
-    <string name="crypt_keeper_warn_wipe">Voit yrittää laitteen käynnistämistä vielä %d kertaa ennen tehdasasetusten palauttamista. Tällöin kaikki tiedot, myös tiedostot ja ladatut sovellukset, poistetaan.</string>
+    <string name="crypt_keeper_warn_wipe">"Voit yrittää vielä %1$d kertaa ennen puhelimen tehdasasetusten palauttamista. Tällöin kaikki tiedot, myös tiedostot ja ladatut sovellukset, poistetaan.
+
+Jos puhelimesi asetukset palautetaan, sinun on ehkä annettava tähän puhelimeen liittyvän tilin (%2$s) tunnistetiedot (sähköpostiosoite ja salasana), ennen kuin voit käyttää puhelinta uudelleen."</string>
+    <string name="crypt_keeper_samsung_account">Samsung account</string>
+    <string name="crypt_keeper_google_account">Google-tili</string>
     <string name="crypt_keeper_failed_title">Salaus epäonnistui</string>
     <string name="crypt_keeper_failed_summary">Laitetta ei voi käynnistää. Salausprosessi keskeytettiin. Sinun on palautettava laitteen tehdasasetukset. Tämä poistaa kaikki tiedot.</string>
     <string name="crypt_keeper_data_corrupted_title">Laitteen muisti vioittunut</string>
@@ -1723,10 +1730,13 @@ Salaus kestää vähintään tunnin. Varmista ennen aloittamista, että akku on 
     <string name="cryptkeeper_wrong_pin">Annettu väärä PIN-koodi</string>
     <string name="cryptkeeper_wrong_direction">Piirretty väärä suunta</string>
     <string name="checking_decryption">Tarkistetaan…</string>
-    <string name="crypt_keeper_last_warn_wipe">Voit yrittää laitteen käynnistämistä enää kerran ennen tehdasasetusten palauttamista. Tällöin kaikki tiedot, myös tiedostot ja ladatut sovellukset, poistetaan.</string>
+    <string name="crypt_keeper_last_warn_wipe">"Voit yrittää vielä kerran ennen puhelimen tehdasasetusten palauttamista. Tällöin kaikki tiedot, myös tiedostot ja ladatut sovellukset, poistetaan.
+
+Jos puhelimesi asetukset palautetaan, sinun on ehkä annettava tähän puhelimeen liittyvän tilin (%s) tunnistetiedot (sähköpostiosoite ja salasana), ennen kuin voit käyttää puhelinta uudelleen."</string>
     <string name="crypt_keeper_failed_title_dec">Purku epäonnistui.</string>
     <string name="crypt_keeper_failed_summary_dec">Salauksen purkamista ei voi suorittaa loppuun keskeytyksen vuoksi. Palauta tehdasasetukset (poista kaikki tiedot) ennen käyttöä.</string>
     <string name="crypt_keeper_set_screen_lock_type">Määritä näytön lukit. tyyppi</string>
+    <string name="crypt_keeper_warning_keyboard_cover_does_not_work">Näppäimistön kansi ei toimi puhelimen uudelleenkäynnistyksen jälkeen.</string>
     <string name="encryption_interstitial_message">"Voit parantaa tämän puhelimen suojausta vaatimalla, että %s annetaan ennen puhelimen käynnistymistä. Tämä auttaa suojaamaan tietojasi, jos puhelimesi katoaa tai se varastetaan. Jotkin sovellukset voivat laitteen suojauskäytäntöjen mukaisesti vaatia suojattua käynnistystä eri toimintojen, kuten sähköpostin synkronoinnin, käyttöä varten.
 
 Et saa puheluita, viestejä tai ilmoituksia eikä hälytyksiä anneta, ennen kuin puhelin on käynnistynyt."</string>
@@ -1971,6 +1981,12 @@ You will also need it when:"</string>
     <string name="lockpassword_confirm_your_pin_with_fingerprint">Käytä sormenjälkeä tai anna nykyinen PIN-koodi.</string>
     <string name="lockpassword_confirm_your_pattern_with_fingerprint">Käytä sormenjälkeä tai piirrä nykyinen kuvio.</string>
     <string name="lockpassword_confirm_your_password_with_fingerprint">Käytä sormenjälkeä tai anna nykyinen salasana.</string>
+    <string name="lockpassword_confirm_your_pin_with_iris">Käytä iiriksiä tai anna nykyinen PIN-koodi.</string>
+    <string name="lockpassword_confirm_your_pattern_with_iris">Käytä iiriksiä tai piirrä nykyinen kuvio.</string>
+    <string name="lockpassword_confirm_your_password_with_iris">Käytä iiriksiä tai anna nykyinen salasana.</string>
+    <string name="lockpassword_confirm_your_pin_with_biometrics">Käytä biometrisiä tietoja tai anna PIN-koodi.</string>
+    <string name="lockpassword_confirm_your_pattern_with_biometrics">Käytä biometriikkaa tai piirrä kuviosi.</string>
+    <string name="lockpassword_confirm_your_password_with_biometrics">Käytä biometrisiä tietoja tai anna salasana.</string>
     <string name="lockpassword_confirm_your_pin_instead_of_fingerprint">Anna PIN-koodi sormenjälkitunnistuksen sijaan.</string>
     <string name="lockpassword_confirm_your_pattern_instead_of_fingerprint">Piirrä kuvio sormenjälkitunnistuksen sijaan.</string>
     <string name="lockpassword_confirm_your_password_instead_of_fingerprint">Anna salasana sormenjälkitunnistuksen sijaan.</string>
@@ -2045,6 +2061,7 @@ Valitse, kuinka haluat poistaa puhelimen lukituksen. Lukituksen poisto kasvoilla
     <string name="face_status_timeout">Aikakatkaisu. Yritä myöhemmin uudelleen.</string>
     <string name="okay">OK</string>
     <string name="face_samsung_account_button">Käytä Samsung accountia</string>
+    <string name="face_galaxy_account_button">Käytä Galaxy-tiliä</string>
     <string name="face_error_DB_corrupted">Kasvotietojesi kanssa ilmeni ongelma. Rekisteröi kasvosi uudelleen.</string>
     <string name="face_error_DB_corrupted_popup_title">Rekisteröi kasvosi uudelleen</string>
     <string name="face_error_timeout">Kasvojasi ei tunnistettu.</string>
@@ -2155,7 +2172,7 @@ Ota Lukituksen poisto iiriksellä -toiminto käyttöön, jos haluat, että puhel
     <string name="biometrics_backup_locktype_title">Määritä iiriksiin perustuva suojaus</string>
     <string name="biometrics_register_your_iris">Rekisteröi iiriksesi.</string>
     <string name="biometrics_backup_locktype_summary">Jos haluat käyttää iiriksiä laitteen lukituksen poistamiseen, sinun on asetettava kuvio, PIN-koodi tai salasana.</string>
-    <string name="biometrics_backup_locktype_message">Jos haluat käyttää iiriksiäsi puhelimen lukituksen poistamiseen tai suojattuun vahvistukseen, sinun on toimittava seuraavasti:</string>
+    <string name="biometrics_backup_locktype_message">Jos haluat käyttää iiriksiä puhelimen lukituksen poistamiseen tai itsesi vahvistamiseen sovelluksissa, sinun on toimittava seuraavasti:</string>
     <string name="iris_delete_popup_title">Poistetaanko iiristiedot?</string>
     <string name="iris_delete_popup_message">Poistetaanko iiristiedot?</string>
     <string name="iris_delete_popup_message_with_related_func">Iiriksiä käyttävät toiminnot poistetaan käytöstä.</string>
@@ -2231,6 +2248,9 @@ Valitse, kuinka haluat poistaa puhelimen lukituksen. Lukituksen poisto iiriksell
     <string name="biometrics_dex_cant_use_msg">%s ei ole käytettävissä Samsung DeX:ssä.</string>
     <string name="biometrics_dex_closed_to_switch">%s suljettu, jotta voidaan siirtyä Samsung DeX:ään.</string>
     <string name="biometircs_dex_cant_use_toast">Sovellusta %s ei voi suorittaa Samsung DeX:ssä. Yritä suorittaa se puhelintilassa.</string>
+    <string name="iris_guide_text_preview">Katso käytt. iiriksiä</string>
+    <string name="iris_guide_enable_toggle">Käytä iiriksiä napautt. tätä</string>
+    <string name="iris_cannot_verify">Iiristen tarkistus epäonnistui</string>
     <string name="knox_twofactor_bio_description">Valitse biometrinen lukitustapa ja toinen lukitustapa kohteen %s lukituksen poistamista varten.</string>
     <string name="fingerprint_registered">Rekisteröityjä sormenjälkiä käytetään valitun lukituksen poistotavan kanssa.</string>
     <string name="knox_twofactor_description">Valitse biometriset tiedot ja toinen lukitustapa kohteen %s lukituksen poistamista varten.</string>
@@ -3093,6 +3113,7 @@ Yritä uudelleen."</string>
     <string name="easy_mode_app_help">Käytä laitettasi entistä helpommin alkunäytön entistä selkeämmän asettelun ja näytön suurempien kohteiden ansiosta.</string>
     <string name="easy_mode_app_help_dream_1">Käytä yksinkertaista alkunäytön asettelua sekä tavallista suurempia näytössä olevia kohteita.</string>
     <string name="easy_mode_app_help_dream_2">Alkunäyttöön tehdyt muutokset hylätään, ja Näytön zoomaus asetetaan maksimitasolle.</string>
+    <string name="easy_mode_app_help_3rd_launcher">Käytä suurten näytössä olevien kohteiden tapauksessa helppoa tilaa. Jos et käytä TouchWiz Homea, alkunäytön asettelu ei muutu, mutta näytön zoomaussuhde asetetaan suureksi ja fonttikoko asetetaan keskikokoiseksi.</string>
     <string name="security_warning_content">Voit suojata yksityisyyttäsi asettamalla salasanan, PIN-koodin tai kuvion näytön lukituksen poistamista varten</string>
     <string name="lock_setting_weather_desc">Jos haluat näyttää säätiedot tai muuttaa niitä, napauta SÄÄASETUKSET alla.</string>
     <string name="lock_setting_weather_btn">Sääasetukset</string>
@@ -3339,7 +3360,7 @@ Downloading via mobile networks may result in additional charges depending on yo
     <string name="disable_hovering_title">Poista ilmanäkymä käytöstä</string>
     <string name="disable_hovering_summary">Ilmanäkymää ja TalkBackia ei voi käyttää samaan aikaan. Ilmanäkymä poistetaan käytöstä.</string>
     <string name="pen_settings_pen_input">Suora kynäsyöttö</string>
-    <string name="action_memo_onoff_screen_title">Samm. näyt. muistio</string>
+    <string name="action_memo_onoff_screen_title">Sammutetun näytön muistio</string>
     <string name="screen_off_note_summary">Kirjoita muistiinpanoja näytön ollessa sammutettuna. Poista S Pen -kynä ja ala kirjoittaa.</string>
     <string name="screen_off_note_summary_jpn">Luo muistiinpanoja irrottamalla S Pen -kynä, kun näyttö on sammutettu, ja kirjoittamalla näyttöön. Sammutetun näytön muistiot tallennetaan Galaxy Notesiin.</string>
     <string name="screen_off_note_summary_no_detach">Luo muistiinpanoja painamalla Kynä-painiketta, napauttamalla näyttöä sen ollessa sammutettuna ja sitten kirjoittamalla siihen. Sammutetun näytön muistiot tallennetaan Samsung Notesiin.</string>
@@ -3946,7 +3967,7 @@ Mobiilitukiaseman käyttö lisää akkuvirran kulutusta ja datankäyttöä."</st
     <string name="wfd_descrpition_playsound">Toista ääni.</string>
     <string name="wfd_is_not_supported">Tätä toimintoa ei tueta.</string>
     <string name="usbtethering_notify_wifi_is_on_title">Poistetaanko Wi-Fi käytöstä?</string>
-    <string name="usbtethering_notify_wifi_is_on">Wi-Fi ja jaettu USB-yhteys eivät voi olla käytössä samaan aikaan. Poista Wi-Fi käytöstä.</string>
+    <string name="usbtethering_notify_wifi_is_on">Wi-Fi ja jaettu USB-yhteys eivät voi olla käytössä samaan aikaan. Wi-Fi poistetaan käytöstä.</string>
     <string name="disable_multi_window_dialog_text">Moni-ikkunanäkymä poistetaan käytöstä ja kaikki ponnahdusikkunoissa avatut sovellukset suljetaan.</string>
     <string name="keyguard_password_attempt_count_pin_code">%d yritystä jäljellä</string>
     <string name="keyguard_password_attempts_count_pin_code">%d yritystä jäljellä</string>
@@ -4154,6 +4175,7 @@ Tekstiviestin vastaanottaminen"</string>
     <string name="hdmi_mode_title">HDMI-tila</string>
     <string name="hdmi_mode_dex">Samsung DeX</string>
     <string name="hdmi_mode_mirroring">Screen Mirroring</string>
+    <string name="hdmi_mode_not_available_while_cover_attached">%s ei ole käytettävissä, kun kansi on kiinnitetty.</string>
     <string name="screen_timeout_for_dex">Samsung DeX:n näytön aikakatkaisu</string>
     <string name="show_virtual_keyboard_for_dex">Näytä näyttönäppäimistö Samsung DeX:ssä</string>
     <string name="comma">,</string>
@@ -4462,7 +4484,7 @@ Voit muuttaa tätä asetusta myöhemmin Bluetooth-asetuksissa."</string>
     <string name="date_picker_title">Päivämäärä</string>
     <string name="time_picker_title">Aika</string>
     <string name="lock_after_timeout">Lukitse automaattisesti</string>
-    <string name="lock_after_timeout_summary">Lukitse näyttö %s sen jälkeen, kun se on sammunut automaattisesti.</string>
+    <string name="lock_after_timeout_summary">Lukitse puhelin %s sen jälkeen, kun näyttö on sammunut automaattisesti.</string>
     <string name="lock_after_timeout_summary_with_exception">Lukitse näyttö %1$s sen jälkeen, kun se on sammunut automaattisesti, paitsi jos %2$s estää lukituksen.</string>
     <string name="show_owner_info_on_lockscreen_label">Näytä laitteen omistajan tiedot lukitusnäytössä.</string>
     <string name="owner_info_settings_title">Omistajan tiedot</string>
@@ -4610,6 +4632,8 @@ Paikanmäärityksen parantamiseksi sovellukset ja palvelut voivat hakea Wi-Fi-ve
     <string name="wifi_empty_list_user_restricted">Sinulla ei ole lupaa Wi-Fi-asetusten muuttamiseen.</string>
     <string name="wifi_setup_wps">Automaattinen määritys (WPS)</string>
     <string name="wifi_show_advanced">Näytä lisäasetukset</string>
+    <string name="wifi_advanced_toggle_description_expanded">Kutista kaksoisnapauttamalla.</string>
+    <string name="wifi_advanced_toggle_description_collapsed">Laajenna kaksoisnapauttamalla.</string>
     <string name="wifi_wps_setup_title">WPS-asetukset</string>
     <string name="wifi_wps_setup_msg">WPS käynnistetään…</string>
     <string name="wifi_wps_onstart_pbc">Napauta reitittimen Wi-Fi Protected Setup -painiketta. Sen nimi voi olla WPS tai siinä voi olla tämä symboli:</string>
@@ -4641,6 +4665,10 @@ Paikanmäärityksen parantamiseksi sovellukset ja palvelut voivat hakea Wi-Fi-ve
     <string name="wifi_shared">Jaettu</string>
     <string name="wifi_unchanged">(muuttumaton)</string>
     <string name="wifi_unspecified">(Määrittelemätön)</string>
+    <string name="wifi_select_cert">Valitse varmenne</string>
+    <string name="wifi_do_not_provide_eap_user_cert">Älä tarjoa</string>
+    <string name="wifi_do_not_validate_eap_server">Älä tarkista</string>
+    <string name="wifi_do_not_validate_eap_server_warning">Varmennetta ei ole määritetty. Yhteys ei ole yksityinen.</string>
     <string name="wifi_scan_always_turnon_message">%s pyytää paikanmäärityksen parantamiseksi ja muiden toimintojen tukemiseksi lupaa Wi-Fi-verkkojen hakemiseen, vaikka Wi-Fi on poistettu käytöstä. Sallitaanko tämä kaikille sovelluksille?</string>
     <string name="wifi_scan_always_confirm_allow">Salli</string>
     <string name="wifi_scan_always_confirm_deny">Kieltäydy</string>
@@ -4975,9 +5003,9 @@ Harkitse suorituskyvyn parantamiseksi nopeamman SD-kortin tai USB-tallennuslaitt
     <string name="restore_default_apn_completed">Yhteyspisteiden oletusasetukset on palautettu.</string>
     <string name="reset_network_desc">Kaikki verkkoasetukset palautetaan, myös seuraavat:</string>
     <string name="reset_network_button_text">Asetusten nollaus</string>
-    <string name="reset_network_final_desc">Kaikki yhteysasetukset palautetaan. Tätä toimintoa ei voi kumota.</string>
+    <string name="reset_network_final_desc">Kaikki verkkoasetukset nollataan. Tätä toimintoa ei voi kumota.</string>
     <string name="reset_network_final_button_text">Asetusten nollaus</string>
-    <string name="reset_network_complete_toast">Yhteysasetukset palautettu.</string>
+    <string name="reset_network_complete_toast">Verkkoasetukset nollattu.</string>
     <string name="master_clear_title">Alkuperäisten tietojen palautus</string>
     <string name="master_clear_accounts">Olet tällä hetkellä kirjautunut seuraaville tileille:</string>
     <string name="master_clear_other_users_present">Myös tämän laitteen muille käyttäjille kuuluvat tiedot poistetaan.</string>
@@ -6090,6 +6118,7 @@ Et saa puheluita, viestejä tai ilmoituksia eikä hälytyksiä anneta, ennen kui
     <string name="set_data_limit">Aseta datankäyttörajoitus</string>
     <string name="data_limit">Datankäyttörajoitus</string>
     <string name="data_usage_template">%1$s käytetty ajalla %2$s</string>
+    <string name="data_usage_template_wifi">%s käytetty viimeisen 30 päivän aikana</string>
     <string name="data_usage_other_apps">Käyttöön sis. liitt. sovell.</string>
     <string name="data_saver_title">Datansäästö</string>
     <string name="unrestricted_data_saver">Salli sov., kun Datansäästö k.</string>
@@ -6140,6 +6169,7 @@ Et saa puheluita, viestejä tai ilmoituksia eikä hälytyksiä anneta, ennen kui
     <string name="legacy_dhcp_client_summary">Käytä Lollipopin DHCP-asiakassovellusta Androidin uuden DHCP-asiakassovelluksen sijasta.</string>
     <string name="screen_off_pocket_title">Pidä näyttö sammutettuna</string>
     <string name="screen_off_pocket_summary">Estä näyttöä käynnistymästä vahingossa, kun se on pimeässä paikassa, kuten taskussa tai laukussa.</string>
+    <string name="noApplications">Kaikki tähän toimintoon liittyvät sovellukset on poistettu käytöstä tai estetty, tai niitä ei ole asennettu.</string>
     <string name="confirm_reset_shortcut_manager_throttling_title">Nollaa Pikavalintojen hallinnan nopeusrajoitin</string>
     <string name="confirm_reset_shortcut_manager_throttling_message">Pikavalintojen hallinnan nopeusrajoittimen laskurit nollataan.</string>
 </resources>

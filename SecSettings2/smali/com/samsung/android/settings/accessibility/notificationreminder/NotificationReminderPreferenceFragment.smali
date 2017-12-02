@@ -934,7 +934,7 @@
 
     move-result-object v3
 
-    const v5, 0x7f0f0386
+    const v5, 0x7f0f0385
 
     invoke-virtual {v3, v5}, Landroid/content/res/Resources;->getInteger(I)I
 
@@ -946,7 +946,7 @@
 
     move-result-object v3
 
-    const v6, 0x7f0f038a
+    const v6, 0x7f0f0389
 
     invoke-virtual {v3, v6}, Landroid/content/res/Resources;->getInteger(I)I
 
@@ -1117,7 +1117,7 @@
 
     move-result-object v2
 
-    const v3, 0x7f0f0386
+    const v3, 0x7f0f0385
 
     invoke-virtual {v2, v3}, Landroid/content/res/Resources;->getInteger(I)I
 
@@ -1129,7 +1129,7 @@
 
     move-result-object v3
 
-    const v4, 0x7f0f0388
+    const v4, 0x7f0f0387
 
     invoke-virtual {v3, v4}, Landroid/content/res/Resources;->getInteger(I)I
 
@@ -1508,7 +1508,7 @@
 
     iput-object v6, p0, Lcom/samsung/android/settings/accessibility/notificationreminder/NotificationReminderPreferenceFragment;->mPreferenceFragmentActivity:Landroid/app/Activity;
 
-    const v6, 0x7f0800b5
+    const v6, 0x7f0800b7
 
     invoke-virtual {p0, v6}, Lcom/samsung/android/settings/accessibility/notificationreminder/NotificationReminderPreferenceFragment;->addPreferencesFromResource(I)V
 
@@ -2074,7 +2074,7 @@
 
     move-result-object v2
 
-    const v3, 0x7f0f0386
+    const v3, 0x7f0f0385
 
     invoke-virtual {v2, v3}, Landroid/content/res/Resources;->getInteger(I)I
 

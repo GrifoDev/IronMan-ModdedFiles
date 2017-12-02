@@ -1109,7 +1109,7 @@
 .method private refreshDNDmode()V
     .locals 9
 
-    const v4, 0x7f0b1cf6
+    const v4, 0x7f0b1d08
 
     const/4 v5, 0x1
 
@@ -1182,7 +1182,7 @@
 
     if-eqz v4, :cond_1
 
-    const v3, 0x7f0b0c03
+    const v3, 0x7f0b0c11
 
     :cond_1
     if-eqz v2, :cond_2
@@ -1191,7 +1191,7 @@
 
     if-eqz v4, :cond_2
 
-    const v3, 0x7f0b0bf8
+    const v3, 0x7f0b0c06
 
     :cond_2
     iget-object v4, p0, Lcom/samsung/android/settings/notification/SoundSettings;->mZenModeDND:Lcom/samsung/android/settings/SettingsSwitchPreference;
@@ -1249,7 +1249,7 @@
     return-void
 
     :cond_4
-    const v3, 0x7f0b1cf7
+    const v3, 0x7f0b1d09
 
     goto :goto_0
 
@@ -1279,9 +1279,9 @@
 .method private refreshSoundMode()V
     .locals 8
 
-    const v7, 0x7f0b160b
+    const v7, 0x7f0b161d
 
-    const v6, 0x7f0b0c2d
+    const v6, 0x7f0b0c3b
 
     const/4 v5, 0x2
 
@@ -1360,7 +1360,7 @@
 
     iget-object v1, p0, Lcom/samsung/android/settings/notification/SoundSettings;->mIntervalSoundMode:Landroid/preference/PreferenceScreen;
 
-    const v2, 0x7f0b0c2c
+    const v2, 0x7f0b0c3a
 
     invoke-virtual {v1, v2}, Landroid/preference/PreferenceScreen;->setSummary(I)V
 
@@ -2190,7 +2190,7 @@
 .method protected getHelpResource()I
     .locals 1
 
-    const v0, 0x7f0b1bbb
+    const v0, 0x7f0b1bcd
 
     return v0
 .end method
@@ -2206,7 +2206,7 @@
 .method public handleRingtonePicked(Landroid/net/Uri;I)V
     .locals 7
 
-    const v6, 0x7f0b0c36
+    const v6, 0x7f0b0c44
 
     const/4 v5, 0x0
 
@@ -2497,7 +2497,7 @@
 
     move-result-object v7
 
-    const v8, 0x7f0b160b
+    const v8, 0x7f0b161d
 
     invoke-virtual {v7, v8}, Landroid/app/Activity;->setTitle(I)V
 
@@ -2642,7 +2642,7 @@
 
     move-result-object v7
 
-    const v8, 0x7f0b0563
+    const v8, 0x7f0b0564
 
     invoke-virtual {v7, v8}, Landroid/app/Activity;->setTitle(I)V
 
@@ -2653,7 +2653,7 @@
 
     move-result-object v7
 
-    const v8, 0x7f0b0bbe
+    const v8, 0x7f0b0bcc
 
     invoke-virtual {v7, v8}, Landroid/app/Activity;->setTitle(I)V
 
@@ -2669,7 +2669,7 @@
 
     invoke-direct {v5}, Lcom/samsung/android/settings/SettingsPreferenceFragmentLinkData;-><init>()V
 
-    const v7, 0x7f0b0b23
+    const v7, 0x7f0b0b31
 
     iput v7, v5, Lcom/samsung/android/settings/SettingsPreferenceFragmentLinkData;->titleRes:I
 
@@ -2855,7 +2855,7 @@
 
     if-eqz v4, :cond_4
 
-    const-string/jumbo v4, "http://ringtoyou.olleh.com"
+    const-string/jumbo v4, "http://ringtoyou.kt.com"
 
     invoke-static {v4}, Landroid/net/Uri;->parse(Ljava/lang/String;)Landroid/net/Uri;
 
@@ -2908,9 +2908,9 @@
 .method public onCreate(Landroid/os/Bundle;)V
     .locals 14
 
-    const v13, 0x7f0b0bd1
+    const v13, 0x7f0b0bdf
 
-    const v12, 0x7f0800b6
+    const v12, 0x7f0800b8
 
     const/4 v10, 0x0
 
@@ -3435,7 +3435,7 @@
 
     iget-object v8, p0, Lcom/samsung/android/settings/notification/SoundSettings;->mRingtonePreference_DS:Landroid/preference/Preference;
 
-    const v9, 0x7f0b0ba9
+    const v9, 0x7f0b0bb7
 
     invoke-virtual {v8, v9}, Landroid/preference/Preference;->setSummary(I)V
 
@@ -3574,7 +3574,7 @@
     :cond_e
     iget-object v8, p0, Lcom/samsung/android/settings/notification/SoundSettings;->mSubNtofications:Landroid/preference/PreferenceScreen;
 
-    const v9, 0x7f0b0bd0
+    const v9, 0x7f0b0bde
 
     invoke-virtual {v8, v9}, Landroid/preference/PreferenceScreen;->setSummary(I)V
 
@@ -3603,7 +3603,7 @@
     :cond_f
     iget-object v8, p0, Lcom/samsung/android/settings/notification/SoundSettings;->mSubNtofications:Landroid/preference/PreferenceScreen;
 
-    const v9, 0x7f0b0bd3
+    const v9, 0x7f0b0be1
 
     invoke-virtual {v8, v9}, Landroid/preference/PreferenceScreen;->setSummary(I)V
 
@@ -3766,7 +3766,7 @@
 
     iget-object v8, p0, Lcom/samsung/android/settings/notification/SoundSettings;->mSubNtofications:Landroid/preference/PreferenceScreen;
 
-    const v9, 0x7f0b0bd2
+    const v9, 0x7f0b0be0
 
     invoke-virtual {v8, v9}, Landroid/preference/PreferenceScreen;->setSummary(I)V
 
@@ -3982,7 +3982,7 @@
 
     const-string/jumbo v4, "extra_prefs_set_back_text"
 
-    const v5, 0x7f0b1a6e    # 1.8489992E38f
+    const v5, 0x7f0b1a80
 
     invoke-virtual {p0, v5}, Lcom/samsung/android/settings/notification/SoundSettings;->getString(I)Ljava/lang/String;
 
@@ -4053,7 +4053,7 @@
 
     if-ne p2, v4, :cond_5
 
-    const-string/jumbo v4, "http://ringtoyou.olleh.com"
+    const-string/jumbo v4, "http://ringtoyou.kt.com"
 
     invoke-static {v4}, Landroid/net/Uri;->parse(Ljava/lang/String;)Landroid/net/Uri;
 
@@ -4233,7 +4233,7 @@
 
     move-result-object v4
 
-    const v7, 0x7f0b160b
+    const v7, 0x7f0b161d
 
     invoke-virtual {v4, v7}, Landroid/app/Activity;->setTitle(I)V
 

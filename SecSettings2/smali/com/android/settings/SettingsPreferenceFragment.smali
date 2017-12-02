@@ -452,7 +452,7 @@
 .method protected getHelpResource()I
     .locals 1
 
-    const v0, 0x7f0b1ba8
+    const v0, 0x7f0b1bba
 
     return v0
 .end method
@@ -698,7 +698,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f110295
+    const v1, 0x7f110297
 
     invoke-virtual {v0, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -708,7 +708,7 @@
 
     iput-object v1, p0, Lcom/android/settings/SettingsPreferenceFragment;->mPinnedHeaderFrameLayout:Landroid/view/ViewGroup;
 
-    const v1, 0x7f110537
+    const v1, 0x7f110539
 
     invoke-virtual {v0, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 

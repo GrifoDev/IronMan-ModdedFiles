@@ -34,7 +34,7 @@
 .method public onChange(Z)V
     .locals 5
 
-    const v0, 0x7f0b1cf7
+    const v0, 0x7f0b1d09
 
     const/4 v4, 0x1
 
@@ -111,7 +111,7 @@
 
     if-eqz v2, :cond_2
 
-    const v0, 0x7f0b1cf6
+    const v0, 0x7f0b1d08
 
     :cond_2
     invoke-virtual {v1, v0}, Lcom/android/settings/SecSettingsSwitchPreference;->setSummary(I)V

@@ -168,7 +168,7 @@
 
     invoke-direct {v2, v0}, Landroid/preference/PreferenceCategory;-><init>(Landroid/content/Context;)V
 
-    const v17, 0x7f0b18f5
+    const v17, 0x7f0b1907
 
     move/from16 v0, v17
 
@@ -303,7 +303,7 @@
 
     if-eqz v17, :cond_5
 
-    const v17, 0x7f0b18f6
+    const v17, 0x7f0b1908
 
     move/from16 v0, v17
 

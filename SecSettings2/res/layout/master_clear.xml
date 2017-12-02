@@ -42,6 +42,6 @@
             </LinearLayout>
             <LinearLayout android:orientation="vertical" android:id="@id/removable_preload_apps" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" />
         </LinearLayout>
-        <com.samsung.android.settings.widget.RoundButtonView android:gravity="center" android:layout_gravity="center_horizontal" android:id="@id/initiate_master_clear" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/reset_button_top_margin" android:layout_marginBottom="@dimen/reset_button_top_margin" android:minHeight="@dimen/reset_button_min_height" android:text="@string/master_clear_button_text" android:paddingStart="@dimen/reset_button_side_padding" android:paddingEnd="@dimen/reset_button_side_padding" />
+        <com.samsung.android.settings.widget.RoundButtonView android:gravity="center" android:layout_gravity="center_horizontal" android:id="@id/initiate_master_clear" android:focusable="true" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/reset_button_top_margin" android:layout_marginBottom="@dimen/reset_button_top_margin" android:minHeight="@dimen/reset_button_min_height" android:text="@string/master_clear_button_text" android:paddingStart="@dimen/reset_button_side_padding" android:paddingEnd="@dimen/reset_button_side_padding" />
     </LinearLayout>
 </ScrollView>

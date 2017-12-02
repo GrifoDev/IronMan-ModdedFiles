@@ -646,13 +646,13 @@
 
     iget-object v2, v0, Lcom/android/settings/dashboard/DashboardAdapter$DashboardItemHolder;->itemView:Landroid/view/View;
 
-    const v3, 0x7f110240
+    const v3, 0x7f110242
 
     invoke-virtual {v2, v3}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
     move-result-object v2
 
-    const v3, 0x7f020650
+    const v3, 0x7f020652
 
     invoke-virtual {v2, v3}, Landroid/view/View;->setBackgroundResource(I)V
 
@@ -886,7 +886,7 @@
 
     iget-object v2, v0, Lcom/android/settings/dashboard/DashboardAdapter$DashboardItemHolder;->itemView:Landroid/view/View;
 
-    const v3, 0x7f110240
+    const v3, 0x7f110242
 
     invoke-virtual {v2, v3}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -1508,7 +1508,7 @@
 
     move-object/from16 v18, v0
 
-    const v19, 0x7f110256
+    const v19, 0x7f110258
 
     invoke-virtual/range {v18 .. v19}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -1531,7 +1531,7 @@
 
     move-object/from16 v18, v0
 
-    const v19, 0x7f11024c
+    const v19, 0x7f11024e
 
     invoke-virtual/range {v18 .. v19}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -1551,7 +1551,7 @@
 
     move-object/from16 v18, v0
 
-    const v19, 0x7f110256
+    const v19, 0x7f110258
 
     invoke-virtual/range {v18 .. v19}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -1570,7 +1570,7 @@
 
     move-object/from16 v18, v0
 
-    const v19, 0x7f11024c
+    const v19, 0x7f11024e
 
     invoke-virtual/range {v18 .. v19}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -1592,7 +1592,7 @@
 
     if-eqz v0, :cond_0
 
-    const v0, 0x7f0b1ded
+    const v0, 0x7f0b1dff
 
     :goto_0
     invoke-virtual {v1, v0}, Landroid/widget/TextView;->setText(I)V
@@ -1608,7 +1608,7 @@
     return-void
 
     :cond_0
-    const v0, 0x7f0b1dec
+    const v0, 0x7f0b1dfe
 
     goto :goto_0
 .end method
@@ -1682,7 +1682,7 @@
 
     if-eqz v0, :cond_0
 
-    const v3, 0x7f0201d6
+    const v3, 0x7f0201d4
 
     :goto_0
     invoke-virtual {v4, v3}, Landroid/widget/ImageView;->setImageResource(I)V
@@ -1693,7 +1693,7 @@
 
     iget-object v4, p0, Lcom/android/settings/dashboard/DashboardAdapter;->mContext:Landroid/content/Context;
 
-    const v5, 0x7f0b0557
+    const v5, 0x7f0b0558
 
     invoke-virtual {v4, v5}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -1791,7 +1791,7 @@
 
     iget-object v3, p1, Lcom/android/settings/dashboard/DashboardAdapter$DashboardItemHolder;->itemView:Landroid/view/View;
 
-    const v4, 0x7f1107dd
+    const v4, 0x7f1107df
 
     invoke-virtual {v3, v4}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -1806,42 +1806,13 @@
     return-void
 
     :cond_0
-    const v3, 0x7f0201d5
+    const v3, 0x7f0201d3
 
     goto/16 :goto_0
 
     :cond_1
     if-ne p2, v8, :cond_2
 
-    iget-object v3, p1, Lcom/android/settings/dashboard/DashboardAdapter$DashboardItemHolder;->title:Landroid/widget/TextView;
-
-    iget-object v4, p0, Lcom/android/settings/dashboard/DashboardAdapter;->mContext:Landroid/content/Context;
-
-    new-array v5, v8, [Ljava/lang/Object;
-
-    iget-object v6, p0, Lcom/android/settings/dashboard/DashboardAdapter;->mSuggestions:Ljava/util/ArrayList;
-
-    invoke-virtual {v6}, Ljava/util/ArrayList;->size()I
-
-    move-result v6
-
-    invoke-static {v6}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v6
-
-    aput-object v6, v5, v7
-
-    const v6, 0x7f0b0558
-
-    invoke-virtual {v4, v6, v5}, Landroid/content/Context;->getString(I[Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v4
-
-    invoke-virtual {v3, v4}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
-
-    goto/16 :goto_1
-
-    :cond_2
     iget-object v3, p1, Lcom/android/settings/dashboard/DashboardAdapter$DashboardItemHolder;->title:Landroid/widget/TextView;
 
     iget-object v4, p0, Lcom/android/settings/dashboard/DashboardAdapter;->mContext:Landroid/content/Context;
@@ -1870,10 +1841,39 @@
 
     goto/16 :goto_1
 
+    :cond_2
+    iget-object v3, p1, Lcom/android/settings/dashboard/DashboardAdapter$DashboardItemHolder;->title:Landroid/widget/TextView;
+
+    iget-object v4, p0, Lcom/android/settings/dashboard/DashboardAdapter;->mContext:Landroid/content/Context;
+
+    new-array v5, v8, [Ljava/lang/Object;
+
+    iget-object v6, p0, Lcom/android/settings/dashboard/DashboardAdapter;->mSuggestions:Ljava/util/ArrayList;
+
+    invoke-virtual {v6}, Ljava/util/ArrayList;->size()I
+
+    move-result v6
+
+    invoke-static {v6}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v6
+
+    aput-object v6, v5, v7
+
+    const v6, 0x7f0b055a
+
+    invoke-virtual {v4, v6, v5}, Landroid/content/Context;->getString(I[Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v4
+
+    invoke-virtual {v3, v4}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+
+    goto/16 :goto_1
+
     :cond_3
     iget-object v3, p0, Lcom/android/settings/dashboard/DashboardAdapter;->mContext:Landroid/content/Context;
 
-    const v4, 0x7f0b1e06
+    const v4, 0x7f0b1e18
 
     invoke-virtual {v3, v4}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -1956,7 +1956,7 @@
 
     move-result-object v8
 
-    const v9, 0x7f0f0418
+    const v9, 0x7f0f0417
 
     invoke-virtual {v8, v9}, Landroid/content/res/Resources;->getInteger(I)I
 
@@ -2449,6 +2449,14 @@
     const/4 v0, 0x1
 
     :goto_4
+    iget-object v8, p0, Lcom/android/settings/dashboard/DashboardAdapter;->mContext:Landroid/content/Context;
+
+    invoke-static {v8}, Lcom/android/settings/Utils;->getSamsungkeypadBadgeCount(Landroid/content/Context;)I
+
+    move-result v8
+
+    add-int/2addr v0, v8
+
     invoke-static {}, Ljava/util/Locale;->getDefault()Ljava/util/Locale;
 
     move-result-object v8
@@ -2505,6 +2513,144 @@
     goto/16 :goto_2
 
     :cond_1c
+    const-string/jumbo v8, "security_settings"
+
+    invoke-virtual {v8, v7}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v8
+
+    if-eqz v8, :cond_1f
+
+    iget-object v8, p0, Lcom/android/settings/dashboard/DashboardAdapter;->mContext:Landroid/content/Context;
+
+    invoke-static {v8}, Lcom/android/settings/Utils;->getSecureFolderBadgeCount(Landroid/content/Context;)I
+
+    move-result v8
+
+    iget-object v9, p0, Lcom/android/settings/dashboard/DashboardAdapter;->mContext:Landroid/content/Context;
+
+    invoke-static {v9}, Lcom/android/settings/Utils;->getAODBadgeCount(Landroid/content/Context;)I
+
+    move-result v9
+
+    add-int v0, v8, v9
+
+    invoke-static {}, Ljava/util/Locale;->getDefault()Ljava/util/Locale;
+
+    move-result-object v8
+
+    invoke-static {v8}, Ljava/text/NumberFormat;->getInstance(Ljava/util/Locale;)Ljava/text/NumberFormat;
+
+    move-result-object v5
+
+    int-to-long v8, v0
+
+    invoke-virtual {v5, v8, v9}, Ljava/text/NumberFormat;->format(J)Ljava/lang/String;
+
+    move-result-object v6
+
+    if-lez v0, :cond_1d
+
+    iget-object v8, p0, Lcom/android/settings/dashboard/DashboardAdapter;->mContext:Landroid/content/Context;
+
+    invoke-static {v8}, Lcom/android/settings/Utils;->isEnabledUltraPowerSaving(Landroid/content/Context;)Z
+
+    move-result v8
+
+    if-eqz v8, :cond_1e
+
+    :cond_1d
+    iget-object v8, p1, Lcom/android/settings/dashboard/DashboardAdapter$DashboardItemHolder;->badge:Landroid/widget/TextView;
+
+    const/16 v9, 0x8
+
+    invoke-virtual {v8, v9}, Landroid/widget/TextView;->setVisibility(I)V
+
+    goto/16 :goto_2
+
+    :cond_1e
+    iget-object v8, p1, Lcom/android/settings/dashboard/DashboardAdapter$DashboardItemHolder;->badge:Landroid/widget/TextView;
+
+    const/4 v9, 0x0
+
+    invoke-virtual {v8, v9}, Landroid/widget/TextView;->setVisibility(I)V
+
+    iget-object v8, p1, Lcom/android/settings/dashboard/DashboardAdapter$DashboardItemHolder;->badge:Landroid/widget/TextView;
+
+    invoke-static {v6}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v9
+
+    invoke-virtual {v8, v9}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+
+    goto/16 :goto_2
+
+    :cond_1f
+    const-string/jumbo v8, "header_useful_feature"
+
+    invoke-virtual {v8, v7}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v8
+
+    if-eqz v8, :cond_22
+
+    iget-object v8, p0, Lcom/android/settings/dashboard/DashboardAdapter;->mContext:Landroid/content/Context;
+
+    invoke-static {v8}, Lcom/android/settings/Utils;->getGalaxyFriendsBadgeCount(Landroid/content/Context;)I
+
+    move-result v0
+
+    invoke-static {}, Ljava/util/Locale;->getDefault()Ljava/util/Locale;
+
+    move-result-object v8
+
+    invoke-static {v8}, Ljava/text/NumberFormat;->getInstance(Ljava/util/Locale;)Ljava/text/NumberFormat;
+
+    move-result-object v5
+
+    int-to-long v8, v0
+
+    invoke-virtual {v5, v8, v9}, Ljava/text/NumberFormat;->format(J)Ljava/lang/String;
+
+    move-result-object v6
+
+    if-lez v0, :cond_20
+
+    iget-object v8, p0, Lcom/android/settings/dashboard/DashboardAdapter;->mContext:Landroid/content/Context;
+
+    invoke-static {v8}, Lcom/android/settings/Utils;->isEnabledUltraPowerSaving(Landroid/content/Context;)Z
+
+    move-result v8
+
+    if-eqz v8, :cond_21
+
+    :cond_20
+    iget-object v8, p1, Lcom/android/settings/dashboard/DashboardAdapter$DashboardItemHolder;->badge:Landroid/widget/TextView;
+
+    const/16 v9, 0x8
+
+    invoke-virtual {v8, v9}, Landroid/widget/TextView;->setVisibility(I)V
+
+    goto/16 :goto_2
+
+    :cond_21
+    iget-object v8, p1, Lcom/android/settings/dashboard/DashboardAdapter$DashboardItemHolder;->badge:Landroid/widget/TextView;
+
+    const/4 v9, 0x0
+
+    invoke-virtual {v8, v9}, Landroid/widget/TextView;->setVisibility(I)V
+
+    iget-object v8, p1, Lcom/android/settings/dashboard/DashboardAdapter$DashboardItemHolder;->badge:Landroid/widget/TextView;
+
+    invoke-static {v6}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v9
+
+    invoke-virtual {v8, v9}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+
+    goto/16 :goto_2
+
+    :cond_22
     iget-object v8, p1, Lcom/android/settings/dashboard/DashboardAdapter$DashboardItemHolder;->badge:Landroid/widget/TextView;
 
     const/16 v9, 0x8
@@ -2570,7 +2716,7 @@
     move v3, v4
 
     :goto_1
-    const v6, 0x7f0400a9
+    const v6, 0x7f0400aa
 
     invoke-direct {p0, v8, v6, v3, v7}, Lcom/android/settings/dashboard/DashboardAdapter;->countItem(Ljava/lang/Object;IZI)V
 
@@ -2581,7 +2727,7 @@
     move v5, v4
 
     :cond_1
-    const v3, 0x7f0400aa
+    const v3, 0x7f0400ab
 
     invoke-direct {p0, v8, v3, v5, v7}, Lcom/android/settings/dashboard/DashboardAdapter;->countItem(Ljava/lang/Object;IZI)V
 
@@ -2654,9 +2800,9 @@
 .method private setRoamingTile(Lcom/android/settingslib/drawer/Tile;)Lcom/android/settingslib/drawer/Tile;
     .locals 3
 
-    const v2, 0x7f0b0d0d
+    const v2, 0x7f0b0d1b
 
-    const v1, 0x7f0b0cee
+    const v1, 0x7f0b0cfc
 
     invoke-static {}, Lcom/android/settings/Utils;->isDomesticKTTModel()Z
 
@@ -2701,7 +2847,7 @@
 .method private setSoftwareUpdateTile(Lcom/android/settingslib/drawer/Tile;)Lcom/android/settingslib/drawer/Tile;
     .locals 6
 
-    const v5, 0x7f0b168c
+    const v5, 0x7f0b169e
 
     invoke-static {}, Lcom/samsung/android/feature/SemCscFeature;->getInstance()Lcom/samsung/android/feature/SemCscFeature;
 
@@ -2778,7 +2924,7 @@
 
     move-result-object v4
 
-    const v5, 0x7f04036f
+    const v5, 0x7f040372
 
     const/4 v6, 0x0
 
@@ -2786,7 +2932,7 @@
 
     move-result-object v1
 
-    const v4, 0x7f110858
+    const v4, 0x7f11085a
 
     invoke-virtual {v1, v4}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -2802,7 +2948,7 @@
 
     check-cast v3, Landroid/widget/TextView;
 
-    const v4, 0x7f0b11e8
+    const v4, 0x7f0b11f8
 
     invoke-virtual {v3, v4}, Landroid/widget/TextView;->setText(I)V
 
@@ -2820,7 +2966,7 @@
 
     invoke-direct {v5, p0, v0, p1}, Lcom/android/settings/dashboard/DashboardAdapter$9;-><init>(Lcom/android/settings/dashboard/DashboardAdapter;Landroid/widget/CheckBox;Lcom/android/settingslib/drawer/Tile;)V
 
-    const v6, 0x7f0b0511
+    const v6, 0x7f0b0512
 
     invoke-virtual {v4, v6, v5}, Landroid/app/AlertDialog$Builder;->setPositiveButton(ILandroid/content/DialogInterface$OnClickListener;)Landroid/app/AlertDialog$Builder;
 
@@ -2830,7 +2976,7 @@
 
     invoke-direct {v5, p0}, Lcom/android/settings/dashboard/DashboardAdapter$10;-><init>(Lcom/android/settings/dashboard/DashboardAdapter;)V
 
-    const v6, 0x7f0b0508
+    const v6, 0x7f0b0509
 
     invoke-virtual {v4, v6, v5}, Landroid/app/AlertDialog$Builder;->setNegativeButton(ILandroid/content/DialogInterface$OnClickListener;)Landroid/app/AlertDialog$Builder;
 
@@ -2862,9 +3008,9 @@
 .method private updateTile(Lcom/android/settingslib/drawer/Tile;)Lcom/android/settingslib/drawer/Tile;
     .locals 3
 
-    const v2, 0x7f0b0563
+    const v2, 0x7f0b0564
 
-    const v1, 0x7f0b160b
+    const v1, 0x7f0b161d
 
     iget-object v0, p0, Lcom/android/settings/dashboard/DashboardAdapter;->mContext:Landroid/content/Context;
 
@@ -2936,7 +3082,7 @@
 .method countSuggestionItem()V
     .locals 13
 
-    const v12, 0x7f04030b
+    const v12, 0x7f04030e
 
     const/4 v11, 0x0
 
@@ -3047,7 +3193,7 @@
     :cond_4
     add-int/lit16 v5, v1, 0x578
 
-    const v8, 0x7f04030c
+    const v8, 0x7f04030f
 
     invoke-direct {p0, v11, v8, v6, v5}, Lcom/android/settings/dashboard/DashboardAdapter;->countItem(Ljava/lang/Object;IZI)V
 
@@ -3088,7 +3234,7 @@
 
     add-int/2addr v9, v2
 
-    const v10, 0x7f04030e
+    const v10, 0x7f040311
 
     invoke-direct {p0, v8, v10, v5, v9}, Lcom/android/settings/dashboard/DashboardAdapter;->countItem(Ljava/lang/Object;IZI)V
 
@@ -3348,7 +3494,7 @@
 
     iget-object v3, p1, Lcom/android/settings/dashboard/DashboardAdapter$DashboardItemHolder;->itemView:Landroid/view/View;
 
-    const v4, 0x7f020115
+    const v4, 0x7f020113
 
     invoke-virtual {v3, v4}, Landroid/view/View;->setBackgroundResource(I)V
 
@@ -3357,7 +3503,7 @@
     :cond_1
     iget-object v3, p1, Lcom/android/settings/dashboard/DashboardAdapter$DashboardItemHolder;->itemView:Landroid/view/View;
 
-    const v4, 0x7f0204fe
+    const v4, 0x7f020500
 
     invoke-virtual {v3, v4}, Landroid/view/View;->setBackgroundResource(I)V
 
@@ -3421,7 +3567,7 @@
 
     iget-object v3, p1, Lcom/android/settings/dashboard/DashboardAdapter$DashboardItemHolder;->itemView:Landroid/view/View;
 
-    const v4, 0x7f110240
+    const v4, 0x7f110242
 
     invoke-virtual {v3, v4}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -3438,7 +3584,7 @@
     :sswitch_6
     iget-object v3, p1, Lcom/android/settings/dashboard/DashboardAdapter$DashboardItemHolder;->itemView:Landroid/view/View;
 
-    const v4, 0x7f110261
+    const v4, 0x7f110263
 
     invoke-virtual {v3, v4}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -3454,13 +3600,13 @@
 
     :sswitch_data_0
     .sparse-switch
-        0x7f0400a5 -> :sswitch_0
-        0x7f0400a9 -> :sswitch_5
-        0x7f0400aa -> :sswitch_6
-        0x7f0400ad -> :sswitch_1
-        0x7f0402b3 -> :sswitch_3
-        0x7f04030c -> :sswitch_2
-        0x7f04030e -> :sswitch_4
+        0x7f0400a6 -> :sswitch_0
+        0x7f0400aa -> :sswitch_5
+        0x7f0400ab -> :sswitch_6
+        0x7f0400ae -> :sswitch_1
+        0x7f0402b6 -> :sswitch_3
+        0x7f04030f -> :sswitch_2
+        0x7f040311 -> :sswitch_4
     .end sparse-switch
 .end method
 
@@ -3619,7 +3765,7 @@
 
     move-result-object v7
 
-    const v8, 0x7f04036f
+    const v8, 0x7f040372
 
     const/4 v9, 0x0
 
@@ -3627,7 +3773,7 @@
 
     move-result-object v1
 
-    const v7, 0x7f110858
+    const v7, 0x7f11085a
 
     invoke-virtual {v1, v7}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -3649,7 +3795,7 @@
 
     move-result-object v7
 
-    const v8, 0x7f0b05c2
+    const v8, 0x7f0b05c3
 
     invoke-virtual {v7, v8}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -3665,7 +3811,7 @@
 
     move-result-object v9
 
-    const v10, 0x7f0b058b
+    const v10, 0x7f0b058c
 
     invoke-virtual {v9, v10}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -3715,7 +3861,7 @@
 
     move-result-object v8
 
-    const v9, 0x7f0b05c1
+    const v9, 0x7f0b05c2
 
     invoke-virtual {v8, v9}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -3729,7 +3875,7 @@
 
     invoke-direct {v8, p0, v0, v3, p1}, Lcom/android/settings/dashboard/DashboardAdapter$12;-><init>(Lcom/android/settings/dashboard/DashboardAdapter;Landroid/widget/CheckBox;Landroid/content/SharedPreferences$Editor;Lcom/android/settingslib/drawer/Tile;)V
 
-    const v9, 0x7f0b0511
+    const v9, 0x7f0b0512
 
     invoke-virtual {v7, v9, v8}, Landroid/app/AlertDialog$Builder;->setPositiveButton(ILandroid/content/DialogInterface$OnClickListener;)Landroid/app/AlertDialog$Builder;
 
@@ -3739,7 +3885,7 @@
 
     invoke-direct {v8, p0}, Lcom/android/settings/dashboard/DashboardAdapter$13;-><init>(Lcom/android/settings/dashboard/DashboardAdapter;)V
 
-    const v9, 0x7f0b13d6
+    const v9, 0x7f0b13e7
 
     invoke-virtual {v7, v9, v8}, Landroid/app/AlertDialog$Builder;->setNegativeButton(ILandroid/content/DialogInterface$OnClickListener;)Landroid/app/AlertDialog$Builder;
 
@@ -3956,7 +4102,7 @@
     goto/16 :goto_2
 
     :cond_6
-    const v10, 0x7f0400a5
+    const v10, 0x7f0400a6
 
     const/4 v11, 0x1
 
@@ -4059,7 +4205,7 @@
     :cond_b
     iget-object v10, p0, Lcom/android/settings/dashboard/DashboardAdapter;->mContext:Landroid/content/Context;
 
-    const v11, 0x7f0b058b
+    const v11, 0x7f0b058c
 
     invoke-virtual {v10, v11}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -4080,13 +4226,13 @@
 
     if-eqz v4, :cond_1
 
-    const v10, 0x7f0b163f
+    const v10, 0x7f0b1651
 
     iput v10, v8, Lcom/android/settingslib/drawer/Tile;->titleRes:I
 
     iget-object v10, p0, Lcom/android/settings/dashboard/DashboardAdapter;->mContext:Landroid/content/Context;
 
-    const v11, 0x7f0b163f
+    const v11, 0x7f0b1651
 
     invoke-virtual {v10, v11}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -4113,13 +4259,13 @@
 
     if-nez v10, :cond_1
 
-    const v10, 0x7f0b1417
+    const v10, 0x7f0b1428
 
     iput v10, v8, Lcom/android/settingslib/drawer/Tile;->titleRes:I
 
     iget-object v10, p0, Lcom/android/settings/dashboard/DashboardAdapter;->mContext:Landroid/content/Context;
 
-    const v11, 0x7f0b1417
+    const v11, 0x7f0b1428
 
     invoke-virtual {v10, v11}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -4140,7 +4286,7 @@
 
     iget-object v10, p0, Lcom/android/settings/dashboard/DashboardAdapter;->mContext:Landroid/content/Context;
 
-    const v11, 0x7f020295
+    const v11, 0x7f020293
 
     invoke-static {v10, v11}, Landroid/graphics/drawable/Icon;->createWithResource(Landroid/content/Context;I)Landroid/graphics/drawable/Icon;
 
@@ -4220,7 +4366,7 @@
 
     iget-object v11, p0, Lcom/android/settings/dashboard/DashboardAdapter;->mContext:Landroid/content/Context;
 
-    const v12, 0x7f0b0555
+    const v12, 0x7f0b0556
 
     invoke-virtual {v11, v12}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -4242,7 +4388,7 @@
 
     iget-object v11, p0, Lcom/android/settings/dashboard/DashboardAdapter;->mContext:Landroid/content/Context;
 
-    const v12, 0x7f0b0556
+    const v12, 0x7f0b0557
 
     invoke-virtual {v11, v12}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -4260,7 +4406,7 @@
 
     iget-object v10, p0, Lcom/android/settings/dashboard/DashboardAdapter;->mContext:Landroid/content/Context;
 
-    const v11, 0x7f02057c
+    const v11, 0x7f02057e
 
     invoke-static {v10, v11}, Landroid/graphics/drawable/Icon;->createWithResource(Landroid/content/Context;I)Landroid/graphics/drawable/Icon;
 
@@ -4281,7 +4427,7 @@
     :cond_11
     iget-object v10, p0, Lcom/android/settings/dashboard/DashboardAdapter;->mContext:Landroid/content/Context;
 
-    const v11, 0x7f0b057d
+    const v11, 0x7f0b057e
 
     invoke-virtual {v10, v11}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -4291,7 +4437,7 @@
 
     iget-object v10, p0, Lcom/android/settings/dashboard/DashboardAdapter;->mContext:Landroid/content/Context;
 
-    const v11, 0x7f020583
+    const v11, 0x7f020585
 
     invoke-static {v10, v11}, Landroid/graphics/drawable/Icon;->createWithResource(Landroid/content/Context;I)Landroid/graphics/drawable/Icon;
 
@@ -4312,7 +4458,7 @@
     :cond_12
     const/4 v10, 0x1
 
-    const v11, 0x7f0400ad
+    const v11, 0x7f0400ae
 
     const/16 v12, 0x7d0
 

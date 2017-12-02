@@ -43,7 +43,7 @@
 
     iput p2, p0, Lcom/samsung/android/settings/bluetooth/BluetoothNoItemPreference;->mDividerHeight:I
 
-    const v0, 0x7f040203
+    const v0, 0x7f040206
 
     invoke-virtual {p0, v0}, Lcom/samsung/android/settings/bluetooth/BluetoothNoItemPreference;->setLayoutResource(I)V
 
@@ -88,7 +88,7 @@
 
     check-cast v4, Landroid/view/LayoutInflater;
 
-    const v10, 0x7f040203
+    const v10, 0x7f040206
 
     const/4 v11, 0x0
 
@@ -96,7 +96,7 @@
 
     move-result-object p1
 
-    const v10, 0x7f110654
+    const v10, 0x7f110656
 
     invoke-virtual {p1, v10}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -106,7 +106,7 @@
 
     iput-object v10, v9, Lcom/samsung/android/settings/bluetooth/BluetoothNoItemPreference$ViewHolder;->bodyLayout:Landroid/widget/LinearLayout;
 
-    const v10, 0x7f110655
+    const v10, 0x7f110657
 
     invoke-virtual {p1, v10}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -116,7 +116,7 @@
 
     iput-object v10, v9, Lcom/samsung/android/settings/bluetooth/BluetoothNoItemPreference$ViewHolder;->mainTextView:Landroid/widget/TextView;
 
-    const v10, 0x7f110656
+    const v10, 0x7f110658
 
     invoke-virtual {p1, v10}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 

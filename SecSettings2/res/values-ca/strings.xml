@@ -170,6 +170,8 @@
     <string name="wifi_allow_scan_with_traffic_summary">Permeti o refusi que la connexió Wi-Fi en itinerància pugui escanejar automàticament segons la quantitat de dades utilitzades.</string>
     <string name="select_logd_size_title">Mida mem interm registre</string>
     <string name="select_logd_size_dialog_title">Seleccioni la mida màxima de cada memòria intermèdia del registre</string>
+    <string name="dev_logpersist_clear_warning_title">Esborrar emmagatzem registrad persistent?</string>
+    <string name="dev_logpersist_clear_warning_message">"S'esborrarà el registrador de dades quan el registrador persistent estigui desactivat."</string>
     <string name="select_logpersist_title">Emmagatz dades registre persist</string>
     <string name="select_logpersist_dialog_title">Sel mem intermèdia registre emmag persist</string>
     <string name="select_usb_configuration_title">Configuració USB</string>
@@ -982,6 +984,7 @@ Ho pot canviar més tard als ajustaments de Bluetooth."</string>
     <string name="bluetooth_avc_available_description">El dispositiu Bluetooth connectat admet la Sincronització del volum multimèdia i el nivell del volum establert pel dispositiu Bluetooth se sincronitzarà amb el telèfon.</string>
     <string name="bluetooth_enter_pin_msg">Introdueixi el PIN per a vincular amb %s (Provi 0000 o 1234.)</string>
     <string name="bluetooth_pin_maximum_number_message">"S'ha assolit el nombre màxim de caràcters."</string>
+    <string name="bluetooth_frp_permission_message">No es pot utilitzar el dispositiu Bluetooth per a aquesta trucada.</string>
     <string name="settings_menu_done">Finalitzat</string>
     <string name="usb_tethering_unavailable_subtext_tmo">USB not connected</string>
     <string name="usb_tethering_available_subtext_tmo">USB connected, check to tether</string>
@@ -1481,7 +1484,7 @@ Toqui ACCEPTAR per permetre que la brillantor augmenti per sobre dels nivells se
     <string name="navigationbar_pressure_sensitivity_title">Prémer botó Inici durant estona</string>
     <string name="navigationbar_pressure_sensitivity_summary">Utilitzi el botó Inici mentre estigui ocultat prement més estona que normalment.</string>
     <string name="navigationbar_pressure_sensitivity_level_summary">Nivell de pressió: %1$d de %2$d</string>
-    <string name="navigationbar_pressure_sensitivity_description_off">Utilitzi el botó Inici mentre estigui ocultat prement més estona que normalment.</string>
+    <string name="navigationbar_pressure_sensitivity_description_off">Ajusti la quantitat de pressió necessària per prémer el botó Inici durant una estona.</string>
     <string name="navigationbar_pressure_low">Més suau</string>
     <string name="navigationbar_pressure_high">Més fort</string>
     <string name="navigationbar_hide_bar">Mostrar i ocultar el botó</string>
@@ -1620,7 +1623,7 @@ Toqui ACCEPTAR per permetre que la brillantor augmenti per sobre dels nivells se
     <string name="crypt_keeper_decrypt_title">Desxifrar dispositiu</string>
     <string name="crypt_keeper_decrypt_summary">Dispositiu xifrat</string>
     <string name="crypt_keeper_type_pin">PIN</string>
-    <string name="crypt_keeper_type_pattern">Patró</string>
+    <string name="crypt_keeper_type_pattern">patró</string>
     <string name="crypt_keeper_type_password">Contrasenya</string>
     <string name="crypt_keeper_type_direction">Bloqueig de direcció</string>
     <string name="crypt_keeper_confirm_title_dec">Confirmar desxifratge</string>
@@ -1704,7 +1707,11 @@ El xifratge pot trigar una hora o més. Abans de començar, asseguri's que la ba
     <string name="crypt_keeper_confirm_title">Confirmar xifratge</string>
     <string name="crypt_keeper_final_desc">"Si xifra el dispositiu no ho podrà revertir i es perdran les dades si el procés s'interromp. El xifratge pot trigar una hora o més i, durant el procés, el dispositiu es reiniciarà diverses vegades i no el podrà utilitzar."</string>
     <string name="crypt_keeper_setup_title">Xifrant…</string>
-    <string name="crypt_keeper_warn_wipe">"Només li queden %d intents per posar en marxa el dispositiu abans que es restableixin els ajustaments predeterminats de fàbrica. S'esborraran totes les dades, incloent-hi els fitxers i les apps descarregades."</string>
+    <string name="crypt_keeper_warn_wipe">"Tens %1$d intents abans que el telèfon es restableixi automàticament als ajustaments predeterminats de fàbrica. S'esborraran totes les dades, també els fitxers i les aplicacions descarregades.
+
+Si restableixes el telèfon, és possible que hagis d'introduir la informació de %2$s (adreça de correu electrònic i contrasenya) associada a aquest telèfon per poder tornar a utilitzar-lo."</string>
+    <string name="crypt_keeper_samsung_account">Samsung account</string>
+    <string name="crypt_keeper_google_account">Compte de Google</string>
     <string name="crypt_keeper_failed_title">Error de xifratge</string>
     <string name="crypt_keeper_failed_summary">"No es pot posar en marxa el dispositiu. S'ha interromput el procés de xifratge. Cal restablir el dispositiu als ajustaments predeterminats de fàbrica. Això esborrarà totes les dades."</string>
     <string name="crypt_keeper_data_corrupted_title">"Ubicació d'emmagatzematge del dispositiu malmesa"</string>
@@ -1723,10 +1730,13 @@ El xifratge pot trigar una hora o més. Abans de començar, asseguri's que la ba
     <string name="cryptkeeper_wrong_pin">PIN introduït incorrecte</string>
     <string name="cryptkeeper_wrong_direction">Direcció dibuixada incorrecta</string>
     <string name="checking_decryption">Verificant…</string>
-    <string name="crypt_keeper_last_warn_wipe">"Només li queda 1 intent per posar en marxa el dispositiu abans que es restableixin els ajustaments predeterminats de fàbrica. S'esborraran totes les dades, incloent-hi els fitxers i les apps descarregades."</string>
+    <string name="crypt_keeper_last_warn_wipe">"Tens 1 intent abans que el telèfon es restableixi automàticament als ajustaments predeterminats de fàbrica. S'esborraran totes les dades, també els fitxers i les aplicacions descarregades.
+
+Si restableixes el telèfon, és possible que hagis d'introduir la informació de %s (adreça de correu electrònic i contrasenya) associada a aquest telèfon per poder tornar a utilitzar-lo."</string>
     <string name="crypt_keeper_failed_title_dec">Error de desencriptació</string>
     <string name="crypt_keeper_failed_summary_dec">"No es pot completar el desxifratge perquè s’ha interromput. Realitzi un restabliment de dades de fàbrica (cosa que esborrarà totes les dades) per poder reprendre'n l’ús."</string>
     <string name="crypt_keeper_set_screen_lock_type">Definir tipus bloq pantalla</string>
+    <string name="crypt_keeper_warning_keyboard_cover_does_not_work">La funda teclat no funcionarà després de restablir el telèfon.</string>
     <string name="encryption_interstitial_message">"Pot protegir més aquest telèfon si demana que s'introdueixi %s abans de posar en marxa el telèfon. Això l'ajuda a protegir les dades en cas que perdi o li robin el telèfon. És possible que algunes aplicacions necessitin la Posada en marxa de forma segura de conformitat amb les polítiques de xifratge del dispositiu per accedir a les funcions, com ara la sincronització del correu electrònic.
 
 No rebrà cap trucada, missatge ni notificació, i les alarmes no sonaran fins que s'iniciï el telèfon."</string>
@@ -1971,6 +1981,12 @@ You will also need it when:"</string>
     <string name="lockpassword_confirm_your_pin_with_fingerprint">Utilitzi una empremta o introdueixi el PIN actual.</string>
     <string name="lockpassword_confirm_your_pattern_with_fingerprint">Utilitzi una empremta o dibuixi el patró actual.</string>
     <string name="lockpassword_confirm_your_password_with_fingerprint">Utilitzi una empremta o introdueixi la contrasenya actual.</string>
+    <string name="lockpassword_confirm_your_pin_with_iris">"Utilitzi l'iris o introdueixi el seu PIN actual."</string>
+    <string name="lockpassword_confirm_your_pattern_with_iris">"Utilitzi l'iris o dibuixi el seu patró actual."</string>
+    <string name="lockpassword_confirm_your_password_with_iris">"Utilitzi l'iris o introdueixi la seva contrasenya actual."</string>
+    <string name="lockpassword_confirm_your_pin_with_biometrics">Utilitza les dades biomètriques o introdueix el PIN.</string>
+    <string name="lockpassword_confirm_your_pattern_with_biometrics">Utilitza les dades biomètriques o dibuixa el teu patró.</string>
+    <string name="lockpassword_confirm_your_password_with_biometrics">Utilitza les dades biomètriques o introdueix la contrasenya.</string>
     <string name="lockpassword_confirm_your_pin_instead_of_fingerprint">"Introdueixi el PIN en comptes d'utilitzar el reconeixement d'empremtes."</string>
     <string name="lockpassword_confirm_your_pattern_instead_of_fingerprint">"Dibuixi el patró en comptes d'utilitzar el reconeixement d'empremtes."</string>
     <string name="lockpassword_confirm_your_password_instead_of_fingerprint">"Introdueixi la contrasenya en comptes d'utilitzar el reconeixement d'empremtes."</string>
@@ -2045,6 +2061,7 @@ Seleccioni com vol desbloquejar el telèfon. El Desbloqueig facial i el Desbloqu
     <string name="face_status_timeout">"Temps d'espera esgotat. Intenti-ho més tard."</string>
     <string name="okay">Acceptar</string>
     <string name="face_samsung_account_button">Utilit Samsung account</string>
+    <string name="face_galaxy_account_button">Utilitzar Galaxy account</string>
     <string name="face_error_DB_corrupted">"S'ha produït un error amb les dades facials. Torni a registrar la cara."</string>
     <string name="face_error_DB_corrupted_popup_title">Tornar a registrar la cara</string>
     <string name="face_error_timeout">"No s'ha detectat la cara."</string>
@@ -2155,7 +2172,7 @@ Activi el Desbloqueig d'iris per utilitzar la biometria o %s per desbloquejar el
     <string name="biometrics_backup_locktype_title">"Configurar la seguretat de l'iris"</string>
     <string name="biometrics_register_your_iris">"Registri l'iris."</string>
     <string name="biometrics_backup_locktype_summary">Si vol utilitzar els iris per desbloquejar el dispositiu, cal que estableixi un patró, un PIN o una contrasenya.</string>
-    <string name="biometrics_backup_locktype_message">"Per utilitzar l'iris per desbloquejar el telèfon o per a la verificació segura, haurà de:"</string>
+    <string name="biometrics_backup_locktype_message">"Per utilitzar l'iris per desbloquejar el telèfon o per verificar-se vostè mateix a les aplicacions, haurà de:"</string>
     <string name="iris_delete_popup_title">"Vol eliminar les dades d'iris?"</string>
     <string name="iris_delete_popup_message">"Vol eliminar les dades d'iris?"</string>
     <string name="iris_delete_popup_message_with_related_func">"Es desactivaran les funcions que utilitzen l'iris."</string>
@@ -2231,6 +2248,9 @@ Seleccioni com vol desbloquejar el telèfon. El Desbloqueig d'iris i el Desbloqu
     <string name="biometrics_dex_cant_use_msg">No es pot utilitzar %s a Samsung DeX.</string>
     <string name="biometrics_dex_closed_to_switch">"%s s'ha tancat per canviar a Samsung DeX."</string>
     <string name="biometircs_dex_cant_use_toast">%s no es pot executar a Samsung DeX. Provi-ho en el mode telèfon.</string>
+    <string name="iris_guide_text_preview">Mirar aquí usar iris</string>
+    <string name="iris_guide_enable_toggle">Toqui aquí per utilitzar iris</string>
+    <string name="iris_cannot_verify">"No s'ha pogut verificar l'iris"</string>
     <string name="knox_twofactor_bio_description">Seleccioni el tipus de bloqueig biomètric i el segon tipus de bloqueig per desbloquejar %s.</string>
     <string name="fingerprint_registered">"Les empremtes registrades s'utilitzaran amb el mètode de desbloqueig seleccionat."</string>
     <string name="knox_twofactor_description">Seleccioni la biometria i un segon tipus de bloqueig per desbloquejar %s.</string>
@@ -3093,6 +3113,7 @@ Tornar a intentar."</string>
     <string name="easy_mode_app_help">"Utilitzi el dispositiu més fàcilment amb un disseny de pantalla d'inici més simple i elements a la pantalla més grans."</string>
     <string name="easy_mode_app_help_dream_1">"Utilitzi un disseny de Pantalla d'inici senzill i elements de pantalla més grans."</string>
     <string name="easy_mode_app_help_dream_2">"Es descartarà qualsevol personalització que hagi realitzat a la Pantalla d'inici, i l'Ampliació de la pantalla s'establirà al màxim."</string>
+    <string name="easy_mode_app_help_3rd_launcher">"Aplica el mode Senzill per tenir elements més grans a la pantalla. Si no utilitzes l'inici de TouchWiz, el disseny de la Pantalla d'inici no canviarà, però l'ampliació de la pantalla s'establirà a gran i la mida del tipus de lletra s'establirà a mitjana."</string>
     <string name="security_warning_content">Pot protegir la privadesa establint una contrasenya, un PIN o un patró per desbloquejar la pantalla</string>
     <string name="lock_setting_weather_desc">Per veure o canviar els ajustaments de la informació meteorològica, toqui AJUSTAMENTS DE METEOROLOGIA.</string>
     <string name="lock_setting_weather_btn">Ajustaments meteorològics</string>
@@ -3339,7 +3360,7 @@ Downloading via mobile networks may result in additional charges depending on yo
     <string name="disable_hovering_title">Deshabilitar air view</string>
     <string name="disable_hovering_summary">Air view i TalkBack no poden estar habilitats simultàniament. Es deshabilitarà vista per aire.</string>
     <string name="pen_settings_pen_input">Entrada directa de llapis</string>
-    <string name="action_memo_onoff_screen_title">Nota pant apagada</string>
+    <string name="action_memo_onoff_screen_title">Nota de pantalla apagada</string>
     <string name="screen_off_note_summary">"Escriu notes mentre la pantalla està apagada. Només has de treure l'S Pen i començar a escriure."</string>
     <string name="screen_off_note_summary_jpn">"Creï notes desenganxant l'S Pen mentre la pantalla estigui apagada i després escrivint a la pantalla. Les notes de pantalla apagada es desaran a Galaxy Notes."</string>
     <string name="screen_off_note_summary_no_detach">"Creï notes prement el botó de l'S Pen, tocant la pantalla mentre estigui apagada i, a continuació, escrivint-hi. Les notes de la pantalla apagada es desaran a Samsung Notes."</string>
@@ -3946,7 +3967,7 @@ L'ús de la Connexió compartida augmenta el consum de bateria i l'ús de dades.
     <string name="wfd_descrpition_playsound">Reproduir so.</string>
     <string name="wfd_is_not_supported">Aquesta funció no és compatible.</string>
     <string name="usbtethering_notify_wifi_is_on_title">Vol desactivar el Wi-Fi?</string>
-    <string name="usbtethering_notify_wifi_is_on">El Wi-Fi i el mòdem USB no es poden activar simultàniament. Desactivi el Wi-Fi.</string>
+    <string name="usbtethering_notify_wifi_is_on">El Wi-Fi i el mòdem USB no es poden activar simultàniament. Es desactivarà el Wi-Fi.</string>
     <string name="disable_multi_window_dialog_text">Es deshabilitarà Multiwindow i es tancaran totes les aplicacions obertes en finestres emergents.</string>
     <string name="keyguard_password_attempt_count_pin_code">Queda %d intent</string>
     <string name="keyguard_password_attempts_count_pin_code">Queden %d intents</string>
@@ -4154,6 +4175,7 @@ S’està rebent SMS"</string>
     <string name="hdmi_mode_title">Mode HDMI</string>
     <string name="hdmi_mode_dex">Samsung DeX</string>
     <string name="hdmi_mode_mirroring">Screen Mirroring</string>
+    <string name="hdmi_mode_not_available_while_cover_attached">%s no estarà disponible mentre la coberta estigui enganxada.</string>
     <string name="screen_timeout_for_dex">Temps esp pant per Samsung DeX</string>
     <string name="show_virtual_keyboard_for_dex">Mostrar el teclat en pantalla a Samsung DeX</string>
     <string name="comma">,</string>
@@ -4462,7 +4484,7 @@ Ho pot canviar més tard als ajustaments de Bluetooth."</string>
     <string name="date_picker_title">Data</string>
     <string name="time_picker_title">Hora</string>
     <string name="lock_after_timeout">Bloquejar automàticament</string>
-    <string name="lock_after_timeout_summary">"Bloquejar la pantalla %s després que s'apagui automàticament."</string>
+    <string name="lock_after_timeout_summary">"Bloquegi el telèfon %s després que la pantalla s'apagui automàticament."</string>
     <string name="lock_after_timeout_summary_with_exception">"Bloquejar pantalla %1$s després que s'apagui automàticament, excepte quan es mantingui desbloquejada per %2$s."</string>
     <string name="show_owner_info_on_lockscreen_label">Mostrar la informació del propietari del dispositiu a la pantalla de bloqueig.</string>
     <string name="owner_info_settings_title">Informació propietari</string>
@@ -4610,6 +4632,8 @@ Per millorar la precisió de la ubicació, les aplicacions i els serveis poden c
     <string name="wifi_empty_list_user_restricted">No té permís per canviar els ajustaments del Wi-Fi.</string>
     <string name="wifi_setup_wps">Configuració automàtica (WPS)</string>
     <string name="wifi_show_advanced">Mostrar opcions avançades</string>
+    <string name="wifi_advanced_toggle_description_expanded">Toqui dos cops per contreure.</string>
+    <string name="wifi_advanced_toggle_description_collapsed">Toqui dos cops per ampliar.</string>
     <string name="wifi_wps_setup_title">Configurar WPS</string>
     <string name="wifi_wps_setup_msg">Iniciant WPS…</string>
     <string name="wifi_wps_onstart_pbc">"Toqui el botó de configuració protegida Wi-Fi de l'encaminador. Es pot dir WPS o tenir el símbol:"</string>
@@ -4641,6 +4665,10 @@ Per millorar la precisió de la ubicació, les aplicacions i els serveis poden c
     <string name="wifi_shared">Compartit</string>
     <string name="wifi_unchanged">"(no s'ha modificat)"</string>
     <string name="wifi_unspecified">(Sense indicar)</string>
+    <string name="wifi_select_cert">Seleccionar un certificat</string>
+    <string name="wifi_do_not_provide_eap_user_cert">No proporcionar</string>
+    <string name="wifi_do_not_validate_eap_server">No validar</string>
+    <string name="wifi_do_not_validate_eap_server_warning">Sense certificat especificat. La teva connexió no serà privada.</string>
     <string name="wifi_scan_always_turnon_message">"%s està sol·licitant permís per cercar xarxes Wi-Fi, fins i tot quan el Wi-Fi està apagat, per millorar la precisió d'ubicació i altres finalitats. Permetre-ho per a totes les aplicacions?"</string>
     <string name="wifi_scan_always_confirm_allow">Permetre</string>
     <string name="wifi_scan_always_confirm_deny">Denegar</string>
@@ -4893,9 +4921,9 @@ Després de formatar-se, només funcionarà en aquest dispositiu.
 "<b>La formatació esborrarà totes les dades que hi hagi emmagatzemades a la %2$s en aquell moment.</b> Per evitar la pèrdua de dades, faci una còpia de seguretat de les dades abans de formatar la %3$s.</string>
     <string name="storage_wizard_format_confirm_next">Formatar</string>
     <string name="storage_wizard_format_progress_title">Formatar %1$s</string>
-    <string name="storage_wizard_format_progress_body">"S'està formatant %1$s…
+    <string name="storage_wizard_format_progress_body">"S'està formatant la %1$s…
 
-No l'extregui mentre s'estigui formatant."</string>
+No l'extreguis mentre s'estigui formatant."</string>
     <string name="storage_wizard_migrate_title">Exportar dades</string>
     <string name="storage_wizard_migrate_body">"Pot exportar les fotos, els fitxers i algunes aplicacions a aquesta %1$s.
 
@@ -4975,9 +5003,9 @@ Consideri l'ús d'una targeta SD o d'un dispositiu d'emmagatzematge USB més rà
     <string name="restore_default_apn_completed">Ajustaments APN restablerts als valors predeterminats</string>
     <string name="reset_network_desc">Això restablirà tots els ajustaments de xarxa, com ara els de:</string>
     <string name="reset_network_button_text">Restablir ajustaments</string>
-    <string name="reset_network_final_desc">Es restabliran tots els ajustaments de connexió. Aquesta acció no es pot desfer.</string>
+    <string name="reset_network_final_desc">Es restabliran tots els ajustaments de xarxa. Aquesta acció no es pot desfer.</string>
     <string name="reset_network_final_button_text">Restablir ajustaments</string>
-    <string name="reset_network_complete_toast">Ajustaments de connexió restablerts.</string>
+    <string name="reset_network_complete_toast">"S'han restablert els ajustaments de xarxa."</string>
     <string name="master_clear_title">Restabliment de dades de fàbrica</string>
     <string name="master_clear_accounts">Actualment té la sessió iniciada als comptes següents:</string>
     <string name="master_clear_other_users_present">"També s'esborraran les dades d'aquest dispositiu que pertanyin a altres usuaris."</string>
@@ -6089,6 +6117,7 @@ No rebrà cap trucada, missatge ni notificació, i les alarmes no sonaran fins q
     <string name="set_data_limit">Establir el límit de dades</string>
     <string name="data_limit">Límit de dades</string>
     <string name="data_usage_template">%1$s utilitzat entre %2$s</string>
+    <string name="data_usage_template_wifi">%s utilitzades en els últims 30 dies</string>
     <string name="data_usage_other_apps">Apps relacionades incloses ús</string>
     <string name="data_saver_title">Estalvi de dades</string>
     <string name="unrestricted_data_saver">Permetre app amb Estalvi dades</string>
@@ -6139,6 +6168,7 @@ No rebrà cap trucada, missatge ni notificació, i les alarmes no sonaran fins q
     <string name="legacy_dhcp_client_summary">"Utilitza el client DHCP de Lollipop en lloc del nou client DHCP d'Android"</string>
     <string name="screen_off_pocket_title">Mantenir pantalla apagada</string>
     <string name="screen_off_pocket_summary">"Eviti que la pantalla s'activi accidentalment mentre el dispositiu sigui a un lloc fosc, com ara una butxaca o una bossa."</string>
+    <string name="noApplications">"Totes les aplicacions associades amb aquesta acció s'han desactivat o bloquejat, o no estan instal·lades."</string>
     <string name="confirm_reset_shortcut_manager_throttling_title">"Restablir el limitador de freqüència del Gestor d'accés directe"</string>
     <string name="confirm_reset_shortcut_manager_throttling_message">"Es restabliran els comptadors de limitador de freqüència del Gestor d'accés directe."</string>
 </resources>

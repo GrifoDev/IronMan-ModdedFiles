@@ -35,7 +35,7 @@
 
     iput-object p1, p0, Lcom/samsung/android/settings/display/DisplayTemperatureSeekBarPreferenceRed;->mContext:Landroid/content/Context;
 
-    const v0, 0x7f04023a
+    const v0, 0x7f04023d
 
     invoke-virtual {p0, v0}, Lcom/samsung/android/settings/display/DisplayTemperatureSeekBarPreferenceRed;->setLayoutResource(I)V
 
@@ -57,7 +57,7 @@
 
     iput-object p1, p0, Lcom/samsung/android/settings/display/DisplayTemperatureSeekBarPreferenceRed;->mContext:Landroid/content/Context;
 
-    const v0, 0x7f04023a
+    const v0, 0x7f04023d
 
     invoke-virtual {p0, v0}, Lcom/samsung/android/settings/display/DisplayTemperatureSeekBarPreferenceRed;->setLayoutResource(I)V
 
@@ -97,7 +97,7 @@
 
     invoke-super {p0, p1}, Lcom/samsung/android/settings/display/DisplayCustomPreference;->onBindView(Landroid/view/View;)V
 
-    const v3, 0x7f110640
+    const v3, 0x7f110642
 
     invoke-virtual {p1, v3}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 

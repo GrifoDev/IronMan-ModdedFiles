@@ -151,7 +151,7 @@
 
     aput-object v4, v3, v6
 
-    const v4, 0x7f0b0cbb
+    const v4, 0x7f0b0cc9
 
     invoke-virtual {v2, v4, v3}, Lcom/samsung/android/settings/boostmode/BoostModeChangeProcessingActivity;->getString(I[Ljava/lang/Object;)Ljava/lang/String;
 
@@ -190,7 +190,7 @@
 
     aput-object v4, v3, v6
 
-    const v4, 0x7f0b0cbd
+    const v4, 0x7f0b0ccb
 
     invoke-virtual {v2, v4, v3}, Lcom/samsung/android/settings/boostmode/BoostModeChangeProcessingActivity;->getString(I[Ljava/lang/Object;)Ljava/lang/String;
 

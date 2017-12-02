@@ -302,7 +302,7 @@
     nop
 
     :pswitch_data_0
-    .packed-switch 0x7f1104fc
+    .packed-switch 0x7f1104fe
         :pswitch_3
         :pswitch_2
         :pswitch_0
@@ -317,7 +317,7 @@
 
     invoke-super {p0, p1}, Landroid/app/Activity;->onCreate(Landroid/os/Bundle;)V
 
-    const v2, 0x7f04016b
+    const v2, 0x7f04016c
 
     invoke-virtual {p0, v2}, Lcom/android/settings/KnoxActiveProtectionEulaActivity;->setContentView(I)V
 
@@ -329,7 +329,7 @@
 
     if-eqz v0, :cond_0
 
-    const v2, 0x7f0b11f8
+    const v2, 0x7f0b1208
 
     invoke-virtual {v0, v2}, Landroid/app/ActionBar;->setTitle(I)V
 
@@ -344,7 +344,7 @@
 
     iput-object v2, p0, Lcom/android/settings/KnoxActiveProtectionEulaActivity;->mKapStatus:Lcom/android/settings/KnoxActiveProtectionStatus;
 
-    const v2, 0x7f1104f9
+    const v2, 0x7f1104fb
 
     invoke-virtual {p0, v2}, Lcom/android/settings/KnoxActiveProtectionEulaActivity;->findViewById(I)Landroid/view/View;
 
@@ -362,12 +362,12 @@
 
     iget-object v2, p0, Lcom/android/settings/KnoxActiveProtectionEulaActivity;->tvEula:Landroid/widget/TextView;
 
-    const v3, 0x7f0b11fb
+    const v3, 0x7f0b120b
 
     invoke-virtual {v2, v3}, Landroid/widget/TextView;->setText(I)V
 
     :cond_1
-    const v2, 0x7f1104fe
+    const v2, 0x7f110500
 
     invoke-virtual {p0, v2}, Lcom/android/settings/KnoxActiveProtectionEulaActivity;->findViewById(I)Landroid/view/View;
 
@@ -396,7 +396,7 @@
 
     iget-object v2, p0, Lcom/android/settings/KnoxActiveProtectionEulaActivity;->btnRebootNow:Landroid/widget/Button;
 
-    const v3, 0x7f0b08d5
+    const v3, 0x7f0b08df
 
     invoke-virtual {v2, v3}, Landroid/widget/Button;->setText(I)V
     :try_end_0
@@ -404,7 +404,7 @@
 
     :cond_2
     :goto_0
-    const v2, 0x7f1104ff
+    const v2, 0x7f110501
 
     invoke-virtual {p0, v2}, Lcom/android/settings/KnoxActiveProtectionEulaActivity;->findViewById(I)Landroid/view/View;
 
@@ -422,7 +422,7 @@
 
     invoke-virtual {v2, v4}, Landroid/widget/Button;->setEnabled(Z)V
 
-    const v2, 0x7f1104fd
+    const v2, 0x7f1104ff
 
     invoke-virtual {p0, v2}, Lcom/android/settings/KnoxActiveProtectionEulaActivity;->findViewById(I)Landroid/view/View;
 
@@ -436,7 +436,7 @@
 
     invoke-virtual {v2, p0}, Landroid/widget/Button;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    const v2, 0x7f1104fc
+    const v2, 0x7f1104fe
 
     invoke-virtual {p0, v2}, Lcom/android/settings/KnoxActiveProtectionEulaActivity;->findViewById(I)Landroid/view/View;
 

@@ -65,7 +65,7 @@
 
     iget-object v1, p0, Lcom/samsung/android/settings/display/AppListView$AppsAdapter;->mInflater:Landroid/view/LayoutInflater;
 
-    const v2, 0x7f040191
+    const v2, 0x7f040192
 
     const/4 v3, 0x0
 

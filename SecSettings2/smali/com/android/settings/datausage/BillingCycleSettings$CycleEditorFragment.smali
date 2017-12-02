@@ -186,7 +186,7 @@
 
     move-result-object v4
 
-    const v11, 0x7f0400b2
+    const v11, 0x7f0400b3
 
     const/4 v12, 0x0
 
@@ -196,7 +196,7 @@
 
     move-result-object v10
 
-    const v11, 0x7f110273
+    const v11, 0x7f110275
 
     invoke-virtual {v10, v11}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -206,7 +206,7 @@
 
     iput-object v11, p0, Lcom/android/settings/datausage/BillingCycleSettings$CycleEditorFragment;->mCycleDayPicker:Lcom/samsung/android/widget/SemNumberPicker;
 
-    const v11, 0x7f110272
+    const v11, 0x7f110274
 
     invoke-virtual {v10, v11}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -309,13 +309,17 @@
 
     invoke-virtual {v5, v11}, Landroid/widget/EditText;->setImeOptions(I)V
 
+    const-string/jumbo v11, "inputType=YearDateTime_edittext"
+
+    invoke-virtual {v5, v11}, Landroid/widget/EditText;->setPrivateImeOptions(Ljava/lang/String;)V
+
     new-instance v11, Lcom/android/settings/datausage/BillingCycleSettings$CycleEditorFragment$1;
 
     invoke-direct {v11, p0}, Lcom/android/settings/datausage/BillingCycleSettings$CycleEditorFragment$1;-><init>(Lcom/android/settings/datausage/BillingCycleSettings$CycleEditorFragment;)V
 
     invoke-virtual {v5, v11}, Landroid/widget/EditText;->setOnEditorActionListener(Landroid/widget/TextView$OnEditorActionListener;)V
 
-    const v11, 0x7f0b1af3
+    const v11, 0x7f0b1b05
 
     invoke-virtual {v0, v11}, Landroid/app/AlertDialog$Builder;->setTitle(I)Landroid/app/AlertDialog$Builder;
 
@@ -325,7 +329,7 @@
 
     move-result-object v11
 
-    const v12, 0x7f0b1af5
+    const v12, 0x7f0b1b07
 
     invoke-virtual {v11, v12, p0}, Landroid/app/AlertDialog$Builder;->setPositiveButton(ILandroid/content/DialogInterface$OnClickListener;)Landroid/app/AlertDialog$Builder;
 
@@ -358,7 +362,7 @@
 
     move-result v2
 
-    goto :goto_0
+    goto/16 :goto_0
 .end method
 
 .method public onSaveInstanceState(Landroid/os/Bundle;)V

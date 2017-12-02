@@ -235,7 +235,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f0205af
+    const v2, 0x7f0205b1
 
     invoke-virtual {v1, v2}, Landroid/app/Notification$Builder;->setSmallIcon(I)Landroid/app/Notification$Builder;
 
@@ -305,7 +305,7 @@
 .method private exportNotificationSet(Ljava/lang/String;Ljava/lang/String;I)V
     .locals 12
 
-    const v11, 0x7f0205af
+    const v11, 0x7f0205b1
 
     const/4 v9, 0x1
 
@@ -728,7 +728,7 @@
 
     move-result-object v5
 
-    const v6, 0x7f0f038d
+    const v6, 0x7f0f038c
 
     invoke-virtual {v5, v6}, Landroid/content/res/Resources;->getInteger(I)I
 
@@ -738,7 +738,7 @@
 
     move-result-object v6
 
-    const v7, 0x7f0f038e
+    const v7, 0x7f0f038d
 
     invoke-virtual {v6, v7}, Landroid/content/res/Resources;->getInteger(I)I
 
@@ -1702,7 +1702,7 @@
 
     invoke-direct {v3, p0}, Lcom/samsung/android/settings/accessibility/sharedaccessibility/ShareAccessibilityExportImport$2;-><init>(Lcom/samsung/android/settings/accessibility/sharedaccessibility/ShareAccessibilityExportImport;)V
 
-    const v4, 0x7f0b1853
+    const v4, 0x7f0b1865
 
     invoke-virtual {v2, v4, v3}, Landroid/app/AlertDialog$Builder;->setNegativeButton(ILandroid/content/DialogInterface$OnClickListener;)Landroid/app/AlertDialog$Builder;
 

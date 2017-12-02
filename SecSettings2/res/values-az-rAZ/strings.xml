@@ -170,6 +170,8 @@
     <string name="wifi_allow_scan_with_traffic_summary">İstifadə edilən dataya əsasən Wi-Fi rouminq axtarışlarını avtomatik icazə ver və ya rədd et.</string>
     <string name="select_logd_size_title">Jurnal üçün bufer ölçüsü</string>
     <string name="select_logd_size_dialog_title">Hər bir jurnal buferinin maksimum ölçüsünü seç</string>
+    <string name="dev_logpersist_clear_warning_title">Davamlı jurnal yaddaşı silinsin?</string>
+    <string name="dev_logpersist_clear_warning_message">Jurnal məlumatı davamlı jurnal söndükdə silinəcək.</string>
     <string name="select_logpersist_title">Jurnal məlumatını daima saxla</string>
     <string name="select_logpersist_dialog_title">Daima saxlamaq üçün jurnal buferlərini seç</string>
     <string name="select_usb_configuration_title">USB konfiqurasiyası</string>
@@ -981,6 +983,7 @@ Siz bunu sonradan Bluetooth parametrlərində dəyişə bilərsiniz."</string>
     <string name="bluetooth_avc_available_description">Qoşulan Bluetooth cihazı Media səs sinx dəstəkləyir və Bluetooth cihazı ilə qurulan səs səviyyəsi telefonda sinxronlaşacaq.</string>
     <string name="bluetooth_enter_pin_msg">%s ilə qoşmaq üçün PIN daxil et (0000 və ya 1234 daxil et).</string>
     <string name="bluetooth_pin_maximum_number_message">Simvolların sayı maksimuma çatıb.</string>
+    <string name="bluetooth_frp_permission_message">Bu zəng üçün Bluetooth cihazdan istifadə etmək olmur.</string>
     <string name="settings_menu_done">Yerinə yetirildi</string>
     <string name="usb_tethering_unavailable_subtext_tmo">USB not connected</string>
     <string name="usb_tethering_available_subtext_tmo">USB connected, check to tether</string>
@@ -1480,7 +1483,7 @@ Parlaqlığın təhlükəsizlik ssəviyyələrindən artmasına icazə vermək �
     <string name="navigationbar_pressure_sensitivity_title">Əsas ekran düyməs vurub saxla</string>
     <string name="navigationbar_pressure_sensitivity_summary">Həmişəkindən daha sərt vurmaqla gizli olan Əsas ekran düyməsindən istifadə edin.</string>
     <string name="navigationbar_pressure_sensitivity_level_summary">Təzyiq səviyyəsi: %1$d / %2$d</string>
-    <string name="navigationbar_pressure_sensitivity_description_off">Həmişəkindən daha sərt vurmaqla gizli olan Əsas ekran düyməsindən istifadə edin.</string>
+    <string name="navigationbar_pressure_sensitivity_description_off">Əsas düyməsinin sıxılması üçün lazım olan təzyiqi tənzimləyin.</string>
     <string name="navigationbar_pressure_low">Daha yüngül</string>
     <string name="navigationbar_pressure_high">Daha güclü</string>
     <string name="navigationbar_hide_bar">Düyməni göstər və gizlət</string>
@@ -1619,7 +1622,7 @@ Parlaqlığın təhlükəsizlik ssəviyyələrindən artmasına icazə vermək �
     <string name="crypt_keeper_decrypt_title">Cihazın şifri aç</string>
     <string name="crypt_keeper_decrypt_summary">Cihazın şifrini açıldı.</string>
     <string name="crypt_keeper_type_pin">PIN</string>
-    <string name="crypt_keeper_type_pattern">Nümunə</string>
+    <string name="crypt_keeper_type_pattern">nümunə</string>
     <string name="crypt_keeper_type_password">Şifrə</string>
     <string name="crypt_keeper_type_direction">İstiqamət kilidi</string>
     <string name="crypt_keeper_confirm_title_dec">Şifr açılmasını təsdiqlə</string>
@@ -1703,7 +1706,11 @@ Parlaqlığın təhlükəsizlik ssəviyyələrindən artmasına icazə vermək �
     <string name="crypt_keeper_confirm_title">Şifrləməni təsdiqlə</string>
     <string name="crypt_keeper_final_desc">Cihazınızın şifrələnməsi geri qaytarıla bilməz və proses dayandırılan zaman məlumat itiriləcəkdir. Şifrələmə bir saat və ya daha çox vaxt ala bilər ki, bu vaxt da cihazınız bir neçə dəfə sönüb yanacaq və siz ondan istifadə edə bilməyəcəksiniz.</string>
     <string name="crypt_keeper_setup_title">Şifrlənir…</string>
-    <string name="crypt_keeper_warn_wipe">Zavod parametrlərinə sıfırlanmazdan öncə cihazı işə salmaq üçün %d cəhdiniz var. Bu, fayllar və yüklənmiş proqramlar daxil olmaqla bütün məlumatları siləcək.</string>
+    <string name="crypt_keeper_warn_wipe">"Telefonun zavod defolt parametrlərinə sıfırlanmasına %1$d cəhd qalıb. Bu, fayllar və yüklənmiş poqramlar daxil olmaqla bütün məlumatları siləcək.
+
+Telefon sıfırlandıqda ondan yenidən istifadə etmək üçün bu telefonla əlaqəli %2$s məlumatını daxil etməli ola bilərsiniz (e-poçt ünvanı və parol)."</string>
+    <string name="crypt_keeper_samsung_account">Samsung account</string>
+    <string name="crypt_keeper_google_account">Google hesabı</string>
     <string name="crypt_keeper_failed_title">Şifrləmə uğursuz oldu</string>
     <string name="crypt_keeper_failed_summary">Cihazı işə salmaq olmadı. Şifrləmə prosesi dayandırıldı. Cihazınızı zavod parametrlərinə bərpa etməlisiniz. Bu, bütün məlumatlarınızı siləcək.</string>
     <string name="crypt_keeper_data_corrupted_title">Cihazın yaddaşı bitdi</string>
@@ -1722,10 +1729,13 @@ Parlaqlığın təhlükəsizlik ssəviyyələrindən artmasına icazə vermək �
     <string name="cryptkeeper_wrong_pin">Yanlış PIN daxil edildi</string>
     <string name="cryptkeeper_wrong_direction">Yanlış istiqamət çəkimi</string>
     <string name="checking_decryption">Təsdiq edilir…</string>
-    <string name="crypt_keeper_last_warn_wipe">Zavod defolt parametrlərinə sıfırlanmazdan öncə cihazı işə salmaq üçün 1 cəhdiniz qalır. Bu, fayllar və yüklənmiş proqramlar daxil olmaqla bütün məlumatları siləcək.</string>
+    <string name="crypt_keeper_last_warn_wipe">"Telefonun zavod parametrlərinə sıfırlanmasına qədər 1 cəhdiniz qalıb. Bu, fayllar və yüklənmiş proqramlar daxil olan bütün məlumatları siləcək.
+
+Telefonunuz sıfırlanarsa, bu telefondan yenidən istifadə etmək üçün onunla bağlı %s məlumatı (e-poçt ünvanı və parol) daxil etməli ola bilərsiniz."</string>
     <string name="crypt_keeper_failed_title_dec">Şifrələrin açılması alınmadı.</string>
     <string name="crypt_keeper_failed_summary_dec">Dayandırılmaya görə şifrlaçmanı tamamlamaq mümkün olmadı. İstifadədən əvvəl zavod parametrlərinə bərpa edin (bütün məlumatlarınız silinir).</string>
     <string name="crypt_keeper_set_screen_lock_type">Ekranın kilid növünü qur</string>
+    <string name="crypt_keeper_warning_keyboard_cover_does_not_work">Klaviatura qapağı telefon sönüb yandıqdan sonra işləməyəcək.</string>
     <string name="encryption_interstitial_message">"Gələcəkdə telefonun işə salınmasından öncə %s daxil edilməsini tələb etməklə bu telefonu qoruya bilərsiniz. Bu, telefon itdikdə və ya oğurlandıqda məlumatınızı qorumağa kömək edir. Bəzi proqramlar Cihazın şifrləmə siyasətlərindən asılı olaraq e-poçt və s. kimi funksiyalara çıxmaq üçün Təhlükəsiz İşəsalma tələb edə bilər.
 
 Telefon işə salınmayanadək siz zəng, mesaj və ya bildirişlər almayacaqsınız və siqnallar səslənməyəcək."</string>
@@ -1970,6 +1980,12 @@ You will also need it when:"</string>
     <string name="lockpassword_confirm_your_pin_with_fingerprint">Barmaq izindən istifadə et və ya cari PIN-i daxil et.</string>
     <string name="lockpassword_confirm_your_pattern_with_fingerprint">Barmaq izindən istifadə et və ya cari modeli çək.</string>
     <string name="lockpassword_confirm_your_password_with_fingerprint">Barmaq izindən istifadə et və ya cari parolu daxil et.</string>
+    <string name="lockpassword_confirm_your_pin_with_iris">Diafraqmalardan istifadə et və ya cari PIN-i daxil et.</string>
+    <string name="lockpassword_confirm_your_pattern_with_iris">Diafraqmalardan istifadə et və ya cari modeli çək.</string>
+    <string name="lockpassword_confirm_your_password_with_iris">Diafraqmalardan istifadə et və ya cari parolu daxil et.</string>
+    <string name="lockpassword_confirm_your_pin_with_biometrics">Bioölçüdən istifadə edin və ya PIN daxil edin.</string>
+    <string name="lockpassword_confirm_your_pattern_with_biometrics">Bioölçüdən istifadə edin və ya model çəkin.</string>
+    <string name="lockpassword_confirm_your_password_with_biometrics">Bioölçüdən istifadə edin və ya parol daxil edin.</string>
     <string name="lockpassword_confirm_your_pin_instead_of_fingerprint">Barmaq izi tanınması əvəzinə PIN daxil et.</string>
     <string name="lockpassword_confirm_your_pattern_instead_of_fingerprint">Barmaq izi tanınması əvəzinə model çək.</string>
     <string name="lockpassword_confirm_your_password_instead_of_fingerprint">Barmaq izi tanınması əvəzinə parol daxil et.</string>
@@ -2043,7 +2059,8 @@ Telefonu kiliddən açma yolunu seçin. Üzlə və gözün qüzehli qişası il�
     <string name="face_backup_wrong_password">Yanlış nüsxə parolu</string>
     <string name="face_status_timeout">Vaxt bitdi. Sonra yenidən sınayın.</string>
     <string name="okay">OK</string>
-    <string name="face_samsung_account_button">Samsung Account istif et</string>
+    <string name="face_samsung_account_button">Samsung account istif et</string>
+    <string name="face_galaxy_account_button">Galaxy hesab istifadə et</string>
     <string name="face_error_DB_corrupted">Üz məlumatında problem oldu. Üzünüzü yenidən qeydiyyatdan keçirin.</string>
     <string name="face_error_DB_corrupted_popup_title">Üzünüzü yenidən qeydiyyatdan keçirin</string>
     <string name="face_error_timeout">Üzünüz aşkar edilmədi.</string>
@@ -2154,7 +2171,7 @@ Bioölçülərdən istifadə etmək üçün Gözün qüzehli qişası ilə kilid
     <string name="biometrics_backup_locktype_title">Diafraqma təhlükəsizliyini qur</string>
     <string name="biometrics_register_your_iris">göz qişalarınızı qeydiyyatdan keçirin.</string>
     <string name="biometrics_backup_locktype_summary">Cihazı kiliddən açmaq üçün diafraqmalardan istifadə etmək üçün model, PIN və parol qurmalısınız.</string>
-    <string name="biometrics_backup_locktype_message">Telefonu kiliddən açmaq və təhlükəsiz təsdiq üçün diafraqmalardan istifadə etmək üçün:</string>
+    <string name="biometrics_backup_locktype_message">Gözün qüzehli qişası ilə telefonu kiliddən açmaq və proqramlarda özünüzü təsdiq etmək üçün:</string>
     <string name="iris_delete_popup_title">Diafraqma məlumatı silinsin?</string>
     <string name="iris_delete_popup_message">Diafraqma məlumatı silinsin?</string>
     <string name="iris_delete_popup_message_with_related_func">Diafraqmalardan istifadə edən funksiyalar sönəcək.</string>
@@ -2230,6 +2247,9 @@ Telefonu kiliddən açma yolunu seçin. Gözün qüzehli qişası və Üzlə kil
     <string name="biometrics_dex_cant_use_msg">Samsung DeX-də %s istifadə etmək olmur.</string>
     <string name="biometrics_dex_closed_to_switch">Samsung DeX keçmək üçün %s bağlandı.</string>
     <string name="biometircs_dex_cant_use_toast">%s Samsung DeX-də açıla bilmir. Telefon rejimdə açmağa çalışın.</string>
+    <string name="iris_guide_text_preview">Diafr ist üçün bura bax</string>
+    <string name="iris_guide_enable_toggle">Diafraql istif üçün bura vur</string>
+    <string name="iris_cannot_verify">Göz qişalarını yoxlamaq mümkün olmadı</string>
     <string name="knox_twofactor_bio_description">Biometrik kilid növünü və ikinci kilid növünü seçin və %s kiliddən açın.</string>
     <string name="fingerprint_registered">Qeydiyyatdan keçilmiş barmaq izləri seçilən kiliddən açma metodu ilə istifadə ediləcək.</string>
     <string name="knox_twofactor_description">Bioölçüləri və ikinci kilid növünü seç və %s kiliddən aç.</string>
@@ -3092,6 +3112,7 @@ Xahiş olunur yenidən cəhd edin."</string>
     <string name="easy_mode_app_help">Daha sadə əsas ekran tərtibatı və daha bpyük ekran elementləri ilə cihazdan daha asan istifadə edin.</string>
     <string name="easy_mode_app_help_dream_1">Sadə Əsas ekran tərtibatı və daha böyük ekran elementlərindən istifadə edin.</string>
     <string name="easy_mode_app_help_dream_2">Əsas ekranda etdiyiniz hər hansı fərdiləşdirmə silinəcək və Ekran miqyası maksimuma qurulacaq.</string>
+    <string name="easy_mode_app_help_3rd_launcher">Daha geniş enda elementləri üçün Asan rejimi tətbiq edin. TouchWiz əsas ekranından istifadə edirsinizsə, Əsas ekran tərtibatı dəyişməyəcək, lakin ekranın miyası geniş və şrift ölçüsü orta kimi qurulacaq.</string>
     <string name="security_warning_content">Ekranınızın kilidini açmaq üçün parol, PIN və ya nümunə quraşdırmaqla məxfiliyinizi qoruya bilərsiniz</string>
     <string name="lock_setting_weather_desc">Hava parametrlərinə baxmaq və ya dəyişmək üçün aşağıda HAVA PARAMETRLƏRİ vurun.</string>
     <string name="lock_setting_weather_btn">Hava parametrləri</string>
@@ -3338,7 +3359,7 @@ Downloading via mobile networks may result in additional charges depending on yo
     <string name="disable_hovering_title">Təmassız görünüşü qeyri-aktiv et</string>
     <string name="disable_hovering_summary">Təmassız görünüş və TalkBack hər ikisi aktivləşdirilə bilməz. Təmassız görünüş qeyri-aktiv ediləcək.</string>
     <string name="pen_settings_pen_input">Birbaşa qələm daxiletməsi</string>
-    <string name="action_memo_onoff_screen_title">Sönlü ekran qeydi</string>
+    <string name="action_memo_onoff_screen_title">Sönülü ekran qeydi</string>
     <string name="screen_off_note_summary">Ekran sönülü olduqda qeydlər yazın. Sadəcə S Pen-i çıxarın və yazmağa başlayın.</string>
     <string name="screen_off_note_summary_jpn">Ekran sönülü olan zaman S Pen ayırmaq və ekranda yazmaqla qeydlər yaradın. Sönülü ekran yaddaş qeydləri Galaxy Notes-da saxlanacaq.</string>
     <string name="screen_off_note_summary_no_detach">Qələm düyməsinə vurmaqla, ekran sönülü olan zaman ona vurub yazmaqla qeydlər yaradın. Sönülü ekran yaddaş qeydləri Samsung Notes-da saxlanacaq.</string>
@@ -3945,7 +3966,7 @@ Mobil Giriş nöqtəsindən istifadə batareya sərfiyyatını və tarifdən ist
     <string name="wfd_descrpition_playsound">Səsi səsləndir.</string>
     <string name="wfd_is_not_supported">Bu funksiya dəstəklənmir.</string>
     <string name="usbtethering_notify_wifi_is_on_title">Wi-Fi sönsün?</string>
-    <string name="usbtethering_notify_wifi_is_on">Wi-Fi və USB bağlanma eyni vaxtda aktiv ola bilməz. Wi-Fi-ı söndürün.</string>
+    <string name="usbtethering_notify_wifi_is_on">Wi-Fi və USB bağlantı eyni anda yanılı ola bilməz. Wi-Fi sönəcək.</string>
     <string name="disable_multi_window_dialog_text">Çoxsaylı pəncərə qeyri-aktiv ediləcək və ani pəncərələrdə açılan bütün proqramlar bağlanacaq.</string>
     <string name="keyguard_password_attempt_count_pin_code">%d cəhd qalıb.</string>
     <string name="keyguard_password_attempts_count_pin_code">%d cəhd qalıb.</string>
@@ -4153,6 +4174,7 @@ SMS-in qəbul olunması"</string>
     <string name="hdmi_mode_title">HDMI rejimi</string>
     <string name="hdmi_mode_dex">Samsung DeX</string>
     <string name="hdmi_mode_mirroring">Screen Mirroring</string>
+    <string name="hdmi_mode_not_available_while_cover_attached">Qapaq açıq olduqda %s mövcud olmur.</string>
     <string name="screen_timeout_for_dex">Samsung DeX üçün ekr vaxtı bitd</string>
     <string name="show_virtual_keyboard_for_dex">Samsung DeX-də ekran klaviaturasını göstər</string>
     <string name="comma">,</string>
@@ -4461,7 +4483,7 @@ Siz bunu sonradan Bluetooth parametrlərində dəyişə bilərsiniz."</string>
     <string name="date_picker_title">Tarix</string>
     <string name="time_picker_title">Vaxt</string>
     <string name="lock_after_timeout">Avtomatik kilidlə</string>
-    <string name="lock_after_timeout_summary">Ekran %s avtomatik söndükdən sonra onu kilidlə.</string>
+    <string name="lock_after_timeout_summary">Ekran avtomatik söndükdən sonra telefonu %s kilidləyin.</string>
     <string name="lock_after_timeout_summary_with_exception">Ekran avtomatik söndükdən %1$s sonra onu kilidləyin (%2$s tərəfindən kilidlənmədiyi hallar çıxmaqla).</string>
     <string name="show_owner_info_on_lockscreen_label">Cihaz sahibinin məlumatını kilid ekranında göstər.</string>
     <string name="owner_info_settings_title">Sahibi haqqında</string>
@@ -4609,6 +4631,8 @@ Məkanın dəqiqliyini yaxşılaşdırmaq üçün proqram və xidmətlər Wi-Fi 
     <string name="wifi_empty_list_user_restricted">Siz Wi-Fi parametrlərini dəyişə bilməzsiniz.</string>
     <string name="wifi_setup_wps">Avtomatik quraşdırma (WPS)</string>
     <string name="wifi_show_advanced">Təkmil seçimləri göstər</string>
+    <string name="wifi_advanced_toggle_description_expanded">Yığmaq üçün iki dəfə vurun.</string>
+    <string name="wifi_advanced_toggle_description_collapsed">Genişləndirmək üçün iki dəfə vurun.</string>
     <string name="wifi_wps_setup_title">WPS quraşdırması</string>
     <string name="wifi_wps_setup_msg">WPS başladılır…</string>
     <string name="wifi_wps_onstart_pbc">Yönləndiricinizdə Wi-Fi ilə qorunan quraşdırma düyməsinə vurun. O, WPS adlandırıla və ya bu simvolu ehtiva edə bilər:</string>
@@ -4640,6 +4664,10 @@ Məkanın dəqiqliyini yaxşılaşdırmaq üçün proqram və xidmətlər Wi-Fi 
     <string name="wifi_shared">Paylaşılan</string>
     <string name="wifi_unchanged">(dəyişdirilməmiş)</string>
     <string name="wifi_unspecified">(Təyin edilməyib)</string>
+    <string name="wifi_select_cert">Sertifikat seç</string>
+    <string name="wifi_do_not_provide_eap_user_cert">Təmin etmə</string>
+    <string name="wifi_do_not_validate_eap_server">Təsdiq etmə</string>
+    <string name="wifi_do_not_validate_eap_server_warning">Sertifikat qeyd edilməyib. Bağlantınız fərdi deyil.</string>
     <string name="wifi_scan_always_turnon_message">Məkanın dəqiqliyini yaxşılaşdırmaq və başqa məqsədlər üçün %s Wi-Fi sönülü olan zaman Wi-Fi şəbəkələrini axtarmaq icazəsi istəyir. Bütün proqramlar üçün buna icazə verilsin?</string>
     <string name="wifi_scan_always_confirm_allow">İcazə ver</string>
     <string name="wifi_scan_always_confirm_deny">İmtina et</string>
@@ -4974,9 +5002,9 @@ Buraya ixrac edilən proqramların işi zəifləyə və buraya məlumat köçür
     <string name="restore_default_apn_completed">APN parametrlərini susmaya görə qur.</string>
     <string name="reset_network_desc">Bu aşağıdakılar daxil olmaqla bütün şəbəkə parametrlərini sıfırlayacaq:</string>
     <string name="reset_network_button_text">Parametrləri sıfırla</string>
-    <string name="reset_network_final_desc">Bütün bağlantı parametrləri sıfırlanacaq. Bu əməliyyat ləğv edilə bilmir.</string>
+    <string name="reset_network_final_desc">Bütün şəbəkə parametrləri silinəcək. Bu əməliyyat ləğv edilə bilmir.</string>
     <string name="reset_network_final_button_text">Parametrləri sıfırla</string>
-    <string name="reset_network_complete_toast">Bağlantı parametrləri sıfırlandı.</string>
+    <string name="reset_network_complete_toast">Şəbəkə parametrləri sıfırlandı.</string>
     <string name="master_clear_title">Fabrik ayarlarına sıfırla</string>
     <string name="master_clear_accounts">Siz hazırda aşağıdakı hesablara daxil olmusunuz:</string>
     <string name="master_clear_other_users_present">Başqa istifadəçilərə bu cihazda məxsus olan məlumat da silinəcək.</string>
@@ -6089,6 +6117,7 @@ Cihaz işə salınanadək siz heç bir zəng, mesaj və ya bildiriş və siqnal 
     <string name="set_data_limit">Data limiti qur</string>
     <string name="data_limit">Data limiti</string>
     <string name="data_usage_template">%1$s istifadə %2$s</string>
+    <string name="data_usage_template_wifi">Son 30 gündə %s istifadə edildi</string>
     <string name="data_usage_other_apps">İstif daxil ed əlaqədar proq</string>
     <string name="data_saver_title">Data qənaəti</string>
     <string name="unrestricted_data_saver">Data qən yan old proq icz ver</string>
@@ -6139,6 +6168,7 @@ Cihaz işə salınanadək siz heç bir zəng, mesaj və ya bildiriş və siqnal 
     <string name="legacy_dhcp_client_summary">Android DHCP klienti əvəzinə Lollipopdan DHCP klient istifadə edin.</string>
     <string name="screen_off_pocket_title">Ekranı sönülü saxla</string>
     <string name="screen_off_pocket_summary">Cihaz cib və ya çanta kimi qaranlıq yerdə olduqda ekranın təsadüfən yanmasının qarşısını alın.</string>
+    <string name="noApplications">Bu addımla əlaqəli bütün proqramlar qeyri-aktiv edilmiş, bloklanmış və ya quraşdırılmamışdır.</string>
     <string name="confirm_reset_shortcut_manager_throttling_title">Qısayol Menecer məhdudlaşdırıcısını sıfırla</string>
     <string name="confirm_reset_shortcut_manager_throttling_message">Qısayol Menecer məhdudlaşdırıcı hesabları sıfırlanacaq.</string>
 </resources>

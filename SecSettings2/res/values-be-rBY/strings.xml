@@ -170,6 +170,8 @@
     <string name="wifi_allow_scan_with_traffic_summary">Аўтаматычна дазваляць або забараняць сканіраванне Wi-Fi у роўмінгу ў залежнасці ад аб’ёму выкарыстання даных.</string>
     <string name="select_logd_size_title">Памер буф. для вядз. журн</string>
     <string name="select_logd_size_dialog_title">Выберыце максімальны памер кожнага буфера журнала</string>
+    <string name="dev_logpersist_clear_warning_title">Выд схов сродку паст вядз журнала?</string>
+    <string name="dev_logpersist_clear_warning_message">Пры выключэнні сродку вядзення журнала даныя сродку пастаяннага вядзення журнала будуць выдалены.</string>
     <string name="select_logpersist_title">Захоўваць даныя журнала</string>
     <string name="select_logpersist_dialog_title">Выберыце буферы журнала, якія трэба захоўв</string>
     <string name="select_usb_configuration_title">Канфігурацыя USB</string>
@@ -982,6 +984,7 @@ Wi-Fi і Bluetooth таксама будуць выключаны, але іх �
     <string name="bluetooth_avc_available_description">Падлучаная прылада Bluetooth падтрымлівае сінхранізацыю гучнасці медыя, і ўзровень гучнасці, зададзены прыладай Bluetooth, будзе сінхранізаваны з вашым тэлефонам.</string>
     <string name="bluetooth_enter_pin_msg">Увядзіце PIN-код для спалучэння з «%s» (паспрабуйце ўвесці 0000 або 1234).</string>
     <string name="bluetooth_pin_maximum_number_message">Дасягнута максімальная колькасць сімвалаў.</string>
+    <string name="bluetooth_frp_permission_message">Немагчыма выкарыстоўваць Bluetooth для гэтага выкліку.</string>
     <string name="settings_menu_done">Гатова</string>
     <string name="usb_tethering_unavailable_subtext_tmo">USB not connected</string>
     <string name="usb_tethering_available_subtext_tmo">USB connected, check to tether</string>
@@ -1481,7 +1484,7 @@ Where Can I Find More Information About the 3rd Party's Policies? Separately, if
     <string name="navigationbar_pressure_sensitivity_title">Моцны націск кнопкі гал. экрана</string>
     <string name="navigationbar_pressure_sensitivity_summary">Каб выкарыстаць кнопку галоўнага экрана, калі яна схавана, націсніце мацней, чым звычайна.</string>
     <string name="navigationbar_pressure_sensitivity_level_summary">Узровень ціску: %1$d з %2$d</string>
-    <string name="navigationbar_pressure_sensitivity_description_off">Каб выкарыстаць кнопку галоўнага экрана, калі яна схавана, націсніце мацней, чым звычайна.</string>
+    <string name="navigationbar_pressure_sensitivity_description_off">Наладзіць сілу ціску, якая патрабуецца для моцна націскання кнопкі галоўнага экрана.</string>
     <string name="navigationbar_pressure_low">Больш светла</string>
     <string name="navigationbar_pressure_high">Мацнейшы</string>
     <string name="navigationbar_hide_bar">Кнопка «Паказаць (схаваць)»</string>
@@ -1620,7 +1623,7 @@ Where Can I Find More Information About the 3rd Party's Policies? Separately, if
     <string name="crypt_keeper_decrypt_title">Расшыфраваць прыладу</string>
     <string name="crypt_keeper_decrypt_summary">Прылада зашыфравана.</string>
     <string name="crypt_keeper_type_pin">PIN-код</string>
-    <string name="crypt_keeper_type_pattern">Узор</string>
+    <string name="crypt_keeper_type_pattern">узор</string>
     <string name="crypt_keeper_type_password">Пароль</string>
     <string name="crypt_keeper_type_direction">Напрамак блакіроўкі</string>
     <string name="crypt_keeper_confirm_title_dec">Пацвердзіце расшыфроўку</string>
@@ -1704,7 +1707,11 @@ Where Can I Find More Information About the 3rd Party's Policies? Separately, if
     <string name="crypt_keeper_confirm_title">Пацвердзіць шыфраванне</string>
     <string name="crypt_keeper_final_desc">Шыфраванне прылады немагчыма адклікаць, пры перапыненні працэсу страцяцца ўсе даныя. Шыфраванне можа заняць гадзіну ці больш; падчас гэтага працэсу прылада перазапусціцца некалькі разоў і будзе недаступнай для выкарыстання.</string>
     <string name="crypt_keeper_setup_title">Шыфраванне…</string>
-    <string name="crypt_keeper_warn_wipe">У вас засталося %d спроб(-ы), каб запусціць прыладу, перш чым яе налады будуць скінуты да заводскіх значэнняў. Гэта выдаліць усе даныя, у тым ліку файлы і спампаваныя праграмы.</string>
+    <string name="crypt_keeper_warn_wipe">"У вас засталася наступная колькасць спроб: %1$d, перад тым як налады вашага тэлефона будуць скінуты да стандартных заводскіх. Гэта выдаліць усе даныя, у тым ліку файлы і спампаваныя праграмы.
+
+Калі налады вашага тэлефона скінуты, каб зноў мець магчымасць яго выкарыстоўваць, ад вас можа запатрабавацца ўвод даных %2$s (адрас электроннай пошты і пароль), які звязаны з гэтым тэлефонам."</string>
+    <string name="crypt_keeper_samsung_account">Samsung account</string>
+    <string name="crypt_keeper_google_account">Уліковы запіс Google</string>
     <string name="crypt_keeper_failed_title">Шыфраванне немагчымае</string>
     <string name="crypt_keeper_failed_summary">Немагчыма запусціць вашу прыладу. Працэс шыфравання быў перапынены. Трэба скінуць налады прылады да заводскіх значэнняў. Усе даныя пры гэтым будуць сцёрты.</string>
     <string name="crypt_keeper_data_corrupted_title">Сховішча прылады пашкоджана</string>
@@ -1723,10 +1730,13 @@ Where Can I Find More Information About the 3rd Party's Policies? Separately, if
     <string name="cryptkeeper_wrong_pin">Уведзены няправільны PIN</string>
     <string name="cryptkeeper_wrong_direction">Рух у няправільным напрамку</string>
     <string name="checking_decryption">Праверка…</string>
-    <string name="crypt_keeper_last_warn_wipe">У вас засталася толькі 1 спроба, каб запусціць прыладу, перш чым яе налады будуць скінуты да заводскіх значэнняў па змаўчанні. Гэта выдаліць усе даныя, у тым ліку файлы і спампаваныя праграмы.</string>
+    <string name="crypt_keeper_last_warn_wipe">"У вас засталася 1 спроба, перад тым як налады вашага тэлефона будуць скінуты да стандартных заводскіх. Гэта выдаліць усе даныя, у тым ліку файлы і спампаваныя праграмы.
+
+Калі налады вашага тэлефона скінуты, каб зноў мець магчымасць яго выкарыстоўваць, ад вас можа запатрабавацца ўвод даных %s (адрас электроннай пошты і пароль), які звязаны з гэтым тэлефонам."</string>
     <string name="crypt_keeper_failed_title_dec">Памылка расшыфроўкі.</string>
     <string name="crypt_keeper_failed_summary_dec">З-за перапынення немагчыма завяршыць расшыфроўку. Перад выкарыстаннем скіньце прыладу да заводскіх даных (сціранне ўсіх даных).</string>
     <string name="crypt_keeper_set_screen_lock_type">Задаць тып блакіроўкі экрана</string>
+    <string name="crypt_keeper_warning_keyboard_cover_does_not_work">Накрыўка для клавіятуры не будзе працаваць пасля перазапуску тэлефона.</string>
     <string name="encryption_interstitial_message">"Каб абараніць гэты тэлефон у будучыні, запытвайце ўвод свайго %s перад запускам тэлефона. Гэты дапаможа абараніць вашы даныя, калі тэлефон будзе згублены або скрадзены. Некаторым праграмам у адпаведнасці з правіламі шыфравання прылады можа патрабавацца Бяспечны запуск для доступу да такіх функцый, як сінхранізацыя электроннай пошты.
 
 Вы не будзеце атрымліваць выклікаў, паведамленняў або апавяшчэнняў, а будзільнікі не спрацуюць, пакуль тэлефон не ўключыцца."</string>
@@ -1971,6 +1981,12 @@ You will also need it when:"</string>
     <string name="lockpassword_confirm_your_pin_with_fingerprint">Выкарыстайце адбітак пальца або ўвядзіце бягучы PIN-код.</string>
     <string name="lockpassword_confirm_your_pattern_with_fingerprint">Выкарыстайце адбітак пальца або намалюйце бягучы ўзор.</string>
     <string name="lockpassword_confirm_your_password_with_fingerprint">Выкарыстайце адбітак пальца або ўвядзіце бягучы пароль.</string>
+    <string name="lockpassword_confirm_your_pin_with_iris">Выкарыстайце вясёлкавыя абалонкі або ўвядзіце бягучы PIN-код.</string>
+    <string name="lockpassword_confirm_your_pattern_with_iris">Выкарыстайце вясёлкавыя абалонкі або намалюйце бягучы ўзор.</string>
+    <string name="lockpassword_confirm_your_password_with_iris">Выкарыстайце вясёлкавыя абалонкі або ўвядзіце бягучы пароль.</string>
+    <string name="lockpassword_confirm_your_pin_with_biometrics">Выкарыстайце біяметрычную інфармацыю або ўвядзіце PIN-код.</string>
+    <string name="lockpassword_confirm_your_pattern_with_biometrics">Выкарыстайце біяметрычную інфармацыю або намалюйце ўзор.</string>
+    <string name="lockpassword_confirm_your_password_with_biometrics">Выкарыстайце біяметрычную інфармацыю або ўвядзіце пароль.</string>
     <string name="lockpassword_confirm_your_pin_instead_of_fingerprint">Увядзіце PIN-код замест выкарыстання распазнавання адбітка пальца.</string>
     <string name="lockpassword_confirm_your_pattern_instead_of_fingerprint">Намалюйце ўзор замест выкарыстання распазнавання адбітка пальца.</string>
     <string name="lockpassword_confirm_your_password_instead_of_fingerprint">Увядзіце пароль замест выкарыстання распазнавання адбітка пальца.</string>
@@ -2045,6 +2061,7 @@ You will also need it when:"</string>
     <string name="face_status_timeout">Час выйшаў. Паспрабуйце пазней.</string>
     <string name="okay">ОК</string>
     <string name="face_samsung_account_button">Вык. Samsung account</string>
+    <string name="face_galaxy_account_button">Вык. уліковы запіс Galaxy</string>
     <string name="face_error_DB_corrupted">Узнікла праблема з данымі вашага твару. Зарэгіструйце свой твар яшчэ раз.</string>
     <string name="face_error_DB_corrupted_popup_title">Зарэгіструйце свой твар яшчэ раз</string>
     <string name="face_error_timeout">Ваш твар не вызначаны.</string>
@@ -2155,7 +2172,7 @@ You will also need it when:"</string>
     <string name="biometrics_backup_locktype_title">Наладзьце бяспеку вясёлкавых абалонак</string>
     <string name="biometrics_register_your_iris">Зарэгіструйце свае вясёлкавыя абалонкі.</string>
     <string name="biometrics_backup_locktype_summary">Каб выкарыстоўваць вясёлкавыя абалонкі для разблакіроўкі прылады, трэба задаць узор, PIN-код або пароль.</string>
-    <string name="biometrics_backup_locktype_message">Каб выкарыстоўваць вясёлкавыя абалонкі для разблакіроўкі тэлефона або для бяспечнай праверкі сапраўднасці, трэба:</string>
+    <string name="biometrics_backup_locktype_message">Каб выкарыстоўваць вясёлкавыя абалонкі для разблакіроўкі тэлефона або праверкі вашай асобы ў праграмах, спатрэбіцца:</string>
     <string name="iris_delete_popup_title">Выдаліць даныя вясёлкавых абалонак?</string>
     <string name="iris_delete_popup_message">Выдаліць даныя вясёлкавых абалонак?</string>
     <string name="iris_delete_popup_message_with_related_func">Функцыі, якія выкарыстоўваюць вясёлкавыя абалонкі, будуць выключаны.</string>
@@ -2231,6 +2248,9 @@ You will also need it when:"</string>
     <string name="biometrics_dex_cant_use_msg">Немагчыма выкарыстоўваць %s у Samsung DeX.</string>
     <string name="biometrics_dex_closed_to_switch">%s закрыта для пераключэння на Samsung DeX.</string>
     <string name="biometircs_dex_cant_use_toast">Немагчыма запусціць %s у Samsung DeX. Паспрабуйце запусціць у рэжыме тэлефона.</string>
+    <string name="iris_guide_text_preview">Пагл.сюды, каб вык.вяс.абал.</string>
+    <string name="iris_guide_enable_toggle">Нац. тут, каб вык. вяс. абал.</string>
+    <string name="iris_cannot_verify">Не ўдалося праверыць вясёлкавыя абалонкі</string>
     <string name="knox_twofactor_bio_description">Выберыце ваш тып біяметрычнай блакіроўкі і тып другой блакіроўкі для разблакіроўкі %s.</string>
     <string name="fingerprint_registered">Зарэгістраваныя адбіткі пальцаў будуць ужывацца з выбраным спосабам разблакіроўкі.</string>
     <string name="knox_twofactor_description">Для разблакіроўкі %s выберыце сваю біяметрычную інфармацыю і другі тып блакіроўкі.</string>
@@ -3093,6 +3113,7 @@ Mobile data will be turned off."</string>
     <string name="easy_mode_app_help">Выкарыстоўвайце прыладу з большай лёгкасцю дзякуючы прасцейшай кампаноўцы экрана і буйнейшым элементам на ім.</string>
     <string name="easy_mode_app_help_dream_1">Выкарыстоўвайце просты макет галоўнага экрана і буйнейшыя элементы экрана.</string>
     <string name="easy_mode_app_help_dream_2">Усе зробленыя вамі на галоўным экране змяненні будуць скасаваны, а маштаб экрана будзе павялічаны да максімальнага.</string>
+    <string name="easy_mode_app_help_3rd_launcher">Прымяняйце просты рэжым да буйнейшых элементаў экрана. Калі вы не выкарыстоўваеце галоўную старонку TouchWiz, макет вашага галоўнага экрана не зменіцца, але маштаб экрана стане вялікім, а памер шрыфту – сярэднім.</string>
     <string name="security_warning_content">Вы можаце абараніць сваю прыватнасць, задаўшы пароль, PIN-код або ўзор для разблакіроўкі экрана</string>
     <string name="lock_setting_weather_desc">Каб праглядзець ці змяніць налады надвор’я, націсніце НАЛАДЫ НАДВОР’Я ніжэй.</string>
     <string name="lock_setting_weather_btn">Налады надвор’я</string>
@@ -3340,7 +3361,7 @@ Downloading via mobile networks may result in additional charges depending on yo
     <string name="disable_hovering_title">Адключыць бескантактны прагляд</string>
     <string name="disable_hovering_summary">Немагчыма адначасова ўключыць рэжым бескантактнага прагляду і TalkBack. Рэжым бескантактнага прагляду будзе адключаны.</string>
     <string name="pen_settings_pen_input">Прамы ўвод пяром</string>
-    <string name="action_memo_onoff_screen_title">Пам. на вык экр</string>
+    <string name="action_memo_onoff_screen_title">Памятка на выключаным экране</string>
     <string name="screen_off_note_summary">Пішыце нататкі пры выключаным экране. Проста выміце S Pen і пачніце пісаць.</string>
     <string name="screen_off_note_summary_jpn">Каб стварыць нататкі, адлучыце S Pen пры выключаным экране і напішыце на экране. Памяткі на выключаным экране будуць захаваны ў Galaxy Notes.</string>
     <string name="screen_off_note_summary_no_detach">Каб стварыць нататкі, націсніце кнопку пяра, націсніце па выключаным экране і потым напішыце на ім. Памяткі на выключаным экране будуць захаваны ў Samsung Notes.</string>
@@ -3947,7 +3968,7 @@ Wi-Fi зараз уключаны."</string>
     <string name="wfd_descrpition_playsound">Прайграць гук.</string>
     <string name="wfd_is_not_supported">Гэта функцыя не падтрымліваецца.</string>
     <string name="usbtethering_notify_wifi_is_on_title">Выключыць Wi-Fi?</string>
-    <string name="usbtethering_notify_wifi_is_on">Wi-Fi і USB-мадэм не могуць быць уключаны адначасова. Выключыце Wi-Fi.</string>
+    <string name="usbtethering_notify_wifi_is_on">Wi-Fi і USB-мадэм не могуць быць уключаны адначасова. Wi-Fi будзе выключаны.</string>
     <string name="disable_multi_window_dialog_text">Рэжым прагляду ў некалькіх вокнах будзе адключаны, і ўсе праграмы, якія адкрыты ва ўсплывальных вокнах, будуць закрыты.</string>
     <string name="keyguard_password_attempt_count_pin_code">Засталося спроб: %d.</string>
     <string name="keyguard_password_attempts_count_pin_code">Засталося спроб: %d.</string>
@@ -4155,6 +4176,7 @@ Wi-Fi зараз уключаны."</string>
     <string name="hdmi_mode_title">Рэжым HDMI</string>
     <string name="hdmi_mode_dex">Samsung DeX</string>
     <string name="hdmi_mode_mirroring">Screen Mirroring</string>
+    <string name="hdmi_mode_not_available_while_cover_attached">Функцыя «%s» недаступна пры далучанай накрыўцы.</string>
     <string name="screen_timeout_for_dex">Час чак. экрана для Samsung DeX</string>
     <string name="show_virtual_keyboard_for_dex">Паказваць экранную клавіятуру ў Samsung DeX</string>
     <string name="comma">,</string>
@@ -4467,7 +4489,7 @@ Wi-Fi зараз уключаны."</string>
     <string name="date_picker_title">Дата</string>
     <string name="time_picker_title">Час</string>
     <string name="lock_after_timeout">Аўтаматычная блакіроўка</string>
-    <string name="lock_after_timeout_summary">Заблакіруйце экран на працягу %s пасля яго аўтаматычнага выключэння.</string>
+    <string name="lock_after_timeout_summary">Блакіруйце тэлефон праз %s пасля аўтаматычнага выключэння экрана.</string>
     <string name="lock_after_timeout_summary_with_exception">Блакіраваць экран %1$s пасля яго аўтаматычнага адключэння, акрамя таго выпадку, калі ён разблакіраваны %2$s.</string>
     <string name="show_owner_info_on_lockscreen_label">Паказваць звесткі пра ўладальніка прылады на экране блакіроўкі.</string>
     <string name="owner_info_settings_title">Звесткі пра ўладальніка</string>
@@ -4617,6 +4639,8 @@ Wi-Fi зараз уключаны."</string>
     <string name="wifi_empty_list_user_restricted">У вас няма дазволу на змяненне налад Wi-Fi.</string>
     <string name="wifi_setup_wps">Аўтаматычная наладка (WPS)</string>
     <string name="wifi_show_advanced">Паказаць дадатковыя параметры</string>
+    <string name="wifi_advanced_toggle_description_expanded">Націсніце двойчы, каб згарнуць.</string>
+    <string name="wifi_advanced_toggle_description_collapsed">Націсніце двойчы, каб разгарнуць.</string>
     <string name="wifi_wps_setup_title">Наладжванне WPS</string>
     <string name="wifi_wps_setup_msg">Запуск WPS…</string>
     <string name="wifi_wps_onstart_pbc">Націсніце кнопку наладкі абароненай сеткі Wi-Fi на маршрутызатары. Яна можа мець надпіс «WPS» або ўтрымліваць гэты сімвал:</string>
@@ -4648,6 +4672,10 @@ Wi-Fi зараз уключаны."</string>
     <string name="wifi_shared">У агульным доступе</string>
     <string name="wifi_unchanged">(не зменена)</string>
     <string name="wifi_unspecified">(Не вызначана)</string>
+    <string name="wifi_select_cert">Выбраць сертыфікат</string>
+    <string name="wifi_do_not_provide_eap_user_cert">Не прадастаўляць</string>
+    <string name="wifi_do_not_validate_eap_server">Не пацвярджаць</string>
+    <string name="wifi_do_not_validate_eap_server_warning">Сертыфікат не пазначаны. Падлучэнне не будзе прыватным.</string>
     <string name="wifi_scan_always_turnon_message">Праграма %s запытвае дазвол шукаць сеткі Wi-Fi нават тады, калі функцыя Wi-Fi выключана, — каб палепшыць дакладнасць вызначэння месцазнаходжання і для іншых мэт. Дазволіць гэта ўсім праграмам?</string>
     <string name="wifi_scan_always_confirm_allow">Дазволіць</string>
     <string name="wifi_scan_always_confirm_deny">Адхіліць</string>
@@ -4983,9 +5011,9 @@ SD-карту"</string>
     <string name="restore_default_apn_completed">Вернуты стандартныя налады пункта доступу.</string>
     <string name="reset_network_desc">Гэта скіне ўсе налады сеткі, у тым ліку для:</string>
     <string name="reset_network_button_text">Скінуць налады</string>
-    <string name="reset_network_final_desc">Усе налады падлучэння будуць скінуты. Немагчыма адрабіць гэта дзеянне.</string>
+    <string name="reset_network_final_desc">Усе налады сеткі будуць скінуты. Немагчыма адрабіць гэта дзеянне.</string>
     <string name="reset_network_final_button_text">Скінуць налады</string>
-    <string name="reset_network_complete_toast">Налады падлучэння скінуты.</string>
+    <string name="reset_network_complete_toast">Налады сеткі скінуты.</string>
     <string name="master_clear_title">Скід да заводскіх даных</string>
     <string name="master_clear_accounts">Вы ўвайшлі ў наступныя ўліковыя запісы:</string>
     <string name="master_clear_other_users_present">Даныя, якія належаць іншым карыстальнікам на гэтай прыладзе, таксама будуць сцёрты.</string>
@@ -6099,6 +6127,7 @@ If the device has multiple users, using this shortcut on the lock screen tempora
     <string name="set_data_limit">Устанавіць ліміт даных</string>
     <string name="data_limit">Ліміт даных</string>
     <string name="data_usage_template">%1$s выкарыстана паміж %2$s</string>
+    <string name="data_usage_template_wifi">%s выкарыстана за апошнія 30 дзён</string>
     <string name="data_usage_other_apps">Звязаныя прагр. уключ. у вык.</string>
     <string name="data_saver_title">Функцыя эканоміі трафіку</string>
     <string name="unrestricted_data_saver">Дазв прагр пры ўкл функ эк траф</string>
@@ -6149,6 +6178,7 @@ If the device has multiple users, using this shortcut on the lock screen tempora
     <string name="legacy_dhcp_client_summary">Выкарыстоўвайце кліент DHCP ад Lollipop замест новага кліента Android DHCP.</string>
     <string name="screen_off_pocket_title">Трымаць экран выключаным</string>
     <string name="screen_off_pocket_summary">Прадухіліце выпадковае ўключэнне экрана, калі прылада знаходзіцца ў цёмным месцы, такім як кішэня або сумка.</string>
+    <string name="noApplications">Усе праграмы, звязаныя з гэтым дзеяннем, былі адключаны, заблакіраваны ці не ўсталяваны.</string>
     <string name="confirm_reset_shortcut_manager_throttling_title">Скінуць абмежаванне хуткасці Менеджара ярлыкоў</string>
     <string name="confirm_reset_shortcut_manager_throttling_message">Лічыльнікі абмежавання частаты Менеджара ярлыкоў будуць абнулены.</string>
 </resources>

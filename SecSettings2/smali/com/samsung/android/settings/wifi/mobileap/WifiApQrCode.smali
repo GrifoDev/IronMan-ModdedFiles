@@ -984,7 +984,7 @@
 
     iget-object v2, p0, Lcom/samsung/android/settings/wifi/mobileap/WifiApQrCode;->mView:Landroid/view/View;
 
-    const v3, 0x7f1108fb
+    const v3, 0x7f1108fd
 
     invoke-virtual {v2, v3}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -996,7 +996,7 @@
 
     iget-object v2, p0, Lcom/samsung/android/settings/wifi/mobileap/WifiApQrCode;->mView:Landroid/view/View;
 
-    const v3, 0x7f1108fc
+    const v3, 0x7f1108fe
 
     invoke-virtual {v2, v3}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -1092,7 +1092,7 @@
 
     const/4 v2, 0x0
 
-    const v0, 0x7f0b1002
+    const v0, 0x7f0b1011
 
     invoke-interface {p1, v2, v3, v2, v0}, Landroid/view/Menu;->add(IIII)Landroid/view/MenuItem;
 
@@ -1132,7 +1132,7 @@
 .method public onCreateView(Landroid/view/LayoutInflater;Landroid/view/ViewGroup;Landroid/os/Bundle;)Landroid/view/View;
     .locals 2
 
-    const v0, 0x7f040399
+    const v0, 0x7f04039c
 
     const/4 v1, 0x0
 
@@ -1312,7 +1312,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f0b1003
+    const v2, 0x7f0b1012
 
     invoke-virtual {v1, v2}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 

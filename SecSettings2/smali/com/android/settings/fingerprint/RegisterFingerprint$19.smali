@@ -258,7 +258,7 @@
 
     iget-object v0, p0, Lcom/android/settings/fingerprint/RegisterFingerprint$19;->this$0:Lcom/android/settings/fingerprint/RegisterFingerprint;
 
-    const v1, 0x7f1103dd
+    const v1, 0x7f1103df
 
     invoke-virtual {v0, v1}, Lcom/android/settings/fingerprint/RegisterFingerprint;->findViewById(I)Landroid/view/View;
 
@@ -349,7 +349,7 @@
     :cond_6
     iget-object v0, p0, Lcom/android/settings/fingerprint/RegisterFingerprint$19;->this$0:Lcom/android/settings/fingerprint/RegisterFingerprint;
 
-    const v1, 0x7f1103d8
+    const v1, 0x7f1103da
 
     invoke-virtual {v0, v1}, Lcom/android/settings/fingerprint/RegisterFingerprint;->findViewById(I)Landroid/view/View;
 
@@ -378,7 +378,7 @@
 
     iget-object v0, p0, Lcom/android/settings/fingerprint/RegisterFingerprint$19;->this$0:Lcom/android/settings/fingerprint/RegisterFingerprint;
 
-    const v1, 0x7f1103db
+    const v1, 0x7f1103dd
 
     invoke-virtual {v0, v1}, Lcom/android/settings/fingerprint/RegisterFingerprint;->findViewById(I)Landroid/view/View;
 

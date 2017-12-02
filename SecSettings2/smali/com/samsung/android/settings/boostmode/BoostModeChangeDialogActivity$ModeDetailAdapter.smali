@@ -52,9 +52,13 @@
 
 # virtual methods
 .method public getView(ILandroid/view/View;Landroid/view/ViewGroup;)Landroid/view/View;
-    .locals 9
+    .locals 11
 
-    const/4 v8, 0x0
+    const/4 v10, 0x0
+
+    const/high16 v9, 0x3f800000    # 1.0f
+
+    const v8, 0x3ebd70a4    # 0.37f
 
     const/4 v7, 0x0
 
@@ -70,13 +74,13 @@
 
     move-result-object v5
 
-    const v6, 0x7f0401f9
+    const v6, 0x7f0401fc
 
     invoke-virtual {v5, v6, v7}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;)Landroid/view/View;
 
     move-result-object v4
 
-    invoke-virtual {v4, v8}, Landroid/view/View;->setEnabled(Z)V
+    invoke-virtual {v4, v10}, Landroid/view/View;->setEnabled(Z)V
 
     :cond_0
     invoke-virtual {p0, p1}, Lcom/samsung/android/settings/boostmode/BoostModeChangeDialogActivity$ModeDetailAdapter;->getItem(I)Ljava/lang/Object;
@@ -101,7 +105,7 @@
 
     check-cast v2, Landroid/widget/TextView;
 
-    const v6, 0x7f110213
+    const v6, 0x7f110215
 
     invoke-virtual {v4, v6}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -109,7 +113,7 @@
 
     check-cast v1, Landroid/widget/TextView;
 
-    if-eqz v0, :cond_3
+    if-eqz v0, :cond_4
 
     iget-object v6, v0, Lcom/samsung/android/settings/boostmode/BoostModeChangeDialogActivity$DetailedItem;->mTitle:Ljava/lang/String;
 
@@ -148,18 +152,31 @@
 
     invoke-virtual {v3, v6}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
+    iget-boolean v6, v0, Lcom/samsung/android/settings/boostmode/BoostModeChangeDialogActivity$DetailedItem;->mEnable:Z
+
+    if-nez v6, :cond_5
+
+    invoke-virtual {v3, v8}, Landroid/widget/TextView;->setAlpha(F)V
+
     :cond_2
+    :goto_0
     iget-object v6, v0, Lcom/samsung/android/settings/boostmode/BoostModeChangeDialogActivity$DetailedItem;->mSummary:Ljava/lang/String;
 
-    if-eqz v6, :cond_4
+    if-eqz v6, :cond_7
 
     iget-object v6, v0, Lcom/samsung/android/settings/boostmode/BoostModeChangeDialogActivity$DetailedItem;->mSummary:Ljava/lang/String;
 
     invoke-virtual {v2, v6}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    invoke-virtual {v2, v8}, Landroid/widget/TextView;->setVisibility(I)V
+    invoke-virtual {v2, v10}, Landroid/widget/TextView;->setVisibility(I)V
 
-    :goto_0
+    iget-boolean v6, v0, Lcom/samsung/android/settings/boostmode/BoostModeChangeDialogActivity$DetailedItem;->mEnable:Z
+
+    if-nez v6, :cond_6
+
+    invoke-virtual {v2, v8}, Landroid/widget/TextView;->setAlpha(F)V
+
+    :goto_1
     iget-object v6, v0, Lcom/samsung/android/settings/boostmode/BoostModeChangeDialogActivity$DetailedItem;->mStatus:Ljava/lang/String;
 
     if-eqz v6, :cond_3
@@ -169,12 +186,35 @@
     invoke-virtual {v1, v6}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
     :cond_3
-    return-object v4
+    iget-boolean v6, v0, Lcom/samsung/android/settings/boostmode/BoostModeChangeDialogActivity$DetailedItem;->mEnable:Z
+
+    if-nez v6, :cond_8
+
+    invoke-virtual {v1, v8}, Landroid/widget/TextView;->setAlpha(F)V
 
     :cond_4
+    :goto_2
+    return-object v4
+
+    :cond_5
+    invoke-virtual {v3, v9}, Landroid/widget/TextView;->setAlpha(F)V
+
+    goto :goto_0
+
+    :cond_6
+    invoke-virtual {v2, v9}, Landroid/widget/TextView;->setAlpha(F)V
+
+    goto :goto_1
+
+    :cond_7
     const/16 v6, 0x8
 
     invoke-virtual {v2, v6}, Landroid/widget/TextView;->setVisibility(I)V
 
-    goto :goto_0
+    goto :goto_1
+
+    :cond_8
+    invoke-virtual {v1, v9}, Landroid/widget/TextView;->setAlpha(F)V
+
+    goto :goto_2
 .end method

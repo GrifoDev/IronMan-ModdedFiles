@@ -122,6 +122,8 @@
     <string name="wifi_allow_scan_with_traffic_summary">Allow or deny Wi-Fi roaming scans automatically based on the amount of data used.</string>
     <string name="select_logd_size_title">Buffer size for logging</string>
     <string name="select_logd_size_dialog_title">Select maximum size of each log buffer</string>
+    <string name="dev_logpersist_clear_warning_title">Clear persistent logger storage?</string>
+    <string name="dev_logpersist_clear_warning_message">Logger data will be deleted when the persistent logger is turned off.</string>
     <string name="select_logpersist_title">Store log data persistently</string>
     <string name="select_logpersist_dialog_title">Select log buffers to store persistently</string>
     <string name="select_usb_configuration_title">USB configuration</string>
@@ -855,6 +857,7 @@ The two connected devices may experience a slight difference in sound output."</
     <string name="bluetooth_avc_available_description">The connected Bluetooth device supports Media volume sync and the volume level set by the Bluetooth device will sync with your phone.</string>
     <string name="bluetooth_enter_pin_msg">Enter PIN to pair with %s (Try 0000 or 1234).</string>
     <string name="bluetooth_pin_maximum_number_message">Maximum number of characters reached.</string>
+    <string name="bluetooth_frp_permission_message">"Can't use a Bluetooth device for this call."</string>
     <string name="settings_menu_done">Done</string>
     <string name="usb_tethering_unavailable_subtext_tmo">USB not connected</string>
     <string name="usb_tethering_available_subtext_tmo">USB connected, check to tether</string>
@@ -1354,7 +1357,7 @@ Tap OK to allow the brightness to be increased above safe levels."</string>
     <string name="navigationbar_pressure_sensitivity_title">Hard press the Home button</string>
     <string name="navigationbar_pressure_sensitivity_summary">"Use the Home button while it's hidden by pressing harder than usual."</string>
     <string name="navigationbar_pressure_sensitivity_level_summary">Pressure level: %1$d of %2$d</string>
-    <string name="navigationbar_pressure_sensitivity_description_off">"Use the Home button while it's hidden by pressing harder than usual."</string>
+    <string name="navigationbar_pressure_sensitivity_description_off">Adjust the amount of pressure needed to hard press the Home button.</string>
     <string name="navigationbar_pressure_low">Lighter</string>
     <string name="navigationbar_pressure_high">Stronger</string>
     <string name="navigationbar_hide_bar">Show and hide button</string>
@@ -1493,7 +1496,7 @@ Tap OK to allow the brightness to be increased above safe levels."</string>
     <string name="crypt_keeper_decrypt_title">Decrypt device</string>
     <string name="crypt_keeper_decrypt_summary">Device encrypted.</string>
     <string name="crypt_keeper_type_pin">PIN</string>
-    <string name="crypt_keeper_type_pattern">Pattern</string>
+    <string name="crypt_keeper_type_pattern">pattern</string>
     <string name="crypt_keeper_type_password">Password</string>
     <string name="crypt_keeper_type_direction">Direction lock</string>
     <string name="crypt_keeper_confirm_title_dec">Confirm decryption</string>
@@ -1577,7 +1580,11 @@ Encryption takes an hour or more. Before you start, ensure that the battery is c
     <string name="crypt_keeper_confirm_title">Confirm encryption</string>
     <string name="crypt_keeper_final_desc">Encrypting your device cannot be reversed and data will be lost if the process is interrupted. Encryption could take an hour or more, during which your device will restart several times and you will not be able to use it.</string>
     <string name="crypt_keeper_setup_title">Encrypting…</string>
-    <string name="crypt_keeper_warn_wipe">You have %d attempts left to start up your device before it is reset to its factory default settings. This will erase all data, including files and downloaded apps.</string>
+    <string name="crypt_keeper_warn_wipe">"You have %1$d attempts left before your phone is reset to its factory default settings. This will erase all data, including files and downloaded apps.
+
+If your phone is reset, you may need to enter the %2$s information (email address and password) associated with this phone to be able to use it again."</string>
+    <string name="crypt_keeper_samsung_account">Samsung account</string>
+    <string name="crypt_keeper_google_account">Google account</string>
     <string name="crypt_keeper_failed_title">Encryption failed</string>
     <string name="crypt_keeper_failed_summary">Unable to start up your device. The encryption process was interrupted. You need to reset your device to factory default settings. This will erase all your data.</string>
     <string name="crypt_keeper_data_corrupted_title">Device storage corrupt</string>
@@ -1596,10 +1603,13 @@ Encryption takes an hour or more. Before you start, ensure that the battery is c
     <string name="cryptkeeper_wrong_pin">Incorrect PIN entered</string>
     <string name="cryptkeeper_wrong_direction">Incorrect direction drawn</string>
     <string name="checking_decryption">Verifying…</string>
-    <string name="crypt_keeper_last_warn_wipe">You have only one attempt left to start up your device before it is reset to its factory default settings. This will erase all data, including files and downloaded apps.</string>
+    <string name="crypt_keeper_last_warn_wipe">"You have 1 attempt left before your phone is reset to its factory default settings. This will erase all data, including files and downloaded apps.
+
+If your phone is reset, you may need to enter the %s information (email address and password) associated with this phone to be able to use it again."</string>
     <string name="crypt_keeper_failed_title_dec">Decryption failed.</string>
     <string name="crypt_keeper_failed_summary_dec">Unable to complete decryption because of interruption. Perform factory data reset (erasing all data) before use</string>
     <string name="crypt_keeper_set_screen_lock_type">Set screen lock type</string>
+    <string name="crypt_keeper_warning_keyboard_cover_does_not_work">"Keyboard cover won't work after phone restarts."</string>
     <string name="encryption_interstitial_message">"You can further protect this phone by requiring your %s to be entered before the phone starts up. This helps protect your data if the phone is lost or stolen. Some apps may require Secure Startup according to Device encryption policies for access to features such as email sync.
 
 You will not receive any calls, messages or notifications, and alarms will not sound, until the phone has started up."</string>
@@ -1844,6 +1854,12 @@ You will also need it when:"</string>
     <string name="lockpassword_confirm_your_pin_with_fingerprint">Use a fingerprint or enter the current PIN.</string>
     <string name="lockpassword_confirm_your_pattern_with_fingerprint">Use a fingerprint or draw the current pattern.</string>
     <string name="lockpassword_confirm_your_password_with_fingerprint">Use a fingerprint or enter the current password.</string>
+    <string name="lockpassword_confirm_your_pin_with_iris">Use your irises or enter your current PIN.</string>
+    <string name="lockpassword_confirm_your_pattern_with_iris">Use your irises or draw your current pattern.</string>
+    <string name="lockpassword_confirm_your_password_with_iris">Use your irises or enter your current password.</string>
+    <string name="lockpassword_confirm_your_pin_with_biometrics">Use biometrics or enter your PIN.</string>
+    <string name="lockpassword_confirm_your_pattern_with_biometrics">Use biometrics or draw your pattern.</string>
+    <string name="lockpassword_confirm_your_password_with_biometrics">Use biometrics or enter your password.</string>
     <string name="lockpassword_confirm_your_pin_instead_of_fingerprint">Enter your PIN instead of using fingerprint recognition.</string>
     <string name="lockpassword_confirm_your_pattern_instead_of_fingerprint">Draw your pattern instead of using fingerprint recognition.</string>
     <string name="lockpassword_confirm_your_password_instead_of_fingerprint">Enter your password instead of using fingerprint recognition.</string>
@@ -1918,6 +1934,7 @@ Select how you want to unlock your phone. Face unlock and Iris unlock can't be u
     <string name="face_status_timeout">Timeout. Try later.</string>
     <string name="okay">OK</string>
     <string name="face_samsung_account_button">Use Samsung account</string>
+    <string name="face_galaxy_account_button">Use Galaxy account</string>
     <string name="face_error_DB_corrupted">There was a problem with your face data. Register your face again.</string>
     <string name="face_error_DB_corrupted_popup_title">Register your face again</string>
     <string name="face_error_timeout">"Your face wasn't detected."</string>
@@ -2028,7 +2045,7 @@ Turn on Iris unlock to use your biometrics or your %s to unlock your phone."</st
     <string name="biometrics_backup_locktype_title">Set up iris security</string>
     <string name="biometrics_register_your_iris">Register your irises.</string>
     <string name="biometrics_backup_locktype_summary">To use your irises to unlock the device, you must set a pattern, PIN, or password.</string>
-    <string name="biometrics_backup_locktype_message">"To use your irises to unlock your phone or for secure verification, you'll need to:"</string>
+    <string name="biometrics_backup_locktype_message">"To use your irises to unlock your phone or to verify yourself in apps, you'll need to:"</string>
     <string name="iris_delete_popup_title">Remove iris data?</string>
     <string name="iris_delete_popup_message">Remove iris data?</string>
     <string name="iris_delete_popup_message_with_related_func">Features that use irises will be turned off.</string>
@@ -2104,6 +2121,9 @@ Select how you want to unlock your phone. Iris unlock and Face unlock can't be u
     <string name="biometrics_dex_cant_use_msg">"Can't use %s in Samsung DeX."</string>
     <string name="biometrics_dex_closed_to_switch">%s closed to switch to Samsung DeX.</string>
     <string name="biometircs_dex_cant_use_toast">"%s can't run in Samsung DeX. Try running in phone mode."</string>
+    <string name="iris_guide_text_preview">Look here to use irises</string>
+    <string name="iris_guide_enable_toggle">Tap here to use irises</string>
+    <string name="iris_cannot_verify">"Couldn't verify irises"</string>
     <string name="knox_twofactor_bio_description">Select your biometric lock type and second lock type to unlock %s.</string>
     <string name="fingerprint_registered">Registered fingerprints will be used with selected unlock method.</string>
     <string name="knox_twofactor_description">Select your biometrics and a second lock type to unlock %s.</string>
@@ -2965,6 +2985,7 @@ mode"</string>
     <string name="easy_mode_app_help">Use your device more easily with a simpler home screen layout and bigger on-screen items.</string>
     <string name="easy_mode_app_help_dream_1">Use a simple Home screen layout and bigger on-screen items.</string>
     <string name="easy_mode_app_help_dream_2">"Any customizations you've made to the Home screen will be discarded and the Screen zoom will be set to the maximum."</string>
+    <string name="easy_mode_app_help_3rd_launcher">"Apply Easy mode for larger on-screen items. If you're not using TouchWiz home, your Home screen layout won't change, but the screen zoom will be set to large and the font size will be set to medium."</string>
     <string name="security_warning_content">You can protect your privacy by setting up a password, PIN, or pattern for unlocking your screen</string>
     <string name="lock_setting_weather_desc">To view or change the weather settings, tap WEATHER SETTINGS below.</string>
     <string name="lock_setting_weather_btn">Weather settings</string>
@@ -3818,7 +3839,7 @@ Using Mobile Hotspot increases battery consumption and data usage."</string>
     <string name="wfd_descrpition_playsound">Play sound.</string>
     <string name="wfd_is_not_supported">"This function isn't supported."</string>
     <string name="usbtethering_notify_wifi_is_on_title">Turn off Wi-Fi?</string>
-    <string name="usbtethering_notify_wifi_is_on">Wi-Fi and USB tethering cannot be on at the same time. Turn off Wi-Fi.</string>
+    <string name="usbtethering_notify_wifi_is_on">Wi-Fi and USB tethering cannot be on at the same time. Wi-Fi will be turned off.</string>
     <string name="disable_multi_window_dialog_text">Multi window will be disabled and all apps open in pop-up windows will be closed.</string>
     <string name="keyguard_password_attempt_count_pin_code">%d attempt left.</string>
     <string name="keyguard_password_attempts_count_pin_code">%d attempts left.</string>
@@ -4026,6 +4047,7 @@ Receiving SMS"</string>
     <string name="hdmi_mode_title">HDMI mode</string>
     <string name="hdmi_mode_dex">Samsung DeX</string>
     <string name="hdmi_mode_mirroring">Screen Mirroring</string>
+    <string name="hdmi_mode_not_available_while_cover_attached">%s not available while cover attached.</string>
     <string name="screen_timeout_for_dex">Screen timeout for Samsung DeX</string>
     <string name="show_virtual_keyboard_for_dex">Show the on-screen keyboard in Samsung DeX</string>
     <string name="comma">,</string>
@@ -4469,6 +4491,8 @@ To improve location accuracy, apps and services may scan for Wi-Fi networks even
     <string name="wifi_empty_list_user_restricted">You do not have permission to change the Wi-Fi settings.</string>
     <string name="wifi_setup_wps">Automatic setup (WPS)</string>
     <string name="wifi_show_advanced">Show advanced options</string>
+    <string name="wifi_advanced_toggle_description_expanded">Double tap to collapse.</string>
+    <string name="wifi_advanced_toggle_description_collapsed">Double tap to expand.</string>
     <string name="wifi_wps_setup_title">WPS setup</string>
     <string name="wifi_wps_setup_msg">Starting WPS…</string>
     <string name="wifi_wps_onstart_pbc">Tap the Wi-Fi protected setup button on your router. It may be called WPS or contain this symbol:</string>
@@ -4500,6 +4524,10 @@ To improve location accuracy, apps and services may scan for Wi-Fi networks even
     <string name="wifi_shared">Shared</string>
     <string name="wifi_unchanged">(unchanged)</string>
     <string name="wifi_unspecified">(Unspecified)</string>
+    <string name="wifi_select_cert">Select certificate</string>
+    <string name="wifi_do_not_provide_eap_user_cert">"Don't provide"</string>
+    <string name="wifi_do_not_validate_eap_server">"Don't validate"</string>
+    <string name="wifi_do_not_validate_eap_server_warning">"No certificate specified. Your connection won't be private."</string>
     <string name="wifi_scan_always_turnon_message">%s is requesting permission to scan for Wi-Fi networks, even when Wi-Fi is turned off, to improve location accuracy and for other purposes. Allow this for all applications?</string>
     <string name="wifi_scan_always_confirm_allow">Allow</string>
     <string name="wifi_scan_always_confirm_deny">Deny</string>
@@ -4834,9 +4862,9 @@ Consider using a faster SD card or USB storage device to improve performance."</
     <string name="restore_default_apn_completed">APN settings reset to default.</string>
     <string name="reset_network_desc">This will reset all network settings, including those for:</string>
     <string name="reset_network_button_text">Reset settings</string>
-    <string name="reset_network_final_desc">All connection settings will be reset. This action cannot be undone.</string>
+    <string name="reset_network_final_desc">"All network settings will be reset. This action can't be undone."</string>
     <string name="reset_network_final_button_text">Reset settings</string>
-    <string name="reset_network_complete_toast">Connection settings reset.</string>
+    <string name="reset_network_complete_toast">Network settings reset.</string>
     <string name="master_clear_title">Factory data reset</string>
     <string name="master_clear_accounts">You are currently signed in to the following accounts:.</string>
     <string name="master_clear_other_users_present">Data belonging to other users on this device will also be erased.</string>
@@ -5938,6 +5966,7 @@ You will not receive any calls, messages, or notifications, and alarms will not 
     <string name="set_data_limit">Set data limit</string>
     <string name="data_limit">Data limit</string>
     <string name="data_usage_template">%1$s used between %2$s</string>
+    <string name="data_usage_template_wifi">%s used in last 30 days</string>
     <string name="data_usage_other_apps">Related apps included in usage</string>
     <string name="data_saver_title">Data saver</string>
     <string name="unrestricted_data_saver">Allow app while Data saver on</string>
@@ -5987,6 +6016,7 @@ You will not receive any calls, messages, or notifications, and alarms will not 
     <string name="vzw_bixby_mode">Bixby mode</string>
     <string name="screen_off_pocket_title">Keep screen turned off</string>
     <string name="screen_off_pocket_summary">Prevent the screen from turning on accidentally while the device is in a dark place such as a pocket or bag.</string>
+    <string name="noApplications">All apps associated with this action have been disabled, blocked, or are not installed.</string>
     <string name="confirm_reset_shortcut_manager_throttling_title">Reset Shortcut Manager rate limiter</string>
     <string name="confirm_reset_shortcut_manager_throttling_message">The Shortcut Manager rate limiter counters will be reset.</string>
 </resources>

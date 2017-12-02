@@ -97,6 +97,18 @@
 
     move-result-object v0
 
+    invoke-static {v0}, Lcom/samsung/android/settings/boostmode/BoostUtils;->isRemoveGameLauncher(Landroid/content/Context;)Z
+
+    move-result v0
+
+    if-nez v0, :cond_1
+
+    iget-object v0, p0, Lcom/samsung/android/settings/boostmode/BoostModeCustomFragment$10;->this$0:Lcom/samsung/android/settings/boostmode/BoostModeCustomFragment;
+
+    invoke-static {v0}, Lcom/samsung/android/settings/boostmode/BoostModeCustomFragment;->-get6(Lcom/samsung/android/settings/boostmode/BoostModeCustomFragment;)Landroid/content/Context;
+
+    move-result-object v0
+
     invoke-static {v0}, Lcom/samsung/android/settings/boostmode/BoostUtils;->isGameLauncherEnabled(Landroid/content/Context;)Z
 
     move-result v0

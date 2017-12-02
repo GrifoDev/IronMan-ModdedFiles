@@ -142,7 +142,7 @@
 
     if-lez v3, :cond_0
 
-    const v3, 0x7f04012a
+    const v3, 0x7f04012b
 
     invoke-virtual {p0, v3}, Lcom/android/settings/gestures/GesturePreference;->setLayoutResource(I)V
 
@@ -223,7 +223,7 @@
     return-void
 
     :cond_0
-    const v3, 0x7f110422
+    const v3, 0x7f110424
 
     invoke-virtual {p1, v3}, Landroid/support/v7/preference/PreferenceViewHolder;->findViewById(I)Landroid/view/View;
 
@@ -231,7 +231,7 @@
 
     check-cast v2, Landroid/view/TextureView;
 
-    const v3, 0x7f110423
+    const v3, 0x7f110425
 
     invoke-virtual {p1, v3}, Landroid/support/v7/preference/PreferenceViewHolder;->findViewById(I)Landroid/view/View;
 
@@ -243,7 +243,7 @@
 
     invoke-virtual {v0, v3}, Landroid/widget/ImageView;->setImageResource(I)V
 
-    const v3, 0x7f110424
+    const v3, 0x7f110426
 
     invoke-virtual {p1, v3}, Landroid/support/v7/preference/PreferenceViewHolder;->findViewById(I)Landroid/view/View;
 

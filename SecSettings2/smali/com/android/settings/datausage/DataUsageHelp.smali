@@ -63,7 +63,7 @@
 
     const-string/jumbo v2, "com.android.settings.datausage.DataUsageHelpContents"
 
-    const v3, 0x7f0b058f
+    const v3, 0x7f0b0590
 
     move-object v0, p0
 
@@ -100,7 +100,7 @@
 
     const-string/jumbo v2, "com.android.settings.datausage.DataUsageHelpContents"
 
-    const v3, 0x7f0b0594
+    const v3, 0x7f0b0595
 
     move-object v0, p0
 

@@ -170,6 +170,8 @@
     <string name="wifi_allow_scan_with_traffic_summary">Izinkan atau tolak pemindaian roaming Wi-Fi secara otomatis berdasarkan jumlah data yang digunakan.</string>
     <string name="select_logd_size_title">Ukrn buffer utk log</string>
     <string name="select_logd_size_dialog_title">Pilih ukuran maksimal dari setiap buffer log</string>
+    <string name="dev_logpersist_clear_warning_title">Hapus penyimpanan pencatat tetap?</string>
+    <string name="dev_logpersist_clear_warning_message">Data pencatat akan dihapus saat pencatat tetap dinonaktifkan.</string>
     <string name="select_logpersist_title">Simpan data log secara tetap</string>
     <string name="select_logpersist_dialog_title">Pilih buffer log untuk terus disimpan</string>
     <string name="select_usb_configuration_title">Konfigurasi USB</string>
@@ -982,6 +984,7 @@ Kedua output suara dari perangkat yang tersambung tersebut mungkin mengalami sed
     <string name="bluetooth_avc_available_description">Perangkat Bluetooth tersambung mendukung Sinkronisasi volume media dan tingkat volume yang diatur perangkat Bluetooth akan disinkronkan dengan ponsel.</string>
     <string name="bluetooth_enter_pin_msg">Masukkan PIN untuk dipasangkan dengan %s (Coba 0000 atau 1234).</string>
     <string name="bluetooth_pin_maximum_number_message">Jumlah maksimum karakter tercapai.</string>
+    <string name="bluetooth_frp_permission_message">Tidak dapat menggunakan perangkat Bluetooth untuk panggilan ini.</string>
     <string name="settings_menu_done">Selesai</string>
     <string name="usb_tethering_unavailable_subtext_tmo">USB not connected</string>
     <string name="usb_tethering_available_subtext_tmo">USB connected, check to tether</string>
@@ -1481,7 +1484,7 @@ Ketuk OK untuk mengizinkan peningkatan kecerahan di atas tingkat aman."</string>
     <string name="navigationbar_pressure_sensitivity_title">Tekan kuat Tombol depan</string>
     <string name="navigationbar_pressure_sensitivity_summary">Gunakan Tombol depan saat disembunyikan dengan menekan lebih keras daripada biasanya.</string>
     <string name="navigationbar_pressure_sensitivity_level_summary">Level tekanan: %1$d dari %2$d</string>
-    <string name="navigationbar_pressure_sensitivity_description_off">Gunakan Tombol depan saat disembunyikan dengan menekan lebih keras daripada biasanya.</string>
+    <string name="navigationbar_pressure_sensitivity_description_off">Sesuaikan jumlah tekanan yang diperlukan untuk menekan keras Tombol depan.</string>
     <string name="navigationbar_pressure_low">Lebih lembut</string>
     <string name="navigationbar_pressure_high">Lebih kuat</string>
     <string name="navigationbar_hide_bar">Tampilkn dan sembunyikn tombol</string>
@@ -1620,7 +1623,7 @@ Ketuk OK untuk mengizinkan peningkatan kecerahan di atas tingkat aman."</string>
     <string name="crypt_keeper_decrypt_title">Dekripsi perangkat</string>
     <string name="crypt_keeper_decrypt_summary">Perangkat dienkripsi.</string>
     <string name="crypt_keeper_type_pin">PIN</string>
-    <string name="crypt_keeper_type_pattern">Pola</string>
+    <string name="crypt_keeper_type_pattern">pola</string>
     <string name="crypt_keeper_type_password">Kata sandi</string>
     <string name="crypt_keeper_type_direction">Kunci arah</string>
     <string name="crypt_keeper_confirm_title_dec">Konfirmasi dekripsi</string>
@@ -1704,7 +1707,11 @@ Enkripsi memerlukan waktu sejam atau lebih. Sebelum mulai, pastikan daya baterai
     <string name="crypt_keeper_confirm_title">Konfirmasi enkripsi</string>
     <string name="crypt_keeper_final_desc">Proses enkripsi perangkat tidak dapat dibalik dan data akan hilang jika proses terganggu. Enkripsi dapat memakan waktu satu jam atau lebih, dan perangkat akan dimulai ulang beberapa kali dan tidak dapat Anda gunakan.</string>
     <string name="crypt_keeper_setup_title">Mengenkripsi…</string>
-    <string name="crypt_keeper_warn_wipe">Anda memiliki %d percobaan tersisa untuk memulai perangkat sebelum direset ke pengaturan default pabrik. Ini akan menghapus semua data, termasuk file dan aplikasi unduhan.</string>
+    <string name="crypt_keeper_warn_wipe">"Anda memiliki %1$d percobaan tersisa sebelum ponsel direset ke pengaturan default pabriknya. Langkah ini akan menghapus seluruh data, termasuk file dan aplikasi yang telah diunduh.
+
+Jika ponsel Anda direset, mungkin Anda harus memasukkan informasi %2$s (alamat dan kata sandi email) yang terkait dengan ponsel ini agar dapat menggunakannya kembali."</string>
+    <string name="crypt_keeper_samsung_account">Samsung account</string>
+    <string name="crypt_keeper_google_account">Akun Google</string>
     <string name="crypt_keeper_failed_title">Enkripsi gagal</string>
     <string name="crypt_keeper_failed_summary">Tidak dapat memulai perangkat. Proses enkripsi terganggu. Anda harus mereset perangkat ke pengaturan default pabrik. Ini akan menghapus semua data Anda.</string>
     <string name="crypt_keeper_data_corrupted_title">Penyimpanan perangkat rusak</string>
@@ -1723,11 +1730,14 @@ Enkripsi memerlukan waktu sejam atau lebih. Sebelum mulai, pastikan daya baterai
     <string name="cryptkeeper_wrong_pin">PIN yang dimasukkan salah</string>
     <string name="cryptkeeper_wrong_direction">Arah yang digambar salah</string>
     <string name="checking_decryption">Memverifikasi…</string>
-    <string name="crypt_keeper_last_warn_wipe">Anda hanya memiliki 1 percobaan tersisa untuk memulai perangkat sebelum direset ke pengaturan default pabrik. Ini akan menghapus semua data, termasuk file dan aplikasi unduhan.</string>
+    <string name="crypt_keeper_last_warn_wipe">"Anda memiliki sisa 1 percobaan sebelum ponsel Anda direset ke pengaturan default pabrik. Tindakan ini akan menghapus semua data, termasuk file dan aplikasi yang telah diunduh.
+
+Jika ponsel direset, Anda mungkin harus memasukkan informasi %s (alamat dan kata sandi email) yang terkait dengan ponsel ini agar dapat menggunakannya kembali."</string>
     <string name="crypt_keeper_failed_title_dec">"Dekripsi
 digagalkan."</string>
     <string name="crypt_keeper_failed_summary_dec">Tidak dapat menyelesaikan dekripsi karena gangguan. Lakukan reset data pabrik (menghapus semua data) sebelum menggunakan.</string>
     <string name="crypt_keeper_set_screen_lock_type">Atur tipe kunci layar</string>
+    <string name="crypt_keeper_warning_keyboard_cover_does_not_work">Cover keyboard tidak berfungsi setelah ponsel dimulai ulang.</string>
     <string name="encryption_interstitial_message">"Anda dapat melindungi ponsel ini lebih jauh dengan mengharuskan %s dimasukkan sebelum ponsel dimulai. Ini akan membantu melindungi data Anda jika ponsel hilang atau dicuri. Beberapa aplikasi mungkin memerlukan Mulai Aman menurut kebijakan Enkripsi perangkat untuk mengakses fitur, seperti sinkronisasi email.
 
 Anda tidak akan menerima panggilan, pesan, atau notifikasi apa pun, dan alarm tidak akan berbunyi, hingga ponsel dimulai."</string>
@@ -1972,6 +1982,12 @@ You will also need it when:"</string>
     <string name="lockpassword_confirm_your_pin_with_fingerprint">Gunakan sidik jari atau masukkan PIN saat ini.</string>
     <string name="lockpassword_confirm_your_pattern_with_fingerprint">Gunakan sidik jari atau gambar pola saat ini.</string>
     <string name="lockpassword_confirm_your_password_with_fingerprint">Gunakan sidik jari atau masukkan kata sandi saat ini.</string>
+    <string name="lockpassword_confirm_your_pin_with_iris">Gunakan iris Anda atau masukkan PIN saat ini.</string>
+    <string name="lockpassword_confirm_your_pattern_with_iris">Gunakan iris Anda atau gambar pola saat ini.</string>
+    <string name="lockpassword_confirm_your_password_with_iris">Gunakan iris Anda atau masukkan kata sandi saat ini.</string>
+    <string name="lockpassword_confirm_your_pin_with_biometrics">Gunakan biometrik atau masukkan PIN.</string>
+    <string name="lockpassword_confirm_your_pattern_with_biometrics">Gunakan biometrik atau gambar pola.</string>
+    <string name="lockpassword_confirm_your_password_with_biometrics">Gunakan biometrik atau masukkan kata sandi.</string>
     <string name="lockpassword_confirm_your_pin_instead_of_fingerprint">Masukkan PIN alih-alih menggunakan pengenalan sidik jari.</string>
     <string name="lockpassword_confirm_your_pattern_instead_of_fingerprint">Gambar pola alih-alih menggunakan pengenalan sidik jari.</string>
     <string name="lockpassword_confirm_your_password_instead_of_fingerprint">Masukkan kata sandi alih-alih menggunakan pengenalan sidik jari.</string>
@@ -2046,6 +2062,7 @@ Pilih cara membuka kunci ponsel. Buka kunci wajah dan Buka kunci iris tidak dapa
     <string name="face_status_timeout">Habis waktu. Coba nanti.</string>
     <string name="okay">OK</string>
     <string name="face_samsung_account_button">Gnkn Samsung account</string>
+    <string name="face_galaxy_account_button">Gunakan akun Galaxy</string>
     <string name="face_error_DB_corrupted">Ada masalah dengan data wajah. Daftarkan lagi wajah Anda.</string>
     <string name="face_error_DB_corrupted_popup_title">Daftarkan lagi wajah Anda</string>
     <string name="face_error_timeout">Wajah Anda tidak terdeteksi.</string>
@@ -2156,7 +2173,7 @@ Aktifkan Buka kunci iris untuk menggunakan biometrik atau %s untuk membuka kunci
     <string name="biometrics_backup_locktype_title">Atur keamanan iris</string>
     <string name="biometrics_register_your_iris">Daftarkan iris Anda.</string>
     <string name="biometrics_backup_locktype_summary">Untuk menggunakan iris saat membuka kunci perangkat, Anda harus mengatur pola, PIN, atau kata sandi.</string>
-    <string name="biometrics_backup_locktype_message">Untuk menggunakan iris untuk membuka kunci ponsel atau verifikasi aman, Anda harus:</string>
+    <string name="biometrics_backup_locktype_message">Untuk menggunakan iris untuk membuka kunci ponsel atau memverifikasi diri sendiri, Anda harus:</string>
     <string name="iris_delete_popup_title">Hapus data iris?</string>
     <string name="iris_delete_popup_message">Hapus data iris?</string>
     <string name="iris_delete_popup_message_with_related_func">Fitur yang menggunakan iris akan dinonaktifkan.</string>
@@ -2232,6 +2249,9 @@ Pilih cara membuka kunci ponsel. Buka kunci iris dan Buka kunci wajah tidak dapa
     <string name="biometrics_dex_cant_use_msg">Tidak dapat menggunakan %s di Samsung DeX.</string>
     <string name="biometrics_dex_closed_to_switch">%s ditutup untuk beralih ke Samsung DeX.</string>
     <string name="biometircs_dex_cant_use_toast">%s tidak dapat dijalankan di Samsung DeX. Coba jalankan dalam mode ponsel.</string>
+    <string name="iris_guide_text_preview">Lht d sn utk gnakn iris</string>
+    <string name="iris_guide_enable_toggle">Ketuk di sini utk mgunakn iris</string>
+    <string name="iris_cannot_verify">Tidak dapat memverifikasi iris</string>
     <string name="knox_twofactor_bio_description">Pilih tipe kunci biometrik dan tipe kunci kedua untuk membuka kunci %s.</string>
     <string name="fingerprint_registered">Sidik jari yang terdaftar akan digunakan dalam metode buka-kunci yang dipilih.</string>
     <string name="knox_twofactor_description">Pilih biometrik dan tipe kunci kedua untuk membuka kunci %s.</string>
@@ -3094,6 +3114,7 @@ Coba lagi."</string>
     <string name="easy_mode_app_help">Gunakan perangkat lebih mudah dengan tata letak layar depan yang lebih sederhana dan item layar yang lebih besar.</string>
     <string name="easy_mode_app_help_dream_1">Gunakan tata letak Layar depan sederhana dan item di layar lebih besar.</string>
     <string name="easy_mode_app_help_dream_2">Kustomisasi yang diterapkan ke Layar depan akan dibuang dan Pembesaran layar akan diatur ke maksimum.</string>
+    <string name="easy_mode_app_help_3rd_launcher">Terapkan mode Mudah untuk item pada layar yang lebih besar. Jika Anda tidak menggunakan TouchWiz depan, tata letak Layar depan Anda tidak akan berubah, tetapi zoom layar akan diatur ke besar dan ukuran font akan diatur ke sedang.</string>
     <string name="security_warning_content">Anda dapat melindungi privasi Anda dengan mengatur kata sandi, PIN, atau pola untuk membuka kunci layar</string>
     <string name="lock_setting_weather_desc">Untuk melihat atau mengubah pengaturan cuaca, ketuk PENGATURAN CUACA di bawah.</string>
     <string name="lock_setting_weather_btn">Pengaturan cuaca</string>
@@ -3947,7 +3968,7 @@ Menggunakan Hotspot Seluler dapat meningkatkan konsumsi daya baterai dan penggun
     <string name="wfd_descrpition_playsound">Putar suara.</string>
     <string name="wfd_is_not_supported">Fungsi ini tidak didukung.</string>
     <string name="usbtethering_notify_wifi_is_on_title">Nonaktifkan Wi-Fi?</string>
-    <string name="usbtethering_notify_wifi_is_on">Wi-Fi dan penambatan USB tidak dapat diaktifkan bersamaan. Matikan Wi-Fi.</string>
+    <string name="usbtethering_notify_wifi_is_on">Wi-Fi dan penambatan USB tidak dapat diaktifkan bersamaan. Wi-Fi akan dimatikan.</string>
     <string name="disable_multi_window_dialog_text">Multi window akan dinonaktifkan dan semua aplikasi yang dibuka dalam jendela pop-up akan ditutup.</string>
     <string name="keyguard_password_attempt_count_pin_code">%d percobaan tersisa</string>
     <string name="keyguard_password_attempts_count_pin_code">%d percobaan tersisa.</string>
@@ -4155,6 +4176,7 @@ Menerima SMS"</string>
     <string name="hdmi_mode_title">Mode HDMI</string>
     <string name="hdmi_mode_dex">Samsung DeX</string>
     <string name="hdmi_mode_mirroring">Screen Mirroring</string>
+    <string name="hdmi_mode_not_available_while_cover_attached">%s tidak tersedia saat cover terpasang.</string>
     <string name="screen_timeout_for_dex">Waktu habis layar Samsung DeX</string>
     <string name="show_virtual_keyboard_for_dex">Tampilkan keyboard pada layar di Samsung DeX</string>
     <string name="comma">,</string>
@@ -4463,7 +4485,7 @@ Anda dapat mengubahnya nanti di pengaturan Bluetooth."</string>
     <string name="date_picker_title">Tanggal</string>
     <string name="time_picker_title">Waktu</string>
     <string name="lock_after_timeout">Kunci secara otomatis</string>
-    <string name="lock_after_timeout_summary">Kunci layar %s setelah layar mati secara otomatis.</string>
+    <string name="lock_after_timeout_summary">Kunci ponsel %s setelah layar mati secara otomatis.</string>
     <string name="lock_after_timeout_summary_with_exception">Kunci layar %1$s setelah mati otomatis, kecuali saat tetap dibuka kuncinya oleh %2$s.</string>
     <string name="show_owner_info_on_lockscreen_label">Tampilkan informasi pemilik perangkat pada layar kunci.</string>
     <string name="owner_info_settings_title">Informasi pemilik</string>
@@ -4611,6 +4633,8 @@ Untuk meningkatkan keakuratan lokasi, aplikasi dan layanan mungkin memindai jari
     <string name="wifi_empty_list_user_restricted">Anda tidak memiliki izin untuk mengubah pengaturan Wi-Fi.</string>
     <string name="wifi_setup_wps">Penyetelan otomatis (WPS)</string>
     <string name="wifi_show_advanced">Tampilkan opsi lanjutan</string>
+    <string name="wifi_advanced_toggle_description_expanded">Ketuk dua kali untuk menciutkan.</string>
+    <string name="wifi_advanced_toggle_description_collapsed">Ketuk dua kali untuk memperluas.</string>
     <string name="wifi_wps_setup_title">Setelan WPS</string>
     <string name="wifi_wps_setup_msg">Memulai WPS…</string>
     <string name="wifi_wps_onstart_pbc">Ketuk tombol penyetelan yang dilindungi Wi-Fi pada router Anda. Mungkin disebut WPS atau mengandung simbol ini:</string>
@@ -4642,6 +4666,10 @@ Untuk meningkatkan keakuratan lokasi, aplikasi dan layanan mungkin memindai jari
     <string name="wifi_shared">Dibagi</string>
     <string name="wifi_unchanged">(tak berubah)</string>
     <string name="wifi_unspecified">(Tak ditetapkan)</string>
+    <string name="wifi_select_cert">Pilih sertifikat</string>
+    <string name="wifi_do_not_provide_eap_user_cert">Jangan berikan</string>
+    <string name="wifi_do_not_validate_eap_server">Jangan validasi</string>
+    <string name="wifi_do_not_validate_eap_server_warning">Sertfikat tidak tercantum. Koneksi Anda tidak akan privat.</string>
     <string name="wifi_scan_always_turnon_message">%s meminta izin untuk memindai jaringan Wi-Fi, bahkan saat Wi-Fi dimatikan, untuk meningkatkan akurasi lokasi dan untuk tujuan lainnya. Izinkan ini untuk semua aplikasi?</string>
     <string name="wifi_scan_always_confirm_allow">Bolehkan</string>
     <string name="wifi_scan_always_confirm_deny">Tolak</string>
@@ -4978,7 +5006,7 @@ Pertimbangkan menggunakan kartu SD atau perangkat penyimpanan USB yang lebih cep
     <string name="reset_network_button_text">Reset pengaturan</string>
     <string name="reset_network_final_desc">Semua pengaturan jaringan akan direset. Tindakan ini tidak dapat dibatalkan.</string>
     <string name="reset_network_final_button_text">Reset pengaturan</string>
-    <string name="reset_network_complete_toast">Reset pengaturan koneksi.</string>
+    <string name="reset_network_complete_toast">Pengaturan jaringan direset.</string>
     <string name="master_clear_title">Reset data pabrik</string>
     <string name="master_clear_accounts">Saat ini Anda masuk ke akun berikut:</string>
     <string name="master_clear_other_users_present">Data milik pengguna lain di perangkat ini juga akan dihapus.</string>
@@ -6091,6 +6119,7 @@ Anda tidak akan menerima panggilan, pesan, atau notifikasi apa pun, alarm juga t
     <string name="set_data_limit">Atur batas data</string>
     <string name="data_limit">Batas data</string>
     <string name="data_usage_template">%1$s digunakan antara %2$s</string>
+    <string name="data_usage_template_wifi">%s digunakan dalam 30 hari terakhir</string>
     <string name="data_usage_other_apps">Apl terkait trmsk dlm pggunaan</string>
     <string name="data_saver_title">Penghemat data</string>
     <string name="unrestricted_data_saver">Iznkn aplk saat Pghmt data aktf</string>
@@ -6141,6 +6170,7 @@ Anda tidak akan menerima panggilan, pesan, atau notifikasi apa pun, alarm juga t
     <string name="legacy_dhcp_client_summary">Gunakan klien DHCP dari Lollipop alih-alih klien DHCP Android baru.</string>
     <string name="screen_off_pocket_title">Tetap matikan layar</string>
     <string name="screen_off_pocket_summary">Cegah layar agar tidak menyala tanpa sengaja saat perangkat berada di tempat gelap seperti kantong atau tas.</string>
+    <string name="noApplications">Semua aplikasi yang terkait dengan tindakan ini telah dinonaktifkan, diblokir, atau tidak diinstal.</string>
     <string name="confirm_reset_shortcut_manager_throttling_title">Reset pembatas kecepatan Manajer Pintasan</string>
     <string name="confirm_reset_shortcut_manager_throttling_message">Jumlah pembatas kecepatan Manajer Pintasan akan direset.</string>
 </resources>

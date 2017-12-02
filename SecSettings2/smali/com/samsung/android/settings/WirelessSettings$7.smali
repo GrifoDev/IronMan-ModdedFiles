@@ -1516,7 +1516,7 @@
         }
     .end annotation
 
-    const v5, 0x7f0b0e0f
+    const v5, 0x7f0b0e1e
 
     const/4 v8, 0x3
 
@@ -1629,7 +1629,7 @@
 
     iput-object v1, v0, Landroid/provider/SearchIndexableResource;->className:Ljava/lang/String;
 
-    const v1, 0x7f0800fb
+    const v1, 0x7f0800fd
 
     iput v1, v0, Landroid/provider/SearchIndexableResource;->xmlResId:I
 

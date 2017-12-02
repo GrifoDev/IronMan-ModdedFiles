@@ -208,7 +208,7 @@
 
     move-result v1
 
-    const v2, 0x7f0400ad
+    const v2, 0x7f0400ae
 
     if-eq v1, v2, :cond_2
 
@@ -537,7 +537,7 @@
 
     move-result-object v5
 
-    const v6, 0x7f080133
+    const v6, 0x7f080135
 
     invoke-direct {v4, v1, v5, v6}, Lcom/android/settingslib/SuggestionParser;-><init>(Landroid/content/Context;Landroid/content/SharedPreferences;I)V
 
@@ -656,7 +656,7 @@
 .method public onCreateView(Landroid/view/LayoutInflater;Landroid/view/ViewGroup;Landroid/os/Bundle;)Landroid/view/View;
     .locals 2
 
-    const v0, 0x7f0400a4
+    const v0, 0x7f0400a5
 
     const/4 v1, 0x0
 
@@ -907,7 +907,7 @@
 
     move-result-wide v2
 
-    const v1, 0x7f11023b
+    const v1, 0x7f11023d
 
     invoke-virtual {p1, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -1107,7 +1107,7 @@
 
     move-result v1
 
-    const v2, 0x7f0400ad
+    const v2, 0x7f0400ae
 
     if-ne v1, v2, :cond_1
 

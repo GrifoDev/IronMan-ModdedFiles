@@ -67,7 +67,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f1109fe
+    const v2, 0x7f110a01
 
     invoke-interface {v1, v2}, Landroid/view/Menu;->findItem(I)Landroid/view/MenuItem;
 

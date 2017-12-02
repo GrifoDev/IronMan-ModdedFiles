@@ -243,7 +243,7 @@
 
     move-result-object v3
 
-    const v4, 0x7f110525
+    const v4, 0x7f110527
 
     invoke-virtual {v3, v4}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -278,7 +278,7 @@
 
     move-result-object v3
 
-    const v4, 0x7f110526
+    const v4, 0x7f110528
 
     invoke-virtual {v3, v4}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -336,7 +336,7 @@
 
     iget-object v5, p0, Lcom/samsung/android/settings/accessories/LedCoverCallerIDList;->mContactInfoList:Ljava/util/List;
 
-    const v3, 0x7f04017d
+    const v3, 0x7f04017e
 
     const/4 v4, 0x0
 
@@ -591,7 +591,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f04017e
+    const v1, 0x7f04017f
 
     invoke-virtual {v0, v1, v2}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;)Landroid/view/View;
 
@@ -628,7 +628,7 @@
 
     iget-object v0, p0, Lcom/samsung/android/settings/accessories/LedCoverCallerIDList;->mSelectActionView:Landroid/view/View;
 
-    const v1, 0x7f11052a
+    const v1, 0x7f11052c
 
     invoke-virtual {v0, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -648,7 +648,7 @@
 
     iget-object v0, p0, Lcom/samsung/android/settings/accessories/LedCoverCallerIDList;->mSelectActionView:Landroid/view/View;
 
-    const v1, 0x7f110529
+    const v1, 0x7f11052b
 
     invoke-virtual {v0, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -668,7 +668,7 @@
 
     iget-object v0, p0, Lcom/samsung/android/settings/accessories/LedCoverCallerIDList;->mSelectActionView:Landroid/view/View;
 
-    const v1, 0x7f11052b
+    const v1, 0x7f11052d
 
     invoke-virtual {v0, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -734,7 +734,7 @@
 
     move-result-object v3
 
-    const v4, 0x7f110525
+    const v4, 0x7f110527
 
     invoke-virtual {v3, v4}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -2572,7 +2572,7 @@
 
     invoke-interface {v0}, Landroid/view/Menu;->clear()V
 
-    const v0, 0x7f0b050e
+    const v0, 0x7f0b050f
 
     invoke-interface {p1, v2, v3, v2, v0}, Landroid/view/Menu;->add(IIII)Landroid/view/MenuItem;
 
@@ -2582,7 +2582,7 @@
 
     const/4 v0, 0x2
 
-    const v1, 0x7f0b0507
+    const v1, 0x7f0b0508
 
     invoke-interface {p1, v2, v0, v2, v1}, Landroid/view/Menu;->add(IIII)Landroid/view/MenuItem;
 
@@ -2592,7 +2592,7 @@
 
     const/4 v0, 0x3
 
-    const v1, 0x7f0b1d28
+    const v1, 0x7f0b1d3a
 
     invoke-interface {p1, v2, v0, v2, v1}, Landroid/view/Menu;->add(IIII)Landroid/view/MenuItem;
 
@@ -2602,7 +2602,7 @@
 
     const/4 v0, 0x4
 
-    const v1, 0x7f0b050f
+    const v1, 0x7f0b0510
 
     invoke-interface {p1, v2, v0, v2, v1}, Landroid/view/Menu;->add(IIII)Landroid/view/MenuItem;
 
@@ -2618,7 +2618,7 @@
 .method public onCreateView(Landroid/view/LayoutInflater;Landroid/view/ViewGroup;Landroid/os/Bundle;)Landroid/view/View;
     .locals 3
 
-    const v1, 0x7f04017c
+    const v1, 0x7f04017d
 
     const/4 v2, 0x0
 
@@ -2626,7 +2626,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f1102d3
+    const v1, 0x7f1102d5
 
     invoke-virtual {v0, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -2646,7 +2646,7 @@
 
     if-eqz v1, :cond_0
 
-    const v1, 0x7f110525
+    const v1, 0x7f110527
 
     invoke-virtual {p2, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -2736,7 +2736,7 @@
     return v3
 
     :cond_0
-    const v1, 0x7f110525
+    const v1, 0x7f110527
 
     invoke-virtual {p2, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 

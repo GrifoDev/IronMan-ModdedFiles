@@ -170,6 +170,8 @@
     <string name="wifi_allow_scan_with_traffic_summary">데이터 사용량에 기반하여 Wi-Fi 로밍 스캔을 허용하거나 차단합니다.</string>
     <string name="select_logd_size_title">기록 저장 버퍼 크기</string>
     <string name="select_logd_size_dialog_title">기록 버퍼 최대 크기 선택</string>
+    <string name="dev_logpersist_clear_warning_title">로거 영구 저장공간 삭제</string>
+    <string name="dev_logpersist_clear_warning_message">영구 로거 기능을 해제하면 로거 데이터가 모두 삭제됩니다.</string>
     <string name="select_logpersist_title">로그 데이터 항상 저장</string>
     <string name="select_logpersist_dialog_title">항상 저장할 로그 버퍼 선택</string>
     <string name="select_usb_configuration_title">USB 구성</string>
@@ -538,7 +540,7 @@ Verizon에서 제공한 코드를 입력하세요."</string>
     <string name="sound_detector_title">아기 울음소리 감지</string>
     <string name="sound_detector_main_title">소리 감지</string>
     <string name="sound_detector_main_description">휴대전화에서 아기 울음소리 또는 초인종 소리를 감지하면 알려줍니다.</string>
-    <string name="accessibility_easy_interaction_summary">한 번 누르기 동작으로 알람 및 알림을 확인하고 전화를 받거나 거절합니다.</string>
+    <string name="accessibility_easy_interaction_summary">화면을 미는 대신 한 번 누르기 동작으로 알람 및 알림을 확인하고 전화를 받거나 거절합니다.</string>
     <string name="accessibility_easy_interaction_summary_tablet_wifi">누르기 동작으로 알람 및 캘린더 일정 알림을 중지하거나 다시 알리도록 설정합니다.</string>
     <string name="all_sound_off">모든 소리끄기</string>
     <string name="all_sound_off_summary">소리 모드인 경우에도 휴대전화 통화를 포함하여 휴대전화에서 어떤 소리도 나지 않습니다.</string>
@@ -981,6 +983,7 @@ Wi-Fi 및 블루투스 기능도 함께 해제되지만, 설정 또는 빠른 �
     <string name="bluetooth_avc_available_description">연결된 블루투스 디바이스에서 미디어 음량 동기화 기능이 지원되어 휴대전화의 음량이 블루투스 디바이스에 설정된 음량으로 적용됩니다.</string>
     <string name="bluetooth_enter_pin_msg">%s 디바이스를 등록하려면 비밀번호(0000 또는 1234)를 입력하세요.</string>
     <string name="bluetooth_pin_maximum_number_message">최대 글자 수에 도달했습니다.</string>
+    <string name="bluetooth_frp_permission_message">이 통화에 블루투스 디바이스를 사용할 수 없습니다.</string>
     <string name="settings_menu_done">완료</string>
     <string name="usb_tethering_unavailable_subtext_tmo">USB 연결 안 됨</string>
     <string name="usb_tethering_available_subtext_tmo">USB 연결됨, 테더링 가능</string>
@@ -1473,7 +1476,7 @@ Wi-Fi 및 블루투스 기능도 함께 해제되지만, 설정 또는 빠른 �
     <string name="navigationbar_pressure_sensitivity_title">홈 버튼 세게 누르기</string>
     <string name="navigationbar_pressure_sensitivity_summary">홈 버튼이 화면에 표시되지 않아도 해당 위치를 세게 눌러 홈 버튼을 사용합니다.</string>
     <string name="navigationbar_pressure_sensitivity_level_summary">누르기 강도: %1$d/%2$d</string>
-    <string name="navigationbar_pressure_sensitivity_description_off">홈 버튼이 화면에 표시되지 않아도 해당 위치를 세게 눌러 홈 버튼을 사용합니다.</string>
+    <string name="navigationbar_pressure_sensitivity_description_off">홈 버튼을 세게 누를 때 어떤 강도로 누를 것인지 선택합니다.</string>
     <string name="navigationbar_pressure_low">약하게 누르기</string>
     <string name="navigationbar_pressure_high">강하게 누르기</string>
     <string name="navigationbar_hide_bar">고정/숨기기 버튼</string>
@@ -1696,7 +1699,11 @@ Wi-Fi 및 블루투스 기능도 함께 해제되지만, 설정 또는 빠른 �
     <string name="crypt_keeper_confirm_title">암호화 확인</string>
     <string name="crypt_keeper_final_desc">디바이스를 암호화하면 되돌릴 수 없으며 도중에 중단되면 데이터가 손실됩니다. 암호화는 한 시간 이상 소요되며 디바이스가 여러 번 다시 시작될 수 있습니다. 암호화 중에는 디바이스를 사용할 수 없습니다.</string>
     <string name="crypt_keeper_setup_title">암호화 중…</string>
-    <string name="crypt_keeper_warn_wipe">디바이스가 초기화되기까지 입력 기회가 %d회 남았습니다. 전체 초기화가 진행되면 파일 및 다운로드한 앱을 포함한 모든 데이터를 삭제합니다.</string>
+    <string name="crypt_keeper_warn_wipe">"%1$d회 더 잘못 입력하면 휴대전화가 초기화되며 파일 및 다운로드한 앱을 포함한 모든 데이터가 삭제됩니다.
+
+휴대전화가 초기화되면 휴대전화를 다시 사용할 수 있도록 %2$s 정보(이메일 주소 및 비밀번호)를 다시 입력해야 할 수도 있습니다."</string>
+    <string name="crypt_keeper_samsung_account">삼성 계정</string>
+    <string name="crypt_keeper_google_account">Google 계정</string>
     <string name="crypt_keeper_failed_title">암호화 안 됨</string>
     <string name="crypt_keeper_failed_summary">암호화 과정이 중지되어 디바이스를 시작할 수 없습니다. 디바이스를 초기화해야 하며, 이 경우 모든 데이터가 삭제됩니다.</string>
     <string name="crypt_keeper_data_corrupted_title">디바이스 저장공간 손상</string>
@@ -1715,10 +1722,13 @@ Wi-Fi 및 블루투스 기능도 함께 해제되지만, 설정 또는 빠른 �
     <string name="cryptkeeper_wrong_pin">PIN을 잘못 입력했습니다</string>
     <string name="cryptkeeper_wrong_direction">방향을 잘못 입력했습니다</string>
     <string name="checking_decryption">확인 중…</string>
-    <string name="crypt_keeper_last_warn_wipe">1회 더 잘못 입력하면 디바이스가 초기화되며 파일 및 다운로드한 앱을 포함한 모든 데이터가 삭제됩니다.</string>
+    <string name="crypt_keeper_last_warn_wipe">"1회 더 잘못 입력하면 휴대전화가 초기화되며 파일 및 다운로드한 앱을 포함한 모든 데이터가 삭제됩니다.
+
+휴대전화가 초기화되면 휴대전화를 다시 사용할 수 있도록 %s 정보(이메일 주소 및 비밀번호)를 다시 입력해야 할 수도 있습니다."</string>
     <string name="crypt_keeper_failed_title_dec">암호화를 해제하지 못했습니다.</string>
     <string name="crypt_keeper_failed_summary_dec">도중에 중지되어 암호화 해제를 완료할 수 없습니다. 사용하기 전에 [디바이스 전체 초기화(모든 데이터 삭제)]를 실행하세요.</string>
     <string name="crypt_keeper_set_screen_lock_type">화면 잠금 방식 설정</string>
+    <string name="crypt_keeper_warning_keyboard_cover_does_not_work">휴대전화를 다시 시작하면 키보드 커버가 작동하지 않습니다.</string>
     <string name="encryption_interstitial_message">"%s 방식을 입력해야만 휴대전화를 시작할 수 있도록 설정하여 휴대전화를 더 안전하게 보호할 수 있습니다. 또한, 분실하거나 도난당할 경우 사용자의 데이터를 보호할 수 있습니다. 디바이스 암호화 정책에 따라 일부 앱에서는 이메일 동기화와 같은 기능을 사용하려면 보안 설정이 필요할 수 있습니다.
 
 설정한 방식을 사용하여 휴대전화를 시작하기 전에는 전화, 메시지, 알림 등을 받을 수 없으며, 알람도 울리지 않습니다."</string>
@@ -1965,6 +1975,12 @@ PIN으로 디바이스를 다시 시작하기 전에는 전화, 메시지, 알�
     <string name="lockpassword_confirm_your_pin_with_fingerprint">지문을 사용하거나 현재 PIN을 입력하세요.</string>
     <string name="lockpassword_confirm_your_pattern_with_fingerprint">지문을 사용하거나 현재 패턴을 그리세요.</string>
     <string name="lockpassword_confirm_your_password_with_fingerprint">지문을 사용하거나 현재 비밀번호를 입력하세요.</string>
+    <string name="lockpassword_confirm_your_pin_with_iris">홍채를 사용하거나 현재 PIN을 입력하세요.</string>
+    <string name="lockpassword_confirm_your_pattern_with_iris">홍채를 사용하거나 현재 패턴을 그리세요.</string>
+    <string name="lockpassword_confirm_your_password_with_iris">홍채를 사용하거나 현재 비밀번호를 입력하세요.</string>
+    <string name="lockpassword_confirm_your_pin_with_biometrics">생체 인식을 사용하거나 PIN을 입력하세요.</string>
+    <string name="lockpassword_confirm_your_pattern_with_biometrics">생체 인식을 사용하거나 패턴을 그리세요.</string>
+    <string name="lockpassword_confirm_your_password_with_biometrics">생체 인식을 사용하거나 비밀번호를 입력하세요.</string>
     <string name="lockpassword_confirm_your_pin_instead_of_fingerprint">지문 인식 대신 PIN을 입력하세요.</string>
     <string name="lockpassword_confirm_your_pattern_instead_of_fingerprint">지문 인식 대신 패턴을 그리세요.</string>
     <string name="lockpassword_confirm_your_password_instead_of_fingerprint">지문 인식 대신 비밀번호를 입력하세요.</string>
@@ -2038,6 +2054,7 @@ PIN으로 디바이스를 다시 시작하기 전에는 전화, 메시지, 알�
     <string name="face_status_timeout">시간을 초과했습니다. 나중에 시도하세요.</string>
     <string name="okay">확인</string>
     <string name="face_samsung_account_button">삼성 계정 사용</string>
+    <string name="face_galaxy_account_button">Galaxy 계정 사용</string>
     <string name="face_error_DB_corrupted">얼굴 데이터에 오류가 있습니다. 얼굴을 다시 등록하세요.</string>
     <string name="face_error_DB_corrupted_popup_title">얼굴 다시 등록</string>
     <string name="face_error_timeout">얼굴이 인식되지 않았습니다.</string>
@@ -2148,7 +2165,7 @@ Galaxy 계정을 추가하고 아래 설정을 변경하세요."</string>
     <string name="biometrics_backup_locktype_title">안전하게 홍채 인식 사용하기</string>
     <string name="biometrics_register_your_iris">그 후에 홍채를 등록할 수 있습니다.</string>
     <string name="biometrics_backup_locktype_summary">디바이스 잠금을 해제할 때 홍채를 사용하려면 패턴, PIN, 비밀번호를 설정해야 합니다.</string>
-    <string name="biometrics_backup_locktype_message">휴대전화 잠금을 해제하거나 보안 인증에 홍채를 사용하려면 다음 사항을 확인하세요.</string>
+    <string name="biometrics_backup_locktype_message">휴대전화 잠금 해제 또는 앱에서 본인을 인증할 때 홍채 인식을 사용하려면 먼저 보안기능이 있는 잠금 방식(패턴, PIN, 비밀번호)으로 변경하세요.</string>
     <string name="iris_delete_popup_title">홍채 데이터 삭제</string>
     <string name="iris_delete_popup_message">홍채 데이터를 삭제할까요?</string>
     <string name="iris_delete_popup_message_with_related_func">홍채를 사용하는 기능은 모두 해제됩니다.</string>
@@ -2228,6 +2245,9 @@ Galaxy 계정을 추가하고 아래 설정을 변경하세요."</string>
     <string name="biometrics_dex_cant_use_msg">Samsung DeX에서는 %s 항목을 사용할 수 없습니다.</string>
     <string name="biometrics_dex_closed_to_switch">Samsung DeX로 전환하기 위해 %s 앱을 종료했습니다.</string>
     <string name="biometircs_dex_cant_use_toast">Samsung DeX에서는 %s 앱을 사용할 수 없습니다. 휴대전화 모드에서 사용하세요.</string>
+    <string name="iris_guide_text_preview">홍채를 사용하려면 여기를 보세요</string>
+    <string name="iris_guide_enable_toggle">홍채를 사용하려면 여기를 누르세요</string>
+    <string name="iris_cannot_verify">홍채를 인증할 수 없음</string>
     <string name="knox_twofactor_bio_description">사용할 생체 인식 방식을 선택하고 %s용 추가 인증 방식을 선택하세요.</string>
     <string name="fingerprint_registered">등록한 지문을 선택한 잠금해제 방식과 함께 사용합니다.</string>
     <string name="knox_twofactor_description">%s에서 생체 인식과 함께 사용할 추가 잠금 방식을 선택하세요.</string>
@@ -2948,8 +2968,8 @@ Samsung Connect 앱을 설치한 경우에는 휴대전화의 주 오디오 출�
     <string name="npsm_deactivated_toast">절전 모드가 실행되어 네트워크 절전 모드를 해제했습니다.</string>
     <string name="power_mode_change_dialog_medium_title">절전 모드</string>
     <string name="power_mode_change_dialog_ultra_title">초절전 모드</string>
-    <string name="power_saving_mode_summary_text">아래 설정을 적용하여 배터리 사용 가능 시간을 %1$s까지 늘리거나, %2$s 버튼을 눌러 직접 설정을 변경하세요.</string>
-    <string name="power_saving_mode_summary_text_noTime">아래 설정을 적용하여 배터리 사용 가능 시간을 늘리거나, %s 버튼을 눌러 직접 설정을 변경하세요.</string>
+    <string name="power_saving_mode_summary_text">아래 설정을 적용하여 배터리 사용가능 시간을 %1$s까지 늘리거나, %2$s 버튼을 눌러 직접 설정을 변경하세요.</string>
+    <string name="power_saving_mode_summary_text_noTime">아래 설정을 적용하여 배터리 사용가능 시간을 늘리거나, %s 버튼을 눌러 직접 설정을 변경하세요.</string>
     <string name="customize_title">사용자 설정</string>
     <string name="psm_change_processing_enabling_description">절전 모드 실행 중…</string>
     <string name="psm_change_processing_disabling_description">절전 모드 해제 중…</string>
@@ -3091,6 +3111,7 @@ Samsung Connect 앱을 설치한 경우에는 휴대전화의 주 오디오 출�
     <string name="easy_mode_app_help">디바이스를 쉽게 사용할 수 있도록 홈 화면을 간단하게 구성하고 화면에 표시되는 항목을 크게 변경합니다.</string>
     <string name="easy_mode_app_help_dream_1">홈 화면을 간단하게 구성하고 화면에 표시되는 항목을 크게 변경합니다.</string>
     <string name="easy_mode_app_help_dream_2">이전에 설정한 홈 화면은 저장되지 않으며, 화면 확대는 최대로 설정됩니다.</string>
+    <string name="easy_mode_app_help_3rd_launcher">쉬운 사용 모드를 적용하면 화면의 항목이 크게 표시됩니다. 터치위즈 홈을 사용하고 있지 않은 경우, 홈 화면 구성은 변경되지 않지만 화면 확대 단계는 최대로, 글자 크기는 보통으로 설정됩니다.</string>
     <string name="security_warning_content">화면 잠금을 해제하기 위한 비밀번호, PIN, 잠금해제 패턴을 설정하여 개인정보를 보호할 수 있습니다.</string>
     <string name="lock_setting_weather_desc">날씨 설정을 확인하거나 변경하려면 아래의 [날씨 설정]을 누르세요.</string>
     <string name="lock_setting_weather_btn">날씨 설정</string>
@@ -3944,7 +3965,7 @@ Wi-Fi를 실행합니다."</string>
     <string name="wfd_descrpition_playsound">소리 재생</string>
     <string name="wfd_is_not_supported">이 기능이 지원되지 않습니다.</string>
     <string name="usbtethering_notify_wifi_is_on_title">Wi-Fi 해제</string>
-    <string name="usbtethering_notify_wifi_is_on">Wi-Fi 및 USB 테더링 기능을 동시에 실행할 수 없습니다. Wi-Fi 기능을 해제합니다.</string>
+    <string name="usbtethering_notify_wifi_is_on">Wi-Fi와 USB 테더링 기능은 동시에 실행할 수 없습니다. Wi-Fi 기능을 해제합니다.</string>
     <string name="disable_multi_window_dialog_text">[멀티윈도우]를 해제하고 팝업창으로 실행 중인 모든 앱을 종료합니다.</string>
     <string name="keyguard_password_attempt_count_pin_code">입력 기회가 %d회 남았습니다.</string>
     <string name="keyguard_password_attempts_count_pin_code">입력 기회가 %d회 남았습니다.</string>
@@ -4153,6 +4174,7 @@ SMS 수신"</string>
     <string name="hdmi_mode_title">HDMI 모드</string>
     <string name="hdmi_mode_dex">Samsung DeX</string>
     <string name="hdmi_mode_mirroring">Screen Mirroring</string>
+    <string name="hdmi_mode_not_available_while_cover_attached">커버가 장착된 상태에서는 %s 기능을 사용할 수 없습니다.</string>
     <string name="screen_timeout_for_dex">Samsung DeX 화면 자동 꺼짐 시간</string>
     <string name="show_virtual_keyboard_for_dex">Samsung DeX 화면에 스크린 키보드 표시</string>
     <string name="comma">,</string>
@@ -4354,7 +4376,7 @@ SMS 수신"</string>
     <string name="wifi_ap_pmf_title">관리 프레임 보호</string>
     <string name="wifi_ap_pmf_on">PMF 실행</string>
     <string name="wifi_ap_power_save">절전 모드</string>
-    <string name="activation_title">개통 상태</string>
+    <string name="activation_title">Activation 상태</string>
     <string name="activation_summary">"더 자세한 정보를 보려면 다음 웹사이트를 방문하세요.
 %s"</string>
     <string name="ucm_enter_pin_hint">%1$d-%2$d자 길이로 PIN을 입력하세요.</string>
@@ -4499,7 +4521,7 @@ SMS 수신"</string>
     <string name="date_picker_title">날짜</string>
     <string name="time_picker_title">시간</string>
     <string name="lock_after_timeout">자동 잠금 시간</string>
-    <string name="lock_after_timeout_summary">화면이 자동으로 꺼지고 %s 후 잠금 상태로 설정됩니다.</string>
+    <string name="lock_after_timeout_summary">화면이 꺼지고 %s 후 휴대전화가 자동으로 잠깁니다.</string>
     <string name="lock_after_timeout_summary_with_exception">%2$s 방식으로 잠금이 해제된 경우를 제외하고, 화면이 자동으로 꺼진 후 %1$s가 지나면 화면이 잠깁니다.</string>
     <string name="show_owner_info_on_lockscreen_label">입력한 디바이스 사용자 문구를 잠금화면에 표시합니다.</string>
     <string name="owner_info_settings_title">사용자 문구</string>
@@ -4647,6 +4669,8 @@ SMS 수신"</string>
     <string name="wifi_empty_list_user_restricted">Wi-Fi 설정을 변경할 수 있는 권한이 없습니다.</string>
     <string name="wifi_setup_wps">자동 설정(WPS)</string>
     <string name="wifi_show_advanced">고급 옵션 표시</string>
+    <string name="wifi_advanced_toggle_description_expanded">접으려면 두 번 누르세요.</string>
+    <string name="wifi_advanced_toggle_description_collapsed">펼치려면 두 번 누르세요.</string>
     <string name="wifi_wps_setup_title">WPS 설정</string>
     <string name="wifi_wps_setup_msg">WPS를 시작하는 중…</string>
     <string name="wifi_wps_onstart_pbc">공유기의 Wi-Fi 보호 설정 버튼을 누르세요. WPS 또는 다음과 같은 기호로 표시될 수 있습니다.</string>
@@ -4678,6 +4702,10 @@ SMS 수신"</string>
     <string name="wifi_shared">공유됨</string>
     <string name="wifi_unchanged">(변경 없음)</string>
     <string name="wifi_unspecified">(설정 안 함)</string>
+    <string name="wifi_select_cert">인증서 선택</string>
+    <string name="wifi_do_not_provide_eap_user_cert">제공 안 함</string>
+    <string name="wifi_do_not_validate_eap_server">인증 안 함</string>
+    <string name="wifi_do_not_validate_eap_server_warning">특정 인증서가 없어 보안 연결이 제공되지 않습니다.</string>
     <string name="wifi_scan_always_turnon_message">위치의 정확도 향상 및 다른 용도를 위해, Wi-Fi가 해제된 경우에도 %s에서 Wi-Fi 네트워크를 찾을 수 있는 권한을 요청합니다. 모든 앱을 허용할까요?</string>
     <string name="wifi_scan_always_confirm_allow">허용</string>
     <string name="wifi_scan_always_confirm_deny">거부</string>
@@ -5011,9 +5039,9 @@ SMS 수신"</string>
     <string name="restore_default_apn_completed">APN 설정을 초기화했습니다.</string>
     <string name="reset_network_desc">다음을 포함한 모든 네트워크 설정을 초기화합니다.</string>
     <string name="reset_network_button_text">설정 초기화</string>
-    <string name="reset_network_final_desc">모든 연결 설정을 초기화합니다. 이 작업은 되돌릴 수 없습니다.</string>
+    <string name="reset_network_final_desc">네트워크 설정을 모두 초기화합니다. 초기화된 설정은 복원할 수 없습니다.</string>
     <string name="reset_network_final_button_text">설정 초기화</string>
-    <string name="reset_network_complete_toast">연결 설정을 초기화했습니다.</string>
+    <string name="reset_network_complete_toast">네트워크 설정을 초기화했습니다.</string>
     <string name="master_clear_title">디바이스 전체 초기화</string>
     <string name="master_clear_accounts">다음 계정으로 로그인한 상태입니다.</string>
     <string name="master_clear_other_users_present">이 디바이스에 저장된 다른 사용자 소유의 데이터도 삭제됩니다.</string>
@@ -6127,6 +6155,7 @@ PIN으로 디바이스를 시작하기 전에는 전화, 메시지, 알림 등�
     <string name="set_data_limit">데이터 사용한도 설정</string>
     <string name="data_limit">데이터 사용한도</string>
     <string name="data_usage_template">%2$s 동안 %1$s 사용됨</string>
+    <string name="data_usage_template_wifi">최근 30일 동안 %s 사용</string>
     <string name="data_usage_other_apps">데이터를 함께 사용한 앱</string>
     <string name="data_saver_title">데이터 세이버</string>
     <string name="unrestricted_data_saver">데이터 세이버 미적용 앱</string>
@@ -6177,6 +6206,7 @@ PIN으로 디바이스를 시작하기 전에는 전화, 메시지, 알림 등�
     <string name="legacy_dhcp_client_summary">새로운 Android DHCP 클라이언트 대신 Lollipop의 DHCP 클라이언트 사용</string>
     <string name="screen_off_pocket_title">화면을 꺼진 상태로 유지</string>
     <string name="screen_off_pocket_summary">디바이스가 주머니 또는 가방 속과 같이 어두운 곳에 있을 때 화면이 켜지지 않도록 보호합니다.</string>
+    <string name="noApplications">이 동작과 관련된 모든 앱이 해제 또는 차단되었거나, 설치되지 않았습니다.</string>
     <string name="confirm_reset_shortcut_manager_throttling_title">바로가기 관리자 속도 제한 초기화</string>
     <string name="confirm_reset_shortcut_manager_throttling_message">바로가기 관리자 속도 제한 횟수를 초기화합니다.</string>
     <string name="status1_summay" />

@@ -275,7 +275,7 @@
 
     move-result-object v17
 
-    const v18, 0x7f040260
+    const v18, 0x7f040263
 
     const/16 v19, 0x0
 
@@ -463,7 +463,7 @@
     invoke-virtual {v15, v10}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
     :goto_0
-    const v17, 0x7f1106b0
+    const v17, 0x7f1106b2
 
     move-object/from16 v0, p2
 
@@ -490,7 +490,7 @@
     invoke-virtual {v13, v0}, Landroid/widget/TextView;->setVisibility(I)V
 
     :goto_1
-    const v17, 0x7f1106b1
+    const v17, 0x7f1106b3
 
     move-object/from16 v0, p2
 

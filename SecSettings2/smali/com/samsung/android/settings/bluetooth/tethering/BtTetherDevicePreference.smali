@@ -96,7 +96,7 @@
 
     iput-object p2, p0, Lcom/samsung/android/settings/bluetooth/tethering/BtTetherDevicePreference;->mCachedDevice:Lcom/android/settingslib/bluetooth/CachedBluetoothDevice;
 
-    const v0, 0x7f040206
+    const v0, 0x7f040209
 
     invoke-virtual {p0, v0}, Lcom/samsung/android/settings/bluetooth/tethering/BtTetherDevicePreference;->setLayoutResource(I)V
 

@@ -68,6 +68,8 @@
 
 .field private mIsRegisteredMotionListener:Z
 
+.field private mIsResume:Z
+
 .field private mIsTablet:Z
 
 .field private mLastToast:Landroid/widget/Toast;
@@ -449,6 +451,8 @@
 
     iput-boolean v1, p0, Lcom/samsung/android/settings/wifi/p2p/WifiP2pDevicePicker;->mIsReceiverRegistered:Z
 
+    iput-boolean v1, p0, Lcom/samsung/android/settings/wifi/p2p/WifiP2pDevicePicker;->mIsResume:Z
+
     iput-boolean v1, p0, Lcom/samsung/android/settings/wifi/p2p/WifiP2pDevicePicker;->mIsLandscape:Z
 
     iput-boolean v1, p0, Lcom/samsung/android/settings/wifi/p2p/WifiP2pDevicePicker;->doNotFinish:Z
@@ -485,9 +489,9 @@
 .method private addMyDeviceCenterText(Z)V
     .locals 3
 
-    const v0, 0x7f0b0eed
+    const v0, 0x7f0b0efc
 
-    const v1, 0x7f0b0ef0
+    const v1, 0x7f0b0eff
 
     const/4 v2, 0x0
 
@@ -543,7 +547,7 @@
 
     if-eqz v1, :cond_0
 
-    const v2, 0x7f0403bf
+    const v2, 0x7f0403c2
 
     invoke-virtual {v1, v2}, Landroid/preference/Preference;->setLayoutResource(I)V
 
@@ -655,7 +659,7 @@
     :cond_0
     iget-object v1, p0, Lcom/samsung/android/settings/wifi/p2p/WifiP2pDevicePicker;->mNoDevicesPreference:Landroid/preference/Preference;
 
-    const v2, 0x7f0403c4
+    const v2, 0x7f0403c7
 
     invoke-virtual {v1, v2}, Landroid/preference/Preference;->setLayoutResource(I)V
 
@@ -665,7 +669,7 @@
 
     move-result-object v2
 
-    const v3, 0x7f0b0f5b
+    const v3, 0x7f0b0f6a
 
     invoke-virtual {v2, v3}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -1130,7 +1134,7 @@
 
     iget-object v0, p0, Lcom/samsung/android/settings/wifi/p2p/WifiP2pDevicePicker;->progressBarItem:Landroid/view/MenuItem;
 
-    const v1, 0x7f0403c5
+    const v1, 0x7f0403c8
 
     invoke-interface {v0, v1}, Landroid/view/MenuItem;->setActionView(I)Landroid/view/MenuItem;
 
@@ -1262,7 +1266,7 @@
 
     move-result-object v2
 
-    const v3, 0x7f020676
+    const v3, 0x7f020678
 
     invoke-virtual {v2, v3}, Landroid/content/res/Resources;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 
@@ -1297,7 +1301,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f0b0f5c
+    const v2, 0x7f0b0f6b
 
     invoke-virtual {v1, v2}, Landroid/app/Activity;->getString(I)Ljava/lang/String;
 
@@ -1358,7 +1362,7 @@
 
     move-result-object v2
 
-    const v3, 0x7f020675
+    const v3, 0x7f020677
 
     invoke-virtual {v2, v3}, Landroid/content/res/Resources;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 
@@ -1493,7 +1497,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f020678
+    const v2, 0x7f02067a
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 
@@ -1554,7 +1558,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f020677
+    const v2, 0x7f020679
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 
@@ -1676,7 +1680,7 @@
 
     move-result-object v7
 
-    const v8, 0x7f0b0eee
+    const v8, 0x7f0b0efd
 
     invoke-static {v7, v8, v9}, Landroid/widget/Toast;->makeText(Landroid/content/Context;II)Landroid/widget/Toast;
 
@@ -1888,6 +1892,8 @@
 
     invoke-virtual {v1, v0}, Landroid/content/Context;->sendBroadcast(Landroid/content/Intent;)V
 
+    iput-boolean p1, p0, Lcom/samsung/android/settings/wifi/p2p/WifiP2pDevicePicker;->mIsResume:Z
+
     return-void
 .end method
 
@@ -2012,7 +2018,7 @@
 
     iget-object v1, p0, Lcom/samsung/android/settings/wifi/p2p/WifiP2pDevicePicker;->mTextToSpeech:Landroid/speech/tts/TextToSpeech;
 
-    const v2, 0x7f0b0ee6
+    const v2, 0x7f0b0ef5
 
     invoke-virtual {p0, v2}, Lcom/samsung/android/settings/wifi/p2p/WifiP2pDevicePicker;->getString(I)Ljava/lang/String;
 
@@ -2120,7 +2126,7 @@
 
     move-result-object v3
 
-    const v4, 0x7f020676
+    const v4, 0x7f020678
 
     invoke-virtual {v3, v4}, Landroid/content/res/Resources;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 
@@ -2148,7 +2154,7 @@
 
     move-result-object v3
 
-    const v4, 0x7f020678
+    const v4, 0x7f02067a
 
     invoke-virtual {v3, v4}, Landroid/content/res/Resources;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 
@@ -2173,7 +2179,7 @@
 
     move-result-object v3
 
-    const v4, 0x7f020675
+    const v4, 0x7f020677
 
     invoke-virtual {v3, v4}, Landroid/content/res/Resources;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 
@@ -2192,7 +2198,7 @@
 
     move-result-object v3
 
-    const v4, 0x7f020677
+    const v4, 0x7f020679
 
     invoke-virtual {v3, v4}, Landroid/content/res/Resources;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 
@@ -2346,7 +2352,7 @@
 
     invoke-super {p0, p1}, Lcom/samsung/android/settings/SecSettingsPreferenceFragment;->onCreate(Landroid/os/Bundle;)V
 
-    const v0, 0x7f0800f9
+    const v0, 0x7f0800fb
 
     invoke-virtual {p0, v0}, Lcom/samsung/android/settings/wifi/p2p/WifiP2pDevicePicker;->addPreferencesFromResource(I)V
 
@@ -2543,13 +2549,17 @@
     iput-boolean v9, p0, Lcom/samsung/android/settings/wifi/p2p/WifiP2pDevicePicker;->mIsReceiverRegistered:Z
 
     :cond_2
+    invoke-virtual {p0, v9}, Lcom/samsung/android/settings/wifi/p2p/WifiP2pDevicePicker;->setRetainInstance(Z)V
+
     return-void
 .end method
 
 .method public onCreateOptionsMenu(Landroid/view/Menu;Landroid/view/MenuInflater;)V
-    .locals 7
+    .locals 8
 
-    const v6, 0x7f0403c5
+    const v7, 0x7f0403c8
+
+    const/16 v6, 0xc
 
     const/4 v5, 0x0
 
@@ -2557,7 +2567,7 @@
 
     const/4 v3, 0x0
 
-    const v1, 0x7f0b0eeb
+    const v1, 0x7f0b0efa
 
     invoke-interface {p1, v3, v2, v3, v1}, Landroid/view/Menu;->add(IIII)Landroid/view/MenuItem;
 
@@ -2596,7 +2606,7 @@
 
     iget-object v1, p0, Lcom/samsung/android/settings/wifi/p2p/WifiP2pDevicePicker;->progressBarItem:Landroid/view/MenuItem;
 
-    invoke-interface {v1, v6}, Landroid/view/MenuItem;->setActionView(I)Landroid/view/MenuItem;
+    invoke-interface {v1, v7}, Landroid/view/MenuItem;->setActionView(I)Landroid/view/MenuItem;
 
     invoke-direct {p0}, Lcom/samsung/android/settings/wifi/p2p/WifiP2pDevicePicker;->isP2pConnected()Z
 
@@ -2697,17 +2707,9 @@
     goto :goto_0
 
     :cond_3
-    invoke-virtual {p0}, Lcom/samsung/android/settings/wifi/p2p/WifiP2pDevicePicker;->getActivity()Landroid/app/Activity;
+    iget-boolean v1, p0, Lcom/samsung/android/settings/wifi/p2p/WifiP2pDevicePicker;->mIsResume:Z
 
-    move-result-object v1
-
-    invoke-virtual {v1}, Landroid/app/Activity;->getActionBar()Landroid/app/ActionBar;
-
-    move-result-object v1
-
-    const/16 v4, 0xc
-
-    invoke-virtual {v1, v4}, Landroid/app/ActionBar;->setDisplayOptions(I)V
+    if-nez v1, :cond_4
 
     invoke-virtual {p0}, Lcom/samsung/android/settings/wifi/p2p/WifiP2pDevicePicker;->getActivity()Landroid/app/Activity;
 
@@ -2717,7 +2719,58 @@
 
     move-result-object v1
 
-    const v4, 0x7f0b0f5c
+    invoke-virtual {v1, v6}, Landroid/app/ActionBar;->setDisplayOptions(I)V
+
+    invoke-virtual {p0}, Lcom/samsung/android/settings/wifi/p2p/WifiP2pDevicePicker;->getActivity()Landroid/app/Activity;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Landroid/app/Activity;->getActionBar()Landroid/app/ActionBar;
+
+    move-result-object v1
+
+    const v2, 0x7f0b0f6b
+
+    invoke-virtual {v1, v2}, Landroid/app/ActionBar;->setTitle(I)V
+
+    iget-object v1, p0, Lcom/samsung/android/settings/wifi/p2p/WifiP2pDevicePicker;->progressBarItem:Landroid/view/MenuItem;
+
+    invoke-interface {v1, v3}, Landroid/view/MenuItem;->setEnabled(Z)Landroid/view/MenuItem;
+
+    iget-object v1, p0, Lcom/samsung/android/settings/wifi/p2p/WifiP2pDevicePicker;->progressBarItem:Landroid/view/MenuItem;
+
+    invoke-interface {v1, v5}, Landroid/view/MenuItem;->setActionView(Landroid/view/View;)Landroid/view/MenuItem;
+
+    iget-object v1, p0, Lcom/samsung/android/settings/wifi/p2p/WifiP2pDevicePicker;->progressBarItem:Landroid/view/MenuItem;
+
+    invoke-interface {v1, v3}, Landroid/view/MenuItem;->setVisible(Z)Landroid/view/MenuItem;
+
+    iget-object v1, p0, Lcom/samsung/android/settings/wifi/p2p/WifiP2pDevicePicker;->mP2pShare:Landroid/view/MenuItem;
+
+    invoke-interface {v1, v3}, Landroid/view/MenuItem;->setVisible(Z)Landroid/view/MenuItem;
+
+    goto :goto_1
+
+    :cond_4
+    invoke-virtual {p0}, Lcom/samsung/android/settings/wifi/p2p/WifiP2pDevicePicker;->getActivity()Landroid/app/Activity;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Landroid/app/Activity;->getActionBar()Landroid/app/ActionBar;
+
+    move-result-object v1
+
+    invoke-virtual {v1, v6}, Landroid/app/ActionBar;->setDisplayOptions(I)V
+
+    invoke-virtual {p0}, Lcom/samsung/android/settings/wifi/p2p/WifiP2pDevicePicker;->getActivity()Landroid/app/Activity;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Landroid/app/Activity;->getActionBar()Landroid/app/ActionBar;
+
+    move-result-object v1
+
+    const v4, 0x7f0b0f6b
 
     invoke-virtual {v1, v4}, Landroid/app/ActionBar;->setTitle(I)V
 
@@ -2727,7 +2780,7 @@
 
     iget-object v1, p0, Lcom/samsung/android/settings/wifi/p2p/WifiP2pDevicePicker;->progressBarItem:Landroid/view/MenuItem;
 
-    invoke-interface {v1, v6}, Landroid/view/MenuItem;->setActionView(I)Landroid/view/MenuItem;
+    invoke-interface {v1, v7}, Landroid/view/MenuItem;->setActionView(I)Landroid/view/MenuItem;
 
     iget-object v1, p0, Lcom/samsung/android/settings/wifi/p2p/WifiP2pDevicePicker;->progressBarItem:Landroid/view/MenuItem;
 
@@ -2743,7 +2796,7 @@
 .method public onCreateView(Landroid/view/LayoutInflater;Landroid/view/ViewGroup;Landroid/os/Bundle;)Landroid/view/View;
     .locals 11
 
-    const v10, 0x7f0b0f5c
+    const v10, 0x7f0b0f6b
 
     const/4 v7, 0x0
 
@@ -2755,7 +2808,7 @@
 
     move-result-object v4
 
-    const v6, 0x7f0403c6
+    const v6, 0x7f0403c9
 
     invoke-virtual {p1, v6, v7}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;)Landroid/view/View;
 
@@ -2765,7 +2818,7 @@
 
     iget-object v6, p0, Lcom/samsung/android/settings/wifi/p2p/WifiP2pDevicePicker;->actionbarpviewSelectAllConnected:Landroid/view/View;
 
-    const v7, 0x7f110978
+    const v7, 0x7f11097b
 
     invoke-virtual {v6, v7}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -2789,7 +2842,7 @@
 
     iget-object v6, p0, Lcom/samsung/android/settings/wifi/p2p/WifiP2pDevicePicker;->actionbarpviewSelectAllConnected:Landroid/view/View;
 
-    const v7, 0x7f11097a
+    const v7, 0x7f11097d
 
     invoke-virtual {v6, v7}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -3098,7 +3151,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_4
+    if-eqz v0, :cond_5
 
     invoke-direct {p0, v3, v3}, Lcom/samsung/android/settings/wifi/p2p/WifiP2pDevicePicker;->setScanTimer(ZZ)V
 
@@ -3124,7 +3177,7 @@
 
     const/4 v1, 0x3
 
-    if-ne v0, v1, :cond_5
+    if-ne v0, v1, :cond_6
 
     iput-boolean v3, p0, Lcom/samsung/android/settings/wifi/p2p/WifiP2pDevicePicker;->doNotFinish:Z
 
@@ -3148,13 +3201,32 @@
     :cond_1
     invoke-direct {p0, v3}, Lcom/samsung/android/settings/wifi/p2p/WifiP2pDevicePicker;->sendP2pSettingsStartedBroadcast(Z)V
 
-    sget-object v0, Lcom/samsung/android/settings/wifi/p2p/WifiP2pDevicePicker;->mMotionSensorManager:Landroid/hardware/motion/MotionRecognitionManager;
+    invoke-virtual {p0}, Lcom/samsung/android/settings/wifi/p2p/WifiP2pDevicePicker;->getActivity()Landroid/app/Activity;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Landroid/app/Activity;->isInMultiWindowMode()Z
+
+    move-result v0
 
     if-eqz v0, :cond_2
+
+    invoke-virtual {p0}, Lcom/samsung/android/settings/wifi/p2p/WifiP2pDevicePicker;->getPreferenceScreen()Landroid/preference/PreferenceScreen;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Landroid/preference/PreferenceScreen;->removeAll()V
+
+    invoke-direct {p0, v4}, Lcom/samsung/android/settings/wifi/p2p/WifiP2pDevicePicker;->addMyDeviceCenterText(Z)V
+
+    :cond_2
+    sget-object v0, Lcom/samsung/android/settings/wifi/p2p/WifiP2pDevicePicker;->mMotionSensorManager:Landroid/hardware/motion/MotionRecognitionManager;
+
+    if-eqz v0, :cond_3
 
     iget-boolean v0, p0, Lcom/samsung/android/settings/wifi/p2p/WifiP2pDevicePicker;->mIsRegisteredMotionListener:Z
 
-    if-eqz v0, :cond_2
+    if-eqz v0, :cond_3
 
     sget-object v0, Lcom/samsung/android/settings/wifi/p2p/WifiP2pDevicePicker;->mMotionSensorManager:Landroid/hardware/motion/MotionRecognitionManager;
 
@@ -3164,14 +3236,14 @@
 
     iput-boolean v3, p0, Lcom/samsung/android/settings/wifi/p2p/WifiP2pDevicePicker;->mIsRegisteredMotionListener:Z
 
-    :cond_2
+    :cond_3
     iget-boolean v0, p0, Lcom/samsung/android/settings/wifi/p2p/WifiP2pDevicePicker;->mTalkback:Z
 
-    if-eqz v0, :cond_3
+    if-eqz v0, :cond_4
 
     iget-object v0, p0, Lcom/samsung/android/settings/wifi/p2p/WifiP2pDevicePicker;->mTextToSpeech:Landroid/speech/tts/TextToSpeech;
 
-    if-eqz v0, :cond_3
+    if-eqz v0, :cond_4
 
     iget-object v0, p0, Lcom/samsung/android/settings/wifi/p2p/WifiP2pDevicePicker;->mTextToSpeech:Landroid/speech/tts/TextToSpeech;
 
@@ -3181,10 +3253,10 @@
 
     invoke-virtual {v0}, Landroid/speech/tts/TextToSpeech;->shutdown()V
 
-    :cond_3
+    :cond_4
     return-void
 
-    :cond_4
+    :cond_5
     iget-boolean v0, p0, Lcom/samsung/android/settings/wifi/p2p/WifiP2pDevicePicker;->mConnectInProgress:Z
 
     if-nez v0, :cond_0
@@ -3193,7 +3265,7 @@
 
     goto :goto_0
 
-    :cond_5
+    :cond_6
     iput-boolean v4, p0, Lcom/samsung/android/settings/wifi/p2p/WifiP2pDevicePicker;->doNotFinish:Z
 
     goto :goto_1
@@ -4073,7 +4145,7 @@
 
     move-result-object v3
 
-    const v4, 0x7f0b0eec
+    const v4, 0x7f0b0efb
 
     invoke-static {v3, v4, v6}, Landroid/widget/Toast;->makeText(Landroid/content/Context;II)Landroid/widget/Toast;
 
@@ -4168,7 +4240,7 @@
 
     move-result-object v3
 
-    const v4, 0x7f0b0f5c
+    const v4, 0x7f0b0f6b
 
     invoke-virtual {v3, v4}, Landroid/app/Activity;->getString(I)Ljava/lang/String;
 

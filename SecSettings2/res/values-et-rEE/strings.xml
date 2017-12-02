@@ -170,6 +170,8 @@
     <string name="wifi_allow_scan_with_traffic_summary">Saate lubada või keelata Wi-Fi rändluse otsimise automaatselt vastavalt kasutatud andmemahule.</string>
     <string name="select_logd_size_title">Logimise puhvrisuurus</string>
     <string name="select_logd_size_dialog_title">Iga logipuhvri maksimaalse suuruse valimine</string>
+    <string name="dev_logpersist_clear_warning_title">Kas tühjendada püsiv logeri mälu?</string>
+    <string name="dev_logpersist_clear_warning_message">Logeri andmed kustutatakse, kui püsiv loger lülitatakse välja.</string>
     <string name="select_logpersist_title">Logiandmete täpne salvestamine</string>
     <string name="select_logpersist_dialog_title">Valige logipuhvrid, et salvestada püsivalt</string>
     <string name="select_usb_configuration_title">USB-konfigureerimine</string>
@@ -982,6 +984,7 @@ Saate seda hiljem muuta Bluetoothi seadetes."</string>
     <string name="bluetooth_avc_available_description">Ühendatud Bluetooth-seade toetab meediumi helitugevuse sünkroonimist ja Bluetooth-seadme määratud helitugevus sünkroonitakse teie telefoniga.</string>
     <string name="bluetooth_enter_pin_msg">Sisestage PIN-kood, et siduda seadmega %s (proovige 0000 voi 1234).</string>
     <string name="bluetooth_pin_maximum_number_message">Tähemärkide maksimaalne arv on saavutatud.</string>
+    <string name="bluetooth_frp_permission_message">Bluetooth-seadet ei saa selle kõne jaoks kasutada.</string>
     <string name="settings_menu_done">Valmis</string>
     <string name="usb_tethering_unavailable_subtext_tmo">USB not connected</string>
     <string name="usb_tethering_available_subtext_tmo">USB connected, check to tether</string>
@@ -1481,7 +1484,7 @@ Toksake valikut OK, et lubada heleduse tõstmine üle ohutu taseme."</string>
     <string name="navigationbar_pressure_sensitivity_title">Vajutage tugevalt avaekr. nuppu</string>
     <string name="navigationbar_pressure_sensitivity_summary">Kasutage peidetud avaekraani nuppu, vajutades tavalisest tugevamalt.</string>
     <string name="navigationbar_pressure_sensitivity_level_summary">Vajutamisjõud: %1$d/%2$d</string>
-    <string name="navigationbar_pressure_sensitivity_description_off">Kasutage peidetud avaekraani nuppu, vajutades tavalisest tugevamalt.</string>
+    <string name="navigationbar_pressure_sensitivity_description_off">Saate reguleerida avaekraani nupu tugeva vajutuse jaoks vajalikku survet.</string>
     <string name="navigationbar_pressure_low">Kergem</string>
     <string name="navigationbar_pressure_high">Tugevam</string>
     <string name="navigationbar_hide_bar">Kuvamise ja peitmise nupp</string>
@@ -1620,7 +1623,7 @@ Toksake valikut OK, et lubada heleduse tõstmine üle ohutu taseme."</string>
     <string name="crypt_keeper_decrypt_title">Dekrüpti seade</string>
     <string name="crypt_keeper_decrypt_summary">Seade on krüptitud.</string>
     <string name="crypt_keeper_type_pin">PIN-kood</string>
-    <string name="crypt_keeper_type_pattern">Muster</string>
+    <string name="crypt_keeper_type_pattern">muster</string>
     <string name="crypt_keeper_type_password">Parool</string>
     <string name="crypt_keeper_type_direction">Suunalukk</string>
     <string name="crypt_keeper_confirm_title_dec">Kinnita dekrüptimine</string>
@@ -1704,7 +1707,11 @@ Krüptimine kestab tunni või kauem. Peate alustama täislaetud akuga ja hoidma 
     <string name="crypt_keeper_confirm_title">Kinnita krüptimine</string>
     <string name="crypt_keeper_final_desc">Seadme krüptimist ei saa ennistada ja protsessi katkestamisel andmed kaovad. Krüptimine kestab tunni või kauem ning selle aja jooksul taaskäivitub seade mitu korda ja te ei saa seda kasutada.</string>
     <string name="crypt_keeper_setup_title">Krüptimine…</string>
-    <string name="crypt_keeper_warn_wipe">Teil on jäänud veel %d katset seadme käivitamiseks enne selle lähtestumist tehase vaikeseadetele. See kustutab kõik andmed, sh failid ja allalaaditud rakendused.</string>
+    <string name="crypt_keeper_warn_wipe">"Teil on jäänud %1$d katset enne, kui telefon lähtestatakse tehase vaikeseadetele. See kustutab kõik andmed, sh failid ja allalaaditud rakendused.
+
+Kui telefon lähtestatakse, on võimalik, et peate selle telefoniga seotud konto %2$s teabe (e-posti aadress ja parool) uuesti sisestama, et seda taas kasutada."</string>
+    <string name="crypt_keeper_samsung_account">Samsung Account</string>
+    <string name="crypt_keeper_google_account">"Google'i konto"</string>
     <string name="crypt_keeper_failed_title">Krüptimine nurjus</string>
     <string name="crypt_keeper_failed_summary">Seadet ei saa käivitada. Krüptimisprotsess katkestati. Peate lähtestama oma seadme tehase vaikeseadetele. See kustutab kõik teie andmed.</string>
     <string name="crypt_keeper_data_corrupted_title">Seadme mälu on rikutud</string>
@@ -1723,10 +1730,13 @@ Krüptimine kestab tunni või kauem. Peate alustama täislaetud akuga ja hoidma 
     <string name="cryptkeeper_wrong_pin">Sisestatud on vale PIN-kood</string>
     <string name="cryptkeeper_wrong_direction">Joonistati vale suund</string>
     <string name="checking_decryption">Kinnitamine…</string>
-    <string name="crypt_keeper_last_warn_wipe">Seadme avamiseks on ainult 1 katse enne, kui see lähtestatakse tehase vaikeseadetele. See kustutab kõik andmed, sh failid ja allalaaditud rakendused.</string>
+    <string name="crypt_keeper_last_warn_wipe">"Teil on jäänud 1 katse enne, kui telefon lähtestatakse tehase vaikeseadetele. See kustutab kõik andmed, sh failid ja allalaaditud rakendused.
+
+Kui telefon lähtestatakse, on võimalik, et peate selle telefoniga seotud konto %s teabe (e-posti aadress ja parool) uuesti sisestama, et seda taas kasutada."</string>
     <string name="crypt_keeper_failed_title_dec">Dekrüptimine nurjus.</string>
     <string name="crypt_keeper_failed_summary_dec">Dekrüptimine ei õnnestunud katkestuse tõttu. Enne kasutamist lähtestage tehaseandmed (kõigi andmete kustutamine).</string>
     <string name="crypt_keeper_set_screen_lock_type">Määra ekraaniluku tüüp</string>
+    <string name="crypt_keeper_warning_keyboard_cover_does_not_work">Klaviatuurikate ei tööta pärast telefoni taaskäivitamist.</string>
     <string name="encryption_interstitial_message">"Saate seda telefoni tõhusamalt kaitsta, kui nõuate oma üksuse %s sisestamist enne telefoni käivitamist. See aitab teie andmeid kaitsta telefoni kaotamise või varastamise korral. Mõned rakendused võivad seadme krüptimise poliisi tõttu vajada turvalist käivitamist, et kasutada teatud funktsioone, nt e-posti sünkroonimine.
 
 Enne telefoni käivitumist ei saa te ühtki kõnet, sõnumit ega teavitust, samuti ei kõla märguanded."</string>
@@ -1971,6 +1981,12 @@ You will also need it when:"</string>
     <string name="lockpassword_confirm_your_pin_with_fingerprint">Kasutage sõrmejälge või sisestage kehiv PIN-kood.</string>
     <string name="lockpassword_confirm_your_pattern_with_fingerprint">Kasutage sõrmejälge või joonistage kehtiv muster.</string>
     <string name="lockpassword_confirm_your_password_with_fingerprint">Kasutage sõrmejälge või sisestage kehiv parool.</string>
+    <string name="lockpassword_confirm_your_pin_with_iris">Kasutage oma iiriseid või sisestage kehtiv PIN-kood.</string>
+    <string name="lockpassword_confirm_your_pattern_with_iris">Kasutage oma iiriseid või joonistage kehtiv muster.</string>
+    <string name="lockpassword_confirm_your_password_with_iris">Kasutage oma iiriseid või sisestage kehtiv parool.</string>
+    <string name="lockpassword_confirm_your_pin_with_biometrics">Kasutage biomeetriat või sisestage PIN-kood.</string>
+    <string name="lockpassword_confirm_your_pattern_with_biometrics">Kasutage biomeetriat või joonistage muster.</string>
+    <string name="lockpassword_confirm_your_password_with_biometrics">Kasutage biomeetriat või sisestage parool.</string>
     <string name="lockpassword_confirm_your_pin_instead_of_fingerprint">Sisestage oma PIN-kood sõrmejäljetuvastuse asemel.</string>
     <string name="lockpassword_confirm_your_pattern_instead_of_fingerprint">Joonistage muster sõrmejäljetuvastuse asemel.</string>
     <string name="lockpassword_confirm_your_password_instead_of_fingerprint">Sisestage oma parool sõrmejäljetuvastuse asemel.</string>
@@ -2045,6 +2061,7 @@ Valige oma telefoni avamise viis. Näotuvastusega avamist ja iirisega avamist ei
     <string name="face_status_timeout">Ajalõpp. Proovige hiljem uuesti.</string>
     <string name="okay">OK</string>
     <string name="face_samsung_account_button">Kasuta Samsung Accounti</string>
+    <string name="face_galaxy_account_button">Kasuta Galaxy kontot</string>
     <string name="face_error_DB_corrupted">Teie näo andmetega tekkis probleem. Registreerige oma nägu uuesti.</string>
     <string name="face_error_DB_corrupted_popup_title">Registreerige oma nägu uuesti</string>
     <string name="face_error_timeout">Teie nägu ei tuvastatud.</string>
@@ -2155,7 +2172,7 @@ Lülitage iirisega avamine sisse, et kasutada telefoni avamiseks biomeetriat võ
     <string name="biometrics_backup_locktype_title">Iirise turvalisuse seadistamine</string>
     <string name="biometrics_register_your_iris">Registreerige oma iirised.</string>
     <string name="biometrics_backup_locktype_summary">Iiriste kasutamiseks seadme avamiseks peate määrama mustri, PIN-koodi või parooli.</string>
-    <string name="biometrics_backup_locktype_message">Selleks, et kasutada oma iiriseid telefoni avamiseks või turvalise kinnitamise jaoks, peate:</string>
+    <string name="biometrics_backup_locktype_message">Selleks, et kasutada oma iiriseid telefoni avamiseks või enda kinnitamiseks rakendustes, peate tegema järgmist:</string>
     <string name="iris_delete_popup_title">Kas eemaldada iirise andmed?</string>
     <string name="iris_delete_popup_message">Kas eemaldada iirise andmed?</string>
     <string name="iris_delete_popup_message_with_related_func">Iiriseid kasutatavad funktsioonid lülitatakse välja.</string>
@@ -2231,6 +2248,9 @@ Valige oma telefoni avamise viis. Iirisega avamist ja näotuvastusega avamist ei
     <string name="biometrics_dex_cant_use_msg">Rakendust %s ei saa kasutada Samsung DeX-is.</string>
     <string name="biometrics_dex_closed_to_switch">%s suleti, et lülituda Samsung DeX-i peale.</string>
     <string name="biometircs_dex_cant_use_toast">%s ei tööta Samsung DeX-is. Proovige käivitada telefonirežiimis.</string>
+    <string name="iris_guide_text_preview">Vaadake iiriste kasut.</string>
+    <string name="iris_guide_enable_toggle">Toks. siia, et kasut. iiriseid</string>
+    <string name="iris_cannot_verify">Iiriseid ei saanud kinnitada</string>
     <string name="knox_twofactor_bio_description">Valige seadme %s avamiseks oma biomeetrilise luku tüüp ja teise luku tüüp.</string>
     <string name="fingerprint_registered">Registreeritud sõrmejälgi kasutatakse valitud avamismeetodiga.</string>
     <string name="knox_twofactor_description">Valige oma biomeetria ja teine lukutüüp, et avada %s.</string>
@@ -3093,6 +3113,7 @@ Palun proovige uuesti."</string>
     <string name="easy_mode_app_help">Kasutage oma seadet hõlpsamalt lihtsama avaekraani paigutuse ja suuremate ekraaniikoonidega.</string>
     <string name="easy_mode_app_help_dream_1">Kasutage lihtsamat avaekraani paigutust ja suuremaid ekraaniüksuseid.</string>
     <string name="easy_mode_app_help_dream_2">Kõik avaekraanil tehtud kohandused hüljatakse ja ekraani suumimine seatakse maksimaalseks.</string>
+    <string name="easy_mode_app_help_3rd_launcher">Kasutage lihtsat režiimi suuremat ekraaniüksuste jaoks. Kui te ei kasuta TouchWiz Home’i, siis teie avaekraani paigutus ei muutu, kuid ekraani suumimisaste seatakse suureks ja fondi suurus seatakse keskmiseks.</string>
     <string name="security_warning_content">Privaatsust saate kaitsta, kui seadistate ekraani vabastamiseks parooli, PIN-koodi või mustri</string>
     <string name="lock_setting_weather_desc">Ilmaseadete kuvamiseks või muutmiseks toksake all valikut ILMATEATE SEADED.</string>
     <string name="lock_setting_weather_btn">Ilma seaded</string>
@@ -3339,7 +3360,7 @@ Downloading via mobile networks may result in additional charges depending on yo
     <string name="disable_hovering_title">Desaktiveerige õhuvaade</string>
     <string name="disable_hovering_summary">Õhuvaade ja TalkBack ei saa olla korraga aktiveeritud. Õhuvaade desaktiveeritakse.</string>
     <string name="pen_settings_pen_input">Otsene pliiatsisisestus</string>
-    <string name="action_memo_onoff_screen_title">Memo väl. ekr.-l</string>
+    <string name="action_memo_onoff_screen_title">Memo väljalülitatud ekraanil</string>
     <string name="screen_off_note_summary">Saate väljalülitatud ekraanil märkusi kirjutada. Lihtsalt eemaldage S Pen ja hakake kirjutama.</string>
     <string name="screen_off_note_summary_jpn">Saate luua märkuseid, kui eemaldate S Peni väljalülitatud ekraani ajal ja kirjutate ekraanile. Memod väljalülitatud ekraanil salvestatakse rakendusse Galaxy Notes.</string>
     <string name="screen_off_note_summary_no_detach">Saate luua märkuseid, kui vajutate pliiatsi nuppu, toksate väljalülitatud ekraani ja seejärel kirjutate sellele. Väljalülitatud ekraani memod salvestatakse rakendusse Samsung Notes.</string>
@@ -3946,7 +3967,7 @@ Mobiilse kuumkoha kasutamine suurendab akutarbimist ja andmekasutust."</string>
     <string name="wfd_descrpition_playsound">Saate esitada heli.</string>
     <string name="wfd_is_not_supported">Funktsioon ei ole toetatud.</string>
     <string name="usbtethering_notify_wifi_is_on_title">Kas lülitada Wi-Fi välja?</string>
-    <string name="usbtethering_notify_wifi_is_on">Wi-Fi ühendus ja USB-modem ei saa olla korraga sisse lülitatud. Lülita Wi-Fi võrk välja.</string>
+    <string name="usbtethering_notify_wifi_is_on">Wi-Fi ühendus ja USB-modem ei saa olla korraga sisse lülitatud. Wi-Fi lülitatakse välja.</string>
     <string name="disable_multi_window_dialog_text">Mitmikaken desaktiveeritakse ja kõik hüpikakendes avatud rakendused suletakse.</string>
     <string name="keyguard_password_attempt_count_pin_code">%d katse jäänud.</string>
     <string name="keyguard_password_attempts_count_pin_code">%d katset jäänud.</string>
@@ -4154,6 +4175,7 @@ SMS-i vastuvõtmine"</string>
     <string name="hdmi_mode_title">HDMI režiim</string>
     <string name="hdmi_mode_dex">Samsung DeX</string>
     <string name="hdmi_mode_mirroring">Screen Mirroring</string>
+    <string name="hdmi_mode_not_available_while_cover_attached">%s pole saadaval, kui kate on ühendatud.</string>
     <string name="screen_timeout_for_dex">Samsung DeX-i ekraani ajalõpp</string>
     <string name="show_virtual_keyboard_for_dex">Ekr. kuvatava klaviatuuri kuvamine Samsung DeX-is</string>
     <string name="comma">,</string>
@@ -4462,7 +4484,7 @@ Saate seda hiljem muuta Bluetoothi seadetes."</string>
     <string name="date_picker_title">Kuupäev</string>
     <string name="time_picker_title">Kellaaeg</string>
     <string name="lock_after_timeout">Lukusta automaatselt</string>
-    <string name="lock_after_timeout_summary">Saate lukustada ekraani %s möödudes pärast selle automaatset väljalülitumist.</string>
+    <string name="lock_after_timeout_summary">Saate telefoni lukustada, kui ekraani automaatsest väljalülitumisest möödub %s.</string>
     <string name="lock_after_timeout_summary_with_exception">Ekraan lukustatakse %1$s pärast seda, kui see lülitub automaatselt välja, v.a kui on hoitud avatuna üksuse %2$s poolt.</string>
     <string name="show_owner_info_on_lockscreen_label">Lukustusekraanil kuvatakse seadme omaniku andmed.</string>
     <string name="owner_info_settings_title">Omaniku teave</string>
@@ -4610,6 +4632,8 @@ Asukoha täpsuse parandamiseks võivad rakendused ja teenused otsida Wi-Fi-võrk
     <string name="wifi_empty_list_user_restricted">Teil pole õigusi, et muuta Wi-Fi seadeid.</string>
     <string name="wifi_setup_wps">Automaatne seadistamine (WPS)</string>
     <string name="wifi_show_advanced">Kuva lisavalikud</string>
+    <string name="wifi_advanced_toggle_description_expanded">Topelttoksake, et ahendada.</string>
+    <string name="wifi_advanced_toggle_description_collapsed">Topelttoksake, et laiendada.</string>
     <string name="wifi_wps_setup_title">WPS-i seadistamine</string>
     <string name="wifi_wps_setup_msg">WPS-i käivitamine…</string>
     <string name="wifi_wps_onstart_pbc">Toksake oma ruuteril Wi-Fi kaitstud seadistuse nuppu. See võib olla WPS või sisaldada seda sümbolit:</string>
@@ -4641,6 +4665,10 @@ Asukoha täpsuse parandamiseks võivad rakendused ja teenused otsida Wi-Fi-võrk
     <string name="wifi_shared">Jagatud</string>
     <string name="wifi_unchanged">(muutmata)</string>
     <string name="wifi_unspecified">(Määratlemata)</string>
+    <string name="wifi_select_cert">Sertifikaadi valimine</string>
+    <string name="wifi_do_not_provide_eap_user_cert">Ära paku</string>
+    <string name="wifi_do_not_validate_eap_server">Ära valideeri</string>
+    <string name="wifi_do_not_validate_eap_server_warning">Sertifikaati ei ole täpsustatud. Teie ühendus ei ole privaatne.</string>
     <string name="wifi_scan_always_turnon_message">%s taotleb luba otsida Wi-Fi võrke isegi siis, kui Wi-Fi on lülitatud välja, et parandada asukoha täpsust teistel eesmärkidel. Kas lubada see kõigile rakendustele?</string>
     <string name="wifi_scan_always_confirm_allow">Luba</string>
     <string name="wifi_scan_always_confirm_deny">Keeldu</string>
@@ -4975,9 +5003,9 @@ Kaaluge parema jõudluse tagamiseks kiirema SD-kaardi või USB-mäluseadme kasut
     <string name="restore_default_apn_completed">Taastatakse APN-i vaikeseaded.</string>
     <string name="reset_network_desc">See lähtestab kõik võrguseaded, k.a:</string>
     <string name="reset_network_button_text">Lähtesta seaded</string>
-    <string name="reset_network_final_desc">Kõik ühenduse seaded lähtestatakse. Seda toimingut ei saa tühistada.</string>
+    <string name="reset_network_final_desc">Kõik võrguseaded lähtestatakse. Seda toimingut ei saa tagasi võtta.</string>
     <string name="reset_network_final_button_text">Lähtesta seaded</string>
-    <string name="reset_network_complete_toast">Ühenduse seaded on lähtestatud.</string>
+    <string name="reset_network_complete_toast">Võrguseaded on lähtestatud.</string>
     <string name="master_clear_title">Tehaseseadete lähtestamine</string>
     <string name="master_clear_accounts">Olete hetkel sisse logitud jargmistele kontodele:</string>
     <string name="master_clear_other_users_present">Lisaks kustutatakse andmed, mis kuuluvad teistele selle seadme kasutajatele.</string>
@@ -6090,6 +6118,7 @@ Kuni seade pole käivitunud, ei saa te kõnesid, sõnumeid ega teavitusi vastu v
     <string name="set_data_limit">Andmepiirangu määramine</string>
     <string name="data_limit">Andmepiirang</string>
     <string name="data_usage_template">%1$s kasutatud vahemikus %2$s</string>
+    <string name="data_usage_template_wifi">Viimase 30 päeva jooksul on kasutatud %s</string>
     <string name="data_usage_other_apps">Kasutuseks olulised rakendused</string>
     <string name="data_saver_title">Andmesäästja</string>
     <string name="unrestricted_data_saver">Rak. lub., kui andmesääst. sees</string>
@@ -6140,6 +6169,7 @@ Kuni seade pole käivitunud, ei saa te kõnesid, sõnumeid ega teavitusi vastu v
     <string name="legacy_dhcp_client_summary">Kasutage uue Androidi DHCP-kliendi asemel Lollipopi DHCP-klienti.</string>
     <string name="screen_off_pocket_title">Ekr. hoidmine väljalül.</string>
     <string name="screen_off_pocket_summary">Saate lasta tõkestada ekraani juhusliku sisselülitamise, kui seade on pimedas kohas, nt taskus või kotis.</string>
+    <string name="noApplications">Kõik selle toiminguga seotud rakendused on inaktiveeritud, blokeeritud või neid pole installitud.</string>
     <string name="confirm_reset_shortcut_manager_throttling_title">Otseteede haldaja hinnangulimiidi lähtestamine</string>
     <string name="confirm_reset_shortcut_manager_throttling_message">Otseteede halduri hinnangulimiidi loendurid lähtestatakse.</string>
 </resources>

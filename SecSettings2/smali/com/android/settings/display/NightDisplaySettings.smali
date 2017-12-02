@@ -247,7 +247,7 @@
 
     invoke-super {p0, p1, p2}, Lcom/android/settings/SettingsPreferenceFragment;->onCreatePreferences(Landroid/os/Bundle;Ljava/lang/String;)V
 
-    const v0, 0x7f0800b4
+    const v0, 0x7f0800b6
 
     invoke-virtual {p0, v0}, Lcom/android/settings/display/NightDisplaySettings;->addPreferencesFromResource(I)V
 
@@ -291,7 +291,7 @@
 
     new-array v1, v6, [Ljava/lang/CharSequence;
 
-    const v2, 0x7f0b1648
+    const v2, 0x7f0b165a
 
     invoke-virtual {p0, v2}, Lcom/android/settings/display/NightDisplaySettings;->getString(I)Ljava/lang/String;
 
@@ -299,7 +299,7 @@
 
     aput-object v2, v1, v3
 
-    const v2, 0x7f0b1649
+    const v2, 0x7f0b165b
 
     invoke-virtual {p0, v2}, Lcom/android/settings/display/NightDisplaySettings;->getString(I)Ljava/lang/String;
 
@@ -307,7 +307,7 @@
 
     aput-object v2, v1, v4
 
-    const v2, 0x7f0b164a
+    const v2, 0x7f0b165c
 
     invoke-virtual {p0, v2}, Lcom/android/settings/display/NightDisplaySettings;->getString(I)Ljava/lang/String;
 

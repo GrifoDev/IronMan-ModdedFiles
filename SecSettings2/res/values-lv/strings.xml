@@ -170,6 +170,8 @@
     <string name="wifi_allow_scan_with_traffic_summary">Atļaujiet vai liedziet Wi-Fi viesabonēšanas automātisku meklēšanu, ņemot vērā izmantoto datu apjomu.</string>
     <string name="select_logd_size_title">Bufera lielums žurnāliem</string>
     <string name="select_logd_size_dialog_title">Izvēlieties katra žurnāla bufera maksimālo lielumu</string>
+    <string name="dev_logpersist_clear_warning_title">Vai notīrīt pastāvīgā reģistrēt. krātuvi?</string>
+    <string name="dev_logpersist_clear_warning_message">Reģistrētāja dati tiks izdzēsti, kad tiks izslēgts pastāvīgais reģistrētājs.</string>
     <string name="select_logpersist_title">Pastāvīgi saglab. žurnāla datus</string>
     <string name="select_logpersist_dialog_title">Izv. žurnālu buferus, ko sagl. pastāvīgi.</string>
     <string name="select_usb_configuration_title">USB konfigurācija</string>
@@ -982,6 +984,7 @@ Atskaņotā skaņa 2 pievienotajās ierīcēs var mazliet atšķirties."</string
     <string name="bluetooth_avc_available_description">Savienotā Bluetooth ierīce atbalsta multivides skaļuma līmeņa sinhronizāciju, un Bluetooth ierīces iestatītais skaļuma līmenis tiks sinhronizēts ar jūsu tālruni.</string>
     <string name="bluetooth_enter_pin_msg">Ievadiet PIN kodu, lai izveidotu savienojumu ar %s (izmēģiniet 0000 vai 1234).</string>
     <string name="bluetooth_pin_maximum_number_message">Sasniegts maksimālais rakstzīmju skaits.</string>
+    <string name="bluetooth_frp_permission_message">Šim zvanam nevar izmantot Bluetooth ierīci.</string>
     <string name="settings_menu_done">Gatavs</string>
     <string name="usb_tethering_unavailable_subtext_tmo">USB not connected</string>
     <string name="usb_tethering_available_subtext_tmo">USB connected, check to tether</string>
@@ -1481,7 +1484,7 @@ Pieskarieties pie Labi, lai atļautu palielināt spilgtumu virs drošā līmeņa
     <string name="navigationbar_pressure_sensitivity_title">Turiet nospiestu sākuma pogu</string>
     <string name="navigationbar_pressure_sensitivity_summary">Izmantojiet sākuma pogu, kad tā ir paslēpta, nospiežot to ilgāk nekā parasti.</string>
     <string name="navigationbar_pressure_sensitivity_level_summary">Spiediena līmenis: %1$d no %2$d</string>
-    <string name="navigationbar_pressure_sensitivity_description_off">Izmantojiet sākuma pogu, kad tā ir paslēpta, nospiežot to ilgāk nekā parasti.</string>
+    <string name="navigationbar_pressure_sensitivity_description_off">Pielāgojiet to, cik stipri ir jānospiež sākuma poga.</string>
     <string name="navigationbar_pressure_low">Vieglāk</string>
     <string name="navigationbar_pressure_high">Stiprāk</string>
     <string name="navigationbar_hide_bar">Rādīšanas un slēpšanas poga</string>
@@ -1620,7 +1623,7 @@ Pieskarieties pie Labi, lai atļautu palielināt spilgtumu virs drošā līmeņa
     <string name="crypt_keeper_decrypt_title">Atšifrēt ierīci</string>
     <string name="crypt_keeper_decrypt_summary">Ierīce ir šifrēta.</string>
     <string name="crypt_keeper_type_pin">PIN kods</string>
-    <string name="crypt_keeper_type_pattern">Figūra</string>
+    <string name="crypt_keeper_type_pattern">figūra</string>
     <string name="crypt_keeper_type_password">Parole</string>
     <string name="crypt_keeper_type_direction">Bloķēšana ar virzienu</string>
     <string name="crypt_keeper_confirm_title_dec">Apstiprināt atšifrēšanu</string>
@@ -1704,7 +1707,11 @@ Atšifrēšanas laikā SD karti nevar izmantot."</string>
     <string name="crypt_keeper_confirm_title">Apstiprināt šifrēšanu</string>
     <string name="crypt_keeper_final_desc">Ierīces šifrēšanu nevar atsaukt, un, ja pārtrauksit procesu, dati tiks zaudēti. Šifrēšana var ilgt stundu vai vairāk, un tās laikā ierīce tiks vairākas reizes restartēta un to nevarēs izmantot.</string>
     <string name="crypt_keeper_setup_title">Notiek šifrēšana…</string>
-    <string name="crypt_keeper_warn_wipe">Jums ir atlikuši %d mēģinājumi, lai startētu savu ierīci, pēc tam tajā tiks atjaunoti rūpnīcas noklusējuma iestatījumi. Tādējādi tiks izdzēsti visi dati, tostarp faili un lejupielādētās programmas.</string>
+    <string name="crypt_keeper_warn_wipe">"Atlikuši %1$d mēģinājumi, pirms tālrunī tiks atjaunoti rūpnīcas noklusējuma iestatījumi. Tādējādi tiks izdzēsti visi dati, tostarp faili un lejupielādētās programmas.
+
+Ja tālrunis ir atiestatīts, jums, iespējams, būs jāievada %2$s informācija (e-pasta adrese un parole), kas ir saistīta ar šo tālruni, lai to atkal varētu izmantot."</string>
+    <string name="crypt_keeper_samsung_account">Samsung account</string>
+    <string name="crypt_keeper_google_account">Google konts</string>
     <string name="crypt_keeper_failed_title">Šifrēšana neizdevās</string>
     <string name="crypt_keeper_failed_summary">Nevar startēt ierīci. Šifrēšanas process tika pārtraukts. Atjaunojiet ierīcē rūpnīcas noklusējuma iestatījumus. Tādējādi tiks izdzēsti visi jūsu dati.</string>
     <string name="crypt_keeper_data_corrupted_title">Ierīces krātuve ir bojāta</string>
@@ -1723,10 +1730,13 @@ Atšifrēšanas laikā SD karti nevar izmantot."</string>
     <string name="cryptkeeper_wrong_pin">Ievadīts nepareizs PIN kods</string>
     <string name="cryptkeeper_wrong_direction">Uzzīmēts nepareizs virziens</string>
     <string name="checking_decryption">Pārbauda…</string>
-    <string name="crypt_keeper_last_warn_wipe">Lai startētu ierīci, jums ir atlicis 1 mēģinājums, pēc tam tajā tiks atjaunoti rūpnīcas noklusējuma iestatījumi. Tādējādi tiks izdzēsti visi dati, tostarp faili un lejupielādētās programmas.</string>
+    <string name="crypt_keeper_last_warn_wipe">"Atlicis 1 mēģinājums, pirms tālrunī tiks atjaunoti rūpnīcas noklusējuma iestatījumi. Tādējādi tiks izdzēsti visi dati, tostarp faili un lejupielādētās programmas.
+
+Ja tālrunis ir atiestatīts, jums, iespējams, būs jāievada %s informācija (e-pasta adrese un parole), kas ir saistīta ar šo tālruni, lai to atkal varētu izmantot."</string>
     <string name="crypt_keeper_failed_title_dec">Atšifrēšana neizdevās.</string>
     <string name="crypt_keeper_failed_summary_dec">Nevar pabeigt atšifrēšanu, jo tā tika pārtraukta. Pirms lietošanas atiestatiet sākotnējos datus (izdzēsiet visus datus).</string>
     <string name="crypt_keeper_set_screen_lock_type">Iestatīt ekrāna bloķ. veidu</string>
+    <string name="crypt_keeper_warning_keyboard_cover_does_not_work">Pēc tālruņa restartēšanas tastatūras pārsegs var nedarboties.</string>
     <string name="encryption_interstitial_message">"Lai aizsargātu savu tālruni, varat pieprasīt pirms tālruņa startēšanas ievadīt jūsu %s. Tas palīdz aizsargāt datus, ja tālrunis ir pazaudēts vai nozagts. Dažas programmas saskaņā ar ierīces šifrēšanas politiku var pieprasīt veikt drošo startēšanu, lai piekļūtu funkcijām, piemēram, e-pasta sinhronizācijai.
 
 Jūs nesaņemsit zvanus, ziņas, paziņojumus un signālus, kamēr tālrunis nebūs startēts."</string>
@@ -1971,6 +1981,12 @@ You will also need it when:"</string>
     <string name="lockpassword_confirm_your_pin_with_fingerprint">Izmantojiet pirksta nospiedumu vai ievadiet pašreizējo PIN kodu.</string>
     <string name="lockpassword_confirm_your_pattern_with_fingerprint">Izmantojiet pirksta nospiedumu vai uzzīmējiet pašreizējo figūru.</string>
     <string name="lockpassword_confirm_your_password_with_fingerprint">Izmantojiet pirksta nospiedumu vai ievadiet pašreizējo paroli.</string>
+    <string name="lockpassword_confirm_your_pin_with_iris">Izmantojiet savas varavīksnenes vai ievadiet pašreizējo PIN kodu.</string>
+    <string name="lockpassword_confirm_your_pattern_with_iris">Izmantojiet savas varavīksnenes vai uzzīmējiet pašreizējo figūru.</string>
+    <string name="lockpassword_confirm_your_password_with_iris">Izmantojiet savas varavīksnenes vai ievadiet pašreizējo paroli.</string>
+    <string name="lockpassword_confirm_your_pin_with_biometrics">Izmantojiet biometrijas datus vai ievadiet PIN kodu.</string>
+    <string name="lockpassword_confirm_your_pattern_with_biometrics">Izmantojiet biometrijas datus vai uzzīmējiet figūru.</string>
+    <string name="lockpassword_confirm_your_password_with_biometrics">Izmantojiet biometrijas datus vai ievadiet paroli.</string>
     <string name="lockpassword_confirm_your_pin_instead_of_fingerprint">Pirkstu nospiedumu atpazīšanas vietā ievadiet PIN kodu.</string>
     <string name="lockpassword_confirm_your_pattern_instead_of_fingerprint">Pirkstu nospiedumu atpazīšanas vietā uzvelciet figūru.</string>
     <string name="lockpassword_confirm_your_password_instead_of_fingerprint">Pirkstu nospiedumu atpazīšanas vietā ievadiet paroli.</string>
@@ -2045,6 +2061,7 @@ Izvēlieties, kā atbloķēt tālruni. Sejas atbloķēšanu un varavīksnenes at
     <string name="face_status_timeout">Taimauts. Mēģiniet vēlāk.</string>
     <string name="okay">Labi</string>
     <string name="face_samsung_account_button">Izmantot Samsung account</string>
+    <string name="face_galaxy_account_button">Lietot Galaxy kontu</string>
     <string name="face_error_DB_corrupted">Radās problēma ar jūsu sejas datiem. Reģistrējiet vēlreiz savu seju.</string>
     <string name="face_error_DB_corrupted_popup_title">Reģistrējiet vēlreiz savu seju</string>
     <string name="face_error_timeout">Jūsu seja netika noteikta.</string>
@@ -2155,7 +2172,7 @@ Ieslēdziet funkciju Atbloķēšana ar varavīksneni, lai tālruņa atbloķēša
     <string name="biometrics_backup_locktype_title">Iestatīt varavīksnenes drošību</string>
     <string name="biometrics_register_your_iris">Reģistrējiet savas varavīksnenes.</string>
     <string name="biometrics_backup_locktype_summary">Lai ierīces atbloķēšanai izmantotu savas varavīksnenes, ir jāiestata figūra, PIN kods vai parole.</string>
-    <string name="biometrics_backup_locktype_message">Lai tālruņa atbloķēšanai vai drošai verifikācijai izmantotu savas varavīksnenes, rīkojieties šādi:</string>
+    <string name="biometrics_backup_locktype_message">Lai varavīksnenes izmantotu tālruņa atbloķēšanai vai sevis verificēšanai programmās, rīkojieties šādi:</string>
     <string name="iris_delete_popup_title">Vai noņemt varavīksnes datus?</string>
     <string name="iris_delete_popup_message">Vai noņemt varavīksnes datus?</string>
     <string name="iris_delete_popup_message_with_related_func">Funkcijas, kas izmanto varavīksnenes, tiks izslēgtas.</string>
@@ -2231,6 +2248,9 @@ Izvēlieties, kā atbloķēt tālruni. Varavīksnenes atbloķēšanu un sejas at
     <string name="biometrics_dex_cant_use_msg">Režīmā Samsung DeX nevar izmantot %s.</string>
     <string name="biometrics_dex_closed_to_switch">Funkcija %s tika aizvērta, lai pārslēgtos uz režīmu Samsung DeX.</string>
     <string name="biometircs_dex_cant_use_toast">Programmu %s nevar palaist režīmā Samsung DeX. Mēģiniet palaist tālruņa režīmā.</string>
+    <string name="iris_guide_text_preview">Sk. šeit, lai izm. var.</string>
+    <string name="iris_guide_enable_toggle">Piesk. šeit, lai izm. varav.</string>
+    <string name="iris_cannot_verify">Nevarēja verificēt varavīksnenes</string>
     <string name="knox_twofactor_bio_description">Izvēlieties savu biometriskās bloķēšanas veidu un otru bloķēšanas veidu, lai atbloķētu %s.</string>
     <string name="fingerprint_registered">Reģistrētie pirkstu nospiedumi tiks izmantoti ar izvēlēto atbloķēšanas metodi.</string>
     <string name="knox_twofactor_description">Izvēlieties savus biometrijas datus un otru bloķēšanas veidu, lai atbloķētu %s.</string>
@@ -3094,6 +3114,7 @@ Lūdzu, mēģiniet vēlreiz."</string>
     <string name="easy_mode_app_help">Atvieglojiet ierīces lietošanu, izmantojot vienkāršāku sākuma ekrāna izkārtojumu un lielākus ekrāna objektus.</string>
     <string name="easy_mode_app_help_dream_1">Izmantojiet vienkāršu sākuma ekrāna izkārtojumu un lielākus ekrāna objektus.</string>
     <string name="easy_mode_app_help_dream_2">Visi pielāgojumi, ko esat veicis sākuma ekrānā, tiks atmesti, un ekrāna tālummaiņai tiks iestatīta maksimālā vērtība.</string>
+    <string name="easy_mode_app_help_3rd_launcher">Lietojiet Vienkāršo režīmu lielākiem ekrāna objektiem. Ja neizmantojat TouchWiz sākuma ekrānu, jūsu sākuma ekrāna izkārtojums netiks mainīts, bet ekrāna tālummaiņas iestatījums būs Liela, un fonta lieluma iestatījums būs Vidējs.</string>
     <string name="security_warning_content">Varat aizsargāt savu konfidencialitāti, iestatot paroli, PIN kodu vai rakstu, kas jāievada, lai atbloķētu ekrānu</string>
     <string name="lock_setting_weather_desc">Lai skatītu vai mainītu laika prognozes iestatījumus, pieskarieties pie LAIKA PROGNOZES IESTATĪJUMI.</string>
     <string name="lock_setting_weather_btn">Laika prognožu iestatījumi</string>
@@ -3340,7 +3361,7 @@ Downloading via mobile networks may result in additional charges depending on yo
     <string name="disable_hovering_title">Deaktivizējiet skatu no augšas</string>
     <string name="disable_hovering_summary">Skatu no augšas un pakalpojumu TalkBack nevar vienlaikus aktivizēt. Skats no augšas tiks deaktivizēts.</string>
     <string name="pen_settings_pen_input">Tiešā pildspalvas ievade</string>
-    <string name="action_memo_onoff_screen_title">Izsl. ekr. atg.</string>
+    <string name="action_memo_onoff_screen_title">Izslēgta ekrāna atgādne</string>
     <string name="screen_off_note_summary">Rakstiet piezīmes, kad ekrāns ir izslēgts. Vienkārši paņemiet S Pen rīku un sāciet rakstīt.</string>
     <string name="screen_off_note_summary_jpn">Veidojiet piezīmes, atvienojot S Pen rīku, kad ekrāns ir izslēgts, un rakstot ekrānā. Izslēgta ekrāna atgādnes tiks saglabātas programmā Galaxy Notes.</string>
     <string name="screen_off_note_summary_no_detach">Izveidojiet piezīmes, nospiežot pildspalvas pogu, pieskaroties ekrānam, kad tas ir izslēgts, un pēc tam rakstot uz tā. Izslēgta ekrāna atgādnes tiks saglabātas programmā Samsung Notes.</string>
@@ -3948,7 +3969,7 @@ Mobilā tīklāja izmantošana palielina akumulatora enerģijas patēriņu un da
     <string name="wfd_descrpition_playsound">Atskaņojiet skaņu.</string>
     <string name="wfd_is_not_supported">Šī funkcija netiek atbalstīta.</string>
     <string name="usbtethering_notify_wifi_is_on_title">Vai izslēgt Wi-Fi?</string>
-    <string name="usbtethering_notify_wifi_is_on">Wi-Fi un USB piesaisti nevar ieslēgt vienlaikus. Izslēdziet Wi-Fi.</string>
+    <string name="usbtethering_notify_wifi_is_on">Wi-Fi un USB piesaiste nevar būt vienlaikus ieslēgta. Wi-Fi savienojums tiks izslēgts.</string>
     <string name="disable_multi_window_dialog_text">Vairāklogu režīms tiks deaktivizēts un visas uznirstošajos logos atvērtās programmas tiks aizvērtas.</string>
     <string name="keyguard_password_attempt_count_pin_code">Atlicis %d mēģinājums.</string>
     <string name="keyguard_password_attempts_count_pin_code">Atlikuši %d mēģinājumi.</string>
@@ -4156,6 +4177,7 @@ Saņemt īsziņu"</string>
     <string name="hdmi_mode_title">HDMI režīms</string>
     <string name="hdmi_mode_dex">Samsung DeX</string>
     <string name="hdmi_mode_mirroring">Screen Mirroring</string>
+    <string name="hdmi_mode_not_available_while_cover_attached">Funkcija %s nav pieejama, kamēr ir pievienots pārsegs.</string>
     <string name="screen_timeout_for_dex">Samsung DeX ekrāna taimauts</string>
     <string name="show_virtual_keyboard_for_dex">Rādīt ekrāna tastatūru pakalpojumā Samsung DeX</string>
     <string name="comma">,</string>
@@ -4464,7 +4486,7 @@ Vēlāk to varat mainīt Bluetooth iestatījumos."</string>
     <string name="date_picker_title">Datums</string>
     <string name="time_picker_title">Laiks</string>
     <string name="lock_after_timeout">Bloķēt automātiski</string>
-    <string name="lock_after_timeout_summary">Automātiski bloķējiet ekrānu %s pēc tā izslēgšanās.</string>
+    <string name="lock_after_timeout_summary">Bloķēt tālruni %s pēc automātiskas ekrāna izslēgšanās.</string>
     <string name="lock_after_timeout_summary_with_exception">Bloķēt ekrānu %1$s, kad tas ir automātiski izslēdzies, izņemot, ja tiek turēts atbloķēts, izmantojot %2$s.</string>
     <string name="show_owner_info_on_lockscreen_label">Rādīt ierīces īpašnieka informāciju bloķēšanas ekrānā.</string>
     <string name="owner_info_settings_title">Informācija par īpašnieku</string>
@@ -4612,6 +4634,8 @@ Lai uzlabotu atrašanās vietas noteikšanas precizitāti, programmas un pakalpo
     <string name="wifi_empty_list_user_restricted">Jums nav atļaujas mainīt Wi-Fi iestatījumus.</string>
     <string name="wifi_setup_wps">Automātiska iestatīšana (WPS)</string>
     <string name="wifi_show_advanced">Rādīt papildu iespējas</string>
+    <string name="wifi_advanced_toggle_description_expanded">Veiciet dubultskārienu, lai sakļautu.</string>
+    <string name="wifi_advanced_toggle_description_collapsed">Veiciet dubultskārienu, lai izvērstu.</string>
     <string name="wifi_wps_setup_title">WPS iestatīšana</string>
     <string name="wifi_wps_setup_msg">Startē WPS…</string>
     <string name="wifi_wps_onstart_pbc">Pieskarieties Wi-Fi aizsargātas iestatīšanas pogai uz maršrutētāja. Tā var būt nodēvēta kā WPS vai apzīmēta ar šādu simbolu:</string>
@@ -4643,6 +4667,10 @@ Lai uzlabotu atrašanās vietas noteikšanas precizitāti, programmas un pakalpo
     <string name="wifi_shared">Kopīgots</string>
     <string name="wifi_unchanged">(bez izmaiņām)</string>
     <string name="wifi_unspecified">(Nav norādīts)</string>
+    <string name="wifi_select_cert">Izvēlieties sertifikātu</string>
+    <string name="wifi_do_not_provide_eap_user_cert">Nenodrošināt</string>
+    <string name="wifi_do_not_validate_eap_server">Neapstiprināt</string>
+    <string name="wifi_do_not_validate_eap_server_warning">Nav norādīts neviens sertifikāts. Jūsu savienojums nebūs privāts.</string>
     <string name="wifi_scan_always_turnon_message">Lai uzlabotu atrašanās vietas noteikšanu un veiktu citas darbības, %s pieprasa atļauju meklēt Wi-Fi tīklus arī tad, ja Wi-Fi funkcija ir izslēgta. Vai atļaut to visām programmām?</string>
     <string name="wifi_scan_always_confirm_allow">Atļaut</string>
     <string name="wifi_scan_always_confirm_deny">Atteikt</string>
@@ -4977,9 +5005,9 @@ Apsveriet ātrākas SD kartes vai USB krātuves ierīces izmantošanu, lai uzlab
     <string name="restore_default_apn_completed">Ir atjaunoti APN noklusējuma iestatījumi.</string>
     <string name="reset_network_desc">Tādējādi tiks atiestatīti visi tīkla iestatījumi, tostarp:</string>
     <string name="reset_network_button_text">Atjaunot iestatījumus</string>
-    <string name="reset_network_final_desc">Visi savienojuma iestatījumi tiks atiestatīti. Šo darbību nevar atsaukt.</string>
+    <string name="reset_network_final_desc">Visi tīkla iestatījumi tiks atiestatīti. Šo darbību nevar atsaukt.</string>
     <string name="reset_network_final_button_text">Atjaunot iestatījumus</string>
-    <string name="reset_network_complete_toast">Savienojuma iestatījumi ir atiestatīti.</string>
+    <string name="reset_network_complete_toast">Tīkla iestatījumi ir atiestatīti.</string>
     <string name="master_clear_title">Sākotnējo datu atiestate</string>
     <string name="master_clear_accounts">Jūs šobrīd esat pierakstījies šādos kontos:</string>
     <string name="master_clear_other_users_present">Tiks izdzēsti arī citām personām piederošie šajā ierīcē esošie dati.</string>
@@ -6092,6 +6120,7 @@ Jūs nesaņemsit zvanus, ziņas vai paziņojumus, kā arī netiks atskaņota mod
     <string name="set_data_limit">Iestatīt datu ierobežojumu</string>
     <string name="data_limit">Datu ierobežojums</string>
     <string name="data_usage_template">Laika posmā %2$s izmantoti %1$s</string>
+    <string name="data_usage_template_wifi">Pēdējās 30 dienās izmantoti %s</string>
     <string name="data_usage_other_apps">Saist. progr., kas iekļ. liet.</string>
     <string name="data_saver_title">Datu taupīšana</string>
     <string name="unrestricted_data_saver">Atļ. pr., ja iesl. Datu taup.</string>
@@ -6142,6 +6171,7 @@ Jūs nesaņemsit zvanus, ziņas vai paziņojumus, kā arī netiks atskaņota mod
     <string name="legacy_dhcp_client_summary">Lietot DHCP klientu no operētājsistēmas Lollipop, nevis jauno Android DHCP klientu.</string>
     <string name="screen_off_pocket_title">Atstāt ekrānu izslēgtu</string>
     <string name="screen_off_pocket_summary">Novērsiet nejaušu ekrāna ieslēgšanu, kad ierīce atrodas tumšā vietā, piemēram, kabatā vai somā.</string>
+    <string name="noApplications">Visas ar šo darbību saistītās programmas ir deaktivizētas, bloķētas vai nav instalētas.</string>
     <string name="confirm_reset_shortcut_manager_throttling_title">Atiestatīt īsceļu pārvaldnieka skaita ierobežojumu</string>
     <string name="confirm_reset_shortcut_manager_throttling_message">Īsceļu pārvaldnieka skaita ierobežotāja skaitītāji tiks atiestatīti.</string>
 </resources>

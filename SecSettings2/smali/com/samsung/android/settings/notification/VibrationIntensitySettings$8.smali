@@ -54,13 +54,13 @@
 
     move-result-object v16
 
-    if-eqz v16, :cond_23
+    if-eqz v16, :cond_24
 
     invoke-virtual/range {v16 .. v16}, Lcom/samsung/android/settings/notification/VibrationSeekBarPreference;->getInitFinish()Z
 
     move-result v18
 
-    if-eqz v18, :cond_23
+    if-eqz v18, :cond_24
 
     const-string/jumbo v18, "Level"
 
@@ -193,7 +193,7 @@
 
     move-result v18
 
-    if-nez v18, :cond_d
+    if-nez v18, :cond_e
 
     move-object/from16 v0, p0
 
@@ -290,7 +290,7 @@
 
     move-result v18
 
-    if-nez v18, :cond_13
+    if-nez v18, :cond_14
 
     move-object/from16 v0, p0
 
@@ -374,7 +374,7 @@
 
     move/from16 v1, v19
 
-    if-ne v0, v1, :cond_19
+    if-ne v0, v1, :cond_1a
 
     move-object/from16 v0, p0
 
@@ -450,7 +450,7 @@
 
     move-result v18
 
-    if-nez v18, :cond_1a
+    if-nez v18, :cond_1b
 
     move-object/from16 v0, p0
 
@@ -524,7 +524,7 @@
 
     move/from16 v1, v18
 
-    if-ne v0, v1, :cond_1d
+    if-ne v0, v1, :cond_1e
 
     const/4 v7, 0x1
 
@@ -537,7 +537,7 @@
 
     move/from16 v1, v18
 
-    if-ge v0, v1, :cond_1b
+    if-ge v0, v1, :cond_1c
 
     const/16 v18, 0x4
 
@@ -623,7 +623,7 @@
 
     move/from16 v1, v18
 
-    if-ne v0, v1, :cond_21
+    if-ne v0, v1, :cond_22
 
     const/4 v8, 0x1
 
@@ -636,7 +636,7 @@
 
     move/from16 v1, v18
 
-    if-ge v0, v1, :cond_1f
+    if-ge v0, v1, :cond_20
 
     const/16 v18, 0x4
 
@@ -777,11 +777,12 @@
 
     div-int/lit8 v12, v18, 0x64
 
-    if-nez v12, :cond_b
+    if-nez v14, :cond_c
 
-    const/4 v12, 0x1
+    const/4 v12, 0x0
 
     :cond_b
+    :goto_8
     invoke-virtual/range {v16 .. v16}, Lcom/samsung/android/settings/notification/VibrationSeekBarPreference;->getSeekBar()Landroid/widget/SeekBar;
 
     move-result-object v18
@@ -792,7 +793,7 @@
 
     move/from16 v0, v18
 
-    if-ne v0, v12, :cond_c
+    if-ne v0, v12, :cond_d
 
     move-object/from16 v0, p0
 
@@ -812,7 +813,7 @@
 
     invoke-virtual/range {v18 .. v21}, Lcom/samsung/android/settings/bixby/EmSettingsManager;->setNlgScreenParam(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
 
-    :goto_8
+    :goto_9
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/samsung/android/settings/notification/VibrationIntensitySettings$8;->this$0:Lcom/samsung/android/settings/notification/VibrationIntensitySettings;
@@ -878,6 +879,13 @@
     goto/16 :goto_1
 
     :cond_c
+    if-nez v12, :cond_b
+
+    const/4 v12, 0x1
+
+    goto :goto_8
+
+    :cond_d
     invoke-virtual/range {v16 .. v16}, Lcom/samsung/android/settings/notification/VibrationSeekBarPreference;->getSeekBar()Landroid/widget/SeekBar;
 
     move-result-object v18
@@ -912,9 +920,9 @@
 
     invoke-virtual/range {v18 .. v21}, Lcom/samsung/android/settings/bixby/EmSettingsManager;->setNlgScreenParam(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
 
-    goto :goto_8
+    goto :goto_9
 
-    :cond_d
+    :cond_e
     :try_start_1
     move-object/from16 v0, p0
 
@@ -948,15 +956,15 @@
 
     add-int/2addr v13, v9
 
-    if-lez v14, :cond_e
+    if-lez v14, :cond_f
 
     const/16 v18, 0x64
 
     move/from16 v0, v18
 
-    if-le v14, v0, :cond_f
+    if-le v14, v0, :cond_10
 
-    :cond_e
+    :cond_f
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/samsung/android/settings/notification/VibrationIntensitySettings$8;->this$0:Lcom/samsung/android/settings/notification/VibrationIntensitySettings;
@@ -1028,7 +1036,7 @@
 
     return-void
 
-    :cond_f
+    :cond_10
     invoke-virtual/range {v16 .. v16}, Lcom/samsung/android/settings/notification/VibrationSeekBarPreference;->getSeekBar()Landroid/widget/SeekBar;
 
     move-result-object v18
@@ -1039,7 +1047,7 @@
 
     move/from16 v0, v18
 
-    if-ne v9, v0, :cond_10
+    if-ne v9, v0, :cond_11
 
     move-object/from16 v0, p0
 
@@ -1065,8 +1073,8 @@
 
     goto/16 :goto_0
 
-    :cond_10
-    if-ne v9, v13, :cond_11
+    :cond_11
+    if-ne v9, v13, :cond_12
 
     move-object/from16 v0, p0
 
@@ -1088,7 +1096,7 @@
 
     goto/16 :goto_0
 
-    :cond_11
+    :cond_12
     invoke-virtual/range {v16 .. v16}, Lcom/samsung/android/settings/notification/VibrationSeekBarPreference;->getSeekBar()Landroid/widget/SeekBar;
 
     move-result-object v18
@@ -1099,7 +1107,7 @@
 
     move/from16 v0, v18
 
-    if-le v13, v0, :cond_12
+    if-le v13, v0, :cond_13
 
     invoke-virtual/range {v16 .. v16}, Lcom/samsung/android/settings/notification/VibrationSeekBarPreference;->getSeekBar()Landroid/widget/SeekBar;
 
@@ -1109,7 +1117,7 @@
 
     move-result v13
 
-    :cond_12
+    :cond_13
     invoke-virtual/range {v16 .. v16}, Lcom/samsung/android/settings/notification/VibrationSeekBarPreference;->getSeekBar()Landroid/widget/SeekBar;
 
     move-result-object v18
@@ -1180,7 +1188,7 @@
 
     goto/16 :goto_0
 
-    :cond_13
+    :cond_14
     :try_start_2
     move-object/from16 v0, p0
 
@@ -1214,15 +1222,15 @@
 
     sub-int v13, v9, v13
 
-    if-lez v14, :cond_14
+    if-lez v14, :cond_15
 
     const/16 v18, 0x64
 
     move/from16 v0, v18
 
-    if-le v14, v0, :cond_15
+    if-le v14, v0, :cond_16
 
-    :cond_14
+    :cond_15
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/samsung/android/settings/notification/VibrationIntensitySettings$8;->this$0:Lcom/samsung/android/settings/notification/VibrationIntensitySettings;
@@ -1294,8 +1302,8 @@
 
     return-void
 
-    :cond_15
-    if-nez v9, :cond_16
+    :cond_16
+    if-nez v9, :cond_17
 
     move-object/from16 v0, p0
 
@@ -1321,13 +1329,13 @@
 
     goto/16 :goto_3
 
-    :cond_16
-    if-gez v13, :cond_17
+    :cond_17
+    if-gez v13, :cond_18
 
     const/4 v13, 0x0
 
-    :cond_17
-    if-ne v9, v13, :cond_18
+    :cond_18
+    if-ne v9, v13, :cond_19
 
     move-object/from16 v0, p0
 
@@ -1349,7 +1357,7 @@
 
     goto/16 :goto_3
 
-    :cond_18
+    :cond_19
     invoke-virtual/range {v16 .. v16}, Lcom/samsung/android/settings/notification/VibrationSeekBarPreference;->getSeekBar()Landroid/widget/SeekBar;
 
     move-result-object v18
@@ -1420,7 +1428,7 @@
 
     goto/16 :goto_3
 
-    :cond_19
+    :cond_1a
     new-instance v5, Landroid/view/KeyEvent;
 
     const/16 v18, 0x0
@@ -1485,7 +1493,7 @@
 
     goto/16 :goto_4
 
-    :cond_1a
+    :cond_1b
     new-instance v5, Landroid/view/KeyEvent;
 
     const/16 v18, 0x0
@@ -1550,8 +1558,8 @@
 
     goto/16 :goto_5
 
-    :cond_1b
-    if-eqz v7, :cond_1c
+    :cond_1c
+    if-eqz v7, :cond_1d
 
     move-object/from16 v0, p0
 
@@ -1575,7 +1583,7 @@
 
     invoke-virtual/range {v18 .. v21}, Lcom/samsung/android/settings/bixby/EmSettingsManager;->setNlgScreenParam(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
 
-    :goto_9
+    :goto_a
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/samsung/android/settings/notification/VibrationIntensitySettings$8;->this$0:Lcom/samsung/android/settings/notification/VibrationIntensitySettings;
@@ -1606,7 +1614,7 @@
 
     goto/16 :goto_1
 
-    :cond_1c
+    :cond_1d
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/samsung/android/settings/notification/VibrationIntensitySettings$8;->this$0:Lcom/samsung/android/settings/notification/VibrationIntensitySettings;
@@ -1629,9 +1637,9 @@
 
     invoke-virtual/range {v18 .. v21}, Lcom/samsung/android/settings/bixby/EmSettingsManager;->setNlgScreenParam(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
 
-    goto :goto_9
+    goto :goto_a
 
-    :cond_1d
+    :cond_1e
     invoke-virtual/range {v16 .. v16}, Lcom/samsung/android/settings/notification/VibrationSeekBarPreference;->getSeekBar()Landroid/widget/SeekBar;
 
     move-result-object v18
@@ -1652,7 +1660,7 @@
 
     move/from16 v1, v19
 
-    if-ne v0, v1, :cond_1e
+    if-ne v0, v1, :cond_1f
 
     move-object/from16 v0, p0
 
@@ -1676,9 +1684,9 @@
 
     invoke-virtual/range {v18 .. v21}, Lcom/samsung/android/settings/bixby/EmSettingsManager;->setNlgScreenParam(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
 
-    goto :goto_9
+    goto :goto_a
 
-    :cond_1e
+    :cond_1f
     invoke-virtual/range {v16 .. v16}, Lcom/samsung/android/settings/notification/VibrationSeekBarPreference;->getSeekBar()Landroid/widget/SeekBar;
 
     move-result-object v18
@@ -1725,10 +1733,10 @@
 
     invoke-virtual/range {v18 .. v21}, Lcom/samsung/android/settings/bixby/EmSettingsManager;->setNlgScreenParam(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
 
-    goto/16 :goto_9
+    goto/16 :goto_a
 
-    :cond_1f
-    if-eqz v8, :cond_20
+    :cond_20
+    if-eqz v8, :cond_21
 
     move-object/from16 v0, p0
 
@@ -1752,7 +1760,7 @@
 
     invoke-virtual/range {v18 .. v21}, Lcom/samsung/android/settings/bixby/EmSettingsManager;->setNlgScreenParam(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
 
-    :goto_a
+    :goto_b
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/samsung/android/settings/notification/VibrationIntensitySettings$8;->this$0:Lcom/samsung/android/settings/notification/VibrationIntensitySettings;
@@ -1783,7 +1791,7 @@
 
     goto/16 :goto_1
 
-    :cond_20
+    :cond_21
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/samsung/android/settings/notification/VibrationIntensitySettings$8;->this$0:Lcom/samsung/android/settings/notification/VibrationIntensitySettings;
@@ -1806,9 +1814,9 @@
 
     invoke-virtual/range {v18 .. v21}, Lcom/samsung/android/settings/bixby/EmSettingsManager;->setNlgScreenParam(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
 
-    goto :goto_a
+    goto :goto_b
 
-    :cond_21
+    :cond_22
     invoke-virtual/range {v16 .. v16}, Lcom/samsung/android/settings/notification/VibrationSeekBarPreference;->getSeekBar()Landroid/widget/SeekBar;
 
     move-result-object v18
@@ -1817,7 +1825,7 @@
 
     move-result v18
 
-    if-nez v18, :cond_22
+    if-nez v18, :cond_23
 
     move-object/from16 v0, p0
 
@@ -1841,7 +1849,7 @@
 
     invoke-virtual/range {v18 .. v21}, Lcom/samsung/android/settings/bixby/EmSettingsManager;->setNlgScreenParam(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
 
-    :goto_b
+    :goto_c
     const-string/jumbo v18, "VibrationIntensity"
 
     new-instance v19, Ljava/lang/StringBuilder;
@@ -1882,9 +1890,9 @@
 
     invoke-static/range {v18 .. v19}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    goto/16 :goto_a
+    goto/16 :goto_b
 
-    :cond_22
+    :cond_23
     invoke-virtual/range {v16 .. v16}, Lcom/samsung/android/settings/notification/VibrationSeekBarPreference;->getSeekBar()Landroid/widget/SeekBar;
 
     move-result-object v18
@@ -1919,9 +1927,9 @@
 
     invoke-virtual/range {v18 .. v21}, Lcom/samsung/android/settings/bixby/EmSettingsManager;->setNlgScreenParam(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
 
-    goto :goto_b
+    goto :goto_c
 
-    :cond_23
+    :cond_24
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/samsung/android/settings/notification/VibrationIntensitySettings$8;->this$0:Lcom/samsung/android/settings/notification/VibrationIntensitySettings;

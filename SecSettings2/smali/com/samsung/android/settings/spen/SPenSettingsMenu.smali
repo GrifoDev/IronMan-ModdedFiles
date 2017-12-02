@@ -26,6 +26,8 @@
 
 .field public static final SEARCH_INDEX_DATA_PROVIDER:Lcom/android/settings/search/Indexable$SearchIndexProvider;
 
+.field private static aircommand_flag:Z
+
 
 # instance fields
 .field private ContactUs_appId:Ljava/lang/String;
@@ -70,7 +72,7 @@
 
 .field private mPenDetachObserver:Landroid/database/ContentObserver;
 
-.field private mPenDetachOptionPref:Lcom/android/settings/SecDropDownPreference;
+.field private mPenDetachOptionPref:Lcom/samsung/android/settings/spen/SpenDropDownPreference;
 
 .field private mPenFeedbackHapticSwitchPref:Landroid/preference/SwitchPreference;
 
@@ -122,10 +124,10 @@
     return-object v0
 .end method
 
-.method static synthetic -get3(Lcom/samsung/android/settings/spen/SPenSettingsMenu;)Lcom/android/settings/SecDropDownPreference;
+.method static synthetic -get3(Lcom/samsung/android/settings/spen/SPenSettingsMenu;)Lcom/samsung/android/settings/spen/SpenDropDownPreference;
     .locals 1
 
-    iget-object v0, p0, Lcom/samsung/android/settings/spen/SPenSettingsMenu;->mPenDetachOptionPref:Lcom/android/settings/SecDropDownPreference;
+    iget-object v0, p0, Lcom/samsung/android/settings/spen/SPenSettingsMenu;->mPenDetachOptionPref:Lcom/samsung/android/settings/spen/SpenDropDownPreference;
 
     return-object v0
 .end method
@@ -174,6 +176,10 @@
     move-result-object v0
 
     sput-object v0, Lcom/samsung/android/settings/spen/SPenSettingsMenu;->CONTENT_URI:Landroid/net/Uri;
+
+    const/4 v0, 0x0
+
+    sput-boolean v0, Lcom/samsung/android/settings/spen/SPenSettingsMenu;->aircommand_flag:Z
 
     new-instance v0, Lcom/samsung/android/settings/spen/SPenSettingsMenu$4;
 
@@ -271,7 +277,7 @@
 .end method
 
 .method private appsCountSummaryUpdate()V
-    .locals 21
+    .locals 22
 
     const/4 v14, 0x0
 
@@ -283,65 +289,67 @@
 
     const-string/jumbo v16, ""
 
-    const v18, 0x7f0b1cce
+    const v19, 0x7f0b1ce0
 
     move-object/from16 v0, p0
 
-    move/from16 v1, v18
+    move/from16 v1, v19
 
     invoke-virtual {v0, v1}, Lcom/samsung/android/settings/spen/SPenSettingsMenu;->getString(I)Ljava/lang/String;
 
     move-result-object v6
 
-    const-string/jumbo v18, "SPenSettingsMenu"
+    const-string/jumbo v18, " "
 
-    new-instance v19, Ljava/lang/StringBuilder;
+    const-string/jumbo v19, "SPenSettingsMenu"
 
-    invoke-direct/range {v19 .. v19}, Ljava/lang/StringBuilder;-><init>()V
+    new-instance v20, Ljava/lang/StringBuilder;
 
-    const-string/jumbo v20, "UpdateSavedAirCmd mShortcutList :"
+    invoke-direct/range {v20 .. v20}, Ljava/lang/StringBuilder;-><init>()V
 
-    invoke-virtual/range {v19 .. v20}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    const-string/jumbo v21, "UpdateSavedAirCmd mShortcutList :"
 
-    move-result-object v19
+    invoke-virtual/range {v20 .. v21}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-object/from16 v0, p0
-
-    iget-object v0, v0, Lcom/samsung/android/settings/spen/SPenSettingsMenu;->mShortcutList:Ljava/lang/String;
-
-    move-object/from16 v20, v0
-
-    invoke-virtual/range {v19 .. v20}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v19
-
-    invoke-virtual/range {v19 .. v19}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v19
-
-    invoke-static/range {v18 .. v19}, Landroid/util/secutil/Log;->secD(Ljava/lang/String;Ljava/lang/String;)I
+    move-result-object v20
 
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/samsung/android/settings/spen/SPenSettingsMenu;->mShortcutList:Ljava/lang/String;
 
-    move-object/from16 v18, v0
+    move-object/from16 v21, v0
 
-    invoke-static/range {v18 .. v18}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
+    invoke-virtual/range {v20 .. v21}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result v18
+    move-result-object v20
 
-    if-nez v18, :cond_a
+    invoke-virtual/range {v20 .. v20}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v20
+
+    invoke-static/range {v19 .. v20}, Landroid/util/secutil/Log;->secD(Ljava/lang/String;Ljava/lang/String;)I
 
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/samsung/android/settings/spen/SPenSettingsMenu;->mShortcutList:Ljava/lang/String;
 
-    move-object/from16 v18, v0
+    move-object/from16 v19, v0
 
-    const-string/jumbo v19, ","
+    invoke-static/range {v19 .. v19}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
-    invoke-virtual/range {v18 .. v19}, Ljava/lang/String;->split(Ljava/lang/String;)[Ljava/lang/String;
+    move-result v19
+
+    if-nez v19, :cond_a
+
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcom/samsung/android/settings/spen/SPenSettingsMenu;->mShortcutList:Ljava/lang/String;
+
+    move-object/from16 v19, v0
+
+    const-string/jumbo v20, ","
+
+    invoke-virtual/range {v19 .. v20}, Ljava/lang/String;->split(Ljava/lang/String;)[Ljava/lang/String;
 
     move-result-object v15
 
@@ -352,11 +360,11 @@
     :goto_0
     if-ge v10, v14, :cond_8
 
-    aget-object v18, v15, v10
+    aget-object v19, v15, v10
 
-    const-string/jumbo v19, ";"
+    const-string/jumbo v20, ";"
 
-    invoke-virtual/range {v18 .. v19}, Ljava/lang/String;->split(Ljava/lang/String;)[Ljava/lang/String;
+    invoke-virtual/range {v19 .. v20}, Ljava/lang/String;->split(Ljava/lang/String;)[Ljava/lang/String;
 
     move-result-object v13
 
@@ -364,9 +372,9 @@
 
     iget-object v0, v0, Lcom/samsung/android/settings/spen/SPenSettingsMenu;->mContext:Landroid/content/Context;
 
-    move-object/from16 v18, v0
+    move-object/from16 v19, v0
 
-    invoke-virtual/range {v18 .. v18}, Landroid/content/Context;->getPackageManager()Landroid/content/pm/PackageManager;
+    invoke-virtual/range {v19 .. v19}, Landroid/content/Context;->getPackageManager()Landroid/content/pm/PackageManager;
 
     move-result-object v17
 
@@ -374,64 +382,64 @@
 
     iget-object v0, v0, Lcom/samsung/android/settings/spen/SPenSettingsMenu;->mContext:Landroid/content/Context;
 
-    move-object/from16 v18, v0
+    move-object/from16 v19, v0
 
-    const-string/jumbo v19, "execute"
+    const-string/jumbo v20, "execute"
 
-    invoke-virtual/range {v18 .. v19}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
+    invoke-virtual/range {v19 .. v20}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
 
     move-result-object v9
 
     check-cast v9, Lcom/samsung/android/app/SemExecutableManager;
 
-    const-string/jumbo v18, "0"
+    const-string/jumbo v19, "0"
 
-    const/16 v19, 0x0
+    const/16 v20, 0x0
 
-    aget-object v19, v13, v19
+    aget-object v20, v13, v20
 
-    invoke-virtual/range {v18 .. v19}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual/range {v19 .. v20}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move-result v18
+    move-result v19
 
-    if-eqz v18, :cond_5
+    if-eqz v19, :cond_5
 
     const/4 v4, 0x0
 
     new-instance v5, Landroid/content/ComponentName;
 
-    const/16 v18, 0x1
-
-    aget-object v18, v13, v18
-
-    const/16 v19, 0x2
+    const/16 v19, 0x1
 
     aget-object v19, v13, v19
 
-    move-object/from16 v0, v18
+    const/16 v20, 0x2
 
-    move-object/from16 v1, v19
+    aget-object v20, v13, v20
+
+    move-object/from16 v0, v19
+
+    move-object/from16 v1, v20
 
     invoke-direct {v5, v0, v1}, Landroid/content/ComponentName;-><init>(Ljava/lang/String;Ljava/lang/String;)V
 
     :try_start_0
-    const-string/jumbo v18, "A"
+    const-string/jumbo v19, "A"
 
-    const/16 v19, 0x3
+    const/16 v20, 0x3
 
-    aget-object v19, v13, v19
+    aget-object v20, v13, v20
 
-    invoke-virtual/range {v18 .. v19}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual/range {v19 .. v20}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move-result v18
+    move-result v19
 
-    if-eqz v18, :cond_3
+    if-eqz v19, :cond_3
 
-    const/16 v18, 0x0
+    const/16 v19, 0x0
 
     move-object/from16 v0, v17
 
-    move/from16 v1, v18
+    move/from16 v1, v19
 
     invoke-virtual {v0, v5, v1}, Landroid/content/pm/PackageManager;->getActivityInfo(Landroid/content/ComponentName;I)Landroid/content/pm/ActivityInfo;
     :try_end_0
@@ -445,9 +453,9 @@
 
     invoke-virtual/range {p0 .. p0}, Lcom/samsung/android/settings/spen/SPenSettingsMenu;->getPackageManager()Landroid/content/pm/PackageManager;
 
-    move-result-object v18
+    move-result-object v19
 
-    move-object/from16 v0, v18
+    move-object/from16 v0, v19
 
     invoke-virtual {v4, v0}, Landroid/content/pm/ComponentInfo;->loadLabel(Landroid/content/pm/PackageManager;)Ljava/lang/CharSequence;
 
@@ -459,35 +467,43 @@
     :goto_2
     invoke-static/range {v16 .. v16}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
-    move-result v18
+    move-result v19
 
-    if-nez v18, :cond_7
+    if-nez v19, :cond_7
 
-    new-instance v18, Ljava/lang/StringBuilder;
+    new-instance v19, Ljava/lang/StringBuilder;
 
-    invoke-direct/range {v18 .. v18}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct/range {v19 .. v19}, Ljava/lang/StringBuilder;-><init>()V
 
-    move-object/from16 v0, v18
+    move-object/from16 v0, v19
 
     move-object/from16 v1, v16
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v18
+    move-result-object v19
 
-    move-object/from16 v0, v18
+    move-object/from16 v0, v19
 
     invoke-virtual {v0, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v18
+    move-result-object v19
 
-    move-object/from16 v0, v18
+    move-object/from16 v0, v19
+
+    move-object/from16 v1, v18
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v19
+
+    move-object/from16 v0, v19
 
     invoke-virtual {v0, v12}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v18
+    move-result-object v19
 
-    invoke-virtual/range {v18 .. v18}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual/range {v19 .. v19}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v16
 
@@ -499,23 +515,23 @@
 
     :cond_3
     :try_start_1
-    const-string/jumbo v18, "S"
+    const-string/jumbo v19, "S"
 
-    const/16 v19, 0x3
+    const/16 v20, 0x3
 
-    aget-object v19, v13, v19
+    aget-object v20, v13, v20
 
-    invoke-virtual/range {v18 .. v19}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual/range {v19 .. v20}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move-result v18
+    move-result v19
 
-    if-eqz v18, :cond_4
+    if-eqz v19, :cond_4
 
-    const/16 v18, 0x0
+    const/16 v19, 0x0
 
     move-object/from16 v0, v17
 
-    move/from16 v1, v18
+    move/from16 v1, v19
 
     invoke-virtual {v0, v5, v1}, Landroid/content/pm/PackageManager;->getServiceInfo(Landroid/content/ComponentName;I)Landroid/content/pm/ServiceInfo;
 
@@ -524,23 +540,23 @@
     goto :goto_1
 
     :cond_4
-    const-string/jumbo v18, "P"
+    const-string/jumbo v19, "P"
 
-    const/16 v19, 0x3
+    const/16 v20, 0x3
 
-    aget-object v19, v13, v19
+    aget-object v20, v13, v20
 
-    invoke-virtual/range {v18 .. v19}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual/range {v19 .. v20}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move-result v18
+    move-result v19
 
-    if-eqz v18, :cond_0
+    if-eqz v19, :cond_0
 
-    const/16 v18, 0x0
+    const/16 v19, 0x0
 
     move-object/from16 v0, v17
 
-    move/from16 v1, v18
+    move/from16 v1, v19
 
     invoke-virtual {v0, v5, v1}, Landroid/content/pm/PackageManager;->getProviderInfo(Landroid/content/ComponentName;I)Landroid/content/pm/ProviderInfo;
     :try_end_1
@@ -558,25 +574,25 @@
     goto :goto_1
 
     :cond_5
-    const-string/jumbo v18, "1"
+    const-string/jumbo v19, "1"
 
-    const/16 v19, 0x0
+    const/16 v20, 0x0
 
-    aget-object v19, v13, v19
+    aget-object v20, v13, v20
 
-    invoke-virtual/range {v18 .. v19}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual/range {v19 .. v20}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move-result v18
+    move-result v19
 
-    if-eqz v18, :cond_1
+    if-eqz v19, :cond_1
 
     if-eqz v9, :cond_6
 
-    const/16 v18, 0x4
+    const/16 v19, 0x4
 
-    aget-object v18, v13, v18
+    aget-object v19, v13, v19
 
-    move-object/from16 v0, v18
+    move-object/from16 v0, v19
 
     invoke-virtual {v9, v0}, Lcom/samsung/android/app/SemExecutableManager;->getExecutableInfo(Ljava/lang/String;)Lcom/samsung/android/app/SemExecutableInfo;
 
@@ -586,14 +602,20 @@
 
     const/4 v3, 0x0
 
-    const/16 v18, 0x1
+    const/16 v19, 0x1
 
     :try_start_2
-    aget-object v18, v13, v18
+    aget-object v19, v13, v19
 
-    const/16 v19, 0x0
+    const/16 v20, 0x0
 
-    invoke-virtual/range {v17 .. v19}, Landroid/content/pm/PackageManager;->getApplicationInfo(Ljava/lang/String;I)Landroid/content/pm/ApplicationInfo;
+    move-object/from16 v0, v17
+
+    move-object/from16 v1, v19
+
+    move/from16 v2, v20
+
+    invoke-virtual {v0, v1, v2}, Landroid/content/pm/PackageManager;->getApplicationInfo(Ljava/lang/String;I)Landroid/content/pm/ApplicationInfo;
     :try_end_2
     .catch Landroid/content/pm/PackageManager$NameNotFoundException; {:try_start_2 .. :try_end_2} :catch_1
 
@@ -602,19 +624,19 @@
     :goto_4
     if-eqz v3, :cond_1
 
-    const/16 v18, 0x1
+    const/16 v19, 0x1
 
-    aget-object v18, v13, v18
+    aget-object v19, v13, v19
 
     invoke-virtual {v11}, Lcom/samsung/android/app/SemExecutableInfo;->getLabelId()I
 
-    move-result v19
+    move-result v20
 
     move-object/from16 v0, v17
 
-    move-object/from16 v1, v18
+    move-object/from16 v1, v19
 
-    move/from16 v2, v19
+    move/from16 v2, v20
 
     invoke-virtual {v0, v1, v2, v3}, Landroid/content/pm/PackageManager;->getText(Ljava/lang/String;ILandroid/content/pm/ApplicationInfo;)Ljava/lang/CharSequence;
 
@@ -622,15 +644,82 @@
 
     check-cast v12, Ljava/lang/String;
 
-    const-string/jumbo v18, "SPenSettingsMenu"
+    const-string/jumbo v19, "SPenSettingsMenu"
 
+    new-instance v20, Ljava/lang/StringBuilder;
+
+    invoke-direct/range {v20 .. v20}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string/jumbo v21, "mAppName :"
+
+    invoke-virtual/range {v20 .. v21}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v20
+
+    move-object/from16 v0, v20
+
+    invoke-virtual {v0, v12}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v20
+
+    invoke-virtual/range {v20 .. v20}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v20
+
+    invoke-static/range {v19 .. v20}, Landroid/util/secutil/Log;->secD(Ljava/lang/String;Ljava/lang/String;)I
+
+    goto/16 :goto_2
+
+    :catch_1
+    move-exception v7
+
+    const-string/jumbo v19, "SPenSettingsMenu"
+
+    new-instance v20, Ljava/lang/StringBuilder;
+
+    invoke-direct/range {v20 .. v20}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string/jumbo v21, "Fail to get application info : "
+
+    invoke-virtual/range {v20 .. v21}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v20
+
+    invoke-virtual {v7}, Landroid/content/pm/PackageManager$NameNotFoundException;->toString()Ljava/lang/String;
+
+    move-result-object v21
+
+    invoke-virtual/range {v20 .. v21}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v20
+
+    invoke-virtual/range {v20 .. v20}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v20
+
+    invoke-static/range {v19 .. v20}, Landroid/util/secutil/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
+
+    goto :goto_4
+
+    :cond_6
+    const-string/jumbo v19, "SPenSettingsMenu"
+
+    const-string/jumbo v20, "ExecuteManager is null"
+
+    invoke-static/range {v19 .. v20}, Landroid/util/secutil/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
+
+    goto/16 :goto_2
+
+    :cond_7
     new-instance v19, Ljava/lang/StringBuilder;
 
     invoke-direct/range {v19 .. v19}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string/jumbo v20, "mAppName :"
+    move-object/from16 v0, v19
 
-    invoke-virtual/range {v19 .. v20}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    move-object/from16 v1, v16
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v19
 
@@ -642,73 +731,6 @@
 
     invoke-virtual/range {v19 .. v19}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v19
-
-    invoke-static/range {v18 .. v19}, Landroid/util/secutil/Log;->secD(Ljava/lang/String;Ljava/lang/String;)I
-
-    goto/16 :goto_2
-
-    :catch_1
-    move-exception v7
-
-    const-string/jumbo v18, "SPenSettingsMenu"
-
-    new-instance v19, Ljava/lang/StringBuilder;
-
-    invoke-direct/range {v19 .. v19}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string/jumbo v20, "Fail to get application info : "
-
-    invoke-virtual/range {v19 .. v20}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v19
-
-    invoke-virtual {v7}, Landroid/content/pm/PackageManager$NameNotFoundException;->toString()Ljava/lang/String;
-
-    move-result-object v20
-
-    invoke-virtual/range {v19 .. v20}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v19
-
-    invoke-virtual/range {v19 .. v19}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v19
-
-    invoke-static/range {v18 .. v19}, Landroid/util/secutil/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
-
-    goto :goto_4
-
-    :cond_6
-    const-string/jumbo v18, "SPenSettingsMenu"
-
-    const-string/jumbo v19, "ExecuteManager is null"
-
-    invoke-static/range {v18 .. v19}, Landroid/util/secutil/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
-
-    goto/16 :goto_2
-
-    :cond_7
-    new-instance v18, Ljava/lang/StringBuilder;
-
-    invoke-direct/range {v18 .. v18}, Ljava/lang/StringBuilder;-><init>()V
-
-    move-object/from16 v0, v18
-
-    move-object/from16 v1, v16
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v18
-
-    move-object/from16 v0, v18
-
-    invoke-virtual {v0, v12}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v18
-
-    invoke-virtual/range {v18 .. v18}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
     move-result-object v16
 
     goto/16 :goto_3
@@ -716,17 +738,17 @@
     :cond_8
     invoke-static/range {v16 .. v16}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
-    move-result v18
+    move-result v19
 
-    if-nez v18, :cond_9
+    if-nez v19, :cond_9
 
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/samsung/android/settings/spen/SPenSettingsMenu;->mAppsAndFunctionsPref:Landroid/preference/Preference;
 
-    move-object/from16 v18, v0
+    move-object/from16 v19, v0
 
-    move-object/from16 v0, v18
+    move-object/from16 v0, v19
 
     move-object/from16 v1, v16
 
@@ -740,11 +762,11 @@
 
     iget-object v0, v0, Lcom/samsung/android/settings/spen/SPenSettingsMenu;->mAppsAndFunctionsPref:Landroid/preference/Preference;
 
-    move-object/from16 v18, v0
+    move-object/from16 v19, v0
 
-    const v19, 0x7f0b0e78
+    const v20, 0x7f0b0e87
 
-    invoke-virtual/range {v18 .. v19}, Landroid/preference/Preference;->setSummary(I)V
+    invoke-virtual/range {v19 .. v20}, Landroid/preference/Preference;->setSummary(I)V
 
     goto :goto_5
 
@@ -753,11 +775,11 @@
 
     iget-object v0, v0, Lcom/samsung/android/settings/spen/SPenSettingsMenu;->mAppsAndFunctionsPref:Landroid/preference/Preference;
 
-    move-object/from16 v18, v0
+    move-object/from16 v19, v0
 
-    const v19, 0x7f0b0e78
+    const v20, 0x7f0b0e87
 
-    invoke-virtual/range {v18 .. v19}, Landroid/preference/Preference;->setSummary(I)V
+    invoke-virtual/range {v19 .. v20}, Landroid/preference/Preference;->setSummary(I)V
 
     goto :goto_5
 .end method
@@ -950,7 +972,7 @@
 
     move-result-object v7
 
-    const v8, 0x7f0b0b48
+    const v8, 0x7f0b0b56
 
     invoke-virtual {v7, v8}, Landroid/app/Activity;->getString(I)Ljava/lang/String;
 
@@ -1062,7 +1084,7 @@
 
     move-result-object v7
 
-    const v8, 0x7f0b1916
+    const v8, 0x7f0b1928
 
     invoke-virtual {p0, v8}, Lcom/samsung/android/settings/spen/SPenSettingsMenu;->getString(I)Ljava/lang/String;
 
@@ -1163,7 +1185,7 @@
 
     move-result-object v7
 
-    const v8, 0x7f0b0b47
+    const v8, 0x7f0b0b55
 
     invoke-virtual {v7, v8}, Landroid/app/Activity;->getString(I)Ljava/lang/String;
 
@@ -1193,7 +1215,7 @@
 
     invoke-direct {v8, p0}, Lcom/samsung/android/settings/spen/SPenSettingsMenu$6;-><init>(Lcom/samsung/android/settings/spen/SPenSettingsMenu;)V
 
-    const v9, 0x7f0b0b49
+    const v9, 0x7f0b0b57
 
     invoke-virtual {v7, v9, v8}, Landroid/app/AlertDialog$Builder;->setPositiveButton(ILandroid/content/DialogInterface$OnClickListener;)Landroid/app/AlertDialog$Builder;
 
@@ -1239,7 +1261,7 @@
 
     move-result-object v7
 
-    const v8, 0x7f0b0e69
+    const v8, 0x7f0b0e78
 
     invoke-virtual {v7, v8}, Landroid/app/Activity;->getString(I)Ljava/lang/String;
 
@@ -1351,7 +1373,7 @@
 
     move-result-object v7
 
-    const v8, 0x7f0b1916
+    const v8, 0x7f0b1928
 
     invoke-virtual {p0, v8}, Lcom/samsung/android/settings/spen/SPenSettingsMenu;->getString(I)Ljava/lang/String;
 
@@ -1452,7 +1474,7 @@
 
     move-result-object v7
 
-    const v8, 0x7f0b0e66
+    const v8, 0x7f0b0e75
 
     invoke-virtual {v7, v8}, Landroid/app/Activity;->getString(I)Ljava/lang/String;
 
@@ -1482,7 +1504,7 @@
 
     invoke-direct {v8, p0}, Lcom/samsung/android/settings/spen/SPenSettingsMenu$9;-><init>(Lcom/samsung/android/settings/spen/SPenSettingsMenu;)V
 
-    const v9, 0x7f0b0b49
+    const v9, 0x7f0b0b57
 
     invoke-virtual {v7, v9, v8}, Landroid/app/AlertDialog$Builder;->setPositiveButton(ILandroid/content/DialogInterface$OnClickListener;)Landroid/app/AlertDialog$Builder;
 
@@ -1590,9 +1612,9 @@
 
     :cond_1
     :goto_3
-    iget-object v11, p0, Lcom/samsung/android/settings/spen/SPenSettingsMenu;->mPenDetachOptionPref:Lcom/android/settings/SecDropDownPreference;
+    iget-object v11, p0, Lcom/samsung/android/settings/spen/SPenSettingsMenu;->mPenDetachOptionPref:Lcom/samsung/android/settings/spen/SpenDropDownPreference;
 
-    if-eqz v11, :cond_10
+    if-eqz v11, :cond_11
 
     iget-object v11, p0, Lcom/samsung/android/settings/spen/SPenSettingsMenu;->mContext:Landroid/content/Context;
 
@@ -1612,9 +1634,9 @@
 
     const/4 v11, 0x1
 
-    if-ne v6, v11, :cond_c
+    if-ne v6, v11, :cond_d
 
-    const v11, 0x7f0b0e7e
+    const v11, 0x7f0b0e8d
 
     invoke-virtual {v10, v11}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -1632,13 +1654,77 @@
 
     const/4 v2, 0x1
 
+    const-string/jumbo v11, "SPenSettingsMenu"
+
+    new-instance v12, Ljava/lang/StringBuilder;
+
+    invoke-direct {v12}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string/jumbo v13, "mPenDetachOptionPref.getItemClick() = "
+
+    invoke-virtual {v12, v13}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v12
+
+    iget-object v13, p0, Lcom/samsung/android/settings/spen/SPenSettingsMenu;->mPenDetachOptionPref:Lcom/samsung/android/settings/spen/SpenDropDownPreference;
+
+    invoke-virtual {v13}, Lcom/samsung/android/settings/spen/SpenDropDownPreference;->getItemClick()Ljava/lang/String;
+
+    move-result-object v13
+
+    invoke-virtual {v12, v13}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v12
+
+    invoke-virtual {v12}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v12
+
+    invoke-static {v11, v12}, Landroid/util/secutil/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    sget-boolean v11, Lcom/samsung/android/settings/spen/SPenSettingsMenu;->aircommand_flag:Z
+
+    if-eqz v11, :cond_2
+
+    invoke-virtual {p0}, Lcom/samsung/android/settings/spen/SPenSettingsMenu;->getContentResolver()Landroid/content/ContentResolver;
+
+    move-result-object v11
+
+    const-string/jumbo v12, "pen_detachment_option"
+
+    const/4 v13, 0x0
+
+    invoke-static {v11, v12, v13}, Landroid/provider/Settings$System;->getInt(Landroid/content/ContentResolver;Ljava/lang/String;I)I
+
+    move-result v11
+
+    if-nez v11, :cond_2
+
+    iget-object v11, p0, Lcom/samsung/android/settings/spen/SPenSettingsMenu;->mPenDetachOptionPref:Lcom/samsung/android/settings/spen/SpenDropDownPreference;
+
+    invoke-virtual {v11}, Lcom/samsung/android/settings/spen/SpenDropDownPreference;->getItemClick()Ljava/lang/String;
+
+    move-result-object v11
+
+    const/4 v12, 0x0
+
+    invoke-static {v12}, Ljava/lang/String;->valueOf(I)Ljava/lang/String;
+
+    move-result-object v12
+
+    invoke-virtual {v11, v12}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v11
+
+    if-eqz v11, :cond_c
+
     :cond_2
     :goto_4
     iget-boolean v11, p0, Lcom/samsung/android/settings/spen/SPenSettingsMenu;->isMemoSupported:Z
 
-    if-eqz v11, :cond_d
+    if-eqz v11, :cond_e
 
-    const v11, 0x7f0b0e7d
+    const v11, 0x7f0b0e8c
 
     invoke-virtual {v10, v11}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -1658,7 +1744,7 @@
 
     :cond_3
     :goto_5
-    const v11, 0x7f0b0e7b
+    const v11, 0x7f0b0e8a
 
     invoke-virtual {v10, v11}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -1687,7 +1773,7 @@
     :goto_6
     array-length v11, v1
 
-    if-ge v4, v11, :cond_f
+    if-ge v4, v11, :cond_10
 
     aget-object v11, v1, v4
 
@@ -1725,7 +1811,7 @@
     :cond_7
     const/4 v11, 0x1
 
-    goto :goto_2
+    goto/16 :goto_2
 
     :cond_8
     iget-object v12, p0, Lcom/samsung/android/settings/spen/SPenSettingsMenu;->mAppsAndFunctionsPref:Landroid/preference/Preference;
@@ -1791,6 +1877,23 @@
 
     const-string/jumbo v12, "pen_detachment_option"
 
+    const/4 v13, 0x2
+
+    invoke-static {v11, v12, v13}, Landroid/provider/Settings$System;->putInt(Landroid/content/ContentResolver;Ljava/lang/String;I)Z
+
+    const/4 v11, 0x0
+
+    sput-boolean v11, Lcom/samsung/android/settings/spen/SPenSettingsMenu;->aircommand_flag:Z
+
+    goto/16 :goto_4
+
+    :cond_d
+    invoke-virtual {p0}, Lcom/samsung/android/settings/spen/SPenSettingsMenu;->getContentResolver()Landroid/content/ContentResolver;
+
+    move-result-object v11
+
+    const-string/jumbo v12, "pen_detachment_option"
+
     const/4 v13, 0x0
 
     invoke-static {v11, v12, v13}, Landroid/provider/Settings$System;->getInt(Landroid/content/ContentResolver;Ljava/lang/String;I)I
@@ -1811,9 +1914,13 @@
 
     invoke-static {v11, v12, v13}, Landroid/provider/Settings$System;->putInt(Landroid/content/ContentResolver;Ljava/lang/String;I)Z
 
+    const/4 v11, 0x1
+
+    sput-boolean v11, Lcom/samsung/android/settings/spen/SPenSettingsMenu;->aircommand_flag:Z
+
     goto/16 :goto_4
 
-    :cond_d
+    :cond_e
     invoke-virtual {p0}, Lcom/samsung/android/settings/spen/SPenSettingsMenu;->getContentResolver()Landroid/content/ContentResolver;
 
     move-result-object v11
@@ -1828,13 +1935,13 @@
 
     const/4 v11, 0x1
 
-    if-eq v9, v11, :cond_e
+    if-eq v9, v11, :cond_f
 
     const/4 v11, 0x3
 
     if-ne v9, v11, :cond_3
 
-    :cond_e
+    :cond_f
     invoke-virtual {p0}, Lcom/samsung/android/settings/spen/SPenSettingsMenu;->getContentResolver()Landroid/content/ContentResolver;
 
     move-result-object v11
@@ -1847,16 +1954,16 @@
 
     goto/16 :goto_5
 
-    :cond_f
-    iget-object v11, p0, Lcom/samsung/android/settings/spen/SPenSettingsMenu;->mPenDetachOptionPref:Lcom/android/settings/SecDropDownPreference;
-
-    invoke-virtual {v11, v7}, Lcom/android/settings/SecDropDownPreference;->setEntries([Ljava/lang/CharSequence;)V
-
-    iget-object v11, p0, Lcom/samsung/android/settings/spen/SPenSettingsMenu;->mPenDetachOptionPref:Lcom/android/settings/SecDropDownPreference;
-
-    invoke-virtual {v11, v8}, Lcom/android/settings/SecDropDownPreference;->setEntryValues([Ljava/lang/CharSequence;)V
-
     :cond_10
+    iget-object v11, p0, Lcom/samsung/android/settings/spen/SPenSettingsMenu;->mPenDetachOptionPref:Lcom/samsung/android/settings/spen/SpenDropDownPreference;
+
+    invoke-virtual {v11, v7}, Lcom/samsung/android/settings/spen/SpenDropDownPreference;->setEntries([Ljava/lang/CharSequence;)V
+
+    iget-object v11, p0, Lcom/samsung/android/settings/spen/SPenSettingsMenu;->mPenDetachOptionPref:Lcom/samsung/android/settings/spen/SpenDropDownPreference;
+
+    invoke-virtual {v11, v8}, Lcom/samsung/android/settings/spen/SpenDropDownPreference;->setEntryValues([Ljava/lang/CharSequence;)V
+
+    :cond_11
     return-void
 .end method
 
@@ -1893,7 +2000,7 @@
 
     if-eqz v6, :cond_0
 
-    const v6, 0x7f0b0e86
+    const v6, 0x7f0b0e95
 
     invoke-virtual {v4, v6}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -1962,7 +2069,7 @@
 
     aput-object v7, v6, v8
 
-    const v7, 0x7f0b0e72
+    const v7, 0x7f0b0e81
 
     invoke-virtual {v4, v7, v6}, Landroid/content/res/Resources;->getString(I[Ljava/lang/Object;)Ljava/lang/String;
 
@@ -1998,7 +2105,7 @@
     return-void
 
     :cond_0
-    const v6, 0x7f0b0e85
+    const v6, 0x7f0b0e94
 
     invoke-virtual {v4, v6}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -2102,7 +2209,7 @@
 
     move-result-object v4
 
-    const v5, 0x7f0800bd
+    const v5, 0x7f0800bf
 
     invoke-virtual {p0, v5}, Lcom/samsung/android/settings/spen/SPenSettingsMenu;->addPreferencesFromResource(I)V
 
@@ -2367,21 +2474,21 @@
 
     move-result-object v5
 
-    check-cast v5, Lcom/android/settings/SecDropDownPreference;
+    check-cast v5, Lcom/samsung/android/settings/spen/SpenDropDownPreference;
 
-    iput-object v5, p0, Lcom/samsung/android/settings/spen/SPenSettingsMenu;->mPenDetachOptionPref:Lcom/android/settings/SecDropDownPreference;
+    iput-object v5, p0, Lcom/samsung/android/settings/spen/SPenSettingsMenu;->mPenDetachOptionPref:Lcom/samsung/android/settings/spen/SpenDropDownPreference;
 
-    iget-object v5, p0, Lcom/samsung/android/settings/spen/SPenSettingsMenu;->mPenDetachOptionPref:Lcom/android/settings/SecDropDownPreference;
+    iget-object v5, p0, Lcom/samsung/android/settings/spen/SPenSettingsMenu;->mPenDetachOptionPref:Lcom/samsung/android/settings/spen/SpenDropDownPreference;
 
     if-eqz v5, :cond_5
 
-    iget-object v5, p0, Lcom/samsung/android/settings/spen/SPenSettingsMenu;->mPenDetachOptionPref:Lcom/android/settings/SecDropDownPreference;
+    iget-object v5, p0, Lcom/samsung/android/settings/spen/SPenSettingsMenu;->mPenDetachOptionPref:Lcom/samsung/android/settings/spen/SpenDropDownPreference;
 
-    invoke-virtual {v5, p0}, Lcom/android/settings/SecDropDownPreference;->setOnPreferenceChangeListener(Landroid/preference/Preference$OnPreferenceChangeListener;)V
+    invoke-virtual {v5, p0}, Lcom/samsung/android/settings/spen/SpenDropDownPreference;->setOnPreferenceChangeListener(Landroid/preference/Preference$OnPreferenceChangeListener;)V
 
-    iget-object v5, p0, Lcom/samsung/android/settings/spen/SPenSettingsMenu;->mPenDetachOptionPref:Lcom/android/settings/SecDropDownPreference;
+    iget-object v5, p0, Lcom/samsung/android/settings/spen/SPenSettingsMenu;->mPenDetachOptionPref:Lcom/samsung/android/settings/spen/SpenDropDownPreference;
 
-    invoke-virtual {v5, v8}, Lcom/android/settings/SecDropDownPreference;->semSetSummaryColorToColorPrimaryDark(Z)V
+    invoke-virtual {v5, v8}, Lcom/samsung/android/settings/spen/SpenDropDownPreference;->semSetSummaryColorToColorPrimaryDark(Z)V
 
     :cond_5
     const-string/jumbo v5, "key_air_cmd_apps_and_functions"
@@ -2571,19 +2678,19 @@
 
     iget-object v5, p0, Lcom/samsung/android/settings/spen/SPenSettingsMenu;->mPenFeedbackSoundSwitchPref:Landroid/preference/SwitchPreference;
 
-    const v6, 0x7f0b0e82
+    const v6, 0x7f0b0e91
 
     invoke-virtual {v5, v6}, Landroid/preference/SwitchPreference;->setSummary(I)V
 
     iget-object v5, p0, Lcom/samsung/android/settings/spen/SPenSettingsMenu;->mScreenoffNoteSwitchPref:Landroid/preference/SwitchPreference;
 
-    const v6, 0x7f0b0e5f
+    const v6, 0x7f0b0e6e
 
     invoke-virtual {v5, v6}, Landroid/preference/SwitchPreference;->setSummary(I)V
 
     iget-object v5, p0, Lcom/samsung/android/settings/spen/SPenSettingsMenu;->mUseMinimizedSwitchPref:Landroid/preference/SwitchPreference;
 
-    const v6, 0x7f0b0e76
+    const v6, 0x7f0b0e85
 
     invoke-virtual {v5, v6}, Landroid/preference/SwitchPreference;->setSummary(I)V
 
@@ -2674,11 +2781,11 @@
 .method public onPreferenceChange(Landroid/preference/Preference;Ljava/lang/Object;)Z
     .locals 13
 
-    const v9, 0x7f0b1cf7
+    const v9, 0x7f0b1d09
 
     const/16 v5, 0x3e8
 
-    const v8, 0x7f0b1cf6
+    const v8, 0x7f0b1d08
 
     const/4 v7, 0x1
 
@@ -2920,7 +3027,7 @@
     goto :goto_3
 
     :cond_8
-    const v5, 0x7f0b0e64
+    const v5, 0x7f0b0e73
 
     goto :goto_4
 
@@ -3163,7 +3270,7 @@
     return v7
 
     :cond_14
-    const v8, 0x7f0b09bc
+    const v8, 0x7f0b09ca
 
     goto :goto_b
 
@@ -4244,7 +4351,7 @@
 
     invoke-static {v3, v4}, Lcom/android/settings/Utils;->insertEventLog(Landroid/content/Context;I)V
 
-    const v3, 0x7f0b0e57
+    const v3, 0x7f0b0e66
 
     invoke-virtual {p0, v3}, Lcom/samsung/android/settings/spen/SPenSettingsMenu;->getString(I)Ljava/lang/String;
 
@@ -4812,24 +4919,24 @@
     invoke-virtual {v10, v11}, Landroid/preference/SwitchPreference;->setChecked(Z)V
 
     :cond_6
-    iget-object v10, p0, Lcom/samsung/android/settings/spen/SPenSettingsMenu;->mPenDetachOptionPref:Lcom/android/settings/SecDropDownPreference;
+    iget-object v10, p0, Lcom/samsung/android/settings/spen/SPenSettingsMenu;->mPenDetachOptionPref:Lcom/samsung/android/settings/spen/SpenDropDownPreference;
 
     if-eqz v10, :cond_7
 
-    iget-object v11, p0, Lcom/samsung/android/settings/spen/SPenSettingsMenu;->mPenDetachOptionPref:Lcom/android/settings/SecDropDownPreference;
+    iget-object v11, p0, Lcom/samsung/android/settings/spen/SPenSettingsMenu;->mPenDetachOptionPref:Lcom/samsung/android/settings/spen/SpenDropDownPreference;
 
     if-eqz v5, :cond_13
 
     const/4 v10, 0x0
 
     :goto_8
-    invoke-virtual {v11, v10}, Lcom/android/settings/SecDropDownPreference;->setEnabled(Z)V
+    invoke-virtual {v11, v10}, Lcom/samsung/android/settings/spen/SpenDropDownPreference;->setEnabled(Z)V
 
-    iget-object v10, p0, Lcom/samsung/android/settings/spen/SPenSettingsMenu;->mPenDetachOptionPref:Lcom/android/settings/SecDropDownPreference;
+    iget-object v10, p0, Lcom/samsung/android/settings/spen/SPenSettingsMenu;->mPenDetachOptionPref:Lcom/samsung/android/settings/spen/SpenDropDownPreference;
 
-    iget-object v11, p0, Lcom/samsung/android/settings/spen/SPenSettingsMenu;->mPenDetachOptionPref:Lcom/android/settings/SecDropDownPreference;
+    iget-object v11, p0, Lcom/samsung/android/settings/spen/SPenSettingsMenu;->mPenDetachOptionPref:Lcom/samsung/android/settings/spen/SpenDropDownPreference;
 
-    invoke-virtual {v11}, Lcom/android/settings/SecDropDownPreference;->getEntries()[Ljava/lang/CharSequence;
+    invoke-virtual {v11}, Lcom/samsung/android/settings/spen/SpenDropDownPreference;->getEntries()[Ljava/lang/CharSequence;
 
     move-result-object v11
 
@@ -4837,7 +4944,7 @@
 
     add-int/lit8 v11, v11, -0x1
 
-    invoke-virtual {v10, v11}, Lcom/android/settings/SecDropDownPreference;->setValueIndex(I)V
+    invoke-virtual {v10, v11}, Lcom/samsung/android/settings/spen/SpenDropDownPreference;->setValueIndex(I)V
 
     :cond_7
     iget-object v11, p0, Lcom/samsung/android/settings/spen/SPenSettingsMenu;->mDisablePenDetectionSwitchPref:Landroid/preference/SwitchPreference;
@@ -5058,7 +5165,7 @@
 
     if-eqz v10, :cond_22
 
-    const v10, 0x7f0b1cf6
+    const v10, 0x7f0b1d08
 
     :goto_12
     invoke-virtual {v11, v10}, Lcom/android/settings/SecSettingsSwitchPreference;->setSummary(I)V
@@ -5120,7 +5227,7 @@
 
     if-eqz v1, :cond_28
 
-    const v10, 0x7f0b1cf6
+    const v10, 0x7f0b1d08
 
     :goto_16
     invoke-virtual {v11, v10}, Lcom/android/settings/SecSettingsSwitchPreference;->setSummary(I)V
@@ -5372,9 +5479,9 @@
     const/4 v3, 0x0
 
     :goto_1b
-    iget-object v10, p0, Lcom/samsung/android/settings/spen/SPenSettingsMenu;->mPenDetachOptionPref:Lcom/android/settings/SecDropDownPreference;
+    iget-object v10, p0, Lcom/samsung/android/settings/spen/SPenSettingsMenu;->mPenDetachOptionPref:Lcom/samsung/android/settings/spen/SpenDropDownPreference;
 
-    invoke-virtual {v10}, Lcom/android/settings/SecDropDownPreference;->getEntries()[Ljava/lang/CharSequence;
+    invoke-virtual {v10}, Lcom/samsung/android/settings/spen/SpenDropDownPreference;->getEntries()[Ljava/lang/CharSequence;
 
     move-result-object v10
 
@@ -5382,9 +5489,9 @@
 
     if-ge v3, v10, :cond_7
 
-    iget-object v10, p0, Lcom/samsung/android/settings/spen/SPenSettingsMenu;->mPenDetachOptionPref:Lcom/android/settings/SecDropDownPreference;
+    iget-object v10, p0, Lcom/samsung/android/settings/spen/SPenSettingsMenu;->mPenDetachOptionPref:Lcom/samsung/android/settings/spen/SpenDropDownPreference;
 
-    invoke-virtual {v10}, Lcom/android/settings/SecDropDownPreference;->getEntryValues()[Ljava/lang/CharSequence;
+    invoke-virtual {v10}, Lcom/samsung/android/settings/spen/SpenDropDownPreference;->getEntryValues()[Ljava/lang/CharSequence;
 
     move-result-object v10
 
@@ -5398,9 +5505,9 @@
 
     if-ne v7, v10, :cond_15
 
-    iget-object v10, p0, Lcom/samsung/android/settings/spen/SPenSettingsMenu;->mPenDetachOptionPref:Lcom/android/settings/SecDropDownPreference;
+    iget-object v10, p0, Lcom/samsung/android/settings/spen/SPenSettingsMenu;->mPenDetachOptionPref:Lcom/samsung/android/settings/spen/SpenDropDownPreference;
 
-    invoke-virtual {v10, v3}, Lcom/android/settings/SecDropDownPreference;->setValueIndex(I)V
+    invoke-virtual {v10, v3}, Lcom/samsung/android/settings/spen/SpenDropDownPreference;->setValueIndex(I)V
 
     :cond_15
     add-int/lit8 v3, v3, 0x1
@@ -5476,7 +5583,7 @@
     goto/16 :goto_11
 
     :cond_22
-    const v10, 0x7f0b09bc
+    const v10, 0x7f0b09ca
 
     goto/16 :goto_12
 
@@ -5502,7 +5609,7 @@
 
     if-eqz v10, :cond_25
 
-    const v10, 0x7f0b1cf6
+    const v10, 0x7f0b1d08
 
     :goto_1c
     invoke-virtual {v11, v10}, Lcom/android/settings/SecSettingsSwitchPreference;->setSummary(I)V
@@ -5510,7 +5617,7 @@
     goto/16 :goto_14
 
     :cond_25
-    const v10, 0x7f0b1cf7
+    const v10, 0x7f0b1d09
 
     goto :goto_1c
 
@@ -5544,7 +5651,7 @@
     goto :goto_1d
 
     :cond_28
-    const v10, 0x7f0b0e64
+    const v10, 0x7f0b0e73
 
     goto/16 :goto_16
 
@@ -5553,7 +5660,7 @@
 
     if-eqz v1, :cond_2a
 
-    const v10, 0x7f0b1cf6
+    const v10, 0x7f0b1d08
 
     :goto_1e
     invoke-virtual {v11, v10}, Lcom/android/settings/SecSettingsSwitchPreference;->setSummary(I)V
@@ -5561,7 +5668,7 @@
     goto/16 :goto_17
 
     :cond_2a
-    const v10, 0x7f0b1cf7
+    const v10, 0x7f0b1d09
 
     goto :goto_1e
 .end method

@@ -170,6 +170,8 @@
     <string name="wifi_allow_scan_with_traffic_summary">Tự động cho phép hoặc từ chối Dò tìm chuyển vùng Wi-Fi dựa trên lượng dữ liệu đã dùng.</string>
     <string name="select_logd_size_title">Kích cỡ bộ đệm để ghi nhật ký</string>
     <string name="select_logd_size_dialog_title">Chọn kích cỡ tối đa của mỗi bộ đệm nhật ký</string>
+    <string name="dev_logpersist_clear_warning_title">Xóa bộ nhớ nhật ký bền vững?</string>
+    <string name="dev_logpersist_clear_warning_message">Dữ liệu nhật ký sẽ bị xóa khi tắt nhật ký bền vững.</string>
     <string name="select_logpersist_title">Lưu dữ liệu nhật ký liên tục</string>
     <string name="select_logpersist_dialog_title">Chọn bộ đệm nhật ký để lưu liên tục</string>
     <string name="select_usb_configuration_title">Cấu hình USB</string>
@@ -982,6 +984,7 @@ Có thể có chút khác biệt giữa âm thanh phát ra từ 2 thiết bị �
     <string name="bluetooth_avc_available_description">Thiết bị Bluetooth được kết nối hỗ trợ Đồng bộ âm lượng media và mức âm lượng được thiết lập bởi thiết bị Bluetooth sẽ đồng bộ với điện thoại của bạn.</string>
     <string name="bluetooth_enter_pin_msg">Nhập mã PIN để ghép đôi với %s (thử 0000 hoặc 1234).</string>
     <string name="bluetooth_pin_maximum_number_message">Đã đạt số ký tự tối đa.</string>
+    <string name="bluetooth_frp_permission_message">Không thể sử dụng thiết bị Bluetooth cho cuộc gọi này.</string>
     <string name="settings_menu_done">Hoàn tất</string>
     <string name="usb_tethering_unavailable_subtext_tmo">Chưa kết nối USB</string>
     <string name="usb_tethering_available_subtext_tmo">Đã kết nối USB, hãy chọn để chia sẻ kết nối internet</string>
@@ -1482,7 +1485,7 @@ Chạm OK để cho phép tăng độ sáng trên mức an toàn."</string>
     <string name="navigationbar_pressure_sensitivity_title">Nhấn mạnh phím Trang chính</string>
     <string name="navigationbar_pressure_sensitivity_summary">Sử dụng phím Trang chính khi phím này đang ẩn bằng cách nhấn mạnh hơn bình thường.</string>
     <string name="navigationbar_pressure_sensitivity_level_summary">Độ mạnh lực nhấn: %1$d trên %2$d</string>
-    <string name="navigationbar_pressure_sensitivity_description_off">Sử dụng phím Trang chính khi phím này đang ẩn bằng cách nhấn mạnh hơn bình thường.</string>
+    <string name="navigationbar_pressure_sensitivity_description_off">Điều chỉnh cường độ áp lực cần thiết để nhấn mạnh phím Trang chính.</string>
     <string name="navigationbar_pressure_low">Nhẹ hơn</string>
     <string name="navigationbar_pressure_high">Mạnh hơn</string>
     <string name="navigationbar_hide_bar">Hiện và ẩn phím</string>
@@ -1621,7 +1624,7 @@ Chạm OK để cho phép tăng độ sáng trên mức an toàn."</string>
     <string name="crypt_keeper_decrypt_title">Giải mã thiết bị</string>
     <string name="crypt_keeper_decrypt_summary">Thiết bị đã được mã hóa.</string>
     <string name="crypt_keeper_type_pin">PIN</string>
-    <string name="crypt_keeper_type_pattern">Mẫu hình</string>
+    <string name="crypt_keeper_type_pattern">mẫu hình</string>
     <string name="crypt_keeper_type_password">Mật mã</string>
     <string name="crypt_keeper_type_direction">Khóa bằng hướng</string>
     <string name="crypt_keeper_confirm_title_dec">Xác nhận giải mã</string>
@@ -1705,7 +1708,11 @@ Việc mã hóa mất một giờ hoặc hơn. Trước khi bắt đầu, hãy �
     <string name="crypt_keeper_confirm_title">Xác nhận mật mã hóa</string>
     <string name="crypt_keeper_final_desc">Quá trình mã hóa thiết bị không thể đảo ngược lại được và dữ liệu sẽ bị mất nếu quá trình này bị gián đoạn. Việc mã hóa có thể kéo dài một giờ hoặc nhiều hơn, trong quá trình này thiết bị sẽ khởi động lại vài lần và bạn sẽ không thể sử dụng thiết bị.</string>
     <string name="crypt_keeper_setup_title">Đang mã hóa…</string>
-    <string name="crypt_keeper_warn_wipe">Bạn còn %d lần thử để khởi động thiết bị trước khi nó khôi phục cài đặt gốc. Quá trình này sẽ xóa tất cả dữ liệu, bao gồm file và ứng dụng đã tải về.</string>
+    <string name="crypt_keeper_warn_wipe">"Bạn còn %1$d lần thử trước khi điện thoại được khôi phục cài đặt gốc. Quá trình này sẽ xóa tất cả dữ liệu bao gồm các file và ứng dụng đã tải về.
+
+Nếu đặt lại điện thoại, bạn có thể cần nhập thông tin %2$s (địa chỉ email và mật mã) liên kết với điện thoại này để có thể sử dụng lại."</string>
+    <string name="crypt_keeper_samsung_account">Samsung account</string>
+    <string name="crypt_keeper_google_account">Tài khoản Google</string>
     <string name="crypt_keeper_failed_title">Mã hóa bị lỗi</string>
     <string name="crypt_keeper_failed_summary">Không thể khởi động thiết bị của bạn. Quá trình mã hóa đã bị gián đoạn. Bạn cần khôi phục cài đặt gốc cho thiết bị. Việc này sẽ xóa tất cả dữ liệu của bạn.</string>
     <string name="crypt_keeper_data_corrupted_title">Bộ nhớ thiết bị hỏng</string>
@@ -1724,10 +1731,13 @@ Việc mã hóa mất một giờ hoặc hơn. Trước khi bắt đầu, hãy �
     <string name="cryptkeeper_wrong_pin">Đã nhập sai mã PIN</string>
     <string name="cryptkeeper_wrong_direction">Đã vẽ sai hướng</string>
     <string name="checking_decryption">Đang xác nhận…</string>
-    <string name="crypt_keeper_last_warn_wipe">Bạn chỉ còn 1 lần thử để khởi động thiết bị trước khi thiết bị khôi phục cài đặt gốc. Quá trình này sẽ xóa tất cả dữ liệu, bao gồm file và ứng dụng đã tải về.</string>
+    <string name="crypt_keeper_last_warn_wipe">"Bạn còn 1 lần thử trước khi điện thoại của bạn khôi phục cài đặt gốc. Quá trình này sẽ xóa tất cả dữ liệu, bao gồm các file và ứng dụng đã tải về.
+
+Nếu điện thoại được đặt lại, bạn có thể cần nhập thông tin %s (địa chỉ email và mật mã) liên kết với điện thoại này để có thể sử dụng lại."</string>
     <string name="crypt_keeper_failed_title_dec">Lỗi giải mã.</string>
     <string name="crypt_keeper_failed_summary_dec">Không thể hoàn tất giải mã do bị gián đoạn. Khôi phục lại cài đặt gốc (xóa tất cả dữ liệu) trước khi sử dụng.</string>
     <string name="crypt_keeper_set_screen_lock_type">Đặt kiểu khóa màn hình</string>
+    <string name="crypt_keeper_warning_keyboard_cover_does_not_work">Vỏ bàn phím sẽ không hoạt động sau khi điện thoại khởi động lại.</string>
     <string name="encryption_interstitial_message">"Bạn có thể tăng cường bảo vệ cho điện thoại này bằng cách yêu cầu nhập %s trước khi điện thoại khởi động. Điều này giúp bảo vệ dữ liệu nếu điện thoại của bạn bị mất hoặc bị đánh cắp. Một số ứng dụng có thể yêu cầu Khởi động bảo mật theo Chính sách mã hóa thiết bị để truy cập vào các tính năng như đồng bộ email.
 
 Bạn sẽ không nhận được bất kỳ cuộc gọi, tin nhắn hoặc thông báo nào và chuông báo sẽ không phát âm thanh cho đến khi điện thoại đã khởi động."</string>
@@ -1972,6 +1982,12 @@ Bạn cũng sẽ cần kiểu khóa này khi:"</string>
     <string name="lockpassword_confirm_your_pin_with_fingerprint">Dùng vân tay hoặc nhập mã PIN hiện tại.</string>
     <string name="lockpassword_confirm_your_pattern_with_fingerprint">Dùng vân tay hoặc vẽ mẫu hình hiện tại.</string>
     <string name="lockpassword_confirm_your_password_with_fingerprint">Dùng vân tay hoặc nhập mật mã hiện tại.</string>
+    <string name="lockpassword_confirm_your_pin_with_iris">Dùng mống mắt hoặc nhập mã PIN hiện tại.</string>
+    <string name="lockpassword_confirm_your_pattern_with_iris">Dùng mống mắt hoặc vẽ mẫu hình hiện tại.</string>
+    <string name="lockpassword_confirm_your_password_with_iris">Dùng mống mắt hoặc nhập mật mã hiện tại.</string>
+    <string name="lockpassword_confirm_your_pin_with_biometrics">Dùng dữ liệu sinh trắc học hoặc nhập mã PIN của bạn.</string>
+    <string name="lockpassword_confirm_your_pattern_with_biometrics">Dùng dữ liệu sinh trắc học hoặc vẽ mẫu hình của bạn.</string>
+    <string name="lockpassword_confirm_your_password_with_biometrics">Dùng dữ liệu sinh trắc học hoặc nhập mật mã của bạn.</string>
     <string name="lockpassword_confirm_your_pin_instead_of_fingerprint">Nhập mã PIN của bạn thay vì sử dụng nhận dạng vân tay.</string>
     <string name="lockpassword_confirm_your_pattern_instead_of_fingerprint">Vẽ mẫu hình của bạn thay vì sử dụng nhận dạng vân tay.</string>
     <string name="lockpassword_confirm_your_password_instead_of_fingerprint">Nhập mật mã của bạn thay vì sử dụng nhận dạng vân tay.</string>
@@ -2046,6 +2062,7 @@ Hãy chọn cách bạn muốn mở khóa điện thoại. Không thể sử d�
     <string name="face_status_timeout">Hết giờ. Thử lại sau.</string>
     <string name="okay">OK</string>
     <string name="face_samsung_account_button">Dùng Samsung account</string>
+    <string name="face_galaxy_account_button">Sử dụng Galaxy account</string>
     <string name="face_error_DB_corrupted">Đã có vấn đề với dữ liệu khuôn mặt của bạn. Hãy đăng ký lại khuôn mặt của bạn.</string>
     <string name="face_error_DB_corrupted_popup_title">Đăng ký lại khuôn mặt của bạn</string>
     <string name="face_error_timeout">Khuôn mặt của bạn chưa được nhận dạng.</string>
@@ -2156,7 +2173,7 @@ Bật Mở khóa bằng mống mắt để sử dụng dữ liệu sinh trắc h
     <string name="biometrics_backup_locktype_title">Thiết lập bảo mật bằng mống mắt</string>
     <string name="biometrics_register_your_iris">Đăng ký mống mắt của bạn.</string>
     <string name="biometrics_backup_locktype_summary">Để dùng các mống mắt của bạn mở khóa thiết bị, bạn phải đặt mẫu hình, mã PIN hoặc mật mã.</string>
-    <string name="biometrics_backup_locktype_message">Để sử dụng mống mắt mở khóa điện thoại hoặc xác thực bảo mật, bạn sẽ cần:</string>
+    <string name="biometrics_backup_locktype_message">Sử dụng mống mắt để mở khóa điện thoại hoặc xác thực danh tính của bạn trong các ứng dụng, bạn sẽ cần:</string>
     <string name="iris_delete_popup_title">Xóa dữ liệu mống mắt?</string>
     <string name="iris_delete_popup_message">Xóa dữ liệu mống mắt?</string>
     <string name="iris_delete_popup_message_with_related_func">Các tính năng sử dụng mống mắt sẽ bị tắt.</string>
@@ -2232,6 +2249,9 @@ Hãy chọn cách bạn muốn mở khóa điện thoại. Không thể sử d�
     <string name="biometrics_dex_cant_use_msg">Không thể sử dụng %s trong Samsung DeX.</string>
     <string name="biometrics_dex_closed_to_switch">%s đã đóng để chuyển sang Samsung DeX.</string>
     <string name="biometircs_dex_cant_use_toast">%s không thể chạy trong Samsung DeX. Hãy thử chạy ở chế độ điện thoại.</string>
+    <string name="iris_guide_text_preview">Nhìn vào đây để dùng mống mắt</string>
+    <string name="iris_guide_enable_toggle">Chạm để dùng các mống mắt</string>
+    <string name="iris_cannot_verify">Không thể xác thực mống mắt</string>
     <string name="knox_twofactor_bio_description">Chọn kiểu khóa sinh trắc học và kiểu khóa thứ hai để mở khóa %s.</string>
     <string name="fingerprint_registered">Vân tay đã đăng ký sẽ được sử dụng với phương pháp mở khóa được chọn.</string>
     <string name="knox_twofactor_description">Chọn dữ liệu sinh trắc học và kiểu khóa thứ hai để mở khóa %s.</string>
@@ -3094,6 +3114,7 @@ Thử lại."</string>
     <string name="easy_mode_app_help">Sử dụng thiết bị của bạn dễ dàng hơn với bố cục màn hình chờ đơn giản hơn và các mục trên màn hình lớn hơn.</string>
     <string name="easy_mode_app_help_dream_1">Sử dụng bố cục Màn hình chờ đơn giản và các mục lớn hơn trên màn hình.</string>
     <string name="easy_mode_app_help_dream_2">Mọi tùy chỉnh bạn đã thực hiện với Màn hình chờ sẽ bị hủy và Thu/Phóng màn hình sẽ được đặt ở mức tối đa.</string>
+    <string name="easy_mode_app_help_3rd_launcher">Áp dụng chế độ Đơn giản để có các mục lớn hơn trên màn hình. Nếu bạn hiện không dùng giao diện TouchWiz, bố cục màn hình Chờ của bạn sẽ không thay đổi, tuy nhiên độ thu/phóng màn hình sẽ được đặt ở mức lớn và cỡ font sẽ được đặt ở mức trung bình.</string>
     <string name="security_warning_content">Bạn có thể bảo vệ sự riêng tư của mình bằng cách cài đặt mật mã, PIN hoặc mẫu hình để mở khóa màn hình</string>
     <string name="lock_setting_weather_desc">Để xem hoặc thay đổi cài đặt thời tiết, hãy chạm CÀI ĐẶT THỜI TIẾT bên dưới.</string>
     <string name="lock_setting_weather_btn">Cài đặt thời tiết</string>
@@ -3947,7 +3968,7 @@ Sử dụng Điểm truy cập di động sẽ làm tăng mức tiêu thụ pin 
     <string name="wfd_descrpition_playsound">Phát âm thanh.</string>
     <string name="wfd_is_not_supported">Chức năng này không được hỗ trợ.</string>
     <string name="usbtethering_notify_wifi_is_on_title">Tắt Wi-Fi?</string>
-    <string name="usbtethering_notify_wifi_is_on">Không thể bật Wi-Fi và Kết nối USB internet cùng lúc. Hãy tắt Wi-Fi.</string>
+    <string name="usbtethering_notify_wifi_is_on">Không thể bật Wi-Fi và Kết nối USB internet cùng lúc. Wi-Fi sẽ bị tắt.</string>
     <string name="disable_multi_window_dialog_text">Đa cửa sổ sẽ tắt và tất cả ứng dụng mở trong cửa sổ pop-up sẽ đóng.</string>
     <string name="keyguard_password_attempt_count_pin_code">Còn lại %d lần thử.</string>
     <string name="keyguard_password_attempts_count_pin_code">Còn lại %d lần.</string>
@@ -4155,6 +4176,7 @@ Nhận tin nhắn SMS"</string>
     <string name="hdmi_mode_title">Chế độ HDMI</string>
     <string name="hdmi_mode_dex">Samsung DeX</string>
     <string name="hdmi_mode_mirroring">Screen Mirroring</string>
+    <string name="hdmi_mode_not_available_while_cover_attached">%s không khả dụng khi gắn vỏ.</string>
     <string name="screen_timeout_for_dex">T.gian chờ của m.hình cho Samsung DeX</string>
     <string name="show_virtual_keyboard_for_dex">Hiển thị bàn phím trên màn hình trong Samsung DeX</string>
     <string name="comma">,</string>
@@ -4491,7 +4513,7 @@ Bạn có thể thay đổi sau trong Cài đặt Bluetooth."</string>
     <string name="date_picker_title">Ngày</string>
     <string name="time_picker_title">Thời gian</string>
     <string name="lock_after_timeout">Khóa tự động</string>
-    <string name="lock_after_timeout_summary">Khóa màn hình %s sau khi tự động tắt.</string>
+    <string name="lock_after_timeout_summary">Tự động khóa điện thoại %s sau khi màn hình tắt.</string>
     <string name="lock_after_timeout_summary_with_exception">Khóa màn hình %1$s sau khi màn hình tự động tắt, trừ khi được mở khóa bằng %2$s.</string>
     <string name="show_owner_info_on_lockscreen_label">Hiển thị thông tin của chủ sở hữu thiết bị trên màn hình khóa.</string>
     <string name="owner_info_settings_title">Thông tin người sở hữu</string>
@@ -4639,6 +4661,8 @@ Ghép đôi với %2$s?"</string>
     <string name="wifi_empty_list_user_restricted">Bạn không được phép thay đổi cài đặt Wi-Fi.</string>
     <string name="wifi_setup_wps">Cài đặt tự động (WPS)</string>
     <string name="wifi_show_advanced">Hiện các tùy chọn chuyên sâu</string>
+    <string name="wifi_advanced_toggle_description_expanded">Chạm hai lần để thu gọn.</string>
+    <string name="wifi_advanced_toggle_description_collapsed">Chạm hai lần để mở rộng.</string>
     <string name="wifi_wps_setup_title">Thiết lập WPS</string>
     <string name="wifi_wps_setup_msg">Đang bắt đầu WPS…</string>
     <string name="wifi_wps_onstart_pbc">Chạm vào phím cài đặt được bảo vệ của Wi-Fi trên bộ định tuyến của bạn. Nó có thể được gọi là WPS hoặc chứa biểu tượng này:</string>
@@ -4670,6 +4694,10 @@ Ghép đôi với %2$s?"</string>
     <string name="wifi_shared">Đã chia sẻ</string>
     <string name="wifi_unchanged">(chưa thay đổi)</string>
     <string name="wifi_unspecified">(Chưa xác định)</string>
+    <string name="wifi_select_cert">Chọn chứng chỉ</string>
+    <string name="wifi_do_not_provide_eap_user_cert">Không cung cấp</string>
+    <string name="wifi_do_not_validate_eap_server">Không xác thực</string>
+    <string name="wifi_do_not_validate_eap_server_warning">Chưa xác định chứng chỉ. Kết nối của bạn sẽ không được bảo mật.</string>
     <string name="wifi_scan_always_turnon_message">%s đang yêu cầu quyền dò tìm mạng Wi-Fi, ngay cả khi Wi-Fi tắt để cải thiện độ chính xác của vị trí và cho các mục đích khác. Cho phép điều này đối với tất cả ứng dụng?</string>
     <string name="wifi_scan_always_confirm_allow">Cho phép</string>
     <string name="wifi_scan_always_confirm_deny">Từ chối</string>
@@ -5004,9 +5032,9 @@ Hãy xem xét sử dụng thẻ SD hoặc thiết bị lưu trữ USB nhanh hơn
     <string name="restore_default_apn_completed">Đặt lại APN về mặc định.</string>
     <string name="reset_network_desc">Tùy chọn này sẽ đặt lại tất cả cài đặt mạng, bao gồm:</string>
     <string name="reset_network_button_text">Xóa các cài đặt</string>
-    <string name="reset_network_final_desc">Tất cả cài đặt kết nối sẽ được đặt lại. Không thể hoàn tác hành động này.</string>
+    <string name="reset_network_final_desc">Tất cả cài đặt mạng sẽ được đặt lại. Hành động này không thể hoàn tác.</string>
     <string name="reset_network_final_button_text">Xóa các cài đặt</string>
-    <string name="reset_network_complete_toast">Khôi phục cài đặt kết nối.</string>
+    <string name="reset_network_complete_toast">Đã khôi phục cài đặt mạng.</string>
     <string name="master_clear_title">Khôi phục cài đặt gốc</string>
     <string name="master_clear_accounts">Bạn hiện đã đăng nhập vào các tài khoản sau:</string>
     <string name="master_clear_other_users_present">Dữ liệu thuộc về những người dùng khác trên thiết bị này cũng sẽ bị xóa.</string>
@@ -6119,6 +6147,7 @@ Bạn sẽ không nhận được cuộc gọi, tin nhắn và thông báo, đ�
     <string name="set_data_limit">Đặt giới hạn dữ liệu</string>
     <string name="data_limit">Giới hạn dữ liệu</string>
     <string name="data_usage_template">%1$s đã được dùng trong khoảng %2$s</string>
+    <string name="data_usage_template_wifi">Đã dùng %s trong 30 ngày qua</string>
     <string name="data_usage_other_apps">Ứ.dụng l.quan có trong t.tin s.dụng</string>
     <string name="data_saver_title">Tiết kiệm dữ liệu</string>
     <string name="unrestricted_data_saver">Cho phép ứ.dụng khi bật T.kiệm d.liệu</string>
@@ -6169,6 +6198,7 @@ Bạn sẽ không nhận được cuộc gọi, tin nhắn và thông báo, đ�
     <string name="legacy_dhcp_client_summary">Sử dụng ứng dụng DHCP từ Lollipop thay vì ứng dụng DHCP mới của Android.</string>
     <string name="screen_off_pocket_title">Giữ màn hình tắt</string>
     <string name="screen_off_pocket_summary">Tránh vô tình bật màn hình khi thiết bị ở trong chỗ tối như túi hoặc giỏ xách.</string>
+    <string name="noApplications">Tất cả ứng dụng liên kết với hành động này đã bị tắt, bị chặn hoặc chưa được cài đặt.</string>
     <string name="confirm_reset_shortcut_manager_throttling_title">Đặt lại giới hạn tỉ lệ Quản lý phím tắt</string>
     <string name="confirm_reset_shortcut_manager_throttling_message">Bộ đếm giới hạn tỉ lệ Quản lý phím tắt sẽ được đặt lại.</string>
 </resources>

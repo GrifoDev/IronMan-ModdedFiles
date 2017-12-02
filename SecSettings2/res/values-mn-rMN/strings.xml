@@ -170,6 +170,8 @@
     <string name="wifi_allow_scan_with_traffic_summary">Ашигласан өгөгдлийн дүнд үндэслэн Wi-Fi роуминг хайлтыг автоматаар зөвшөөрөх буюу татгалз.</string>
     <string name="select_logd_size_title">Бүртгэлийн буферын хэмжээ</string>
     <string name="select_logd_size_dialog_title">Бүртгэлийн буфер тус бүрийн дээд хэмжээ сонгох</string>
+    <string name="dev_logpersist_clear_warning_title">Байнгын логгер санах ойг арилгах уу?</string>
+    <string name="dev_logpersist_clear_warning_message">Байнгын логгер унтарсан үед логгер өгөгдөл усгагдах болно.</string>
     <string name="select_logpersist_title">Бүртгэл.н өгөгдөл байнга хадгал</string>
     <string name="select_logpersist_dialog_title">Байнга хадгалах бүртгэлийн буферийг сонго</string>
     <string name="select_usb_configuration_title">USB тохиргоо</string>
@@ -982,6 +984,7 @@ Wi-Fi болон Bluetooth мөн унтрах боловч тэднийг То�
     <string name="bluetooth_avc_available_description">Холбогдсон Bluetooth төхөөрөмж Медиа дууны түвшин синхрончлохыг дэмждэг, Bluetooth төхөөрөмж дээр тохируулсан дууны түвшинг таны утастай синхрончилно.</string>
     <string name="bluetooth_enter_pin_msg">%s-тай хослуулахын тулд PIN оруул (0000 эсвэл 1234 гэж оруулж үз).</string>
     <string name="bluetooth_pin_maximum_number_message">Тэмдэгтийн дээд хязгаарт хүрсэн.</string>
+    <string name="bluetooth_frp_permission_message">Энэ дуудлагад Bluetooth төхөөрөмж ашиглах боломжгүй.</string>
     <string name="settings_menu_done">Дууслаа</string>
     <string name="usb_tethering_unavailable_subtext_tmo">USB not connected</string>
     <string name="usb_tethering_available_subtext_tmo">USB connected, check to tether</string>
@@ -1481,7 +1484,7 @@ Where Can I Find More Information About the 3rd Party's Policies? Separately, if
     <string name="navigationbar_pressure_sensitivity_title">Үндсэн товчийг чанга дар</string>
     <string name="navigationbar_pressure_sensitivity_summary">Үндсэн товч нуугдсан бол ердийнхөөс чанга дараад ашигла.</string>
     <string name="navigationbar_pressure_sensitivity_level_summary">Даралтын түвшин: %2$d-с %1$d</string>
-    <string name="navigationbar_pressure_sensitivity_description_off">Үндсэн товч нуугдсан бол ердийнхөөс чанга дараад ашигла.</string>
+    <string name="navigationbar_pressure_sensitivity_description_off">Үндсэн товчийг чанга дарах даралтын хэмжээг тааруул.</string>
     <string name="navigationbar_pressure_low">Хөнгөн</string>
     <string name="navigationbar_pressure_high">Хүчтэй</string>
     <string name="navigationbar_hide_bar">Товчийг харуулах ба нуух</string>
@@ -1620,7 +1623,7 @@ Where Can I Find More Information About the 3rd Party's Policies? Separately, if
     <string name="crypt_keeper_decrypt_title">Төхөөрөмжийн код тайлах</string>
     <string name="crypt_keeper_decrypt_summary">Төхөөрөмж нууцлах.</string>
     <string name="crypt_keeper_type_pin">PIN</string>
-    <string name="crypt_keeper_type_pattern">Хээ</string>
+    <string name="crypt_keeper_type_pattern">хээ</string>
     <string name="crypt_keeper_type_password">Нууц үг</string>
     <string name="crypt_keeper_type_direction">Чиглэлээр түгжих</string>
     <string name="crypt_keeper_confirm_title_dec">Код тайлалтыг баталгаажуулах</string>
@@ -1704,7 +1707,11 @@ Where Can I Find More Information About the 3rd Party's Policies? Separately, if
     <string name="crypt_keeper_confirm_title">Нууцлалтыг баталгаажуулах</string>
     <string name="crypt_keeper_final_desc">Төхөөрөмжөө шифрлэх ажиллагааг буцаах боломжгүй бөгөөд хэрэв ажиллагаа тасалдвал өгөгдөл алдагдана. Шифрлэхэд нэг цаг буюу түүнээс илүү хугацаа орж болох бөгөөд энэ үед таны төхөөрөмж хэд хэдэн удаа унтарч, асах ба түүнийг ашиглах боломжгүй байна.</string>
     <string name="crypt_keeper_setup_title">Шифрлэж байна…</string>
-    <string name="crypt_keeper_warn_wipe">Төхөөрөмж үйлдвэрийн өгөгдмөл тохиргоогоо сэргээх хүртэл танд төхөөрөмжөө эхлүүлэх %d оролдлого үлдсэн. Энэ нь файл болон татаж авсан хэрэглүүрүүд зэрэг бүх өгөгдлийг арилгана.</string>
+    <string name="crypt_keeper_warn_wipe">"Танд утас үйлдвэрийн өгөгдмөл тохиргоо рүү дахин тохируулахаас өмнө %1$d оролдлого үлдсэн. Хамааралтай файл болон татаж авсан хэрэглүүр гэх зэрэг бүх өгөгдөл устгана.
+
+Хэрэв таны утас дахин тохирсон бол та энэ утастай холбоотой %2$s мэдээлэлийг (э-шуудан хаяг ба нууц үг) дахин ашиглахын тулд оруулах хэрэгтэй болно."</string>
+    <string name="crypt_keeper_samsung_account">Samsung account</string>
+    <string name="crypt_keeper_google_account">Google-ийн бүртгэл</string>
     <string name="crypt_keeper_failed_title">Нууцалж чадсангүй</string>
     <string name="crypt_keeper_failed_summary">Төхөөрөмжөө эхлүүлэх боломжгүй. Шифрлэх ажиллагаа тасалдлаа. Та төхөөрөмжийнхөө үйлдвэрийн өгөгдмөл тохиргоог сэргээх шаардлагатай. Ингэснээр бүх өгөгдлийг арилгана.</string>
     <string name="crypt_keeper_data_corrupted_title">Төхөөрөмжийн санах ойн эвдрэл</string>
@@ -1723,10 +1730,13 @@ Where Can I Find More Information About the 3rd Party's Policies? Separately, if
     <string name="cryptkeeper_wrong_pin">Буруу PIN оруулсан</string>
     <string name="cryptkeeper_wrong_direction">Чиглэлийг буруу зурлаа</string>
     <string name="checking_decryption">Баталгаажуулж байна…</string>
-    <string name="crypt_keeper_last_warn_wipe">Төхөөрөмжийн үйлдвэрийн өгөгдмөл тохиргоог сэргээх хүртэл та 1 л удаа асаахаар оролдох боломжтой. Энэ нь таны файл, татаж авсан хэрэглүүрүүд зэрэг бүх мэдээллийг бүрмөсөн арчина.</string>
+    <string name="crypt_keeper_last_warn_wipe">"Таны утас үйлдвэрийн өгөгдмөл тохиргоо руу дахин тохируулахаас өмнө танд 1 оролдлого үлдсэн. Энэ нь файл болон татаж авсан хэрэглүүр зэрэг бүх өгөгдлийг арилгах болно.
+
+Хэрэв таны утас дахин тохируулагдсан бол та энэ утастай хамаатай %s мэдээллийг (э-шуудан ба нууц үг) дахин ашиглахын тулд оруулах хэрэгтэй болно."</string>
     <string name="crypt_keeper_failed_title_dec">Кодыг тайлж чадсангүй.</string>
     <string name="crypt_keeper_failed_summary_dec">Тасалдлаас шалтгаалж шифр тайлах боломжгүй байна. Ашиглахаас өмнө үйлдвэрийн өгөгдөл тэглэх (бүх өгөгдлийг арилгаж) ажиллагаа гүйцэтгэ.</string>
     <string name="crypt_keeper_set_screen_lock_type">Дэлгэц түгжээн төрөл тохируул</string>
+    <string name="crypt_keeper_warning_keyboard_cover_does_not_work">Гар утсыг дахин эхлүүлсний дараа гарын хавтас ажиллахгүй.</string>
     <string name="encryption_interstitial_message">"Та цаашид энэ утсыг хамгаалахын тулд утас асахын өмнө %s оруулахыг шаардаж болно. Энэ нь утас хаягдсан эсвэл хулгайлагдсан нөхцөлд өгөгдлөө хамгаалахад тусална. Э-шуудан синхрончлол гэх мэт боломжуудын хандалтад зориулсан Төхөөрөмжийн шифрлэлтийн бодлогын дагуу зарим хэрэглүүр Найдвартай эхлүүлэхийг шаардаж болно.
 
 Та утас астал ямар ч дуудлага, зурвас болон мэдэгдэл хүлээн авахгүй бөгөөд дохиоллууд дуугарахгүй."</string>
@@ -1971,6 +1981,12 @@ You will also need it when:"</string>
     <string name="lockpassword_confirm_your_pin_with_fingerprint">Хурууны хээ ашиглах буюу одоо байгаа PIN-г оруулна уу.</string>
     <string name="lockpassword_confirm_your_pattern_with_fingerprint">Хурууны хээ ашиглах буюу одоо байгаа хээгээ зурна уу.</string>
     <string name="lockpassword_confirm_your_password_with_fingerprint">Хурууны хээ ашиглах буюу одоо байгаа нууц үгийг оруулна уу.</string>
+    <string name="lockpassword_confirm_your_pin_with_iris">Солонгон бүрхэвчээ ашигла эсвэл PIN-ээ оруул.</string>
+    <string name="lockpassword_confirm_your_pattern_with_iris">Солонгон бүрхэвчээ ашигла эсвэл одоо байгаа хээгээ зур.</string>
+    <string name="lockpassword_confirm_your_password_with_iris">Солонгон бүрхэвчээ ашигла эсвэл нууц үгээ оруул.</string>
+    <string name="lockpassword_confirm_your_pin_with_biometrics">Биометр ашигла эсвэл PIN-ээ оруул.</string>
+    <string name="lockpassword_confirm_your_pattern_with_biometrics">Биометр ашигла эсвэл хээгээ зур.</string>
+    <string name="lockpassword_confirm_your_password_with_biometrics">Биометр ашигла эсвэл нууц үгээ оруул.</string>
     <string name="lockpassword_confirm_your_pin_instead_of_fingerprint">Хурууны хээ таниулахыг ашиглахгүйгээр PIN-гээ оруул.</string>
     <string name="lockpassword_confirm_your_pattern_instead_of_fingerprint">Хурууны хээ таниулахыг ашиглахгүйгээр хээгээ зур.</string>
     <string name="lockpassword_confirm_your_password_instead_of_fingerprint">Хурууны хээ таниулахыг ашиглахгүйгээр нууц үгээ оруул.</string>
@@ -2045,6 +2061,7 @@ You will also need it when:"</string>
     <string name="face_status_timeout">Завсарлага. Дараа оролд.</string>
     <string name="okay">OK</string>
     <string name="face_samsung_account_button">Samsung account ашигла</string>
+    <string name="face_galaxy_account_button">Galaxy account ашигла</string>
     <string name="face_error_DB_corrupted">Таны нүүрний өгөгдөлд бэрхшээл гарлаа. Нүүрээ дахин бүртгүүлнэ үү.</string>
     <string name="face_error_DB_corrupted_popup_title">Нүүрээ дахин бүртгүүлнэ үү.</string>
     <string name="face_error_timeout">Таны нүүр илэрсэнгүй.</string>
@@ -2155,7 +2172,7 @@ Galaxy account-аа нэмээд доорх тохиргоог өөрчилнө 
     <string name="biometrics_backup_locktype_title">Нүдний солонгон бүрхэвчийн хамгаалалтыг тохируулах</string>
     <string name="biometrics_register_your_iris">Солонгон бүрхэвчээ бүртгүүл.</string>
     <string name="biometrics_backup_locktype_summary">Хоёр нүдний солонгон бүрхэвчээрээ төхөөрөмжийн түгжээг тайлахын тулд хээ, PIN, нууц үгийн аль нэгийг тохируулах ёстой.</string>
-    <string name="biometrics_backup_locktype_message">Солонгон бүрхэвчээ утасныхаа түгжээг тайлах эсвэл найдвартай баталгаажуулалтад ашиглахын тулд танд дараах зүйлс шаардлагатай:</string>
+    <string name="biometrics_backup_locktype_message">Утасны түгжээг тайлах, хэрэглүүрүүдэд өөрийгөө таниулахын тулд солонгон бүрхэвчийг ашиглахдаа:</string>
     <string name="iris_delete_popup_title">Солонгон бүрхэвчийн өгөгдлийг арилгах уу?</string>
     <string name="iris_delete_popup_message">Солонгон бүрхэвчийн өгөгдлийг арилгах уу?</string>
     <string name="iris_delete_popup_message_with_related_func">Солонгон бүрхэвч ашигладаг функцуудыг унтраана.</string>
@@ -2231,6 +2248,9 @@ Galaxy account-аа нэмээд доорх тохиргоог өөрчилнө 
     <string name="biometrics_dex_cant_use_msg">%s-г Samsung DeX дотор ашиглах боломжгүй.</string>
     <string name="biometrics_dex_closed_to_switch">Samsung DeX рүү шилжихийн тулд %s-г хаасан.</string>
     <string name="biometircs_dex_cant_use_toast">Samsung DeX дээр %s-г ажиллуулах боломжгүй. Утасны горим дээр ажиллуулж үзнэ үү.</string>
+    <string name="iris_guide_text_preview">Хараад сол.бүрхэвч ашигла</string>
+    <string name="iris_guide_enable_toggle">Товшоод сол. бүрхэвч ашигла</string>
+    <string name="iris_cannot_verify">Солонгон бүрхэвч баталгаажуулж чадсангүй</string>
     <string name="knox_twofactor_bio_description">Биометрийн түгжээний төрөл болон хоёр дахь түгжээний төрлөө сонгоод %s-н түгжээг тайл.</string>
     <string name="fingerprint_registered">Сонгосон нээх аргатай бүртгэлтэй хуруунуудыг ашиглана.</string>
     <string name="knox_twofactor_description">Биометрээ сонгоод %s-н түгжээг тайлах хоёр дахь түгжээний төрлийг сонгоно уу.</string>
@@ -3092,6 +3112,7 @@ Mobile data will be turned off."</string>
     <string name="easy_mode_app_help">Энгийн зураглалтай эх дэлгэц дээр юмсыг томоор харж, төхөөрөмжөө илүү хялбархан хэрэглээрэй.</string>
     <string name="easy_mode_app_help_dream_1">Энгийн Эх дэлгэцийн зураглал, томовтор хэмжээний зүйлсийг дэлгэц дээр ашигла.</string>
     <string name="easy_mode_app_help_dream_2">Эх дэлгэцийн бүх тохируулсан өөрчлөлтүүдийг үл хэрэгсэх ба Дэлгэц томруулахыг хамгийн их дээр тохируулна.</string>
+    <string name="easy_mode_app_help_3rd_launcher">Хялбар горимыг дэлгэцэн дээрх том хэмжээтэй зүйлсэд хэрэглэ. Хэрэв та TouchWiz эхийг ашиглахгүй байгаа бол таны Эх дэлгэцийн зураглал өөрчлөгдөхгүй, гэвч дэлгэц томруулхыг том хэмжээтэй тохируулах ба үсгийн хэмжээг дунд зэргийн болгоно.</string>
     <string name="security_warning_content">Та нууц үг, PIN, эсвэл дэлгэцээ нээх хээ тохируулах замаар нууцлалаа хамгаалж болно</string>
     <string name="lock_setting_weather_desc">Цаг агаарын тохиргоог харж өөрчлөхийн тулд доорх ЦАГ АГААРЫН ТОХИРГООГ товш.</string>
     <string name="lock_setting_weather_btn">Цаг агаарын тохиргоо</string>
@@ -3338,7 +3359,7 @@ Downloading via mobile networks may result in additional charges depending on yo
     <string name="disable_hovering_title">Агаар харагдац идэвхгүй болго</string>
     <string name="disable_hovering_summary">Агаарын харагдац ба TalkBack-ийг хоёуланг нь идэвхжүүлэх боломжгүй. Аг харагд идэвхгүй болно.</string>
     <string name="pen_settings_pen_input">Шууд үзэгний оролт</string>
-    <string name="action_memo_onoff_screen_title">Дэл. унтр санамж</string>
+    <string name="action_memo_onoff_screen_title">Дэлгэц унтраах санамж</string>
     <string name="screen_off_note_summary">Дэлгэц унтарсан үеэр тэмдэглэлүүд бич. S Pen-г зүгээр арилгаад бичиж эхэл.</string>
     <string name="screen_off_note_summary_jpn">Дэлгэц унтарсан үед S Pen-г сугалаад дэлгэцэн дээр бичиж тэмдэглэлүүд үүсгэ. Унтарсан дэлгэцийн санамжууд Galaxy Notes-д хадгалагдана.</string>
     <string name="screen_off_note_summary_no_detach">Үзэгний товчийг дарж, унтарсан дэлгэцийг товшоод бичиж тэмдэглэл үүсгэнэ. Дэлгэц унтарсан үеийн санамжууд Samsung Notes-д хадгалагдана.</string>
@@ -3945,7 +3966,7 @@ You will switch back to Wi-Fi Sharing when a Wi-Fi network becomes available."</
     <string name="wfd_descrpition_playsound">Дуу тоглуул.</string>
     <string name="wfd_is_not_supported">Энэ функц тохирохгүй.</string>
     <string name="usbtethering_notify_wifi_is_on_title">Wi-Fi унтраах уу?</string>
-    <string name="usbtethering_notify_wifi_is_on">Wi-Fi болон USB холболтоор зэрэг холбогдох боломжгүй. Wi-Fi-г унтраа.</string>
+    <string name="usbtethering_notify_wifi_is_on">Wi-Fi болон USB холболтоор нэгэн зэрэг холбогдох боломжгүй. Wi-Fi-г унтраана.</string>
     <string name="disable_multi_window_dialog_text">Олон цонхыг идэвхгүй болгож жижиг цонхонд нээлттэй бүх аппыг хаана.</string>
     <string name="keyguard_password_attempt_count_pin_code">%d оролдлого үлдсэн.</string>
     <string name="keyguard_password_attempts_count_pin_code">%d оролдлого үлдсэн.</string>
@@ -4153,6 +4174,7 @@ SMS зурвас хүлээн авах"</string>
     <string name="hdmi_mode_title">HDMI горим</string>
     <string name="hdmi_mode_dex">Samsung DeX</string>
     <string name="hdmi_mode_mirroring">Screen Mirroring</string>
+    <string name="hdmi_mode_not_available_while_cover_attached">Хавтас хавсаргасан үед %s боломжгүй.</string>
     <string name="screen_timeout_for_dex">Samsung DeX дэлгэц.н завсарлага</string>
     <string name="show_virtual_keyboard_for_dex">Samsung DeX-д дэлгэц дээрх товчлуурыг харуул</string>
     <string name="comma">,</string>
@@ -4461,7 +4483,7 @@ SMS зурвас хүлээн авах"</string>
     <string name="date_picker_title">Огноо</string>
     <string name="time_picker_title">Цаг</string>
     <string name="lock_after_timeout">Автоматаар түгжих</string>
-    <string name="lock_after_timeout_summary">Үүнийг унтарсны дараа %s дэлгэцийг автоматаар түгж.</string>
+    <string name="lock_after_timeout_summary">Утсыг дэлгэц унтарснаас хойш %s дараа автоматаар түгжих.</string>
     <string name="lock_after_timeout_summary_with_exception">Түгжих дэлгэц %1$s -ны дараа автоматаар унтарна. Гэхдээ %2$s -р нээгдсэн үед тооцогдохгүй.</string>
     <string name="show_owner_info_on_lockscreen_label">Төхөөрөмж эзэмшигчийн мэдээллийг түгжих дэлгэц дээр харуул.</string>
     <string name="owner_info_settings_title">Эзэмшигчийн мэдээлэл</string>
@@ -4609,6 +4631,8 @@ SMS зурвас хүлээн авах"</string>
     <string name="wifi_empty_list_user_restricted">Та Wi-Fi тохиргоог өөрчлөх зөвшөөрөлгүй байна.</string>
     <string name="wifi_setup_wps">Автомат тохируулга (WPS)</string>
     <string name="wifi_show_advanced">Нарийвчилсан сонголтууд харуулах</string>
+    <string name="wifi_advanced_toggle_description_expanded">Хураахын тулд давхар товш.</string>
+    <string name="wifi_advanced_toggle_description_collapsed">Дэлгэхийн тулд давхар товш.</string>
     <string name="wifi_wps_setup_title">WPS тохируулга</string>
     <string name="wifi_wps_setup_msg">WPS эхлүүлж байна…</string>
     <string name="wifi_wps_onstart_pbc">Өөрийн чиглүүлэгч дээрх Wi-Fi хамгаалалттай тохируулгын товчийг товш. Энэ нь WPS гэсэн нэртэй байж болно эсвэл энэ тэмдэглэгээг агуулж болно:</string>
@@ -4640,6 +4664,10 @@ SMS зурвас хүлээн авах"</string>
     <string name="wifi_shared">Хуваалцсан</string>
     <string name="wifi_unchanged">(солигдоогүй)</string>
     <string name="wifi_unspecified">(Заагаагүй)</string>
+    <string name="wifi_select_cert">Гэрчилгээ сонгох</string>
+    <string name="wifi_do_not_provide_eap_user_cert">Бүү олго</string>
+    <string name="wifi_do_not_validate_eap_server">Бүү баталгаажуул</string>
+    <string name="wifi_do_not_validate_eap_server_warning">Гэрчилгээ харуулаагүй. Таны холболт хувийн болохгүй.</string>
     <string name="wifi_scan_always_turnon_message">%s Wi-Fi-г идэвхгүй болгосон үед ч гэсэн байршлын нарийвчлалыг сайжруулах болон бусад зорилгоор Wi-Fi сүлжээ хайх зөвшөөрөл хүсэж байна. Бүх аппад үүнийг зөвшөөрөх үү?</string>
     <string name="wifi_scan_always_confirm_allow">Зөвшөөрөх</string>
     <string name="wifi_scan_always_confirm_deny">Татгалзах</string>
@@ -4974,9 +5002,9 @@ SMS зурвас хүлээн авах"</string>
     <string name="restore_default_apn_completed">APN тохиргоог өгөгдмөл болгон дахин тохируулсан</string>
     <string name="reset_network_desc">Энэ нь дараах бүх сүлжээний тохиргоог дахин тохируулна:</string>
     <string name="reset_network_button_text">Тохиргоог сэргээх</string>
-    <string name="reset_network_final_desc">Бүх холболтын тохиргоог дахин тохируулна. Энэ үйлдлийг буцаах боломжгүй.</string>
+    <string name="reset_network_final_desc">Бүх сүлжээний тохиргоог дахин тохируулна. Энэ үйлдлийг буцаах боломжгүй.</string>
     <string name="reset_network_final_button_text">Тохиргоог сэргээх</string>
-    <string name="reset_network_complete_toast">Холболтын тохиргоог дахин тохирууллаа.</string>
+    <string name="reset_network_complete_toast">Сүлжээг дахин тохируулсан.</string>
     <string name="master_clear_title">Үйлдвэрийн өгөгдлийг сэргээх</string>
     <string name="master_clear_accounts">Та одоогоор дараах бүртгэлүүд рүү нэвтэрсэн байна:</string>
     <string name="master_clear_other_users_present">Энэхүү төхөөрөмж дээрх бусад хэрэглэгчийн тусдаа өгөгдөл устана.</string>
@@ -6089,6 +6117,7 @@ If the device has multiple users, using this shortcut on the lock screen tempora
     <string name="set_data_limit">Өгөгдлийн хязгаарыг тохируул</string>
     <string name="data_limit">Дата ашиглах хязгаар</string>
     <string name="data_usage_template">%2$s %1$s ашигласан</string>
+    <string name="data_usage_template_wifi">%s сүүлийн 30 хоногт ашигласан</string>
     <string name="data_usage_other_apps">Ашиглалтанд орсон хэрэглүүрүүд</string>
     <string name="data_saver_title">Өгөгдөл хэмнэгч</string>
     <string name="unrestricted_data_saver">Өг.л Хэм.ч ассан үед хэр.р зөв.х</string>
@@ -6139,6 +6168,7 @@ If the device has multiple users, using this shortcut on the lock screen tempora
     <string name="legacy_dhcp_client_summary">Шинэ Андройд DHCP харилцагчийн оронд Lollipop-ийн DHCP харилцагчийг хэрэглэ.</string>
     <string name="screen_off_pocket_title">Дэл.г унт. хэвээр байлга</string>
     <string name="screen_off_pocket_summary">Халаас, цүнх зэрэг харанхуй газар дэлгэцийг санамсаргүйгээр асахаас сэргийл.</string>
+    <string name="noApplications">Энэ үйлдэлтэй холбоотой бүх хэрэглүүрийг идэвхгүй болгож, блоклож эсвэл суулгаагүй байна.</string>
     <string name="confirm_reset_shortcut_manager_throttling_title">Холбоосын Удирдлагын үнэлгээний хязгаарлагчийг дахин тохируулах</string>
     <string name="confirm_reset_shortcut_manager_throttling_message">Холбоосын Удирдлагын үнэлгээний хязгаарлагчийн тоолуурыг дахин тохируулна.</string>
 </resources>

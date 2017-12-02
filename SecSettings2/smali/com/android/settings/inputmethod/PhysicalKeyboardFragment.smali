@@ -433,7 +433,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f0f03bb
+    const v2, 0x7f0f03ba
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getInteger(I)I
 
@@ -610,7 +610,7 @@
 
     check-cast v7, Landroid/app/Activity;
 
-    const v0, 0x7f0800c0
+    const v0, 0x7f0800c2
 
     invoke-virtual {p0, v0}, Lcom/android/settings/inputmethod/PhysicalKeyboardFragment;->addPreferencesFromResource(I)V
 

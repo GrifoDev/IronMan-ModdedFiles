@@ -33,7 +33,7 @@
 
     iput-object v4, p0, Lcom/samsung/android/settings/wifi/p2p/WifiP2pAvailablePeer;->mContactDrawable:Landroid/graphics/drawable/Drawable;
 
-    const v3, 0x7f0403bd
+    const v3, 0x7f0403c0
 
     invoke-virtual {p0, v3}, Lcom/samsung/android/settings/wifi/p2p/WifiP2pAvailablePeer;->setLayoutResource(I)V
 
@@ -435,7 +435,7 @@
     return-void
 
     :cond_3
-    const v2, 0x7f0b0ee9
+    const v2, 0x7f0b0ef8
 
     invoke-virtual {p0, v2}, Lcom/samsung/android/settings/wifi/p2p/WifiP2pAvailablePeer;->setSummary(I)V
 

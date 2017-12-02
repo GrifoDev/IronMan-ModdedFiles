@@ -48,7 +48,7 @@
 
     iget-object v2, p0, Lcom/samsung/android/settings/display/BrightnessSeekBarPreference$4;->this$0:Lcom/samsung/android/settings/display/BrightnessSeekBarPreference;
 
-    invoke-static {v2}, Lcom/samsung/android/settings/display/BrightnessSeekBarPreference;->-get8(Lcom/samsung/android/settings/display/BrightnessSeekBarPreference;)Z
+    invoke-static {v2}, Lcom/samsung/android/settings/display/BrightnessSeekBarPreference;->-get9(Lcom/samsung/android/settings/display/BrightnessSeekBarPreference;)Z
 
     move-result v2
 
@@ -64,7 +64,7 @@
 
     iget-object v0, p0, Lcom/samsung/android/settings/display/BrightnessSeekBarPreference$4;->this$0:Lcom/samsung/android/settings/display/BrightnessSeekBarPreference;
 
-    invoke-static {v0}, Lcom/samsung/android/settings/display/BrightnessSeekBarPreference;->-get8(Lcom/samsung/android/settings/display/BrightnessSeekBarPreference;)Z
+    invoke-static {v0}, Lcom/samsung/android/settings/display/BrightnessSeekBarPreference;->-get9(Lcom/samsung/android/settings/display/BrightnessSeekBarPreference;)Z
 
     move-result v0
 

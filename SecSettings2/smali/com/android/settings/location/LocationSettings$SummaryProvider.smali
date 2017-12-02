@@ -79,7 +79,7 @@
 
     aput-object v4, v3, v6
 
-    const v4, 0x7f0b1df9
+    const v4, 0x7f0b1e0b
 
     invoke-virtual {v2, v4, v3}, Landroid/content/Context;->getString(I[Ljava/lang/Object;)Ljava/lang/String;
 
@@ -96,7 +96,7 @@
 
     iget-object v2, p0, Lcom/android/settings/location/LocationSettings$SummaryProvider;->mContext:Landroid/content/Context;
 
-    const v3, 0x7f0b1dfa
+    const v3, 0x7f0b1e0c
 
     invoke-virtual {v2, v3}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 

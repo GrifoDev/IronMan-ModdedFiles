@@ -110,7 +110,7 @@
 
     invoke-virtual {v1}, Ljava/io/FileOutputStream;->close()V
 
-    const v1, 0x7f0b0d7d
+    const v1, 0x7f0b0d8c
 
     invoke-virtual {p0, v1}, Lcom/samsung/android/settings/location/SatelliteViewLog;->getString(I)Ljava/lang/String;
 
@@ -232,11 +232,11 @@
 
     :cond_0
     :goto_0
-    const v2, 0x7f04028d
+    const v2, 0x7f040290
 
     invoke-virtual {p0, v2}, Lcom/samsung/android/settings/location/SatelliteViewLog;->setContentView(I)V
 
-    const v2, 0x7f110721
+    const v2, 0x7f110723
 
     invoke-virtual {p0, v2}, Lcom/samsung/android/settings/location/SatelliteViewLog;->findViewById(I)Landroid/view/View;
 
@@ -275,7 +275,7 @@
     invoke-virtual {v2, v5}, Landroid/widget/Button;->setEnabled(Z)V
 
     :goto_1
-    const v2, 0x7f110720
+    const v2, 0x7f110722
 
     invoke-virtual {p0, v2}, Lcom/samsung/android/settings/location/SatelliteViewLog;->findViewById(I)Landroid/view/View;
 
@@ -294,7 +294,7 @@
     return-void
 
     :cond_1
-    const v2, 0x7f0b0d7d
+    const v2, 0x7f0b0d8c
 
     :try_start_1
     invoke-virtual {p0, v2}, Lcom/samsung/android/settings/location/SatelliteViewLog;->getString(I)Ljava/lang/String;

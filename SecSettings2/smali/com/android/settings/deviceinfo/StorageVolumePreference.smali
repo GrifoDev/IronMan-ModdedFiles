@@ -117,7 +117,7 @@
 
     iput v0, v1, Lcom/android/settings/deviceinfo/StorageVolumePreference;->mColor:I
 
-    const v18, 0x7f040303
+    const v18, 0x7f040306
 
     move-object/from16 v0, p0
 
@@ -167,7 +167,7 @@
 
     if-eqz v18, :cond_4
 
-    const v18, 0x7f0204f6
+    const v18, 0x7f0204f8
 
     move-object/from16 v0, p1
 
@@ -285,7 +285,7 @@
 
     aput-object v12, v18, v19
 
-    const v19, 0x7f0b16ee
+    const v19, 0x7f0b1700
 
     move-object/from16 v0, p1
 
@@ -352,7 +352,7 @@
 
     iput v0, v1, Lcom/android/settings/deviceinfo/StorageVolumePreference;->mColor:I
 
-    const v18, 0x7f0204f8
+    const v18, 0x7f0204fa
 
     move-object/from16 v0, p1
 
@@ -400,7 +400,7 @@
 
     if-eqz v18, :cond_3
 
-    const v18, 0x7f040243
+    const v18, 0x7f040246
 
     move-object/from16 v0, p0
 
@@ -412,7 +412,7 @@
     return-void
 
     :cond_4
-    const v18, 0x7f0204f7
+    const v18, 0x7f0204f9
 
     move-object/from16 v0, p1
 
@@ -468,7 +468,7 @@
 
     const/4 v4, 0x0
 
-    const v2, 0x7f110695
+    const v2, 0x7f110697
 
     invoke-virtual {p1, v2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -585,7 +585,7 @@
 
     iget-object v2, p0, Lcom/android/settings/deviceinfo/StorageVolumePreference;->mContext:Landroid/content/Context;
 
-    const v3, 0x7f0b16d9
+    const v3, 0x7f0b16eb
 
     invoke-virtual {v2, v3}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 

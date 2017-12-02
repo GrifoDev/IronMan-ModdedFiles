@@ -70,7 +70,7 @@
 
     iput-object v0, p0, Lcom/samsung/android/settings/notification/RadioPreference;->mOnKeyListener:Landroid/view/View$OnKeyListener;
 
-    const v0, 0x7f040234
+    const v0, 0x7f040237
 
     invoke-virtual {p0, v0}, Lcom/samsung/android/settings/notification/RadioPreference;->setLayoutResource(I)V
 
@@ -126,7 +126,7 @@
 
     move-result-object v5
 
-    const v7, 0x7f110673
+    const v7, 0x7f110675
 
     invoke-virtual {v5, v7}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -169,7 +169,7 @@
     invoke-virtual {v4, v6}, Landroid/widget/RadioButton;->setFocusable(Z)V
 
     :cond_0
-    const v7, 0x7f110672
+    const v7, 0x7f110674
 
     invoke-virtual {v5, v7}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 

@@ -81,7 +81,7 @@
 
     if-nez v2, :cond_0
 
-    const v1, 0x7f0b1c55
+    const v1, 0x7f0b1c67
 
     :goto_0
     iget-object v3, p0, Lcom/android/settings/notification/SoundSettings$SummaryProvider;->mSummaryLoader:Lcom/android/settings/dashboard/SummaryLoader;
@@ -103,7 +103,7 @@
     :cond_0
     if-ne v2, v9, :cond_1
 
-    const v1, 0x7f0b1c54
+    const v1, 0x7f0b1c66
 
     goto :goto_0
 
@@ -132,7 +132,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f0b1c53
+    const v1, 0x7f0b1c65
 
     goto :goto_0
 .end method

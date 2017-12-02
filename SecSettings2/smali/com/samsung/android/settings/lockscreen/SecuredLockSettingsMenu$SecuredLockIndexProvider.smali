@@ -203,9 +203,9 @@
         }
     .end annotation
 
-    const v12, 0x7f0b1407
+    const v12, 0x7f0b1418
 
-    const v11, 0x7f0b0a84
+    const v11, 0x7f0b0a92
 
     new-instance v7, Ljava/util/ArrayList;
 
@@ -215,9 +215,9 @@
 
     move-result-object v6
 
-    const v5, 0x7f0b0572
+    const v5, 0x7f0b0573
 
-    const v9, 0x7f0b0a67
+    const v9, 0x7f0b0a75
 
     invoke-virtual {v6, v9}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -282,7 +282,7 @@
 
     iput-object v8, v2, Lcom/android/settings/search/SearchIndexableRaw;->screenTitle:Ljava/lang/String;
 
-    const v9, 0x7f0b0572
+    const v9, 0x7f0b0573
 
     iput v9, v2, Lcom/android/settings/search/SearchIndexableRaw;->parentTitleRes:I
 
@@ -416,7 +416,7 @@
 
     if-ne v2, v3, :cond_0
 
-    const v2, 0x7f080104
+    const v2, 0x7f080106
 
     iput v2, p0, Lcom/samsung/android/settings/lockscreen/SecuredLockSettingsMenu$SecuredLockIndexProvider;->mXmlResId:I
 
@@ -438,7 +438,7 @@
     return-object v0
 
     :cond_0
-    const v2, 0x7f0800fc
+    const v2, 0x7f0800fe
 
     iput v2, p0, Lcom/samsung/android/settings/lockscreen/SecuredLockSettingsMenu$SecuredLockIndexProvider;->mXmlResId:I
 

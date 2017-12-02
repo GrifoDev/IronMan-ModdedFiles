@@ -451,7 +451,7 @@
 
     iget-object v0, p0, Lcom/samsung/android/settings/vzwsetupwizardbixby/bixby/BixbyView;->mBixbyBackgroundImageView:Landroid/view/View;
 
-    const v1, 0x7f0205c7
+    const v1, 0x7f0205c9
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setBackgroundResource(I)V
 
@@ -1275,7 +1275,7 @@
 .method protected getGradientBackgroundColorID()I
     .locals 1
 
-    const v0, 0x7f0205c9
+    const v0, 0x7f0205cb
 
     return v0
 .end method
@@ -1302,7 +1302,7 @@
 .method protected getMainBodyLayoutView()I
     .locals 1
 
-    const v0, 0x7f1109bf
+    const v0, 0x7f1109c2
 
     return v0
 .end method
@@ -1310,7 +1310,7 @@
 .method protected getMainButtonlayoutView()I
     .locals 1
 
-    const v0, 0x7f1109c1
+    const v0, 0x7f1109c4
 
     return v0
 .end method
@@ -1321,7 +1321,7 @@
 .method protected getWaveAnimRootLayoutView()I
     .locals 1
 
-    const v0, 0x7f1109c9
+    const v0, 0x7f1109cc
 
     return v0
 .end method
@@ -1351,7 +1351,7 @@
 
     iput-object v0, p0, Lcom/samsung/android/settings/vzwsetupwizardbixby/bixby/BixbyView;->mSoftKeyButtonsVoiceCommand:Ljava/util/HashMap;
 
-    const v0, 0x7f110598
+    const v0, 0x7f11059a
 
     invoke-virtual {p0, v0}, Lcom/samsung/android/settings/vzwsetupwizardbixby/bixby/BixbyView;->findViewById(I)Landroid/view/View;
 
@@ -1488,7 +1488,7 @@
 
     if-nez v0, :cond_0
 
-    const v0, 0x7f110768
+    const v0, 0x7f11076a
 
     invoke-virtual {p0, v0}, Lcom/samsung/android/settings/vzwsetupwizardbixby/bixby/BixbyView;->findViewById(I)Landroid/view/View;
 

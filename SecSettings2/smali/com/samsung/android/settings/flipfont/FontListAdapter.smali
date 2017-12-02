@@ -152,7 +152,7 @@
 
     move-result-object v6
 
-    const v7, 0x7f0b0720
+    const v7, 0x7f0b0721
 
     invoke-virtual {v6, v7}, Landroid/content/res/Resources;->getText(I)Ljava/lang/CharSequence;
 
@@ -166,7 +166,7 @@
 
     move-result-object v6
 
-    const v7, 0x7f0b0656
+    const v7, 0x7f0b0657
 
     invoke-virtual {v6, v7}, Landroid/content/res/Resources;->getText(I)Ljava/lang/CharSequence;
 
@@ -1144,7 +1144,7 @@
 
     move-result-object v0
 
-    const v2, 0x7f0b070c
+    const v2, 0x7f0b070d
 
     invoke-virtual {v0, v2}, Landroid/content/res/Resources;->getText(I)Ljava/lang/CharSequence;
 
@@ -1253,11 +1253,11 @@
 .method public getFontName(I)Ljava/lang/String;
     .locals 5
 
-    const v4, 0x7f0b06f4
+    const v4, 0x7f0b06f5
 
-    const v3, 0x7f0b06f3
+    const v3, 0x7f0b06f4
 
-    const v2, 0x7f0b06f2
+    const v2, 0x7f0b06f3
 
     iget-object v1, p0, Lcom/samsung/android/settings/flipfont/FontListAdapter;->mFontNames:Ljava/util/Vector;
 
@@ -1443,7 +1443,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f0b06f5
+    const v2, 0x7f0b06f6
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getText(I)Ljava/lang/CharSequence;
 
@@ -1468,7 +1468,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f0b06f6
+    const v2, 0x7f0b06f7
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getText(I)Ljava/lang/CharSequence;
 
@@ -1493,7 +1493,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f0b06fa
+    const v2, 0x7f0b06fb
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getText(I)Ljava/lang/CharSequence;
 
@@ -1518,7 +1518,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f0b06fb
+    const v2, 0x7f0b06fc
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getText(I)Ljava/lang/CharSequence;
 
@@ -1543,7 +1543,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f0b06fc
+    const v2, 0x7f0b06fd
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getText(I)Ljava/lang/CharSequence;
 
@@ -1568,7 +1568,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f0b06f7
+    const v2, 0x7f0b06f8
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getText(I)Ljava/lang/CharSequence;
 
@@ -1593,7 +1593,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f0b06f8
+    const v2, 0x7f0b06f9
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getText(I)Ljava/lang/CharSequence;
 
@@ -1618,7 +1618,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f0b06f9
+    const v2, 0x7f0b06fa
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getText(I)Ljava/lang/CharSequence;
 
@@ -1643,7 +1643,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f0b0656
+    const v2, 0x7f0b0657
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getText(I)Ljava/lang/CharSequence;
 
@@ -1668,7 +1668,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f0b06fd
+    const v2, 0x7f0b06fe
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getText(I)Ljava/lang/CharSequence;
 
@@ -1810,7 +1810,7 @@
 
     iget-object v3, p0, Lcom/samsung/android/settings/flipfont/FontListAdapter;->mInflater:Landroid/view/LayoutInflater;
 
-    const v4, 0x7f040355
+    const v4, 0x7f040358
 
     invoke-virtual {v3, v4, v5}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;)Landroid/view/View;
 
@@ -1845,7 +1845,7 @@
 
     iget-object v3, p0, Lcom/samsung/android/settings/flipfont/FontListAdapter;->mInflater:Landroid/view/LayoutInflater;
 
-    const v4, 0x7f0400ee
+    const v4, 0x7f0400ef
 
     invoke-virtual {v3, v4, v5}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;)Landroid/view/View;
 
@@ -1877,7 +1877,7 @@
     :cond_1
     iget-object v3, p0, Lcom/samsung/android/settings/flipfont/FontListAdapter;->mInflater:Landroid/view/LayoutInflater;
 
-    const v4, 0x7f040184
+    const v4, 0x7f040185
 
     invoke-virtual {v3, v4, v5}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;)Landroid/view/View;
 
@@ -1916,7 +1916,7 @@
 
     move-result-object v9
 
-    const v10, 0x7f0b0705
+    const v10, 0x7f0b0706
 
     invoke-virtual {v9, v10}, Landroid/content/res/Resources;->getText(I)Ljava/lang/CharSequence;
 
@@ -1942,7 +1942,7 @@
 
     move-result-object v9
 
-    const v10, 0x7f0b0704
+    const v10, 0x7f0b0705
 
     invoke-virtual {v9, v10}, Landroid/content/res/Resources;->getText(I)Ljava/lang/CharSequence;
 

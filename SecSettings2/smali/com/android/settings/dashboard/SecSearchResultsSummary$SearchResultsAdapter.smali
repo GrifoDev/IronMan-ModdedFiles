@@ -1566,7 +1566,7 @@
 
     if-eqz v3, :cond_4
 
-    const v10, 0x7f02013b
+    const v10, 0x7f020139
 
     :goto_1
     new-instance v3, Lcom/android/settings/dashboard/SecSearchResultsSummary$SearchResult;
@@ -1749,7 +1749,7 @@
 
     move-object/from16 v18, v0
 
-    const v19, 0x7f0402aa
+    const v19, 0x7f0402ad
 
     const/16 v20, 0x0
 
@@ -1789,7 +1789,7 @@
 
     if-ne v0, v1, :cond_6
 
-    const v18, 0x7f110735
+    const v18, 0x7f110737
 
     invoke-virtual/range {v17 .. v18}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -1814,7 +1814,7 @@
 
     move-object/from16 v18, v0
 
-    const v19, 0x7f0402ac
+    const v19, 0x7f0402af
 
     const/16 v20, 0x0
 
@@ -1876,7 +1876,7 @@
 
     move-object/from16 v18, v0
 
-    const v19, 0x7f0402aa
+    const v19, 0x7f0402ad
 
     const/16 v20, 0x0
 
@@ -1912,7 +1912,7 @@
 
     move-object/from16 v18, v0
 
-    const v19, 0x7f0402ac
+    const v19, 0x7f0402af
 
     const/16 v20, 0x0
 
@@ -1939,7 +1939,7 @@
 
     check-cast v15, Landroid/widget/TextView;
 
-    const v18, 0x7f110213
+    const v18, 0x7f110215
 
     invoke-virtual/range {v17 .. v18}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -2081,7 +2081,7 @@
 
     if-eqz v18, :cond_a
 
-    const v18, 0x7f020583
+    const v18, 0x7f020585
 
     move/from16 v0, v18
 
@@ -2104,7 +2104,7 @@
 
     move/from16 v18, v0
 
-    const v19, 0x7f02013b
+    const v19, 0x7f020139
 
     move/from16 v0, v18
 
@@ -2382,7 +2382,7 @@
 
     invoke-virtual {v8, v0}, Landroid/widget/ImageView;->setImageDrawable(Landroid/graphics/drawable/Drawable;)V
 
-    const v18, 0x7f02013b
+    const v18, 0x7f020139
 
     move/from16 v0, v18
 

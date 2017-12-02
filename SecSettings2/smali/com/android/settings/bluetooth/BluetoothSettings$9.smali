@@ -44,7 +44,7 @@
     :cond_0
     iget-object v0, p0, Lcom/android/settings/bluetooth/BluetoothSettings$9;->this$0:Lcom/android/settings/bluetooth/BluetoothSettings;
 
-    invoke-static {v0}, Lcom/android/settings/bluetooth/BluetoothSettings;->-get4(Lcom/android/settings/bluetooth/BluetoothSettings;)Ljava/lang/String;
+    invoke-static {v0}, Lcom/android/settings/bluetooth/BluetoothSettings;->-get5(Lcom/android/settings/bluetooth/BluetoothSettings;)Ljava/lang/String;
 
     move-result-object v0
 

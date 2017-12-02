@@ -170,6 +170,8 @@
     <string name="wifi_allow_scan_with_traffic_summary">Овозможете или отфрлете скенирања за роаминг Wi-Fi автоматски, врз основа на количеството податоци што се користат.</string>
     <string name="select_logd_size_title">Гол.на баф.за евиденција</string>
     <string name="select_logd_size_dialog_title">Изберете максимална големина на секој бафер за дневник</string>
+    <string name="dev_logpersist_clear_warning_title">Избриши го постојаниот склад на дневникот?</string>
+    <string name="dev_logpersist_clear_warning_message">Податоците на дневникот ќе се избришат кога ќе се исклучи трајниот дневник.</string>
     <string name="select_logpersist_title">Постој.чување подат. на дневник</string>
     <string name="select_logpersist_dialog_title">Постојано бирање бафери на днев.на продав.</string>
     <string name="select_usb_configuration_title">Конфигурација на USB</string>
@@ -980,6 +982,7 @@ Wi-Fi и Bluetooth исто така ќе се исклучат, но може �
     <string name="bluetooth_avc_available_description">Поврзаниот уред Bluetooth поддржува Синхронизирање на јачината на звукот на медиумите и јачината на звукот поставена од уредот Bluetooth ќе се синхронизира со Вашиот телефон.</string>
     <string name="bluetooth_enter_pin_msg">Внесете PIN за поврзување со %s (Обидете се со 0000 или 1234).</string>
     <string name="bluetooth_pin_maximum_number_message">Достигнат е максималниот број знаци.</string>
+    <string name="bluetooth_frp_permission_message">Не може да се користи уред Bluetooth за овој повик.</string>
     <string name="settings_menu_done">Извршено</string>
     <string name="usb_tethering_unavailable_subtext_tmo">USB not connected</string>
     <string name="usb_tethering_available_subtext_tmo">USB connected, check to tether</string>
@@ -1479,7 +1482,7 @@ Where Can I Find More Information About the 3rd Party's Policies? Separately, if
     <string name="navigationbar_pressure_sensitivity_title">Цврсто притис. го копчето Дома</string>
     <string name="navigationbar_pressure_sensitivity_summary">Користете го копчето Дома додека е скриено, притискајќи поцврсто од обично.</string>
     <string name="navigationbar_pressure_sensitivity_level_summary">Ниво на притисок: %1$d од %2$d</string>
-    <string name="navigationbar_pressure_sensitivity_description_off">Користете го копчето Дома додека е скриено, притискајќи поцврсто од обично.</string>
+    <string name="navigationbar_pressure_sensitivity_description_off">Прилагодете ја количината на притисок потребен за цврсто притискање на копчето Дома.</string>
     <string name="navigationbar_pressure_low">Послабо</string>
     <string name="navigationbar_pressure_high">Поголема</string>
     <string name="navigationbar_hide_bar">Прикажете и сокријте копче</string>
@@ -1618,7 +1621,7 @@ Where Can I Find More Information About the 3rd Party's Policies? Separately, if
     <string name="crypt_keeper_decrypt_title">Дешифрирање на уредот</string>
     <string name="crypt_keeper_decrypt_summary">Уредот е шифриран.</string>
     <string name="crypt_keeper_type_pin">PIN</string>
-    <string name="crypt_keeper_type_pattern">Шара</string>
+    <string name="crypt_keeper_type_pattern">шема</string>
     <string name="crypt_keeper_type_password">Лозинка</string>
     <string name="crypt_keeper_type_direction">Заклучување со насока</string>
     <string name="crypt_keeper_confirm_title_dec">Потврдете дешифрирање</string>
@@ -1702,7 +1705,11 @@ Where Can I Find More Information About the 3rd Party's Policies? Separately, if
     <string name="crypt_keeper_confirm_title">Потврди шифрирање</string>
     <string name="crypt_keeper_final_desc">Шифрирањето на уредот е неповратно и ќе се изгубат податоци ако се прекине процесот. Шифрирањето може да потрае еден час или подолго, за кое време уредот ќе се рестартира неколкупати и не ќе можете да го користите.</string>
     <string name="crypt_keeper_setup_title">Се шифрира…</string>
-    <string name="crypt_keeper_warn_wipe">Ви преостануваат уште %d обиди за да го активирате уредот пред тој да се ресетира на основните фабрички поставувања. Ова ќе ги избрише сите податоци, вклучувајќи ги и датотеките и преземените апликации.</string>
+    <string name="crypt_keeper_warn_wipe">"Ви остануваат уште %1$d обиди пред телефонот да се ресетира на основните фабрички вредности. Ова ќе ги избрише сите податоци, вклучително и датотеките и преземените апликации.
+
+Ако телефонот се ресетира, можеби ќе треба да ги внесете информациите за %2$s (адреса за е-пошта и лозинка) поврзани со овој телефон за да можете повторно да го користите."</string>
+    <string name="crypt_keeper_samsung_account">Samsung account</string>
+    <string name="crypt_keeper_google_account">Сметка Google</string>
     <string name="crypt_keeper_failed_title">Неуспешно шифрирање</string>
     <string name="crypt_keeper_failed_summary">Не може да се активира уредот. Процесот на шифрирање бил прекинат. Треба да го ресетирате Вашиот уред на основните фабрички поставувања. Ова ќе ги избрише сите Ваши податоци.</string>
     <string name="crypt_keeper_data_corrupted_title">Меморијата на уредот е неисправна</string>
@@ -1721,10 +1728,13 @@ Where Can I Find More Information About the 3rd Party's Policies? Separately, if
     <string name="cryptkeeper_wrong_pin">Внесен е неточен PIN</string>
     <string name="cryptkeeper_wrong_direction">Нацртаната е неисправна насока</string>
     <string name="checking_decryption">Проверка…</string>
-    <string name="crypt_keeper_last_warn_wipe">Ви преостанува само уште 1 обид за да го активирате уредот пред тој да се ресетира на основните фабрички поставувања. Ова ќе ги избрише сите податоци, вклучувајќи ги и датотеките и преземените апликации.</string>
+    <string name="crypt_keeper_last_warn_wipe">"Ви останува уште 1 обид пред телефонот да се ресетира на основните фабрички вредности. Ова ќе ги избрише сите податоци, вклучително и датотеките и преземените апликации.
+
+Ако телефонот се ресетира, можеби ќе треба да ги внесете информациите за %s (адреса за е-пошта и лозинка) поврзани со овој телефон за да можете повторно да го користите."</string>
     <string name="crypt_keeper_failed_title_dec">Неуспешно декодирање.</string>
     <string name="crypt_keeper_failed_summary_dec">Не може да се заврши дешифрирањето поради прекин. Извршете фабричко ресетирање на податоците (со што ќе се избришат сите ваши податоци) пред употребата.</string>
     <string name="crypt_keeper_set_screen_lock_type">Одреди тип закл. екран</string>
+    <string name="crypt_keeper_warning_keyboard_cover_does_not_work">Капакот на тастатурата нема да функционира откако телефонот ќе се рестартира.</string>
     <string name="encryption_interstitial_message">"Можете дополнително да го заштитувате овој телефон барајќи %s да се внесе пред телефонот да се вклучи. Ова помага да се заштитат Вашите податоци ако телефонот е изгубен или украден. Некои апликации може да бараат Безбедно активирање според Политиките за дешифрирање на уред за да пристапат до функции како што се синхронизирањето на е-пошта.
 
 Нема да примате повици, пораки или известувања, а алармите нема да се огласуваат сѐ додека телефонот не се активира."</string>
@@ -1969,6 +1979,12 @@ You will also need it when:"</string>
     <string name="lockpassword_confirm_your_pin_with_fingerprint">Користете отпечаток од прст или внесете го моменталниот PIN.</string>
     <string name="lockpassword_confirm_your_pattern_with_fingerprint">Користете отпечаток од прст или нацртајте ја моменталната шара.</string>
     <string name="lockpassword_confirm_your_password_with_fingerprint">Користете отпечаток од прст или внесете ја моменталната лозинка.</string>
+    <string name="lockpassword_confirm_your_pin_with_iris">Користете ги Вашите зеници или внесете го моменталниот PIN.</string>
+    <string name="lockpassword_confirm_your_pattern_with_iris">Користете ги Вашите зеници или нацртајте ја моменталната шара.</string>
+    <string name="lockpassword_confirm_your_password_with_iris">Користете ги Вашите зеници или внесете ја моменталната лозинка.</string>
+    <string name="lockpassword_confirm_your_pin_with_biometrics">Користете биометрија или внесете во Вашиот PIN.</string>
+    <string name="lockpassword_confirm_your_pattern_with_biometrics">Користете биометрија или нацртајте сопствена шара.</string>
+    <string name="lockpassword_confirm_your_password_with_biometrics">Користете биометрија или внесете ја Вашата лозинка.</string>
     <string name="lockpassword_confirm_your_pin_instead_of_fingerprint">Внесете го Вашиот PIN наместо да користите препознавање отпечатоци од прст.</string>
     <string name="lockpassword_confirm_your_pattern_instead_of_fingerprint">Нацртајте ја Вашата шара наместо да користите препознавање отпечатоци од прст.</string>
     <string name="lockpassword_confirm_your_password_instead_of_fingerprint">Внесете ја Вашата лозинка наместо да користите препознавање отпечатоци од прст.</string>
@@ -2042,7 +2058,8 @@ You will also need it when:"</string>
     <string name="face_backup_wrong_password">Неточна резервна лозинка</string>
     <string name="face_status_timeout">Времето истече. Обидете се подоцна.</string>
     <string name="okay">OK</string>
-    <string name="face_samsung_account_button">Користи Samsung сметка</string>
+    <string name="face_samsung_account_button">Користи Samsung account</string>
+    <string name="face_galaxy_account_button">Користи сметка Galaxy</string>
     <string name="face_error_DB_corrupted">Имаше проблем со податоците за лицето. Регистрирајте го лицето повторно.</string>
     <string name="face_error_DB_corrupted_popup_title">Регистрирајте го Вашето лице повторно</string>
     <string name="face_error_timeout">Вашето лице не е откриено.</string>
@@ -2153,7 +2170,7 @@ You will also need it when:"</string>
     <string name="biometrics_backup_locktype_title">Поставете безбедност со зеница</string>
     <string name="biometrics_register_your_iris">Регистрирајте ги Вашите зеници.</string>
     <string name="biometrics_backup_locktype_summary">За да ги користите Вашите зеници за да го отклучите уредот, мора да поставите шара, PIN или лозинка.</string>
-    <string name="biometrics_backup_locktype_message">За да ги користите Вашите зеници за отклучување на телефонот или за безбедна потврда, треба да го сторите следното:</string>
+    <string name="biometrics_backup_locktype_message">За да користите зеници за отклучување на телефонот или за да се потврдите во апликации, ќе треба да:</string>
     <string name="iris_delete_popup_title">Да се отстранат податоците за зеници?</string>
     <string name="iris_delete_popup_message">Да се отстранат податоците за зеници?</string>
     <string name="iris_delete_popup_message_with_related_func">Функциите што користат зеници ќе се исклучат.</string>
@@ -2229,6 +2246,9 @@ You will also need it when:"</string>
     <string name="biometrics_dex_cant_use_msg">Не може да се користи %s во Samsung DeX.</string>
     <string name="biometrics_dex_closed_to_switch">%s се затвори за да се префрли на Samsung DeX.</string>
     <string name="biometircs_dex_cant_use_toast">%s не може да се пушти во Samsung DeX. Обидете се да го пуштите во режим на телефон.</string>
+    <string name="iris_guide_text_preview">Пог.тука за да кор.зен.</string>
+    <string name="iris_guide_enable_toggle">Доп. тука за да корис. зеници</string>
+    <string name="iris_cannot_verify">Не може да се потврдат зеници</string>
     <string name="knox_twofactor_bio_description">Изберете ги биометрискиот начин на заклучување и вториот начин на заклучување за отклучување на %s.</string>
     <string name="fingerprint_registered">Регистрираните отпечатоци ќе се користат со избраниот начин за отклучување.</string>
     <string name="knox_twofactor_description">Изберете ги биометријата и втор начин на заклучување за отклучување на %s.</string>
@@ -3091,6 +3111,7 @@ Mobile data will be turned off."</string>
     <string name="easy_mode_app_help">Користете го уредот полесно со поедноставен распоред на почетниот екран и со поголеми ставки на екранот.</string>
     <string name="easy_mode_app_help_dream_1">Користете едноставен распоред на Почетниот екран и поголеми ставки на екранот.</string>
     <string name="easy_mode_app_help_dream_2">Сите прилагодувања што сте ги направиле на Почетниот екран ќе се отфрлат, а Зумирањето на екранот ќе се постави на максимум.</string>
+    <string name="easy_mode_app_help_3rd_launcher">Применете Лесен режим за поголеми ставки на екранот. Ако не користите почетен екран на TouchWiz, распоредот на Вашиот почетен екран нема да се промени, но зумирањето на екранот ќе се постави на големо, а големината на фонтот ќе се постави на средна.</string>
     <string name="security_warning_content">Можете да ја заштитите Вашата приватност поставувајќи лозинка, PIN или шара за отклучување на Вашиот екран</string>
     <string name="lock_setting_weather_desc">За да ги видите или смените поставувањата за времето, допрете ПОСТАВУВАЊА ЗА ВРЕМЕ подолу.</string>
     <string name="lock_setting_weather_btn">Поставувања за времето</string>
@@ -3337,7 +3358,7 @@ Downloading via mobile networks may result in additional charges depending on yo
     <string name="disable_hovering_title">Исклучи воздушен преглед</string>
     <string name="disable_hovering_summary">Воздушен преглед и TalkBack не може да се активни заедно. Воздушен преглед ќе се исклучи.</string>
     <string name="pen_settings_pen_input">Директен внес со пенк.</string>
-    <string name="action_memo_onoff_screen_title">Бел.за искл.екр.</string>
+    <string name="action_memo_onoff_screen_title">Белешка на исклучен екран</string>
     <string name="screen_off_note_summary">Напишете забелешки додека екранот е исклучен. Едноставно отстранете го S Pen и почнете да пишувате.</string>
     <string name="screen_off_note_summary_jpn">Направете забелешки откачувајќи го S Pen додека екранот е исклучен, а потоа пишувајќи на екранот. Белешките за исклучување на екранот ќе бидат зачувани во Galaxy Notes.</string>
     <string name="screen_off_note_summary_no_detach">Направете забелешки притискајќи го копчето на Пенкалото, допирајќи на екранот додека е исклучен, а потоа пишувајќи на него. Белешките за исклучување на екранот ќе бидат зачувани во Samsung Notes.</string>
@@ -3944,7 +3965,7 @@ Wi-Fi сега е вклучено."</string>
     <string name="wfd_descrpition_playsound">Емитувај звук.</string>
     <string name="wfd_is_not_supported">Оваа функција не е поддржана.</string>
     <string name="usbtethering_notify_wifi_is_on_title">Да се исклучи Wi-Fi?</string>
-    <string name="usbtethering_notify_wifi_is_on">Wi-Fi и споделување врска преку USB не може да бидат вклучени истовремено. Исклучете Wi-Fi.</string>
+    <string name="usbtethering_notify_wifi_is_on">Wi-Fi и споделувањето врска преку USB не може да се воспостават во исто време. Wi-Fi ќе се исклучи.</string>
     <string name="disable_multi_window_dialog_text">Повеќе прозорци ќе се исклучи и сите апликации отворени во појавни прозорци ќе се затворат.</string>
     <string name="keyguard_password_attempt_count_pin_code">%d attempt left.</string>
     <string name="keyguard_password_attempts_count_pin_code">Има уште %d обиди.</string>
@@ -4152,6 +4173,7 @@ Wi-Fi сега е вклучено."</string>
     <string name="hdmi_mode_title">Режим HDMI</string>
     <string name="hdmi_mode_dex">Samsung DeX</string>
     <string name="hdmi_mode_mirroring">Screen Mirroring</string>
+    <string name="hdmi_mode_not_available_while_cover_attached">%s не е достапен додека капакот е прикачен.</string>
     <string name="screen_timeout_for_dex">Гасење на екран за Samsung DeX</string>
     <string name="show_virtual_keyboard_for_dex">Прикажете тастатура на екранот во Samsung DeX</string>
     <string name="comma">,</string>
@@ -4460,7 +4482,7 @@ Wi-Fi сега е вклучено."</string>
     <string name="date_picker_title">Датум</string>
     <string name="time_picker_title">Час</string>
     <string name="lock_after_timeout">Заклучувај автоматски</string>
-    <string name="lock_after_timeout_summary">Заклучувајте го екранот автоматски %s откако ќе се исклучи автоматски.</string>
+    <string name="lock_after_timeout_summary">Заклучувајте го телефонот %s откако екранот ќе се исклучи автоматски.</string>
     <string name="lock_after_timeout_summary_with_exception">Заклучи го екранот %1$s откако ќе се исклучи автоматски, освен кога %2$s го држи отклучен.</string>
     <string name="show_owner_info_on_lockscreen_label">Прикажувај ги информациите на сопственикот на уредот на екранот за заклучување.</string>
     <string name="owner_info_settings_title">Инфо. за сопств.</string>
@@ -4608,6 +4630,8 @@ Wi-Fi сега е вклучено."</string>
     <string name="wifi_empty_list_user_restricted">Немате дозвола да ги менуваат поставувањата за Wi-Fi.</string>
     <string name="wifi_setup_wps">Автоматско поставување (WPS)</string>
     <string name="wifi_show_advanced">Прикажи напредни опции</string>
+    <string name="wifi_advanced_toggle_description_expanded">Допрете двапати за да се намали.</string>
+    <string name="wifi_advanced_toggle_description_collapsed">Допрете двапати за да се рашири.</string>
     <string name="wifi_wps_setup_title">Поставување WPS</string>
     <string name="wifi_wps_setup_msg">Почнува WPS…</string>
     <string name="wifi_wps_onstart_pbc">Допрете го копчето за заштитно поставување Wi-Fi на својот рутер. Може да се вика WPS или да го содржи овој симбол:</string>
@@ -4639,6 +4663,10 @@ Wi-Fi сега е вклучено."</string>
     <string name="wifi_shared">Делено</string>
     <string name="wifi_unchanged">(непроменето)</string>
     <string name="wifi_unspecified">(Неодредено)</string>
+    <string name="wifi_select_cert">Избери сертификат</string>
+    <string name="wifi_do_not_provide_eap_user_cert">Не обезбедувај</string>
+    <string name="wifi_do_not_validate_eap_server">Не потврдувај</string>
+    <string name="wifi_do_not_validate_eap_server_warning">Не е наведен сертификат. Вашето поврзување нема да биде приватно.</string>
     <string name="wifi_scan_always_turnon_message">%s бара дозвола да скенира за мрежи Wi-Fi, дури и кога е исклучено Wi-Fi, за да ја подобрите прецизноста на локацијата за други цели. Да се дозволи ова за сите апликации?</string>
     <string name="wifi_scan_always_confirm_allow">Дозволи</string>
     <string name="wifi_scan_always_confirm_deny">Отфрли</string>
@@ -4973,9 +5001,9 @@ Wi-Fi сега е вклучено."</string>
     <string name="restore_default_apn_completed">Ресетирање поставувања за APN на основни.</string>
     <string name="reset_network_desc">Со ова ќе се ресетираат сите мрежни поставувања, вклучително и тие за:</string>
     <string name="reset_network_button_text">Ресетирај поставувања</string>
-    <string name="reset_network_final_desc">Сите поставувања за поврзување ќе се ресетираат. Дејството е неповратно.</string>
+    <string name="reset_network_final_desc">Сите мрежни поставувања ќе се ресетираат. Ова дејство не може да се поништи.</string>
     <string name="reset_network_final_button_text">Ресетирај поставувања</string>
-    <string name="reset_network_complete_toast">Ресетирање поставувања за поврзување.</string>
+    <string name="reset_network_complete_toast">Ресетирање на мрежните поставувања.</string>
     <string name="master_clear_title">Ресетирање на фабричките нагодувања</string>
     <string name="master_clear_accounts">Моментално сте најавени на следниве сметки:</string>
     <string name="master_clear_other_users_present">Податоците што припаѓаат на други корисници на уредот исто така ќе се избришат.</string>
@@ -6088,6 +6116,7 @@ If the device has multiple users, using this shortcut on the lock screen tempora
     <string name="set_data_limit">Постави ограничув. за податоци</string>
     <string name="data_limit">Ограничување. за податоци</string>
     <string name="data_usage_template">%1$s искористено помеѓу %2$s</string>
+    <string name="data_usage_template_wifi">%s се искористени во последните 30 дена</string>
     <string name="data_usage_other_apps">Срод.апл.вклуч. во користењето</string>
     <string name="data_saver_title">Зачувувач на податоци</string>
     <string name="unrestricted_data_saver">Дозв. апл.дод. е вкл. Зач. под.</string>
@@ -6138,6 +6167,7 @@ If the device has multiple users, using this shortcut on the lock screen tempora
     <string name="legacy_dhcp_client_summary">Користете го клиентот на DHCP од Lollipop наместо новиот клиент на DHCP на Android.</string>
     <string name="screen_off_pocket_title">Оставете го екр. исклучен</string>
     <string name="screen_off_pocket_summary">Спречете екранот случајно да се вклучи додека уредот се наоѓа во темно место, на пример во џеб или во чанта.</string>
+    <string name="noApplications">Сите апликации поврзани со ова дејство се исклучени, блокирани или не се инсталирани.</string>
     <string name="confirm_reset_shortcut_manager_throttling_title">Ресетирај ограничувач на стапки на Менаџер на кратенки</string>
     <string name="confirm_reset_shortcut_manager_throttling_message">Бројачите на ограничувачот на кратенки на Менаџерот на кратенки ќе се ресетираат.</string>
 </resources>

@@ -110,7 +110,7 @@
 
     if-eqz v1, :cond_0
 
-    const v1, 0x7f080125
+    const v1, 0x7f080127
 
     iput v1, v0, Landroid/provider/SearchIndexableResource;->xmlResId:I
 
@@ -130,7 +130,7 @@
     return-object v1
 
     :cond_0
-    const v1, 0x7f080124
+    const v1, 0x7f080126
 
     iput v1, v0, Landroid/provider/SearchIndexableResource;->xmlResId:I
 

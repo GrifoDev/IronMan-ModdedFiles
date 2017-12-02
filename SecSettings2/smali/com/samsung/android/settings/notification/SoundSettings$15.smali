@@ -149,6 +149,16 @@
 
     move-result-object v10
 
+    const-string/jumbo v11, "SoundsAndVibration"
+
+    invoke-virtual {v10, v11}, Lcom/samsung/android/settings/bixby/EmSettingsManager;->requestNlg(Ljava/lang/String;)V
+
+    iget-object v10, p0, Lcom/samsung/android/settings/notification/SoundSettings$15;->this$0:Lcom/samsung/android/settings/notification/SoundSettings;
+
+    invoke-static {v10}, Lcom/samsung/android/settings/notification/SoundSettings;->-get9(Lcom/samsung/android/settings/notification/SoundSettings;)Lcom/samsung/android/settings/bixby/EmSettingsManager;
+
+    move-result-object v10
+
     sget-object v11, Lcom/samsung/android/settings/bixby/EmSettingsManager;->EM_RESPONSE_RESULT_FAILURE:Lcom/samsung/android/sdk/bixby/BixbyApi$ResponseResults;
 
     invoke-virtual {v10, v11}, Lcom/samsung/android/settings/bixby/EmSettingsManager;->sendResponse(Lcom/samsung/android/sdk/bixby/BixbyApi$ResponseResults;)V
@@ -289,6 +299,16 @@
     const-string/jumbo v13, "yes"
 
     invoke-virtual {v10, v11, v12, v13}, Lcom/samsung/android/settings/bixby/EmSettingsManager;->setNlgScreenParam(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
+
+    iget-object v10, p0, Lcom/samsung/android/settings/notification/SoundSettings$15;->this$0:Lcom/samsung/android/settings/notification/SoundSettings;
+
+    invoke-static {v10}, Lcom/samsung/android/settings/notification/SoundSettings;->-get9(Lcom/samsung/android/settings/notification/SoundSettings;)Lcom/samsung/android/settings/bixby/EmSettingsManager;
+
+    move-result-object v10
+
+    const-string/jumbo v11, "SoundsAndVibration"
+
+    invoke-virtual {v10, v11}, Lcom/samsung/android/settings/bixby/EmSettingsManager;->requestNlg(Ljava/lang/String;)V
 
     iget-object v10, p0, Lcom/samsung/android/settings/notification/SoundSettings$15;->this$0:Lcom/samsung/android/settings/notification/SoundSettings;
 
@@ -820,6 +840,13 @@
 
     invoke-virtual {v10, v11}, Lcom/samsung/android/settings/bixby/EmSettingsManager;->sendResponse(Lcom/samsung/android/sdk/bixby/BixbyApi$ResponseResults;)V
 
+    :goto_2
+    iget-object v10, p0, Lcom/samsung/android/settings/notification/SoundSettings$15;->this$0:Lcom/samsung/android/settings/notification/SoundSettings;
+
+    const-string/jumbo v11, "touch_sounds"
+
+    invoke-virtual {v10, v11}, Lcom/samsung/android/settings/notification/SoundSettings;->bixbyScrollPreference(Ljava/lang/String;)V
+
     goto/16 :goto_0
 
     :cond_17
@@ -884,7 +911,7 @@
 
     invoke-virtual {v10, v11}, Lcom/samsung/android/settings/bixby/EmSettingsManager;->sendResponse(Lcom/samsung/android/sdk/bixby/BixbyApi$ResponseResults;)V
 
-    goto/16 :goto_0
+    goto :goto_2
 
     :cond_19
     const-string/jumbo v10, "TouchSoundsOff"
@@ -940,6 +967,13 @@
     sget-object v11, Lcom/samsung/android/settings/bixby/EmSettingsManager;->EM_RESPONSE_RESULT_FAILURE:Lcom/samsung/android/sdk/bixby/BixbyApi$ResponseResults;
 
     invoke-virtual {v10, v11}, Lcom/samsung/android/settings/bixby/EmSettingsManager;->sendResponse(Lcom/samsung/android/sdk/bixby/BixbyApi$ResponseResults;)V
+
+    :goto_3
+    iget-object v10, p0, Lcom/samsung/android/settings/notification/SoundSettings$15;->this$0:Lcom/samsung/android/settings/notification/SoundSettings;
+
+    const-string/jumbo v11, "touch_sounds"
+
+    invoke-virtual {v10, v11}, Lcom/samsung/android/settings/notification/SoundSettings;->bixbyScrollPreference(Ljava/lang/String;)V
 
     goto/16 :goto_0
 
@@ -1005,7 +1039,7 @@
 
     invoke-virtual {v10, v11}, Lcom/samsung/android/settings/bixby/EmSettingsManager;->sendResponse(Lcom/samsung/android/sdk/bixby/BixbyApi$ResponseResults;)V
 
-    goto/16 :goto_0
+    goto :goto_3
 
     :cond_1c
     const-string/jumbo v10, "ScreenLockSoundsOn"
@@ -1075,6 +1109,13 @@
 
     invoke-virtual {v10, v11}, Lcom/samsung/android/settings/bixby/EmSettingsManager;->sendResponse(Lcom/samsung/android/sdk/bixby/BixbyApi$ResponseResults;)V
 
+    :goto_4
+    iget-object v10, p0, Lcom/samsung/android/settings/notification/SoundSettings$15;->this$0:Lcom/samsung/android/settings/notification/SoundSettings;
+
+    const-string/jumbo v11, "screen_locking_sounds"
+
+    invoke-virtual {v10, v11}, Lcom/samsung/android/settings/notification/SoundSettings;->bixbyScrollPreference(Ljava/lang/String;)V
+
     goto/16 :goto_0
 
     :cond_1e
@@ -1139,7 +1180,7 @@
 
     invoke-virtual {v10, v11}, Lcom/samsung/android/settings/bixby/EmSettingsManager;->sendResponse(Lcom/samsung/android/sdk/bixby/BixbyApi$ResponseResults;)V
 
-    goto/16 :goto_0
+    goto :goto_4
 
     :cond_20
     const-string/jumbo v10, "ScreenLockSoundsOff"
@@ -1195,6 +1236,13 @@
     sget-object v11, Lcom/samsung/android/settings/bixby/EmSettingsManager;->EM_RESPONSE_RESULT_FAILURE:Lcom/samsung/android/sdk/bixby/BixbyApi$ResponseResults;
 
     invoke-virtual {v10, v11}, Lcom/samsung/android/settings/bixby/EmSettingsManager;->sendResponse(Lcom/samsung/android/sdk/bixby/BixbyApi$ResponseResults;)V
+
+    :goto_5
+    iget-object v10, p0, Lcom/samsung/android/settings/notification/SoundSettings$15;->this$0:Lcom/samsung/android/settings/notification/SoundSettings;
+
+    const-string/jumbo v11, "screen_locking_sounds"
+
+    invoke-virtual {v10, v11}, Lcom/samsung/android/settings/notification/SoundSettings;->bixbyScrollPreference(Ljava/lang/String;)V
 
     goto/16 :goto_0
 
@@ -1260,7 +1308,7 @@
 
     invoke-virtual {v10, v11}, Lcom/samsung/android/settings/bixby/EmSettingsManager;->sendResponse(Lcom/samsung/android/sdk/bixby/BixbyApi$ResponseResults;)V
 
-    goto/16 :goto_0
+    goto :goto_5
 
     :cond_23
     const-string/jumbo v10, "ChargingSoundsOn"
@@ -1321,6 +1369,13 @@
 
     invoke-virtual {v10, v11}, Lcom/samsung/android/settings/bixby/EmSettingsManager;->sendResponse(Lcom/samsung/android/sdk/bixby/BixbyApi$ResponseResults;)V
 
+    :goto_6
+    iget-object v10, p0, Lcom/samsung/android/settings/notification/SoundSettings$15;->this$0:Lcom/samsung/android/settings/notification/SoundSettings;
+
+    const-string/jumbo v11, "charging_sounds"
+
+    invoke-virtual {v10, v11}, Lcom/samsung/android/settings/notification/SoundSettings;->bixbyScrollPreference(Ljava/lang/String;)V
+
     goto/16 :goto_0
 
     :cond_24
@@ -1379,7 +1434,7 @@
 
     invoke-virtual {v10, v11}, Lcom/samsung/android/settings/bixby/EmSettingsManager;->sendResponse(Lcom/samsung/android/sdk/bixby/BixbyApi$ResponseResults;)V
 
-    goto/16 :goto_0
+    goto :goto_6
 
     :cond_26
     const-string/jumbo v10, "ChargingSoundsOff"
@@ -1440,6 +1495,13 @@
 
     invoke-virtual {v10, v11}, Lcom/samsung/android/settings/bixby/EmSettingsManager;->sendResponse(Lcom/samsung/android/sdk/bixby/BixbyApi$ResponseResults;)V
 
+    :goto_7
+    iget-object v10, p0, Lcom/samsung/android/settings/notification/SoundSettings$15;->this$0:Lcom/samsung/android/settings/notification/SoundSettings;
+
+    const-string/jumbo v11, "charging_sounds"
+
+    invoke-virtual {v10, v11}, Lcom/samsung/android/settings/notification/SoundSettings;->bixbyScrollPreference(Ljava/lang/String;)V
+
     goto/16 :goto_0
 
     :cond_27
@@ -1498,7 +1560,7 @@
 
     invoke-virtual {v10, v11}, Lcom/samsung/android/settings/bixby/EmSettingsManager;->sendResponse(Lcom/samsung/android/sdk/bixby/BixbyApi$ResponseResults;)V
 
-    goto/16 :goto_0
+    goto :goto_7
 
     :cond_29
     const-string/jumbo v10, "VibrationFeedbackOn"
@@ -1554,6 +1616,13 @@
     sget-object v11, Lcom/samsung/android/settings/bixby/EmSettingsManager;->EM_RESPONSE_RESULT_FAILURE:Lcom/samsung/android/sdk/bixby/BixbyApi$ResponseResults;
 
     invoke-virtual {v10, v11}, Lcom/samsung/android/settings/bixby/EmSettingsManager;->sendResponse(Lcom/samsung/android/sdk/bixby/BixbyApi$ResponseResults;)V
+
+    :goto_8
+    iget-object v10, p0, Lcom/samsung/android/settings/notification/SoundSettings$15;->this$0:Lcom/samsung/android/settings/notification/SoundSettings;
+
+    const-string/jumbo v11, "vibrate_on_touch"
+
+    invoke-virtual {v10, v11}, Lcom/samsung/android/settings/notification/SoundSettings;->bixbyScrollPreference(Ljava/lang/String;)V
 
     goto/16 :goto_0
 
@@ -1619,7 +1688,7 @@
 
     invoke-virtual {v10, v11}, Lcom/samsung/android/settings/bixby/EmSettingsManager;->sendResponse(Lcom/samsung/android/sdk/bixby/BixbyApi$ResponseResults;)V
 
-    goto/16 :goto_0
+    goto :goto_8
 
     :cond_2c
     const-string/jumbo v10, "VibrationFeedbackOff"
@@ -1675,6 +1744,13 @@
     sget-object v11, Lcom/samsung/android/settings/bixby/EmSettingsManager;->EM_RESPONSE_RESULT_FAILURE:Lcom/samsung/android/sdk/bixby/BixbyApi$ResponseResults;
 
     invoke-virtual {v10, v11}, Lcom/samsung/android/settings/bixby/EmSettingsManager;->sendResponse(Lcom/samsung/android/sdk/bixby/BixbyApi$ResponseResults;)V
+
+    :goto_9
+    iget-object v10, p0, Lcom/samsung/android/settings/notification/SoundSettings$15;->this$0:Lcom/samsung/android/settings/notification/SoundSettings;
+
+    const-string/jumbo v11, "vibrate_on_touch"
+
+    invoke-virtual {v10, v11}, Lcom/samsung/android/settings/notification/SoundSettings;->bixbyScrollPreference(Ljava/lang/String;)V
 
     goto/16 :goto_0
 
@@ -1740,7 +1816,7 @@
 
     invoke-virtual {v10, v11}, Lcom/samsung/android/settings/bixby/EmSettingsManager;->sendResponse(Lcom/samsung/android/sdk/bixby/BixbyApi$ResponseResults;)V
 
-    goto/16 :goto_0
+    goto :goto_9
 
     :cond_2f
     const-string/jumbo v10, "DialingKeypadTonesOn"
@@ -1796,6 +1872,13 @@
     sget-object v11, Lcom/samsung/android/settings/bixby/EmSettingsManager;->EM_RESPONSE_RESULT_FAILURE:Lcom/samsung/android/sdk/bixby/BixbyApi$ResponseResults;
 
     invoke-virtual {v10, v11}, Lcom/samsung/android/settings/bixby/EmSettingsManager;->sendResponse(Lcom/samsung/android/sdk/bixby/BixbyApi$ResponseResults;)V
+
+    :goto_a
+    iget-object v10, p0, Lcom/samsung/android/settings/notification/SoundSettings$15;->this$0:Lcom/samsung/android/settings/notification/SoundSettings;
+
+    const-string/jumbo v11, "dial_pad_tones"
+
+    invoke-virtual {v10, v11}, Lcom/samsung/android/settings/notification/SoundSettings;->bixbyScrollPreference(Ljava/lang/String;)V
 
     goto/16 :goto_0
 
@@ -1861,7 +1944,7 @@
 
     invoke-virtual {v10, v11}, Lcom/samsung/android/settings/bixby/EmSettingsManager;->sendResponse(Lcom/samsung/android/sdk/bixby/BixbyApi$ResponseResults;)V
 
-    goto/16 :goto_0
+    goto :goto_a
 
     :cond_32
     const-string/jumbo v10, "DialingKeypadTonesOff"
@@ -1917,6 +2000,13 @@
     sget-object v11, Lcom/samsung/android/settings/bixby/EmSettingsManager;->EM_RESPONSE_RESULT_FAILURE:Lcom/samsung/android/sdk/bixby/BixbyApi$ResponseResults;
 
     invoke-virtual {v10, v11}, Lcom/samsung/android/settings/bixby/EmSettingsManager;->sendResponse(Lcom/samsung/android/sdk/bixby/BixbyApi$ResponseResults;)V
+
+    :goto_b
+    iget-object v10, p0, Lcom/samsung/android/settings/notification/SoundSettings$15;->this$0:Lcom/samsung/android/settings/notification/SoundSettings;
+
+    const-string/jumbo v11, "dial_pad_tones"
+
+    invoke-virtual {v10, v11}, Lcom/samsung/android/settings/notification/SoundSettings;->bixbyScrollPreference(Ljava/lang/String;)V
 
     goto/16 :goto_0
 
@@ -1982,7 +2072,7 @@
 
     invoke-virtual {v10, v11}, Lcom/samsung/android/settings/bixby/EmSettingsManager;->sendResponse(Lcom/samsung/android/sdk/bixby/BixbyApi$ResponseResults;)V
 
-    goto/16 :goto_0
+    goto :goto_b
 
     :cond_35
     const-string/jumbo v10, "KeyboardSoundOn"
@@ -2038,6 +2128,13 @@
     sget-object v11, Lcom/samsung/android/settings/bixby/EmSettingsManager;->EM_RESPONSE_RESULT_FAILURE:Lcom/samsung/android/sdk/bixby/BixbyApi$ResponseResults;
 
     invoke-virtual {v10, v11}, Lcom/samsung/android/settings/bixby/EmSettingsManager;->sendResponse(Lcom/samsung/android/sdk/bixby/BixbyApi$ResponseResults;)V
+
+    :goto_c
+    iget-object v10, p0, Lcom/samsung/android/settings/notification/SoundSettings$15;->this$0:Lcom/samsung/android/settings/notification/SoundSettings;
+
+    const-string/jumbo v11, "keyboard_sound"
+
+    invoke-virtual {v10, v11}, Lcom/samsung/android/settings/notification/SoundSettings;->bixbyScrollPreference(Ljava/lang/String;)V
 
     goto/16 :goto_0
 
@@ -2103,7 +2200,7 @@
 
     invoke-virtual {v10, v11}, Lcom/samsung/android/settings/bixby/EmSettingsManager;->sendResponse(Lcom/samsung/android/sdk/bixby/BixbyApi$ResponseResults;)V
 
-    goto/16 :goto_0
+    goto :goto_c
 
     :cond_38
     const-string/jumbo v10, "KeyboardSoundOff"
@@ -2159,6 +2256,13 @@
     sget-object v11, Lcom/samsung/android/settings/bixby/EmSettingsManager;->EM_RESPONSE_RESULT_FAILURE:Lcom/samsung/android/sdk/bixby/BixbyApi$ResponseResults;
 
     invoke-virtual {v10, v11}, Lcom/samsung/android/settings/bixby/EmSettingsManager;->sendResponse(Lcom/samsung/android/sdk/bixby/BixbyApi$ResponseResults;)V
+
+    :goto_d
+    iget-object v10, p0, Lcom/samsung/android/settings/notification/SoundSettings$15;->this$0:Lcom/samsung/android/settings/notification/SoundSettings;
+
+    const-string/jumbo v11, "keyboard_sound"
+
+    invoke-virtual {v10, v11}, Lcom/samsung/android/settings/notification/SoundSettings;->bixbyScrollPreference(Ljava/lang/String;)V
 
     goto/16 :goto_0
 
@@ -2224,7 +2328,7 @@
 
     invoke-virtual {v10, v11}, Lcom/samsung/android/settings/bixby/EmSettingsManager;->sendResponse(Lcom/samsung/android/sdk/bixby/BixbyApi$ResponseResults;)V
 
-    goto/16 :goto_0
+    goto :goto_d
 
     :cond_3b
     const-string/jumbo v10, "KeyboardVibrationOn"
@@ -2234,12 +2338,6 @@
     move-result v10
 
     if-eqz v10, :cond_3e
-
-    iget-object v10, p0, Lcom/samsung/android/settings/notification/SoundSettings$15;->this$0:Lcom/samsung/android/settings/notification/SoundSettings;
-
-    const-string/jumbo v11, "keyboard_vibration"
-
-    invoke-virtual {v10, v11}, Lcom/samsung/android/settings/notification/SoundSettings;->bixbyScrollPreference(Ljava/lang/String;)V
 
     iget-object v10, p0, Lcom/samsung/android/settings/notification/SoundSettings$15;->this$0:Lcom/samsung/android/settings/notification/SoundSettings;
 
@@ -2286,6 +2384,13 @@
     sget-object v11, Lcom/samsung/android/settings/bixby/EmSettingsManager;->EM_RESPONSE_RESULT_FAILURE:Lcom/samsung/android/sdk/bixby/BixbyApi$ResponseResults;
 
     invoke-virtual {v10, v11}, Lcom/samsung/android/settings/bixby/EmSettingsManager;->sendResponse(Lcom/samsung/android/sdk/bixby/BixbyApi$ResponseResults;)V
+
+    :goto_e
+    iget-object v10, p0, Lcom/samsung/android/settings/notification/SoundSettings$15;->this$0:Lcom/samsung/android/settings/notification/SoundSettings;
+
+    const-string/jumbo v11, "keyboard_vibration"
+
+    invoke-virtual {v10, v11}, Lcom/samsung/android/settings/notification/SoundSettings;->bixbyScrollPreference(Ljava/lang/String;)V
 
     goto/16 :goto_0
 
@@ -2351,7 +2456,7 @@
 
     invoke-virtual {v10, v11}, Lcom/samsung/android/settings/bixby/EmSettingsManager;->sendResponse(Lcom/samsung/android/sdk/bixby/BixbyApi$ResponseResults;)V
 
-    goto/16 :goto_0
+    goto :goto_e
 
     :cond_3e
     const-string/jumbo v10, "KeyboardVibrationOff"
@@ -2361,12 +2466,6 @@
     move-result v10
 
     if-eqz v10, :cond_41
-
-    iget-object v10, p0, Lcom/samsung/android/settings/notification/SoundSettings$15;->this$0:Lcom/samsung/android/settings/notification/SoundSettings;
-
-    const-string/jumbo v11, "keyboard_vibration"
-
-    invoke-virtual {v10, v11}, Lcom/samsung/android/settings/notification/SoundSettings;->bixbyScrollPreference(Ljava/lang/String;)V
 
     iget-object v10, p0, Lcom/samsung/android/settings/notification/SoundSettings$15;->this$0:Lcom/samsung/android/settings/notification/SoundSettings;
 
@@ -2413,6 +2512,13 @@
     sget-object v11, Lcom/samsung/android/settings/bixby/EmSettingsManager;->EM_RESPONSE_RESULT_FAILURE:Lcom/samsung/android/sdk/bixby/BixbyApi$ResponseResults;
 
     invoke-virtual {v10, v11}, Lcom/samsung/android/settings/bixby/EmSettingsManager;->sendResponse(Lcom/samsung/android/sdk/bixby/BixbyApi$ResponseResults;)V
+
+    :goto_f
+    iget-object v10, p0, Lcom/samsung/android/settings/notification/SoundSettings$15;->this$0:Lcom/samsung/android/settings/notification/SoundSettings;
+
+    const-string/jumbo v11, "keyboard_vibration"
+
+    invoke-virtual {v10, v11}, Lcom/samsung/android/settings/notification/SoundSettings;->bixbyScrollPreference(Ljava/lang/String;)V
 
     goto/16 :goto_0
 
@@ -2478,7 +2584,7 @@
 
     invoke-virtual {v10, v11}, Lcom/samsung/android/settings/bixby/EmSettingsManager;->sendResponse(Lcom/samsung/android/sdk/bixby/BixbyApi$ResponseResults;)V
 
-    goto/16 :goto_0
+    goto :goto_f
 
     :cond_41
     const-string/jumbo v10, "SoundQualityAndEffects"
@@ -2574,7 +2680,7 @@
     move-result-object v8
 
     :cond_44
-    :goto_2
+    :goto_10
     invoke-interface {v8}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v10
@@ -2599,7 +2705,7 @@
 
     const-string/jumbo v4, "yes"
 
-    goto :goto_2
+    goto :goto_10
 
     :cond_45
     iget-object v10, p0, Lcom/samsung/android/settings/notification/SoundSettings$15;->this$0:Lcom/samsung/android/settings/notification/SoundSettings;
@@ -2791,7 +2897,13 @@
     invoke-virtual {v10, v11}, Lcom/samsung/android/settings/bixby/EmSettingsManager;->requestNlg(Ljava/lang/String;)V
 
     :cond_4c
-    :goto_3
+    :goto_11
+    iget-object v10, p0, Lcom/samsung/android/settings/notification/SoundSettings$15;->this$0:Lcom/samsung/android/settings/notification/SoundSettings;
+
+    const-string/jumbo v11, "volume_key_control"
+
+    invoke-virtual {v10, v11}, Lcom/samsung/android/settings/notification/SoundSettings;->bixbyScrollPreference(Ljava/lang/String;)V
+
     iget-object v10, p0, Lcom/samsung/android/settings/notification/SoundSettings$15;->this$0:Lcom/samsung/android/settings/notification/SoundSettings;
 
     invoke-static {v10}, Lcom/samsung/android/settings/notification/SoundSettings;->-get9(Lcom/samsung/android/settings/notification/SoundSettings;)Lcom/samsung/android/settings/bixby/EmSettingsManager;
@@ -2855,7 +2967,7 @@
 
     invoke-virtual {v10, v11}, Lcom/samsung/android/settings/bixby/EmSettingsManager;->requestNlg(Ljava/lang/String;)V
 
-    goto :goto_3
+    goto :goto_11
 
     :cond_4e
     const-string/jumbo v10, "UseVolumeKeysForMediaOff"
@@ -2903,7 +3015,13 @@
     invoke-virtual {v10, v11}, Lcom/samsung/android/settings/bixby/EmSettingsManager;->requestNlg(Ljava/lang/String;)V
 
     :cond_4f
-    :goto_4
+    :goto_12
+    iget-object v10, p0, Lcom/samsung/android/settings/notification/SoundSettings$15;->this$0:Lcom/samsung/android/settings/notification/SoundSettings;
+
+    const-string/jumbo v11, "volume_key_control"
+
+    invoke-virtual {v10, v11}, Lcom/samsung/android/settings/notification/SoundSettings;->bixbyScrollPreference(Ljava/lang/String;)V
+
     iget-object v10, p0, Lcom/samsung/android/settings/notification/SoundSettings$15;->this$0:Lcom/samsung/android/settings/notification/SoundSettings;
 
     invoke-static {v10}, Lcom/samsung/android/settings/notification/SoundSettings;->-get9(Lcom/samsung/android/settings/notification/SoundSettings;)Lcom/samsung/android/settings/bixby/EmSettingsManager;
@@ -2967,7 +3085,7 @@
 
     invoke-virtual {v10, v11}, Lcom/samsung/android/settings/bixby/EmSettingsManager;->requestNlg(Ljava/lang/String;)V
 
-    goto :goto_4
+    goto :goto_12
 
     :cond_51
     const-string/jumbo v10, "SetEmergencyTone"
@@ -3021,6 +3139,13 @@
     sget-object v11, Lcom/samsung/android/settings/bixby/EmSettingsManager;->EM_RESPONSE_RESULT_SUCCESS:Lcom/samsung/android/sdk/bixby/BixbyApi$ResponseResults;
 
     invoke-virtual {v10, v11}, Lcom/samsung/android/settings/bixby/EmSettingsManager;->sendResponse(Lcom/samsung/android/sdk/bixby/BixbyApi$ResponseResults;)V
+
+    :goto_13
+    iget-object v10, p0, Lcom/samsung/android/settings/notification/SoundSettings$15;->this$0:Lcom/samsung/android/settings/notification/SoundSettings;
+
+    const-string/jumbo v11, "emergency_tone"
+
+    invoke-virtual {v10, v11}, Lcom/samsung/android/settings/notification/SoundSettings;->bixbyScrollPreference(Ljava/lang/String;)V
 
     goto/16 :goto_0
 
@@ -3313,5 +3438,5 @@
 
     invoke-virtual {v10, v11}, Lcom/samsung/android/settings/bixby/EmSettingsManager;->sendResponse(Lcom/samsung/android/sdk/bixby/BixbyApi$ResponseResults;)V
 
-    goto/16 :goto_0
+    goto/16 :goto_13
 .end method

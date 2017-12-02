@@ -59,11 +59,31 @@
 
     move-result-object v1
 
+    if-eqz v1, :cond_0
+
+    iget-object v1, p0, Lcom/samsung/android/settings/deviceinfo/simlockstatus/SimLockStatus$8;->this$0:Lcom/samsung/android/settings/deviceinfo/simlockstatus/SimLockStatus;
+
+    invoke-static {v1}, Lcom/samsung/android/settings/deviceinfo/simlockstatus/SimLockStatus;->-get1(Lcom/samsung/android/settings/deviceinfo/simlockstatus/SimLockStatus;)Ljava/nio/ByteBuffer;
+
+    move-result-object v1
+
     invoke-virtual {v1}, Ljava/nio/ByteBuffer;->array()[B
 
     move-result-object v1
 
     invoke-virtual {v0, v1}, Lcom/samsung/android/settings/deviceinfo/simlockstatus/SamsungRilConnector;->setBlob([B)V
 
+    :goto_0
     return-void
+
+    :cond_0
+    invoke-interface {p1}, Landroid/content/DialogInterface;->dismiss()V
+
+    iget-object v1, p0, Lcom/samsung/android/settings/deviceinfo/simlockstatus/SimLockStatus$8;->this$0:Lcom/samsung/android/settings/deviceinfo/simlockstatus/SimLockStatus;
+
+    const/4 v2, 0x3
+
+    invoke-static {v1, v2}, Lcom/samsung/android/settings/deviceinfo/simlockstatus/SimLockStatus;->-wrap3(Lcom/samsung/android/settings/deviceinfo/simlockstatus/SimLockStatus;I)V
+
+    goto :goto_0
 .end method

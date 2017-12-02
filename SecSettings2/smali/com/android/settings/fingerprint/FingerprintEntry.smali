@@ -280,7 +280,7 @@
 
     iput-boolean v0, p0, Lcom/android/settings/fingerprint/FingerprintEntry;->mIsWaitingResult:Z
 
-    const v0, 0x7f0b141d
+    const v0, 0x7f0b142e
 
     invoke-virtual {p0, v0}, Lcom/android/settings/fingerprint/FingerprintEntry;->getString(I)Ljava/lang/String;
 
@@ -357,7 +357,7 @@
 
     aput-object v5, v4, v6
 
-    const v5, 0x7f0b07ce
+    const v5, 0x7f0b07d2
 
     invoke-virtual {v3, v5, v4}, Landroid/content/res/Resources;->getString(I[Ljava/lang/Object;)Ljava/lang/String;
 
@@ -375,7 +375,7 @@
 
     if-eqz v3, :cond_1
 
-    const v3, 0x7f0b0855
+    const v3, 0x7f0b0859
 
     invoke-virtual {p0, v3}, Lcom/android/settings/fingerprint/FingerprintEntry;->getString(I)Ljava/lang/String;
 
@@ -467,13 +467,13 @@
 
     invoke-direct {v1, v2}, Landroid/app/AlertDialog$Builder;-><init>(Landroid/content/Context;)V
 
-    const v2, 0x7f0b07c5
+    const v2, 0x7f0b07c9
 
     invoke-virtual {v1, v2}, Landroid/app/AlertDialog$Builder;->setTitle(I)Landroid/app/AlertDialog$Builder;
 
     move-result-object v1
 
-    const v2, 0x7f0b0813
+    const v2, 0x7f0b0817
 
     invoke-virtual {v1, v2}, Landroid/app/AlertDialog$Builder;->setMessage(I)Landroid/app/AlertDialog$Builder;
 
@@ -553,7 +553,7 @@
 
     check-cast v0, Landroid/app/Activity;
 
-    const v1, 0x7f0b07c8
+    const v1, 0x7f0b07cc
 
     invoke-virtual {p0, v1}, Lcom/android/settings/fingerprint/FingerprintEntry;->getString(I)Ljava/lang/String;
 
@@ -728,7 +728,7 @@
 
     const/4 v4, 0x0
 
-    const v5, 0x7f0b0978
+    const v5, 0x7f0b0983
 
     const/4 v6, 0x0
 
@@ -757,7 +757,7 @@
 
     const-string/jumbo v1, "com.android.settings.fingerprint.FingerprintSettings"
 
-    const v3, 0x7f0b0978
+    const v3, 0x7f0b0983
 
     const/4 v4, 0x0
 
@@ -776,7 +776,7 @@
 
     const/4 v4, 0x0
 
-    const v5, 0x7f0b0978
+    const v5, 0x7f0b0983
 
     const/4 v6, 0x0
 
@@ -1043,7 +1043,7 @@
 .method public onCreate(Landroid/os/Bundle;)V
     .locals 10
 
-    const v9, 0x7f0b07c8
+    const v9, 0x7f0b07cc
 
     const/4 v8, 0x1
 
@@ -1093,7 +1093,7 @@
 
     new-array v5, v8, [Ljava/lang/Object;
 
-    const v6, 0x7f0b07c0
+    const v6, 0x7f0b07c4
 
     invoke-virtual {p0, v6}, Lcom/android/settings/fingerprint/FingerprintEntry;->getString(I)Ljava/lang/String;
 
@@ -1101,7 +1101,7 @@
 
     aput-object v6, v5, v7
 
-    const v6, 0x7f0b0875
+    const v6, 0x7f0b0879
 
     invoke-virtual {p0, v6, v5}, Lcom/android/settings/fingerprint/FingerprintEntry;->getString(I[Ljava/lang/Object;)Ljava/lang/String;
 
@@ -1120,7 +1120,7 @@
     :cond_0
     const-string/jumbo v4, "FpstFingerprintEntry"
 
-    const v5, 0x7f0b0978
+    const v5, 0x7f0b0983
 
     invoke-static {p0, v5, v4}, Lcom/android/settings/Utils;->isNotAvailableBiometricsWithDexAndMultiWindow(Landroid/app/Activity;ILjava/lang/String;)Z
 

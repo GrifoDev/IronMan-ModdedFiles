@@ -37,7 +37,7 @@
 
     iput-object v0, p0, Lcom/samsung/android/settings/bluetooth/BluetoothAVCSettings$AVCModeEnabler;->mSwitchPreference:Landroid/preference/SwitchPreference;
 
-    const v0, 0x7f0b1cf7
+    const v0, 0x7f0b1d09
 
     invoke-virtual {p1, v0}, Lcom/samsung/android/settings/bluetooth/BluetoothAVCSettings;->getText(I)Ljava/lang/CharSequence;
 
@@ -145,7 +145,7 @@
 
     if-eqz p1, :cond_0
 
-    const v0, 0x7f0b1cf6
+    const v0, 0x7f0b1d08
 
     :goto_0
     invoke-virtual {v1, v0}, Lcom/samsung/android/settings/bluetooth/BluetoothAVCSettings;->getText(I)Ljava/lang/CharSequence;
@@ -158,7 +158,7 @@
     return-void
 
     :cond_0
-    const v0, 0x7f0b1cf7
+    const v0, 0x7f0b1d09
 
     goto :goto_0
 

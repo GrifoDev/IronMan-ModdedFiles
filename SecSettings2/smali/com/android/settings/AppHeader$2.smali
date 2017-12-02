@@ -39,13 +39,24 @@
 
 # virtual methods
 .method public onClick(Landroid/view/View;)V
-    .locals 2
+    .locals 3
 
-    iget-object v0, p0, Lcom/android/settings/AppHeader$2;->val$activity:Landroid/app/Activity;
+    :try_start_0
+    iget-object v1, p0, Lcom/android/settings/AppHeader$2;->val$activity:Landroid/app/Activity;
 
-    iget-object v1, p0, Lcom/android/settings/AppHeader$2;->val$externalSettings:Landroid/content/Intent;
+    iget-object v2, p0, Lcom/android/settings/AppHeader$2;->val$externalSettings:Landroid/content/Intent;
 
-    invoke-virtual {v0, v1}, Landroid/app/Activity;->startActivity(Landroid/content/Intent;)V
+    invoke-virtual {v1, v2}, Landroid/app/Activity;->startActivity(Landroid/content/Intent;)V
+    :try_end_0
+    .catch Landroid/content/ActivityNotFoundException; {:try_start_0 .. :try_end_0} :catch_0
 
+    :goto_0
     return-void
+
+    :catch_0
+    move-exception v0
+
+    invoke-virtual {v0}, Landroid/content/ActivityNotFoundException;->printStackTrace()V
+
+    goto :goto_0
 .end method

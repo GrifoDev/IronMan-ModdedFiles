@@ -53,7 +53,7 @@
 
     invoke-super {p0}, Landroid/widget/RelativeLayout;->onFinishInflate()V
 
-    const v0, 0x7f110506
+    const v0, 0x7f110508
 
     invoke-virtual {p0, v0}, Lcom/samsung/android/settings/localepicker/LocaleDragCell;->findViewById(I)Landroid/view/View;
 
@@ -63,7 +63,7 @@
 
     iput-object v0, p0, Lcom/samsung/android/settings/localepicker/LocaleDragCell;->mLabel:Landroid/widget/TextView;
 
-    const v0, 0x7f110541
+    const v0, 0x7f110543
 
     invoke-virtual {p0, v0}, Lcom/samsung/android/settings/localepicker/LocaleDragCell;->findViewById(I)Landroid/view/View;
 
@@ -73,7 +73,7 @@
 
     iput-object v0, p0, Lcom/samsung/android/settings/localepicker/LocaleDragCell;->mLocalized:Landroid/widget/TextView;
 
-    const v0, 0x7f110540
+    const v0, 0x7f110542
 
     invoke-virtual {p0, v0}, Lcom/samsung/android/settings/localepicker/LocaleDragCell;->findViewById(I)Landroid/view/View;
 

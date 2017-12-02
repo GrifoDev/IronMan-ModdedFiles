@@ -167,7 +167,7 @@
 
     aput-object v6, v5, v7
 
-    const v6, 0x7f0b06b0
+    const v6, 0x7f0b06b1
 
     invoke-virtual {p0, v6, v5}, Lcom/samsung/android/settings/navigationbar/PressureTouchActionSettings;->getString(I[Ljava/lang/Object;)Ljava/lang/String;
 
@@ -213,7 +213,7 @@
 
     aput-object v6, v5, v7
 
-    const v6, 0x7f0b06b2
+    const v6, 0x7f0b06b3
 
     invoke-virtual {p0, v6, v5}, Lcom/samsung/android/settings/navigationbar/PressureTouchActionSettings;->getString(I[Ljava/lang/Object;)Ljava/lang/String;
 
@@ -300,7 +300,7 @@
 
     move-result-object v6
 
-    const v0, 0x7f0b06b3
+    const v0, 0x7f0b06b4
 
     invoke-virtual {p0, v0}, Lcom/samsung/android/settings/navigationbar/PressureTouchActionSettings;->getString(I)Ljava/lang/String;
 
@@ -489,7 +489,7 @@
 
     iput-object v3, p0, Lcom/samsung/android/settings/navigationbar/PressureTouchActionSettings;->mContext:Landroid/content/Context;
 
-    const v3, 0x7f0800c8
+    const v3, 0x7f0800ca
 
     invoke-virtual {p0, v3}, Lcom/samsung/android/settings/navigationbar/PressureTouchActionSettings;->addPreferencesFromResource(I)V
 

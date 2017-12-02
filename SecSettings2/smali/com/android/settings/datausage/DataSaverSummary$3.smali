@@ -64,7 +64,7 @@
 
     move-result v1
 
-    if-eqz v1, :cond_4
+    if-eqz v1, :cond_6
 
     iget-object v1, p0, Lcom/android/settings/datausage/DataSaverSummary$3;->this$0:Lcom/android/settings/datausage/DataSaverSummary;
 
@@ -76,7 +76,13 @@
 
     move-result v1
 
-    if-eqz v1, :cond_2
+    if-eqz v1, :cond_3
+
+    invoke-static {}, Lcom/android/settings/Utils;->isSupportCHNSmartManager()Z
+
+    move-result v1
+
+    if-nez v1, :cond_2
 
     iget-object v1, p0, Lcom/android/settings/datausage/DataSaverSummary$3;->this$0:Lcom/android/settings/datausage/DataSaverSummary;
 
@@ -92,6 +98,7 @@
 
     invoke-virtual {v1, v2, v3, v4}, Lcom/samsung/android/settings/bixby/EmSettingsManager;->setNlgScreenParam(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
 
+    :goto_1
     iget-object v1, p0, Lcom/android/settings/datausage/DataSaverSummary$3;->this$0:Lcom/android/settings/datausage/DataSaverSummary;
 
     invoke-static {v1}, Lcom/android/settings/datausage/DataSaverSummary;->-get2(Lcom/android/settings/datausage/DataSaverSummary;)Lcom/samsung/android/settings/bixby/EmSettingsManager;
@@ -117,6 +124,23 @@
     :cond_2
     iget-object v1, p0, Lcom/android/settings/datausage/DataSaverSummary$3;->this$0:Lcom/android/settings/datausage/DataSaverSummary;
 
+    invoke-static {v1}, Lcom/android/settings/datausage/DataSaverSummary;->-get2(Lcom/android/settings/datausage/DataSaverSummary;)Lcom/samsung/android/settings/bixby/EmSettingsManager;
+
+    move-result-object v1
+
+    const-string/jumbo v2, "Restrict background data"
+
+    const-string/jumbo v3, "AlreadyOn"
+
+    const-string/jumbo v4, "Yes"
+
+    invoke-virtual {v1, v2, v3, v4}, Lcom/samsung/android/settings/bixby/EmSettingsManager;->setNlgScreenParam(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
+
+    goto :goto_1
+
+    :cond_3
+    iget-object v1, p0, Lcom/android/settings/datausage/DataSaverSummary$3;->this$0:Lcom/android/settings/datausage/DataSaverSummary;
+
     invoke-static {v1}, Lcom/android/settings/datausage/DataSaverSummary;->-get1(Lcom/android/settings/datausage/DataSaverSummary;)Lcom/android/settings/datausage/DataSaverBackend;
 
     move-result-object v1
@@ -135,7 +159,13 @@
 
     move-result v1
 
-    if-eqz v1, :cond_3
+    if-eqz v1, :cond_4
+
+    invoke-static {}, Lcom/android/settings/Utils;->isSupportCHNSmartManager()Z
+
+    move-result v1
+
+    if-nez v1, :cond_5
 
     iget-object v1, p0, Lcom/android/settings/datausage/DataSaverSummary$3;->this$0:Lcom/android/settings/datausage/DataSaverSummary;
 
@@ -151,6 +181,7 @@
 
     invoke-virtual {v1, v2, v3, v4}, Lcom/samsung/android/settings/bixby/EmSettingsManager;->setNlgScreenParam(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
 
+    :goto_2
     iget-object v1, p0, Lcom/android/settings/datausage/DataSaverSummary$3;->this$0:Lcom/android/settings/datausage/DataSaverSummary;
 
     invoke-static {v1}, Lcom/android/settings/datausage/DataSaverSummary;->-get2(Lcom/android/settings/datausage/DataSaverSummary;)Lcom/samsung/android/settings/bixby/EmSettingsManager;
@@ -161,7 +192,7 @@
 
     invoke-virtual {v1, v2}, Lcom/samsung/android/settings/bixby/EmSettingsManager;->requestNlg(Ljava/lang/String;)V
 
-    :cond_3
+    :cond_4
     iget-object v1, p0, Lcom/android/settings/datausage/DataSaverSummary$3;->this$0:Lcom/android/settings/datausage/DataSaverSummary;
 
     invoke-static {v1}, Lcom/android/settings/datausage/DataSaverSummary;->-get2(Lcom/android/settings/datausage/DataSaverSummary;)Lcom/samsung/android/settings/bixby/EmSettingsManager;
@@ -172,9 +203,26 @@
 
     invoke-virtual {v1, v2}, Lcom/samsung/android/settings/bixby/EmSettingsManager;->sendResponse(Lcom/samsung/android/sdk/bixby/BixbyApi$ResponseResults;)V
 
-    goto :goto_0
+    goto/16 :goto_0
 
-    :cond_4
+    :cond_5
+    iget-object v1, p0, Lcom/android/settings/datausage/DataSaverSummary$3;->this$0:Lcom/android/settings/datausage/DataSaverSummary;
+
+    invoke-static {v1}, Lcom/android/settings/datausage/DataSaverSummary;->-get2(Lcom/android/settings/datausage/DataSaverSummary;)Lcom/samsung/android/settings/bixby/EmSettingsManager;
+
+    move-result-object v1
+
+    const-string/jumbo v2, "Restrict background data"
+
+    const-string/jumbo v3, "AlreadyOn"
+
+    const-string/jumbo v4, "No"
+
+    invoke-virtual {v1, v2, v3, v4}, Lcom/samsung/android/settings/bixby/EmSettingsManager;->setNlgScreenParam(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
+
+    goto :goto_2
+
+    :cond_6
     const-string/jumbo v1, "DataSaverOff"
 
     invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -193,7 +241,13 @@
 
     move-result v1
 
-    if-nez v1, :cond_5
+    if-nez v1, :cond_8
+
+    invoke-static {}, Lcom/android/settings/Utils;->isSupportCHNSmartManager()Z
+
+    move-result v1
+
+    if-nez v1, :cond_7
 
     iget-object v1, p0, Lcom/android/settings/datausage/DataSaverSummary$3;->this$0:Lcom/android/settings/datausage/DataSaverSummary;
 
@@ -209,6 +263,7 @@
 
     invoke-virtual {v1, v2, v3, v4}, Lcom/samsung/android/settings/bixby/EmSettingsManager;->setNlgScreenParam(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
 
+    :goto_3
     iget-object v1, p0, Lcom/android/settings/datausage/DataSaverSummary$3;->this$0:Lcom/android/settings/datausage/DataSaverSummary;
 
     invoke-static {v1}, Lcom/android/settings/datausage/DataSaverSummary;->-get2(Lcom/android/settings/datausage/DataSaverSummary;)Lcom/samsung/android/settings/bixby/EmSettingsManager;
@@ -231,7 +286,24 @@
 
     goto/16 :goto_0
 
-    :cond_5
+    :cond_7
+    iget-object v1, p0, Lcom/android/settings/datausage/DataSaverSummary$3;->this$0:Lcom/android/settings/datausage/DataSaverSummary;
+
+    invoke-static {v1}, Lcom/android/settings/datausage/DataSaverSummary;->-get2(Lcom/android/settings/datausage/DataSaverSummary;)Lcom/samsung/android/settings/bixby/EmSettingsManager;
+
+    move-result-object v1
+
+    const-string/jumbo v2, "Restrict background data"
+
+    const-string/jumbo v3, "AlreadyOff"
+
+    const-string/jumbo v4, "Yes"
+
+    invoke-virtual {v1, v2, v3, v4}, Lcom/samsung/android/settings/bixby/EmSettingsManager;->setNlgScreenParam(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
+
+    goto :goto_3
+
+    :cond_8
     iget-object v1, p0, Lcom/android/settings/datausage/DataSaverSummary$3;->this$0:Lcom/android/settings/datausage/DataSaverSummary;
 
     invoke-static {v1}, Lcom/android/settings/datausage/DataSaverSummary;->-get1(Lcom/android/settings/datausage/DataSaverSummary;)Lcom/android/settings/datausage/DataSaverBackend;
@@ -252,7 +324,13 @@
 
     move-result v1
 
-    if-eqz v1, :cond_6
+    if-eqz v1, :cond_9
+
+    invoke-static {}, Lcom/android/settings/Utils;->isSupportCHNSmartManager()Z
+
+    move-result v1
+
+    if-nez v1, :cond_a
 
     iget-object v1, p0, Lcom/android/settings/datausage/DataSaverSummary$3;->this$0:Lcom/android/settings/datausage/DataSaverSummary;
 
@@ -268,6 +346,7 @@
 
     invoke-virtual {v1, v2, v3, v4}, Lcom/samsung/android/settings/bixby/EmSettingsManager;->setNlgScreenParam(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
 
+    :goto_4
     iget-object v1, p0, Lcom/android/settings/datausage/DataSaverSummary$3;->this$0:Lcom/android/settings/datausage/DataSaverSummary;
 
     invoke-static {v1}, Lcom/android/settings/datausage/DataSaverSummary;->-get2(Lcom/android/settings/datausage/DataSaverSummary;)Lcom/samsung/android/settings/bixby/EmSettingsManager;
@@ -278,7 +357,7 @@
 
     invoke-virtual {v1, v2}, Lcom/samsung/android/settings/bixby/EmSettingsManager;->requestNlg(Ljava/lang/String;)V
 
-    :cond_6
+    :cond_9
     iget-object v1, p0, Lcom/android/settings/datausage/DataSaverSummary$3;->this$0:Lcom/android/settings/datausage/DataSaverSummary;
 
     invoke-static {v1}, Lcom/android/settings/datausage/DataSaverSummary;->-get2(Lcom/android/settings/datausage/DataSaverSummary;)Lcom/samsung/android/settings/bixby/EmSettingsManager;
@@ -291,7 +370,22 @@
 
     goto/16 :goto_0
 
-    nop
+    :cond_a
+    iget-object v1, p0, Lcom/android/settings/datausage/DataSaverSummary$3;->this$0:Lcom/android/settings/datausage/DataSaverSummary;
+
+    invoke-static {v1}, Lcom/android/settings/datausage/DataSaverSummary;->-get2(Lcom/android/settings/datausage/DataSaverSummary;)Lcom/samsung/android/settings/bixby/EmSettingsManager;
+
+    move-result-object v1
+
+    const-string/jumbo v2, "Restrict background data"
+
+    const-string/jumbo v3, "AlreadyOff"
+
+    const-string/jumbo v4, "No"
+
+    invoke-virtual {v1, v2, v3, v4}, Lcom/samsung/android/settings/bixby/EmSettingsManager;->setNlgScreenParam(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
+
+    goto :goto_4
 
     :pswitch_data_0
     .packed-switch 0x0

@@ -76,6 +76,64 @@
     return-object v0
 .end method
 
+.method public getRawDataToIndex(Landroid/content/Context;Z)Ljava/util/List;
+    .locals 5
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Landroid/content/Context;",
+            "Z)",
+            "Ljava/util/List",
+            "<",
+            "Lcom/android/settings/search/SearchIndexableRaw;",
+            ">;"
+        }
+    .end annotation
+
+    const/4 v4, 0x3
+
+    new-instance v2, Ljava/util/ArrayList;
+
+    invoke-direct {v2}, Ljava/util/ArrayList;-><init>()V
+
+    invoke-static {p1}, Lcom/android/settings/Utils;->isDesktopMode(Landroid/content/Context;)Z
+
+    move-result v3
+
+    if-eqz v3, :cond_0
+
+    const/4 v0, 0x0
+
+    new-instance v0, Lcom/android/settings/search/SearchIndexableRaw;
+
+    invoke-direct {v0, p1}, Lcom/android/settings/search/SearchIndexableRaw;-><init>(Landroid/content/Context;)V
+
+    const-string/jumbo v3, "show_hide_bar"
+
+    iput-object v3, v0, Lcom/android/settings/search/SearchIndexableRaw;->key:Ljava/lang/String;
+
+    iput v4, v0, Lcom/android/settings/search/SearchIndexableRaw;->menu_type:I
+
+    invoke-interface {v2, v0}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+
+    const/4 v1, 0x0
+
+    new-instance v1, Lcom/android/settings/search/SearchIndexableRaw;
+
+    invoke-direct {v1, p1}, Lcom/android/settings/search/SearchIndexableRaw;-><init>(Landroid/content/Context;)V
+
+    const-string/jumbo v3, "navigationbar_hard_press"
+
+    iput-object v3, v1, Lcom/android/settings/search/SearchIndexableRaw;->key:Ljava/lang/String;
+
+    iput v4, v1, Lcom/android/settings/search/SearchIndexableRaw;->menu_type:I
+
+    invoke-interface {v2, v1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+
+    :cond_0
+    return-object v2
+.end method
+
 .method public getXmlResourcesToIndex(Landroid/content/Context;Z)Ljava/util/List;
     .locals 3
     .annotation system Ldalvik/annotation/Signature;

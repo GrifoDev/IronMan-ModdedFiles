@@ -37,6 +37,8 @@
 .method public onStateReceived()V
     .locals 10
 
+    const/4 v7, 0x2
+
     const/4 v9, 0x1
 
     const/4 v8, 0x0
@@ -138,9 +140,58 @@
 
     move-result v4
 
-    if-eqz v4, :cond_5
+    if-eqz v4, :cond_6
 
-    if-nez v1, :cond_2
+    iget-object v4, p0, Lcom/samsung/android/settings/bluetooth/BluetoothAVCSettings$4;->this$0:Lcom/samsung/android/settings/bluetooth/BluetoothAVCSettings;
+
+    invoke-static {v4}, Lcom/samsung/android/settings/bluetooth/BluetoothAVCSettings;->-get3(Lcom/samsung/android/settings/bluetooth/BluetoothAVCSettings;)Lcom/android/settingslib/bluetooth/LocalBluetoothAdapter;
+
+    move-result-object v4
+
+    if-eqz v4, :cond_2
+
+    iget-object v4, p0, Lcom/samsung/android/settings/bluetooth/BluetoothAVCSettings$4;->this$0:Lcom/samsung/android/settings/bluetooth/BluetoothAVCSettings;
+
+    invoke-static {v4}, Lcom/samsung/android/settings/bluetooth/BluetoothAVCSettings;->-get3(Lcom/samsung/android/settings/bluetooth/BluetoothAVCSettings;)Lcom/android/settingslib/bluetooth/LocalBluetoothAdapter;
+
+    move-result-object v4
+
+    invoke-virtual {v4}, Lcom/android/settingslib/bluetooth/LocalBluetoothAdapter;->getConnectionState()I
+
+    move-result v4
+
+    if-eq v4, v7, :cond_2
+
+    iget-object v4, p0, Lcom/samsung/android/settings/bluetooth/BluetoothAVCSettings$4;->this$0:Lcom/samsung/android/settings/bluetooth/BluetoothAVCSettings;
+
+    const-string/jumbo v5, "ConnectedDevices"
+
+    const-string/jumbo v6, "Existed"
+
+    const-string/jumbo v7, "no"
+
+    invoke-static {v4, v5, v6, v7}, Lcom/samsung/android/settings/bluetooth/BluetoothAVCSettings;->-wrap1(Lcom/samsung/android/settings/bluetooth/BluetoothAVCSettings;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
+
+    iget-object v4, p0, Lcom/samsung/android/settings/bluetooth/BluetoothAVCSettings$4;->this$0:Lcom/samsung/android/settings/bluetooth/BluetoothAVCSettings;
+
+    invoke-static {v4}, Lcom/samsung/android/settings/bluetooth/BluetoothAVCSettings;->-get2(Lcom/samsung/android/settings/bluetooth/BluetoothAVCSettings;)Lcom/samsung/android/settings/bixby/EmSettingsManager;
+
+    move-result-object v4
+
+    const-string/jumbo v5, "BluetoothSettings"
+
+    invoke-virtual {v4, v5}, Lcom/samsung/android/settings/bixby/EmSettingsManager;->requestNlg(Ljava/lang/String;)V
+
+    iget-object v4, p0, Lcom/samsung/android/settings/bluetooth/BluetoothAVCSettings$4;->this$0:Lcom/samsung/android/settings/bluetooth/BluetoothAVCSettings;
+
+    invoke-static {v4, v8}, Lcom/samsung/android/settings/bluetooth/BluetoothAVCSettings;->-wrap3(Lcom/samsung/android/settings/bluetooth/BluetoothAVCSettings;Z)V
+
+    :cond_1
+    :goto_0
+    return-void
+
+    :cond_2
+    if-nez v1, :cond_3
 
     iget-object v4, p0, Lcom/samsung/android/settings/bluetooth/BluetoothAVCSettings$4;->this$0:Lcom/samsung/android/settings/bluetooth/BluetoothAVCSettings;
 
@@ -160,12 +211,10 @@
 
     invoke-static {v4, v8}, Lcom/samsung/android/settings/bluetooth/BluetoothAVCSettings;->-wrap3(Lcom/samsung/android/settings/bluetooth/BluetoothAVCSettings;Z)V
 
-    :cond_1
-    :goto_0
-    return-void
+    goto :goto_0
 
-    :cond_2
-    if-eqz v2, :cond_3
+    :cond_3
+    if-eqz v2, :cond_4
 
     iget-object v4, p0, Lcom/samsung/android/settings/bluetooth/BluetoothAVCSettings$4;->this$0:Lcom/samsung/android/settings/bluetooth/BluetoothAVCSettings;
 
@@ -187,8 +236,8 @@
 
     goto :goto_0
 
-    :cond_3
-    if-eqz v3, :cond_4
+    :cond_4
+    if-eqz v3, :cond_5
 
     iget-object v4, p0, Lcom/samsung/android/settings/bluetooth/BluetoothAVCSettings$4;->this$0:Lcom/samsung/android/settings/bluetooth/BluetoothAVCSettings;
 
@@ -214,14 +263,14 @@
 
     goto :goto_0
 
-    :cond_4
+    :cond_5
     iget-object v4, p0, Lcom/samsung/android/settings/bluetooth/BluetoothAVCSettings$4;->this$0:Lcom/samsung/android/settings/bluetooth/BluetoothAVCSettings;
 
     invoke-virtual {v4, v9}, Lcom/samsung/android/settings/bluetooth/BluetoothAVCSettings;->onSwitchStateChange(Z)V
 
     goto :goto_0
 
-    :cond_5
+    :cond_6
     const-string/jumbo v4, "MediaVolumeSyncOff"
 
     iget-object v5, p0, Lcom/samsung/android/settings/bluetooth/BluetoothAVCSettings$4;->this$0:Lcom/samsung/android/settings/bluetooth/BluetoothAVCSettings;
@@ -236,7 +285,54 @@
 
     if-eqz v4, :cond_1
 
-    if-nez v1, :cond_6
+    iget-object v4, p0, Lcom/samsung/android/settings/bluetooth/BluetoothAVCSettings$4;->this$0:Lcom/samsung/android/settings/bluetooth/BluetoothAVCSettings;
+
+    invoke-static {v4}, Lcom/samsung/android/settings/bluetooth/BluetoothAVCSettings;->-get3(Lcom/samsung/android/settings/bluetooth/BluetoothAVCSettings;)Lcom/android/settingslib/bluetooth/LocalBluetoothAdapter;
+
+    move-result-object v4
+
+    if-eqz v4, :cond_7
+
+    iget-object v4, p0, Lcom/samsung/android/settings/bluetooth/BluetoothAVCSettings$4;->this$0:Lcom/samsung/android/settings/bluetooth/BluetoothAVCSettings;
+
+    invoke-static {v4}, Lcom/samsung/android/settings/bluetooth/BluetoothAVCSettings;->-get3(Lcom/samsung/android/settings/bluetooth/BluetoothAVCSettings;)Lcom/android/settingslib/bluetooth/LocalBluetoothAdapter;
+
+    move-result-object v4
+
+    invoke-virtual {v4}, Lcom/android/settingslib/bluetooth/LocalBluetoothAdapter;->getConnectionState()I
+
+    move-result v4
+
+    if-eq v4, v7, :cond_7
+
+    iget-object v4, p0, Lcom/samsung/android/settings/bluetooth/BluetoothAVCSettings$4;->this$0:Lcom/samsung/android/settings/bluetooth/BluetoothAVCSettings;
+
+    const-string/jumbo v5, "ConnectedDevices"
+
+    const-string/jumbo v6, "Existed"
+
+    const-string/jumbo v7, "no"
+
+    invoke-static {v4, v5, v6, v7}, Lcom/samsung/android/settings/bluetooth/BluetoothAVCSettings;->-wrap1(Lcom/samsung/android/settings/bluetooth/BluetoothAVCSettings;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
+
+    iget-object v4, p0, Lcom/samsung/android/settings/bluetooth/BluetoothAVCSettings$4;->this$0:Lcom/samsung/android/settings/bluetooth/BluetoothAVCSettings;
+
+    invoke-static {v4}, Lcom/samsung/android/settings/bluetooth/BluetoothAVCSettings;->-get2(Lcom/samsung/android/settings/bluetooth/BluetoothAVCSettings;)Lcom/samsung/android/settings/bixby/EmSettingsManager;
+
+    move-result-object v4
+
+    const-string/jumbo v5, "BluetoothSettings"
+
+    invoke-virtual {v4, v5}, Lcom/samsung/android/settings/bixby/EmSettingsManager;->requestNlg(Ljava/lang/String;)V
+
+    iget-object v4, p0, Lcom/samsung/android/settings/bluetooth/BluetoothAVCSettings$4;->this$0:Lcom/samsung/android/settings/bluetooth/BluetoothAVCSettings;
+
+    invoke-static {v4, v8}, Lcom/samsung/android/settings/bluetooth/BluetoothAVCSettings;->-wrap3(Lcom/samsung/android/settings/bluetooth/BluetoothAVCSettings;Z)V
+
+    goto/16 :goto_0
+
+    :cond_7
+    if-nez v1, :cond_8
 
     iget-object v4, p0, Lcom/samsung/android/settings/bluetooth/BluetoothAVCSettings$4;->this$0:Lcom/samsung/android/settings/bluetooth/BluetoothAVCSettings;
 
@@ -256,10 +352,10 @@
 
     invoke-static {v4, v8}, Lcom/samsung/android/settings/bluetooth/BluetoothAVCSettings;->-wrap3(Lcom/samsung/android/settings/bluetooth/BluetoothAVCSettings;Z)V
 
-    goto :goto_0
+    goto/16 :goto_0
 
-    :cond_6
-    if-nez v2, :cond_7
+    :cond_8
+    if-nez v2, :cond_9
 
     iget-object v4, p0, Lcom/samsung/android/settings/bluetooth/BluetoothAVCSettings$4;->this$0:Lcom/samsung/android/settings/bluetooth/BluetoothAVCSettings;
 
@@ -281,7 +377,7 @@
 
     goto/16 :goto_0
 
-    :cond_7
+    :cond_9
     iget-object v4, p0, Lcom/samsung/android/settings/bluetooth/BluetoothAVCSettings$4;->this$0:Lcom/samsung/android/settings/bluetooth/BluetoothAVCSettings;
 
     invoke-virtual {v4, v8}, Lcom/samsung/android/settings/bluetooth/BluetoothAVCSettings;->onSwitchStateChange(Z)V

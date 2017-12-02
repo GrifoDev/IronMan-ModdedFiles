@@ -998,7 +998,7 @@
     if-eqz v3, :cond_5
 
     :cond_3
-    const v3, 0x7f0b0c43
+    const v3, 0x7f0b0c51
 
     invoke-virtual {p0, v3}, Lcom/android/settings/ChooseLockPattern;->getText(I)Ljava/lang/CharSequence;
 
@@ -1015,7 +1015,7 @@
     goto/16 :goto_0
 
     :cond_5
-    const v3, 0x7f0b17cc
+    const v3, 0x7f0b17de
 
     invoke-virtual {p0, v3}, Lcom/android/settings/ChooseLockPattern;->getText(I)Ljava/lang/CharSequence;
 

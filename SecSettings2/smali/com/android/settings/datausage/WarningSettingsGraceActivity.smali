@@ -246,7 +246,7 @@
 
     const/4 v7, 0x0
 
-    const v11, 0x7f08014f
+    const v11, 0x7f080151
 
     const/4 v12, 0x0
 
@@ -262,7 +262,7 @@
 
     iput v11, p0, Lcom/android/settings/datausage/WarningSettingsGraceActivity;->mSubId:I
 
-    const v11, 0x7f110640
+    const v11, 0x7f110642
 
     invoke-virtual {v7, v11}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -272,7 +272,7 @@
 
     iput-object v11, p0, Lcom/android/settings/datausage/WarningSettingsGraceActivity;->mSeekbar:Landroid/widget/SeekBar;
 
-    const v11, 0x7f1109ea
+    const v11, 0x7f1109ed
 
     invoke-virtual {v7, v11}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -282,7 +282,7 @@
 
     iput-object v11, p0, Lcom/android/settings/datausage/WarningSettingsGraceActivity;->mStartPercent:Landroid/widget/TextView;
 
-    const v11, 0x7f1109ec
+    const v11, 0x7f1109ef
 
     invoke-virtual {v7, v11}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -292,7 +292,7 @@
 
     iput-object v11, p0, Lcom/android/settings/datausage/WarningSettingsGraceActivity;->mediumText:Landroid/widget/TextView;
 
-    const v11, 0x7f1109eb
+    const v11, 0x7f1109ee
 
     invoke-virtual {v7, v11}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -302,7 +302,7 @@
 
     iput-object v11, p0, Lcom/android/settings/datausage/WarningSettingsGraceActivity;->mEndPercent:Landroid/widget/TextView;
 
-    const v11, 0x7f1109ed
+    const v11, 0x7f1109f0
 
     invoke-virtual {v7, v11}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -849,7 +849,7 @@
 
     move-result-object v12
 
-    const v13, 0x7f0b05b5
+    const v13, 0x7f0b05b6
 
     invoke-virtual {p0, v13}, Lcom/android/settings/datausage/WarningSettingsGraceActivity;->getString(I)Ljava/lang/String;
 
@@ -1043,7 +1043,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f0f04cb
+    const v2, 0x7f0f04ca
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getInteger(I)I
 
@@ -1071,7 +1071,7 @@
 
     move-result-object v4
 
-    const v7, 0x7f0f04cb
+    const v7, 0x7f0f04ca
 
     invoke-virtual {v4, v7}, Landroid/content/res/Resources;->getInteger(I)I
 
@@ -1085,7 +1085,7 @@
 
     move-result-object v4
 
-    const v7, 0x7f0f04cd
+    const v7, 0x7f0f04cc
 
     invoke-virtual {v4, v7}, Landroid/content/res/Resources;->getInteger(I)I
 

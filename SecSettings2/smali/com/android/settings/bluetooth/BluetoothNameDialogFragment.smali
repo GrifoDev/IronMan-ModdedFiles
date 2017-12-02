@@ -90,7 +90,7 @@
 
     check-cast v0, Landroid/view/LayoutInflater;
 
-    const v2, 0x7f0400de
+    const v2, 0x7f0400df
 
     const/4 v3, 0x0
 
@@ -98,7 +98,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f1102db
+    const v2, 0x7f1102dd
 
     invoke-virtual {v1, v2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -278,7 +278,7 @@
 
     invoke-direct {v1, v2}, Landroid/app/AlertDialog$Builder;-><init>(Landroid/content/Context;)V
 
-    const v2, 0x7f0b1346
+    const v2, 0x7f0b1357
 
     invoke-virtual {v1, v2}, Landroid/app/AlertDialog$Builder;->setTitle(I)Landroid/app/AlertDialog$Builder;
 
@@ -296,7 +296,7 @@
 
     invoke-direct {v2, p0}, Lcom/android/settings/bluetooth/BluetoothNameDialogFragment$2;-><init>(Lcom/android/settings/bluetooth/BluetoothNameDialogFragment;)V
 
-    const v3, 0x7f0b1347
+    const v3, 0x7f0b1358
 
     invoke-virtual {v1, v3, v2}, Landroid/app/AlertDialog$Builder;->setPositiveButton(ILandroid/content/DialogInterface$OnClickListener;)Landroid/app/AlertDialog$Builder;
 

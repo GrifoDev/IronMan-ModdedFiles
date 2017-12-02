@@ -331,7 +331,7 @@
 .method protected getHelpResource()I
     .locals 1
 
-    const v0, 0x7f0b1bad
+    const v0, 0x7f0b1bbf
 
     return v0
 .end method
@@ -349,7 +349,7 @@
 
     invoke-super {p0, p1}, Lcom/samsung/android/settings/SecSettingsPreferenceFragment;->onCreate(Landroid/os/Bundle;)V
 
-    const v1, 0x7f0800b9
+    const v1, 0x7f0800bb
 
     invoke-virtual {p0, v1}, Lcom/android/settings/notification/OtherSoundSettings;->addPreferencesFromResource(I)V
 

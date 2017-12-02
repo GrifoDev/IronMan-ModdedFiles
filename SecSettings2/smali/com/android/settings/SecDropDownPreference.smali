@@ -245,7 +245,7 @@
 
     iget-object v1, p0, Lcom/android/settings/SecDropDownPreference;->mContext:Landroid/content/Context;
 
-    const v2, 0x7f0402af
+    const v2, 0x7f0402b2
 
     invoke-direct {v0, v1, v2}, Landroid/widget/ArrayAdapter;-><init>(Landroid/content/Context;I)V
 
@@ -259,7 +259,7 @@
 
     move-result v0
 
-    const v1, 0x7f0b0c30
+    const v1, 0x7f0b0c3e
 
     if-ne v0, v1, :cond_0
 

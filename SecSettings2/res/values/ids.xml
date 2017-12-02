@@ -448,6 +448,8 @@
     <item type="id" name="first_action">false</item>
     <item type="id" name="second_action">false</item>
     <item type="id" name="button_confirm_convert_fbe">false</item>
+    <item type="id" name="irisPreview_layout">false</item>
+    <item type="id" name="iris_preview_text">false</item>
     <item type="id" name="background_image">false</item>
     <item type="id" name="relativeLayoutConfirm">false</item>
     <item type="id" name="backupPin">false</item>
@@ -2327,6 +2329,7 @@
     <item type="id" name="proxy_pac">false</item>
     <item type="id" name="proxy_fields">false</item>
     <item type="id" name="proxy_hostname">false</item>
+    <item type="id" name="wifi_proxy_host_error_text">false</item>
     <item type="id" name="proxy_port">false</item>
     <item type="id" name="proxy_exclusionlist">false</item>
     <item type="id" name="proxy_authentication_toggle">false</item>

@@ -288,7 +288,7 @@
 
     iput-object v8, v0, Lcom/android/settings/search/SearchIndexableRaw;->key:Ljava/lang/String;
 
-    const v8, 0x7f0b0e5c
+    const v8, 0x7f0b0e6b
 
     invoke-virtual {v6, v8}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -296,7 +296,7 @@
 
     iput-object v8, v0, Lcom/android/settings/search/SearchIndexableRaw;->title:Ljava/lang/String;
 
-    const v8, 0x7f0b0e5c
+    const v8, 0x7f0b0e6b
 
     invoke-static {p1, v8}, Lcom/android/settings/Utils;->getKeywordForSearch(Landroid/content/Context;I)Ljava/lang/String;
 
@@ -306,7 +306,7 @@
 
     if-eqz v4, :cond_2
 
-    const v8, 0x7f0b0e5f
+    const v8, 0x7f0b0e6e
 
     invoke-virtual {v6, v8}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -315,7 +315,7 @@
     iput-object v8, v0, Lcom/android/settings/search/SearchIndexableRaw;->summaryOn:Ljava/lang/String;
 
     :goto_0
-    const v8, 0x7f0b0e57
+    const v8, 0x7f0b0e66
 
     invoke-virtual {v6, v8}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -335,7 +335,7 @@
 
     iput-object v8, v0, Lcom/android/settings/search/SearchIndexableRaw;->key:Ljava/lang/String;
 
-    const v8, 0x7f0b0e80
+    const v8, 0x7f0b0e8f
 
     invoke-virtual {v6, v8}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -343,7 +343,7 @@
 
     iput-object v8, v0, Lcom/android/settings/search/SearchIndexableRaw;->title:Ljava/lang/String;
 
-    const v8, 0x7f0b0e80
+    const v8, 0x7f0b0e8f
 
     invoke-static {p1, v8}, Lcom/android/settings/Utils;->getKeywordForSearch(Landroid/content/Context;I)Ljava/lang/String;
 
@@ -351,7 +351,7 @@
 
     iput-object v8, v0, Lcom/android/settings/search/SearchIndexableRaw;->keywords:Ljava/lang/String;
 
-    const v8, 0x7f0b0e82
+    const v8, 0x7f0b0e91
 
     invoke-virtual {v6, v8}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -359,7 +359,7 @@
 
     iput-object v8, v0, Lcom/android/settings/search/SearchIndexableRaw;->summaryOn:Ljava/lang/String;
 
-    const v8, 0x7f0b0e57
+    const v8, 0x7f0b0e66
 
     invoke-virtual {v6, v8}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -378,7 +378,7 @@
 
     iput-object v8, v1, Lcom/android/settings/search/SearchIndexableRaw;->key:Ljava/lang/String;
 
-    const v8, 0x7f0b0e87
+    const v8, 0x7f0b0e96
 
     invoke-virtual {v6, v8}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -386,7 +386,7 @@
 
     iput-object v8, v1, Lcom/android/settings/search/SearchIndexableRaw;->title:Ljava/lang/String;
 
-    const v8, 0x7f0b0e87
+    const v8, 0x7f0b0e96
 
     invoke-static {p1, v8}, Lcom/android/settings/Utils;->getKeywordForSearch(Landroid/content/Context;I)Ljava/lang/String;
 
@@ -400,7 +400,7 @@
 
     if-eqz v8, :cond_4
 
-    const v8, 0x7f0b0e86
+    const v8, 0x7f0b0e95
 
     invoke-virtual {v6, v8}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -409,7 +409,7 @@
     iput-object v8, v1, Lcom/android/settings/search/SearchIndexableRaw;->summaryOn:Ljava/lang/String;
 
     :goto_1
-    const v8, 0x7f0b0e57
+    const v8, 0x7f0b0e66
 
     invoke-virtual {v6, v8}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -427,7 +427,7 @@
 
     iput-object v8, v2, Lcom/android/settings/search/SearchIndexableRaw;->key:Ljava/lang/String;
 
-    const v8, 0x7f0b0e74
+    const v8, 0x7f0b0e83
 
     invoke-virtual {v6, v8}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -435,7 +435,7 @@
 
     iput-object v8, v2, Lcom/android/settings/search/SearchIndexableRaw;->title:Ljava/lang/String;
 
-    const v8, 0x7f0b0e74
+    const v8, 0x7f0b0e83
 
     invoke-static {p1, v8}, Lcom/android/settings/Utils;->getKeywordForSearch(Landroid/content/Context;I)Ljava/lang/String;
 
@@ -445,7 +445,7 @@
 
     if-eqz v4, :cond_5
 
-    const v8, 0x7f0b0e76
+    const v8, 0x7f0b0e85
 
     invoke-virtual {v6, v8}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -454,7 +454,7 @@
     iput-object v8, v2, Lcom/android/settings/search/SearchIndexableRaw;->summaryOn:Ljava/lang/String;
 
     :goto_2
-    const v8, 0x7f0b0e57
+    const v8, 0x7f0b0e66
 
     invoke-virtual {v6, v8}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -473,7 +473,7 @@
 
     if-eqz v8, :cond_3
 
-    const v8, 0x7f0b0e5e
+    const v8, 0x7f0b0e6d
 
     invoke-virtual {v6, v8}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -484,7 +484,7 @@
     goto/16 :goto_0
 
     :cond_3
-    const v8, 0x7f0b0e5d
+    const v8, 0x7f0b0e6c
 
     invoke-virtual {v6, v8}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -495,7 +495,7 @@
     goto/16 :goto_0
 
     :cond_4
-    const v8, 0x7f0b0e85
+    const v8, 0x7f0b0e94
 
     invoke-virtual {v6, v8}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -506,7 +506,7 @@
     goto :goto_1
 
     :cond_5
-    const v8, 0x7f0b0e75
+    const v8, 0x7f0b0e84
 
     invoke-virtual {v6, v8}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -547,7 +547,7 @@
 
     iput-object v2, v1, Landroid/provider/SearchIndexableResource;->className:Ljava/lang/String;
 
-    const v2, 0x7f0800bd
+    const v2, 0x7f0800bf
 
     iput v2, v1, Landroid/provider/SearchIndexableResource;->xmlResId:I
 

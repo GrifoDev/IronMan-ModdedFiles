@@ -257,7 +257,7 @@
     invoke-virtual {v10}, Landroid/preference/PreferenceScreen;->removeAll()V
 
     :cond_0
-    const v0, 0x7f0800b2
+    const v0, 0x7f0800b4
 
     invoke-virtual {p0, v0}, Lcom/samsung/android/settings/nfc/NfcSettings;->addPreferencesFromResource(I)V
 
@@ -1070,7 +1070,7 @@
 
     if-ne v1, v3, :cond_0
 
-    const v1, 0x7f0b0b96
+    const v1, 0x7f0b0ba4
 
     invoke-virtual {v0, v1}, Landroid/app/AlertDialog$Builder;->setTitle(I)Landroid/app/AlertDialog$Builder;
 
@@ -1087,7 +1087,7 @@
 
     aput-object v3, v2, v4
 
-    const v3, 0x7f0b0b97
+    const v3, 0x7f0b0ba5
 
     invoke-virtual {v1, v3, v2}, Landroid/content/res/Resources;->getString(I[Ljava/lang/Object;)Ljava/lang/String;
 
@@ -1120,7 +1120,7 @@
     return-void
 
     :cond_0
-    const v1, 0x7f0b0cd3
+    const v1, 0x7f0b0ce1
 
     invoke-virtual {v0, v1}, Landroid/app/AlertDialog$Builder;->setTitle(I)Landroid/app/AlertDialog$Builder;
 
@@ -1266,7 +1266,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f0b0b71
+    const v1, 0x7f0b0b7f
 
     invoke-virtual {v0, v1}, Landroid/app/ActionBar;->setTitle(I)V
 
@@ -1377,7 +1377,7 @@
 
     const/4 v0, 0x1
 
-    const v1, 0x7f0b0b8d
+    const v1, 0x7f0b0b9b
 
     invoke-interface {p1, v2, v0, v2, v1}, Landroid/view/Menu;->add(IIII)Landroid/view/MenuItem;
 
@@ -1395,13 +1395,13 @@
 
     const/4 v0, 0x2
 
-    const v1, 0x7f0b1ba7
+    const v1, 0x7f0b1bb9
 
     invoke-interface {p1, v2, v0, v2, v1}, Landroid/view/Menu;->add(IIII)Landroid/view/MenuItem;
 
     move-result-object v0
 
-    const v1, 0x7f02017b
+    const v1, 0x7f020179
 
     invoke-interface {v0, v1}, Landroid/view/MenuItem;->setIcon(I)Landroid/view/MenuItem;
 
@@ -1557,7 +1557,7 @@
     .sparse-switch
         0x1 -> :sswitch_1
         0x2 -> :sswitch_0
-        0x7f110a14 -> :sswitch_0
+        0x7f110a17 -> :sswitch_0
     .end sparse-switch
 .end method
 

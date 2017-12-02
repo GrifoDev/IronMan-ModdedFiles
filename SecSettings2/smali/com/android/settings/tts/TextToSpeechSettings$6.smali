@@ -672,7 +672,7 @@
 
     div-int/lit8 v8, v10, 0x6
 
-    sub-int v17, v17, v8
+    sub-int v17, v8, v17
 
     if-gez v17, :cond_8
 
@@ -3003,7 +3003,7 @@
 
     div-int/lit8 v8, v9, 0x4
 
-    sub-int v17, v17, v8
+    sub-int v17, v8, v17
 
     if-gez v17, :cond_39
 

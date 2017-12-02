@@ -483,7 +483,7 @@
 
     iget-object v2, p0, Lcom/samsung/android/settings/vzwsetupwizardbixby/bixby/hq/ParticleViewLayout;->mProcessLogoView:Landroid/widget/ImageView;
 
-    const v3, 0x7f0200f6
+    const v3, 0x7f0200f4
 
     invoke-virtual {v2, v3}, Landroid/widget/ImageView;->setBackgroundResource(I)V
 

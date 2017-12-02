@@ -24,7 +24,7 @@
 
     invoke-direct {p0, p1}, Lcom/android/settings/CopyablePreference;-><init>(Landroid/content/Context;)V
 
-    const v0, 0x7f0401ce
+    const v0, 0x7f0401d1
 
     invoke-virtual {p0, v0}, Lcom/android/settings/notification/NotificationStation$HistoricalNotificationPreference;->setLayoutResource(I)V
 
@@ -131,7 +131,7 @@
 
     if-eqz v1, :cond_1
 
-    const v1, 0x7f1105d7
+    const v1, 0x7f1105d9
 
     invoke-virtual {p1, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -146,7 +146,7 @@
     invoke-virtual {v1, v2}, Landroid/widget/ImageView;->setImageDrawable(Landroid/graphics/drawable/Drawable;)V
 
     :cond_1
-    const v1, 0x7f1105d8
+    const v1, 0x7f1105da
 
     invoke-virtual {p1, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -174,7 +174,7 @@
 
     invoke-virtual {v1, v2}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    const v1, 0x7f1105d9
+    const v1, 0x7f1105db
 
     invoke-virtual {p1, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -188,7 +188,7 @@
 
     invoke-virtual {v1, v2}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    const v1, 0x7f1105da
+    const v1, 0x7f1105dc
 
     invoke-virtual {p1, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 

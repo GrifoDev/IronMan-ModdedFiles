@@ -53,7 +53,7 @@
 
     iget-object v1, p0, Lcom/samsung/android/settings/display/ScreenSizePreviewSettingsList$AppsAdapter;->mInflater:Landroid/view/LayoutInflater;
 
-    const v2, 0x7f040294
+    const v2, 0x7f040297
 
     const/4 v3, 0x0
 
@@ -291,7 +291,7 @@
 
     check-cast v0, Landroid/widget/ImageView;
 
-    const v5, 0x7f110266
+    const v5, 0x7f110268
 
     invoke-virtual {v2, v5}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 

@@ -3,12 +3,12 @@
 .source "ConfirmDeviceCredentialBaseFragment.java"
 
 # interfaces
-.implements Landroid/content/DialogInterface$OnClickListener;
+.implements Landroid/view/View$OnTouchListener;
 
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/android/settings/ConfirmDeviceCredentialBaseFragment;->showDialog(Ljava/lang/String;Ljava/lang/String;IZ)V
+    value = Lcom/android/settings/ConfirmDeviceCredentialBaseFragment;->onViewCreated(Landroid/view/View;Landroid/os/Bundle;)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -20,16 +20,12 @@
 # instance fields
 .field final synthetic this$0:Lcom/android/settings/ConfirmDeviceCredentialBaseFragment;
 
-.field final synthetic val$dismiss:Z
-
 
 # direct methods
-.method constructor <init>(Lcom/android/settings/ConfirmDeviceCredentialBaseFragment;Z)V
+.method constructor <init>(Lcom/android/settings/ConfirmDeviceCredentialBaseFragment;)V
     .locals 0
 
     iput-object p1, p0, Lcom/android/settings/ConfirmDeviceCredentialBaseFragment$2;->this$0:Lcom/android/settings/ConfirmDeviceCredentialBaseFragment;
-
-    iput-boolean p2, p0, Lcom/android/settings/ConfirmDeviceCredentialBaseFragment$2;->val$dismiss:Z
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -38,21 +34,14 @@
 
 
 # virtual methods
-.method public onClick(Landroid/content/DialogInterface;I)V
+.method public onTouch(Landroid/view/View;Landroid/view/MotionEvent;)Z
     .locals 1
-
-    iget-boolean v0, p0, Lcom/android/settings/ConfirmDeviceCredentialBaseFragment$2;->val$dismiss:Z
-
-    if-eqz v0, :cond_0
 
     iget-object v0, p0, Lcom/android/settings/ConfirmDeviceCredentialBaseFragment$2;->this$0:Lcom/android/settings/ConfirmDeviceCredentialBaseFragment;
 
-    invoke-virtual {v0}, Lcom/android/settings/ConfirmDeviceCredentialBaseFragment;->getActivity()Landroid/app/Activity;
+    invoke-virtual {v0}, Lcom/android/settings/ConfirmDeviceCredentialBaseFragment;->refreshIrisAuthentication()V
 
-    move-result-object v0
+    const/4 v0, 0x0
 
-    invoke-virtual {v0}, Landroid/app/Activity;->finish()V
-
-    :cond_0
-    return-void
+    return v0
 .end method

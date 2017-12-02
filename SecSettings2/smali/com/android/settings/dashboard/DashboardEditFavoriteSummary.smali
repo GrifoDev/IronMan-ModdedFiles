@@ -169,7 +169,7 @@
 
     const/4 v4, 0x0
 
-    const v2, 0x7f0400a4
+    const v2, 0x7f0400a5
 
     const/4 v3, 0x0
 
@@ -197,7 +197,7 @@
 
     sput-object v2, Lcom/android/settings/dashboard/DashboardEditFavoriteSummary;->mDashboardEditFavoriteAdapter:Lcom/android/settings/dashboard/DashboardEditFavoriteAdapter;
 
-    const v2, 0x7f11023b
+    const v2, 0x7f11023d
 
     invoke-virtual {v1, v2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 

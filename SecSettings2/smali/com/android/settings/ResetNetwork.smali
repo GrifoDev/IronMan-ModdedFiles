@@ -70,7 +70,7 @@
 
     iget-object v10, p0, Lcom/android/settings/ResetNetwork;->mContentView:Landroid/view/View;
 
-    const v11, 0x7f110702
+    const v11, 0x7f110704
 
     invoke-virtual {v10, v11}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -82,7 +82,7 @@
 
     iget-object v10, p0, Lcom/android/settings/ResetNetwork;->mContentView:Landroid/view/View;
 
-    const v11, 0x7f110701
+    const v11, 0x7f110703
 
     invoke-virtual {v10, v11}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -108,7 +108,7 @@
 
     move-result-object v10
 
-    const v13, 0x7f0b1a15
+    const v13, 0x7f0b1a27
 
     invoke-virtual {v10, v13}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -151,7 +151,7 @@
 
     move-result-object v11
 
-    const v12, 0x7f0b13e1
+    const v12, 0x7f0b13f2
 
     invoke-virtual {v11, v12}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -181,7 +181,7 @@
 
     move-result-object v10
 
-    const v13, 0x7f0b14b1
+    const v13, 0x7f0b14c2
 
     invoke-virtual {v10, v13}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -519,7 +519,7 @@
     :goto_4
     iget-object v10, p0, Lcom/android/settings/ResetNetwork;->mContentView:Landroid/view/View;
 
-    const v11, 0x7f110703
+    const v11, 0x7f110705
 
     invoke-virtual {v10, v11}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -566,7 +566,7 @@
 
     invoke-direct {v1, v2, p0}, Lcom/android/settings/ChooseLockSettingsHelper;-><init>(Landroid/app/Activity;Landroid/app/Fragment;)V
 
-    const v2, 0x7f0b0dfb
+    const v2, 0x7f0b0e0a
 
     invoke-virtual {v0, v2}, Landroid/content/res/Resources;->getText(I)Ljava/lang/CharSequence;
 
@@ -637,7 +637,7 @@
 
     move-result-object v1
 
-    const v3, 0x7f0b0dfb
+    const v3, 0x7f0b0e0a
 
     move-object v5, v4
 
@@ -735,7 +735,7 @@
     if-eqz v3, :cond_1
 
     :cond_0
-    const v3, 0x7f0401b5
+    const v3, 0x7f0401b8
 
     invoke-virtual {p1, v3, v6}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;)Landroid/view/View;
 
@@ -763,7 +763,7 @@
     return-object v2
 
     :cond_2
-    const v3, 0x7f040276
+    const v3, 0x7f040279
 
     invoke-virtual {p1, v3, v6}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;)Landroid/view/View;
 

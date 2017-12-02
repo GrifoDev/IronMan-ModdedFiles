@@ -71,7 +71,7 @@
 
     iget-object v0, p0, Lcom/android/settings/CryptKeeperConfirm;->mContentView:Landroid/view/View;
 
-    const v1, 0x7f110211
+    const v1, 0x7f110213
 
     invoke-virtual {v0, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -109,7 +109,7 @@
 
     const/4 v7, 0x1
 
-    const v4, 0x7f040090
+    const v4, 0x7f040091
 
     invoke-virtual {p1, v4, v5}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;)Landroid/view/View;
 
@@ -119,7 +119,7 @@
 
     iget-object v4, p0, Lcom/android/settings/CryptKeeperConfirm;->mContentView:Landroid/view/View;
 
-    const v5, 0x7f110210
+    const v5, 0x7f110212
 
     invoke-virtual {v4, v5}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -183,7 +183,7 @@
 
     move-result-object v5
 
-    const v6, 0x7f0b075c
+    const v6, 0x7f0b075d
 
     invoke-virtual {v5, v6}, Landroid/app/Activity;->getString(I)Ljava/lang/String;
 
@@ -203,7 +203,7 @@
 
     move-result-object v5
 
-    const v6, 0x7f0b075d
+    const v6, 0x7f0b075e
 
     invoke-virtual {v5, v6}, Landroid/app/Activity;->getString(I)Ljava/lang/String;
 

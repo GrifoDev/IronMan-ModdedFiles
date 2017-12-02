@@ -42,7 +42,7 @@
 
     iget-object v0, p0, Lcom/android/settings/widget/SlidingTabLayout;->mLayoutInflater:Landroid/view/LayoutInflater;
 
-    const v1, 0x7f0402f2
+    const v1, 0x7f0402f5
 
     const/4 v2, 0x0
 

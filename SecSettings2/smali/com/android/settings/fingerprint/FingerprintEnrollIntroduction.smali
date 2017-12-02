@@ -167,7 +167,7 @@
 .method protected getNextButton()Landroid/widget/Button;
     .locals 1
 
-    const v0, 0x7f1103cc
+    const v0, 0x7f1103ce
 
     invoke-virtual {p0, v0}, Lcom/android/settings/fingerprint/FingerprintEnrollIntroduction;->findViewById(I)Landroid/view/View;
 
@@ -183,7 +183,7 @@
 
     invoke-super {p0}, Lcom/android/settings/fingerprint/FingerprintEnrollBase;->initViews()V
 
-    const v1, 0x7f1103ca
+    const v1, 0x7f1103cc
 
     invoke-virtual {p0, v1}, Lcom/android/settings/fingerprint/FingerprintEnrollIntroduction;->findViewById(I)Landroid/view/View;
 
@@ -195,7 +195,7 @@
 
     if-eqz v1, :cond_0
 
-    const v1, 0x7f0b1426
+    const v1, 0x7f0b1437
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(I)V
 
@@ -265,9 +265,9 @@
 
     if-ne p1, v3, :cond_6
 
-    const v3, 0x7f05003a
+    const v3, 0x7f050039
 
-    const v4, 0x7f05003b
+    const v4, 0x7f05003a
 
     invoke-virtual {p0, v3, v4}, Lcom/android/settings/fingerprint/FingerprintEnrollIntroduction;->overridePendingTransition(II)V
 
@@ -338,7 +338,7 @@
 
     move-result v0
 
-    const v1, 0x7f1103cb
+    const v1, 0x7f1103cd
 
     if-ne v0, v1, :cond_0
 
@@ -368,7 +368,7 @@
 
     if-eqz v3, :cond_1
 
-    const v3, 0x7f0b1bc7
+    const v3, 0x7f0b1bd9
 
     invoke-virtual {p0, v3}, Lcom/android/settings/fingerprint/FingerprintEnrollIntroduction;->getString(I)Ljava/lang/String;
 
@@ -456,7 +456,7 @@
     :goto_0
     iput-boolean v1, p0, Lcom/android/settings/fingerprint/FingerprintEnrollIntroduction;->mFingerprintUnlockDisabledByAdmin:Z
 
-    const v1, 0x7f040117
+    const v1, 0x7f040118
 
     invoke-virtual {p0, v1}, Lcom/android/settings/fingerprint/FingerprintEnrollIntroduction;->setContentView(I)V
 
@@ -464,12 +464,12 @@
 
     if-eqz v1, :cond_1
 
-    const v1, 0x7f0b1424
+    const v1, 0x7f0b1435
 
     invoke-virtual {p0, v1}, Lcom/android/settings/fingerprint/FingerprintEnrollIntroduction;->setHeaderText(I)V
 
     :goto_1
-    const v1, 0x7f1103cb
+    const v1, 0x7f1103cd
 
     invoke-virtual {p0, v1}, Lcom/android/settings/fingerprint/FingerprintEnrollIntroduction;->findViewById(I)Landroid/view/View;
 
@@ -495,7 +495,7 @@
     goto :goto_0
 
     :cond_1
-    const v1, 0x7f0b1423
+    const v1, 0x7f0b1434
 
     invoke-virtual {p0, v1}, Lcom/android/settings/fingerprint/FingerprintEnrollIntroduction;->setHeaderText(I)V
 

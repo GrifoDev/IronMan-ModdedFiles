@@ -170,6 +170,8 @@
     <string name="wifi_allow_scan_with_traffic_summary">பயன்படுத்திய தரவின் அளவின் அடிப்படையில் Wi-Fi ரோமிங் ஸ்கேன்களைத் தானாக அனுமதிக்கவும் அல்லது மறுக்கவும்.</string>
     <string name="select_logd_size_title">பதிதலுக்கான இடைத்தேக்க அளவு</string>
     <string name="select_logd_size_dialog_title">ஒவ்வொரு பதிவு இடைத்தேக்கதிற்கு அதிகபட்ச அளவைத் தேர்வுசெய்யவும்</string>
+    <string name="dev_logpersist_clear_warning_title">தொடர்ச்சியான லாகர் சேமிப்பகத்தை நீக்கவா?</string>
+    <string name="dev_logpersist_clear_warning_message">தொடர்ச்சியான லாகர் ஆஃப் செய்யப்படும் போது லாகர் தரவு நீக்கப்படும்.</string>
     <string name="select_logpersist_title">பதிவுத் தரவு தொடர்ந்து சேமி.</string>
     <string name="select_logpersist_dialog_title">தொடர்ந்து சேமிக்க, பதிவு பஃப்பர்களைத் தேர்வுசெய்க</string>
     <string name="select_usb_configuration_title">USB உள்ளமைவு</string>
@@ -982,6 +984,7 @@ Wi-Fi மற்றும் ப்ளூடூத் ஆகியவையும
     <string name="bluetooth_avc_available_description">இணைக்கப்பட்ட ப்ளூடூத் சாதனம், ஊடக ஒலியளவு ஒத்திசைவை ஆதரிக்கிறது, மேலும் ப்ளூடூத் சாதனத்தால் அமைக்கப்பட்ட ஒலியளவு நிலை, உங்கள் ஃபோனுடன் ஒத்திசைக்கப்படும்.</string>
     <string name="bluetooth_enter_pin_msg">%s உடன் இணைப்பதற்கு PIN உள்ளிடுக (0000 அல்லது 1234 முயற்சிக்கவும்).</string>
     <string name="bluetooth_pin_maximum_number_message">எழுத்துகளின் அதிகபட்ச எண்ணிக்கை அடையப்பட்டது.</string>
+    <string name="bluetooth_frp_permission_message">இந்த அழைப்பிற்காக ப்ளூடூத் சாதனத்தை பயன்படுத்த இயலாது.</string>
     <string name="settings_menu_done">முடிந்தது</string>
     <string name="usb_tethering_unavailable_subtext_tmo">USB not connected</string>
     <string name="usb_tethering_available_subtext_tmo">USB connected, check to tether</string>
@@ -1263,7 +1266,7 @@ Data usage is measured by your phone. Your carrier may account for usage differe
     <string name="auto_update_summary">Wi-Fi நெட்வொர்க்குடன் இணைக்கப்பட்டிருக்கும் போது மட்டும் மென்பொருள் புதுப்பிப்புகளைப் பதிவிறக்கவும். பதிவிறக்கத்தின் போதும் உங்கள் சாதனத்தை நீங்கள் தொடர்ந்து பயன்படுத்த இயலும்.</string>
     <string name="auto_update_over_wifi">Wi-Fi மூலம் தானாக பதிவிறக்குக</string>
     <string name="auto_update_over_wifi_summary">Wi-Fi நெட்வொர்க்குடன் இணைக்கப்பட்டிருக்கும் போது மென்பொருள் புதுப்பிப்புகளைத் தானாக பதிவிறக்கவும். உங்கள் சேவை வழங்குநரைப் பொறுத்து, மொபைல் தரவைப் பயன்படுத்தி எந்த கூடுதல் கட்டணங்களும் இல்லாமல் புதுப்பிப்புகளும் பதிவிறக்கப்படலாம். பதிவிறக்கத்தின் போதும் உங்கள் ஃபோனை பயன்படுத்த இயலும்.</string>
-    <string name="scheduled_update">திட்டமிட மெ பொ புதுப்பிப்பு.</string>
+    <string name="scheduled_update">திட்டமிட மெ. பொ. புதுப்பிப்பு.</string>
     <string name="scheduled_update_summary_default">ஆஃப்</string>
     <string name="scheduled_update_summary_set_time">புதுப்பிப்பு %s-க்கு துவங்கும்</string>
     <string name="scheduled_update_summary_set_time_everyday">புதுப்பிப்பு ஒவ்வொரு நாளும் %s-க்கு துவங்கும்</string>
@@ -1481,7 +1484,7 @@ Where Can I Find More Information About the 3rd Party's Policies? Separately, if
     <string name="navigationbar_pressure_sensitivity_title">முகப்புப் பொத்தானை வலுவாக அழுத்தவும்</string>
     <string name="navigationbar_pressure_sensitivity_summary">முகப்புப் பொத்தான் மறைந்திருக்கும் போது வழக்கத்தைவிட வலுவாக அழுத்தி அதனைப் பயன்படுத்தவும்.</string>
     <string name="navigationbar_pressure_sensitivity_level_summary">அழுத்த நிலை: %2$d-இல் %1$d</string>
-    <string name="navigationbar_pressure_sensitivity_description_off">முகப்புப் பொத்தான் மறைந்திருக்கும் போது வழக்கத்தைவிட வலுவாக அழுத்தி அதனைப் பயன்படுத்தவும்.</string>
+    <string name="navigationbar_pressure_sensitivity_description_off">முகப்புப் பொத்தானை வலிமையாக அழுத்துவதற்குத் தேவையான அழுத்தத்தைச் சரிசெய்யவும்.</string>
     <string name="navigationbar_pressure_low">லேசாக</string>
     <string name="navigationbar_pressure_high">பலமான</string>
     <string name="navigationbar_hide_bar">பொத்தானைக் காட்டி மறைக்கவும்</string>
@@ -1704,7 +1707,11 @@ Where Can I Find More Information About the 3rd Party's Policies? Separately, if
     <string name="crypt_keeper_confirm_title">மறைகுறியாக்கம் உறுதிபடுத்துக</string>
     <string name="crypt_keeper_final_desc">உங்கள் சாதனத்தை மறைகுறியாக்குவதை தலைகீழாக்க முடியாது, மேலும் செயல்முறையின் போது தடங்கல் ஏற்பட்டால் தரவு இழக்கப்படும். மறைகுறியாக்கும் செயல்முறைக்கு ஒரு மணிநேரம் அல்லது அதற்கும் அதிகமாக ஆகக்கூடும், மேலும் இச்செயல்முறையின் போது உங்கள் சாதனம் பலமுறை மீண்டும் துவங்கக்கூடும் அதனால் உங்களால் அதைப் பயன்படுத்த முடியாது.</string>
     <string name="crypt_keeper_setup_title">மறைகுறியாக்குகிறது…</string>
-    <string name="crypt_keeper_warn_wipe">சாதனமானது அதன் பேக்டரி டீஃபால்ட் அமைவுகளுக்கு ரீசெட் செய்வதற்கு முன் உங்கள் சாதனத்தை துவக்க %d முயற்சிகள் மீதமுள்ளன. கோப்புகள் மற்றும் பதிவிறக்கப்பட்ட பயன்பாடுகள் உட்பட அனைத்து தரவையும் இது அழித்துவிடும்.</string>
+    <string name="crypt_keeper_warn_wipe">"உங்கள் ஃபோன் அதன் ஃபேக்டரி டீஃபால்ட் அமைவுகளுக்கு ரீசெட் செய்யப்படும் முன்பு, %1$d முயற்சிகள் மீதமுள்ளன. இது உங்கள் கோப்புகள் மற்றும் பதிவிறக்கப்பட்ட பயன்பாடுகள் உட்பட எல்லா தரவையும் அழித்துவிடும்.
+
+உங்கள் ஃபோன் ரீசெட் செய்யப்பட்டால் அதை மீண்டும் பயன்படுத்த, இந்த ஃபோனுடன் தொடர்புடைய %2$s விவரங்களை (மின்னஞ்சல் முகவரி மற்றும் கடவுச்சொல்) நீங்கள் உள்ளிட வேண்டி இருக்கலாம்."</string>
+    <string name="crypt_keeper_samsung_account">Samsung account</string>
+    <string name="crypt_keeper_google_account">கூகுள் கணக்கு</string>
     <string name="crypt_keeper_failed_title">மறைகுறியாக்கம் தோல்வி</string>
     <string name="crypt_keeper_failed_summary">உங்கள் சாதனத்தை துவக்க இயலவில்லை. மறைகுறியாக்க செயல்பாட்டில் தடங்கல் ஏற்பட்டுள்ளது. உங்கள் சாதனத்தை பேக்டரி டீஃபால்ட் அமைவுகளுக்கு நீங்கள் ரீசெட் செய்யவேண்டும். இது உங்கள் எல்லா தரவையும் அழிக்கும்.</string>
     <string name="crypt_keeper_data_corrupted_title">சாதன சேமிப்பகம் சிதைந்துள்ளது</string>
@@ -1723,10 +1730,13 @@ Where Can I Find More Information About the 3rd Party's Policies? Separately, if
     <string name="cryptkeeper_wrong_pin">தவறான PIN உள்ளிடப்பட்டது</string>
     <string name="cryptkeeper_wrong_direction">தவறான திசை வரையப்பட்டது</string>
     <string name="checking_decryption">சரிபார்க்கிறது…</string>
-    <string name="crypt_keeper_last_warn_wipe">உங்கள் சாதனத்தை அதன் ஃபேக்டரி டீஃபால்ட் அமைவுகளுக்கு ரீசெட் செய்யும் முன்பு துவங்க உங்களுக்கு 1 முயற்சி மீதம் உள்ளது. கோப்புகள் மற்றும் பதிவிறக்கப்பட்ட பயன்பாடுகள் உட்பட அனைத்து தரவையும் இது அழித்துவிடும்.</string>
+    <string name="crypt_keeper_last_warn_wipe">"உங்கள் ஃபோன் அதன் ஃபேக்டரி டீஃபால்ட் அமைவுகளுக்கு ரீசெட் செய்யப்படும் முன்பு, உங்களுக்கு 1 முயற்சி மீதமுள்ளது. இது கோப்புகள் மற்றும் பதிவிறக்கப்பட்ட பயன்பாடுகள் உட்பட எல்லா தரவையும் அழித்துவிடும்.
+
+உங்கள் ஃபோன் ரீசெட் செய்யப்பட்டால், அதை மீண்டும் பயன்படுத்த இந்த ஃபோனுடன் தொடர்புடைய %s விவரத்தை (மின்னஞ்சல் முகவரி மற்றும் கடவுச்சொல்) உள்ளிட வேண்டியிருக்கும்."</string>
     <string name="crypt_keeper_failed_title_dec">மறைகுறிநீக்கம் தோல்வி.</string>
     <string name="crypt_keeper_failed_summary_dec">இடையூறின் காரணமாக மறை நீக்கத்தை முடிக்க இயலவில்லை. பயன்படுத்தும் முன் ஃபேக்டரி ரீசெட் செய்யவேண்டும் (அனைத்து தரவையும் அழித்தல்).</string>
     <string name="crypt_keeper_set_screen_lock_type">திரைப்பூட்டு வகையை அமைக்கவும்</string>
+    <string name="crypt_keeper_warning_keyboard_cover_does_not_work">ஃபோன் மீண்டும் துவங்கிய பிறகு விசைப்பலகை உறை வேலை செய்யாது.</string>
     <string name="encryption_interstitial_message">"ஃபோனைத் துவக்குவதற்கு முன் %s-ஐ உள்ளிடும்படி கேட்குமாறு அமைப்பதன் மூலம் இந்த ஃபோனை இன்னும் பாதுகாப்பாக வைக்கலாம். உங்கள் ஃபோன் தொலைந்தால் அல்லது திருடு போனால், இது உங்கள் தரவைப் பாதுகாக்கும். மின்னஞ்சல் ஒத்திசைவு போன்ற அம்சங்களை அணுகுவதற்கு சாதனத்தின் மறைகுறியாக்கக் கொள்கைகளுக்கு இணங்க சில பயன்பாடுகளுக்கு பாதுகாப்பான துவக்கம் தேவை.
 
 ஃபோன் துவங்கப்படும் வரை நீங்கள் அழைப்புகள், தகவல்கள் அல்லது அறிவிப்புகள் எதையும் பெற மாட்டீர்கள், அத்துடன் அலாரங்களும் ஒலிக்காது."</string>
@@ -1971,6 +1981,12 @@ You will also need it when:"</string>
     <string name="lockpassword_confirm_your_pin_with_fingerprint">கைரேகைப் பதிவைப் பயன்படுத்தவும் அல்லது நடப்பு PIN-ஐ உள்ளிடவும்.</string>
     <string name="lockpassword_confirm_your_pattern_with_fingerprint">கைரேகைப் பதிவைப் பயன்படுத்தவும் அல்லது நடப்பு பேட்டர்னை வரைக.</string>
     <string name="lockpassword_confirm_your_password_with_fingerprint">கைரேகைப் பதிவைப் பயன்படுத்தவும் அல்லது நடப்பு கடவுச்சொல்லை உள்ளிடவும்.</string>
+    <string name="lockpassword_confirm_your_pin_with_iris">கருவிழிகளைப் பயன்படுத்தவும் அல்லது உங்கள் நடப்பு PIN-ஐ உள்ளிடவும்.</string>
+    <string name="lockpassword_confirm_your_pattern_with_iris">கருவிழிகளைப் பயன்படுத்தவும் அல்லது உங்கள் நடப்பு பேட்டர்னை வரையவும்.</string>
+    <string name="lockpassword_confirm_your_password_with_iris">கருவிழிகளைப் பயன்படுத்தவும் அல்லது உங்கள் நடப்பு கடவுச்சொல்லை உள்ளிடவும்.</string>
+    <string name="lockpassword_confirm_your_pin_with_biometrics">பயோமெட்ரிக்ஸைப் பயன்படுத்தவும் அல்லது உங்கள் PIN-ஐ உள்ளிடவும்.</string>
+    <string name="lockpassword_confirm_your_pattern_with_biometrics">பயோமெட்ரிக்ஸைப் பயன்படுத்தவும் அல்லது உங்கள் பேட்டர்னை வரையவும்.</string>
+    <string name="lockpassword_confirm_your_password_with_biometrics">பயோமெட்ரிக்ஸைப் பயன்படுத்தவும் அல்லது உங்கள் கடவுச்சொல்லை உள்ளிடவும்.</string>
     <string name="lockpassword_confirm_your_pin_instead_of_fingerprint">கைரேகைப் பதிவைப் பயன்படுத்துவதற்க்கு பதிலாக உங்கள் PIN-ஐ உள்ளிடவும்.</string>
     <string name="lockpassword_confirm_your_pattern_instead_of_fingerprint">கைரேகைப் பதிவைப் பயன்படுத்துவதற்க்கு பதிலாக உங்கள் பேட்டர்னை வரையவும்.</string>
     <string name="lockpassword_confirm_your_password_instead_of_fingerprint">கைரேகைப் பதிவைப் பயன்படுத்துவதற்க்கு பதிலாக உங்கள் கடவுச்சொல்லை உள்ளிடவும்.</string>
@@ -2045,6 +2061,7 @@ You will also need it when:"</string>
     <string name="face_status_timeout">நேரம்முடிந்தது. பின்னர் முயற்சி செய்க</string>
     <string name="okay">சரி</string>
     <string name="face_samsung_account_button">Samsung account பயன்படுத்துக</string>
+    <string name="face_galaxy_account_button">Galaxy account-ஐ பயன்படுத்தவும்</string>
     <string name="face_error_DB_corrupted">உங்கள் முகத் தரவில் சிக்கல் உள்ளது. உங்கள் முகத்தை மீண்டும் பதிவுசெய்யவும்.</string>
     <string name="face_error_DB_corrupted_popup_title">உங்கள் முகத்தை மீண்டும் பதிவுசெய்யவும்</string>
     <string name="face_error_timeout">உங்கள் முகம் கண்டறியப்படவில்லை.</string>
@@ -2155,7 +2172,7 @@ You will also need it when:"</string>
     <string name="biometrics_backup_locktype_title">கருவிழி பாதுகாப்பை அமைக்கவும்</string>
     <string name="biometrics_register_your_iris">உங்கள் கருவிழிகளை பதிவுசெய்க.</string>
     <string name="biometrics_backup_locktype_summary">உங்கள் கருவிழிகளைப் பயன்படுத்தி சாதனத்தைப் பூட்டுநீக்குவதற்கு, நீங்கள் பேட்டர்ன், PIN அல்லது கடவுச்சொல்லை அமைக்க வேண்டும்.</string>
-    <string name="biometrics_backup_locktype_message">உங்கள் ஃபோனை பூட்டுநீக்க அல்லது பாதுகாப்பான சரிபார்ப்பிற்கு உங்கள் கருவிழிகளைப் பயன்படுத்த, பின்வருவனவற்றைச் செய்ய வேண்டும்:</string>
+    <string name="biometrics_backup_locktype_message">உங்கள் ஃபோனை பூட்டுநீக்க அல்லது பயன்பாடுகளில் உங்களைச் சரிபார்ப்பதற்கு உங்கள் கருவிழிகளைப் பயன்படுத்த, பின்வருவனவற்றைச் செய்ய வேண்டும்:</string>
     <string name="iris_delete_popup_title">கருவிழித் தரவை அகற்றவா?</string>
     <string name="iris_delete_popup_message">கருவிழித் தரவை அகற்றவா?</string>
     <string name="iris_delete_popup_message_with_related_func">கருவிழிகளைப் பயன்படுத்தும் அம்சங்கள் ஆஃப் செய்யப்படும்.</string>
@@ -2231,6 +2248,9 @@ You will also need it when:"</string>
     <string name="biometrics_dex_cant_use_msg">Samsung DeX %s-ஐப் பயன்படுத்த இயலாது.</string>
     <string name="biometrics_dex_closed_to_switch">Samsung DeX-க்கு மாற %s மூடப்படும்.</string>
     <string name="biometircs_dex_cant_use_toast">%s-ஐ Samsung DeX-இல் இயக்க இயலாது. ஃபோன் முறையில் இயக்க முயலவும்.</string>
+    <string name="iris_guide_text_preview">கருவிழிகளைப் பயன்படுத்த இங்கே பார்க்கவும்</string>
+    <string name="iris_guide_enable_toggle">கருவிழிகளைப் பயன்படுத்த இங்கே டேப் செய்க</string>
+    <string name="iris_cannot_verify">கருவிழிகளை சரிபார்க்க இயலவில்லை</string>
     <string name="knox_twofactor_bio_description">%s-ஐ பூட்டுநீக்க, உங்கள் பயோமெட்ரிக் பூட்டு வகையையும் இரண்டாம் பூட்டு வகையையும் தேர்வு செய்க.</string>
     <string name="fingerprint_registered">பதிவுசெய்த ரேகைப்பதிவுகள் தேர்ந்தெடுத்த பூட்டுநீக்க முறையுடன் பயன்படுத்தப்படும்.</string>
     <string name="knox_twofactor_description">%s-ஐ பூட்டுநீக்க, உங்கள் பயோமெட்ரிக்ஸையும், இரண்டாம் பூட்டு வகையையும் தேர்வு செய்க.</string>
@@ -3093,6 +3113,7 @@ Mobile data will be turned off."</string>
     <string name="easy_mode_app_help">ஒரு எளிய முகப்பு திரை தளவமைப்பு மற்றும் திரையின் பெரிய உருப்படிகளுடன் உங்கள் சாதனத்தை மிக எளிதாக பயன்படுத்தவும்.</string>
     <string name="easy_mode_app_help_dream_1">எளிமையான முகப்புத் திரை தளவமைப்பு மற்றும் பெரிய திரை உருப்படிகளைப் பயன்படுத்தவும்.</string>
     <string name="easy_mode_app_help_dream_2">முகப்புத் திரையில் நீங்கள் செய்த தனிப்பயனாக்கங்கள் தவிர்க்கப்படும் மற்றும் திரை ஜூம் அளவு அதன் அதிகபட்ச நிலைக்கு மாற்றப்படும்.</string>
+    <string name="easy_mode_app_help_3rd_launcher">பெரிய ஆன்-ஸ்க்ரீன் உருப்படிகளுக்கு சுலப முறையைப் பயன்படுத்தவும். நீங்கள் TouchWiz முகப்பை பயன்படுத்தவில்லை எனில், உங்கள் முகப்புத் திரை தளவமைப்பு மாற்றப்படாது, ஆனால் திரை ஜூம் பெரியதாக அமைக்கப்படும் மேலும் எழுத்துரு அளவு நடுத்தரமாக அமைக்கப்படும்.</string>
     <string name="security_warning_content">உங்கள் திரையைப் பூட்டுநீக்குவதற்காக கடவுச்சொல், PIN அல்லது பேட்டர்னை அமைப்பதன் மூலம் உங்கள் தனியுரிமையையும் பாதுகாக்கலாம்</string>
     <string name="lock_setting_weather_desc">வானிலை அமைவுகளை மாற்ற அல்லது காண, கீழே உள்ள “வானிலை அமைவுகளை” டேப் செய்க.</string>
     <string name="lock_setting_weather_btn">வானிலை அமைவுகள்</string>
@@ -3946,7 +3967,7 @@ Wi-Fi இப்போது ஆனில் உள்ளது."</string>
     <string name="wfd_descrpition_playsound">ஒலியை இயக்கவும்.</string>
     <string name="wfd_is_not_supported">இந்தச் செயல்பாடு ஆதரிக்கப்படவில்லை.</string>
     <string name="usbtethering_notify_wifi_is_on_title">Wi-Fi-ஐ ஆஃப் செய்யவா?</string>
-    <string name="usbtethering_notify_wifi_is_on">Wi-Fi மற்றும் USB டித்தரிங் என இரண்டையும் ஒரே நேரத்தில் இயக்க இயலாது. Wi-Fi ஆஃப் செய்யவும்.</string>
+    <string name="usbtethering_notify_wifi_is_on">Wi-Fi மற்றும் USB டித்தரிங் இரண்டையும் ஒரே நேரத்தில் ஆன் செய்ய இயலாது. Wi-Fi ஆஃப் செய்யப்படும்.</string>
     <string name="disable_multi_window_dialog_text">மல்டி விண்டோ செயல்நீக்கப்படும் மற்றும் பாப்-அப் விண்டோக்களில் திறக்கப்பட்ட அனைத்து பயன்பாடுகளும் மூடப்படும்.</string>
     <string name="keyguard_password_attempt_count_pin_code">மேலும் %d முயற்சி உள்ளது.</string>
     <string name="keyguard_password_attempts_count_pin_code">மேலும் %d முயற்சிகள் உள்ளன.</string>
@@ -4154,6 +4175,7 @@ SMS-ஐப் பெறுதல்"</string>
     <string name="hdmi_mode_title">HDMI முறை</string>
     <string name="hdmi_mode_dex">Samsung DeX</string>
     <string name="hdmi_mode_mirroring">Screen Mirroring</string>
+    <string name="hdmi_mode_not_available_while_cover_attached">உறை இணைக்கப்பட்டிருக்கும் போது %s கிடைக்காது.</string>
     <string name="screen_timeout_for_dex">Samsung DeX-க்கான திரை நேர முடிவு</string>
     <string name="show_virtual_keyboard_for_dex">Samsung DeX-இல் ஆன்-ஸ்க்ரீன் விசைப்பலகையை காட்டவும்</string>
     <string name="comma">,</string>
@@ -4462,7 +4484,7 @@ SMS-ஐப் பெறுதல்"</string>
     <string name="date_picker_title">தேதி</string>
     <string name="time_picker_title">நேரம்</string>
     <string name="lock_after_timeout">தானாக பூட்டப்படும்</string>
-    <string name="lock_after_timeout_summary">திரை தானாக ஆஃப் ஆன %s-க்குப் பின்னர், அதைப் பூட்டவும்.</string>
+    <string name="lock_after_timeout_summary">திரை தானாக ஆஃப் ஆனவுடன், %s-க்கு பிறகு ஃபோனை பூட்டவும்.</string>
     <string name="lock_after_timeout_summary_with_exception">%2$s மூலம் பூட்டுநீக்கி வைத்திருக்கும்போது தவிர, திரை தனாக ஆஃப் ஆனபின், %1$s-ல் பூட்டப்படும்.</string>
     <string name="show_owner_info_on_lockscreen_label">பூட்டுத் திரையில் சாதன உரிமையாளரின் தகவலைக் காண்பிக்கவும்.</string>
     <string name="owner_info_settings_title">உரிமையாளர் விவரம்</string>
@@ -4610,6 +4632,8 @@ SMS-ஐப் பெறுதல்"</string>
     <string name="wifi_empty_list_user_restricted">Wi-Fi அமைவுகளை மாற்ற உங்களுக்கு அனுமதி இல்லை.</string>
     <string name="wifi_setup_wps">தானியக்க அமைத்தல் (WPS)</string>
     <string name="wifi_show_advanced">மேம்பட்ட தெரிவுகளை காட்டவும்</string>
+    <string name="wifi_advanced_toggle_description_expanded">சுருக்க, இருமுறை டேப் செய்யவும்.</string>
+    <string name="wifi_advanced_toggle_description_collapsed">நீட்டிப்பதற்கு இருமுறை டேப் செய்யவும்.</string>
     <string name="wifi_wps_setup_title">WPS அமைவு</string>
     <string name="wifi_wps_setup_msg">WPS துவங்குகிறது…</string>
     <string name="wifi_wps_onstart_pbc">உங்கள் ரூட்டரில் உள்ள Wi-Fi பாதுகாக்கப்பட்ட அமைப்பை டேப் செய்யவும். அது WPS என்றழைக்கப்படும் அல்லது இந்த குறியீட்டைக் கொண்டிருக்கும்:</string>
@@ -4641,6 +4665,10 @@ SMS-ஐப் பெறுதல்"</string>
     <string name="wifi_shared">பகிரப்பட்டது</string>
     <string name="wifi_unchanged">(மாற்றப்படாத)</string>
     <string name="wifi_unspecified">(குறிப்பிடாதவை)</string>
+    <string name="wifi_select_cert">சான்றிதழ் தேர்வுசெய்யவும்</string>
+    <string name="wifi_do_not_provide_eap_user_cert">வழங்க வேண்டாம்</string>
+    <string name="wifi_do_not_validate_eap_server">சரிபார்க்க வேண்டாம்</string>
+    <string name="wifi_do_not_validate_eap_server_warning">சான்றிதழ் எதுவும் குறிப்பிடப்படவில்லை. உங்கள் இணைப்பு தனிப்பட்டதாக இருக்க இயலாது.</string>
     <string name="wifi_scan_always_turnon_message">இருப்பிடத் துல்லியத்தை மேம்படுத்தவும், வேறு நோக்கங்களுக்காகவும் Wi-Fi ஆஃப் செய்யப்பட்டிருக்கும்போது கூட Wi-Fi நெட்வொர்க்குகளைத் தேடுவதற்கான அனுமதியை %s கோருகிறது. இதை அனைத்து பயன்பாடுகளுக்கும் அனுமதிக்க வேண்டுமா?</string>
     <string name="wifi_scan_always_confirm_allow">அனுமதி</string>
     <string name="wifi_scan_always_confirm_deny">மறுக்கவும்</string>
@@ -4975,9 +5003,9 @@ SMS-ஐப் பெறுதல்"</string>
     <string name="restore_default_apn_completed">APN அமைவுகள் டீஃபால்ட்க்கு ரீசெட் செய்யப்பட்டது.</string>
     <string name="reset_network_desc">இவற்றுக்கானது உட்பட, இது எல்லா நெட்வொர்க் அமைவுகளையும் ரீசெட் செய்யும்:</string>
     <string name="reset_network_button_text">அமைவுகளை ரீசெட் செய்க</string>
-    <string name="reset_network_final_desc">அனைத்து இணைப்பு அமைவுகளும் ரீசெட் செய்யப்படும். இச்செயலை முடித்த பின் பழையநிலைக்கு திருப்ப இயலாது.</string>
+    <string name="reset_network_final_desc">எல்லா நெட்வொர்க் அமைவுகளும் ரீசெட் செய்யப்படும். இந்த செயல் முடிவடையாமல் இருக்க இயலாது.</string>
     <string name="reset_network_final_button_text">அமைவுகளை ரீசெட் செய்க</string>
-    <string name="reset_network_complete_toast">இணைப்பு அமைவுகளை ரீசெட் செய்க.</string>
+    <string name="reset_network_complete_toast">நெட்வொர்க் அமைவுகள் ரீசெட் ஆனது.</string>
     <string name="master_clear_title">ஃபேக்டரி தரவு ரீசெட்</string>
     <string name="master_clear_accounts">நீங்கள் தற்போது பின்வரும் கணக்குகளில் உள்நுழைகிறீர்கள்:</string>
     <string name="master_clear_other_users_present">இந்தச் சாதனத்திலுள்ள மற்றப் பயனர்களுக்குச் சொந்தமான தரவும் அழிக்கப்படும்.</string>
@@ -6090,6 +6118,7 @@ If the device has multiple users, using this shortcut on the lock screen tempora
     <string name="set_data_limit">தரவு வரம்பை அமைக்கவும்</string>
     <string name="data_limit">தரவு வரம்பு</string>
     <string name="data_usage_template">%2$s தேதிக்குள் %1$s பயன்படுத்தப்பட்டது</string>
+    <string name="data_usage_template_wifi">கடந்த 30 நாட்களில் %s பயன்படுத்தப்பட்டுள்ளது</string>
     <string name="data_usage_other_apps">பயன்பாட்டில் தொடர்புடைய பயன்பாடுகள் சேர்க்கப்பட்டுள்ளன</string>
     <string name="data_saver_title">தரவு சேமிப்பான்</string>
     <string name="unrestricted_data_saver">தரவு சேமிப்பான் இய. போதும் ப.பாட். அனுமதி</string>
@@ -6140,6 +6169,7 @@ If the device has multiple users, using this shortcut on the lock screen tempora
     <string name="legacy_dhcp_client_summary">புதிய Android DHCP க்ளையன்ட்டிற்குப் பதிலாக, Lollipop இலிருந்து DHCP க்ளையன்ட்டைப் பயன்படுத்தவும்.</string>
     <string name="screen_off_pocket_title">திரையை அனைத்து வைக்கவும்</string>
     <string name="screen_off_pocket_summary">பாக்கெட் அல்லது பை போன்ற இருள் சூழ்ந்த இடத்தில் சாதனம் இருக்கும் போது தற்செயலாக இயங்குவதை தடுக்கவும்.</string>
+    <string name="noApplications">இந்தச் செயலுடன் தொடர்பான அனைத்துப் பயன்பாடுகளும் செயல்நீக்கப்பட்டுள்ளன, முடக்கப்பட்டுள்ளன அல்லது நிறுவப்படவில்லை.</string>
     <string name="confirm_reset_shortcut_manager_throttling_title">குறுக்குவழி நிர்வாகி விகிதக் கட்டுப்படுத்தியை ரீசெட் செய்யவும்</string>
     <string name="confirm_reset_shortcut_manager_throttling_message">குறுக்குவழி நிர்வாகி விகிதக் கட்டுப்படுத்தி கவுண்டர்கள் ரீசெட் செய்யப்படும்.</string>
 </resources>

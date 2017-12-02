@@ -170,6 +170,8 @@
     <string name="wifi_allow_scan_with_traffic_summary">Automatski dozvolite ili odbijte pretrage Wi-Fi rominga na osnovu količine upotrebljenih podataka.</string>
     <string name="select_logd_size_title">Velič. bafera za prijavu</string>
     <string name="select_logd_size_dialog_title">Izaberi maksimalnu veličinu svakog bafera dnevnika</string>
+    <string name="dev_logpersist_clear_warning_title">Obrisati trajnu memoriju sist. za evidenciju?</string>
+    <string name="dev_logpersist_clear_warning_message">Podaci sistema za evidenciju će se izbrisati kada se isključi trajni sistem za evidenciju.</string>
     <string name="select_logpersist_title">Trajno uskladišti podatke dnevnika</string>
     <string name="select_logpersist_dialog_title">Izaberite bafere dnev. za trajno skladištenje</string>
     <string name="select_usb_configuration_title">USB konfiguracija</string>
@@ -982,6 +984,7 @@ Dva povezana uređaja mogu neznatno da se razlikuju u pogledu izlaznog zvuka."</
     <string name="bluetooth_avc_available_description">Priključeni Bluetooth uređaj podržava funkciju Sinhronizacija jačine zvuka medija i nivo jačine zvuka koji je podesio Bluetooth uređaj će se sinhronizovati sa telefonom.</string>
     <string name="bluetooth_enter_pin_msg">Unesi PIN radi uparivanja sa %s (probaj 0000 ili 1234).</string>
     <string name="bluetooth_pin_maximum_number_message">Dostignut je maksimalan broj karaktera.</string>
+    <string name="bluetooth_frp_permission_message">Nije moguće koristiti Bluetooth uređaj za ovaj poziv.</string>
     <string name="settings_menu_done">Gotovo</string>
     <string name="usb_tethering_unavailable_subtext_tmo">USB not connected</string>
     <string name="usb_tethering_available_subtext_tmo">USB connected, check to tether</string>
@@ -1481,7 +1484,7 @@ Kucnite na OK da biste dozvolili da se osvetljenje poveća iznad bezbednih nivoa
     <string name="navigationbar_pressure_sensitivity_title">Jako pritisnite dugme Početak</string>
     <string name="navigationbar_pressure_sensitivity_summary">Koristite dugme Početak dok je skriveno tako što ćete ga pritisnuti jače nego obično.</string>
     <string name="navigationbar_pressure_sensitivity_level_summary">Nivo pritiska: %1$d od %2$d</string>
-    <string name="navigationbar_pressure_sensitivity_description_off">Koristite dugme Početak dok je skriveno tako što ćete ga pritisnuti jače nego obično.</string>
+    <string name="navigationbar_pressure_sensitivity_description_off">Podesite jačinu pritiska koji je potreban da se jako pritisne dugme Početak.</string>
     <string name="navigationbar_pressure_low">Lakši pritisak</string>
     <string name="navigationbar_pressure_high">Jače</string>
     <string name="navigationbar_hide_bar">Prikaz i skrivanje dugmeta</string>
@@ -1620,7 +1623,7 @@ Kucnite na OK da biste dozvolili da se osvetljenje poveća iznad bezbednih nivoa
     <string name="crypt_keeper_decrypt_title">Dešifruj uređaj</string>
     <string name="crypt_keeper_decrypt_summary">Uređaj je šifrovan.</string>
     <string name="crypt_keeper_type_pin">PIN kod</string>
-    <string name="crypt_keeper_type_pattern">Oblik</string>
+    <string name="crypt_keeper_type_pattern">obrazac</string>
     <string name="crypt_keeper_type_password">Lozinka</string>
     <string name="crypt_keeper_type_direction">Pravac zaključavanja</string>
     <string name="crypt_keeper_confirm_title_dec">Potvrdi dešifrovanje</string>
@@ -1704,7 +1707,11 @@ Tokom procesa dešifrovanja, SD kartica ne može da se koristi."</string>
     <string name="crypt_keeper_confirm_title">Potvrdi šifrovanje</string>
     <string name="crypt_keeper_final_desc">Šifrovanje tvog uređaja ne može da se poništi i podaci će se izgubiti ako se ovaj proces prekine. Šifrovanje može da potraje sat ili više, tokom kojeg će se tvoj uređaj restartovati nekoliko puta i nećeš moći da ga koristiš.</string>
     <string name="crypt_keeper_setup_title">Šifrovanje…</string>
-    <string name="crypt_keeper_warn_wipe">Preostalo vam je %d pokušaja za pokretanje uređaja pre nego što se on resetuje na svoja podrazumevana fabrička podešavanja. To će obrisati sve podatke, uključujući i fajlove i preuzete aplikacije.</string>
+    <string name="crypt_keeper_warn_wipe">"Preostalo vam je %1$d pokušaja pre nego što se telefon resetuje na podrazumevana fabrička podešavanja. Ovo će obrisati sve podatke, uključujući fajlove i preuzete aplikacije.
+
+Ako se telefon resetuje, možda ćete morati da unesete informacije o %2$s (e-adresu i lozinku) koje su povezane sa ovim telefonom da biste mogli ponovo da ga koristite."</string>
+    <string name="crypt_keeper_samsung_account">Samsung account</string>
+    <string name="crypt_keeper_google_account">Google nalog</string>
     <string name="crypt_keeper_failed_title">Šifrovanje neuspešno</string>
     <string name="crypt_keeper_failed_summary">Nije moguće pokrenuti uređaj. Proces šifrovanja je prekinut. Morate da resetujete uređaj na podrazumevana fabrička podešavanja. To će obrisati sve vaše podatke.</string>
     <string name="crypt_keeper_data_corrupted_title">Memorija uređaja je oštećena</string>
@@ -1723,10 +1730,13 @@ Tokom procesa dešifrovanja, SD kartica ne može da se koristi."</string>
     <string name="cryptkeeper_wrong_pin">Unet je neispravan PIN kod</string>
     <string name="cryptkeeper_wrong_direction">Nacrtan je netačan pravac</string>
     <string name="checking_decryption">Provera…</string>
-    <string name="crypt_keeper_last_warn_wipe">Preostao vam je još samo 1 pokušaj za pokretanje uređaja pre nego što se on resetuje na svoja podrazumevana fabrička podešavanja. Ovo će obrisati sve podatke, uključujući fajlove i preuzete aplikacije.</string>
+    <string name="crypt_keeper_last_warn_wipe">"Preostao vam je jedan pokušaj pre nego što se telefon resetuje na podrazumevana fabrička podešavanja. Ovo će obrisati sve podatke, uključujući fajlove i preuzete aplikacije.
+
+Ako se telefon resetuje, možda ćete morati da unesete informacije o %s (e-adresu i lozinku) koje su povezane sa ovim telefonom da biste mogli ponovo da ga koristite."</string>
     <string name="crypt_keeper_failed_title_dec">Dešifrovanje neuspešno.</string>
     <string name="crypt_keeper_failed_summary_dec">Dešifrovanje nije moguće izvršiti zbog prekidanja. Vrati na fabrička podešavanja (obrisaće se svi podaci) pre upotrebe.</string>
     <string name="crypt_keeper_set_screen_lock_type">Podesi tip zaključav. ekrana</string>
+    <string name="crypt_keeper_warning_keyboard_cover_does_not_work">Poklopac tastature neće raditi nakon što se telefon restartuje.</string>
     <string name="encryption_interstitial_message">"Možete dodatno da zaštitite ovaj telefon tako što ćete zahtevati da se pre pokretanja telefona unese %s. Ova funkcija pomaže u zaštiti podataka ako je telefon izgubljen ili ukraden. Neke aplikacije mogu da zahtevaju funkciju Bezbedno pokretanje u skladu sa Politikama šifrovanja uređaja za pristup funkcijama kao što je sinhronizacija e-pošte.
 
 Dok se telefon ne pokrene, nećete primati pozive, poruke niti obaveštenja i alarmi se neće oglašavati."</string>
@@ -1971,6 +1981,12 @@ You will also need it when:"</string>
     <string name="lockpassword_confirm_your_pin_with_fingerprint">Koristite otisak prsta ili unesite aktuelni PIN kod.</string>
     <string name="lockpassword_confirm_your_pattern_with_fingerprint">Koristite otisak prsta ili nacrtajte aktuelni obrazac.</string>
     <string name="lockpassword_confirm_your_password_with_fingerprint">Koristite otisak prsta ili unesite aktuelnu lozinku.</string>
+    <string name="lockpassword_confirm_your_pin_with_iris">Koristite dužice ili unesite aktuelni PIN kod.</string>
+    <string name="lockpassword_confirm_your_pattern_with_iris">Koristite dužice ili nacrtajte aktuelni obrazac.</string>
+    <string name="lockpassword_confirm_your_password_with_iris">Koristite dužice ili unesite aktuelnu lozinku.</string>
+    <string name="lockpassword_confirm_your_pin_with_biometrics">Koristite biometriju ili unesite PIN kod.</string>
+    <string name="lockpassword_confirm_your_pattern_with_biometrics">Koristite biometriju ili nacrtajte obrazac.</string>
+    <string name="lockpassword_confirm_your_password_with_biometrics">Koristite biometriju ili unesite lozinku.</string>
     <string name="lockpassword_confirm_your_pin_instead_of_fingerprint">Unesite svoj PIN kod umesto da koristite prepoznavanje otiska prsta.</string>
     <string name="lockpassword_confirm_your_pattern_instead_of_fingerprint">Nacrtajte svoj obrazac umesto da koristite prepoznavanje otiska prsta.</string>
     <string name="lockpassword_confirm_your_password_instead_of_fingerprint">Unesite svoju lozinku umesto da koristite prepoznavanje otiska prsta.</string>
@@ -2045,6 +2061,7 @@ Izaberite kako želite da otključavate telefon. Funkcije Otključavanje prepozn
     <string name="face_status_timeout">Vremensko prekoračenje. Probaj kasnije.</string>
     <string name="okay">OK</string>
     <string name="face_samsung_account_button">Koristi Samsung account</string>
+    <string name="face_galaxy_account_button">Koristi Galaxy nalog</string>
     <string name="face_error_DB_corrupted">Došlo je do problema sa podacima o licu. Ponovo registrujte lice.</string>
     <string name="face_error_DB_corrupted_popup_title">Ponovo registrujte lice</string>
     <string name="face_error_timeout">Lice nije detektovano.</string>
@@ -2155,7 +2172,7 @@ Uključite funkciju Otključavanje dužicom da biste koristili biometriju ili %s
     <string name="biometrics_backup_locktype_title">Konfigurišite bezbednost za dužicu</string>
     <string name="biometrics_register_your_iris">Registrujte dužice.</string>
     <string name="biometrics_backup_locktype_summary">Da biste koristili svoje dužice za otključavanje uređaja, morate da podesite obrazac, PIN kod ili lozinku.</string>
-    <string name="biometrics_backup_locktype_message">Da biste koristili dužice za otključavanje telefona ili bezbednu verifikaciju, moraćete da:</string>
+    <string name="biometrics_backup_locktype_message">Da biste koristili dužice radi otključavanja telefona ili sopstvene verifikacije u aplikacijama, moraćete da uradite sledeće:</string>
     <string name="iris_delete_popup_title">Ukloniti podatke o dužici?</string>
     <string name="iris_delete_popup_message">Ukloniti podatke o dužici?</string>
     <string name="iris_delete_popup_message_with_related_func">Funkcije koje koriste dužice će biti isključene.</string>
@@ -2231,6 +2248,9 @@ Izaberite kako želite da otključavate telefon. Funkcije Otključavanje pomoću
     <string name="biometrics_dex_cant_use_msg">Ne može da se koristi aplikacija/funkcija %s u aplikaciji Samsung DeX.</string>
     <string name="biometrics_dex_closed_to_switch">Aplikacija %s je zatvorena da bi se prešlo na aplikaciju Samsung DeX.</string>
     <string name="biometircs_dex_cant_use_toast">Aplikacija %s ne može da se pokrene u režimu Samsung DeX. Pokušajte da je pokrenete u režimu telefona.</string>
+    <string name="iris_guide_text_preview">Gledajte ovde za dužice</string>
+    <string name="iris_guide_enable_toggle">Kucnite ovde i koristite dužice</string>
+    <string name="iris_cannot_verify">Dužice nisu verifikovane</string>
     <string name="knox_twofactor_bio_description">Izaberite biometrički tip zaključavanja i drugi tip zaključavanja da biste otključali uređaj %s.</string>
     <string name="fingerprint_registered">Registrovani otisci prstiju će se koristiti sa izabranim načinom otključavanja.</string>
     <string name="knox_twofactor_description">Izaberite biometriju i drugi tip zaključavanja da biste otključali uređaj %s.</string>
@@ -3093,6 +3113,7 @@ Probaj ponovo."</string>
     <string name="easy_mode_app_help">Koristite uređaj još lakše pomoću jednostavnijeg izgleda početnog ekrana i većih stavki koje se pojavljuju na ekranu.</string>
     <string name="easy_mode_app_help_dream_1">Korišćenje jednostavnog izgleda Početnog ekrana i većih stavki koje se pojavljuju na ekranu.</string>
     <string name="easy_mode_app_help_dream_2">Sva prilagođavanja koja ste izvršili na Početnom ekranu će biti odbačena i Zumiranje ekrana će biti podešeno na maksimalnu vrednost.</string>
+    <string name="easy_mode_app_help_3rd_launcher">Primenite Jednostavan režim za veće stavke koje se pojavljuju na ekranu. Ako ne koristite TouchWiz početni ekran, izgled vašeg Početnog ekrana se neće promeniti, ali će se zumiranje ekrana podesiti na veliko i veličina fonta će se podesiti na srednju vrednost.</string>
     <string name="security_warning_content">Možete da zaštitite svoju privatnost tako što ćete podesiti lozinku, PIN kod ili obrazac za otključavanje ekrana</string>
     <string name="lock_setting_weather_desc">Da bi prikazao/la ili promenio/la podešavanja vremenskih prilika, kucni na PODEŠAVANJA VREMENSKIH PRILIKA dole.</string>
     <string name="lock_setting_weather_btn">Podešavanja vremenskih prilika</string>
@@ -3339,7 +3360,7 @@ Downloading via mobile networks may result in additional charges depending on yo
     <string name="disable_hovering_title">Onemogući prikaz oblačića</string>
     <string name="disable_hovering_summary">Ne mogu se istovremeno omogućiti prikaz oblačića i TalkBack. Prikaz oblačića će biti onemogućen.</string>
     <string name="pen_settings_pen_input">Direktan unos sa olovkom</string>
-    <string name="action_memo_onoff_screen_title">Bel. na isklj. ek.</string>
+    <string name="action_memo_onoff_screen_title">Beleška na isključenom ekranu</string>
     <string name="screen_off_note_summary">Pišite beleške dok je ekran isključen. Samo uklonite S olovku i počnite da pišete.</string>
     <string name="screen_off_note_summary_jpn">Kreirajte beleške tako što ćete otkačiti S olovku dok je ekran isključen, a zatim pisati po ekranu. Beleške na isključenom ekranu će biti sačuvane u aplikaciji Galaxy Notes.</string>
     <string name="screen_off_note_summary_no_detach">Kreirajte beleške tako što ćete pritisnuti dugme Olovka, kucnuti na ekran dok je isključen, a zatim pisati po njemu. Beleške na isključenom ekranu će se sačuvati u aplikaciji Samsung Notes.</string>
@@ -3946,7 +3967,7 @@ Korišćenjem Mobilne pristupne tačke povećava se potrošnja baterije i upotre
     <string name="wfd_descrpition_playsound">Reprodukujte zvuk.</string>
     <string name="wfd_is_not_supported">Ova funkcija nije podržana.</string>
     <string name="usbtethering_notify_wifi_is_on_title">Isključiti Wi-Fi?</string>
-    <string name="usbtethering_notify_wifi_is_on">Funkcije Wi-Fi i USB vezivanje ne mogu istovremeno da budu uključene. Isključite funkciju Wi-Fi.</string>
+    <string name="usbtethering_notify_wifi_is_on">Funkcije Wi-Fi i USB vezivanje ne mogu istovremeno da budu uključene. Wi-Fi će se isključiti.</string>
     <string name="disable_multi_window_dialog_text">Funkcija Više prozora će biti onemogućena i sve aplikacije koje su otvorene u iskačućim prozorima biće zatvorene.</string>
     <string name="keyguard_password_attempt_count_pin_code">%d pokušaj ostao.</string>
     <string name="keyguard_password_attempts_count_pin_code">%d pokušaja ostalo.</string>
@@ -4154,6 +4175,7 @@ Prijem SMS-a"</string>
     <string name="hdmi_mode_title">Režim HDMI</string>
     <string name="hdmi_mode_dex">Aplikacija Samsung DeX</string>
     <string name="hdmi_mode_mirroring">Screen Mirroring</string>
+    <string name="hdmi_mode_not_available_while_cover_attached">Funkcija %s nije dostupna kada je prikačen poklopac.</string>
     <string name="screen_timeout_for_dex">Vr. do isk. ekr. za Samsung DeX</string>
     <string name="show_virtual_keyboard_for_dex">Prikaži tastaturu na ekranu u Samsung DeX-u</string>
     <string name="comma">,</string>
@@ -4463,7 +4485,7 @@ Možete da promenite ovo kasnije u okviru podešavanja za Bluetooth."</string>
     <string name="date_picker_title">Datum</string>
     <string name="time_picker_title">Vreme</string>
     <string name="lock_after_timeout">Automatsko zaključavanje</string>
-    <string name="lock_after_timeout_summary">Zaključaj ekran %s nakon što se on automatski isključi.</string>
+    <string name="lock_after_timeout_summary">Zaključavanje telefona %s nakon što se ekran automatski isključi.</string>
     <string name="lock_after_timeout_summary_with_exception">Zaključaj ekran %1$s nakon što se on automatski isključi, osim kada ga %2$s drži otključanim.</string>
     <string name="show_owner_info_on_lockscreen_label">Prikaži informacije o vlasniku uređaja na zaključanom ekranu.</string>
     <string name="owner_info_settings_title">Informacije o vlasniku</string>
@@ -4611,6 +4633,8 @@ Da biste poboljšali tačnost određivanja lokacije, aplikacije i usluge mogu da
     <string name="wifi_empty_list_user_restricted">Nemate dozvolu da menjate Wi-Fi podešavanja.</string>
     <string name="wifi_setup_wps">Automatsko podešavanje (WPS)</string>
     <string name="wifi_show_advanced">Prikaži napredne opcije</string>
+    <string name="wifi_advanced_toggle_description_expanded">Dvaput kucnite za skupljanje.</string>
+    <string name="wifi_advanced_toggle_description_collapsed">Dvaput kucnite za proširivanje.</string>
     <string name="wifi_wps_setup_title">Podešavanje WPS-a</string>
     <string name="wifi_wps_setup_msg">Pokretanje WPS-a…</string>
     <string name="wifi_wps_onstart_pbc">Pritisni dugme na ruteru za zaštićeno povezivanje putem Wi-Fi mreže. Možda na njemu piše WPS ili ima ovaj simbol:</string>
@@ -4642,6 +4666,10 @@ Da biste poboljšali tačnost određivanja lokacije, aplikacije i usluge mogu da
     <string name="wifi_shared">Deljen</string>
     <string name="wifi_unchanged">(nepromenjeno)</string>
     <string name="wifi_unspecified">(Neodređeno)</string>
+    <string name="wifi_select_cert">Izaberi sertifikat</string>
+    <string name="wifi_do_not_provide_eap_user_cert">Ne pružaj</string>
+    <string name="wifi_do_not_validate_eap_server">Ne potvrđuj</string>
+    <string name="wifi_do_not_validate_eap_server_warning">Nijedan sertifikat nije naveden. Veza neće biti privatna.</string>
     <string name="wifi_scan_always_turnon_message">Aplikacija %s traži dozvolu za traženje Wi-Fi mreža, čak i kada je Wi-Fi isključen, da bi poboljšala tačnost lokacije ali i u druge svrhe. Dozvoliti ovo svim aplikacijama?</string>
     <string name="wifi_scan_always_confirm_allow">Dozvoli</string>
     <string name="wifi_scan_always_confirm_deny">Odbijeno</string>
@@ -4976,9 +5004,9 @@ Razmislite o upotrebi brže SD kartice ili USB uređaja za skladištenje da bist
     <string name="restore_default_apn_completed">Podešavanja pristupne tačke vraćena na podrazumevana.</string>
     <string name="reset_network_desc">Ovo će resetovati sva mrežna podešavanja, uključujući i ona za:</string>
     <string name="reset_network_button_text">Resetovanje podešavanja</string>
-    <string name="reset_network_final_desc">Sva podešavanja veze će biti resetovana. Ova radnja ne može da se poništi.</string>
+    <string name="reset_network_final_desc">Sva mrežna podešavanja će se resetovati. Ova radnja ne može da se poništi.</string>
     <string name="reset_network_final_button_text">Resetovanje podešavanja</string>
-    <string name="reset_network_complete_toast">Podešavanja veze se resetuju.</string>
+    <string name="reset_network_complete_toast">Mrežna podešavanja su resetovana.</string>
     <string name="master_clear_title">Vraćanje na fabrička podešavanja</string>
     <string name="master_clear_accounts">Trenutno si prijavljen/a na sledeće naloge:</string>
     <string name="master_clear_other_users_present">Podaci koji pripadaju drugim korisnicima na ovom uređaju će takođe biti obrisani.</string>
@@ -6091,6 +6119,7 @@ Dok se uređaj ne pokrene, nećete primati pozive, poruke niti obaveštenja i al
     <string name="set_data_limit">Podesi ogranič. upot. podataka</string>
     <string name="data_limit">Ograničenje podataka</string>
     <string name="data_usage_template">%1$s iskorišćeno u periodu %2$s</string>
+    <string name="data_usage_template_wifi">%s je upotrebljeno u poslednjih 30 dana</string>
     <string name="data_usage_other_apps">Srodne aplikacije u upotrebi</string>
     <string name="data_saver_title">Čuvar podataka</string>
     <string name="unrestricted_data_saver">Dozv. apl. kad je Čuv. pod. uk.</string>
@@ -6141,6 +6170,7 @@ Dok se uređaj ne pokrene, nećete primati pozive, poruke niti obaveštenja i al
     <string name="legacy_dhcp_client_summary">Користите DHCP клијент из Lollipop-а уместо новог Android DHCP клијента.</string>
     <string name="screen_off_pocket_title">Neka ekran bude isključen</string>
     <string name="screen_off_pocket_summary">Sprečite slučajno uključivanje ekrana dok je uređaj na tamnom mestu kao što je džep ili torba.</string>
+    <string name="noApplications">Sve aplikacije koje su povezane sa ovom radnjom su onemogućene, blokirane ili nisu instalirane.</string>
     <string name="confirm_reset_shortcut_manager_throttling_title">Resetujte graničnik brzine Menadžera prečica</string>
     <string name="confirm_reset_shortcut_manager_throttling_message">Brojač graničnika brzine Menadžera prečica će se resetovati.</string>
 </resources>

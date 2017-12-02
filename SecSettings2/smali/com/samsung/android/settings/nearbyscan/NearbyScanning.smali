@@ -200,6 +200,57 @@
     return-void
 .end method
 
+.method public onConfigurationChanged(Landroid/content/res/Configuration;)V
+    .locals 2
+
+    invoke-super {p0, p1}, Lcom/samsung/android/settings/SecSettingsPreferenceFragment;->onConfigurationChanged(Landroid/content/res/Configuration;)V
+
+    const/4 v0, 0x0
+
+    invoke-virtual {p0, v0}, Lcom/samsung/android/settings/nearbyscan/NearbyScanning;->setPreferenceScreen(Landroid/preference/PreferenceScreen;)V
+
+    invoke-static {}, Lcom/android/settings/Utils;->isTablet()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    const v0, 0x7f0800af
+
+    invoke-virtual {p0, v0}, Lcom/samsung/android/settings/nearbyscan/NearbyScanning;->addPreferencesFromResource(I)V
+
+    :goto_0
+    return-void
+
+    :cond_0
+    invoke-virtual {p0}, Lcom/samsung/android/settings/nearbyscan/NearbyScanning;->getResources()Landroid/content/res/Resources;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Landroid/content/res/Resources;->getConfiguration()Landroid/content/res/Configuration;
+
+    move-result-object v0
+
+    iget v0, v0, Landroid/content/res/Configuration;->orientation:I
+
+    const/4 v1, 0x2
+
+    if-ne v0, v1, :cond_1
+
+    const v0, 0x7f0800ae
+
+    invoke-virtual {p0, v0}, Lcom/samsung/android/settings/nearbyscan/NearbyScanning;->addPreferencesFromResource(I)V
+
+    goto :goto_0
+
+    :cond_1
+    const v0, 0x7f0800ad
+
+    invoke-virtual {p0, v0}, Lcom/samsung/android/settings/nearbyscan/NearbyScanning;->addPreferencesFromResource(I)V
+
+    goto :goto_0
+.end method
+
 .method public onCreate(Landroid/os/Bundle;)V
     .locals 4
 
@@ -213,10 +264,17 @@
 
     invoke-static {v1, v2}, Landroid/util/secutil/Log;->secD(Ljava/lang/String;Ljava/lang/String;)I
 
-    const v1, 0x7f0800ad
+    invoke-static {}, Lcom/android/settings/Utils;->isTablet()Z
+
+    move-result v1
+
+    if-eqz v1, :cond_1
+
+    const v1, 0x7f0800af
 
     invoke-virtual {p0, v1}, Lcom/samsung/android/settings/nearbyscan/NearbyScanning;->addPreferencesFromResource(I)V
 
+    :goto_0
     invoke-virtual {p0, v3}, Lcom/samsung/android/settings/nearbyscan/NearbyScanning;->setHasOptionsMenu(Z)V
 
     invoke-virtual {p0}, Lcom/samsung/android/settings/nearbyscan/NearbyScanning;->getContext()Landroid/content/Context;
@@ -229,10 +287,10 @@
 
     move-result v1
 
-    if-eqz v1, :cond_1
+    if-eqz v1, :cond_3
 
     :cond_0
-    :goto_0
+    :goto_1
     iput-object v0, p0, Lcom/samsung/android/settings/nearbyscan/NearbyScanning;->mContext:Landroid/content/Context;
 
     new-instance v1, Lcom/samsung/android/settings/bixby/EmSettingsManager;
@@ -244,6 +302,34 @@
     return-void
 
     :cond_1
+    invoke-virtual {p0}, Lcom/samsung/android/settings/nearbyscan/NearbyScanning;->getResources()Landroid/content/res/Resources;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Landroid/content/res/Resources;->getConfiguration()Landroid/content/res/Configuration;
+
+    move-result-object v1
+
+    iget v1, v1, Landroid/content/res/Configuration;->orientation:I
+
+    const/4 v2, 0x2
+
+    if-ne v1, v2, :cond_2
+
+    const v1, 0x7f0800ae
+
+    invoke-virtual {p0, v1}, Lcom/samsung/android/settings/nearbyscan/NearbyScanning;->addPreferencesFromResource(I)V
+
+    goto :goto_0
+
+    :cond_2
+    const v1, 0x7f0800ad
+
+    invoke-virtual {p0, v1}, Lcom/samsung/android/settings/nearbyscan/NearbyScanning;->addPreferencesFromResource(I)V
+
+    goto :goto_0
+
+    :cond_3
     invoke-static {v0, v3}, Lcom/samsung/android/settings/nearbyscan/Util;->setDBInt(Landroid/content/Context;I)V
 
     const-string/jumbo v1, "Not Installed BeaconManager"
@@ -256,7 +342,7 @@
 
     invoke-virtual {v1}, Landroid/widget/Toast;->show()V
 
-    goto :goto_0
+    goto :goto_1
 .end method
 
 .method public onDestroyView()V

@@ -170,6 +170,8 @@
     <string name="wifi_allow_scan_with_traffic_summary">वापरलेल्या डेटाची मात्रा आधारित Wi-Fi रोमिंग स्कॅन्सला स्वयंचलितपणे अनुमती द्या किंवा नकार द्या.</string>
     <string name="select_logd_size_title">लॉगिंगसाठी बफर आकार</string>
     <string name="select_logd_size_dialog_title">प्रत्‍येक लॉग बफरचा कमाल आकार निवडा</string>
+    <string name="dev_logpersist_clear_warning_title">सक्तीचा लॉगर संग्रह साफ करायचा?</string>
+    <string name="dev_logpersist_clear_warning_message">सक्तीचे लॉगर बंद केल्या वर लॉगर डेटा हटवला जाईल.</string>
     <string name="select_logpersist_title">संग्रह लॉग डेटा सतत</string>
     <string name="select_logpersist_dialog_title">सतत संग्रहित करण्या साठी लॉग बफर्स निवडा</string>
     <string name="select_usb_configuration_title">USB कॉन्फिगरेशन</string>
@@ -982,6 +984,7 @@ Wi-Fi आणि ब्‍लुटूथ देखील बंद केले 
     <string name="bluetooth_avc_available_description">कनेक्ट केलेले ब्लुटूथ उपकरण मिडिया आवाज सिंक चे समर्थन करते आणि ब्लुटूथ उपकरणा द्वारे सेट केलेला आवाज स्तर आपल्या फोन सह सिंक होईल.</string>
     <string name="bluetooth_enter_pin_msg">%s-शी पेयर करण्यासाठी PIN प्रविष्ट करा (0000 किंवा 1234 वापरून पाहा).</string>
     <string name="bluetooth_pin_maximum_number_message">वर्णांची अधिकतम संख्या गाठली.</string>
+    <string name="bluetooth_frp_permission_message">या कॉल साठी ब्लुटूथ उपकरण वापरू शकत नाही.</string>
     <string name="settings_menu_done">झाले</string>
     <string name="usb_tethering_unavailable_subtext_tmo">USB not connected</string>
     <string name="usb_tethering_available_subtext_tmo">USB connected, check to tether</string>
@@ -1481,7 +1484,7 @@ Where Can I Find More Information About the 3rd Party's Policies? Separately, if
     <string name="navigationbar_pressure_sensitivity_title">मुख्य बटण जोरात दाबा</string>
     <string name="navigationbar_pressure_sensitivity_summary">ते लपवलेले असताना होम बटण नेहमी पेक्षा जोरात दाबून वापरा.</string>
     <string name="navigationbar_pressure_sensitivity_level_summary">दबाव स्तर: %2$d चा %1$d</string>
-    <string name="navigationbar_pressure_sensitivity_description_off">ते लपवलेले असताना होम बटण नेहमी पेक्षा जोरात दाबून वापरा.</string>
+    <string name="navigationbar_pressure_sensitivity_description_off">होम बटण जोरात दाबण्या साठी गरज असलेल्या दाबाचे प्रमाण समायोजित करा.</string>
     <string name="navigationbar_pressure_low">अधिक हलका</string>
     <string name="navigationbar_pressure_high">अधिक मजबूत</string>
     <string name="navigationbar_hide_bar">दर्शवा आणि लपवा बटण</string>
@@ -1704,7 +1707,11 @@ Where Can I Find More Information About the 3rd Party's Policies? Separately, if
     <string name="crypt_keeper_confirm_title">एन्क्रिप्शन कन्फर्म करा</string>
     <string name="crypt_keeper_final_desc">आपल्या उपकरणाचे एन्क्रिप्टशन उलटे करता येत नाही आणि प्रक्रियेत व्यत्यय आल्यास डेटा हरवेल. एन्क्रिप्शनला तास किंवा अधिक लागू शकतो, त्यादरम्यान आपले उपकरण अनेक वेळा पुन्हा सुरु होईल आणि आपण ते वापरण्यास सक्षम नसाल.</string>
     <string name="crypt_keeper_setup_title">एन्क्रिप्ट करीत आहे…</string>
-    <string name="crypt_keeper_warn_wipe">आपल्या उपकरणाची त्याच्या फॅक्टरी डिफॉल्ट सेटिंग्सवर पुन्हा मांडणी करण्यापूर्वी ते सुरू करण्यासाठी आपल्याजवळ %d प्रयत्न शिल्लक आहेत. यामुळे सर्व डेटा खोडला जाईल, ज्यात फाइल्स आणि डाउनलोड केलेल्या अनुप्रयोगांचा समावेश आहे.</string>
+    <string name="crypt_keeper_warn_wipe">"आपला फोनची त्याच्या फॅक्टरी डिफॉल्ट सेटिंग्स वर पुन्हा मांडणी करण्या पूर्वी आपल्या जवळ %1$d प्रयत्न शिल्लक आहेत. हे फाइल्स आणि डाउनलोड केलेले अनुप्रयोगां सहित, सर्व डेटा खोडेल.
+
+आपल्या फोनची पुन्हा मांडणी केल्यास, आपल्याला ती पुन्हा वापरण्या साठी आपल्या फोनशी संबंधित %2$s माहिती (ईमेल पत्‍ता आणि पासवर्ड) प्रविष्ट करण्याची आवश्यकता असू शकते."</string>
+    <string name="crypt_keeper_samsung_account">Samsung account</string>
+    <string name="crypt_keeper_google_account">गुगल खाते</string>
     <string name="crypt_keeper_failed_title">एन्क्रिप्शन अयशस्वी</string>
     <string name="crypt_keeper_failed_summary">आपले उपकरण सुरू करण्यात अक्षम. एनक्रिप्शन प्रक्रियेमध्ये व्यत्यय आला. आपले उपकरणाची फॅक्टरी डिफॉल्ट सेटिंग्सवर पुन्हा मांडणी करणे आवश्यक आहे. हे आपला सर्व डेटा खोडेल.</string>
     <string name="crypt_keeper_data_corrupted_title">उपकरण संग्रह भ्रष्ट</string>
@@ -1723,10 +1730,13 @@ Where Can I Find More Information About the 3rd Party's Policies? Separately, if
     <string name="cryptkeeper_wrong_pin">चुकीचा PIN प्रविष्ट केला</string>
     <string name="cryptkeeper_wrong_direction">चुकीची दिशा ड्रॉ केली</string>
     <string name="checking_decryption">पडताळणी होत आहे…</string>
-    <string name="crypt_keeper_last_warn_wipe">आपल्या उपकरणाची त्याच्या फॅक्टरी डिफॉल्ट सेटिंग्‍सवर पुन्हा मांडणी करण्यापूर्वी ते सुरू करण्यासाठी आपल्याजवळ केवळ 1 प्रयत्न शिल्लक आहे. यामुळे सर्व डेटा खोडला जाईल, ज्यात फाइल्स आणि डाउनलोड केलेल्या अनुप्रयोगांचा समावेश आहे.</string>
+    <string name="crypt_keeper_last_warn_wipe">"आपल्या फोनची त्याच्या फॅक्टरी डिफॉल्ट सेटिंग्स वर पुन्हा मांडणी करण्या पूर्वी आपल्या जवळ 1 प्रयत्न शिल्लक आहे. फाइल्स आणि डाउनलोड केलेल्या अनुप्रयोगां सह, तो सर्व डेटा खोडेल.
+
+आपण फोनची पुन्हा मांडणी केली असल्यास, आपल्याला तो पुन्हा वापरण्या साठी सक्षम होण्या करिता या फोनशी संबंधित %s माहिती (ईमेल पत्ता आणि पासवर्ड) प्रविष्ट करण्याची आवश्यकता असू शकते."</string>
     <string name="crypt_keeper_failed_title_dec">डिक्रिप्शन अयशस्वी.</string>
     <string name="crypt_keeper_failed_summary_dec">अडथळ्या मुळे विकोडन पूर्ण करण्यात अक्षम. वापर करण्यापूर्वी फॅक्टरी माहिती सामग्री पुन्हा मांडणी (सर्व माहिती सामग्री पुसून टाकणे) करा.</string>
     <string name="crypt_keeper_set_screen_lock_type">स्‍क्रीन लॉक प्रकार सेट करा</string>
+    <string name="crypt_keeper_warning_keyboard_cover_does_not_work">फोनचा पुनरारंभ केल्या नंतर कीबोर्ड कव्‍हर कार्य करणार नाही.</string>
     <string name="encryption_interstitial_message">"आपण यापुढे हा फोन संरक्षित करू शकता त्यासाठी तो सुरू होण्या पूर्वी आपला %s प्रविष्ट करणे आवश्यक आहे. जर आपला फोन गमावला असेल किंवा चोरीला गेला असेल तर यामुळे आपले डेटा संरक्षित होण्या साठी मदत होईल. ईमेल सिंक सारखी वैशिष्ट्ये ऍक्सेस करण्या साठी उपकरण एनक्रिप्शन धोरणां नुसार काही अनुप्रयोगांना सुरक्षित स्टार्टअप आवश्यक असू शकते.
 
 फोन स्टार्ट होत नाही तोपर्यंत आपण कोणतेही कॉल्स, संदेश किंवा अधिसूचना प्राप्त करणार नाही आणि अलार्म्स वाजणार नाहीत."</string>
@@ -1971,6 +1981,12 @@ You will also need it when:"</string>
     <string name="lockpassword_confirm_your_pin_with_fingerprint">फिंगरप्रिंट वापरा किंवा वर्तमान PIN वापरा.</string>
     <string name="lockpassword_confirm_your_pattern_with_fingerprint">फिंगरप्रिंट वापरा किंवा वर्तमान पॅटर्न ड्रॉ करा.</string>
     <string name="lockpassword_confirm_your_password_with_fingerprint">फिंगरप्रिंट वापरा किंवा वर्तमान पासवर्ड वापरा.</string>
+    <string name="lockpassword_confirm_your_pin_with_iris">आपली इरिसेस वापरा किंवा आपला वर्तमान PIN प्रविष्ट करा.</string>
+    <string name="lockpassword_confirm_your_pattern_with_iris">आपली इरिसेस वापरा किंवा वर्तमान पॅटर्न ड्रॉ करा.</string>
+    <string name="lockpassword_confirm_your_password_with_iris">आपली इरिसेस वापरा किंवा आपला वर्तमान पासवर्ड प्रविष्ट करा.</string>
+    <string name="lockpassword_confirm_your_pin_with_biometrics">बायोमेट्रिक वापरा किंवा आपला PIN प्रविष्ट करा.</string>
+    <string name="lockpassword_confirm_your_pattern_with_biometrics">बायोमेट्रिक वापरा किंवा आपला पॅटर्न ड्रॉ करा.</string>
+    <string name="lockpassword_confirm_your_password_with_biometrics">बायोमेट्रिक वापरा किंवा आपला पासवर्ड प्रविष्ट करा.</string>
     <string name="lockpassword_confirm_your_pin_instead_of_fingerprint">फिंगरप्रिंट ओळख वापरण्याऐवजी आपला PIN प्रविष्ट करा.</string>
     <string name="lockpassword_confirm_your_pattern_instead_of_fingerprint">फिंगरप्रिंट ओळख वापरण्याऐवजी आपले पॅटर्न ड्रॉ करा.</string>
     <string name="lockpassword_confirm_your_password_instead_of_fingerprint">फिंगरप्रिंट ओळख वापरण्याऐवजी आपला पासवर्ड प्रविष्ट करा.</string>
@@ -2045,6 +2061,7 @@ You will also need it when:"</string>
     <string name="face_status_timeout">मुदतबाह्य. नंतर प्रयत्न करा</string>
     <string name="okay">ठीक</string>
     <string name="face_samsung_account_button">Samsung account वापरा</string>
+    <string name="face_galaxy_account_button">Galaxy account वापरा</string>
     <string name="face_error_DB_corrupted">आपल्या चेहरा डेटा सह समस्या होती. आपल्या चेहर्‍याची पुन्हा नोंदणी करा.</string>
     <string name="face_error_DB_corrupted_popup_title">आपल्या चेहर्‍याची पुन्हा नोंदणी करा</string>
     <string name="face_error_timeout">आपला चेहरा ओळखला नव्हता.</string>
@@ -2155,7 +2172,7 @@ You will also need it when:"</string>
     <string name="biometrics_backup_locktype_title">इरिस सुरक्षितता सेट करा</string>
     <string name="biometrics_register_your_iris">आपल्या इरिसेसची नोंदणी करा.</string>
     <string name="biometrics_backup_locktype_summary">उपकरण अनलॉक करण्यासाठी आपले इरिसेस वापरण्याकरिता, आपण पॅटर्न, PIN किंवा पासवर्ड सेट करणे आवश्यक आहे.</string>
-    <string name="biometrics_backup_locktype_message">आपला फोन अनलॉक करण्या साठी, किंवा सुरक्षित पडताळणी साठी इरिस वापरण्या साठी, आपल्याला गरजेचे आहे:</string>
+    <string name="biometrics_backup_locktype_message">आपला फोन अनलॉक करण्या साठी किंवा अनुप्रयोगां मध्ये आपली पडताळणी करण्या साठी आपले इरिसेस वापरण्या साठी, आपल्याला गरजेचे असेल:</string>
     <string name="iris_delete_popup_title">इरिस डेटा काढून टाकायचा?</string>
     <string name="iris_delete_popup_message">इरिस डेटा काढून टाकायचा?</string>
     <string name="iris_delete_popup_message_with_related_func">जी वैशिष्ट्ये इरिसेस वापरतात ती बंद केली जातील.</string>
@@ -2231,6 +2248,9 @@ You will also need it when:"</string>
     <string name="biometrics_dex_cant_use_msg">Samsung DeX मध्ये %s वापरू शकत नाही.</string>
     <string name="biometrics_dex_closed_to_switch">Samsung DeX वर स्विच करण्या साठी %s बंद केले.</string>
     <string name="biometircs_dex_cant_use_toast">%s Samsung DeX मध्ये चालू होऊ शकत नाही. फोन मोडमध्ये चालू करण्याचा प्रयत्न करा.</string>
+    <string name="iris_guide_text_preview">इरिसेस वापरण्‍या साठी येथे पहा</string>
+    <string name="iris_guide_enable_toggle">इरिसेस वापरण्‍यासाठी येथे टॅप करा</string>
+    <string name="iris_cannot_verify">इरिसेसची पडताळणी करू शकलो नाही</string>
     <string name="knox_twofactor_bio_description">%s अनलॉक करण्यासाठी आपला बायोमेट्रिक लॉक प्रकार आणि दुसरा लॉक प्रकार निवडा.</string>
     <string name="fingerprint_registered">नोंदणीकृत फिंगरप्रिंट्स निवडलेल्या अनलॉक पद्धतीसह वापरल्या जातील.</string>
     <string name="knox_twofactor_description">%s अनलॉक करण्या साठी आपले बायोमॅट्रिक्स आणि दुसरा लॉक प्रकार निवडा.</string>
@@ -3093,6 +3113,7 @@ Mobile data will be turned off."</string>
     <string name="easy_mode_app_help">आपले उपकरण अधिक सहज मुख्‍य स्क्रीन लेआउट आणि मोठ्या स्क्रीन वरील आयटम्स अधिक सहज पणे वापरा.</string>
     <string name="easy_mode_app_help_dream_1">सोपा मुख्य स्क्रीन लेआउट आणि अधिक मोठे स्क्रीन आयटम्स वापरा.</string>
     <string name="easy_mode_app_help_dream_2">आपण मुख्य स्क्रीन ला केलेले कोणतीही सानुकूलन रद्द केले जाईल आणि स्क्रीन झूम कमाल वर सेट केले जाईल.</string>
+    <string name="easy_mode_app_help_3rd_launcher">मोठ्या ऑन-स्क्रीन आयटम्स साठी सहज मोड लागू करा. आपण TouchWiz होम वापरत नसल्यास, आपले मुख्‍य स्‍क्रीन लेआउट बदलणार नाही, परंतु स्क्रीन झूम मोठ्या वर सेट केले जाईल आणि फॉन्ट आकार मध्यम वर सेट केला जाईल.</string>
     <string name="security_warning_content">आपली स्क्रीन अनलॉक करण्या साठी आपण पासवर्ड, PIN, किंवा पॅटर्न सेट अप करून आपली गोपनीयता संरक्षित करू शकता</string>
     <string name="lock_setting_weather_desc">हवामान सेटिंग्स पाहाण्यासाठी किंवा बदलण्यासाठी, खाली हवामान “सेटिंग्स” टॅप करा.</string>
     <string name="lock_setting_weather_btn">हवामान सेटिंग्स</string>
@@ -3339,7 +3360,7 @@ Downloading via mobile networks may result in additional charges depending on yo
     <string name="disable_hovering_title">एयर व्ह्यू अक्षम करा</string>
     <string name="disable_hovering_summary">एअर व्ह्यू आणि TalkBack दोन्ही सक्षम करणे शक्य नाही. एअर व्ह्यू अक्षम करण्यात येईल.</string>
     <string name="pen_settings_pen_input">डायरेक्ट पेन निविष्ट</string>
-    <string name="action_memo_onoff_screen_title">स्‍क्रीन बंद मेमो</string>
+    <string name="action_memo_onoff_screen_title">मेमोची स्क्रीन बंद करा</string>
     <string name="screen_off_note_summary">स्क्रीन बंद असताना टिपा लिहा. केवळ S Pen काढा आणि लिहिणे सुरू करा.</string>
     <string name="screen_off_note_summary_jpn">स्क्रीन बंद केलेली असताना S Pen अलग करून आणि आणि नंतर स्क्रीन वर लिहून टिपा तयार करा. स्क्रीन बंद मेमोस Galaxy Notes मध्ये जतन केले जातील.</string>
     <string name="screen_off_note_summary_no_detach">पेन बटण दाबून, स्क्रीन बंद असताना ती टॅप करून आणि नंतर त्यावर लिहून नोट्स तयार करा. स्क्रीन बंद मेमोस Samsung Notes मध्ये जतन केले जातील.</string>
@@ -3946,7 +3967,7 @@ You will switch back to Wi-Fi Sharing when a Wi-Fi network becomes available."</
     <string name="wfd_descrpition_playsound">आवाज प्ले करा.</string>
     <string name="wfd_is_not_supported">हे फंक्शन समर्थित नाही.</string>
     <string name="usbtethering_notify_wifi_is_on_title">Wi-Fi बंद करायचे?</string>
-    <string name="usbtethering_notify_wifi_is_on">Wi-Fi आणि USB टेथरिंग एकाच वेळी चालू होऊ शकत नाहीत. Wi-Fi बंद करा.</string>
+    <string name="usbtethering_notify_wifi_is_on">Wi-Fi आणि USB टेथरिंग एकाच वेळी चालू होऊ शकत नाहीत. Wi-Fi बंद केले जाईल.</string>
     <string name="disable_multi_window_dialog_text">मल्टि विंडो अक्षम केले जाईल आणि पॉप-अप विंडोमध्ये उघडे असलेले सर्व अनुप्रयोग बंद केले जातील.</string>
     <string name="keyguard_password_attempt_count_pin_code">%d प्रयत्न बाकी.</string>
     <string name="keyguard_password_attempts_count_pin_code">%d प्रयत्न बाकी.</string>
@@ -4154,6 +4175,7 @@ SMS प्राप्त करणे"</string>
     <string name="hdmi_mode_title">HDMI मोड</string>
     <string name="hdmi_mode_dex">Samsung DeX</string>
     <string name="hdmi_mode_mirroring">Screen Mirroring</string>
+    <string name="hdmi_mode_not_available_while_cover_attached">कव्‍हर संलग्‍न असताना %s उपलब्‍ध नाही.</string>
     <string name="screen_timeout_for_dex">Samsung DeX साठी स्क्रीन टाइमआउट</string>
     <string name="show_virtual_keyboard_for_dex">Samsung DeX मध्ये ऑन-स्क्रीन कीबोर्ड दर्शवा</string>
     <string name="comma">,</string>
@@ -4462,7 +4484,7 @@ SMS प्राप्त करणे"</string>
     <string name="date_picker_title">तारीख</string>
     <string name="time_picker_title">वेळ</string>
     <string name="lock_after_timeout">स्वयंचिलत पणे लॉक करा.</string>
-    <string name="lock_after_timeout_summary">स्‍क्रीन स्‍वयंचलितपणे बंद झाल्‍यानंतर ती %s लॉक करा.</string>
+    <string name="lock_after_timeout_summary">स्‍क्रीन स्‍वयंचलित पणे बंद झाल्‍यानंतर फोन %s लॉक करा.</string>
     <string name="lock_after_timeout_summary_with_exception">%2$s द्वारे अनलॉक करण्‍याव्‍यतिरिक्‍त, स्‍क्रीन स्‍वयंचलितपणे बंद होण्‍याच्‍या %1$s नंतर ती लॉक करा.</string>
     <string name="show_owner_info_on_lockscreen_label">लॉक स्क्रीनवर उपकरण मालकाची माहिती दर्शवा.</string>
     <string name="owner_info_settings_title">मालकाची माहिती</string>
@@ -4610,6 +4632,8 @@ SMS प्राप्त करणे"</string>
     <string name="wifi_empty_list_user_restricted">आपल्याला Wi-Fi सेटिंग्स बदलण्याची परवानगी नाही.</string>
     <string name="wifi_setup_wps">स्वयंचलित सेटअप (WPS)</string>
     <string name="wifi_show_advanced">प्रगत विकल्प दाखवा</string>
+    <string name="wifi_advanced_toggle_description_expanded">संक्षिप्‍त करण्‍या साठी दोनदा टॅप करा.</string>
+    <string name="wifi_advanced_toggle_description_collapsed">विस्‍तृत करण्‍या साठी दोनदा टॅप करा.</string>
     <string name="wifi_wps_setup_title">WPS सेटअप</string>
     <string name="wifi_wps_setup_msg">WPS आरंभ करत आहे…</string>
     <string name="wifi_wps_onstart_pbc">आपल्या रूटर वरील Wi-Fi संरक्षित रूटर बटण टॅप करा. याला WPS म्हणता येईल किंवा यात हे चिन्ह असेल:</string>
@@ -4641,6 +4665,10 @@ SMS प्राप्त करणे"</string>
     <string name="wifi_shared">शेअर्ड</string>
     <string name="wifi_unchanged">(न बदललेले)</string>
     <string name="wifi_unspecified">(अविनिर्दिष्ट)</string>
+    <string name="wifi_select_cert">प्रमाणपत्र निवडा</string>
+    <string name="wifi_do_not_provide_eap_user_cert">प्रदान करू नका</string>
+    <string name="wifi_do_not_validate_eap_server">पडताळणी करू नका</string>
+    <string name="wifi_do_not_validate_eap_server_warning">कोणतेही प्रमाणपत्र निर्दिष्ट नाही. आपले कनेक्शन खाजगी होणार नाही.</string>
     <string name="wifi_scan_always_turnon_message">%s स्‍थान अचूकता सुधारण्‍यासाठी आणि अन्‍य हेतूंकरिता, Wi-Fi बंद असताना देखील, Wi-Fi नेटवर्क्स स्‍कॅन करण्‍यासाठी परवानगीची विनंती करत आहे. सर्व अनुप्रयोगांसाठी याची अनुमत द्यायची?</string>
     <string name="wifi_scan_always_confirm_allow">अनुमती द्या</string>
     <string name="wifi_scan_always_confirm_deny">नकार द्या</string>
@@ -4975,9 +5003,9 @@ SMS प्राप्त करणे"</string>
     <string name="restore_default_apn_completed">APN सेटिंग्स डिफॉल्टवर पुन्हा मांडणी केले.</string>
     <string name="reset_network_desc">हे सर्व नेटवर्क सेटिंग्सची पुन्हा मांडणी करेल, ज्यामध्ये याच्यासाठीच्या सेटिंग्सचाही समावेश आहे:</string>
     <string name="reset_network_button_text">सेटिंग्स पुन्हा मांडणी करा</string>
-    <string name="reset_network_final_desc">सर्व कनेक्शन कीबोर्ड सेटिंग्‍सची पुन्‍हा मांडणी करण्‍यात येईल. ही कृती पूर्ववत करता येत नाही.</string>
+    <string name="reset_network_final_desc">सर्व नेटवर्क सेटिंग्सची पुन्हा मांडणी केली जाईल. ही क्रिया पूर्ववत केली जाऊ शकत नाही.</string>
     <string name="reset_network_final_button_text">सेटिंग्स पुन्हा मांडणी करा</string>
-    <string name="reset_network_complete_toast">कनेक्शन सेटिंग्सची पुन्हा मांडणी करा.</string>
+    <string name="reset_network_complete_toast">नेटवर्क सेटिंग्‍सची पुन्हा मांडणी करा.</string>
     <string name="master_clear_title">फॅक्टरी डेटा पुन्हा मांडणी करा</string>
     <string name="master_clear_accounts">आपण सध्या खालील खात्यांत साइन इन केले आहे:</string>
     <string name="master_clear_other_users_present">या उपकरणावर इतर प्रयोक्‍त्‍यांच्‍या मालकीचा असलेला डेटा देखील खोडला जाईल.</string>
@@ -6090,6 +6118,7 @@ If the device has multiple users, using this shortcut on the lock screen tempora
     <string name="set_data_limit">डेटा मर्यादा सेट करा</string>
     <string name="data_limit">डेटा मर्यादा</string>
     <string name="data_usage_template">%2$s दरम्यान %1$s वापरले</string>
+    <string name="data_usage_template_wifi">अंतिम 30 दिवसां मध्ये %s वापरले</string>
     <string name="data_usage_other_apps">संबंधित अनुप्रयोग वापरा मध्ये समाविष्ट केले</string>
     <string name="data_saver_title">डेटा सेव्हर</string>
     <string name="unrestricted_data_saver">डेटा सेव्हर चालू असताना अनुप्रयोगाला अनुमती द्या</string>
@@ -6140,6 +6169,7 @@ If the device has multiple users, using this shortcut on the lock screen tempora
     <string name="legacy_dhcp_client_summary">नवीन Android DHCP क्लायंट ऐवजी Lollipop वरून DHCP क्लायंटचा वापर करा.</string>
     <string name="screen_off_pocket_title">स्क्रीन बंद ठेवा</string>
     <string name="screen_off_pocket_summary">उपकरण पॉकेट किंवा बॅग यासारख्या काळोख्या स्‍थानामध्ये असताना चुकीने चालू राहण्यापासून स्क्रीन प्रतिबंधित करा.</string>
+    <string name="noApplications">या क्रियेशी संबंधित सर्व अनुप्रयोग अक्षम, अवरोधित केले आहेत किंवा इन्‍स्‍टॉल केले नाहीत.</string>
     <string name="confirm_reset_shortcut_manager_throttling_title">शॉर्टकट व्यवस्थापक रेट लिमिटरची पुन्हा मांडणी करा</string>
     <string name="confirm_reset_shortcut_manager_throttling_message">शॉर्टकट व्यवस्थापक रेट लिमिटर काउंटर्सची पुन्हा मांडणी केली जाईल.</string>
 </resources>

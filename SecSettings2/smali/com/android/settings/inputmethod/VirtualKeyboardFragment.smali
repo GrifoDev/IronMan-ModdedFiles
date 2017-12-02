@@ -144,17 +144,19 @@
 .end method
 
 .method private updateInputMethodPreferenceViews()V
-    .locals 14
+    .locals 15
 
     const/4 v5, 0x0
 
-    iget-object v3, p0, Lcom/android/settings/inputmethod/VirtualKeyboardFragment;->mInputMethodPreferenceList:Ljava/util/ArrayList;
+    const/4 v3, 0x0
 
-    invoke-virtual {v3}, Ljava/util/ArrayList;->clear()V
+    iget-object v13, p0, Lcom/android/settings/inputmethod/VirtualKeyboardFragment;->mInputMethodPreferenceList:Ljava/util/ArrayList;
 
-    iget-object v3, p0, Lcom/android/settings/inputmethod/VirtualKeyboardFragment;->mDpm:Landroid/app/admin/DevicePolicyManager;
+    invoke-virtual {v13}, Ljava/util/ArrayList;->clear()V
 
-    invoke-virtual {v3}, Landroid/app/admin/DevicePolicyManager;->getPermittedInputMethodsForCurrentUser()Ljava/util/List;
+    iget-object v13, p0, Lcom/android/settings/inputmethod/VirtualKeyboardFragment;->mDpm:Landroid/app/admin/DevicePolicyManager;
+
+    invoke-virtual {v13}, Landroid/app/admin/DevicePolicyManager;->getPermittedInputMethodsForCurrentUser()Ljava/util/List;
 
     move-result-object v12
 
@@ -162,9 +164,9 @@
 
     move-result-object v1
 
-    iget-object v3, p0, Lcom/android/settings/inputmethod/VirtualKeyboardFragment;->mImm:Landroid/view/inputmethod/InputMethodManager;
+    iget-object v13, p0, Lcom/android/settings/inputmethod/VirtualKeyboardFragment;->mImm:Landroid/view/inputmethod/InputMethodManager;
 
-    invoke-virtual {v3}, Landroid/view/inputmethod/InputMethodManager;->getEnabledInputMethodList()Ljava/util/List;
+    invoke-virtual {v13}, Landroid/view/inputmethod/InputMethodManager;->getEnabledInputMethodList()Ljava/util/List;
 
     move-result-object v11
 
@@ -188,9 +190,9 @@
 
     invoke-virtual {v2}, Landroid/view/inputmethod/InputMethodInfo;->getPackageName()Ljava/lang/String;
 
-    move-result-object v3
+    move-result-object v13
 
-    invoke-interface {v12, v3}, Ljava/util/List;->contains(Ljava/lang/Object;)Z
+    invoke-interface {v12, v13}, Ljava/util/List;->contains(Ljava/lang/Object;)Z
 
     move-result v4
 
@@ -198,17 +200,17 @@
     :try_start_0
     invoke-virtual {p0}, Lcom/android/settings/inputmethod/VirtualKeyboardFragment;->getActivity()Landroid/app/Activity;
 
-    move-result-object v3
+    move-result-object v13
 
-    invoke-virtual {v3}, Landroid/app/Activity;->getPackageManager()Landroid/content/pm/PackageManager;
-
-    move-result-object v3
-
-    invoke-virtual {v2}, Landroid/view/inputmethod/InputMethodInfo;->getPackageName()Ljava/lang/String;
+    invoke-virtual {v13}, Landroid/app/Activity;->getPackageManager()Landroid/content/pm/PackageManager;
 
     move-result-object v13
 
-    invoke-virtual {v3, v13}, Landroid/content/pm/PackageManager;->getApplicationIcon(Ljava/lang/String;)Landroid/graphics/drawable/Drawable;
+    invoke-virtual {v2}, Landroid/view/inputmethod/InputMethodInfo;->getPackageName()Ljava/lang/String;
+
+    move-result-object v14
+
+    invoke-virtual {v13, v14}, Landroid/content/pm/PackageManager;->getApplicationIcon(Ljava/lang/String;)Landroid/graphics/drawable/Drawable;
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
@@ -217,15 +219,13 @@
     :goto_3
     new-instance v0, Lcom/android/settings/inputmethod/InputMethodPreference;
 
-    const/4 v3, 0x0
-
     invoke-direct/range {v0 .. v5}, Lcom/android/settings/inputmethod/InputMethodPreference;-><init>(Landroid/content/Context;Landroid/view/inputmethod/InputMethodInfo;ZZLcom/android/settings/inputmethod/InputMethodPreference$OnSavePreferenceListener;)V
 
     invoke-virtual {v0, v10}, Lcom/android/settings/inputmethod/InputMethodPreference;->setIcon(Landroid/graphics/drawable/Drawable;)V
 
-    iget-object v3, p0, Lcom/android/settings/inputmethod/VirtualKeyboardFragment;->mInputMethodPreferenceList:Ljava/util/ArrayList;
+    iget-object v13, p0, Lcom/android/settings/inputmethod/VirtualKeyboardFragment;->mInputMethodPreferenceList:Ljava/util/ArrayList;
 
-    invoke-virtual {v3, v0}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+    invoke-virtual {v13, v0}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     add-int/lit8 v9, v9, 0x1
 
@@ -255,28 +255,28 @@
 
     move-result-object v7
 
-    iget-object v3, p0, Lcom/android/settings/inputmethod/VirtualKeyboardFragment;->mInputMethodPreferenceList:Ljava/util/ArrayList;
+    iget-object v5, p0, Lcom/android/settings/inputmethod/VirtualKeyboardFragment;->mInputMethodPreferenceList:Ljava/util/ArrayList;
 
-    new-instance v5, Lcom/android/settings/inputmethod/VirtualKeyboardFragment$4;
+    new-instance v13, Lcom/android/settings/inputmethod/VirtualKeyboardFragment$4;
 
-    invoke-direct {v5, p0, v7}, Lcom/android/settings/inputmethod/VirtualKeyboardFragment$4;-><init>(Lcom/android/settings/inputmethod/VirtualKeyboardFragment;Ljava/text/Collator;)V
+    invoke-direct {v13, p0, v7}, Lcom/android/settings/inputmethod/VirtualKeyboardFragment$4;-><init>(Lcom/android/settings/inputmethod/VirtualKeyboardFragment;Ljava/text/Collator;)V
 
-    invoke-static {v3, v5}, Ljava/util/Collections;->sort(Ljava/util/List;Ljava/util/Comparator;)V
+    invoke-static {v5, v13}, Ljava/util/Collections;->sort(Ljava/util/List;Ljava/util/Comparator;)V
 
     invoke-virtual {p0}, Lcom/android/settings/inputmethod/VirtualKeyboardFragment;->getPreferenceScreen()Landroid/preference/PreferenceScreen;
 
-    move-result-object v3
+    move-result-object v5
 
-    invoke-virtual {v3}, Landroid/preference/PreferenceScreen;->removeAll()V
+    invoke-virtual {v5}, Landroid/preference/PreferenceScreen;->removeAll()V
 
     const/4 v9, 0x0
 
     :goto_4
-    if-ge v9, v6, :cond_3
+    if-ge v9, v6, :cond_5
 
-    iget-object v3, p0, Lcom/android/settings/inputmethod/VirtualKeyboardFragment;->mInputMethodPreferenceList:Ljava/util/ArrayList;
+    iget-object v5, p0, Lcom/android/settings/inputmethod/VirtualKeyboardFragment;->mInputMethodPreferenceList:Ljava/util/ArrayList;
 
-    invoke-virtual {v3, v9}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+    invoke-virtual {v5, v9}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v0
 
@@ -286,10 +286,44 @@
 
     invoke-virtual {p0}, Lcom/android/settings/inputmethod/VirtualKeyboardFragment;->getPreferenceScreen()Landroid/preference/PreferenceScreen;
 
-    move-result-object v3
+    move-result-object v5
 
-    invoke-virtual {v3, v0}, Landroid/preference/PreferenceScreen;->addPreference(Landroid/preference/Preference;)Z
+    invoke-virtual {v5, v0}, Landroid/preference/PreferenceScreen;->addPreference(Landroid/preference/Preference;)Z
 
+    invoke-virtual {v0}, Lcom/android/settings/inputmethod/InputMethodPreference;->getInputMethodInfo()Landroid/view/inputmethod/InputMethodInfo;
+
+    move-result-object v5
+
+    invoke-virtual {v5}, Landroid/view/inputmethod/InputMethodInfo;->getServiceInfo()Landroid/content/pm/ServiceInfo;
+
+    move-result-object v5
+
+    iget-object v5, v5, Landroid/content/pm/ServiceInfo;->name:Ljava/lang/String;
+
+    const-string/jumbo v13, "SamsungKeypad"
+
+    invoke-virtual {v5, v13}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
+
+    move-result v5
+
+    if-eqz v5, :cond_3
+
+    invoke-virtual {p0}, Lcom/android/settings/inputmethod/VirtualKeyboardFragment;->getActivity()Landroid/app/Activity;
+
+    move-result-object v5
+
+    invoke-static {v5}, Lcom/android/settings/Utils;->getSamsungkeypadBadgeCount(Landroid/content/Context;)I
+
+    move-result v5
+
+    if-lez v5, :cond_4
+
+    const v5, 0x7f040243
+
+    invoke-virtual {v0, v5}, Lcom/android/settings/inputmethod/InputMethodPreference;->setWidgetLayoutResource(I)V
+
+    :cond_3
+    :goto_5
     invoke-static {v0}, Lcom/android/settings/inputmethod/InputMethodAndSubtypeUtil;->removeUnnecessaryNonPersistentPreference(Landroid/preference/Preference;)V
 
     invoke-virtual {v0}, Lcom/android/settings/inputmethod/InputMethodPreference;->updatePreferenceViews()V
@@ -298,10 +332,15 @@
 
     goto :goto_4
 
-    :cond_3
+    :cond_4
+    invoke-virtual {v0, v3}, Lcom/android/settings/inputmethod/InputMethodPreference;->setWidgetLayoutResource(I)V
+
+    goto :goto_5
+
+    :cond_5
     iget-object v3, p0, Lcom/android/settings/inputmethod/VirtualKeyboardFragment;->mAddVirtualKeyboardScreen:Landroid/preference/Preference;
 
-    const v5, 0x7f02062d
+    const v5, 0x7f02062f
 
     invoke-virtual {v3, v5}, Landroid/preference/Preference;->setIcon(I)V
 
@@ -319,7 +358,7 @@
 
     iget-object v3, p0, Lcom/android/settings/inputmethod/VirtualKeyboardFragment;->mAddVirtualKeyboardScreen:Landroid/preference/Preference;
 
-    const v5, 0x7f040354
+    const v5, 0x7f040357
 
     invoke-virtual {v3, v5}, Landroid/preference/Preference;->setLayoutResource(I)V
 
@@ -327,9 +366,11 @@
 .end method
 
 .method private updateInputMethodPreferenceViewsForKnox(Landroid/content/Context;)V
-    .locals 13
+    .locals 14
 
     const/4 v5, 0x0
+
+    const/4 v3, 0x0
 
     iget-object v1, p0, Lcom/android/settings/inputmethod/VirtualKeyboardFragment;->mInputMethodPreferenceList:Ljava/util/ArrayList;
 
@@ -381,9 +422,9 @@
 
     invoke-virtual {v2}, Landroid/view/inputmethod/InputMethodInfo;->getPackageName()Ljava/lang/String;
 
-    move-result-object v3
+    move-result-object v13
 
-    invoke-virtual {v1, v3}, Landroid/content/pm/PackageManager;->getApplicationIcon(Ljava/lang/String;)Landroid/graphics/drawable/Drawable;
+    invoke-virtual {v1, v13}, Landroid/content/pm/PackageManager;->getApplicationIcon(Ljava/lang/String;)Landroid/graphics/drawable/Drawable;
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
@@ -391,8 +432,6 @@
 
     :goto_3
     new-instance v0, Lcom/android/settings/inputmethod/InputMethodPreference;
-
-    const/4 v3, 0x0
 
     move-object v1, p1
 
@@ -434,11 +473,11 @@
 
     iget-object v1, p0, Lcom/android/settings/inputmethod/VirtualKeyboardFragment;->mInputMethodPreferenceList:Ljava/util/ArrayList;
 
-    new-instance v3, Lcom/android/settings/inputmethod/VirtualKeyboardFragment$5;
+    new-instance v5, Lcom/android/settings/inputmethod/VirtualKeyboardFragment$5;
 
-    invoke-direct {v3, p0, v7}, Lcom/android/settings/inputmethod/VirtualKeyboardFragment$5;-><init>(Lcom/android/settings/inputmethod/VirtualKeyboardFragment;Ljava/text/Collator;)V
+    invoke-direct {v5, p0, v7}, Lcom/android/settings/inputmethod/VirtualKeyboardFragment$5;-><init>(Lcom/android/settings/inputmethod/VirtualKeyboardFragment;Ljava/text/Collator;)V
 
-    invoke-static {v1, v3}, Ljava/util/Collections;->sort(Ljava/util/List;Ljava/util/Comparator;)V
+    invoke-static {v1, v5}, Ljava/util/Collections;->sort(Ljava/util/List;Ljava/util/Comparator;)V
 
     invoke-virtual {p0}, Lcom/android/settings/inputmethod/VirtualKeyboardFragment;->getPreferenceScreen()Landroid/preference/PreferenceScreen;
 
@@ -449,7 +488,7 @@
     const/4 v9, 0x0
 
     :goto_4
-    if-ge v9, v6, :cond_3
+    if-ge v9, v6, :cond_5
 
     iget-object v1, p0, Lcom/android/settings/inputmethod/VirtualKeyboardFragment;->mInputMethodPreferenceList:Ljava/util/ArrayList;
 
@@ -467,6 +506,40 @@
 
     invoke-virtual {v1, v0}, Landroid/preference/PreferenceScreen;->addPreference(Landroid/preference/Preference;)Z
 
+    invoke-virtual {v0}, Lcom/android/settings/inputmethod/InputMethodPreference;->getInputMethodInfo()Landroid/view/inputmethod/InputMethodInfo;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Landroid/view/inputmethod/InputMethodInfo;->getServiceInfo()Landroid/content/pm/ServiceInfo;
+
+    move-result-object v1
+
+    iget-object v1, v1, Landroid/content/pm/ServiceInfo;->name:Ljava/lang/String;
+
+    const-string/jumbo v5, "SamsungKeypad"
+
+    invoke-virtual {v1, v5}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
+
+    move-result v1
+
+    if-eqz v1, :cond_3
+
+    invoke-virtual {p0}, Lcom/android/settings/inputmethod/VirtualKeyboardFragment;->getActivity()Landroid/app/Activity;
+
+    move-result-object v1
+
+    invoke-static {v1}, Lcom/android/settings/Utils;->getSamsungkeypadBadgeCount(Landroid/content/Context;)I
+
+    move-result v1
+
+    if-lez v1, :cond_4
+
+    const v1, 0x7f040243
+
+    invoke-virtual {v0, v1}, Lcom/android/settings/inputmethod/InputMethodPreference;->setWidgetLayoutResource(I)V
+
+    :cond_3
+    :goto_5
     invoke-static {v0}, Lcom/android/settings/inputmethod/InputMethodAndSubtypeUtil;->removeUnnecessaryNonPersistentPreference(Landroid/preference/Preference;)V
 
     invoke-virtual {v0}, Lcom/android/settings/inputmethod/InputMethodPreference;->updatePreferenceViews()V
@@ -475,10 +548,15 @@
 
     goto :goto_4
 
-    :cond_3
+    :cond_4
+    invoke-virtual {v0, v3}, Lcom/android/settings/inputmethod/InputMethodPreference;->setWidgetLayoutResource(I)V
+
+    goto :goto_5
+
+    :cond_5
     iget-object v1, p0, Lcom/android/settings/inputmethod/VirtualKeyboardFragment;->mAddVirtualKeyboardScreen:Landroid/preference/Preference;
 
-    const v3, 0x7f02062d
+    const v3, 0x7f02062f
 
     invoke-virtual {v1, v3}, Landroid/preference/Preference;->setIcon(I)V
 
@@ -496,7 +574,7 @@
 
     iget-object v1, p0, Lcom/android/settings/inputmethod/VirtualKeyboardFragment;->mAddVirtualKeyboardScreen:Landroid/preference/Preference;
 
-    const v3, 0x7f040354
+    const v3, 0x7f040357
 
     invoke-virtual {v1, v3}, Landroid/preference/Preference;->setLayoutResource(I)V
 
@@ -546,7 +624,7 @@
 
     check-cast v0, Landroid/app/Activity;
 
-    const v1, 0x7f080146
+    const v1, 0x7f080148
 
     invoke-virtual {p0, v1}, Lcom/android/settings/inputmethod/VirtualKeyboardFragment;->addPreferencesFromResource(I)V
 

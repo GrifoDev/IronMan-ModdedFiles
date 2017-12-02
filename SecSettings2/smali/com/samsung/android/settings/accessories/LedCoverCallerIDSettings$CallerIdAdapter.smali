@@ -76,7 +76,7 @@
 
     if-nez p2, :cond_1
 
-    const v2, 0x7f04017f
+    const v2, 0x7f040180
 
     invoke-virtual {v1, v2, v7}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;)Landroid/view/View;
 
@@ -86,7 +86,7 @@
 
     invoke-direct {v0}, Lcom/samsung/android/settings/accessories/AccessoriesUtils$CallerIDListViewHolder;-><init>()V
 
-    const v2, 0x7f110527
+    const v2, 0x7f110529
 
     invoke-virtual {p2, v2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -96,7 +96,7 @@
 
     iput-object v2, v0, Lcom/samsung/android/settings/accessories/AccessoriesUtils$CallerIDListViewHolder;->icon:Landroid/widget/ImageView;
 
-    const v2, 0x7f110528
+    const v2, 0x7f11052a
 
     invoke-virtual {p2, v2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -106,7 +106,7 @@
 
     iput-object v2, v0, Lcom/samsung/android/settings/accessories/AccessoriesUtils$CallerIDListViewHolder;->name:Landroid/widget/TextView;
 
-    const v2, 0x7f11052d
+    const v2, 0x7f11052f
 
     invoke-virtual {p2, v2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -116,7 +116,7 @@
 
     iput-object v2, v0, Lcom/samsung/android/settings/accessories/AccessoriesUtils$CallerIDListViewHolder;->count:Landroid/widget/TextView;
 
-    const v2, 0x7f11052f
+    const v2, 0x7f110531
 
     invoke-virtual {p2, v2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -126,7 +126,7 @@
 
     iput-object v2, v0, Lcom/samsung/android/settings/accessories/AccessoriesUtils$CallerIDListViewHolder;->check:Landroid/widget/CheckBox;
 
-    const v2, 0x7f11052e
+    const v2, 0x7f110530
 
     invoke-virtual {p2, v2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -136,7 +136,7 @@
 
     iput-object v2, v0, Lcom/samsung/android/settings/accessories/AccessoriesUtils$CallerIDListViewHolder;->checkArea:Landroid/widget/LinearLayout;
 
-    const v2, 0x7f110530
+    const v2, 0x7f110532
 
     invoke-virtual {p2, v2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 

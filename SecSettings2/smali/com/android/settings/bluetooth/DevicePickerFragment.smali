@@ -113,7 +113,7 @@
 
     iget-object v1, p0, Lcom/android/settings/bluetooth/DevicePickerFragment;->mVisibleGuidePreferenceGroup:Lcom/samsung/android/settings/bluetooth/BluetoothDevicePreferenceGroup;
 
-    const v2, 0x7f040207
+    const v2, 0x7f04020a
 
     invoke-virtual {v1, v2}, Lcom/samsung/android/settings/bluetooth/BluetoothDevicePreferenceGroup;->setLayoutResource(I)V
 
@@ -124,7 +124,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f0b1358
+    const v2, 0x7f0b1369
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -319,7 +319,7 @@
 
     iget v3, p0, Lcom/android/settings/bluetooth/DevicePickerFragment;->mFilterType:I
 
-    const v4, 0x7f0b14d1
+    const v4, 0x7f0b14e2
 
     invoke-direct {p0, v2, v4, v3}, Lcom/android/settings/bluetooth/DevicePickerFragment;->addDeviceCategory(Lcom/samsung/android/settings/bluetooth/BluetoothDevicePreferenceGroup;II)V
 
@@ -541,7 +541,7 @@
 
     if-eqz v2, :cond_1
 
-    const v2, 0x7f0b14b1
+    const v2, 0x7f0b14c2
 
     invoke-virtual {v0, v2}, Landroid/app/ActionBar;->setTitle(I)V
 
@@ -564,7 +564,7 @@
     return-void
 
     :cond_1
-    const v2, 0x7f0b135d
+    const v2, 0x7f0b136e
 
     invoke-virtual {v0, v2}, Landroid/app/ActionBar;->setTitle(I)V
 
@@ -604,7 +604,7 @@
 
     if-eqz v0, :cond_0
 
-    const v1, 0x7f0b18a1
+    const v1, 0x7f0b18b3
 
     :goto_0
     invoke-interface {p1, v3, v4, v3, v1}, Landroid/view/Menu;->add(IIII)Landroid/view/MenuItem;
@@ -635,7 +635,7 @@
     return-void
 
     :cond_0
-    const v1, 0x7f0b1345
+    const v1, 0x7f0b1356
 
     goto :goto_0
 
@@ -1225,7 +1225,7 @@
 
     if-eqz p1, :cond_1
 
-    const v4, 0x7f0b18a1
+    const v4, 0x7f0b18b3
 
     :goto_0
     invoke-interface {v5, v4}, Landroid/view/MenuItem;->setTitle(I)Landroid/view/MenuItem;
@@ -1246,7 +1246,7 @@
     return-void
 
     :cond_1
-    const v4, 0x7f0b1345
+    const v4, 0x7f0b1356
 
     goto :goto_0
 
@@ -1449,7 +1449,7 @@
 
     iget-object v1, p0, Lcom/android/settings/bluetooth/DevicePickerFragment;->mScan:Landroid/view/MenuItem;
 
-    const v2, 0x7f0b1345
+    const v2, 0x7f0b1356
 
     invoke-interface {v1, v2}, Landroid/view/MenuItem;->setTitle(I)Landroid/view/MenuItem;
 

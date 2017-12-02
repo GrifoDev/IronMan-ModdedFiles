@@ -245,7 +245,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f04039b
+    const v2, 0x7f04039e
 
     const/4 v3, 0x0
 
@@ -255,11 +255,11 @@
 
     invoke-virtual {p0, v0}, Lcom/samsung/android/settings/wifi/mobileap/WifiApSetDataLimitDialog;->setView(Landroid/view/View;)V
 
-    const v1, 0x7f0b1ad8
+    const v1, 0x7f0b1aea
 
     invoke-virtual {p0, v1}, Lcom/samsung/android/settings/wifi/mobileap/WifiApSetDataLimitDialog;->setTitle(I)V
 
-    const v1, 0x7f1108fd
+    const v1, 0x7f1108ff
 
     invoke-virtual {v0, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -275,7 +275,7 @@
 
     invoke-virtual {v1, v2}, Landroid/widget/EditText;->addTextChangedListener(Landroid/text/TextWatcher;)V
 
-    const v1, 0x7f1108ff
+    const v1, 0x7f110901
 
     invoke-virtual {v0, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -289,7 +289,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f0b1852
+    const v2, 0x7f0b1864
 
     invoke-virtual {v1, v2}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -303,7 +303,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f0b1586
+    const v2, 0x7f0b1598
 
     invoke-virtual {v1, v2}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -347,7 +347,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f0b1073
+    const v2, 0x7f0b1082
 
     invoke-virtual {v1, v2}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 

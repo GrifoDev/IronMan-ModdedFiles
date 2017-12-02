@@ -100,7 +100,7 @@
 
     invoke-virtual {v1, v2}, Landroid/preference/Preference;->setKey(Ljava/lang/String;)V
 
-    const v2, 0x7f0b197a
+    const v2, 0x7f0b198c
 
     invoke-virtual {v1, v2}, Landroid/preference/Preference;->setTitle(I)V
 
@@ -545,7 +545,7 @@
 .method protected getHelpResource()I
     .locals 1
 
-    const v0, 0x7f0b1bbc
+    const v0, 0x7f0b1bce
 
     return v0
 .end method
@@ -563,7 +563,7 @@
 
     invoke-super {p0, p1}, Lcom/android/settings/fuelgauge/PowerUsageBase;->onCreate(Landroid/os/Bundle;)V
 
-    const v0, 0x7f0800c2
+    const v0, 0x7f0800c4
 
     invoke-virtual {p0, v0}, Lcom/android/settings/fuelgauge/PowerUsageSummary;->addPreferencesFromResource(I)V
 
@@ -647,7 +647,7 @@
 
     const/4 v1, 0x4
 
-    const v2, 0x7f0b1d6f
+    const v2, 0x7f0b1d81
 
     invoke-interface {p1, v3, v1, v3, v2}, Landroid/view/Menu;->add(IIII)Landroid/view/MenuItem;
 
@@ -744,7 +744,7 @@
 
     move-result-object v1
 
-    const v3, 0x7f0b1d6f
+    const v3, 0x7f0b1d81
 
     move-object v5, v4
 
@@ -988,7 +988,7 @@
 
     aput-object v14, v40, v41
 
-    const v41, 0x7f0b1981
+    const v41, 0x7f0b1993
 
     move-object/from16 v0, v39
 
@@ -1638,7 +1638,7 @@
 
     move-result-object v39
 
-    const v40, 0x7f0b1168
+    const v40, 0x7f0b1177
 
     invoke-virtual/range {v39 .. v40}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 

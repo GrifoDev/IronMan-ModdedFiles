@@ -125,7 +125,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f0b0f3d
+    const v1, 0x7f0b0f4c
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -138,7 +138,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f0b0d12
+    const v1, 0x7f0b0d20
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -269,7 +269,7 @@
 .method private updateLastCheckedDate()V
     .locals 9
 
-    const v8, 0x7f0b05d2
+    const v8, 0x7f0b05d3
 
     iget-object v4, p0, Lcom/samsung/android/settings/SecurityPolicySettings;->mManualUpdatePolicy:Landroid/preference/PreferenceScreen;
 
@@ -310,7 +310,7 @@
 
     move-result-object v4
 
-    const v5, 0x7f0b05d2
+    const v5, 0x7f0b05d3
 
     invoke-virtual {v4, v5}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
     :try_end_0
@@ -337,7 +337,7 @@
 
     move-result-object v6
 
-    const v7, 0x7f0b05d5
+    const v7, 0x7f0b05d6
 
     invoke-virtual {v6, v7}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -398,7 +398,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f0f02ae
+    const v1, 0x7f0f02ad
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getInteger(I)I
 
@@ -429,7 +429,7 @@
 
     invoke-static {v1, v2}, Landroid/util/secutil/Log;->secI(Ljava/lang/String;Ljava/lang/String;)I
 
-    const v1, 0x7f0800fd
+    const v1, 0x7f0800ff
 
     invoke-virtual {p0, v1}, Lcom/samsung/android/settings/SecurityPolicySettings;->addPreferencesFromResource(I)V
 
@@ -638,7 +638,7 @@
 
     move-result-object v3
 
-    const v6, 0x7f0f02b0
+    const v6, 0x7f0f02af
 
     invoke-virtual {v3, v6}, Landroid/content/res/Resources;->getInteger(I)I
 
@@ -704,7 +704,7 @@
 
     move-result-object v3
 
-    const v4, 0x7f0f02af
+    const v4, 0x7f0f02ae
 
     invoke-virtual {v3, v4}, Landroid/content/res/Resources;->getInteger(I)I
 

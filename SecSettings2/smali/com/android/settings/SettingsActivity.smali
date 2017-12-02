@@ -370,7 +370,7 @@
 
     sput-object v0, Lcom/android/settings/SettingsActivity;->ENTRY_EXTRA_FOR_SEARCH:[Ljava/lang/String;
 
-    const/16 v0, 0x6b
+    const/16 v0, 0x6c
 
     new-array v0, v0, [Ljava/lang/String;
 
@@ -442,567 +442,573 @@
 
     aput-object v1, v0, v2
 
-    const-string/jumbo v1, "com.samsung.android.settings.bluetooth.BluetoothDualPlaySettings"
+    const-string/jumbo v1, "com.samsung.android.settings.bluetooth.BluetoothAVCSettings"
 
     const/16 v2, 0xd
 
     aput-object v1, v0, v2
 
-    const-string/jumbo v1, "com.samsung.android.settings.bluetooth.BluetoothControlHistory"
+    const-string/jumbo v1, "com.samsung.android.settings.bluetooth.BluetoothDualPlaySettings"
 
     const/16 v2, 0xe
 
     aput-object v1, v0, v2
 
-    const-string/jumbo v1, "com.samsung.android.settings.guide.BluetoothHelpPage"
+    const-string/jumbo v1, "com.samsung.android.settings.bluetooth.BluetoothControlHistory"
 
     const/16 v2, 0xf
 
     aput-object v1, v0, v2
 
-    const-string/jumbo v1, "com.samsung.android.settings.CloudAccountSettings"
+    const-string/jumbo v1, "com.samsung.android.settings.guide.BluetoothHelpPage"
 
     const/16 v2, 0x10
 
     aput-object v1, v0, v2
 
-    const-string/jumbo v1, "com.samsung.android.settings.ConnectionsSettings"
+    const-string/jumbo v1, "com.samsung.android.settings.CloudAccountSettings"
 
     const/16 v2, 0x11
 
     aput-object v1, v0, v2
 
-    const-string/jumbo v1, "com.samsung.android.settings.DataSlotChoice"
+    const-string/jumbo v1, "com.samsung.android.settings.ConnectionsSettings"
 
     const/16 v2, 0x12
 
     aput-object v1, v0, v2
 
-    const-string/jumbo v1, "com.samsung.android.settings.devicevisibility.DeviceVisibilitySettings"
+    const-string/jumbo v1, "com.samsung.android.settings.DataSlotChoice"
 
     const/16 v2, 0x13
 
     aput-object v1, v0, v2
 
-    const-string/jumbo v1, "com.samsung.android.settings.DockSettings"
+    const-string/jumbo v1, "com.samsung.android.settings.devicevisibility.DeviceVisibilitySettings"
 
     const/16 v2, 0x14
 
     aput-object v1, v0, v2
 
-    const-string/jumbo v1, "com.samsung.android.settings.DomesticSettings"
+    const-string/jumbo v1, "com.samsung.android.settings.DockSettings"
 
     const/16 v2, 0x15
 
     aput-object v1, v0, v2
 
-    const-string/jumbo v1, "com.samsung.android.settings.fmm.FindMyMobileSettings"
+    const-string/jumbo v1, "com.samsung.android.settings.DomesticSettings"
 
     const/16 v2, 0x16
 
     aput-object v1, v0, v2
 
-    const-string/jumbo v1, "com.samsung.android.settings.GigaLteSettings"
+    const-string/jumbo v1, "com.samsung.android.settings.fmm.FindMyMobileSettings"
 
     const/16 v2, 0x17
 
     aput-object v1, v0, v2
 
-    const-string/jumbo v1, "com.samsung.android.settings.GlobalRoamingSettings"
+    const-string/jumbo v1, "com.samsung.android.settings.GigaLteSettings"
 
     const/16 v2, 0x18
 
     aput-object v1, v0, v2
 
-    const-string/jumbo v1, "com.samsung.android.settings.LGTCustomerService"
+    const-string/jumbo v1, "com.samsung.android.settings.GlobalRoamingSettings"
 
     const/16 v2, 0x19
 
     aput-object v1, v0, v2
 
-    const-string/jumbo v1, "com.samsung.android.settings.GlobalLteRoaming"
+    const-string/jumbo v1, "com.samsung.android.settings.LGTCustomerService"
 
     const/16 v2, 0x1a
 
     aput-object v1, v0, v2
 
-    const-string/jumbo v1, "com.samsung.android.settings.LGTRoamingEnv"
+    const-string/jumbo v1, "com.samsung.android.settings.GlobalLteRoaming"
 
     const/16 v2, 0x1b
 
     aput-object v1, v0, v2
 
-    const-string/jumbo v1, "com.samsung.android.settings.HongBaoAssistantPreferenceFragment"
+    const-string/jumbo v1, "com.samsung.android.settings.LGTRoamingEnv"
 
     const/16 v2, 0x1c
 
     aput-object v1, v0, v2
 
-    const-string/jumbo v1, "com.android.settings.datausage.BillingCycleChnSettings"
+    const-string/jumbo v1, "com.samsung.android.settings.HongBaoAssistantPreferenceFragment"
 
     const/16 v2, 0x1d
 
     aput-object v1, v0, v2
 
-    const-string/jumbo v1, "com.samsung.android.settings.lockscreen.LockscreenMenuSettings"
+    const-string/jumbo v1, "com.android.settings.datausage.BillingCycleChnSettings"
 
     const/16 v2, 0x1e
 
     aput-object v1, v0, v2
 
-    const-string/jumbo v1, "com.samsung.android.settings.lockscreen.SecuredLockSettingsMenu"
+    const-string/jumbo v1, "com.samsung.android.settings.lockscreen.LockscreenMenuSettings"
 
     const/16 v2, 0x1f
 
     aput-object v1, v0, v2
 
-    const-string/jumbo v1, "com.samsung.android.settings.lockscreen.ShowInfomationMenu"
+    const-string/jumbo v1, "com.samsung.android.settings.lockscreen.SecuredLockSettingsMenu"
 
     const/16 v2, 0x20
 
     aput-object v1, v0, v2
 
-    const-string/jumbo v1, "com.samsung.android.settings.LteModeActivity"
+    const-string/jumbo v1, "com.samsung.android.settings.lockscreen.ShowInfomationMenu"
 
     const/16 v2, 0x21
 
     aput-object v1, v0, v2
 
-    const-string/jumbo v1, "com.samsung.android.settings.mirrorlink.MirrorLink"
+    const-string/jumbo v1, "com.samsung.android.settings.LteModeActivity"
 
     const/16 v2, 0x22
 
     aput-object v1, v0, v2
 
-    const-string/jumbo v1, "com.samsung.android.settings.notification.BlockNotificationList"
+    const-string/jumbo v1, "com.samsung.android.settings.mirrorlink.MirrorLink"
 
     const/16 v2, 0x23
 
     aput-object v1, v0, v2
 
-    const-string/jumbo v1, "com.samsung.android.settings.notification.NotificationsSubSettings"
+    const-string/jumbo v1, "com.samsung.android.settings.notification.BlockNotificationList"
 
     const/16 v2, 0x24
 
     aput-object v1, v0, v2
 
-    const-string/jumbo v1, "com.samsung.android.settings.notification.PriorityNotiAppList"
+    const-string/jumbo v1, "com.samsung.android.settings.notification.NotificationsSubSettings"
 
     const/16 v2, 0x25
 
     aput-object v1, v0, v2
 
-    const-string/jumbo v1, "com.samsung.android.settings.notification.VibrationsSettings"
+    const-string/jumbo v1, "com.samsung.android.settings.notification.PriorityNotiAppList"
 
     const/16 v2, 0x26
 
     aput-object v1, v0, v2
 
-    const-string/jumbo v1, "com.samsung.android.settings.notification.VolumeSettings"
+    const-string/jumbo v1, "com.samsung.android.settings.notification.VibrationsSettings"
 
     const/16 v2, 0x27
 
     aput-object v1, v0, v2
 
-    const-string/jumbo v1, "com.samsung.android.settings.notification.ZenModeDNDSettings"
+    const-string/jumbo v1, "com.samsung.android.settings.notification.VolumeSettings"
 
     const/16 v2, 0x28
 
     aput-object v1, v0, v2
 
-    const-string/jumbo v1, "com.samsung.android.settings.OtherSecuritySettings"
+    const-string/jumbo v1, "com.samsung.android.settings.notification.ZenModeDNDSettings"
 
     const/16 v2, 0x29
 
     aput-object v1, v0, v2
 
-    const-string/jumbo v1, "com.samsung.android.settings.personalpage.PersonalPageSettings"
+    const-string/jumbo v1, "com.samsung.android.settings.OtherSecuritySettings"
 
     const/16 v2, 0x2a
 
     aput-object v1, v0, v2
 
-    const-string/jumbo v1, "com.samsung.android.settings.safetycare.PanicModeSettings"
+    const-string/jumbo v1, "com.samsung.android.settings.personalpage.PersonalPageSettings"
 
     const/16 v2, 0x2b
 
     aput-object v1, v0, v2
 
-    const-string/jumbo v1, "com.samsung.android.settings.safetycare.SafetyCareEmergencyMode"
+    const-string/jumbo v1, "com.samsung.android.settings.safetycare.PanicModeSettings"
 
     const/16 v2, 0x2c
 
     aput-object v1, v0, v2
 
-    const-string/jumbo v1, "com.samsung.android.settings.safetycare.SafetyCareSettings"
+    const-string/jumbo v1, "com.samsung.android.settings.safetycare.SafetyCareEmergencyMode"
 
     const/16 v2, 0x2d
 
     aput-object v1, v0, v2
 
-    const-string/jumbo v1, "com.samsung.android.settings.SmartStaySettings"
+    const-string/jumbo v1, "com.samsung.android.settings.safetycare.SafetyCareSettings"
 
     const/16 v2, 0x2e
 
     aput-object v1, v0, v2
 
-    const-string/jumbo v1, "com.samsung.android.settings.display.FullScreenAppsSettings"
+    const-string/jumbo v1, "com.samsung.android.settings.SmartStaySettings"
 
     const/16 v2, 0x2f
 
     aput-object v1, v0, v2
 
-    const-string/jumbo v1, "com.samsung.android.settings.NewOneHandOperationSettings"
+    const-string/jumbo v1, "com.samsung.android.settings.display.FullScreenAppsSettings"
 
     const/16 v2, 0x30
 
     aput-object v1, v0, v2
 
-    const-string/jumbo v1, "com.samsung.android.settings.TRoamingSettings"
+    const-string/jumbo v1, "com.samsung.android.settings.NewOneHandOperationSettings"
 
     const/16 v2, 0x31
 
     aput-object v1, v0, v2
 
-    const-string/jumbo v1, "com.samsung.android.settings.usefulfeature.HDReffectSettings"
+    const-string/jumbo v1, "com.samsung.android.settings.TRoamingSettings"
 
     const/16 v2, 0x32
 
     aput-object v1, v0, v2
 
-    const-string/jumbo v1, "com.samsung.android.settings.usefulfeature.FingerSensorGestureSettings"
+    const-string/jumbo v1, "com.samsung.android.settings.usefulfeature.HDReffectSettings"
 
     const/16 v2, 0x33
 
     aput-object v1, v0, v2
 
-    const-string/jumbo v1, "com.samsung.android.settings.usefulfeature.QuickCameraSettings"
+    const-string/jumbo v1, "com.samsung.android.settings.usefulfeature.FingerSensorGestureSettings"
 
     const/16 v2, 0x34
 
     aput-object v1, v0, v2
 
-    const-string/jumbo v1, "com.samsung.android.settings.usefulfeature.MultiWindowSettings"
+    const-string/jumbo v1, "com.samsung.android.settings.usefulfeature.QuickCameraSettings"
 
     const/16 v2, 0x35
 
     aput-object v1, v0, v2
 
-    const-string/jumbo v1, "com.samsung.android.settings.usefulfeature.RecentsKeySettings"
+    const-string/jumbo v1, "com.samsung.android.settings.usefulfeature.MultiWindowSettings"
 
     const/16 v2, 0x36
 
     aput-object v1, v0, v2
 
-    const-string/jumbo v1, "com.samsung.android.settings.usefulfeature.Usefulfeature"
+    const-string/jumbo v1, "com.samsung.android.settings.usefulfeature.RecentsKeySettings"
 
     const/16 v2, 0x37
 
     aput-object v1, v0, v2
 
-    const-string/jumbo v1, "com.samsung.android.settings.usefulfeature.UsefulFeatureHub"
+    const-string/jumbo v1, "com.samsung.android.settings.usefulfeature.Usefulfeature"
 
     const/16 v2, 0x38
 
     aput-object v1, v0, v2
 
-    const-string/jumbo v1, "com.samsung.android.settings.powersaving.LowBatteryFragment"
+    const-string/jumbo v1, "com.samsung.android.settings.usefulfeature.UsefulFeatureHub"
 
     const/16 v2, 0x39
 
     aput-object v1, v0, v2
 
-    const-string/jumbo v1, "com.samsung.android.settings.powersaving.PowerSavingValueFragment"
+    const-string/jumbo v1, "com.samsung.android.settings.powersaving.LowBatteryFragment"
 
     const/16 v2, 0x3a
 
     aput-object v1, v0, v2
 
-    const-string/jumbo v1, "com.samsung.android.settings.lockappshortcut.LockAppShortcutSettings"
+    const-string/jumbo v1, "com.samsung.android.settings.powersaving.PowerSavingValueFragment"
 
     const/16 v2, 0x3b
 
     aput-object v1, v0, v2
 
-    const-string/jumbo v1, "com.samsung.android.settings.dualclock.DualClockSetting"
+    const-string/jumbo v1, "com.samsung.android.settings.lockappshortcut.LockAppShortcutSettings"
 
     const/16 v2, 0x3c
 
     aput-object v1, v0, v2
 
-    const-string/jumbo v1, "com.samsung.android.settings.easymode.EasyModeApp"
+    const-string/jumbo v1, "com.samsung.android.settings.dualclock.DualClockSetting"
 
     const/16 v2, 0x3d
 
     aput-object v1, v0, v2
 
-    const-string/jumbo v1, "com.samsung.android.settings.SoftwareUpdateSettings"
+    const-string/jumbo v1, "com.samsung.android.settings.easymode.EasyModeApp"
 
     const/16 v2, 0x3e
 
     aput-object v1, v0, v2
 
-    const-string/jumbo v1, "com.samsung.android.settings.smartbonding.SmartBondingSettings"
+    const-string/jumbo v1, "com.samsung.android.settings.SoftwareUpdateSettings"
 
     const/16 v2, 0x3f
 
     aput-object v1, v0, v2
 
-    const-string/jumbo v1, "com.samsung.android.settings.GeneralDeviceSettings"
+    const-string/jumbo v1, "com.samsung.android.settings.smartbonding.SmartBondingSettings"
 
     const/16 v2, 0x40
 
     aput-object v1, v0, v2
 
-    const-string/jumbo v1, "com.samsung.android.settings.nfc.NfcSettings"
+    const-string/jumbo v1, "com.samsung.android.settings.GeneralDeviceSettings"
 
     const/16 v2, 0x41
 
     aput-object v1, v0, v2
 
-    const-string/jumbo v1, "com.samsung.android.settings.nfc.NfcOsaifukeitaiSettings"
+    const-string/jumbo v1, "com.samsung.android.settings.nfc.NfcSettings"
 
     const/16 v2, 0x42
 
     aput-object v1, v0, v2
 
-    const-string/jumbo v1, "com.samsung.android.settings.nearby.NearbySettings"
+    const-string/jumbo v1, "com.samsung.android.settings.nfc.NfcOsaifukeitaiSettings"
 
     const/16 v2, 0x43
 
     aput-object v1, v0, v2
 
-    const-string/jumbo v1, "com.samsung.android.settings.nfc.PaymentSettings"
+    const-string/jumbo v1, "com.samsung.android.settings.nearby.NearbySettings"
 
     const/16 v2, 0x44
 
     aput-object v1, v0, v2
 
-    const-string/jumbo v1, "com.samsung.android.settings.nfc.TapAndPaySettings"
+    const-string/jumbo v1, "com.samsung.android.settings.nfc.PaymentSettings"
 
     const/16 v2, 0x45
 
     aput-object v1, v0, v2
 
-    const-string/jumbo v1, "com.samsung.android.settings.boostmode.BoostModeCustomFragment"
+    const-string/jumbo v1, "com.samsung.android.settings.nfc.TapAndPaySettings"
 
     const/16 v2, 0x46
 
     aput-object v1, v0, v2
 
-    const-string/jumbo v1, "com.samsung.android.settings.ethernet.EthernetSettings"
+    const-string/jumbo v1, "com.samsung.android.settings.boostmode.BoostModeCustomFragment"
 
     const/16 v2, 0x47
 
     aput-object v1, v0, v2
 
-    const-string/jumbo v1, "com.samsung.android.settings.spen.PenAirCmdSettingsMenu"
+    const-string/jumbo v1, "com.samsung.android.settings.ethernet.EthernetSettings"
 
     const/16 v2, 0x48
 
     aput-object v1, v0, v2
 
-    const-string/jumbo v1, "com.samsung.android.settings.multisound.MultiSoundSettings"
+    const-string/jumbo v1, "com.samsung.android.settings.spen.PenAirCmdSettingsMenu"
 
     const/16 v2, 0x49
 
     aput-object v1, v0, v2
 
-    const-string/jumbo v1, "com.samsung.android.settings.spen.SPenSettingsMenu"
+    const-string/jumbo v1, "com.samsung.android.settings.multisound.MultiSoundSettings"
 
     const/16 v2, 0x4a
 
     aput-object v1, v0, v2
 
-    const-string/jumbo v1, "com.samsung.android.settings.handwritingsearch.HandwritingLanguagePreference"
+    const-string/jumbo v1, "com.samsung.android.settings.spen.SPenSettingsMenu"
 
     const/16 v2, 0x4b
 
     aput-object v1, v0, v2
 
-    const-string/jumbo v1, "com.samsung.android.settings.deviceinfo.simlockstatus.SimLockStatus"
+    const-string/jumbo v1, "com.samsung.android.settings.handwritingsearch.HandwritingLanguagePreference"
 
     const/16 v2, 0x4c
 
     aput-object v1, v0, v2
 
-    const-string/jumbo v1, "com.samsung.android.settings.display.AutoBrightness"
+    const-string/jumbo v1, "com.samsung.android.settings.deviceinfo.simlockstatus.SimLockStatus"
 
     const/16 v2, 0x4d
 
     aput-object v1, v0, v2
 
-    const-string/jumbo v1, "com.samsung.android.settings.navigationbar.NavigationBarHardPressSetting"
+    const-string/jumbo v1, "com.samsung.android.settings.display.AutoBrightness"
 
     const/16 v2, 0x4e
 
     aput-object v1, v0, v2
 
-    const-string/jumbo v1, "com.samsung.android.settings.WirelessSettings"
+    const-string/jumbo v1, "com.samsung.android.settings.navigationbar.NavigationBarHardPressSetting"
 
     const/16 v2, 0x4f
 
     aput-object v1, v0, v2
 
-    const-string/jumbo v1, "com.samsung.android.settings.DateTimeSettings"
+    const-string/jumbo v1, "com.samsung.android.settings.WirelessSettings"
 
     const/16 v2, 0x50
 
     aput-object v1, v0, v2
 
-    const-string/jumbo v1, "com.samsung.android.settings.display.SecDisplaySettings"
+    const-string/jumbo v1, "com.samsung.android.settings.DateTimeSettings"
 
     const/16 v2, 0x51
 
     aput-object v1, v0, v2
 
-    const-string/jumbo v1, "com.samsung.android.settings.display.StatusBar"
+    const-string/jumbo v1, "com.samsung.android.settings.display.SecDisplaySettings"
 
     const/16 v2, 0x52
 
     aput-object v1, v0, v2
 
-    const-string/jumbo v1, "com.samsung.android.settings.display.ScreenResolutionSettings"
+    const-string/jumbo v1, "com.samsung.android.settings.display.StatusBar"
 
     const/16 v2, 0x53
 
     aput-object v1, v0, v2
 
-    const-string/jumbo v1, "com.samsung.android.settings.display.DisplayTemperatureSettings"
+    const-string/jumbo v1, "com.samsung.android.settings.display.ScreenResolutionSettings"
 
     const/16 v2, 0x54
 
     aput-object v1, v0, v2
 
-    const-string/jumbo v1, "com.samsung.android.settings.PrivacySettings"
+    const-string/jumbo v1, "com.samsung.android.settings.display.DisplayTemperatureSettings"
 
     const/16 v2, 0x55
 
     aput-object v1, v0, v2
 
-    const-string/jumbo v1, "com.samsung.android.settings.PrivacyResetSettings"
+    const-string/jumbo v1, "com.samsung.android.settings.PrivacySettings"
 
     const/16 v2, 0x56
 
     aput-object v1, v0, v2
 
-    const-string/jumbo v1, "com.samsung.android.settings.accessibility.AccessibilitySettings"
+    const-string/jumbo v1, "com.samsung.android.settings.PrivacyResetSettings"
 
     const/16 v2, 0x57
 
     aput-object v1, v0, v2
 
-    const-string/jumbo v1, "com.samsung.android.settings.accessibility.AccessibilitySettingsHearing"
+    const-string/jumbo v1, "com.samsung.android.settings.accessibility.AccessibilitySettings"
 
     const/16 v2, 0x58
 
     aput-object v1, v0, v2
 
-    const-string/jumbo v1, "com.samsung.android.settings.accessibility.AccessibilitySettingsMobility"
+    const-string/jumbo v1, "com.samsung.android.settings.accessibility.AccessibilitySettingsHearing"
 
     const/16 v2, 0x59
 
     aput-object v1, v0, v2
 
-    const-string/jumbo v1, "com.samsung.android.settings.accessibility.AccessibilitySettingsVision"
+    const-string/jumbo v1, "com.samsung.android.settings.accessibility.AccessibilitySettingsMobility"
 
     const/16 v2, 0x5a
 
     aput-object v1, v0, v2
 
-    const-string/jumbo v1, "com.samsung.android.settings.AssistantMenuPreferenceFragment"
+    const-string/jumbo v1, "com.samsung.android.settings.accessibility.AccessibilitySettingsVision"
 
     const/16 v2, 0x5b
 
     aput-object v1, v0, v2
 
-    const-string/jumbo v1, "com.samsung.android.settings.accessibility.LightNotificationPreferenceFragment"
+    const-string/jumbo v1, "com.samsung.android.settings.AssistantMenuPreferenceFragment"
 
     const/16 v2, 0x5c
 
     aput-object v1, v0, v2
 
-    const-string/jumbo v1, "com.samsung.android.settings.notification.SoundSettings"
+    const-string/jumbo v1, "com.samsung.android.settings.accessibility.LightNotificationPreferenceFragment"
 
     const/16 v2, 0x5d
 
     aput-object v1, v0, v2
 
-    const-string/jumbo v1, "com.samsung.android.settings.notification.SoundModeSettings"
+    const-string/jumbo v1, "com.samsung.android.settings.notification.SoundSettings"
 
     const/16 v2, 0x5e
 
     aput-object v1, v0, v2
 
-    const-string/jumbo v1, "com.samsung.android.settings.wifi.mobileap.WifiApSettings"
+    const-string/jumbo v1, "com.samsung.android.settings.notification.SoundModeSettings"
 
     const/16 v2, 0x5f
 
     aput-object v1, v0, v2
 
-    const-string/jumbo v1, "com.samsung.android.settings.bluetooth.tethering.BtTetherSettings"
+    const-string/jumbo v1, "com.samsung.android.settings.wifi.mobileap.WifiApSettings"
 
     const/16 v2, 0x60
 
     aput-object v1, v0, v2
 
-    const-string/jumbo v1, "com.samsung.android.settings.deviceinfo.StatusVZW"
+    const-string/jumbo v1, "com.samsung.android.settings.bluetooth.tethering.BtTetherSettings"
 
     const/16 v2, 0x61
 
     aput-object v1, v0, v2
 
-    const-string/jumbo v1, "com.samsung.android.settings.location.LocationUseInBackground"
+    const-string/jumbo v1, "com.samsung.android.settings.deviceinfo.StatusVZW"
 
     const/16 v2, 0x62
 
     aput-object v1, v0, v2
 
-    const-string/jumbo v1, "com.samsung.android.settings.accessories.LedCoverCallerIDSettings"
+    const-string/jumbo v1, "com.samsung.android.settings.location.LocationUseInBackground"
 
     const/16 v2, 0x63
 
     aput-object v1, v0, v2
 
-    const-string/jumbo v1, "com.samsung.android.settings.accessories.LedCoverCallerIDList"
+    const-string/jumbo v1, "com.samsung.android.settings.accessories.LedCoverCallerIDSettings"
 
     const/16 v2, 0x64
 
     aput-object v1, v0, v2
 
-    const-string/jumbo v1, "com.samsung.android.settings.lockscreen.LockscreenNotificationApplist"
+    const-string/jumbo v1, "com.samsung.android.settings.accessories.LedCoverCallerIDList"
 
     const/16 v2, 0x65
 
     aput-object v1, v0, v2
 
-    const-string/jumbo v1, "com.samsung.android.settings.lockscreen.AdditionalInformationSettings"
+    const-string/jumbo v1, "com.samsung.android.settings.lockscreen.LockscreenNotificationApplist"
 
     const/16 v2, 0x66
 
     aput-object v1, v0, v2
 
-    const-string/jumbo v1, "com.samsung.android.settings.navigationbar.NavigationBarSettings"
+    const-string/jumbo v1, "com.samsung.android.settings.lockscreen.AdditionalInformationSettings"
 
     const/16 v2, 0x67
 
     aput-object v1, v0, v2
 
-    const-string/jumbo v1, "com.samsung.android.settings.navigationbar.NavigationBarHideButtonAppsSettings"
+    const-string/jumbo v1, "com.samsung.android.settings.navigationbar.NavigationBarSettings"
 
     const/16 v2, 0x68
 
     aput-object v1, v0, v2
 
-    const-string/jumbo v1, "com.samsung.android.settings.navigationbar.PressureTouchActionSettings"
+    const-string/jumbo v1, "com.samsung.android.settings.navigationbar.NavigationBarHideButtonAppsSettings"
 
     const/16 v2, 0x69
 
     aput-object v1, v0, v2
 
-    const-string/jumbo v1, "com.samsung.android.settings.DeviceMaintenanceSettings"
+    const-string/jumbo v1, "com.samsung.android.settings.navigationbar.PressureTouchActionSettings"
 
     const/16 v2, 0x6a
+
+    aput-object v1, v0, v2
+
+    const-string/jumbo v1, "com.samsung.android.settings.DeviceMaintenanceSettings"
+
+    const/16 v2, 0x6b
 
     aput-object v1, v0, v2
 
@@ -2460,7 +2466,7 @@
 
     iput-object v0, p0, Lcom/android/settings/SettingsActivity;->mDynamicIndexableContentMonitor:Lcom/android/settings/search/DynamicIndexableContentMonitor;
 
-    const v0, 0x7f11059e
+    const v0, 0x7f1105a0
 
     iput v0, p0, Lcom/android/settings/SettingsActivity;->mMainContentId:I
 
@@ -2518,7 +2524,7 @@
 
     invoke-direct {v0, p0}, Landroid/app/AlertDialog$Builder;-><init>(Landroid/content/Context;)V
 
-    const v1, 0x7f0b11ea
+    const v1, 0x7f0b11fa
 
     invoke-virtual {v0, v1}, Landroid/app/AlertDialog$Builder;->setMessage(I)Landroid/app/AlertDialog$Builder;
 
@@ -2526,11 +2532,11 @@
 
     invoke-direct {v1, p0}, Lcom/android/settings/SettingsActivity$6;-><init>(Lcom/android/settings/SettingsActivity;)V
 
-    const v2, 0x7f0b08d5
+    const v2, 0x7f0b08df
 
     invoke-virtual {v0, v2, v1}, Landroid/app/AlertDialog$Builder;->setPositiveButton(ILandroid/content/DialogInterface$OnClickListener;)Landroid/app/AlertDialog$Builder;
 
-    const v1, 0x7f0b13d6
+    const v1, 0x7f0b13e7
 
     invoke-virtual {p0, v1}, Lcom/android/settings/SettingsActivity;->getString(I)Ljava/lang/String;
 
@@ -2634,7 +2640,7 @@
 
     invoke-direct {v0, v1, v2}, Landroid/content/ComponentName;-><init>(Ljava/lang/String;Ljava/lang/String;)V
 
-    if-eqz v21, :cond_1b
+    if-eqz v21, :cond_1c
 
     const/16 v50, 0x1
 
@@ -2719,7 +2725,7 @@
 
     invoke-direct {v0, v1, v2}, Landroid/content/ComponentName;-><init>(Ljava/lang/String;Ljava/lang/String;)V
 
-    if-eqz v18, :cond_1c
+    if-eqz v18, :cond_1d
 
     const/16 v50, 0x1
 
@@ -2838,13 +2844,13 @@
 
     move-result v50
 
-    if-eqz v50, :cond_1e
+    if-eqz v50, :cond_1f
 
     invoke-static {}, Lcom/android/settings/Utils;->isMonkeyRunning()Z
 
     move-result v50
 
-    if-eqz v50, :cond_1d
+    if-eqz v50, :cond_1e
 
     const/16 v41, 0x0
 
@@ -2888,7 +2894,7 @@
 
     invoke-direct {v0, v1, v2}, Landroid/content/ComponentName;-><init>(Ljava/lang/String;Ljava/lang/String;)V
 
-    if-eqz v20, :cond_1f
+    if-eqz v20, :cond_20
 
     const/16 v50, 0x1
 
@@ -2925,7 +2931,7 @@
 
     move-result v50
 
-    if-eqz v50, :cond_20
+    if-eqz v50, :cond_21
 
     const/16 v50, 0x0
 
@@ -2962,7 +2968,7 @@
 
     move-result v50
 
-    if-eqz v50, :cond_21
+    if-eqz v50, :cond_22
 
     const/16 v50, 0x0
 
@@ -2997,7 +3003,7 @@
 
     move-result v50
 
-    if-eqz v50, :cond_22
+    if-eqz v50, :cond_23
 
     :cond_5
     :goto_6
@@ -3023,7 +3029,7 @@
 
     move-result v50
 
-    if-eqz v50, :cond_23
+    if-eqz v50, :cond_24
 
     :cond_6
     const/16 v50, 0x0
@@ -3057,7 +3063,7 @@
 
     invoke-direct {v0, v1, v2}, Landroid/content/ComponentName;-><init>(Ljava/lang/String;Ljava/lang/String;)V
 
-    if-eqz v37, :cond_24
+    if-eqz v37, :cond_25
 
     invoke-static {}, Lcom/android/settings/Utils;->isJapanModel()Z
 
@@ -3106,7 +3112,7 @@
 
     move-result v50
 
-    if-eqz v50, :cond_26
+    if-eqz v50, :cond_27
 
     const-string/jumbo v50, "android.hardware.nfc.hce"
 
@@ -3118,15 +3124,15 @@
 
     move-result v50
 
-    if-eqz v50, :cond_26
+    if-eqz v50, :cond_27
 
-    if-eqz v5, :cond_26
+    if-eqz v5, :cond_27
 
     invoke-static {}, Lcom/android/settings/Utils;->isJapanDCMModel()Z
 
     move-result v50
 
-    if-nez v50, :cond_25
+    if-nez v50, :cond_26
 
     const/16 v50, 0x1
 
@@ -3211,7 +3217,7 @@
 
     move/from16 v50, v0
 
-    if-eqz v50, :cond_27
+    if-eqz v50, :cond_28
 
     const/16 v50, 0x0
 
@@ -3258,7 +3264,7 @@
 
     move/from16 v50, v0
 
-    if-eqz v50, :cond_28
+    if-eqz v50, :cond_29
 
     const/16 v47, 0x1
 
@@ -3269,7 +3275,7 @@
 
     move/from16 v50, v0
 
-    if-eqz v50, :cond_29
+    if-eqz v50, :cond_2a
 
     const/16 v49, 0x1
 
@@ -3280,7 +3286,7 @@
 
     move/from16 v50, v0
 
-    if-eqz v50, :cond_2a
+    if-eqz v50, :cond_2b
 
     const/4 v7, 0x1
 
@@ -3323,11 +3329,11 @@
 
     invoke-direct {v0, v1, v2}, Landroid/content/ComponentName;-><init>(Ljava/lang/String;Ljava/lang/String;)V
 
-    if-nez v47, :cond_2b
+    if-nez v47, :cond_2c
 
-    if-nez v49, :cond_2b
+    if-nez v49, :cond_2c
 
-    if-nez v7, :cond_2b
+    if-nez v7, :cond_2c
 
     move/from16 v50, v22
 
@@ -3382,7 +3388,7 @@
 
     move-result v50
 
-    if-eqz v50, :cond_2c
+    if-eqz v50, :cond_2d
 
     :cond_7
     const/16 v50, 0x0
@@ -3460,12 +3466,6 @@
 
     if-nez v50, :cond_8
 
-    invoke-static/range {p0 .. p0}, Lcom/android/settings/Utils;->isRestrictedProfile(Landroid/content/Context;)Z
-
-    move-result v50
-
-    if-nez v50, :cond_8
-
     invoke-direct/range {p0 .. p0}, Lcom/android/settings/SettingsActivity;->isUCMKeyguardEnabled()Z
 
     move-result v50
@@ -3504,13 +3504,21 @@
 
     invoke-direct {v0, v1, v2, v3, v4}, Lcom/android/settings/SettingsActivity;->setTileEnabled(Landroid/content/ComponentName;ZZLandroid/content/pm/PackageManager;)V
 
-    const/16 v32, 0x1
+    new-instance v51, Landroid/content/ComponentName;
 
-    invoke-static {}, Lcom/android/settings/Utils;->isSupportBioFace()Z
+    const-class v50, Lcom/android/settings/Settings$TRoamingSettingsActivity;
 
-    move-result v50
+    invoke-virtual/range {v50 .. v50}, Ljava/lang/Class;->getName()Ljava/lang/String;
 
-    if-eqz v50, :cond_a
+    move-result-object v50
+
+    move-object/from16 v0, v51
+
+    move-object/from16 v1, v28
+
+    move-object/from16 v2, v50
+
+    invoke-direct {v0, v1, v2}, Landroid/content/ComponentName;-><init>(Ljava/lang/String;Ljava/lang/String;)V
 
     invoke-static/range {p0 .. p0}, Lcom/android/settings/Utils;->isShopDemo(Landroid/content/Context;)Z
 
@@ -3522,18 +3530,48 @@
 
     move-result v50
 
-    if-nez v50, :cond_a
+    if-eqz v50, :cond_2e
 
-    invoke-static/range {p0 .. p0}, Lcom/android/settings/Utils;->isRestrictedProfile(Landroid/content/Context;)Z
+    :cond_a
+    const/16 v50, 0x0
+
+    :goto_10
+    move-object/from16 v0, p0
+
+    move-object/from16 v1, v51
+
+    move/from16 v2, v50
+
+    move/from16 v3, v17
+
+    move-object/from16 v4, v29
+
+    invoke-direct {v0, v1, v2, v3, v4}, Lcom/android/settings/SettingsActivity;->setTileEnabled(Landroid/content/ComponentName;ZZLandroid/content/pm/PackageManager;)V
+
+    const/16 v32, 0x1
+
+    invoke-static {}, Lcom/android/settings/Utils;->isSupportBioFace()Z
 
     move-result v50
 
     if-eqz v50, :cond_b
 
-    :cond_a
-    const/16 v32, 0x0
+    invoke-static/range {p0 .. p0}, Lcom/android/settings/Utils;->isShopDemo(Landroid/content/Context;)Z
+
+    move-result v50
+
+    if-nez v50, :cond_b
+
+    invoke-static {}, Lcom/android/settings/Utils;->isLDUModel()Z
+
+    move-result v50
+
+    if-eqz v50, :cond_c
 
     :cond_b
+    const/16 v32, 0x0
+
+    :cond_c
     new-instance v50, Landroid/content/ComponentName;
 
     const-class v51, Lcom/samsung/android/settings/face/FaceEntry;
@@ -3568,30 +3606,24 @@
 
     move-result v50
 
-    if-eqz v50, :cond_c
+    if-eqz v50, :cond_d
 
     invoke-static/range {p0 .. p0}, Lcom/android/settings/Utils;->isShopDemo(Landroid/content/Context;)Z
 
     move-result v50
 
-    if-nez v50, :cond_c
+    if-nez v50, :cond_d
 
     invoke-static {}, Lcom/android/settings/Utils;->isLDUModel()Z
 
     move-result v50
 
-    if-nez v50, :cond_c
-
-    invoke-static/range {p0 .. p0}, Lcom/android/settings/Utils;->isRestrictedProfile(Landroid/content/Context;)Z
-
-    move-result v50
-
-    if-eqz v50, :cond_d
-
-    :cond_c
-    const/16 v35, 0x0
+    if-eqz v50, :cond_e
 
     :cond_d
+    const/16 v35, 0x0
+
+    :cond_e
     new-instance v50, Landroid/content/ComponentName;
 
     const-class v51, Lcom/samsung/android/settings/iris/IrisLockSettings;
@@ -3642,11 +3674,11 @@
 
     move-result v50
 
-    if-eqz v50, :cond_2d
+    if-eqz v50, :cond_2f
 
     const/16 v50, 0x0
 
-    :goto_10
+    :goto_11
     const/16 v52, 0x1
 
     move-object/from16 v0, p0
@@ -3683,11 +3715,11 @@
 
     move-result v50
 
-    if-eqz v50, :cond_2e
+    if-eqz v50, :cond_30
 
     const/16 v50, 0x0
 
-    :goto_11
+    :goto_12
     const/16 v52, 0x1
 
     move-object/from16 v0, p0
@@ -3708,7 +3740,7 @@
 
     move-result v50
 
-    if-eqz v50, :cond_10
+    if-eqz v50, :cond_11
 
     const/16 v36, 0x1
 
@@ -3718,7 +3750,7 @@
 
     move-result v50
 
-    if-nez v50, :cond_e
+    if-nez v50, :cond_f
 
     move-object/from16 v0, p0
 
@@ -3726,7 +3758,7 @@
 
     move/from16 v50, v0
 
-    if-eqz v50, :cond_f
+    if-eqz v50, :cond_10
 
     move-object/from16 v0, p0
 
@@ -3736,12 +3768,12 @@
 
     and-int/lit8 v50, v50, 0x4
 
-    if-nez v50, :cond_f
-
-    :cond_e
-    const/16 v36, 0x0
+    if-nez v50, :cond_10
 
     :cond_f
+    const/16 v36, 0x0
+
+    :cond_10
     new-instance v50, Landroid/content/ComponentName;
 
     const-class v51, Lcom/android/settings/Settings$LocationSettingsActivity;
@@ -3778,7 +3810,7 @@
 
     move-result v50
 
-    if-eqz v50, :cond_2f
+    if-eqz v50, :cond_31
 
     new-instance v50, Landroid/content/ComponentName;
 
@@ -3810,7 +3842,7 @@
 
     invoke-direct {v0, v1, v2, v3, v4}, Lcom/android/settings/SettingsActivity;->setTileEnabled(Landroid/content/ComponentName;ZZLandroid/content/pm/PackageManager;)V
 
-    :goto_12
+    :goto_13
     new-instance v51, Landroid/content/ComponentName;
 
     const-class v50, Lcom/android/settings/Settings$InputMethodAndLanguageSettingsActivity;
@@ -3833,11 +3865,11 @@
 
     move-result v50
 
-    if-eqz v50, :cond_31
+    if-eqz v50, :cond_33
 
     const/16 v50, 0x0
 
-    :goto_13
+    :goto_14
     const/16 v52, 0x1
 
     move-object/from16 v0, p0
@@ -3874,11 +3906,11 @@
 
     move-result v50
 
-    if-eqz v50, :cond_32
+    if-eqz v50, :cond_34
 
     const/16 v50, 0x0
 
-    :goto_14
+    :goto_15
     const/16 v52, 0x1
 
     move-object/from16 v0, p0
@@ -3915,11 +3947,11 @@
 
     move-result v50
 
-    if-eqz v50, :cond_33
+    if-eqz v50, :cond_35
 
     const/16 v50, 0x0
 
-    :goto_15
+    :goto_16
     const/16 v52, 0x1
 
     move-object/from16 v0, p0
@@ -3934,7 +3966,7 @@
 
     invoke-direct {v0, v1, v2, v3, v4}, Lcom/android/settings/SettingsActivity;->setTileEnabled(Landroid/content/ComponentName;ZZLandroid/content/pm/PackageManager;)V
 
-    :cond_10
+    :cond_11
     const-string/jumbo v50, "com.android.settings"
 
     invoke-virtual/range {p0 .. p0}, Lcom/android/settings/SettingsActivity;->getActivityInfo()Landroid/content/pm/ActivityInfo;
@@ -3951,7 +3983,7 @@
 
     move-result v50
 
-    if-eqz v50, :cond_12
+    if-eqz v50, :cond_13
 
     move-object/from16 v0, p0
 
@@ -3973,7 +4005,7 @@
 
     move-result v50
 
-    if-eqz v50, :cond_35
+    if-eqz v50, :cond_37
 
     const-string/jumbo v50, "no_debugging_features"
 
@@ -3985,11 +4017,11 @@
 
     move-result v50
 
-    if-eqz v50, :cond_34
+    if-eqz v50, :cond_36
 
     const/16 v33, 0x0
 
-    :goto_16
+    :goto_17
     const/16 v19, 0x0
 
     const/16 v50, 0x100
@@ -3998,13 +4030,13 @@
 
     move-result v50
 
-    if-eqz v50, :cond_11
+    if-eqz v50, :cond_12
 
     const/16 v33, 0x0
 
     const/16 v19, 0x1
 
-    :cond_11
+    :cond_12
     new-instance v51, Landroid/content/ComponentName;
 
     const-class v50, Lcom/android/settings/Settings$DevelopmentSettingsActivity;
@@ -4021,11 +4053,11 @@
 
     invoke-direct {v0, v1, v2}, Landroid/content/ComponentName;-><init>(Ljava/lang/String;Ljava/lang/String;)V
 
-    if-eqz v19, :cond_36
+    if-eqz v19, :cond_38
 
     const/16 v50, 0x1
 
-    :goto_17
+    :goto_18
     move-object/from16 v0, p0
 
     move-object/from16 v1, v51
@@ -4044,28 +4076,28 @@
 
     invoke-static {v0, v1}, Lcom/android/settings/qstile/DevelopmentTiles;->setTilesEnabled(Landroid/content/Context;Z)V
 
-    :cond_12
+    :cond_13
     const/16 v39, 0x1
 
     invoke-static {}, Lcom/android/settings/Utils;->isSupportGraceUX()Z
 
     move-result v50
 
-    if-eqz v50, :cond_13
+    if-eqz v50, :cond_14
 
     invoke-static/range {p0 .. p0}, Lcom/android/settings/Utils;->isShopDemo(Landroid/content/Context;)Z
 
     move-result v50
 
-    if-nez v50, :cond_13
+    if-nez v50, :cond_14
 
     invoke-static {}, Lcom/android/settings/Utils;->isLDUModel()Z
 
     move-result v50
 
-    if-nez v50, :cond_13
+    if-nez v50, :cond_14
 
-    :cond_13
+    :cond_14
     const/16 v39, 0x0
 
     new-instance v50, Landroid/content/ComponentName;
@@ -4106,7 +4138,7 @@
 
     move-result v50
 
-    if-eqz v50, :cond_15
+    if-eqz v50, :cond_16
 
     const/16 v40, 0x1
 
@@ -4160,7 +4192,7 @@
 
     move/from16 v1, v50
 
-    if-ne v0, v1, :cond_14
+    if-ne v0, v1, :cond_15
 
     const/16 v40, 0x0
 
@@ -4190,7 +4222,7 @@
 
     invoke-static/range {v50 .. v51}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    :cond_14
+    :cond_15
     new-instance v50, Landroid/content/ComponentName;
 
     const-class v51, Lcom/android/settings/Settings$SprTetherSettingsActivity;
@@ -4207,9 +4239,9 @@
 
     invoke-direct {v0, v1, v2}, Landroid/content/ComponentName;-><init>(Ljava/lang/String;Ljava/lang/String;)V
 
-    if-nez v40, :cond_37
+    if-nez v40, :cond_39
 
-    :goto_18
+    :goto_19
     move-object/from16 v0, p0
 
     move-object/from16 v1, v50
@@ -4222,10 +4254,10 @@
 
     invoke-direct {v0, v1, v2, v3, v4}, Lcom/android/settings/SettingsActivity;->setTileEnabled(Landroid/content/ComponentName;ZZLandroid/content/pm/PackageManager;)V
 
-    :cond_15
-    if-eqz v17, :cond_38
-
     :cond_16
+    if-eqz v17, :cond_3a
+
+    :cond_17
     const/16 v38, 0x1
 
     sget-object v50, Lcom/android/settings/SettingsActivity;->mContext:Landroid/content/Context;
@@ -4234,7 +4266,7 @@
 
     move-result v50
 
-    if-eqz v50, :cond_18
+    if-eqz v50, :cond_19
 
     const/16 v50, 0x40
 
@@ -4242,18 +4274,18 @@
 
     move-result v50
 
-    if-nez v50, :cond_17
+    if-nez v50, :cond_18
 
     invoke-static {}, Landroid/os/UserHandle;->myUserId()I
 
     move-result v50
 
-    if-eqz v50, :cond_18
-
-    :cond_17
-    const/16 v38, 0x0
+    if-eqz v50, :cond_19
 
     :cond_18
+    const/16 v38, 0x0
+
+    :cond_19
     invoke-virtual/range {p0 .. p0}, Lcom/android/settings/SettingsActivity;->getResources()Landroid/content/res/Resources;
 
     move-result-object v50
@@ -4284,11 +4316,11 @@
 
     invoke-direct {v0, v1, v2}, Landroid/content/ComponentName;-><init>(Ljava/lang/String;Ljava/lang/String;)V
 
-    if-eqz v38, :cond_3b
+    if-eqz v38, :cond_3d
 
     move/from16 v50, v48
 
-    :goto_19
+    :goto_1a
     move-object/from16 v0, p0
 
     move-object/from16 v1, v51
@@ -4303,7 +4335,7 @@
 
     const/4 v14, 0x0
 
-    if-nez v48, :cond_19
+    if-nez v48, :cond_1a
 
     const/16 v50, 0x0
 
@@ -4336,12 +4368,12 @@
 
     move-result v50
 
-    if-eqz v50, :cond_3c
+    if-eqz v50, :cond_3e
 
     const/4 v14, 0x0
 
-    :cond_19
-    :goto_1a
+    :cond_1a
+    :goto_1b
     new-instance v50, Landroid/content/ComponentName;
 
     const-class v51, Lcom/android/settings/BackupSettingsActivity;
@@ -4390,13 +4422,13 @@
 
     move-result v50
 
-    if-nez v50, :cond_3d
+    if-nez v50, :cond_3f
 
     invoke-static {}, Lcom/android/settings/Utils;->isPenAirViewSupported()Z
 
     move-result v50
 
-    :goto_1b
+    :goto_1c
     move-object/from16 v0, p0
 
     move-object/from16 v1, v51
@@ -4443,11 +4475,11 @@
 
     move-result v50
 
-    if-eqz v50, :cond_3e
+    if-eqz v50, :cond_40
 
     const/16 v50, 0x0
 
-    :goto_1c
+    :goto_1d
     move-object/from16 v0, p0
 
     move-object/from16 v1, v51
@@ -4464,72 +4496,67 @@
 
     move-result v50
 
-    if-eqz v50, :cond_1a
+    if-eqz v50, :cond_1b
 
     invoke-static {}, Lcom/android/settings/Utils;->isSupportSmartBonding()Z
 
     move-result v50
 
-    if-eqz v50, :cond_3f
-
-    :cond_1a
-    :goto_1d
-    return-void
+    if-eqz v50, :cond_41
 
     :cond_1b
-    move/from16 v50, v17
-
-    goto/16 :goto_0
+    :goto_1e
+    return-void
 
     :cond_1c
     move/from16 v50, v17
 
-    goto/16 :goto_1
+    goto/16 :goto_0
 
     :cond_1d
+    move/from16 v50, v17
+
+    goto/16 :goto_1
+
+    :cond_1e
     const/16 v41, 0x1
 
     goto/16 :goto_2
 
-    :cond_1e
+    :cond_1f
     const/16 v41, 0x0
 
     goto/16 :goto_2
 
-    :cond_1f
+    :cond_20
     move/from16 v50, v17
 
     goto/16 :goto_3
 
-    :cond_20
+    :cond_21
     const/16 v50, 0x1
 
     goto/16 :goto_4
 
-    :cond_21
+    :cond_22
     const/16 v50, 0x1
 
     goto/16 :goto_5
 
-    :cond_22
+    :cond_23
     const/16 v37, 0x0
 
     goto/16 :goto_6
 
-    :cond_23
+    :cond_24
     const/16 v50, 0x1
 
     goto/16 :goto_7
 
-    :cond_24
-    const/16 v50, 0x0
-
-    goto/16 :goto_8
-
     :cond_25
     const/16 v50, 0x0
 
-    goto/16 :goto_9
+    goto/16 :goto_8
 
     :cond_26
     const/16 v50, 0x0
@@ -4537,46 +4564,56 @@
     goto/16 :goto_9
 
     :cond_27
+    const/16 v50, 0x0
+
+    goto/16 :goto_9
+
+    :cond_28
     const/16 v50, 0x1
 
     goto/16 :goto_a
 
-    :cond_28
+    :cond_29
     const/16 v47, 0x0
 
     goto/16 :goto_b
 
-    :cond_29
+    :cond_2a
     const/16 v49, 0x0
 
     goto/16 :goto_c
 
-    :cond_2a
+    :cond_2b
     const/4 v7, 0x0
 
     goto/16 :goto_d
 
-    :cond_2b
+    :cond_2c
     const/16 v50, 0x1
 
     goto/16 :goto_e
 
-    :cond_2c
+    :cond_2d
     const/16 v50, 0x1
 
     goto/16 :goto_f
 
-    :cond_2d
+    :cond_2e
     const/16 v50, 0x1
 
     goto/16 :goto_10
 
-    :cond_2e
+    :cond_2f
     const/16 v50, 0x1
 
     goto/16 :goto_11
 
-    :cond_2f
+    :cond_30
+    const/16 v50, 0x1
+
+    goto/16 :goto_12
+
+    :cond_31
     new-instance v51, Landroid/content/ComponentName;
 
     const-class v50, Lcom/android/settings/Settings$AirplaneModeSettingsActivity;
@@ -4599,11 +4636,11 @@
 
     move-result v50
 
-    if-eqz v50, :cond_30
+    if-eqz v50, :cond_32
 
     const/16 v50, 0x0
 
-    :goto_1e
+    :goto_1f
     const/16 v52, 0x1
 
     move-object/from16 v0, p0
@@ -4618,49 +4655,49 @@
 
     invoke-direct {v0, v1, v2, v3, v4}, Lcom/android/settings/SettingsActivity;->setTileEnabled(Landroid/content/ComponentName;ZZLandroid/content/pm/PackageManager;)V
 
-    goto/16 :goto_12
-
-    :cond_30
-    const/16 v50, 0x1
-
-    goto :goto_1e
-
-    :cond_31
-    const/16 v50, 0x1
-
     goto/16 :goto_13
 
     :cond_32
     const/16 v50, 0x1
 
-    goto/16 :goto_14
+    goto :goto_1f
 
     :cond_33
     const/16 v50, 0x1
 
-    goto/16 :goto_15
+    goto/16 :goto_14
 
     :cond_34
-    const/16 v33, 0x1
+    const/16 v50, 0x1
 
-    goto/16 :goto_16
+    goto/16 :goto_15
 
     :cond_35
-    const/16 v33, 0x0
+    const/16 v50, 0x1
 
     goto/16 :goto_16
 
     :cond_36
-    move/from16 v50, v17
+    const/16 v33, 0x1
 
     goto/16 :goto_17
 
     :cond_37
-    const/16 v22, 0x1
+    const/16 v33, 0x0
+
+    goto/16 :goto_17
+
+    :cond_38
+    move/from16 v50, v17
 
     goto/16 :goto_18
 
-    :cond_38
+    :cond_39
+    const/16 v22, 0x1
+
+    goto/16 :goto_19
+
+    :cond_3a
     invoke-virtual/range {p0 .. p0}, Lcom/android/settings/SettingsActivity;->getDashboardCategories()Ljava/util/List;
 
     move-result-object v8
@@ -4669,12 +4706,12 @@
 
     move-result-object v10
 
-    :cond_39
+    :cond_3b
     invoke-interface {v10}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v50
 
-    if-eqz v50, :cond_16
+    if-eqz v50, :cond_17
 
     invoke-interface {v10}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -4690,13 +4727,13 @@
 
     move-result-object v45
 
-    :cond_3a
-    :goto_1f
+    :cond_3c
+    :goto_20
     invoke-interface/range {v45 .. v45}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v50
 
-    if-eqz v50, :cond_39
+    if-eqz v50, :cond_3b
 
     invoke-interface/range {v45 .. v45}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -4714,7 +4751,7 @@
 
     move-result-object v12
 
-    if-eqz v12, :cond_3a
+    if-eqz v12, :cond_3c
 
     invoke-virtual {v12}, Landroid/content/ComponentName;->getPackageName()Ljava/lang/String;
 
@@ -4728,7 +4765,7 @@
 
     move-result v50
 
-    if-eqz v50, :cond_3a
+    if-eqz v50, :cond_3c
 
     move-object/from16 v0, p0
 
@@ -4744,7 +4781,7 @@
 
     move-result v50
 
-    if-nez v50, :cond_3a
+    if-nez v50, :cond_3c
 
     const/16 v50, 0x0
 
@@ -4758,17 +4795,17 @@
 
     invoke-direct {v0, v12, v1, v2, v3}, Lcom/android/settings/SettingsActivity;->setTileEnabled(Landroid/content/ComponentName;ZZLandroid/content/pm/PackageManager;)V
 
-    goto :goto_1f
+    goto :goto_20
 
-    :cond_3b
+    :cond_3d
     const/16 v50, 0x0
 
-    goto/16 :goto_19
+    goto/16 :goto_1a
 
-    :cond_3c
+    :cond_3e
     const/4 v14, 0x1
 
-    goto/16 :goto_1a
+    goto/16 :goto_1b
 
     :catch_0
     move-exception v13
@@ -4783,19 +4820,19 @@
 
     invoke-static {v0, v1, v13}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    goto/16 :goto_1a
-
-    :cond_3d
-    const/16 v50, 0x1
-
     goto/16 :goto_1b
 
-    :cond_3e
+    :cond_3f
     const/16 v50, 0x1
 
     goto/16 :goto_1c
 
-    :cond_3f
+    :cond_40
+    const/16 v50, 0x1
+
+    goto/16 :goto_1d
+
+    :cond_41
     new-instance v51, Landroid/content/ComponentName;
 
     const-class v50, Lcom/android/settings/Settings$WirelessSettingsActivity;
@@ -4816,11 +4853,11 @@
 
     move-result v50
 
-    if-eqz v50, :cond_40
+    if-eqz v50, :cond_42
 
     const/16 v50, 0x0
 
-    :goto_20
+    :goto_21
     move-object/from16 v0, p0
 
     move-object/from16 v1, v51
@@ -4833,12 +4870,12 @@
 
     invoke-direct {v0, v1, v2, v3, v4}, Lcom/android/settings/SettingsActivity;->setTileEnabled(Landroid/content/ComponentName;ZZLandroid/content/pm/PackageManager;)V
 
-    goto/16 :goto_1d
+    goto/16 :goto_1e
 
-    :cond_40
+    :cond_42
     const/16 v50, 0x1
 
-    goto :goto_20
+    goto :goto_21
 .end method
 
 .method private getMetaData()V
@@ -5067,7 +5104,7 @@
 
     if-eqz v1, :cond_0
 
-    const v2, 0x7f0b0ad3
+    const v2, 0x7f0b0ae1
 
     :goto_0
     return v2
@@ -5075,12 +5112,12 @@
     :cond_0
     if-eqz v0, :cond_1
 
-    const v2, 0x7f0b0acf
+    const v2, 0x7f0b0add
 
     goto :goto_0
 
     :cond_1
-    const v2, 0x7f0b0ad0
+    const v2, 0x7f0b0ade
 
     goto :goto_0
 .end method
@@ -5106,13 +5143,13 @@
 
     if-eqz v0, :cond_0
 
-    const v1, 0x7f0b147b
+    const v1, 0x7f0b148c
 
     :goto_0
     return v1
 
     :cond_0
-    const v1, 0x7f0b147a
+    const v1, 0x7f0b148b
 
     goto :goto_0
 .end method
@@ -6122,7 +6159,7 @@
 .method private switchToFragment(Ljava/lang/String;Landroid/os/Bundle;ZZILjava/lang/CharSequence;Z)Landroid/app/Fragment;
     .locals 5
 
-    const v3, 0x7f11059e
+    const v3, 0x7f1105a0
 
     if-eqz p3, :cond_0
 
@@ -6225,7 +6262,7 @@
 
     if-eqz v2, :cond_7
 
-    const v2, 0x7f11078c
+    const v2, 0x7f11078e
 
     invoke-virtual {v1, v2, v0}, Landroid/app/FragmentTransaction;->replace(ILandroid/app/Fragment;)Landroid/app/FragmentTransaction;
 
@@ -6249,7 +6286,7 @@
     goto :goto_0
 
     :cond_8
-    const v2, 0x7f110790
+    const v2, 0x7f110792
 
     invoke-virtual {v1, v2, v0}, Landroid/app/FragmentTransaction;->replace(ILandroid/app/Fragment;)Landroid/app/FragmentTransaction;
 
@@ -6266,7 +6303,7 @@
 .method private switchToFragment(Ljava/lang/String;Landroid/os/Bundle;ZZILjava/lang/CharSequence;ZLandroid/app/Fragment;I)Landroid/app/Fragment;
     .locals 5
 
-    const v3, 0x7f11059e
+    const v3, 0x7f1105a0
 
     if-eqz p3, :cond_0
 
@@ -6374,7 +6411,7 @@
 
     if-eqz v2, :cond_8
 
-    const v2, 0x7f11078c
+    const v2, 0x7f11078e
 
     invoke-virtual {v1, v2, v0}, Landroid/app/FragmentTransaction;->replace(ILandroid/app/Fragment;)Landroid/app/FragmentTransaction;
 
@@ -6398,7 +6435,7 @@
     goto :goto_0
 
     :cond_9
-    const v2, 0x7f110790
+    const v2, 0x7f110792
 
     invoke-virtual {v1, v2, v0}, Landroid/app/FragmentTransaction;->replace(ILandroid/app/Fragment;)Landroid/app/FragmentTransaction;
 
@@ -6432,7 +6469,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f11059e
+    const v1, 0x7f1105a0
 
     invoke-virtual {v0, v1}, Landroid/app/FragmentManager;->findFragmentById(I)Landroid/app/Fragment;
 
@@ -6475,7 +6512,7 @@
     move v7, v4
 
     :goto_1
-    const v5, 0x7f0b13da
+    const v5, 0x7f0b13eb
 
     move-object v0, p0
 
@@ -6564,7 +6601,7 @@
 
     move-result v0
 
-    const v1, 0x7f1103bb
+    const v1, 0x7f1103bd
 
     if-ne v0, v1, :cond_0
 
@@ -6886,7 +6923,7 @@
 
     iget v0, p0, Lcom/android/settings/SettingsActivity;->mInitialTitleResId:I
 
-    const v1, 0x7f0b0922
+    const v1, 0x7f0b092d
 
     if-ne v1, v0, :cond_0
 
@@ -7009,9 +7046,9 @@
 
     const/4 v6, 0x0
 
-    const v5, 0x7f110791
+    const v5, 0x7f110793
 
-    const v4, 0x7f110787
+    const v4, 0x7f110789
 
     new-instance v0, Landroid/view/animation/AlphaAnimation;
 
@@ -7451,7 +7488,7 @@
 
     move-result-object v7
 
-    const v8, 0x7f110790
+    const v8, 0x7f110792
 
     invoke-virtual {v7, v8}, Landroid/app/FragmentManager;->findFragmentById(I)Landroid/app/Fragment;
 
@@ -7704,7 +7741,7 @@
 
     if-eqz v2, :cond_5
 
-    const v2, 0x7f0b11dc
+    const v2, 0x7f0b11eb
 
     move-object/from16 v0, v16
 
@@ -7778,7 +7815,7 @@
 
     if-eqz v2, :cond_3
 
-    const v2, 0x7f0b11dd
+    const v2, 0x7f0b11ec
 
     move-object/from16 v0, v16
 
@@ -7830,7 +7867,7 @@
 
     move-result-object v2
 
-    const v3, 0x7f11078c
+    const v3, 0x7f11078e
 
     invoke-virtual {v2, v3}, Landroid/app/FragmentManager;->findFragmentById(I)Landroid/app/Fragment;
 
@@ -7921,7 +7958,7 @@
 
     if-eqz v20, :cond_2
 
-    const v20, 0x7f110793
+    const v20, 0x7f110795
 
     move-object/from16 v0, p0
 
@@ -7939,7 +7976,7 @@
 
     check-cast v6, Landroid/widget/LinearLayout$LayoutParams;
 
-    const v20, 0x7f110792
+    const v20, 0x7f110794
 
     move-object/from16 v0, p0
 
@@ -7955,7 +7992,7 @@
 
     check-cast v10, Landroid/widget/LinearLayout$LayoutParams;
 
-    const v20, 0x7f110794
+    const v20, 0x7f110796
 
     move-object/from16 v0, p0
 
@@ -8144,7 +8181,7 @@
 
     move-result-object v20
 
-    const v21, 0x7f0f04de
+    const v21, 0x7f0f04dd
 
     invoke-virtual/range {v20 .. v21}, Landroid/content/res/Resources;->getInteger(I)I
 
@@ -8317,7 +8354,7 @@
 
     iput v0, v13, Landroid/widget/LinearLayout$LayoutParams;->weight:F
 
-    const v20, 0x7f110792
+    const v20, 0x7f110794
 
     move-object/from16 v0, p0
 
@@ -8331,7 +8368,7 @@
 
     invoke-virtual/range {v20 .. v21}, Landroid/view/View;->setVisibility(I)V
 
-    const v20, 0x7f110794
+    const v20, 0x7f110796
 
     move-object/from16 v0, p0
 
@@ -8372,7 +8409,7 @@
 
     iput v0, v13, Landroid/widget/LinearLayout$LayoutParams;->weight:F
 
-    const v20, 0x7f110792
+    const v20, 0x7f110794
 
     move-object/from16 v0, p0
 
@@ -8386,7 +8423,7 @@
 
     invoke-virtual/range {v20 .. v21}, Landroid/view/View;->setVisibility(I)V
 
-    const v20, 0x7f110794
+    const v20, 0x7f110796
 
     move-object/from16 v0, p0
 
@@ -8971,13 +9008,13 @@
 
     if-eqz v2, :cond_1e
 
-    const v2, 0x7f0402cb
+    const v2, 0x7f0402ce
 
     :goto_4
     invoke-virtual {v5, v2}, Landroid/view/Window;->setContentView(I)V
 
     :goto_5
-    const v2, 0x7f11059e
+    const v2, 0x7f1105a0
 
     move-object/from16 v0, p0
 
@@ -8997,7 +9034,7 @@
 
     if-nez v2, :cond_24
 
-    const v2, 0x7f110788
+    const v2, 0x7f11078a
 
     move-object/from16 v0, p0
 
@@ -9011,7 +9048,7 @@
 
     iput-object v2, v0, Lcom/android/settings/SettingsActivity;->mLeftPane:Landroid/widget/LinearLayout;
 
-    const v2, 0x7f11078d
+    const v2, 0x7f11078f
 
     move-object/from16 v0, p0
 
@@ -9025,7 +9062,7 @@
 
     iput-object v2, v0, Lcom/android/settings/SettingsActivity;->mRightPane:Landroid/widget/LinearLayout;
 
-    const v2, 0x7f11078b
+    const v2, 0x7f11078d
 
     move-object/from16 v0, p0
 
@@ -9039,7 +9076,7 @@
 
     iput-object v2, v0, Lcom/android/settings/SettingsActivity;->mLeftPaneToolbar:Landroid/widget/Toolbar;
 
-    const v2, 0x7f11078f
+    const v2, 0x7f110791
 
     move-object/from16 v0, p0
 
@@ -9053,7 +9090,7 @@
 
     iput-object v2, v0, Lcom/android/settings/SettingsActivity;->mRightPaneToolbar:Landroid/widget/Toolbar;
 
-    const v2, 0x7f110791
+    const v2, 0x7f110793
 
     move-object/from16 v0, p0
 
@@ -9069,7 +9106,7 @@
 
     iget-object v2, v0, Lcom/android/settings/SettingsActivity;->mLeftPaneToolbar:Landroid/widget/Toolbar;
 
-    const v5, 0x7f0b13da
+    const v5, 0x7f0b13eb
 
     invoke-virtual {v2, v5}, Landroid/widget/Toolbar;->setTitle(I)V
 
@@ -9095,7 +9132,7 @@
 
     invoke-virtual {v2, v5}, Landroid/widget/Toolbar;->inflateMenu(I)V
 
-    const v2, 0x7f110a15
+    const v2, 0x7f110a18
 
     move-object/from16 v0, v41
 
@@ -9127,7 +9164,7 @@
 
     const/4 v6, 0x0
 
-    const v8, 0x7f0b11dc
+    const v8, 0x7f0b11eb
 
     move-object/from16 v0, v41
 
@@ -9218,7 +9255,7 @@
 
     if-eqz v2, :cond_c
 
-    const v2, 0x7f110793
+    const v2, 0x7f110795
 
     move-object/from16 v0, p0
 
@@ -9234,7 +9271,7 @@
 
     check-cast v24, Landroid/widget/LinearLayout$LayoutParams;
 
-    const v2, 0x7f110792
+    const v2, 0x7f110794
 
     move-object/from16 v0, p0
 
@@ -9248,7 +9285,7 @@
 
     check-cast v40, Landroid/widget/LinearLayout$LayoutParams;
 
-    const v2, 0x7f110794
+    const v2, 0x7f110796
 
     move-object/from16 v0, p0
 
@@ -9512,7 +9549,7 @@
     invoke-virtual {v2, v5}, Landroid/app/ActionBar;->setHomeButtonEnabled(Z)V
 
     :cond_10
-    const v2, 0x7f11072e
+    const v2, 0x7f110730
 
     move-object/from16 v0, p0
 
@@ -9567,7 +9604,7 @@
 
     if-eqz v2, :cond_39
 
-    const v2, 0x7f1103ef
+    const v2, 0x7f1103f1
 
     move-object/from16 v0, p0
 
@@ -9583,7 +9620,7 @@
 
     invoke-virtual {v0, v2}, Landroid/view/View;->setVisibility(I)V
 
-    const v2, 0x7f1103f0
+    const v2, 0x7f1103f2
 
     move-object/from16 v0, p0
 
@@ -9597,7 +9634,7 @@
 
     iput-object v2, v0, Lcom/android/settings/SettingsActivity;->mPrevButtonArea:Landroid/widget/LinearLayout;
 
-    const v2, 0x7f11076b
+    const v2, 0x7f11076d
 
     move-object/from16 v0, p0
 
@@ -9611,7 +9648,7 @@
 
     iput-object v2, v0, Lcom/android/settings/SettingsActivity;->mPrevButtonText:Landroid/widget/TextView;
 
-    const v2, 0x7f1103f1
+    const v2, 0x7f1103f3
 
     move-object/from16 v0, p0
 
@@ -9625,7 +9662,7 @@
 
     iput-object v2, v0, Lcom/android/settings/SettingsActivity;->mPrevButtonArrow:Landroid/widget/ImageView;
 
-    const v2, 0x7f1103f2
+    const v2, 0x7f1103f4
 
     move-object/from16 v0, p0
 
@@ -9639,7 +9676,7 @@
 
     iput-object v2, v0, Lcom/android/settings/SettingsActivity;->mNextButtonArea:Landroid/widget/LinearLayout;
 
-    const v2, 0x7f1103f3
+    const v2, 0x7f1103f5
 
     move-object/from16 v0, p0
 
@@ -9653,7 +9690,7 @@
 
     iput-object v2, v0, Lcom/android/settings/SettingsActivity;->mNextButtonText:Landroid/widget/TextView;
 
-    const v2, 0x7f1103f4
+    const v2, 0x7f1103f6
 
     move-object/from16 v0, p0
 
@@ -9691,7 +9728,7 @@
 
     move-result-object v5
 
-    const v6, 0x7f02067f
+    const v6, 0x7f020681
 
     invoke-virtual {v5, v6}, Landroid/content/res/Resources;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 
@@ -9707,7 +9744,7 @@
 
     move-result-object v5
 
-    const v6, 0x7f02067f
+    const v6, 0x7f020681
 
     invoke-virtual {v5, v6}, Landroid/content/res/Resources;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 
@@ -9932,7 +9969,7 @@
 
     move-result-object v41
 
-    const v2, 0x7f110a15
+    const v2, 0x7f110a18
 
     move-object/from16 v0, v41
 
@@ -9999,7 +10036,7 @@
     goto/16 :goto_3
 
     :cond_1e
-    const v2, 0x7f0402cd
+    const v2, 0x7f0402d0
 
     goto/16 :goto_4
 
@@ -10022,7 +10059,7 @@
 
     if-eqz v2, :cond_20
 
-    const v2, 0x7f0402cc
+    const v2, 0x7f0402cf
 
     :goto_e
     invoke-virtual {v5, v2}, Landroid/view/Window;->setContentView(I)V
@@ -10030,7 +10067,7 @@
     goto/16 :goto_5
 
     :cond_20
-    const v2, 0x7f0402ce
+    const v2, 0x7f0402d1
 
     goto :goto_e
 
@@ -10041,7 +10078,7 @@
 
     if-eqz v2, :cond_22
 
-    const v2, 0x7f0402cb
+    const v2, 0x7f0402ce
 
     :goto_f
     move-object/from16 v0, p0
@@ -10051,7 +10088,7 @@
     goto/16 :goto_5
 
     :cond_22
-    const v2, 0x7f0402cd
+    const v2, 0x7f0402d0
 
     goto :goto_f
 
@@ -10070,7 +10107,7 @@
 
     const/4 v6, 0x0
 
-    const v8, 0x7f0b11dd
+    const v8, 0x7f0b11ec
 
     move-object/from16 v0, v41
 
@@ -10079,7 +10116,7 @@
     goto/16 :goto_6
 
     :cond_24
-    const v2, 0x7f110791
+    const v2, 0x7f110793
 
     move-object/from16 v0, p0
 
@@ -10168,7 +10205,7 @@
 
     iput v2, v0, Landroid/widget/LinearLayout$LayoutParams;->weight:F
 
-    const v2, 0x7f110792
+    const v2, 0x7f110794
 
     move-object/from16 v0, p0
 
@@ -10180,7 +10217,7 @@
 
     invoke-virtual {v2, v5}, Landroid/view/View;->setVisibility(I)V
 
-    const v2, 0x7f110794
+    const v2, 0x7f110796
 
     move-object/from16 v0, p0
 
@@ -10219,7 +10256,7 @@
 
     iput v2, v0, Landroid/widget/LinearLayout$LayoutParams;->weight:F
 
-    const v2, 0x7f110792
+    const v2, 0x7f110794
 
     move-object/from16 v0, p0
 
@@ -10231,7 +10268,7 @@
 
     invoke-virtual {v2, v5}, Landroid/view/View;->setVisibility(I)V
 
-    const v2, 0x7f110794
+    const v2, 0x7f110796
 
     move-object/from16 v0, p0
 
@@ -10368,7 +10405,7 @@
 
     if-eqz v2, :cond_2d
 
-    const v2, 0x7f0b13da
+    const v2, 0x7f0b13eb
 
     move-object/from16 v0, p0
 
@@ -10598,7 +10635,7 @@
 
     const/4 v9, 0x0
 
-    const v10, 0x7f0b1c1c
+    const v10, 0x7f0b1c2e
 
     const/4 v11, 0x0
 
@@ -10782,7 +10819,7 @@
 
     invoke-virtual {v0, v2}, Landroid/view/View;->setVisibility(I)V
 
-    const v2, 0x7f11066b
+    const v2, 0x7f11066d
 
     move-object/from16 v0, p0
 
@@ -11104,7 +11141,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f11059e
+    const v2, 0x7f1105a0
 
     invoke-virtual {v1, v2}, Landroid/app/FragmentManager;->findFragmentById(I)Landroid/app/Fragment;
 
@@ -11189,7 +11226,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f0b11dc
+    const v1, 0x7f0b11eb
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -11199,7 +11236,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f0b11dd
+    const v1, 0x7f0b11ec
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -12158,7 +12195,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f110790
+    const v1, 0x7f110792
 
     invoke-virtual {v0, v1}, Landroid/app/FragmentManager;->findFragmentById(I)Landroid/app/Fragment;
 
@@ -12168,7 +12205,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f11078c
+    const v1, 0x7f11078e
 
     invoke-virtual {v0, v1}, Landroid/app/FragmentManager;->findFragmentById(I)Landroid/app/Fragment;
 
@@ -12637,7 +12674,7 @@
 
     if-eqz v1, :cond_0
 
-    const v1, 0x7f11059e
+    const v1, 0x7f1105a0
 
     invoke-virtual {v0, v1, p1}, Landroid/app/FragmentTransaction;->replace(ILandroid/app/Fragment;)Landroid/app/FragmentTransaction;
 
@@ -12658,7 +12695,7 @@
     return-void
 
     :cond_0
-    const v1, 0x7f110790
+    const v1, 0x7f110792
 
     invoke-virtual {v0, v1, p1}, Landroid/app/FragmentTransaction;->replace(ILandroid/app/Fragment;)Landroid/app/FragmentTransaction;
 
@@ -12855,7 +12892,7 @@
 
     invoke-direct {v2}, Landroid/os/Bundle;-><init>()V
 
-    const v3, 0x7f0b055f
+    const v3, 0x7f0b0560
 
     const/4 v6, 0x0
 
@@ -12918,346 +12955,434 @@
 .end method
 
 .method public updateOptionMenu(Landroid/view/Menu;)Z
-    .locals 14
+    .locals 16
 
-    iget-object v5, p0, Lcom/android/settings/SettingsActivity;->mSearchQuery:Ljava/lang/String;
+    move-object/from16 v0, p0
 
-    const v9, 0x7f110a15
+    iget-object v7, v0, Lcom/android/settings/SettingsActivity;->mSearchQuery:Ljava/lang/String;
 
-    invoke-interface {p1, v9}, Landroid/view/Menu;->findItem(I)Landroid/view/MenuItem;
+    const v11, 0x7f110a18
 
-    move-result-object v9
+    move-object/from16 v0, p1
 
-    iput-object v9, p0, Lcom/android/settings/SettingsActivity;->mSearchMenuItem:Landroid/view/MenuItem;
+    invoke-interface {v0, v11}, Landroid/view/Menu;->findItem(I)Landroid/view/MenuItem;
 
-    iget-object v9, p0, Lcom/android/settings/SettingsActivity;->mSearchMenuItem:Landroid/view/MenuItem;
+    move-result-object v11
 
-    if-nez v9, :cond_0
+    move-object/from16 v0, p0
 
-    const/4 v9, 0x0
+    iput-object v11, v0, Lcom/android/settings/SettingsActivity;->mSearchMenuItem:Landroid/view/MenuItem;
 
-    return v9
+    move-object/from16 v0, p0
+
+    iget-object v11, v0, Lcom/android/settings/SettingsActivity;->mSearchMenuItem:Landroid/view/MenuItem;
+
+    if-nez v11, :cond_0
+
+    const/4 v11, 0x0
+
+    return v11
 
     :cond_0
-    iget-object v9, p0, Lcom/android/settings/SettingsActivity;->mSearchMenuItem:Landroid/view/MenuItem;
+    move-object/from16 v0, p0
 
-    invoke-interface {v9}, Landroid/view/MenuItem;->getActionView()Landroid/view/View;
+    iget-object v11, v0, Lcom/android/settings/SettingsActivity;->mSearchMenuItem:Landroid/view/MenuItem;
 
-    move-result-object v9
+    invoke-interface {v11}, Landroid/view/MenuItem;->getActionView()Landroid/view/View;
 
-    check-cast v9, Landroid/widget/SearchView;
+    move-result-object v11
 
-    iput-object v9, p0, Lcom/android/settings/SettingsActivity;->mSearchView:Landroid/widget/SearchView;
+    check-cast v11, Landroid/widget/SearchView;
 
-    iget-object v9, p0, Lcom/android/settings/SettingsActivity;->mSearchView:Landroid/widget/SearchView;
+    move-object/from16 v0, p0
 
-    if-nez v9, :cond_1
+    iput-object v11, v0, Lcom/android/settings/SettingsActivity;->mSearchView:Landroid/widget/SearchView;
 
-    const/4 v9, 0x0
+    move-object/from16 v0, p0
 
-    return v9
+    iget-object v11, v0, Lcom/android/settings/SettingsActivity;->mSearchView:Landroid/widget/SearchView;
+
+    if-nez v11, :cond_1
+
+    const/4 v11, 0x0
+
+    return v11
 
     :cond_1
-    iget-object v9, p0, Lcom/android/settings/SettingsActivity;->mSearchView:Landroid/widget/SearchView;
+    move-object/from16 v0, p0
 
-    const v10, 0x10204a2
+    iget-object v11, v0, Lcom/android/settings/SettingsActivity;->mSearchView:Landroid/widget/SearchView;
 
-    invoke-virtual {v9, v10}, Landroid/widget/SearchView;->findViewById(I)Landroid/view/View;
+    const v12, 0x10204a2
 
-    move-result-object v7
+    invoke-virtual {v11, v12}, Landroid/widget/SearchView;->findViewById(I)Landroid/view/View;
 
-    check-cast v7, Landroid/widget/LinearLayout;
+    move-result-object v9
 
-    if-eqz v7, :cond_2
+    check-cast v9, Landroid/widget/LinearLayout;
 
-    invoke-virtual {v7}, Landroid/widget/LinearLayout;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
+    if-eqz v9, :cond_2
 
-    move-result-object v8
+    invoke-virtual {v9}, Landroid/widget/LinearLayout;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
 
-    check-cast v8, Landroid/widget/LinearLayout$LayoutParams;
+    move-result-object v10
 
-    const/4 v9, 0x0
+    check-cast v10, Landroid/widget/LinearLayout$LayoutParams;
 
-    invoke-virtual {v8, v9}, Landroid/widget/LinearLayout$LayoutParams;->setMarginStart(I)V
+    const/4 v11, 0x0
+
+    invoke-virtual {v10, v11}, Landroid/widget/LinearLayout$LayoutParams;->setMarginStart(I)V
 
     :cond_2
-    iget-object v9, p0, Lcom/android/settings/SettingsActivity;->mSearchResultsFragment:Lcom/android/settings/dashboard/SecSearchResultsSummary;
+    move-object/from16 v0, p0
 
-    if-eqz v9, :cond_3
+    iget-object v11, v0, Lcom/android/settings/SettingsActivity;->mSearchResultsFragment:Lcom/android/settings/dashboard/SecSearchResultsSummary;
 
-    iget-object v9, p0, Lcom/android/settings/SettingsActivity;->mSearchResultsFragment:Lcom/android/settings/dashboard/SecSearchResultsSummary;
+    if-eqz v11, :cond_3
 
-    iget-object v10, p0, Lcom/android/settings/SettingsActivity;->mSearchView:Landroid/widget/SearchView;
+    move-object/from16 v0, p0
 
-    invoke-virtual {v9, v10}, Lcom/android/settings/dashboard/SecSearchResultsSummary;->setSearchView(Landroid/widget/SearchView;)V
+    iget-object v11, v0, Lcom/android/settings/SettingsActivity;->mSearchResultsFragment:Lcom/android/settings/dashboard/SecSearchResultsSummary;
+
+    move-object/from16 v0, p0
+
+    iget-object v12, v0, Lcom/android/settings/SettingsActivity;->mSearchView:Landroid/widget/SearchView;
+
+    invoke-virtual {v11, v12}, Lcom/android/settings/dashboard/SecSearchResultsSummary;->setSearchView(Landroid/widget/SearchView;)V
 
     :cond_3
-    iget-object v9, p0, Lcom/android/settings/SettingsActivity;->mSearchView:Landroid/widget/SearchView;
+    move-object/from16 v0, p0
 
-    const/16 v10, 0x8
+    iget-object v11, v0, Lcom/android/settings/SettingsActivity;->mSearchView:Landroid/widget/SearchView;
 
-    invoke-virtual {v9, v10}, Landroid/widget/SearchView;->sendAccessibilityEvent(I)V
+    const/16 v12, 0x8
 
-    invoke-virtual {p0}, Lcom/android/settings/SettingsActivity;->getWindow()Landroid/view/Window;
+    invoke-virtual {v11, v12}, Landroid/widget/SearchView;->sendAccessibilityEvent(I)V
 
-    move-result-object v9
+    invoke-virtual/range {p0 .. p0}, Lcom/android/settings/SettingsActivity;->getWindow()Landroid/view/Window;
 
-    invoke-virtual {v9}, Landroid/view/Window;->getDecorView()Landroid/view/View;
+    move-result-object v11
 
-    move-result-object v9
+    invoke-virtual {v11}, Landroid/view/Window;->getDecorView()Landroid/view/View;
 
-    const/16 v10, 0x20
+    move-result-object v11
 
-    invoke-virtual {v9, v10}, Landroid/view/View;->sendAccessibilityEvent(I)V
+    const/16 v12, 0x20
 
-    invoke-virtual {p0}, Lcom/android/settings/SettingsActivity;->getWindow()Landroid/view/Window;
+    invoke-virtual {v11, v12}, Landroid/view/View;->sendAccessibilityEvent(I)V
 
-    move-result-object v9
+    invoke-virtual/range {p0 .. p0}, Lcom/android/settings/SettingsActivity;->getWindow()Landroid/view/Window;
 
-    invoke-virtual {v9}, Landroid/view/Window;->getDecorView()Landroid/view/View;
+    move-result-object v11
 
-    move-result-object v9
+    invoke-virtual {v11}, Landroid/view/Window;->getDecorView()Landroid/view/View;
 
-    const v10, 0x7f110a15
+    move-result-object v11
 
-    invoke-virtual {v9, v10}, Landroid/view/View;->findViewById(I)Landroid/view/View;
+    const v12, 0x7f110a18
 
-    move-result-object v4
-
-    if-eqz v4, :cond_4
-
-    invoke-virtual {v4}, Landroid/view/View;->clearAccessibilityFocus()V
-
-    :cond_4
-    iget-object v9, p0, Lcom/android/settings/SettingsActivity;->mSearchView:Landroid/widget/SearchView;
-
-    invoke-virtual {p0}, Lcom/android/settings/SettingsActivity;->getResources()Landroid/content/res/Resources;
-
-    move-result-object v10
-
-    const v11, 0x7f0b0265
-
-    invoke-virtual {v10, v11}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
-
-    move-result-object v10
-
-    invoke-virtual {v9, v10}, Landroid/widget/SearchView;->setQueryHint(Ljava/lang/CharSequence;)V
-
-    const-string/jumbo v9, "search"
-
-    invoke-virtual {p0, v9}, Lcom/android/settings/SettingsActivity;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
+    invoke-virtual {v11, v12}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
     move-result-object v6
 
-    check-cast v6, Landroid/app/SearchManager;
+    if-eqz v6, :cond_4
 
-    iget-object v9, p0, Lcom/android/settings/SettingsActivity;->mSearchView:Landroid/widget/SearchView;
+    invoke-virtual {v6}, Landroid/view/View;->clearAccessibilityFocus()V
 
-    new-instance v10, Landroid/content/ComponentName;
+    :cond_4
+    move-object/from16 v0, p0
 
-    const-class v11, Lcom/android/settings/SecSearchActivity;
+    iget-object v11, v0, Lcom/android/settings/SettingsActivity;->mSearchView:Landroid/widget/SearchView;
 
-    invoke-direct {v10, p0, v11}, Landroid/content/ComponentName;-><init>(Landroid/content/Context;Ljava/lang/Class;)V
+    invoke-virtual/range {p0 .. p0}, Lcom/android/settings/SettingsActivity;->getResources()Landroid/content/res/Resources;
 
-    invoke-virtual {v6, v10}, Landroid/app/SearchManager;->getSearchableInfo(Landroid/content/ComponentName;)Landroid/app/SearchableInfo;
+    move-result-object v12
 
-    move-result-object v10
+    const v13, 0x7f0b0265
 
-    invoke-virtual {v9, v10}, Landroid/widget/SearchView;->setSearchableInfo(Landroid/app/SearchableInfo;)V
+    invoke-virtual {v12, v13}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
-    iget-object v9, p0, Lcom/android/settings/SettingsActivity;->mSearchView:Landroid/widget/SearchView;
+    move-result-object v12
 
-    const/4 v10, 0x3
+    invoke-virtual {v11, v12}, Landroid/widget/SearchView;->setQueryHint(Ljava/lang/CharSequence;)V
 
-    invoke-virtual {v9, v10}, Landroid/widget/SearchView;->setImeOptions(I)V
+    const-string/jumbo v11, "search"
+
+    move-object/from16 v0, p0
+
+    invoke-virtual {v0, v11}, Lcom/android/settings/SettingsActivity;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
+
+    move-result-object v8
+
+    check-cast v8, Landroid/app/SearchManager;
 
     :try_start_0
-    iget-object v9, p0, Lcom/android/settings/SettingsActivity;->mSearchView:Landroid/widget/SearchView;
+    move-object/from16 v0, p0
 
-    iget-object v10, p0, Lcom/android/settings/SettingsActivity;->mSearchView:Landroid/widget/SearchView;
+    iget-object v11, v0, Lcom/android/settings/SettingsActivity;->mSearchView:Landroid/widget/SearchView;
 
-    invoke-virtual {v10}, Landroid/widget/SearchView;->getContext()Landroid/content/Context;
+    new-instance v12, Landroid/content/ComponentName;
 
-    move-result-object v10
+    const-class v13, Lcom/android/settings/SecSearchActivity;
 
-    invoke-virtual {v10}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
+    move-object/from16 v0, p0
 
-    move-result-object v10
+    invoke-direct {v12, v0, v13}, Landroid/content/ComponentName;-><init>(Landroid/content/Context;Ljava/lang/Class;)V
 
-    const-string/jumbo v11, "android:id/search_src_text"
+    invoke-virtual {v8, v12}, Landroid/app/SearchManager;->getSearchableInfo(Landroid/content/ComponentName;)Landroid/app/SearchableInfo;
+
+    move-result-object v12
+
+    invoke-virtual {v11, v12}, Landroid/widget/SearchView;->setSearchableInfo(Landroid/app/SearchableInfo;)V
+    :try_end_0
+    .catch Ljava/lang/IllegalStateException; {:try_start_0 .. :try_end_0} :catch_0
+
+    move-object/from16 v0, p0
+
+    iget-object v11, v0, Lcom/android/settings/SettingsActivity;->mSearchView:Landroid/widget/SearchView;
+
+    const/4 v12, 0x3
+
+    invoke-virtual {v11, v12}, Landroid/widget/SearchView;->setImeOptions(I)V
+
+    :try_start_1
+    move-object/from16 v0, p0
+
+    iget-object v11, v0, Lcom/android/settings/SettingsActivity;->mSearchView:Landroid/widget/SearchView;
+
+    move-object/from16 v0, p0
+
+    iget-object v12, v0, Lcom/android/settings/SettingsActivity;->mSearchView:Landroid/widget/SearchView;
+
+    invoke-virtual {v12}, Landroid/widget/SearchView;->getContext()Landroid/content/Context;
+
+    move-result-object v12
+
+    invoke-virtual {v12}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
+
+    move-result-object v12
+
+    const-string/jumbo v13, "android:id/search_src_text"
+
+    const/4 v14, 0x0
+
+    const/4 v15, 0x0
+
+    invoke-virtual {v12, v13, v14, v15}, Landroid/content/res/Resources;->getIdentifier(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v12
+
+    invoke-virtual {v11, v12}, Landroid/widget/SearchView;->findViewById(I)Landroid/view/View;
+
+    move-result-object v3
+
+    check-cast v3, Landroid/widget/EditText;
+
+    new-instance v5, Lcom/android/settings/Utils$LengthFilter;
+
+    sget-object v11, Lcom/android/settings/SettingsActivity;->mContext:Landroid/content/Context;
+
+    invoke-direct {v5, v11}, Lcom/android/settings/Utils$LengthFilter;-><init>(Landroid/content/Context;)V
+
+    const/16 v11, 0x64
+
+    invoke-virtual {v5, v11}, Lcom/android/settings/Utils$LengthFilter;->setMaxLength(I)V
+
+    const/4 v11, 0x1
+
+    new-array v11, v11, [Landroid/text/InputFilter;
 
     const/4 v12, 0x0
 
-    const/4 v13, 0x0
+    aput-object v5, v11, v12
 
-    invoke-virtual {v10, v11, v12, v13}, Landroid/content/res/Resources;->getIdentifier(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)I
+    invoke-virtual {v3, v11}, Landroid/widget/EditText;->setFilters([Landroid/text/InputFilter;)V
 
-    move-result v10
+    const-string/jumbo v11, "disableEmoticonInput=true"
 
-    invoke-virtual {v9, v10}, Landroid/widget/SearchView;->findViewById(I)Landroid/view/View;
+    invoke-virtual {v3, v11}, Landroid/widget/EditText;->setPrivateImeOptions(Ljava/lang/String;)V
 
-    move-result-object v1
+    new-instance v11, Lcom/android/settings/SettingsActivity$5;
 
-    check-cast v1, Landroid/widget/EditText;
+    move-object/from16 v0, p0
 
-    new-instance v3, Lcom/android/settings/Utils$LengthFilter;
+    invoke-direct {v11, v0}, Lcom/android/settings/SettingsActivity$5;-><init>(Lcom/android/settings/SettingsActivity;)V
 
-    sget-object v9, Lcom/android/settings/SettingsActivity;->mContext:Landroid/content/Context;
-
-    invoke-direct {v3, v9}, Lcom/android/settings/Utils$LengthFilter;-><init>(Landroid/content/Context;)V
-
-    const/16 v9, 0x64
-
-    invoke-virtual {v3, v9}, Lcom/android/settings/Utils$LengthFilter;->setMaxLength(I)V
-
-    const/4 v9, 0x1
-
-    new-array v9, v9, [Landroid/text/InputFilter;
-
-    const/4 v10, 0x0
-
-    aput-object v3, v9, v10
-
-    invoke-virtual {v1, v9}, Landroid/widget/EditText;->setFilters([Landroid/text/InputFilter;)V
-
-    const-string/jumbo v9, "disableEmoticonInput=true"
-
-    invoke-virtual {v1, v9}, Landroid/widget/EditText;->setPrivateImeOptions(Ljava/lang/String;)V
-
-    new-instance v9, Lcom/android/settings/SettingsActivity$5;
-
-    invoke-direct {v9, p0}, Lcom/android/settings/SettingsActivity$5;-><init>(Lcom/android/settings/SettingsActivity;)V
-
-    invoke-virtual {v1, v9}, Landroid/widget/EditText;->setOnEditorActionListener(Landroid/widget/TextView$OnEditorActionListener;)V
-    :try_end_0
-    .catch Ljava/lang/NullPointerException; {:try_start_0 .. :try_end_0} :catch_0
-    .catch Ljava/lang/ClassCastException; {:try_start_0 .. :try_end_0} :catch_0
-    .catch Landroid/content/res/Resources$NotFoundException; {:try_start_0 .. :try_end_0} :catch_0
+    invoke-virtual {v3, v11}, Landroid/widget/EditText;->setOnEditorActionListener(Landroid/widget/TextView$OnEditorActionListener;)V
+    :try_end_1
+    .catch Ljava/lang/NullPointerException; {:try_start_1 .. :try_end_1} :catch_1
+    .catch Ljava/lang/ClassCastException; {:try_start_1 .. :try_end_1} :catch_1
+    .catch Landroid/content/res/Resources$NotFoundException; {:try_start_1 .. :try_end_1} :catch_1
 
     :goto_0
-    iget-object v9, p0, Lcom/android/settings/SettingsActivity;->mSearchMenuItem:Landroid/view/MenuItem;
+    move-object/from16 v0, p0
 
-    invoke-interface {v9, p0}, Landroid/view/MenuItem;->setOnActionExpandListener(Landroid/view/MenuItem$OnActionExpandListener;)Landroid/view/MenuItem;
+    iget-object v11, v0, Lcom/android/settings/SettingsActivity;->mSearchMenuItem:Landroid/view/MenuItem;
 
-    iget-object v9, p0, Lcom/android/settings/SettingsActivity;->mSearchView:Landroid/widget/SearchView;
+    move-object/from16 v0, p0
 
-    invoke-virtual {v9, p0}, Landroid/widget/SearchView;->setOnQueryTextListener(Landroid/widget/SearchView$OnQueryTextListener;)V
+    invoke-interface {v11, v0}, Landroid/view/MenuItem;->setOnActionExpandListener(Landroid/view/MenuItem$OnActionExpandListener;)Landroid/view/MenuItem;
 
-    iget-object v9, p0, Lcom/android/settings/SettingsActivity;->mSearchView:Landroid/widget/SearchView;
+    move-object/from16 v0, p0
 
-    invoke-virtual {v9, p0}, Landroid/widget/SearchView;->setOnCloseListener(Landroid/widget/SearchView$OnCloseListener;)V
+    iget-object v11, v0, Lcom/android/settings/SettingsActivity;->mSearchView:Landroid/widget/SearchView;
 
-    iget-boolean v9, p0, Lcom/android/settings/SettingsActivity;->mSearchMenuItemExpanded:Z
+    move-object/from16 v0, p0
 
-    if-eqz v9, :cond_5
+    invoke-virtual {v11, v0}, Landroid/widget/SearchView;->setOnQueryTextListener(Landroid/widget/SearchView$OnQueryTextListener;)V
 
-    iget-object v9, p0, Lcom/android/settings/SettingsActivity;->mSearchMenuItem:Landroid/view/MenuItem;
+    move-object/from16 v0, p0
 
-    invoke-interface {v9}, Landroid/view/MenuItem;->expandActionView()Z
+    iget-object v11, v0, Lcom/android/settings/SettingsActivity;->mSearchView:Landroid/widget/SearchView;
+
+    move-object/from16 v0, p0
+
+    invoke-virtual {v11, v0}, Landroid/widget/SearchView;->setOnCloseListener(Landroid/widget/SearchView$OnCloseListener;)V
+
+    move-object/from16 v0, p0
+
+    iget-boolean v11, v0, Lcom/android/settings/SettingsActivity;->mSearchMenuItemExpanded:Z
+
+    if-eqz v11, :cond_5
+
+    move-object/from16 v0, p0
+
+    iget-object v11, v0, Lcom/android/settings/SettingsActivity;->mSearchMenuItem:Landroid/view/MenuItem;
+
+    invoke-interface {v11}, Landroid/view/MenuItem;->expandActionView()Z
 
     :cond_5
-    iget-object v9, p0, Lcom/android/settings/SettingsActivity;->mSearchView:Landroid/widget/SearchView;
+    move-object/from16 v0, p0
 
-    const/4 v10, 0x1
+    iget-object v11, v0, Lcom/android/settings/SettingsActivity;->mSearchView:Landroid/widget/SearchView;
 
-    invoke-virtual {v9, v5, v10}, Landroid/widget/SearchView;->setQuery(Ljava/lang/CharSequence;Z)V
+    const/4 v12, 0x1
 
-    invoke-virtual {p0}, Lcom/android/settings/SettingsActivity;->getIntent()Landroid/content/Intent;
+    invoke-virtual {v11, v7, v12}, Landroid/widget/SearchView;->setQuery(Ljava/lang/CharSequence;Z)V
 
-    move-result-object v9
+    invoke-virtual/range {p0 .. p0}, Lcom/android/settings/SettingsActivity;->getIntent()Landroid/content/Intent;
 
-    invoke-virtual {v9}, Landroid/content/Intent;->getComponent()Landroid/content/ComponentName;
+    move-result-object v11
 
-    move-result-object v9
+    invoke-virtual {v11}, Landroid/content/Intent;->getComponent()Landroid/content/ComponentName;
 
-    invoke-virtual {v9}, Landroid/content/ComponentName;->getClassName()Ljava/lang/String;
+    move-result-object v11
 
-    move-result-object v9
+    invoke-virtual {v11}, Landroid/content/ComponentName;->getClassName()Ljava/lang/String;
 
-    const-class v10, Lcom/android/settings/Settings;
+    move-result-object v11
 
-    invoke-virtual {v10}, Ljava/lang/Class;->getName()Ljava/lang/String;
+    const-class v12, Lcom/android/settings/Settings;
 
-    move-result-object v10
+    invoke-virtual {v12}, Ljava/lang/Class;->getName()Ljava/lang/String;
 
-    invoke-virtual {v9, v10}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    move-result-object v12
 
-    move-result v2
+    invoke-virtual {v11, v12}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    if-eqz v2, :cond_6
+    move-result v4
 
-    iget-boolean v9, p0, Lcom/android/settings/SettingsActivity;->mSearchMenuItemExpanded:Z
+    if-eqz v4, :cond_6
 
-    if-eqz v9, :cond_7
+    move-object/from16 v0, p0
+
+    iget-boolean v11, v0, Lcom/android/settings/SettingsActivity;->mSearchMenuItemExpanded:Z
+
+    if-eqz v11, :cond_7
 
     :cond_6
     :goto_1
-    const/4 v9, 0x1
+    const/4 v11, 0x1
 
-    return v9
+    return v11
 
     :catch_0
-    move-exception v0
+    move-exception v1
 
-    invoke-virtual {v0}, Ljava/lang/RuntimeException;->printStackTrace()V
+    const-string/jumbo v11, "Settings"
+
+    const-string/jumbo v12, "Failed to getSearchableInfo()"
+
+    invoke-static {v11, v12, v1}, Landroid/util/Log;->secD(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
+
+    const/4 v11, 0x0
+
+    return v11
+
+    :catch_1
+    move-exception v2
+
+    invoke-virtual {v2}, Ljava/lang/RuntimeException;->printStackTrace()V
 
     goto :goto_0
 
     :cond_7
-    sget-object v9, Lcom/android/settings/SettingsActivity;->mContext:Landroid/content/Context;
+    sget-object v11, Lcom/android/settings/SettingsActivity;->mContext:Landroid/content/Context;
 
-    invoke-static {v9}, Lcom/android/settings/Utils;->isSupportGraceUXHeroView(Landroid/content/Context;)Z
+    invoke-static {v11}, Lcom/android/settings/Utils;->isSupportGraceUXHeroView(Landroid/content/Context;)Z
 
-    move-result v9
+    move-result v11
 
-    if-eqz v9, :cond_8
-
-    const/4 v9, 0x0
-
-    const/4 v10, 0x1
+    if-eqz v11, :cond_8
 
     const/4 v11, 0x0
 
-    const v12, 0x7f0b11dc
+    const/4 v12, 0x1
 
-    invoke-interface {p1, v9, v10, v11, v12}, Landroid/view/Menu;->add(IIII)Landroid/view/MenuItem;
+    const/4 v13, 0x0
 
-    const/4 v9, 0x1
+    const v14, 0x7f0b11eb
 
-    invoke-interface {p1, v9}, Landroid/view/Menu;->findItem(I)Landroid/view/MenuItem;
+    move-object/from16 v0, p1
 
-    move-result-object v9
+    invoke-interface {v0, v11, v12, v13, v14}, Landroid/view/Menu;->add(IIII)Landroid/view/MenuItem;
 
-    iput-object v9, p0, Lcom/android/settings/SettingsActivity;->mMore:Landroid/view/MenuItem;
+    const/4 v11, 0x1
+
+    move-object/from16 v0, p1
+
+    invoke-interface {v0, v11}, Landroid/view/Menu;->findItem(I)Landroid/view/MenuItem;
+
+    move-result-object v11
+
+    move-object/from16 v0, p0
+
+    iput-object v11, v0, Lcom/android/settings/SettingsActivity;->mMore:Landroid/view/MenuItem;
 
     goto :goto_1
 
     :cond_8
-    sget-object v9, Lcom/android/settings/SettingsActivity;->mContext:Landroid/content/Context;
+    sget-object v11, Lcom/android/settings/SettingsActivity;->mContext:Landroid/content/Context;
 
-    invoke-static {v9}, Lcom/android/settings/Utils;->isSupportGraceUXForVZW(Landroid/content/Context;)Z
+    invoke-static {v11}, Lcom/android/settings/Utils;->isSupportGraceUXForVZW(Landroid/content/Context;)Z
 
-    move-result v9
+    move-result v11
 
-    if-eqz v9, :cond_6
-
-    const/4 v9, 0x0
-
-    const/4 v10, 0x1
+    if-eqz v11, :cond_6
 
     const/4 v11, 0x0
 
-    const v12, 0x7f0b11dd
+    const/4 v12, 0x1
 
-    invoke-interface {p1, v9, v10, v11, v12}, Landroid/view/Menu;->add(IIII)Landroid/view/MenuItem;
+    const/4 v13, 0x0
 
-    const/4 v9, 0x1
+    const v14, 0x7f0b11ec
 
-    invoke-interface {p1, v9}, Landroid/view/Menu;->findItem(I)Landroid/view/MenuItem;
+    move-object/from16 v0, p1
 
-    move-result-object v9
+    invoke-interface {v0, v11, v12, v13, v14}, Landroid/view/Menu;->add(IIII)Landroid/view/MenuItem;
 
-    iput-object v9, p0, Lcom/android/settings/SettingsActivity;->mMore:Landroid/view/MenuItem;
+    const/4 v11, 0x1
+
+    move-object/from16 v0, p1
+
+    invoke-interface {v0, v11}, Landroid/view/Menu;->findItem(I)Landroid/view/MenuItem;
+
+    move-result-object v11
+
+    move-object/from16 v0, p0
+
+    iput-object v11, v0, Lcom/android/settings/SettingsActivity;->mMore:Landroid/view/MenuItem;
 
     goto :goto_1
 .end method

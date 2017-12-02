@@ -597,7 +597,7 @@
 
     move-result v4
 
-    if-eqz v4, :cond_5
+    if-eqz v4, :cond_7
 
     :cond_2
     if-eqz v0, :cond_3
@@ -606,7 +606,7 @@
 
     move-result v4
 
-    if-eqz v4, :cond_5
+    if-eqz v4, :cond_7
 
     :cond_3
     :goto_0
@@ -628,8 +628,15 @@
 
     move-result v4
 
-    if-eqz v4, :cond_6
+    if-nez v4, :cond_4
 
+    invoke-static {p1}, Lcom/android/settings/Utils;->isDesktopMode(Landroid/content/Context;)Z
+
+    move-result v4
+
+    if-eqz v4, :cond_8
+
+    :cond_4
     iput v6, v2, Lcom/android/settings/search/SearchIndexableRaw;->menu_type:I
 
     :goto_1
@@ -685,14 +692,15 @@
 
     move-result v4
 
-    if-nez v4, :cond_4
+    if-nez v4, :cond_9
 
     invoke-static {}, Landroid/os/UserHandle;->myUserId()I
 
     move-result v4
 
-    if-eqz v4, :cond_4
+    if-eqz v4, :cond_9
 
+    :goto_2
     const/4 v2, 0x0
 
     new-instance v2, Lcom/android/settings/search/SearchIndexableRaw;
@@ -707,10 +715,31 @@
 
     invoke-interface {v3, v2}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    :cond_4
+    :cond_5
+    invoke-static {p1}, Lcom/android/settings/Utils;->isDesktopMode(Landroid/content/Context;)Z
+
+    move-result v4
+
+    if-eqz v4, :cond_6
+
+    const/4 v2, 0x0
+
+    new-instance v2, Lcom/android/settings/search/SearchIndexableRaw;
+
+    invoke-direct {v2, p1}, Lcom/android/settings/search/SearchIndexableRaw;-><init>(Landroid/content/Context;)V
+
+    const-string/jumbo v4, "auto_brightness"
+
+    iput-object v4, v2, Lcom/android/settings/search/SearchIndexableRaw;->key:Ljava/lang/String;
+
+    iput v6, v2, Lcom/android/settings/search/SearchIndexableRaw;->menu_type:I
+
+    invoke-interface {v3, v2}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+
+    :cond_6
     return-object v3
 
-    :cond_5
+    :cond_7
     const/4 v2, 0x0
 
     new-instance v2, Lcom/android/settings/search/SearchIndexableRaw;
@@ -725,14 +754,23 @@
 
     invoke-interface {v3, v2}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    goto :goto_0
+    goto/16 :goto_0
 
-    :cond_6
+    :cond_8
     const/4 v4, 0x2
 
     iput v4, v2, Lcom/android/settings/search/SearchIndexableRaw;->menu_type:I
 
-    goto :goto_1
+    goto/16 :goto_1
+
+    :cond_9
+    invoke-static {p1}, Lcom/android/settings/Utils;->isDesktopMode(Landroid/content/Context;)Z
+
+    move-result v4
+
+    if-eqz v4, :cond_5
+
+    goto :goto_2
 .end method
 
 .method public getXmlResourcesToIndex(Landroid/content/Context;Z)Ljava/util/List;
@@ -765,7 +803,7 @@
 
     iput-object v5, v4, Landroid/provider/SearchIndexableResource;->className:Ljava/lang/String;
 
-    const v5, 0x7f0800e5
+    const v5, 0x7f0800e7
 
     iput v5, v4, Landroid/provider/SearchIndexableResource;->xmlResId:I
 
@@ -783,7 +821,7 @@
 
     move-result-object v5
 
-    const v6, 0x7f0b06ec
+    const v6, 0x7f0b06ed
 
     invoke-virtual {v5, v6}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 

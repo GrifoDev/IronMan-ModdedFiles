@@ -70,7 +70,7 @@
 
     const/4 v10, 0x0
 
-    const v9, 0x7f0b0f1e
+    const v9, 0x7f0b0f2d
 
     const/4 v6, 0x1
 
@@ -78,13 +78,13 @@
 
     move-result-object v7
 
-    const v8, 0x7f0403d2
+    const v8, 0x7f0403d5
 
     invoke-virtual {v7, v8, v10}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;)Landroid/view/View;
 
     move-result-object v4
 
-    const v7, 0x7f1109a9
+    const v7, 0x7f1109ac
 
     invoke-virtual {v4, v7}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -128,7 +128,7 @@
 
     iget-object v8, p0, Lcom/android/settings/wifi/WifiSnsPoorConnectionActivity;->mContext:Landroid/content/Context;
 
-    const v9, 0x7f0b15b6
+    const v9, 0x7f0b15c8
 
     invoke-virtual {v8, v9}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -153,7 +153,7 @@
 
     invoke-virtual {v2, v6}, Landroid/app/AlertDialog$Builder;->setInverseBackgroundForced(Z)Landroid/app/AlertDialog$Builder;
 
-    const v7, 0x7f0b0f1f
+    const v7, 0x7f0b0f2e
 
     invoke-virtual {v2, v7}, Landroid/app/AlertDialog$Builder;->setTitle(I)Landroid/app/AlertDialog$Builder;
 
@@ -184,7 +184,7 @@
 
     iget-object v5, p0, Lcom/android/settings/wifi/WifiSnsPoorConnectionActivity;->mContext:Landroid/content/Context;
 
-    const v7, 0x7f0b1586
+    const v7, 0x7f0b1598
 
     invoke-virtual {v5, v7}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -291,7 +291,7 @@
 
     iget-object v8, p0, Lcom/android/settings/wifi/WifiSnsPoorConnectionActivity;->mContext:Landroid/content/Context;
 
-    const v9, 0x7f0b15b3
+    const v9, 0x7f0b15c5
 
     invoke-virtual {v8, v9}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -332,7 +332,7 @@
 
     iget-object v8, p0, Lcom/android/settings/wifi/WifiSnsPoorConnectionActivity;->mContext:Landroid/content/Context;
 
-    const v9, 0x7f0b15b2
+    const v9, 0x7f0b15c4
 
     invoke-virtual {v8, v9}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 

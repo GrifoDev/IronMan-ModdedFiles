@@ -376,7 +376,7 @@
 
     iput-object v0, p0, Lcom/android/settings/TrustAgentSettings;->mDpm:Landroid/app/admin/DevicePolicyManager;
 
-    const v0, 0x7f08013c
+    const v0, 0x7f08013e
 
     invoke-virtual {p0, v0}, Lcom/android/settings/TrustAgentSettings;->addPreferencesFromResource(I)V
 

@@ -17,11 +17,11 @@
 
     iput-object p1, p0, Lcom/android/settings/accessibility/PresetPreference;->mContext:Landroid/content/Context;
 
-    const v0, 0x7f04012b
+    const v0, 0x7f04012c
 
     invoke-virtual {p0, v0}, Lcom/android/settings/accessibility/PresetPreference;->setDialogLayoutResource(I)V
 
-    const v0, 0x7f04025d
+    const v0, 0x7f040260
 
     invoke-virtual {p0, v0}, Lcom/android/settings/accessibility/PresetPreference;->setListItemLayoutResource(I)V
 
@@ -49,7 +49,7 @@
 
     move-result-object v1
 
-    const v5, 0x7f1102f8
+    const v5, 0x7f1102fa
 
     invoke-virtual {p1, v5}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 

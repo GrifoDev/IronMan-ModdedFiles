@@ -170,6 +170,8 @@
     <string name="wifi_allow_scan_with_traffic_summary">Leiskite arba uždrauskite automatinius „Wi-Fi“ tarptinklinio ryšio nuskaitymus pagal panaudojamų duomenų kiekį.</string>
     <string name="select_logd_size_title">Jungimosi buferio dydis</string>
     <string name="select_logd_size_dialog_title">Pasirinkite didžiausią kiekvieno žurnalo buferio dydį</string>
+    <string name="dev_logpersist_clear_warning_title">Valyti nuol. registr. priemonės saugyklą?</string>
+    <string name="dev_logpersist_clear_warning_message">Registravimo priemonės duomenys bus ištrinti, kai nuolatinio registravimo priemonė bus išjungta.</string>
     <string name="select_logpersist_title">Saugoti žurnalo duomenis nuolat</string>
     <string name="select_logpersist_dialog_title">Rinktis nuolat saugomus žurnalo buferius</string>
     <string name="select_usb_configuration_title">USB konfigūracija</string>
@@ -982,6 +984,7 @@ Tai vėliau galėsite pakeisti „Bluetooth“ nustatymuose."</string>
     <string name="bluetooth_avc_available_description">Prijungtas „Bluetooth“ įrenginys palaiko medijos garsumo sinchronizavimą, todėl „Bluetooth“ įrenginyje nustatytas garsumo lygis bus sinchronizuojamas su jūsų telefonu.</string>
     <string name="bluetooth_enter_pin_msg">Įveskite PIN norėdami susieti su %s (bandykite 0000 arba 1234).</string>
     <string name="bluetooth_pin_maximum_number_message">Pasiektas didžiausias simbolių skaičius.</string>
+    <string name="bluetooth_frp_permission_message">Šiam skambučiui negalima naudoti „Bluetooth“.</string>
     <string name="settings_menu_done">Atlikta</string>
     <string name="usb_tethering_unavailable_subtext_tmo">USB not connected</string>
     <string name="usb_tethering_available_subtext_tmo">USB connected, check to tether</string>
@@ -1481,7 +1484,7 @@ Bakstelėkite „Gerai“, kad leistumėte ryškumą padidinti virš saugaus lyg
     <string name="navigationbar_pressure_sensitivity_title">Stipriai spausk. pradžios mygt.</string>
     <string name="navigationbar_pressure_sensitivity_summary">Naudokitės pradžios mygtuku, kai jis slepiamas; tiesiog tada spustelėkite jį stipriau nei įprastai.</string>
     <string name="navigationbar_pressure_sensitivity_level_summary">Spaudimo lygis: %1$d/%2$d</string>
-    <string name="navigationbar_pressure_sensitivity_description_off">Naudokitės pradžios mygtuku, kai jis slepiamas; tiesiog tada spustelėkite jį stipriau nei įprastai.</string>
+    <string name="navigationbar_pressure_sensitivity_description_off">Reguliuokite spaudimo stiprumą, kurio reikia pradžios mygtukui paspausti.</string>
     <string name="navigationbar_pressure_low">Švelniau</string>
     <string name="navigationbar_pressure_high">Stipriau</string>
     <string name="navigationbar_hide_bar">Rodymo ir slėpimo mygtukas</string>
@@ -1620,7 +1623,7 @@ Bakstelėkite „Gerai“, kad leistumėte ryškumą padidinti virš saugaus lyg
     <string name="crypt_keeper_decrypt_title">Iššifruoti įrenginį</string>
     <string name="crypt_keeper_decrypt_summary">Įrenginys užšifruotas.</string>
     <string name="crypt_keeper_type_pin">PIN kodas</string>
-    <string name="crypt_keeper_type_pattern">Šablonas</string>
+    <string name="crypt_keeper_type_pattern">šablonas</string>
     <string name="crypt_keeper_type_password">Slaptažodis</string>
     <string name="crypt_keeper_type_direction">Kryptinis užraktas</string>
     <string name="crypt_keeper_confirm_title_dec">Patvirtinti iššifravimą</string>
@@ -1704,7 +1707,11 @@ Atsižvelgiant į duomenų kiekį, šifruojama gali būti ilgai. Prieš pradėda
     <string name="crypt_keeper_confirm_title">Patvirtinti šifravimą</string>
     <string name="crypt_keeper_final_desc">Įrenginio šifravimo veiksmo negalima atšaukti, o nutraukus procesą galima prarasti duomenis. Šifravimas trunka valandą arba ilgiau. Per šį laiką įrenginys kelis kartus bus paleistas iš naujo ir juo negalėsite naudotis.</string>
     <string name="crypt_keeper_setup_title">Šifruojama…</string>
-    <string name="crypt_keeper_warn_wipe">Jums liko %d bandymai (-ų) paleisti įrenginį, tada jis bus nustatytas iš naujo atkuriant numatytuosius gamyklinius nustatymus. Dėl to bus ištrinti visi įrenginio duomenys, įskaitant failus ir atsisiųstas programas.</string>
+    <string name="crypt_keeper_warn_wipe">"Jums liko %1$d band., tada telefonas bus nustatytas iš naujo atkuriant gamyklinius numatytuosius nustatymus. Taip bus ištrinti visi duomenys, įskaitant failus ir atsisiųstas programas.
+
+Jei telefonas bus nustatytas, iš naujo gali tekti įvesti su šiuo telefonu susietą %2$s informaciją (el. pašto adresą ir slaptažodį), kad jį vėl būtų galima naudoti."</string>
+    <string name="crypt_keeper_samsung_account">Samsung account</string>
+    <string name="crypt_keeper_google_account">„Google“ paskyra</string>
     <string name="crypt_keeper_failed_title">Užšifruoti nepavyko</string>
     <string name="crypt_keeper_failed_summary">Neįmanoma paleisti įrenginio. Šifravimo procesas buvo nutrauktas. Turite iš naujo nustatyti gamyklinius numatytuosius įrenginio nustatymus. Taip bus ištrinti visi duomenys.</string>
     <string name="crypt_keeper_data_corrupted_title">Įrenginio atmintis sugadinta</string>
@@ -1723,11 +1730,14 @@ Atsižvelgiant į duomenų kiekį, šifruojama gali būti ilgai. Prieš pradėda
     <string name="cryptkeeper_wrong_pin">Įvestas neteisingas PIN kodas</string>
     <string name="cryptkeeper_wrong_direction">Brėžiate netinkama kryptimi</string>
     <string name="checking_decryption">Tikrinama…</string>
-    <string name="crypt_keeper_last_warn_wipe">Jums liko tik 1 bandymas paleisti įrenginį, tada jis bus nustatytas iš naujo atkuriant numatytuosius gamyklinius nustatymus. Dėl to bus ištrinti visi įrenginio duomenys, įskaitant failus ir atsisiųstas programas.</string>
+    <string name="crypt_keeper_last_warn_wipe">"Jums liko 1 bandymas, tada telefonas bus nustatytas iš naujo atkuriant gamyklinius numatytuosius nustatymus. Taip bus ištrinti visi duomenys, įskaitant failus ir atsisiųstas programas.
+
+Jei telefonas bus nustatytas, iš naujo gali tekti įvesti su šiuo telefonu susietą %s informaciją (el. pašto adresą ir slaptažodį), kad jį vėl būtų galima naudoti."</string>
     <string name="crypt_keeper_failed_title_dec">"Iššifruoti
 nepavyko."</string>
     <string name="crypt_keeper_failed_summary_dec">Neįmanoma baigti iššifruoti dėl trikdžių. Prieš naudodami atkurkite gamyklinius duomenų nustatymus (ištrindami visus duomenis).</string>
     <string name="crypt_keeper_set_screen_lock_type">Nustatyti ekrano užrakto tipą</string>
+    <string name="crypt_keeper_warning_keyboard_cover_does_not_work">Paleidus telefoną iš naujo klaviatūros dangtelis neveiks.</string>
     <string name="encryption_interstitial_message">"Reikalaudami įvesti %s prieš paleidžiant telefoną galite dar labiau sustiprinti jo saugumą. Tai padės apsaugoti jūsų duomenis, jei telefoną pamesite arba jį pavogs. Pagal įrenginio šifravimo politiką kai kuriose programose gali būti reikalaujama saugiojo paleidimo, kad būtų galima pasiekti tokias funkcijas kaip el. pašto sinchronizavimas.
 
 Kol telefonas nebus paleistas, negalėsite priimti skambučių, žinučių ar pranešimų, o signalai neskambės."</string>
@@ -1972,6 +1982,12 @@ You will also need it when:"</string>
     <string name="lockpassword_confirm_your_pin_with_fingerprint">Naudokite piršto atspaudą arba įveskite dabartinį PIN.</string>
     <string name="lockpassword_confirm_your_pattern_with_fingerprint">Naudokite piršto atspaudą arba nupieškite dabartinį šabloną.</string>
     <string name="lockpassword_confirm_your_password_with_fingerprint">Naudokite piršto atspaudą arba įveskite dabartinį slaptažodį.</string>
+    <string name="lockpassword_confirm_your_pin_with_iris">Naudokite raineles arba įveskite dabartinį PIN.</string>
+    <string name="lockpassword_confirm_your_pattern_with_iris">Naudokite raineles arba nupieškite dabartinį šabloną.</string>
+    <string name="lockpassword_confirm_your_password_with_iris">Naudokite raineles arba įveskite dabartinį slaptažodį.</string>
+    <string name="lockpassword_confirm_your_pin_with_biometrics">Naudoti biometrinius duomenis arba įvesti PIN.</string>
+    <string name="lockpassword_confirm_your_pattern_with_biometrics">Naudoti biometrinius duomenis arba nupiešti savo šabloną.</string>
+    <string name="lockpassword_confirm_your_password_with_biometrics">Naudoti biometrinius duomenis arba įvesti slaptažodį.</string>
     <string name="lockpassword_confirm_your_pin_instead_of_fingerprint">Vietoje pirštų atspaudų atpažinimo įveskite PIN.</string>
     <string name="lockpassword_confirm_your_pattern_instead_of_fingerprint">Vietoje pirštų atspaudų atpažinimo nupieškite šabloną.</string>
     <string name="lockpassword_confirm_your_password_instead_of_fingerprint">Vietoje pirštų atspaudų atpažinimo įveskite slaptažodį.</string>
@@ -2046,6 +2062,7 @@ Pasirinkite, kaip norite atrakinti savo telefoną. Vienu metu negalima naudoti a
     <string name="face_status_timeout">Baigėsi skirtas laikas. Pabandykite vėliau.</string>
     <string name="okay">GERAI</string>
     <string name="face_samsung_account_button">Naud. „Samsung account“</string>
+    <string name="face_galaxy_account_button">Naudoti „Galaxy“ paskyrą</string>
     <string name="face_error_DB_corrupted">Kilo problema dėl jūsų veido duomenų. Užregistruokite savo veidą dar kartą.</string>
     <string name="face_error_DB_corrupted_popup_title">Užregistruokite savo veidą dar kartą</string>
     <string name="face_error_timeout">Jūsų veido nepavyko aptikti.</string>
@@ -2156,7 +2173,7 @@ Jei telefonui atrakinti su %2$s norite naudoti ir biometrinius duomenis, įjunki
     <string name="biometrics_backup_locktype_title">Nustatyti rainelės saugą</string>
     <string name="biometrics_register_your_iris">Užregistruokite savo raineles.</string>
     <string name="biometrics_backup_locktype_summary">Jei norite naudoti raineles įrenginiui atrakinti, turite nustatyti šabloną, PIN arba slaptažodį.</string>
-    <string name="biometrics_backup_locktype_message">Jei telefonui atrakinti arba saugiam patvirtinimui norite naudoti raineles, turite:</string>
+    <string name="biometrics_backup_locktype_message">Jei telefonui atrakinti arba jūsų tapatybės programose patvirtinimui norite naudoti raineles, turite:</string>
     <string name="iris_delete_popup_title">Šalinti rainelių duomenis?</string>
     <string name="iris_delete_popup_message">Šalinti rainelių duomenis?</string>
     <string name="iris_delete_popup_message_with_related_func">Raineles naudojančios funkcijos bus išjungtos.</string>
@@ -2232,6 +2249,9 @@ Pasirinkite, kaip norite atrakinti savo telefoną. Atrakinimas rainele ir atraki
     <string name="biometrics_dex_cant_use_msg">„Samsung DeX“ negalima naudoti %s.</string>
     <string name="biometrics_dex_closed_to_switch">%s uždaryta, kad būtų įjungta „Samsung DeX“.</string>
     <string name="biometircs_dex_cant_use_toast">„Samsung DeX“ negalima paleisti %s. Pabandykite paleisti naudodami telefono režimą.</string>
+    <string name="iris_guide_text_preview">Žr. čia ir naud.rainel.</string>
+    <string name="iris_guide_enable_toggle">Bakst. ir naudokite raineles</string>
+    <string name="iris_cannot_verify">Nepavyko patvirtinti rainelių</string>
     <string name="knox_twofactor_bio_description">Pasirinkite biometrinio užrakto tipą ir antrąjį užrakinimo būdą, kad atrakintumėte %s.</string>
     <string name="fingerprint_registered">Registruoti pirštų atspaudai bus naudojami su pasirinktu atrakinimo būdu.</string>
     <string name="knox_twofactor_description">Pasirinkite savo biometrinius duomenis ir antrąjį %s užrakinimo tipą.</string>
@@ -3094,6 +3114,7 @@ Bandykite dar kartą."</string>
     <string name="easy_mode_app_help">Paprastesnis pradžios ekrano išdėstymas ir didesni elementai ekrane leis lengviau naudotis įrenginiu.</string>
     <string name="easy_mode_app_help_dream_1">Naudoti paprastą pradžios ekrano išdėstymą ir didesnius ekrano elementus.</string>
     <string name="easy_mode_app_help_dream_2">Visi jūsų atlikti pradžios ekrano tinkinimai bus panaikinti ir bus nustatytas didžiausias ekrano mastelis.</string>
+    <string name="easy_mode_app_help_3rd_launcher">Didesniems ekrane rodomiems elementams taikyti paprastąjį režimą. Jei nesinaudojate „TouchWiz“ pradžios ekranu, jūsų pradžios ekrano išdėstymas nepasikeis, bet ekrano priartinimas bus nustatytas į didžiausią reikšmę, o šrifto dydis bus vidutinis.</string>
     <string name="security_warning_content">Galite apsaugoti savo privatumą nustatydami ekrano atrakinimo slaptažodį, PIN kodą ar atrakinimo šabloną</string>
     <string name="lock_setting_weather_desc">Norėdami peržiūrėti ar pakeisti orų nustatymus, bakstelėkite ORŲ NUSTATYMUS toliau.</string>
     <string name="lock_setting_weather_btn">Orų nustatymai</string>
@@ -3340,7 +3361,7 @@ Downloading via mobile networks may result in additional charges depending on yo
     <string name="disable_hovering_title">Išjungti peržiūrą gestais</string>
     <string name="disable_hovering_summary">Peržiūros gestais ir „Talkback“ funkcijos negali būti įjungtos vienu metu. Peržiūra gestais bus išjungta.</string>
     <string name="pen_settings_pen_input">Tiesiog. rašiklio įvestis</string>
-    <string name="action_memo_onoff_screen_title">Įraš.išjung.ekr.</string>
+    <string name="action_memo_onoff_screen_title">Išjungto ekrano įrašas</string>
     <string name="screen_off_note_summary">Užsirašykite pastabas, kai ekranas išjungtas. Tiesiog išimkite „S Pen“ ir pradėkite rašyti.</string>
     <string name="screen_off_note_summary_jpn">Kurkite pastabas išėmę „S Pen“, kai ekranas išjungtas, tada rašykite ekrane. Išjungto ekrano įrašai bus išsaugoti „Galaxy Notes“.</string>
     <string name="screen_off_note_summary_no_detach">Kurkite pastabas paspausdami rašiklio mygtuką, bakstelėdami ekraną, kai jis išjungtas, ir rašydami jame. Išjungto ekrano įrašai bus išsaugoti „Samsung Notes“.</string>
@@ -3947,7 +3968,7 @@ Mobiliosios saitvietės naudojimas padidina akumuliatoriaus energijos sąnaudas 
     <string name="wfd_descrpition_playsound">Groti garsą.</string>
     <string name="wfd_is_not_supported">Ši funkcija nepalaikoma.</string>
     <string name="usbtethering_notify_wifi_is_on_title">Išjungti „Wi-Fi“?</string>
-    <string name="usbtethering_notify_wifi_is_on">„Wi-Fi“ ir USB siejimas negali būti įjungti vienu metu. Išjunkite „Wi-Fi“.</string>
+    <string name="usbtethering_notify_wifi_is_on">„Wi-Fi“ ir USB siejimo negalima įjungti vienu metu. „Wi-Fi“ bus išjungtas.</string>
     <string name="disable_multi_window_dialog_text">Kelių langų režimas bus išjungtas, o visos iškylančiuosiuose languose atidarytos programos uždarytos.</string>
     <string name="keyguard_password_attempt_count_pin_code">%d likęs bandymas.</string>
     <string name="keyguard_password_attempts_count_pin_code">%d likę bandymai.</string>
@@ -4155,6 +4176,7 @@ SMS gavimas"</string>
     <string name="hdmi_mode_title">HDMI režimas</string>
     <string name="hdmi_mode_dex">Samsung DeX</string>
     <string name="hdmi_mode_mirroring">Screen Mirroring</string>
+    <string name="hdmi_mode_not_available_while_cover_attached">%s neveikia, kai viršelis uždėtas.</string>
     <string name="screen_timeout_for_dex">Samsung DeX ekr. skirt. laikas</string>
     <string name="show_virtual_keyboard_for_dex">„Samsung DeX“ rodyti ekrano klaviatūrą</string>
     <string name="comma">,</string>
@@ -4463,7 +4485,7 @@ Tai vėliau galėsite pakeisti „Bluetooth“ nustatymuose."</string>
     <string name="date_picker_title">Data</string>
     <string name="time_picker_title">Laikas</string>
     <string name="lock_after_timeout">Užrakinti automatiškai</string>
-    <string name="lock_after_timeout_summary">Kai ekranas automatiškai išsijungia, jis užrakinamas praėjus %s.</string>
+    <string name="lock_after_timeout_summary">Užrakinkite telefoną %s, kai ekranas išsijungia automatiškai.</string>
     <string name="lock_after_timeout_summary_with_exception">Užrakinti %1$s ekraną, kai jis automatiškai išsijungia, išskyrus tuomet, jei neužrakinamas naudojant %2$s.</string>
     <string name="show_owner_info_on_lockscreen_label">Rodyti informaciją apie įrenginio savininką užrakinimo ekrane.</string>
     <string name="owner_info_settings_title">Informac. apie savininką</string>
@@ -4611,6 +4633,8 @@ Siekiant pagerinti vietos tikslumą, programos ir paslaugos gali ieškoti „Wi-
     <string name="wifi_empty_list_user_restricted">Neturite leidimo keisti „Wi-Fi“ nustatymus.</string>
     <string name="wifi_setup_wps">Automatinė sąranka (WPS)</string>
     <string name="wifi_show_advanced">Rodyti išplėstines parinktis</string>
+    <string name="wifi_advanced_toggle_description_expanded">Bakstelėkite du kartus ir sutraukite.</string>
+    <string name="wifi_advanced_toggle_description_collapsed">Bakstelėkite du kartus ir išplėskite.</string>
     <string name="wifi_wps_setup_title">WPS sąranka</string>
     <string name="wifi_wps_setup_msg">Paleidžiamas WPS…</string>
     <string name="wifi_wps_onstart_pbc">Bakstelėkite „Wi-Fi“ apsaugotosios sąrankos mygtuką ant kelvedžio. Jis gali būti pavadintas WPS arba ant jo gali būti toks simbolis:</string>
@@ -4642,6 +4666,10 @@ Siekiant pagerinti vietos tikslumą, programos ir paslaugos gali ieškoti „Wi-
     <string name="wifi_shared">Bendrinama</string>
     <string name="wifi_unchanged">(nepakeista)</string>
     <string name="wifi_unspecified">(Nenurodyta)</string>
+    <string name="wifi_select_cert">Pasirinkite sertifikatą</string>
+    <string name="wifi_do_not_provide_eap_user_cert">Nepateikti</string>
+    <string name="wifi_do_not_validate_eap_server">Netikrinti</string>
+    <string name="wifi_do_not_validate_eap_server_warning">Nenurodytas sertifikatas. Jūsų ryšys nebus privatus.</string>
     <string name="wifi_scan_always_turnon_message">Kad būtų pagerintas vietos nustatymo tikslumas ir kitais tikslais, %s prašo leidimo ieškoti „Wi-Fi“ tinklų, net jei „Wi-Fi“ išjungta. Leisti tai daryti visoms programoms?</string>
     <string name="wifi_scan_always_confirm_allow">Leisti</string>
     <string name="wifi_scan_always_confirm_deny">Atmesti</string>
@@ -4976,9 +5004,9 @@ Kad veikimas būtų geresnis, galbūt vertėtų naudoti spartesnę SD kortelę a
     <string name="restore_default_apn_completed">Atkurti numatytieji APN nustatymai.</string>
     <string name="reset_network_desc">Dėl to bus nustatyti iš naujo visi tinklo nustatymai, įskaitant šiuos:</string>
     <string name="reset_network_button_text">Iš naujo nustatyti nustatymus</string>
-    <string name="reset_network_final_desc">Visi ryšio nustatymai bus nustatyti iš naujo. Šio veiksmo atšaukti negalima.</string>
+    <string name="reset_network_final_desc">Visi tinklo nustatymai bus nustatyti iš naujo. Šio veiksmo negalima atšaukti.</string>
     <string name="reset_network_final_button_text">Iš naujo nustatyti nustatymus</string>
-    <string name="reset_network_complete_toast">Ryšio nustatymai nustatyti iš naujo.</string>
+    <string name="reset_network_complete_toast">Tinklo nustatymai nustatyti iš naujo.</string>
     <string name="master_clear_title">Gamintojo duomenų atkūrimas</string>
     <string name="master_clear_accounts">Šiuo metu esate prisijungę prie šių paskyrų:</string>
     <string name="master_clear_other_users_present">Kitiems naudotojams priklausantys duomenys taip pat bus ištrinti.</string>
@@ -6091,6 +6119,7 @@ Kol įrenginys nebus paleistas, negausite jokių skambučių, žinučių ar pran
     <string name="set_data_limit">Nustatyti duomenų limitą</string>
     <string name="data_limit">Duomenų apribojimas</string>
     <string name="data_usage_template">%1$s naudota %2$s</string>
+    <string name="data_usage_template_wifi">Per pastarąsias 30 d. panaudota %s</string>
     <string name="data_usage_other_apps">Įtrauktos susijusios programos</string>
     <string name="data_saver_title">Duomenų taupymas</string>
     <string name="unrestricted_data_saver">Leisti progr. įj. duom. taupymą</string>
@@ -6141,6 +6170,7 @@ Kol įrenginys nebus paleistas, negausite jokių skambučių, žinučių ar pran
     <string name="legacy_dhcp_client_summary">DHCP kliento programos iš „Lollipop“ versijos naudojimas vietoje naujos „Android“ DHCP kliento programos.</string>
     <string name="screen_off_pocket_title">Laikyti ekraną išjungtą</string>
     <string name="screen_off_pocket_summary">Apsaugo ekraną nuo atsitiktinio įsijungimo, kai įrenginys yra tamsioje vietoje, pvz., kišenėje ar krepšyje.</string>
+    <string name="noApplications">Visos su šiuo veiksmu susijusios programos buvo išjungtos, pašalintos arba nebuvo įdiegtos.</string>
     <string name="confirm_reset_shortcut_manager_throttling_title">Atkuri trumpinių tvarkyklės spartos ribotuvą</string>
     <string name="confirm_reset_shortcut_manager_throttling_message">Trumpinių tvarkyklės spartos ribotuvo skaitiklis bus atkurtas.</string>
 </resources>

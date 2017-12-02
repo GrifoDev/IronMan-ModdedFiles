@@ -155,6 +155,61 @@
     goto :goto_0
 .end method
 
+.method private updateLanguageAndInputPreference()V
+    .locals 4
+
+    const/4 v3, 0x0
+
+    const-string/jumbo v2, "device_info_language_settings"
+
+    invoke-virtual {p0, v2}, Lcom/samsung/android/settings/GeneralDeviceSettings;->findPreference(Ljava/lang/CharSequence;)Landroid/preference/Preference;
+
+    move-result-object v0
+
+    check-cast v0, Landroid/preference/PreferenceScreen;
+
+    if-eqz v0, :cond_0
+
+    iget-object v2, p0, Lcom/samsung/android/settings/GeneralDeviceSettings;->mContext:Landroid/content/Context;
+
+    invoke-static {v2}, Lcom/android/settings/Utils;->getSamsungkeypadBadgeCount(Landroid/content/Context;)I
+
+    move-result v1
+
+    iget-object v2, p0, Lcom/samsung/android/settings/GeneralDeviceSettings;->mContext:Landroid/content/Context;
+
+    invoke-static {v2}, Lcom/android/settings/Utils;->getSamsungkeypadBadgeCount(Landroid/content/Context;)I
+
+    move-result v2
+
+    if-lez v2, :cond_1
+
+    const v2, 0x7f040243
+
+    invoke-virtual {v0, v2}, Landroid/preference/PreferenceScreen;->setWidgetLayoutResource(I)V
+
+    :goto_0
+    invoke-virtual {p0}, Lcom/samsung/android/settings/GeneralDeviceSettings;->getPreferenceScreen()Landroid/preference/PreferenceScreen;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Landroid/preference/PreferenceScreen;->getRootAdapter()Landroid/widget/ListAdapter;
+
+    move-result-object v2
+
+    check-cast v2, Landroid/widget/BaseAdapter;
+
+    invoke-virtual {v2}, Landroid/widget/BaseAdapter;->notifyDataSetChanged()V
+
+    :cond_0
+    return-void
+
+    :cond_1
+    invoke-virtual {v0, v3}, Landroid/preference/PreferenceScreen;->setWidgetLayoutResource(I)V
+
+    goto :goto_0
+.end method
+
 
 # virtual methods
 .method protected getMetricsCategory()I
@@ -164,7 +219,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f0f03f5
+    const v1, 0x7f0f03f4
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getInteger(I)I
 
@@ -234,7 +289,7 @@
 
     iput-object v0, v1, Lcom/samsung/android/settings/SettingsPreferenceFragmentLinkData;->intent:Landroid/content/Intent;
 
-    const v4, 0x7f0b1417
+    const v4, 0x7f0b1428
 
     iput v4, v1, Lcom/samsung/android/settings/SettingsPreferenceFragmentLinkData;->titleRes:I
 
@@ -279,7 +334,7 @@
 
     iput-object v0, v3, Lcom/samsung/android/settings/SettingsPreferenceFragmentLinkData;->intent:Landroid/content/Intent;
 
-    const v4, 0x7f0b1ab8
+    const v4, 0x7f0b1aca
 
     iput v4, v3, Lcom/samsung/android/settings/SettingsPreferenceFragmentLinkData;->titleRes:I
 
@@ -337,7 +392,7 @@
 
     iput-object v0, v2, Lcom/samsung/android/settings/SettingsPreferenceFragmentLinkData;->intent:Landroid/content/Intent;
 
-    const v4, 0x7f0b0ce0
+    const v4, 0x7f0b0cee
 
     iput v4, v2, Lcom/samsung/android/settings/SettingsPreferenceFragmentLinkData;->titleRes:I
 
@@ -779,7 +834,7 @@
 
     iget-object v9, p0, Lcom/samsung/android/settings/GeneralDeviceSettings;->mDateTimePref:Landroid/preference/Preference;
 
-    const v10, 0x7f040240
+    const v10, 0x7f040243
 
     invoke-virtual {v9, v10}, Landroid/preference/Preference;->setWidgetLayoutResource(I)V
 
@@ -1073,7 +1128,7 @@
 
     move-result-object v9
 
-    const v10, 0x7f0f03f6
+    const v10, 0x7f0f03f5
 
     invoke-virtual {v9, v10}, Landroid/content/res/Resources;->getInteger(I)I
 
@@ -1146,6 +1201,8 @@
     .locals 4
 
     invoke-super {p0}, Lcom/samsung/android/settings/SecSettingsPreferenceFragment;->onResume()V
+
+    invoke-direct {p0}, Lcom/samsung/android/settings/GeneralDeviceSettings;->updateLanguageAndInputPreference()V
 
     iget-object v0, p0, Lcom/samsung/android/settings/GeneralDeviceSettings;->mEmSettingsManager:Lcom/samsung/android/settings/bixby/EmSettingsManager;
 

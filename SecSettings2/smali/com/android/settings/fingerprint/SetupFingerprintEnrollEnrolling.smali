@@ -53,7 +53,7 @@
 
     invoke-super {p0}, Lcom/android/settings/fingerprint/FingerprintEnrollEnrolling;->initViews()V
 
-    const v1, 0x7f1103c1
+    const v1, 0x7f1103c3
 
     invoke-virtual {p0, v1}, Lcom/android/settings/fingerprint/SetupFingerprintEnrollEnrolling;->findViewById(I)Landroid/view/View;
 
@@ -118,7 +118,7 @@
     nop
 
     :pswitch_data_0
-    .packed-switch 0x7f1103c1
+    .packed-switch 0x7f1103c3
         :pswitch_0
     .end packed-switch
 .end method

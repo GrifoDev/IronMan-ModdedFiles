@@ -154,7 +154,7 @@
 
     if-eqz v0, :cond_2
 
-    const v1, 0x7f0b1cf6
+    const v1, 0x7f0b1d08
 
     :goto_1
     invoke-virtual {v2, v1}, Landroid/preference/PreferenceScreen;->setSummary(I)V
@@ -168,7 +168,7 @@
     goto :goto_0
 
     :cond_2
-    const v1, 0x7f0b1cf7
+    const v1, 0x7f0b1d09
 
     goto :goto_1
 .end method
@@ -208,7 +208,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f0401e2
+    const v2, 0x7f0401e5
 
     invoke-virtual {v1, v2, v3}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;)Landroid/view/View;
 
@@ -257,7 +257,7 @@
 
     invoke-super {p0, p1}, Lcom/samsung/android/settings/SecSettingsPreferenceFragment;->onCreate(Landroid/os/Bundle;)V
 
-    const v0, 0x7f0800bb
+    const v0, 0x7f0800bd
 
     invoke-virtual {p0, v0}, Lcom/samsung/android/settings/safetycare/PanicModeSettings;->addPreferencesFromResource(I)V
 
@@ -285,7 +285,7 @@
 
     move-result-object v2
 
-    const v3, 0x7f0401e2
+    const v3, 0x7f0401e5
 
     invoke-static {v2, v3, v4}, Landroid/view/View;->inflate(Landroid/content/Context;ILandroid/view/ViewGroup;)Landroid/view/View;
 
@@ -415,7 +415,7 @@
 
     iput-object p1, p0, Lcom/samsung/android/settings/safetycare/PanicModeSettings;->mTempView:Landroid/view/View;
 
-    const v4, 0x7f1105fe
+    const v4, 0x7f110600
 
     invoke-virtual {p1, v4}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -423,7 +423,7 @@
 
     check-cast v3, Landroid/widget/TextView;
 
-    const v4, 0x7f1105ff
+    const v4, 0x7f110601
 
     invoke-virtual {p1, v4}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -431,7 +431,7 @@
 
     check-cast v2, Landroid/widget/TextView;
 
-    const v4, 0x7f1105fd
+    const v4, 0x7f1105ff
 
     invoke-virtual {p1, v4}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -453,7 +453,7 @@
 
     if-nez v4, :cond_1
 
-    const v4, 0x7f0b0576
+    const v4, 0x7f0b0577
 
     invoke-virtual {v2, v4}, Landroid/widget/TextView;->setText(I)V
 
@@ -464,7 +464,7 @@
 
     if-eqz v4, :cond_2
 
-    const v4, 0x7f020485
+    const v4, 0x7f020487
 
     invoke-virtual {v1, v4}, Landroid/widget/ImageView;->setImageResource(I)V
 
@@ -483,14 +483,14 @@
     return-void
 
     :cond_1
-    const v4, 0x7f0b0575
+    const v4, 0x7f0b0576
 
     invoke-virtual {v2, v4}, Landroid/widget/TextView;->setText(I)V
 
     goto :goto_0
 
     :cond_2
-    const v4, 0x7f020484
+    const v4, 0x7f020486
 
     invoke-virtual {v1, v4}, Landroid/widget/ImageView;->setImageResource(I)V
 

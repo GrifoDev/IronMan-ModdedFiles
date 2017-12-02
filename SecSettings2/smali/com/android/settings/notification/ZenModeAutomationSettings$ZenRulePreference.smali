@@ -195,7 +195,7 @@
     :goto_2
     invoke-virtual {p0, v5}, Lcom/android/settings/notification/ZenModeAutomationSettings$ZenRulePreference;->setSelectable(Z)V
 
-    const v10, 0x7f0403e2
+    const v10, 0x7f0403e5
 
     invoke-virtual {p0, v10}, Lcom/android/settings/notification/ZenModeAutomationSettings$ZenRulePreference;->setWidgetLayoutResource(I)V
 
@@ -209,7 +209,7 @@
     :catch_0
     move-exception v1
 
-    const v10, 0x7f0201e8
+    const v10, 0x7f0201e6
 
     invoke-virtual {p0, v10}, Lcom/android/settings/notification/ZenModeAutomationSettings$ZenRulePreference;->setIcon(I)V
 
@@ -246,7 +246,7 @@
 
     invoke-super {p0, p1}, Landroid/preference/Preference;->onBindView(Landroid/view/View;)V
 
-    const v2, 0x7f1109d5
+    const v2, 0x7f1109d8
 
     invoke-virtual {p1, v2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 

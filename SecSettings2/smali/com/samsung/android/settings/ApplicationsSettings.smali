@@ -445,35 +445,35 @@
 .method public updatePref()V
     .locals 3
 
-    const v2, 0x7f040155
+    const v2, 0x7f040156
 
     iget-object v0, p0, Lcom/samsung/android/settings/ApplicationsSettings;->mAppManager:Landroid/preference/PreferenceScreen;
 
     invoke-virtual {v0, v2}, Landroid/preference/PreferenceScreen;->setLayoutResource(I)V
 
     iget-object v0, p0, Lcom/samsung/android/settings/ApplicationsSettings;->mAppManager:Landroid/preference/PreferenceScreen;
-
-    const v1, 0x7f020561
-
-    invoke-virtual {v0, v1}, Landroid/preference/PreferenceScreen;->setIcon(I)V
-
-    sget-object v0, Lcom/samsung/android/settings/ApplicationsSettings;->mAppPermission:Landroid/preference/PreferenceScreen;
-
-    invoke-virtual {v0, v2}, Landroid/preference/PreferenceScreen;->setLayoutResource(I)V
-
-    sget-object v0, Lcom/samsung/android/settings/ApplicationsSettings;->mAppPermission:Landroid/preference/PreferenceScreen;
-
-    const v1, 0x7f020562
-
-    invoke-virtual {v0, v1}, Landroid/preference/PreferenceScreen;->setIcon(I)V
-
-    iget-object v0, p0, Lcom/samsung/android/settings/ApplicationsSettings;->mAppLauncher:Landroid/preference/PreferenceScreen;
-
-    invoke-virtual {v0, v2}, Landroid/preference/PreferenceScreen;->setLayoutResource(I)V
-
-    iget-object v0, p0, Lcom/samsung/android/settings/ApplicationsSettings;->mAppLauncher:Landroid/preference/PreferenceScreen;
 
     const v1, 0x7f020563
+
+    invoke-virtual {v0, v1}, Landroid/preference/PreferenceScreen;->setIcon(I)V
+
+    sget-object v0, Lcom/samsung/android/settings/ApplicationsSettings;->mAppPermission:Landroid/preference/PreferenceScreen;
+
+    invoke-virtual {v0, v2}, Landroid/preference/PreferenceScreen;->setLayoutResource(I)V
+
+    sget-object v0, Lcom/samsung/android/settings/ApplicationsSettings;->mAppPermission:Landroid/preference/PreferenceScreen;
+
+    const v1, 0x7f020564
+
+    invoke-virtual {v0, v1}, Landroid/preference/PreferenceScreen;->setIcon(I)V
+
+    iget-object v0, p0, Lcom/samsung/android/settings/ApplicationsSettings;->mAppLauncher:Landroid/preference/PreferenceScreen;
+
+    invoke-virtual {v0, v2}, Landroid/preference/PreferenceScreen;->setLayoutResource(I)V
+
+    iget-object v0, p0, Lcom/samsung/android/settings/ApplicationsSettings;->mAppLauncher:Landroid/preference/PreferenceScreen;
+
+    const v1, 0x7f020565
 
     invoke-virtual {v0, v1}, Landroid/preference/PreferenceScreen;->setIcon(I)V
 

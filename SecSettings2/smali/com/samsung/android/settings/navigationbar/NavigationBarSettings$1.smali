@@ -91,7 +91,7 @@
 
     iget-object v3, p0, Lcom/samsung/android/settings/navigationbar/NavigationBarSettings$1;->this$0:Lcom/samsung/android/settings/navigationbar/NavigationBarSettings;
 
-    const v4, 0x7f0b06ba
+    const v4, 0x7f0b06bb
 
     invoke-virtual {v3, v4}, Lcom/samsung/android/settings/navigationbar/NavigationBarSettings;->getString(I)Ljava/lang/String;
 
@@ -127,7 +127,7 @@
 
     iget-object v4, p0, Lcom/samsung/android/settings/navigationbar/NavigationBarSettings$1;->this$0:Lcom/samsung/android/settings/navigationbar/NavigationBarSettings;
 
-    const v5, 0x7f0b06b5
+    const v5, 0x7f0b06b6
 
     invoke-virtual {v4, v5}, Lcom/samsung/android/settings/navigationbar/NavigationBarSettings;->getString(I)Ljava/lang/String;
 
@@ -162,7 +162,7 @@
     :cond_1
     iget-object v3, p0, Lcom/samsung/android/settings/navigationbar/NavigationBarSettings$1;->this$0:Lcom/samsung/android/settings/navigationbar/NavigationBarSettings;
 
-    const v4, 0x7f0b06b9
+    const v4, 0x7f0b06ba
 
     invoke-virtual {v3, v4}, Lcom/samsung/android/settings/navigationbar/NavigationBarSettings;->getString(I)Ljava/lang/String;
 
@@ -176,7 +176,7 @@
 
     iget-object v4, p0, Lcom/samsung/android/settings/navigationbar/NavigationBarSettings$1;->this$0:Lcom/samsung/android/settings/navigationbar/NavigationBarSettings;
 
-    const v5, 0x7f0b06b6
+    const v5, 0x7f0b06b7
 
     invoke-virtual {v4, v5}, Lcom/samsung/android/settings/navigationbar/NavigationBarSettings;->getString(I)Ljava/lang/String;
 

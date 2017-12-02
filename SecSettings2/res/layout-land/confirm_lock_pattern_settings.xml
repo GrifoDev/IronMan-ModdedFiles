@@ -6,6 +6,7 @@
       xmlns:android="http://schemas.android.com/apk/res/android">
         <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="0.0dip" android:baselineAligned="false" android:layout_weight="1.0">
             <LinearLayout android:orientation="vertical" android:layout_width="0.0dip" android:layout_height="fill_parent" android:layout_weight="1.0">
+                <include layout="@layout/confirm_iris_preview" />
                 <TextView android:textColor="?android:colorAccent" android:id="@id/headerText" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="?confirmDeviceCredentialsTopMargin" android:layout_marginStart="?confirmDeviceCredentialsSideMargin" android:layout_marginEnd="?confirmDeviceCredentialsSideMargin" style="@android:style/TextAppearance.Material.Headline" />
                 <TextView android:textSize="@dimen/lock_pattern_header_text_size" android:gravity="center" android:id="@id/detailsText" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_marginLeft="@dimen/password_lock_headerText_side_padding" android:layout_marginRight="@dimen/password_lock_headerText_side_padding" style="@style/lockscreen_body_text_style" />
                 <Button android:id="@id/cancelButton" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/cancel" />

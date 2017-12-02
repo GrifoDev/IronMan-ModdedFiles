@@ -790,9 +790,9 @@
 .method private AssignDragItem()V
     .locals 5
 
-    const v4, 0x7f110799
+    const v4, 0x7f11079b
 
-    const v3, 0x7f0203c4
+    const v3, 0x7f0203c2
 
     const/4 v2, -0x1
 
@@ -2906,13 +2906,13 @@
 .method private InitUI()V
     .locals 4
 
-    const v3, 0x7f0402d0
+    const v3, 0x7f0402d3
 
     invoke-direct {p0}, Lcom/samsung/android/settings/accessibility/assistantmenu/SettingsMenuEditorFragment;->GetWindowSize()V
 
     iget-object v0, p0, Lcom/samsung/android/settings/accessibility/assistantmenu/SettingsMenuEditorFragment;->lin_Layout:Landroid/widget/LinearLayout;
 
-    const v1, 0x7f110795
+    const v1, 0x7f110797
 
     invoke-virtual {v0, v1}, Landroid/widget/LinearLayout;->findViewById(I)Landroid/view/View;
 
@@ -2924,7 +2924,7 @@
 
     iget-object v0, p0, Lcom/samsung/android/settings/accessibility/assistantmenu/SettingsMenuEditorFragment;->lin_Layout:Landroid/widget/LinearLayout;
 
-    const v1, 0x7f110796
+    const v1, 0x7f110798
 
     invoke-virtual {v0, v1}, Landroid/widget/LinearLayout;->findViewById(I)Landroid/view/View;
 
@@ -2946,7 +2946,7 @@
 
     iget-object v0, p0, Lcom/samsung/android/settings/accessibility/assistantmenu/SettingsMenuEditorFragment;->lin_Layout:Landroid/widget/LinearLayout;
 
-    const v1, 0x7f110797
+    const v1, 0x7f110799
 
     invoke-virtual {v0, v1}, Landroid/widget/LinearLayout;->findViewById(I)Landroid/view/View;
 
@@ -2968,7 +2968,7 @@
 
     iget-object v0, p0, Lcom/samsung/android/settings/accessibility/assistantmenu/SettingsMenuEditorFragment;->lin_Layout:Landroid/widget/LinearLayout;
 
-    const v1, 0x7f110798
+    const v1, 0x7f11079a
 
     invoke-virtual {v0, v1}, Landroid/widget/LinearLayout;->findViewById(I)Landroid/view/View;
 
@@ -2980,7 +2980,7 @@
 
     iget-object v0, p0, Lcom/samsung/android/settings/accessibility/assistantmenu/SettingsMenuEditorFragment;->mControlBar:Landroid/widget/ImageView;
 
-    const v1, 0x7f0203ba
+    const v1, 0x7f0203b8
 
     invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setBackgroundResource(I)V
 
@@ -4887,7 +4887,7 @@
 
     :cond_0
     :goto_0
-    const v4, 0x7f110799
+    const v4, 0x7f11079b
 
     invoke-virtual {p1, v4}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -5246,7 +5246,7 @@
 .method public onCreateOptionsMenu(Landroid/view/Menu;Landroid/view/MenuInflater;)V
     .locals 2
 
-    const v0, 0x7f0b050c
+    const v0, 0x7f0b050d
 
     invoke-interface {p1, v0}, Landroid/view/Menu;->add(I)Landroid/view/MenuItem;
 
@@ -5272,7 +5272,7 @@
 
     iput-object v0, p0, Lcom/samsung/android/settings/accessibility/assistantmenu/SettingsMenuEditorFragment;->frag_Act:Landroid/app/Activity;
 
-    const v0, 0x7f0402cf
+    const v0, 0x7f0402d2
 
     const/4 v1, 0x0
 

@@ -45,7 +45,7 @@
 
     invoke-super {p0}, Lcom/android/settings/fingerprint/FingerprintEnrollIntroduction;->initViews()V
 
-    const v3, 0x7f1103ca
+    const v3, 0x7f1103cc
 
     invoke-virtual {p0, v3}, Lcom/android/settings/fingerprint/SetupFingerprintEnrollIntroduction;->findViewById(I)Landroid/view/View;
 
@@ -53,7 +53,7 @@
 
     check-cast v1, Landroid/widget/TextView;
 
-    const v3, 0x7f0b1427
+    const v3, 0x7f0b1438
 
     invoke-virtual {v1, v3}, Landroid/widget/TextView;->setText(I)V
 
@@ -61,11 +61,11 @@
 
     move-result-object v2
 
-    const v3, 0x7f0b142b
+    const v3, 0x7f0b143c
 
     invoke-virtual {v2, v3}, Landroid/widget/Button;->setText(I)V
 
-    const v3, 0x7f1103cb
+    const v3, 0x7f1103cd
 
     invoke-virtual {p0, v3}, Lcom/android/settings/fingerprint/SetupFingerprintEnrollIntroduction;->findViewById(I)Landroid/view/View;
 
@@ -73,7 +73,7 @@
 
     check-cast v0, Landroid/widget/Button;
 
-    const v3, 0x7f0b142a
+    const v3, 0x7f0b143b
 
     invoke-virtual {v0, v3}, Landroid/widget/Button;->setText(I)V
 

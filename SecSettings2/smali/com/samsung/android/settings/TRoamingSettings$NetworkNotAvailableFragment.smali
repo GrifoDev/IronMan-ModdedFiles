@@ -95,7 +95,7 @@
 
     check-cast v2, Landroid/view/LayoutInflater;
 
-    const v4, 0x7f0402f1
+    const v4, 0x7f0402f4
 
     const/4 v5, 0x0
 
@@ -105,11 +105,11 @@
 
     invoke-virtual {v0, v3}, Landroid/app/AlertDialog$Builder;->setView(Landroid/view/View;)Landroid/app/AlertDialog$Builder;
 
-    const v4, 0x7f0b1147
+    const v4, 0x7f0b1156
 
     invoke-virtual {v0, v4}, Landroid/app/AlertDialog$Builder;->setTitle(I)Landroid/app/AlertDialog$Builder;
 
-    const v4, 0x7f1107bb
+    const v4, 0x7f1107bd
 
     invoke-virtual {v3, v4}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -123,7 +123,7 @@
 
     invoke-direct {v4, p0}, Lcom/samsung/android/settings/TRoamingSettings$NetworkNotAvailableFragment$2;-><init>(Lcom/samsung/android/settings/TRoamingSettings$NetworkNotAvailableFragment;)V
 
-    const v5, 0x7f0b1852
+    const v5, 0x7f0b1864
 
     invoke-virtual {v0, v5, v4}, Landroid/app/AlertDialog$Builder;->setPositiveButton(ILandroid/content/DialogInterface$OnClickListener;)Landroid/app/AlertDialog$Builder;
 

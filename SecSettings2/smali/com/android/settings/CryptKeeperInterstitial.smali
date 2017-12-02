@@ -28,6 +28,8 @@
 
 .field private mLockPatternUtils:Lcom/android/internal/widget/LockPatternUtils;
 
+.field private mParent:Landroid/app/Activity;
+
 .field private mPasswordRequired:Z
 
 .field private mRequestedPasswordQuality:I
@@ -151,6 +153,33 @@
     move-exception v1
 
     return v7
+.end method
+
+.method private isAttachedKeyboardCover()Z
+    .locals 3
+
+    const/4 v2, 0x1
+
+    iget-object v1, p0, Lcom/android/settings/CryptKeeperInterstitial;->mParent:Landroid/app/Activity;
+
+    invoke-virtual {v1}, Landroid/app/Activity;->getResources()Landroid/content/res/Resources;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Landroid/content/res/Resources;->getConfiguration()Landroid/content/res/Configuration;
+
+    move-result-object v0
+
+    iget v1, v0, Landroid/content/res/Configuration;->semMobileKeyboardCovered:I
+
+    if-ne v1, v2, :cond_0
+
+    return v2
+
+    :cond_0
+    const/4 v1, 0x0
+
+    return v1
 .end method
 
 .method private isSupportUCMSecureStartUp()Z
@@ -363,7 +392,7 @@
     return v4
 
     :cond_0
-    const v2, 0x7f0b077e
+    const v2, 0x7f0b077f
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getText(I)Ljava/lang/CharSequence;
 
@@ -520,7 +549,7 @@
 
     move-result-object v18
 
-    const v19, 0x7f02067f
+    const v19, 0x7f020681
 
     invoke-virtual/range {v18 .. v19}, Landroid/content/res/Resources;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 
@@ -542,11 +571,11 @@
     iget v13, v0, Lcom/android/settings/CryptKeeperInterstitial;->mRequestedPasswordQuality:I
 
     :cond_1
-    const v4, 0x7f0b07b8
+    const v4, 0x7f0b07bc
 
-    const v3, 0x7f0b1d05
+    const v3, 0x7f0b1d17
 
-    const v15, 0x7f0b0750
+    const v15, 0x7f0b0751
 
     sparse-switch v13, :sswitch_data_0
 
@@ -560,12 +589,12 @@
 
     if-eqz v17, :cond_b
 
-    const v11, 0x7f0b07a8
+    const v11, 0x7f0b07ac
 
     :goto_0
-    const v15, 0x7f0b0750
+    const v15, 0x7f0b0751
 
-    const v6, 0x7f0b1d0e
+    const v6, 0x7f0b1d20
 
     :goto_1
     move-object/from16 v0, p0
@@ -626,7 +655,7 @@
 
     move-object/from16 v17, v0
 
-    const v18, 0x7f0b1d05
+    const v18, 0x7f0b1d17
 
     invoke-virtual/range {v17 .. v18}, Landroid/widget/Button;->setText(I)V
 
@@ -644,7 +673,7 @@
 
     move-object/from16 v17, v0
 
-    const v18, 0x7f0b1d05
+    const v18, 0x7f0b1d17
 
     invoke-virtual/range {v17 .. v18}, Landroid/widget/TextView;->setText(I)V
 
@@ -690,7 +719,7 @@
 
     move-object/from16 v17, v0
 
-    const v18, 0x7f0b07b8
+    const v18, 0x7f0b07bc
 
     invoke-virtual/range {v17 .. v18}, Landroid/widget/CheckedTextView;->setText(I)V
 
@@ -864,7 +893,7 @@
 
     if-eqz v17, :cond_5
 
-    const v11, 0x7f0b07b2
+    const v11, 0x7f0b07b6
 
     :goto_6
     move-object/from16 v0, p0
@@ -893,14 +922,14 @@
 
     move-object/from16 v17, v0
 
-    const v18, 0x7f0b07a6
+    const v18, 0x7f0b07a9
 
     invoke-virtual/range {v17 .. v18}, Landroid/widget/Button;->setText(I)V
 
     return-void
 
     :cond_5
-    const v11, 0x7f0b07b4
+    const v11, 0x7f0b07b8
 
     goto :goto_6
 
@@ -915,17 +944,17 @@
 
     if-eqz v17, :cond_6
 
-    const v11, 0x7f0b07a8
+    const v11, 0x7f0b07ac
 
     :goto_7
-    const v15, 0x7f0b074f
+    const v15, 0x7f0b0750
 
-    const v6, 0x7f0b1d0d
+    const v6, 0x7f0b1d1f
 
     goto/16 :goto_1
 
     :cond_6
-    const v11, 0x7f0b07a7
+    const v11, 0x7f0b07ab
 
     goto :goto_7
 
@@ -940,17 +969,17 @@
 
     if-eqz v17, :cond_7
 
-    const v11, 0x7f0b07a8
+    const v11, 0x7f0b07ac
 
     :goto_8
-    const v15, 0x7f0b0751
+    const v15, 0x7f0b0752
 
-    const v6, 0x7f0b07b7
+    const v6, 0x7f0b07bb
 
     goto/16 :goto_1
 
     :cond_7
-    const v11, 0x7f0b07a7
+    const v11, 0x7f0b07ab
 
     goto :goto_8
 
@@ -965,17 +994,17 @@
 
     if-eqz v17, :cond_8
 
-    const v11, 0x7f0b07a8
+    const v11, 0x7f0b07ac
 
     :goto_9
-    const v15, 0x7f0b074e
+    const v15, 0x7f0b074f
 
-    const v6, 0x7f0b1d0c
+    const v6, 0x7f0b1d1e
 
     goto/16 :goto_1
 
     :cond_8
-    const v11, 0x7f0b07a7
+    const v11, 0x7f0b07ab
 
     goto :goto_9
 
@@ -996,22 +1025,22 @@
 
     if-eqz v17, :cond_9
 
-    const v11, 0x7f0b07a8
+    const v11, 0x7f0b07ac
 
     :goto_a
-    const v15, 0x7f0b074e
+    const v15, 0x7f0b074f
 
-    const v6, 0x7f0b1d0e
+    const v6, 0x7f0b1d20
 
     goto/16 :goto_1
 
     :cond_9
-    const v11, 0x7f0b07a7
+    const v11, 0x7f0b07ab
 
     goto :goto_a
 
     :cond_a
-    const v11, 0x7f0b07b0
+    const v11, 0x7f0b07b4
 
     move-object/from16 v0, p0
 
@@ -1046,7 +1075,7 @@
     return-void
 
     :cond_b
-    const v11, 0x7f0b07a7
+    const v11, 0x7f0b07ab
 
     goto/16 :goto_0
 
@@ -1057,7 +1086,7 @@
 
     move-object/from16 v17, v0
 
-    const v18, 0x7f0b08d5
+    const v18, 0x7f0b08df
 
     invoke-virtual/range {v17 .. v18}, Landroid/widget/Button;->setText(I)V
 
@@ -1380,6 +1409,16 @@
     goto :goto_0
 .end method
 
+.method public onAttach(Landroid/app/Activity;)V
+    .locals 0
+
+    invoke-super {p0, p1}, Lcom/android/settings/SettingsPreferenceFragment;->onAttach(Landroid/app/Activity;)V
+
+    iput-object p1, p0, Lcom/android/settings/CryptKeeperInterstitial;->mParent:Landroid/app/Activity;
+
+    return-void
+.end method
+
 .method public onClick(Landroid/content/DialogInterface;I)V
     .locals 1
 
@@ -1474,7 +1513,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f0b07b5
+    const v1, 0x7f0b07b9
 
     invoke-static {v0, v1, v3}, Landroid/widget/Toast;->makeText(Landroid/content/Context;II)Landroid/widget/Toast;
 
@@ -1512,7 +1551,7 @@
 
     const-string/jumbo v2, "com.android.settings.ChooseLockGeneric$ChooseLockGenericFragment"
 
-    const v3, 0x7f0b145f
+    const v3, 0x7f0b1470
 
     const/16 v4, 0x7b
 
@@ -1611,6 +1650,24 @@
 
     invoke-virtual {v0, v2}, Landroid/widget/CheckedTextView;->setChecked(Z)V
 
+    invoke-direct {p0}, Lcom/android/settings/CryptKeeperInterstitial;->isAttachedKeyboardCover()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_1
+
+    invoke-virtual {p0}, Lcom/android/settings/CryptKeeperInterstitial;->getActivity()Landroid/app/Activity;
+
+    move-result-object v0
+
+    const v1, 0x7f0b07aa
+
+    invoke-static {v0, v1, v3}, Landroid/widget/Toast;->makeText(Landroid/content/Context;II)Landroid/widget/Toast;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Landroid/widget/Toast;->show()V
+
     goto/16 :goto_0
 
     :cond_b
@@ -1671,9 +1728,9 @@
     :cond_0
     sparse-switch v1, :sswitch_data_0
 
-    const v2, 0x7f0b1d14
+    const v2, 0x7f0b1d26
 
-    const v0, 0x7f0b1d17
+    const v0, 0x7f0b1d29
 
     :goto_0
     new-instance v3, Landroid/app/AlertDialog$Builder;
@@ -1715,23 +1772,23 @@
     return-object v3
 
     :sswitch_0
-    const v2, 0x7f0b1d13
+    const v2, 0x7f0b1d25
 
-    const v0, 0x7f0b1d16
+    const v0, 0x7f0b1d28
 
     goto :goto_0
 
     :sswitch_1
-    const v2, 0x7f0b07b9
+    const v2, 0x7f0b07bd
 
-    const v0, 0x7f0b07ba
+    const v0, 0x7f0b07be
 
     goto :goto_0
 
     :sswitch_2
-    const v2, 0x7f0b1d12
+    const v2, 0x7f0b1d24
 
-    const v0, 0x7f0b1d15
+    const v0, 0x7f0b1d27
 
     goto :goto_0
 
@@ -1744,7 +1801,7 @@
 
     invoke-direct {v3, v4}, Landroid/app/AlertDialog$Builder;-><init>(Landroid/content/Context;)V
 
-    const v4, 0x7f0b07b6
+    const v4, 0x7f0b07ba
 
     invoke-virtual {p0, v4}, Lcom/android/settings/CryptKeeperInterstitial;->getString(I)Ljava/lang/String;
 
@@ -1892,7 +1949,7 @@
     sput-object v0, Lcom/android/settings/CryptKeeperInterstitial;->mSalesCode:Ljava/lang/String;
 
     :cond_1
-    const v0, 0x7f040095
+    const v0, 0x7f040096
 
     invoke-virtual {p1, v0, p2, v2}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;Z)Landroid/view/View;
 
@@ -1958,7 +2015,7 @@
 
     invoke-super {p0, p1, p2}, Lcom/android/settings/SettingsPreferenceFragment;->onViewCreated(Landroid/view/View;Landroid/os/Bundle;)V
 
-    const v0, 0x7f11021c
+    const v0, 0x7f11021e
 
     invoke-virtual {p1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -1966,7 +2023,7 @@
 
     iput-object v0, p0, Lcom/android/settings/CryptKeeperInterstitial;->mRequirePasswordOn:Landroid/view/View;
 
-    const v0, 0x7f11021d
+    const v0, 0x7f11021f
 
     invoke-virtual {p1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -1974,7 +2031,7 @@
 
     iput-object v0, p0, Lcom/android/settings/CryptKeeperInterstitial;->mRequirePasswordOff:Landroid/view/View;
 
-    const v0, 0x7f11021b
+    const v0, 0x7f11021d
 
     invoke-virtual {p1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -1994,7 +2051,7 @@
 
     iput-object v0, p0, Lcom/android/settings/CryptKeeperInterstitial;->mDontRequirePasswordToDecryptButton:Landroid/widget/CheckedTextView;
 
-    const v0, 0x7f110219
+    const v0, 0x7f11021b
 
     invoke-virtual {p1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -2004,7 +2061,7 @@
 
     iput-object v0, p0, Lcom/android/settings/CryptKeeperInterstitial;->mEncryptionMessage:Landroid/widget/TextView;
 
-    const v0, 0x7f11021f
+    const v0, 0x7f110221
 
     invoke-virtual {p1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -2014,7 +2071,7 @@
 
     iput-object v0, p0, Lcom/android/settings/CryptKeeperInterstitial;->mChangePWButton:Landroid/widget/Button;
 
-    const v0, 0x7f11021a
+    const v0, 0x7f11021c
 
     invoke-virtual {p1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -2024,7 +2081,7 @@
 
     iput-object v0, p0, Lcom/android/settings/CryptKeeperInterstitial;->mSelectOptionLayout:Landroid/widget/LinearLayout;
 
-    const v0, 0x7f11021e
+    const v0, 0x7f110220
 
     invoke-virtual {p1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -2034,7 +2091,7 @@
 
     iput-object v0, p0, Lcom/android/settings/CryptKeeperInterstitial;->mButtonLayout:Landroid/widget/LinearLayout;
 
-    const v0, 0x7f110736
+    const v0, 0x7f110738
 
     invoke-virtual {p1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -2044,7 +2101,7 @@
 
     iput-object v0, p0, Lcom/android/settings/CryptKeeperInterstitial;->mSUWBottomBar:Landroid/widget/RelativeLayout;
 
-    const v0, 0x7f110738
+    const v0, 0x7f11073a
 
     invoke-virtual {p1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -2054,7 +2111,7 @@
 
     iput-object v0, p0, Lcom/android/settings/CryptKeeperInterstitial;->mSUWPrevBtn:Landroid/widget/LinearLayout;
 
-    const v0, 0x7f110739
+    const v0, 0x7f11073b
 
     invoke-virtual {p1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -2064,7 +2121,7 @@
 
     iput-object v0, p0, Lcom/android/settings/CryptKeeperInterstitial;->mSUWPrevBtnImg:Landroid/widget/ImageView;
 
-    const v0, 0x7f11073a
+    const v0, 0x7f11073c
 
     invoke-virtual {p1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -2074,7 +2131,7 @@
 
     iput-object v0, p0, Lcom/android/settings/CryptKeeperInterstitial;->mSUWContinueBtn:Landroid/widget/LinearLayout;
 
-    const v0, 0x7f11073b
+    const v0, 0x7f11073d
 
     invoke-virtual {p1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -2084,7 +2141,7 @@
 
     iput-object v0, p0, Lcom/android/settings/CryptKeeperInterstitial;->mSUWContinueText:Landroid/widget/TextView;
 
-    const v0, 0x7f11073c
+    const v0, 0x7f11073e
 
     invoke-virtual {p1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 

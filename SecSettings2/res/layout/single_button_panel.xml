@@ -3,5 +3,5 @@
   xmlns:android="http://schemas.android.com/apk/res/android">
     <Space android:layout_gravity="center_vertical" android:layout_width="161.0dip" android:layout_height="wrap_content" android:layout_weight="0.48" />
     <Space android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_weight="0.03" />
-    <Button android:layout_gravity="center_vertical" android:id="@id/button" android:paddingLeft="@dimen/button_minimum_side_padding" android:paddingTop="@dimen/button_minimum_top_bottom_padding" android:paddingRight="@dimen/button_minimum_side_padding" android:paddingBottom="@dimen/button_minimum_top_bottom_padding" android:layout_width="161.0dip" android:layout_height="wrap_content" android:singleLine="true" android:layout_weight="0.48" />
+    <Button android:layout_gravity="center_vertical" android:id="@id/button" android:paddingLeft="@dimen/button_minimum_side_padding" android:paddingTop="@dimen/button_minimum_top_bottom_padding" android:paddingRight="@dimen/button_minimum_side_padding" android:paddingBottom="@dimen/button_minimum_top_bottom_padding" android:layout_width="161.0dip" android:layout_height="wrap_content" android:layout_weight="0.48" />
 </LinearLayout>

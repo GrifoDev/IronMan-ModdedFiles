@@ -976,7 +976,7 @@
 
     invoke-virtual {v6, v1}, Landroid/app/ActionBar;->setCustomView(Landroid/view/View;)V
 
-    const v1, 0x7f0b0fe2
+    const v1, 0x7f0b0ff1
 
     invoke-virtual {v6, v1}, Landroid/app/ActionBar;->setTitle(I)V
 
@@ -1408,7 +1408,7 @@
 
     invoke-direct {v0, v1}, Landroid/app/AlertDialog$Builder;-><init>(Landroid/content/Context;)V
 
-    const v1, 0x7f0b102a
+    const v1, 0x7f0b1039
 
     invoke-virtual {v0, v1}, Landroid/app/AlertDialog$Builder;->setTitle(I)Landroid/app/AlertDialog$Builder;
 
@@ -1418,7 +1418,7 @@
 
     move-result-object v2
 
-    const v3, 0x7f0b102f
+    const v3, 0x7f0b103e
 
     invoke-static {v2, v3}, Lcom/samsung/android/settings/WifiApUtils;->getString(Landroid/content/Context;I)Ljava/lang/String;
 
@@ -1432,7 +1432,7 @@
 
     invoke-direct {v2, p0}, Lcom/samsung/android/settings/wifi/mobileap/WifiApAllowedList$6;-><init>(Lcom/samsung/android/settings/wifi/mobileap/WifiApAllowedList;)V
 
-    const v3, 0x7f0b0537
+    const v3, 0x7f0b0538
 
     invoke-virtual {v1, v3, v2}, Landroid/app/AlertDialog$Builder;->setPositiveButton(ILandroid/content/DialogInterface$OnClickListener;)Landroid/app/AlertDialog$Builder;
 
@@ -1442,7 +1442,7 @@
 
     invoke-direct {v2, p0}, Lcom/samsung/android/settings/wifi/mobileap/WifiApAllowedList$7;-><init>(Lcom/samsung/android/settings/wifi/mobileap/WifiApAllowedList;)V
 
-    const v3, 0x7f0b13d6
+    const v3, 0x7f0b13e7
 
     invoke-virtual {v1, v3, v2}, Landroid/app/AlertDialog$Builder;->setNegativeButton(ILandroid/content/DialogInterface$OnClickListener;)Landroid/app/AlertDialog$Builder;
 
@@ -1675,7 +1675,7 @@
 
     iget-object v1, p0, Lcom/samsung/android/settings/wifi/mobileap/WifiApAllowedList;->mCount:Landroid/widget/TextView;
 
-    const v2, 0x7f0b135d
+    const v2, 0x7f0b136e
 
     invoke-virtual {v1, v2}, Landroid/widget/TextView;->setText(I)V
 
@@ -2240,9 +2240,9 @@
 .method public onActivityCreated(Landroid/os/Bundle;)V
     .locals 13
 
-    const v12, 0x7f1108a9
+    const v12, 0x7f1108ab
 
-    const v11, 0x7f1108a7
+    const v11, 0x7f1108a9
 
     const/4 v10, 0x0
 
@@ -2326,7 +2326,7 @@
 
     move-result-object v5
 
-    const v8, 0x7f020532
+    const v8, 0x7f020534
 
     invoke-virtual {v5, v8}, Landroid/app/ActionBar;->setIcon(I)V
 
@@ -2341,7 +2341,7 @@
 
     check-cast v3, Landroid/view/LayoutInflater;
 
-    const v5, 0x7f040388
+    const v5, 0x7f04038b
 
     invoke-virtual {v3, v5, v10}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;)Landroid/view/View;
 
@@ -2349,7 +2349,7 @@
 
     check-cast v4, Landroid/widget/LinearLayout;
 
-    const v5, 0x7f1108ab
+    const v5, 0x7f1108ad
 
     invoke-virtual {v4, v5}, Landroid/widget/LinearLayout;->findViewById(I)Landroid/view/View;
 
@@ -2357,7 +2357,7 @@
 
     iput-object v5, p0, Lcom/samsung/android/settings/wifi/mobileap/WifiApAllowedList;->mEmptyPortrait:Landroid/view/View;
 
-    const v5, 0x7f1108ac
+    const v5, 0x7f1108ae
 
     invoke-virtual {v4, v5}, Landroid/widget/LinearLayout;->findViewById(I)Landroid/view/View;
 
@@ -2381,7 +2381,7 @@
 
     iput-object v5, p0, Lcom/samsung/android/settings/wifi/mobileap/WifiApAllowedList;->mBubbleLandscape:Landroid/widget/RelativeLayout;
 
-    const v5, 0x7f1108a8
+    const v5, 0x7f1108aa
 
     invoke-virtual {v4, v5}, Landroid/widget/LinearLayout;->findViewById(I)Landroid/view/View;
 
@@ -2391,7 +2391,7 @@
 
     iput-object v5, p0, Lcom/samsung/android/settings/wifi/mobileap/WifiApAllowedList;->mBubbleLandscapeDex:Landroid/widget/RelativeLayout;
 
-    const v5, 0x7f1108aa
+    const v5, 0x7f1108ac
 
     invoke-virtual {v4, v5}, Landroid/widget/LinearLayout;->findViewById(I)Landroid/view/View;
 
@@ -2401,7 +2401,7 @@
 
     iput-object v5, p0, Lcom/samsung/android/settings/wifi/mobileap/WifiApAllowedList;->mAllowedListContainer:Landroid/widget/ListView;
 
-    const v5, 0x7f1108a4
+    const v5, 0x7f1108a6
 
     invoke-virtual {v4, v5}, Landroid/widget/LinearLayout;->findViewById(I)Landroid/view/View;
 
@@ -2411,7 +2411,7 @@
 
     iput-object v5, p0, Lcom/samsung/android/settings/wifi/mobileap/WifiApAllowedList;->mSwitchPref:Landroid/widget/LinearLayout;
 
-    const v5, 0x7f1108a6
+    const v5, 0x7f1108a8
 
     invoke-virtual {v4, v5}, Landroid/widget/LinearLayout;->findViewById(I)Landroid/view/View;
 
@@ -2421,7 +2421,7 @@
 
     iput-object v5, p0, Lcom/samsung/android/settings/wifi/mobileap/WifiApAllowedList;->mSwitch:Landroid/widget/Switch;
 
-    const v5, 0x7f1108a5
+    const v5, 0x7f1108a7
 
     invoke-virtual {v4, v5}, Landroid/widget/LinearLayout;->findViewById(I)Landroid/view/View;
 
@@ -2616,7 +2616,7 @@
 
     iput-object v5, p0, Lcom/samsung/android/settings/wifi/mobileap/WifiApAllowedList;->mDeviceList:Landroid/support/v7/preference/PreferenceScreen;
 
-    const v5, 0x7f04038c
+    const v5, 0x7f04038f
 
     invoke-virtual {v3, v5, v10}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;)Landroid/view/View;
 
@@ -2630,7 +2630,7 @@
 
     move-result-object v5
 
-    const v8, 0x7f0b0fe2
+    const v8, 0x7f0b0ff1
 
     invoke-virtual {v5, v8}, Landroid/app/ActionBar;->setTitle(I)V
 
@@ -2638,7 +2638,7 @@
 
     iget-object v5, p0, Lcom/samsung/android/settings/wifi/mobileap/WifiApAllowedList;->mActionView:Landroid/view/View;
 
-    const v8, 0x7f1108b8
+    const v8, 0x7f1108ba
 
     invoke-virtual {v5, v8}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -2650,7 +2650,7 @@
 
     iget-object v5, p0, Lcom/samsung/android/settings/wifi/mobileap/WifiApAllowedList;->mActionView:Landroid/view/View;
 
-    const v8, 0x7f1108ba
+    const v8, 0x7f1108bc
 
     invoke-virtual {v5, v8}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -2662,7 +2662,7 @@
 
     iget-object v5, p0, Lcom/samsung/android/settings/wifi/mobileap/WifiApAllowedList;->mActionView:Landroid/view/View;
 
-    const v8, 0x7f1108b9
+    const v8, 0x7f1108bb
 
     invoke-virtual {v5, v8}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -2674,7 +2674,7 @@
 
     iget-object v5, p0, Lcom/samsung/android/settings/wifi/mobileap/WifiApAllowedList;->mActionView:Landroid/view/View;
 
-    const v8, 0x7f1108bc
+    const v8, 0x7f1108be
 
     invoke-virtual {v5, v8}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -3127,7 +3127,7 @@
 
     sput-boolean v0, Lcom/samsung/android/settings/wifi/mobileap/WifiApAllowedList;->mDeleteClicked:Z
 
-    const v0, 0x7f080157
+    const v0, 0x7f080159
 
     invoke-virtual {p0, v0}, Lcom/samsung/android/settings/wifi/mobileap/WifiApAllowedList;->addPreferencesFromResource(I)V
 
@@ -3200,7 +3200,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f0b1031
+    const v1, 0x7f0b1040
 
     invoke-virtual {v0, v1}, Landroid/app/AlertDialog$Builder;->setMessage(I)Landroid/app/AlertDialog$Builder;
 
@@ -3210,7 +3210,7 @@
 
     invoke-direct {v1, p0}, Lcom/samsung/android/settings/wifi/mobileap/WifiApAllowedList$12;-><init>(Lcom/samsung/android/settings/wifi/mobileap/WifiApAllowedList;)V
 
-    const v2, 0x7f0b050d
+    const v2, 0x7f0b050e
 
     invoke-virtual {v0, v2, v1}, Landroid/app/AlertDialog$Builder;->setPositiveButton(ILandroid/content/DialogInterface$OnClickListener;)Landroid/app/AlertDialog$Builder;
 
@@ -3262,7 +3262,7 @@
 
     invoke-direct {v7, v0}, Landroid/app/AlertDialog$Builder;-><init>(Landroid/content/Context;)V
 
-    const v0, 0x7f0b1032
+    const v0, 0x7f0b1041
 
     invoke-virtual {v7, v0}, Landroid/app/AlertDialog$Builder;->setMessage(I)Landroid/app/AlertDialog$Builder;
 
@@ -3270,7 +3270,7 @@
 
     invoke-direct {v0, p0}, Lcom/samsung/android/settings/wifi/mobileap/WifiApAllowedList$14;-><init>(Lcom/samsung/android/settings/wifi/mobileap/WifiApAllowedList;)V
 
-    const v1, 0x7f0b1ab3
+    const v1, 0x7f0b1ac5
 
     invoke-virtual {v7, v1, v0}, Landroid/app/AlertDialog$Builder;->setPositiveButton(ILandroid/content/DialogInterface$OnClickListener;)Landroid/app/AlertDialog$Builder;
 
@@ -3303,7 +3303,7 @@
 
     const/4 v2, 0x0
 
-    const v0, 0x7f0b1ab3
+    const v0, 0x7f0b1ac5
 
     invoke-interface {p1, v2, v1, v2, v0}, Landroid/view/Menu;->add(IIII)Landroid/view/MenuItem;
 
@@ -3374,7 +3374,7 @@
 
     const/4 v0, 0x2
 
-    const v1, 0x7f0b050e
+    const v1, 0x7f0b050f
 
     invoke-interface {p1, v2, v0, v2, v1}, Landroid/view/Menu;->add(IIII)Landroid/view/MenuItem;
 
@@ -3681,7 +3681,7 @@
 
     aput-object v7, v6, v4
 
-    const v4, 0x7f0b1030
+    const v4, 0x7f0b103f
 
     invoke-virtual {v5, v4, v6}, Landroid/content/res/Resources;->getString(I[Ljava/lang/Object;)Ljava/lang/String;
 
@@ -4031,7 +4031,7 @@
 
     aput-object v6, v5, v7
 
-    const v6, 0x7f0b0fdc
+    const v6, 0x7f0b0feb
 
     invoke-virtual {v4, v6, v5}, Landroid/content/res/Resources;->getString(I[Ljava/lang/Object;)Ljava/lang/String;
 

@@ -72,7 +72,7 @@
 
     invoke-direct {p0, p1, p2, p3, p4}, Landroid/preference/SeekBarPreference;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;II)V
 
-    const v0, 0x7f040248
+    const v0, 0x7f04024b
 
     invoke-virtual {p0, v0}, Lcom/samsung/android/settings/notification/VolumeLimiterSeekBarPreference;->setLayoutResource(I)V
 
@@ -215,7 +215,7 @@
 
     iput-object v0, p0, Lcom/samsung/android/settings/notification/VolumeLimiterSeekBarPreference;->mIconView:Landroid/widget/ImageView;
 
-    const v0, 0x7f11069e
+    const v0, 0x7f1106a0
 
     invoke-virtual {p1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 

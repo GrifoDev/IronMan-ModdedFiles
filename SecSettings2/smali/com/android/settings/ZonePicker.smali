@@ -81,7 +81,7 @@
 .method public static constructTimezoneAdapter(Landroid/content/Context;Z)Landroid/widget/SimpleAdapter;
     .locals 1
 
-    const v0, 0x7f0400c7
+    const v0, 0x7f0400c8
 
     invoke-static {p0, p1, v0}, Lcom/android/settings/ZonePicker;->constructTimezoneAdapter(Landroid/content/Context;ZI)Landroid/widget/SimpleAdapter;
 
@@ -518,7 +518,7 @@
 
     const/4 v0, 0x1
 
-    const v1, 0x7f0b1403
+    const v1, 0x7f0b1414
 
     invoke-interface {p1, v2, v0, v2, v1}, Landroid/view/Menu;->add(IIII)Landroid/view/MenuItem;
 
@@ -530,13 +530,13 @@
 
     const/4 v0, 0x2
 
-    const v1, 0x7f0b1404
+    const v1, 0x7f0b1415
 
     invoke-interface {p1, v2, v0, v2, v1}, Landroid/view/Menu;->add(IIII)Landroid/view/MenuItem;
 
     move-result-object v0
 
-    const v1, 0x7f0201f2
+    const v1, 0x7f0201f0
 
     invoke-interface {v0, v1}, Landroid/view/MenuItem;->setIcon(I)Landroid/view/MenuItem;
 
@@ -728,7 +728,7 @@
 
     move-result-object v8
 
-    const v9, 0x7f0f03e0
+    const v9, 0x7f0f03df
 
     invoke-virtual {v8, v9}, Landroid/content/res/Resources;->getInteger(I)I
 
@@ -738,7 +738,7 @@
 
     move-result-object v9
 
-    const v10, 0x7f0f03e1
+    const v10, 0x7f0f03e0
 
     invoke-virtual {v9, v10}, Landroid/content/res/Resources;->getInteger(I)I
 
@@ -993,7 +993,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f0f03e0
+    const v2, 0x7f0f03df
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getInteger(I)I
 

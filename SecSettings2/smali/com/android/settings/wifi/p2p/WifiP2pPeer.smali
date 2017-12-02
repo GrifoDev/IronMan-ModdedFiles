@@ -67,61 +67,61 @@
 
     :array_0
     .array-data 4
-        0x7f020692
-        0x7f0206a5
-        0x7f0206a8
-        0x7f020697
-        0x7f020686
-        0x7f0206a6
-        0x7f020690
-        0x7f02069f
-        0x7f02069b
+        0x7f020694
         0x7f0206a7
-        0x7f02068c
-        0x7f02068d
-        0x7f02069d
-        0x7f0206a4
-        0x7f020687
-        0x7f020696
-        0x7f02069a
-        0x7f02069c
-        0x7f0206a0
+        0x7f0206aa
         0x7f020699
-        0x7f020691
-        0x7f0206a2
-        0x7f0206a6
+        0x7f020688
+        0x7f0206a8
+        0x7f020692
+        0x7f0206a1
+        0x7f02069d
+        0x7f0206a9
+        0x7f02068e
+        0x7f02068f
         0x7f02069f
+        0x7f0206a6
+        0x7f020689
+        0x7f020698
+        0x7f02069c
         0x7f02069e
-        0x7f02068b
-        0x7f02068a
+        0x7f0206a2
+        0x7f02069b
+        0x7f020693
+        0x7f0206a4
+        0x7f0206a8
+        0x7f0206a1
+        0x7f0206a0
+        0x7f02068d
+        0x7f02068c
     .end array-data
 
     :array_1
     .array-data 4
-        0x7f020698
-        0x7f020694
-        0x7f02068e
-        0x7f02068f
-        0x7f0206a1
-        0x7f020688
-        0x7f020689
-        0x7f020693
+        0x7f02069a
+        0x7f020696
         0x7f020690
+        0x7f020691
+        0x7f0206a3
+        0x7f02068a
+        0x7f02068b
+        0x7f020695
+        0x7f020692
     .end array-data
 
     :array_2
     .array-data 4
-        0x7f020697
-        0x7f02068f
         0x7f020699
-        0x7f02068b
+        0x7f020691
+        0x7f02069b
+        0x7f02068d
+        0x7f0206a5
+        0x7f020697
+        0x7f0206a8
         0x7f0206a3
-        0x7f020695
-        0x7f0206a6
-        0x7f0206a1
-        0x7f02068e
-        0x7f020692
         0x7f020690
+        0x7f020694
+        0x7f020692
     .end array-data
 .end method
 
@@ -164,7 +164,7 @@
 
     and-int/lit16 v0, v3, 0xff
 
-    const v3, 0x7f0403be
+    const v3, 0x7f0403c1
 
     invoke-virtual {p0, v3}, Lcom/android/settings/wifi/p2p/WifiP2pPeer;->setLayoutResource(I)V
 
@@ -504,7 +504,7 @@
 
     invoke-virtual {v2, v3}, Landroid/widget/TextView;->setAlpha(F)V
 
-    const v2, 0x7f0b0eea
+    const v2, 0x7f0b0ef9
 
     invoke-virtual {p0, v2}, Lcom/android/settings/wifi/p2p/WifiP2pPeer;->setSummary(I)V
 
@@ -512,7 +512,7 @@
 
     invoke-virtual {v2, v5}, Landroid/widget/TextView;->setVisibility(I)V
 
-    const v2, 0x7f0b0ee7
+    const v2, 0x7f0b0ef6
 
     invoke-direct {p0, v2}, Lcom/android/settings/wifi/p2p/WifiP2pPeer;->setSecondSummary(I)V
 
@@ -545,7 +545,7 @@
     return-void
 
     :cond_2
-    const v2, 0x7f0b0ee9
+    const v2, 0x7f0b0ef8
 
     invoke-virtual {p0, v2}, Lcom/android/settings/wifi/p2p/WifiP2pPeer;->setSummary(I)V
 
@@ -576,7 +576,7 @@
 
     invoke-virtual {v2, v5}, Landroid/widget/TextView;->setVisibility(I)V
 
-    const v2, 0x7f0b0ee8
+    const v2, 0x7f0b0ef7
 
     invoke-direct {p0, v2}, Lcom/android/settings/wifi/p2p/WifiP2pPeer;->setSecondSummary(I)V
 
@@ -737,7 +737,7 @@
 
     iput-object v0, p0, Lcom/android/settings/wifi/p2p/WifiP2pPeer;->mDeviceName:Landroid/widget/TextView;
 
-    const v0, 0x7f11096f
+    const v0, 0x7f110972
 
     invoke-virtual {p1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 

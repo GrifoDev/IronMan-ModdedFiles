@@ -41,18 +41,18 @@
     return-object v11
 
     :pswitch_1
-    const v7, 0x7f0b1ce7
+    const v7, 0x7f0b1cf9
 
     const v3, 0x7f13001a
 
     const v2, 0x7f13001b
 
-    const v4, 0x7f0b1ce8
+    const v4, 0x7f0b1cfa
 
     goto :goto_0
 
     :pswitch_2
-    const v7, 0x7f0b1ce9
+    const v7, 0x7f0b1cfb
 
     goto :goto_0
 

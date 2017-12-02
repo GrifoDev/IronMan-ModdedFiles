@@ -220,21 +220,21 @@
 
     const/4 v2, 0x0
 
-    const v4, 0x7f0b1b39
+    const v4, 0x7f0b1b4b
 
-    const v5, 0x7f110819
+    const v5, 0x7f11081b
 
-    const v6, 0x7f11081a
+    const v6, 0x7f11081c
 
-    const v7, 0x7f11081d
+    const v7, 0x7f11081f
 
-    const v8, 0x7f11081e
+    const v8, 0x7f110820
 
-    const v9, 0x7f11081c
+    const v9, 0x7f11081e
 
     const/4 v10, 0x1
 
-    const v11, 0x7f11081b
+    const v11, 0x7f11081d
 
     invoke-direct/range {v0 .. v11}, Lcom/android/settings/TrustedCredentialsSettings$Tab;-><init>(Ljava/lang/String;ILjava/lang/String;IIIIIIZI)V
 
@@ -248,21 +248,21 @@
 
     const/4 v2, 0x1
 
-    const v4, 0x7f0b1b3a
+    const v4, 0x7f0b1b4c
 
-    const v5, 0x7f11081f
+    const v5, 0x7f110821
 
-    const v6, 0x7f110820
+    const v6, 0x7f110822
 
-    const v7, 0x7f110823
+    const v7, 0x7f110825
 
-    const v8, 0x7f110824
+    const v8, 0x7f110826
 
-    const v9, 0x7f110822
+    const v9, 0x7f110824
 
     const/4 v10, 0x0
 
-    const v11, 0x7f110821
+    const v11, 0x7f110823
 
     invoke-direct/range {v0 .. v11}, Lcom/android/settings/TrustedCredentialsSettings$Tab;-><init>(Ljava/lang/String;ILjava/lang/String;IIIIIIZI)V
 

@@ -35,11 +35,11 @@
 
     invoke-virtual {p0, v1}, Lcom/android/settings/accessibility/EdgeTypePreference;->setTitles([Ljava/lang/CharSequence;)V
 
-    const v1, 0x7f04012b
+    const v1, 0x7f04012c
 
     invoke-virtual {p0, v1}, Lcom/android/settings/accessibility/EdgeTypePreference;->setDialogLayoutResource(I)V
 
-    const v1, 0x7f04025d
+    const v1, 0x7f040260
 
     invoke-virtual {p0, v1}, Lcom/android/settings/accessibility/EdgeTypePreference;->setListItemLayoutResource(I)V
 
@@ -51,7 +51,7 @@
 .method protected onBindListItem(Landroid/view/View;I)V
     .locals 7
 
-    const v5, 0x7f1102f8
+    const v5, 0x7f1102fa
 
     invoke-virtual {p1, v5}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 

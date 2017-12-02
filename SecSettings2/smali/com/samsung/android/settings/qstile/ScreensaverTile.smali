@@ -139,7 +139,7 @@
 
     if-eqz v0, :cond_0
 
-    const v1, 0x7f0204a7
+    const v1, 0x7f0204a9
 
     invoke-static {p0, v1}, Landroid/graphics/drawable/Icon;->createWithResource(Landroid/content/Context;I)Landroid/graphics/drawable/Icon;
 
@@ -147,7 +147,7 @@
 
     invoke-virtual {v0, v1}, Landroid/service/quicksettings/Tile;->setIcon(Landroid/graphics/drawable/Icon;)V
 
-    const v1, 0x7f0b165c
+    const v1, 0x7f0b166e
 
     invoke-virtual {p0, v1}, Lcom/samsung/android/settings/qstile/ScreensaverTile;->getString(I)Ljava/lang/String;
 
@@ -461,7 +461,7 @@
 
     const/high16 v10, -0x1000000
 
-    const v9, 0x7f1106cb
+    const v9, 0x7f1106cd
 
     new-instance v4, Landroid/widget/RemoteViews;
 
@@ -469,7 +469,7 @@
 
     move-result-object v6
 
-    const v7, 0x7f040268
+    const v7, 0x7f04026b
 
     invoke-direct {v4, v6, v7}, Landroid/widget/RemoteViews;-><init>(Ljava/lang/String;I)V
 
@@ -489,7 +489,7 @@
 
     move-result v6
 
-    const v7, 0x7f1106c8
+    const v7, 0x7f1106ca
 
     invoke-virtual {v4, v7, v6}, Landroid/widget/RemoteViews;->setTextColor(II)V
 
@@ -576,7 +576,7 @@
 
     move-result-object v6
 
-    const v7, 0x7f040269
+    const v7, 0x7f04026c
 
     invoke-direct {v3, v6, v7}, Landroid/widget/RemoteViews;-><init>(Ljava/lang/String;I)V
 
@@ -632,7 +632,7 @@
     sput v0, Lcom/samsung/android/settings/qstile/ScreensaverTile;->selectedscreensaver:I
 
     :cond_0
-    const v6, 0x7f1106ca
+    const v6, 0x7f1106cc
 
     invoke-virtual {v4, v6, v3}, Landroid/widget/RemoteViews;->addView(ILandroid/widget/RemoteViews;)V
 
@@ -654,7 +654,7 @@
 .method public semGetDetailViewTitle()Ljava/lang/CharSequence;
     .locals 1
 
-    const v0, 0x7f0b165c
+    const v0, 0x7f0b166e
 
     invoke-virtual {p0, v0}, Lcom/samsung/android/settings/qstile/ScreensaverTile;->getString(I)Ljava/lang/String;
 

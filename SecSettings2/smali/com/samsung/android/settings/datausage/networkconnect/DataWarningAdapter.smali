@@ -304,13 +304,13 @@
 
     iget-object v6, p0, Lcom/samsung/android/settings/datausage/networkconnect/DataWarningAdapter;->mLayoutInflater:Landroid/view/LayoutInflater;
 
-    const v7, 0x7f0400c3
+    const v7, 0x7f0400c4
 
     invoke-virtual {v6, v7, p3, v10}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;Z)Landroid/view/View;
 
     move-result-object p2
 
-    const v6, 0x7f11027d
+    const v6, 0x7f11027f
 
     invoke-virtual {p2, v6}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -330,7 +330,7 @@
 
     iput-object v6, v4, Lcom/samsung/android/settings/datausage/networkconnect/DataWarningViewHolder;->icon:Landroid/widget/ImageView;
 
-    const v6, 0x7f1102a4
+    const v6, 0x7f1102a6
 
     invoke-virtual {p2, v6}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -340,7 +340,7 @@
 
     iput-object v6, v4, Lcom/samsung/android/settings/datausage/networkconnect/DataWarningViewHolder;->name:Landroid/widget/TextView;
 
-    const v6, 0x7f1102a5
+    const v6, 0x7f1102a7
 
     invoke-virtual {p2, v6}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -435,7 +435,7 @@
 
     iget-object v8, p0, Lcom/samsung/android/settings/datausage/networkconnect/DataWarningAdapter;->mContext:Landroid/content/Context;
 
-    const v9, 0x7f0b0ed3
+    const v9, 0x7f0b0ee2
 
     invoke-virtual {v8, v9}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -611,7 +611,7 @@
 
     iget-object v8, p0, Lcom/samsung/android/settings/datausage/networkconnect/DataWarningAdapter;->mContext:Landroid/content/Context;
 
-    const v9, 0x7f0b0ed3
+    const v9, 0x7f0b0ee2
 
     invoke-virtual {v8, v9}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 

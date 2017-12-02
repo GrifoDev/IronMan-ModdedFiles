@@ -238,7 +238,7 @@
 
     move-result-object v2
 
-    const v3, 0x7f110887
+    const v3, 0x7f110889
 
     invoke-virtual {v2, v3}, Landroid/app/FragmentManager;->findFragmentById(I)Landroid/app/Fragment;
 
@@ -337,7 +337,7 @@
 
     invoke-direct {v0, p0}, Landroid/app/AlertDialog$Builder;-><init>(Landroid/content/Context;)V
 
-    const v4, 0x7f04037e
+    const v4, 0x7f040381
 
     const/4 v5, 0x0
 
@@ -347,7 +347,7 @@
 
     invoke-virtual {v0, v3}, Landroid/app/AlertDialog$Builder;->setCustomTitle(Landroid/view/View;)Landroid/app/AlertDialog$Builder;
 
-    const v4, 0x7f110888
+    const v4, 0x7f11088a
 
     invoke-virtual {v3, v4}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -375,7 +375,7 @@
 
     iget-object v4, p0, Lcom/android/settings/wfd/WfdPickerDialog;->mWfdTitle:Landroid/widget/TextView;
 
-    const v5, 0x7f0b10e9
+    const v5, 0x7f0b10f8
 
     invoke-virtual {v4, v5}, Landroid/widget/TextView;->setText(I)V
 
@@ -388,7 +388,7 @@
 
     invoke-direct {v4, p0}, Lcom/android/settings/wfd/WfdPickerDialog$1;-><init>(Lcom/android/settings/wfd/WfdPickerDialog;)V
 
-    const v5, 0x7f0b13d6
+    const v5, 0x7f0b13e7
 
     invoke-virtual {v0, v5, v4}, Landroid/app/AlertDialog$Builder;->setNegativeButton(ILandroid/content/DialogInterface$OnClickListener;)Landroid/app/AlertDialog$Builder;
 
@@ -398,7 +398,7 @@
 
     check-cast v4, Landroid/view/ViewGroup;
 
-    const v5, 0x7f04037d
+    const v5, 0x7f040380
 
     invoke-virtual {v2, v5, v4}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;)Landroid/view/View;
 
@@ -410,7 +410,7 @@
 
     move-result-object v4
 
-    const v5, 0x7f110887
+    const v5, 0x7f110889
 
     invoke-virtual {v4, v5}, Landroid/app/FragmentManager;->findFragmentById(I)Landroid/app/Fragment;
 
@@ -445,7 +445,7 @@
     :cond_0
     iget-object v4, p0, Lcom/android/settings/wfd/WfdPickerDialog;->mWfdTitle:Landroid/widget/TextView;
 
-    const v5, 0x7f0b10e8
+    const v5, 0x7f0b10f7
 
     invoke-virtual {v4, v5}, Landroid/widget/TextView;->setText(I)V
 

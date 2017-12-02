@@ -170,6 +170,8 @@
     <string name="wifi_allow_scan_with_traffic_summary">Tillad eller afvis Wi-Fi-roamingsøgninger automatisk baseret på den mængde data, der er brugt.</string>
     <string name="select_logd_size_title">Bufferstr. til logføring</string>
     <string name="select_logd_size_dialog_title">Vælg maksimumstørrelse for hver logbuffer</string>
+    <string name="dev_logpersist_clear_warning_title">Ryd lager for vedvarende logføring?</string>
+    <string name="dev_logpersist_clear_warning_message">Logføringsdata vil blive slettet, når den vedvarende logføring er deaktiveret.</string>
     <string name="select_logpersist_title">Gem logdata permanent</string>
     <string name="select_logpersist_dialog_title">Vælg logbuffere, der skal gemmes permanent</string>
     <string name="select_usb_configuration_title">USB-konfiguration</string>
@@ -983,6 +985,7 @@ De 2 forbundne enheder kan have en lille forskel i lydoutputtet."</string>
     <string name="bluetooth_avc_available_description">Den tilsluttede Bluetooth-enhed understøtter Medielydstyrkesynkronisering, og den lydstyrke, der er indstillet af Bluetooth-enheden, vil blive synkroniseret med din telefon.</string>
     <string name="bluetooth_enter_pin_msg">Angiv PIN-kode for at parre med %s (Prøv 0000 eller 1234).</string>
     <string name="bluetooth_pin_maximum_number_message">Det maksimale antal tegn er nået.</string>
+    <string name="bluetooth_frp_permission_message">Det er ikke muligt at bruge Bluetooth-enheden til dette opkald.</string>
     <string name="settings_menu_done">Udført</string>
     <string name="usb_tethering_unavailable_subtext_tmo">USB not connected</string>
     <string name="usb_tethering_available_subtext_tmo">USB connected, check to tether</string>
@@ -1482,7 +1485,7 @@ Tryk på OK for at tillade, at lysstyrken øges til over sikkerhedsniveauet."</s
     <string name="navigationbar_pressure_sensitivity_title">Tryk hårdt på startknappen</string>
     <string name="navigationbar_pressure_sensitivity_summary">Brug startknappen, når den er skjult, ved at trykke hårdere end normalt.</string>
     <string name="navigationbar_pressure_sensitivity_level_summary">Trykniveau: %1$d af %2$d</string>
-    <string name="navigationbar_pressure_sensitivity_description_off">Brug startknappen, når den er skjult, ved at trykke hårdere end normalt.</string>
+    <string name="navigationbar_pressure_sensitivity_description_off">Juster den mængde tryk, der skal bruges for at trykke hårdt på startknappen.</string>
     <string name="navigationbar_pressure_low">Lettere</string>
     <string name="navigationbar_pressure_high">Stærkere</string>
     <string name="navigationbar_hide_bar">Vis og skjul knap</string>
@@ -1621,7 +1624,7 @@ Tryk på OK for at tillade, at lysstyrken øges til over sikkerhedsniveauet."</s
     <string name="crypt_keeper_decrypt_title">Dekrypter enhed</string>
     <string name="crypt_keeper_decrypt_summary">Enhed krypteret.</string>
     <string name="crypt_keeper_type_pin">PIN-kode</string>
-    <string name="crypt_keeper_type_pattern">Mønster</string>
+    <string name="crypt_keeper_type_pattern">mønster</string>
     <string name="crypt_keeper_type_password">Adgangskode</string>
     <string name="crypt_keeper_type_direction">Retningslås</string>
     <string name="crypt_keeper_confirm_title_dec">Bekræft dekryptering</string>
@@ -1705,7 +1708,11 @@ Kryptering tager en time eller længere. Før du starter, skal du sørge for, at
     <string name="crypt_keeper_confirm_title">Bekræft kryptering</string>
     <string name="crypt_keeper_final_desc">Kryptering af din enhed kan ikke fortrydes, og der vil gå data tabt, hvis processen afbrydes. Kryptering tager en time eller længere, din enhed genstarter flere gange undervejs, og du kan ikke bruge enheden imens.</string>
     <string name="crypt_keeper_setup_title">Krypterer …</string>
-    <string name="crypt_keeper_warn_wipe">Du har %d forsøg tilbage til at starte din enhed, før den bliver nulstillet til fabriksindstillingerne. Dette vil slette alle data, herunder filer og downloadede apps.</string>
+    <string name="crypt_keeper_warn_wipe">"Du har %1$d forsøg tilbage, før din telefon nulstilles til fabriksindstillingerne. Dette vil slette alle data, herunder filer og downloadede apps.
+
+Hvis din telefon bliver nulstillet, skal du muligvis indtaste de %2$s-oplysninger (e-mailadresse og adgangskode), der er knyttet til denne telefon, før du kan bruge den igen."</string>
+    <string name="crypt_keeper_samsung_account">Samsung account</string>
+    <string name="crypt_keeper_google_account">Google-konto</string>
     <string name="crypt_keeper_failed_title">Krypteringen mislykkedes</string>
     <string name="crypt_keeper_failed_summary">Kan ikke starte din enhed. Krypteringsprocessen blev afbrudt. Du skal nulstille din enhed til fabrikkens standardindstillinger. Dette vil slette alle dine data.</string>
     <string name="crypt_keeper_data_corrupted_title">Enhedens lager er beskadiget</string>
@@ -1724,10 +1731,13 @@ Kryptering tager en time eller længere. Før du starter, skal du sørge for, at
     <string name="cryptkeeper_wrong_pin">Der blev angivet en forkert PIN-kode</string>
     <string name="cryptkeeper_wrong_direction">Der blev tegnet en forkert retning</string>
     <string name="checking_decryption">Verificerer…</string>
-    <string name="crypt_keeper_last_warn_wipe">Du har kun 1 forsøg tilbage til at starte din enhed, før den bliver nulstillet til fabriksindstillingerne. Dette vil slette alle data, herunder filer og downloadede apps.</string>
+    <string name="crypt_keeper_last_warn_wipe">"Du har 1 forsøg tilbage, før din telefon nulstilles til fabriksindstillingerne. Dette vil slette alle data, herunder filer og downloadede apps.
+
+Hvis din telefon bliver nulstillet, skal du muligvis indtaste de %s-oplysninger (e-mailadresse og adgangskode), der er knyttet til denne telefon, før du kan bruge den igen."</string>
     <string name="crypt_keeper_failed_title_dec">Dekrypteringen mislykkedes.</string>
     <string name="crypt_keeper_failed_summary_dec">Kunne ikke udføre dekryptering på grund af afbrydelse. Udfør fabriksdatanulstilling (sletter alle dine data) før brug.</string>
     <string name="crypt_keeper_set_screen_lock_type">Indstil skærmlåsningstype</string>
+    <string name="crypt_keeper_warning_keyboard_cover_does_not_work">Tastaturcoveret vil ikke fungere, når telefonen er genstartet.</string>
     <string name="encryption_interstitial_message">"Du kan beskytte denne telefon yderligere ved at kræve, at din %s indtastes, før telefonen starter. Dette hjælper med at beskytte dine data, hvis telefonen bliver væk eller stjålet. Nogle apps kan kræve Sikker start i henhold til politikker for enhedskryptering for at få adgang til funktioner, som f.eks. e-mailsynkronisering.
 
 Du vil ikke modtage opkald, beskeder eller meddelelser, og alarmer vil ikke lyde, før telefonen er startet."</string>
@@ -1972,6 +1982,12 @@ You will also need it when:"</string>
     <string name="lockpassword_confirm_your_pin_with_fingerprint">Brug et fingeraftryk, eller indtast den aktuelle PIN-kode.</string>
     <string name="lockpassword_confirm_your_pattern_with_fingerprint">Brug et fingeraftryk, eller tegn det aktuelle mønster.</string>
     <string name="lockpassword_confirm_your_password_with_fingerprint">Brug et fingeraftryk, eller indtast den aktuelle adgangskode.</string>
+    <string name="lockpassword_confirm_your_pin_with_iris">Brug din iris, eller indtast din aktuelle PIN-kode.</string>
+    <string name="lockpassword_confirm_your_pattern_with_iris">Brug din iris, eller tegn dit aktuelle mønster.</string>
+    <string name="lockpassword_confirm_your_password_with_iris">Brug din iris, eller indtast din aktuelle adgangskode.</string>
+    <string name="lockpassword_confirm_your_pin_with_biometrics">Brug biometriske data, eller indtast din PIN-kode.</string>
+    <string name="lockpassword_confirm_your_pattern_with_biometrics">Brug biometriske data, eller tegn dit mønster.</string>
+    <string name="lockpassword_confirm_your_password_with_biometrics">Brug biometriske data, eller indtast din adgangskode.</string>
     <string name="lockpassword_confirm_your_pin_instead_of_fingerprint">Indtast din PIN-kode i stedet for at bruge fingeraftryksgenkendelse.</string>
     <string name="lockpassword_confirm_your_pattern_instead_of_fingerprint">Tegn dit mønster i stedet for at bruge fingeraftryksgenkendelse.</string>
     <string name="lockpassword_confirm_your_password_instead_of_fingerprint">Indtast din adgangskode i stedet for at bruge fingeraftryksgenkendelse.</string>
@@ -2047,6 +2063,7 @@ serveadgk."</string>
     <string name="face_status_timeout">Timeout. Prøv senere.</string>
     <string name="okay">OK</string>
     <string name="face_samsung_account_button">Brug Samsung account</string>
+    <string name="face_galaxy_account_button">Brug Galaxy account</string>
     <string name="face_error_DB_corrupted">Der opstod et problem med dine ansigtsdata. Registrer dit ansigt igen.</string>
     <string name="face_error_DB_corrupted_popup_title">Registrer dit ansigt igen</string>
     <string name="face_error_timeout">Dit ansigt blev ikke registreret.</string>
@@ -2158,7 +2175,7 @@ Aktiver Oplåsning med iris for at bruge dine biometriske data eller din/dit %s 
     <string name="biometrics_backup_locktype_title">Konfigurer sikkerhed for iris</string>
     <string name="biometrics_register_your_iris">Registrer din iris.</string>
     <string name="biometrics_backup_locktype_summary">Hvis du vil bruge din iris til at låse enheden op med, skal du angive et mønster, en PIN-kode eller en adgangskode.</string>
-    <string name="biometrics_backup_locktype_message">For at bruge din iris til at låse din telefon op eller til sikker bekræftelse skal du:</string>
+    <string name="biometrics_backup_locktype_message">Hvis du vil bruge din iris til at låse din telefon op med eller til at bekræfte dig selv i apps, skal du:</string>
     <string name="iris_delete_popup_title">Vil du fjerne irisdata?</string>
     <string name="iris_delete_popup_message">Vil du fjerne irisdata?</string>
     <string name="iris_delete_popup_message_with_related_func">Funktioner, der bruger iris, vil blive deaktiveret.</string>
@@ -2234,6 +2251,9 @@ Vælg, hvordan du vil låse din telefon op. Oplåsning med iris og Oplåsning me
     <string name="biometrics_dex_cant_use_msg">Kan ikke bruge %s i Samsung DeX.</string>
     <string name="biometrics_dex_closed_to_switch">%s lukkes for at skifte til Samsung DeX.</string>
     <string name="biometircs_dex_cant_use_toast">%s kan ikke køre i Samsung DeX. Prøv at køre i telefontilstand.</string>
+    <string name="iris_guide_text_preview">Se her f. at bruge iris</string>
+    <string name="iris_guide_enable_toggle">Tryk her for at bruge iris</string>
+    <string name="iris_cannot_verify">Det var ikke muligt at bekræfte iris</string>
     <string name="knox_twofactor_bio_description">Vælg din biometriske låsningstype og anden låsningstype for at låse op for %s.</string>
     <string name="fingerprint_registered">Registrerede fingeraftryk vil blive anvendt med valgte oplåsningsmetode.</string>
     <string name="knox_twofactor_description">Vælg dine biometriske data og en anden låsningstype for at låse op for %s.</string>
@@ -3096,6 +3116,7 @@ Prøv igen."</string>
     <string name="easy_mode_app_help">Brug din enhed nemmere med et enklere layout for startskærmen og større elementer på skærmen.</string>
     <string name="easy_mode_app_help_dream_1">Brug et enkelt startskærmlayout og større elementer på skærmen.</string>
     <string name="easy_mode_app_help_dream_2">Tilpasninger, du har foretaget på startskærmen, vil blive kasseret, og Skærmzoom vil blive sat til maksimum.</string>
+    <string name="easy_mode_app_help_3rd_launcher">Anvend Nem tilstand for større elementer på skærmen. Hvis du ikke bruger TouchWiz-start, vil dit startskærmlayout ikke blive ændret, men skærmzoom vil blive indstillet til stor, og skriftstørrelsen vil blive indstillet til mellem.</string>
     <string name="security_warning_content">Du kan beskytte din fortrolighed ved at oprette en adgangskode, en PIN-kode eller et mønster til oplåsning af skærmen</string>
     <string name="lock_setting_weather_desc">Tryk på VEJRINDSTILLINGER herunder for at se eller ændre vejrindstillinger.</string>
     <string name="lock_setting_weather_btn">Vejrindstillinger</string>
@@ -3949,7 +3970,7 @@ Brug af Mobilt hotspot øger batteriforbrug og dataforbrug."</string>
     <string name="wfd_descrpition_playsound">Afspil lyd.</string>
     <string name="wfd_is_not_supported">Denne funktion understøttes ikke.</string>
     <string name="usbtethering_notify_wifi_is_on_title">Vil du deaktivere Wi-Fi?</string>
-    <string name="usbtethering_notify_wifi_is_on">Wi-Fi og USB-deling kan ikke være aktiveret på samme tid. Deaktiver Wi-Fi.</string>
+    <string name="usbtethering_notify_wifi_is_on">Wi-Fi og USB-deling kan ikke være aktiveret på samme tid. Wi-Fi vil blive deaktiveret.</string>
     <string name="disable_multi_window_dialog_text">Multi-vindue vil blive deaktiveret, og alle apps, der er åbne i pop op-vinduer, vil blive lukket.</string>
     <string name="keyguard_password_attempt_count_pin_code">%d forsøg tilbage.</string>
     <string name="keyguard_password_attempts_count_pin_code">%d forsøg tilbage.</string>
@@ -4157,6 +4178,7 @@ Modtager sms"</string>
     <string name="hdmi_mode_title">HDMI-tilstand</string>
     <string name="hdmi_mode_dex">Samsung DeX</string>
     <string name="hdmi_mode_mirroring">Screen Mirroring</string>
+    <string name="hdmi_mode_not_available_while_cover_attached">%s er ikke tilgængelig, når cover er monteret.</string>
     <string name="screen_timeout_for_dex">Skærmtimeout for Samsung DeX</string>
     <string name="show_virtual_keyboard_for_dex">Vis tastatur på skærmen i Samsung DeX</string>
     <string name="comma">,</string>
@@ -4465,7 +4487,7 @@ Du vil ikke kunne bruge krypterede filer på SD-kortet, når du har nulstillet d
     <string name="date_picker_title">Dato</string>
     <string name="time_picker_title">Tid</string>
     <string name="lock_after_timeout">Lås automatisk</string>
-    <string name="lock_after_timeout_summary">Lås skærmen %s efter den slukker automatisk.</string>
+    <string name="lock_after_timeout_summary">Lås telefonen, %s efter skærmen slukker automatisk.</string>
     <string name="lock_after_timeout_summary_with_exception">Lås skærmen %1$s efter den bliver slukket automatisk, bortset fra når den bliver holdt ulåst gennem %2$s.</string>
     <string name="show_owner_info_on_lockscreen_label">Vis oplysninger om enhedens ejer på den låste skærm.</string>
     <string name="owner_info_settings_title">Ejeroplysninger</string>
@@ -4613,6 +4635,8 @@ For at forbedre placeringsnøjagtigheden søger apps og tjenester muligvis efter
     <string name="wifi_empty_list_user_restricted">Du har ikke tilladelse til at ændre Wi-Fi-indstillingerne.</string>
     <string name="wifi_setup_wps">Automatisk opsætning (WPS)</string>
     <string name="wifi_show_advanced">Vis avancerede indstillinger</string>
+    <string name="wifi_advanced_toggle_description_expanded">Dobbelttryk for at skjule.</string>
+    <string name="wifi_advanced_toggle_description_collapsed">Dobbelttryk for at udvide.</string>
     <string name="wifi_wps_setup_title">WPS-opsætning</string>
     <string name="wifi_wps_setup_msg">Starter WPS …</string>
     <string name="wifi_wps_onstart_pbc">Tryk på knappen for Wi-Fi-beskyttet opsætning på din router. Den hedder muligvis WPS eller indeholder dette symbol:</string>
@@ -4644,6 +4668,10 @@ For at forbedre placeringsnøjagtigheden søger apps og tjenester muligvis efter
     <string name="wifi_shared">Delt</string>
     <string name="wifi_unchanged">(uændret)</string>
     <string name="wifi_unspecified">(Ikke specificeret)</string>
+    <string name="wifi_select_cert">Vælg certifikat</string>
+    <string name="wifi_do_not_provide_eap_user_cert">Giv ikke</string>
+    <string name="wifi_do_not_validate_eap_server">Valider ikke</string>
+    <string name="wifi_do_not_validate_eap_server_warning">Der er ikke angivet et certifikat. Din forbindelse vil ikke være privat.</string>
     <string name="wifi_scan_always_turnon_message">%s anmoder om tilladelse til at søge efter Wi-Fi-netværk, selvom Wi-Fi er slået fra, for at forbedre placeringsnøjagtighed og til andre formål. Vil du tillade dette for alle applikationer?</string>
     <string name="wifi_scan_always_confirm_allow">Tillad</string>
     <string name="wifi_scan_always_confirm_deny">Afvis</string>
@@ -4978,9 +5006,9 @@ Overvej at bruge et hurtigere SD-kort eller en USB-lagerenhed for at forbedre yd
     <string name="restore_default_apn_completed">Indstillinger for adgangspunktnavn nulstillet til standard.</string>
     <string name="reset_network_desc">Dette vil nulstille alle netværksindstillinger herunder dem for:</string>
     <string name="reset_network_button_text">Nulstil indstillinger</string>
-    <string name="reset_network_final_desc">Alle forbindelsesindstillinger vil blive nulstillet. Denne handling kan ikke fortrydes.</string>
+    <string name="reset_network_final_desc">Alle netværksindstillinger vil blive nulstillet. Denne handling kan ikke gøres om.</string>
     <string name="reset_network_final_button_text">Nulstil indstillinger</string>
-    <string name="reset_network_complete_toast">Forbindelsesindstillinger er nulstillet.</string>
+    <string name="reset_network_complete_toast">Nulstilling af netværksindstillinger.</string>
     <string name="master_clear_title">Nulstil til fabriksstandard</string>
     <string name="master_clear_accounts">Du er i øjeblikket logget på følgende konti:</string>
     <string name="master_clear_other_users_present">Data tilhørende andre brugere på denne enhed vil også blive slettet.</string>
@@ -6093,6 +6121,7 @@ Du vil ikke modtage opkald, beskeder eller meddelelser, og alarmer vil ikke lyde
     <string name="set_data_limit">Angiv datagrænse</string>
     <string name="data_limit">Datagrænse</string>
     <string name="data_usage_template">%1$s brugt mellem %2$s</string>
+    <string name="data_usage_template_wifi">%s brugt de seneste 30 dage</string>
     <string name="data_usage_other_apps">Relaterede apps inkl. i brug</string>
     <string name="data_saver_title">Datasparer</string>
     <string name="unrestricted_data_saver">Tillad app med Datasparer akti.</string>
@@ -6143,6 +6172,7 @@ Du vil ikke modtage opkald, beskeder eller meddelelser, og alarmer vil ikke lyde
     <string name="legacy_dhcp_client_summary">Brug DHCP-klienten fra Lollipop i stedet for den nye DHCP-klient i Android.</string>
     <string name="screen_off_pocket_title">Hold skærmen deaktiveret</string>
     <string name="screen_off_pocket_summary">Undgå at skærmen aktiveres ved et uheld, mens enheden ligger på et mørkt sted som for eksempel i en lomme eller en taske.</string>
+    <string name="noApplications">Alle apps, der er knyttet til denne handling, er blevet deaktiveret, blokeret eller er ikke installeret.</string>
     <string name="confirm_reset_shortcut_manager_throttling_title">Nulstil hastighedsbegrænserens beregninger for Genvejsadministrator</string>
     <string name="confirm_reset_shortcut_manager_throttling_message">Beregningerne for hastighedsbegrænseren for Genvejsadministrator vil blive nulstillet.</string>
 </resources>

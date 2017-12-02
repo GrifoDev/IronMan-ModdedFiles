@@ -166,7 +166,7 @@
 
     const/4 v2, 0x0
 
-    const v6, 0x7f08014e
+    const v6, 0x7f080150
 
     const/4 v7, 0x0
 
@@ -180,7 +180,7 @@
 
     iput v6, p0, Lcom/android/settings/datausage/WarningSettingsActivity;->mSubId:I
 
-    const v6, 0x7f1109e1
+    const v6, 0x7f1109e4
 
     invoke-virtual {v2, v6}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -190,7 +190,7 @@
 
     iput-object v6, p0, Lcom/android/settings/datausage/WarningSettingsActivity;->mWarningGroup:Landroid/widget/RadioGroup;
 
-    const v6, 0x7f1109e2
+    const v6, 0x7f1109e5
 
     invoke-virtual {v2, v6}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -200,7 +200,7 @@
 
     iput-object v6, p0, Lcom/android/settings/datausage/WarningSettingsActivity;->mWarningOff:Landroid/widget/RadioButton;
 
-    const v6, 0x7f1109e3
+    const v6, 0x7f1109e6
 
     invoke-virtual {v2, v6}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -210,7 +210,7 @@
 
     iput-object v6, p0, Lcom/android/settings/datausage/WarningSettingsActivity;->mWarning40:Landroid/widget/RadioButton;
 
-    const v6, 0x7f1109e4
+    const v6, 0x7f1109e7
 
     invoke-virtual {v2, v6}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -220,7 +220,7 @@
 
     iput-object v6, p0, Lcom/android/settings/datausage/WarningSettingsActivity;->mWarning50:Landroid/widget/RadioButton;
 
-    const v6, 0x7f1109e5
+    const v6, 0x7f1109e8
 
     invoke-virtual {v2, v6}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -230,7 +230,7 @@
 
     iput-object v6, p0, Lcom/android/settings/datausage/WarningSettingsActivity;->mWarning60:Landroid/widget/RadioButton;
 
-    const v6, 0x7f1109e6
+    const v6, 0x7f1109e9
 
     invoke-virtual {v2, v6}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -240,7 +240,7 @@
 
     iput-object v6, p0, Lcom/android/settings/datausage/WarningSettingsActivity;->mWarning70:Landroid/widget/RadioButton;
 
-    const v6, 0x7f1109e7
+    const v6, 0x7f1109ea
 
     invoke-virtual {v2, v6}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -250,7 +250,7 @@
 
     iput-object v6, p0, Lcom/android/settings/datausage/WarningSettingsActivity;->mWarning80:Landroid/widget/RadioButton;
 
-    const v6, 0x7f1109e8
+    const v6, 0x7f1109eb
 
     invoke-virtual {v2, v6}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -260,7 +260,7 @@
 
     iput-object v6, p0, Lcom/android/settings/datausage/WarningSettingsActivity;->mWarning90:Landroid/widget/RadioButton;
 
-    const v6, 0x7f1109e9
+    const v6, 0x7f1109ec
 
     invoke-virtual {v2, v6}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 

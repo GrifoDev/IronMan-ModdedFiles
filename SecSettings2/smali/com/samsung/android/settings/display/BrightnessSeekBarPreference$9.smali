@@ -57,7 +57,7 @@
 
     iget-object v3, p0, Lcom/samsung/android/settings/display/BrightnessSeekBarPreference$9;->this$0:Lcom/samsung/android/settings/display/BrightnessSeekBarPreference;
 
-    invoke-static {v3}, Lcom/samsung/android/settings/display/BrightnessSeekBarPreference;->-get7(Lcom/samsung/android/settings/display/BrightnessSeekBarPreference;)Landroid/widget/SeekBar;
+    invoke-static {v3}, Lcom/samsung/android/settings/display/BrightnessSeekBarPreference;->-get8(Lcom/samsung/android/settings/display/BrightnessSeekBarPreference;)Landroid/widget/SeekBar;
 
     move-result-object v3
 
@@ -67,13 +67,13 @@
 
     iget-object v3, p0, Lcom/samsung/android/settings/display/BrightnessSeekBarPreference$9;->this$0:Lcom/samsung/android/settings/display/BrightnessSeekBarPreference;
 
-    invoke-static {v3}, Lcom/samsung/android/settings/display/BrightnessSeekBarPreference;->-get5(Lcom/samsung/android/settings/display/BrightnessSeekBarPreference;)I
+    invoke-static {v3}, Lcom/samsung/android/settings/display/BrightnessSeekBarPreference;->-get6(Lcom/samsung/android/settings/display/BrightnessSeekBarPreference;)I
 
     move-result v3
 
     iget-object v4, p0, Lcom/samsung/android/settings/display/BrightnessSeekBarPreference$9;->this$0:Lcom/samsung/android/settings/display/BrightnessSeekBarPreference;
 
-    invoke-static {v4}, Lcom/samsung/android/settings/display/BrightnessSeekBarPreference;->-get6(Lcom/samsung/android/settings/display/BrightnessSeekBarPreference;)I
+    invoke-static {v4}, Lcom/samsung/android/settings/display/BrightnessSeekBarPreference;->-get7(Lcom/samsung/android/settings/display/BrightnessSeekBarPreference;)I
 
     move-result v4
 

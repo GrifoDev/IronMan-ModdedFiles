@@ -643,7 +643,7 @@
 
     aput-object v3, v6, v9
 
-    const v3, 0x7f0b1e28
+    const v3, 0x7f0b1e3a
 
     invoke-virtual {p0, v3, v6}, Lcom/android/settings/datausage/BillingCycleSettings;->getString(I[Ljava/lang/Object;)Ljava/lang/String;
 
@@ -1005,7 +1005,7 @@
     :cond_4
     iget-object v2, p0, Lcom/android/settings/datausage/BillingCycleSettings;->mEnableDataLimit:Landroid/preference/SwitchPreference;
 
-    const v3, 0x7f0b05a0
+    const v3, 0x7f0b05a1
 
     invoke-virtual {v2, v3}, Landroid/preference/SwitchPreference;->setTitle(I)V
 
@@ -1016,7 +1016,7 @@
 
     iget-object v2, p0, Lcom/android/settings/datausage/BillingCycleSettings;->mEnableDataLimit:Landroid/preference/SwitchPreference;
 
-    const v3, 0x7f0b05a1
+    const v3, 0x7f0b05a2
 
     invoke-virtual {p0, v3}, Lcom/android/settings/datausage/BillingCycleSettings;->getString(I)Ljava/lang/String;
 
@@ -1085,9 +1085,9 @@
 
     const-wide/16 v10, -0x1
 
-    const/4 v12, 0x1
-
     const/4 v7, 0x0
+
+    const/4 v12, 0x1
 
     iget-object v8, p0, Lcom/android/settings/datausage/BillingCycleSettings;->mEnableDataLimit:Landroid/preference/SwitchPreference;
 
@@ -1156,7 +1156,11 @@
 
     if-nez v6, :cond_2
 
-    return v7
+    const-wide v8, 0x140000000L
+
+    invoke-direct {p0, v8, v9}, Lcom/android/settings/datausage/BillingCycleSettings;->setPolicyLimitBytes(J)V
+
+    return v12
 
     :cond_2
     iget-wide v8, v6, Landroid/net/NetworkPolicy;->warningBytes:J

@@ -517,7 +517,7 @@
 
     move-result-object v10
 
-    const v4, 0x7f0b14ea
+    const v4, 0x7f0b14fb
 
     invoke-virtual {p0, v4}, Lcom/android/settings/bluetooth/DockService;->getString(I)Ljava/lang/String;
 
@@ -531,7 +531,7 @@
 
     invoke-virtual {v1, v10, v4, v6}, Landroid/app/AlertDialog$Builder;->setMultiChoiceItems([Ljava/lang/CharSequence;[ZLandroid/content/DialogInterface$OnMultiChoiceClickListener;)Landroid/app/AlertDialog$Builder;
 
-    const v4, 0x7f040273
+    const v4, 0x7f040276
 
     const/4 v6, 0x0
 
@@ -539,7 +539,7 @@
 
     move-result-object v2
 
-    const v4, 0x7f1106f8
+    const v4, 0x7f1106fa
 
     invoke-virtual {v2, v4}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -646,7 +646,7 @@
     goto :goto_1
 
     :cond_3
-    const v4, 0x7f0b14ea
+    const v4, 0x7f0b14fb
 
     invoke-virtual {p0, v4}, Lcom/android/settings/bluetooth/DockService;->getString(I)Ljava/lang/String;
 
@@ -654,7 +654,7 @@
 
     invoke-virtual {v1, v4}, Landroid/app/AlertDialog$Builder;->setTitle(Ljava/lang/CharSequence;)Landroid/app/AlertDialog$Builder;
 
-    const v4, 0x7f0400ec
+    const v4, 0x7f0400ed
 
     const/4 v6, 0x0
 
@@ -662,7 +662,7 @@
 
     move-result-object v2
 
-    const v4, 0x7f110373
+    const v4, 0x7f110375
 
     invoke-virtual {v2, v4}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -1189,7 +1189,7 @@
 .method private initBtSettings(Landroid/bluetooth/BluetoothDevice;IZ)[Ljava/lang/CharSequence;
     .locals 6
 
-    const v3, 0x7f0b14ec
+    const v3, 0x7f0b14fd
 
     const/4 v5, 0x1
 
@@ -1226,7 +1226,7 @@
     goto :goto_0
 
     :pswitch_2
-    const v2, 0x7f0b14eb
+    const v2, 0x7f0b14fc
 
     invoke-virtual {p0, v2}, Lcom/android/settings/bluetooth/DockService;->getString(I)Ljava/lang/String;
 

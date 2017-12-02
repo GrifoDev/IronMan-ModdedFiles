@@ -803,7 +803,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f0b06be
+    const v1, 0x7f0b06bf
 
     invoke-virtual {v0, v1}, Landroid/app/Activity;->setTitle(I)V
 
@@ -1071,7 +1071,7 @@
 
     invoke-virtual {v0, v3, v5, v4, v2}, Landroid/widget/TextView;->setPadding(IIII)V
 
-    const v6, 0x7f0b06bf
+    const v6, 0x7f0b06c0
 
     invoke-virtual {v0, v6}, Landroid/widget/TextView;->setText(I)V
 

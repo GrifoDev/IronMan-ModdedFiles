@@ -346,7 +346,7 @@
 .method private SetFirstTimePhonepassword(Landroid/content/Intent;)V
     .locals 5
 
-    const v4, 0x7f0b0d85
+    const v4, 0x7f0b0d94
 
     const/16 v3, 0x64
 
@@ -408,7 +408,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f0b0d87
+    const v1, 0x7f0b0d96
 
     invoke-virtual {p0, v1}, Lcom/samsung/android/settings/OtherSecuritySettings;->getString(I)Ljava/lang/String;
 
@@ -470,13 +470,13 @@
 
     move-result-object v0
 
-    const v1, 0x7f0b0d84
+    const v1, 0x7f0b0d93
 
     invoke-virtual {p0, v1}, Lcom/samsung/android/settings/OtherSecuritySettings;->getString(I)Ljava/lang/String;
 
     move-result-object v1
 
-    const v2, 0x7f0b0d88
+    const v2, 0x7f0b0d97
 
     invoke-virtual {p0, v2}, Lcom/samsung/android/settings/OtherSecuritySettings;->getString(I)Ljava/lang/String;
 
@@ -499,7 +499,7 @@
 .method private StartPassword()V
     .locals 5
 
-    const v3, 0x7f0b0d83
+    const v3, 0x7f0b0d92
 
     invoke-virtual {p0}, Lcom/samsung/android/settings/OtherSecuritySettings;->getContentResolver()Landroid/content/ContentResolver;
 
@@ -521,13 +521,13 @@
 
     move-result-object v1
 
-    const v2, 0x7f0b0d84
+    const v2, 0x7f0b0d93
 
     invoke-virtual {p0, v2}, Lcom/samsung/android/settings/OtherSecuritySettings;->getString(I)Ljava/lang/String;
 
     move-result-object v2
 
-    const v3, 0x7f0b0d88
+    const v3, 0x7f0b0d97
 
     invoke-virtual {p0, v3}, Lcom/samsung/android/settings/OtherSecuritySettings;->getString(I)Ljava/lang/String;
 
@@ -549,7 +549,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f0b0d86
+    const v2, 0x7f0b0d95
 
     invoke-virtual {p0, v2}, Lcom/samsung/android/settings/OtherSecuritySettings;->getString(I)Ljava/lang/String;
 
@@ -574,7 +574,7 @@
     invoke-virtual/range {v18 .. v18}, Landroid/preference/PreferenceScreen;->removeAll()V
 
     :cond_0
-    const v25, 0x7f0800ff
+    const v25, 0x7f080101
 
     move-object/from16 v0, p0
 
@@ -641,7 +641,7 @@
 
     move-object/from16 v25, v0
 
-    const v26, 0x7f0b0d83
+    const v26, 0x7f0b0d92
 
     invoke-virtual/range {v25 .. v26}, Landroid/preference/PreferenceScreen;->setTitle(I)V
 
@@ -667,7 +667,7 @@
 
     invoke-direct {v0, v1}, Landroid/preference/PreferenceCategory;-><init>(Landroid/content/Context;)V
 
-    const v25, 0x7f0b0d82
+    const v25, 0x7f0b0d91
 
     move-object/from16 v0, v16
 
@@ -694,7 +694,7 @@
     invoke-virtual {v0, v1}, Landroid/preference/PreferenceCategory;->addPreference(Landroid/preference/Preference;)Z
 
     :cond_1
-    const v25, 0x7f0800ba
+    const v25, 0x7f0800bc
 
     move-object/from16 v0, p0
 
@@ -780,7 +780,7 @@
 
     move-result-object v26
 
-    const v27, 0x7f0b166f
+    const v27, 0x7f0b1681
 
     invoke-virtual/range {v26 .. v27}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -806,7 +806,7 @@
 
     move-result-object v26
 
-    const v27, 0x7f0b166e
+    const v27, 0x7f0b1680
 
     invoke-virtual/range {v26 .. v27}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -964,7 +964,7 @@
 
     move-result-object v26
 
-    const v27, 0x7f0b1cf6
+    const v27, 0x7f0b1d08
 
     invoke-virtual/range {v26 .. v27}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -1142,7 +1142,7 @@
 
     if-eqz v25, :cond_15
 
-    const v20, 0x7f0b1a2c
+    const v20, 0x7f0b1a3e
 
     :goto_3
     move/from16 v0, v20
@@ -1625,7 +1625,7 @@
     goto/16 :goto_2
 
     :cond_15
-    const v20, 0x7f0b1a2d
+    const v20, 0x7f0b1a3f
 
     goto/16 :goto_3
 
@@ -1758,7 +1758,7 @@
 
     move-object/from16 v25, v0
 
-    const v26, 0x7f0b0d6d
+    const v26, 0x7f0b0d7c
 
     invoke-virtual/range {v25 .. v26}, Landroid/preference/Preference;->setSummary(I)V
 
@@ -1777,7 +1777,7 @@
 
     move-object/from16 v25, v0
 
-    const v26, 0x7f0b0d6e
+    const v26, 0x7f0b0d7d
 
     invoke-virtual/range {v25 .. v26}, Landroid/preference/Preference;->setSummary(I)V
 
@@ -1790,7 +1790,7 @@
 
     move-object/from16 v25, v0
 
-    const v26, 0x7f0b0d6f
+    const v26, 0x7f0b0d7e
 
     invoke-virtual/range {v25 .. v26}, Landroid/preference/Preference;->setSummary(I)V
 
@@ -1836,7 +1836,7 @@
 
     move-object/from16 v25, v0
 
-    const v26, 0x7f0b1202
+    const v26, 0x7f0b1212
 
     invoke-virtual/range {v25 .. v26}, Landroid/preference/SwitchPreference;->setSummary(I)V
 
@@ -1884,7 +1884,7 @@
 
     move-object/from16 v25, v0
 
-    const v26, 0x7f0b1200
+    const v26, 0x7f0b1210
 
     invoke-virtual/range {v25 .. v26}, Landroid/preference/SwitchPreference;->setSummary(I)V
     :try_end_1
@@ -1937,7 +1937,7 @@
 
     move-object/from16 v25, v0
 
-    const v26, 0x7f0b1201
+    const v26, 0x7f0b1211
 
     invoke-virtual/range {v25 .. v26}, Landroid/preference/SwitchPreference;->setSummary(I)V
     :try_end_2
@@ -2108,9 +2108,9 @@
 .method private getCurrentSecurityTitle()Ljava/lang/String;
     .locals 7
 
-    const v6, 0x7f0b0aae
+    const v6, 0x7f0b0abc
 
-    const v5, 0x7f0b0aaf
+    const v5, 0x7f0b0abd
 
     const/4 v4, 0x1
 
@@ -2155,7 +2155,7 @@
     :sswitch_0
     new-array v1, v4, [Ljava/lang/Object;
 
-    const v2, 0x7f0b1468
+    const v2, 0x7f0b1479
 
     invoke-virtual {p0, v2}, Lcom/samsung/android/settings/OtherSecuritySettings;->getString(I)Ljava/lang/String;
 
@@ -2172,7 +2172,7 @@
     :sswitch_1
     new-array v1, v4, [Ljava/lang/Object;
 
-    const v2, 0x7f0b146a
+    const v2, 0x7f0b147b
 
     invoke-virtual {p0, v2}, Lcom/samsung/android/settings/OtherSecuritySettings;->getString(I)Ljava/lang/String;
 
@@ -2201,7 +2201,7 @@
 
     new-array v1, v4, [Ljava/lang/Object;
 
-    const v2, 0x7f0b1466
+    const v2, 0x7f0b1477
 
     invoke-virtual {p0, v2}, Lcom/samsung/android/settings/OtherSecuritySettings;->getString(I)Ljava/lang/String;
 
@@ -2233,7 +2233,7 @@
 
     const/4 v1, 0x0
 
-    const v2, 0x7f0b0aae
+    const v2, 0x7f0b0abc
 
     invoke-virtual {p0, v2}, Lcom/samsung/android/settings/OtherSecuritySettings;->getString(I)Ljava/lang/String;
 
@@ -2436,7 +2436,7 @@
 
     move-result-object v8
 
-    const v9, 0x7f0b0aac
+    const v9, 0x7f0b0aba
 
     invoke-virtual {v8, v9}, Landroid/app/Activity;->getString(I)Ljava/lang/String;
 
@@ -2450,7 +2450,7 @@
 
     aput-object v5, v9, v11
 
-    const v10, 0x7f0b0522
+    const v10, 0x7f0b0523
 
     invoke-virtual {v8, v10, v9}, Landroid/app/Activity;->getString(I[Ljava/lang/Object;)Ljava/lang/String;
 
@@ -2634,7 +2634,7 @@
 
     if-eqz p1, :cond_2
 
-    const v0, 0x7f0b1cf6
+    const v0, 0x7f0b1d08
 
     :goto_1
     invoke-virtual {v3, v0}, Lcom/samsung/android/settings/SettingsSwitchPreference;->setSummary(I)V
@@ -2665,7 +2665,7 @@
     goto :goto_0
 
     :cond_2
-    const v0, 0x7f0b1cf7
+    const v0, 0x7f0b1d09
 
     goto :goto_1
 
@@ -2770,7 +2770,7 @@
 .method protected getHelpResource()I
     .locals 1
 
-    const v0, 0x7f0b1bc4
+    const v0, 0x7f0b1bd6
 
     return v0
 .end method
@@ -2782,7 +2782,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f0f02a5
+    const v1, 0x7f0f02a4
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getInteger(I)I
 
@@ -3043,7 +3043,7 @@
 
     move-result-object v9
 
-    const v12, 0x7f0f02ad
+    const v12, 0x7f0f02ac
 
     invoke-virtual {v9, v12}, Landroid/content/res/Resources;->getInteger(I)I
 
@@ -3193,7 +3193,7 @@
 
     move-result-object v10
 
-    const v11, 0x7f0f02b2
+    const v11, 0x7f0f02b1
 
     invoke-virtual {v10, v11}, Landroid/content/res/Resources;->getInteger(I)I
 
@@ -3407,7 +3407,7 @@
 
     iget-object v9, p0, Lcom/samsung/android/settings/OtherSecuritySettings;->kapPreference:Landroid/preference/SwitchPreference;
 
-    const v10, 0x7f0b1201
+    const v10, 0x7f0b1211
 
     invoke-virtual {v9, v10}, Landroid/preference/SwitchPreference;->setSummary(I)V
     :try_end_1
@@ -3568,7 +3568,7 @@
 
     move-result-object v5
 
-    const v6, 0x7f0f02b9
+    const v6, 0x7f0f02b8
 
     invoke-virtual {v5, v6}, Landroid/content/res/Resources;->getInteger(I)I
 
@@ -3603,7 +3603,7 @@
 
     move-result-object v5
 
-    const v6, 0x7f0f02ba
+    const v6, 0x7f0f02b9
 
     invoke-virtual {v5, v6}, Landroid/content/res/Resources;->getInteger(I)I
 

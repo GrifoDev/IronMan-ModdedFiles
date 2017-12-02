@@ -33,7 +33,7 @@
 
     iput-object p1, p0, Lcom/android/settings/notification/RestrictedDropDownPreference$RestrictedArrayItemAdapter;->this$0:Lcom/android/settings/notification/RestrictedDropDownPreference;
 
-    const v0, 0x7f0402fc
+    const v0, 0x7f0402ff
 
     const v1, 0x1020014
 
@@ -107,7 +107,7 @@
     invoke-virtual {v5, v8}, Landroid/widget/CheckedTextView;->setChecked(Z)V
 
     :cond_1
-    const v6, 0x7f110548
+    const v6, 0x7f11054a
 
     invoke-virtual {v4, v6}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 

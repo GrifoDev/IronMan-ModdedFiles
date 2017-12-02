@@ -170,6 +170,8 @@
     <string name="wifi_allow_scan_with_traffic_summary">WLAN-Roaming-Scans automatisch auf Grundlage der verwendeten Daten erlauben.</string>
     <string name="select_logd_size_title">Puffergröße für Protokoll</string>
     <string name="select_logd_size_dialog_title">Auswählen der maximalen Größe einzelner Protokollpuffer</string>
+    <string name="dev_logpersist_clear_warning_title">Permanenten Protokollspeicher bereinigen?</string>
+    <string name="dev_logpersist_clear_warning_message">Protokollierungsdaten werden gelöscht, wenn die permanente Protokollierung deaktiviert wird.</string>
     <string name="select_logpersist_title">Protokolldaten durchg. speichern</string>
     <string name="select_logpersist_dialog_title">Auswählen von Protokollpuffern</string>
     <string name="select_usb_configuration_title">USB-Konfiguration</string>
@@ -983,6 +985,7 @@ Die Tonausgabe der 2 verbundenen Geräte kann leichte Unterschiede aufweisen."</
     <string name="bluetooth_avc_available_description">Das verbundene Bluetooth-Gerät unterstützt Medienlautstärkesynchronisierung und die Lautstärke des Bluetooth-Geräts wird mit Ihrem Telefon synchronisiert.</string>
     <string name="bluetooth_enter_pin_msg">PIN eingeben, um mit %s zu koppeln (Versuchen Sie 0000 oder 1234)</string>
     <string name="bluetooth_pin_maximum_number_message">Maximale Anzahl von Zeichen erreicht.</string>
+    <string name="bluetooth_frp_permission_message">Es kann kein Bluetooth-Gerät für diesen Anruf verwendet werden.</string>
     <string name="settings_menu_done">OK</string>
     <string name="usb_tethering_unavailable_subtext_tmo">Keine USB-Verbindung</string>
     <string name="usb_tethering_available_subtext_tmo">USB verbunden, Tethering auswählen</string>
@@ -1482,7 +1485,7 @@ Tippen Sie auf „OK“, um zuzulassen, dass die Helligkeit über die sicheren S
     <string name="navigationbar_pressure_sensitivity_title">Home-Taste stark drücken</string>
     <string name="navigationbar_pressure_sensitivity_summary">Verwenden Sie die Home-Taste, während sie ausgeblendet ist, indem Sie sie stärker als normal drücken.</string>
     <string name="navigationbar_pressure_sensitivity_level_summary">Druckstufe: %1$d von %2$d</string>
-    <string name="navigationbar_pressure_sensitivity_description_off">Verwenden Sie die Home-Taste, während sie ausgeblendet ist, indem Sie sie stärker als normal drücken.</string>
+    <string name="navigationbar_pressure_sensitivity_description_off">Die Druckempfindlichkeit der Home-Taste anpassen.</string>
     <string name="navigationbar_pressure_low">Leichter</string>
     <string name="navigationbar_pressure_high">Stärker</string>
     <string name="navigationbar_hide_bar">„Anzeigen/ausblenden“-Schaltfläche</string>
@@ -1505,9 +1508,9 @@ Tippen Sie auf „OK“, um zuzulassen, dass die Helligkeit über die sicheren S
     <string name="blue_light_filter_off_time_next_day_summary_format">%s am nächsten Tag</string>
     <string name="blue_light_filter_user_schedule_title">Benutzerdefinierter Zeitplan</string>
     <string name="blue_light_filter_auto_schedule_title">Sonnenuntergang bis Sonnenaufgang</string>
-    <string name="blue_light_filter_desc">Verwenden Sie nachts den Blaufilter, damit Sie besser schlafen. Sie können einen Zeitplan für die Verwendung von Blaufilter festlegen. Zur Verwendung der Option „Sonnenuntergang bis -aufgang“ muss Standort aktiviert sein.</string>
+    <string name="blue_light_filter_desc">Verwenden Sie nachts den Blaufilter, damit Sie besser schlafen. Sie können einen Zeitplan für die Verwendung des Blaufilters festlegen. Zur Verwendung der Option \"Sonnenuntergang bis -aufgang\" muss der Standort aktiviert sein.</string>
     <string name="blue_light_filter_enable_now">Jetzt einschalten</string>
-    <string name="blue_light_filter_enable_as_scheduled">Aktivieren wie geplant</string>
+    <string name="blue_light_filter_enable_as_scheduled">Zeitplan festlegen</string>
     <string name="blue_light_filter_scheduled_toast">Blaufilter eingeschaltet. Er wird zur geplanten Endzeit automatisch ausgeschaltet.</string>
     <string name="screen_mode_dlg_turn_off_blue_light_filter_title">Blaufilter ausschalten?</string>
     <string name="screen_mode_dlg_turn_off_blue_light_filter">Blaufilter muss ausgeschaltet sein, um %s zu verwenden.</string>
@@ -1705,7 +1708,11 @@ Die Verschlüsselung kann eine Stunde oder länger dauern. Stellen Sie vor Begin
     <string name="crypt_keeper_confirm_title">Verschlüsselung bestätigen.</string>
     <string name="crypt_keeper_final_desc">Das Verschlüsseln Ihres Geräts kann nicht rückgängig gemacht werden, und bei Unterbrechung gehen Daten verloren. Der Vorgang kann eine Stunde oder länger dauern. Während dieser Zeit wird Ihr Gerät mehrfach neu gestartet, und es kann nicht verwendet werden.</string>
     <string name="crypt_keeper_setup_title">Verschlüsseln…</string>
-    <string name="crypt_keeper_warn_wipe">Sie haben noch %d Versuche, Ihr Gerät zu starten, bevor es auf die Standardeinstellungen zurückgesetzt wird. Dabei werden alle Daten, auch Dateien und heruntergeladene Apps, gelöscht.</string>
+    <string name="crypt_keeper_warn_wipe">"Sie haben noch %1$d Versuche, bevor Ihr Telefon auf die Werkseinstellungen zurückgesetzt wird. Dadurch werden alle Daten, einschließlich Dateien und heruntergeladener Apps, gelöscht.
+
+Wenn Ihr Telefon zurückgesetzt wird, müssen Sie möglicherweise die %2$s-Informationen (E-Mail-Adresse und Passwort) angeben, die diesem Telefon zugeordnet sind, um es erneut verwenden zu können."</string>
+    <string name="crypt_keeper_samsung_account">Samsung Account</string>
+    <string name="crypt_keeper_google_account">Google-Konto</string>
     <string name="crypt_keeper_failed_title">Verschlüsselung fehlgeschlagen.</string>
     <string name="crypt_keeper_failed_summary">Ihr Gerät kann nicht gestartet werden. Der Verschlüsselungsvorgang wurde unterbrochen. Sie müssen Ihr Gerät auf Werkseinstellungen zurücksetzen. Dabei werden alle Ihre Daten gelöscht.</string>
     <string name="crypt_keeper_data_corrupted_title">Beschädigter Gerätespeicher</string>
@@ -1724,10 +1731,13 @@ Die Verschlüsselung kann eine Stunde oder länger dauern. Stellen Sie vor Begin
     <string name="cryptkeeper_wrong_pin">PIN-Eingabe ungültig</string>
     <string name="cryptkeeper_wrong_direction">Falsche Richtung gezeichnet</string>
     <string name="checking_decryption">Wird überprüft…</string>
-    <string name="crypt_keeper_last_warn_wipe">Sie haben nur noch 1 Versuch, Ihr Gerät zu starten, bevor es auf die Werkseinstellungen zurückgesetzt wird. Dabei werden alle Daten, auch Dateien und heruntergeladene Apps, gelöscht.</string>
+    <string name="crypt_keeper_last_warn_wipe">"Sie haben noch 1 Versuch, bevor Ihr Telefon auf die Werkseinstellungen zurückgesetzt wird. Dadurch werden alle Daten, einschließlich Dateien und heruntergeladener Apps, gelöscht.
+
+Wenn Ihr Telefon zurückgesetzt wird, müssen Sie möglicherweise die %s-Informationen (E-Mail-Adresse und Passwort) angeben, die diesem Telefon zugeordnet sind, um es erneut verwenden zu können."</string>
     <string name="crypt_keeper_failed_title_dec">Entschlüsselung fehlgeschlagen</string>
     <string name="crypt_keeper_failed_summary_dec">Entschlüsselung aufgrund einer Unterbrechung nicht abgeschlossen. Vor Verwendung auf Werkseinstellungen zurücksetzen (alle Daten werden gelöscht).</string>
     <string name="crypt_keeper_set_screen_lock_type">Sperrbildschirmtyp festlegen</string>
+    <string name="crypt_keeper_warning_keyboard_cover_does_not_work">Das Tastatur-Cover funktioniert nach dem Neustart des Telefons nicht.</string>
     <string name="encryption_interstitial_message">"Sie können dieses Telefon zusätzlich schützen, indem vor dem Starten des Geräts die %s-Eingabe angefordert wird. Diese Funktion schützt Ihre Daten, wenn Ihr Gerät verloren geht oder es gestohlen wurde. „Sicherer Start“ ist für einige Apps aufgrund der Richtlinien zur Geräteverschlüsselung für den Zugriff auf Funktionen wie E-Mail-Synchronisierung erforderlich.
 
 Sie erhalten keine Anrufe, Nachrichten oder Benachrichtigungen und es werden keine Alarme wiedergegeben, bis das Telefon gestartet wurde."</string>
@@ -1972,6 +1982,12 @@ Er ist auch in folgenden Fällen erforderlich:"</string>
     <string name="lockpassword_confirm_your_pin_with_fingerprint">Verwenden Sie einen Fingerabdruck oder geben Sie die aktuelle PIN ein.</string>
     <string name="lockpassword_confirm_your_pattern_with_fingerprint">Verwenden Sie einen Fingerabdruck oder zeichnen Sie das aktuelle Entsperrmuster.</string>
     <string name="lockpassword_confirm_your_password_with_fingerprint">Verwenden Sie einen Fingerabdruck oder geben Sie das aktuelle Passwort ein.</string>
+    <string name="lockpassword_confirm_your_pin_with_iris">Verwenden Sie Ihre Iris oder geben Sie Ihre aktuelle PIN ein.</string>
+    <string name="lockpassword_confirm_your_pattern_with_iris">Verwenden Sie Ihre Iris oder zeichnen Sie Ihr aktuelles Entsperrmuster.</string>
+    <string name="lockpassword_confirm_your_password_with_iris">Verwenden Sie Ihre Iris oder geben Sie Ihr aktuelles Passwort ein.</string>
+    <string name="lockpassword_confirm_your_pin_with_biometrics">Verwenden Sie Biometrie oder geben Sie Ihre PIN ein.</string>
+    <string name="lockpassword_confirm_your_pattern_with_biometrics">Verwenden Sie Biometrie oder zeichnen Sie Ihr Muster.</string>
+    <string name="lockpassword_confirm_your_password_with_biometrics">Verwenden Sie Biometrie oder geben Sie Ihr Passwort ein.</string>
     <string name="lockpassword_confirm_your_pin_instead_of_fingerprint">Geben Sie alternativ zur Fingerabdruckerkennung Ihre PIN ein.</string>
     <string name="lockpassword_confirm_your_pattern_instead_of_fingerprint">Zeichnen Sie alternativ zur Fingerabdruckerkennung Ihr Muster.</string>
     <string name="lockpassword_confirm_your_password_instead_of_fingerprint">Geben Sie alternativ zur Fingerabdruckerkennung Ihr Passwort ein.</string>
@@ -2047,6 +2063,7 @@ passwort"</string>
     <string name="face_status_timeout">Zeitüberschreitung. Versuchen Sie es später erneut</string>
     <string name="okay">OK</string>
     <string name="face_samsung_account_button">Samsung Account verwenden</string>
+    <string name="face_galaxy_account_button">Galaxy-Konto verwenden</string>
     <string name="face_error_DB_corrupted">Es gab ein Problem mit Ihren Gesichtsdaten. Registrieren Sie Ihr Gesicht erneut.</string>
     <string name="face_error_DB_corrupted_popup_title">Erneute Registrierung Ihres Gesichts</string>
     <string name="face_error_timeout">Ihr Gesicht wurde nicht erkannt.</string>
@@ -2158,7 +2175,7 @@ Schalten Sie die Iriserkennung ein, um Ihre Biometrie oder Ihr/e %s zum Entsperr
     <string name="biometrics_backup_locktype_title">Irissicherheit einrichten</string>
     <string name="biometrics_register_your_iris">Registrieren Sie Ihre Iris.</string>
     <string name="biometrics_backup_locktype_summary">Wenn Sie Ihre Iris zum Entsperren des Geräts verwenden möchten, müssen Sie ein Muster, eine PIN oder ein Passwort festlegen.</string>
-    <string name="biometrics_backup_locktype_message">Wenn Sie Ihre Iris zum Entsperren Ihres Telefons oder für eine sichere Bestätigung verwenden möchten, gehen Sie folgendermaßen vor:</string>
+    <string name="biometrics_backup_locktype_message">Wenn Sie Ihre Iris zum Entsperren Ihres Telefons oder für die Anmeldung in Apps verwenden möchten, gehen Sie folgendermaßen vor:</string>
     <string name="iris_delete_popup_title">Irisdaten entfernen?</string>
     <string name="iris_delete_popup_message">Irisdaten entfernen?</string>
     <string name="iris_delete_popup_message_with_related_func">Funktionen, die Iris verwenden, werden ausgeschaltet.</string>
@@ -2234,6 +2251,9 @@ Wählen Sie aus, wie Sie Ihr Telefon entsperren möchten. Iris- und Gesichtserke
     <string name="biometrics_dex_cant_use_msg">%s kann in Samsung DeX nicht verwendet werden.</string>
     <string name="biometrics_dex_closed_to_switch">%s geschlossen, um zu Samsung DeX zu wechseln.</string>
     <string name="biometircs_dex_cant_use_toast">%s kann in Samsung DeX nicht ausgeführt werden. Versuchen Sie, die App im Telefonmodus auszuführen.</string>
+    <string name="iris_guide_text_preview">Zum Entsperren mit Iris hierher schauen.</string>
+    <string name="iris_guide_enable_toggle">Hier tippen, um Iris zu nutzen.</string>
+    <string name="iris_cannot_verify">Bestätigen der Iris nicht möglich</string>
     <string name="knox_twofactor_bio_description">Wählen Sie Ihren biometrischen Sperrtyp und den zweiten Sperrtyp aus, um %s zu entsperren.</string>
     <string name="fingerprint_registered">Registrierte Fingerabdrücke werden mit der ausgewählten Entsperrmethode verwendet.</string>
     <string name="knox_twofactor_description">Wählen Sie Ihre Biometrie und einen zweiten Sperrtyp aus, um %s zu entsperren.</string>
@@ -2597,7 +2617,7 @@ Es wird empfohlen, Ihre Biometriedaten zu entfernen. Sie können sie jedoch beib
     <string name="multi_window_split_screen_description_hwkey_2">Drücken und halten Sie in der geteilten Bildschirmansicht die „Aktuelle Anwendungen“-Taste, um die untere App zu schließen.</string>
     <string name="multi_window_split_screen_description_swkey_1">Berühren und halten Sie die Taste „Aktuelle Anwendungen“, um die Anzeige der aktuellen App von Vollbild zur geteilten Bildschirmansicht zu ändern.</string>
     <string name="multi_window_split_screen_description_swkey_2">Berühren und halten Sie in der geteilten Bildschirmansicht die Taste „Aktuelle Anwendungen“, um die untere App zu schließen.</string>
-    <string name="multi_window_use_recents_button">Schaltfl. „Aktuelle Anwend.“ verw.</string>
+    <string name="multi_window_use_recents_button">„Aktuelle Anwendungen“ verwend.</string>
     <string name="multi_window_use_recents_key">Taste „Aktuelle Anwendungen“ verw.</string>
     <string name="multi_window_use_recents_key_summary_hwkey">Zum Öffnen von Apps in der geteilten Bildschirmansicht die „Aktuelle Anwendungen“-Taste drücken und halten.</string>
     <string name="multi_window_use_recents_key_summary_swkey">Öffnen und schließen Sie Apps in der geteilten Bildschirmansicht oder verwenden Sie die Snap Window-Funktion.</string>
@@ -2791,7 +2811,7 @@ Für einige NFC-Transaktionen und mobile Zahlungsdienste ist möglicherweise ein
     <string name="downtime_change_case">„Nicht stören“ ist aktiviert. Die aktuelle Zeit liegt im Bereich der Startzeit.</string>
     <string name="downtime_change_open_case">„Nicht stören“ aktiviert. Die aktuelle Uhrzeit liegt zwischen Start- und Endzeit.</string>
     <string name="alarm_switch_summary">Einschließlich Area Mail-Alarme</string>
-    <string name="enable_as_scheduled">Wie geplant aktivieren</string>
+    <string name="enable_as_scheduled">Zeitplan festlegen</string>
     <string name="enable_now">Jetzt aktivieren</string>
     <string name="scheduling_switch_summary">„Nicht stören“ zu geplanten Zeiten automatisch aktivieren und deaktivieren.</string>
     <string name="no_exceptions_summary">Alle Anrufe, Alarme und Medien stummschalten.</string>
@@ -3096,6 +3116,7 @@ Erneut versuchen"</string>
     <string name="easy_mode_app_help">Vereinfachen Sie die Benutzung Ihres Geräts mit einem einfacheren Startbildschirm und größeren Elementen auf dem Bildschirm.</string>
     <string name="easy_mode_app_help_dream_1">Verwenden Sie ein einfaches Startbildschirmlayout und größere Elemente auf dem Bildschirm.</string>
     <string name="easy_mode_app_help_dream_2">Alle von Ihnen am Startbildschirm vorgenommenen Anpassungen werden verworfen und der Bildschirmzoom wird auf das Maximum festgelegt.</string>
+    <string name="easy_mode_app_help_3rd_launcher">Wenden Sie den einfachen Modus für größere Elemente auf dem Bildschirm an. Wenn Sie TouchWiz Home nicht verwenden, ändert sich das Layout Ihres Startbildschirms nicht, aber als Bildschirm-Zoom wird „groß“ und als Schriftgröße „mittel“ festgelegt.</string>
     <string name="security_warning_content">Sie können Ihre Privatsphäre durch ein Passwort, eine PIN oder ein Muster zum Entsperren des Bildschirms schützen.</string>
     <string name="lock_setting_weather_desc">Unten auf „WETTEREINSTELLUNGEN“ tippen, um Wettereinstellungen anzuzeigen oder zu ändern.</string>
     <string name="lock_setting_weather_btn">Wettereinstellungen</string>
@@ -3949,7 +3970,7 @@ Die Verwendung von Mobile Hotspots verbraucht mehr Akkuladung und erhöht Ihre D
     <string name="wfd_descrpition_playsound">Ton wiedergeben.</string>
     <string name="wfd_is_not_supported">Diese Funktion wird nicht unterstützt.</string>
     <string name="usbtethering_notify_wifi_is_on_title">WLAN ausschalten?</string>
-    <string name="usbtethering_notify_wifi_is_on">WLAN und USB-Tethering können nicht gleichzeitig aktiv sein. Schalten Sie WLAN aus.</string>
+    <string name="usbtethering_notify_wifi_is_on">WLAN und USB-Tethering können nicht gleichzeitig aktiv sein. WLAN wird ausgeschaltet.</string>
     <string name="disable_multi_window_dialog_text">Multi Window wird deaktiviert und alle in Pop-up-Fenstern geöffneten Apps werden geschlossen.</string>
     <string name="keyguard_password_attempt_count_pin_code">%d Versuch übrig</string>
     <string name="keyguard_password_attempts_count_pin_code">%d Versuche übrig</string>
@@ -4157,6 +4178,7 @@ Empfangen von SMS"</string>
     <string name="hdmi_mode_title">HDMI-Modus</string>
     <string name="hdmi_mode_dex">Samsung DeX</string>
     <string name="hdmi_mode_mirroring">Screen Mirroring</string>
+    <string name="hdmi_mode_not_available_while_cover_attached">%s ist nicht verfügbar, wenn das Cover angebracht ist.</string>
     <string name="screen_timeout_for_dex">Bildschirm-Timeout für Samsung DeX</string>
     <string name="show_virtual_keyboard_for_dex">Bildschirmtastatur in Samsung DeX anzeigen</string>
     <string name="comma">,</string>
@@ -4465,7 +4487,7 @@ Sie können diese Einstellungen später in den Bluetooth-Einstellungen ändern."
     <string name="date_picker_title">Datum</string>
     <string name="time_picker_title">Zeit</string>
     <string name="lock_after_timeout">Automatisch sperren</string>
-    <string name="lock_after_timeout_summary">Bildschirm %s nach dem automatischen Ausschalten sperren.</string>
+    <string name="lock_after_timeout_summary">Telefon %s nach der automatischen Deaktivierung des Bildschirms sperren.</string>
     <string name="lock_after_timeout_summary_with_exception">Der Bildschirm wird %1$s nach dem Ausschalten gesperrt, außer er wurde dauerhafter durch %2$s entsperrt.</string>
     <string name="show_owner_info_on_lockscreen_label">Informationen zum Gerätebesitzer auf dem Sperrbildschirm anzeigen.</string>
     <string name="owner_info_settings_title">Info über Besitzer</string>
@@ -4613,6 +4635,8 @@ Zur Verbesserung der Standortgenauigkeit können Apps und Dienste auch dann such
     <string name="wifi_empty_list_user_restricted">Sie haben keine Berechtigung, die WLAN-Einstellungen zu ändern.</string>
     <string name="wifi_setup_wps">Automatisches Setup (WPS)</string>
     <string name="wifi_show_advanced">Erweiterte Optionen anzeigen</string>
+    <string name="wifi_advanced_toggle_description_expanded">Zum Ausblenden zweimal tippen.</string>
+    <string name="wifi_advanced_toggle_description_collapsed">Zum Erweitern zweimal tippen.</string>
     <string name="wifi_wps_setup_title">WPS-Einrichtung</string>
     <string name="wifi_wps_setup_msg">WPS wird gestartet…</string>
     <string name="wifi_wps_onstart_pbc">Drücken Sie auf Ihrem Router die Taste für WLAN-geschütztes Setup. Möglicherweise wird es als „WPS“ bezeichnet oder durch das folgende Symbol dargestellt:</string>
@@ -4644,6 +4668,10 @@ Zur Verbesserung der Standortgenauigkeit können Apps und Dienste auch dann such
     <string name="wifi_shared">Geteilt</string>
     <string name="wifi_unchanged">(unverändert)</string>
     <string name="wifi_unspecified">(Nicht angegeben)</string>
+    <string name="wifi_select_cert">Zertifikat auswählen</string>
+    <string name="wifi_do_not_provide_eap_user_cert">Nicht bereitstellen</string>
+    <string name="wifi_do_not_validate_eap_server">Nicht bestätigen</string>
+    <string name="wifi_do_not_validate_eap_server_warning">Kein Zertifikat angegeben. Ihre Verbindung ist nicht privat.</string>
     <string name="wifi_scan_always_turnon_message">%s möchte nach WLAN-Netzwerken suchen, auch wenn WLAN ausgeschaltet ist, um die Genauigkeit der Standortbestimmung zu erhöhen und um weiteren Einsatzzwecken nachzukommen. Dies für alle Anwendungen zulassen?</string>
     <string name="wifi_scan_always_confirm_allow">Zulassen</string>
     <string name="wifi_scan_always_confirm_deny">Ablehnen</string>
@@ -4976,9 +5004,9 @@ Ziehen Sie die Verwendung einer schnelleren SD-Karte oder eines USB-Speicherger�
     <string name="restore_default_apn_completed">APN-Einstellungen auf Standard zurückgesetzt</string>
     <string name="reset_network_desc">Dadurch werden alle Netzwerkeinstellungen einschließlich der folgenden zurückgesetzt:</string>
     <string name="reset_network_button_text">Einstellungen zurücksetzen</string>
-    <string name="reset_network_final_desc">Alle Verbindungseinstellungen werden zurückgesetzt. Diese Aktion kann nicht rückgängig gemacht werden.</string>
+    <string name="reset_network_final_desc">Alle Netzwerkeinstellungen werden zurückgesetzt. Diese Aktion kann nicht rückgängig gemacht werden.</string>
     <string name="reset_network_final_button_text">Einstellungen zurücksetzen</string>
-    <string name="reset_network_complete_toast">Verbindungseinstellungen zurückgesetzt.</string>
+    <string name="reset_network_complete_toast">Netzwerkeinstellungen zurückgesetzt.</string>
     <string name="master_clear_title">Auf Werkseinstellungen zurücksetzen</string>
     <string name="master_clear_accounts">Sie sind aktuell bei folgenden Konten angemeldet:</string>
     <string name="master_clear_other_users_present">Daten, die anderen Benutzern auf diesem Gerät gehören, werden ebenfalls gelöscht.</string>
@@ -6091,6 +6119,7 @@ Sie erhalten keine Anrufe, Nachrichten oder Benachrichtigungen und es werden kei
     <string name="set_data_limit">Datenbegrenzung festlegen</string>
     <string name="data_limit">Datenbegrenzung</string>
     <string name="data_usage_template">%1$s verwendet zwischen %2$s</string>
+    <string name="data_usage_template_wifi">%s in den letzten 30 Tagen verwendet</string>
     <string name="data_usage_other_apps">Zur Nutzung zugehörige Apps</string>
     <string name="data_saver_title">Datensparen</string>
     <string name="unrestricted_data_saver">App beim Datensparen zulassen</string>
@@ -6141,6 +6170,7 @@ Sie erhalten keine Anrufe, Nachrichten oder Benachrichtigungen und es werden kei
     <string name="legacy_dhcp_client_summary">DHCP-Client von Lollipop statt des neuen Android-DHCP-Clients verwenden</string>
     <string name="screen_off_pocket_title">Bildschirm AUS lassen</string>
     <string name="screen_off_pocket_summary">Verhindern, dass der Bildschirm unabsichtlich eingeschaltet wird, während sich das Gerät an einem dunklen Ort, wie z. B. in einer Tasche, befindet.</string>
+    <string name="noApplications">Alle mit dieser Aktion zusammenhängenden Apps wurden deaktiviert, gesperrt oder sind nicht installiert.</string>
     <string name="confirm_reset_shortcut_manager_throttling_title">Zurücksetzen der Ratenbegrenzung in Shortcut Manager</string>
     <string name="confirm_reset_shortcut_manager_throttling_message">Die Ratenbegrenzungszähler in Shortcut Manager werden zurückgesetzt.</string>
 </resources>

@@ -662,7 +662,7 @@
 
     iget-object v2, p0, Lcom/samsung/android/settings/face/bixbysetupwizard/FaceSetupwizardBixby;->mEnrollFragment:Lcom/samsung/android/settings/face/bixbysetupwizard/FaceEnrollSetupwizardFragment;
 
-    const v3, 0x7f11076a
+    const v3, 0x7f11076c
 
     invoke-virtual {v1, v3, v2}, Landroid/app/FragmentTransaction;->replace(ILandroid/app/Fragment;)Landroid/app/FragmentTransaction;
 
@@ -678,7 +678,7 @@
 
     if-nez v0, :cond_0
 
-    const v0, 0x7f1103f0
+    const v0, 0x7f1103f2
 
     invoke-virtual {p0, v0}, Lcom/samsung/android/settings/face/bixbysetupwizard/FaceSetupwizardBixby;->findViewById(I)Landroid/view/View;
 
@@ -693,7 +693,7 @@
 
     if-nez v0, :cond_1
 
-    const v0, 0x7f11076c
+    const v0, 0x7f11076e
 
     invoke-virtual {p0, v0}, Lcom/samsung/android/settings/face/bixbysetupwizard/FaceSetupwizardBixby;->findViewById(I)Landroid/view/View;
 
@@ -793,7 +793,7 @@
 .method private showFaceErrorDialog()V
     .locals 6
 
-    const v5, 0x7f0b08e5
+    const v5, 0x7f0b08f0
 
     invoke-virtual {p0}, Lcom/samsung/android/settings/face/bixbysetupwizard/FaceSetupwizardBixby;->isScriptPlaying()Z
 
@@ -812,7 +812,7 @@
 
     move-result-object v3
 
-    const v4, 0x7f0b08e6
+    const v4, 0x7f0b08f1
 
     invoke-virtual {v3, v4}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -883,7 +883,7 @@
 
     move-result-object v2
 
-    const v3, 0x7f0b08bd
+    const v3, 0x7f0b08c7
 
     invoke-virtual {v2, v3}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -961,7 +961,7 @@
 
     move-result-object v2
 
-    const v3, 0x7f0b08bd
+    const v3, 0x7f0b08c7
 
     invoke-virtual {v2, v3}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -979,7 +979,7 @@
 
     move-result-object v3
 
-    const v4, 0x7f0b08be
+    const v4, 0x7f0b08c8
 
     invoke-virtual {v3, v4}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -993,13 +993,13 @@
 
     invoke-direct {v3, p0}, Lcom/samsung/android/settings/face/bixbysetupwizard/FaceSetupwizardBixby$10;-><init>(Lcom/samsung/android/settings/face/bixbysetupwizard/FaceSetupwizardBixby;)V
 
-    const v4, 0x7f0b08bf
+    const v4, 0x7f0b08c9
 
     invoke-virtual {v2, v4, v3}, Landroid/app/AlertDialog$Builder;->setPositiveButton(ILandroid/content/DialogInterface$OnClickListener;)Landroid/app/AlertDialog$Builder;
 
     move-result-object v2
 
-    const v3, 0x7f0b1222
+    const v3, 0x7f0b1232
 
     invoke-virtual {v2, v3, v5}, Landroid/app/AlertDialog$Builder;->setNegativeButton(ILandroid/content/DialogInterface$OnClickListener;)Landroid/app/AlertDialog$Builder;
 
@@ -1378,7 +1378,7 @@
 
     iget-object v0, p0, Lcom/samsung/android/settings/face/bixbysetupwizard/FaceSetupwizardBixby;->mNextButton:Landroid/widget/TextView;
 
-    const v1, 0x7f0b051c
+    const v1, 0x7f0b051d
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(I)V
 
@@ -1389,7 +1389,7 @@
 
     iget-object v0, p0, Lcom/samsung/android/settings/face/bixbysetupwizard/FaceSetupwizardBixby;->mFaceGuideMsg:Landroid/widget/TextView;
 
-    const v1, 0x7f0b08e4
+    const v1, 0x7f0b08ef
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(I)V
 
@@ -2186,7 +2186,7 @@
 
     const v3, 0x7f0d00ef
 
-    const v1, 0x7f110225
+    const v1, 0x7f110227
 
     invoke-virtual {p0, v1}, Lcom/samsung/android/settings/face/bixbysetupwizard/FaceSetupwizardBixby;->findViewById(I)Landroid/view/View;
 
@@ -2284,11 +2284,11 @@
 .method protected initBixbyFaceEnroll(Landroid/view/View;)V
     .locals 6
 
-    const v3, 0x7f02067f
+    const v3, 0x7f020681
 
     const/4 v5, 0x0
 
-    const v1, 0x7f1103d3
+    const v1, 0x7f1103d5
 
     invoke-virtual {p1, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -2298,7 +2298,7 @@
 
     iput-object v1, p0, Lcom/samsung/android/settings/face/bixbysetupwizard/FaceSetupwizardBixby;->mFaceProgressText:Landroid/widget/TextView;
 
-    const v1, 0x7f11076e
+    const v1, 0x7f110770
 
     invoke-virtual {p1, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -2308,7 +2308,7 @@
 
     iput-object v1, p0, Lcom/samsung/android/settings/face/bixbysetupwizard/FaceSetupwizardBixby;->mFaceGuideMsg:Landroid/widget/TextView;
 
-    const v1, 0x7f110771
+    const v1, 0x7f110773
 
     invoke-virtual {p1, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -2318,7 +2318,7 @@
 
     iput-object v1, p0, Lcom/samsung/android/settings/face/bixbysetupwizard/FaceSetupwizardBixby;->mFacePreviewImage:Landroid/widget/ImageView;
 
-    const v1, 0x7f110772
+    const v1, 0x7f110774
 
     invoke-virtual {p1, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -2328,7 +2328,7 @@
 
     iput-object v1, p0, Lcom/samsung/android/settings/face/bixbysetupwizard/FaceSetupwizardBixby;->mProgressEffcetView:Lcom/samsung/android/settings/face/bixbysetupwizard/FaceEffectView;
 
-    const v1, 0x7f11076f
+    const v1, 0x7f110771
 
     invoke-virtual {p1, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -2420,7 +2420,7 @@
 
     aput-object v3, v2, v4
 
-    const v3, 0x7f0b08dd
+    const v3, 0x7f0b08e8
 
     invoke-virtual {v1, v3, v2}, Landroid/content/res/Resources;->getString(I[Ljava/lang/Object;)Ljava/lang/String;
 
@@ -2437,7 +2437,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f0b08e1
+    const v2, 0x7f0b08ec
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -2464,7 +2464,7 @@
 
     iget-object v1, p0, Lcom/samsung/android/settings/face/bixbysetupwizard/FaceSetupwizardBixby;->mNextButton:Landroid/widget/TextView;
 
-    const v2, 0x7f0b0f13
+    const v2, 0x7f0b0f22
 
     invoke-virtual {v1, v2}, Landroid/widget/TextView;->setText(I)V
 
@@ -2480,7 +2480,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f0b08e0
+    const v2, 0x7f0b08eb
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -2581,7 +2581,7 @@
     invoke-virtual {p0}, Lcom/samsung/android/settings/face/bixbysetupwizard/FaceSetupwizardBixby;->stopScript()V
 
     :cond_2
-    const v1, 0x7f11076c
+    const v1, 0x7f11076e
 
     if-ne v0, v1, :cond_4
 
@@ -2670,7 +2670,7 @@
 
     iput-object p0, p0, Lcom/samsung/android/settings/face/bixbysetupwizard/FaceSetupwizardBixby;->mContext:Landroid/content/Context;
 
-    const v4, 0x7f0402c4
+    const v4, 0x7f0402c7
 
     invoke-virtual {p0, v4}, Lcom/samsung/android/settings/face/bixbysetupwizard/FaceSetupwizardBixby;->setContentView(I)V
 
@@ -2768,7 +2768,7 @@
 
     iput v2, p0, Lcom/samsung/android/settings/face/bixbysetupwizard/FaceSetupwizardBixby;->mShowButtonBackground:I
 
-    const v2, 0x7f110763
+    const v2, 0x7f110765
 
     invoke-virtual {p0, v2}, Lcom/samsung/android/settings/face/bixbysetupwizard/FaceSetupwizardBixby;->findViewById(I)Landroid/view/View;
 
@@ -2798,7 +2798,7 @@
 
     move-result-object v3
 
-    const v4, 0x7f0204bd
+    const v4, 0x7f0204bf
 
     invoke-virtual {v3, v4, v7}, Landroid/content/res/Resources;->getDrawable(ILandroid/content/res/Resources$Theme;)Landroid/graphics/drawable/Drawable;
 
@@ -2807,7 +2807,7 @@
     invoke-virtual {v2, v3}, Landroid/widget/TextView;->setBackground(Landroid/graphics/drawable/Drawable;)V
 
     :cond_3
-    const v2, 0x7f110766
+    const v2, 0x7f110768
 
     invoke-virtual {p0, v2}, Lcom/samsung/android/settings/face/bixbysetupwizard/FaceSetupwizardBixby;->findViewById(I)Landroid/view/View;
 
@@ -2817,7 +2817,7 @@
 
     iput-object v2, p0, Lcom/samsung/android/settings/face/bixbysetupwizard/FaceSetupwizardBixby;->mMessageView:Landroid/view/View;
 
-    const v2, 0x7f110767
+    const v2, 0x7f110769
 
     invoke-virtual {p0, v2}, Lcom/samsung/android/settings/face/bixbysetupwizard/FaceSetupwizardBixby;->findViewById(I)Landroid/view/View;
 
@@ -2827,7 +2827,7 @@
 
     iput-object v2, p0, Lcom/samsung/android/settings/face/bixbysetupwizard/FaceSetupwizardBixby;->mDescView:Landroid/view/View;
 
-    const v2, 0x7f110769
+    const v2, 0x7f11076b
 
     invoke-virtual {p0, v2}, Lcom/samsung/android/settings/face/bixbysetupwizard/FaceSetupwizardBixby;->findViewById(I)Landroid/view/View;
 
@@ -2837,7 +2837,7 @@
 
     iput-object v2, p0, Lcom/samsung/android/settings/face/bixbysetupwizard/FaceSetupwizardBixby;->mFaceBixbyMsg:Landroid/widget/TextView;
 
-    const v2, 0x7f110762
+    const v2, 0x7f110764
 
     invoke-virtual {p0, v2}, Lcom/samsung/android/settings/face/bixbysetupwizard/FaceSetupwizardBixby;->findViewById(I)Landroid/view/View;
 
@@ -2847,7 +2847,7 @@
 
     iput-object v2, p0, Lcom/samsung/android/settings/face/bixbysetupwizard/FaceSetupwizardBixby;->mBackground4:Landroid/widget/FrameLayout;
 
-    const v2, 0x7f1103ef
+    const v2, 0x7f1103f1
 
     invoke-virtual {p0, v2}, Lcom/samsung/android/settings/face/bixbysetupwizard/FaceSetupwizardBixby;->findViewById(I)Landroid/view/View;
 
@@ -2857,7 +2857,7 @@
 
     iput-object v2, p0, Lcom/samsung/android/settings/face/bixbysetupwizard/FaceSetupwizardBixby;->mFaceBottomContainer:Landroid/widget/RelativeLayout;
 
-    const v2, 0x7f11076b
+    const v2, 0x7f11076d
 
     invoke-virtual {p0, v2}, Lcom/samsung/android/settings/face/bixbysetupwizard/FaceSetupwizardBixby;->findViewById(I)Landroid/view/View;
 
@@ -2867,7 +2867,7 @@
 
     iput-object v2, p0, Lcom/samsung/android/settings/face/bixbysetupwizard/FaceSetupwizardBixby;->mPreviousButton:Landroid/widget/TextView;
 
-    const v2, 0x7f1103f3
+    const v2, 0x7f1103f5
 
     invoke-virtual {p0, v2}, Lcom/samsung/android/settings/face/bixbysetupwizard/FaceSetupwizardBixby;->findViewById(I)Landroid/view/View;
 
@@ -2877,7 +2877,7 @@
 
     iput-object v2, p0, Lcom/samsung/android/settings/face/bixbysetupwizard/FaceSetupwizardBixby;->mNextButton:Landroid/widget/TextView;
 
-    const v2, 0x7f1103f0
+    const v2, 0x7f1103f2
 
     invoke-virtual {p0, v2}, Lcom/samsung/android/settings/face/bixbysetupwizard/FaceSetupwizardBixby;->findViewById(I)Landroid/view/View;
 
@@ -2887,7 +2887,7 @@
 
     iput-object v2, p0, Lcom/samsung/android/settings/face/bixbysetupwizard/FaceSetupwizardBixby;->mPreviousBtnArea:Landroid/view/View;
 
-    const v2, 0x7f11076c
+    const v2, 0x7f11076e
 
     invoke-virtual {p0, v2}, Lcom/samsung/android/settings/face/bixbysetupwizard/FaceSetupwizardBixby;->findViewById(I)Landroid/view/View;
 
@@ -2897,7 +2897,7 @@
 
     iput-object v2, p0, Lcom/samsung/android/settings/face/bixbysetupwizard/FaceSetupwizardBixby;->mNextBtnArea:Landroid/view/View;
 
-    const v2, 0x7f1103f1
+    const v2, 0x7f1103f3
 
     invoke-virtual {p0, v2}, Lcom/samsung/android/settings/face/bixbysetupwizard/FaceSetupwizardBixby;->findViewById(I)Landroid/view/View;
 
@@ -2907,7 +2907,7 @@
 
     iput-object v2, p0, Lcom/samsung/android/settings/face/bixbysetupwizard/FaceSetupwizardBixby;->mPrevArrow:Landroid/widget/ImageView;
 
-    const v2, 0x7f1103f4
+    const v2, 0x7f1103f6
 
     invoke-virtual {p0, v2}, Lcom/samsung/android/settings/face/bixbysetupwizard/FaceSetupwizardBixby;->findViewById(I)Landroid/view/View;
 
@@ -3000,7 +3000,7 @@
 
     iput v2, p0, Lcom/samsung/android/settings/face/bixbysetupwizard/FaceSetupwizardBixby;->mScreenHeight:I
 
-    const v2, 0x7f110768
+    const v2, 0x7f11076a
 
     invoke-virtual {p0, v2}, Lcom/samsung/android/settings/face/bixbysetupwizard/FaceSetupwizardBixby;->findViewById(I)Landroid/view/View;
 
@@ -3030,7 +3030,7 @@
 
     iput-object v2, p0, Lcom/samsung/android/settings/face/bixbysetupwizard/FaceSetupwizardBixby;->mEnrollFragment:Lcom/samsung/android/settings/face/bixbysetupwizard/FaceEnrollSetupwizardFragment;
 
-    const v2, 0x7f110765
+    const v2, 0x7f110767
 
     invoke-virtual {p0, v2}, Lcom/samsung/android/settings/face/bixbysetupwizard/FaceSetupwizardBixby;->findViewById(I)Landroid/view/View;
 
@@ -3305,7 +3305,7 @@
 
     aput-object v2, v1, v3
 
-    const v2, 0x7f0b0811
+    const v2, 0x7f0b0815
 
     invoke-virtual {p0, v2, v1}, Lcom/samsung/android/settings/face/bixbysetupwizard/FaceSetupwizardBixby;->getString(I[Ljava/lang/Object;)Ljava/lang/String;
 

@@ -428,7 +428,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f020496
+    const v1, 0x7f020498
 
     invoke-virtual {v0, v1}, Landroid/app/Activity;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 
@@ -1312,7 +1312,7 @@
 .method protected getHelpResource()I
     .locals 1
 
-    const v0, 0x7f0b1ba8
+    const v0, 0x7f0b1bba
 
     return v0
 .end method
@@ -1715,7 +1715,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f110295
+    const v1, 0x7f110297
 
     invoke-virtual {v0, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -1725,7 +1725,7 @@
 
     iput-object v1, p0, Lcom/samsung/android/settings/SecSettingsPreferenceFragment;->mPinnedHeaderFrameLayout:Landroid/view/ViewGroup;
 
-    const v1, 0x7f110537
+    const v1, 0x7f110539
 
     invoke-virtual {v0, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -2527,7 +2527,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f11053e
+    const v2, 0x7f110540
 
     invoke-virtual {v1, v2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 

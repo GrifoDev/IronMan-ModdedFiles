@@ -215,7 +215,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f0f04dd
+    const v2, 0x7f0f04dc
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getInteger(I)I
 
@@ -223,15 +223,15 @@
 
     sput v1, Lcom/android/settings/fingerprint/FingerprintProgressEffectView;->strokeWidth:I
 
-    const v1, 0x7f020152
+    const v1, 0x7f020150
 
     sput v1, Lcom/android/settings/fingerprint/FingerprintProgressEffectView;->inverseFingerResID:I
 
-    const v1, 0x7f020157
+    const v1, 0x7f020155
 
     sput v1, Lcom/android/settings/fingerprint/FingerprintProgressEffectView;->completeResID:I
 
-    const v1, 0x7f020158
+    const v1, 0x7f020156
 
     sput v1, Lcom/android/settings/fingerprint/FingerprintProgressEffectView;->completeShadowResID:I
 

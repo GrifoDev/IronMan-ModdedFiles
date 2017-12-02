@@ -118,7 +118,7 @@
 
     iget-object v2, p0, Lcom/samsung/android/settings/navigationbar/NavigationBarHardPressSetting;->mPressureDescriptionPref:Lcom/samsung/android/settings/UnclickablePreference;
 
-    const v3, 0x7f0b06b9
+    const v3, 0x7f0b06ba
 
     invoke-virtual {v2, v3}, Lcom/samsung/android/settings/UnclickablePreference;->setTitle(I)V
 
@@ -167,7 +167,7 @@
     :cond_1
     iget-object v2, p0, Lcom/samsung/android/settings/navigationbar/NavigationBarHardPressSetting;->mPressureDescriptionPref:Lcom/samsung/android/settings/UnclickablePreference;
 
-    const v3, 0x7f0b06bb
+    const v3, 0x7f0b06bc
 
     invoke-virtual {v2, v3}, Lcom/samsung/android/settings/UnclickablePreference;->setTitle(I)V
 

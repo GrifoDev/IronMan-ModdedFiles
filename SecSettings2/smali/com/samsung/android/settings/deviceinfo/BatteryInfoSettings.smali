@@ -292,7 +292,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f0f03f0
+    const v1, 0x7f0f03ef
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getInteger(I)I
 
@@ -384,7 +384,7 @@
 
     iget-object v1, p0, Lcom/samsung/android/settings/deviceinfo/BatteryInfoSettings;->mBatteryLife:Landroid/preference/Preference;
 
-    const v2, 0x7f0b0629
+    const v2, 0x7f0b062a
 
     invoke-virtual {v1, v2}, Landroid/preference/Preference;->setSummary(I)V
 
@@ -441,7 +441,7 @@
 
     iget-object v1, p0, Lcom/samsung/android/settings/deviceinfo/BatteryInfoSettings;->mBatteryLife:Landroid/preference/Preference;
 
-    const v2, 0x7f0b062a
+    const v2, 0x7f0b062b
 
     invoke-virtual {v1, v2}, Landroid/preference/Preference;->setSummary(I)V
 
@@ -450,7 +450,7 @@
     :cond_2
     iget-object v1, p0, Lcom/samsung/android/settings/deviceinfo/BatteryInfoSettings;->mBatteryLife:Landroid/preference/Preference;
 
-    const v2, 0x7f0b062b
+    const v2, 0x7f0b062c
 
     invoke-virtual {v1, v2}, Landroid/preference/Preference;->setSummary(I)V
 

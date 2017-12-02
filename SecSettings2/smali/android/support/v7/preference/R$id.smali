@@ -4,9 +4,9 @@
 
 
 # static fields
-.field public static final icon_frame:I = 0x7f11064e
+.field public static final icon_frame:I = 0x7f110650
 
-.field public static final spinner:I = 0x7f11059c
+.field public static final spinner:I = 0x7f11059e
 
 
 # direct methods

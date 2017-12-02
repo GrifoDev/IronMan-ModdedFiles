@@ -855,7 +855,7 @@
 
     const/4 v4, 0x2
 
-    if-ne v1, v4, :cond_3
+    if-ne v1, v4, :cond_4
 
     const-string/jumbo v1, "pbm_video_enhancer"
 
@@ -891,7 +891,7 @@
 
     iget v1, p0, Lcom/samsung/android/settings/boostmode/BoostModeCustomFragment;->mPreviousVideoEnhancerStatus:I
 
-    if-ne v1, v2, :cond_0
+    if-ne v1, v2, :cond_1
 
     move v1, v2
 
@@ -902,7 +902,7 @@
 
     move-result v1
 
-    if-eqz v1, :cond_1
+    if-eqz v1, :cond_2
 
     const-string/jumbo v1, "pbm_uhq_upscaler_new"
 
@@ -967,7 +967,7 @@
 
     iget v1, p0, Lcom/samsung/android/settings/boostmode/BoostModeCustomFragment;->mPreviousUHQupscalerStatus:I
 
-    if-eqz v1, :cond_2
+    if-eqz v1, :cond_3
 
     move v1, v2
 
@@ -977,7 +977,7 @@
     :goto_3
     iget v1, p0, Lcom/samsung/android/settings/boostmode/BoostModeCustomFragment;->mBoostMode:I
 
-    if-ne v1, v2, :cond_7
+    if-ne v1, v2, :cond_8
 
     const-string/jumbo v1, "pbm_game_launcher"
 
@@ -1013,7 +1013,7 @@
 
     iget v1, p0, Lcom/samsung/android/settings/boostmode/BoostModeCustomFragment;->mPreviousGameLauncherStatus:I
 
-    if-ne v1, v2, :cond_4
+    if-ne v1, v2, :cond_5
 
     move v1, v2
 
@@ -1022,11 +1022,24 @@
 
     iget-object v1, p0, Lcom/samsung/android/settings/boostmode/BoostModeCustomFragment;->mContext:Landroid/content/Context;
 
+    invoke-static {v1}, Lcom/samsung/android/settings/boostmode/BoostUtils;->isRemoveGameLauncher(Landroid/content/Context;)Z
+
+    move-result v1
+
+    if-eqz v1, :cond_0
+
+    iget-object v1, p0, Lcom/samsung/android/settings/boostmode/BoostModeCustomFragment;->mGameLauncherPref:Landroid/preference/SwitchPreference;
+
+    invoke-virtual {v1, v3}, Landroid/preference/SwitchPreference;->setEnabled(Z)V
+
+    :cond_0
+    iget-object v1, p0, Lcom/samsung/android/settings/boostmode/BoostModeCustomFragment;->mContext:Landroid/content/Context;
+
     invoke-static {v1}, Lcom/samsung/android/settings/boostmode/BoostUtils;->isNavigationBarExist(Landroid/content/Context;)Z
 
     move-result v1
 
-    if-nez v1, :cond_6
+    if-nez v1, :cond_7
 
     const-string/jumbo v1, "pbm_game_tools"
 
@@ -1062,7 +1075,7 @@
 
     iget v4, p0, Lcom/samsung/android/settings/boostmode/BoostModeCustomFragment;->mPreviousGameToolsStatus:I
 
-    if-ne v4, v2, :cond_5
+    if-ne v4, v2, :cond_6
 
     :goto_5
     invoke-virtual {v1, v2}, Landroid/preference/SwitchPreference;->setChecked(Z)V
@@ -1070,12 +1083,12 @@
     :goto_6
     return-void
 
-    :cond_0
+    :cond_1
     move v1, v3
 
     goto/16 :goto_0
 
-    :cond_1
+    :cond_2
     const-string/jumbo v1, "pbm_uhq_upscaler"
 
     invoke-virtual {p0, v1}, Lcom/samsung/android/settings/boostmode/BoostModeCustomFragment;->findPreference(Ljava/lang/CharSequence;)Landroid/preference/Preference;
@@ -1092,12 +1105,12 @@
 
     goto/16 :goto_1
 
-    :cond_2
+    :cond_3
     move v1, v3
 
-    goto :goto_2
+    goto/16 :goto_2
 
-    :cond_3
+    :cond_4
     const-string/jumbo v1, "pbm_video_enhancer"
 
     invoke-virtual {p0, v1}, Lcom/samsung/android/settings/boostmode/BoostModeCustomFragment;->removePreference(Ljava/lang/String;)V
@@ -1112,24 +1125,24 @@
 
     goto/16 :goto_3
 
-    :cond_4
+    :cond_5
     move v1, v3
 
     goto :goto_4
 
-    :cond_5
+    :cond_6
     move v2, v3
 
     goto :goto_5
 
-    :cond_6
+    :cond_7
     const-string/jumbo v1, "pbm_game_tools"
 
     invoke-virtual {p0, v1}, Lcom/samsung/android/settings/boostmode/BoostModeCustomFragment;->removePreference(Ljava/lang/String;)V
 
     goto :goto_6
 
-    :cond_7
+    :cond_8
     const-string/jumbo v1, "pbm_game_launcher"
 
     invoke-virtual {p0, v1}, Lcom/samsung/android/settings/boostmode/BoostModeCustomFragment;->removePreference(Ljava/lang/String;)V
@@ -1360,6 +1373,14 @@
 
     if-ne v0, v4, :cond_5
 
+    iget-object v0, p0, Lcom/samsung/android/settings/boostmode/BoostModeCustomFragment;->mContext:Landroid/content/Context;
+
+    invoke-static {v0}, Lcom/samsung/android/settings/boostmode/BoostUtils;->isRemoveGameLauncher(Landroid/content/Context;)Z
+
+    move-result v0
+
+    if-nez v0, :cond_4
+
     iget-object v0, p0, Lcom/samsung/android/settings/boostmode/BoostModeCustomFragment;->mGameLauncherPref:Landroid/preference/SwitchPreference;
 
     if-eqz v0, :cond_4
@@ -1474,7 +1495,7 @@
 
     iget-object v0, p0, Lcom/samsung/android/settings/boostmode/BoostModeCustomFragment;->mUHQscalerPref:Landroid/preference/SwitchPreference;
 
-    const v1, 0x7f0b0cc7
+    const v1, 0x7f0b0cd5
 
     invoke-virtual {p0, v1}, Lcom/samsung/android/settings/boostmode/BoostModeCustomFragment;->getString(I)Ljava/lang/String;
 
@@ -1493,7 +1514,7 @@
 
     iget-object v0, p0, Lcom/samsung/android/settings/boostmode/BoostModeCustomFragment;->mUHQscalerPref:Landroid/preference/SwitchPreference;
 
-    const v1, 0x7f0b0cc8
+    const v1, 0x7f0b0cd6
 
     invoke-virtual {p0, v1}, Lcom/samsung/android/settings/boostmode/BoostModeCustomFragment;->getString(I)Ljava/lang/String;
 
@@ -1510,7 +1531,7 @@
 
     iget-object v0, p0, Lcom/samsung/android/settings/boostmode/BoostModeCustomFragment;->mUHQscalerPref:Landroid/preference/SwitchPreference;
 
-    const v1, 0x7f0b0baf
+    const v1, 0x7f0b0bbd
 
     invoke-virtual {v0, v1}, Landroid/preference/SwitchPreference;->setSummary(I)V
 
@@ -1598,7 +1619,7 @@
     :goto_0
     iget-object v9, p0, Lcom/samsung/android/settings/boostmode/BoostModeCustomFragment;->mSecBrightness:Lcom/android/settings/widget/SecIntervalSeekbarPreference;
 
-    const v10, 0x7f0b0a55
+    const v10, 0x7f0b0a63
 
     invoke-virtual {p0, v10}, Lcom/samsung/android/settings/boostmode/BoostModeCustomFragment;->getString(I)Ljava/lang/String;
 
@@ -1716,7 +1737,7 @@
 
     move-result-object v9
 
-    const v10, 0x7f0b06dd
+    const v10, 0x7f0b06de
 
     invoke-virtual {v9, v10}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -1726,7 +1747,7 @@
 
     move-result-object v9
 
-    const v10, 0x7f0b06de
+    const v10, 0x7f0b06df
 
     invoke-virtual {v9, v10}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -1736,7 +1757,7 @@
 
     move-result-object v9
 
-    const v10, 0x7f0b06df
+    const v10, 0x7f0b06e0
 
     invoke-virtual {v9, v10}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -2069,7 +2090,7 @@
 
     iget-object v9, p0, Lcom/samsung/android/settings/boostmode/BoostModeCustomFragment;->mScreenSeekBar:Lcom/android/settings/widget/SecIntervalSeekbarPreference;
 
-    const v10, 0x7f0b0c80
+    const v10, 0x7f0b0c8e
 
     invoke-virtual {v9, v10}, Lcom/android/settings/widget/SecIntervalSeekbarPreference;->setSummary(I)V
 
@@ -2252,19 +2273,19 @@
     goto/16 :goto_1
 
     :cond_6
-    const v9, 0x7f0b06e0
+    const v9, 0x7f0b06e1
 
     invoke-virtual {p0, v9}, Lcom/samsung/android/settings/boostmode/BoostModeCustomFragment;->getString(I)Ljava/lang/String;
 
     move-result-object v4
 
-    const v9, 0x7f0b06e1
+    const v9, 0x7f0b06e2
 
     invoke-virtual {p0, v9}, Lcom/samsung/android/settings/boostmode/BoostModeCustomFragment;->getString(I)Ljava/lang/String;
 
     move-result-object v1
 
-    const v9, 0x7f0b06e2
+    const v9, 0x7f0b06e3
 
     invoke-virtual {p0, v9}, Lcom/samsung/android/settings/boostmode/BoostModeCustomFragment;->getString(I)Ljava/lang/String;
 
@@ -2315,7 +2336,7 @@
 
     iget-object v3, p0, Lcom/samsung/android/settings/boostmode/BoostModeCustomFragment;->mActionBar:Landroid/app/ActionBar;
 
-    const v4, 0x7f0400a3
+    const v4, 0x7f0400a4
 
     invoke-virtual {v3, v4}, Landroid/app/ActionBar;->setCustomView(I)V
 
@@ -2341,7 +2362,7 @@
 
     if-eqz v3, :cond_0
 
-    const v3, 0x7f110238
+    const v3, 0x7f11023a
 
     invoke-virtual {v1, v3}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -2349,12 +2370,12 @@
 
     check-cast v2, Landroid/widget/LinearLayout;
 
-    const v3, 0x7f020110
+    const v3, 0x7f02010e
 
     invoke-virtual {v2, v3}, Landroid/widget/LinearLayout;->setBackgroundResource(I)V
 
     :cond_0
-    const v3, 0x7f110239
+    const v3, 0x7f11023b
 
     invoke-virtual {v1, v3}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -2370,7 +2391,7 @@
 
     invoke-static {v3, v4}, Lcom/android/settings/Utils;->setMaxFontScale(Landroid/content/Context;Landroid/widget/Button;)V
 
-    const v3, 0x7f11023a
+    const v3, 0x7f11023c
 
     invoke-virtual {v1, v3}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -2388,7 +2409,7 @@
 
     iget-object v3, p0, Lcom/samsung/android/settings/boostmode/BoostModeCustomFragment;->mSaveButton:Landroid/widget/Button;
 
-    const v4, 0x7f0b0510
+    const v4, 0x7f0b0511
 
     invoke-virtual {v3, v4}, Landroid/widget/Button;->setText(I)V
 
@@ -2521,7 +2542,7 @@
 .method public onConfigurationChanged(Landroid/content/res/Configuration;)V
     .locals 2
 
-    const v1, 0x7f02064c
+    const v1, 0x7f02064e
 
     iget-object v0, p0, Lcom/samsung/android/settings/boostmode/BoostModeCustomFragment;->mContext:Landroid/content/Context;
 
@@ -2541,7 +2562,7 @@
 
     iget-object v0, p0, Lcom/samsung/android/settings/boostmode/BoostModeCustomFragment;->mResetButton:Landroid/widget/TextView;
 
-    const v1, 0x7f02064f
+    const v1, 0x7f020651
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setBackgroundResource(I)V
 
@@ -2654,7 +2675,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f0f0491
+    const v2, 0x7f0f0490
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getInteger(I)I
 
@@ -2666,7 +2687,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f0f0492
+    const v2, 0x7f0f0491
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getInteger(I)I
 
@@ -2678,7 +2699,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f0f0493
+    const v2, 0x7f0f0492
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getInteger(I)I
 
@@ -2690,7 +2711,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f0f0494
+    const v2, 0x7f0f0493
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getInteger(I)I
 
@@ -2702,7 +2723,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f0f0495
+    const v2, 0x7f0f0494
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getInteger(I)I
 
@@ -2714,7 +2735,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f0f0496
+    const v2, 0x7f0f0495
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getInteger(I)I
 
@@ -2727,7 +2748,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f0f0489
+    const v2, 0x7f0f0488
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getInteger(I)I
 
@@ -2739,7 +2760,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f0f048a
+    const v2, 0x7f0f0489
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getInteger(I)I
 
@@ -2751,7 +2772,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f0f0497
+    const v2, 0x7f0f0496
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getInteger(I)I
 
@@ -2763,7 +2784,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f0f0498
+    const v2, 0x7f0f0497
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getInteger(I)I
 
@@ -2798,7 +2819,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f0f0483
+    const v2, 0x7f0f0482
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getInteger(I)I
 
@@ -2810,7 +2831,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f0f0484
+    const v2, 0x7f0f0483
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getInteger(I)I
 
@@ -2822,7 +2843,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f0f0485
+    const v2, 0x7f0f0484
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getInteger(I)I
 
@@ -2834,7 +2855,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f0f0486
+    const v2, 0x7f0f0485
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getInteger(I)I
 
@@ -2846,7 +2867,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f0f0487
+    const v2, 0x7f0f0486
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getInteger(I)I
 
@@ -2858,7 +2879,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f0f0488
+    const v2, 0x7f0f0487
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getInteger(I)I
 
@@ -2873,7 +2894,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f0f048b
+    const v2, 0x7f0f048a
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getInteger(I)I
 
@@ -2885,7 +2906,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f0f048c
+    const v2, 0x7f0f048b
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getInteger(I)I
 
@@ -2897,7 +2918,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f0f048d
+    const v2, 0x7f0f048c
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getInteger(I)I
 
@@ -2909,7 +2930,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f0f048e
+    const v2, 0x7f0f048d
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getInteger(I)I
 
@@ -2921,7 +2942,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f0f048f
+    const v2, 0x7f0f048e
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getInteger(I)I
 
@@ -2933,7 +2954,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f0f0490
+    const v2, 0x7f0f048f
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getInteger(I)I
 
@@ -2947,7 +2968,7 @@
 .method public onCreateOptionsMenu(Landroid/view/Menu;Landroid/view/MenuInflater;)V
     .locals 4
 
-    const v3, 0x7f02064c
+    const v3, 0x7f02064e
 
     iget-object v1, p0, Lcom/samsung/android/settings/boostmode/BoostModeCustomFragment;->mActionBar:Landroid/app/ActionBar;
 
@@ -3096,7 +3117,7 @@
 
     iget-object v3, p0, Lcom/samsung/android/settings/boostmode/BoostModeCustomFragment;->mResetButton:Landroid/widget/TextView;
 
-    const v4, 0x7f02064f
+    const v4, 0x7f020651
 
     invoke-virtual {v3, v4}, Landroid/widget/TextView;->setBackgroundResource(I)V
 
@@ -3238,7 +3259,7 @@
 
     new-array v4, v1, [Ljava/lang/Object;
 
-    const v5, 0x7f0b11e2
+    const v5, 0x7f0b11f1
 
     invoke-virtual {p0, v5}, Lcom/samsung/android/settings/boostmode/BoostModeCustomFragment;->getString(I)Ljava/lang/String;
 
@@ -3246,7 +3267,7 @@
 
     aput-object v5, v4, v2
 
-    const v5, 0x7f0b0cab
+    const v5, 0x7f0b0cb9
 
     invoke-virtual {p0, v5, v4}, Lcom/samsung/android/settings/boostmode/BoostModeCustomFragment;->getString(I[Ljava/lang/Object;)Ljava/lang/String;
 

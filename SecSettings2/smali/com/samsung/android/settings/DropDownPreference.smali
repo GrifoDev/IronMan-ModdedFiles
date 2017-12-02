@@ -111,7 +111,7 @@
 
     iput-object v0, p0, Lcom/samsung/android/settings/DropDownPreference;->mAdapter:Landroid/widget/ArrayAdapter;
 
-    const v0, 0x7f040219
+    const v0, 0x7f04021c
 
     invoke-virtual {p0, v0}, Lcom/samsung/android/settings/DropDownPreference;->setLayoutResource(I)V
 
@@ -238,7 +238,7 @@
 
     invoke-virtual {p1, p0}, Landroid/view/View;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    const v3, 0x7f11059c
+    const v3, 0x7f11059e
 
     invoke-virtual {p1, v3}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -290,7 +290,7 @@
 
     move-result-object v3
 
-    const v4, 0x7f0f042f
+    const v4, 0x7f0f042e
 
     invoke-virtual {v3, v4}, Landroid/content/res/Resources;->getInteger(I)I
 

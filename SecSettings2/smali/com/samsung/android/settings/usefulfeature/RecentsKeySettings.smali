@@ -165,7 +165,7 @@
 
     check-cast v1, Landroid/widget/ImageView;
 
-    const v2, 0x7f0200ef
+    const v2, 0x7f0200ed
 
     invoke-virtual {v1, v2}, Landroid/widget/ImageView;->setImageResource(I)V
 
@@ -182,7 +182,7 @@
 
     check-cast v1, Landroid/widget/ImageView;
 
-    const v2, 0x7f0200f0
+    const v2, 0x7f0200ee
 
     invoke-virtual {v1, v2}, Landroid/widget/ImageView;->setImageResource(I)V
 
@@ -301,7 +301,7 @@
 
     check-cast v14, Landroid/view/LayoutInflater;
 
-    const v2, 0x7f04012c
+    const v2, 0x7f04012d
 
     const/4 v3, 0x0
 
@@ -369,7 +369,7 @@
 
     invoke-virtual {v2, v3}, Lcom/samsung/android/settings/WrapContentHeightViewPager;->setOnPageChangeListener(Landroid/support/v4/view/ViewPager$OnPageChangeListener;)V
 
-    const v2, 0x7f110425
+    const v2, 0x7f110427
 
     invoke-virtual {v12, v2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -408,7 +408,7 @@
 
     check-cast v16, Landroid/widget/ImageView;
 
-    const v2, 0x7f0b0b45
+    const v2, 0x7f0b0b53
 
     move-object/from16 v0, p0
 
@@ -491,7 +491,7 @@
 
     check-cast v2, Landroid/widget/ImageView;
 
-    const v3, 0x7f0200f0
+    const v3, 0x7f0200ee
 
     invoke-virtual {v2, v3}, Landroid/widget/ImageView;->setImageResource(I)V
 
@@ -726,7 +726,7 @@
 
     invoke-super {p0, p1}, Lcom/samsung/android/settings/SecSettingsPreferenceFragment;->onCreate(Landroid/os/Bundle;)V
 
-    const v0, 0x7f0800d4
+    const v0, 0x7f0800d6
 
     invoke-virtual {p0, v0}, Lcom/samsung/android/settings/usefulfeature/RecentsKeySettings;->addPreferencesFromResource(I)V
 

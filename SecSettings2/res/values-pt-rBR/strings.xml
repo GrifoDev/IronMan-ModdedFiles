@@ -170,6 +170,8 @@
     <string name="wifi_allow_scan_with_traffic_summary">Permite ou nega as buscas de roaming Wi-Fi automaticamente com base na quantidade de dados usados.</string>
     <string name="select_logd_size_title">Tam. armaz. p/ registro</string>
     <string name="select_logd_size_dialog_title">Selecionar tamanho máximo de cada armazenador de registro</string>
+    <string name="dev_logpersist_clear_warning_title">Apagar armaz. do registrador persistente?</string>
+    <string name="dev_logpersist_clear_warning_message">Os dados do registrador serão excluídos quando o registrador persistente for desativado.</string>
     <string name="select_logpersist_title">Armaz. dados regis. persistent.</string>
     <string name="select_logpersist_dialog_title">Sel. buffers registro p/ armaz. persistent.</string>
     <string name="select_usb_configuration_title">Configuração USB</string>
@@ -982,6 +984,7 @@ Os 2 aparelhos conectados podem apresentar uma pequena diferença na saída de s
     <string name="bluetooth_avc_available_description">O aparelho Bluetooth conectado é compatível com Sincronização do volume de mídia e o nível de volume definido pelo aparelho Bluetooth será sincronizado com o seu telefone.</string>
     <string name="bluetooth_enter_pin_msg">Insira o PIN para parear com %s (tente 0000 ou 1234).</string>
     <string name="bluetooth_pin_maximum_number_message">Número máximo de caracteres atingido.</string>
+    <string name="bluetooth_frp_permission_message">Não é possível usar um aparelho Bluetooth para esta chamada.</string>
     <string name="settings_menu_done">Concluído</string>
     <string name="usb_tethering_unavailable_subtext_tmo">USB não conectado</string>
     <string name="usb_tethering_available_subtext_tmo">USB conectado, verifique para ancorar</string>
@@ -1263,7 +1266,7 @@ Data usage is measured by your phone. Your carrier may account for usage differe
     <string name="auto_update_summary">Baixe atualizações de software automaticamente quando estiver conectado a uma rede Wi-Fi. Você ainda poderá usar o aparelho durante o download.</string>
     <string name="auto_update_over_wifi">Download automático via Wi-Fi</string>
     <string name="auto_update_over_wifi_summary">Baixe as atualizações de software automaticamente quando estiver conectado a uma rede Wi-Fi. Dependendo da sua operadora, as atualizações também poderão ser baixadas usando dados móveis sem cobranças adicionais. Você ainda poderá usar seu telefone durante o download.</string>
-    <string name="scheduled_update">Atualizações software agendadas</string>
+    <string name="scheduled_update">Atualiz. de software agendadas</string>
     <string name="scheduled_update_summary_default">Desativado</string>
     <string name="scheduled_update_summary_set_time">A atualização será iniciada às %s</string>
     <string name="scheduled_update_summary_set_time_everyday">A atualização será iniciada às %s todos os dias</string>
@@ -1483,7 +1486,7 @@ Toque em OK para aumentar o brilho acima dos níveis de segurança."</string>
     <string name="navigationbar_pressure_sensitivity_title">Pres. botão Início por segundos</string>
     <string name="navigationbar_pressure_sensitivity_summary">Use o botão Início quando ele estiver oculto pressionando por mais tempo do que o normal.</string>
     <string name="navigationbar_pressure_sensitivity_level_summary">Nível de pressão: %1$d de %2$d</string>
-    <string name="navigationbar_pressure_sensitivity_description_off">Use o botão Início quando ele estiver oculto pressionando por mais tempo do que o normal.</string>
+    <string name="navigationbar_pressure_sensitivity_description_off">Ajuste a pressão necessária a ser aplicada por alguns segundos ao botão Início.</string>
     <string name="navigationbar_pressure_low">Menos pressão</string>
     <string name="navigationbar_pressure_high">Mais forte</string>
     <string name="navigationbar_hide_bar">Exibir e ocultar botão</string>
@@ -1516,7 +1519,7 @@ Toque em OK para aumentar o brilho acima dos níveis de segurança."</string>
     <string name="dlg_turn_on">Ativar</string>
     <string name="screen_resolution_title">Resolução da tela</string>
     <string name="screen_resolution_desc_title">Alterar resolução da tela</string>
-    <string name="screen_resolution_desc_summary">Selecione uma resolução. Alguns dos aplicativos em execução atualmente poderão ser fechados quando você alterar a resolução.</string>
+    <string name="screen_resolution_desc_summary">Selecione uma resolução. Alguns dos aplicativos em execução poderão ser fechados quando você alterar a resolução.</string>
     <string name="screen_resolution_apply">Aplicar</string>
     <string name="screen_resolution_disabled_toast">Não será possível alterar esta configuração enquanto %s estiver ativado.</string>
     <string name="mobile_keyboard_toast">Para ativar %s, remova a capa do teclado do aparelho.</string>
@@ -1622,7 +1625,7 @@ Toque em OK para aumentar o brilho acima dos níveis de segurança."</string>
     <string name="crypt_keeper_decrypt_title">Decodificar dispositivo</string>
     <string name="crypt_keeper_decrypt_summary">Dispositivo codificado.</string>
     <string name="crypt_keeper_type_pin">PIN</string>
-    <string name="crypt_keeper_type_pattern">Padrão</string>
+    <string name="crypt_keeper_type_pattern">padrão</string>
     <string name="crypt_keeper_type_password">Senha</string>
     <string name="crypt_keeper_type_direction">Bloqueio direcional</string>
     <string name="crypt_keeper_confirm_title_dec">Confirmar decodificação</string>
@@ -1706,7 +1709,11 @@ A codificação demora uma hora ou mais. Antes de começar, verifique se a bater
     <string name="crypt_keeper_confirm_title">Confirmar a codificação</string>
     <string name="crypt_keeper_final_desc">Não é possível reverter a codificação do dispositivo e os dados serão perdidos se o processo for interrompido. A codificação pode demorar uma hora ou mais, durante a qual o dispositivo reiniciará diversas vezes e não será possível usá-lo.</string>
     <string name="crypt_keeper_setup_title">Codificando…</string>
-    <string name="crypt_keeper_warn_wipe">Restam %d tentativas para inicializar o aparelho antes que ele seja redefinido para as configurações padrão de fábrica. Isso apagará todos os dados, incluindo arquivos e aplicativos baixados.</string>
+    <string name="crypt_keeper_warn_wipe">"Restam %1$d tentativas antes de seu telefone ser restaurado para suas configurações padrão de fábrica. Isso apagará todos os dados, incluindo arquivos e aplicativos baixados.
+
+Se o seu telefone for restaurado, talvez seja necessário inserir as informações de %2$s (e-mail e senha) associadas a esse telefone para poder usá-lo novamente."</string>
+    <string name="crypt_keeper_samsung_account">Samsung account</string>
+    <string name="crypt_keeper_google_account">Conta Google</string>
     <string name="crypt_keeper_failed_title">Codificação falhou</string>
     <string name="crypt_keeper_failed_summary">Não é possível inicializar o aparelho. O processo de codificação foi interrompido. É necessário redefinir o aparelho para as configurações padrão de fábrica. Isso apagará todos os seus dados.</string>
     <string name="crypt_keeper_data_corrupted_title">Armazenamento do aparelho corrompido</string>
@@ -1725,10 +1732,13 @@ A codificação demora uma hora ou mais. Antes de começar, verifique se a bater
     <string name="cryptkeeper_wrong_pin">PIN incorreto inserido</string>
     <string name="cryptkeeper_wrong_direction">Direção incorreta desenhada</string>
     <string name="checking_decryption">Verificando..</string>
-    <string name="crypt_keeper_last_warn_wipe">Resta apenas mais 1 tentativa para inicializar o aparelho antes que ele seja redefinido para as configurações padrão de fábrica. Isso apagará todos os dados, incluindo arquivos e aplicativos baixados.</string>
+    <string name="crypt_keeper_last_warn_wipe">"Resta 1 tentativa antes de o telefone ser restaurado para as configurações padrão de fábrica. Isso apagará todos os dados, incluindo arquivos e aplicativos baixados.
+
+Se o telefone for restaurado, você talvez precise inserir as informações de %s (e-mail e senha) associadas a ele para poder usá-lo novamente."</string>
     <string name="crypt_keeper_failed_title_dec">Erro ao decodificar.</string>
     <string name="crypt_keeper_failed_summary_dec">Não foi possível terminar a decodificação por causa da interrupção. Realize o reinício dos dados de fábrica (apagando todos os dados) antes de usar.</string>
     <string name="crypt_keeper_set_screen_lock_type">Definir tipo bloqueio de tela</string>
+    <string name="crypt_keeper_warning_keyboard_cover_does_not_work">A capa do teclado não funcionará depois que o telefone for reiniciado.</string>
     <string name="encryption_interstitial_message">"Você pode proteger ainda mais este telefone exigindo que %s seja inserido(a) antes da inicialização do telefone. Isso ajuda a proteger seus dados se o telefone for perdido ou roubado. Alguns aplicativos podem exigir a Inicialização segura de acordo com as políticas de codificação do aparelho para acesso a recursos como sincronização de e-mail.
 
 Você não receberá nenhuma chamada, mensagem ou notificação e os alarmes não tocarão até que o telefone seja inicializado."</string>
@@ -1973,6 +1983,12 @@ Você também precisará disso quando:"</string>
     <string name="lockpassword_confirm_your_pin_with_fingerprint">Use uma impressão digital ou insira o PIN atual.</string>
     <string name="lockpassword_confirm_your_pattern_with_fingerprint">Use uma impressão digital ou desenhe o padrão atual.</string>
     <string name="lockpassword_confirm_your_password_with_fingerprint">Use uma impressão digital ou insira a senha atual.</string>
+    <string name="lockpassword_confirm_your_pin_with_iris">Use as íris ou insira seu PIN atual.</string>
+    <string name="lockpassword_confirm_your_pattern_with_iris">Use as íris ou desenhe seu padrão atual.</string>
+    <string name="lockpassword_confirm_your_password_with_iris">Use as íris ou insira sua senha atual.</string>
+    <string name="lockpassword_confirm_your_pin_with_biometrics">Use a biometria ou insira seu PIN.</string>
+    <string name="lockpassword_confirm_your_pattern_with_biometrics">Use a biometria ou desenhe o padrão.</string>
+    <string name="lockpassword_confirm_your_password_with_biometrics">Use a biometria ou insira sua senha.</string>
     <string name="lockpassword_confirm_your_pin_instead_of_fingerprint">Insira seu PIN em vez de usar o reconhecimento de impressão digital.</string>
     <string name="lockpassword_confirm_your_pattern_instead_of_fingerprint">Desenhe seu padrão em vez de usar o reconhecimento de impressão digital.</string>
     <string name="lockpassword_confirm_your_password_instead_of_fingerprint">Insira sua senha em vez de usar o reconhecimento de impressão digital.</string>
@@ -2047,6 +2063,7 @@ Selecione como deseja desbloquear seu telefone. O Desbloqueio facial e o Desbloq
     <string name="face_status_timeout">Tempo esgotado. Tente mais tarde.</string>
     <string name="okay">OK</string>
     <string name="face_samsung_account_button">Usar a Samsung account</string>
+    <string name="face_galaxy_account_button">Usar a conta Galaxy</string>
     <string name="face_error_DB_corrupted">Ocorreu um problema com seus dados faciais. Cadastre seu rosto novamente.</string>
     <string name="face_error_DB_corrupted_popup_title">Cadastrar seu rosto novamente</string>
     <string name="face_error_timeout">Seu rosto não foi detectado.</string>
@@ -2157,7 +2174,7 @@ Ative o Desbloqueio por íris para usar seus dados biométricos ou seu(sua) %s p
     <string name="biometrics_backup_locktype_title">Configurar a segurança com íris</string>
     <string name="biometrics_register_your_iris">Cadastre suas íris.</string>
     <string name="biometrics_backup_locktype_summary">Para usar as íris para desbloquear o aparelho, defina um padrão, um PIN ou uma senha.</string>
-    <string name="biometrics_backup_locktype_message">Para usar suas íris para desbloquear seu telefone ou para uma validação segura, você precisará:</string>
+    <string name="biometrics_backup_locktype_message">Para usar suas íris para desbloquear seu telefone ou para fazer a sua validação nos aplicativos, você precisará:</string>
     <string name="iris_delete_popup_title">Remover os dados da íris?</string>
     <string name="iris_delete_popup_message">Remover os dados da íris?</string>
     <string name="iris_delete_popup_message_with_related_func">Os recursos que usam íris serão desativados.</string>
@@ -2233,6 +2250,9 @@ Selecione como deseja desbloquear seu telefone. O Desbloqueio por íris e o Desb
     <string name="biometrics_dex_cant_use_msg">Não é possível usar %s no Samsung DeX.</string>
     <string name="biometrics_dex_closed_to_switch">%s foi fechado para alternar para o Samsung DeX.</string>
     <string name="biometircs_dex_cant_use_toast">%s não pode ser executado no Samsung DeX. Tente executá-lo no modo de telefone.</string>
+    <string name="iris_guide_text_preview">Olhe aqui p/ usar íris</string>
+    <string name="iris_guide_enable_toggle">Tocar aqui para usar as íris</string>
+    <string name="iris_cannot_verify">Não foi possível validar as íris</string>
     <string name="knox_twofactor_bio_description">Selecione seu tipo de bloqueio biométrico e o segundo tipo de bloqueio para desbloquear %s.</string>
     <string name="fingerprint_registered">As impressões digitais registradas serão usadas com o método de desbloqueio selecionado.</string>
     <string name="knox_twofactor_description">Selecione seus dados biométricos e um segundo tipo de bloqueio para desbloquear %s.</string>
@@ -3095,6 +3115,7 @@ Tente novamente."</string>
     <string name="easy_mode_app_help">Use seu aparelho com mais facilidade com uma aparência de tela inicial mais simples e itens maiores na tela.</string>
     <string name="easy_mode_app_help_dream_1">Use uma aparência de Tela inicial simples e itens maiores na tela.</string>
     <string name="easy_mode_app_help_dream_2">Qualquer personalização feita na Tela inicial será descartada e o Zoom da tela será definido para o máximo.</string>
+    <string name="easy_mode_app_help_3rd_launcher">Aplique o Modo fácil para itens maiores na tela. Se você não estiver usando o TouchWiz home, a aparência da sua Tela inicial não mudará, mas o zoom da tela será definido para grande e o tamanho da fonte será definido como médio.</string>
     <string name="security_warning_content">Você pode proteger sua privacidade definindo uma senha, um PIN ou um padrão para desbloquear a tela</string>
     <string name="lock_setting_weather_desc">Para exibir ou alterar as configurações de clima, toque em CONFIGURAÇÕES DE TEMPO abaixo.</string>
     <string name="lock_setting_weather_btn">Configurações de tempo</string>
@@ -3948,7 +3969,7 @@ O Roteador Wi-Fi aumenta o consumo da bateria e o uso de dados."</string>
     <string name="wfd_descrpition_playsound">Reproduz o som.</string>
     <string name="wfd_is_not_supported">Esta função não é aceita.</string>
     <string name="usbtethering_notify_wifi_is_on_title">Desativar o Wi-Fi?</string>
-    <string name="usbtethering_notify_wifi_is_on">O Wi-Fi e a ancoragem USB não podem estar ativados ao mesmo tempo. Desative o Wi-Fi.</string>
+    <string name="usbtethering_notify_wifi_is_on">O Wi-Fi e a ancoragem USB não podem estar ativados ao mesmo tempo. O Wi-Fi será desativado.</string>
     <string name="disable_multi_window_dialog_text">A exibição em Múltiplas janelas será desativada e todos os aplicativos abertos em janelas pop-up serão fechados.</string>
     <string name="keyguard_password_attempt_count_pin_code">Resta %d tentativa.</string>
     <string name="keyguard_password_attempts_count_pin_code">Restam %d tentativas.</string>
@@ -4156,6 +4177,7 @@ Recebendo SMS"</string>
     <string name="hdmi_mode_title">Modo HDMI</string>
     <string name="hdmi_mode_dex">Samsung DeX</string>
     <string name="hdmi_mode_mirroring">Screen Mirroring</string>
+    <string name="hdmi_mode_not_available_while_cover_attached">%s não está disponível com a capa conectada.</string>
     <string name="screen_timeout_for_dex">Tem. lim. tela p/ Samsung DeX</string>
     <string name="show_virtual_keyboard_for_dex">Exibir o teclado na tela no Samsung DeX</string>
     <string name="comma">,</string>
@@ -4492,7 +4514,7 @@ Você poderá alterar isso mais tarde nas configurações de Bluetooth."</string
     <string name="date_picker_title">Data</string>
     <string name="time_picker_title">Hora</string>
     <string name="lock_after_timeout">Bloquear automaticamente</string>
-    <string name="lock_after_timeout_summary">Bloquear a tela %s após ela ter sido desativada automaticamente.</string>
+    <string name="lock_after_timeout_summary">Bloqueia o telefone %s depois que a tela desliga automaticamente.</string>
     <string name="lock_after_timeout_summary_with_exception">Bloquear tela %1$s após ela desligar automaticamente, exceto quando for mantida desbloqueada por %2$s.</string>
     <string name="show_owner_info_on_lockscreen_label">Exibe as informações do proprietário do dispositivo na Tela de bloqueio.</string>
     <string name="owner_info_settings_title">Inform. do proprietário</string>
@@ -4640,6 +4662,8 @@ Para melhorar a precisão da localização, os aplicativos e os serviços poder�
     <string name="wifi_empty_list_user_restricted">Você não tem permissão para alterar as configurações do Wi-Fi.</string>
     <string name="wifi_setup_wps">Configuração automática (WPS)</string>
     <string name="wifi_show_advanced">Mostrar opções avançadas</string>
+    <string name="wifi_advanced_toggle_description_expanded">Toque duas vezes para recolher.</string>
+    <string name="wifi_advanced_toggle_description_collapsed">Toque duas vezes para expandir.</string>
     <string name="wifi_wps_setup_title">Configuração de WPS</string>
     <string name="wifi_wps_setup_msg">Iniciando WPS…</string>
     <string name="wifi_wps_onstart_pbc">Toque no botão de configuração de proteção da rede Wi-Fi no seu roteador. Ele pode ser denominado WPS ou conter esse símbolo:</string>
@@ -4671,6 +4695,10 @@ Para melhorar a precisão da localização, os aplicativos e os serviços poder�
     <string name="wifi_shared">Compartilhado</string>
     <string name="wifi_unchanged">(inalterado)</string>
     <string name="wifi_unspecified">(Não especificado)</string>
+    <string name="wifi_select_cert">Selecionar certificado</string>
+    <string name="wifi_do_not_provide_eap_user_cert">Não fornecer</string>
+    <string name="wifi_do_not_validate_eap_server">Não validar</string>
+    <string name="wifi_do_not_validate_eap_server_warning">Nenhum certificado foi especificado. Sua conexão não será privada.</string>
     <string name="wifi_scan_always_turnon_message">%s está solicitando permissão para buscar por redes Wi-Fi, mesmo quando o Wi-Fi estiver desligado, para melhorar a precisão da localização e para outras finalidades. Permitir isto para todos os aplicativos?</string>
     <string name="wifi_scan_always_confirm_allow">Permitir</string>
     <string name="wifi_scan_always_confirm_deny">Negar</string>
@@ -5005,9 +5033,9 @@ Tente usar um cartão SD ou um aparelho de armazenamento USB mais rápido para m
     <string name="restore_default_apn_completed">Restauração das configurações de APN padrão concluída.</string>
     <string name="reset_network_desc">Isto irá redefinir todas as configurações de rede, inclusive as de:</string>
     <string name="reset_network_button_text">Redefinir configurações</string>
-    <string name="reset_network_final_desc">Todas as configurações de conexão serão redefinidas. Essa ação não pode ser desfeita.</string>
+    <string name="reset_network_final_desc">Todas as configurações de rede serão restauradas. Essa ação não pode ser desfeita.</string>
     <string name="reset_network_final_button_text">Redefinir configurações</string>
-    <string name="reset_network_complete_toast">Configurações da conexão redefinidas.</string>
+    <string name="reset_network_complete_toast">As configurações de rede foram restauradas.</string>
     <string name="master_clear_title">Restaurar padrão de fábrica</string>
     <string name="master_clear_accounts">Você está conectado nas seguintes contas:</string>
     <string name="master_clear_other_users_present">Os dados pertencentes a outros usuários neste aparelho também serão apagados.</string>
@@ -6120,6 +6148,7 @@ Você não receberá nenhuma chamada, mensagem ou notificação e os alarmes nã
     <string name="set_data_limit">Definir limite de dados</string>
     <string name="data_limit">Limite de dados</string>
     <string name="data_usage_template">%1$s usado(s) entre %2$s</string>
+    <string name="data_usage_template_wifi">%s usados nos últimos 30 dias</string>
     <string name="data_usage_other_apps">Apps relac. incluídos em uso</string>
     <string name="data_saver_title">Protetor de dados</string>
     <string name="unrestricted_data_saver">Permitir uso de dados sem restrição</string>
@@ -6170,6 +6199,7 @@ Você não receberá nenhuma chamada, mensagem ou notificação e os alarmes nã
     <string name="legacy_dhcp_client_summary">Usar cliente DHCP do Lollipop, em vez do novo cliente DHCP do Android.</string>
     <string name="screen_off_pocket_title">Manter a tela desligada</string>
     <string name="screen_off_pocket_summary">Evite que a tela ligue acidentalmente enquanto o aparelho estiver em um local escuro como um bolso ou uma bolsa.</string>
+    <string name="noApplications">Todos os aplicativos associados a esta ação foram desativados, bloqueados ou não estão instalados.</string>
     <string name="confirm_reset_shortcut_manager_throttling_title">Redefinir o limitador de taxa do Gerenciador de atalhos</string>
     <string name="confirm_reset_shortcut_manager_throttling_message">Os contadores do limitador de taxa do Gerenciador de atalhos serão redefinidos.</string>
 </resources>

@@ -199,7 +199,7 @@
 
     iget-object v3, p0, Lcom/samsung/android/settings/fmm/SimChangeAlert;->mContent:Landroid/widget/LinearLayout;
 
-    const v4, 0x7f040182
+    const v4, 0x7f040183
 
     invoke-virtual {v2, v4, v3, v5}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;Z)Landroid/view/View;
 
@@ -227,7 +227,7 @@
 
     move-result-object v2
 
-    const v3, 0x7f0b0909
+    const v3, 0x7f0b0914
 
     invoke-static {v2, v3, v5}, Landroid/widget/Toast;->makeText(Landroid/content/Context;II)Landroid/widget/Toast;
 
@@ -340,7 +340,7 @@
 
     move-result-object v15
 
-    const v16, 0x7f0b08f8
+    const v16, 0x7f0b0903
 
     invoke-virtual/range {v15 .. v16}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -420,7 +420,7 @@
 
     move-result-object v15
 
-    const v16, 0x7f0b090d
+    const v16, 0x7f0b0918
 
     const/16 v17, 0x0
 
@@ -497,7 +497,7 @@
 
     move-result-object v15
 
-    const v16, 0x7f0b090e
+    const v16, 0x7f0b0919
 
     const/16 v17, 0x0
 
@@ -590,7 +590,7 @@
 
     move-result-object v15
 
-    const v16, 0x7f0b0907
+    const v16, 0x7f0b0912
 
     const/16 v17, 0x0
 
@@ -622,7 +622,7 @@
 
     move-result-object v15
 
-    const v16, 0x7f0b090f
+    const v16, 0x7f0b091a
 
     const/16 v17, 0x0
 
@@ -773,7 +773,7 @@
 
     move-result-object v15
 
-    const v16, 0x7f0b0903
+    const v16, 0x7f0b090e
 
     const/16 v17, 0x0
 
@@ -1017,7 +1017,7 @@
 
     iget-object v10, p0, Lcom/samsung/android/settings/fmm/SimChangeAlert;->mContent:Landroid/widget/LinearLayout;
 
-    const v11, 0x7f040182
+    const v11, 0x7f040183
 
     invoke-virtual {v9, v11, v10, v12}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;Z)Landroid/view/View;
 
@@ -1092,7 +1092,7 @@
 .method public init()V
     .locals 15
 
-    const v14, 0x7f040182
+    const v14, 0x7f040183
 
     const/4 v13, 0x0
 
@@ -1423,7 +1423,7 @@
 
     move-result-object v3
 
-    const v4, 0x7f1107b0
+    const v4, 0x7f1107b2
 
     invoke-virtual {v3, v4}, Lcom/android/settings/widget/ToggleSwitch;->setNextFocusDownId(I)V
 
@@ -1534,7 +1534,7 @@
 
     const/4 v1, 0x0
 
-    const v0, 0x7f0b1b1e
+    const v0, 0x7f0b1b30
 
     invoke-interface {p1, v1, v1, v1, v0}, Landroid/view/Menu;->add(IIII)Landroid/view/MenuItem;
 
@@ -1558,7 +1558,7 @@
 
     iput-object p1, p0, Lcom/samsung/android/settings/fmm/SimChangeAlert;->mInflater:Landroid/view/LayoutInflater;
 
-    const v2, 0x7f0402e8
+    const v2, 0x7f0402eb
 
     invoke-virtual {p1, v2, p2, v4}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;Z)Landroid/view/View;
 
@@ -1568,7 +1568,7 @@
 
     iget-object v2, p0, Lcom/samsung/android/settings/fmm/SimChangeAlert;->mView:Landroid/view/View;
 
-    const v5, 0x7f1107b5
+    const v5, 0x7f1107b7
 
     invoke-virtual {v2, v5}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -1593,7 +1593,7 @@
     :cond_0
     iget-object v2, p0, Lcom/samsung/android/settings/fmm/SimChangeAlert;->mView:Landroid/view/View;
 
-    const v5, 0x7f1107b1
+    const v5, 0x7f1107b3
 
     invoke-virtual {v2, v5}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -1601,7 +1601,7 @@
 
     check-cast v1, Landroid/widget/TextView;
 
-    const v2, 0x7f0b0906
+    const v2, 0x7f0b0911
 
     invoke-virtual {v1, v2}, Landroid/widget/TextView;->setText(I)V
 
@@ -1616,7 +1616,7 @@
 
     iget-object v2, p0, Lcom/samsung/android/settings/fmm/SimChangeAlert;->mView:Landroid/view/View;
 
-    const v5, 0x7f1107b0
+    const v5, 0x7f1107b2
 
     invoke-virtual {v2, v5}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -1638,7 +1638,7 @@
 
     iget-object v2, p0, Lcom/samsung/android/settings/fmm/SimChangeAlert;->mView:Landroid/view/View;
 
-    const v5, 0x7f1107b3
+    const v5, 0x7f1107b5
 
     invoke-virtual {v2, v5}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -1650,7 +1650,7 @@
 
     iget-object v2, p0, Lcom/samsung/android/settings/fmm/SimChangeAlert;->mView:Landroid/view/View;
 
-    const v5, 0x7f1107b2
+    const v5, 0x7f1107b4
 
     invoke-virtual {v2, v5}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -1670,7 +1670,7 @@
 
     iget-object v2, p0, Lcom/samsung/android/settings/fmm/SimChangeAlert;->mView:Landroid/view/View;
 
-    const v5, 0x7f1107b4
+    const v5, 0x7f1107b6
 
     invoke-virtual {v2, v5}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -1684,7 +1684,7 @@
 
     iget-object v2, p0, Lcom/samsung/android/settings/fmm/SimChangeAlert;->mView:Landroid/view/View;
 
-    const v5, 0x7f1107b7
+    const v5, 0x7f1107b9
 
     invoke-virtual {v2, v5}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -1989,7 +1989,7 @@
 
     move-result-object v3
 
-    const v4, 0x7f0401cd
+    const v4, 0x7f0401d0
 
     const/4 v5, 0x0
 
@@ -1997,7 +1997,7 @@
 
     move-result-object v2
 
-    const v3, 0x7f1105d6
+    const v3, 0x7f1105d8
 
     invoke-virtual {v2, v3}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -2019,7 +2019,7 @@
 
     invoke-direct {v3, v4}, Landroid/app/AlertDialog$Builder;-><init>(Landroid/content/Context;)V
 
-    const v4, 0x7f0b051e
+    const v4, 0x7f0b051f
 
     invoke-virtual {v3, v4}, Landroid/app/AlertDialog$Builder;->setTitle(I)Landroid/app/AlertDialog$Builder;
 

@@ -1134,7 +1134,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f0f04b2
+    const v1, 0x7f0f04b1
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getInteger(I)I
 
@@ -1148,7 +1148,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f0f04b5
+    const v1, 0x7f0f04b4
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getInteger(I)I
 
@@ -1181,7 +1181,7 @@
 
     move-result-object v2
 
-    const v3, 0x7f0b1d25
+    const v3, 0x7f0b1d37
 
     const/4 v4, 0x0
 
@@ -1433,7 +1433,7 @@
 
     aput-object v16, v10, v17
 
-    const v17, 0x7f0b1e2c
+    const v17, 0x7f0b1e3e
 
     move-object/from16 v0, p0
 
@@ -1601,7 +1601,7 @@
 
     invoke-virtual {v0, v2, v3}, Landroid/widget/TextView;->setTextAppearance(Landroid/content/Context;I)V
 
-    const v2, 0x7f0b053c
+    const v2, 0x7f0b053d
 
     invoke-virtual {v0, v2}, Landroid/widget/TextView;->setText(I)V
 
@@ -2594,7 +2594,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f0f04b2
+    const v2, 0x7f0f04b1
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getInteger(I)I
 

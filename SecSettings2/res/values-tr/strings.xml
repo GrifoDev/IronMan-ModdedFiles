@@ -170,6 +170,8 @@
     <string name="wifi_allow_scan_with_traffic_summary">Kullanılan veri miktarına göre Wi-Fi dolaşım taramalarına otomatik olarak izin verin veya reddedin.</string>
     <string name="select_logd_size_title">Kayıt ara belleği boyutu</string>
     <string name="select_logd_size_dialog_title">Her bir kayıt ara belleğinin maksimum boyutunu seç</string>
+    <string name="dev_logpersist_clear_warning_title">Kalıcı kayıt depolaması temizlensin mi?</string>
+    <string name="dev_logpersist_clear_warning_message">Kalıcı kayıt kapatıldığında kayıt verileri silinecek.</string>
     <string name="select_logpersist_title">Kayıt verilerini sürekli depola</string>
     <string name="select_logpersist_dialog_title">Sürekli depolmk içn kayt ara belleği seçin</string>
     <string name="select_usb_configuration_title">USB yapılandırması</string>
@@ -982,6 +984,7 @@ Bağlı 2 cihazın ses çıkışında ufak bir farklılık yaşayabilirsiniz."</
     <string name="bluetooth_avc_available_description">Bağlı Bluetooth cihazı, Medya ses düzeyini eşitlemeyi destekliyor ve Bluetooth cihazı tarafından belirlenen ses düzeyi telefonunuzla eşitlenecek.</string>
     <string name="bluetooth_enter_pin_msg">%s ile eşleşme için PIN girin (0000 veya 1234’ü deneyin).</string>
     <string name="bluetooth_pin_maximum_number_message">Maksimum karakter sayısına ulaşıldı.</string>
+    <string name="bluetooth_frp_permission_message">Bu arama için Bluetooth cihazı kullanılamaz.</string>
     <string name="settings_menu_done">Tamamlandı</string>
     <string name="usb_tethering_unavailable_subtext_tmo">USB not connected</string>
     <string name="usb_tethering_available_subtext_tmo">USB connected, check to tether</string>
@@ -1263,7 +1266,7 @@ Data usage is measured by your phone. Your carrier may account for usage differe
     <string name="auto_update_summary">Yazılım güncellemelerini, bir Wi-Fi ağına bağlanıldığında otomatik olarak indirin. İndirme sırasında cihazınızı kullanabileceksiniz.</string>
     <string name="auto_update_over_wifi">Wi-Fi üzerinden otomatik indir</string>
     <string name="auto_update_over_wifi_summary">Yazılım güncellemeleri, bir Wi-Fi ağına bağlanıldığında otomatik olarak indirilir. Servis sağlayıcınıza bağlı olarak, güncellemeler ek ücret olmaksızın mobil veri kullanılarak da indirilebilir. İndirme sırasında telefonunuzu kullanabileceksiniz.</string>
-    <string name="scheduled_update">Planlanan yazılm güncellemeleri</string>
+    <string name="scheduled_update">Planlanan yazılım güncellemeleri</string>
     <string name="scheduled_update_summary_default">Kapalı</string>
     <string name="scheduled_update_summary_set_time">Güncelleme %s saatinde başlayacaktır</string>
     <string name="scheduled_update_summary_set_time_everyday">Güncelleme her gün %s saatinde başlayacaktır</string>
@@ -1481,7 +1484,7 @@ Parlaklığın güvenli seviyelerin üzerine çıkmasına izin vermek için Tama
     <string name="navigationbar_pressure_sensitivity_title">Ana sayfa tuşuna sert basın</string>
     <string name="navigationbar_pressure_sensitivity_summary">Normalden daha sert basarak gizliyken Ana sayfa tuşunu kullanın.</string>
     <string name="navigationbar_pressure_sensitivity_level_summary">Basınç seviyesi: %1$d / %2$d</string>
-    <string name="navigationbar_pressure_sensitivity_description_off">Normalden daha sert basarak gizliyken Ana sayfa tuşunu kullanın.</string>
+    <string name="navigationbar_pressure_sensitivity_description_off">Ana sayfa tuşuna sert basmak için gereken baskı miktarını ayarlayın.</string>
     <string name="navigationbar_pressure_low">Daha hafif</string>
     <string name="navigationbar_pressure_high">Daha güçlü</string>
     <string name="navigationbar_hide_bar">Görüntüle ve gizle tuşu</string>
@@ -1620,7 +1623,7 @@ Parlaklığın güvenli seviyelerin üzerine çıkmasına izin vermek için Tama
     <string name="crypt_keeper_decrypt_title">Cihazı şifrele</string>
     <string name="crypt_keeper_decrypt_summary">Cihaz şifrelendi.</string>
     <string name="crypt_keeper_type_pin">PIN</string>
-    <string name="crypt_keeper_type_pattern">Desen</string>
+    <string name="crypt_keeper_type_pattern">desen</string>
     <string name="crypt_keeper_type_password">Şifre</string>
     <string name="crypt_keeper_type_direction">Yön kilidi</string>
     <string name="crypt_keeper_confirm_title_dec">Şifre çözmeyi onayla</string>
@@ -1704,7 +1707,11 @@ Parlaklığın güvenli seviyelerin üzerine çıkmasına izin vermek için Tama
     <string name="crypt_keeper_confirm_title">Şifrelemeyi onayla</string>
     <string name="crypt_keeper_final_desc">Cihazınızı şifreleme işlemi geri alınamaz ve işlem kesintiye uğradığı takdirde veriler kaybedilir. Şifreleme işlemi bir saat veya daha fazla sürebilir; bu sırada cihazınız birkaç kez yeniden başlatılır ve cihazınızı kullanamazsınız.</string>
     <string name="crypt_keeper_setup_title">Şifreleniyor…</string>
-    <string name="crypt_keeper_warn_wipe">Varsayılan fabrika ayarlarına sıfırlanmadan önce cihazınızı başlatmak için %d deneme hakkınız kaldı. Bu işlem, dosyalar ve indirilen uygulamalar dahil olmak üzere tüm verileri siler.</string>
+    <string name="crypt_keeper_warn_wipe">"Kalan %1$d deneme hakkınızın ardından telefonunuz varsayılan fabrika ayarlarına sıfırlanacak. Bu işlem, dosyalar ve indirilen uygulamalar dahil olmak üzere tüm verileri siler.
+
+Telefonunuz sıfırlanırsa tekrar kullanabilmek için bu telefonla ilişkilendirilen %2$s bilgilerini (e-posta adresi ve şifre) girmeniz gerekebilir."</string>
+    <string name="crypt_keeper_samsung_account">Samsung account</string>
+    <string name="crypt_keeper_google_account">Google hesabı</string>
     <string name="crypt_keeper_failed_title">Şifreleme başarısız</string>
     <string name="crypt_keeper_failed_summary">Cihazınız başlatılamıyor. Şifreleme işlemi kesintiye uğradı. Cihazınızı varsayılan fabrika ayarlarına sıfırlamanız gerekir. Bu işlem tüm verilerinizi silecek.</string>
     <string name="crypt_keeper_data_corrupted_title">Cihaz hafızası bozuk</string>
@@ -1723,10 +1730,13 @@ Parlaklığın güvenli seviyelerin üzerine çıkmasına izin vermek için Tama
     <string name="cryptkeeper_wrong_pin">Yanlış PIN girildi</string>
     <string name="cryptkeeper_wrong_direction">Hatalı yön çizildi</string>
     <string name="checking_decryption">Doğrulanıyor…</string>
-    <string name="crypt_keeper_last_warn_wipe">Cihazınız varsayılan fabrika ayarlarına sıfırlanmadan önce cihazınızı başlatmak için sadece 1 deneme hakkınız kaldı. Bu işlem, dosyalar ve indirilen uygulamalar dahil olmak üzere tüm verileri siler.</string>
+    <string name="crypt_keeper_last_warn_wipe">"Telefonunuz varsayılan fabrika ayarlarına sıfırlanmadan önce 1 deneme hakkınız kaldı. Bu işlem, dosyalar ve indirilen uygulamalar dahil olmak üzere tüm verileri siler.
+
+Telefonunuz sıfırlanırsa tekrar kullanabilmek için bu telefonla ilişkilendirilen %s bilgilerini (e-posta adresi ve şifre) girmeniz gerekebilir."</string>
     <string name="crypt_keeper_failed_title_dec">Şifreleme hatası.</string>
     <string name="crypt_keeper_failed_summary_dec">Kesinti nedeniyle şifre çözme tamamlanamıyor. Kullanmadan önce fabrika verilerine sıfırlama (tüm verileri siler) yapın.</string>
     <string name="crypt_keeper_set_screen_lock_type">Ekran kilidi türünü ayarla</string>
+    <string name="crypt_keeper_warning_keyboard_cover_does_not_work">Telefon yeniden başlatıldıktan sonra klavye kapağı çalışmaz.</string>
     <string name="encryption_interstitial_message">"Telefon başlatılmadan önce %s girilmesini gerektirerek bu telefonu daha fazla koruyabilirsiniz. Bu, telefon kaybolur veya çalınırsa verilerinizi korumaya yardımcı olur. Bazı uygulamalar, e-posta eşitleme gibi özelliklere erişmek için Cihaz şifreleme ilkeleri uyarınca Güvenli Başlatma gerektirebilir.
 
 Telefon başlatılana kadar arama, mesaj veya bildirim almazsınız ve alarmlar çalmaz."</string>
@@ -1846,6 +1856,7 @@ Cihaz başlatılana kadar arama, mesaj veya bildirim almazsınız ve alarmlar ç
     <string name="knox_fingerprint_delete_fingerprint_popup_message">Parmak iziyle kilit açma şu anda Knox kilit açma yöntemi olarak ayarlı. Başka bir yöntem seçip tekrar deneyin.</string>
     <string name="knox_fingerprint_delete_fingerprint_popup_title">Parmak izi kaldırılamıyor</string>
     <string name="fingerprint_confirm_percent_for_talkback">Yüzde %d tamamlandı.</string>
+    <string name="fingerprint_confirm_percent_format">%%%d</string>
     <string name="fingerprint_disclaimer_message">Parmak izi tanıma özelliğinin çalışması için parmak izi bilgilerinizin cihazınıza eklenmiş olması gerekir. Parmak izinizi ekledikten sonra isteğinize göre aşağıdaki işlevler için parmak izinizi kullanabilirsiniz:</string>
     <string name="fingerprint_data_has_been_corrupted">Parmak izi verileri bozulmuş. Parmak izlerinizi tekrar ekleyin.</string>
     <string name="fingerprint_web">Web oturum açma</string>
@@ -1971,6 +1982,12 @@ You will also need it when:"</string>
     <string name="lockpassword_confirm_your_pin_with_fingerprint">"Parmak izi kullanın veya geçerli PIN'i girin."</string>
     <string name="lockpassword_confirm_your_pattern_with_fingerprint">Parmak izi kullanın veya geçerli deseni çizin.</string>
     <string name="lockpassword_confirm_your_password_with_fingerprint">Parmak izi kullanın veya geçerli şifreyi girin.</string>
+    <string name="lockpassword_confirm_your_pin_with_iris">"İrislerinizi kullanın veya geçerli PIN'inizi girin."</string>
+    <string name="lockpassword_confirm_your_pattern_with_iris">İrislerinizi kullanın veya geçerli deseninizi çizin.</string>
+    <string name="lockpassword_confirm_your_password_with_iris">İrislerinizi kullanın veya geçerli şifrenizi girin.</string>
+    <string name="lockpassword_confirm_your_pin_with_biometrics">"Biyometrik verileri kullanın veya PIN'inizi girin."</string>
+    <string name="lockpassword_confirm_your_pattern_with_biometrics">Biyometrik verileri kullanın veya deseninizi çizin.</string>
+    <string name="lockpassword_confirm_your_password_with_biometrics">Biyometrik verileri kullanın veya şifrenizi girin.</string>
     <string name="lockpassword_confirm_your_pin_instead_of_fingerprint">"Parmak izi tanımayı kullanmak yerine PIN'inizi girin."</string>
     <string name="lockpassword_confirm_your_pattern_instead_of_fingerprint">Parmak izi tanımayı kullanmak yerine deseninizi çizin.</string>
     <string name="lockpassword_confirm_your_password_instead_of_fingerprint">Parmak izi tanımayı kullanmak yerine şifrenizi girin.</string>
@@ -2045,6 +2062,7 @@ Telefonunuzun kilidini nasıl açmak istediğinizi seçin. Yüzle kilit açma ve
     <string name="face_status_timeout">Zaman aşımı oldu. Daha sonra deneyin.</string>
     <string name="okay">Tamam</string>
     <string name="face_samsung_account_button">Samsung account kullan</string>
+    <string name="face_galaxy_account_button">"Galaxy account'u kullan"</string>
     <string name="face_error_DB_corrupted">Yüz verilerinizle ilgili bir sorun oluştu. Yüzünüzü tekrar kaydedin.</string>
     <string name="face_error_DB_corrupted_popup_title">Yüzünüzü tekrar kaydedin</string>
     <string name="face_error_timeout">Yüzünüz algılanmadı.</string>
@@ -2155,7 +2173,7 @@ Biyometrik verilerinizi veya %s kullanarak telefonunuzun kilidini açmak için �
     <string name="biometrics_backup_locktype_title">İris güvenliğini kur</string>
     <string name="biometrics_register_your_iris">İrislerinizi kaydedin.</string>
     <string name="biometrics_backup_locktype_summary">Cihazın kilidini açmak üzere irislerinizi kullanmak için bir desen, PIN veya şifre belirlemeniz gerekir.</string>
-    <string name="biometrics_backup_locktype_message">Telefonunuzun kilidini açma veya güvenli doğrulama amacıyla irislerinizi kullanmak için şunları yapmanız gerekir:</string>
+    <string name="biometrics_backup_locktype_message">Telefonunuzun kilidini açma veya uygulamalarda kendinizi doğrulama amacıyla irislerinizi kullanmak için şunları yapmanız gerekir:</string>
     <string name="iris_delete_popup_title">İris verileri kaldırılsın mı?</string>
     <string name="iris_delete_popup_message">İris verileri kaldırılsın mı?</string>
     <string name="iris_delete_popup_message_with_related_func">İrisleri kullanan özellikler kapatılacak.</string>
@@ -2231,6 +2249,9 @@ Telefonunuzun kilidini nasıl açmak istediğinizi seçin. İrisle kilit açma v
     <string name="biometrics_dex_cant_use_msg">"Samsung DeX'te %s kullanılamaz."</string>
     <string name="biometrics_dex_closed_to_switch">"Samsung DeX'e geçmek için %s kapatıldı."</string>
     <string name="biometircs_dex_cant_use_toast">"%s, Samsung DeX'te çalıştırılamaz. Telefon modunda çalıştırmayı deneyin."</string>
+    <string name="iris_guide_text_preview">İrs kullnmk içn bry bkn</string>
+    <string name="iris_guide_enable_toggle">İrislri kullnmk içn brya doknn</string>
+    <string name="iris_cannot_verify">İrisler doğrulanamadı</string>
     <string name="knox_twofactor_bio_description">%s kilidini açmak için biometrik kilit türünüzü ve ikinci kilit türünüzü seçin.</string>
     <string name="fingerprint_registered">Kayıtlı parmak izleri seçilen kilit açma yöntemi ile birlikte kullanılacaktır.</string>
     <string name="knox_twofactor_description">%s kilidini açmak için biyometrik verilerinizi ve ikinci bir kilit türü seçin.</string>
@@ -3093,6 +3114,7 @@ Lütfen tekrar deneyin."</string>
     <string name="easy_mode_app_help">Daha sade bir ana ekran düzeni ve daha büyük ekran öğeleriyle cihazınızı daha kolay kullanın.</string>
     <string name="easy_mode_app_help_dream_1">Sade bir Ana ekran düzeni ve daha büyük ekran öğeleri kullanın.</string>
     <string name="easy_mode_app_help_dream_2">Ana ekranda yaptığınız tüm özelleştirmeler silinecek ve Ekranı yakınlaştırma maksimum olarak ayarlanacak.</string>
+    <string name="easy_mode_app_help_3rd_launcher">Daha büyük ekran ögeleri için Kolay mod uygulayın. TouchWiz ana sayfasını kullanmıyorsanız Ana ekran düzeniniz değişmez ancak ekran yakınlaştırması büyük olarak ayarlanırken, yazı tipi de orta boyuta ayarlanır.</string>
     <string name="security_warning_content">Ekranınızın kilidini açmak için bir şifre, PIN veya desen ayarlayarak gizliliğinizi koruyabilirsiniz</string>
     <string name="lock_setting_weather_desc">Hava durumu ayarlarını görüntülemek veya değiştirmek için aşağıdan HAVA DURUMU AYARLARI öğesine dokunun.</string>
     <string name="lock_setting_weather_btn">Hava durumu ayarları</string>
@@ -3946,7 +3968,7 @@ Mobil Erişim Noktasının kullanılması pil tüketimini ve veri kullanımını
     <string name="wfd_descrpition_playsound">Ses oynatın.</string>
     <string name="wfd_is_not_supported">Bu işlev desteklenmiyor.</string>
     <string name="usbtethering_notify_wifi_is_on_title">Wi-Fi kapatılsın mı?</string>
-    <string name="usbtethering_notify_wifi_is_on">"Wi-Fi ve USB bağlanma aynı anda açık olamaz. Wi-Fi'ı kapatın."</string>
+    <string name="usbtethering_notify_wifi_is_on">Wi-Fi ve USB bağlanma aynı anda açık olamaz. Wi-Fi kapatılacak.</string>
     <string name="disable_multi_window_dialog_text">Çoklu pencere devre dışı bırakılacak ve açılır pencerelerde açık olan tüm uygulamalar kapatılacak.</string>
     <string name="keyguard_password_attempt_count_pin_code">%d deneme kaldı.</string>
     <string name="keyguard_password_attempts_count_pin_code">%d deneme kaldı.</string>
@@ -4154,6 +4176,7 @@ SMS alma"</string>
     <string name="hdmi_mode_title">HDMI modu</string>
     <string name="hdmi_mode_dex">Samsung DeX</string>
     <string name="hdmi_mode_mirroring">Screen Mirroring</string>
+    <string name="hdmi_mode_not_available_while_cover_attached">Kapak takılıyken %s kullanılamaz.</string>
     <string name="screen_timeout_for_dex">Samsung DeX ekran zaman aşımı</string>
     <string name="show_virtual_keyboard_for_dex">"Samsung DeX'te ekran klavyesini göster"</string>
     <string name="comma">,</string>
@@ -4462,7 +4485,7 @@ Bunu daha sonra Bluetooth ayarlarında değiştirebilirsiniz."</string>
     <string name="date_picker_title">Tarih</string>
     <string name="time_picker_title">Saat</string>
     <string name="lock_after_timeout">Otomatik olarak kilitle</string>
-    <string name="lock_after_timeout_summary">Ekran otomatik olarak kapandıktan %s sonra ekranı kilitler.</string>
+    <string name="lock_after_timeout_summary">Ekran otomatik olarak kapandıktan %s sonra telefonu kilitler.</string>
     <string name="lock_after_timeout_summary_with_exception">Ekran otomatik olarak kapandıktan %1$s sonra kilitle (%2$s ile kilidi açık bırakılmadığı sürece).</string>
     <string name="show_owner_info_on_lockscreen_label">Kilit ekranında cihaz sahibinin bilgilerini gösterir.</string>
     <string name="owner_info_settings_title">Sahip bilgisi</string>
@@ -4610,6 +4633,8 @@ Uygulamalar ve servisler, konum doğruluğunu iyileştirmek için Wi-Fi kapalıy
     <string name="wifi_empty_list_user_restricted">Wi-Fi ayarlarını değiştirmek için izniniz yok.</string>
     <string name="wifi_setup_wps">Otomatik kurulum (WPS)</string>
     <string name="wifi_show_advanced">Gelişmiş seçenekleri göster</string>
+    <string name="wifi_advanced_toggle_description_expanded">Daraltmak için çift dokunun.</string>
+    <string name="wifi_advanced_toggle_description_collapsed">Genişletmek için çift dokunun.</string>
     <string name="wifi_wps_setup_title">WPS kurulumu</string>
     <string name="wifi_wps_setup_msg">WPS başlatılıyor…</string>
     <string name="wifi_wps_onstart_pbc">Yönlendiricinizdeki Wi-Fi korumalı kurulum butonuna dokunun. Bu, WPS olarak adlandırılabilir veya şu sembolü içerebilir:</string>
@@ -4641,6 +4666,10 @@ Uygulamalar ve servisler, konum doğruluğunu iyileştirmek için Wi-Fi kapalıy
     <string name="wifi_shared">Paylaşılan</string>
     <string name="wifi_unchanged">(değiştirilmemiş)</string>
     <string name="wifi_unspecified">(Belirtilmemiş)</string>
+    <string name="wifi_select_cert">Sertifika seç</string>
+    <string name="wifi_do_not_provide_eap_user_cert">Sunma</string>
+    <string name="wifi_do_not_validate_eap_server">Doğrulama</string>
+    <string name="wifi_do_not_validate_eap_server_warning">Sertifika belirtilmedi. Bağlantınız gizli olmayacak.</string>
     <string name="wifi_scan_always_turnon_message">%s, konum doğruluğunu iyileştirmek ve diğer amaçlar için Wi-Fi kapalıyken bile Wi-Fi ağlarını taramak üzere izin istiyor. Tüm uygulamalar için buna izin verilsin mi?</string>
     <string name="wifi_scan_always_confirm_allow">İzin ver</string>
     <string name="wifi_scan_always_confirm_deny">Geri çevir</string>
@@ -4975,9 +5004,9 @@ Performansı iyileştirmek için daha hızlı bir SD kart veya USB depolama ciha
     <string name="restore_default_apn_completed">APN ayarlarını varsayılana sıfırla.</string>
     <string name="reset_network_desc">Bu işlem aşağıdakiler dahil olmak üzere tüm ağ ayarlarını sıfırlayacak:</string>
     <string name="reset_network_button_text">Fabrika ayarlarına dön</string>
-    <string name="reset_network_final_desc">Tüm bağlantı ayarları sıfırlanacak. Bu işlem geri alınamaz.</string>
+    <string name="reset_network_final_desc">Tüm ağ ayarları sıfırlanacak. Bu işlem geri alınamaz.</string>
     <string name="reset_network_final_button_text">Fabrika ayarlarına dön</string>
-    <string name="reset_network_complete_toast">Bağlantı ayarları sıfırlandı.</string>
+    <string name="reset_network_complete_toast">Ağ ayarları sıfırlandı.</string>
     <string name="master_clear_title">Fabrika ayarlarına sıfırla</string>
     <string name="master_clear_accounts">Şu anda aşağıdaki hesaplarda oturum açmış durumdasınız:</string>
     <string name="master_clear_other_users_present">Bu cihazdaki diğer kullanıcılara ait veriler de silinecek.</string>
@@ -6090,6 +6119,7 @@ Cihaz başlatılana kadar arama, mesaj veya bildirim almazsınız ve alarmlar ç
     <string name="set_data_limit">Veri sınırı ayarla</string>
     <string name="data_limit">Veri sınırı</string>
     <string name="data_usage_template">%1$s, %2$s arasında kullanıldı</string>
+    <string name="data_usage_template_wifi">Son 30 günde %s kullanıldı</string>
     <string name="data_usage_other_apps">Kllnma dahl oln ilgli uygulmlr</string>
     <string name="data_saver_title">Veri tasarrufu</string>
     <string name="unrestricted_data_saver">Vri tsrrfu açkkn uyglmya izn vr</string>
@@ -6140,6 +6170,7 @@ Cihaz başlatılana kadar arama, mesaj veya bildirim almazsınız ve alarmlar ç
     <string name="legacy_dhcp_client_summary">Yeni Android DHCP istemcisi yerine Lollipop DHCP istemcisini kullan.</string>
     <string name="screen_off_pocket_title">Ekranı kapalı tut</string>
     <string name="screen_off_pocket_summary">Cihaz, cep veya çanta gibi karanlık bir yerdeyken ekranın yanlışlıkla açılmasını engelleyin.</string>
+    <string name="noApplications">Bu işlemle ilişkilendirilmiş tüm uygulamalar devre dışı bırakılmış, engellenmiş veya yüklenmemiş.</string>
     <string name="confirm_reset_shortcut_manager_throttling_title">Kısayol Yöneticisi oran sınırlayıcıyı sıfırla</string>
     <string name="confirm_reset_shortcut_manager_throttling_message">Kısayol Yöneticisi oran sınırlayıcı sayaçları sıfırlanacak.</string>
 </resources>

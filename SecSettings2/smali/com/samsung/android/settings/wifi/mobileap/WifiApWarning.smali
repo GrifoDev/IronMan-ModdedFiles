@@ -2887,7 +2887,7 @@
 
     iget-object v5, p0, Lcom/samsung/android/settings/wifi/mobileap/WifiApWarning;->mContext:Landroid/content/Context;
 
-    const v6, 0x7f0403a0
+    const v6, 0x7f0403a3
 
     const/4 v7, 0x0
 
@@ -2895,7 +2895,7 @@
 
     move-result-object v1
 
-    const v5, 0x7f110902
+    const v5, 0x7f110904
 
     invoke-virtual {v1, v5}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -2903,7 +2903,7 @@
 
     check-cast v4, Landroid/widget/LinearLayout;
 
-    const v5, 0x7f1108a2
+    const v5, 0x7f1108a4
 
     invoke-virtual {v1, v5}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -2913,7 +2913,7 @@
 
     iput-object v5, p0, Lcom/samsung/android/settings/wifi/mobileap/WifiApWarning;->mCb:Landroid/widget/CheckBox;
 
-    const v5, 0x7f110901
+    const v5, 0x7f110903
 
     invoke-virtual {v1, v5}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -2923,7 +2923,7 @@
 
     iget-object v5, p0, Lcom/samsung/android/settings/wifi/mobileap/WifiApWarning;->mContext:Landroid/content/Context;
 
-    const v6, 0x7f0b0f8f
+    const v6, 0x7f0b0f9e
 
     invoke-static {v5, v6}, Lcom/samsung/android/settings/WifiApUtils;->getString(Landroid/content/Context;I)Ljava/lang/String;
 
@@ -2943,7 +2943,7 @@
 
     invoke-direct {v5, p0}, Lcom/samsung/android/settings/wifi/mobileap/WifiApWarning$52;-><init>(Lcom/samsung/android/settings/wifi/mobileap/WifiApWarning;)V
 
-    const v6, 0x7f0b1852
+    const v6, 0x7f0b1864
 
     invoke-virtual {v0, v6, v5}, Landroid/app/AlertDialog$Builder;->setPositiveButton(ILandroid/content/DialogInterface$OnClickListener;)Landroid/app/AlertDialog$Builder;
 
@@ -2951,7 +2951,7 @@
 
     invoke-direct {v5, p0}, Lcom/samsung/android/settings/wifi/mobileap/WifiApWarning$53;-><init>(Lcom/samsung/android/settings/wifi/mobileap/WifiApWarning;)V
 
-    const v6, 0x7f0b1853
+    const v6, 0x7f0b1865
 
     invoke-virtual {v0, v6, v5}, Landroid/app/AlertDialog$Builder;->setNegativeButton(ILandroid/content/DialogInterface$OnClickListener;)Landroid/app/AlertDialog$Builder;
 
@@ -2963,7 +2963,7 @@
 
     iget-object v5, p0, Lcom/samsung/android/settings/wifi/mobileap/WifiApWarning;->mContext:Landroid/content/Context;
 
-    const v6, 0x7f0b0f91
+    const v6, 0x7f0b0fa0
 
     invoke-static {v5, v6}, Lcom/samsung/android/settings/WifiApUtils;->getString(Landroid/content/Context;I)Ljava/lang/String;
 
@@ -3487,7 +3487,7 @@
 
     check-cast v12, Landroid/view/LayoutInflater;
 
-    const v23, 0x7f0400df
+    const v23, 0x7f0400e0
 
     const/16 v24, 0x0
 
@@ -3499,7 +3499,7 @@
 
     move-result-object v7
 
-    const v23, 0x7f1102dc
+    const v23, 0x7f1102de
 
     move/from16 v0, v23
 
@@ -3549,7 +3549,7 @@
 
     invoke-direct {v0, v1}, Landroid/app/AlertDialog$Builder;-><init>(Landroid/content/Context;)V
 
-    const v24, 0x7f0b1ba7
+    const v24, 0x7f0b1bb9
 
     invoke-virtual/range {v23 .. v24}, Landroid/app/AlertDialog$Builder;->setTitle(I)Landroid/app/AlertDialog$Builder;
 
@@ -3665,7 +3665,7 @@
 
     invoke-direct {v0, v1}, Landroid/widget/TextView;-><init>(Landroid/content/Context;)V
 
-    const v35, 0x7f0b103b
+    const v35, 0x7f0b104a
 
     move-object/from16 v0, v27
 
@@ -3799,7 +3799,7 @@
 
     invoke-direct {v0, v1}, Lcom/samsung/android/settings/wifi/mobileap/WifiApWarning$10;-><init>(Lcom/samsung/android/settings/wifi/mobileap/WifiApWarning;)V
 
-    const v36, 0x7f0b1853
+    const v36, 0x7f0b1865
 
     move/from16 v0, v36
 
@@ -3857,7 +3857,7 @@
 
     invoke-direct {v5, v0}, Landroid/app/AlertDialog$Builder;-><init>(Landroid/content/Context;)V
 
-    const v35, 0x7f0b103c
+    const v35, 0x7f0b104b
 
     move/from16 v0, v35
 
@@ -3871,7 +3871,7 @@
 
     invoke-direct {v0, v1}, Lcom/samsung/android/settings/wifi/mobileap/WifiApWarning$12;-><init>(Lcom/samsung/android/settings/wifi/mobileap/WifiApWarning;)V
 
-    const v36, 0x7f0b1852
+    const v36, 0x7f0b1864
 
     move/from16 v0, v36
 
@@ -3897,7 +3897,7 @@
 
     move-object/from16 v35, v0
 
-    const v36, 0x7f0b106f
+    const v36, 0x7f0b107e
 
     invoke-static/range {v35 .. v36}, Lcom/samsung/android/settings/WifiApUtils;->getString(Landroid/content/Context;I)Ljava/lang/String;
 
@@ -3928,7 +3928,7 @@
 
     if-eqz v35, :cond_4
 
-    const v35, 0x7f0b103d
+    const v35, 0x7f0b104c
 
     move-object/from16 v0, v22
 
@@ -3945,7 +3945,7 @@
 
     invoke-direct {v0, v1}, Lcom/samsung/android/settings/wifi/mobileap/WifiApWarning$14;-><init>(Lcom/samsung/android/settings/wifi/mobileap/WifiApWarning;)V
 
-    const v36, 0x7f0b1852
+    const v36, 0x7f0b1864
 
     move-object/from16 v0, v22
 
@@ -3969,7 +3969,7 @@
 
     invoke-virtual {v0, v1}, Landroid/app/AlertDialog$Builder;->setOnCancelListener(Landroid/content/DialogInterface$OnCancelListener;)Landroid/app/AlertDialog$Builder;
 
-    const v35, 0x7f0b1063
+    const v35, 0x7f0b1072
 
     move-object/from16 v0, v22
 
@@ -3990,7 +3990,7 @@
 
     move-object/from16 v35, v0
 
-    const v36, 0x7f0b106b
+    const v36, 0x7f0b107a
 
     invoke-static/range {v35 .. v36}, Lcom/samsung/android/settings/WifiApUtils;->getString(Landroid/content/Context;I)Ljava/lang/String;
 
@@ -4033,7 +4033,7 @@
 
     aput-object v37, v36, v38
 
-    const v37, 0x7f0b103e
+    const v37, 0x7f0b104d
 
     move-object/from16 v0, v35
 
@@ -4059,7 +4059,7 @@
 
     invoke-direct {v0, v1}, Lcom/samsung/android/settings/wifi/mobileap/WifiApWarning$16;-><init>(Lcom/samsung/android/settings/wifi/mobileap/WifiApWarning;)V
 
-    const v36, 0x7f0b17f4
+    const v36, 0x7f0b1806
 
     move-object/from16 v0, v24
 
@@ -4083,7 +4083,7 @@
 
     invoke-virtual {v0, v1}, Landroid/app/AlertDialog$Builder;->setOnCancelListener(Landroid/content/DialogInterface$OnCancelListener;)Landroid/app/AlertDialog$Builder;
 
-    const v35, 0x7f0b103f
+    const v35, 0x7f0b104e
 
     move-object/from16 v0, v24
 
@@ -4162,7 +4162,7 @@
 
     invoke-direct {v0, v1}, Lcom/samsung/android/settings/wifi/mobileap/WifiApWarning$18;-><init>(Lcom/samsung/android/settings/wifi/mobileap/WifiApWarning;)V
 
-    const v36, 0x7f0b1852
+    const v36, 0x7f0b1864
 
     move/from16 v0, v36
 
@@ -4178,7 +4178,7 @@
 
     invoke-direct {v0, v1}, Lcom/samsung/android/settings/wifi/mobileap/WifiApWarning$19;-><init>(Lcom/samsung/android/settings/wifi/mobileap/WifiApWarning;)V
 
-    const v36, 0x7f0b1853
+    const v36, 0x7f0b1865
 
     move/from16 v0, v36
 
@@ -4234,7 +4234,7 @@
 
     move-object/from16 v35, v0
 
-    const v36, 0x7f0b1057
+    const v36, 0x7f0b1066
 
     invoke-static/range {v35 .. v36}, Lcom/samsung/android/settings/WifiApUtils;->getString(Landroid/content/Context;I)Ljava/lang/String;
 
@@ -4252,7 +4252,7 @@
 
     invoke-direct {v0, v1}, Lcom/samsung/android/settings/wifi/mobileap/WifiApWarning$21;-><init>(Lcom/samsung/android/settings/wifi/mobileap/WifiApWarning;)V
 
-    const v36, 0x7f0b1852
+    const v36, 0x7f0b1864
 
     move/from16 v0, v36
 
@@ -4268,7 +4268,7 @@
 
     invoke-direct {v0, v1}, Lcom/samsung/android/settings/wifi/mobileap/WifiApWarning$22;-><init>(Lcom/samsung/android/settings/wifi/mobileap/WifiApWarning;)V
 
-    const v36, 0x7f0b1853
+    const v36, 0x7f0b1865
 
     move/from16 v0, v36
 
@@ -4294,7 +4294,7 @@
 
     move-object/from16 v35, v0
 
-    const v36, 0x7f0b106f
+    const v36, 0x7f0b107e
 
     invoke-static/range {v35 .. v36}, Lcom/samsung/android/settings/WifiApUtils;->getString(Landroid/content/Context;I)Ljava/lang/String;
 
@@ -4398,7 +4398,7 @@
 
     invoke-direct {v0, v1}, Landroid/app/AlertDialog$Builder;-><init>(Landroid/content/Context;)V
 
-    const v35, 0x7f0b0fcd
+    const v35, 0x7f0b0fdc
 
     move-object/from16 v0, v23
 
@@ -4416,7 +4416,7 @@
 
     invoke-direct {v0, v1}, Lcom/samsung/android/settings/wifi/mobileap/WifiApWarning$25;-><init>(Lcom/samsung/android/settings/wifi/mobileap/WifiApWarning;)V
 
-    const v37, 0x7f0b06d9
+    const v37, 0x7f0b06da
 
     move-object/from16 v0, v35
 
@@ -4436,7 +4436,7 @@
 
     invoke-direct {v0, v1}, Lcom/samsung/android/settings/wifi/mobileap/WifiApWarning$26;-><init>(Lcom/samsung/android/settings/wifi/mobileap/WifiApWarning;)V
 
-    const v37, 0x7f0b1853
+    const v37, 0x7f0b1865
 
     move-object/from16 v0, v35
 
@@ -4460,7 +4460,7 @@
 
     move-result-object v35
 
-    const v36, 0x7f0b0fc8
+    const v36, 0x7f0b0fd7
 
     invoke-virtual/range {v35 .. v36}, Landroid/app/AlertDialog$Builder;->setTitle(I)Landroid/app/AlertDialog$Builder;
 
@@ -4538,7 +4538,7 @@
 
     move-object/from16 v35, v0
 
-    const v36, 0x7f0403a2
+    const v36, 0x7f0403a5
 
     const/16 v37, 0x0
 
@@ -4558,7 +4558,7 @@
 
     move-object/from16 v35, v0
 
-    const v36, 0x7f11090e
+    const v36, 0x7f110910
 
     invoke-virtual/range {v35 .. v36}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -4578,7 +4578,7 @@
 
     move-object/from16 v35, v0
 
-    const v36, 0x7f11090f
+    const v36, 0x7f110911
 
     invoke-virtual/range {v35 .. v36}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -4598,7 +4598,7 @@
 
     move-object/from16 v35, v0
 
-    const v36, 0x7f11090d
+    const v36, 0x7f11090f
 
     invoke-virtual/range {v35 .. v36}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -4612,7 +4612,7 @@
 
     move-object/from16 v35, v0
 
-    const v36, 0x7f0b0fc4
+    const v36, 0x7f0b0fd3
 
     invoke-static/range {v35 .. v36}, Lcom/samsung/android/settings/WifiApUtils;->getString(Landroid/content/Context;I)Ljava/lang/String;
 
@@ -4645,7 +4645,7 @@
 
     invoke-direct {v0, v1}, Lcom/samsung/android/settings/wifi/mobileap/WifiApWarning$28;-><init>(Lcom/samsung/android/settings/wifi/mobileap/WifiApWarning;)V
 
-    const v36, 0x7f0b1852
+    const v36, 0x7f0b1864
 
     move-object/from16 v0, v29
 
@@ -4663,7 +4663,7 @@
 
     invoke-direct {v0, v1}, Lcom/samsung/android/settings/wifi/mobileap/WifiApWarning$29;-><init>(Lcom/samsung/android/settings/wifi/mobileap/WifiApWarning;)V
 
-    const v36, 0x7f0b1853
+    const v36, 0x7f0b1865
 
     move-object/from16 v0, v29
 
@@ -4693,7 +4693,7 @@
 
     move-object/from16 v35, v0
 
-    const v36, 0x7f0b0fc7
+    const v36, 0x7f0b0fd6
 
     invoke-static/range {v35 .. v36}, Lcom/samsung/android/settings/WifiApUtils;->getString(Landroid/content/Context;I)Ljava/lang/String;
 
@@ -4718,7 +4718,7 @@
 
     move-object/from16 v35, v0
 
-    const v36, 0x7f0b0fc4
+    const v36, 0x7f0b0fd3
 
     invoke-static/range {v35 .. v36}, Lcom/samsung/android/settings/WifiApUtils;->getString(Landroid/content/Context;I)Ljava/lang/String;
 
@@ -4825,7 +4825,7 @@
 
     move-object/from16 v35, v0
 
-    const v36, 0x7f0b0fda
+    const v36, 0x7f0b0fe9
 
     invoke-static/range {v35 .. v36}, Lcom/samsung/android/settings/WifiApUtils;->getString(Landroid/content/Context;I)Ljava/lang/String;
 
@@ -4845,7 +4845,7 @@
 
     invoke-direct {v0, v1}, Lcom/samsung/android/settings/wifi/mobileap/WifiApWarning$31;-><init>(Lcom/samsung/android/settings/wifi/mobileap/WifiApWarning;)V
 
-    const v36, 0x7f0b1041
+    const v36, 0x7f0b1050
 
     move-object/from16 v0, v31
 
@@ -4863,7 +4863,7 @@
 
     invoke-direct {v0, v1}, Lcom/samsung/android/settings/wifi/mobileap/WifiApWarning$32;-><init>(Lcom/samsung/android/settings/wifi/mobileap/WifiApWarning;)V
 
-    const v36, 0x7f0b1853
+    const v36, 0x7f0b1865
 
     move-object/from16 v0, v31
 
@@ -4887,7 +4887,7 @@
 
     invoke-virtual {v0, v1}, Landroid/app/AlertDialog$Builder;->setOnCancelListener(Landroid/content/DialogInterface$OnCancelListener;)Landroid/app/AlertDialog$Builder;
 
-    const v35, 0x7f0b0fd5
+    const v35, 0x7f0b0fe4
 
     move-object/from16 v0, v31
 
@@ -4910,7 +4910,7 @@
 
     invoke-direct {v0, v1}, Landroid/app/AlertDialog$Builder;-><init>(Landroid/content/Context;)V
 
-    const v35, 0x7f0b1042
+    const v35, 0x7f0b1051
 
     move-object/from16 v0, v28
 
@@ -4926,7 +4926,7 @@
 
     invoke-direct {v0, v1}, Lcom/samsung/android/settings/wifi/mobileap/WifiApWarning$34;-><init>(Lcom/samsung/android/settings/wifi/mobileap/WifiApWarning;)V
 
-    const v36, 0x7f0b1041
+    const v36, 0x7f0b1050
 
     move-object/from16 v0, v28
 
@@ -4944,7 +4944,7 @@
 
     invoke-direct {v0, v1}, Lcom/samsung/android/settings/wifi/mobileap/WifiApWarning$35;-><init>(Lcom/samsung/android/settings/wifi/mobileap/WifiApWarning;)V
 
-    const v36, 0x7f0b1853
+    const v36, 0x7f0b1865
 
     move-object/from16 v0, v28
 
@@ -4989,7 +4989,7 @@
 
     move-object/from16 v35, v0
 
-    const v36, 0x7f0403a6
+    const v36, 0x7f0403a9
 
     const/16 v37, 0x0
 
@@ -4997,7 +4997,7 @@
 
     move-result-object v13
 
-    const v35, 0x7f110917
+    const v35, 0x7f110919
 
     move/from16 v0, v35
 
@@ -5007,7 +5007,7 @@
 
     check-cast v16, Landroid/widget/CheckBox;
 
-    const v35, 0x7f0b0f8d
+    const v35, 0x7f0b0f9c
 
     move-object/from16 v0, v30
 
@@ -5029,7 +5029,7 @@
 
     invoke-direct {v0, v1, v2}, Lcom/samsung/android/settings/wifi/mobileap/WifiApWarning$37;-><init>(Lcom/samsung/android/settings/wifi/mobileap/WifiApWarning;Landroid/widget/CheckBox;)V
 
-    const v36, 0x7f0b1852
+    const v36, 0x7f0b1864
 
     move-object/from16 v0, v30
 
@@ -5068,7 +5068,7 @@
 
     invoke-direct {v0, v1}, Landroid/app/AlertDialog$Builder;-><init>(Landroid/content/Context;)V
 
-    const v35, 0x7f0b0fe5
+    const v35, 0x7f0b0ff4
 
     move-object/from16 v0, v18
 
@@ -5076,7 +5076,7 @@
 
     invoke-virtual {v0, v1}, Landroid/app/AlertDialog$Builder;->setTitle(I)Landroid/app/AlertDialog$Builder;
 
-    const v35, 0x7f0b0fe6
+    const v35, 0x7f0b0ff5
 
     move-object/from16 v0, v18
 
@@ -5092,7 +5092,7 @@
 
     invoke-direct {v0, v1}, Lcom/samsung/android/settings/wifi/mobileap/WifiApWarning$39;-><init>(Lcom/samsung/android/settings/wifi/mobileap/WifiApWarning;)V
 
-    const v36, 0x7f0b1852
+    const v36, 0x7f0b1864
 
     move-object/from16 v0, v18
 
@@ -5110,7 +5110,7 @@
 
     invoke-direct {v0, v1}, Lcom/samsung/android/settings/wifi/mobileap/WifiApWarning$40;-><init>(Lcom/samsung/android/settings/wifi/mobileap/WifiApWarning;)V
 
-    const v36, 0x7f0b1853
+    const v36, 0x7f0b1865
 
     move-object/from16 v0, v18
 
@@ -5155,7 +5155,7 @@
 
     if-nez v35, :cond_b
 
-    const v35, 0x7f0b0fc4
+    const v35, 0x7f0b0fd3
 
     move-object/from16 v0, v17
 
@@ -5172,7 +5172,7 @@
 
     invoke-direct {v0, v1}, Lcom/samsung/android/settings/wifi/mobileap/WifiApWarning$42;-><init>(Lcom/samsung/android/settings/wifi/mobileap/WifiApWarning;)V
 
-    const v36, 0x7f0b1852
+    const v36, 0x7f0b1864
 
     move-object/from16 v0, v17
 
@@ -5190,7 +5190,7 @@
 
     invoke-direct {v0, v1}, Lcom/samsung/android/settings/wifi/mobileap/WifiApWarning$43;-><init>(Lcom/samsung/android/settings/wifi/mobileap/WifiApWarning;)V
 
-    const v36, 0x7f0b1853
+    const v36, 0x7f0b1865
 
     move-object/from16 v0, v17
 
@@ -5221,7 +5221,7 @@
     goto/16 :goto_1
 
     :cond_b
-    const v35, 0x7f0b0fea
+    const v35, 0x7f0b0ff9
 
     move-object/from16 v0, v17
 
@@ -5229,7 +5229,7 @@
 
     invoke-virtual {v0, v1}, Landroid/app/AlertDialog$Builder;->setTitle(I)Landroid/app/AlertDialog$Builder;
 
-    const v35, 0x7f0b0feb
+    const v35, 0x7f0b0ffa
 
     move-object/from16 v0, v17
 
@@ -5248,7 +5248,7 @@
 
     invoke-direct {v0, v1}, Landroid/app/AlertDialog$Builder;-><init>(Landroid/content/Context;)V
 
-    const v35, 0x7f0b0fe8
+    const v35, 0x7f0b0ff7
 
     move-object/from16 v0, v19
 
@@ -5256,7 +5256,7 @@
 
     invoke-virtual {v0, v1}, Landroid/app/AlertDialog$Builder;->setTitle(I)Landroid/app/AlertDialog$Builder;
 
-    const v35, 0x7f0b0fe7
+    const v35, 0x7f0b0ff6
 
     move-object/from16 v0, v19
 
@@ -5272,7 +5272,7 @@
 
     invoke-direct {v0, v1}, Lcom/samsung/android/settings/wifi/mobileap/WifiApWarning$45;-><init>(Lcom/samsung/android/settings/wifi/mobileap/WifiApWarning;)V
 
-    const v36, 0x7f0b1852
+    const v36, 0x7f0b1864
 
     move-object/from16 v0, v19
 
@@ -5290,7 +5290,7 @@
 
     invoke-direct {v0, v1}, Lcom/samsung/android/settings/wifi/mobileap/WifiApWarning$46;-><init>(Lcom/samsung/android/settings/wifi/mobileap/WifiApWarning;)V
 
-    const v36, 0x7f0b1853
+    const v36, 0x7f0b1865
 
     move-object/from16 v0, v19
 
@@ -5343,7 +5343,7 @@
 
     check-cast v14, Landroid/view/LayoutInflater;
 
-    const v35, 0x7f0403a5
+    const v35, 0x7f0403a8
 
     const/16 v36, 0x0
 
@@ -5355,7 +5355,7 @@
 
     move-result-object v12
 
-    const v35, 0x7f110915
+    const v35, 0x7f110917
 
     move/from16 v0, v35
 
@@ -5381,7 +5381,7 @@
 
     move-object/from16 v35, v0
 
-    const v36, 0x7f0b0f87
+    const v36, 0x7f0b0f96
 
     invoke-static/range {v35 .. v36}, Lcom/samsung/android/settings/WifiApUtils;->getString(Landroid/content/Context;I)Ljava/lang/String;
 
@@ -5403,7 +5403,7 @@
 
     invoke-direct {v0, v1, v2, v11}, Lcom/samsung/android/settings/wifi/mobileap/WifiApWarning$48;-><init>(Lcom/samsung/android/settings/wifi/mobileap/WifiApWarning;Landroid/widget/CheckBox;Landroid/content/ContentResolver;)V
 
-    const v36, 0x7f0b1852
+    const v36, 0x7f0b1864
 
     move-object/from16 v0, v34
 
@@ -5421,7 +5421,7 @@
 
     invoke-direct {v0, v1, v11}, Lcom/samsung/android/settings/wifi/mobileap/WifiApWarning$49;-><init>(Lcom/samsung/android/settings/wifi/mobileap/WifiApWarning;Landroid/content/ContentResolver;)V
 
-    const v36, 0x7f0b13d6
+    const v36, 0x7f0b13e7
 
     move-object/from16 v0, v34
 
@@ -5537,7 +5537,7 @@
 
     iget-object v2, p0, Lcom/samsung/android/settings/wifi/mobileap/WifiApWarning;->mContext:Landroid/content/Context;
 
-    const v3, 0x7f0b0f7d
+    const v3, 0x7f0b0f8c
 
     invoke-static {v2, v3}, Lcom/samsung/android/settings/WifiApUtils;->getString(Landroid/content/Context;I)Ljava/lang/String;
 
@@ -5585,7 +5585,7 @@
 
     iget-object v2, p0, Lcom/samsung/android/settings/wifi/mobileap/WifiApWarning;->mContext:Landroid/content/Context;
 
-    const v3, 0x7f0b0f82
+    const v3, 0x7f0b0f91
 
     invoke-static {v2, v3}, Lcom/samsung/android/settings/WifiApUtils;->getString(Landroid/content/Context;I)Ljava/lang/String;
 
@@ -5633,7 +5633,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f0b0fec
+    const v2, 0x7f0b0ffb
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -5683,7 +5683,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f0b0fed
+    const v2, 0x7f0b0ffc
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -6560,7 +6560,7 @@
 
     move-result v0
 
-    const v1, 0x7f110913
+    const v1, 0x7f110915
 
     if-ne v0, v1, :cond_0
 
@@ -6842,7 +6842,7 @@
 
     invoke-direct {v0, p0}, Landroid/app/AlertDialog$Builder;-><init>(Landroid/content/Context;)V
 
-    const v9, 0x7f0b0fb6
+    const v9, 0x7f0b0fc5
 
     invoke-virtual {v0, v9}, Landroid/app/AlertDialog$Builder;->setTitle(I)Landroid/app/AlertDialog$Builder;
 
@@ -6852,7 +6852,7 @@
 
     if-ne v9, v10, :cond_4
 
-    const v9, 0x7f0b0fba
+    const v9, 0x7f0b0fc9
 
     invoke-virtual {v0, v9}, Landroid/app/AlertDialog$Builder;->setMessage(I)Landroid/app/AlertDialog$Builder;
 
@@ -6873,7 +6873,7 @@
 
     invoke-direct {v9, p0}, Lcom/samsung/android/settings/wifi/mobileap/WifiApWarning$3;-><init>(Lcom/samsung/android/settings/wifi/mobileap/WifiApWarning;)V
 
-    const v10, 0x7f0b1853
+    const v10, 0x7f0b1865
 
     invoke-virtual {v0, v10, v9}, Landroid/app/AlertDialog$Builder;->setNegativeButton(ILandroid/content/DialogInterface$OnClickListener;)Landroid/app/AlertDialog$Builder;
 
@@ -6913,14 +6913,14 @@
 
     if-ne v9, v10, :cond_5
 
-    const v9, 0x7f0b0fb8
+    const v9, 0x7f0b0fc7
 
     invoke-virtual {v0, v9}, Landroid/app/AlertDialog$Builder;->setMessage(I)Landroid/app/AlertDialog$Builder;
 
     goto :goto_0
 
     :cond_5
-    const v9, 0x7f0b0fb9
+    const v9, 0x7f0b0fc8
 
     invoke-virtual {v0, v9}, Landroid/app/AlertDialog$Builder;->setMessage(I)Landroid/app/AlertDialog$Builder;
 
@@ -6995,7 +6995,7 @@
 
     iget-object v9, p0, Lcom/samsung/android/settings/wifi/mobileap/WifiApWarning;->mContext:Landroid/content/Context;
 
-    const v10, 0x7f0403a3
+    const v10, 0x7f0403a6
 
     const/4 v11, 0x0
 
@@ -7007,7 +7007,7 @@
 
     iget-object v9, p0, Lcom/samsung/android/settings/wifi/mobileap/WifiApWarning;->customViewWifi:Landroid/view/View;
 
-    const v10, 0x7f110912
+    const v10, 0x7f110914
 
     invoke-virtual {v9, v10}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -7019,7 +7019,7 @@
 
     iget-object v9, p0, Lcom/samsung/android/settings/wifi/mobileap/WifiApWarning;->customViewWifi:Landroid/view/View;
 
-    const v10, 0x7f110910
+    const v10, 0x7f110912
 
     invoke-virtual {v9, v10}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -7027,13 +7027,13 @@
 
     check-cast v8, Landroid/widget/TextView;
 
-    const v9, 0x7f0b0f42
+    const v9, 0x7f0b0f51
 
     invoke-virtual {v8, v9}, Landroid/widget/TextView;->setText(I)V
 
     iget-object v9, p0, Lcom/samsung/android/settings/wifi/mobileap/WifiApWarning;->customViewWifi:Landroid/view/View;
 
-    const v10, 0x7f110911
+    const v10, 0x7f110913
 
     invoke-virtual {v9, v10}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -7045,13 +7045,13 @@
 
     iget-object v9, p0, Lcom/samsung/android/settings/wifi/mobileap/WifiApWarning;->mWifiEnableWarnMessage:Landroid/widget/TextView;
 
-    const v10, 0x7f0b0f4a
+    const v10, 0x7f0b0f59
 
     invoke-virtual {v9, v10}, Landroid/widget/TextView;->setText(I)V
 
     iget-object v9, p0, Lcom/samsung/android/settings/wifi/mobileap/WifiApWarning;->customViewWifi:Landroid/view/View;
 
-    const v10, 0x7f110913
+    const v10, 0x7f110915
 
     invoke-virtual {v9, v10}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -7156,7 +7156,7 @@
 
     iget-object v9, p0, Lcom/samsung/android/settings/wifi/mobileap/WifiApWarning;->mContext:Landroid/content/Context;
 
-    const v10, 0x7f0b1038
+    const v10, 0x7f0b1047
 
     const/4 v11, 0x0
 
@@ -7185,11 +7185,11 @@
     goto/16 :goto_1
 
     :cond_8
-    const v9, 0x7f0b0f42
+    const v9, 0x7f0b0f51
 
     invoke-virtual {v5, v9}, Landroid/app/AlertDialog$Builder;->setTitle(I)Landroid/app/AlertDialog$Builder;
 
-    const v9, 0x7f0b0f4a
+    const v9, 0x7f0b0f59
 
     invoke-virtual {v5, v9}, Landroid/app/AlertDialog$Builder;->setMessage(I)Landroid/app/AlertDialog$Builder;
 
@@ -7208,11 +7208,11 @@
 
     if-ne v9, v10, :cond_a
 
-    const v9, 0x7f0b0f52
+    const v9, 0x7f0b0f61
 
     invoke-virtual {v5, v9}, Landroid/app/AlertDialog$Builder;->setTitle(I)Landroid/app/AlertDialog$Builder;
 
-    const v9, 0x7f0b0f53
+    const v9, 0x7f0b0f62
 
     invoke-virtual {v5, v9}, Landroid/app/AlertDialog$Builder;->setMessage(I)Landroid/app/AlertDialog$Builder;
 
@@ -7244,7 +7244,7 @@
 
     if-ne v9, v10, :cond_c
 
-    const v9, 0x7f0b0f55
+    const v9, 0x7f0b0f64
 
     invoke-virtual {v5, v9}, Landroid/app/AlertDialog$Builder;->setMessage(I)Landroid/app/AlertDialog$Builder;
 
@@ -7261,7 +7261,7 @@
 
     if-ne v9, v10, :cond_d
 
-    const v9, 0x7f0b0f56
+    const v9, 0x7f0b0f65
 
     invoke-virtual {v5, v9}, Landroid/app/AlertDialog$Builder;->setMessage(I)Landroid/app/AlertDialog$Builder;
 
@@ -7278,7 +7278,7 @@
 
     if-nez v9, :cond_e
 
-    const v9, 0x7f0b0f57
+    const v9, 0x7f0b0f66
 
     invoke-virtual {v5, v9}, Landroid/app/AlertDialog$Builder;->setMessage(I)Landroid/app/AlertDialog$Builder;
 
@@ -7307,7 +7307,7 @@
 
     iget-object v9, p0, Lcom/samsung/android/settings/wifi/mobileap/WifiApWarning;->mContext:Landroid/content/Context;
 
-    const v10, 0x7f0403a3
+    const v10, 0x7f0403a6
 
     const/4 v11, 0x0
 
@@ -7319,7 +7319,7 @@
 
     iget-object v9, p0, Lcom/samsung/android/settings/wifi/mobileap/WifiApWarning;->customViewWifi:Landroid/view/View;
 
-    const v10, 0x7f110912
+    const v10, 0x7f110914
 
     invoke-virtual {v9, v10}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -7331,7 +7331,7 @@
 
     iget-object v9, p0, Lcom/samsung/android/settings/wifi/mobileap/WifiApWarning;->customViewWifi:Landroid/view/View;
 
-    const v10, 0x7f110910
+    const v10, 0x7f110912
 
     invoke-virtual {v9, v10}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -7339,13 +7339,13 @@
 
     check-cast v8, Landroid/widget/TextView;
 
-    const v9, 0x7f0b0f43
+    const v9, 0x7f0b0f52
 
     invoke-virtual {v8, v9}, Landroid/widget/TextView;->setText(I)V
 
     iget-object v9, p0, Lcom/samsung/android/settings/wifi/mobileap/WifiApWarning;->customViewWifi:Landroid/view/View;
 
-    const v10, 0x7f110911
+    const v10, 0x7f110913
 
     invoke-virtual {v9, v10}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -7357,13 +7357,13 @@
 
     iget-object v9, p0, Lcom/samsung/android/settings/wifi/mobileap/WifiApWarning;->mWifiEnableWarnMessage:Landroid/widget/TextView;
 
-    const v10, 0x7f0b0f64
+    const v10, 0x7f0b0f73
 
     invoke-virtual {v9, v10}, Landroid/widget/TextView;->setText(I)V
 
     iget-object v9, p0, Lcom/samsung/android/settings/wifi/mobileap/WifiApWarning;->customViewWifi:Landroid/view/View;
 
-    const v10, 0x7f110913
+    const v10, 0x7f110915
 
     invoke-virtual {v9, v10}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -7390,13 +7390,13 @@
     goto/16 :goto_2
 
     :cond_f
-    const v9, 0x7f0b0f43
+    const v9, 0x7f0b0f52
 
     invoke-virtual {v5, v9}, Landroid/app/AlertDialog$Builder;->setTitle(I)Landroid/app/AlertDialog$Builder;
 
     iget-object v9, p0, Lcom/samsung/android/settings/wifi/mobileap/WifiApWarning;->mContext:Landroid/content/Context;
 
-    const v10, 0x7f0b0fc4
+    const v10, 0x7f0b0fd3
 
     invoke-static {v9, v10}, Lcom/samsung/android/settings/WifiApUtils;->getString(Landroid/content/Context;I)Ljava/lang/String;
 

@@ -303,7 +303,7 @@
 
     move-result-object v7
 
-    const v8, 0x7f020509
+    const v8, 0x7f02050b
 
     invoke-virtual {v6, v8, v7}, Landroid/content/res/Resources;->getDrawable(ILandroid/content/res/Resources$Theme;)Landroid/graphics/drawable/Drawable;
 
@@ -378,7 +378,7 @@
 .method private updatePressActionItems()V
     .locals 11
 
-    const v10, 0x7f0b053d
+    const v10, 0x7f0b053e
 
     const v9, 0x7f0b0407
 
@@ -648,9 +648,9 @@
 .method private updatePressActionItemsGridViewConcept()V
     .locals 12
 
-    const v11, 0x7f0b0a2b
+    const v11, 0x7f0b0a39
 
-    const v10, 0x7f0b0a2a
+    const v10, 0x7f0b0a38
 
     const/4 v9, 0x1
 
@@ -673,7 +673,7 @@
     :cond_0
     iget-object v4, p0, Lcom/samsung/android/settings/activekey/ActiveKeySettings;->mShortPress:Landroid/preference/PreferenceScreen;
 
-    const v5, 0x7f0b1cf7
+    const v5, 0x7f0b1d09
 
     invoke-virtual {v4, v5}, Landroid/preference/PreferenceScreen;->setSummary(I)V
 
@@ -691,7 +691,7 @@
     :cond_1
     iget-object v4, p0, Lcom/samsung/android/settings/activekey/ActiveKeySettings;->mLongPress:Landroid/preference/PreferenceScreen;
 
-    const v5, 0x7f0b1cf7
+    const v5, 0x7f0b1d09
 
     invoke-virtual {v4, v5}, Landroid/preference/PreferenceScreen;->setSummary(I)V
 
@@ -715,7 +715,7 @@
     :cond_2
     iget-object v4, p0, Lcom/samsung/android/settings/activekey/ActiveKeySettings;->mDoublePress:Landroid/preference/PreferenceScreen;
 
-    const v5, 0x7f0b1cf7
+    const v5, 0x7f0b1d09
 
     invoke-virtual {v4, v5}, Landroid/preference/PreferenceScreen;->setSummary(I)V
 
@@ -1138,7 +1138,7 @@
 
     if-eqz v0, :cond_1
 
-    const v0, 0x7f080166
+    const v0, 0x7f080168
 
     invoke-virtual {p0, v0}, Lcom/samsung/android/settings/activekey/ActiveKeySettings;->addPreferencesFromResource(I)V
 
@@ -1151,7 +1151,7 @@
 
     if-eqz v0, :cond_2
 
-    const v0, 0x7f080167
+    const v0, 0x7f080169
 
     invoke-virtual {p0, v0}, Lcom/samsung/android/settings/activekey/ActiveKeySettings;->addPreferencesFromResource(I)V
 

@@ -38,6 +38,23 @@
 
     iget-object v1, p0, Lcom/samsung/android/settings/display/SecDisplaySettings$9;->this$0:Lcom/samsung/android/settings/display/SecDisplaySettings;
 
+    invoke-virtual {v1}, Lcom/samsung/android/settings/display/SecDisplaySettings;->isAdded()Z
+
+    move-result v1
+
+    if-nez v1, :cond_0
+
+    const-string/jumbo v0, "Fragment"
+
+    const-string/jumbo v1, "Detached from activity, so stopping update."
+
+    invoke-static {v0, v1}, Landroid/util/secutil/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    return-void
+
+    :cond_0
+    iget-object v1, p0, Lcom/samsung/android/settings/display/SecDisplaySettings$9;->this$0:Lcom/samsung/android/settings/display/SecDisplaySettings;
+
     invoke-static {v1}, Lcom/samsung/android/settings/display/SecDisplaySettings;->-get3(Lcom/samsung/android/settings/display/SecDisplaySettings;)Lcom/samsung/android/settings/display/DisplayDisabledAppearanceSwitchPreference;
 
     move-result-object v1
@@ -54,11 +71,11 @@
 
     move-result v2
 
-    if-eqz v2, :cond_0
+    if-eqz v2, :cond_1
 
     const/4 v0, 0x1
 
-    :cond_0
+    :cond_1
     invoke-virtual {v1, v0}, Lcom/samsung/android/settings/display/DisplayDisabledAppearanceSwitchPreference;->setChecked(Z)V
 
     iget-object v0, p0, Lcom/samsung/android/settings/display/SecDisplaySettings$9;->this$0:Lcom/samsung/android/settings/display/SecDisplaySettings;

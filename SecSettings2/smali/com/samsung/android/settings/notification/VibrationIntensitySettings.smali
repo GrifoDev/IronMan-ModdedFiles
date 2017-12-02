@@ -646,7 +646,7 @@
 .method public onCreate(Landroid/os/Bundle;)V
     .locals 7
 
-    const v6, 0x7f080144
+    const v6, 0x7f080146
 
     invoke-super {p0, p1}, Lcom/samsung/android/settings/SecSettingsPreferenceFragment;->onCreate(Landroid/os/Bundle;)V
 

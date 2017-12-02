@@ -50,7 +50,7 @@
     <string name="bluetooth_pairing_pin_error_message">No se ha podido vincular con %s. Asegúrate de que está listo para vincularse.</string>
     <string name="bluetooth_pairing_device_down_error_message">No se puede conectar a %s.</string>
     <string name="bluetooth_pairing_device_down_black_list_error_message">No se puede conectar a %1$s. Comprueba tus ajustes en %2$s e inténtalo de nuevo.</string>
-    <string name="bluetooth_pairing_rejected_error_message">%s ha rechazado la vinculación</string>
+    <string name="bluetooth_pairing_rejected_error_message">%s ha rechazado la vinculación.</string>
     <string name="bluetooth_getting_remote_device_name">Obteniendo nombre de dispositivo…</string>
     <string name="bluetooth_display_remote_device_name_after_pair">El nombre del dispositivo aparecerá cuando este dispositivo esté conectado.</string>
     <string name="process_kernel_label">SO Android</string>
@@ -73,7 +73,7 @@
     <string name="tts_lang_not_selected">No hay ningún idioma seleccionado</string>
     <string name="tts_default_lang_summary">Definir voz de idioma para texto pronunciado</string>
     <string name="tts_play_example_title">Escuchar un ejemplo</string>
-    <string name="tts_play_example_summary">Reproducir demostración corta de síntesis de voz</string>
+    <string name="tts_play_example_summary">Reproduce demostración corta de síntesis de voz.</string>
     <string name="tts_install_data_title">Instalar datos de voz</string>
     <string name="tts_install_data_summary">Instalar datos de voz necesarios para síntesis de voz</string>
     <string name="tts_engine_security_warning">Este motor de síntesis de voz puede recopilar todas las voces, incluidas las contraseñas, los números de tarjetas de crédito y otros datos personales. ¿Continuar?</string>
@@ -122,6 +122,8 @@
     <string name="wifi_allow_scan_with_traffic_summary">Permite o deniega automáticamente la búsqueda de Wi-Fi en itinerancia en función de la cantidad de datos usados.</string>
     <string name="select_logd_size_title">Tamaño búfer para regist</string>
     <string name="select_logd_size_dialog_title">Seleccionar el tamaño máximo de cada búfer de registro</string>
+    <string name="dev_logpersist_clear_warning_title">¿Borrar almacenamiento reg persistente?</string>
+    <string name="dev_logpersist_clear_warning_message">Se eliminarán los datos del registrador cuando el registrador persistente se desactive.</string>
     <string name="select_logpersist_title">Guardar datos registro continuo</string>
     <string name="select_logpersist_dialog_title">Elegir búferes para almacenamiento continuo</string>
     <string name="select_usb_configuration_title">Configuración USB</string>
@@ -424,7 +426,7 @@ Nota: Pulsar tres veces para acercar funciona en todas partes, excepto en el tec
     <string name="turn_off_all_sounds2">Silenciar todos los sonidos y Mensaje de respuesta no pueden estar activados al mismo tiempo. Se desactivará Mensaje de respuesta.</string>
     <string name="turn_off_all_sounds_toast_with_sound_detector">No se puede desactivar Silenciar todos los sonidos mientras está activado Detectores de sonido.</string>
     <string name="accessibility_categories_title">Categorías</string>
-    <string name="share_accessibility_settings">Copia de seguridad de los ajustes de accesibilidad</string>
+    <string name="share_accessibility_settings">Copia seguridad ajustes de accesibilidad</string>
     <string name="share_accessibility_settings_summary">Importe y exporte sus ajustes de accesibilidad o compártalos con otros dispositivos.</string>
     <string name="import_export">Importar/exportar</string>
     <string name="import_export_description">Importa o exporta los ajustes de accesibilidad.</string>
@@ -452,9 +454,9 @@ Nota: Pulsar tres veces para acercar funciona en todas partes, excepto en el tec
     <string name="file_open_error">No se puede abrir el archivo</string>
     <string name="no_app_open_file">No hay aplicaciones instaladas en este dispositivo que puedan abrir este tipo de archivo. Descargue una aplicación compatible con este tipo de archivo e inténtelo de nuevo.</string>
     <string name="lockdirection_need_to_unlock_wrong">Inténtelo de nuevo.</string>
-    <string name="direction_lock_confirm_text">Trace la serie de direcciones y, a continuación, pulse CONFIRMAR.</string>
+    <string name="direction_lock_confirm_text">Traza la serie de direcciones y, a continuación, pulsa CONFIRMAR.</string>
     <string name="direction_lock_confirm_for_choose_lock">Dibuja las mismas series de direcciones y, a continuación, pulsa CONFIRMAR.</string>
-    <string name="direction_lock_title">Dirección de bloqueo</string>
+    <string name="direction_lock_title">Bloqueo por direcciones</string>
     <string name="direction_lock_summary">Desbloquear la pantalla deslizando en una serie de direcciones.</string>
     <string name="choose_direction_title">Crear serie de direcciones</string>
     <string name="choose_direction_description">Trace una serie de cuatro a ocho direcciones.</string>
@@ -855,6 +857,7 @@ Es posible que se note una ligera diferencia en la salida de sonido de los 2 dis
     <string name="bluetooth_avc_available_description">El dispositivo Bluetooth conectado admite Sincronizar volumen multimedia y el nivel de volumen establecido por el dispositivo Bluetooth se sincronizará con el teléfono.</string>
     <string name="bluetooth_enter_pin_msg">Introduzca el PIN para vincular con %s (intente 0000 o 1234)</string>
     <string name="bluetooth_pin_maximum_number_message">Número máximo de caracteres alcanzado.</string>
+    <string name="bluetooth_frp_permission_message">No se puede usar el dispositivo Bluetooth para esta llamada.</string>
     <string name="settings_menu_done">Hecho</string>
     <string name="usb_tethering_unavailable_subtext_tmo">USB not connected</string>
     <string name="usb_tethering_available_subtext_tmo">USB connected, check to tether</string>
@@ -1120,7 +1123,7 @@ Data usage is measured by your phone. Your carrier may account for usage differe
     <string name="data_network_help_title">Usar conexiones de red</string>
     <string name="new_connect_alert">%s necesita usar las conexiones de red para funcionar con normalidad. ¿Permitir?</string>
     <string name="service_information_title">Información del servicio</string>
-    <string name="contact_us_title">Contáctenos</string>
+    <string name="contact_us_title">Contáctanos</string>
     <string name="omc_version">Versión SW del proveedor</string>
     <string name="sim_lock_status_kddi">SIM lock status</string>
     <string name="battery_life_title">Battery life</string>
@@ -1354,7 +1357,7 @@ Pulse ACEPTAR para permitir aumentar el brillo por encima de los niveles seguros
     <string name="navigationbar_pressure_sensitivity_title">Mantén presionado el botón Inicio</string>
     <string name="navigationbar_pressure_sensitivity_summary">Usa el botón Inicio cuando esté oculto presionándolo un poco más de lo habitual.</string>
     <string name="navigationbar_pressure_sensitivity_level_summary">Nivel de presión: %1$d de %2$d</string>
-    <string name="navigationbar_pressure_sensitivity_description_off">Usa el botón Inicio cuando esté oculto presionándolo un poco más de lo habitual.</string>
+    <string name="navigationbar_pressure_sensitivity_description_off">Ajusta la cantidad de presión necesaria para la pulsación durante varios segundos del botón Inicio.</string>
     <string name="navigationbar_pressure_low">Menos presión</string>
     <string name="navigationbar_pressure_high">Más fuerte</string>
     <string name="navigationbar_hide_bar">Botón de mostrar y ocultar</string>
@@ -1462,7 +1465,7 @@ Pulse ACEPTAR para permitir aumentar el brillo por encima de los niveles seguros
     <string name="intelligent_help_summary_2">Ninguna otra aplicación está utilizando la cámara frontal.</string>
     <string name="enable_smartstay_title">Activar %s</string>
     <string name="device_visibility_title">Visibilidad del teléfono</string>
-    <string name="device_visibility_text">Permite a otros dispositivos encontrar su teléfono y transferir archivos.</string>
+    <string name="device_visibility_text">Permite a otros dispositivos encontrar tu teléfono y transferir archivos.</string>
     <string name="device_visibility_text_full">Permite a otros dispositivos encontrar tu teléfono (%s) y transferir archivos. Tu teléfono se mostrará en la lista de dispositivos disponibles cuando se transfieran archivos mediante la función Transferir archivos a dispositivos.</string>
     <string name="easy_mode">Modo Sencillo</string>
     <string name="standard_mode">Modo Estándar</string>
@@ -1493,9 +1496,9 @@ Pulse ACEPTAR para permitir aumentar el brillo por encima de los niveles seguros
     <string name="crypt_keeper_decrypt_title">Descifrar dispositivo</string>
     <string name="crypt_keeper_decrypt_summary">Dispositivo cifrado</string>
     <string name="crypt_keeper_type_pin">PIN</string>
-    <string name="crypt_keeper_type_pattern">Patrón</string>
+    <string name="crypt_keeper_type_pattern">patrón</string>
     <string name="crypt_keeper_type_password">Contraseña</string>
-    <string name="crypt_keeper_type_direction">Dirección de bloqueo</string>
+    <string name="crypt_keeper_type_direction">Bloqueo por direcciones</string>
     <string name="crypt_keeper_confirm_title_dec">Confirmar descifrado</string>
     <string name="crypt_keeper_force_power_cycle_pattern">Para iniciar el dispositivo, apáguelo, vuelva a encenderlo y, a continuación, inténtelo de nuevo. Debe dibujar el patrón que utiliza para iniciar el dispositivo y desbloquear la pantalla. No se puede utilizar el PIN alternativo para iniciar el dispositivo.</string>
     <string name="crypt_keeper_setup_description_dec">"Descifrando el dispositivo. Esta acción puede tardar un poco. Espere…
@@ -1542,7 +1545,7 @@ La tarjeta SD no se puede utilizar durante del proceso de descifrado."</string>
     <string name="sdcard_enc_dec_select">"Puedes cifrar o descifrar esta tarjeta SD. Las tarjetas SD cifradas solo se pueden leer y descifrar en el dispositivo que se ha utilizado para cifrarlas.
 
 El proceso de cifrado o descifrado puede tardar bastante tiempo en función de la cantidad de datos. Antes de comenzar, asegúrate de que la batería esté cargada y mantén el dispositivo conectado a una toma de corriente hasta completar el proceso de cifrado o descifrado. La tarjeta SD no se puede utilizar durante el proceso de cifrado o descifrado. Si el dispositivo se restablece a los ajustes predeterminados de fábrica, no podrá leer las tarjetas SD cifradas."</string>
-    <string name="sdcard_not_inserted">No hay ninguna tarjeta SD insertada. Inserte una tarjeta SD e inténtelo de nuevo.</string>
+    <string name="sdcard_not_inserted">No hay ninguna tarjeta SD insertada. Inserta una tarjeta SD e inténtalo de nuevo.</string>
     <string name="sdcard_policy_need_encrypt">"La política de seguridad limita el uso de las tarjetas SD que no están cifradas. Pulsa CIFRAR TARJETA SD para iniciar el proceso de cifrado. Las tarjetas SD cifradas solo se pueden leer en el dispositivo que se ha utilizado para cifrarlas.
 
 El proceso de cifrado puede tardar bastante tiempo en función de la cantidad de datos. Antes de comenzar, asegúrate de que la batería esté cargada y mantén el dispositivo conectado a una toma de corriente hasta completar el proceso de cifrado. La tarjeta SD no se puede utilizar durante el proceso de cifrado. Si el dispositivo se restablece a los ajustes predeterminados de fábrica, no podrás leer las tarjetas SD cifradas."</string>
@@ -1577,7 +1580,11 @@ El cifrado tarda una hora o más. Antes de comenzar, asegúrese de que la bater�
     <string name="crypt_keeper_confirm_title">Confirmar cifrado</string>
     <string name="crypt_keeper_final_desc">No se puede revertir la encriptación del dispositivo y se perderán los datos si se interrumpe el proceso. La encriptación podría tardar una hora o más, durante la cual el dispositivo se reiniciará varias veces y no podrá utilizarlo.</string>
     <string name="crypt_keeper_setup_title">Cifrando…</string>
-    <string name="crypt_keeper_warn_wipe">Le quedan %d intentos para iniciar el dispositivo antes de que se restablezca a los ajustes predeterminados de fábrica. Esto eliminará todos los datos, incluidos los archivos y las aplicaciones descargadas.</string>
+    <string name="crypt_keeper_warn_wipe">"Te quedan %1$d intentos antes de que el teléfono se restablezca automáticamente a sus valores predeterminados de fábrica. Esta acción borrará todos los datos, incluidos los archivos y las aplicaciones descargadas.
+
+Si se restablece el teléfono, deberás introducir la información de %2$s (dirección de correo electrónico y contraseña) asociada a este teléfono para poder utilizarlo de nuevo."</string>
+    <string name="crypt_keeper_samsung_account">Samsung account</string>
+    <string name="crypt_keeper_google_account">Cuenta de Google</string>
     <string name="crypt_keeper_failed_title">Error de cifrado</string>
     <string name="crypt_keeper_failed_summary">No se puede iniciar el dispositivo. Se ha interrumpido el proceso de cifrado. Es necesario restablecer el dispositivo a los ajustes predeterminados de fábrica. Esto eliminará todos sus datos.</string>
     <string name="crypt_keeper_data_corrupted_title">Memoria del dispositivo dañada</string>
@@ -1596,10 +1603,13 @@ El cifrado tarda una hora o más. Antes de comenzar, asegúrese de que la bater�
     <string name="cryptkeeper_wrong_pin">PIN introducido incorrecto</string>
     <string name="cryptkeeper_wrong_direction">Dirección trazada incorrecta</string>
     <string name="checking_decryption">Verificando…</string>
-    <string name="crypt_keeper_last_warn_wipe">Solo le queda 1 intento para iniciar el dispositivo antes de que se restablezca a los ajustes predeterminados de fábrica. Esto eliminará todos los datos, incluidos los archivos y las aplicaciones descargadas.</string>
+    <string name="crypt_keeper_last_warn_wipe">"Te queda 1 intento antes de que el teléfono se restablezca a sus valores predeterminados de fábrica. Esta acción borrará todos los datos, incluidos los archivos y las aplicaciones descargadas.
+
+Si se restablece el teléfono, deberás introducir la información de %s (dirección de correo electrónico y contraseña) asociada a este teléfono para poder utilizarlo de nuevo."</string>
     <string name="crypt_keeper_failed_title_dec">Error de descifrado</string>
     <string name="crypt_keeper_failed_summary_dec">No se ha podido completar el descifrado porque se ha interrumpido. Restablezca los datos de fábrica (lo que eliminará todos sus datos) antes de utilizarlo.</string>
     <string name="crypt_keeper_set_screen_lock_type">Definir tipo bloqueo pantalla</string>
+    <string name="crypt_keeper_warning_keyboard_cover_does_not_work">La funda teclado no funcionará al reiniciarse el teléfono.</string>
     <string name="encryption_interstitial_message">"Además, puede proteger este teléfono solicitando que se introduzca su %s antes de que se inicie el teléfono. Esto ayuda a proteger los datos en caso de pérdida o robo del teléfono. Es posible que algunas aplicaciones requieran Inicio seguro según las políticas de Cifrado del dispositivo para acceder a las funciones, como a la sincronización de correo electrónico.
 
 No recibirá ninguna llamada, mensaje ni notificación, y las alarmas no sonarán hasta que se inicie el teléfono."</string>
@@ -1776,7 +1786,7 @@ Activa Desbloqueo por huella digital para usar tus datos biométricos o tu %s pa
     <string name="fingerprint_backuplock_direction_lock_toast">Bloqueo por direcciones establecido como tipo de bloqueo de pantalla.</string>
     <string name="fingerprint_lock_enabled_instead_of_iris">Bloqueo por huella digital activado en lugar del Bloqueo por iris.</string>
     <string name="fingerprint_use_samsungpay">Samsung Pay</string>
-    <string name="fingerprint_samsung_pay_summary">Use su huella digital para realizar pagos rápidos y seguros.</string>
+    <string name="fingerprint_samsung_pay_summary">Usa tu huella digital para realizar pagos rápidos y seguros.</string>
     <string name="fingerprint_use_samsungpass">Samsung Pass</string>
     <string name="fingerprint_samsungpass_description_internet">Internet</string>
     <string name="fingerprint_samsungpass_summary">Usa tus huellas digitales para verificar tu identidad con %s y otras aplicaciones compatibles.</string>
@@ -1824,7 +1834,7 @@ You will also need it when:"</string>
     <string name="fingerscanner_dialog_confirm">Confirmar</string>
     <string name="fingerscanner_password_prev_button">Anterior</string>
     <string name="fingerscanner_password_description">Usarás la contraseña alternativa para verificar tu identidad cuando no puedas usar tus huellas digitales.</string>
-    <string name="fingerscanner_confirm_backup_password">Confirme su nueva contraseña alternativa.</string>
+    <string name="fingerscanner_confirm_backup_password">Confirma tu nueva contraseña alternativa.</string>
     <string name="fingerscanner_confirm_passwords_dont_match">Se ha introducido una contraseña alternativa incorrecta.</string>
     <string name="fingerscanner_keyboard_toast_msg">Para activar %s, desconecte la funda teclado del dispositivo.</string>
     <string name="fingerscanner_keyboard_dialog_msg">No se puede usar %1$s mientras la funda teclado esté conectada. Se desactivará %2$s.</string>
@@ -1845,6 +1855,12 @@ You will also need it when:"</string>
     <string name="lockpassword_confirm_your_pin_with_fingerprint">Use una huella digital o introduzca el PIN actual.</string>
     <string name="lockpassword_confirm_your_pattern_with_fingerprint">Use una huella digital o dibuje el patrón actual.</string>
     <string name="lockpassword_confirm_your_password_with_fingerprint">Use una huella digital o introduzca la contraseña actual.</string>
+    <string name="lockpassword_confirm_your_pin_with_iris">Usa los iris o introduce tu PIN actual.</string>
+    <string name="lockpassword_confirm_your_pattern_with_iris">Usa los iris o dibuja tu patrón actual.</string>
+    <string name="lockpassword_confirm_your_password_with_iris">Usa los iris o introduce tu contraseña actual.</string>
+    <string name="lockpassword_confirm_your_pin_with_biometrics">Usa los datos biométricos o introduce tu PIN.</string>
+    <string name="lockpassword_confirm_your_pattern_with_biometrics">Usa los datos biométricos o dibuja tu patrón.</string>
+    <string name="lockpassword_confirm_your_password_with_biometrics">Usa los datos biométricos o introduce tu contraseña.</string>
     <string name="lockpassword_confirm_your_pin_instead_of_fingerprint">Introduce tu PIN en lugar de usar el reconocimiento de huella digital.</string>
     <string name="lockpassword_confirm_your_pattern_instead_of_fingerprint">Dibuja tu patrón en lugar de usar el reconocimiento de huella digital.</string>
     <string name="lockpassword_confirm_your_password_instead_of_fingerprint">Introduce tu contraseña en lugar de usar el reconocimiento de huella digital.</string>
@@ -1885,7 +1901,7 @@ You will also need it when:"</string>
 - Compruebe que la imagen no está borrosa para obtener mejores resultados"</string>
     <string name="facelock_setup_title">Configurar la seguridad del reconocimiento facial</string>
     <string name="facelock_setup_desc">Si quieres usar el reconocimiento facial para desbloquear el teléfono o para la verificación en aplicaciones, deberás:</string>
-    <string name="facelock_setup_sub_desc2">Registra tu cara.</string>
+    <string name="facelock_setup_sub_desc2">Registrar tu cara.</string>
     <string name="face_chooselock_help_text_1">Si quieres usar el reconocimiento facial de forma segura, debes establecer un patrón, un PIN o una contraseña.</string>
     <string name="face_chooselock_help_text_2">Recuérdalo, ya que lo necesitarás para desbloquear el teléfono cuando este se reinicie o no se haya utilizado durante más de %d horas.</string>
     <string name="face_backup_lock_type_helptext_ppp_directions">Si quieres usar el reconocimiento facial de forma segura, debes establecer un Patrón, un PIN, una Contraseña o un Bloqueo por direcciones.</string>
@@ -1919,6 +1935,7 @@ Selecciona cómo quieres desbloquear tu teléfono. El Desbloqueo facial y el Des
     <string name="face_status_timeout">Tiempo de espera. Inténtelo más tarde.</string>
     <string name="okay">Aceptar</string>
     <string name="face_samsung_account_button">Usar Samsung account</string>
+    <string name="face_galaxy_account_button">Usar cuenta Galaxy</string>
     <string name="face_error_DB_corrupted">Se ha producido un problema con tus datos de la cara. Por favor, regístrala de nuevo.</string>
     <string name="face_error_DB_corrupted_popup_title">Registrar la cara de nuevo</string>
     <string name="face_error_timeout">No se ha detectado tu cara.</string>
@@ -2029,7 +2046,7 @@ Activa Desbloqueo por iris para usar los datos biométricos o tu %s para desbloq
     <string name="biometrics_backup_locktype_title">Configurar seguridad con iris</string>
     <string name="biometrics_register_your_iris">Registra tus iris.</string>
     <string name="biometrics_backup_locktype_summary">Para usar sus iris para desbloquear el dispositivo, debe establecer un patrón, un PIN o una contraseña.</string>
-    <string name="biometrics_backup_locktype_message">Si quieres usar tus iris para desbloquear el teléfono o para la verificación segura, deberás:</string>
+    <string name="biometrics_backup_locktype_message">Si quieres usar los iris para desbloquear el teléfono o para la verificación en aplicaciones, deberás:</string>
     <string name="iris_delete_popup_title">¿Eliminar datos de iris?</string>
     <string name="iris_delete_popup_message">¿Quieres eliminar los datos de iris?</string>
     <string name="iris_delete_popup_message_with_related_func">Se desactivarán las funciones que usan los iris.</string>
@@ -2065,22 +2082,22 @@ Limpia el área sobre la pantalla."</string>
     <string name="disclaimer_dialog_title">Exención responsabilidad</string>
     <string name="disclaimer_dialog_body_1">"Precauciones para el reconocimiento de iris
 "</string>
-    <string name="disclaimer_dialog_body_2">"Antes de usar el LED y la cámara de reconocimiento de iris, tenga en cuenta las precauciones siguientes:
-- Para proteger sus ojos, manténgalos al menos a 20 cm de distancia de la pantalla durante el reconocimiento de iris.
-- No cubra la pantalla del dispositivo con protectores de pantalla no aprobados (películas de protección de privacidad, protectores de vidrio templado, etc.). Esto podría producir que no se desactive el LED de reconocimiento de iris cuando esté muy cerca de él.
+    <string name="disclaimer_dialog_body_2">"Antes de usar el LED y la cámara de reconocimiento de iris, ten en cuenta las precauciones siguientes:
+- Para proteger tus ojos, mantenlos al menos a 20 cm de distancia de la pantalla durante el reconocimiento de iris.
+- No cubras la pantalla del dispositivo con protectores de pantalla no aprobados (películas de protección de privacidad, protectores de vidrio templado, etc.). Esto podría producir que no se desactive el LED de reconocimiento de iris cuando estés muy cerca de él.
 "</string>
-    <string name="disclaimer_dialog_body_2_us">"Antes de usar el LED y la cámara de reconocimiento de iris, tenga en cuenta las precauciones siguientes:
-- Para proteger sus ojos, manténgalos al menos a 8 pulgadas de distancia de la pantalla durante el reconocimiento de iris.
-- No cubra la pantalla del dispositivo con protectores de pantalla no homologados (películas de protección de privacidad, protectores de vidrio templado, etc.). El LED de reconocimiento de iris podría no desactivarse cuando esté muy cerca de él.
+    <string name="disclaimer_dialog_body_2_us">"Antes de usar el LED y la cámara de reconocimiento de iris, ten en cuenta las precauciones siguientes:
+- Para proteger tus ojos, manténlos al menos a 8 pulgadas de distancia de la pantalla durante el reconocimiento de iris.
+- No cubras la pantalla del dispositivo con protectores de pantalla no homologados (películas de protección de privacidad, protectores de vidrio templado, etc.). El LED de reconocimiento de iris podría no desactivarse cuando estés muy cerca de él.
 "</string>
-    <string name="disclaimer_dialog_body_3">"- No utilice el reconocimiento de iris con niños. Si lo hace, podría dañarles la vista.
+    <string name="disclaimer_dialog_body_3">"- No utilice el reconocimiento de iris con niños. Si lo haces, podría dañarles la vista.
 - Cualquier persona que tenga mareos, convulsiones, pérdidas de conocimiento, desmayos u otros síntomas asociados a un estado epiléptico, o que tenga antecedentes familiares de tales síntomas o estados, deberá ver a un médico antes de usar el escaneador de iris.
 - El escaneador de iris no está pensado para utilizarlo como un dispositivo médico. Los datos biométricos recopilados y almacenados localmente por el escaneador de iris no están pensados para fines de diagnóstico, terapéuticos o de prevención médica.
 Las opciones de seguridad alternativas están disponibles en su dispositivo. Siga todas las instrucciones para el uso de esta función. Para obtener más información, consulte el contenido de asistencia en línea o visite www.samsung.com."</string>
     <string name="disclaimer_dialog_body_4">"Para un mejor reconocimiento de iris
 "</string>
-    <string name="disclaimer_dialog_body_5">"Es posible que el teléfono no reconozca sus iris cuando:
-1. Algo impide que sus iris se puedan ver correctamente (p. ej., gafas, reflejos, párpados caídos, cirugía o enfermedad de los ojos).
+    <string name="disclaimer_dialog_body_5">"Es posible que el teléfono no reconozca tus iris cuando:
+1. Algo impide que tus iris se puedan ver correctamente (p. ej., gafas, reflejos, párpados caídos, cirugía o enfermedad de los ojos).
 2. Algo obstaculiza la cámara o el LED (p. ej., protector de pantalla, suciedad, daños en la cámara).
 3. La iluminación varía mucho respecto a cuando se registraron los iris (p. ej., una sala con mucha iluminación).
 4. El teléfono se agita mucho o se mueve."</string>
@@ -2105,6 +2122,9 @@ Selecciona cómo quieres desbloquear tu teléfono. El Desbloqueo por iris y el D
     <string name="biometrics_dex_cant_use_msg">No se puede usar %s en Samsung DeX.</string>
     <string name="biometrics_dex_closed_to_switch">%s se ha cerrado para cambiar a Samsung DeX.</string>
     <string name="biometircs_dex_cant_use_toast">%s no se puede ejecutar en Samsung DeX. Intente ejecutar la aplicación en el modo de teléfono.</string>
+    <string name="iris_guide_text_preview">Mira aquí para usar iris</string>
+    <string name="iris_guide_enable_toggle">Pulsar aquí para usar los iris</string>
+    <string name="iris_cannot_verify">No se han podido verificar los iris</string>
     <string name="knox_twofactor_bio_description">Selecciona el tipo de bloqueo biométrico y un segundo tipo de bloqueo para desbloquear %s.</string>
     <string name="fingerprint_registered">Se utilizarán las huellas digitales registradas con el método de desbloqueo seleccionado.</string>
     <string name="knox_twofactor_description">Selecciona tus datos biométricos y un segundo tipo de bloqueo para desbloquear %s.</string>
@@ -2212,7 +2232,7 @@ Se usará la red móvil para determinar su ubicación. Se aplicarán cargos por 
     <string name="unlock_set_unlock_cac_pin_summary">Protegido con PIN de smart card</string>
     <string name="b_unlock_title">Bloqueo automático</string>
     <string name="unlock_set_unlock_direction_summary">Seguridad baja</string>
-    <string name="unlock_set_direction_title">Dirección de bloqueo</string>
+    <string name="unlock_set_direction_title">Bloqueo por direcciones</string>
     <string name="info_and_app_shortcut_title">Información y accesos directos</string>
     <string name="info_and_app_shortcut_summary">Mostrar el reloj dual, información del propietario del dispositivo o accesos directos de aplicaciones en la pantalla Bloqueo.</string>
     <string name="lock_app_shortcut_disabled_app">%s está desactivado. Seleccione otra aplicación.</string>
@@ -2354,7 +2374,7 @@ Para fijar una aplicación a la pantalla:
     <string name="screen_pinning_description_4">Pulsa %s en la esquina superior derecha de la ventana para mantener la aplicación en pantalla.</string>
     <string name="setup_lock_screen_intro_title">Protege tu teléfono</string>
     <string name="setup_lock_screen_intro_text">Activa las funciones de protección del dispositivo para impedir que otras personas lo usen sin tu permiso.</string>
-    <string name="setup_lock_screen_intro_radio_iris">Configurar escáner digital</string>
+    <string name="setup_lock_screen_intro_radio_iris">Configurar escáner iris</string>
     <string name="setup_lock_screen_intro_radio_fingerprint">Configurar escáner de huellas digitales</string>
     <string name="setup_lock_screen_intro_radio_face">Configurar reconocimiento facial</string>
     <string name="setup_lock_screen_intro_radio_generic">Configurar PIN, patrón o contraseña</string>
@@ -2366,7 +2386,7 @@ Incluso aunque se borre tu teléfono, se requerirá la contraseña de tu cuenta 
     <string name="setup_lock_screen_intro_skip_dialog_text_frp">Las funciones de protección del dispositivo no se activarán. No podrás impedir que otras personas usen este teléfono en caso de pérdida, robo o borrado.</string>
     <string name="setup_lock_screen_intro_button_gotit">Entendido</string>
     <string name="setup_lock_screen_intro_button_noskip">No omitir</string>
-    <string name="setup_lock_screen_intro_button_skipanyway">Omitir igual</string>
+    <string name="setup_lock_screen_intro_button_skipanyway">OMITIR IGUALMENTE</string>
     <string name="direction_lock_visible">Mostrar direcciones</string>
     <string name="direction_lock_vibration">Respuesta de vibración</string>
     <string name="direction_lock_sound">Respuesta sonora</string>
@@ -2455,14 +2475,14 @@ Te recomendamos que elimines tus datos biométricos, aunque puedes conservarlos 
     <string name="pick_up_to_call_out_title">Direct call</string>
     <string name="pick_up_title">Smart alert</string>
     <string name="mute_title">Silenciar rápido</string>
-    <string name="palm_swipe_title">Desplazar palma para capturar</string>
+    <string name="palm_swipe_title">Deslizar palma para capturar</string>
     <string name="screen_recorder_title">Grabar pantalla</string>
     <string name="screen_recorder_summary">Grabar capturas de pantalla de vídeo mientras usa el dispositivo.</string>
     <string name="multi_window_setting_title">Acción de vista emergente</string>
     <string name="multi_window_setting_description">Cuando abres una aplicación en la pantalla, puedes ajustar su tamaño deslizando hacia abajo diagonalmente desde cualquiera de las esquinas superiores de la pantalla.</string>
     <string name="multi_window_screen_title">Multiwindow</string>
     <string name="multi_window_screen_sub_title">Acción Vista pantalla dividida</string>
-    <string name="multi_window_screen_summary">Mostrar más de una aplicación al mismo tiempo.</string>
+    <string name="multi_window_screen_summary">Muestra más de una aplicación al mismo tiempo.</string>
     <string name="multi_window_split_screen_title">Acción Vista pantalla dividida</string>
     <string name="multi_window_split_screen_description_hwkey_1">Mantén pulsada la tecla Aplicaciones recientes para cambiar la vista de pantalla completa de la aplicación actual a la vista de pantalla dividida.</string>
     <string name="multi_window_split_screen_description_hwkey_2">En la vista de pantalla dividida, mantén pulsada la tecla Aplicaciones recientes para cerrar la aplicación situada en la parte inferior.</string>
@@ -2542,7 +2562,7 @@ Algunos servicios de pago móvil y transacciones de NFC pueden necesitar un mét
     <string name="nfc_card_mode_desc">Usar solo servicios de pago móvil, como tarjetas de transporte y tarjetas de crédito.</string>
     <string name="nfc_standard_mode_title">Modo Estándar</string>
     <string name="nfc_standard_mode_desc">Usar todas las funciones NFC, como los servicios de pago móvil, la lectura y escritura de etiquetas NFC y el intercambio de datos entre dispositivos compatibles con NFC.</string>
-    <string name="nfc_payment_enable_summary">Seleccione su servicio de pago móvil predeterminado.</string>
+    <string name="nfc_payment_enable_summary">Selecciona tu servicio de pago móvil predeterminado.</string>
     <string name="nfc_payment_title">Pago</string>
     <string name="nfc_others_title">Otros</string>
     <string name="nfc_other_no_apps">No hay aplicaciones de servicios instaladas</string>
@@ -2720,9 +2740,9 @@ Si tienes instalado Samsung Connect, puedes cambiar el dispositivo de salida de 
     <string name="stop_setup">¿Quieres detener la configuración?</string>
     <string name="stop_setup_popup_msg">No se aplicarán los ajustes que hayas cambiado.</string>
     <string name="app_turned_on">%s activado</string>
-    <string name="force_touch_title">Vibración por presión intensa</string>
+    <string name="force_touch_title">Vibración al mantener presionado</string>
     <string name="volume_key_control_title">Botones volumen para multimedia</string>
-    <string name="volume_key_control_summary">Controlar el volumen multimedia de forma predeterminada con los botones de volumen.</string>
+    <string name="volume_key_control_summary">Controlar el volumen multimedia de forma predeterminada con los botones Volumen.</string>
     <string name="sound_mode">Modo de sonido</string>
     <string name="sound_mode_vibrate">Vibración</string>
     <string name="sound_mode_mute">Silencio</string>
@@ -2823,8 +2843,8 @@ privado"</string>
     <string name="npsm_deactivated_toast">Modo Ahorro de energía activado. Modo Ahorro de energía de red desactivado.</string>
     <string name="power_mode_change_dialog_medium_title">Modo Ahorro de energía medio</string>
     <string name="power_mode_change_dialog_ultra_title">Modo Ahorro de energía máximo</string>
-    <string name="power_saving_mode_summary_text">Aplique los siguientes ajustes para prolongar la duración de la batería a %1$s o pulse %2$s para cambiar los ajustes.</string>
-    <string name="power_saving_mode_summary_text_noTime">Prolongue la duración de su batería aplicando los ajustes siguientes o pulse %s para cambiar estos ajustes.</string>
+    <string name="power_saving_mode_summary_text">Aplica los siguientes ajustes para prolongar la duración de la batería a %1$s o pulsa %2$s para cambiar los ajustes.</string>
+    <string name="power_saving_mode_summary_text_noTime">Prolonga la duración de tu batería aplicando los ajustes siguientes o pulsa %s para cambiar estos ajustes.</string>
     <string name="customize_title">Personalizar</string>
     <string name="psm_change_processing_enabling_description">Activando el modo Ahorro de energía medio…</string>
     <string name="psm_change_processing_disabling_description">Desactivando el modo Ahorro de energía medio…</string>
@@ -2940,7 +2960,7 @@ privado"</string>
     <string name="text_biometrics_title_enterprise">Cuando selecciones %1$s, no se admitirán los datos biométricos como método de desbloqueo para %2$s.</string>
     <string name="text_biometrics_finger_title_enterprise">%1$s no admite las huellas digitales como método de desbloqueo para %2$s.</string>
     <string name="edge_feeds_title">Paneles Edge</string>
-    <string name="screensaver_settings_summary">Muestra un salvapantallas después de que la pantalla se apaga automáticamente mientras se carga el teléfono.</string>
+    <string name="screensaver_settings_summary">Muestra un salvapantallas después de que la pantalla se apague automáticamente mientras se carga el teléfono.</string>
     <string name="screensaver_settings_summary_wo_dock">Muestra un salvapantallas después de que la pantalla se apague automáticamente mientras se carga el teléfono o se conecta a una base.</string>
     <string name="apn_already_exists">Ya existe</string>
     <string name="error_unavailable_apn">Este APN no se admite en este dispositivo. Inténtalo con otro.</string>
@@ -2966,6 +2986,7 @@ privado"</string>
     <string name="easy_mode_app_help">Usa tu dispositivo con más facilidad gracias a un diseño de pantalla Inicio más sencillo y elementos en pantalla de mayor tamaño.</string>
     <string name="easy_mode_app_help_dream_1">Usa un diseño de pantalla Inicio más sencillo y elementos en pantalla más grandes.</string>
     <string name="easy_mode_app_help_dream_2">Todas las personalizaciones que hayas hecho en la pantalla Inicio se descartarán y el Zoom de pantalla se establecerá al máximo.</string>
+    <string name="easy_mode_app_help_3rd_launcher">Aplica el modo Sencillo para los elementos más grandes en pantalla. Si no estás utilizando el inicio de TouchWiz, el diseño de la pantalla Inicio no cambiará, pero el zoom de la pantalla se configurará como grande y el tamaño de fuente como mediano.</string>
     <string name="security_warning_content">Puede proteger su privacidad estableciendo una contraseña, un PIN o un patrón para desbloquear la pantalla</string>
     <string name="lock_setting_weather_desc">Para ver o modificar los ajustes metereológicos, pulse AJUSTES DEL TIEMPO a continuación.</string>
     <string name="lock_setting_weather_btn">Ajustes del tiempo</string>
@@ -2976,8 +2997,8 @@ privado"</string>
     <string name="usage_access_summary">Administrar las aplicaciones que pueden acceder al historial de uso del teléfono.</string>
     <string name="not_in_roaming_area">No se encuentra en una zona de itinerancia</string>
     <string name="preferred_networks">Redes preferidas</string>
-    <string name="handwriting_recognition">Recon. de escritura manual</string>
-    <string name="more_languages">Selec idiomas de entrada</string>
+    <string name="handwriting_recognition">Reconocer escritura a mano</string>
+    <string name="more_languages">Seleccionar idiomas</string>
     <string name="handwriting_language_not_supported_recog">Este idioma no admite el reconocimiento de escritura manual.</string>
     <string name="handwriting_language_desc_select_eng_reomove_gallery_feature">La escritura manual se puede reconocer en S Note y Action memo. Podrás buscar la escritura manual en el idioma que selecciones a continuación. Después de seleccionar un idioma, el dispositivo reconocerá la escritura manual en ese idioma.</string>
     <string name="handwriting_language_desc_select_exception">La escritura manual se puede reconocer en S Note, Action memo, Nota de foto y la función de marco de foto. Podrá buscar la escritura manual tanto en %s como en el idioma que seleccione a continuación. Después de seleccionar un idioma, el dispositivo reconocerá la escritura manual en ese idioma.</string>
@@ -3212,7 +3233,7 @@ Downloading via mobile networks may result in additional charges depending on yo
     <string name="disable_hovering_title">Desactivar Air view</string>
     <string name="disable_hovering_summary">Air view y TalkBack no pueden estar activados simultáneamente. Se desactivará Air view.</string>
     <string name="pen_settings_pen_input">Direct Pen</string>
-    <string name="action_memo_onoff_screen_title">Nota pant apagada</string>
+    <string name="action_memo_onoff_screen_title">Nota con pantalla apagada</string>
     <string name="screen_off_note_summary">Escribe notas con la pantalla apagada. Simplemente extrae el S Pen y empieza a escribir.</string>
     <string name="screen_off_note_summary_jpn">Para crear notas, desenganche el S Pen cuando la pantalla esté apagada y escriba en ella. Las notas con la pantalla apagada se guardarán en Galaxy Notas.</string>
     <string name="screen_off_note_summary_no_detach">Para crear notas, pulsa el botón del S Pen, pulsa la pantalla cuando esté apagada y, a continuación, escribe sobre ella. Las notas con la pantalla apagada se guardarán en Samsung Notas.</string>
@@ -3819,7 +3840,7 @@ Usar Conexión compartida consume más batería y aumenta el uso de datos."</str
     <string name="wfd_descrpition_playsound">Reproducir sonido.</string>
     <string name="wfd_is_not_supported">No se admite esta función.</string>
     <string name="usbtethering_notify_wifi_is_on_title">¿Quieres desactivar la Wi-Fi?</string>
-    <string name="usbtethering_notify_wifi_is_on">La Wi-Fi y el módem USB no pueden estar activados al mismo tiempo. Desactive la Wi-Fi.</string>
+    <string name="usbtethering_notify_wifi_is_on">La Wi-Fi y el módem USB no pueden estar activados al mismo tiempo. Se desactivará la Wi-Fi.</string>
     <string name="disable_multi_window_dialog_text">Multiwindow se desactivará y todas las aplicaciones abiertas en ventanas emergentes se cerrarán.</string>
     <string name="keyguard_password_attempt_count_pin_code">Queda %d intento</string>
     <string name="keyguard_password_attempts_count_pin_code">Quedan %d intentos.</string>
@@ -4027,6 +4048,7 @@ Recepción de SMS"</string>
     <string name="hdmi_mode_title">Modo HDMI</string>
     <string name="hdmi_mode_dex">Samsung DeX</string>
     <string name="hdmi_mode_mirroring">Screen Mirroring</string>
+    <string name="hdmi_mode_not_available_while_cover_attached">%s no está disponible con la funda conectada.</string>
     <string name="screen_timeout_for_dex">Tiempo espera pant de Samsung DeX</string>
     <string name="show_virtual_keyboard_for_dex">Mostrar teclado en pantalla en Samsung DeX</string>
     <string name="comma">,</string>
@@ -4335,7 +4357,7 @@ Puedes cambiar esto más tarde en los ajustes de Bluetooth."</string>
     <string name="date_picker_title">Fecha</string>
     <string name="time_picker_title">Hora</string>
     <string name="lock_after_timeout">Bloquear automáticamente</string>
-    <string name="lock_after_timeout_summary">Bloquear la pantalla %s después de que se apague automáticamente.</string>
+    <string name="lock_after_timeout_summary">Bloquear el teléfono %s después de que la pantalla se apague automáticamente.</string>
     <string name="lock_after_timeout_summary_with_exception">Bloquear pantalla %1$s después de que se apague automáticamente, excepto si se mantiene desbloqueada por %2$s.</string>
     <string name="show_owner_info_on_lockscreen_label">Mostrar la información del propietario del dispositivo en la pantalla Bloqueo.</string>
     <string name="owner_info_settings_title">Información propietario</string>
@@ -4389,7 +4411,7 @@ Nota: la huella digital puede ser menos segura que un patrón complejo o un PIN.
     <string name="lock_profile_wipe_warning_content_password">Si introduce de nuevo una contraseña de perfil de trabajo incorrecta, se eliminarán del dispositivo su perfil de trabajo y todos los datos relacionados.</string>
     <string name="lock_profile_wipe_content">Se han realizado demasiados intentos incorrectos. Se eliminarán del dispositivo su perfil de trabajo y los datos relacionados.</string>
     <string name="lock_profile_wipe_dismiss">Rechazar</string>
-    <string name="lockpassword_password_too_short">Su contraseña debe contener un mínimo de %d caracteres, entre los que tiene que haber al menos una letra.</string>
+    <string name="lockpassword_password_too_short">Tu contraseña debe contener un mínimo de %d caracteres, entre los que tiene que haber al menos una letra.</string>
     <string name="lockpassword_pin_too_short">El PIN debe contener al menos %d dígitos.</string>
     <string name="lockpassword_continue_label">Continuar</string>
     <string name="lockpassword_password_too_long">La contraseña no debe contener más de %d caract</string>
@@ -4472,6 +4494,8 @@ Para mejorar la precisión de la ubicación, las aplicaciones y los servicios pu
     <string name="wifi_empty_list_user_restricted">No tiene permiso para cambiar los ajustes de Wi-Fi.</string>
     <string name="wifi_setup_wps">Configuración automática (WPS)</string>
     <string name="wifi_show_advanced">Mostrar opciones avanzadas</string>
+    <string name="wifi_advanced_toggle_description_expanded">Pulsa dos veces para contraer.</string>
+    <string name="wifi_advanced_toggle_description_collapsed">Pulsa dos veces para expandir.</string>
     <string name="wifi_wps_setup_title">Configuración WPS</string>
     <string name="wifi_wps_setup_msg">Iniciando WPS…</string>
     <string name="wifi_wps_onstart_pbc">Pulse el botón de configuración protegida Wi-Fi en su router. Puede llamarse WPS o incluir este símbolo:</string>
@@ -4503,6 +4527,10 @@ Para mejorar la precisión de la ubicación, las aplicaciones y los servicios pu
     <string name="wifi_shared">Compartido</string>
     <string name="wifi_unchanged">(sin modificar)</string>
     <string name="wifi_unspecified">(Sin especificar)</string>
+    <string name="wifi_select_cert">Seleccionar certificado</string>
+    <string name="wifi_do_not_provide_eap_user_cert">No proporcionar</string>
+    <string name="wifi_do_not_validate_eap_server">No validar</string>
+    <string name="wifi_do_not_validate_eap_server_warning">No se ha especificado ningún certificado. La conexión no será privada.</string>
     <string name="wifi_scan_always_turnon_message">%s solicita permiso para buscar redes Wi-Fi, incluso cuando la conexión Wi-Fi esté desactivada. Con ello pretende mejorar la precisión en la ubicación, entre otros fines. ¿Desea permitirlo para todas las aplicaciones?</string>
     <string name="wifi_scan_always_confirm_allow">Permitir</string>
     <string name="wifi_scan_always_confirm_deny">Rechazar</string>
@@ -4757,7 +4785,7 @@ Después de formatear, solo funcionará en este dispositivo.
     <string name="storage_wizard_format_progress_title">Formatear %1$s</string>
     <string name="storage_wizard_format_progress_body">"Formateando %1$s…
 
-No retire el dispositivo mientras se está formateando."</string>
+No retires el dispositivo mientras se está formateando."</string>
     <string name="storage_wizard_migrate_title">Exportar datos</string>
     <string name="storage_wizard_migrate_body">"Puede exportar sus imágenes, archivos y algunas aplicaciones a %1$s.
 
@@ -4837,9 +4865,9 @@ Considere la posibilidad de utilizar una tarjeta SD o dispositivo de almacenamie
     <string name="restore_default_apn_completed">Ajustes APN restablecidos a predeterminados</string>
     <string name="reset_network_desc">Se restablecerán todos los ajustes de red, incluidos los de:</string>
     <string name="reset_network_button_text">Restablecer ajustes</string>
-    <string name="reset_network_final_desc">Se restablecerán todos los ajustes de conexión. No se puede deshacer esta acción.</string>
+    <string name="reset_network_final_desc">Se restablecerán todos los ajustes de red. Esta acción no se puede deshacer.</string>
     <string name="reset_network_final_button_text">Restablecer ajustes</string>
-    <string name="reset_network_complete_toast">Ajustes de conexión restablecidos.</string>
+    <string name="reset_network_complete_toast">Se han restablecido los ajustes de red.</string>
     <string name="master_clear_title">Restablecer valores de fábrica</string>
     <string name="master_clear_accounts">Actualmente, has iniciado sesión en las siguientes cuentas:</string>
     <string name="master_clear_other_users_present">También se borrarán los datos de este dispositivo pertenecientes a otros usuarios.</string>
@@ -5265,7 +5293,7 @@ If the device has multiple users, using this shortcut on the lock screen tempora
     <string name="battery_sugg_bluetooth_basic">Desactivar Bluetooth cuando no esté en uso</string>
     <string name="battery_desc_apps">Batería usada por aplicaciones</string>
     <string name="battery_sugg_apps_info">Detener o desinstalar aplicación</string>
-    <string name="battery_sugg_apps_gps">Cambie a un método de ubicación de ahorro de energía</string>
+    <string name="battery_sugg_apps_gps">Cambia a un método de ubicación de ahorro de energía</string>
     <string name="battery_desc_users">Batería utilizada por el usuario</string>
     <string name="battery_desc_unaccounted">Uso de energía de Varios</string>
     <string name="battery_msg_unaccounted">Los datos de uso de la batería muestran un desglose aproximado del uso de energía y no incluyen cada elemento que utiliza la energía de la batería. El porcentaje indicado como Varios es la diferencia entre el uso de energía total conocido y el uso real.</string>
@@ -5461,10 +5489,10 @@ Este ajuste afecta a todos los usuarios de este dispositivo."</string>
 "<font size="12">límite</font></string>
     <string name="data_usage_total_during_range">%2$s: aproximadamente %1$s utilizados</string>
     <string name="data_usage_metered_title">Restringir redes</string>
-    <string name="data_usage_metered_body">Seleccione redes para impedir que las aplicaciones que se ejecutan en segundo plano las utilicen. Las aplicaciones también le avisarán antes de usar las redes seleccionadas para realizar descargas de gran tamaño.</string>
+    <string name="data_usage_metered_body">Selecciona redes para impedir que las aplicaciones que se ejecutan en segundo plano las utilicen. Las aplicaciones también te avisarán antes de usar las redes seleccionadas para realizar descargas de gran tamaño.</string>
     <string name="data_usage_metered_mobile">Redes móviles</string>
     <string name="data_usage_metered_wifi">Redes Wi-Fi</string>
-    <string name="data_usage_metered_wifi_disabled">Active Wi-Fi para seleccionar Zonas Wi-Fi.</string>
+    <string name="data_usage_metered_wifi_disabled">Activa Wi-Fi para seleccionar Zonas Wi-Fi.</string>
     <string name="data_usage_disclaimer">Medido por el dispositivo. El proveedor de servicios puede justificar el uso de datos de otro modo.</string>
     <string name="vpn_name">Nombre</string>
     <string name="vpn_type">Tipo</string>
@@ -5663,7 +5691,7 @@ Cualquier usuario puede aceptar permisos actualizados de aplicaciones en nombre 
     <string name="lock_screen_notifications_summary_show">Mostrar contenido</string>
     <string name="lock_screen_notifications_summary_hide">Ocultar contenido</string>
     <string name="lock_screen_notifications_summary_disable">No mostrar notificaciones</string>
-    <string name="lock_screen_notifications_interstitial_message">Seleccione opciones de visualización para notificaciones en la pantalla Bloqueo.</string>
+    <string name="lock_screen_notifications_interstitial_message">Selecciona opciones de visualización para notificaciones en la pantalla Bloqueo.</string>
     <string name="lock_screen_notifications_summary_show_profile">Mostrar todo el contenido de notificaciones de trabajo</string>
     <string name="lock_screen_notifications_summary_hide_profile">Ocultar contenido confidencial de notificaciones de trabajo</string>
     <string name="lock_screen_notifications_summary_disable_profile">No mostrar notificaciones de trabajo</string>
@@ -5887,7 +5915,7 @@ No recibirá llamadas, mensajes ni notificaciones y las alarmas no sonarán hast
     <string name="filter_overlay_apps">Aplicaciones con permiso</string>
     <string name="filter_write_settings_apps">Aplicaciones con permiso</string>
     <string name="write_settings_title">Ajustes del dispositivo</string>
-    <string name="write_system_settings">Aplicaciones que pueden cambiar los ajustes del sistema</string>
+    <string name="write_system_settings">Apps que cambian los ajustes del sistema</string>
     <string name="permit_write_settings">Cambiar ajustes del sistema</string>
     <string name="write_settings_description">Seleccione las aplicaciones que pueden modificar los ajustes del sistema, como por ejemplo, la activación o desactivación del Bluetooth.</string>
     <string name="troaming_use_roaming_packages">Usar paquetes itinerancia</string>
@@ -5940,9 +5968,10 @@ No recibirá llamadas, mensajes ni notificaciones y las alarmas no sonarán hast
     <string name="set_data_limit">Establecer límite de datos</string>
     <string name="data_limit">Límite de datos</string>
     <string name="data_usage_template">%1$s usados entre %2$s</string>
+    <string name="data_usage_template_wifi">%s usados en los últimos 30 días</string>
     <string name="data_usage_other_apps">Apps incluidas asociadas en uso</string>
     <string name="data_saver_title">Ahorro de datos</string>
-    <string name="unrestricted_data_saver">Permitir con Ahorro datos activo</string>
+    <string name="unrestricted_data_saver">Permitir con Ahorro de datos activo</string>
     <string name="restrict_background_blacklisted">Restringir datos en segundo plano activado</string>
     <string name="data_saver_on">Activado</string>
     <string name="unrestricted_app_title">Permitir con Ahorro datos activo</string>
@@ -5989,6 +6018,7 @@ No recibirá llamadas, mensajes ni notificaciones y las alarmas no sonarán hast
     <string name="vzw_bixby_mode">Modo Bixby</string>
     <string name="screen_off_pocket_title">Mantener pantalla apagada</string>
     <string name="screen_off_pocket_summary">Impide que la pantalla se encienda de forma accidental cuando el dispositivo se encuentra en un sitio oscuro, como un bolsillo o un bolso.</string>
+    <string name="noApplications">Todas las aplicaciones asociadas con esta acción se han desactivado, bloqueado o no se han instalado.</string>
     <string name="confirm_reset_shortcut_manager_throttling_title">Restablecer limitador de porcentaje de Administrador de accesos directos</string>
     <string name="confirm_reset_shortcut_manager_throttling_message">Se restablecerá el limitador de porcentaje del Administrador de accesos directos.</string>
 </resources>

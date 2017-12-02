@@ -161,14 +161,14 @@
 
     iget-object v5, p0, Lcom/android/settings/wifi/WifiSNSExcludedAPPreference;->mContext:Landroid/content/Context;
 
-    const v6, 0x7f0b15c4
+    const v6, 0x7f0b15d6
 
     invoke-virtual {v5, v6}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
     move-result-object v3
 
     :goto_0
-    const v5, 0x7f1107c6
+    const v5, 0x7f1107c8
 
     invoke-virtual {v4, v5}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -187,7 +187,7 @@
     :cond_2
     iget-object v5, p0, Lcom/android/settings/wifi/WifiSNSExcludedAPPreference;->mContext:Landroid/content/Context;
 
-    const v6, 0x7f0b15c0
+    const v6, 0x7f0b15d2
 
     invoke-virtual {v5, v6}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -198,7 +198,7 @@
     :cond_3
     iget-object v5, p0, Lcom/android/settings/wifi/WifiSNSExcludedAPPreference;->mContext:Landroid/content/Context;
 
-    const v6, 0x7f0b15c3
+    const v6, 0x7f0b15d5
 
     invoke-virtual {v5, v6}, Landroid/content/Context;->getString(I)Ljava/lang/String;
     :try_end_0

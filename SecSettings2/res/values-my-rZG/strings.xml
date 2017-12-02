@@ -122,6 +122,8 @@
     <string name="wifi_allow_scan_with_traffic_summary">ေဒတာအသုံးျပဳမႈ ပမာဏေပၚတြင္ အေျခခံသည့္ Wi-Fi အျခားကြန္ယက္ ရွာေဖြမႈမ်ားကို အလိုအေလ်ာက္ ခြင့္ျပဳပါ (သို႔) ျငင္းဆိုပါ။</string>
     <string name="select_logd_size_title">မွတ္တမ္းတင္ျခင္းအတြက္ ဘာဖာအရြယ္</string>
     <string name="select_logd_size_dialog_title">မွတ္တမ္းဘာဖာတစ္ခုစီ၏ အၾကီးဆံုး အရြယ္ကို ေရြးပါ</string>
+    <string name="dev_logpersist_clear_warning_title">ျပႆနာဆက္ျဖစ္ေနသည့္ ေလာ့ဂါ သိုေလွာင္ခန္းကို ရွင္းပစ္မလား?</string>
+    <string name="dev_logpersist_clear_warning_message">ျပႆနာဆက္ျဖစ္ေနသည့္ ေလာ့ဂါကို ပိတ္လိုက္သည့္အခါ ေလာ့ဂါေဒတာကို ဖ်က္ပစ္ပါမည္။</string>
     <string name="select_logpersist_title">မွတ္တမ္းေဒတာကုိ ဆက္တုိက္သိမ္းပါ</string>
     <string name="select_logpersist_dialog_title">ဆက္တုိက္သိမ္းမည့္ မွတ္တမ္း ၾကားခံနယ္မ်ားကုိ ေရြးပါ</string>
     <string name="select_usb_configuration_title">USB စီစဥ္ဖြဲ႕စည္းမႈ</string>
@@ -855,6 +857,7 @@ Wi-Fi ႏွင့္ဘလူးတုသ္ကို ပိတ္လုိက�
     <string name="bluetooth_avc_available_description">ခ်ိတ္ဆက္ထားသည့္ ဘလူးတုသ္ကိရိယာက မီဒီယာသံ တုိးက်ယ္ဆင့္ခ္လုပ္ျခင္းကုိ ပံ့ပုိးေပးၿပီး ဘလူးတုသ္ကိရိယာမွ သတ္မွတ္ထားေသာ အသံအတုိးအက်ယ္ကုိ သင့္ဖုန္းႏွင့္အတူ ဆင့္ခ္လုပ္ပါမည္။</string>
     <string name="bluetooth_enter_pin_msg">%s ျဖင့္တြဲရန္ PIN ထည့္ပါ (၀၀၀၀ သို႔မဟုတ္ ၁၂၃၄ စမ္းၾကည့္ပါ)။</string>
     <string name="bluetooth_pin_maximum_number_message">အကၡရာ အေရအတြက္ အမ်ားဆံုးသို႔ ေရာက္ပါၿပီ။</string>
+    <string name="bluetooth_frp_permission_message">ဤေခၚဖုန္းအတြက္ ဘလူးတုသ္ကိရိယာကုိ သံုး၍ မရႏုိင္ပါ။</string>
     <string name="settings_menu_done">ၿပီးပါၿပီ</string>
     <string name="usb_tethering_unavailable_subtext_tmo">USB not connected</string>
     <string name="usb_tethering_available_subtext_tmo">USB connected, check to tether</string>
@@ -1354,7 +1357,7 @@ Where Can I Find More Information About the 3rd Party's Policies? Separately, if
     <string name="navigationbar_pressure_sensitivity_title">ပင္မခလုတ္ကုိ ခပ္ျပင္းျပင္း ႏွိပ္ပါ</string>
     <string name="navigationbar_pressure_sensitivity_summary">ပင္မခလုတ္အား ေဖ်ာက္ထားခ်ိန္တြင္ ပုံမွန္ထက္ ပိုျပင္းထန္စြာဖိႏွိပ္ထားျခင္းျဖင့္ အသုံးျပဳပါ။</string>
     <string name="navigationbar_pressure_sensitivity_level_summary">ဖိအား အဆင့္ : %2$d ၏ %1$d</string>
-    <string name="navigationbar_pressure_sensitivity_description_off">ပင္မခလုတ္အား ေဖ်ာက္ထားခ်ိန္တြင္ ပုံမွန္ထက္ ပိုျပင္းထန္စြာဖိႏွိပ္ထားျခင္းျဖင့္ အသုံးျပဳပါ။</string>
+    <string name="navigationbar_pressure_sensitivity_description_off">ပင္မခလုတ္ကုိ ခပ္ျပင္းျပင္းဖိရန္ လုိအပ္သည့္ ဖိအားပမာဏကုိ ခ်ိန္ညႇိပါ။</string>
     <string name="navigationbar_pressure_low">ပို၍ အေရာင္ေဖ်ာ့</string>
     <string name="navigationbar_pressure_high">ပုိျပင္းထန္</string>
     <string name="navigationbar_hide_bar">ခလုတ္ ျပရန္ႏွင့္ ဝွက္ရန္</string>
@@ -1493,7 +1496,7 @@ Where Can I Find More Information About the 3rd Party's Policies? Separately, if
     <string name="crypt_keeper_decrypt_title">ကိရိယာကိုျမွဳပ္ထားပါ</string>
     <string name="crypt_keeper_decrypt_summary">ကိရိယာကို ျမွဳပ္ထားသည္</string>
     <string name="crypt_keeper_type_pin">PIN</string>
-    <string name="crypt_keeper_type_pattern">ပုံစံ</string>
+    <string name="crypt_keeper_type_pattern">မ်ဥ္းဆြဲပုံစံ</string>
     <string name="crypt_keeper_type_password">စကား၀ွက္</string>
     <string name="crypt_keeper_type_direction">ဦးတည္ခ်က္ ေသာ့ခ်ထားသည္</string>
     <string name="crypt_keeper_confirm_title_dec">ေဖာ္ျခင္းကို အတည္ျပဳပါ</string>
@@ -1577,7 +1580,11 @@ Where Can I Find More Information About the 3rd Party's Policies? Separately, if
     <string name="crypt_keeper_confirm_title">ျမွဳပ္ႏွံျခင္းကို အတည္ျပဳပါ</string>
     <string name="crypt_keeper_final_desc">သင့္ကိရိယာ ျပန္ေဖာ္ျခင္းကို ေနာက္ျပန္လွည့္၍ မရဘဲ လုပ္ငန္းစဥ္ ေႏွာက္ယွက္ခံရပါက ေဒတာ ဆံုးရံႈးမည္။ ျပန္ေဖာ္ျခင္းမွာ တစ္နာရီ (သို႔) ထို႔ထက္ပိုၾကာႏိုင္ၿပီး ထိုအေတာအတြင္း ကိရိယာ အၾကိမ္ၾကိမ္ ျပန္စမည္ျဖစ္ၿပီး ၎ကို မသံုးႏိုင္ပါ။</string>
     <string name="crypt_keeper_setup_title">ျမွဳပ္ႏွံေနသည္…</string>
-    <string name="crypt_keeper_warn_wipe">သင့္ကိရိယာကို စက္႐ုံထုတ္ မူရင္းပါ သတ္မွတ္ခ်က္မ်ားသို႔ ျပန္လည္သတ္မွတ္ျခင္းမျပဳမီ သင့္တြင္ ႀကိဳးပမ္းခြင့္ %d ႀကိမ္ က်န္ေသးသည္။ ဤအရာသည္ ဖိုင္မ်ားႏွင့္ ေဒါင္းလုတ္လုပ္ထားသည့္ အက္ပ္မ်ားအပါအဝင္ ေဒတာအားလုံးကိုဖ်က္သြားမည္။</string>
+    <string name="crypt_keeper_warn_wipe">"သင့္ဖုန္းအား စက္ရုံထုတ္ မူရင္းသတ္မွတ္ခ်က္မ်ားသို႔ ျပန္လည္မသတ္မွတ္မီ %1$d ႀကိမ္ ႀကိဳးစားရန္ က်န္သည္။ ယင္းက ဖုိင္မ်ားႏွင့္ ေဒါင္းလုတ္လုပ္ထားေသာ အက္ပ္မ်ားအပါအဝင္ ေဒတာအားလံုးကုိ ဖ်က္ပစ္ပါမည္။
+
+သင့္ဖုန္းကုိ ျပန္လည္သတ္မွတ္လွ်င္ ၎ကုိ ထပ္မံအသံုးျပဳႏုိင္ရန္ ဤဖုန္းႏွင့္ ဆက္ႏြယ္ထားေသာ %2$s အခ်က္အလက္မ်ား (အီးေမးလ္လိပ္စာႏွင့္ စကားဝွက္) ကုိ ထည့္ဖုိ႔ လုိႏုိင္သည္။"</string>
+    <string name="crypt_keeper_samsung_account">Samsung account</string>
+    <string name="crypt_keeper_google_account">Google account</string>
     <string name="crypt_keeper_failed_title">ျမႇဳပ္ထားျခင္း မေအာင္ျမင္ပါ</string>
     <string name="crypt_keeper_failed_summary">သင့္ကိရိယာကို စတင္၍ မရႏိုင္ပါ။ ကုဒ္ေျပာင္းျမႇဳပ္မႈ လုပ္ငန္းစဥ္ အေႏွာင့္အယွက္ျဖစ္ပြားထားသည္။ သင့္ကိရိယာကို စက္႐ုံထုတ္ မူရင္းပါပုံစံ သတ္မွတ္ခ်က္မ်ားသို႔ ျပန္လည္သတ္မွတ္ရန္လိုအပ္သည္။ ဤအရာသည္ သင္၏ေဒတာအားလုံးကို ဖ်က္သြားမည္။</string>
     <string name="crypt_keeper_data_corrupted_title">ကိရိယာသိုေလွာင္ခန္း ပ်က္စီးေနသည္</string>
@@ -1596,10 +1603,13 @@ Where Can I Find More Information About the 3rd Party's Policies? Separately, if
     <string name="cryptkeeper_wrong_pin">မွားေနသည့္ PIN ထည့္ထားသည္</string>
     <string name="cryptkeeper_wrong_direction">မမွန္မကန္ ေရးဆြဲထားသည့္ ဦးတည္ခ်က္</string>
     <string name="checking_decryption">မွန္ကန္မႈ စစ္ေနသည္…</string>
-    <string name="crypt_keeper_last_warn_wipe">သင့္ကိရိယာကို ၎၏ စက္႐ုံထုတ္ မူရင္းပါ သတ္မွတ္ခ်က္မ်ားသို႔ ျပန္မသတ္မွတ္မီ သင့္တြင္ စဖြင့္ႏိုင္ခြင့္ ၁ ႀကိမ္ က်န္ေနေသးသည္။ ၎က ဖိုင္မ်ားႏွင့္ ေဒါင္းလုတ္ထားေသာ အက္ပ္မ်ား အပါအဝင္၊ ေဒတာအားလုံးကို ဖ်က္ပါမည္။</string>
+    <string name="crypt_keeper_last_warn_wipe">"သင့္ဖုန္းအား စက္႐ုံထုတ္ မူရင္းသတ္မွတ္ခ်က္မ်ားသို႔ ျပန္လည္မသတ္မွတ္မီ ၁ ႀကိမ္ ႀကိဳးစားရန္ က်န္သည္။ ယင္းက ဖုိင္မ်ားႏွင့္ ေဒါင္းလုတ္လုပ္ထားေသာ အက္ပ္မ်ားအပါအဝင္ ေဒတာအားလံုးကုိ ဖ်က္ပစ္ပါမည္။
+
+သင့္ဖုန္းကုိ ျပန္လည္သတ္မွတ္လွ်င္ ၎ကုိ ထပ္မံအသံုးျပဳႏုိင္ရန္ ဤဖုန္းႏွင့္ ဆက္ႏြယ္ထားေသာ %s အခ်က္အလက္မ်ား (အီးေမးလ္လိပ္စာႏွင့္ စကားဝွက္) ကုိ ထည့္ဖုိ႔ လုိႏုိင္သည္။"</string>
     <string name="crypt_keeper_failed_title_dec">ျပန္ေဖာ္ျခင္း မေအာင္ျမင္ပါ။</string>
     <string name="crypt_keeper_failed_summary_dec">အျပတ္အေတာက္ရွိသျဖင့္ ေဖာ္ျခင္း မျပီးစီးပါ။ အသံုးမျပဳမီ (ေဒတာ အားလံုး ဖ်က္ျခင္း) စက္ရံုေဒတာ ျပန္သတ္မွတ္ျခင္းကို ေဆာင္ရြက္ပါ။</string>
     <string name="crypt_keeper_set_screen_lock_type">ဖန္သားျပင္ ေသာ့အမ်ဳိးအစား စီစဥ္ပါ</string>
+    <string name="crypt_keeper_warning_keyboard_cover_does_not_work">ဖုန္းကုိ ပိတ္၍ျပန္ဖြင့္ၿပီးေနာက္ ကီးဘုတ္ကာဗာက အလုပ္လုပ္မည္ မဟုတ္ပါ။</string>
     <string name="encryption_interstitial_message">"ဖုန္း စတင္မလုပ္ေဆာင္မီ %s ကုိ ထည့္ခုိင္းျခင္းျဖင့္ ဤဖုန္းကုိ ေနာက္ထပ္ ကာကြယ္ႏုိင္သည္။ ဖုန္းေပ်ာက္ဆံုး (သုိ႔) အခုိးခံရလွ်င္ ယင္းက သင့္ေဒတာကုိ ကာကြယ္ရန္ ကူညီေပးသည္။ အီးေမးလ္ဆင့္ခ္ကဲ့သုိ႔ အဂၤါရပ္မ်ားကုိ ဝင္ေရာက္သံုးစြဲျခင္းအတြက္ ကိရိယာကုဒ္ေျပာင္းျခင္းဆုိင္ရာ မူဝါဒမ်ားအရ အက္ပ္အခ်ိဳ႕က လံုျခံဳစိတ္ခ်ရေသာ စတင္လုပ္ေဆာင္မႈကုိ လုိအပ္ႏုိင္သည္။
 
 ဖုန္း စတင္မလုပ္ေဆာင္မခ်င္း ဖုန္းေခၚဆုိမႈမ်ား၊ မက္ေဆ့ခ်္မ်ား သုိ႔မဟုတ္ အသိေပးခ်က္မ်ားကုိ လက္ခံ ရရွိမည္မဟုတ္ဘဲ ႏႈိးစက္မ်ား အသံျမည္မည္ မဟုတ္ပါ။"</string>
@@ -1844,6 +1854,12 @@ You will also need it when:"</string>
     <string name="lockpassword_confirm_your_pin_with_fingerprint">လက္ေဗြရာတစ္ခု အသုံးျပဳပါ (သို႔) လက္ရွိ PIN ထည့္သြင္းပါ။</string>
     <string name="lockpassword_confirm_your_pattern_with_fingerprint">လက္ေဗြရာတစ္ခု (သို႔) လက္ရွိပုံစံေရးဆြဲပါ။</string>
     <string name="lockpassword_confirm_your_password_with_fingerprint">လက္ေဗြရာတစ္ခု အသုံးျပဳပါ (သို႔) လက္ရွိစကားဝွက္ ထည့္သြင္းပါ။</string>
+    <string name="lockpassword_confirm_your_pin_with_iris">သင့္မ်က္ဝန္းမ်ားကုိ သံုးပါ (သို႔) လက္ရွိသံုး PIN ကုိ ထည့္ပါ။</string>
+    <string name="lockpassword_confirm_your_pattern_with_iris">သင့္မ်က္ဝန္းမ်ားကုိ သံုးပါ (သို႔) လက္ရွိသံုး ပုံစံကုိ ေရးဆြဲပါ။</string>
+    <string name="lockpassword_confirm_your_password_with_iris">သင့္မ်က္ဝန္းမ်ားကုိ သံုးပါ (သို႔) လက္ရွိသံုး စကားဝွက္ကုိ ထည့္ပါ။</string>
+    <string name="lockpassword_confirm_your_pin_with_biometrics">ဇီဝ႐ုပ္လကၡဏာမ်ားကုိ အသုံးျပဳပါ (သို႔) PIN ထည့္သြင္းပါ။</string>
+    <string name="lockpassword_confirm_your_pattern_with_biometrics">ဇီဝ႐ုပ္ကၡဏာမ်ားကုိ အသုံးျပဳပါ (သို႔) ပုံစံ ေရးဆြဲပါ။</string>
+    <string name="lockpassword_confirm_your_password_with_biometrics">ဇီဝ႐ုပ္လကၡဏာမ်ားကုိ အသုံးျပဳပါ (သို႔) စကားဝွက္ ထည့္သြင္းပါ။</string>
     <string name="lockpassword_confirm_your_pin_instead_of_fingerprint">လက္ေဗြရာမွတ္သားမႈ အသုံးျပဳမည့္အစား သင္၏ PIN ထည့္သြင္းပါ။</string>
     <string name="lockpassword_confirm_your_pattern_instead_of_fingerprint">လက္ေဗြရာမွတ္သားမႈ အသုံးျပဳမည့္အစား သင္၏ပုံစံကို ေရးဆြဲပါ။</string>
     <string name="lockpassword_confirm_your_password_instead_of_fingerprint">လက္ေဗြရာမွတ္သားမႈ အသုံးျပဳမည့္အစား သင္၏စကားဝွက္ကို ထည့္သြင္းပါ။</string>
@@ -1918,6 +1934,7 @@ You will also need it when:"</string>
     <string name="face_status_timeout">အခ်ိန္ကုန္လြန္ပါၿပီ။ ေနာက္မွျပန္ႀကိဳးစားပါ။</string>
     <string name="okay">အိုေက</string>
     <string name="face_samsung_account_button">Samsung account ကို သုံးပါ</string>
+    <string name="face_galaxy_account_button">Galaxy account ကုိ သံုးပါ</string>
     <string name="face_error_DB_corrupted">သင့္မ်က္ႏွာေဒတာတြင္ ျပႆနာတစ္ခုရွိေနပါသည္။ သင့္မ်က္ႏွာကို ထပ္မံ၍မွတ္ပုံတင္ပါ။</string>
     <string name="face_error_DB_corrupted_popup_title">သင့္မ်က္ႏွာကို ထပ္မံမွတ္ပုံတင္ပါ</string>
     <string name="face_error_timeout">သင့္မ်က္ႏွာကုိ ရွာမေတြ႕ပါ။</string>
@@ -2028,7 +2045,7 @@ You will also need it when:"</string>
     <string name="biometrics_backup_locktype_title">မ်က္ဝန္း လံုၿခံဳေရး သတ္မွတ္လုပ္ေဆာင္ပါ</string>
     <string name="biometrics_register_your_iris">သင့္မ်က္ဝန္းမ်ားကုိ မွတ္ပံုတင္ပါ။</string>
     <string name="biometrics_backup_locktype_summary">ကိရိယာေသာ့ဖြင့္ရန္အတြက္ သင့္မ်က္ဝန္းမ်ားအသုံးျပဳရန္ ပုံစံ၊ PIN (သို႔) စကားဝွက္တစ္ခု သတ္မွတ္ရမည္။</string>
-    <string name="biometrics_backup_locktype_message">သင့္မ်က္ဝန္းမ်ားကုိ သံုးၿပီး သင့္ဖုန္းကုိ ေသာ့ဖြင့္ရန္ သို႔မဟုတ္ လုံျခံဳေသာ စိစစ္အတည္ျပဳျခင္းအတြက္ ေအာက္ပါကုိ သင္ လုပ္ေဆာင္ရန္လုိသည္ :</string>
+    <string name="biometrics_backup_locktype_message">သင့္ဖုန္းကို ေသာ့ဖြင့္ရန္ သို႔မဟုတ္ အက္ပ္မ်ားတြင္ သင့္ကိုယ္သင္ စိစစ္အတည္ျပဳရန္အတြက္ သင့္မ်က္ဝန္းမ်ားကို အသုံးျပဳရန္ ေဖာ္ျပပါကုိ လုပ္ေဆာင္ရန္လုိပါသည္ :</string>
     <string name="iris_delete_popup_title">မ်က္ဝန္း ေဒတာကုိ ဖယ္ရွားမလား?</string>
     <string name="iris_delete_popup_message">မ်က္ဝန္း ေဒတာကုိ ဖယ္ရွားမလား?</string>
     <string name="iris_delete_popup_message_with_related_func">မ်က္ဝန္းမ်ားကို အသုံးျပဳေသာ အဂၤါရပ္မ်ားကို ပိတ္လုိက္ပါမည္။</string>
@@ -2104,6 +2121,9 @@ You will also need it when:"</string>
     <string name="biometrics_dex_cant_use_msg">Samsung DeX တြင္ %s ကို သုံး၍မရႏိုင္ပါ။</string>
     <string name="biometrics_dex_closed_to_switch">Samsung DeX သို႔ေျပာင္းရန္ %s ကိုပိတ္ထားသည္။</string>
     <string name="biometircs_dex_cant_use_toast">Samsung DeX တြင္ %s က အလုပ္မလုပ္ပါ။ ဖုန္းအေနအထားတြင္ လုပ္ေဆာင္ၾကည့္ပါ။</string>
+    <string name="iris_guide_text_preview">မ်က္ဝန္းမ်ားသုံးရန္ ဤေနရာကုိ ၾကည့္ပါ</string>
+    <string name="iris_guide_enable_toggle">မ်က္ဝန္းမ်ားသုံးရန္ ဤေနရာတြင္ ႏွိပ္ပါ</string>
+    <string name="iris_cannot_verify">မ်က္ဝန္းမ်ားကို အတည္ျပဳ၍မရပါ</string>
     <string name="knox_twofactor_bio_description">%s ကိုေသာ့ဖြင့္ရန္ လက္ေဗြႏွိပ္စနစ္ ေသာ့အမ်ိဳးအစားႏွင့္ ဒုတိယေသာ့အမ်ိဳးအစားကိုေရြးခ်ယ္ပါ။</string>
     <string name="fingerprint_registered">မွတ္ပံုတင္ထားသည့္ လက္ေဗြမ်ားကို ေရြးထားသည့္ ေသာ့ဖြင့္ နည္းျဖင့္ သံုးမည္။</string>
     <string name="knox_twofactor_description">%s ကို ေသာ့ဖြင့္ရန္ သင္၏ ဇီဝရုပ္လကၡဏာမ်ား သို႔မဟုတ္ ဒုတိယ ေသာ့ခတ္ အမ်ိဳးအစားတစ္ခုကို ေရြးခ်ယ္ပါ။</string>
@@ -2965,6 +2985,7 @@ Samsung Connect တပ္ဆင္ထားလ်ွင္၊ သင္ဖုန
     <string name="easy_mode_app_help">ပုိ၍ ႐ုိးရွင္းေသာ ပင္မဖန္သားျပင္ အခင္းအက်င္းပံုစံႏွင့္ ဖန္သားျပင္ေပၚရွိ ပုိမုိႀကီးမားေသာ အုိင္တမ္တို႔ျဖင့္ သင့္ကိရိယာကုိ ပုိ၍လြယ္ကူစြာ အသံုးျပဳပါ။</string>
     <string name="easy_mode_app_help_dream_1">သာမန္ ပင္မဖန္သားျပင္ပုံစံတစ္ခုႏွင့္ ပိုႀကီးေသာ ဖန္သားျပင္ေပၚအိုင္တမ္မ်ားကို သုံးပါ။</string>
     <string name="easy_mode_app_help_dream_2">ုပင္မ ဖန္သားျပင္တြင္ လုပ္ထားေသာ အထူးစိတ္ႀကိဳက္အရာတိုင္းကို စြန္႔ပစ္ၿပီး၊ ဖန္သားျပင္ခ်ံဳ႕ခ်ဲ႕ႏႈန္းကို အျမင့္ဆုံးသို႔ သတ္မွတ္ပါမည္။</string>
+    <string name="easy_mode_app_help_3rd_launcher">ပို၍ႀကီးေသာ ဖန္သားျပင္-ေပၚရွိ အိုင္တမ္မ်ားအတြက္ အလြယ္သုံးအေနအထားကို အသုံးခ်ပါ။ TouchWiz ပင္မကို အသုံးမျပဳလွ်င္၊ သင့္ပင္မဖန္သားျပင္ ေလးေအာက္ပုံစံ ေျပာင္းသြားမည္မဟုတ္ပါ၊ သို႔ေသာ္ ဖန္သားျပင္ဇူးမ္ကို အႀကီးပုံစံတြင္ သတ္မွတ္မည္ျဖစ္ၿပီး၊ ေဖာင့္အရြယ္ကို အလတ္သို႔ သတ္မွတ္ပါမည္။</string>
     <string name="security_warning_content">ဖန္သားျပင္ ေသာ့ဖြင့္ရန္အတြက္ စကားဝွက္၊ PIN၊ (သို႔) ေသာ့ဖြင့္မ်ဥ္းပုံစံတစ္ခု သတ္မွတ္ျခင္းျဖင့္ သင့္ကိုယ္ေရးလုံၿခံဳမႈကို ကာကြယ္ႏိုင္သည္</string>
     <string name="lock_setting_weather_desc">ရာသီဥတု သတ္မွတ္ခ်က္မ်ားကို ၾကည့္ရန္ (သို႔) ေျပာင္းရန္၊ ေအာက္ရွိ “ရာသီဥတု သတ္မွတ္ခ်က္မ်ား” ကိုႏွိပ္ပါ။</string>
     <string name="lock_setting_weather_btn">ရာသီဥတုဆက္တင္မ်ား</string>
@@ -3818,7 +3839,7 @@ Wi-Fi ကို ယခု ဖြင့္ထားသည္။"</string>
     <string name="wfd_descrpition_playsound">အသံ ဖြင့္ရန္။</string>
     <string name="wfd_is_not_supported">ဤလုပ္ေဆာင္ခ်က္ကုိ ပံ့ပုိးမေပးပါ။</string>
     <string name="usbtethering_notify_wifi_is_on_title">Wi-Fi ပိတ္မလား?</string>
-    <string name="usbtethering_notify_wifi_is_on">Wi-Fi ႏွင့္ USB အင္တာနက္မွ်သုံးနည္းကို တစ္ၿပိဳင္နက္ ဖြင့္၍မရပါ။ Wi-Fi ပိတ္ပါ။</string>
+    <string name="usbtethering_notify_wifi_is_on">Wi-Fi ႏွင့္ USB ကြန္ရက္မွ်ေဝျခင္းကို တစ္ၿပိဳင္နက္ ဖြင့္၍မရပါ။ Wi-Fi ကို ပိတ္ပါလိမ့္မည္။</string>
     <string name="disable_multi_window_dialog_text">Multi window ကုိ ပိတ္သြားမည္ျဖစ္ၿပီး ေပါ့-အပ္ ဝင္းဒုိးမ်ားတြင္ ဖြင့္ထားေသာ အက္ပ္အားလံုးကို ပိတ္ပစ္မည္။</string>
     <string name="keyguard_password_attempt_count_pin_code">%d ႀကိမ္ ႀကိဳးစားရန္ က်န္ပါေသးသည္။</string>
     <string name="keyguard_password_attempts_count_pin_code">%d ႀကိမ္ ႀကိဳးစားရန္ က်န္ပါေသးသည္။</string>
@@ -4026,6 +4047,7 @@ SMS ရရွိျခင္း"</string>
     <string name="hdmi_mode_title">HDMI အေနအထား</string>
     <string name="hdmi_mode_dex">Samsung DeX</string>
     <string name="hdmi_mode_mirroring">Screen Mirroring</string>
+    <string name="hdmi_mode_not_available_while_cover_attached">ကာဗာ တြဲသုံးေနစဥ္ %s ကို မသုံးနိုင္ပါ။</string>
     <string name="screen_timeout_for_dex">Samsung DeX အတြက္ ဖန္သားျပင္ လုပ္ေဆာင္ခ်ိန္ ကုန္သြားသည္</string>
     <string name="show_virtual_keyboard_for_dex">Samsung DeX ထဲတြင္ ဖန္သားျပင္-ေပၚ ကီးဘုတ္ကုိ ျပပါ</string>
     <string name="comma">၊</string>
@@ -4334,7 +4356,7 @@ SMS ရရွိျခင္း"</string>
     <string name="date_picker_title">ေန႔စြဲ</string>
     <string name="time_picker_title">အခ်ိန္</string>
     <string name="lock_after_timeout">အလိုအေလ်ာက္ ေသာ့ပိတ္ပါ</string>
-    <string name="lock_after_timeout_summary">အလိုအေလ်ာက္ ဖန္သားျပင္ ပိတ္သြားၿပီးေနာက္ ၎ %s ကို ေသာ့ပိတ္ပါ။</string>
+    <string name="lock_after_timeout_summary">ဖန္သားျပင္ ပိတ္သြားၿပီးေနာက္တြင္ သင့္ဖုန္း %s ကို အလုိအေလ်ာက္ ေသာ့ခတ္ပါ။</string>
     <string name="lock_after_timeout_summary_with_exception">%2$s အားျဖင့္ ေသာ့ဖြင့္ထားေသာ အခါမွလြဲ၍ အလိုအေလ်ာက္ ပိတ္သြားၿပီးေနာက္ %1$s ဖန္သားျပင္ကို ေသာ့ပိတ္ပါ။</string>
     <string name="show_owner_info_on_lockscreen_label">ေသာ့ဖန္သားျပင္ေပၚတြင္ ကိရိယာ ပိုင္ရွင္၏ အခ်က္အလက္ ျပပါ။</string>
     <string name="owner_info_settings_title">ပိုင္ဆိုင္သူ၏ အခ်က္အလက္မ်ား</string>
@@ -4471,6 +4493,8 @@ SMS ရရွိျခင္း"</string>
     <string name="wifi_empty_list_user_restricted">Wi-Fi သတ္မွတ္ခ်က္မ်ားကုိ ေျပာင္းခြင့္မရွိပါ။</string>
     <string name="wifi_setup_wps">အလိုအေလ်ာက္ ဖဲြ႔စည္းျခင္း (WPS)</string>
     <string name="wifi_show_advanced">အဆင့္ျမင့္ ေရြးခ်ယ္စရာ ျပပါ</string>
+    <string name="wifi_advanced_toggle_description_expanded">ေခါက္သိမ္းရန္ ႏွစ္ခါႏွိပ္ပါ။</string>
+    <string name="wifi_advanced_toggle_description_collapsed">ခ်ဲ႕ထုတ္ရန္ ႏွစ္ခါႏွိပ္ပါ။</string>
     <string name="wifi_wps_setup_title">WPS တပ္ဆင္ျခင္း</string>
     <string name="wifi_wps_setup_msg">WPS စတင္ေနသည္…</string>
     <string name="wifi_wps_onstart_pbc">သင့္ ေရာက္ဒါေပၚမွ Wi-Fi ကာကြယ္မႈရွိသည့္ ဆက္တပ္ခလုတ္အား ႏွိပ္ပါ။ ယင္းအား WPS ဟုေခၚႏုိင္သည္ သုိ႔မဟုတ္ ဤသေကၤတပါႏိုင္သည္:</string>
@@ -4502,6 +4526,10 @@ SMS ရရွိျခင္း"</string>
     <string name="wifi_shared">မွ်ေဝျပီး ပါၿပီ</string>
     <string name="wifi_unchanged">(မေျပာင္းပါ)</string>
     <string name="wifi_unspecified">(သတ္မွတ္ခ်က္မရွိ)</string>
+    <string name="wifi_select_cert">ဆာတီဖီကိတ္ ေရြးခ်ယ္ပါ</string>
+    <string name="wifi_do_not_provide_eap_user_cert">မေပးပါႏွင့္</string>
+    <string name="wifi_do_not_validate_eap_server">စိစစ္အတည္မျပဳပါႏွင့္</string>
+    <string name="wifi_do_not_validate_eap_server_warning">မည္သည့္ ဆာတီဖီကိတ္ကုိမွ မသတ္မွတ္ထားပါ။ သင့္ခ်ိတ္ဆက္မႈသည္ သီးသန္႔ျဖစ္မည္ မဟုတ္ပါ။</string>
     <string name="wifi_scan_always_turnon_message">တည္ေနရာ တိက်မွန္ကန္မႈကုိ တုိးျမႇင့္ရန္ႏွင့္ အျခားရည္ရြယ္ခ်က္မ်ားအတြက္ Wi-Fi ကုိ ပိတ္ထားစဥ္တြင္ပင္ Wi-Fi ကြန္ယက္မ်ားကုိ စကင္ဖတ္ ရွာေဖြရန္ %s သည္ ခြင့္ျပဳခ်က္ေတာင္းေနသည္။ ဤအရာကုိ အပလီေကးရွင္း အားလံုးအတြက္ ခြင့္ျပဳမည္လား?</string>
     <string name="wifi_scan_always_confirm_allow">ခြင့္ျပဳပါ</string>
     <string name="wifi_scan_always_confirm_deny">ျငင္းဆိုပါ</string>
@@ -4836,9 +4864,9 @@ SMS ရရွိျခင္း"</string>
     <string name="restore_default_apn_completed">APN ဆက္တင္မ်ားကို ၾကိဳတင္စီစဥ္ထားသည့္ အေနအထားသို႔ ျပန္လည္သတ္မွတ္ပါ။</string>
     <string name="reset_network_desc">ဤအရာသည္ ကြန္ယက္သတ္မွတ္ခ်က္အားလုံးကို ျပန္လည္သတ္မွတ္သြားမည္ျဖစ္သည္၊ သတ္မွတ္ရာတြင္ ပါဝင္သည္တို႔မွာ :</string>
     <string name="reset_network_button_text">သတ္မွတ္ခ်က္မ်ား ျပန္လည္သတ္မွတ္ပါ</string>
-    <string name="reset_network_final_desc">ခ်တ္ဆက္မႈ သတ္မွတ္ခ်က္အားလုံးကို ျပန္လည္သတ္မွတ္သြားမည္။ ဤလုပ္ေဆာင္ခ်က္ကို မၿပီးမျပတ္ထားရွိ၍ မရႏိုင္ပါ။</string>
+    <string name="reset_network_final_desc">ကြန္ရက္ သတ္မွတ္ခ်က္အားလံုးကုိ ျပန္လည္သတ္မွတ္ပါမည္။ ဤလုပ္ေဆာင္ခ်က္ကို ေနာက္ျပန္ဆုတ္၍ မရႏုိင္ပါ။</string>
     <string name="reset_network_final_button_text">သတ္မွတ္ခ်က္မ်ား ျပန္လည္သတ္မွတ္ပါ</string>
-    <string name="reset_network_complete_toast">ခ်ိတ္ဆက္မႈ သတ္မွတ္ခ်က္မ်ား ျပန္သတ္မွတ္ၿပီးပါၿပီ။</string>
+    <string name="reset_network_complete_toast">ကြန္ရက္သတ္မွတ္ခ်က္မ်ားကို ျပန္လည္သတ္မွတ္ထားသည္။</string>
     <string name="master_clear_title">ဖုန္းအသစ္ကဲ႔သို႔ ျပန္လည္ျပဳလုပ္ျခင္း</string>
     <string name="master_clear_accounts">လက္ရွိ ေအာက္ပါအေကာင့္မ်ားထဲသုိ႔ သင္ ဆုိင္းအင္ဝင္ထားသည္ :</string>
     <string name="master_clear_other_users_present">ဤကိရိယာေပၚမွ အျခားသုံးစြဲသူမ်ားႏွင့္ သက္ဆိုင္သည့္ ေဒတာကိုလည္း ဖ်က္သြားမည္။</string>
@@ -5940,6 +5968,7 @@ If the device has multiple users, using this shortcut on the lock screen tempora
     <string name="set_data_limit">ေဒတာ ကန္႔သတ္ခ်က္ကုိ သတ္မွတ္ပါ</string>
     <string name="data_limit">ေဒတာ အကန္႔အသတ္</string>
     <string name="data_usage_template">%1$s ကိ %2$s ၾကား၌ အသုံးျပဳထားသည္</string>
+    <string name="data_usage_template_wifi">%s ကို ၿပီးခဲ့ေသာ ရက္ေပါင္း ၃၀ အတြင္း သုံးခဲ့သည္</string>
     <string name="data_usage_other_apps">သက္ဆိုင္ေသာ အက္ပ္မ်ားကို အသုံးျပဳမႈထဲ၌ ထည့္ထားသည္</string>
     <string name="data_saver_title">ေဒတာဆာဗာ</string>
     <string name="unrestricted_data_saver">ေဒတာေခြ်တာကုိ ဖြင့္ထားစဥ္ အက္ပ္ကုိ ခြင့္ျပဳပါ</string>
@@ -5989,6 +6018,7 @@ If the device has multiple users, using this shortcut on the lock screen tempora
     <string name="vzw_bixby_mode">Bixby အေနအထား</string>
     <string name="screen_off_pocket_title">ဖန္သားျပင္ ဆက္ပိတ္ထားပါ</string>
     <string name="screen_off_pocket_summary">ကိရိယာသည္ အိတ္ကပ္ (သို႔) အိတ္တစ္လုံးအတြင္းကဲ့သို႔ ေမွာင္ေနသည့္ေနရာတြင္ရွိသည့္အခါ မေတာ္တဆ ဖန္သားျပင္ ပြင့္ေနျခင္းမွ ကာကြယ္ပါ။</string>
+    <string name="noApplications">ပိတ္ထားသည့္၊ ပိတ္ဆီးထားသည့္၊ (သို႔) ထည့္သြင္းမထားသည့္ ဤလုပ္ေဆာင္ခ်က္ႏွင့္ အက္ပ္မ်ားအားလုံး ဆက္စပ္မႈရွိသည္။</string>
     <string name="confirm_reset_shortcut_manager_throttling_title">ၾကားျဖတ္မန္ေနဂ်ာ ႏႈန္းကန္႔သတ္စနစ္ကို ျပန္လည္သတ္မွတ္ပါ</string>
     <string name="confirm_reset_shortcut_manager_throttling_message">ေရွာ့ကဒ္မန္ေနဂ်ာ ႏႈန္းကန္႔သတ္စနစ္ ေရတြက္စက္မ်ားကို ျပန္လည္သတ္မွတ္ပါမည္။</string>
 </resources>

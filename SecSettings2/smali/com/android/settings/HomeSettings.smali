@@ -360,7 +360,7 @@
 
     move-result-object v2
 
-    const v8, 0x7f0b1615
+    const v8, 0x7f0b1627
 
     invoke-virtual {v2, v8}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -690,7 +690,7 @@
 
     check-cast v10, Landroid/view/LayoutInflater;
 
-    const v1, 0x7f0400c9
+    const v1, 0x7f0400ca
 
     const/4 v2, 0x0
 
@@ -698,7 +698,7 @@
 
     move-result-object v9
 
-    const v1, 0x7f1102ba
+    const v1, 0x7f1102bc
 
     invoke-virtual {v9, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 

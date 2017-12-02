@@ -55,7 +55,7 @@
 
     move-result-object v10
 
-    const v11, 0x7f0f04cb
+    const v11, 0x7f0f04ca
 
     invoke-virtual {v10, v11}, Landroid/content/res/Resources;->getInteger(I)I
 
@@ -71,7 +71,7 @@
 
     move-result-object v10
 
-    const v11, 0x7f0f04ce
+    const v11, 0x7f0f04cd
 
     invoke-virtual {v10, v11}, Landroid/content/res/Resources;->getInteger(I)I
 
@@ -334,7 +334,7 @@
 
     iget-object v12, p0, Lcom/android/settings/datausage/WarningSettingsGraceActivity$OnSeekBarChangeListenerImp;->this$0:Lcom/android/settings/datausage/WarningSettingsGraceActivity;
 
-    const v13, 0x7f0b05b5
+    const v13, 0x7f0b05b6
 
     invoke-virtual {v12, v13}, Lcom/android/settings/datausage/WarningSettingsGraceActivity;->getString(I)Ljava/lang/String;
 

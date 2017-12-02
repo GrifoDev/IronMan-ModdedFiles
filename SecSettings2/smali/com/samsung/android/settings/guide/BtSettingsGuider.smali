@@ -443,7 +443,7 @@
 
     if-nez v1, :cond_0
 
-    const v2, 0x7f110426
+    const v2, 0x7f110428
 
     invoke-virtual {v0, v2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -495,7 +495,7 @@
 
     if-nez v5, :cond_0
 
-    const v7, 0x7f110426
+    const v7, 0x7f110428
 
     invoke-virtual {v1, v7}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -673,7 +673,7 @@
     return-void
 
     :cond_0
-    const v0, 0x7f040132
+    const v0, 0x7f040133
 
     invoke-direct {p0, p1}, Lcom/samsung/android/settings/guide/BtSettingsGuider;->setFocus(Lcom/samsung/android/settings/guide/BtSettingsGuider$GuideStates;)V
 
@@ -720,7 +720,7 @@
 
     if-eqz v2, :cond_2
 
-    const v0, 0x7f04012e
+    const v0, 0x7f04012f
 
     :goto_1
     invoke-static {}, Lcom/samsung/android/settings/guide/GuideModeHelper;->isTablet()Z
@@ -762,14 +762,14 @@
     goto :goto_0
 
     :cond_2
-    const v0, 0x7f04012d
+    const v0, 0x7f04012e
 
     goto :goto_1
 
     :pswitch_5
     const v1, 0x7f0b047e
 
-    const v0, 0x7f040132
+    const v0, 0x7f040133
 
     goto :goto_0
 
@@ -1134,7 +1134,7 @@
 
     if-eqz v3, :cond_0
 
-    const v3, 0x7f11059e
+    const v3, 0x7f1105a0
 
     invoke-virtual {v1, v3}, Landroid/app/Activity;->findViewById(I)Landroid/view/View;
 
@@ -1395,7 +1395,7 @@
 
     move-result-object v1
 
-    const v3, 0x7f110428
+    const v3, 0x7f11042a
 
     invoke-virtual {v1, v3}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -1960,7 +1960,7 @@
 
     const v4, 0x7f0b047e
 
-    const v3, 0x7f040132
+    const v3, 0x7f040133
 
     invoke-direct {p0, p1}, Lcom/samsung/android/settings/guide/BtSettingsGuider;->setFocus(Lcom/samsung/android/settings/guide/BtSettingsGuider$GuideStates;)V
 
@@ -2033,7 +2033,7 @@
 
     if-eqz v1, :cond_2
 
-    const v1, 0x7f04012e
+    const v1, 0x7f04012f
 
     invoke-direct {p0, v5, v1, p1}, Lcom/samsung/android/settings/guide/BtSettingsGuider;->showHelpDialog(IILcom/samsung/android/settings/guide/BtSettingsGuider$GuideStates;)V
 
@@ -2077,7 +2077,7 @@
     goto :goto_0
 
     :cond_2
-    const v1, 0x7f04012d
+    const v1, 0x7f04012e
 
     invoke-direct {p0, v5, v1, p1}, Lcom/samsung/android/settings/guide/BtSettingsGuider;->showHelpDialog(IILcom/samsung/android/settings/guide/BtSettingsGuider$GuideStates;)V
 

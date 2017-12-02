@@ -164,6 +164,8 @@
     <uses-permission android:name="com.samsung.permission.SIMHOTSWAP"/>
     <uses-permission android:name="com.samsung.android.unifiedwfc.VOWIFI_PROVISIONING_PERMISSION"/>
     <uses-permission android:name="com.samsung.android.fast.permission.BIND_SECURE_WIFI"/>
+    <uses-permission android:name="android.permission.GET_ACCOUNTS"/>
+    <uses-permission android:name="android.permission.ACCOUNT_MANAGER"/>
     <application android:allowBackup="false" android:defaultToDeviceProtectedStorage="true" android:directBootAware="true" android:hardwareAccelerated="@bool/hardwareAccelerated" android:icon="@mipmap/ic_launcher_settings" android:label="@string/settings_label" android:largeHeap="true" android:name="com.samsung.android.settings.SettingsApplication" android:requiredForAllUsers="true" android:supportsRtl="true" android:taskAffinity="" android:theme="@style/Theme.Settings" android:usesCleartextTraffic="true">
         <meta-data android:name="com.samsung.android.icon_container.has_icon_container" android:value="true"/>
         <meta-data android:name="settings_apk_name" android:value="SecSettings2"/>
@@ -638,7 +640,7 @@
             <meta-data android:name="com.android.settings.PRIMARY_PROFILE_CONTROLLED" android:value="true"/>
             <meta-data android:name="com.android.settings.FRAGMENT_CLASS" android:value="com.android.settings.ApnSettings"/>
         </activity>
-        <activity android:configChanges="keyboard|keyboardHidden|mcc|mnc|navigation|orientation|screenSize" android:hardwareAccelerated="@bool/hardwareAccelerated" android:label="@string/bluetooth_settings_title" android:name="com.android.settings.Settings$BluetoothSettingsActivity" android:parentActivityName="com.android.settings.Settings$ConnectionsSettingsActivity" android:permission="android.permission.BLUETOOTH_ADMIN" android:taskAffinity="com.android.settings" android:theme="@style/Theme.BluetoothSettings">
+        <activity android:configChanges="keyboard|keyboardHidden|mcc|mnc|navigation|orientation|screenSize" android:hardwareAccelerated="@bool/hardwareAccelerated" android:label="@string/bluetooth_settings_title" android:name="com.android.settings.Settings$BluetoothSettingsActivity" android:parentActivityName="com.android.settings.Settings$ConnectionsSettingsActivity" android:permission="android.permission.BLUETOOTH_ADMIN" android:theme="@style/Theme.BluetoothSettings">
             <intent-filter android:priority="1">
                 <action android:name="android.settings.BLUETOOTH_SETTINGS"/>
                 <category android:name="android.intent.category.DEFAULT"/>
@@ -680,6 +682,18 @@
             <meta-data android:name="com.android.settings.PRIMARY_PROFILE_CONTROLLED" android:value="true"/>
             <meta-data android:name="com.android.settings.TOP_LEVEL_TILE_ID" android:value="connections_settings"/>
             <meta-data android:name="com.android.settings.TOP_LEVEL_TILE_ID_VZW" android:value="bluetooth_settings"/>
+        </activity>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation|screenSize" android:exported="true" android:label="@string/bluetooth_avc_title" android:name="com.android.settings.Settings$BluetoothAVCSettingsActivity" android:taskAffinity="" android:theme="@style/Theme.Settings">
+            <intent-filter android:priority="1">
+                <action android:name="com.samsung.settings.BLUETOOTH_AVC_SETTINGS"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+            <meta-data android:name="com.android.settings.FRAGMENT_CLASS" android:value="com.samsung.android.settings.bluetooth.BluetoothAVCSettings"/>
+            <meta-data android:name="com.android.settings.PRIMARY_PROFILE_CONTROLLED" android:value="true"/>
         </activity>
         <activity android:configChanges="keyboard|keyboardHidden|orientation|screenSize" android:exported="true" android:label="@string/bluetooth_dual_play_title" android:name="com.android.settings.Settings$BluetoothDualPlaySettingsActivity" android:taskAffinity="" android:theme="@style/Theme.Settings">
             <intent-filter android:priority="1">
@@ -882,7 +896,7 @@
             <meta-data android:name="com.android.settings.TOP_LEVEL_TILE_ID" android:value="connections_settings"/>
             <meta-data android:name="com.android.settings.TOP_LEVEL_TILE_ID_VZW" android:value="wifi_settings"/>
         </activity-alias>
-        <activity android:clearTaskOnLaunch="true" android:configChanges="keyboardHidden|orientation|screenSize" android:excludeFromRecents="true" android:label="@string/wifi_p2p_select_device" android:name="com.samsung.android.settings.wifi.p2p.WifiP2pDummyPickerActivity" android:permission="android.permission.CHANGE_WIFI_STATE">
+        <activity android:clearTaskOnLaunch="true" android:configChanges="keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize" android:excludeFromRecents="true" android:label="@string/wifi_p2p_select_device" android:name="com.samsung.android.settings.wifi.p2p.WifiP2pDummyPickerActivity" android:permission="android.permission.CHANGE_WIFI_STATE">
             <intent-filter>
                 <action android:name="com.samsung.settings.WIFI_DIRECT_DEVICE_PICKER"/>
                 <category android:name="android.intent.category.DEFAULT"/>
@@ -1141,7 +1155,7 @@
             <meta-data android:name="com.android.settings.category" android:value="com.android.settings.category.device"/>
             <meta-data android:name="com.android.settings.tileid" android:value="do_not_disturb_settings"/>
             <meta-data android:name="com.android.settings.support" android:value="Quick"/>
-            <meta-data android:name="com.android.settings.icon" android:resource="@drawable/ic_setting_grid_do_not_disturb_vzw"/>
+            <meta-data android:name="com.android.settings.icon" android:resource="@drawable/ic_setting_grid_do_not_disturb"/>
             <meta-data android:name="com.android.settings.FRAGMENT_CLASS" android:value="com.samsung.android.settings.notification.ZenModeDNDSettings"/>
             <meta-data android:name="com.android.settings.PRIMARY_PROFILE_CONTROLLED" android:value="true"/>
             <meta-data android:name="com.android.settings.TOP_LEVEL_TILE_ID" android:value="notification_settings"/>
@@ -1381,6 +1395,14 @@
             </intent-filter>
             <meta-data android:name="com.android.settings.FRAGMENT_CLASS" android:value="com.samsung.android.settings.lockscreen.LockscreenMenuSettings"/>
             <meta-data android:name="com.android.settings.TOP_LEVEL_TILE_ID" android:value="security_settings"/>
+        </activity>
+        <activity android:clearTaskOnLaunch="true" android:configChanges="orientation|screenSize|showButtonBackground" android:label="@string/lock_and_security_settings_title" android:name="com.android.settings.Settings$SecuredLockSettings">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <action android:name="com.samsung.settings.SECUREDLOCK_SETTINGS"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+            <meta-data android:name="com.android.settings.FRAGMENT_CLASS" android:value="com.samsung.android.settings.lockscreen.SecuredLockSettingsMenu"/>
         </activity>
         <activity android:clearTaskOnLaunch="true" android:configChanges="orientation|screenSize|showButtonBackground" android:label="@string/manage_trust_agents" android:name="com.android.settings.Settings$SmartLockSettingsActivity">
             <intent-filter>
@@ -2750,7 +2772,7 @@
             <meta-data android:name="com.android.settings.TOP_LEVEL_TILE_ID" android:value="cloud_account_settings"/>
             <meta-data android:name="com.android.settings.TOP_LEVEL_TILE_ID_VZW" android:value="account_settings"/>
         </activity>
-        <activity android:configChanges="density|keyboard|keyboardHidden|orientation|screenLayout|screenSize|showButtonBackground|smallestScreenSize|uiMode" android:label="@string/header_add_an_account" android:name="com.android.settings.accounts.AddAccountSettings" android:parentActivityName="com.android.settings.Settings$ManageAccountsSettingsActivity" android:taskAffinity="com.android.settings" android:theme="@style/Theme.Translucent.NoTitleBar.LightStatusBar">
+        <activity android:configChanges="locale|FlipFont|density|fontScale|keyboard|keyboardHidden|layoutDirection|mcc|mnc|navigation|orientation|screenLayout|screenSize|showButtonBackground|smallestScreenSize|themeSeq|touchscreen|uiMode" android:label="@string/header_add_an_account" android:name="com.android.settings.accounts.AddAccountSettings" android:parentActivityName="com.android.settings.Settings$ManageAccountsSettingsActivity" android:taskAffinity="com.android.settings" android:theme="@style/Theme.Translucent.NoTitleBar.LightStatusBar">
             <intent-filter android:priority="1">
                 <action android:name="android.settings.ADD_ACCOUNT_SETTINGS"/>
                 <category android:name="android.intent.category.DEFAULT"/>
@@ -2761,7 +2783,7 @@
             </intent-filter>
             <meta-data android:name="com.android.settings.PRIMARY_PROFILE_CONTROLLED" android:value="true"/>
         </activity>
-        <activity android:configChanges="density|keyboard|keyboardHidden|orientation|screenLayout|screenSize|showButtonBackground|smallestScreenSize|uiMode" android:label="@string/header_add_an_account" android:name="com.android.settings.Settings$ChooseAccountActivity" android:theme="@style/Theme.ChooseAccount">
+        <activity android:configChanges="locale|FlipFont|density|fontScale|keyboard|keyboardHidden|layoutDirection|mcc|mnc|navigation|orientation|screenLayout|screenSize|showButtonBackground|smallestScreenSize|themeSeq|touchscreen|uiMode" android:label="@string/header_add_an_account" android:name="com.android.settings.Settings$ChooseAccountActivity" android:theme="@style/Theme.ChooseAccount">
             <meta-data android:name="com.android.settings.FRAGMENT_CLASS" android:value="com.android.settings.accounts.ChooseAccountActivity"/>
         </activity>
         <service android:enabled="true" android:icon="@drawable/quick_panel_icon_sync" android:label="@string/gadget_sync" android:name="com.samsung.android.settings.qstile.SecAccountTiles" android:permission="android.permission.BIND_QUICK_SETTINGS_TILE" android:process=":QuickSettingsTile">

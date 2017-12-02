@@ -102,7 +102,7 @@
     return-object v1
 
     :cond_0
-    const v1, 0x7f0402c5
+    const v1, 0x7f0402c8
 
     const/4 v2, 0x0
 
@@ -122,7 +122,7 @@
 
     iget-object v1, p0, Lcom/samsung/android/settings/face/bixbysetupwizard/FaceEnrollSetupwizardFragment;->mEnrollView:Landroid/view/View;
 
-    const v2, 0x7f1102f8
+    const v2, 0x7f1102fa
 
     invoke-virtual {v1, v2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 

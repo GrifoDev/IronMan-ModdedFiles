@@ -507,7 +507,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f0f0373
+    const v1, 0x7f0f0372
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getInteger(I)I
 
@@ -673,7 +673,7 @@
 
     invoke-super {p0, p1}, Lcom/samsung/android/settings/SecSettingsPreferenceFragment;->onCreate(Landroid/os/Bundle;)V
 
-    const v0, 0x7f080102
+    const v0, 0x7f080104
 
     invoke-virtual {p0, v0}, Lcom/samsung/android/settings/accessibility/directionlock/DirectionLockSplashActivity;->addPreferencesFromResource(I)V
 
@@ -823,7 +823,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f0b0856
+    const v1, 0x7f0b085a
 
     const/4 v2, 0x0
 
@@ -838,7 +838,7 @@
     :cond_0
     const-string/jumbo v2, "com.android.settings.ChooseLockGeneric$ChooseLockGenericFragment"
 
-    const v3, 0x7f0b145f
+    const v3, 0x7f0b1470
 
     const/16 v4, 0x7b
 
@@ -858,7 +858,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f0f0375
+    const v2, 0x7f0f0374
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getInteger(I)I
 
@@ -1031,81 +1031,147 @@
 .end method
 
 .method public toggleSettings()V
-    .locals 4
+    .locals 8
+
+    const v7, 0x10001
+
+    const/4 v3, 0x1
+
+    const/4 v4, 0x0
 
     invoke-virtual {p0}, Lcom/samsung/android/settings/accessibility/directionlock/DirectionLockSplashActivity;->getContentResolver()Landroid/content/ContentResolver;
 
-    move-result-object v1
+    move-result-object v2
 
-    const-string/jumbo v2, "universal_lock_switch_state"
+    const-string/jumbo v5, "universal_lock_switch_state"
 
-    const/4 v3, 0x0
+    invoke-static {v2, v5, v4}, Landroid/provider/Settings$Secure;->getInt(Landroid/content/ContentResolver;Ljava/lang/String;I)I
 
-    invoke-static {v1, v2, v3}, Landroid/provider/Settings$Secure;->getInt(Landroid/content/ContentResolver;Ljava/lang/String;I)I
+    move-result v2
 
-    move-result v1
+    if-ne v2, v3, :cond_1
 
-    const/4 v2, 0x1
-
-    if-ne v1, v2, :cond_0
-
-    const/4 v0, 0x1
+    const/4 v1, 0x1
 
     :goto_0
-    const-string/jumbo v1, "DirectionLockSplashActivity"
+    const-string/jumbo v2, "DirectionLockSplashActivity"
 
-    new-instance v2, Ljava/lang/StringBuilder;
+    new-instance v5, Ljava/lang/StringBuilder;
 
-    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string/jumbo v3, "switchState :"
+    const-string/jumbo v6, "switchState :"
 
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v2
+    move-result-object v5
 
-    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+    invoke-virtual {v5, v1}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
 
-    move-result-object v2
+    move-result-object v5
 
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v5}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v2
+    move-result-object v5
 
-    invoke-static {v1, v2}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {v2, v5}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    sget-object v1, Lcom/samsung/android/settings/accessibility/directionlock/DirectionLockSplashActivity;->mActionBarSwitch:Lcom/android/settings/widget/SwitchBar;
+    iget-object v2, p0, Lcom/samsung/android/settings/accessibility/directionlock/DirectionLockSplashActivity;->mDirectionLockSettingsHelper:Lcom/samsung/android/settings/accessibility/directionlock/DirectionLockSettingsHelper;
 
-    invoke-virtual {v1, v0}, Lcom/android/settings/widget/SwitchBar;->setCheckedInternal(Z)V
+    invoke-virtual {v2}, Lcom/samsung/android/settings/accessibility/directionlock/DirectionLockSettingsHelper;->getCurrentLockScreen()I
 
-    iget-object v1, p0, Lcom/samsung/android/settings/accessibility/directionlock/DirectionLockSplashActivity;->mSetVisibility:Landroid/preference/SwitchPreference;
+    move-result v0
 
-    invoke-virtual {v1, v0}, Landroid/preference/SwitchPreference;->setEnabled(Z)V
+    sget-object v2, Lcom/samsung/android/settings/accessibility/directionlock/DirectionLockSplashActivity;->mActionBarSwitch:Lcom/android/settings/widget/SwitchBar;
 
-    iget-object v1, p0, Lcom/samsung/android/settings/accessibility/directionlock/DirectionLockSplashActivity;->mSetVibration:Landroid/preference/SwitchPreference;
+    invoke-virtual {v2, v1}, Lcom/android/settings/widget/SwitchBar;->setCheckedInternal(Z)V
 
-    invoke-virtual {v1, v0}, Landroid/preference/SwitchPreference;->setEnabled(Z)V
+    iget-object v5, p0, Lcom/samsung/android/settings/accessibility/directionlock/DirectionLockSplashActivity;->mSetVisibility:Landroid/preference/SwitchPreference;
 
-    iget-object v1, p0, Lcom/samsung/android/settings/accessibility/directionlock/DirectionLockSplashActivity;->mSetVoice:Landroid/preference/SwitchPreference;
+    if-eqz v1, :cond_3
 
-    invoke-virtual {v1, v0}, Landroid/preference/SwitchPreference;->setEnabled(Z)V
+    if-ne v0, v7, :cond_2
 
-    iget-object v1, p0, Lcom/samsung/android/settings/accessibility/directionlock/DirectionLockSplashActivity;->mSetBeep:Landroid/preference/SwitchPreference;
+    move v2, v3
 
-    invoke-virtual {v1, v0}, Landroid/preference/SwitchPreference;->setEnabled(Z)V
+    :goto_1
+    invoke-virtual {v5, v2}, Landroid/preference/SwitchPreference;->setEnabled(Z)V
 
-    iget-object v1, p0, Lcom/samsung/android/settings/accessibility/directionlock/DirectionLockSplashActivity;->mSetFingerprint:Landroid/preference/SwitchPreference;
+    iget-object v5, p0, Lcom/samsung/android/settings/accessibility/directionlock/DirectionLockSplashActivity;->mSetVibration:Landroid/preference/SwitchPreference;
 
-    invoke-virtual {v1, v0}, Landroid/preference/SwitchPreference;->setEnabled(Z)V
+    if-eqz v1, :cond_5
 
-    iget-object v1, p0, Lcom/samsung/android/settings/accessibility/directionlock/DirectionLockSplashActivity;->mSetIris:Landroid/preference/SwitchPreference;
+    if-ne v0, v7, :cond_4
 
-    invoke-virtual {v1, v0}, Landroid/preference/SwitchPreference;->setEnabled(Z)V
+    move v2, v3
+
+    :goto_2
+    invoke-virtual {v5, v2}, Landroid/preference/SwitchPreference;->setEnabled(Z)V
+
+    iget-object v5, p0, Lcom/samsung/android/settings/accessibility/directionlock/DirectionLockSplashActivity;->mSetVoice:Landroid/preference/SwitchPreference;
+
+    if-eqz v1, :cond_7
+
+    if-ne v0, v7, :cond_6
+
+    move v2, v3
+
+    :goto_3
+    invoke-virtual {v5, v2}, Landroid/preference/SwitchPreference;->setEnabled(Z)V
+
+    iget-object v2, p0, Lcom/samsung/android/settings/accessibility/directionlock/DirectionLockSplashActivity;->mSetBeep:Landroid/preference/SwitchPreference;
+
+    if-eqz v1, :cond_0
+
+    if-ne v0, v7, :cond_0
+
+    move v4, v3
+
+    :cond_0
+    invoke-virtual {v2, v4}, Landroid/preference/SwitchPreference;->setEnabled(Z)V
+
+    iget-object v2, p0, Lcom/samsung/android/settings/accessibility/directionlock/DirectionLockSplashActivity;->mSetFingerprint:Landroid/preference/SwitchPreference;
+
+    invoke-virtual {v2, v1}, Landroid/preference/SwitchPreference;->setEnabled(Z)V
+
+    iget-object v2, p0, Lcom/samsung/android/settings/accessibility/directionlock/DirectionLockSplashActivity;->mSetIris:Landroid/preference/SwitchPreference;
+
+    invoke-virtual {v2, v1}, Landroid/preference/SwitchPreference;->setEnabled(Z)V
 
     return-void
 
-    :cond_0
-    const/4 v0, 0x0
+    :cond_1
+    const/4 v1, 0x0
 
     goto :goto_0
+
+    :cond_2
+    move v2, v4
+
+    goto :goto_1
+
+    :cond_3
+    move v2, v4
+
+    goto :goto_1
+
+    :cond_4
+    move v2, v4
+
+    goto :goto_2
+
+    :cond_5
+    move v2, v4
+
+    goto :goto_2
+
+    :cond_6
+    move v2, v4
+
+    goto :goto_3
+
+    :cond_7
+    move v2, v4
+
+    goto :goto_3
 .end method

@@ -64,7 +64,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f0201ee
+    const v2, 0x7f0201ec
 
     invoke-virtual {v1, v2}, Landroid/content/Context;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 
@@ -72,7 +72,7 @@
 
     invoke-virtual {v0, v1}, Lcom/android/setupwizardlib/GlifPreferenceLayout;->setIcon(Landroid/graphics/drawable/Drawable;)V
 
-    const v1, 0x7f0b1d04
+    const v1, 0x7f0b1d16
 
     invoke-virtual {v0, v1}, Lcom/android/setupwizardlib/GlifPreferenceLayout;->setHeaderText(I)V
 

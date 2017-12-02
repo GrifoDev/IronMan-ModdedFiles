@@ -170,6 +170,8 @@
     <string name="wifi_allow_scan_with_traffic_summary">اسمح بعمليات البحث عن شبكات Wi-Fi أثناء التجوال أو ارفضها تلقائيا استناداً إلى كمية البيانات المستخدمة.</string>
     <string name="select_logd_size_title">حجم المخزن المؤقت للسجلات</string>
     <string name="select_logd_size_dialog_title">تحديد الحد الأقصى لحجم كل مخزن سجلات مؤقت</string>
+    <string name="dev_logpersist_clear_warning_title">هل تريد مسح وحدة تخزين المسجّل الدائم؟</string>
+    <string name="dev_logpersist_clear_warning_message">سيتم حذف بيانات المسجّل عند إيقاف تشغيل المسجّل الدائم.</string>
     <string name="select_logpersist_title">تخزين بيانات السجل باستمرار</string>
     <string name="select_logpersist_dialog_title">تحديد مخازن السجلات المؤقتة لتخزينها باستمرار</string>
     <string name="select_usb_configuration_title">إعداد USB</string>
@@ -982,6 +984,7 @@
     <string name="bluetooth_avc_available_description">يدعم جهاز البلوتوث المتصل مزامنة مستوى صوت الوسائط وستتم مزامنة مستوى الصوت الذي قام جهاز البلوتوث بضبطه مع هاتفك.</string>
     <string name="bluetooth_enter_pin_msg">أدخل رمز PIN للإقران مع %s (جرب 0000 أو 1234).</string>
     <string name="bluetooth_pin_maximum_number_message">تم بلوغ الحد الأقصى لعدد الأحرف.</string>
+    <string name="bluetooth_frp_permission_message">يتعذر استخدام جهاز بلوتوث لهذه المكالمة.</string>
     <string name="settings_menu_done">تمت</string>
     <string name="usb_tethering_unavailable_subtext_tmo">USB not connected</string>
     <string name="usb_tethering_available_subtext_tmo">USB connected, check to tether</string>
@@ -1481,7 +1484,7 @@ Where Can I Find More Information About the 3rd Party's Policies? Separately, if
     <string name="navigationbar_pressure_sensitivity_title">الضغط بشدة على زر الشاشة الرئيسية</string>
     <string name="navigationbar_pressure_sensitivity_summary">استخدم زر الشاشة الرئيسية في حال إخفائه بالضغط بشدة أكثر من المعتاد.</string>
     <string name="navigationbar_pressure_sensitivity_level_summary">مستوى الضغط: %1$d من %2$d</string>
-    <string name="navigationbar_pressure_sensitivity_description_off">استخدم زر الشاشة الرئيسية في حال إخفائه بالضغط بشدة أكثر من المعتاد.</string>
+    <string name="navigationbar_pressure_sensitivity_description_off">يمكنك تعديل مقدار الضغط اللازم للضغط بقوة على مفتاح الشاشة الرئيسية.</string>
     <string name="navigationbar_pressure_low">أخف</string>
     <string name="navigationbar_pressure_high">أقوى</string>
     <string name="navigationbar_hide_bar">إظهار الزر وإخفائه</string>
@@ -1704,7 +1707,11 @@ Where Can I Find More Information About the 3rd Party's Policies? Separately, if
     <string name="crypt_keeper_confirm_title">تأكيد التشفير</string>
     <string name="crypt_keeper_final_desc">لا يمكن عكس تشفير الجهاز وسيتم فقد البيانات في حال تمت مقاطعة العملية. قد تستغرق عملية التشفير ساعة واحدة أو أكثر، وستتم إعادة تشغيل الجهاز عدة مرات خلال هذه العملية ولن تتمكن من استخدامه.</string>
     <string name="crypt_keeper_setup_title">جار التشفير…</string>
-    <string name="crypt_keeper_warn_wipe">تبقت لك %d من المحاولات لبدء تشغيل جهازك قبل إعادة ضبطه إلى ضبط المصنع الافتراضي. سيمحو هذا الإجراء كل البيانات، بما فيها الملفات والتطبيقات التي تم تنزيلها.</string>
+    <string name="crypt_keeper_warn_wipe">"تبقى لك %1$d من المحاولات قبل إعادة ضبط هاتفك إلى ضبط المصنع الافتراضي. سيمحو هذا كل البيانات، بما في ذلك الملفات والتطبيقات التي تم تنزيلها.
+
+في حالة إعادة ضبط هاتفك، قد تحتاج إلى إدخال معلومات %2$s (عنوان البريد الإلكتروني وكلمة المرور) المقترنة بهذا الهاتف لتتمكن من استخدامه مجدداً."</string>
+    <string name="crypt_keeper_samsung_account">Samsung account</string>
+    <string name="crypt_keeper_google_account">حساب Google</string>
     <string name="crypt_keeper_failed_title">فشل التشفير</string>
     <string name="crypt_keeper_failed_summary">يتعذر بدء تشغيل جهازك. تمت مقاطعة عملية التشفير. عليك إعادة ضبط جهازك إلى ضبط المصنع الافتراضي. سيؤدي هذا الإجراء إلى محو كل بياناتك.</string>
     <string name="crypt_keeper_data_corrupted_title">وحدة تخزين الجهاز تالفة</string>
@@ -1723,10 +1730,13 @@ Where Can I Find More Information About the 3rd Party's Policies? Separately, if
     <string name="cryptkeeper_wrong_pin">تم إدخال رقم PIN غير صحيح</string>
     <string name="cryptkeeper_wrong_direction">تم رسم اتجاه غير صحيح</string>
     <string name="checking_decryption">قيد التحقق…</string>
-    <string name="crypt_keeper_last_warn_wipe">تبقّت لك محاولة واحدة فقط لبدء تشغيل جهازك قبل إعادة ضبطه إلى ضبط المصنع الافتراضي. سيمحو هذا الإجراء كل البيانات، بما فيها الملفات والتطبيقات التي تم تنزيلها.</string>
+    <string name="crypt_keeper_last_warn_wipe">"تتبقى لديك محاولة واحدة قبل إعادة ضبط هاتفك إلى ضبط المصنع الافتراضي. سيمحو هذا كل البيانات، بما في ذلك الملفات والتطبيقات التي تم تنزيلها.
+
+إذا تمت إعادة ضبط هاتفك، فقد تحتاج إلى إدخال معلومات %s (عنوان البريد الإلكتروني وكلمة المرور) المقترنة بهذا الهاتف لتتمكن من استخدامه مرة أخرى."</string>
     <string name="crypt_keeper_failed_title_dec">فشل إلغاء التشفير.</string>
     <string name="crypt_keeper_failed_summary_dec">يتعذر إكمال فك التشفير نتيجة لمقاطعته. قم بإجراء إعادة ضبط بيانات المصنع (مسح جميع البيانات) قبل بدء الاستخدام.</string>
     <string name="crypt_keeper_set_screen_lock_type">تعيين نوع قفل الشاشة</string>
+    <string name="crypt_keeper_warning_keyboard_cover_does_not_work">لن يعمل غطاء لوحة المفاتيح بعد إعادة تشغيل الهاتف.</string>
     <string name="encryption_interstitial_message">"يمكنك توفير حماية إضافية لهذا الهاتف بطلب إدخال %s قبل بدء تشغيل الهاتف. سيساعد ذلك على حماية البيانات في حال فقدان الهاتف أو سرقته. قد تتطلب بعض التطبيقات بدء التشغيل الآمن وفقاً لسياسات تشفير الجهاز للوصول إلى الميزات، مثل مزامنة البريد الإلكتروني.
 
 لن تتلقى أي مكالمات، أو رسائل، أو إشعارات، ولن تصدر التنبيهات صوتاً حتى يتم بدء تشغيل الهاتف."</string>
@@ -1971,6 +1981,12 @@ You will also need it when:"</string>
     <string name="lockpassword_confirm_your_pin_with_fingerprint">استخدم بصمة الإصبع أو أدخِل رقم PIN الحالي.</string>
     <string name="lockpassword_confirm_your_pattern_with_fingerprint">استخدم بصمة الإصبع أو ارسم النمط الحالي.</string>
     <string name="lockpassword_confirm_your_password_with_fingerprint">استخدم بصمة الإصبع أو أدخِل كلمة المرور الحاليّة.</string>
+    <string name="lockpassword_confirm_your_pin_with_iris">استخدم بصمة العينين أو أدخِل رقم PIN الحالي.</string>
+    <string name="lockpassword_confirm_your_pattern_with_iris">استخدم بصمة العينين أو ارسم النمط الحالي.</string>
+    <string name="lockpassword_confirm_your_password_with_iris">استخدم بصمة العينين أو أدخِل كلمة المرور الحالية.</string>
+    <string name="lockpassword_confirm_your_pin_with_biometrics">استخدم المقاييس الحيوية أو أدخل رقم PIN.</string>
+    <string name="lockpassword_confirm_your_pattern_with_biometrics">استخدم المقاييس الحيوية أو ارسم النمط.</string>
+    <string name="lockpassword_confirm_your_password_with_biometrics">استخدم المقاييس الحيوية أو أدخل كلمة المرور.</string>
     <string name="lockpassword_confirm_your_pin_instead_of_fingerprint">أدخل رقم PIN بدلاً من استخدام ميزة التعرف على بصمة الإصبع.</string>
     <string name="lockpassword_confirm_your_pattern_instead_of_fingerprint">ارسم نقشك بدلاً من استخدام ميزة التعرف على بصمة الإصبع.</string>
     <string name="lockpassword_confirm_your_password_instead_of_fingerprint">أدخل كلمة مرورك بدلاً من استخدام ميزة التعرف على بصمة الإصبع.</string>
@@ -2045,6 +2061,7 @@ You will also need it when:"</string>
     <string name="face_status_timeout">انقضاء المهلة. حاول لاحقا.</string>
     <string name="okay">موافق</string>
     <string name="face_samsung_account_button">استخدام Samsung account</string>
+    <string name="face_galaxy_account_button">استخدام Galaxy account</string>
     <string name="face_error_DB_corrupted">حدثت مشكلة مع البيانات الخاصة بوجهك. قم بتسجيل وجهك مجدداً.</string>
     <string name="face_error_DB_corrupted_popup_title">قم بتسجيل وجهك مجدداً</string>
     <string name="face_error_timeout">لم يتم اكتشاف وجهك.</string>
@@ -2155,7 +2172,7 @@ You will also need it when:"</string>
     <string name="biometrics_backup_locktype_title">إعداد حماية بصمة العين</string>
     <string name="biometrics_register_your_iris">سجّل بصمة عينيك.</string>
     <string name="biometrics_backup_locktype_summary">لاستخدام بصمة عينيك لإلغاء قفل الجهاز، عليك ضبط نمط أو رقم PIN أو كلمة مرور.</string>
-    <string name="biometrics_backup_locktype_message">لاستخدام بصمة عينيك لإلغاء قفل هاتفك أو للتحقق الآمن، أنت بحاجة إلى:</string>
+    <string name="biometrics_backup_locktype_message">لاستخدام بصمة عينيك لإلغاء قفل هاتفك أو للتحقق من هويتك في التطبيقات، سيتوجّب عليك:</string>
     <string name="iris_delete_popup_title">هل تريد إزالة بيانات بصمة العين؟</string>
     <string name="iris_delete_popup_message">هل تريد إزالة بيانات بصمة العين؟</string>
     <string name="iris_delete_popup_message_with_related_func">سيتم إيقاف تشغيل الميزات التي تستخدم بصمة العينين.</string>
@@ -2231,6 +2248,9 @@ You will also need it when:"</string>
     <string name="biometrics_dex_cant_use_msg">يتعذر استخدام %s في Samsung DeX.</string>
     <string name="biometrics_dex_closed_to_switch">تم إغلاق %s للتبديل إلى Samsung DeX.</string>
     <string name="biometircs_dex_cant_use_toast">يتعذر تشغيل %s في Samsung DeX. حاول التشغيل في وضع الهاتف.</string>
+    <string name="iris_guide_text_preview">أنظر هنا لاستخدام بصمة العينين</string>
+    <string name="iris_guide_enable_toggle">انقر هنا لاستخدام بصمة العينين</string>
+    <string name="iris_cannot_verify">تعذر التحقق من بصمة العينين</string>
     <string name="knox_twofactor_bio_description">حدد نوع القفل الحيوي ونوع قفل آخر لإلغاء قفل %s.</string>
     <string name="fingerprint_registered">سيتم استخدام بصمات الأصابع المسجلة بطريقة إلغاء القفل المحددة.</string>
     <string name="knox_twofactor_description">حدد المقاييس الحيوية ونوع قفل آخر لإلغاء قفل %s.</string>
@@ -3093,6 +3113,7 @@ Mobile data will be turned off."</string>
     <string name="easy_mode_app_help">استخدم جهازك بسهولة أكبر من خلال تخطيط أبسط للشاشة الرئيسية وعناصر أكبر حجماً على الشاشة.</string>
     <string name="easy_mode_app_help_dream_1">استخدم تخطيطاً بسيطاً للشاشة الرئيسية وعناصر أكبر حجماً على الشاشة.</string>
     <string name="easy_mode_app_help_dream_2">سيتم تجاهل أي تخصيصات أجريتها على الشاشة الرئيسية، وسيتم ضبط خيار تكبير الشاشة وتصغيرها إلى الحد الأقصى.</string>
+    <string name="easy_mode_app_help_3rd_launcher">قم بتطبيق الوضع السهل للحصول على عناصر أكبر على الشاشة. إذا لم تكن تستخدم الشاشة الرئيسية لـ TouchWiz، فلن يتغيّر تخطيط الشاشة الرئيسية لديك، لكن سيتم ضبط حجم الشاشة على كبير وسيتم ضبط حجم الخط على متوسط.</string>
     <string name="security_warning_content">يمكنك حماية الخصوصية بإعداد كلمة مرور، أو رقم PIN، أو نمط لإلغاء قفل الشاشة</string>
     <string name="lock_setting_weather_desc">لتغيير ضبط الطقس أو تغييره، انقر فوق”ضبط الطقس“ أدناه.</string>
     <string name="lock_setting_weather_btn">إعدادات الطقس</string>
@@ -3339,7 +3360,7 @@ Downloading via mobile networks may result in additional charges depending on yo
     <string name="disable_hovering_title">إلغاء تفعيل العرض السريع‬</string>
     <string name="disable_hovering_summary">لا يمكن تفعيل العرض السريع‬‬ وTalkBack معا. سيتم إلغاء تفعيل ‏‫العرض السريع‬‬.</string>
     <string name="pen_settings_pen_input">إدخال مباشر بالقلم</string>
-    <string name="action_memo_onoff_screen_title">مذكرة أثناء إيقاف تشغيل الشاشة</string>
+    <string name="action_memo_onoff_screen_title">مذكرة إيقاف تشغيل الشاشة</string>
     <string name="screen_off_note_summary">اكتب ملاحظات عندما تكون الشاشة متوقفة عن التشغيل. ما عليك سوى إزالة قلم S والبدء بالكتابة.</string>
     <string name="screen_off_note_summary_jpn">يمكنك إنشاء الملاحظات من خلال فصل قلم S عندما تكون الشاشة متوقفة عن التشغيل، ومن ثم الكتابة على الشاشة. سيتم حفظ المذكرات التي تردك عندما تكون الشاشة متوقفة عن التشغيل في Galaxy Notes.</string>
     <string name="screen_off_note_summary_no_detach">أنشئ ملاحظات عن طريق الضغط على زر القلم، والنقر على الشاشة أثناء إيقاف تشغيلها، ثم الكتابة عليها. سيتم حفظ المذكرات التي تردك عندما تكون الشاشة متوقفة عن التشغيل في Samsung Notes.</string>
@@ -3946,7 +3967,7 @@ You will switch back to Wi-Fi Sharing when a Wi-Fi network becomes available."</
     <string name="wfd_descrpition_playsound">تشغيل الصوت.</string>
     <string name="wfd_is_not_supported">هذه الوظيفة غير مدعومة.</string>
     <string name="usbtethering_notify_wifi_is_on_title">هل تريد إيقاف تشغيل Wi-Fi؟</string>
-    <string name="usbtethering_notify_wifi_is_on">لا يمكن تشغيل شبكة Wi-Fi وتقييد USB في الوقت نفسه. قم بإيقاف تشغيل شبكة Wi-Fi.</string>
+    <string name="usbtethering_notify_wifi_is_on">لا يمكن تشغيل شبكة Wi-Fi وتقييد USB في الوقت نفسه. سيتم إيقاف تشغيل Wi-Fi.</string>
     <string name="disable_multi_window_dialog_text">سيتم إلغاء تفعيل الإطارات المتعددة وإغلاق كل التطبيقات المفتوحة في إطارات منبثقة.</string>
     <string name="keyguard_password_attempt_count_pin_code">محاولة متبقية %d</string>
     <string name="keyguard_password_attempts_count_pin_code">%d من المحاولات متبقية</string>
@@ -4154,6 +4175,7 @@ You will switch back to Wi-Fi Sharing when a Wi-Fi network becomes available."</
     <string name="hdmi_mode_title">وضع HDMI</string>
     <string name="hdmi_mode_dex">Samsung DeX</string>
     <string name="hdmi_mode_mirroring">Screen Mirroring</string>
+    <string name="hdmi_mode_not_available_while_cover_attached">لا تتوفر وظيفة %s عندما يكون الغلاف مرفقاً.</string>
     <string name="screen_timeout_for_dex">مهلة الشاشة لـ Samsung DeX</string>
     <string name="show_virtual_keyboard_for_dex">عرض لوحة المفاتيح التي تظهر على الشاشة في Samsung DeX</string>
     <string name="comma">،</string>
@@ -4462,7 +4484,7 @@ You will switch back to Wi-Fi Sharing when a Wi-Fi network becomes available."</
     <string name="date_picker_title">التاريخ</string>
     <string name="time_picker_title">التوقيت</string>
     <string name="lock_after_timeout">قفل تلقائي</string>
-    <string name="lock_after_timeout_summary">أقفل الشاشة %s بعد توقّف تشغيلها تلقائياً.</string>
+    <string name="lock_after_timeout_summary">أقفل الهاتف بعد %s من توقّف تشغيل الشاشة تلقائياً.</string>
     <string name="lock_after_timeout_summary_with_exception">أقفل الشاشة %1$s بعد إيقاف تشغيلها تلقائياً، باستثناء عندما يتم الإبقاء على إلغاء قفلها بواسطة %2$s.</string>
     <string name="show_owner_info_on_lockscreen_label">عرض المعلومات الخاصة بمالك الجهاز على شاشة القفل.</string>
     <string name="owner_info_settings_title">معلومات المالك</string>
@@ -4610,6 +4632,8 @@ You will switch back to Wi-Fi Sharing when a Wi-Fi network becomes available."</
     <string name="wifi_empty_list_user_restricted">لا تملك الإذن بتغيير ضبط شبكة Wi-Fi.</string>
     <string name="wifi_setup_wps">إعداد تلقائي (WPS)</string>
     <string name="wifi_show_advanced">عرض خيارات متقدمة</string>
+    <string name="wifi_advanced_toggle_description_expanded">انقر نقراً مزدوجاً للطي.</string>
+    <string name="wifi_advanced_toggle_description_collapsed">انقر نقراً مزدوجاً للتوسيع.</string>
     <string name="wifi_wps_setup_title">إعداد WPS</string>
     <string name="wifi_wps_setup_msg">جار بدء تشغيل WPS…</string>
     <string name="wifi_wps_onstart_pbc">انقر فوق زر إعداد شبكة Wi-Fi المحمية في الموجه. قد يحمل هذا الزر اسم WPS أو يحتوي على هذا الرمز:</string>
@@ -4641,6 +4665,10 @@ You will switch back to Wi-Fi Sharing when a Wi-Fi network becomes available."</
     <string name="wifi_shared">تمت مشاركته</string>
     <string name="wifi_unchanged">(بدون تغيير)</string>
     <string name="wifi_unspecified">(غير محدد)</string>
+    <string name="wifi_select_cert">تحديد شهادة</string>
+    <string name="wifi_do_not_provide_eap_user_cert">عدم التوفير</string>
+    <string name="wifi_do_not_validate_eap_server">عدم المصادقة</string>
+    <string name="wifi_do_not_validate_eap_server_warning">ما من شهادة محددة. لن يكون اتصالك خاصاً.</string>
     <string name="wifi_scan_always_turnon_message">ثمة طلب من %s للحصول على إذن من أجل المسح بحثاً عن شبكات Wi-Fi، حتى عند إيقاف تشغيل Wi-Fi، لتحسين دقة الموقع ولأغراض أخرى. هل تريد السماح بذلك لكل التطبيقات؟</string>
     <string name="wifi_scan_always_confirm_allow">سماح</string>
     <string name="wifi_scan_always_confirm_deny">رفض</string>
@@ -4975,9 +5003,9 @@ You will switch back to Wi-Fi Sharing when a Wi-Fi network becomes available."</
     <string name="restore_default_apn_completed">أعيد تعيين إعدادات APN إلى الإعدادات الافتراضية.</string>
     <string name="reset_network_desc">سيؤدي التحديث إلى إعادة ضبط كل ضبط الشبكة، بما في ذلك تلك المتعلقة بـ:</string>
     <string name="reset_network_button_text">إرجاع الضبط</string>
-    <string name="reset_network_final_desc">ستتم إعادة ضبط كل ضبط الاتصال. يتعذر التراجع عن هذا الإجراء.</string>
+    <string name="reset_network_final_desc">ستتم إعادة ضبط كل ضبط الشبكة. يتعذر التراجع عن هذا الإجراء.</string>
     <string name="reset_network_final_button_text">إرجاع الضبط</string>
-    <string name="reset_network_complete_toast">إعادة ضبط ضبط الاتصال.</string>
+    <string name="reset_network_complete_toast">إعادة الضبط لضبط الشبكة.</string>
     <string name="master_clear_title">إعادة تعيين بيانات المصنع</string>
     <string name="master_clear_accounts">لقد سجلت دخولك إلى الحسابات التالية:</string>
     <string name="master_clear_other_users_present">سيتم أيضاً محو البيانات الخاصة بمستخدمين آخرين على هذا الجهاز.</string>
@@ -6090,6 +6118,7 @@ If the device has multiple users, using this shortcut on the lock screen tempora
     <string name="set_data_limit">ضبط حد البيانات</string>
     <string name="data_limit">حد البيانات</string>
     <string name="data_usage_template">%1$s مُستخدمة ما بين %2$s</string>
+    <string name="data_usage_template_wifi">%s هي الكمية المُستخدمة خلال آخر ٣٠ يوماً</string>
     <string name="data_usage_other_apps">التطبيقات ذات الصلة المشمولة في الاستخدام</string>
     <string name="data_saver_title">موفر البيانات</string>
     <string name="unrestricted_data_saver">السماح بالتطبيق أثناء تشغيل موفر البيانات</string>
@@ -6140,6 +6169,7 @@ If the device has multiple users, using this shortcut on the lock screen tempora
     <string name="legacy_dhcp_client_summary">‏يمكنك استخدام برنامج DHCP من Lollipop بدلاً من برنامج DHCP الجديد على Android.</string>
     <string name="screen_off_pocket_title">إبقاء الشاشة متوقفة عن التشغيل</string>
     <string name="screen_off_pocket_summary">امنع تشغيل الشاشة عن طريق الخطأ عندما يكون الجهاز في مكان مظلم مثل الجيب أو الحقيبة.</string>
+    <string name="noApplications">تم إلغاء تفعيل كل التطبيقات المرتبطة بهذا الإجراء، أو حظرها، أو لم يتم تثبيتها.</string>
     <string name="confirm_reset_shortcut_manager_throttling_title">إعادة ضبط محدد معدل حركة بيانات مدير الاختصارات</string>
     <string name="confirm_reset_shortcut_manager_throttling_message">ستتم إعادة ضبط عدّادات محدد معدل حركة بيانات مدير الاختصارات.</string>
 </resources>

@@ -266,7 +266,7 @@
 
     iget-object v1, p0, Lcom/samsung/android/settings/safetycare/ReportDiagnosticinfo;->mLearnMoreImage:Landroid/widget/ImageView;
 
-    const v2, 0x7f0204af
+    const v2, 0x7f0204b1
 
     invoke-virtual {v1, v2}, Landroid/widget/ImageView;->setImageResource(I)V
 
@@ -279,7 +279,7 @@
 
     iget-object v1, p0, Lcom/samsung/android/settings/safetycare/ReportDiagnosticinfo;->mLearnMoreImage:Landroid/widget/ImageView;
 
-    const v2, 0x7f0204ae
+    const v2, 0x7f0204b0
 
     invoke-virtual {v1, v2}, Landroid/widget/ImageView;->setImageResource(I)V
 
@@ -288,7 +288,7 @@
     nop
 
     :pswitch_data_0
-    .packed-switch 0x7f1106fb
+    .packed-switch 0x7f1106fd
         :pswitch_0
     .end packed-switch
 .end method
@@ -320,7 +320,7 @@
 
     iget-object v12, v0, Lcom/samsung/android/settings/safetycare/ReportDiagnosticinfo;->mAlertParams:Lcom/android/internal/app/AlertController$AlertParams;
 
-    const v19, 0x7f0b05ea
+    const v19, 0x7f0b05eb
 
     move-object/from16 v0, p0
 
@@ -340,7 +340,7 @@
 
     move-object/from16 v19, v0
 
-    const v20, 0x7f040274
+    const v20, 0x7f040277
 
     const/16 v21, 0x0
 
@@ -356,7 +356,7 @@
 
     move-object/from16 v19, v0
 
-    const v20, 0x7f1106f9
+    const v20, 0x7f1106fb
 
     invoke-virtual/range {v19 .. v20}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -374,7 +374,7 @@
 
     move-object/from16 v19, v0
 
-    const v20, 0x7f110700
+    const v20, 0x7f110702
 
     invoke-virtual/range {v19 .. v20}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -392,7 +392,7 @@
 
     move-object/from16 v19, v0
 
-    const v20, 0x7f1106fa
+    const v20, 0x7f1106fc
 
     invoke-virtual/range {v19 .. v20}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -410,7 +410,7 @@
 
     move-object/from16 v19, v0
 
-    const v20, 0x7f1106ff
+    const v20, 0x7f110701
 
     invoke-virtual/range {v19 .. v20}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -428,7 +428,7 @@
 
     move-object/from16 v19, v0
 
-    const v20, 0x7f1106fb
+    const v20, 0x7f1106fd
 
     invoke-virtual/range {v19 .. v20}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -458,7 +458,7 @@
 
     move-object/from16 v19, v0
 
-    const v20, 0x7f1106fc
+    const v20, 0x7f1106fe
 
     invoke-virtual/range {v19 .. v20}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -474,7 +474,7 @@
 
     new-instance v6, Landroid/text/SpannableString;
 
-    const v19, 0x7f0b0513
+    const v19, 0x7f0b0514
 
     move-object/from16 v0, p0
 
@@ -524,7 +524,7 @@
 
     move-object/from16 v19, v0
 
-    const v20, 0x7f1106fd
+    const v20, 0x7f1106ff
 
     invoke-virtual/range {v19 .. v20}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -544,7 +544,7 @@
 
     move-object/from16 v19, v0
 
-    const v20, 0x7f0204ae
+    const v20, 0x7f0204b0
 
     invoke-virtual/range {v19 .. v20}, Landroid/widget/ImageView;->setImageResource(I)V
 
@@ -831,7 +831,7 @@
 
     move-object/from16 v19, v0
 
-    const v20, 0x7f0b05ec
+    const v20, 0x7f0b05ed
 
     move-object/from16 v0, p0
 
@@ -848,7 +848,7 @@
 
     move-object/from16 v19, v0
 
-    const v20, 0x7f1106fe
+    const v20, 0x7f110700
 
     invoke-virtual/range {v19 .. v20}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -1009,7 +1009,7 @@
 
     move-object/from16 v19, v0
 
-    const v20, 0x7f0b05ed
+    const v20, 0x7f0b05ee
 
     move-object/from16 v0, p0
 

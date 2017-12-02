@@ -17,7 +17,7 @@
 .method protected getContentView()I
     .locals 1
 
-    const v0, 0x7f040112
+    const v0, 0x7f040113
 
     return v0
 .end method

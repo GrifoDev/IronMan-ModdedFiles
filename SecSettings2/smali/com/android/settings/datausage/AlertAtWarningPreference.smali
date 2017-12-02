@@ -84,7 +84,7 @@
 .method private showDialog(Landroid/app/AlertDialog$Builder;)V
     .locals 2
 
-    const v0, 0x7f0b05a6
+    const v0, 0x7f0b05a7
 
     invoke-virtual {p1, v0}, Landroid/app/AlertDialog$Builder;->setTitle(I)Landroid/app/AlertDialog$Builder;
 
@@ -96,7 +96,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f0b05a8
+    const v1, 0x7f0b05a9
 
     invoke-virtual {v0, v1}, Landroid/app/AlertDialog$Builder;->setMessage(I)Landroid/app/AlertDialog$Builder;
 

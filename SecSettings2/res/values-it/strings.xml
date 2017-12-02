@@ -170,6 +170,8 @@
     <string name="wifi_allow_scan_with_traffic_summary">Consente o nega automaticamente le ricerche roaming Wi-Fi in base alla quantità di dati utilizzata.</string>
     <string name="select_logd_size_title">Dim. buffer per registro</string>
     <string name="select_logd_size_dialog_title">Seleziona dimensione massima di ciascun buffer di registro</string>
+    <string name="dev_logpersist_clear_warning_title">Cancellare memoria permanente del logger?</string>
+    <string name="dev_logpersist_clear_warning_message">Disattivando il logger permanente, i dati del logger verranno eliminati.</string>
     <string name="select_logpersist_title">Memorizza dati registro permanent.</string>
     <string name="select_logpersist_dialog_title">Selez. buffer registro da memorizz. permanent.</string>
     <string name="select_usb_configuration_title">Configurazione USB</string>
@@ -982,6 +984,7 @@ L'output audio dei 2 dispositivi connessi potrebbe essere leggermente diverso."<
     <string name="bluetooth_avc_available_description">Il dispositivo Bluetooth connesso supporta la sincronizzazione volume e il livello del volume sul dispositivo mobile verrà sincronizzato con quello impostato sul dispositivo Bluetooth.</string>
     <string name="bluetooth_enter_pin_msg">"Inserire PIN per l'associazione con %s (Provare 0000 o 1234)."</string>
     <string name="bluetooth_pin_maximum_number_message">Il numero massimo di caratteri è stato raggiunto.</string>
+    <string name="bluetooth_frp_permission_message">Impossibile utilizzare il dispositivo Bluetooth per questa chiamata.</string>
     <string name="settings_menu_done">Fatto</string>
     <string name="usb_tethering_unavailable_subtext_tmo">USB non connesso</string>
     <string name="usb_tethering_available_subtext_tmo">USB connesso, selezionate per eseguire il tethering</string>
@@ -1481,7 +1484,7 @@ Toccate OK per consentire l'aumento della luminosità oltre i livelli di sicurez
     <string name="navigationbar_pressure_sensitivity_title">Pressione prolungata pulsan. Home</string>
     <string name="navigationbar_pressure_sensitivity_summary">Utilizzate il pulsante Home quando è nascosto premendo con più forza del solito.</string>
     <string name="navigationbar_pressure_sensitivity_level_summary">Livello pressione: %1$d di %2$d</string>
-    <string name="navigationbar_pressure_sensitivity_description_off">Utilizzate il pulsante Home quando è nascosto premendo con più forza del solito.</string>
+    <string name="navigationbar_pressure_sensitivity_description_off">Regolate la pressione richiesta per la pressione prolungata del pulsante Home.</string>
     <string name="navigationbar_pressure_low">Più leggera</string>
     <string name="navigationbar_pressure_high">Più forte</string>
     <string name="navigationbar_hide_bar">Pulsante Mostra e nascondi</string>
@@ -1620,7 +1623,7 @@ Toccate OK per consentire l'aumento della luminosità oltre i livelli di sicurez
     <string name="crypt_keeper_decrypt_title">Decrittografa dispositivo</string>
     <string name="crypt_keeper_decrypt_summary">Dispositivo crittografato.</string>
     <string name="crypt_keeper_type_pin">PIN</string>
-    <string name="crypt_keeper_type_pattern">Segno</string>
+    <string name="crypt_keeper_type_pattern">segno</string>
     <string name="crypt_keeper_type_password">Password</string>
     <string name="crypt_keeper_type_direction">Blocco direzionale</string>
     <string name="crypt_keeper_confirm_title_dec">Conferma decrittografia</string>
@@ -1704,7 +1707,11 @@ Il processo di crittografia richiede un'ora o più. Prima di avviarlo, assicurat
     <string name="crypt_keeper_confirm_title">Conferma crittografia</string>
     <string name="crypt_keeper_final_desc">"L'operazione di crittografia del dispositivo è irreversibile e interromperla può causare la perdita dei dati. Il processo di crittografia può richiedere un'ora o più e causerà numerosi riavvii del dispositivo che non ne consentiranno l'utilizzo."</string>
     <string name="crypt_keeper_setup_title">Crittografia in corso…</string>
-    <string name="crypt_keeper_warn_wipe">Vi sono rimasti %d tentativi per avviare il dispositivo prima del ripristino delle impostazioni predefinite di fabbrica. Ciò comporterà la cancellazione di tutti i dati, inclusi i file e le applicazioni scaricate.</string>
+    <string name="crypt_keeper_warn_wipe">"Rimangono %1$d tentativi prima che il telefono venga ripristinato alle impostazioni predefinite. Verranno cancellati tutti i dati, inclusi i file e le applicazioni scaricate.
+
+Se il telefono viene ripristinato, potrebbe essere necessario inserire le informazioni su %2$s (indirizzo e-mail e password) associate al telefono per poterlo utilizzare nuovamente."</string>
+    <string name="crypt_keeper_samsung_account">Samsung account</string>
+    <string name="crypt_keeper_google_account">Account Google</string>
     <string name="crypt_keeper_failed_title">Crittografia non eseguita</string>
     <string name="crypt_keeper_failed_summary">Impossibile avviare il dispositivo. Il processo di crittografia è stato interrotto. Occorre ripristinare le impostazioni predefinite di fabbrica del dispositivo. Questa operazione comporterà la cancellazione di tutti i dati.</string>
     <string name="crypt_keeper_data_corrupted_title">Memoria del dispositivo danneggiata</string>
@@ -1723,10 +1730,13 @@ Il processo di crittografia richiede un'ora o più. Prima di avviarlo, assicurat
     <string name="cryptkeeper_wrong_pin">È stato inserito un PIN errato</string>
     <string name="cryptkeeper_wrong_direction">Direzione tracciata errata</string>
     <string name="checking_decryption">Verifica in corso…</string>
-    <string name="crypt_keeper_last_warn_wipe">Vi è rimasto 1 solo tentativo per avviare il dispositivo prima che venga ripristinato alle impostazioni predefinite di fabbrica. Ciò comporterà la cancellazione di tutti i dati, inclusi i file e le applicazioni scaricate.</string>
+    <string name="crypt_keeper_last_warn_wipe">"Rimane 1 tentativo prima che il telefono venga ripristinato alle impostazioni predefinite. Verranno cancellati tutti i dati, inclusi i file e le applicazioni scaricate.
+
+Se il telefono viene ripristinato, potrebbe essere necessario inserire i dati del %s (indirizzo e-mail e password) associato al telefono per poterlo utilizzare nuovamente."</string>
     <string name="crypt_keeper_failed_title_dec">Decodifica non eseguita.</string>
     <string name="crypt_keeper_failed_summary_dec">"Impossibile completare la decrittografia a causa di un'interruzione. Eseguite il ripristino dei dati di fabbrica (cancellazione di tutti i dati) prima dell'utilizzo."</string>
     <string name="crypt_keeper_set_screen_lock_type">Imposta tipo di blocco schermo</string>
+    <string name="crypt_keeper_warning_keyboard_cover_does_not_work">La cover con tastiera non funziona dopo il riavvio del telefono.</string>
     <string name="encryption_interstitial_message">"Potete proteggere ulteriormente il telefono richiedendo l'inserimento di %s prima dell'avvio del telefono. Questa funzione consente di proteggere i dati in caso di furto o smarrimento del telefono. In base ai criteri di crittografia del dispositivo, per alcune applicazioni potrebbe essere necessaria la funzione Avvio protetto per accedere a funzioni come l'e-mail e la sincronizzazione.
 
 Non riceverete chiamate, messaggi o notifiche e sveglie finché il telefono non viene avviato."</string>
@@ -1971,6 +1981,12 @@ Utilizzerete questo tipo di blocco schermo anche quando:"</string>
     <string name="lockpassword_confirm_your_pin_with_fingerprint">"Utilizzate un'impronta digitale o inserite il PIN corrente."</string>
     <string name="lockpassword_confirm_your_pattern_with_fingerprint">"Utilizzate un'impronta digitale o tracciate il segno corrente."</string>
     <string name="lockpassword_confirm_your_password_with_fingerprint">"Utilizzate un'impronta digitale o inserite la password corrente."</string>
+    <string name="lockpassword_confirm_your_pin_with_iris">Utilizzate le iridi o inserite il PIN corrente.</string>
+    <string name="lockpassword_confirm_your_pattern_with_iris">Utilizzate le iridi o tracciate il segno corrente.</string>
+    <string name="lockpassword_confirm_your_password_with_iris">Utilizzate le iridi o inserite la password corrente.</string>
+    <string name="lockpassword_confirm_your_pin_with_biometrics">Utilizzate i dati biometrici o inserite il PIN.</string>
+    <string name="lockpassword_confirm_your_pattern_with_biometrics">Utilizzate i dati biometrici o tracciate il segno.</string>
+    <string name="lockpassword_confirm_your_password_with_biometrics">Utilizzate i dati biometrici o inserite la password.</string>
     <string name="lockpassword_confirm_your_pin_instead_of_fingerprint">"Inserite il PIN invece di utilizzare il riconoscimento dell'impronta digitale."</string>
     <string name="lockpassword_confirm_your_pattern_instead_of_fingerprint">"Tracciate il segno invece di utilizzare il riconoscimento dell'impronta digitale."</string>
     <string name="lockpassword_confirm_your_password_instead_of_fingerprint">"Inserite la password invece di utilizzare il riconoscimento dell'impronta digitale."</string>
@@ -2045,6 +2061,7 @@ Selezionate la modalità di sblocco del telefono. Le funzioni Sblocco con viso e
     <string name="face_status_timeout">Timeout. Riprovare.</string>
     <string name="okay">OK</string>
     <string name="face_samsung_account_button">Usa Samsung account</string>
+    <string name="face_galaxy_account_button">Usa account Galaxy</string>
     <string name="face_error_DB_corrupted">Si è verificato un problema con i dati sul viso. Ripetete la registrazione del viso.</string>
     <string name="face_error_DB_corrupted_popup_title">Ripetete la registrazione del viso</string>
     <string name="face_error_timeout">Il viso non è stato rilevato.</string>
@@ -2155,7 +2172,7 @@ Attivate Sblocco con iride per utilizzare i dati biometrici o %s per sbloccare i
     <string name="biometrics_backup_locktype_title">Configura protezione con iride</string>
     <string name="biometrics_register_your_iris">Registrate le iridi.</string>
     <string name="biometrics_backup_locktype_summary">Per utilizzare le iridi per sbloccare il dispositivo, occorre impostare un segno, un PIN o una password.</string>
-    <string name="biometrics_backup_locktype_message">Per utilizzare le iridi per sbloccare il telefono o per la verifica sicura, dovrete effettuare queste azioni:</string>
+    <string name="biometrics_backup_locktype_message">"Per utilizzare le iridi per sbloccare il telefono o per la conferma dell'identità nelle applicazioni, sarà necessario:"</string>
     <string name="iris_delete_popup_title">"Rimuovere i dati sull'iride?"</string>
     <string name="iris_delete_popup_message">"Rimuovere i dati sull'iride?"</string>
     <string name="iris_delete_popup_message_with_related_func">Le funzioni che utilizzano le iridi verranno disattivate.</string>
@@ -2231,6 +2248,9 @@ Selezionate la modalità di sblocco del telefono. Le funzioni Sblocco con iride 
     <string name="biometrics_dex_cant_use_msg">Impossibile utilizzare %s in Samsung DeX.</string>
     <string name="biometrics_dex_closed_to_switch">%s chiusa per passare a Samsung DeX.</string>
     <string name="biometircs_dex_cant_use_toast">%s non può essere eseguita in Samsung DeX. Provate a eseguirla nella modalità Telefono.</string>
+    <string name="iris_guide_text_preview">Guardate qui per sbloccare</string>
+    <string name="iris_guide_enable_toggle">Toccate qui per usare le iridi</string>
+    <string name="iris_cannot_verify">Impossibile confermare le iridi</string>
     <string name="knox_twofactor_bio_description">Selezionate il tipo di blocco biometrico e il tipo di blocco secondario per sbloccare %s.</string>
     <string name="fingerprint_registered">Le impronte digitali registrate verranno utilizzate con il metodo di sblocco selezionato.</string>
     <string name="knox_twofactor_description">Selezionate i dati biometrici e un tipo di blocco secondario per sbloccare %s.</string>
@@ -2347,7 +2367,7 @@ La determinazione della posizione comporta un utilizzo della rete mobile. Verrà
     <string name="silent_lock_title">Viso</string>
     <string name="device_security_category">Protezione telefono</string>
     <string name="lock_and_always_category">Schermata di blocco e Always On Display</string>
-    <string name="information_and_quicktools">Informazioni e FaceWidgets</string>
+    <string name="information_and_quicktools">Informazioni e FaceWidget</string>
     <string name="information_and_quicktools_without_aod_summary">Selezionate i contenuti da mostrare sulla schermata di blocco.</string>
     <string name="information_and_quicktools_summary">Selezionate gli elementi da visualizzare su Schermata di blocco e Always On Display.</string>
     <string name="other_security_settings">Altre impostazioni di sicurezza</string>
@@ -2355,14 +2375,14 @@ La determinazione della posizione comporta un utilizzo della rete mobile. Verrà
     <string name="lockpassword_press_continue">"Toccate Continua al termine dell'operazione."</string>
     <string name="applock_lock_type">Tipo di blocco applicazione</string>
     <string name="applock_type_no_selected">Non impostato</string>
-    <string name="additional_information_title">FaceWidgets</string>
+    <string name="additional_information_title">FaceWidget</string>
     <string name="additional_information_summary">Accedete rapidamente a delle utili informazioni su Schermata di blocco e Always On Display.</string>
     <string name="additional_information_description">Accedete rapidamente a delle utili informazioni su Schermata di blocco e Always On Display, anche quando utilizzate un tipo di blocco schermo sicuro.</string>
     <string name="additional_information_aod_off_summary">Accedete rapidamente a informazioni utili sulla schermata di blocco.</string>
     <string name="additional_information_aod_off_description">Accedete rapidamente a informazioni utili sulla schermata di blocco anche quando utilizzate un tipo di blocco schermo sicuro.</string>
     <string name="common_music_controller">Music controller</string>
     <string name="today_schedule">Programma odierno</string>
-    <string name="next_alarm">Sveglia successiva</string>
+    <string name="next_alarm">Prossima sveglia</string>
     <string name="steps">Passi</string>
     <string name="face_widget_reorder">Riordina</string>
     <string name="aod_show_always">Mostra sempre</string>
@@ -2852,8 +2872,8 @@ Se avete installato Samsung Connect, potete modificare il dispositivo di uscita 
     <string name="sound_mode">Modalità audio</string>
     <string name="sound_mode_vibrate">Vibrazione</string>
     <string name="sound_mode_mute">Silenzioso</string>
-    <string name="sound_temporary_mute">Disatt. audio temporanea</string>
-    <string name="sound_temporary_mute_summary">"Impostate l'intervallo di tempo durante il quale l'audio del telefono deve rimanere disattivato prima che venga riattivata la modalità audio normale (%s)."</string>
+    <string name="sound_temporary_mute">Silenzioso a tempo</string>
+    <string name="sound_temporary_mute_summary">Impostate l’intervallo di tempo durante il quale mantenere attiva la modalità audio Silenzioso prima di riattivare la modalità audio precedente %s</string>
     <string name="sound_mute_duration">Durata audio disattivato</string>
     <string name="mute_interval_time_remaining">Silenzioso (%s rimanenti)</string>
     <string name="phone_vibration_default">Predefinito</string>
@@ -3092,6 +3112,7 @@ privata"</string>
     <string name="easy_mode_app_help">Utilizzate più facilmente il dispositivo con un layout della schermata Home più semplice ed elementi più grandi sullo schermo.</string>
     <string name="easy_mode_app_help_dream_1">Utilizza un layout della schermata Home più semplice ed elementi visualizzati sullo schermo di dimensioni maggiori.</string>
     <string name="easy_mode_app_help_dream_2">Tutte le personalizzazioni apportate alla schermata Home verranno eliminate e lo zoom dello schermo verrà impostato sul valore massimo.</string>
+    <string name="easy_mode_app_help_3rd_launcher">Applica la modalità Facile per ottenere elementi più grandi sullo schermo. Se non utilizzate la schermata iniziale TouchWiz, il layout della schermata Home non cambierà, ma il livello di zoom dello schermo sarà impostato su grande e la dimensione dei caratteri sarà impostata su media.</string>
     <string name="security_warning_content">È possibile proteggere la propria privacy impostando una password, un PIN o un segno di sblocco per sbloccare lo schermo</string>
     <string name="lock_setting_weather_desc">Per vedere o modificare le impostazioni del meteo, toccate IMPOSTAZIONI METEO di seguito.</string>
     <string name="lock_setting_weather_btn">Impostazioni meteo</string>
@@ -3945,7 +3966,7 @@ L'utilizzo del Router Wi-Fi comporta l'aumento del consumo della batteria e dell
     <string name="wfd_descrpition_playsound">"Riproduce l'audio."</string>
     <string name="wfd_is_not_supported">Questa funzione non è supportata.</string>
     <string name="usbtethering_notify_wifi_is_on_title">Disattivare il Wi-Fi?</string>
-    <string name="usbtethering_notify_wifi_is_on">Il Wi-Fi e il tethering USB non possono essere attivati contemporaneamente. Disattivate il Wi-Fi.</string>
+    <string name="usbtethering_notify_wifi_is_on">Il Wi-Fi e il tethering USB non possono essere attivati contemporaneamente. Il Wi-Fi verrà disattivato.</string>
     <string name="disable_multi_window_dialog_text">Multischermo verrà disattivato e tutte le applicazioni aperte in finestre popup verranno chiuse.</string>
     <string name="keyguard_password_attempt_count_pin_code">%d tentativo rimasto.</string>
     <string name="keyguard_password_attempts_count_pin_code">%d tentativi rimasti.</string>
@@ -4153,6 +4174,7 @@ Ricezione di SMS"</string>
     <string name="hdmi_mode_title">Modalità HDMI</string>
     <string name="hdmi_mode_dex">Samsung DeX</string>
     <string name="hdmi_mode_mirroring">Screen Mirroring</string>
+    <string name="hdmi_mode_not_available_while_cover_attached">%s non è disponibile quando la cover è collegata.</string>
     <string name="screen_timeout_for_dex">Spegnim. schermo per Samsung DeX</string>
     <string name="show_virtual_keyboard_for_dex">Mostra tastiera su schermo in Samsung DeX</string>
     <string name="comma">,</string>
@@ -4609,6 +4631,8 @@ Per migliorare la precisione della posizione, le applicazioni e i servizi potreb
     <string name="wifi_empty_list_user_restricted">"Non disponete dell'autorizzazione a modificare le impostazioni Wi-Fi."</string>
     <string name="wifi_setup_wps">Configurazione automatica (WPS)</string>
     <string name="wifi_show_advanced">Mostra opzioni avanzate</string>
+    <string name="wifi_advanced_toggle_description_expanded">Toccate due volte per comprimere.</string>
+    <string name="wifi_advanced_toggle_description_collapsed">Toccate due volte per espandere.</string>
     <string name="wifi_wps_setup_title">Configurazione WPS</string>
     <string name="wifi_wps_setup_msg">Avvio di WPS in corso…</string>
     <string name="wifi_wps_onstart_pbc">Toccate il pulsante configurazione Wi-Fi protetta sul router. Può essere denominato WPS o contenere questo simbolo:</string>
@@ -4640,6 +4664,10 @@ Per migliorare la precisione della posizione, le applicazioni e i servizi potreb
     <string name="wifi_shared">Condiviso</string>
     <string name="wifi_unchanged">(invariato)</string>
     <string name="wifi_unspecified">(Non specificato)</string>
+    <string name="wifi_select_cert">Selezionare certificato</string>
+    <string name="wifi_do_not_provide_eap_user_cert">Non fornire</string>
+    <string name="wifi_do_not_validate_eap_server">Non convalidare</string>
+    <string name="wifi_do_not_validate_eap_server_warning">Nessun certificato specificato. La connessione non sarà privata.</string>
     <string name="wifi_scan_always_turnon_message">"Per migliorare l'accuratezza della posizione e per altri scopi, %s richiede l'autorizzazione per cercare reti Wi-Fi, anche quando il Wi-Fi è disattivato. Consentire per tutte le applicazioni?"</string>
     <string name="wifi_scan_always_confirm_allow">Consenti</string>
     <string name="wifi_scan_always_confirm_deny">Rifiuta</string>
@@ -4974,9 +5002,9 @@ Prendete in considerazione l'utilizzo di una scheda SD più veloce o di un dispo
     <string name="restore_default_apn_completed">Ripristino delle impostazioni APN predefinite.</string>
     <string name="reset_network_desc">Questa operazione ripristinerà tutte le impostazioni di rete, incluse quelle relative a:</string>
     <string name="reset_network_button_text">Ripristina impostazioni</string>
-    <string name="reset_network_final_desc">"Tutte le impostazioni di connessione verranno ripristinate. L'azione è irreversibile."</string>
+    <string name="reset_network_final_desc">"Tutte le impostazioni di rete verranno ripristinate. L'azione è irreversibile."</string>
     <string name="reset_network_final_button_text">Ripristina impostazioni</string>
-    <string name="reset_network_complete_toast">Impostazioni di connessione ripristinate.</string>
+    <string name="reset_network_complete_toast">Ripristino impostazioni di rete.</string>
     <string name="master_clear_title">Ripristina dati di fabbrica</string>
     <string name="master_clear_accounts">"Attualmente è stato effettuato l'accesso ai seguenti account:"</string>
     <string name="master_clear_other_users_present">Verranno cancellati anche i dati appartenenti agli altri utenti in questo dispositivo.</string>
@@ -6089,12 +6117,13 @@ Non riceverete chiamate, messaggi o notifiche e sveglie finché il dispositivo n
     <string name="set_data_limit">Imposta limite dati</string>
     <string name="data_limit">Limite dati</string>
     <string name="data_usage_template">%1$s utilizzati tra %2$s</string>
+    <string name="data_usage_template_wifi">%s usati negli ultimi 30 giorni</string>
     <string name="data_usage_other_apps">"App correlate incluse nell'uso"</string>
     <string name="data_saver_title">Risparmio dati</string>
-    <string name="unrestricted_data_saver">Cons. app con Risp. dati attivo</string>
+    <string name="unrestricted_data_saver">Consen. app con Risp. dati att.</string>
     <string name="restrict_background_blacklisted">Funzione Limita dati in background attivata</string>
     <string name="data_saver_on">Attivata</string>
-    <string name="unrestricted_app_title">Cons. app con Risp. dati attivo</string>
+    <string name="unrestricted_app_title">Consen. app con Risp. dati att.</string>
     <string name="unrestricted_app_summary">Consente a questa applicazione di utilizzare la connessione dati senza restrizioni anche quando la funzione di risparmio dei dati è attivata.</string>
     <string name="home_app">Schermata home</string>
     <string name="no_default_home">Nessuna schermata Home predefinita</string>
@@ -6139,6 +6168,7 @@ Non riceverete chiamate, messaggi o notifiche e sveglie finché il dispositivo n
     <string name="legacy_dhcp_client_summary">Utilizza il client DHCP di Lollipop anziché il nuovo client DHCP Android.</string>
     <string name="screen_off_pocket_title">Mantieni schermo spento</string>
     <string name="screen_off_pocket_summary">"Impedisce l'accensione accidentale dello schermo quando il dispositivo si trova in posti bui come una tasca o una borsa."</string>
+    <string name="noApplications">Tutte le applicazioni associate a questa azione sono state disattivate, bloccate o non sono installate.</string>
     <string name="confirm_reset_shortcut_manager_throttling_title">Ripristina limitatore di velocità di Gestione collegamenti</string>
     <string name="confirm_reset_shortcut_manager_throttling_message">I contatori del limitatore di velocità di Gestione collegamenti verranno ripristinati.</string>
 </resources>

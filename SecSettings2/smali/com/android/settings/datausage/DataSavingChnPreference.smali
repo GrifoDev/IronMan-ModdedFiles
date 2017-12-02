@@ -97,7 +97,7 @@
 
     iput-object v0, p0, Lcom/android/settings/datausage/DataSavingChnPreference;->mSavingServiceConnection:Landroid/content/ServiceConnection;
 
-    const v0, 0x7f0b11d9
+    const v0, 0x7f0b11e8
 
     invoke-virtual {p0, v0}, Lcom/android/settings/datausage/DataSavingChnPreference;->setSummary(I)V
 
@@ -135,7 +135,7 @@
 
     move-result-object v12
 
-    const v13, 0x7f04036f
+    const v13, 0x7f040372
 
     const/4 v14, 0x0
 
@@ -143,7 +143,7 @@
 
     move-result-object v3
 
-    const v12, 0x7f110858
+    const v12, 0x7f11085a
 
     invoke-virtual {v3, v12}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -167,7 +167,7 @@
 
     move-result-object v12
 
-    const v13, 0x7f0b11d7
+    const v13, 0x7f0b11e6
 
     invoke-virtual {v12, v13}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -380,7 +380,7 @@
 
     move-result-object v13
 
-    const v14, 0x7f0b17be
+    const v14, 0x7f0b17d0
 
     invoke-virtual {v13, v14}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -396,7 +396,7 @@
 
     invoke-direct {v13, v0, v2, v7}, Lcom/android/settings/datausage/DataSavingChnPreference$5;-><init>(Lcom/android/settings/datausage/DataSavingChnPreference;Landroid/widget/CheckBox;Landroid/content/SharedPreferences$Editor;)V
 
-    const v14, 0x7f0b0516
+    const v14, 0x7f0b0517
 
     invoke-virtual {v12, v14, v13}, Landroid/app/AlertDialog$Builder;->setPositiveButton(ILandroid/content/DialogInterface$OnClickListener;)Landroid/app/AlertDialog$Builder;
 
@@ -408,7 +408,7 @@
 
     invoke-direct {v13, v0}, Lcom/android/settings/datausage/DataSavingChnPreference$6;-><init>(Lcom/android/settings/datausage/DataSavingChnPreference;)V
 
-    const v14, 0x7f0b0517
+    const v14, 0x7f0b0518
 
     invoke-virtual {v12, v14, v13}, Landroid/app/AlertDialog$Builder;->setNegativeButton(ILandroid/content/DialogInterface$OnClickListener;)Landroid/app/AlertDialog$Builder;
 

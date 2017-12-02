@@ -170,6 +170,8 @@
     <string name="wifi_allow_scan_with_traffic_summary">Ishlatilgan trafikka qarab Wi-Fi rouming qidiruvlariga avtomatik ravishda ruxsat berish yoki ularni ta’qiqlash.</string>
     <string name="select_logd_size_title">Jrnl. kirit. bufer o‘lch</string>
     <string name="select_logd_size_dialog_title">Har bir jurnal buferi uchun maksimal hajmni tanlash</string>
+    <string name="dev_logpersist_clear_warning_title">Qayd qilish qurilma xotirasi tozalansinmi?</string>
+    <string name="dev_logpersist_clear_warning_message">Qat’iy qayd qilish qurilmasi o‘chirilganda, qayd qilish qurilmasi ma’lumotlari o‘chirib tashlanadi.</string>
     <string name="select_logpersist_title">Jurnal ma’l-ni doimiy saqlash</string>
     <string name="select_logpersist_dialog_title">Doimiy saqlash u-n jrnl. buferini tanlash</string>
     <string name="select_usb_configuration_title">USB konfiguratsiyasi</string>
@@ -982,6 +984,7 @@ Buni keyinroq Bluetooth parametrlarida o‘zgartirishingiz mumkin."</string>
     <string name="bluetooth_avc_available_description">Ulangan Bluetooth qurilma Media ovozi sinxronlanishini qo‘llab-quvvatlaydi va Bluetooth qurilma tomonidan o‘rnatilgan ovoz balandligi telefoningiz bilan sinxronalanadi.</string>
     <string name="bluetooth_enter_pin_msg">%s bilan juftlash uchun PIN-kodni kiriting. (0000 yoki 1234 kiritib ko‘ring)</string>
     <string name="bluetooth_pin_maximum_number_message">Belgilar soni maksimal miqdorga yetdi.</string>
+    <string name="bluetooth_frp_permission_message">Bu qo‘ng‘iroq uchun Bluetooth qurilmadan foydalanib bo‘lmaydi.</string>
     <string name="settings_menu_done">Bajarildi</string>
     <string name="usb_tethering_unavailable_subtext_tmo">USB not connected</string>
     <string name="usb_tethering_available_subtext_tmo">USB connected, check to tether</string>
@@ -1481,7 +1484,7 @@ Yorqinlik xavfsiz darajadan yuqori bo‘lishiga ruxsat berish uchun OK’ga tegi
     <string name="navigationbar_pressure_sensitivity_title">Asosiy tugmani qattiq bosish</string>
     <string name="navigationbar_pressure_sensitivity_summary">Asosiy tugmani odatdagidan qattiqroq bosish orqali yashirilganda undan foydalaning.</string>
     <string name="navigationbar_pressure_sensitivity_level_summary">Bosim darajasi: %1$d/%2$d</string>
-    <string name="navigationbar_pressure_sensitivity_description_off">Asosiy tugmani odatdagidan qattiqroq bosish orqali yashirilganda undan foydalaning.</string>
+    <string name="navigationbar_pressure_sensitivity_description_off">Asosiy tugmani bosish uchun zarur bo‘lgan bosim miqdorini sozlang.</string>
     <string name="navigationbar_pressure_low">Yengilroq</string>
     <string name="navigationbar_pressure_high">Kuchliroq</string>
     <string name="navigationbar_hide_bar">Ko‘rsatish va yashirish tugmasi</string>
@@ -1620,7 +1623,7 @@ Yorqinlik xavfsiz darajadan yuqori bo‘lishiga ruxsat berish uchun OK’ga tegi
     <string name="crypt_keeper_decrypt_title">Qurilmani shifrdan chiqarish</string>
     <string name="crypt_keeper_decrypt_summary">Qurilma shifrlandi.</string>
     <string name="crypt_keeper_type_pin">PIN-kod</string>
-    <string name="crypt_keeper_type_pattern">Chizma</string>
+    <string name="crypt_keeper_type_pattern">namuna</string>
     <string name="crypt_keeper_type_password">Parol</string>
     <string name="crypt_keeper_type_direction">Yo‘nalish bloki</string>
     <string name="crypt_keeper_confirm_title_dec">Shifrdan chiqarishni tasdiqlash</string>
@@ -1704,7 +1707,11 @@ Shifrlash bir yoki bir necha soatni olishi mumkin. Boshlashdan oldin batareya za
     <string name="crypt_keeper_confirm_title">Shifrlashni tasdiqlash</string>
     <string name="crypt_keeper_final_desc">Qurilmangizni shifrlashni qaytarib bo‘lmaydi va agar jarayon uzilib qolsa, ma’lumotlar yo‘qotiladi. Shifrlash bir soatdan ko‘proq vaqtni olishi mumkin, bu vaqt davomida qurilmangiz bir necha marta qayta ishga tushiriladi va undan foydalana olmaysiz.</string>
     <string name="crypt_keeper_setup_title">Shifrlanmoqda…</string>
-    <string name="crypt_keeper_warn_wipe">Qurilmani ishga tushirishga yana %d marta noto‘g‘ri urinsangiz, qurilma ishlab chiqaruvchi parametrlariga tashlanadi. Bu fayllar va yuklab olingan ilovalar kabi barcha ma’lumotlarni o‘chirib yuboradi.</string>
+    <string name="crypt_keeper_warn_wipe">"Yana %1$d ta noto‘g‘ri urinishdan so‘ng telefoningiz ishlab chiqaruvchi birlamchi parametrlariga tashlanadi. Bu barcha ma’lumotlarni, jumladan, fayl va yuklab olingan ilovalarni, o‘chirib yuboradi.
+
+Telefoningiz birlamchi holatiga tashlansa, undan keyinroq yana foydalanish imkoniga ega bo‘lish uchun telefoningiz bilan bog‘langan %2$s ma’lumotlarini (e-pochta manzili va parol) kiritishingiz zarur bo‘lishi mumkin."</string>
+    <string name="crypt_keeper_samsung_account">Samsung account</string>
+    <string name="crypt_keeper_google_account">Google hisob qaydnomasi</string>
     <string name="crypt_keeper_failed_title">Shifrlash bajarilmadi</string>
     <string name="crypt_keeper_failed_summary">Qurilma ishga tushirib bo‘lmaydi. Shifrlash jarayoni uzilib qoldi. Qurilmani ishlab chiqaruvchi parametrlariga tashlashingiz lozim. Bu barcha ma’lumotlarni o‘chiradi.</string>
     <string name="crypt_keeper_data_corrupted_title">Qurilma xotirasi zararlangan</string>
@@ -1723,10 +1730,13 @@ Shifrlash bir yoki bir necha soatni olishi mumkin. Boshlashdan oldin batareya za
     <string name="cryptkeeper_wrong_pin">Noto‘g‘ri PIN-kod kiritildi</string>
     <string name="cryptkeeper_wrong_direction">Noto‘g‘ri yo‘nalish chizilgan</string>
     <string name="checking_decryption">Tekshirilmoqda…</string>
-    <string name="crypt_keeper_last_warn_wipe">Qurilmangizni qayta ishga tushirishga yana 1 ta noto‘g‘ri urinish uni ishlab chiqaruvchining birlamchi parametrlariga tashlanadi. Bu barcha fayllar va yuklab olingan ilovalarni o‘chirib yuboradi.</string>
+    <string name="crypt_keeper_last_warn_wipe">"Yana 1 ta urinishdan so‘ng telefoningiz ishlab chiqaruvchi birlamchi parametrlariga tashlanadi. Bu barcha ma’lumotlarni, jumladan, fayl va yuklab olingan ilovalarni, o‘chirib yuboradi.
+
+Telefoningiz birlamchi holatiga tashlansa, undan keyinroq yana foydalanish imkoniga ega bo‘lish uchun telefoningiz bilan bog‘langan %s ma’lumotlarini (e-pochta manzili va parol) kiritishingiz zarur bo‘lishi mumkin."</string>
     <string name="crypt_keeper_failed_title_dec">Shifrdan chiqarilmadi.</string>
     <string name="crypt_keeper_failed_summary_dec">Uzilish sababli shifrdan chiqarishni yakunlab bo‘lmadi. Foydalanishdan avval ishlab chiqaruvchi parametrlariga qaytaring (barcha ma’lumotlarni o‘chiradi).</string>
     <string name="crypt_keeper_set_screen_lock_type">Ekranni bloklash turini o‘rnat</string>
+    <string name="crypt_keeper_warning_keyboard_cover_does_not_work">Telefon qayta ishga tushirilgandan so‘ng, klaviatura muqovasi ishlamaydi.</string>
     <string name="encryption_interstitial_message">"Telefon ishga tushirilishidan oldin %s kiritilishini so‘rash orqali bu telefonni kuchliroq himoya qilishingiz mumkin. Telefon yo‘qolgan yoki o‘g‘irlangan bo‘lsa, bu ma’lumotlaringizni himoya qilishga yordam beradi. Ayrim ilovalar e-pochtani sinxronlash kabi funksiyalarga kirishdagi Qurilmani shifrlash siyosatiga ko‘ra Xavfsiz ishga tushirishni talab qilishi mumkin.
 
 Bu yo‘qolgan yoki o‘g‘irlangan qurilmadagi ma’lumotlarni himoya qilishga yordam beradi. Telefon ishga tushirilguniga qadar qo‘ng‘iroq, xabar yoki bildirishnomalarni olmaysiz hamda budilniklar chalinmaydi."</string>
@@ -1971,6 +1981,12 @@ You will also need it when:"</string>
     <string name="lockpassword_confirm_your_pin_with_fingerprint">Barmoq izidan foydalaning yoki joriy PIN-kodni chizing.</string>
     <string name="lockpassword_confirm_your_pattern_with_fingerprint">Barmoq izidan foydalaning yoki joriy chizmani chizing.</string>
     <string name="lockpassword_confirm_your_password_with_fingerprint">Barmoq izidan foydalaning yoki joriy parolni chizing.</string>
+    <string name="lockpassword_confirm_your_pin_with_iris">Ko‘z pardalaridan foydalaning yoki joriy PIN-kodni kiriting.</string>
+    <string name="lockpassword_confirm_your_pattern_with_iris">Ko‘z pardalaridan foydalaning yoki joriy chizmani chizing.</string>
+    <string name="lockpassword_confirm_your_password_with_iris">Ko‘z pardalaridan foydalaning yoki joriy parolni kiriting.</string>
+    <string name="lockpassword_confirm_your_pin_with_biometrics">Biometrik ma’lumotlardan foydalaning yoki PIN-kodni kiriting.</string>
+    <string name="lockpassword_confirm_your_pattern_with_biometrics">Biometrik ma’lumotlardan foydalaning yoki chizma chizing.</string>
+    <string name="lockpassword_confirm_your_password_with_biometrics">Biometrik ma’lumotlardan foydalaning yoki parolni kiriting.</string>
     <string name="lockpassword_confirm_your_pin_instead_of_fingerprint">Barmoq izini tanishdan foydalanish o‘rniga PIN-kodni kiriting.</string>
     <string name="lockpassword_confirm_your_pattern_instead_of_fingerprint">Barmoq izini tanishdan foydalanish o‘rniga chizma chizing.</string>
     <string name="lockpassword_confirm_your_password_instead_of_fingerprint">Barmoq izini tanishdan foydalanish o‘rniga parolni kiriting.</string>
@@ -2045,6 +2061,7 @@ Telefoningizni qaysi usulda blokdan chiqarmoqchiligingizni tanlang. Yuz va Ko‘
     <string name="face_status_timeout">Timeout. Try later.</string>
     <string name="okay">OK</string>
     <string name="face_samsung_account_button">Samsung account ishlat</string>
+    <string name="face_galaxy_account_button">Galaxy his/qayd. foydalan</string>
     <string name="face_error_DB_corrupted">Yuzingiz ma’lumotlari bilan bog‘liq muammo mavjud. Yuzingizni qayta ro‘yxatdan o‘tkazing.</string>
     <string name="face_error_DB_corrupted_popup_title">Yuzingizni qayta ro‘yxatdan o‘tkazish</string>
     <string name="face_error_timeout">Yuzingiz aniqlanmadi.</string>
@@ -2155,7 +2172,7 @@ Telefoningizni blokdan chiqarishda biometrik ma’lumotlaringizdan yoki %s’dan
     <string name="biometrics_backup_locktype_title">Ko‘z pardasi xavfsizligini sozlash</string>
     <string name="biometrics_register_your_iris">Ko‘z pardasini ro‘yxatdan o‘tkazing.</string>
     <string name="biometrics_backup_locktype_summary">Qurilmani blokdan chiqarishda ko‘z pardalaridan foydalanish uchun chizma, PIN-kod yoki parolni o‘rnatishingiz lozim.</string>
-    <string name="biometrics_backup_locktype_message">Telefoningizni blokdan chiqarish yoki xavfsiz shaxsni tasdiqlashda ko‘z pardalaridan foydalanish uchun bajarishingiz lozim:</string>
+    <string name="biometrics_backup_locktype_message">Telefoningizni blokdan chiqarish yoki ilovalarda shaxsingizni tasdiqlashda ko‘z pardalaridan barmoq izlaridan foydalanish uchun quyidagilar talab qilinadi:</string>
     <string name="iris_delete_popup_title">Ko‘z pardasi ma’l. olib tashlansinmi?</string>
     <string name="iris_delete_popup_message">Ko‘z pardasi ma’lumotlari olib tashlansinmi?</string>
     <string name="iris_delete_popup_message_with_related_func">Ko‘z pardalaridan foydalanadigan funksiyalar o‘chiriladi.</string>
@@ -2231,6 +2248,9 @@ Telefoningizni qaysi usulda blokdan chiqarmoqchiligingizni tanlang. Ko‘z parda
     <string name="biometrics_dex_cant_use_msg">Samsung DeX’da %s’dan foydalanib bo‘lmaydi.</string>
     <string name="biometrics_dex_closed_to_switch">%s Samsung DeX’ga o‘tish uchun yopildi.</string>
     <string name="biometircs_dex_cant_use_toast">%s’ni Samsung DeX’da ishga tushirib bo‘lmaydi. Telefon rejimida ishga tushirishga urinib ko‘ring.</string>
+    <string name="iris_guide_text_preview">Ko‘z. foyd. u-n qarang</string>
+    <string name="iris_guide_enable_toggle">Ko‘z prd. ishlat. u-n ekr. sur</string>
+    <string name="iris_cannot_verify">Ko‘z pardalarini tasdiqlab bo‘lmadi</string>
     <string name="knox_twofactor_bio_description">%s’ni blokdan chiqarish uchun biometrik bloklash turini va ikkinchi bloklash turini tanlang.</string>
     <string name="fingerprint_registered">Ro‘yxatga olingan barmoq izlari tanlangan blokdan chiqarish usuli bilan ishlatiladi.</string>
     <string name="knox_twofactor_description">%s’ni blokdan chiqarish uchun biometrik ma’lumotlari va ikkinchi bloklash turini tanlang.</string>
@@ -3092,6 +3112,7 @@ rejim"</string>
     <string name="easy_mode_app_help">Oddiy asosiy ekran tuzilishi va kattaroq ekran elementlari yordamida qurilmangizdan osonroq foydalaning.</string>
     <string name="easy_mode_app_help_dream_1">Oddiy Asosiy ekran tuzilishi va ekranda kattaroq elementlardan foydalaning.</string>
     <string name="easy_mode_app_help_dream_2">Asosiy ekranga kiritilgan barcha sozlashlar tashlab yuboriladi va Ekran masshtabini o‘zgartirish maksimalga qo‘yiladi.</string>
+    <string name="easy_mode_app_help_3rd_launcher">Ekrandagi elementlar kattaroq ko‘rinishi uchun Oddiy rejimni qo‘llang. TouchWiz asosiydan foydalanmayotgan bo‘lsangiz, Asosiy ekran tuzilishi o‘zgarmaydi, lekin ekran masshtabi kattaroq qilib o‘rnatiladi va shrift o‘lchami o‘rtachaga qo‘yiladi.</string>
     <string name="security_warning_content">Ekranni ochiish uchun PIN-kod yoki chizmani o‘rnatib, boshqalardan qurilmani himoya qilishingiz mumkin</string>
     <string name="lock_setting_weather_desc">Ob-havo parametrlarini ko‘rish yoki o‘zgartirish uchun quyida OB-HAVO PARAMETRLARI tugmasiga teging.</string>
     <string name="lock_setting_weather_btn">Ob-havo parametrlari</string>
@@ -3338,7 +3359,7 @@ Downloading via mobile networks may result in additional charges depending on yo
     <string name="disable_hovering_title">Muallaq rejimni o‘chirish</string>
     <string name="disable_hovering_summary">Muallaq rejim va TalkBackni yoqib bo‘lmaydi. Muallaq rejim o‘chiriladi.</string>
     <string name="pen_settings_pen_input">Bevosita pero kiritilishi</string>
-    <string name="action_memo_onoff_screen_title">Oflayn ekran yzv</string>
+    <string name="action_memo_onoff_screen_title">Ekranni o‘chirish yozuvi</string>
     <string name="screen_off_note_summary">Ekran o‘chiqligida eslatmalarni yozing. S Pen’ni chiqaring va yozishni boshlang.</string>
     <string name="screen_off_note_summary_jpn">Ekran o‘chiqligida ham S Pen bilan uning ustida qaydlar yarating. Ekran o‘chiqligida yaratilgan yozuvlar Galaxy Notes ilovasida saqlanadi.</string>
     <string name="screen_off_note_summary_no_detach">Pero tugmasini bosish, ekran o‘chiqligida unga tegish va undan so‘ng yozish orqali eslatmalar yarating. Ekranni o‘chirish yozuvlari Samsung Notes’da saqlanadi.</string>
@@ -3945,7 +3966,7 @@ Mobil Faol nuqtadan foydalanish batareya quvvati ishlatilishi va ma’lumot ishl
     <string name="wfd_descrpition_playsound">Ovoz chiqarish.</string>
     <string name="wfd_is_not_supported">Bu funksiya qo‘llab-quvvatlanmaydi.</string>
     <string name="usbtethering_notify_wifi_is_on_title">Wi-Fi o‘chirilsinmi?</string>
-    <string name="usbtethering_notify_wifi_is_on">Wi-Fi va USB-modemni bir vaqtda yoqib bo‘lmaydi. Wi-Fi funksiyasini o‘chiring.</string>
+    <string name="usbtethering_notify_wifi_is_on">Wi-Fi va USB bog‘lanishni bir vaqtda yoqib bo‘lmaydi. Wi-Fi o‘chiriladi.</string>
     <string name="disable_multi_window_dialog_text">Ko‘p oyna o‘chiriladi va barcha qalqib chiquvchi oynada ochilgan ilovalar yopiladi.</string>
     <string name="keyguard_password_attempt_count_pin_code">%d urinish qoldi.</string>
     <string name="keyguard_password_attempts_count_pin_code">%d urinish qoldi.</string>
@@ -4153,6 +4174,7 @@ SMS olish"</string>
     <string name="hdmi_mode_title">HDMI rejimi</string>
     <string name="hdmi_mode_dex">Samsung DeX</string>
     <string name="hdmi_mode_mirroring">Screen Mirroring</string>
+    <string name="hdmi_mode_not_available_while_cover_attached">Muqova biriktirilganda, %s’dan foydalanib bo‘lmaydi.</string>
     <string name="screen_timeout_for_dex">Samsung DeX ekran vaqti tugadi</string>
     <string name="show_virtual_keyboard_for_dex">Samsung DeX’da ekran klaviaturasini ko‘rsatish</string>
     <string name="comma">,</string>
@@ -4462,7 +4484,7 @@ Buni keyinroq Bluetooth parametrlarida o‘zgartirishingiz mumkin."</string>
     <string name="date_picker_title">Sana</string>
     <string name="time_picker_title">Vaqt</string>
     <string name="lock_after_timeout">Avtomatik ravishda bloklash</string>
-    <string name="lock_after_timeout_summary">Ekran %s o‘chganidan so‘ng uni avtomatik ravishda bloklash.</string>
+    <string name="lock_after_timeout_summary">Ekran avtomatik tarzda o‘chirilgandan %s keyin telefon bloklansin.</string>
     <string name="lock_after_timeout_summary_with_exception">Ekran o‘chgandan so‘ng %1$sni bloklash, %2$s tomonidan blokdan chiqarilgan bo‘lganda.</string>
     <string name="show_owner_info_on_lockscreen_label">Bloklash ekranida qurilma egasi ma’lumotini ko‘rsatish.</string>
     <string name="owner_info_settings_title">Egasi ma’lumoti</string>
@@ -4610,6 +4632,8 @@ Joylashuv aniqligini takomillashtirish uchun ilova va xizmatlar Wi-Fi o‘chiqli
     <string name="wifi_empty_list_user_restricted">Wi-Fi parametrlarini o‘zgartirish uchun ruxsatingiz yo‘q.</string>
     <string name="wifi_setup_wps">Avtomatik o‘rnatish (WPS)</string>
     <string name="wifi_show_advanced">Qo‘shimcha opsiyalar ko‘rsatilsin</string>
+    <string name="wifi_advanced_toggle_description_expanded">O‘rash uchun ikki marta teging.</string>
+    <string name="wifi_advanced_toggle_description_collapsed">Kengaytirish uchun ikki marta teging.</string>
     <string name="wifi_wps_setup_title">WPS-ni o‘rnatish</string>
     <string name="wifi_wps_setup_msg">WPS boshlanmoqda…</string>
     <string name="wifi_wps_onstart_pbc">Routeringizdagi Wi-Fi himoyalangan sozlash tugmasini bosing. U WPS deb nomlanishi yoki ushbu belgidan tashkil topishi mumkin:</string>
@@ -4641,6 +4665,10 @@ Joylashuv aniqligini takomillashtirish uchun ilova va xizmatlar Wi-Fi o‘chiqli
     <string name="wifi_shared">Umumiy</string>
     <string name="wifi_unchanged">(o‘zgartirilmagan)</string>
     <string name="wifi_unspecified">(Ko‘rsatilmagan)</string>
+    <string name="wifi_select_cert">Sertifikat tanlash</string>
+    <string name="wifi_do_not_provide_eap_user_cert">Taqdim etilmasin</string>
+    <string name="wifi_do_not_validate_eap_server">Tasdiqlanmasin</string>
+    <string name="wifi_do_not_validate_eap_server_warning">Sertifikat ko‘rsatilmadi. Ulanishingiz maxfiy bo‘lmaydi.</string>
     <string name="wifi_scan_always_turnon_message">%s joylashuv aniqligini oshirish va boshqa maqsadlarda Wi-Fi o’chiqligida ham Wi-Fi tarmoqlarni qidirish uchun ruxsat so’ramoqda. Bu barcha ilovalar uchun ruxsat berilsinmi?</string>
     <string name="wifi_scan_always_confirm_allow">Ruxsat</string>
     <string name="wifi_scan_always_confirm_deny">Rad etish</string>
@@ -4975,9 +5003,9 @@ Tezlikni oshirish uchun tezroq SD-karta yoki USB-ichki xotiradan foydalanish haq
     <string name="restore_default_apn_completed">APN parametrlari birlamchi holatiga qaytarilgan.</string>
     <string name="reset_network_desc">Bu barcha tarmoq parametrlarini birlamchi holatiga tashlaydi, jumladan:</string>
     <string name="reset_network_button_text">"Parametrlarni qayta o'rnatmoq"</string>
-    <string name="reset_network_final_desc">Barcha ulanish parametrlari tashlanadi. Ushbu amalni bekor qilib bo‘lmaydi.</string>
+    <string name="reset_network_final_desc">Barcha tarmoq parametrlari birlamchi holatiga tashlanadi. Bu amalni bekor qilib bo‘lmaydi.</string>
     <string name="reset_network_final_button_text">"Parametrlarni qayta o'rnatmoq"</string>
-    <string name="reset_network_complete_toast">Ulanish parametrlari tashlandi.</string>
+    <string name="reset_network_complete_toast">Tarmoq parametrlari tashlandi.</string>
     <string name="master_clear_title">Ishlab chiqaruvchi parametrlariga qaytish</string>
     <string name="master_clear_accounts">Siz hozirda quyidagi hisob qaydnomalariga kirgansiz:</string>
     <string name="master_clear_other_users_present">Ushbu qurilmadagi boshqa foydalanuvchilarga tegishli ma’lumotlar ham o‘chirib tashlanadi.</string>
@@ -6090,6 +6118,7 @@ Qurilma ishga tushirilguniga qadar qo‘ng‘iroq, xabar yoki bildirishnomalarni
     <string name="set_data_limit">Trafik cheklovini o‘rnatish</string>
     <string name="data_limit">Ma’lumot cheklovi</string>
     <string name="data_usage_template">%2$s oralig‘ida %1$s ishlatildi</string>
+    <string name="data_usage_template_wifi">So‘nggi 30 kun ichida %s ishlatildi</string>
     <string name="data_usage_other_apps">Ishlatilgan tegishli ilovalar</string>
     <string name="data_saver_title">Ma’lumot tejash</string>
     <string name="unrestricted_data_saver">Ma’l. tejash yoq. ilv. rxst ber</string>
@@ -6140,6 +6169,7 @@ Qurilma ishga tushirilguniga qadar qo‘ng‘iroq, xabar yoki bildirishnomalarni
     <string name="legacy_dhcp_client_summary">Yangi Android DHCP mijoz-dasturi o‘rniga Lollipop tizimi DHCP mijoz-dasturidan foydalanilsin.</string>
     <string name="screen_off_pocket_title">Ekr. o‘chiq holda saqlash</string>
     <string name="screen_off_pocket_summary">Qurilma cho‘ntak yoki sumka kabi qorong‘i joyda bo‘lganda, ekranning o‘z-o‘zidan yoqilishiga yo‘l qo‘ymang.</string>
+    <string name="noApplications">Ushbu amalga bog‘langan ilovalar o‘chirilgan, bloklangan yoki o‘rnatilmagan.</string>
     <string name="confirm_reset_shortcut_manager_throttling_title">Yorliq menejeri tezlik cheklovchisini birlamchi holatiga tashlash</string>
     <string name="confirm_reset_shortcut_manager_throttling_message">Yorliq menejeri tezlikni cheklovchi hisoblagichlari birlamchi holatiga tashlanadi.</string>
 </resources>

@@ -303,7 +303,7 @@
         }
     .end annotation
 
-    const v4, 0x7f0b1696
+    const v4, 0x7f0b16a8
 
     new-instance v2, Ljava/util/ArrayList;
 
@@ -379,7 +379,7 @@
 
     iput-object v1, v0, Landroid/provider/SearchIndexableResource;->className:Ljava/lang/String;
 
-    const v1, 0x7f080129
+    const v1, 0x7f08012b
 
     iput v1, v0, Landroid/provider/SearchIndexableResource;->xmlResId:I
 

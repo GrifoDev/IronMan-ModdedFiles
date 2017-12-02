@@ -195,7 +195,7 @@
 
     iget-object v3, p0, Lcom/android/settings/dashboard/SecSearchResultsSummary$SuggestionsAdapter;->mInflater:Landroid/view/LayoutInflater;
 
-    const v4, 0x7f0402ad
+    const v4, 0x7f0402b0
 
     const/4 v5, 0x0
 

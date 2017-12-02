@@ -779,7 +779,7 @@
 
     move-result-object v2
 
-    const v3, 0x7f11054c
+    const v3, 0x7f11054e
 
     invoke-virtual {v2, v3}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -801,7 +801,7 @@
 
     move-result-object v2
 
-    const v3, 0x7f11054a
+    const v3, 0x7f11054c
 
     invoke-virtual {v2, v3}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -823,7 +823,7 @@
 
     check-cast v0, Landroid/widget/TextView;
 
-    const v2, 0x7f0b0a2c
+    const v2, 0x7f0b0a3a
 
     invoke-virtual {v0, v2}, Landroid/widget/TextView;->setText(I)V
 
@@ -831,7 +831,7 @@
 
     move-result-object v2
 
-    const v3, 0x7f0f0413
+    const v3, 0x7f0f0412
 
     invoke-virtual {v2, v3}, Landroid/content/res/Resources;->getInteger(I)I
 
@@ -957,7 +957,7 @@
 .method public onCreateView(Landroid/view/LayoutInflater;Landroid/view/ViewGroup;Landroid/os/Bundle;)Landroid/view/View;
     .locals 2
 
-    const v0, 0x7f04018f
+    const v0, 0x7f040190
 
     const/4 v1, 0x0
 

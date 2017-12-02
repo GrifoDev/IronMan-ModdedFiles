@@ -32,14 +32,31 @@
 
 # virtual methods
 .method public onChange(Z)V
-    .locals 1
+    .locals 2
 
-    if-nez p1, :cond_0
+    iget-object v0, p0, Lcom/samsung/android/settings/display/SecDisplaySettings$6;->this$0:Lcom/samsung/android/settings/display/SecDisplaySettings;
+
+    invoke-virtual {v0}, Lcom/samsung/android/settings/display/SecDisplaySettings;->isAdded()Z
+
+    move-result v0
+
+    if-nez v0, :cond_0
+
+    const-string/jumbo v0, "Fragment"
+
+    const-string/jumbo v1, "Detached from activity, so stopping update."
+
+    invoke-static {v0, v1}, Landroid/util/secutil/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    return-void
+
+    :cond_0
+    if-nez p1, :cond_1
 
     iget-object v0, p0, Lcom/samsung/android/settings/display/SecDisplaySettings$6;->this$0:Lcom/samsung/android/settings/display/SecDisplaySettings;
 
     invoke-static {v0}, Lcom/samsung/android/settings/display/SecDisplaySettings;->-wrap13(Lcom/samsung/android/settings/display/SecDisplaySettings;)V
 
-    :cond_0
+    :cond_1
     return-void
 .end method

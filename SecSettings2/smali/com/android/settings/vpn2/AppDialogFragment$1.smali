@@ -35,7 +35,7 @@
 
 # virtual methods
 .method public onStateReceived()V
-    .locals 4
+    .locals 6
 
     iget-object v2, p0, Lcom/android/settings/vpn2/AppDialogFragment$1;->this$0:Lcom/android/settings/vpn2/AppDialogFragment;
 
@@ -64,6 +64,30 @@
     iget-object v2, p0, Lcom/android/settings/vpn2/AppDialogFragment$1;->this$0:Lcom/android/settings/vpn2/AppDialogFragment;
 
     invoke-virtual {v2, v0}, Lcom/android/settings/vpn2/AppDialogFragment;->onForget(Landroid/content/DialogInterface;)V
+
+    iget-object v2, p0, Lcom/android/settings/vpn2/AppDialogFragment$1;->this$0:Lcom/android/settings/vpn2/AppDialogFragment;
+
+    invoke-static {v2}, Lcom/android/settings/vpn2/AppDialogFragment;->-get0(Lcom/android/settings/vpn2/AppDialogFragment;)Lcom/samsung/android/settings/bixby/EmSettingsManager;
+
+    move-result-object v2
+
+    const-string/jumbo v3, "VPNName"
+
+    const-string/jumbo v4, "Exist"
+
+    const-string/jumbo v5, "yes"
+
+    invoke-virtual {v2, v3, v4, v5}, Lcom/samsung/android/settings/bixby/EmSettingsManager;->setNlgScreenParam(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
+
+    iget-object v2, p0, Lcom/android/settings/vpn2/AppDialogFragment$1;->this$0:Lcom/android/settings/vpn2/AppDialogFragment;
+
+    invoke-static {v2}, Lcom/android/settings/vpn2/AppDialogFragment;->-get0(Lcom/android/settings/vpn2/AppDialogFragment;)Lcom/samsung/android/settings/bixby/EmSettingsManager;
+
+    move-result-object v2
+
+    const-string/jumbo v3, "EditVPNnetwork"
+
+    invoke-virtual {v2, v3}, Lcom/samsung/android/settings/bixby/EmSettingsManager;->requestNlg(Ljava/lang/String;)V
 
     iget-object v2, p0, Lcom/android/settings/vpn2/AppDialogFragment$1;->this$0:Lcom/android/settings/vpn2/AppDialogFragment;
 

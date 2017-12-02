@@ -27,7 +27,7 @@
 
     invoke-super {p0, p1}, Lcom/android/settings/deviceinfo/StorageWizardBase;->onCreate(Landroid/os/Bundle;)V
 
-    const v3, 0x7f040304
+    const v3, 0x7f040307
 
     invoke-virtual {p0, v3}, Lcom/android/settings/deviceinfo/StorageWizardMigrateConfirm;->setContentView(I)V
 
@@ -88,13 +88,13 @@
 
     aput-object v2, v3, v5
 
-    const v4, 0x7f0b171b
+    const v4, 0x7f0b172d
 
     invoke-virtual {p0, v4, v3}, Lcom/android/settings/deviceinfo/StorageWizardMigrateConfirm;->setHeaderText(I[Ljava/lang/String;)V
 
     new-array v3, v5, [Ljava/lang/String;
 
-    const v4, 0x7f0b16bc
+    const v4, 0x7f0b16ce
 
     invoke-virtual {p0, v4, v3}, Lcom/android/settings/deviceinfo/StorageWizardMigrateConfirm;->setBodyText(I[Ljava/lang/String;)V
 
@@ -102,7 +102,7 @@
 
     aput-object v2, v3, v5
 
-    const v4, 0x7f0b171f
+    const v4, 0x7f0b1731
 
     invoke-virtual {p0, v4, v3}, Lcom/android/settings/deviceinfo/StorageWizardMigrateConfirm;->setSecondaryBodyText(I[Ljava/lang/String;)V
 
@@ -130,7 +130,7 @@
 
     move-result-object v3
 
-    const v4, 0x7f0b171d
+    const v4, 0x7f0b172f
 
     invoke-virtual {v3, v4}, Landroid/widget/TextView;->setText(I)V
 
@@ -183,7 +183,7 @@
     :catch_0
     move-exception v1
 
-    const v5, 0x7f0b186a
+    const v5, 0x7f0b187c
 
     invoke-virtual {p0, v5}, Lcom/android/settings/deviceinfo/StorageWizardMigrateConfirm;->getString(I)Ljava/lang/String;
 

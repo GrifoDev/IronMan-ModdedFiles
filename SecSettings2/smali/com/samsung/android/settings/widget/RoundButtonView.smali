@@ -65,7 +65,7 @@
 
     if-ne p1, v0, :cond_0
 
-    const v0, 0x7f020130
+    const v0, 0x7f02012e
 
     invoke-virtual {p0, v0}, Lcom/samsung/android/settings/widget/RoundButtonView;->setBackgroundResource(I)V
 
@@ -103,7 +103,7 @@
     return-void
 
     :cond_0
-    const v0, 0x7f020161
+    const v0, 0x7f02015f
 
     invoke-virtual {p0, v0}, Lcom/samsung/android/settings/widget/RoundButtonView;->setBackgroundResource(I)V
 
@@ -125,7 +125,7 @@
 
     check-cast v0, Landroid/graphics/drawable/RippleDrawable;
 
-    const v2, 0x7f1109f0
+    const v2, 0x7f1109f3
 
     invoke-virtual {v0, v2}, Landroid/graphics/drawable/RippleDrawable;->findDrawableByLayerId(I)Landroid/graphics/drawable/Drawable;
 

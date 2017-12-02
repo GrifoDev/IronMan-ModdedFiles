@@ -32,7 +32,7 @@
 .method public onCreateView(Landroid/view/LayoutInflater;Landroid/view/ViewGroup;Landroid/os/Bundle;)Landroid/view/View;
     .locals 24
 
-    const v3, 0x7f04016d
+    const v3, 0x7f04016e
 
     const/4 v4, 0x0
 
@@ -108,7 +108,7 @@
 
     invoke-direct {v10, v0, v3, v1}, Landroid/widget/ArrayAdapter;-><init>(Landroid/content/Context;I[Ljava/lang/Object;)V
 
-    const v3, 0x7f110504
+    const v3, 0x7f110506
 
     move-object/from16 v0, v23
 

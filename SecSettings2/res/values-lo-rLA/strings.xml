@@ -170,6 +170,8 @@
     <string name="wifi_allow_scan_with_traffic_summary">ອະນຸຍາດ ຫຼືປະຕິເສດການໂຣມມິງ Wi-Fi ສະແກນໂດຍອັດຕະໂນມັດ ຂຶ້ນຢູ່ກັບຈຳນວນຂໍ້ມູນທີ່ໃຊ້.</string>
     <string name="select_logd_size_title">ຂະ​ໜາດ​ບັບ​ເຟີ​ສໍ​ລັບ​ການ​ບັນ​ທຶກ</string>
     <string name="select_logd_size_dialog_title">ເລືອກ​ຂະ​ໜາດ​ສູງ​ສຸດ​ຂອງ​ບັບ​ເຟີ​ບັນ​ທຶກ​ແຕ່​ລະ​ອັນ</string>
+    <string name="dev_logpersist_clear_warning_title">ລຶບບ່ອນເກັບຂໍ້ມູນລັອກເກີທີ່ຍັງມີຢູ່ບໍ?</string>
+    <string name="dev_logpersist_clear_warning_message">ຂໍ້ມູນລັອກເກີຈະຖືກລຶບ ເມື່ອລັອກເກີທີ່ມີຢູ່ຖືກປິດ.</string>
     <string name="select_logpersist_title">ຈັດເກັບຂໍ້ມູນທີ່ບັນທຶກຢ່າງຕໍ່ເນື່ອງ</string>
     <string name="select_logpersist_dialog_title">ເລືອກບັບເຟີການບັນທຶກເພື່ອຈັດເກັບຂໍ້ມູນຢ່າງຕໍ່ເນື່ອງ</string>
     <string name="select_usb_configuration_title">ການກຳນົດຄ່າ USB</string>
@@ -981,6 +983,7 @@
     <string name="bluetooth_avc_available_description">ຖ້າອຸປະກອນບລູທູດທີ່ຖືກເຊື່ອມຕໍ່ຮອງຮັບການຊິງຄ໌ລະດັບສຽງມີເດຍ ແລະລະດັບສຽງທີ່ຖືກຕັ້ງໂດຍອຸປະກອນບລູທູດຈະຊິງຄ໌ກັບໂທລະສັບຂອງທ່ານ.</string>
     <string name="bluetooth_enter_pin_msg">ໃສ່ລະຫັດ PIN ເພື່ອຈັບຄູ່ກັບ %s (ລອງ 0000 ຫຼື 1234).</string>
     <string name="bluetooth_pin_maximum_number_message">ຮອດຈໍານວນຕົວອັກສອນສູງສຸດແລ້ວ.</string>
+    <string name="bluetooth_frp_permission_message">ບໍ່ສາມາດໃຊ້ອຸປະກອນບລູທູດສຳລັບການໂທນີ້.</string>
     <string name="settings_menu_done">ສຳ​ເລັດ</string>
     <string name="usb_tethering_unavailable_subtext_tmo">USB not connected</string>
     <string name="usb_tethering_available_subtext_tmo">USB connected, check to tether</string>
@@ -1480,7 +1483,7 @@ Where Can I Find More Information About the 3rd Party's Policies? Separately, if
     <string name="navigationbar_pressure_sensitivity_title">ກົດປຸ່ມໂຮມແຮງໆ</string>
     <string name="navigationbar_pressure_sensitivity_summary">ໃຊ້ປຸ່ມໂຮມ ໃນຂະນະທີ່ມັນຖືກເຊື່ອງໂດຍການກົດແຮງຂຶ້ນກວ່າປົກກະຕິ.</string>
     <string name="navigationbar_pressure_sensitivity_level_summary">ລະດັບຄວາມດັນ: %1$d ໃນ %2$d</string>
-    <string name="navigationbar_pressure_sensitivity_description_off">ໃຊ້ປຸ່ມໂຮມ ໃນຂະນະທີ່ມັນຖືກເຊື່ອງໂດຍການກົດແຮງຂຶ້ນກວ່າປົກກະຕິ.</string>
+    <string name="navigationbar_pressure_sensitivity_description_off">ປັບປ່ຽນປະລິມານຂອງຄວາມດັນຈຳເປັນຕ້ອງໄດ້ກົດທີ່ປຸ່ມໂຮມແຮງໆ.</string>
     <string name="navigationbar_pressure_low">ເບົາ​ລົງ</string>
     <string name="navigationbar_pressure_high">ແຮງຂື້ນ</string>
     <string name="navigationbar_hide_bar">ສະແດງແລະເຊື່ອງປຸ່ມ</string>
@@ -1619,7 +1622,7 @@ Where Can I Find More Information About the 3rd Party's Policies? Separately, if
     <string name="crypt_keeper_decrypt_title">ຖອດລະຫັດເຄື່ອງ</string>
     <string name="crypt_keeper_decrypt_summary">ເຄື່ອງໄດ້ເຂົ້າລະຫັດ.</string>
     <string name="crypt_keeper_type_pin">PIN</string>
-    <string name="crypt_keeper_type_pattern">ຮູບ​ແບບ</string>
+    <string name="crypt_keeper_type_pattern">ຮູບແບບ</string>
     <string name="crypt_keeper_type_password">ລະຫັດຜ່ານ</string>
     <string name="crypt_keeper_type_direction">ລັອກ​ທິດ​ທາງ</string>
     <string name="crypt_keeper_confirm_title_dec">ຢືນຢັນການຖອດລະຫັດ</string>
@@ -1703,7 +1706,11 @@ Where Can I Find More Information About the 3rd Party's Policies? Separately, if
     <string name="crypt_keeper_confirm_title">ຢືນຢັນການເຂົ້າລະຫັດ</string>
     <string name="crypt_keeper_final_desc">ການເຂົ້າລະຫັດເຄື່ອງຂອງທ່ານບໍ່ສາມາດເອົາຄືນໄດ້ ແລະຂໍ້ມູນຈະເສຍໄປ ຖ້າຂະບວນການຖືກລົບກວນ. ການເຂົ້າລະຫັດສາມາດໃຊ້ເວລາເປັນຊົ່ວໂມງ ຫຼືຫຼາຍກວ່ານັ້ນ, ຢູ່ໃນລະຫວ່າງນັ້ນ ເຄື່ອງຂອງທ່ານຈະປິດເປີດໃໝ່ຫຼາຍຄັ້ງ ແລະທ່ານຈະບໍ່ສາມາດໃຊ້ມັນໄດ້.</string>
     <string name="crypt_keeper_setup_title">ກໍາລັງເຂົ້າລະຫັດ…</string>
-    <string name="crypt_keeper_warn_wipe">ທ່ານມີຄວາມພະຍາຍາມທີ່ຈະເລີ່ມຕົ້ນອຸປະກອນຂອງທ່ານກ່ອນມັນຈະຖືກຕັ້ງຄືນໃໝ່ເປັນການຕັ້ງຄ່າມາດຕະຖານໂຮງງານເຫຼືອອີກ %d ຄັ້ງ. ອັນນີ້ຈະລຶບຂໍ້ມູນທັງໝົດ, ລວມທັງໄຟລ໌ ແລະແອັບທີ່ດາວໂຫຼດໄວ້.</string>
+    <string name="crypt_keeper_warn_wipe">"ທ່ານມີຄວາມພະຍາຍາມເຫຼືອຢູ່ %1$d ຄັ້ງ ກ່ອນໂທລະສັບຂອງທ່ານຈະຖືກຕັ້ງຄືນໃໝ່ເປັນການຕັ້ງຄ່າມາດຕະຖານໂຮງງານຂອງມັນ. ອັນນີ້ຈະລຶບຂໍ້ມູນທັງໝົດ, ລວມທັງໄຟລ໌ ແລະ ແອັບທີ່ດາວໂຫຼດໄວ້.
+
+ຖ້າໂທລະສັບຂອງທ່ານຖືກຕັ້ງຄືນໃໝ່, ທ່ານອາດຈະຈຳເປັນຕ້ອງປ້ອນຂໍ້ມູນ %2$s (ທີ່ຢູ່ອີເມລ໌ ແລະ ລະຫັດຜ່ານ) ທີ່ກ່ຽວຂ້ອງກັບໂທລະສັບນີ້ເຂົ້າ ເພື່ອສາມາດໃຊ້ມັນອີກຄັ້ງ."</string>
+    <string name="crypt_keeper_samsung_account">Samsung account</string>
+    <string name="crypt_keeper_google_account">ບັນຊີ ກຸກເກິລ</string>
     <string name="crypt_keeper_failed_title">ການເຂົ້າລະຫັດບໍ່ສໍາເລັດ</string>
     <string name="crypt_keeper_failed_summary">ບໍ່ສາມາດເລີ່ມຕົ້ນອຸປະກອນຂອງທ່ານໄດ້. ຂັ້ນຕອນການໃສ່ລະຫັດຖືກລົບກວນ. ທ່ານຈຳເປັນຕ້ອງຕັ້ງອຸປະກອນຂອງທ່ານຄືນໃໝ່ເປັນການຕັ້ງຄ່າມາດຕະຖານໂຮງງານ. ອັນນີ້ຈະລຶບຂໍ້ມູນຂອງທ່ານທັງໝົດ.</string>
     <string name="crypt_keeper_data_corrupted_title">ບ່ອນເກັບຂໍ້ມູນອຸປະກອນເສຍຫາຍ</string>
@@ -1722,10 +1729,13 @@ Where Can I Find More Information About the 3rd Party's Policies? Separately, if
     <string name="cryptkeeper_wrong_pin">ປ້ອນ PIN ບໍ່ຖືກຕ້ອງເຂົ້າໄປ</string>
     <string name="cryptkeeper_wrong_direction">ແຕ້ມ​ທິດ​ທາງບໍ່​ຖືກ​ຕ້ອງ​ແລ້ວ</string>
     <string name="checking_decryption">ກໍາລັງພິສູດຄວາມຖືກຕ້ອງ…</string>
-    <string name="crypt_keeper_last_warn_wipe">ທ່ານມີຄວາມພະຍາຍາມເຫຼືອຢູ່ 1 ຄັ້ງເພື່ອເລີ່ມຕົ້ນອຸປະກອນຂອງທ່ານ ກ່ອນມັນຈະຖືກຕັ້ງຄືນໃໝ່ເປັນການຕັ້ງຄ່າມາດຕະຖານໂຮງງານຂອງມັນ. ອັນນີ້ຈະລຶບຂໍ້ມູນທັງໝົດ, ລວມທັງໄຟລ໌ ແລະແອັບທີ່ດາວໂຫຼດໄວ້.</string>
+    <string name="crypt_keeper_last_warn_wipe">"ທ່ານມີຄວາມພະຍາຍາມເຫຼືອຢູ່ 1 ຄັ້ງ ກ່ອນໂທລະສັບຂອງທ່ານຈະຖືກຕັ້ງຄືນໃໝ່ເປັນການຕັ້ງຄ່າມາດຕະຖານໂຮງງານຂອງມັນ. ອັນນີ້ຈະລຶບຂໍ້ມູນທັງໝົດ, ລວມທັງໄຟລ໌ ແລະ ແອັບທີ່ດາວໂຫຼດໄວ້.
+
+ຖ້າໂທລະສັບຂອງທ່ານຖືກຕັ້ງຄືນໃໝ່, ທ່ານອາດຈະຈຳເປັນຕ້ອງປ້ອນຂໍ້ມູນ %s (ທີ່ຢູ່ອີເມລ໌ ແລະ ລະຫັດຜ່ານ) ທີ່ກ່ຽວຂ້ອງກັບໂທລະສັບນີ້ເຂົ້າ ເພື່ອໃຫ້ສາມາດໃຊ້ມັນອີກຄັ້ງ."</string>
     <string name="crypt_keeper_failed_title_dec">ການຖອດລະຫັດບໍ່ສໍາເລັດ.</string>
     <string name="crypt_keeper_failed_summary_dec">ບໍ່ສາມາດຖອດລະຫັດໄດ້ສໍາເລັດ ເພາະວ່າມີການຂັດຂ້ອງ. ດໍາເນີນການຕັ້ງຄ່າຂໍ້ມູນໂຮງງານຄືນໃໝ່ (ລຶບທຸກຂໍ້ມູນ) ກ່ອນນໍາໃຊ້.</string>
     <string name="crypt_keeper_set_screen_lock_type">ຕັ້ງປະເພດລັອກໜ້າຈໍ</string>
+    <string name="crypt_keeper_warning_keyboard_cover_does_not_work">ຝາປິດຄີບອດຈະໃຊ້ບໍ່ໄດ້ ຫຼັງຈາກໂທລະສັບປິດເປີດຄືນໃໝ່.</string>
     <string name="encryption_interstitial_message">"ທ່ານສາມາດປ້ອງກັນໂທລະສັບຂອງທ່ານຕື່ມອີກໂດຍຕ້ອງມີການປ້ອນ %s ຂອງທ່ານເຂົ້າກ່ອນເລີ່ມຕົ້ນໂທລະສັບ. ສິ່ງ​ນີ້​ຈະຊ່ວຍປ້ອງກັນ​ຂໍ້​ມູນ​ຂອງ​ທ່ານ ຖ້າ​ໂທລະສັບ​ເສຍ ຫຼື​ ຖືກ​ລັກ. ບາງແອັບອາດຈະຕ້ອງການການເລີ່ມຕົ້ນຂຶ້ນທີ່ປອດໄພຕາມນະໂຍບາຍການໃສ່ລະຫັດອຸປະກອນເພື່ອເຂົ້າໃຊ້ຄຸນສົມບັດ, ເຊັ່ນ ການຊິງຄ໌ອີເມລ໌.
 
 ທ່ານຈະບໍ່ໄດ້ຮັບສາຍໂທ, ຂໍ້ຄວາມ, ຫຼື ການແຈ້ງເຕືອນໃດໜຶ່ງ, ແລະໂມງປຸກຈະບໍ່ດັງຂຶ້ນ, ຈົນກວ່າໂທລະສັບໄດ້ເລີ່ມຕົ້ນຂຶ້ນແລ້ວ."</string>
@@ -1969,6 +1979,12 @@ You will also need it when:"</string>
     <string name="lockpassword_confirm_your_pin_with_fingerprint">ໃຊ້ລາຍນິ້ວມື ຫຼືປ້ອນ PIN ປະຈຸບັນເຂົ້າ.</string>
     <string name="lockpassword_confirm_your_pattern_with_fingerprint">ໃຊ້ລາຍນິ້ວມື ຫຼືແຕ້ມຮູບແບບປະຈຸບັນ.</string>
     <string name="lockpassword_confirm_your_password_with_fingerprint">ໃຊ້ລາຍນິ້ວມື ຫຼືປ້ອນລະຫັດຜ່ານປະຈຸບັນເຂົ້າ.</string>
+    <string name="lockpassword_confirm_your_pin_with_iris">ໃຊ້ມ່ານຕາຂອງທ່ານ ຫຼື ປ້ອນ PIN ປະຈຸບັນຂອງທ່ານເຂົ້າ.</string>
+    <string name="lockpassword_confirm_your_pattern_with_iris">ໃຊ້ມ່ານຕາຂອງທ່ານ ຫຼື ແຕ້ມຮູບແບບປະຈຸບັນຂອງທ່ານເຂົ້າ.</string>
+    <string name="lockpassword_confirm_your_password_with_iris">ໃຊ້ມ່ານຕາຂອງທ່ານ ຫຼື ປ້ອນລະຫັດຜ່ານປະຈຸບັນຂອງທ່ານເຂົ້າ.</string>
+    <string name="lockpassword_confirm_your_pin_with_biometrics">ໃຊ້ໄບໂອແມັດທຣິກ ຫຼື ປ້ອນ PIN ຂອງທ່ານເຂົ້າ.</string>
+    <string name="lockpassword_confirm_your_pattern_with_biometrics">ໃຊ້ໄບໂອແມັດທຣິກ ຫຼື ແຕ້ມຮູບແບບຂອງທ່ານ.</string>
+    <string name="lockpassword_confirm_your_password_with_biometrics">ໃຊ້ໄບໂອແມັດທຣິກ ຫຼື ປ້ອນລະຫັດຜ່ານຂອງທ່ານເຂົ້າ.</string>
     <string name="lockpassword_confirm_your_pin_instead_of_fingerprint">ປ້ອນ PIN ຂອງທ່ານເຂົ້າແທນການໃຊ້ການຈົດຈຳລາຍນິ້ວມື.</string>
     <string name="lockpassword_confirm_your_pattern_instead_of_fingerprint">ແຕ້ມຮູບແບບຂອງທ່ານແທນການໃຊ້ການຈົດຈຳລາຍນິ້ວມື.</string>
     <string name="lockpassword_confirm_your_password_instead_of_fingerprint">ປ້ອນລະຫັດຜ່ານຂອງທ່ານເຂົ້າແທນການໃຊ້ການຈົດຈຳລາຍນິ້ວມື.</string>
@@ -2043,6 +2059,7 @@ You will also need it when:"</string>
     <string name="face_status_timeout">Timeout. Try later.</string>
     <string name="okay">ຕົກລົງ</string>
     <string name="face_samsung_account_button">ໃຊ້ Samsung account</string>
+    <string name="face_galaxy_account_button">ຈັດການ Galaxy account</string>
     <string name="face_error_DB_corrupted">ມີບັນຫາກັບຂໍ້ມູນໃບໜ້າຂອງທ່ານ. ລົງທະບຽນໃບໜ້າຂອງທ່ານອີກ​ຄັ້ງ.</string>
     <string name="face_error_DB_corrupted_popup_title">ລົງທະບຽນໃບໜ້າຂອງທ່ານອີກຄັ້ງ</string>
     <string name="face_error_timeout">ໃບໜ້າຂອງທ່ານບໍ່ຖືກກວດພົບ.</string>
@@ -2153,7 +2170,7 @@ You will also need it when:"</string>
     <string name="biometrics_backup_locktype_title">ຕັ້ງຄວາມປອດໄພມ່ານຕາ</string>
     <string name="biometrics_register_your_iris">ລົງທະບຽນມ່ານຕາຂອງທ່ານ.</string>
     <string name="biometrics_backup_locktype_summary">ເພື່ອໃຊ້ມ່ານຕາຂອງທ່ານໃນການປົດລັອກອຸປະກອນ, ທ່ານຈະຕ້ອງຕັ້ງຮູບແບບ, PIN, ຫຼືລະຫັດຜ່ານ.</string>
-    <string name="biometrics_backup_locktype_message">ເພື່ອໃຊ້ມ່ານຕາຂອງທ່ານປົດລັອກໂທລະສັບຂອງທ່ານ ຫຼື ການກວດສອບທີ່ປອດໄພ, ທ່ານຈຳເປັນຈະຕ້ອງ:</string>
+    <string name="biometrics_backup_locktype_message">ເພື່ອໃຊ້ມ່ານຕາຂອງທ່ານໃນການປົດລັອກໂທລະສັບຂອງທ່ານ ຫຼື ເພື່ອການກວດສອບຕົວຂອງທ່ານໃນແອັບ, ທ່ານຈຳເປັນຈະຕ້ອງ:</string>
     <string name="iris_delete_popup_title">ເອົາຂໍ້ມູນມ່ານຕາອອກໄປບໍ?</string>
     <string name="iris_delete_popup_message">ເອົາຂໍ້ມູນມ່ານຕາອອກໄປບໍ?</string>
     <string name="iris_delete_popup_message_with_related_func">ຄຸນສົມບັດທີ່ໃຊ້ມ່ານຕາ ຈະຖືກປິດ.</string>
@@ -2229,6 +2246,9 @@ You will also need it when:"</string>
     <string name="biometrics_dex_cant_use_msg">ບໍ່ສາມາດໃຊ້ %s ໃນ Samsung DeX.</string>
     <string name="biometrics_dex_closed_to_switch">ປິດ %s ແລ້ວ ເພື່ອສັບປ່ຽນເປັນ Samsung DeX.</string>
     <string name="biometircs_dex_cant_use_toast">%s ບໍ່​ສາ​ມາດໃຊ້ງານ​ໃນ Samsung DeX ໄດ້. ລອງ​ໃຊ້​ງານ​ໃນ​ໂໝດ​ໂທ​ລະ​ສັບ.</string>
+    <string name="iris_guide_text_preview">ເບິ່ງທີ່ນີ້ເພື່ອໃຊ້ມ່ານຕາ</string>
+    <string name="iris_guide_enable_toggle">ແຕະທີ່ນີ້ເພື່ອໃຊ້ມ່ານຕາ</string>
+    <string name="iris_cannot_verify">ບໍ່ສາມາດກວດສອບມ່ານຕາໄດ້</string>
     <string name="knox_twofactor_bio_description">ເລືອກປະເພດລັອກໄບໂອແມັດທຣິກຂອງທ່ານ ແລະປະເພດລັອກທີສອງເພື່ອປົດລັອກ %s.</string>
     <string name="fingerprint_registered">ລາຍນີ້ວມືທີ່ຈົດຈຳແລ້ວຈະຖືກນໍາໃຊ້ກັບວິທີການປົດລັອກທີ່ເລືອກໄວ້.</string>
     <string name="knox_twofactor_description">ເລືອກໄບໂອແມັດທຣິກຂອງທ່ານ ແລະປະເພດລັອກທີສອງເພື່ອປົດລັອກ %s.</string>
@@ -3090,6 +3110,7 @@ Mobile data will be turned off."</string>
     <string name="easy_mode_app_help">ໃຊ້ອຸປະກອນຂອງທ່ານງ່າຍຂຶ້ນດ້ວຍແຜນຜັງໜ້າຈໍຫຼັກທີ່ງ່າຍກວ່າ ແລະລາຍການທີ່ໃຫຍ່ກວ່າໃນໜ້າຈໍ.</string>
     <string name="easy_mode_app_help_dream_1">ໃຊ້ແຜນຜັງໜ້າຈໍຫຼັກແບບງ່າຍດາຍແລະລາຍການເທິງໜ້າຈໍທີ່ໃຫ່ຍຂຶ້ນ.</string>
     <string name="easy_mode_app_help_dream_2">ທຸກໆການກຳນົດທີ່ທ່ານເຮັດຂຶ້ນເອງໃນໜ້າຈໍຫຼັກຈະຖືກເອົາຖິ້ມ, ແລະການຊູມໜ້າຈໍຈະຖືກຕັ້ງເປັນສູງສຸດ.</string>
+    <string name="easy_mode_app_help_3rd_launcher">ນຳ​ໃຊ້​ໂໝດ​ງ່າຍ​ສຳ​ລັບ​ລາຍ​ການ​ໃນ​ໜ້າ​ຈໍ​ທີ່​ໃຫຍ່​ຂຶ້ນ. ຖ້າ​ທ່ານ​ບໍ່​ໄດ້​ໃຊ້​ໜ້າຫຼັກ TouchWiz, ​ແຜນ​ຜັງ​ໜ້າຫຼັກ​ຂອງ​ທ່ານ​ຈະ​ບໍ່​ປ່ຽນ​ແປງ, ​ແຕ່​ການ​ຊຸມ​ໜ້າ​ຈໍ​ຈະ​ຖືກ​ຕັ້ງ​ເປັນ​ຂະ​ໜາດ​ໃຫຍ່ ແລະ ຂະ​ໜາດ​ຕົວ​ໜັງ​ສື​ຈະ​ຖືກ​ຕັ້ງ​ເປັນ​ຂະ​ໜາດ​ປານ​ກາງ.</string>
     <string name="security_warning_content">ທ່ານສາມາດປ້ອງກັນຄວາມເປັນສ່ວນຕົວຂອງທ່ານໂດຍການຕັ້ງລະຫັດຜ່ານ, PIN, ຫຼື ຮູບແບບສຳລັບການປົດລັອກໜ້າຈໍຂອງທ່ານ</string>
     <string name="lock_setting_weather_desc">ເພື່ອເບິ່ງ ຫຼືປ່ຽນແປງການຕັ້ງຄ່າສະພາບອາກາດ, ໃຫ້ແຕະ [ການຕັ້ງຄ່າສະພາບອາກາດ] ຢູ່ຂ້າງລຸ່ມ.</string>
     <string name="lock_setting_weather_btn">ຕັ້ງຄ່າສະພາບອາກາດ</string>
@@ -3336,7 +3357,7 @@ Downloading via mobile networks may result in additional charges depending on yo
     <string name="disable_hovering_title">ປິດໃຊ້ງານແອວິວ</string>
     <string name="disable_hovering_summary">ແອວິວ ແລະ TalkBack ບໍ່ສາມາດເປີດໃຊ້ງານທັງສອງໄດ້. ແອວິວຈະປິດໃຊ້ງານ.</string>
     <string name="pen_settings_pen_input">ປ້ອນຂໍ້ມູນດ້ວຍປາກກາໂດຍກົງ</string>
-    <string name="action_memo_onoff_screen_title">ປິດໜ້າຈໍບັນທຶກຄວາມຈຳ</string>
+    <string name="action_memo_onoff_screen_title">ບັນທຶກຄວາມຈຳໜ້າຈໍປິດ</string>
     <string name="screen_off_note_summary">ຂຽນ​ບັນ​ທຶກ​ໃນ​ຂະ​ນະ​ທີ່​ໜ້າ​ຈໍ​ປິດ​ຢູ່. ພຽງ​ແຕ່​ເອົາ S Pen ​ອອກ​ໄປ ແລະ ເລີ່ມ​ຂຽນ.</string>
     <string name="screen_off_note_summary_jpn">ສ້າງບັນທຶກໂດຍການຖອດ S Pen ໃນຂະນະທີ່ໜ້າຈໍປິດຢູ່ ແລະຈາກນັ້ນຂຽນເທິງໜ້າຈໍ. ບັນທຶກຄວາມຈຳໜ້າຈໍປິດຈະຖືກບັນທຶກໃນ Galaxy Notes.</string>
     <string name="screen_off_note_summary_no_detach">ສ້າງບັນທຶກໂດຍການກົດປຸ່ມປາກກາ, ການແຕະໜ້າຈໍໃນຂະນະທີ່ມັນປິດຢູ່, ແລະຈາກນັ້ນຂຽນເທິງມັນ. ບັນທຶກຄວາມຈຳໜ້າຈໍປິດຈະຖືກບັນທຶກໃນ Samsung Notes.</string>
@@ -3943,7 +3964,7 @@ Wi-Fi ເປີດຢູ່ດຽວນີ້."</string>
     <string name="wfd_descrpition_playsound">ຫຼິ້ນສຽງ.</string>
     <string name="wfd_is_not_supported">ຟັງຄ໌ຊັນນີ້ບໍ່ຖືກຮອງຮັບ.</string>
     <string name="usbtethering_notify_wifi_is_on_title">ປິດ Wi-Fi ບໍ?</string>
-    <string name="usbtethering_notify_wifi_is_on">ການເຊື່ອມໂຍງ Wi-Fi ແລະ USB ບໍ່​ສາ​ມາດຖືກ​ເປີດ​​ໃນ​ເວ​ລາ​ດຽວ​ກັນ​ໄດ້. ປິດ Wi-Fi.</string>
+    <string name="usbtethering_notify_wifi_is_on">ບໍ່ສາມາດເປີດ Wi-Fi ແລະ ການເຊື່ອມໂຍງ USB ໃນເວລາດຽວກັນໄດ້. Wi-Fi ຈະຖືກປິດ.</string>
     <string name="disable_multi_window_dialog_text">ມັລຕິວິນໂດຈະປິດໃຊ້ງານ ແລະທຸກແອັບທີ່ເປີດຢູ່ໃນວິນໂດປັອບອັບຈະປິດ.</string>
     <string name="keyguard_password_attempt_count_pin_code">ຍັງເຫຼືອ %d ຄັ້ງ.</string>
     <string name="keyguard_password_attempts_count_pin_code">ຍັງເຫຼືອ %d ຄັ້ງ.</string>
@@ -4151,6 +4172,7 @@ Wi-Fi ເປີດຢູ່ດຽວນີ້."</string>
     <string name="hdmi_mode_title">ໂໝດ HDMI</string>
     <string name="hdmi_mode_dex">Samsung DeX</string>
     <string name="hdmi_mode_mirroring">Screen Mirroring</string>
+    <string name="hdmi_mode_not_available_while_cover_attached">%s ບໍ່ມີຢູ່ ໃນຂະນະທີ່ຝາປິດຄັດຕິດຢູ່.</string>
     <string name="screen_timeout_for_dex">ໝົດເວລາໜ້າຈໍສຳລັບ Samsung DeX</string>
     <string name="show_virtual_keyboard_for_dex">ສະແດງຄີບອດເທິງໜ້າຈໍໃນ Samsung DeX</string>
     <string name="comma">,</string>
@@ -4459,7 +4481,7 @@ Wi-Fi ເປີດຢູ່ດຽວນີ້."</string>
     <string name="date_picker_title">ວັນທີ</string>
     <string name="time_picker_title">ເວລາ</string>
     <string name="lock_after_timeout">ລັອກອັດຕະໂນມັດ</string>
-    <string name="lock_after_timeout_summary">ລັອກ %s ໜ້າຈໍຫຼັງຈາກມັນມອດໂດຍອັດຕະໂນມັດ.</string>
+    <string name="lock_after_timeout_summary">ລັອກໂທລະສັບໃນ %s ຫຼັງຈາກໜ້າຈໍປິດໂດຍອັດຕະໂນມັດ.</string>
     <string name="lock_after_timeout_summary_with_exception">ລັອກໜ້າຈໍ %1$s ຫຼັງຈາກມັນປິດອັດຕະໂນມັດ, ຍົກເວັ້ນເມື່ອບໍ່ໃຫ້ຖືກບລັອກໂດຍ %2$s.</string>
     <string name="show_owner_info_on_lockscreen_label">ສະແດງຂໍ້ມູນຂອງເຈົ້າຂອງເຄື່ອງຢູ່ເທິງໜ້າຈໍລັອກ.</string>
     <string name="owner_info_settings_title">ຂໍ້ມູນຂອງເຈົ້າຂອງ</string>
@@ -4607,6 +4629,8 @@ Wi-Fi ເປີດຢູ່ດຽວນີ້."</string>
     <string name="wifi_empty_list_user_restricted">ທ່ານບໍ່ໄດ້ຮັບອະນຸຍາດໃຫ້ປ່ຽນແປງການຕັ້ງຄ່າ Wi-Fi.</string>
     <string name="wifi_setup_wps">ຕັ້ງອັດຕະໂນມັດ (WPS)</string>
     <string name="wifi_show_advanced">ສະແດງຕົວເລືອກຂັ້ນສູງ</string>
+    <string name="wifi_advanced_toggle_description_expanded">ແຕະສອງຄັ້ງເພື່ອຫຍໍ້ລົງ.</string>
+    <string name="wifi_advanced_toggle_description_collapsed">ແຕະສອງຄັ້ງເພື່ອຂະຫຍາຍ.</string>
     <string name="wifi_wps_setup_title">ຕັ້ງ WPS</string>
     <string name="wifi_wps_setup_msg">ກໍາລັງເລີ່ມຕົ້ນ WPS…</string>
     <string name="wifi_wps_onstart_pbc">ເຄາະປຸ່ມຕັ້ງຄ່າການປົກປ້ອງ Wi-Fi ຢູ່ໃນເຣົ້າເຕີຂອງທ່ານ. ມັນອາດຈະຖືກເອີ້ນວ່າ WPS ຫຼືມີສັນຍາລັກນີ້:</string>
@@ -4638,6 +4662,10 @@ Wi-Fi ເປີດຢູ່ດຽວນີ້."</string>
     <string name="wifi_shared">ແຊຣ໌ແລ້ວ</string>
     <string name="wifi_unchanged">(ບໍ່ໄດ້ປ່ຽນແປງ)</string>
     <string name="wifi_unspecified">(ບໍ່ໄດ້ລະບຸ)</string>
+    <string name="wifi_select_cert">ເລືອກໃບຢັ້ງຢືນ</string>
+    <string name="wifi_do_not_provide_eap_user_cert">ຢ່າຈັດໃຫ້</string>
+    <string name="wifi_do_not_validate_eap_server">ຢ່າຮັບຮອງ</string>
+    <string name="wifi_do_not_validate_eap_server_warning">ບໍ່ມີໃບຢັ້ງຢືນຖືກລະບຸ. ການເຊື່ອມຕໍ່ຂອງທ່ານຈະບໍ່ເປັນສ່ວນຕົວ.</string>
     <string name="wifi_scan_always_turnon_message">%s ກໍາລັງຂໍອະນຸຍາດເພື່ອສະແກນຫາເຄືອຂ່າຍ Wi-Fi, ແມ້ແຕ່ເມື່ອ Wi-Fi ປິດ, ເພື່ອເພີ່ມຄວາມຖືກຕ້ອງຂອງທີ່ຕັ້ງ ແລະເພື່ອຈຸດປະສົງອື່ນ. ອະນຸຍາດໃຫ້ອັນນີ້ສໍາລັບທຸກແອັບບໍ?</string>
     <string name="wifi_scan_always_confirm_allow">ອະນຸຍາດ</string>
     <string name="wifi_scan_always_confirm_deny">ປະຕິເສດ</string>
@@ -4972,9 +5000,9 @@ Wi-Fi ເປີດຢູ່ດຽວນີ້."</string>
     <string name="restore_default_apn_completed">ການຕັ້ງຄ່າ APN ແມ່ນຕັ້ງໄປເປັນຄ່າມາດຕະຖານຄືນໃໝ່.</string>
     <string name="reset_network_desc">ສິ່ງນີ້ຈະຕັ້ງການຕັ້ງຄ່າເຄືອຂ່າຍທັງໝົດຄືນໃໝ່, ລວມທັງສິ່ງເຫຼົ່ານັ້ນສຳລັບ:</string>
     <string name="reset_network_button_text">ຕັ້ງການຕັ້ງຄ່າຄືນໃໝ່</string>
-    <string name="reset_network_final_desc">ການຕັ້ງຄ່າການເຊື່ອມຕໍ່ທັງໝົດຈະຖືກຕັ້ງຄືນໃໝ່. ການດໍາເນີນການນີ້ບໍ່ສາມາດຖອນຄືນໄດ້.</string>
+    <string name="reset_network_final_desc">ການຕັ້ງຄ່າເຄືອຂ່າຍທັງໝົດຈະຖືກຕັ້ງຄືນໃໝ່. ການກະທຳນີ້ບໍ່ສາມາດເຮັດຄືນໄດ້.</string>
     <string name="reset_network_final_button_text">ຕັ້ງການຕັ້ງຄ່າຄືນໃໝ່</string>
-    <string name="reset_network_complete_toast">ຕັ້ງການຕັ້ງຄ່າເຊື່ອມຕໍ່ຄືນໃໝ່ແລ້ວ.</string>
+    <string name="reset_network_complete_toast">ຕັ້ງການຕັ້ງຄ່າເຄືອຂ່າຍຄືນໃໝ່ແລ້ວ.</string>
     <string name="master_clear_title">ຕັ້ງຄ່າໂຮງງານຄືນໃໝ່</string>
     <string name="master_clear_accounts">ໃນຂະນະນີ້ທ່ານໄດ້ລົງຊື່ເຂົ້າໃຊ້ໃນບັນຊີຕໍ່ໄປນີ້ແລ້ວ:</string>
     <string name="master_clear_other_users_present">ຂໍ້​ມູນ​ຂອງ​ຜູ້​ໃຊ້​ອື່ນໆຢູ່ໃນອຸ​ປະ​ກອນ​ນີ້ຍັງ​ຈະ​ຖືກ​ລຶບ.</string>
@@ -6088,6 +6116,7 @@ If the device has multiple users, using this shortcut on the lock screen tempora
     <string name="set_data_limit">ຕັ້ງຂີດຈໍາກັດຂໍ້ມູນ</string>
     <string name="data_limit">ຂີດຈໍາກັດຂໍ້ມູນ</string>
     <string name="data_usage_template">%1$s ທີ່ໃຊ້ແລ້ວລະຫວ່າງ %2$s</string>
+    <string name="data_usage_template_wifi">%s ຖືກໃຊ້ໃນ 30 ວັນສຸດທ້າຍ</string>
     <string name="data_usage_other_apps">ແອັບທີ່ກ່ຽວຂ້ອງຖືກລວມເຂົ້າໃນການໃຊ້</string>
     <string name="data_saver_title">ຕົວປະຢັດຂໍ້ມູນ</string>
     <string name="unrestricted_data_saver">ອະນຸຍາດແອັບໃນຂະນະຕົວ​ປະ​ຢັດຂໍ້ມູນເປີດ</string>
@@ -6138,6 +6167,7 @@ If the device has multiple users, using this shortcut on the lock screen tempora
     <string name="legacy_dhcp_client_summary">ໃຊ້​ລູກ​ຄ້າ DHCP ຈາກ Lollipop ແທນ​ລູກ​ຄ້າ Android DHCP ໃໝ່.</string>
     <string name="screen_off_pocket_title">ຮັກສາໜ້າຈໍໃຫ້ປິດຢູ່</string>
     <string name="screen_off_pocket_summary">ປ້ອງກັນໜ້າຈໍຈາກການເປີດໂດຍບັງເອີນ ໃນຂະນະທີ່ອຸປະກອນຢູ່ໃນສະຖານທີ່ມືດ ເຊັ່ນ ຖົງ ຫຼືກະເປົ໋າຖື.</string>
+    <string name="noApplications">ແອັບທັງໝົດທີ່ຂ້ອງກັບການດຳເນີນການນີ້ໄດ້ຖືກປິດໃຊ້ງານ, ຖືກບລັອກ, ຫຼືບໍ່ຖືກຕິດຕັ້ງ.</string>
     <string name="confirm_reset_shortcut_manager_throttling_title">ຕັ້ງຕົວຈຳກັດອັດຕາຕົວຈັດການທາງລັດຄືນໃໝ່</string>
     <string name="confirm_reset_shortcut_manager_throttling_message">ເຄື່ອ​ງ​ນັບ​ຕົວ​ຈຳ​ກັດ​ອັດ​ຕາ​ຕົວ​ຈັດ​ການ​ທາງ​ລັດ​ຈະ​ຖືກ​ຕັ້ງ​ຄືນ​ໃໝ່.</string>
 </resources>

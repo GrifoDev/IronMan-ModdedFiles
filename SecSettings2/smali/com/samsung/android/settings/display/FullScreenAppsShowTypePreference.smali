@@ -68,7 +68,7 @@
 
     invoke-direct {p0}, Lcom/samsung/android/settings/display/FullScreenAppsShowTypePreference;->setShowTypeList()V
 
-    const v0, 0x7f040128
+    const v0, 0x7f040129
 
     invoke-virtual {p0, v0}, Lcom/samsung/android/settings/display/FullScreenAppsShowTypePreference;->setLayoutResource(I)V
 
@@ -92,7 +92,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f0b06c7
+    const v2, 0x7f0b06c8
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -110,7 +110,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f0b06c8
+    const v2, 0x7f0b06c9
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -128,7 +128,7 @@
 .method public onBindView(Landroid/view/View;)V
     .locals 4
 
-    const v3, 0x7f040129
+    const v3, 0x7f04012a
 
     invoke-super {p0, p1}, Landroid/preference/Preference;->onBindView(Landroid/view/View;)V
 
@@ -146,7 +146,7 @@
 
     invoke-virtual {v0, v3}, Landroid/widget/ArrayAdapter;->setDropDownViewResource(I)V
 
-    const v0, 0x7f110420
+    const v0, 0x7f110422
 
     invoke-virtual {p1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 

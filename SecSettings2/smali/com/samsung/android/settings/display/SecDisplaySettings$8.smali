@@ -34,7 +34,7 @@
 .method public onChange(Z)V
     .locals 7
 
-    const v1, 0x7f0b04f0
+    const v1, 0x7f0b04f1
 
     const/4 v2, 0x1
 
@@ -42,11 +42,28 @@
 
     iget-object v4, p0, Lcom/samsung/android/settings/display/SecDisplaySettings$8;->this$0:Lcom/samsung/android/settings/display/SecDisplaySettings;
 
+    invoke-virtual {v4}, Lcom/samsung/android/settings/display/SecDisplaySettings;->isAdded()Z
+
+    move-result v4
+
+    if-nez v4, :cond_0
+
+    const-string/jumbo v1, "Fragment"
+
+    const-string/jumbo v2, "Detached from activity, so stopping update."
+
+    invoke-static {v1, v2}, Landroid/util/secutil/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    return-void
+
+    :cond_0
+    iget-object v4, p0, Lcom/samsung/android/settings/display/SecDisplaySettings$8;->this$0:Lcom/samsung/android/settings/display/SecDisplaySettings;
+
     invoke-static {v4}, Lcom/samsung/android/settings/display/SecDisplaySettings;->-get13(Lcom/samsung/android/settings/display/SecDisplaySettings;)Lcom/samsung/android/settings/SettingsSwitchPreference;
 
     move-result-object v4
 
-    if-eqz v4, :cond_0
+    if-eqz v4, :cond_1
 
     iget-object v4, p0, Lcom/samsung/android/settings/display/SecDisplaySettings$8;->this$0:Lcom/samsung/android/settings/display/SecDisplaySettings;
 
@@ -54,7 +71,7 @@
 
     move-result v4
 
-    if-eqz v4, :cond_3
+    if-eqz v4, :cond_4
 
     iget-object v4, p0, Lcom/samsung/android/settings/display/SecDisplaySettings$8;->this$0:Lcom/samsung/android/settings/display/SecDisplaySettings;
 
@@ -68,12 +85,12 @@
 
     move-result v4
 
-    if-eqz v4, :cond_1
+    if-eqz v4, :cond_2
 
     move v0, v2
 
     :goto_0
-    if-eqz v0, :cond_2
+    if-eqz v0, :cond_3
 
     iget-object v1, p0, Lcom/samsung/android/settings/display/SecDisplaySettings$8;->this$0:Lcom/samsung/android/settings/display/SecDisplaySettings;
 
@@ -106,16 +123,16 @@
 
     invoke-virtual {v1, v0}, Lcom/samsung/android/settings/SettingsSwitchPreference;->semSetSummaryColorToColorPrimaryDark(Z)V
 
-    :cond_0
+    :cond_1
     :goto_2
     return-void
 
-    :cond_1
+    :cond_2
     move v0, v3
 
     goto :goto_0
 
-    :cond_2
+    :cond_3
     iget-object v2, p0, Lcom/samsung/android/settings/display/SecDisplaySettings$8;->this$0:Lcom/samsung/android/settings/display/SecDisplaySettings;
 
     invoke-static {v2}, Lcom/samsung/android/settings/display/SecDisplaySettings;->-get13(Lcom/samsung/android/settings/display/SecDisplaySettings;)Lcom/samsung/android/settings/SettingsSwitchPreference;
@@ -126,7 +143,7 @@
 
     goto :goto_1
 
-    :cond_3
+    :cond_4
     iget-object v4, p0, Lcom/samsung/android/settings/display/SecDisplaySettings$8;->this$0:Lcom/samsung/android/settings/display/SecDisplaySettings;
 
     invoke-static {v4}, Lcom/samsung/android/settings/display/SecDisplaySettings;->-get13(Lcom/samsung/android/settings/display/SecDisplaySettings;)Lcom/samsung/android/settings/SettingsSwitchPreference;
@@ -145,11 +162,11 @@
 
     move-result v5
 
-    if-eqz v5, :cond_4
+    if-eqz v5, :cond_5
 
-    const v1, 0x7f0b1cf6
+    const v1, 0x7f0b1d08
 
-    :cond_4
+    :cond_5
     invoke-virtual {v4, v1}, Lcom/samsung/android/settings/SettingsSwitchPreference;->setSummary(I)V
 
     iget-object v1, p0, Lcom/samsung/android/settings/display/SecDisplaySettings$8;->this$0:Lcom/samsung/android/settings/display/SecDisplaySettings;
@@ -170,7 +187,7 @@
 
     move-result v1
 
-    if-eqz v1, :cond_5
+    if-eqz v1, :cond_6
 
     move v1, v2
 
@@ -195,19 +212,19 @@
 
     move-result v4
 
-    if-eqz v4, :cond_6
+    if-eqz v4, :cond_7
 
     :goto_4
     invoke-virtual {v1, v2}, Lcom/samsung/android/settings/SettingsSwitchPreference;->semSetSummaryColorToColorPrimaryDark(Z)V
 
     goto :goto_2
 
-    :cond_5
+    :cond_6
     move v1, v3
 
     goto :goto_3
 
-    :cond_6
+    :cond_7
     move v2, v3
 
     goto :goto_4

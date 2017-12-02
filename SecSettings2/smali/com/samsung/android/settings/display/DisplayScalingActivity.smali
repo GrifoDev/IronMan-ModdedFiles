@@ -530,7 +530,7 @@
 
     iget-object v0, p0, Lcom/samsung/android/settings/display/DisplayScalingActivity;->mActionBar:Landroid/app/ActionBar;
 
-    const v1, 0x7f0400a3
+    const v1, 0x7f0400a4
 
     invoke-virtual {v0, v1}, Landroid/app/ActionBar;->setCustomView(I)V
 
@@ -1617,7 +1617,7 @@
 
     invoke-virtual {p0, v0}, Lcom/samsung/android/settings/display/DisplayScalingActivity;->sendBroadcast(Landroid/content/Intent;)V
 
-    const v1, 0x7f0400e6
+    const v1, 0x7f0400e7
 
     invoke-virtual {p0, v1}, Lcom/samsung/android/settings/display/DisplayScalingActivity;->setContentView(I)V
 
@@ -1664,7 +1664,7 @@
 
     iput-object v1, p0, Lcom/samsung/android/settings/display/DisplayScalingActivity;->mPm:Landroid/content/pm/PackageManager;
 
-    const v1, 0x7f1102fb
+    const v1, 0x7f1102fd
 
     invoke-virtual {p0, v1}, Lcom/samsung/android/settings/display/DisplayScalingActivity;->findViewById(I)Landroid/view/View;
 
@@ -1674,7 +1674,7 @@
 
     iput-object v1, p0, Lcom/samsung/android/settings/display/DisplayScalingActivity;->mStandardLayout:Landroid/widget/LinearLayout;
 
-    const v1, 0x7f1102fe
+    const v1, 0x7f110300
 
     invoke-virtual {p0, v1}, Lcom/samsung/android/settings/display/DisplayScalingActivity;->findViewById(I)Landroid/view/View;
 
@@ -1684,7 +1684,7 @@
 
     iput-object v1, p0, Lcom/samsung/android/settings/display/DisplayScalingActivity;->mCondensedLayout:Landroid/widget/LinearLayout;
 
-    const v1, 0x7f1102fc
+    const v1, 0x7f1102fe
 
     invoke-virtual {p0, v1}, Lcom/samsung/android/settings/display/DisplayScalingActivity;->findViewById(I)Landroid/view/View;
 
@@ -1694,7 +1694,7 @@
 
     iput-object v1, p0, Lcom/samsung/android/settings/display/DisplayScalingActivity;->mStandardRadio:Landroid/widget/RadioButton;
 
-    const v1, 0x7f1102ff
+    const v1, 0x7f110301
 
     invoke-virtual {p0, v1}, Lcom/samsung/android/settings/display/DisplayScalingActivity;->findViewById(I)Landroid/view/View;
 
@@ -1704,7 +1704,7 @@
 
     iput-object v1, p0, Lcom/samsung/android/settings/display/DisplayScalingActivity;->mCondensedRadio:Landroid/widget/RadioButton;
 
-    const v1, 0x7f11033f
+    const v1, 0x7f110341
 
     invoke-virtual {p0, v1}, Lcom/samsung/android/settings/display/DisplayScalingActivity;->findViewById(I)Landroid/view/View;
 
@@ -1714,7 +1714,7 @@
 
     iput-object v1, p0, Lcom/samsung/android/settings/display/DisplayScalingActivity;->mCameraLayout:Landroid/widget/LinearLayout;
 
-    const v1, 0x7f110342
+    const v1, 0x7f110344
 
     invoke-virtual {p0, v1}, Lcom/samsung/android/settings/display/DisplayScalingActivity;->findViewById(I)Landroid/view/View;
 
@@ -1724,7 +1724,7 @@
 
     iput-object v1, p0, Lcom/samsung/android/settings/display/DisplayScalingActivity;->mContactsLayout:Landroid/widget/LinearLayout;
 
-    const v1, 0x7f110345
+    const v1, 0x7f110347
 
     invoke-virtual {p0, v1}, Lcom/samsung/android/settings/display/DisplayScalingActivity;->findViewById(I)Landroid/view/View;
 
@@ -1734,7 +1734,7 @@
 
     iput-object v1, p0, Lcom/samsung/android/settings/display/DisplayScalingActivity;->mEmilLayout:Landroid/widget/LinearLayout;
 
-    const v1, 0x7f110348
+    const v1, 0x7f11034a
 
     invoke-virtual {p0, v1}, Lcom/samsung/android/settings/display/DisplayScalingActivity;->findViewById(I)Landroid/view/View;
 
@@ -1744,7 +1744,7 @@
 
     iput-object v1, p0, Lcom/samsung/android/settings/display/DisplayScalingActivity;->mGalleryLayout:Landroid/widget/LinearLayout;
 
-    const v1, 0x7f11034b
+    const v1, 0x7f11034d
 
     invoke-virtual {p0, v1}, Lcom/samsung/android/settings/display/DisplayScalingActivity;->findViewById(I)Landroid/view/View;
 
@@ -1754,7 +1754,7 @@
 
     iput-object v1, p0, Lcom/samsung/android/settings/display/DisplayScalingActivity;->mInternetLayout:Landroid/widget/LinearLayout;
 
-    const v1, 0x7f11034e
+    const v1, 0x7f110350
 
     invoke-virtual {p0, v1}, Lcom/samsung/android/settings/display/DisplayScalingActivity;->findViewById(I)Landroid/view/View;
 
@@ -1764,7 +1764,7 @@
 
     iput-object v1, p0, Lcom/samsung/android/settings/display/DisplayScalingActivity;->mMessagesLayout:Landroid/widget/LinearLayout;
 
-    const v1, 0x7f110351
+    const v1, 0x7f110353
 
     invoke-virtual {p0, v1}, Lcom/samsung/android/settings/display/DisplayScalingActivity;->findViewById(I)Landroid/view/View;
 
@@ -1774,7 +1774,7 @@
 
     iput-object v1, p0, Lcom/samsung/android/settings/display/DisplayScalingActivity;->mMusicLayout:Landroid/widget/LinearLayout;
 
-    const v1, 0x7f110354
+    const v1, 0x7f110356
 
     invoke-virtual {p0, v1}, Lcom/samsung/android/settings/display/DisplayScalingActivity;->findViewById(I)Landroid/view/View;
 
@@ -1784,7 +1784,7 @@
 
     iput-object v1, p0, Lcom/samsung/android/settings/display/DisplayScalingActivity;->mCalendarLayout:Landroid/widget/LinearLayout;
 
-    const v1, 0x7f110357
+    const v1, 0x7f110359
 
     invoke-virtual {p0, v1}, Lcom/samsung/android/settings/display/DisplayScalingActivity;->findViewById(I)Landroid/view/View;
 
@@ -1794,7 +1794,7 @@
 
     iput-object v1, p0, Lcom/samsung/android/settings/display/DisplayScalingActivity;->mSVoiceLayout:Landroid/widget/LinearLayout;
 
-    const v1, 0x7f11035a
+    const v1, 0x7f11035c
 
     invoke-virtual {p0, v1}, Lcom/samsung/android/settings/display/DisplayScalingActivity;->findViewById(I)Landroid/view/View;
 
@@ -1804,7 +1804,7 @@
 
     iput-object v1, p0, Lcom/samsung/android/settings/display/DisplayScalingActivity;->mWeatherLayout:Landroid/widget/LinearLayout;
 
-    const v1, 0x7f110303
+    const v1, 0x7f110305
 
     invoke-virtual {p0, v1}, Lcom/samsung/android/settings/display/DisplayScalingActivity;->findViewById(I)Landroid/view/View;
 
@@ -1814,7 +1814,7 @@
 
     iput-object v1, p0, Lcom/samsung/android/settings/display/DisplayScalingActivity;->mCameraLayout1:Landroid/widget/LinearLayout;
 
-    const v1, 0x7f110306
+    const v1, 0x7f110308
 
     invoke-virtual {p0, v1}, Lcom/samsung/android/settings/display/DisplayScalingActivity;->findViewById(I)Landroid/view/View;
 
@@ -1824,7 +1824,7 @@
 
     iput-object v1, p0, Lcom/samsung/android/settings/display/DisplayScalingActivity;->mContactsLayout1:Landroid/widget/LinearLayout;
 
-    const v1, 0x7f110309
+    const v1, 0x7f11030b
 
     invoke-virtual {p0, v1}, Lcom/samsung/android/settings/display/DisplayScalingActivity;->findViewById(I)Landroid/view/View;
 
@@ -1834,7 +1834,7 @@
 
     iput-object v1, p0, Lcom/samsung/android/settings/display/DisplayScalingActivity;->mEmilLayout1:Landroid/widget/LinearLayout;
 
-    const v1, 0x7f11030c
+    const v1, 0x7f11030e
 
     invoke-virtual {p0, v1}, Lcom/samsung/android/settings/display/DisplayScalingActivity;->findViewById(I)Landroid/view/View;
 
@@ -1844,7 +1844,7 @@
 
     iput-object v1, p0, Lcom/samsung/android/settings/display/DisplayScalingActivity;->mGalleryLayout1:Landroid/widget/LinearLayout;
 
-    const v1, 0x7f11030f
+    const v1, 0x7f110311
 
     invoke-virtual {p0, v1}, Lcom/samsung/android/settings/display/DisplayScalingActivity;->findViewById(I)Landroid/view/View;
 
@@ -1854,7 +1854,7 @@
 
     iput-object v1, p0, Lcom/samsung/android/settings/display/DisplayScalingActivity;->mInternetLayout1:Landroid/widget/LinearLayout;
 
-    const v1, 0x7f110312
+    const v1, 0x7f110314
 
     invoke-virtual {p0, v1}, Lcom/samsung/android/settings/display/DisplayScalingActivity;->findViewById(I)Landroid/view/View;
 
@@ -1864,7 +1864,7 @@
 
     iput-object v1, p0, Lcom/samsung/android/settings/display/DisplayScalingActivity;->mMessagesLayout1:Landroid/widget/LinearLayout;
 
-    const v1, 0x7f110315
+    const v1, 0x7f110317
 
     invoke-virtual {p0, v1}, Lcom/samsung/android/settings/display/DisplayScalingActivity;->findViewById(I)Landroid/view/View;
 
@@ -1874,7 +1874,7 @@
 
     iput-object v1, p0, Lcom/samsung/android/settings/display/DisplayScalingActivity;->mMusicLayout1:Landroid/widget/LinearLayout;
 
-    const v1, 0x7f110318
+    const v1, 0x7f11031a
 
     invoke-virtual {p0, v1}, Lcom/samsung/android/settings/display/DisplayScalingActivity;->findViewById(I)Landroid/view/View;
 
@@ -1884,7 +1884,7 @@
 
     iput-object v1, p0, Lcom/samsung/android/settings/display/DisplayScalingActivity;->mCalendarLayout1:Landroid/widget/LinearLayout;
 
-    const v1, 0x7f11031b
+    const v1, 0x7f11031d
 
     invoke-virtual {p0, v1}, Lcom/samsung/android/settings/display/DisplayScalingActivity;->findViewById(I)Landroid/view/View;
 
@@ -1894,7 +1894,7 @@
 
     iput-object v1, p0, Lcom/samsung/android/settings/display/DisplayScalingActivity;->mSVoiceLayout1:Landroid/widget/LinearLayout;
 
-    const v1, 0x7f11031e
+    const v1, 0x7f110320
 
     invoke-virtual {p0, v1}, Lcom/samsung/android/settings/display/DisplayScalingActivity;->findViewById(I)Landroid/view/View;
 
@@ -1904,7 +1904,7 @@
 
     iput-object v1, p0, Lcom/samsung/android/settings/display/DisplayScalingActivity;->mWeatherLayout1:Landroid/widget/LinearLayout;
 
-    const v1, 0x7f110321
+    const v1, 0x7f110323
 
     invoke-virtual {p0, v1}, Lcom/samsung/android/settings/display/DisplayScalingActivity;->findViewById(I)Landroid/view/View;
 
@@ -1914,7 +1914,7 @@
 
     iput-object v1, p0, Lcom/samsung/android/settings/display/DisplayScalingActivity;->mCameraLayout2:Landroid/widget/LinearLayout;
 
-    const v1, 0x7f110324
+    const v1, 0x7f110326
 
     invoke-virtual {p0, v1}, Lcom/samsung/android/settings/display/DisplayScalingActivity;->findViewById(I)Landroid/view/View;
 
@@ -1924,7 +1924,7 @@
 
     iput-object v1, p0, Lcom/samsung/android/settings/display/DisplayScalingActivity;->mContactsLayout2:Landroid/widget/LinearLayout;
 
-    const v1, 0x7f110327
+    const v1, 0x7f110329
 
     invoke-virtual {p0, v1}, Lcom/samsung/android/settings/display/DisplayScalingActivity;->findViewById(I)Landroid/view/View;
 
@@ -1934,7 +1934,7 @@
 
     iput-object v1, p0, Lcom/samsung/android/settings/display/DisplayScalingActivity;->mEmilLayout2:Landroid/widget/LinearLayout;
 
-    const v1, 0x7f11032a
+    const v1, 0x7f11032c
 
     invoke-virtual {p0, v1}, Lcom/samsung/android/settings/display/DisplayScalingActivity;->findViewById(I)Landroid/view/View;
 
@@ -1944,7 +1944,7 @@
 
     iput-object v1, p0, Lcom/samsung/android/settings/display/DisplayScalingActivity;->mGalleryLayout2:Landroid/widget/LinearLayout;
 
-    const v1, 0x7f11032d
+    const v1, 0x7f11032f
 
     invoke-virtual {p0, v1}, Lcom/samsung/android/settings/display/DisplayScalingActivity;->findViewById(I)Landroid/view/View;
 
@@ -1954,7 +1954,7 @@
 
     iput-object v1, p0, Lcom/samsung/android/settings/display/DisplayScalingActivity;->mInternetLayout2:Landroid/widget/LinearLayout;
 
-    const v1, 0x7f110330
+    const v1, 0x7f110332
 
     invoke-virtual {p0, v1}, Lcom/samsung/android/settings/display/DisplayScalingActivity;->findViewById(I)Landroid/view/View;
 
@@ -1964,7 +1964,7 @@
 
     iput-object v1, p0, Lcom/samsung/android/settings/display/DisplayScalingActivity;->mMessagesLayout2:Landroid/widget/LinearLayout;
 
-    const v1, 0x7f110333
+    const v1, 0x7f110335
 
     invoke-virtual {p0, v1}, Lcom/samsung/android/settings/display/DisplayScalingActivity;->findViewById(I)Landroid/view/View;
 
@@ -1974,7 +1974,7 @@
 
     iput-object v1, p0, Lcom/samsung/android/settings/display/DisplayScalingActivity;->mMusicLayout2:Landroid/widget/LinearLayout;
 
-    const v1, 0x7f110336
+    const v1, 0x7f110338
 
     invoke-virtual {p0, v1}, Lcom/samsung/android/settings/display/DisplayScalingActivity;->findViewById(I)Landroid/view/View;
 
@@ -1984,7 +1984,7 @@
 
     iput-object v1, p0, Lcom/samsung/android/settings/display/DisplayScalingActivity;->mCalendarLayout2:Landroid/widget/LinearLayout;
 
-    const v1, 0x7f110339
+    const v1, 0x7f11033b
 
     invoke-virtual {p0, v1}, Lcom/samsung/android/settings/display/DisplayScalingActivity;->findViewById(I)Landroid/view/View;
 
@@ -1994,7 +1994,7 @@
 
     iput-object v1, p0, Lcom/samsung/android/settings/display/DisplayScalingActivity;->mSVoiceLayout2:Landroid/widget/LinearLayout;
 
-    const v1, 0x7f11033c
+    const v1, 0x7f11033e
 
     invoke-virtual {p0, v1}, Lcom/samsung/android/settings/display/DisplayScalingActivity;->findViewById(I)Landroid/view/View;
 
@@ -2004,7 +2004,7 @@
 
     iput-object v1, p0, Lcom/samsung/android/settings/display/DisplayScalingActivity;->mWeatherLayout2:Landroid/widget/LinearLayout;
 
-    const v1, 0x7f110340
+    const v1, 0x7f110342
 
     invoke-virtual {p0, v1}, Lcom/samsung/android/settings/display/DisplayScalingActivity;->findViewById(I)Landroid/view/View;
 
@@ -2014,7 +2014,7 @@
 
     iput-object v1, p0, Lcom/samsung/android/settings/display/DisplayScalingActivity;->mCameraIcon:Landroid/widget/ImageView;
 
-    const v1, 0x7f110343
+    const v1, 0x7f110345
 
     invoke-virtual {p0, v1}, Lcom/samsung/android/settings/display/DisplayScalingActivity;->findViewById(I)Landroid/view/View;
 
@@ -2024,7 +2024,7 @@
 
     iput-object v1, p0, Lcom/samsung/android/settings/display/DisplayScalingActivity;->mContactsIcon:Landroid/widget/ImageView;
 
-    const v1, 0x7f110346
+    const v1, 0x7f110348
 
     invoke-virtual {p0, v1}, Lcom/samsung/android/settings/display/DisplayScalingActivity;->findViewById(I)Landroid/view/View;
 
@@ -2034,7 +2034,7 @@
 
     iput-object v1, p0, Lcom/samsung/android/settings/display/DisplayScalingActivity;->mEmilIcon:Landroid/widget/ImageView;
 
-    const v1, 0x7f110349
+    const v1, 0x7f11034b
 
     invoke-virtual {p0, v1}, Lcom/samsung/android/settings/display/DisplayScalingActivity;->findViewById(I)Landroid/view/View;
 
@@ -2044,7 +2044,7 @@
 
     iput-object v1, p0, Lcom/samsung/android/settings/display/DisplayScalingActivity;->mGalleryIcon:Landroid/widget/ImageView;
 
-    const v1, 0x7f11034c
+    const v1, 0x7f11034e
 
     invoke-virtual {p0, v1}, Lcom/samsung/android/settings/display/DisplayScalingActivity;->findViewById(I)Landroid/view/View;
 
@@ -2054,7 +2054,7 @@
 
     iput-object v1, p0, Lcom/samsung/android/settings/display/DisplayScalingActivity;->mInternetIcon:Landroid/widget/ImageView;
 
-    const v1, 0x7f11034f
+    const v1, 0x7f110351
 
     invoke-virtual {p0, v1}, Lcom/samsung/android/settings/display/DisplayScalingActivity;->findViewById(I)Landroid/view/View;
 
@@ -2064,7 +2064,7 @@
 
     iput-object v1, p0, Lcom/samsung/android/settings/display/DisplayScalingActivity;->mMessagesIcon:Landroid/widget/ImageView;
 
-    const v1, 0x7f110352
+    const v1, 0x7f110354
 
     invoke-virtual {p0, v1}, Lcom/samsung/android/settings/display/DisplayScalingActivity;->findViewById(I)Landroid/view/View;
 
@@ -2074,7 +2074,7 @@
 
     iput-object v1, p0, Lcom/samsung/android/settings/display/DisplayScalingActivity;->mMusicIcon:Landroid/widget/ImageView;
 
-    const v1, 0x7f110355
+    const v1, 0x7f110357
 
     invoke-virtual {p0, v1}, Lcom/samsung/android/settings/display/DisplayScalingActivity;->findViewById(I)Landroid/view/View;
 
@@ -2084,7 +2084,7 @@
 
     iput-object v1, p0, Lcom/samsung/android/settings/display/DisplayScalingActivity;->mCalendarIcon:Landroid/widget/ImageView;
 
-    const v1, 0x7f110358
+    const v1, 0x7f11035a
 
     invoke-virtual {p0, v1}, Lcom/samsung/android/settings/display/DisplayScalingActivity;->findViewById(I)Landroid/view/View;
 
@@ -2094,7 +2094,7 @@
 
     iput-object v1, p0, Lcom/samsung/android/settings/display/DisplayScalingActivity;->mSVoiceIcon:Landroid/widget/ImageView;
 
-    const v1, 0x7f11035b
+    const v1, 0x7f11035d
 
     invoke-virtual {p0, v1}, Lcom/samsung/android/settings/display/DisplayScalingActivity;->findViewById(I)Landroid/view/View;
 
@@ -2104,7 +2104,7 @@
 
     iput-object v1, p0, Lcom/samsung/android/settings/display/DisplayScalingActivity;->mWeatherIcon:Landroid/widget/ImageView;
 
-    const v1, 0x7f110304
+    const v1, 0x7f110306
 
     invoke-virtual {p0, v1}, Lcom/samsung/android/settings/display/DisplayScalingActivity;->findViewById(I)Landroid/view/View;
 
@@ -2114,7 +2114,7 @@
 
     iput-object v1, p0, Lcom/samsung/android/settings/display/DisplayScalingActivity;->mCameraIcon1:Landroid/widget/ImageView;
 
-    const v1, 0x7f110307
+    const v1, 0x7f110309
 
     invoke-virtual {p0, v1}, Lcom/samsung/android/settings/display/DisplayScalingActivity;->findViewById(I)Landroid/view/View;
 
@@ -2124,7 +2124,7 @@
 
     iput-object v1, p0, Lcom/samsung/android/settings/display/DisplayScalingActivity;->mContactsIcon1:Landroid/widget/ImageView;
 
-    const v1, 0x7f11030a
+    const v1, 0x7f11030c
 
     invoke-virtual {p0, v1}, Lcom/samsung/android/settings/display/DisplayScalingActivity;->findViewById(I)Landroid/view/View;
 
@@ -2134,7 +2134,7 @@
 
     iput-object v1, p0, Lcom/samsung/android/settings/display/DisplayScalingActivity;->mEmilIcon1:Landroid/widget/ImageView;
 
-    const v1, 0x7f11030d
+    const v1, 0x7f11030f
 
     invoke-virtual {p0, v1}, Lcom/samsung/android/settings/display/DisplayScalingActivity;->findViewById(I)Landroid/view/View;
 
@@ -2144,7 +2144,7 @@
 
     iput-object v1, p0, Lcom/samsung/android/settings/display/DisplayScalingActivity;->mGalleryIcon1:Landroid/widget/ImageView;
 
-    const v1, 0x7f110310
+    const v1, 0x7f110312
 
     invoke-virtual {p0, v1}, Lcom/samsung/android/settings/display/DisplayScalingActivity;->findViewById(I)Landroid/view/View;
 
@@ -2154,7 +2154,7 @@
 
     iput-object v1, p0, Lcom/samsung/android/settings/display/DisplayScalingActivity;->mInternetIcon1:Landroid/widget/ImageView;
 
-    const v1, 0x7f110313
+    const v1, 0x7f110315
 
     invoke-virtual {p0, v1}, Lcom/samsung/android/settings/display/DisplayScalingActivity;->findViewById(I)Landroid/view/View;
 
@@ -2164,7 +2164,7 @@
 
     iput-object v1, p0, Lcom/samsung/android/settings/display/DisplayScalingActivity;->mMessagesIcon1:Landroid/widget/ImageView;
 
-    const v1, 0x7f110316
+    const v1, 0x7f110318
 
     invoke-virtual {p0, v1}, Lcom/samsung/android/settings/display/DisplayScalingActivity;->findViewById(I)Landroid/view/View;
 
@@ -2174,7 +2174,7 @@
 
     iput-object v1, p0, Lcom/samsung/android/settings/display/DisplayScalingActivity;->mMusicIcon1:Landroid/widget/ImageView;
 
-    const v1, 0x7f110319
+    const v1, 0x7f11031b
 
     invoke-virtual {p0, v1}, Lcom/samsung/android/settings/display/DisplayScalingActivity;->findViewById(I)Landroid/view/View;
 
@@ -2184,7 +2184,7 @@
 
     iput-object v1, p0, Lcom/samsung/android/settings/display/DisplayScalingActivity;->mCalendarIcon1:Landroid/widget/ImageView;
 
-    const v1, 0x7f11031c
+    const v1, 0x7f11031e
 
     invoke-virtual {p0, v1}, Lcom/samsung/android/settings/display/DisplayScalingActivity;->findViewById(I)Landroid/view/View;
 
@@ -2194,7 +2194,7 @@
 
     iput-object v1, p0, Lcom/samsung/android/settings/display/DisplayScalingActivity;->mSVoiceIcon1:Landroid/widget/ImageView;
 
-    const v1, 0x7f11031f
+    const v1, 0x7f110321
 
     invoke-virtual {p0, v1}, Lcom/samsung/android/settings/display/DisplayScalingActivity;->findViewById(I)Landroid/view/View;
 
@@ -2204,7 +2204,7 @@
 
     iput-object v1, p0, Lcom/samsung/android/settings/display/DisplayScalingActivity;->mWeatherIcon1:Landroid/widget/ImageView;
 
-    const v1, 0x7f110322
+    const v1, 0x7f110324
 
     invoke-virtual {p0, v1}, Lcom/samsung/android/settings/display/DisplayScalingActivity;->findViewById(I)Landroid/view/View;
 
@@ -2214,7 +2214,7 @@
 
     iput-object v1, p0, Lcom/samsung/android/settings/display/DisplayScalingActivity;->mCameraIcon2:Landroid/widget/ImageView;
 
-    const v1, 0x7f110325
+    const v1, 0x7f110327
 
     invoke-virtual {p0, v1}, Lcom/samsung/android/settings/display/DisplayScalingActivity;->findViewById(I)Landroid/view/View;
 
@@ -2224,7 +2224,7 @@
 
     iput-object v1, p0, Lcom/samsung/android/settings/display/DisplayScalingActivity;->mContactsIcon2:Landroid/widget/ImageView;
 
-    const v1, 0x7f110328
+    const v1, 0x7f11032a
 
     invoke-virtual {p0, v1}, Lcom/samsung/android/settings/display/DisplayScalingActivity;->findViewById(I)Landroid/view/View;
 
@@ -2234,7 +2234,7 @@
 
     iput-object v1, p0, Lcom/samsung/android/settings/display/DisplayScalingActivity;->mEmilIcon2:Landroid/widget/ImageView;
 
-    const v1, 0x7f11032b
+    const v1, 0x7f11032d
 
     invoke-virtual {p0, v1}, Lcom/samsung/android/settings/display/DisplayScalingActivity;->findViewById(I)Landroid/view/View;
 
@@ -2244,7 +2244,7 @@
 
     iput-object v1, p0, Lcom/samsung/android/settings/display/DisplayScalingActivity;->mGalleryIcon2:Landroid/widget/ImageView;
 
-    const v1, 0x7f11032e
+    const v1, 0x7f110330
 
     invoke-virtual {p0, v1}, Lcom/samsung/android/settings/display/DisplayScalingActivity;->findViewById(I)Landroid/view/View;
 
@@ -2254,7 +2254,7 @@
 
     iput-object v1, p0, Lcom/samsung/android/settings/display/DisplayScalingActivity;->mInternetIcon2:Landroid/widget/ImageView;
 
-    const v1, 0x7f110331
+    const v1, 0x7f110333
 
     invoke-virtual {p0, v1}, Lcom/samsung/android/settings/display/DisplayScalingActivity;->findViewById(I)Landroid/view/View;
 
@@ -2264,7 +2264,7 @@
 
     iput-object v1, p0, Lcom/samsung/android/settings/display/DisplayScalingActivity;->mMessagesIcon2:Landroid/widget/ImageView;
 
-    const v1, 0x7f110334
+    const v1, 0x7f110336
 
     invoke-virtual {p0, v1}, Lcom/samsung/android/settings/display/DisplayScalingActivity;->findViewById(I)Landroid/view/View;
 
@@ -2274,7 +2274,7 @@
 
     iput-object v1, p0, Lcom/samsung/android/settings/display/DisplayScalingActivity;->mMusicIcon2:Landroid/widget/ImageView;
 
-    const v1, 0x7f110337
+    const v1, 0x7f110339
 
     invoke-virtual {p0, v1}, Lcom/samsung/android/settings/display/DisplayScalingActivity;->findViewById(I)Landroid/view/View;
 
@@ -2284,7 +2284,7 @@
 
     iput-object v1, p0, Lcom/samsung/android/settings/display/DisplayScalingActivity;->mCalendarIcon2:Landroid/widget/ImageView;
 
-    const v1, 0x7f11033a
+    const v1, 0x7f11033c
 
     invoke-virtual {p0, v1}, Lcom/samsung/android/settings/display/DisplayScalingActivity;->findViewById(I)Landroid/view/View;
 
@@ -2294,7 +2294,7 @@
 
     iput-object v1, p0, Lcom/samsung/android/settings/display/DisplayScalingActivity;->mSVoiceIcon2:Landroid/widget/ImageView;
 
-    const v1, 0x7f11033d
+    const v1, 0x7f11033f
 
     invoke-virtual {p0, v1}, Lcom/samsung/android/settings/display/DisplayScalingActivity;->findViewById(I)Landroid/view/View;
 
@@ -2304,7 +2304,7 @@
 
     iput-object v1, p0, Lcom/samsung/android/settings/display/DisplayScalingActivity;->mWeatherIcon2:Landroid/widget/ImageView;
 
-    const v1, 0x7f110341
+    const v1, 0x7f110343
 
     invoke-virtual {p0, v1}, Lcom/samsung/android/settings/display/DisplayScalingActivity;->findViewById(I)Landroid/view/View;
 
@@ -2314,7 +2314,7 @@
 
     iput-object v1, p0, Lcom/samsung/android/settings/display/DisplayScalingActivity;->mCameraTitle:Landroid/widget/TextView;
 
-    const v1, 0x7f110344
+    const v1, 0x7f110346
 
     invoke-virtual {p0, v1}, Lcom/samsung/android/settings/display/DisplayScalingActivity;->findViewById(I)Landroid/view/View;
 
@@ -2324,7 +2324,7 @@
 
     iput-object v1, p0, Lcom/samsung/android/settings/display/DisplayScalingActivity;->mContactsTitle:Landroid/widget/TextView;
 
-    const v1, 0x7f110347
+    const v1, 0x7f110349
 
     invoke-virtual {p0, v1}, Lcom/samsung/android/settings/display/DisplayScalingActivity;->findViewById(I)Landroid/view/View;
 
@@ -2334,7 +2334,7 @@
 
     iput-object v1, p0, Lcom/samsung/android/settings/display/DisplayScalingActivity;->mEmilTitle:Landroid/widget/TextView;
 
-    const v1, 0x7f11034a
+    const v1, 0x7f11034c
 
     invoke-virtual {p0, v1}, Lcom/samsung/android/settings/display/DisplayScalingActivity;->findViewById(I)Landroid/view/View;
 
@@ -2344,7 +2344,7 @@
 
     iput-object v1, p0, Lcom/samsung/android/settings/display/DisplayScalingActivity;->mGalleryTitle:Landroid/widget/TextView;
 
-    const v1, 0x7f11034d
+    const v1, 0x7f11034f
 
     invoke-virtual {p0, v1}, Lcom/samsung/android/settings/display/DisplayScalingActivity;->findViewById(I)Landroid/view/View;
 
@@ -2354,7 +2354,7 @@
 
     iput-object v1, p0, Lcom/samsung/android/settings/display/DisplayScalingActivity;->mInternetTitle:Landroid/widget/TextView;
 
-    const v1, 0x7f110350
+    const v1, 0x7f110352
 
     invoke-virtual {p0, v1}, Lcom/samsung/android/settings/display/DisplayScalingActivity;->findViewById(I)Landroid/view/View;
 
@@ -2364,7 +2364,7 @@
 
     iput-object v1, p0, Lcom/samsung/android/settings/display/DisplayScalingActivity;->mMessagesTitle:Landroid/widget/TextView;
 
-    const v1, 0x7f110353
+    const v1, 0x7f110355
 
     invoke-virtual {p0, v1}, Lcom/samsung/android/settings/display/DisplayScalingActivity;->findViewById(I)Landroid/view/View;
 
@@ -2374,7 +2374,7 @@
 
     iput-object v1, p0, Lcom/samsung/android/settings/display/DisplayScalingActivity;->mMusicTitle:Landroid/widget/TextView;
 
-    const v1, 0x7f110356
+    const v1, 0x7f110358
 
     invoke-virtual {p0, v1}, Lcom/samsung/android/settings/display/DisplayScalingActivity;->findViewById(I)Landroid/view/View;
 
@@ -2384,7 +2384,7 @@
 
     iput-object v1, p0, Lcom/samsung/android/settings/display/DisplayScalingActivity;->mCalendarTitle:Landroid/widget/TextView;
 
-    const v1, 0x7f110359
+    const v1, 0x7f11035b
 
     invoke-virtual {p0, v1}, Lcom/samsung/android/settings/display/DisplayScalingActivity;->findViewById(I)Landroid/view/View;
 
@@ -2394,7 +2394,7 @@
 
     iput-object v1, p0, Lcom/samsung/android/settings/display/DisplayScalingActivity;->mSVoiceTitle:Landroid/widget/TextView;
 
-    const v1, 0x7f11035c
+    const v1, 0x7f11035e
 
     invoke-virtual {p0, v1}, Lcom/samsung/android/settings/display/DisplayScalingActivity;->findViewById(I)Landroid/view/View;
 
@@ -2404,7 +2404,7 @@
 
     iput-object v1, p0, Lcom/samsung/android/settings/display/DisplayScalingActivity;->mWeatherTitle:Landroid/widget/TextView;
 
-    const v1, 0x7f110305
+    const v1, 0x7f110307
 
     invoke-virtual {p0, v1}, Lcom/samsung/android/settings/display/DisplayScalingActivity;->findViewById(I)Landroid/view/View;
 
@@ -2414,7 +2414,7 @@
 
     iput-object v1, p0, Lcom/samsung/android/settings/display/DisplayScalingActivity;->mCameraTitle1:Landroid/widget/TextView;
 
-    const v1, 0x7f110308
+    const v1, 0x7f11030a
 
     invoke-virtual {p0, v1}, Lcom/samsung/android/settings/display/DisplayScalingActivity;->findViewById(I)Landroid/view/View;
 
@@ -2424,7 +2424,7 @@
 
     iput-object v1, p0, Lcom/samsung/android/settings/display/DisplayScalingActivity;->mContactsTitle1:Landroid/widget/TextView;
 
-    const v1, 0x7f11030b
+    const v1, 0x7f11030d
 
     invoke-virtual {p0, v1}, Lcom/samsung/android/settings/display/DisplayScalingActivity;->findViewById(I)Landroid/view/View;
 
@@ -2434,7 +2434,7 @@
 
     iput-object v1, p0, Lcom/samsung/android/settings/display/DisplayScalingActivity;->mEmilTitle1:Landroid/widget/TextView;
 
-    const v1, 0x7f11030e
+    const v1, 0x7f110310
 
     invoke-virtual {p0, v1}, Lcom/samsung/android/settings/display/DisplayScalingActivity;->findViewById(I)Landroid/view/View;
 
@@ -2444,7 +2444,7 @@
 
     iput-object v1, p0, Lcom/samsung/android/settings/display/DisplayScalingActivity;->mGalleryTitle1:Landroid/widget/TextView;
 
-    const v1, 0x7f110311
+    const v1, 0x7f110313
 
     invoke-virtual {p0, v1}, Lcom/samsung/android/settings/display/DisplayScalingActivity;->findViewById(I)Landroid/view/View;
 
@@ -2454,7 +2454,7 @@
 
     iput-object v1, p0, Lcom/samsung/android/settings/display/DisplayScalingActivity;->mInternetTitle1:Landroid/widget/TextView;
 
-    const v1, 0x7f110314
+    const v1, 0x7f110316
 
     invoke-virtual {p0, v1}, Lcom/samsung/android/settings/display/DisplayScalingActivity;->findViewById(I)Landroid/view/View;
 
@@ -2464,7 +2464,7 @@
 
     iput-object v1, p0, Lcom/samsung/android/settings/display/DisplayScalingActivity;->mMessagesTitle1:Landroid/widget/TextView;
 
-    const v1, 0x7f110317
+    const v1, 0x7f110319
 
     invoke-virtual {p0, v1}, Lcom/samsung/android/settings/display/DisplayScalingActivity;->findViewById(I)Landroid/view/View;
 
@@ -2474,7 +2474,7 @@
 
     iput-object v1, p0, Lcom/samsung/android/settings/display/DisplayScalingActivity;->mMusicTitle1:Landroid/widget/TextView;
 
-    const v1, 0x7f11031a
+    const v1, 0x7f11031c
 
     invoke-virtual {p0, v1}, Lcom/samsung/android/settings/display/DisplayScalingActivity;->findViewById(I)Landroid/view/View;
 
@@ -2484,7 +2484,7 @@
 
     iput-object v1, p0, Lcom/samsung/android/settings/display/DisplayScalingActivity;->mCalendarTitle1:Landroid/widget/TextView;
 
-    const v1, 0x7f11031d
+    const v1, 0x7f11031f
 
     invoke-virtual {p0, v1}, Lcom/samsung/android/settings/display/DisplayScalingActivity;->findViewById(I)Landroid/view/View;
 
@@ -2494,7 +2494,7 @@
 
     iput-object v1, p0, Lcom/samsung/android/settings/display/DisplayScalingActivity;->mSVoiceTitle1:Landroid/widget/TextView;
 
-    const v1, 0x7f110320
+    const v1, 0x7f110322
 
     invoke-virtual {p0, v1}, Lcom/samsung/android/settings/display/DisplayScalingActivity;->findViewById(I)Landroid/view/View;
 
@@ -2504,7 +2504,7 @@
 
     iput-object v1, p0, Lcom/samsung/android/settings/display/DisplayScalingActivity;->mWeatherTitle1:Landroid/widget/TextView;
 
-    const v1, 0x7f110323
+    const v1, 0x7f110325
 
     invoke-virtual {p0, v1}, Lcom/samsung/android/settings/display/DisplayScalingActivity;->findViewById(I)Landroid/view/View;
 
@@ -2514,7 +2514,7 @@
 
     iput-object v1, p0, Lcom/samsung/android/settings/display/DisplayScalingActivity;->mCameraTitle2:Landroid/widget/TextView;
 
-    const v1, 0x7f110326
+    const v1, 0x7f110328
 
     invoke-virtual {p0, v1}, Lcom/samsung/android/settings/display/DisplayScalingActivity;->findViewById(I)Landroid/view/View;
 
@@ -2524,7 +2524,7 @@
 
     iput-object v1, p0, Lcom/samsung/android/settings/display/DisplayScalingActivity;->mContactsTitle2:Landroid/widget/TextView;
 
-    const v1, 0x7f110329
+    const v1, 0x7f11032b
 
     invoke-virtual {p0, v1}, Lcom/samsung/android/settings/display/DisplayScalingActivity;->findViewById(I)Landroid/view/View;
 
@@ -2534,7 +2534,7 @@
 
     iput-object v1, p0, Lcom/samsung/android/settings/display/DisplayScalingActivity;->mEmilTitle2:Landroid/widget/TextView;
 
-    const v1, 0x7f11032c
+    const v1, 0x7f11032e
 
     invoke-virtual {p0, v1}, Lcom/samsung/android/settings/display/DisplayScalingActivity;->findViewById(I)Landroid/view/View;
 
@@ -2544,7 +2544,7 @@
 
     iput-object v1, p0, Lcom/samsung/android/settings/display/DisplayScalingActivity;->mGalleryTitle2:Landroid/widget/TextView;
 
-    const v1, 0x7f11032f
+    const v1, 0x7f110331
 
     invoke-virtual {p0, v1}, Lcom/samsung/android/settings/display/DisplayScalingActivity;->findViewById(I)Landroid/view/View;
 
@@ -2554,7 +2554,7 @@
 
     iput-object v1, p0, Lcom/samsung/android/settings/display/DisplayScalingActivity;->mInternetTitle2:Landroid/widget/TextView;
 
-    const v1, 0x7f110332
+    const v1, 0x7f110334
 
     invoke-virtual {p0, v1}, Lcom/samsung/android/settings/display/DisplayScalingActivity;->findViewById(I)Landroid/view/View;
 
@@ -2564,7 +2564,7 @@
 
     iput-object v1, p0, Lcom/samsung/android/settings/display/DisplayScalingActivity;->mMessagesTitle2:Landroid/widget/TextView;
 
-    const v1, 0x7f110335
+    const v1, 0x7f110337
 
     invoke-virtual {p0, v1}, Lcom/samsung/android/settings/display/DisplayScalingActivity;->findViewById(I)Landroid/view/View;
 
@@ -2574,7 +2574,7 @@
 
     iput-object v1, p0, Lcom/samsung/android/settings/display/DisplayScalingActivity;->mMusicTitle2:Landroid/widget/TextView;
 
-    const v1, 0x7f110338
+    const v1, 0x7f11033a
 
     invoke-virtual {p0, v1}, Lcom/samsung/android/settings/display/DisplayScalingActivity;->findViewById(I)Landroid/view/View;
 
@@ -2584,7 +2584,7 @@
 
     iput-object v1, p0, Lcom/samsung/android/settings/display/DisplayScalingActivity;->mCalendarTitle2:Landroid/widget/TextView;
 
-    const v1, 0x7f11033b
+    const v1, 0x7f11033d
 
     invoke-virtual {p0, v1}, Lcom/samsung/android/settings/display/DisplayScalingActivity;->findViewById(I)Landroid/view/View;
 
@@ -2594,7 +2594,7 @@
 
     iput-object v1, p0, Lcom/samsung/android/settings/display/DisplayScalingActivity;->mSVoiceTitle2:Landroid/widget/TextView;
 
-    const v1, 0x7f11033e
+    const v1, 0x7f110340
 
     invoke-virtual {p0, v1}, Lcom/samsung/android/settings/display/DisplayScalingActivity;->findViewById(I)Landroid/view/View;
 
@@ -2604,7 +2604,7 @@
 
     iput-object v1, p0, Lcom/samsung/android/settings/display/DisplayScalingActivity;->mWeatherTitle2:Landroid/widget/TextView;
 
-    const v1, 0x7f110300
+    const v1, 0x7f110302
 
     invoke-virtual {p0, v1}, Lcom/samsung/android/settings/display/DisplayScalingActivity;->findViewById(I)Landroid/view/View;
 
@@ -2614,7 +2614,7 @@
 
     iput-object v1, p0, Lcom/samsung/android/settings/display/DisplayScalingActivity;->mStandardList:Landroid/widget/LinearLayout;
 
-    const v1, 0x7f110301
+    const v1, 0x7f110303
 
     invoke-virtual {p0, v1}, Lcom/samsung/android/settings/display/DisplayScalingActivity;->findViewById(I)Landroid/view/View;
 
@@ -2624,7 +2624,7 @@
 
     iput-object v1, p0, Lcom/samsung/android/settings/display/DisplayScalingActivity;->mCondensedList:Landroid/widget/LinearLayout;
 
-    const v1, 0x7f110302
+    const v1, 0x7f110304
 
     invoke-virtual {p0, v1}, Lcom/samsung/android/settings/display/DisplayScalingActivity;->findViewById(I)Landroid/view/View;
 
@@ -2703,7 +2703,7 @@
 .method public onCreateOptionsMenu(Landroid/view/Menu;)Z
     .locals 4
 
-    const v3, 0x7f02064c
+    const v3, 0x7f02064e
 
     invoke-super {p0, p1}, Lcom/android/settings/InstrumentedActivity;->onCreateOptionsMenu(Landroid/view/Menu;)Z
 
@@ -2719,7 +2719,7 @@
 
     if-eqz v0, :cond_0
 
-    const v1, 0x7f110239
+    const v1, 0x7f11023b
 
     invoke-virtual {v0, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -2743,7 +2743,7 @@
 
     invoke-virtual {v1, v2}, Landroid/widget/Button;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    const v1, 0x7f11023a
+    const v1, 0x7f11023c
 
     invoke-virtual {v0, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -2755,7 +2755,7 @@
 
     iget-object v1, p0, Lcom/samsung/android/settings/display/DisplayScalingActivity;->mSaveButton:Landroid/widget/Button;
 
-    const v2, 0x7f0b1b52
+    const v2, 0x7f0b1b64
 
     invoke-virtual {v1, v2}, Landroid/widget/Button;->setText(I)V
 

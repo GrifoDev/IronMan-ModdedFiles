@@ -47,7 +47,7 @@
 
     iget-object v0, p0, Lcom/samsung/android/settings/display/BrightnessSeekBarPreference$8;->this$0:Lcom/samsung/android/settings/display/BrightnessSeekBarPreference;
 
-    invoke-static {v0}, Lcom/samsung/android/settings/display/BrightnessSeekBarPreference;->-get1(Lcom/samsung/android/settings/display/BrightnessSeekBarPreference;)Landroid/widget/CheckBox;
+    invoke-static {v0}, Lcom/samsung/android/settings/display/BrightnessSeekBarPreference;->-get2(Lcom/samsung/android/settings/display/BrightnessSeekBarPreference;)Landroid/widget/CheckBox;
 
     move-result-object v0
 

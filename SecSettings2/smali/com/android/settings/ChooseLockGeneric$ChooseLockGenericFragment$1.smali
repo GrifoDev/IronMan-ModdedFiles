@@ -138,12 +138,6 @@
 
     if-eqz v4, :cond_5
 
-    invoke-static {p1}, Lcom/android/settings/Utils;->isRestrictedProfile(Landroid/content/Context;)Z
-
-    move-result v4
-
-    if-nez v4, :cond_5
-
     invoke-static {p1}, Lcom/android/settings/Utils;->isGuestUser(Landroid/content/Context;)Z
 
     move-result v4
@@ -391,7 +385,7 @@
 
     iput-object v2, v1, Landroid/provider/SearchIndexableResource;->className:Ljava/lang/String;
 
-    const v2, 0x7f0800f0
+    const v2, 0x7f0800f2
 
     iput v2, v1, Landroid/provider/SearchIndexableResource;->xmlResId:I
 

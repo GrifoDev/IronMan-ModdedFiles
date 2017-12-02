@@ -170,6 +170,8 @@
     <string name="wifi_allow_scan_with_traffic_summary">Baimendu edo ukatu automatikoki Wi-Fi ibiltaritza bilaketak erabilitako datu kopuruan oinarrituta.</string>
     <string name="select_logd_size_title">Erregistr. buffer neurria</string>
     <string name="select_logd_size_dialog_title">Hautatu erregistro buffer bakoitzaren gehieneko neurria</string>
+    <string name="dev_logpersist_clear_warning_title">Erregistroen biltegi iraunkorra garbitu?</string>
+    <string name="dev_logpersist_clear_warning_message">Erregistroen datuak erregistro iraunkorra desaktibatzean ezabatuko dira.</string>
     <string name="select_logpersist_title">Gorde erregistr. datuak luzaroan</string>
     <string name="select_logpersist_dialog_title">Hautatu bufferrak luzaroan gordetzeko aukera</string>
     <string name="select_usb_configuration_title">USB konfigurazioa</string>
@@ -982,6 +984,7 @@ Konektatutako bi gailuen audio irteeren artean alde txiki bat egon daiteke."</st
     <string name="bluetooth_avc_available_description">Konektatutako Bluetooth gailuak Multimedia edukiaren bolumena sinkronizatzeko gaitasuna du, eta Bluetooth gailuak ezarritako bolumen maila telefonoarekin sinkronizatuko da.</string>
     <string name="bluetooth_enter_pin_msg">Idatzi PINa %s-erekin parekatzeko (saiatu 0000 edo 1234 erabilita)</string>
     <string name="bluetooth_pin_maximum_number_message">Gehieneko karaktere kopurura iritsi zara.</string>
+    <string name="bluetooth_frp_permission_message">Ezin da erabili Bluetooth gailua dei honetan.</string>
     <string name="settings_menu_done">Amaituta</string>
     <string name="usb_tethering_unavailable_subtext_tmo">USB not connected</string>
     <string name="usb_tethering_available_subtext_tmo">USB connected, check to tether</string>
@@ -1481,7 +1484,7 @@ Argitasuna segurtasun mailatik gora ezartzeko, ukitu ADOS."</string>
     <string name="navigationbar_pressure_sensitivity_title">Sakatu luze Botoi nagusia</string>
     <string name="navigationbar_pressure_sensitivity_summary">Botoi nagusia ezkutatuta dagoela hura erabiltzeko, saka ezazu ohi baino sakonago.</string>
     <string name="navigationbar_pressure_sensitivity_level_summary">Presio maila: %1$d/%2$d</string>
-    <string name="navigationbar_pressure_sensitivity_description_off">Botoi nagusia ezkutatuta dagoela hura erabiltzeko, saka ezazu ohi baino sakonago.</string>
+    <string name="navigationbar_pressure_sensitivity_description_off">Egokitu Botoi nagusia luze sakatzeko behar den presioa.</string>
     <string name="navigationbar_pressure_low">Arinago</string>
     <string name="navigationbar_pressure_high">Sendoago</string>
     <string name="navigationbar_hide_bar">Erakutsi eta ezkutatu botoia</string>
@@ -1620,7 +1623,7 @@ Argitasuna segurtasun mailatik gora ezartzeko, ukitu ADOS."</string>
     <string name="crypt_keeper_decrypt_title">Desenkriptatu gailua</string>
     <string name="crypt_keeper_decrypt_summary">Gailua enkriptatuta</string>
     <string name="crypt_keeper_type_pin">PINa</string>
-    <string name="crypt_keeper_type_pattern">Diseinua</string>
+    <string name="crypt_keeper_type_pattern">diseinua</string>
     <string name="crypt_keeper_type_password">Pasahitza</string>
     <string name="crypt_keeper_type_direction">Keinu bidezko blokeoa</string>
     <string name="crypt_keeper_confirm_title_dec">Baieztatu desenkriptatzea</string>
@@ -1704,7 +1707,11 @@ Baliteke enkriptatzeko ordubete edo gehiago behar izatea. Hasi baino lehen, ziur
     <string name="crypt_keeper_confirm_title">Baieztatu enkriptatzea</string>
     <string name="crypt_keeper_final_desc">Zure gailua enkriptatzen baduzu, ezingo duzu atzera egin, eta datuak galduko dira prozesua eteten baduzu. Enkriptatzeak ordubete edo gehiago beharko du, eta prozesu horretan, gailua hainbat aldiz berrabiaraziko da eta ezingo duzu gailua erabili.</string>
     <string name="crypt_keeper_setup_title">Enkriptatzen…</string>
-    <string name="crypt_keeper_warn_wipe">Gailua abiarazteko %d saiakera geratzen zaizkizu; saiakerak agortuz gero, gailuan fabrikako ezarpenak berrezarriko dira, eta ondorioz, datu guztiak ezabatuko dira, baita fitxategiak eta deskargatutako aplikazioak ere.</string>
+    <string name="crypt_keeper_warn_wipe">"%1$d saiakera geratzen zaizkizu telefonoan fabrikako ezarpenak automatikoki berrezartzeko. Datu guztiak ezabatu egingo dira, fitxategiak eta deskargatutako aplikazioak barne.
+
+Telefonoa berrezarri ondoren berriz erabili nahi izanez gero, telefono honekin erlazionatutako %2$s informazioa idatzi beharko duzu (helbide elektronikoa eta pasahitza)."</string>
+    <string name="crypt_keeper_samsung_account">Samsung account</string>
+    <string name="crypt_keeper_google_account">Google kontua</string>
     <string name="crypt_keeper_failed_title">Enkriptatzeak huts egin du</string>
     <string name="crypt_keeper_failed_summary">Ezin da abiarazi gailua. Enkriptatze prozesua eten egin da. Gailuan fabrikako ezarpenak berrezarri behar dituzu, baina hori eginez gero, datu guztiak garbituko dira.</string>
     <string name="crypt_keeper_data_corrupted_title">Gailuaren biltegia hondatuta dago</string>
@@ -1723,11 +1730,14 @@ Baliteke enkriptatzeko ordubete edo gehiago behar izatea. Hasi baino lehen, ziur
     <string name="cryptkeeper_wrong_pin">PIN okerra adierazi duzu</string>
     <string name="cryptkeeper_wrong_direction">Keinu okerra marraztu da</string>
     <string name="checking_decryption">Egiaztatzen…</string>
-    <string name="crypt_keeper_last_warn_wipe">Gailua abiarazteko 1 saiakera geratzen zaizu; saiakerak agortuz gero, gailuan fabrikako ezarpenak berrezarriko dira. Horren ondorioz, datu guztiak ezabatuko dira, baita fitxategiak eta deskargatutako aplikazioak ere.</string>
+    <string name="crypt_keeper_last_warn_wipe">"1 saiakera geratzen zaizu telefonoan fabrikako ezarpen lehenetsiak berrezarri aurretik. Hori gertatuz gero, datu guztiak ezabatuko dira, fitxategiak eta deskargatutako aplikazioak barne.
+
+Telefonoa berrezarriz gero hura berriz erabiltzeko, telefono honekin erlazionatutako %s informazioa idatzi beharko duzu (helbide elektronikoa eta pasahitza)."</string>
     <string name="crypt_keeper_failed_title_dec">"Dekodeketa
 errorea"</string>
     <string name="crypt_keeper_failed_summary_dec">Ezin da desekriptatzea osatu eten egin delako. Berrezarri fabrikako datuak (zure datu guztiak ezabatuz) erabili aurretik.</string>
     <string name="crypt_keeper_set_screen_lock_type">Ezarri pantaila blokeo mota</string>
+    <string name="crypt_keeper_warning_keyboard_cover_does_not_work">Teklatu osagarriak ez du funtzionatuko telefonoa berrabiarazi ondoren.</string>
     <string name="encryption_interstitial_message">"Telefonoa gehiago babes dezakezu, telefonoa berrabiarazteko %s idazteko eskatuz. Telefonoa galtzen edo lapurtzen badizute, datuak babesten lagunduko dizu. Zenbait aplikaziok Abiarazte segurua beharko dute eginbideak atzitzeko (adibidez, posta elektronikoa sinkronizatzea).
 
 Ez duzu jasoko deirik, mezurik edo jakinarazpenik, eta alarmek ez dute joko, telefonoa abiarazten duzun arte."</string>
@@ -1972,6 +1982,12 @@ You will also need it when:"</string>
     <string name="lockpassword_confirm_your_pin_with_fingerprint">Erabili hatz aztarna edo adierazi uneko PINa.</string>
     <string name="lockpassword_confirm_your_pattern_with_fingerprint">Erabili hatz aztarna edo marraztu uneko patroia.</string>
     <string name="lockpassword_confirm_your_password_with_fingerprint">Erabili hatz aztarna edo adierazi uneko pasahitza.</string>
+    <string name="lockpassword_confirm_your_pin_with_iris">Erabili irisak edo idatzi uneko PINa.</string>
+    <string name="lockpassword_confirm_your_pattern_with_iris">Erabili irisak edo marraztu uneko patroia.</string>
+    <string name="lockpassword_confirm_your_password_with_iris">Erabili irisak edo idatzi uneko pasahitza.</string>
+    <string name="lockpassword_confirm_your_pin_with_biometrics">Erabili datu biometrikoak edo idatzi PINa.</string>
+    <string name="lockpassword_confirm_your_pattern_with_biometrics">Erabili datu biometrikoak edo marraztu patroia.</string>
+    <string name="lockpassword_confirm_your_password_with_biometrics">Erabili datu biometrikoak edo idatzi pasahitza.</string>
     <string name="lockpassword_confirm_your_pin_instead_of_fingerprint">Adierazi PINa, hatz aztarnen hautematea erabili beharrean.</string>
     <string name="lockpassword_confirm_your_pattern_instead_of_fingerprint">Marraztu patroia, hatz aztarnen hautematea erabili beharrean.</string>
     <string name="lockpassword_confirm_your_password_instead_of_fingerprint">Adierazi pasahitza, hatz aztarnen hautematea erabili beharrean.</string>
@@ -2046,6 +2062,7 @@ Hautatu nola desblokeatu nahi duzun telefonoa. Aurpegi bidezko desblokeoa eta Ir
     <string name="face_status_timeout">Denbora-muga gainditu da. Geroago saiatu berriz.</string>
     <string name="okay">Ados</string>
     <string name="face_samsung_account_button">Erabili Samsung account</string>
+    <string name="face_galaxy_account_button">Erabili Galaxy kontua</string>
     <string name="face_error_DB_corrupted">Arazo bat izan da aurpegiaren datuekin. Erregistratu aurpegia berriz.</string>
     <string name="face_error_DB_corrupted_popup_title">Erregistratu aurpegia berriz</string>
     <string name="face_error_timeout">Ez da hauteman zure aurpegia.</string>
@@ -2156,7 +2173,7 @@ Telefonoa desblokeatzeko datu biometrikoak edo %s erabiltzeko, aktibatu Iris bid
     <string name="biometrics_backup_locktype_title">Konfiguratu irisaren segurtasuna</string>
     <string name="biometrics_register_your_iris">Erregistratu irisak.</string>
     <string name="biometrics_backup_locktype_summary">Gailua desblokeatzeko irisak erabili nahi badituzu, patroia, PINa edo pasahitza ezarri behar duzu.</string>
-    <string name="biometrics_backup_locktype_message">Telefonoa desblokeatzeko edo segurtasunez egiaztatzeko irisak erabili nahi badituzu, hau egin behar duzu:</string>
+    <string name="biometrics_backup_locktype_message">Telefonoa desblokeatzeko edo aplikazioetan zeure burua egiaztatzeko irisak erabili nahi baduzu, hau egin behar duzu:</string>
     <string name="iris_delete_popup_title">Irisen datuak kendu?</string>
     <string name="iris_delete_popup_message">Irisen datuak kendu?</string>
     <string name="iris_delete_popup_message_with_related_func">Irisak darabiltzaten eginbideak desaktibatuko dira.</string>
@@ -2232,6 +2249,9 @@ Hautatu nola desblokeatu nahi duzun telefonoa. Iris bidezko desblokeoa eta Aurpe
     <string name="biometrics_dex_cant_use_msg">Ezin da erabili %s Samsung DeX-en.</string>
     <string name="biometrics_dex_closed_to_switch">%s itxi da Samsung DeX ezartzeko.</string>
     <string name="biometircs_dex_cant_use_toast">Ezin da exekutatu %s Samsung DeX-en. Probatu telefono moduan exekutatzen.</string>
+    <string name="iris_guide_text_preview">Beg. irisak erabiltzeko</string>
+    <string name="iris_guide_enable_toggle">Ukitu hau irisak erabiltzeko</string>
+    <string name="iris_cannot_verify">Ezin izan dira egiaztatu irisak</string>
     <string name="knox_twofactor_bio_description">Hautatu %s desblokeatzeko blokeo mota biometrikoa eta bigarren blokeo mota.</string>
     <string name="fingerprint_registered">Erregistratutako hatz aztarnak hautatutako desblokeo metodoarekin hautatuko dira.</string>
     <string name="knox_twofactor_description">Hautatu %s desblokeatzeko datu biometrikoak eta bigarren blokeo mota bat.</string>
@@ -3094,6 +3114,7 @@ Berriz saiatu."</string>
     <string name="easy_mode_app_help">Erabili gailua errazago pantaila Nagusiaren itxura sinpleagoaz eta pantailako elementu handiagoez.</string>
     <string name="easy_mode_app_help_dream_1">Erabili Pantaila nagusiaren diseinu sinplea eta handiagotu pantailako elementuak.</string>
     <string name="easy_mode_app_help_dream_2">Pantaila nagusian egindako pertsonalizazio guztiak baztertuko dira, eta Pantailaren zooma gehienezko mailan ezarriko da.</string>
+    <string name="easy_mode_app_help_3rd_launcher">Aplikatu Modu erraza pantailako elementu handienak ikusteko. TouchWiz orri nagusia erabiltzen ari ez bazara, Pantaila nagusiaren diseinua ez da aldatuko, baina pantailaren zooma Handia gisa ezarriko da, eta letra tipoa, berriz, Ertaina gisa.</string>
     <string name="security_warning_content">Pribatutasuna babestearren pantaila desblokeatzeko, konfiguratu pasahitza, PINa edo patroia</string>
     <string name="lock_setting_weather_desc">Eguraldiaren ezarpenak ikusteko edo aldatzeko, ukitu beheko EGURALDIAREN EZARPENAK aukera.</string>
     <string name="lock_setting_weather_btn">Eguraldiaren ezarpenak</string>
@@ -3340,7 +3361,7 @@ Downloading via mobile networks may result in additional charges depending on yo
     <string name="disable_hovering_title">Ezgaitu air view</string>
     <string name="disable_hovering_summary">Air view eta TalkBack ezin dituzu aldi berean gaitu. Aire begirada ezgaituko da.</string>
     <string name="pen_settings_pen_input">Direct pen input</string>
-    <string name="action_memo_onoff_screen_title">Memo-rik ez</string>
+    <string name="action_memo_onoff_screen_title">Ez dago pantailako oroigarririk</string>
     <string name="screen_off_note_summary">Idatzi oharrak pantaila itzalita dagoenean. Kendu S Pen eta hasi idazten.</string>
     <string name="screen_off_note_summary_jpn">Sortu oharrak pantaila itzalita dagoenean S Pen kenduta eta pantailan idatzita. Pantailako oroigarriak Galaxy Oharrak aplikazioan gordeko dira.</string>
     <string name="screen_off_note_summary_no_detach">Sortu oharrak S Pen-eko botoia sakatuta, pantaila ukituta hura itzalita dagoenean, eta ondoren, pantailan idatzita. Pantailako oroigarriak Samsung Oharrak aplikazioan gordeko dira.</string>
@@ -3947,7 +3968,7 @@ Konexioa partekatzea erabiliz gero, bateria gehiago kontsumituko da eta datu era
     <string name="wfd_descrpition_playsound">Erreproduzitu soinua.</string>
     <string name="wfd_is_not_supported">Ez da onartzen funtzio hori.</string>
     <string name="usbtethering_notify_wifi_is_on_title">Wi-Fi eginbidea desaktibatu?</string>
-    <string name="usbtethering_notify_wifi_is_on">Wi-Fi eta USB kable bidezko konexio partekatzea ezin dira aktibatuta egon aldi berean. Desaktibatu Wi-Fi eginbidea.</string>
+    <string name="usbtethering_notify_wifi_is_on">Wi-Fi eta USB kable bidezko konexio partekatzea ezin dira aktibatuta egon aldi berean. Wi-Fi konexioa desaktibatuko da.</string>
     <string name="disable_multi_window_dialog_text">Multiwindow desgaituko da eta leiho gainerakorretan irekitako aplikazio guztiak itxiko dira.</string>
     <string name="keyguard_password_attempt_count_pin_code">Saiakera %d geratzen da</string>
     <string name="keyguard_password_attempts_count_pin_code">%d saiakera geratzen dira</string>
@@ -4155,6 +4176,7 @@ SMSa jasotzea"</string>
     <string name="hdmi_mode_title">HDMI modua</string>
     <string name="hdmi_mode_dex">Samsung DeX</string>
     <string name="hdmi_mode_mirroring">Screen Mirroring</string>
+    <string name="hdmi_mode_not_available_while_cover_attached">%s ez dago eskuragarri estalkia erantsita badago.</string>
     <string name="screen_timeout_for_dex">Samsung DeX-ek d. muga gaind. du</string>
     <string name="show_virtual_keyboard_for_dex">Erakutsi teklatua pantailan Samsung DeX-en</string>
     <string name="comma">,</string>
@@ -4463,7 +4485,7 @@ Aukera hori geroago alda dezakezu Bluetooth ezarpenetan."</string>
     <string name="date_picker_title">Data</string>
     <string name="time_picker_title">Ordua</string>
     <string name="lock_after_timeout">Blokeatu automatikoki</string>
-    <string name="lock_after_timeout_summary">Blokeatu pantaila hura automatikoki itzali eta %s ondoren.</string>
+    <string name="lock_after_timeout_summary">Blokeatu telefonoa pantaila automatikoki itzali eta %s ondoren.</string>
     <string name="lock_after_timeout_summary_with_exception">Blokeatu pantaila automatikoki itzali eta %1$s ondoren, %2$s-ek desblokeatuta duenean izan ezik.</string>
     <string name="show_owner_info_on_lockscreen_label">Erakutsi gailuaren jabeari buruzko informazioa blokeo pantailan.</string>
     <string name="owner_info_settings_title">Jabearen informazioa</string>
@@ -4611,6 +4633,8 @@ Kokapenaren zehaztasuna hobetzeko, aplikazioek eta zerbitzuek Wi-Fi sareak bilat
     <string name="wifi_empty_list_user_restricted">Ez duzu Wi-Fi ezarpenak aldatzeko baimenik.</string>
     <string name="wifi_setup_wps">Ezarpen automatikoa (WPS)</string>
     <string name="wifi_show_advanced">Erakutsi aukera aurreratuak</string>
+    <string name="wifi_advanced_toggle_description_expanded">Ukitu bi aldiz tolesteko.</string>
+    <string name="wifi_advanced_toggle_description_collapsed">Ukitu bi aldiz zabaltzeko.</string>
     <string name="wifi_wps_setup_title">WPS konfigurazioa</string>
     <string name="wifi_wps_setup_msg">WPS hasten…</string>
     <string name="wifi_wps_onstart_pbc">Ukitu routerraren Wi-Fi konfigurazio babestuaren botoia. WPS izena izan dezake, edo sinbolo hau eduki:</string>
@@ -4642,6 +4666,10 @@ Kokapenaren zehaztasuna hobetzeko, aplikazioek eta zerbitzuek Wi-Fi sareak bilat
     <string name="wifi_shared">Partekatuta</string>
     <string name="wifi_unchanged">(aldatugabea)</string>
     <string name="wifi_unspecified">(Zehaztu gabe)</string>
+    <string name="wifi_select_cert">Hautatu ziurtagiria</string>
+    <string name="wifi_do_not_provide_eap_user_cert">Ez eman</string>
+    <string name="wifi_do_not_validate_eap_server">Ez balidatu</string>
+    <string name="wifi_do_not_validate_eap_server_warning">Ez da zehaztu ziurtagiririk. Konexioa ez da pribatua izango.</string>
     <string name="wifi_scan_always_turnon_message">%s Wi-Fi sareak bilatzeko baimena eskatzen ari da, baita Wi-Fi itzalita badago ere, kokapenaren zehaztasuna hobetzeko eta bestelako helburuetarako. Eman baimena aplikazio guztiei?</string>
     <string name="wifi_scan_always_confirm_allow">Onartu</string>
     <string name="wifi_scan_always_confirm_deny">Ukatu</string>
@@ -4976,9 +5004,9 @@ Errendimendua hobetzeko, erabili SD txartel azkarragoren bat edo USB biltegiratz
     <string name="restore_default_apn_completed">APN ezarpenak lehenetsira berrezarrita</string>
     <string name="reset_network_desc">Honek sare ezarpen guztiak berrezarriko ditu, besteak beste:</string>
     <string name="reset_network_button_text">Konfigurazioa berrezarri</string>
-    <string name="reset_network_final_desc">Konexio ezarpen guztiak berrezarriko dira. Ezin da desegin.</string>
+    <string name="reset_network_final_desc">Sare ezarpen guztiak berrezarriko dira. Ekintza hori ezin da desegin.</string>
     <string name="reset_network_final_button_text">Konfigurazioa berrezarri</string>
-    <string name="reset_network_complete_toast">Konexio ezarpenak berrezarri dira.</string>
+    <string name="reset_network_complete_toast">Sare ezarpenak berrezarri dira.</string>
     <string name="master_clear_title">Berrezarri fabrikako datuak</string>
     <string name="master_clear_accounts">Orain kontu hauetan erregistratuta zaude:</string>
     <string name="master_clear_other_users_present">Gailuko gainerako erabiltzaileen datuak ere ezabatuko dira.</string>
@@ -6091,6 +6119,7 @@ Ez duzu deirik, mezurik edo jakinarazpenik jasoko, eta alarmek ez dute joko, gai
     <string name="set_data_limit">Ezarri datu muga</string>
     <string name="data_limit">Datu muga</string>
     <string name="data_usage_template">%1$s erabili dira tarte honetan: %2$s</string>
+    <string name="data_usage_template_wifi">%s erabili dira azken 30 egunetan</string>
     <string name="data_usage_other_apps">Erabileran sartzen diren aplik.</string>
     <string name="data_saver_title">Datu aurrezlea</string>
     <string name="unrestricted_data_saver">Baim. Datu aur. aktibo dagoenean</string>
@@ -6141,6 +6170,7 @@ Ez duzu deirik, mezurik edo jakinarazpenik jasoko, eta alarmek ez dute joko, gai
     <string name="legacy_dhcp_client_summary">Erabili Lollipop bertsioko DHCP bezeroa eta ez Android DHCP bezero berria.</string>
     <string name="screen_off_pocket_title">Mantendu pant. itzalita</string>
     <string name="screen_off_pocket_summary">Eragotzi pantaila nahi gabe piztea gailua toki ilunetan dagoenean, hala nola poltsikoan edo poltsan.</string>
+    <string name="noApplications">Ekintza honekin erlazionatutako aplikazio guztiak desgaitu edo blokeatu dira, edo ez daude instalatuta.</string>
     <string name="confirm_reset_shortcut_manager_throttling_title">Berrezarri Lasterbide kudeatzailearen abiadura mugatzailea</string>
     <string name="confirm_reset_shortcut_manager_throttling_message">Lasterbide kudeatzailearen abiadura mugatzailearen kontagailuak berrezarri egingo dira.</string>
 </resources>

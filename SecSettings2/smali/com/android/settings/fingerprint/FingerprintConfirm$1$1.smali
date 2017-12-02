@@ -147,7 +147,7 @@
 
     iget-object v2, v2, Lcom/android/settings/fingerprint/FingerprintConfirm$1;->this$0:Lcom/android/settings/fingerprint/FingerprintConfirm;
 
-    const v3, 0x7f0b07c8
+    const v3, 0x7f0b07cc
 
     invoke-virtual {v2, v3}, Lcom/android/settings/fingerprint/FingerprintConfirm;->getString(I)Ljava/lang/String;
 
@@ -202,7 +202,7 @@
 
     iget-object v2, v2, Lcom/android/settings/fingerprint/FingerprintConfirm$1;->this$0:Lcom/android/settings/fingerprint/FingerprintConfirm;
 
-    const v3, 0x7f0b07cb
+    const v3, 0x7f0b07cf
 
     invoke-virtual {v2, v3}, Lcom/android/settings/fingerprint/FingerprintConfirm;->getString(I)Ljava/lang/String;
 

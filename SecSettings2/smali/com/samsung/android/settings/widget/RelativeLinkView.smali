@@ -45,7 +45,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f040272
+    const v1, 0x7f040275
 
     invoke-virtual {v0, v1, p0}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;)Landroid/view/View;
 
@@ -55,7 +55,7 @@
 
     iget-object v0, p0, Lcom/samsung/android/settings/widget/RelativeLinkView;->mParentView:Landroid/view/View;
 
-    const v1, 0x7f1106f7
+    const v1, 0x7f1106f9
 
     invoke-virtual {v0, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 

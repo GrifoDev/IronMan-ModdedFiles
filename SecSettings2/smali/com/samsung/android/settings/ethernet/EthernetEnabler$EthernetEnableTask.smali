@@ -149,18 +149,39 @@
 
     move-result v0
 
+    if-eqz v0, :cond_1
+
+    iget-object v0, p0, Lcom/samsung/android/settings/ethernet/EthernetEnabler$EthernetEnableTask;->this$0:Lcom/samsung/android/settings/ethernet/EthernetEnabler;
+
+    invoke-static {v0}, Lcom/samsung/android/settings/ethernet/EthernetEnabler;->-get1(Lcom/samsung/android/settings/ethernet/EthernetEnabler;)Landroid/net/EthernetManager;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Landroid/net/EthernetManager;->isEthConnected()Z
+
+    move-result v0
+
     if-eqz v0, :cond_0
 
+    const-string/jumbo v0, "SettingsEthEnabler"
+
+    const-string/jumbo v1, "onPostExecute : already connected, so do not need starting notification"
+
+    invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    :goto_0
+    return-void
+
+    :cond_0
     iget-object v0, p0, Lcom/samsung/android/settings/ethernet/EthernetEnabler$EthernetEnableTask;->this$0:Lcom/samsung/android/settings/ethernet/EthernetEnabler;
 
     const/4 v1, 0x1
 
     invoke-static {v0, v1}, Lcom/samsung/android/settings/ethernet/EthernetEnabler;->-wrap0(Lcom/samsung/android/settings/ethernet/EthernetEnabler;Z)V
 
-    :goto_0
-    return-void
+    goto :goto_0
 
-    :cond_0
+    :cond_1
     iget-object v0, p0, Lcom/samsung/android/settings/ethernet/EthernetEnabler$EthernetEnableTask;->this$0:Lcom/samsung/android/settings/ethernet/EthernetEnabler;
 
     const/4 v1, 0x0

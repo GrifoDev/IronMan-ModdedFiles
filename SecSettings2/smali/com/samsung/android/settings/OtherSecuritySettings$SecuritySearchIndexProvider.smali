@@ -466,7 +466,7 @@
 
     move-result-object v2
 
-    const v8, 0x7f0b1418
+    const v8, 0x7f0b1429
 
     invoke-virtual {v2, v8}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -537,7 +537,7 @@
 
     invoke-direct {v0, p1}, Lcom/android/settings/search/SearchIndexableRaw;-><init>(Landroid/content/Context;)V
 
-    const v8, 0x7f0b166e
+    const v8, 0x7f0b1680
 
     invoke-virtual {v2, v8}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -549,7 +549,7 @@
 
     iput-object v8, v0, Lcom/android/settings/search/SearchIndexableRaw;->title:Ljava/lang/String;
 
-    const v8, 0x7f0b166e
+    const v8, 0x7f0b1680
 
     invoke-static {p1, v8}, Lcom/android/settings/Utils;->getKeywordForSearch(Landroid/content/Context;I)Ljava/lang/String;
 
@@ -586,7 +586,7 @@
 
     iput-object v8, v0, Lcom/android/settings/search/SearchIndexableRaw;->key:Ljava/lang/String;
 
-    const v8, 0x7f0b0d6c
+    const v8, 0x7f0b0d7b
 
     invoke-virtual {v2, v8}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -594,7 +594,7 @@
 
     iput-object v8, v0, Lcom/android/settings/search/SearchIndexableRaw;->title:Ljava/lang/String;
 
-    const v8, 0x7f0b0d6c
+    const v8, 0x7f0b0d7b
 
     invoke-static {p1, v8}, Lcom/android/settings/Utils;->getKeywordForSearch(Landroid/content/Context;I)Ljava/lang/String;
 
@@ -608,7 +608,7 @@
 
     if-nez v8, :cond_7
 
-    const v8, 0x7f0b0d6d
+    const v8, 0x7f0b0d7c
 
     invoke-virtual {v2, v8}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -648,7 +648,7 @@
 
     if-eqz v8, :cond_9
 
-    const v5, 0x7f0b1a2c
+    const v5, 0x7f0b1a3e
 
     :goto_3
     new-instance v0, Lcom/android/settings/search/SearchIndexableRaw;
@@ -659,7 +659,7 @@
 
     iput-object v8, v0, Lcom/android/settings/search/SearchIndexableRaw;->key:Ljava/lang/String;
 
-    const v8, 0x7f0b1a2b
+    const v8, 0x7f0b1a3d
 
     invoke-virtual {v2, v8}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -667,7 +667,7 @@
 
     iput-object v8, v0, Lcom/android/settings/search/SearchIndexableRaw;->title:Ljava/lang/String;
 
-    const v8, 0x7f0b1a2b
+    const v8, 0x7f0b1a3d
 
     invoke-static {p1, v8}, Lcom/android/settings/Utils;->getKeywordForSearch(Landroid/content/Context;I)Ljava/lang/String;
 
@@ -712,7 +712,7 @@
 
     iput-object v8, v0, Lcom/android/settings/search/SearchIndexableRaw;->key:Ljava/lang/String;
 
-    const v8, 0x7f0b0d83
+    const v8, 0x7f0b0d92
 
     invoke-virtual {v2, v8}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -720,7 +720,7 @@
 
     iput-object v8, v0, Lcom/android/settings/search/SearchIndexableRaw;->title:Ljava/lang/String;
 
-    const v8, 0x7f0b0d83
+    const v8, 0x7f0b0d92
 
     invoke-static {p1, v8}, Lcom/android/settings/Utils;->getKeywordForSearch(Landroid/content/Context;I)Ljava/lang/String;
 
@@ -762,7 +762,7 @@
 
     if-nez v8, :cond_8
 
-    const v8, 0x7f0b0d6e
+    const v8, 0x7f0b0d7d
 
     invoke-virtual {v2, v8}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -773,7 +773,7 @@
     goto/16 :goto_2
 
     :cond_8
-    const v8, 0x7f0b0d6f
+    const v8, 0x7f0b0d7e
 
     invoke-virtual {v2, v8}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -784,7 +784,7 @@
     goto/16 :goto_2
 
     :cond_9
-    const v5, 0x7f0b1a2d
+    const v5, 0x7f0b1a3f
 
     goto/16 :goto_3
 .end method
@@ -823,7 +823,7 @@
 
     iput-object v7, v5, Landroid/provider/SearchIndexableResource;->className:Ljava/lang/String;
 
-    const v7, 0x7f0800ba
+    const v7, 0x7f0800bc
 
     iput v7, v5, Landroid/provider/SearchIndexableResource;->xmlResId:I
 
@@ -869,7 +869,7 @@
 
     move-result-object v7
 
-    const v8, 0x7f0b166d
+    const v8, 0x7f0b167f
 
     invoke-virtual {v7, v8}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -885,7 +885,7 @@
 
     move-result-object v7
 
-    const v8, 0x7f0b166e
+    const v8, 0x7f0b1680
 
     invoke-virtual {v7, v8}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 

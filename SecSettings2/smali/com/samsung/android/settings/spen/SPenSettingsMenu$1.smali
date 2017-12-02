@@ -57,11 +57,11 @@
     :goto_0
     iget-object v2, p0, Lcom/samsung/android/settings/spen/SPenSettingsMenu$1;->this$0:Lcom/samsung/android/settings/spen/SPenSettingsMenu;
 
-    invoke-static {v2}, Lcom/samsung/android/settings/spen/SPenSettingsMenu;->-get3(Lcom/samsung/android/settings/spen/SPenSettingsMenu;)Lcom/android/settings/SecDropDownPreference;
+    invoke-static {v2}, Lcom/samsung/android/settings/spen/SPenSettingsMenu;->-get3(Lcom/samsung/android/settings/spen/SPenSettingsMenu;)Lcom/samsung/android/settings/spen/SpenDropDownPreference;
 
     move-result-object v2
 
-    invoke-virtual {v2}, Lcom/android/settings/SecDropDownPreference;->getEntries()[Ljava/lang/CharSequence;
+    invoke-virtual {v2}, Lcom/samsung/android/settings/spen/SpenDropDownPreference;->getEntries()[Ljava/lang/CharSequence;
 
     move-result-object v2
 
@@ -71,11 +71,11 @@
 
     iget-object v2, p0, Lcom/samsung/android/settings/spen/SPenSettingsMenu$1;->this$0:Lcom/samsung/android/settings/spen/SPenSettingsMenu;
 
-    invoke-static {v2}, Lcom/samsung/android/settings/spen/SPenSettingsMenu;->-get3(Lcom/samsung/android/settings/spen/SPenSettingsMenu;)Lcom/android/settings/SecDropDownPreference;
+    invoke-static {v2}, Lcom/samsung/android/settings/spen/SPenSettingsMenu;->-get3(Lcom/samsung/android/settings/spen/SPenSettingsMenu;)Lcom/samsung/android/settings/spen/SpenDropDownPreference;
 
     move-result-object v2
 
-    invoke-virtual {v2}, Lcom/android/settings/SecDropDownPreference;->getEntryValues()[Ljava/lang/CharSequence;
+    invoke-virtual {v2}, Lcom/samsung/android/settings/spen/SpenDropDownPreference;->getEntryValues()[Ljava/lang/CharSequence;
 
     move-result-object v2
 
@@ -91,11 +91,11 @@
 
     iget-object v2, p0, Lcom/samsung/android/settings/spen/SPenSettingsMenu$1;->this$0:Lcom/samsung/android/settings/spen/SPenSettingsMenu;
 
-    invoke-static {v2}, Lcom/samsung/android/settings/spen/SPenSettingsMenu;->-get3(Lcom/samsung/android/settings/spen/SPenSettingsMenu;)Lcom/android/settings/SecDropDownPreference;
+    invoke-static {v2}, Lcom/samsung/android/settings/spen/SPenSettingsMenu;->-get3(Lcom/samsung/android/settings/spen/SPenSettingsMenu;)Lcom/samsung/android/settings/spen/SpenDropDownPreference;
 
     move-result-object v2
 
-    invoke-virtual {v2, v0}, Lcom/android/settings/SecDropDownPreference;->setValueIndex(I)V
+    invoke-virtual {v2, v0}, Lcom/samsung/android/settings/spen/SpenDropDownPreference;->setValueIndex(I)V
 
     :cond_0
     add-int/lit8 v0, v0, 0x1

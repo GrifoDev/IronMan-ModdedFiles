@@ -122,6 +122,8 @@
     <string name="wifi_allow_scan_with_traffic_summary">Ulanylan maglumat möçberine baglylykda, Wi-Fi rouming skanlara awtomatik rugsat ber ýa-da ret et.</string>
     <string name="select_logd_size_title">Žurnal üçin bufer ölçegi</string>
     <string name="select_logd_size_dialog_title">Her žurnal buferiniň maksimum ölçegini saýla</string>
+    <string name="dev_logpersist_clear_warning_title">Hemişelik logger ammaryny aýyrmalymy?</string>
+    <string name="dev_logpersist_clear_warning_message">Hemişelik logger ýapylanda, logger maglumaty öçüriler.</string>
     <string name="select_logpersist_title">Log maglumatyny hemişelik sakla</string>
     <string name="select_logpersist_dialog_title">Hemişelik saklamak üçin, log bufer saýla</string>
     <string name="select_usb_configuration_title">USB düzülişi</string>
@@ -855,6 +857,7 @@ Muny soň Bluetooth sazlamalaryna baryp üýtgedip bilersiňiz."</string>
     <string name="bluetooth_avc_available_description">Birigen Bluetooth enjamy Multimedia ses sinhronlamany goldaýar we Bluetooth enjamyň bellän ses derejesi telefonyňyz sinhronlanar.</string>
     <string name="bluetooth_enter_pin_msg">%s bilen baglamak üçin PIN giriziň (0000 ýa-da 1234 ýazyp görüň).</string>
     <string name="bluetooth_pin_maximum_number_message">Nyşanlaryň iň ýokary sanyna ýetildi.</string>
+    <string name="bluetooth_frp_permission_message">Bu jaň üçin Bluetooth enjamyny ulanyp bolmaýar.</string>
     <string name="settings_menu_done">Tamam</string>
     <string name="usb_tethering_unavailable_subtext_tmo">USB not connected</string>
     <string name="usb_tethering_available_subtext_tmo">USB connected, check to tether</string>
@@ -1354,7 +1357,7 @@ Emma, ýöriteleşdirilen marketingi almakdan çyksaňyz hem, ol mobil enjamlary
     <string name="navigationbar_pressure_sensitivity_title">Öý düwmä gaty bas</string>
     <string name="navigationbar_pressure_sensitivity_summary">Gizlenilgi wagty, hemişekiden gaty basyp, Öý düwmäni ulanyň.</string>
     <string name="navigationbar_pressure_sensitivity_level_summary">Basyş derejesi: %1$d / %2$d</string>
-    <string name="navigationbar_pressure_sensitivity_description_off">Gizlenilgi wagty, hemişekiden gaty basyp, Öý düwmäni ulanyň.</string>
+    <string name="navigationbar_pressure_sensitivity_description_off">Öý düwmäni gaty basmak üçin gerekli basyş möçberini sazlaň.</string>
     <string name="navigationbar_pressure_low">Has ýeňil</string>
     <string name="navigationbar_pressure_high">Has güýçli</string>
     <string name="navigationbar_hide_bar">Görkez we gizle düwmesi</string>
@@ -1493,7 +1496,7 @@ Emma, ýöriteleşdirilen marketingi almakdan çyksaňyz hem, ol mobil enjamlary
     <string name="crypt_keeper_decrypt_title">enjamyň şifrini açma</string>
     <string name="crypt_keeper_decrypt_summary">Enjamyň şifri açyldy</string>
     <string name="crypt_keeper_type_pin">PIN</string>
-    <string name="crypt_keeper_type_pattern">Şablon</string>
+    <string name="crypt_keeper_type_pattern">şablon</string>
     <string name="crypt_keeper_type_password">Parol</string>
     <string name="crypt_keeper_type_direction">Ugur gulpy</string>
     <string name="crypt_keeper_confirm_title_dec">Şifri açmany tassyklama</string>
@@ -1577,7 +1580,11 @@ Maglumatyň möçberine baglylykda, şifrlemek uzaga çekip biler. Başlamankaň
     <string name="crypt_keeper_confirm_title">Kodlamany tassykla</string>
     <string name="crypt_keeper_final_desc">Enjamy şifrlemegi yzyna alyp bolmaýar we prosesiň arasy üzülse, maglumatlar ýiter. Şifrlemek bir sagada ýa-da ondan hem uzaga çekip biler, şol aralykda enjamyňyz birnäçe gezek açylyp ýapylar we ony wagtlaýynça ulanyp bilmersiňiz.</string>
     <string name="crypt_keeper_setup_title">Şifrlenýär…</string>
-    <string name="crypt_keeper_warn_wipe">Enjamy başlatmak üçin ýene %d synanyşyk galdy, soňra ol standart sazlamalaryna nol ediler. Ol ähli maglumaty, şol sanda faýllary we göçürilip alnan goýmalary öçürer.</string>
+    <string name="crypt_keeper_warn_wipe">"Ýene %1$d synanyşykdan soň, telefonyňyz asyl sazlamalaryna nol ediler. Ol ähli maglumaty, şol sanda faýllary we göçürilip alnan goýmalary öçürer.
+
+Telefonyňyz nol edilse, ony ýene ulanyp bilmek üçin, şu telefon bilen baglanan %2$s maglumatyny (e-poçta salgysy we parol) girizmeli bolmagyňyz mümkin."</string>
+    <string name="crypt_keeper_samsung_account">Samsung account</string>
+    <string name="crypt_keeper_google_account">Googly hasaby</string>
     <string name="crypt_keeper_failed_title">Şifrlenen amala aşyrylmady</string>
     <string name="crypt_keeper_failed_summary">Enjamyňyzy başladyp bolmaýar. Şifrleme prosesiniň arasy üzüldi. Siz enjamyňyzy asyl sazlamalaryna nol etmeli. Ol ähli maglumatyňyzy öçürer.</string>
     <string name="crypt_keeper_data_corrupted_title">Enjam ammary zeperli</string>
@@ -1596,10 +1603,13 @@ Maglumatyň möçberine baglylykda, şifrlemek uzaga çekip biler. Başlamankaň
     <string name="cryptkeeper_wrong_pin">Nädogry PIN girizildi</string>
     <string name="cryptkeeper_wrong_direction">Nädogry ugur çyzyldy</string>
     <string name="checking_decryption">Dogrulygy barlanylýar…</string>
-    <string name="crypt_keeper_last_warn_wipe">Enjamy başlatmak üçin diňe 1 synanyşyk galdy, soňra ol standart sazlamalaryna nol ediler. Ol ähli maglumaty, şol sanda faýllary we göçürilip alnan goýmalary öçürer.</string>
+    <string name="crypt_keeper_last_warn_wipe">"Ýene 1 synanyşykdan soň, telefonyňyz asyl sazlamalaryna nol ediler. Ol ähli maglumaty, şol sanda faýllary we göçürilip alnan goýmalary öçürer.
+
+Telefonyňyz nol edilse, ony ýene ulanyp bilmek üçin, şu telefon bilen baglanan %s maglumatyny (e-poçta salgysy we parol) girizmeli bolmagyňyz mümkin."</string>
     <string name="crypt_keeper_failed_title_dec">Aýanlaşyk amala aşyrylmady</string>
     <string name="crypt_keeper_failed_summary_dec">Päsgel berlendigi sebäpli şifri açmagy tamamlamak mümkin däl. Ulanmazdan öň zawodyň maglumatlary täzeden düzmegini (ähli maglumatlary öçüriň) ýerine ýetiriň.</string>
     <string name="crypt_keeper_set_screen_lock_type">Ekrany gulplama görnüş amaly gurnamak</string>
+    <string name="crypt_keeper_warning_keyboard_cover_does_not_work">Telefon açylyp ýapylansoň, klawiatura gapagy işlemez.</string>
     <string name="encryption_interstitial_message">"Başlatmazdan öň %s girizilmegini sorap, bu telefony has-da gorap bilersiňiz. Ol eger telefon ýitse ýa-da ogurlansa maglumatyňyzy goramaga kömek edýär. E-poçta sinhronlama ýaly funksiýalara giriş üçin, Enjam şifrleme syýasatlaryna laýyklykda, käbir goýmalara Howpsuz başlangyç gerek bolup biler.
 
 Telefon başlaýança, enjam jaňlary, hatlary ýa-da habarnamalary almaz ýa-da oýaryjylar işlemez."</string>
@@ -1844,6 +1854,12 @@ You will also need it when:"</string>
     <string name="lockpassword_confirm_your_pin_with_fingerprint">Barmak yzy ulanyň ýa-da häzirki PIN-i giriziň.</string>
     <string name="lockpassword_confirm_your_pattern_with_fingerprint">Barmak yzy ulanyň ýa-da häzirki şablony çyzyň.</string>
     <string name="lockpassword_confirm_your_password_with_fingerprint">Barmak yzy ulanyň ýa-da häzirki paroly giriziň.</string>
+    <string name="lockpassword_confirm_your_pin_with_iris">Gözleriňizi ulanyň ýa-da häzirki PIN-iňizi giriziň.</string>
+    <string name="lockpassword_confirm_your_pattern_with_iris">Gözleriňizi ulanyň ýa-da häzirki şablonyňyzy çyzyň.</string>
+    <string name="lockpassword_confirm_your_password_with_iris">Gözleriňizi ulanyň ýa-da häzirki paroly giriziň.</string>
+    <string name="lockpassword_confirm_your_pin_with_biometrics">Biometrika ulanyň ýa-da PIN-iňizi giriziň.</string>
+    <string name="lockpassword_confirm_your_pattern_with_biometrics">Biometrika ulanyň ýa-da şablonyňyzy çyzyň.</string>
+    <string name="lockpassword_confirm_your_password_with_biometrics">Biometrika ulanyň ýa-da parolyňyzy giriziň.</string>
     <string name="lockpassword_confirm_your_pin_instead_of_fingerprint">Barmak yzyny tanamaga derek, PIN-iňizi giriziň.</string>
     <string name="lockpassword_confirm_your_pattern_instead_of_fingerprint">Barmak yzyny tanamaga derek, şablonyňyzy çyzyň.</string>
     <string name="lockpassword_confirm_your_password_instead_of_fingerprint">Barmak yzyny tanamaga derek, parolyňyzy giriziň.</string>
@@ -1918,6 +1934,7 @@ Telefonyň gulpuny nädip açmak isleýäniňizi saýlaň. Ýüz gulp açyş bil
     <string name="face_status_timeout">Taým-aut. Soňra synanyşyň.</string>
     <string name="okay">OK</string>
     <string name="face_samsung_account_button">Samsung account ulan</string>
+    <string name="face_galaxy_account_button">Galaxy hasabyny ulan</string>
     <string name="face_error_DB_corrupted">Ýüz maglumatyňyzda bir problema bar. Ýüzüňizi ýene bellige alyň.</string>
     <string name="face_error_DB_corrupted_popup_title">Ýüzüňizi ýene bellige alyň</string>
     <string name="face_error_timeout">Ýüzüňiz anyklanmady.</string>
@@ -2028,7 +2045,7 @@ Telefonyňyzy açar ýaly, biometrika ýa-da %s ulanmak üçin, Göz gulpuny aç
     <string name="biometrics_backup_locktype_title">Göz howpsuzlygyny sazla</string>
     <string name="biometrics_register_your_iris">Gözleriňiz bellige alyň.</string>
     <string name="biometrics_backup_locktype_summary">Enjamyň gulpuny açmakda gözleri ulanmak üçin, şablon, PIN ýa-da parol bellemeli.</string>
-    <string name="biometrics_backup_locktype_message">Telefonyň gulpuny açmak ýa-da howpsuz tassyklamak üçin, gözleriňizi ulanar ýaly, siz şeýtmeli:</string>
+    <string name="biometrics_backup_locktype_message">Telefonyň gulpuny açmak ýa-da goýmalarda özüňizi tassyklamak üçin, gözleri ulanar ýaly, siz şeýtmeli:</string>
     <string name="iris_delete_popup_title">Göz maglumatyny aýyrmalymy?</string>
     <string name="iris_delete_popup_message">Göz maglumatyny aýyrmalymy?</string>
     <string name="iris_delete_popup_message_with_related_func">Gözleri ulanýan funksiýalar ýapylar.</string>
@@ -2104,6 +2121,9 @@ Telefonyň gulpuny nädip açmak isleýäniňizi saýlaň. Göz gulp açyş bile
     <string name="biometrics_dex_cant_use_msg">Samsung DeX-de %s ulanyp bolmaýar.</string>
     <string name="biometrics_dex_closed_to_switch">Samsung DeX-e geçmek üçin, %s ýapyldy.</string>
     <string name="biometircs_dex_cant_use_toast">%s Samsung DeX-de işläp bilmeýär. Telefon tertibinde işledip görüň.</string>
+    <string name="iris_guide_text_preview">Göz ulan üçn şuňa seret</string>
+    <string name="iris_guide_enable_toggle">Gözleri ulanmak üçin, şuňa bas</string>
+    <string name="iris_cannot_verify">Gözleri tassyklap bolmady</string>
     <string name="knox_twofactor_bio_description">%s gulpuny açmak üçin, biometrik gulp görnüşiňizi we ikinji gulp görnüşiňizi saýlaň.</string>
     <string name="fingerprint_registered">Hasaba alynan barmak yzlary saýlanan açyş usuly boýunça ulanylar.</string>
     <string name="knox_twofactor_description">%s gulpuny açmak üçin, biometrikaňyzy we ikinji gulp görnüşiňizi saýlaň.</string>
@@ -2965,6 +2985,7 @@ tertip"</string>
     <string name="easy_mode_app_help">Ýönekeý öý ekrany ýerleşişi we uly ekran elementleri arkaly enjamyňyzy has ýeňil ulanyň.</string>
     <string name="easy_mode_app_help_dream_1">Ýönekeý Öý ekran ýerleşimini we has uly ekran zatlaryny ulanyň.</string>
     <string name="easy_mode_app_help_dream_2">Öý ekranda eden islendik laýyklamalaryňyz aýrylar we Ekran zumy maksimuma belleniler.</string>
+    <string name="easy_mode_app_help_3rd_launcher">Has uly ekran zatlary üçin, Aňsat tertibi ulanyň. TouchWiz öý ulanmaýan bolsaňyz, Öý ekran ýerleşimi üýtgemez, ýöne ekran zumy ula bellener we şrift ölçegi orta bellener.</string>
     <string name="security_warning_content">Ekranyň gulpuny açar ýaly parol, PIN ýa-da şablon belläp, gizlinligiňizi gorap bilersiňiz</string>
     <string name="lock_setting_weather_desc">Howa ýagdaýy sazlamalaryny görmek ýa-da üýtgetmek üçin, aşakda HOWA ÝAGDAÝY SAZLAMALARY-na basyň.</string>
     <string name="lock_setting_weather_btn">Howa sazlamalary</string>
@@ -3818,7 +3839,7 @@ Mobil hotspot ulanmak köp zarýad we maglumat ulanýar."</string>
     <string name="wfd_descrpition_playsound">Ses goýberiň.</string>
     <string name="wfd_is_not_supported">Bu funksiýa goldanylmaýar.</string>
     <string name="usbtethering_notify_wifi_is_on_title">Wi-Fi ýapmalymy?</string>
-    <string name="usbtethering_notify_wifi_is_on">Wi-Fi bilen USB baglamany birlikde açyk bolup bilmeýär. Wi-Fi-y ýapyň.</string>
+    <string name="usbtethering_notify_wifi_is_on">Wi-Fi bilen USB baglama birlikde açyk bolup bilmeýär. Wi-Fi ýapylar.</string>
     <string name="disable_multi_window_dialog_text">Köp-penjire ýapylar we açylýan penjirelerde açyk duran ähli goýmalar ýapylar.</string>
     <string name="keyguard_password_attempt_count_pin_code">%d synanyşyk galdy</string>
     <string name="keyguard_password_attempts_count_pin_code">%d synanyşyklar galdy.</string>
@@ -4026,6 +4047,7 @@ SMS almak"</string>
     <string name="hdmi_mode_title">HDMI tertibi</string>
     <string name="hdmi_mode_dex">Samsung DeX</string>
     <string name="hdmi_mode_mirroring">Screen Mirroring</string>
+    <string name="hdmi_mode_not_available_while_cover_attached">Gapak dakylgy wagty, %s elýeterli bolmaýar.</string>
     <string name="screen_timeout_for_dex">Samsung DeX ekran taým-auty</string>
     <string name="show_virtual_keyboard_for_dex">Samsung DeX-de ekran klawiaturasy görkez</string>
     <string name="comma">,</string>
@@ -4334,7 +4356,7 @@ Muny soň Bluetooth sazlamalaryna baryp üýtgedip bilersiňiz."</string>
     <string name="date_picker_title">Sene</string>
     <string name="time_picker_title">Sagat</string>
     <string name="lock_after_timeout">Awtomatiki ýagdaýda gulpla</string>
-    <string name="lock_after_timeout_summary">Awtomatik ýapylansoň, ekrany %s gulplaň.</string>
+    <string name="lock_after_timeout_summary">Ekran awtomatik ýapylansoň, %s telefony gulplaň.</string>
     <string name="lock_after_timeout_summary_with_exception">Awtomatik ýapylansoň %1$s ekranyny gulplaň (%2$s gulpuny açyp saklanda däl).</string>
     <string name="show_owner_info_on_lockscreen_label">Gulply ekranda enjamyň eýesi baradaky maglumaty görkez.</string>
     <string name="owner_info_settings_title">Eýesi hakynda maglumat</string>
@@ -4469,6 +4491,8 @@ Bellik: Barmak yzyňyz şablonça ýa-da PIN-çe howpsuz bolman biler.
     <string name="wifi_empty_list_user_restricted">Wi-Fi sazlamalaryny üýtgetmäge rugsadyňyz ýok.</string>
     <string name="wifi_setup_wps">Awtomatiki oturdyş (WPS)</string>
     <string name="wifi_show_advanced">Mümkinçiligi giňişleýin görkez</string>
+    <string name="wifi_advanced_toggle_description_expanded">Düýrlemek üçin iki gezek basyň.</string>
+    <string name="wifi_advanced_toggle_description_collapsed">Giňeltmek üçin jübüt basyň.</string>
     <string name="wifi_wps_setup_title">WPS gurnaýyş</string>
     <string name="wifi_wps_setup_msg">WPS başlap duruň…</string>
     <string name="wifi_wps_onstart_pbc">Wi-Fi goralan oturdyş düwmesine basyň. Bu WPS ýa-da başga bir simbol bolup biler.</string>
@@ -4500,6 +4524,10 @@ Bellik: Barmak yzyňyz şablonça ýa-da PIN-çe howpsuz bolman biler.
     <string name="wifi_shared">Paýlaşyldy</string>
     <string name="wifi_unchanged">(üýtgedilmedik)</string>
     <string name="wifi_unspecified">(Bellenilmedik)</string>
+    <string name="wifi_select_cert">Sertifikat saýla</string>
+    <string name="wifi_do_not_provide_eap_user_cert">Berme</string>
+    <string name="wifi_do_not_validate_eap_server">Barlama</string>
+    <string name="wifi_do_not_validate_eap_server_warning">Sertifikat görkezilmedi. Birikmäňiz hususy bolmaz.</string>
     <string name="wifi_scan_always_turnon_message">%s ýerleşiş maglumatlarynyň takyklygy we beýlek maksatlar bilen hatda Wi-Fi ýapyk mahaly hem Wi-Fi torlaryny gözlemäge rugsat soraýar. Ähli goýmalar üçin muňa rugsat bermelimi?</string>
     <string name="wifi_scan_always_confirm_allow">Mümkin</string>
     <string name="wifi_scan_always_confirm_deny">Deni</string>
@@ -4834,9 +4862,9 @@ Bu ýere eksportirlenen goýmalar pes öndürijilikde işläp biler we bu ýere 
     <string name="restore_default_apn_completed">APN sazlamalary ilkibaşdaka gaýtadan gurna.</string>
     <string name="reset_network_desc">Ol ähli tor sazlamalaryny, şol sanda şulary nol eder:</string>
     <string name="reset_network_button_text">Sazlamalary deslapky ýagdaýyna getirmek</string>
-    <string name="reset_network_final_desc">Ähli birikme sazlamalary nol ediler. Bu hereketi yzyna alyp bolmaýar.</string>
+    <string name="reset_network_final_desc">Ähli tor sazlamalary nol ediler. Bu hereketi yzyna alyp bolmaýar.</string>
     <string name="reset_network_final_button_text">Sazlamalary deslapky ýagdaýyna getirmek</string>
-    <string name="reset_network_complete_toast">Birikme sazlamalary nol edildi.</string>
+    <string name="reset_network_complete_toast">Tor sazlamalary nol edildi.</string>
     <string name="master_clear_title">Zawoddan gelen ýagdaýyna getirmek</string>
     <string name="master_clear_accounts">Siz şu wagt aşakdaky hasaplary yzarlamak üçin ulgama girdiňiz:</string>
     <string name="master_clear_other_users_present">Bu enjamdaky beýleki ulanyjylara degişli maglumatlar hem öçüriler.</string>
@@ -5938,6 +5966,7 @@ Enjam başlaýança, enjam jaňlary, hatlary ýa-da habarnamalary almaz ýa-da o
     <string name="set_data_limit">Maglumat çägini belle</string>
     <string name="data_limit">Maglumat çägi</string>
     <string name="data_usage_template">%1$s ulanyldy: %2$s</string>
+    <string name="data_usage_template_wifi">%s ulanyldy, soňky 30 günde</string>
     <string name="data_usage_other_apps">Ulanyşa goşulan degişli goýma</string>
     <string name="data_saver_title">Maglumat tygşytlaýjy</string>
     <string name="unrestricted_data_saver">Magl tygş açykka goýma rugs ber</string>
@@ -5987,6 +6016,7 @@ Enjam başlaýança, enjam jaňlary, hatlary ýa-da habarnamalary almaz ýa-da o
     <string name="vzw_bixby_mode">Bixby tertibi</string>
     <string name="screen_off_pocket_title">Ekrany ýapyk sakla</string>
     <string name="screen_off_pocket_summary">Enjam garaňky ýerdekä (mes. jübi, sumka) ekrany tötänden açylmaz ýaly ediň.</string>
+    <string name="noApplications">Şu hereket bilen bagly ähli goýmalar ýa ýapylan, beklenilen ýa-da gurnalmadyk.</string>
     <string name="confirm_reset_shortcut_manager_throttling_title">Çykgyt dispetçeri tizlik limiterini nol et</string>
     <string name="confirm_reset_shortcut_manager_throttling_message">Çykgyt dispetçeri tizlik limiter hasaplaýjylary nol ediler.</string>
 </resources>

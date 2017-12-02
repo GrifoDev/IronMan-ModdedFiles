@@ -209,7 +209,7 @@
 
     invoke-direct {v0, p1}, Lcom/android/settings/wifi/WifiSNSExcludedAPPreference;-><init>(Landroid/content/Context;)V
 
-    const v1, 0x7f0402f7
+    const v1, 0x7f0402fa
 
     invoke-virtual {v0, v1}, Lcom/android/settings/wifi/WifiSNSExcludedAPPreference;->setLayoutResource(I)V
 
@@ -414,9 +414,9 @@
 .method private setActionBarTitle()V
     .locals 8
 
-    const v7, 0x7f0b0f1f
+    const v7, 0x7f0b0f2e
 
-    const v6, 0x7f0b159f
+    const v6, 0x7f0b15b1
 
     invoke-virtual {p0, v6}, Lcom/android/settings/wifi/SmartNetworkSwitchSettings;->getString(I)Ljava/lang/String;
 
@@ -699,7 +699,7 @@
     :cond_2
     iget-object v5, p0, Lcom/android/settings/wifi/SmartNetworkSwitchSettings;->mNoDevicesPreference:Landroid/preference/Preference;
 
-    const v6, 0x7f0403d0
+    const v6, 0x7f0403d3
 
     invoke-virtual {v5, v6}, Landroid/preference/Preference;->setLayoutResource(I)V
 
@@ -709,7 +709,7 @@
 
     move-result-object v6
 
-    const v7, 0x7f0b15c5
+    const v7, 0x7f0b15d7
 
     invoke-virtual {v6, v7}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -962,11 +962,11 @@
 .method public onCreate(Landroid/os/Bundle;)V
     .locals 13
 
-    const v12, 0x7f0b0f0d
+    const v12, 0x7f0b0f1c
 
-    const v11, 0x7f0b0f0c
+    const v11, 0x7f0b0f1b
 
-    const v10, 0x7f0b0f0b
+    const v10, 0x7f0b0f1a
 
     const/4 v7, 0x1
 
@@ -974,7 +974,7 @@
 
     invoke-super {p0, p1}, Lcom/samsung/android/settings/SecSettingsPreferenceFragment;->onCreate(Landroid/os/Bundle;)V
 
-    const v6, 0x7f080127
+    const v6, 0x7f080129
 
     invoke-virtual {p0, v6}, Lcom/android/settings/wifi/SmartNetworkSwitchSettings;->addPreferencesFromResource(I)V
 
@@ -1132,7 +1132,7 @@
 
     move-result-object v7
 
-    const v9, 0x7f0b0f0f
+    const v9, 0x7f0b0f1e
 
     invoke-virtual {v7, v9}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -1496,6 +1496,36 @@
     const-string/jumbo v7, "setallcaps false"
 
     invoke-static {v6, v7}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    invoke-static {}, Lcom/samsung/android/feature/SemFloatingFeature;->getInstance()Lcom/samsung/android/feature/SemFloatingFeature;
+
+    move-result-object v6
+
+    const-string/jumbo v7, "SEC_FLOATING_FEATURE_WLAN_SUPPORT_ADAPTIVE_WIFI"
+
+    invoke-virtual {v6, v7}, Lcom/samsung/android/feature/SemFloatingFeature;->getBoolean(Ljava/lang/String;)Z
+
+    move-result v6
+
+    if-eqz v6, :cond_2
+
+    const-string/jumbo v6, "Smart Network Switch"
+
+    invoke-static {}, Lcom/samsung/android/feature/SemCscFeature;->getInstance()Lcom/samsung/android/feature/SemCscFeature;
+
+    move-result-object v7
+
+    const-string/jumbo v9, "CscFeature_Wifi_ConfigAutoWifiNaming"
+
+    invoke-virtual {v7, v9}, Lcom/samsung/android/feature/SemCscFeature;->getString(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v7
+
+    invoke-virtual {v6, v7}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v6
+
+    if-nez v6, :cond_2
 
     check-cast v4, Landroid/widget/TextView;
 

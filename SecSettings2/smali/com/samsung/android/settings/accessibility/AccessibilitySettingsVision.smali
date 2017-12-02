@@ -688,7 +688,7 @@
 
     move-result-object v1
 
-    const v6, 0x7f0f031b
+    const v6, 0x7f0f031a
 
     invoke-virtual {v1, v6}, Landroid/content/res/Resources;->getInteger(I)I
 
@@ -2368,9 +2368,9 @@
 .method private updateDefaultPreferences()V
     .locals 11
 
-    const v7, 0x7f0b1cf7
+    const v7, 0x7f0b1d09
 
-    const v6, 0x7f0b1cf6
+    const v6, 0x7f0b1d08
 
     const/4 v4, 0x1
 
@@ -3371,7 +3371,7 @@
 
     if-eqz v16, :cond_a
 
-    const v20, 0x7f0b1cf6
+    const v20, 0x7f0b1d08
 
     move-object/from16 v0, p0
 
@@ -3462,7 +3462,7 @@
 
     if-eqz v20, :cond_6
 
-    const v20, 0x7f0b195d
+    const v20, 0x7f0b196f
 
     move-object/from16 v0, p0
 
@@ -3529,7 +3529,7 @@
 
     const-string/jumbo v20, "settings_title"
 
-    const v21, 0x7f0b192e
+    const v21, 0x7f0b1940
 
     move-object/from16 v0, p0
 
@@ -3651,7 +3651,7 @@
     goto/16 :goto_3
 
     :cond_a
-    const v20, 0x7f0b1cf7
+    const v20, 0x7f0b1d09
 
     move-object/from16 v0, p0
 
@@ -3684,7 +3684,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f0f0317
+    const v1, 0x7f0f0316
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getInteger(I)I
 
@@ -4061,7 +4061,7 @@
 
     move-result-object v22
 
-    const v23, 0x7f0b04fa
+    const v23, 0x7f0b04fb
 
     invoke-virtual/range {v22 .. v23}, Landroid/app/Activity;->getString(I)Ljava/lang/String;
 
@@ -4124,7 +4124,7 @@
     return-object v8
 
     :pswitch_2
-    const v21, 0x7f0b04f9
+    const v21, 0x7f0b04fa
 
     move-object/from16 v0, p0
 
@@ -4182,7 +4182,7 @@
 
     invoke-direct/range {v21 .. v22}, Landroid/app/AlertDialog$Builder;-><init>(Landroid/content/Context;)V
 
-    const v22, 0x7f0b04f8
+    const v22, 0x7f0b04f9
 
     move-object/from16 v0, p0
 
@@ -4236,7 +4236,7 @@
 
     invoke-direct {v0, v1}, Lcom/samsung/android/settings/accessibility/AccessibilitySettingsVision$20;-><init>(Lcom/samsung/android/settings/accessibility/AccessibilitySettingsVision;)V
 
-    const v23, 0x7f0b04fa
+    const v23, 0x7f0b04fb
 
     move-object/from16 v0, v21
 
@@ -4355,7 +4355,7 @@
 
     invoke-direct {v0, v1}, Lcom/samsung/android/settings/accessibility/AccessibilitySettingsVision$23;-><init>(Lcom/samsung/android/settings/accessibility/AccessibilitySettingsVision;)V
 
-    const v23, 0x7f0b06ff
+    const v23, 0x7f0b0700
 
     move-object/from16 v0, v21
 
@@ -4674,7 +4674,7 @@
 
     move-result-object v22
 
-    const v23, 0x7f0b04fa
+    const v23, 0x7f0b04fb
 
     invoke-virtual/range {v22 .. v23}, Landroid/app/Activity;->getString(I)Ljava/lang/String;
 
@@ -4827,7 +4827,7 @@
 
     move-result-object v23
 
-    const v24, 0x7f0b1916
+    const v24, 0x7f0b1928
 
     invoke-virtual/range {v23 .. v24}, Landroid/app/Activity;->getString(I)Ljava/lang/String;
 
@@ -4936,7 +4936,7 @@
 
     invoke-direct {v0, v1}, Lcom/samsung/android/settings/accessibility/AccessibilitySettingsVision$32;-><init>(Lcom/samsung/android/settings/accessibility/AccessibilitySettingsVision;)V
 
-    const v23, 0x7f0b04fa
+    const v23, 0x7f0b04fb
 
     move-object/from16 v0, v21
 
@@ -5031,7 +5031,7 @@
 
     aput-object v22, v21, v23
 
-    const v22, 0x7f0b072e
+    const v22, 0x7f0b072f
 
     move-object/from16 v0, p0
 
@@ -5099,7 +5099,7 @@
 
     move-result-object v21
 
-    const v22, 0x7f0b04c8
+    const v22, 0x7f0b04c9
 
     invoke-virtual/range {v21 .. v22}, Landroid/app/Activity;->getString(I)Ljava/lang/String;
 
@@ -5109,7 +5109,7 @@
 
     move-result-object v21
 
-    const v22, 0x7f0b04f9
+    const v22, 0x7f0b04fa
 
     invoke-virtual/range {v21 .. v22}, Landroid/app/Activity;->getString(I)Ljava/lang/String;
 
@@ -5119,7 +5119,7 @@
 
     move-result-object v21
 
-    const v22, 0x7f0b04f8
+    const v22, 0x7f0b04f9
 
     invoke-virtual/range {v21 .. v22}, Landroid/app/Activity;->getString(I)Ljava/lang/String;
 
@@ -5332,7 +5332,7 @@
 
     move-result-object v22
 
-    const v23, 0x7f0b0511
+    const v23, 0x7f0b0512
 
     invoke-virtual/range {v22 .. v23}, Landroid/app/Activity;->getString(I)Ljava/lang/String;
 
@@ -5776,7 +5776,7 @@
 
     move-result-object v19
 
-    const v22, 0x7f0f0326
+    const v22, 0x7f0f0325
 
     move-object/from16 v0, v19
 
@@ -5992,7 +5992,7 @@
 
     move-result-object v19
 
-    const v22, 0x7f0f0327
+    const v22, 0x7f0f0326
 
     move-object/from16 v0, v19
 
@@ -6371,7 +6371,7 @@
 
     move-result-object v19
 
-    const v22, 0x7f0f031c
+    const v22, 0x7f0f031b
 
     move-object/from16 v0, v19
 
@@ -6469,7 +6469,7 @@
 
     move-result-object v19
 
-    const v22, 0x7f0f031d
+    const v22, 0x7f0f031c
 
     move-object/from16 v0, v19
 
@@ -6562,7 +6562,7 @@
 
     move-result-object v19
 
-    const v22, 0x7f0f0334
+    const v22, 0x7f0f0333
 
     move-object/from16 v0, v19
 
@@ -6705,7 +6705,7 @@
 
     move-result-object v19
 
-    const v21, 0x7f0f0329
+    const v21, 0x7f0f0328
 
     move-object/from16 v0, v19
 
@@ -6880,7 +6880,7 @@
 
     move-result-object v19
 
-    const v22, 0x7f0f0330
+    const v22, 0x7f0f032f
 
     move-object/from16 v0, v19
 
@@ -6995,7 +6995,7 @@
 
     if-eqz v18, :cond_2a
 
-    const v19, 0x7f0b1cf6
+    const v19, 0x7f0b1d08
 
     :goto_12
     move-object/from16 v0, v20
@@ -7019,7 +7019,7 @@
 
     move-result-object v19
 
-    const v22, 0x7f0f031f
+    const v22, 0x7f0f031e
 
     move-object/from16 v0, v19
 
@@ -7066,7 +7066,7 @@
     goto :goto_11
 
     :cond_2a
-    const v19, 0x7f0b1cf7
+    const v19, 0x7f0b1d09
 
     goto :goto_12
 
@@ -7182,7 +7182,7 @@
 
     move-result-object v19
 
-    const v22, 0x7f0f0328
+    const v22, 0x7f0f0327
 
     move-object/from16 v0, v19
 
@@ -7410,7 +7410,7 @@
 
     move-result-object v19
 
-    const v21, 0x7f0f0331
+    const v21, 0x7f0f0330
 
     move-object/from16 v0, v19
 
@@ -7754,7 +7754,7 @@
 
     move-result-object v9
 
-    const v10, 0x7f0f0322
+    const v10, 0x7f0f0321
 
     invoke-virtual {v9, v10}, Landroid/content/res/Resources;->getInteger(I)I
 
@@ -7796,7 +7796,7 @@
 
     move-result-object v3
 
-    const v8, 0x7f0b191c
+    const v8, 0x7f0b192e
 
     invoke-virtual {p0, v8}, Lcom/samsung/android/settings/accessibility/AccessibilitySettingsVision;->getString(I)Ljava/lang/String;
 
@@ -7814,7 +7814,7 @@
 
     if-eqz v8, :cond_8
 
-    const v8, 0x7f0b191d
+    const v8, 0x7f0b192f
 
     invoke-virtual {p0, v8}, Lcom/samsung/android/settings/accessibility/AccessibilitySettingsVision;->getString(I)Ljava/lang/String;
 
@@ -7823,7 +7823,7 @@
     :cond_8
     const-string/jumbo v8, "title"
 
-    const v9, 0x7f0b1919
+    const v9, 0x7f0b192b
 
     invoke-virtual {p0, v9}, Lcom/samsung/android/settings/accessibility/AccessibilitySettingsVision;->getString(I)Ljava/lang/String;
 
@@ -7882,7 +7882,7 @@
 
     const-string/jumbo v8, "title"
 
-    const v9, 0x7f0b1916
+    const v9, 0x7f0b1928
 
     invoke-virtual {p0, v9}, Lcom/samsung/android/settings/accessibility/AccessibilitySettingsVision;->getString(I)Ljava/lang/String;
 

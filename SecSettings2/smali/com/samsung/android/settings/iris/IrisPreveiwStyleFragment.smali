@@ -70,6 +70,8 @@
 
     :array_0
     .array-data 4
+        0x7f020304
+        0x7f020305
         0x7f020306
         0x7f020307
         0x7f020308
@@ -86,8 +88,6 @@
         0x7f020313
         0x7f020314
         0x7f020315
-        0x7f020316
-        0x7f020317
     .end array-data
 .end method
 
@@ -428,7 +428,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f1104e1
+    const v1, 0x7f1104e3
 
     invoke-virtual {v0, v1}, Landroid/app/Activity;->findViewById(I)Landroid/view/View;
 
@@ -452,7 +452,7 @@
 
     iget-object v2, p0, Lcom/samsung/android/settings/iris/IrisPreveiwStyleFragment;->mPreviewImgResIdList:Ljava/util/ArrayList;
 
-    const v3, 0x7f040161
+    const v3, 0x7f040162
 
     invoke-direct {v0, p0, v1, v2, v3}, Lcom/samsung/android/settings/iris/IrisPreveiwStyleFragment$IrisPreviewAdapter;-><init>(Lcom/samsung/android/settings/iris/IrisPreveiwStyleFragment;Landroid/content/Context;Ljava/util/ArrayList;I)V
 
@@ -490,7 +490,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f0f02d2
+    const v1, 0x7f0f02d1
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getInteger(I)I
 
@@ -530,7 +530,7 @@
 
     const/4 v0, 0x1
 
-    const v1, 0x7f0b0975
+    const v1, 0x7f0b0980
 
     invoke-interface {p1, v2, v0, v2, v1}, Landroid/view/Menu;->add(IIII)Landroid/view/MenuItem;
 
@@ -540,7 +540,7 @@
 .method public onCreateView(Landroid/view/LayoutInflater;Landroid/view/ViewGroup;Landroid/os/Bundle;)Landroid/view/View;
     .locals 2
 
-    const v0, 0x7f040162
+    const v0, 0x7f040163
 
     const/4 v1, 0x0
 
@@ -562,7 +562,7 @@
 
     move-result-object v3
 
-    const v4, 0x7f0f02d3
+    const v4, 0x7f0f02d2
 
     invoke-virtual {v3, v4}, Landroid/content/res/Resources;->getInteger(I)I
 
@@ -613,7 +613,7 @@
 
     move-result-object v3
 
-    const v4, 0x7f0f02d4
+    const v4, 0x7f0f02d3
 
     invoke-virtual {v3, v4}, Landroid/content/res/Resources;->getInteger(I)I
 
@@ -641,10 +641,37 @@
 .end method
 
 .method public onResume()V
-    .locals 0
+    .locals 3
 
     invoke-super {p0}, Lcom/samsung/android/settings/SecSettingsPreferenceFragment;->onResume()V
 
+    invoke-virtual {p0}, Lcom/samsung/android/settings/iris/IrisPreveiwStyleFragment;->getActivity()Landroid/app/Activity;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Landroid/app/Activity;->isInMultiWindowMode()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    invoke-virtual {p0}, Lcom/samsung/android/settings/iris/IrisPreveiwStyleFragment;->getActivity()Landroid/app/Activity;
+
+    move-result-object v0
+
+    const v1, 0x7f0b085a
+
+    const/4 v2, 0x0
+
+    invoke-static {v0, v1, v2}, Landroid/widget/Toast;->makeText(Landroid/content/Context;II)Landroid/widget/Toast;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Landroid/widget/Toast;->show()V
+
+    invoke-virtual {p0}, Lcom/samsung/android/settings/iris/IrisPreveiwStyleFragment;->finish()V
+
+    :cond_0
     invoke-direct {p0}, Lcom/samsung/android/settings/iris/IrisPreveiwStyleFragment;->viewInit()V
 
     invoke-direct {p0}, Lcom/samsung/android/settings/iris/IrisPreveiwStyleFragment;->setContent()V

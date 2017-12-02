@@ -151,7 +151,7 @@
 
     const/4 v8, 0x0
 
-    const v7, 0x7f0b0501
+    const v7, 0x7f0b0502
 
     iget-object v5, p0, Lcom/samsung/android/settings/usefulfeature/FingerSensorGestureSettings;->mContext:Landroid/content/Context;
 
@@ -163,7 +163,7 @@
 
     check-cast v1, Landroid/view/LayoutInflater;
 
-    const v5, 0x7f040366
+    const v5, 0x7f040369
 
     invoke-virtual {v1, v5, v8}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;)Landroid/view/View;
 
@@ -173,7 +173,7 @@
 
     iget-object v5, p0, Lcom/samsung/android/settings/usefulfeature/FingerSensorGestureSettings;->mFingerSensorGestureView:Landroid/view/View;
 
-    const v6, 0x7f1105fe
+    const v6, 0x7f110600
 
     invoke-virtual {v5, v6}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -183,7 +183,7 @@
 
     iget-object v5, p0, Lcom/samsung/android/settings/usefulfeature/FingerSensorGestureSettings;->mFingerSensorGestureView:Landroid/view/View;
 
-    const v6, 0x7f1105ff
+    const v6, 0x7f110601
 
     invoke-virtual {v5, v6}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -193,7 +193,7 @@
 
     iget-object v5, p0, Lcom/samsung/android/settings/usefulfeature/FingerSensorGestureSettings;->mFingerSensorGestureView:Landroid/view/View;
 
-    const v6, 0x7f1105fd
+    const v6, 0x7f1105ff
 
     invoke-virtual {v5, v6}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -217,7 +217,7 @@
 
     invoke-virtual {v5, v7}, Landroid/app/ActionBar;->setTitle(I)V
 
-    const v5, 0x7f0b0504
+    const v5, 0x7f0b0505
 
     invoke-virtual {p0, v5}, Lcom/samsung/android/settings/usefulfeature/FingerSensorGestureSettings;->getString(I)Ljava/lang/String;
 
@@ -225,7 +225,7 @@
 
     invoke-virtual {v3, v5}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    const v5, 0x7f020150
+    const v5, 0x7f02014e
 
     invoke-virtual {v2, v5}, Landroid/widget/ImageView;->setImageResource(I)V
 

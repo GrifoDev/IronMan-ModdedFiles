@@ -359,7 +359,7 @@
 
     move-object/from16 v16, v0
 
-    const v17, 0x7f11026a
+    const v17, 0x7f11026c
 
     invoke-virtual/range {v16 .. v17}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -373,7 +373,7 @@
 
     move-object/from16 v16, v0
 
-    const v17, 0x7f11026b
+    const v17, 0x7f11026d
 
     invoke-virtual/range {v16 .. v17}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -566,11 +566,11 @@
 .end method
 
 .method public onCreateDialog(Landroid/os/Bundle;)Landroid/app/Dialog;
-    .locals 11
+    .locals 9
 
-    const/4 v10, 0x0
+    const/4 v8, 0x0
 
-    const v9, 0x7f11026a
+    const v7, 0x7f11026c
 
     invoke-virtual {p0}, Lcom/android/settings/datausage/BillingCycleSettings$BytesEditorFragment;->getActivity()Landroid/app/Activity;
 
@@ -582,29 +582,29 @@
 
     invoke-virtual {p0}, Lcom/android/settings/datausage/BillingCycleSettings$BytesEditorFragment;->getArguments()Landroid/os/Bundle;
 
-    move-result-object v7
+    move-result-object v5
 
-    const-string/jumbo v8, "limit"
+    const-string/jumbo v6, "limit"
 
-    invoke-virtual {v7, v8}, Landroid/os/Bundle;->getBoolean(Ljava/lang/String;)Z
+    invoke-virtual {v5, v6}, Landroid/os/Bundle;->getBoolean(Ljava/lang/String;)Z
 
-    move-result v5
+    move-result v4
 
-    const v7, 0x7f0400b0
+    const v5, 0x7f0400b1
 
-    const/4 v8, 0x0
+    const/4 v6, 0x0
 
-    invoke-virtual {v2, v7, v10, v8}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;Z)Landroid/view/View;
+    invoke-virtual {v2, v5, v8, v6}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;Z)Landroid/view/View;
 
-    move-result-object v7
+    move-result-object v5
 
-    iput-object v7, p0, Lcom/android/settings/datausage/BillingCycleSettings$BytesEditorFragment;->mView:Landroid/view/View;
+    iput-object v5, p0, Lcom/android/settings/datausage/BillingCycleSettings$BytesEditorFragment;->mView:Landroid/view/View;
 
-    iget-object v7, p0, Lcom/android/settings/datausage/BillingCycleSettings$BytesEditorFragment;->mView:Landroid/view/View;
+    iget-object v5, p0, Lcom/android/settings/datausage/BillingCycleSettings$BytesEditorFragment;->mView:Landroid/view/View;
 
-    const v8, 0x7f11026b
+    const v6, 0x7f11026d
 
-    invoke-virtual {v7, v8}, Landroid/view/View;->findViewById(I)Landroid/view/View;
+    invoke-virtual {v5, v6}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
     move-result-object v3
 
@@ -612,101 +612,85 @@
 
     invoke-virtual {v3}, Landroid/widget/Spinner;->getBackground()Landroid/graphics/drawable/Drawable;
 
-    move-result-object v7
+    move-result-object v5
 
-    const v8, 0x7f0d0242
+    const v6, 0x7f0d0242
 
-    invoke-virtual {v0, v8}, Landroid/content/Context;->getColor(I)I
+    invoke-virtual {v0, v6}, Landroid/content/Context;->getColor(I)I
 
-    move-result v8
+    move-result v6
 
-    invoke-virtual {v7, v8}, Landroid/graphics/drawable/Drawable;->setTint(I)V
+    invoke-virtual {v5, v6}, Landroid/graphics/drawable/Drawable;->setTint(I)V
 
-    iget-object v7, p0, Lcom/android/settings/datausage/BillingCycleSettings$BytesEditorFragment;->mView:Landroid/view/View;
+    iget-object v5, p0, Lcom/android/settings/datausage/BillingCycleSettings$BytesEditorFragment;->mView:Landroid/view/View;
 
-    invoke-virtual {v7, v9}, Landroid/view/View;->findViewById(I)Landroid/view/View;
+    invoke-virtual {v5, v7}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
-    move-result-object v7
+    move-result-object v5
 
-    check-cast v7, Landroid/widget/EditText;
+    check-cast v5, Landroid/widget/EditText;
 
-    invoke-direct {p0, v7, v3}, Lcom/android/settings/datausage/BillingCycleSettings$BytesEditorFragment;->setupPicker(Landroid/widget/EditText;Landroid/widget/Spinner;)V
+    invoke-direct {p0, v5, v3}, Lcom/android/settings/datausage/BillingCycleSettings$BytesEditorFragment;->setupPicker(Landroid/widget/EditText;Landroid/widget/Spinner;)V
 
-    iget-object v7, p0, Lcom/android/settings/datausage/BillingCycleSettings$BytesEditorFragment;->mView:Landroid/view/View;
+    iget-object v5, p0, Lcom/android/settings/datausage/BillingCycleSettings$BytesEditorFragment;->mView:Landroid/view/View;
 
-    invoke-virtual {v7, v9}, Landroid/view/View;->findViewById(I)Landroid/view/View;
+    invoke-virtual {v5, v7}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
-    move-result-object v7
+    move-result-object v5
 
-    check-cast v7, Landroid/widget/EditText;
+    check-cast v5, Landroid/widget/EditText;
 
-    iput-object v7, p0, Lcom/android/settings/datausage/BillingCycleSettings$BytesEditorFragment;->mEditTextByte:Landroid/widget/EditText;
+    iput-object v5, p0, Lcom/android/settings/datausage/BillingCycleSettings$BytesEditorFragment;->mEditTextByte:Landroid/widget/EditText;
 
     iput-object v3, p0, Lcom/android/settings/datausage/BillingCycleSettings$BytesEditorFragment;->mSpinnerType:Landroid/widget/Spinner;
 
-    new-instance v4, Ljava/lang/StringBuilder;
+    new-instance v6, Landroid/app/AlertDialog$Builder;
 
-    invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {v6, v0}, Landroid/app/AlertDialog$Builder;-><init>(Landroid/content/Context;)V
 
-    const-string/jumbo v6, ""
+    if-eqz v4, :cond_0
 
-    const v7, 0x7f0b1af6
+    const v5, 0x7f0b1b09
 
-    invoke-virtual {p0, v7}, Lcom/android/settings/datausage/BillingCycleSettings$BytesEditorFragment;->getString(I)Ljava/lang/String;
+    :goto_0
+    invoke-virtual {v6, v5}, Landroid/app/AlertDialog$Builder;->setTitle(I)Landroid/app/AlertDialog$Builder;
 
-    move-result-object v6
+    move-result-object v5
 
-    invoke-virtual {v4, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    iget-object v6, p0, Lcom/android/settings/datausage/BillingCycleSettings$BytesEditorFragment;->mView:Landroid/view/View;
 
-    const-string/jumbo v7, " / "
+    invoke-virtual {v5, v6}, Landroid/app/AlertDialog$Builder;->setView(Landroid/view/View;)Landroid/app/AlertDialog$Builder;
 
-    invoke-virtual {v4, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    move-result-object v5
 
-    const v7, 0x7f0b1af7
+    const v6, 0x7f0b1b07
 
-    invoke-virtual {p0, v7}, Lcom/android/settings/datausage/BillingCycleSettings$BytesEditorFragment;->getString(I)Ljava/lang/String;
+    invoke-virtual {v5, v6, p0}, Landroid/app/AlertDialog$Builder;->setPositiveButton(ILandroid/content/DialogInterface$OnClickListener;)Landroid/app/AlertDialog$Builder;
 
-    move-result-object v6
+    move-result-object v5
 
-    invoke-virtual {v4, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    const/high16 v6, 0x1040000
 
-    new-instance v7, Landroid/app/AlertDialog$Builder;
+    invoke-virtual {v5, v6, v8}, Landroid/app/AlertDialog$Builder;->setNegativeButton(ILandroid/content/DialogInterface$OnClickListener;)Landroid/app/AlertDialog$Builder;
 
-    invoke-direct {v7, v0}, Landroid/app/AlertDialog$Builder;-><init>(Landroid/content/Context;)V
+    move-result-object v5
 
-    invoke-virtual {v7, v4}, Landroid/app/AlertDialog$Builder;->setTitle(Ljava/lang/CharSequence;)Landroid/app/AlertDialog$Builder;
-
-    move-result-object v7
-
-    iget-object v8, p0, Lcom/android/settings/datausage/BillingCycleSettings$BytesEditorFragment;->mView:Landroid/view/View;
-
-    invoke-virtual {v7, v8}, Landroid/app/AlertDialog$Builder;->setView(Landroid/view/View;)Landroid/app/AlertDialog$Builder;
-
-    move-result-object v7
-
-    const v8, 0x7f0b1af5
-
-    invoke-virtual {v7, v8, p0}, Landroid/app/AlertDialog$Builder;->setPositiveButton(ILandroid/content/DialogInterface$OnClickListener;)Landroid/app/AlertDialog$Builder;
-
-    move-result-object v7
-
-    const/high16 v8, 0x1040000
-
-    invoke-virtual {v7, v8, v10}, Landroid/app/AlertDialog$Builder;->setNegativeButton(ILandroid/content/DialogInterface$OnClickListener;)Landroid/app/AlertDialog$Builder;
-
-    move-result-object v7
-
-    invoke-virtual {v7}, Landroid/app/AlertDialog$Builder;->create()Landroid/app/AlertDialog;
+    invoke-virtual {v5}, Landroid/app/AlertDialog$Builder;->create()Landroid/app/AlertDialog;
 
     move-result-object v1
 
     invoke-virtual {v1}, Landroid/app/AlertDialog;->getWindow()Landroid/view/Window;
 
-    move-result-object v7
+    move-result-object v5
 
-    const/4 v8, 0x5
+    const/4 v6, 0x5
 
-    invoke-virtual {v7, v8}, Landroid/view/Window;->setSoftInputMode(I)V
+    invoke-virtual {v5, v6}, Landroid/view/Window;->setSoftInputMode(I)V
 
     return-object v1
+
+    :cond_0
+    const v5, 0x7f0b1b08
+
+    goto :goto_0
 .end method

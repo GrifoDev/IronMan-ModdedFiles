@@ -35,15 +35,13 @@
 .end method
 
 .method private init(Landroid/content/Context;)V
-    .locals 2
+    .locals 1
 
-    invoke-static {p1}, Lcom/android/settings/Utils;->getCurrentBixbyMode(Landroid/content/Context;)I
+    invoke-direct {p0, p1}, Lcom/samsung/android/settings/vzwsetupwizardbixby/bixby/BixbyModeSwitcherView;->isBixbyMode(Landroid/content/Context;)Z
 
     move-result v0
 
-    const/4 v1, 0x2
-
-    if-ne v0, v1, :cond_0
+    if-nez v0, :cond_0
 
     const/16 v0, 0x8
 
@@ -55,6 +53,45 @@
     return-void
 .end method
 
+.method private isBixbyMode(Landroid/content/Context;)Z
+    .locals 5
+
+    const/4 v0, 0x1
+
+    const/4 v1, 0x0
+
+    invoke-static {}, Lcom/android/settings/Utils;->isSupportBixby()Z
+
+    move-result v2
+
+    if-eqz v2, :cond_1
+
+    invoke-virtual {p1}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
+
+    move-result-object v2
+
+    const-string/jumbo v3, "setupwizard_bixby_mode"
+
+    const/4 v4, 0x2
+
+    invoke-static {v2, v3, v4}, Landroid/provider/Settings$System;->getInt(Landroid/content/ContentResolver;Ljava/lang/String;I)I
+
+    move-result v2
+
+    if-ne v2, v0, :cond_0
+
+    :goto_0
+    return v0
+
+    :cond_0
+    move v0, v1
+
+    goto :goto_0
+
+    :cond_1
+    return v1
+.end method
+
 
 # virtual methods
 .method protected onFinishInflate()V
@@ -64,7 +101,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f110599
+    const v2, 0x7f11059b
 
     invoke-virtual {v1, v2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -92,7 +129,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f0b1ed9
+    const v2, 0x7f0b1eec
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -130,7 +167,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f0b1eda
+    const v2, 0x7f0b1eed
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 

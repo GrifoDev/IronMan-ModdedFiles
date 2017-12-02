@@ -131,7 +131,7 @@
 
     move-result-object v0
 
-    const v3, 0x7f0b04f8
+    const v3, 0x7f0b04f9
 
     invoke-virtual {p0, v3}, Lcom/samsung/android/settings/SmartStaySettings;->getString(I)Ljava/lang/String;
 
@@ -145,7 +145,7 @@
 
     move-result-object v2
 
-    const v3, 0x7f0b04f9
+    const v3, 0x7f0b04fa
 
     invoke-virtual {p0, v3}, Lcom/samsung/android/settings/SmartStaySettings;->getString(I)Ljava/lang/String;
 
@@ -155,7 +155,7 @@
 
     new-array v4, v4, [Ljava/lang/Object;
 
-    const v5, 0x7f0b06eb
+    const v5, 0x7f0b06ec
 
     invoke-virtual {p0, v5}, Lcom/samsung/android/settings/SmartStaySettings;->getString(I)Ljava/lang/String;
 
@@ -189,7 +189,7 @@
 
     invoke-direct {v4, p0}, Lcom/samsung/android/settings/SmartStaySettings$7;-><init>(Lcom/samsung/android/settings/SmartStaySettings;)V
 
-    const v5, 0x7f0b04fa
+    const v5, 0x7f0b04fb
 
     invoke-virtual {v3, v5, v4}, Landroid/app/AlertDialog$Builder;->setPositiveButton(ILandroid/content/DialogInterface$OnClickListener;)Landroid/app/AlertDialog$Builder;
 
@@ -237,7 +237,7 @@
 
     invoke-direct {p0}, Lcom/samsung/android/settings/SmartStaySettings;->dismissAllDialog()V
 
-    const v2, 0x7f0b04f8
+    const v2, 0x7f0b04f9
 
     invoke-virtual {p0, v2}, Lcom/samsung/android/settings/SmartStaySettings;->getString(I)Ljava/lang/String;
 
@@ -255,7 +255,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f0b04f9
+    const v2, 0x7f0b04fa
 
     invoke-virtual {p0, v2}, Lcom/samsung/android/settings/SmartStaySettings;->getString(I)Ljava/lang/String;
 
@@ -265,7 +265,7 @@
 
     new-array v3, v3, [Ljava/lang/Object;
 
-    const v4, 0x7f0b06eb
+    const v4, 0x7f0b06ec
 
     invoke-virtual {p0, v4}, Lcom/samsung/android/settings/SmartStaySettings;->getString(I)Ljava/lang/String;
 
@@ -303,7 +303,7 @@
 
     invoke-direct {v3, p0}, Lcom/samsung/android/settings/SmartStaySettings$10;-><init>(Lcom/samsung/android/settings/SmartStaySettings;)V
 
-    const v4, 0x7f0b04fa
+    const v4, 0x7f0b04fb
 
     invoke-virtual {v2, v4, v3}, Landroid/app/AlertDialog$Builder;->setPositiveButton(ILandroid/content/DialogInterface$OnClickListener;)Landroid/app/AlertDialog$Builder;
 
@@ -489,7 +489,7 @@
 
     check-cast v2, Landroid/view/LayoutInflater;
 
-    const v6, 0x7f0402f6
+    const v6, 0x7f0402f9
 
     invoke-virtual {v2, v6, v7}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;)Landroid/view/View;
 
@@ -521,7 +521,7 @@
 
     iget-object v6, p0, Lcom/samsung/android/settings/SmartStaySettings;->mView:Landroid/view/View;
 
-    const v7, 0x7f1107c4
+    const v7, 0x7f1107c6
 
     invoke-virtual {v6, v7}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -536,7 +536,7 @@
     :cond_0
     iget-object v6, p0, Lcom/samsung/android/settings/SmartStaySettings;->mView:Landroid/view/View;
 
-    const v7, 0x7f1107c1
+    const v7, 0x7f1107c3
 
     invoke-virtual {v6, v7}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -550,7 +550,7 @@
 
     if-eqz v6, :cond_1
 
-    const v6, 0x7f02054d
+    const v6, 0x7f02054f
 
     invoke-virtual {v4, v6}, Landroid/widget/ImageView;->setImageResource(I)V
 
@@ -592,7 +592,7 @@
 
     const/4 v4, 0x0
 
-    const v3, 0x7f0402f6
+    const v3, 0x7f0402f9
 
     invoke-virtual {p1, v3, v4}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;)Landroid/view/View;
 
@@ -624,7 +624,7 @@
 
     iget-object v3, p0, Lcom/samsung/android/settings/SmartStaySettings;->mView:Landroid/view/View;
 
-    const v4, 0x7f1107c4
+    const v4, 0x7f1107c6
 
     invoke-virtual {v3, v4}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -639,7 +639,7 @@
     :cond_0
     iget-object v3, p0, Lcom/samsung/android/settings/SmartStaySettings;->mView:Landroid/view/View;
 
-    const v4, 0x7f1107c1
+    const v4, 0x7f1107c3
 
     invoke-virtual {v3, v4}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -653,7 +653,7 @@
 
     if-eqz v3, :cond_1
 
-    const v3, 0x7f02054d
+    const v3, 0x7f02054f
 
     invoke-virtual {v2, v3}, Landroid/widget/ImageView;->setImageResource(I)V
 

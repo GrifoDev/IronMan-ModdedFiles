@@ -378,7 +378,7 @@
 
     iput-object v5, p0, Lcom/android/settings/deviceinfo/PublicVolumeSettings;->mSummary:Lcom/android/settings/deviceinfo/StorageSummaryPreference;
 
-    const v5, 0x7f0b16d8
+    const v5, 0x7f0b16ea
 
     invoke-direct {p0, v5}, Lcom/android/settings/deviceinfo/PublicVolumeSettings;->buildAction(I)Landroid/preference/Preference;
 
@@ -398,7 +398,7 @@
 
     iget-object v5, p0, Lcom/android/settings/deviceinfo/PublicVolumeSettings;->mUnmount:Landroid/widget/Button;
 
-    const v6, 0x7f0b16d9
+    const v6, 0x7f0b16eb
 
     invoke-virtual {v5, v6}, Landroid/widget/Button;->setText(I)V
 
@@ -408,7 +408,7 @@
 
     invoke-virtual {v5, v6}, Landroid/widget/Button;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    const v5, 0x7f0b16da
+    const v5, 0x7f0b16ec
 
     invoke-direct {p0, v5}, Lcom/android/settings/deviceinfo/PublicVolumeSettings;->buildAction(I)Landroid/preference/Preference;
 
@@ -420,7 +420,7 @@
 
     if-eqz v5, :cond_3
 
-    const v5, 0x7f0b16dc
+    const v5, 0x7f0b16ee
 
     invoke-direct {p0, v5}, Lcom/android/settings/deviceinfo/PublicVolumeSettings;->buildAction(I)Landroid/preference/Preference;
 
@@ -449,7 +449,7 @@
 .method public onPreferenceTreeClick(Landroid/preference/PreferenceScreen;Landroid/preference/Preference;)Z
     .locals 6
 
-    const v5, 0x7f0f03da
+    const v5, 0x7f0f03d9
 
     const/4 v4, 0x0
 
@@ -734,7 +734,7 @@
 
     iget-object v10, p0, Lcom/android/settings/deviceinfo/PublicVolumeSettings;->mSummary:Lcom/android/settings/deviceinfo/StorageSummaryPreference;
 
-    const v11, 0x7f0b16ef
+    const v11, 0x7f0b1701
 
     invoke-virtual {p0, v11}, Lcom/android/settings/deviceinfo/PublicVolumeSettings;->getText(I)Ljava/lang/CharSequence;
 
@@ -776,7 +776,7 @@
 
     aput-object v12, v11, v13
 
-    const v12, 0x7f0b16f0
+    const v12, 0x7f0b1702
 
     invoke-virtual {p0, v12, v11}, Lcom/android/settings/deviceinfo/PublicVolumeSettings;->getString(I[Ljava/lang/Object;)Ljava/lang/String;
 

@@ -170,6 +170,8 @@
     <string name="wifi_allow_scan_with_traffic_summary">بسته به مقدار داده مصرفی، به اسکن خودکار رومینگ Wi-Fi اجازه دهید یا آن را رد کنید.</string>
     <string name="select_logd_size_title">اندازه بافر جهت ثبت گزارش</string>
     <string name="select_logd_size_dialog_title">انتخاب اندازه حداکثر هر بافر گزارش</string>
+    <string name="dev_logpersist_clear_warning_title">محل ذخیره گزارش‌دهنده بی‌وقفه پاک شود؟</string>
+    <string name="dev_logpersist_clear_warning_message">وقتی گزارش‌دهنده بی‌وقفه خاموش شود، داده‌های گزارش‌دهنده حذف خواهد شد.</string>
     <string name="select_logpersist_title">ذخیره مداوم اطلاعات گزارش</string>
     <string name="select_logpersist_dialog_title">انتخاب بافر گزارش برای ذخیره مداوم</string>
     <string name="select_usb_configuration_title">پیکربندی USB</string>
@@ -982,6 +984,7 @@ Wi-Fi و بلوتوث هم خاموش می‌شوند، اما می‌توانی
     <string name="bluetooth_avc_available_description">دستگاه متصل بلوتوث از همگام‌سازی میزان صدای رسانه پشتیبانی می‌کند و میزان صدای تنظیم شده توسط دستگاه بلوتوث با تلفن شما همگام‌سازی می‌شود.</string>
     <string name="bluetooth_enter_pin_msg">وارد کردن پین جهت مرتبط سازی با %s (0000 یا 1234 را امتحان کنید).</string>
     <string name="bluetooth_pin_maximum_number_message">تعداد نویسه‌ها به حداکثر رسیده است.</string>
+    <string name="bluetooth_frp_permission_message">استفاده از دستگاه بلوتوث برای این تماس ممکن نیست.</string>
     <string name="settings_menu_done">انجام</string>
     <string name="usb_tethering_unavailable_subtext_tmo">USB not connected</string>
     <string name="usb_tethering_available_subtext_tmo">USB connected, check to tether</string>
@@ -1481,7 +1484,7 @@ Where Can I Find More Information About the 3rd Party's Policies? Separately, if
     <string name="navigationbar_pressure_sensitivity_title">فشار محکم روی دکمه صفحه اصلی</string>
     <string name="navigationbar_pressure_sensitivity_summary">وقتی دکمه صفحه اصلی مخفی است با فشار سخت‌تر از حالت عادی، از آن استفاده کنید.</string>
     <string name="navigationbar_pressure_sensitivity_level_summary">سطح فشار: %1$d از %2$d</string>
-    <string name="navigationbar_pressure_sensitivity_description_off">وقتی دکمه صفحه اصلی مخفی است با فشار سخت‌تر از حالت عادی، از آن استفاده کنید.</string>
+    <string name="navigationbar_pressure_sensitivity_description_off">مقدار فشار مورد نیاز برای فشار فیزیکی دکمه صفحه اصلی را تنظیم کنید.</string>
     <string name="navigationbar_pressure_low">ملایم‌تر</string>
     <string name="navigationbar_pressure_high">قوی‌تر</string>
     <string name="navigationbar_hide_bar">دکمه نمایش دادن و مخفی کردن</string>
@@ -1704,7 +1707,11 @@ Where Can I Find More Information About the 3rd Party's Policies? Separately, if
     <string name="crypt_keeper_confirm_title">تأیید رمزگذاری</string>
     <string name="crypt_keeper_final_desc">عملکرد رمزگذاری دستگاه برگشت‌پذیر نیست و اگر در روند آن وقفه‌ای ایجاد شود داده‌ها از دست خواهند رفت. رمزگذاری ممکن است یک ساعت یا بیشتر طول بکشد، که در این فاصله دستگاه چندین بار راه‌اندازی مجدد می‌شود و نمی‌توانید از دستگاه استفاده کنید.</string>
     <string name="crypt_keeper_setup_title">درحال رمزگذاری…</string>
-    <string name="crypt_keeper_warn_wipe">%d تلاش دیگر برای شروع به کار دستگاه باقی مانده است. پس از آن به تنظیمات پیش‌فرض کارخانه بازنشانی خواهد شد. با این کار تمام اطلاعات، از جمله فایل‌ها و برنامه‌های دانلود شده پاک خواهند شد.</string>
+    <string name="crypt_keeper_warn_wipe">"%1$d تلاش دیگر برایتان باقی مانده است و پس از آن تلفن شما به تنظیمات پیش‌فرض کارخانه بازنشانی می‌شود. با این کار تمام اطلاعات، از جمله فایل‌ها و برنامه‌های دانلود شده پاک می‌شوند.
+
+اگر تلفن شما بازنشانی شود، ممکن است لازم باشد اطلاعات %2$s (آدرس ایمیل و رمزعبور) مربوط به این تلفن را وارد کنید تا بتوانید دوباره از آن استفاده نمایید."</string>
+    <string name="crypt_keeper_samsung_account">Samsung account</string>
+    <string name="crypt_keeper_google_account">حساب Google</string>
     <string name="crypt_keeper_failed_title">رمزگذاری انجام نشد</string>
     <string name="crypt_keeper_failed_summary">شروع به کار دستگاه ممکن نیست. در روند رمزگذاری وقفه‌ای رخ داد. باید دستگاه خود را به تنظیمات پیش‌فرض کارخانه بازنشانی کنید. با این کار تمام اطلاعات شما پاک می‌شود.</string>
     <string name="crypt_keeper_data_corrupted_title">محل ذخیره دستگاه خراب است</string>
@@ -1723,10 +1730,13 @@ Where Can I Find More Information About the 3rd Party's Policies? Separately, if
     <string name="cryptkeeper_wrong_pin">پین اشتباه وارد شد</string>
     <string name="cryptkeeper_wrong_direction">جهت نادرست ترسیم شد</string>
     <string name="checking_decryption">بازیابی…</string>
-    <string name="crypt_keeper_last_warn_wipe">۱ تلاش دیگر برای شروع به کار دستگاه باقی مانده است و در صورت اشتباه بودن، به تنظیمات پیش‌فرض کارخانه بازنشانی می‌شود. با این کار تمام اطلاعات، از جمله فایل‌ها و برنامه‌های دانلود شده پاک خواهند شد.</string>
+    <string name="crypt_keeper_last_warn_wipe">"۱ تلاش دیگر باقی مانده است و پس از آن تلفن شما به تنظیمات پیش‌فرض کارخانه بازنشانی می‌شود. با این کار همه داده‌ها، از جمله فایل‌ها و برنامه‌های دانلود شده، پاک می‌شوند.
+
+اگر تلفن شما بازنشانی شد، ممکن است نیاز باشد که اطلاعات %s (آدرس ایمیل و رمز عبور) مربوط به این تلفن را وارد کنید تا دوباره بتوانید از آن استفاده کنید."</string>
     <string name="crypt_keeper_failed_title_dec">آشکارسازی ناموفق بود.</string>
     <string name="crypt_keeper_failed_summary_dec">به دلیل ایجاد وقفه، امکان تکمیل رمزگشایی وجود ندارد. قبل از استفاده، تنظیمات کارخانه را بازیابی کنید (حذف تمام داده ها).</string>
     <string name="crypt_keeper_set_screen_lock_type">تنظیم نوع قفل صفحه</string>
+    <string name="crypt_keeper_warning_keyboard_cover_does_not_work">پس از راه‌اندازی مجدد تلفن، روکش صفحه کلید کار نمی‌کند.</string>
     <string name="encryption_interstitial_message">"برای محافظت بیشتر تلفن، می‌توانید تنظیم کنید که قبل از شروع به کار تلفن، وارد کردن %s درخواست شود. این‌کار در صورت مفقود شدن یا به سرقت رفتن تلفن، به حفظ اطلاعات شما کمک می‌کند. بعضی از برنامه‌ها ممکن است برای دسترسی به ویژگی‌هایی از قبیل همگام‌سازی ایمیل به راه‌اندازی ایمن مطابق با سیاست‌های رمزگذاری دستگاه نیاز داشته باشند.
 
 تا زمانی‌که تلفن راه‌اندازی نشده باشد شما هیچ تماس، پیام یا اعلان و هشداری دریافت نخواهید کرد."</string>
@@ -1971,6 +1981,12 @@ You will also need it when:"</string>
     <string name="lockpassword_confirm_your_pin_with_fingerprint">از اثر انگشت استفاده کرده یا پین فعلی را وارد کنید.</string>
     <string name="lockpassword_confirm_your_pattern_with_fingerprint">از اثر انگشت استفاده کرده یا الگوی فعلی را ترسیم کنید.</string>
     <string name="lockpassword_confirm_your_password_with_fingerprint">از اثر انگشت استفاده کرده یا رمز ورود فعلی را وارد کنید.</string>
+    <string name="lockpassword_confirm_your_pin_with_iris">از چشم‌های خود استفاده کرده یا پین فعلی‌تان را وارد کنید.</string>
+    <string name="lockpassword_confirm_your_pattern_with_iris">از چشم‌های خود استفاده کرده یا الگوی فعلی‌تان را ترسیم کنید.</string>
+    <string name="lockpassword_confirm_your_password_with_iris">از چشم‌های خود استفاده کرده یا رمز عبور فعلی‌تان را وارد کنید.</string>
+    <string name="lockpassword_confirm_your_pin_with_biometrics">از اطلاعات بیومتریک یا وارد کردن پین استفاده کنید.</string>
+    <string name="lockpassword_confirm_your_pattern_with_biometrics">از اطلاعات بیومتریک یا ترسیم الگو استفاده کنید.</string>
+    <string name="lockpassword_confirm_your_password_with_biometrics">از اطلاعات بیومتریک یا وارد کردن رمزعبور استفاده کنید.</string>
     <string name="lockpassword_confirm_your_pin_instead_of_fingerprint">به جای استفاده از شناسایی اثر انگشت، پین خود را وارد کنید.</string>
     <string name="lockpassword_confirm_your_pattern_instead_of_fingerprint">به جای استفاده از شناسایی اثر انگشت، الگوی خود را ترسیم کنید.</string>
     <string name="lockpassword_confirm_your_password_instead_of_fingerprint">به جای استفاده از شناسایی اثر انگشت، رمز ورود خود را وارد کنید.</string>
@@ -2045,6 +2061,7 @@ You will also need it when:"</string>
     <string name="face_status_timeout">زمان وقفه. بعدا امتحان کنید.</string>
     <string name="okay">تأیید</string>
     <string name="face_samsung_account_button">با Samsung account</string>
+    <string name="face_galaxy_account_button">استفاده از Galaxy account</string>
     <string name="face_error_DB_corrupted">مشکلی در اطلاعات چهره شما وجود دارد. چهره خود را دوباره ثبت کنید.</string>
     <string name="face_error_DB_corrupted_popup_title">چهره خود را دوباره ثبت کنید</string>
     <string name="face_error_timeout">چهره شما شناسایی نشد.</string>
@@ -2155,7 +2172,7 @@ Galaxy account خود را اضافه کنید و تنظیمات را در زی�
     <string name="biometrics_backup_locktype_title">تنظیم امنیت چشم</string>
     <string name="biometrics_register_your_iris">اطلاعات چشم‌های خود را ثبت کنید.</string>
     <string name="biometrics_backup_locktype_summary">جهت استفاده از چشم‌های خود برای بازگشایی قفل دستگاه، باید یک الگو، پین یا رمزعبور تنظیم کنید.</string>
-    <string name="biometrics_backup_locktype_message">برای استفاده از چشم‌هایتان جهت بازگشایی قفل تلفن یا برای تأیید هویت ایمن، باید:</string>
+    <string name="biometrics_backup_locktype_message">برای استفاده از چشم‌هایتان جهت بازگشایی قفل تلفن یا برای تأیید هویت خودتان در برنامه‌ها، باید:</string>
     <string name="iris_delete_popup_title">اطلاعات چشم حذف شود؟</string>
     <string name="iris_delete_popup_message">اطلاعات چشم حذف شود؟</string>
     <string name="iris_delete_popup_message_with_related_func">ویژگی‌هایی که از چشم‌ها استفاده می‌کنند خاموش می‌شوند.</string>
@@ -2231,6 +2248,9 @@ Galaxy account خود را اضافه کنید و تنظیمات را در زی�
     <string name="biometrics_dex_cant_use_msg">استفاده از %s در Samsung DeX ممکن نیست.</string>
     <string name="biometrics_dex_closed_to_switch">%s بسته شد تا به Samsung DeX تغییر وضعیت دهد.</string>
     <string name="biometircs_dex_cant_use_toast">%s نمی‌تواند در Samsung DeX اجرا شود. سعی کنید آن را در حالت تلفن اجرا کنید.</string>
+    <string name="iris_guide_text_preview">برای شناسایی چشم اینجا نگاه کنید</string>
+    <string name="iris_guide_enable_toggle">جهت استفاده از چشم‌ها ضربه بزنید</string>
+    <string name="iris_cannot_verify">تأیید اعتبار چشم‌ها ممکن نبود</string>
     <string name="knox_twofactor_bio_description">برای بازگشایی قفل %s، نوع قفل بیومتری و نوع قفل دوم را انتخاب کنید.</string>
     <string name="fingerprint_registered">اثر انگشت‌های ثبت شده در روش باز کردن قفل استفاده خواهند شد.</string>
     <string name="knox_twofactor_description">برای بازگشایی قفل %s، اطلاعات بیومتریک و نوع قفل دومی را انتخاب کنید.</string>
@@ -3092,6 +3112,7 @@ Mobile data will be turned off."</string>
     <string name="easy_mode_app_help">با چیدمان ساده‌تر صفحه اصلی و بزرگتر کردن موارد روی صفحه، استفاده از دستگاه را آسان‌تر کنید.</string>
     <string name="easy_mode_app_help_dream_1">از یک چیدمان ساده صفحه اصلی و موارد روی صفحه بزرگتر استفاده می‌شود.</string>
     <string name="easy_mode_app_help_dream_2">هرگونه تغییرات اختصاصی که در صفحه اصلی داده‌اید کنار گذاشته می‌شود و زوم صفحه روی حداکثر تنظیم می‌شود.</string>
+    <string name="easy_mode_app_help_3rd_launcher">حالت آسان را برای موارد روی صفحه بزرگتر اعمال کنید. اگر از صفحه اصلی TouchWiz استفاده نمی‌کنید، چیدمان صفحه اصلی شما تغییر نخواهد کرد، اما بزرگنمایی صفحه روی بزرگ تنظیم خواهد شد و اندازه فونت روی متوسط تنظیم خواهد شد.</string>
     <string name="security_warning_content">با تنظیم یک رمز عبور، پین یا الگو برای بازگشایی قفل صفحه خود می‌توانید از حریم خصوصی خود محافظت کنید</string>
     <string name="lock_setting_weather_desc">برای مشاهده یا تغییر تنظیمات وضع هوا، روی &lt;تنظیمات وضع هوا> در زیر ضربه بزنید.</string>
     <string name="lock_setting_weather_btn">تنظیمات آب و هوا</string>
@@ -3338,7 +3359,7 @@ Downloading via mobile networks may result in additional charges depending on yo
     <string name="disable_hovering_title">غیرفعال کردن مشاهده بدون لمس</string>
     <string name="disable_hovering_summary">مشاهده بدون لمس و TalkBack را نمی توان با هم فعال کرد. مشاهده بدون لمس غیرفعال خواهد شد.</string>
     <string name="pen_settings_pen_input">ورودی مستقیم قلم</string>
-    <string name="action_memo_onoff_screen_title">یادداشت صفحه خاموش</string>
+    <string name="action_memo_onoff_screen_title">یادداشت در صفحه خاموش</string>
     <string name="screen_off_note_summary">وقتی صفحه خاموش است یادداشت بنویسید. کافیست S Pen را بردارید و شروع به نوشتن کنید.</string>
     <string name="screen_off_note_summary_jpn">در حالی که صفحه نمایش خاموش است، S Pen را بردارید و با نوشتن روی صفحه، یادداشت ایجاد کنید. یادداشت‌های صفحه خاموش در Galaxy Notes ذخیره می‌شوند.</string>
     <string name="screen_off_note_summary_no_detach">با فشار دادن کلید قلم، ضربه زدن به صفحه هنگام خاموش بودن آن و سپس نوشتن روی آن، یادداشت ایجاد کنید. یادداشت‌های صفحه خاموش در Samsung Notes ذخیره می‌شوند.</string>
@@ -3945,7 +3966,7 @@ Wi-Fi اکنون روشن است."</string>
     <string name="wfd_descrpition_playsound">پخش صدا.</string>
     <string name="wfd_is_not_supported">این عملکرد پشتیبانی نمی‌شود.</string>
     <string name="usbtethering_notify_wifi_is_on_title">‏Wi-Fi خاموش شود؟</string>
-    <string name="usbtethering_notify_wifi_is_on">فعال کردن همزمان Wi-Fi و اتصال اینترنت با USB ممکن نیست. Wi-Fi را خاموش کنید.</string>
+    <string name="usbtethering_notify_wifi_is_on">روشن کردن همزمان Wi-Fi و اتصال اینترنت با USB ممکن نیست. Wi-Fi خاموش می‌شود.</string>
     <string name="disable_multi_window_dialog_text">حالت چند پنجره غیرفعال شده و تمام برنامه‌های باز در پنجره بازشو بسته خواهند شد.</string>
     <string name="keyguard_password_attempt_count_pin_code">%d فرصت داريد.</string>
     <string name="keyguard_password_attempts_count_pin_code">%d فرصت داريد.</string>
@@ -4153,6 +4174,7 @@ Wi-Fi اکنون روشن است."</string>
     <string name="hdmi_mode_title">حالت HDMI</string>
     <string name="hdmi_mode_dex">Samsung DeX</string>
     <string name="hdmi_mode_mirroring">Screen Mirroring</string>
+    <string name="hdmi_mode_not_available_while_cover_attached">%s هنگامی که جلد متصل است در دسترس نیست.</string>
     <string name="screen_timeout_for_dex">پایان زمان صفحه برای Samsung DeX</string>
     <string name="show_virtual_keyboard_for_dex">نمایش صفحه کلید روی صفحه در Samsung DeX</string>
     <string name="comma">،</string>
@@ -4461,7 +4483,7 @@ Wi-Fi اکنون روشن است."</string>
     <string name="date_picker_title">تاريخ</string>
     <string name="time_picker_title">زمان</string>
     <string name="lock_after_timeout">به طور خودکار قفل شود</string>
-    <string name="lock_after_timeout_summary">صفحه به طور خودکار ‎%s پس خاموش شدن صفحه، قفل شود.</string>
+    <string name="lock_after_timeout_summary">تلفن به طور خودکار %s پس از خاموش شدن صفحه، قفل شود.</string>
     <string name="lock_after_timeout_summary_with_exception">صفحه ‎%1$s پس از خاموش شدن قفل شود، به جز وقتی قفل توسط ‎‎%2$s باز باشد.</string>
     <string name="show_owner_info_on_lockscreen_label">اطلاعات صاحب دستگاه در صفحه قفل نشان داده شود.</string>
     <string name="owner_info_settings_title">اطلاعات مالک</string>
@@ -4609,6 +4631,8 @@ Wi-Fi اکنون روشن است."</string>
     <string name="wifi_empty_list_user_restricted">شما اجازه تغییر تنظیمات Wi-Fi را ندارید.</string>
     <string name="wifi_setup_wps">راه اندازی خودکار (WPS)</string>
     <string name="wifi_show_advanced">نمایش گزینه های پیشرفته</string>
+    <string name="wifi_advanced_toggle_description_expanded">برای کوچک کردن دو بار ضربه بزنید.</string>
+    <string name="wifi_advanced_toggle_description_collapsed">برای باز کردن دو بار ضربه بزنید.</string>
     <string name="wifi_wps_setup_title">تنظیم WPS</string>
     <string name="wifi_wps_setup_msg">شروع WPS…</string>
     <string name="wifi_wps_onstart_pbc">دکمه راه اندازی روی روتر حمایت شده توسط Wi-Fi را ضربه بزنید. این دکمه ممکن است WPS خوانده شود یا شامل این نماد باشد:</string>
@@ -4640,6 +4664,10 @@ Wi-Fi اکنون روشن است."</string>
     <string name="wifi_shared">اشتراک‌گذاری شد</string>
     <string name="wifi_unchanged">(بدون تغییر)</string>
     <string name="wifi_unspecified">(غیر مشخص)</string>
+    <string name="wifi_select_cert">انتخاب گواهی</string>
+    <string name="wifi_do_not_provide_eap_user_cert">ارائه نشود</string>
+    <string name="wifi_do_not_validate_eap_server">تأیید اعتبار نشود</string>
+    <string name="wifi_do_not_validate_eap_server_warning">مجوزی مشخص نشد. اتصال شما خصوصی نخواهد بود.</string>
     <string name="wifi_scan_always_turnon_message">برای بهبود دقت مکان و اهداف دیگر، حتی وقتی Wi-Fi خاموش است، ‎%s برای اسکن شبکه‌های Wi-Fi اجازه می‌خواهد. برای همه برنامه‌ها اجازه داده شود؟</string>
     <string name="wifi_scan_always_confirm_allow">اجازه دادن</string>
     <string name="wifi_scan_always_confirm_deny">رد کردن</string>
@@ -4974,9 +5002,9 @@ Wi-Fi اکنون روشن است."</string>
     <string name="restore_default_apn_completed">بازنشانی تنظیم APN به موارد پیش‌فرض</string>
     <string name="reset_network_desc">با این کار تمام تنظیمات شبکه از جمله موارد زیر بازنشانی می‌شوند:</string>
     <string name="reset_network_button_text">تنظيم مجدد</string>
-    <string name="reset_network_final_desc">همه تنظیمات اتصال بازنشانی خواهند شد. این عملکرد قابل برگشت نیست.</string>
+    <string name="reset_network_final_desc">همه تنظیمات شبکه بازنشانی خواهند شد. این عملکرد قابل برگشت نیست.</string>
     <string name="reset_network_final_button_text">تنظيم مجدد</string>
-    <string name="reset_network_complete_toast">تنظیمات اتصال بازنشانی شد.</string>
+    <string name="reset_network_complete_toast">تنظیمات شبکه بازنشانی شد.</string>
     <string name="master_clear_title">بازنشانی داده کارخانه</string>
     <string name="master_clear_accounts">شما در حال حاضر به حساب‌های زیر وارد شده‌اید:</string>
     <string name="master_clear_other_users_present">داده‌های متعلق به کاربران دیگر در این دستگاه نیز پاک خواهد شد.</string>
@@ -6089,6 +6117,7 @@ If the device has multiple users, using this shortcut on the lock screen tempora
     <string name="set_data_limit">تنظیم محدودیت اینترنت همراه</string>
     <string name="data_limit">محدوده اینترنت همراه</string>
     <string name="data_usage_template">%1$s در فاصله زمانی %2$s استفاده شده</string>
+    <string name="data_usage_template_wifi">%s استفاده شده در ۳۰ روز گذشته</string>
     <string name="data_usage_other_apps">برنامه‌های مرتبط در طول مصرف</string>
     <string name="data_saver_title">ذخیره کننده اینترنت همراه</string>
     <string name="unrestricted_data_saver">اجازه برنامه وقتی ذخیره اینترنت فعال است</string>
@@ -6139,6 +6168,7 @@ If the device has multiple users, using this shortcut on the lock screen tempora
     <string name="legacy_dhcp_client_summary">‏به جای کلاینت Android DHCP جدید، از کلاینت Lollipop DHCP استفاده کنید.</string>
     <string name="screen_off_pocket_title">خاموش ماندن صفحه</string>
     <string name="screen_off_pocket_summary">وقتی دستگاه در مکان تاریکی مانند جیب یا کیف شما قرار دارد، از روشن شدن اتفاقی صفحه نمایش جلوگیری می‌شود.</string>
+    <string name="noApplications">تمام برنامه‌های مربوط به این عملکرد غیرفعال یا مسدود شده و یا نصب نشده‌اند.</string>
     <string name="confirm_reset_shortcut_manager_throttling_title">بازنشانی محدود کنندگی سرعت مدیر میانبر</string>
     <string name="confirm_reset_shortcut_manager_throttling_message">شمارشگرهای محدود کنندگی سرعت مدیر میانبر بازنشانی خواهند شد.</string>
 </resources>

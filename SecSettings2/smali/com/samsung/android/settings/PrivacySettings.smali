@@ -1218,7 +1218,7 @@
 
     move-result-object v2
 
-    const v3, 0x7f0f0399
+    const v3, 0x7f0f0398
 
     invoke-virtual {v2, v3}, Landroid/content/res/Resources;->getInteger(I)I
 
@@ -1353,7 +1353,7 @@
 
     move-result-object v2
 
-    const v3, 0x7f0f039a
+    const v3, 0x7f0f0399
 
     invoke-virtual {v2, v3}, Landroid/content/res/Resources;->getInteger(I)I
 
@@ -1599,7 +1599,7 @@
     :cond_0
     iget-object v0, p0, Lcom/samsung/android/settings/PrivacySettings;->mConfigure:Landroid/preference/PreferenceScreen;
 
-    const v1, 0x7f0b1a48
+    const v1, 0x7f0b1a5a
 
     invoke-virtual {v0, v1}, Landroid/preference/PreferenceScreen;->setSummary(I)V
 
@@ -1688,7 +1688,7 @@
 
     const/4 v2, 0x0
 
-    const v4, 0x7f0b0562
+    const v4, 0x7f0b0563
 
     invoke-virtual {p0, v4}, Lcom/samsung/android/settings/PrivacySettings;->getString(I)Ljava/lang/String;
 
@@ -1698,7 +1698,7 @@
 
     aput-object v1, v4, v7
 
-    const v5, 0x7f0b0526
+    const v5, 0x7f0b0527
 
     invoke-virtual {p0, v5, v4}, Lcom/samsung/android/settings/PrivacySettings;->getString(I[Ljava/lang/Object;)Ljava/lang/String;
 
@@ -1708,7 +1708,7 @@
 
     aput-object v1, v4, v7
 
-    const v5, 0x7f0b0527
+    const v5, 0x7f0b0528
 
     invoke-virtual {p0, v5, v4}, Lcom/samsung/android/settings/PrivacySettings;->getString(I[Ljava/lang/Object;)Ljava/lang/String;
 
@@ -1740,7 +1740,7 @@
 
     invoke-direct {v5, p0}, Lcom/samsung/android/settings/PrivacySettings$6;-><init>(Lcom/samsung/android/settings/PrivacySettings;)V
 
-    const v6, 0x7f0b06ff
+    const v6, 0x7f0b0700
 
     invoke-virtual {v4, v6, v5}, Landroid/app/AlertDialog$Builder;->setPositiveButton(ILandroid/content/DialogInterface$OnClickListener;)Landroid/app/AlertDialog$Builder;
 
@@ -1784,7 +1784,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f0b1a4b
+    const v2, 0x7f0b1a5d
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getText(I)Ljava/lang/CharSequence;
 
@@ -1807,7 +1807,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f0b1a49
+    const v2, 0x7f0b1a5b
 
     invoke-virtual {v1, v2}, Landroid/app/AlertDialog$Builder;->setTitle(I)Landroid/app/AlertDialog$Builder;
 
@@ -1842,7 +1842,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f0b1a4a
+    const v2, 0x7f0b1a5c
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getText(I)Ljava/lang/CharSequence;
 
@@ -1883,7 +1883,7 @@
 
     iget-object v0, p0, Lcom/samsung/android/settings/PrivacySettings;->mSamsungAutoClean:Lcom/android/settings/SecSettingsSwitchPreference;
 
-    const v1, 0x7f0b1cf6
+    const v1, 0x7f0b1d08
 
     invoke-virtual {v0, v1}, Lcom/android/settings/SecSettingsSwitchPreference;->setSummary(I)V
 
@@ -2244,7 +2244,7 @@
 
     if-eqz v1, :cond_9
 
-    const v13, 0x7f0b1cf6
+    const v13, 0x7f0b1d08
 
     :goto_8
     invoke-virtual {v14, v13}, Lcom/android/settings/SecSettingsSwitchPreference;->setSummary(I)V
@@ -2267,7 +2267,7 @@
     goto/16 :goto_3
 
     :cond_9
-    const v13, 0x7f0b1cf7
+    const v13, 0x7f0b1d09
 
     goto :goto_8
 
@@ -2377,7 +2377,7 @@
 .method protected getHelpResource()I
     .locals 1
 
-    const v0, 0x7f0b1bbf
+    const v0, 0x7f0b1bd1
 
     return v0
 .end method
@@ -2427,7 +2427,7 @@
 
     invoke-direct {v2}, Landroid/os/Bundle;-><init>()V
 
-    const v3, 0x7f0b175d    # 1.84884E38f
+    const v3, 0x7f0b176f
 
     move-object v5, v4
 
@@ -2575,7 +2575,7 @@
     return-void
 
     :cond_0
-    const v23, 0x7f0800e9
+    const v23, 0x7f0800eb
 
     move-object/from16 v0, p0
 
@@ -2605,7 +2605,7 @@
 
     if-eqz v4, :cond_1
 
-    const v23, 0x7f0b050c
+    const v23, 0x7f0b050d
 
     move/from16 v0, v23
 
@@ -2815,7 +2815,7 @@
 
     if-eqz v23, :cond_9
 
-    const v23, 0x7f0b0d32
+    const v23, 0x7f0b0d40
 
     :goto_0
     move-object/from16 v0, v16
@@ -3051,7 +3051,7 @@
 
     move-object/from16 v23, v0
 
-    const v24, 0x7f0b0e3c
+    const v24, 0x7f0b0e4b
 
     move-object/from16 v0, p0
 
@@ -3270,7 +3270,7 @@
     goto :goto_3
 
     :cond_9
-    const v23, 0x7f0b0d31
+    const v23, 0x7f0b0d3f
 
     goto/16 :goto_0
 
@@ -3394,7 +3394,7 @@
 
     if-eqz v4, :cond_f
 
-    const v23, 0x7f0b0ce0
+    const v23, 0x7f0b0cee
 
     move/from16 v0, v23
 
@@ -3539,7 +3539,7 @@
 
     move-result-object v3
 
-    const v4, 0x7f0f039c
+    const v4, 0x7f0f039b
 
     invoke-virtual {v3, v4}, Landroid/content/res/Resources;->getInteger(I)I
 

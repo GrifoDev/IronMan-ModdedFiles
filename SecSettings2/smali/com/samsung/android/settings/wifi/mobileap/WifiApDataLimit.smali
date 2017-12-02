@@ -138,7 +138,7 @@
 
     invoke-virtual {v0}, Lcom/samsung/android/settings/wifi/mobileap/WifiApDataLimit$ApMobileData;->updateApMobileDataLimit()V
 
-    const v0, 0x7f040259
+    const v0, 0x7f04025c
 
     invoke-virtual {p0, v0}, Lcom/samsung/android/settings/wifi/mobileap/WifiApDataLimit;->setLayoutResource(I)V
 
@@ -295,7 +295,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f0b1ad8
+    const v1, 0x7f0b1aea
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -307,7 +307,7 @@
 
     invoke-super {p0, p1}, Landroid/preference/Preference;->onBindView(Landroid/view/View;)V
 
-    const v0, 0x7f1106ac
+    const v0, 0x7f1106ae
 
     invoke-virtual {p1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -497,7 +497,7 @@
 
     aput-object v2, v1, v3
 
-    const v2, 0x7f0b0fb1
+    const v2, 0x7f0b0fc0
 
     invoke-virtual {v0, v2, v1}, Landroid/content/res/Resources;->getString(I[Ljava/lang/Object;)Ljava/lang/String;
 
@@ -566,7 +566,7 @@
 
     aput-object v2, v1, v4
 
-    const v2, 0x7f0b0fb2
+    const v2, 0x7f0b0fc1
 
     invoke-virtual {v0, v2, v1}, Landroid/content/res/Resources;->getString(I[Ljava/lang/Object;)Ljava/lang/String;
 
@@ -609,7 +609,7 @@
 
     aput-object v2, v1, v4
 
-    const v2, 0x7f0b0fb3
+    const v2, 0x7f0b0fc2
 
     invoke-virtual {v0, v2, v1}, Landroid/content/res/Resources;->getString(I[Ljava/lang/Object;)Ljava/lang/String;
 
@@ -626,7 +626,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f0b0fb4
+    const v1, 0x7f0b0fc3
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 

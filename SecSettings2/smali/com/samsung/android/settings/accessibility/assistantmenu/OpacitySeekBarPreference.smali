@@ -72,7 +72,7 @@
 
     iput-object p1, p0, Lcom/samsung/android/settings/accessibility/assistantmenu/OpacitySeekBarPreference;->mContext:Landroid/content/Context;
 
-    const v0, 0x7f04023d
+    const v0, 0x7f040240
 
     invoke-virtual {p0, v0}, Lcom/samsung/android/settings/accessibility/assistantmenu/OpacitySeekBarPreference;->setLayoutResource(I)V
 
@@ -106,7 +106,7 @@
 
     iput-boolean p2, p0, Lcom/samsung/android/settings/accessibility/assistantmenu/OpacitySeekBarPreference;->mEnable:Z
 
-    const v0, 0x7f04023d
+    const v0, 0x7f040240
 
     invoke-virtual {p0, v0}, Lcom/samsung/android/settings/accessibility/assistantmenu/OpacitySeekBarPreference;->setLayoutResource(I)V
 
@@ -150,7 +150,7 @@
 
     invoke-super {p0, p1}, Landroid/preference/Preference;->onBindView(Landroid/view/View;)V
 
-    const v1, 0x7f110687
+    const v1, 0x7f110689
 
     invoke-virtual {p1, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -173,7 +173,7 @@
 
     iput v1, p0, Lcom/samsung/android/settings/accessibility/assistantmenu/OpacitySeekBarPreference;->progress:I
 
-    const v1, 0x7f110684
+    const v1, 0x7f110686
 
     invoke-virtual {p1, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -183,7 +183,7 @@
 
     iput-object v1, p0, Lcom/samsung/android/settings/accessibility/assistantmenu/OpacitySeekBarPreference;->mTitleOpacity:Landroid/widget/TextView;
 
-    const v1, 0x7f110685
+    const v1, 0x7f110687
 
     invoke-virtual {p1, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -193,7 +193,7 @@
 
     iput-object v1, p0, Lcom/samsung/android/settings/accessibility/assistantmenu/OpacitySeekBarPreference;->mSummaryOpacity:Landroid/widget/TextView;
 
-    const v1, 0x7f110688
+    const v1, 0x7f11068a
 
     invoke-virtual {p1, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -207,7 +207,7 @@
 
     invoke-virtual {v1, v2}, Landroid/widget/ImageView;->semSetHoverPopupType(I)V
 
-    const v1, 0x7f110686
+    const v1, 0x7f110688
 
     invoke-virtual {p1, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -429,7 +429,7 @@
     nop
 
     :pswitch_data_0
-    .packed-switch 0x7f110686
+    .packed-switch 0x7f110688
         :pswitch_1
         :pswitch_0
         :pswitch_2
@@ -555,7 +555,7 @@
     nop
 
     :pswitch_data_0
-    .packed-switch 0x7f110686
+    .packed-switch 0x7f110688
         :pswitch_1
         :pswitch_0
         :pswitch_2

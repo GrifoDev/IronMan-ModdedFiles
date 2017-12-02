@@ -92,7 +92,7 @@
 
     iput-object v0, p0, Lcom/samsung/android/settings/multisound/SASButtonPreference;->mOnKeyListener:Landroid/view/View$OnKeyListener;
 
-    const v0, 0x7f040233
+    const v0, 0x7f040236
 
     invoke-virtual {p0, v0}, Lcom/samsung/android/settings/multisound/SASButtonPreference;->setLayoutResource(I)V
 
@@ -161,7 +161,7 @@
 
     move-result-object v6
 
-    const v9, 0x7f110673
+    const v9, 0x7f110675
 
     invoke-virtual {v6, v9}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -169,7 +169,7 @@
 
     check-cast v5, Landroid/widget/RadioButton;
 
-    const v9, 0x7f110674
+    const v9, 0x7f110676
 
     invoke-virtual {v6, v9}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -227,7 +227,7 @@
     iput-object v1, p0, Lcom/samsung/android/settings/multisound/SASButtonPreference;->mButton:Landroid/widget/CompoundButton;
 
     :goto_0
-    const v9, 0x7f110672
+    const v9, 0x7f110674
 
     invoke-virtual {v6, v9}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 

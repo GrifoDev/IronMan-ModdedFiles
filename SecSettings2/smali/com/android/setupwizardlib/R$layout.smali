@@ -4,27 +4,27 @@
 
 
 # static fields
-.field public static final suw_glif_list_template:I = 0x7f0403f1
+.field public static final suw_glif_list_template:I = 0x7f0403f4
 
-.field public static final suw_glif_preference_recycler_view:I = 0x7f04031e
+.field public static final suw_glif_preference_recycler_view:I = 0x7f040321
 
-.field public static final suw_glif_preference_template:I = 0x7f0403e8
+.field public static final suw_glif_preference_template:I = 0x7f0403eb
 
-.field public static final suw_glif_recycler_template:I = 0x7f0403e9
+.field public static final suw_glif_recycler_template:I = 0x7f0403ec
 
-.field public static final suw_glif_template:I = 0x7f0403f0
+.field public static final suw_glif_template:I = 0x7f0403f3
 
-.field public static final suw_items_button_bar:I = 0x7f040326
+.field public static final suw_items_button_bar:I = 0x7f040329
 
-.field public static final suw_items_default:I = 0x7f040327
+.field public static final suw_items_default:I = 0x7f04032a
 
-.field public static final suw_items_switch:I = 0x7f040329
+.field public static final suw_items_switch:I = 0x7f04032c
 
-.field public static final suw_list_template:I = 0x7f0403ec
+.field public static final suw_list_template:I = 0x7f0403ef
 
-.field public static final suw_navbar_view:I = 0x7f040330
+.field public static final suw_navbar_view:I = 0x7f040333
 
-.field public static final suw_template:I = 0x7f0403ea
+.field public static final suw_template:I = 0x7f0403ed
 
 
 # direct methods

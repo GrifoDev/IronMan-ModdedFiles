@@ -122,6 +122,8 @@
     <string name="wifi_allow_scan_with_traffic_summary">Ceadaigh nó diúltaigh go huathoibríoch do scanadh fánaíochta Wi-Fi bunaithe ar an méid sonraí atá úsáidte.</string>
     <string name="select_logd_size_title">Méid mhaoláin don logáil</string>
     <string name="select_logd_size_dialog_title">Roghnaigh uasmhéid gach maolán loga</string>
+    <string name="dev_logpersist_clear_warning_title">Glan stóras seasmhach logálaí?</string>
+    <string name="dev_logpersist_clear_warning_message">Scriosfar sonraí logálaí nuair a chasfar as an logálaí seasta.</string>
     <string name="select_logpersist_title">Stóráil sonraí loga go seasmhach</string>
     <string name="select_logpersist_dialog_title">Rogh. maoláin loga le stóráil go seasmhach</string>
     <string name="select_usb_configuration_title">Cumraíocht USB</string>
@@ -855,6 +857,7 @@ Is féidir go mbeidh difríocht bheag idir an 2 ghléas nasctha maidir le haschu
     <string name="bluetooth_avc_available_description">"Tá tacú sa ghléas Bluetooth atá nasctha do Shioncronú airde meán agus déanfar an leibhéal airde arna shocrú ag an ngléas Bluetooth a shioncronú le d'fhón."</string>
     <string name="bluetooth_enter_pin_msg">Iontráil PIN le péireáil le %s (Triail 0000 nó 1234)</string>
     <string name="bluetooth_pin_maximum_number_message">Uaslíon na gcarachtar bainte amach.</string>
+    <string name="bluetooth_frp_permission_message">Ní féidir an gléas Bluetooth a úsáid don ghlao seo.</string>
     <string name="settings_menu_done">Déanta</string>
     <string name="usb_tethering_unavailable_subtext_tmo">USB not connected</string>
     <string name="usb_tethering_available_subtext_tmo">USB connected, check to tether</string>
@@ -1354,7 +1357,7 @@ Tapáil OK le méadú ar ghile thar na leibhéil shábháilte a cheadú."</strin
     <string name="navigationbar_pressure_sensitivity_title">Brúigh an cnaipe Baile go láidir</string>
     <string name="navigationbar_pressure_sensitivity_summary">Úsáid an cnaipe Baile agus é folaithe trína bhrú níos láidre ná mar is gnách.</string>
     <string name="navigationbar_pressure_sensitivity_level_summary">Leibhéal brú: %1$d as %2$d</string>
-    <string name="navigationbar_pressure_sensitivity_description_off">Úsáid an cnaipe Baile agus é folaithe trína bhrú níos láidre ná mar is gnách.</string>
+    <string name="navigationbar_pressure_sensitivity_description_off">Ceartaigh an méid brú is gá leis an gcnaipe Baile a bhrú go láidir.</string>
     <string name="navigationbar_pressure_low">Níos éadroime</string>
     <string name="navigationbar_pressure_high">Níos láidre</string>
     <string name="navigationbar_hide_bar">Taispeáin agus folaigh cnaipe</string>
@@ -1493,7 +1496,7 @@ Tapáil OK le méadú ar ghile thar na leibhéil shábháilte a cheadú."</strin
     <string name="crypt_keeper_decrypt_title">Díchriptigh an gléas</string>
     <string name="crypt_keeper_decrypt_summary">Gléas criptithe.</string>
     <string name="crypt_keeper_type_pin">PIN</string>
-    <string name="crypt_keeper_type_pattern">Patrún</string>
+    <string name="crypt_keeper_type_pattern">patrún</string>
     <string name="crypt_keeper_type_password">Pasfhocal</string>
     <string name="crypt_keeper_type_direction">Glas treo</string>
     <string name="crypt_keeper_confirm_title_dec">Deimhnigh an díchriptiú</string>
@@ -1577,7 +1580,11 @@ Tógann sé uair an chloig nó níos mó le criptiú. Cinntigh go bhfuil an ceal
     <string name="crypt_keeper_confirm_title">Deimhnigh an criptiú</string>
     <string name="crypt_keeper_final_desc">Ní féidir criptiú do ghléis a aisiompú agus caillfear sonraí má chuirtear isteach ar an bpróiseas. Is féidir breis agus uair an chloig nó níos mó a bheith i gceist le criptiú, agus déanfar do ghléas a atosú roinnt uaireanta agus ní beidh tú in ann é a úsáid lena linn.</string>
     <string name="crypt_keeper_setup_title">Ag criptiú…</string>
-    <string name="crypt_keeper_warn_wipe">Tá %d iarracht fágtha agat le do ghléas a thosú sula bhfillfear ar a réamhshocruithe monarchan é. Léirscriosfar na sonraí go léir leis sin, lena n-áirítear comhaid agus feidhmchláir a íoslódáladh.</string>
+    <string name="crypt_keeper_warn_wipe">"Tá %1$d iarracht fágtha agat sula bhfillfear d'fhón ar a réamhshocruithe monarchan. Léirscriosfar gach sonra leis sin, lena n-áirítear comhaid agus feidhmchláir a íoslódáladh.
+
+Má fhilltear d'fhón ar a réamhshocruithe, is féidir go mbeidh ort an fhaisnéis %2$s(seoladh r-phoist agus pasfhocal) a bhaineann leis an bhfón seo a iontráil lena úsáid arís."</string>
+    <string name="crypt_keeper_samsung_account">Samsung account</string>
+    <string name="crypt_keeper_google_account">Cuntas Google</string>
     <string name="crypt_keeper_failed_title">Theip ar chriptiú</string>
     <string name="crypt_keeper_failed_summary">Ní féidir do ghléas a thosú. Cuireadh isteach ar an bpróiseas criptithe. Ní foláir go bhfillfear do ghléas ar na réamhshocruithe monarchan. Léirscriosfar do shonraí go léir leis sin.</string>
     <string name="crypt_keeper_data_corrupted_title">Stóras an ghléis truaillithe</string>
@@ -1596,10 +1603,13 @@ Tógann sé uair an chloig nó níos mó le criptiú. Cinntigh go bhfuil an ceal
     <string name="cryptkeeper_wrong_pin">PIN mícheart iontráilte</string>
     <string name="cryptkeeper_wrong_direction">Treo mícheart tarraingthe</string>
     <string name="checking_decryption">Ag deimhniú…</string>
-    <string name="crypt_keeper_last_warn_wipe">Níl ach 1 iarracht fágtha agat le do ghléas a thosú sula bhfillfear ar a réamhshocruithe monarchan é. Léirscriosfar na sonraí uile leis sin, lena n-áirítear comhaid agus feidhmchláir a íoslódáladh.</string>
+    <string name="crypt_keeper_last_warn_wipe">"Tá 1 iarracht fágtha agat sula bhfillfear d'fhón ar a réamhshocruithe monarchan. Léirscriosfar gach sonra leis sin, lena n-áirítear comhaid agus feidhmchláir a íoslódáladh.
+
+Má fhilltear d'fhón ar a réamhshocruithe, is féidir go mbeidh ort an fhaisnéis %s (seoladh r-phoist agus pasfhocal) a bhaineann leis an bhfón seo a iontráil lena úsáid arís."</string>
     <string name="crypt_keeper_failed_title_dec">Theip ar dhíchriptiú.</string>
     <string name="crypt_keeper_failed_summary_dec">Ní féidir an díchriptiú a chur i gcrích mar cuireadh isteach air. Déan athshocrú chuig sonraí monarchan (rud a léirscriosfaidh gach sonra) roimh úsáid.</string>
     <string name="crypt_keeper_set_screen_lock_type">Socraigh cineál glas scáileáin</string>
+    <string name="crypt_keeper_warning_keyboard_cover_does_not_work">Ní oibreoidh an clúdach eochairchláir tar éis atosú an fhóin.</string>
     <string name="encryption_interstitial_message">"Is féidir leat tuilleadh cosanta a thabhairt don fhón seo trína éileamh go n-iontráiltear do %s roimh thosú an fhóin. Cabhróidh sé sin le do chuid sonraí a chosaint má chailltear nó má ghoidtear an fón. Is féidir go n-éileofar Slántosú le roinnt feidhmchlár de réir Beartais criptithe gléis le gnéithe a rochtain, amhail sioncronú r-phoist.
 
 Ní bhfaighidh tú glaonna, teachtaireachtaí, ná fógraí, agus ní bhuailfear aláraim, go dtí go mbeidh an fón tosaithe."</string>
@@ -1844,6 +1854,12 @@ You will also need it when:"</string>
     <string name="lockpassword_confirm_your_pin_with_fingerprint">Úsáid méarlorg nó iontráil an PIN reatha.</string>
     <string name="lockpassword_confirm_your_pattern_with_fingerprint">Úsáid méarlorg nó tarraing an patrún reatha.</string>
     <string name="lockpassword_confirm_your_password_with_fingerprint">Úsáid méarlorg nó iontráil an pasfhocal reatha.</string>
+    <string name="lockpassword_confirm_your_pin_with_iris">"Úsáid d'inteacháin nó iontráil do PIN reatha."</string>
+    <string name="lockpassword_confirm_your_pattern_with_iris">"Úsáid d'inteacháin nó tarraing do phatrún reatha."</string>
+    <string name="lockpassword_confirm_your_password_with_iris">"Úsáid d'inteacháin nó iontráil do phasfhocal reatha."</string>
+    <string name="lockpassword_confirm_your_pin_with_biometrics">Úsáid bithmhéadracht nó iontráil do PIN.</string>
+    <string name="lockpassword_confirm_your_pattern_with_biometrics">Úsáid bithmhéadracht nó tarraing do phatrún.</string>
+    <string name="lockpassword_confirm_your_password_with_biometrics">Úsáid bithmhéadracht nó iontráil do phasfhocal.</string>
     <string name="lockpassword_confirm_your_pin_instead_of_fingerprint">Iontráil do PIN in ionad Aithint méarloirg a úsáid.</string>
     <string name="lockpassword_confirm_your_pattern_instead_of_fingerprint">Tarraing do phatrún in ionad Aithint méarloirg a úsáid.</string>
     <string name="lockpassword_confirm_your_password_instead_of_fingerprint">Iontráil do phasfhocal in ionad Aithint méarloirg a úsáid.</string>
@@ -1918,6 +1934,7 @@ Roghnaigh cén chaoi ar mian leat d'fhón a dhíghlasáil. Ní féidir Díghlas�
     <string name="face_status_timeout">Am istigh. Triail arís níos moille.</string>
     <string name="okay">OK</string>
     <string name="face_samsung_account_button">Úsáid Samsung account</string>
+    <string name="face_galaxy_account_button">Úsáid Cuntas Galaxy</string>
     <string name="face_error_DB_corrupted">"Bhí fadhb ann le do shonraí aghaidhe. Cláraigh d'aghaidh arís."</string>
     <string name="face_error_DB_corrupted_popup_title">"Cláraigh d'aghaidh arís"</string>
     <string name="face_error_timeout">"Níor braitheadh d'aghaidh."</string>
@@ -2028,7 +2045,7 @@ Cas air Díghlasáil inteacháin le do chuid sonraí bithmhéadracha nó do %s a
     <string name="biometrics_backup_locktype_title">Socraigh slándáil inteacháin</string>
     <string name="biometrics_register_your_iris">"Cláraigh d'inteacháin."</string>
     <string name="biometrics_backup_locktype_summary">"Le d'inteacháin a úsáid leis an ngléas a dhíghlasáil, ní mór duit patrún, PIN, nó pasfhocal a shocrú."</string>
-    <string name="biometrics_backup_locktype_message">"Le d'inteacháin a úsáid le d'fhón a dhíghlasáil nó le haghaidh fíorú slán, ní foláir duit:"</string>
+    <string name="biometrics_backup_locktype_message">"Le d'inteacháin a úsáid chun d'fhón a dhíghlasáil nó chun tú féin a fhíorú i bhfeidhmchláir, déan mar seo a leanas:"</string>
     <string name="iris_delete_popup_title">Bain sonraí inteacháin?</string>
     <string name="iris_delete_popup_message">Bain sonraí inteacháin?</string>
     <string name="iris_delete_popup_message_with_related_func">Casfar as gnéithe a úsáideann inteacháin.</string>
@@ -2104,6 +2121,9 @@ Roghnaigh cén chaoi ar mian leat d'fhón a dhíghlasáil. Ní féidir Díghlas�
     <string name="biometrics_dex_cant_use_msg">Ní féidir %s a úsáid in Samsung DeX.</string>
     <string name="biometrics_dex_closed_to_switch">Dúnadh %s le haistriú chuig Samsung DeX.</string>
     <string name="biometircs_dex_cant_use_toast">Ní féidir %s a rith in Samsung DeX. Triail é a rith i Mód fóin.</string>
+    <string name="iris_guide_text_preview">Úsáid inteacháin anseo</string>
+    <string name="iris_guide_enable_toggle">Tapáil le hinteacháin a úsáid</string>
+    <string name="iris_cannot_verify">Níorbh fhéidir inteacháin a fhíorú</string>
     <string name="knox_twofactor_bio_description">Roghnaigh do chineál glais bhithmhéadraigh agus an dara cineál glais atá agat le %s a dhíghlasáil.</string>
     <string name="fingerprint_registered">Úsáidfear na méarloirg cláraithe le modh díghlasála roghnaithe.</string>
     <string name="knox_twofactor_description">Roghnaigh do chuid sonraí bithmhéadracha agus cineál glais tánaisteach le %s a dhíghlasáil.</string>
@@ -2966,6 +2986,7 @@ Triail arís."</string>
     <string name="easy_mode_app_help">Úsáid do ghléas níos éasca le leagan amach níos simplí ar an scáileán baile agus míreanna níos mó ar an scáileán.</string>
     <string name="easy_mode_app_help_dream_1">Úsáid leagan amach simplí don Scáileán baile agus míreanna níos mó ar an scáileán.</string>
     <string name="easy_mode_app_help_dream_2">Cuileálfar aon saincheapadh a rinne tú ar an Scáileán baile, agus socrófar an Zúmáil scáileáin chuig an uasmhéid.</string>
+    <string name="easy_mode_app_help_3rd_launcher">Cuir Mód éasca i bhfeidhm le míreanna ar an scáileán a dhéanamh níos mó. Mura bhfuil Baile TouchWiz á úsáid agat, ní athróidh leagan amach do Scáileáin baile, ach socrófar zúmáil an scáileáin chuig mór agus socrófar an chlómhéid chuig meánach.</string>
     <string name="security_warning_content">Is féidir leat do phríobháid a chosaint trí phasfhocal, PIN, nó patrún a shocrú i gcomhair do scáileán a dhíghlasáil</string>
     <string name="lock_setting_weather_desc">Le hamharc ar na socruithe aimsire nó lena n-athrú, tapáil SOCRUITHE AIMSIRE thíos.</string>
     <string name="lock_setting_weather_btn">Socruithe aimsire</string>
@@ -3212,7 +3233,7 @@ Downloading via mobile networks may result in additional charges depending on yo
     <string name="disable_hovering_title">Díchumasaigh aeramharc</string>
     <string name="disable_hovering_summary">Ní féidir Aeramharc agus TalkBack araon a chumasú. Díchumasófar Aeramharc.</string>
     <string name="pen_settings_pen_input">Ionchur díreach pinn</string>
-    <string name="action_memo_onoff_screen_title">Meabhrán scáil. as</string>
+    <string name="action_memo_onoff_screen_title">Meabhrán scáileáin as</string>
     <string name="screen_off_note_summary">Scríobh nótaí nuair atá an scáileán as. Bain an S Pen agus tosaigh ar scríobh.</string>
     <string name="screen_off_note_summary_jpn">Cruthaigh nótaí tríd an S Pen a dhícheangal agus an scáileán casta as agus trí scríobh ar an scáileán ansin. Sábhálfar meabhráin scáileáin as in Galaxy Notes.</string>
     <string name="screen_off_note_summary_no_detach">Cruthaigh nótaí tríd an cnaipe Peann a bhrú, an scáileán a thapáil agus é casta as, agus scríobh ar an scáileán ansin. Sábhálfar Meabhráin scáileáin as in Samsung Notes.</string>
@@ -3819,7 +3840,7 @@ Méadaítear ídiú ceallra agus úsáid sonraí le Ball Te Móibíleach."</stri
     <string name="wfd_descrpition_playsound">Seinn fuaim.</string>
     <string name="wfd_is_not_supported">Níl tacú ann don fheidhm seo.</string>
     <string name="usbtethering_notify_wifi_is_on_title">Cas as Wi-Fi?</string>
-    <string name="usbtethering_notify_wifi_is_on">Ní féidir le Wi-Fi agus Nascaireacht USB a bheith casta air ag an am céanna. Cas as Wi-Fi.</string>
+    <string name="usbtethering_notify_wifi_is_on">Ní féidir le Wi-Fi agus Nascaireacht USB a bheith casta air ag an am céanna. Casfar as Wi-Fi.</string>
     <string name="disable_multi_window_dialog_text">Díchumasófar Ilfhuinneoga agus dúnfar gach feidhmchlár atá ar oscailt i bhfuinneoga aníos.</string>
     <string name="keyguard_password_attempt_count_pin_code">%d iarracht fágtha.</string>
     <string name="keyguard_password_attempts_count_pin_code">%d iarracht fágtha.</string>
@@ -4027,6 +4048,7 @@ SMS a fháil"</string>
     <string name="hdmi_mode_title">Mód HDMI</string>
     <string name="hdmi_mode_dex">Samsung DeX</string>
     <string name="hdmi_mode_mirroring">Screen Mirroring</string>
+    <string name="hdmi_mode_not_available_while_cover_attached">Níl %s ar fáil agus an clúdach ceangailte.</string>
     <string name="screen_timeout_for_dex">Am ist. an scáil. do Samsung DeX</string>
     <string name="show_virtual_keyboard_for_dex">Taispeáin eochairchlár ar scáileán in Samsung DeX</string>
     <string name="comma">,</string>
@@ -4335,7 +4357,7 @@ Beidh tú in ann é sin a athrú i socruithe Bluetooth níos moille."</string>
     <string name="date_picker_title">Dáta</string>
     <string name="time_picker_title">Am</string>
     <string name="lock_after_timeout">Glasáil go huathoibríoch</string>
-    <string name="lock_after_timeout_summary">Glasáil an scáileán %s tar éis dó casadh as go huathoibríoch.</string>
+    <string name="lock_after_timeout_summary">Glasáil an fón %s tar éis don scáileán casadh as go huathoibríoch.</string>
     <string name="lock_after_timeout_summary_with_exception">Glasáil an scáileán %1$s tar éis dó casadh as go huathoibríoch, ach amháin nuair a choinníonn %2$s díghlasáilte é.</string>
     <string name="show_owner_info_on_lockscreen_label">Taispeáin faisnéise úinéir an ghléis ar an scáileán glasála.</string>
     <string name="owner_info_settings_title">Faisnéis an úinéara</string>
@@ -4470,6 +4492,8 @@ Le cruinneas suímh a fheabhsú, is féidir le feidhmchláir agus le seirbhísí
     <string name="wifi_empty_list_user_restricted">Níl cead agat na socruithe Wi-Fi a athrú.</string>
     <string name="wifi_setup_wps">Uathshocrú (WPS)</string>
     <string name="wifi_show_advanced">Taispeáin ardroghanna</string>
+    <string name="wifi_advanced_toggle_description_expanded">Déthapáil le leacú.</string>
+    <string name="wifi_advanced_toggle_description_collapsed">Déthapáil le leathnú.</string>
     <string name="wifi_wps_setup_title">Cumraíocht WPS</string>
     <string name="wifi_wps_setup_msg">Ag tosú ar WPS…</string>
     <string name="wifi_wps_onstart_pbc">Tapáil an cnaipe socraithe cosanta Wi-Fi ar do ródaire. Is féidir go dtugtar WPS air nó go bhfuil an tsiombail seo ann:</string>
@@ -4501,6 +4525,10 @@ Le cruinneas suímh a fheabhsú, is féidir le feidhmchláir agus le seirbhísí
     <string name="wifi_shared">Comhroinnte</string>
     <string name="wifi_unchanged">(neamhathraithe)</string>
     <string name="wifi_unspecified">(Neamhshonraithe)</string>
+    <string name="wifi_select_cert">Roghnaigh deimhniú</string>
+    <string name="wifi_do_not_provide_eap_user_cert">Ná cuir ar fáil</string>
+    <string name="wifi_do_not_validate_eap_server">Ná bailíochtaigh</string>
+    <string name="wifi_do_not_validate_eap_server_warning">Níl aon deimhniú sonraithe. Ní bheidh do nasc príobháideach.</string>
     <string name="wifi_scan_always_turnon_message">Tá %s ag iarraidh ceada le scanadh le haghaidh líonraí Wi-Fi, fiú nuair atá Wi-Fi casta as, le cruinneas suímh a fheabhsú agus chun críocha eile. Ceadaigh é seo do gach feidhmchlár?</string>
     <string name="wifi_scan_always_confirm_allow">Ceadaigh</string>
     <string name="wifi_scan_always_confirm_deny">Séan air</string>
@@ -4835,9 +4863,9 @@ Smaoinigh ar chárta SD nó gléas stórála USB níos tapa a úsáid leis an bh
     <string name="restore_default_apn_completed">Filleadh socruithe APN ar an réamhshocrú.</string>
     <string name="reset_network_desc">Athshocrófar leis seo gach socrú líonra, lena n-áirítear:</string>
     <string name="reset_network_button_text">Athshocraigh socruithe</string>
-    <string name="reset_network_final_desc">Athshocrófar gach socrú nasctha. Ní féidir an gníomh seo a chealú.</string>
+    <string name="reset_network_final_desc">Athshocrófar gach socrú líonra. Ní fhéadfar an gníomh seo a chealú.</string>
     <string name="reset_network_final_button_text">Athshocraigh socruithe</string>
-    <string name="reset_network_complete_toast">Socruithe naisc athshocraithe.</string>
+    <string name="reset_network_complete_toast">Socruithe líonra athshocraithe.</string>
     <string name="master_clear_title">Athshocrú sonraí monarchan</string>
     <string name="master_clear_accounts">Tá tú sínithe isteach ar na cuntais seo a leanas faoi láthair:</string>
     <string name="master_clear_other_users_present">Scriosfar sonraí ar le húsáideoirí eile iad ar an ngléas seo freisin.</string>
@@ -5939,6 +5967,7 @@ Ní bhfaighidh tú glaonna, teachtaireachtaí, ná fógraí, agus ní bhuailfear
     <string name="set_data_limit">Socraigh teorainn sonraí</string>
     <string name="data_limit">Teorainn sonraí</string>
     <string name="data_usage_template">%1$s úsáidte idir %2$s</string>
+    <string name="data_usage_template_wifi">%s úsáidte le 30 lá anuas</string>
     <string name="data_usage_other_apps">F.chláir ghaolmhara san áireamh</string>
     <string name="data_saver_title">Coigilteoir sonraí</string>
     <string name="unrestricted_data_saver">Ceadaigh agus Coigilt. son. air</string>
@@ -5988,6 +6017,7 @@ Ní bhfaighidh tú glaonna, teachtaireachtaí, ná fógraí, agus ní bhuailfear
     <string name="vzw_bixby_mode">Mód Bixby</string>
     <string name="screen_off_pocket_title">Coinnigh scáil. casta as</string>
     <string name="screen_off_pocket_summary">Cuir cosc ar an scáileán casadh air de thimpiste agus an gléas in áit dhorcha amhail póca nó mála.</string>
+    <string name="noApplications">Tá gach feidhmchlár a bhaineann leis an ngníomh seo díchumasaithe, bactha, nó níl siad suiteáilte.</string>
     <string name="confirm_reset_shortcut_manager_throttling_title">Athshocraigh teorantóir ráta an Bhainisteora Aicearraí</string>
     <string name="confirm_reset_shortcut_manager_throttling_message">Athshocrófar áiritheoirí theorantóir ráta an Bhainisteora Aicearraí.</string>
 </resources>

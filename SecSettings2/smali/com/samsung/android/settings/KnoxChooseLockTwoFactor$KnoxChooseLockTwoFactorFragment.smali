@@ -1410,13 +1410,13 @@
 
     invoke-direct {v1, v2}, Landroid/app/AlertDialog$Builder;-><init>(Landroid/content/Context;)V
 
-    const v2, 0x7f0b07c5
+    const v2, 0x7f0b07c9
 
     invoke-virtual {v1, v2}, Landroid/app/AlertDialog$Builder;->setTitle(I)Landroid/app/AlertDialog$Builder;
 
     move-result-object v1
 
-    const v2, 0x7f0b07c8
+    const v2, 0x7f0b07cc
 
     invoke-virtual {v1, v2}, Landroid/app/AlertDialog$Builder;->setMessage(I)Landroid/app/AlertDialog$Builder;
 
@@ -1813,7 +1813,7 @@
 .method public onCreate(Landroid/os/Bundle;)V
     .locals 11
 
-    const v10, 0x7f0b098b
+    const v10, 0x7f0b0999
 
     const/4 v9, -0x1
 
@@ -2092,7 +2092,7 @@
 
     aput-object v0, v6, v4
 
-    const v7, 0x7f0b0984
+    const v7, 0x7f0b0992
 
     invoke-virtual {v5, v7, v6}, Landroid/content/res/Resources;->getString(I[Ljava/lang/Object;)Ljava/lang/String;
 
@@ -2259,7 +2259,7 @@
 
     new-array v6, v3, [Ljava/lang/Object;
 
-    const v7, 0x7f0b0922
+    const v7, 0x7f0b092d
 
     invoke-virtual {p0, v7}, Lcom/samsung/android/settings/KnoxChooseLockTwoFactor$KnoxChooseLockTwoFactorFragment;->getString(I)Ljava/lang/String;
 
@@ -2288,7 +2288,7 @@
 
     new-array v6, v3, [Ljava/lang/Object;
 
-    const v7, 0x7f0b07c0
+    const v7, 0x7f0b07c4
 
     invoke-virtual {p0, v7}, Lcom/samsung/android/settings/KnoxChooseLockTwoFactor$KnoxChooseLockTwoFactorFragment;->getString(I)Ljava/lang/String;
 
@@ -2374,7 +2374,7 @@
 
     move-result-object v3
 
-    const v5, 0x7f0b1473
+    const v5, 0x7f0b1484
 
     invoke-virtual {v3, v5}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -2402,7 +2402,7 @@
 
     move-result-object v3
 
-    const v4, 0x7f0b1473
+    const v4, 0x7f0b1484
 
     invoke-virtual {v3, v4}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -2436,7 +2436,7 @@
 
     aput-object v0, v6, v4
 
-    const v7, 0x7f0b0985
+    const v7, 0x7f0b0993
 
     invoke-virtual {v5, v7, v6}, Landroid/content/res/Resources;->getString(I[Ljava/lang/Object;)Ljava/lang/String;
 
@@ -2533,7 +2533,7 @@
 
     new-array v6, v3, [Ljava/lang/Object;
 
-    const v7, 0x7f0b07c0
+    const v7, 0x7f0b07c4
 
     invoke-virtual {p0, v7}, Lcom/samsung/android/settings/KnoxChooseLockTwoFactor$KnoxChooseLockTwoFactorFragment;->getString(I)Ljava/lang/String;
 
@@ -2771,7 +2771,7 @@
 
     move-result-object v3
 
-    const v5, 0x7f0b0627
+    const v5, 0x7f0b0628
 
     invoke-virtual {v3, v5}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -2809,7 +2809,7 @@
 
     move-result-object v3
 
-    const v4, 0x7f0b0627
+    const v4, 0x7f0b0628
 
     invoke-virtual {v3, v4}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -2858,7 +2858,7 @@
 
     const/4 v0, 0x0
 
-    const v1, 0x7f040177
+    const v1, 0x7f040178
 
     invoke-virtual {p1, v1, v3}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;)Landroid/view/View;
 
@@ -2881,7 +2881,7 @@
     :cond_0
     iget-object v1, p0, Lcom/samsung/android/settings/KnoxChooseLockTwoFactor$KnoxChooseLockTwoFactorFragment;->content:Landroid/widget/LinearLayout;
 
-    const v2, 0x7f11051d
+    const v2, 0x7f11051f
 
     invoke-virtual {v1, v2}, Landroid/widget/LinearLayout;->findViewById(I)Landroid/view/View;
 
@@ -2961,7 +2961,7 @@
 
     iget-object v1, p0, Lcom/samsung/android/settings/KnoxChooseLockTwoFactor$KnoxChooseLockTwoFactorFragment;->content:Landroid/widget/LinearLayout;
 
-    const v2, 0x7f11051e
+    const v2, 0x7f110520
 
     invoke-virtual {v1, v2}, Landroid/widget/LinearLayout;->findViewById(I)Landroid/view/View;
 
@@ -2977,7 +2977,7 @@
 
     iget-object v1, p0, Lcom/samsung/android/settings/KnoxChooseLockTwoFactor$KnoxChooseLockTwoFactorFragment;->content:Landroid/widget/LinearLayout;
 
-    const v2, 0x7f11051a
+    const v2, 0x7f11051c
 
     invoke-virtual {v1, v2}, Landroid/widget/LinearLayout;->findViewById(I)Landroid/view/View;
 
@@ -3379,7 +3379,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f020604
+    const v2, 0x7f020606
 
     invoke-virtual {v1, v2}, Landroid/app/Activity;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 

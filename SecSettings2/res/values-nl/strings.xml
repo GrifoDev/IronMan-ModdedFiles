@@ -170,6 +170,8 @@
     <string name="wifi_allow_scan_with_traffic_summary">Wi-Fi-roamingscans automatisch toestaan of weigeren op basis van de hoeveelheid gebruikte gegevens.</string>
     <string name="select_logd_size_title">Buffergrootte logbestand</string>
     <string name="select_logd_size_dialog_title">Maximale grootte voor elke logbestandbuffer selecteren</string>
+    <string name="dev_logpersist_clear_warning_title">Persistente logbestandopslag wissen?</string>
+    <string name="dev_logpersist_clear_warning_message">Logbestandgegevens worden verwijderd wanneer de persistente logboekfunctie wordt uitgeschakeld.</string>
     <string name="select_logpersist_title">Loggegevens doorlopend opslaan</string>
     <string name="select_logpersist_dialog_title">Logbuffers select. voor doorlopende opslag</string>
     <string name="select_usb_configuration_title">USB-configuratie</string>
@@ -983,6 +985,7 @@ Er kan een klein verschil optreden in de geluidsuitvoer tussen de 2 verbonden ap
     <string name="bluetooth_avc_available_description">Het verbonden Bluetooth-apparaat ondersteunt Mediavolume synchroniseren en het volume van het Bluetooth-apparaat wordt gesynchroniseerd met uw telefoon.</string>
     <string name="bluetooth_enter_pin_msg">Geef pincode in om te koppelen met %s (probeer 0000 of 1234).</string>
     <string name="bluetooth_pin_maximum_number_message">Maximumaantal tekens bereikt.</string>
+    <string name="bluetooth_frp_permission_message">Kan Bluetooth-apparaat niet gebruiken voor deze oproep.</string>
     <string name="settings_menu_done">Gereed</string>
     <string name="usb_tethering_unavailable_subtext_tmo">USB not connected</string>
     <string name="usb_tethering_available_subtext_tmo">USB connected, check to tether</string>
@@ -1482,7 +1485,7 @@ Tik op OK om toe te staan dat de helderheid boven veilige niveaus wordt verhoogd
     <string name="navigationbar_pressure_sensitivity_title">Druk hard op Startknop</string>
     <string name="navigationbar_pressure_sensitivity_summary">Gebruik de knop Start terwijl deze is verborgen door harder te drukken dan gebruikelijk.</string>
     <string name="navigationbar_pressure_sensitivity_level_summary">Drukniveau: %1$d van %2$d</string>
-    <string name="navigationbar_pressure_sensitivity_description_off">Gebruik de knop Start terwijl deze is verborgen door harder te drukken dan gebruikelijk.</string>
+    <string name="navigationbar_pressure_sensitivity_description_off">Pas de hoeveelheid druk aan die nodig is om hard op de knop Start te drukken.</string>
     <string name="navigationbar_pressure_low">Lichter</string>
     <string name="navigationbar_pressure_high">Sterker</string>
     <string name="navigationbar_hide_bar">Knop weergeven en verbergen</string>
@@ -1621,7 +1624,7 @@ Tik op OK om toe te staan dat de helderheid boven veilige niveaus wordt verhoogd
     <string name="crypt_keeper_decrypt_title">Apparaat decoderen</string>
     <string name="crypt_keeper_decrypt_summary">Apparaat gecodeerd.</string>
     <string name="crypt_keeper_type_pin">Pincode</string>
-    <string name="crypt_keeper_type_pattern">Patroon</string>
+    <string name="crypt_keeper_type_pattern">patroon</string>
     <string name="crypt_keeper_type_password">Wachtwoord</string>
     <string name="crypt_keeper_type_direction">Richtingvergrendeling</string>
     <string name="crypt_keeper_confirm_title_dec">Decodering bevestigen</string>
@@ -1705,7 +1708,11 @@ Het coderen duurt een uur of langer. Zorg dat de batterij is opgeladen voordat u
     <string name="crypt_keeper_confirm_title">Codering bevestigen</string>
     <string name="crypt_keeper_final_desc">Het coderen van uw apparaat kan niet ongedaan worden gemaakt en als u dit proces onderbreekt, gaan er gegevens verloren. Het coderen kan meer dan een uur duren. Uw apparaat wordt verschillende keren opnieuw opgestart en u kunt het apparaat niet gebruiken.</string>
     <string name="crypt_keeper_setup_title">Coderen…</string>
-    <string name="crypt_keeper_warn_wipe">U hebt nog %d pogingen over om uw apparaat te starten voordat het wordt gereset naar de fabrieksinstellingen. Hiermee worden alle gegevens gewist, inclusief bestanden en gedownloade apps.</string>
+    <string name="crypt_keeper_warn_wipe">"U hebt nog %1$d pogingen voordat uw telefoon wordt gereset naar de fabrieksinstellingen. In dat geval worden alle gegevens gewist, met inbegrip van bestanden en gedownloade apps.
+
+Als uw telefoon wordt gereset, moet u mogelijk de %2$s gegevens (e-mailadres en wachtwoord) voor deze telefoon invoeren om deze opnieuw te kunnen gebruiken."</string>
+    <string name="crypt_keeper_samsung_account">Samsung account</string>
+    <string name="crypt_keeper_google_account">Google-account</string>
     <string name="crypt_keeper_failed_title">Coderen mislukt</string>
     <string name="crypt_keeper_failed_summary">Kan uw apparaat niet starten. Het coderingsproces is onderbroken. U moet uw apparaat resetten naar de fabrieksinstellingen. Hiermee worden alle gegevens gewist.</string>
     <string name="crypt_keeper_data_corrupted_title">Apparaatopslag beschadigd</string>
@@ -1724,10 +1731,13 @@ Het coderen duurt een uur of langer. Zorg dat de batterij is opgeladen voordat u
     <string name="cryptkeeper_wrong_pin">Onjuiste pincode ingevoerd</string>
     <string name="cryptkeeper_wrong_direction">Onjuiste richting getekend</string>
     <string name="checking_decryption">Verifiëren…</string>
-    <string name="crypt_keeper_last_warn_wipe">U hebt slechts 1 poging over om uw apparaat op te starten voordat het wordt gereset naar de fabrieksinstellingen. Hiermee worden alle gegevens gewist, inclusief bestanden en gedownloade apps.</string>
+    <string name="crypt_keeper_last_warn_wipe">"U hebt nog 1 poging voordat uw telefoon wordt gereset naar de fabrieksinstellingen. In dat geval worden alle gegevens gewist, met inbegrip van bestanden en gedownloade apps.
+
+Als uw telefoon wordt gereset, moet u mogelijk de %s gegevens (e-mailadres en wachtwoord) voor deze telefoon invoeren om deze opnieuw te kunnen gebruiken."</string>
     <string name="crypt_keeper_failed_title_dec">Coderen mislukt.</string>
     <string name="crypt_keeper_failed_summary_dec">Kan decoderen niet voltooien vanwege een onderbreking. Zet voor gebruik de fabriekswaarden terug (alle gegevens worden gewist).</string>
     <string name="crypt_keeper_set_screen_lock_type">Type schermvergrend. instellen</string>
+    <string name="crypt_keeper_warning_keyboard_cover_does_not_work">Toetsenbordhoes werkt niet nadat telefoon opnieuw is gestart.</string>
     <string name="encryption_interstitial_message">"U kunt deze telefoon verder beveiligen door te eisen dat uw %s moet worden ingevoerd voordat de telefoon wordt opgestart. Dit helpt om uw gegevens te beschermen als de telefoon zoekraakt of wordt gestolen. Sommige apps vereisen mogelijk Veilig opstarten conform het Apparaatcoderingsbeleid voor toegang tot functies zoals e-mailsynchronisatie.
 
 U ontvangt geen oproepen, berichten of meldingen en hoort geen alarmen tot de telefoon is opgestart."</string>
@@ -1972,6 +1982,12 @@ You will also need it when:"</string>
     <string name="lockpassword_confirm_your_pin_with_fingerprint">Gebruik een vingerafdruk of voer de huidige pincode in.</string>
     <string name="lockpassword_confirm_your_pattern_with_fingerprint">Gebruik een vingerafdruk of teken het huidige patroon.</string>
     <string name="lockpassword_confirm_your_password_with_fingerprint">Gebruik een vingerafdruk of voer het huidige wachtwoord in.</string>
+    <string name="lockpassword_confirm_your_pin_with_iris">Gebruik uw irissen of voer uw huidige pincode in.</string>
+    <string name="lockpassword_confirm_your_pattern_with_iris">Gebruik uw irissen of teken uw huidige patroon.</string>
+    <string name="lockpassword_confirm_your_password_with_iris">Gebruik uw irissen of voer uw huidige wachtwoord in.</string>
+    <string name="lockpassword_confirm_your_pin_with_biometrics">Gebruik biometrie of voer uw pincode in.</string>
+    <string name="lockpassword_confirm_your_pattern_with_biometrics">Gebruik biometrie of teken uw patroon.</string>
+    <string name="lockpassword_confirm_your_password_with_biometrics">Gebruik biometrie of voer uw wachtwoord in.</string>
     <string name="lockpassword_confirm_your_pin_instead_of_fingerprint">Voer uw pincode in in plaats van vingerafdrukherkenning te gebruiken.</string>
     <string name="lockpassword_confirm_your_pattern_instead_of_fingerprint">Teken uw patroon in plaats van vingerafdrukherkenning te gebruiken.</string>
     <string name="lockpassword_confirm_your_password_instead_of_fingerprint">Voer uw wachtwoord in in plaats van vingerafdrukherkenning te gebruiken.</string>
@@ -2046,6 +2062,7 @@ Selecteer hoe u uw telefoon wilt ontgrendelen. Met gezicht ontgrendelen en Met i
     <string name="face_status_timeout">Time-out. Probeer het later opnieuw.</string>
     <string name="okay">OK</string>
     <string name="face_samsung_account_button">Samsung account</string>
+    <string name="face_galaxy_account_button">Galaxy-account gebruiken</string>
     <string name="face_error_DB_corrupted">Er was een probleem met uw gezichtsgegevens. Registreer uw gezicht opnieuw.</string>
     <string name="face_error_DB_corrupted_popup_title">Uw gezicht nogmaals registreren</string>
     <string name="face_error_timeout">Uw gezicht is niet gedetecteerd.</string>
@@ -2156,7 +2173,7 @@ Schakel Ontgrendelen met iris in om uw biometrische gegevens of uw %s te gebruik
     <string name="biometrics_backup_locktype_title">Irisbeveiliging instellen</string>
     <string name="biometrics_register_your_iris">Registreer uw irissen.</string>
     <string name="biometrics_backup_locktype_summary">Als u uw irissen wilt gebruiken om het apparaat te ontgrendelen, moet u een patroon, pincode of wachtwoord instellen.</string>
-    <string name="biometrics_backup_locktype_message">Als u uw irissen wilt gebruiken om uw telefoon te ontgrendelen of voor veilige verificatie, moet u:</string>
+    <string name="biometrics_backup_locktype_message">Als u uw irissen wilt gebruiken om uw telefoon te ontgrendelen of om uzelf in apps te verifiëren, moet u:</string>
     <string name="iris_delete_popup_title">Irisgegevens verwijderen?</string>
     <string name="iris_delete_popup_message">Irisgegevens verwijderen?</string>
     <string name="iris_delete_popup_message_with_related_func">Functies die irissen gebruiken worden uitgeschakeld.</string>
@@ -2232,6 +2249,9 @@ Selecteer hoe u uw telefoon wilt ontgrendelen. Met iris ontgrendelen en Met gezi
     <string name="biometrics_dex_cant_use_msg">Kan %s niet gebruiken in Samsung DeX.</string>
     <string name="biometrics_dex_closed_to_switch">%s gesloten om over te schakelen naar Samsung DeX.</string>
     <string name="biometircs_dex_cant_use_toast">%s kan niet worden uitgevoerd in Samsung DeX. Probeer het in de telefoonstand.</string>
+    <string name="iris_guide_text_preview">Kijk hier voor irissen</string>
+    <string name="iris_guide_enable_toggle">Tik hier en gebruik irissen</string>
+    <string name="iris_cannot_verify">Kan irissen niet verifiëren</string>
     <string name="knox_twofactor_bio_description">Selecteer uw biometrische vergrendeltype en tweede vergrendeltype om %s te ontgrendelen.</string>
     <string name="fingerprint_registered">Geregistreerde vingerafdrukken worden gebruikt met geselecteerde ontgrendelmethode.</string>
     <string name="knox_twofactor_description">Selecteer uw biometrische gegevens en een tweede vergrendeltype om %s te ontgrendelen.</string>
@@ -3094,6 +3114,7 @@ Probeer het opnieuw."</string>
     <string name="easy_mode_app_help">Bedien uw apparaat met een eenvoudiger ingedeeld startscherm en grotere items op scherm.</string>
     <string name="easy_mode_app_help_dream_1">Gebruik een eenvoudige indeling van het Startscherm en grotere items op het scherm.</string>
     <string name="easy_mode_app_help_dream_2">Aanpassingen die u hebt aangebracht in het Startscherm worden verwijderd en Inzoomen op scherm wordt ingesteld op maximaal.</string>
+    <string name="easy_mode_app_help_3rd_launcher">Pas Eenvoudige stand toe om items op het scherm groter weer te geven. Als u niet het TouchWiz-startscherm gebruikt, verandert de indeling van uw Startscherm niet, maar wordt de zoominstelling op groot ingesteld en de lettergrootte op gemiddeld.</string>
     <string name="security_warning_content">U kunt uw privacy beschermen door een wachtwoord, pincode of patroon in te stellen om het scherm te ontgrendelen</string>
     <string name="lock_setting_weather_desc">Tik hieronder op WEERINSTELLINGEN om de weerinstellingen weer te geven of te wijzigen.</string>
     <string name="lock_setting_weather_btn">Weerinstellingen</string>
@@ -3947,7 +3968,7 @@ Door Mobiele hotspot verbruikt u meer batterijvoeding en neemt uw gegevensverbru
     <string name="wfd_descrpition_playsound">Speel geluid af.</string>
     <string name="wfd_is_not_supported">Deze functie wordt niet ondersteund.</string>
     <string name="usbtethering_notify_wifi_is_on_title">Wi-Fi uitschakelen?</string>
-    <string name="usbtethering_notify_wifi_is_on">Wi-Fi en USB-tethering kunnen niet tegelijkertijd zijn ingeschakeld. Schakel Wi-Fi uit.</string>
+    <string name="usbtethering_notify_wifi_is_on">Wi-Fi en USB-tethering kunnen niet tegelijkertijd zijn ingeschakeld. Wi-Fi wordt uitgeschakeld.</string>
     <string name="disable_multi_window_dialog_text">Multi window wordt uitgeschakeld en alle apps die in pop-upvensters zijn geopend, worden gesloten.</string>
     <string name="keyguard_password_attempt_count_pin_code">%d poging over.</string>
     <string name="keyguard_password_attempts_count_pin_code">%d pogingen over.</string>
@@ -4155,6 +4176,7 @@ Sms ontvangen"</string>
     <string name="hdmi_mode_title">HDMI-stand</string>
     <string name="hdmi_mode_dex">Samsung DeX</string>
     <string name="hdmi_mode_mirroring">Screen Mirroring</string>
+    <string name="hdmi_mode_not_available_while_cover_attached">%s is niet beschikbaar als omslag is bevestigd.</string>
     <string name="screen_timeout_for_dex">Schermtime-out voor Samsung DeX</string>
     <string name="show_virtual_keyboard_for_dex">Schermtoetsenbord weergeven in Samsung DeX</string>
     <string name="comma">,</string>
@@ -4463,7 +4485,7 @@ U kunt dit later wijzigen in Bluetooth-instellingen."</string>
     <string name="date_picker_title">Datum</string>
     <string name="time_picker_title">Tijd</string>
     <string name="lock_after_timeout">Automatisch vergrendelen</string>
-    <string name="lock_after_timeout_summary">Vergrendel het scherm %s nadat het automatisch is uitgeschakeld.</string>
+    <string name="lock_after_timeout_summary">Vergrendel de telefoon %s nadat het scherm automatisch is uitgeschakeld.</string>
     <string name="lock_after_timeout_summary_with_exception">Vergrendel scherm %1$s nadat het automatisch is uitgeschakeld, behalve wanneer vergrendelen wordt verhinderd door %2$s.</string>
     <string name="show_owner_info_on_lockscreen_label">Geef informatie over de apparaateigenaar weer op het vergrendelscherm.</string>
     <string name="owner_info_settings_title">Gegevens eigenaar</string>
@@ -4611,6 +4633,8 @@ Om de locatie nauwkeuriger te bepalen kunnen apps en services zoeken naar Wi-Fi-
     <string name="wifi_empty_list_user_restricted">U hebt geen toestemming om de Wi-Fi-instellingen te wijzigen.</string>
     <string name="wifi_setup_wps">Automatisch instellen (WPS)</string>
     <string name="wifi_show_advanced">Geavanceerde opties weergeven</string>
+    <string name="wifi_advanced_toggle_description_expanded">Tik twee keer om samen te vouwen.</string>
+    <string name="wifi_advanced_toggle_description_collapsed">Tik twee keer om uit te vouwen.</string>
     <string name="wifi_wps_setup_title">WPS instellen</string>
     <string name="wifi_wps_setup_msg">WPS starten…</string>
     <string name="wifi_wps_onstart_pbc">Tik op de beveiligde knop voor Wi-Fi-installatie op uw router. Deze wordt mogelijk WPS genoemd of heeft het volgende symbool:</string>
@@ -4642,6 +4666,10 @@ Om de locatie nauwkeuriger te bepalen kunnen apps en services zoeken naar Wi-Fi-
     <string name="wifi_shared">Gedeeld</string>
     <string name="wifi_unchanged">(ongewijzigd)</string>
     <string name="wifi_unspecified">(niet-gespecificeerd)</string>
+    <string name="wifi_select_cert">Certificaat selecteren</string>
+    <string name="wifi_do_not_provide_eap_user_cert">Niet verstrekken</string>
+    <string name="wifi_do_not_validate_eap_server">Niet valideren</string>
+    <string name="wifi_do_not_validate_eap_server_warning">Geen certificaat opgegeven. Uw verbinding is niet privé.</string>
     <string name="wifi_scan_always_turnon_message">%s verzoekt om toestemming om te scannen op Wi-Fi-netwerken, ook als Wi-Fi is uitgeschakeld, om de locatienauwkeurigheid te verbeteren en voor andere doeleinden. Dit voor alle applicaties toestaan?</string>
     <string name="wifi_scan_always_confirm_allow">Toestaan</string>
     <string name="wifi_scan_always_confirm_deny">Afwijzen</string>
@@ -4976,9 +5004,9 @@ Overweeg het gebruik van een snellere SD-kaart of een sneller USB-opslagapparaat
     <string name="restore_default_apn_completed">Instellingen toegangspunt terugzetten op standaard.</string>
     <string name="reset_network_desc">Hierdoor worden alle netwerkinstellingen gereset, met inbegrip van instellingen voor:</string>
     <string name="reset_network_button_text">Instellingen resetten</string>
-    <string name="reset_network_final_desc">Alle verbindingsinstellingen worden gereset. Deze actie kan niet ongedaan worden gemaakt.</string>
+    <string name="reset_network_final_desc">Alle netwerkinstellingen worden gereset. Deze actie kan niet ongedaan worden gemaakt.</string>
     <string name="reset_network_final_button_text">Instellingen resetten</string>
-    <string name="reset_network_complete_toast">Reset verbindingsinstellingen.</string>
+    <string name="reset_network_complete_toast">Netwerkinstellingen gereset.</string>
     <string name="master_clear_title">Fabrieksgegevens herstellen</string>
     <string name="master_clear_accounts">U bent momenteel aangemeld bij de volgende accounts:</string>
     <string name="master_clear_other_users_present">Gegevens van andere gebruikers op dit apparaat worden ook verwijderd.</string>
@@ -6091,6 +6119,7 @@ U ontvangt geen oproepen, berichten of meldingen en hoort geen alarmen tot het a
     <string name="set_data_limit">Gegevenslimiet instellen</string>
     <string name="data_limit">Gegevenslimiet</string>
     <string name="data_usage_template">%1$s gebruikt tussen %2$s</string>
+    <string name="data_usage_template_wifi">%s gebruikt in de afgelopen 30 dagen</string>
     <string name="data_usage_other_apps">Gerelateerde apps opgenomen</string>
     <string name="data_saver_title">Gegevens opslaan</string>
     <string name="unrestricted_data_saver">App toestaan bij Geg.besp. aan</string>
@@ -6141,6 +6170,7 @@ U ontvangt geen oproepen, berichten of meldingen en hoort geen alarmen tot het a
     <string name="legacy_dhcp_client_summary">De DHCP-client van Lollipop gebruiken in plaats van de nieuwe Android DHCP-client.</string>
     <string name="screen_off_pocket_title">Scherm uitgeschak. laten</string>
     <string name="screen_off_pocket_summary">Voorkom dat het scherm per ongeluk wordt ingeschakeld wanneer het apparaat zich op een donkere plek bevindt, zoals in een zak of een tas.</string>
+    <string name="noApplications">Alle apps die met deze actie samenhangen, zijn uitgeschakeld, geblokkeerd of niet geïnstalleerd.</string>
     <string name="confirm_reset_shortcut_manager_throttling_title">Sneltoets Beheer snelheidslimiet resetten</string>
     <string name="confirm_reset_shortcut_manager_throttling_message">De sneltoets Beheer snelheidslimiettellers wordt gereset.</string>
 </resources>

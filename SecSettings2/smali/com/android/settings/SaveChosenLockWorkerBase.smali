@@ -17,6 +17,10 @@
 
 .field protected mChallenge:J
 
+.field protected mChallengeFace:J
+
+.field protected mChallengeIris:J
+
 .field private mFinished:Z
 
 .field protected mHasChallenge:Z

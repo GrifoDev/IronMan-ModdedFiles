@@ -206,7 +206,7 @@
 
     new-instance v0, Lcom/samsung/android/settings/display/ScreenSizePreviewSettingsList$AppsAdapter;
 
-    const v1, 0x7f040294
+    const v1, 0x7f040297
 
     invoke-direct {v0, p1, v1}, Lcom/samsung/android/settings/display/ScreenSizePreviewSettingsList$AppsAdapter;-><init>(Landroid/content/Context;I)V
 

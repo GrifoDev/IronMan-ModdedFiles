@@ -1654,7 +1654,7 @@
 
     move-result-object v2
 
-    const v3, 0x7f0f03c0
+    const v3, 0x7f0f03bf
 
     invoke-virtual {v2, v3}, Landroid/content/res/Resources;->getInteger(I)I
 
@@ -1732,7 +1732,7 @@
 
     move-result-object v2
 
-    const v3, 0x7f0f03bf
+    const v3, 0x7f0f03be
 
     invoke-virtual {v2, v3}, Landroid/content/res/Resources;->getInteger(I)I
 
@@ -1868,7 +1868,7 @@
 
     invoke-super {p0, p1}, Lcom/samsung/android/settings/SecSettingsPreferenceFragment;->onCreate(Landroid/os/Bundle;)V
 
-    const v0, 0x7f08013e
+    const v0, 0x7f080140
 
     invoke-virtual {p0, v0}, Lcom/android/settings/tts/TextToSpeechSettings;->addPreferencesFromResource(I)V
 
@@ -2150,7 +2150,7 @@
 
     move-result-object v3
 
-    const v4, 0x7f0f03c3
+    const v4, 0x7f0f03c2
 
     invoke-virtual {v3, v4}, Landroid/content/res/Resources;->getInteger(I)I
 
@@ -2175,7 +2175,7 @@
 
     move-result-object v3
 
-    const v4, 0x7f0f03c1
+    const v4, 0x7f0f03c0
 
     invoke-virtual {v3, v4}, Landroid/content/res/Resources;->getInteger(I)I
 
@@ -2210,7 +2210,7 @@
 
     move-result-object v3
 
-    const v4, 0x7f0f03c2
+    const v4, 0x7f0f03c1
 
     invoke-virtual {v3, v4}, Landroid/content/res/Resources;->getInteger(I)I
 

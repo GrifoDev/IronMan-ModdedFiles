@@ -152,7 +152,7 @@
 .method private getCurrentSecurityTitle()Ljava/lang/String;
     .locals 6
 
-    const v5, 0x7f0b0aaf
+    const v5, 0x7f0b0abd
 
     const/4 v4, 0x1
 
@@ -171,7 +171,7 @@
     sparse-switch v0, :sswitch_data_0
 
     :cond_0
-    const v1, 0x7f0b0aae
+    const v1, 0x7f0b0abc
 
     invoke-virtual {p0, v1}, Lcom/android/settings/ScreenPinningSettings;->getString(I)Ljava/lang/String;
 
@@ -182,7 +182,7 @@
     :sswitch_0
     new-array v1, v4, [Ljava/lang/Object;
 
-    const v2, 0x7f0b1468
+    const v2, 0x7f0b1479
 
     invoke-virtual {p0, v2}, Lcom/android/settings/ScreenPinningSettings;->getString(I)Ljava/lang/String;
 
@@ -199,7 +199,7 @@
     :sswitch_1
     new-array v1, v4, [Ljava/lang/Object;
 
-    const v2, 0x7f0b146a
+    const v2, 0x7f0b147b
 
     invoke-virtual {p0, v2}, Lcom/android/settings/ScreenPinningSettings;->getString(I)Ljava/lang/String;
 
@@ -228,7 +228,7 @@
 
     new-array v1, v4, [Ljava/lang/Object;
 
-    const v2, 0x7f0b1466
+    const v2, 0x7f0b1477
 
     invoke-virtual {p0, v2}, Lcom/android/settings/ScreenPinningSettings;->getString(I)Ljava/lang/String;
 
@@ -281,7 +281,7 @@
 
     const/4 v1, 0x0
 
-    const v2, 0x7f0b0aae
+    const v2, 0x7f0b0abc
 
     invoke-virtual {p0, v2}, Lcom/android/settings/ScreenPinningSettings;->getString(I)Ljava/lang/String;
 
@@ -334,7 +334,7 @@
 
     move-result-object v8
 
-    const v9, 0x7f0b0aac
+    const v9, 0x7f0b0aba
 
     invoke-virtual {v8, v9}, Landroid/app/Activity;->getString(I)Ljava/lang/String;
 
@@ -348,7 +348,7 @@
 
     aput-object v5, v9, v11
 
-    const v10, 0x7f0b0522
+    const v10, 0x7f0b0523
 
     invoke-virtual {v8, v10, v9}, Landroid/app/Activity;->getString(I[Ljava/lang/Object;)Ljava/lang/String;
 
@@ -724,7 +724,7 @@
 
     move-result-object v10
 
-    const v11, 0x7f0402a8
+    const v11, 0x7f0402ab
 
     const/4 v12, 0x0
 
@@ -740,7 +740,7 @@
 
     iput-object v10, p0, Lcom/android/settings/ScreenPinningSettings;->mDivider:Landroid/view/View;
 
-    const v10, 0x7f110723
+    const v10, 0x7f110725
 
     invoke-virtual {v6, v10}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -748,7 +748,7 @@
 
     check-cast v1, Landroid/widget/TextView;
 
-    const v10, 0x7f11072f
+    const v10, 0x7f110731
 
     invoke-virtual {v6, v10}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -760,7 +760,7 @@
 
     move-result-object v10
 
-    const v11, 0x7f0b0aac
+    const v11, 0x7f0b0aba
 
     invoke-virtual {v10, v11}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -770,7 +770,7 @@
 
     move-result-object v10
 
-    const v11, 0x7f0204fd
+    const v11, 0x7f0204ff
 
     invoke-virtual {v10, v11}, Landroid/content/res/Resources;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 
@@ -822,7 +822,7 @@
 
     if-eqz v10, :cond_0
 
-    const v10, 0x7f0b0ab0
+    const v10, 0x7f0b0abe
 
     :goto_0
     invoke-virtual {v12, v10}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
@@ -843,7 +843,7 @@
 
     move-result-object v11
 
-    const v12, 0x7f0b0ab2
+    const v12, 0x7f0b0ac0
 
     invoke-virtual {v11, v12}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -875,7 +875,7 @@
 
     move-result-object v10
 
-    const v11, 0x7f0b0ab6
+    const v11, 0x7f0b0ac4
 
     invoke-virtual {v10, v11}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -941,7 +941,7 @@
 
     aput-object v7, v12, v13
 
-    const v13, 0x7f0b0ab3
+    const v13, 0x7f0b0ac1
 
     invoke-virtual {v11, v13, v12}, Landroid/content/res/Resources;->getString(I[Ljava/lang/Object;)Ljava/lang/String;
 
@@ -991,7 +991,7 @@
 
     move-result-object v11
 
-    const v12, 0x7f0b0ab4
+    const v12, 0x7f0b0ac2
 
     invoke-virtual {v11, v12}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -1094,7 +1094,7 @@
 
     move-result-object v11
 
-    const v12, 0x7f0b0ab7
+    const v12, 0x7f0b0ac5
 
     invoke-virtual {v11, v12}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -1167,7 +1167,7 @@
     return-void
 
     :cond_0
-    const v10, 0x7f0b0ab1
+    const v10, 0x7f0b0abf
 
     goto/16 :goto_0
 
@@ -1176,7 +1176,7 @@
 
     move-result-object v10
 
-    const v11, 0x7f0b0ab5
+    const v11, 0x7f0b0ac3
 
     invoke-virtual {v10, v11}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -1242,7 +1242,7 @@
 
     invoke-super {p0, p1}, Lcom/samsung/android/settings/SecSettingsPreferenceFragment;->onCreate(Landroid/os/Bundle;)V
 
-    const v0, 0x7f0800db
+    const v0, 0x7f0800dd
 
     invoke-virtual {p0, v0}, Lcom/android/settings/ScreenPinningSettings;->addPreferencesFromResource(I)V
 
@@ -1349,7 +1349,7 @@
 
     move-result-object v2
 
-    const v4, 0x7f0f02be
+    const v4, 0x7f0f02bd
 
     invoke-virtual {v2, v4}, Landroid/content/res/Resources;->getInteger(I)I
 
@@ -1454,25 +1454,34 @@
 
     move-result v4
 
-    if-eqz v4, :cond_4
+    if-eqz v4, :cond_0
 
+    invoke-static {}, Lcom/android/settings/Utils;->isJapanDCMModel()Z
+
+    move-result v4
+
+    if-eqz v4, :cond_5
+
+    :cond_0
     invoke-virtual {p0}, Lcom/android/settings/ScreenPinningSettings;->getPreferenceScreen()Landroid/preference/PreferenceScreen;
 
     move-result-object v4
 
     iget-object v5, p0, Lcom/android/settings/ScreenPinningSettings;->mUseScreenLock:Landroid/preference/SwitchPreference;
 
-    invoke-virtual {v4, v5}, Landroid/preference/PreferenceScreen;->addPreference(Landroid/preference/Preference;)Z
+    invoke-virtual {v4, v5}, Landroid/preference/PreferenceScreen;->removePreference(Landroid/preference/Preference;)Z
 
     iget-object v4, p0, Lcom/android/settings/ScreenPinningSettings;->mDivider:Landroid/view/View;
 
-    if-eqz v4, :cond_0
+    if-eqz v4, :cond_1
 
     iget-object v4, p0, Lcom/android/settings/ScreenPinningSettings;->mDivider:Landroid/view/View;
 
-    invoke-virtual {v4, v7}, Landroid/view/View;->setVisibility(I)V
+    const/16 v5, 0x8
 
-    :cond_0
+    invoke-virtual {v4, v5}, Landroid/view/View;->setVisibility(I)V
+
+    :cond_1
     :goto_0
     iget-object v4, p0, Lcom/android/settings/ScreenPinningSettings;->mUseScreenLock:Landroid/preference/SwitchPreference;
 
@@ -1506,16 +1515,16 @@
 
     move-result v0
 
-    if-nez v2, :cond_1
+    if-nez v2, :cond_2
 
-    if-eqz v0, :cond_2
+    if-eqz v0, :cond_3
 
-    :cond_1
+    :cond_2
     iget-object v4, p0, Lcom/android/settings/ScreenPinningSettings;->mUseScreenLock:Landroid/preference/SwitchPreference;
 
     invoke-virtual {v4, v7}, Landroid/preference/SwitchPreference;->setEnabled(Z)V
 
-    :cond_2
+    :cond_3
     new-array v3, v8, [Ljava/lang/String;
 
     const-string/jumbo v4, "false"
@@ -1536,9 +1545,9 @@
 
     const/4 v4, -0x1
 
-    if-eq v1, v4, :cond_3
+    if-eq v1, v4, :cond_4
 
-    if-nez v1, :cond_5
+    if-nez v1, :cond_6
 
     iget-object v4, p0, Lcom/android/settings/ScreenPinningSettings;->mSwitchBar:Lcom/android/settings/widget/SwitchBar;
 
@@ -1548,32 +1557,30 @@
 
     invoke-virtual {v4, v7}, Lcom/android/settings/widget/SwitchBar;->setEnabled(Z)V
 
-    :cond_3
+    :cond_4
     :goto_1
     return-void
 
-    :cond_4
+    :cond_5
     invoke-virtual {p0}, Lcom/android/settings/ScreenPinningSettings;->getPreferenceScreen()Landroid/preference/PreferenceScreen;
 
     move-result-object v4
 
     iget-object v5, p0, Lcom/android/settings/ScreenPinningSettings;->mUseScreenLock:Landroid/preference/SwitchPreference;
 
-    invoke-virtual {v4, v5}, Landroid/preference/PreferenceScreen;->removePreference(Landroid/preference/Preference;)Z
+    invoke-virtual {v4, v5}, Landroid/preference/PreferenceScreen;->addPreference(Landroid/preference/Preference;)Z
 
     iget-object v4, p0, Lcom/android/settings/ScreenPinningSettings;->mDivider:Landroid/view/View;
 
-    if-eqz v4, :cond_0
+    if-eqz v4, :cond_1
 
     iget-object v4, p0, Lcom/android/settings/ScreenPinningSettings;->mDivider:Landroid/view/View;
 
-    const/16 v5, 0x8
-
-    invoke-virtual {v4, v5}, Landroid/view/View;->setVisibility(I)V
+    invoke-virtual {v4, v7}, Landroid/view/View;->setVisibility(I)V
 
     goto :goto_0
 
-    :cond_5
+    :cond_6
     iget-object v4, p0, Lcom/android/settings/ScreenPinningSettings;->mSwitchBar:Lcom/android/settings/widget/SwitchBar;
 
     invoke-virtual {v4, v8}, Lcom/android/settings/widget/SwitchBar;->setEnabled(Z)V

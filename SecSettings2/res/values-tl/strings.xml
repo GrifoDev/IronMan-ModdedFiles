@@ -170,6 +170,8 @@
     <string name="wifi_allow_scan_with_traffic_summary">Payagan o tanggihan ang mga pag-scan ng Wi-Fi roaming batay sa dami ng data na nagamit.</string>
     <string name="select_logd_size_title">Laki ng buffer sa pag-log</string>
     <string name="select_logd_size_dialog_title">Pumili ng maximum na laki ng bawatg buffer ng log</string>
+    <string name="dev_logpersist_clear_warning_title">I-clear ang storage ng persistent logger?</string>
+    <string name="dev_logpersist_clear_warning_message">Tatanggalin ang logger data kapag naka-off ang persistent logger.</string>
     <string name="select_logpersist_title">Palaging mag-imbak ng log data</string>
     <string name="select_logpersist_dialog_title">Pumili ng mga log buffer na palaging iimbak</string>
     <string name="select_usb_configuration_title">Configuration ng USB</string>
@@ -982,6 +984,7 @@ Maaaring makaranas ang 2 nakakonektang device ng kaunting pagkakaiba sa inilalab
     <string name="bluetooth_avc_available_description">Suportado ng nakakonektang Bluetooth device ang Media volume sync at isi-sync sa telepono mo ang level ng volume na nai-set ng Bluetooth device.</string>
     <string name="bluetooth_enter_pin_msg">Maglagay ng PIN na ipe-pair sa %s (Subukan ang 0000 o ang 1234).</string>
     <string name="bluetooth_pin_maximum_number_message">Naabot na ang maximum na bilang ng mga character.</string>
+    <string name="bluetooth_frp_permission_message">Hindi magagamit ang Bluetooth device para sa tawag na ito.</string>
     <string name="settings_menu_done">Tapos na</string>
     <string name="usb_tethering_unavailable_subtext_tmo">USB not connected</string>
     <string name="usb_tethering_available_subtext_tmo">USB connected, check to tether</string>
@@ -1481,7 +1484,7 @@ I-tap ang OK para payagan na mataasan ang liwanag nang lagpas sa ligtas na level
     <string name="navigationbar_pressure_sensitivity_title">I-hard press ang Home button</string>
     <string name="navigationbar_pressure_sensitivity_summary">Gamitin ang Home button habang nakatago ito sa pamamagitan ng pagpindot nang mas mariin kaysa sa karaniwan.</string>
     <string name="navigationbar_pressure_sensitivity_level_summary">Level ng presyon: %1$d ng %2$d</string>
-    <string name="navigationbar_pressure_sensitivity_description_off">Gamitin ang Home button habang nakatago ito sa pamamagitan ng pagpindot nang mas mariin kaysa sa karaniwan.</string>
+    <string name="navigationbar_pressure_sensitivity_description_off">I-adjust ang diin na kailangan para i-hard press ang Home button.</string>
     <string name="navigationbar_pressure_low">Mas magaan</string>
     <string name="navigationbar_pressure_high">Mas malakas</string>
     <string name="navigationbar_hide_bar">Ipakita at itago ang button</string>
@@ -1620,7 +1623,7 @@ I-tap ang OK para payagan na mataasan ang liwanag nang lagpas sa ligtas na level
     <string name="crypt_keeper_decrypt_title">I-decrypt ang device</string>
     <string name="crypt_keeper_decrypt_summary">Na-encrypt na ang device.</string>
     <string name="crypt_keeper_type_pin">PIN</string>
-    <string name="crypt_keeper_type_pattern">Pattern</string>
+    <string name="crypt_keeper_type_pattern">pattern</string>
     <string name="crypt_keeper_type_password">Password</string>
     <string name="crypt_keeper_type_direction">Lock ng direksyon</string>
     <string name="crypt_keeper_confirm_title_dec">Kumpirmahin ang pag-decrypt.</string>
@@ -1704,7 +1707,11 @@ Inaabot ang pag-encrypt ng isang oras o higit pa. Bago ka magsimula, tiyaking na
     <string name="crypt_keeper_confirm_title">Kumpirmahin ang pag-encrypt.</string>
     <string name="crypt_keeper_final_desc">Ang pag-encrypt sa iyong device ay hindi maibabalik sa dati at mawawala ang data kung maaantala ang proseso. Maaaring magtagal nang isang oras o higit pa ang pag-encrypt, kung kailan ang device ay magre-restart nang ilang beses at hindi mo ito magagamit.</string>
     <string name="crypt_keeper_setup_title">Ine-encrypt…</string>
-    <string name="crypt_keeper_warn_wipe">Mayroon kang %d tangkang nalalabi para i-startup ang device mo bago ito mag-reset sa mga factory default na setting. Buburahin nito ang lahat ng data, kasama ang mga file at mga nai-download na app.</string>
+    <string name="crypt_keeper_warn_wipe">"Mayroon kang %1$d tangkang nalalabi bago mag-reset ang telepono mo sa mga default na setting nito. Buburahin nito ang lahat na data, kabilang ang mga file at mga nai-download na app.
+
+Kung nag-reset ang telepono mo, maaaring kailangan mong ipasok ang impormasyon ng %2$s (Email address at password) na kaugnay ng teleponong ito para magamit itong muli."</string>
+    <string name="crypt_keeper_samsung_account">Samsung account</string>
+    <string name="crypt_keeper_google_account">Google account</string>
     <string name="crypt_keeper_failed_title">Hindi na-encrypt</string>
     <string name="crypt_keeper_failed_summary">Hindi mai-startup ang device mo. Hininto ang proseso ng pag-encrypt. Kailangan mong i-reset ang device mo sa mga factory default na setting. Buburahin nito ang lahat ng data mo.</string>
     <string name="crypt_keeper_data_corrupted_title">Sira ang device storage</string>
@@ -1723,10 +1730,13 @@ Inaabot ang pag-encrypt ng isang oras o higit pa. Bago ka magsimula, tiyaking na
     <string name="cryptkeeper_wrong_pin">Nagpasok ng maling PIN</string>
     <string name="cryptkeeper_wrong_direction">Iginuhin ang maling direksyon</string>
     <string name="checking_decryption">Bine-verify…</string>
-    <string name="crypt_keeper_last_warn_wipe">Mayroon ka na lang 1 tangkang nalalabi para i-start up ang device mo bago ito i-reset sa factory default na setting nito. Buburahin nito ang lahat ng data, kasama ang mga file at mga nai-download na app.</string>
+    <string name="crypt_keeper_last_warn_wipe">"Mayroon kang 1 tangkang nalalabi bago i-reset ang telepono mo sa mga factory default na setting nito. Buburahin nito ang lahat ng data, kabilang ang mga file at mga nai-download na app.
+
+Kung nag-reset ang telepono mo, maaaring kailanganin mong ipasok ang impormasyon ng %s (Email address at password) na kaugnay ng teleponong ito para magamit itong muli."</string>
     <string name="crypt_keeper_failed_title_dec">Decryption failed.</string>
     <string name="crypt_keeper_failed_summary_dec">Hindi makumpleto ang pag-decrypt dahil sa pagkaantala. Magsagawa ng factory data reset (buburahin nito ang lahat ng data) bago gamitin.</string>
     <string name="crypt_keeper_set_screen_lock_type">Itakda ang uri ng lock screen</string>
+    <string name="crypt_keeper_warning_keyboard_cover_does_not_work">Hindi gagana ang takip ng keyboard pagkatapos mag-restart ng telepono.</string>
     <string name="encryption_interstitial_message">"Lalo mo pang mapoprotektahan ang telepono na ito sa paghingi na ipasok ang %s mo bago mag-startup ang telepono. Nakatutulong ito na protektahan ang data mo kung mawala o manakaw ang telepono. Maaaring hingin ng ilang app ang Secure Startup ayon sa mga patakaran sa pag-encrypt ng device para ma-access ang mga feature, gaya ng Email sync.
 
 Hindi ka makatatanggap ng anumang tawag, mensahe o notification at hindi tutunog ang mga alarma, hanggang sa mag-start up ang telepono."</string>
@@ -1971,6 +1981,12 @@ You will also need it when:"</string>
     <string name="lockpassword_confirm_your_pin_with_fingerprint">Gumamit ng fingerprint o ipasok ang kasalukuyang PIN.</string>
     <string name="lockpassword_confirm_your_pattern_with_fingerprint">Gamitin ang fingerprint o iguhit ang kasalukuyang pattern.</string>
     <string name="lockpassword_confirm_your_password_with_fingerprint">Gumamit ng fingerprint o ipasok ang kasalukuyang password.</string>
+    <string name="lockpassword_confirm_your_pin_with_iris">Gamitin ang mga iris mo o ipasok ang kasalukuyang PIN mo.</string>
+    <string name="lockpassword_confirm_your_pattern_with_iris">Gamitin ang mga iris o iguhit ang kasalukuyang pattern mo.</string>
+    <string name="lockpassword_confirm_your_password_with_iris">Gamitin ang mga iris mo o ipasok ang kasalukuyang password mo.</string>
+    <string name="lockpassword_confirm_your_pin_with_biometrics">Gamitin ang biometrics o ipasok ang PIN mo.</string>
+    <string name="lockpassword_confirm_your_pattern_with_biometrics">Gamitin ang biometrics o iguhit ang pattern mo.</string>
+    <string name="lockpassword_confirm_your_password_with_biometrics">Gamitin ang biometrics o ipasok ang password mo.</string>
     <string name="lockpassword_confirm_your_pin_instead_of_fingerprint">Ipasok ang PIN mo sa halip na gamitin ang fingerprint recognition.</string>
     <string name="lockpassword_confirm_your_pattern_instead_of_fingerprint">Iguhit ang pattern mo sa halip na gamitin ang fingerprint recognition.</string>
     <string name="lockpassword_confirm_your_password_instead_of_fingerprint">Ipasok ang password mo sa halip na gamitin ang fingerprint recognition.</string>
@@ -2045,6 +2061,7 @@ Piliin kung paano mo nais na i-unlock ang telepono mo. Hindi magagamit nang saba
     <string name="face_status_timeout">Timeout. Subukan mamaya.</string>
     <string name="okay">OK</string>
     <string name="face_samsung_account_button">Gamitin ang Samsung account</string>
+    <string name="face_galaxy_account_button">Gamitin ang Galaxy account</string>
     <string name="face_error_DB_corrupted">Nagkaroon ng problema sa data ng mukha mo. Muling irehistro ang mukha mo.</string>
     <string name="face_error_DB_corrupted_popup_title">Muling irehistro ang mukha mo</string>
     <string name="face_error_timeout">Hindi nadetekta ang mukha mo.</string>
@@ -2155,7 +2172,7 @@ I-on ang Iris unlock para gamitin ang biometrics o %s mo para i-unlock ang telep
     <string name="biometrics_backup_locktype_title">I-set up ang seguridad ng iris</string>
     <string name="biometrics_register_your_iris">Irehistro ang mga iris mo.</string>
     <string name="biometrics_backup_locktype_summary">Para gamitin ang mga iris mo para i-unlock ang device, dapat kang mag-set ng pattern, PIN o password.</string>
-    <string name="biometrics_backup_locktype_message">Para magamit ang mga iris mo para i-unlock ang telepono o para sa ligtas na pag-verify, kakailanganin mong:</string>
+    <string name="biometrics_backup_locktype_message">Para magamit ang mga iris mo sa pag-unlock ng telepono mo o para sa pag-verify ng sarili mo sa mga app, kakailanganin mong:</string>
     <string name="iris_delete_popup_title">Alisin ang iris data?</string>
     <string name="iris_delete_popup_message">Alisin ang iris data?</string>
     <string name="iris_delete_popup_message_with_related_func">Io-off ang mga feature na gumagamit ng mga iris.</string>
@@ -2231,6 +2248,9 @@ Piliin kung paano mo nais na i-unlock ang telepono mo. Hindi magagamit nang saba
     <string name="biometrics_dex_cant_use_msg">Hindi magagamit ang %s sa Samsung DeX.</string>
     <string name="biometrics_dex_closed_to_switch">Nagsara ang %s para lumipat sa Samsung DeX.</string>
     <string name="biometircs_dex_cant_use_toast">Hindi tatakbo ang %s sa Samsung DeX. Subukang patakbuhin sa phone mode.</string>
+    <string name="iris_guide_text_preview">Tumingin dito para gamitin ang mga iris</string>
+    <string name="iris_guide_enable_toggle">I-tap dito para gamitin ang mga iris</string>
+    <string name="iris_cannot_verify">Hindi mai-verify ang mga iris</string>
     <string name="knox_twofactor_bio_description">Piliin ang uri ng biometric lock at ikalawang uri ng lock para i-unlock ang %s.</string>
     <string name="fingerprint_registered">Gagamitin ang mga nakarehistrong fingerprint sa piniling paraan ng pag-unlock.</string>
     <string name="knox_twofactor_description">Piliin ang biometrics mo at isang ikalawang uri ng lock para i-unlock ang %s.</string>
@@ -2790,7 +2810,7 @@ Ilang mga trasaksyon ng NFC at serbisyo sa pagabayad sa mobile ay kailangan ng i
     <string name="alarm_switch_summary">Kabilang ang mga Area Mail na alarma</string>
     <string name="enable_as_scheduled">Paganahin ayon sa schedule</string>
     <string name="enable_now">Paganahin ngayon</string>
-    <string name="scheduling_switch_summary">Awtomatikong paganahin at hindi paganahin ang Do not disturb sa mga naka-schedule na oras.</string>
+    <string name="scheduling_switch_summary">Awtomatikong paganahin at hindi paganahin ang Huwag istorbohin sa mga naka-schedule na oras.</string>
     <string name="no_exceptions_summary">I-mute lahat ng tawag, alerto at media.</string>
     <string name="alarms_only_summary">Payagan lang ang mga alarm na tumunog o magvi-vibrate kapag gumagana ang Do not disturb.</string>
     <string name="custrom_summary">Magtakda ng mga pasadyang di-kabilang na maaaring tumunog o mag-vibrate habang gumagana ang Do not disturb.</string>
@@ -3092,6 +3112,7 @@ mode"</string>
     <string name="easy_mode_app_help">Gamitin ang device mo nang mas madali gamit ang mas simpleng layout ng home screen at mas malalaking item sa screen.</string>
     <string name="easy_mode_app_help_dream_1">Gumamit ng simpleng layout ng Home screen at mas malalaking item sa screen.</string>
     <string name="easy_mode_app_help_dream_2">Idi-discard ang anumang pag-customize na ginawa mo sa Home screen at ise-set ang Screen zoom sa maximum.</string>
+    <string name="easy_mode_app_help_3rd_launcher">Gamitin ang Easy mode para sa mas malalaking item sa on-screen. Kung hindi ka gumagamit ng TouchWiz home, hindi magbabago ang Home screen layout mo, pero ise-set ang screen zoom sa malaki at ise-set ang sukat ng font sa katamtaman.</string>
     <string name="security_warning_content">Mapoprotektahan mo ang iyong privacy sa pamamagitan ng pag-set up ng password, PIN, o pattern para sa pag-unlock ng iyong screen.</string>
     <string name="lock_setting_weather_desc">Para tingnan o baguhin ang mga setting sa lagay ng panahon, i-tap ang MGA SETTING NG LAGAY NG PANAHON sa ibaba.</string>
     <string name="lock_setting_weather_btn">Mga setting ng lagay ng panahon</string>
@@ -3338,7 +3359,7 @@ Downloading via mobile networks may result in additional charges depending on yo
     <string name="disable_hovering_title">Huwag paganahin ang air view</string>
     <string name="disable_hovering_summary">Hindi maaaring paganahin nang sabay ang air view at TalkBack. Hindi papaganahin ang Air view.</string>
     <string name="pen_settings_pen_input">Direktang input ng pen</string>
-    <string name="action_memo_onoff_screen_title">Memo ng screen off</string>
+    <string name="action_memo_onoff_screen_title">Screen off memo</string>
     <string name="screen_off_note_summary">Sumulat ng mga note habang naka-off ang screen. Alisin lang ang S Pen at magsimulang magsulat.</string>
     <string name="screen_off_note_summary_jpn">Lumikha ng mga note sa pamamagitan ng pagkuha sa S Pen habang naka-off ang screen at pagsulat sa screen. Isi-save ang mga Screen off memo sa Galaxy Notes.</string>
     <string name="screen_off_note_summary_no_detach">Lumikha ng mga note sa pamamagitan ng pagpindot sa Pen button, pag-tap sa screen habang naka-off ito at pagsulat dito. Isi-save ang mga Screen off memo sa Samsung Notes.</string>
@@ -3945,7 +3966,7 @@ Nakadaragdag ang paggamit ng Mobile Hotspot, sa pagkonsumo ng baterya at paggami
     <string name="wfd_descrpition_playsound">I-play ang tunog.</string>
     <string name="wfd_is_not_supported">Hindi suportado ang function na ito.</string>
     <string name="usbtethering_notify_wifi_is_on_title">I-off ang Wi-Fi?</string>
-    <string name="usbtethering_notify_wifi_is_on">Hindi maaaring naka-on nang sabay ang Wi-Fi at USB tethering. I-off ang Wi-Fi.</string>
+    <string name="usbtethering_notify_wifi_is_on">Hindi maaaring naka-on nang sabay ang Wi-Fi at USB tethering. Io-off ang Wi-Fi.</string>
     <string name="disable_multi_window_dialog_text">Hindi pagaganahin ang Maraming window at isasara ang lahat ng apps na nakabukas sa mga pop-up na window.</string>
     <string name="keyguard_password_attempt_count_pin_code">%d (na) pagsubok ang natitira.</string>
     <string name="keyguard_password_attempts_count_pin_code">%d (na) pagsubok ang natitira.</string>
@@ -4153,6 +4174,7 @@ Pagtanggap ng SMS"</string>
     <string name="hdmi_mode_title">HDMI mode</string>
     <string name="hdmi_mode_dex">Samsung DeX</string>
     <string name="hdmi_mode_mirroring">Screen Mirroring</string>
+    <string name="hdmi_mode_not_available_while_cover_attached">Hindi magagamit ang %s habang nakakabit ang takip.</string>
     <string name="screen_timeout_for_dex">Timeout ng screen para sa Samsung DeX</string>
     <string name="show_virtual_keyboard_for_dex">Ipakita ang on-screen keyboard sa Samsung DeX</string>
     <string name="comma">,</string>
@@ -4461,7 +4483,7 @@ Mababago mo ito sa ibang panahon sa mga setting ng Bluetooth."</string>
     <string name="date_picker_title">Petsa</string>
     <string name="time_picker_title">Oras</string>
     <string name="lock_after_timeout">Lock automatically</string>
-    <string name="lock_after_timeout_summary">I-lock ang screen %s pagkatapos nitong mag-off nang awtomatiko.</string>
+    <string name="lock_after_timeout_summary">I-lock ang telepono %s pagkatapos na awtomatikong mag-off ang screen.</string>
     <string name="lock_after_timeout_summary_with_exception">I-lock ang screen %1$s pagkatapos nitong awtomatikong mag-off, maliban lang kung pinapanatiling naka-unlock ng %2$s.</string>
     <string name="show_owner_info_on_lockscreen_label">Ipakita ang impormasyon ng may-ari ng device sa lock screen.</string>
     <string name="owner_info_settings_title">Impormasyon ng may-ari</string>
@@ -4609,6 +4631,8 @@ Para mapahusay ang katumpakan ng lokasyon, maaaring mag-scan ang mga app at serb
     <string name="wifi_empty_list_user_restricted">Wala kang pahintulot na baguhin ang mga setting ng Wi-Fi.</string>
     <string name="wifi_setup_wps">Awtomatikong pag-setup (WPS)</string>
     <string name="wifi_show_advanced">Ipakita ang mga advanced na opsyon</string>
+    <string name="wifi_advanced_toggle_description_expanded">I-double tap para i-collapse.</string>
+    <string name="wifi_advanced_toggle_description_collapsed">I-double tap para i-expand.</string>
     <string name="wifi_wps_setup_title">Pag-set up ng WPS</string>
     <string name="wifi_wps_setup_msg">Sinisimulan ang WPS…</string>
     <string name="wifi_wps_onstart_pbc">I-tap ang button ng Wi-Fi protected setup sa iyong router. Maaaring tinatawag itong WPS o naglalaman ng simbolong ito:</string>
@@ -4640,6 +4664,10 @@ Para mapahusay ang katumpakan ng lokasyon, maaaring mag-scan ang mga app at serb
     <string name="wifi_shared">Ibinahagi</string>
     <string name="wifi_unchanged">(hindi nabago)</string>
     <string name="wifi_unspecified">(Hindi tinukoy)</string>
+    <string name="wifi_select_cert">Pumili ng certificate</string>
+    <string name="wifi_do_not_provide_eap_user_cert">Huwag ibigay</string>
+    <string name="wifi_do_not_validate_eap_server">Huwag i-validate</string>
+    <string name="wifi_do_not_validate_eap_server_warning">Walang tinukoy na certificate. Hindi magiging pribado ang koneksiyon mo.</string>
     <string name="wifi_scan_always_turnon_message">Ang %s ay humihiling ng pahintulot na mag-scan ng mga Wi-Fi network, kahit na naka-off ang Wi-Fi, upang paigtingin ang katumpakan ng lokasyon at para sa iba pang mga layunin. Payagan ito para sa lahat ng application?</string>
     <string name="wifi_scan_always_confirm_allow">Payagan</string>
     <string name="wifi_scan_always_confirm_deny">Tanggihan</string>
@@ -4974,9 +5002,9 @@ Isaalang-alang ang paggamit ng mas mabilis na SD card o USB storage device para 
     <string name="restore_default_apn_completed">Ini-reset sa default ang mga setting ng APN.</string>
     <string name="reset_network_desc">Ire-reset nito ang lahat na setting ng network, kabilang ang mga para sa:</string>
     <string name="reset_network_button_text">I-reset ang mga setting</string>
-    <string name="reset_network_final_desc">Mare-reset ang lahat ng setting ng koneksiyon. Hindi maaaring i-undo ang aksiyon na ito.</string>
+    <string name="reset_network_final_desc">Mare-reset ang lahat na setting ng network. Hindi maaaring i-undo ang aksiyon na ito.</string>
     <string name="reset_network_final_button_text">I-reset ang mga setting</string>
-    <string name="reset_network_complete_toast">Pag-reset sa mga setting ng koneksiyon.</string>
+    <string name="reset_network_complete_toast">Nai-reset ang mga setting ng network.</string>
     <string name="master_clear_title">Pag-reset sa factory data</string>
     <string name="master_clear_accounts">Kasalukuyan kang naka-sign in sa mga sumusunod na account:</string>
     <string name="master_clear_other_users_present">Ang data na pag-aari ng iba pang user na nasa device na ito ay buburahin din.</string>
@@ -6089,6 +6117,7 @@ Hindi ka makatatanggap ng anumang tawag, mensahe o notification at hindi tutunog
     <string name="set_data_limit">I-set ang limit ng data</string>
     <string name="data_limit">Limitasyon ng data</string>
     <string name="data_usage_template">%1$s ginamit sa pagitan ng %2$s</string>
+    <string name="data_usage_template_wifi">%s ginamit sa nakalipas na 30 araw</string>
     <string name="data_usage_other_apps">Mga kaugnay na app na kasama sa nagamit</string>
     <string name="data_saver_title">Data saver</string>
     <string name="unrestricted_data_saver">Payagan ang app habang naka-on ang Data saver</string>
@@ -6139,6 +6168,7 @@ Hindi ka makatatanggap ng anumang tawag, mensahe o notification at hindi tutunog
     <string name="legacy_dhcp_client_summary">Gamitin ang DHCP client mula sa Lollipop sa halip na ang bagong Android DHCP client.</string>
     <string name="screen_off_pocket_title">Panatilihing naka-off ang screen</string>
     <string name="screen_off_pocket_summary">Pigilan ang screen na mag-on nang di-sadya habang nasa madilim na lugar ang device gaya ng bulsa o bag.</string>
+    <string name="noApplications">Lahat ng app na kaugnay ng aksiyon na ito ay hindi pinagana, naka-block o hindi naka-install.</string>
     <string name="confirm_reset_shortcut_manager_throttling_title">I-reset ang rate limiter ng Shortcut Manager</string>
     <string name="confirm_reset_shortcut_manager_throttling_message">Ire-reset ang mga rate limiter counter ng Shortcut Manager.</string>
 </resources>

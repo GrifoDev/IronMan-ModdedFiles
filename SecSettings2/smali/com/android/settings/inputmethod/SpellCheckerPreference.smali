@@ -27,7 +27,7 @@
 
     iput-object p2, p0, Lcom/android/settings/inputmethod/SpellCheckerPreference;->mScis:[Landroid/view/textservice/SpellCheckerInfo;
 
-    const v3, 0x7f04024f
+    const v3, 0x7f040252
 
     invoke-virtual {p0, v3}, Lcom/android/settings/inputmethod/SpellCheckerPreference;->setWidgetLayoutResource(I)V
 
@@ -139,7 +139,7 @@
 
     invoke-super {p0, p1}, Lcom/samsung/android/settings/SettingsListPreference;->onBindView(Landroid/view/View;)V
 
-    const v1, 0x7f1106a2
+    const v1, 0x7f1106a4
 
     invoke-virtual {p1, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 

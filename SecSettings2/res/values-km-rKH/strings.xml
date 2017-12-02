@@ -170,6 +170,8 @@
     <string name="wifi_allow_scan_with_traffic_summary">អនុញ្ញាត ឬ បដិសេធ​ស្កេន​រ៉ូមីង Wi-Fi ដោយ​ស្វ័យប្រវត្តិ ផ្អែក​លើ​បរិមាណ​ទិន្នន័យ​ដែល​បាន​ប្រើ។</string>
     <string name="select_logd_size_title">ទំហំ​ប៊ូហ្វឺ​សម្រាប់​ការចុះ​កំណត់ហេតុ</string>
     <string name="select_logd_size_dialog_title">ជ្រើស​ទំហំ​អតិបរមា​នៃ​ប៊ូហ្វឺ​កំណត់ហេតុ​នីមួយៗ</string>
+    <string name="dev_logpersist_clear_warning_title">ជម្រះ​ឃ្លាំងផ្ទុក​មុខងារ​ចុះ​កំណត់ហេតុ​អចិន្ត្រៃយ៍?</string>
+    <string name="dev_logpersist_clear_warning_message">ទិន្នន័យ​មុខងារ​ចុះ​កំណត់ហេតុ​នឹង​ត្រូវ​បាន​លុប នៅពេល​មុខងារ​ចុះ​កំណត់ហេតុ​អចិន្ត្រៃយ៍​ត្រូវ​បាន​បិទ។</string>
     <string name="select_logpersist_title">រក្សាទុក​ទិន្នន័យ​កំណត់ហេតុ​ជា​អចិន្ត្រៃយ៍</string>
     <string name="select_logpersist_dialog_title">ជ្រើស​ប៊ូហ្វឺ​កំណត់ហេតុ ដើម្បី​រក្សាទុក​ជា​អចិន្ត្រៃយ៍</string>
     <string name="select_usb_configuration_title">ការកំណត់​រចនាសម្ពន្ធ USB</string>
@@ -982,6 +984,7 @@ Wi-Fi និង Bluetooth ក៏​នឹង​ត្រូវ​បាន​ប
     <string name="bluetooth_avc_available_description">ឧបករណ៍ Bluetooth ដែល​បាន​ភ្ជាប់ គាំទ្រ​សមកាល​កម្រិត​សំឡេង​មេឌៀ ហើយ​កម្រិត​សំឡេង​ដែល​ឧបករណ៍ Bluetooth បាន​កំណត់​នឹង​ធ្វើ​សមកាល​ជាមួយ​ទូរសព្ទ​របស់​អ្នក។</string>
     <string name="bluetooth_enter_pin_msg">វាយបញ្ចូល PIN ដើម្បី​ផ្គូ​ជាមួយ %s (សាកល្បង 0000 ឬ 1234)។</string>
     <string name="bluetooth_pin_maximum_number_message">បាន​ដល់​ចំនួន​អតិបរមា​នៃ​តួអក្សរ។</string>
+    <string name="bluetooth_frp_permission_message">មិន​អាច​ប្រើ​ឧបករណ៍ Bluetooth សម្រាប់​ការហៅ​នេះ។</string>
     <string name="settings_menu_done">រួចរាល់</string>
     <string name="usb_tethering_unavailable_subtext_tmo">USB not connected</string>
     <string name="usb_tethering_available_subtext_tmo">USB connected, check to tether</string>
@@ -1481,7 +1484,7 @@ Where Can I Find More Information About the 3rd Party's Policies? Separately, if
     <string name="navigationbar_pressure_sensitivity_title">ចុច​ខ្លាំង​លើ​គេហប៊ូតុង</string>
     <string name="navigationbar_pressure_sensitivity_summary">ប្រើ​គេហប៊ូតុង ខណៈពេល​វា​ត្រូវ​បាន​លាក់ ដោយ​ចុច​ឲ្យ​ខ្លាំង​ជាង​ធម្មតា។</string>
     <string name="navigationbar_pressure_sensitivity_level_summary">កម្រិត​សម្ពាធ៖ %1$d នៃ %2$d</string>
-    <string name="navigationbar_pressure_sensitivity_description_off">ប្រើ​គេហប៊ូតុង ខណៈពេល​វា​ត្រូវ​បាន​លាក់ ដោយ​ចុច​ឲ្យ​ខ្លាំង​ជាង​ធម្មតា។</string>
+    <string name="navigationbar_pressure_sensitivity_description_off">លៃតម្រូវ​បរិមាណ​នៃ​សម្ពាធ​ដែល​ត្រូវការ​ដើម្បី​ចុច​ខ្លាំង​លើ​គេហប៊ូតុង។</string>
     <string name="navigationbar_pressure_low">ស្រាល​ជាង</string>
     <string name="navigationbar_pressure_high">ខ្លាំង​ជាង</string>
     <string name="navigationbar_hide_bar">បង្ហាញ ឬ លាក់​ប៊ូតុង</string>
@@ -1704,7 +1707,11 @@ Where Can I Find More Information About the 3rd Party's Policies? Separately, if
     <string name="crypt_keeper_confirm_title">បញ្ជាក់​អ៊ិនគ្រីបសិន</string>
     <string name="crypt_keeper_final_desc">ការអ៊ិនគ្រីប​ឧបករណ៍​របស់​អ្នក​មិន​អាច​ត្រឡប់​មក​វិញ​ឡើយ ហើយ​ទិន្នន័យ​នឹង​បាត់បង់ បើ​ដំណើរការ​នេះ​ត្រូវ​បាន​បង្អាក់​រំខាន។ អ៊ិនគ្រីបសិន​អាច​ត្រូវការ​ពេល​មួយ ឬ ច្រើន​ម៉ោង ដែល​ក្នុង​អំឡុងពេល​នោះ ឧបករណ៍​របស់​អ្នក​នឹង​ចាប់ផ្ដើម​ឡើងវិញ​ជាច្រើន​ដង ហើយ​អ្នក​នឹង​មិន​អាច​ប្រើ​វា​ឡើយ។</string>
     <string name="crypt_keeper_setup_title">កំពុង​អ៊ិនគ្រីប…</string>
-    <string name="crypt_keeper_warn_wipe">អ្នក​នៅសល់​ការប៉ុនប៉ង %d ទៀត ដើម្បី​ចាប់ផ្ដើម​ឧបករណ៍​របស់​អ្នក មុនពេល​វា​ត្រូវ​បាន​កំណត់​ឡើងវិញ​ទៅ​ការកំណត់​លំនាំដើម​ពី​រោងចក្រ​របស់​វា។ នេះ​នឹង​លុប​ទិន្នន័យ​ទាំងអស់ រួមទាំង​ឯកសារ​និង​កម្មវិធី​ដែល​បាន​ទាញយក។</string>
+    <string name="crypt_keeper_warn_wipe">"អ្នក​នៅសល់​ការប៉ុនប៉ង %1$d ដង​ទៀត មុនពេល​ទូរសព្ទ​របស់​អ្នក​ត្រូវ​បាន​កំណត់​ឡើងវិញ​ទៅ​ការកំណត់​លំនាំដើម​ពី​រោងចក្រ​របស់​វា។ នេះ​នឹង​លុប​ទិន្នន័យ​ទាំងអស់ រួមទាំង​ឯកសារ​និង​កម្មវិធី​ដែល​បាន​ទាញយក។
+
+បើ​ទូរសព្ទ​របស់​អ្នក​ត្រូវ​បាន​កំណត់​ឡើងវិញ អ្នក​ប្រហែល​ជា​ត្រូវ​វាយបញ្ចូល​ព័ត៌មាន %2$s (អាសយដ្ឋាន​អ៊ីមែល និង ពាក្យសម្ងាត់) ពាក់ព័ន្ធ​ជាមួយ​ទូរសព្ទ​នេះ ដើម្បី​អាច​ប្រើ​វា​ម្ដងទៀត។"</string>
+    <string name="crypt_keeper_samsung_account">Samsung Account</string>
+    <string name="crypt_keeper_google_account">គណនី Google</string>
     <string name="crypt_keeper_failed_title">អ៊ិនគ្រីបសិន​បាន​បរាជ័យ</string>
     <string name="crypt_keeper_failed_summary">មិន​អាច​ចាប់ផ្ដើម​ឧបករណ៍​របស់​អ្នក។ ដំណើរការ​អ៊ិនគ្រីបសិន​ត្រូវ​បាន​បង្អាក់។ អ្នក​ត្រូវ​កំណត់​ឧបករណ៍​របស់​អ្នក​ឡើងវិញ​ទៅ​ការកំណត់​លំនាំដើម​ពី​រោងចក្រ។ នេះ​នឹង​លុប​ទិន្នន័យ​របស់​អ្នក​ទាំងអស់។</string>
     <string name="crypt_keeper_data_corrupted_title">ឃ្លាំងផ្ទុក​ក្នុង​ឧបករណ៍​ខូច</string>
@@ -1723,10 +1730,13 @@ Where Can I Find More Information About the 3rd Party's Policies? Separately, if
     <string name="cryptkeeper_wrong_pin">បាន​វាយបញ្ចូល PIN មិន​ត្រឹមត្រូវ</string>
     <string name="cryptkeeper_wrong_direction">បាន​គូស​ទិសដៅ​មិន​ត្រឹមត្រូវ</string>
     <string name="checking_decryption">កំពុង​ផ្ទៀង​ផ្ទាត់…</string>
-    <string name="crypt_keeper_last_warn_wipe">អ្នក​នៅសល់​ការប៉ុនប៉ង 1 ទៀត ដើម្បី​ចាប់ផ្ដើម​ឧបករណ៍​របស់​អ្នក មុនពេល​វា​ត្រូវ​បាន​កំណត់​ឡើងវិញ​ទៅ​ការកំណត់​លំនាំដើម​ពី​រោងចក្រ​របស់​វា។ នេះ​នឹង​លុប​ទិន្នន័យ​ទាំងអស់ រួមទាំង​ឯកសារ​និង​កម្មវិធី​ដែល​បាន​ទាញយក។</string>
+    <string name="crypt_keeper_last_warn_wipe">"អ្នក​នៅសល់​ការប៉ុនប៉ង 1 ដង មុនពេល​ទូរសព្ទ​របស់​អ្នក​ត្រូវ​បាន​កំណត់​ឡើងវិញ​ទៅ​ការកំណត់​លំនាំដើម​ពី​រោងចក្រ​របស់​វា។ នេះ​នឹង​លុប​ទិន្នន័យ​ទាំងអស់ រួមទាំង​ឯកសារ​និង​កម្មវិធី​ដែល​បាន​ទាញយក។
+
+បើ​ទូរសព្ទ​របស់​អ្នក​ត្រូវ​បាន​កំណត់​ឡើងវិញ អ្នក​ប្រហែល​ជា​ត្រូវ​វាយបញ្ចូល​ព័ត៌មាន %s (អាសយដ្ឋាន​អ៊ីមែល និង ពាក្យសម្ងាត់) ពាក់ព័ន្ធ​ជាមួយ​ទូរសព្ទ​នេះ ដើម្បី​អាច​ប្រើ​វា​ម្ដងទៀត។"</string>
     <string name="crypt_keeper_failed_title_dec">ឌីគ្រីបសុន​បរាជ័យ។</string>
     <string name="crypt_keeper_failed_summary_dec">មិន​អាច​បញ្ចប់​ឌីគ្រីបសុន ដោយសារ​ការបង្អាក់​រំខាន។ ធ្វើ​ការកំណត់​ឡើងវិញ​នូវ​ទិន្នន័យ​ពី​រោងចក្រ (លុប​ទិន្នន័យ​ទាំងអស់) មុន​ពេល​ប្រើ។</string>
     <string name="crypt_keeper_set_screen_lock_type">កំណត់​ប្រភេទ​សោ​អេក្រង់</string>
+    <string name="crypt_keeper_warning_keyboard_cover_does_not_work">គម្រប​ក្ដារចុច នឹង​មិន​ដំណើរការ​ឡើយ បន្ទាប់​ពី​ទូរសព្ទ​ចាប់ផ្ដើម​ឡើងវិញ។</string>
     <string name="encryption_interstitial_message">"អ្នក​អាច​ការពារ​ទូរសព្ទ​នេះ​បន្ថែម​ទៀត ដោយ​តម្រូវ​ឲ្យ​វាយបញ្ចូល %s របស់​អ្នក មុនពេល​ទូរសព្ទ​ចាប់ផ្ដើម។ ជំនួយ​នេះ​ការពារ​ទិន្នន័យ​របស់​អ្នក បើ​ទូរសព្ទ​បាត់​ឬ​មាន​គេ​លួច។ កម្មវិធី​ខ្លះ​អាច​ត្រូវការ​នូវ​ការចាប់ផ្ដើម​សន្តិសុខ យោង​តាម​គោលការណ៍​អ៊ិនគ្រីបសិន​ឧបករណ៍​សម្រាប់​ការចូលប្រើ​មុខងារ ដូចជា​សមកាល​អ៊ីមែល។
 
 អ្នក​នឹង​មិន​ទទួល​ការហៅ, សារ ឬ ការជូនដំណឹង​ណា​មួយ​ឡើយ ហើយ​ម៉ោងរោទ៍​នឹង​មិន​បន្លឺ​សំឡេង​ដែរ ទាល់តែ​ទូរសព្ទ​បាន​ចាប់ផ្ដើម។"</string>
@@ -1971,6 +1981,12 @@ You will also need it when:"</string>
     <string name="lockpassword_confirm_your_pin_with_fingerprint">ប្រើ​ខ្ចៅដៃ ឬ វាយបញ្ចូល PIN បច្ចុប្បន្ន។</string>
     <string name="lockpassword_confirm_your_pattern_with_fingerprint">ប្រើ​ខ្ចៅដៃ ឬ គូស​លំនាំ​បច្ចុប្បន្ន។</string>
     <string name="lockpassword_confirm_your_password_with_fingerprint">ប្រើ​ខ្ចៅដៃ ឬ វាយបញ្ចូល​ពាក្យសម្ងាត់​បច្ចុប្បន្ន។</string>
+    <string name="lockpassword_confirm_your_pin_with_iris">ប្រើ​ប្រស្រីភ្នែក​របស់​អ្នក ឬ វាយបញ្ចូល PIN បច្ចុប្បន្ន​របស់​អ្នក។</string>
+    <string name="lockpassword_confirm_your_pattern_with_iris">ប្រើ​ប្រស្រីភ្នែក​របស់​អ្នក ឬ គូស​លំនាំ​បច្ចុប្បន្ន​របស់​អ្នក។</string>
+    <string name="lockpassword_confirm_your_password_with_iris">ប្រើ​ប្រស្រីភ្នែក​របស់​អ្នក ឬ វាយបញ្ចូល​ពាក្យសម្ងាត់​បច្ចុប្បន្ន​របស់​អ្នក។</string>
+    <string name="lockpassword_confirm_your_pin_with_biometrics">ប្រើ​ជីវមាត្រ ឬ វាយបញ្ចូល PIN របស់​អ្នក។</string>
+    <string name="lockpassword_confirm_your_pattern_with_biometrics">ប្រើ​ជីវមាត្រ ឬ គូស​លំនាំ​របស់​អ្នក។</string>
+    <string name="lockpassword_confirm_your_password_with_biometrics">ប្រើ​ជីវមាត្រ ឬ វាយបញ្ចូល​ពាក្យសម្ងាត់​របស់​អ្នក។</string>
     <string name="lockpassword_confirm_your_pin_instead_of_fingerprint">វាយបញ្ចូល PIN របស់​អ្នក ជំនួស​ឲ្យ​ការប្រើ​ការស្គាល់​ខ្ចៅដៃ។</string>
     <string name="lockpassword_confirm_your_pattern_instead_of_fingerprint">គូស​លំនាំ​របស់​អ្នក ជំនួស​ឲ្យ​ការប្រើ​ការស្គាល់​ខ្ចៅដៃ។</string>
     <string name="lockpassword_confirm_your_password_instead_of_fingerprint">វាយបញ្ចូល​ពាក្យសម្ងាត់​របស់​អ្នក ជំនួស​ឲ្យ​ការប្រើ​ការស្គាល់​ខ្ចៅដៃ។</string>
@@ -2045,6 +2061,7 @@ You will also need it when:"</string>
     <string name="face_status_timeout">អស់​ពេល។ សាកល្បង​ពេល​ក្រោយ។</string>
     <string name="okay">ព្រម</string>
     <string name="face_samsung_account_button">ប្រើ Samsung Account</string>
+    <string name="face_galaxy_account_button">ប្រើ Galaxy Account</string>
     <string name="face_error_DB_corrupted">មាន​បញ្ហា​មួយ​ជាមួយ​ទិន្នន័យ​ផ្ទៃមុខ​របស់​អ្នក។ ចុះបញ្ជី​ផ្ទៃមុខ​របស់​អ្នក​ម្ដងទៀត។</string>
     <string name="face_error_DB_corrupted_popup_title">ចុះបញ្ជី​ផ្ទៃមុខ​របស់​អ្នក​ម្ដងទៀត</string>
     <string name="face_error_timeout">មិន​ស្គាល់​ផ្ទៃមុខ​របស់​អ្នក។</string>
@@ -2155,7 +2172,7 @@ You will also need it when:"</string>
     <string name="biometrics_backup_locktype_title">រៀបចំ​សន្តិសុខ​ប្រស្រីភ្នែក</string>
     <string name="biometrics_register_your_iris">ចុះបញ្ជី​ប្រស្រីភ្នែក​របស់​អ្នក។</string>
     <string name="biometrics_backup_locktype_summary">ដើម្បី​ប្រើ​ប្រស្រីភ្នែក​របស់​អ្នក​ដោះសោ​ឧបករណ៍ អ្នក​ត្រូវតែ​កំណត់​លំនាំ, PIN ឬ ពាក្យសម្ងាត់។</string>
-    <string name="biometrics_backup_locktype_message">ដើម្បី​ប្រើ​ប្រស្រីភ្នែក​របស់​អ្នក​ដោះសោ​ទូរសព្ទ​របស់​អ្នក ឬ សម្រាប់​ការផ្ទៀងផ្ទាត់​សន្តិសុខ អ្នក​នឹង​ត្រូវ៖</string>
+    <string name="biometrics_backup_locktype_message">ដើម្បី​ប្រើ​ប្រស្រីភ្នែក​របស់​អ្នក​ដោះសោ​ទូរសព្ទ​របស់​អ្នក ឬ ដើម្បី​ផ្ទៀងផ្ទាត់​ខ្លួនអ្នក​ក្នុង​កម្មវិធី អ្នក​នឹង​ត្រូវ៖</string>
     <string name="iris_delete_popup_title">លុប​ទិន្នន័យ​ប្រស្រីភ្នែក?</string>
     <string name="iris_delete_popup_message">លុប​ទិន្នន័យ​ប្រស្រីភ្នែក?</string>
     <string name="iris_delete_popup_message_with_related_func">មុខងារ​ដែល​ប្រើ​ប្រស្រីភ្នែក​នឹង​ត្រូវ​បាន​បិទ។</string>
@@ -2231,6 +2248,9 @@ You will also need it when:"</string>
     <string name="biometrics_dex_cant_use_msg">មិន​អាច​ប្រើ %s ក្នុង Samsung DeX។</string>
     <string name="biometrics_dex_closed_to_switch">បាន​បិទ %s ដើម្បី​ប្ដូរ​ទៅ Samsung DeX។</string>
     <string name="biometircs_dex_cant_use_toast">%s មិន​អាច​ដំណើរការ​ក្នុង Samsung DeX ទេ។ សាកល្បង​ដំណើរការ​ក្នុង​ទម្រង់​ទូរសព្ទ។</string>
+    <string name="iris_guide_text_preview">មើល​ទីនេះ ដើម្បី​ប្រើ​ប្រស្រីភ្នែក</string>
+    <string name="iris_guide_enable_toggle">ប៉ះ​ទីនេះ ដើម្បី​ប្រើ​ប្រស្រីភ្នែក</string>
+    <string name="iris_cannot_verify">មិន​អាច​ផ្ទៀងផ្ទាត់​ប្រស្រីភ្នែក</string>
     <string name="knox_twofactor_bio_description">ជ្រើស​ប្រភេទ​សោ​ជីវមាត្រ​របស់​អ្នក​និង​ប្រភេទ​សោ​ទី​ពីរ ដើម្បី​ដោះសោ %s។</string>
     <string name="fingerprint_registered">នឹង​ប្រើ​ខ្ចៅដៃ​ដែល​បាន​ចុះបញ្ជី​ជាមួយ​វិធី​ដោះសោ​ដែល​បាន​ជ្រើស។</string>
     <string name="knox_twofactor_description">ប្រើ​ជីវមាត្រ​របស់​អ្នក និង ជ្រើស​ប្រភេទ​សោ​ទី​ពីរ ដើម្បី​ដោះសោ %s។</string>
@@ -2409,7 +2429,7 @@ You will also need it when:"</string>
     <string name="lockscreen_notifications">ការជូនដំណឹង</string>
     <string name="work_profile_lockscreen_notifications">ការជូនដំណឹង​ទម្រង់​ការងារ</string>
     <string name="lock_network_and_security">ចាក់សោ​បណ្ដាញ និង សន្តិសុខ</string>
-    <string name="lock_network_and_security_summary">រក្សា​ការចាក់សោ​បណ្ដាញ​និង​មុខងារ​ពាក់ព័ន្ធ​នឹង​សន្តិសុខ ខណៈពេល​ទូរសព្ទ​របស់​អ្នក​ជាប់សោ ដែល​ធ្វើ​ឲ្យ​វា​ងាយស្រួល​ក្នុង​ការ​រក​និង​ការពារ បើ​បាត់​វា ឬ​ក៏​ចោរ​លួច។</string>
+    <string name="lock_network_and_security_summary">រក្សា​ការចាក់សោ​បណ្ដាញ​និង​មុខងារ​ពាក់ព័ន្ធ​នឹង​សន្តិសុខ ខណៈពេល​ទូរសព្ទ​របស់​អ្នក​ជាប់សោ ដែល​ធ្វើ​ឲ្យ​វា​ងាយស្រួល​ក្នុង​ការ​រក​និង​ការពារ បើ​វា​បាន​បាត់​ឬ​មាន​គេ​លួច។</string>
     <string name="biometrics_with_auto_wakeup">ជីវមាត្រ​ជាមួយ​ស្វ័យ​ដាស់</string>
     <string name="biometrics_with_auto_wakeup_summary">អនុញ្ញាត​ឲ្យ​ទូរសព្ទ​របស់​អ្នក​ដោះសោ​ដោយ​ប្រើ​ការស្គាល់​ផ្ទៃមុខ​ឬ​ប្រស្រីភ្នែក នៅពេល​កម្មវិធី​បើក​អេក្រង់។ នេះ​ដំណើរការ​តែ​ក្នុង​ករណី​ដែល​អ្នក​បាន​កំណត់​ការស្គាល់​ផ្ទៃមុខ​ឬ​ប្រស្រីភ្នែក ដើម្បី​ដោះសោ​ទូរសព្ទ​របស់​អ្នក​ប៉ុណ្ណោះ នៅពេល​អេក្រង់​បើក។</string>
     <string name="dualclock_settings_title">នាឡិកា​ពីរ</string>
@@ -3093,6 +3113,7 @@ Mobile data will be turned off."</string>
     <string name="easy_mode_app_help">ប្រើ​ឧបករណ៍​របស់​អ្នក​កាន់តែ​ងាយស្រួល​ជាមួយ​នឹង​ប្លង់​គេហអេក្រង់​សាមញ្ញ និង ធាតុ​លើ​អេក្រង់​កាន់តែ​ធំ។</string>
     <string name="easy_mode_app_help_dream_1">ប្រើ​ប្លង់​គេហអេក្រង់​ធម្មតា និង ធាតុ​លើ​អេក្រង់​ធំៗ។</string>
     <string name="easy_mode_app_help_dream_2">ការប្ដូរ​តាមបំណង​ទាំងឡាយ​ដែល​អ្នក​បាន​ធ្វើ​ចំពោះ​គេហអេក្រង់​នឹង​ត្រូវ​បាន​ចោល ហើយ​ហ្ស៊ូម​អេក្រង់​នឹង​ត្រូវ​បាន​កំណត់​ជា​អតិបរមា។</string>
+    <string name="easy_mode_app_help_3rd_launcher">ប្រើ​ទម្រង់​ងាយស្រួល​សម្រាប់​ធាតុ​លើ​អេក្រង់​កាន់តែ​ធំ។ បើ​អ្នក​មិន​ប្រើ​គេហ TouchWiz ទេ ប្លង់​គេហអេក្រង់​របស់​អ្នក​នឹង​មិន​ផ្លាស់ប្ដូរ​ឡើយ ប៉ុន្តែ​ហ្ស៊ូម​អេក្រង់​នឹង​ត្រូវ​បាន​កំណត់​ជា ធំ ហើយ​ទំហំ​ពុម្ពអក្សរ​នឹង​ត្រូវ​បាន​កំណត់​ជា មធ្យម។</string>
     <string name="security_warning_content">អ្នក​អាច​ការពារ​ភាពឯកជន​របស់​អ្នក ដោយ​រៀបចំ​ពាក្យសម្ងាត់, PIN ឬ លំនាំ សម្រាប់​ការដោះសោ​អេក្រង់​របស់​អ្នក</string>
     <string name="lock_setting_weather_desc">ដើម្បី​បង្ហាញ ឬ ប្ដូរ​ការកំណត់​អាកាសធាតុ សូម​ប៉ះ ការកំណត់​អាកាសធាតុ ខាងក្រោម។</string>
     <string name="lock_setting_weather_btn">ការកំណត់​អាកាសធាតុ</string>
@@ -3946,7 +3967,7 @@ You will switch back to Wi-Fi Sharing when a Wi-Fi network becomes available."</
     <string name="wfd_descrpition_playsound">ចាក់​សំឡេង។</string>
     <string name="wfd_is_not_supported">មុខងារ​នេះ​មិន​ទទួល​ការគាំទ្រ។</string>
     <string name="usbtethering_notify_wifi_is_on_title">បិទ Wi-Fi?</string>
-    <string name="usbtethering_notify_wifi_is_on">Wi-Fi និង ចំណង USB មិន​អាច​បើក​ក្នុង​ពេល​តែ​មួយ​ឡើយ។ បិទ Wi-Fi។</string>
+    <string name="usbtethering_notify_wifi_is_on">Wi-Fi និង ចំណង USB មិន​អាច​បើក​ក្នុង​ពេល​តែ​មួយ​ឡើយ។ នឹង​បិទ Wi-Fi។</string>
     <string name="disable_multi_window_dialog_text">ពហុវីនដូវ​នឹង​ត្រូវ​បាន​បិទ ហើយ​កម្មវិធី​ទាំងអស់​ដែល​បាន​បើក​ក្នុង​វីនដូវ​ផុស នឹង​ត្រូវ​បាន​បិទ។</string>
     <string name="keyguard_password_attempt_count_pin_code">សល់​ការប៉ុនប៉ង %d។</string>
     <string name="keyguard_password_attempts_count_pin_code">សល់​ការប៉ុនប៉ង %d។</string>
@@ -4154,6 +4175,7 @@ You will switch back to Wi-Fi Sharing when a Wi-Fi network becomes available."</
     <string name="hdmi_mode_title">ទម្រង់ HDMI</string>
     <string name="hdmi_mode_dex">Samsung DeX</string>
     <string name="hdmi_mode_mirroring">Screen Mirroring</string>
+    <string name="hdmi_mode_not_available_while_cover_attached">%s មិន​អាច​ប្រើ​បាន​ឡើយ ខណៈពេល​បាន​ភ្ជាប់​គម្រប។</string>
     <string name="screen_timeout_for_dex">ពេល​អេក្រង់​ត្រូវ​រលត់​សម្រាប់ Samsung DeX</string>
     <string name="show_virtual_keyboard_for_dex">បង្ហាញ​ក្ដារចុច​លើ​អេក្រង់​ក្នុង Samsung DeX</string>
     <string name="comma">,</string>
@@ -4462,7 +4484,7 @@ You will switch back to Wi-Fi Sharing when a Wi-Fi network becomes available."</
     <string name="date_picker_title">កាល​បរិច្ឆេទ</string>
     <string name="time_picker_title">ពេល</string>
     <string name="lock_after_timeout">ចាក់​សោ​ដោយ​ស្វ័យ​ប្រវត្តិ</string>
-    <string name="lock_after_timeout_summary">ចាក់សោ​អេក្រង់ %s បន្ទាប់​ពី​វា​បិទ​ដោយ​ស្វ័យប្រវត្តិ។</string>
+    <string name="lock_after_timeout_summary">ចាក់សោ​ទូរសព្ទ %s បន្ទាប់​ពី​អេក្រង់​រលត់​ដោយ​ស្វ័យប្រវត្តិ។</string>
     <string name="lock_after_timeout_summary_with_exception">ចាក់សោ​អេក្រង់ %1$s បន្ទាប់​ពី​វា​បិទ​ដោយ​ស្វ័យប្រវត្តិ លើកលែង​នៅពេល​រក្សា​ការដោះសោ​ដោយ %2$s។</string>
     <string name="show_owner_info_on_lockscreen_label">បង្ហាញ​ព័ត៌មាន​របស់​ម្ចាស់​ឧបករណ៍​លើ​អេក្រង់​ជាប់សោ។</string>
     <string name="owner_info_settings_title">ព័ត៌មានអំពី​ម្ចាស់</string>
@@ -4610,6 +4632,8 @@ You will switch back to Wi-Fi Sharing when a Wi-Fi network becomes available."</
     <string name="wifi_empty_list_user_restricted">អ្នក​មិនមាន​ការអនុញ្ញាត​ក្នុង​ការ​ប្ដូរ​ការកំណត់ Wi-Fi។</string>
     <string name="wifi_setup_wps">ស្វ័យរៀបចំ (WPS)</string>
     <string name="wifi_show_advanced">បង្ហាញ​ជម្រើស​កម្រិត​ខ្ពស់</string>
+    <string name="wifi_advanced_toggle_description_expanded">ប៉ះ​ពីរដង ដើម្បី​វេញ។</string>
+    <string name="wifi_advanced_toggle_description_collapsed">ប៉ះ​ពីរដង ដើម្បី​ពន្លា។</string>
     <string name="wifi_wps_setup_title">ការរៀបចំ WPS</string>
     <string name="wifi_wps_setup_msg">កំពុងចាប់ផ្ដើមដំណើរការ WPS…</string>
     <string name="wifi_wps_onstart_pbc">ប៉ះ​លើ​ប៊ូតុង​រៀប​ចំ​ការ​ការពារ Wi-Fi នៅ​លើ​រ៉ៅទ័រ​អ្នក។ គេ​អាច​ហៅ​ថា WPS ឬ ផ្ទុក​និមិត្ត​សញ្ញា​នេះ៖</string>
@@ -4641,6 +4665,10 @@ You will switch back to Wi-Fi Sharing when a Wi-Fi network becomes available."</
     <string name="wifi_shared">បាន​ចែករំលែក</string>
     <string name="wifi_unchanged">(មិន​បាន​ប្តូរ)</string>
     <string name="wifi_unspecified">(មិន​ជាក់លាក់)</string>
+    <string name="wifi_select_cert">ជ្រើស​វិញ្ញាបនបត្រ</string>
+    <string name="wifi_do_not_provide_eap_user_cert">កុំ​ផ្ដល់</string>
+    <string name="wifi_do_not_validate_eap_server">កុំ​បញ្ជាក់​សុពលភាព</string>
+    <string name="wifi_do_not_validate_eap_server_warning">មិន​បាន​បញ្ជាក់​វិញ្ញាបនបត្រ។ ការភ្ជាប់​របស់​អ្នក​នឹង​មិន​ឯកជន​ឡើយ។</string>
     <string name="wifi_scan_always_turnon_message">%s កំពុង​ស្នើសុំ​ការអនុញ្ញាត​ស្កេន​រក​បណ្ដាញ Wi-Fi សូម្បី​នៅពេល Wi-Fi ត្រូវ​បាន​បិទ ដើម្បី​បង្កើន​ភាពសុក្រឹត​នៃ​ទីកន្លែង និង សម្រាប់​គោលបំណង​ផ្សេងទៀត។ អនុញ្ញាត​នេះ​សម្រាប់​កម្មវិធី​ទាំងអស់?</string>
     <string name="wifi_scan_always_confirm_allow">អនុញ្ញាត</string>
     <string name="wifi_scan_always_confirm_deny">Deny</string>
@@ -4975,9 +5003,9 @@ You will switch back to Wi-Fi Sharing when a Wi-Fi network becomes available."</
     <string name="restore_default_apn_completed">បាន​កំណត់​ការកំណត់ APN ឡើងវិញ​ទៅ​លំនាំដើម។</string>
     <string name="reset_network_desc">នេះ​នឹង​កំណត់​ឡើងវិញ​នូវ​ការកំណត់​បណ្ដាញ​ទាំងអស់ រួមទាំង​ការកំណត់​សម្រាប់៖</string>
     <string name="reset_network_button_text">កំណត់​ការកំណត់​ឡើង​វិញ</string>
-    <string name="reset_network_final_desc">នឹង​ធ្វើ​ការកំណត់​ការភ្ជាប់​ទាំងអស់​ឡើងវិញ។ សកម្មភាព​នេះ​មិន​អាច​មិនធ្វើវិញ​ឡើយ។</string>
+    <string name="reset_network_final_desc">ការកំណត់​បណ្ដាញ​ទាំងអស់​នឹង​ត្រូវ​បាន​កំណត់​ឡើងវិញ។ សកម្មភាព​នេះ​មិន​អាច​មិនធ្វើវិញ​ឡើយ។</string>
     <string name="reset_network_final_button_text">កំណត់​ការកំណត់​ឡើង​វិញ</string>
-    <string name="reset_network_complete_toast">បាន​ធ្វើ​ការកំណត់​ការភ្ជាប់​ឡើងវិញ។</string>
+    <string name="reset_network_complete_toast">បាន​ធ្វើ​ការកំណត់​បណ្ដាញ​ឡើងវិញ។</string>
     <string name="master_clear_title">ការកំណត់​ទិន្នន័យ​រោងចក្រ​ឡើងវិញ</string>
     <string name="master_clear_accounts">បច្ចុប្បន្ន អ្នក​បាន​ចុះឈ្មោះចូល​គណនី​ខាងក្រោម៖</string>
     <string name="master_clear_other_users_present">ទិន្នន័យ​ដែល​ជា​របស់​អ្នកប្រើប្រាស់​ផ្សេងទៀត​លើ​ឧបករណ៍​នេះ ក៏​នឹង​ត្រូវ​បាន​លុប​ផងដែរ។</string>
@@ -6090,6 +6118,7 @@ If the device has multiple users, using this shortcut on the lock screen tempora
     <string name="set_data_limit">កំណត់​ដែន​ទិន្នន័យ</string>
     <string name="data_limit">ដែនកំណត់​ទិន្នន័យ</string>
     <string name="data_usage_template">បាន​ប្រើ %1$s រវាង %2$s</string>
+    <string name="data_usage_template_wifi">បាន​ប្រើ %s ក្នុង​ពេល 30 ថ្ងៃ​ចុងក្រោយ</string>
     <string name="data_usage_other_apps">កម្មវិធី​ពាក់ព័ន្ធ​រួមបញ្ចូល​ក្នុង​ការប្រើប្រាស់</string>
     <string name="data_saver_title">មុខងារ​សំចៃ​ទិន្នន័យ</string>
     <string name="unrestricted_data_saver">អនុញ្ញាត​កម្មវិធី ខណៈពេល​បើក​ធាតុសំចៃ​ទិន្នន័យ</string>
@@ -6140,6 +6169,7 @@ If the device has multiple users, using this shortcut on the lock screen tempora
     <string name="legacy_dhcp_client_summary">ប្រើម៉ាស៊ីនកូន DHCP ចេញពី Lollipop ជំនួសឲ្យម៉ាស៊ីនកូន Android DHCP ថ្មី។</string>
     <string name="screen_off_pocket_title">រក្សា​ការបិទ​អេក្រង់</string>
     <string name="screen_off_pocket_summary">រារាំង​អេក្រង់​កុំ​ឲ្យ​បើក​ដោយ​ចៃដន្យ ខណៈពេល​ឧបករណ៍​ស្ថិត​ក្នុង​កន្លែង​ងងឹត ដូចជា​ហោប៉ៅ ឬ កាបូប។</string>
+    <string name="noApplications">កម្មវិធី​ទាំងអស់​ដែល​ពាក់ព័ន្ធ​នឹង​សកម្មភាព​នេះ​ត្រូវ​បាន​បិទ, ខ្ទប់ ឬ មិន​បាន​ដំឡើង។</string>
     <string name="confirm_reset_shortcut_manager_throttling_title">កំណត់​ឡើងវិញ​នូវ​រង្វាស់​កម្រិត​អត្រា​អភិបាល​ផ្លូវកាត់</string>
     <string name="confirm_reset_shortcut_manager_throttling_message">របាប់​រង្វាស់​កម្រិត​អត្រា​អភិបាល​ផ្លូវកាត់​នឹង​ត្រូវ​បាន​កំណត់​ឡើងវិញ។</string>
 </resources>

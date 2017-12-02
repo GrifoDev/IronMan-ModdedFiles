@@ -148,7 +148,7 @@
 
     move-result-object v2
 
-    const v3, 0x7f0f0499
+    const v3, 0x7f0f0498
 
     invoke-virtual {v2, v3}, Landroid/content/res/Resources;->getInteger(I)I
 
@@ -180,7 +180,7 @@
 
     move-result-object v2
 
-    const v3, 0x7f0f04a4
+    const v3, 0x7f0f04a3
 
     invoke-virtual {v2, v3}, Landroid/content/res/Resources;->getInteger(I)I
 
@@ -219,7 +219,7 @@
 
     move-result-object v2
 
-    const v3, 0x7f0f04a6
+    const v3, 0x7f0f04a5
 
     invoke-virtual {v2, v3}, Landroid/content/res/Resources;->getInteger(I)I
 
@@ -238,9 +238,9 @@
 .method public setTemplate(Landroid/net/NetworkTemplate;ILcom/android/settings/datausage/TemplatePreference$NetworkServices;)V
     .locals 11
 
-    const v10, 0x7f0b1e31
+    const v10, 0x7f0b1e43
 
-    const/4 v3, 0x2
+    const/4 v4, 0x2
 
     const/4 v9, 0x1
 
@@ -264,21 +264,40 @@
 
     move-result-object v1
 
+    const-string/jumbo v2, "wifi_data_usage"
+
+    invoke-virtual {p0}, Lcom/android/settings/datausage/DataUsagePreference;->getKey()Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-virtual {v2, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v2
+
+    if-eqz v2, :cond_1
+
+    const-string/jumbo v2, "DataUsagePreference"
+
+    const-string/jumbo v3, "setTemplate wifi"
+
+    invoke-static {v2, v3}, Landroid/util/secutil/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    :goto_0
     if-eqz v1, :cond_0
 
     iget-boolean v2, p0, Lcom/android/settings/datausage/DataUsagePreference;->mIsVZW:Z
 
-    if-eqz v2, :cond_1
+    if-eqz v2, :cond_2
 
     sget v2, Lcom/android/settings/datausage/DataUsagePreference;->mSelectDisplayUnit:I
 
-    if-eqz v2, :cond_1
+    if-eqz v2, :cond_2
 
     invoke-virtual {p0}, Lcom/android/settings/datausage/DataUsagePreference;->getContext()Landroid/content/Context;
 
     move-result-object v2
 
-    new-array v3, v3, [Ljava/lang/Object;
+    new-array v3, v4, [Ljava/lang/Object;
 
     invoke-virtual {p0}, Lcom/android/settings/datausage/DataUsagePreference;->getContext()Landroid/content/Context;
 
@@ -305,7 +324,7 @@
     invoke-virtual {p0, v2}, Lcom/android/settings/datausage/DataUsagePreference;->setSummary(Ljava/lang/CharSequence;)V
 
     :cond_0
-    :goto_0
+    :goto_1
     invoke-virtual {p0}, Lcom/android/settings/datausage/DataUsagePreference;->getIntent()Landroid/content/Intent;
 
     move-result-object v2
@@ -315,11 +334,61 @@
     return-void
 
     :cond_1
+    const-string/jumbo v2, "DataUsagePreference"
+
+    const-string/jumbo v3, "setTemplate"
+
+    invoke-static {v2, v3}, Landroid/util/secutil/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    goto :goto_0
+
+    :cond_2
+    const-string/jumbo v2, "wifi_data_usage"
+
+    invoke-virtual {p0}, Lcom/android/settings/datausage/DataUsagePreference;->getKey()Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-virtual {v2, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v2
+
+    if-eqz v2, :cond_3
+
     invoke-virtual {p0}, Lcom/android/settings/datausage/DataUsagePreference;->getContext()Landroid/content/Context;
 
     move-result-object v2
 
-    new-array v3, v3, [Ljava/lang/Object;
+    new-array v3, v9, [Ljava/lang/Object;
+
+    invoke-virtual {p0}, Lcom/android/settings/datausage/DataUsagePreference;->getContext()Landroid/content/Context;
+
+    move-result-object v4
+
+    iget-wide v6, v1, Lcom/android/settingslib/net/DataUsageController$DataUsageInfo;->usageLevel:J
+
+    invoke-static {v4, v6, v7}, Landroid/text/format/Formatter;->formatShortFileSize(Landroid/content/Context;J)Ljava/lang/String;
+
+    move-result-object v4
+
+    aput-object v4, v3, v8
+
+    const v4, 0x7f0b1e44
+
+    invoke-virtual {v2, v4, v3}, Landroid/content/Context;->getString(I[Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-virtual {p0, v2}, Lcom/android/settings/datausage/DataUsagePreference;->setSummary(Ljava/lang/CharSequence;)V
+
+    goto :goto_1
+
+    :cond_3
+    invoke-virtual {p0}, Lcom/android/settings/datausage/DataUsagePreference;->getContext()Landroid/content/Context;
+
+    move-result-object v2
+
+    new-array v3, v4, [Ljava/lang/Object;
 
     invoke-virtual {p0}, Lcom/android/settings/datausage/DataUsagePreference;->getContext()Landroid/content/Context;
 
@@ -343,17 +412,17 @@
 
     invoke-virtual {p0, v2}, Lcom/android/settings/datausage/DataUsagePreference;->setSummary(Ljava/lang/CharSequence;)V
 
-    goto :goto_0
+    goto :goto_1
 .end method
 
 .method public updateSummary()V
     .locals 11
 
-    const v10, 0x7f0b1e31
-
-    const/4 v9, 0x1
+    const v10, 0x7f0b1e43
 
     const/4 v4, 0x2
+
+    const/4 v9, 0x1
 
     const/4 v8, 0x0
 
@@ -387,15 +456,34 @@
 
     move-result-object v1
 
+    const-string/jumbo v2, "wifi_data_usage"
+
+    invoke-virtual {p0}, Lcom/android/settings/datausage/DataUsagePreference;->getKey()Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-virtual {v2, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v2
+
+    if-eqz v2, :cond_1
+
+    const-string/jumbo v2, "DataUsagePreference"
+
+    const-string/jumbo v3, "setTemplate wifi"
+
+    invoke-static {v2, v3}, Landroid/util/secutil/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    :goto_0
     if-eqz v1, :cond_0
 
     iget-boolean v2, p0, Lcom/android/settings/datausage/DataUsagePreference;->mIsVZW:Z
 
-    if-eqz v2, :cond_1
+    if-eqz v2, :cond_2
 
     sget v2, Lcom/android/settings/datausage/DataUsagePreference;->mSelectDisplayUnit:I
 
-    if-eqz v2, :cond_1
+    if-eqz v2, :cond_2
 
     invoke-virtual {p0}, Lcom/android/settings/datausage/DataUsagePreference;->getContext()Landroid/content/Context;
 
@@ -428,10 +516,60 @@
     invoke-virtual {p0, v2}, Lcom/android/settings/datausage/DataUsagePreference;->setSummary(Ljava/lang/CharSequence;)V
 
     :cond_0
-    :goto_0
+    :goto_1
     return-void
 
     :cond_1
+    const-string/jumbo v2, "DataUsagePreference"
+
+    const-string/jumbo v3, "setTemplate"
+
+    invoke-static {v2, v3}, Landroid/util/secutil/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    goto :goto_0
+
+    :cond_2
+    const-string/jumbo v2, "wifi_data_usage"
+
+    invoke-virtual {p0}, Lcom/android/settings/datausage/DataUsagePreference;->getKey()Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-virtual {v2, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v2
+
+    if-eqz v2, :cond_3
+
+    invoke-virtual {p0}, Lcom/android/settings/datausage/DataUsagePreference;->getContext()Landroid/content/Context;
+
+    move-result-object v2
+
+    new-array v3, v9, [Ljava/lang/Object;
+
+    invoke-virtual {p0}, Lcom/android/settings/datausage/DataUsagePreference;->getContext()Landroid/content/Context;
+
+    move-result-object v4
+
+    iget-wide v6, v1, Lcom/android/settingslib/net/DataUsageController$DataUsageInfo;->usageLevel:J
+
+    invoke-static {v4, v6, v7}, Landroid/text/format/Formatter;->formatShortFileSize(Landroid/content/Context;J)Ljava/lang/String;
+
+    move-result-object v4
+
+    aput-object v4, v3, v8
+
+    const v4, 0x7f0b1e44
+
+    invoke-virtual {v2, v4, v3}, Landroid/content/Context;->getString(I[Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-virtual {p0, v2}, Lcom/android/settings/datausage/DataUsagePreference;->setSummary(Ljava/lang/CharSequence;)V
+
+    goto :goto_1
+
+    :cond_3
     invoke-virtual {p0}, Lcom/android/settings/datausage/DataUsagePreference;->getContext()Landroid/content/Context;
 
     move-result-object v2
@@ -460,5 +598,5 @@
 
     invoke-virtual {p0, v2}, Lcom/android/settings/datausage/DataUsagePreference;->setSummary(Ljava/lang/CharSequence;)V
 
-    goto :goto_0
+    goto :goto_1
 .end method

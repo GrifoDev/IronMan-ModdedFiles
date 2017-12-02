@@ -345,7 +345,7 @@
 .method private showAutoClickExclusivePopup()V
     .locals 13
 
-    const v12, 0x7f0b192a
+    const v12, 0x7f0b193c
 
     const/4 v11, 0x0
 
@@ -393,7 +393,7 @@
 
     move-result-object v9
 
-    const v10, 0x7f0b0dcd
+    const v10, 0x7f0b0ddc
 
     invoke-virtual {v9, v10}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -510,7 +510,7 @@
 
     move-result-object v9
 
-    const v10, 0x7f0b0511
+    const v10, 0x7f0b0512
 
     invoke-virtual {v9, v10}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -528,7 +528,7 @@
 
     invoke-direct {v9, p0}, Lcom/android/settings/accessibility/ToggleAutoclickPreferenceFragment$3;-><init>(Lcom/android/settings/accessibility/ToggleAutoclickPreferenceFragment;)V
 
-    const v10, 0x7f0b13d6
+    const v10, 0x7f0b13e7
 
     invoke-virtual {v8, v10, v9}, Landroid/app/AlertDialog$Builder;->setNegativeButton(ILandroid/content/DialogInterface$OnClickListener;)Landroid/app/AlertDialog$Builder;
 
@@ -757,7 +757,7 @@
 
     move-result-object v2
 
-    const v3, 0x7f0f0372
+    const v3, 0x7f0f0371
 
     invoke-virtual {v2, v3}, Landroid/content/res/Resources;->getInteger(I)I
 
@@ -807,7 +807,7 @@
 
     move-result-object v3
 
-    const v4, 0x7f0f0371
+    const v4, 0x7f0f0370
 
     invoke-virtual {v3, v4}, Landroid/content/res/Resources;->getInteger(I)I
 
@@ -916,7 +916,7 @@
 
     invoke-super {p0, p1, p2}, Lcom/android/settings/accessibility/ToggleFeaturePreferenceFragment;->onViewCreated(Landroid/view/View;Landroid/os/Bundle;)V
 
-    const v0, 0x7f0b192a
+    const v0, 0x7f0b193c
 
     invoke-virtual {p0, v0}, Lcom/android/settings/accessibility/ToggleAutoclickPreferenceFragment;->getString(I)Ljava/lang/String;
 

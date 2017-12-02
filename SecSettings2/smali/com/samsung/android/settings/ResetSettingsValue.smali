@@ -1136,40 +1136,10 @@
 .end method
 
 .method private resetSpenSettings()V
-    .locals 4
+    .locals 3
 
-    const/4 v3, 0x1
+    const/4 v2, 0x1
 
-    const/4 v2, 0x0
-
-    invoke-static {}, Lcom/samsung/android/feature/SemFloatingFeature;->getInstance()Lcom/samsung/android/feature/SemFloatingFeature;
-
-    move-result-object v0
-
-    const-string/jumbo v1, "SEC_FLOATING_FEATURE_SETTINGS_PEN_DETECT_MODE_DISALBED"
-
-    invoke-virtual {v0, v1}, Lcom/samsung/android/feature/SemFloatingFeature;->getBoolean(Ljava/lang/String;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    iget-object v0, p0, Lcom/samsung/android/settings/ResetSettingsValue;->mContext:Landroid/content/Context;
-
-    invoke-virtual {v0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
-
-    move-result-object v0
-
-    const-string/jumbo v1, "pen_detect_mode_disabled"
-
-    invoke-static {v0, v1, v3}, Landroid/provider/Settings$System;->putInt(Landroid/content/ContentResolver;Ljava/lang/String;I)Z
-
-    invoke-static {v3}, Lcom/samsung/android/hardware/SemHardwareInterface;->setEPenSavingmode(I)Z
-
-    :goto_0
-    return-void
-
-    :cond_0
     iget-object v0, p0, Lcom/samsung/android/settings/ResetSettingsValue;->mContext:Landroid/content/Context;
 
     invoke-virtual {v0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
@@ -1182,7 +1152,7 @@
 
     invoke-static {v2}, Lcom/samsung/android/hardware/SemHardwareInterface;->setEPenSavingmode(I)Z
 
-    goto :goto_0
+    return-void
 .end method
 
 .method private setDefaultRingtoneFileNames()V
@@ -2888,6 +2858,16 @@
     move-result-object v7
 
     const-string/jumbo v8, "db_split_screen_view_shortcut"
+
+    invoke-static {v7, v8, v12}, Landroid/provider/Settings$System;->putInt(Landroid/content/ContentResolver;Ljava/lang/String;I)Z
+
+    iget-object v7, p0, Lcom/samsung/android/settings/ResetSettingsValue;->mContext:Landroid/content/Context;
+
+    invoke-virtual {v7}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
+
+    move-result-object v7
+
+    const-string/jumbo v8, "db_snap_window_shortcut"
 
     invoke-static {v7, v8, v12}, Landroid/provider/Settings$System;->putInt(Landroid/content/ContentResolver;Ljava/lang/String;I)Z
 

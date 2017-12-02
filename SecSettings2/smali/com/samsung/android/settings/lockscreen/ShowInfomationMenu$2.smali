@@ -549,11 +549,11 @@
 
     move-result v5
 
-    const v4, 0x7f0b140c
+    const v4, 0x7f0b141d
 
     if-eqz v5, :cond_e
 
-    const v4, 0x7f0b0a7e
+    const v4, 0x7f0b0a8c
 
     :cond_e
     invoke-static {v4, v1}, Lcom/samsung/android/settings/lockscreen/OwnerInfo;->newInstance(ILjava/lang/String;)Lcom/samsung/android/settings/lockscreen/OwnerInfo;

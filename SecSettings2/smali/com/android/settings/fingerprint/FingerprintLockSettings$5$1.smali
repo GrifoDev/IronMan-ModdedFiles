@@ -245,7 +245,7 @@
 
     iget-object v1, v1, Lcom/android/settings/fingerprint/FingerprintLockSettings$5;->this$0:Lcom/android/settings/fingerprint/FingerprintLockSettings;
 
-    const v2, 0x7f0b07c8
+    const v2, 0x7f0b07cc
 
     invoke-static {v1, v2}, Lcom/android/settings/fingerprint/FingerprintLockSettings;->-wrap7(Lcom/android/settings/fingerprint/FingerprintLockSettings;I)V
 
@@ -286,7 +286,7 @@
 
     iget-object v1, v1, Lcom/android/settings/fingerprint/FingerprintLockSettings$5;->this$0:Lcom/android/settings/fingerprint/FingerprintLockSettings;
 
-    const v2, 0x7f0b07cb
+    const v2, 0x7f0b07cf
 
     invoke-static {v1, v2}, Lcom/android/settings/fingerprint/FingerprintLockSettings;->-wrap7(Lcom/android/settings/fingerprint/FingerprintLockSettings;I)V
 

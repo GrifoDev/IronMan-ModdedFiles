@@ -119,7 +119,7 @@
 
     iput-object v0, p0, Lcom/samsung/android/settings/wifi/mobileap/WifiApConnectedDevice;->mConnectedTime:Ljava/lang/Long;
 
-    const v0, 0x7f040258
+    const v0, 0x7f04025b
 
     invoke-virtual {p0, v0}, Lcom/samsung/android/settings/wifi/mobileap/WifiApConnectedDevice;->setLayoutResource(I)V
 
@@ -216,7 +216,7 @@
 
     aput-object v2, v1, v3
 
-    const v2, 0x7f0b1030
+    const v2, 0x7f0b103f
 
     invoke-virtual {v0, v2, v1}, Landroid/content/res/Resources;->getString(I[Ljava/lang/Object;)Ljava/lang/String;
 
@@ -394,7 +394,7 @@
 .method public onBindView(Landroid/view/View;)V
     .locals 12
 
-    const v11, 0x7f0b050e
+    const v11, 0x7f0b050f
 
     const/16 v10, 0x8
 
@@ -457,7 +457,7 @@
 
     invoke-super {p0, p1}, Landroid/preference/Preference;->onBindView(Landroid/view/View;)V
 
-    const v6, 0x7f1106aa
+    const v6, 0x7f1106ac
 
     invoke-virtual {p1, v6}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -465,7 +465,7 @@
 
     check-cast v0, Landroid/widget/LinearLayout;
 
-    const v6, 0x7f1106ab
+    const v6, 0x7f1106ad
 
     invoke-virtual {p1, v6}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -497,7 +497,7 @@
 
     iput v9, p0, Lcom/samsung/android/settings/wifi/mobileap/WifiApConnectedDevice;->mIsButtonState:I
 
-    const v6, 0x7f02062d
+    const v6, 0x7f02062f
 
     invoke-virtual {v1, v6}, Landroid/widget/ImageView;->setImageResource(I)V
 
@@ -555,7 +555,7 @@
 
     :cond_1
     :goto_0
-    const v6, 0x7f1106a9
+    const v6, 0x7f1106ab
 
     invoke-virtual {p1, v6}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -582,7 +582,7 @@
 
     iput v6, p0, Lcom/samsung/android/settings/wifi/mobileap/WifiApConnectedDevice;->mIsButtonState:I
 
-    const v6, 0x7f020632
+    const v6, 0x7f020634
 
     invoke-virtual {v1, v6}, Landroid/widget/ImageView;->setImageResource(I)V
 
@@ -600,7 +600,7 @@
 
     move-result-object v6
 
-    const v7, 0x7f0b1ab3
+    const v7, 0x7f0b1ac5
 
     invoke-virtual {v6, v7}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -695,7 +695,7 @@
 
     invoke-virtual {v8, v9, v10}, Landroid/net/wifi/WifiApWhiteList;->addWhiteList(Ljava/lang/String;Ljava/lang/String;)I
 
-    const v5, 0x7f0b0fa2
+    const v5, 0x7f0b0fb1
 
     new-instance v6, Landroid/os/Message;
 
@@ -766,7 +766,7 @@
 
     invoke-direct {p0}, Lcom/samsung/android/settings/wifi/mobileap/WifiApConnectedDevice;->reloadWhiteList()V
 
-    const v5, 0x7f0b0fa3
+    const v5, 0x7f0b0fb2
 
     new-instance v4, Landroid/os/Message;
 

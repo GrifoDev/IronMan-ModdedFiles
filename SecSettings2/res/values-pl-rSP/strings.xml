@@ -122,6 +122,8 @@
     <string name="wifi_allow_scan_with_traffic_summary">Przizwŏlej na autōmatyczne skanowanie roamingu Wi-Fi abo niy dej tego uprŏwniynio na bazie ilości zużytych danych.</string>
     <string name="select_logd_size_title">Wielgość bufora do registrowaniŏ</string>
     <string name="select_logd_size_dialog_title">Ôbier maksymalnŏ wielgość kŏżdego zbuforowanego dziynnika</string>
+    <string name="dev_logpersist_clear_warning_title">Wyczyścić trwałą pamięć dziennika?</string>
+    <string name="dev_logpersist_clear_warning_message">Dane dziennika zostaną usunięte po wyłączeniu trwałego dziennika.</string>
     <string name="select_logpersist_title">Trwale przechowuj dane raportu</string>
     <string name="select_logpersist_dialog_title">Wybór buforów raportów do trwałego zapisu</string>
     <string name="select_usb_configuration_title">Rychtowanie USB</string>
@@ -226,7 +228,7 @@
     <string name="hours">%d godz.</string>
     <string name="hour_minutes">%1$d godz. %2$d min</string>
     <string name="minutes">%d min.</string>
-    <string name="battery_discharging_duration">Szacowany czas pracy baterii: %s</string>
+    <string name="battery_discharging_duration">Ôtaksowany czas fōngowaniŏ bateryje: %s</string>
     <string name="bluetooth_tethering_cannot_connect_while_connected_to_wifi">Niy idzie używać routera Bluetooth kej żeś je pożyniōny z necem W-Fi.</string>
     <string name="video_call_title">Połōnczynie wideo</string>
     <string name="samsung_cloud_title">Samsung Cloud</string>
@@ -855,6 +857,7 @@ Może wylyź niywielgŏ rōżnica klangu puszczanego przez te 2 pożyniōne masz
     <string name="bluetooth_avc_available_description">Podepniynto maszina Bluetooth ôbsuguje Synchrōnizacyjo mocy głosu mediōw, tōż moc głosu masziny Bluetooth bydzie synchrōnizowano z mobilniŏkym.</string>
     <string name="bluetooth_enter_pin_msg">Podej PIN, coby skuplować z %s (Sprōbuj 0000 abo 1234).</string>
     <string name="bluetooth_pin_maximum_number_message">Szafniynto je nojwiynkszŏ wieloś znakōw.</string>
+    <string name="bluetooth_frp_permission_message">Nie można użyć urządzenia Bluetooth do tego połączenia.</string>
     <string name="settings_menu_done">Fertich</string>
     <string name="usb_tethering_unavailable_subtext_tmo">USB not connected</string>
     <string name="usb_tethering_available_subtext_tmo">USB connected, check to tether</string>
@@ -945,7 +948,7 @@ Ikōny fōnkcyji Podŏwanie dyrekt bydōm pokŏzane we wiyrchnyj tajli panelu po
     <string name="finger_sensor_gesture_title">Gesty czujnika palcōw</string>
     <string name="finger_sensor_gesture_summary">Ôtwiyrej i zawiyrej aplikacyje i fōnkcyje bez czujnik ôdciskōw palcōw.</string>
     <string name="finger_sensor_gesture_summary_noapp">Ôdewrzij i zawrzij panel nowin bez użycie synsora ôdciskōw palcōw.</string>
-    <string name="finger_sensor_gesture_description">Przeciągnij w górę lub w dół po czujniku odcisków palców, aby otworzyć lub zamknąć panel powiadomień. (Ta funkcja jest wstrzymana, gdy czujnik aktywnie wykrywa odcisk palca).</string>
+    <string name="finger_sensor_gesture_description">Szibnij ku wiyrchu abo na spodek po synsorze ôdciskōw palcōw, coby ôdewrzić abo zawrzić panel nowin. (Ta fōnkcyjo je sztopniynto, kej synsor aktywnie wysznupuje ôdcisk palca).</string>
     <string name="open_samsung_pay_title">Ôdewrzij Samsung Pay</string>
     <string name="open_samsung_pay_summary">Na ekranie bazowym przejedź palcem na wiyrch na czujniku ôdciskōw palcōw, coby ôdewrzić usuga Samsung Pay.</string>
     <string name="common_edit">Poprŏw</string>
@@ -1136,7 +1139,7 @@ Data usage is measured by your phone. Your carrier may account for usage differe
     <string name="auto_update_summary">Autōmatycznie zebiyrej uaktualniynia ôprogramowanio bez czas zepniyńcio z necym Wi-Fi. Bez czas zebiyranio idzie dalij używać masziny.</string>
     <string name="auto_update_over_wifi">Autōmat. zebiyrej bez Wi-Fi</string>
     <string name="auto_update_over_wifi_summary">Autōmatycznie zebiyrej uaktualniynia ôprogramowanio bez czas zepniyńcio z necym Wi-Fi. Podug dostŏwcy serwisōw uaktualniynia poradzōm być tyż zebiyrane bez dane mobilne bez ekstra płatōw. Bez czas zebiyranio dalij bydzie szło używać mobilniŏka.</string>
-    <string name="scheduled_update">Zaplanowane akt. oprogramowania</string>
+    <string name="scheduled_update">Ôbsztalowane uakt. ôprogramow.</string>
     <string name="scheduled_update_summary_default">Wył.</string>
     <string name="scheduled_update_summary_set_time">Uaktualniynie sztartnie ô godzinie %s</string>
     <string name="scheduled_update_summary_set_time_everyday">Uaktualniynie bydzie sztartować kożdy dziyń ô godzinie %s</string>
@@ -1348,15 +1351,15 @@ Tyknij OK, coby przizwolić na zwielgszynie widności wiyncyj co bezpieczny pozi
     <string name="navigationbar_order_mirrored">Nazŏd - Ekran bazowy - Niydŏwne</string>
     <string name="navigationbar_unlock_with_home_btn_title">Ôdblokuj bez knefel ekr.bazowego</string>
     <string name="navigationbar_unlock_with_home_btn_summary">Kej wyłōnczysz ekran, naciś fest knefel ekranu bazowego, coby ôstŏwić blokada ekranu i przelyźć dyrekt do ekranu bazowego.</string>
-    <string name="navigationbar_unlock_with_home_btn_disable_summary">Niedostępne po wyłączeniu ustawienia Mocno naciśnij przycisk ekranu startowego</string>
+    <string name="navigationbar_unlock_with_home_btn_disable_summary">Niy do chycynio po wyłōnczyniu sztalowania Fest tyknij knefel ekranu sztartowego</string>
     <string name="navigationbar_category_button">Knefle</string>
     <string name="navigationbar_pressure_sensitivity_title">Fest naciś kenefel ekranu bazowego</string>
     <string name="navigationbar_pressure_sensitivity_summary">Coby użyć skrytego knefla ekranu bazowego, naciś go barzij fest niż normalnie.</string>
     <string name="navigationbar_pressure_sensitivity_level_summary">Poziōm ciśniynio: %1$d z %2$d</string>
-    <string name="navigationbar_pressure_sensitivity_description_off">Coby użyć skrytego knefla ekranu bazowego, naciś go barzij fest niż normalnie.</string>
+    <string name="navigationbar_pressure_sensitivity_description_off">Napasuj druk potrzebny do fest ściśniyńciŏ knefla ekranu bazowego.</string>
     <string name="navigationbar_pressure_low">Leksij</string>
     <string name="navigationbar_pressure_high">Feścij</string>
-    <string name="navigationbar_hide_bar">Przycisk pokaż i ukryj</string>
+    <string name="navigationbar_hide_bar">Knefel pokoż i skryj</string>
     <string name="navigationbar_hide_bar_summary">Dodaj przycisk po lewej stronie paska nawigacji, aby pokazać lub ukryć pasek nawigacji.</string>
     <string name="navigationbar_hide_bar_apps_description">W razie wyłączenia przycisk zostanie usunięty, a pasek nawigacji będzie zawsze widoczny.</string>
     <string name="full_screen_apps_title">Aplikacyje na cołkiym ekranie</string>
@@ -1492,7 +1495,7 @@ Tyknij OK, coby przizwolić na zwielgszynie widności wiyncyj co bezpieczny pozi
     <string name="crypt_keeper_decrypt_title">Ôdszifruj maszina</string>
     <string name="crypt_keeper_decrypt_summary">Maszina ôdszyfrowanŏ.</string>
     <string name="crypt_keeper_type_pin">Kod PIN</string>
-    <string name="crypt_keeper_type_pattern">Muster</string>
+    <string name="crypt_keeper_type_pattern">symbolu</string>
     <string name="crypt_keeper_type_password">Hasło</string>
     <string name="crypt_keeper_type_direction">Blokada kerunkami</string>
     <string name="crypt_keeper_confirm_title_dec">Przichwol rozszifrowaniy</string>
@@ -1576,7 +1579,11 @@ Szyfrowanie poradzi zetrwać nojmynij godzina. Przed sztartniyńciym bydź ziche
     <string name="crypt_keeper_confirm_title">Przichwol szifrowaniy</string>
     <string name="crypt_keeper_final_desc">Szyfrowania masziny niy do się cofnōńć, a dane bydōm stracōne, kej proces bydzie sztopniynty. Szyfrowaniy poradzi trwać i godzina, w tym czasie maszina bydzie pŏra rŏzy załōnczono jeszcze rŏz i niy bydzie szło jej używać.</string>
     <string name="crypt_keeper_setup_title">Szyfrowaniy….</string>
-    <string name="crypt_keeper_warn_wipe">Prōb sztartniyńcio masziny je już ino: %d, podwiel maszina bydzie wynulowano do dōmyślnych sztalowań fabrycznych. Sprŏwi to wypucowanie wszyjskich danych, w tym plikōw i zebranych aplikacyji.</string>
+    <string name="crypt_keeper_warn_wipe">"Ôstało prōb: %1$d przōdzij co wynulowanie mobilniŏka do dōmyślnych sztalowań fabrycznych. Sprŏwi to wyciepanie wszyjskich danych, w tym plikōw i zebranych aplikacyji.
+
+Eli mobilniŏk bydzie wynulowany, zdo sie co trza bydzie wkludzić informacyjo ô kōncie %2$s (adresa e-mail i hasło) pożyniōnym z tym mobilniŏkym, coby dalij szło ônego używać."</string>
+    <string name="crypt_keeper_samsung_account">Kōnto Samsung</string>
+    <string name="crypt_keeper_google_account">Kōnto Google</string>
     <string name="crypt_keeper_failed_title">Niy poradziłżech zaszifrować</string>
     <string name="crypt_keeper_failed_summary">Niy idzie sztartnōńć masziny. Proces szyfrowanio je serwany. Musisz przywrōcić w maszinie dōmyślne sztalowania fabryczne. Sprŏwi to wyciepanie wszyjskich danych.</string>
     <string name="crypt_keeper_data_corrupted_title">Felerno pamiyńć masziny</string>
@@ -1595,10 +1602,13 @@ Szyfrowanie poradzi zetrwać nojmynij godzina. Przed sztartniyńciym bydź ziche
     <string name="cryptkeeper_wrong_pin">Podany PIN je felerny</string>
     <string name="cryptkeeper_wrong_direction">Nakryślōny felerny kerunek</string>
     <string name="checking_decryption">Sprawdzanie…</string>
-    <string name="crypt_keeper_last_warn_wipe">Ôstała już ino 1 prōba sztartniyńcio masziny, zanim maszina bydzie zresetowano do dōmyślnych sztalowań fabrycznych. Sprŏwi to co bydōm wypucowane wszyjske dane, w tym pliki i zebrane aplikacyje.</string>
+    <string name="crypt_keeper_last_warn_wipe">"Pozostała 1 próba przed zresetowaniem telefonu do domyślnych ustawień fabrycznych. Spowoduje to usunięcie wszystkich danych, w tym plików i pobranych aplikacji.
+
+Jeśli telefon zostanie zresetowany, konieczne może być wprowadzenie informacji o koncie %s (adres e-mail i hasło) powiązanym z tym telefonem, aby nadal móc z niego korzystać."</string>
     <string name="crypt_keeper_failed_title_dec">Niy poradziłżech ôdszifrować</string>
     <string name="crypt_keeper_failed_summary_dec">Niy dŏ się zakōńczyć ôdszyfrowaniŏ skuli sztopniyńciŏ. Wrōć nazŏd nasztalowania fabryczne (wyciepnie to wszyjskie dane) przed użyciem.</string>
     <string name="crypt_keeper_set_screen_lock_type">Nasztaluj typ blokady ekrōnu</string>
+    <string name="crypt_keeper_warning_keyboard_cover_does_not_work">Klawiatura zewnętrzna nie będzie działać po ponownym uruchomieniu telefonu.</string>
     <string name="encryption_interstitial_message">"Poradzisz ekstra chrōnić mobilniŏk, bez dopōmniynie sie wkludzynio %s przed sztartniyńciym mobilniŏka. Pōmŏgo to chrōnić dane na stracōnych abo ukradziōnych maszinach. Niykere aplikacyje poradzōm dopōminać sie Bezpiecznego sztartniyńcio podug prawideł szyfrowanio masziny coby mieć dostymp do fōnkcyji, takich co synchrōnizacyjo poczty e-mail.
 
 Niy bydziesz przijmować żodnych gŏdek, wiadōmości eli nowin ani słyszeć alarmōw do czasu sztartniyńcio mobilniŏka."</string>
@@ -1843,6 +1853,12 @@ You will also need it when:"</string>
     <string name="lockpassword_confirm_your_pin_with_fingerprint">Użyj ôdcisku palca abo wkludź terŏźny kod PIN.</string>
     <string name="lockpassword_confirm_your_pattern_with_fingerprint">Użyj ôdcisku palca abo naszkryflej terŏźny znak.</string>
     <string name="lockpassword_confirm_your_password_with_fingerprint">Użyj ôdcisku palca abo wkludź terŏźne hasło.</string>
+    <string name="lockpassword_confirm_your_pin_with_iris">Użyj tynczōwek abo wkludź terŏźny kod PIN.</string>
+    <string name="lockpassword_confirm_your_pattern_with_iris">Użyj tynczōwek abo nakryśl terŏźny znak.</string>
+    <string name="lockpassword_confirm_your_password_with_iris">Użyj tynczōwek abo wkludź terŏźne hasło.</string>
+    <string name="lockpassword_confirm_your_pin_with_biometrics">Użyj biometrii lub wprowadź kod PIN.</string>
+    <string name="lockpassword_confirm_your_pattern_with_biometrics">Użyj biometrii lub narysuj swój symbol.</string>
+    <string name="lockpassword_confirm_your_password_with_biometrics">Użyj biometrii lub wprowadź hasło.</string>
     <string name="lockpassword_confirm_your_pin_instead_of_fingerprint">Wkludź kod PIN, coby niy używać poznŏwanio ôdciskōw palcōw.</string>
     <string name="lockpassword_confirm_your_pattern_instead_of_fingerprint">Naszkryflej znak, coby niy używać poznŏwanio ôdciskōw palcōw.</string>
     <string name="lockpassword_confirm_your_password_instead_of_fingerprint">Wkludź hasło, coby niy używać poznŏwanio ôdciskōw palcōw.</string>
@@ -1917,6 +1933,7 @@ Załōncz ôdblokowanie bez gymba, coby używać biōmetryji abo %s do ôdblokow
     <string name="face_status_timeout">Limit czasu. Spróbuj później.</string>
     <string name="okay">OK</string>
     <string name="face_samsung_account_button">Użyj kōnta Samsung</string>
+    <string name="face_galaxy_account_button">Użyj kōnta Galaxy</string>
     <string name="face_error_DB_corrupted">Zaszeł problym z danymi gymby. Zaregistruj gymba zajś.</string>
     <string name="face_error_DB_corrupted_popup_title">Zaregistruj gymba zajś</string>
     <string name="face_error_timeout">Nie wykryto twarzy.</string>
@@ -2027,7 +2044,7 @@ Załōncz ôdblokowanie bez tynczōwki, coby używać biōmetryji abo %s do ôdb
     <string name="biometrics_backup_locktype_title">Rychtowanie zabezpieczyń tynczōwek</string>
     <string name="biometrics_register_your_iris">Zaregistruj swoje tynczōwki.</string>
     <string name="biometrics_backup_locktype_summary">Coby ôdbloknōńć maszina bez tynczōwki, trza nasztalować znak, kod PIN abo hasło.</string>
-    <string name="biometrics_backup_locktype_message">Coby używać tynczōwek do ôdblokowaniŏ telefōnu abo do bezpiecznyj weryfikacyji, trza:</string>
+    <string name="biometrics_backup_locktype_message">Coby używać tynczōwek do ôdblokowywaniŏ telefōnu abo do weryfikowania siebie w aplikacyjach, zrychtuj dalij pokŏzane dziŏłania:</string>
     <string name="iris_delete_popup_title">Wyciepać dane tynczōwek?</string>
     <string name="iris_delete_popup_message">Wyciepać dane tynczōwek?</string>
     <string name="iris_delete_popup_message_with_related_func">Fōnkcyje, kere używajōm tynczōwek bydōm wyłōnczōne.</string>
@@ -2103,6 +2120,9 @@ Urządzenie wyposażone jest w dodatkowe opcje zabezpieczeń. Aby z nich skorzys
     <string name="biometrics_dex_cant_use_msg">Niy idzie używać fōnkcyji %s w aplikacyji Samsung DeX.</string>
     <string name="biometrics_dex_closed_to_switch">Zawarto %s coby przepnōńć na Samsung DeX.</string>
     <string name="biometircs_dex_cant_use_toast">Niy idzie sztartnōńć aplikacyji %s w trybie Samsung DeX. Wybadej sztartnōńć ôna w trybie mobilniŏka.</string>
+    <string name="iris_guide_text_preview">P.tukej, coby uż.tyncz.</string>
+    <string name="iris_guide_enable_toggle">Tyknij sam, coby użyć tynczōwek</string>
+    <string name="iris_cannot_verify">Feler weryfikacyje tynczōwek</string>
     <string name="knox_twofactor_bio_description">Ôbier typ blokady biometrycznyj i drugi typ blokady do ôdblokowaniŏ %s.</string>
     <string name="fingerprint_registered">Byda użiwoł zaregistrowanych ôdciskōw ôd palcōw wrŏz z ôbranōm metodōm ôdmykaniŏ.</string>
     <string name="knox_twofactor_description">Ôbier biōmetryjŏ i drugi typ blokady do ôdblokowaniŏ %s.</string>
@@ -2423,7 +2443,7 @@ Wyciepanie danych biōmetrycznych je rekōmandowane, ale idzie je zachować, cob
     <string name="lock_simple_shortcut_right">Prawy skrōt</string>
     <string name="credentials_configure_lock_screen_hint">Coby użyć trzimaniŏ haseł, nasztaluj typ blokady ekranu znak, PIN abo hasło.</string>
     <string name="credentials_configure_lock_screen_hint_with_directionlock">Coby używać pamiyńci certyfikatōw, pomiyń typ blokniyńcio ekranu na Blokniyńcie kerunkami, Znak, Kod PIN abo Hasło, a potym badnij drugi rŏz.</string>
-    <string name="credentials_configure_lock_screen_hint_with_biometrics">Aby korzystać z pamięci poświadczeń, zmień typ blokady ekranu na Symbol, Kod PIN lub Biometria, a następnie spróbuj ponownie.</string>
+    <string name="credentials_configure_lock_screen_hint_with_biometrics">Coby używać pamiyńci certyfikatōw, pomiyń zorta blokniyńcio ekranu na Znak, Kod PIN abo Biometrjo, a dalij wybadej drugi rŏz.</string>
     <string name="credentials_configure_lock_screen_hint_with_biometrics_directionlock">Aby korzystać z pamięci poświadczeń, zmień typ blokady ekranu na Blokada kierunkami, Symbol, Kod PIN, Hasło lub Biometria, a następnie spróbuj ponownie.</string>
     <string name="dialog_alert_title_for_configure_keyguard">Nasztaluj bezpieczny typ blokowaniŏ ekranu.</string>
     <string name="mirror_link_certificate_signing_entity">Wydano bez</string>
@@ -2955,7 +2975,7 @@ prywatny"</string>
     <string name="apps_edge_title">Aplikacyje na rancie</string>
     <string name="edge_panels">Panele Edge</string>
     <string name="sound_balance_summary">Sztaluj balans klangu na lewyj i prawyj zajcie dlo suchŏwek.</string>
-    <string name="backup_samsung_account_title">Ustawienia kopii zapasowej</string>
+    <string name="backup_samsung_account_title">Sztalowanie kopji na ibrich</string>
     <string name="restore_samsung_account_title">Wrōć nazŏd</string>
     <string name="auto_restart_header">Resykrowanie mobilniŏkym</string>
     <string name="auto_restart_header_tablet">Reskyrowanie tabletym</string>
@@ -2965,6 +2985,7 @@ prywatny"</string>
     <string name="easy_mode_app_help">Używej masziny z wiynkszōm letkościōm bez letki ukłŏd ekranu bazowego i srogsze dingsy na ekranie.</string>
     <string name="easy_mode_app_help_dream_1">Używej przimego ukłŏdu ekranu bazowego i srogszych dingsōw na ekranie.</string>
     <string name="easy_mode_app_help_dream_2">Wszyjskie przipasowania ekranu bazowego bydōm ôdciepane a powielgszenie ekranu bydzie nasztalowane na maksymalne.</string>
+    <string name="easy_mode_app_help_3rd_launcher">Zastosuj Tryb ułatwienia w celu uzyskania większych elementów na ekranie. Jeśli nie używasz ekranu startowego TouchWiz, układ ekranu startowego nie zmieni się, ale powiększenie ekranu będzie duże, a rozmiar czcionki — średni.</string>
     <string name="security_warning_content">Mogesz chrōnić swoja prywatność bez nasztalowaniy hasła, PINu abo wzoru ôdblokwaniŏ ekranu.</string>
     <string name="lock_setting_weather_desc">Coby pokŏzać abo zmiynić nasztalowania pogody, tyknij niżyj pokŏzanyj ôpcyji SZTALOWANIE POGODY.</string>
     <string name="lock_setting_weather_btn">Nasztalowania pogody</string>
@@ -3211,7 +3232,7 @@ Downloading via mobile networks may result in additional charges depending on yo
     <string name="disable_hovering_title">Wyłōncz Bez tykaniŏ</string>
     <string name="disable_hovering_summary">Air view i TalkBack niy śmiōm być załōnczōne narŏz. Air view bydzie wyłōnczōne.</string>
     <string name="pen_settings_pen_input">Bez. Wpisywaniy filŏkiym</string>
-    <string name="action_memo_onoff_screen_title">Zapisek wył.ekr.</string>
+    <string name="action_memo_onoff_screen_title">Zapiska wyłōnczōnygo ekranu</string>
     <string name="screen_off_note_summary">Pisz notatki przy wyłączonym ekranie. Wystarczy wyjąć rysik S Pen i już można zacząć pisać.</string>
     <string name="screen_off_note_summary_jpn">Coby rychtować zapiski, ôdepnij filŏk S Pen, kej je wyłōnczōny ekran a potym szkryftej nim po ekranie. Zapiski z wyłōnczōnego ekranu bydōm zachowane w aplikacyji Zapiski Galaxy.</string>
     <string name="screen_off_note_summary_no_detach">Coby rychtować zapiski, naciś Filŏk, tyknij ekranu, kej je wyłōnczōny a potym szkryftej po nim. Zapiski z wyłōnczōnego ekranu bydōm zachowane w aplikacyji Zapiski Samsung.</string>
@@ -3242,7 +3263,7 @@ Downloading via mobile networks may result in additional charges depending on yo
     <string name="apps_and_functions_summary">Niy ôbrane aplikacyje ani fōnkcyje</string>
     <string name="pen_feedback_pen_haptic_title">Wibracja</string>
     <string name="pen_feedback_pen_haptic_summary">Wibracje telefonu przy wkładaniu lub wyjmowaniu rysika S Pen.</string>
-    <string name="pen_application_none">Nic nie rób</string>
+    <string name="pen_application_none">Nic niy rōb</string>
     <string name="pen_detachment_option_action_memo">Zapisek z akcyji</string>
     <string name="pen_detachment_option_handwriting_memo">Złōnacz zŏpisek</string>
     <string name="pen_detachment_option_air_command">Otw. Polecen. wskaz.</string>
@@ -3818,7 +3839,7 @@ Używanie fōnkcyji Router Wi-Fi zwielgszŏ spotrzebowanie bateryji i danych."</
     <string name="wfd_descrpition_playsound">Puść klang.</string>
     <string name="wfd_is_not_supported">Ta fōnkcyjŏ niy je ôbsugiwanŏ.</string>
     <string name="usbtethering_notify_wifi_is_on_title">Wyłōnczyć fōnkcyjo Wi-Fi?</string>
-    <string name="usbtethering_notify_wifi_is_on">Routery Wi-Fi i USB niy śmiōm być ôdewarte we tym samym czasie. Wyłōncz fōnkcyjŏ Wi-Fi.</string>
+    <string name="usbtethering_notify_wifi_is_on">Routery Wi-Fi i USB nie mogą być włączone w tym samym czasie. Router Wi-Fi zostanie wyłączony.</string>
     <string name="disable_multi_window_dialog_text">Fōnkcyjo wielu ôkiyn bydzie wyłōnczōno, a wszyjske aplikacyje ôdewrzōne w ôkiynkach pop-up bydōm zawarte.</string>
     <string name="keyguard_password_attempt_count_pin_code">Ôstały prōby: %d.</string>
     <string name="keyguard_password_attempts_count_pin_code">Ôstŏło prōb: %d.</string>
@@ -4026,6 +4047,7 @@ Odbieranie SMS-ów"</string>
     <string name="hdmi_mode_title">Tryb HDMI</string>
     <string name="hdmi_mode_dex">Samsung DeX</string>
     <string name="hdmi_mode_mirroring">Screen Mirroring</string>
+    <string name="hdmi_mode_not_available_while_cover_attached">Brak dostępu do funkcji %s przy założonej okładce.</string>
     <string name="screen_timeout_for_dex">Lim.cz.wyg.ekr. dlo Samsung DeX</string>
     <string name="show_virtual_keyboard_for_dex">Pokŏż tastatura ekranowo w trybie Samsung DeX</string>
     <string name="comma">,</string>
@@ -4471,6 +4493,8 @@ W celu poprawienia dokładności lokalizacji aplikacje i usługi mogą skanować
     <string name="wifi_empty_list_user_restricted">Niy mŏsz uprawniyń do zmiany nasztalowań Wi-Fi.</string>
     <string name="wifi_setup_wps">Autōmatyczne sztalowanie (WPS)</string>
     <string name="wifi_show_advanced">Pokoż ôpcyje zaawansowane</string>
+    <string name="wifi_advanced_toggle_description_expanded">Tyknij dwa razy, coby swinōńć.</string>
+    <string name="wifi_advanced_toggle_description_collapsed">Tyknij dwa razy, coby rozwinōńć.</string>
     <string name="wifi_wps_setup_title">Nasztalowania ôd WPS</string>
     <string name="wifi_wps_setup_msg">Załōnczanie WPS…</string>
     <string name="wifi_wps_onstart_pbc">Tyknij knefla chrōniōnego sztalowania Wi-Fi na routerze. Może być ôznaczōny WPS abo mieć taki symbol:</string>
@@ -4502,6 +4526,10 @@ W celu poprawienia dokładności lokalizacji aplikacje i usługi mogą skanować
     <string name="wifi_shared">Udostympniōne</string>
     <string name="wifi_unchanged">(niy ma zmian)</string>
     <string name="wifi_unspecified">(Niyôkreślōny)</string>
+    <string name="wifi_select_cert">Wybierz certyfikat</string>
+    <string name="wifi_do_not_provide_eap_user_cert">Nie podawaj</string>
+    <string name="wifi_do_not_validate_eap_server">Nie sprawdzaj</string>
+    <string name="wifi_do_not_validate_eap_server_warning">Nie określono certyfikatu. Połączenie nie będzie prywatne.</string>
     <string name="wifi_scan_always_turnon_message">Aplikacyjŏ %s chce przizwolyniŏ na skanowanie coby znŏjś nece Wi-Fi nawet kej Wi-Fi je wyłōnczōne ku cylu m.in. poprŏwianŏ akuratności lokalizacyji. Dozwolić dlŏ wzyjskich aplikacyjōw?</string>
     <string name="wifi_scan_always_confirm_allow">Zezwōl</string>
     <string name="wifi_scan_always_confirm_deny">Ôdciep</string>
@@ -4535,7 +4563,7 @@ W celu poprawienia dokładności lokalizacji aplikacje i usługi mogą skanować
     <string name="wifi_dns2">DNS 2</string>
     <string name="wifi_gateway">Wrota</string>
     <string name="wifi_network_prefix_length">Dugoś ôd necowego prefiksu</string>
-    <string name="wifi_watchdog_connectivity_check_adaptive">Wi-Fi w trybie adaptacyjnym</string>
+    <string name="wifi_watchdog_connectivity_check_adaptive">Adaptive Wi-Fi</string>
     <string name="wifi_watchdog_connectivity_check_summary">Autōmatycznie przełōnczej miyndzy Wi-Fi a mobilnymi necami, coby zachować pewne połōnczyniy z internecym.</string>
     <string name="wifi_watchdog_connectivity_check_summary_include_autowifi">Autōmatyczne przepinej postrzōd necami Wi-Fi a danymi mobilnymi i zachowuj po wiela razy używane nece Wi-Fi.</string>
     <string name="wifi_smart_network_switch_turned_on">Wł.</string>
@@ -4753,8 +4781,8 @@ Po sformatowaniu będzie działać tylko w tym urządzeniu.
 
 "<b>Formatowanie usuwa wszystkie dane zapisane obecnie w pamięci %2$s.</b> Aby uniknąć utraty danych, wykonaj ich kopię zapasową przed sformatowaniem pamięci %3$s.</string>
     <string name="storage_wizard_format_confirm_next">Formatuj</string>
-    <string name="storage_wizard_format_progress_title">Formatowanie urządzenia pamięci %1$s</string>
-    <string name="storage_wizard_format_progress_body">"Formatowanie urządzenia pamięci %1$s…
+    <string name="storage_wizard_format_progress_title">Formatowanie %1$s</string>
+    <string name="storage_wizard_format_progress_body">"Formatowanie %1$s…
 
 Nie usuwaj go podczas formatowania."</string>
     <string name="storage_wizard_migrate_title">Eksport danych</string>
@@ -4836,9 +4864,9 @@ Rozważ użycie szybszej karty pamięci lub urządzenia pamięci USB w celu popr
     <string name="restore_default_apn_completed">Nasztalowania APN ôstały zresetowane do wartości dōmyślnych.</string>
     <string name="reset_network_desc">To sprowi wynulowanie wszyjskich sztalowań necowych, w tym fōnkcyji:</string>
     <string name="reset_network_button_text">Nuluj ustawiynia</string>
-    <string name="reset_network_final_desc">Wszyjske sztalowania połōnczyń bydōm zresetowane. Tego działanio niy idzie wrōcić nazod.</string>
+    <string name="reset_network_final_desc">Wszystkie ustawienia sieciowe zostaną zresetowane. Tej czynności nie można cofnąć.</string>
     <string name="reset_network_final_button_text">Nuluj ustawiynia</string>
-    <string name="reset_network_complete_toast">Nulowanie nasztalowań pożyniyniŏ.</string>
+    <string name="reset_network_complete_toast">Zresetowano ustawienia sieciowe.</string>
     <string name="master_clear_title">Nasztalowania fabryczne</string>
     <string name="master_clear_accounts">Terŏźnie zaregistrowano na tych kōntach:</string>
     <string name="master_clear_other_users_present">Dane ôd inszych użytkownikōw we tyj maszinie tyż ôstanōm wyciepniynte.</string>
@@ -5929,7 +5957,7 @@ Niy bydziesz przijmować żodnych gŏdek, wiadōmości abo nowin ani słyszeć a
     <string name="ethernet_data_template">%1$s danych Ethernet</string>
     <string name="cell_warning_only">Ostrzeżenie danych przy %s</string>
     <string name="cell_warning_and_limit">%1$s Ostrzeżenie o wykorzystaniu danych/%2$s Limit wykorzystania danych</string>
-    <string name="billing_cycle">Cykl rozl. i ostrz. dot. danych</string>
+    <string name="billing_cycle">Cykl ôbr. i pozōr ô danych</string>
     <string name="billing_cycle_summary">%s dziyń bez kŏżdy miesiōnc</string>
     <string name="billing_cycle_fragment_summary">%s dziyń bez kŏżdy miesiōnc</string>
     <string name="network_restrictions">Ôgraniczej nece</string>
@@ -5940,6 +5968,7 @@ Niy bydziesz przijmować żodnych gŏdek, wiadōmości abo nowin ani słyszeć a
     <string name="set_data_limit">Ustaw limit danych</string>
     <string name="data_limit">Limit danych</string>
     <string name="data_usage_template">%1$s wykorzystano w dniach %2$s</string>
+    <string name="data_usage_template_wifi">W ciągu ostatnich 30 dni użyto %s</string>
     <string name="data_usage_other_apps">Pożyniōne aplik. u zużyciu</string>
     <string name="data_saver_title">Szporowanie danych</string>
     <string name="unrestricted_data_saver">Prziz. apl. przi zał. Szpor. dan.</string>
@@ -5989,6 +6018,7 @@ Niy bydziesz przijmować żodnych gŏdek, wiadōmości abo nowin ani słyszeć a
     <string name="vzw_bixby_mode">Tryb Bixby</string>
     <string name="screen_off_pocket_title">Ôstow wyłōnczōny ekran</string>
     <string name="screen_off_pocket_summary">Niy dozwŏlej leda kerymu załōnczyniu ekranu, kej maszina je w ciymnym placu, takim co kapsa abo tasza.</string>
+    <string name="noApplications">Wszyjske aplikacyje pożyniōne z tym dziōłaniym ôstały wyłōnczōne abo blokniynte abo niy ôstały ône zainsztalowane.</string>
     <string name="confirm_reset_shortcut_manager_throttling_title">Resetowanie ukrōcynia gibkości Mynedżera skrōtōw</string>
     <string name="confirm_reset_shortcut_manager_throttling_message">Liczniki ukrōcynia gibkości Mynedżera skrōtōw bydōm wynulowane.</string>
 </resources>

@@ -188,7 +188,7 @@
 
     move-result-object v6
 
-    const v9, 0x7f0403e2
+    const v9, 0x7f0403e5
 
     invoke-virtual {p0, v9}, Lcom/samsung/android/settings/notification/ZenModeDNDAutomationSettings$ZenRulePreference;->setWidgetLayoutResource(I)V
 
@@ -202,7 +202,7 @@
     :catch_0
     move-exception v0
 
-    const v9, 0x7f0201e8
+    const v9, 0x7f0201e6
 
     invoke-virtual {p0, v9}, Lcom/samsung/android/settings/notification/ZenModeDNDAutomationSettings$ZenRulePreference;->setIcon(I)V
 
@@ -229,7 +229,7 @@
 
     invoke-super {p0, p1}, Landroid/preference/Preference;->onBindView(Landroid/view/View;)V
 
-    const v2, 0x7f1109d5
+    const v2, 0x7f1109d8
 
     invoke-virtual {p1, v2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 

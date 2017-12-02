@@ -169,7 +169,7 @@
 
     check-cast v1, Landroid/widget/ImageView;
 
-    const v2, 0x7f0200ef
+    const v2, 0x7f0200ed
 
     invoke-virtual {v1, v2}, Landroid/widget/ImageView;->setImageResource(I)V
 
@@ -186,7 +186,7 @@
 
     check-cast v1, Landroid/widget/ImageView;
 
-    const v2, 0x7f0200f0
+    const v2, 0x7f0200ee
 
     invoke-virtual {v1, v2}, Landroid/widget/ImageView;->setImageResource(I)V
 
@@ -511,7 +511,7 @@
 
     move-result-object v8
 
-    const v9, 0x7f0b0dd9
+    const v9, 0x7f0b0de8
 
     invoke-virtual {v8, v9}, Landroid/app/Activity;->getString(I)Ljava/lang/String;
 
@@ -785,7 +785,7 @@
 
     move-result-object v8
 
-    const v9, 0x7f0b1916
+    const v9, 0x7f0b1928
 
     invoke-virtual {v8, v9}, Landroid/app/Activity;->getString(I)Ljava/lang/String;
 
@@ -805,7 +805,7 @@
 
     move-result-object v8
 
-    const v9, 0x7f0b192a
+    const v9, 0x7f0b193c
 
     invoke-virtual {v8, v9}, Landroid/app/Activity;->getString(I)Ljava/lang/String;
 
@@ -865,7 +865,7 @@
 
     move-result-object v8
 
-    const v9, 0x7f0b0dda
+    const v9, 0x7f0b0de9
 
     invoke-virtual {v8, v9}, Landroid/app/Activity;->getString(I)Ljava/lang/String;
 
@@ -1044,7 +1044,7 @@
 
     check-cast v14, Landroid/view/LayoutInflater;
 
-    const v2, 0x7f04012c
+    const v2, 0x7f04012d
 
     const/4 v3, 0x0
 
@@ -1112,7 +1112,7 @@
 
     invoke-virtual {v2, v3}, Lcom/samsung/android/settings/WrapContentHeightViewPager;->setOnPageChangeListener(Landroid/support/v4/view/ViewPager$OnPageChangeListener;)V
 
-    const v2, 0x7f110425
+    const v2, 0x7f110427
 
     invoke-virtual {v12, v2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -1151,7 +1151,7 @@
 
     check-cast v16, Landroid/widget/ImageView;
 
-    const v2, 0x7f0b0b45
+    const v2, 0x7f0b0b53
 
     move-object/from16 v0, p0
 
@@ -1234,7 +1234,7 @@
 
     check-cast v2, Landroid/widget/ImageView;
 
-    const v3, 0x7f0200f0
+    const v3, 0x7f0200ee
 
     invoke-virtual {v2, v3}, Landroid/widget/ImageView;->setImageResource(I)V
 
@@ -1447,7 +1447,7 @@
 
     invoke-super {p0, p1}, Lcom/samsung/android/settings/SecSettingsPreferenceFragment;->onCreate(Landroid/os/Bundle;)V
 
-    const v0, 0x7f0800ae
+    const v0, 0x7f0800b0
 
     invoke-virtual {p0, v0}, Lcom/samsung/android/settings/NewOneHandOperationSettings;->addPreferencesFromResource(I)V
 
@@ -1533,7 +1533,7 @@
 
     iget-object v0, p0, Lcom/samsung/android/settings/NewOneHandOperationSettings;->mButtonType:Lcom/samsung/android/settings/SecRadioButtonPreference;
 
-    const v1, 0x7f0b0dd6
+    const v1, 0x7f0b0de5
 
     invoke-virtual {v0, v1}, Lcom/samsung/android/settings/SecRadioButtonPreference;->setSummary(I)V
 
@@ -1557,7 +1557,7 @@
 
     const/4 v1, 0x1
 
-    const v2, 0x7f0b0515
+    const v2, 0x7f0b0516
 
     invoke-interface {p1, v3, v1, v3, v2}, Landroid/view/Menu;->add(IIII)Landroid/view/MenuItem;
 
@@ -2084,7 +2084,7 @@
 
     move-result-object v3
 
-    const v4, 0x7f0b0ddb
+    const v4, 0x7f0b0dea
 
     invoke-virtual {v3, v4}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 

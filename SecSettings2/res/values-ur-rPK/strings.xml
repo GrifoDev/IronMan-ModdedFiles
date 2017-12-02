@@ -170,6 +170,8 @@
     <string name="wifi_allow_scan_with_traffic_summary">ڈیٹا کے استعمال پر مبنی خود بخود Wi-Fi رومنگ اسکینز کی اجازت دیں یا انکار کریں۔</string>
     <string name="select_logd_size_title">لاگنگ کے لیے بفر کا سائز</string>
     <string name="select_logd_size_dialog_title">ہر لاگ بفر کا زیادہ سے زیادہ سائز منتخب کریں</string>
+    <string name="dev_logpersist_clear_warning_title">مسلسل لاگر ذخیرہ صاف کریں؟</string>
+    <string name="dev_logpersist_clear_warning_message">مسلسل لاگر آف ہوجانے پر لاگر ڈیٹا حذف کردیا جائے گا۔</string>
     <string name="select_logpersist_title">مسلسل لاگ ڈیٹا اسٹور کریں</string>
     <string name="select_logpersist_dialog_title">مسلسل اسٹور کرنے کے لیے لاگ بفرز منتخب کریں</string>
     <string name="select_usb_configuration_title">‏USB تشکیل</string>
@@ -982,6 +984,7 @@ Wi-Fi اور بلیوٹوتھ بھی آف ہو جائے گا، لیکن آپ س�
     <string name="bluetooth_avc_available_description">مربوط بلیوٹوتھ آلہ میڈیا والیوم سنک کا تعاون کرتا ہے اور بلیوٹوتھ آلہ کے ذریعے سیٹ کیے گئے والیوم کی سطح آپ کے فون کے ساتھ سنک کیا جائے گا۔</string>
     <string name="bluetooth_enter_pin_msg">‏%s کے ساتھ جوڑی بنانے کے لئے پن درج کریں (آزمائیں 0000 یا 1234)</string>
     <string name="bluetooth_pin_maximum_number_message">حروف کی زیادہ سے زیادہ تعداد پہنچ گئی۔</string>
+    <string name="bluetooth_frp_permission_message">اس کال کے لیے بلیوٹوتھ آلہ کا استعمال نہیں کیا جاسکتا۔</string>
     <string name="settings_menu_done">مکمل</string>
     <string name="usb_tethering_unavailable_subtext_tmo">USB not connected</string>
     <string name="usb_tethering_available_subtext_tmo">USB connected, check to tether</string>
@@ -1481,7 +1484,7 @@ Where Can I Find More Information About the 3rd Party's Policies? Separately, if
     <string name="navigationbar_pressure_sensitivity_title">ہوم بٹن کو زور سے دبائيں</string>
     <string name="navigationbar_pressure_sensitivity_summary">ہوم بٹن کو چھپائے جانے پر عموما زور سے دباکر استعمال کریں۔</string>
     <string name="navigationbar_pressure_sensitivity_level_summary">پریشر کی سطح: %2$d میں سے %1$d</string>
-    <string name="navigationbar_pressure_sensitivity_description_off">ہوم بٹن کو چھپائے جانے پر عموما زور سے دباکر استعمال کریں۔</string>
+    <string name="navigationbar_pressure_sensitivity_description_off">پریشر کی مقدار کو مطابق کریں جو کہ ہوم بٹن کو زور سے دبانے کے لیے ضروری ہے۔</string>
     <string name="navigationbar_pressure_low">لائٹر</string>
     <string name="navigationbar_pressure_high">مضبوطی سے</string>
     <string name="navigationbar_hide_bar">بٹن دکھائیں اور چھپائیں</string>
@@ -1704,7 +1707,11 @@ Where Can I Find More Information About the 3rd Party's Policies? Separately, if
     <string name="crypt_keeper_confirm_title">خفیہ کاری کی تصدیق کریں</string>
     <string name="crypt_keeper_final_desc">آپ کے ڈیوائس کی خفیہ کاری کو پلٹا نہیں جاسکتا اور اگر طریقہ کو چھیڑا گیا تو ڈیٹا برباد ہوجائے گا۔ خفیہ کاری میں ایک گھنٹہ یا اس سے بھی زیادہ وقت لگ سکتا ہے، جس کے دوران آپ کا ڈیوائس متعدد بار اسٹارٹ ہوگا اور آپ اس کو استعمال کرنے کے قابل نہیں ہوں گے۔</string>
     <string name="crypt_keeper_setup_title">خفیہ کاری ہورہی ہے…</string>
-    <string name="crypt_keeper_warn_wipe">فیکٹری ڈیفالٹ سیٹنگز پر پھر سیٹ کرنے سے قبل آپ کے پاس اپنے آلہ کو شروع کرنے کے لیے %d کوششیں باقی بچی ہے۔ اس سے تمام ڈیٹا مٹ جائے گا، بشمول فائلوں اور ڈاؤن لوڈ کردہ ایپلیکیشنز کے۔</string>
+    <string name="crypt_keeper_warn_wipe">"آپ کے ذریعے اپنے فون کو اس کے فیکٹری ڈیفالٹ سیٹنگز میں پھر سیٹ کرنے سے قبل آپ کے پاس %1$d کوششیں بچی ہیں۔ اس سے ڈیٹا، بشمول فائلز اور ڈاؤن لوڈ کردہ ایپلیکیشنز سب مٹ جائیں گے۔
+
+اگر آپ کا فون پھرسیٹ ہے، تو اس کا استعمال دوبارہ اہل کرنے کے لیے ہوسکتا ہے آپ کو اس فون سے منسلکہ %2$s کی معلومات (ای میل پتہ اور پاس ورڈ) درج کرنے کی ضرورت پڑے۔"</string>
+    <string name="crypt_keeper_samsung_account">Samsung account</string>
+    <string name="crypt_keeper_google_account">‏Google اکاؤنٹ</string>
     <string name="crypt_keeper_failed_title">خفیہ کاری ناکام ہوگئی</string>
     <string name="crypt_keeper_failed_summary">آپ کا آلہ شروع کرنے سے قاصر۔ خفیہ کاری کے عمل میں خلل واقع ہوگیا۔ آپ کو اپنے آلہ کو فیکٹری کے ڈیفالٹ سیٹنگز پر پھر سیٹ کرنے کی ضرورت ہے۔ اس سے آپ کا تمام ڈیٹا مٹا دیا جائے گا۔</string>
     <string name="crypt_keeper_data_corrupted_title">آلے کا ذخیرہ خراب ہے</string>
@@ -1723,10 +1730,13 @@ Where Can I Find More Information About the 3rd Party's Policies? Separately, if
     <string name="cryptkeeper_wrong_pin">غلط پن درج کیا گیا</string>
     <string name="cryptkeeper_wrong_direction">غلط سمت بنائی گئی</string>
     <string name="checking_decryption">تصدیق کررہا ہے…</string>
-    <string name="crypt_keeper_last_warn_wipe">فیکٹری ڈیفالٹ سیٹنگز پر پھر سیٹ کرنے سے قبل آپ کے پاس اپنے آلہ کو اسٹارٹ کرنے کے لیے صرف 1 کوشش بچی ہے۔ اس سے تمام ڈیٹا مٹ جائے گا، بشمول فائلز اور ڈاؤن لوڈ کردہ ایپلیکیشنز کے۔</string>
+    <string name="crypt_keeper_last_warn_wipe">"آپ کا فون پھرسیٹ کرنے سے پہلے اس کی فیکٹری ڈیفالٹ سیٹنگز کے لیے آپ کے پاس 1 کوشش بچی ہے۔ اس سے تمام ڈیٹا، بشمول فائلز اور ڈاؤن لوڈ کردہ ایپلیکیشنز سب مٹ جائیں گے۔
+
+اگر آپ کا فون پھر سیٹ کیا گيا ہے، تو اسے دوبارہ استعمال کے قابل بنانے کے لیے اس فون کے ساتھ منسلک کردہ %s کی معلومات (ای میل پتہ اور پاس ورڈ) آپ کو درج کرنے کی ضرورت پڑسکتی ہے۔"</string>
     <string name="crypt_keeper_failed_title_dec">ڈیکرپشن فیل۔</string>
     <string name="crypt_keeper_failed_summary_dec">خلل پیدا ہونے کی وجہ سے خفیہ کشائی مکمل کرنے سے قاصر۔ استعمال سے پہلے فیکٹری کوائف پھر سیٹ انجام دیں (تمام کوائف مٹا کر)۔</string>
     <string name="crypt_keeper_set_screen_lock_type">اسکرین لاک قسم سیٹ کریں</string>
+    <string name="crypt_keeper_warning_keyboard_cover_does_not_work">فون دوبارہ شروع کرنے کے بعد کیی بورڈ کور کام نہیں کرے گا۔</string>
     <string name="encryption_interstitial_message">"فون کے شروع ہونے سے پہلے اپنا %s درج کیے جانے کو ضروری بنا کر آپ اپنے فون کی مزید حفاظت کر سکتے ہيں۔ یہ مدد آپ کے فون کے چوری یا گم ہونے پر آپ کے ڈیٹا کو محفوظ کرتا ہے۔ بعض ایپلیکیشنز کو خصوصیات تک رسائی کے لیے آلہ کی خفیہ کاری پالیسیاں کے مطابق محفوظ اسٹارٹ اپ کی ضرورت پڑسکتی ہے، جیسے ای میل سنک۔
 
 آپ کوئی بھی کالز، پیغامات، یا نوٹیفکیشنز وصول نہیں کریں گے، اور فون اسٹارٹ کیے جانے تک، الارمز کی آواز نہیں ہوگی۔"</string>
@@ -1971,6 +1981,12 @@ You will also need it when:"</string>
     <string name="lockpassword_confirm_your_pin_with_fingerprint">فنگر پرنٹ استعمال کریں یا موجودہ پن درج کریں۔</string>
     <string name="lockpassword_confirm_your_pattern_with_fingerprint">فنگر پرنٹ استعمال کریں یا موجودہ نمونہ بنائیں۔</string>
     <string name="lockpassword_confirm_your_password_with_fingerprint">فنگر پرنٹ استعمال کریں یا موجودہ پاس ورڈ درج کریں۔</string>
+    <string name="lockpassword_confirm_your_pin_with_iris">اپنا آئریسز استعمال کریں یا اپنا موجودہ پن درج کریں۔</string>
+    <string name="lockpassword_confirm_your_pattern_with_iris">اپنا آئریسز استعمال کریں یا اپنا موجودہ نمونہ بنائيں۔</string>
+    <string name="lockpassword_confirm_your_password_with_iris">اپنا آئریسز استعمال کریں یا اپنا موجودہ پاس ورڈ درج کریں۔</string>
+    <string name="lockpassword_confirm_your_pin_with_biometrics">بایومیٹرکس استعمال کریں یا اپنا پن درج کریں۔</string>
+    <string name="lockpassword_confirm_your_pattern_with_biometrics">بایومیٹرکس استعمال کریں یا اپنا نمونہ بنائیں۔</string>
+    <string name="lockpassword_confirm_your_password_with_biometrics">بایومیٹرکس استعمال کریں یا اپنا پاس ورڈ درج کریں۔</string>
     <string name="lockpassword_confirm_your_pin_instead_of_fingerprint">فنگرپرنٹ کی پہچان کے استعمال کے بجائے اپنا پن درج کریں۔</string>
     <string name="lockpassword_confirm_your_pattern_instead_of_fingerprint">فنگرپنٹ پہچان کے استعمال کے بجائے اپنا نمونہ بنائیں۔</string>
     <string name="lockpassword_confirm_your_password_instead_of_fingerprint">فنگرپرنٹ کی پہچان کے استعمال کے بجائے اپنا پاس ورڈ درج کریں۔</string>
@@ -2045,6 +2061,7 @@ You will also need it when:"</string>
     <string name="face_status_timeout">وقت ختم۔ بعد میں کوشش کریں۔</string>
     <string name="okay">ٹھیک ہے</string>
     <string name="face_samsung_account_button">‏Samsung account استعمال کریں</string>
+    <string name="face_galaxy_account_button">‏Galaxy account کا استعمال کریں</string>
     <string name="face_error_DB_corrupted">آپ کے چہرہ کے ڈیٹا کے ساتھ کوئی مسئلہ تھا۔ اپنا چہرہ دوبارہ رجسٹر کریں۔</string>
     <string name="face_error_DB_corrupted_popup_title">اپنا چہرہ دوبارہ رجسٹر کریں</string>
     <string name="face_error_timeout">آپ کے چہرہ کا پتہ نہیں لگا تھا۔</string>
@@ -2155,7 +2172,7 @@ You will also need it when:"</string>
     <string name="biometrics_backup_locktype_title">آئریس سیکیورٹی سیٹ اپ کریں</string>
     <string name="biometrics_register_your_iris">اپنے آئریسز کو رجسٹر کریں۔</string>
     <string name="biometrics_backup_locktype_summary">آلہ کو انلاک کرنے میں اپنا آئریسز استعمال کرنے کے لیے، آپ کو نمونہ، پن، یا پاس ورڈ سیٹ کرنے کی ضرورت ہے۔</string>
-    <string name="biometrics_backup_locktype_message">اپنا فون انلاک کرنے میں اپنا آئریسز استعمال کرنے کے لیے یا محفوظ تصدیق کے لیے، آپ کو یہ کرنے کی ضرورت پڑے گی:</string>
+    <string name="biometrics_backup_locktype_message">اپنا فون انلاک کرنے میں اپنا آئریسز استعمال کرنے یا ایپلیکیشنز میں اپنی ذاتی کی تصدیق کے لیے، آپ کو یہ کرنے کی ضرورت پڑے گی:</string>
     <string name="iris_delete_popup_title">آئریس ڈیٹا ہٹائیں؟</string>
     <string name="iris_delete_popup_message">آئریس ڈیٹا ہٹائیں؟</string>
     <string name="iris_delete_popup_message_with_related_func">آئریسز استعمال ہونے والی خصوصیات آف ہوجائے گی۔</string>
@@ -2231,6 +2248,9 @@ You will also need it when:"</string>
     <string name="biometrics_dex_cant_use_msg">‏Samsung DeX میں %s کا استعمال نہیں کرسکتے۔</string>
     <string name="biometrics_dex_closed_to_switch">‏Samsung DeX پر سوئچ کرنے کے لیے %s بند ہوگيا۔</string>
     <string name="biometircs_dex_cant_use_toast">‏Samsung DeX میں %s نہیں چل سکتا۔ فون موڈ میں چلانے کی کوشش کریں۔</string>
+    <string name="iris_guide_text_preview">آئریسز استعمال کرنے کے لیے یہاں دیکھیں</string>
+    <string name="iris_guide_enable_toggle">آئریسز استعمال کرنے کے لیے یہاں تھپکی دیں</string>
+    <string name="iris_cannot_verify">آئریسز کی توثیق نہیں ہو سکی</string>
     <string name="knox_twofactor_bio_description">اپنا بایومیٹرک لاک قسم اور %s انلاک کرنے کے لیے دوسرا لاک قسم منتخب کریں۔</string>
     <string name="fingerprint_registered">منتخب ان لاک طریقے کے ساتھ رجسٹرڈ فنگر پرنٹس استعمال کیے جائیں گے۔</string>
     <string name="knox_twofactor_description">%s انلاک کرنے کے لیے اپنا بایومیٹرکز اور دوسرا لاک قسم منتخب کریں۔</string>
@@ -2740,7 +2760,7 @@ Mobile data will be turned off."</string>
     <string name="vibrate_on_touch_summary">اپنے تھپکی دینے پر تھرتھراہٹ دیں یا مخصوص بٹنز کو ٹچ کرکے ہولڈ کریں۔</string>
     <string name="key_tap_feedback_category">کی ٹیپ کے تاثرات</string>
     <string name="touch_sounds_summary">اسکرین پر آپ کا مخصوص اشیاء کو ٹچ کرنے پر آواز چلائيں۔</string>
-    <string name="dial_pad_tones_summary">ڈائلنگ کی پیڈ پر آپ کا کلیدوں پر تھپکی دینے پر آواز چلائیں۔</string>
+    <string name="dial_pad_tones_summary">ڈائلنگ کیی پیڈ پر آپ کا کیز پر ٹیپ کرنے پر آواز چلائیں۔</string>
     <string name="screen_locking_sounds_summary">اسکرین لاک یا انلاک کرتے وقت آوازیں چلائیں۔</string>
     <string name="tap_to_start">تھرتھراہٹ نمونہ بنانے کے لیے یہاں تھپکی دیں</string>
     <string name="charging_sounds_summary">چارجر مربوط ہونے پر ایک آواز چلایں۔</string>
@@ -3092,6 +3112,7 @@ Mobile data will be turned off."</string>
     <string name="easy_mode_app_help">سادہ ہوم اسکرین لے آؤٹ اور بڑی آن اسکرین اشیاء کے ذریعہ اپنے آلہ کو مزید آسانی سے استعمال کریں۔</string>
     <string name="easy_mode_app_help_dream_1">کسی سادہ ہوم اسکرین لے آؤٹ اور بڑا آن اسکرین اشیاء کا استعمال کریں۔</string>
     <string name="easy_mode_app_help_dream_2">کوئی بھی تخصیصات جو آپ نے ہوم اسکرین پر بنایا مسترد کردیا جائے گا، اور اسکرین زوم زیادہ سے زیادہ سیٹ کیا جائے گا۔</string>
+    <string name="easy_mode_app_help_3rd_launcher">آن-اسکرین طویل اشیاء کے لیے آسان موڈ اطلاق کریں۔ اگر آپ TouchWiz ہوم کا استعمال نہیں کررہے ہیں، تو آپ کا ہوم اسکرین لے آؤٹ تبدیل نہیں ہوگا، لیکن اسکرین زوم بڑا کرنے کے لیے اور فونٹ سائز درمیانی کرنے کے لیے سیٹ کیا جائے گا۔</string>
     <string name="security_warning_content">آپ اپنا اسکرین انلاک کرنے کے لیے پاس ورڈ، پن، یا نمونہ سیٹ کرکے اپنے رازداری کی حفاظت کرسکتے ہیں</string>
     <string name="lock_setting_weather_desc">موسم کی سیٹنگز دیکھنے یا تبدیل کرنے کے لیے، ذیل میں موسم کی [سیٹنگز] پر تھپکی دیں۔</string>
     <string name="lock_setting_weather_btn">موسم کی سیٹنگز</string>
@@ -3945,7 +3966,7 @@ Wi-Fi ابھی آن ہے۔"</string>
     <string name="wfd_descrpition_playsound">آواز چلائیں۔</string>
     <string name="wfd_is_not_supported">یہ فنکشن تعاون یافتہ نہیں ہے۔</string>
     <string name="usbtethering_notify_wifi_is_on_title">‏Wi-Fi آف کریں؟</string>
-    <string name="usbtethering_notify_wifi_is_on">‏Wi-Fi اور USB ٹیتھرنگ ایک ہی وقت میں آن نہیں کیا جا سکتا ہے۔ Wi-Fi آف کریں۔</string>
+    <string name="usbtethering_notify_wifi_is_on">‏Wi-Fi اور USB ٹیتھرنگ ایک ہی وقت میں آن نہیں ہوسکتا۔ Wi-Fi آف ہوجائے گا۔</string>
     <string name="disable_multi_window_dialog_text">کئی دریچہ نااہل ہوجائے گا اور پوپ-اپ دریچوں میں کھلے تمام ایپلیکیشنز بند ہوجائیں گے۔</string>
     <string name="keyguard_password_attempt_count_pin_code">%d کوششیں باقی۔</string>
     <string name="keyguard_password_attempts_count_pin_code">%d کوششیں باقی۔</string>
@@ -4153,6 +4174,7 @@ Wi-Fi ابھی آن ہے۔"</string>
     <string name="hdmi_mode_title">‏HDMI موڈ</string>
     <string name="hdmi_mode_dex">Samsung DeX</string>
     <string name="hdmi_mode_mirroring">Screen Mirroring</string>
+    <string name="hdmi_mode_not_available_while_cover_attached">سرورق منسلک ہونے کے دوران %s دستیاب نہیں ہے۔</string>
     <string name="screen_timeout_for_dex">‏Samsung DeX کے لیے اسکرین کا وقت ختم ہوگيا</string>
     <string name="show_virtual_keyboard_for_dex">‏Samsung DeX میں آن اسکرین کی بورڈ دکھائیں</string>
     <string name="comma">,</string>
@@ -4609,6 +4631,8 @@ Wi-Fi ابھی آن ہے۔"</string>
     <string name="wifi_empty_list_user_restricted">آپ کو Wi-Fi سیٹنگز تبدیل کرنے کی اجازت نہیں ہے۔</string>
     <string name="wifi_setup_wps">خودکار سیٹ اپ (WPS)</string>
     <string name="wifi_show_advanced">اعلی کردہ اختیارات دکھائیں</string>
+    <string name="wifi_advanced_toggle_description_expanded">زائل کرنے کے لیے دوہری تھپکی دیں۔</string>
+    <string name="wifi_advanced_toggle_description_collapsed">پھیلانے کے لیے دوہری تھپکی دیں۔</string>
     <string name="wifi_wps_setup_title">‏WPS سیٹ اپ</string>
     <string name="wifi_wps_setup_msg">‏WPS شروع کررہا ہے…</string>
     <string name="wifi_wps_onstart_pbc">اپنے راؤٹر پر Wi-Fi محافظت کردہ سیٹ اپ بٹن تھپتھپائیں۔ اس کو WPS کہا جاسکتا ہے یا یہ علامت شامل ہے:</string>
@@ -4640,6 +4664,10 @@ Wi-Fi ابھی آن ہے۔"</string>
     <string name="wifi_shared">اشتراک کردہ</string>
     <string name="wifi_unchanged">(غیر تبدیل کردہ)</string>
     <string name="wifi_unspecified">(غیرمشخص)</string>
+    <string name="wifi_select_cert">سرٹیفیکیٹ منتخب کریں</string>
+    <string name="wifi_do_not_provide_eap_user_cert">فراہم نہ کریں</string>
+    <string name="wifi_do_not_validate_eap_server">توثیق نہ کریں</string>
+    <string name="wifi_do_not_validate_eap_server_warning">کوئی سرٹیفکیٹ مخصوص نہیں ہے۔ آپ کا کنیکشن ذاتی نہیں ہوگا۔</string>
     <string name="wifi_scan_always_turnon_message">%s مقام کی درستگی کو بہتر بنانے اور دیگر مقاصد کے لیے، Wi-Fi بند ہونے پر بھی، Wi-Fi نیٹ ورکس کو اسکین کرنے کی اجازت طلب کر رہا ہے۔ سبھی ایپلیکیشنز کے لیے اس کی اجازت دیں؟</string>
     <string name="wifi_scan_always_confirm_allow">اجازت دیں</string>
     <string name="wifi_scan_always_confirm_deny">انکار کریں</string>
@@ -4974,9 +5002,9 @@ Wi-Fi ابھی آن ہے۔"</string>
     <string name="restore_default_apn_completed">‏APN سیٹنگز طے شدہ پر پھر سیٹ۔</string>
     <string name="reset_network_desc">یہ تمام نیٹ ورک سیٹنگز کو پھر سیٹ کردے گا، بشمول ان لوگوں کے لیے:</string>
     <string name="reset_network_button_text">سیٹنگز ریسٹ</string>
-    <string name="reset_network_final_desc">تمام کنکشن سیٹنگز پھر سیٹ ہوجائے گی۔ یہ عمل کالعدم نہیں کیا جاسکتا۔</string>
+    <string name="reset_network_final_desc">تمام نیٹ ورک سیٹنگز پھرسیٹ کی جائے گی۔ یہ کارروائی مکمل نہیں کی جاسکتی ہیں۔</string>
     <string name="reset_network_final_button_text">سیٹنگز ریسٹ</string>
-    <string name="reset_network_complete_toast">کنکشن سیٹنگز پھر سیٹ ہو گئی۔</string>
+    <string name="reset_network_complete_toast">نیٹ ورک سیٹنگز پھر سیٹ کریں۔</string>
     <string name="master_clear_title">فیکٹری کوائف پھر سیٹ کریں</string>
     <string name="master_clear_accounts">آپ فی الحال مندرجہ ذیل اکاؤنٹس میں سائن ان ہیں:</string>
     <string name="master_clear_other_users_present">اس آلہ پر دوسرے صارفین سے وابستہ ڈیٹا بھی مٹا دیے جائیں گے۔</string>
@@ -5221,7 +5249,7 @@ Wi-Fi ابھی آن ہے۔"</string>
     <string name="physical_keyboard_title">حقیقی کیی بورڈ</string>
     <string name="show_ime">آن اسکرین کیی بورڈ دکھائیں</string>
     <string name="show_ime_summary">حقیقی کیی بورڈ کے استعمال کیے جانے پر بھی آن اسکرین کیی بورڈ دکھائیں۔</string>
-    <string name="keyboard_shortcuts_helper">کیی بورڈ تیز راہیں</string>
+    <string name="keyboard_shortcuts_helper">کیی بورڈ شارٹ کٹس</string>
     <string name="keyboard_shortcuts_helper_summary">اسکرین پر کیی بورڈ شارٹ کٹ کی تفصیلات دکھائیں۔</string>
     <string name="pointer_settings_category">ماؤس/ٹریک پیڈ</string>
     <string name="pointer_speed">نشان کار کی رفتار</string>
@@ -6089,6 +6117,7 @@ If the device has multiple users, using this shortcut on the lock screen tempora
     <string name="set_data_limit">ڈیٹا کی حد سیٹ کریں</string>
     <string name="data_limit">ڈیٹا کی حد</string>
     <string name="data_usage_template">%1$s مابین استعمال کردہ %2$s</string>
+    <string name="data_usage_template_wifi">آخری 30 دنوں میں %s استعمال کیا گيا ہے</string>
     <string name="data_usage_other_apps">متعلقہ اپیلیکیشنز استعمال میں شامل کیاگيا ہے</string>
     <string name="data_saver_title">ڈیٹا سیور</string>
     <string name="unrestricted_data_saver">ڈیٹا سیور آن ہونے پر ایپلیکیشن کی اجازت دیں</string>
@@ -6139,6 +6168,7 @@ If the device has multiple users, using this shortcut on the lock screen tempora
     <string name="legacy_dhcp_client_summary">‏نئے Android DHCP کلائنٹ کی بجائے Lollipop کا DHCP کلائنٹ استعمال کریں۔</string>
     <string name="screen_off_pocket_title">اسکرین کو آف رکھیں</string>
     <string name="screen_off_pocket_summary">آلہ کے پاکٹ یا بیگ کی طرح تاریک جگہ میں ہو نے پر اتفاقی طور پر آن ہونے سے اسکرین کو بچائیں۔</string>
+    <string name="noApplications">اس ایکشن سے وابستہ تمام ایپلیکیشنز نااہل، بلاک یا غیر نصب کردیے گئے ہیں۔</string>
     <string name="confirm_reset_shortcut_manager_throttling_title">شارٹ کٹ مینیجر کی شرح حد پھر سیٹ کریں</string>
     <string name="confirm_reset_shortcut_manager_throttling_message">شارٹ کٹ مینیجر کی شرح حدود شمار پھر سیٹ ہوگا۔</string>
 </resources>

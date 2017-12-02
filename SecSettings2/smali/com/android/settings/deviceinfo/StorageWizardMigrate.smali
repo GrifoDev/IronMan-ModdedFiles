@@ -72,7 +72,7 @@
     return-void
 
     :cond_0
-    const v0, 0x7f040306
+    const v0, 0x7f040309
 
     invoke-virtual {p0, v0}, Lcom/android/settings/deviceinfo/StorageWizardMigrate;->setContentView(I)V
 
@@ -88,17 +88,17 @@
 
     aput-object v1, v0, v2
 
-    const v1, 0x7f0b1717
+    const v1, 0x7f0b1729
 
     invoke-virtual {p0, v1, v0}, Lcom/android/settings/deviceinfo/StorageWizardMigrate;->setHeaderText(I[Ljava/lang/String;)V
 
     new-array v0, v2, [Ljava/lang/String;
 
-    const v1, 0x7f0b16bc
+    const v1, 0x7f0b16ce
 
     invoke-virtual {p0, v1, v0}, Lcom/android/settings/deviceinfo/StorageWizardMigrate;->setBodyText(I[Ljava/lang/String;)V
 
-    const v0, 0x7f1107d1
+    const v0, 0x7f1107d3
 
     invoke-virtual {p0, v0}, Lcom/android/settings/deviceinfo/StorageWizardMigrate;->findViewById(I)Landroid/view/View;
 
@@ -108,7 +108,7 @@
 
     iput-object v0, p0, Lcom/android/settings/deviceinfo/StorageWizardMigrate;->mRadioNow:Landroid/widget/RadioButton;
 
-    const v0, 0x7f1107d2
+    const v0, 0x7f1107d4
 
     invoke-virtual {p0, v0}, Lcom/android/settings/deviceinfo/StorageWizardMigrate;->findViewById(I)Landroid/view/View;
 

@@ -365,7 +365,7 @@
 
     iget-object v0, p0, Lcom/samsung/android/settings/SoftwareUpdateSettings;->mSoftwareUpdatePref:Landroid/preference/Preference;
 
-    const v1, 0x7f040240
+    const v1, 0x7f040243
 
     invoke-virtual {v0, v1}, Landroid/preference/Preference;->setWidgetLayoutResource(I)V
 
@@ -535,7 +535,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f0b05d8
+    const v2, 0x7f0b05d9
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -549,7 +549,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f0b05d9
+    const v2, 0x7f0b05da
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -839,7 +839,7 @@
 
     move-result-object v4
 
-    const v5, 0x7f0b1ed5
+    const v5, 0x7f0b1ee8
 
     invoke-virtual {v4, v5}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -852,7 +852,7 @@
 
     move-result-object v4
 
-    const v5, 0x7f0b1ed4
+    const v5, 0x7f0b1ee7
 
     invoke-virtual {v4, v5}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -865,7 +865,7 @@
 
     move-result-object v4
 
-    const v5, 0x7f0b1ed6
+    const v5, 0x7f0b1ee9
 
     invoke-virtual {v4, v5}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -897,7 +897,7 @@
     invoke-virtual {v2}, Landroid/preference/PreferenceScreen;->removeAll()V
 
     :cond_0
-    const v3, 0x7f08012a
+    const v3, 0x7f08012c
 
     invoke-virtual {p0, v3}, Lcom/samsung/android/settings/SoftwareUpdateSettings;->addPreferencesFromResource(I)V
 
@@ -1012,7 +1012,7 @@
 
     move-result-object v6
 
-    const v8, 0x7f0b168c
+    const v8, 0x7f0b169e
 
     invoke-virtual {v6, v8}, Landroid/app/Activity;->getString(I)Ljava/lang/String;
 
@@ -1811,7 +1811,7 @@
 
     move-result-object v8
 
-    const v9, 0x7f0b05d3
+    const v9, 0x7f0b05d4
 
     invoke-virtual {v8, v9}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -1853,7 +1853,7 @@
 
     move-result-object v10
 
-    const v11, 0x7f0b05d5
+    const v11, 0x7f0b05d6
 
     invoke-virtual {v10, v11}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -1994,7 +1994,7 @@
 
     move-result-object v8
 
-    const v9, 0x7f0b05d2
+    const v9, 0x7f0b05d3
 
     invoke-virtual {v8, v9}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -2048,7 +2048,7 @@
 
     move-result-object v8
 
-    const v9, 0x7f0b05d4
+    const v9, 0x7f0b05d5
 
     invoke-virtual {v8, v9}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -2157,7 +2157,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f0f0404
+    const v1, 0x7f0f0403
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getInteger(I)I
 
@@ -2353,13 +2353,13 @@
 
     const/4 v4, 0x1
 
-    const v5, 0x7f0b0515
+    const v5, 0x7f0b0516
 
     invoke-interface {p1, v2, v3, v4, v5}, Landroid/view/Menu;->add(IIII)Landroid/view/MenuItem;
 
     move-result-object v2
 
-    const v3, 0x7f0201fa
+    const v3, 0x7f0201f8
 
     invoke-interface {v2, v3}, Landroid/view/MenuItem;->setIcon(I)Landroid/view/MenuItem;
 
@@ -2628,7 +2628,7 @@
 
     move-result-object v7
 
-    const v8, 0x7f0f0407
+    const v8, 0x7f0f0406
 
     invoke-virtual {v7, v8}, Landroid/content/res/Resources;->getInteger(I)I
 
@@ -2721,7 +2721,7 @@
 
     move-result-object v7
 
-    const v8, 0x7f0f0406
+    const v8, 0x7f0f0405
 
     invoke-virtual {v7, v8}, Landroid/content/res/Resources;->getInteger(I)I
 
@@ -2810,7 +2810,7 @@
 
     move-result-object v4
 
-    const v5, 0x7f0f0405
+    const v5, 0x7f0f0404
 
     invoke-virtual {v4, v5}, Landroid/content/res/Resources;->getInteger(I)I
 

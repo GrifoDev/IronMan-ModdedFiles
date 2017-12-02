@@ -170,6 +170,8 @@
     <string name="wifi_allow_scan_with_traffic_summary">Permiteți sau respingeți căutările automate de rețele Wi-Fi în roaming, în funcție de cantitatea de date utilizată.</string>
     <string name="select_logd_size_title">Dim. zonă tampon jurnal</string>
     <string name="select_logd_size_dialog_title">Selectare dimensiune maximă pentru fiecare zonă tampon a jurnalului</string>
+    <string name="dev_logpersist_clear_warning_title">Ștergeți sp. de stoc. pt. logger persist.?</string>
+    <string name="dev_logpersist_clear_warning_message">Datele loggerului vor fi șterse atunci când loggerul persistent este oprit.</string>
     <string name="select_logpersist_title">Stocare persistentă date jurnal</string>
     <string name="select_logpersist_dialog_title">Sel. zone tampon jurn. pt. stocare persist.</string>
     <string name="select_usb_configuration_title">Configurație USB</string>
@@ -982,6 +984,7 @@ Este posibil să experimentați o mică diferență între cele 2 surse de ieși
     <string name="bluetooth_avc_available_description">Dispozitivul Bluetooth conectat acceptă funcția Sincronizare volum media, iar nivelul volumului setat de dispozitivul Bluetooth se va sincroniza cu telefonul dvs.</string>
     <string name="bluetooth_enter_pin_msg">Introduceți codul PIN pentru asocierea cu %s (încercați 0000 sau 1234).</string>
     <string name="bluetooth_pin_maximum_number_message">A fost atins numărul maxim de caractere.</string>
+    <string name="bluetooth_frp_permission_message">Nu se poate utiliza dispozitivul Bluetooth pentru acest apel.</string>
     <string name="settings_menu_done">Efectuat</string>
     <string name="usb_tethering_unavailable_subtext_tmo">USB not connected</string>
     <string name="usb_tethering_available_subtext_tmo">USB connected, check to tether</string>
@@ -1481,7 +1484,7 @@ Atingeți OK pentru a mări luminozitatea peste nivelurile de siguranță."</str
     <string name="navigationbar_pressure_sensitivity_title">Apăsați puternic butonul Acasă</string>
     <string name="navigationbar_pressure_sensitivity_summary">Utilizați butonul Acasă atunci când este ascuns apăsând mai puternic decât de obicei.</string>
     <string name="navigationbar_pressure_sensitivity_level_summary">Nivel presiune: %1$d din %2$d</string>
-    <string name="navigationbar_pressure_sensitivity_description_off">Utilizați butonul Acasă atunci când este ascuns apăsând mai puternic decât de obicei.</string>
+    <string name="navigationbar_pressure_sensitivity_description_off">Ajustați presiunea necesară pentru a apăsa puternic butonul Acasă.</string>
     <string name="navigationbar_pressure_low">Mai ușor</string>
     <string name="navigationbar_pressure_high">Mai puternic</string>
     <string name="navigationbar_hide_bar">Afișare și ascundere buton</string>
@@ -1620,7 +1623,7 @@ Atingeți OK pentru a mări luminozitatea peste nivelurile de siguranță."</str
     <string name="crypt_keeper_decrypt_title">Decriptare dispozitiv</string>
     <string name="crypt_keeper_decrypt_summary">Dispozitiv criptat</string>
     <string name="crypt_keeper_type_pin">Cod PIN</string>
-    <string name="crypt_keeper_type_pattern">Model</string>
+    <string name="crypt_keeper_type_pattern">model</string>
     <string name="crypt_keeper_type_password">Parolă</string>
     <string name="crypt_keeper_type_direction">Blocare direcție</string>
     <string name="crypt_keeper_confirm_title_dec">Confirmare decriptare</string>
@@ -1704,7 +1707,11 @@ Criptarea durează cel puțin o oră. Înainte de a începe, asigurați-vă că 
     <string name="crypt_keeper_confirm_title">Confirmare criptare</string>
     <string name="crypt_keeper_final_desc">Criptarea dispozitivului este ireversibilă și, dacă întrerupeți procesul, se vor pierde date. Criptarea poate necesita cel puțin o oră, timp în care dispozitivul va reporni de mai multe ori și nu veți putea să îl utilizați.</string>
     <string name="crypt_keeper_setup_title">Se criptează…</string>
-    <string name="crypt_keeper_warn_wipe">V-au mai rămas %d încercări de pornire a dispozitivului înainte ca acesta să fie resetat la setările implicite din fabrică. Acest lucru va șterge toate datele, inclusiv fișierele și aplicațiile descărcate.</string>
+    <string name="crypt_keeper_warn_wipe">"Au mai rămas %1$d încercări până când telefonul va fi resetat la valorile din fabrică. Această acțiune va șterge toate datele, inclusiv fișierele și aplicațiile descărcate.
+
+Dacă telefonul se resetează, este posibil să fie necesară introducerea informațiilor %2$s (adresa de e-mail și parola) asociate acestui telefon pentru a putea să îl utilizați din nou."</string>
+    <string name="crypt_keeper_samsung_account">Cont Samsung account</string>
+    <string name="crypt_keeper_google_account">Cont Google</string>
     <string name="crypt_keeper_failed_title">Criptare nereușită</string>
     <string name="crypt_keeper_failed_summary">Dispozitivul nu poate fi pornit. Procesul de criptare a fost întrerupt. Este necesar să resetați dispozitivul la setările din fabrică. Această acțiune vă va șterge toate datele.</string>
     <string name="crypt_keeper_data_corrupted_title">Spațiul de stocare al dispozitivului este corupt</string>
@@ -1723,10 +1730,13 @@ Criptarea durează cel puțin o oră. Înainte de a începe, asigurați-vă că 
     <string name="cryptkeeper_wrong_pin">PIN greșit introdus</string>
     <string name="cryptkeeper_wrong_direction">Direcții desenate incorect</string>
     <string name="checking_decryption">Se verifică…</string>
-    <string name="crypt_keeper_last_warn_wipe">V-a mai rămas 1 încercare de pornire a dispozitivului înainte ca acesta să fie resetat la setările implicite din fabrică. Acest lucru va șterge toate datele, inclusiv fișierele și aplicațiile descărcate.</string>
+    <string name="crypt_keeper_last_warn_wipe">"A mai rămas 1 încercare până când telefonul va fi resetat la valorile din fabrică. Această acțiune va șterge toate datele, inclusiv fișierele și aplicațiile descărcate.
+
+Dacă telefonul se resetează, este posibil să fie necesară introducerea informațiilor pentru %s (adresa de e-mail și parola) asociate acestui telefon pentru a putea să îl utilizați din nou."</string>
     <string name="crypt_keeper_failed_title_dec">Decriptare nereușită</string>
     <string name="crypt_keeper_failed_summary_dec">Nu se poate finaliza decriptarea, din cauza unei întreruperi. Efectuați resetarea la datele din fabrică (ștergerea tuturor datelor) înainte de utilizare.</string>
     <string name="crypt_keeper_set_screen_lock_type">Set. tip de blocare ecran</string>
+    <string name="crypt_keeper_warning_keyboard_cover_does_not_work">Tastatura tip copertă nu va funcționa după repornirea telefonului.</string>
     <string name="encryption_interstitial_message">"Vă puteți proteja și mai mult telefonul solicitând să se introducă %s înainte de pornirea telefonului. Această acțiune va ajuta la protejarea datelor dvs. în cazul în care telefonul este pierdut sau furat. Este posibil ca unele aplicații să necesite o Pornire securizată conform Politicilor de criptare a dispozitivului pentru a accesa caracteristici, precum sincronizarea e-mailurilor.
 
 Nu veți primi apeluri, mesaje sau notificări, nici alarmele nu vor suna până când telefonul nu pornește."</string>
@@ -1971,6 +1981,12 @@ You will also need it when:"</string>
     <string name="lockpassword_confirm_your_pin_with_fingerprint">Utilizați o amprentă sau introduceți codul PIN actual.</string>
     <string name="lockpassword_confirm_your_pattern_with_fingerprint">Utilizați o amprentă sau desenați modelul actual.</string>
     <string name="lockpassword_confirm_your_password_with_fingerprint">Utilizați o amprentă sau introduceți parola actuală.</string>
+    <string name="lockpassword_confirm_your_pin_with_iris">Utilizați irisurile sau introduceți codul PIN actual.</string>
+    <string name="lockpassword_confirm_your_pattern_with_iris">Utilizați irisurile sau desenați modelul actual.</string>
+    <string name="lockpassword_confirm_your_password_with_iris">Utilizați irisurile sau introduceți parola actuală.</string>
+    <string name="lockpassword_confirm_your_pin_with_biometrics">Utilizați datele biometrice sau introduceți codul PIN.</string>
+    <string name="lockpassword_confirm_your_pattern_with_biometrics">Utilizați datele biometrice sau desenați modelul.</string>
+    <string name="lockpassword_confirm_your_password_with_biometrics">Utilizați datele biometrice sau introduceți parola.</string>
     <string name="lockpassword_confirm_your_pin_instead_of_fingerprint">Introduceți codul PIN în loc să utilizați recunoașterea prin amprente.</string>
     <string name="lockpassword_confirm_your_pattern_instead_of_fingerprint">Desenați modelul în loc să utilizați recunoașterea prin amprente.</string>
     <string name="lockpassword_confirm_your_password_instead_of_fingerprint">Introduceți parola în loc să utilizați recunoașterea prin amprente.</string>
@@ -2044,7 +2060,8 @@ Selectați metoda dorită pentru deblocarea telefonului. Deblocarea facială și
     <string name="face_backup_wrong_password">Parolă backup incorectă</string>
     <string name="face_status_timeout">Timp expirat. Încercați mai târziu.</string>
     <string name="okay">OK</string>
-    <string name="face_samsung_account_button">Utilizare cont Samsung</string>
+    <string name="face_samsung_account_button">Utiliz. Samsung account</string>
+    <string name="face_galaxy_account_button">Utilizare cont Galaxy</string>
     <string name="face_error_DB_corrupted">A existat o problemă cu datele privind fața dvs. Înregistrați din nou fața.</string>
     <string name="face_error_DB_corrupted_popup_title">Înregistrați din nou fața dvs.</string>
     <string name="face_error_timeout">Fața dvs. nu a fost detectată.</string>
@@ -2155,7 +2172,7 @@ Porniți Deblocare prin iris pentru a utiliza datele dvs. biometrice sau %s pent
     <string name="biometrics_backup_locktype_title">Configurare securitate prin iris</string>
     <string name="biometrics_register_your_iris">Înregistrați irisurile dvs.</string>
     <string name="biometrics_backup_locktype_summary">Dacă doriți să vă utilizați irisurile pentru a debloca dispozitivul, trebuie să setați un model, un cod PIN sau o parolă.</string>
-    <string name="biometrics_backup_locktype_message">Dacă doriți să utilizați autentificarea prin irisuri pentru a debloca telefonul sau pentru verificarea securizată, va trebui să:</string>
+    <string name="biometrics_backup_locktype_message">Dacă doriți să utilizați irisurile pentru a debloca telefonul sau pentru a vă verifica identitatea în aplicații, va trebui să:</string>
     <string name="iris_delete_popup_title">Eliminați datele despre iris?</string>
     <string name="iris_delete_popup_message">Eliminați datele despre iris?</string>
     <string name="iris_delete_popup_message_with_related_func">Caracteristicile care utilizează irisurile vor fi oprite.</string>
@@ -2231,6 +2248,9 @@ Selectați metoda dorită pentru deblocarea telefonului. Deblocarea prin iris ș
     <string name="biometrics_dex_cant_use_msg">Nu se poate utiliza %s în Samsung DeX.</string>
     <string name="biometrics_dex_closed_to_switch">%s s-a închis pentru comutarea la Samsung DeX.</string>
     <string name="biometircs_dex_cant_use_toast">%s nu poate rula în Samsung DeX. Încercați să o rulați în modul telefon.</string>
+    <string name="iris_guide_text_preview">Priv. pt. a ut. irisurile</string>
+    <string name="iris_guide_enable_toggle">At. aici sau utilizați irisurile</string>
+    <string name="iris_cannot_verify">Nu s-au putut verifica irisurile</string>
     <string name="knox_twofactor_bio_description">Selectați tipul de blocare biometrică și al doilea tip de blocare pentru a debloca %s.</string>
     <string name="fingerprint_registered">Amprentele înregistrate vor fi utilizate cu metoda de deblocare selectată.</string>
     <string name="knox_twofactor_description">Selectați datele biometrice și al doilea tip de blocare pentru a debloca %s.</string>
@@ -3093,6 +3113,7 @@ Reîncercați."</string>
     <string name="easy_mode_app_help">Utilizați dispozitivul mai ușor, cu un aspect mai simplu al ecranului Acasă și cu elemente mai mari pe ecran.</string>
     <string name="easy_mode_app_help_dream_1">Utilizați un aspect simplu al ecranului Acasă și elemente mai mari pe ecran.</string>
     <string name="easy_mode_app_help_dream_2">Toate personalizările efectuate pentru ecranul Acasă vor fi eliminate, iar opțiunea Mărire ecran va fi setată la maximum.</string>
+    <string name="easy_mode_app_help_3rd_launcher">Aplicați Modul Ușor pentru elemente mai mari de pe ecran. Dacă nu utilizați ecranul Acasă TouchWiz, aspectul ecranului Acasă nu se va schimba, dar nivelul de mărire a ecranului va fi setat la mare, iar dimensiunea fontului va fi setată la medie.</string>
     <string name="security_warning_content">Vă puteți proteja confidențialitate setând o parolă, un cod PIN sau un model pentru deblocarea ecranului</string>
     <string name="lock_setting_weather_desc">Pentru a vizualiza sau a schimba setările meteo, atingeți opțiunea SETĂRI METEO de mai jos.</string>
     <string name="lock_setting_weather_btn">Setări meteo</string>
@@ -3946,7 +3967,7 @@ Utilizarea funcției Hotspot mobil crește consumul bateriei și utilizarea date
     <string name="wfd_descrpition_playsound">Redați sunet.</string>
     <string name="wfd_is_not_supported">Această funcție nu este acceptată.</string>
     <string name="usbtethering_notify_wifi_is_on_title">Opriți conexiunea Wi-Fi?</string>
-    <string name="usbtethering_notify_wifi_is_on">Conexiunile Wi-Fi și Tethering prin USB nu pot fi pornite simultan. Opriți conexiunea Wi-Fi.</string>
+    <string name="usbtethering_notify_wifi_is_on">Conexiunile Wi-Fi și Tethering prin USB nu pot fi pornite simultan. Conexiunea Wi-Fi va fi oprită.</string>
     <string name="disable_multi_window_dialog_text">Opțiunea Ferestre multiple va fi dezactivată și toate aplicațiile deschise în ferestre pop-up vor fi închise.</string>
     <string name="keyguard_password_attempt_count_pin_code">%d încercare rămasă</string>
     <string name="keyguard_password_attempts_count_pin_code">%d încercări rămase</string>
@@ -4154,6 +4175,7 @@ Primirea de mesaje SMS"</string>
     <string name="hdmi_mode_title">Mod HDMI</string>
     <string name="hdmi_mode_dex">Samsung DeX</string>
     <string name="hdmi_mode_mirroring">Screen Mirroring</string>
+    <string name="hdmi_mode_not_available_while_cover_attached">%s indisponibilă atunci când este atașată husa.</string>
     <string name="screen_timeout_for_dex">Ecr. în repaus pt. Samsung DeX</string>
     <string name="show_virtual_keyboard_for_dex">Afișare tastatură pe ecran în Samsung DeX</string>
     <string name="comma">,</string>
@@ -4462,7 +4484,7 @@ Puteți schimba această permisiune ulterior, din setările Bluetooth."</string>
     <string name="date_picker_title">Dată</string>
     <string name="time_picker_title">Oră</string>
     <string name="lock_after_timeout">Blocare automată</string>
-    <string name="lock_after_timeout_summary">Ecranul se blochează la %s după oprirea automată a acestuia.</string>
+    <string name="lock_after_timeout_summary">Blocați telefonul la %s după ce ecranul se oprește automat.</string>
     <string name="lock_after_timeout_summary_with_exception">Blocați ecranul %1$s după ce acesta se oprește automat, cu excepția cazurilor în care rămâne deblocat prin %2$s.</string>
     <string name="show_owner_info_on_lockscreen_label">Afișați informațiile proprietarului dispozitivului pe ecranul de blocare.</string>
     <string name="owner_info_settings_title">Informații proprietar</string>
@@ -4610,6 +4632,8 @@ Pentru a îmbunătăți exactitatea localizării, aplicațiile și serviciile po
     <string name="wifi_empty_list_user_restricted">Nu aveți permisiunea de a schimba setările Wi-Fi.</string>
     <string name="wifi_setup_wps">Configurare automată (WPS)</string>
     <string name="wifi_show_advanced">Afișare opțiuni avansate</string>
+    <string name="wifi_advanced_toggle_description_expanded">Atingeți de două ori pentru a restrânge.</string>
+    <string name="wifi_advanced_toggle_description_collapsed">Atingeți de două ori pentru a extinde.</string>
     <string name="wifi_wps_setup_title">Configurare WPS</string>
     <string name="wifi_wps_setup_msg">Se pornește WPS…</string>
     <string name="wifi_wps_onstart_pbc">Apăsați butonul Wi-Fi protected setup de pe router. Se poate numi WPS sau poate conține acest simbol:</string>
@@ -4641,6 +4665,10 @@ Pentru a îmbunătăți exactitatea localizării, aplicațiile și serviciile po
     <string name="wifi_shared">Partajat</string>
     <string name="wifi_unchanged">(neschimbat)</string>
     <string name="wifi_unspecified">(Nespecificat)</string>
+    <string name="wifi_select_cert">Selectare certificat</string>
+    <string name="wifi_do_not_provide_eap_user_cert">Nu furnizați</string>
+    <string name="wifi_do_not_validate_eap_server">Nu validați</string>
+    <string name="wifi_do_not_validate_eap_server_warning">Niciun certificat specificat. Conexiunea dvs. nu va fi privată.</string>
     <string name="wifi_scan_always_turnon_message">%s solicită permisiunea de a căuta rețele Wi-Fi, chiar și atunci când conexiunea Wi-Fi este dezactivată, pentru a îmbunătăți precizia locației și în alte scopuri. Permiteți acest lucru tuturor aplicațiilor?</string>
     <string name="wifi_scan_always_confirm_allow">Permitere</string>
     <string name="wifi_scan_always_confirm_deny">Refuzare</string>
@@ -4975,9 +5003,9 @@ Se recomandă să utilizaţi un card SD sau un dispozitiv de stocare USB mai rap
     <string name="restore_default_apn_completed">Setările APN resetate la valorile implicite</string>
     <string name="reset_network_desc">Această acțiune va reseta toate setările de rețea, inclusiv pe cele pentru:</string>
     <string name="reset_network_button_text">Reinițializare setări</string>
-    <string name="reset_network_final_desc">Toate setările de conexiune vor fi resetate. Acțiunea nu poate fi anulată.</string>
+    <string name="reset_network_final_desc">Toate setările de rețea vor fi resetate. Acțiunea nu poate fi anulată.</string>
     <string name="reset_network_final_button_text">Reinițializare setări</string>
-    <string name="reset_network_complete_toast">Setările conexiunii s-au resetat.</string>
+    <string name="reset_network_complete_toast">Setări de rețea resetate.</string>
     <string name="master_clear_title">Revenire la setările din fabrică</string>
     <string name="master_clear_accounts">În prezent, sunteți conectat la următoarele conturi:</string>
     <string name="master_clear_other_users_present">Datele care aparțin altor utilizatori ai acestui dispozitiv vor fi, de asemenea, șterse.</string>
@@ -6090,6 +6118,7 @@ Nu veți primi niciun apel, mesaj sau notificare și alarmele nu vor suna până
     <string name="set_data_limit">Setare limită date</string>
     <string name="data_limit">Limită de date</string>
     <string name="data_usage_template">%1$s utilizați între %2$s</string>
+    <string name="data_usage_template_wifi">%s utilizați în ultimele 30 de zile</string>
     <string name="data_usage_other_apps">Aplic. corelate incl. în utiliz.</string>
     <string name="data_saver_title">Economizor de date</string>
     <string name="unrestricted_data_saver">Perm. apl. cu Econ. date pornită</string>
@@ -6140,6 +6169,7 @@ Nu veți primi niciun apel, mesaj sau notificare și alarmele nu vor suna până
     <string name="legacy_dhcp_client_summary">Folosiți clientul DHCP din Lollipop în locul noului client Android DHCP.</string>
     <string name="screen_off_pocket_title">Menținere ecran oprit</string>
     <string name="screen_off_pocket_summary">Împiedicați pornirea accidentală a ecranului atunci când dispozitivul se află în locuri întunecate, cum ar fi un buzunar sau o geantă.</string>
+    <string name="noApplications">Toate aplicațiile asociate cu această acțiune au fost dezactivate, blocate sau nu sunt instalate.</string>
     <string name="confirm_reset_shortcut_manager_throttling_title">Resetare limitator de viteză al Managerului de comenzi rapide</string>
     <string name="confirm_reset_shortcut_manager_throttling_message">Contoarele limitatorului de viteză al Managerului de comenzi rapide vor fi resetate.</string>
 </resources>

@@ -100,7 +100,7 @@
 
     if-eqz p2, :cond_2
 
-    const v5, 0x7f0b1cf6
+    const v5, 0x7f0b1d08
 
     :goto_0
     invoke-virtual {v8, v5}, Landroid/widget/TextView;->setText(I)V
@@ -177,7 +177,7 @@
 
     move-result-object v6
 
-    const v8, 0x7f0b0ed5
+    const v8, 0x7f0b0ee4
 
     invoke-virtual {v6, v8}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -191,7 +191,7 @@
 
     invoke-direct {v6, p0}, Lcom/samsung/android/settings/datausage/networkconnect/DataWarningLimitActivity$1$1;-><init>(Lcom/samsung/android/settings/datausage/networkconnect/DataWarningLimitActivity$1;)V
 
-    const v8, 0x7f0b1af5
+    const v8, 0x7f0b1b07
 
     invoke-virtual {v5, v8, v6}, Landroid/app/AlertDialog$Builder;->setPositiveButton(ILandroid/content/DialogInterface$OnClickListener;)Landroid/app/AlertDialog$Builder;
 
@@ -222,7 +222,7 @@
     return-void
 
     :cond_2
-    const v5, 0x7f0b1cf7
+    const v5, 0x7f0b1d09
 
     goto :goto_0
 
@@ -278,7 +278,7 @@
 
     move-result-object v5
 
-    const v8, 0x7f0f04d5
+    const v8, 0x7f0f04d4
 
     invoke-virtual {v5, v8}, Landroid/content/res/Resources;->getInteger(I)I
 
@@ -294,7 +294,7 @@
 
     move-result-object v5
 
-    const v8, 0x7f0f04d9
+    const v8, 0x7f0f04d8
 
     invoke-virtual {v5, v8}, Landroid/content/res/Resources;->getInteger(I)I
 

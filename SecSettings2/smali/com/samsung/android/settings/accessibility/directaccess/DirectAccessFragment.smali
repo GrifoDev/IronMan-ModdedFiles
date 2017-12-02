@@ -1706,7 +1706,7 @@
 .method public onPreferenceChange(Landroid/preference/Preference;Ljava/lang/Object;)Z
     .locals 8
 
-    const v7, 0x7f0f037e
+    const v7, 0x7f0f037d
 
     const/16 v4, 0x3e8
 
@@ -1749,7 +1749,7 @@
 
     move-result-object v5
 
-    const v6, 0x7f0f037d
+    const v6, 0x7f0f037c
 
     invoke-virtual {v5, v6}, Landroid/content/res/Resources;->getInteger(I)I
 
@@ -1803,7 +1803,7 @@
 
     move-result-object v5
 
-    const v6, 0x7f0f037f
+    const v6, 0x7f0f037e
 
     invoke-virtual {v5, v6}, Landroid/content/res/Resources;->getInteger(I)I
 
@@ -1860,7 +1860,7 @@
 
     move-result-object v5
 
-    const v6, 0x7f0f0382
+    const v6, 0x7f0f0381
 
     invoke-virtual {v5, v6}, Landroid/content/res/Resources;->getInteger(I)I
 
@@ -1917,7 +1917,7 @@
 
     move-result-object v5
 
-    const v6, 0x7f0f0383
+    const v6, 0x7f0f0382
 
     invoke-virtual {v5, v6}, Landroid/content/res/Resources;->getInteger(I)I
 
@@ -1974,7 +1974,7 @@
 
     move-result-object v5
 
-    const v6, 0x7f0f0384
+    const v6, 0x7f0f0383
 
     invoke-virtual {v5, v6}, Landroid/content/res/Resources;->getInteger(I)I
 
@@ -2031,7 +2031,7 @@
 
     move-result-object v5
 
-    const v6, 0x7f0f0385
+    const v6, 0x7f0f0384
 
     invoke-virtual {v5, v6}, Landroid/content/res/Resources;->getInteger(I)I
 
@@ -2149,7 +2149,7 @@
 
     move-result-object v5
 
-    const v6, 0x7f0f0380
+    const v6, 0x7f0f037f
 
     invoke-virtual {v5, v6}, Landroid/content/res/Resources;->getInteger(I)I
 
@@ -2283,7 +2283,7 @@
 
     move-result-object v5
 
-    const v6, 0x7f0f0381
+    const v6, 0x7f0f0380
 
     invoke-virtual {v5, v6}, Landroid/content/res/Resources;->getInteger(I)I
 
@@ -2331,7 +2331,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f0f037b
+    const v2, 0x7f0f037a
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getInteger(I)I
 

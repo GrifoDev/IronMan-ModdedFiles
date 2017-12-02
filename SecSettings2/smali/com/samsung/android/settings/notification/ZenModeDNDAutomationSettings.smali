@@ -159,7 +159,7 @@
 
     aput-object v0, v2, v4
 
-    const v3, 0x7f0b1cc7
+    const v3, 0x7f0b1cd9
 
     invoke-virtual {p0, v3, v2}, Lcom/samsung/android/settings/notification/ZenModeDNDAutomationSettings;->getString(I[Ljava/lang/Object;)Ljava/lang/String;
 
@@ -172,7 +172,7 @@
     return-object v1
 
     :cond_0
-    const v2, 0x7f0b1cf7
+    const v2, 0x7f0b1d09
 
     invoke-virtual {p0, v2}, Lcom/samsung/android/settings/notification/ZenModeDNDAutomationSettings;->getString(I)Ljava/lang/String;
 
@@ -189,7 +189,7 @@
 
     aput-object v1, v2, v5
 
-    const v3, 0x7f0b1cc8
+    const v3, 0x7f0b1cda
 
     invoke-virtual {p0, v3, v2}, Lcom/samsung/android/settings/notification/ZenModeDNDAutomationSettings;->getString(I[Ljava/lang/Object;)Ljava/lang/String;
 
@@ -208,7 +208,7 @@
     return-object v0
 
     :pswitch_0
-    const v0, 0x7f0b1c73
+    const v0, 0x7f0b1c85
 
     invoke-virtual {p0, v0}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -217,7 +217,7 @@
     return-object v0
 
     :pswitch_1
-    const v0, 0x7f0b1c72
+    const v0, 0x7f0b1c84
 
     invoke-virtual {p0, v0}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -226,7 +226,7 @@
     return-object v0
 
     :pswitch_2
-    const v0, 0x7f0b1c74
+    const v0, 0x7f0b1c86
 
     invoke-virtual {p0, v0}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -346,7 +346,7 @@
 
     aput-object p2, v1, v2
 
-    const v2, 0x7f0b1cb4
+    const v2, 0x7f0b1cc6
 
     invoke-virtual {p0, v2, v1}, Lcom/samsung/android/settings/notification/ZenModeDNDAutomationSettings;->getString(I[Ljava/lang/Object;)Ljava/lang/String;
 
@@ -356,7 +356,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f0b13d6
+    const v1, 0x7f0b13e7
 
     const/4 v2, 0x0
 
@@ -368,7 +368,7 @@
 
     invoke-direct {v1, p0, p1}, Lcom/samsung/android/settings/notification/ZenModeDNDAutomationSettings$2;-><init>(Lcom/samsung/android/settings/notification/ZenModeDNDAutomationSettings;Ljava/lang/String;)V
 
-    const v2, 0x7f0b1cb5
+    const v2, 0x7f0b1cc7
 
     invoke-virtual {v0, v2, v1}, Landroid/app/AlertDialog$Builder;->setPositiveButton(ILandroid/content/DialogInterface$OnClickListener;)Landroid/app/AlertDialog$Builder;
 
@@ -637,7 +637,7 @@
     :catch_0
     move-exception v3
 
-    const v17, 0x7f0201e8
+    const v17, 0x7f0201e6
 
     move/from16 v0, v17
 
@@ -700,13 +700,13 @@
 
     invoke-direct {v8, v0}, Landroid/preference/Preference;-><init>(Landroid/content/Context;)V
 
-    const v17, 0x7f0201aa
+    const v17, 0x7f0201a8
 
     move/from16 v0, v17
 
     invoke-virtual {v8, v0}, Landroid/preference/Preference;->setIcon(I)V
 
-    const v17, 0x7f0b1cb1
+    const v17, 0x7f0b1cc3
 
     move/from16 v0, v17
 
@@ -732,7 +732,7 @@
 
     move-result-object v17
 
-    const v18, 0x7f0402d1
+    const v18, 0x7f0402d4
 
     const/16 v19, 0x0
 
@@ -750,7 +750,7 @@
 
     check-cast v5, Landroid/widget/ImageView;
 
-    const v17, 0x7f02057b
+    const v17, 0x7f02057d
 
     move/from16 v0, v17
 
@@ -774,7 +774,7 @@
 
     invoke-virtual {v5, v0}, Landroid/widget/ImageView;->setImageTintList(Landroid/content/res/ColorStateList;)V
 
-    const v17, 0x7f1105ec
+    const v17, 0x7f1105ee
 
     move/from16 v0, v17
 
@@ -784,7 +784,7 @@
 
     check-cast v16, Landroid/widget/TextView;
 
-    const v17, 0x7f0b0c08
+    const v17, 0x7f0b0c16
 
     invoke-virtual/range {v16 .. v17}, Landroid/widget/TextView;->setText(I)V
 
@@ -861,7 +861,7 @@
 
     invoke-super {p0, p1}, Lcom/android/settings/notification/ZenModeSettingsBase;->onCreate(Landroid/os/Bundle;)V
 
-    const v0, 0x7f080168
+    const v0, 0x7f08016a
 
     invoke-virtual {p0, v0}, Lcom/samsung/android/settings/notification/ZenModeDNDAutomationSettings;->addPreferencesFromResource(I)V
 
@@ -911,7 +911,7 @@
 
     const/4 v0, 0x2
 
-    const v1, 0x7f0b1ab3
+    const v1, 0x7f0b1ac5
 
     invoke-interface {p1, v2, v0, v2, v1}, Landroid/view/Menu;->add(IIII)Landroid/view/MenuItem;
 

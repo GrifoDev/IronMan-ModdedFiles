@@ -515,7 +515,7 @@
 
     move-result v3
 
-    if-eqz v3, :cond_d
+    if-eqz v3, :cond_e
 
     iget-object v3, p0, Lcom/samsung/android/settings/navigationbar/NavigationBarHardPressSetting$2;->this$0:Lcom/samsung/android/settings/navigationbar/NavigationBarHardPressSetting;
 
@@ -693,7 +693,7 @@
 
     move-result v3
 
-    if-eqz v3, :cond_0
+    if-eqz v3, :cond_d
 
     iget-object v3, p0, Lcom/samsung/android/settings/navigationbar/NavigationBarHardPressSetting$2;->this$0:Lcom/samsung/android/settings/navigationbar/NavigationBarHardPressSetting;
 
@@ -719,9 +719,20 @@
 
     invoke-virtual {v3, v4}, Lcom/samsung/android/settings/bixby/EmSettingsManager;->requestNlg(Ljava/lang/String;)V
 
+    :cond_d
+    iget-object v3, p0, Lcom/samsung/android/settings/navigationbar/NavigationBarHardPressSetting$2;->this$0:Lcom/samsung/android/settings/navigationbar/NavigationBarHardPressSetting;
+
+    invoke-static {v3}, Lcom/samsung/android/settings/navigationbar/NavigationBarHardPressSetting;->-get0(Lcom/samsung/android/settings/navigationbar/NavigationBarHardPressSetting;)Lcom/samsung/android/settings/bixby/EmSettingsManager;
+
+    move-result-object v3
+
+    sget-object v4, Lcom/samsung/android/settings/bixby/EmSettingsManager;->EM_RESPONSE_RESULT_SUCCESS:Lcom/samsung/android/sdk/bixby/BixbyApi$ResponseResults;
+
+    invoke-virtual {v3, v4}, Lcom/samsung/android/settings/bixby/EmSettingsManager;->sendResponse(Lcom/samsung/android/sdk/bixby/BixbyApi$ResponseResults;)V
+
     goto/16 :goto_0
 
-    :cond_d
+    :cond_e
     const-string/jumbo v3, "HardPressSensitivitySet"
 
     invoke-virtual {v2, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -740,7 +751,7 @@
 
     move-result v3
 
-    if-nez v3, :cond_e
+    if-nez v3, :cond_f
 
     iget-object v3, p0, Lcom/samsung/android/settings/navigationbar/NavigationBarHardPressSetting$2;->this$0:Lcom/samsung/android/settings/navigationbar/NavigationBarHardPressSetting;
 
@@ -778,7 +789,7 @@
 
     goto/16 :goto_0
 
-    :cond_e
+    :cond_f
     iget-object v3, p0, Lcom/samsung/android/settings/navigationbar/NavigationBarHardPressSetting$2;->this$0:Lcom/samsung/android/settings/navigationbar/NavigationBarHardPressSetting;
 
     invoke-static {v3}, Lcom/samsung/android/settings/navigationbar/NavigationBarHardPressSetting;->-get0(Lcom/samsung/android/settings/navigationbar/NavigationBarHardPressSetting;)Lcom/samsung/android/settings/bixby/EmSettingsManager;
@@ -789,7 +800,7 @@
 
     move-result v3
 
-    if-eqz v3, :cond_f
+    if-eqz v3, :cond_10
 
     iget-object v3, p0, Lcom/samsung/android/settings/navigationbar/NavigationBarHardPressSetting$2;->this$0:Lcom/samsung/android/settings/navigationbar/NavigationBarHardPressSetting;
 
@@ -805,9 +816,9 @@
 
     move-result v3
 
-    if-eqz v3, :cond_10
+    if-eqz v3, :cond_11
 
-    :cond_f
+    :cond_10
     iget-object v3, p0, Lcom/samsung/android/settings/navigationbar/NavigationBarHardPressSetting$2;->this$0:Lcom/samsung/android/settings/navigationbar/NavigationBarHardPressSetting;
 
     invoke-static {v3}, Lcom/samsung/android/settings/navigationbar/NavigationBarHardPressSetting;->-get0(Lcom/samsung/android/settings/navigationbar/NavigationBarHardPressSetting;)Lcom/samsung/android/settings/bixby/EmSettingsManager;
@@ -844,7 +855,7 @@
 
     goto/16 :goto_0
 
-    :cond_10
+    :cond_11
     :try_start_0
     iget-object v3, p0, Lcom/samsung/android/settings/navigationbar/NavigationBarHardPressSetting$2;->this$0:Lcom/samsung/android/settings/navigationbar/NavigationBarHardPressSetting;
 
@@ -862,11 +873,11 @@
 
     add-int/lit8 v1, v3, -0x1
 
-    if-ltz v1, :cond_11
+    if-ltz v1, :cond_12
 
-    if-le v1, v5, :cond_12
+    if-le v1, v5, :cond_13
 
-    :cond_11
+    :cond_12
     iget-object v3, p0, Lcom/samsung/android/settings/navigationbar/NavigationBarHardPressSetting$2;->this$0:Lcom/samsung/android/settings/navigationbar/NavigationBarHardPressSetting;
 
     invoke-static {v3}, Lcom/samsung/android/settings/navigationbar/NavigationBarHardPressSetting;->-get0(Lcom/samsung/android/settings/navigationbar/NavigationBarHardPressSetting;)Lcom/samsung/android/settings/bixby/EmSettingsManager;
@@ -942,7 +953,7 @@
 
     return-void
 
-    :cond_12
+    :cond_13
     iget-object v3, p0, Lcom/samsung/android/settings/navigationbar/NavigationBarHardPressSetting$2;->this$0:Lcom/samsung/android/settings/navigationbar/NavigationBarHardPressSetting;
 
     invoke-static {v3}, Lcom/samsung/android/settings/navigationbar/NavigationBarHardPressSetting;->-get1(Lcom/samsung/android/settings/navigationbar/NavigationBarHardPressSetting;)Lcom/samsung/android/settings/navigationbar/NavigationBarPressureSeekBarPreference;
@@ -953,7 +964,7 @@
 
     move-result v3
 
-    if-ne v1, v3, :cond_13
+    if-ne v1, v3, :cond_14
 
     iget-object v3, p0, Lcom/samsung/android/settings/navigationbar/NavigationBarHardPressSetting$2;->this$0:Lcom/samsung/android/settings/navigationbar/NavigationBarHardPressSetting;
 
@@ -1007,7 +1018,7 @@
 
     goto/16 :goto_0
 
-    :cond_13
+    :cond_14
     const-string/jumbo v3, "NavigationBarHardPressSetting"
 
     new-instance v4, Ljava/lang/StringBuilder;
@@ -1074,7 +1085,7 @@
 
     move-result v3
 
-    if-eqz v3, :cond_14
+    if-eqz v3, :cond_15
 
     iget-object v3, p0, Lcom/samsung/android/settings/navigationbar/NavigationBarHardPressSetting$2;->this$0:Lcom/samsung/android/settings/navigationbar/NavigationBarHardPressSetting;
 
@@ -1116,7 +1127,7 @@
 
     invoke-virtual {v3, v4}, Lcom/samsung/android/settings/bixby/EmSettingsManager;->requestNlg(Ljava/lang/String;)V
 
-    :cond_14
+    :cond_15
     iget-object v3, p0, Lcom/samsung/android/settings/navigationbar/NavigationBarHardPressSetting$2;->this$0:Lcom/samsung/android/settings/navigationbar/NavigationBarHardPressSetting;
 
     invoke-static {v3}, Lcom/samsung/android/settings/navigationbar/NavigationBarHardPressSetting;->-get0(Lcom/samsung/android/settings/navigationbar/NavigationBarHardPressSetting;)Lcom/samsung/android/settings/bixby/EmSettingsManager;

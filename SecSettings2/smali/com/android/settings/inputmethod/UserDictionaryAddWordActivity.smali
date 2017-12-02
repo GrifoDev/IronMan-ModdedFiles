@@ -164,7 +164,7 @@
 
     invoke-super {p0, p1}, Landroid/app/Activity;->onCreate(Landroid/os/Bundle;)V
 
-    const v4, 0x7f04036a
+    const v4, 0x7f04036d
 
     invoke-virtual {p0, v4}, Lcom/android/settings/inputmethod/UserDictionaryAddWordActivity;->setContentView(I)V
 
@@ -180,7 +180,7 @@
 
     iput v4, p0, Lcom/android/settings/inputmethod/UserDictionaryAddWordActivity;->mMaxLength:I
 
-    const v4, 0x7f1102d7
+    const v4, 0x7f1102d9
 
     invoke-virtual {p0, v4}, Lcom/android/settings/inputmethod/UserDictionaryAddWordActivity;->findViewById(I)Landroid/view/View;
 
@@ -196,7 +196,7 @@
 
     invoke-virtual {v4, v5}, Landroid/widget/TextView;->setVisibility(I)V
 
-    const v4, 0x7f110851
+    const v4, 0x7f110853
 
     invoke-virtual {p0, v4}, Lcom/android/settings/inputmethod/UserDictionaryAddWordActivity;->findViewById(I)Landroid/view/View;
 

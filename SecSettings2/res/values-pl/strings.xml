@@ -170,6 +170,8 @@
     <string name="wifi_allow_scan_with_traffic_summary">Zezwól na automatyczne skanowanie roamingu Wi-Fi lub odmów tego uprawnienia na podstawie ilości zużytych danych.</string>
     <string name="select_logd_size_title">Rozm. bufora do rejestr.</string>
     <string name="select_logd_size_dialog_title">Wybór maksymalnego rozmiaru każdego buforu dziennika</string>
+    <string name="dev_logpersist_clear_warning_title">Wyczyścić trwałą pamięć dziennika?</string>
+    <string name="dev_logpersist_clear_warning_message">Dane dziennika zostaną usunięte po wyłączeniu trwałego dziennika.</string>
     <string name="select_logpersist_title">Trwale przechowuj dane raportu</string>
     <string name="select_logpersist_dialog_title">Wybór buforów raportów do trwałego zapisu</string>
     <string name="select_usb_configuration_title">Konfiguracja USB</string>
@@ -982,6 +984,7 @@ Może wystąpić niewielka różnica dźwięku emitowanego przez te 2 połączon
     <string name="bluetooth_avc_available_description">Podłączone urządzenie Bluetooth obsługuje Synchronizację głośności mediów, więc głośność urządzenia Bluetooth będzie synchronizowana z telefonem.</string>
     <string name="bluetooth_enter_pin_msg">Wpisz kod PIN, aby powiązać z %s (spróbuj 0000 lub 1234).</string>
     <string name="bluetooth_pin_maximum_number_message">Osiągnięto maksymalną liczbę znaków.</string>
+    <string name="bluetooth_frp_permission_message">Nie można użyć urządzenia Bluetooth do tego połączenia.</string>
     <string name="settings_menu_done">Gotowe</string>
     <string name="usb_tethering_unavailable_subtext_tmo">USB not connected</string>
     <string name="usb_tethering_available_subtext_tmo">USB connected, check to tether</string>
@@ -1481,7 +1484,7 @@ Dotknij OK, aby zezwolić na zwiększenie jasności powyżej bezpiecznego poziom
     <string name="navigationbar_pressure_sensitivity_title">Mocno nac. prz. ekr. startowego</string>
     <string name="navigationbar_pressure_sensitivity_summary">Aby użyć ukrytego przycisku ekranu startowego, naciśnij go mocniej niż zwykle.</string>
     <string name="navigationbar_pressure_sensitivity_level_summary">Poziom ciśnienia: %1$d z %2$d</string>
-    <string name="navigationbar_pressure_sensitivity_description_off">Aby użyć ukrytego przycisku ekranu startowego, naciśnij go mocniej niż zwykle.</string>
+    <string name="navigationbar_pressure_sensitivity_description_off">Dostosuj siłę nacisku potrzebnego do mocnego naciśnięcia przycisku ekranu startowego.</string>
     <string name="navigationbar_pressure_low">Lżej</string>
     <string name="navigationbar_pressure_high">Mocniej</string>
     <string name="navigationbar_hide_bar">Przycisk pokaż i ukryj</string>
@@ -1620,7 +1623,7 @@ Dotknij OK, aby zezwolić na zwiększenie jasności powyżej bezpiecznego poziom
     <string name="crypt_keeper_decrypt_title">Odszyfruj urządzenie</string>
     <string name="crypt_keeper_decrypt_summary">Urządzenie odszyfrowane.</string>
     <string name="crypt_keeper_type_pin">Kod PIN</string>
-    <string name="crypt_keeper_type_pattern">Symbol</string>
+    <string name="crypt_keeper_type_pattern">symbolu</string>
     <string name="crypt_keeper_type_password">Hasło</string>
     <string name="crypt_keeper_type_direction">Blokada kierunkami</string>
     <string name="crypt_keeper_confirm_title_dec">Potwierdź odszyfrowanie</string>
@@ -1704,7 +1707,11 @@ Szyfrowanie może potrwać co najmniej godzinę. Przed rozpoczęciem upewnij si�
     <string name="crypt_keeper_confirm_title">Potwierdź szyfrowanie</string>
     <string name="crypt_keeper_final_desc">Szyfrowania urządzenia nie można cofnąć, a dane zostaną utracone, jeśli proces zostanie przerwany. Szyfrowanie może zająć ponad godzinę, a w tym czasie urządzenie zostanie kilka razy uruchomione ponownie i nie będzie można z niego korzystać.</string>
     <string name="crypt_keeper_setup_title">Szyfrowanie…</string>
-    <string name="crypt_keeper_warn_wipe">Prób uruchomienia urządzenia zostało już tylko: %d, zanim urządzenie zostanie wyzerowane do domyślnych ustawień fabrycznych. Spowoduje to wymazanie wszystkich danych, w tym plików i pobranych aplikacji.</string>
+    <string name="crypt_keeper_warn_wipe">"Pozostało prób: %1$d przed zresetowaniem telefonu do domyślnych ustawień fabrycznych. Spowoduje to usunięcie wszystkich danych, w tym plików i pobranych aplikacji.
+
+Jeśli telefon zostanie zresetowany, konieczne może być wprowadzenie informacji o koncie %2$s (adres e-mail i hasło) powiązanym z tym telefonem, aby nadal móc z niego korzystać."</string>
+    <string name="crypt_keeper_samsung_account">Samsung account</string>
+    <string name="crypt_keeper_google_account">Konto Google</string>
     <string name="crypt_keeper_failed_title">Szyfrowanie nie powiodło się</string>
     <string name="crypt_keeper_failed_summary">Nie można uruchomić urządzenia. Proces szyfrowania został przerwany. Musisz przywrócić w urządzeniu domyślne ustawienia fabryczne. Spowoduje to usunięcie wszystkich danych.</string>
     <string name="crypt_keeper_data_corrupted_title">Uszkodzona pamięć urządzenia</string>
@@ -1723,10 +1730,13 @@ Szyfrowanie może potrwać co najmniej godzinę. Przed rozpoczęciem upewnij si�
     <string name="cryptkeeper_wrong_pin">Wprowadzono nieprawidłowy PIN</string>
     <string name="cryptkeeper_wrong_direction">Narysowano nieprawidłowy kierunek</string>
     <string name="checking_decryption">Sprawdzanie…</string>
-    <string name="crypt_keeper_last_warn_wipe">Została już tylko 1 próba uruchomienia urządzenia, zanim urządzenie zostanie zresetowane do domyślnych ustawień fabrycznych. Spowoduje to wymazanie wszystkich danych, w tym plików i pobranych aplikacji.</string>
+    <string name="crypt_keeper_last_warn_wipe">"Pozostała 1 próba przed zresetowaniem telefonu do domyślnych ustawień fabrycznych. Spowoduje to usunięcie wszystkich danych, w tym plików i pobranych aplikacji.
+
+Jeśli telefon zostanie zresetowany, konieczne może być wprowadzenie informacji o koncie %s (adres e-mail i hasło) powiązanym z tym telefonem, aby nadal móc z niego korzystać."</string>
     <string name="crypt_keeper_failed_title_dec">Błąd deszyfrowania</string>
     <string name="crypt_keeper_failed_summary_dec">Nie można zakończyć odszyfrowania z powodu przerwania. Przywróć ustawienia fabryczne (spowoduje to usunięcie wszystkich danych) przed użyciem.</string>
     <string name="crypt_keeper_set_screen_lock_type">Ustaw typ blokady ekranu</string>
+    <string name="crypt_keeper_warning_keyboard_cover_does_not_work">Klawiatura zewnętrzna nie będzie działać po ponownym uruchomieniu telefonu.</string>
     <string name="encryption_interstitial_message">"Możesz dodatkowo chronić telefon, wymagając wprowadzenia %s przed uruchomieniem telefonu. Pomaga to chronić dane na zagubionych lub skradzionych urządzeniach. Niektóre aplikacje mogą wymagać Bezpiecznego uruchamiania zgodnie z zasadami szyfrowania urządzenia w celu uzyskania dostępu do funkcji, takich jak synchronizacja poczty e-mail.
 
 Nie będziesz odbierać żadnych połączeń, wiadomości czy powiadomień ani słyszeć alarmów do momentu uruchomienia telefonu."</string>
@@ -1971,6 +1981,12 @@ You will also need it when:"</string>
     <string name="lockpassword_confirm_your_pin_with_fingerprint">Użyj odcisku palca lub wprowadź aktualny kod PIN.</string>
     <string name="lockpassword_confirm_your_pattern_with_fingerprint">Użyj odcisku palca lub narysuj aktualny symbol.</string>
     <string name="lockpassword_confirm_your_password_with_fingerprint">Użyj odcisku palca lub wprowadź aktualne hasło.</string>
+    <string name="lockpassword_confirm_your_pin_with_iris">Użyj tęczówek lub wprowadź bieżący kod PIN.</string>
+    <string name="lockpassword_confirm_your_pattern_with_iris">Użyj tęczówek lub narysuj bieżący symbol.</string>
+    <string name="lockpassword_confirm_your_password_with_iris">Użyj tęczówek lub wprowadź bieżące hasło.</string>
+    <string name="lockpassword_confirm_your_pin_with_biometrics">Użyj biometrii lub wprowadź kod PIN.</string>
+    <string name="lockpassword_confirm_your_pattern_with_biometrics">Użyj biometrii lub narysuj swój symbol.</string>
+    <string name="lockpassword_confirm_your_password_with_biometrics">Użyj biometrii lub wprowadź hasło.</string>
     <string name="lockpassword_confirm_your_pin_instead_of_fingerprint">Wprowadź kod PIN, zamiast korzystać z rozpoznawania odcisków palców.</string>
     <string name="lockpassword_confirm_your_pattern_instead_of_fingerprint">Narysuj symbol, zamiast korzystać z rozpoznawania odcisków palców.</string>
     <string name="lockpassword_confirm_your_password_instead_of_fingerprint">Wprowadź hasło, zamiast korzystać z rozpoznawania odcisków palców.</string>
@@ -2045,6 +2061,7 @@ Wybierz sposób odblokowywania telefonu. Nie można jednocześnie używać odblo
     <string name="face_status_timeout">Limit czasu. Spróbuj później.</string>
     <string name="okay">OK</string>
     <string name="face_samsung_account_button">Użyj Samsung account</string>
+    <string name="face_galaxy_account_button">Użyj konta Galaxy</string>
     <string name="face_error_DB_corrupted">Wystąpił problem z danymi twarzy. Zarejestruj twarz ponownie.</string>
     <string name="face_error_DB_corrupted_popup_title">Ponowna rejestracja twarzy</string>
     <string name="face_error_timeout">Nie wykryto twarzy.</string>
@@ -2155,7 +2172,7 @@ Włącz odblokowanie za pomocą tęczówki, aby używać biometrii lub %s do odb
     <string name="biometrics_backup_locktype_title">Konfiguracja zabezpieczeń teczówkami</string>
     <string name="biometrics_register_your_iris">Zarejestruj swoje tęczówki.</string>
     <string name="biometrics_backup_locktype_summary">Aby odblokowywać urządzenie za pomocą tęczówek, musisz ustawić symbol, kod PIN lub hasło.</string>
-    <string name="biometrics_backup_locktype_message">Aby używać tęczówek do odblokowywania telefonu lub do bezpiecznej weryfikacji, trzeba:</string>
+    <string name="biometrics_backup_locktype_message">Aby używać tęczówek do odblokowywania telefonu lub do weryfikowania siebie w aplikacjach, wykonaj następujące czynności:</string>
     <string name="iris_delete_popup_title">Usunąć dane tęczówek?</string>
     <string name="iris_delete_popup_message">Usunąć dane tęczówek?</string>
     <string name="iris_delete_popup_message_with_related_func">Funkcje korzystające z tęczówek zostaną wyłączone.</string>
@@ -2231,6 +2248,9 @@ Wybierz sposób odblokowywania telefonu. Nie można jednocześnie używać odblo
     <string name="biometrics_dex_cant_use_msg">Nie można używać funkcji %s w aplikacji Samsung DeX.</string>
     <string name="biometrics_dex_closed_to_switch">Zamknięto %s w celu przełączenia na Samsung DeX.</string>
     <string name="biometircs_dex_cant_use_toast">Nie można uruchomić aplikacji %s w trybie Samsung DeX. Spróbuj uruchomić ją w trybie telefonu.</string>
+    <string name="iris_guide_text_preview">Patrz tu, aby uż. tęcz.</string>
+    <string name="iris_guide_enable_toggle">Dotknij tu, by użyć tęczówek</string>
+    <string name="iris_cannot_verify">Błąd weryfikacji tęczówek</string>
     <string name="knox_twofactor_bio_description">Wybierz typ blokady biometrycznej oraz drugi typ blokady do odblokowania %s.</string>
     <string name="fingerprint_registered">Zarejestrowane odciski palców będą używane wraz z wybraną metodą odblokowania.</string>
     <string name="knox_twofactor_description">Wybierz biometrię oraz drugi typ blokady do odblokowania %s.</string>
@@ -3093,6 +3113,7 @@ Spróbuj ponownie."</string>
     <string name="easy_mode_app_help">Korzystaj z urządzenia z większą łatwością dzięki prostszemu układowi ekranu startowego i większym elementom na ekranie.</string>
     <string name="easy_mode_app_help_dream_1">Używaj prostego układu ekranu startowego i większych elementów na ekranie.</string>
     <string name="easy_mode_app_help_dream_2">Wszystkie dostosowania ekranu startowego zostaną odrzucone, a powiększenie ekranu zostanie ustawione na maksymalne.</string>
+    <string name="easy_mode_app_help_3rd_launcher">Zastosuj Tryb ułatwienia w celu uzyskania większych elementów na ekranie. Jeśli nie używasz ekranu startowego TouchWiz, układ ekranu startowego nie zmieni się, ale powiększenie ekranu będzie duże, a rozmiar czcionki — średni.</string>
     <string name="security_warning_content">Aby chronić swoją prywatność, możesz ustawić hasło, kod PIN lub symbol do odblokowywania ekranu</string>
     <string name="lock_setting_weather_desc">Aby wyświetlić lub zmienić ustawienia pogody, dotknij poniżej opcji USTAWIENIA POGODY.</string>
     <string name="lock_setting_weather_btn">Ustawienia pogody</string>
@@ -3339,7 +3360,7 @@ Downloading via mobile networks may result in additional charges depending on yo
     <string name="disable_hovering_title">Wyłącz Air view</string>
     <string name="disable_hovering_summary">Air view i TalkBack nie mogą być włączone jednocześnie. Air view zostanie wyłączone.</string>
     <string name="pen_settings_pen_input">Bezp. wpisywanie rysikiem</string>
-    <string name="action_memo_onoff_screen_title">Notatka wył. ekr.</string>
+    <string name="action_memo_onoff_screen_title">Notatka wyłączonego ekranu</string>
     <string name="screen_off_note_summary">Pisz notatki przy wyłączonym ekranie. Wystarczy wyjąć rysik S Pen i już można zacząć pisać.</string>
     <string name="screen_off_note_summary_jpn">Aby tworzyć notatki, odłącz rysik S Pen przy wyłączonym ekranie, a następnie pisz nim po ekranie. Notatki z wyłączonego ekranu zostaną zapisane w aplikacji Notatki Galaxy.</string>
     <string name="screen_off_note_summary_no_detach">Aby tworzyć notatki, naciśnij przycisk Rysik, dotknij ekranu, gdy jest wyłączony, a następnie pisz po nim. Notatki z wyłączonego ekranu zostaną zapisane w aplikacji Notatki Samsung.</string>
@@ -3946,7 +3967,7 @@ Korzystanie z funkcji Router Wi-Fi zwiększa zużycie baterii i wykorzystanie da
     <string name="wfd_descrpition_playsound">Odtwórz dźwięk.</string>
     <string name="wfd_is_not_supported">Ta funkcja nie jest obsługiwana.</string>
     <string name="usbtethering_notify_wifi_is_on_title">Wyłączyć funkcję Wi-Fi?</string>
-    <string name="usbtethering_notify_wifi_is_on">Routery Wi-Fi i USB nie mogą być otwarte w tym samym czasie. Wyłącz funkcję Wi-Fi.</string>
+    <string name="usbtethering_notify_wifi_is_on">Routery Wi-Fi i USB nie mogą być włączone w tym samym czasie. Router Wi-Fi zostanie wyłączony.</string>
     <string name="disable_multi_window_dialog_text">Funkcja wielu okien zostanie wyłączona, a wszystkie aplikacje otwarte w wyskakujących oknach zostaną zamknięte.</string>
     <string name="keyguard_password_attempt_count_pin_code">Pozostało prób: %d.</string>
     <string name="keyguard_password_attempts_count_pin_code">Pozostało prób: %d.</string>
@@ -4154,6 +4175,7 @@ Odbieranie SMS-ów"</string>
     <string name="hdmi_mode_title">Tryb HDMI</string>
     <string name="hdmi_mode_dex">Samsung DeX</string>
     <string name="hdmi_mode_mirroring">Screen Mirroring</string>
+    <string name="hdmi_mode_not_available_while_cover_attached">Brak dostępu do funkcji %s przy założonej okładce.</string>
     <string name="screen_timeout_for_dex">Lim.cz.wyg.ekr. dla Samsung DeX</string>
     <string name="show_virtual_keyboard_for_dex">Pokazuj klawiaturę ekranową w trybie Samsung DeX</string>
     <string name="comma">,</string>
@@ -4462,7 +4484,7 @@ Możesz zmienić to później w ustawieniach łączności Bluetooth."</string>
     <string name="date_picker_title">Data</string>
     <string name="time_picker_title">Godzina</string>
     <string name="lock_after_timeout">Zablokuj automatycznie</string>
-    <string name="lock_after_timeout_summary">Blokuj ekran %s po jego automatycznym wyłączeniu.</string>
+    <string name="lock_after_timeout_summary">Blokuj telefon %s po automatycznym wyłączeniu ekranu.</string>
     <string name="lock_after_timeout_summary_with_exception">Blokuj ekran %1$s po jego automatycznym wyłączeniu się, z wyjątkiem, gdy jest odblokowywany za pomocą %2$s.</string>
     <string name="show_owner_info_on_lockscreen_label">Pokazuje informacje o właścicielu urządzenia na ekranie blokady.</string>
     <string name="owner_info_settings_title">Informacje o właścicielu</string>
@@ -4610,6 +4632,8 @@ W celu poprawienia dokładności lokalizacji aplikacje i usługi mogą skanować
     <string name="wifi_empty_list_user_restricted">Nie masz uprawnień do zmiany ustawień Wi-Fi.</string>
     <string name="wifi_setup_wps">Automatyczna konfiguracja (WPS)</string>
     <string name="wifi_show_advanced">Pokaż opcje zaawansowane</string>
+    <string name="wifi_advanced_toggle_description_expanded">Dotknij dwukrotnie, aby zwinąć.</string>
+    <string name="wifi_advanced_toggle_description_collapsed">Dotknij dwukrotnie, aby rozwinąć.</string>
     <string name="wifi_wps_setup_title">Konfiguracja WPS</string>
     <string name="wifi_wps_setup_msg">Uruchamianie usługi WPS…</string>
     <string name="wifi_wps_onstart_pbc">Dotknij przycisku chronionej konfiguracji Wi-Fi na routerze. Może mieć on oznaczenie WPS lub zawierać ten symbol:</string>
@@ -4641,6 +4665,10 @@ W celu poprawienia dokładności lokalizacji aplikacje i usługi mogą skanować
     <string name="wifi_shared">Udostępniono</string>
     <string name="wifi_unchanged">(bez zmian)</string>
     <string name="wifi_unspecified">(Nieokreślony)</string>
+    <string name="wifi_select_cert">Wybierz certyfikat</string>
+    <string name="wifi_do_not_provide_eap_user_cert">Nie podawaj</string>
+    <string name="wifi_do_not_validate_eap_server">Nie sprawdzaj</string>
+    <string name="wifi_do_not_validate_eap_server_warning">Nie określono certyfikatu. Połączenie nie będzie prywatne.</string>
     <string name="wifi_scan_always_turnon_message">Aplikacja %s żąda pozwolenia na skanowanie w poszukiwaniu sieci Wi-Fi nawet przy wyłączonym Wi-Fi w celu m.in. poprawy dokładności lokalizacji. Zezwolić dla wszystkich aplikacji?</string>
     <string name="wifi_scan_always_confirm_allow">Zezwól</string>
     <string name="wifi_scan_always_confirm_deny">Odrzuć</string>
@@ -4892,8 +4920,8 @@ Po sformatowaniu będzie działać tylko w tym urządzeniu.
 
 "<b>Formatowanie usuwa wszystkie dane zapisane obecnie w pamięci %2$s.</b> Aby uniknąć utraty danych, wykonaj ich kopię zapasową przed sformatowaniem pamięci %3$s.</string>
     <string name="storage_wizard_format_confirm_next">Formatuj</string>
-    <string name="storage_wizard_format_progress_title">Formatowanie urządzenia pamięci %1$s</string>
-    <string name="storage_wizard_format_progress_body">"Formatowanie urządzenia pamięci %1$s…
+    <string name="storage_wizard_format_progress_title">Formatowanie %1$s</string>
+    <string name="storage_wizard_format_progress_body">"Formatowanie %1$s…
 
 Nie usuwaj go podczas formatowania."</string>
     <string name="storage_wizard_migrate_title">Eksport danych</string>
@@ -4975,9 +5003,9 @@ Rozważ użycie szybszej karty pamięci lub urządzenia pamięci USB w celu popr
     <string name="restore_default_apn_completed">Ustawienia APN zostały zresetowane do wartości domyślnych.</string>
     <string name="reset_network_desc">To spowoduje wyzerowanie wszystkich ustawień sieciowych, w tym funkcji:</string>
     <string name="reset_network_button_text">Zeruj ustawienia</string>
-    <string name="reset_network_final_desc">Wszystkie ustawienia połączeń zostaną zresetowane. Tej czynności nie można cofnąć.</string>
+    <string name="reset_network_final_desc">Wszystkie ustawienia sieciowe zostaną zresetowane. Tej czynności nie można cofnąć.</string>
     <string name="reset_network_final_button_text">Zeruj ustawienia</string>
-    <string name="reset_network_complete_toast">Zerowanie ustawień połączenia.</string>
+    <string name="reset_network_complete_toast">Zresetowano ustawienia sieciowe.</string>
     <string name="master_clear_title">Ustawienia fabryczne</string>
     <string name="master_clear_accounts">Aktualnie zalogowano na następujących kontach:</string>
     <string name="master_clear_other_users_present">Dane na tym urządzeniu należące do innych użytkowników zostaną również usunięte.</string>
@@ -6079,7 +6107,7 @@ Nie będziesz odbierać żadnych połączeń, wiadomości czy powiadomień ani s
     <string name="ethernet_data_template">%1$s danych Ethernet</string>
     <string name="cell_warning_only">Ostrzeżenie danych przy %s</string>
     <string name="cell_warning_and_limit">%1$s Ostrzeżenie o wykorzystaniu danych/%2$s Limit wykorzystania danych</string>
-    <string name="billing_cycle">Cykl rozl. i ostrz. dot. danych</string>
+    <string name="billing_cycle">Cykl rozliczeniowy</string>
     <string name="billing_cycle_summary">%s dnia każdego miesiąca</string>
     <string name="billing_cycle_fragment_summary">%s dnia każdego miesiąca</string>
     <string name="network_restrictions">Ograniczaj sieci</string>
@@ -6090,6 +6118,7 @@ Nie będziesz odbierać żadnych połączeń, wiadomości czy powiadomień ani s
     <string name="set_data_limit">Ustaw limit danych</string>
     <string name="data_limit">Limit danych</string>
     <string name="data_usage_template">%1$s wykorzystano w dniach %2$s</string>
+    <string name="data_usage_template_wifi">W ciągu ostatnich 30 dni użyto %s</string>
     <string name="data_usage_other_apps">Powiązane apl. ujęte w wykorz.</string>
     <string name="data_saver_title">Oszczędzanie danych</string>
     <string name="unrestricted_data_saver">Zezw. apl. przy wł. Oszcz. dan.</string>
@@ -6140,6 +6169,7 @@ Nie będziesz odbierać żadnych połączeń, wiadomości czy powiadomień ani s
     <string name="legacy_dhcp_client_summary">Użyj klienta DHCP z Lollipop zamiast nowego klienta DHCP Androida</string>
     <string name="screen_off_pocket_title">Pozostaw wyłączony ekran</string>
     <string name="screen_off_pocket_summary">Zapobiegaj przypadkowemu włączeniu ekranu, gdy urządzenie jest w ciemnym miejscu, takim jak kieszeń lub torba.</string>
+    <string name="noApplications">Wszystkie aplikacje powiązane z tą czynnością zostały wyłączone lub zablokowane albo nie zostały one zainstalowane.</string>
     <string name="confirm_reset_shortcut_manager_throttling_title">Resetowanie ograniczenia szybkości Menedżera skrótów</string>
     <string name="confirm_reset_shortcut_manager_throttling_message">Liczniki ograniczenia szybkości Menedżera skrótów zostaną zresetowane.</string>
 </resources>

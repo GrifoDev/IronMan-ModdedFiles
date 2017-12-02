@@ -666,8 +666,7 @@
     <integer name="find_my_mobile_sim_change_alert_contacts">4484</integer>
     <integer name="find_my_mobile_sim_change_alert_added_num">4485</integer>
     <integer name="find_my_mobile_sim_change_alert_remove">4486</integer>
-    <integer name="secure_folder">4491</integer>
-    <integer name="app_permission_monitor_notification">4493</integer>
+    <integer name="secure_folder">4493</integer>
     <integer name="lockscreen_and_security_unknown">4490</integer>
     <integer name="secure_startup">4491</integer>
     <integer name="protect_encrypted_data">32</integer>

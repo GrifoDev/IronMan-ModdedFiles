@@ -991,129 +991,209 @@
 .end method
 
 .method private startSaveAndFinish()V
-    .locals 10
+    .locals 18
 
-    const/4 v6, 0x0
+    move-object/from16 v0, p0
 
-    const/4 v3, 0x0
+    iget-object v2, v0, Lcom/android/settings/ChooseLockPattern$ChooseLockPatternFragment;->mSaveAndFinishWorker:Lcom/android/settings/ChooseLockPattern$SaveAndFinishWorker;
 
-    iget-object v0, p0, Lcom/android/settings/ChooseLockPattern$ChooseLockPatternFragment;->mSaveAndFinishWorker:Lcom/android/settings/ChooseLockPattern$SaveAndFinishWorker;
+    if-eqz v2, :cond_0
 
-    if-eqz v0, :cond_0
+    const-string/jumbo v2, "ChooseLockPattern"
 
-    const-string/jumbo v0, "ChooseLockPattern"
+    const-string/jumbo v3, "startSaveAndFinish with an existing SaveAndFinishWorker."
 
-    const-string/jumbo v1, "startSaveAndFinish with an existing SaveAndFinishWorker."
-
-    invoke-static {v0, v1}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {v2, v3}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
     return-void
 
     :cond_0
-    iget-boolean v0, p0, Lcom/android/settings/ChooseLockPattern$ChooseLockPatternFragment;->mHasChallenge:Z
+    move-object/from16 v0, p0
 
-    if-eqz v0, :cond_1
+    iget-boolean v2, v0, Lcom/android/settings/ChooseLockPattern$ChooseLockPatternFragment;->mHasChallenge:Z
 
-    iget-wide v0, p0, Lcom/android/settings/ChooseLockPattern$ChooseLockPatternFragment;->mChallenge:J
+    if-eqz v2, :cond_3
 
-    const-wide/16 v4, 0x0
+    move-object/from16 v0, p0
 
-    cmp-long v0, v0, v4
+    iget-wide v2, v0, Lcom/android/settings/ChooseLockPattern$ChooseLockPatternFragment;->mChallenge:J
 
-    if-nez v0, :cond_1
+    const-wide/16 v6, 0x0
 
-    invoke-virtual {p0}, Lcom/android/settings/ChooseLockPattern$ChooseLockPatternFragment;->getActivity()Landroid/app/Activity;
+    cmp-long v2, v2, v6
 
-    move-result-object v0
+    if-nez v2, :cond_3
 
-    const-class v1, Landroid/hardware/fingerprint/FingerprintManager;
+    invoke-virtual/range {p0 .. p0}, Lcom/android/settings/ChooseLockPattern$ChooseLockPatternFragment;->getActivity()Landroid/app/Activity;
 
-    invoke-virtual {v0, v1}, Landroid/app/Activity;->getSystemService(Ljava/lang/Class;)Ljava/lang/Object;
+    move-result-object v2
 
-    move-result-object v9
+    const-class v3, Landroid/hardware/fingerprint/FingerprintManager;
 
-    check-cast v9, Landroid/hardware/fingerprint/FingerprintManager;
+    invoke-virtual {v2, v3}, Landroid/app/Activity;->getSystemService(Ljava/lang/Class;)Ljava/lang/Object;
 
-    if-eqz v9, :cond_1
+    move-result-object v16
 
-    invoke-virtual {v9}, Landroid/hardware/fingerprint/FingerprintManager;->preEnroll()J
+    check-cast v16, Landroid/hardware/fingerprint/FingerprintManager;
 
-    move-result-wide v0
+    if-eqz v16, :cond_1
 
-    iput-wide v0, p0, Lcom/android/settings/ChooseLockPattern$ChooseLockPatternFragment;->mChallenge:J
+    invoke-virtual/range {v16 .. v16}, Landroid/hardware/fingerprint/FingerprintManager;->preEnroll()J
+
+    move-result-wide v2
+
+    move-object/from16 v0, p0
+
+    iput-wide v2, v0, Lcom/android/settings/ChooseLockPattern$ChooseLockPatternFragment;->mChallenge:J
 
     :cond_1
-    invoke-virtual {p0, v6}, Lcom/android/settings/ChooseLockPattern$ChooseLockPatternFragment;->setRightButtonEnabled(Z)V
+    invoke-virtual/range {p0 .. p0}, Lcom/android/settings/ChooseLockPattern$ChooseLockPatternFragment;->getActivity()Landroid/app/Activity;
 
-    new-instance v0, Lcom/android/settings/ChooseLockPattern$SaveAndFinishWorker;
+    move-result-object v2
 
-    invoke-direct {v0, v3}, Lcom/android/settings/ChooseLockPattern$SaveAndFinishWorker;-><init>(Lcom/android/settings/ChooseLockPattern$SaveAndFinishWorker;)V
+    invoke-static {v2}, Lcom/samsung/android/camera/iris/SemIrisManager;->getSemIrisManager(Landroid/content/Context;)Lcom/samsung/android/camera/iris/SemIrisManager;
 
-    iput-object v0, p0, Lcom/android/settings/ChooseLockPattern$ChooseLockPatternFragment;->mSaveAndFinishWorker:Lcom/android/settings/ChooseLockPattern$SaveAndFinishWorker;
+    move-result-object v17
 
-    invoke-virtual {p0}, Lcom/android/settings/ChooseLockPattern$ChooseLockPatternFragment;->getFragmentManager()Landroid/app/FragmentManager;
+    if-eqz v17, :cond_2
 
-    move-result-object v0
+    invoke-virtual/range {v17 .. v17}, Lcom/samsung/android/camera/iris/SemIrisManager;->preEnroll()J
 
-    invoke-virtual {v0}, Landroid/app/FragmentManager;->beginTransaction()Landroid/app/FragmentTransaction;
+    move-result-wide v2
 
-    move-result-object v0
+    move-object/from16 v0, p0
 
-    iget-object v1, p0, Lcom/android/settings/ChooseLockPattern$ChooseLockPatternFragment;->mSaveAndFinishWorker:Lcom/android/settings/ChooseLockPattern$SaveAndFinishWorker;
+    iput-wide v2, v0, Lcom/android/settings/ChooseLockPattern$ChooseLockPatternFragment;->mChallengeIris:J
 
-    const-string/jumbo v3, "save_and_finish_worker"
+    :cond_2
+    invoke-virtual/range {p0 .. p0}, Lcom/android/settings/ChooseLockPattern$ChooseLockPatternFragment;->getActivity()Landroid/app/Activity;
 
-    invoke-virtual {v0, v1, v3}, Landroid/app/FragmentTransaction;->add(Landroid/app/Fragment;Ljava/lang/String;)Landroid/app/FragmentTransaction;
+    move-result-object v2
 
-    move-result-object v0
+    invoke-static {v2}, Lcom/samsung/android/bio/face/SemBioFaceManager;->getInstance(Landroid/content/Context;)Lcom/samsung/android/bio/face/SemBioFaceManager;
 
-    invoke-virtual {v0}, Landroid/app/FragmentTransaction;->commit()I
+    move-result-object v15
 
-    invoke-virtual {p0}, Lcom/android/settings/ChooseLockPattern$ChooseLockPatternFragment;->getFragmentManager()Landroid/app/FragmentManager;
+    if-eqz v15, :cond_3
 
-    move-result-object v0
+    invoke-virtual {v15}, Lcom/samsung/android/bio/face/SemBioFaceManager;->preEnroll()J
 
-    invoke-virtual {v0}, Landroid/app/FragmentManager;->executePendingTransactions()Z
+    move-result-wide v2
 
-    iget-object v0, p0, Lcom/android/settings/ChooseLockPattern$ChooseLockPatternFragment;->mSaveAndFinishWorker:Lcom/android/settings/ChooseLockPattern$SaveAndFinishWorker;
+    move-object/from16 v0, p0
 
-    invoke-virtual {v0, p0}, Lcom/android/settings/ChooseLockPattern$SaveAndFinishWorker;->setListener(Lcom/android/settings/SaveChosenLockWorkerBase$Listener;)V
+    iput-wide v2, v0, Lcom/android/settings/ChooseLockPattern$ChooseLockPatternFragment;->mChallengeFace:J
 
-    invoke-virtual {p0}, Lcom/android/settings/ChooseLockPattern$ChooseLockPatternFragment;->getActivity()Landroid/app/Activity;
+    :cond_3
+    const/4 v2, 0x0
 
-    move-result-object v0
+    move-object/from16 v0, p0
 
-    invoke-virtual {v0}, Landroid/app/Activity;->getIntent()Landroid/content/Intent;
+    invoke-virtual {v0, v2}, Lcom/android/settings/ChooseLockPattern$ChooseLockPatternFragment;->setRightButtonEnabled(Z)V
 
-    move-result-object v0
+    new-instance v2, Lcom/android/settings/ChooseLockPattern$SaveAndFinishWorker;
 
-    const-string/jumbo v1, "extra_require_password"
+    const/4 v3, 0x0
 
-    invoke-virtual {v0, v1, v6}, Landroid/content/Intent;->getBooleanExtra(Ljava/lang/String;Z)Z
+    invoke-direct {v2, v3}, Lcom/android/settings/ChooseLockPattern$SaveAndFinishWorker;-><init>(Lcom/android/settings/ChooseLockPattern$SaveAndFinishWorker;)V
 
-    move-result v2
+    move-object/from16 v0, p0
 
-    iget-object v0, p0, Lcom/android/settings/ChooseLockPattern$ChooseLockPatternFragment;->mSaveAndFinishWorker:Lcom/android/settings/ChooseLockPattern$SaveAndFinishWorker;
+    iput-object v2, v0, Lcom/android/settings/ChooseLockPattern$ChooseLockPatternFragment;->mSaveAndFinishWorker:Lcom/android/settings/ChooseLockPattern$SaveAndFinishWorker;
 
-    iget-object v1, p0, Lcom/android/settings/ChooseLockPattern$ChooseLockPatternFragment;->mChooseLockSettingsHelper:Lcom/android/settings/ChooseLockSettingsHelper;
+    invoke-virtual/range {p0 .. p0}, Lcom/android/settings/ChooseLockPattern$ChooseLockPatternFragment;->getFragmentManager()Landroid/app/FragmentManager;
 
-    invoke-virtual {v1}, Lcom/android/settings/ChooseLockSettingsHelper;->utils()Lcom/android/internal/widget/LockPatternUtils;
+    move-result-object v2
 
-    move-result-object v1
+    invoke-virtual {v2}, Landroid/app/FragmentManager;->beginTransaction()Landroid/app/FragmentTransaction;
 
-    iget-boolean v3, p0, Lcom/android/settings/ChooseLockPattern$ChooseLockPatternFragment;->mHasChallenge:Z
+    move-result-object v2
 
-    iget-wide v4, p0, Lcom/android/settings/ChooseLockPattern$ChooseLockPatternFragment;->mChallenge:J
+    move-object/from16 v0, p0
 
-    iget-object v6, p0, Lcom/android/settings/ChooseLockPattern$ChooseLockPatternFragment;->mChosenPattern:Ljava/util/List;
+    iget-object v3, v0, Lcom/android/settings/ChooseLockPattern$ChooseLockPatternFragment;->mSaveAndFinishWorker:Lcom/android/settings/ChooseLockPattern$SaveAndFinishWorker;
 
-    iget-object v7, p0, Lcom/android/settings/ChooseLockPattern$ChooseLockPatternFragment;->mCurrentPattern:Ljava/lang/String;
+    const-string/jumbo v5, "save_and_finish_worker"
 
-    iget v8, p0, Lcom/android/settings/ChooseLockPattern$ChooseLockPatternFragment;->mUserId:I
+    invoke-virtual {v2, v3, v5}, Landroid/app/FragmentTransaction;->add(Landroid/app/Fragment;Ljava/lang/String;)Landroid/app/FragmentTransaction;
 
-    invoke-virtual/range {v0 .. v8}, Lcom/android/settings/ChooseLockPattern$SaveAndFinishWorker;->start(Lcom/android/internal/widget/LockPatternUtils;ZZJLjava/util/List;Ljava/lang/String;I)V
+    move-result-object v2
 
-    invoke-direct {p0}, Lcom/android/settings/ChooseLockPattern$ChooseLockPatternFragment;->insertSALoggingWhenLockSave()V
+    invoke-virtual {v2}, Landroid/app/FragmentTransaction;->commit()I
+
+    invoke-virtual/range {p0 .. p0}, Lcom/android/settings/ChooseLockPattern$ChooseLockPatternFragment;->getFragmentManager()Landroid/app/FragmentManager;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Landroid/app/FragmentManager;->executePendingTransactions()Z
+
+    move-object/from16 v0, p0
+
+    iget-object v2, v0, Lcom/android/settings/ChooseLockPattern$ChooseLockPatternFragment;->mSaveAndFinishWorker:Lcom/android/settings/ChooseLockPattern$SaveAndFinishWorker;
+
+    move-object/from16 v0, p0
+
+    invoke-virtual {v2, v0}, Lcom/android/settings/ChooseLockPattern$SaveAndFinishWorker;->setListener(Lcom/android/settings/SaveChosenLockWorkerBase$Listener;)V
+
+    invoke-virtual/range {p0 .. p0}, Lcom/android/settings/ChooseLockPattern$ChooseLockPatternFragment;->getActivity()Landroid/app/Activity;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Landroid/app/Activity;->getIntent()Landroid/content/Intent;
+
+    move-result-object v2
+
+    const-string/jumbo v3, "extra_require_password"
+
+    const/4 v5, 0x0
+
+    invoke-virtual {v2, v3, v5}, Landroid/content/Intent;->getBooleanExtra(Ljava/lang/String;Z)Z
+
+    move-result v4
+
+    move-object/from16 v0, p0
+
+    iget-object v2, v0, Lcom/android/settings/ChooseLockPattern$ChooseLockPatternFragment;->mSaveAndFinishWorker:Lcom/android/settings/ChooseLockPattern$SaveAndFinishWorker;
+
+    move-object/from16 v0, p0
+
+    iget-object v3, v0, Lcom/android/settings/ChooseLockPattern$ChooseLockPatternFragment;->mChooseLockSettingsHelper:Lcom/android/settings/ChooseLockSettingsHelper;
+
+    invoke-virtual {v3}, Lcom/android/settings/ChooseLockSettingsHelper;->utils()Lcom/android/internal/widget/LockPatternUtils;
+
+    move-result-object v3
+
+    move-object/from16 v0, p0
+
+    iget-boolean v5, v0, Lcom/android/settings/ChooseLockPattern$ChooseLockPatternFragment;->mHasChallenge:Z
+
+    move-object/from16 v0, p0
+
+    iget-wide v6, v0, Lcom/android/settings/ChooseLockPattern$ChooseLockPatternFragment;->mChallenge:J
+
+    move-object/from16 v0, p0
+
+    iget-wide v8, v0, Lcom/android/settings/ChooseLockPattern$ChooseLockPatternFragment;->mChallengeIris:J
+
+    move-object/from16 v0, p0
+
+    iget-wide v10, v0, Lcom/android/settings/ChooseLockPattern$ChooseLockPatternFragment;->mChallengeFace:J
+
+    move-object/from16 v0, p0
+
+    iget-object v12, v0, Lcom/android/settings/ChooseLockPattern$ChooseLockPatternFragment;->mChosenPattern:Ljava/util/List;
+
+    move-object/from16 v0, p0
+
+    iget-object v13, v0, Lcom/android/settings/ChooseLockPattern$ChooseLockPatternFragment;->mCurrentPattern:Ljava/lang/String;
+
+    move-object/from16 v0, p0
+
+    iget v14, v0, Lcom/android/settings/ChooseLockPattern$ChooseLockPatternFragment;->mUserId:I
+
+    invoke-virtual/range {v2 .. v14}, Lcom/android/settings/ChooseLockPattern$SaveAndFinishWorker;->start(Lcom/android/internal/widget/LockPatternUtils;ZZJJJLjava/util/List;Ljava/lang/String;I)V
+
+    invoke-direct/range {p0 .. p0}, Lcom/android/settings/ChooseLockPattern$ChooseLockPatternFragment;->insertSALoggingWhenLockSave()V
 
     return-void
 .end method
@@ -2226,21 +2306,17 @@
 .end method
 
 .method public onCreate(Landroid/os/Bundle;)V
-    .locals 12
+    .locals 15
 
-    const/4 v11, 0x0
-
-    const/4 v3, 0x0
-
-    invoke-super {p0, p1}, Lcom/samsung/android/settings/SecInstrumentedFragment;->onCreate(Landroid/os/Bundle;)V
+    invoke-super/range {p0 .. p1}, Lcom/samsung/android/settings/SecInstrumentedFragment;->onCreate(Landroid/os/Bundle;)V
 
     new-instance v1, Lcom/android/settings/ChooseLockSettingsHelper;
 
     invoke-virtual {p0}, Lcom/android/settings/ChooseLockPattern$ChooseLockPatternFragment;->getActivity()Landroid/app/Activity;
 
-    move-result-object v4
+    move-result-object v3
 
-    invoke-direct {v1, v4}, Lcom/android/settings/ChooseLockSettingsHelper;-><init>(Landroid/app/Activity;)V
+    invoke-direct {v1, v3}, Lcom/android/settings/ChooseLockSettingsHelper;-><init>(Landroid/app/Activity;)V
 
     iput-object v1, p0, Lcom/android/settings/ChooseLockPattern$ChooseLockPatternFragment;->mChooseLockSettingsHelper:Lcom/android/settings/ChooseLockSettingsHelper;
 
@@ -2265,9 +2341,9 @@
 
     invoke-virtual {p0}, Lcom/android/settings/ChooseLockPattern$ChooseLockPatternFragment;->getActivity()Landroid/app/Activity;
 
-    move-result-object v4
+    move-result-object v3
 
-    invoke-direct {v1, v4}, Lcom/android/internal/widget/LockPatternUtils;-><init>(Landroid/content/Context;)V
+    invoke-direct {v1, v3}, Lcom/android/internal/widget/LockPatternUtils;-><init>(Landroid/content/Context;)V
 
     iput-object v1, p0, Lcom/android/settings/ChooseLockPattern$ChooseLockPatternFragment;->mLockPatternUtils:Lcom/android/internal/widget/LockPatternUtils;
 
@@ -2277,17 +2353,17 @@
 
     invoke-virtual {v1}, Landroid/app/Activity;->getIntent()Landroid/content/Intent;
 
-    move-result-object v9
+    move-result-object v13
 
     invoke-virtual {p0}, Lcom/android/settings/ChooseLockPattern$ChooseLockPatternFragment;->getActivity()Landroid/app/Activity;
 
     move-result-object v1
 
-    invoke-virtual {v9}, Landroid/content/Intent;->getExtras()Landroid/os/Bundle;
+    invoke-virtual {v13}, Landroid/content/Intent;->getExtras()Landroid/os/Bundle;
 
-    move-result-object v4
+    move-result-object v3
 
-    invoke-static {v1, v4}, Lcom/android/settings/Utils;->getUserIdFromBundle(Landroid/content/Context;Landroid/os/Bundle;)I
+    invoke-static {v1, v3}, Lcom/android/settings/Utils;->getUserIdFromBundle(Landroid/content/Context;Landroid/os/Bundle;)I
 
     move-result v1
 
@@ -2295,7 +2371,9 @@
 
     const-string/jumbo v1, "for_cred_req_boot"
 
-    invoke-virtual {v9, v1, v3}, Landroid/content/Intent;->getBooleanExtra(Ljava/lang/String;Z)Z
+    const/4 v3, 0x0
+
+    invoke-virtual {v13, v1, v3}, Landroid/content/Intent;->getBooleanExtra(Ljava/lang/String;Z)Z
 
     move-result v1
 
@@ -2303,7 +2381,9 @@
 
     new-instance v0, Lcom/android/settings/ChooseLockPattern$SaveAndFinishWorker;
 
-    invoke-direct {v0, v11}, Lcom/android/settings/ChooseLockPattern$SaveAndFinishWorker;-><init>(Lcom/android/settings/ChooseLockPattern$SaveAndFinishWorker;)V
+    const/4 v1, 0x0
+
+    invoke-direct {v0, v1}, Lcom/android/settings/ChooseLockPattern$SaveAndFinishWorker;-><init>(Lcom/android/settings/ChooseLockPattern$SaveAndFinishWorker;)V
 
     invoke-virtual {p0}, Lcom/android/settings/ChooseLockPattern$ChooseLockPatternFragment;->getActivity()Landroid/app/Activity;
 
@@ -2313,17 +2393,19 @@
 
     move-result-object v1
 
-    const-string/jumbo v4, "extra_require_password"
+    const-string/jumbo v3, "extra_require_password"
 
-    invoke-virtual {v1, v4, v3}, Landroid/content/Intent;->getBooleanExtra(Ljava/lang/String;Z)Z
+    const/4 v4, 0x0
+
+    invoke-virtual {v1, v3, v4}, Landroid/content/Intent;->getBooleanExtra(Ljava/lang/String;Z)Z
 
     move-result v2
 
     const-string/jumbo v1, "password"
 
-    invoke-virtual {v9, v1}, Landroid/content/Intent;->getStringExtra(Ljava/lang/String;)Ljava/lang/String;
+    invoke-virtual {v13, v1}, Landroid/content/Intent;->getStringExtra(Ljava/lang/String;)Ljava/lang/String;
 
-    move-result-object v7
+    move-result-object v11
 
     const/4 v1, 0x1
 
@@ -2339,13 +2421,19 @@
 
     const-wide/16 v4, 0x0
 
-    invoke-static {v7}, Lcom/android/internal/widget/LockPatternUtils;->stringToPattern(Ljava/lang/String;)Ljava/util/List;
+    const-wide/16 v6, 0x0
 
-    move-result-object v6
+    const-wide/16 v8, 0x0
 
-    iget v8, p0, Lcom/android/settings/ChooseLockPattern$ChooseLockPatternFragment;->mUserId:I
+    invoke-static {v11}, Lcom/android/internal/widget/LockPatternUtils;->stringToPattern(Ljava/lang/String;)Ljava/util/List;
 
-    invoke-virtual/range {v0 .. v8}, Lcom/android/settings/ChooseLockPattern$SaveAndFinishWorker;->start(Lcom/android/internal/widget/LockPatternUtils;ZZJLjava/util/List;Ljava/lang/String;I)V
+    move-result-object v10
+
+    iget v12, p0, Lcom/android/settings/ChooseLockPattern$ChooseLockPatternFragment;->mUserId:I
+
+    const/4 v3, 0x0
+
+    invoke-virtual/range {v0 .. v12}, Lcom/android/settings/ChooseLockPattern$SaveAndFinishWorker;->start(Lcom/android/internal/widget/LockPatternUtils;ZZJJJLjava/util/List;Ljava/lang/String;I)V
 
     :cond_1
     invoke-virtual {p0}, Lcom/android/settings/ChooseLockPattern$ChooseLockPatternFragment;->getActivity()Landroid/app/Activity;
@@ -2356,9 +2444,11 @@
 
     move-result-object v1
 
-    const-string/jumbo v4, ":settings:hide_drawer"
+    const-string/jumbo v3, ":settings:hide_drawer"
 
-    invoke-virtual {v1, v4, v3}, Landroid/content/Intent;->getBooleanExtra(Ljava/lang/String;Z)Z
+    const/4 v4, 0x0
+
+    invoke-virtual {v1, v3, v4}, Landroid/content/Intent;->getBooleanExtra(Ljava/lang/String;Z)Z
 
     move-result v1
 
@@ -2376,24 +2466,24 @@
 
     invoke-virtual {p0}, Lcom/android/settings/ChooseLockPattern$ChooseLockPatternFragment;->getResources()Landroid/content/res/Resources;
 
-    move-result-object v4
+    move-result-object v3
 
-    const v5, 0x7f0f0272
+    const v4, 0x7f0f0272
 
-    invoke-virtual {v4, v5}, Landroid/content/res/Resources;->getInteger(I)I
+    invoke-virtual {v3, v4}, Landroid/content/res/Resources;->getInteger(I)I
 
-    move-result v4
+    move-result v3
 
-    invoke-static {v1, v4}, Lcom/android/settings/Utils;->insertEventLog(Landroid/content/Context;I)V
+    invoke-static {v1, v3}, Lcom/android/settings/Utils;->insertEventLog(Landroid/content/Context;I)V
 
     :cond_2
     invoke-virtual {p0}, Lcom/android/settings/ChooseLockPattern$ChooseLockPatternFragment;->getActivity()Landroid/app/Activity;
 
     move-result-object v1
 
-    const-string/jumbo v4, "alarm"
+    const-string/jumbo v3, "alarm"
 
-    invoke-virtual {v1, v4}, Landroid/app/Activity;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
+    invoke-virtual {v1, v3}, Landroid/app/Activity;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
 
     move-result-object v1
 
@@ -2405,25 +2495,29 @@
 
     move-result-object v1
 
-    const-string/jumbo v4, "content://com.sec.knox.provider/PasswordPolicy2"
+    const-string/jumbo v3, "content://com.sec.knox.provider/PasswordPolicy2"
 
-    const-string/jumbo v5, "isChangeRequested"
+    const-string/jumbo v4, "isChangeRequested"
 
-    invoke-static {v1, v4, v5, v11}, Lcom/android/settings/Utils;->getEnterprisePolicyEnabledInt(Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;)I
+    const/4 v5, 0x0
 
-    move-result v10
+    invoke-static {v1, v3, v4, v5}, Lcom/android/settings/Utils;->getEnterprisePolicyEnabledInt(Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;)I
 
-    iput v10, p0, Lcom/android/settings/ChooseLockPattern$ChooseLockPatternFragment;->mPwdChangeEnforceStatus:I
+    move-result v14
+
+    iput v14, p0, Lcom/android/settings/ChooseLockPattern$ChooseLockPatternFragment;->mPwdChangeEnforceStatus:I
 
     invoke-virtual {p0}, Lcom/android/settings/ChooseLockPattern$ChooseLockPatternFragment;->getActivity()Landroid/app/Activity;
 
     move-result-object v1
 
-    const-string/jumbo v4, "content://com.sec.knox.provider/PasswordPolicy1"
+    const-string/jumbo v3, "content://com.sec.knox.provider/PasswordPolicy1"
 
-    const-string/jumbo v5, "getPasswordChangeTimeout"
+    const-string/jumbo v4, "getPasswordChangeTimeout"
 
-    invoke-static {v1, v4, v5, v11}, Lcom/android/settings/Utils;->getEnterprisePolicyEnabledInt(Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;)I
+    const/4 v5, 0x0
+
+    invoke-static {v1, v3, v4, v5}, Lcom/android/settings/Utils;->getEnterprisePolicyEnabledInt(Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;)I
 
     move-result v1
 
@@ -2437,9 +2531,11 @@
 
     move-result-object v1
 
-    const-string/jumbo v4, "fromKnoxKeyguard"
+    const-string/jumbo v3, "fromKnoxKeyguard"
 
-    invoke-virtual {v1, v4, v3}, Landroid/content/Intent;->getBooleanExtra(Ljava/lang/String;Z)Z
+    const/4 v4, 0x0
+
+    invoke-virtual {v1, v3, v4}, Landroid/content/Intent;->getBooleanExtra(Ljava/lang/String;Z)Z
 
     move-result v1
 
@@ -2456,6 +2552,8 @@
     move-result-object v1
 
     check-cast v1, Lcom/android/settings/ChooseLockPattern;
+
+    const/4 v3, 0x0
 
     invoke-static {v1, v3}, Lcom/android/settings/ChooseLockPattern;->-wrap0(Lcom/android/settings/ChooseLockPattern;Z)V
 
@@ -2537,7 +2635,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f0b0856
+    const v2, 0x7f0b085a
 
     invoke-virtual {p0, v2}, Lcom/android/settings/ChooseLockPattern$ChooseLockPatternFragment;->getString(I)Ljava/lang/String;
 
@@ -2759,7 +2857,7 @@
 
     iput-object v12, v0, Lcom/android/settings/ChooseLockPattern$ChooseLockPatternFragment;->mBottomBar:Landroid/widget/LinearLayout;
 
-    const v12, 0x7f110736
+    const v12, 0x7f110738
 
     move-object/from16 v0, p1
 
@@ -2773,7 +2871,7 @@
 
     iput-object v12, v0, Lcom/android/settings/ChooseLockPattern$ChooseLockPatternFragment;->mSUWBottomBar:Landroid/widget/RelativeLayout;
 
-    const v12, 0x7f110738
+    const v12, 0x7f11073a
 
     move-object/from16 v0, p1
 
@@ -2787,7 +2885,7 @@
 
     iput-object v12, v0, Lcom/android/settings/ChooseLockPattern$ChooseLockPatternFragment;->mSUWPrevBtn:Landroid/widget/LinearLayout;
 
-    const v12, 0x7f110739
+    const v12, 0x7f11073b
 
     move-object/from16 v0, p1
 
@@ -2801,7 +2899,7 @@
 
     iput-object v12, v0, Lcom/android/settings/ChooseLockPattern$ChooseLockPatternFragment;->mSUWPrevBtnImg:Landroid/widget/ImageView;
 
-    const v12, 0x7f11073a
+    const v12, 0x7f11073c
 
     move-object/from16 v0, p1
 
@@ -2815,7 +2913,7 @@
 
     iput-object v12, v0, Lcom/android/settings/ChooseLockPattern$ChooseLockPatternFragment;->mSUWNextBtn:Landroid/widget/LinearLayout;
 
-    const v12, 0x7f11073b
+    const v12, 0x7f11073d
 
     move-object/from16 v0, p1
 
@@ -2829,7 +2927,7 @@
 
     iput-object v12, v0, Lcom/android/settings/ChooseLockPattern$ChooseLockPatternFragment;->mSUWNextText:Landroid/widget/TextView;
 
-    const v12, 0x7f11073c
+    const v12, 0x7f11073e
 
     move-object/from16 v0, p1
 
@@ -2956,7 +3054,7 @@
 
     move-result-object v13
 
-    const v14, 0x7f02067f
+    const v14, 0x7f020681
 
     invoke-virtual {v13, v14}, Landroid/content/res/Resources;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 
@@ -3039,7 +3137,7 @@
 
     iget-object v12, v0, Lcom/android/settings/ChooseLockPattern$ChooseLockPatternFragment;->mFooterLeftButton:Landroid/widget/TextView;
 
-    const v13, 0x7f0203af
+    const v13, 0x7f0203ad
 
     invoke-virtual {v12, v13}, Landroid/widget/TextView;->setBackgroundResource(I)V
 
@@ -3047,7 +3145,7 @@
 
     iget-object v12, v0, Lcom/android/settings/ChooseLockPattern$ChooseLockPatternFragment;->mFooterRightButton:Landroid/widget/TextView;
 
-    const v13, 0x7f0203af
+    const v13, 0x7f0203ad
 
     invoke-virtual {v12, v13}, Landroid/widget/TextView;->setBackgroundResource(I)V
 
@@ -3244,7 +3342,7 @@
 
     iget-object v12, v0, Lcom/android/settings/ChooseLockPattern$ChooseLockPatternFragment;->mChooseLockSettingsHelper:Lcom/android/settings/ChooseLockSettingsHelper;
 
-    const v13, 0x7f0b145f
+    const v13, 0x7f0b1470
 
     move-object/from16 v0, p0
 
@@ -3365,7 +3463,7 @@
 
     move-result-object v13
 
-    const v14, 0x7f0b0ae2
+    const v14, 0x7f0b0af0
 
     invoke-virtual {v13, v14}, Landroid/app/Activity;->getString(I)Ljava/lang/String;
 
@@ -3375,7 +3473,7 @@
 
     new-array v14, v14, [Ljava/lang/Object;
 
-    const v15, 0x7f0b1466
+    const v15, 0x7f0b1477
 
     move-object/from16 v0, p0
 
@@ -3534,7 +3632,7 @@
 
     aput-object v13, v12, v14
 
-    const v13, 0x7f0b09a3
+    const v13, 0x7f0b09b1
 
     move-object/from16 v0, p0
 
@@ -3794,7 +3892,7 @@
 
     iget-object v2, p0, Lcom/android/settings/ChooseLockPattern$ChooseLockPatternFragment;->mHeaderText:Landroid/widget/TextView;
 
-    const v3, 0x7f0b17ea
+    const v3, 0x7f0b17fc
 
     invoke-virtual {p0, v3}, Lcom/android/settings/ChooseLockPattern$ChooseLockPatternFragment;->getString(I)Ljava/lang/String;
 

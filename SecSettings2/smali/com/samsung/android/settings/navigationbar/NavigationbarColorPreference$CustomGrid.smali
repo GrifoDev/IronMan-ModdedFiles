@@ -98,7 +98,7 @@
 
     check-cast v7, Landroid/view/LayoutInflater;
 
-    const v0, 0x7f0401b0
+    const v0, 0x7f0401b1
 
     const/4 v1, 0x0
 
@@ -106,7 +106,7 @@
 
     move-result-object p2
 
-    const v0, 0x7f1105a4
+    const v0, 0x7f1105a6
 
     invoke-virtual {p2, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -114,7 +114,7 @@
 
     check-cast v6, Landroid/widget/ImageView;
 
-    const v0, 0x7f1105a5
+    const v0, 0x7f1105a7
 
     invoke-virtual {p2, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -122,7 +122,7 @@
 
     check-cast v4, Landroid/widget/ImageView;
 
-    const v0, 0x7f1105a6
+    const v0, 0x7f1105a8
 
     invoke-virtual {p2, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -136,7 +136,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f0b069b
+    const v1, 0x7f0b069c
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 

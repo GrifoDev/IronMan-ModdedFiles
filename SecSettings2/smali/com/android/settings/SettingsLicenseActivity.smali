@@ -15,7 +15,7 @@
 .method private showErrorAndFinish()V
     .locals 2
 
-    const v0, 0x7f0b17c5
+    const v0, 0x7f0b17d7
 
     const/4 v1, 0x1
 
@@ -39,7 +39,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f0f03e7
+    const v1, 0x7f0f03e6
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getInteger(I)I
 
@@ -148,7 +148,7 @@
 
     const-string/jumbo v4, "android.intent.extra.TITLE"
 
-    const v5, 0x7f0b17c4
+    const v5, 0x7f0b17d6
 
     invoke-virtual {p0, v5}, Lcom/android/settings/SettingsLicenseActivity;->getString(I)Ljava/lang/String;
 

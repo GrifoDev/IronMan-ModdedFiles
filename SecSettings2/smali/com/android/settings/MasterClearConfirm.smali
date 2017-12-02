@@ -123,13 +123,13 @@
 
     if-eqz v0, :cond_0
 
-    const v1, 0x7f0b0d85
+    const v1, 0x7f0b0d94
 
     invoke-virtual {p0, v1}, Lcom/android/settings/MasterClearConfirm;->getString(I)Ljava/lang/String;
 
     move-result-object v1
 
-    const v2, 0x7f0b0d87
+    const v2, 0x7f0b0d96
 
     invoke-virtual {p0, v2}, Lcom/android/settings/MasterClearConfirm;->getString(I)Ljava/lang/String;
 
@@ -340,7 +340,7 @@
 
     move-result-object v6
 
-    const v7, 0x7f0f03a6
+    const v7, 0x7f0f03a5
 
     invoke-virtual {v6, v7}, Landroid/content/res/Resources;->getInteger(I)I
 
@@ -362,7 +362,7 @@
 
     iget-object v5, p0, Lcom/android/settings/MasterClearConfirm;->mContentView:Landroid/view/View;
 
-    const v6, 0x7f110587
+    const v6, 0x7f110589
 
     invoke-virtual {v5, v6}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -795,7 +795,7 @@
 
     iget-object v0, p0, Lcom/android/settings/MasterClearConfirm;->mContentView:Landroid/view/View;
 
-    const v1, 0x7f110587
+    const v1, 0x7f110589
 
     invoke-virtual {v0, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -1350,7 +1350,7 @@
 
     iget-object v3, p0, Lcom/android/settings/MasterClearConfirm;->mContentView:Landroid/view/View;
 
-    const v4, 0x7f110586
+    const v4, 0x7f110588
 
     invoke-virtual {v3, v4}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -1999,7 +1999,7 @@
 
     if-eqz v2, :cond_0
 
-    const v2, 0x7f0401a5
+    const v2, 0x7f0401a6
 
     invoke-virtual {p1, v2, v5}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;)Landroid/view/View;
 
@@ -2027,7 +2027,7 @@
     return-object v1
 
     :cond_1
-    const v2, 0x7f0401a4
+    const v2, 0x7f0401a5
 
     invoke-virtual {p1, v2, v5}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;)Landroid/view/View;
 

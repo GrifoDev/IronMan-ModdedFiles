@@ -25,9 +25,9 @@
 
     const/4 v1, 0x0
 
-    const v2, 0x7f0b1c85
+    const v2, 0x7f0b1c97
 
-    const v3, 0x7f0b0a6e
+    const v3, 0x7f0b0a7c
 
     invoke-static {}, Lcom/android/settings/Utils;->isSupportNotificationsIconsOnly()Z
 
@@ -108,7 +108,7 @@
 
     const-string/jumbo v4, "extra_prefs_set_next_text"
 
-    const v5, 0x7f0b1cac
+    const v5, 0x7f0b1cbe
 
     invoke-virtual {p0, v5}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -202,7 +202,7 @@
 
     invoke-super {p0, p1}, Lcom/android/settings/SettingsActivity;->onCreate(Landroid/os/Bundle;)V
 
-    const v1, 0x7f110786
+    const v1, 0x7f110788
 
     invoke-virtual {p0, v1}, Lcom/android/settings/notification/RedactionInterstitial;->findViewById(I)Landroid/view/View;
 

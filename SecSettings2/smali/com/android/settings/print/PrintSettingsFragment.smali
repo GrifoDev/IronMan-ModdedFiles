@@ -255,11 +255,11 @@
 
     invoke-direct {v1, v2}, Landroid/preference/Preference;-><init>(Landroid/content/Context;)V
 
-    const v2, 0x7f0b1967
+    const v2, 0x7f0b1979
 
     invoke-virtual {v1, v2}, Landroid/preference/Preference;->setTitle(I)V
 
-    const v2, 0x7f02062d
+    const v2, 0x7f02062f
 
     invoke-virtual {v1, v2}, Landroid/preference/Preference;->setIcon(I)V
 
@@ -368,7 +368,7 @@
 .method protected getHelpResource()I
     .locals 1
 
-    const v0, 0x7f0b1bb2
+    const v0, 0x7f0b1bc4
 
     return v0
 .end method
@@ -430,7 +430,7 @@
 
     invoke-super {p0, p1}, Lcom/android/settings/utils/ProfileSettingsPreferenceFragment;->onCreate(Landroid/os/Bundle;)V
 
-    const v0, 0x7f0800ca
+    const v0, 0x7f0800cc
 
     invoke-virtual {p0, v0}, Lcom/android/settings/print/PrintSettingsFragment;->addPreferencesFromResource(I)V
 
@@ -644,7 +644,7 @@
 
     move-result-object v4
 
-    const v5, 0x7f0400f9
+    const v5, 0x7f0400fa
 
     invoke-virtual {v4, v5, v1, v6}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;Z)Landroid/view/View;
 
@@ -662,7 +662,7 @@
 
     check-cast v3, Landroid/widget/TextView;
 
-    const v4, 0x7f0b1961
+    const v4, 0x7f0b1973
 
     invoke-virtual {v3, v4}, Landroid/widget/TextView;->setText(I)V
 
@@ -674,7 +674,7 @@
 
     iget-object v4, p0, Lcom/android/settings/print/PrintSettingsFragment;->mEmptyView:Landroid/view/View;
 
-    const v5, 0x7f110385
+    const v5, 0x7f110387
 
     invoke-virtual {v4, v5}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -695,7 +695,7 @@
     :cond_0
     iget-object v4, p0, Lcom/android/settings/print/PrintSettingsFragment;->mEmptyView:Landroid/view/View;
 
-    const v5, 0x7f1102d3
+    const v5, 0x7f1102d5
 
     invoke-virtual {v4, v5}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -721,7 +721,7 @@
 
     if-eqz v4, :cond_2
 
-    const v4, 0x7f0b0ccf
+    const v4, 0x7f0b0cdd
 
     invoke-virtual {v2, v4}, Landroid/widget/TextView;->setText(I)V
 
@@ -740,7 +740,7 @@
     return-void
 
     :cond_2
-    const v4, 0x7f0b0cd0
+    const v4, 0x7f0b0cde
 
     invoke-virtual {v2, v4}, Landroid/widget/TextView;->setText(I)V
 

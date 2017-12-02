@@ -1453,11 +1453,7 @@
 .end method
 
 .method public static appendWhereString(Landroid/content/Context;Landroid/content/Intent;I)Ljava/lang/String;
-    .locals 13
-
-    const/16 v12, 0x9
-
-    const/4 v11, 0x0
+    .locals 12
 
     const-string/jumbo v5, ""
 
@@ -1467,9 +1463,9 @@
 
     invoke-static {}, Lcom/android/settings/Utils;->isSuportSPcode()Z
 
-    move-result v8
+    move-result v9
 
-    if-eqz v8, :cond_0
+    if-eqz v9, :cond_0
 
     const-string/jumbo v7, ""
 
@@ -1479,9 +1475,9 @@
 
     invoke-static {v0}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
-    move-result v8
+    move-result v9
 
-    if-nez v8, :cond_9
+    if-nez v9, :cond_a
 
     invoke-static {v0}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
 
@@ -1489,19 +1485,45 @@
 
     invoke-static {v3}, Ljava/lang/Integer;->toHexString(I)Ljava/lang/String;
 
-    move-result-object v8
+    move-result-object v9
 
-    invoke-virtual {v8}, Ljava/lang/String;->toUpperCase()Ljava/lang/String;
+    invoke-virtual {v9}, Ljava/lang/String;->toUpperCase()Ljava/lang/String;
 
     move-result-object v7
 
-    const-string/jumbo v8, "ApnSettings"
+    const-string/jumbo v9, "ApnSettings"
+
+    new-instance v10, Ljava/lang/StringBuilder;
+
+    invoke-direct {v10}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string/jumbo v11, "fillList get spcode : "
+
+    invoke-virtual {v10, v11}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v10
+
+    invoke-virtual {v10, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v10
+
+    invoke-virtual {v10}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v10
+
+    invoke-static {v9, v10}, Lcom/samsung/android/settings/LogMsg;->out(Ljava/lang/String;Ljava/lang/String;)V
+
+    invoke-static {v7}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
+
+    move-result v9
+
+    if-nez v9, :cond_0
 
     new-instance v9, Ljava/lang/StringBuilder;
 
     invoke-direct {v9}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string/jumbo v10, "fillList get spcode : "
+    const-string/jumbo v10, " and mvno_type=\"gid\" and mvno_match_data=\""
 
     invoke-virtual {v9, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -1511,39 +1533,13 @@
 
     move-result-object v9
 
-    invoke-virtual {v9}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    const-string/jumbo v10, "\""
+
+    invoke-virtual {v9, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v9
 
-    invoke-static {v8, v9}, Lcom/samsung/android/settings/LogMsg;->out(Ljava/lang/String;Ljava/lang/String;)V
-
-    invoke-static {v7}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
-
-    move-result v8
-
-    if-nez v8, :cond_0
-
-    new-instance v8, Ljava/lang/StringBuilder;
-
-    invoke-direct {v8}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string/jumbo v9, " and mvno_type=\"gid\" and mvno_match_data=\""
-
-    invoke-virtual {v8, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v8
-
-    invoke-virtual {v8, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v8
-
-    const-string/jumbo v9, "\""
-
-    invoke-virtual {v8, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v8
-
-    invoke-virtual {v8}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v9}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v5
 
@@ -1551,29 +1547,29 @@
     :goto_0
     invoke-static {}, Lcom/android/settings/Utils;->isMultisimModel()Z
 
-    move-result v8
+    move-result v9
 
-    if-eqz v8, :cond_1
+    if-eqz v9, :cond_1
 
-    const/4 v8, 0x1
+    const/4 v9, 0x1
 
-    if-ne p2, v8, :cond_a
+    if-ne p2, v9, :cond_b
 
-    new-instance v8, Ljava/lang/StringBuilder;
+    new-instance v9, Ljava/lang/StringBuilder;
 
-    invoke-direct {v8}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {v9}, Ljava/lang/StringBuilder;-><init>()V
 
-    invoke-virtual {v8, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v9, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v8
+    move-result-object v9
 
-    const-string/jumbo v9, " and current1 = 1"
+    const-string/jumbo v10, " and current1 = 1"
 
-    invoke-virtual {v8, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v9, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v8
+    move-result-object v9
 
-    invoke-virtual {v8}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v9}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v5
 
@@ -1581,62 +1577,66 @@
     :goto_1
     invoke-static {}, Lcom/android/settings/Utils;->isSprModel()Z
 
-    move-result v8
+    move-result v9
 
-    if-eqz v8, :cond_2
+    if-eqz v9, :cond_2
 
     invoke-static {p1}, Lcom/android/settings/Utils;->isSprEditable(Landroid/content/Intent;)Z
 
-    move-result v8
+    move-result v9
 
-    if-eqz v8, :cond_2
+    if-eqz v9, :cond_2
 
-    sget-boolean v8, Lcom/android/settings/Utils;->MHSDBG:Z
+    sget-boolean v9, Lcom/android/settings/Utils;->MHSDBG:Z
 
-    if-eqz v8, :cond_b
+    if-eqz v9, :cond_c
 
     :cond_2
     invoke-static {}, Lcom/android/settings/Utils;->isLraImsi()Z
 
-    move-result v8
+    move-result v9
 
-    if-eqz v8, :cond_c
+    if-eqz v9, :cond_d
 
     const-string/jumbo v5, " and type like \'%default%\'"
 
     :cond_3
     :goto_2
-    const-string/jumbo v8, "52505"
+    const-string/jumbo v9, "52505"
 
-    invoke-virtual {v8, v4}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v9, v4}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move-result v8
+    move-result v9
 
-    if-eqz v8, :cond_8
+    if-eqz v9, :cond_9
 
-    invoke-static {}, Landroid/telephony/TelephonyManager;->getDefault()Landroid/telephony/TelephonyManager;
+    const-string/jumbo v9, "phone"
+
+    invoke-virtual {p0, v9}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
 
     move-result-object v8
+
+    check-cast v8, Landroid/telephony/TelephonyManager;
 
     invoke-static {p2}, Landroid/telephony/SubscriptionManager;->getSubId(I)[I
 
     move-result-object v9
 
-    aget v9, v9, v11
+    const/4 v10, 0x0
+
+    aget v9, v9, v10
 
     invoke-virtual {v8, v9}, Landroid/telephony/TelephonyManager;->getSubscriberId(I)Ljava/lang/String;
 
     move-result-object v6
 
-    invoke-static {}, Landroid/telephony/TelephonyManager;->getDefault()Landroid/telephony/TelephonyManager;
-
-    move-result-object v8
-
     invoke-static {p2}, Landroid/telephony/SubscriptionManager;->getSubId(I)[I
 
     move-result-object v9
 
-    aget v9, v9, v11
+    const/4 v10, 0x0
+
+    aget v9, v9, v10
 
     invoke-virtual {v8, v9}, Landroid/telephony/TelephonyManager;->getGroupIdLevel1(I)Ljava/lang/String;
 
@@ -1646,71 +1646,148 @@
 
     invoke-static {v1}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
-    move-result v8
+    move-result v9
 
-    if-eqz v8, :cond_4
+    if-eqz v9, :cond_4
 
     const-string/jumbo v1, "0"
 
     :cond_4
     invoke-static {v6}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
-    move-result v8
+    move-result v9
 
-    if-nez v8, :cond_d
+    if-nez v9, :cond_e
 
     invoke-virtual {v6}, Ljava/lang/String;->length()I
 
-    move-result v8
+    move-result v9
 
-    if-lt v8, v12, :cond_d
+    const/16 v10, 0x9
+
+    if-lt v9, v10, :cond_e
 
     :cond_5
-    new-instance v8, Ljava/lang/StringBuilder;
-
-    invoke-direct {v8}, Ljava/lang/StringBuilder;-><init>()V
-
-    invoke-virtual {v6, v11, v12}, Ljava/lang/String;->substring(II)Ljava/lang/String;
-
-    move-result-object v9
-
-    invoke-virtual {v8, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v8
-
-    const-string/jumbo v9, "x"
-
-    invoke-virtual {v8, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v8
-
-    invoke-virtual {v8}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-static {v6}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
-
-    move-result v8
-
-    if-nez v8, :cond_6
-
-    const-string/jumbo v8, "ApnSettings"
-
     new-instance v9, Ljava/lang/StringBuilder;
 
     invoke-direct {v9}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string/jumbo v10, "fillList get simIMSI : "
+    const/4 v10, 0x0
+
+    const/16 v11, 0x9
+
+    invoke-virtual {v6, v10, v11}, Ljava/lang/String;->substring(II)Ljava/lang/String;
+
+    move-result-object v10
 
     invoke-virtual {v9, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v9
 
-    invoke-virtual {v9, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    const-string/jumbo v10, "x"
+
+    invoke-virtual {v9, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v9
 
-    const-string/jumbo v10, " mIMSI :"
+    invoke-virtual {v9}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-static {v6}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
+
+    move-result v9
+
+    if-nez v9, :cond_6
+
+    const-string/jumbo v9, "ApnSettings"
+
+    new-instance v10, Ljava/lang/StringBuilder;
+
+    invoke-direct {v10}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string/jumbo v11, "fillList get simIMSI : "
+
+    invoke-virtual {v10, v11}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v10
+
+    invoke-virtual {v10, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v10
+
+    const-string/jumbo v11, " mIMSI :"
+
+    invoke-virtual {v10, v11}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v10
+
+    invoke-virtual {v10, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v10
+
+    invoke-virtual {v10}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v10
+
+    invoke-static {v9, v10}, Lcom/samsung/android/settings/LogMsg;->out(Ljava/lang/String;Ljava/lang/String;)V
+
+    :cond_6
+    invoke-static {v1}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
+
+    move-result v9
+
+    if-nez v9, :cond_7
+
+    const-string/jumbo v9, "ApnSettings"
+
+    new-instance v10, Ljava/lang/StringBuilder;
+
+    invoke-direct {v10}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string/jumbo v11, "fillList get gidNum : "
+
+    invoke-virtual {v10, v11}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v10
+
+    invoke-virtual {v10, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v10
+
+    invoke-virtual {v10}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v10
+
+    invoke-static {v9, v10}, Lcom/samsung/android/settings/LogMsg;->out(Ljava/lang/String;Ljava/lang/String;)V
+
+    :cond_7
+    const-string/jumbo v9, "525053095x"
+
+    invoke-virtual {v9, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v9
+
+    if-nez v9, :cond_8
+
+    const-string/jumbo v9, "525053096x"
+
+    invoke-virtual {v9, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v9
+
+    if-eqz v9, :cond_f
+
+    :cond_8
+    new-instance v9, Ljava/lang/StringBuilder;
+
+    invoke-direct {v9}, Ljava/lang/StringBuilder;-><init>()V
+
+    invoke-virtual {v9, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v9
+
+    const-string/jumbo v10, " and (mvno_type=\"imsi\" and mvno_match_data=\""
 
     invoke-virtual {v9, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -1720,235 +1797,135 @@
 
     move-result-object v9
 
-    invoke-virtual {v9}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v9
-
-    invoke-static {v8, v9}, Lcom/samsung/android/settings/LogMsg;->out(Ljava/lang/String;Ljava/lang/String;)V
-
-    :cond_6
-    invoke-static {v1}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
-
-    move-result v8
-
-    if-nez v8, :cond_7
-
-    const-string/jumbo v8, "ApnSettings"
-
-    new-instance v9, Ljava/lang/StringBuilder;
-
-    invoke-direct {v9}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string/jumbo v10, "fillList get gidNum : "
+    const-string/jumbo v10, "\")"
 
     invoke-virtual {v9, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v9
 
-    invoke-virtual {v9, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v9}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v5
+
+    :cond_9
+    :goto_3
+    new-instance v9, Ljava/lang/StringBuilder;
+
+    invoke-direct {v9}, Ljava/lang/StringBuilder;-><init>()V
+
+    invoke-virtual {v9, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v9
+
+    const-string/jumbo v10, " and NOT (type=\'ia\' AND (apn=\"\" OR apn IS NULL))"
+
+    invoke-virtual {v9, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v9
 
     invoke-virtual {v9}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v9
-
-    invoke-static {v8, v9}, Lcom/samsung/android/settings/LogMsg;->out(Ljava/lang/String;Ljava/lang/String;)V
-
-    :cond_7
-    const-string/jumbo v8, "0a"
-
-    invoke-virtual {v1, v8}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
-
-    move-result v8
-
-    if-eqz v8, :cond_e
-
-    new-instance v8, Ljava/lang/StringBuilder;
-
-    invoke-direct {v8}, Ljava/lang/StringBuilder;-><init>()V
-
-    invoke-virtual {v8, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v8
-
-    const-string/jumbo v9, " and mvno_type=\"gid\" and mvno_match_data=\"0A\""
-
-    invoke-virtual {v8, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v8
-
-    invoke-virtual {v8}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v5
-
-    :cond_8
-    :goto_3
-    new-instance v8, Ljava/lang/StringBuilder;
-
-    invoke-direct {v8}, Ljava/lang/StringBuilder;-><init>()V
-
-    invoke-virtual {v8, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v8
-
-    const-string/jumbo v9, " and NOT (type=\'ia\' AND (apn=\"\" OR apn IS NULL))"
-
-    invoke-virtual {v8, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v8
-
-    invoke-virtual {v8}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
     move-result-object v5
 
     return-object v5
 
-    :cond_9
+    :cond_a
     const-string/jumbo v5, " and mvno_type=\"\" and mvno_match_data=\"\""
 
     goto/16 :goto_0
 
-    :cond_a
-    new-instance v8, Ljava/lang/StringBuilder;
+    :cond_b
+    new-instance v9, Ljava/lang/StringBuilder;
 
-    invoke-direct {v8}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {v9}, Ljava/lang/StringBuilder;-><init>()V
 
-    invoke-virtual {v8, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v9, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v8
+    move-result-object v9
 
-    const-string/jumbo v9, " and current = 1"
+    const-string/jumbo v10, " and current = 1"
 
-    invoke-virtual {v8, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v9, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v8
+    move-result-object v9
 
-    invoke-virtual {v8}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v9}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v5
 
     goto/16 :goto_1
 
-    :cond_b
+    :cond_c
     const-string/jumbo v5, " and type like \'%default%\' and name NOT LIKE \'%GLOBAL%\'"
 
     goto/16 :goto_2
 
-    :cond_c
+    :cond_d
     invoke-static {p1}, Lcom/android/settings/Utils;->isVzwEditable(Landroid/content/Intent;)Z
 
-    move-result v8
+    move-result v9
 
-    if-nez v8, :cond_3
+    if-nez v9, :cond_3
 
     invoke-static {v4}, Lcom/android/settings/Utils;->isVZWSimInserted(Ljava/lang/String;)Z
 
-    move-result v8
+    move-result v9
 
-    if-eqz v8, :cond_3
+    if-eqz v9, :cond_3
 
     const-string/jumbo v5, " and (type=\"default,dun\" or type=\"default,dun,supl\")"
 
     goto/16 :goto_2
 
-    :cond_d
-    const-string/jumbo v8, "0a"
+    :cond_e
+    const-string/jumbo v9, "0a"
 
-    invoke-virtual {v1, v8}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
+    invoke-virtual {v1, v9}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
 
-    move-result v8
+    move-result v9
 
-    if-nez v8, :cond_5
+    if-nez v9, :cond_5
 
-    new-instance v8, Ljava/lang/StringBuilder;
+    new-instance v9, Ljava/lang/StringBuilder;
 
-    invoke-direct {v8}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {v9}, Ljava/lang/StringBuilder;-><init>()V
 
-    invoke-virtual {v8, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v9, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v8
+    move-result-object v9
 
-    const-string/jumbo v9, " and (mvno_type=\"\" or mvno_type is null) and (mvno_match_data=\"\" or mvno_match_data is null)"
+    const-string/jumbo v10, " and (mvno_type=\"\" or mvno_type is null) and (mvno_match_data=\"\" or mvno_match_data is null)"
 
-    invoke-virtual {v8, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v9, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v8
+    move-result-object v9
 
-    invoke-virtual {v8}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v9}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v5
 
     goto :goto_3
 
-    :cond_e
-    const-string/jumbo v8, "525053095x"
-
-    invoke-virtual {v8, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v8
-
-    if-nez v8, :cond_f
-
-    const-string/jumbo v8, "525053096x"
-
-    invoke-virtual {v8, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v8
-
-    if-eqz v8, :cond_10
-
     :cond_f
-    new-instance v8, Ljava/lang/StringBuilder;
+    new-instance v9, Ljava/lang/StringBuilder;
 
-    invoke-direct {v8}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {v9}, Ljava/lang/StringBuilder;-><init>()V
 
-    invoke-virtual {v8, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v9, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v8
+    move-result-object v9
 
-    const-string/jumbo v9, " and (mvno_type=\"imsi\" and mvno_match_data=\""
+    const-string/jumbo v10, " and (mvno_type=\"\" or mvno_type is null) and (mvno_match_data=\"\" or mvno_match_data is null)"
 
-    invoke-virtual {v8, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v9, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v8
+    move-result-object v9
 
-    invoke-virtual {v8, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v8
-
-    const-string/jumbo v9, "\")"
-
-    invoke-virtual {v8, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v8
-
-    invoke-virtual {v8}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v9}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v5
 
-    goto/16 :goto_3
-
-    :cond_10
-    new-instance v8, Ljava/lang/StringBuilder;
-
-    invoke-direct {v8}, Ljava/lang/StringBuilder;-><init>()V
-
-    invoke-virtual {v8, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v8
-
-    const-string/jumbo v9, " and (mvno_type=\"\" or mvno_type is null) and (mvno_match_data=\"\" or mvno_match_data is null)"
-
-    invoke-virtual {v8, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v8
-
-    invoke-virtual {v8}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v5
-
-    goto/16 :goto_3
+    goto :goto_3
 .end method
 
 .method public static applyLandscapeFullScreen(Landroid/content/Context;Landroid/view/Window;)V
@@ -3543,7 +3520,7 @@
 
     invoke-direct {v4, p1, v5}, Landroid/view/ContextThemeWrapper;-><init>(Landroid/content/Context;I)V
 
-    const v5, 0x7f0b0845
+    const v5, 0x7f0b0849
 
     invoke-virtual {p1, v5}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -3993,7 +3970,7 @@
 
     aput-object v6, v5, v11
 
-    const v6, 0x7f0b1901
+    const v6, 0x7f0b1913
 
     invoke-virtual {p0, v6, v5}, Landroid/content/Context;->getString(I[Ljava/lang/Object;)Ljava/lang/String;
 
@@ -4031,7 +4008,7 @@
 
     aput-object v6, v5, v10
 
-    const v6, 0x7f0b1902
+    const v6, 0x7f0b1914
 
     invoke-virtual {p0, v6, v5}, Landroid/content/Context;->getString(I[Ljava/lang/Object;)Ljava/lang/String;
 
@@ -4058,7 +4035,7 @@
 
     aput-object v6, v5, v9
 
-    const v6, 0x7f0b1903
+    const v6, 0x7f0b1915
 
     invoke-virtual {p0, v6, v5}, Landroid/content/Context;->getString(I[Ljava/lang/Object;)Ljava/lang/String;
 
@@ -4077,7 +4054,7 @@
 
     aput-object v6, v5, v8
 
-    const v6, 0x7f0b1904
+    const v6, 0x7f0b1916
 
     invoke-virtual {p0, v6, v5}, Landroid/content/Context;->getString(I[Ljava/lang/Object;)Ljava/lang/String;
 
@@ -4110,7 +4087,7 @@
 
     aput-object v6, v5, v10
 
-    const v6, 0x7f0b1905
+    const v6, 0x7f0b1917
 
     invoke-virtual {p0, v6, v5}, Landroid/content/Context;->getString(I[Ljava/lang/Object;)Ljava/lang/String;
 
@@ -4304,6 +4281,173 @@
     move-result-object v0
 
     return-object v0
+.end method
+
+.method public static getAODBadgeCount(Landroid/content/Context;)I
+    .locals 13
+
+    const/4 v5, 0x2
+
+    const/4 v4, 0x1
+
+    const/4 v3, 0x0
+
+    const-string/jumbo v0, "content://com.sec.badge/apps"
+
+    invoke-static {v0}, Landroid/net/Uri;->parse(Ljava/lang/String;)Landroid/net/Uri;
+
+    move-result-object v1
+
+    const/4 v0, 0x3
+
+    new-array v2, v0, [Ljava/lang/String;
+
+    const-string/jumbo v0, "package"
+
+    aput-object v0, v2, v3
+
+    const-string/jumbo v0, "class"
+
+    aput-object v0, v2, v4
+
+    const-string/jumbo v0, "badgecount"
+
+    aput-object v0, v2, v5
+
+    const-string/jumbo v6, "package=? AND class=?"
+
+    const-string/jumbo v8, "com.samsung.android.app.aodservice.settings"
+
+    const-string/jumbo v7, "com.samsung.android.app.aodservice.settings.AODCheckUpdate"
+
+    const/4 v10, 0x0
+
+    const/4 v9, 0x0
+
+    :try_start_0
+    invoke-virtual {p0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
+
+    move-result-object v0
+
+    const-string/jumbo v3, "package=? AND class=?"
+
+    const/4 v4, 0x2
+
+    new-array v4, v4, [Ljava/lang/String;
+
+    const-string/jumbo v5, "com.samsung.android.app.aodservice.settings"
+
+    const/4 v12, 0x0
+
+    aput-object v5, v4, v12
+
+    const-string/jumbo v5, "com.samsung.android.app.aodservice.settings.AODCheckUpdate"
+
+    const/4 v12, 0x1
+
+    aput-object v5, v4, v12
+
+    const/4 v5, 0x0
+
+    invoke-virtual/range {v0 .. v5}, Landroid/content/ContentResolver;->query(Landroid/net/Uri;[Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Ljava/lang/String;)Landroid/database/Cursor;
+
+    move-result-object v10
+
+    if-eqz v10, :cond_0
+
+    invoke-interface {v10}, Landroid/database/Cursor;->moveToLast()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    const-string/jumbo v0, "badgecount"
+
+    invoke-interface {v10, v0}, Landroid/database/Cursor;->getColumnIndex(Ljava/lang/String;)I
+
+    move-result v0
+
+    invoke-interface {v10, v0}, Landroid/database/Cursor;->getInt(I)I
+    :try_end_0
+    .catch Landroid/database/CursorWindowAllocationException; {:try_start_0 .. :try_end_0} :catch_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    move-result v9
+
+    :cond_0
+    if-eqz v10, :cond_1
+
+    invoke-interface {v10}, Landroid/database/Cursor;->close()V
+
+    :cond_1
+    :goto_0
+    const-string/jumbo v0, "Settings_Utils"
+
+    new-instance v3, Ljava/lang/StringBuilder;
+
+    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string/jumbo v4, "getAODBadgeCount badgeCount : "
+
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    invoke-virtual {v3, v9}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-static {v0, v3}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
+
+    return v9
+
+    :catch_0
+    move-exception v11
+
+    :try_start_1
+    const-string/jumbo v0, "Settings_Utils"
+
+    new-instance v3, Ljava/lang/StringBuilder;
+
+    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string/jumbo v4, "CursorWindowAllocationException"
+
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    invoke-virtual {v3, v11}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-static {v0, v3}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+
+    if-eqz v10, :cond_1
+
+    invoke-interface {v10}, Landroid/database/Cursor;->close()V
+
+    goto :goto_0
+
+    :catchall_0
+    move-exception v0
+
+    if-eqz v10, :cond_2
+
+    invoke-interface {v10}, Landroid/database/Cursor;->close()V
+
+    :cond_2
+    throw v0
 .end method
 
 .method public static getASKSVersion()Ljava/lang/String;
@@ -4935,6 +5079,28 @@
     return v0
 .end method
 
+.method public static getBooleanFromDeXSettings(Landroid/content/ContentResolver;Ljava/lang/String;Z)Z
+    .locals 1
+
+    invoke-static {p2}, Ljava/lang/String;->valueOf(Z)Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-static {p0, p1, v0}, Lcom/android/settings/Utils;->getStringFromDeXSettings(Landroid/content/ContentResolver;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-static {v0}, Ljava/lang/Boolean;->valueOf(Ljava/lang/String;)Ljava/lang/Boolean;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/lang/Boolean;->booleanValue()Z
+
+    move-result v0
+
+    return v0
+.end method
+
 .method public static getCategoryId(Ljava/lang/String;)Ljava/lang/String;
     .locals 2
 
@@ -5046,7 +5212,7 @@
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
 
-    const v2, 0x7f0b11e6
+    const v2, 0x7f0b11f6
 
     invoke-virtual {p0, v2}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -5654,13 +5820,13 @@
 
     iget v4, v2, Landroid/util/TypedValue;->resourceId:I
 
-    const v5, 0x7f0b12ff
+    const v5, 0x7f0b1310
 
     if-eq v4, v5, :cond_0
 
     iget v4, v2, Landroid/util/TypedValue;->resourceId:I
 
-    const v5, 0x7f0b1697
+    const v5, 0x7f0b16a9
 
     if-eq v4, v5, :cond_0
 
@@ -5783,7 +5949,7 @@
 
     if-ne p1, v7, :cond_3
 
-    const v2, 0x7f0b05b5
+    const v2, 0x7f0b05b6
 
     :goto_0
     const-string/jumbo v0, ""
@@ -5910,7 +6076,7 @@
 
     aput-object v6, v5, v7
 
-    const v6, 0x7f0b05b8
+    const v6, 0x7f0b05b9
 
     invoke-virtual {v4, v6, v5}, Landroid/content/res/Resources;->getString(I[Ljava/lang/Object;)Ljava/lang/String;
 
@@ -5919,7 +6085,7 @@
     return-object v4
 
     :cond_3
-    const v2, 0x7f0b05b4
+    const v2, 0x7f0b05b5
 
     goto/16 :goto_0
 
@@ -6693,7 +6859,7 @@
 .method public static getFavoriteTileBackgroundId(Ljava/lang/String;)I
     .locals 2
 
-    const v0, 0x7f020219
+    const v0, 0x7f020217
 
     if-eqz p0, :cond_0
 
@@ -6705,7 +6871,7 @@
 
     if-eqz v1, :cond_1
 
-    const v0, 0x7f02021a
+    const v0, 0x7f020218
 
     :cond_0
     :goto_0
@@ -6720,7 +6886,7 @@
 
     if-eqz v1, :cond_2
 
-    const v0, 0x7f02021d
+    const v0, 0x7f02021b
 
     goto :goto_0
 
@@ -6733,7 +6899,7 @@
 
     if-eqz v1, :cond_3
 
-    const v0, 0x7f02021e
+    const v0, 0x7f02021c
 
     goto :goto_0
 
@@ -6746,7 +6912,7 @@
 
     if-eqz v1, :cond_4
 
-    const v0, 0x7f02021c
+    const v0, 0x7f02021a
 
     goto :goto_0
 
@@ -6759,7 +6925,7 @@
 
     if-eqz v1, :cond_0
 
-    const v0, 0x7f02021b
+    const v0, 0x7f020219
 
     goto :goto_0
 .end method
@@ -7083,13 +7249,13 @@
 .method public static getFontName(Landroid/content/Context;Ljava/lang/String;)Ljava/lang/String;
     .locals 7
 
-    const v6, 0x7f0b06f9
+    const v6, 0x7f0b06fa
 
-    const v5, 0x7f0b06f4
+    const v5, 0x7f0b06f5
 
-    const v4, 0x7f0b06f3
+    const v4, 0x7f0b06f4
 
-    const v3, 0x7f0b06f2
+    const v3, 0x7f0b06f3
 
     if-eqz p1, :cond_0
 
@@ -7133,7 +7299,7 @@
 
     move-result-object v2
 
-    const v3, 0x7f0b0656
+    const v3, 0x7f0b0657
 
     invoke-virtual {v2, v3}, Landroid/content/res/Resources;->getText(I)Ljava/lang/CharSequence;
 
@@ -7266,7 +7432,7 @@
 
     move-result-object v2
 
-    const v3, 0x7f0b06f5
+    const v3, 0x7f0b06f6
 
     invoke-virtual {v2, v3}, Landroid/content/res/Resources;->getText(I)Ljava/lang/CharSequence;
 
@@ -7293,7 +7459,7 @@
 
     move-result-object v2
 
-    const v3, 0x7f0b06f6
+    const v3, 0x7f0b06f7
 
     invoke-virtual {v2, v3}, Landroid/content/res/Resources;->getText(I)Ljava/lang/CharSequence;
 
@@ -7320,7 +7486,7 @@
 
     move-result-object v2
 
-    const v3, 0x7f0b06fa
+    const v3, 0x7f0b06fb
 
     invoke-virtual {v2, v3}, Landroid/content/res/Resources;->getText(I)Ljava/lang/CharSequence;
 
@@ -7347,7 +7513,7 @@
 
     move-result-object v2
 
-    const v3, 0x7f0b06fb
+    const v3, 0x7f0b06fc
 
     invoke-virtual {v2, v3}, Landroid/content/res/Resources;->getText(I)Ljava/lang/CharSequence;
 
@@ -7374,7 +7540,7 @@
 
     move-result-object v2
 
-    const v3, 0x7f0b06fc
+    const v3, 0x7f0b06fd
 
     invoke-virtual {v2, v3}, Landroid/content/res/Resources;->getText(I)Ljava/lang/CharSequence;
 
@@ -7401,7 +7567,7 @@
 
     move-result-object v2
 
-    const v3, 0x7f0b06f7
+    const v3, 0x7f0b06f8
 
     invoke-virtual {v2, v3}, Landroid/content/res/Resources;->getText(I)Ljava/lang/CharSequence;
 
@@ -7428,7 +7594,7 @@
 
     move-result-object v2
 
-    const v3, 0x7f0b06f8
+    const v3, 0x7f0b06f9
 
     invoke-virtual {v2, v3}, Landroid/content/res/Resources;->getText(I)Ljava/lang/CharSequence;
 
@@ -7572,7 +7738,7 @@
 
     move-result-object v2
 
-    const v3, 0x7f0b06fd
+    const v3, 0x7f0b06fe
 
     invoke-virtual {v2, v3}, Landroid/content/res/Resources;->getText(I)Ljava/lang/CharSequence;
 
@@ -7705,7 +7871,7 @@
 
     move-result-object v20
 
-    const v21, 0x7f0b070c
+    const v21, 0x7f0b070d
 
     invoke-virtual/range {v20 .. v21}, Landroid/content/res/Resources;->getText(I)Ljava/lang/CharSequence;
 
@@ -7919,7 +8085,7 @@
 
     move-result-object v20
 
-    const v21, 0x7f0b052b
+    const v21, 0x7f0b052c
 
     invoke-virtual/range {v20 .. v21}, Landroid/content/res/Resources;->getText(I)Ljava/lang/CharSequence;
 
@@ -7949,7 +8115,7 @@
 
     move-result-object v20
 
-    const v21, 0x7f0b052a
+    const v21, 0x7f0b052b
 
     invoke-virtual/range {v20 .. v21}, Landroid/content/res/Resources;->getText(I)Ljava/lang/CharSequence;
 
@@ -8012,7 +8178,7 @@
 
     move-result-object v20
 
-    const v22, 0x7f0b052b
+    const v22, 0x7f0b052c
 
     move-object/from16 v0, v20
 
@@ -8061,7 +8227,7 @@
 
     move-result-object v20
 
-    const v22, 0x7f0b0529
+    const v22, 0x7f0b052a
 
     move-object/from16 v0, v20
 
@@ -8110,7 +8276,7 @@
 
     move-result-object v20
 
-    const v22, 0x7f0b052a
+    const v22, 0x7f0b052b
 
     move-object/from16 v0, v20
 
@@ -8262,7 +8428,7 @@
 
     move-result-object v20
 
-    const v22, 0x7f0b052b
+    const v22, 0x7f0b052c
 
     move-object/from16 v0, v20
 
@@ -8360,7 +8526,7 @@
 
     move-result-object v20
 
-    const v22, 0x7f0b052a
+    const v22, 0x7f0b052b
 
     move-object/from16 v0, v20
 
@@ -9098,6 +9264,173 @@
     return-object v0
 .end method
 
+.method public static getGalaxyFriendsBadgeCount(Landroid/content/Context;)I
+    .locals 13
+
+    const/4 v5, 0x2
+
+    const/4 v4, 0x1
+
+    const/4 v3, 0x0
+
+    const-string/jumbo v0, "content://com.sec.badge/apps"
+
+    invoke-static {v0}, Landroid/net/Uri;->parse(Ljava/lang/String;)Landroid/net/Uri;
+
+    move-result-object v1
+
+    const/4 v0, 0x3
+
+    new-array v2, v0, [Ljava/lang/String;
+
+    const-string/jumbo v0, "package"
+
+    aput-object v0, v2, v3
+
+    const-string/jumbo v0, "class"
+
+    aput-object v0, v2, v4
+
+    const-string/jumbo v0, "badgecount"
+
+    aput-object v0, v2, v5
+
+    const-string/jumbo v6, "package=? AND class=?"
+
+    const-string/jumbo v8, "com.samsung.android.mateagent"
+
+    const-string/jumbo v7, "com.samsung.android.mateagent.setting.AboutGalaxyMate"
+
+    const/4 v10, 0x0
+
+    const/4 v9, 0x0
+
+    :try_start_0
+    invoke-virtual {p0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
+
+    move-result-object v0
+
+    const-string/jumbo v3, "package=? AND class=?"
+
+    const/4 v4, 0x2
+
+    new-array v4, v4, [Ljava/lang/String;
+
+    const-string/jumbo v5, "com.samsung.android.mateagent"
+
+    const/4 v12, 0x0
+
+    aput-object v5, v4, v12
+
+    const-string/jumbo v5, "com.samsung.android.mateagent.setting.AboutGalaxyMate"
+
+    const/4 v12, 0x1
+
+    aput-object v5, v4, v12
+
+    const/4 v5, 0x0
+
+    invoke-virtual/range {v0 .. v5}, Landroid/content/ContentResolver;->query(Landroid/net/Uri;[Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Ljava/lang/String;)Landroid/database/Cursor;
+
+    move-result-object v10
+
+    if-eqz v10, :cond_0
+
+    invoke-interface {v10}, Landroid/database/Cursor;->moveToLast()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    const-string/jumbo v0, "badgecount"
+
+    invoke-interface {v10, v0}, Landroid/database/Cursor;->getColumnIndex(Ljava/lang/String;)I
+
+    move-result v0
+
+    invoke-interface {v10, v0}, Landroid/database/Cursor;->getInt(I)I
+    :try_end_0
+    .catch Landroid/database/CursorWindowAllocationException; {:try_start_0 .. :try_end_0} :catch_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    move-result v9
+
+    :cond_0
+    if-eqz v10, :cond_1
+
+    invoke-interface {v10}, Landroid/database/Cursor;->close()V
+
+    :cond_1
+    :goto_0
+    const-string/jumbo v0, "Settings_Utils"
+
+    new-instance v3, Ljava/lang/StringBuilder;
+
+    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string/jumbo v4, "getGalaxyFriendsBadgeCount badgeCount : "
+
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    invoke-virtual {v3, v9}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-static {v0, v3}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
+
+    return v9
+
+    :catch_0
+    move-exception v11
+
+    :try_start_1
+    const-string/jumbo v0, "Settings_Utils"
+
+    new-instance v3, Ljava/lang/StringBuilder;
+
+    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string/jumbo v4, "CursorWindowAllocationException"
+
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    invoke-virtual {v3, v11}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-static {v0, v3}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+
+    if-eqz v10, :cond_1
+
+    invoke-interface {v10}, Landroid/database/Cursor;->close()V
+
+    goto :goto_0
+
+    :catchall_0
+    move-exception v0
+
+    if-eqz v10, :cond_2
+
+    invoke-interface {v10}, Landroid/database/Cursor;->close()V
+
+    :cond_2
+    throw v0
+.end method
+
 .method public static getHandledDomains(Landroid/content/pm/PackageManager;Ljava/lang/String;)Landroid/util/ArraySet;
     .locals 10
     .annotation system Ldalvik/annotation/Signature;
@@ -9334,7 +9667,7 @@
 
     if-eqz v3, :cond_1
 
-    const v3, 0x7f0b0d18
+    const v3, 0x7f0b0d26
 
     invoke-virtual {p0, v3}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -9375,7 +9708,7 @@
 
     if-eqz v2, :cond_1
 
-    const v2, 0x7f0b0d18
+    const v2, 0x7f0b0d26
 
     invoke-virtual {p0, v2}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -9509,7 +9842,7 @@
     :goto_1
     if-nez v2, :cond_2
 
-    const v0, 0x7f0b1c7e
+    const v0, 0x7f0b1c90
 
     :goto_2
     return v0
@@ -9527,12 +9860,12 @@
     :cond_2
     if-eqz v1, :cond_3
 
-    const v0, 0x7f0b1c7c
+    const v0, 0x7f0b1c8e
 
     goto :goto_2
 
     :cond_3
-    const v0, 0x7f0b1c7d
+    const v0, 0x7f0b1c8f
 
     goto :goto_2
 .end method
@@ -10245,7 +10578,7 @@
 
     if-ne p1, v1, :cond_0
 
-    const v0, 0x7f0b1cf6
+    const v0, 0x7f0b1d08
 
     :goto_0
     invoke-virtual {p0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
@@ -10259,7 +10592,7 @@
     return-object v1
 
     :cond_0
-    const v0, 0x7f0b1cf7
+    const v0, 0x7f0b1d09
 
     goto :goto_0
 .end method
@@ -10267,11 +10600,11 @@
 .method public static getOnlineHelpMenuState(Landroid/content/Context;Lcom/android/settings/Utils$OnlineHelpMenuState;)Lcom/android/settings/Utils$OnlineHelpMenuState;
     .locals 9
 
-    const v8, 0x7f020274
+    const v8, 0x7f020272
 
     const/4 v7, 0x0
 
-    const v6, 0x7f0b0515
+    const v6, 0x7f0b0516
 
     const/4 v5, 0x1
 
@@ -10556,7 +10889,7 @@
     if-eqz v1, :cond_8
 
     :cond_7
-    const v1, 0x7f020298
+    const v1, 0x7f020296
 
     iput v1, p1, Lcom/android/settings/Utils$OnlineHelpMenuState;->iconRes:I
 
@@ -10925,7 +11258,7 @@
 
     if-eqz v3, :cond_3
 
-    const v2, 0x7f0b0579
+    const v2, 0x7f0b057a
 
     :goto_0
     invoke-static {}, Lcom/android/settings/Utils;->isSupportCseriesUX()Z
@@ -10934,7 +11267,7 @@
 
     if-eqz v3, :cond_0
 
-    const v2, 0x7f0b0cda
+    const v2, 0x7f0b0ce8
 
     :cond_0
     invoke-static {}, Landroid/os/UserHandle;->myUserId()I
@@ -10965,14 +11298,14 @@
 
     if-eqz v3, :cond_5
 
-    const v2, 0x7f0b0cd6
+    const v2, 0x7f0b0ce4
 
     :cond_2
     :goto_2
     return v2
 
     :cond_3
-    const v2, 0x7f0b0573
+    const v2, 0x7f0b0574
 
     goto :goto_0
 
@@ -11011,17 +11344,17 @@
 
     if-nez v3, :cond_8
 
-    const v2, 0x7f0b0cd6
+    const v2, 0x7f0b0ce4
 
     goto :goto_2
 
     :cond_7
-    const v2, 0x7f0b0cd6
+    const v2, 0x7f0b0ce4
 
     goto :goto_2
 
     :cond_8
-    const v2, 0x7f0b0cd8
+    const v2, 0x7f0b0ce6
 
     goto :goto_2
 .end method
@@ -11807,7 +12140,7 @@
 .method public static getResIdForUserManual()I
     .locals 2
 
-    const v0, 0x7f0b0585
+    const v0, 0x7f0b0586
 
     invoke-static {}, Lcom/android/settings/Utils;->isUsermanualForMOS()Z
 
@@ -11815,7 +12148,7 @@
 
     if-eqz v1, :cond_0
 
-    const v0, 0x7f0b058b
+    const v0, 0x7f0b058c
 
     :cond_0
     return v0
@@ -12362,6 +12695,340 @@
     return-object v2
 .end method
 
+.method public static getSamsungkeypadBadgeCount(Landroid/content/Context;)I
+    .locals 13
+
+    const/4 v5, 0x2
+
+    const/4 v4, 0x1
+
+    const/4 v3, 0x0
+
+    const-string/jumbo v0, "content://com.sec.badge/apps"
+
+    invoke-static {v0}, Landroid/net/Uri;->parse(Ljava/lang/String;)Landroid/net/Uri;
+
+    move-result-object v1
+
+    const/4 v0, 0x3
+
+    new-array v2, v0, [Ljava/lang/String;
+
+    const-string/jumbo v0, "package"
+
+    aput-object v0, v2, v3
+
+    const-string/jumbo v0, "class"
+
+    aput-object v0, v2, v4
+
+    const-string/jumbo v0, "badgecount"
+
+    aput-object v0, v2, v5
+
+    const-string/jumbo v6, "package=? AND class=?"
+
+    const-string/jumbo v8, "com.sec.android.inputmethod"
+
+    const-string/jumbo v7, "com.sec.android.inputmethod.SamsungKeypad"
+
+    const/4 v10, 0x0
+
+    const/4 v9, 0x0
+
+    :try_start_0
+    invoke-virtual {p0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
+
+    move-result-object v0
+
+    const-string/jumbo v3, "package=? AND class=?"
+
+    const/4 v4, 0x2
+
+    new-array v4, v4, [Ljava/lang/String;
+
+    const-string/jumbo v5, "com.sec.android.inputmethod"
+
+    const/4 v12, 0x0
+
+    aput-object v5, v4, v12
+
+    const-string/jumbo v5, "com.sec.android.inputmethod.SamsungKeypad"
+
+    const/4 v12, 0x1
+
+    aput-object v5, v4, v12
+
+    const/4 v5, 0x0
+
+    invoke-virtual/range {v0 .. v5}, Landroid/content/ContentResolver;->query(Landroid/net/Uri;[Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Ljava/lang/String;)Landroid/database/Cursor;
+
+    move-result-object v10
+
+    if-eqz v10, :cond_0
+
+    invoke-interface {v10}, Landroid/database/Cursor;->moveToLast()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    const-string/jumbo v0, "badgecount"
+
+    invoke-interface {v10, v0}, Landroid/database/Cursor;->getColumnIndex(Ljava/lang/String;)I
+
+    move-result v0
+
+    invoke-interface {v10, v0}, Landroid/database/Cursor;->getInt(I)I
+    :try_end_0
+    .catch Landroid/database/CursorWindowAllocationException; {:try_start_0 .. :try_end_0} :catch_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    move-result v9
+
+    :cond_0
+    if-eqz v10, :cond_1
+
+    invoke-interface {v10}, Landroid/database/Cursor;->close()V
+
+    :cond_1
+    :goto_0
+    const-string/jumbo v0, "Settings_Utils"
+
+    new-instance v3, Ljava/lang/StringBuilder;
+
+    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string/jumbo v4, "getSamsungkeypadBadgeCount badgeCount : "
+
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    invoke-virtual {v3, v9}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-static {v0, v3}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
+
+    return v9
+
+    :catch_0
+    move-exception v11
+
+    :try_start_1
+    const-string/jumbo v0, "Settings_Utils"
+
+    new-instance v3, Ljava/lang/StringBuilder;
+
+    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string/jumbo v4, "CursorWindowAllocationException"
+
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    invoke-virtual {v3, v11}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-static {v0, v3}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+
+    if-eqz v10, :cond_1
+
+    invoke-interface {v10}, Landroid/database/Cursor;->close()V
+
+    goto :goto_0
+
+    :catchall_0
+    move-exception v0
+
+    if-eqz v10, :cond_2
+
+    invoke-interface {v10}, Landroid/database/Cursor;->close()V
+
+    :cond_2
+    throw v0
+.end method
+
+.method public static getSecureFolderBadgeCount(Landroid/content/Context;)I
+    .locals 13
+
+    const/4 v5, 0x2
+
+    const/4 v4, 0x1
+
+    const/4 v3, 0x0
+
+    const-string/jumbo v0, "content://com.sec.badge/apps"
+
+    invoke-static {v0}, Landroid/net/Uri;->parse(Ljava/lang/String;)Landroid/net/Uri;
+
+    move-result-object v1
+
+    const/4 v0, 0x3
+
+    new-array v2, v0, [Ljava/lang/String;
+
+    const-string/jumbo v0, "package"
+
+    aput-object v0, v2, v3
+
+    const-string/jumbo v0, "class"
+
+    aput-object v0, v2, v4
+
+    const-string/jumbo v0, "badgecount"
+
+    aput-object v0, v2, v5
+
+    const-string/jumbo v6, "package=? AND class=?"
+
+    const-string/jumbo v8, "com.samsung.knox.securefolder"
+
+    const-string/jumbo v7, "com.samsung.knox.securefolder.containeragent.ui.settings.KnoxSettingsAboutKnoxActivity"
+
+    const/4 v10, 0x0
+
+    const/4 v9, 0x0
+
+    :try_start_0
+    invoke-virtual {p0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
+
+    move-result-object v0
+
+    const-string/jumbo v3, "package=? AND class=?"
+
+    const/4 v4, 0x2
+
+    new-array v4, v4, [Ljava/lang/String;
+
+    const-string/jumbo v5, "com.samsung.knox.securefolder"
+
+    const/4 v12, 0x0
+
+    aput-object v5, v4, v12
+
+    const-string/jumbo v5, "com.samsung.knox.securefolder.containeragent.ui.settings.KnoxSettingsAboutKnoxActivity"
+
+    const/4 v12, 0x1
+
+    aput-object v5, v4, v12
+
+    const/4 v5, 0x0
+
+    invoke-virtual/range {v0 .. v5}, Landroid/content/ContentResolver;->query(Landroid/net/Uri;[Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Ljava/lang/String;)Landroid/database/Cursor;
+
+    move-result-object v10
+
+    if-eqz v10, :cond_0
+
+    invoke-interface {v10}, Landroid/database/Cursor;->moveToLast()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    const-string/jumbo v0, "badgecount"
+
+    invoke-interface {v10, v0}, Landroid/database/Cursor;->getColumnIndex(Ljava/lang/String;)I
+
+    move-result v0
+
+    invoke-interface {v10, v0}, Landroid/database/Cursor;->getInt(I)I
+    :try_end_0
+    .catch Landroid/database/CursorWindowAllocationException; {:try_start_0 .. :try_end_0} :catch_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    move-result v9
+
+    :cond_0
+    if-eqz v10, :cond_1
+
+    invoke-interface {v10}, Landroid/database/Cursor;->close()V
+
+    :cond_1
+    :goto_0
+    const-string/jumbo v0, "Settings_Utils"
+
+    new-instance v3, Ljava/lang/StringBuilder;
+
+    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string/jumbo v4, "getSecureFolderBadgeCount badgeCount : "
+
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    invoke-virtual {v3, v9}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-static {v0, v3}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
+
+    return v9
+
+    :catch_0
+    move-exception v11
+
+    :try_start_1
+    const-string/jumbo v0, "Settings_Utils"
+
+    new-instance v3, Ljava/lang/StringBuilder;
+
+    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string/jumbo v4, "CursorWindowAllocationException"
+
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    invoke-virtual {v3, v11}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-static {v0, v3}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+
+    if-eqz v10, :cond_1
+
+    invoke-interface {v10}, Landroid/database/Cursor;->close()V
+
+    goto :goto_0
+
+    :catchall_0
+    move-exception v0
+
+    if-eqz v10, :cond_2
+
+    invoke-interface {v10}, Landroid/database/Cursor;->close()V
+
+    :cond_2
+    throw v0
+.end method
+
 .method public static getSecureTargetUser(Landroid/os/IBinder;Landroid/os/UserManager;Landroid/os/Bundle;Landroid/os/Bundle;)Landroid/os/UserHandle;
     .locals 10
 
@@ -12517,7 +13184,7 @@
 
     new-array v4, v5, [Z
 
-    if-eqz p6, :cond_c
+    if-eqz p6, :cond_b
 
     const-string/jumbo v5, "mms"
 
@@ -12541,7 +13208,7 @@
 
     move-result v5
 
-    if-eqz v5, :cond_c
+    if-eqz v5, :cond_b
 
     :cond_0
     const/4 v3, 0x0
@@ -12563,7 +13230,7 @@
 
     const/4 v5, 0x4
 
-    if-ge v2, v5, :cond_d
+    if-ge v2, v5, :cond_c
 
     const/4 v0, 0x0
 
@@ -12590,13 +13257,13 @@
 
     move-result v5
 
-    if-eqz v5, :cond_13
+    if-eqz v5, :cond_12
 
     invoke-static {p1}, Lcom/android/settings/Utils;->isVzwEditable(Landroid/content/Intent;)Z
 
     move-result v5
 
-    if-eqz v5, :cond_e
+    if-eqz v5, :cond_d
 
     const/4 v3, 0x1
 
@@ -12638,7 +13305,7 @@
 
     move-result v5
 
-    if-eqz v5, :cond_25
+    if-eqz v5, :cond_24
 
     invoke-static {}, Lcom/android/settings/Utils;->isChinaModel()Z
 
@@ -12760,49 +13427,6 @@
     const/4 v3, 0x0
 
     :cond_a
-    const-string/jumbo v5, "ApnSettings"
-
-    new-instance v7, Ljava/lang/StringBuilder;
-
-    invoke-direct {v7}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string/jumbo v8, "isTetheringEnabled: "
-
-    invoke-virtual {v7, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v7
-
-    invoke-static {p0}, Lcom/android/settings/Utils;->isTetheringEnabled(Landroid/content/Context;)Z
-
-    move-result v8
-
-    invoke-virtual {v7, v8}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
-
-    move-result-object v7
-
-    invoke-virtual {v7}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v7
-
-    invoke-static {v5, v7}, Lcom/samsung/android/settings/LogMsg;->out(Ljava/lang/String;Ljava/lang/String;)V
-
-    invoke-static {}, Lcom/android/settings/Utils;->isJapanDCMModel()Z
-
-    move-result v5
-
-    if-eqz v5, :cond_b
-
-    invoke-static {p0}, Lcom/android/settings/Utils;->isTetheringEnabled(Landroid/content/Context;)Z
-
-    move-result v5
-
-    if-eqz v5, :cond_b
-
-    const/4 v3, 0x0
-
-    const/4 v1, 0x0
-
-    :cond_b
     const/4 v5, 0x0
 
     aput-boolean v3, v4, v5
@@ -12857,12 +13481,12 @@
 
     return-object v4
 
-    :cond_c
+    :cond_b
     const/4 v3, 0x1
 
     goto/16 :goto_0
 
-    :cond_d
+    :cond_c
     const/4 v5, 0x6
 
     if-ne v2, v5, :cond_1
@@ -12871,12 +13495,12 @@
 
     goto/16 :goto_1
 
-    :cond_e
+    :cond_d
     invoke-static {p2}, Lcom/android/settings/Utils;->isVZWSimInserted(Ljava/lang/String;)Z
 
     move-result v5
 
-    if-eqz v5, :cond_11
+    if-eqz v5, :cond_10
 
     const-string/jumbo v5, "ApnSettings"
 
@@ -12936,7 +13560,7 @@
 
     move-result v5
 
-    if-nez v5, :cond_f
+    if-nez v5, :cond_e
 
     const-string/jumbo v5, "6"
 
@@ -12944,7 +13568,7 @@
 
     move-result v5
 
-    if-nez v5, :cond_f
+    if-nez v5, :cond_e
 
     const-string/jumbo v5, "LTE - Verizon Internet"
 
@@ -12952,7 +13576,7 @@
 
     move-result v5
 
-    if-nez v5, :cond_f
+    if-nez v5, :cond_e
 
     const-string/jumbo v5, "VZW Roaming Internet"
 
@@ -12960,7 +13584,7 @@
 
     move-result v5
 
-    if-nez v5, :cond_f
+    if-nez v5, :cond_e
 
     const-string/jumbo v5, "Tracfone - Verizon"
 
@@ -12968,7 +13592,7 @@
 
     move-result v5
 
-    if-nez v5, :cond_f
+    if-nez v5, :cond_e
 
     const-string/jumbo v5, "XFINITY Mobile"
 
@@ -12976,21 +13600,21 @@
 
     move-result v5
 
-    if-eqz v5, :cond_10
+    if-eqz v5, :cond_f
 
-    :cond_f
+    :cond_e
     const/4 v3, 0x1
 
     goto/16 :goto_2
 
-    :cond_10
+    :cond_f
     const/4 v3, 0x0
 
     const/4 v1, 0x0
 
     goto/16 :goto_2
 
-    :cond_11
+    :cond_10
     const-string/jumbo v5, "ApnSettings"
 
     new-instance v7, Ljava/lang/StringBuilder;
@@ -13049,7 +13673,7 @@
 
     move-result v5
 
-    if-eqz v5, :cond_12
+    if-eqz v5, :cond_11
 
     const/4 v3, 0x0
 
@@ -13057,34 +13681,34 @@
 
     goto/16 :goto_2
 
-    :cond_12
+    :cond_11
     const/4 v3, 0x1
 
     goto/16 :goto_2
 
-    :cond_13
+    :cond_12
     invoke-static {}, Lcom/android/settings/Utils;->isSprModel()Z
 
     move-result v5
 
-    if-eqz v5, :cond_16
+    if-eqz v5, :cond_15
 
     invoke-static {p1}, Lcom/android/settings/Utils;->isSprEditable(Landroid/content/Intent;)Z
 
     move-result v5
 
-    if-eqz v5, :cond_14
+    if-eqz v5, :cond_13
 
     const/4 v3, 0x1
 
     goto/16 :goto_2
 
-    :cond_14
+    :cond_13
     invoke-static {p2}, Lcom/android/settings/Utils;->isSPRSimInserted(Ljava/lang/String;)Z
 
     move-result v5
 
-    if-eqz v5, :cond_15
+    if-eqz v5, :cond_14
 
     const-string/jumbo v5, "ApnSettings"
 
@@ -13144,7 +13768,7 @@
 
     goto/16 :goto_2
 
-    :cond_15
+    :cond_14
     const-string/jumbo v5, "ApnSettings"
 
     new-instance v7, Ljava/lang/StringBuilder;
@@ -13201,36 +13825,36 @@
 
     goto/16 :goto_2
 
-    :cond_16
+    :cond_15
     invoke-static {}, Lcom/android/settings/Utils;->isUsOpenModel()Z
 
     move-result v5
 
-    if-eqz v5, :cond_1c
+    if-eqz v5, :cond_1b
 
     invoke-static {p1}, Lcom/android/settings/Utils;->isVzwEditable(Landroid/content/Intent;)Z
 
     move-result v5
 
-    if-nez v5, :cond_17
+    if-nez v5, :cond_16
 
     invoke-static {p1}, Lcom/android/settings/Utils;->isSprEditable(Landroid/content/Intent;)Z
 
     move-result v5
 
-    if-eqz v5, :cond_18
+    if-eqz v5, :cond_17
 
-    :cond_17
+    :cond_16
     const/4 v3, 0x1
 
     goto/16 :goto_2
 
-    :cond_18
+    :cond_17
     invoke-static {p2}, Lcom/android/settings/Utils;->isVZWSimInserted(Ljava/lang/String;)Z
 
     move-result v5
 
-    if-eqz v5, :cond_1a
+    if-eqz v5, :cond_19
 
     const-string/jumbo v5, "ApnSettings"
 
@@ -13290,7 +13914,7 @@
 
     move-result v5
 
-    if-nez v5, :cond_19
+    if-nez v5, :cond_18
 
     const-string/jumbo v5, "6"
 
@@ -13298,7 +13922,7 @@
 
     move-result v5
 
-    if-nez v5, :cond_19
+    if-nez v5, :cond_18
 
     const-string/jumbo v5, "LTE - Verizon Internet"
 
@@ -13306,7 +13930,7 @@
 
     move-result v5
 
-    if-nez v5, :cond_19
+    if-nez v5, :cond_18
 
     const-string/jumbo v5, "VZW Roaming Internet"
 
@@ -13314,7 +13938,7 @@
 
     move-result v5
 
-    if-nez v5, :cond_19
+    if-nez v5, :cond_18
 
     const-string/jumbo v5, "Tracfone - Verizon"
 
@@ -13322,12 +13946,12 @@
 
     move-result v5
 
-    if-eqz v5, :cond_1b
+    if-eqz v5, :cond_1a
 
-    :cond_19
+    :cond_18
     const/4 v3, 0x1
 
-    :cond_1a
+    :cond_19
     :goto_4
     invoke-static {p2}, Lcom/android/settings/Utils;->isSPRSimInserted(Ljava/lang/String;)Z
 
@@ -13393,17 +14017,17 @@
 
     goto/16 :goto_2
 
-    :cond_1b
+    :cond_1a
     const/4 v3, 0x0
 
     const/4 v1, 0x0
 
     goto :goto_4
 
-    :cond_1c
+    :cond_1b
     sget-object v5, Lcom/android/settings/Utils;->mConfigNetworkTypeCapability:Ljava/lang/String;
 
-    if-eqz v5, :cond_1d
+    if-eqz v5, :cond_1c
 
     sget-object v5, Lcom/android/settings/Utils;->mConfigNetworkTypeCapability:Ljava/lang/String;
 
@@ -13413,7 +14037,7 @@
 
     move-result v5
 
-    if-eqz v5, :cond_1d
+    if-eqz v5, :cond_1c
 
     const-string/jumbo v5, "service"
 
@@ -13421,7 +14045,7 @@
 
     move-result v5
 
-    if-eqz v5, :cond_1d
+    if-eqz v5, :cond_1c
 
     const-string/jumbo v5, "mms"
 
@@ -13429,13 +14053,13 @@
 
     move-result v5
 
-    if-eqz v5, :cond_1d
+    if-eqz v5, :cond_1c
 
     const/4 v3, 0x0
 
     goto/16 :goto_2
 
-    :cond_1d
+    :cond_1c
     invoke-static {}, Lcom/samsung/android/feature/SemCscFeature;->getInstance()Lcom/samsung/android/feature/SemCscFeature;
 
     move-result-object v5
@@ -13446,9 +14070,9 @@
 
     move-result v5
 
-    if-eqz v5, :cond_21
+    if-eqz v5, :cond_20
 
-    if-eqz p6, :cond_1f
+    if-eqz p6, :cond_1e
 
     const-string/jumbo v5, "mms"
 
@@ -13456,7 +14080,7 @@
 
     move-result v5
 
-    if-nez v5, :cond_20
+    if-nez v5, :cond_1f
 
     const-string/jumbo v5, "mms2"
 
@@ -13464,7 +14088,7 @@
 
     move-result v5
 
-    if-nez v5, :cond_20
+    if-nez v5, :cond_1f
 
     const-string/jumbo v5, "mms,mms2"
 
@@ -13473,7 +14097,7 @@
     move-result v5
 
     :goto_5
-    if-nez v5, :cond_1e
+    if-nez v5, :cond_1d
 
     const-string/jumbo v5, "dun"
 
@@ -13481,38 +14105,38 @@
 
     move-result v5
 
-    if-eqz v5, :cond_1f
+    if-eqz v5, :cond_1e
 
-    :cond_1e
+    :cond_1d
     const/4 v3, 0x0
 
     goto/16 :goto_2
 
-    :cond_1f
+    :cond_1e
     const/4 v3, 0x1
 
     goto/16 :goto_2
 
-    :cond_20
+    :cond_1f
     move v5, v6
 
     goto :goto_5
 
-    :cond_21
+    :cond_20
     const-string/jumbo v5, "3 share"
 
     invoke-virtual {v5, p3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v5
 
-    if-eqz v5, :cond_22
+    if-eqz v5, :cond_21
 
     const/4 v3, 0x0
 
     goto/16 :goto_2
 
-    :cond_22
-    if-eqz p6, :cond_24
+    :cond_21
+    if-eqz p6, :cond_23
 
     const-string/jumbo v5, "mms"
 
@@ -13520,7 +14144,7 @@
 
     move-result v5
 
-    if-nez v5, :cond_23
+    if-nez v5, :cond_22
 
     const-string/jumbo v5, "mms2"
 
@@ -13528,7 +14152,7 @@
 
     move-result v5
 
-    if-nez v5, :cond_23
+    if-nez v5, :cond_22
 
     const-string/jumbo v5, "mms,mms2"
 
@@ -13536,26 +14160,26 @@
 
     move-result v5
 
-    if-eqz v5, :cond_24
+    if-eqz v5, :cond_23
 
-    :cond_23
+    :cond_22
     const/4 v3, 0x0
 
     goto/16 :goto_2
 
-    :cond_24
+    :cond_23
     const/4 v3, 0x1
 
     goto/16 :goto_2
 
-    :cond_25
+    :cond_24
     const-string/jumbo v5, "xcap"
 
     invoke-virtual {v5, p6}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v5
 
-    if-nez v5, :cond_26
+    if-nez v5, :cond_25
 
     const-string/jumbo v5, "HOS"
 
@@ -13565,7 +14189,7 @@
 
     if-eqz v5, :cond_7
 
-    :cond_26
+    :cond_25
     const-string/jumbo v5, "DTM"
 
     invoke-static {}, Lcom/android/settings/Utils;->readSalesCode()Ljava/lang/String;
@@ -13576,7 +14200,7 @@
 
     move-result v5
 
-    if-nez v5, :cond_27
+    if-nez v5, :cond_26
 
     const-string/jumbo v5, "DTR"
 
@@ -13588,7 +14212,7 @@
 
     move-result v5
 
-    if-nez v5, :cond_27
+    if-nez v5, :cond_26
 
     const-string/jumbo v5, "TMZ"
 
@@ -13600,7 +14224,7 @@
 
     move-result v5
 
-    if-nez v5, :cond_27
+    if-nez v5, :cond_26
 
     const-string/jumbo v5, "DCZ"
 
@@ -13612,7 +14236,7 @@
 
     move-result v5
 
-    if-nez v5, :cond_27
+    if-nez v5, :cond_26
 
     const-string/jumbo v5, "DBT"
 
@@ -13624,7 +14248,7 @@
 
     move-result v5
 
-    if-nez v5, :cond_27
+    if-nez v5, :cond_26
 
     const-string/jumbo v5, "26201"
 
@@ -13632,7 +14256,7 @@
 
     move-result v5
 
-    if-nez v5, :cond_27
+    if-nez v5, :cond_26
 
     const-string/jumbo v5, "23001"
 
@@ -13642,7 +14266,7 @@
 
     if-eqz v5, :cond_7
 
-    :cond_27
+    :cond_26
     const/4 v3, 0x0
 
     goto/16 :goto_3
@@ -13923,7 +14547,7 @@
 
     packed-switch v2, :pswitch_data_0
 
-    const v1, 0x7f020534
+    const v1, 0x7f020536
 
     :goto_2
     invoke-virtual {p0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
@@ -13949,52 +14573,52 @@
     goto :goto_1
 
     :pswitch_0
-    const v1, 0x7f020534
+    const v1, 0x7f020536
 
     goto :goto_2
 
     :pswitch_1
-    const v1, 0x7f020535
-
-    goto :goto_2
-
-    :pswitch_2
     const v1, 0x7f020537
 
     goto :goto_2
 
-    :pswitch_3
-    const v1, 0x7f020546
-
-    goto :goto_2
-
-    :pswitch_4
-    const v1, 0x7f020544
-
-    goto :goto_2
-
-    :pswitch_5
-    const v1, 0x7f020543
-
-    goto :goto_2
-
-    :pswitch_6
+    :pswitch_2
     const v1, 0x7f020539
 
     goto :goto_2
 
-    :pswitch_7
+    :pswitch_3
+    const v1, 0x7f020548
+
+    goto :goto_2
+
+    :pswitch_4
+    const v1, 0x7f020546
+
+    goto :goto_2
+
+    :pswitch_5
     const v1, 0x7f020545
 
     goto :goto_2
 
+    :pswitch_6
+    const v1, 0x7f02053b
+
+    goto :goto_2
+
+    :pswitch_7
+    const v1, 0x7f020547
+
+    goto :goto_2
+
     :pswitch_8
-    const v1, 0x7f020538
+    const v1, 0x7f02053a
 
     goto :goto_2
 
     :pswitch_9
-    const v1, 0x7f020536
+    const v1, 0x7f020538
 
     goto :goto_2
 
@@ -14667,7 +15291,7 @@
 .method public static getTetheringSummary(Landroid/content/Context;Landroid/net/ConnectivityManager;)I
     .locals 14
 
-    const v13, 0x7f0b0dba
+    const v13, 0x7f0b0dc9
 
     const/4 v12, -0x1
 
@@ -14839,7 +15463,7 @@
 
     if-eqz v6, :cond_d
 
-    const v10, 0x7f0b0dbb
+    const v10, 0x7f0b0dca
 
     return v10
 
@@ -14853,7 +15477,7 @@
     :cond_e
     if-eqz v8, :cond_f
 
-    const v10, 0x7f0b0dbc
+    const v10, 0x7f0b0dcb
 
     return v10
 
@@ -14862,14 +15486,14 @@
 
     if-eqz v0, :cond_10
 
-    const v10, 0x7f0b0dbf
+    const v10, 0x7f0b0dce
 
     return v10
 
     :cond_10
     if-eqz v6, :cond_11
 
-    const v10, 0x7f0b0dbd
+    const v10, 0x7f0b0dcc
 
     return v10
 
@@ -14882,12 +15506,12 @@
 
     if-eqz v10, :cond_12
 
-    const v10, 0x7f0b0dcc
+    const v10, 0x7f0b0ddb
 
     return v10
 
     :cond_12
-    const v10, 0x7f0b0dcb
+    const v10, 0x7f0b0dda
 
     return v10
 
@@ -15556,7 +16180,7 @@
 
     if-eqz v4, :cond_1
 
-    const v4, 0x7f110790
+    const v4, 0x7f110792
 
     invoke-virtual {v2, v4}, Landroid/app/FragmentManager;->findFragmentById(I)Landroid/app/Fragment;
 
@@ -15605,7 +16229,7 @@
     return v3
 
     :cond_1
-    const v4, 0x7f11059e
+    const v4, 0x7f1105a0
 
     invoke-virtual {v2, v4}, Landroid/app/FragmentManager;->findFragmentById(I)Landroid/app/Fragment;
 
@@ -22545,115 +23169,181 @@
 .end method
 
 .method public static isFaceDisabled(Landroid/content/Context;I)Z
-    .locals 6
+    .locals 9
 
-    const/4 v5, 0x0
+    const/4 v7, 0x0
 
-    const/4 v4, 0x0
+    const/4 v8, 0x0
 
     if-nez p0, :cond_0
 
-    const-string/jumbo v3, "Settings_Utils"
+    const-string/jumbo v6, "Settings_Utils"
 
-    const-string/jumbo v4, "isFaceDisabled :  context is NULL"
+    const-string/jumbo v7, "isFaceDisabled :  context is NULL"
 
-    invoke-static {v3, v4}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {v6, v7}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    return v5
+    return v8
 
     :cond_0
-    const/4 v1, 0x0
+    const/4 v4, 0x0
 
-    const-string/jumbo v3, "device_policy"
+    const-string/jumbo v6, "device_policy"
 
-    invoke-virtual {p0, v3}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
+    invoke-virtual {p0, v6}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
 
-    move-result-object v0
+    move-result-object v3
 
-    check-cast v0, Landroid/app/admin/DevicePolicyManager;
+    check-cast v3, Landroid/app/admin/DevicePolicyManager;
 
-    if-nez v0, :cond_1
+    if-nez v3, :cond_1
 
-    const-string/jumbo v3, "Settings_Utils"
+    const-string/jumbo v6, "Settings_Utils"
 
-    const-string/jumbo v4, "isFaceDisabled :  dpm is NULL"
+    const-string/jumbo v7, "isFaceDisabled :  dpm is NULL"
 
-    invoke-static {v3, v4}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {v6, v7}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
     :goto_0
-    const-string/jumbo v3, "Settings_Utils"
+    const-string/jumbo v6, "Settings_Utils"
 
-    new-instance v4, Ljava/lang/StringBuilder;
+    new-instance v7, Ljava/lang/StringBuilder;
 
-    invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {v7}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string/jumbo v5, "isFaceDisabled by DPM : "
+    const-string/jumbo v8, "isFaceDisabled by DPM : "
 
-    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v7, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v4
+    move-result-object v7
 
-    invoke-virtual {v4, v1}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+    invoke-virtual {v7, v4}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
 
-    move-result-object v4
+    move-result-object v7
 
-    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v7}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v4
+    move-result-object v7
 
-    invoke-static {v3, v4}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {v6, v7}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
     invoke-static {p0}, Lcom/android/settings/Utils;->isFaceDisabledByEDM(Landroid/content/Context;)Z
 
-    move-result v2
+    move-result v5
 
-    const-string/jumbo v3, "Settings_Utils"
+    const-string/jumbo v6, "Settings_Utils"
 
-    new-instance v4, Ljava/lang/StringBuilder;
+    new-instance v7, Ljava/lang/StringBuilder;
 
-    invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {v7}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string/jumbo v5, "isFaceDisabled by EDM : "
+    const-string/jumbo v8, "isFaceDisabled by EDM : "
 
-    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v7, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v4
+    move-result-object v7
 
-    invoke-virtual {v4, v2}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+    invoke-virtual {v7, v5}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
 
-    move-result-object v4
+    move-result-object v7
 
-    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v7}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v4
+    move-result-object v7
 
-    invoke-static {v3, v4}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {v6, v7}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    if-nez v1, :cond_3
+    if-nez v4, :cond_5
 
     :goto_1
-    return v2
+    return v5
 
     :cond_1
-    invoke-virtual {v0, v4, p1}, Landroid/app/admin/DevicePolicyManager;->getKeyguardDisabledFeatures(Landroid/content/ComponentName;I)I
+    invoke-virtual {v3, v7, p1}, Landroid/app/admin/DevicePolicyManager;->getKeyguardDisabledFeatures(Landroid/content/ComponentName;I)I
 
-    move-result v3
+    move-result v2
 
-    and-int/lit8 v3, v3, 0x20
+    and-int/lit8 v6, v2, 0x20
 
-    if-eqz v3, :cond_2
+    if-eqz v6, :cond_2
+
+    const/4 v0, 0x1
+
+    :goto_2
+    and-int/lit8 v6, v2, 0x10
+
+    if-eqz v6, :cond_3
 
     const/4 v1, 0x1
+
+    :goto_3
+    const-string/jumbo v6, "Settings_Utils"
+
+    new-instance v7, Ljava/lang/StringBuilder;
+
+    invoke-direct {v7}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string/jumbo v8, "isFaceDisabled : disableByFingerprintFlag : "
+
+    invoke-virtual {v7, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v7
+
+    invoke-virtual {v7, v0}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+
+    move-result-object v7
+
+    invoke-virtual {v7}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v7
+
+    invoke-static {v6, v7}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    const-string/jumbo v6, "Settings_Utils"
+
+    new-instance v7, Ljava/lang/StringBuilder;
+
+    invoke-direct {v7}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string/jumbo v8, "isFaceDisabled : disableByTrustAgentFlag : "
+
+    invoke-virtual {v7, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v7
+
+    invoke-virtual {v7, v1}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+
+    move-result-object v7
+
+    invoke-virtual {v7}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v7
+
+    invoke-static {v6, v7}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    if-nez v0, :cond_4
+
+    move v4, v1
 
     goto :goto_0
 
     :cond_2
-    const/4 v1, 0x0
+    const/4 v0, 0x0
 
-    goto :goto_0
+    goto :goto_2
 
     :cond_3
-    const/4 v2, 0x1
+    const/4 v1, 0x0
+
+    goto :goto_3
+
+    :cond_4
+    const/4 v4, 0x1
+
+    goto/16 :goto_0
+
+    :cond_5
+    const/4 v5, 0x1
 
     goto :goto_1
 .end method
@@ -23826,7 +24516,7 @@
     :cond_0
     iget v0, p0, Lcom/samsung/android/settings/SettingsPreferenceFragmentLinkData;->titleRes:I
 
-    const v1, 0x7f0b0ce0
+    const v1, 0x7f0b0cee
 
     if-ne v0, v1, :cond_1
 
@@ -23847,7 +24537,7 @@
 
     iget v0, p0, Lcom/samsung/android/settings/SettingsPreferenceFragmentLinkData;->titleRes:I
 
-    const v1, 0x7f0b050c
+    const v1, 0x7f0b050d
 
     if-ne v0, v1, :cond_3
 
@@ -23863,7 +24553,7 @@
     :cond_3
     iget v0, p0, Lcom/samsung/android/settings/SettingsPreferenceFragmentLinkData;->titleRes:I
 
-    const v1, 0x7f0b1416
+    const v1, 0x7f0b1427
 
     if-ne v0, v1, :cond_4
 
@@ -23878,7 +24568,7 @@
     :cond_4
     iget v0, p0, Lcom/samsung/android/settings/SettingsPreferenceFragmentLinkData;->titleRes:I
 
-    const v1, 0x7f0b18ac
+    const v1, 0x7f0b18be
 
     if-ne v0, v1, :cond_5
 
@@ -25059,7 +25749,7 @@
 
     invoke-static {p2, v0}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    const v0, 0x7f0b0981
+    const v0, 0x7f0b098c
 
     invoke-virtual {p0, v0}, Landroid/app/Activity;->getString(I)Ljava/lang/String;
 
@@ -25096,7 +25786,7 @@
 
     invoke-static {p2, v0}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    const v0, 0x7f0b0855
+    const v0, 0x7f0b0859
 
     invoke-virtual {p0, v0}, Landroid/app/Activity;->getString(I)Ljava/lang/String;
 
@@ -30082,7 +30772,7 @@
 
     move-result-object v46
 
-    const v47, 0x7f0b0b46
+    const v47, 0x7f0b0b54
 
     move-object/from16 v0, v32
 
@@ -30513,7 +31203,7 @@
 
     move-result-object v46
 
-    const v47, 0x7f0b0e5b
+    const v47, 0x7f0b0e6a
 
     move-object/from16 v0, v32
 
@@ -30614,7 +31304,7 @@
 
     move-result-object v46
 
-    const v47, 0x7f0b0e56
+    const v47, 0x7f0b0e65
 
     move-object/from16 v0, v32
 
@@ -30898,7 +31588,7 @@
 
     move-result-object v46
 
-    const v47, 0x7f0b0dcd
+    const v47, 0x7f0b0ddc
 
     move-object/from16 v0, v32
 
@@ -30996,7 +31686,7 @@
 
     move-result-object v46
 
-    const v47, 0x7f0b06eb
+    const v47, 0x7f0b06ec
 
     move-object/from16 v0, v32
 
@@ -31437,7 +32127,7 @@
 
     move-result-object v46
 
-    const v47, 0x7f0b0d2d
+    const v47, 0x7f0b0d3b
 
     move-object/from16 v0, v32
 
@@ -31618,7 +32308,7 @@
 
     move-result-object v46
 
-    const v47, 0x7f0b1916
+    const v47, 0x7f0b1928
 
     move-object/from16 v0, v32
 
@@ -31731,7 +32421,7 @@
 
     move-result-object v46
 
-    const v47, 0x7f0b04cf
+    const v47, 0x7f0b04d0
 
     move-object/from16 v0, v32
 
@@ -31805,7 +32495,7 @@
 
     move-result-object v46
 
-    const v47, 0x7f0b04ce
+    const v47, 0x7f0b04cf
 
     move-object/from16 v0, v32
 
@@ -31862,7 +32552,7 @@
 
     move-result-object v46
 
-    const v47, 0x7f0b06be
+    const v47, 0x7f0b06bf
 
     move-object/from16 v0, v32
 
@@ -32117,7 +32807,7 @@
 
     move-result-object v46
 
-    const v47, 0x7f0b0e58
+    const v47, 0x7f0b0e67
 
     move-object/from16 v0, v32
 
@@ -32263,7 +32953,7 @@
 
     move-result-object v46
 
-    const v47, 0x7f0b0b25
+    const v47, 0x7f0b0b33
 
     move-object/from16 v0, v32
 
@@ -32418,7 +33108,7 @@
 
     move-result-object v46
 
-    const v47, 0x7f0b0d2b
+    const v47, 0x7f0b0d39
 
     move-object/from16 v0, v32
 
@@ -32486,7 +33176,7 @@
 
     move-result-object v46
 
-    const v47, 0x7f0b0d2c
+    const v47, 0x7f0b0d3a
 
     move-object/from16 v0, v32
 
@@ -32547,7 +33237,7 @@
 
     move-result-object v46
 
-    const v47, 0x7f0b0d1d
+    const v47, 0x7f0b0d2b
 
     move-object/from16 v0, v32
 
@@ -34017,7 +34707,7 @@
 
     if-eqz v2, :cond_0
 
-    const v7, 0x7f0b18ad
+    const v7, 0x7f0b18bf
 
     :cond_0
     invoke-static/range {p0 .. p0}, Lcom/android/settings/Utils;->isSplitViewSupported(Landroid/content/Context;)Z

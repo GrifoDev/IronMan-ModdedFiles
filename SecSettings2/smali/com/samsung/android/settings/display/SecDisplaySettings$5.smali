@@ -36,6 +36,23 @@
 
     iget-object v1, p0, Lcom/samsung/android/settings/display/SecDisplaySettings$5;->this$0:Lcom/samsung/android/settings/display/SecDisplaySettings;
 
+    invoke-virtual {v1}, Lcom/samsung/android/settings/display/SecDisplaySettings;->isAdded()Z
+
+    move-result v1
+
+    if-nez v1, :cond_0
+
+    const-string/jumbo v1, "Fragment"
+
+    const-string/jumbo v2, "Detached from activity, so stopping update."
+
+    invoke-static {v1, v2}, Landroid/util/secutil/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    return-void
+
+    :cond_0
+    iget-object v1, p0, Lcom/samsung/android/settings/display/SecDisplaySettings$5;->this$0:Lcom/samsung/android/settings/display/SecDisplaySettings;
+
     invoke-static {v1}, Lcom/samsung/android/settings/display/SecDisplaySettings;->-wrap0(Lcom/samsung/android/settings/display/SecDisplaySettings;)Landroid/content/ContentResolver;
 
     move-result-object v0

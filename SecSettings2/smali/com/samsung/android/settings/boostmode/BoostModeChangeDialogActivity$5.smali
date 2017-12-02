@@ -89,7 +89,7 @@
 
     iget-object v3, p0, Lcom/samsung/android/settings/boostmode/BoostModeChangeDialogActivity$5;->this$0:Lcom/samsung/android/settings/boostmode/BoostModeChangeDialogActivity;
 
-    const v4, 0x7f0b0cac
+    const v4, 0x7f0b0cba
 
     invoke-virtual {v3, v4}, Lcom/samsung/android/settings/boostmode/BoostModeChangeDialogActivity;->getString(I)Ljava/lang/String;
 
@@ -97,7 +97,7 @@
 
     aput-object v3, v2, v5
 
-    const v3, 0x7f0b0c9f
+    const v3, 0x7f0b0cad
 
     invoke-virtual {v1, v3, v2}, Lcom/samsung/android/settings/boostmode/BoostModeChangeDialogActivity;->getString(I[Ljava/lang/Object;)Ljava/lang/String;
 
@@ -144,6 +144,18 @@
     move-result v0
 
     if-ne v0, v3, :cond_4
+
+    iget-object v0, p0, Lcom/samsung/android/settings/boostmode/BoostModeChangeDialogActivity$5;->this$0:Lcom/samsung/android/settings/boostmode/BoostModeChangeDialogActivity;
+
+    invoke-static {v0}, Lcom/samsung/android/settings/boostmode/BoostModeChangeDialogActivity;->-get6(Lcom/samsung/android/settings/boostmode/BoostModeChangeDialogActivity;)Landroid/content/Context;
+
+    move-result-object v0
+
+    invoke-static {v0}, Lcom/samsung/android/settings/boostmode/BoostUtils;->isRemoveGameLauncher(Landroid/content/Context;)Z
+
+    move-result v0
+
+    if-nez v0, :cond_4
 
     iget-object v0, p0, Lcom/samsung/android/settings/boostmode/BoostModeChangeDialogActivity$5;->this$0:Lcom/samsung/android/settings/boostmode/BoostModeChangeDialogActivity;
 

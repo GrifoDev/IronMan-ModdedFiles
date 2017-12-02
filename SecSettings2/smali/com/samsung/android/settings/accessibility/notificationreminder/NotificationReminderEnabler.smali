@@ -30,9 +30,9 @@
 .method public onCheckedChanged(Landroid/widget/CompoundButton;Z)V
     .locals 8
 
-    const v4, 0x7f0f0387
+    const v4, 0x7f0f0386
 
-    const v3, 0x7f0f0386
+    const v3, 0x7f0f0385
 
     const/4 v7, 0x1
 

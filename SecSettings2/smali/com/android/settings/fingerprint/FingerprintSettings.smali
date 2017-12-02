@@ -925,13 +925,13 @@
 
     invoke-virtual {v3, v1}, Lcom/android/settings/fingerprint/FingerprintSettings$FingerprintPreference;->setFingerprint(Landroid/hardware/fingerprint/Fingerprint;)V
 
-    const v4, 0x7f04011a
+    const v4, 0x7f04011b
 
     invoke-virtual {v3, v4}, Lcom/android/settings/fingerprint/FingerprintSettings$FingerprintPreference;->setLayoutResource(I)V
 
     invoke-virtual {v3, v8}, Lcom/android/settings/fingerprint/FingerprintSettings$FingerprintPreference;->setPersistent(Z)V
 
-    const v4, 0x7f0201d8
+    const v4, 0x7f0201d6
 
     invoke-virtual {v3, v4}, Lcom/android/settings/fingerprint/FingerprintSettings$FingerprintPreference;->setIcon(I)V
 
@@ -1749,7 +1749,7 @@
 
     move-result-object v3
 
-    const v4, 0x7f0b0855
+    const v4, 0x7f0b0859
 
     invoke-virtual {p0, v4}, Lcom/android/settings/fingerprint/FingerprintSettings;->getString(I)Ljava/lang/String;
 
@@ -2045,7 +2045,7 @@
 
     iget-object v6, p0, Lcom/android/settings/fingerprint/FingerprintSettings;->mRegisterCategory:Landroid/preference/PreferenceCategory;
 
-    const v7, 0x7f04010e
+    const v7, 0x7f04010f
 
     invoke-virtual {v6, v7}, Landroid/preference/PreferenceCategory;->setLayoutResource(I)V
 
@@ -2414,7 +2414,7 @@
 
     move-result-object v6
 
-    const v7, 0x7f0b0844
+    const v7, 0x7f0b0848
 
     invoke-virtual {v6, v7}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -2426,7 +2426,7 @@
 
     move-result-object v8
 
-    const v9, 0x7f0b0843
+    const v9, 0x7f0b0847
 
     invoke-virtual {v8, v9}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -2469,7 +2469,7 @@
 
     iget-object v6, p0, Lcom/android/settings/fingerprint/FingerprintSettings;->mScreenLock:Landroid/preference/SwitchPreference;
 
-    const v7, 0x7f0b0829
+    const v7, 0x7f0b082d
 
     invoke-virtual {v6, v7}, Landroid/preference/SwitchPreference;->setSummary(I)V
 
@@ -2835,7 +2835,7 @@
 
     if-eqz v6, :cond_2
 
-    const v2, 0x7f040119
+    const v2, 0x7f04011a
 
     :goto_0
     invoke-static {v3}, Landroid/view/LayoutInflater;->from(Landroid/content/Context;)Landroid/view/LayoutInflater;
@@ -2846,7 +2846,7 @@
 
     move-result-object v5
 
-    const v6, 0x7f1103ce
+    const v6, 0x7f1103d0
 
     invoke-virtual {v5, v6}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -2872,7 +2872,7 @@
     return-void
 
     :cond_2
-    const v2, 0x7f040118
+    const v2, 0x7f040119
 
     goto :goto_0
 
@@ -2910,7 +2910,7 @@
 
     new-array v2, v2, [Ljava/lang/Object;
 
-    const v3, 0x7f0b07c0
+    const v3, 0x7f0b07c4
 
     invoke-virtual {p0, v3}, Lcom/android/settings/fingerprint/FingerprintSettings;->getString(I)Ljava/lang/String;
 
@@ -2918,7 +2918,7 @@
 
     aput-object v3, v2, v4
 
-    const v3, 0x7f0b0875
+    const v3, 0x7f0b0879
 
     invoke-virtual {p0, v3, v2}, Lcom/android/settings/fingerprint/FingerprintSettings;->getString(I[Ljava/lang/Object;)Ljava/lang/String;
 
@@ -3113,15 +3113,39 @@
 .end method
 
 .method private startSelectListUI(I[Z)V
-    .locals 2
+    .locals 4
 
-    const/4 v0, 0x0
+    const/4 v3, -0x1
 
-    const/4 v1, -0x1
+    const/4 v2, 0x0
 
-    invoke-direct {p0, p1, p2, v0, v1}, Lcom/android/settings/fingerprint/FingerprintSettings;->startSelectListUI(I[ZZI)V
+    iget v0, p0, Lcom/android/settings/fingerprint/FingerprintSettings;->mEnrolledFingerCount:I
 
+    const/4 v1, 0x1
+
+    if-ne v0, v1, :cond_0
+
+    iget-object v0, p0, Lcom/android/settings/fingerprint/FingerprintSettings;->items:Ljava/util/List;
+
+    invoke-interface {v0, v2}, Ljava/util/List;->get(I)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Landroid/hardware/fingerprint/Fingerprint;
+
+    invoke-virtual {v0}, Landroid/hardware/fingerprint/Fingerprint;->getFingerId()I
+
+    move-result v0
+
+    invoke-direct {p0, v0, p2, v2, v3}, Lcom/android/settings/fingerprint/FingerprintSettings;->startSelectListUI(I[ZZI)V
+
+    :goto_0
     return-void
+
+    :cond_0
+    invoke-direct {p0, p1, p2, v2, v3}, Lcom/android/settings/fingerprint/FingerprintSettings;->startSelectListUI(I[ZZI)V
+
+    goto :goto_0
 .end method
 
 .method private startSelectListUI(I[ZZI)V
@@ -3304,7 +3328,7 @@
 
     const-string/jumbo v1, "com.android.settings.fingerprint.FingerprintSettings_MultiSelect"
 
-    const v3, 0x7f0b0978
+    const v3, 0x7f0b0983
 
     const/4 v4, 0x0
 
@@ -3326,7 +3350,7 @@
 
     const/16 v4, 0x3ef
 
-    const v5, 0x7f0b0978
+    const v5, 0x7f0b0983
 
     const/4 v6, 0x0
 
@@ -3414,15 +3438,15 @@
 
     invoke-virtual {v4, v6}, Landroid/preference/Preference;->setKey(Ljava/lang/String;)V
 
-    const v6, 0x7f0b0824
+    const v6, 0x7f0b0828
 
     invoke-virtual {v4, v6}, Landroid/preference/Preference;->setTitle(I)V
 
-    const v6, 0x7f0402bb
+    const v6, 0x7f0402be
 
     invoke-virtual {v4, v6}, Landroid/preference/Preference;->setLayoutResource(I)V
 
-    const v6, 0x7f0402bc
+    const v6, 0x7f0402bf
 
     invoke-virtual {v4, v6}, Landroid/preference/Preference;->setWidgetLayoutResource(I)V
 
@@ -3629,7 +3653,7 @@
 
     invoke-virtual {v5, v6}, Landroid/preference/Preference;->setKey(Ljava/lang/String;)V
 
-    const v6, 0x7f0b081f
+    const v6, 0x7f0b0823
 
     invoke-virtual {v5, v6}, Landroid/preference/Preference;->setTitle(I)V
 
@@ -3819,7 +3843,7 @@
 
     iget-object v1, p0, Lcom/android/settings/fingerprint/FingerprintSettings;->mRegisterCategory:Landroid/preference/PreferenceCategory;
 
-    const v2, 0x7f04010d
+    const v2, 0x7f04010e
 
     invoke-virtual {v1, v2}, Landroid/preference/PreferenceCategory;->setLayoutResource(I)V
 
@@ -4105,11 +4129,11 @@
 .method private updateOptionsMenu(Landroid/view/Menu;)V
     .locals 9
 
-    const v8, 0x7f0b0515
+    const v8, 0x7f0b0516
 
     const/4 v7, 0x2
 
-    const v6, 0x7f0b0507
+    const v6, 0x7f0b0508
 
     const/4 v5, 0x1
 
@@ -4439,7 +4463,7 @@
 .method protected getHelpResource()I
     .locals 1
 
-    const v0, 0x7f0b1bc7
+    const v0, 0x7f0b1bd9
 
     return v0
 .end method
@@ -5460,7 +5484,7 @@
 
     const-string/jumbo v4, "FpstFingerprintSettings"
 
-    const v5, 0x7f0b0978
+    const v5, 0x7f0b0983
 
     invoke-static {v3, v5, v4}, Lcom/android/settings/Utils;->isNotAvailableBiometricsWithDexAndMultiWindow(Landroid/app/Activity;ILjava/lang/String;)Z
 
@@ -5842,7 +5866,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f0b0855
+    const v1, 0x7f0b0859
 
     invoke-virtual {p0, v1}, Lcom/android/settings/fingerprint/FingerprintSettings;->getString(I)Ljava/lang/String;
 
@@ -6006,7 +6030,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f11059e
+    const v2, 0x7f1105a0
 
     invoke-virtual {v1, v2}, Landroid/app/FragmentManager;->findFragmentById(I)Landroid/app/Fragment;
 

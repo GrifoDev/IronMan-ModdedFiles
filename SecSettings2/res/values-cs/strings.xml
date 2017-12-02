@@ -170,6 +170,8 @@
     <string name="wifi_allow_scan_with_traffic_summary">Povolí nebo odmítne automatické vyhledávání Wi-Fi při roamingu na základě množství využitých dat.</string>
     <string name="select_logd_size_title">Vel. vyr. pam. pro prot.</string>
     <string name="select_logd_size_dialog_title">Vyberte maximální velikost jednotlivých vyrovnávacích pamětí protokolů</string>
+    <string name="dev_logpersist_clear_warning_title">Smazat úložiště trvalého protokolovače?</string>
+    <string name="dev_logpersist_clear_warning_message">Data protokolovače se při vypnutí trvalého protokolovače odstraní.</string>
     <string name="select_logpersist_title">Ukládat data protokolů trvale</string>
     <string name="select_logpersist_dialog_title">Vyberte vyr. paměti protokolů pro ukládání</string>
     <string name="select_usb_configuration_title">Konfigurace USB</string>
@@ -982,6 +984,7 @@ U 2 připojených zařízení může dojít k mírnému rozdílu zvukového výs
     <string name="bluetooth_avc_available_description">Připojené zařízení Bluetooth podporuje Synchronizaci hlasitosti média a úroveň hlasitosti nastavená zařízením Bluetooth bude synchronizována s telefonem.</string>
     <string name="bluetooth_enter_pin_msg">Zadejte PIN kód pro párování s %s. (Zkuste 0000 nebo 1234.)</string>
     <string name="bluetooth_pin_maximum_number_message">Bylo dosaženo maximálního počtu znaků.</string>
+    <string name="bluetooth_frp_permission_message">Zařízení Bluetooth nelze pro tento hovor použít.</string>
     <string name="settings_menu_done">Hotovo</string>
     <string name="usb_tethering_unavailable_subtext_tmo">USB not connected</string>
     <string name="usb_tethering_available_subtext_tmo">USB connected, check to tether</string>
@@ -1481,7 +1484,7 @@ Klepnutím na OK umožníte zvýšení jasu nad bezpečnou úroveň."</string>
     <string name="navigationbar_pressure_sensitivity_title">Silné stisknutí tlačítka Domů</string>
     <string name="navigationbar_pressure_sensitivity_summary">Když je tlačítko Domů skryté, můžete ho použít, když ho stisknete silněji než obvykle.</string>
     <string name="navigationbar_pressure_sensitivity_level_summary">Úroveň tlaku: %1$d z %2$d</string>
-    <string name="navigationbar_pressure_sensitivity_description_off">Když je tlačítko Domů skryté, můžete ho použít, když ho stisknete silněji než obvykle.</string>
+    <string name="navigationbar_pressure_sensitivity_description_off">Umožňuje nastavit tlak potřebný k silnému stisknutí tlačítka Domů.</string>
     <string name="navigationbar_pressure_low">Mírnější</string>
     <string name="navigationbar_pressure_high">Silnější</string>
     <string name="navigationbar_hide_bar">Tlačítko zobrazení a skrytí</string>
@@ -1620,7 +1623,7 @@ Klepnutím na OK umožníte zvýšení jasu nad bezpečnou úroveň."</string>
     <string name="crypt_keeper_decrypt_title">Šifrovat zařízení</string>
     <string name="crypt_keeper_decrypt_summary">Zařízení je zašifrováno.</string>
     <string name="crypt_keeper_type_pin">PIN kód</string>
-    <string name="crypt_keeper_type_pattern">Znak</string>
+    <string name="crypt_keeper_type_pattern">znak</string>
     <string name="crypt_keeper_type_password">Heslo</string>
     <string name="crypt_keeper_type_direction">Směrový zámek</string>
     <string name="crypt_keeper_confirm_title_dec">Potvrdit dešifrování</string>
@@ -1704,7 +1707,11 @@ Během procesu dešifrování není možné SD kartu používat."</string>
     <string name="crypt_keeper_confirm_title">Potvrďte šifrování</string>
     <string name="crypt_keeper_final_desc">Šifrování zařízení je nevratné a když proces přerušíte, dojde ke ztrátě dat. Šifrování může trvat hodinu i déle a během něho se zařízení několikrát restartuje a nebudete ho moci používat.</string>
     <string name="crypt_keeper_setup_title">Šifrování…</string>
-    <string name="crypt_keeper_warn_wipe">Zbývá vám %d pokusů ke spuštění zařízení, než se obnoví výchozí nastavení. Tím budou vymazána všechna data včetně souborů a stažených aplikací.</string>
+    <string name="crypt_keeper_warn_wipe">"Zbývá vám %1$d pokusů, než se obnoví výchozí nastavení telefonu. Tím budou vymazána všechna data včetně souborů a stažených aplikací.
+
+Po resetování telefonu budete pravděpodobně muset zadat informace o účtu %2$s (e-mailovou adresu a heslo) přidruženém k tomuto telefonu, abyste ho mohli znovu používat."</string>
+    <string name="crypt_keeper_samsung_account">Účet Samsung account</string>
+    <string name="crypt_keeper_google_account">Účet Google</string>
     <string name="crypt_keeper_failed_title">Šifrování se nezdařilo</string>
     <string name="crypt_keeper_failed_summary">Zařízení nelze spustit. Proces šifrování byl přerušen. Je nutné obnovit výchozí nastavení zařízení. Tím budou vymazána všechna vaše data.</string>
     <string name="crypt_keeper_data_corrupted_title">Poškozená paměť zařízení</string>
@@ -1723,10 +1730,13 @@ Během procesu dešifrování není možné SD kartu používat."</string>
     <string name="cryptkeeper_wrong_pin">Byl zadán nesprávný PIN kód</string>
     <string name="cryptkeeper_wrong_direction">Nakreslen nesprávný směr</string>
     <string name="checking_decryption">Ověřování…</string>
-    <string name="crypt_keeper_last_warn_wipe">Zbývá vám 1 pokus ke spuštění zařízení, než se obnoví výchozí nastavení. Tím budou vymazána všechna data včetně souborů a stažených aplikací.</string>
+    <string name="crypt_keeper_last_warn_wipe">"Zbývá vám 1 pokus, než se obnoví výchozí nastavení telefonu. Tím budou vymazána všechna data včetně souborů a stažených aplikací.
+
+Po resetování telefonu budete pravděpodobně muset zadat informace o účtu %s (e-mailovou adresu a heslo) přidruženém k tomuto telefonu, abyste ho mohli znovu používat."</string>
     <string name="crypt_keeper_failed_title_dec">Dešifrování se nezdařilo.</string>
     <string name="crypt_keeper_failed_summary_dec">Dešifrování bylo přerušeno a nelze ho dokončit. Před použitím proveďte tovární reset (vymazání všech dat).</string>
     <string name="crypt_keeper_set_screen_lock_type">Nastavit typ zámku displeje</string>
+    <string name="crypt_keeper_warning_keyboard_cover_does_not_work">Kryt klávesnice nebude po restartování telefonu fungovat.</string>
     <string name="encryption_interstitial_message">"Telefon můžete dále chránit povinností zadat %s před spuštěním telefonu. Tato funkce chrání data ve ztracených nebo odcizených telefonech. Některé aplikace mohou vyžadovat Zabezpečené spuštění v souladu se Zásadami šifrování zařízení při přístupu k funkcím, například synchronizaci e-mailů.
 
 Nebude možné přijímat žádné hovory, zprávy nebo oznámení a nezazní zvuková upozornění, dokud telefon nebude spuštěno."</string>
@@ -1971,6 +1981,12 @@ You will also need it when:"</string>
     <string name="lockpassword_confirm_your_pin_with_fingerprint">Použijte otisk prstu nebo zadejte aktuální PIN kód.</string>
     <string name="lockpassword_confirm_your_pattern_with_fingerprint">Použijte otisk prstu nebo nakreslete aktuální znak.</string>
     <string name="lockpassword_confirm_your_password_with_fingerprint">Použijte otisk prstu nebo zadejte aktuální heslo.</string>
+    <string name="lockpassword_confirm_your_pin_with_iris">Použijte duhovky nebo zadejte aktuální PIN kód.</string>
+    <string name="lockpassword_confirm_your_pattern_with_iris">Použijte duhovky nebo nakreslete aktuální znak.</string>
+    <string name="lockpassword_confirm_your_password_with_iris">Použijte duhovky nebo zadejte aktuální heslo.</string>
+    <string name="lockpassword_confirm_your_pin_with_biometrics">Použijte biometriku nebo zadejte PIN kód.</string>
+    <string name="lockpassword_confirm_your_pattern_with_biometrics">Použijte biometriku nebo nakreslete znak.</string>
+    <string name="lockpassword_confirm_your_password_with_biometrics">Použijte biometriku nebo zadejte heslo.</string>
     <string name="lockpassword_confirm_your_pin_instead_of_fingerprint">Zadejte PIN kód místo použití rozpoznávání otisku prstu.</string>
     <string name="lockpassword_confirm_your_pattern_instead_of_fingerprint">Nakreslete znak místo použití rozpoznávání otisku prstu.</string>
     <string name="lockpassword_confirm_your_password_instead_of_fingerprint">Zadejte heslo místo použití rozpoznávání otisku prstu.</string>
@@ -2045,6 +2061,7 @@ Vyberte, jak chcete odemknout telefon. Odemknutí obličejem a Odemknutí duhovk
     <string name="face_status_timeout">Časový limit. Opakujte akci později.</string>
     <string name="okay">OK</string>
     <string name="face_samsung_account_button">Použít Samsung account</string>
+    <string name="face_galaxy_account_button">Použít účet Galaxy</string>
     <string name="face_error_DB_corrupted">Došlo k potížím s daty vašeho obličeje. Zaregistrujte obličej znovu.</string>
     <string name="face_error_DB_corrupted_popup_title">Zaregistrujte svůj obličej znovu</string>
     <string name="face_error_timeout">Váš obličej nebyl rozpoznán.</string>
@@ -2155,7 +2172,7 @@ Zapněte Odemknutí duhovkou a budete moci použít k odemknutí telefonu biomet
     <string name="biometrics_backup_locktype_title">Nastavení zabezpečení duhovky</string>
     <string name="biometrics_register_your_iris">Zaregistrujte své duhovky.</string>
     <string name="biometrics_backup_locktype_summary">Chcete-li použít duhovky k odemknutí zařízení, musíte nastavit znak, PIN kód nebo heslo.</string>
-    <string name="biometrics_backup_locktype_message">Chcete-li použít k odemknutí telefonu nebo pro bezpečné ověření duhovky, budete potřebovat:</string>
+    <string name="biometrics_backup_locktype_message">Chcete-li použít k odemknutí telefonu nebo pro vaše ověření v aplikacích duhovky, budete potřebovat:</string>
     <string name="iris_delete_popup_title">Odebrat data duhovky?</string>
     <string name="iris_delete_popup_message">Odebrat data duhovky?</string>
     <string name="iris_delete_popup_message_with_related_func">Funkce, které používají duhovky, budou vypnuty.</string>
@@ -2231,6 +2248,9 @@ Vyberte, jak chcete odemknout telefon. Odemknutí duhovkou a Odemknutí obličej
     <string name="biometrics_dex_cant_use_msg">V Samsung DeX nelze použít %s.</string>
     <string name="biometrics_dex_closed_to_switch">Aplikace %s byla ukončena, aby mohlo dojít k přepnutí na Samsung DeX.</string>
     <string name="biometircs_dex_cant_use_toast">Aplikaci %s nelze spustit v režimu Samsung DeX. Spusťte aplikaci v režimu telefonu.</string>
+    <string name="iris_guide_text_preview">Pohledem použ. duhovky</string>
+    <string name="iris_guide_enable_toggle">Klepnutím použijete duhovky</string>
+    <string name="iris_cannot_verify">Duhovky nelze ověřit</string>
     <string name="knox_twofactor_bio_description">Vyberte biometrický typ zámku a druhý typ zámku pro odemknutí %s.</string>
     <string name="fingerprint_registered">Zaregistrované otisky prstů budou použity s vybranou metodou odemknutí.</string>
     <string name="knox_twofactor_description">Vyberte biometriku a druhý typ zámku pro odemknutí %s.</string>
@@ -3093,6 +3113,7 @@ Opakujte zadání."</string>
     <string name="easy_mode_app_help">Používejte zařízení snadněji s jednodušším rozložením domovské obrazovky a většími položkami na obrazovce.</string>
     <string name="easy_mode_app_help_dream_1">Použije jednodušší rozložení Domovské obrazovky a větší položky na obrazovce.</string>
     <string name="easy_mode_app_help_dream_2">Všechna přizpůsobení provedená na Domovské obrazovce budou zrušena a Zvětšení obrazovky bude nastaveno na maximum.</string>
+    <string name="easy_mode_app_help_3rd_launcher">Použijte Snadný režim pro větší položky na obrazovce. Pokud nepoužíváte domovskou obrazovku TouchWiz, uspořádání vaší Domovské obrazovky se nezmění, ale nastaví se velké zvětšení obrazovky a střední velikost písma.</string>
     <string name="security_warning_content">Osobní údaje můžete chránit nastavením hesla, PIN kódu nebo znaku pro odemknutí obrazovky</string>
     <string name="lock_setting_weather_desc">Chcete-li zobrazit nebo změnit nastavení informací o počasí, klepněte na NASTAVENÍ POČASÍ.</string>
     <string name="lock_setting_weather_btn">Nastavení počasí</string>
@@ -3339,7 +3360,7 @@ Downloading via mobile networks may result in additional charges depending on yo
     <string name="disable_hovering_title">Vypnout Bezdotykový náhled</string>
     <string name="disable_hovering_summary">Funkce Bezdotykový náhled a TalkBack nelze zapnout současně. Funkce Efekt při přechodu bude vypnuta.</string>
     <string name="pen_settings_pen_input">Přímé zadávání perem</string>
-    <string name="action_memo_onoff_screen_title">Pozn. na vyp. d.</string>
+    <string name="action_memo_onoff_screen_title">Poznámka na vypnutém displeji</string>
     <string name="screen_off_note_summary">Umožňuje psát poznámky při vypnutém displeji. Stačí odebrat pero S Pen a začít psát.</string>
     <string name="screen_off_note_summary_jpn">Můžete vytvářet poznámky, když odpojíte pero S Pen při vypnutém displeji a potom začnete psát na displej. Poznámky na vypnutém displeji se uloží do aplikace Galaxy Notes.</string>
     <string name="screen_off_note_summary_no_detach">Můžete vytvářet poznámky, když stisknete tlačítko Pero, klepnete na vypnutou obrazovku a potom na ni začnete psát. Poznámky na vypnutém displeji se uloží do aplikace Samsung Notes.</string>
@@ -3946,7 +3967,7 @@ Použití Mobilního hotspotu zvyšuje spotřebu elektrické energie z baterie a
     <string name="wfd_descrpition_playsound">Přehrát zvuk.</string>
     <string name="wfd_is_not_supported">Tato funkce není podporována.</string>
     <string name="usbtethering_notify_wifi_is_on_title">Vypnout Wi-Fi?</string>
-    <string name="usbtethering_notify_wifi_is_on">Wi-Fi a Sdílení internetového připojení přes USB nemohou být zapnuté současně. Vypněte Wi-Fi.</string>
+    <string name="usbtethering_notify_wifi_is_on">Wi-Fi a Sdílení internetového připojení přes USB nemohou být zapnuté současně. Wi-Fi se vypne.</string>
     <string name="disable_multi_window_dialog_text">Režim Více oken se vypne a všechny aplikace otevřené v automaticky otevíraných oknech se zavřou.</string>
     <string name="keyguard_password_attempt_count_pin_code">Počet zbývajících pokusů: %d.</string>
     <string name="keyguard_password_attempts_count_pin_code">Počet zbývajících pokusů: %d.</string>
@@ -4154,6 +4175,7 @@ Příjem SMS zpráv"</string>
     <string name="hdmi_mode_title">Režim HDMI</string>
     <string name="hdmi_mode_dex">Samsung DeX</string>
     <string name="hdmi_mode_mirroring">Screen Mirroring</string>
+    <string name="hdmi_mode_not_available_while_cover_attached">Když je připojený kryt, %s není k dispozici.</string>
     <string name="screen_timeout_for_dex">Časový limit pro Samsung DeX</string>
     <string name="show_virtual_keyboard_for_dex">Zobrazit obrazovkovou klávesnici v Samsung DeX</string>
     <string name="comma">,</string>
@@ -4462,7 +4484,7 @@ Nastavení můžete později změnit v nastavení Bluetooth."</string>
     <string name="date_picker_title">Datum</string>
     <string name="time_picker_title">Čas</string>
     <string name="lock_after_timeout">Zamknout automaticky</string>
-    <string name="lock_after_timeout_summary">Displej se zamkne za %s po jeho automatickém vypnutí.</string>
+    <string name="lock_after_timeout_summary">Telefon se zamkne za %s po automatickém vypnutí obrazovky.</string>
     <string name="lock_after_timeout_summary_with_exception">Displej se zamkne za %1$s po jeho automatickém vypnutí, kromě případu, kdy je odemknut pomocí %2$s.</string>
     <string name="show_owner_info_on_lockscreen_label">Zobrazí na zamknutém displeji informace o vlastníkovi zařízení.</string>
     <string name="owner_info_settings_title">Informace o majiteli</string>
@@ -4610,6 +4632,8 @@ Aby byla zvýšena přesnost určování polohy, aplikace a služby mohou vyhled
     <string name="wifi_empty_list_user_restricted">Nemáte oprávnění měnit nastavení Wi-Fi.</string>
     <string name="wifi_setup_wps">Automatické nastavení (WPS)</string>
     <string name="wifi_show_advanced">Zobrazit rozšířené možnosti</string>
+    <string name="wifi_advanced_toggle_description_expanded">Poklepáním sbalíte.</string>
+    <string name="wifi_advanced_toggle_description_collapsed">Poklepáním rozbalíte.</string>
     <string name="wifi_wps_setup_title">Nastavení WPS</string>
     <string name="wifi_wps_setup_msg">Spouštění WPS…</string>
     <string name="wifi_wps_onstart_pbc">Klepněte na tlačítko chráněného nastavení sítě Wi-Fi ve směrovači. Může mít název WPS nebo obsahovat tento symbol:</string>
@@ -4641,6 +4665,10 @@ Aby byla zvýšena přesnost určování polohy, aplikace a služby mohou vyhled
     <string name="wifi_shared">Sdíleno</string>
     <string name="wifi_unchanged">(nezměněno)</string>
     <string name="wifi_unspecified">(Nespecifikováno)</string>
+    <string name="wifi_select_cert">Vybrat certifikát</string>
+    <string name="wifi_do_not_provide_eap_user_cert">Neposkytovat</string>
+    <string name="wifi_do_not_validate_eap_server">Neověřovat</string>
+    <string name="wifi_do_not_validate_eap_server_warning">Nebyl specifikován žádný certifikát. Připojení nebude privátní.</string>
     <string name="wifi_scan_always_turnon_message">%s vyžaduje povolení vyhledávat sítě Wi-Fi i když je Wi-Fi vypnuté, aby se zlepšila přesnost určení polohy a pro další účely. Povolit pro všechny aplikace?</string>
     <string name="wifi_scan_always_confirm_allow">Povolit</string>
     <string name="wifi_scan_always_confirm_deny">Odmítnout</string>
@@ -4975,9 +5003,9 @@ Zvažte použití rychlejší SD karty nebo paměťového zařízení USB, aby s
     <string name="restore_default_apn_completed">Obnovení výchozího nastavení přístupového bodu bylo dokončeno.</string>
     <string name="reset_network_desc">Touto akcí obnovíte všechna nastavení sítě včetně následujících:</string>
     <string name="reset_network_button_text">Vynulovat nastavení</string>
-    <string name="reset_network_final_desc">Všechna nastavení připojení budou obnovena. Tato akce je nevratná.</string>
+    <string name="reset_network_final_desc">Všechna nastavení sítě budou obnovena. Tato akce je nevratná.</string>
     <string name="reset_network_final_button_text">Vynulovat nastavení</string>
-    <string name="reset_network_complete_toast">Nastavení připojení bylo obnoveno.</string>
+    <string name="reset_network_complete_toast">Nastavení sítě bylo obnoveno.</string>
     <string name="master_clear_title">Obnovit tovární data</string>
     <string name="master_clear_accounts">Jste přihlášeni k následujícím účtům:</string>
     <string name="master_clear_other_users_present">Data v zařízení, která patří jiným uživatelům, budou rovněž vymazána.</string>
@@ -6090,6 +6118,7 @@ Nebude možné přijímat žádné hovory, zprávy nebo oznámení a nezazní zv
     <string name="set_data_limit">Nastavit datový limit</string>
     <string name="data_limit">Datový limit</string>
     <string name="data_usage_template">%1$s využito v období %2$s</string>
+    <string name="data_usage_template_wifi">%s využito za posledních 30 dní</string>
     <string name="data_usage_other_apps">Souv. apl. zahrnuté ve využití</string>
     <string name="data_saver_title">Spořič dat</string>
     <string name="unrestricted_data_saver">Povolit aplik. při Spořiči dat</string>
@@ -6140,6 +6169,7 @@ Nebude možné přijímat žádné hovory, zprávy nebo oznámení a nezazní zv
     <string name="legacy_dhcp_client_summary">Namísto nového klientu DHCP Android použít klient DHCP z verze Lollipop.</string>
     <string name="screen_off_pocket_title">Zachovat vypnutý displej</string>
     <string name="screen_off_pocket_summary">Zabrání náhodnému zapnutí obrazovky, když se zařízení nachází ve tmě, například v kapse nebo v tašce.</string>
+    <string name="noApplications">Všechny aplikace spojené s touto akcí byly vypnuty, zablokovány nebo nejsou nainstalovány.</string>
     <string name="confirm_reset_shortcut_manager_throttling_title">Vynulovat omezovač rychlosti Správce zástupců</string>
     <string name="confirm_reset_shortcut_manager_throttling_message">Počítadla omezovače rychlosti Správce zástupců budou vynulována.</string>
 </resources>

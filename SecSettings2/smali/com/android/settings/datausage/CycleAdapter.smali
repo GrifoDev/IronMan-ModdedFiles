@@ -41,7 +41,7 @@
 
     if-eqz p4, :cond_0
 
-    const v0, 0x7f040108
+    const v0, 0x7f040109
 
     :goto_0
     invoke-direct {p0, p1, v0}, Landroid/widget/ArrayAdapter;-><init>(Landroid/content/Context;I)V
@@ -75,7 +75,7 @@
     return-void
 
     :cond_0
-    const v0, 0x7f0400b3
+    const v0, 0x7f0400b4
 
     goto :goto_0
 .end method

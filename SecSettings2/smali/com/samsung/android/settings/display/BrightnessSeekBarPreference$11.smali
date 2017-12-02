@@ -43,9 +43,16 @@
 
     invoke-static {v0, v1}, Lcom/samsung/android/settings/display/BrightnessSeekBarPreference;->-set2(Lcom/samsung/android/settings/display/BrightnessSeekBarPreference;Landroid/app/AlertDialog;)Landroid/app/AlertDialog;
 
+    invoke-static {}, Lcom/samsung/android/settings/display/BrightnessSeekBarPreference;->-get0()Z
+
+    move-result v0
+
+    if-nez v0, :cond_0
+
     iget-object v0, p0, Lcom/samsung/android/settings/display/BrightnessSeekBarPreference$11;->this$0:Lcom/samsung/android/settings/display/BrightnessSeekBarPreference;
 
     invoke-static {v0}, Lcom/samsung/android/settings/display/BrightnessSeekBarPreference;->-wrap1(Lcom/samsung/android/settings/display/BrightnessSeekBarPreference;)V
 
+    :cond_0
     return-void
 .end method

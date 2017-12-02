@@ -6590,7 +6590,7 @@
 
     iget-object v8, p0, Lcom/android/settings/ApnEditor;->mRes:Landroid/content/res/Resources;
 
-    const v9, 0x7f0b174d
+    const v9, 0x7f0b175f
 
     invoke-virtual {v8, v9}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -6609,7 +6609,7 @@
 
     iget-object v8, p0, Lcom/android/settings/ApnEditor;->mRes:Landroid/content/res/Resources;
 
-    const v9, 0x7f0b174e
+    const v9, 0x7f0b1760
 
     invoke-virtual {v8, v9}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -6628,7 +6628,7 @@
 
     iget-object v8, p0, Lcom/android/settings/ApnEditor;->mRes:Landroid/content/res/Resources;
 
-    const v9, 0x7f0b174f
+    const v9, 0x7f0b1761
 
     invoke-virtual {v8, v9}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -6649,7 +6649,7 @@
 
     iget-object v8, p0, Lcom/android/settings/ApnEditor;->mRes:Landroid/content/res/Resources;
 
-    const v9, 0x7f0b1750
+    const v9, 0x7f0b1762
 
     invoke-virtual {v8, v9}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -6662,7 +6662,7 @@
 
     iget-object v8, p0, Lcom/android/settings/ApnEditor;->mRes:Landroid/content/res/Resources;
 
-    const v9, 0x7f0b0d23
+    const v9, 0x7f0b0d31
 
     invoke-virtual {v8, v9}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -6716,7 +6716,7 @@
     :cond_7
     iget-object v8, p0, Lcom/android/settings/ApnEditor;->mRes:Landroid/content/res/Resources;
 
-    const v9, 0x7f0b0d21
+    const v9, 0x7f0b0d2f
 
     invoke-virtual {v8, v9}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -9227,13 +9227,13 @@
 
     const/4 v4, 0x1
 
-    if-ge v2, v4, :cond_13
+    if-ge v2, v4, :cond_14
 
     invoke-virtual/range {p0 .. p0}, Lcom/android/settings/ApnEditor;->getResources()Landroid/content/res/Resources;
 
     move-result-object v2
 
-    const v4, 0x7f0b1a60
+    const v4, 0x7f0b1a72    # 1.849E38f
 
     invoke-virtual {v2, v4}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -9501,7 +9501,7 @@
 
     iget-boolean v2, v0, Lcom/android/settings/ApnEditor;->mApnTypeStyle:Z
 
-    if-nez v2, :cond_18
+    if-nez v2, :cond_19
 
     move-object/from16 v0, p0
 
@@ -9521,7 +9521,7 @@
 
     move-result v2
 
-    if-eqz v2, :cond_14
+    if-eqz v2, :cond_15
 
     move-object/from16 v0, p0
 
@@ -9535,7 +9535,7 @@
 
     move-result v2
 
-    if-eqz v2, :cond_14
+    if-eqz v2, :cond_15
 
     const-string/jumbo v2, "type"
 
@@ -9706,7 +9706,7 @@
 
     move-result v2
 
-    if-eqz v2, :cond_1b
+    if-eqz v2, :cond_1c
 
     move-object/from16 v0, p0
 
@@ -9714,7 +9714,7 @@
 
     const/4 v3, 0x1
 
-    if-ne v2, v3, :cond_1b
+    if-ne v2, v3, :cond_1c
 
     const-string/jumbo v2, "current1"
 
@@ -9773,7 +9773,7 @@
 
     move-result v2
 
-    if-nez v2, :cond_1c
+    if-nez v2, :cond_1d
 
     const/4 v13, 0x0
 
@@ -9794,7 +9794,7 @@
 
     iget v2, v0, Lcom/android/settings/ApnEditor;->mBearerInitialVal:I
 
-    if-nez v2, :cond_1d
+    if-nez v2, :cond_1e
 
     :cond_e
     const/4 v15, 0x0
@@ -9964,7 +9964,7 @@
 
     move-result v2
 
-    if-eqz v2, :cond_1f
+    if-eqz v2, :cond_20
 
     const/4 v2, 0x1
 
@@ -9985,19 +9985,13 @@
 
     move-result v2
 
-    if-eqz v2, :cond_20
+    if-eqz v2, :cond_21
 
     move-object/from16 v0, p0
 
     iget-boolean v2, v0, Lcom/android/settings/ApnEditor;->mNewApn:Z
 
-    if-nez v2, :cond_11
-
-    move-object/from16 v0, p0
-
-    iget-boolean v2, v0, Lcom/android/settings/ApnEditor;->isNoWarning:Z
-
-    if-nez v2, :cond_20
+    if-eqz v2, :cond_11
 
     const-string/jumbo v2, "Telephony"
 
@@ -10007,14 +10001,31 @@
 
     move-result v2
 
-    if-eqz v2, :cond_20
+    if-nez v2, :cond_12
 
     :cond_11
+    move-object/from16 v0, p0
+
+    iget-boolean v2, v0, Lcom/android/settings/ApnEditor;->isNoWarning:Z
+
+    if-nez v2, :cond_21
+
+    const-string/jumbo v2, "Telephony"
+
+    move-object/from16 v0, p0
+
+    invoke-direct {v0, v2}, Lcom/android/settings/ApnEditor;->isDefinedApn(Ljava/lang/String;)Z
+
+    move-result v2
+
+    if-eqz v2, :cond_21
+
+    :cond_12
     invoke-direct/range {p0 .. p0}, Lcom/android/settings/ApnEditor;->getErrorMsg()Ljava/lang/String;
 
     move-result-object v2
 
-    if-eqz v2, :cond_12
+    if-eqz v2, :cond_13
 
     const/4 v2, 0x0
 
@@ -10022,7 +10033,7 @@
 
     invoke-static {v0, v2}, Lcom/android/settings/ApnEditor$ErrorDialog;->showError(Lcom/android/settings/ApnEditor;I)V
 
-    :cond_12
+    :cond_13
     sget-object v2, Lcom/android/settings/ApnEditor;->TAG:Ljava/lang/String;
 
     const-string/jumbo v3, "KKK show ERROR_DIALOG_ID"
@@ -10033,17 +10044,17 @@
 
     return v2
 
-    :cond_13
+    :cond_14
     move-object/from16 v2, v21
 
     goto/16 :goto_0
 
-    :cond_14
+    :cond_15
     invoke-static {}, Lcom/android/settings/Utils;->isJapanSBMModel()Z
 
     move-result v2
 
-    if-eqz v2, :cond_15
+    if-eqz v2, :cond_16
 
     move-object/from16 v0, p0
 
@@ -10057,7 +10068,7 @@
 
     move-result v2
 
-    if-eqz v2, :cond_15
+    if-eqz v2, :cond_16
 
     const-string/jumbo v2, "type"
 
@@ -10069,12 +10080,12 @@
 
     goto/16 :goto_1
 
-    :cond_15
+    :cond_16
     invoke-static {}, Lcom/android/settings/Utils;->isJapanSBMModel()Z
 
     move-result v2
 
-    if-eqz v2, :cond_16
+    if-eqz v2, :cond_17
 
     const-string/jumbo v2, "default"
 
@@ -10082,7 +10093,7 @@
 
     move-result v2
 
-    if-eqz v2, :cond_16
+    if-eqz v2, :cond_17
 
     const-string/jumbo v2, "xcap"
 
@@ -10090,9 +10101,9 @@
 
     move-result v2
 
-    if-eqz v2, :cond_17
+    if-eqz v2, :cond_18
 
-    :cond_16
+    :cond_17
     const-string/jumbo v2, "type"
 
     move-object/from16 v0, v25
@@ -10101,7 +10112,7 @@
 
     goto/16 :goto_1
 
-    :cond_17
+    :cond_18
     const-string/jumbo v2, "type"
 
     new-instance v3, Ljava/lang/StringBuilder;
@@ -10128,7 +10139,7 @@
 
     goto/16 :goto_1
 
-    :cond_18
+    :cond_19
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/android/settings/ApnEditor;->mApnType_list:Landroid/preference/ListPreference;
@@ -10183,7 +10194,7 @@
 
     move-result v2
 
-    if-eqz v2, :cond_19
+    if-eqz v2, :cond_1a
 
     const-string/jumbo v2, "default"
 
@@ -10191,7 +10202,7 @@
 
     move-result v2
 
-    if-eqz v2, :cond_19
+    if-eqz v2, :cond_1a
 
     const-string/jumbo v2, "xcap"
 
@@ -10199,9 +10210,9 @@
 
     move-result v2
 
-    if-eqz v2, :cond_1a
+    if-eqz v2, :cond_1b
 
-    :cond_19
+    :cond_1a
     const-string/jumbo v2, "type"
 
     move-object/from16 v0, v25
@@ -10210,7 +10221,7 @@
 
     goto/16 :goto_1
 
-    :cond_1a
+    :cond_1b
     const-string/jumbo v2, "type"
 
     new-instance v3, Ljava/lang/StringBuilder;
@@ -10237,7 +10248,7 @@
 
     goto/16 :goto_1
 
-    :cond_1b
+    :cond_1c
     const-string/jumbo v2, "current"
 
     const/4 v3, 0x1
@@ -10264,7 +10275,7 @@
 
     goto/16 :goto_2
 
-    :cond_1c
+    :cond_1d
     invoke-static {v11}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
 
     move-result v2
@@ -10277,7 +10288,7 @@
 
     goto/16 :goto_3
 
-    :cond_1d
+    :cond_1e
     move-object/from16 v0, p0
 
     iget v2, v0, Lcom/android/settings/ApnEditor;->mBearerInitialVal:I
@@ -10286,7 +10297,7 @@
 
     move-result v2
 
-    if-eqz v2, :cond_1e
+    if-eqz v2, :cond_1f
 
     move-object/from16 v0, p0
 
@@ -10294,17 +10305,17 @@
 
     goto/16 :goto_4
 
-    :cond_1e
+    :cond_1f
     const/4 v15, 0x0
 
     goto/16 :goto_4
 
-    :cond_1f
+    :cond_20
     const/4 v2, 0x0
 
     goto/16 :goto_5
 
-    :cond_20
+    :cond_21
     invoke-virtual/range {p0 .. p0}, Lcom/android/settings/ApnEditor;->getContentResolver()Landroid/content/ContentResolver;
 
     move-result-object v2
@@ -10369,7 +10380,7 @@
 
     move-result v2
 
-    if-nez v2, :cond_21
+    if-nez v2, :cond_22
 
     const-string/jumbo v2, "20404"
 
@@ -10379,12 +10390,12 @@
 
     move-result v2
 
-    if-eqz v2, :cond_22
-
-    :cond_21
-    const/16 v17, 0x1
+    if-eqz v2, :cond_23
 
     :cond_22
+    const/16 v17, 0x1
+
+    :cond_23
     const-string/jumbo v2, "VZW"
 
     invoke-static {}, Lcom/android/settings/Utils;->readSalesCode()Ljava/lang/String;
@@ -10395,16 +10406,16 @@
 
     move-result v2
 
-    if-nez v2, :cond_23
+    if-nez v2, :cond_24
 
     invoke-static {}, Lcom/android/settings/Utils;->isUsOpenModel()Z
 
     move-result v2
 
-    if-eqz v2, :cond_24
+    if-eqz v2, :cond_25
 
-    :cond_23
-    if-eqz v17, :cond_24
+    :cond_24
+    if-eqz v17, :cond_25
 
     sget-object v2, Lcom/android/settings/ApnEditor;->TAG:Ljava/lang/String;
 
@@ -10420,7 +10431,7 @@
 
     move-result-object v2
 
-    if-eqz v2, :cond_24
+    if-eqz v2, :cond_25
 
     move-object/from16 v0, p0
 
@@ -10436,13 +10447,13 @@
 
     move-result v2
 
-    if-eqz v2, :cond_24
+    if-eqz v2, :cond_25
 
     move-object/from16 v0, p0
 
     invoke-virtual {v0, v8}, Lcom/android/settings/ApnEditor;->changeVzwHomeAndRoamingApn(Ljava/lang/String;)V
 
-    :cond_24
+    :cond_25
     invoke-static {}, Landroid/os/Process;->myPid()I
 
     move-result v5
@@ -10465,19 +10476,19 @@
 
     const/4 v4, 0x1
 
-    if-ge v3, v4, :cond_25
+    if-ge v3, v4, :cond_26
 
     invoke-virtual/range {p0 .. p0}, Lcom/android/settings/ApnEditor;->getResources()Landroid/content/res/Resources;
 
     move-result-object v3
 
-    const v4, 0x7f0b1a60
+    const v4, 0x7f0b1a72    # 1.849E38f
 
     invoke-virtual {v3, v4}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
     move-result-object v21
 
-    :cond_25
+    :cond_26
     move-object/from16 v0, v21
 
     invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
@@ -10750,7 +10761,7 @@
 
     move-result-object v13
 
-    const v14, 0x7f0b172d
+    const v14, 0x7f0b173f
 
     invoke-virtual {v13, v14}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -12047,11 +12058,11 @@
 .method public onCreateOptionsMenu(Landroid/view/Menu;Landroid/view/MenuInflater;)V
     .locals 11
 
-    const v10, 0x7f0b174a
+    const v10, 0x7f0b175c
 
     const/4 v9, 0x2
 
-    const v8, 0x7f0b1748
+    const v8, 0x7f0b175a
 
     const/4 v7, 0x1
 
@@ -12147,7 +12158,7 @@
     :goto_3
     const/4 v4, 0x3
 
-    const v5, 0x7f0b174b
+    const v5, 0x7f0b175d    # 1.84884E38f
 
     invoke-interface {p1, v6, v4, v6, v5}, Landroid/view/Menu;->add(IIII)Landroid/view/MenuItem;
 

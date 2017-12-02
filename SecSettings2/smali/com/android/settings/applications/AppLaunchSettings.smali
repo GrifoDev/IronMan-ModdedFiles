@@ -156,7 +156,7 @@
 
     new-array v3, v8, [Ljava/lang/CharSequence;
 
-    const v4, 0x7f0b1d4b
+    const v4, 0x7f0b1d5d
 
     invoke-virtual {p0, v4}, Lcom/android/settings/applications/AppLaunchSettings;->getString(I)Ljava/lang/String;
 
@@ -164,7 +164,7 @@
 
     aput-object v4, v3, v5
 
-    const v4, 0x7f0b1d4c
+    const v4, 0x7f0b1d5e
 
     invoke-virtual {p0, v4}, Lcom/android/settings/applications/AppLaunchSettings;->getString(I)Ljava/lang/String;
 
@@ -172,7 +172,7 @@
 
     aput-object v4, v3, v6
 
-    const v4, 0x7f0b1d4d
+    const v4, 0x7f0b1d5f
 
     invoke-virtual {p0, v4}, Lcom/android/settings/applications/AppLaunchSettings;->getString(I)Ljava/lang/String;
 
@@ -474,7 +474,7 @@
 
     if-nez p1, :cond_0
 
-    const v2, 0x7f0b1d48
+    const v2, 0x7f0b1d5a
 
     invoke-virtual {v0, v2}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -485,7 +485,7 @@
     :cond_0
     if-ne p1, v2, :cond_1
 
-    const v1, 0x7f0b1d49
+    const v1, 0x7f0b1d5b
 
     :goto_0
     new-array v2, v2, [Ljava/lang/Object;
@@ -503,7 +503,7 @@
     return-object v2
 
     :cond_1
-    const v1, 0x7f0b1d4a
+    const v1, 0x7f0b1d5c
 
     goto :goto_0
 .end method
@@ -736,7 +736,7 @@
 
     move-result-object v1
 
-    const v3, 0x7f0b1d1f
+    const v3, 0x7f0b1d31
 
     const/4 v6, 0x0
 

@@ -170,6 +170,8 @@
     <string name="wifi_allow_scan_with_traffic_summary">"Autorisez ou refusez les recherches automatiques d'itinérance Wifi en fonction de la quantité de données utilisée."</string>
     <string name="select_logd_size_title">Tampon pr journalisation</string>
     <string name="select_logd_size_dialog_title">Sélectionner la taille maximale de chaque mémoire tampon de journal</string>
+    <string name="dev_logpersist_clear_warning_title">Effacer esp. stockage enreg. permanent ?</string>
+    <string name="dev_logpersist_clear_warning_message">"Les données de l'enregistreur seront supprimées lorsque l'enregistreur permanent sera désactivé."</string>
     <string name="select_logpersist_title">Stockage permanent données journ.</string>
     <string name="select_logpersist_dialog_title">Sélect. tampons journ. à stocker constamment</string>
     <string name="select_usb_configuration_title">Configuration USB</string>
@@ -982,6 +984,7 @@ Il se peut que les 2 périphériques connectés produisent une sortie sonore lé
     <string name="bluetooth_avc_available_description">Le périphérique Bluetooth connecté prend en charge la synchronisation du volume des médias, et le volume réglé par le périphérique Bluetooth va se synchroniser avec celui de votre téléphone.</string>
     <string name="bluetooth_enter_pin_msg">Saisissez le NIP pour le jumelage à %s (Essayez 0000 ou 1234).</string>
     <string name="bluetooth_pin_maximum_number_message">Nombre maximal de caractères atteint.</string>
+    <string name="bluetooth_frp_permission_message">"Impossible d'utiliser un appareil Bluetooth pour cet appel."</string>
     <string name="settings_menu_done">OK</string>
     <string name="usb_tethering_unavailable_subtext_tmo">USB non connecté</string>
     <string name="usb_tethering_available_subtext_tmo">USB connecté. Cochez pour activer le modem</string>
@@ -999,7 +1002,7 @@ Il se peut que les 2 périphériques connectés produisent une sortie sonore lé
     <string name="galaxy_labs_title">Galaxy Labs</string>
     <string name="smart_capture_title">Capture intelligente</string>
     <string name="accelerate_hongbao_receiving_title">Récup. rapide hongbao</string>
-    <string name="quick_camera_launch_title">Lanc. rapide caméra</string>
+    <string name="quick_camera_launch_title">Lanc. rapide app. photo</string>
     <string name="quick_camera_launch_summary_by_powerkey">"Ouvrez l'application Appareil photo en pressant rapidement deux fois le bouton Allumer."</string>
     <string name="quick_camera_launch_summary">Ouvrez votre appareil photo en touchant deux fois la touche Accueil.</string>
     <string name="quick_camera_launch_summary_softkey">"Ouvrez l'application Appareil photo en pressant rapidement deux fois le bouton Allumer ou Accueil."</string>
@@ -1481,7 +1484,7 @@ Touchez OK pour autoriser l'augmentation de la luminosité au-dessus des niveaux
     <string name="navigationbar_pressure_sensitivity_title">Presser le bouton Accueil</string>
     <string name="navigationbar_pressure_sensitivity_summary">"Lorsque le bouton Accueil est masqué, utilisez-le en pressant plus fort que d'habitude."</string>
     <string name="navigationbar_pressure_sensitivity_level_summary">Niveau de pression : %1$d sur %2$d</string>
-    <string name="navigationbar_pressure_sensitivity_description_off">"Lorsque le bouton Accueil est masqué, utilisez-le en pressant plus fort que d'habitude."</string>
+    <string name="navigationbar_pressure_sensitivity_description_off">"Réglez la force requise pour l'appui sur le bouton Accueil."</string>
     <string name="navigationbar_pressure_low">Plus légère</string>
     <string name="navigationbar_pressure_high">Plus forte</string>
     <string name="navigationbar_hide_bar">Touche affichage et masquage</string>
@@ -1620,7 +1623,7 @@ Touchez OK pour autoriser l'augmentation de la luminosité au-dessus des niveaux
     <string name="crypt_keeper_decrypt_title">Décrypter le périphérique</string>
     <string name="crypt_keeper_decrypt_summary">Appareil chiffré.</string>
     <string name="crypt_keeper_type_pin">NIP</string>
-    <string name="crypt_keeper_type_pattern">Modèle</string>
+    <string name="crypt_keeper_type_pattern">modèle</string>
     <string name="crypt_keeper_type_password">Mot de passe</string>
     <string name="crypt_keeper_type_direction">Verrouillage avec modèle</string>
     <string name="crypt_keeper_confirm_title_dec">Confirmer le décryptage</string>
@@ -1704,7 +1707,11 @@ Le cryptage prend une heure ou plus. Avant de démarrer, assurez-vous que la pil
     <string name="crypt_keeper_confirm_title">Confirmer le chiffrement</string>
     <string name="crypt_keeper_final_desc">"Le chiffrement de votre appareil ne peut être réversible et les données seront perdues en cas d'interruption du processus. Le chiffrement prend au moins une heure, pendant laquelle votre appareil redémarrera plusieurs fois et ne pourra pas être utilisé."</string>
     <string name="crypt_keeper_setup_title">Chiffrement en cours…</string>
-    <string name="crypt_keeper_warn_wipe">Il ne vous reste plus que %d tentatives pour démarrer votre appareil avant que ses paramètres par défaut ne soient réinitialisés. Toutes les données seront effacées, y compris les fichiers et les applications téléchargées.</string>
+    <string name="crypt_keeper_warn_wipe">"Il vous reste %1$d tentatives avant que votre téléphone ne soit automatiquement réinitialisé avec les paramètres d'usine par défaut. Toutes les informations seront effacées, y compris les fichiers et applications téléchargées.
+
+Si votre téléphone est réinitialisé, vous aurez peut-être à saisir les informations de %2$s (adresse courriel et mot de passe) qui lui sont associées pour pouvoir l'utiliser à nouveau."</string>
+    <string name="crypt_keeper_samsung_account">Samsung account</string>
+    <string name="crypt_keeper_google_account">Compte Google</string>
     <string name="crypt_keeper_failed_title">Échec du chiffrement</string>
     <string name="crypt_keeper_failed_summary">Impossible de démarrer votre appareil. Le processus de cryptage a été interrompu. Vous devez réinitialiser les paramètres par défaut de votre appareil. Cette opération effacera toutes vos données.</string>
     <string name="crypt_keeper_data_corrupted_title">"Espace de stockage de l'appareil corrompu"</string>
@@ -1723,10 +1730,13 @@ Le cryptage prend une heure ou plus. Avant de démarrer, assurez-vous que la pil
     <string name="cryptkeeper_wrong_pin">NIP saisi incorrect</string>
     <string name="cryptkeeper_wrong_direction">Direction tracée incorrecte</string>
     <string name="checking_decryption">Vérification…</string>
-    <string name="crypt_keeper_last_warn_wipe">"Il ne vous reste plus qu'un essai pour démarrer votre appareil avant que ses paramètres par défaut ne soient rétablis. Toutes les données seront effacées, y compris les fichiers et les applications téléchargées."</string>
+    <string name="crypt_keeper_last_warn_wipe">"Il vous reste 1 tentative avant que votre téléphone ne soit automatiquement réinitialisé avec les paramètres d'usine par défaut. Toutes les informations seront effacées, y compris les fichiers et applications téléchargées.
+
+Si votre téléphone est réinitialisé, vous pouvez être amené à entrer les informations de %s (adresse courriel et mot de passe) qui lui sont associées pour pouvoir l'utiliser à nouveau."</string>
     <string name="crypt_keeper_failed_title_dec">Échec de décryptage.</string>
     <string name="crypt_keeper_failed_summary_dec">"Impossible de terminer le décryptage en raison d'une interruption. Réinitialisez les données par défaut (efface toutes les données) avant utilisation."</string>
     <string name="crypt_keeper_set_screen_lock_type">"Déf. type verrouillage d'écran"</string>
+    <string name="crypt_keeper_warning_keyboard_cover_does_not_work">"L'étui avec clavier ne fonctionnera pas une fois le téléphone redémarré."</string>
     <string name="encryption_interstitial_message">"Vous pouvez protéger davantage ce téléphone en exigeant votre %s avant le démarrage. Cela permet de protéger vos données si le téléphone est perdu ou volé. Certaines applications peuvent exiger un démarrage sécurisé conformément aux politiques de cryptage d'appareil pour accéder aux fonctions telles que la synchronisation des courriels.
 
 Vous ne recevrez aucun appel, aucun message ou aucune notification, et les alarmes ne sonneront pas tant que le téléphone n'a pas démarré."</string>
@@ -1971,6 +1981,12 @@ Il vous sera nécessaire si :"</string>
     <string name="lockpassword_confirm_your_pin_with_fingerprint">Utilisez une empreinte ou entrez le code NIP actuel.</string>
     <string name="lockpassword_confirm_your_pattern_with_fingerprint">Utilisez une empreinte ou dessinez le modèle actuel.</string>
     <string name="lockpassword_confirm_your_password_with_fingerprint">Utilisez une empreinte ou entrez le mot de passe actuel.</string>
+    <string name="lockpassword_confirm_your_pin_with_iris">Utilisez vos iris ou saisissez votre NIP actuel.</string>
+    <string name="lockpassword_confirm_your_pattern_with_iris">Utilisez vos iris ou dessinez votre modèle actuel.</string>
+    <string name="lockpassword_confirm_your_password_with_iris">Utilisez vos iris ou saisissez votre mot de passe actuel.</string>
+    <string name="lockpassword_confirm_your_pin_with_biometrics">Utilisez les données biométriques ou saisissez votre NIP.</string>
+    <string name="lockpassword_confirm_your_pattern_with_biometrics">Utilisez les données biométriques ou dessinez votre modèle.</string>
+    <string name="lockpassword_confirm_your_password_with_biometrics">Utilisez les données biométriques ou saisissez votre mot de passe.</string>
     <string name="lockpassword_confirm_your_pin_instead_of_fingerprint">"Entrez votre code NIP au lieu d'utiliser la reconnaissance par empreintes."</string>
     <string name="lockpassword_confirm_your_pattern_instead_of_fingerprint">"Dessinez votre modèle au lieu d'utiliser la reconnaissance par empreintes."</string>
     <string name="lockpassword_confirm_your_password_instead_of_fingerprint">"Entrez votre mot de passe au lieu d'utiliser la reconnaissance par empreintes."</string>
@@ -2045,6 +2061,7 @@ Sélectionnez le mode de déverrouillage de votre téléphone. Les fonctions Dé
     <string name="face_status_timeout">Délai expiré. Essayez plus tard.</string>
     <string name="okay">OK</string>
     <string name="face_samsung_account_button">Utiliser compte Samsung</string>
+    <string name="face_galaxy_account_button">Utiliser le compte Galaxy</string>
     <string name="face_error_DB_corrupted">Un problème est survenu avec vos données de visage. Enregistrez de nouveau votre visage.</string>
     <string name="face_error_DB_corrupted_popup_title">Enregistrez de nouveau votre visage</string>
     <string name="face_error_timeout">"Votre visage n'a pas été détecté."</string>
@@ -2155,7 +2172,7 @@ Activez la fonction Déverrouillage par iris afin d'utiliser vos données biomé
     <string name="biometrics_backup_locktype_title">Configuration de la sécurité des iris</string>
     <string name="biometrics_register_your_iris">Enregistrez vos iris.</string>
     <string name="biometrics_backup_locktype_summary">"Pour utiliser vos iris pour déverrouiller l'appareil, vous devez définir un modèle, un NIP ou un mot de passe."</string>
-    <string name="biometrics_backup_locktype_message">"Pour utiliser vos iris afin de déverrouiller votre téléphone ou disposer d'une méthode de vérification sécurisée, vous devez :"</string>
+    <string name="biometrics_backup_locktype_message">Pour utiliser vos iris pour déverrouiller votre téléphone ou pour confirmer votre identité dans les applications, vous devez :</string>
     <string name="iris_delete_popup_title">"Supprimer les données d'iris ?"</string>
     <string name="iris_delete_popup_message">"Supprimer les données d'iris ?"</string>
     <string name="iris_delete_popup_message_with_related_func">Les fonctions qui utilisent les iris seront désactivées.</string>
@@ -2231,6 +2248,9 @@ Sélectionnez le mode de déverrouillage de votre téléphone. Les fonctions Dé
     <string name="biometrics_dex_cant_use_msg">"Il est impossible d'utiliser %s dans Samsung DeX."</string>
     <string name="biometrics_dex_closed_to_switch">"L'application %s a été fermée pour basculer sur Samsung DeX."</string>
     <string name="biometircs_dex_cant_use_toast">"L'application %s ne peut pas s'exécuter dans Samsung DeX. Essayez de l'exécuter en mode Téléphone."</string>
+    <string name="iris_guide_text_preview">Ici pour utiliser iris</string>
+    <string name="iris_guide_enable_toggle">Touchez ici pour utiliser iris</string>
+    <string name="iris_cannot_verify">Impossible de vérifier les iris</string>
     <string name="knox_twofactor_bio_description">Sélectionnez votre type de verrouillage biométrique et votre second type de verrouillage pour déverrouiller %s.</string>
     <string name="fingerprint_registered">Les empreintes enregistrées seront utilisées avec la méthode de déverrouillage sélectionnée.</string>
     <string name="knox_twofactor_description">Sélectionnez vos données biométriques et un second type de verrouillage pour déverrouiller %s.</string>
@@ -3092,6 +3112,7 @@ Privé"</string>
     <string name="easy_mode_app_help">"Utilisez votre appareil plus facilement avec une disposition d'écran d'accueil simplifiée et des éléments à l'écran affichés plus grands."</string>
     <string name="easy_mode_app_help_dream_1">"Utilisez une disposition simple de l'écran d'accueil et des éléments à l'écran plus grands."</string>
     <string name="easy_mode_app_help_dream_2">"Toutes les personnalisations que vous avez effectuées sur l'écran d'accueil seront ignorées, et l'écran de zoom sera défini au maximum."</string>
+    <string name="easy_mode_app_help_3rd_launcher">"Appliquez le mode simplifié pour agrandir les éléments à l'écran. Si vous n'utilisez pas l'écran d'accueil TouchWiz, la disposition de votre écran d'accueil ne changera pas, mais le zoom de l'écran sera grand et la taille de police moyenne."</string>
     <string name="security_warning_content">"Vous pouvez protéger votre vie privée en créant un mot de passe, un code NIP ou un modèle de déverrouillage de l'écran"</string>
     <string name="lock_setting_weather_desc">Pour afficher ou modifier les paramètres météorologiques, touchez PARAMÈTRES MÉTÉO ci-dessous.</string>
     <string name="lock_setting_weather_btn">Paramètres météo</string>
@@ -3945,7 +3966,7 @@ L'utilisation de la fonction Point d'accès mobile augmente la consommation de l
     <string name="wfd_descrpition_playsound">Diffusez le son.</string>
     <string name="wfd_is_not_supported">"Cette fonction n'est pas prise en charge."</string>
     <string name="usbtethering_notify_wifi_is_on_title">Désactiver le Wifi ?</string>
-    <string name="usbtethering_notify_wifi_is_on">Le wifi et le modem USB ne peuvent pas être activés en même temps. Désactivez le wifi.</string>
+    <string name="usbtethering_notify_wifi_is_on">Le Wi-Fi et le modem USB ne peuvent pas être activés en même temps. Le Wi-Fi va être désactivé.</string>
     <string name="disable_multi_window_dialog_text">"L'affichage Multi-fenêtres va être désactivé et les applications ouvertes dans des fenêtres contextuelles fermées."</string>
     <string name="keyguard_password_attempt_count_pin_code">%d essai restant.</string>
     <string name="keyguard_password_attempts_count_pin_code">%d essais restants.</string>
@@ -4153,6 +4174,7 @@ Réception de message texte"</string>
     <string name="hdmi_mode_title">Mode HDMI</string>
     <string name="hdmi_mode_dex">Samsung DeX</string>
     <string name="hdmi_mode_mirroring">"Réplication d'écran"</string>
+    <string name="hdmi_mode_not_available_while_cover_attached">"La fonction %s n'est pas disponible lorsque l'étui est attaché."</string>
     <string name="screen_timeout_for_dex">Expir. écran pour Samsung DeX</string>
     <string name="show_virtual_keyboard_for_dex">Affichage du clavier virtuel dans Samsung DeX</string>
     <string name="comma">,</string>
@@ -4461,7 +4483,7 @@ Vous pourrez modifier cette option ultérieurement dans les paramètres Bluetoot
     <string name="date_picker_title">Date</string>
     <string name="time_picker_title">Heure</string>
     <string name="lock_after_timeout">Verrouiller automatiquement</string>
-    <string name="lock_after_timeout_summary">"Verrouillez l'écran %s après son extinction automatique."</string>
+    <string name="lock_after_timeout_summary">"Verrouillez le téléphone %s après l'extinction automatique de l'écran."</string>
     <string name="lock_after_timeout_summary_with_exception">"Verrouillez l'écran %1$s après qu'il se soit éteint automatiquement, sauf si le déverrouillage est maintenu par %2$s."</string>
     <string name="show_owner_info_on_lockscreen_label">"Afficher infos sur le propriétaire lorsque l'écran est verrouillé."</string>
     <string name="owner_info_settings_title">Infos propriétaire</string>
@@ -4497,7 +4519,7 @@ Note : Votre empreinte risque d'être moins sécurisée qu'un modèle ou un NIP 
     <string name="unlock_set_unlock_none_summary">Pas de sécurité</string>
     <string name="unlock_set_unlock_pattern_title">Modèle</string>
     <string name="unlock_set_unlock_pattern_summary">Sécurité moyenne</string>
-    <string name="unlock_set_unlock_pin_title">Code NIP</string>
+    <string name="unlock_set_unlock_pin_title">NIP</string>
     <string name="unlock_set_unlock_pin_summary">Sécurité de niveau moyen à élevé</string>
     <string name="unlock_set_unlock_password_title">Mot de passe</string>
     <string name="unlock_set_unlock_password_summary">Sécurité maximale</string>
@@ -4609,6 +4631,8 @@ Pour améliorer la précision de la localisation, les applications et les servic
     <string name="wifi_empty_list_user_restricted">"Vous n'avez pas l'autorisation de modifier les paramètres Wifi."</string>
     <string name="wifi_setup_wps">Configuration automatique (WPS)</string>
     <string name="wifi_show_advanced">Afficher les options avancées</string>
+    <string name="wifi_advanced_toggle_description_expanded">Touchez deux fois pour réduire.</string>
+    <string name="wifi_advanced_toggle_description_collapsed">Touchez deux fois pour agrandir.</string>
     <string name="wifi_wps_setup_title">Configuration WPS</string>
     <string name="wifi_wps_setup_msg">Démarrage WPS…</string>
     <string name="wifi_wps_onstart_pbc">Appuyez sur le bouton de configuration protégée du Wifi sur votre routeur. Ce bouton peut être appelé WPS ou être représenté par ce symbole :</string>
@@ -4640,6 +4664,10 @@ Pour améliorer la précision de la localisation, les applications et les servic
     <string name="wifi_shared">Partagé</string>
     <string name="wifi_unchanged">(aucune modification)</string>
     <string name="wifi_unspecified">(Non défini)</string>
+    <string name="wifi_select_cert">Sélectionner certificat</string>
+    <string name="wifi_do_not_provide_eap_user_cert">Ne pas fournir</string>
+    <string name="wifi_do_not_validate_eap_server">Ne pas valider</string>
+    <string name="wifi_do_not_validate_eap_server_warning">Aucun certificat spécifié. Votre connexion ne sera pas privée.</string>
     <string name="wifi_scan_always_turnon_message">"Afin entre autres d'améliorer la précision de la localisation, %s demande l'autorisation de rechercher des réseaux wifi, même lorsque le wifi est désactivé. Autoriser pour toutes les applications ?"</string>
     <string name="wifi_scan_always_confirm_allow">Autoriser</string>
     <string name="wifi_scan_always_confirm_deny">Refuser</string>
@@ -4972,9 +5000,9 @@ Envisagez d'utiliser une carte SD ou un périphérique de stockage USB plus rapi
     <string name="restore_default_apn_completed">Rétablissement des paramètres NPA par défaut</string>
     <string name="reset_network_desc">Tous les paramètres réseau seront réinitialisés, y compris ceux relatifs aux éléments suivants :</string>
     <string name="reset_network_button_text">Réinitialisation des paramètres</string>
-    <string name="reset_network_final_desc">Tous les paramètres de connexion vont être réinitialisés. Cette action ne peut pas être annulée.</string>
+    <string name="reset_network_final_desc">Tous les paramètres réseau vont être réinitialisés. Cette action ne peut pas être annulée.</string>
     <string name="reset_network_final_button_text">Réinitialisation des paramètres</string>
-    <string name="reset_network_complete_toast">Les paramètres de connexion ont été réinitialisés.</string>
+    <string name="reset_network_complete_toast">Les paramètres réseau ont été réinitialisés.</string>
     <string name="master_clear_title">Réinitialiser les paramètres par défaut</string>
     <string name="master_clear_accounts">Vous êtes actuellement connecté aux comptes suivants :</string>
     <string name="master_clear_other_users_present">"Les données de cet appareil appartenant à d'autres utilisateurs seront également effacées."</string>
@@ -6076,7 +6104,7 @@ Vous ne recevrez aucun appel, aucun message ou aucune notification, et les alarm
     <string name="ethernet_data_template">%1$s de données Ethernet</string>
     <string name="cell_warning_only">"Avertissement lié à l'utilisation des données défini à %s"</string>
     <string name="cell_warning_and_limit">"Avertissement lié à l'utilisation des données : %1$s /Limite d'utilisation des données : %2$s"</string>
-    <string name="billing_cycle">Cycle sauveg. et avert. données</string>
+    <string name="billing_cycle">Cycle facturation et avert. données</string>
     <string name="billing_cycle_summary">%s jour de chaque mois</string>
     <string name="billing_cycle_fragment_summary">%s jour de chaque mois</string>
     <string name="network_restrictions">Limiter les réseaux</string>
@@ -6087,6 +6115,7 @@ Vous ne recevrez aucun appel, aucun message ou aucune notification, et les alarm
     <string name="set_data_limit">Définition limite des données</string>
     <string name="data_limit">Limite de données</string>
     <string name="data_usage_template">%1$s utilisé(s) sur la période %2$s</string>
+    <string name="data_usage_template_wifi">%s utilisé(s) au cours des 30 derniers jours</string>
     <string name="data_usage_other_apps">Applis liées incluses ds util.</string>
     <string name="data_saver_title">Économie des données</string>
     <string name="unrestricted_data_saver">Autoris. appl. si Éco. donn. act.</string>
@@ -6137,6 +6166,7 @@ Vous ne recevrez aucun appel, aucun message ou aucune notification, et les alarm
     <string name="legacy_dhcp_client_summary">Utiliser le client DHCP de Lollipop au lieu du nouveau client DHCP Android.</string>
     <string name="screen_off_pocket_title">"Laisser l'écran éteint"</string>
     <string name="screen_off_pocket_summary">"Empêchez l'écran de s'allumer accidentellement lorsque l'appareil est dans un endroit sombre comme une poche ou un sac."</string>
+    <string name="noApplications">Toutes les applications associées à cette action ont été désactivées, bloquées ou ne sont pas installées.</string>
     <string name="confirm_reset_shortcut_manager_throttling_title">Réinitialisation du limiteur de vitesse du gestionnaire de raccourcis</string>
     <string name="confirm_reset_shortcut_manager_throttling_message">Les compteurs du limiteur de vitesse du gestionnaire de raccourcis vont être réinitialisés.</string>
 </resources>

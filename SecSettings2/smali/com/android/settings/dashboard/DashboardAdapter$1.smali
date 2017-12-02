@@ -75,7 +75,7 @@
 
     check-cast v6, Lcom/android/settings/SettingsActivity;
 
-    const v7, 0x7f0b10e1
+    const v7, 0x7f0b10f0
 
     invoke-static {v6, v7, v8}, Landroid/widget/Toast;->makeText(Landroid/content/Context;II)Landroid/widget/Toast;
 
@@ -305,7 +305,7 @@
 
     move-result-object v7
 
-    const v8, 0x7f0f03e3
+    const v8, 0x7f0f03e2
 
     invoke-virtual {v7, v8}, Landroid/content/res/Resources;->getInteger(I)I
 
@@ -447,7 +447,7 @@
 
     move-result-object v7
 
-    const v8, 0x7f0f0404
+    const v8, 0x7f0f0403
 
     invoke-virtual {v7, v8}, Landroid/content/res/Resources;->getInteger(I)I
 

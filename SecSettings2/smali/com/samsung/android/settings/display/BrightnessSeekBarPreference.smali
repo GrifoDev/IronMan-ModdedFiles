@@ -92,7 +92,15 @@
 
 
 # direct methods
-.method static synthetic -get0(Lcom/samsung/android/settings/display/BrightnessSeekBarPreference;)Z
+.method static synthetic -get0()Z
+    .locals 1
+
+    sget-boolean v0, Lcom/samsung/android/settings/display/BrightnessSeekBarPreference;->isAlreadyShownBrightMaxDialog:Z
+
+    return v0
+.end method
+
+.method static synthetic -get1(Lcom/samsung/android/settings/display/BrightnessSeekBarPreference;)Z
     .locals 1
 
     iget-boolean v0, p0, Lcom/samsung/android/settings/display/BrightnessSeekBarPreference;->mAutomaticMode:Z
@@ -100,7 +108,7 @@
     return v0
 .end method
 
-.method static synthetic -get1(Lcom/samsung/android/settings/display/BrightnessSeekBarPreference;)Landroid/widget/CheckBox;
+.method static synthetic -get2(Lcom/samsung/android/settings/display/BrightnessSeekBarPreference;)Landroid/widget/CheckBox;
     .locals 1
 
     iget-object v0, p0, Lcom/samsung/android/settings/display/BrightnessSeekBarPreference;->mCheckBox:Landroid/widget/CheckBox;
@@ -108,7 +116,7 @@
     return-object v0
 .end method
 
-.method static synthetic -get2(Lcom/samsung/android/settings/display/BrightnessSeekBarPreference;)Landroid/widget/TextView;
+.method static synthetic -get3(Lcom/samsung/android/settings/display/BrightnessSeekBarPreference;)Landroid/widget/TextView;
     .locals 1
 
     iget-object v0, p0, Lcom/samsung/android/settings/display/BrightnessSeekBarPreference;->mHBMText:Landroid/widget/TextView;
@@ -116,7 +124,7 @@
     return-object v0
 .end method
 
-.method static synthetic -get3(Lcom/samsung/android/settings/display/BrightnessSeekBarPreference;)Z
+.method static synthetic -get4(Lcom/samsung/android/settings/display/BrightnessSeekBarPreference;)Z
     .locals 1
 
     iget-boolean v0, p0, Lcom/samsung/android/settings/display/BrightnessSeekBarPreference;->mIsHBMOnOff:Z
@@ -124,7 +132,7 @@
     return v0
 .end method
 
-.method static synthetic -get4(Lcom/samsung/android/settings/display/BrightnessSeekBarPreference;)I
+.method static synthetic -get5(Lcom/samsung/android/settings/display/BrightnessSeekBarPreference;)I
     .locals 1
 
     iget v0, p0, Lcom/samsung/android/settings/display/BrightnessSeekBarPreference;->mPmsBrightness:I
@@ -132,7 +140,7 @@
     return v0
 .end method
 
-.method static synthetic -get5(Lcom/samsung/android/settings/display/BrightnessSeekBarPreference;)I
+.method static synthetic -get6(Lcom/samsung/android/settings/display/BrightnessSeekBarPreference;)I
     .locals 1
 
     iget v0, p0, Lcom/samsung/android/settings/display/BrightnessSeekBarPreference;->mScreenBrightnessMaximum:I
@@ -140,7 +148,7 @@
     return v0
 .end method
 
-.method static synthetic -get6(Lcom/samsung/android/settings/display/BrightnessSeekBarPreference;)I
+.method static synthetic -get7(Lcom/samsung/android/settings/display/BrightnessSeekBarPreference;)I
     .locals 1
 
     iget v0, p0, Lcom/samsung/android/settings/display/BrightnessSeekBarPreference;->mScreenBrightnessMinimum:I
@@ -148,7 +156,7 @@
     return v0
 .end method
 
-.method static synthetic -get7(Lcom/samsung/android/settings/display/BrightnessSeekBarPreference;)Landroid/widget/SeekBar;
+.method static synthetic -get8(Lcom/samsung/android/settings/display/BrightnessSeekBarPreference;)Landroid/widget/SeekBar;
     .locals 1
 
     iget-object v0, p0, Lcom/samsung/android/settings/display/BrightnessSeekBarPreference;->mSeekBar:Landroid/widget/SeekBar;
@@ -156,7 +164,7 @@
     return-object v0
 .end method
 
-.method static synthetic -get8(Lcom/samsung/android/settings/display/BrightnessSeekBarPreference;)Z
+.method static synthetic -get9(Lcom/samsung/android/settings/display/BrightnessSeekBarPreference;)Z
     .locals 1
 
     iget-boolean v0, p0, Lcom/samsung/android/settings/display/BrightnessSeekBarPreference;->mTracking:Z
@@ -247,9 +255,9 @@
 
     const/4 v3, 0x0
 
-    const v5, 0x7f040239
+    const v5, 0x7f04023c
 
-    const v6, 0x7f11067b
+    const v6, 0x7f11067d
 
     move-object v0, p0
 
@@ -1052,7 +1060,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f0b064e
+    const v2, 0x7f0b064f
 
     invoke-virtual {v1, v2}, Landroid/app/AlertDialog$Builder;->setMessage(I)Landroid/app/AlertDialog$Builder;
 
@@ -1255,7 +1263,7 @@
 
     iget-object v1, p0, Lcom/samsung/android/settings/display/BrightnessSeekBarPreference;->mContext:Landroid/content/Context;
 
-    const v2, 0x7f0204f2
+    const v2, 0x7f0204f4
 
     invoke-virtual {v1, v2}, Landroid/content/Context;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 
@@ -1354,7 +1362,7 @@
 
     const/4 v8, -0x1
 
-    const v7, 0x7f11067c
+    const v7, 0x7f11067e
 
     const/4 v4, 0x1
 
@@ -1375,7 +1383,7 @@
 
     iput v8, p0, Lcom/samsung/android/settings/display/BrightnessSeekBarPreference;->mCurBrightness:I
 
-    const v3, 0x7f11067b
+    const v3, 0x7f11067d
 
     invoke-virtual {p1, v3}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -1395,7 +1403,7 @@
     goto :goto_0
 
     :cond_1
-    const v3, 0x7f11067f
+    const v3, 0x7f110681
 
     invoke-virtual {p1, v3}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -1405,7 +1413,7 @@
 
     iput-object v3, p0, Lcom/samsung/android/settings/display/BrightnessSeekBarPreference;->mOverheatTextview:Landroid/widget/TextView;
 
-    const v3, 0x7f11067e
+    const v3, 0x7f110680
 
     invoke-virtual {p1, v3}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -1631,7 +1639,7 @@
     return-void
 
     :cond_3
-    const v3, 0x7f11067d
+    const v3, 0x7f11067f
 
     invoke-virtual {p1, v3}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -1647,7 +1655,7 @@
 
     move-result-object v3
 
-    const v6, 0x7f0b0657
+    const v6, 0x7f0b0658
 
     invoke-virtual {v3, v6}, Landroid/content/res/Resources;->getText(I)Ljava/lang/CharSequence;
 
@@ -2789,7 +2797,7 @@
 .method public setBrightnessIcon(Z)V
     .locals 1
 
-    const v0, 0x7f020579
+    const v0, 0x7f02057b
 
     invoke-virtual {p0, v0}, Lcom/samsung/android/settings/display/BrightnessSeekBarPreference;->setIcon(I)V
 

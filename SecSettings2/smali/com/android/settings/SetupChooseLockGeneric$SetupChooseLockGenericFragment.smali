@@ -38,7 +38,7 @@
     return-void
 
     :cond_0
-    const v0, 0x7f0800f3
+    const v0, 0x7f0800f5
 
     invoke-virtual {p0, v0}, Lcom/android/settings/SetupChooseLockGeneric$SetupChooseLockGenericFragment;->addPreferencesFromResource(I)V
 
@@ -234,7 +234,7 @@
 .method public onCreateView(Landroid/view/LayoutInflater;Landroid/view/ViewGroup;Landroid/os/Bundle;)Landroid/view/View;
     .locals 3
 
-    const v1, 0x7f0402d5
+    const v1, 0x7f0402d8
 
     const/4 v2, 0x0
 

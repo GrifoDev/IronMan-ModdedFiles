@@ -987,7 +987,7 @@
 
     :cond_0
     :goto_0
-    const v3, 0x7f08012d
+    const v3, 0x7f08012f
 
     invoke-virtual {p0, v3}, Lcom/android/settings/notification/SoundSettings;->addPreferencesFromResource(I)V
 

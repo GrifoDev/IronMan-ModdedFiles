@@ -38,6 +38,23 @@
 
     iget-object v1, p0, Lcom/samsung/android/settings/display/SecDisplaySettings$1;->this$0:Lcom/samsung/android/settings/display/SecDisplaySettings;
 
+    invoke-virtual {v1}, Lcom/samsung/android/settings/display/SecDisplaySettings;->isAdded()Z
+
+    move-result v1
+
+    if-nez v1, :cond_0
+
+    const-string/jumbo v1, "Fragment"
+
+    const-string/jumbo v2, "Detached from activity, so stopping update."
+
+    invoke-static {v1, v2}, Landroid/util/secutil/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    return-void
+
+    :cond_0
+    iget-object v1, p0, Lcom/samsung/android/settings/display/SecDisplaySettings$1;->this$0:Lcom/samsung/android/settings/display/SecDisplaySettings;
+
     invoke-static {v1}, Lcom/samsung/android/settings/display/SecDisplaySettings;->-wrap0(Lcom/samsung/android/settings/display/SecDisplaySettings;)Landroid/content/ContentResolver;
 
     move-result-object v1
@@ -48,7 +65,7 @@
 
     move-result v1
 
-    if-eqz v1, :cond_0
+    if-eqz v1, :cond_1
 
     const/4 v0, 0x1
 
@@ -61,7 +78,7 @@
 
     invoke-virtual {v1, v0}, Landroid/preference/SwitchPreference;->setChecked(Z)V
 
-    if-eqz v0, :cond_1
+    if-eqz v0, :cond_2
 
     iget-object v1, p0, Lcom/samsung/android/settings/display/SecDisplaySettings$1;->this$0:Lcom/samsung/android/settings/display/SecDisplaySettings;
 
@@ -74,12 +91,12 @@
     :goto_1
     return-void
 
-    :cond_0
+    :cond_1
     const/4 v0, 0x0
 
     goto :goto_0
 
-    :cond_1
+    :cond_2
     iget-object v1, p0, Lcom/samsung/android/settings/display/SecDisplaySettings$1;->this$0:Lcom/samsung/android/settings/display/SecDisplaySettings;
 
     invoke-static {v1}, Lcom/samsung/android/settings/display/SecDisplaySettings;->-get21(Lcom/samsung/android/settings/display/SecDisplaySettings;)Lcom/samsung/android/settings/display/BrightnessSeekBarPreference;

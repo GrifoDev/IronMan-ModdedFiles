@@ -91,7 +91,7 @@
 
     invoke-direct {v6, v9}, Landroid/support/v7/preference/Preference;-><init>(Landroid/content/Context;)V
 
-    const v9, 0x7f04024b
+    const v9, 0x7f04024e
 
     invoke-virtual {v6, v9}, Landroid/support/v7/preference/Preference;->setLayoutResource(I)V
 
@@ -147,7 +147,7 @@
 .method protected getHelpResource()I
     .locals 1
 
-    const v0, 0x7f0b1bab
+    const v0, 0x7f0b1bbd
 
     return v0
 .end method
@@ -165,7 +165,7 @@
 
     invoke-super {p0, p1}, Lcom/android/settings/SettingsPreferenceFragment;->onCreate(Landroid/os/Bundle;)V
 
-    const v0, 0x7f08014d
+    const v0, 0x7f08014f
 
     invoke-virtual {p0, v0}, Lcom/android/settings/WallpaperTypeSettings;->addPreferencesFromResource(I)V
 

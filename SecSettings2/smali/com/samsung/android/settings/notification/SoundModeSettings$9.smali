@@ -32,7 +32,7 @@
 
 # virtual methods
 .method public onReceive(Landroid/content/Context;Landroid/content/Intent;)V
-    .locals 2
+    .locals 3
 
     invoke-virtual {p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
 
@@ -49,6 +49,12 @@
     iget-object v1, p0, Lcom/samsung/android/settings/notification/SoundModeSettings$9;->this$0:Lcom/samsung/android/settings/notification/SoundModeSettings;
 
     invoke-static {v1}, Lcom/samsung/android/settings/notification/SoundModeSettings;->-wrap1(Lcom/samsung/android/settings/notification/SoundModeSettings;)V
+
+    iget-object v1, p0, Lcom/samsung/android/settings/notification/SoundModeSettings$9;->this$0:Lcom/samsung/android/settings/notification/SoundModeSettings;
+
+    const/4 v2, 0x0
+
+    invoke-static {v1, v2}, Lcom/samsung/android/settings/notification/SoundModeSettings;->-wrap2(Lcom/samsung/android/settings/notification/SoundModeSettings;I)V
 
     :cond_0
     return-void

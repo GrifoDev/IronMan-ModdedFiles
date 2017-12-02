@@ -764,7 +764,7 @@
 
     move-result-object v2
 
-    const v3, 0x7f0b0ed8
+    const v3, 0x7f0b0ee7
 
     invoke-virtual {p0, v3}, Lcom/samsung/android/settings/datausage/networkconnect/NetworkManagerActivity;->getString(I)Ljava/lang/String;
 
@@ -818,7 +818,7 @@
 
     move-result-object v2
 
-    const v3, 0x7f0b0ed9
+    const v3, 0x7f0b0ee8
 
     invoke-virtual {p0, v3}, Lcom/samsung/android/settings/datausage/networkconnect/NetworkManagerActivity;->getString(I)Ljava/lang/String;
 
@@ -864,7 +864,7 @@
 
     iget-object v5, p0, Lcom/samsung/android/settings/datausage/networkconnect/NetworkManagerActivity;->mContext:Landroid/content/Context;
 
-    const v6, 0x7f0b059a
+    const v6, 0x7f0b059b
 
     invoke-virtual {v5, v6}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -1013,7 +1013,7 @@
 
     move-result-object v3
 
-    const v4, 0x7f0f0499
+    const v4, 0x7f0f0498
 
     invoke-virtual {v3, v4}, Landroid/content/res/Resources;->getInteger(I)I
 
@@ -1025,7 +1025,7 @@
 
     move-result-object v3
 
-    const v4, 0x7f0f04a2
+    const v4, 0x7f0f04a1
 
     invoke-virtual {v3, v4}, Landroid/content/res/Resources;->getInteger(I)I
 
@@ -1045,7 +1045,7 @@
 
     const/4 v0, 0x1
 
-    const v1, 0x7f0b059a
+    const v1, 0x7f0b059b
 
     invoke-interface {p1, v2, v0, v2, v1}, Landroid/view/Menu;->add(IIII)Landroid/view/MenuItem;
 
@@ -1092,7 +1092,7 @@
 
     move-result-object v2
 
-    const v3, 0x7f0f04d4
+    const v3, 0x7f0f04d3
 
     invoke-virtual {v2, v3}, Landroid/content/res/Resources;->getInteger(I)I
 
@@ -1104,7 +1104,7 @@
 
     move-result-object v2
 
-    const v3, 0x7f0f04d6
+    const v3, 0x7f0f04d5
 
     invoke-virtual {v2, v3}, Landroid/content/res/Resources;->getInteger(I)I
 

@@ -1470,7 +1470,7 @@
 
     const/4 v0, 0x1
 
-    const v1, 0x7f0b09d5
+    const v1, 0x7f0b09e3
 
     invoke-interface {p1, v2, v0, v2, v1}, Landroid/view/Menu;->add(IIII)Landroid/view/MenuItem;
 
@@ -1507,7 +1507,7 @@
 
     move-result-object v2
 
-    const v3, 0x7f04018c
+    const v3, 0x7f04018d
 
     const/4 v4, 0x0
 
@@ -1519,7 +1519,7 @@
 
     iget-object v3, p0, Lcom/samsung/android/settings/location/LocationUseInBackground;->mView:Landroid/view/View;
 
-    const v4, 0x7f110546
+    const v4, 0x7f110548
 
     invoke-virtual {v3, v4}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -1529,7 +1529,7 @@
 
     iget-object v3, p0, Lcom/samsung/android/settings/location/LocationUseInBackground;->mView:Landroid/view/View;
 
-    const v4, 0x7f110547
+    const v4, 0x7f110549
 
     invoke-virtual {v3, v4}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -1591,7 +1591,7 @@
 
     invoke-virtual {v0, v3}, Landroid/app/AlertDialog$Builder;->setView(Landroid/view/View;)Landroid/app/AlertDialog$Builder;
 
-    const v3, 0x7f0b09d6
+    const v3, 0x7f0b09e4
 
     invoke-virtual {v0, v3}, Landroid/app/AlertDialog$Builder;->setTitle(I)Landroid/app/AlertDialog$Builder;
 

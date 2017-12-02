@@ -170,6 +170,8 @@
     <string name="wifi_allow_scan_with_traffic_summary">Γίνεται αυτόματη αποδοχή ή άρνηση της σάρωσης περιαγωγής Wi-Fi, βάσει της ποσότητας των δεδομένων που χρησιμοποιούνται.</string>
     <string name="select_logd_size_title">Μέγεθος buffer αρχ. κατ.</string>
     <string name="select_logd_size_dialog_title">Επιλέξτε το μέγιστο μέγεθος για κάθε buffer αρχείου καταγραφής</string>
+    <string name="dev_logpersist_clear_warning_title">Εκκαθ. χώρου αποθ. εργαλ. μόνιμης καταγρ.;</string>
+    <string name="dev_logpersist_clear_warning_message">Τα δεδομένα του εργαλείου καταγραφής θα διαγραφούν μόλις απενεργοποιηθεί το εργαλείο μόνιμης καταγραφής.</string>
     <string name="select_logpersist_title">Μόνιμη αποθήκ. δεδομ. καταγρ.</string>
     <string name="select_logpersist_dialog_title">Επιλογή buffer καταγρ. για μόν. αποθήκευση</string>
     <string name="select_usb_configuration_title">Διαμόρφωση USB</string>
@@ -982,6 +984,7 @@
     <string name="bluetooth_avc_available_description">Η συνδεδεμένη συσκευή Bluetooth υποστηρίζει τη λειτουργία «Συγχρονισμός έντασης πολυμέσων» και το επίπεδο έντασης που καθορίστηκε από τη συσκευή Bluetooth θα συγχρονιστεί με το τηλέφωνό σας.</string>
     <string name="bluetooth_enter_pin_msg">Πληκτρολογήστε το PIN για τη δημιουργία ζεύγους με %s. (Δοκιμάστε 0000 ή 1234).</string>
     <string name="bluetooth_pin_maximum_number_message">Συμπληρώθηκε ο μέγιστος αριθμός χαρακτήρων.</string>
+    <string name="bluetooth_frp_permission_message">Δεν είναι δυνατή η χρήση της συσκευής Bluetooth για αυτήν την κλήση.</string>
     <string name="settings_menu_done">Τέλος</string>
     <string name="usb_tethering_unavailable_subtext_tmo">USB not connected</string>
     <string name="usb_tethering_available_subtext_tmo">USB connected, check to tether</string>
@@ -1481,7 +1484,7 @@ Where Can I Find More Information About the 3rd Party's Policies? Separately, if
     <string name="navigationbar_pressure_sensitivity_title">Δυνατό πάτημα κεντρικ. κουμπιού</string>
     <string name="navigationbar_pressure_sensitivity_summary">Χρησιμοποιήστε το κρυφό πλήκτρο όταν έχει γίνει απόκρυψη, πιέζοντας πιο δυνατά από ότι συνήθως.</string>
     <string name="navigationbar_pressure_sensitivity_level_summary">Επίπεδο πίεσης: %1$d από %2$d</string>
-    <string name="navigationbar_pressure_sensitivity_description_off">Χρησιμοποιήστε το κρυφό πλήκτρο όταν έχει γίνει απόκρυψη, πιέζοντας πιο δυνατά από ότι συνήθως.</string>
+    <string name="navigationbar_pressure_sensitivity_description_off">Προσαρμόστε την πίεση που απαιτείται για το δυνατό πάτημα του κεντρικού κουμπιού.</string>
     <string name="navigationbar_pressure_low">Πιο ελαφριά</string>
     <string name="navigationbar_pressure_high">Πιο ισχυρή</string>
     <string name="navigationbar_hide_bar">Κουμπί εμφάνισης και απόκρυψης</string>
@@ -1620,7 +1623,7 @@ Where Can I Find More Information About the 3rd Party's Policies? Separately, if
     <string name="crypt_keeper_decrypt_title">Αποκρυπτογράφηση συσκευής</string>
     <string name="crypt_keeper_decrypt_summary">Κρυπτογράφηση συσκευής.</string>
     <string name="crypt_keeper_type_pin">PIN</string>
-    <string name="crypt_keeper_type_pattern">Μοτίβο</string>
+    <string name="crypt_keeper_type_pattern">μοτίβο</string>
     <string name="crypt_keeper_type_password">Κωδικός πρόσβασης</string>
     <string name="crypt_keeper_type_direction">Κλείδωμα κατεύθυνσης</string>
     <string name="crypt_keeper_confirm_title_dec">Επιβεβαίωση αποκρυπτογράφησης</string>
@@ -1704,7 +1707,11 @@ Where Can I Find More Information About the 3rd Party's Policies? Separately, if
     <string name="crypt_keeper_confirm_title">Επιβεβαίωση κρυπτογράφησης</string>
     <string name="crypt_keeper_final_desc">Δεν είναι δυνατή η αναίρεση της διαδικασίας κρυπτογράφησης της συσκευής σας και σε περίπτωση που τη διακόψετε, θα χάσετε δεδομένα. Για την ολοκλήρωση της κρυπτογράφησης απαιτείται μία ώρα ή και περισσότερο και η συσκευή σας ενδέχεται να επανεκκινηθεί πολλές φορές κατά τη διάρκεια της διαδικασίας, ενώ δεν θα μπορείτε να τη χρησιμοποιήσετε.</string>
     <string name="crypt_keeper_setup_title">Κρυπτογράφηση…</string>
-    <string name="crypt_keeper_warn_wipe">Απομένουν %d προσπάθειες για την εκκίνηση της συσκευής πριν γίνει επαναφορά της στις προεπιλεγμένες εργοστασιακές ρυθμίσεις. Η ενέργεια θα διαγράψει όλα τα δεδομένα, συμπεριλαμβανομένων των αρχείων και των εφαρμογών που έχετε λάβει.</string>
+    <string name="crypt_keeper_warn_wipe">"Απομένουν %1$d ακόμη προσπάθειες προτού γίνει επαναφορά του τηλεφώνου στις προεπιλεγμένες ρυθμίσεις. Αυτή η ενέργεια θα διαγράψει όλα τα δεδομένα, συμπεριλαμβανομένων των αρχείων και των ληφθέντων εφαρμογών.
+
+Αν γίνει επαναφορά του τηλεφώνου, μπορεί να χρειαστεί να καταχωρήσετε τις πληροφορίες του %2$s (διεύθυνση email και κωδικός πρόσβασης) που σχετίζονται με αυτό το τηλέφωνο, για να μπορέσετε να το χρησιμοποιήσετε ξανά."</string>
+    <string name="crypt_keeper_samsung_account">Λογαριασμός Samsung account</string>
+    <string name="crypt_keeper_google_account">Λογαριασμός Google</string>
     <string name="crypt_keeper_failed_title">Αποτυχία κρυπτογράφησης</string>
     <string name="crypt_keeper_failed_summary">Δεν είναι δυνατή η εκκίνηση της συσκευής. Η διαδικασία κρυπτογράφησης διακόπηκε. Θα πρέπει να επαναφέρετε τη συσκευή σας στις προεπιλεγμένες εργοστασιακές ρυθμίσεις. Η ενέργεια θα διαγράψει όλα τα δεδομένα σας.</string>
     <string name="crypt_keeper_data_corrupted_title">Ο χώρος αποθήκευσης της συσκευής είναι κατεστραμμένος</string>
@@ -1723,10 +1730,13 @@ Where Can I Find More Information About the 3rd Party's Policies? Separately, if
     <string name="cryptkeeper_wrong_pin">Εισαγωγή εσφαλμένου PIN</string>
     <string name="cryptkeeper_wrong_direction">Σχεδιάστηκε λάθος κατεύθυνση</string>
     <string name="checking_decryption">Επαλήθευση…</string>
-    <string name="crypt_keeper_last_warn_wipe">Απομένει μόνο 1 προσπάθεια για την εκκίνηση της συσκευής πριν γίνει επαναφορά της στις προεπιλεγμένες εργοστασιακές ρυθμίσεις. Η ενέργεια θα διαγράψει όλα τα δεδομένα, συμπεριλαμβανομένων των αρχείων και των εφαρμογών που έχετε λάβει.</string>
+    <string name="crypt_keeper_last_warn_wipe">"Απομένει 1 ακόμη προσπάθεια προτού γίνει επαναφορά του τηλεφώνου στις προεπιλεγμένες ρυθμίσεις. Αυτή η ενέργεια θα διαγράψει όλα τα δεδομένα, συμπεριλαμβανομένων των αρχείων και των ληφθέντων εφαρμογών.
+
+Αν γίνει επαναφορά του τηλεφώνου, μπορεί να χρειαστεί να καταχωρήσετε τις πληροφορίες του %s (διεύθυνση email και κωδικός πρόσβασης) που σχετίζονται με αυτό το τηλέφωνο, για να μπορέσετε να το χρησιμοποιήσετε ξανά."</string>
     <string name="crypt_keeper_failed_title_dec">Αποτυχία αποκρυπτογράφησης.</string>
     <string name="crypt_keeper_failed_summary_dec">Η αποκρυπτογράφηση δεν ολοκληρώθηκε εξαιτίας κάποιας διακοπής. Εκτελέστε επαναφορά των εργοστασιακών ρυθμίσεων (διαγράφοντας όλα τα δεδομένα σας) για να είναι δυνατή η χρήση της συσκευής.</string>
     <string name="crypt_keeper_set_screen_lock_type">Ορισμός τύπου οθόνης κλειδώμ.</string>
+    <string name="crypt_keeper_warning_keyboard_cover_does_not_work">Το κάλυμμα του πληκτρολογίου δεν θα λειτουργεί μετά την επανεκκίνηση του τηλεφώνου.</string>
     <string name="encryption_interstitial_message">"Μπορείτε να προστατεύσετε ακόμα περισσότερο αυτό το τηλέφωνο, επιβάλλοντας την καταχώρηση του %s πριν από την εκκίνησή του. Αυτή η ενέργεια συμβάλλει στην προστασία των δεδομένων σας σε περίπτωση απώλειας ή κλοπής του τηλεφώνου. Ορισμένες εφαρμογές μπορεί να απαιτούν τη χρήση της Ασφαλούς εκκίνησης με βάση τις πολιτικές κρυπτογράφησης της συσκευής για την πρόσβαση σε λειτουργίες, όπως είναι ο συγχρονισμός των email.
 
 Μέχρι να ολοκληρωθεί η εκκίνηση του τηλεφώνου, δεν θα λαμβάνετε κλήσεις, μηνύματα ή ειδοποιήσεις και δεν θα ηχούν τα ξυπνητήρια."</string>
@@ -1971,6 +1981,12 @@ You will also need it when:"</string>
     <string name="lockpassword_confirm_your_pin_with_fingerprint">Χρήση δαχτυλικού αποτυπώματος ή εισαγωγή του τρέχοντος PIN.</string>
     <string name="lockpassword_confirm_your_pattern_with_fingerprint">Χρήση δαχτυλικού αποτυπώματος ή σχεδίαση του τρέχοντος μοτίβου.</string>
     <string name="lockpassword_confirm_your_password_with_fingerprint">Χρήση δαχτυλικού αποτυπώματος ή εισαγωγή του τρέχοντος κωδικού πρόσβασης.</string>
+    <string name="lockpassword_confirm_your_pin_with_iris">Χρησιμοποιήστε τις ίριδες ή καταχωρήστε το τρέχον PIN.</string>
+    <string name="lockpassword_confirm_your_pattern_with_iris">Χρησιμοποιήστε τις ίριδες ή σχεδιάστε το τρέχον μοτίβο σας.</string>
+    <string name="lockpassword_confirm_your_password_with_iris">Χρησιμοποιήστε τις ίριδες ή καταχωρήστε τον τρέχοντα κωδικό πρόσβασης.</string>
+    <string name="lockpassword_confirm_your_pin_with_biometrics">Χρησιμοποιήστε βιομετρικά δεδομένα ή καταχωρήστε το PIN.</string>
+    <string name="lockpassword_confirm_your_pattern_with_biometrics">Χρησιμοποιήστε τα βιομετρικά δεδομένα ή σχεδιάστε το μοτίβο σας.</string>
+    <string name="lockpassword_confirm_your_password_with_biometrics">Χρησιμοποιήστε βιομετρικά δεδομένα ή καταχωρήστε το κωδικό πρόσβασης.</string>
     <string name="lockpassword_confirm_your_pin_instead_of_fingerprint">Καταχωρήστε το PIN αντί να χρησιμοποιήσετε την αναγνώριση δαχτυλικών αποτυπωμάτων.</string>
     <string name="lockpassword_confirm_your_pattern_instead_of_fingerprint">Σχεδιάστε το μοτίβο αντί να χρησιμοποιήσετε την αναγνώριση δαχτυλικών αποτυπωμάτων.</string>
     <string name="lockpassword_confirm_your_password_instead_of_fingerprint">Καταχωρήστε τον κωδικό πρόσβασης αντί να χρησιμοποιήσετε την αναγνώριση δαχτυλικών αποτυπωμάτων.</string>
@@ -2045,6 +2061,7 @@ You will also need it when:"</string>
     <string name="face_status_timeout">Χρονικό όριο. Δοκιμάστε αργότερα.</string>
     <string name="okay">OK</string>
     <string name="face_samsung_account_button">Χρήση Samsung account</string>
+    <string name="face_galaxy_account_button">Χρήση λογαριασμού Galaxy</string>
     <string name="face_error_DB_corrupted">Παρουσιάστηκε πρόβλημα με τα δεδομένα προσώπου. Καταχωρήστε ξανά το πρόσωπό σας.</string>
     <string name="face_error_DB_corrupted_popup_title">Καταχωρήστε το πρόσωπό σας ξανά.</string>
     <string name="face_error_timeout">Το πρόσωπό σας δεν εντοπίστηκε.</string>
@@ -2155,7 +2172,7 @@ You will also need it when:"</string>
     <string name="biometrics_backup_locktype_title">Ρύθμιση ασφάλειας με ίριδα</string>
     <string name="biometrics_register_your_iris">Καταχωρίστε τις ίριδές σας.</string>
     <string name="biometrics_backup_locktype_summary">Για να χρησιμοποιήσετε τις ίριδές σας για το ξεκλείδωμα της συσκευής, πρέπει να ορίσετε ένα μοτίβο, ένα PIN ή έναν κωδικό πρόσβασης.</string>
-    <string name="biometrics_backup_locktype_message">Για να χρησιμοποιήσετε τις ίριδές σας για το ξεκλείδωμα του τηλεφώνου ή για την ασφαλή επαλήθευση, θα πρέπει να κάνετε τα εξής:</string>
+    <string name="biometrics_backup_locktype_message">Για να χρησιμοποιήσετε τις ίριδές σας για το ξεκλείδωμα του τηλεφώνου σας ή για την επαλήθευση των στοιχείων σας σε εφαρμογές, πρέπει να κάνετε τα εξής:</string>
     <string name="iris_delete_popup_title">Θέλετε να καταργήσετε τα δεδομένα ιρίδων;</string>
     <string name="iris_delete_popup_message">Θέλετε να καταργήσετε τα δεδομένα ιρίδων;</string>
     <string name="iris_delete_popup_message_with_related_func">Οι λειτουργίες που χρησιμοποιούν ίριδες θα απενεργοποιηθούν.</string>
@@ -2231,6 +2248,9 @@ You will also need it when:"</string>
     <string name="biometrics_dex_cant_use_msg">Δεν είναι δυνατή η χρήση της εφαρμογής %s στο Samsung DeX.</string>
     <string name="biometrics_dex_closed_to_switch">Η λειτουργία %s έκλεισε για να γίνει αλλαγή στο Samsung DeX.</string>
     <string name="biometircs_dex_cant_use_toast">Η εφαρμογή %s δεν μπορεί να εκτελεστεί στο Samsung DeX. Δοκιμάστε να την εκτελέσετε σε λειτουργία τηλεφώνου.</string>
+    <string name="iris_guide_text_preview">Κοιτ εδώ για χρ. ιρίδων</string>
+    <string name="iris_guide_enable_toggle">Πατήσ. για να χρησ. τις ίριδες</string>
+    <string name="iris_cannot_verify">Δεν ήταν δυνατή η επαλήθευση ιρίδων</string>
     <string name="knox_twofactor_bio_description">Επιλέξτε τον τύπο βιομετρικού κλειδώματος και τον δεύτερο τύπο κλειδώματος για να ξεκλειδώσετε το %s.</string>
     <string name="fingerprint_registered">Θα χρησιμοποιηθούν τα καταχωρημένα δαχτυλικά αποτυπώματα με την επιλεγμένη μέθοδο ξεκλειδώματος.</string>
     <string name="knox_twofactor_description">Επιλέξτε τα βιομετρικά δεδομένα και έναν δεύτερο τύπο κλειδώματος για να ξεκλειδώσετε το %s.</string>
@@ -3093,6 +3113,7 @@ Mobile data will be turned off."</string>
     <string name="easy_mode_app_help">Χρησιμοποιήστε τη συσκευή σας με μεγαλύτερη ευκολία με την πιο απλή διάταξη αρχικής οθόνης και τα μεγαλύτερα στοιχεία επί της οθόνης.</string>
     <string name="easy_mode_app_help_dream_1">Χρησιμοποιήστε μια απλή διάταξη Αρχικής οθόνης με μεγαλύτερα στοιχεία επί της οθόνης.</string>
     <string name="easy_mode_app_help_dream_2">Τυχόν προσαρμογές που έχετε κάνει στην Αρχική οθόνη θα απορριφθούν και το Ζουμ οθόνης θα οριστεί στη μέγιστη τιμή.</string>
+    <string name="easy_mode_app_help_3rd_launcher">Χρησιμοποιήστε την Εύκολη λειτουργία για μεγαλύτερα στοιχεία επί της οθόνης. Αν δεν χρησιμοποιείτε την αρχική οθόνη TouchWiz, η διάταξη της αρχικής οθόνης σας δεν θα αλλάξει, αλλά το ζουμ της οθόνης θα οριστεί στο μεγάλο μέγεθος και το μέγεθος γραμματοσειράς θα οριστεί στο μεσαίο μέγεθος.</string>
     <string name="security_warning_content">Μπορείτε να προστατεύσετε το απόρρητό σας, ορίζοντας έναν κωδικό πρόσβασης, ένα PIN ή ένα μοτίβο για το ξεκλείδωμα της οθόνης σας</string>
     <string name="lock_setting_weather_desc">Για προβολή ή αλλαγή των ρυθμίσεων καιρού, πατήστε ΡΥΘΜΙΣΕΙΣ ΚΑΙΡΟΥ παρακάτω.</string>
     <string name="lock_setting_weather_btn">Ρυθμίσεις καιρού</string>
@@ -3339,7 +3360,7 @@ Downloading via mobile networks may result in additional charges depending on yo
     <string name="disable_hovering_title">Απενεργ. προβολής χωρίς επαφή</string>
     <string name="disable_hovering_summary">Δεν είναι δυνατή η ταυτόχρονη ενεργοποίηση των λειτουργιών «Προβολή χωρίς επαφή» και TalkBack. Η προβολή χωρίς επαφή θα απενεργοποιηθεί.</string>
     <string name="pen_settings_pen_input">Απευθείας εισαγ. με πένα</string>
-    <string name="action_memo_onoff_screen_title">Σημ. ανενεργ. οθ.</string>
+    <string name="action_memo_onoff_screen_title">Σημείωμα σβηστής οθόνης</string>
     <string name="screen_off_note_summary">Γράψτε σημειώσεις όσο η οθόνη είναι σβηστή. Απλώς βγάλτε το S Pen και ξεκινήστε να γράφετε.</string>
     <string name="screen_off_note_summary_jpn">Δημιουργήστε σημειώσεις αφαιρώντας το S Pen όταν η οθόνη είναι σβηστή και γράφοντας στην οθόνη. Τα σημειώματα σβηστής οθόνης θα αποθηκευτούν στο Galaxy Notes.</string>
     <string name="screen_off_note_summary_no_detach">Δημιουργήστε σημειώσεις πατώντας το κουμπί πένας, πατώντας στην οθόνη όσο είναι ανενεργή και γράφοντας πάνω της. Τα σημειώματα σβηστής οθόνης αποθηκεύονται στο Samsung Notes.</string>
@@ -3946,7 +3967,7 @@ You will switch back to Wi-Fi Sharing when a Wi-Fi network becomes available."</
     <string name="wfd_descrpition_playsound">Αναπαραγωγή ήχου.</string>
     <string name="wfd_is_not_supported">Αυτή η λειτουργία δεν υποστηρίζεται.</string>
     <string name="usbtethering_notify_wifi_is_on_title">Απενεργοποίηση του Wi-Fi;</string>
-    <string name="usbtethering_notify_wifi_is_on">Δεν είναι δυνατή η ταυτόχρονη ενεργοποίηση του tethering μέσω Wi-Fi και του tethering μέσω USB. Απενεργοποιήστε το tethering μέσω Wi-Fi.</string>
+    <string name="usbtethering_notify_wifi_is_on">Δεν είναι δυνατή η ταυτόχρονη ενεργοποίηση του Wi-Fi και του tethering μέσω USB. Το Wi-Fi θα απενεργοποιηθεί.</string>
     <string name="disable_multi_window_dialog_text">Η λειτουργία Πολλών παραθύρων θα απενεργοποιηθεί και όλες οι εφαρμογές που είναι ανοιχτές σε αναδυόμενα παράθυρα θα κλείσουν.</string>
     <string name="keyguard_password_attempt_count_pin_code">%d προσπάθεια απομένει.</string>
     <string name="keyguard_password_attempts_count_pin_code">%d προσπάθειες απομένουν.</string>
@@ -4154,6 +4175,7 @@ You will switch back to Wi-Fi Sharing when a Wi-Fi network becomes available."</
     <string name="hdmi_mode_title">Λειτουργία HDMI</string>
     <string name="hdmi_mode_dex">Samsung DeX</string>
     <string name="hdmi_mode_mirroring">Screen Mirroring</string>
+    <string name="hdmi_mode_not_available_while_cover_attached">Το %s δεν είναι διαθέσιμο όσο είναι συνδεδεμένο το κάλυμμα.</string>
     <string name="screen_timeout_for_dex">Χρον. όρ. οθόν. για Samsung DeX</string>
     <string name="show_virtual_keyboard_for_dex">Εμφάνιση πληκτρολογίου οθόνης στο Samsung DeX</string>
     <string name="comma">,</string>
@@ -4462,7 +4484,7 @@ You will switch back to Wi-Fi Sharing when a Wi-Fi network becomes available."</
     <string name="date_picker_title">Ημερομηνία</string>
     <string name="time_picker_title">Ώρα</string>
     <string name="lock_after_timeout">Αυτόματο κλείδωμα</string>
-    <string name="lock_after_timeout_summary">Να κλειδώνεται η οθόνη μετά από %s από την αυτόματη απενεργοποίησή της.</string>
+    <string name="lock_after_timeout_summary">Να κλειδώνεται το τηλέφωνο %s μετά την αυτόματη απενεργοποίηση της οθόνης.</string>
     <string name="lock_after_timeout_summary_with_exception">Κλείδωμα της οθόνης σε %1$s από την αυτόματη απενεργοποίησή της, εκτός αν παραμένει ξεκλείδωτη από το %2$s.</string>
     <string name="show_owner_info_on_lockscreen_label">Εμφάνιση των πληροφοριών του κατόχου της συσκευής στην οθόνη κλειδώματος.</string>
     <string name="owner_info_settings_title">Στοιχεία κατόχου</string>
@@ -4610,6 +4632,8 @@ You will switch back to Wi-Fi Sharing when a Wi-Fi network becomes available."</
     <string name="wifi_empty_list_user_restricted">Δεν έχετε δικαίωμα να αλλάξετε τις ρυθμίσεις Wi-Fi.</string>
     <string name="wifi_setup_wps">Αυτόματη εγκατάσταση (WPS)</string>
     <string name="wifi_show_advanced">Εμφάνιση σύνθετων επιλογών</string>
+    <string name="wifi_advanced_toggle_description_expanded">Πατήστε δύο φορές για σύμπτυξη.</string>
+    <string name="wifi_advanced_toggle_description_collapsed">Πατήστε δύο φορές για ανάπτυξη.</string>
     <string name="wifi_wps_setup_title">Ρύθμιση WPS</string>
     <string name="wifi_wps_setup_msg">Έναρξη WPS…</string>
     <string name="wifi_wps_onstart_pbc">Πατήστε το κουμπί προστατευμένης ρύθμισης Wi-Fi στο δρομολογητή σας. Ενδέχεται να ονομάζεται WPS ή να περιέχει αυτό το σύμβολο:</string>
@@ -4641,6 +4665,10 @@ You will switch back to Wi-Fi Sharing when a Wi-Fi network becomes available."</
     <string name="wifi_shared">Κοινή</string>
     <string name="wifi_unchanged">(χωρίς αλλαγές)</string>
     <string name="wifi_unspecified">(Δεν καθορίζεται)</string>
+    <string name="wifi_select_cert">Επιλέξτε πιστοποιητικό</string>
+    <string name="wifi_do_not_provide_eap_user_cert">Να μην παρέχεται</string>
+    <string name="wifi_do_not_validate_eap_server">Να μην επικυρωθεί</string>
+    <string name="wifi_do_not_validate_eap_server_warning">Δεν καθορίστηκε πιστοποιητικό. Η σύνδεσή σας δεν θα είναι ιδιωτική.</string>
     <string name="wifi_scan_always_turnon_message">Η εφαρμογή %s ζήτα άδεια ώστε να αναζητά δίκτυα Wi-Fi ακόμα και όταν το Wi-Fi είναι ανενεργό, για τη βελτίωση της ακρίβειας εντοπισμού τοποθεσίας και για άλλους σκοπούς. Θέλετε να δώσετε την άδεια σε όλες τις εφαρμογές;</string>
     <string name="wifi_scan_always_confirm_allow">Να επιτρέπεται</string>
     <string name="wifi_scan_always_confirm_deny">Απόρριψη</string>
@@ -4975,9 +5003,9 @@ You will switch back to Wi-Fi Sharing when a Wi-Fi network becomes available."</
     <string name="restore_default_apn_completed">Επαναφορά ρυθμίσεων APN στις προεπιλογές.</string>
     <string name="reset_network_desc">Αυτή η ενέργεια θα επαναφέρει όλες τις ρυθμίσεις δικτύου,συμπεριλαμβανομένων των εξής:</string>
     <string name="reset_network_button_text">Επαναφορά ρυθμίσεων</string>
-    <string name="reset_network_final_desc">Θα γίνει επαναφορά όλων των ρυθμίσεων σύνδεσης. Δεν είναι δυνατή η αναίρεση της ενέργειας.</string>
+    <string name="reset_network_final_desc">Θα γίνει επαναφορά όλων των ρυθμίσεων δικτύου. Δεν είναι δυνατή η αναίρεση αυτής της ενέργειας.</string>
     <string name="reset_network_final_button_text">Επαναφορά ρυθμίσεων</string>
-    <string name="reset_network_complete_toast">Επαναφορά ρυθμίσεων σύνδεσης.</string>
+    <string name="reset_network_complete_toast">Έγινε επαναφορά των ρυθμίσεων του δικτύου.</string>
     <string name="master_clear_title">Επαναφορά εργοστασιακών δεδομένων</string>
     <string name="master_clear_accounts">Αυτήν τη στιγμή είστε συνδεδεμένοι στους ακόλουθους λογαριασμούς:</string>
     <string name="master_clear_other_users_present">Θα διαγραφούν επίσης τα δεδομένα που ανήκουν σε άλλους χρήστες αυτής της συσκευής.</string>
@@ -6090,6 +6118,7 @@ If the device has multiple users, using this shortcut on the lock screen tempora
     <string name="set_data_limit">Ορισμός ορίου δεδομένων</string>
     <string name="data_limit">Όριο δεδομένων</string>
     <string name="data_usage_template">Χρησιμοποιήθηκαν %1$s μεταξύ %2$s</string>
+    <string name="data_usage_template_wifi">Χρησιμοποιήθηκαν %s τις τελευταίες 30 ημέρες</string>
     <string name="data_usage_other_apps">Σχετ. εφ. που περιλ. στη χρήση</string>
     <string name="data_saver_title">Εξοικονόμηση δεδομένων</string>
     <string name="unrestricted_data_saver">Να επιτ. η εφαρ. σε Εξοικ. δεδ.</string>
@@ -6140,6 +6169,7 @@ If the device has multiple users, using this shortcut on the lock screen tempora
     <string name="legacy_dhcp_client_summary">Χρήση εφαρμογής-πελάτη DHCP παλαιού τύπου από το Lollipop αντί για τη νέα εφαρμογή-πελάτη DHCP Android.</string>
     <string name="screen_off_pocket_title">Διατήρηση οθόνης σβηστής</string>
     <string name="screen_off_pocket_summary">Αποτρέψτε την τυχαία ενεργοποίηση της οθόνης όταν η συσκευή βρίσκεται σε σκοτεινό σημείο, όπως η τσέπη ή η τσάντα σας.</string>
+    <string name="noApplications">Όλες οι εφαρμογές που συσχετίζονται με αυτήν την ενέργεια είναι απενεργοποιημένες, έχουν αποκλειστεί ή δεν εγκαταστάθηκαν.</string>
     <string name="confirm_reset_shortcut_manager_throttling_title">Επαναφορά περιορισμού ρυθμού για τη Διαχείριση συντομεύσεων</string>
     <string name="confirm_reset_shortcut_manager_throttling_message">Θα γίνει επαναφορά των μετρητών για το όριο ρυθμού της Διαχείρισης συντομεύσεων.</string>
 </resources>

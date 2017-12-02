@@ -184,7 +184,7 @@
 .method private getCurrentSecurityTitle()Ljava/lang/String;
     .locals 6
 
-    const v5, 0x7f0b0aaf
+    const v5, 0x7f0b0abd
 
     const/4 v4, 0x1
 
@@ -214,7 +214,7 @@
     :sswitch_0
     new-array v1, v4, [Ljava/lang/Object;
 
-    const v2, 0x7f0b1468
+    const v2, 0x7f0b1479
 
     invoke-virtual {p0, v2}, Lcom/samsung/android/settings/accessibility/ToggleAccessControlPreferenceFragment;->getString(I)Ljava/lang/String;
 
@@ -231,7 +231,7 @@
     :sswitch_1
     new-array v1, v4, [Ljava/lang/Object;
 
-    const v2, 0x7f0b146a
+    const v2, 0x7f0b147b
 
     invoke-virtual {p0, v2}, Lcom/samsung/android/settings/accessibility/ToggleAccessControlPreferenceFragment;->getString(I)Ljava/lang/String;
 
@@ -260,7 +260,7 @@
 
     new-array v1, v4, [Ljava/lang/Object;
 
-    const v2, 0x7f0b1466
+    const v2, 0x7f0b1477
 
     invoke-virtual {p0, v2}, Lcom/samsung/android/settings/accessibility/ToggleAccessControlPreferenceFragment;->getString(I)Ljava/lang/String;
 
@@ -574,7 +574,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f0f0366
+    const v1, 0x7f0f0365
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getInteger(I)I
 
@@ -676,7 +676,7 @@
 .method public onClick(Landroid/content/DialogInterface;I)V
     .locals 5
 
-    const v4, 0x7f0f0367
+    const v4, 0x7f0f0366
 
     const/4 v3, 0x1
 
@@ -957,7 +957,7 @@
 
     move-result-object v9
 
-    const v10, 0x7f0b050b
+    const v10, 0x7f0b050c
 
     invoke-virtual {v9, v10, p0}, Landroid/app/AlertDialog$Builder;->setPositiveButton(ILandroid/content/DialogInterface$OnClickListener;)Landroid/app/AlertDialog$Builder;
 

@@ -21,7 +21,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f0f03e6
+    const v1, 0x7f0f03e5
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getInteger(I)I
 
@@ -35,7 +35,7 @@
 
     invoke-super {p0, p1}, Lcom/samsung/android/settings/SecSettingsPreferenceFragment;->onCreate(Landroid/os/Bundle;)V
 
-    const v7, 0x7f0800da
+    const v7, 0x7f0800dc
 
     invoke-virtual {p0, v7}, Lcom/samsung/android/settings/deviceinfo/legal/SamsungLegalInfo;->addPreferencesFromResource(I)V
 

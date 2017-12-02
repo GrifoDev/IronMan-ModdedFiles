@@ -57,11 +57,11 @@
 
     iput p3, p0, Lcom/android/settings/datausage/AppDataUsagePreference;->mPercent:I
 
-    const v1, 0x7f0400bb
+    const v1, 0x7f0400bc
 
     invoke-virtual {p0, v1}, Lcom/android/settings/datausage/AppDataUsagePreference;->setLayoutResource(I)V
 
-    const v1, 0x7f040382
+    const v1, 0x7f040385
 
     invoke-virtual {p0, v1}, Lcom/android/settings/datausage/AppDataUsagePreference;->setWidgetLayoutResource(I)V
 
@@ -112,7 +112,7 @@
 
     if-gtz v1, :cond_2
 
-    const v1, 0x7f0b1ad6
+    const v1, 0x7f0b1ae8
 
     invoke-virtual {p0, v1}, Lcom/android/settings/datausage/AppDataUsagePreference;->setSummary(I)V
 

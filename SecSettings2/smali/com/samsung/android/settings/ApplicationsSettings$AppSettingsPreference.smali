@@ -43,7 +43,7 @@
 
     iput-object v0, p0, Lcom/samsung/android/settings/ApplicationsSettings$AppSettingsPreference;->userHandle:Ljava/util/ArrayList;
 
-    const v0, 0x7f040354
+    const v0, 0x7f040357
 
     invoke-virtual {p0, v0}, Lcom/samsung/android/settings/ApplicationsSettings$AppSettingsPreference;->setLayoutResource(I)V
 

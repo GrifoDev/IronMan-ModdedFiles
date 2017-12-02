@@ -400,6 +400,10 @@
 
     invoke-virtual {v2, v3, p7}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Z)Landroid/content/Intent;
 
+    const-string/jumbo v3, "com.android.settings.ConfirmCredentials.allowIrisAuthentication"
+
+    invoke-virtual {v2, v3, p7}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Z)Landroid/content/Intent;
+
     const-string/jumbo v3, "com.android.settings.ConfirmCredentials.darkTheme"
 
     invoke-virtual {v2, v3, p7}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Z)Landroid/content/Intent;

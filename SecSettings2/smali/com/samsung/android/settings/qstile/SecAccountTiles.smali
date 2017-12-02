@@ -63,28 +63,48 @@
 .end method
 
 .method private hasUserRestriction()Z
-    .locals 3
+    .locals 4
 
-    iget-object v0, p0, Lcom/samsung/android/settings/qstile/SecAccountTiles;->mContext:Landroid/content/Context;
+    const/4 v0, 0x0
 
-    const-string/jumbo v1, "no_modify_accounts"
+    iget-object v1, p0, Lcom/samsung/android/settings/qstile/SecAccountTiles;->mContext:Landroid/content/Context;
+
+    const-string/jumbo v2, "no_modify_accounts"
 
     invoke-static {}, Landroid/os/UserHandle;->myUserId()I
 
-    move-result v2
+    move-result v3
 
-    invoke-static {v0, v1, v2}, Lcom/android/settingslib/RestrictedLockUtils;->hasBaseUserRestriction(Landroid/content/Context;Ljava/lang/String;I)Z
+    invoke-static {v1, v2, v3}, Lcom/android/settingslib/RestrictedLockUtils;->hasBaseUserRestriction(Landroid/content/Context;Ljava/lang/String;I)Z
 
-    move-result v0
+    move-result v1
 
-    if-eqz v0, :cond_0
+    if-eqz v1, :cond_0
 
     const/4 v0, 0x1
 
-    return v0
-
     :cond_0
-    const/4 v0, 0x0
+    const-string/jumbo v1, "SecAccountTiles"
+
+    new-instance v2, Ljava/lang/StringBuilder;
+
+    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string/jumbo v3, "hasUserRestriction: "
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
     return v0
 .end method
@@ -189,6 +209,28 @@
     const/4 v6, 0x1
 
     :goto_2
+    const-string/jumbo v9, "SecAccountTiles"
+
+    new-instance v10, Ljava/lang/StringBuilder;
+
+    invoke-direct {v10}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string/jumbo v11, "isBlockedEdmSettingsChange: "
+
+    invoke-virtual {v10, v11}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v10
+
+    invoke-virtual {v10, v6}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+
+    move-result-object v10
+
+    invoke-virtual {v10}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v10
+
+    invoke-static {v9, v10}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+
     return v6
 
     :cond_2
@@ -214,6 +256,12 @@
 
 .method private showConfirmPopup(Z)V
     .locals 4
+
+    const-string/jumbo v1, "SecAccountTiles"
+
+    const-string/jumbo v2, "showConfirmPopup"
+
+    invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
     iget-object v1, p0, Lcom/samsung/android/settings/qstile/SecAccountTiles;->mAlertDialog:Landroid/app/AlertDialog;
 
@@ -246,7 +294,7 @@
 
     if-eqz p1, :cond_1
 
-    const v1, 0x7f0b1aef
+    const v1, 0x7f0b1b01
 
     :goto_0
     invoke-virtual {v2, v1}, Landroid/app/AlertDialog$Builder;->setTitle(I)Landroid/app/AlertDialog$Builder;
@@ -255,7 +303,7 @@
 
     if-eqz p1, :cond_2
 
-    const v1, 0x7f0b1af0
+    const v1, 0x7f0b1b02
 
     :goto_1
     invoke-virtual {v2, v1}, Landroid/app/AlertDialog$Builder;->setMessage(I)Landroid/app/AlertDialog$Builder;
@@ -305,12 +353,12 @@
     return-void
 
     :cond_1
-    const v1, 0x7f0b1af1
+    const v1, 0x7f0b1b03
 
     goto :goto_0
 
     :cond_2
-    const v1, 0x7f0b1af2
+    const v1, 0x7f0b1b04
 
     goto :goto_1
 .end method
@@ -330,7 +378,7 @@
 
     iget-object v4, p0, Lcom/samsung/android/settings/qstile/SecAccountTiles;->mContext:Landroid/content/Context;
 
-    const v5, 0x7f0b1a18
+    const v5, 0x7f0b1a2a
 
     invoke-virtual {v4, v5}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -338,7 +386,7 @@
 
     aput-object v4, v3, v6
 
-    const v4, 0x7f0b11eb
+    const v4, 0x7f0b11fb
 
     invoke-virtual {v2, v4, v3}, Landroid/content/Context;->getString(I[Ljava/lang/Object;)Ljava/lang/String;
 
@@ -359,7 +407,7 @@
 .end method
 
 .method private updateState()V
-    .locals 3
+    .locals 5
 
     invoke-static {}, Landroid/app/ActivityManager;->getCurrentUser()I
 
@@ -371,6 +419,30 @@
 
     iput-boolean v2, p0, Lcom/samsung/android/settings/qstile/SecAccountTiles;->mSyncOn:Z
 
+    const-string/jumbo v2, "SecAccountTiles"
+
+    new-instance v3, Ljava/lang/StringBuilder;
+
+    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string/jumbo v4, "updateState: "
+
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    iget-boolean v4, p0, Lcom/samsung/android/settings/qstile/SecAccountTiles;->mSyncOn:Z
+
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-static {v2, v3}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+
     invoke-virtual {p0}, Lcom/samsung/android/settings/qstile/SecAccountTiles;->getResources()Landroid/content/res/Resources;
 
     move-result-object v0
@@ -381,7 +453,7 @@
 
     if-eqz v1, :cond_0
 
-    const v2, 0x7f0204aa
+    const v2, 0x7f0204ac
 
     invoke-static {p0, v2}, Landroid/graphics/drawable/Icon;->createWithResource(Landroid/content/Context;I)Landroid/graphics/drawable/Icon;
 
@@ -389,7 +461,7 @@
 
     invoke-virtual {v1, v2}, Landroid/service/quicksettings/Tile;->setIcon(Landroid/graphics/drawable/Icon;)V
 
-    const v2, 0x7f0b1a18
+    const v2, 0x7f0b1a2a
 
     invoke-virtual {v0, v2}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -437,6 +509,12 @@
     .locals 4
 
     const/4 v1, 0x0
+
+    const-string/jumbo v2, "SecAccountTiles"
+
+    const-string/jumbo v3, "onClick"
+
+    invoke-static {v2, v3}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
     invoke-direct {p0}, Lcom/samsung/android/settings/qstile/SecAccountTiles;->hasUserRestriction()Z
 
@@ -632,7 +710,7 @@
 .method public semGetDetailView()Landroid/widget/RemoteViews;
     .locals 7
 
-    const v6, 0x7f1106bc
+    const v6, 0x7f1106be
 
     invoke-direct {p0}, Lcom/samsung/android/settings/qstile/SecAccountTiles;->hasUserRestriction()Z
 
@@ -651,7 +729,7 @@
 
     move-result-object v2
 
-    const v3, 0x7f040265
+    const v3, 0x7f040268
 
     invoke-direct {v1, v2, v3}, Landroid/widget/RemoteViews;-><init>(Ljava/lang/String;I)V
 
@@ -665,7 +743,7 @@
 
     if-eqz v0, :cond_1
 
-    const v2, 0x7f0b1af0
+    const v2, 0x7f0b1b02
 
     invoke-virtual {p0, v2}, Lcom/samsung/android/settings/qstile/SecAccountTiles;->getText(I)Ljava/lang/CharSequence;
 
@@ -697,7 +775,7 @@
     return-object v1
 
     :cond_1
-    const v2, 0x7f0b1af2
+    const v2, 0x7f0b1b04
 
     invoke-virtual {p0, v2}, Lcom/samsung/android/settings/qstile/SecAccountTiles;->getText(I)Ljava/lang/CharSequence;
 
@@ -713,7 +791,7 @@
 
     iget-object v0, p0, Lcom/samsung/android/settings/qstile/SecAccountTiles;->mContext:Landroid/content/Context;
 
-    const v1, 0x7f0b11ec
+    const v1, 0x7f0b11fc
 
     invoke-virtual {v0, v1}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -746,15 +824,37 @@
 .end method
 
 .method public semIsToggleButtonChecked()Z
-    .locals 1
+    .locals 4
 
     invoke-static {}, Landroid/app/ActivityManager;->getCurrentUser()I
 
+    move-result v1
+
+    invoke-static {v1}, Landroid/content/ContentResolver;->getMasterSyncAutomaticallyAsUser(I)Z
+
     move-result v0
 
-    invoke-static {v0}, Landroid/content/ContentResolver;->getMasterSyncAutomaticallyAsUser(I)Z
+    const-string/jumbo v1, "SecAccountTiles"
 
-    move-result v0
+    new-instance v2, Ljava/lang/StringBuilder;
+
+    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string/jumbo v3, "semIsToggleButtonChecked: "
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
     return v0
 .end method
@@ -768,7 +868,29 @@
 .end method
 
 .method public semSetToggleButtonChecked(Z)V
-    .locals 2
+    .locals 3
+
+    const-string/jumbo v0, "SecAccountTiles"
+
+    new-instance v1, Ljava/lang/StringBuilder;
+
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string/jumbo v2, "semSetToggleButtonChecked: "
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
     invoke-direct {p0}, Lcom/samsung/android/settings/qstile/SecAccountTiles;->isBlockedEdmSettingsChange()Z
 

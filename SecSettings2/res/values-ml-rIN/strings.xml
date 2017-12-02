@@ -170,6 +170,8 @@
     <string name="wifi_allow_scan_with_traffic_summary">ഉപയോഗിച്ച ഡാറ്റയുടെ തോതിന്‍റെ അടിസ്ഥാനത്തിൽ Wi-Fi റോമിംഗ് സ്കാനുകൾ ഓട്ടോമാറ്റിക്കായി അനുവദിക്കുക അല്ലെങ്കിൽ നിഷേധിക്കുക.</string>
     <string name="select_logd_size_title">ലോഗിംഗിനുള്ള ബഫർ വലുപ്പം</string>
     <string name="select_logd_size_dialog_title">ഓരോ ലോഗ് ബഫറിന്‍റെയും പരമാവധി വലുപ്പം തിരഞ്ഞെടുക്കുക</string>
+    <string name="dev_logpersist_clear_warning_title">സ്ഥിരമായ ലോഗർ സംഭരണം മായ്ക്കണോ?</string>
+    <string name="dev_logpersist_clear_warning_message">സ്ഥിരമായ ലോഗർ ഓഫായിരിക്കുമ്പോൾ ലോഗർ ഡാറ്റ ഇല്ലാതാക്കപ്പെടും.</string>
     <string name="select_logpersist_title">ലോഗ് ഡാറ്റ സ്ഥിരമായി സംഭരിക്കുക</string>
     <string name="select_logpersist_dialog_title">സ്ഥിരമായി സംഭരിക്കാനുള്ള ലോഗ് ബഫറുകൾ തിരഞ്ഞെടുക്കുക</string>
     <string name="select_usb_configuration_title">USB കോൺഫിഗറേഷൻ</string>
@@ -982,6 +984,7 @@ Wi-Fi, ബ്ലൂടൂത്ത് എന്നിവ കൂടി ഓഫ് 
     <string name="bluetooth_avc_available_description">ബന്ധിപ്പിച്ച ബ്ലൂടൂത്ത് ഉപകരണം മീഡിയ വോളിയം സമന്വയത്തെ പിന്തുണയ്ക്കുകയും ബ്ലൂടൂത്ത് ഉപകരണം ക്രമീകരിച്ച വോളിയം നിലയെ നിങ്ങളുടെ ഫോണുമായി സമന്വയിപ്പിക്കുകയും ചെയ്യും.</string>
     <string name="bluetooth_enter_pin_msg">%s-മായി പെയര്‍ ചെയ്യുന്നതിന് PIN നല്‍കുക. (0000 അഥവാ 1234 ശ്രമിക്കുക).</string>
     <string name="bluetooth_pin_maximum_number_message">പരമാവധി എണ്ണം അക്ഷരങ്ങളിലെത്തി.</string>
+    <string name="bluetooth_frp_permission_message">ഈ കോളിന് ബ്ലൂടൂത്ത് ഉപകരണം ഉപയോഗിക്കാനാവില്ല.</string>
     <string name="settings_menu_done">ചെയ്‌തു</string>
     <string name="usb_tethering_unavailable_subtext_tmo">USB not connected</string>
     <string name="usb_tethering_available_subtext_tmo">USB connected, check to tether</string>
@@ -1481,7 +1484,7 @@ Where Can I Find More Information About the 3rd Party's Policies? Separately, if
     <string name="navigationbar_pressure_sensitivity_title">ഹോം ബട്ടൺ ദൃഢമായി അമർത്തുക</string>
     <string name="navigationbar_pressure_sensitivity_summary">ഹോം ബട്ടൺ മറയ്ക്കപ്പെട്ടിരിക്കുന്ന സമയത്ത് പതിവിലും ദൃഢമായി അമർത്തി അത് ഉപയോഗിക്കുക.</string>
     <string name="navigationbar_pressure_sensitivity_level_summary">മർദ്ദ നില: %2$d-ൽ %1$d</string>
-    <string name="navigationbar_pressure_sensitivity_description_off">ഹോം ബട്ടൺ മറയ്ക്കപ്പെട്ടിരിക്കുന്ന സമയത്ത് പതിവിലും ദൃഢമായി അമർത്തി അത് ഉപയോഗിക്കുക.</string>
+    <string name="navigationbar_pressure_sensitivity_description_off">ഹോം ബട്ടൺ ദൃഢമായി അമർത്താൻ ആവശ്യമായ മർദ്ദത്തിന്‍റെ തോത് ക്രമപ്പെടുത്തുക.</string>
     <string name="navigationbar_pressure_low">മൃദുവായി</string>
     <string name="navigationbar_pressure_high">ശക്തമായി</string>
     <string name="navigationbar_hide_bar">കാണിക്കുക &amp; മറയ്ക്കുക ബട്ടൺ</string>
@@ -1620,7 +1623,7 @@ Where Can I Find More Information About the 3rd Party's Policies? Separately, if
     <string name="crypt_keeper_decrypt_title">ഉപകരണം ഡീക്രിപ്റ്റ് ചെയ്യുക</string>
     <string name="crypt_keeper_decrypt_summary">ഉപകരണം എന്‍ക്രിപ്റ്റ് ചെയ്തു.</string>
     <string name="crypt_keeper_type_pin">PIN</string>
-    <string name="crypt_keeper_type_pattern">മാതൃക</string>
+    <string name="crypt_keeper_type_pattern">പാറ്റേൺ</string>
     <string name="crypt_keeper_type_password">പാസ്‌വേഡ്</string>
     <string name="crypt_keeper_type_direction">ദിശാ ലോക്ക്</string>
     <string name="crypt_keeper_confirm_title_dec">ഡീക്രിപ്ഷന്‍ സ്ഥിരീകരിക്കുക</string>
@@ -1704,7 +1707,11 @@ Where Can I Find More Information About the 3rd Party's Policies? Separately, if
     <string name="crypt_keeper_confirm_title">എന്‍ക്രിപ്ഷന്‍ സ്ഥിരീകരിക്കുക</string>
     <string name="crypt_keeper_final_desc">നിങ്ങളുടെ ഉപകരണം എൻക്രിപ്റ്റ് ചെയ്യുന്നതിൽ നിന്ന് മടങ്ങിപ്പോകാൻ സാധിക്കാത്തതിനാൽ പ്രക്രിയ തടസപ്പെട്ടാൽ ഡാറ്റ നഷ്ടപ്പെടുന്നതാണ്. എൻക്രിപ്റ്റ് ചെയ്യുന്നതിന് ഒരു മണിക്കൂറോ അതിലധികമോ വേണ്ടിവരും, അതിനിടയിൽ നിങ്ങളുടെ ഉപകരണം നിരവധി തവണ പുനഃരാരംഭിക്കുകയും നിങ്ങൾക്കത് ഉപയോഗിക്കാൻ സാധിക്കാതെ വരികയും ചെയ്യും.</string>
     <string name="crypt_keeper_setup_title">എന്‍ക്രിപ്റ്റ് ചെയ്യുന്നു…</string>
-    <string name="crypt_keeper_warn_wipe">നിങ്ങളുടെ ഉപകരണം അതിന്‍റെ ഫാക്ടറി ഡിഫോൾട്ട് ക്രമീകരണങ്ങളിലേക്ക് പുനഃക്രമീകരിക്കപ്പെടുന്നതിന് മുൻപ് അത് ആരംഭിക്കാൻ നിങ്ങൾക്ക് %d ശ്രമങ്ങൾ ശേഷിക്കുന്നുണ്ട്. ഫയലുകളും ഡൗൺലോഡ് ചെയ്ത ആപ്ലിക്കേഷനുകളും ഉൾപ്പെടെയുള്ള മുഴുവൻ ഡാറ്റയെയും ഇത് മായ്ക്കും.</string>
+    <string name="crypt_keeper_warn_wipe">"നിങ്ങളുടെ ഫോൺ അതിന്‍റെ ഫാക്ടറി ഡിഫോൾട്ട് ക്രമീകരണങ്ങളിലേക്ക് പുനഃക്രമീകരിക്കപ്പെടുന്നതിന് മുമ്പ് നിങ്ങൾക്ക് %1$d ശ്രമങ്ങൾ ശേഷിക്കുന്നുണ്ട്. ഫയലുകളും ഡൗൺലോഡ് ചെയ്ത ആപ്ലിക്കേഷനുകളും ഉൾപ്പെടെയുള്ള മുഴുവൻ ഡാറ്റയെയും ഇത് മായ്ക്കും.
+
+നിങ്ങളുടെ ഫോൺ പുനഃക്രമീകരിക്കപ്പെടുകയാണെങ്കിൽ, വീണ്ടുമുള്ള ഉപയോഗത്തിന് അതിനെ പ്രാപ്തമാക്കാൻ ഈ ഫോണുമായി ബന്ധപ്പെട്ട %2$s വിവരങ്ങൾ (ഈമെയിൽ വിലാസവും പാസ്‌വേഡും) നിങ്ങൾ നൽകേണ്ട ആവശ്യം വന്നേക്കാം."</string>
+    <string name="crypt_keeper_samsung_account">Samsung account</string>
+    <string name="crypt_keeper_google_account">Google അക്കൗണ്ട്</string>
     <string name="crypt_keeper_failed_title">എന്‍ക്രിപ്ഷന്‍ പരാജയപ്പെട്ടു</string>
     <string name="crypt_keeper_failed_summary">നിങ്ങളുടെ ഉപകരണം ആരംഭിക്കാനാവില്ല. എൻക്രിപ്ഷൻ പ്രക്രിയ തടസപ്പെട്ടു. നിങ്ങളുടെ ഉപകരണത്തെ ഫാക്ടറി ഡിഫോള്‍ട്ട് ക്രമീകരണങ്ങളിലേക്ക് പുനഃക്രമീകരിക്കേണ്ടതാവശ്യമാണ്. ഇത് നിങ്ങളുടെ എല്ലാ ഡാറ്റയെയും മായ്ക്കും.</string>
     <string name="crypt_keeper_data_corrupted_title">ഉപകരണ സംഭരണം വികലം</string>
@@ -1723,10 +1730,13 @@ Where Can I Find More Information About the 3rd Party's Policies? Separately, if
     <string name="cryptkeeper_wrong_pin">തെറ്റായ PIN നൽകി</string>
     <string name="cryptkeeper_wrong_direction">തെറ്റായ ദിശ വരച്ചു</string>
     <string name="checking_decryption">തിട്ടപ്പെടുത്തുന്നു…</string>
-    <string name="crypt_keeper_last_warn_wipe">ഫാക്ടറി ഡിഫോൾട്ട് ക്രമീകരണങ്ങളിലേക്ക് പുനഃക്രമീകരിക്കുന്നതിന് ഉപകരണം സ്റ്റാർട്ട് ചെയ്യുന്നതിന് നിങ്ങൾക്ക് 1 ശ്രമം ശേഷിക്കുന്നുണ്ട്. ഫയലുകളും ഡൗൺലോഡ് ചെയ്ത ആപ്ലിക്കേഷനുകളും ഉൾപ്പെടെയുള്ള മുഴുവൻ ഡാറ്റയെയും ഇത് മായ്ക്കും.</string>
+    <string name="crypt_keeper_last_warn_wipe">"നിങ്ങളുടെ ഫോൺ അതിന്‍റെ ഫാക്ടറി ഡിഫോൾട്ട് ക്രമീകരണങ്ങളിലേക്ക് പുനഃക്രമീകരിക്കപ്പെടുന്നതിന് മുമ്പ് നിങ്ങൾക്ക് 1 ശ്രമം ശേഷിക്കുന്നുണ്ട്. ഫയലുകളും ഡൗൺലോഡ് ചെയ്ത ആപ്ലിക്കേഷനുകളും ഉൾപ്പെടെയുള്ള മുഴുവൻ ഡാറ്റയെയും ഇത് മായ്ക്കും.
+
+നിങ്ങളുടെ ഫോൺ പുനഃക്രമീകരിക്കപ്പെടുകയാണെങ്കിൽ, വീണ്ടുമുള്ള ഉപയോഗത്തിന് അതിനെ പ്രാപ്തമാക്കാൻ ഈ ഫോണുമായി ബന്ധപ്പെട്ട %s വിവരങ്ങൾ (ഈമെയിൽ വിലാസവും പാസ്‌വേഡും) നിങ്ങൾ നൽകേണ്ട ആവശ്യം വന്നേക്കാം."</string>
     <string name="crypt_keeper_failed_title_dec">ഡിക്രിപ്‌ഷന്‍ പരാജയപ്പെട്ടു.</string>
     <string name="crypt_keeper_failed_summary_dec">തടസം ഉണ്ടായതിനാല്‍ ഡീക്രിപ്ഷന്‍ പൂര്‍ത്തിയാക്കാന്‍ ആയില്ല. ഉപയോഗത്തിന്‌ മുമ്പ് ഫാക്ടറി ഡാറ്റാ പുനസജ്ജീകരണം നടത്തുക.</string>
     <string name="crypt_keeper_set_screen_lock_type">സ്ക്രീന്‍ ലോക്ക് തരം ക്രമീകരിക്കുക</string>
+    <string name="crypt_keeper_warning_keyboard_cover_does_not_work">ഫോൺ പുനരാരംഭിച്ചുകഴിഞ്ഞാൽ കീബോർഡ് കവർ പ്രവർത്തിക്കില്ല.</string>
     <string name="encryption_interstitial_message">"ഈ ഫോൺ ആരംഭിക്കുന്നതിന് മുമ്പ് നിങ്ങളുടെ ‌%s നൽകണമെന്ന് ആവശ്യപ്പെടുന്നത് വഴി ഫോണിനെ കുറേക്കൂടി സുരക്ഷിതമാക്കാൻ നിങ്ങൾക്കാവും. ഫോൺ നഷ്ടപ്പെടുകയാണെങ്കിൽ അല്ലെങ്കിൽ മോഷ്ടിക്കപ്പെടുകയാണെങ്കിൽ നിങ്ങളുടെ ഡാറ്റയെ സംരക്ഷിക്കാൻ ഇത് സഹായിക്കും. ഈമെയിൽ സമന്വയം പോലുള്ള സവിശേഷതകളിലേക്ക് ആക്സസ് ലഭിക്കുന്നതിന് ചില ആപ്ലിക്കേഷനുകൾക്ക് ഉപകരണ എൻക്രിപ്ഷൻ നയ പ്രകാരം സുരക്ഷിത സ്റ്റാർട്ടപ്പ് ആവശ്യമായി വന്നേക്കാം.
 
 ഫോൺ ആരംഭിക്കുന്നത് വരെ നിങ്ങൾക്ക് ഏതെങ്കിലും കോളുകളോ സന്ദേശങ്ങളോ അറിയിപ്പുകളോ ലഭിക്കില്ല, അലാറങ്ങൾ ശബ്ദിക്കുകയുമില്ല."</string>
@@ -1971,6 +1981,12 @@ You will also need it when:"</string>
     <string name="lockpassword_confirm_your_pin_with_fingerprint">ഒരു വിരലടയാളം ഉപയോഗിക്കുക അല്ലെങ്കിൽ നിലവിലെ PIN നൽകുക.</string>
     <string name="lockpassword_confirm_your_pattern_with_fingerprint">ഒരു വിരലടയാളം ഉപയോഗിക്കുക അല്ലെങ്കിൽ നിലവിലെ പാറ്റേൺ വരയ്ക്കുക.</string>
     <string name="lockpassword_confirm_your_password_with_fingerprint">ഒരു വിരലടയാളം ഉപയോഗിക്കുക അല്ലെങ്കിൽ നിലവിലെ പാസ്‌വേഡ് നൽകുക.</string>
+    <string name="lockpassword_confirm_your_pin_with_iris">നിങ്ങളുടെ മിഴിപടലങ്ങൾ ഉപയോഗിക്കുക അല്ലെങ്കിൽ നിലവിലെ PIN നൽകുക.</string>
+    <string name="lockpassword_confirm_your_pattern_with_iris">നിങ്ങളുടെ മിഴിപടലങ്ങൾ ഉപയോഗിക്കുക അല്ലെങ്കിൽ നിലവിലെ പാറ്റേൺ വരയ്ക്കുക.</string>
+    <string name="lockpassword_confirm_your_password_with_iris">നിങ്ങളുടെ മിഴിപടലങ്ങൾ ഉപയോഗിക്കുക അല്ലെങ്കിൽ നിലവിലെ പാസ്‌വേഡ് നൽകുക.</string>
+    <string name="lockpassword_confirm_your_pin_with_biometrics">ബയോമെട്രിക്ക്സ് ഉപയോഗിക്കുക അല്ലെങ്കിൽ നിങ്ങളുടെ PIN നൽകുക.</string>
+    <string name="lockpassword_confirm_your_pattern_with_biometrics">ബയോമെട്രിക്ക്സ് ഉപയോഗിക്കുക അല്ലെങ്കിൽ നിങ്ങളുടെ പാറ്റേൺ വരയ്ക്കുക.</string>
+    <string name="lockpassword_confirm_your_password_with_biometrics">ബയോമെട്രിക്ക്സ് ഉപയോഗിക്കുക അല്ലെങ്കിൽ നിങ്ങളുടെ പാസ്‌വേഡ് നൽകുക.</string>
     <string name="lockpassword_confirm_your_pin_instead_of_fingerprint">വിരലടയാള തിരിച്ചറിയൽ ഉപയോഗിക്കുന്നതിന് പകരം നിങ്ങളുടെ PIN നൽകുക.</string>
     <string name="lockpassword_confirm_your_pattern_instead_of_fingerprint">വിരലടയാള തിരിച്ചറിയൽ ഉപയോഗിക്കുന്നതിന് പകരം നിങ്ങളുടെ പാറ്റേൺ വരയ്ക്കുക.</string>
     <string name="lockpassword_confirm_your_password_instead_of_fingerprint">വിരലടയാള തിരിച്ചറിയൽ ഉപയോഗിക്കുന്നതിന് പകരം നിങ്ങളുടെ പാസ്‌വേഡ് നൽകുക.</string>
@@ -2045,6 +2061,7 @@ You will also need it when:"</string>
     <string name="face_status_timeout">സമയം കഴിഞ്ഞു. പിന്നീട് ശ്രമിക്കുക</string>
     <string name="okay">ശരി</string>
     <string name="face_samsung_account_button">Samsung account ഉപയോഗിക്കുക</string>
+    <string name="face_galaxy_account_button">Galaxy account ഉപയോഗിക്കുക</string>
     <string name="face_error_DB_corrupted">നിങ്ങളുടെ മുഖ ഡാറ്റയിൽ ഒരു പ്രശ്നമുണ്ടായി. നിങ്ങളുടെ മുഖം വീണ്ടും രജിസ്റ്റർ ചെയ്യുക.</string>
     <string name="face_error_DB_corrupted_popup_title">നിങ്ങളുടെ മുഖം വീണ്ടും രജിസ്റ്റർ ചെയ്യുക</string>
     <string name="face_error_timeout">നിങ്ങളുടെ മുഖം കണ്ടെത്തിയിരുന്നില്ല.</string>
@@ -2155,7 +2172,7 @@ You will also need it when:"</string>
     <string name="biometrics_backup_locktype_title">മിഴിപടല സുരക്ഷ സജ്ജീകരിക്കുക</string>
     <string name="biometrics_register_your_iris">നിങ്ങളുടെ മിഴിപടലങ്ങൾ രജിസ്റ്റർ ചെയ്യുക.</string>
     <string name="biometrics_backup_locktype_summary">ഉപകരണം അൺലോക്ക് ചെയ്യാനായി നിങ്ങളുടെ മിഴിപടലങ്ങൾ ഉപയോഗിക്കുന്നതിന്, നിങ്ങൾ ഒരു പാറ്റേൺ, PIN, അല്ലെങ്കിൽ പാസ്‌വേഡ് ക്രമീകരിച്ചിരിക്കണം.</string>
-    <string name="biometrics_backup_locktype_message">നിങ്ങളുടെ ഫോൺ അൺലോക്ക് ചെയ്യാനോ സുരക്ഷിത പരിശോധിച്ചുറപ്പിക്കലിനായോ മിഴിപടലങ്ങൾ ഉപയോഗിക്കാൻ, നിങ്ങൾ ചെയ്യേണ്ടത്:</string>
+    <string name="biometrics_backup_locktype_message">നിങ്ങളുടെ ഫോൺ അൺലോക്ക് ചെയ്യാനോ ആപ്ലിക്കേഷനുകളിൽ നിങ്ങളെ സ്വയം പരിശോധിച്ചുറപ്പിക്കാനോ നിങ്ങളുടെ മിഴിപടലങ്ങൾ ഉപയോഗിക്കുന്നതിന്, നിങ്ങൾ ചെയ്യേണ്ടത്:</string>
     <string name="iris_delete_popup_title">മിഴിപടല ഡാറ്റ നീക്കംചെയ്യണോ?</string>
     <string name="iris_delete_popup_message">മിഴിപടല ഡാറ്റ നീക്കംചെയ്യണോ?</string>
     <string name="iris_delete_popup_message_with_related_func">മിഴിപടലങ്ങൾ ഉപയോഗിക്കുന്ന സവിശേഷതകൾ ഓഫാകും.</string>
@@ -2231,6 +2248,9 @@ You will also need it when:"</string>
     <string name="biometrics_dex_cant_use_msg">Samsung DeX-ൽ %s ഉപയോഗിക്കാനാവില്ല.</string>
     <string name="biometrics_dex_closed_to_switch">Samsung DeX-ലേക്ക് സ്വിച്ചുചെയ്യാനായി %s അടച്ചു.</string>
     <string name="biometircs_dex_cant_use_toast">Samsung DeX-ൽ %s റൺ ചെയ്യാനാവില്ല. ഫോൺ മോഡിൽ റൺ ചെയ്യാൻ ശ്രമിക്കുക.</string>
+    <string name="iris_guide_text_preview">മിഴിപടലങ്ങൾ ഉപയോഗിക്കാൻ ഇവിടെ നോക്കുക</string>
+    <string name="iris_guide_enable_toggle">മിഴിപടലങ്ങൾ ഉപയോഗിക്കാൻ ഇവിടെ സ്പർശിക്കുക</string>
+    <string name="iris_cannot_verify">മിഴിപടലങ്ങൾ പരിശോധിച്ചുറപ്പിക്കാനായില്ല</string>
     <string name="knox_twofactor_bio_description">%s അൺലോക്ക് ചെയ്യുന്നതിനുള്ള നിങ്ങളുടെ ബയോമെട്രിക്ക് ലോക്ക് തരവും രണ്ടാമത്തെ ലോക്ക് തരവും തിരഞ്ഞെടുക്കുക.</string>
     <string name="fingerprint_registered">തിരഞ്ഞെടുത്ത അൺലോക്ക് രീതിയ്ക്കൊപ്പം രജിസ്റ്റർ ചെയ്ത വിരലടയാളങ്ങൾ ഉപയോഗിക്കപ്പെടും.</string>
     <string name="knox_twofactor_description">%s അൺലോക്ക് ചെയ്യുന്നതിനുള്ള നിങ്ങളുടെ ബയോമെട്രിക്ക്സും രണ്ടാമത്തെ ഒരു ലോക്ക് തരവും തിരഞ്ഞെടുക്കുക.</string>
@@ -3093,6 +3113,7 @@ Mobile data will be turned off."</string>
     <string name="easy_mode_app_help">ലളിതമായ ഒരു ഹോം സ്ക്രീൻ ലേഔട്ടും വലിയ ഓൺ-സ്ക്രീൻ ഇനങ്ങളും ഉപയോഗിച്ച് നിങ്ങളുടെ ഉപകരണം കൂടുതൽ എളുപ്പത്തിൽ ഉപയോഗിക്കുക.</string>
     <string name="easy_mode_app_help_dream_1">ലളിതമായ ഒരു ഹോം സ്ക്രീൻ ലേഔട്ടും വലിയ ഓൺ-സ്ക്രീൻ ഇനങ്ങളും ഉപയോഗിക്കുക.</string>
     <string name="easy_mode_app_help_dream_2">ഹോം സ്ക്രീനിൽ നിങ്ങൾ നിർവഹിച്ച ഏതൊരു ഇച്ഛാനുസൃതമാക്കലുകളും ഒഴിവാക്കപ്പെടും, സ്ക്രീൻ സൂം പരമാവധിയിലേക്ക് ക്രമീകരിക്കപ്പെടും.</string>
+    <string name="easy_mode_app_help_3rd_launcher">വലിയ ഓൺ-സ്ക്രീൻ ഇനങ്ങൾക്കായി ഈസി മോഡ് പ്രയോഗിക്കുക. നിങ്ങൾ TouchWiz ഹോം ഉപയോഗിക്കുന്നില്ലെങ്കിൽ, നിങ്ങളുടെ ഹോം സ്ക്രീൻ ലേഔട്ട് മാറില്ല, എന്നാൽ സ്ക്രീൻ സൂം വലുതിലേക്ക് ക്രമീകരിക്കപ്പെടും, ഫോണ്ട് വലുപ്പം മീഡിയത്തിലേക്ക് ക്രമീകരിക്കപ്പെടും.</string>
     <string name="security_warning_content">നിങ്ങളുടെ സ്ക്രീൻ അൺലോക്ക് ചെയ്യാനായി ഒരു പാസ്‌വേഡ്, PIN, അല്ലെങ്കിൽ പാറ്റേൺ ക്രമീകരിച്ചുകൊണ്ട് നിങ്ങൾക്ക് സ്വകാര്യത പരിരക്ഷിക്കാനാകും</string>
     <string name="lock_setting_weather_desc">കാലാവസ്ഥാ ക്രമീകരണങ്ങൾ കാണുന്നതിന് അല്ലെങ്കിൽ മാറ്റുന്നതിന്, താഴെയുള്ള “കാലാവസ്ഥാ ക്രമീകരണങ്ങളിൽ” സ്പർശിക്കുക.</string>
     <string name="lock_setting_weather_btn">കാലാവസ്ഥാ ക്രമീകരണങ്ങള്‍</string>
@@ -3946,7 +3967,7 @@ Wi-Fi ഇപ്പോൾ ഓണാണ്."</string>
     <string name="wfd_descrpition_playsound">ശബ്ദം പ്ലേ ചെയ്യുക.</string>
     <string name="wfd_is_not_supported">ഈ പ്രവർത്തനത്തിന് പിന്തുണയില്ല.</string>
     <string name="usbtethering_notify_wifi_is_on_title">Wi-Fi ഓഫ് ചെയ്യണോ?</string>
-    <string name="usbtethering_notify_wifi_is_on">Wi-Fi, USB ടെതർ ചെയ്യൽ എന്നിവ ഒരേ സമയം ഓണാക്കാനാവില്ല. Wi-Fi ഓഫ് ചെയ്യുക.</string>
+    <string name="usbtethering_notify_wifi_is_on">Wi-Fi, USB ടെതറിംഗ് എന്നിവ ഒരേ സമയം ഓൺ ചെയ്യാനാവില്ല. Wi-Fi ഓഫ് ചെയ്യപ്പെടും.</string>
     <string name="disable_multi_window_dialog_text">മൾട്ടി വിൻഡോ അപ്രാപ്തമാക്കപ്പെടുകയും പോപ്-അപ്പ് വിൻഡോകളിൽ തുറന്നിരിക്കുന്ന എല്ലാ ആപ്ലിക്കേഷനുകളും അടയ്ക്കുകയും ചെയ്യും.</string>
     <string name="keyguard_password_attempt_count_pin_code">%d ശ്രമങ്ങള്‍ ശേഷിക്കുന്നു.</string>
     <string name="keyguard_password_attempts_count_pin_code">%d ശ്രമങ്ങള്‍ ശേഷിക്കുന്നു.</string>
@@ -4154,6 +4175,7 @@ SMS സ്വീകരിക്കൽ"</string>
     <string name="hdmi_mode_title">HDMI മോഡ്</string>
     <string name="hdmi_mode_dex">Samsung DeX</string>
     <string name="hdmi_mode_mirroring">Screen Mirroring</string>
+    <string name="hdmi_mode_not_available_while_cover_attached">കവർ അറ്റാച്ച് ചെയ്ത സമയത്ത് %s ലഭ്യമാവില്ല.</string>
     <string name="screen_timeout_for_dex">Samsung DeX-ന്‍റെ സ്ക്രീൻ സമയ പരിധി</string>
     <string name="show_virtual_keyboard_for_dex">Samsung DeX-ൽ ഓൺ-സ്ക്രീൻ കീബോർഡ് കാണിക്കുക</string>
     <string name="comma">,</string>
@@ -4462,7 +4484,7 @@ SMS സ്വീകരിക്കൽ"</string>
     <string name="date_picker_title">തീയതി</string>
     <string name="time_picker_title">സമയം</string>
     <string name="lock_after_timeout">ഓട്ടോമാറ്റിക് ആയി ലോക്ക് ചെയ്യുക</string>
-    <string name="lock_after_timeout_summary">സ്ക്രീൻ ഓട്ടോമാറ്റിക്കായി ഓഫ് ചെയ്യപ്പെട്ട് %s-ന് ശേഷം അതിനെ ലോക്ക് ചെയ്യുക.</string>
+    <string name="lock_after_timeout_summary">സ്ക്രീൻ ഓട്ടോമാറ്റിക്കായി ഓഫ് ചെയ്യപ്പെട്ട് %s-ന് ശേഷം ഫോൺ ലോക്ക് ചെയ്യുക.</string>
     <string name="lock_after_timeout_summary_with_exception">%2$s ഉപയോഗിച്ച് അണ്‍‌ലോക്ക് ചെയ്തിരിക്കുമ്പോൾ ഒഴികെ, സ്ക്രീൻ ഓട്ടോമാറ്റിക്കായി ഓഫായി %1$s-ന് ശേഷം അതിനെ ലോക്ക് ചെയ്യുക.</string>
     <string name="show_owner_info_on_lockscreen_label">ലോക്ക് സ്ക്രീനിൽ ഉപകരണ ഉടമയുടെ വിവരം കാണിക്കുക.</string>
     <string name="owner_info_settings_title">ഉടമയുടെ വിവരം</string>
@@ -4610,6 +4632,8 @@ SMS സ്വീകരിക്കൽ"</string>
     <string name="wifi_empty_list_user_restricted">Wi-Fi ക്രമീകരണങ്ങൾ മാറ്റാൻ നിങ്ങൾക്ക് അനുമതിയില്ല.</string>
     <string name="wifi_setup_wps">സ്വയ ക്രമീകരണം (WPS)</string>
     <string name="wifi_show_advanced">നൂതന ഓപ്ഷനുകള്‍ കാണിക്കുക.</string>
+    <string name="wifi_advanced_toggle_description_expanded">ചുരുക്കുന്നതിന് രണ്ടുതവണ സ്പർശിക്കുക.</string>
+    <string name="wifi_advanced_toggle_description_collapsed">വിപുലീകരിക്കുന്നതിന് രണ്ടുതവണ സ്പർശിക്കുക.</string>
     <string name="wifi_wps_setup_title">WPS സെറ്റപ്പ്</string>
     <string name="wifi_wps_setup_msg">WPS ആരംഭിക്കുന്നു…</string>
     <string name="wifi_wps_onstart_pbc">നിങ്ങളുടെ റൂട്ടറില്‍ Wi-Fi പരിരക്ഷിത ക്രമീകരണ ബട്ടണ്‍ ടാപ്പുചെയ്യുക. അത് WPS എന്ന് വിളിക്കപ്പെട്ടേക്കാം അല്ലെങ്കില്‍ ഈ അടയാളം അടങ്ങിയേക്കാം:</string>
@@ -4641,6 +4665,10 @@ SMS സ്വീകരിക്കൽ"</string>
     <string name="wifi_shared">പങ്കിട്ടു</string>
     <string name="wifi_unchanged">(മാറ്റമില്ലാത്ത)</string>
     <string name="wifi_unspecified">(സൂചിപ്പിക്കാത്തവ)</string>
+    <string name="wifi_select_cert">സർട്ടിഫിക്കറ്റ് തിരഞ്ഞെടുക്കുക</string>
+    <string name="wifi_do_not_provide_eap_user_cert">ലഭ്യമാക്കരുത്</string>
+    <string name="wifi_do_not_validate_eap_server">സാധൂകരിക്കരുത്</string>
+    <string name="wifi_do_not_validate_eap_server_warning">സർട്ടിഫിക്കറ്റ് ഒന്നും സ്പഷ്ടമാക്കിയില്ല. നിങ്ങളുടെ കണക്ഷൻ സ്വകാര്യമായിരിക്കില്ല.</string>
     <string name="wifi_scan_always_turnon_message">ലൊക്കേഷൻ കൃത്യത മെച്ചപ്പെടുത്തുന്നതിനും മറ്റ് ഉദ്ദേശ്യങ്ങൾക്കുമായി, Wi-Fi ഓഫ് ചെയ്തിരിക്കുമ്പോൾ പോലും Wi-Fi നെറ്റ്‌വർക്കുകൾക്കായി സ്കാൻ ചെയ്യുന്നതിന് %s അനുമതി അഭ്യർത്ഥിക്കുന്നു. എല്ലാ ആപ്ലിക്കേഷനുകൾക്കും ഇത് അനുവദിക്കണോ?</string>
     <string name="wifi_scan_always_confirm_allow">അനുവദിക്കൂ</string>
     <string name="wifi_scan_always_confirm_deny">നിരസിക്കുക</string>
@@ -4975,9 +5003,9 @@ SMS സ്വീകരിക്കൽ"</string>
     <string name="restore_default_apn_completed">APN ക്രമീകരണങ്ങള്‍ ഡിഫോള്‍ട്ടിലേക്ക് റീസെറ്റ് ചെയ്തു.</string>
     <string name="reset_network_desc">ഇവയുടെ ഉൾപ്പെടെയുള്ള എല്ലാ നെറ്റ്‌വർക്ക് ക്രമീകരണങ്ങളെയും ഇത് പുനഃക്രമീകരിക്കും:</string>
     <string name="reset_network_button_text">ക്രമീകരണങ്ങള്‍ പുനഃസജ്ജമാക്കുക</string>
-    <string name="reset_network_final_desc">എല്ലാ കണക്ഷൻ ക്രമീകരണങ്ങളും പുനഃക്രമീകരിക്കപ്പെടും. ഈ പ്രവൃത്തിയെ പൂർവാവസ്ഥയിലാക്കാനാവില്ല.</string>
+    <string name="reset_network_final_desc">എല്ലാ നെറ്റ്‌വർക്ക് ക്രമീകരണങ്ങളും പുനഃക്രമീകരിക്കപ്പെടും. ഈ പ്രവൃത്തിയെ പൂർവാവസ്ഥയിലാക്കാനാവില്ല.</string>
     <string name="reset_network_final_button_text">ക്രമീകരണങ്ങള്‍ പുനഃസജ്ജമാക്കുക</string>
-    <string name="reset_network_complete_toast">കണക്ഷൻ ക്രമീകരണങ്ങൾ പുനഃക്രമീകരിച്ചു.</string>
+    <string name="reset_network_complete_toast">നെറ്റ്‌വർക്ക് ക്രമീകരണങ്ങളെ പുനഃക്രമീകരിച്ചു.</string>
     <string name="master_clear_title">ഫാക്ടറി ഡാറ്റ റീസെറ്റ്</string>
     <string name="master_clear_accounts">നിങ്ങള്‍ നിലവില്‍ ഇനിപ്പറയുന്ന അക്കൗണ്ടുകളിലേക്ക് സൈന്‍ ഇന്‍ ചെയ്തിരിക്കുന്നു:</string>
     <string name="master_clear_other_users_present">ഈ ഉപകരണത്തിലുള്ള മറ്റ് ഉപയോക്താക്കളുടെ ഡാറ്റയും മായ്ക്കപ്പെടുന്നതാണ്.</string>
@@ -6090,6 +6118,7 @@ If the device has multiple users, using this shortcut on the lock screen tempora
     <string name="set_data_limit">ഡാറ്റാ പരിധി ക്രമീകരിക്കുക</string>
     <string name="data_limit">ഡാറ്റാ പരിധി</string>
     <string name="data_usage_template">%2$s കാലയളവിൽ %1$s ഉപയോഗിച്ചു</string>
+    <string name="data_usage_template_wifi">കഴിഞ്ഞ 30 ദിവസം %s ഉപയോഗിച്ചു</string>
     <string name="data_usage_other_apps">ബന്ധപ്പെട്ട ആപ്ലിക്കേഷനുകളെ ഉപയോഗത്തിൽ ഉൾപ്പെടുത്തിയിട്ടുണ്ട്</string>
     <string name="data_saver_title">ഡാറ്റാ സേവർ</string>
     <string name="unrestricted_data_saver">ഡാറ്റാ സേവർ ഓൺ ചെയ്തിരിക്കുന്ന സമയത്ത് ആപ്ലിക്കേഷനെ അനുവദിക്കുക</string>
@@ -6140,6 +6169,7 @@ If the device has multiple users, using this shortcut on the lock screen tempora
     <string name="legacy_dhcp_client_summary">പുതിയ Android DHCP ക്ലയന്റിനുപകരം Lollipop-ൽ നിന്ന് DHCP ക്ലയന്റ് ഉപയോഗിക്കുക.</string>
     <string name="screen_off_pocket_title">സ്ക്രീൻ ഓഫ് ആയി നിലനിര്‍ത്തുക</string>
     <string name="screen_off_pocket_summary">ഉപകരണം കീശയോ ബാഗോ പോലുള്ള ഒരു ഇരുണ്ട സ്ഥലത്ത് ആയിരിക്കുമ്പോൾ സ്ക്രീൻ ആകസ്മികമായി ഓൺ ചെയ്യപ്പെടുന്നത് തടയുക.</string>
+    <string name="noApplications">ഈ പ്രവൃത്തിയുമായി ബന്ധപ്പെട്ട എല്ലാ ആപ്ലിക്കേഷനുകളും അപ്രാപ്തമാക്കപ്പെട്ടു, തടയപ്പെട്ടു, അല്ലെങ്കിൽ ഇൻസ്റ്റാൾ ചെയ്തിട്ടില്ല.</string>
     <string name="confirm_reset_shortcut_manager_throttling_title">ഷോർട്ട്കട്ട് മാനേജർ റേറ്റ് ലിമിറ്റർ പുനഃക്രമീകരിക്കുക</string>
     <string name="confirm_reset_shortcut_manager_throttling_message">ഷോർട്ട്കട്ട് മാനേജർ റേറ്റ് ലിമിറ്റർ കൗണ്ടറുകൾ പുനഃക്രമീകരിക്കപ്പെടും.</string>
 </resources>

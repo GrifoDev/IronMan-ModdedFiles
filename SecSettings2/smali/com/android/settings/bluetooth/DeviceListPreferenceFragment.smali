@@ -505,7 +505,7 @@
 .method public onCreateView(Landroid/view/LayoutInflater;Landroid/view/ViewGroup;Landroid/os/Bundle;)Landroid/view/View;
     .locals 2
 
-    const v0, 0x7f040226
+    const v0, 0x7f040229
 
     const/4 v1, 0x0
 
@@ -752,7 +752,7 @@
 
     move-result-object v2
 
-    const v3, 0x7f0b14b1
+    const v3, 0x7f0b14c2
 
     invoke-virtual {v2, v3}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -760,7 +760,7 @@
 
     iput-object v2, v1, Lcom/android/settings/search/SearchIndexableRaw;->screenTitle:Ljava/lang/String;
 
-    const v2, 0x7f020262
+    const v2, 0x7f020260
 
     iput v2, v1, Lcom/android/settings/search/SearchIndexableRaw;->iconResId:I
 

@@ -502,7 +502,7 @@
 
     if-eqz v12, :cond_1c
 
-    const-string/jumbo v12, "assist_and_voice_input"
+    const-string/jumbo v12, "assist_and_voice_input_advanced"
 
     invoke-virtual {v10, v12}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
@@ -796,7 +796,7 @@
 
     invoke-virtual {v10, v12}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    const-string/jumbo v12, "assist_and_voice_input"
+    const-string/jumbo v12, "assist_and_voice_input_advanced"
 
     invoke-virtual {v10, v12}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
@@ -887,7 +887,7 @@
 
     iput-object v0, v2, Lcom/android/settings/search/SearchIndexableRaw;->keywords:Ljava/lang/String;
 
-    const v17, 0x7f0b04c3
+    const v17, 0x7f0b04c4
 
     move/from16 v0, v17
 
@@ -1413,7 +1413,7 @@
 
     iput-object v2, v1, Landroid/provider/SearchIndexableResource;->className:Ljava/lang/String;
 
-    const v2, 0x7f080141
+    const v2, 0x7f080143
 
     iput v2, v1, Landroid/provider/SearchIndexableResource;->xmlResId:I
 

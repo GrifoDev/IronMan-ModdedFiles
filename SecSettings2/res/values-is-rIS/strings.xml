@@ -170,6 +170,8 @@
     <string name="wifi_allow_scan_with_traffic_summary">Leyfa eða banna reikileit með Wi-Fi sem byggir sjálfvirkt á nýttu gagnamagni.</string>
     <string name="select_logd_size_title">Biðminni skráningar</string>
     <string name="select_logd_size_dialog_title">Velja hámarksstærð hverrar skráningar í biðminni</string>
+    <string name="dev_logpersist_clear_warning_title">Hreinsa geymslu fyrir stöðuga skráningu?</string>
+    <string name="dev_logpersist_clear_warning_message">Skráningarupplýsingum verður eytt þegar slökkt er á stöðugri skráningu.</string>
     <string name="select_logpersist_title">Vista skráningargögn stöðugt</string>
     <string name="select_logpersist_dialog_title">Velja biðminni til að vista stöðugt</string>
     <string name="select_usb_configuration_title">USB-grunnstilling</string>
@@ -983,6 +985,7 @@ Tengdu tækin tvö kunna að skila örlítið mismunandi hljóðúttaki."</strin
     <string name="bluetooth_avc_available_description">Tengda Bluetooth-tækið styður samstillingu hljóðstyrks efnisspilunar og hljóðstyrkur Bluetooth-tækisins verður samstilltur við símann þinn.</string>
     <string name="bluetooth_enter_pin_msg">Sláðu inn PIN-númer til að para við %s (prófaðu 0000 eða 1234).</string>
     <string name="bluetooth_pin_maximum_number_message">Hámarksfjölda stafa hefur verið náð.</string>
+    <string name="bluetooth_frp_permission_message">Ekki er hægt að nota Bluetooth-tæki í þessu símtali.</string>
     <string name="settings_menu_done">Lokið</string>
     <string name="usb_tethering_unavailable_subtext_tmo">USB not connected</string>
     <string name="usb_tethering_available_subtext_tmo">USB connected, check to tether</string>
@@ -1482,7 +1485,7 @@ Pikkaðu á Í LAGI til að gefa leyfi fyrir því að birtustig sé hækkað um
     <string name="navigationbar_pressure_sensitivity_title">Ýttu á heimahnappinn</string>
     <string name="navigationbar_pressure_sensitivity_summary">Notaðu heimahnappinn þegar hann er falinn með því að ýta á hann fastar en venjulega.</string>
     <string name="navigationbar_pressure_sensitivity_level_summary">Þrýstingsstig: %1$d af %2$d</string>
-    <string name="navigationbar_pressure_sensitivity_description_off">Notaðu heimahnappinn þegar hann er falinn með því að ýta á hann fastar en venjulega.</string>
+    <string name="navigationbar_pressure_sensitivity_description_off">Stilla þrýstinginn sem þarf til að ýta á heimahnappinn.</string>
     <string name="navigationbar_pressure_low">Minni</string>
     <string name="navigationbar_pressure_high">Meiri</string>
     <string name="navigationbar_hide_bar">Hnappur til að sýna og fela</string>
@@ -1621,7 +1624,7 @@ Pikkaðu á Í LAGI til að gefa leyfi fyrir því að birtustig sé hækkað um
     <string name="crypt_keeper_decrypt_title">Afkóða tæki</string>
     <string name="crypt_keeper_decrypt_summary">Tæki dulkóðað.</string>
     <string name="crypt_keeper_type_pin">PIN-númer</string>
-    <string name="crypt_keeper_type_pattern">Mynstur</string>
+    <string name="crypt_keeper_type_pattern">mynstur</string>
     <string name="crypt_keeper_type_password">Aðgangsorð</string>
     <string name="crypt_keeper_type_direction">Stefnulás</string>
     <string name="crypt_keeper_confirm_title_dec">Staðfesta afkóðun</string>
@@ -1705,7 +1708,11 @@ Dulkóðun tekur minnst klukkustund. Áður en hafist er handa skaltu tryggja a�
     <string name="crypt_keeper_confirm_title">Staðfesta dulkóðun</string>
     <string name="crypt_keeper_final_desc">Ekki er hægt að afturkalla dulkóðun tækisins og gögn glatast ef ferlið er truflað. Dulkóðun getur tekið klukkustund eða lengur. Á þeim tíma mun tækið endurræsa sig nokkrum sinnum og ekki er hægt að nota það.</string>
     <string name="crypt_keeper_setup_title">Dulkóða…</string>
-    <string name="crypt_keeper_warn_wipe">Þú átt %d tilraunir eftir til að ræsa tækið þitt áður en það verður endurstillt á sjálfgefnar grunnstillingar framleiðanda. Öllum gögnum verður eytt, þ.m.t. skrám og sóttum forritum.</string>
+    <string name="crypt_keeper_warn_wipe">"Þú átt %1$d tilraunir eftir áður en síminn er endurstilltur á sjálfgefnar grunnstillingar framleiðanda. Þetta eyðir öllum gögnum, þar með talið skrám og sóttum forritum.
+
+Ef síminn þinn er endurstilltur gætirðu þurft að slá inn upplýsingar %2$s (netfang og lykilorð) sem tengjast þessum síma til að geta notað hann aftur."</string>
+    <string name="crypt_keeper_samsung_account">Samsung account</string>
+    <string name="crypt_keeper_google_account">Google-reikningar</string>
     <string name="crypt_keeper_failed_title">Dulkóðun mistókst</string>
     <string name="crypt_keeper_failed_summary">Ekki er hægt að ræsa tækið. Dulkóðunarferlið var rofið. Þú þarft að endurstilla tækið á sjálfgefnar grunnstillingar framleiðanda. Öllum gögnunum þínum verður eytt.</string>
     <string name="crypt_keeper_data_corrupted_title">Geymsla tækis skemmd</string>
@@ -1724,10 +1731,13 @@ Dulkóðun tekur minnst klukkustund. Áður en hafist er handa skaltu tryggja a�
     <string name="cryptkeeper_wrong_pin">Rangt PIN-númer slegið inn</string>
     <string name="cryptkeeper_wrong_direction">Röng stefna dregin</string>
     <string name="checking_decryption">Verið er að sannreyna…</string>
-    <string name="crypt_keeper_last_warn_wipe">Þú átt aðeins 1 tilraun eftir til að ræsa tækið þitt áður en það verður endurstillt á sjálfgefnar grunnstillingar framleiðanda. Öllum gögnum verður eytt, þ.m.t. skrám og sóttum forritum.</string>
+    <string name="crypt_keeper_last_warn_wipe">"Þú átt 1 tilraun eftir áður en síminn er endurstilltur á sjálfgefnar grunnstillingar framleiðanda. Þetta eyðir öllum gögnum, þar með talið skrám og sóttum forritum.
+
+Ef síminn þinn er endurstilltur gætirðu þurft að slá inn upplýsingar %s (netfang og lykilorð) sem tengjast þessum síma til að geta notað hann aftur."</string>
     <string name="crypt_keeper_failed_title_dec">Dulráðning mistókst.</string>
     <string name="crypt_keeper_failed_summary_dec">Ekki tókst að ljúka við afkóðun vegna truflunar. Núllstilltu (eyða öllum gögnum) fyrir notkun.</string>
     <string name="crypt_keeper_set_screen_lock_type">Velja gerð skjáláss</string>
+    <string name="crypt_keeper_warning_keyboard_cover_does_not_work">Lyklaborðshlífin virkar ekki eftir að síminn er endurræstur.</string>
     <string name="encryption_interstitial_message">"Þú getur varið símann enn frekar með því að krefjast þess að %s sé slegið inn áður en hann er ræstur. Þetta ver gögn í símum sem hafa týnst eða hefur verið stolið. Sum forrit krefjast öruggrar ræsingar, allt eftir dulkóðunarreglum tækis, til að hægt sé að komast í eiginleika, s.s. samstillingu tölvupósts.
 
 Þú getur ekki tekið á móti símtölum, skilaboðum eða tilkynningum og engir vekjarar hringja fyrr en síminn hefur verið ræstur."</string>
@@ -1972,6 +1982,12 @@ You will also need it when:"</string>
     <string name="lockpassword_confirm_your_pin_with_fingerprint">Notaðu fingrafar eða sláðu inn núverandi PIN-númer.</string>
     <string name="lockpassword_confirm_your_pattern_with_fingerprint">Notaðu fingrafar eða teiknaðu núverandi mynstur.</string>
     <string name="lockpassword_confirm_your_password_with_fingerprint">Notaðu fingrafar eða sláðu inn núverandi lykilorð.</string>
+    <string name="lockpassword_confirm_your_pin_with_iris">Notaðu augnskanna eða sláðu inn núverandi PIN-númer.</string>
+    <string name="lockpassword_confirm_your_pattern_with_iris">Notaðu augnskanna eða teiknaðu núverandi mynstur.</string>
+    <string name="lockpassword_confirm_your_password_with_iris">Notaðu augnskanna eða sláðu inn núverandi lykilorð.</string>
+    <string name="lockpassword_confirm_your_pin_with_biometrics">Notaðu lífkenni eða sláðu inn PIN-númerið þitt.</string>
+    <string name="lockpassword_confirm_your_pattern_with_biometrics">Notaðu lífkenni eða teiknaðu mynstrið þitt.</string>
+    <string name="lockpassword_confirm_your_password_with_biometrics">Notaðu lífkenni eða sláðu inn lykilorðið þitt.</string>
     <string name="lockpassword_confirm_your_pin_instead_of_fingerprint">Sláðu inn PIN-númer í stað þess að nota fingrafarakennsl.</string>
     <string name="lockpassword_confirm_your_pattern_instead_of_fingerprint">Teiknaðu mynstur í stað þess að nota fingrafarakennsl.</string>
     <string name="lockpassword_confirm_your_password_instead_of_fingerprint">Sláðu inn lykilorð í stað þess að nota fingrafarakennsl.</string>
@@ -2047,6 +2063,7 @@ lykilorð"</string>
     <string name="face_status_timeout">Tengitími er útrunninn. Reyndu aftur síðar.</string>
     <string name="okay">Í lagi</string>
     <string name="face_samsung_account_button">Nota Samsung account</string>
+    <string name="face_galaxy_account_button">Nota Galaxy-reikning</string>
     <string name="face_error_DB_corrupted">Upp kom vandamál með andlitsgögnin þín. Skráðu andlitið á þér aftur.</string>
     <string name="face_error_DB_corrupted_popup_title">Skráðu andlitið þitt aftur</string>
     <string name="face_error_timeout">Andlitið þitt var ekki greint.</string>
@@ -2158,7 +2175,7 @@ Kveiktu á lithimnuopnun til að nota lífkenni eða %s til að taka símann úr
     <string name="biometrics_backup_locktype_title">Setja upp lithimnuöryggi</string>
     <string name="biometrics_register_your_iris">Skráðu lithimnurnar þínar.</string>
     <string name="biometrics_backup_locktype_summary">Ef þú vilt nota lithimnur til að opna tækið þarftu að velja mynstur, PIN-númer eða lykilorð.</string>
-    <string name="biometrics_backup_locktype_message">Til að nota augnskanna til að taka símann úr lás eða fyrir örugga staðfestingu þarftu að:</string>
+    <string name="biometrics_backup_locktype_message">Til að nota augnskanna til að taka símann úr lás eða staðfesta hver þú ert í forritum þarftu að:</string>
     <string name="iris_delete_popup_title">Viltu fjarlægja lithimnugögn?</string>
     <string name="iris_delete_popup_message">Viltu fjarlægja lithimnugögn?</string>
     <string name="iris_delete_popup_message_with_related_func">Slökkt verður á eiginleikum sem nota lithimnur.</string>
@@ -2234,6 +2251,9 @@ Veldu hvernig þú vilt opna símann. Ekki er hægt að nota opnun með augnskan
     <string name="biometrics_dex_cant_use_msg">Ekki er hægt að nota %s í Samsung DeX.</string>
     <string name="biometrics_dex_closed_to_switch">%s lokað til að skipta yfir í Samsung DeX.</string>
     <string name="biometircs_dex_cant_use_toast">Ekki er hægt að keyra „%s“ í Samsung DeX. Prófaðu að keyra það í símastillingu.</string>
+    <string name="iris_guide_text_preview">Líttu til að nota augu</string>
+    <string name="iris_guide_enable_toggle">Pikkaðu til að nota lithimnur</string>
+    <string name="iris_cannot_verify">Ekki tókst að staðfesta augun</string>
     <string name="knox_twofactor_bio_description">Veldu lífkennilásgerð og aðra lásgerð til að opna %s.</string>
     <string name="fingerprint_registered">Skráð fingraför verða notuð með valinni opnunaraðferð.</string>
     <string name="knox_twofactor_description">Veldu lífkennin þín og aðra lásgerð til að opna %s.</string>
@@ -3096,6 +3116,7 @@ Reynið aftur."</string>
     <string name="easy_mode_app_help">Notaðu tækið á auðveldari hátt með einfölduðu útliti heimaskjás og stærri atriðum á skjánum.</string>
     <string name="easy_mode_app_help_dream_1">Nota einfalt útlit heimaskjás og stærri atriði á skjánum.</string>
     <string name="easy_mode_app_help_dream_2">Öllum sérstillingum fyrir heimaskjáinn verður fleygt og aðdráttur skjásins verður stilltur í hámark.</string>
+    <string name="easy_mode_app_help_3rd_launcher">Notaðu einfalda útgáfu til að fá stærri atriði á skjáinn. Ef þú ert ekki að nota TouchWiz-heimaskjá verður útliti heimaskjásins ekki breytt en aðdráttur á skjánum verður stilltur á „stórt“ og leturstærðin verður stillt á „miðlungs“.</string>
     <string name="security_warning_content">Þú getur varið persónuupplýsingarnar þínar með því að stilla aðgangsorð, PIN-númer eða mynstur til að opna skjáinn</string>
     <string name="lock_setting_weather_desc">Pikkaðu á VEÐURSTILLINGAR hér að neðan til að skoða eða breyta veðurstillingum.</string>
     <string name="lock_setting_weather_btn">Veðurstillingar</string>
@@ -3949,7 +3970,7 @@ Notkun farsímaaðgangsstaðar gengur hraðar á rafhlöðuna og eykur gagnanotk
     <string name="wfd_descrpition_playsound">Spila hljóð.</string>
     <string name="wfd_is_not_supported">Þessi eiginleiki er ekki studdur.</string>
     <string name="usbtethering_notify_wifi_is_on_title">Viltu slökkva á Wi-Fi?</string>
-    <string name="usbtethering_notify_wifi_is_on">Ekki er hægt að hafa kveikt á bæði Wi-Fi og USB-tjóðrun samtímis. Slökkva á Wi-Fi.</string>
+    <string name="usbtethering_notify_wifi_is_on">Ekki er hægt að hafa kveikt á Wi-Fi og USB-tjóðrun samtímis. Slökkt verður á Wi-Fi.</string>
     <string name="disable_multi_window_dialog_text">Slökkt verður á mörgum gluggum og öllum opnum forritum í sprettigluggum verður lokað.</string>
     <string name="keyguard_password_attempt_count_pin_code">%d tilraun eftir.</string>
     <string name="keyguard_password_attempts_count_pin_code">%d tilraunir eftir.</string>
@@ -4157,6 +4178,7 @@ Móttaka SMS-skilaboða"</string>
     <string name="hdmi_mode_title">HDMI-stilling</string>
     <string name="hdmi_mode_dex">Samsung DeX</string>
     <string name="hdmi_mode_mirroring">Screen Mirroring</string>
+    <string name="hdmi_mode_not_available_while_cover_attached">%s er ekki í boði þegar hulstur er fest á.</string>
     <string name="screen_timeout_for_dex">Tímalokun skjás f. Samsung DeX</string>
     <string name="show_virtual_keyboard_for_dex">Sýna skjályklaborðið í Samsung DeX</string>
     <string name="comma">,</string>
@@ -4466,7 +4488,7 @@ Hægt er að breyta þessu síðar í stillingum Bluetooth."</string>
     <string name="date_picker_title">Dagsetning</string>
     <string name="time_picker_title">Tími</string>
     <string name="lock_after_timeout">Sjálfvirk læsing</string>
-    <string name="lock_after_timeout_summary">Tími sem líður þar til skjá er læst eftir að slokknar á honum sjálfkrafa: %s.</string>
+    <string name="lock_after_timeout_summary">Læsa símanum sjálfkrafa %s eftir að slokknar á skjánum.</string>
     <string name="lock_after_timeout_summary_with_exception">Læsa skjá þegar %1$s hafa liðið frá því að slökkt var á honum sjálfkrafa, nema þegar %2$s heldur tækinu opnu.</string>
     <string name="show_owner_info_on_lockscreen_label">Sýna upplýsingar um eiganda tækisins á lásskjánum.</string>
     <string name="owner_info_settings_title">Upplýsingar um eiganda</string>
@@ -4614,6 +4636,8 @@ Til að bæta nákvæmni staðsetningar kunna forrit og þjónusta að leita að
     <string name="wifi_empty_list_user_restricted">Þú hefur ekki heimild til að breyta Wi-Fi-stillingum.</string>
     <string name="wifi_setup_wps">Sjálfvirk uppsetning (WPS)</string>
     <string name="wifi_show_advanced">Sýna fleiri valkosti</string>
+    <string name="wifi_advanced_toggle_description_expanded">Pikkaðu tvisvar til að fella saman.</string>
+    <string name="wifi_advanced_toggle_description_collapsed">Pikkaðu tvisvar til að stækka.</string>
     <string name="wifi_wps_setup_title">WPS uppsetning</string>
     <string name="wifi_wps_setup_msg">Ræsi WPS…</string>
     <string name="wifi_wps_onstart_pbc">Pikkaðu á hnappinn fyrir örugga uppsetningu Wi-Fi á beininum þínum. Hann getur verið kallaður WPS eða haft þetta tákn:</string>
@@ -4645,6 +4669,10 @@ Til að bæta nákvæmni staðsetningar kunna forrit og þjónusta að leita að
     <string name="wifi_shared">Deilt</string>
     <string name="wifi_unchanged">(óbreytt)</string>
     <string name="wifi_unspecified">(Ótilgreint)</string>
+    <string name="wifi_select_cert">Velja vottorð</string>
+    <string name="wifi_do_not_provide_eap_user_cert">Ekki gefa upp</string>
+    <string name="wifi_do_not_validate_eap_server">Ekki staðfesta</string>
+    <string name="wifi_do_not_validate_eap_server_warning">Ekkert vottorð tilgreint. Tengingin þín verður ekki lokuð.</string>
     <string name="wifi_scan_always_turnon_message">%s biður um heimild til að leita að Wi-Fi netum, jafnvel þótt slökkt sé á Wi-Fi, m.a. til að bæta nákvæmni staðsetningar. Á að leyfa þetta fyrir öll forrit?</string>
     <string name="wifi_scan_always_confirm_allow">Leyfa</string>
     <string name="wifi_scan_always_confirm_deny">Hafna</string>
@@ -4977,9 +5005,9 @@ Forrit sem eru flutt út á þessa staðsetningu kunna að keyra hægar og gagna
     <string name="restore_default_apn_completed">APN-stillingar endurstilltar á sjálfgefnar.</string>
     <string name="reset_network_desc">Þetta endurstillir allar netstillingar, þ.m.t. stillingar fyrir:</string>
     <string name="reset_network_button_text">Núllstillingar</string>
-    <string name="reset_network_final_desc">Allar tengistillingar verða endurstilltar. Ekki er hægt að afturkalla þessa aðgerð.</string>
+    <string name="reset_network_final_desc">Allar netstillingar verða endurstilltar. Ekki er hægt að afturkalla þessa aðgerð.</string>
     <string name="reset_network_final_button_text">Núllstillingar</string>
-    <string name="reset_network_complete_toast">Tengistillingar endurstilltar.</string>
+    <string name="reset_network_complete_toast">Endurstilling netstillinga.</string>
     <string name="master_clear_title">Núllstilla símann</string>
     <string name="master_clear_accounts">Þú ert skráð(ur) inn á eftirfarandi reikninga eins og er:</string>
     <string name="master_clear_other_users_present">Gögnum sem tilheyra öðrum notendum þessa tækis verður einnig eytt.</string>
@@ -6092,6 +6120,7 @@ Hvaða notandi sem er getur samþykkt uppfærðar forritsheimildir fyrir hönd a
     <string name="set_data_limit">Velja gagnamörk</string>
     <string name="data_limit">Gagnamörk</string>
     <string name="data_usage_template">%1$s notuð %2$s</string>
+    <string name="data_usage_template_wifi">%s notuð síðastliðna 30 daga</string>
     <string name="data_usage_other_apps">Forrit innifalin í notkun</string>
     <string name="data_saver_title">Gagnasparnaður</string>
     <string name="unrestricted_data_saver">Leyfa forrit í gagnasparnaði</string>
@@ -6142,6 +6171,7 @@ Hvaða notandi sem er getur samþykkt uppfærðar forritsheimildir fyrir hönd a
     <string name="legacy_dhcp_client_summary">Nota gamla DHCP-biðlarann úr Lollipop í staðinn fyrir nýja Android DHCP-biðlarann.</string>
     <string name="screen_off_pocket_title">Áfram slökkt á skjánum</string>
     <string name="screen_off_pocket_summary">Komdu í veg fyrir að kvikni óvart á skjánum þegar tækið er á dimmum stað t.d. vasa eða tösku.</string>
+    <string name="noApplications">Öll forrit sem tengjast þessari aðgerð hafa verið gerð óvirk, þau útilokuð eða ekki sett upp.</string>
     <string name="confirm_reset_shortcut_manager_throttling_title">Endurstilla hraðatakmarkara flýtileiðastjórnunar</string>
     <string name="confirm_reset_shortcut_manager_throttling_message">Teljarar hraðatakmarkara flýtileiðastjórnunar verða endurstilltir.</string>
 </resources>

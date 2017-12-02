@@ -29,7 +29,7 @@
 
     move-result v1
 
-    const v2, 0x7f1103c8
+    const v2, 0x7f1103ca
 
     if-ne v1, v2, :cond_0
 
@@ -56,15 +56,15 @@
 
     invoke-super {p0, p1}, Lcom/android/settings/fingerprint/FingerprintEnrollBase;->onCreate(Landroid/os/Bundle;)V
 
-    const v4, 0x7f040115
+    const v4, 0x7f040116
 
     invoke-virtual {p0, v4}, Lcom/android/settings/fingerprint/FingerprintEnrollFinish;->setContentView(I)V
 
-    const v4, 0x7f0b143a
+    const v4, 0x7f0b144b
 
     invoke-virtual {p0, v4}, Lcom/android/settings/fingerprint/FingerprintEnrollFinish;->setHeaderText(I)V
 
-    const v4, 0x7f1103c8
+    const v4, 0x7f1103ca
 
     invoke-virtual {p0, v4}, Lcom/android/settings/fingerprint/FingerprintEnrollFinish;->findViewById(I)Landroid/view/View;
 

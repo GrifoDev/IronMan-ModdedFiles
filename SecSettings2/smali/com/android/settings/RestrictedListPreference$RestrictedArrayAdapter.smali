@@ -35,9 +35,9 @@
 
     iput-object p1, p0, Lcom/android/settings/RestrictedListPreference$RestrictedArrayAdapter;->this$0:Lcom/android/settings/RestrictedListPreference;
 
-    const v0, 0x7f04027a
+    const v0, 0x7f04027d
 
-    const v1, 0x7f110707
+    const v1, 0x7f110709
 
     invoke-direct {p0, p2, v0, v1, p3}, Landroid/widget/ArrayAdapter;-><init>(Landroid/content/Context;II[Ljava/lang/Object;)V
 
@@ -73,7 +73,7 @@
 
     check-cast v0, Ljava/lang/CharSequence;
 
-    const v6, 0x7f110707
+    const v6, 0x7f110709
 
     invoke-virtual {v2, v6}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -81,7 +81,7 @@
 
     check-cast v3, Landroid/widget/CheckedTextView;
 
-    const v6, 0x7f110708
+    const v6, 0x7f11070a
 
     invoke-virtual {v2, v6}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 

@@ -240,7 +240,7 @@
 .method protected onPostExecute(Ljava/lang/Integer;)V
     .locals 7
 
-    const v6, 0x7f1104f5
+    const v6, 0x7f1104f7
 
     const/4 v5, 0x0
 
@@ -275,13 +275,13 @@
 
     iget-object v3, p0, Lcom/samsung/android/settings/wifi/WifiConfigControllerBase$5;->val$group:Landroid/view/ViewGroup;
 
-    const v4, 0x7f0403bb
+    const v4, 0x7f0403be
 
     invoke-virtual {v2, v4, v3, v5}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;Z)Landroid/view/View;
 
     move-result-object v1
 
-    const v2, 0x7f1102a4
+    const v2, 0x7f1102a6
 
     invoke-virtual {v1, v2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 

@@ -1530,7 +1530,7 @@
 
     aput-object v31, v35, v36
 
-    const v36, 0x7f0b1a96
+    const v36, 0x7f0b1aa8
 
     move-object/from16 v0, v34
 
@@ -1661,7 +1661,7 @@
 
     iget-object v4, v3, Landroid/accounts/Account;->name:Ljava/lang/String;
 
-    const v3, 0x7f0b1a87
+    const v3, 0x7f0b1a99
 
     move-object v5, p0
 
@@ -1737,7 +1737,7 @@
 
     move-result-object v6
 
-    const v7, 0x7f0b1416
+    const v7, 0x7f0b1427
 
     invoke-direct {v5, p0, v6, v7}, Lcom/android/settings/accounts/ManageAccountsSettings$FragmentStarter;-><init>(Lcom/android/settings/accounts/ManageAccountsSettings;Ljava/lang/String;I)V
 
@@ -2084,7 +2084,7 @@
 
     const/4 v3, 0x0
 
-    const v2, 0x7f04019d
+    const v2, 0x7f04019e
 
     invoke-virtual {p1, v2, p2, v3}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;Z)Landroid/view/View;
 

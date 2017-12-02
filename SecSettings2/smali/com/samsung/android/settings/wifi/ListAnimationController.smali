@@ -197,7 +197,7 @@
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    const v0, 0x7f040353
+    const v0, 0x7f040356
 
     iput v0, p0, Lcom/samsung/android/settings/wifi/ListAnimationController;->mLayoutResId:I
 
@@ -1746,7 +1746,7 @@
 .method public createView(Landroid/view/LayoutInflater;Landroid/view/ViewGroup;Landroid/os/Bundle;ZZ)Landroid/view/View;
     .locals 3
 
-    const v1, 0x7f040353
+    const v1, 0x7f040356
 
     const/4 v2, 0x0
 
@@ -1754,7 +1754,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f110829
+    const v1, 0x7f11082b
 
     invoke-virtual {v0, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -1764,7 +1764,7 @@
 
     iput-object v1, p0, Lcom/samsung/android/settings/wifi/ListAnimationController;->mListView:Landroid/widget/ListView;
 
-    const v1, 0x7f110828
+    const v1, 0x7f11082a
 
     invoke-virtual {v0, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -1988,7 +1988,7 @@
     :cond_2
     iget-object v2, p0, Lcom/samsung/android/settings/wifi/ListAnimationController;->mListView:Landroid/widget/ListView;
 
-    const v3, 0x7f040384
+    const v3, 0x7f040387
 
     invoke-virtual {v0, v3, v2, v6}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;Z)Landroid/view/View;
 

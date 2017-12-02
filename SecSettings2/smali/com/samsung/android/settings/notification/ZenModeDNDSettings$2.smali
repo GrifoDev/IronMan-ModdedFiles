@@ -156,9 +156,9 @@
         }
     .end annotation
 
-    const v6, 0x7f0b1ce5
+    const v6, 0x7f0b1cf7
 
-    const v5, 0x7f0b1ce4
+    const v5, 0x7f0b1cf6
 
     new-instance v2, Ljava/util/ArrayList;
 
@@ -168,7 +168,7 @@
 
     move-result-object v1
 
-    const v4, 0x7f0b0beb
+    const v4, 0x7f0b0bf9
 
     invoke-virtual {v1, v4}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -251,7 +251,7 @@
 
     iput-object v1, v0, Landroid/provider/SearchIndexableResource;->className:Ljava/lang/String;
 
-    const v1, 0x7f08016a
+    const v1, 0x7f08016c
 
     iput v1, v0, Landroid/provider/SearchIndexableResource;->xmlResId:I
 

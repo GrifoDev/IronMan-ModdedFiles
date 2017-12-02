@@ -1372,7 +1372,7 @@
 .method protected getHelpResource()I
     .locals 1
 
-    const v0, 0x7f0b1bb9
+    const v0, 0x7f0b1bcb    # 1.84907E38f
 
     return v0
 .end method
@@ -1633,7 +1633,7 @@
 
     iput-object v0, v1, Lcom/samsung/android/settings/WirelessSettings;->mContext:Landroid/content/Context;
 
-    const v35, 0x7f0800fb
+    const v35, 0x7f0800fd
 
     move-object/from16 v0, p0
 
@@ -1785,7 +1785,7 @@
 
     move-object/from16 v35, v0
 
-    const v36, 0x7f0b1cf7
+    const v36, 0x7f0b1d09
 
     invoke-virtual/range {v35 .. v36}, Landroid/preference/PreferenceScreen;->setSummary(I)V
 
@@ -1795,7 +1795,7 @@
 
     move-object/from16 v35, v0
 
-    const v36, 0x7f0b1cf7
+    const v36, 0x7f0b1d09
 
     invoke-virtual/range {v35 .. v36}, Landroid/preference/PreferenceScreen;->setSummary(I)V
 
@@ -2523,7 +2523,7 @@
 
     move-object/from16 v35, v0
 
-    const v36, 0x7f0b0dba
+    const v36, 0x7f0b0dc9
 
     invoke-virtual/range {v35 .. v36}, Landroid/preference/Preference;->setSummary(I)V
 
@@ -3719,7 +3719,7 @@
 
     move-result-object v36
 
-    const v37, 0x7f080151
+    const v37, 0x7f080153
 
     const/16 v38, 0x0
 
@@ -4028,7 +4028,7 @@
 
     check-cast v20, Landroid/preference/PreferenceScreen;
 
-    const v35, 0x7f0b0e0f
+    const v35, 0x7f0b0e1e
 
     move-object/from16 v0, v20
 
@@ -4242,7 +4242,13 @@
 .end method
 
 .method public onPreferenceChange(Landroid/preference/Preference;Ljava/lang/Object;)Z
-    .locals 3
+    .locals 7
+
+    const v6, 0x7f0b11f2
+
+    const/4 v5, 0x1
+
+    const/4 v4, 0x0
 
     const-string/jumbo v0, "hdmi_mode"
 
@@ -4254,8 +4260,105 @@
 
     move-result v0
 
+    if-eqz v0, :cond_1
+
+    invoke-virtual {p0}, Lcom/samsung/android/settings/WirelessSettings;->getContentResolver()Landroid/content/ContentResolver;
+
+    move-result-object v0
+
+    const-string/jumbo v1, "mirroring_switch_disabled"
+
+    invoke-static {v0, v1, v4}, Lcom/android/settings/Utils;->getBooleanFromDeXSettings(Landroid/content/ContentResolver;Ljava/lang/String;Z)Z
+
+    move-result v0
+
     if-eqz v0, :cond_0
 
+    iget-object v0, p0, Lcom/samsung/android/settings/WirelessSettings;->mContext:Landroid/content/Context;
+
+    invoke-virtual {v0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
+
+    move-result-object v0
+
+    invoke-virtual {v0, v6}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
+
+    move-result-object v1
+
+    iget-object v0, p0, Lcom/samsung/android/settings/WirelessSettings;->mHdmiModePreference:Lcom/android/settings/SecDropDownPreference;
+
+    invoke-virtual {v0}, Lcom/android/settings/SecDropDownPreference;->getEntries()[Ljava/lang/CharSequence;
+
+    move-result-object v2
+
+    move-object v0, p2
+
+    check-cast v0, Ljava/lang/String;
+
+    invoke-static {v0}, Ljava/lang/Integer;->valueOf(Ljava/lang/String;)Ljava/lang/Integer;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/lang/Integer;->intValue()I
+
+    move-result v0
+
+    aget-object v0, v2, v0
+
+    invoke-interface {v0}, Ljava/lang/CharSequence;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-virtual {v1, v0}, Ljava/lang/String;->equalsIgnoreCase(Ljava/lang/String;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    iget-object v0, p0, Lcom/samsung/android/settings/WirelessSettings;->mHdmiModePreference:Lcom/android/settings/SecDropDownPreference;
+
+    iget-object v1, p0, Lcom/samsung/android/settings/WirelessSettings;->mHdmiModePreference:Lcom/android/settings/SecDropDownPreference;
+
+    const-string/jumbo v2, "0"
+
+    invoke-virtual {v1, v2}, Lcom/android/settings/SecDropDownPreference;->findIndexOfValue(Ljava/lang/String;)I
+
+    move-result v1
+
+    invoke-virtual {v0, v1}, Lcom/android/settings/SecDropDownPreference;->setValueIndex(I)V
+
+    iget-object v0, p0, Lcom/samsung/android/settings/WirelessSettings;->mContext:Landroid/content/Context;
+
+    invoke-virtual {p0}, Lcom/samsung/android/settings/WirelessSettings;->getResources()Landroid/content/res/Resources;
+
+    move-result-object v1
+
+    new-array v2, v5, [Ljava/lang/Object;
+
+    invoke-virtual {p0}, Lcom/samsung/android/settings/WirelessSettings;->getResources()Landroid/content/res/Resources;
+
+    move-result-object v3
+
+    invoke-virtual {v3, v6}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
+
+    move-result-object v3
+
+    aput-object v3, v2, v4
+
+    const v3, 0x7f0b11f3
+
+    invoke-virtual {v1, v3, v2}, Landroid/content/res/Resources;->getString(I[Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-static {v0, v1, v4}, Landroid/widget/Toast;->makeText(Landroid/content/Context;Ljava/lang/CharSequence;I)Landroid/widget/Toast;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Landroid/widget/Toast;->show()V
+
+    return v5
+
+    :cond_0
     invoke-virtual {p0}, Lcom/samsung/android/settings/WirelessSettings;->getContentResolver()Landroid/content/ContentResolver;
 
     move-result-object v1
@@ -4276,7 +4379,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f0f0410
+    const v2, 0x7f0f040f
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getInteger(I)I
 
@@ -4284,10 +4387,8 @@
 
     invoke-static {v0, v1, p2}, Lcom/android/settings/Utils;->insertEventwithDetailLog(Landroid/content/Context;ILjava/lang/Object;)V
 
-    :cond_0
-    const/4 v0, 0x1
-
-    return v0
+    :cond_1
+    return v5
 .end method
 
 .method public onPreferenceTreeClick(Landroid/preference/PreferenceScreen;Landroid/preference/Preference;)Z
@@ -4614,7 +4715,7 @@
 
     move-object/from16 v19, v0
 
-    const v20, 0x7f0b10cb
+    const v20, 0x7f0b10da
 
     invoke-virtual/range {v19 .. v20}, Landroid/preference/PreferenceScreen;->setSummary(I)V
 
@@ -4978,7 +5079,7 @@
 
     move-object/from16 v19, v0
 
-    const v20, 0x7f0b1cf7
+    const v20, 0x7f0b1d09
 
     invoke-virtual/range {v19 .. v20}, Landroid/preference/PreferenceScreen;->setSummary(I)V
 
@@ -5014,7 +5115,7 @@
 
     if-eqz v19, :cond_16
 
-    const v19, 0x7f0b1cf6
+    const v19, 0x7f0b1d08
 
     :goto_6
     move/from16 v0, v19
@@ -5128,7 +5229,7 @@
 
     move-object/from16 v19, v0
 
-    const v20, 0x7f0b10cc
+    const v20, 0x7f0b10db
 
     invoke-virtual/range {v19 .. v20}, Landroid/preference/PreferenceScreen;->setSummary(I)V
 
@@ -5224,7 +5325,7 @@
     goto :goto_8
 
     :cond_16
-    const v19, 0x7f0b1cf7
+    const v19, 0x7f0b1d09
 
     goto/16 :goto_6
 

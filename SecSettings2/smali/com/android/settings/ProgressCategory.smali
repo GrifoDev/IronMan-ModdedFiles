@@ -35,7 +35,7 @@
 
     iput-boolean v0, p0, Lcom/android/settings/ProgressCategory;->mDivider:Z
 
-    const v0, 0x7f04022e
+    const v0, 0x7f040231
 
     invoke-virtual {p0, v0}, Lcom/android/settings/ProgressCategory;->setLayoutResource(I)V
 
@@ -69,7 +69,7 @@
 
     iput-boolean v0, p0, Lcom/android/settings/ProgressCategory;->mDivider:Z
 
-    const v0, 0x7f04022e
+    const v0, 0x7f040231
 
     invoke-virtual {p0, v0}, Lcom/android/settings/ProgressCategory;->setLayoutResource(I)V
 
@@ -93,7 +93,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f110670
+    const v2, 0x7f110672
 
     invoke-virtual {p1, v2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 

@@ -74,7 +74,7 @@
 
     if-nez v0, :cond_0
 
-    const v0, 0x7f0400e2
+    const v0, 0x7f0400e3
 
     invoke-virtual {p0, v0}, Lcom/samsung/android/settings/SettingsListPreference;->setDialogLayoutResource(I)V
 
@@ -229,7 +229,7 @@
     return-void
 
     :cond_0
-    const v1, 0x7f1102df
+    const v1, 0x7f1102e1
 
     invoke-virtual {p2, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -253,12 +253,12 @@
 
     if-eqz v1, :cond_1
 
-    const v1, 0x7f020110
+    const v1, 0x7f02010e
 
     invoke-virtual {v8, v1}, Landroid/widget/LinearLayout;->setBackgroundResource(I)V
 
     :cond_1
-    const v1, 0x7f1102e0
+    const v1, 0x7f1102e2
 
     invoke-virtual {p2, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -289,7 +289,7 @@
     invoke-virtual {v11, v1}, Landroid/widget/Toolbar;->setTitle(Ljava/lang/CharSequence;)V
 
     :cond_2
-    const v1, 0x7f110267
+    const v1, 0x7f110269
 
     invoke-virtual {p2, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 

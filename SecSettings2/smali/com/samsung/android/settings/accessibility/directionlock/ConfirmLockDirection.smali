@@ -1366,7 +1366,7 @@
 .method private initializing()V
     .locals 3
 
-    const v1, 0x7f040082
+    const v1, 0x7f040083
 
     invoke-virtual {p0, v1}, Lcom/samsung/android/settings/accessibility/directionlock/ConfirmLockDirection;->setContentView(I)V
 
@@ -1632,7 +1632,7 @@
 
     iget v3, p0, Lcom/samsung/android/settings/accessibility/directionlock/ConfirmLockDirection;->STEP_CIRCLE_SIZE:I
 
-    const v4, 0x7f02012c
+    const v4, 0x7f02012a
 
     invoke-virtual {v0, v1, v4, v2, v3}, Lcom/samsung/android/settings/accessibility/directionlock/DirectionLockSettingsHelper;->getBitmapFromResource(Landroid/content/res/Resources;III)Landroid/graphics/Bitmap;
 
@@ -1654,7 +1654,7 @@
 
     iget v3, p0, Lcom/samsung/android/settings/accessibility/directionlock/ConfirmLockDirection;->STEP_CIRCLE_SIZE:I
 
-    const v4, 0x7f02012f
+    const v4, 0x7f02012d
 
     invoke-virtual {v0, v1, v4, v2, v3}, Lcom/samsung/android/settings/accessibility/directionlock/DirectionLockSettingsHelper;->getBitmapFromResource(Landroid/content/res/Resources;III)Landroid/graphics/Bitmap;
 
@@ -1676,7 +1676,7 @@
 
     iget v3, p0, Lcom/samsung/android/settings/accessibility/directionlock/ConfirmLockDirection;->STEP_CIRCLE_SIZE:I
 
-    const v4, 0x7f02012d
+    const v4, 0x7f02012b
 
     invoke-virtual {v0, v1, v4, v2, v3}, Lcom/samsung/android/settings/accessibility/directionlock/DirectionLockSettingsHelper;->getBitmapFromResource(Landroid/content/res/Resources;III)Landroid/graphics/Bitmap;
 
@@ -1698,7 +1698,7 @@
 
     iget v3, p0, Lcom/samsung/android/settings/accessibility/directionlock/ConfirmLockDirection;->STEP_CIRCLE_SIZE:I
 
-    const v4, 0x7f02012e
+    const v4, 0x7f02012c
 
     invoke-virtual {v0, v1, v4, v2, v3}, Lcom/samsung/android/settings/accessibility/directionlock/DirectionLockSettingsHelper;->getBitmapFromResource(Landroid/content/res/Resources;III)Landroid/graphics/Bitmap;
 
@@ -1711,7 +1711,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f0200ec
+    const v1, 0x7f0200ea
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 
@@ -1723,7 +1723,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f0200eb
+    const v1, 0x7f0200e9
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 
@@ -2432,7 +2432,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f0f0373
+    const v1, 0x7f0f0372
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getInteger(I)I
 
@@ -2486,7 +2486,7 @@
 
     iput-object v0, p0, Lcom/samsung/android/settings/accessibility/directionlock/ConfirmLockDirection;->mRightButton:Landroid/widget/Button;
 
-    const v0, 0x7f1101fb
+    const v0, 0x7f1101fd
 
     invoke-virtual {p0, v0}, Lcom/samsung/android/settings/accessibility/directionlock/ConfirmLockDirection;->findViewById(I)Landroid/view/View;
 
@@ -2822,7 +2822,7 @@
 
     if-eqz p1, :cond_0
 
-    const v0, 0x7f0b0856
+    const v0, 0x7f0b085a
 
     invoke-virtual {p0, v0}, Lcom/samsung/android/settings/accessibility/directionlock/ConfirmLockDirection;->getString(I)Ljava/lang/String;
 

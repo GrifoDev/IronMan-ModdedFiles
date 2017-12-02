@@ -299,7 +299,7 @@
 
     iget-object v4, p0, Lcom/samsung/android/settings/datausage/DataUsageReminderActivity;->mInflater:Landroid/view/LayoutInflater;
 
-    const v5, 0x7f0400bd
+    const v5, 0x7f0400be
 
     invoke-virtual {v4, v5, v6}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;)Landroid/view/View;
 
@@ -321,7 +321,7 @@
 
     iget-object v4, v0, Lcom/android/internal/app/AlertController$AlertParams;->mView:Landroid/view/View;
 
-    const v5, 0x7f110294
+    const v5, 0x7f110296
 
     invoke-virtual {v4, v5}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -371,7 +371,7 @@
 
     move-result-object v4
 
-    const v5, 0x7f0b11de
+    const v5, 0x7f0b11ed
 
     invoke-virtual {v4, v5}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -383,7 +383,7 @@
 
     move-result-object v4
 
-    const v5, 0x7f0b08d5
+    const v5, 0x7f0b08df
 
     invoke-virtual {v4, v5}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -411,7 +411,7 @@
 
     move-result-object v4
 
-    const v5, 0x7f0b0ed0
+    const v5, 0x7f0b0edf
 
     invoke-virtual {v4, v5}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -450,7 +450,7 @@
 
     aput-object v7, v6, v12
 
-    const v7, 0x7f0b11e0
+    const v7, 0x7f0b11ef
 
     invoke-virtual {v5, v7, v6}, Landroid/content/Context;->getString(I[Ljava/lang/Object;)Ljava/lang/String;
 

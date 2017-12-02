@@ -71,7 +71,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f0400ab
+    const v1, 0x7f0400ac
 
     const/4 v2, 0x0
 
@@ -83,7 +83,7 @@
 
     iget-object v0, p0, Lcom/android/settings/dashboard/DashboardEditFavoriteSummary$DashboardEditFavoriteActionModeCallBack;->mMultiSelectActionBarView:Landroid/view/View;
 
-    const v1, 0x7f110263
+    const v1, 0x7f110265
 
     invoke-virtual {v0, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -97,7 +97,7 @@
 
     iget-object v1, p0, Lcom/android/settings/dashboard/DashboardEditFavoriteSummary$DashboardEditFavoriteActionModeCallBack;->this$0:Lcom/android/settings/dashboard/DashboardEditFavoriteSummary;
 
-    const v2, 0x7f0b1164
+    const v2, 0x7f0b1173
 
     invoke-virtual {v1, v2}, Lcom/android/settings/dashboard/DashboardEditFavoriteSummary;->getString(I)Ljava/lang/String;
 
@@ -115,7 +115,7 @@
 
     iget-object v0, p0, Lcom/android/settings/dashboard/DashboardEditFavoriteSummary$DashboardEditFavoriteActionModeCallBack;->mMultiSelectActionBarView:Landroid/view/View;
 
-    const v1, 0x7f110264
+    const v1, 0x7f110266
 
     invoke-virtual {v0, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -208,7 +208,7 @@
 
     move-result-object v3
 
-    const v4, 0x7f0b1165
+    const v4, 0x7f0b1174
 
     invoke-virtual {v3, v4}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 

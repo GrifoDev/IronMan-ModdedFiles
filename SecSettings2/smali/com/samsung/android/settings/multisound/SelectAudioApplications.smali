@@ -131,7 +131,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f040357
+    const v2, 0x7f04035a
 
     const/4 v3, 0x0
 
@@ -141,23 +141,9 @@
 
     check-cast v0, Landroid/widget/TextView;
 
-    const v1, 0x7f0b0c1d
+    const v1, 0x7f0b0c2b
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(I)V
-
-    invoke-virtual {p0}, Lcom/samsung/android/settings/multisound/SelectAudioApplications;->getResources()Landroid/content/res/Resources;
-
-    move-result-object v1
-
-    const v2, 0x7f0f0416
-
-    invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getInteger(I)I
-
-    move-result v1
-
-    int-to-float v1, v1
-
-    invoke-virtual {v0, v1}, Landroid/widget/TextView;->setTextSize(F)V
 
     new-instance v1, Lcom/samsung/android/settings/multisound/SelectAudioApplications$4;
 
@@ -306,6 +292,12 @@
     invoke-virtual {v8, v12}, Landroid/view/View;->setEnabled(Z)V
 
     invoke-virtual {p0, v11}, Lcom/samsung/android/settings/multisound/SelectAudioApplications;->setHasOptionsMenu(Z)V
+
+    invoke-virtual {p0}, Lcom/samsung/android/settings/multisound/SelectAudioApplications;->getListView()Landroid/widget/ListView;
+
+    move-result-object v8
+
+    invoke-virtual {v8}, Landroid/widget/ListView;->requestFocus()Z
 
     invoke-virtual {p0}, Lcom/samsung/android/settings/multisound/SelectAudioApplications;->updateCheckState()V
 
@@ -567,7 +559,7 @@
 
     iget-object v0, p0, Lcom/samsung/android/settings/multisound/SelectAudioApplications;->mDescryptionPreference:Lcom/samsung/android/settings/UnclickablePreference;
 
-    const v1, 0x7f0b0c15
+    const v1, 0x7f0b0c23
 
     invoke-virtual {v0, v1}, Lcom/samsung/android/settings/UnclickablePreference;->setTitle(I)V
 
@@ -605,7 +597,7 @@
 
     invoke-virtual {p2, v0, p1}, Landroid/view/MenuInflater;->inflate(ILandroid/view/Menu;)V
 
-    const v0, 0x7f110855
+    const v0, 0x7f110857
 
     invoke-interface {p1, v0}, Landroid/view/Menu;->findItem(I)Landroid/view/MenuItem;
 
@@ -722,7 +714,7 @@
     return v6
 
     :pswitch_data_0
-    .packed-switch 0x7f110855
+    .packed-switch 0x7f110857
         :pswitch_0
     .end packed-switch
 .end method

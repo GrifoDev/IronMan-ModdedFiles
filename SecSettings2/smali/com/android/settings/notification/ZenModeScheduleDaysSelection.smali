@@ -280,7 +280,7 @@
 
     move v10, v5
 
-    const v11, 0x7f0403e3
+    const v11, 0x7f0403e6
 
     const/4 v12, 0x0
 
@@ -292,7 +292,7 @@
 
     check-cast v8, Landroid/widget/LinearLayout;
 
-    const v11, 0x7f1109d7
+    const v11, 0x7f1109da
 
     invoke-virtual {v8, v11}, Landroid/widget/LinearLayout;->findViewById(I)Landroid/view/View;
 
@@ -306,7 +306,7 @@
 
     if-eqz v11, :cond_3
 
-    const v11, 0x7f1109d8
+    const v11, 0x7f1109db
 
     invoke-virtual {v8, v11}, Landroid/widget/LinearLayout;->findViewById(I)Landroid/view/View;
 
@@ -317,7 +317,7 @@
     invoke-virtual {v11, v12}, Landroid/view/View;->setVisibility(I)V
 
     :cond_3
-    const v11, 0x7f1109d6
+    const v11, 0x7f1109d9
 
     invoke-virtual {v8, v11}, Landroid/widget/LinearLayout;->findViewById(I)Landroid/view/View;
 
@@ -389,7 +389,7 @@
     goto :goto_1
 
     :cond_4
-    const v11, 0x7f0b0d94
+    const v11, 0x7f0b0da3
 
     invoke-virtual {v2, v11}, Landroid/widget/CheckBox;->setText(I)V
 

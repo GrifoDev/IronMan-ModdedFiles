@@ -169,7 +169,7 @@
 
     move-result v2
 
-    const v3, 0x7f1109c2
+    const v3, 0x7f1109c5
 
     if-eq v2, v3, :cond_4
 

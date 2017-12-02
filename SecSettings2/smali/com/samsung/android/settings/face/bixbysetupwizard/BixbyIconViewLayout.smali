@@ -288,7 +288,7 @@
 
     check-cast v0, Landroid/view/LayoutInflater;
 
-    const v2, 0x7f0402c6
+    const v2, 0x7f0402c9
 
     const/4 v3, 0x0
 
@@ -308,7 +308,7 @@
 
     iput-object v2, p0, Lcom/samsung/android/settings/face/bixbysetupwizard/BixbyIconViewLayout;->mBixbyIconFullLayout:Landroid/widget/FrameLayout;
 
-    const v2, 0x7f110773
+    const v2, 0x7f110775
 
     invoke-virtual {p0, v2}, Lcom/samsung/android/settings/face/bixbysetupwizard/BixbyIconViewLayout;->findViewById(I)Landroid/view/View;
 
@@ -334,7 +334,7 @@
 
     iput-object v2, p0, Lcom/samsung/android/settings/face/bixbysetupwizard/BixbyIconViewLayout;->mSineInterpolator:Lcom/samsung/android/settings/face/bixbysetupwizard/SineInOut90;
 
-    const v2, 0x7f110765
+    const v2, 0x7f110767
 
     invoke-virtual {p0, v2}, Lcom/samsung/android/settings/face/bixbysetupwizard/BixbyIconViewLayout;->findViewById(I)Landroid/view/View;
 
@@ -370,7 +370,7 @@
 
     iget-object v2, p0, Lcom/samsung/android/settings/face/bixbysetupwizard/BixbyIconViewLayout;->mProcessLogoView:Landroid/widget/ImageView;
 
-    const v3, 0x7f0200f6
+    const v3, 0x7f0200f4
 
     invoke-virtual {v2, v3}, Landroid/widget/ImageView;->setBackgroundResource(I)V
 

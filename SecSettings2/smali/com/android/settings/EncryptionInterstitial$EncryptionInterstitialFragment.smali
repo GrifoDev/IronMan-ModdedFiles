@@ -115,7 +115,7 @@
 
     invoke-super {p0, p1}, Lcom/samsung/android/settings/SecSettingsPreferenceFragment;->onCreate(Landroid/os/Bundle;)V
 
-    const v6, 0x7f080107
+    const v6, 0x7f080109
 
     invoke-virtual {p0, v6}, Lcom/android/settings/EncryptionInterstitial$EncryptionInterstitialFragment;->addPreferencesFromResource(I)V
 
@@ -193,12 +193,12 @@
 
     if-eqz v2, :cond_2
 
-    const v5, 0x7f0b1d0b
+    const v5, 0x7f0b1d1d
 
     :goto_0
-    const v1, 0x7f0b1d0e
+    const v1, 0x7f0b1d20
 
-    const v0, 0x7f0b1d11
+    const v0, 0x7f0b1d23
 
     :goto_1
     invoke-virtual {p0}, Lcom/android/settings/EncryptionInterstitial$EncryptionInterstitialFragment;->getActivity()Landroid/app/Activity;
@@ -209,7 +209,7 @@
 
     move-result-object v6
 
-    const v7, 0x7f0400fd
+    const v7, 0x7f0400fe
 
     const/4 v8, 0x0
 
@@ -252,39 +252,39 @@
     :sswitch_0
     if-eqz v2, :cond_0
 
-    const v5, 0x7f0b1d0a
+    const v5, 0x7f0b1d1c
 
     :goto_2
-    const v1, 0x7f0b1d0d
+    const v1, 0x7f0b1d1f
 
-    const v0, 0x7f0b1d10
+    const v0, 0x7f0b1d22
 
     goto :goto_1
 
     :cond_0
-    const v5, 0x7f0b1d07    # 1.849134E38f
+    const v5, 0x7f0b1d19
 
     goto :goto_2
 
     :sswitch_1
     if-eqz v2, :cond_1
 
-    const v5, 0x7f0b1d09
+    const v5, 0x7f0b1d1b
 
     :goto_3
-    const v1, 0x7f0b1d0c
+    const v1, 0x7f0b1d1e
 
-    const v0, 0x7f0b1d0f
+    const v0, 0x7f0b1d21
 
     goto :goto_1
 
     :cond_1
-    const v5, 0x7f0b1d06
+    const v5, 0x7f0b1d18
 
     goto :goto_3
 
     :cond_2
-    const v5, 0x7f0b1d08
+    const v5, 0x7f0b1d1a
 
     goto :goto_0
 
@@ -318,9 +318,9 @@
 
     sparse-switch v4, :sswitch_data_0
 
-    const v3, 0x7f0b1d14
+    const v3, 0x7f0b1d26
 
-    const v2, 0x7f0b1d17
+    const v2, 0x7f0b1d29
 
     :goto_0
     invoke-virtual {p0}, Lcom/android/settings/EncryptionInterstitial$EncryptionInterstitialFragment;->getActivity()Landroid/app/Activity;
@@ -393,16 +393,16 @@
     return-object v4
 
     :sswitch_0
-    const v3, 0x7f0b1d13
+    const v3, 0x7f0b1d25
 
-    const v2, 0x7f0b1d16
+    const v2, 0x7f0b1d28
 
     goto :goto_0
 
     :sswitch_1
-    const v3, 0x7f0b1d12
+    const v3, 0x7f0b1d24
 
-    const v2, 0x7f0b1d15
+    const v2, 0x7f0b1d27
 
     goto :goto_0
 
@@ -523,7 +523,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f0201ee
+    const v2, 0x7f0201ec
 
     invoke-virtual {v1, v2}, Landroid/content/Context;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 
