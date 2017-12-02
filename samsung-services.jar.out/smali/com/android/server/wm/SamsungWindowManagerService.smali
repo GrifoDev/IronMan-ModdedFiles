@@ -2161,7 +2161,7 @@
 
     :cond_0
     :goto_0
-    if-eqz v1, :cond_2
+    if-eqz v1, :cond_4
 
     invoke-virtual {v1}, Lcom/android/server/wm/AppWindowToken;->getDisplayId()I
 
@@ -2223,6 +2223,7 @@
     move p2, v0
 
     :cond_2
+    :goto_1
     return p2
 
     :cond_3
@@ -2243,6 +2244,69 @@
     iget-object v1, v3, Lcom/android/server/wm/WindowToken;->appWindowToken:Lcom/android/server/wm/AppWindowToken;
 
     goto :goto_0
+
+    :cond_4
+    iget v4, p1, Landroid/view/WindowManager$LayoutParams;->type:I
+
+    const/16 v5, 0x960
+
+    if-ne v4, v5, :cond_2
+
+    iget-object v4, p0, Lcom/android/server/wm/SamsungWindowManagerService;->mService:Lcom/android/server/wm/WindowManagerService;
+
+    iget-object v4, v4, Lcom/android/server/wm/WindowManagerService;->mInputMethodTarget:Lcom/android/server/wm/WindowState;
+
+    if-eqz v4, :cond_2
+
+    iget-object v4, p0, Lcom/android/server/wm/SamsungWindowManagerService;->mService:Lcom/android/server/wm/WindowManagerService;
+
+    iget-object v4, v4, Lcom/android/server/wm/WindowManagerService;->mInputMethodTarget:Lcom/android/server/wm/WindowState;
+
+    invoke-virtual {v4}, Lcom/android/server/wm/WindowState;->getDisplayId()I
+
+    move-result v4
+
+    if-eq p2, v4, :cond_2
+
+    const-string/jumbo v4, "SamsungWindowManager"
+
+    new-instance v5, Ljava/lang/StringBuilder;
+
+    invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string/jumbo v6, "[VIRTUALSCREEN] addWindow: displayId changed to "
+
+    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v5
+
+    iget-object v6, p0, Lcom/android/server/wm/SamsungWindowManagerService;->mService:Lcom/android/server/wm/WindowManagerService;
+
+    iget-object v6, v6, Lcom/android/server/wm/WindowManagerService;->mInputMethodTarget:Lcom/android/server/wm/WindowState;
+
+    invoke-virtual {v6}, Lcom/android/server/wm/WindowState;->getDisplayId()I
+
+    move-result v6
+
+    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v5
+
+    invoke-virtual {v5}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v5
+
+    invoke-static {v4, v5}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    iget-object v4, p0, Lcom/android/server/wm/SamsungWindowManagerService;->mService:Lcom/android/server/wm/WindowManagerService;
+
+    iget-object v4, v4, Lcom/android/server/wm/WindowManagerService;->mInputMethodTarget:Lcom/android/server/wm/WindowState;
+
+    invoke-virtual {v4}, Lcom/android/server/wm/WindowState;->getDisplayId()I
+
+    move-result p2
+
+    goto :goto_1
 .end method
 
 .method public checkAnimValue(Landroid/view/WindowManager$LayoutParams;ZLandroid/graphics/Rect;Landroid/graphics/Rect;)Z
@@ -4418,6 +4482,95 @@
 
     :cond_5
     return-void
+.end method
+
+.method public getFreezeSurfaceLayer(Landroid/view/Display;)I
+    .locals 7
+
+    const/16 v6, 0x967
+
+    const/4 v5, 0x0
+
+    iget-object v3, p0, Lcom/android/server/wm/SamsungWindowManagerService;->mService:Lcom/android/server/wm/WindowManagerService;
+
+    iget-object v4, v3, Lcom/android/server/wm/WindowManagerService;->mWindowMap:Ljava/util/HashMap;
+
+    monitor-enter v4
+
+    :try_start_0
+    invoke-virtual {p1}, Landroid/view/Display;->getDisplayId()I
+
+    move-result v3
+
+    if-nez v3, :cond_1
+
+    iget-object v3, p0, Lcom/android/server/wm/SamsungWindowManagerService;->mService:Lcom/android/server/wm/WindowManagerService;
+
+    invoke-virtual {v3}, Lcom/android/server/wm/WindowManagerService;->getDefaultWindowListLocked()Lcom/android/server/wm/WindowList;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Lcom/android/server/wm/WindowList;->size()I
+
+    move-result v3
+
+    add-int/lit8 v0, v3, -0x1
+
+    :goto_0
+    if-ltz v0, :cond_1
+
+    invoke-virtual {v2, v0}, Lcom/android/server/wm/WindowList;->get(I)Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Lcom/android/server/wm/WindowState;
+
+    iget-object v3, v1, Lcom/android/server/wm/WindowState;->mAttrs:Landroid/view/WindowManager$LayoutParams;
+
+    iget v3, v3, Landroid/view/WindowManager$LayoutParams;->type:I
+
+    if-ne v3, v6, :cond_0
+
+    iget-object v3, p0, Lcom/android/server/wm/SamsungWindowManagerService;->mService:Lcom/android/server/wm/WindowManagerService;
+
+    iget-object v3, v3, Lcom/android/server/wm/WindowManagerService;->mPolicy:Landroid/view/WindowManagerPolicy;
+
+    check-cast v3, Lcom/android/server/policy/PhoneWindowManager;
+
+    invoke-virtual {v3}, Lcom/android/server/policy/PhoneWindowManager;->getSamsungPolicy()Lcom/android/server/policy/SamsungWindowManagerPolicy;
+
+    move-result-object v3
+
+    const/16 v5, 0x967
+
+    invoke-interface {v3, v5}, Lcom/android/server/policy/SamsungWindowManagerPolicy;->windowTypeToLayer(I)I
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    move-result v3
+
+    mul-int/lit16 v3, v3, 0x2710
+
+    monitor-exit v4
+
+    return v3
+
+    :cond_0
+    add-int/lit8 v0, v0, -0x1
+
+    goto :goto_0
+
+    :cond_1
+    monitor-exit v4
+
+    return v5
+
+    :catchall_0
+    move-exception v3
+
+    monitor-exit v4
+
+    throw v3
 .end method
 
 .method public getInitialDisplayProperties(I)[I

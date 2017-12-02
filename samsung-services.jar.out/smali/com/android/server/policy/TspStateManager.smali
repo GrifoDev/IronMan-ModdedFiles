@@ -278,7 +278,7 @@
 
     move-result-object v0
 
-    const v1, 0x1040b0d
+    const v1, 0x1040b0e
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -484,13 +484,13 @@
 .end method
 
 .method private updateCustomValue()V
-    .locals 8
+    .locals 11
 
     const/16 v5, 0x28
 
-    const/4 v3, 0x0
-
     const/16 v1, 0xa
+
+    const/4 v3, 0x0
 
     iget-object v0, p0, Lcom/android/server/policy/TspStateManager;->mContext:Landroid/content/Context;
 
@@ -502,7 +502,7 @@
 
     invoke-static {v0, v2}, Landroid/provider/Settings$Secure;->getString(Landroid/content/ContentResolver;Ljava/lang/String;)Ljava/lang/String;
 
-    move-result-object v7
+    move-result-object v9
 
     const-string/jumbo v0, "TspStateManagerInternal"
 
@@ -516,7 +516,7 @@
 
     move-result-object v2
 
-    invoke-virtual {v2, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v2, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v2
 
@@ -538,9 +538,9 @@
 
     invoke-virtual/range {v0 .. v6}, Lcom/android/server/policy/TspGripCommand;->set(IIIIII)V
 
-    if-eqz v7, :cond_0
+    if-eqz v9, :cond_0
 
-    invoke-virtual {v7}, Ljava/lang/String;->isEmpty()Z
+    invoke-virtual {v9}, Ljava/lang/String;->isEmpty()Z
 
     move-result v0
 
@@ -550,25 +550,25 @@
     return-void
 
     :cond_1
-    iget-object v0, p0, Lcom/android/server/policy/TspStateManager;->mCustomTspCommand:Lcom/android/server/policy/TspGripCommand;
+    iget-object v4, p0, Lcom/android/server/policy/TspStateManager;->mCustomTspCommand:Lcom/android/server/policy/TspGripCommand;
 
-    iget v1, p0, Lcom/android/server/policy/TspStateManager;->mWidth:I
+    iget v5, p0, Lcom/android/server/policy/TspStateManager;->mWidth:I
 
-    iget v2, p0, Lcom/android/server/policy/TspStateManager;->mHeight:I
+    iget v6, p0, Lcom/android/server/policy/TspStateManager;->mHeight:I
 
-    iget v3, p0, Lcom/android/server/policy/TspStateManager;->mInitWidth:I
+    iget v7, p0, Lcom/android/server/policy/TspStateManager;->mInitWidth:I
 
-    iget v4, p0, Lcom/android/server/policy/TspStateManager;->mInitHeight:I
+    iget v8, p0, Lcom/android/server/policy/TspStateManager;->mInitHeight:I
 
-    move-object v5, v7
+    move v10, v3
 
-    invoke-virtual/range {v0 .. v5}, Lcom/android/server/policy/TspGripCommand;->parse(IIIILjava/lang/String;)Z
+    invoke-virtual/range {v4 .. v10}, Lcom/android/server/policy/TspGripCommand;->parse(IIIILjava/lang/String;Z)Z
 
     move-result v0
 
     iput-boolean v0, p0, Lcom/android/server/policy/TspStateManager;->mIsEnabledCustomSetting:Z
 
-    invoke-direct {p0, v7}, Lcom/android/server/policy/TspStateManager;->parse3rdPartyCommand(Ljava/lang/String;)Ljava/lang/String;
+    invoke-direct {p0, v9}, Lcom/android/server/policy/TspStateManager;->parse3rdPartyCommand(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v5
 
@@ -1214,14 +1214,27 @@
     :cond_1
     iget-boolean v0, p0, Lcom/android/server/policy/TspStateManager;->mPortrait:Z
 
-    if-eq v0, p1, :cond_2
+    if-eq v0, p1, :cond_3
 
     iput-boolean p1, p0, Lcom/android/server/policy/TspStateManager;->mPortrait:Z
 
     iget-boolean v0, p0, Lcom/android/server/policy/TspStateManager;->mPortrait:Z
 
-    if-eqz v0, :cond_4
+    if-eqz v0, :cond_5
 
+    iget-object v0, p0, Lcom/android/server/policy/TspStateManager;->mReservePortCmd:Ljava/lang/String;
+
+    if-nez v0, :cond_2
+
+    const-string/jumbo v0, "TspStateManagerInternal"
+
+    const-string/jumbo v1, "setPortrait: mReservePortCmd is null."
+
+    invoke-static {v0, v1}, Landroid/util/Slog;->e(Ljava/lang/String;Ljava/lang/String;)I
+
+    return-void
+
+    :cond_2
     iget-object v0, p0, Lcom/android/server/policy/TspStateManager;->mReservePortCmd:Ljava/lang/String;
 
     iget-object v1, p0, Lcom/android/server/policy/TspStateManager;->mLastPortCmd:Ljava/lang/String;
@@ -1230,7 +1243,7 @@
 
     move-result v0
 
-    if-nez v0, :cond_3
+    if-nez v0, :cond_4
 
     iget-object v0, p0, Lcom/android/server/policy/TspStateManager;->mReservePortCmd:Ljava/lang/String;
 
@@ -1242,11 +1255,11 @@
 
     iput-object v0, p0, Lcom/android/server/policy/TspStateManager;->mLastPortCmd:Ljava/lang/String;
 
-    :cond_2
+    :cond_3
     :goto_0
     return-void
 
-    :cond_3
+    :cond_4
     const-string/jumbo v0, "2,0"
 
     const/4 v1, 0x4
@@ -1255,7 +1268,20 @@
 
     goto :goto_0
 
-    :cond_4
+    :cond_5
+    iget-object v0, p0, Lcom/android/server/policy/TspStateManager;->mReserveLandCmd:Ljava/lang/String;
+
+    if-nez v0, :cond_6
+
+    const-string/jumbo v0, "TspStateManagerInternal"
+
+    const-string/jumbo v1, "setPortrait: mReserveLandCmd is null."
+
+    invoke-static {v0, v1}, Landroid/util/Slog;->e(Ljava/lang/String;Ljava/lang/String;)I
+
+    return-void
+
+    :cond_6
     iget-object v0, p0, Lcom/android/server/policy/TspStateManager;->mReserveLandCmd:Ljava/lang/String;
 
     const/4 v1, 0x2

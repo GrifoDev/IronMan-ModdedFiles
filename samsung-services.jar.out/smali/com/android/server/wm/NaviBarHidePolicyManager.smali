@@ -111,51 +111,57 @@
     :goto_0
     sput-boolean v0, Lcom/android/server/wm/NaviBarHidePolicyManager;->DEBUG:Z
 
-    const/16 v0, 0x8
+    const/16 v0, 0x9
 
     new-array v0, v0, [Ljava/lang/String;
 
-    const-string/jumbo v3, "com.tencent.mm"
+    const-string/jumbo v3, "com.tencent.tmgp.sgame"
 
     aput-object v3, v0, v1
 
-    const-string/jumbo v1, "com.eg.android.AlipayGphone"
+    const-string/jumbo v1, "com.tencent.mm"
 
     aput-object v1, v0, v2
 
-    const-string/jumbo v1, "com.tencent.mobileqq"
+    const-string/jumbo v1, "com.eg.android.AlipayGphone"
 
     const/4 v2, 0x2
 
     aput-object v1, v0, v2
 
-    const-string/jumbo v1, "com.baidu.searchbox"
+    const-string/jumbo v1, "com.tencent.mobileqq"
 
     const/4 v2, 0x3
 
     aput-object v1, v0, v2
 
-    const-string/jumbo v1, "com.baidu.searchbox_samsung"
+    const-string/jumbo v1, "com.baidu.searchbox"
 
     const/4 v2, 0x4
 
     aput-object v1, v0, v2
 
-    const-string/jumbo v1, "com.pingan.lifeinsurance"
+    const-string/jumbo v1, "com.baidu.searchbox_samsung"
 
     const/4 v2, 0x5
 
     aput-object v1, v0, v2
 
-    const-string/jumbo v1, "tv.xiaoka.live"
+    const-string/jumbo v1, "com.pingan.lifeinsurance"
 
     const/4 v2, 0x6
 
     aput-object v1, v0, v2
 
-    const-string/jumbo v1, "com.qq.reader"
+    const-string/jumbo v1, "tv.xiaoka.live"
 
     const/4 v2, 0x7
+
+    aput-object v1, v0, v2
+
+    const-string/jumbo v1, "com.qq.reader"
+
+    const/16 v2, 0x8
 
     aput-object v1, v0, v2
 
@@ -652,13 +658,11 @@
 
     move-result v1
 
-    invoke-static {p2}, Landroid/os/UserHandle;->getUserId(I)I
+    const-string/jumbo v2, "hidenavibar"
 
-    move-result v2
+    const/4 v3, -0x1
 
-    const-string/jumbo v3, "hidenavibar"
-
-    invoke-virtual {v0, p1, v1, v2, v3}, Landroid/app/ActivityManagerInternal;->killPackageProcess(Ljava/lang/String;IILjava/lang/String;)I
+    invoke-virtual {v0, p1, v1, v3, v2}, Landroid/app/ActivityManagerInternal;->killPackageProcess(Ljava/lang/String;IILjava/lang/String;)I
 
     return-void
 .end method

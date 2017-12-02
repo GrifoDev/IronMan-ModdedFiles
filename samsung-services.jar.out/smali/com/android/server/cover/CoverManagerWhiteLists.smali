@@ -500,9 +500,11 @@
 .end method
 
 .method private setupWhiteList()V
-    .locals 4
+    .locals 5
 
-    const/16 v3, 0x200
+    const/16 v4, 0x200
+
+    const/16 v3, 0x80
 
     iget-object v0, p0, Lcom/android/server/cover/CoverManagerWhiteLists;->mWhiteList:Ljava/util/HashMap;
 
@@ -556,9 +558,17 @@
 
     const-string/jumbo v1, "com.ktcs.whowho"
 
-    const/16 v2, 0x80
+    invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    move-result-object v2
+
+    invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    iget-object v0, p0, Lcom/android/server/cover/CoverManagerWhiteLists;->mWhiteList:Ljava/util/HashMap;
+
+    const-string/jumbo v1, "com.whox2.lguplus"
+
+    invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v2
 
@@ -580,7 +590,7 @@
 
     const-string/jumbo v1, "com.sec.android.app.shealth"
 
-    invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    invoke-static {v4}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v2
 
@@ -590,7 +600,7 @@
 
     const-string/jumbo v1, "com.sec.android.app.shealth:remote"
 
-    invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    invoke-static {v4}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v2
 

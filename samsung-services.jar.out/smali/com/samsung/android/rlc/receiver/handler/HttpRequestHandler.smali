@@ -173,9 +173,9 @@
 
     const-wide/16 v0, 0x2710
 
-    const/16 v2, 0x7530
+    const/16 v2, 0x4e20
 
-    const/16 v3, 0x7530
+    const/16 v3, 0x4e20
 
     new-instance v13, Lorg/apache/http/params/BasicHttpParams;
 
@@ -191,13 +191,13 @@
 
     sget-object v13, Lcom/samsung/android/rlc/receiver/handler/HttpRequestHandler;->params:Lorg/apache/http/params/HttpParams;
 
-    const/16 v14, 0x7530
+    const/16 v14, 0x4e20
 
     invoke-static {v13, v14}, Lorg/apache/http/params/HttpConnectionParams;->setConnectionTimeout(Lorg/apache/http/params/HttpParams;I)V
 
     sget-object v13, Lcom/samsung/android/rlc/receiver/handler/HttpRequestHandler;->params:Lorg/apache/http/params/HttpParams;
 
-    const/16 v14, 0x7530
+    const/16 v14, 0x4e20
 
     invoke-static {v13, v14}, Lorg/apache/http/params/HttpConnectionParams;->setSoTimeout(Lorg/apache/http/params/HttpParams;I)V
 

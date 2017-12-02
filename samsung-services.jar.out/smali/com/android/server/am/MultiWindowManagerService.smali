@@ -303,6 +303,17 @@
 
 .field private mNoMinimizedTarget:Lcom/android/server/am/TaskRecord;
 
+.field private final mPendingRemoveTasks:Ljava/util/ArrayList;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Ljava/util/ArrayList",
+            "<",
+            "Ljava/lang/Integer;",
+            ">;"
+        }
+    .end annotation
+.end field
+
 .field final mPostTopActivities:Ljava/util/ArrayList;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -594,6 +605,12 @@
     iput-object v0, p0, Lcom/android/server/am/MultiWindowManagerService;->mMultiwindowSupportList:Ljava/util/ArrayList;
 
     iput-object v3, p0, Lcom/android/server/am/MultiWindowManagerService;->mBroadcastReceiver:Landroid/content/BroadcastReceiver;
+
+    new-instance v0, Ljava/util/ArrayList;
+
+    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
+
+    iput-object v0, p0, Lcom/android/server/am/MultiWindowManagerService;->mPendingRemoveTasks:Ljava/util/ArrayList;
 
     iput-boolean v2, p0, Lcom/android/server/am/MultiWindowManagerService;->mFreeformAlwaysVisible:Z
 
@@ -6434,7 +6451,7 @@
 .end method
 
 .method private swapTasksForSnapWindowLocked()V
-    .locals 20
+    .locals 19
 
     move-object/from16 v0, p0
 
@@ -6450,7 +6467,7 @@
 
     invoke-virtual {v10}, Lcom/android/server/am/ActivityStack;->topTask()Lcom/android/server/am/TaskRecord;
 
-    move-result-object v17
+    move-result-object v16
 
     :goto_0
     move-object/from16 v0, p0
@@ -6467,12 +6484,12 @@
 
     invoke-virtual {v9}, Lcom/android/server/am/ActivityStack;->getAllTasks()Ljava/util/ArrayList;
 
-    move-result-object v18
+    move-result-object v17
 
     :goto_1
-    if-eqz v17, :cond_0
+    if-eqz v16, :cond_0
 
-    if-nez v18, :cond_3
+    if-nez v17, :cond_3
 
     :cond_0
     const-string/jumbo v1, "MultiWindowManagerService"
@@ -6484,17 +6501,17 @@
     return-void
 
     :cond_1
-    const/16 v17, 0x0
+    const/16 v16, 0x0
 
     goto :goto_0
 
     :cond_2
-    const/16 v18, 0x0
+    const/16 v17, 0x0
 
     goto :goto_1
 
     :cond_3
-    invoke-virtual/range {v18 .. v18}, Ljava/util/ArrayList;->size()I
+    invoke-virtual/range {v17 .. v17}, Ljava/util/ArrayList;->size()I
 
     move-result v1
 
@@ -6541,7 +6558,7 @@
     invoke-virtual {v1}, Ljava/util/ArrayList;->clear()V
 
     :cond_4
-    move-object/from16 v0, v17
+    move-object/from16 v0, v16
 
     iget v1, v0, Lcom/android/server/am/TaskRecord;->taskId:I
 
@@ -6553,69 +6570,63 @@
 
     invoke-direct {v0, v1, v3, v4}, Lcom/android/server/am/MultiWindowManagerService;->moveTaskToStackWithSizeUnchangedLocked(IIZ)V
 
-    invoke-virtual/range {v18 .. v18}, Ljava/util/ArrayList;->size()I
+    invoke-virtual/range {v17 .. v17}, Ljava/util/ArrayList;->size()I
 
-    move-result v16
+    move-result v15
 
     const/4 v11, 0x1
 
-    const/4 v12, 0x0
+    add-int/lit8 v12, v15, -0x1
 
     :goto_2
-    move/from16 v0, v16
-
-    if-ge v12, v0, :cond_6
-
-    move-object/from16 v0, v18
-
-    invoke-virtual {v0, v12}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
-
-    move-result-object v1
-
-    check-cast v1, Lcom/android/server/am/TaskRecord;
-
-    iget v13, v1, Lcom/android/server/am/TaskRecord;->taskId:I
+    if-ltz v12, :cond_7
 
     move-object/from16 v0, v17
 
+    invoke-virtual {v0, v12}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+
+    move-result-object v18
+
+    check-cast v18, Lcom/android/server/am/TaskRecord;
+
+    move-object/from16 v0, v18
+
     iget v1, v0, Lcom/android/server/am/TaskRecord;->taskId:I
 
-    if-ne v13, v1, :cond_5
+    move-object/from16 v0, v16
 
+    iget v3, v0, Lcom/android/server/am/TaskRecord;->taskId:I
+
+    if-ne v1, v3, :cond_6
+
+    :cond_5
     :goto_3
-    add-int/lit8 v12, v12, 0x1
+    add-int/lit8 v12, v12, -0x1
 
     goto :goto_2
 
-    :cond_5
-    const/4 v1, 0x1
+    :cond_6
+    move-object/from16 v0, v18
+
+    iget v1, v0, Lcom/android/server/am/TaskRecord;->taskId:I
+
+    const/4 v3, 0x1
 
     move-object/from16 v0, p0
 
-    invoke-direct {v0, v13, v1, v11}, Lcom/android/server/am/MultiWindowManagerService;->moveTaskToStackWithSizeUnchangedLocked(IIZ)V
+    invoke-direct {v0, v1, v3, v11}, Lcom/android/server/am/MultiWindowManagerService;->moveTaskToStackWithSizeUnchangedLocked(IIZ)V
+
+    if-eqz v11, :cond_5
+
+    const/4 v1, 0x1
+
+    move-object/from16 v0, v18
+
+    invoke-virtual {v0, v1}, Lcom/android/server/am/TaskRecord;->setTaskToReturnTo(I)V
 
     const/4 v11, 0x0
 
     goto :goto_3
-
-    :cond_6
-    if-lez v16, :cond_7
-
-    const/4 v1, 0x0
-
-    move-object/from16 v0, v18
-
-    invoke-virtual {v0, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
-
-    move-result-object v19
-
-    check-cast v19, Lcom/android/server/am/TaskRecord;
-
-    const/4 v1, 0x1
-
-    move-object/from16 v0, v19
-
-    invoke-virtual {v0, v1}, Lcom/android/server/am/TaskRecord;->setTaskToReturnTo(I)V
 
     :cond_7
     new-instance v2, Landroid/graphics/Rect;
@@ -6648,9 +6659,9 @@
 
     invoke-virtual {v1, v3}, Landroid/content/res/Resources;->getBoolean(I)Z
 
-    move-result v15
+    move-result v14
 
-    if-eqz v15, :cond_8
+    if-eqz v14, :cond_8
 
     move-object/from16 v0, p0
 
@@ -6666,11 +6677,11 @@
 
     invoke-virtual {v1, v3}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
-    move-result v14
+    move-result v13
 
     iget v1, v8, Landroid/graphics/Rect;->bottom:I
 
-    sub-int/2addr v1, v14
+    sub-int/2addr v1, v13
 
     iput v1, v8, Landroid/graphics/Rect;->bottom:I
 
@@ -7344,7 +7355,7 @@
     :goto_0
     const/4 v10, 0x3
 
-    if-gt v4, v10, :cond_7
+    if-gt v4, v10, :cond_8
 
     invoke-direct {p0, p2, v4}, Lcom/android/server/am/MultiWindowManagerService;->isAnimTargetStack(II)Z
 
@@ -7365,6 +7376,10 @@
     move-result-object v3
 
     if-eqz v3, :cond_1
+
+    iget-boolean v10, v3, Lcom/android/server/am/ActivityStack;->mUpdateBoundsDeferred:Z
+
+    if-nez v10, :cond_1
 
     invoke-virtual {v3}, Lcom/android/server/am/ActivityStack;->getAllTasks()Ljava/util/ArrayList;
 
@@ -7389,6 +7404,19 @@
 
     check-cast v5, Lcom/android/server/am/TaskRecord;
 
+    invoke-virtual {v5}, Lcom/android/server/am/TaskRecord;->isResizeable()Z
+
+    move-result v10
+
+    if-nez v10, :cond_4
+
+    :cond_3
+    :goto_2
+    add-int/lit8 v6, v6, -0x1
+
+    goto :goto_1
+
+    :cond_4
     iget-object v0, v5, Lcom/android/server/am/TaskRecord;->mActivities:Ljava/util/ArrayList;
 
     const/4 v7, 0x0
@@ -7399,8 +7427,8 @@
 
     add-int/lit8 v1, v10, -0x1
 
-    :goto_2
-    if-ltz v1, :cond_6
+    :goto_3
+    if-ltz v1, :cond_3
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
@@ -7412,22 +7440,22 @@
 
     move-result v10
 
-    if-nez v10, :cond_3
+    if-nez v10, :cond_5
 
     iget-boolean v10, v2, Lcom/android/server/am/ActivityRecord;->finishing:Z
 
-    if-eqz v10, :cond_4
+    if-eqz v10, :cond_6
 
-    :cond_3
-    :goto_3
+    :cond_5
+    :goto_4
     add-int/lit8 v1, v1, -0x1
 
-    goto :goto_2
+    goto :goto_3
 
-    :cond_4
+    :cond_6
     iget-boolean v10, v2, Lcom/android/server/am/ActivityRecord;->visible:Z
 
-    if-eqz v10, :cond_5
+    if-eqz v10, :cond_7
 
     const/4 v7, 0x1
 
@@ -7435,30 +7463,27 @@
 
     invoke-virtual {p1, v10}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    goto :goto_3
-
-    :cond_5
-    if-eqz v7, :cond_3
-
-    :cond_6
-    add-int/lit8 v6, v6, -0x1
-
-    goto :goto_1
+    goto :goto_4
 
     :cond_7
+    if-eqz v7, :cond_5
+
+    goto :goto_2
+
+    :cond_8
     invoke-virtual {p1}, Ljava/util/ArrayList;->isEmpty()Z
 
     move-result v10
 
-    if-eqz v10, :cond_8
+    if-eqz v10, :cond_9
 
-    :goto_4
+    :goto_5
     return v9
 
-    :cond_8
+    :cond_9
     const/4 v9, 0x1
 
-    goto :goto_4
+    goto :goto_5
 .end method
 
 
@@ -9255,6 +9280,54 @@
 
     iput-boolean v0, p0, Lcom/android/server/am/MultiWindowManagerService;->mDeferredDetachDockStack:Z
 
+    return-void
+.end method
+
+.method public detachStackIfNoActivitiesLocked(Lcom/android/server/am/ActivityStack;)V
+    .locals 4
+
+    if-eqz p1, :cond_2
+
+    invoke-virtual {p1}, Lcom/android/server/am/ActivityStack;->getAllTasks()Ljava/util/ArrayList;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/util/ArrayList;->size()I
+
+    move-result v3
+
+    add-int/lit8 v2, v3, -0x1
+
+    :goto_0
+    if-ltz v2, :cond_1
+
+    invoke-virtual {v1, v2}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+
+    move-result-object v3
+
+    check-cast v3, Lcom/android/server/am/TaskRecord;
+
+    iget-object v0, v3, Lcom/android/server/am/TaskRecord;->mActivities:Ljava/util/ArrayList;
+
+    invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
+
+    move-result v3
+
+    if-lez v3, :cond_0
+
+    return-void
+
+    :cond_0
+    add-int/lit8 v2, v2, -0x1
+
+    goto :goto_0
+
+    :cond_1
+    iget-object v3, p1, Lcom/android/server/am/ActivityStack;->mActivityContainer:Lcom/android/server/am/ActivityStackSupervisor$ActivityContainer;
+
+    invoke-virtual {v3}, Lcom/android/server/am/ActivityStackSupervisor$ActivityContainer;->onTaskListEmptyLocked()V
+
+    :cond_2
     return-void
 .end method
 
@@ -13336,6 +13409,29 @@
     return v0
 .end method
 
+.method public isSnapTargetTranslucentNavigationBar()Z
+    .locals 1
+
+    sget-boolean v0, Lcom/samsung/android/framework/feature/MultiWindowFeatures;->SNAP_WINDOW_SUPPORT:Z
+
+    if-eqz v0, :cond_0
+
+    iget-object v0, p0, Lcom/android/server/am/MultiWindowManagerService;->mWindowManager:Lcom/android/server/wm/WindowManagerService;
+
+    iget-object v0, v0, Lcom/android/server/wm/WindowManagerService;->mMultiWindowManagerInternal:Lcom/android/server/wm/IMultiWindowManagerInternalBridge;
+
+    invoke-interface {v0}, Lcom/android/server/wm/IMultiWindowManagerInternalBridge;->isSnapTargetTranslucentNavigationBar()Z
+
+    move-result v0
+
+    return v0
+
+    :cond_0
+    const/4 v0, 0x0
+
+    return v0
+.end method
+
 .method public isSnapWindowResizing()Z
     .locals 1
 
@@ -15176,17 +15272,33 @@
 
     if-eqz v9, :cond_3
 
-    iget-object v9, p0, Lcom/android/server/am/MultiWindowManagerService;->mActivityManager:Lcom/android/server/am/ActivityManagerService;
+    iget-object v9, p0, Lcom/android/server/am/MultiWindowManagerService;->mPendingRemoveTasks:Ljava/util/ArrayList;
 
     iget-object v11, v8, Lcom/android/server/am/ActivityRecord;->task:Lcom/android/server/am/TaskRecord;
 
     iget v11, v11, Lcom/android/server/am/TaskRecord;->taskId:I
 
-    const/4 v12, 0x0
+    invoke-static {v11}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    const/4 v13, 0x0
+    move-result-object v11
 
-    invoke-virtual {v9, v11, v12, v13}, Lcom/android/server/am/ActivityManagerService;->removeTaskByIdLocked(IZZ)Z
+    invoke-virtual {v9, v11}, Ljava/util/ArrayList;->contains(Ljava/lang/Object;)Z
+
+    move-result v9
+
+    if-nez v9, :cond_3
+
+    iget-object v9, p0, Lcom/android/server/am/MultiWindowManagerService;->mPendingRemoveTasks:Ljava/util/ArrayList;
+
+    iget-object v11, v8, Lcom/android/server/am/ActivityRecord;->task:Lcom/android/server/am/TaskRecord;
+
+    iget v11, v11, Lcom/android/server/am/TaskRecord;->taskId:I
+
+    invoke-static {v11}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v11
+
+    invoke-virtual {v9, v11}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
     :try_end_4
     .catchall {:try_start_4 .. :try_end_4} :catchall_0
 
@@ -15876,6 +15988,57 @@
     iget-object v1, p0, Lcom/android/server/am/MultiWindowManagerService;->mH:Lcom/android/server/am/MultiWindowManagerService$H;
 
     invoke-virtual {v1, v0}, Lcom/android/server/am/MultiWindowManagerService$H;->sendMessage(Landroid/os/Message;)Z
+
+    :cond_1
+    return-void
+.end method
+
+.method public notifyCompleteResumeLocked()V
+    .locals 4
+
+    const/4 v3, 0x0
+
+    iget-object v2, p0, Lcom/android/server/am/MultiWindowManagerService;->mStackSupervisor:Lcom/android/server/am/ActivityStackSupervisor;
+
+    invoke-virtual {v2}, Lcom/android/server/am/ActivityStackSupervisor;->allResumedActivitiesComplete()Z
+
+    move-result v2
+
+    if-eqz v2, :cond_1
+
+    iget-object v2, p0, Lcom/android/server/am/MultiWindowManagerService;->mPendingRemoveTasks:Ljava/util/ArrayList;
+
+    invoke-interface {v2}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
+
+    move-result-object v1
+
+    :goto_0
+    invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v2
+
+    if-eqz v2, :cond_0
+
+    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v2
+
+    check-cast v2, Ljava/lang/Integer;
+
+    invoke-virtual {v2}, Ljava/lang/Integer;->intValue()I
+
+    move-result v0
+
+    iget-object v2, p0, Lcom/android/server/am/MultiWindowManagerService;->mActivityManager:Lcom/android/server/am/ActivityManagerService;
+
+    invoke-virtual {v2, v0, v3, v3}, Lcom/android/server/am/ActivityManagerService;->removeTaskByIdLocked(IZZ)Z
+
+    goto :goto_0
+
+    :cond_0
+    iget-object v2, p0, Lcom/android/server/am/MultiWindowManagerService;->mPendingRemoveTasks:Ljava/util/ArrayList;
+
+    invoke-virtual {v2}, Ljava/util/ArrayList;->clear()V
 
     :cond_1
     return-void
@@ -17470,177 +17633,195 @@
 .end method
 
 .method public removeSearchedTask(Ljava/lang/String;)Z
-    .locals 11
+    .locals 14
 
-    sget-boolean v7, Lcom/samsung/android/framework/feature/MultiWindowFeatures;->MULTIWINDOW_DYNAMIC_ENABLED:Z
+    const/4 v13, 0x0
 
-    if-eqz v7, :cond_5
+    sget-boolean v9, Lcom/samsung/android/framework/feature/MultiWindowFeatures;->MULTIWINDOW_DYNAMIC_ENABLED:Z
 
-    iget-object v8, p0, Lcom/android/server/am/MultiWindowManagerService;->mActivityManager:Lcom/android/server/am/ActivityManagerService;
+    if-eqz v9, :cond_6
 
-    monitor-enter v8
+    iget-object v10, p0, Lcom/android/server/am/MultiWindowManagerService;->mActivityManager:Lcom/android/server/am/ActivityManagerService;
+
+    monitor-enter v10
 
     :try_start_0
-    sget-boolean v7, Lcom/android/server/am/MultiWindowManagerService;->DEBUG:Z
+    sget-boolean v9, Lcom/android/server/am/MultiWindowManagerService;->DEBUG:Z
 
-    if-eqz v7, :cond_0
+    if-eqz v9, :cond_0
 
-    const-string/jumbo v7, "MultiWindowManagerService_Bixby"
+    const-string/jumbo v9, "MultiWindowManagerService_Bixby"
 
-    new-instance v9, Ljava/lang/StringBuilder;
+    new-instance v11, Ljava/lang/StringBuilder;
 
-    invoke-direct {v9}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {v11}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string/jumbo v10, "removeSearchedTask, packageName="
+    const-string/jumbo v12, "removeSearchedTask, packageName="
 
-    invoke-virtual {v9, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v11, v12}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v9
+    move-result-object v11
 
-    invoke-virtual {v9, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v11, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v9
+    move-result-object v11
 
-    const-string/jumbo v10, ", caller="
+    const-string/jumbo v12, ", caller="
 
-    invoke-virtual {v9, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v11, v12}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v9
+    move-result-object v11
 
-    const/4 v10, 0x5
+    const/4 v12, 0x5
 
-    invoke-static {v10}, Landroid/os/Debug;->getCallers(I)Ljava/lang/String;
+    invoke-static {v12}, Landroid/os/Debug;->getCallers(I)Ljava/lang/String;
 
-    move-result-object v10
+    move-result-object v12
 
-    invoke-virtual {v9, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v11, v12}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v9
+    move-result-object v11
 
-    invoke-virtual {v9}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v11}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v9
+    move-result-object v11
 
-    invoke-static {v7, v9}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {v9, v11}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
     :cond_0
-    iget-object v7, p0, Lcom/android/server/am/MultiWindowManagerService;->mStackSupervisor:Lcom/android/server/am/ActivityStackSupervisor;
+    iget-object v9, p0, Lcom/android/server/am/MultiWindowManagerService;->mStackSupervisor:Lcom/android/server/am/ActivityStackSupervisor;
 
-    invoke-virtual {v7}, Lcom/android/server/am/ActivityStackSupervisor;->getStacks()Ljava/util/ArrayList;
-
-    move-result-object v3
-
-    invoke-interface {v3}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
-
-    move-result-object v2
-
-    :cond_1
-    invoke-interface {v2}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v7
-
-    if-eqz v7, :cond_4
-
-    invoke-interface {v2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v1
-
-    check-cast v1, Lcom/android/server/am/ActivityStack;
-
-    invoke-virtual {v1}, Lcom/android/server/am/ActivityStack;->getAllTasks()Ljava/util/ArrayList;
-
-    move-result-object v6
-
-    invoke-interface {v6}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
+    invoke-virtual {v9}, Lcom/android/server/am/ActivityStackSupervisor;->getStacks()Ljava/util/ArrayList;
 
     move-result-object v5
 
-    :cond_2
-    invoke-interface {v5}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v7
-
-    if-eqz v7, :cond_1
-
-    invoke-interface {v5}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    invoke-interface {v5}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
     move-result-object v4
 
-    check-cast v4, Lcom/android/server/am/TaskRecord;
+    :cond_1
+    invoke-interface {v4}, Ljava/util/Iterator;->hasNext()Z
 
-    invoke-virtual {v4}, Lcom/android/server/am/TaskRecord;->getTopActivity()Lcom/android/server/am/ActivityRecord;
+    move-result v9
 
-    move-result-object v0
+    if-eqz v9, :cond_5
 
-    if-eqz v0, :cond_2
+    invoke-interface {v4}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
-    iget-object v7, v0, Lcom/android/server/am/ActivityRecord;->packageName:Ljava/lang/String;
+    move-result-object v3
 
-    if-eqz v7, :cond_2
+    check-cast v3, Lcom/android/server/am/ActivityStack;
 
-    iget-object v7, v0, Lcom/android/server/am/ActivityRecord;->packageName:Ljava/lang/String;
+    invoke-virtual {v3}, Lcom/android/server/am/ActivityStack;->getAllTasks()Ljava/util/ArrayList;
 
-    invoke-virtual {v7, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    move-result-object v8
 
-    move-result v7
+    invoke-interface {v8}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
-    if-eqz v7, :cond_2
+    move-result-object v7
 
-    sget-boolean v7, Lcom/android/server/am/MultiWindowManagerService;->DEBUG:Z
+    :cond_2
+    invoke-interface {v7}, Ljava/util/Iterator;->hasNext()Z
 
-    if-eqz v7, :cond_3
+    move-result v9
 
-    const-string/jumbo v7, "MultiWindowManagerService_Bixby"
+    if-eqz v9, :cond_1
 
-    new-instance v9, Ljava/lang/StringBuilder;
+    invoke-interface {v7}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
-    invoke-direct {v9}, Ljava/lang/StringBuilder;-><init>()V
+    move-result-object v6
 
-    const-string/jumbo v10, "removeSearchedTask, task="
+    check-cast v6, Lcom/android/server/am/TaskRecord;
 
-    invoke-virtual {v9, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    iget-object v0, v6, Lcom/android/server/am/TaskRecord;->mActivities:Ljava/util/ArrayList;
 
-    move-result-object v9
+    invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
 
-    invoke-virtual {v9, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    move-result v9
 
-    move-result-object v9
+    add-int/lit8 v1, v9, -0x1
 
-    invoke-virtual {v9}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    :goto_0
+    if-ltz v1, :cond_2
 
-    move-result-object v9
+    invoke-virtual {v0, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
-    invoke-static {v7, v9}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
+    move-result-object v2
+
+    check-cast v2, Lcom/android/server/am/ActivityRecord;
+
+    if-eqz v2, :cond_4
+
+    iget-object v9, v2, Lcom/android/server/am/ActivityRecord;->packageName:Ljava/lang/String;
+
+    if-eqz v9, :cond_4
+
+    iget-object v9, v2, Lcom/android/server/am/ActivityRecord;->packageName:Ljava/lang/String;
+
+    invoke-virtual {v9, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v9
+
+    if-eqz v9, :cond_4
+
+    sget-boolean v9, Lcom/android/server/am/MultiWindowManagerService;->DEBUG:Z
+
+    if-eqz v9, :cond_3
+
+    const-string/jumbo v9, "MultiWindowManagerService_Bixby"
+
+    new-instance v11, Ljava/lang/StringBuilder;
+
+    invoke-direct {v11}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string/jumbo v12, "removeSearchedTask, task="
+
+    invoke-virtual {v11, v12}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v11
+
+    invoke-virtual {v11, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    move-result-object v11
+
+    invoke-virtual {v11}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v11
+
+    invoke-static {v9, v11}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
     :cond_3
-    iget-object v7, p0, Lcom/android/server/am/MultiWindowManagerService;->mActivityManager:Lcom/android/server/am/ActivityManagerService;
+    iget-object v9, p0, Lcom/android/server/am/MultiWindowManagerService;->mActivityManager:Lcom/android/server/am/ActivityManagerService;
 
-    iget v9, v4, Lcom/android/server/am/TaskRecord;->taskId:I
+    iget v11, v6, Lcom/android/server/am/TaskRecord;->taskId:I
 
-    invoke-virtual {v7, v9}, Lcom/android/server/am/ActivityManagerService;->removeTask(I)Z
+    invoke-virtual {v9, v11}, Lcom/android/server/am/ActivityManagerService;->removeTask(I)Z
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    const/4 v7, 0x1
+    const/4 v9, 0x1
 
-    monitor-exit v8
+    monitor-exit v10
 
-    return v7
+    return v9
 
     :cond_4
-    monitor-exit v8
+    add-int/lit8 v1, v1, -0x1
+
+    goto :goto_0
 
     :cond_5
-    const/4 v7, 0x0
+    monitor-exit v10
 
-    return v7
+    :cond_6
+    return v13
 
     :catchall_0
-    move-exception v7
+    move-exception v9
 
-    monitor-exit v8
+    monitor-exit v10
 
-    throw v7
+    throw v9
 .end method
 
 .method public removeTaskIfNeeded(Z)Z

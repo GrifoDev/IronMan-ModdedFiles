@@ -2669,6 +2669,16 @@
 
     invoke-virtual {v2, v15, v0}, Landroid/os/Bundle;->putInt(Ljava/lang/String;I)V
 
+    const-string/jumbo v15, "noti_key"
+
+    invoke-virtual/range {p1 .. p1}, Landroid/service/notification/StatusBarNotification;->getKey()Ljava/lang/String;
+
+    move-result-object v17
+
+    move-object/from16 v0, v17
+
+    invoke-virtual {v2, v15, v0}, Landroid/os/Bundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
+
     new-instance v6, Lcom/android/server/cocktailbar/edgelighting/EdgeLightingPolicyManager$NotificationData;
 
     invoke-direct {v6, v8, v9, v2}, Lcom/android/server/cocktailbar/edgelighting/EdgeLightingPolicyManager$NotificationData;-><init>(JLandroid/os/Bundle;)V

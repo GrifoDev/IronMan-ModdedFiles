@@ -2164,12 +2164,6 @@
     if-nez v5, :cond_0
 
     :cond_1
-    invoke-virtual {v2}, Lcom/android/server/am/TaskRecord;->isHomeTask()Z
-
-    move-result v5
-
-    if-eqz v5, :cond_0
-
     const-string/jumbo v5, "SamsungActivityManager"
 
     new-instance v7, Ljava/lang/StringBuilder;

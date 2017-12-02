@@ -33,6 +33,8 @@
 
 .field static final KEY_NOTIFICATION_COLOR:Ljava/lang/String; = "notification_color"
 
+.field static final KEY_NOTI_KEY:Ljava/lang/String; = "noti_key"
+
 .field static final KEY_PRIORITY:Ljava/lang/String; = "priority"
 
 .field static final KEY_SMALL_ICON:Ljava/lang/String; = "smallIcon"

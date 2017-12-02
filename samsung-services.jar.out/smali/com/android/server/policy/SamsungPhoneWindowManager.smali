@@ -423,6 +423,8 @@
 
 .field private mInputMethod:Landroid/view/WindowManagerPolicy$WindowState;
 
+.field private mInputMethodDlg:Landroid/view/WindowManagerPolicy$WindowState;
+
 .field mIsBixbyConsumed:Z
 
 .field mIsCheckDrivingMode:Z
@@ -11619,6 +11621,18 @@
     return v0
 .end method
 
+.method public getSurfaceLayerCarModeBar()I
+    .locals 1
+
+    iget-object v0, p0, Lcom/android/server/policy/SamsungPhoneWindowManager;->mCarModeBar:Landroid/view/WindowManagerPolicy$WindowState;
+
+    invoke-interface {v0}, Landroid/view/WindowManagerPolicy$WindowState;->getSurfaceLayer()I
+
+    move-result v0
+
+    return v0
+.end method
+
 .method public getTaskBarHeightInDesktopMode()I
     .locals 1
 
@@ -15766,7 +15780,7 @@
 
     move-object/from16 v52, v0
 
-    const v53, 0x1040a19
+    const v53, 0x1040a1a
 
     invoke-virtual/range {v52 .. v53}, Landroid/content/Context;->getText(I)Ljava/lang/CharSequence;
 
@@ -16591,6 +16605,39 @@
 
     const-string/jumbo v51, "SamsungPhoneWindowManager"
 
+    const-string/jumbo v52, "goto home by combination key"
+
+    invoke-static/range {v51 .. v52}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcom/android/server/policy/SamsungPhoneWindowManager;->mPWM:Lcom/android/server/policy/PhoneWindowManager;
+
+    move-object/from16 v51, v0
+
+    invoke-virtual/range {v51 .. v51}, Lcom/android/server/policy/PhoneWindowManager;->launchHomeFromHotKey()V
+
+    const-wide/16 v52, -0x1
+
+    return-wide v52
+
+    :sswitch_14
+    invoke-virtual/range {p0 .. p0}, Lcom/android/server/policy/SamsungPhoneWindowManager;->isMetaKeyEventRequested()Z
+
+    move-result v51
+
+    if-nez v51, :cond_b
+
+    if-nez v15, :cond_b
+
+    invoke-virtual/range {p2 .. p2}, Landroid/view/KeyEvent;->isMetaPressed()Z
+
+    move-result v51
+
+    if-eqz v51, :cond_b
+
+    const-string/jumbo v51, "SamsungPhoneWindowManager"
+
     const-string/jumbo v52, "launch SFinder"
 
     invoke-static/range {v51 .. v52}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
@@ -16601,7 +16648,7 @@
 
     return-wide v52
 
-    :sswitch_14
+    :sswitch_15
     invoke-virtual/range {p0 .. p0}, Lcom/android/server/policy/SamsungPhoneWindowManager;->isMetaKeyEventRequested()Z
 
     move-result v51
@@ -16867,7 +16914,7 @@
 
     goto/16 :goto_12
 
-    :sswitch_15
+    :sswitch_16
     invoke-virtual/range {p0 .. p0}, Lcom/android/server/policy/SamsungPhoneWindowManager;->isDesktopModeTi()Z
 
     move-result v51
@@ -16909,7 +16956,7 @@
 
     return-wide v52
 
-    :sswitch_16
+    :sswitch_17
     invoke-virtual/range {p0 .. p0}, Lcom/android/server/policy/SamsungPhoneWindowManager;->isMetaKeyEventRequested()Z
 
     move-result v51
@@ -16964,7 +17011,7 @@
 
     goto :goto_13
 
-    :sswitch_17
+    :sswitch_18
     invoke-virtual/range {p0 .. p0}, Lcom/android/server/policy/SamsungPhoneWindowManager;->isMetaKeyEventRequested()Z
 
     move-result v51
@@ -17011,7 +17058,7 @@
 
     return-wide v52
 
-    :sswitch_18
+    :sswitch_19
     invoke-virtual/range {p0 .. p0}, Lcom/android/server/policy/SamsungPhoneWindowManager;->isMetaKeyEventRequested()Z
 
     move-result v51
@@ -17069,7 +17116,7 @@
 
     return-wide v52
 
-    :sswitch_19
+    :sswitch_1a
     invoke-virtual/range {p0 .. p0}, Lcom/android/server/policy/SamsungPhoneWindowManager;->isMetaKeyEventRequested()Z
 
     move-result v51
@@ -17127,7 +17174,7 @@
 
     return-wide v52
 
-    :sswitch_1a
+    :sswitch_1b
     invoke-virtual/range {p0 .. p0}, Lcom/android/server/policy/SamsungPhoneWindowManager;->isMetaKeyEventRequested()Z
 
     move-result v51
@@ -17200,7 +17247,7 @@
 
     goto :goto_16
 
-    :sswitch_1b
+    :sswitch_1c
     invoke-virtual/range {p0 .. p0}, Lcom/android/server/policy/SamsungPhoneWindowManager;->isDesktopModeTi()Z
 
     move-result v51
@@ -17251,7 +17298,7 @@
 
     goto :goto_17
 
-    :sswitch_1c
+    :sswitch_1d
     invoke-virtual/range {p0 .. p0}, Lcom/android/server/policy/SamsungPhoneWindowManager;->isSideSyncPresentationRunning()Z
 
     move-result v51
@@ -17272,7 +17319,7 @@
 
     return-wide v52
 
-    :sswitch_1d
+    :sswitch_1e
     sget-boolean v51, Lcom/samsung/android/framework/feature/MultiWindowFeatures;->SAMSUNG_MULTIWINDOW_DYNAMIC_ENABLED:Z
 
     if-eqz v51, :cond_b
@@ -17442,7 +17489,7 @@
 
     return-wide v52
 
-    :sswitch_1e
+    :sswitch_1f
     sget-boolean v51, Lcom/samsung/android/framework/feature/MultiWindowFeatures;->SAMSUNG_MULTIWINDOW_DYNAMIC_ENABLED:Z
 
     if-eqz v51, :cond_b
@@ -17612,7 +17659,7 @@
 
     return-wide v52
 
-    :sswitch_1f
+    :sswitch_20
     sget-boolean v51, Lcom/samsung/android/framework/feature/MultiWindowFeatures;->SAMSUNG_MULTIWINDOW_DYNAMIC_ENABLED:Z
 
     if-eqz v51, :cond_b
@@ -17819,7 +17866,7 @@
 
     goto :goto_18
 
-    :sswitch_20
+    :sswitch_21
     invoke-virtual/range {p0 .. p0}, Lcom/android/server/policy/SamsungPhoneWindowManager;->isDesktopModeTi()Z
 
     move-result v51
@@ -17960,7 +18007,7 @@
 
     goto :goto_19
 
-    :sswitch_21
+    :sswitch_22
     invoke-virtual/range {p0 .. p0}, Lcom/android/server/policy/SamsungPhoneWindowManager;->isMetaKeyEventRequested()Z
 
     move-result v51
@@ -18190,29 +18237,30 @@
     .sparse-switch
         0x3 -> :sswitch_0
         0x4 -> :sswitch_2
-        0x13 -> :sswitch_1f
-        0x14 -> :sswitch_20
-        0x15 -> :sswitch_1d
-        0x16 -> :sswitch_1e
-        0x18 -> :sswitch_1c
-        0x19 -> :sswitch_1c
+        0x13 -> :sswitch_20
+        0x14 -> :sswitch_21
+        0x15 -> :sswitch_1e
+        0x16 -> :sswitch_1f
+        0x18 -> :sswitch_1d
+        0x19 -> :sswitch_1d
         0x1a -> :sswitch_b
         0x1b -> :sswitch_10
-        0x22 -> :sswitch_13
-        0x25 -> :sswitch_14
-        0x28 -> :sswitch_15
-        0x2d -> :sswitch_16
-        0x32 -> :sswitch_17
-        0x34 -> :sswitch_18
-        0x3d -> :sswitch_21
+        0x20 -> :sswitch_13
+        0x22 -> :sswitch_14
+        0x25 -> :sswitch_15
+        0x28 -> :sswitch_16
+        0x2d -> :sswitch_17
+        0x32 -> :sswitch_18
+        0x34 -> :sswitch_19
+        0x3d -> :sswitch_22
         0x6f -> :sswitch_2
-        0x75 -> :sswitch_1a
-        0x76 -> :sswitch_1a
+        0x75 -> :sswitch_1b
+        0x76 -> :sswitch_1b
         0x78 -> :sswitch_12
-        0x86 -> :sswitch_19
+        0x86 -> :sswitch_1a
         0xbb -> :sswitch_1
         0x3e9 -> :sswitch_1
-        0x3ea -> :sswitch_1b
+        0x3ea -> :sswitch_1c
         0x3eb -> :sswitch_7
         0x3ec -> :sswitch_9
         0x3f7 -> :sswitch_c
@@ -24536,9 +24584,11 @@
 .end method
 
 .method public layoutWindowLw(Landroid/view/WindowManagerPolicy$WindowState;Landroid/graphics/Rect;Landroid/graphics/Rect;Landroid/graphics/Rect;Landroid/graphics/Rect;Landroid/graphics/Rect;Landroid/graphics/Rect;)V
-    .locals 7
+    .locals 8
 
-    const/4 v4, 0x0
+    const/4 v1, 0x1
+
+    const/4 v5, 0x0
 
     invoke-interface {p1}, Landroid/view/WindowManagerPolicy$WindowState;->getAttrs()Landroid/view/WindowManager$LayoutParams;
 
@@ -24546,538 +24596,550 @@
 
     invoke-interface {p1}, Landroid/view/WindowManagerPolicy$WindowState;->isDefaultDisplay()Z
 
-    move-result v1
+    move-result v2
 
-    if-eqz v1, :cond_4
+    if-eqz v2, :cond_6
 
-    iget v3, v0, Landroid/view/WindowManager$LayoutParams;->type:I
+    iget v4, v0, Landroid/view/WindowManager$LayoutParams;->type:I
 
-    const/16 v5, 0x7db
+    const/16 v6, 0x7db
 
-    if-eq v3, v5, :cond_0
+    if-eq v4, v6, :cond_0
 
-    iget v3, v0, Landroid/view/WindowManager$LayoutParams;->type:I
+    iget v4, v0, Landroid/view/WindowManager$LayoutParams;->type:I
 
-    const/16 v5, 0x960
+    const/16 v6, 0x960
 
-    if-ne v3, v5, :cond_5
+    if-ne v4, v6, :cond_7
 
     :cond_0
-    iget-boolean v3, p0, Lcom/android/server/policy/SamsungPhoneWindowManager;->mMobileKeyboardEnabled:Z
+    iget-boolean v4, p0, Lcom/android/server/policy/SamsungPhoneWindowManager;->mMobileKeyboardEnabled:Z
 
-    if-eqz v3, :cond_1
+    if-eqz v4, :cond_1
 
-    iget v3, v0, Landroid/view/WindowManager$LayoutParams;->samsungFlags:I
+    iget v4, v0, Landroid/view/WindowManager$LayoutParams;->samsungFlags:I
 
-    and-int/lit16 v3, v3, 0x800
+    and-int/lit16 v4, v4, 0x800
 
-    if-eqz v3, :cond_1
+    if-eqz v4, :cond_1
 
-    iget v3, p2, Landroid/graphics/Rect;->bottom:I
+    iget v4, p2, Landroid/graphics/Rect;->bottom:I
 
-    iget v5, p0, Lcom/android/server/policy/SamsungPhoneWindowManager;->mMobileKeyboardHeight:I
+    iget v6, p0, Lcom/android/server/policy/SamsungPhoneWindowManager;->mMobileKeyboardHeight:I
 
-    iget v6, p0, Lcom/android/server/policy/SamsungPhoneWindowManager;->mNavigationBarHeight:I
+    iget v7, p0, Lcom/android/server/policy/SamsungPhoneWindowManager;->mNavigationBarHeight:I
 
-    sub-int/2addr v5, v6
+    sub-int/2addr v6, v7
 
-    add-int/2addr v3, v5
+    add-int/2addr v4, v6
 
-    iput v3, p2, Landroid/graphics/Rect;->bottom:I
+    iput v4, p2, Landroid/graphics/Rect;->bottom:I
 
-    iget v3, p3, Landroid/graphics/Rect;->bottom:I
+    iget v4, p3, Landroid/graphics/Rect;->bottom:I
 
-    iget v5, p0, Lcom/android/server/policy/SamsungPhoneWindowManager;->mMobileKeyboardHeight:I
+    iget v6, p0, Lcom/android/server/policy/SamsungPhoneWindowManager;->mMobileKeyboardHeight:I
 
-    iget v6, p0, Lcom/android/server/policy/SamsungPhoneWindowManager;->mNavigationBarHeight:I
+    iget v7, p0, Lcom/android/server/policy/SamsungPhoneWindowManager;->mNavigationBarHeight:I
 
-    sub-int/2addr v5, v6
+    sub-int/2addr v6, v7
 
-    add-int/2addr v3, v5
+    add-int/2addr v4, v6
 
-    iput v3, p3, Landroid/graphics/Rect;->bottom:I
+    iput v4, p3, Landroid/graphics/Rect;->bottom:I
 
-    iget v3, p4, Landroid/graphics/Rect;->bottom:I
+    iget v4, p4, Landroid/graphics/Rect;->bottom:I
 
-    iget v5, p0, Lcom/android/server/policy/SamsungPhoneWindowManager;->mMobileKeyboardHeight:I
+    iget v6, p0, Lcom/android/server/policy/SamsungPhoneWindowManager;->mMobileKeyboardHeight:I
 
-    iget v6, p0, Lcom/android/server/policy/SamsungPhoneWindowManager;->mNavigationBarHeight:I
+    iget v7, p0, Lcom/android/server/policy/SamsungPhoneWindowManager;->mNavigationBarHeight:I
 
-    sub-int/2addr v5, v6
+    sub-int/2addr v6, v7
 
-    add-int/2addr v3, v5
+    add-int/2addr v4, v6
 
-    iput v3, p4, Landroid/graphics/Rect;->bottom:I
+    iput v4, p4, Landroid/graphics/Rect;->bottom:I
 
-    iget v3, p5, Landroid/graphics/Rect;->bottom:I
+    iget v4, p5, Landroid/graphics/Rect;->bottom:I
 
-    iget v5, p0, Lcom/android/server/policy/SamsungPhoneWindowManager;->mMobileKeyboardHeight:I
+    iget v6, p0, Lcom/android/server/policy/SamsungPhoneWindowManager;->mMobileKeyboardHeight:I
 
-    iget v6, p0, Lcom/android/server/policy/SamsungPhoneWindowManager;->mNavigationBarHeight:I
+    iget v7, p0, Lcom/android/server/policy/SamsungPhoneWindowManager;->mNavigationBarHeight:I
 
-    sub-int/2addr v5, v6
+    sub-int/2addr v6, v7
 
-    add-int/2addr v3, v5
+    add-int/2addr v4, v6
 
-    iput v3, p5, Landroid/graphics/Rect;->bottom:I
+    iput v4, p5, Landroid/graphics/Rect;->bottom:I
 
-    iget v3, p6, Landroid/graphics/Rect;->bottom:I
+    iget v4, p6, Landroid/graphics/Rect;->bottom:I
 
-    iget v5, p0, Lcom/android/server/policy/SamsungPhoneWindowManager;->mMobileKeyboardHeight:I
+    iget v6, p0, Lcom/android/server/policy/SamsungPhoneWindowManager;->mMobileKeyboardHeight:I
 
-    iget v6, p0, Lcom/android/server/policy/SamsungPhoneWindowManager;->mNavigationBarHeight:I
+    iget v7, p0, Lcom/android/server/policy/SamsungPhoneWindowManager;->mNavigationBarHeight:I
 
-    sub-int/2addr v5, v6
+    sub-int/2addr v6, v7
 
-    add-int/2addr v3, v5
+    add-int/2addr v4, v6
 
-    iput v3, p6, Landroid/graphics/Rect;->bottom:I
+    iput v4, p6, Landroid/graphics/Rect;->bottom:I
 
     :cond_1
     invoke-virtual {p0}, Lcom/android/server/policy/SamsungPhoneWindowManager;->isCarModeEnabled()Z
 
-    move-result v3
+    move-result v4
 
-    if-eqz v3, :cond_2
+    if-eqz v4, :cond_2
 
-    iget-object v3, p0, Lcom/android/server/policy/SamsungPhoneWindowManager;->mPWM:Lcom/android/server/policy/PhoneWindowManager;
+    iget-object v4, p0, Lcom/android/server/policy/SamsungPhoneWindowManager;->mPWM:Lcom/android/server/policy/PhoneWindowManager;
 
-    iget v3, v3, Lcom/android/server/policy/PhoneWindowManager;->mRestrictedOverscanScreenTop:I
+    iget v4, v4, Lcom/android/server/policy/PhoneWindowManager;->mRestrictedOverscanScreenTop:I
 
-    iget-object v5, p0, Lcom/android/server/policy/SamsungPhoneWindowManager;->mPWM:Lcom/android/server/policy/PhoneWindowManager;
+    iget-object v6, p0, Lcom/android/server/policy/SamsungPhoneWindowManager;->mPWM:Lcom/android/server/policy/PhoneWindowManager;
 
-    iget v5, v5, Lcom/android/server/policy/PhoneWindowManager;->mRestrictedOverscanScreenHeight:I
+    iget v6, v6, Lcom/android/server/policy/PhoneWindowManager;->mRestrictedOverscanScreenHeight:I
 
-    add-int/2addr v3, v5
+    add-int/2addr v4, v6
 
-    iput v3, p6, Landroid/graphics/Rect;->bottom:I
+    iput v4, p6, Landroid/graphics/Rect;->bottom:I
 
-    iput v3, p5, Landroid/graphics/Rect;->bottom:I
+    iput v4, p5, Landroid/graphics/Rect;->bottom:I
 
     :cond_2
     :goto_0
-    sget-boolean v3, Lcom/samsung/android/framework/feature/MultiWindowFeatures;->SAMSUNG_MULTIWINDOW_DYNAMIC_ENABLED:Z
+    sget-boolean v4, Lcom/samsung/android/framework/feature/MultiWindowFeatures;->SAMSUNG_MULTIWINDOW_DYNAMIC_ENABLED:Z
 
-    if-eqz v3, :cond_3
+    if-eqz v4, :cond_3
 
-    iget-object v3, p0, Lcom/android/server/policy/SamsungPhoneWindowManager;->mWindowManagerFuncs:Landroid/view/WindowManagerPolicy$WindowManagerFuncs;
+    iget-object v4, p0, Lcom/android/server/policy/SamsungPhoneWindowManager;->mWindowManagerFuncs:Landroid/view/WindowManagerPolicy$WindowManagerFuncs;
 
-    invoke-interface {v3}, Landroid/view/WindowManagerPolicy$WindowManagerFuncs;->isDesktopModeLw()Z
+    invoke-interface {v4}, Landroid/view/WindowManagerPolicy$WindowManagerFuncs;->isDesktopModeLw()Z
 
-    move-result v3
+    move-result v4
 
-    if-eqz v3, :cond_c
+    if-eqz v4, :cond_e
 
     :cond_3
     :goto_1
-    iget-object v3, p0, Lcom/android/server/policy/SamsungPhoneWindowManager;->mInputMethod:Landroid/view/WindowManagerPolicy$WindowState;
+    iget-object v4, p0, Lcom/android/server/policy/SamsungPhoneWindowManager;->mInputMethod:Landroid/view/WindowManagerPolicy$WindowState;
 
-    if-eqz v3, :cond_d
+    if-eqz v4, :cond_4
 
-    iget-object v3, p0, Lcom/android/server/policy/SamsungPhoneWindowManager;->mInputMethod:Landroid/view/WindowManagerPolicy$WindowState;
+    iget-object v4, p0, Lcom/android/server/policy/SamsungPhoneWindowManager;->mInputMethod:Landroid/view/WindowManagerPolicy$WindowState;
 
-    invoke-interface {v3}, Landroid/view/WindowManagerPolicy$WindowState;->isVisibleLw()Z
+    invoke-interface {v4}, Landroid/view/WindowManagerPolicy$WindowState;->isVisibleLw()Z
 
-    move-result v3
+    move-result v4
 
-    :goto_2
-    invoke-static {v3}, Lcom/android/server/policy/PolicyControl;->setInputMethodVisible(Z)V
+    if-nez v4, :cond_5
 
     :cond_4
-    return-void
+    iget-object v4, p0, Lcom/android/server/policy/SamsungPhoneWindowManager;->mInputMethodDlg:Landroid/view/WindowManagerPolicy$WindowState;
+
+    if-eqz v4, :cond_f
+
+    iget-object v4, p0, Lcom/android/server/policy/SamsungPhoneWindowManager;->mInputMethodDlg:Landroid/view/WindowManagerPolicy$WindowState;
+
+    invoke-interface {v4}, Landroid/view/WindowManagerPolicy$WindowState;->isVisibleLw()Z
+
+    move-result v1
 
     :cond_5
-    iget v3, v0, Landroid/view/WindowManager$LayoutParams;->type:I
+    :goto_2
+    invoke-static {v1}, Lcom/android/server/policy/PolicyControl;->setInputMethodVisible(Z)V
 
-    const/16 v5, 0x8df
+    :cond_6
+    return-void
 
-    if-ne v3, v5, :cond_a
+    :cond_7
+    iget v4, v0, Landroid/view/WindowManager$LayoutParams;->type:I
 
-    iget-object v3, p0, Lcom/android/server/policy/SamsungPhoneWindowManager;->mPWM:Lcom/android/server/policy/PhoneWindowManager;
+    const/16 v6, 0x8df
 
-    iget-boolean v3, v3, Lcom/android/server/policy/PhoneWindowManager;->mHasNavigationBar:Z
+    if-ne v4, v6, :cond_c
 
-    if-eqz v3, :cond_9
+    iget-object v4, p0, Lcom/android/server/policy/SamsungPhoneWindowManager;->mPWM:Lcom/android/server/policy/PhoneWindowManager;
 
-    iget-object v3, p0, Lcom/android/server/policy/SamsungPhoneWindowManager;->mPWM:Lcom/android/server/policy/PhoneWindowManager;
+    iget-boolean v4, v4, Lcom/android/server/policy/PhoneWindowManager;->mHasNavigationBar:Z
 
-    iget-object v3, v3, Lcom/android/server/policy/PhoneWindowManager;->mNavigationBar:Landroid/view/WindowManagerPolicy$WindowState;
+    if-eqz v4, :cond_b
 
-    if-eqz v3, :cond_9
+    iget-object v4, p0, Lcom/android/server/policy/SamsungPhoneWindowManager;->mPWM:Lcom/android/server/policy/PhoneWindowManager;
 
-    iget v3, p0, Lcom/android/server/policy/SamsungPhoneWindowManager;->mCarModeBarPosition:I
+    iget-object v4, v4, Lcom/android/server/policy/PhoneWindowManager;->mNavigationBar:Landroid/view/WindowManagerPolicy$WindowState;
 
-    if-nez v3, :cond_6
+    if-eqz v4, :cond_b
+
+    iget v4, p0, Lcom/android/server/policy/SamsungPhoneWindowManager;->mCarModeBarPosition:I
+
+    if-nez v4, :cond_8
 
     invoke-virtual {p0}, Lcom/android/server/policy/SamsungPhoneWindowManager;->isCarModeBarVisible()Z
 
-    move-result v3
+    move-result v4
 
-    if-eqz v3, :cond_6
+    if-eqz v4, :cond_8
 
-    iget-object v3, p0, Lcom/android/server/policy/SamsungPhoneWindowManager;->mPWM:Lcom/android/server/policy/PhoneWindowManager;
+    iget-object v4, p0, Lcom/android/server/policy/SamsungPhoneWindowManager;->mPWM:Lcom/android/server/policy/PhoneWindowManager;
 
-    iget v3, v3, Lcom/android/server/policy/PhoneWindowManager;->mRestrictedOverscanScreenLeft:I
+    iget v4, v4, Lcom/android/server/policy/PhoneWindowManager;->mRestrictedOverscanScreenLeft:I
 
-    iget v5, p0, Lcom/android/server/policy/SamsungPhoneWindowManager;->mCarModeSize:I
+    iget v6, p0, Lcom/android/server/policy/SamsungPhoneWindowManager;->mCarModeSize:I
 
-    sub-int/2addr v3, v5
+    sub-int/2addr v4, v6
 
     :goto_3
-    iput v3, p5, Landroid/graphics/Rect;->left:I
+    iput v4, p5, Landroid/graphics/Rect;->left:I
 
-    iput v3, p4, Landroid/graphics/Rect;->left:I
+    iput v4, p4, Landroid/graphics/Rect;->left:I
 
-    iput v3, p3, Landroid/graphics/Rect;->left:I
+    iput v4, p3, Landroid/graphics/Rect;->left:I
 
-    iput v3, p2, Landroid/graphics/Rect;->left:I
+    iput v4, p2, Landroid/graphics/Rect;->left:I
 
-    iget-object v3, p0, Lcom/android/server/policy/SamsungPhoneWindowManager;->mPWM:Lcom/android/server/policy/PhoneWindowManager;
+    iget-object v4, p0, Lcom/android/server/policy/SamsungPhoneWindowManager;->mPWM:Lcom/android/server/policy/PhoneWindowManager;
 
-    iget v3, v3, Lcom/android/server/policy/PhoneWindowManager;->mRestrictedOverscanScreenTop:I
+    iget v4, v4, Lcom/android/server/policy/PhoneWindowManager;->mRestrictedOverscanScreenTop:I
 
-    iput v3, p5, Landroid/graphics/Rect;->top:I
+    iput v4, p5, Landroid/graphics/Rect;->top:I
 
-    iput v3, p4, Landroid/graphics/Rect;->top:I
+    iput v4, p4, Landroid/graphics/Rect;->top:I
 
-    iput v3, p3, Landroid/graphics/Rect;->top:I
+    iput v4, p3, Landroid/graphics/Rect;->top:I
 
-    iput v3, p2, Landroid/graphics/Rect;->top:I
+    iput v4, p2, Landroid/graphics/Rect;->top:I
 
-    iget v3, p0, Lcom/android/server/policy/SamsungPhoneWindowManager;->mCarModeBarPosition:I
+    iget v4, p0, Lcom/android/server/policy/SamsungPhoneWindowManager;->mCarModeBarPosition:I
 
-    const/4 v5, 0x1
-
-    if-ne v3, v5, :cond_7
+    if-ne v4, v1, :cond_9
 
     invoke-virtual {p0}, Lcom/android/server/policy/SamsungPhoneWindowManager;->isCarModeBarVisible()Z
 
-    move-result v3
+    move-result v4
 
-    if-eqz v3, :cond_7
+    if-eqz v4, :cond_9
 
-    iget-object v3, p0, Lcom/android/server/policy/SamsungPhoneWindowManager;->mPWM:Lcom/android/server/policy/PhoneWindowManager;
+    iget-object v4, p0, Lcom/android/server/policy/SamsungPhoneWindowManager;->mPWM:Lcom/android/server/policy/PhoneWindowManager;
 
-    iget v3, v3, Lcom/android/server/policy/PhoneWindowManager;->mRestrictedOverscanScreenLeft:I
+    iget v4, v4, Lcom/android/server/policy/PhoneWindowManager;->mRestrictedOverscanScreenLeft:I
 
-    iget-object v5, p0, Lcom/android/server/policy/SamsungPhoneWindowManager;->mPWM:Lcom/android/server/policy/PhoneWindowManager;
+    iget-object v6, p0, Lcom/android/server/policy/SamsungPhoneWindowManager;->mPWM:Lcom/android/server/policy/PhoneWindowManager;
 
-    iget v5, v5, Lcom/android/server/policy/PhoneWindowManager;->mRestrictedOverscanScreenWidth:I
+    iget v6, v6, Lcom/android/server/policy/PhoneWindowManager;->mRestrictedOverscanScreenWidth:I
 
-    add-int/2addr v3, v5
+    add-int/2addr v4, v6
 
-    iget v5, p0, Lcom/android/server/policy/SamsungPhoneWindowManager;->mCarModeSize:I
+    iget v6, p0, Lcom/android/server/policy/SamsungPhoneWindowManager;->mCarModeSize:I
 
     :goto_4
-    add-int/2addr v3, v5
+    add-int/2addr v4, v6
 
-    iput v3, p5, Landroid/graphics/Rect;->right:I
+    iput v4, p5, Landroid/graphics/Rect;->right:I
 
-    iput v3, p4, Landroid/graphics/Rect;->right:I
+    iput v4, p4, Landroid/graphics/Rect;->right:I
 
-    iput v3, p3, Landroid/graphics/Rect;->right:I
+    iput v4, p3, Landroid/graphics/Rect;->right:I
 
-    iput v3, p2, Landroid/graphics/Rect;->right:I
+    iput v4, p2, Landroid/graphics/Rect;->right:I
 
-    iget v3, p0, Lcom/android/server/policy/SamsungPhoneWindowManager;->mCarModeBarPosition:I
+    iget v4, p0, Lcom/android/server/policy/SamsungPhoneWindowManager;->mCarModeBarPosition:I
 
-    const/4 v5, 0x2
+    const/4 v6, 0x2
 
-    if-ne v3, v5, :cond_8
+    if-ne v4, v6, :cond_a
 
     invoke-virtual {p0}, Lcom/android/server/policy/SamsungPhoneWindowManager;->isCarModeBarVisible()Z
 
-    move-result v3
+    move-result v4
 
-    if-eqz v3, :cond_8
+    if-eqz v4, :cond_a
 
-    iget-object v3, p0, Lcom/android/server/policy/SamsungPhoneWindowManager;->mPWM:Lcom/android/server/policy/PhoneWindowManager;
+    iget-object v4, p0, Lcom/android/server/policy/SamsungPhoneWindowManager;->mPWM:Lcom/android/server/policy/PhoneWindowManager;
 
-    iget v3, v3, Lcom/android/server/policy/PhoneWindowManager;->mRestrictedOverscanScreenTop:I
+    iget v4, v4, Lcom/android/server/policy/PhoneWindowManager;->mRestrictedOverscanScreenTop:I
 
-    iget-object v5, p0, Lcom/android/server/policy/SamsungPhoneWindowManager;->mPWM:Lcom/android/server/policy/PhoneWindowManager;
+    iget-object v6, p0, Lcom/android/server/policy/SamsungPhoneWindowManager;->mPWM:Lcom/android/server/policy/PhoneWindowManager;
 
-    iget v5, v5, Lcom/android/server/policy/PhoneWindowManager;->mRestrictedOverscanScreenHeight:I
+    iget v6, v6, Lcom/android/server/policy/PhoneWindowManager;->mRestrictedOverscanScreenHeight:I
 
-    add-int/2addr v3, v5
+    add-int/2addr v4, v6
 
-    iget v5, p0, Lcom/android/server/policy/SamsungPhoneWindowManager;->mCarModeSize:I
+    iget v6, p0, Lcom/android/server/policy/SamsungPhoneWindowManager;->mCarModeSize:I
 
     :goto_5
-    add-int/2addr v3, v5
+    add-int/2addr v4, v6
 
-    iput v3, p5, Landroid/graphics/Rect;->bottom:I
+    iput v4, p5, Landroid/graphics/Rect;->bottom:I
 
-    iput v3, p4, Landroid/graphics/Rect;->bottom:I
+    iput v4, p4, Landroid/graphics/Rect;->bottom:I
 
-    iput v3, p3, Landroid/graphics/Rect;->bottom:I
+    iput v4, p3, Landroid/graphics/Rect;->bottom:I
 
-    iput v3, p2, Landroid/graphics/Rect;->bottom:I
+    iput v4, p2, Landroid/graphics/Rect;->bottom:I
 
     :goto_6
     invoke-virtual {p7, p2}, Landroid/graphics/Rect;->set(Landroid/graphics/Rect;)V
 
     goto/16 :goto_0
 
-    :cond_6
-    iget-object v3, p0, Lcom/android/server/policy/SamsungPhoneWindowManager;->mPWM:Lcom/android/server/policy/PhoneWindowManager;
+    :cond_8
+    iget-object v4, p0, Lcom/android/server/policy/SamsungPhoneWindowManager;->mPWM:Lcom/android/server/policy/PhoneWindowManager;
 
-    iget v3, v3, Lcom/android/server/policy/PhoneWindowManager;->mRestrictedOverscanScreenLeft:I
+    iget v4, v4, Lcom/android/server/policy/PhoneWindowManager;->mRestrictedOverscanScreenLeft:I
 
     goto :goto_3
 
-    :cond_7
-    iget-object v3, p0, Lcom/android/server/policy/SamsungPhoneWindowManager;->mPWM:Lcom/android/server/policy/PhoneWindowManager;
+    :cond_9
+    iget-object v4, p0, Lcom/android/server/policy/SamsungPhoneWindowManager;->mPWM:Lcom/android/server/policy/PhoneWindowManager;
 
-    iget v3, v3, Lcom/android/server/policy/PhoneWindowManager;->mRestrictedOverscanScreenLeft:I
+    iget v4, v4, Lcom/android/server/policy/PhoneWindowManager;->mRestrictedOverscanScreenLeft:I
 
-    iget-object v5, p0, Lcom/android/server/policy/SamsungPhoneWindowManager;->mPWM:Lcom/android/server/policy/PhoneWindowManager;
+    iget-object v6, p0, Lcom/android/server/policy/SamsungPhoneWindowManager;->mPWM:Lcom/android/server/policy/PhoneWindowManager;
 
-    iget v5, v5, Lcom/android/server/policy/PhoneWindowManager;->mRestrictedOverscanScreenWidth:I
+    iget v6, v6, Lcom/android/server/policy/PhoneWindowManager;->mRestrictedOverscanScreenWidth:I
 
     goto :goto_4
 
-    :cond_8
-    iget-object v3, p0, Lcom/android/server/policy/SamsungPhoneWindowManager;->mPWM:Lcom/android/server/policy/PhoneWindowManager;
+    :cond_a
+    iget-object v4, p0, Lcom/android/server/policy/SamsungPhoneWindowManager;->mPWM:Lcom/android/server/policy/PhoneWindowManager;
 
-    iget v3, v3, Lcom/android/server/policy/PhoneWindowManager;->mRestrictedOverscanScreenTop:I
+    iget v4, v4, Lcom/android/server/policy/PhoneWindowManager;->mRestrictedOverscanScreenTop:I
 
-    iget-object v5, p0, Lcom/android/server/policy/SamsungPhoneWindowManager;->mPWM:Lcom/android/server/policy/PhoneWindowManager;
+    iget-object v6, p0, Lcom/android/server/policy/SamsungPhoneWindowManager;->mPWM:Lcom/android/server/policy/PhoneWindowManager;
 
-    iget v5, v5, Lcom/android/server/policy/PhoneWindowManager;->mRestrictedOverscanScreenHeight:I
+    iget v6, v6, Lcom/android/server/policy/PhoneWindowManager;->mRestrictedOverscanScreenHeight:I
 
     goto :goto_5
 
-    :cond_9
-    iget-object v3, p0, Lcom/android/server/policy/SamsungPhoneWindowManager;->mPWM:Lcom/android/server/policy/PhoneWindowManager;
+    :cond_b
+    iget-object v4, p0, Lcom/android/server/policy/SamsungPhoneWindowManager;->mPWM:Lcom/android/server/policy/PhoneWindowManager;
 
-    iget v3, v3, Lcom/android/server/policy/PhoneWindowManager;->mOverscanScreenLeft:I
+    iget v4, v4, Lcom/android/server/policy/PhoneWindowManager;->mOverscanScreenLeft:I
 
-    iput v3, p5, Landroid/graphics/Rect;->left:I
+    iput v4, p5, Landroid/graphics/Rect;->left:I
 
-    iput v3, p4, Landroid/graphics/Rect;->left:I
+    iput v4, p4, Landroid/graphics/Rect;->left:I
 
-    iput v3, p3, Landroid/graphics/Rect;->left:I
+    iput v4, p3, Landroid/graphics/Rect;->left:I
 
-    iput v3, p2, Landroid/graphics/Rect;->left:I
+    iput v4, p2, Landroid/graphics/Rect;->left:I
 
-    iget-object v3, p0, Lcom/android/server/policy/SamsungPhoneWindowManager;->mPWM:Lcom/android/server/policy/PhoneWindowManager;
+    iget-object v4, p0, Lcom/android/server/policy/SamsungPhoneWindowManager;->mPWM:Lcom/android/server/policy/PhoneWindowManager;
 
-    iget v3, v3, Lcom/android/server/policy/PhoneWindowManager;->mOverscanScreenTop:I
+    iget v4, v4, Lcom/android/server/policy/PhoneWindowManager;->mOverscanScreenTop:I
 
-    iput v3, p5, Landroid/graphics/Rect;->top:I
+    iput v4, p5, Landroid/graphics/Rect;->top:I
 
-    iput v3, p4, Landroid/graphics/Rect;->top:I
+    iput v4, p4, Landroid/graphics/Rect;->top:I
 
-    iput v3, p3, Landroid/graphics/Rect;->top:I
+    iput v4, p3, Landroid/graphics/Rect;->top:I
 
-    iput v3, p2, Landroid/graphics/Rect;->top:I
+    iput v4, p2, Landroid/graphics/Rect;->top:I
 
-    iget-object v3, p0, Lcom/android/server/policy/SamsungPhoneWindowManager;->mPWM:Lcom/android/server/policy/PhoneWindowManager;
+    iget-object v4, p0, Lcom/android/server/policy/SamsungPhoneWindowManager;->mPWM:Lcom/android/server/policy/PhoneWindowManager;
 
-    iget v3, v3, Lcom/android/server/policy/PhoneWindowManager;->mOverscanScreenLeft:I
+    iget v4, v4, Lcom/android/server/policy/PhoneWindowManager;->mOverscanScreenLeft:I
 
-    iget-object v5, p0, Lcom/android/server/policy/SamsungPhoneWindowManager;->mPWM:Lcom/android/server/policy/PhoneWindowManager;
+    iget-object v6, p0, Lcom/android/server/policy/SamsungPhoneWindowManager;->mPWM:Lcom/android/server/policy/PhoneWindowManager;
 
-    iget v5, v5, Lcom/android/server/policy/PhoneWindowManager;->mOverscanScreenWidth:I
+    iget v6, v6, Lcom/android/server/policy/PhoneWindowManager;->mOverscanScreenWidth:I
 
-    add-int/2addr v3, v5
+    add-int/2addr v4, v6
 
-    iput v3, p5, Landroid/graphics/Rect;->right:I
+    iput v4, p5, Landroid/graphics/Rect;->right:I
 
-    iput v3, p4, Landroid/graphics/Rect;->right:I
+    iput v4, p4, Landroid/graphics/Rect;->right:I
 
-    iput v3, p3, Landroid/graphics/Rect;->right:I
+    iput v4, p3, Landroid/graphics/Rect;->right:I
 
-    iput v3, p2, Landroid/graphics/Rect;->right:I
+    iput v4, p2, Landroid/graphics/Rect;->right:I
 
-    iget-object v3, p0, Lcom/android/server/policy/SamsungPhoneWindowManager;->mPWM:Lcom/android/server/policy/PhoneWindowManager;
+    iget-object v4, p0, Lcom/android/server/policy/SamsungPhoneWindowManager;->mPWM:Lcom/android/server/policy/PhoneWindowManager;
 
-    iget v3, v3, Lcom/android/server/policy/PhoneWindowManager;->mOverscanScreenTop:I
+    iget v4, v4, Lcom/android/server/policy/PhoneWindowManager;->mOverscanScreenTop:I
 
-    iget-object v5, p0, Lcom/android/server/policy/SamsungPhoneWindowManager;->mPWM:Lcom/android/server/policy/PhoneWindowManager;
+    iget-object v6, p0, Lcom/android/server/policy/SamsungPhoneWindowManager;->mPWM:Lcom/android/server/policy/PhoneWindowManager;
 
-    iget v5, v5, Lcom/android/server/policy/PhoneWindowManager;->mOverscanScreenHeight:I
+    iget v6, v6, Lcom/android/server/policy/PhoneWindowManager;->mOverscanScreenHeight:I
 
-    add-int/2addr v3, v5
+    add-int/2addr v4, v6
 
-    iput v3, p5, Landroid/graphics/Rect;->bottom:I
+    iput v4, p5, Landroid/graphics/Rect;->bottom:I
 
-    iput v3, p4, Landroid/graphics/Rect;->bottom:I
+    iput v4, p4, Landroid/graphics/Rect;->bottom:I
 
-    iput v3, p3, Landroid/graphics/Rect;->bottom:I
+    iput v4, p3, Landroid/graphics/Rect;->bottom:I
 
-    iput v3, p2, Landroid/graphics/Rect;->bottom:I
+    iput v4, p2, Landroid/graphics/Rect;->bottom:I
 
     goto :goto_6
 
-    :cond_a
-    iget v3, v0, Landroid/view/WindowManager$LayoutParams;->type:I
+    :cond_c
+    iget v4, v0, Landroid/view/WindowManager$LayoutParams;->type:I
 
-    const/16 v5, 0x7de
+    const/16 v6, 0x7de
 
-    if-ne v3, v5, :cond_b
+    if-ne v4, v6, :cond_d
 
     invoke-virtual {p0}, Lcom/android/server/policy/SamsungPhoneWindowManager;->isCarModeBarVisible()Z
 
-    move-result v3
+    move-result v4
 
-    if-eqz v3, :cond_2
+    if-eqz v4, :cond_2
 
-    iget-object v3, p0, Lcom/android/server/policy/SamsungPhoneWindowManager;->mPWM:Lcom/android/server/policy/PhoneWindowManager;
+    iget-object v4, p0, Lcom/android/server/policy/SamsungPhoneWindowManager;->mPWM:Lcom/android/server/policy/PhoneWindowManager;
 
-    iget v3, v3, Lcom/android/server/policy/PhoneWindowManager;->mUnrestrictedScreenLeft:I
+    iget v4, v4, Lcom/android/server/policy/PhoneWindowManager;->mUnrestrictedScreenLeft:I
 
-    iput v3, p4, Landroid/graphics/Rect;->left:I
+    iput v4, p4, Landroid/graphics/Rect;->left:I
 
-    iput v3, p3, Landroid/graphics/Rect;->left:I
+    iput v4, p3, Landroid/graphics/Rect;->left:I
 
-    iput v3, p2, Landroid/graphics/Rect;->left:I
+    iput v4, p2, Landroid/graphics/Rect;->left:I
 
-    iget-object v3, p0, Lcom/android/server/policy/SamsungPhoneWindowManager;->mPWM:Lcom/android/server/policy/PhoneWindowManager;
+    iget-object v4, p0, Lcom/android/server/policy/SamsungPhoneWindowManager;->mPWM:Lcom/android/server/policy/PhoneWindowManager;
 
-    iget v3, v3, Lcom/android/server/policy/PhoneWindowManager;->mUnrestrictedScreenTop:I
+    iget v4, v4, Lcom/android/server/policy/PhoneWindowManager;->mUnrestrictedScreenTop:I
 
-    iput v3, p4, Landroid/graphics/Rect;->top:I
+    iput v4, p4, Landroid/graphics/Rect;->top:I
 
-    iput v3, p3, Landroid/graphics/Rect;->top:I
+    iput v4, p3, Landroid/graphics/Rect;->top:I
 
-    iput v3, p2, Landroid/graphics/Rect;->top:I
+    iput v4, p2, Landroid/graphics/Rect;->top:I
 
-    iget-object v3, p0, Lcom/android/server/policy/SamsungPhoneWindowManager;->mPWM:Lcom/android/server/policy/PhoneWindowManager;
+    iget-object v4, p0, Lcom/android/server/policy/SamsungPhoneWindowManager;->mPWM:Lcom/android/server/policy/PhoneWindowManager;
 
-    iget v3, v3, Lcom/android/server/policy/PhoneWindowManager;->mUnrestrictedScreenLeft:I
+    iget v4, v4, Lcom/android/server/policy/PhoneWindowManager;->mUnrestrictedScreenLeft:I
 
-    iget-object v5, p0, Lcom/android/server/policy/SamsungPhoneWindowManager;->mPWM:Lcom/android/server/policy/PhoneWindowManager;
+    iget-object v6, p0, Lcom/android/server/policy/SamsungPhoneWindowManager;->mPWM:Lcom/android/server/policy/PhoneWindowManager;
 
-    iget v5, v5, Lcom/android/server/policy/PhoneWindowManager;->mUnrestrictedScreenWidth:I
+    iget v6, v6, Lcom/android/server/policy/PhoneWindowManager;->mUnrestrictedScreenWidth:I
 
-    add-int/2addr v3, v5
+    add-int/2addr v4, v6
 
-    iput v3, p4, Landroid/graphics/Rect;->right:I
+    iput v4, p4, Landroid/graphics/Rect;->right:I
 
-    iput v3, p3, Landroid/graphics/Rect;->right:I
+    iput v4, p3, Landroid/graphics/Rect;->right:I
 
-    iput v3, p2, Landroid/graphics/Rect;->right:I
+    iput v4, p2, Landroid/graphics/Rect;->right:I
 
-    iget-object v3, p0, Lcom/android/server/policy/SamsungPhoneWindowManager;->mPWM:Lcom/android/server/policy/PhoneWindowManager;
+    iget-object v4, p0, Lcom/android/server/policy/SamsungPhoneWindowManager;->mPWM:Lcom/android/server/policy/PhoneWindowManager;
 
-    iget v3, v3, Lcom/android/server/policy/PhoneWindowManager;->mUnrestrictedScreenTop:I
+    iget v4, v4, Lcom/android/server/policy/PhoneWindowManager;->mUnrestrictedScreenTop:I
 
-    iget-object v5, p0, Lcom/android/server/policy/SamsungPhoneWindowManager;->mPWM:Lcom/android/server/policy/PhoneWindowManager;
+    iget-object v6, p0, Lcom/android/server/policy/SamsungPhoneWindowManager;->mPWM:Lcom/android/server/policy/PhoneWindowManager;
 
-    iget v5, v5, Lcom/android/server/policy/PhoneWindowManager;->mUnrestrictedScreenHeight:I
+    iget v6, v6, Lcom/android/server/policy/PhoneWindowManager;->mUnrestrictedScreenHeight:I
 
-    add-int/2addr v3, v5
+    add-int/2addr v4, v6
 
-    iput v3, p4, Landroid/graphics/Rect;->bottom:I
+    iput v4, p4, Landroid/graphics/Rect;->bottom:I
 
-    iput v3, p3, Landroid/graphics/Rect;->bottom:I
+    iput v4, p3, Landroid/graphics/Rect;->bottom:I
 
-    iput v3, p2, Landroid/graphics/Rect;->bottom:I
+    iput v4, p2, Landroid/graphics/Rect;->bottom:I
 
     goto/16 :goto_0
 
-    :cond_b
-    iget v3, v0, Landroid/view/WindowManager$LayoutParams;->type:I
+    :cond_d
+    iget v4, v0, Landroid/view/WindowManager$LayoutParams;->type:I
 
-    const/16 v5, 0x8fd
+    const/16 v6, 0x8fd
 
-    if-ne v3, v5, :cond_2
+    if-ne v4, v6, :cond_2
 
-    iget-object v3, p0, Lcom/android/server/policy/SamsungPhoneWindowManager;->mPWM:Lcom/android/server/policy/PhoneWindowManager;
+    iget-object v4, p0, Lcom/android/server/policy/SamsungPhoneWindowManager;->mPWM:Lcom/android/server/policy/PhoneWindowManager;
 
-    iget v3, v3, Lcom/android/server/policy/PhoneWindowManager;->mUnrestrictedScreenLeft:I
+    iget v4, v4, Lcom/android/server/policy/PhoneWindowManager;->mUnrestrictedScreenLeft:I
 
-    iput v3, p6, Landroid/graphics/Rect;->left:I
+    iput v4, p6, Landroid/graphics/Rect;->left:I
 
-    iput v3, p5, Landroid/graphics/Rect;->left:I
+    iput v4, p5, Landroid/graphics/Rect;->left:I
 
-    iput v3, p4, Landroid/graphics/Rect;->left:I
+    iput v4, p4, Landroid/graphics/Rect;->left:I
 
-    iput v3, p3, Landroid/graphics/Rect;->left:I
+    iput v4, p3, Landroid/graphics/Rect;->left:I
 
-    iput v3, p2, Landroid/graphics/Rect;->left:I
+    iput v4, p2, Landroid/graphics/Rect;->left:I
 
-    iget-object v3, p0, Lcom/android/server/policy/SamsungPhoneWindowManager;->mPWM:Lcom/android/server/policy/PhoneWindowManager;
+    iget-object v4, p0, Lcom/android/server/policy/SamsungPhoneWindowManager;->mPWM:Lcom/android/server/policy/PhoneWindowManager;
 
-    iget v3, v3, Lcom/android/server/policy/PhoneWindowManager;->mUnrestrictedScreenTop:I
+    iget v4, v4, Lcom/android/server/policy/PhoneWindowManager;->mUnrestrictedScreenTop:I
 
-    iput v3, p6, Landroid/graphics/Rect;->top:I
+    iput v4, p6, Landroid/graphics/Rect;->top:I
+
+    iput v4, p5, Landroid/graphics/Rect;->top:I
+
+    iput v4, p4, Landroid/graphics/Rect;->top:I
+
+    iput v4, p3, Landroid/graphics/Rect;->top:I
+
+    iput v4, p2, Landroid/graphics/Rect;->top:I
+
+    iget-object v4, p0, Lcom/android/server/policy/SamsungPhoneWindowManager;->mPWM:Lcom/android/server/policy/PhoneWindowManager;
+
+    iget v4, v4, Lcom/android/server/policy/PhoneWindowManager;->mUnrestrictedScreenWidth:I
+
+    iget-object v6, p0, Lcom/android/server/policy/SamsungPhoneWindowManager;->mPWM:Lcom/android/server/policy/PhoneWindowManager;
+
+    iget v6, v6, Lcom/android/server/policy/PhoneWindowManager;->mUnrestrictedScreenLeft:I
+
+    add-int/2addr v4, v6
+
+    iput v4, p6, Landroid/graphics/Rect;->right:I
+
+    iput v4, p5, Landroid/graphics/Rect;->right:I
+
+    iput v4, p4, Landroid/graphics/Rect;->right:I
+
+    iput v4, p3, Landroid/graphics/Rect;->right:I
+
+    iput v4, p2, Landroid/graphics/Rect;->right:I
+
+    iget-object v4, p0, Lcom/android/server/policy/SamsungPhoneWindowManager;->mPWM:Lcom/android/server/policy/PhoneWindowManager;
+
+    iget v4, v4, Lcom/android/server/policy/PhoneWindowManager;->mUnrestrictedScreenHeight:I
+
+    iget-object v6, p0, Lcom/android/server/policy/SamsungPhoneWindowManager;->mPWM:Lcom/android/server/policy/PhoneWindowManager;
+
+    iget v6, v6, Lcom/android/server/policy/PhoneWindowManager;->mUnrestrictedScreenTop:I
+
+    add-int/2addr v4, v6
+
+    iput v4, p6, Landroid/graphics/Rect;->bottom:I
+
+    iput v4, p5, Landroid/graphics/Rect;->bottom:I
+
+    iput v4, p4, Landroid/graphics/Rect;->bottom:I
+
+    iput v4, p3, Landroid/graphics/Rect;->bottom:I
+
+    iput v4, p2, Landroid/graphics/Rect;->bottom:I
+
+    goto/16 :goto_0
+
+    :cond_e
+    iget-object v4, p0, Lcom/android/server/policy/SamsungPhoneWindowManager;->mMultiPhoneWindowManager:Lcom/android/server/policy/IMultiPhoneWindowManagerPolicy;
+
+    invoke-interface {v4, p1}, Lcom/android/server/policy/IMultiPhoneWindowManagerPolicy;->isFreeformWindow(Landroid/view/WindowManagerPolicy$WindowState;)Z
+
+    move-result v4
+
+    if-eqz v4, :cond_3
+
+    iget-object v4, p0, Lcom/android/server/policy/SamsungPhoneWindowManager;->mPWM:Lcom/android/server/policy/PhoneWindowManager;
+
+    iget v3, v4, Lcom/android/server/policy/PhoneWindowManager;->mStatusBarHeight:I
+
+    iget v4, p5, Landroid/graphics/Rect;->top:I
+
+    if-ge v4, v3, :cond_3
 
     iput v3, p5, Landroid/graphics/Rect;->top:I
 
-    iput v3, p4, Landroid/graphics/Rect;->top:I
-
-    iput v3, p3, Landroid/graphics/Rect;->top:I
-
-    iput v3, p2, Landroid/graphics/Rect;->top:I
-
-    iget-object v3, p0, Lcom/android/server/policy/SamsungPhoneWindowManager;->mPWM:Lcom/android/server/policy/PhoneWindowManager;
-
-    iget v3, v3, Lcom/android/server/policy/PhoneWindowManager;->mUnrestrictedScreenWidth:I
-
-    iget-object v5, p0, Lcom/android/server/policy/SamsungPhoneWindowManager;->mPWM:Lcom/android/server/policy/PhoneWindowManager;
-
-    iget v5, v5, Lcom/android/server/policy/PhoneWindowManager;->mUnrestrictedScreenLeft:I
-
-    add-int/2addr v3, v5
-
-    iput v3, p6, Landroid/graphics/Rect;->right:I
-
-    iput v3, p5, Landroid/graphics/Rect;->right:I
-
-    iput v3, p4, Landroid/graphics/Rect;->right:I
-
-    iput v3, p3, Landroid/graphics/Rect;->right:I
-
-    iput v3, p2, Landroid/graphics/Rect;->right:I
-
-    iget-object v3, p0, Lcom/android/server/policy/SamsungPhoneWindowManager;->mPWM:Lcom/android/server/policy/PhoneWindowManager;
-
-    iget v3, v3, Lcom/android/server/policy/PhoneWindowManager;->mUnrestrictedScreenHeight:I
-
-    iget-object v5, p0, Lcom/android/server/policy/SamsungPhoneWindowManager;->mPWM:Lcom/android/server/policy/PhoneWindowManager;
-
-    iget v5, v5, Lcom/android/server/policy/PhoneWindowManager;->mUnrestrictedScreenTop:I
-
-    add-int/2addr v3, v5
-
-    iput v3, p6, Landroid/graphics/Rect;->bottom:I
-
-    iput v3, p5, Landroid/graphics/Rect;->bottom:I
-
-    iput v3, p4, Landroid/graphics/Rect;->bottom:I
-
-    iput v3, p3, Landroid/graphics/Rect;->bottom:I
-
-    iput v3, p2, Landroid/graphics/Rect;->bottom:I
-
-    goto/16 :goto_0
-
-    :cond_c
-    iget-object v3, p0, Lcom/android/server/policy/SamsungPhoneWindowManager;->mMultiPhoneWindowManager:Lcom/android/server/policy/IMultiPhoneWindowManagerPolicy;
-
-    invoke-interface {v3, p1}, Lcom/android/server/policy/IMultiPhoneWindowManagerPolicy;->isFreeformWindow(Landroid/view/WindowManagerPolicy$WindowState;)Z
-
-    move-result v3
-
-    if-eqz v3, :cond_3
-
-    iget-object v3, p0, Lcom/android/server/policy/SamsungPhoneWindowManager;->mPWM:Lcom/android/server/policy/PhoneWindowManager;
-
-    iget v2, v3, Lcom/android/server/policy/PhoneWindowManager;->mStatusBarHeight:I
-
-    iget v3, p5, Landroid/graphics/Rect;->top:I
-
-    if-ge v3, v2, :cond_3
-
-    iput v2, p5, Landroid/graphics/Rect;->top:I
-
     goto/16 :goto_1
 
-    :cond_d
-    move v3, v4
+    :cond_f
+    move v1, v5
 
     goto/16 :goto_2
 .end method
@@ -28096,16 +28158,21 @@
     goto :goto_0
 
     :sswitch_2
-    iput-object p1, p0, Lcom/android/server/policy/SamsungPhoneWindowManager;->mGameToolWindow:Landroid/view/WindowManagerPolicy$WindowState;
+    iput-object p1, p0, Lcom/android/server/policy/SamsungPhoneWindowManager;->mInputMethodDlg:Landroid/view/WindowManagerPolicy$WindowState;
 
     goto :goto_0
 
     :sswitch_3
-    iput-object p1, p0, Lcom/android/server/policy/SamsungPhoneWindowManager;->mGameToolOverlayWindow:Landroid/view/WindowManagerPolicy$WindowState;
+    iput-object p1, p0, Lcom/android/server/policy/SamsungPhoneWindowManager;->mGameToolWindow:Landroid/view/WindowManagerPolicy$WindowState;
 
     goto :goto_0
 
     :sswitch_4
+    iput-object p1, p0, Lcom/android/server/policy/SamsungPhoneWindowManager;->mGameToolOverlayWindow:Landroid/view/WindowManagerPolicy$WindowState;
+
+    goto :goto_0
+
+    :sswitch_5
     iput-object p1, p0, Lcom/android/server/policy/SamsungPhoneWindowManager;->mConventionalRatioWindow:Landroid/view/WindowManagerPolicy$WindowState;
 
     const/4 v3, 0x1
@@ -28114,12 +28181,12 @@
 
     goto :goto_0
 
-    :sswitch_5
+    :sswitch_6
     iput v6, p0, Lcom/android/server/policy/SamsungPhoneWindowManager;->mLastNavigationBarIconColor:I
 
     goto :goto_0
 
-    :sswitch_6
+    :sswitch_7
     iget-object v3, p0, Lcom/android/server/policy/SamsungPhoneWindowManager;->mBixbyWindow:Landroid/view/WindowManagerPolicy$WindowState;
 
     if-nez v3, :cond_0
@@ -28151,17 +28218,16 @@
 
     goto/16 :goto_1
 
-    nop
-
     :sswitch_data_0
     .sparse-switch
         0x7db -> :sswitch_1
-        0x7e3 -> :sswitch_5
+        0x7dc -> :sswitch_2
+        0x7e3 -> :sswitch_6
         0x8de -> :sswitch_0
-        0x8e0 -> :sswitch_4
-        0x96e -> :sswitch_6
-        0x97e -> :sswitch_2
-        0x97f -> :sswitch_3
+        0x8e0 -> :sswitch_5
+        0x96e -> :sswitch_7
+        0x97e -> :sswitch_3
+        0x97f -> :sswitch_4
     .end sparse-switch
 .end method
 
@@ -28722,23 +28788,30 @@
     iput-object v1, p0, Lcom/android/server/policy/SamsungPhoneWindowManager;->mInputMethod:Landroid/view/WindowManagerPolicy$WindowState;
 
     :cond_1
-    iget-object v0, p0, Lcom/android/server/policy/SamsungPhoneWindowManager;->mGameToolWindow:Landroid/view/WindowManagerPolicy$WindowState;
+    iget-object v0, p0, Lcom/android/server/policy/SamsungPhoneWindowManager;->mInputMethodDlg:Landroid/view/WindowManagerPolicy$WindowState;
 
     if-ne v0, p1, :cond_2
 
-    iput-object v1, p0, Lcom/android/server/policy/SamsungPhoneWindowManager;->mGameToolWindow:Landroid/view/WindowManagerPolicy$WindowState;
+    iput-object v1, p0, Lcom/android/server/policy/SamsungPhoneWindowManager;->mInputMethodDlg:Landroid/view/WindowManagerPolicy$WindowState;
 
     :cond_2
-    iget-object v0, p0, Lcom/android/server/policy/SamsungPhoneWindowManager;->mGameToolOverlayWindow:Landroid/view/WindowManagerPolicy$WindowState;
+    iget-object v0, p0, Lcom/android/server/policy/SamsungPhoneWindowManager;->mGameToolWindow:Landroid/view/WindowManagerPolicy$WindowState;
 
     if-ne v0, p1, :cond_3
 
-    iput-object v1, p0, Lcom/android/server/policy/SamsungPhoneWindowManager;->mGameToolOverlayWindow:Landroid/view/WindowManagerPolicy$WindowState;
+    iput-object v1, p0, Lcom/android/server/policy/SamsungPhoneWindowManager;->mGameToolWindow:Landroid/view/WindowManagerPolicy$WindowState;
 
     :cond_3
-    iget-object v0, p0, Lcom/android/server/policy/SamsungPhoneWindowManager;->mConventionalRatioWindow:Landroid/view/WindowManagerPolicy$WindowState;
+    iget-object v0, p0, Lcom/android/server/policy/SamsungPhoneWindowManager;->mGameToolOverlayWindow:Landroid/view/WindowManagerPolicy$WindowState;
 
     if-ne v0, p1, :cond_4
+
+    iput-object v1, p0, Lcom/android/server/policy/SamsungPhoneWindowManager;->mGameToolOverlayWindow:Landroid/view/WindowManagerPolicy$WindowState;
+
+    :cond_4
+    iget-object v0, p0, Lcom/android/server/policy/SamsungPhoneWindowManager;->mConventionalRatioWindow:Landroid/view/WindowManagerPolicy$WindowState;
+
+    if-ne v0, p1, :cond_5
 
     iput-object v1, p0, Lcom/android/server/policy/SamsungPhoneWindowManager;->mConventionalRatioWindow:Landroid/view/WindowManagerPolicy$WindowState;
 
@@ -28746,14 +28819,14 @@
 
     invoke-static {v0}, Lcom/android/server/policy/PolicyControl;->setConventionalRatioWinVisible(Z)V
 
-    :cond_4
+    :cond_5
     iget-object v0, p0, Lcom/android/server/policy/SamsungPhoneWindowManager;->mBixbyWindow:Landroid/view/WindowManagerPolicy$WindowState;
 
-    if-ne v0, p1, :cond_5
+    if-ne v0, p1, :cond_6
 
     iput-object v1, p0, Lcom/android/server/policy/SamsungPhoneWindowManager;->mBixbyWindow:Landroid/view/WindowManagerPolicy$WindowState;
 
-    :cond_5
+    :cond_6
     invoke-static {}, Lcom/android/server/SamsungCoreServices;->getReduceScreenPolicy()Lcom/android/server/policy/ReduceScreenPolicy;
 
     move-result-object v0

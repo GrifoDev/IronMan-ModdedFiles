@@ -302,9 +302,33 @@
 
 # virtual methods
 .method public parse(IIIILandroid/os/Bundle;)Z
+    .locals 7
+
+    const/4 v6, 0x1
+
+    move-object v0, p0
+
+    move v1, p1
+
+    move v2, p2
+
+    move v3, p3
+
+    move v4, p4
+
+    move-object v5, p5
+
+    invoke-virtual/range {v0 .. v6}, Lcom/android/server/policy/TspGripCommand;->parse(IIIILandroid/os/Bundle;Z)Z
+
+    move-result v0
+
+    return v0
+.end method
+
+.method public parse(IIIILandroid/os/Bundle;Z)Z
     .locals 20
 
-    if-eqz p5, :cond_5
+    if-eqz p5, :cond_6
 
     const-string/jumbo v5, "deadzone_v2"
 
@@ -373,13 +397,13 @@
 
     move/from16 v0, v17
 
-    if-eq v0, v5, :cond_4
+    if-eq v0, v5, :cond_5
 
     const/4 v5, -0x1
 
     move/from16 v0, v18
 
-    if-ne v0, v5, :cond_4
+    if-ne v0, v5, :cond_5
 
     move/from16 v0, v17
 
@@ -555,13 +579,16 @@
 
     iput v5, v0, Lcom/android/server/policy/TspGripCommand;->mPortEdgeZone:I
 
+    if-eqz p6, :cond_4
+
     invoke-direct/range {p0 .. p0}, Lcom/android/server/policy/TspGripCommand;->setMiniumValue()V
 
+    :cond_4
     const/4 v5, 0x1
 
     return v5
 
-    :cond_4
+    :cond_5
     const/4 v5, -0x1
 
     move/from16 v0, v17
@@ -576,13 +603,37 @@
 
     goto/16 :goto_0
 
-    :cond_5
+    :cond_6
     const/4 v5, 0x0
 
     return v5
 .end method
 
 .method public parse(IIIILjava/lang/String;)Z
+    .locals 7
+
+    const/4 v6, 0x1
+
+    move-object v0, p0
+
+    move v1, p1
+
+    move v2, p2
+
+    move v3, p3
+
+    move v4, p4
+
+    move-object v5, p5
+
+    invoke-virtual/range {v0 .. v6}, Lcom/android/server/policy/TspGripCommand;->parse(IIIILjava/lang/String;Z)Z
+
+    move-result v0
+
+    return v0
+.end method
+
+.method public parse(IIIILjava/lang/String;Z)Z
     .locals 9
 
     if-eqz p5, :cond_0
@@ -610,13 +661,13 @@
 
     const/4 v8, 0x1
 
-    if-gt v7, v8, :cond_4
+    if-gt v7, v8, :cond_5
 
     const/4 v7, 0x0
 
     aget-object v7, v6, v7
 
-    if-eqz v7, :cond_3
+    if-eqz v7, :cond_4
 
     const/4 v7, 0x0
 
@@ -637,24 +688,27 @@
 
     :cond_2
     :goto_1
+    if-eqz p6, :cond_3
+
     invoke-direct {p0}, Lcom/android/server/policy/TspGripCommand;->setMiniumValue()V
 
+    :cond_3
     const/4 v7, 0x1
 
     return v7
 
-    :cond_3
+    :cond_4
     const/4 v4, 0x0
 
     goto :goto_0
 
-    :cond_4
+    :cond_5
     const/4 v7, 0x0
 
     :try_start_1
     aget-object v7, v6, v7
 
-    if-eqz v7, :cond_8
+    if-eqz v7, :cond_9
 
     const/4 v7, 0x0
 
@@ -675,13 +729,13 @@
 
     const/4 v8, 0x3
 
-    if-lt v7, v8, :cond_5
+    if-lt v7, v8, :cond_6
 
     const/4 v7, 0x1
 
     aget-object v7, v6, v7
 
-    if-eqz v7, :cond_9
+    if-eqz v7, :cond_a
 
     const/4 v7, 0x1
 
@@ -696,7 +750,7 @@
 
     aget-object v7, v6, v7
 
-    if-eqz v7, :cond_a
+    if-eqz v7, :cond_b
 
     const/4 v7, 0x2
 
@@ -719,18 +773,18 @@
 
     iput v7, p0, Lcom/android/server/policy/TspGripCommand;->mPortY1:I
 
-    :cond_5
+    :cond_6
     array-length v7, v6
 
     const/4 v8, 0x4
 
-    if-lt v7, v8, :cond_6
+    if-lt v7, v8, :cond_7
 
     const/4 v7, 0x3
 
     aget-object v7, v6, v7
 
-    if-eqz v7, :cond_b
+    if-eqz v7, :cond_c
 
     const/4 v7, 0x3
 
@@ -747,18 +801,18 @@
 
     iput v7, p0, Lcom/android/server/policy/TspGripCommand;->mLandX1:I
 
-    :cond_6
+    :cond_7
     array-length v7, v6
 
     const/4 v8, 0x5
 
-    if-lt v7, v8, :cond_7
+    if-lt v7, v8, :cond_8
 
     const/4 v7, 0x4
 
     aget-object v7, v6, v7
 
-    if-eqz v7, :cond_c
+    if-eqz v7, :cond_d
 
     const/4 v7, 0x4
 
@@ -775,7 +829,7 @@
 
     iput v7, p0, Lcom/android/server/policy/TspGripCommand;->mPortEdgeZone:I
 
-    :cond_7
+    :cond_8
     iget v7, p0, Lcom/android/server/policy/TspGripCommand;->mPortEdgeZone:I
 
     iput v7, p0, Lcom/android/server/policy/TspGripCommand;->mLandEdgeZone:I
@@ -790,7 +844,7 @@
 
     aget-object v7, v6, v7
 
-    if-eqz v7, :cond_d
+    if-eqz v7, :cond_e
 
     const/4 v7, 0x5
 
@@ -818,32 +872,32 @@
 
     goto/16 :goto_1
 
-    :cond_8
+    :cond_9
     const/4 v3, 0x0
 
     goto :goto_2
 
-    :cond_9
+    :cond_a
     const/4 v4, 0x0
 
     goto :goto_3
 
-    :cond_a
+    :cond_b
     const/4 v5, 0x0
 
     goto :goto_4
 
-    :cond_b
+    :cond_c
     const/4 v2, 0x0
 
     goto :goto_5
 
-    :cond_c
+    :cond_d
     const/4 v1, 0x0
 
     goto :goto_6
 
-    :cond_d
+    :cond_e
     const/4 v1, 0x0
 
     goto :goto_7

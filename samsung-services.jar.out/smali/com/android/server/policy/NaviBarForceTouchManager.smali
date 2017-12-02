@@ -1017,13 +1017,13 @@
 
     iget-boolean v3, p0, Lcom/android/server/policy/NaviBarForceTouchManager;->mHapticPlayed:Z
 
-    if-eqz v3, :cond_1
+    if-eqz v3, :cond_2
 
     iget-object v3, p0, Lcom/android/server/policy/NaviBarForceTouchManager;->mPWM:Lcom/android/server/policy/PhoneWindowManager;
 
     iget-object v3, v3, Lcom/android/server/policy/PhoneWindowManager;->mNavigationBar:Landroid/view/WindowManagerPolicy$WindowState;
 
-    if-eqz v3, :cond_2
+    if-eqz v3, :cond_3
 
     iget-object v3, p0, Lcom/android/server/policy/NaviBarForceTouchManager;->mPWM:Lcom/android/server/policy/PhoneWindowManager;
 
@@ -1040,8 +1040,11 @@
 
     const/4 v3, 0x2
 
-    if-ne v0, v3, :cond_0
+    if-eq v0, v3, :cond_0
 
+    if-eqz v1, :cond_1
+
+    :cond_0
     iget-object v3, p0, Lcom/android/server/policy/NaviBarForceTouchManager;->mVibrator:Landroid/os/Vibrator;
 
     sget-object v4, Landroid/os/Vibrator$SemMagnitudeTypes;->TYPE_FORCE:Landroid/os/Vibrator$SemMagnitudeTypes;
@@ -1052,25 +1055,25 @@
 
     invoke-virtual {v3, v5, v6, v7, v4}, Landroid/os/Vibrator;->semVibrate(IILandroid/media/AudioAttributes;Landroid/os/Vibrator$SemMagnitudeTypes;)V
 
-    :cond_0
-    if-eqz v1, :cond_3
+    :cond_1
+    if-eqz v1, :cond_4
 
     iget-boolean v3, p0, Lcom/android/server/policy/NaviBarForceTouchManager;->mNaviBarVisible:Z
 
-    if-eqz v3, :cond_3
+    if-eqz v3, :cond_4
 
-    :cond_1
+    :cond_2
     :goto_1
     iput-boolean v2, p0, Lcom/android/server/policy/NaviBarForceTouchManager;->mHapticPlayed:Z
 
     return-void
 
-    :cond_2
+    :cond_3
     move v1, v2
 
     goto :goto_0
 
-    :cond_3
+    :cond_4
     invoke-direct {p0, v0}, Lcom/android/server/policy/NaviBarForceTouchManager;->forceClickImmersive(I)V
 
     goto :goto_1

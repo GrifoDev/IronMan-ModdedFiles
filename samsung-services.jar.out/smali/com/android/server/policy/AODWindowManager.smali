@@ -204,6 +204,8 @@
 .method public finishPostLayoutPolicyLw()I
     .locals 5
 
+    const/4 v2, 0x2
+
     const/4 v4, 0x1
 
     const/4 v3, 0x0
@@ -224,7 +226,21 @@
 
     iget v1, p0, Lcom/android/server/policy/AODWindowManager;->mAODStartState:I
 
-    const/4 v2, 0x2
+    if-ne v1, v2, :cond_1
+
+    iget-object v1, p0, Lcom/android/server/policy/AODWindowManager;->mPhoneWindowManager:Lcom/android/server/policy/PhoneWindowManager;
+
+    iget-object v1, v1, Lcom/android/server/policy/PhoneWindowManager;->mDisplay:Landroid/view/Display;
+
+    if-eqz v1, :cond_1
+
+    iget-object v1, p0, Lcom/android/server/policy/AODWindowManager;->mPhoneWindowManager:Lcom/android/server/policy/PhoneWindowManager;
+
+    iget-object v1, v1, Lcom/android/server/policy/PhoneWindowManager;->mDisplay:Landroid/view/Display;
+
+    invoke-virtual {v1}, Landroid/view/Display;->getState()I
+
+    move-result v1
 
     if-ne v1, v2, :cond_1
 
