@@ -3,7 +3,6 @@
 
 # interfaces
 .implements Lcom/android/incallui/InCallPresenter$MobileKeyboardListener;
-.implements Lcom/android/incallui/InCallPresenter$OnehandModeListener;
 .implements Lcom/android/incallui/accessory/AccessoryEventHandler$AccessoryEventListener;
 
 
@@ -186,7 +185,7 @@
 
     move-result-object v3
 
-    const v4, 0x7f0e0065
+    const v4, 0x7f0f0064
 
     invoke-virtual {v3, v4}, Landroid/content/res/Resources;->getInteger(I)I
 
@@ -240,7 +239,7 @@
 
     move-result-object v0
 
-    const v4, 0x7f0e0067
+    const v4, 0x7f0f0066
 
     invoke-virtual {v0, v4}, Landroid/content/res/Resources;->getInteger(I)I
 
@@ -408,7 +407,7 @@
 
     aget-object v0, v0, p1
 
-    const v2, 0x7f1000db
+    const v2, 0x7f1000e3
 
     invoke-virtual {v0, v2}, Landroid/view/ViewGroup;->findViewById(I)Landroid/view/View;
 
@@ -456,7 +455,7 @@
 
     move-result-object v5
 
-    const v6, 0x7f02047d
+    const v6, 0x7f02048d
 
     invoke-virtual {v5, v6}, Landroid/content/res/Resources;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 
@@ -466,7 +465,7 @@
 
     move-result-object v6
 
-    const v7, 0x7f0a022b
+    const v7, 0x7f0a0211
 
     invoke-virtual {v6, v7}, Landroid/content/res/Resources;->getDimension(I)F
 
@@ -632,7 +631,7 @@
 
     move-result-object v0
 
-    const v4, 0x7f0e0068
+    const v4, 0x7f0f0067
 
     invoke-virtual {v0, v4}, Landroid/content/res/Resources;->getInteger(I)I
 
@@ -687,7 +686,7 @@
 
     move-result-object v0
 
-    const v2, 0x7f0e0066
+    const v2, 0x7f0f0065
 
     invoke-virtual {v0, v2}, Landroid/content/res/Resources;->getInteger(I)I
 
@@ -860,7 +859,7 @@
 
     aget-object v0, v0, p1
 
-    const v1, 0x7f1002a3
+    const v1, 0x7f1002ac
 
     invoke-virtual {v0, v1}, Landroid/view/ViewGroup;->findViewById(I)Landroid/view/View;
 
@@ -1089,7 +1088,7 @@
 
     move-result-object v2
 
-    const v3, 0x7f0e0066
+    const v3, 0x7f0f0065
 
     invoke-virtual {v2, v3}, Landroid/content/res/Resources;->getInteger(I)I
 
@@ -1143,7 +1142,7 @@
 
     move-result-object v0
 
-    const v4, 0x7f0e0068
+    const v4, 0x7f0f0067
 
     invoke-virtual {v0, v4}, Landroid/content/res/Resources;->getInteger(I)I
 
@@ -1293,7 +1292,7 @@
 
     aget-object v1, v1, p1
 
-    const v2, 0x7f1000db
+    const v2, 0x7f1000e3
 
     invoke-virtual {v1, v2}, Landroid/view/ViewGroup;->findViewById(I)Landroid/view/View;
 
@@ -1305,7 +1304,7 @@
 
     aget-object v2, v2, p1
 
-    const v3, 0x7f10029d
+    const v3, 0x7f1002a6
 
     invoke-virtual {v2, v3}, Landroid/view/ViewGroup;->findViewById(I)Landroid/view/View;
 
@@ -1317,7 +1316,7 @@
 
     aget-object v3, v3, p1
 
-    const v4, 0x7f1000dc
+    const v4, 0x7f1000e4
 
     invoke-virtual {v3, v4}, Landroid/view/ViewGroup;->findViewById(I)Landroid/view/View;
 
@@ -1329,7 +1328,7 @@
 
     aget-object v4, v4, p1
 
-    const v5, 0x7f1000dd
+    const v5, 0x7f1000e5
 
     invoke-virtual {v4, v5}, Landroid/view/ViewGroup;->findViewById(I)Landroid/view/View;
 
@@ -1341,7 +1340,7 @@
 
     aget-object v5, v5, p1
 
-    const v6, 0x7f1000de
+    const v6, 0x7f1000e6
 
     invoke-virtual {v5, v6}, Landroid/view/ViewGroup;->findViewById(I)Landroid/view/View;
 
@@ -1353,7 +1352,7 @@
 
     aget-object v6, v6, p1
 
-    const v7, 0x7f10029e
+    const v7, 0x7f1002a7
 
     invoke-virtual {v6, v7}, Landroid/view/ViewGroup;->findViewById(I)Landroid/view/View;
 
@@ -1405,7 +1404,7 @@
 
     move-result-object v7
 
-    const v8, 0x7f0a022b
+    const v8, 0x7f0a0211
 
     invoke-virtual {v7, v8}, Landroid/content/res/Resources;->getDimension(I)F
 
@@ -1542,7 +1541,7 @@
 
     move-result-object v7
 
-    const v9, 0x7f02047f
+    const v9, 0x7f02048f
 
     invoke-virtual {v7, v9}, Landroid/content/res/Resources;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 
@@ -1583,7 +1582,7 @@
 
     aget-object v2, v2, p1
 
-    const v3, 0x7f1000db
+    const v3, 0x7f1000e3
 
     invoke-virtual {v2, v3}, Landroid/view/ViewGroup;->findViewById(I)Landroid/view/View;
 
@@ -1595,7 +1594,7 @@
 
     aget-object v2, v2, p1
 
-    const v4, 0x7f1000dc
+    const v4, 0x7f1000e4
 
     invoke-virtual {v2, v4}, Landroid/view/ViewGroup;->findViewById(I)Landroid/view/View;
 
@@ -1609,7 +1608,7 @@
 
     aget-object v2, v2, p1
 
-    const v4, 0x7f1000dd
+    const v4, 0x7f1000e5
 
     invoke-virtual {v2, v4}, Landroid/view/ViewGroup;->findViewById(I)Landroid/view/View;
 
@@ -1623,7 +1622,7 @@
 
     aget-object v2, v2, p1
 
-    const v4, 0x7f1000de
+    const v4, 0x7f1000e6
 
     invoke-virtual {v2, v4}, Landroid/view/ViewGroup;->findViewById(I)Landroid/view/View;
 
@@ -1637,7 +1636,7 @@
 
     aget-object v2, v2, p1
 
-    const v4, 0x7f10029e
+    const v4, 0x7f1002a7
 
     invoke-virtual {v2, v4}, Landroid/view/ViewGroup;->findViewById(I)Landroid/view/View;
 
@@ -1651,7 +1650,7 @@
 
     aget-object v2, v2, p1
 
-    const v4, 0x7f1002a3
+    const v4, 0x7f1002ac
 
     invoke-virtual {v2, v4}, Landroid/view/ViewGroup;->findViewById(I)Landroid/view/View;
 
@@ -1667,7 +1666,7 @@
 
     move-result-object v2
 
-    const v4, 0x7f0a022b
+    const v4, 0x7f0a0211
 
     invoke-virtual {v2, v4}, Landroid/content/res/Resources;->getDimension(I)F
 
@@ -1840,7 +1839,7 @@
 
     move-result-object v4
 
-    const v5, 0x7f02047f
+    const v5, 0x7f02048f
 
     invoke-virtual {v4, v5}, Landroid/content/res/Resources;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 
@@ -1999,7 +1998,7 @@
 
     aget-object v0, v0, p1
 
-    const v1, 0x7f10029f
+    const v1, 0x7f1002a8
 
     invoke-virtual {v0, v1}, Landroid/view/ViewGroup;->findViewById(I)Landroid/view/View;
 
@@ -2042,7 +2041,7 @@
 
     aget-object v0, v0, p1
 
-    const v1, 0x7f1000e0
+    const v1, 0x7f1000e8
 
     invoke-virtual {v0, v1}, Landroid/view/ViewGroup;->findViewById(I)Landroid/view/View;
 
@@ -2052,7 +2051,7 @@
 
     aget-object v1, v1, p1
 
-    const v2, 0x7f1002a0
+    const v2, 0x7f1002a9
 
     invoke-virtual {v1, v2}, Landroid/view/ViewGroup;->findViewById(I)Landroid/view/View;
 
@@ -2206,7 +2205,7 @@
 
     if-eqz v0, :cond_1
 
-    const v0, 0x7f0400ea
+    const v0, 0x7f0400ed
 
     invoke-virtual {p1, v0, p2, v1}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;Z)Landroid/view/View;
 
@@ -2217,7 +2216,7 @@
     :goto_0
     if-eqz v2, :cond_0
 
-    const v0, 0x7f100100
+    const v0, 0x7f100107
 
     invoke-virtual {v2, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -2227,7 +2226,7 @@
 
     iput-object v0, p0, Lcom/android/incallui/fragment/ConferenceManagerCsFragment;->mConferencePanel:Landroid/widget/FrameLayout;
 
-    const v0, 0x7f100108
+    const v0, 0x7f10010f
 
     invoke-virtual {v2, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -2346,7 +2345,7 @@
     goto :goto_1
 
     :cond_1
-    const v0, 0x7f0400c6
+    const v0, 0x7f0400c9
 
     invoke-virtual {p1, v0, p2, v1}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;Z)Landroid/view/View;
 
@@ -2375,7 +2374,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f0a0152
+    const v1, 0x7f0a0145
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDimension(I)F
 
@@ -2393,7 +2392,7 @@
 
     invoke-virtual {v0}, Lcom/android/incallui/ConferenceManagerPresenter;->startCallTimer()V
 
-    const-string v0, "support_onehand_operation"
+    const-string v0, "support_mobile_keyboard"
 
     invoke-static {v0}, Lcom/android/incallui/InCallUIFeature;->hasFeature(Ljava/lang/String;)Z
 
@@ -2405,24 +2404,9 @@
 
     move-result-object v0
 
-    invoke-virtual {v0, p0}, Lcom/android/incallui/InCallPresenter;->addOnehandModeListener(Lcom/android/incallui/InCallPresenter$OnehandModeListener;)V
-
-    :cond_3
-    const-string v0, "support_mobile_keyboard"
-
-    invoke-static {v0}, Lcom/android/incallui/InCallUIFeature;->hasFeature(Ljava/lang/String;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_4
-
-    invoke-static {}, Lcom/android/incallui/InCallPresenter;->getInstance()Lcom/android/incallui/InCallPresenter;
-
-    move-result-object v0
-
     invoke-virtual {v0, p0}, Lcom/android/incallui/InCallPresenter;->addMobileKeyboardListener(Lcom/android/incallui/InCallPresenter$MobileKeyboardListener;)V
 
-    :cond_4
+    :cond_3
     invoke-static {}, Lcom/android/incallui/accessory/AccessoryEventHandler;->getInstance()Lcom/android/incallui/accessory/AccessoryEventHandler;
 
     move-result-object v0
@@ -2431,18 +2415,20 @@
 
     return-object v2
 
+    nop
+
     :array_0
     .array-data 4
-        0x7f100103
-        0x7f100104
-        0x7f100105
-        0x7f100106
-        0x7f100107
+        0x7f10010a
+        0x7f10010b
+        0x7f10010c
+        0x7f10010d
+        0x7f10010e
     .end array-data
 .end method
 
 .method public onDestroyView()V
-    .locals 1
+    .locals 2
 
     invoke-virtual {p0}, Lcom/android/incallui/fragment/ConferenceManagerCsFragment;->getPresenter()Lcom/android/incallui/Presenter;
 
@@ -2452,7 +2438,7 @@
 
     invoke-virtual {v0}, Lcom/android/incallui/ConferenceManagerPresenter;->stopCallTimer()V
 
-    const-string v0, "support_onehand_operation"
+    const-string v0, "support_mobile_keyboard"
 
     invoke-static {v0}, Lcom/android/incallui/InCallUIFeature;->hasFeature(Ljava/lang/String;)Z
 
@@ -2464,30 +2450,50 @@
 
     move-result-object v0
 
-    invoke-virtual {v0, p0}, Lcom/android/incallui/InCallPresenter;->removeOnehandModeListener(Lcom/android/incallui/InCallPresenter$OnehandModeListener;)V
-
-    :cond_0
-    const-string v0, "support_mobile_keyboard"
-
-    invoke-static {v0}, Lcom/android/incallui/InCallUIFeature;->hasFeature(Ljava/lang/String;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_1
-
-    invoke-static {}, Lcom/android/incallui/InCallPresenter;->getInstance()Lcom/android/incallui/InCallPresenter;
-
-    move-result-object v0
-
     invoke-virtual {v0, p0}, Lcom/android/incallui/InCallPresenter;->removeMobileKeyboardListener(Lcom/android/incallui/InCallPresenter$MobileKeyboardListener;)V
 
-    :cond_1
+    :cond_0
     invoke-static {}, Lcom/android/incallui/accessory/AccessoryEventHandler;->getInstance()Lcom/android/incallui/accessory/AccessoryEventHandler;
 
     move-result-object v0
 
     invoke-virtual {v0, p0}, Lcom/android/incallui/accessory/AccessoryEventHandler;->removeListener(Lcom/android/incallui/accessory/AccessoryEventHandler$AccessoryEventListener;)V
 
+    invoke-virtual {p0}, Lcom/android/incallui/fragment/ConferenceManagerCsFragment;->getActivity()Landroid/app/Activity;
+
+    move-result-object v0
+
+    if-eqz v0, :cond_1
+
+    invoke-virtual {p0}, Lcom/android/incallui/fragment/ConferenceManagerCsFragment;->getActivity()Landroid/app/Activity;
+
+    move-result-object v0
+
+    check-cast v0, Lcom/android/incallui/InCallActivity;
+
+    const-string v1, "support_folder_hardkey"
+
+    invoke-static {v1}, Lcom/android/incallui/InCallUIFeature;->hasFeature(Ljava/lang/String;)Z
+
+    move-result v1
+
+    if-eqz v1, :cond_1
+
+    invoke-virtual {v0}, Lcom/android/incallui/InCallActivity;->getCallButtonFragment()Lcom/android/incallui/CallButtonUi;
+
+    move-result-object v1
+
+    if-eqz v1, :cond_1
+
+    invoke-virtual {v0}, Lcom/android/incallui/InCallActivity;->getCallButtonFragment()Lcom/android/incallui/CallButtonUi;
+
+    move-result-object v0
+
+    const/4 v1, 0x1
+
+    invoke-interface {v0, v1}, Lcom/android/incallui/CallButtonUi;->setFocusInCallButton(Z)V
+
+    :cond_1
     invoke-super {p0}, Lcom/android/incallui/fragment/ConferenceManagerFragment;->onDestroyView()V
 
     invoke-direct {p0}, Lcom/android/incallui/fragment/ConferenceManagerCsFragment;->cancelConferenceCallTimers()V
@@ -2526,36 +2532,6 @@
     return-void
 .end method
 
-.method public onOnehandModeChanged()V
-    .locals 1
-
-    const-string v0, "onOnehandModeChanged"
-
-    invoke-static {p0, v0}, Lcom/android/incallui/Log;->d(Ljava/lang/Object;Ljava/lang/String;)V
-
-    invoke-virtual {p0}, Lcom/android/incallui/fragment/ConferenceManagerCsFragment;->getView()Landroid/view/View;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Landroid/view/View;->getVisibility()I
-
-    move-result v0
-
-    if-nez v0, :cond_0
-
-    const/4 v0, 0x1
-
-    :goto_0
-    invoke-virtual {p0, v0}, Lcom/android/incallui/fragment/ConferenceManagerCsFragment;->setVisible(Z)V
-
-    return-void
-
-    :cond_0
-    const/4 v0, 0x0
-
-    goto :goto_0
-.end method
-
 .method public onSideSyncCallForwardStateChanged(Z)V
     .locals 0
 
@@ -2590,7 +2566,7 @@
 
     aget-object v0, v0, v1
 
-    const v2, 0x7f10029b
+    const v2, 0x7f1002a4
 
     invoke-virtual {v0, v2}, Landroid/view/ViewGroup;->findViewById(I)Landroid/view/View;
 
@@ -2621,7 +2597,7 @@
 
     aget-object v0, v0, p1
 
-    const v1, 0x7f10029b
+    const v1, 0x7f1002a4
 
     invoke-virtual {v0, v1}, Landroid/view/ViewGroup;->findViewById(I)Landroid/view/View;
 
@@ -2640,7 +2616,7 @@
 
     aget-object v0, v0, p1
 
-    const v1, 0x7f10029f
+    const v1, 0x7f1002a8
 
     invoke-virtual {v0, v1}, Landroid/view/ViewGroup;->findViewById(I)Landroid/view/View;
 
@@ -2815,7 +2791,7 @@
 
     aget-object v0, v0, p1
 
-    const v1, 0x7f1000e0
+    const v1, 0x7f1000e8
 
     invoke-virtual {v0, v1}, Landroid/view/ViewGroup;->findViewById(I)Landroid/view/View;
 
@@ -2825,7 +2801,7 @@
 
     move-result-object v0
 
-    const v2, 0x7f020472
+    const v2, 0x7f020482
 
     invoke-virtual {v0, v2}, Landroid/content/res/Resources;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 
@@ -2849,7 +2825,7 @@
 
     move-result-object v0
 
-    const v2, 0x7f0a00e6
+    const v2, 0x7f0a00e2
 
     invoke-virtual {v0, v2}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -2867,7 +2843,7 @@
 
     move-result-object v2
 
-    const v3, 0x7f0a0334
+    const v3, 0x7f0a0327
 
     invoke-virtual {v2, v3}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -2905,7 +2881,7 @@
 
     aget-object v0, v0, p1
 
-    const v1, 0x7f1000df
+    const v1, 0x7f1000e7
 
     invoke-virtual {v0, v1}, Landroid/view/ViewGroup;->findViewById(I)Landroid/view/View;
 
@@ -2915,7 +2891,7 @@
 
     aget-object v1, v1, p1
 
-    const v2, 0x7f1002a0
+    const v2, 0x7f1002a9
 
     invoke-virtual {v1, v2}, Landroid/view/ViewGroup;->findViewById(I)Landroid/view/View;
 
@@ -2933,7 +2909,7 @@
 
     move-result-object v2
 
-    const v3, 0x7f0a00e7
+    const v3, 0x7f0a00e3
 
     invoke-virtual {v2, v3}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -2951,7 +2927,7 @@
 
     move-result-object v3
 
-    const v4, 0x7f0a00e3
+    const v4, 0x7f0a00df
 
     invoke-virtual {v3, v4}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -2969,7 +2945,7 @@
 
     move-result-object v4
 
-    const v5, 0x7f0a0334
+    const v5, 0x7f0a0327
 
     invoke-virtual {v4, v5}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 

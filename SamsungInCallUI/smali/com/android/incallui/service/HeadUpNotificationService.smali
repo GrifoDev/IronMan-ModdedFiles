@@ -122,6 +122,14 @@
 .method static synthetic access$1200(Lcom/android/incallui/service/HeadUpNotificationService;)V
     .locals 0
 
+    invoke-direct {p0}, Lcom/android/incallui/service/HeadUpNotificationService;->setDefaultPosition()V
+
+    return-void
+.end method
+
+.method static synthetic access$1300(Lcom/android/incallui/service/HeadUpNotificationService;)V
+    .locals 0
+
     invoke-direct {p0}, Lcom/android/incallui/service/HeadUpNotificationService;->stopSelfWithStartId()V
 
     return-void
@@ -265,7 +273,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f0e0058
+    const v1, 0x7f0f0057
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getInteger(I)I
 
@@ -412,7 +420,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f0a0480
+    const v2, 0x7f0a048b
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getDimension(I)F
 
@@ -585,7 +593,23 @@
 
     const-string v1, "animateForHide: popup is not shwoing"
 
-    invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
+
+    invoke-static {}, Lcom/android/incallui/CallList;->getInstance()Lcom/android/incallui/CallList;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lcom/android/incallui/CallList;->hasAllLiveCall()Z
+
+    move-result v0
+
+    if-nez v0, :cond_0
+
+    const-string v0, "HeadUpNotificationService"
+
+    const-string v1, "animateForHide: there is no live call"
+
+    invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
     invoke-virtual {p0}, Lcom/android/incallui/service/HeadUpNotificationService;->stopSelf()V
 
@@ -610,7 +634,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f0e0057
+    const v1, 0x7f0f0056
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getInteger(I)I
 
@@ -714,7 +738,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f0e0057
+    const v1, 0x7f0f0056
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getInteger(I)I
 
@@ -795,7 +819,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f0e0056
+    const v1, 0x7f0f0055
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getInteger(I)I
 
@@ -866,38 +890,36 @@
 .method protected createLayoutParams()Landroid/view/WindowManager$LayoutParams;
     .locals 5
 
-    const/4 v4, -0x2
+    const v4, 0x1840328
 
-    const/16 v1, 0x7de
+    const/4 v3, -0x2
 
-    const v0, 0x1800328
+    const/16 v0, 0x7de
 
     invoke-static {}, Lcom/android/incallui/util/DesktopModeManager;->isDesktopMode()Z
 
-    move-result v2
+    move-result v1
 
-    if-eqz v2, :cond_0
-
-    const v0, 0x1840328
+    if-eqz v1, :cond_0
 
     :cond_0
-    new-instance v2, Landroid/view/WindowManager$LayoutParams;
+    new-instance v1, Landroid/view/WindowManager$LayoutParams;
 
-    const/4 v3, -0x3
+    const/4 v2, -0x3
 
-    invoke-direct {v2, v1, v0, v3}, Landroid/view/WindowManager$LayoutParams;-><init>(III)V
+    invoke-direct {v1, v0, v4, v2}, Landroid/view/WindowManager$LayoutParams;-><init>(III)V
 
-    iput v4, v2, Landroid/view/WindowManager$LayoutParams;->width:I
+    iput v3, v1, Landroid/view/WindowManager$LayoutParams;->width:I
 
-    iput v4, v2, Landroid/view/WindowManager$LayoutParams;->height:I
+    iput v3, v1, Landroid/view/WindowManager$LayoutParams;->height:I
 
     const/16 v0, 0x30
 
-    iput v0, v2, Landroid/view/WindowManager$LayoutParams;->gravity:I
+    iput v0, v1, Landroid/view/WindowManager$LayoutParams;->gravity:I
 
-    const v0, 0x7f0b0011
+    const v0, 0x7f0b0010
 
-    iput v0, v2, Landroid/view/WindowManager$LayoutParams;->windowAnimations:I
+    iput v0, v1, Landroid/view/WindowManager$LayoutParams;->windowAnimations:I
 
     invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
@@ -907,13 +929,13 @@
 
     move-result-object v0
 
-    invoke-virtual {v2, v0}, Landroid/view/WindowManager$LayoutParams;->setTitle(Ljava/lang/CharSequence;)V
+    invoke-virtual {v1, v0}, Landroid/view/WindowManager$LayoutParams;->setTitle(Ljava/lang/CharSequence;)V
 
     const/high16 v0, 0x20000
 
-    invoke-virtual {v2, v0}, Landroid/view/WindowManager$LayoutParams;->semAddExtensionFlags(I)V
+    invoke-virtual {v1, v0}, Landroid/view/WindowManager$LayoutParams;->semAddExtensionFlags(I)V
 
-    return-object v2
+    return-object v1
 .end method
 
 .method public getContext()Landroid/content/Context;
@@ -1106,7 +1128,11 @@
 .end method
 
 .method protected onEndAnimation()V
-    .locals 0
+    .locals 1
+
+    const/4 v0, 0x0
+
+    invoke-virtual {p0, v0}, Lcom/android/incallui/service/HeadUpNotificationService;->showNotificationView(Z)V
 
     return-void
 .end method
@@ -1204,7 +1230,9 @@
 .end method
 
 .method public onStartCommand(Landroid/content/Intent;II)I
-    .locals 2
+    .locals 3
+
+    const/4 v2, 0x0
 
     const-string v0, "HeadUpNotificationService"
 
@@ -1220,13 +1248,13 @@
 
     invoke-virtual {v0}, Landroid/animation/ObjectAnimator;->removeAllListeners()V
 
-    const/4 v0, 0x0
+    iget-object v0, p0, Lcom/android/incallui/service/HeadUpNotificationService;->mMoveAnimator:Landroid/animation/ObjectAnimator;
 
-    iput-boolean v0, p0, Lcom/android/incallui/service/HeadUpNotificationService;->mIsHideAnimationRunning:Z
+    invoke-virtual {v0}, Landroid/animation/ObjectAnimator;->end()V
 
-    const/4 v0, 0x1
+    iput-boolean v2, p0, Lcom/android/incallui/service/HeadUpNotificationService;->mIsHideAnimationRunning:Z
 
-    iput-boolean v0, p0, Lcom/android/incallui/service/HeadUpNotificationService;->mIsPopupShowing:Z
+    iput-boolean v2, p0, Lcom/android/incallui/service/HeadUpNotificationService;->mIsPopupShowing:Z
 
     const/4 v0, 0x0
 

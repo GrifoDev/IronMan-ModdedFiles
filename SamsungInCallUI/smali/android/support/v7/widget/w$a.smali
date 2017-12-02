@@ -69,19 +69,19 @@
     return-void
 
     :cond_2
-    instance-of v0, p1, Landroid/support/v7/widget/aq;
+    instance-of v0, p1, Landroid/support/v7/widget/ax;
 
     if-eqz v0, :cond_1
 
-    check-cast p1, Landroid/support/v7/widget/aq;
+    check-cast p1, Landroid/support/v7/widget/ax;
 
-    invoke-interface {p1}, Landroid/support/v7/widget/aq;->a()Landroid/content/res/Resources$Theme;
+    invoke-interface {p1}, Landroid/support/v7/widget/ax;->a()Landroid/content/res/Resources$Theme;
 
     move-result-object v0
 
     if-nez v0, :cond_1
 
-    invoke-interface {p1, p2}, Landroid/support/v7/widget/aq;->a(Landroid/content/res/Resources$Theme;)V
+    invoke-interface {p1, p2}, Landroid/support/v7/widget/ax;->a(Landroid/content/res/Resources$Theme;)V
 
     goto :goto_0
 .end method

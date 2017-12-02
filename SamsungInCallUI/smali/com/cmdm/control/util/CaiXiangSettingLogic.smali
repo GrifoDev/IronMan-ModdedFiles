@@ -43,7 +43,7 @@
 
     iput-object v0, p0, Lcom/cmdm/control/util/CaiXiangSettingLogic;->cY:Ljava/util/ArrayList;
 
-    const-string v0, "\u6240\u6709\u4eba"
+    const-string/jumbo v0, "\u6240\u6709\u4eba"
 
     iput-object v0, p0, Lcom/cmdm/control/util/CaiXiangSettingLogic;->da:Ljava/lang/String;
 
@@ -341,7 +341,7 @@
 
     invoke-virtual {p0, v0}, Lcom/cmdm/control/util/CaiXiangSettingLogic;->setSettingObjectList(Ljava/util/ArrayList;)V
 
-    const-string v0, "\u6240\u6709\u4eba"
+    const-string/jumbo v0, "\u6240\u6709\u4eba"
 
     invoke-virtual {p0, v0}, Lcom/cmdm/control/util/CaiXiangSettingLogic;->setDesString(Ljava/lang/String;)V
 

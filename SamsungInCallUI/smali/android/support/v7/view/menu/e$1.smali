@@ -70,9 +70,9 @@
 
     check-cast v0, Landroid/support/v7/view/menu/e$a;
 
-    iget-object v0, v0, Landroid/support/v7/view/menu/e$a;->a:Landroid/support/v7/widget/ak;
+    iget-object v0, v0, Landroid/support/v7/view/menu/e$a;->a:Landroid/support/v7/widget/ap;
 
-    invoke-virtual {v0}, Landroid/support/v7/widget/ak;->g()Z
+    invoke-virtual {v0}, Landroid/support/v7/widget/ap;->g()Z
 
     move-result v0
 
@@ -124,9 +124,9 @@
 
     check-cast v0, Landroid/support/v7/view/menu/e$a;
 
-    iget-object v0, v0, Landroid/support/v7/view/menu/e$a;->a:Landroid/support/v7/widget/ak;
+    iget-object v0, v0, Landroid/support/v7/view/menu/e$a;->a:Landroid/support/v7/widget/ap;
 
-    invoke-virtual {v0}, Landroid/support/v7/widget/ak;->a()V
+    invoke-virtual {v0}, Landroid/support/v7/widget/ap;->a()V
 
     goto :goto_0
 .end method

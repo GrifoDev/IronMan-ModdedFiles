@@ -177,7 +177,7 @@
 .method public onCreateDialog(Landroid/os/Bundle;)Landroid/app/Dialog;
     .locals 9
 
-    const v8, 0x7f090324
+    const v8, 0x7f090327
 
     const/4 v1, 0x0
 
@@ -372,7 +372,7 @@
 
     invoke-virtual {v0, v2}, Landroid/widget/ListView;->setOnItemClickListener(Landroid/widget/AdapterView$OnItemClickListener;)V
 
-    const v0, 0x7f090321
+    const v0, 0x7f090324
 
     invoke-virtual {v4, v0}, Landroid/app/AlertDialog$Builder;->setTitle(I)Landroid/app/AlertDialog$Builder;
 

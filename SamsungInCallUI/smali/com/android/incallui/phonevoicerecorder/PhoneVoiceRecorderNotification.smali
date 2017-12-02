@@ -67,9 +67,9 @@
 
     :array_0
     .array-data 4
-        0x7f1001ee
-        0x7f1001ef
-        0x7f1001f0
+        0x7f1001f5
+        0x7f1001f6
+        0x7f1001f7
     .end array-data
 .end method
 
@@ -275,7 +275,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f040089
+    const v1, 0x7f04008c
 
     invoke-virtual {v0, v1, p1}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;)Landroid/view/View;
 
@@ -301,7 +301,7 @@
 
     iget-object v1, p0, Lcom/android/incallui/phonevoicerecorder/PhoneVoiceRecorderNotification;->mParentView:Landroid/widget/RelativeLayout;
 
-    const v2, 0x7f1001e9
+    const v2, 0x7f1001f0
 
     invoke-virtual {v1, v2}, Landroid/widget/RelativeLayout;->findViewById(I)Landroid/view/View;
 
@@ -311,7 +311,7 @@
 
     iget-object v2, p0, Lcom/android/incallui/phonevoicerecorder/PhoneVoiceRecorderNotification;->mParentView:Landroid/widget/RelativeLayout;
 
-    const v3, 0x7f1001ea
+    const v3, 0x7f1001f1
 
     invoke-virtual {v2, v3}, Landroid/widget/RelativeLayout;->findViewById(I)Landroid/view/View;
 
@@ -321,7 +321,7 @@
 
     iget-object v3, p0, Lcom/android/incallui/phonevoicerecorder/PhoneVoiceRecorderNotification;->mParentView:Landroid/widget/RelativeLayout;
 
-    const v6, 0x7f1001eb
+    const v6, 0x7f1001f2
 
     invoke-virtual {v3, v6}, Landroid/widget/RelativeLayout;->findViewById(I)Landroid/view/View;
 
@@ -398,7 +398,7 @@
     :cond_3
     iget-object v0, p0, Lcom/android/incallui/phonevoicerecorder/PhoneVoiceRecorderNotification;->mParentView:Landroid/widget/RelativeLayout;
 
-    const v1, 0x7f1001d1
+    const v1, 0x7f1001d8
 
     invoke-virtual {v0, v1}, Landroid/widget/RelativeLayout;->findViewById(I)Landroid/view/View;
 
@@ -425,7 +425,7 @@
     :cond_4
     iget-object v0, p0, Lcom/android/incallui/phonevoicerecorder/PhoneVoiceRecorderNotification;->mParentView:Landroid/widget/RelativeLayout;
 
-    const v1, 0x7f1001cd
+    const v1, 0x7f1001d4
 
     invoke-virtual {v0, v1}, Landroid/widget/RelativeLayout;->findViewById(I)Landroid/view/View;
 
@@ -488,7 +488,7 @@
 
     move-result-object v0
 
-    const v6, 0x7f0f0108
+    const v6, 0x7f0e010b
 
     const/4 v7, 0x0
 

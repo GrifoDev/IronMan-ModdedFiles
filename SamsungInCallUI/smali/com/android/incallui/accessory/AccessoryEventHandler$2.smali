@@ -90,7 +90,7 @@
 
     move-result v0
 
-    if-nez v0, :cond_4
+    if-nez v0, :cond_5
 
     move v0, v1
 
@@ -103,7 +103,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_5
+    if-eqz v0, :cond_6
 
     iget-object v0, p0, Lcom/android/incallui/accessory/AccessoryEventHandler$2;->this$0:Lcom/android/incallui/accessory/AccessoryEventHandler;
 
@@ -123,7 +123,7 @@
 
     move-result v0
 
-    if-nez v0, :cond_6
+    if-nez v0, :cond_8
 
     new-instance v0, Ljava/lang/StringBuilder;
 
@@ -176,16 +176,56 @@
     :cond_3
     iget-object v0, p0, Lcom/android/incallui/accessory/AccessoryEventHandler$2;->this$0:Lcom/android/incallui/accessory/AccessoryEventHandler;
 
+    invoke-static {v0}, Lcom/android/incallui/accessory/AccessoryEventHandler;->access$400(Lcom/android/incallui/accessory/AccessoryEventHandler;)I
+
+    move-result v0
+
+    if-nez v0, :cond_4
+
+    invoke-static {}, Lcom/android/incallui/InCallUISystemDB;->needToUseLockScreenDuringCall()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_4
+
+    iget-object v0, p0, Lcom/android/incallui/accessory/AccessoryEventHandler$2;->this$0:Lcom/android/incallui/accessory/AccessoryEventHandler;
+
+    invoke-static {v0}, Lcom/android/incallui/accessory/AccessoryEventHandler;->access$800(Lcom/android/incallui/accessory/AccessoryEventHandler;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_7
+
+    iget-object v0, p0, Lcom/android/incallui/accessory/AccessoryEventHandler$2;->this$0:Lcom/android/incallui/accessory/AccessoryEventHandler;
+
+    invoke-static {v0}, Lcom/android/incallui/accessory/AccessoryEventHandler;->access$1100(Lcom/android/incallui/accessory/AccessoryEventHandler;)Lcom/android/incallui/InCallActivity;
+
+    move-result-object v0
+
+    if-eqz v0, :cond_4
+
+    iget-object v0, p0, Lcom/android/incallui/accessory/AccessoryEventHandler$2;->this$0:Lcom/android/incallui/accessory/AccessoryEventHandler;
+
+    invoke-static {v0}, Lcom/android/incallui/accessory/AccessoryEventHandler;->access$1100(Lcom/android/incallui/accessory/AccessoryEventHandler;)Lcom/android/incallui/InCallActivity;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lcom/android/incallui/InCallActivity;->stopLockScreenDuringCallService()V
+
+    :cond_4
+    :goto_3
+    iget-object v0, p0, Lcom/android/incallui/accessory/AccessoryEventHandler$2;->this$0:Lcom/android/incallui/accessory/AccessoryEventHandler;
+
     invoke-static {v0, v2}, Lcom/android/incallui/accessory/AccessoryEventHandler;->access$802(Lcom/android/incallui/accessory/AccessoryEventHandler;Z)Z
 
     goto/16 :goto_0
 
-    :cond_4
+    :cond_5
     move v0, v2
 
     goto :goto_1
 
-    :cond_5
+    :cond_6
     iget-object v0, p0, Lcom/android/incallui/accessory/AccessoryEventHandler$2;->this$0:Lcom/android/incallui/accessory/AccessoryEventHandler;
 
     invoke-static {v0}, Lcom/android/incallui/accessory/AccessoryEventHandler;->access$900(Lcom/android/incallui/accessory/AccessoryEventHandler;)Z
@@ -200,7 +240,16 @@
 
     goto :goto_2
 
-    :cond_6
+    :cond_7
+    invoke-static {}, Lcom/android/incallui/InCallPresenter;->getInstance()Lcom/android/incallui/InCallPresenter;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lcom/android/incallui/InCallPresenter;->sendLockScreenEvent()V
+
+    goto :goto_3
+
+    :cond_8
     invoke-static {}, Lcom/android/incallui/InCallPresenter;->getInstance()Lcom/android/incallui/InCallPresenter;
 
     move-result-object v0
@@ -217,9 +266,9 @@
 
     move-result v0
 
-    if-nez v0, :cond_7
+    if-nez v0, :cond_9
 
-    :cond_7
+    :cond_9
     invoke-static {}, Lcom/android/incallui/CallList;->getInstance()Lcom/android/incallui/CallList;
 
     move-result-object v0
@@ -236,11 +285,11 @@
 
     move-result v2
 
-    if-eqz v2, :cond_8
+    if-eqz v2, :cond_a
 
     if-eqz v0, :cond_0
 
-    :cond_8
+    :cond_a
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -285,7 +334,7 @@
 
     move-result v1
 
-    invoke-static {v0, v1}, Lcom/android/incallui/accessory/AccessoryEventHandler;->access$1100(Lcom/android/incallui/accessory/AccessoryEventHandler;Z)V
+    invoke-static {v0, v1}, Lcom/android/incallui/accessory/AccessoryEventHandler;->access$1200(Lcom/android/incallui/accessory/AccessoryEventHandler;Z)V
 
     goto/16 :goto_0
 .end method

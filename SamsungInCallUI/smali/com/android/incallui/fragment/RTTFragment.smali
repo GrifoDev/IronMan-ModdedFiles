@@ -4,6 +4,7 @@
 # interfaces
 .implements Landroid/view/View$OnClickListener;
 .implements Landroid/view/View$OnTouchListener;
+.implements Lcom/android/incallui/InCallPresenter$ContentViewChangeListener;
 .implements Lcom/android/incallui/RTTUi;
 
 
@@ -17,13 +18,24 @@
         ">;",
         "Landroid/view/View$OnClickListener;",
         "Landroid/view/View$OnTouchListener;",
+        "Lcom/android/incallui/InCallPresenter$ContentViewChangeListener;",
         "Lcom/android/incallui/RTTUi;"
     }
 .end annotation
 
 
+# static fields
+.field private static final DELETE:I = 0x1
+
+.field private static final MENU_COPY_TEXT:I = 0x1
+
+.field private static final MENU_DELETE:I = 0x2
+
+
 # instance fields
 .field private adapter:Lcom/android/incallui/rtt/ChatAdapter;
+
+.field private adjustment:I
 
 .field private callToDisplay:Lcom/android/incallui/Call;
 
@@ -38,17 +50,29 @@
     .end annotation
 .end field
 
+.field private contactPhoto:Landroid/graphics/drawable/Drawable;
+
 .field private countdowntimer:Landroid/os/CountDownTimer;
+
+.field private handler:Landroid/os/Handler;
 
 .field private historySaved:Z
 
 .field private idCount:J
 
+.field private imm:Landroid/view/inputmethod/InputMethodManager;
+
 .field private mActivity:Lcom/android/incallui/InCallActivity;
+
+.field private mCardView:Landroid/support/v7/widget/CardView;
 
 .field protected mElapsedTime:Landroid/widget/TextView;
 
 .field protected mElapsedTimeContainer:Landroid/view/View;
+
+.field protected mEndCallButton:Landroid/widget/ImageView;
+
+.field private mGradientAnimationView:Lcom/android/incallui/widget/GradientAnimationView;
 
 .field protected mHDWifiIcon:Landroid/widget/ImageView;
 
@@ -62,6 +86,8 @@
 
 .field protected mOnScreenMenuIcon:Landroid/widget/ImageButton;
 
+.field protected mPhoto:Landroid/widget/ImageView;
+
 .field protected mRttMergeButton:Landroid/widget/Button;
 
 .field protected mRttSwapButton:Landroid/widget/Button;
@@ -74,9 +100,19 @@
 
 .field protected mSecondaryName:Landroid/widget/TextView;
 
+.field protected mSecondaryPhoto:Landroid/widget/ImageView;
+
 .field protected mSpace:Landroid/view/View;
 
+.field private mTextWatcher:Landroid/text/TextWatcher;
+
+.field protected mTips:Landroid/widget/TextView;
+
+.field private mTipsCross:Landroid/widget/ImageButton;
+
 .field public mView:Landroid/view/View;
+
+.field private mtCountDownTimer:Landroid/os/CountDownTimer;
 
 .field private rttConversation:Landroid/widget/ListView;
 
@@ -85,6 +121,8 @@
 .field private rttSendMessage:Landroid/widget/EditText;
 
 .field private sbSendMsg:Ljava/lang/StringBuilder;
+
+.field private secondaryContactPhoto:Landroid/graphics/drawable/Drawable;
 
 .field private sendBtn:Landroid/widget/Button;
 
@@ -105,26 +143,40 @@
 
     iput-boolean v1, p0, Lcom/android/incallui/fragment/RTTFragment;->historySaved:Z
 
+    iput v1, p0, Lcom/android/incallui/fragment/RTTFragment;->adjustment:I
+
+    new-instance v0, Lcom/android/incallui/fragment/RTTFragment$1;
+
+    invoke-direct {v0, p0}, Lcom/android/incallui/fragment/RTTFragment$1;-><init>(Lcom/android/incallui/fragment/RTTFragment;)V
+
+    iput-object v0, p0, Lcom/android/incallui/fragment/RTTFragment;->handler:Landroid/os/Handler;
+
+    new-instance v0, Lcom/android/incallui/fragment/RTTFragment$2;
+
+    invoke-direct {v0, p0}, Lcom/android/incallui/fragment/RTTFragment$2;-><init>(Lcom/android/incallui/fragment/RTTFragment;)V
+
+    iput-object v0, p0, Lcom/android/incallui/fragment/RTTFragment;->mTextWatcher:Landroid/text/TextWatcher;
+
     return-void
 .end method
 
-.method static synthetic access$000(Lcom/android/incallui/fragment/RTTFragment;)Z
+.method static synthetic access$000(Lcom/android/incallui/fragment/RTTFragment;)Landroid/widget/Button;
     .locals 1
 
-    iget-boolean v0, p0, Lcom/android/incallui/fragment/RTTFragment;->mKeyboardHidden:Z
+    iget-object v0, p0, Lcom/android/incallui/fragment/RTTFragment;->sendBtn:Landroid/widget/Button;
 
-    return v0
+    return-object v0
 .end method
 
-.method static synthetic access$002(Lcom/android/incallui/fragment/RTTFragment;Z)Z
-    .locals 0
+.method static synthetic access$100(Lcom/android/incallui/fragment/RTTFragment;)Lcom/android/incallui/rtt/ChatAdapter;
+    .locals 1
 
-    iput-boolean p1, p0, Lcom/android/incallui/fragment/RTTFragment;->mKeyboardHidden:Z
+    iget-object v0, p0, Lcom/android/incallui/fragment/RTTFragment;->adapter:Lcom/android/incallui/rtt/ChatAdapter;
 
-    return p1
+    return-object v0
 .end method
 
-.method static synthetic access$100(Lcom/android/incallui/fragment/RTTFragment;ZII)V
+.method static synthetic access$1000(Lcom/android/incallui/fragment/RTTFragment;ZII)V
     .locals 0
 
     invoke-direct {p0, p1, p2, p3}, Lcom/android/incallui/fragment/RTTFragment;->setSendBtnLayout(ZII)V
@@ -140,7 +192,31 @@
     return-object v0
 .end method
 
-.method static synthetic access$300(Lcom/android/incallui/fragment/RTTFragment;)J
+.method static synthetic access$300(Lcom/android/incallui/fragment/RTTFragment;)Landroid/os/CountDownTimer;
+    .locals 1
+
+    iget-object v0, p0, Lcom/android/incallui/fragment/RTTFragment;->countdowntimer:Landroid/os/CountDownTimer;
+
+    return-object v0
+.end method
+
+.method static synthetic access$302(Lcom/android/incallui/fragment/RTTFragment;Landroid/os/CountDownTimer;)Landroid/os/CountDownTimer;
+    .locals 0
+
+    iput-object p1, p0, Lcom/android/incallui/fragment/RTTFragment;->countdowntimer:Landroid/os/CountDownTimer;
+
+    return-object p1
+.end method
+
+.method static synthetic access$400(Lcom/android/incallui/fragment/RTTFragment;Z)V
+    .locals 0
+
+    invoke-direct {p0, p1}, Lcom/android/incallui/fragment/RTTFragment;->completeBubble(Z)V
+
+    return-void
+.end method
+
+.method static synthetic access$500(Lcom/android/incallui/fragment/RTTFragment;)J
     .locals 2
 
     iget-wide v0, p0, Lcom/android/incallui/fragment/RTTFragment;->idCount:J
@@ -148,7 +224,7 @@
     return-wide v0
 .end method
 
-.method static synthetic access$304(Lcom/android/incallui/fragment/RTTFragment;)J
+.method static synthetic access$504(Lcom/android/incallui/fragment/RTTFragment;)J
     .locals 4
 
     iget-wide v0, p0, Lcom/android/incallui/fragment/RTTFragment;->idCount:J
@@ -162,36 +238,226 @@
     return-wide v0
 .end method
 
-.method static synthetic access$400(Lcom/android/incallui/fragment/RTTFragment;)Lcom/android/incallui/rtt/ChatAdapter;
+.method static synthetic access$600(Lcom/android/incallui/fragment/RTTFragment;)Landroid/os/CountDownTimer;
     .locals 1
 
-    iget-object v0, p0, Lcom/android/incallui/fragment/RTTFragment;->adapter:Lcom/android/incallui/rtt/ChatAdapter;
+    iget-object v0, p0, Lcom/android/incallui/fragment/RTTFragment;->mtCountDownTimer:Landroid/os/CountDownTimer;
 
     return-object v0
 .end method
 
-.method static synthetic access$500(Lcom/android/incallui/fragment/RTTFragment;)Landroid/os/CountDownTimer;
-    .locals 1
-
-    iget-object v0, p0, Lcom/android/incallui/fragment/RTTFragment;->countdowntimer:Landroid/os/CountDownTimer;
-
-    return-object v0
-.end method
-
-.method static synthetic access$502(Lcom/android/incallui/fragment/RTTFragment;Landroid/os/CountDownTimer;)Landroid/os/CountDownTimer;
+.method static synthetic access$602(Lcom/android/incallui/fragment/RTTFragment;Landroid/os/CountDownTimer;)Landroid/os/CountDownTimer;
     .locals 0
 
-    iput-object p1, p0, Lcom/android/incallui/fragment/RTTFragment;->countdowntimer:Landroid/os/CountDownTimer;
+    iput-object p1, p0, Lcom/android/incallui/fragment/RTTFragment;->mtCountDownTimer:Landroid/os/CountDownTimer;
 
     return-object p1
 .end method
 
-.method static synthetic access$600(Lcom/android/incallui/fragment/RTTFragment;)Landroid/widget/Button;
+.method static synthetic access$700(Lcom/android/incallui/fragment/RTTFragment;)Landroid/view/inputmethod/InputMethodManager;
     .locals 1
 
-    iget-object v0, p0, Lcom/android/incallui/fragment/RTTFragment;->sendBtn:Landroid/widget/Button;
+    iget-object v0, p0, Lcom/android/incallui/fragment/RTTFragment;->imm:Landroid/view/inputmethod/InputMethodManager;
 
     return-object v0
+.end method
+
+.method static synthetic access$800(Lcom/android/incallui/fragment/RTTFragment;)I
+    .locals 1
+
+    iget v0, p0, Lcom/android/incallui/fragment/RTTFragment;->adjustment:I
+
+    return v0
+.end method
+
+.method static synthetic access$802(Lcom/android/incallui/fragment/RTTFragment;I)I
+    .locals 0
+
+    iput p1, p0, Lcom/android/incallui/fragment/RTTFragment;->adjustment:I
+
+    return p1
+.end method
+
+.method static synthetic access$900(Lcom/android/incallui/fragment/RTTFragment;)Z
+    .locals 1
+
+    iget-boolean v0, p0, Lcom/android/incallui/fragment/RTTFragment;->mKeyboardHidden:Z
+
+    return v0
+.end method
+
+.method static synthetic access$902(Lcom/android/incallui/fragment/RTTFragment;Z)Z
+    .locals 0
+
+    iput-boolean p1, p0, Lcom/android/incallui/fragment/RTTFragment;->mKeyboardHidden:Z
+
+    return p1
+.end method
+
+.method private completeBubble(Z)V
+    .locals 2
+
+    if-eqz p1, :cond_2
+
+    iget-object v0, p0, Lcom/android/incallui/fragment/RTTFragment;->adapter:Lcom/android/incallui/rtt/ChatAdapter;
+
+    invoke-virtual {v0}, Lcom/android/incallui/rtt/ChatAdapter;->findMyLastRealTimePosition()I
+
+    move-result v0
+
+    :goto_0
+    const/4 v1, -0x1
+
+    if-eq v0, v1, :cond_1
+
+    iget-object v1, p0, Lcom/android/incallui/fragment/RTTFragment;->adapter:Lcom/android/incallui/rtt/ChatAdapter;
+
+    invoke-virtual {v1, v0}, Lcom/android/incallui/rtt/ChatAdapter;->getItem(I)Lcom/android/incallui/rtt/ChatMessage;
+
+    move-result-object v0
+
+    if-eqz v0, :cond_0
+
+    const/4 v1, 0x0
+
+    invoke-virtual {v0, v1}, Lcom/android/incallui/rtt/ChatMessage;->setRealTime(Z)V
+
+    :cond_0
+    invoke-virtual {p0}, Lcom/android/incallui/fragment/RTTFragment;->getActivity()Landroid/app/Activity;
+
+    move-result-object v0
+
+    if-eqz v0, :cond_1
+
+    invoke-virtual {p0}, Lcom/android/incallui/fragment/RTTFragment;->getActivity()Landroid/app/Activity;
+
+    move-result-object v0
+
+    new-instance v1, Lcom/android/incallui/fragment/RTTFragment$3;
+
+    invoke-direct {v1, p0}, Lcom/android/incallui/fragment/RTTFragment$3;-><init>(Lcom/android/incallui/fragment/RTTFragment;)V
+
+    invoke-virtual {v0, v1}, Landroid/app/Activity;->runOnUiThread(Ljava/lang/Runnable;)V
+
+    :cond_1
+    return-void
+
+    :cond_2
+    iget-object v0, p0, Lcom/android/incallui/fragment/RTTFragment;->adapter:Lcom/android/incallui/rtt/ChatAdapter;
+
+    invoke-virtual {v0}, Lcom/android/incallui/rtt/ChatAdapter;->findTheirLastRealTimePosition()I
+
+    move-result v0
+
+    goto :goto_0
+.end method
+
+.method private endCallClicked()V
+    .locals 1
+
+    iget-object v0, p0, Lcom/android/incallui/fragment/RTTFragment;->mActivity:Lcom/android/incallui/InCallActivity;
+
+    if-eqz v0, :cond_0
+
+    iget-object v0, p0, Lcom/android/incallui/fragment/RTTFragment;->mEndCallButton:Landroid/widget/ImageView;
+
+    if-eqz v0, :cond_0
+
+    iget-object v0, p0, Lcom/android/incallui/fragment/RTTFragment;->mActivity:Lcom/android/incallui/InCallActivity;
+
+    invoke-virtual {v0}, Lcom/android/incallui/InCallActivity;->rttEndCallClicked()V
+
+    :goto_0
+    return-void
+
+    :cond_0
+    const-string v0, "activity or button is null"
+
+    invoke-static {p0, v0}, Lcom/android/incallui/Log;->d(Ljava/lang/Object;Ljava/lang/String;)V
+
+    goto :goto_0
+.end method
+
+.method private getContactPhoto()Landroid/graphics/drawable/Drawable;
+    .locals 3
+
+    const/4 v0, 0x0
+
+    invoke-static {}, Lcom/android/incallui/CallList;->getInstance()Lcom/android/incallui/CallList;
+
+    move-result-object v1
+
+    const/4 v2, 0x0
+
+    invoke-static {v1, v0, v2}, Lcom/android/incallui/util/InCallUtils;->getCallToDisplay(Lcom/android/incallui/CallList;Lcom/android/incallui/Call;Z)Lcom/android/incallui/Call;
+
+    move-result-object v1
+
+    if-eqz v1, :cond_0
+
+    invoke-virtual {p0}, Lcom/android/incallui/fragment/RTTFragment;->getContext()Landroid/content/Context;
+
+    move-result-object v2
+
+    invoke-static {v2}, Lcom/android/incallui/ContactInfoCache;->getInstance(Landroid/content/Context;)Lcom/android/incallui/ContactInfoCache;
+
+    move-result-object v2
+
+    invoke-virtual {v1}, Lcom/android/incallui/Call;->getId()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-virtual {v2, v1}, Lcom/android/incallui/ContactInfoCache;->getInfo(Ljava/lang/String;)Lcom/android/incallui/ContactInfoCache$ContactCacheEntry;
+
+    move-result-object v1
+
+    if-eqz v1, :cond_2
+
+    iget-boolean v2, v1, Lcom/android/incallui/ContactInfoCache$ContactCacheEntry;->isPersonalPhotoAvailable:Z
+
+    if-eqz v2, :cond_2
+
+    iget-object v1, v1, Lcom/android/incallui/ContactInfoCache$ContactCacheEntry;->photo:Landroid/graphics/drawable/Drawable;
+
+    if-eqz v1, :cond_1
+
+    invoke-virtual {p0}, Lcom/android/incallui/fragment/RTTFragment;->getContext()Landroid/content/Context;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
+
+    move-result-object v0
+
+    const v2, 0x7f0a0434
+
+    invoke-virtual {v0, v2}, Landroid/content/res/Resources;->getDimension(I)F
+
+    move-result v0
+
+    float-to-int v0, v0
+
+    invoke-static {v1, v0}, Lcom/android/incallui/util/GraphicResourceUtils;->getCircledDrawable(Landroid/graphics/drawable/Drawable;I)Landroid/graphics/drawable/Drawable;
+
+    move-result-object v0
+
+    :cond_0
+    :goto_0
+    return-object v0
+
+    :cond_1
+    const-string v1, "image is null"
+
+    invoke-static {p0, v1}, Lcom/android/incallui/Log;->d(Ljava/lang/Object;Ljava/lang/String;)V
+
+    goto :goto_0
+
+    :cond_2
+    const-string v1, "getContactPhoto entry null"
+
+    invoke-static {p0, v1}, Lcom/android/incallui/Log;->d(Ljava/lang/Object;Ljava/lang/String;)V
+
+    goto :goto_0
 .end method
 
 .method private getInCallMenu()Lcom/android/incallui/InCallMenu;
@@ -218,6 +484,87 @@
     const/4 v0, 0x0
 
     goto :goto_0
+.end method
+
+.method private getSecondaryContactPhoto()Landroid/graphics/drawable/Drawable;
+    .locals 3
+
+    invoke-static {}, Lcom/android/incallui/CallList;->getInstance()Lcom/android/incallui/CallList;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lcom/android/incallui/CallList;->getBackgroundCall()Lcom/android/incallui/Call;
+
+    move-result-object v0
+
+    if-eqz v0, :cond_1
+
+    invoke-virtual {p0}, Lcom/android/incallui/fragment/RTTFragment;->getContext()Landroid/content/Context;
+
+    move-result-object v1
+
+    invoke-static {v1}, Lcom/android/incallui/ContactInfoCache;->getInstance(Landroid/content/Context;)Lcom/android/incallui/ContactInfoCache;
+
+    move-result-object v1
+
+    invoke-virtual {v0}, Lcom/android/incallui/Call;->getId()Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-virtual {v1, v0}, Lcom/android/incallui/ContactInfoCache;->getInfo(Ljava/lang/String;)Lcom/android/incallui/ContactInfoCache$ContactCacheEntry;
+
+    move-result-object v0
+
+    if-eqz v0, :cond_2
+
+    iget-boolean v1, v0, Lcom/android/incallui/ContactInfoCache$ContactCacheEntry;->isPersonalPhotoAvailable:Z
+
+    if-eqz v1, :cond_2
+
+    iget-object v0, v0, Lcom/android/incallui/ContactInfoCache$ContactCacheEntry;->photo:Landroid/graphics/drawable/Drawable;
+
+    if-eqz v0, :cond_0
+
+    invoke-virtual {p0}, Lcom/android/incallui/fragment/RTTFragment;->getContext()Landroid/content/Context;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
+
+    move-result-object v1
+
+    const v2, 0x7f0a0434
+
+    invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getDimension(I)F
+
+    move-result v1
+
+    float-to-int v1, v1
+
+    invoke-static {v0, v1}, Lcom/android/incallui/util/GraphicResourceUtils;->getCircledDrawable(Landroid/graphics/drawable/Drawable;I)Landroid/graphics/drawable/Drawable;
+
+    move-result-object v0
+
+    :goto_0
+    return-object v0
+
+    :cond_0
+    const-string v0, "image is null"
+
+    invoke-static {p0, v0}, Lcom/android/incallui/Log;->d(Ljava/lang/Object;Ljava/lang/String;)V
+
+    :cond_1
+    :goto_1
+    const/4 v0, 0x0
+
+    goto :goto_0
+
+    :cond_2
+    const-string v0, "getContactPhoto entry null"
+
+    invoke-static {p0, v0}, Lcom/android/incallui/Log;->d(Ljava/lang/Object;Ljava/lang/String;)V
+
+    goto :goto_1
 .end method
 
 .method private handleSwapComplete()V
@@ -265,7 +612,7 @@
 
     if-eqz v1, :cond_0
 
-    const-string v1, "handleSwapComplete -mitender 5"
+    const-string v1, "handleSwapComplete"
 
     invoke-static {p0, v1}, Lcom/android/incallui/Log;->d(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -275,17 +622,9 @@
 
     if-eqz v1, :cond_0
 
-    const-string v1, "onCallListChange -mitender 6"
-
-    invoke-static {p0, v1}, Lcom/android/incallui/Log;->d(Ljava/lang/Object;Ljava/lang/String;)V
-
     iget-object v1, p0, Lcom/android/incallui/fragment/RTTFragment;->mActivity:Lcom/android/incallui/InCallActivity;
 
     if-eqz v1, :cond_0
-
-    const-string v1, "handleSwapComplete -mitender 7"
-
-    invoke-static {p0, v1}, Lcom/android/incallui/Log;->d(Ljava/lang/Object;Ljava/lang/String;)V
 
     const/4 v1, 0x0
 
@@ -344,7 +683,7 @@
 
     invoke-static {p0, v0}, Lcom/android/incallui/Log;->d(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const v0, 0x7f1003f0
+    const v0, 0x7f100407
 
     invoke-virtual {p1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -354,7 +693,7 @@
 
     iput-object v0, p0, Lcom/android/incallui/fragment/RTTFragment;->rttConversation:Landroid/widget/ListView;
 
-    const v0, 0x7f1003ef
+    const v0, 0x7f100406
 
     invoke-virtual {p1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -363,6 +702,24 @@
     check-cast v0, Landroid/widget/Button;
 
     iput-object v0, p0, Lcom/android/incallui/fragment/RTTFragment;->sendBtn:Landroid/widget/Button;
+
+    new-instance v0, Ljava/util/ArrayList;
+
+    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
+
+    iput-object v0, p0, Lcom/android/incallui/fragment/RTTFragment;->chatHistory:Ljava/util/ArrayList;
+
+    iget-object v0, p0, Lcom/android/incallui/fragment/RTTFragment;->callToDisplay:Lcom/android/incallui/Call;
+
+    if-eqz v0, :cond_0
+
+    iget-object v0, p0, Lcom/android/incallui/fragment/RTTFragment;->callToDisplay:Lcom/android/incallui/Call;
+
+    invoke-virtual {v0}, Lcom/android/incallui/Call;->getSecCall()Lcom/android/incallui/SecCall;
+
+    move-result-object v0
+
+    if-eqz v0, :cond_0
 
     iget-object v0, p0, Lcom/android/incallui/fragment/RTTFragment;->callToDisplay:Lcom/android/incallui/Call;
 
@@ -433,6 +790,10 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/ListView;->setAdapter(Landroid/widget/ListAdapter;)V
 
+    iget-object v0, p0, Lcom/android/incallui/fragment/RTTFragment;->rttConversation:Landroid/widget/ListView;
+
+    invoke-virtual {p0, v0}, Lcom/android/incallui/fragment/RTTFragment;->registerForContextMenu(Landroid/view/View;)V
+
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -441,17 +802,11 @@
 
     iget-object v0, p0, Lcom/android/incallui/fragment/RTTFragment;->sendBtn:Landroid/widget/Button;
 
-    new-instance v1, Lcom/android/incallui/fragment/RTTFragment$6;
-
-    invoke-direct {v1, p0}, Lcom/android/incallui/fragment/RTTFragment$6;-><init>(Lcom/android/incallui/fragment/RTTFragment;)V
-
-    invoke-virtual {v0, v1}, Landroid/widget/Button;->setOnClickListener(Landroid/view/View$OnClickListener;)V
+    invoke-virtual {v0, p0}, Landroid/widget/Button;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
     iget-object v0, p0, Lcom/android/incallui/fragment/RTTFragment;->sendBtn:Landroid/widget/Button;
 
-    const/16 v1, 0x8
-
-    invoke-virtual {v0, v1}, Landroid/widget/Button;->setVisibility(I)V
+    invoke-virtual {v0, v3}, Landroid/widget/Button;->setVisibility(I)V
 
     iget-object v0, p0, Lcom/android/incallui/fragment/RTTFragment;->sendBtn:Landroid/widget/Button;
 
@@ -459,23 +814,9 @@
 
     iget-object v0, p0, Lcom/android/incallui/fragment/RTTFragment;->rttSendMessage:Landroid/widget/EditText;
 
-    new-instance v1, Lcom/android/incallui/fragment/RTTFragment$7;
-
-    invoke-direct {v1, p0}, Lcom/android/incallui/fragment/RTTFragment$7;-><init>(Lcom/android/incallui/fragment/RTTFragment;)V
+    iget-object v1, p0, Lcom/android/incallui/fragment/RTTFragment;->mTextWatcher:Landroid/text/TextWatcher;
 
     invoke-virtual {v0, v1}, Landroid/widget/EditText;->addTextChangedListener(Landroid/text/TextWatcher;)V
-
-    iget-object v0, p0, Lcom/android/incallui/fragment/RTTFragment;->rttSendMessage:Landroid/widget/EditText;
-
-    invoke-virtual {v0, v3}, Landroid/widget/EditText;->setCursorVisible(Z)V
-
-    iget-object v0, p0, Lcom/android/incallui/fragment/RTTFragment;->rttSendMessage:Landroid/widget/EditText;
-
-    new-instance v1, Lcom/android/incallui/fragment/RTTFragment$8;
-
-    invoke-direct {v1, p0}, Lcom/android/incallui/fragment/RTTFragment$8;-><init>(Lcom/android/incallui/fragment/RTTFragment;)V
-
-    invoke-virtual {v0, v1}, Landroid/widget/EditText;->setOnEditorActionListener(Landroid/widget/TextView$OnEditorActionListener;)V
 
     return-void
 
@@ -485,6 +826,108 @@
     invoke-static {p0, v0}, Lcom/android/incallui/Log;->d(Ljava/lang/Object;Ljava/lang/String;)V
 
     goto :goto_0
+.end method
+
+.method private isForcedRTTDiscovered()Z
+    .locals 3
+
+    const/4 v0, 0x0
+
+    invoke-static {}, Lcom/android/incallui/InCallApp;->getInstance()Lcom/android/incallui/InCallApp;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Lcom/android/incallui/InCallApp;->getApplicationContext()Landroid/content/Context;
+
+    move-result-object v1
+
+    invoke-static {v1}, Landroid/preference/PreferenceManager;->getDefaultSharedPreferences(Landroid/content/Context;)Landroid/content/SharedPreferences;
+
+    move-result-object v1
+
+    if-eqz v1, :cond_0
+
+    const-string v2, "IS_FORCED_RTT_DISCOVERED"
+
+    invoke-interface {v1, v2, v0}, Landroid/content/SharedPreferences;->getBoolean(Ljava/lang/String;Z)Z
+
+    move-result v0
+
+    :cond_0
+    new-instance v1, Ljava/lang/StringBuilder;
+
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v2, "isForcedRTTDiscovered : "
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    const/4 v2, 0x1
+
+    invoke-static {p0, v1, v2}, Lcom/android/incallui/Log;->d(Ljava/lang/Object;Ljava/lang/String;Z)V
+
+    return v0
+.end method
+
+.method private isRTTDiscovered()Z
+    .locals 3
+
+    const/4 v0, 0x0
+
+    invoke-static {}, Lcom/android/incallui/InCallApp;->getInstance()Lcom/android/incallui/InCallApp;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Lcom/android/incallui/InCallApp;->getApplicationContext()Landroid/content/Context;
+
+    move-result-object v1
+
+    invoke-static {v1}, Landroid/preference/PreferenceManager;->getDefaultSharedPreferences(Landroid/content/Context;)Landroid/content/SharedPreferences;
+
+    move-result-object v1
+
+    if-eqz v1, :cond_0
+
+    const-string v2, "IS_RTT_DISCOVERED"
+
+    invoke-interface {v1, v2, v0}, Landroid/content/SharedPreferences;->getBoolean(Ljava/lang/String;Z)Z
+
+    move-result v0
+
+    :cond_0
+    new-instance v1, Ljava/lang/StringBuilder;
+
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v2, "isRTTDiscovered"
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    const/4 v2, 0x1
+
+    invoke-static {p0, v1, v2}, Lcom/android/incallui/Log;->d(Ljava/lang/Object;Ljava/lang/String;Z)V
+
+    return v0
 .end method
 
 .method private loadDummyHistory()V
@@ -631,12 +1074,28 @@
     return-void
 .end method
 
-.method private setSendBtnLayout(ZII)V
-    .locals 5
+.method private setDrawableToImageView(Landroid/widget/ImageView;Landroid/graphics/drawable/Drawable;)V
+    .locals 0
 
-    const/16 v3, 0x8
+    if-nez p1, :cond_0
 
-    const/16 v4, 0xc
+    :goto_0
+    return-void
+
+    :cond_0
+    invoke-virtual {p1, p2}, Landroid/widget/ImageView;->setImageDrawable(Landroid/graphics/drawable/Drawable;)V
+
+    goto :goto_0
+.end method
+
+.method private setForcedRTTDiscovered()V
+    .locals 3
+
+    const/4 v2, 0x1
+
+    const-string v0, "setForcedRTTDiscovered "
+
+    invoke-static {p0, v0, v2}, Lcom/android/incallui/Log;->d(Ljava/lang/Object;Ljava/lang/String;Z)V
 
     invoke-static {}, Lcom/android/incallui/InCallApp;->getInstance()Lcom/android/incallui/InCallApp;
 
@@ -644,9 +1103,81 @@
 
     invoke-virtual {v0}, Lcom/android/incallui/InCallApp;->getApplicationContext()Landroid/content/Context;
 
-    move-result-object v1
+    move-result-object v0
 
-    invoke-virtual {v1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
+    invoke-static {v0}, Landroid/preference/PreferenceManager;->getDefaultSharedPreferences(Landroid/content/Context;)Landroid/content/SharedPreferences;
+
+    move-result-object v0
+
+    if-eqz v0, :cond_0
+
+    invoke-interface {v0}, Landroid/content/SharedPreferences;->edit()Landroid/content/SharedPreferences$Editor;
+
+    move-result-object v0
+
+    const-string v1, "IS_FORCED_RTT_DISCOVERED"
+
+    invoke-interface {v0, v1, v2}, Landroid/content/SharedPreferences$Editor;->putBoolean(Ljava/lang/String;Z)Landroid/content/SharedPreferences$Editor;
+
+    invoke-interface {v0}, Landroid/content/SharedPreferences$Editor;->apply()V
+
+    :cond_0
+    return-void
+.end method
+
+.method private setRTTDiscovered()V
+    .locals 3
+
+    const/4 v2, 0x1
+
+    const-string v0, "setRTTDiscovered "
+
+    invoke-static {p0, v0, v2}, Lcom/android/incallui/Log;->d(Ljava/lang/Object;Ljava/lang/String;Z)V
+
+    invoke-static {}, Lcom/android/incallui/InCallApp;->getInstance()Lcom/android/incallui/InCallApp;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lcom/android/incallui/InCallApp;->getApplicationContext()Landroid/content/Context;
+
+    move-result-object v0
+
+    invoke-static {v0}, Landroid/preference/PreferenceManager;->getDefaultSharedPreferences(Landroid/content/Context;)Landroid/content/SharedPreferences;
+
+    move-result-object v0
+
+    if-eqz v0, :cond_0
+
+    invoke-interface {v0}, Landroid/content/SharedPreferences;->edit()Landroid/content/SharedPreferences$Editor;
+
+    move-result-object v0
+
+    const-string v1, "IS_RTT_DISCOVERED"
+
+    invoke-interface {v0, v1, v2}, Landroid/content/SharedPreferences$Editor;->putBoolean(Ljava/lang/String;Z)Landroid/content/SharedPreferences$Editor;
+
+    invoke-interface {v0}, Landroid/content/SharedPreferences$Editor;->apply()V
+
+    :cond_0
+    return-void
+.end method
+
+.method private setSendBtnLayout(ZII)V
+    .locals 4
+
+    const/16 v3, 0x8
+
+    const/16 v2, 0xc
+
+    invoke-static {}, Lcom/android/incallui/InCallApp;->getInstance()Lcom/android/incallui/InCallApp;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lcom/android/incallui/InCallApp;->getApplicationContext()Landroid/content/Context;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
     move-result-object v0
 
@@ -654,7 +1185,7 @@
 
     move-result-object v0
 
-    iget v2, v0, Landroid/util/DisplayMetrics;->density:F
+    iget v0, v0, Landroid/util/DisplayMetrics;->density:F
 
     invoke-static {}, Lcom/android/incallui/UiAdapter;->getInstance()Lcom/android/incallui/UiAdapter;
 
@@ -674,7 +1205,7 @@
 
     check-cast v0, Landroid/widget/RelativeLayout$LayoutParams;
 
-    invoke-virtual {v0, v4}, Landroid/widget/RelativeLayout$LayoutParams;->addRule(I)V
+    invoke-virtual {v0, v2}, Landroid/widget/RelativeLayout$LayoutParams;->addRule(I)V
 
     iget-object v1, p0, Lcom/android/incallui/fragment/RTTFragment;->rttSendMessage:Landroid/widget/EditText;
 
@@ -688,7 +1219,7 @@
 
     check-cast v0, Landroid/widget/RelativeLayout$LayoutParams;
 
-    invoke-virtual {v0, v4}, Landroid/widget/RelativeLayout$LayoutParams;->addRule(I)V
+    invoke-virtual {v0, v2}, Landroid/widget/RelativeLayout$LayoutParams;->addRule(I)V
 
     iget-object v1, p0, Lcom/android/incallui/fragment/RTTFragment;->sendBtn:Landroid/widget/Button;
 
@@ -721,11 +1252,11 @@
 
     check-cast v0, Landroid/widget/RelativeLayout$LayoutParams;
 
-    invoke-virtual {v0, v4}, Landroid/widget/RelativeLayout$LayoutParams;->removeRule(I)V
+    invoke-virtual {v0, v2}, Landroid/widget/RelativeLayout$LayoutParams;->removeRule(I)V
 
-    iget-object v3, p0, Lcom/android/incallui/fragment/RTTFragment;->rttSendMessage:Landroid/widget/EditText;
+    iget-object v1, p0, Lcom/android/incallui/fragment/RTTFragment;->rttSendMessage:Landroid/widget/EditText;
 
-    invoke-virtual {v3, v0}, Landroid/widget/EditText;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
+    invoke-virtual {v1, v0}, Landroid/widget/EditText;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
 
     iget-object v0, p0, Lcom/android/incallui/fragment/RTTFragment;->sendBtn:Landroid/widget/Button;
 
@@ -735,11 +1266,11 @@
 
     check-cast v0, Landroid/widget/RelativeLayout$LayoutParams;
 
-    invoke-virtual {v0, v4}, Landroid/widget/RelativeLayout$LayoutParams;->removeRule(I)V
+    invoke-virtual {v0, v2}, Landroid/widget/RelativeLayout$LayoutParams;->removeRule(I)V
 
-    iget-object v3, p0, Lcom/android/incallui/fragment/RTTFragment;->sendBtn:Landroid/widget/Button;
+    iget-object v1, p0, Lcom/android/incallui/fragment/RTTFragment;->sendBtn:Landroid/widget/Button;
 
-    invoke-virtual {v3, v0}, Landroid/widget/Button;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
+    invoke-virtual {v1, v0}, Landroid/widget/Button;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
 
     iget-object v0, p0, Lcom/android/incallui/fragment/RTTFragment;->mSpace:Landroid/view/View;
 
@@ -751,27 +1282,7 @@
 
     move-result-object v0
 
-    invoke-virtual {v1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
-
-    move-result-object v1
-
-    const/high16 v3, 0x7f0e0000
-
-    invoke-virtual {v1, v3}, Landroid/content/res/Resources;->getInteger(I)I
-
-    move-result v1
-
-    int-to-float v1, v1
-
-    mul-float/2addr v1, v2
-
-    const/high16 v2, 0x3f000000    # 0.5f
-
-    add-float/2addr v1, v2
-
-    float-to-int v1, v1
-
-    sub-int v1, p2, v1
+    sub-int v1, p2, p3
 
     iput v1, v0, Landroid/view/ViewGroup$LayoutParams;->height:I
 
@@ -806,7 +1317,7 @@
 
     check-cast v0, Landroid/widget/RelativeLayout$LayoutParams;
 
-    invoke-virtual {v0, v4}, Landroid/widget/RelativeLayout$LayoutParams;->addRule(I)V
+    invoke-virtual {v0, v2}, Landroid/widget/RelativeLayout$LayoutParams;->addRule(I)V
 
     iget-object v1, p0, Lcom/android/incallui/fragment/RTTFragment;->rttSendMessage:Landroid/widget/EditText;
 
@@ -820,12 +1331,19 @@
 
     check-cast v0, Landroid/widget/RelativeLayout$LayoutParams;
 
-    invoke-virtual {v0, v4}, Landroid/widget/RelativeLayout$LayoutParams;->addRule(I)V
+    invoke-virtual {v0, v2}, Landroid/widget/RelativeLayout$LayoutParams;->addRule(I)V
 
     iget-object v1, p0, Lcom/android/incallui/fragment/RTTFragment;->sendBtn:Landroid/widget/Button;
 
     invoke-virtual {v1, v0}, Landroid/widget/Button;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
 
+    iget v0, p0, Lcom/android/incallui/fragment/RTTFragment;->adjustment:I
+
+    if-nez v0, :cond_3
+
+    iput p2, p0, Lcom/android/incallui/fragment/RTTFragment;->adjustment:I
+
+    :cond_3
     iget-object v0, p0, Lcom/android/incallui/fragment/RTTFragment;->mSpace:Landroid/view/View;
 
     if-eqz v0, :cond_0
@@ -834,7 +1352,7 @@
 
     invoke-virtual {v0, v3}, Landroid/view/View;->setVisibility(I)V
 
-    goto/16 :goto_0
+    goto :goto_0
 .end method
 
 .method private setupInCallPopupMenu(I)V
@@ -890,8 +1408,429 @@
     goto :goto_0
 .end method
 
+.method private showDeleteDialog(I)V
+    .locals 4
+
+    const/4 v3, 0x0
+
+    invoke-virtual {p0}, Lcom/android/incallui/fragment/RTTFragment;->getContext()Landroid/content/Context;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
+
+    move-result-object v0
+
+    const v1, 0x7f090658
+
+    invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
+
+    move-result-object v0
+
+    new-instance v1, Landroid/app/AlertDialog$Builder;
+
+    invoke-virtual {p0}, Lcom/android/incallui/fragment/RTTFragment;->getContext()Landroid/content/Context;
+
+    move-result-object v2
+
+    invoke-direct {v1, v2}, Landroid/app/AlertDialog$Builder;-><init>(Landroid/content/Context;)V
+
+    invoke-virtual {v1, v0}, Landroid/app/AlertDialog$Builder;->setMessage(Ljava/lang/CharSequence;)Landroid/app/AlertDialog$Builder;
+
+    move-result-object v0
+
+    const v1, 0x104000a
+
+    new-instance v2, Lcom/android/incallui/fragment/RTTFragment$17;
+
+    invoke-direct {v2, p0, p1}, Lcom/android/incallui/fragment/RTTFragment$17;-><init>(Lcom/android/incallui/fragment/RTTFragment;I)V
+
+    invoke-virtual {v0, v1, v2}, Landroid/app/AlertDialog$Builder;->setPositiveButton(ILandroid/content/DialogInterface$OnClickListener;)Landroid/app/AlertDialog$Builder;
+
+    move-result-object v0
+
+    const/high16 v1, 0x1040000
+
+    new-instance v2, Lcom/android/incallui/fragment/RTTFragment$16;
+
+    invoke-direct {v2, p0}, Lcom/android/incallui/fragment/RTTFragment$16;-><init>(Lcom/android/incallui/fragment/RTTFragment;)V
+
+    invoke-virtual {v0, v1, v2}, Landroid/app/AlertDialog$Builder;->setNegativeButton(ILandroid/content/DialogInterface$OnClickListener;)Landroid/app/AlertDialog$Builder;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Landroid/app/AlertDialog$Builder;->create()Landroid/app/AlertDialog;
+
+    move-result-object v0
+
+    invoke-virtual {v0, v3}, Landroid/app/AlertDialog;->setCancelable(Z)V
+
+    invoke-virtual {v0, v3}, Landroid/app/AlertDialog;->setCanceledOnTouchOutside(Z)V
+
+    invoke-virtual {v0}, Landroid/app/AlertDialog;->show()V
+
+    return-void
+.end method
+
+.method private startMTTimer()V
+    .locals 2
+
+    invoke-virtual {p0}, Lcom/android/incallui/fragment/RTTFragment;->getActivity()Landroid/app/Activity;
+
+    move-result-object v0
+
+    if-eqz v0, :cond_0
+
+    invoke-virtual {p0}, Lcom/android/incallui/fragment/RTTFragment;->getActivity()Landroid/app/Activity;
+
+    move-result-object v0
+
+    new-instance v1, Lcom/android/incallui/fragment/RTTFragment$4;
+
+    invoke-direct {v1, p0}, Lcom/android/incallui/fragment/RTTFragment$4;-><init>(Lcom/android/incallui/fragment/RTTFragment;)V
+
+    invoke-virtual {v0, v1}, Landroid/app/Activity;->runOnUiThread(Ljava/lang/Runnable;)V
+
+    :cond_0
+    return-void
+.end method
+
+.method private updateGradientBackground(I)V
+    .locals 1
+
+    iget-object v0, p0, Lcom/android/incallui/fragment/RTTFragment;->mGradientAnimationView:Lcom/android/incallui/widget/GradientAnimationView;
+
+    if-nez v0, :cond_0
+
+    const-string v0, "updateGradientBackground: mGradientAnimationView is null"
+
+    invoke-static {p0, v0}, Lcom/android/incallui/Log;->d(Ljava/lang/Object;Ljava/lang/String;)V
+
+    :goto_0
+    return-void
+
+    :cond_0
+    invoke-static {}, Lcom/android/incallui/CallList;->getInstance()Lcom/android/incallui/CallList;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lcom/android/incallui/CallList;->hasLiveCallToDisplay()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_1
+
+    iget-object v0, p0, Lcom/android/incallui/fragment/RTTFragment;->mGradientAnimationView:Lcom/android/incallui/widget/GradientAnimationView;
+
+    invoke-virtual {v0}, Lcom/android/incallui/widget/GradientAnimationView;->show()V
+
+    :cond_1
+    packed-switch p1, :pswitch_data_0
+
+    :pswitch_0
+    invoke-virtual {p0}, Lcom/android/incallui/fragment/RTTFragment;->stopGradientAnimation()V
+
+    goto :goto_0
+
+    :pswitch_1
+    invoke-virtual {p0}, Lcom/android/incallui/fragment/RTTFragment;->startGradientAnimation()V
+
+    goto :goto_0
+
+    :pswitch_data_0
+    .packed-switch 0x4
+        :pswitch_1
+        :pswitch_1
+        :pswitch_1
+        :pswitch_1
+        :pswitch_0
+        :pswitch_0
+        :pswitch_0
+        :pswitch_0
+        :pswitch_0
+        :pswitch_1
+    .end packed-switch
+.end method
+
+.method private updateGradientView()V
+    .locals 1
+
+    const/4 v0, 0x0
+
+    invoke-virtual {p0, v0}, Lcom/android/incallui/fragment/RTTFragment;->updateGradientView(Landroid/graphics/drawable/Drawable;)V
+
+    return-void
+.end method
+
+.method private updateKeepScreenOnFlag(Z)V
+    .locals 3
+
+    const/16 v2, 0x80
+
+    const/4 v1, 0x1
+
+    invoke-virtual {p0}, Lcom/android/incallui/fragment/RTTFragment;->getActivity()Landroid/app/Activity;
+
+    move-result-object v0
+
+    if-nez v0, :cond_0
+
+    :goto_0
+    return-void
+
+    :cond_0
+    if-eqz p1, :cond_1
+
+    const-string v0, "updateKeepScreenOnFlag: add FLAG_KEEP_SCREEN_ON"
+
+    invoke-static {p0, v0, v1}, Lcom/android/incallui/Log;->d(Ljava/lang/Object;Ljava/lang/String;Z)V
+
+    invoke-virtual {p0}, Lcom/android/incallui/fragment/RTTFragment;->getActivity()Landroid/app/Activity;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Landroid/app/Activity;->getWindow()Landroid/view/Window;
+
+    move-result-object v0
+
+    invoke-virtual {v0, v2}, Landroid/view/Window;->addFlags(I)V
+
+    goto :goto_0
+
+    :cond_1
+    const-string v0, "updateKeepScreenOnFlag: clear FLAG_KEEP_SCREEN_ON"
+
+    invoke-static {p0, v0, v1}, Lcom/android/incallui/Log;->d(Ljava/lang/Object;Ljava/lang/String;Z)V
+
+    invoke-virtual {p0}, Lcom/android/incallui/fragment/RTTFragment;->getActivity()Landroid/app/Activity;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Landroid/app/Activity;->getWindow()Landroid/view/Window;
+
+    move-result-object v0
+
+    invoke-virtual {v0, v2}, Landroid/view/Window;->clearFlags(I)V
+
+    goto :goto_0
+.end method
+
 
 # virtual methods
+.method public animateForHideBackground()V
+    .locals 3
+
+    iget-object v0, p0, Lcom/android/incallui/fragment/RTTFragment;->mGradientAnimationView:Lcom/android/incallui/widget/GradientAnimationView;
+
+    if-nez v0, :cond_0
+
+    const-string v0, "animateForHideBackground: mGradientAnimationView is null"
+
+    invoke-static {p0, v0}, Lcom/android/incallui/Log;->d(Ljava/lang/Object;Ljava/lang/String;)V
+
+    :goto_0
+    return-void
+
+    :cond_0
+    invoke-static {}, Lcom/android/incallui/CallList;->getInstance()Lcom/android/incallui/CallList;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lcom/android/incallui/CallList;->hasLiveCallToDisplay()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_1
+
+    const-string v0, "animateForHideBackground: hasLiveCallToDisplay"
+
+    invoke-static {p0, v0}, Lcom/android/incallui/Log;->d(Ljava/lang/Object;Ljava/lang/String;)V
+
+    goto :goto_0
+
+    :cond_1
+    iget-object v0, p0, Lcom/android/incallui/fragment/RTTFragment;->mGradientAnimationView:Lcom/android/incallui/widget/GradientAnimationView;
+
+    invoke-virtual {p0}, Lcom/android/incallui/fragment/RTTFragment;->getResources()Landroid/content/res/Resources;
+
+    move-result-object v1
+
+    const v2, 0x7f0f0035
+
+    invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getInteger(I)I
+
+    move-result v1
+
+    invoke-virtual {v0, v1}, Lcom/android/incallui/widget/GradientAnimationView;->animateForHide(I)V
+
+    goto :goto_0
+.end method
+
+.method public animateForShowBackground()V
+    .locals 3
+
+    iget-object v0, p0, Lcom/android/incallui/fragment/RTTFragment;->mGradientAnimationView:Lcom/android/incallui/widget/GradientAnimationView;
+
+    if-nez v0, :cond_0
+
+    const-string v0, "animateForShowBackground: mGradientAnimationView is null"
+
+    invoke-static {p0, v0}, Lcom/android/incallui/Log;->d(Ljava/lang/Object;Ljava/lang/String;)V
+
+    :goto_0
+    return-void
+
+    :cond_0
+    iget-object v0, p0, Lcom/android/incallui/fragment/RTTFragment;->mGradientAnimationView:Lcom/android/incallui/widget/GradientAnimationView;
+
+    invoke-virtual {p0}, Lcom/android/incallui/fragment/RTTFragment;->getResources()Landroid/content/res/Resources;
+
+    move-result-object v1
+
+    const v2, 0x7f0f0041
+
+    invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getInteger(I)I
+
+    move-result v1
+
+    invoke-virtual {v0, v1}, Lcom/android/incallui/widget/GradientAnimationView;->animateForShow(I)V
+
+    goto :goto_0
+.end method
+
+.method public arrangeRttLayout()V
+    .locals 3
+
+    const-string v0, "arrangeRttLayout"
+
+    invoke-static {p0, v0}, Lcom/android/incallui/Log;->d(Ljava/lang/Object;Ljava/lang/String;)V
+
+    invoke-virtual {p0}, Lcom/android/incallui/fragment/RTTFragment;->getContext()Landroid/content/Context;
+
+    move-result-object v0
+
+    const-string v1, "window"
+
+    invoke-virtual {v0, v1}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Landroid/view/WindowManager;
+
+    new-instance v1, Landroid/util/DisplayMetrics;
+
+    invoke-direct {v1}, Landroid/util/DisplayMetrics;-><init>()V
+
+    invoke-interface {v0}, Landroid/view/WindowManager;->getDefaultDisplay()Landroid/view/Display;
+
+    move-result-object v0
+
+    invoke-virtual {v0, v1}, Landroid/view/Display;->getMetrics(Landroid/util/DisplayMetrics;)V
+
+    iget v0, v1, Landroid/util/DisplayMetrics;->widthPixels:I
+
+    iget v0, v1, Landroid/util/DisplayMetrics;->heightPixels:I
+
+    iget-object v1, p0, Lcom/android/incallui/fragment/RTTFragment;->mRttView:Landroid/widget/LinearLayout;
+
+    if-eqz v1, :cond_0
+
+    iget-object v1, p0, Lcom/android/incallui/fragment/RTTFragment;->mRttView:Landroid/widget/LinearLayout;
+
+    invoke-virtual {v1}, Landroid/widget/LinearLayout;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
+
+    move-result-object v1
+
+    iput v0, v1, Landroid/view/ViewGroup$LayoutParams;->height:I
+
+    iget-object v2, p0, Lcom/android/incallui/fragment/RTTFragment;->mRttView:Landroid/widget/LinearLayout;
+
+    invoke-virtual {v2, v1}, Landroid/widget/LinearLayout;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
+
+    :cond_0
+    iget-object v1, p0, Lcom/android/incallui/fragment/RTTFragment;->mGradientAnimationView:Lcom/android/incallui/widget/GradientAnimationView;
+
+    if-eqz v1, :cond_1
+
+    iget-object v1, p0, Lcom/android/incallui/fragment/RTTFragment;->mGradientAnimationView:Lcom/android/incallui/widget/GradientAnimationView;
+
+    invoke-virtual {v1}, Lcom/android/incallui/widget/GradientAnimationView;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
+
+    move-result-object v1
+
+    iput v0, v1, Landroid/view/ViewGroup$LayoutParams;->height:I
+
+    iget-object v0, p0, Lcom/android/incallui/fragment/RTTFragment;->mGradientAnimationView:Lcom/android/incallui/widget/GradientAnimationView;
+
+    invoke-virtual {v0, v1}, Lcom/android/incallui/widget/GradientAnimationView;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
+
+    :cond_1
+    return-void
+.end method
+
+.method public closeTipsCard()V
+    .locals 2
+
+    iget-object v0, p0, Lcom/android/incallui/fragment/RTTFragment;->mCardView:Landroid/support/v7/widget/CardView;
+
+    if-eqz v0, :cond_0
+
+    iget-object v0, p0, Lcom/android/incallui/fragment/RTTFragment;->mCardView:Landroid/support/v7/widget/CardView;
+
+    invoke-virtual {v0}, Landroid/support/v7/widget/CardView;->getVisibility()I
+
+    move-result v0
+
+    if-nez v0, :cond_0
+
+    iget-object v0, p0, Lcom/android/incallui/fragment/RTTFragment;->mCardView:Landroid/support/v7/widget/CardView;
+
+    const/16 v1, 0x8
+
+    invoke-virtual {v0, v1}, Landroid/support/v7/widget/CardView;->setVisibility(I)V
+
+    :cond_0
+    invoke-static {}, Lcom/android/incallui/InCallApp;->getInstance()Lcom/android/incallui/InCallApp;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lcom/android/incallui/InCallApp;->getApplicationContext()Landroid/content/Context;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
+
+    move-result-object v0
+
+    const v1, 0x7f090649
+
+    invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
+
+    move-result-object v0
+
+    iget-object v1, p0, Lcom/android/incallui/fragment/RTTFragment;->mTips:Landroid/widget/TextView;
+
+    invoke-virtual {v1}, Landroid/widget/TextView;->getText()Ljava/lang/CharSequence;
+
+    move-result-object v1
+
+    invoke-virtual {v1, v0}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_1
+
+    invoke-direct {p0}, Lcom/android/incallui/fragment/RTTFragment;->setRTTDiscovered()V
+
+    :goto_0
+    return-void
+
+    :cond_1
+    invoke-direct {p0}, Lcom/android/incallui/fragment/RTTFragment;->setForcedRTTDiscovered()V
+
+    goto :goto_0
+.end method
+
 .method public bridge synthetic createPresenter()Lcom/android/incallui/Presenter;
     .locals 1
 
@@ -926,6 +1865,209 @@
     invoke-direct {p0}, Lcom/android/incallui/fragment/RTTFragment;->scroll()V
 
     return-void
+.end method
+
+.method public enableRttMsgBox(Z)V
+    .locals 5
+
+    const/4 v4, 0x0
+
+    const/4 v3, 0x1
+
+    iget-object v0, p0, Lcom/android/incallui/fragment/RTTFragment;->rttSendMessage:Landroid/widget/EditText;
+
+    invoke-virtual {v0}, Landroid/widget/EditText;->isEnabled()Z
+
+    move-result v0
+
+    new-instance v1, Ljava/lang/StringBuilder;
+
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v2, "enableRttMsgBox: "
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    const-string v2, " currentState: "
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-static {p0, v0}, Lcom/android/incallui/Log;->d(Ljava/lang/Object;Ljava/lang/String;)V
+
+    if-eqz p1, :cond_0
+
+    iget-object v0, p0, Lcom/android/incallui/fragment/RTTFragment;->rttSendMessage:Landroid/widget/EditText;
+
+    invoke-virtual {v0, v3}, Landroid/widget/EditText;->setEnabled(Z)V
+
+    iget-object v0, p0, Lcom/android/incallui/fragment/RTTFragment;->rttSendMessage:Landroid/widget/EditText;
+
+    invoke-virtual {v0, v3}, Landroid/widget/EditText;->setFocusableInTouchMode(Z)V
+
+    iget-object v0, p0, Lcom/android/incallui/fragment/RTTFragment;->rttSendMessage:Landroid/widget/EditText;
+
+    invoke-virtual {v0, v3}, Landroid/widget/EditText;->setFocusable(Z)V
+
+    iget-object v0, p0, Lcom/android/incallui/fragment/RTTFragment;->rttSendMessage:Landroid/widget/EditText;
+
+    invoke-virtual {v0}, Landroid/widget/EditText;->requestFocus()Z
+
+    iget-object v0, p0, Lcom/android/incallui/fragment/RTTFragment;->handler:Landroid/os/Handler;
+
+    new-instance v1, Lcom/android/incallui/fragment/RTTFragment$12;
+
+    invoke-direct {v1, p0}, Lcom/android/incallui/fragment/RTTFragment$12;-><init>(Lcom/android/incallui/fragment/RTTFragment;)V
+
+    const-wide/16 v2, 0xc8
+
+    invoke-virtual {v0, v1, v2, v3}, Landroid/os/Handler;->postDelayed(Ljava/lang/Runnable;J)Z
+
+    :goto_0
+    return-void
+
+    :cond_0
+    invoke-virtual {p0, v4}, Lcom/android/incallui/fragment/RTTFragment;->hideSoftInput(Z)V
+
+    iget-object v0, p0, Lcom/android/incallui/fragment/RTTFragment;->rttSendMessage:Landroid/widget/EditText;
+
+    invoke-virtual {v0, v4}, Landroid/widget/EditText;->setFocusable(Z)V
+
+    goto :goto_0
+.end method
+
+.method public forceDestroyInCallMenu()V
+    .locals 5
+
+    const/4 v1, 0x1
+
+    const/4 v2, 0x0
+
+    invoke-direct {p0}, Lcom/android/incallui/fragment/RTTFragment;->getInCallMenu()Lcom/android/incallui/InCallMenu;
+
+    move-result-object v3
+
+    new-instance v0, Ljava/lang/StringBuilder;
+
+    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v4, "RTTFragment getActivity() != null && inCallMenu != null "
+
+    invoke-virtual {v0, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v4
+
+    invoke-virtual {p0}, Lcom/android/incallui/fragment/RTTFragment;->getActivity()Landroid/app/Activity;
+
+    move-result-object v0
+
+    if-eqz v0, :cond_1
+
+    move v0, v1
+
+    :goto_0
+    invoke-virtual {v4, v0}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    const-string v4, " "
+
+    invoke-virtual {v0, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    if-eqz v3, :cond_2
+
+    :goto_1
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-static {p0, v0}, Lcom/android/incallui/Log;->d(Ljava/lang/Object;Ljava/lang/String;)V
+
+    invoke-virtual {p0}, Lcom/android/incallui/fragment/RTTFragment;->getActivity()Landroid/app/Activity;
+
+    move-result-object v0
+
+    if-eqz v0, :cond_3
+
+    if-eqz v3, :cond_3
+
+    invoke-virtual {v3}, Lcom/android/incallui/InCallMenu;->isMenuOpen()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    new-instance v0, Ljava/lang/StringBuilder;
+
+    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v1, "DISMISS Called from RTTFragment : for menu getInCallMenu() : "
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    invoke-direct {p0}, Lcom/android/incallui/fragment/RTTFragment;->getInCallMenu()Lcom/android/incallui/InCallMenu;
+
+    move-result-object v1
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-static {p0, v0}, Lcom/android/incallui/Log;->d(Ljava/lang/Object;Ljava/lang/String;)V
+
+    invoke-static {}, Lcom/android/incallui/UiAdapter;->getInstance()Lcom/android/incallui/UiAdapter;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lcom/android/incallui/UiAdapter;->dismissInCallMenu()V
+
+    :cond_0
+    :goto_2
+    return-void
+
+    :cond_1
+    move v0, v2
+
+    goto :goto_0
+
+    :cond_2
+    move v1, v2
+
+    goto :goto_1
+
+    :cond_3
+    const-string v0, "activity or menu is null - onCreate RttFragment"
+
+    invoke-static {p0, v0}, Lcom/android/incallui/Log;->d(Ljava/lang/Object;Ljava/lang/String;)V
+
+    goto :goto_2
 .end method
 
 .method public getCallTimer(Lcom/android/incallui/Call;)Ljava/lang/String;
@@ -1145,29 +2287,25 @@
 
     if-eqz v0, :cond_1
 
-    iget-object v0, p0, Lcom/android/incallui/fragment/RTTFragment;->mActivity:Lcom/android/incallui/InCallActivity;
-
-    const-string v1, "input_method"
-
-    invoke-virtual {v0, v1}, Lcom/android/incallui/InCallActivity;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Landroid/view/inputmethod/InputMethodManager;
+    iget-object v0, p0, Lcom/android/incallui/fragment/RTTFragment;->imm:Landroid/view/inputmethod/InputMethodManager;
 
     if-eqz v0, :cond_0
+
+    iget-object v0, p0, Lcom/android/incallui/fragment/RTTFragment;->imm:Landroid/view/inputmethod/InputMethodManager;
 
     iget-object v1, p0, Lcom/android/incallui/fragment/RTTFragment;->rttSendMessage:Landroid/widget/EditText;
 
     invoke-virtual {v0, v1}, Landroid/view/inputmethod/InputMethodManager;->isActive(Landroid/view/View;)Z
 
-    move-result v1
+    move-result v0
 
-    if-eqz v1, :cond_0
+    if-eqz v0, :cond_0
 
-    const-string v1, "hideSoftInput()"
+    const-string v0, "hideSoftInput()"
 
-    invoke-static {p0, v1}, Lcom/android/incallui/Log;->d(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {p0, v0}, Lcom/android/incallui/Log;->d(Ljava/lang/Object;Ljava/lang/String;)V
+
+    iget-object v0, p0, Lcom/android/incallui/fragment/RTTFragment;->imm:Landroid/view/inputmethod/InputMethodManager;
 
     iget-object v1, p0, Lcom/android/incallui/fragment/RTTFragment;->rttSendMessage:Landroid/widget/EditText;
 
@@ -1176,6 +2314,8 @@
     move-result-object v1
 
     invoke-virtual {v0, v1, v2}, Landroid/view/inputmethod/InputMethodManager;->hideSoftInputFromWindow(Landroid/os/IBinder;I)Z
+
+    iget-object v0, p0, Lcom/android/incallui/fragment/RTTFragment;->imm:Landroid/view/inputmethod/InputMethodManager;
 
     iget-object v1, p0, Lcom/android/incallui/fragment/RTTFragment;->rttSendMessage:Landroid/widget/EditText;
 
@@ -1202,6 +2342,89 @@
     iget-object v0, p0, Lcom/android/incallui/fragment/RTTFragment;->rttSendMessage:Landroid/widget/EditText;
 
     invoke-virtual {v0, v2}, Landroid/widget/EditText;->setEnabled(Z)V
+
+    goto :goto_0
+.end method
+
+.method public initForcedRTTTip()V
+    .locals 5
+
+    invoke-static {}, Lcom/android/incallui/CallList;->getInstance()Lcom/android/incallui/CallList;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lcom/android/incallui/CallList;->getActiveCall()Lcom/android/incallui/Call;
+
+    move-result-object v0
+
+    invoke-virtual {p0, v0}, Lcom/android/incallui/fragment/RTTFragment;->getCallerName(Lcom/android/incallui/Call;)Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-static {}, Lcom/android/incallui/InCallApp;->getInstance()Lcom/android/incallui/InCallApp;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Lcom/android/incallui/InCallApp;->getApplicationContext()Landroid/content/Context;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
+
+    move-result-object v1
+
+    const v2, 0x7f09064a
+
+    invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
+
+    move-result-object v1
+
+    iget-object v2, p0, Lcom/android/incallui/fragment/RTTFragment;->mTips:Landroid/widget/TextView;
+
+    if-eqz v2, :cond_0
+
+    iget-object v2, p0, Lcom/android/incallui/fragment/RTTFragment;->mTips:Landroid/widget/TextView;
+
+    const/4 v3, 0x1
+
+    new-array v3, v3, [Ljava/lang/Object;
+
+    const/4 v4, 0x0
+
+    aput-object v0, v3, v4
+
+    invoke-static {v1, v3}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-virtual {v2, v0}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+
+    :cond_0
+    return-void
+.end method
+
+.method public isBackgroundShowing()Z
+    .locals 1
+
+    iget-object v0, p0, Lcom/android/incallui/fragment/RTTFragment;->mGradientAnimationView:Lcom/android/incallui/widget/GradientAnimationView;
+
+    if-eqz v0, :cond_0
+
+    iget-object v0, p0, Lcom/android/incallui/fragment/RTTFragment;->mGradientAnimationView:Lcom/android/incallui/widget/GradientAnimationView;
+
+    invoke-virtual {v0}, Lcom/android/incallui/widget/GradientAnimationView;->isGradientShowing()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    const/4 v0, 0x1
+
+    :goto_0
+    return v0
+
+    :cond_0
+    const/4 v0, 0x0
 
     goto :goto_0
 .end method
@@ -1259,11 +2482,33 @@
 
     invoke-static {p0, v0}, Lcom/android/incallui/Log;->d(Ljava/lang/Object;Ljava/lang/String;)V
 
+    iget-object v0, p0, Lcom/android/incallui/fragment/RTTFragment;->mView:Landroid/view/View;
+
+    invoke-virtual {p0, v0}, Lcom/android/incallui/fragment/RTTFragment;->setupInCallMenu(Landroid/view/View;)V
+
     invoke-direct {p0}, Lcom/android/incallui/fragment/RTTFragment;->menuButtonClicked()V
 
     goto :goto_0
 
     :sswitch_2
+    const-string v0, "onClick endCallButton"
+
+    invoke-static {p0, v0}, Lcom/android/incallui/Log;->d(Ljava/lang/Object;Ljava/lang/String;)V
+
+    invoke-direct {p0}, Lcom/android/incallui/fragment/RTTFragment;->endCallClicked()V
+
+    goto :goto_0
+
+    :sswitch_3
+    const-string v0, "onClick tipscross"
+
+    invoke-static {p0, v0}, Lcom/android/incallui/Log;->d(Ljava/lang/Object;Ljava/lang/String;)V
+
+    invoke-virtual {p0}, Lcom/android/incallui/fragment/RTTFragment;->closeTipsCard()V
+
+    goto :goto_0
+
+    :sswitch_4
     iget-object v0, p0, Lcom/android/incallui/fragment/RTTFragment;->rttSendMessage:Landroid/widget/EditText;
 
     iget-object v1, p0, Lcom/android/incallui/fragment/RTTFragment;->rttSendMessage:Landroid/widget/EditText;
@@ -1280,7 +2525,43 @@
 
     goto :goto_0
 
-    :sswitch_3
+    :sswitch_5
+    iget-object v0, p0, Lcom/android/incallui/fragment/RTTFragment;->countdowntimer:Landroid/os/CountDownTimer;
+
+    if-eqz v0, :cond_0
+
+    iget-object v0, p0, Lcom/android/incallui/fragment/RTTFragment;->countdowntimer:Landroid/os/CountDownTimer;
+
+    invoke-virtual {v0}, Landroid/os/CountDownTimer;->cancel()V
+
+    invoke-direct {p0, v3}, Lcom/android/incallui/fragment/RTTFragment;->completeBubble(Z)V
+
+    invoke-virtual {p0}, Lcom/android/incallui/fragment/RTTFragment;->getPresenter()Lcom/android/incallui/Presenter;
+
+    move-result-object v0
+
+    if-eqz v0, :cond_1
+
+    invoke-virtual {p0}, Lcom/android/incallui/fragment/RTTFragment;->getPresenter()Lcom/android/incallui/Presenter;
+
+    move-result-object v0
+
+    check-cast v0, Lcom/android/incallui/RTTPresenter;
+
+    const-string v1, "\r"
+
+    invoke-virtual {v0, v1}, Lcom/android/incallui/RTTPresenter;->sendRttMessage(Ljava/lang/String;)V
+
+    :cond_1
+    iget-object v0, p0, Lcom/android/incallui/fragment/RTTFragment;->rttSendMessage:Landroid/widget/EditText;
+
+    const-string v1, ""
+
+    invoke-virtual {v0, v1}, Landroid/widget/EditText;->setText(Ljava/lang/CharSequence;)V
+
+    goto :goto_0
+
+    :sswitch_6
     const-string v0, "swap animation end..."
 
     invoke-static {p0, v0, v3}, Lcom/android/incallui/Log;->d(Ljava/lang/Object;Ljava/lang/String;Z)V
@@ -1333,52 +2614,416 @@
 
     invoke-virtual {v0}, Lcom/android/incallui/InCallActivity;->refreshButtonsForRtt()V
 
-    goto :goto_0
-
-    nop
+    goto/16 :goto_0
 
     :sswitch_data_0
     .sparse-switch
-        0x7f1002f0 -> :sswitch_1
-        0x7f1003ea -> :sswitch_0
-        0x7f1003eb -> :sswitch_3
-        0x7f1003ee -> :sswitch_2
+        0x7f1002fc -> :sswitch_1
+        0x7f1003f4 -> :sswitch_2
+        0x7f1003fd -> :sswitch_0
+        0x7f1003fe -> :sswitch_6
+        0x7f100401 -> :sswitch_3
+        0x7f100405 -> :sswitch_4
+        0x7f100406 -> :sswitch_5
     .end sparse-switch
 .end method
 
-.method public onCreate(Landroid/os/Bundle;)V
-    .locals 1
+.method public onContentViewChanged(Landroid/graphics/Point;)V
+    .locals 2
 
-    invoke-super {p0, p1}, Lcom/android/incallui/BaseFragment;->onCreate(Landroid/os/Bundle;)V
+    new-instance v0, Ljava/lang/StringBuilder;
 
-    if-eqz p1, :cond_0
+    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v0, "RTTKey"
+    const-string v1, "onContentViewChanged = "
 
-    invoke-virtual {p1, v0}, Landroid/os/Bundle;->containsKey(Ljava/lang/String;)Z
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-static {p0, v0}, Lcom/android/incallui/Log;->d(Ljava/lang/Object;Ljava/lang/String;)V
+
+    if-nez p1, :cond_0
+
+    :goto_0
+    return-void
+
+    :cond_0
+    invoke-virtual {p0}, Lcom/android/incallui/fragment/RTTFragment;->arrangeRttLayout()V
+
+    goto :goto_0
+.end method
+
+.method public onContextItemSelected(Landroid/view/MenuItem;)Z
+    .locals 7
+
+    const/4 v2, 0x1
+
+    const/4 v6, 0x0
+
+    invoke-interface {p1}, Landroid/view/MenuItem;->getMenuInfo()Landroid/view/ContextMenu$ContextMenuInfo;
+
+    move-result-object v0
+
+    check-cast v0, Landroid/widget/AdapterView$AdapterContextMenuInfo;
+
+    iget-object v1, p0, Lcom/android/incallui/fragment/RTTFragment;->rttConversation:Landroid/widget/ListView;
+
+    iget v3, v0, Landroid/widget/AdapterView$AdapterContextMenuInfo;->position:I
+
+    invoke-virtual {v1, v3}, Landroid/widget/ListView;->getItemAtPosition(I)Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Lcom/android/incallui/rtt/ChatMessage;
+
+    if-eqz v1, :cond_0
+
+    new-instance v3, Ljava/lang/StringBuilder;
+
+    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v4, "onContextItemSelected id: "
+
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    invoke-virtual {v1}, Lcom/android/incallui/rtt/ChatMessage;->getId()J
+
+    move-result-wide v4
+
+    invoke-virtual {v3, v4, v5}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    const-string v4, " isMe: "
+
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    invoke-virtual {v1}, Lcom/android/incallui/rtt/ChatMessage;->getIsme()Z
+
+    move-result v4
+
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    const-string v4, " msg: "
+
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    invoke-virtual {v1}, Lcom/android/incallui/rtt/ChatMessage;->getMessage()Ljava/lang/String;
+
+    move-result-object v4
+
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    const-string v4, " time: "
+
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    invoke-virtual {v1}, Lcom/android/incallui/rtt/ChatMessage;->getDate()Ljava/lang/String;
+
+    move-result-object v4
+
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-static {p0, v3}, Lcom/android/incallui/Log;->d(Ljava/lang/Object;Ljava/lang/String;)V
+
+    :goto_0
+    invoke-interface {p1}, Landroid/view/MenuItem;->getItemId()I
+
+    move-result v3
+
+    packed-switch v3, :pswitch_data_0
+
+    invoke-super {p0, p1}, Lcom/android/incallui/BaseFragment;->onOptionsItemSelected(Landroid/view/MenuItem;)Z
+
+    move-result v0
+
+    :goto_1
+    return v0
+
+    :cond_0
+    const-string v3, "onContextItemSelected null"
+
+    invoke-static {p0, v3}, Lcom/android/incallui/Log;->d(Ljava/lang/Object;Ljava/lang/String;)V
+
+    goto :goto_0
+
+    :pswitch_0
+    invoke-virtual {v1}, Lcom/android/incallui/rtt/ChatMessage;->getMessage()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-static {v1}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
     move-result v0
 
     if-nez v0, :cond_1
 
+    new-instance v0, Ljava/lang/StringBuilder;
+
+    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v3, "selectedTexts: "
+
+    invoke-virtual {v0, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    invoke-interface {v1}, Ljava/lang/CharSequence;->toString()Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-virtual {v0, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-static {p0, v0}, Lcom/android/incallui/Log;->d(Ljava/lang/Object;Ljava/lang/String;)V
+
+    invoke-virtual {p0}, Lcom/android/incallui/fragment/RTTFragment;->getContext()Landroid/content/Context;
+
+    move-result-object v0
+
+    const-string v3, "clipboard"
+
+    invoke-virtual {v0, v3}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Landroid/content/ClipboardManager;
+
+    const/4 v3, 0x0
+
+    invoke-static {v3, v1}, Landroid/content/ClipData;->newPlainText(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Landroid/content/ClipData;
+
+    move-result-object v1
+
+    invoke-virtual {v0, v1}, Landroid/content/ClipboardManager;->setPrimaryClip(Landroid/content/ClipData;)V
+
+    :goto_2
+    move v0, v2
+
+    goto :goto_1
+
+    :cond_1
+    const-string v0, "selectedTexts is null"
+
+    invoke-static {p0, v0}, Lcom/android/incallui/Log;->d(Ljava/lang/Object;Ljava/lang/String;)V
+
+    goto :goto_2
+
+    :pswitch_1
+    iget-object v1, p0, Lcom/android/incallui/fragment/RTTFragment;->mActivity:Lcom/android/incallui/InCallActivity;
+
+    if-eqz v1, :cond_2
+
+    iget-object v1, p0, Lcom/android/incallui/fragment/RTTFragment;->mActivity:Lcom/android/incallui/InCallActivity;
+
+    const-string v3, "input_method"
+
+    invoke-virtual {v1, v3}, Lcom/android/incallui/InCallActivity;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Landroid/view/inputmethod/InputMethodManager;
+
+    if-eqz v1, :cond_2
+
+    iget-object v3, p0, Lcom/android/incallui/fragment/RTTFragment;->rttSendMessage:Landroid/widget/EditText;
+
+    invoke-virtual {v3}, Landroid/widget/EditText;->getApplicationWindowToken()Landroid/os/IBinder;
+
+    move-result-object v3
+
+    invoke-virtual {v1, v3, v6}, Landroid/view/inputmethod/InputMethodManager;->hideSoftInputFromWindow(Landroid/os/IBinder;I)Z
+
+    iget-object v3, p0, Lcom/android/incallui/fragment/RTTFragment;->rttSendMessage:Landroid/widget/EditText;
+
+    invoke-static {v1, v3}, Lcom/android/incallui/wrapper/InputMethodManagerWrapper;->focusOut(Landroid/view/inputmethod/InputMethodManager;Landroid/view/View;)V
+
+    iget-object v1, p0, Lcom/android/incallui/fragment/RTTFragment;->rttSendMessage:Landroid/widget/EditText;
+
+    invoke-virtual {v1, v6}, Landroid/widget/EditText;->setFocusableInTouchMode(Z)V
+
+    :cond_2
+    iget v0, v0, Landroid/widget/AdapterView$AdapterContextMenuInfo;->position:I
+
+    invoke-direct {p0, v0}, Lcom/android/incallui/fragment/RTTFragment;->showDeleteDialog(I)V
+
+    move v0, v2
+
+    goto :goto_1
+
+    :pswitch_data_0
+    .packed-switch 0x1
+        :pswitch_0
+        :pswitch_1
+    .end packed-switch
+.end method
+
+.method public onCreate(Landroid/os/Bundle;)V
+    .locals 4
+
+    const/4 v3, 0x1
+
+    const-string v0, "onCreate()..."
+
+    invoke-static {p0, v0}, Lcom/android/incallui/Log;->d(Ljava/lang/Object;Ljava/lang/String;)V
+
+    invoke-super {p0, p1}, Lcom/android/incallui/BaseFragment;->onCreate(Landroid/os/Bundle;)V
+
+    invoke-static {}, Lcom/android/incallui/CallList;->getInstance()Lcom/android/incallui/CallList;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lcom/android/incallui/CallList;->getActiveCall()Lcom/android/incallui/Call;
+
+    move-result-object v0
+
+    invoke-static {}, Lcom/android/incallui/InCallApp;->getInstance()Lcom/android/incallui/InCallApp;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Lcom/android/incallui/InCallApp;->getIMSManagerWrapper()Lcom/android/incallui/service/ims/IMSManagerWrapper;
+
+    move-result-object v1
+
+    if-eqz v0, :cond_0
+
+    if-eqz v1, :cond_0
+
+    invoke-virtual {v0}, Lcom/android/incallui/Call;->getSecCall()Lcom/android/incallui/SecCall;
+
+    move-result-object v2
+
+    if-eqz v2, :cond_0
+
+    invoke-virtual {v0}, Lcom/android/incallui/Call;->getSecCall()Lcom/android/incallui/SecCall;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Lcom/android/incallui/SecCall;->getSessionId()I
+
+    move-result v2
+
+    invoke-virtual {v1, v2}, Lcom/android/incallui/service/ims/IMSManagerWrapper;->isRttCall(I)Z
+
+    move-result v1
+
+    if-eqz v1, :cond_0
+
+    invoke-static {}, Lcom/android/incallui/UiAdapter;->getInstance()Lcom/android/incallui/UiAdapter;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Lcom/android/incallui/UiAdapter;->getInCallActivity()Lcom/android/incallui/InCallActivity;
+
+    move-result-object v1
+
+    if-eqz v1, :cond_0
+
+    invoke-virtual {v1, v3}, Lcom/android/incallui/InCallActivity;->setRTTCall(Z)V
+
     :cond_0
-    new-instance v0, Ljava/util/ArrayList;
+    invoke-static {}, Lcom/android/incallui/InCallPresenter;->getInstance()Lcom/android/incallui/InCallPresenter;
 
-    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
+    move-result-object v1
 
-    iput-object v0, p0, Lcom/android/incallui/fragment/RTTFragment;->chatHistory:Ljava/util/ArrayList;
+    invoke-virtual {v1}, Lcom/android/incallui/InCallPresenter;->isShowVideoToastRTT()Z
+
+    move-result v1
+
+    if-eqz v1, :cond_1
+
+    if-eqz v0, :cond_1
+
+    invoke-virtual {v0}, Lcom/android/incallui/Call;->isIncomingDirection()Z
+
+    move-result v0
+
+    if-nez v0, :cond_1
+
+    invoke-static {}, Lcom/android/incallui/InCallApp;->getInstance()Lcom/android/incallui/InCallApp;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lcom/android/incallui/InCallApp;->getApplicationContext()Landroid/content/Context;
+
+    move-result-object v0
+
+    const v1, 0x7f090677
+
+    invoke-static {v0, v1, v3}, Landroid/widget/Toast;->makeText(Landroid/content/Context;II)Landroid/widget/Toast;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Landroid/widget/Toast;->show()V
+
+    invoke-static {}, Lcom/android/incallui/InCallPresenter;->getInstance()Lcom/android/incallui/InCallPresenter;
+
+    move-result-object v0
+
+    invoke-virtual {v0, v3}, Lcom/android/incallui/InCallPresenter;->setShowVideoToastRTT(Z)V
+
+    :cond_1
+    invoke-virtual {p0}, Lcom/android/incallui/fragment/RTTFragment;->forceDestroyInCallMenu()V
+
+    return-void
+.end method
+
+.method public onCreateContextMenu(Landroid/view/ContextMenu;Landroid/view/View;Landroid/view/ContextMenu$ContextMenuInfo;)V
+    .locals 3
+
+    const/4 v2, 0x0
+
+    check-cast p3, Landroid/widget/AdapterView$AdapterContextMenuInfo;
+
+    if-nez p3, :cond_0
 
     :goto_0
     return-void
 
-    :cond_1
-    const-string v0, "RTTKey"
+    :cond_0
+    const/4 v0, 0x1
 
-    invoke-virtual {p1, v0}, Landroid/os/Bundle;->getParcelableArrayList(Ljava/lang/String;)Ljava/util/ArrayList;
+    const v1, 0x7f090656
 
-    move-result-object v0
+    invoke-interface {p1, v2, v0, v2, v1}, Landroid/view/ContextMenu;->add(IIII)Landroid/view/MenuItem;
 
-    iput-object v0, p0, Lcom/android/incallui/fragment/RTTFragment;->chatHistory:Ljava/util/ArrayList;
+    const/4 v0, 0x2
+
+    const v1, 0x7f090657
+
+    invoke-interface {p1, v2, v0, v2, v1}, Landroid/view/ContextMenu;->add(IIII)Landroid/view/MenuItem;
 
     goto :goto_0
 .end method
@@ -1386,7 +3031,7 @@
 .method public onCreateView(Landroid/view/LayoutInflater;Landroid/view/ViewGroup;Landroid/os/Bundle;)Landroid/view/View;
     .locals 3
 
-    const/4 v1, 0x0
+    const/4 v2, 0x0
 
     const-string v0, "onCreateView()..."
 
@@ -1400,15 +3045,31 @@
 
     iput-object v0, p0, Lcom/android/incallui/fragment/RTTFragment;->mActivity:Lcom/android/incallui/InCallActivity;
 
+    iget-object v0, p0, Lcom/android/incallui/fragment/RTTFragment;->mActivity:Lcom/android/incallui/InCallActivity;
+
+    const-string v1, "input_method"
+
+    invoke-virtual {v0, v1}, Lcom/android/incallui/InCallActivity;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Landroid/view/inputmethod/InputMethodManager;
+
+    iput-object v0, p0, Lcom/android/incallui/fragment/RTTFragment;->imm:Landroid/view/inputmethod/InputMethodManager;
+
+    const/4 v0, 0x1
+
+    invoke-direct {p0, v0}, Lcom/android/incallui/fragment/RTTFragment;->updateKeepScreenOnFlag(Z)V
+
     invoke-static {}, Lcom/android/incallui/util/InCallUtils;->needToShowMultiparty()Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    const v0, 0x7f040120
+    const v0, 0x7f040124
 
-    invoke-virtual {p1, v0, p2, v1}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;Z)Landroid/view/View;
+    invoke-virtual {p1, v0, p2, v2}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;Z)Landroid/view/View;
 
     move-result-object v0
 
@@ -1428,9 +3089,9 @@
     return-object v0
 
     :cond_0
-    const v0, 0x7f040121
+    const v0, 0x7f040125
 
-    invoke-virtual {p1, v0, p2, v1}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;Z)Landroid/view/View;
+    invoke-virtual {p1, v0, p2, v2}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;Z)Landroid/view/View;
 
     move-result-object v0
 
@@ -1468,7 +3129,32 @@
 
     invoke-static {p0, v0}, Lcom/android/incallui/Log;->d(Ljava/lang/Object;Ljava/lang/String;)V
 
+    invoke-virtual {p0}, Lcom/android/incallui/fragment/RTTFragment;->forceDestroyInCallMenu()V
+
     invoke-virtual {p0}, Lcom/android/incallui/fragment/RTTFragment;->updateRTTMessage()V
+
+    iget-object v0, p0, Lcom/android/incallui/fragment/RTTFragment;->rttSendMessage:Landroid/widget/EditText;
+
+    if-eqz v0, :cond_0
+
+    iget-object v0, p0, Lcom/android/incallui/fragment/RTTFragment;->rttSendMessage:Landroid/widget/EditText;
+
+    iget-object v1, p0, Lcom/android/incallui/fragment/RTTFragment;->mTextWatcher:Landroid/text/TextWatcher;
+
+    invoke-virtual {v0, v1}, Landroid/widget/EditText;->removeTextChangedListener(Landroid/text/TextWatcher;)V
+
+    :cond_0
+    invoke-virtual {p0}, Lcom/android/incallui/fragment/RTTFragment;->stopGradientAnimation()V
+
+    const/4 v0, 0x0
+
+    invoke-direct {p0, v0}, Lcom/android/incallui/fragment/RTTFragment;->updateKeepScreenOnFlag(Z)V
+
+    invoke-static {}, Lcom/android/incallui/InCallPresenter;->getInstance()Lcom/android/incallui/InCallPresenter;
+
+    move-result-object v0
+
+    invoke-virtual {v0, p0}, Lcom/android/incallui/InCallPresenter;->removeContentViewChangeListener(Lcom/android/incallui/InCallPresenter$ContentViewChangeListener;)V
 
     new-instance v0, Ljava/lang/StringBuilder;
 
@@ -1520,7 +3206,15 @@
 
     iget-object v0, p0, Lcom/android/incallui/fragment/RTTFragment;->callToDisplay:Lcom/android/incallui/Call;
 
-    if-eqz v0, :cond_0
+    if-eqz v0, :cond_1
+
+    iget-object v0, p0, Lcom/android/incallui/fragment/RTTFragment;->callToDisplay:Lcom/android/incallui/Call;
+
+    invoke-virtual {v0}, Lcom/android/incallui/Call;->getSecCall()Lcom/android/incallui/SecCall;
+
+    move-result-object v0
+
+    if-eqz v0, :cond_1
 
     iget-object v0, p0, Lcom/android/incallui/fragment/RTTFragment;->callToDisplay:Lcom/android/incallui/Call;
 
@@ -1536,7 +3230,20 @@
 
     invoke-virtual {v0, v1}, Lcom/android/incallui/SecCall;->setRttChatmessages(Ljava/util/List;)V
 
-    :cond_0
+    :cond_1
+    iget-object v0, p0, Lcom/android/incallui/fragment/RTTFragment;->mGradientAnimationView:Lcom/android/incallui/widget/GradientAnimationView;
+
+    if-eqz v0, :cond_2
+
+    iget-object v0, p0, Lcom/android/incallui/fragment/RTTFragment;->mGradientAnimationView:Lcom/android/incallui/widget/GradientAnimationView;
+
+    invoke-virtual {v0}, Lcom/android/incallui/widget/GradientAnimationView;->tearDown()V
+
+    const/4 v0, 0x0
+
+    iput-object v0, p0, Lcom/android/incallui/fragment/RTTFragment;->mGradientAnimationView:Lcom/android/incallui/widget/GradientAnimationView;
+
+    :cond_2
     return-void
 .end method
 
@@ -1545,15 +3252,25 @@
 
     invoke-super {p0}, Lcom/android/incallui/BaseFragment;->onPause()V
 
+    const-string v0, "onPause()"
+
+    invoke-static {p0, v0}, Lcom/android/incallui/Log;->d(Ljava/lang/Object;Ljava/lang/String;)V
+
     const/4 v0, 0x1
 
     invoke-virtual {p0, v0}, Lcom/android/incallui/fragment/RTTFragment;->hideSoftInput(Z)V
+
+    const/4 v0, 0x0
+
+    invoke-direct {p0, v0}, Lcom/android/incallui/fragment/RTTFragment;->updateKeepScreenOnFlag(Z)V
 
     return-void
 .end method
 
 .method public onResume()V
-    .locals 2
+    .locals 4
+
+    const/4 v2, 0x1
 
     const/4 v1, 0x0
 
@@ -1575,9 +3292,21 @@
 
     invoke-virtual {p0}, Lcom/android/incallui/fragment/RTTFragment;->showElapsedTimeContainer()V
 
-    const/4 v0, 0x1
+    invoke-virtual {p0, v2}, Lcom/android/incallui/fragment/RTTFragment;->setPrimaryCallMenuForRTT(Z)V
 
-    invoke-virtual {p0, v0}, Lcom/android/incallui/fragment/RTTFragment;->setPrimaryCallMenuForRTT(Z)V
+    invoke-direct {p0, v2}, Lcom/android/incallui/fragment/RTTFragment;->updateKeepScreenOnFlag(Z)V
+
+    invoke-virtual {p0}, Lcom/android/incallui/fragment/RTTFragment;->updateRTTViewBackGround()V
+
+    iget-object v0, p0, Lcom/android/incallui/fragment/RTTFragment;->handler:Landroid/os/Handler;
+
+    new-instance v1, Lcom/android/incallui/fragment/RTTFragment$11;
+
+    invoke-direct {v1, p0}, Lcom/android/incallui/fragment/RTTFragment$11;-><init>(Lcom/android/incallui/fragment/RTTFragment;)V
+
+    const-wide/16 v2, 0xc8
+
+    invoke-virtual {v0, v1, v2, v3}, Landroid/os/Handler;->postDelayed(Ljava/lang/Runnable;J)Z
 
     return-void
 .end method
@@ -1586,8 +3315,6 @@
     .locals 7
 
     const/4 v6, 0x1
-
-    const/4 v2, -0x1
 
     const/4 v5, 0x0
 
@@ -1617,95 +3344,26 @@
 
     move-result v0
 
-    if-eqz v0, :cond_2
-
-    iget-object v0, p0, Lcom/android/incallui/fragment/RTTFragment;->adapter:Lcom/android/incallui/rtt/ChatAdapter;
-
-    invoke-virtual {v0}, Lcom/android/incallui/rtt/ChatAdapter;->findTheirLastRealTimePosition()I
-
-    move-result v0
-
-    if-eq v0, v2, :cond_1
-
-    new-instance v1, Ljava/lang/StringBuilder;
-
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v2, "onRttEvent(): Real time bubble position"
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-static {p0, v1}, Lcom/android/incallui/Log;->d(Ljava/lang/Object;Ljava/lang/String;)V
-
-    new-instance v1, Ljava/lang/StringBuilder;
-
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v2, "onRttEvent(): real time received character "
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-static {p0, v1}, Lcom/android/incallui/Log;->d(Ljava/lang/Object;Ljava/lang/String;)V
-
-    iget-object v1, p0, Lcom/android/incallui/fragment/RTTFragment;->adapter:Lcom/android/incallui/rtt/ChatAdapter;
-
-    invoke-virtual {v1, v0}, Lcom/android/incallui/rtt/ChatAdapter;->getItem(I)Lcom/android/incallui/rtt/ChatMessage;
-
-    move-result-object v0
-
-    if-eqz v0, :cond_0
-
-    invoke-virtual {v0, v5}, Lcom/android/incallui/rtt/ChatMessage;->setRealTime(Z)V
-
-    :cond_0
-    invoke-virtual {p0}, Lcom/android/incallui/fragment/RTTFragment;->getActivity()Landroid/app/Activity;
-
-    move-result-object v0
-
     if-eqz v0, :cond_1
 
-    invoke-virtual {p0}, Lcom/android/incallui/fragment/RTTFragment;->getActivity()Landroid/app/Activity;
+    invoke-direct {p0, v5}, Lcom/android/incallui/fragment/RTTFragment;->completeBubble(Z)V
 
-    move-result-object v0
-
-    new-instance v1, Lcom/android/incallui/fragment/RTTFragment$1;
-
-    invoke-direct {v1, p0}, Lcom/android/incallui/fragment/RTTFragment$1;-><init>(Lcom/android/incallui/fragment/RTTFragment;)V
-
-    invoke-virtual {v0, v1}, Landroid/app/Activity;->runOnUiThread(Ljava/lang/Runnable;)V
-
-    :cond_1
+    :cond_0
     :goto_0
     return-void
 
-    :cond_2
+    :cond_1
+    invoke-direct {p0}, Lcom/android/incallui/fragment/RTTFragment;->startMTTimer()V
+
     iget-object v0, p0, Lcom/android/incallui/fragment/RTTFragment;->adapter:Lcom/android/incallui/rtt/ChatAdapter;
 
     invoke-virtual {v0}, Lcom/android/incallui/rtt/ChatAdapter;->findTheirLastRealTimePosition()I
 
     move-result v0
 
-    if-eq v0, v2, :cond_8
+    const/4 v1, -0x1
+
+    if-eq v0, v1, :cond_7
 
     iget-object v1, p0, Lcom/android/incallui/fragment/RTTFragment;->adapter:Lcom/android/incallui/rtt/ChatAdapter;
 
@@ -1713,7 +3371,7 @@
 
     move-result-object v1
 
-    if-eqz v1, :cond_6
+    if-eqz v1, :cond_5
 
     new-instance v2, Ljava/lang/StringBuilder;
 
@@ -1745,7 +3403,7 @@
 
     move-result v2
 
-    if-nez v2, :cond_3
+    if-nez v2, :cond_2
 
     const-string v2, "\t"
 
@@ -1753,9 +3411,9 @@
 
     move-result v2
 
-    if-eqz v2, :cond_7
+    if-eqz v2, :cond_6
 
-    :cond_3
+    :cond_2
     invoke-virtual {v1}, Lcom/android/incallui/rtt/ChatMessage;->getMessage()Ljava/lang/String;
 
     move-result-object v2
@@ -1784,7 +3442,7 @@
 
     invoke-static {p0, v3}, Lcom/android/incallui/Log;->d(Ljava/lang/Object;Ljava/lang/String;)V
 
-    if-le v2, v6, :cond_4
+    if-le v2, v6, :cond_3
 
     const-string v3, "\t"
 
@@ -1792,28 +3450,28 @@
 
     move-result v3
 
-    if-eqz v3, :cond_5
+    if-eqz v3, :cond_4
 
-    :cond_4
+    :cond_3
     invoke-virtual {p0}, Lcom/android/incallui/fragment/RTTFragment;->getActivity()Landroid/app/Activity;
 
     move-result-object v1
 
-    if-eqz v1, :cond_1
+    if-eqz v1, :cond_0
 
     invoke-virtual {p0}, Lcom/android/incallui/fragment/RTTFragment;->getActivity()Landroid/app/Activity;
 
     move-result-object v1
 
-    new-instance v2, Lcom/android/incallui/fragment/RTTFragment$2;
+    new-instance v2, Lcom/android/incallui/fragment/RTTFragment$5;
 
-    invoke-direct {v2, p0, v0}, Lcom/android/incallui/fragment/RTTFragment$2;-><init>(Lcom/android/incallui/fragment/RTTFragment;I)V
+    invoke-direct {v2, p0, v0}, Lcom/android/incallui/fragment/RTTFragment$5;-><init>(Lcom/android/incallui/fragment/RTTFragment;I)V
 
     invoke-virtual {v1, v2}, Landroid/app/Activity;->runOnUiThread(Ljava/lang/Runnable;)V
 
     goto :goto_0
 
-    :cond_5
+    :cond_4
     invoke-virtual {v1}, Lcom/android/incallui/rtt/ChatMessage;->getMessage()Ljava/lang/String;
 
     move-result-object v0
@@ -1846,27 +3504,27 @@
 
     invoke-virtual {v1, v0}, Lcom/android/incallui/rtt/ChatMessage;->setMessage(Ljava/lang/String;)V
 
-    :cond_6
+    :cond_5
     :goto_1
     invoke-virtual {p0}, Lcom/android/incallui/fragment/RTTFragment;->getActivity()Landroid/app/Activity;
 
     move-result-object v0
 
-    if-eqz v0, :cond_1
+    if-eqz v0, :cond_0
 
     invoke-virtual {p0}, Lcom/android/incallui/fragment/RTTFragment;->getActivity()Landroid/app/Activity;
 
     move-result-object v0
 
-    new-instance v1, Lcom/android/incallui/fragment/RTTFragment$3;
+    new-instance v1, Lcom/android/incallui/fragment/RTTFragment$6;
 
-    invoke-direct {v1, p0}, Lcom/android/incallui/fragment/RTTFragment$3;-><init>(Lcom/android/incallui/fragment/RTTFragment;)V
+    invoke-direct {v1, p0}, Lcom/android/incallui/fragment/RTTFragment$6;-><init>(Lcom/android/incallui/fragment/RTTFragment;)V
 
     invoke-virtual {v0, v1}, Landroid/app/Activity;->runOnUiThread(Ljava/lang/Runnable;)V
 
     goto/16 :goto_0
 
-    :cond_7
+    :cond_6
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -1891,7 +3549,7 @@
 
     goto :goto_1
 
-    :cond_8
+    :cond_7
     new-instance v0, Lcom/android/incallui/rtt/ChatMessage;
 
     invoke-direct {v0}, Lcom/android/incallui/rtt/ChatMessage;-><init>()V
@@ -1930,15 +3588,15 @@
 
     move-result-object v1
 
-    if-eqz v1, :cond_1
+    if-eqz v1, :cond_0
 
     invoke-virtual {p0}, Lcom/android/incallui/fragment/RTTFragment;->getActivity()Landroid/app/Activity;
 
     move-result-object v1
 
-    new-instance v2, Lcom/android/incallui/fragment/RTTFragment$4;
+    new-instance v2, Lcom/android/incallui/fragment/RTTFragment$7;
 
-    invoke-direct {v2, p0, v0}, Lcom/android/incallui/fragment/RTTFragment$4;-><init>(Lcom/android/incallui/fragment/RTTFragment;Lcom/android/incallui/rtt/ChatMessage;)V
+    invoke-direct {v2, p0, v0}, Lcom/android/incallui/fragment/RTTFragment$7;-><init>(Lcom/android/incallui/fragment/RTTFragment;Lcom/android/incallui/rtt/ChatMessage;)V
 
     invoke-virtual {v1, v2}, Landroid/app/Activity;->runOnUiThread(Ljava/lang/Runnable;)V
 
@@ -1946,19 +3604,13 @@
 .end method
 
 .method public onSaveInstanceState(Landroid/os/Bundle;)V
-    .locals 2
+    .locals 1
 
     invoke-super {p0, p1}, Lcom/android/incallui/BaseFragment;->onSaveInstanceState(Landroid/os/Bundle;)V
 
     const-string v0, "onSaveInstanceState().."
 
     invoke-static {p0, v0}, Lcom/android/incallui/Log;->d(Ljava/lang/Object;Ljava/lang/String;)V
-
-    const-string v0, "RTTKey"
-
-    iget-object v1, p0, Lcom/android/incallui/fragment/RTTFragment;->chatHistory:Ljava/util/ArrayList;
-
-    invoke-virtual {p1, v0, v1}, Landroid/os/Bundle;->putParcelableArrayList(Ljava/lang/String;Ljava/util/ArrayList;)V
 
     return-void
 .end method
@@ -1972,9 +3624,13 @@
 .end method
 
 .method public onViewCreated(Landroid/view/View;Landroid/os/Bundle;)V
-    .locals 3
+    .locals 7
 
-    const/4 v2, 0x0
+    const/4 v6, 0x1
+
+    const/16 v5, 0x8
+
+    const/4 v4, 0x0
 
     const-string v0, "onViewCreated()..."
 
@@ -1982,7 +3638,7 @@
 
     iget-object v0, p0, Lcom/android/incallui/fragment/RTTFragment;->mView:Landroid/view/View;
 
-    const v1, 0x7f1003ee
+    const v1, 0x7f100405
 
     invoke-virtual {v0, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -1994,7 +3650,7 @@
 
     iget-object v0, p0, Lcom/android/incallui/fragment/RTTFragment;->mView:Landroid/view/View;
 
-    const v1, 0x7f1002f3
+    const v1, 0x7f1002ff
 
     invoke-virtual {v0, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -2004,7 +3660,7 @@
 
     iget-object v0, p0, Lcom/android/incallui/fragment/RTTFragment;->mView:Landroid/view/View;
 
-    const v1, 0x7f1002c6
+    const v1, 0x7f1002d2
 
     invoke-virtual {v0, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -2016,7 +3672,7 @@
 
     iget-object v0, p0, Lcom/android/incallui/fragment/RTTFragment;->mView:Landroid/view/View;
 
-    const v1, 0x7f1000ef
+    const v1, 0x7f1002d1
 
     invoke-virtual {v0, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -2028,7 +3684,7 @@
 
     iget-object v0, p0, Lcom/android/incallui/fragment/RTTFragment;->mView:Landroid/view/View;
 
-    const v1, 0x7f10013b
+    const v1, 0x7f100142
 
     invoke-virtual {v0, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -2040,7 +3696,7 @@
 
     iget-object v0, p0, Lcom/android/incallui/fragment/RTTFragment;->mView:Landroid/view/View;
 
-    const v1, 0x7f100280
+    const v1, 0x7f100287
 
     invoke-virtual {v0, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -2052,7 +3708,178 @@
 
     iget-object v0, p0, Lcom/android/incallui/fragment/RTTFragment;->mView:Landroid/view/View;
 
-    const v1, 0x7f1003e9
+    const v1, 0x7f1003f2
+
+    invoke-virtual {v0, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
+
+    move-result-object v0
+
+    check-cast v0, Landroid/widget/ImageView;
+
+    iput-object v0, p0, Lcom/android/incallui/fragment/RTTFragment;->mPhoto:Landroid/widget/ImageView;
+
+    iget-object v0, p0, Lcom/android/incallui/fragment/RTTFragment;->mView:Landroid/view/View;
+
+    const v1, 0x7f1003f8
+
+    invoke-virtual {v0, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
+
+    move-result-object v0
+
+    check-cast v0, Landroid/widget/ImageView;
+
+    iput-object v0, p0, Lcom/android/incallui/fragment/RTTFragment;->mSecondaryPhoto:Landroid/widget/ImageView;
+
+    iget-object v0, p0, Lcom/android/incallui/fragment/RTTFragment;->mView:Landroid/view/View;
+
+    const v1, 0x7f100401
+
+    invoke-virtual {v0, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
+
+    move-result-object v0
+
+    check-cast v0, Landroid/widget/ImageButton;
+
+    iput-object v0, p0, Lcom/android/incallui/fragment/RTTFragment;->mTipsCross:Landroid/widget/ImageButton;
+
+    iget-object v0, p0, Lcom/android/incallui/fragment/RTTFragment;->mView:Landroid/view/View;
+
+    const v1, 0x7f1003ff
+
+    invoke-virtual {v0, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
+
+    move-result-object v0
+
+    check-cast v0, Landroid/support/v7/widget/CardView;
+
+    iput-object v0, p0, Lcom/android/incallui/fragment/RTTFragment;->mCardView:Landroid/support/v7/widget/CardView;
+
+    iget-object v0, p0, Lcom/android/incallui/fragment/RTTFragment;->mView:Landroid/view/View;
+
+    const v1, 0x7f100402
+
+    invoke-virtual {v0, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
+
+    move-result-object v0
+
+    check-cast v0, Landroid/widget/TextView;
+
+    iput-object v0, p0, Lcom/android/incallui/fragment/RTTFragment;->mTips:Landroid/widget/TextView;
+
+    iget-object v0, p0, Lcom/android/incallui/fragment/RTTFragment;->mView:Landroid/view/View;
+
+    const v1, 0x7f100249
+
+    invoke-virtual {v0, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
+
+    move-result-object v0
+
+    check-cast v0, Lcom/android/incallui/widget/GradientAnimationView;
+
+    iput-object v0, p0, Lcom/android/incallui/fragment/RTTFragment;->mGradientAnimationView:Lcom/android/incallui/widget/GradientAnimationView;
+
+    iget-object v0, p0, Lcom/android/incallui/fragment/RTTFragment;->mGradientAnimationView:Lcom/android/incallui/widget/GradientAnimationView;
+
+    if-eqz v0, :cond_0
+
+    iget-object v0, p0, Lcom/android/incallui/fragment/RTTFragment;->mGradientAnimationView:Lcom/android/incallui/widget/GradientAnimationView;
+
+    invoke-virtual {v0, v6}, Lcom/android/incallui/widget/GradientAnimationView;->setUp(Z)V
+
+    :cond_0
+    iget-object v0, p0, Lcom/android/incallui/fragment/RTTFragment;->mView:Landroid/view/View;
+
+    const v1, 0x7f1003f4
+
+    invoke-virtual {v0, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
+
+    move-result-object v0
+
+    check-cast v0, Landroid/widget/ImageView;
+
+    iput-object v0, p0, Lcom/android/incallui/fragment/RTTFragment;->mEndCallButton:Landroid/widget/ImageView;
+
+    iget-object v0, p0, Lcom/android/incallui/fragment/RTTFragment;->mEndCallButton:Landroid/widget/ImageView;
+
+    if-eqz v0, :cond_1
+
+    iget-object v0, p0, Lcom/android/incallui/fragment/RTTFragment;->mEndCallButton:Landroid/widget/ImageView;
+
+    invoke-virtual {v0, p0}, Landroid/widget/ImageView;->setOnClickListener(Landroid/view/View$OnClickListener;)V
+
+    :cond_1
+    iget-object v0, p0, Lcom/android/incallui/fragment/RTTFragment;->mCardView:Landroid/support/v7/widget/CardView;
+
+    if-eqz v0, :cond_2
+
+    const-string v0, "feature_tmo"
+
+    invoke-static {v0}, Lcom/android/incallui/InCallUIFeature;->hasFeature(Ljava/lang/String;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_2
+
+    invoke-direct {p0}, Lcom/android/incallui/fragment/RTTFragment;->isForcedRTTDiscovered()Z
+
+    move-result v0
+
+    if-nez v0, :cond_a
+
+    invoke-static {}, Lcom/android/incallui/CallList;->getInstance()Lcom/android/incallui/CallList;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lcom/android/incallui/CallList;->getActiveCall()Lcom/android/incallui/Call;
+
+    move-result-object v0
+
+    if-eqz v0, :cond_a
+
+    invoke-static {}, Lcom/android/incallui/CallList;->getInstance()Lcom/android/incallui/CallList;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lcom/android/incallui/CallList;->getActiveCall()Lcom/android/incallui/Call;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lcom/android/incallui/Call;->isIncomingDirection()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_a
+
+    invoke-static {}, Lcom/android/incallui/InCallPresenter;->getInstance()Lcom/android/incallui/InCallPresenter;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lcom/android/incallui/InCallPresenter;->isrequestedRTT()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_a
+
+    invoke-virtual {p0}, Lcom/android/incallui/fragment/RTTFragment;->initForcedRTTTip()V
+
+    iget-object v0, p0, Lcom/android/incallui/fragment/RTTFragment;->mCardView:Landroid/support/v7/widget/CardView;
+
+    invoke-virtual {v0, v4}, Landroid/support/v7/widget/CardView;->setVisibility(I)V
+
+    :cond_2
+    :goto_0
+    iget-object v0, p0, Lcom/android/incallui/fragment/RTTFragment;->mTipsCross:Landroid/widget/ImageButton;
+
+    if-eqz v0, :cond_3
+
+    iget-object v0, p0, Lcom/android/incallui/fragment/RTTFragment;->mTipsCross:Landroid/widget/ImageButton;
+
+    invoke-virtual {v0, p0}, Landroid/widget/ImageButton;->setOnClickListener(Landroid/view/View$OnClickListener;)V
+
+    :cond_3
+    iget-object v0, p0, Lcom/android/incallui/fragment/RTTFragment;->mView:Landroid/view/View;
+
+    const v1, 0x7f1003fa
 
     invoke-virtual {v0, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -2064,7 +3891,7 @@
 
     iget-object v0, p0, Lcom/android/incallui/fragment/RTTFragment;->mView:Landroid/view/View;
 
-    const v1, 0x7f100375
+    const v1, 0x7f100381
 
     invoke-virtual {v0, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -2076,7 +3903,7 @@
 
     iget-object v0, p0, Lcom/android/incallui/fragment/RTTFragment;->mView:Landroid/view/View;
 
-    const v1, 0x7f1003e7
+    const v1, 0x7f1003fc
 
     invoke-virtual {v0, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -2086,7 +3913,7 @@
 
     iput-object v0, p0, Lcom/android/incallui/fragment/RTTFragment;->mSecondaryHDWifiIcon:Landroid/widget/ImageView;
 
-    const v0, 0x7f1003ea
+    const v0, 0x7f1003fd
 
     invoke-virtual {p1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -2098,14 +3925,18 @@
 
     iget-object v0, p0, Lcom/android/incallui/fragment/RTTFragment;->mRttMergeButton:Landroid/widget/Button;
 
-    if-eqz v0, :cond_0
+    if-eqz v0, :cond_4
 
     iget-object v0, p0, Lcom/android/incallui/fragment/RTTFragment;->mRttMergeButton:Landroid/widget/Button;
 
     invoke-virtual {v0, p0}, Landroid/widget/Button;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    :cond_0
-    const v0, 0x7f1003eb
+    iget-object v0, p0, Lcom/android/incallui/fragment/RTTFragment;->mRttMergeButton:Landroid/widget/Button;
+
+    invoke-virtual {v0, v5}, Landroid/widget/Button;->setVisibility(I)V
+
+    :cond_4
+    const v0, 0x7f1003fe
 
     invoke-virtual {p1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -2117,16 +3948,16 @@
 
     iget-object v0, p0, Lcom/android/incallui/fragment/RTTFragment;->mRttSwapButton:Landroid/widget/Button;
 
-    if-eqz v0, :cond_1
+    if-eqz v0, :cond_5
 
     iget-object v0, p0, Lcom/android/incallui/fragment/RTTFragment;->mRttSwapButton:Landroid/widget/Button;
 
     invoke-virtual {v0, p0}, Landroid/widget/Button;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    :cond_1
+    :cond_5
     iget-object v0, p0, Lcom/android/incallui/fragment/RTTFragment;->mView:Landroid/view/View;
 
-    const v1, 0x7f1003ed
+    const v1, 0x7f100404
 
     invoke-virtual {v0, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -2136,7 +3967,7 @@
 
     iget-object v0, p0, Lcom/android/incallui/fragment/RTTFragment;->mView:Landroid/view/View;
 
-    const v1, 0x7f1003e2
+    const v1, 0x7f1003ef
 
     invoke-virtual {v0, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -2158,17 +3989,57 @@
 
     invoke-virtual {v0, p0}, Landroid/widget/EditText;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
+    invoke-static {}, Lcom/android/incallui/CallList;->getInstance()Lcom/android/incallui/CallList;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lcom/android/incallui/CallList;->getActiveOrBackgroundCall()Lcom/android/incallui/Call;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lcom/android/incallui/Call;->getState()I
+
+    move-result v1
+
+    if-eq v1, v5, :cond_6
+
+    invoke-virtual {v0}, Lcom/android/incallui/Call;->isTheOtherPartyOnHold()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_d
+
+    :cond_6
+    iget-object v0, p0, Lcom/android/incallui/fragment/RTTFragment;->rttSendMessage:Landroid/widget/EditText;
+
+    invoke-virtual {v0, v4}, Landroid/widget/EditText;->setEnabled(Z)V
+
+    :goto_1
+    iget-object v0, p0, Lcom/android/incallui/fragment/RTTFragment;->rttSendMessage:Landroid/widget/EditText;
+
+    new-instance v1, Lcom/android/incallui/fragment/RTTFragment$9;
+
+    invoke-direct {v1, p0}, Lcom/android/incallui/fragment/RTTFragment$9;-><init>(Lcom/android/incallui/fragment/RTTFragment;)V
+
+    invoke-virtual {v0, v1}, Landroid/widget/EditText;->setOnFocusChangeListener(Landroid/view/View$OnFocusChangeListener;)V
+
     const-wide/16 v0, 0x0
 
     iput-wide v0, p0, Lcom/android/incallui/fragment/RTTFragment;->idCount:J
 
-    iput-boolean v2, p0, Lcom/android/incallui/fragment/RTTFragment;->historySaved:Z
+    iput-boolean v4, p0, Lcom/android/incallui/fragment/RTTFragment;->historySaved:Z
 
     invoke-virtual {p0}, Lcom/android/incallui/fragment/RTTFragment;->setupLayout()V
 
     iget-object v0, p0, Lcom/android/incallui/fragment/RTTFragment;->mView:Landroid/view/View;
 
     invoke-virtual {p0, v0}, Lcom/android/incallui/fragment/RTTFragment;->setupCallTimer(Landroid/view/View;)V
+
+    invoke-static {}, Lcom/android/incallui/InCallPresenter;->getInstance()Lcom/android/incallui/InCallPresenter;
+
+    move-result-object v0
+
+    invoke-virtual {v0, p0}, Lcom/android/incallui/InCallPresenter;->addContentViewChangeListener(Lcom/android/incallui/InCallPresenter$ContentViewChangeListener;)V
 
     iget-object v0, p0, Lcom/android/incallui/fragment/RTTFragment;->mView:Landroid/view/View;
 
@@ -2178,7 +4049,90 @@
 
     invoke-virtual {p0}, Lcom/android/incallui/fragment/RTTFragment;->setSecondaryNameForRTT()V
 
-    invoke-direct {p0, v2, v2, v2}, Lcom/android/incallui/fragment/RTTFragment;->setSendBtnLayout(ZII)V
+    invoke-virtual {p0}, Lcom/android/incallui/fragment/RTTFragment;->startGradientAnimation()V
+
+    invoke-direct {p0, v4, v4, v4}, Lcom/android/incallui/fragment/RTTFragment;->setSendBtnLayout(ZII)V
+
+    invoke-direct {p0}, Lcom/android/incallui/fragment/RTTFragment;->getContactPhoto()Landroid/graphics/drawable/Drawable;
+
+    move-result-object v0
+
+    iput-object v0, p0, Lcom/android/incallui/fragment/RTTFragment;->contactPhoto:Landroid/graphics/drawable/Drawable;
+
+    iget-object v0, p0, Lcom/android/incallui/fragment/RTTFragment;->contactPhoto:Landroid/graphics/drawable/Drawable;
+
+    if-eqz v0, :cond_e
+
+    iget-object v0, p0, Lcom/android/incallui/fragment/RTTFragment;->mPhoto:Landroid/widget/ImageView;
+
+    iget-object v1, p0, Lcom/android/incallui/fragment/RTTFragment;->contactPhoto:Landroid/graphics/drawable/Drawable;
+
+    invoke-direct {p0, v0, v1}, Lcom/android/incallui/fragment/RTTFragment;->setDrawableToImageView(Landroid/widget/ImageView;Landroid/graphics/drawable/Drawable;)V
+
+    iget-object v0, p0, Lcom/android/incallui/fragment/RTTFragment;->mPhoto:Landroid/widget/ImageView;
+
+    if-eqz v0, :cond_7
+
+    iget-object v0, p0, Lcom/android/incallui/fragment/RTTFragment;->mPhoto:Landroid/widget/ImageView;
+
+    invoke-virtual {v0, v4}, Landroid/widget/ImageView;->setVisibility(I)V
+
+    :cond_7
+    :goto_2
+    invoke-direct {p0}, Lcom/android/incallui/fragment/RTTFragment;->getSecondaryContactPhoto()Landroid/graphics/drawable/Drawable;
+
+    move-result-object v0
+
+    iput-object v0, p0, Lcom/android/incallui/fragment/RTTFragment;->secondaryContactPhoto:Landroid/graphics/drawable/Drawable;
+
+    iget-object v0, p0, Lcom/android/incallui/fragment/RTTFragment;->secondaryContactPhoto:Landroid/graphics/drawable/Drawable;
+
+    if-eqz v0, :cond_f
+
+    iget-object v0, p0, Lcom/android/incallui/fragment/RTTFragment;->mSecondaryPhoto:Landroid/widget/ImageView;
+
+    iget-object v1, p0, Lcom/android/incallui/fragment/RTTFragment;->secondaryContactPhoto:Landroid/graphics/drawable/Drawable;
+
+    invoke-direct {p0, v0, v1}, Lcom/android/incallui/fragment/RTTFragment;->setDrawableToImageView(Landroid/widget/ImageView;Landroid/graphics/drawable/Drawable;)V
+
+    iget-object v0, p0, Lcom/android/incallui/fragment/RTTFragment;->mSecondaryPhoto:Landroid/widget/ImageView;
+
+    if-eqz v0, :cond_8
+
+    iget-object v0, p0, Lcom/android/incallui/fragment/RTTFragment;->mSecondaryPhoto:Landroid/widget/ImageView;
+
+    invoke-virtual {v0, v4}, Landroid/widget/ImageView;->setVisibility(I)V
+
+    :cond_8
+    :goto_3
+    invoke-static {}, Lcom/android/incallui/InCallUISystemDB;->isRTTSystemFontOn()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_10
+
+    invoke-static {}, Lcom/android/incallui/InCallApp;->getInstance()Lcom/android/incallui/InCallApp;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lcom/android/incallui/InCallApp;->getApplicationContext()Landroid/content/Context;
+
+    move-result-object v0
+
+    invoke-static {v0}, Lcom/android/incallui/rtt/FontSizeController;->getSystemFontSizeIndex(Landroid/content/Context;)I
+
+    move-result v0
+
+    :goto_4
+    iget-object v1, p0, Lcom/android/incallui/fragment/RTTFragment;->rttSendMessage:Landroid/widget/EditText;
+
+    const/4 v2, 0x6
+
+    invoke-static {v2, v0}, Lcom/android/incallui/rtt/FontSizeController;->getFontSize(II)F
+
+    move-result v0
+
+    invoke-virtual {v1, v6, v0}, Landroid/widget/EditText;->setTextSize(IF)V
 
     invoke-virtual {p0}, Lcom/android/incallui/fragment/RTTFragment;->getActivity()Landroid/app/Activity;
 
@@ -2196,13 +4150,115 @@
 
     move-result-object v1
 
-    new-instance v2, Lcom/android/incallui/fragment/RTTFragment$5;
+    new-instance v2, Lcom/android/incallui/fragment/RTTFragment$10;
 
-    invoke-direct {v2, p0, v0}, Lcom/android/incallui/fragment/RTTFragment$5;-><init>(Lcom/android/incallui/fragment/RTTFragment;Landroid/view/View;)V
+    invoke-direct {v2, p0, v0}, Lcom/android/incallui/fragment/RTTFragment$10;-><init>(Lcom/android/incallui/fragment/RTTFragment;Landroid/view/View;)V
 
     invoke-virtual {v1, v2}, Landroid/view/ViewTreeObserver;->addOnGlobalLayoutListener(Landroid/view/ViewTreeObserver$OnGlobalLayoutListener;)V
 
+    iget-object v0, p0, Lcom/android/incallui/fragment/RTTFragment;->mActivity:Lcom/android/incallui/InCallActivity;
+
+    invoke-static {v0}, Lcom/android/incallui/util/ScreenControlUtils;->hasNavigationBar(Landroid/content/Context;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_9
+
+    invoke-virtual {p0}, Lcom/android/incallui/fragment/RTTFragment;->arrangeRttLayout()V
+
+    :cond_9
+    invoke-virtual {p0}, Lcom/android/incallui/fragment/RTTFragment;->updateRTTViewBackGround()V
+
+    invoke-virtual {p0}, Lcom/android/incallui/fragment/RTTFragment;->showElapsedTimeContainer()V
+
+    iget-object v0, p0, Lcom/android/incallui/fragment/RTTFragment;->mView:Landroid/view/View;
+
+    invoke-virtual {p0, v0}, Lcom/android/incallui/fragment/RTTFragment;->setupInCallMenu(Landroid/view/View;)V
+
+    invoke-virtual {p0, v6}, Lcom/android/incallui/fragment/RTTFragment;->setPrimaryCallMenuForRTT(Z)V
+
     return-void
+
+    :cond_a
+    invoke-direct {p0}, Lcom/android/incallui/fragment/RTTFragment;->isRTTDiscovered()Z
+
+    move-result v0
+
+    if-nez v0, :cond_c
+
+    iget-object v0, p0, Lcom/android/incallui/fragment/RTTFragment;->mTips:Landroid/widget/TextView;
+
+    if-eqz v0, :cond_b
+
+    iget-object v0, p0, Lcom/android/incallui/fragment/RTTFragment;->mTips:Landroid/widget/TextView;
+
+    const v1, 0x7f090649
+
+    invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(I)V
+
+    :cond_b
+    iget-object v0, p0, Lcom/android/incallui/fragment/RTTFragment;->mCardView:Landroid/support/v7/widget/CardView;
+
+    invoke-virtual {v0, v4}, Landroid/support/v7/widget/CardView;->setVisibility(I)V
+
+    goto/16 :goto_0
+
+    :cond_c
+    iget-object v0, p0, Lcom/android/incallui/fragment/RTTFragment;->mCardView:Landroid/support/v7/widget/CardView;
+
+    invoke-virtual {v0, v5}, Landroid/support/v7/widget/CardView;->setVisibility(I)V
+
+    goto/16 :goto_0
+
+    :cond_d
+    iget-object v0, p0, Lcom/android/incallui/fragment/RTTFragment;->rttSendMessage:Landroid/widget/EditText;
+
+    invoke-virtual {v0, v6}, Landroid/widget/EditText;->setEnabled(Z)V
+
+    iget-object v0, p0, Lcom/android/incallui/fragment/RTTFragment;->rttSendMessage:Landroid/widget/EditText;
+
+    invoke-virtual {v0}, Landroid/widget/EditText;->requestFocus()Z
+
+    iget-object v0, p0, Lcom/android/incallui/fragment/RTTFragment;->handler:Landroid/os/Handler;
+
+    new-instance v1, Lcom/android/incallui/fragment/RTTFragment$8;
+
+    invoke-direct {v1, p0}, Lcom/android/incallui/fragment/RTTFragment$8;-><init>(Lcom/android/incallui/fragment/RTTFragment;)V
+
+    const-wide/16 v2, 0xc8
+
+    invoke-virtual {v0, v1, v2, v3}, Landroid/os/Handler;->postDelayed(Ljava/lang/Runnable;J)Z
+
+    goto/16 :goto_1
+
+    :cond_e
+    iget-object v0, p0, Lcom/android/incallui/fragment/RTTFragment;->mPhoto:Landroid/widget/ImageView;
+
+    if-eqz v0, :cond_7
+
+    iget-object v0, p0, Lcom/android/incallui/fragment/RTTFragment;->mPhoto:Landroid/widget/ImageView;
+
+    invoke-virtual {v0, v5}, Landroid/widget/ImageView;->setVisibility(I)V
+
+    goto/16 :goto_2
+
+    :cond_f
+    iget-object v0, p0, Lcom/android/incallui/fragment/RTTFragment;->mSecondaryPhoto:Landroid/widget/ImageView;
+
+    if-eqz v0, :cond_8
+
+    iget-object v0, p0, Lcom/android/incallui/fragment/RTTFragment;->mSecondaryPhoto:Landroid/widget/ImageView;
+
+    invoke-virtual {v0, v5}, Landroid/widget/ImageView;->setVisibility(I)V
+
+    goto/16 :goto_3
+
+    :cond_10
+    invoke-static {}, Lcom/android/incallui/InCallUISystemDB;->getRTTFontSize()I
+
+    move-result v0
+
+    goto/16 :goto_4
 .end method
 
 .method public removeMessage(I)V
@@ -2278,7 +4334,7 @@
 
     invoke-static {p0, v0}, Lcom/android/incallui/Log;->d(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const v0, 0x7f090611
+    const v0, 0x7f090616
 
     invoke-static {v1, v0, v6}, Landroid/widget/Toast;->makeText(Landroid/content/Context;II)Landroid/widget/Toast;
 
@@ -2343,10 +4399,6 @@
 .method public setPrimaryCallElapsedTime(ZLjava/lang/String;)V
     .locals 3
 
-    const-string v0, "setPrimaryCallElapsedTime()"
-
-    invoke-static {p0, v0}, Lcom/android/incallui/Log;->d(Ljava/lang/Object;Ljava/lang/String;)V
-
     iget-object v0, p0, Lcom/android/incallui/fragment/RTTFragment;->mElapsedTime:Landroid/widget/TextView;
 
     if-nez v0, :cond_1
@@ -2356,10 +4408,6 @@
     return-void
 
     :cond_1
-    const-string v0, "setPrimaryCallElapsedTime()..."
-
-    invoke-static {p0, v0}, Lcom/android/incallui/Log;->d(Ljava/lang/Object;Ljava/lang/String;)V
-
     iget-object v0, p0, Lcom/android/incallui/fragment/RTTFragment;->mElapsedTime:Landroid/widget/TextView;
 
     invoke-virtual {v0}, Landroid/widget/TextView;->getVisibility()I
@@ -2404,10 +4452,6 @@
     invoke-virtual {v0}, Lcom/android/incallui/InCallApp;->getApplicationContext()Landroid/content/Context;
 
     move-result-object v0
-
-    const-string v1, "setPrimaryCallElapsedTime Call onHold"
-
-    invoke-static {p0, v1}, Lcom/android/incallui/Log;->d(Ljava/lang/Object;Ljava/lang/String;)V
 
     if-eqz v0, :cond_0
 
@@ -2712,7 +4756,7 @@
     return-void
 
     :cond_0
-    const v0, 0x7f1002f0
+    const v0, 0x7f1002fc
 
     invoke-virtual {p1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -2722,7 +4766,7 @@
 
     iput-object v0, p0, Lcom/android/incallui/fragment/RTTFragment;->mOnScreenMenuIcon:Landroid/widget/ImageButton;
 
-    const v0, 0x7f1002f1
+    const v0, 0x7f1002fd
 
     invoke-virtual {p1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -2879,7 +4923,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f090650
+    const v1, 0x7f09066d
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -2899,17 +4943,17 @@
 
     const v1, 0x104000a
 
-    new-instance v2, Lcom/android/incallui/fragment/RTTFragment$10;
+    new-instance v2, Lcom/android/incallui/fragment/RTTFragment$14;
 
-    invoke-direct {v2, p0}, Lcom/android/incallui/fragment/RTTFragment$10;-><init>(Lcom/android/incallui/fragment/RTTFragment;)V
+    invoke-direct {v2, p0}, Lcom/android/incallui/fragment/RTTFragment$14;-><init>(Lcom/android/incallui/fragment/RTTFragment;)V
 
     invoke-virtual {v0, v1, v2}, Landroid/app/AlertDialog$Builder;->setPositiveButton(ILandroid/content/DialogInterface$OnClickListener;)Landroid/app/AlertDialog$Builder;
 
     move-result-object v0
 
-    new-instance v1, Lcom/android/incallui/fragment/RTTFragment$9;
+    new-instance v1, Lcom/android/incallui/fragment/RTTFragment$13;
 
-    invoke-direct {v1, p0}, Lcom/android/incallui/fragment/RTTFragment$9;-><init>(Lcom/android/incallui/fragment/RTTFragment;)V
+    invoke-direct {v1, p0}, Lcom/android/incallui/fragment/RTTFragment$13;-><init>(Lcom/android/incallui/fragment/RTTFragment;)V
 
     invoke-virtual {v0, v1}, Landroid/app/AlertDialog$Builder;->setOnDismissListener(Landroid/content/DialogInterface$OnDismissListener;)Landroid/app/AlertDialog$Builder;
 
@@ -2938,6 +4982,144 @@
     iget-object v0, p0, Lcom/android/incallui/fragment/RTTFragment;->sendBtn:Landroid/widget/Button;
 
     invoke-virtual {v0, v4}, Landroid/widget/Button;->setEnabled(Z)V
+
+    goto :goto_0
+.end method
+
+.method public startGradientAnimation()V
+    .locals 1
+
+    iget-object v0, p0, Lcom/android/incallui/fragment/RTTFragment;->mGradientAnimationView:Lcom/android/incallui/widget/GradientAnimationView;
+
+    if-nez v0, :cond_1
+
+    const-string v0, "animateForStream: mGradientAnimationView is null"
+
+    invoke-static {p0, v0}, Lcom/android/incallui/Log;->d(Ljava/lang/Object;Ljava/lang/String;)V
+
+    :cond_0
+    :goto_0
+    return-void
+
+    :cond_1
+    iget-object v0, p0, Lcom/android/incallui/fragment/RTTFragment;->mGradientAnimationView:Lcom/android/incallui/widget/GradientAnimationView;
+
+    invoke-virtual {v0}, Lcom/android/incallui/widget/GradientAnimationView;->isStreamAnimationRunning()Z
+
+    move-result v0
+
+    if-nez v0, :cond_0
+
+    const-string v0, "animateForStream: mGradientAnimationView"
+
+    invoke-static {p0, v0}, Lcom/android/incallui/Log;->d(Ljava/lang/Object;Ljava/lang/String;)V
+
+    iget-object v0, p0, Lcom/android/incallui/fragment/RTTFragment;->mGradientAnimationView:Lcom/android/incallui/widget/GradientAnimationView;
+
+    invoke-virtual {v0}, Lcom/android/incallui/widget/GradientAnimationView;->animateForStream()V
+
+    goto :goto_0
+.end method
+
+.method public stopGradientAnimation()V
+    .locals 1
+
+    iget-object v0, p0, Lcom/android/incallui/fragment/RTTFragment;->mGradientAnimationView:Lcom/android/incallui/widget/GradientAnimationView;
+
+    if-nez v0, :cond_1
+
+    const-string v0, "stopStreamAnimation: mGradientAnimationView is null"
+
+    invoke-static {p0, v0}, Lcom/android/incallui/Log;->d(Ljava/lang/Object;Ljava/lang/String;)V
+
+    :cond_0
+    :goto_0
+    return-void
+
+    :cond_1
+    iget-object v0, p0, Lcom/android/incallui/fragment/RTTFragment;->mGradientAnimationView:Lcom/android/incallui/widget/GradientAnimationView;
+
+    invoke-virtual {v0}, Lcom/android/incallui/widget/GradientAnimationView;->isStreamAnimationRunning()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    iget-object v0, p0, Lcom/android/incallui/fragment/RTTFragment;->mGradientAnimationView:Lcom/android/incallui/widget/GradientAnimationView;
+
+    invoke-virtual {v0}, Lcom/android/incallui/widget/GradientAnimationView;->stopStreamAnimation()V
+
+    goto :goto_0
+.end method
+
+.method public updateGradientView(Landroid/graphics/drawable/Drawable;)V
+    .locals 2
+
+    const/4 v1, 0x1
+
+    iget-object v0, p0, Lcom/android/incallui/fragment/RTTFragment;->mGradientAnimationView:Lcom/android/incallui/widget/GradientAnimationView;
+
+    if-nez v0, :cond_0
+
+    const-string v0, " updateGradientView: mGradientAnimationView is null"
+
+    invoke-static {p0, v0, v1}, Lcom/android/incallui/Log;->d(Ljava/lang/Object;Ljava/lang/String;Z)V
+
+    :goto_0
+    return-void
+
+    :cond_0
+    const-string v0, "updateGradientView"
+
+    invoke-static {p0, v0, v1}, Lcom/android/incallui/Log;->d(Ljava/lang/Object;Ljava/lang/String;Z)V
+
+    invoke-virtual {p0}, Lcom/android/incallui/fragment/RTTFragment;->getContext()Landroid/content/Context;
+
+    move-result-object v0
+
+    const-string v1, "window"
+
+    invoke-virtual {v0, v1}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Landroid/view/WindowManager;
+
+    new-instance v1, Landroid/util/DisplayMetrics;
+
+    invoke-direct {v1}, Landroid/util/DisplayMetrics;-><init>()V
+
+    invoke-interface {v0}, Landroid/view/WindowManager;->getDefaultDisplay()Landroid/view/Display;
+
+    move-result-object v0
+
+    invoke-virtual {v0, v1}, Landroid/view/Display;->getMetrics(Landroid/util/DisplayMetrics;)V
+
+    iget v0, v1, Landroid/util/DisplayMetrics;->widthPixels:I
+
+    iget v0, v1, Landroid/util/DisplayMetrics;->heightPixels:I
+
+    iget-object v1, p0, Lcom/android/incallui/fragment/RTTFragment;->mGradientAnimationView:Lcom/android/incallui/widget/GradientAnimationView;
+
+    invoke-virtual {v1}, Lcom/android/incallui/widget/GradientAnimationView;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
+
+    move-result-object v1
+
+    iput v0, v1, Landroid/view/ViewGroup$LayoutParams;->height:I
+
+    iget-object v0, p0, Lcom/android/incallui/fragment/RTTFragment;->mGradientAnimationView:Lcom/android/incallui/widget/GradientAnimationView;
+
+    invoke-virtual {v0, v1}, Lcom/android/incallui/widget/GradientAnimationView;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
+
+    iget-object v0, p0, Lcom/android/incallui/fragment/RTTFragment;->mGradientAnimationView:Lcom/android/incallui/widget/GradientAnimationView;
+
+    invoke-virtual {v0}, Lcom/android/incallui/widget/GradientAnimationView;->show()V
+
+    iget-object v0, p0, Lcom/android/incallui/fragment/RTTFragment;->mGradientAnimationView:Lcom/android/incallui/widget/GradientAnimationView;
+
+    const/4 v1, 0x0
+
+    invoke-virtual {v0, p1, v1}, Lcom/android/incallui/widget/GradientAnimationView;->updateGradientColor(Landroid/graphics/drawable/Drawable;Z)V
 
     goto :goto_0
 .end method
@@ -3050,12 +5232,135 @@
 
     move-result-object v0
 
-    new-instance v1, Lcom/android/incallui/fragment/RTTFragment$11;
+    new-instance v1, Lcom/android/incallui/fragment/RTTFragment$15;
 
-    invoke-direct {v1, p0}, Lcom/android/incallui/fragment/RTTFragment$11;-><init>(Lcom/android/incallui/fragment/RTTFragment;)V
+    invoke-direct {v1, p0}, Lcom/android/incallui/fragment/RTTFragment$15;-><init>(Lcom/android/incallui/fragment/RTTFragment;)V
 
     invoke-virtual {v0, v1}, Landroid/app/Activity;->runOnUiThread(Ljava/lang/Runnable;)V
 
     :cond_5
     return-void
+.end method
+
+.method public updateRTTViewBackGround()V
+    .locals 3
+
+    invoke-direct {p0}, Lcom/android/incallui/fragment/RTTFragment;->updateGradientView()V
+
+    invoke-static {}, Lcom/android/incallui/CallList;->getInstance()Lcom/android/incallui/CallList;
+
+    move-result-object v0
+
+    const/4 v1, 0x0
+
+    const/4 v2, 0x0
+
+    invoke-static {v0, v1, v2}, Lcom/android/incallui/util/InCallUtils;->getCallToDisplay(Lcom/android/incallui/CallList;Lcom/android/incallui/Call;Z)Lcom/android/incallui/Call;
+
+    move-result-object v0
+
+    if-eqz v0, :cond_0
+
+    invoke-virtual {p0}, Lcom/android/incallui/fragment/RTTFragment;->getContext()Landroid/content/Context;
+
+    move-result-object v1
+
+    invoke-static {v1}, Lcom/android/incallui/ContactInfoCache;->getInstance(Landroid/content/Context;)Lcom/android/incallui/ContactInfoCache;
+
+    move-result-object v1
+
+    invoke-virtual {v0}, Lcom/android/incallui/Call;->getId()Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-virtual {v1, v0}, Lcom/android/incallui/ContactInfoCache;->getInfo(Ljava/lang/String;)Lcom/android/incallui/ContactInfoCache$ContactCacheEntry;
+
+    move-result-object v0
+
+    if-eqz v0, :cond_1
+
+    iget-boolean v1, v0, Lcom/android/incallui/ContactInfoCache$ContactCacheEntry;->isPersonalPhotoAvailable:Z
+
+    if-eqz v1, :cond_1
+
+    iget-object v0, v0, Lcom/android/incallui/ContactInfoCache$ContactCacheEntry;->photo:Landroid/graphics/drawable/Drawable;
+
+    if-eqz v0, :cond_0
+
+    invoke-virtual {p0, v0}, Lcom/android/incallui/fragment/RTTFragment;->updateGradientView(Landroid/graphics/drawable/Drawable;)V
+
+    const/4 v0, 0x1
+
+    invoke-virtual {p0, v0}, Lcom/android/incallui/fragment/RTTFragment;->upgradeGradientColor(Z)V
+
+    :cond_0
+    :goto_0
+    return-void
+
+    :cond_1
+    invoke-direct {p0}, Lcom/android/incallui/fragment/RTTFragment;->updateGradientView()V
+
+    invoke-virtual {p0}, Lcom/android/incallui/fragment/RTTFragment;->upgradeGradientColor()V
+
+    goto :goto_0
+.end method
+
+.method public upgradeGradientColor()V
+    .locals 1
+
+    const/4 v0, 0x0
+
+    invoke-virtual {p0, v0}, Lcom/android/incallui/fragment/RTTFragment;->upgradeGradientColor(Z)V
+
+    return-void
+.end method
+
+.method public upgradeGradientColor(Landroid/graphics/drawable/Drawable;Z)V
+    .locals 2
+
+    iget-object v0, p0, Lcom/android/incallui/fragment/RTTFragment;->mGradientAnimationView:Lcom/android/incallui/widget/GradientAnimationView;
+
+    if-nez v0, :cond_0
+
+    const-string v0, "upgradeGradientColor: mGradientAnimationView is null"
+
+    const/4 v1, 0x1
+
+    invoke-static {p0, v0, v1}, Lcom/android/incallui/Log;->d(Ljava/lang/Object;Ljava/lang/String;Z)V
+
+    :goto_0
+    return-void
+
+    :cond_0
+    iget-object v0, p0, Lcom/android/incallui/fragment/RTTFragment;->mGradientAnimationView:Lcom/android/incallui/widget/GradientAnimationView;
+
+    invoke-virtual {v0, p1, p2}, Lcom/android/incallui/widget/GradientAnimationView;->updateGradientColor(Landroid/graphics/drawable/Drawable;Z)V
+
+    goto :goto_0
+.end method
+
+.method public upgradeGradientColor(Z)V
+    .locals 2
+
+    iget-object v0, p0, Lcom/android/incallui/fragment/RTTFragment;->mGradientAnimationView:Lcom/android/incallui/widget/GradientAnimationView;
+
+    if-nez v0, :cond_0
+
+    const-string v0, "upgradeGradientColor: mGradientAnimationView is null"
+
+    const/4 v1, 0x1
+
+    invoke-static {p0, v0, v1}, Lcom/android/incallui/Log;->d(Ljava/lang/Object;Ljava/lang/String;Z)V
+
+    :goto_0
+    return-void
+
+    :cond_0
+    iget-object v0, p0, Lcom/android/incallui/fragment/RTTFragment;->mGradientAnimationView:Lcom/android/incallui/widget/GradientAnimationView;
+
+    const/4 v1, 0x0
+
+    invoke-virtual {v0, v1, p1}, Lcom/android/incallui/widget/GradientAnimationView;->updateGradientColor(Landroid/graphics/drawable/Drawable;Z)V
+
+    goto :goto_0
 .end method

@@ -81,7 +81,7 @@
     goto :goto_0
 
     :pswitch_data_0
-    .packed-switch 0x7f10050f
+    .packed-switch 0x7f10052d
         :pswitch_0
     .end packed-switch
 .end method
@@ -172,7 +172,7 @@
 
     iget-object v4, p0, Lcom/android/incallui/agif/StickerSettingActivity$3;->mCustomView:Landroid/view/View;
 
-    const v5, 0x7f1004ac
+    const v5, 0x7f1004c6
 
     invoke-virtual {v4, v5}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -195,7 +195,7 @@
 
     iget-object v0, p0, Lcom/android/incallui/agif/StickerSettingActivity$3;->mCustomView:Landroid/view/View;
 
-    const v4, 0x7f1004ad
+    const v4, 0x7f1004c7
 
     invoke-virtual {v0, v4}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -209,7 +209,7 @@
 
     iget-object v0, p0, Lcom/android/incallui/agif/StickerSettingActivity$3;->mCustomView:Landroid/view/View;
 
-    const v4, 0x7f1004af
+    const v4, 0x7f1004c9
 
     invoke-virtual {v0, v4}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -229,7 +229,7 @@
 
     move-result-object v3
 
-    const v4, 0x7f0a05a1
+    const v4, 0x7f0a05b6
 
     invoke-virtual {v3, v4}, Landroid/content/res/Resources;->getDimension(I)F
 
@@ -259,11 +259,22 @@
 
     if-eqz v1, :cond_2
 
-    const v0, 0x7f0a059b
+    const v0, 0x7f09035e
+
+    :goto_2
+    iget-object v3, p0, Lcom/android/incallui/agif/StickerSettingActivity$3;->this$0:Lcom/android/incallui/agif/StickerSettingActivity;
+
+    iget-object v3, v3, Lcom/android/incallui/agif/StickerSettingActivity;->mSelectText:Landroid/widget/TextView;
+
+    invoke-virtual {v3, v0}, Landroid/widget/TextView;->setText(I)V
+
+    if-eqz v1, :cond_3
+
+    const v0, 0x7f0a05b0
 
     move v1, v0
 
-    :goto_2
+    :goto_3
     iget-object v0, p0, Lcom/android/incallui/agif/StickerSettingActivity$3;->this$0:Lcom/android/incallui/agif/StickerSettingActivity;
 
     iget-object v0, v0, Lcom/android/incallui/agif/StickerSettingActivity;->mSelectText:Landroid/widget/TextView;
@@ -318,14 +329,19 @@
 
     invoke-virtual {v0, v3}, Landroid/view/View;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    goto :goto_1
+    goto/16 :goto_1
 
     :cond_2
-    const v0, 0x7f0a05a0
+    const v0, 0x7f09035d
+
+    goto :goto_2
+
+    :cond_3
+    const v0, 0x7f0a05b5
 
     move v1, v0
 
-    goto :goto_2
+    goto :goto_3
 .end method
 
 .method public onDestroyActionMode(Landroid/view/ActionMode;)V

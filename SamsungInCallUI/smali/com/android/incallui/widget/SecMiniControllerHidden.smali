@@ -26,7 +26,7 @@
 
     iget-object v0, p0, Lcom/android/incallui/widget/SecMiniControllerHidden;->mContext:Landroid/content/Context;
 
-    const v1, 0x7f09028b
+    const v1, 0x7f09028e
 
     invoke-virtual {v0, v1}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -38,7 +38,7 @@
     :cond_0
     iget-object v0, p0, Lcom/android/incallui/widget/SecMiniControllerHidden;->mContext:Landroid/content/Context;
 
-    const v1, 0x7f09028c
+    const v1, 0x7f09028f
 
     invoke-virtual {v0, v1}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -182,27 +182,27 @@
 
     move-result-object v0
 
-    const v6, 0x7f10033b
+    const v6, 0x7f100347
 
     invoke-virtual {p0, v6, v1}, Lcom/android/incallui/widget/SecMiniControllerHidden;->setOnClickPendingIntent(ILandroid/app/PendingIntent;)V
 
-    const v1, 0x7f10033a
+    const v1, 0x7f100346
 
     invoke-virtual {p0, v1, v2}, Lcom/android/incallui/widget/SecMiniControllerHidden;->setOnClickPendingIntent(ILandroid/app/PendingIntent;)V
 
-    const v1, 0x7f100338
+    const v1, 0x7f100344
 
     invoke-virtual {p0, v1, v3}, Lcom/android/incallui/widget/SecMiniControllerHidden;->setOnClickPendingIntent(ILandroid/app/PendingIntent;)V
 
-    const v1, 0x7f100339
+    const v1, 0x7f100345
 
     invoke-virtual {p0, v1, v4}, Lcom/android/incallui/widget/SecMiniControllerHidden;->setOnClickPendingIntent(ILandroid/app/PendingIntent;)V
 
-    const v1, 0x7f10033d
+    const v1, 0x7f100349
 
     invoke-virtual {p0, v1, v5}, Lcom/android/incallui/widget/SecMiniControllerHidden;->setOnClickPendingIntent(ILandroid/app/PendingIntent;)V
 
-    const v1, 0x7f10033c
+    const v1, 0x7f100348
 
     invoke-virtual {p0, v1, v0}, Lcom/android/incallui/widget/SecMiniControllerHidden;->setOnClickPendingIntent(ILandroid/app/PendingIntent;)V
 
@@ -218,7 +218,7 @@
 .method protected updateName(Ljava/lang/String;)V
     .locals 2
 
-    const v0, 0x7f100341
+    const v0, 0x7f10034d
 
     invoke-direct {p0}, Lcom/android/incallui/widget/SecMiniControllerHidden;->getHiddenName()Ljava/lang/String;
 

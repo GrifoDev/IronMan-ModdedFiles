@@ -108,6 +108,12 @@
 
     iput-boolean v0, p0, Lcom/android/incallui/bike/BikeModeAudioManager;->mIsPluggedIn:Z
 
+    const-string v0, "BikeModeAudioManager"
+
+    const-string v1, "init"
+
+    invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+
     return-void
 .end method
 
@@ -956,10 +962,6 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    const-string v1, "callmemo_enabled=true"
-
-    invoke-virtual {v0, v1}, Landroid/media/AudioManager;->setParameters(Ljava/lang/String;)V
-
     invoke-virtual {v0, v4}, Landroid/media/AudioManager;->setMode(I)V
 
     invoke-virtual {v0, v4}, Landroid/media/AudioManager;->setMicrophoneMute(Z)V
@@ -1110,6 +1112,10 @@
     move-result-object v1
 
     invoke-virtual {v2, v3, v1}, Landroid/media/MediaPlayer;->setDataSource(Landroid/content/Context;Landroid/net/Uri;)V
+
+    const-string v1, "callmemo_enabled=true"
+
+    invoke-virtual {v0, v1}, Landroid/media/AudioManager;->setParameters(Ljava/lang/String;)V
 
     sget-object v1, Lcom/android/incallui/bike/BikeModeAudioManager;->mMediaPlayer:Landroid/media/MediaPlayer;
 
@@ -1888,6 +1894,12 @@
 
     if-eq v1, v5, :cond_2
 
+    invoke-virtual {v0}, Landroid/media/AudioManager;->semIsSafeMediaVolumeDeviceOn()Z
+
+    move-result v1
+
+    if-nez v1, :cond_2
+
     const/4 v1, 0x3
 
     sget v2, Lcom/android/incallui/bike/BikeModeAudioManager;->defaultMusicVolume:I
@@ -1948,17 +1960,50 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
+    iget-object v0, p0, Lcom/android/incallui/bike/BikeModeAudioManager;->mBikeCallVibrator:Lcom/android/incallui/bike/BikeCallVibrator;
+
+    if-eqz v0, :cond_0
+
+    iget-object v0, p0, Lcom/android/incallui/bike/BikeModeAudioManager;->mBikeCallVibrator:Lcom/android/incallui/bike/BikeCallVibrator;
+
+    invoke-virtual {v0}, Lcom/android/incallui/bike/BikeCallVibrator;->stopVibration()V
+
+    :cond_0
+    const-string v0, "BikeModeAudioManager"
+
+    new-instance v1, Ljava/lang/StringBuilder;
+
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v2, "stopRingtone mIsRingtonePlaying = "
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    sget-boolean v2, Lcom/android/incallui/bike/BikeModeAudioManager;->mIsRingtonePlaying:Z
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+
     sget-boolean v0, Lcom/android/incallui/bike/BikeModeAudioManager;->mIsRingtonePlaying:Z
 
-    if-nez v0, :cond_0
+    if-nez v0, :cond_1
 
     :goto_0
     return-void
 
-    :cond_0
+    :cond_1
     sget-object v0, Lcom/android/incallui/bike/BikeModeAudioManager;->mMediaPlayer:Landroid/media/MediaPlayer;
 
-    if-eqz v0, :cond_2
+    if-eqz v0, :cond_3
 
     sget-object v0, Lcom/android/incallui/bike/BikeModeAudioManager;->mMediaPlayer:Landroid/media/MediaPlayer;
 
@@ -1980,7 +2025,7 @@
 
     check-cast v0, Landroid/media/AudioManager;
 
-    if-eqz v0, :cond_1
+    if-eqz v0, :cond_2
 
     invoke-virtual {v0, v4}, Landroid/media/AudioManager;->setSpeakerphoneOn(Z)V
 
@@ -2012,17 +2057,17 @@
 
     invoke-virtual {v0, v4, v1, v4}, Landroid/media/AudioManager;->setStreamVolume(III)V
 
-    :cond_1
+    :cond_2
     const-string v0, "BikeModeAudioManager"
 
     const-string v1, "Ringtone Stopped"
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    :cond_2
+    :cond_3
     sget-object v0, Lcom/android/incallui/bike/BikeModeAudioManager;->mRingtone:Landroid/media/Ringtone;
 
-    if-eqz v0, :cond_5
+    if-eqz v0, :cond_6
 
     sget-object v0, Lcom/android/incallui/bike/BikeModeAudioManager;->mRingtone:Landroid/media/Ringtone;
 
@@ -2032,7 +2077,7 @@
 
     iget-object v0, p0, Lcom/android/incallui/bike/BikeModeAudioManager;->mHandler:Landroid/os/Handler;
 
-    if-eqz v0, :cond_3
+    if-eqz v0, :cond_4
 
     iget-object v0, p0, Lcom/android/incallui/bike/BikeModeAudioManager;->mHandler:Landroid/os/Handler;
 
@@ -2040,13 +2085,13 @@
 
     move-result v0
 
-    if-eqz v0, :cond_3
+    if-eqz v0, :cond_4
 
     iget-object v0, p0, Lcom/android/incallui/bike/BikeModeAudioManager;->mHandler:Landroid/os/Handler;
 
     invoke-virtual {v0, v5}, Landroid/os/Handler;->removeMessages(I)V
 
-    :cond_3
+    :cond_4
     iget-object v0, p0, Lcom/android/incallui/bike/BikeModeAudioManager;->mContext:Landroid/content/Context;
 
     const-string v1, "audio"
@@ -2057,7 +2102,7 @@
 
     check-cast v0, Landroid/media/AudioManager;
 
-    if-eqz v0, :cond_4
+    if-eqz v0, :cond_5
 
     invoke-virtual {v0, v4}, Landroid/media/AudioManager;->setSpeakerphoneOn(Z)V
 
@@ -2089,21 +2134,12 @@
 
     invoke-virtual {v0, v4, v1, v4}, Landroid/media/AudioManager;->setStreamVolume(III)V
 
-    :cond_4
+    :cond_5
     const-string v0, "BikeModeAudioManager"
 
     const-string v1, "Ringtone Stopped"
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
-    :cond_5
-    iget-object v0, p0, Lcom/android/incallui/bike/BikeModeAudioManager;->mBikeCallVibrator:Lcom/android/incallui/bike/BikeCallVibrator;
-
-    if-eqz v0, :cond_6
-
-    iget-object v0, p0, Lcom/android/incallui/bike/BikeModeAudioManager;->mBikeCallVibrator:Lcom/android/incallui/bike/BikeCallVibrator;
-
-    invoke-virtual {v0}, Lcom/android/incallui/bike/BikeCallVibrator;->stopVibration()V
 
     :cond_6
     sput-boolean v4, Lcom/android/incallui/bike/BikeModeAudioManager;->mIsRingtonePlaying:Z

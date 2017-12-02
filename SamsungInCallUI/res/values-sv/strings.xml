@@ -178,12 +178,13 @@
     <string name="account_phone">Enhet</string>
     <string name="acs">Röstsamtal</string>
     <string name="active_calls">Aktivt samtal</string>
-    <string name="add_reminder">L. t. påmin.</string>
+    <string name="add_reminder">Lägg till påminnelse</string>
     <string name="agif_button_close_description">Stäng</string>
     <string name="agif_decline_message">Jag kan inte prata just nu.</string>
     <string name="agif_decline_sticker_header">Avböj med ett klistermärke</string>
     <string name="agif_decline_text_header">Avböj med text</string>
     <string name="agif_decline_toast">Klistermärke har skickats till %s.</string>
+    <string name="agif_outgoing_bubble_tip">Skicka ett klistermärke om du vill visa hur du känner.</string>
     <string name="agif_pickers_add_tab_description">Lägg till</string>
     <string name="agif_pickers_downloaded">Hämtat</string>
     <string name="agif_pickers_item_usage_hints_description">Dubbeltryck för att markera</string>
@@ -199,10 +200,12 @@
     <string name="agif_pickers_tab_select_description">Valt</string>
     <string name="agif_pickers_title">Börja med ett klistermärke</string>
     <string name="agif_pickers_title_top_stickers">Bästa klistermärkena</string>
+    <string name="agif_random_send_message">Tryck här för att skicka klistermärket.</string>
     <string name="agif_read_permission_description">Tillåt alltid Telefon att läsa AGIF-innehåll.</string>
     <string name="agif_read_permission_label">Läs AGIF-innehåll</string>
     <string name="agif_receive_no_id">Klistermärket går inte att visa. Uppdatera %s efter samtalet.</string>
     <string name="agif_receive_no_id_upsupport_update">Klistermärket går inte att visa. Fler klistermärken blir tillgängliga efter nästa systemuppdatering.</string>
+    <string name="agif_receive_toast">Klistermärke från %s.</string>
     <string name="agif_sent_fail_message">Det går inte att skicka animerad GIF. Försök igen senare.</string>
     <string name="agif_sent_toast">Klistermärke har skickats.</string>
     <string name="agif_write_permission_description">Tillåt alltid Telefon att ändra AGIF-innehåll.</string>
@@ -871,6 +874,7 @@ kamera"</string>
     <string name="sticker_delete_stickers">Vill du radera %d klistermärken?</string>
     <string name="sticker_delete_this_sticker">Vill du radera detta klistermärke?</string>
     <string name="sticker_setting_edit_title">Välj klistermärken</string>
+    <string name="sticker_setting_edit_title_preload">Sortera om klistermärken</string>
     <string name="sticker_setting_main_title">Mina klistermärken</string>
     <string name="sticker_setting_menu_delete">Ta bort</string>
     <string name="sticker_setting_menu_edit">Redigera</string>
@@ -883,6 +887,7 @@ kamera"</string>
     <string name="swipe_right_to_answer_call_with_video">Svep åt höger om du vill svara på samtal med video.</string>
     <string name="swipe_right_to_answer_call_without_video">Svep åt höger om du vill svara på samtal utan video.</string>
     <string name="switch_rejected_by_mt">Begäran om växling till videosamtal avvisad.</string>
+    <string name="switch_rejected_by_mt_att">Video unavailable for this call. Call connected as a voice call.</string>
     <string name="switch_to_video_call_failed">Begäran om växling till videosamtal misslyckades.</string>
     <string name="switch_to_video_call_failed_tmo">Begäran om att växla till videosamtal avvisades.</string>
     <string name="switch_to_voice_call_failed">Begäran om växling till röstsamtal misslyckades.</string>

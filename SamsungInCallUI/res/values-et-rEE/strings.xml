@@ -120,12 +120,13 @@
     <string name="account_phone">Seade</string>
     <string name="acs">Häälkõne</string>
     <string name="active_calls">Aktiivne kõne</string>
-    <string name="add_reminder">Lisa meeld.</string>
+    <string name="add_reminder">Lisa meeldetuletus</string>
     <string name="agif_button_close_description">Sulge</string>
     <string name="agif_decline_message">Vabandust, ma ei saa praegu rääkida.</string>
     <string name="agif_decline_sticker_header">Kleebisega keeldumine</string>
     <string name="agif_decline_text_header">Tekstiga keeldumine</string>
     <string name="agif_decline_toast">Kleebis on saadetud isikule %s.</string>
+    <string name="agif_outgoing_bubble_tip">Saate kleebise saata, et oma tundeid väljendada.</string>
     <string name="agif_pickers_add_tab_description">Lisa</string>
     <string name="agif_pickers_downloaded">Allalaaditud</string>
     <string name="agif_pickers_item_usage_hints_description">Toksake kaks korda, et valida</string>
@@ -141,10 +142,12 @@
     <string name="agif_pickers_tab_select_description">Valitud</string>
     <string name="agif_pickers_title">Kleebisega alustamine</string>
     <string name="agif_pickers_title_top_stickers">Popid kleebised</string>
+    <string name="agif_random_send_message">Toksake siin, et saata see kleebis.</string>
     <string name="agif_read_permission_description">Võimaldab telefonil lugeda AGIF-sisu.</string>
     <string name="agif_read_permission_label">AGIF-sisu lugemine</string>
     <string name="agif_receive_no_id">Kleebist ei saa kuvada. Värskendage rakendust %s pärast kõnet.</string>
     <string name="agif_receive_no_id_upsupport_update">Kleebist ei saa kuvada. Pärast järgmist süsteemivärskendus saate kasutada rohkem kleebiseid.</string>
+    <string name="agif_receive_toast">Kleebis helistajalt %s.</string>
     <string name="agif_sent_fail_message">Animeeritud GIF-i ei saa saata. Proovige hiljem taas.</string>
     <string name="agif_sent_toast">Kleebis on saadetud.</string>
     <string name="agif_write_permission_description">Võimaldab telefonil muuta AGIF-sisu.</string>
@@ -813,6 +816,7 @@ kaamera"</string>
     <string name="sticker_delete_stickers">Kas kustutada %d kleebist?</string>
     <string name="sticker_delete_this_sticker">Kas kustutada see kleebis?</string>
     <string name="sticker_setting_edit_title">Valige kleebised</string>
+    <string name="sticker_setting_edit_title_preload">Kleebiste ümberjärjestamine</string>
     <string name="sticker_setting_main_title">Minu kleebised</string>
     <string name="sticker_setting_menu_delete">Kustuta</string>
     <string name="sticker_setting_menu_edit">Muuda</string>
@@ -825,6 +829,7 @@ kaamera"</string>
     <string name="swipe_right_to_answer_call_with_video">Libistage paremale, et vastata kõnele koos videoga.</string>
     <string name="swipe_right_to_answer_call_without_video">Libistage paremale, et vastata kõnele ilma videota.</string>
     <string name="switch_rejected_by_mt">Taotlusest lülituda videokõnele on keeldutud.</string>
+    <string name="switch_rejected_by_mt_att">Video unavailable for this call. Call connected as a voice call.</string>
     <string name="switch_to_video_call_failed">Taotlus lülituda videokõnele nurjus.</string>
     <string name="switch_to_video_call_failed_tmo">Taotlus lülituda videokõnele lükati tagasi.</string>
     <string name="switch_to_voice_call_failed">Taotlus lülituda häälkõnele nurjus.</string>

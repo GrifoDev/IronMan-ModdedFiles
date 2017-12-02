@@ -30,6 +30,8 @@
 
 .field public static final OUTGOING:I = 0x7
 
+.field public static final OUTGOING_VIDEO_CRBT:I = 0x8
+
 
 # direct methods
 .method public constructor <init>()V
@@ -114,6 +116,15 @@
     goto :goto_0
 
     :cond_7
+    const/16 v0, 0x8
+
+    if-ne p0, v0, :cond_8
+
+    const-string v0, "OUTGOING_VIDEO_CRBT"
+
+    goto :goto_0
+
+    :cond_8
     const-string v0, "KNOWN"
 
     goto :goto_0

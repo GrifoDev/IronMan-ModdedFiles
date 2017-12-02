@@ -382,7 +382,7 @@
 
     const/4 v1, -0x1
 
-    const v0, 0x7f020447
+    const v0, 0x7f020457
 
     iput v0, p0, Lcom/android/incallui/callerinfocard/item/MemoItem;->mIconRes:I
 
@@ -392,7 +392,7 @@
 
     if-eqz v0, :cond_1
 
-    const v0, 0x7f090100
+    const v0, 0x7f090103
 
     invoke-virtual {p1, v0}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 

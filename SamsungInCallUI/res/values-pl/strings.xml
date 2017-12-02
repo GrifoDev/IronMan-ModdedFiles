@@ -178,12 +178,13 @@
     <string name="account_phone">Urządzenie</string>
     <string name="acs">Połączenie głosowe</string>
     <string name="active_calls">Aktywne połączenie</string>
-    <string name="add_reminder">Dodaj przyp.</string>
+    <string name="add_reminder">Dodaj przypomnienie</string>
     <string name="agif_button_close_description">Zamknij</string>
     <string name="agif_decline_message">Nie mogę teraz rozmawiać.</string>
     <string name="agif_decline_sticker_header">Odrzucanie z naklejką</string>
     <string name="agif_decline_text_header">Odrzucanie z SMS-em</string>
     <string name="agif_decline_toast">Wysłano naklejkę do użytkownika %s.</string>
+    <string name="agif_outgoing_bubble_tip">Wyślij naklejkę, aby pokazać, jak się czujesz.</string>
     <string name="agif_pickers_add_tab_description">Dodaj</string>
     <string name="agif_pickers_downloaded">Pobrano</string>
     <string name="agif_pickers_item_usage_hints_description">Dotknij dwukrotnie, aby wybrać</string>
@@ -199,10 +200,12 @@
     <string name="agif_pickers_tab_select_description">Wybrane</string>
     <string name="agif_pickers_title">Zaczynanie z naklejką</string>
     <string name="agif_pickers_title_top_stickers">Najpopularniejsze naklejki</string>
+    <string name="agif_random_send_message">Dotknij tutaj, aby wysłać tę naklejkę.</string>
     <string name="agif_read_permission_description">Zezwala aplikacji Telefon na odczytywanie zawartości AGIF.</string>
     <string name="agif_read_permission_label">Odczytuj zawartość AGIF</string>
     <string name="agif_receive_no_id">Nie można pokazać naklejki. Zaktualizuj aplikację %s po połączeniu.</string>
     <string name="agif_receive_no_id_upsupport_update">Nie można pokazać naklejki. Kolejne naklejki zostaną udostępnione po następnej aktualizacji systemu.</string>
+    <string name="agif_receive_toast">Naklejka od rozmówcy %s.</string>
     <string name="agif_sent_fail_message">Nie można wysłać animowanego pliku GIF. Spróbuj ponownie później.</string>
     <string name="agif_sent_toast">Wysłano naklejkę.</string>
     <string name="agif_write_permission_description">Zezwala aplikacji Telefon na modyfikowanie zawartości AGIF.</string>
@@ -871,6 +874,7 @@ jednokier."</string>
     <string name="sticker_delete_stickers">Usunąć naklejek: %d?</string>
     <string name="sticker_delete_this_sticker">Usunąć tę naklejkę?</string>
     <string name="sticker_setting_edit_title">Wybór naklejek</string>
+    <string name="sticker_setting_edit_title_preload">Zmiana kolejności naklejek</string>
     <string name="sticker_setting_main_title">Moje naklejki</string>
     <string name="sticker_setting_menu_delete">Usuń</string>
     <string name="sticker_setting_menu_edit">Edytuj</string>
@@ -883,6 +887,7 @@ jednokier."</string>
     <string name="swipe_right_to_answer_call_with_video">Przeciągnij w prawo, aby odebrać połączenie z wideo.</string>
     <string name="swipe_right_to_answer_call_without_video">Przeciągnij w prawo, aby odebrać połączenie bez wideo.</string>
     <string name="switch_rejected_by_mt">Żądanie przejścia do połączenia wideo zostało odrzucone.</string>
+    <string name="switch_rejected_by_mt_att">Video unavailable for this call. Call connected as a voice call.</string>
     <string name="switch_to_video_call_failed">Żądanie przejścia do połączenia wideo nie powiodło się.</string>
     <string name="switch_to_video_call_failed_tmo">Żądanie przejścia na połączenie wideo zostało odrzucone.</string>
     <string name="switch_to_voice_call_failed">Żądanie przejścia do połączenia głosowego nie powiodło się.</string>

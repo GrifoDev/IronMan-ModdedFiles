@@ -173,7 +173,7 @@
 
     iget-object v0, p0, Lcom/android/incallui/fragment/VideoCallDialpadQCIFFragment;->mView:Landroid/view/View;
 
-    const v1, 0x7f1002f4
+    const v1, 0x7f100300
 
     invoke-virtual {v0, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -271,7 +271,7 @@
 
     if-eqz v0, :cond_0
 
-    const v0, 0x7f0400e9
+    const v0, 0x7f0400ec
 
     invoke-virtual {p1, v0, p2, v1}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;Z)Landroid/view/View;
 
@@ -289,7 +289,7 @@
 
     if-eqz v0, :cond_1
 
-    const v0, 0x7f040152
+    const v0, 0x7f040157
 
     invoke-virtual {p1, v0, p2, v1}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;Z)Landroid/view/View;
 
@@ -298,7 +298,7 @@
     goto :goto_0
 
     :cond_1
-    const v0, 0x7f040146
+    const v0, 0x7f04014b
 
     invoke-virtual {p1, v0, p2, v1}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;Z)Landroid/view/View;
 
@@ -344,7 +344,7 @@
     :cond_1
     iget-object v0, p0, Lcom/android/incallui/fragment/VideoCallDialpadQCIFFragment;->mView:Landroid/view/View;
 
-    const v1, 0x7f100446
+    const v1, 0x7f10045c
 
     invoke-virtual {v0, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -401,7 +401,7 @@
 .method public setupLayout()V
     .locals 7
 
-    const v6, 0x7f0a01ce
+    const v6, 0x7f0a01ba
 
     const/16 v2, 0x8
 
@@ -518,7 +518,7 @@
 
     move-result-object v1
 
-    const v5, 0x7f0a00a8
+    const v5, 0x7f0a00a4
 
     invoke-virtual {v1, v5}, Landroid/content/res/Resources;->getDimension(I)F
 
@@ -542,7 +542,7 @@
 
     move-result-object v4
 
-    const v5, 0x7f0f01d6
+    const v5, 0x7f0e01e6
 
     invoke-virtual {v4, v5}, Landroid/content/res/Resources;->getColor(I)I
 
@@ -674,7 +674,7 @@
 
     move-result-object v1
 
-    const v4, 0x7f0a028d
+    const v4, 0x7f0a0271
 
     invoke-virtual {v1, v4}, Landroid/content/res/Resources;->getDimension(I)F
 
@@ -718,7 +718,7 @@
 
     move-result-object v1
 
-    const v4, 0x7f0a002f
+    const v4, 0x7f0a002c
 
     invoke-virtual {v1, v4}, Landroid/content/res/Resources;->getDimension(I)F
 

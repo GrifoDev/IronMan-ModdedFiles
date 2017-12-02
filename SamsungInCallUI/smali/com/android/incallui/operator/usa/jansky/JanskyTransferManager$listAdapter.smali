@@ -102,7 +102,7 @@
 
     invoke-direct {v1, p0, v2}, Lcom/android/incallui/operator/usa/jansky/JanskyTransferManager$listAdapter$ViewHolder;-><init>(Lcom/android/incallui/operator/usa/jansky/JanskyTransferManager$listAdapter;Lcom/android/incallui/operator/usa/jansky/JanskyTransferManager$1;)V
 
-    const v0, 0x7f1004b0
+    const v0, 0x7f1004ca
 
     invoke-virtual {p2, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 

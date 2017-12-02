@@ -153,7 +153,7 @@
 
     if-nez v0, :cond_1
 
-    const v0, 0x7f090611
+    const v0, 0x7f090616
 
     const/4 v2, 0x0
 
@@ -322,7 +322,7 @@
     goto :goto_2
 
     :cond_4
-    const v0, 0x7f090611
+    const v0, 0x7f090616
 
     const/4 v2, 0x0
 
@@ -614,7 +614,7 @@
 
     invoke-super {p0, p1}, Landroid/app/Activity;->onCreate(Landroid/os/Bundle;)V
 
-    const v0, 0x7f04011f
+    const v0, 0x7f040123
 
     invoke-virtual {p0, v0}, Lcom/android/incallui/RTTChatHistoryActivity;->setContentView(I)V
 
@@ -624,7 +624,7 @@
 
     invoke-direct {p0, v0}, Lcom/android/incallui/RTTChatHistoryActivity;->loadChatHistory(Landroid/content/Intent;)V
 
-    const v0, 0x7f1003e1
+    const v0, 0x7f1003ee
 
     invoke-virtual {p0, v0}, Lcom/android/incallui/RTTChatHistoryActivity;->findViewById(I)Landroid/view/View;
 
@@ -683,13 +683,13 @@
     :cond_0
     const/4 v0, 0x1
 
-    const v1, 0x7f09064a
+    const v1, 0x7f090656
 
     invoke-interface {p1, v2, v0, v2, v1}, Landroid/view/ContextMenu;->add(IIII)Landroid/view/MenuItem;
 
     const/4 v0, 0x2
 
-    const v1, 0x7f09064b
+    const v1, 0x7f090657
 
     invoke-interface {p1, v2, v0, v2, v1}, Landroid/view/ContextMenu;->add(IIII)Landroid/view/MenuItem;
 
@@ -711,7 +711,7 @@
 
     invoke-interface {p1}, Landroid/view/Menu;->clear()V
 
-    const v0, 0x7f09064b
+    const v0, 0x7f090657
 
     invoke-interface {p1, v3, v2, v3, v0}, Landroid/view/Menu;->add(IIII)Landroid/view/MenuItem;
 

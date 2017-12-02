@@ -241,7 +241,7 @@
 
     sget-object v2, Lcom/android/contacts/common/vcard/ExportVCardActivity;->d:Landroid/text/BidiFormatter;
 
-    const v3, 0x7f09059e
+    const v3, 0x7f0905a3
 
     invoke-virtual {p0, v3}, Lcom/android/contacts/common/vcard/ExportVCardActivity;->getString(I)Ljava/lang/String;
 
@@ -261,7 +261,7 @@
 .method private e()V
     .locals 1
 
-    const v0, 0x7f0905ac
+    const v0, 0x7f0905b1
 
     invoke-virtual {p0, v0}, Lcom/android/contacts/common/vcard/ExportVCardActivity;->getString(I)Ljava/lang/String;
 
@@ -429,13 +429,13 @@
 
     invoke-direct {v0, p0}, Landroid/app/AlertDialog$Builder;-><init>(Landroid/content/Context;)V
 
-    const v1, 0x7f09059a
+    const v1, 0x7f09059f
 
     invoke-virtual {v0, v1}, Landroid/app/AlertDialog$Builder;->setTitle(I)Landroid/app/AlertDialog$Builder;
 
     move-result-object v1
 
-    const v2, 0x7f090599
+    const v2, 0x7f09059e
 
     const/4 v0, 0x1
 
@@ -476,7 +476,7 @@
     return-object v0
 
     :cond_0
-    const v0, 0x7f0905ac
+    const v0, 0x7f0905b1
 
     invoke-virtual {p0, v0}, Lcom/android/contacts/common/vcard/ExportVCardActivity;->getString(I)Ljava/lang/String;
 

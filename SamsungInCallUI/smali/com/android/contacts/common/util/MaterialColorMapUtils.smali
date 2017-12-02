@@ -44,13 +44,13 @@
 .method public static getDefaultPrimaryAndSecondaryColors(Landroid/content/res/Resources;)Lcom/android/contacts/common/util/MaterialColorMapUtils$MaterialPalette;
     .locals 3
 
-    const v0, 0x7f0f0118
+    const v0, 0x7f0e011b
 
     invoke-virtual {p0, v0}, Landroid/content/res/Resources;->getColor(I)I
 
     move-result v0
 
-    const v1, 0x7f0f0119
+    const v1, 0x7f0e011c
 
     invoke-virtual {p0, v1}, Landroid/content/res/Resources;->getColor(I)I
 

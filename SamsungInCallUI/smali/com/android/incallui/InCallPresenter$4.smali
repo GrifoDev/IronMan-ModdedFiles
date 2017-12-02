@@ -31,13 +31,13 @@
 
 # virtual methods
 .method public onReceive(Landroid/content/Context;Landroid/content/Intent;)V
-    .locals 3
+    .locals 4
 
-    const-string v0, "mlstatus"
+    const/4 v3, 0x0
 
-    const/4 v1, 0x0
+    const-string v0, "car_mode_state"
 
-    invoke-virtual {p2, v0, v1}, Landroid/content/Intent;->getIntExtra(Ljava/lang/String;I)I
+    invoke-virtual {p2, v0, v3}, Landroid/content/Intent;->getIntExtra(Ljava/lang/String;I)I
 
     move-result v0
 
@@ -45,7 +45,7 @@
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v2, "InCallPresenter ACTION_ML_STATE : "
+    const-string v2, "InCallPresenter ACTION_CARMODE_STATE : "
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -69,11 +69,15 @@
 
     if-eqz v0, :cond_0
 
+    const-string v0, "drivelink_mode"
+
+    invoke-static {v0, v3}, Lcom/android/incallui/InCallUISystemDB;->setSettingDB(Ljava/lang/String;I)V
+
     iget-object v0, p0, Lcom/android/incallui/InCallPresenter$4;->this$0:Lcom/android/incallui/InCallPresenter;
 
     iget-object v1, p0, Lcom/android/incallui/InCallPresenter$4;->this$0:Lcom/android/incallui/InCallPresenter;
 
-    invoke-static {v1}, Lcom/android/incallui/InCallPresenter;->access$500(Lcom/android/incallui/InCallPresenter;)Lcom/android/incallui/CallList;
+    invoke-static {v1}, Lcom/android/incallui/InCallPresenter;->access$300(Lcom/android/incallui/InCallPresenter;)Lcom/android/incallui/CallList;
 
     move-result-object v1
 

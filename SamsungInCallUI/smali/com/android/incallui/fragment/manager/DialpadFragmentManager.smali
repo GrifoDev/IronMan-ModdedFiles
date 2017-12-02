@@ -5,8 +5,6 @@
 .implements Lcom/android/incallui/InCallPresenter$ConfigurationListener;
 .implements Lcom/android/incallui/InCallPresenter$IncomingCallListener;
 .implements Lcom/android/incallui/InCallPresenter$MobileKeyboardListener;
-.implements Lcom/android/incallui/InCallPresenter$OnehandAnyScreenOnListener;
-.implements Lcom/android/incallui/InCallPresenter$OnehandModeListener;
 .implements Lcom/android/incallui/accessory/AccessoryEventHandler$AccessoryEventListener;
 
 
@@ -26,8 +24,6 @@
         "Lcom/android/incallui/InCallPresenter$ConfigurationListener;",
         "Lcom/android/incallui/InCallPresenter$IncomingCallListener;",
         "Lcom/android/incallui/InCallPresenter$MobileKeyboardListener;",
-        "Lcom/android/incallui/InCallPresenter$OnehandAnyScreenOnListener;",
-        "Lcom/android/incallui/InCallPresenter$OnehandModeListener;",
         "Lcom/android/incallui/accessory/AccessoryEventHandler$AccessoryEventListener;"
     }
 .end annotation
@@ -153,7 +149,7 @@
 
     invoke-virtual {v0, p0}, Lcom/android/incallui/InCallPresenter;->addConfigurationListener(Lcom/android/incallui/InCallPresenter$ConfigurationListener;)V
 
-    const-string v0, "support_onehand_operation"
+    const-string v0, "support_mobile_keyboard"
 
     invoke-static {v0}, Lcom/android/incallui/InCallUIFeature;->hasFeature(Ljava/lang/String;)Z
 
@@ -165,30 +161,9 @@
 
     move-result-object v0
 
-    invoke-virtual {v0, p0}, Lcom/android/incallui/InCallPresenter;->addOnehandModeListener(Lcom/android/incallui/InCallPresenter$OnehandModeListener;)V
-
-    invoke-static {}, Lcom/android/incallui/InCallPresenter;->getInstance()Lcom/android/incallui/InCallPresenter;
-
-    move-result-object v0
-
-    invoke-virtual {v0, p0}, Lcom/android/incallui/InCallPresenter;->addOnehandAnyScreenOnListener(Lcom/android/incallui/InCallPresenter$OnehandAnyScreenOnListener;)V
-
-    :cond_0
-    const-string v0, "support_mobile_keyboard"
-
-    invoke-static {v0}, Lcom/android/incallui/InCallUIFeature;->hasFeature(Ljava/lang/String;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_1
-
-    invoke-static {}, Lcom/android/incallui/InCallPresenter;->getInstance()Lcom/android/incallui/InCallPresenter;
-
-    move-result-object v0
-
     invoke-virtual {v0, p0}, Lcom/android/incallui/InCallPresenter;->addMobileKeyboardListener(Lcom/android/incallui/InCallPresenter$MobileKeyboardListener;)V
 
-    :cond_1
+    :cond_0
     new-instance v0, Landroid/content/IntentFilter;
 
     invoke-direct {v0}, Landroid/content/IntentFilter;-><init>()V
@@ -597,9 +572,7 @@
 .end method
 
 .method public onConfigurationChanged(I)V
-    .locals 5
-
-    const/4 v4, 0x1
+    .locals 4
 
     const/4 v3, 0x0
 
@@ -631,12 +604,6 @@
 
     if-eqz v2, :cond_1
 
-    invoke-static {}, Lcom/android/incallui/util/VideoCallUtils;->isQCIF()Z
-
-    move-result v2
-
-    if-nez v2, :cond_1
-
     iput-boolean v1, p0, Lcom/android/incallui/fragment/manager/DialpadFragmentManager;->mIsDeviceLandScape:Z
 
     :cond_0
@@ -650,58 +617,33 @@
 
     if-nez v2, :cond_0
 
-    invoke-static {}, Lcom/android/incallui/service/vt/VideoCallConfig;->isJpnUX()Z
-
-    move-result v2
-
-    if-eqz v2, :cond_2
-
-    invoke-virtual {p0}, Lcom/android/incallui/fragment/manager/DialpadFragmentManager;->saveDtmfText()V
-
-    invoke-virtual {p0}, Lcom/android/incallui/fragment/manager/DialpadFragmentManager;->isShowing()Z
-
-    move-result v2
-
-    if-eqz v2, :cond_2
-
-    invoke-virtual {p0, v4}, Lcom/android/incallui/fragment/manager/DialpadFragmentManager;->checkAndSet(Z)Lcom/android/incallui/fragment/DialpadFragment;
-
-    invoke-virtual {p0}, Lcom/android/incallui/fragment/manager/DialpadFragmentManager;->restoreDtmfDelayed()V
-
-    goto :goto_0
-
-    :cond_2
     invoke-static {v0}, Lcom/android/incallui/util/CallTypeUtils;->isVideoCall(Lcom/android/incallui/Call;)Z
 
     move-result v0
 
-    if-eqz v0, :cond_4
-
-    invoke-static {}, Lcom/android/incallui/util/VideoCallUtils;->isQCIF()Z
-
-    move-result v0
-
-    if-nez v0, :cond_4
+    if-eqz v0, :cond_3
 
     iget-boolean v0, p0, Lcom/android/incallui/fragment/manager/DialpadFragmentManager;->mIsDeviceLandScape:Z
 
-    if-eq v0, v1, :cond_3
+    if-eq v0, v1, :cond_2
 
     const-string v0, "onConfigurationChanged - displayDialpad false"
 
-    invoke-virtual {p0, v0, v4}, Lcom/android/incallui/fragment/manager/DialpadFragmentManager;->log(Ljava/lang/String;Z)V
+    const/4 v2, 0x1
+
+    invoke-virtual {p0, v0, v2}, Lcom/android/incallui/fragment/manager/DialpadFragmentManager;->log(Ljava/lang/String;Z)V
 
     iget-object v0, p0, Lcom/android/incallui/fragment/manager/DialpadFragmentManager;->mInCallActivity:Lcom/android/incallui/InCallActivity;
 
     invoke-virtual {v0, v3, v3}, Lcom/android/incallui/InCallActivity;->displayDialpad(ZZ)V
 
-    :cond_3
+    :cond_2
     :goto_1
     iput-boolean v1, p0, Lcom/android/incallui/fragment/manager/DialpadFragmentManager;->mIsDeviceLandScape:Z
 
     goto :goto_0
 
-    :cond_4
+    :cond_3
     iget-object v0, p0, Lcom/android/incallui/fragment/manager/DialpadFragmentManager;->mInCallActivity:Lcom/android/incallui/InCallActivity;
 
     invoke-virtual {v0, v3, v3}, Lcom/android/incallui/InCallActivity;->displayDialpad(ZZ)V
@@ -820,7 +762,7 @@
 
     invoke-virtual {v0, p0}, Lcom/android/incallui/InCallPresenter;->removeConfigurationListener(Lcom/android/incallui/InCallPresenter$ConfigurationListener;)V
 
-    const-string v0, "support_onehand_operation"
+    const-string v0, "support_mobile_keyboard"
 
     invoke-static {v0}, Lcom/android/incallui/InCallUIFeature;->hasFeature(Ljava/lang/String;)Z
 
@@ -832,33 +774,12 @@
 
     move-result-object v0
 
-    invoke-virtual {v0, p0}, Lcom/android/incallui/InCallPresenter;->removeOnehandModeListener(Lcom/android/incallui/InCallPresenter$OnehandModeListener;)V
-
-    invoke-static {}, Lcom/android/incallui/InCallPresenter;->getInstance()Lcom/android/incallui/InCallPresenter;
-
-    move-result-object v0
-
-    invoke-virtual {v0, p0}, Lcom/android/incallui/InCallPresenter;->removeOnehandAnyScreenOnListener(Lcom/android/incallui/InCallPresenter$OnehandAnyScreenOnListener;)V
-
-    :cond_0
-    const-string v0, "support_mobile_keyboard"
-
-    invoke-static {v0}, Lcom/android/incallui/InCallUIFeature;->hasFeature(Ljava/lang/String;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_1
-
-    invoke-static {}, Lcom/android/incallui/InCallPresenter;->getInstance()Lcom/android/incallui/InCallPresenter;
-
-    move-result-object v0
-
     invoke-virtual {v0, p0}, Lcom/android/incallui/InCallPresenter;->removeMobileKeyboardListener(Lcom/android/incallui/InCallPresenter$MobileKeyboardListener;)V
 
-    :cond_1
+    :cond_0
     iget-object v0, p0, Lcom/android/incallui/fragment/manager/DialpadFragmentManager;->mReceiver:Landroid/content/BroadcastReceiver;
 
-    if-eqz v0, :cond_2
+    if-eqz v0, :cond_1
 
     :try_start_0
     invoke-static {}, Lcom/android/incallui/InCallApp;->getInstance()Lcom/android/incallui/InCallApp;
@@ -874,7 +795,7 @@
     :goto_0
     iput-object v2, p0, Lcom/android/incallui/fragment/manager/DialpadFragmentManager;->mReceiver:Landroid/content/BroadcastReceiver;
 
-    :cond_2
+    :cond_1
     iput-object v2, p0, Lcom/android/incallui/fragment/manager/DialpadFragmentManager;->mSavedDtmfText:Ljava/lang/String;
 
     return-void
@@ -1033,136 +954,6 @@
     goto :goto_0
 .end method
 
-.method public onOnehandAnyScreenOnChanged()V
-    .locals 1
-
-    invoke-direct {p0}, Lcom/android/incallui/fragment/manager/DialpadFragmentManager;->runRefreshDialpadMenu()V
-
-    iget-object v0, p0, Lcom/android/incallui/fragment/manager/DialpadFragmentManager;->mInCallActivity:Lcom/android/incallui/InCallActivity;
-
-    if-eqz v0, :cond_0
-
-    iget-object v0, p0, Lcom/android/incallui/fragment/manager/DialpadFragmentManager;->mInCallActivity:Lcom/android/incallui/InCallActivity;
-
-    invoke-virtual {v0}, Lcom/android/incallui/InCallActivity;->getDialpadFragment()Lcom/android/incallui/DialpadUi;
-
-    move-result-object v0
-
-    if-eqz v0, :cond_0
-
-    iget-object v0, p0, Lcom/android/incallui/fragment/manager/DialpadFragmentManager;->mInCallActivity:Lcom/android/incallui/InCallActivity;
-
-    invoke-virtual {v0}, Lcom/android/incallui/InCallActivity;->getDialpadFragment()Lcom/android/incallui/DialpadUi;
-
-    move-result-object v0
-
-    invoke-interface {v0}, Lcom/android/incallui/DialpadUi;->getShowMenuStatus()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_2
-
-    invoke-static {}, Lcom/android/incallui/util/CallTypeUtils;->isVideoCall()Z
-
-    move-result v0
-
-    if-nez v0, :cond_2
-
-    const/4 v0, 0x1
-
-    :goto_0
-    iput-boolean v0, p0, Lcom/android/incallui/fragment/manager/DialpadFragmentManager;->needToShowMenu:Z
-
-    :cond_0
-    invoke-virtual {p0}, Lcom/android/incallui/fragment/manager/DialpadFragmentManager;->saveDtmfText()V
-
-    invoke-virtual {p0}, Lcom/android/incallui/fragment/manager/DialpadFragmentManager;->updateFragment()V
-
-    iget-boolean v0, p0, Lcom/android/incallui/fragment/manager/DialpadFragmentManager;->needToShowMenu:Z
-
-    invoke-direct {p0, v0}, Lcom/android/incallui/fragment/manager/DialpadFragmentManager;->updateMenuView(Z)V
-
-    invoke-virtual {p0}, Lcom/android/incallui/fragment/manager/DialpadFragmentManager;->isShowing()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_1
-
-    invoke-virtual {p0}, Lcom/android/incallui/fragment/manager/DialpadFragmentManager;->restoreDtmfDelayed()V
-
-    :cond_1
-    return-void
-
-    :cond_2
-    const/4 v0, 0x0
-
-    goto :goto_0
-.end method
-
-.method public onOnehandModeChanged()V
-    .locals 1
-
-    iget-object v0, p0, Lcom/android/incallui/fragment/manager/DialpadFragmentManager;->mInCallActivity:Lcom/android/incallui/InCallActivity;
-
-    if-eqz v0, :cond_0
-
-    iget-object v0, p0, Lcom/android/incallui/fragment/manager/DialpadFragmentManager;->mInCallActivity:Lcom/android/incallui/InCallActivity;
-
-    invoke-virtual {v0}, Lcom/android/incallui/InCallActivity;->getDialpadFragment()Lcom/android/incallui/DialpadUi;
-
-    move-result-object v0
-
-    if-eqz v0, :cond_0
-
-    iget-object v0, p0, Lcom/android/incallui/fragment/manager/DialpadFragmentManager;->mInCallActivity:Lcom/android/incallui/InCallActivity;
-
-    invoke-virtual {v0}, Lcom/android/incallui/InCallActivity;->getDialpadFragment()Lcom/android/incallui/DialpadUi;
-
-    move-result-object v0
-
-    invoke-interface {v0}, Lcom/android/incallui/DialpadUi;->getShowMenuStatus()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_2
-
-    invoke-static {}, Lcom/android/incallui/util/CallTypeUtils;->isVideoCall()Z
-
-    move-result v0
-
-    if-nez v0, :cond_2
-
-    const/4 v0, 0x1
-
-    :goto_0
-    iput-boolean v0, p0, Lcom/android/incallui/fragment/manager/DialpadFragmentManager;->needToShowMenu:Z
-
-    :cond_0
-    invoke-virtual {p0}, Lcom/android/incallui/fragment/manager/DialpadFragmentManager;->saveDtmfText()V
-
-    invoke-virtual {p0}, Lcom/android/incallui/fragment/manager/DialpadFragmentManager;->updateFragment()V
-
-    iget-boolean v0, p0, Lcom/android/incallui/fragment/manager/DialpadFragmentManager;->needToShowMenu:Z
-
-    invoke-direct {p0, v0}, Lcom/android/incallui/fragment/manager/DialpadFragmentManager;->updateMenuView(Z)V
-
-    invoke-virtual {p0}, Lcom/android/incallui/fragment/manager/DialpadFragmentManager;->isShowing()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_1
-
-    invoke-virtual {p0}, Lcom/android/incallui/fragment/manager/DialpadFragmentManager;->restoreDtmfDelayed()V
-
-    :cond_1
-    return-void
-
-    :cond_2
-    const/4 v0, 0x0
-
-    goto :goto_0
-.end method
-
 .method public onSMultiWindowOnChanged()V
     .locals 2
 
@@ -1196,12 +987,6 @@
 
     if-eqz v0, :cond_2
 
-    invoke-static {}, Lcom/android/incallui/util/VideoCallUtils;->isQCIF()Z
-
-    move-result v0
-
-    if-nez v0, :cond_2
-
     invoke-virtual {p0}, Lcom/android/incallui/fragment/manager/DialpadFragmentManager;->getFragment()Lcom/android/incallui/fragment/DialpadFragment;
 
     move-result-object v0
@@ -1233,12 +1018,6 @@
     move-result v0
 
     if-eqz v0, :cond_1
-
-    invoke-static {}, Lcom/android/incallui/util/VideoCallUtils;->isQCIF()Z
-
-    move-result v0
-
-    if-nez v0, :cond_1
 
     invoke-virtual {p0}, Lcom/android/incallui/fragment/manager/DialpadFragmentManager;->restoreDtmfDelayed()V
 
@@ -1337,7 +1116,7 @@
 .method protected setFragment(Ljava/lang/Enum;Z)V
     .locals 4
 
-    const v1, 0x7f100311
+    const v1, 0x7f10031d
 
     const/4 v0, 0x0
 
@@ -1397,6 +1176,22 @@
 
     const/4 v4, 0x1
 
+    invoke-static {}, Lcom/android/incallui/util/CallTypeUtils;->isVideoCall()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    invoke-static {}, Lcom/android/incallui/service/vt/VideoCallConfig;->isJpnUX()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    :goto_0
+    return-void
+
+    :cond_0
     const/4 v0, 0x0
 
     invoke-virtual {p0, v0}, Lcom/android/incallui/fragment/manager/DialpadFragmentManager;->checkAndSet(Z)Lcom/android/incallui/fragment/DialpadFragment;
@@ -1415,7 +1210,7 @@
 
     move-result-object v1
 
-    if-eqz v1, :cond_0
+    if-eqz v1, :cond_1
 
     invoke-virtual {p0}, Lcom/android/incallui/fragment/manager/DialpadFragmentManager;->getFragment()Lcom/android/incallui/fragment/DialpadFragment;
 
@@ -1427,7 +1222,7 @@
 
     iget-object v0, p0, Lcom/android/incallui/fragment/manager/DialpadFragmentManager;->mSavedDtmfText:Ljava/lang/String;
 
-    if-eqz v0, :cond_0
+    if-eqz v0, :cond_1
 
     invoke-virtual {p0}, Lcom/android/incallui/fragment/manager/DialpadFragmentManager;->getFragment()Lcom/android/incallui/fragment/DialpadFragment;
 
@@ -1449,7 +1244,7 @@
 
     iput-object v0, p0, Lcom/android/incallui/fragment/manager/DialpadFragmentManager;->mSavedDtmfText:Ljava/lang/String;
 
-    :cond_0
+    :cond_1
     iput-boolean v4, p0, Lcom/android/incallui/fragment/manager/DialpadFragmentManager;->mIsShowing:Z
 
     invoke-static {}, Lcom/android/incallui/InCallApp;->getInstance()Lcom/android/incallui/InCallApp;
@@ -1464,7 +1259,7 @@
 
     invoke-virtual {v0}, Lcom/android/incallui/service/vt/VideoCallManager;->disableFullScreenMode()V
 
-    return-void
+    goto :goto_0
 .end method
 
 .method public updateFragment()V

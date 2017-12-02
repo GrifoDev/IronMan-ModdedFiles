@@ -172,7 +172,7 @@
     :goto_2
     if-eqz v2, :cond_a
 
-    const v2, 0x7f0e0006
+    const v2, 0x7f0f0005
 
     :goto_3
     int-to-float v3, v7
@@ -185,7 +185,7 @@
 
     float-to-int v3, v2
 
-    const v2, 0x7f0a026d
+    const v2, 0x7f0a0251
 
     invoke-virtual {p1, v2}, Lcom/android/incallui/service/vt/VideoCallMetrics;->getDimension(I)I
 
@@ -196,7 +196,7 @@
     :goto_4
     iput v2, p0, Lcom/android/incallui/service/vt/VideoButtonMetrics;->width:I
 
-    const v3, 0x7f0a026c
+    const v3, 0x7f0a0250
 
     invoke-virtual {p1, v3}, Lcom/android/incallui/service/vt/VideoCallMetrics;->getDimension(I)I
 
@@ -212,7 +212,7 @@
 
     int-to-float v10, v8
 
-    const v11, 0x7f0e0002
+    const v11, 0x7f0f0001
 
     invoke-virtual {p1, v11}, Lcom/android/incallui/service/vt/VideoCallMetrics;->getRatePermil(I)F
 
@@ -239,7 +239,7 @@
     :cond_1
     int-to-float v3, v8
 
-    const v10, 0x7f0e0003
+    const v10, 0x7f0f0002
 
     invoke-virtual {p1, v10}, Lcom/android/incallui/service/vt/VideoCallMetrics;->getRatePermil(I)F
 
@@ -299,13 +299,13 @@
     iput v2, p0, Lcom/android/incallui/service/vt/VideoButtonMetrics;->answer_incoming_area_width:I
 
     :goto_6
-    const v2, 0x7f0a0153
+    const v2, 0x7f0a0146
 
     invoke-virtual {p1, v2}, Lcom/android/incallui/service/vt/VideoCallMetrics;->getDimension(I)I
 
     move-result v2
 
-    const v3, 0x7f0a015b
+    const v3, 0x7f0a014e
 
     invoke-virtual {p1, v3}, Lcom/android/incallui/service/vt/VideoCallMetrics;->getDimension(I)I
 
@@ -321,7 +321,7 @@
 
     int-to-float v10, v8
 
-    const v11, 0x7f0e008f
+    const v11, 0x7f0f008e
 
     invoke-virtual {p1, v11}, Lcom/android/incallui/service/vt/VideoCallMetrics;->getRatePermil(I)F
 
@@ -333,7 +333,7 @@
 
     int-to-float v11, v8
 
-    const v12, 0x7f0e0009
+    const v12, 0x7f0f0008
 
     invoke-virtual {p1, v12}, Lcom/android/incallui/service/vt/VideoCallMetrics;->getRatePermil(I)F
 
@@ -351,7 +351,7 @@
 
     add-int/2addr v3, v11
 
-    const v10, 0x7f0a04c1
+    const v10, 0x7f0a04cd
 
     invoke-virtual {p1, v10}, Lcom/android/incallui/service/vt/VideoCallMetrics;->getDimension(I)I
 
@@ -407,7 +407,7 @@
 
     int-to-float v3, v8
 
-    const v4, 0x7f0e008a
+    const v4, 0x7f0f0089
 
     invoke-virtual {p1, v4}, Lcom/android/incallui/service/vt/VideoCallMetrics;->getRatePermil(I)F
 
@@ -450,7 +450,7 @@
 
     iget v0, p0, Lcom/android/incallui/service/vt/VideoButtonMetrics;->answer_floating_button_bottom_offset:I
 
-    const v1, 0x7f0a04c0
+    const v1, 0x7f0a04cc
 
     invoke-virtual {p1, v1}, Lcom/android/incallui/service/vt/VideoCallMetrics;->getDimension(I)I
 
@@ -461,13 +461,13 @@
     iput v0, p0, Lcom/android/incallui/service/vt/VideoButtonMetrics;->answer_floating_button_bottom_offset:I
 
     :cond_6
-    const v0, 0x7f0e0091
+    const v0, 0x7f0f0090
 
     invoke-virtual {p1, v0}, Lcom/android/incallui/service/vt/VideoCallMetrics;->getInteger(I)I
 
     move-result v0
 
-    const v1, 0x7f0e0092
+    const v1, 0x7f0f0091
 
     invoke-virtual {p1, v1}, Lcom/android/incallui/service/vt/VideoCallMetrics;->getInteger(I)I
 
@@ -513,14 +513,14 @@
     goto/16 :goto_2
 
     :cond_a
-    const v2, 0x7f0e0005
+    const v2, 0x7f0f0004
 
     goto/16 :goto_3
 
     :cond_b
     int-to-float v3, v8
 
-    const v10, 0x7f0e0086
+    const v10, 0x7f0f0085
 
     invoke-virtual {p1, v10}, Lcom/android/incallui/service/vt/VideoCallMetrics;->getRatePercent(I)F
 
@@ -534,7 +534,7 @@
 
     int-to-float v3, v8
 
-    const v10, 0x7f0e0087
+    const v10, 0x7f0f0086
 
     invoke-virtual {p1, v10}, Lcom/android/incallui/service/vt/VideoCallMetrics;->getRatePercent(I)F
 
@@ -553,7 +553,7 @@
 
     int-to-float v3, v8
 
-    const v10, 0x7f0e0004
+    const v10, 0x7f0f0003
 
     invoke-virtual {p1, v10}, Lcom/android/incallui/service/vt/VideoCallMetrics;->getRatePermil(I)F
 
@@ -588,7 +588,7 @@
     :cond_f
     int-to-float v10, v8
 
-    const v11, 0x7f0e0090
+    const v11, 0x7f0f008f
 
     invoke-virtual {p1, v11}, Lcom/android/incallui/service/vt/VideoCallMetrics;->getRatePermil(I)F
 
@@ -600,7 +600,7 @@
 
     int-to-float v11, v8
 
-    const v12, 0x7f0e000a
+    const v12, 0x7f0f0009
 
     invoke-virtual {p1, v12}, Lcom/android/incallui/service/vt/VideoCallMetrics;->getRatePermil(I)F
 
@@ -623,7 +623,7 @@
     :cond_10
     int-to-float v3, v8
 
-    const v4, 0x7f0e0089
+    const v4, 0x7f0f0088
 
     invoke-virtual {p1, v4}, Lcom/android/incallui/service/vt/VideoCallMetrics;->getRatePermil(I)F
 

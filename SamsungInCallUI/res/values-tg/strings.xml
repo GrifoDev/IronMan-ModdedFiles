@@ -100,12 +100,13 @@
     <string name="account_phone">Дастгоҳ</string>
     <string name="acs">Занги овозӣ</string>
     <string name="active_calls">Занги фаъол</string>
-    <string name="add_reminder">Ёдрас илов к</string>
+    <string name="add_reminder">Иловаи ёдрас</string>
     <string name="agif_button_close_description">Пӯшидан</string>
     <string name="agif_decline_message">Бубахшед, ман ҳозир гап зада наметавонам.</string>
     <string name="agif_decline_sticker_header">Бо стикер рад кардан</string>
     <string name="agif_decline_text_header">Бо паёми матнӣ рад кардан</string>
     <string name="agif_decline_toast">Стикер ба %s фиристода шуд.</string>
+    <string name="agif_outgoing_bubble_tip">Руҳияи худро бо стикер ифода кунед.</string>
     <string name="agif_pickers_add_tab_description">Илова кардан</string>
     <string name="agif_pickers_downloaded">Боргиришуда</string>
     <string name="agif_pickers_item_usage_hints_description">Барои танзим ду бор зарба занед</string>
@@ -121,10 +122,12 @@
     <string name="agif_pickers_tab_select_description">Интихоб шуд</string>
     <string name="agif_pickers_title">Бо стикер оғоз кардан</string>
     <string name="agif_pickers_title_top_stickers">Стикерҳои беҳтарин</string>
+    <string name="agif_random_send_message">Барои ин стикерро фиристодан, инҷо зарба занед.</string>
     <string name="agif_read_permission_description">Ба Телефон имконияти хондани муҳтавои AGIF медиҳад.</string>
     <string name="agif_read_permission_label">Хондани муҳтавои AGIF</string>
     <string name="agif_receive_no_id">Нишон додани стикер ғайриимкон аст. %s-ро баъди анҷоми занг навсозӣ кунед.</string>
     <string name="agif_receive_no_id_upsupport_update">Нишон додани стикер ғайриимкон аст. Баъди навсозии системавии навбатӣ стикерҳои бештар дастрас меш.</string>
+    <string name="agif_receive_toast">Стикер аз %s.</string>
     <string name="agif_sent_fail_message">Фиристодани GIF-и ҳаракатдор ғайриимкон аст. Кӯшишро дертар такрор кунед.</string>
     <string name="agif_sent_toast">Стикер фиристода шуд.</string>
     <string name="agif_write_permission_description">Ба Телефон имконияти тағйир додани муҳтавои AGIF медиҳад.</string>
@@ -794,6 +797,7 @@
     <string name="sticker_delete_stickers">%d стикерҳоро нест мекунед?</string>
     <string name="sticker_delete_this_sticker">Ин стикерро нест мекунед?</string>
     <string name="sticker_setting_edit_title">Интихоби стикерҳо</string>
+    <string name="sticker_setting_edit_title_preload">Тартиби стикерҳоро тағйир додан</string>
     <string name="sticker_setting_main_title">Стикерҳои ман</string>
     <string name="sticker_setting_menu_delete">Нест кардан</string>
     <string name="sticker_setting_menu_edit">Таҳрир</string>
@@ -806,6 +810,7 @@
     <string name="swipe_right_to_answer_call_with_video">Ба рост молида, ба занг бо видео ҷавоб диҳед.</string>
     <string name="swipe_right_to_answer_call_without_video">Ба рост молида, ба занг бе видео ҷавоб диҳед.</string>
     <string name="switch_rejected_by_mt">Дархост оид ба гузаштан ба занги видеоӣ рад шуд.</string>
+    <string name="switch_rejected_by_mt_att">Video unavailable for this call. Call connected as a voice call.</string>
     <string name="switch_to_video_call_failed">Дархост оид ба гузаштан ба занги видеоӣ иҷро нашуд.</string>
     <string name="switch_to_video_call_failed_tmo">Дархост оид ба гузаштан ба занги видеоӣ рад шуд.</string>
     <string name="switch_to_voice_call_failed">Дархост оид ба гузаштан ба занги овозӣ иҷро нашуд.</string>

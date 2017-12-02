@@ -7,7 +7,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/android/incallui/InCallActivity;->showDataUsageLimitDialogforTMO()V
+    value = Lcom/android/incallui/InCallActivity;->showDataChargeAlertDialog()V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -34,9 +34,11 @@
 
 # virtual methods
 .method public onClick(Landroid/content/DialogInterface;I)V
-    .locals 0
+    .locals 1
 
-    invoke-interface {p1}, Landroid/content/DialogInterface;->dismiss()V
+    iget-object v0, p0, Lcom/android/incallui/InCallActivity$26;->this$0:Lcom/android/incallui/InCallActivity;
+
+    invoke-virtual {v0}, Lcom/android/incallui/InCallActivity;->dismissDataChargeAlertDialog()V
 
     return-void
 .end method

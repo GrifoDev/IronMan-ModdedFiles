@@ -62,9 +62,23 @@
 
     goto :goto_0
 
+    :pswitch_2
+    const-string v0, "RECORD_BUTTON_REQUEST_FOCUS"
+
+    invoke-static {p0, v0}, Lcom/android/incallui/Log;->d(Ljava/lang/Object;Ljava/lang/String;)V
+
+    iget-object v0, p0, Lcom/android/incallui/fragment/VoiceCallButtonFragment$13;->this$0:Lcom/android/incallui/fragment/VoiceCallButtonFragment;
+
+    invoke-virtual {v0}, Lcom/android/incallui/fragment/VoiceCallButtonFragment;->setFocusOnRecordBtn()V
+
+    goto :goto_0
+
+    nop
+
     :pswitch_data_0
     .packed-switch 0x3e9
         :pswitch_0
         :pswitch_1
+        :pswitch_2
     .end packed-switch
 .end method

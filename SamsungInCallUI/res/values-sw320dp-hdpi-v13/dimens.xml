@@ -65,7 +65,6 @@
     <dimen name="sec_dialpad_key_star_size">26.0dip</dimen>
     <dimen name="sec_endcall_button_margin_bottom">47.0dip</dimen>
     <dimen name="sec_endcall_buttons_margin_between_vertical">8.0dip</dimen>
-    <dimen name="sec_endcall_mw_button_diameter">63.0dip</dimen>
     <dimen name="sec_hwkey_dialpad_digits_height">296.0dip</dimen>
     <dimen name="sec_incall_button_text_size">12.0dip</dimen>
     <dimen name="sec_incall_button_width">92.0dip</dimen>

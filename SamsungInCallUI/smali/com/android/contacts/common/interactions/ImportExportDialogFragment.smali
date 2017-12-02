@@ -75,7 +75,7 @@
 
     if-eqz v1, :cond_0
 
-    const v1, 0x7f0905b9
+    const v1, 0x7f0905be
 
     new-array v2, v4, [Ljava/lang/Object;
 
@@ -89,7 +89,7 @@
     return-object v0
 
     :cond_0
-    const v1, 0x7f0905b8
+    const v1, 0x7f0905bd
 
     invoke-virtual {p0, v1}, Lcom/android/contacts/common/interactions/ImportExportDialogFragment;->getString(I)Ljava/lang/String;
 
@@ -167,7 +167,7 @@
 
     move-result-object v2
 
-    const v3, 0x7f090564
+    const v3, 0x7f090569
 
     sget-object v4, Lcom/android/contacts/common/util/AccountsListAdapter$AccountListFilter;->b:Lcom/android/contacts/common/util/AccountsListAdapter$AccountListFilter;
 
@@ -275,7 +275,7 @@
 
     move-result-object v0
 
-    const v2, 0x7f090610
+    const v2, 0x7f090615
 
     const/4 v3, 0x0
 
@@ -462,15 +462,15 @@
 .method public onCreateDialog(Landroid/os/Bundle;)Landroid/app/Dialog;
     .locals 12
 
-    const v7, 0x7f0905ba
+    const v7, 0x7f0905bf
 
-    const v11, 0x7f090598
+    const v11, 0x7f09059d
 
     const/4 v10, -0x1
 
-    const v9, 0x7f090673
+    const v9, 0x7f090697
 
-    const v8, 0x7f0905b7
+    const v8, 0x7f0905bc
 
     invoke-virtual {p0}, Lcom/android/contacts/common/interactions/ImportExportDialogFragment;->getActivity()Landroid/app/Activity;
 
@@ -662,7 +662,7 @@
 
     new-instance v0, Lcom/android/contacts/common/interactions/ImportExportDialogFragment$AdapterEntry;
 
-    const v1, 0x7f090676
+    const v1, 0x7f09069a
 
     invoke-virtual {p0, v1}, Lcom/android/contacts/common/interactions/ImportExportDialogFragment;->getString(I)Ljava/lang/String;
 
@@ -688,7 +688,7 @@
 
     if-eqz v3, :cond_7
 
-    const v0, 0x7f090563
+    const v0, 0x7f090568
 
     :goto_3
     invoke-virtual {v2, v0}, Landroid/app/AlertDialog$Builder;->setTitle(I)Landroid/app/AlertDialog$Builder;
@@ -795,7 +795,7 @@
     goto :goto_2
 
     :cond_7
-    const v0, 0x7f090562
+    const v0, 0x7f090567
 
     goto :goto_3
 .end method

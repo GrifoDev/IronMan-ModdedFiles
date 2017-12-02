@@ -68,7 +68,7 @@
 
     new-instance v0, Landroid/view/ContextThemeWrapper;
 
-    const v1, 0x7f0b0133
+    const v1, 0x7f0b0132
 
     invoke-direct {v0, p1, v1}, Landroid/view/ContextThemeWrapper;-><init>(Landroid/content/Context;I)V
 
@@ -210,7 +210,7 @@
 
     iput-object v0, p0, Lcom/android/incallui/VolumeSeekBar;->mAudioManager:Landroid/media/AudioManager;
 
-    const v0, 0x7f04012c
+    const v0, 0x7f040131
 
     invoke-virtual {v1, v0, v5}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;)Landroid/view/View;
 
@@ -228,7 +228,7 @@
 
     if-eqz v2, :cond_1
 
-    const v0, 0x7f04012d
+    const v0, 0x7f040132
 
     invoke-virtual {v1, v0, v5}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;)Landroid/view/View;
 
@@ -251,7 +251,7 @@
 
     move-result-object v0
 
-    const v2, 0x7f0202c4
+    const v2, 0x7f0202d3
 
     invoke-virtual {v0, v2}, Landroid/content/res/Resources;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 
@@ -263,7 +263,7 @@
 
     invoke-virtual {p0, v0}, Lcom/android/incallui/VolumeSeekBar;->setElevation(F)V
 
-    const v0, 0x7f10040b
+    const v0, 0x7f100436
 
     invoke-virtual {v1, v0}, Landroid/view/ViewGroup;->findViewById(I)Landroid/view/View;
 
@@ -308,7 +308,7 @@
     invoke-virtual {v0, v4}, Landroid/widget/SeekBar;->semSetFluidEnabled(Z)V
 
     :cond_0
-    const v0, 0x7f10040c
+    const v0, 0x7f100437
 
     invoke-virtual {v1, v0}, Landroid/view/ViewGroup;->findViewById(I)Landroid/view/View;
 
@@ -324,7 +324,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f0f025e
+    const v1, 0x7f0e0271
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getColor(I)I
 
@@ -342,7 +342,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f0f025d
+    const v1, 0x7f0e0270
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getColor(I)I
 
@@ -757,7 +757,7 @@
 
     move-result-object v2
 
-    const v3, 0x7f0a0119
+    const v3, 0x7f0a0111
 
     invoke-virtual {v2, v3}, Landroid/content/res/Resources;->getDimension(I)F
 
@@ -773,7 +773,7 @@
 
     move-result-object v2
 
-    const v3, 0x7f0a0118
+    const v3, 0x7f0a0110
 
     invoke-virtual {v2, v3}, Landroid/content/res/Resources;->getDimension(I)F
 

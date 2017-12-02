@@ -40,23 +40,28 @@
 
     const/4 v0, 0x0
 
-    if-eqz p0, :cond_0
+    if-eqz p0, :cond_1
 
     invoke-virtual {p0}, Lcom/android/incallui/Call;->hasVideoState()Z
 
     move-result v1
 
-    if-eqz v1, :cond_0
+    if-eqz v1, :cond_1
 
     invoke-virtual {p0}, Lcom/android/incallui/Call;->isPSDomain()Z
 
     move-result v1
 
-    if-eqz v1, :cond_0
+    if-nez v1, :cond_0
 
+    sget-boolean v1, Lcom/android/incallui/service/vt/VideoCallConfig;->TABLET_DEVICE:Z
+
+    if-eqz v1, :cond_1
+
+    :cond_0
     sget-boolean v1, Lcom/android/incallui/service/vt/VideoCallConfig;->DEVICE_ROTATION:Z
 
-    if-eqz v1, :cond_0
+    if-eqz v1, :cond_1
 
     invoke-static {}, Lcom/android/incallui/service/vt/VideoCallControl;->isEnabledAutoRotation()Z
 
@@ -96,13 +101,13 @@
 
     invoke-static {v3}, Lcom/android/incallui/service/vt/VideoCallControl;->log(Ljava/lang/String;)V
 
-    if-eqz v1, :cond_0
+    if-eqz v1, :cond_1
 
-    if-eqz v2, :cond_0
+    if-eqz v2, :cond_1
 
     const/4 v0, 0x1
 
-    :cond_0
+    :cond_1
     return v0
 .end method
 
@@ -1152,22 +1157,22 @@
 
     const/4 v0, 0x2
 
-    if-ne p1, v0, :cond_9
+    if-ne p1, v0, :cond_8
 
     :cond_0
-    if-nez p0, :cond_9
+    if-nez p0, :cond_8
 
     invoke-static {}, Lcom/android/incallui/util/PhoneModeUtils;->isEmergencyMode()Z
 
     move-result v0
 
-    if-eqz v0, :cond_8
+    if-eqz v0, :cond_b
 
     invoke-static {}, Lcom/android/incallui/util/PhoneModeUtils;->isUltraPowerSavingMode()Z
 
     move-result v0
 
-    if-nez v0, :cond_8
+    if-nez v0, :cond_b
 
     move v0, v1
 
@@ -1256,7 +1261,7 @@
 
     move-result v3
 
-    if-eqz v3, :cond_7
+    if-eqz v3, :cond_9
 
     move v3, v1
 
@@ -1283,29 +1288,55 @@
     move v0, v1
 
     :cond_6
-    :goto_2
-    return v0
+    invoke-static {}, Lcom/android/incallui/bike/BikeModeUtils;->isBikeModeOn()Z
+
+    move-result v2
+
+    if-nez v2, :cond_7
+
+    invoke-static {}, Lcom/android/incallui/bike/BikeModeUtils;->isBikeModeOutgoingCall()Z
+
+    move-result v2
+
+    if-eqz v2, :cond_a
 
     :cond_7
+    invoke-static {}, Lcom/android/incallui/CallList;->getInstance()Lcom/android/incallui/CallList;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Lcom/android/incallui/CallList;->hasLiveCall()Z
+
+    move-result v2
+
+    if-eqz v2, :cond_a
+
+    move v2, v1
+
+    :cond_8
+    :goto_2
+    return v2
+
+    :cond_9
     move v3, v2
 
     goto :goto_1
 
-    :cond_8
+    :cond_a
+    move v2, v0
+
+    goto :goto_2
+
+    :cond_b
     move v0, v2
 
     goto :goto_0
-
-    :cond_9
-    move v0, v2
-
-    goto :goto_2
 .end method
 
 .method public static showModifyCallException(ILcom/android/incallui/Call;Landroid/telecom/VideoProfile;)V
     .locals 3
 
-    const v2, 0x7f090366
+    const v2, 0x7f09036a
 
     const/4 v0, 0x1
 
@@ -1343,7 +1374,7 @@
 
     const/4 v0, 0x5
 
-    if-ne p0, v0, :cond_5
+    if-ne p0, v0, :cond_7
 
     const-string v0, "vzw_volte_ui"
 
@@ -1374,18 +1405,38 @@
 
     move-result v0
 
-    if-eqz v0, :cond_4
+    if-nez v0, :cond_4
 
+    invoke-static {}, Lcom/android/incallui/service/vt/VideoCallConfig;->isChnUX()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_5
+
+    :cond_4
     invoke-static {v2}, Lcom/android/incallui/util/InCallUtils;->displayToastLong(I)V
 
     goto :goto_0
 
-    :cond_4
+    :cond_5
+    invoke-static {}, Lcom/android/incallui/service/vt/VideoCallConfig;->CONCEPT_USA_ATT()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_6
+
+    const v0, 0x7f09036b
+
+    invoke-static {v0}, Lcom/android/incallui/util/InCallUtils;->displayToast(I)V
+
+    goto :goto_0
+
+    :cond_6
     invoke-static {v2}, Lcom/android/incallui/util/InCallUtils;->displayToast(I)V
 
     goto :goto_0
 
-    :cond_5
+    :cond_7
     const/4 v0, 0x2
 
     if-ne p0, v0, :cond_0
@@ -1398,15 +1449,15 @@
 
     move-result v0
 
-    if-nez v0, :cond_6
+    if-nez v0, :cond_8
 
-    const v0, 0x7f090369
+    const v0, 0x7f09036e
 
     invoke-static {v0}, Lcom/android/incallui/util/InCallUtils;->displayToast(I)V
 
     goto :goto_0
 
-    :cond_6
+    :cond_8
     invoke-virtual {p2}, Landroid/telecom/VideoProfile;->getVideoState()I
 
     move-result v0
@@ -1423,20 +1474,20 @@
 
     move-result v0
 
-    if-eqz v0, :cond_7
+    if-eqz v0, :cond_9
 
-    const v0, 0x7f090368
-
-    invoke-static {v0}, Lcom/android/incallui/util/InCallUtils;->displayToast(I)V
-
-    goto :goto_0
-
-    :cond_7
-    const v0, 0x7f090367
+    const v0, 0x7f09036d
 
     invoke-static {v0}, Lcom/android/incallui/util/InCallUtils;->displayToast(I)V
 
     goto :goto_0
+
+    :cond_9
+    const v0, 0x7f09036c
+
+    invoke-static {v0}, Lcom/android/incallui/util/InCallUtils;->displayToast(I)V
+
+    goto/16 :goto_0
 .end method
 
 .method public static toogglePreview()V

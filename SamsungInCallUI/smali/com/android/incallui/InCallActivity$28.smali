@@ -2,12 +2,12 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Landroid/view/View$OnClickListener;
+.implements Lcom/android/incallui/widget/GradientAnimationView$ScaleAnimationCallback;
 
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/android/incallui/InCallActivity;->showDataChargeAlertDialog()V
+    value = Lcom/android/incallui/InCallActivity;->animateForDummyBackground(Landroid/animation/AnimatorSet;I)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -19,16 +19,12 @@
 # instance fields
 .field final synthetic this$0:Lcom/android/incallui/InCallActivity;
 
-.field final synthetic val$mDialogCheckbox:Landroid/view/View;
-
 
 # direct methods
-.method constructor <init>(Lcom/android/incallui/InCallActivity;Landroid/view/View;)V
+.method constructor <init>(Lcom/android/incallui/InCallActivity;)V
     .locals 0
 
     iput-object p1, p0, Lcom/android/incallui/InCallActivity$28;->this$0:Lcom/android/incallui/InCallActivity;
-
-    iput-object p2, p0, Lcom/android/incallui/InCallActivity$28;->val$mDialogCheckbox:Landroid/view/View;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -37,36 +33,49 @@
 
 
 # virtual methods
-.method public onClick(Landroid/view/View;)V
+.method public onScaleAnimationEnd()V
     .locals 3
+
+    const-string v0, "InCallActivity"
+
+    const-string v1, "animateForDummyBackground: onAnimationEnd"
+
+    const/4 v2, 0x1
+
+    invoke-static {v0, v1, v2}, Lcom/android/incallui/Log;->i(Ljava/lang/String;Ljava/lang/String;Z)V
 
     iget-object v0, p0, Lcom/android/incallui/InCallActivity$28;->this$0:Lcom/android/incallui/InCallActivity;
 
-    invoke-virtual {v0}, Lcom/android/incallui/InCallActivity;->getContentResolver()Landroid/content/ContentResolver;
+    invoke-static {v0}, Lcom/android/incallui/InCallActivity;->access$1600(Lcom/android/incallui/InCallActivity;)Lcom/android/incallui/widget/GradientAnimationView;
 
-    move-result-object v1
-
-    const-string v2, "videoAlertShowNeverAgainIncomingCall"
-
-    iget-object v0, p0, Lcom/android/incallui/InCallActivity$28;->val$mDialogCheckbox:Landroid/view/View;
-
-    check-cast v0, Landroid/widget/Checkable;
-
-    invoke-interface {v0}, Landroid/widget/Checkable;->isChecked()Z
-
-    move-result v0
+    move-result-object v0
 
     if-eqz v0, :cond_0
 
-    const/4 v0, 0x1
+    iget-object v0, p0, Lcom/android/incallui/InCallActivity$28;->this$0:Lcom/android/incallui/InCallActivity;
 
-    :goto_0
-    invoke-static {v1, v2, v0}, Landroid/provider/Settings$System;->putInt(Landroid/content/ContentResolver;Ljava/lang/String;I)Z
+    invoke-static {v0}, Lcom/android/incallui/InCallActivity;->access$1600(Lcom/android/incallui/InCallActivity;)Lcom/android/incallui/widget/GradientAnimationView;
 
-    return-void
+    move-result-object v0
+
+    const/4 v1, 0x4
+
+    invoke-virtual {v0, v1}, Lcom/android/incallui/widget/GradientAnimationView;->setVisibility(I)V
+
+    iget-object v0, p0, Lcom/android/incallui/InCallActivity$28;->this$0:Lcom/android/incallui/InCallActivity;
+
+    invoke-static {v0}, Lcom/android/incallui/InCallActivity;->access$1600(Lcom/android/incallui/InCallActivity;)Lcom/android/incallui/widget/GradientAnimationView;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lcom/android/incallui/widget/GradientAnimationView;->tearDown()V
+
+    iget-object v0, p0, Lcom/android/incallui/InCallActivity$28;->this$0:Lcom/android/incallui/InCallActivity;
+
+    const/4 v1, 0x0
+
+    invoke-static {v0, v1}, Lcom/android/incallui/InCallActivity;->access$1602(Lcom/android/incallui/InCallActivity;Lcom/android/incallui/widget/GradientAnimationView;)Lcom/android/incallui/widget/GradientAnimationView;
 
     :cond_0
-    const/4 v0, 0x0
-
-    goto :goto_0
+    return-void
 .end method

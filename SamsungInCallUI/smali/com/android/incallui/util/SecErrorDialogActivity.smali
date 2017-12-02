@@ -180,13 +180,13 @@
 
     move-result-object v0
 
-    const v1, 0x7f09052a
+    const v1, 0x7f09052f
 
     invoke-virtual {v0, v1}, Landroid/app/AlertDialog$Builder;->setTitle(I)Landroid/app/AlertDialog$Builder;
 
     move-result-object v0
 
-    const v1, 0x7f0906ca
+    const v1, 0x7f0906ee
 
     new-instance v2, Lcom/android/incallui/util/SecErrorDialogActivity$11;
 
@@ -196,7 +196,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f090612
+    const v1, 0x7f090617
 
     new-instance v2, Lcom/android/incallui/util/SecErrorDialogActivity$10;
 
@@ -250,13 +250,13 @@
 
     move-result-object v0
 
-    const v1, 0x7f0906c5
+    const v1, 0x7f0906e9
 
     invoke-virtual {v0, v1}, Landroid/app/AlertDialog$Builder;->setTitle(I)Landroid/app/AlertDialog$Builder;
 
     move-result-object v0
 
-    const v1, 0x7f0906c6
+    const v1, 0x7f0906ea
 
     new-instance v2, Lcom/android/incallui/util/SecErrorDialogActivity$3;
 
@@ -266,7 +266,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f0906c4
+    const v1, 0x7f0906e8
 
     new-instance v2, Lcom/android/incallui/util/SecErrorDialogActivity$2;
 
@@ -551,7 +551,7 @@
 
     check-cast v0, Landroid/widget/Checkable;
 
-    const v1, 0x7f100126
+    const v1, 0x7f10012d
 
     invoke-virtual {v2, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -559,7 +559,7 @@
 
     check-cast v1, Landroid/widget/TextView;
 
-    const v3, 0x7f0903af
+    const v3, 0x7f0903b4
 
     invoke-virtual {p0, v3}, Lcom/android/incallui/util/SecErrorDialogActivity;->getString(I)Ljava/lang/String;
 
@@ -571,7 +571,7 @@
 
     invoke-direct {v1, p0}, Landroid/app/AlertDialog$Builder;-><init>(Landroid/content/Context;)V
 
-    const v3, 0x7f0903b0
+    const v3, 0x7f0903b5
 
     invoke-virtual {v1, v3}, Landroid/app/AlertDialog$Builder;->setTitle(I)Landroid/app/AlertDialog$Builder;
 
@@ -603,7 +603,7 @@
     return-void
 
     :cond_0
-    const v0, 0x7f0903b2
+    const v0, 0x7f0903b7
 
     invoke-static {p0, v0, v3}, Landroid/widget/Toast;->makeText(Landroid/content/Context;II)Landroid/widget/Toast;
 

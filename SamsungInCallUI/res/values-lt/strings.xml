@@ -178,12 +178,13 @@
     <string name="account_phone">Įrenginys</string>
     <string name="acs">Balso skambutis</string>
     <string name="active_calls">Aktyvus skambutis</string>
-    <string name="add_reminder">Prid. primin.</string>
+    <string name="add_reminder">Pridėti priminimą</string>
     <string name="agif_button_close_description">Uždaryti</string>
     <string name="agif_decline_message">Atsiprašau, negaliu kalbėti.</string>
     <string name="agif_decline_sticker_header">Atmesti lipduku</string>
     <string name="agif_decline_text_header">Atmesti teksto žinute</string>
     <string name="agif_decline_toast">Lipdukas nusiųstas %s.</string>
+    <string name="agif_outgoing_bubble_tip">Nusiųskite lipduką ir parodykite, kaip jaučiatės.</string>
     <string name="agif_pickers_add_tab_description">Įtrauk.</string>
     <string name="agif_pickers_downloaded">Atsisiųsta</string>
     <string name="agif_pickers_item_usage_hints_description">Bakstelėkite du kartus, jei norite pasirinkti</string>
@@ -199,10 +200,12 @@
     <string name="agif_pickers_tab_select_description">Pasirinkta</string>
     <string name="agif_pickers_title">Pradėkite nuo lipduko</string>
     <string name="agif_pickers_title_top_stickers">Populiarūs lipdukai</string>
+    <string name="agif_random_send_message">Bakstelėkite čia ir išsiųskite šį lipduką.</string>
     <string name="agif_read_permission_description">Leidžia telefonui nuskaityti AGIF turinį.</string>
     <string name="agif_read_permission_label">Skaityti AGIF turinį</string>
     <string name="agif_receive_no_id">Lipduko negalima parodyti. Po skambučio atnaujinkite %s.</string>
     <string name="agif_receive_no_id_upsupport_update">Lipduko negalima parodyti. Po kito sistemos atnaujinimo bus daugiau lipdukų.</string>
+    <string name="agif_receive_toast">Lipdukas iš %s.</string>
     <string name="agif_sent_fail_message">Negalima siųsti animuotojo GIF. Bandykit vėliau.</string>
     <string name="agif_sent_toast">Lipdukas nusiųstas.</string>
     <string name="agif_write_permission_description">Leidžia telefonui koreguoti AGIF turinį.</string>
@@ -872,6 +875,7 @@ fotoap."</string>
     <string name="sticker_delete_stickers">Trinti %d lipdukus (-ų)?</string>
     <string name="sticker_delete_this_sticker">Trinti šį lipduką?</string>
     <string name="sticker_setting_edit_title">Rinktis lipdukus</string>
+    <string name="sticker_setting_edit_title_preload">Pertvarkyti lipdukus</string>
     <string name="sticker_setting_main_title">Mano lipdukai</string>
     <string name="sticker_setting_menu_delete">Trinti</string>
     <string name="sticker_setting_menu_edit">Redaguoti</string>
@@ -884,6 +888,7 @@ fotoap."</string>
     <string name="swipe_right_to_answer_call_with_video">Jei norite skambinti su vaizdu, braukite į dešinę.</string>
     <string name="swipe_right_to_answer_call_without_video">Jei norite skambinti be vaizdo, braukite į dešinę.</string>
     <string name="switch_rejected_by_mt">Prašymas perjungti į vaizdo skambutį atmestas.</string>
+    <string name="switch_rejected_by_mt_att">Video unavailable for this call. Call connected as a voice call.</string>
     <string name="switch_to_video_call_failed">Nepavyko pateikti užklausos dėl perjungimo į vaizdo skambutį.</string>
     <string name="switch_to_video_call_failed_tmo">Prašymas perjungti į vaizdo skambutį atmestas.</string>
     <string name="switch_to_voice_call_failed">Nepavyko pateikti užklausos dėl perjungimo į balso skambutį.</string>

@@ -355,149 +355,6 @@
     goto :goto_0
 .end method
 
-.method public static VCC_init(Landroid/content/Context;)V
-    .locals 4
-
-    invoke-virtual {p0}, Landroid/content/Context;->createDeviceProtectedStorageContext()Landroid/content/Context;
-
-    move-result-object v2
-
-    const-string v0, "user"
-
-    invoke-virtual {v2, v0}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Landroid/os/UserManager;
-
-    const-string v1, "/data/data/com.samsung.android.incallui/"
-
-    invoke-virtual {v0}, Landroid/os/UserManager;->isUserUnlocked()Z
-
-    move-result v0
-
-    if-nez v0, :cond_2
-
-    const-string v0, "VisualCallCenter"
-
-    const-string v1, "Direct Boot mode running"
-
-    invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
-    const-string v0, "/data/user_de/0/com.samsung.android.incallui/"
-
-    move-object p0, v2
-
-    :goto_0
-    new-instance v1, Ljava/io/File;
-
-    invoke-direct {v1, v0}, Ljava/io/File;-><init>(Ljava/lang/String;)V
-
-    invoke-virtual {v1}, Ljava/io/File;->exists()Z
-
-    move-result v2
-
-    if-nez v2, :cond_0
-
-    const-string v2, "VisualCallCenter"
-
-    const-string v3, "!file.exists():"
-
-    invoke-static {v2, v3}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
-    invoke-virtual {v1}, Ljava/io/File;->mkdirs()Z
-
-    move-result v1
-
-    if-eqz v1, :cond_1
-
-    const-string v1, "VisualCallCenter"
-
-    const-string v2, "file success:"
-
-    invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
-    :cond_0
-    new-instance v1, Lcom/yulore/sdk/ivr/a$a;
-
-    invoke-direct {v1, p0}, Lcom/yulore/sdk/ivr/a$a;-><init>(Landroid/content/Context;)V
-
-    const-string v2, "7OX8e8HMMDUfp4glcsz9Mjc9F4JwKyJl"
-
-    invoke-virtual {v1, v2}, Lcom/yulore/sdk/ivr/a$a;->b(Ljava/lang/String;)Lcom/yulore/sdk/ivr/a$a;
-
-    move-result-object v1
-
-    const-string v2, "EJxt0qbvSidBlSxhgzw27KxdrrhdLrW9b2J51YCwQ3lwuF8RemYAbDYYragwlauto2zdyd4hvrlWuNO5rs0snpdMeGhWqfnfzvqhqBvtsci3nHMJzkCTBAV3WR9cngCRiWFLAlXKuwXhwhOzn5Z6iP3cnhvN1RwwOFHf7"
-
-    invoke-virtual {v1, v2}, Lcom/yulore/sdk/ivr/a$a;->a(Ljava/lang/String;)Lcom/yulore/sdk/ivr/a$a;
-
-    move-result-object v1
-
-    new-instance v2, Ljava/io/File;
-
-    const-string v3, "yulore/ivr"
-
-    invoke-direct {v2, v0, v3}, Ljava/io/File;-><init>(Ljava/lang/String;Ljava/lang/String;)V
-
-    invoke-virtual {v1, v2}, Lcom/yulore/sdk/ivr/a$a;->a(Ljava/io/File;)Lcom/yulore/sdk/ivr/a$a;
-
-    move-result-object v0
-
-    new-instance v1, Ljava/io/File;
-
-    const-string v2, "/"
-
-    const-string v3, "system/csc"
-
-    invoke-direct {v1, v2, v3}, Ljava/io/File;-><init>(Ljava/lang/String;Ljava/lang/String;)V
-
-    invoke-virtual {v0, v1}, Lcom/yulore/sdk/ivr/a$a;->b(Ljava/io/File;)Lcom/yulore/sdk/ivr/a$a;
-
-    move-result-object v0
-
-    sget-object v1, Lcom/yulore/sdk/ivr/b;->b:Lcom/yulore/sdk/ivr/b;
-
-    invoke-virtual {v0, v1}, Lcom/yulore/sdk/ivr/a$a;->a(Lcom/yulore/sdk/ivr/b;)Lcom/yulore/sdk/ivr/a$a;
-
-    move-result-object v0
-
-    const/16 v1, 0xa8
-
-    invoke-virtual {v0, v1}, Lcom/yulore/sdk/ivr/a$a;->a(I)Lcom/yulore/sdk/ivr/a$a;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Lcom/yulore/sdk/ivr/a$a;->a()Lcom/yulore/sdk/ivr/a;
-
-    move-result-object v0
-
-    invoke-static {}, Lcom/yulore/sdk/ivr/a/a;->a()Lcom/yulore/sdk/ivr/a/a;
-
-    move-result-object v1
-
-    const/4 v2, 0x0
-
-    invoke-virtual {v1, v0, v2}, Lcom/yulore/sdk/ivr/a/a;->a(Lcom/yulore/sdk/ivr/a;Z)V
-
-    :goto_1
-    return-void
-
-    :cond_1
-    const-string v0, "VisualCallCenter"
-
-    const-string v1, "file fail:"
-
-    invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
-    goto :goto_1
-
-    :cond_2
-    move-object v0, v1
-
-    goto :goto_0
-.end method
-
 .method public static VCC_isNoMenuIVR()Z
     .locals 1
 
@@ -941,6 +798,149 @@
     const/4 v0, 0x0
 
     return-object v0
+.end method
+
+.method public VCC_init(Landroid/content/Context;)V
+    .locals 4
+
+    invoke-virtual {p1}, Landroid/content/Context;->createDeviceProtectedStorageContext()Landroid/content/Context;
+
+    move-result-object v2
+
+    const-string v0, "user"
+
+    invoke-virtual {v2, v0}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Landroid/os/UserManager;
+
+    const-string v1, "/data/data/com.samsung.android.incallui/"
+
+    invoke-virtual {v0}, Landroid/os/UserManager;->isUserUnlocked()Z
+
+    move-result v0
+
+    if-nez v0, :cond_2
+
+    const-string v0, "VisualCallCenter"
+
+    const-string v1, "Direct Boot mode running"
+
+    invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    const-string v0, "/data/user_de/0/com.samsung.android.incallui/"
+
+    move-object p1, v2
+
+    :goto_0
+    new-instance v1, Ljava/io/File;
+
+    invoke-direct {v1, v0}, Ljava/io/File;-><init>(Ljava/lang/String;)V
+
+    invoke-virtual {v1}, Ljava/io/File;->exists()Z
+
+    move-result v2
+
+    if-nez v2, :cond_0
+
+    const-string v2, "VisualCallCenter"
+
+    const-string v3, "!file.exists():"
+
+    invoke-static {v2, v3}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    invoke-virtual {v1}, Ljava/io/File;->mkdirs()Z
+
+    move-result v1
+
+    if-eqz v1, :cond_1
+
+    const-string v1, "VisualCallCenter"
+
+    const-string v2, "file success:"
+
+    invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    :cond_0
+    new-instance v1, Lcom/yulore/sdk/ivr/a$a;
+
+    invoke-direct {v1, p1}, Lcom/yulore/sdk/ivr/a$a;-><init>(Landroid/content/Context;)V
+
+    const-string v2, "7OX8e8HMMDUfp4glcsz9Mjc9F4JwKyJl"
+
+    invoke-virtual {v1, v2}, Lcom/yulore/sdk/ivr/a$a;->b(Ljava/lang/String;)Lcom/yulore/sdk/ivr/a$a;
+
+    move-result-object v1
+
+    const-string v2, "EJxt0qbvSidBlSxhgzw27KxdrrhdLrW9b2J51YCwQ3lwuF8RemYAbDYYragwlauto2zdyd4hvrlWuNO5rs0snpdMeGhWqfnfzvqhqBvtsci3nHMJzkCTBAV3WR9cngCRiWFLAlXKuwXhwhOzn5Z6iP3cnhvN1RwwOFHf7"
+
+    invoke-virtual {v1, v2}, Lcom/yulore/sdk/ivr/a$a;->a(Ljava/lang/String;)Lcom/yulore/sdk/ivr/a$a;
+
+    move-result-object v1
+
+    new-instance v2, Ljava/io/File;
+
+    const-string v3, "yulore/ivr"
+
+    invoke-direct {v2, v0, v3}, Ljava/io/File;-><init>(Ljava/lang/String;Ljava/lang/String;)V
+
+    invoke-virtual {v1, v2}, Lcom/yulore/sdk/ivr/a$a;->a(Ljava/io/File;)Lcom/yulore/sdk/ivr/a$a;
+
+    move-result-object v0
+
+    new-instance v1, Ljava/io/File;
+
+    const-string v2, "/"
+
+    const-string v3, "system/csc"
+
+    invoke-direct {v1, v2, v3}, Ljava/io/File;-><init>(Ljava/lang/String;Ljava/lang/String;)V
+
+    invoke-virtual {v0, v1}, Lcom/yulore/sdk/ivr/a$a;->b(Ljava/io/File;)Lcom/yulore/sdk/ivr/a$a;
+
+    move-result-object v0
+
+    sget-object v1, Lcom/yulore/sdk/ivr/b;->b:Lcom/yulore/sdk/ivr/b;
+
+    invoke-virtual {v0, v1}, Lcom/yulore/sdk/ivr/a$a;->a(Lcom/yulore/sdk/ivr/b;)Lcom/yulore/sdk/ivr/a$a;
+
+    move-result-object v0
+
+    const/16 v1, 0xa8
+
+    invoke-virtual {v0, v1}, Lcom/yulore/sdk/ivr/a$a;->a(I)Lcom/yulore/sdk/ivr/a$a;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lcom/yulore/sdk/ivr/a$a;->a()Lcom/yulore/sdk/ivr/a;
+
+    move-result-object v0
+
+    invoke-static {}, Lcom/yulore/sdk/ivr/a/a;->a()Lcom/yulore/sdk/ivr/a/a;
+
+    move-result-object v1
+
+    const/4 v2, 0x0
+
+    invoke-virtual {v1, v0, v2}, Lcom/yulore/sdk/ivr/a/a;->a(Lcom/yulore/sdk/ivr/a;Z)V
+
+    :goto_1
+    return-void
+
+    :cond_1
+    const-string v0, "VisualCallCenter"
+
+    const-string v1, "file fail:"
+
+    invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    goto :goto_1
+
+    :cond_2
+    move-object v0, v1
+
+    goto :goto_0
 .end method
 
 .method public VCC_isShortcutPath(Ljava/lang/String;)Z

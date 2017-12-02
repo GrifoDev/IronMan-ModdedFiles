@@ -97,7 +97,7 @@
 
     if-lez v1, :cond_0
 
-    const-string v1, "\u5173\u952e\u65f6\u523b\u6389\u94fe\u5b50\u4e86,\u7a0b\u5e8f\u733f\u6b63\u5728\u52aa\u529b\u4fee\u8865\u4e2d!"
+    const-string/jumbo v1, "\u5173\u952e\u65f6\u523b\u6389\u94fe\u5b50\u4e86,\u7a0b\u5e8f\u733f\u6b63\u5728\u52aa\u529b\u4fee\u8865\u4e2d!"
 
     invoke-virtual {v0, v1}, Lcom/cmdm/control/bean/ErrorXMLException;->setText(Ljava/lang/String;)V
 
@@ -105,7 +105,7 @@
     return-object v0
 
     :cond_0
-    const-string v1, "\u54a6\uff0c\u7f51\u7edc\u597d\u50cf\u4e0d\u7ed9\u529b\uff0c\u8bf7\u7a0d\u540e\u91cd\u8bd5~"
+    const-string/jumbo v1, "\u54a6\uff0c\u7f51\u7edc\u597d\u50cf\u4e0d\u7ed9\u529b\uff0c\u8bf7\u7a0d\u540e\u91cd\u8bd5~"
 
     invoke-virtual {v0, v1}, Lcom/cmdm/control/bean/ErrorXMLException;->setText(Ljava/lang/String;)V
 
@@ -703,7 +703,7 @@
 
     const-string v3, "CaiYinSDK"
 
-    const-string v5, "\u8d2d\u4e70\u6210\u529f"
+    const-string/jumbo v5, "\u8d2d\u4e70\u6210\u529f"
 
     invoke-static {v3, v5}, Lcom/cmdm/control/util/PrintLog;->i(Ljava/lang/String;Ljava/lang/String;)V
 
@@ -725,7 +725,7 @@
 
     if-eqz v5, :cond_4
 
-    const-string v4, "\u6536\u85cf\u5931\u8d25,\u8bf7\u7a0d\u5019\u91cd\u8bd5!"
+    const-string/jumbo v4, "\u6536\u85cf\u5931\u8d25,\u8bf7\u7a0d\u5019\u91cd\u8bd5!"
 
     if-eqz v3, :cond_3
 
@@ -759,7 +759,7 @@
 
     if-eqz v5, :cond_3
 
-    const-string v3, "\u60a8\u7684\u6536\u85cf\u56fe\u5e93\u5df2\u6ee1\uff0c\u8bf7\u5220\u9664\u540e\u518d\u6536\u85cf"
+    const-string/jumbo v3, "\u60a8\u7684\u6536\u85cf\u56fe\u5e93\u5df2\u6ee1\uff0c\u8bf7\u5220\u9664\u540e\u518d\u6536\u85cf"
 
     move-object v4, v3
 
@@ -885,7 +885,7 @@
     :try_start_4
     const-string v3, "CaiYinSDK"
 
-    const-string v5, "\u8d2d\u4e70\u5931\u8d25"
+    const-string/jumbo v5, "\u8d2d\u4e70\u5931\u8d25"
 
     invoke-static {v3, v5}, Lcom/cmdm/control/util/PrintLog;->i(Ljava/lang/String;Ljava/lang/String;)V
 

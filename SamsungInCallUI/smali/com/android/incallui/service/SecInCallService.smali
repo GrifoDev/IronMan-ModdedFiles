@@ -11,8 +11,6 @@
 
 
 # static fields
-.field private static final MSG_ANSWER_MEMO_STOP_GUIDANCE:I = 0x9
-
 .field private static final MSG_ANSWER_RINGING_CALL:I = 0x3
 
 .field private static final MSG_CALL_CREATION_TIME_RTT:I = 0x8

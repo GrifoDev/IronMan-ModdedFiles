@@ -36,17 +36,11 @@
 .method public onClick(Landroid/content/DialogInterface;I)V
     .locals 2
 
+    invoke-static {}, Lcom/android/incallui/InCallPresenter;->getInstance()Lcom/android/incallui/InCallPresenter;
+
+    move-result-object v0
+
     const/4 v1, 0x0
-
-    invoke-static {}, Lcom/android/incallui/InCallPresenter;->getInstance()Lcom/android/incallui/InCallPresenter;
-
-    move-result-object v0
-
-    invoke-virtual {v0, v1}, Lcom/android/incallui/InCallPresenter;->setRttCapability(Z)V
-
-    invoke-static {}, Lcom/android/incallui/InCallPresenter;->getInstance()Lcom/android/incallui/InCallPresenter;
-
-    move-result-object v0
 
     invoke-virtual {v0, v1}, Lcom/android/incallui/InCallPresenter;->setTempRTT(Z)V
 

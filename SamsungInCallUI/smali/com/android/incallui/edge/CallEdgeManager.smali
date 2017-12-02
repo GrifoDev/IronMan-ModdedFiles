@@ -482,13 +482,13 @@
 
     invoke-static {v0, v1, v2}, Lcom/android/incallui/util/AppLogging;->insertLog(Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;)V
 
-    const v0, 0x7f09049e
+    const v0, 0x7f0904a3
 
     invoke-static {v0}, Lcom/android/incallui/util/SALogging;->getString(I)Ljava/lang/String;
 
     move-result-object v0
 
-    const v1, 0x7f09049f
+    const v1, 0x7f0904a4
 
     invoke-static {v1}, Lcom/android/incallui/util/SALogging;->getString(I)Ljava/lang/String;
 

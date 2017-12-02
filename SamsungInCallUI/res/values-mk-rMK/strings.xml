@@ -118,12 +118,13 @@
     <string name="account_phone">Уред</string>
     <string name="acs">Говорен повик</string>
     <string name="active_calls">Активен повик</string>
-    <string name="add_reminder">Дод. потсет.</string>
+    <string name="add_reminder">Додај потсетник</string>
     <string name="agif_button_close_description">Затвори</string>
     <string name="agif_decline_message">Извинете, не можам да зборувам во моментов.</string>
     <string name="agif_decline_sticker_header">Одбивање со налепница</string>
     <string name="agif_decline_text_header">Одбивање со текст</string>
     <string name="agif_decline_toast">Налепницата е пратена до %s.</string>
+    <string name="agif_outgoing_bubble_tip">Испратете налепница за да прикажете како се чувствувате.</string>
     <string name="agif_pickers_add_tab_description">Додај</string>
     <string name="agif_pickers_downloaded">Преземено</string>
     <string name="agif_pickers_item_usage_hints_description">Допри двапати за бирање</string>
@@ -139,10 +140,12 @@
     <string name="agif_pickers_tab_select_description">Избрано</string>
     <string name="agif_pickers_title">Започнете со налепница</string>
     <string name="agif_pickers_title_top_stickers">Врвни налепници</string>
+    <string name="agif_random_send_message">Допрете тука за ја испратите оваа налепница.</string>
     <string name="agif_read_permission_description">Дозволете Телефон да ја чита содржината AGIF.</string>
     <string name="agif_read_permission_label">Прочитајте содржина AGIF</string>
     <string name="agif_receive_no_id">Налепницата не може да се прикаже. Ажурирајте ја %s по повикот.</string>
     <string name="agif_receive_no_id_upsupport_update">Налепницата не може да се прикаже. Ќе бидат достапни повеќе налепници по следното ажур. на системот.</string>
+    <string name="agif_receive_toast">Налепница од %s.</string>
     <string name="agif_sent_fail_message">Не може да се прати анимиран GIF. Обидете се повторно подоцна.</string>
     <string name="agif_sent_toast">Пратена е налепница.</string>
     <string name="agif_write_permission_description">Дозволете Телефон да ја измени содржината AGIF.</string>
@@ -811,6 +814,7 @@
     <string name="sticker_delete_stickers">Да се избришат %d налепници?</string>
     <string name="sticker_delete_this_sticker">Да се избрише оваа налепница?</string>
     <string name="sticker_setting_edit_title">Изберете налепници</string>
+    <string name="sticker_setting_edit_title_preload">Прередување на налепници</string>
     <string name="sticker_setting_main_title">Мои налепници</string>
     <string name="sticker_setting_menu_delete">Избриши</string>
     <string name="sticker_setting_menu_edit">Измени</string>
@@ -823,6 +827,7 @@
     <string name="swipe_right_to_answer_call_with_video">Поминете надесно за да одговорите на повик со видео.</string>
     <string name="swipe_right_to_answer_call_without_video">Поминете надесно за да одговорите на повик без видео.</string>
     <string name="switch_rejected_by_mt">Барањето за префрлување на видео повик е одбиено.</string>
+    <string name="switch_rejected_by_mt_att">Video unavailable for this call. Call connected as a voice call.</string>
     <string name="switch_to_video_call_failed">Барањето за префрлување на видео повик не успеа.</string>
     <string name="switch_to_video_call_failed_tmo">Барањето за префрлување на видео повик е одбиено.</string>
     <string name="switch_to_voice_call_failed">Барањето за префрлување на говорен повик не успеа.</string>

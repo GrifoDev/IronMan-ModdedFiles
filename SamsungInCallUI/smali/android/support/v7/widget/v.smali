@@ -309,13 +309,13 @@
 
     const/4 v2, 0x0
 
-    invoke-static {v0, p1, v1, p2, v2}, Landroid/support/v7/widget/au;->a(Landroid/content/Context;Landroid/util/AttributeSet;[III)Landroid/support/v7/widget/au;
+    invoke-static {v0, p1, v1, p2, v2}, Landroid/support/v7/widget/bb;->a(Landroid/content/Context;Landroid/util/AttributeSet;[III)Landroid/support/v7/widget/bb;
 
     move-result-object v0
 
     sget v1, Landroid/support/v7/a/a$j;->AppCompatSeekBar_android_thumb:I
 
-    invoke-virtual {v0, v1}, Landroid/support/v7/widget/au;->b(I)Landroid/graphics/drawable/Drawable;
+    invoke-virtual {v0, v1}, Landroid/support/v7/widget/bb;->b(I)Landroid/graphics/drawable/Drawable;
 
     move-result-object v1
 
@@ -328,7 +328,7 @@
     :cond_0
     sget v1, Landroid/support/v7/a/a$j;->AppCompatSeekBar_tickMark:I
 
-    invoke-virtual {v0, v1}, Landroid/support/v7/widget/au;->a(I)Landroid/graphics/drawable/Drawable;
+    invoke-virtual {v0, v1}, Landroid/support/v7/widget/bb;->a(I)Landroid/graphics/drawable/Drawable;
 
     move-result-object v1
 
@@ -336,7 +336,7 @@
 
     sget v1, Landroid/support/v7/a/a$j;->AppCompatSeekBar_tickMarkTintMode:I
 
-    invoke-virtual {v0, v1}, Landroid/support/v7/widget/au;->g(I)Z
+    invoke-virtual {v0, v1}, Landroid/support/v7/widget/bb;->g(I)Z
 
     move-result v1
 
@@ -346,13 +346,13 @@
 
     const/4 v2, -0x1
 
-    invoke-virtual {v0, v1, v2}, Landroid/support/v7/widget/au;->a(II)I
+    invoke-virtual {v0, v1, v2}, Landroid/support/v7/widget/bb;->a(II)I
 
     move-result v1
 
     iget-object v2, p0, Landroid/support/v7/widget/v;->e:Landroid/graphics/PorterDuff$Mode;
 
-    invoke-static {v1, v2}, Landroid/support/v7/widget/ac;->a(ILandroid/graphics/PorterDuff$Mode;)Landroid/graphics/PorterDuff$Mode;
+    invoke-static {v1, v2}, Landroid/support/v7/widget/ah;->a(ILandroid/graphics/PorterDuff$Mode;)Landroid/graphics/PorterDuff$Mode;
 
     move-result-object v1
 
@@ -363,7 +363,7 @@
     :cond_1
     sget v1, Landroid/support/v7/a/a$j;->AppCompatSeekBar_tickMarkTint:I
 
-    invoke-virtual {v0, v1}, Landroid/support/v7/widget/au;->g(I)Z
+    invoke-virtual {v0, v1}, Landroid/support/v7/widget/bb;->g(I)Z
 
     move-result v1
 
@@ -371,7 +371,7 @@
 
     sget v1, Landroid/support/v7/a/a$j;->AppCompatSeekBar_tickMarkTint:I
 
-    invoke-virtual {v0, v1}, Landroid/support/v7/widget/au;->e(I)Landroid/content/res/ColorStateList;
+    invoke-virtual {v0, v1}, Landroid/support/v7/widget/bb;->e(I)Landroid/content/res/ColorStateList;
 
     move-result-object v1
 
@@ -380,7 +380,7 @@
     iput-boolean v3, p0, Landroid/support/v7/widget/v;->f:Z
 
     :cond_2
-    invoke-virtual {v0}, Landroid/support/v7/widget/au;->a()V
+    invoke-virtual {v0}, Landroid/support/v7/widget/bb;->a()V
 
     invoke-direct {p0}, Landroid/support/v7/widget/v;->d()V
 

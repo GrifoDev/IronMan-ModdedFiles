@@ -42,9 +42,9 @@
 
     const/4 v2, 0x0
 
-    const/4 v1, 0x1
-
     const/4 v0, 0x0
+
+    const/4 v1, 0x1
 
     const-string v4, "HeadUpNotificationService"
 
@@ -118,6 +118,19 @@
     goto :goto_0
 
     :pswitch_0
+    const-string v0, "support_folder_hardkey"
+
+    invoke-static {v0}, Lcom/android/incallui/InCallUIFeature;->hasFeature(Ljava/lang/String;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_4
+
+    iget-object v0, p0, Lcom/android/incallui/service/HeadUpNotificationService$1;->this$0:Lcom/android/incallui/service/HeadUpNotificationService;
+
+    invoke-virtual {v0, v1}, Lcom/android/incallui/service/HeadUpNotificationService;->onFocus(Z)V
+
+    :cond_4
     iget-object v0, p0, Lcom/android/incallui/service/HeadUpNotificationService$1;->this$0:Lcom/android/incallui/service/HeadUpNotificationService;
 
     invoke-virtual {p2}, Landroid/view/MotionEvent;->getRawX()F
@@ -157,7 +170,7 @@
 
     iget-boolean v0, v0, Lcom/android/incallui/service/HeadUpNotificationService;->mDoLaunchFullScreen:Z
 
-    if-eqz v0, :cond_4
+    if-eqz v0, :cond_5
 
     iget-object v0, p0, Lcom/android/incallui/service/HeadUpNotificationService$1;->this$0:Lcom/android/incallui/service/HeadUpNotificationService;
 
@@ -165,7 +178,7 @@
 
     goto :goto_0
 
-    :cond_4
+    :cond_5
     :pswitch_2
     iget-object v0, p0, Lcom/android/incallui/service/HeadUpNotificationService$1;->this$0:Lcom/android/incallui/service/HeadUpNotificationService;
 
@@ -245,7 +258,7 @@
 
     move-result-object v6
 
-    if-eqz v6, :cond_a
+    if-eqz v6, :cond_b
 
     iget-object v6, p0, Lcom/android/incallui/service/HeadUpNotificationService$1;->this$0:Lcom/android/incallui/service/HeadUpNotificationService;
 
@@ -253,7 +266,7 @@
 
     move-result-object v6
 
-    if-eqz v6, :cond_a
+    if-eqz v6, :cond_b
 
     iget-object v6, p0, Lcom/android/incallui/service/HeadUpNotificationService$1;->this$0:Lcom/android/incallui/service/HeadUpNotificationService;
 
@@ -281,15 +294,15 @@
 
     cmpl-float v8, v7, v8
 
-    if-lez v8, :cond_b
+    if-lez v8, :cond_c
 
     cmpl-float v8, v7, v2
 
-    if-lez v8, :cond_b
+    if-lez v8, :cond_c
 
     cmpg-float v8, v7, v6
 
-    if-gez v8, :cond_b
+    if-gez v8, :cond_c
 
     div-float v2, v7, v6
 
@@ -297,13 +310,13 @@
 
     iget-boolean v6, v6, Lcom/android/incallui/service/HeadUpNotificationService;->mCanSlideOut:Z
 
-    if-eqz v6, :cond_6
+    if-eqz v6, :cond_7
 
     const v6, 0x3ecccccd    # 0.4f
 
     cmpl-float v6, v2, v6
 
-    if-lez v6, :cond_6
+    if-lez v6, :cond_7
 
     iget-object v2, p0, Lcom/android/incallui/service/HeadUpNotificationService$1;->this$0:Lcom/android/incallui/service/HeadUpNotificationService;
 
@@ -315,19 +328,19 @@
 
     iget v3, v3, Landroid/view/WindowManager$LayoutParams;->x:I
 
-    if-gez v3, :cond_5
+    if-gez v3, :cond_6
 
     move v0, v1
 
-    :cond_5
+    :cond_6
     invoke-static {v2, v0}, Lcom/android/incallui/service/HeadUpNotificationService;->access$800(Lcom/android/incallui/service/HeadUpNotificationService;Z)V
 
     goto/16 :goto_0
 
-    :cond_6
+    :cond_7
     sub-float v2, v3, v2
 
-    :cond_7
+    :cond_8
     :goto_1
     iget-object v3, p0, Lcom/android/incallui/service/HeadUpNotificationService$1;->this$0:Lcom/android/incallui/service/HeadUpNotificationService;
 
@@ -345,7 +358,7 @@
 
     move-result v3
 
-    if-le v2, v3, :cond_8
+    if-le v2, v3, :cond_9
 
     invoke-static {v4}, Ljava/lang/Math;->abs(I)I
 
@@ -353,11 +366,11 @@
 
     const/16 v3, 0x100
 
-    if-ge v2, v3, :cond_8
+    if-ge v2, v3, :cond_9
 
     const/16 v2, 0x100
 
-    if-le v5, v2, :cond_8
+    if-le v5, v2, :cond_9
 
     iget-object v2, p0, Lcom/android/incallui/service/HeadUpNotificationService$1;->this$0:Lcom/android/incallui/service/HeadUpNotificationService;
 
@@ -365,7 +378,7 @@
 
     move-result-object v2
 
-    if-eqz v2, :cond_8
+    if-eqz v2, :cond_9
 
     iget-object v2, p0, Lcom/android/incallui/service/HeadUpNotificationService$1;->this$0:Lcom/android/incallui/service/HeadUpNotificationService;
 
@@ -379,7 +392,7 @@
 
     iget-boolean v2, v2, Lcom/android/incallui/service/HeadUpNotificationService;->mCanSlideOut:Z
 
-    if-eqz v2, :cond_8
+    if-eqz v2, :cond_9
 
     iget-object v2, p0, Lcom/android/incallui/service/HeadUpNotificationService$1;->this$0:Lcom/android/incallui/service/HeadUpNotificationService;
 
@@ -389,45 +402,45 @@
 
     invoke-virtual {v2}, Lcom/android/incallui/service/HeadUpNotificationService;->stopSelf()V
 
-    :cond_8
+    :cond_9
     invoke-static {v4}, Ljava/lang/Math;->abs(I)I
 
     move-result v2
 
-    if-gt v2, v9, :cond_9
+    if-gt v2, v9, :cond_a
 
     invoke-static {v5}, Ljava/lang/Math;->abs(I)I
 
     move-result v2
 
-    if-le v2, v9, :cond_a
+    if-le v2, v9, :cond_b
 
-    :cond_9
+    :cond_a
     iget-object v2, p0, Lcom/android/incallui/service/HeadUpNotificationService$1;->this$0:Lcom/android/incallui/service/HeadUpNotificationService;
 
     iput-boolean v0, v2, Lcom/android/incallui/service/HeadUpNotificationService;->mDoLaunchFullScreen:Z
 
-    :cond_a
+    :cond_b
     iget-object v0, p0, Lcom/android/incallui/service/HeadUpNotificationService$1;->this$0:Lcom/android/incallui/service/HeadUpNotificationService;
 
     invoke-virtual {v0}, Lcom/android/incallui/service/HeadUpNotificationService;->updateViewLayout()V
 
     goto/16 :goto_0
 
-    :cond_b
+    :cond_c
     iget-object v6, p0, Lcom/android/incallui/service/HeadUpNotificationService$1;->this$0:Lcom/android/incallui/service/HeadUpNotificationService;
 
     iget-boolean v6, v6, Lcom/android/incallui/service/HeadUpNotificationService;->mCanSlideOut:Z
 
-    if-eqz v6, :cond_c
+    if-eqz v6, :cond_d
 
     int-to-float v6, v5
 
     cmpl-float v6, v6, v7
 
-    if-lez v6, :cond_c
+    if-lez v6, :cond_d
 
-    if-lez v5, :cond_c
+    if-lez v5, :cond_d
 
     int-to-float v6, v5
 
@@ -439,14 +452,12 @@
 
     cmpg-float v6, v3, v2
 
-    if-ltz v6, :cond_7
+    if-ltz v6, :cond_8
 
-    :cond_c
+    :cond_d
     move v2, v3
 
     goto :goto_1
-
-    nop
 
     :pswitch_data_0
     .packed-switch 0x0

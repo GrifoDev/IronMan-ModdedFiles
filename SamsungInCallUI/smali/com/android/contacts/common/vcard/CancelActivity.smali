@@ -118,7 +118,7 @@
 
     if-ne v0, v1, :cond_0
 
-    const v0, 0x7f090528
+    const v0, 0x7f09052d
 
     new-array v1, v1, [Ljava/lang/Object;
 
@@ -171,7 +171,7 @@
     return-object v0
 
     :cond_0
-    const v0, 0x7f090527
+    const v0, 0x7f09052c
 
     new-array v1, v1, [Ljava/lang/Object;
 
@@ -194,7 +194,7 @@
 
     invoke-direct {v0, p0}, Landroid/app/AlertDialog$Builder;-><init>(Landroid/content/Context;)V
 
-    const v1, 0x7f090529
+    const v1, 0x7f09052e
 
     invoke-virtual {v0, v1}, Landroid/app/AlertDialog$Builder;->setTitle(I)Landroid/app/AlertDialog$Builder;
 
@@ -206,7 +206,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f0905ac
+    const v1, 0x7f0905b1
 
     invoke-virtual {p0, v1}, Lcom/android/contacts/common/vcard/CancelActivity;->getString(I)Ljava/lang/String;
 

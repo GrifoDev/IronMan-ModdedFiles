@@ -2,12 +2,12 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Landroid/content/DialogInterface$OnKeyListener;
+.implements Landroid/content/DialogInterface$OnClickListener;
 
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/android/incallui/InCallActivity;->onTtyNotification(Z)V
+    value = Lcom/android/incallui/InCallActivity;->showDataUsageLimitDialogforTMO()V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -19,16 +19,12 @@
 # instance fields
 .field final synthetic this$0:Lcom/android/incallui/InCallActivity;
 
-.field final synthetic val$isIncoming:Z
-
 
 # direct methods
-.method constructor <init>(Lcom/android/incallui/InCallActivity;Z)V
+.method constructor <init>(Lcom/android/incallui/InCallActivity;)V
     .locals 0
 
     iput-object p1, p0, Lcom/android/incallui/InCallActivity$22;->this$0:Lcom/android/incallui/InCallActivity;
-
-    iput-boolean p2, p0, Lcom/android/incallui/InCallActivity$22;->val$isIncoming:Z
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -37,29 +33,10 @@
 
 
 # virtual methods
-.method public onKey(Landroid/content/DialogInterface;ILandroid/view/KeyEvent;)Z
-    .locals 1
+.method public onClick(Landroid/content/DialogInterface;I)V
+    .locals 0
 
-    iget-boolean v0, p0, Lcom/android/incallui/InCallActivity$22;->val$isIncoming:Z
+    invoke-interface {p1}, Landroid/content/DialogInterface;->dismiss()V
 
-    if-eqz v0, :cond_1
-
-    const/4 v0, 0x4
-
-    if-eq p2, v0, :cond_0
-
-    const/4 v0, 0x5
-
-    if-ne p2, v0, :cond_1
-
-    :cond_0
-    const/4 v0, 0x1
-
-    :goto_0
-    return v0
-
-    :cond_1
-    const/4 v0, 0x0
-
-    goto :goto_0
+    return-void
 .end method

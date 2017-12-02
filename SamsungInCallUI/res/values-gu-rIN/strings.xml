@@ -126,6 +126,7 @@
     <string name="agif_decline_sticker_header">સ્ટીકર સાથે અસ્વીકાર કરો</string>
     <string name="agif_decline_text_header">ટેક્સ્ટ સાથે અસ્વીકાર કરો</string>
     <string name="agif_decline_toast">%s ને સ્ટીકર મોકલ્યું.</string>
+    <string name="agif_outgoing_bubble_tip">તમે શું અનુભવો છો એ બતાવવા માટે સ્ટીકર મોકલો.</string>
     <string name="agif_pickers_add_tab_description">ઉમેરો</string>
     <string name="agif_pickers_downloaded">ડાઉનલોડ કરેલ</string>
     <string name="agif_pickers_item_usage_hints_description">પસંદ કરવા માટે બેવાર ટેપ કરો</string>
@@ -141,10 +142,12 @@
     <string name="agif_pickers_tab_select_description">પસંદ કરેલ</string>
     <string name="agif_pickers_title">સ્ટીકર સાથે શરૂ કરો</string>
     <string name="agif_pickers_title_top_stickers">ટોચના સ્ટીકર્સ</string>
+    <string name="agif_random_send_message">આ સ્ટીકર મોકલવા માટે અહીં ટેપ કરો.</string>
     <string name="agif_read_permission_description">ફોનને AGIF સામગ્રી વાંચવાની મંજૂરી આપે છે.</string>
     <string name="agif_read_permission_label">AGIF સામગ્રી વાંચો</string>
     <string name="agif_receive_no_id">સ્ટીકર બતાવી શકાતા નથી. કૉલ પછી %s ને અપડેટ કરો.</string>
     <string name="agif_receive_no_id_upsupport_update">સ્ટીકર બતાવી શકાતા નથી. પછીનો સિસ્ટમ અપડેટ થયા પછી વધુ સ્ટીકર્સ ઉપલબ્ધ રહેશે.</string>
+    <string name="agif_receive_toast">%s માંથી સ્ટીકર.</string>
     <string name="agif_sent_fail_message">એનિમેટ કરેલ GIF મોકલી શકાતા નથી. પછીથી ફરી પ્રયાસ કરો.</string>
     <string name="agif_sent_toast">સ્ટીકર મોકલ્યું.</string>
     <string name="agif_write_permission_description">ફોનને AGIF સામગ્રી સંપાદિત કરવાની મંજૂરી આપે છે.</string>
@@ -258,8 +261,8 @@
     <string name="cover_incoming_call_reject_widget_description">કૉલ અસ્વીકાર કરવા માટે બે આંગળીઓ વડે ડાબે સ્વાઇપ કરો.</string>
     <string name="cover_redial_call_image_widget_description">કૉલ કરવા માટે બે આંગળીઓ સાથે ડાબે અથવા જમણે સ્વાઇપ કરો.</string>
     <string name="cover_third_call_incoming">કોલનો જવાબ આપવાથી સક્રિય કોલ સમાપ્ત કરશે.</string>
-    <string name="ctc_full_operator_name">ચાઇના ટેલિકોમ</string>
-    <string name="cu_operator_name">ચાઇના યુનિકોમ</string>
+    <string name="ctc_full_operator_name">ચીન ટેલિકોમ</string>
+    <string name="cu_operator_name">ચીન યુનિકોમ</string>
     <string name="current_call_with_held_call">%s સાથેનો તમારો કૉલ અવલંબન પર છે.</string>
     <string name="data_usage_charge_alert">મોબાઇલ નેટવર્ક પર વિડિયો કૉલિંગ માટે બન્ને ડેટા અને અવાજ મિનિટ્સના ઉપયોગની આવશ્યકતા છે. શુલ્કો લાગુ થઈ શકે છે.</string>
     <string name="data_usage_limit_dialog_continue_call">કૉલ ચાલુ રાખો</string>
@@ -557,7 +560,7 @@ IVR કૉલ સ્ક્રીન મેનૂ Dianhuabang કહેવાત�
     <string name="noti_permission_desc">%s નો ઉપયોગ કરવા માટે, સેટિંગ્સ > અનુમતિઓ પર જાઓ, પછી નીચે આપેલ પરવાનગીઓને મંજૂરી આપો:</string>
     <string name="noti_permission_title">%s નો ઉપયોગ કરવામાં અસમર્થ</string>
     <string name="notification_action_answer">જવાબ આપો</string>
-    <string name="notification_of_sub_number_empty_body">વૈકલ્પિક નંબરો જોવા માટે, SIM કાર્ડ મલ્ટી-નંબર સેવા પર સબ્સ્ક્રાઇબ કરો અને ફરી પ્રયાસ કરો.</string>
+    <string name="notification_of_sub_number_empty_body">વૈકલ્પિક નંબરો જોવા માટે, SIM કાર્ડ મલ્ટિ-નંબર સેવા પર સબ્સ્ક્રાઇબ કરો અને ફરી પ્રયાસ કરો.</string>
     <string name="notification_of_sub_number_empty_title">વૈકલ્પિક નંબરો શોધવામાં અસમર્થ</string>
     <string name="onscreenBluetoothTextOff">હેડસેટમાં લઇ જાવ</string>
     <string name="onscreenBluetoothTextOn">ફોનમાં લઇ જાવ</string>
@@ -813,6 +816,7 @@ IVR કૉલ સ્ક્રીન મેનૂ Dianhuabang કહેવાત�
     <string name="sticker_delete_stickers">%d સ્ટીકર્સ હટાવીએ?</string>
     <string name="sticker_delete_this_sticker">આ સ્ટીકર હટાવીએ?</string>
     <string name="sticker_setting_edit_title">સ્ટીકર્સ પસંદ કરો</string>
+    <string name="sticker_setting_edit_title_preload">સ્ટિકર્સ પુનઃક્રમાંકિત કરો</string>
     <string name="sticker_setting_main_title">મારા સ્ટીકર્સ</string>
     <string name="sticker_setting_menu_delete">કાઢી નાખો</string>
     <string name="sticker_setting_menu_edit">સંપાદિત કરો</string>
@@ -825,6 +829,7 @@ IVR કૉલ સ્ક્રીન મેનૂ Dianhuabang કહેવાત�
     <string name="swipe_right_to_answer_call_with_video">વિડિયો સાથે કૉલનો જવાબ આપવા માટે જમણે સ્વાઇપ કરો.</string>
     <string name="swipe_right_to_answer_call_without_video">વિડિયો વિના કૉલનો જવાબ આપવા માટે જમણે સ્વાઇપ કરો.</string>
     <string name="switch_rejected_by_mt">વિડિયો કૉલ પર સ્વિચ કરવાની વિનંતી નકારી.</string>
+    <string name="switch_rejected_by_mt_att">Video unavailable for this call. Call connected as a voice call.</string>
     <string name="switch_to_video_call_failed">વિડિયો કૉલ પર ફેરબદલી કરવાની વિનંતી નિષ્ફળ ગઈ.</string>
     <string name="switch_to_video_call_failed_tmo">વિડિયો કૉલ પર સ્વિચ કરવાની વિનંતી અસ્વીકારવામાં આવી.</string>
     <string name="switch_to_voice_call_failed">વિડિયો કૉલ પર સ્વિચ કરવાની વિનંતી નિષ્ફળ ગઈ.</string>

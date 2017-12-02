@@ -91,7 +91,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f0e0051
+    const v2, 0x7f0f0050
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getInteger(I)I
 
@@ -121,7 +121,7 @@
 
     :array_0
     .array-data 4
-        0x0
+        0x3f666666    # 0.9f
         0x3f800000    # 1.0f
     .end array-data
 .end method

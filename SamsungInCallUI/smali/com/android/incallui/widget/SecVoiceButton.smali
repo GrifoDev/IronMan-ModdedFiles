@@ -11,6 +11,8 @@
 
 .field private mBackgroundDrawable:Landroid/graphics/drawable/Drawable;
 
+.field private mContext:Landroid/content/Context;
+
 .field private mIsAnimatorRunning:Z
 
 .field private mMeasuredHeight:I
@@ -80,6 +82,8 @@
 .method private init(Landroid/content/Context;)V
     .locals 4
 
+    iput-object p1, p0, Lcom/android/incallui/widget/SecVoiceButton;->mContext:Landroid/content/Context;
+
     const/4 v0, 0x2
 
     invoke-virtual {p0, v0}, Lcom/android/incallui/widget/SecVoiceButton;->semSetHoverPopupType(I)V
@@ -94,7 +98,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f0a01d8
+    const v1, 0x7f0a01c3
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -106,7 +110,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f0a01d7
+    const v1, 0x7f0a01c2
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -119,7 +123,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f0a01b7
+    const v1, 0x7f0a01a5
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -141,7 +145,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f0a0449
+    const v1, 0x7f0a0453
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -159,7 +163,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f0a047a
+    const v1, 0x7f0a0485
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -172,7 +176,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f02023b
+    const v1, 0x7f02024b
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 
@@ -216,7 +220,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f0a01db
+    const v1, 0x7f0a01c6
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -228,7 +232,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f0a01da
+    const v1, 0x7f0a01c5
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -243,7 +247,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f0a0587
+    const v1, 0x7f0a059c
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -255,7 +259,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f0a0586
+    const v1, 0x7f0a059b
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -281,7 +285,7 @@
 
     move-result-object v4
 
-    const v5, 0x7f0a0585
+    const v5, 0x7f0a059a
 
     invoke-virtual {v4, v5}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -389,7 +393,7 @@
 
     move-result-object v0
 
-    const v2, 0x7f0a0077
+    const v2, 0x7f0a0073
 
     invoke-virtual {v0, v2}, Landroid/content/res/Resources;->getDimension(I)F
 
@@ -407,7 +411,7 @@
 
     move-result-object v0
 
-    const v2, 0x7f0a01b8
+    const v2, 0x7f0a01a6
 
     invoke-virtual {v0, v2}, Landroid/content/res/Resources;->getDimension(I)F
 
@@ -480,7 +484,7 @@
     return-void
 
     :cond_0
-    const v0, 0x7f020390
+    const v0, 0x7f0203a0
 
     invoke-virtual {p0, v0}, Lcom/android/incallui/widget/SecVoiceButton;->setBackgroundResource(I)V
 
@@ -493,7 +497,7 @@
 
     if-eqz v0, :cond_2
 
-    const v0, 0x7f0203a2
+    const v0, 0x7f0203b2
 
     invoke-virtual {p0, v0}, Lcom/android/incallui/widget/SecVoiceButton;->setBackgroundResource(I)V
 
@@ -510,14 +514,14 @@
 
     if-eqz v0, :cond_3
 
-    const v0, 0x7f0203a0
+    const v0, 0x7f0203b0
 
     invoke-virtual {p0, v0}, Lcom/android/incallui/widget/SecVoiceButton;->setBackgroundResource(I)V
 
     goto :goto_0
 
     :cond_3
-    const v0, 0x7f02039c
+    const v0, 0x7f0203ac
 
     invoke-virtual {p0, v0}, Lcom/android/incallui/widget/SecVoiceButton;->setBackgroundResource(I)V
 
@@ -581,7 +585,7 @@
 
     if-nez v0, :cond_2
 
-    const v0, 0x7f0f017b
+    const v0, 0x7f0e0188
 
     invoke-static {p0, v0}, Lcom/android/incallui/util/GraphicResourceUtils;->setRippleColor(Landroid/view/View;I)V
 
@@ -589,7 +593,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f0f0173
+    const v1, 0x7f0e0180
 
     invoke-virtual {v0, v1, v2}, Landroid/content/res/Resources;->getColorStateList(ILandroid/content/res/Resources$Theme;)Landroid/content/res/ColorStateList;
 
@@ -601,7 +605,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f0f0292
+    const v1, 0x7f0e02a7
 
     invoke-virtual {v0, v1, v2}, Landroid/content/res/Resources;->getColorStateList(ILandroid/content/res/Resources$Theme;)Landroid/content/res/ColorStateList;
 
@@ -612,7 +616,7 @@
     goto :goto_0
 
     :cond_2
-    const v0, 0x7f0f017a
+    const v0, 0x7f0e0187
 
     invoke-static {p0, v0}, Lcom/android/incallui/util/GraphicResourceUtils;->setRippleColor(Landroid/view/View;I)V
 
@@ -620,7 +624,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f0f017c
+    const v1, 0x7f0e0189
 
     invoke-virtual {v0, v1, v2}, Landroid/content/res/Resources;->getColorStateList(ILandroid/content/res/Resources$Theme;)Landroid/content/res/ColorStateList;
 
@@ -632,7 +636,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f0f0293
+    const v1, 0x7f0e02a8
 
     invoke-virtual {v0, v1, v2}, Landroid/content/res/Resources;->getColorStateList(ILandroid/content/res/Resources$Theme;)Landroid/content/res/ColorStateList;
 
@@ -688,6 +692,99 @@
     goto :goto_0
 .end method
 
+.method public sendAccessibilityEvent(I)V
+    .locals 5
+
+    invoke-static {}, Lcom/android/incallui/InCallUISystemDB;->isUniversalSwitchEnable()Z
+
+    move-result v0
+
+    if-nez v0, :cond_1
+
+    const v0, 0x8000
+
+    if-ne v0, p1, :cond_1
+
+    iget-object v0, p0, Lcom/android/incallui/widget/SecVoiceButton;->mContext:Landroid/content/Context;
+
+    const-string v1, "accessibility"
+
+    invoke-virtual {v0, v1}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Landroid/view/accessibility/AccessibilityManager;
+
+    if-eqz v0, :cond_1
+
+    invoke-virtual {v0}, Landroid/view/accessibility/AccessibilityManager;->isEnabled()Z
+
+    move-result v1
+
+    if-eqz v1, :cond_1
+
+    const/16 v1, 0x4000
+
+    invoke-static {v1}, Landroid/view/accessibility/AccessibilityEvent;->obtain(I)Landroid/view/accessibility/AccessibilityEvent;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Landroid/view/accessibility/AccessibilityEvent;->getText()Ljava/util/List;
+
+    move-result-object v2
+
+    invoke-virtual {p0}, Lcom/android/incallui/widget/SecVoiceButton;->getText()Ljava/lang/CharSequence;
+
+    move-result-object v3
+
+    invoke-interface {v2, v3}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+
+    invoke-virtual {v1}, Landroid/view/accessibility/AccessibilityEvent;->getText()Ljava/util/List;
+
+    move-result-object v2
+
+    iget-object v3, p0, Lcom/android/incallui/widget/SecVoiceButton;->mContext:Landroid/content/Context;
+
+    const v4, 0x7f0900df
+
+    invoke-virtual {v3, v4}, Landroid/content/Context;->getString(I)Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-interface {v2, v3}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+
+    invoke-virtual {p0}, Lcom/android/incallui/widget/SecVoiceButton;->isEnabled()Z
+
+    move-result v2
+
+    if-nez v2, :cond_0
+
+    invoke-virtual {v1}, Landroid/view/accessibility/AccessibilityEvent;->getText()Ljava/util/List;
+
+    move-result-object v2
+
+    iget-object v3, p0, Lcom/android/incallui/widget/SecVoiceButton;->mContext:Landroid/content/Context;
+
+    const v4, 0x7f090334
+
+    invoke-virtual {v3, v4}, Landroid/content/Context;->getString(I)Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-interface {v2, v3}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+
+    :cond_0
+    invoke-virtual {v0, v1}, Landroid/view/accessibility/AccessibilityManager;->sendAccessibilityEvent(Landroid/view/accessibility/AccessibilityEvent;)V
+
+    :goto_0
+    return-void
+
+    :cond_1
+    invoke-super {p0, p1}, Landroid/widget/Button;->sendAccessibilityEvent(I)V
+
+    goto :goto_0
+.end method
+
 .method public setEnabled(Z)V
     .locals 4
 
@@ -731,7 +828,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f0e0050
+    const v2, 0x7f0f004f
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getInteger(I)I
 

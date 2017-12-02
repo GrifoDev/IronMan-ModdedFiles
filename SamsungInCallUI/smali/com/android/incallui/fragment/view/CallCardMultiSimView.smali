@@ -65,23 +65,23 @@
 
     packed-switch p1, :pswitch_data_0
 
-    const v0, 0x7f020356
+    const v0, 0x7f020365
 
     :goto_0
     return v0
 
     :pswitch_0
-    const v0, 0x7f020357
+    const v0, 0x7f020366
 
     goto :goto_0
 
     :pswitch_1
-    const v0, 0x7f020358
+    const v0, 0x7f020367
 
     goto :goto_0
 
     :pswitch_2
-    const v0, 0x7f020359
+    const v0, 0x7f020368
 
     goto :goto_0
 
@@ -102,7 +102,7 @@
 
     if-nez v0, :cond_0
 
-    const v0, 0x7f100291
+    const v0, 0x7f100297
 
     invoke-virtual {p1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -117,7 +117,7 @@
 
     if-nez v0, :cond_1
 
-    const v0, 0x7f10028d
+    const v0, 0x7f100294
 
     invoke-virtual {p1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -146,7 +146,7 @@
     invoke-virtual {v0}, Landroid/view/ViewStub;->inflate()Landroid/view/View;
 
     :cond_3
-    const v0, 0x7f1004a1
+    const v0, 0x7f1004bb
 
     invoke-virtual {p1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -156,7 +156,7 @@
 
     iput-object v0, p0, Lcom/android/incallui/fragment/view/CallCardMultiSimView;->mSimIconLabel:Landroid/widget/ImageView;
 
-    const v0, 0x7f1004a2
+    const v0, 0x7f1004bc
 
     invoke-virtual {p1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -186,7 +186,7 @@
 
     if-eqz v0, :cond_0
 
-    const v0, 0x7f10039e
+    const v0, 0x7f1003aa
 
     invoke-virtual {p2, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -196,7 +196,7 @@
 
     iput-object v0, p0, Lcom/android/incallui/fragment/view/CallCardMultiSimView;->mSubIconLabel:Landroid/widget/ImageView;
 
-    const v0, 0x7f10039b
+    const v0, 0x7f1003a7
 
     invoke-virtual {p2, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -226,7 +226,7 @@
 
     if-eqz v0, :cond_2
 
-    const v0, 0x7f1003a2
+    const v0, 0x7f1003ae
 
     invoke-virtual {p2, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -924,7 +924,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f0f0184
+    const v1, 0x7f0e0191
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getColor(I)I
 
@@ -940,7 +940,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f0f0183
+    const v2, 0x7f0e0190
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getColor(I)I
 
@@ -956,7 +956,7 @@
 
     move-result-object v2
 
-    const v3, 0x7f0f0180
+    const v3, 0x7f0e018d
 
     invoke-virtual {v2, v3}, Landroid/content/res/Resources;->getColor(I)I
 
@@ -972,7 +972,7 @@
 
     move-result-object v3
 
-    const v4, 0x7f0f017e
+    const v4, 0x7f0e018b
 
     invoke-virtual {v3, v4}, Landroid/content/res/Resources;->getColor(I)I
 

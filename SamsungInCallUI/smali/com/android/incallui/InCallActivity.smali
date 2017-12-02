@@ -37,13 +37,11 @@
 
 .field public static final DIALPAD_TEXT_EXTRA:Ljava/lang/String; = "InCallActivity.dialpad_text"
 
-.field private static final EVENT_COLLAPSE_PANELS:I = 0xa9
-
-.field private static final EVENT_COLLAPSE_PANELS_DELAY:I = 0x1f4
-
 .field private static final EVENT_RESET_ANIM_DELAY:I = 0x1388
 
 .field private static final EVENT_RESET_ANSWER_ANIM:I = 0xa8
+
+.field private static final EVENT_SEND_ACCESSIBILITYEVENT_DELAY:I = 0xa9
 
 .field private static final EXTRA_INTENT:Ljava/lang/String; = "EXTRA_INTENT"
 
@@ -125,9 +123,15 @@
 
 
 # instance fields
+.field private ShowRTTOnceFromPopup:Z
+
 .field confirmDialog:Landroid/app/AlertDialog;
 
 .field confirmDialogBuilder:Landroid/app/AlertDialog$Builder;
+
+.field private isNetworkDowngrade:Z
+
+.field private isRTTCall:Z
 
 .field final mAccessibilityTask:Ljava/lang/Runnable;
 
@@ -156,6 +160,10 @@
 .field private mCurrentMobileKeyboardCovered:I
 
 .field private mCurrentOrientation:I
+
+.field private mCurrentScreenHeightDp:I
+
+.field private mCurrentScreenWidthDp:I
 
 .field private mDataUsageLimitDialog:Landroid/app/AlertDialog;
 
@@ -225,8 +233,6 @@
 
 .field private mNeedToRecoverDialpad:Z
 
-.field private mNeedToRecoverRtt:Z
-
 .field private mOnehandAnyScreenEnabledObserver:Landroid/database/ContentObserver;
 
 .field private mOnehandEnabledObserver:Landroid/database/ContentObserver;
@@ -247,17 +253,7 @@
 
 .field private mScontextManager:Lcom/samsung/android/hardware/context/SemContextManager;
 
-.field private mScreenOffReceiver:Landroid/content/BroadcastReceiver;
-
-.field private mScreenOffRegistered:Z
-
-.field private mScreenOnOffProximityReceiver:Landroid/content/BroadcastReceiver;
-
-.field private mScreenOnOffReceiver:Landroid/content/BroadcastReceiver;
-
 .field private mSelectAcctListener:Lcom/android/contacts/common/widget/SelectPhoneAccountDialogFragment$SelectPhoneAccountListener;
-
-.field private mShowCallStickersObserver:Landroid/database/ContentObserver;
 
 .field private mShowDialpadRequest:I
 
@@ -287,9 +283,9 @@
 
 .field protected mVideoCallMetrics:Lcom/android/incallui/service/vt/VideoCallMetrics;
 
-.field private mWaitDialog_callId:Ljava/lang/String;
+.field private mWaitDialogCallId:Ljava/lang/String;
 
-.field private mWaitDialog_chars:Ljava/lang/String;
+.field private mWaitDialogChars:Ljava/lang/String;
 
 .field private mWifiDialog:Landroid/app/AlertDialog;
 
@@ -320,7 +316,9 @@
 .end method
 
 .method public constructor <init>()V
-    .locals 3
+    .locals 4
+
+    const/4 v3, -0x1
 
     const/4 v2, 0x0
 
@@ -330,6 +328,8 @@
 
     iput-boolean v1, p0, Lcom/android/incallui/InCallActivity;->mFNDBlockedDialog:Z
 
+    iput-boolean v1, p0, Lcom/android/incallui/InCallActivity;->ShowRTTOnceFromPopup:Z
+
     iput-object v2, p0, Lcom/android/incallui/InCallActivity;->mMenu:Lcom/android/incallui/InCallMenu;
 
     const/4 v0, 0x1
@@ -338,9 +338,11 @@
 
     iput-boolean v1, p0, Lcom/android/incallui/InCallActivity;->mShowRTTRequest:Z
 
-    iput-boolean v1, p0, Lcom/android/incallui/InCallActivity;->mNeedToRecoverDialpad:Z
+    iput-boolean v1, p0, Lcom/android/incallui/InCallActivity;->isRTTCall:Z
 
-    iput-boolean v1, p0, Lcom/android/incallui/InCallActivity;->mNeedToRecoverRtt:Z
+    iput-boolean v1, p0, Lcom/android/incallui/InCallActivity;->isNetworkDowngrade:Z
+
+    iput-boolean v1, p0, Lcom/android/incallui/InCallActivity;->mNeedToRecoverDialpad:Z
 
     iput-boolean v1, p0, Lcom/android/incallui/InCallActivity;->mHasOutgoingCall:Z
 
@@ -349,8 +351,6 @@
     iput-object v2, p0, Lcom/android/incallui/InCallActivity;->confirmDialog:Landroid/app/AlertDialog;
 
     iput-object v2, p0, Lcom/android/incallui/InCallActivity;->confirmDialogBuilder:Landroid/app/AlertDialog$Builder;
-
-    iput-boolean v1, p0, Lcom/android/incallui/InCallActivity;->mScreenOffRegistered:Z
 
     iput-boolean v1, p0, Lcom/android/incallui/InCallActivity;->mIsFromPopup:Z
 
@@ -366,9 +366,9 @@
 
     iput-object v0, p0, Lcom/android/incallui/InCallActivity;->mLastestCallTime:Ljava/lang/String;
 
-    iput-object v2, p0, Lcom/android/incallui/InCallActivity;->mWaitDialog_callId:Ljava/lang/String;
+    iput-object v2, p0, Lcom/android/incallui/InCallActivity;->mWaitDialogCallId:Ljava/lang/String;
 
-    iput-object v2, p0, Lcom/android/incallui/InCallActivity;->mWaitDialog_chars:Ljava/lang/String;
+    iput-object v2, p0, Lcom/android/incallui/InCallActivity;->mWaitDialogChars:Ljava/lang/String;
 
     new-instance v0, Lcom/android/incallui/InCallActivity$1;
 
@@ -392,83 +392,59 @@
 
     invoke-direct {v0, p0}, Lcom/android/incallui/InCallActivity$4;-><init>(Lcom/android/incallui/InCallActivity;)V
 
-    iput-object v0, p0, Lcom/android/incallui/InCallActivity;->mScreenOffReceiver:Landroid/content/BroadcastReceiver;
+    iput-object v0, p0, Lcom/android/incallui/InCallActivity;->mAccessibilityTask:Ljava/lang/Runnable;
 
     new-instance v0, Lcom/android/incallui/InCallActivity$5;
 
     invoke-direct {v0, p0}, Lcom/android/incallui/InCallActivity$5;-><init>(Lcom/android/incallui/InCallActivity;)V
 
-    iput-object v0, p0, Lcom/android/incallui/InCallActivity;->mAccessibilityTask:Ljava/lang/Runnable;
-
-    new-instance v0, Lcom/android/incallui/InCallActivity$6;
-
-    invoke-direct {v0, p0}, Lcom/android/incallui/InCallActivity$6;-><init>(Lcom/android/incallui/InCallActivity;)V
-
-    iput-object v0, p0, Lcom/android/incallui/InCallActivity;->mScreenOnOffReceiver:Landroid/content/BroadcastReceiver;
+    iput-object v0, p0, Lcom/android/incallui/InCallActivity;->mDtmfReceiver:Landroid/content/BroadcastReceiver;
 
     new-instance v0, Lcom/android/incallui/InCallActivity$7;
 
     invoke-direct {v0, p0}, Lcom/android/incallui/InCallActivity$7;-><init>(Lcom/android/incallui/InCallActivity;)V
 
-    iput-object v0, p0, Lcom/android/incallui/InCallActivity;->mScreenOnOffProximityReceiver:Landroid/content/BroadcastReceiver;
-
-    new-instance v0, Lcom/android/incallui/InCallActivity$8;
-
-    invoke-direct {v0, p0}, Lcom/android/incallui/InCallActivity$8;-><init>(Lcom/android/incallui/InCallActivity;)V
-
-    iput-object v0, p0, Lcom/android/incallui/InCallActivity;->mDtmfReceiver:Landroid/content/BroadcastReceiver;
+    iput-object v0, p0, Lcom/android/incallui/InCallActivity;->mHandler:Landroid/os/Handler;
 
     new-instance v0, Lcom/android/incallui/InCallActivity$10;
 
     invoke-direct {v0, p0}, Lcom/android/incallui/InCallActivity$10;-><init>(Lcom/android/incallui/InCallActivity;)V
 
-    iput-object v0, p0, Lcom/android/incallui/InCallActivity;->mHandler:Landroid/os/Handler;
-
-    new-instance v0, Lcom/android/incallui/InCallActivity$13;
-
-    invoke-direct {v0, p0}, Lcom/android/incallui/InCallActivity$13;-><init>(Lcom/android/incallui/InCallActivity;)V
-
     iput-object v0, p0, Lcom/android/incallui/InCallActivity;->mContentViewGlobalLayoutListener:Landroid/view/ViewTreeObserver$OnGlobalLayoutListener;
 
-    new-instance v0, Lcom/android/incallui/InCallActivity$18;
+    new-instance v0, Lcom/android/incallui/InCallActivity$15;
 
     new-instance v1, Landroid/os/Handler;
 
     invoke-direct {v1}, Landroid/os/Handler;-><init>()V
 
-    invoke-direct {v0, p0, v1}, Lcom/android/incallui/InCallActivity$18;-><init>(Lcom/android/incallui/InCallActivity;Landroid/os/Handler;)V
+    invoke-direct {v0, p0, v1}, Lcom/android/incallui/InCallActivity$15;-><init>(Lcom/android/incallui/InCallActivity;Landroid/os/Handler;)V
 
     iput-object v0, p0, Lcom/android/incallui/InCallActivity;->mRotationEnabledObserver:Landroid/database/ContentObserver;
 
-    new-instance v0, Lcom/android/incallui/InCallActivity$19;
+    new-instance v0, Lcom/android/incallui/InCallActivity$16;
 
     new-instance v1, Landroid/os/Handler;
 
     invoke-direct {v1}, Landroid/os/Handler;-><init>()V
 
-    invoke-direct {v0, p0, v1}, Lcom/android/incallui/InCallActivity$19;-><init>(Lcom/android/incallui/InCallActivity;Landroid/os/Handler;)V
+    invoke-direct {v0, p0, v1}, Lcom/android/incallui/InCallActivity$16;-><init>(Lcom/android/incallui/InCallActivity;Landroid/os/Handler;)V
 
     iput-object v0, p0, Lcom/android/incallui/InCallActivity;->mOnehandEnabledObserver:Landroid/database/ContentObserver;
 
-    new-instance v0, Lcom/android/incallui/InCallActivity$20;
+    new-instance v0, Lcom/android/incallui/InCallActivity$17;
 
     new-instance v1, Landroid/os/Handler;
 
     invoke-direct {v1}, Landroid/os/Handler;-><init>()V
 
-    invoke-direct {v0, p0, v1}, Lcom/android/incallui/InCallActivity$20;-><init>(Lcom/android/incallui/InCallActivity;Landroid/os/Handler;)V
+    invoke-direct {v0, p0, v1}, Lcom/android/incallui/InCallActivity$17;-><init>(Lcom/android/incallui/InCallActivity;Landroid/os/Handler;)V
 
     iput-object v0, p0, Lcom/android/incallui/InCallActivity;->mOnehandAnyScreenEnabledObserver:Landroid/database/ContentObserver;
 
-    new-instance v0, Lcom/android/incallui/InCallActivity$21;
+    iput v3, p0, Lcom/android/incallui/InCallActivity;->mContentViewWidthPixel:I
 
-    new-instance v1, Landroid/os/Handler;
-
-    invoke-direct {v1}, Landroid/os/Handler;-><init>()V
-
-    invoke-direct {v0, p0, v1}, Lcom/android/incallui/InCallActivity$21;-><init>(Lcom/android/incallui/InCallActivity;Landroid/os/Handler;)V
-
-    iput-object v0, p0, Lcom/android/incallui/InCallActivity;->mShowCallStickersObserver:Landroid/database/ContentObserver;
+    iput v3, p0, Lcom/android/incallui/InCallActivity;->mContentViewHeightPixel:I
 
     return-void
 .end method
@@ -489,39 +465,7 @@
     return-void
 .end method
 
-.method static synthetic access$1000(Lcom/android/incallui/InCallActivity;)V
-    .locals 0
-
-    invoke-direct {p0}, Lcom/android/incallui/InCallActivity;->handleShowGreenBarMessage()V
-
-    return-void
-.end method
-
-.method static synthetic access$1100(Lcom/android/incallui/InCallActivity;)Z
-    .locals 1
-
-    iget-boolean v0, p0, Lcom/android/incallui/InCallActivity;->mNeedToInitialize:Z
-
-    return v0
-.end method
-
-.method static synthetic access$1200(Lcom/android/incallui/InCallActivity;)V
-    .locals 0
-
-    invoke-direct {p0}, Lcom/android/incallui/InCallActivity;->initializeInCall()V
-
-    return-void
-.end method
-
-.method static synthetic access$1300(Lcom/android/incallui/InCallActivity;)V
-    .locals 0
-
-    invoke-direct {p0}, Lcom/android/incallui/InCallActivity;->startLockScreenDuringCallService()V
-
-    return-void
-.end method
-
-.method static synthetic access$1400(Lcom/android/incallui/InCallActivity;)Landroid/view/View;
+.method static synthetic access$1000(Lcom/android/incallui/InCallActivity;)Landroid/view/View;
     .locals 1
 
     iget-object v0, p0, Lcom/android/incallui/InCallActivity;->mContentView:Landroid/view/View;
@@ -529,7 +473,7 @@
     return-object v0
 .end method
 
-.method static synthetic access$1500(Lcom/android/incallui/InCallActivity;)Landroid/graphics/Point;
+.method static synthetic access$1100(Lcom/android/incallui/InCallActivity;)Landroid/graphics/Point;
     .locals 1
 
     iget-object v0, p0, Lcom/android/incallui/InCallActivity;->mContentViewSize:Landroid/graphics/Point;
@@ -537,7 +481,7 @@
     return-object v0
 .end method
 
-.method static synthetic access$1600(Lcom/android/incallui/InCallActivity;)V
+.method static synthetic access$1200(Lcom/android/incallui/InCallActivity;)V
     .locals 0
 
     invoke-direct {p0}, Lcom/android/incallui/InCallActivity;->onDialogDismissed()V
@@ -545,7 +489,7 @@
     return-void
 .end method
 
-.method static synthetic access$1700(Lcom/android/incallui/InCallActivity;Z)V
+.method static synthetic access$1300(Lcom/android/incallui/InCallActivity;Z)V
     .locals 0
 
     invoke-direct {p0, p1}, Lcom/android/incallui/InCallActivity;->updateScreenType(Z)V
@@ -553,7 +497,7 @@
     return-void
 .end method
 
-.method static synthetic access$1800(Lcom/android/incallui/InCallActivity;)Landroid/app/AlertDialog;
+.method static synthetic access$1400(Lcom/android/incallui/InCallActivity;)Landroid/app/AlertDialog;
     .locals 1
 
     iget-object v0, p0, Lcom/android/incallui/InCallActivity;->mTtyNotificationDialog:Landroid/app/AlertDialog;
@@ -561,7 +505,7 @@
     return-object v0
 .end method
 
-.method static synthetic access$1900(Lcom/android/incallui/InCallActivity;)Lcom/android/incallui/widget/GradientAnimationView;
+.method static synthetic access$1500(Lcom/android/incallui/InCallActivity;)Lcom/android/incallui/widget/GradientAnimationView;
     .locals 1
 
     iget-object v0, p0, Lcom/android/incallui/InCallActivity;->mGradientAnimationView:Lcom/android/incallui/widget/GradientAnimationView;
@@ -569,7 +513,7 @@
     return-object v0
 .end method
 
-.method static synthetic access$2000(Lcom/android/incallui/InCallActivity;)Lcom/android/incallui/widget/GradientAnimationView;
+.method static synthetic access$1600(Lcom/android/incallui/InCallActivity;)Lcom/android/incallui/widget/GradientAnimationView;
     .locals 1
 
     iget-object v0, p0, Lcom/android/incallui/InCallActivity;->mGradientAnimationViewDummy:Lcom/android/incallui/widget/GradientAnimationView;
@@ -577,7 +521,7 @@
     return-object v0
 .end method
 
-.method static synthetic access$2002(Lcom/android/incallui/InCallActivity;Lcom/android/incallui/widget/GradientAnimationView;)Lcom/android/incallui/widget/GradientAnimationView;
+.method static synthetic access$1602(Lcom/android/incallui/InCallActivity;Lcom/android/incallui/widget/GradientAnimationView;)Lcom/android/incallui/widget/GradientAnimationView;
     .locals 0
 
     iput-object p1, p0, Lcom/android/incallui/InCallActivity;->mGradientAnimationViewDummy:Lcom/android/incallui/widget/GradientAnimationView;
@@ -585,15 +529,7 @@
     return-object p1
 .end method
 
-.method static synthetic access$202(Lcom/android/incallui/InCallActivity;Z)Z
-    .locals 0
-
-    iput-boolean p1, p0, Lcom/android/incallui/InCallActivity;->mIsSlideOutRunning:Z
-
-    return p1
-.end method
-
-.method static synthetic access$2102(Lcom/android/incallui/InCallActivity;I)I
+.method static synthetic access$1702(Lcom/android/incallui/InCallActivity;I)I
     .locals 0
 
     iput p1, p0, Lcom/android/incallui/InCallActivity;->mContentViewWidthPixel:I
@@ -601,10 +537,18 @@
     return p1
 .end method
 
-.method static synthetic access$2202(Lcom/android/incallui/InCallActivity;I)I
+.method static synthetic access$1802(Lcom/android/incallui/InCallActivity;I)I
     .locals 0
 
     iput p1, p0, Lcom/android/incallui/InCallActivity;->mContentViewHeightPixel:I
+
+    return p1
+.end method
+
+.method static synthetic access$202(Lcom/android/incallui/InCallActivity;Z)Z
+    .locals 0
+
+    iput-boolean p1, p0, Lcom/android/incallui/InCallActivity;->mIsSlideOutRunning:Z
 
     return p1
 .end method
@@ -617,7 +561,15 @@
     return-void
 .end method
 
-.method static synthetic access$400(Lcom/android/incallui/InCallActivity;)Z
+.method static synthetic access$400(Lcom/android/incallui/InCallActivity;CI)V
+    .locals 0
+
+    invoke-direct {p0, p1, p2}, Lcom/android/incallui/InCallActivity;->sendDtmf(CI)V
+
+    return-void
+.end method
+
+.method static synthetic access$500(Lcom/android/incallui/InCallActivity;)Z
     .locals 1
 
     iget-boolean v0, p0, Lcom/android/incallui/InCallActivity;->mIsForegroundActivity:Z
@@ -625,58 +577,34 @@
     return v0
 .end method
 
-.method static synthetic access$500(Lcom/android/incallui/InCallActivity;)Ljava/lang/String;
-    .locals 1
-
-    iget-object v0, p0, Lcom/android/incallui/InCallActivity;->mWaitDialog_callId:Ljava/lang/String;
-
-    return-object v0
-.end method
-
-.method static synthetic access$502(Lcom/android/incallui/InCallActivity;Ljava/lang/String;)Ljava/lang/String;
+.method static synthetic access$600(Lcom/android/incallui/InCallActivity;)V
     .locals 0
 
-    iput-object p1, p0, Lcom/android/incallui/InCallActivity;->mWaitDialog_callId:Ljava/lang/String;
+    invoke-direct {p0}, Lcom/android/incallui/InCallActivity;->handleShowGreenBarMessage()V
 
-    return-object p1
+    return-void
 .end method
 
-.method static synthetic access$600(Lcom/android/incallui/InCallActivity;)Ljava/lang/String;
+.method static synthetic access$700(Lcom/android/incallui/InCallActivity;)Z
     .locals 1
 
-    iget-object v0, p0, Lcom/android/incallui/InCallActivity;->mWaitDialog_chars:Ljava/lang/String;
+    iget-boolean v0, p0, Lcom/android/incallui/InCallActivity;->mNeedToInitialize:Z
 
-    return-object v0
+    return v0
 .end method
 
-.method static synthetic access$602(Lcom/android/incallui/InCallActivity;Ljava/lang/String;)Ljava/lang/String;
+.method static synthetic access$800(Lcom/android/incallui/InCallActivity;)V
     .locals 0
 
-    iput-object p1, p0, Lcom/android/incallui/InCallActivity;->mWaitDialog_chars:Ljava/lang/String;
+    invoke-direct {p0}, Lcom/android/incallui/InCallActivity;->initializeInCall()V
 
-    return-object p1
+    return-void
 .end method
 
-.method static synthetic access$700(Lcom/android/incallui/InCallActivity;)Landroid/os/Handler;
-    .locals 1
-
-    iget-object v0, p0, Lcom/android/incallui/InCallActivity;->mHandler:Landroid/os/Handler;
-
-    return-object v0
-.end method
-
-.method static synthetic access$800(Lcom/android/incallui/InCallActivity;)Landroid/app/SemStatusBarManager;
-    .locals 1
-
-    iget-object v0, p0, Lcom/android/incallui/InCallActivity;->mStatusBarManager:Landroid/app/SemStatusBarManager;
-
-    return-object v0
-.end method
-
-.method static synthetic access$900(Lcom/android/incallui/InCallActivity;CI)V
+.method static synthetic access$900(Lcom/android/incallui/InCallActivity;)V
     .locals 0
 
-    invoke-direct {p0, p1, p2}, Lcom/android/incallui/InCallActivity;->sendDtmf(CI)V
+    invoke-direct {p0}, Lcom/android/incallui/InCallActivity;->startLockScreenDuringCallService()V
 
     return-void
 .end method
@@ -820,7 +748,7 @@
 
     if-nez v0, :cond_2
 
-    const v0, 0x7f10030c
+    const v0, 0x7f100318
 
     invoke-virtual {p0, v0}, Lcom/android/incallui/InCallActivity;->findViewById(I)Landroid/view/View;
 
@@ -873,9 +801,9 @@
 
     invoke-virtual {v0, v1}, Lcom/android/incallui/widget/GradientAnimationView;->setVisibility(I)V
 
-    new-instance v0, Lcom/android/incallui/InCallActivity$32;
+    new-instance v0, Lcom/android/incallui/InCallActivity$28;
 
-    invoke-direct {v0, p0}, Lcom/android/incallui/InCallActivity$32;-><init>(Lcom/android/incallui/InCallActivity;)V
+    invoke-direct {v0, p0}, Lcom/android/incallui/InCallActivity$28;-><init>(Lcom/android/incallui/InCallActivity;)V
 
     iget-object v1, p0, Lcom/android/incallui/InCallActivity;->mGradientAnimationViewDummy:Lcom/android/incallui/widget/GradientAnimationView;
 
@@ -948,7 +876,15 @@
 .end method
 
 .method private clearActivity()V
-    .locals 1
+    .locals 2
+
+    invoke-virtual {p0}, Lcom/android/incallui/InCallActivity;->getWindow()Landroid/view/Window;
+
+    move-result-object v0
+
+    const/high16 v1, 0x80000
+
+    invoke-virtual {v0, v1}, Landroid/view/Window;->clearFlags(I)V
 
     invoke-virtual {p0}, Lcom/android/incallui/InCallActivity;->removeInCallContentViewListener()V
 
@@ -1162,23 +1098,6 @@
     invoke-virtual {v0, v1}, Landroid/content/ContentResolver;->unregisterContentObserver(Landroid/database/ContentObserver;)V
 
     :cond_9
-    const-string v0, "agif_calling_service"
-
-    invoke-static {v0}, Lcom/android/incallui/InCallUIFeature;->hasFeature(Ljava/lang/String;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_a
-
-    invoke-virtual {p0}, Lcom/android/incallui/InCallActivity;->getContentResolver()Landroid/content/ContentResolver;
-
-    move-result-object v0
-
-    iget-object v1, p0, Lcom/android/incallui/InCallActivity;->mShowCallStickersObserver:Landroid/database/ContentObserver;
-
-    invoke-virtual {v0, v1}, Landroid/content/ContentResolver;->unregisterContentObserver(Landroid/database/ContentObserver;)V
-
-    :cond_a
     invoke-static {}, Lcom/android/incallui/UiAdapter;->deInit()V
 
     return-void
@@ -1409,166 +1328,66 @@
 .end method
 
 .method private getMultiWindowUX(Landroid/content/res/Configuration;Z)Z
-    .locals 7
+    .locals 5
 
-    const/4 v2, 0x1
+    const/4 v1, 0x1
 
-    const/4 v3, 0x0
+    const/4 v2, 0x0
+
+    if-nez p1, :cond_1
+
+    iget-boolean v1, p0, Lcom/android/incallui/InCallActivity;->mIsMultiWindowUX:Z
+
+    :cond_0
+    :goto_0
+    return v1
+
+    :cond_1
+    iget-boolean v0, p0, Lcom/android/incallui/InCallActivity;->mIsMultiWindowUX:Z
 
     invoke-static {}, Lcom/android/incallui/util/DesktopModeManager;->isDesktopMode()Z
 
-    move-result v4
+    move-result v3
 
-    invoke-virtual {p0}, Lcom/android/incallui/InCallActivity;->isInMultiWindowMode()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_c
-
-    iget-object v0, p0, Lcom/android/incallui/InCallActivity;->mContentViewSize:Landroid/graphics/Point;
-
-    if-eqz v0, :cond_c
-
-    invoke-static {}, Lcom/android/incallui/InCallApp;->getInstance()Lcom/android/incallui/InCallApp;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Lcom/android/incallui/InCallApp;->getApplicationContext()Landroid/content/Context;
-
-    move-result-object v0
-
-    const-string v1, "window"
-
-    invoke-virtual {v0, v1}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Landroid/view/WindowManager;
-
-    invoke-interface {v0}, Landroid/view/WindowManager;->getDefaultDisplay()Landroid/view/Display;
-
-    move-result-object v5
-
-    iget-object v0, p0, Lcom/android/incallui/InCallActivity;->mContentViewSize:Landroid/graphics/Point;
-
-    iget v1, v0, Landroid/graphics/Point;->y:I
-
-    iget-object v0, p0, Lcom/android/incallui/InCallActivity;->mContentViewSize:Landroid/graphics/Point;
-
-    iget v0, v0, Landroid/graphics/Point;->x:I
-
-    iget-boolean v6, p0, Lcom/android/incallui/InCallActivity;->mIsLandscape:Z
-
-    if-eqz v6, :cond_1
-
-    invoke-static {p0}, Lcom/android/incallui/util/ScreenControlUtils;->getNavigationBarWidth(Landroid/content/Context;)I
-
-    move-result v6
-
-    sub-int/2addr v0, v6
-
-    :goto_0
-    invoke-virtual {v5}, Landroid/view/Display;->getHeight()I
-
-    move-result v6
-
-    if-ne v1, v6, :cond_c
-
-    invoke-virtual {v5}, Landroid/view/Display;->getWidth()I
-
-    move-result v1
-
-    if-ne v0, v1, :cond_c
-
-    move v0, v2
-
-    :goto_1
     invoke-static {}, Lcom/android/incallui/util/CallTypeUtils;->isVideoCall()Z
 
-    move-result v1
+    move-result v4
 
-    if-eqz v1, :cond_2
+    if-eqz v4, :cond_2
 
     invoke-static {}, Lcom/android/incallui/util/VideoCallUtils;->isQCIF()Z
 
-    move-result v1
-
-    if-nez v1, :cond_2
+    move-result v4
 
     if-nez v4, :cond_2
 
+    if-nez v3, :cond_2
+
     invoke-virtual {p0}, Lcom/android/incallui/InCallActivity;->isInMultiWindowMode()Z
 
-    move-result v2
-
-    :cond_0
-    :goto_2
-    return v2
-
-    :cond_1
-    invoke-static {p0}, Lcom/android/incallui/util/ScreenControlUtils;->getNavigationBarHeight(Landroid/content/Context;)I
-
-    move-result v6
-
-    sub-int/2addr v1, v6
+    move-result v1
 
     goto :goto_0
 
     :cond_2
-    if-eqz p1, :cond_b
+    if-eqz v3, :cond_7
 
-    if-nez v4, :cond_5
-
-    invoke-virtual {p0}, Lcom/android/incallui/InCallActivity;->isInMultiWindowMode()Z
-
-    move-result v1
-
-    if-eqz v1, :cond_4
-
-    if-nez v0, :cond_4
-
-    iget v0, p1, Landroid/content/res/Configuration;->screenWidthDp:I
-
-    sget v1, Lcom/android/incallui/InCallActivity;->MULTI_WINDOW_UX_VALUE:I
-
-    if-lt v0, v1, :cond_3
-
-    iget v0, p1, Landroid/content/res/Configuration;->screenHeightDp:I
-
-    sget v1, Lcom/android/incallui/InCallActivity;->MULTI_WINDOW_UX_VALUE:I
-
-    if-ge v0, v1, :cond_4
-
-    :cond_3
-    :goto_3
-    if-eqz v2, :cond_0
-
-    iput-boolean v3, p0, Lcom/android/incallui/InCallActivity;->mIsTabletUX:Z
-
-    goto :goto_2
-
-    :cond_4
-    move v2, v3
-
-    goto :goto_3
-
-    :cond_5
     iget v0, p1, Landroid/content/res/Configuration;->orientation:I
 
-    const/4 v1, 0x2
+    const/4 v3, 0x2
 
-    if-ne v0, v1, :cond_8
+    if-ne v0, v3, :cond_5
 
-    move v0, v2
+    move v0, v1
 
-    :goto_4
+    :goto_1
     iget v4, p1, Landroid/content/res/Configuration;->screenWidthDp:I
 
-    iget v1, p1, Landroid/content/res/Configuration;->screenHeightDp:I
+    iget v3, p1, Landroid/content/res/Configuration;->screenHeightDp:I
 
-    if-eqz v0, :cond_9
+    if-eqz v0, :cond_6
 
-    iget v1, p1, Landroid/content/res/Configuration;->screenHeightDp:I
+    iget v3, p1, Landroid/content/res/Configuration;->screenHeightDp:I
 
     iget v0, p1, Landroid/content/res/Configuration;->screenWidthDp:I
 
@@ -1576,17 +1395,17 @@
 
     move-result v4
 
-    if-nez v4, :cond_6
+    if-nez v4, :cond_3
 
     invoke-static {p0}, Lcom/android/incallui/util/ScreenControlUtils;->getStatusBarHeightDp(Landroid/content/Context;)I
 
     move-result v4
 
-    add-int/2addr v1, v4
+    add-int/2addr v3, v4
 
-    :cond_6
-    :goto_5
-    if-nez p2, :cond_7
+    :cond_3
+    :goto_2
+    if-nez p2, :cond_4
 
     sget v4, Lcom/android/incallui/InCallActivity;->MULTI_WINDOW_HEIGHT_VALUE:I
 
@@ -1594,51 +1413,91 @@
 
     sget v0, Lcom/android/incallui/InCallActivity;->MULTI_WINDOW_WIDTH_VALUE:I
 
-    if-lt v1, v0, :cond_0
+    if-lt v3, v0, :cond_0
 
-    :cond_7
-    move v2, v3
+    :cond_4
+    move v1, v2
 
-    goto :goto_2
+    goto :goto_0
 
-    :cond_8
-    move v0, v3
+    :cond_5
+    move v0, v2
 
-    goto :goto_4
+    goto :goto_1
 
-    :cond_9
+    :cond_6
     invoke-virtual {p0}, Lcom/android/incallui/InCallActivity;->isInMultiWindowMode()Z
 
     move-result v0
 
-    if-nez v0, :cond_a
+    if-nez v0, :cond_c
 
     invoke-static {p0}, Lcom/android/incallui/util/ScreenControlUtils;->getStatusBarHeightDp(Landroid/content/Context;)I
 
     move-result v0
 
-    add-int/2addr v0, v1
+    add-int/2addr v0, v3
 
-    move v1, v4
-
-    goto :goto_5
-
-    :cond_a
-    move v0, v1
-
-    move v1, v4
-
-    goto :goto_5
-
-    :cond_b
-    move v2, v3
+    move v3, v4
 
     goto :goto_2
+
+    :cond_7
+    iget v3, p0, Lcom/android/incallui/InCallActivity;->mCurrentScreenHeightDp:I
+
+    iget v4, p1, Landroid/content/res/Configuration;->screenHeightDp:I
+
+    if-ne v3, v4, :cond_8
+
+    iget v3, p0, Lcom/android/incallui/InCallActivity;->mCurrentScreenWidthDp:I
+
+    iget v4, p1, Landroid/content/res/Configuration;->screenWidthDp:I
+
+    if-eq v3, v4, :cond_b
+
+    :cond_8
+    invoke-virtual {p0}, Lcom/android/incallui/InCallActivity;->isInMultiWindowMode()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_a
+
+    iget v0, p1, Landroid/content/res/Configuration;->screenWidthDp:I
+
+    sget v3, Lcom/android/incallui/InCallActivity;->MULTI_WINDOW_UX_VALUE:I
+
+    if-lt v0, v3, :cond_9
+
+    iget v0, p1, Landroid/content/res/Configuration;->screenHeightDp:I
+
+    sget v3, Lcom/android/incallui/InCallActivity;->MULTI_WINDOW_UX_VALUE:I
+
+    if-ge v0, v3, :cond_a
+
+    :cond_9
+    :goto_3
+    if-eqz v1, :cond_0
+
+    iput-boolean v2, p0, Lcom/android/incallui/InCallActivity;->mIsTabletUX:Z
+
+    goto :goto_0
+
+    :cond_a
+    move v1, v2
+
+    goto :goto_3
+
+    :cond_b
+    move v1, v0
+
+    goto :goto_0
 
     :cond_c
     move v0, v3
 
-    goto :goto_1
+    move v3, v4
+
+    goto :goto_2
 .end method
 
 .method private handleDialerKeyDown(ILandroid/view/KeyEvent;)Z
@@ -1704,6 +1563,12 @@
     invoke-direct {p0, p1}, Lcom/android/incallui/InCallActivity;->okToDialDtmfTones(I)Z
 
     move-result v0
+
+    if-eqz v0, :cond_1
+
+    invoke-virtual {p0}, Lcom/android/incallui/InCallActivity;->getDialpadFragment()Lcom/android/incallui/DialpadUi;
+
+    move-result-object v0
 
     if-eqz v0, :cond_1
 
@@ -1807,7 +1672,7 @@
 
     move-result-object v0
 
-    const v2, 0x7f0f0192
+    const v2, 0x7f0e019f
 
     invoke-virtual {v0, v2}, Landroid/content/res/Resources;->getColor(I)I
 
@@ -1823,7 +1688,7 @@
 
     move-result-object v0
 
-    const v2, 0x7f0f0191
+    const v2, 0x7f0e019e
 
     invoke-virtual {v0, v2}, Landroid/content/res/Resources;->getColor(I)I
 
@@ -2079,7 +1944,7 @@
     invoke-static {p0, v0}, Lcom/android/incallui/Log;->i(Ljava/lang/Object;Ljava/lang/String;)V
 
     :cond_a
-    const-string v0, "agif_calling_service"
+    const-string v0, "voice_call_recording"
 
     invoke-static {v0}, Lcom/android/incallui/InCallUIFeature;->hasFeature(Ljava/lang/String;)Z
 
@@ -2087,36 +1952,13 @@
 
     if-eqz v0, :cond_b
 
-    invoke-virtual {p0}, Lcom/android/incallui/InCallActivity;->getContentResolver()Landroid/content/ContentResolver;
-
-    move-result-object v0
-
-    const-string v1, "show_call_stickers"
-
-    invoke-static {v1}, Landroid/provider/Settings$System;->getUriFor(Ljava/lang/String;)Landroid/net/Uri;
-
-    move-result-object v1
-
-    iget-object v2, p0, Lcom/android/incallui/InCallActivity;->mShowCallStickersObserver:Landroid/database/ContentObserver;
-
-    invoke-virtual {v0, v1, v3, v2}, Landroid/content/ContentResolver;->registerContentObserver(Landroid/net/Uri;ZLandroid/database/ContentObserver;)V
-
-    :cond_b
-    const-string v0, "voice_call_recording"
-
-    invoke-static {v0}, Lcom/android/incallui/InCallUIFeature;->hasFeature(Ljava/lang/String;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_c
-
     invoke-static {}, Lcom/android/incallui/phonevoicerecorder/PhoneVoiceRecorderManager;->getInstance()Lcom/android/incallui/phonevoicerecorder/PhoneVoiceRecorderManager;
 
     move-result-object v0
 
     invoke-virtual {v0}, Lcom/android/incallui/phonevoicerecorder/PhoneVoiceRecorderManager;->updateRecorderState()V
 
-    :cond_c
+    :cond_b
     invoke-static {}, Lcom/android/incallui/InCallApp;->getInstance()Lcom/android/incallui/InCallApp;
 
     move-result-object v0
@@ -2125,7 +1967,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_d
+    if-eqz v0, :cond_c
 
     invoke-static {}, Lcom/android/incallui/InCallApp;->getInstance()Lcom/android/incallui/InCallApp;
 
@@ -2141,10 +1983,10 @@
 
     invoke-virtual {v0, v1}, Lcom/android/incallui/InCallPresenter;->sendMsgCallListChange(I)V
 
-    :cond_d
+    :cond_c
     iget-boolean v0, p0, Lcom/android/incallui/InCallActivity;->mNeedToRecoverDialpad:Z
 
-    if-eqz v0, :cond_f
+    if-eqz v0, :cond_e
 
     const-string v0, "initializeInCall : Recover dialpad"
 
@@ -2156,7 +1998,7 @@
 
     move-result-object v0
 
-    if-eqz v0, :cond_e
+    if-eqz v0, :cond_d
 
     invoke-virtual {p0}, Lcom/android/incallui/InCallActivity;->getDialpadFragment()Lcom/android/incallui/DialpadUi;
 
@@ -2168,29 +2010,27 @@
 
     invoke-virtual {v0, v1}, Lcom/android/incallui/fragment/DialpadFragment;->restoreDtmfText(Ljava/lang/String;)V
 
-    :cond_e
+    :cond_d
     iput-boolean v4, p0, Lcom/android/incallui/InCallActivity;->mNeedToRecoverDialpad:Z
 
-    :cond_f
+    :cond_e
     const-string v0, "ims_support_rtt"
 
     invoke-static {v0}, Lcom/android/incallui/InCallUIFeature;->hasFeature(Ljava/lang/String;)Z
 
     move-result v0
 
-    if-eqz v0, :cond_10
+    if-eqz v0, :cond_f
 
-    iget-boolean v0, p0, Lcom/android/incallui/InCallActivity;->mNeedToRecoverRtt:Z
+    iget-boolean v0, p0, Lcom/android/incallui/InCallActivity;->ShowRTTOnceFromPopup:Z
 
-    if-eqz v0, :cond_10
+    if-eqz v0, :cond_f
 
-    const-string v0, "initializeInCall : Recover rtt"
+    iput-boolean v4, p0, Lcom/android/incallui/InCallActivity;->ShowRTTOnceFromPopup:Z
 
-    invoke-static {p0, v0, v3}, Lcom/android/incallui/Log;->i(Ljava/lang/Object;Ljava/lang/String;Z)V
+    invoke-virtual {p0}, Lcom/android/incallui/InCallActivity;->showRttAfterPopup()V
 
-    iput-boolean v4, p0, Lcom/android/incallui/InCallActivity;->mNeedToRecoverRtt:Z
-
-    :cond_10
+    :cond_f
     const-string v0, "perf - initializeInCall: done"
 
     invoke-static {p0, v0, v3}, Lcom/android/incallui/Log;->i(Ljava/lang/Object;Ljava/lang/String;Z)V
@@ -2323,7 +2163,7 @@
 
     move-result-object v0
 
-    if-nez v0, :cond_c
+    if-nez v0, :cond_d
 
     invoke-static {}, Lcom/android/incallui/CallList;->getInstance()Lcom/android/incallui/CallList;
 
@@ -2462,7 +2302,7 @@
     move-result-object v0
 
     :goto_2
-    const v1, 0x7f09066c
+    const v1, 0x7f090690
 
     iget-object v2, p0, Lcom/android/incallui/InCallActivity;->mSelectAcctListener:Lcom/android/contacts/common/widget/SelectPhoneAccountDialogFragment$SelectPhoneAccountListener;
 
@@ -2495,11 +2335,30 @@
     goto :goto_2
 
     :cond_b
-    invoke-virtual {p0, v4}, Lcom/android/incallui/InCallActivity;->showCallCardFragment(Z)V
+    invoke-static {}, Lcom/android/incallui/InCallPresenter;->getInstance()Lcom/android/incallui/InCallPresenter;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lcom/android/incallui/InCallPresenter;->isRTTCall()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_c
+
+    const-string v0, "- internalResolveIntent: showCallCardFragment, isRTTCall: true"
+
+    invoke-static {p0, v0}, Lcom/android/incallui/Log;->d(Ljava/lang/Object;Ljava/lang/String;)V
+
+    invoke-virtual {p0, v3}, Lcom/android/incallui/InCallActivity;->showCallCardFragment(Z)V
 
     goto :goto_3
 
     :cond_c
+    invoke-virtual {p0, v4}, Lcom/android/incallui/InCallActivity;->showCallCardFragment(Z)V
+
+    goto :goto_3
+
+    :cond_d
     move-object v1, v0
 
     goto/16 :goto_0
@@ -3045,9 +2904,9 @@
 
     invoke-direct {v1}, Landroid/os/Handler;-><init>()V
 
-    new-instance v2, Lcom/android/incallui/InCallActivity$9;
+    new-instance v2, Lcom/android/incallui/InCallActivity$6;
 
-    invoke-direct {v2, p0, v0}, Lcom/android/incallui/InCallActivity$9;-><init>(Lcom/android/incallui/InCallActivity;Ljava/lang/String;)V
+    invoke-direct {v2, p0, v0}, Lcom/android/incallui/InCallActivity$6;-><init>(Lcom/android/incallui/InCallActivity;Ljava/lang/String;)V
 
     int-to-long v4, p2
 
@@ -3795,17 +3654,17 @@
 
     const v1, 0x7f090065
 
-    new-instance v2, Lcom/android/incallui/InCallActivity$16;
+    new-instance v2, Lcom/android/incallui/InCallActivity$13;
 
-    invoke-direct {v2, p0}, Lcom/android/incallui/InCallActivity$16;-><init>(Lcom/android/incallui/InCallActivity;)V
+    invoke-direct {v2, p0}, Lcom/android/incallui/InCallActivity$13;-><init>(Lcom/android/incallui/InCallActivity;)V
 
     invoke-virtual {v0, v1, v2}, Landroid/app/AlertDialog$Builder;->setPositiveButton(ILandroid/content/DialogInterface$OnClickListener;)Landroid/app/AlertDialog$Builder;
 
     move-result-object v0
 
-    new-instance v1, Lcom/android/incallui/InCallActivity$15;
+    new-instance v1, Lcom/android/incallui/InCallActivity$12;
 
-    invoke-direct {v1, p0}, Lcom/android/incallui/InCallActivity$15;-><init>(Lcom/android/incallui/InCallActivity;)V
+    invoke-direct {v1, p0}, Lcom/android/incallui/InCallActivity$12;-><init>(Lcom/android/incallui/InCallActivity;)V
 
     invoke-virtual {v0, v1}, Landroid/app/AlertDialog$Builder;->setOnCancelListener(Landroid/content/DialogInterface$OnCancelListener;)Landroid/app/AlertDialog$Builder;
 
@@ -4039,7 +3898,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f0f0193
+    const v2, 0x7f0e01a0
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getColor(I)I
 
@@ -4114,6 +3973,24 @@
     invoke-virtual {v0, v1}, Landroid/view/View;->setSystemUiVisibility(I)V
 
     goto :goto_0
+.end method
+
+.method private showToast(Ljava/lang/String;)V
+    .locals 3
+
+    const/4 v2, 0x0
+
+    invoke-static {p0, p1, v2}, Landroid/widget/Toast;->makeText(Landroid/content/Context;Ljava/lang/CharSequence;I)Landroid/widget/Toast;
+
+    move-result-object v0
+
+    const/16 v1, 0x50
+
+    invoke-virtual {v0, v1, v2, v2}, Landroid/widget/Toast;->setGravity(III)V
+
+    invoke-virtual {v0}, Landroid/widget/Toast;->show()V
+
+    return-void
 .end method
 
 .method private startLockScreenDuringCallService()V
@@ -4300,7 +4177,7 @@
 
     if-eqz v0, :cond_0
 
-    const-string v1, "ZOYA updateRTTIndicatorArea"
+    const-string v1, "updateRTTIndicatorArea"
 
     invoke-static {p0, v1}, Lcom/android/incallui/Log;->i(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -4611,7 +4488,7 @@
 
     iget-object v0, p0, Lcom/android/incallui/InCallActivity;->confirmDialogBuilder:Landroid/app/AlertDialog$Builder;
 
-    const v1, 0x7f090541
+    const v1, 0x7f090546
 
     invoke-virtual {v0, v1}, Landroid/app/AlertDialog$Builder;->setTitle(I)Landroid/app/AlertDialog$Builder;
 
@@ -4619,7 +4496,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f040039
+    const v1, 0x7f04003c
 
     const/4 v2, 0x0
 
@@ -4708,7 +4585,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f0e0036
+    const v2, 0x7f0f0035
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getInteger(I)I
 
@@ -4730,15 +4607,15 @@
 
     move-result-object v0
 
-    const v1, 0x7f0e0037
+    const v1, 0x7f0f0036
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getInteger(I)I
 
     move-result v0
 
-    new-instance v1, Lcom/android/incallui/InCallActivity$31;
+    new-instance v1, Lcom/android/incallui/InCallActivity$27;
 
-    invoke-direct {v1, p0, p1}, Lcom/android/incallui/InCallActivity$31;-><init>(Lcom/android/incallui/InCallActivity;Z)V
+    invoke-direct {v1, p0, p1}, Lcom/android/incallui/InCallActivity$27;-><init>(Lcom/android/incallui/InCallActivity;Z)V
 
     iget-object v2, p0, Lcom/android/incallui/InCallActivity;->mGradientAnimationView:Lcom/android/incallui/widget/GradientAnimationView;
 
@@ -5252,19 +5129,71 @@
 .end method
 
 .method public dispatchPopulateAccessibilityEvent(Landroid/view/accessibility/AccessibilityEvent;)Z
-    .locals 4
+    .locals 6
 
-    invoke-virtual {p0}, Lcom/android/incallui/InCallActivity;->getCallCardFragment()Lcom/android/incallui/CallCardUi;
+    const-wide/16 v4, 0x1f4
+
+    const/4 v0, 0x0
+
+    const/16 v3, 0xa9
+
+    invoke-static {}, Lcom/android/incallui/CallList;->getInstance()Lcom/android/incallui/CallList;
+
+    move-result-object v1
+
+    const/4 v2, 0x0
+
+    invoke-static {v1, v0, v2}, Lcom/android/incallui/util/InCallUtils;->getCallToDisplay(Lcom/android/incallui/CallList;Lcom/android/incallui/Call;Z)Lcom/android/incallui/Call;
+
+    move-result-object v1
+
+    if-eqz v1, :cond_0
+
+    invoke-static {}, Lcom/android/incallui/InCallApp;->getInstance()Lcom/android/incallui/InCallApp;
 
     move-result-object v0
 
-    if-eqz v0, :cond_0
-
-    invoke-virtual {p0}, Lcom/android/incallui/InCallActivity;->getCallCardFragment()Lcom/android/incallui/CallCardUi;
+    invoke-static {v0}, Lcom/android/incallui/ContactInfoCache;->getInstance(Landroid/content/Context;)Lcom/android/incallui/ContactInfoCache;
 
     move-result-object v0
 
-    invoke-interface {v0, p1}, Lcom/android/incallui/CallCardUi;->dispatchPopulateAccessibilityEvent(Landroid/view/accessibility/AccessibilityEvent;)Z
+    invoke-virtual {v1}, Lcom/android/incallui/Call;->getId()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-virtual {v0, v1}, Lcom/android/incallui/ContactInfoCache;->getInfo(Ljava/lang/String;)Lcom/android/incallui/ContactInfoCache$ContactCacheEntry;
+
+    move-result-object v0
+
+    :cond_0
+    if-eqz v0, :cond_2
+
+    iget-boolean v0, v0, Lcom/android/incallui/ContactInfoCache$ContactCacheEntry;->queryCompleted:Z
+
+    if-nez v0, :cond_2
+
+    invoke-static {}, Lcom/android/incallui/util/CallTypeUtils;->isVideoCall()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_2
+
+    iget-object v0, p0, Lcom/android/incallui/InCallActivity;->mHandler:Landroid/os/Handler;
+
+    invoke-virtual {v0, v3}, Landroid/os/Handler;->hasMessages(I)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_1
+
+    iget-object v0, p0, Lcom/android/incallui/InCallActivity;->mHandler:Landroid/os/Handler;
+
+    invoke-virtual {v0, v3}, Landroid/os/Handler;->removeMessages(I)V
+
+    :cond_1
+    iget-object v0, p0, Lcom/android/incallui/InCallActivity;->mHandler:Landroid/os/Handler;
+
+    invoke-virtual {v0, v3, v4, v5}, Landroid/os/Handler;->sendEmptyMessageDelayed(IJ)Z
 
     :goto_0
     invoke-super {p0, p1}, Lcom/android/contacts/common/activity/TransactionSafeActivity;->dispatchPopulateAccessibilityEvent(Landroid/view/accessibility/AccessibilityEvent;)Z
@@ -5273,7 +5202,22 @@
 
     return v0
 
-    :cond_0
+    :cond_2
+    invoke-virtual {p0}, Lcom/android/incallui/InCallActivity;->getCallCardFragment()Lcom/android/incallui/CallCardUi;
+
+    move-result-object v0
+
+    if-eqz v0, :cond_3
+
+    invoke-virtual {p0}, Lcom/android/incallui/InCallActivity;->getCallCardFragment()Lcom/android/incallui/CallCardUi;
+
+    move-result-object v0
+
+    invoke-interface {v0, p1}, Lcom/android/incallui/CallCardUi;->dispatchPopulateAccessibilityEvent(Landroid/view/accessibility/AccessibilityEvent;)Z
+
+    goto :goto_0
+
+    :cond_3
     invoke-virtual {p0}, Lcom/android/incallui/InCallActivity;->getWindow()Landroid/view/Window;
 
     move-result-object v0
@@ -5296,9 +5240,7 @@
 
     iget-object v1, p0, Lcom/android/incallui/InCallActivity;->mAccessibilityTask:Ljava/lang/Runnable;
 
-    const-wide/16 v2, 0x1f4
-
-    invoke-virtual {v0, v1, v2, v3}, Landroid/view/View;->postDelayed(Ljava/lang/Runnable;J)Z
+    invoke-virtual {v0, v1, v4, v5}, Landroid/view/View;->postDelayed(Ljava/lang/Runnable;J)Z
 
     goto :goto_0
 .end method
@@ -5342,44 +5284,44 @@
 
     const/4 v0, 0x0
 
-    if-eqz p1, :cond_0
-
-    invoke-virtual {p0}, Lcom/android/incallui/InCallActivity;->isDialpadVisible()Z
+    invoke-static {}, Lcom/android/incallui/util/CallTypeUtils;->isVideoCall()Z
 
     move-result v2
 
-    if-nez v2, :cond_1
+    if-eqz v2, :cond_1
+
+    invoke-static {}, Lcom/android/incallui/service/vt/VideoCallConfig;->isJpnUX()Z
+
+    move-result v2
+
+    if-eqz v2, :cond_1
+
+    if-eqz p1, :cond_1
 
     :cond_0
-    if-nez p1, :cond_2
-
-    invoke-virtual {p0}, Lcom/android/incallui/InCallActivity;->isDialpadVisible()Z
-
-    move-result v2
-
-    if-nez v2, :cond_2
-
-    :cond_1
     :goto_0
     return-void
 
-    :cond_2
-    invoke-virtual {p0}, Lcom/android/incallui/InCallActivity;->isConferenceCallManagerShowing()Z
+    :cond_1
+    if-eqz p1, :cond_2
+
+    invoke-virtual {p0}, Lcom/android/incallui/InCallActivity;->isDialpadVisible()Z
 
     move-result v2
 
-    if-eqz v2, :cond_3
+    if-nez v2, :cond_0
 
-    move p2, v0
+    :cond_2
+    if-nez p1, :cond_3
+
+    invoke-virtual {p0}, Lcom/android/incallui/InCallActivity;->isDialpadVisible()Z
+
+    move-result v2
+
+    if-eqz v2, :cond_0
 
     :cond_3
-    invoke-virtual {p0}, Lcom/android/incallui/InCallActivity;->isShowDialpadRequested()Z
-
-    move-result v2
-
-    if-eqz v2, :cond_4
-
-    invoke-static {}, Lcom/android/incallui/util/InCallUtils;->isMobileKeyboardCovered()Z
+    invoke-virtual {p0}, Lcom/android/incallui/InCallActivity;->isConferenceCallManagerShowing()Z
 
     move-result v2
 
@@ -5388,9 +5330,13 @@
     move p2, v0
 
     :cond_4
-    const-string v2, "support_folder_single_lcd"
+    invoke-virtual {p0}, Lcom/android/incallui/InCallActivity;->isShowDialpadRequested()Z
 
-    invoke-static {v2}, Lcom/android/incallui/InCallUIFeature;->hasFeature(Ljava/lang/String;)Z
+    move-result v2
+
+    if-eqz v2, :cond_5
+
+    invoke-static {}, Lcom/android/incallui/util/InCallUtils;->isMobileKeyboardCovered()Z
 
     move-result v2
 
@@ -5399,6 +5345,17 @@
     move p2, v0
 
     :cond_5
+    const-string v2, "support_folder_single_lcd"
+
+    invoke-static {v2}, Lcom/android/incallui/InCallUIFeature;->hasFeature(Ljava/lang/String;)Z
+
+    move-result v2
+
+    if-eqz v2, :cond_6
+
+    move p2, v0
+
+    :cond_6
     invoke-static {}, Lcom/android/incallui/CallList;->getInstance()Lcom/android/incallui/CallList;
 
     move-result-object v2
@@ -5409,7 +5366,7 @@
 
     move-result-object v2
 
-    if-nez p2, :cond_b
+    if-nez p2, :cond_c
 
     invoke-direct {p0, p1}, Lcom/android/incallui/InCallActivity;->showDialpad(Z)V
 
@@ -5417,60 +5374,82 @@
 
     invoke-virtual {p0}, Lcom/android/incallui/InCallActivity;->getCallButtonFragment()Lcom/android/incallui/CallButtonUi;
 
-    move-result-object v0
+    move-result-object v1
 
-    if-eqz v0, :cond_6
-
-    invoke-virtual {p0}, Lcom/android/incallui/InCallActivity;->getCallButtonFragment()Lcom/android/incallui/CallButtonUi;
-
-    move-result-object v0
-
-    invoke-interface {v0, p1}, Lcom/android/incallui/CallButtonUi;->returnButtonsForDialpad(Z)V
+    if-eqz v1, :cond_7
 
     invoke-virtual {p0}, Lcom/android/incallui/InCallActivity;->getCallButtonFragment()Lcom/android/incallui/CallButtonUi;
 
-    move-result-object v0
+    move-result-object v1
 
-    invoke-interface {v0, v2}, Lcom/android/incallui/CallButtonUi;->updateCallButtons(Lcom/android/incallui/Call;)V
+    invoke-interface {v1, p1}, Lcom/android/incallui/CallButtonUi;->returnButtonsForDialpad(Z)V
 
-    :cond_6
-    invoke-virtual {p0}, Lcom/android/incallui/InCallActivity;->getDialpadFragment()Lcom/android/incallui/DialpadUi;
+    invoke-virtual {p0}, Lcom/android/incallui/InCallActivity;->getCallButtonFragment()Lcom/android/incallui/CallButtonUi;
 
-    move-result-object v0
+    move-result-object v1
 
-    if-eqz v0, :cond_7
-
-    invoke-virtual {p0}, Lcom/android/incallui/InCallActivity;->getDialpadFragment()Lcom/android/incallui/DialpadUi;
-
-    move-result-object v0
-
-    invoke-interface {v0}, Lcom/android/incallui/DialpadUi;->getView()Landroid/view/View;
-
-    move-result-object v0
-
-    if-eqz v0, :cond_7
-
-    invoke-virtual {p0}, Lcom/android/incallui/InCallActivity;->getDialpadFragment()Lcom/android/incallui/DialpadUi;
-
-    move-result-object v0
-
-    invoke-interface {v0}, Lcom/android/incallui/DialpadUi;->showElapsedTimeContainer()V
+    invoke-interface {v1, v2}, Lcom/android/incallui/CallButtonUi;->updateCallButtons(Lcom/android/incallui/Call;)V
 
     :cond_7
-    invoke-virtual {p0}, Lcom/android/incallui/InCallActivity;->getCallCardFragment()Lcom/android/incallui/CallCardUi;
+    invoke-virtual {p0}, Lcom/android/incallui/InCallActivity;->getDialpadFragment()Lcom/android/incallui/DialpadUi;
 
-    move-result-object v0
+    move-result-object v1
 
-    if-eqz v0, :cond_8
+    if-eqz v1, :cond_8
 
-    invoke-virtual {p0}, Lcom/android/incallui/InCallActivity;->getCallCardFragment()Lcom/android/incallui/CallCardUi;
+    invoke-virtual {p0}, Lcom/android/incallui/InCallActivity;->getDialpadFragment()Lcom/android/incallui/DialpadUi;
 
-    move-result-object v0
+    move-result-object v1
 
-    invoke-interface {v0, p1}, Lcom/android/incallui/CallCardUi;->changeViewForMoveDialpad(Z)V
+    invoke-interface {v1}, Lcom/android/incallui/DialpadUi;->getView()Landroid/view/View;
+
+    move-result-object v1
+
+    if-eqz v1, :cond_8
+
+    invoke-virtual {p0}, Lcom/android/incallui/InCallActivity;->getDialpadFragment()Lcom/android/incallui/DialpadUi;
+
+    move-result-object v1
+
+    invoke-interface {v1}, Lcom/android/incallui/DialpadUi;->showElapsedTimeContainer()V
 
     :cond_8
+    invoke-virtual {p0}, Lcom/android/incallui/InCallActivity;->getCallCardFragment()Lcom/android/incallui/CallCardUi;
+
+    move-result-object v1
+
+    if-eqz v1, :cond_9
+
+    invoke-virtual {p0}, Lcom/android/incallui/InCallActivity;->getCallCardFragment()Lcom/android/incallui/CallCardUi;
+
+    move-result-object v1
+
+    invoke-interface {v1, p1}, Lcom/android/incallui/CallCardUi;->changeViewForMoveDialpad(Z)V
+
+    invoke-virtual {p0}, Lcom/android/incallui/InCallActivity;->getCallCardFragment()Lcom/android/incallui/CallCardUi;
+
+    move-result-object v1
+
+    invoke-interface {v1}, Lcom/android/incallui/CallCardUi;->updateAgifImage()V
+
     if-eqz v2, :cond_9
+
+    invoke-virtual {v2}, Lcom/android/incallui/Call;->getState()I
+
+    move-result v1
+
+    const/16 v3, 0x8
+
+    if-ne v1, v3, :cond_9
+
+    invoke-virtual {p0}, Lcom/android/incallui/InCallActivity;->getCallCardFragment()Lcom/android/incallui/CallCardUi;
+
+    move-result-object v1
+
+    invoke-interface {v1, v0}, Lcom/android/incallui/CallCardUi;->updateAgifContainer(Z)V
+
+    :cond_9
+    if-eqz v2, :cond_a
 
     invoke-virtual {v2}, Lcom/android/incallui/Call;->getState()I
 
@@ -5484,10 +5463,10 @@
 
     invoke-virtual {p0, v0}, Lcom/android/incallui/InCallActivity;->updateNavigationBarIconColor(I)V
 
-    :cond_9
+    :cond_a
     invoke-virtual {p0}, Lcom/android/incallui/InCallActivity;->updateGradientBackground()V
 
-    :cond_a
+    :cond_b
     :goto_1
     invoke-static {}, Lcom/android/incallui/InCallPresenter;->getInstance()Lcom/android/incallui/InCallPresenter;
 
@@ -5501,39 +5480,39 @@
 
     goto/16 :goto_0
 
-    :cond_b
-    if-eqz p1, :cond_c
+    :cond_c
+    if-eqz p1, :cond_d
 
     invoke-direct {p0, v1}, Lcom/android/incallui/InCallActivity;->showDialpad(Z)V
 
-    :cond_c
+    :cond_d
     iget-object v2, p0, Lcom/android/incallui/InCallActivity;->mGradientAnimationView:Lcom/android/incallui/widget/GradientAnimationView;
 
-    if-eqz v2, :cond_d
+    if-eqz v2, :cond_e
 
     invoke-virtual {p0}, Lcom/android/incallui/InCallActivity;->getResources()Landroid/content/res/Resources;
 
     move-result-object v2
 
-    const v3, 0x7f0e004e
+    const v3, 0x7f0f004d
 
     invoke-virtual {v2, v3}, Landroid/content/res/Resources;->getInteger(I)I
 
     move-result v2
 
-    if-eqz p1, :cond_14
+    if-eqz p1, :cond_15
 
     iget-object v3, p0, Lcom/android/incallui/InCallActivity;->mGradientAnimationView:Lcom/android/incallui/widget/GradientAnimationView;
 
     invoke-virtual {v3, v2}, Lcom/android/incallui/widget/GradientAnimationView;->animateForHide(I)V
 
-    :cond_d
+    :cond_e
     :goto_2
     invoke-virtual {p0}, Lcom/android/incallui/InCallActivity;->getCallCardFragment()Lcom/android/incallui/CallCardUi;
 
     move-result-object v2
 
-    if-eqz v2, :cond_e
+    if-eqz v2, :cond_f
 
     invoke-virtual {p0}, Lcom/android/incallui/InCallActivity;->getCallCardFragment()Lcom/android/incallui/CallCardUi;
 
@@ -5541,14 +5520,14 @@
 
     invoke-interface {v2, p1}, Lcom/android/incallui/CallCardUi;->onDialpadVisiblityChange(Z)V
 
-    :cond_e
+    :cond_f
     invoke-virtual {p0}, Lcom/android/incallui/InCallActivity;->getDialpadFragment()Lcom/android/incallui/DialpadUi;
 
     move-result-object v2
 
-    if-eqz v2, :cond_12
+    if-eqz v2, :cond_13
 
-    if-nez p1, :cond_f
+    if-nez p1, :cond_10
 
     invoke-virtual {p0}, Lcom/android/incallui/InCallActivity;->getDialpadFragment()Lcom/android/incallui/DialpadUi;
 
@@ -5556,18 +5535,18 @@
 
     invoke-interface {v2}, Lcom/android/incallui/DialpadUi;->hideElapsedTimeContainer()V
 
-    :cond_f
+    :cond_10
     invoke-direct {p0, v0}, Lcom/android/incallui/InCallActivity;->setTopMarginOfDialpad(I)V
 
     iget-object v2, p0, Lcom/android/incallui/InCallActivity;->mSlideIn:Landroid/view/animation/Animation;
 
-    if-eqz v2, :cond_10
+    if-eqz v2, :cond_11
 
     iget-object v2, p0, Lcom/android/incallui/InCallActivity;->mSlideOut:Landroid/view/animation/Animation;
 
-    if-nez v2, :cond_11
+    if-nez v2, :cond_12
 
-    :cond_10
+    :cond_11
     invoke-static {}, Ljava/util/Locale;->getDefault()Ljava/util/Locale;
 
     move-result-object v2
@@ -5576,14 +5555,14 @@
 
     move-result v2
 
-    if-ne v2, v1, :cond_15
+    if-ne v2, v1, :cond_16
 
     :goto_3
     iget-boolean v2, p0, Lcom/android/incallui/InCallActivity;->mIsLandscape:Z
 
-    if-eqz v2, :cond_18
+    if-eqz v2, :cond_19
 
-    if-eqz v1, :cond_16
+    if-eqz v1, :cond_17
 
     const v2, 0x7f050014
 
@@ -5594,7 +5573,7 @@
 
     iput-object v2, p0, Lcom/android/incallui/InCallActivity;->mSlideIn:Landroid/view/animation/Animation;
 
-    if-eqz v1, :cond_17
+    if-eqz v1, :cond_18
 
     const v1, 0x7f050017
 
@@ -5618,7 +5597,7 @@
 
     invoke-virtual {v1, v2}, Landroid/view/animation/Animation;->setAnimationListener(Landroid/view/animation/Animation$AnimationListener;)V
 
-    :cond_11
+    :cond_12
     invoke-virtual {p0}, Lcom/android/incallui/InCallActivity;->getDialpadFragment()Lcom/android/incallui/DialpadUi;
 
     move-result-object v1
@@ -5627,7 +5606,7 @@
 
     move-result-object v1
 
-    if-eqz v1, :cond_12
+    if-eqz v1, :cond_13
 
     invoke-virtual {p0}, Lcom/android/incallui/InCallActivity;->getDialpadFragment()Lcom/android/incallui/DialpadUi;
 
@@ -5647,19 +5626,19 @@
 
     move-result-object v2
 
-    if-eqz p1, :cond_19
+    if-eqz p1, :cond_1a
 
     iget-object v1, p0, Lcom/android/incallui/InCallActivity;->mSlideIn:Landroid/view/animation/Animation;
 
     :goto_7
     invoke-virtual {v2, v1}, Landroid/view/View;->startAnimation(Landroid/view/animation/Animation;)V
 
-    :cond_12
+    :cond_13
     invoke-virtual {p0}, Lcom/android/incallui/InCallActivity;->getCallCardFragment()Lcom/android/incallui/CallCardUi;
 
     move-result-object v1
 
-    if-eqz v1, :cond_13
+    if-eqz v1, :cond_14
 
     invoke-virtual {p0}, Lcom/android/incallui/InCallActivity;->getCallCardFragment()Lcom/android/incallui/CallCardUi;
 
@@ -5667,12 +5646,12 @@
 
     invoke-interface {v1, p1}, Lcom/android/incallui/CallCardUi;->animateForMoveDialpad(Z)V
 
-    :cond_13
+    :cond_14
     invoke-virtual {p0}, Lcom/android/incallui/InCallActivity;->getCallButtonFragment()Lcom/android/incallui/CallButtonUi;
 
     move-result-object v1
 
-    if-eqz v1, :cond_a
+    if-eqz v1, :cond_b
 
     invoke-virtual {p0}, Lcom/android/incallui/InCallActivity;->getCallButtonFragment()Lcom/android/incallui/CallButtonUi;
 
@@ -5684,7 +5663,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_1a
+    if-eqz v0, :cond_1b
 
     invoke-virtual {p0}, Lcom/android/incallui/InCallActivity;->getCallButtonFragment()Lcom/android/incallui/CallButtonUi;
 
@@ -5696,7 +5675,7 @@
 
     move-result-object v0
 
-    if-eqz v0, :cond_a
+    if-eqz v0, :cond_b
 
     invoke-virtual {p0}, Lcom/android/incallui/InCallActivity;->getDialpadFragment()Lcom/android/incallui/DialpadUi;
 
@@ -5706,7 +5685,7 @@
 
     move-result-object v0
 
-    if-eqz v0, :cond_a
+    if-eqz v0, :cond_b
 
     invoke-virtual {p0}, Lcom/android/incallui/InCallActivity;->getDialpadFragment()Lcom/android/incallui/DialpadUi;
 
@@ -5716,29 +5695,29 @@
 
     goto/16 :goto_1
 
-    :cond_14
+    :cond_15
     iget-object v3, p0, Lcom/android/incallui/InCallActivity;->mGradientAnimationView:Lcom/android/incallui/widget/GradientAnimationView;
 
     invoke-virtual {v3, v2}, Lcom/android/incallui/widget/GradientAnimationView;->animateForShow(I)V
 
     goto/16 :goto_2
 
-    :cond_15
+    :cond_16
     move v1, v0
 
     goto/16 :goto_3
 
-    :cond_16
+    :cond_17
     const v2, 0x7f050015
 
     goto/16 :goto_4
 
-    :cond_17
+    :cond_18
     const v1, 0x7f050018
 
     goto/16 :goto_5
 
-    :cond_18
+    :cond_19
     const v1, 0x7f050013
 
     invoke-static {p0, v1}, Landroid/view/animation/AnimationUtils;->loadAnimation(Landroid/content/Context;I)Landroid/view/animation/Animation;
@@ -5757,17 +5736,17 @@
 
     goto/16 :goto_6
 
-    :cond_19
+    :cond_1a
     iget-object v1, p0, Lcom/android/incallui/InCallActivity;->mSlideOut:Landroid/view/animation/Animation;
 
     goto :goto_7
 
-    :cond_1a
+    :cond_1b
     invoke-static {}, Lcom/android/incallui/util/CallTypeUtils;->isVideoCall()Z
 
     move-result v0
 
-    if-eqz v0, :cond_a
+    if-eqz v0, :cond_b
 
     invoke-virtual {p0}, Lcom/android/incallui/InCallActivity;->getCallButtonFragment()Lcom/android/incallui/CallButtonUi;
 
@@ -5776,6 +5755,40 @@
     invoke-interface {v0, p1}, Lcom/android/incallui/CallButtonUi;->animateForMoveDialpad(Z)V
 
     goto/16 :goto_1
+.end method
+
+.method public displayE911RttDialog()V
+    .locals 3
+
+    const-string v0, "displayE911RttDialog"
+
+    invoke-static {p0, v0}, Lcom/android/incallui/Log;->i(Ljava/lang/Object;Ljava/lang/String;)V
+
+    new-instance v0, Landroid/app/AlertDialog$Builder;
+
+    const/4 v1, 0x5
+
+    invoke-direct {v0, p0, v1}, Landroid/app/AlertDialog$Builder;-><init>(Landroid/content/Context;I)V
+
+    const v1, 0x7f09066f
+
+    invoke-virtual {v0, v1}, Landroid/app/AlertDialog$Builder;->setMessage(I)Landroid/app/AlertDialog$Builder;
+
+    const v1, 0x7f090065
+
+    new-instance v2, Lcom/android/incallui/InCallActivity$31;
+
+    invoke-direct {v2, p0}, Lcom/android/incallui/InCallActivity$31;-><init>(Lcom/android/incallui/InCallActivity;)V
+
+    invoke-virtual {v0, v1, v2}, Landroid/app/AlertDialog$Builder;->setPositiveButton(ILandroid/content/DialogInterface$OnClickListener;)Landroid/app/AlertDialog$Builder;
+
+    invoke-virtual {v0}, Landroid/app/AlertDialog$Builder;->create()Landroid/app/AlertDialog;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Landroid/app/AlertDialog;->show()V
+
+    return-void
 .end method
 
 .method public displayRTT(ZZ)V
@@ -5890,7 +5903,7 @@
 
     move-result-object v4
 
-    const v5, 0x7f0e004e
+    const v5, 0x7f0f004d
 
     invoke-virtual {v4, v5}, Landroid/content/res/Resources;->getInteger(I)I
 
@@ -6104,7 +6117,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f0e0035
+    const v2, 0x7f0f0034
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getInteger(I)I
 
@@ -6128,9 +6141,9 @@
 
     :cond_2
     :goto_1
-    new-instance v2, Lcom/android/incallui/InCallActivity$33;
+    new-instance v2, Lcom/android/incallui/InCallActivity$29;
 
-    invoke-direct {v2, p0}, Lcom/android/incallui/InCallActivity$33;-><init>(Lcom/android/incallui/InCallActivity;)V
+    invoke-direct {v2, p0}, Lcom/android/incallui/InCallActivity$29;-><init>(Lcom/android/incallui/InCallActivity;)V
 
     iget-object v3, p0, Lcom/android/incallui/InCallActivity;->mGradientAnimationView:Lcom/android/incallui/widget/GradientAnimationView;
 
@@ -6695,7 +6708,7 @@
 
     const/4 v0, 0x0
 
-    const v2, 0x7f100312
+    const v2, 0x7f10031e
 
     const-string v1, "ims_support_rtt"
 
@@ -6886,11 +6899,29 @@
 .end method
 
 .method public handleError(I)V
-    .locals 3
+    .locals 4
+
+    const v3, 0x7f09029f
 
     const/4 v2, 0x0
 
-    const-string v0, "handleError"
+    new-instance v0, Ljava/lang/StringBuilder;
+
+    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v1, "handleError :"
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
 
     const/4 v1, 0x1
 
@@ -6927,24 +6958,22 @@
     return-void
 
     :pswitch_1
-    const v0, 0x7f09029b
+    const v0, 0x7f09029e
 
-    invoke-static {p0, v0, v2}, Landroid/widget/Toast;->makeText(Landroid/content/Context;II)Landroid/widget/Toast;
+    invoke-virtual {p0, v0}, Lcom/android/incallui/InCallActivity;->getString(I)Ljava/lang/String;
 
     move-result-object v0
 
-    invoke-virtual {v0}, Landroid/widget/Toast;->show()V
+    invoke-direct {p0, v0}, Lcom/android/incallui/InCallActivity;->showToast(Ljava/lang/String;)V
 
     goto :goto_0
 
     :pswitch_2
-    const v0, 0x7f09029c
-
-    invoke-static {p0, v0, v2}, Landroid/widget/Toast;->makeText(Landroid/content/Context;II)Landroid/widget/Toast;
+    invoke-virtual {p0, v3}, Lcom/android/incallui/InCallActivity;->getString(I)Ljava/lang/String;
 
     move-result-object v0
 
-    invoke-virtual {v0}, Landroid/widget/Toast;->show()V
+    invoke-direct {p0, v0}, Lcom/android/incallui/InCallActivity;->showToast(Ljava/lang/String;)V
 
     goto :goto_0
 
@@ -6960,7 +6989,7 @@
     goto :goto_0
 
     :pswitch_4
-    const v0, 0x7f09063c
+    const v0, 0x7f090641
 
     invoke-static {p0, v0, v2}, Landroid/widget/Toast;->makeText(Landroid/content/Context;II)Landroid/widget/Toast;
 
@@ -6971,7 +7000,7 @@
     goto :goto_0
 
     :pswitch_5
-    const v0, 0x7f09063d
+    const v0, 0x7f090642
 
     invoke-static {p0, v0, v2}, Landroid/widget/Toast;->makeText(Landroid/content/Context;II)Landroid/widget/Toast;
 
@@ -6982,7 +7011,7 @@
     goto :goto_0
 
     :pswitch_6
-    const v0, 0x7f09029d
+    const v0, 0x7f0902a0
 
     invoke-static {p0, v0, v2}, Landroid/widget/Toast;->makeText(Landroid/content/Context;II)Landroid/widget/Toast;
 
@@ -6993,7 +7022,7 @@
     goto :goto_0
 
     :pswitch_7
-    const v0, 0x7f09029f
+    const v0, 0x7f0902a2
 
     invoke-static {p0, v0, v2}, Landroid/widget/Toast;->makeText(Landroid/content/Context;II)Landroid/widget/Toast;
 
@@ -7004,18 +7033,16 @@
     goto :goto_0
 
     :pswitch_8
-    const v0, 0x7f09029a
-
-    invoke-static {p0, v0, v2}, Landroid/widget/Toast;->makeText(Landroid/content/Context;II)Landroid/widget/Toast;
+    invoke-virtual {p0, v3}, Lcom/android/incallui/InCallActivity;->getString(I)Ljava/lang/String;
 
     move-result-object v0
 
-    invoke-virtual {v0}, Landroid/widget/Toast;->show()V
+    invoke-direct {p0, v0}, Lcom/android/incallui/InCallActivity;->showToast(Ljava/lang/String;)V
 
     goto :goto_0
 
     :pswitch_9
-    const v0, 0x7f09029e
+    const v0, 0x7f0902a1
 
     invoke-static {p0, v0, v2}, Landroid/widget/Toast;->makeText(Landroid/content/Context;II)Landroid/widget/Toast;
 
@@ -7026,7 +7053,7 @@
     goto :goto_0
 
     :pswitch_a
-    const v0, 0x7f09063b
+    const v0, 0x7f090640
 
     invoke-static {p0, v0, v2}, Landroid/widget/Toast;->makeText(Landroid/content/Context;II)Landroid/widget/Toast;
 
@@ -8159,7 +8186,7 @@
 
     const/4 v1, 0x1
 
-    if-nez p1, :cond_1
+    if-nez p1, :cond_0
 
     const-string v0, "onConfigurationChanged - return : newConfig is null"
 
@@ -8167,11 +8194,10 @@
 
     invoke-super {p0, p1}, Lcom/android/contacts/common/activity/TransactionSafeActivity;->onConfigurationChanged(Landroid/content/res/Configuration;)V
 
-    :cond_0
     :goto_0
     return-void
 
-    :cond_1
+    :cond_0
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -8230,19 +8256,19 @@
 
     move-result v4
 
-    if-eqz v4, :cond_2
+    if-eqz v4, :cond_1
 
     invoke-virtual {v3}, Lcom/android/incallui/Call;->hasVideoState()Z
 
     move-result v4
 
-    if-eqz v4, :cond_2
+    if-eqz v4, :cond_1
 
     invoke-static {}, Lcom/android/incallui/util/CallTypeUtils;->isPSVideoCall()Z
 
     move-result v4
 
-    if-nez v4, :cond_2
+    if-nez v4, :cond_1
 
     new-instance v4, Ljava/lang/StringBuilder;
 
@@ -8270,58 +8296,7 @@
 
     invoke-virtual {v4, v0}, Lcom/android/incallui/service/vt/VideoCallAdapter;->setDeviceRotatoin(I)V
 
-    :cond_2
-    const-string v0, "tablet_device"
-
-    invoke-static {v0}, Lcom/android/incallui/InCallUIFeature;->hasFeature(Ljava/lang/String;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_3
-
-    const-string v0, "tablet_fullscreen_mode"
-
-    invoke-static {v0}, Lcom/android/incallui/InCallUIFeature;->hasFeature(Ljava/lang/String;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_3
-
-    invoke-static {v3}, Lcom/android/incallui/util/CallTypeUtils;->isVoiceCall(Lcom/android/incallui/Call;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_3
-
-    iget-object v0, p0, Lcom/android/incallui/InCallActivity;->mDialpadFragmentManager:Lcom/android/incallui/fragment/manager/DialpadFragmentManager;
-
-    if-eqz v0, :cond_3
-
-    iget-object v0, p0, Lcom/android/incallui/InCallActivity;->mCallButtonFragmentManager:Lcom/android/incallui/fragment/manager/CallButtonFragmentManager;
-
-    if-eqz v0, :cond_3
-
-    iget-object v0, p0, Lcom/android/incallui/InCallActivity;->mCallButtonFragmentManager:Lcom/android/incallui/fragment/manager/CallButtonFragmentManager;
-
-    invoke-virtual {v0}, Lcom/android/incallui/fragment/manager/CallButtonFragmentManager;->getFragment()Lcom/android/incallui/fragment/CallButtonFragment;
-
-    move-result-object v0
-
-    if-eqz v0, :cond_3
-
-    iget-object v0, p0, Lcom/android/incallui/InCallActivity;->mDialpadFragmentManager:Lcom/android/incallui/fragment/manager/DialpadFragmentManager;
-
-    invoke-virtual {v0}, Lcom/android/incallui/fragment/manager/DialpadFragmentManager;->hideDialpad()V
-
-    iget-object v0, p0, Lcom/android/incallui/InCallActivity;->mCallButtonFragmentManager:Lcom/android/incallui/fragment/manager/CallButtonFragmentManager;
-
-    invoke-virtual {v0}, Lcom/android/incallui/fragment/manager/CallButtonFragmentManager;->getFragment()Lcom/android/incallui/fragment/CallButtonFragment;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Lcom/android/incallui/fragment/CallButtonFragment;->updateDiapadButton()V
-
-    :cond_3
+    :cond_1
     iget v0, p1, Landroid/content/res/Configuration;->orientation:I
 
     const/4 v4, 0x2
@@ -8345,17 +8320,17 @@
 
     move-result v4
 
-    if-eqz v3, :cond_5
+    if-eqz v3, :cond_3
 
     iget-object v5, p0, Lcom/android/incallui/InCallActivity;->mGradientAnimationView:Lcom/android/incallui/widget/GradientAnimationView;
 
-    if-eqz v5, :cond_5
+    if-eqz v5, :cond_3
 
     invoke-static {p0}, Lcom/android/incallui/util/ScreenControlUtils;->hasNavigationBar(Landroid/content/Context;)Z
 
     move-result v5
 
-    if-eqz v5, :cond_5
+    if-eqz v5, :cond_3
 
     invoke-virtual {v3}, Lcom/android/incallui/Call;->getState()I
 
@@ -8363,7 +8338,7 @@
 
     const/4 v6, 0x3
 
-    if-eq v5, v6, :cond_4
+    if-eq v5, v6, :cond_2
 
     invoke-virtual {v3}, Lcom/android/incallui/Call;->getState()I
 
@@ -8371,45 +8346,45 @@
 
     const/16 v6, 0x8
 
-    if-ne v5, v6, :cond_5
+    if-ne v5, v6, :cond_3
 
-    :cond_4
+    :cond_2
+    if-eqz v0, :cond_3
+
+    iget-object v0, p0, Lcom/android/incallui/InCallActivity;->mGradientAnimationView:Lcom/android/incallui/widget/GradientAnimationView;
+
+    invoke-virtual {v0}, Lcom/android/incallui/widget/GradientAnimationView;->getScaleY()F
+
+    move-result v0
+
+    cmpl-float v0, v0, v7
+
+    if-nez v0, :cond_5
+
+    :cond_3
+    if-eqz v4, :cond_4
+
+    iget-object v0, p0, Lcom/android/incallui/InCallActivity;->mGradientAnimationView:Lcom/android/incallui/widget/GradientAnimationView;
+
+    invoke-virtual {v0}, Lcom/android/incallui/widget/GradientAnimationView;->getScaleY()F
+
+    move-result v0
+
+    cmpl-float v0, v0, v7
+
     if-eqz v0, :cond_5
 
-    iget-object v0, p0, Lcom/android/incallui/InCallActivity;->mGradientAnimationView:Lcom/android/incallui/widget/GradientAnimationView;
-
-    invoke-virtual {v0}, Lcom/android/incallui/widget/GradientAnimationView;->getScaleY()F
-
-    move-result v0
-
-    cmpl-float v0, v0, v7
-
-    if-nez v0, :cond_7
-
-    :cond_5
-    if-eqz v4, :cond_6
-
-    iget-object v0, p0, Lcom/android/incallui/InCallActivity;->mGradientAnimationView:Lcom/android/incallui/widget/GradientAnimationView;
-
-    invoke-virtual {v0}, Lcom/android/incallui/widget/GradientAnimationView;->getScaleY()F
-
-    move-result v0
-
-    cmpl-float v0, v0, v7
-
-    if-eqz v0, :cond_7
-
-    :cond_6
+    :cond_4
     iget v0, p0, Lcom/android/incallui/InCallActivity;->mCurrentOrientation:I
 
     iget v4, p1, Landroid/content/res/Configuration;->orientation:I
 
-    if-eq v0, v4, :cond_8
+    if-eq v0, v4, :cond_6
 
-    :cond_7
+    :cond_5
     invoke-virtual {p0}, Lcom/android/incallui/InCallActivity;->updateGradientBackground()V
 
-    :cond_8
+    :cond_6
     invoke-super {p0, p1}, Lcom/android/contacts/common/activity/TransactionSafeActivity;->onConfigurationChanged(Landroid/content/res/Configuration;)V
 
     invoke-static {}, Lcom/android/incallui/InCallPresenter;->getInstance()Lcom/android/incallui/InCallPresenter;
@@ -8420,27 +8395,27 @@
 
     move-result-object v0
 
-    if-eqz v0, :cond_9
+    if-eqz v0, :cond_7
 
     invoke-virtual {v0, p1}, Lcom/android/incallui/ProximitySensor;->onConfigurationChanged(Landroid/content/res/Configuration;)V
 
-    :cond_9
+    :cond_7
     invoke-static {}, Lcom/android/incallui/service/vt/VideoCallControl;->canUseScreenTypeSensor()Z
 
     move-result v0
 
-    if-eqz v0, :cond_a
+    if-eqz v0, :cond_8
 
     invoke-static {p0}, Lcom/android/incallui/util/VideoCallAppLogging;->orientationMode(Landroid/app/Activity;)V
 
-    :cond_a
+    :cond_8
     const-string v0, "ims_rcs"
 
     invoke-static {v0}, Lcom/android/incallui/InCallUIFeature;->hasFeature(Ljava/lang/String;)Z
 
     move-result v0
 
-    if-eqz v0, :cond_b
+    if-eqz v0, :cond_9
 
     const-string v0, "onConfigurationChanged()->setOrientation()"
 
@@ -8452,20 +8427,20 @@
 
     invoke-virtual {v0, v4}, Lcom/android/incallui/secrcs/RcsInvitation;->setOrientation(I)V
 
-    :cond_b
+    :cond_9
     const-string v0, "support_mobile_keyboard"
 
     invoke-static {v0}, Lcom/android/incallui/InCallUIFeature;->hasFeature(Ljava/lang/String;)Z
 
     move-result v0
 
-    if-eqz v0, :cond_c
+    if-eqz v0, :cond_a
 
     iget v0, p1, Landroid/content/res/Configuration;->semMobileKeyboardCovered:I
 
     iget v4, p0, Lcom/android/incallui/InCallActivity;->mCurrentMobileKeyboardCovered:I
 
-    if-eq v0, v4, :cond_c
+    if-eq v0, v4, :cond_a
 
     iget v0, p1, Landroid/content/res/Configuration;->semMobileKeyboardCovered:I
 
@@ -8479,7 +8454,7 @@
 
     iget v0, p0, Lcom/android/incallui/InCallActivity;->mCurrentMobileKeyboardCovered:I
 
-    if-nez v0, :cond_c
+    if-nez v0, :cond_a
 
     invoke-virtual {p0}, Lcom/android/incallui/InCallActivity;->updateNavigationBarFlag()V
 
@@ -8499,12 +8474,12 @@
 
     invoke-virtual {v0, v4}, Landroid/view/Window;->setNavigationBarColor(I)V
 
-    :cond_c
+    :cond_a
     iget v0, p0, Lcom/android/incallui/InCallActivity;->mCurrentOrientation:I
 
     iget v4, p1, Landroid/content/res/Configuration;->orientation:I
 
-    if-eq v0, v4, :cond_d
+    if-eq v0, v4, :cond_b
 
     iget v0, p1, Landroid/content/res/Configuration;->orientation:I
 
@@ -8534,29 +8509,29 @@
 
     invoke-virtual {v0, v4}, Lcom/android/incallui/InCallPresenter;->onContentViewChanged(Landroid/graphics/Point;)V
 
-    :cond_d
+    :cond_b
     iget v0, p1, Landroid/content/res/Configuration;->smallestScreenWidthDp:I
 
     sget v4, Lcom/android/incallui/InCallActivity;->TABLET_SMALL_WIDTH_VALUE:I
 
-    if-lt v0, v4, :cond_e
+    if-lt v0, v4, :cond_c
 
     move v2, v1
 
-    :cond_e
+    :cond_c
     invoke-direct {p0, p1, v2}, Lcom/android/incallui/InCallActivity;->getMultiWindowUX(Landroid/content/res/Configuration;Z)Z
 
     move-result v0
 
     iget-boolean v4, p0, Lcom/android/incallui/InCallActivity;->mIsTabletUX:Z
 
-    if-ne v2, v4, :cond_f
+    if-ne v2, v4, :cond_d
 
     iget-boolean v4, p0, Lcom/android/incallui/InCallActivity;->mIsMultiWindowUX:Z
 
-    if-eq v0, v4, :cond_14
+    if-eq v0, v4, :cond_12
 
-    :cond_f
+    :cond_d
     iput-boolean v2, p0, Lcom/android/incallui/InCallActivity;->mIsTabletUX:Z
 
     iput-boolean v0, p0, Lcom/android/incallui/InCallActivity;->mIsMultiWindowUX:Z
@@ -8565,7 +8540,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_10
+    if-eqz v0, :cond_e
 
     invoke-static {}, Lcom/android/incallui/util/VideoCallUtils;->isQCIF()Z
 
@@ -8573,25 +8548,25 @@
 
     if-eqz v0, :cond_18
 
-    :cond_10
+    :cond_e
     iget-object v0, p0, Lcom/android/incallui/InCallActivity;->mCallCardFragmentManager:Lcom/android/incallui/fragment/manager/CallCardFragmentManager;
 
-    if-eqz v0, :cond_11
+    if-eqz v0, :cond_f
 
     iget-object v0, p0, Lcom/android/incallui/InCallActivity;->mCallCardFragmentManager:Lcom/android/incallui/fragment/manager/CallCardFragmentManager;
 
     invoke-virtual {v0}, Lcom/android/incallui/fragment/manager/CallCardFragmentManager;->onSMultiWindowOnChanged()V
 
-    :cond_11
+    :cond_f
     iget-object v0, p0, Lcom/android/incallui/InCallActivity;->mCallButtonFragmentManager:Lcom/android/incallui/fragment/manager/CallButtonFragmentManager;
 
-    if-eqz v0, :cond_12
+    if-eqz v0, :cond_10
 
     iget-object v0, p0, Lcom/android/incallui/InCallActivity;->mCallButtonFragmentManager:Lcom/android/incallui/fragment/manager/CallButtonFragmentManager;
 
     invoke-virtual {v0}, Lcom/android/incallui/fragment/manager/CallButtonFragmentManager;->onSMultiWindowOnChanged()V
 
-    :cond_12
+    :cond_10
     invoke-static {}, Lcom/android/incallui/util/VideoCallUtils;->isQCIF()Z
 
     move-result v0
@@ -8600,61 +8575,61 @@
 
     iget-object v0, p0, Lcom/android/incallui/InCallActivity;->mVideoCallFragmentManager:Lcom/android/incallui/fragment/manager/VideoCallFragmentManager;
 
-    if-eqz v0, :cond_13
+    if-eqz v0, :cond_11
 
     iget-object v0, p0, Lcom/android/incallui/InCallActivity;->mVideoCallFragmentManager:Lcom/android/incallui/fragment/manager/VideoCallFragmentManager;
 
     invoke-virtual {v0}, Lcom/android/incallui/fragment/manager/VideoCallFragmentManager;->onSMultiWindowOnChanged()V
 
-    :cond_13
+    :cond_11
     iget-object v0, p0, Lcom/android/incallui/InCallActivity;->mDialpadFragmentManager:Lcom/android/incallui/fragment/manager/DialpadFragmentManager;
 
-    if-eqz v0, :cond_14
+    if-eqz v0, :cond_12
 
     iget-object v0, p0, Lcom/android/incallui/InCallActivity;->mDialpadFragmentManager:Lcom/android/incallui/fragment/manager/DialpadFragmentManager;
 
     invoke-virtual {v0}, Lcom/android/incallui/fragment/manager/DialpadFragmentManager;->onSMultiWindowOnChanged()V
 
-    :cond_14
+    :cond_12
     :goto_2
     invoke-static {}, Lcom/android/incallui/util/DesktopModeManager;->isDesktopMode()Z
 
     move-result v0
 
-    if-eqz v0, :cond_15
+    if-eqz v0, :cond_13
 
     invoke-static {}, Lcom/android/incallui/util/CallTypeUtils;->isVoiceCall()Z
 
     move-result v0
 
-    if-eqz v0, :cond_15
+    if-eqz v0, :cond_13
 
     iget-object v0, p0, Lcom/android/incallui/InCallActivity;->mDialpadFragmentManager:Lcom/android/incallui/fragment/manager/DialpadFragmentManager;
 
-    if-eqz v0, :cond_15
+    if-eqz v0, :cond_13
 
     iget-object v0, p0, Lcom/android/incallui/InCallActivity;->mDialpadFragmentManager:Lcom/android/incallui/fragment/manager/DialpadFragmentManager;
 
     invoke-virtual {v0}, Lcom/android/incallui/fragment/manager/DialpadFragmentManager;->onSMultiWindowOnChanged()V
 
-    :cond_15
+    :cond_13
     invoke-static {}, Lcom/android/incallui/util/CallTypeUtils;->isVoiceCall()Z
 
     move-result v0
 
-    if-eqz v0, :cond_0
+    if-eqz v0, :cond_14
 
     invoke-static {p0}, Lcom/android/incallui/util/ScreenControlUtils;->isShowingNavigationBar(Landroid/app/Activity;)Z
 
     move-result v0
 
-    if-nez v0, :cond_0
+    if-nez v0, :cond_14
 
     iget-boolean v0, p0, Lcom/android/incallui/InCallActivity;->mIsLandscape:Z
 
-    if-nez v0, :cond_0
+    if-nez v0, :cond_14
 
-    if-eqz v3, :cond_0
+    if-eqz v3, :cond_14
 
     invoke-virtual {v3}, Lcom/android/incallui/Call;->getState()I
 
@@ -8662,7 +8637,7 @@
 
     const/4 v2, 0x4
 
-    if-eq v0, v2, :cond_0
+    if-eq v0, v2, :cond_14
 
     invoke-virtual {v3}, Lcom/android/incallui/Call;->getState()I
 
@@ -8670,9 +8645,43 @@
 
     const/4 v2, 0x5
 
-    if-eq v0, v2, :cond_0
+    if-eq v0, v2, :cond_14
 
     invoke-static {p0, v1}, Lcom/android/incallui/util/ScreenControlUtils;->showNavigationBar(Landroid/app/Activity;Z)V
+
+    :cond_14
+    invoke-static {}, Lcom/android/incallui/service/vt/VideoCallControl;->isSupportOnlyLandscapeUI()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_15
+
+    iget v0, p0, Lcom/android/incallui/InCallActivity;->mContentViewWidthPixel:I
+
+    if-lez v0, :cond_15
+
+    iget v0, p0, Lcom/android/incallui/InCallActivity;->mContentViewHeightPixel:I
+
+    if-lez v0, :cond_15
+
+    invoke-static {}, Lcom/android/incallui/InCallNotifier;->getInstance()Lcom/android/incallui/InCallNotifier;
+
+    move-result-object v0
+
+    iget v1, p0, Lcom/android/incallui/InCallActivity;->mContentViewWidthPixel:I
+
+    iget v2, p0, Lcom/android/incallui/InCallActivity;->mContentViewHeightPixel:I
+
+    invoke-virtual {v0, v1, v2}, Lcom/android/incallui/InCallNotifier;->notifyInCallContentViewChange(II)V
+
+    :cond_15
+    iget v0, p1, Landroid/content/res/Configuration;->screenWidthDp:I
+
+    iput v0, p0, Lcom/android/incallui/InCallActivity;->mCurrentScreenWidthDp:I
+
+    iget v0, p1, Landroid/content/res/Configuration;->screenHeightDp:I
+
+    iput v0, p0, Lcom/android/incallui/InCallActivity;->mCurrentScreenHeightDp:I
 
     goto/16 :goto_0
 
@@ -8691,23 +8700,23 @@
 
     move-result v0
 
-    if-eqz v0, :cond_14
+    if-eqz v0, :cond_12
 
     invoke-static {}, Lcom/android/incallui/util/CallTypeUtils;->isPSVideoCall()Z
 
     move-result v0
 
-    if-eqz v0, :cond_14
+    if-eqz v0, :cond_12
 
     invoke-static {}, Lcom/android/incallui/util/VideoCallUtils;->isQCIF()Z
 
     move-result v0
 
-    if-nez v0, :cond_14
+    if-nez v0, :cond_12
 
     iget-object v0, p0, Lcom/android/incallui/InCallActivity;->mDialpadFragmentManager:Lcom/android/incallui/fragment/manager/DialpadFragmentManager;
 
-    if-eqz v0, :cond_14
+    if-eqz v0, :cond_12
 
     iget-object v0, p0, Lcom/android/incallui/InCallActivity;->mDialpadFragmentManager:Lcom/android/incallui/fragment/manager/DialpadFragmentManager;
 
@@ -8899,8 +8908,6 @@
 
     const/4 v8, 0x0
 
-    const/16 v6, 0xa9
-
     const/4 v4, 0x2
 
     const/4 v3, 0x0
@@ -9026,48 +9033,6 @@
     :cond_2
     invoke-virtual {p0}, Lcom/android/incallui/InCallActivity;->updateNavigationBarBgColor()V
 
-    invoke-static {}, Lcom/android/incallui/util/DesktopModeManager;->isDesktopMode()Z
-
-    move-result v1
-
-    invoke-virtual {p0}, Lcom/android/incallui/InCallActivity;->getApplicationContext()Landroid/content/Context;
-
-    move-result-object v0
-
-    const-string v5, "sem_statusbar"
-
-    invoke-virtual {v0, v5}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Landroid/app/SemStatusBarManager;
-
-    iput-object v0, p0, Lcom/android/incallui/InCallActivity;->mStatusBarManager:Landroid/app/SemStatusBarManager;
-
-    if-nez v1, :cond_4
-
-    iget-object v0, p0, Lcom/android/incallui/InCallActivity;->mHandler:Landroid/os/Handler;
-
-    invoke-virtual {v0, v6}, Landroid/os/Handler;->hasMessages(I)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_3
-
-    iget-object v0, p0, Lcom/android/incallui/InCallActivity;->mHandler:Landroid/os/Handler;
-
-    invoke-virtual {v0, v6}, Landroid/os/Handler;->removeMessages(I)V
-
-    :cond_3
-    iget-object v0, p0, Lcom/android/incallui/InCallActivity;->mStatusBarManager:Landroid/app/SemStatusBarManager;
-
-    if-eqz v0, :cond_4
-
-    iget-object v0, p0, Lcom/android/incallui/InCallActivity;->mStatusBarManager:Landroid/app/SemStatusBarManager;
-
-    invoke-virtual {v0}, Landroid/app/SemStatusBarManager;->collapsePanels()V
-
-    :cond_4
     invoke-virtual {p0}, Lcom/android/incallui/InCallActivity;->getWindow()Landroid/view/Window;
 
     move-result-object v0
@@ -9076,15 +9041,19 @@
 
     move-result-object v0
 
-    const-string v5, "samsung_screen_timeout_incall"
+    const-string v1, "samsung_screen_timeout_incall"
 
-    invoke-static {v5}, Lcom/android/incallui/InCallUIFeature;->hasFeature(Ljava/lang/String;)Z
+    invoke-static {v1}, Lcom/android/incallui/InCallUIFeature;->hasFeature(Ljava/lang/String;)Z
 
-    move-result v5
+    move-result v1
 
-    if-eqz v5, :cond_5
+    if-eqz v1, :cond_3
 
-    if-nez v1, :cond_5
+    invoke-static {}, Lcom/android/incallui/util/DesktopModeManager;->isDesktopMode()Z
+
+    move-result v1
+
+    if-nez v1, :cond_3
 
     const-wide/16 v6, 0x7530
 
@@ -9094,7 +9063,7 @@
 
     invoke-virtual {v0, v6, v7}, Landroid/view/WindowManager$LayoutParams;->semSetScreenDimDuration(J)V
 
-    :cond_5
+    :cond_3
     invoke-virtual {p0}, Lcom/android/incallui/InCallActivity;->getWindow()Landroid/view/Window;
 
     move-result-object v1
@@ -9121,7 +9090,7 @@
 
     invoke-static {p0, v0}, Lcom/android/incallui/Log;->d(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const v0, 0x7f0400ed
+    const v0, 0x7f0400f0
 
     invoke-virtual {p0, v0}, Lcom/android/incallui/InCallActivity;->setContentView(I)V
 
@@ -9133,7 +9102,7 @@
 
     invoke-virtual {p0}, Lcom/android/incallui/InCallActivity;->registerInCallContentViewListener()V
 
-    const v0, 0x7f100242
+    const v0, 0x7f100249
 
     invoke-virtual {p0, v0}, Lcom/android/incallui/InCallActivity;->findViewById(I)Landroid/view/View;
 
@@ -9157,7 +9126,7 @@
 
     invoke-virtual {v0, v1}, Lcom/android/incallui/widget/GradientAnimationView;->setVisibility(I)V
 
-    const v0, 0x7f10016b
+    const v0, 0x7f100172
 
     invoke-virtual {p0, v0}, Lcom/android/incallui/InCallActivity;->findViewById(I)Landroid/view/View;
 
@@ -9177,7 +9146,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_6
+    if-eqz v0, :cond_4
 
     const-string v0, "launching activity with fade in animation"
 
@@ -9189,7 +9158,7 @@
 
     invoke-virtual {p0, v0, v1}, Lcom/android/incallui/InCallActivity;->overridePendingTransition(II)V
 
-    const v0, 0x7f10030d
+    const v0, 0x7f100319
 
     invoke-virtual {p0, v0}, Lcom/android/incallui/InCallActivity;->findViewById(I)Landroid/view/View;
 
@@ -9201,7 +9170,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f0a0225
+    const v1, 0x7f0a020b
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDimension(I)F
 
@@ -9213,7 +9182,7 @@
 
     move-result v1
 
-    if-eqz v1, :cond_19
+    if-eqz v1, :cond_15
 
     invoke-static {}, Lcom/android/incallui/UiAdapter;->getInstance()Lcom/android/incallui/UiAdapter;
 
@@ -9223,13 +9192,13 @@
 
     move-result v1
 
-    if-nez v1, :cond_19
+    if-nez v1, :cond_15
 
     invoke-static {}, Lcom/android/incallui/util/InCallUtils;->isMobileKeyboardCovered()Z
 
     move-result v1
 
-    if-nez v1, :cond_19
+    if-nez v1, :cond_15
 
     invoke-static {p0}, Lcom/android/incallui/util/ScreenControlUtils;->getNavigationBarHeight(Landroid/content/Context;)I
 
@@ -9258,14 +9227,14 @@
 
     invoke-virtual {v0, v3}, Landroid/view/View;->setVisibility(I)V
 
-    :cond_6
+    :cond_4
     const-string v0, "ims_rcs"
 
     invoke-static {v0}, Lcom/android/incallui/InCallUIFeature;->hasFeature(Ljava/lang/String;)Z
 
     move-result v0
 
-    if-eqz v0, :cond_7
+    if-eqz v0, :cond_5
 
     new-instance v0, Lcom/android/incallui/secrcs/RcsBroadcastReceiver;
 
@@ -9281,7 +9250,7 @@
 
     invoke-static {p0, v0, v2}, Lcom/android/incallui/Log;->d(Ljava/lang/Object;Ljava/lang/String;Z)V
 
-    const v0, 0x7f100316
+    const v0, 0x7f100322
 
     invoke-virtual {p0, v0}, Lcom/android/incallui/InCallActivity;->findViewById(I)Landroid/view/View;
 
@@ -9289,11 +9258,11 @@
 
     check-cast v0, Landroid/view/ViewStub;
 
-    if-eqz v0, :cond_7
+    if-eqz v0, :cond_5
 
     invoke-virtual {v0}, Landroid/view/ViewStub;->inflate()Landroid/view/View;
 
-    const v0, 0x7f10021b
+    const v0, 0x7f100222
 
     invoke-virtual {p0, v0}, Lcom/android/incallui/InCallActivity;->findViewById(I)Landroid/view/View;
 
@@ -9303,7 +9272,7 @@
 
     iput-object v0, p0, Lcom/android/incallui/InCallActivity;->mRcsInvitation:Lcom/android/incallui/secrcs/RcsInvitation;
 
-    :cond_7
+    :cond_5
     iput-boolean v2, p0, Lcom/android/incallui/InCallActivity;->mNeedToInitialize:Z
 
     invoke-virtual {p0}, Lcom/android/incallui/InCallActivity;->getIntent()Landroid/content/Intent;
@@ -9326,7 +9295,7 @@
 
     iget v0, v1, Landroid/content/res/Configuration;->orientation:I
 
-    if-ne v0, v4, :cond_16
+    if-ne v0, v4, :cond_12
 
     move v0, v2
 
@@ -9339,18 +9308,18 @@
 
     move-result v0
 
-    if-eqz v0, :cond_8
+    if-eqz v0, :cond_6
 
     iget v0, v1, Landroid/content/res/Configuration;->semMobileKeyboardCovered:I
 
     iput v0, p0, Lcom/android/incallui/InCallActivity;->mCurrentMobileKeyboardCovered:I
 
-    :cond_8
+    :cond_6
     iget v0, v1, Landroid/content/res/Configuration;->smallestScreenWidthDp:I
 
     sget v5, Lcom/android/incallui/InCallActivity;->TABLET_SMALL_WIDTH_VALUE:I
 
-    if-lt v0, v5, :cond_17
+    if-lt v0, v5, :cond_13
 
     move v0, v2
 
@@ -9365,7 +9334,15 @@
 
     iput-boolean v0, p0, Lcom/android/incallui/InCallActivity;->mIsMultiWindowUX:Z
 
-    if-eqz p1, :cond_d
+    iget v0, v1, Landroid/content/res/Configuration;->screenWidthDp:I
+
+    iput v0, p0, Lcom/android/incallui/InCallActivity;->mCurrentScreenWidthDp:I
+
+    iget v0, v1, Landroid/content/res/Configuration;->screenHeightDp:I
+
+    iput v0, p0, Lcom/android/incallui/InCallActivity;->mCurrentScreenHeightDp:I
+
+    if-eqz p1, :cond_b
 
     const-string v0, "InCallActivity.show_dialpad"
 
@@ -9373,7 +9350,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_9
+    if-eqz v0, :cond_7
 
     const-string v0, "InCallActivity.show_dialpad"
 
@@ -9381,7 +9358,7 @@
 
     move-result v1
 
-    if-eqz v1, :cond_18
+    if-eqz v1, :cond_14
 
     move v0, v4
 
@@ -9392,7 +9369,7 @@
 
     iput-boolean v1, p0, Lcom/android/incallui/InCallActivity;->mNeedToRecoverDialpad:Z
 
-    :cond_9
+    :cond_7
     iput-object v8, p0, Lcom/android/incallui/InCallActivity;->mDtmfText:Ljava/lang/String;
 
     const-string v0, "InCallActivity.dialpad_text"
@@ -9409,7 +9386,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_a
+    if-eqz v0, :cond_8
 
     const-string v0, "InCallActivity.show_rtt"
 
@@ -9417,7 +9394,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_a
+    if-eqz v0, :cond_8
 
     const-string v0, "InCallActivity.show_rtt"
 
@@ -9427,9 +9404,7 @@
 
     iput-boolean v0, p0, Lcom/android/incallui/InCallActivity;->mShowRTTRequest:Z
 
-    iput-boolean v0, p0, Lcom/android/incallui/InCallActivity;->mNeedToRecoverRtt:Z
-
-    :cond_a
+    :cond_8
     invoke-virtual {p0}, Lcom/android/incallui/InCallActivity;->getFragmentManager()Landroid/app/FragmentManager;
 
     move-result-object v0
@@ -9442,20 +9417,20 @@
 
     check-cast v0, Lcom/android/contacts/common/widget/SelectPhoneAccountDialogFragment;
 
-    if-eqz v0, :cond_b
+    if-eqz v0, :cond_9
 
     iget-object v1, p0, Lcom/android/incallui/InCallActivity;->mSelectAcctListener:Lcom/android/contacts/common/widget/SelectPhoneAccountDialogFragment$SelectPhoneAccountListener;
 
     invoke-virtual {v0, v1}, Lcom/android/contacts/common/widget/SelectPhoneAccountDialogFragment;->a(Lcom/android/contacts/common/widget/SelectPhoneAccountDialogFragment$SelectPhoneAccountListener;)V
 
-    :cond_b
+    :cond_9
     const-string v0, "visual_call_center_callerid_info"
 
     invoke-static {v0}, Lcom/android/incallui/InCallUIFeature;->hasFeature(Ljava/lang/String;)Z
 
     move-result v0
 
-    if-nez v0, :cond_c
+    if-nez v0, :cond_a
 
     const-string v0, "smart_ivr_callerid_info"
 
@@ -9463,9 +9438,9 @@
 
     move-result v0
 
-    if-eqz v0, :cond_d
+    if-eqz v0, :cond_b
 
-    :cond_c
+    :cond_a
     const-string v0, "InCallActivity.has_outgoing_call"
 
     invoke-virtual {p1, v0}, Landroid/os/Bundle;->getBoolean(Ljava/lang/String;)Z
@@ -9482,65 +9457,65 @@
 
     iput-boolean v0, p0, Lcom/android/incallui/InCallActivity;->mHasIVR:Z
 
-    :cond_d
-    iget-object v0, p0, Lcom/android/incallui/InCallActivity;->mScreenOnOffReceiver:Landroid/content/BroadcastReceiver;
+    :cond_b
+    const-string v0, "ims_support_rtt"
 
-    if-eqz v0, :cond_f
-
-    new-instance v0, Landroid/content/IntentFilter;
-
-    invoke-direct {v0}, Landroid/content/IntentFilter;-><init>()V
-
-    invoke-static {}, Lcom/android/incallui/util/InCallUtils;->isEcholocateEnabled()Z
-
-    move-result v1
-
-    if-eqz v1, :cond_e
-
-    const-string v1, "android.intent.action.SCREEN_OFF"
-
-    invoke-virtual {v0, v1}, Landroid/content/IntentFilter;->addAction(Ljava/lang/String;)V
-
-    :cond_e
-    const-string v1, "android.intent.action.SCREEN_ON"
-
-    invoke-virtual {v0, v1}, Landroid/content/IntentFilter;->addAction(Ljava/lang/String;)V
-
-    iget-object v1, p0, Lcom/android/incallui/InCallActivity;->mScreenOnOffReceiver:Landroid/content/BroadcastReceiver;
-
-    invoke-virtual {p0, v1, v0}, Lcom/android/incallui/InCallActivity;->registerReceiver(Landroid/content/BroadcastReceiver;Landroid/content/IntentFilter;)Landroid/content/Intent;
-
-    :cond_f
-    invoke-static {}, Lcom/android/incallui/InCallUIFeature;->hasProximitySensor()Z
+    invoke-static {v0}, Lcom/android/incallui/InCallUIFeature;->hasFeature(Ljava/lang/String;)Z
 
     move-result v0
 
-    if-eqz v0, :cond_10
+    if-eqz v0, :cond_c
 
-    iget-object v0, p0, Lcom/android/incallui/InCallActivity;->mScreenOnOffProximityReceiver:Landroid/content/BroadcastReceiver;
+    invoke-virtual {p0}, Lcom/android/incallui/InCallActivity;->getIntent()Landroid/content/Intent;
 
-    if-eqz v0, :cond_10
+    move-result-object v0
 
-    new-instance v0, Landroid/content/IntentFilter;
+    if-eqz v0, :cond_c
 
-    invoke-direct {v0}, Landroid/content/IntentFilter;-><init>()V
+    invoke-virtual {v0}, Landroid/content/Intent;->getExtras()Landroid/os/Bundle;
 
-    const-string v1, "android.intent.action.ACTION_SCREEN_OFF_BY_PROXIMITY"
+    move-result-object v1
 
-    invoke-virtual {v0, v1}, Landroid/content/IntentFilter;->addAction(Ljava/lang/String;)V
+    if-eqz v1, :cond_c
 
-    const-string v1, "android.intent.action.ACTION_SCREEN_ON_BY_PROXIMITY"
+    invoke-virtual {v0}, Landroid/content/Intent;->getExtras()Landroid/os/Bundle;
 
-    invoke-virtual {v0, v1}, Landroid/content/IntentFilter;->addAction(Ljava/lang/String;)V
+    move-result-object v0
 
-    iget-object v1, p0, Lcom/android/incallui/InCallActivity;->mScreenOnOffProximityReceiver:Landroid/content/BroadcastReceiver;
+    const-string v1, "SHOW_RTT_EXTRA"
 
-    invoke-virtual {p0, v1, v0}, Lcom/android/incallui/InCallActivity;->registerReceiver(Landroid/content/BroadcastReceiver;Landroid/content/IntentFilter;)Landroid/content/Intent;
+    invoke-virtual {v0, v1}, Landroid/os/Bundle;->getBoolean(Ljava/lang/String;)Z
 
-    :cond_10
+    move-result v0
+
+    iput-boolean v0, p0, Lcom/android/incallui/InCallActivity;->ShowRTTOnceFromPopup:Z
+
+    new-instance v0, Ljava/lang/StringBuilder;
+
+    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v1, "ShowRTTOnceFromPopup : "
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    iget-boolean v1, p0, Lcom/android/incallui/InCallActivity;->ShowRTTOnceFromPopup:Z
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-static {p0, v0}, Lcom/android/incallui/Log;->d(Ljava/lang/Object;Ljava/lang/String;)V
+
+    :cond_c
     iget-object v0, p0, Lcom/android/incallui/InCallActivity;->mDtmfReceiver:Landroid/content/BroadcastReceiver;
 
-    if-eqz v0, :cond_11
+    if-eqz v0, :cond_d
 
     new-instance v0, Landroid/content/IntentFilter;
 
@@ -9554,7 +9529,7 @@
 
     invoke-virtual {p0, v1, v0}, Lcom/android/incallui/InCallActivity;->registerReceiver(Landroid/content/BroadcastReceiver;Landroid/content/IntentFilter;)Landroid/content/Intent;
 
-    :cond_11
+    :cond_d
     invoke-static {}, Lcom/android/incallui/InCallPresenter;->getInstance()Lcom/android/incallui/InCallPresenter;
 
     move-result-object v0
@@ -9583,17 +9558,17 @@
 
     move-result v0
 
-    if-eqz v0, :cond_12
+    if-eqz v0, :cond_e
 
     invoke-static {}, Lcom/whitepages/nameid/f;->c()Z
 
     move-result v0
 
-    if-eqz v0, :cond_12
+    if-eqz v0, :cond_e
 
     invoke-static {}, Lcom/whitepages/nameid/f;->a()V
 
-    :cond_12
+    :cond_e
     invoke-static {}, Lcom/android/incallui/CallList;->getInstance()Lcom/android/incallui/CallList;
 
     move-result-object v0
@@ -9602,18 +9577,18 @@
 
     move-result-object v0
 
-    if-nez v0, :cond_13
+    if-nez v0, :cond_f
 
     sput-boolean v3, Lcom/android/incallui/secrcs/RcsShareUI;->isMT:Z
 
-    :cond_13
+    :cond_f
     const-string v0, "ims_crane"
 
     invoke-static {v0}, Lcom/android/incallui/InCallUIFeature;->hasFeature(Ljava/lang/String;)Z
 
     move-result v0
 
-    if-eqz v0, :cond_14
+    if-eqz v0, :cond_10
 
     const-string v0, "queryForCrane called new one"
 
@@ -9621,14 +9596,14 @@
 
     invoke-direct {p0}, Lcom/android/incallui/InCallActivity;->queryForCrane()V
 
-    :cond_14
+    :cond_10
     const-string v0, "ims_capability_check_on_call_end"
 
     invoke-static {v0}, Lcom/android/incallui/InCallUIFeature;->hasFeature(Ljava/lang/String;)Z
 
     move-result v0
 
-    if-eqz v0, :cond_15
+    if-eqz v0, :cond_11
 
     invoke-virtual {p0}, Lcom/android/incallui/InCallActivity;->getApplicationContext()Landroid/content/Context;
 
@@ -9636,46 +9611,44 @@
 
     invoke-static {v0}, Lcom/android/incallui/util/ImsCommonUtils;->connectCapabilityManager(Landroid/content/Context;)V
 
-    :cond_15
+    :cond_11
     const-string v0, "onCreate(): exit"
 
     invoke-static {p0, v0}, Lcom/android/incallui/Log;->i(Ljava/lang/Object;Ljava/lang/String;)V
 
     return-void
 
-    :cond_16
+    :cond_12
     move v0, v3
 
     goto/16 :goto_1
 
-    :cond_17
+    :cond_13
     move v0, v3
 
     goto/16 :goto_2
 
-    :cond_18
+    :cond_14
     const/4 v0, 0x3
 
     goto/16 :goto_3
 
-    :cond_19
+    :cond_15
     move v1, v0
 
     goto/16 :goto_0
 .end method
 
 .method protected onDestroy()V
-    .locals 7
-
-    const/16 v6, 0xa9
+    .locals 6
 
     const/16 v5, 0xa0
 
     const/4 v4, 0x0
 
-    const/4 v3, 0x1
+    const/4 v2, 0x1
 
-    const/4 v2, 0x0
+    const/4 v3, 0x0
 
     new-instance v0, Ljava/lang/StringBuilder;
 
@@ -9707,7 +9680,7 @@
 
     if-eqz v0, :cond_0
 
-    iput-boolean v2, p0, Lcom/android/incallui/InCallActivity;->mShowRTTRequest:Z
+    iput-boolean v3, p0, Lcom/android/incallui/InCallActivity;->mShowRTTRequest:Z
 
     :cond_0
     invoke-static {}, Lcom/android/incallui/InCallPresenter;->getInstance()Lcom/android/incallui/InCallPresenter;
@@ -9790,36 +9763,23 @@
     invoke-direct {p0}, Lcom/android/incallui/InCallActivity;->handleShowGreenBarMessage()V
 
     :cond_4
-    iget-object v0, p0, Lcom/android/incallui/InCallActivity;->mHandler:Landroid/os/Handler;
-
-    invoke-virtual {v0, v6}, Landroid/os/Handler;->hasMessages(I)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_5
-
-    iget-object v0, p0, Lcom/android/incallui/InCallActivity;->mHandler:Landroid/os/Handler;
-
-    invoke-virtual {v0, v6}, Landroid/os/Handler;->removeMessages(I)V
-
-    :cond_5
     const-string v0, "support_tphone"
 
     invoke-static {v0}, Lcom/android/incallui/InCallUIFeature;->hasFeature(Ljava/lang/String;)Z
 
     move-result v0
 
-    if-eqz v0, :cond_6
+    if-eqz v0, :cond_5
 
     invoke-static {}, Lcom/android/incallui/InCallUISystemDB;->isTPhoneMode()Z
 
     move-result v0
 
-    if-eqz v0, :cond_6
+    if-eqz v0, :cond_5
 
-    invoke-direct {p0, v2}, Lcom/android/incallui/InCallActivity;->showGreenBar(Z)V
+    invoke-direct {p0, v3}, Lcom/android/incallui/InCallActivity;->showGreenBar(Z)V
 
-    :cond_6
+    :cond_5
     invoke-static {}, Lcom/android/incallui/CallList;->getInstance()Lcom/android/incallui/CallList;
 
     move-result-object v0
@@ -9828,7 +9788,7 @@
 
     move-result v0
 
-    if-nez v0, :cond_8
+    if-nez v0, :cond_7
 
     const-string v0, "ims_rcs"
 
@@ -9836,11 +9796,11 @@
 
     move-result v0
 
-    if-eqz v0, :cond_7
+    if-eqz v0, :cond_6
 
     const-string v0, "!CallList.getInstance().hasLiveCall()"
 
-    invoke-static {p0, v0, v3}, Lcom/android/incallui/Log;->d(Ljava/lang/Object;Ljava/lang/String;Z)V
+    invoke-static {p0, v0, v2}, Lcom/android/incallui/Log;->d(Ljava/lang/Object;Ljava/lang/String;Z)V
 
     iget-object v0, p0, Lcom/android/incallui/InCallActivity;->mRcsBroadcastReceiver:Lcom/android/incallui/secrcs/RcsBroadcastReceiver;
 
@@ -9856,75 +9816,28 @@
 
     invoke-virtual {v0, v1}, Lcom/android/incallui/secrcs/RcsShareUI;->disconnect(Landroid/content/Context;)V
 
-    :cond_7
+    :cond_6
     invoke-static {}, Lcom/android/incallui/InCallPresenter;->getInstance()Lcom/android/incallui/InCallPresenter;
 
     move-result-object v0
 
     invoke-virtual {v0}, Lcom/android/incallui/InCallPresenter;->destroyCoverView()V
 
-    :cond_8
+    :cond_7
     invoke-direct {p0}, Lcom/android/incallui/InCallActivity;->destroyInCall()V
 
-    iget-boolean v0, p0, Lcom/android/incallui/InCallActivity;->mScreenOffRegistered:Z
-
-    if-eqz v0, :cond_9
-
-    iget-object v0, p0, Lcom/android/incallui/InCallActivity;->mScreenOffReceiver:Landroid/content/BroadcastReceiver;
-
-    if-eqz v0, :cond_9
-
-    :try_start_0
-    iget-object v0, p0, Lcom/android/incallui/InCallActivity;->mScreenOffReceiver:Landroid/content/BroadcastReceiver;
-
-    invoke-virtual {p0, v0}, Lcom/android/incallui/InCallActivity;->unregisterReceiver(Landroid/content/BroadcastReceiver;)V
-    :try_end_0
-    .catch Ljava/lang/IllegalArgumentException; {:try_start_0 .. :try_end_0} :catch_0
-
-    :goto_0
-    iput-boolean v2, p0, Lcom/android/incallui/InCallActivity;->mScreenOffRegistered:Z
-
-    const-string v0, " unregisterReceiver - - mScreenOffReceiver"
-
-    invoke-static {p0, v0}, Lcom/android/incallui/Log;->d(Ljava/lang/Object;Ljava/lang/String;)V
-
-    :cond_9
-    iget-object v0, p0, Lcom/android/incallui/InCallActivity;->mScreenOnOffReceiver:Landroid/content/BroadcastReceiver;
-
-    if-eqz v0, :cond_a
-
-    iget-object v0, p0, Lcom/android/incallui/InCallActivity;->mScreenOnOffReceiver:Landroid/content/BroadcastReceiver;
-
-    invoke-virtual {p0, v0}, Lcom/android/incallui/InCallActivity;->unregisterReceiver(Landroid/content/BroadcastReceiver;)V
-
-    :cond_a
-    invoke-static {}, Lcom/android/incallui/InCallUIFeature;->hasProximitySensor()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_b
-
-    iget-object v0, p0, Lcom/android/incallui/InCallActivity;->mScreenOnOffProximityReceiver:Landroid/content/BroadcastReceiver;
-
-    if-eqz v0, :cond_b
-
-    iget-object v0, p0, Lcom/android/incallui/InCallActivity;->mScreenOnOffProximityReceiver:Landroid/content/BroadcastReceiver;
-
-    invoke-virtual {p0, v0}, Lcom/android/incallui/InCallActivity;->unregisterReceiver(Landroid/content/BroadcastReceiver;)V
-
-    :cond_b
     iget-object v0, p0, Lcom/android/incallui/InCallActivity;->mDtmfReceiver:Landroid/content/BroadcastReceiver;
 
-    if-eqz v0, :cond_c
+    if-eqz v0, :cond_8
 
     iget-object v0, p0, Lcom/android/incallui/InCallActivity;->mDtmfReceiver:Landroid/content/BroadcastReceiver;
 
     invoke-virtual {p0, v0}, Lcom/android/incallui/InCallActivity;->unregisterReceiver(Landroid/content/BroadcastReceiver;)V
 
-    :cond_c
+    :cond_8
     iget-object v0, p0, Lcom/android/incallui/InCallActivity;->mGradientAnimationView:Lcom/android/incallui/widget/GradientAnimationView;
 
-    if-eqz v0, :cond_d
+    if-eqz v0, :cond_9
 
     iget-object v0, p0, Lcom/android/incallui/InCallActivity;->mGradientAnimationView:Lcom/android/incallui/widget/GradientAnimationView;
 
@@ -9932,10 +9845,10 @@
 
     iput-object v4, p0, Lcom/android/incallui/InCallActivity;->mGradientAnimationView:Lcom/android/incallui/widget/GradientAnimationView;
 
-    :cond_d
+    :cond_9
     iget-object v0, p0, Lcom/android/incallui/InCallActivity;->mGradientAnimationViewDummy:Lcom/android/incallui/widget/GradientAnimationView;
 
-    if-eqz v0, :cond_e
+    if-eqz v0, :cond_a
 
     iget-object v0, p0, Lcom/android/incallui/InCallActivity;->mGradientAnimationViewDummy:Lcom/android/incallui/widget/GradientAnimationView;
 
@@ -9943,7 +9856,7 @@
 
     iput-object v4, p0, Lcom/android/incallui/InCallActivity;->mGradientAnimationViewDummy:Lcom/android/incallui/widget/GradientAnimationView;
 
-    :cond_e
+    :cond_a
     invoke-static {}, Lcom/android/incallui/accessory/AccessoryEventHandler;->getInstance()Lcom/android/incallui/accessory/AccessoryEventHandler;
 
     move-result-object v0
@@ -9962,13 +9875,13 @@
 
     move-result v0
 
-    if-eqz v0, :cond_10
+    if-eqz v0, :cond_c
 
     invoke-static {}, Lcom/android/incallui/util/SystemServiceUtils;->isDeviceOnWiFi()Z
 
     move-result v0
 
-    if-eqz v0, :cond_f
+    if-eqz v0, :cond_b
 
     invoke-virtual {p0}, Lcom/android/incallui/InCallActivity;->getContentResolver()Landroid/content/ContentResolver;
 
@@ -9976,31 +9889,31 @@
 
     const-string v1, "visual_call_status"
 
-    invoke-static {v0, v1, v3}, Landroid/provider/Settings$System;->getInt(Landroid/content/ContentResolver;Ljava/lang/String;I)I
+    invoke-static {v0, v1, v2}, Landroid/provider/Settings$System;->getInt(Landroid/content/ContentResolver;Ljava/lang/String;I)I
 
     move-result v0
 
-    if-ne v0, v3, :cond_f
+    if-ne v0, v2, :cond_b
 
     new-instance v0, Ljava/lang/Thread;
 
-    new-instance v1, Lcom/android/incallui/InCallActivity$12;
+    new-instance v1, Lcom/android/incallui/InCallActivity$9;
 
-    invoke-direct {v1, p0}, Lcom/android/incallui/InCallActivity$12;-><init>(Lcom/android/incallui/InCallActivity;)V
+    invoke-direct {v1, p0}, Lcom/android/incallui/InCallActivity$9;-><init>(Lcom/android/incallui/InCallActivity;)V
 
     invoke-direct {v0, v1}, Ljava/lang/Thread;-><init>(Ljava/lang/Runnable;)V
 
     invoke-virtual {v0}, Ljava/lang/Thread;->start()V
 
-    :cond_f
+    :cond_b
     invoke-static {}, Lcom/android/incallui/util/VisualCallCenter;->getInstance()Lcom/android/incallui/util/VisualCallCenter;
 
-    invoke-static {v2}, Lcom/android/incallui/util/VisualCallCenter;->VCC_setDisplayDailpad(Z)V
+    invoke-static {v3}, Lcom/android/incallui/util/VisualCallCenter;->VCC_setDisplayDailpad(Z)V
 
-    :cond_10
+    :cond_c
     sget-boolean v0, Lcom/android/incallui/service/vt/VideoCallConfig;->PROHIBIT_CANDID_SHOT:Z
 
-    if-eqz v0, :cond_11
+    if-eqz v0, :cond_d
 
     invoke-static {}, Lcom/android/incallui/PrivatePolicy;->getInstance()Lcom/android/incallui/PrivatePolicy;
 
@@ -10008,22 +9921,266 @@
 
     invoke-virtual {v0}, Lcom/android/incallui/PrivatePolicy;->clearForActivityOnDestroy()V
 
-    :cond_11
+    :cond_d
     const-string v0, "ims_capability_check_on_call_end"
 
     invoke-static {v0}, Lcom/android/incallui/InCallUIFeature;->hasFeature(Ljava/lang/String;)Z
 
     move-result v0
 
-    if-eqz v0, :cond_12
+    if-eqz v0, :cond_e
 
     invoke-static {}, Lcom/android/incallui/util/ImsCommonUtils;->disconnectCapabilityManager()V
 
-    :cond_12
+    :cond_e
+    const-string v0, "ims_support_rtt"
+
+    invoke-static {v0}, Lcom/android/incallui/InCallUIFeature;->hasFeature(Ljava/lang/String;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_f
+
+    iget-boolean v0, p0, Lcom/android/incallui/InCallActivity;->isRTTCall:Z
+
+    if-eqz v0, :cond_f
+
+    iget-boolean v0, p0, Lcom/android/incallui/InCallActivity;->isNetworkDowngrade:Z
+
+    if-nez v0, :cond_f
+
+    invoke-static {}, Lcom/android/incallui/CallList;->getInstance()Lcom/android/incallui/CallList;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lcom/android/incallui/CallList;->hasRttCall()Z
+
+    move-result v0
+
+    if-nez v0, :cond_f
+
+    invoke-static {}, Lcom/android/incallui/InCallApp;->getInstance()Lcom/android/incallui/InCallApp;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lcom/android/incallui/InCallApp;->getApplicationContext()Landroid/content/Context;
+
+    move-result-object v0
+
+    const-string v1, "InCallApp - destroy : RTT display Dialog"
+
+    invoke-static {p0, v1, v2}, Lcom/android/incallui/Log;->i(Ljava/lang/Object;Ljava/lang/String;Z)V
+
+    new-instance v1, Landroid/content/Intent;
+
+    invoke-direct {v1}, Landroid/content/Intent;-><init>()V
+
+    const-string v2, "com.android.incallui.rtt.RTTAlertDialogActivity"
+
+    invoke-virtual {v1, v0, v2}, Landroid/content/Intent;->setClassName(Landroid/content/Context;Ljava/lang/String;)Landroid/content/Intent;
+
+    const/high16 v2, 0x30000000
+
+    invoke-virtual {v1, v2}, Landroid/content/Intent;->setFlags(I)Landroid/content/Intent;
+
+    iput-boolean v3, p0, Lcom/android/incallui/InCallActivity;->isRTTCall:Z
+
+    invoke-virtual {v0, v1}, Landroid/content/Context;->startActivity(Landroid/content/Intent;)V
+
+    :cond_f
+    iput-boolean v3, p0, Lcom/android/incallui/InCallActivity;->isNetworkDowngrade:Z
+
+    return-void
+.end method
+
+.method public onDisplayStateChanged(Z)V
+    .locals 5
+
+    const/4 v4, 0x0
+
+    invoke-static {}, Lcom/android/incallui/CallList;->getInstance()Lcom/android/incallui/CallList;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lcom/android/incallui/CallList;->hasLiveCall()Z
+
+    move-result v0
+
+    if-nez v0, :cond_1
+
+    :cond_0
+    :goto_0
     return-void
 
-    :catch_0
-    move-exception v0
+    :cond_1
+    new-instance v0, Ljava/lang/StringBuilder;
+
+    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v1, "onDisplayStateChanged: "
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    const/4 v1, 0x1
+
+    invoke-static {p0, v0, v1}, Lcom/android/incallui/Log;->d(Ljava/lang/Object;Ljava/lang/String;Z)V
+
+    iget-object v0, p0, Lcom/android/incallui/InCallActivity;->mStatusBarManager:Landroid/app/SemStatusBarManager;
+
+    if-eqz v0, :cond_2
+
+    invoke-static {}, Lcom/android/incallui/util/DesktopModeManager;->isDesktopMode()Z
+
+    move-result v0
+
+    if-nez v0, :cond_2
+
+    iget-object v0, p0, Lcom/android/incallui/InCallActivity;->mStatusBarManager:Landroid/app/SemStatusBarManager;
+
+    invoke-virtual {v0}, Landroid/app/SemStatusBarManager;->collapsePanels()V
+
+    :cond_2
+    if-eqz p1, :cond_6
+
+    iget-boolean v0, p0, Lcom/android/incallui/InCallActivity;->mIsForegroundActivity:Z
+
+    if-eqz v0, :cond_3
+
+    invoke-static {v4}, Lcom/android/incallui/util/SystemServiceUtils;->isKeyguardLocked(Landroid/content/Context;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_3
+
+    invoke-static {v4}, Lcom/android/incallui/util/PhoneModeUtils;->isTalkBackEnabled(Landroid/content/Context;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_3
+
+    invoke-virtual {p0}, Lcom/android/incallui/InCallActivity;->getWindow()Landroid/view/Window;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Landroid/view/Window;->getDecorView()Landroid/view/View;
+
+    move-result-object v0
+
+    iget-object v1, p0, Lcom/android/incallui/InCallActivity;->mAccessibilityTask:Ljava/lang/Runnable;
+
+    invoke-virtual {v0, v1}, Landroid/view/View;->removeCallbacks(Ljava/lang/Runnable;)Z
+
+    invoke-virtual {p0}, Lcom/android/incallui/InCallActivity;->getWindow()Landroid/view/Window;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Landroid/view/Window;->getDecorView()Landroid/view/View;
+
+    move-result-object v0
+
+    iget-object v1, p0, Lcom/android/incallui/InCallActivity;->mAccessibilityTask:Ljava/lang/Runnable;
+
+    const-wide/16 v2, 0x1f4
+
+    invoke-virtual {v0, v1, v2, v3}, Landroid/view/View;->postDelayed(Ljava/lang/Runnable;J)Z
+
+    :cond_3
+    invoke-static {}, Lcom/android/incallui/util/InCallUtils;->isEcholocateEnabled()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_4
+
+    const-string v0, "UI"
+
+    invoke-static {v0}, Lcom/android/incallui/util/InCallUtils;->isEcholocateEnabled(Ljava/lang/String;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_4
+
+    invoke-static {}, Lcom/android/incallui/TelecomAdapter;->getInstance()Lcom/android/incallui/TelecomAdapter;
+
+    move-result-object v0
+
+    invoke-static {}, Lcom/android/incallui/util/NameNumberUtils;->getEcholocatePhoneNumber()Ljava/lang/String;
+
+    move-result-object v1
+
+    sget-object v2, Lcom/android/incallui/operator/usa/InCallUIConstants$UICallState;->SCREEN_ON:Lcom/android/incallui/operator/usa/InCallUIConstants$UICallState;
+
+    invoke-virtual {v2}, Lcom/android/incallui/operator/usa/InCallUIConstants$UICallState;->ordinal()I
+
+    move-result v2
+
+    invoke-virtual {v0, v1, v2}, Lcom/android/incallui/TelecomAdapter;->senduiCallState(Ljava/lang/String;I)V
+
+    :cond_4
+    iget-object v0, p0, Lcom/android/incallui/InCallActivity;->mWaitDialogCallId:Ljava/lang/String;
+
+    invoke-static {v0}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
+
+    move-result v0
+
+    if-nez v0, :cond_5
+
+    const-string v0, "showPostCharWaitDialog wait dialgog: "
+
+    invoke-static {p0, v0}, Lcom/android/incallui/Log;->d(Ljava/lang/Object;Ljava/lang/String;)V
+
+    iget-object v0, p0, Lcom/android/incallui/InCallActivity;->mWaitDialogCallId:Ljava/lang/String;
+
+    iget-object v1, p0, Lcom/android/incallui/InCallActivity;->mWaitDialogChars:Ljava/lang/String;
+
+    invoke-virtual {p0, v0, v1}, Lcom/android/incallui/InCallActivity;->showPostCharWaitDialog(Ljava/lang/String;Ljava/lang/String;)V
+
+    :cond_5
+    iput-object v4, p0, Lcom/android/incallui/InCallActivity;->mWaitDialogChars:Ljava/lang/String;
+
+    iput-object v4, p0, Lcom/android/incallui/InCallActivity;->mWaitDialogCallId:Ljava/lang/String;
+
+    goto/16 :goto_0
+
+    :cond_6
+    invoke-static {}, Lcom/android/incallui/util/InCallUtils;->isEcholocateEnabled()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    const-string v0, "UI"
+
+    invoke-static {v0}, Lcom/android/incallui/util/InCallUtils;->isEcholocateEnabled(Ljava/lang/String;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    invoke-static {}, Lcom/android/incallui/TelecomAdapter;->getInstance()Lcom/android/incallui/TelecomAdapter;
+
+    move-result-object v0
+
+    invoke-static {}, Lcom/android/incallui/util/NameNumberUtils;->getEcholocatePhoneNumber()Ljava/lang/String;
+
+    move-result-object v1
+
+    sget-object v2, Lcom/android/incallui/operator/usa/InCallUIConstants$UICallState;->SCREEN_OFF:Lcom/android/incallui/operator/usa/InCallUIConstants$UICallState;
+
+    invoke-virtual {v2}, Lcom/android/incallui/operator/usa/InCallUIConstants$UICallState;->ordinal()I
+
+    move-result v2
+
+    invoke-virtual {v0, v1, v2}, Lcom/android/incallui/TelecomAdapter;->senduiCallState(Ljava/lang/String;I)V
 
     goto/16 :goto_0
 .end method
@@ -10420,9 +10577,9 @@
 
     invoke-direct {v1}, Landroid/os/Handler;-><init>()V
 
-    new-instance v2, Lcom/android/incallui/InCallActivity$14;
+    new-instance v2, Lcom/android/incallui/InCallActivity$11;
 
-    invoke-direct {v2, p0}, Lcom/android/incallui/InCallActivity$14;-><init>(Lcom/android/incallui/InCallActivity;)V
+    invoke-direct {v2, p0}, Lcom/android/incallui/InCallActivity$11;-><init>(Lcom/android/incallui/InCallActivity;)V
 
     const-wide/16 v4, 0xfa
 
@@ -10555,7 +10712,7 @@
     :cond_0
     iget-boolean v0, p0, Lcom/android/incallui/InCallActivity;->mNeedToInitialize:Z
 
-    if-eqz v0, :cond_6
+    if-eqz v0, :cond_4
 
     const-string v0, "onModeChanged: initializeInCall()..."
 
@@ -10571,49 +10728,6 @@
 
     :cond_1
     :goto_0
-    iget-object v0, p0, Lcom/android/incallui/InCallActivity;->mScreenOffReceiver:Landroid/content/BroadcastReceiver;
-
-    if-eqz v0, :cond_3
-
-    iget-boolean v0, p0, Lcom/android/incallui/InCallActivity;->mScreenOffRegistered:Z
-
-    if-eqz v0, :cond_14
-
-    if-nez p1, :cond_2
-
-    :try_start_0
-    invoke-virtual {p0}, Lcom/android/incallui/InCallActivity;->getApplicationContext()Landroid/content/Context;
-
-    move-result-object v0
-
-    iget-object v1, p0, Lcom/android/incallui/InCallActivity;->mScreenOffReceiver:Landroid/content/BroadcastReceiver;
-
-    invoke-virtual {v0, v1}, Landroid/content/Context;->unregisterReceiver(Landroid/content/BroadcastReceiver;)V
-    :try_end_0
-    .catch Ljava/lang/IllegalArgumentException; {:try_start_0 .. :try_end_0} :catch_0
-
-    :goto_1
-    iput-boolean v4, p0, Lcom/android/incallui/InCallActivity;->mScreenOffRegistered:Z
-
-    const-string v0, "onModeChanged - unregisterReceiver  - mScreenOffReceiver"
-
-    invoke-static {p0, v0}, Lcom/android/incallui/Log;->d(Ljava/lang/Object;Ljava/lang/String;)V
-
-    :cond_2
-    :goto_2
-    invoke-static {}, Lcom/android/incallui/util/CallTypeUtils;->isPSVideoCall()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_3
-
-    invoke-static {}, Lcom/android/incallui/service/vt/VideoCallManager;->getInstance()Lcom/android/incallui/service/vt/VideoCallManager;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Lcom/android/incallui/service/vt/VideoCallManager;->resetFullScreenMode()V
-
-    :cond_3
     invoke-direct {p0}, Lcom/android/incallui/InCallActivity;->updateDialpadIndicatorArea()V
 
     invoke-direct {p0}, Lcom/android/incallui/InCallActivity;->updateRTTIndicatorArea()V
@@ -10630,18 +10744,18 @@
 
     move-result v0
 
-    if-eqz v0, :cond_4
+    if-eqz v0, :cond_2
 
     invoke-virtual {p0}, Lcom/android/incallui/InCallActivity;->isVisible()Z
 
     move-result v0
 
-    if-eqz v0, :cond_15
+    if-eqz v0, :cond_12
 
     invoke-virtual {p0, v4}, Lcom/android/incallui/InCallActivity;->setStatusBar(Z)V
 
-    :cond_4
-    :goto_3
+    :cond_2
+    :goto_1
     invoke-static {}, Lcom/android/incallui/accessory/AccessoryEventHandler;->getInstance()Lcom/android/incallui/accessory/AccessoryEventHandler;
 
     move-result-object v0
@@ -10650,7 +10764,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_5
+    if-eqz v0, :cond_3
 
     invoke-static {}, Lcom/android/incallui/InCallPresenter;->getInstance()Lcom/android/incallui/InCallPresenter;
 
@@ -10660,7 +10774,7 @@
 
     move-result-object v0
 
-    if-eqz v0, :cond_5
+    if-eqz v0, :cond_3
 
     invoke-static {}, Lcom/android/incallui/InCallPresenter;->getInstance()Lcom/android/incallui/InCallPresenter;
 
@@ -10672,51 +10786,51 @@
 
     invoke-virtual {v0, v3}, Lcom/android/incallui/accessory/CoverViewManager;->onCoverStateChanged(Z)V
 
-    :cond_5
+    :cond_3
     return-void
 
-    :cond_6
+    :cond_4
     const-string v0, "support_onehand_operation"
 
     invoke-static {v0}, Lcom/android/incallui/InCallUIFeature;->hasFeature(Ljava/lang/String;)Z
 
     move-result v0
 
-    if-eqz v0, :cond_a
+    if-eqz v0, :cond_8
 
     invoke-static {}, Lcom/android/incallui/InCallUISystemDB;->isOnehandModeOn()Z
 
     move-result v0
 
-    if-eqz v0, :cond_a
+    if-eqz v0, :cond_8
 
     iget-object v0, p0, Lcom/android/incallui/InCallActivity;->mCallButtonFragmentManager:Lcom/android/incallui/fragment/manager/CallButtonFragmentManager;
 
-    if-eqz v0, :cond_7
+    if-eqz v0, :cond_5
 
     iget-object v0, p0, Lcom/android/incallui/InCallActivity;->mCallButtonFragmentManager:Lcom/android/incallui/fragment/manager/CallButtonFragmentManager;
 
     invoke-virtual {v0}, Lcom/android/incallui/fragment/manager/CallButtonFragmentManager;->onSMultiWindowOnChanged()V
 
-    :cond_7
+    :cond_5
     iget-object v0, p0, Lcom/android/incallui/InCallActivity;->mDialpadFragmentManager:Lcom/android/incallui/fragment/manager/DialpadFragmentManager;
 
-    if-eqz v0, :cond_8
+    if-eqz v0, :cond_6
 
     iget-object v0, p0, Lcom/android/incallui/InCallActivity;->mDialpadFragmentManager:Lcom/android/incallui/fragment/manager/DialpadFragmentManager;
 
     invoke-virtual {v0}, Lcom/android/incallui/fragment/manager/DialpadFragmentManager;->onSMultiWindowOnChanged()V
 
-    :cond_8
+    :cond_6
     iget-object v0, p0, Lcom/android/incallui/InCallActivity;->mConferenceManagerFragmentManager:Lcom/android/incallui/fragment/manager/ConferenceManagerFragmentManager;
 
-    if-eqz v0, :cond_9
+    if-eqz v0, :cond_7
 
     iget-object v0, p0, Lcom/android/incallui/InCallActivity;->mConferenceManagerFragmentManager:Lcom/android/incallui/fragment/manager/ConferenceManagerFragmentManager;
 
     invoke-virtual {v0}, Lcom/android/incallui/fragment/manager/ConferenceManagerFragmentManager;->onSMultiWindowOnChanged()V
 
-    :cond_9
+    :cond_7
     iget-object v0, p0, Lcom/android/incallui/InCallActivity;->mCallCardFragmentManager:Lcom/android/incallui/fragment/manager/CallCardFragmentManager;
 
     if-eqz v0, :cond_1
@@ -10731,33 +10845,33 @@
 
     invoke-virtual {v0}, Lcom/android/incallui/fragment/manager/CallCardFragmentManager;->onSMultiWindowOnChanged()V
 
-    goto/16 :goto_0
+    goto :goto_0
 
-    :cond_a
+    :cond_8
     invoke-static {}, Lcom/android/incallui/util/CallTypeUtils;->isVoiceCall()Z
 
     move-result v0
-
-    if-eqz v0, :cond_d
-
-    iget-object v0, p0, Lcom/android/incallui/InCallActivity;->mCallButtonFragmentManager:Lcom/android/incallui/fragment/manager/CallButtonFragmentManager;
 
     if-eqz v0, :cond_b
 
     iget-object v0, p0, Lcom/android/incallui/InCallActivity;->mCallButtonFragmentManager:Lcom/android/incallui/fragment/manager/CallButtonFragmentManager;
 
+    if-eqz v0, :cond_9
+
+    iget-object v0, p0, Lcom/android/incallui/InCallActivity;->mCallButtonFragmentManager:Lcom/android/incallui/fragment/manager/CallButtonFragmentManager;
+
     invoke-virtual {v0}, Lcom/android/incallui/fragment/manager/CallButtonFragmentManager;->onSMultiWindowOnChanged()V
 
-    :cond_b
+    :cond_9
     iget-object v0, p0, Lcom/android/incallui/InCallActivity;->mCallCardFragmentManager:Lcom/android/incallui/fragment/manager/CallCardFragmentManager;
 
-    if-eqz v0, :cond_c
+    if-eqz v0, :cond_a
 
     iget-object v0, p0, Lcom/android/incallui/InCallActivity;->mCallCardFragmentManager:Lcom/android/incallui/fragment/manager/CallCardFragmentManager;
 
     invoke-virtual {v0}, Lcom/android/incallui/fragment/manager/CallCardFragmentManager;->onSMultiWindowOnChanged()V
 
-    :cond_c
+    :cond_a
     iget-object v0, p0, Lcom/android/incallui/InCallActivity;->mDialpadFragmentManager:Lcom/android/incallui/fragment/manager/DialpadFragmentManager;
 
     if-eqz v0, :cond_1
@@ -10768,7 +10882,7 @@
 
     goto/16 :goto_0
 
-    :cond_d
+    :cond_b
     invoke-static {}, Lcom/android/incallui/util/CallTypeUtils;->isVideoCall()Z
 
     move-result v0
@@ -10779,45 +10893,45 @@
 
     move-result v0
 
-    if-eqz v0, :cond_12
+    if-eqz v0, :cond_10
 
     iget-object v0, p0, Lcom/android/incallui/InCallActivity;->mVideoCallFragmentManager:Lcom/android/incallui/fragment/manager/VideoCallFragmentManager;
 
-    if-eqz v0, :cond_e
+    if-eqz v0, :cond_c
 
     iget-object v0, p0, Lcom/android/incallui/InCallActivity;->mVideoCallFragmentManager:Lcom/android/incallui/fragment/manager/VideoCallFragmentManager;
 
     invoke-virtual {v0}, Lcom/android/incallui/fragment/manager/VideoCallFragmentManager;->onSMultiWindowOnChanged()V
 
-    :cond_e
+    :cond_c
     iget-object v0, p0, Lcom/android/incallui/InCallActivity;->mCallButtonFragmentManager:Lcom/android/incallui/fragment/manager/CallButtonFragmentManager;
 
-    if-eqz v0, :cond_f
+    if-eqz v0, :cond_d
 
     iget-object v0, p0, Lcom/android/incallui/InCallActivity;->mCallButtonFragmentManager:Lcom/android/incallui/fragment/manager/CallButtonFragmentManager;
 
     invoke-virtual {v0}, Lcom/android/incallui/fragment/manager/CallButtonFragmentManager;->onSMultiWindowOnChanged()V
 
-    :cond_f
+    :cond_d
     iget-object v0, p0, Lcom/android/incallui/InCallActivity;->mAnswerFragmentManager:Lcom/android/incallui/fragment/manager/AnswerFragmentManager;
 
-    if-eqz v0, :cond_10
+    if-eqz v0, :cond_e
 
     iget-object v0, p0, Lcom/android/incallui/InCallActivity;->mAnswerFragmentManager:Lcom/android/incallui/fragment/manager/AnswerFragmentManager;
 
     invoke-virtual {v0}, Lcom/android/incallui/fragment/manager/AnswerFragmentManager;->onSMultiWindowOnChanged()V
 
-    :cond_10
+    :cond_e
     iget-object v0, p0, Lcom/android/incallui/InCallActivity;->mCallCardFragmentManager:Lcom/android/incallui/fragment/manager/CallCardFragmentManager;
 
-    if-eqz v0, :cond_11
+    if-eqz v0, :cond_f
 
     iget-object v0, p0, Lcom/android/incallui/InCallActivity;->mCallCardFragmentManager:Lcom/android/incallui/fragment/manager/CallCardFragmentManager;
 
     invoke-virtual {v0}, Lcom/android/incallui/fragment/manager/CallCardFragmentManager;->onSMultiWindowOnChanged()V
 
-    :cond_11
-    :goto_4
+    :cond_f
+    :goto_2
     iget-object v0, p0, Lcom/android/incallui/InCallActivity;->mDialpadFragmentManager:Lcom/android/incallui/fragment/manager/DialpadFragmentManager;
 
     if-eqz v0, :cond_1
@@ -10828,7 +10942,7 @@
 
     goto/16 :goto_0
 
-    :cond_12
+    :cond_10
     invoke-static {}, Lcom/android/incallui/CallList;->getInstance()Lcom/android/incallui/CallList;
 
     move-result-object v0
@@ -10839,7 +10953,7 @@
 
     move-result-object v0
 
-    if-eqz v0, :cond_11
+    if-eqz v0, :cond_f
 
     invoke-virtual {v0}, Lcom/android/incallui/Call;->getState()I
 
@@ -10847,7 +10961,7 @@
 
     const/16 v2, 0x9
 
-    if-eq v1, v2, :cond_13
+    if-eq v1, v2, :cond_11
 
     invoke-virtual {v0}, Lcom/android/incallui/Call;->getState()I
 
@@ -10855,57 +10969,21 @@
 
     const/16 v1, 0xa
 
-    if-ne v0, v1, :cond_11
+    if-ne v0, v1, :cond_f
 
-    :cond_13
+    :cond_11
     iget-object v0, p0, Lcom/android/incallui/InCallActivity;->mCallButtonFragmentManager:Lcom/android/incallui/fragment/manager/CallButtonFragmentManager;
 
-    if-eqz v0, :cond_11
+    if-eqz v0, :cond_f
 
     iget-object v0, p0, Lcom/android/incallui/InCallActivity;->mCallButtonFragmentManager:Lcom/android/incallui/fragment/manager/CallButtonFragmentManager;
 
     invoke-virtual {v0}, Lcom/android/incallui/fragment/manager/CallButtonFragmentManager;->onSMultiWindowOnChanged()V
 
-    goto :goto_4
+    goto :goto_2
 
-    :cond_14
-    if-eqz p1, :cond_2
-
-    new-instance v0, Landroid/content/IntentFilter;
-
-    invoke-direct {v0}, Landroid/content/IntentFilter;-><init>()V
-
-    const-string v1, "android.intent.action.SCREEN_OFF"
-
-    invoke-virtual {v0, v1}, Landroid/content/IntentFilter;->addAction(Ljava/lang/String;)V
-
-    const/16 v1, 0x3e7
-
-    invoke-virtual {v0, v1}, Landroid/content/IntentFilter;->setPriority(I)V
-
-    invoke-virtual {p0}, Lcom/android/incallui/InCallActivity;->getApplicationContext()Landroid/content/Context;
-
-    move-result-object v1
-
-    iget-object v2, p0, Lcom/android/incallui/InCallActivity;->mScreenOffReceiver:Landroid/content/BroadcastReceiver;
-
-    invoke-virtual {v1, v2, v0}, Landroid/content/Context;->registerReceiver(Landroid/content/BroadcastReceiver;Landroid/content/IntentFilter;)Landroid/content/Intent;
-
-    iput-boolean v3, p0, Lcom/android/incallui/InCallActivity;->mScreenOffRegistered:Z
-
-    const-string v0, "onModeChanged -  registerReceiver - mScreenOffReceiver "
-
-    invoke-static {p0, v0}, Lcom/android/incallui/Log;->d(Ljava/lang/Object;Ljava/lang/String;)V
-
-    goto/16 :goto_2
-
-    :cond_15
+    :cond_12
     invoke-virtual {p0, v3}, Lcom/android/incallui/InCallActivity;->setStatusBar(Z)V
-
-    goto/16 :goto_3
-
-    :catch_0
-    move-exception v0
 
     goto/16 :goto_1
 .end method
@@ -11029,17 +11107,15 @@
 .end method
 
 .method protected onPause()V
-    .locals 8
+    .locals 7
 
-    const/16 v7, 0xa7
-
-    const/4 v3, 0x3
-
-    const/4 v6, 0x0
+    const/4 v6, 0x3
 
     const/4 v5, 0x0
 
-    const/4 v4, 0x1
+    const/4 v4, 0x0
+
+    const/4 v3, 0x1
 
     const-string v0, "onPause()..."
 
@@ -11051,13 +11127,13 @@
 
     move-result-object v0
 
-    invoke-static {v0, v6, v5}, Lcom/android/incallui/util/InCallUtils;->getCallToDisplay(Lcom/android/incallui/CallList;Lcom/android/incallui/Call;Z)Lcom/android/incallui/Call;
+    invoke-static {v0, v5, v4}, Lcom/android/incallui/util/InCallUtils;->getCallToDisplay(Lcom/android/incallui/CallList;Lcom/android/incallui/Call;Z)Lcom/android/incallui/Call;
 
     move-result-object v0
 
-    iput-boolean v5, p0, Lcom/android/incallui/InCallActivity;->mIsForegroundActivity:Z
+    iput-boolean v4, p0, Lcom/android/incallui/InCallActivity;->mIsForegroundActivity:Z
 
-    iput-boolean v5, p0, Lcom/android/incallui/InCallActivity;->mIsNewOutgoingCall:Z
+    iput-boolean v4, p0, Lcom/android/incallui/InCallActivity;->mIsNewOutgoingCall:Z
 
     invoke-virtual {p0}, Lcom/android/incallui/InCallActivity;->getDialpadFragment()Lcom/android/incallui/DialpadUi;
 
@@ -11071,14 +11147,14 @@
 
     const/4 v2, -0x1
 
-    invoke-interface {v1, v2, v6}, Lcom/android/incallui/DialpadUi;->onDialerKeyUp(ILandroid/view/KeyEvent;)Z
+    invoke-interface {v1, v2, v5}, Lcom/android/incallui/DialpadUi;->onDialerKeyUp(ILandroid/view/KeyEvent;)Z
 
     :cond_0
     invoke-static {}, Lcom/android/incallui/InCallPresenter;->getInstance()Lcom/android/incallui/InCallPresenter;
 
     move-result-object v1
 
-    invoke-virtual {v1, v5}, Lcom/android/incallui/InCallPresenter;->onUiShowing(Z)V
+    invoke-virtual {v1, v4}, Lcom/android/incallui/InCallPresenter;->onUiShowing(Z)V
 
     invoke-static {}, Lcom/android/incallui/service/vt/VideoCallManager;->getInstance()Lcom/android/incallui/service/vt/VideoCallManager;
 
@@ -11094,7 +11170,7 @@
 
     const-string v1, "onPause(): unsetActivity"
 
-    invoke-static {p0, v1, v4}, Lcom/android/incallui/Log;->d(Ljava/lang/Object;Ljava/lang/String;Z)V
+    invoke-static {p0, v1, v3}, Lcom/android/incallui/Log;->d(Ljava/lang/Object;Ljava/lang/String;Z)V
 
     invoke-static {}, Lcom/android/incallui/InCallPresenter;->getInstance()Lcom/android/incallui/InCallPresenter;
 
@@ -11109,7 +11185,7 @@
     invoke-virtual {v1, p0}, Lcom/android/incallui/service/vt/VideoCallManager;->onActivityDestroyed(Lcom/android/incallui/InCallActivity;)V
 
     :cond_1
-    invoke-virtual {p0, v5}, Lcom/android/incallui/InCallActivity;->updateAppSwitchSystemKeyEvent(Z)V
+    invoke-virtual {p0, v4}, Lcom/android/incallui/InCallActivity;->updateAppSwitchSystemKeyEvent(Z)V
 
     invoke-static {}, Lcom/android/incallui/InCallPresenter;->getInstance()Lcom/android/incallui/InCallPresenter;
 
@@ -11132,7 +11208,7 @@
     invoke-virtual {v1, p0}, Lcom/android/incallui/bike/BikeModeController;->onPause(Lcom/android/incallui/InCallActivity;)V
 
     :cond_2
-    invoke-virtual {p0, v4}, Lcom/android/incallui/InCallActivity;->setStatusBar(Z)V
+    invoke-virtual {p0, v3}, Lcom/android/incallui/InCallActivity;->setStatusBar(Z)V
 
     invoke-virtual {p0}, Lcom/android/incallui/InCallActivity;->isInMultiWindowMode()Z
 
@@ -11140,18 +11216,18 @@
 
     if-eqz v1, :cond_3
 
-    invoke-direct {p0, v4}, Lcom/android/incallui/InCallActivity;->showGreenBar(Z)V
+    invoke-direct {p0, v3}, Lcom/android/incallui/InCallActivity;->showGreenBar(Z)V
 
     :cond_3
     invoke-static {}, Lcom/android/incallui/util/VideoCallUtils;->isQCIF()Z
 
     move-result v1
 
-    if-eqz v1, :cond_f
+    if-eqz v1, :cond_e
 
     :cond_4
     :goto_0
-    invoke-virtual {p0, v3, v5}, Lcom/android/incallui/InCallActivity;->requestSystemKeyEvent(IZ)Z
+    invoke-virtual {p0, v6, v4}, Lcom/android/incallui/InCallActivity;->requestSystemKeyEvent(IZ)Z
 
     const-string v1, "Enable home key"
 
@@ -11175,11 +11251,11 @@
 
     invoke-static {p0, v1}, Lcom/android/incallui/Log;->i(Ljava/lang/Object;Ljava/lang/String;)V
 
-    invoke-virtual {p0, v3, v5}, Lcom/android/incallui/InCallActivity;->requestSystemKeyEvent(IZ)Z
+    invoke-virtual {p0, v6, v4}, Lcom/android/incallui/InCallActivity;->requestSystemKeyEvent(IZ)Z
 
     const/16 v1, 0xbb
 
-    invoke-virtual {p0, v1, v5}, Lcom/android/incallui/InCallActivity;->requestSystemKeyEvent(IZ)Z
+    invoke-virtual {p0, v1, v4}, Lcom/android/incallui/InCallActivity;->requestSystemKeyEvent(IZ)Z
 
     :cond_5
     const-string v1, "ims_rcs"
@@ -11192,13 +11268,13 @@
 
     const-string v1, "RcsShareUI.unregisterRcsObservers"
 
-    invoke-static {p0, v1, v4}, Lcom/android/incallui/Log;->d(Ljava/lang/Object;Ljava/lang/String;Z)V
+    invoke-static {p0, v1, v3}, Lcom/android/incallui/Log;->d(Ljava/lang/Object;Ljava/lang/String;Z)V
 
     invoke-static {}, Lcom/android/incallui/secrcs/RcsShareUI;->getInstance()Lcom/android/incallui/secrcs/RcsShareUI;
 
     move-result-object v1
 
-    invoke-virtual {v1, v4}, Lcom/android/incallui/secrcs/RcsShareUI;->unregisterRcsObserver(I)V
+    invoke-virtual {v1, v3}, Lcom/android/incallui/secrcs/RcsShareUI;->unregisterRcsObserver(I)V
 
     new-instance v1, Landroid/content/Intent;
 
@@ -11223,7 +11299,7 @@
 
     const-string v1, "Achintya : in onPause before if statement "
 
-    invoke-static {p0, v1, v4}, Lcom/android/incallui/Log;->d(Ljava/lang/Object;Ljava/lang/String;Z)V
+    invoke-static {p0, v1, v3}, Lcom/android/incallui/Log;->d(Ljava/lang/Object;Ljava/lang/String;Z)V
 
     new-instance v1, Ljava/lang/StringBuilder;
 
@@ -11255,7 +11331,7 @@
 
     move-result-object v1
 
-    invoke-static {p0, v1, v4}, Lcom/android/incallui/Log;->d(Ljava/lang/Object;Ljava/lang/String;Z)V
+    invoke-static {p0, v1, v3}, Lcom/android/incallui/Log;->d(Ljava/lang/Object;Ljava/lang/String;Z)V
 
     new-instance v1, Ljava/lang/StringBuilder;
 
@@ -11287,7 +11363,7 @@
 
     move-result-object v1
 
-    invoke-static {p0, v1, v4}, Lcom/android/incallui/Log;->d(Ljava/lang/Object;Ljava/lang/String;Z)V
+    invoke-static {p0, v1, v3}, Lcom/android/incallui/Log;->d(Ljava/lang/Object;Ljava/lang/String;Z)V
 
     sget-boolean v1, Lcom/android/incallui/visualcallcenter/VoiceCallButtonVCCFragment;->wasIvrCall:Z
 
@@ -11304,7 +11380,7 @@
     if-ne v0, v1, :cond_a
 
     :cond_7
-    sput-boolean v4, Lcom/android/incallui/visualcallcenter/VoiceCallButtonVCCFragment;->SMART_IVR_first:Z
+    sput-boolean v3, Lcom/android/incallui/visualcallcenter/VoiceCallButtonVCCFragment;->SMART_IVR_first:Z
 
     invoke-static {}, Lcom/android/incallui/util/VisualCallCenter;->getInstance()Lcom/android/incallui/util/VisualCallCenter;
 
@@ -11351,7 +11427,7 @@
 
     move-result-object v1
 
-    invoke-static {p0, v1, v4}, Lcom/android/incallui/Log;->d(Ljava/lang/Object;Ljava/lang/String;Z)V
+    invoke-static {p0, v1, v3}, Lcom/android/incallui/Log;->d(Ljava/lang/Object;Ljava/lang/String;Z)V
 
     new-instance v1, Ljava/lang/StringBuilder;
 
@@ -11375,7 +11451,7 @@
 
     move-result-object v1
 
-    invoke-static {p0, v1, v4}, Lcom/android/incallui/Log;->d(Ljava/lang/Object;Ljava/lang/String;Z)V
+    invoke-static {p0, v1, v3}, Lcom/android/incallui/Log;->d(Ljava/lang/Object;Ljava/lang/String;Z)V
 
     invoke-static {}, Lcom/android/incallui/InCallApp;->getInstance()Lcom/android/incallui/InCallApp;
 
@@ -11395,12 +11471,12 @@
 
     invoke-virtual {v2, v0}, Landroid/content/Intent;->setFlags(I)Landroid/content/Intent;
 
-    sput-boolean v5, Lcom/android/incallui/visualcallcenter/VoiceCallButtonVCCFragment;->wasIvrCall:Z
+    sput-boolean v4, Lcom/android/incallui/visualcallcenter/VoiceCallButtonVCCFragment;->wasIvrCall:Z
 
     invoke-virtual {v1, v2}, Landroid/content/Context;->startActivity(Landroid/content/Intent;)V
 
     :cond_9
-    sput-object v6, Lcom/android/incallui/visualcallcenter/VoiceCallButtonVCCFragment;->publicCallPath:Ljava/lang/String;
+    sput-object v5, Lcom/android/incallui/visualcallcenter/VoiceCallButtonVCCFragment;->publicCallPath:Ljava/lang/String;
 
     :cond_a
     iget-object v0, p0, Lcom/android/incallui/InCallActivity;->mInCallMenu:Lcom/android/incallui/InCallMenu;
@@ -11432,41 +11508,18 @@
 
     move-result v0
 
-    if-eqz v0, :cond_d
-
-    iget-object v0, p0, Lcom/android/incallui/InCallActivity;->mHandler:Landroid/os/Handler;
-
-    invoke-virtual {v0, v7}, Landroid/os/Handler;->hasMessages(I)Z
-
-    move-result v0
-
     if-eqz v0, :cond_c
 
-    iget-object v0, p0, Lcom/android/incallui/InCallActivity;->mHandler:Landroid/os/Handler;
-
-    invoke-virtual {v0, v7}, Landroid/os/Handler;->removeMessages(I)V
+    invoke-virtual {p0}, Lcom/android/incallui/InCallActivity;->stopLockScreenDuringCallService()V
 
     :cond_c
-    const-string v0, "stopService LockScreenDuringCall..."
-
-    invoke-static {p0, v0, v4}, Lcom/android/incallui/Log;->d(Ljava/lang/Object;Ljava/lang/String;Z)V
-
-    new-instance v0, Landroid/content/Intent;
-
-    const-class v1, Lcom/android/incallui/service/LockScreenDuringCall;
-
-    invoke-direct {v0, p0, v1}, Landroid/content/Intent;-><init>(Landroid/content/Context;Ljava/lang/Class;)V
-
-    invoke-virtual {p0, v0}, Lcom/android/incallui/InCallActivity;->stopService(Landroid/content/Intent;)Z
-
-    :cond_d
     const-string v0, "support_bixby"
 
     invoke-static {v0}, Lcom/android/incallui/InCallUIFeature;->hasFeature(Ljava/lang/String;)Z
 
     move-result v0
 
-    if-eqz v0, :cond_e
+    if-eqz v0, :cond_d
 
     invoke-static {}, Lcom/samsung/android/sdk/bixby/a;->a()Lcom/samsung/android/sdk/bixby/a;
 
@@ -11474,14 +11527,14 @@
 
     invoke-virtual {v0}, Lcom/samsung/android/sdk/bixby/a;->b()V
 
-    :cond_e
+    :cond_d
     const-string v0, "onPause(): exit"
 
     invoke-static {p0, v0}, Lcom/android/incallui/Log;->i(Ljava/lang/Object;Ljava/lang/String;)V
 
     return-void
 
-    :cond_f
+    :cond_e
     if-eqz v0, :cond_4
 
     invoke-virtual {v0}, Lcom/android/incallui/Call;->getState()I
@@ -11649,48 +11702,48 @@
 
     invoke-static {}, Lcom/android/incallui/util/DesktopModeManager;->isDesktopMode()Z
 
-    move-result v3
+    move-result v0
 
     invoke-static {}, Lcom/android/incallui/util/CallTypeUtils;->isVoiceCall()Z
 
-    move-result v0
+    move-result v3
 
-    if-nez v0, :cond_2
+    if-nez v3, :cond_2
 
     invoke-static {}, Lcom/android/incallui/util/VideoCallUtils;->isQCIF()Z
 
-    move-result v0
+    move-result v3
 
-    if-eqz v0, :cond_6
+    if-eqz v3, :cond_6
 
     :cond_2
     if-eqz v4, :cond_3
 
     invoke-virtual {v4}, Lcom/android/incallui/Call;->getState()I
 
-    move-result v0
+    move-result v3
 
     const/4 v5, 0x4
 
-    if-ne v0, v5, :cond_5
+    if-ne v3, v5, :cond_5
 
     :cond_3
     if-nez v4, :cond_4
 
     invoke-static {}, Lcom/android/incallui/util/InCallUtils;->isInLockTaskMode()Z
 
-    move-result v0
+    move-result v3
 
-    if-nez v0, :cond_5
+    if-nez v3, :cond_5
 
     :cond_4
     invoke-virtual {p0}, Lcom/android/incallui/InCallActivity;->isNormalWindow()Z
 
-    move-result v0
+    move-result v3
 
-    if-nez v0, :cond_1e
+    if-nez v3, :cond_19
 
-    if-nez v3, :cond_1e
+    if-nez v0, :cond_19
 
     :cond_5
     move v0, v1
@@ -11707,48 +11760,6 @@
 
     invoke-virtual {p0}, Lcom/android/incallui/InCallActivity;->updateKeepScreenOnFlag()V
 
-    invoke-virtual {p0}, Lcom/android/incallui/InCallActivity;->getApplicationContext()Landroid/content/Context;
-
-    move-result-object v0
-
-    const-string v5, "sem_statusbar"
-
-    invoke-virtual {v0, v5}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Landroid/app/SemStatusBarManager;
-
-    iput-object v0, p0, Lcom/android/incallui/InCallActivity;->mStatusBarManager:Landroid/app/SemStatusBarManager;
-
-    if-nez v3, :cond_8
-
-    iget-object v0, p0, Lcom/android/incallui/InCallActivity;->mHandler:Landroid/os/Handler;
-
-    const/16 v3, 0xa9
-
-    invoke-virtual {v0, v3}, Landroid/os/Handler;->hasMessages(I)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_7
-
-    iget-object v0, p0, Lcom/android/incallui/InCallActivity;->mHandler:Landroid/os/Handler;
-
-    const/16 v3, 0xa9
-
-    invoke-virtual {v0, v3}, Landroid/os/Handler;->removeMessages(I)V
-
-    :cond_7
-    iget-object v0, p0, Lcom/android/incallui/InCallActivity;->mStatusBarManager:Landroid/app/SemStatusBarManager;
-
-    if-eqz v0, :cond_8
-
-    iget-object v0, p0, Lcom/android/incallui/InCallActivity;->mStatusBarManager:Landroid/app/SemStatusBarManager;
-
-    invoke-virtual {v0}, Landroid/app/SemStatusBarManager;->collapsePanels()V
-
-    :cond_8
     invoke-direct {p0, v2}, Lcom/android/incallui/InCallActivity;->showGreenBar(Z)V
 
     invoke-static {}, Lcom/android/incallui/CallList;->getInstance()Lcom/android/incallui/CallList;
@@ -11759,27 +11770,20 @@
 
     move-result-object v0
 
-    if-eqz v0, :cond_1f
+    if-eqz v0, :cond_1a
 
     move v3, v1
 
     :goto_1
-    if-nez v3, :cond_9
+    if-eqz v3, :cond_1b
 
-    invoke-static {}, Lcom/android/incallui/operator/dcm/AnswerMemoUtils;->isAutoAnswered()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_20
-
-    :cond_9
     iget-object v0, p0, Lcom/android/incallui/InCallActivity;->mHandler:Landroid/os/Handler;
 
     invoke-virtual {v0, v9}, Landroid/os/Handler;->hasMessages(I)Z
 
     move-result v0
 
-    if-nez v0, :cond_a
+    if-nez v0, :cond_7
 
     iget-object v0, p0, Lcom/android/incallui/InCallActivity;->mHandler:Landroid/os/Handler;
 
@@ -11787,14 +11791,14 @@
 
     invoke-virtual {v0, v9, v6, v7}, Landroid/os/Handler;->sendEmptyMessageDelayed(IJ)Z
 
-    :cond_a
+    :cond_7
     iget-object v0, p0, Lcom/android/incallui/InCallActivity;->mHandler:Landroid/os/Handler;
 
     invoke-virtual {v0, v10}, Landroid/os/Handler;->hasMessages(I)Z
 
     move-result v0
 
-    if-nez v0, :cond_b
+    if-nez v0, :cond_8
 
     iget-object v0, p0, Lcom/android/incallui/InCallActivity;->mHandler:Landroid/os/Handler;
 
@@ -11802,7 +11806,7 @@
 
     invoke-virtual {v0, v10, v6, v7}, Landroid/os/Handler;->sendEmptyMessageDelayed(IJ)Z
 
-    :cond_b
+    :cond_8
     invoke-virtual {p0, v1}, Lcom/android/incallui/InCallActivity;->updateAppSwitchSystemKeyEvent(Z)V
 
     invoke-virtual {p0, v2}, Lcom/android/incallui/InCallActivity;->setStatusBar(Z)V
@@ -11812,15 +11816,15 @@
 
     move-result v0
 
-    if-eqz v0, :cond_23
+    if-eqz v0, :cond_1e
 
-    :cond_c
+    :cond_9
     :goto_3
     invoke-static {}, Lcom/android/incallui/InCallUISystemDB;->isKidsModeCallApp()Z
 
     move-result v0
 
-    if-nez v0, :cond_d
+    if-nez v0, :cond_a
 
     invoke-static {}, Lcom/android/incallui/CallList;->getInstance()Lcom/android/incallui/CallList;
 
@@ -11830,16 +11834,16 @@
 
     move-result v0
 
-    if-eqz v0, :cond_e
+    if-eqz v0, :cond_b
 
-    :cond_d
+    :cond_a
     invoke-virtual {p0, v8, v1}, Lcom/android/incallui/InCallActivity;->requestSystemKeyEvent(IZ)Z
 
     const-string v0, "Disable home key"
 
     invoke-static {p0, v0}, Lcom/android/incallui/Log;->d(Ljava/lang/Object;Ljava/lang/String;)V
 
-    :cond_e
+    :cond_b
     const-string v0, "true"
 
     const-string v4, "ril.domesticOtaStart"
@@ -11852,7 +11856,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_f
+    if-eqz v0, :cond_c
 
     const-string v0, "domesticOtaStart - Disable home key"
 
@@ -11864,16 +11868,16 @@
 
     invoke-virtual {p0, v0, v1}, Lcom/android/incallui/InCallActivity;->requestSystemKeyEvent(IZ)Z
 
-    :cond_f
+    :cond_c
     iget v0, p0, Lcom/android/incallui/InCallActivity;->mShowDialpadRequest:I
 
-    if-eq v0, v1, :cond_11
+    if-eq v0, v1, :cond_e
 
     iget v0, p0, Lcom/android/incallui/InCallActivity;->mShowDialpadRequest:I
 
     const/4 v4, 0x2
 
-    if-ne v0, v4, :cond_24
+    if-ne v0, v4, :cond_1f
 
     invoke-static {}, Lcom/android/incallui/InCallPresenter;->getInstance()Lcom/android/incallui/InCallPresenter;
 
@@ -11891,7 +11895,7 @@
 
     move-result-object v0
 
-    if-eqz v0, :cond_10
+    if-eqz v0, :cond_d
 
     invoke-virtual {p0}, Lcom/android/incallui/InCallActivity;->getDialpadFragment()Lcom/android/incallui/DialpadUi;
 
@@ -11901,33 +11905,33 @@
 
     invoke-interface {v0, v4}, Lcom/android/incallui/DialpadUi;->setDtmfText(Ljava/lang/String;)V
 
-    :cond_10
+    :cond_d
     :goto_4
     iput v1, p0, Lcom/android/incallui/InCallActivity;->mShowDialpadRequest:I
 
-    :cond_11
+    :cond_e
     const-string v0, "ims_support_rtt"
 
     invoke-static {v0}, Lcom/android/incallui/InCallUIFeature;->hasFeature(Ljava/lang/String;)Z
 
     move-result v0
 
-    if-eqz v0, :cond_12
+    if-eqz v0, :cond_f
 
     iget-boolean v0, p0, Lcom/android/incallui/InCallActivity;->mShowRTTRequest:Z
 
-    if-ne v0, v1, :cond_12
+    if-ne v0, v1, :cond_f
 
     iput-boolean v2, p0, Lcom/android/incallui/InCallActivity;->mShowRTTRequest:Z
 
-    :cond_12
+    :cond_f
     const-string v0, "ims_rcs"
 
     invoke-static {v0}, Lcom/android/incallui/InCallUIFeature;->hasFeature(Ljava/lang/String;)Z
 
     move-result v0
 
-    if-eqz v0, :cond_14
+    if-eqz v0, :cond_11
 
     const-string v0, "RcsShareUI.registerRcsObservers"
 
@@ -11949,19 +11953,19 @@
 
     move-result-object v0
 
-    if-eqz v0, :cond_13
+    if-eqz v0, :cond_10
 
     invoke-virtual {v0}, Landroid/view/Window;->getDecorView()Landroid/view/View;
 
     move-result-object v0
 
-    new-instance v4, Lcom/android/incallui/InCallActivity$11;
+    new-instance v4, Lcom/android/incallui/InCallActivity$8;
 
-    invoke-direct {v4, p0}, Lcom/android/incallui/InCallActivity$11;-><init>(Lcom/android/incallui/InCallActivity;)V
+    invoke-direct {v4, p0}, Lcom/android/incallui/InCallActivity$8;-><init>(Lcom/android/incallui/InCallActivity;)V
 
     invoke-virtual {v0, v4}, Landroid/view/View;->post(Ljava/lang/Runnable;)Z
 
-    :cond_13
+    :cond_10
     new-instance v0, Landroid/content/Intent;
 
     const-string v4, "com.samsung.rcs.framework.mediatransfer.contentshare.notification.PHONE_ACTIVE"
@@ -12026,9 +12030,15 @@
 
     invoke-static {p0, v5, v1}, Lcom/android/incallui/Log;->d(Ljava/lang/Object;Ljava/lang/String;Z)V
 
-    if-nez v3, :cond_14
+    invoke-static {}, Lcom/android/incallui/util/DesktopModeManager;->isDesktopMode()Z
 
-    if-eqz v4, :cond_14
+    move-result v5
+
+    if-nez v5, :cond_11
+
+    if-nez v3, :cond_11
+
+    if-eqz v4, :cond_11
 
     const-string v4, " RcsShareUI resumeShare called"
 
@@ -12048,10 +12058,10 @@
 
     invoke-virtual {v4, v5, v0}, Lcom/android/incallui/secrcs/RcsShareUI;->resumeShare(Landroid/content/Context;Lcom/android/incallui/Call;)V
 
-    :cond_14
+    :cond_11
     iget-boolean v0, p0, Lcom/android/incallui/InCallActivity;->mShowPostCharWaitDialogOnResume:Z
 
-    if-eqz v0, :cond_15
+    if-eqz v0, :cond_12
 
     iget-object v0, p0, Lcom/android/incallui/InCallActivity;->mShowPostCharWaitDialogCallId:Ljava/lang/String;
 
@@ -12059,20 +12069,20 @@
 
     invoke-virtual {p0, v0, v4}, Lcom/android/incallui/InCallActivity;->showPostCharWaitDialog(Ljava/lang/String;Ljava/lang/String;)V
 
-    :cond_15
+    :cond_12
     const-string v0, "vzw_volte_ui"
 
     invoke-static {v0}, Lcom/android/incallui/InCallUIFeature;->hasFeature(Ljava/lang/String;)Z
 
     move-result v0
 
-    if-eqz v0, :cond_16
+    if-eqz v0, :cond_13
 
     invoke-static {}, Lcom/android/incallui/InCallUISystemDB;->getTtyNotification()Z
 
     move-result v0
 
-    if-eqz v0, :cond_16
+    if-eqz v0, :cond_13
 
     const-string v0, "display tty notification!"
 
@@ -12080,75 +12090,16 @@
 
     invoke-virtual {p0, v1}, Lcom/android/incallui/InCallActivity;->onTtyNotification(Z)V
 
-    :cond_16
+    :cond_13
     invoke-static {}, Lcom/android/incallui/InCallUISystemDB;->needToUseLockScreenDuringCall()Z
 
     move-result v0
 
-    if-eqz v0, :cond_17
+    if-eqz v0, :cond_14
 
     invoke-virtual {p0}, Lcom/android/incallui/InCallActivity;->sendLockScreenEvent()V
 
-    :cond_17
-    const-string v0, "support_tphone"
-
-    invoke-static {v0}, Lcom/android/incallui/InCallUIFeature;->hasFeature(Ljava/lang/String;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_18
-
-    invoke-static {}, Lcom/android/incallui/InCallUISystemDB;->isTPhoneMode()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_18
-
-    invoke-static {}, Lcom/android/incallui/util/CallTypeUtils;->isVideoCall()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_18
-
-    invoke-virtual {p0}, Lcom/android/incallui/InCallActivity;->isInMultiWindowMode()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_18
-
-    invoke-virtual {p0}, Lcom/android/incallui/InCallActivity;->returnToNormalWindowMode()V
-
-    :cond_18
-    iget-object v0, p0, Lcom/android/incallui/InCallActivity;->mScreenOffReceiver:Landroid/content/BroadcastReceiver;
-
-    if-eqz v0, :cond_19
-
-    iget-boolean v0, p0, Lcom/android/incallui/InCallActivity;->mScreenOffRegistered:Z
-
-    if-eqz v0, :cond_25
-
-    invoke-virtual {p0}, Lcom/android/incallui/InCallActivity;->isInMultiWindowMode()Z
-
-    move-result v0
-
-    if-nez v0, :cond_19
-
-    :try_start_0
-    iget-object v0, p0, Lcom/android/incallui/InCallActivity;->mScreenOffReceiver:Landroid/content/BroadcastReceiver;
-
-    invoke-virtual {p0, v0}, Lcom/android/incallui/InCallActivity;->unregisterReceiver(Landroid/content/BroadcastReceiver;)V
-    :try_end_0
-    .catch Ljava/lang/IllegalArgumentException; {:try_start_0 .. :try_end_0} :catch_0
-
-    :goto_5
-    iput-boolean v2, p0, Lcom/android/incallui/InCallActivity;->mScreenOffRegistered:Z
-
-    const-string v0, " unregisterReceiver - mScreenOffReceiver "
-
-    invoke-static {p0, v0}, Lcom/android/incallui/Log;->d(Ljava/lang/Object;Ljava/lang/String;)V
-
-    :cond_19
-    :goto_6
+    :cond_14
     invoke-virtual {p0}, Lcom/android/incallui/InCallActivity;->getResources()Landroid/content/res/Resources;
 
     move-result-object v0
@@ -12157,17 +12108,17 @@
 
     move-result-object v4
 
-    if-eqz v4, :cond_1a
+    if-eqz v4, :cond_15
 
     iget v0, v4, Landroid/content/res/Configuration;->smallestScreenWidthDp:I
 
     sget v5, Lcom/android/incallui/InCallActivity;->TABLET_SMALL_WIDTH_VALUE:I
 
-    if-lt v0, v5, :cond_26
+    if-lt v0, v5, :cond_20
 
     move v0, v1
 
-    :goto_7
+    :goto_5
     iput-boolean v0, p0, Lcom/android/incallui/InCallActivity;->mIsTabletUX:Z
 
     iget-boolean v0, p0, Lcom/android/incallui/InCallActivity;->mIsTabletUX:Z
@@ -12178,14 +12129,22 @@
 
     iput-boolean v0, p0, Lcom/android/incallui/InCallActivity;->mIsMultiWindowUX:Z
 
-    :cond_1a
+    iget v0, v4, Landroid/content/res/Configuration;->screenWidthDp:I
+
+    iput v0, p0, Lcom/android/incallui/InCallActivity;->mCurrentScreenWidthDp:I
+
+    iget v0, v4, Landroid/content/res/Configuration;->screenHeightDp:I
+
+    iput v0, p0, Lcom/android/incallui/InCallActivity;->mCurrentScreenHeightDp:I
+
+    :cond_15
     const-string v0, "support_bixby"
 
     invoke-static {v0}, Lcom/android/incallui/InCallUIFeature;->hasFeature(Ljava/lang/String;)Z
 
     move-result v0
 
-    if-eqz v0, :cond_1b
+    if-eqz v0, :cond_16
 
     invoke-static {}, Lcom/samsung/android/sdk/bixby/a;->a()Lcom/samsung/android/sdk/bixby/a;
 
@@ -12197,10 +12156,10 @@
 
     invoke-virtual {v0, v4}, Lcom/samsung/android/sdk/bixby/a;->a(Lcom/samsung/android/sdk/bixby/a$d;)V
 
-    :cond_1b
+    :cond_16
     iget-boolean v0, p0, Lcom/android/incallui/InCallActivity;->mNeedToInitialize:Z
 
-    if-eqz v0, :cond_1d
+    if-eqz v0, :cond_18
 
     iget-object v0, p0, Lcom/android/incallui/InCallActivity;->mHandler:Landroid/os/Handler;
 
@@ -12210,7 +12169,7 @@
 
     move-result v0
 
-    if-nez v0, :cond_1d
+    if-nez v0, :cond_18
 
     const/16 v0, 0x3e8
 
@@ -12220,28 +12179,28 @@
 
     move-result v4
 
-    if-nez v4, :cond_1c
+    if-nez v4, :cond_17
 
     invoke-static {}, Lcom/android/incallui/util/CallTypeUtils;->isVideoCall()Z
 
     move-result v4
 
-    if-nez v4, :cond_1c
+    if-nez v4, :cond_17
 
     invoke-virtual {p0}, Lcom/android/incallui/InCallActivity;->isInMultiWindowMode()Z
 
     move-result v4
 
-    if-nez v4, :cond_1c
+    if-nez v4, :cond_17
 
     iget-boolean v4, p0, Lcom/android/incallui/InCallActivity;->mIsFromPopup:Z
 
-    if-eqz v4, :cond_27
+    if-eqz v4, :cond_21
 
-    :cond_1c
+    :cond_17
     move v0, v1
 
-    :goto_8
+    :goto_6
     invoke-virtual {p0, v0}, Lcom/android/incallui/InCallActivity;->updateGradientColor(Z)V
 
     new-instance v0, Ljava/lang/StringBuilder;
@@ -12278,7 +12237,7 @@
 
     invoke-virtual {v0, v3, v4, v5}, Landroid/os/Handler;->sendEmptyMessageDelayed(IJ)Z
 
-    :cond_1d
+    :cond_18
     invoke-virtual {p0}, Lcom/android/incallui/InCallActivity;->updateGradientBackground()V
 
     const-string v0, "VerificationLog"
@@ -12293,41 +12252,41 @@
 
     return-void
 
-    :cond_1e
+    :cond_19
     move v0, v2
 
     goto/16 :goto_0
 
-    :cond_1f
+    :cond_1a
     move v3, v2
 
     goto/16 :goto_1
 
-    :cond_20
+    :cond_1b
     invoke-static {}, Lcom/android/incallui/InCallUISystemDB;->isLostPhoneLock()Z
 
     move-result v0
 
-    if-nez v0, :cond_21
+    if-nez v0, :cond_1c
 
     invoke-static {}, Lcom/android/incallui/util/PhoneModeUtils;->isOtaMode()Z
 
     move-result v0
 
-    if-eqz v0, :cond_22
+    if-eqz v0, :cond_1d
 
-    :cond_21
+    :cond_1c
     invoke-virtual {p0, v2}, Lcom/android/incallui/InCallActivity;->setStatusBar(Z)V
 
     goto/16 :goto_2
 
-    :cond_22
+    :cond_1d
     invoke-virtual {p0, v1}, Lcom/android/incallui/InCallActivity;->setStatusBar(Z)V
 
     goto/16 :goto_2
 
-    :cond_23
-    if-eqz v4, :cond_c
+    :cond_1e
+    if-eqz v4, :cond_9
 
     invoke-virtual {v4}, Lcom/android/incallui/Call;->getState()I
 
@@ -12337,7 +12296,7 @@
 
     goto/16 :goto_3
 
-    :cond_24
+    :cond_1f
     const-string v0, "onResume : force hide dialpad"
 
     invoke-static {p0, v0}, Lcom/android/incallui/Log;->v(Ljava/lang/Object;Ljava/lang/String;)V
@@ -12346,76 +12305,40 @@
 
     move-result-object v0
 
-    if-eqz v0, :cond_10
+    if-eqz v0, :cond_d
 
     invoke-virtual {p0, v2, v2}, Lcom/android/incallui/InCallActivity;->displayDialpad(ZZ)V
 
     goto/16 :goto_4
 
-    :cond_25
-    invoke-virtual {p0}, Lcom/android/incallui/InCallActivity;->isInMultiWindowMode()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_19
-
-    new-instance v0, Landroid/content/IntentFilter;
-
-    invoke-direct {v0}, Landroid/content/IntentFilter;-><init>()V
-
-    const-string v4, "android.intent.action.SCREEN_OFF"
-
-    invoke-virtual {v0, v4}, Landroid/content/IntentFilter;->addAction(Ljava/lang/String;)V
-
-    const/16 v4, 0x3e7
-
-    invoke-virtual {v0, v4}, Landroid/content/IntentFilter;->setPriority(I)V
-
-    iget-object v4, p0, Lcom/android/incallui/InCallActivity;->mScreenOffReceiver:Landroid/content/BroadcastReceiver;
-
-    invoke-virtual {p0, v4, v0}, Lcom/android/incallui/InCallActivity;->registerReceiver(Landroid/content/BroadcastReceiver;Landroid/content/IntentFilter;)Landroid/content/Intent;
-
-    iput-boolean v1, p0, Lcom/android/incallui/InCallActivity;->mScreenOffRegistered:Z
-
-    const-string v0, "- registerReceiver - mScreenOffReceiver"
-
-    invoke-static {p0, v0}, Lcom/android/incallui/Log;->d(Ljava/lang/Object;Ljava/lang/String;)V
-
-    goto/16 :goto_6
-
-    :cond_26
+    :cond_20
     move v0, v2
 
-    goto/16 :goto_7
+    goto/16 :goto_5
 
-    :cond_27
-    if-eqz v3, :cond_28
+    :cond_21
+    if-eqz v3, :cond_22
 
     invoke-static {}, Lcom/android/incallui/util/SystemServiceUtils;->needToWakeUpScreen()Z
 
     move-result v3
 
-    if-eqz v3, :cond_28
+    if-eqz v3, :cond_22
 
     const/16 v2, 0x1f4
 
     move v0, v1
 
-    goto/16 :goto_8
+    goto :goto_6
 
-    :catch_0
-    move-exception v0
-
-    goto/16 :goto_5
-
-    :cond_28
+    :cond_22
     move v11, v0
 
     move v0, v2
 
     move v2, v11
 
-    goto/16 :goto_8
+    goto :goto_6
 .end method
 
 .method protected onSaveInstanceState(Landroid/os/Bundle;)V
@@ -12550,74 +12473,78 @@
 .end method
 
 .method protected onStart()V
-    .locals 4
+    .locals 5
 
-    const/4 v0, 0x1
+    const/4 v2, 0x0
 
-    const-string v1, "onStart()..."
+    const/4 v1, 0x1
 
-    invoke-static {p0, v1}, Lcom/android/incallui/Log;->i(Ljava/lang/Object;Ljava/lang/String;)V
+    const-string v0, "onStart()..."
+
+    invoke-static {p0, v0}, Lcom/android/incallui/Log;->i(Ljava/lang/Object;Ljava/lang/String;)V
 
     invoke-super {p0}, Lcom/android/contacts/common/activity/TransactionSafeActivity;->onStart()V
 
     invoke-direct {p0}, Lcom/android/incallui/InCallActivity;->controlSystemUiVisibilityImmersiveSticky()V
 
-    const-string v1, "ims_rcs"
+    const-string v0, "ims_rcs"
 
-    invoke-static {v1}, Lcom/android/incallui/InCallUIFeature;->hasFeature(Ljava/lang/String;)Z
+    invoke-static {v0}, Lcom/android/incallui/InCallUIFeature;->hasFeature(Ljava/lang/String;)Z
 
-    move-result v1
+    move-result v0
 
-    if-eqz v1, :cond_0
+    if-eqz v0, :cond_0
 
-    new-instance v1, Landroid/content/Intent;
+    new-instance v0, Landroid/content/Intent;
 
-    const-string v2, "com.samsung.rcs.intent.action.RESUME_SHARING_SERVICE_DIALOG"
+    const-string v3, "com.samsung.rcs.intent.action.RESUME_SHARING_SERVICE_DIALOG"
 
-    invoke-direct {v1, v2}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
+    invoke-direct {v0, v3}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
 
-    invoke-virtual {p0, v1}, Lcom/android/incallui/InCallActivity;->sendBroadcast(Landroid/content/Intent;)V
+    invoke-virtual {p0, v0}, Lcom/android/incallui/InCallActivity;->sendBroadcast(Landroid/content/Intent;)V
 
     invoke-static {}, Lcom/android/incallui/CallList;->getInstance()Lcom/android/incallui/CallList;
 
-    move-result-object v1
+    move-result-object v0
 
-    invoke-virtual {v1}, Lcom/android/incallui/CallList;->getActiveCall()Lcom/android/incallui/Call;
+    invoke-virtual {v0}, Lcom/android/incallui/CallList;->getActiveCall()Lcom/android/incallui/Call;
 
-    move-result-object v1
+    move-result-object v0
 
-    iget-object v2, p0, Lcom/android/incallui/InCallActivity;->mRcsInvitation:Lcom/android/incallui/secrcs/RcsInvitation;
+    iget-object v3, p0, Lcom/android/incallui/InCallActivity;->mRcsInvitation:Lcom/android/incallui/secrcs/RcsInvitation;
 
-    if-eqz v2, :cond_0
+    if-eqz v3, :cond_0
 
-    if-eqz v1, :cond_0
+    if-eqz v0, :cond_0
 
-    const-string v2, "Showing invitation dialog..."
+    const-string v3, "Showing invitation dialog..."
 
-    invoke-static {p0, v2, v0}, Lcom/android/incallui/Log;->d(Ljava/lang/Object;Ljava/lang/String;Z)V
+    invoke-static {p0, v3, v1}, Lcom/android/incallui/Log;->d(Ljava/lang/Object;Ljava/lang/String;Z)V
 
-    iget-object v2, p0, Lcom/android/incallui/InCallActivity;->mRcsInvitation:Lcom/android/incallui/secrcs/RcsInvitation;
+    iget-object v3, p0, Lcom/android/incallui/InCallActivity;->mRcsInvitation:Lcom/android/incallui/secrcs/RcsInvitation;
 
     invoke-virtual {p0}, Lcom/android/incallui/InCallActivity;->getApplicationContext()Landroid/content/Context;
 
-    move-result-object v3
+    move-result-object v4
 
-    invoke-virtual {v2, v3, v1}, Lcom/android/incallui/secrcs/RcsInvitation;->updateState(Landroid/content/Context;Lcom/android/incallui/Call;)V
+    invoke-virtual {v3, v4, v0}, Lcom/android/incallui/secrcs/RcsInvitation;->updateState(Landroid/content/Context;Lcom/android/incallui/Call;)V
 
     :cond_0
     invoke-static {}, Lcom/android/incallui/InCallPresenter;->getInstance()Lcom/android/incallui/InCallPresenter;
 
-    move-result-object v1
+    move-result-object v0
 
-    invoke-virtual {v1, p0}, Lcom/android/incallui/InCallPresenter;->setActivity(Lcom/android/incallui/InCallActivity;)V
+    invoke-virtual {v0, p0}, Lcom/android/incallui/InCallPresenter;->setActivity(Lcom/android/incallui/InCallActivity;)V
 
     invoke-virtual {p0}, Lcom/android/incallui/InCallActivity;->getRequestedOrientation()I
 
-    move-result v1
+    move-result v0
 
-    sget v2, Lcom/android/incallui/InCallOrientationEventListener;->FULL_SENSOR_SCREEN_ORIENTATION:I
+    sget v3, Lcom/android/incallui/InCallOrientationEventListener;->FULL_SENSOR_SCREEN_ORIENTATION:I
 
-    if-ne v1, v2, :cond_1
+    if-ne v0, v3, :cond_4
+
+    move v0, v1
 
     :goto_0
     invoke-virtual {p0, v0}, Lcom/android/incallui/InCallActivity;->enableInCallOrientationEventListener(Z)V
@@ -12634,20 +12561,55 @@
 
     invoke-virtual {v0, p0}, Lcom/android/incallui/service/vt/VideoCallManager;->onActivityStarted(Lcom/android/incallui/InCallActivity;)V
 
-    return-void
+    const-string v0, "ims_support_rtt"
+
+    invoke-static {v0}, Lcom/android/incallui/InCallUIFeature;->hasFeature(Ljava/lang/String;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_3
+
+    invoke-static {}, Lcom/android/incallui/InCallPresenter;->getInstance()Lcom/android/incallui/InCallPresenter;
+
+    move-result-object v0
+
+    invoke-static {}, Lcom/android/incallui/InCallUISystemDB;->isRTTOn()Z
+
+    move-result v3
+
+    if-nez v3, :cond_1
+
+    invoke-static {}, Lcom/android/incallui/InCallPresenter;->getInstance()Lcom/android/incallui/InCallPresenter;
+
+    move-result-object v3
+
+    invoke-virtual {v3}, Lcom/android/incallui/InCallPresenter;->getTempRTT()Z
+
+    move-result v3
+
+    if-eqz v3, :cond_2
 
     :cond_1
-    const/4 v0, 0x0
+    move v2, v1
+
+    :cond_2
+    invoke-virtual {v0, v2}, Lcom/android/incallui/InCallPresenter;->setRttCapability(Z)V
+
+    :cond_3
+    return-void
+
+    :cond_4
+    move v0, v2
 
     goto :goto_0
 .end method
 
 .method protected onStop()V
-    .locals 5
+    .locals 3
 
-    const/4 v1, 0x0
+    const/4 v2, 0x0
 
-    const/4 v4, 0x1
+    const/4 v1, 0x1
 
     const-string v0, "onStop()..."
 
@@ -12655,7 +12617,7 @@
 
     invoke-super {p0}, Lcom/android/contacts/common/activity/TransactionSafeActivity;->onStop()V
 
-    invoke-virtual {p0, v1}, Lcom/android/incallui/InCallActivity;->enableInCallOrientationEventListener(Z)V
+    invoke-virtual {p0, v2}, Lcom/android/incallui/InCallActivity;->enableInCallOrientationEventListener(Z)V
 
     invoke-static {}, Lcom/android/incallui/InCallPresenter;->getInstance()Lcom/android/incallui/InCallPresenter;
 
@@ -12675,7 +12637,7 @@
 
     invoke-virtual {v0, p0}, Lcom/android/incallui/service/vt/VideoCallManager;->onActivityStopped(Lcom/android/incallui/InCallActivity;)V
 
-    invoke-direct {p0, v1}, Lcom/android/incallui/InCallActivity;->addFlagTurnOnScreen(Z)V
+    invoke-direct {p0, v2}, Lcom/android/incallui/InCallActivity;->addFlagTurnOnScreen(Z)V
 
     invoke-virtual {p0}, Lcom/android/incallui/InCallActivity;->getCallCardFragment()Lcom/android/incallui/CallCardUi;
 
@@ -12690,9 +12652,9 @@
     invoke-interface {v0}, Lcom/android/incallui/CallCardUi;->resetRevealAnimator()V
 
     :cond_0
-    invoke-direct {p0, v4}, Lcom/android/incallui/InCallActivity;->showGreenBar(Z)V
+    invoke-direct {p0, v1}, Lcom/android/incallui/InCallActivity;->showGreenBar(Z)V
 
-    invoke-virtual {p0, v4}, Lcom/android/incallui/InCallActivity;->setStatusBar(Z)V
+    invoke-virtual {p0, v1}, Lcom/android/incallui/InCallActivity;->setStatusBar(Z)V
 
     iget-boolean v0, p0, Lcom/android/incallui/InCallActivity;->mFNDBlockedDialog:Z
 
@@ -12709,40 +12671,11 @@
     invoke-direct {p0}, Lcom/android/incallui/InCallActivity;->onDialogDismissed()V
 
     :cond_1
-    invoke-static {}, Lcom/android/incallui/InCallPresenter;->getInstance()Lcom/android/incallui/InCallPresenter;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Lcom/android/incallui/InCallPresenter;->getProximitySensor()Lcom/android/incallui/ProximitySensor;
-
-    move-result-object v0
-
-    if-eqz v0, :cond_2
-
-    invoke-virtual {v0}, Lcom/android/incallui/ProximitySensor;->isScreenReallyOff()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_2
-
-    const-string v0, "onStop: send EVENT_COLLAPSE_PANELS"
-
-    invoke-static {p0, v0, v4}, Lcom/android/incallui/Log;->d(Ljava/lang/Object;Ljava/lang/String;Z)V
-
-    iget-object v0, p0, Lcom/android/incallui/InCallActivity;->mHandler:Landroid/os/Handler;
-
-    const/16 v1, 0xa9
-
-    const-wide/16 v2, 0x1f4
-
-    invoke-virtual {v0, v1, v2, v3}, Landroid/os/Handler;->sendEmptyMessageDelayed(IJ)Z
-
-    :cond_2
     invoke-virtual {p0}, Lcom/android/incallui/InCallActivity;->isFinishing()Z
 
     move-result v0
 
-    if-nez v0, :cond_3
+    if-nez v0, :cond_2
 
     invoke-static {}, Lcom/android/incallui/CallList;->getInstance()Lcom/android/incallui/CallList;
 
@@ -12752,22 +12685,22 @@
 
     move-result v0
 
-    if-nez v0, :cond_3
+    if-nez v0, :cond_2
 
     const-string v0, "onStop(): finish"
 
-    invoke-static {p0, v0, v4}, Lcom/android/incallui/Log;->d(Ljava/lang/Object;Ljava/lang/String;Z)V
+    invoke-static {p0, v0, v1}, Lcom/android/incallui/Log;->d(Ljava/lang/Object;Ljava/lang/String;Z)V
 
-    invoke-virtual {p0, v4}, Lcom/android/incallui/InCallActivity;->setExcludeFromRecents(Z)V
+    invoke-virtual {p0, v1}, Lcom/android/incallui/InCallActivity;->setExcludeFromRecents(Z)V
 
     invoke-virtual {p0}, Lcom/android/incallui/InCallActivity;->finish()V
 
-    :cond_3
+    :cond_2
     invoke-virtual {p0}, Lcom/android/incallui/InCallActivity;->isFinishing()Z
 
     move-result v0
 
-    if-eqz v0, :cond_5
+    if-eqz v0, :cond_4
 
     invoke-static {}, Lcom/android/incallui/InCallPresenter;->getInstance()Lcom/android/incallui/InCallPresenter;
 
@@ -12777,15 +12710,15 @@
 
     move-result-object v0
 
-    if-eqz v0, :cond_5
+    if-eqz v0, :cond_4
 
     const-string v0, "onStop(): unsetActivity"
 
-    invoke-static {p0, v0, v4}, Lcom/android/incallui/Log;->d(Ljava/lang/Object;Ljava/lang/String;Z)V
+    invoke-static {p0, v0, v1}, Lcom/android/incallui/Log;->d(Ljava/lang/Object;Ljava/lang/String;Z)V
 
     invoke-direct {p0}, Lcom/android/incallui/InCallActivity;->clearActivity()V
 
-    :cond_4
+    :cond_3
     :goto_0
     const-string v0, "onStop(): exit"
 
@@ -12793,12 +12726,12 @@
 
     return-void
 
-    :cond_5
+    :cond_4
     invoke-virtual {p0}, Lcom/android/incallui/InCallActivity;->startVideoPipService()V
 
     iget-object v0, p0, Lcom/android/incallui/InCallActivity;->mInCallContentViewListener:Lcom/android/incallui/InCallContentViewListener;
 
-    if-eqz v0, :cond_4
+    if-eqz v0, :cond_3
 
     iget-object v0, p0, Lcom/android/incallui/InCallActivity;->mInCallContentViewListener:Lcom/android/incallui/InCallContentViewListener;
 
@@ -12856,13 +12789,13 @@
 
     invoke-direct {v0, p0}, Landroid/app/AlertDialog$Builder;-><init>(Landroid/content/Context;)V
 
-    const v1, 0x7f0906a8
+    const v1, 0x7f0906cc
 
     invoke-virtual {v0, v1}, Landroid/app/AlertDialog$Builder;->setMessage(I)Landroid/app/AlertDialog$Builder;
 
     move-result-object v0
 
-    const v1, 0x7f090376
+    const v1, 0x7f09037b
 
     invoke-virtual {v0, v1}, Landroid/app/AlertDialog$Builder;->setTitle(I)Landroid/app/AlertDialog$Builder;
 
@@ -12870,17 +12803,17 @@
 
     const v1, 0x104000a
 
-    new-instance v2, Lcom/android/incallui/InCallActivity$23;
+    new-instance v2, Lcom/android/incallui/InCallActivity$19;
 
-    invoke-direct {v2, p0}, Lcom/android/incallui/InCallActivity$23;-><init>(Lcom/android/incallui/InCallActivity;)V
+    invoke-direct {v2, p0}, Lcom/android/incallui/InCallActivity$19;-><init>(Lcom/android/incallui/InCallActivity;)V
 
     invoke-virtual {v0, v1, v2}, Landroid/app/AlertDialog$Builder;->setPositiveButton(ILandroid/content/DialogInterface$OnClickListener;)Landroid/app/AlertDialog$Builder;
 
     move-result-object v0
 
-    new-instance v1, Lcom/android/incallui/InCallActivity$22;
+    new-instance v1, Lcom/android/incallui/InCallActivity$18;
 
-    invoke-direct {v1, p0, p1}, Lcom/android/incallui/InCallActivity$22;-><init>(Lcom/android/incallui/InCallActivity;Z)V
+    invoke-direct {v1, p0, p1}, Lcom/android/incallui/InCallActivity$18;-><init>(Lcom/android/incallui/InCallActivity;Z)V
 
     invoke-virtual {v0, v1}, Landroid/app/AlertDialog$Builder;->setOnKeyListener(Landroid/content/DialogInterface$OnKeyListener;)Landroid/app/AlertDialog$Builder;
 
@@ -13012,7 +12945,19 @@
 
     if-eqz v0, :cond_2
 
-    invoke-virtual {p0}, Lcom/android/incallui/InCallActivity;->sendLockScreenEvent()V
+    invoke-static {}, Lcom/android/incallui/InCallPresenter;->getInstance()Lcom/android/incallui/InCallPresenter;
+
+    move-result-object v0
+
+    iget-boolean v0, v0, Lcom/android/incallui/InCallPresenter;->mLockScreenWhenFocus:Z
+
+    invoke-virtual {p0, v0}, Lcom/android/incallui/InCallActivity;->sendLockScreenEvent(Z)V
+
+    invoke-static {}, Lcom/android/incallui/InCallPresenter;->getInstance()Lcom/android/incallui/InCallPresenter;
+
+    move-result-object v0
+
+    iput-boolean v2, v0, Lcom/android/incallui/InCallPresenter;->mLockScreenWhenFocus:Z
 
     :cond_2
     if-eqz v3, :cond_7
@@ -13227,7 +13172,7 @@
 .method public refreshButtonsForRtt()V
     .locals 2
 
-    const-string v0, "ZOYA refreshButtonsForRtt"
+    const-string v0, "refreshButtonsForRtt"
 
     invoke-static {p0, v0}, Lcom/android/incallui/Log;->i(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -13254,7 +13199,7 @@
     invoke-virtual {v0, v1}, Lcom/android/incallui/fragment/manager/CallButtonFragmentManager;->checkAndSet(Z)Lcom/android/incallui/fragment/CallButtonFragment;
 
     :cond_0
-    const-string v0, "ZOYA refreshButtonsForRtt true"
+    const-string v0, "refreshButtonsForRtt true"
 
     invoke-static {p0, v0}, Lcom/android/incallui/Log;->i(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -13269,9 +13214,9 @@
 
     if-nez v0, :cond_0
 
-    new-instance v0, Lcom/android/incallui/InCallActivity$34;
+    new-instance v0, Lcom/android/incallui/InCallActivity$30;
 
-    invoke-direct {v0, p0}, Lcom/android/incallui/InCallActivity$34;-><init>(Lcom/android/incallui/InCallActivity;)V
+    invoke-direct {v0, p0}, Lcom/android/incallui/InCallActivity$30;-><init>(Lcom/android/incallui/InCallActivity;)V
 
     iput-object v0, p0, Lcom/android/incallui/InCallActivity;->mInCallContentViewListener:Lcom/android/incallui/InCallContentViewListener;
 
@@ -13413,6 +13358,37 @@
     if-eqz v0, :cond_0
 
     invoke-virtual {v0, v1}, Lcom/android/incallui/CallButtonPresenter;->rttClicked(Lcom/android/incallui/Call;)V
+
+    goto :goto_0
+.end method
+
+.method public rttEndCallClicked()V
+    .locals 1
+
+    const-string v0, "ims_support_rtt"
+
+    invoke-static {v0}, Lcom/android/incallui/InCallUIFeature;->hasFeature(Ljava/lang/String;)Z
+
+    move-result v0
+
+    if-nez v0, :cond_1
+
+    :cond_0
+    :goto_0
+    return-void
+
+    :cond_1
+    invoke-static {}, Lcom/android/incallui/UiAdapter;->getInstance()Lcom/android/incallui/UiAdapter;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lcom/android/incallui/UiAdapter;->getCallButtonPresenter()Lcom/android/incallui/CallButtonPresenter;
+
+    move-result-object v0
+
+    if-eqz v0, :cond_0
+
+    invoke-virtual {v0}, Lcom/android/incallui/CallButtonPresenter;->endCallClicked()V
 
     goto :goto_0
 .end method
@@ -13693,6 +13669,14 @@
     return-void
 .end method
 
+.method public setNetworkDowngrade(Z)V
+    .locals 0
+
+    iput-boolean p1, p0, Lcom/android/incallui/InCallActivity;->isNetworkDowngrade:Z
+
+    return-void
+.end method
+
 .method public setPrimaryCallElapsedTimeForDialpad(ZLjava/lang/String;)V
     .locals 1
 
@@ -13715,7 +13699,7 @@
 .method public setPrimaryCallElapsedTimeForRTT(ZLjava/lang/String;)V
     .locals 2
 
-    const v1, 0x7f100312
+    const v1, 0x7f10031e
 
     invoke-virtual {p0}, Lcom/android/incallui/InCallActivity;->getRTTFragment()Lcom/android/incallui/RTTUi;
 
@@ -13777,6 +13761,14 @@
     invoke-interface {v0, p1}, Lcom/android/incallui/DialpadUi;->setPrimaryCallMenuForDialpad(Z)V
 
     :cond_0
+    return-void
+.end method
+
+.method public setRTTCall(Z)V
+    .locals 0
+
+    iput-boolean p1, p0, Lcom/android/incallui/InCallActivity;->isRTTCall:Z
+
     return-void
 .end method
 
@@ -13955,9 +13947,34 @@
 
     invoke-static {p0, v0}, Lcom/android/incallui/Log;->d(Ljava/lang/Object;Ljava/lang/String;)V
 
+    iget-object v0, p0, Lcom/android/incallui/InCallActivity;->mInCallMenu:Lcom/android/incallui/InCallMenu;
+
+    if-eqz v0, :cond_1
+
+    iget-object v0, p0, Lcom/android/incallui/InCallActivity;->mInCallMenu:Lcom/android/incallui/InCallMenu;
+
+    invoke-virtual {v0}, Lcom/android/incallui/InCallMenu;->isMenuOpen()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_1
+
+    const-string v0, "ims_support_rtt"
+
+    invoke-static {v0}, Lcom/android/incallui/InCallUIFeature;->hasFeature(Ljava/lang/String;)Z
+
+    move-result v0
+
+    if-nez v0, :cond_1
+
+    :cond_0
+    :goto_0
+    return-void
+
+    :cond_1
     new-instance v0, Landroid/view/ContextThemeWrapper;
 
-    const v1, 0x7f0b0133
+    const v1, 0x7f0b0132
 
     invoke-direct {v0, p0, v1}, Landroid/view/ContextThemeWrapper;-><init>(Landroid/content/Context;I)V
 
@@ -13979,8 +13996,7 @@
 
     invoke-virtual {v0, p0}, Landroid/widget/PopupMenu;->setOnMenuItemClickListener(Landroid/widget/PopupMenu$OnMenuItemClickListener;)V
 
-    :cond_0
-    return-void
+    goto :goto_0
 .end method
 
 .method public showCallCardFragment(Z)V
@@ -14134,7 +14150,7 @@
     return-void
 
     :cond_0
-    const v0, 0x7f040049
+    const v0, 0x7f04004c
 
     const/4 v1, 0x0
 
@@ -14142,15 +14158,15 @@
 
     move-result-object v0
 
-    const v1, 0x7f100128
+    const v1, 0x7f10012f
 
     invoke-virtual {v0, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
     move-result-object v1
 
-    new-instance v2, Lcom/android/incallui/InCallActivity$28;
+    new-instance v2, Lcom/android/incallui/InCallActivity$24;
 
-    invoke-direct {v2, p0, v1}, Lcom/android/incallui/InCallActivity$28;-><init>(Lcom/android/incallui/InCallActivity;Landroid/view/View;)V
+    invoke-direct {v2, p0, v1}, Lcom/android/incallui/InCallActivity$24;-><init>(Lcom/android/incallui/InCallActivity;Landroid/view/View;)V
 
     invoke-virtual {v1, v2}, Landroid/view/View;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
@@ -14160,7 +14176,7 @@
 
     invoke-virtual {v1, v0}, Landroid/app/AlertDialog$Builder;->setView(Landroid/view/View;)Landroid/app/AlertDialog$Builder;
 
-    const v0, 0x7f0903bf
+    const v0, 0x7f0903c4
 
     invoke-virtual {v1, v0}, Landroid/app/AlertDialog$Builder;->setTitle(I)Landroid/app/AlertDialog$Builder;
 
@@ -14168,17 +14184,17 @@
 
     const v2, 0x7f090065
 
-    new-instance v3, Lcom/android/incallui/InCallActivity$30;
+    new-instance v3, Lcom/android/incallui/InCallActivity$26;
 
-    invoke-direct {v3, p0}, Lcom/android/incallui/InCallActivity$30;-><init>(Lcom/android/incallui/InCallActivity;)V
+    invoke-direct {v3, p0}, Lcom/android/incallui/InCallActivity$26;-><init>(Lcom/android/incallui/InCallActivity;)V
 
     invoke-virtual {v0, v2, v3}, Landroid/app/AlertDialog$Builder;->setPositiveButton(ILandroid/content/DialogInterface$OnClickListener;)Landroid/app/AlertDialog$Builder;
 
     move-result-object v0
 
-    new-instance v2, Lcom/android/incallui/InCallActivity$29;
+    new-instance v2, Lcom/android/incallui/InCallActivity$25;
 
-    invoke-direct {v2, p0}, Lcom/android/incallui/InCallActivity$29;-><init>(Lcom/android/incallui/InCallActivity;)V
+    invoke-direct {v2, p0}, Lcom/android/incallui/InCallActivity$25;-><init>(Lcom/android/incallui/InCallActivity;)V
 
     invoke-virtual {v0, v2}, Landroid/app/AlertDialog$Builder;->setOnCancelListener(Landroid/content/DialogInterface$OnCancelListener;)Landroid/app/AlertDialog$Builder;
 
@@ -14198,7 +14214,7 @@
 .method public showDataChargeAlertToast()V
     .locals 2
 
-    const v0, 0x7f090383
+    const v0, 0x7f090388
 
     const/4 v1, 0x1
 
@@ -14237,7 +14253,7 @@
 
     new-instance v1, Landroid/view/ContextThemeWrapper;
 
-    const v2, 0x7f0b0010
+    const v2, 0x7f0b000f
 
     invoke-direct {v1, p0, v2}, Landroid/view/ContextThemeWrapper;-><init>(Landroid/content/Context;I)V
 
@@ -14247,21 +14263,21 @@
 
     move-result-object v0
 
-    const v1, 0x7f09013c
+    const v1, 0x7f09013f
 
-    new-instance v2, Lcom/android/incallui/InCallActivity$25;
+    new-instance v2, Lcom/android/incallui/InCallActivity$21;
 
-    invoke-direct {v2, p0}, Lcom/android/incallui/InCallActivity$25;-><init>(Lcom/android/incallui/InCallActivity;)V
+    invoke-direct {v2, p0}, Lcom/android/incallui/InCallActivity$21;-><init>(Lcom/android/incallui/InCallActivity;)V
 
     invoke-virtual {v0, v1, v2}, Landroid/app/AlertDialog$Builder;->setNegativeButton(ILandroid/content/DialogInterface$OnClickListener;)Landroid/app/AlertDialog$Builder;
 
     move-result-object v0
 
-    const v1, 0x7f09013d
+    const v1, 0x7f090140
 
-    new-instance v2, Lcom/android/incallui/InCallActivity$24;
+    new-instance v2, Lcom/android/incallui/InCallActivity$20;
 
-    invoke-direct {v2, p0}, Lcom/android/incallui/InCallActivity$24;-><init>(Lcom/android/incallui/InCallActivity;)V
+    invoke-direct {v2, p0}, Lcom/android/incallui/InCallActivity$20;-><init>(Lcom/android/incallui/InCallActivity;)V
 
     invoke-virtual {v0, v1, v2}, Landroid/app/AlertDialog$Builder;->setPositiveButton(ILandroid/content/DialogInterface$OnClickListener;)Landroid/app/AlertDialog$Builder;
 
@@ -14324,13 +14340,13 @@
 
     new-instance v1, Landroid/view/ContextThemeWrapper;
 
-    const v2, 0x7f0b0010
+    const v2, 0x7f0b000f
 
     invoke-direct {v1, p0, v2}, Landroid/view/ContextThemeWrapper;-><init>(Landroid/content/Context;I)V
 
     invoke-direct {v0, v1}, Landroid/app/AlertDialog$Builder;-><init>(Landroid/content/Context;)V
 
-    const v1, 0x7f090140
+    const v1, 0x7f090143
 
     invoke-virtual {v0, v1}, Landroid/app/AlertDialog$Builder;->setMessage(I)Landroid/app/AlertDialog$Builder;
 
@@ -14338,9 +14354,9 @@
 
     const v1, 0x7f090065
 
-    new-instance v2, Lcom/android/incallui/InCallActivity$26;
+    new-instance v2, Lcom/android/incallui/InCallActivity$22;
 
-    invoke-direct {v2, p0}, Lcom/android/incallui/InCallActivity$26;-><init>(Lcom/android/incallui/InCallActivity;)V
+    invoke-direct {v2, p0}, Lcom/android/incallui/InCallActivity$22;-><init>(Lcom/android/incallui/InCallActivity;)V
 
     invoke-virtual {v0, v1, v2}, Landroid/app/AlertDialog$Builder;->setPositiveButton(ILandroid/content/DialogInterface$OnClickListener;)Landroid/app/AlertDialog$Builder;
 
@@ -14489,13 +14505,13 @@
 
     move-result-object v0
 
-    const v1, 0x7f040046
+    const v1, 0x7f040049
 
     invoke-virtual {v0, v1, v2}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;)Landroid/view/View;
 
     move-result-object v1
 
-    const v0, 0x7f100126
+    const v0, 0x7f10012d
 
     invoke-virtual {v1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -14503,7 +14519,7 @@
 
     check-cast v0, Landroid/widget/TextView;
 
-    const v2, 0x7f090387
+    const v2, 0x7f09038c
 
     invoke-virtual {p0, v2}, Lcom/android/incallui/InCallActivity;->getString(I)Ljava/lang/String;
 
@@ -14519,9 +14535,9 @@
 
     const v1, 0x7f090065
 
-    new-instance v2, Lcom/android/incallui/InCallActivity$27;
+    new-instance v2, Lcom/android/incallui/InCallActivity$23;
 
-    invoke-direct {v2, p0}, Lcom/android/incallui/InCallActivity$27;-><init>(Lcom/android/incallui/InCallActivity;)V
+    invoke-direct {v2, p0}, Lcom/android/incallui/InCallActivity$23;-><init>(Lcom/android/incallui/InCallActivity;)V
 
     invoke-virtual {v0, v1, v2}, Landroid/app/AlertDialog$Builder;->setPositiveButton(ILandroid/content/DialogInterface$OnClickListener;)Landroid/app/AlertDialog$Builder;
 
@@ -14638,9 +14654,9 @@
 
     invoke-static {p0, v0, v3}, Lcom/android/incallui/Log;->d(Ljava/lang/Object;Ljava/lang/String;Z)V
 
-    iput-object p1, p0, Lcom/android/incallui/InCallActivity;->mWaitDialog_callId:Ljava/lang/String;
+    iput-object p1, p0, Lcom/android/incallui/InCallActivity;->mWaitDialogCallId:Ljava/lang/String;
 
-    iput-object p2, p0, Lcom/android/incallui/InCallActivity;->mWaitDialog_chars:Ljava/lang/String;
+    iput-object p2, p0, Lcom/android/incallui/InCallActivity;->mWaitDialogChars:Ljava/lang/String;
 
     :goto_0
     return-void
@@ -14682,7 +14698,9 @@
 .end method
 
 .method public showRTT(Z)V
-    .locals 4
+    .locals 7
+
+    const/4 v6, 0x0
 
     const/4 v1, 0x1
 
@@ -14709,6 +14727,14 @@
 
     move-result-object v0
 
+    invoke-static {v0, v6, v2}, Lcom/android/incallui/util/InCallUtils;->getCallToDisplay(Lcom/android/incallui/CallList;Lcom/android/incallui/Call;Z)Lcom/android/incallui/Call;
+
+    move-result-object v3
+
+    invoke-static {}, Lcom/android/incallui/CallList;->getInstance()Lcom/android/incallui/CallList;
+
+    move-result-object v0
+
     invoke-virtual {v0}, Lcom/android/incallui/CallList;->getActiveOrBackgroundCall()Lcom/android/incallui/Call;
 
     move-result-object v0
@@ -14718,9 +14744,25 @@
     move v0, v1
 
     :goto_1
-    const-string v3, "showRTT"
+    new-instance v4, Ljava/lang/StringBuilder;
 
-    invoke-static {p0, v3}, Lcom/android/incallui/Log;->i(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v5, "showRTT: "
+
+    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v4
+
+    invoke-virtual {v4, p1}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+
+    move-result-object v4
+
+    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v4
+
+    invoke-static {p0, v4}, Lcom/android/incallui/Log;->i(Ljava/lang/Object;Ljava/lang/String;)V
 
     if-eqz p1, :cond_4
 
@@ -14731,6 +14773,14 @@
     invoke-static {v1}, Lcom/android/incallui/rtt/RTTUtil;->setRttActiveStatus(Z)V
 
     invoke-direct {p0}, Lcom/android/incallui/InCallActivity;->updateRTTIndicatorArea()V
+
+    if-eqz v3, :cond_2
+
+    invoke-virtual {v3}, Lcom/android/incallui/Call;->getState()I
+
+    move-result v0
+
+    invoke-virtual {p0, v0}, Lcom/android/incallui/InCallActivity;->updateStatusBarWhiteIcon(I)V
 
     :cond_2
     :goto_2
@@ -14744,9 +14794,7 @@
 
     move-result-object v0
 
-    const/4 v1, 0x0
-
-    invoke-static {v0, v1, v2}, Lcom/android/incallui/util/InCallUtils;->getCallToDisplay(Lcom/android/incallui/CallList;Lcom/android/incallui/Call;Z)Lcom/android/incallui/Call;
+    invoke-static {v0, v6, v2}, Lcom/android/incallui/util/InCallUtils;->getCallToDisplay(Lcom/android/incallui/CallList;Lcom/android/incallui/Call;Z)Lcom/android/incallui/Call;
 
     move-result-object v0
 
@@ -14764,25 +14812,34 @@
     goto :goto_1
 
     :cond_4
-    invoke-virtual {p0}, Lcom/android/incallui/InCallActivity;->getCallCardFragment()Lcom/android/incallui/CallCardUi;
+    iget-object v3, p0, Lcom/android/incallui/InCallActivity;->mCallCardFragmentManager:Lcom/android/incallui/fragment/manager/CallCardFragmentManager;
 
-    move-result-object v1
+    if-eqz v3, :cond_5
 
-    if-eqz v1, :cond_5
+    iget-object v3, p0, Lcom/android/incallui/InCallActivity;->mCallCardFragmentManager:Lcom/android/incallui/fragment/manager/CallCardFragmentManager;
 
-    invoke-virtual {p0}, Lcom/android/incallui/InCallActivity;->getCallCardFragment()Lcom/android/incallui/CallCardUi;
-
-    move-result-object v1
-
-    invoke-interface {v1, v0}, Lcom/android/incallui/CallCardUi;->showMenu(Z)V
-
-    invoke-virtual {p0}, Lcom/android/incallui/InCallActivity;->getCallCardFragment()Lcom/android/incallui/CallCardUi;
-
-    move-result-object v1
-
-    invoke-interface {v1, v0}, Lcom/android/incallui/CallCardUi;->setupInCallMenuAfterRTT(Z)V
+    invoke-virtual {v3, v1}, Lcom/android/incallui/fragment/manager/CallCardFragmentManager;->checkAndSet(Z)Lcom/android/incallui/fragment/CallCardFragment;
 
     :cond_5
+    invoke-virtual {p0}, Lcom/android/incallui/InCallActivity;->getCallCardFragment()Lcom/android/incallui/CallCardUi;
+
+    move-result-object v3
+
+    if-eqz v3, :cond_6
+
+    invoke-virtual {p0}, Lcom/android/incallui/InCallActivity;->getCallCardFragment()Lcom/android/incallui/CallCardUi;
+
+    move-result-object v3
+
+    invoke-interface {v3, v0}, Lcom/android/incallui/CallCardUi;->showMenu(Z)V
+
+    invoke-virtual {p0}, Lcom/android/incallui/InCallActivity;->getCallCardFragment()Lcom/android/incallui/CallCardUi;
+
+    move-result-object v0
+
+    invoke-interface {v0, v1}, Lcom/android/incallui/CallCardUi;->setupInCallMenuAfterRTT(Z)V
+
+    :cond_6
     invoke-static {v2}, Lcom/android/incallui/rtt/RTTUtil;->setRttActiveStatus(Z)V
 
     iget-object v0, p0, Lcom/android/incallui/InCallActivity;->mRTTFragmentManager:Lcom/android/incallui/fragment/manager/RTTFragmentManager;
@@ -14790,6 +14847,125 @@
     invoke-virtual {v0}, Lcom/android/incallui/fragment/manager/RTTFragmentManager;->hideRTT()V
 
     goto :goto_2
+.end method
+
+.method public showRttAfterPopup()V
+    .locals 6
+
+    const/4 v2, 0x0
+
+    const/4 v1, 0x1
+
+    invoke-static {}, Lcom/android/incallui/CallList;->getInstance()Lcom/android/incallui/CallList;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lcom/android/incallui/CallList;->getFirstCall()Lcom/android/incallui/Call;
+
+    move-result-object v3
+
+    new-instance v0, Ljava/lang/StringBuilder;
+
+    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v4, "showRttAfterPopup call: "
+
+    invoke-virtual {v0, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    invoke-virtual {v0, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-static {p0, v0}, Lcom/android/incallui/Log;->d(Ljava/lang/Object;Ljava/lang/String;)V
+
+    const-string v0, "ims_support_rtt"
+
+    invoke-static {v0}, Lcom/android/incallui/InCallUIFeature;->hasFeature(Ljava/lang/String;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_2
+
+    invoke-static {}, Lcom/android/incallui/InCallPresenter;->getInstance()Lcom/android/incallui/InCallPresenter;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lcom/android/incallui/InCallPresenter;->isRTTCall()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_2
+
+    invoke-virtual {p0, v1, v2}, Lcom/android/incallui/InCallActivity;->displayRTT(ZZ)V
+
+    const v0, 0x7f10031e
+
+    invoke-virtual {p0, v0}, Lcom/android/incallui/InCallActivity;->findViewById(I)Landroid/view/View;
+
+    move-result-object v4
+
+    new-instance v0, Ljava/lang/StringBuilder;
+
+    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v5, "rttContainer ! = null : "
+
+    invoke-virtual {v0, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v5
+
+    if-eqz v4, :cond_3
+
+    move v0, v1
+
+    :goto_0
+    invoke-virtual {v5, v0}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    const-string v5, " call != null : "
+
+    invoke-virtual {v0, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    if-eqz v3, :cond_0
+
+    move v2, v1
+
+    :cond_0
+    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-static {p0, v0}, Lcom/android/incallui/Log;->d(Ljava/lang/Object;Ljava/lang/String;)V
+
+    if-eqz v3, :cond_1
+
+    invoke-virtual {v3, v1}, Lcom/android/incallui/Call;->setRttCall(Z)V
+
+    :cond_1
+    if-eqz v4, :cond_2
+
+    invoke-virtual {v4}, Landroid/view/View;->bringToFront()V
+
+    :cond_2
+    return-void
+
+    :cond_3
+    move v0, v2
+
+    goto :goto_0
 .end method
 
 .method public startVideoPipService()V
@@ -14934,6 +15110,41 @@
     move v1, v0
 
     goto :goto_2
+.end method
+
+.method public stopLockScreenDuringCallService()V
+    .locals 2
+
+    const/16 v1, 0xa7
+
+    iget-object v0, p0, Lcom/android/incallui/InCallActivity;->mHandler:Landroid/os/Handler;
+
+    invoke-virtual {v0, v1}, Landroid/os/Handler;->hasMessages(I)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    iget-object v0, p0, Lcom/android/incallui/InCallActivity;->mHandler:Landroid/os/Handler;
+
+    invoke-virtual {v0, v1}, Landroid/os/Handler;->removeMessages(I)V
+
+    :cond_0
+    const-string v0, "stopService LockScreenDuringCall..."
+
+    const/4 v1, 0x1
+
+    invoke-static {p0, v0, v1}, Lcom/android/incallui/Log;->d(Ljava/lang/Object;Ljava/lang/String;Z)V
+
+    new-instance v0, Landroid/content/Intent;
+
+    const-class v1, Lcom/android/incallui/service/LockScreenDuringCall;
+
+    invoke-direct {v0, p0, v1}, Landroid/content/Intent;-><init>(Landroid/content/Context;Ljava/lang/Class;)V
+
+    invoke-virtual {p0, v0}, Lcom/android/incallui/InCallActivity;->stopService(Landroid/content/Intent;)Z
+
+    return-void
 .end method
 
 .method public stopVideoPipService()V
@@ -15126,7 +15337,7 @@
 
     const/16 v7, 0xa
 
-    if-ne v6, v7, :cond_17
+    if-ne v6, v7, :cond_16
 
     :cond_2
     invoke-static {}, Lcom/android/incallui/CallList;->getInstance()Lcom/android/incallui/CallList;
@@ -15139,7 +15350,7 @@
 
     move-result-object v6
 
-    if-eqz v6, :cond_17
+    if-eqz v6, :cond_16
 
     :goto_1
     invoke-virtual {v6}, Lcom/android/incallui/Call;->getSecCall()Lcom/android/incallui/SecCall;
@@ -15258,7 +15469,7 @@
 
     move-result v7
 
-    if-eqz v7, :cond_10
+    if-eqz v7, :cond_f
 
     iget-object v7, p0, Lcom/android/incallui/InCallActivity;->mGradientAnimationView:Lcom/android/incallui/widget/GradientAnimationView;
 
@@ -15266,7 +15477,7 @@
 
     move-result v8
 
-    if-eqz v8, :cond_e
+    if-eqz v8, :cond_d
 
     :goto_2
     invoke-virtual {v7, v4}, Lcom/android/incallui/widget/GradientAnimationView;->setAlpha(F)V
@@ -15275,7 +15486,7 @@
 
     move-result v4
 
-    if-eqz v4, :cond_f
+    if-eqz v4, :cond_e
 
     iget-object v4, p0, Lcom/android/incallui/InCallActivity;->mGradientAnimationView:Lcom/android/incallui/widget/GradientAnimationView;
 
@@ -15342,13 +15553,13 @@
 
     move-result v6
 
-    if-eqz v6, :cond_16
+    if-eqz v6, :cond_15
 
     invoke-static {}, Lcom/android/incallui/operator/dcm/AnswerMemoUtils;->isAutoAnswered()Z
 
     move-result v6
 
-    if-eqz v6, :cond_16
+    if-eqz v6, :cond_15
 
     move v4, v3
 
@@ -15389,56 +15600,13 @@
 
     if-eqz v3, :cond_0
 
-    const-string v3, "china_cdma_call"
-
-    invoke-static {v3}, Lcom/android/incallui/InCallUIFeature;->hasFeature(Ljava/lang/String;)Z
-
-    move-result v3
-
-    if-eqz v3, :cond_a
-
-    invoke-static {}, Lcom/android/incallui/CallList;->getInstance()Lcom/android/incallui/CallList;
-
-    move-result-object v3
-
-    const/4 v4, 0x0
-
-    const/4 v6, 0x1
-
-    invoke-static {v3, v4, v6}, Lcom/android/incallui/util/InCallUtils;->getCallToDisplay(Lcom/android/incallui/CallList;Lcom/android/incallui/Call;Z)Lcom/android/incallui/Call;
-
-    move-result-object v3
-
-    invoke-static {}, Lcom/android/incallui/CallList;->getInstance()Lcom/android/incallui/CallList;
-
-    move-result-object v4
-
-    invoke-virtual {v4, v3}, Lcom/android/incallui/CallList;->isLiveCall(Lcom/android/incallui/Call;)Z
-
-    move-result v3
-
-    if-nez v3, :cond_a
-
-    const-string v3, "InCallActivity"
-
-    const-string v4, "updateGradientBackground: cdma, has live call to display, but state is not live"
-
-    const/4 v6, 0x1
-
-    invoke-static {v3, v4, v6}, Lcom/android/incallui/Log;->i(Ljava/lang/String;Ljava/lang/String;Z)V
-
-    iget-object v3, p0, Lcom/android/incallui/InCallActivity;->mGradientAnimationView:Lcom/android/incallui/widget/GradientAnimationView;
-
-    invoke-virtual {v3}, Lcom/android/incallui/widget/GradientAnimationView;->hide()V
-
-    :cond_a
     iget-object v3, p0, Lcom/android/incallui/InCallActivity;->mGradientAnimationView:Lcom/android/incallui/widget/GradientAnimationView;
 
     invoke-virtual {v3}, Lcom/android/incallui/widget/GradientAnimationView;->isScaleAnimationRunning()Z
 
     move-result v3
 
-    if-nez v3, :cond_d
+    if-nez v3, :cond_c
 
     iget-object v3, p0, Lcom/android/incallui/InCallActivity;->mGradientAnimationView:Lcom/android/incallui/widget/GradientAnimationView;
 
@@ -15450,7 +15618,7 @@
 
     move-result v3
 
-    if-eqz v3, :cond_15
+    if-eqz v3, :cond_14
 
     invoke-static {}, Lcom/android/incallui/UiAdapter;->getInstance()Lcom/android/incallui/UiAdapter;
 
@@ -15460,44 +15628,44 @@
 
     move-result v3
 
-    if-nez v3, :cond_b
+    if-nez v3, :cond_a
 
     invoke-static {}, Lcom/android/incallui/util/InCallUtils;->isMobileKeyboardCovered()Z
 
     move-result v3
 
-    if-eqz v3, :cond_c
+    if-eqz v3, :cond_b
 
-    :cond_b
+    :cond_a
     move v1, v2
 
-    :cond_c
+    :cond_b
     iget-object v2, p0, Lcom/android/incallui/InCallActivity;->mGradientAnimationView:Lcom/android/incallui/widget/GradientAnimationView;
 
-    if-eqz v1, :cond_14
+    if-eqz v1, :cond_13
 
     :goto_5
     invoke-virtual {v2, v0}, Lcom/android/incallui/widget/GradientAnimationView;->setScaleY(F)V
 
-    :cond_d
+    :cond_c
     :goto_6
     iput v5, p0, Lcom/android/incallui/InCallActivity;->mPreviousModifyType:I
 
     goto/16 :goto_0
 
-    :cond_e
+    :cond_d
     move v4, v0
 
     goto/16 :goto_2
 
-    :cond_f
+    :cond_e
     iget-object v4, p0, Lcom/android/incallui/InCallActivity;->mGradientAnimationView:Lcom/android/incallui/widget/GradientAnimationView;
 
     invoke-virtual {v4}, Lcom/android/incallui/widget/GradientAnimationView;->show()V
 
     goto/16 :goto_3
 
-    :cond_10
+    :cond_f
     iget v4, p0, Lcom/android/incallui/InCallActivity;->mPreviousModifyType:I
 
     sget v7, Lcom/android/incallui/SecCall$ModifyType;->NONE:I
@@ -15510,7 +15678,7 @@
 
     const/16 v7, 0x9
 
-    if-eq v4, v7, :cond_11
+    if-eq v4, v7, :cond_10
 
     invoke-virtual {v6}, Lcom/android/incallui/Call;->getState()I
 
@@ -15520,7 +15688,7 @@
 
     if-ne v4, v7, :cond_7
 
-    :cond_11
+    :cond_10
     iget-object v4, p0, Lcom/android/incallui/InCallActivity;->mGradientAnimationView:Lcom/android/incallui/widget/GradientAnimationView;
 
     const/4 v7, 0x4
@@ -15534,9 +15702,9 @@
 
     move-result v0
 
-    if-eqz v0, :cond_12
+    if-eqz v0, :cond_11
 
-    if-nez v3, :cond_12
+    if-nez v3, :cond_11
 
     iget-object v0, p0, Lcom/android/incallui/InCallActivity;->mGradientAnimationView:Lcom/android/incallui/widget/GradientAnimationView;
 
@@ -15550,14 +15718,14 @@
 
     goto :goto_6
 
-    :cond_12
+    :cond_11
     iget-object v0, p0, Lcom/android/incallui/InCallActivity;->mGradientAnimationView:Lcom/android/incallui/widget/GradientAnimationView;
 
     invoke-virtual {v0}, Lcom/android/incallui/widget/GradientAnimationView;->isStreamAnimationRunning()Z
 
     move-result v0
 
-    if-nez v0, :cond_13
+    if-nez v0, :cond_12
 
     const-string v0, "InCallActivity"
 
@@ -15571,14 +15739,14 @@
 
     invoke-virtual {v0}, Lcom/android/incallui/widget/GradientAnimationView;->animateForStream()V
 
-    :cond_13
+    :cond_12
     iget-object v0, p0, Lcom/android/incallui/InCallActivity;->mGradientAnimationView:Lcom/android/incallui/widget/GradientAnimationView;
 
     invoke-virtual {v0}, Lcom/android/incallui/widget/GradientAnimationView;->isScaleAnimationRunning()Z
 
     move-result v0
 
-    if-nez v0, :cond_d
+    if-nez v0, :cond_c
 
     iget-object v0, p0, Lcom/android/incallui/InCallActivity;->mGradientAnimationView:Lcom/android/incallui/widget/GradientAnimationView;
 
@@ -15588,7 +15756,7 @@
 
     goto :goto_6
 
-    :cond_14
+    :cond_13
     const/high16 v0, 0x3f400000    # 0.75f
 
     invoke-direct {p0, v0}, Lcom/android/incallui/InCallActivity;->getAdjustBackgroundScale(F)F
@@ -15597,7 +15765,7 @@
 
     goto :goto_5
 
-    :cond_15
+    :cond_14
     iget-object v0, p0, Lcom/android/incallui/InCallActivity;->mGradientAnimationView:Lcom/android/incallui/widget/GradientAnimationView;
 
     const v1, 0x3ee66666    # 0.45f
@@ -15612,15 +15780,17 @@
 
     goto :goto_6
 
-    :cond_16
+    :cond_15
     move v3, v1
 
     goto/16 :goto_4
 
-    :cond_17
+    :cond_16
     move-object v6, v5
 
     goto/16 :goto_1
+
+    nop
 
     :pswitch_data_0
     .packed-switch 0x4
@@ -15752,6 +15922,12 @@
     move-result v2
 
     if-nez v2, :cond_2
+
+    if-nez v0, :cond_2
+
+    invoke-virtual {p0}, Lcom/android/incallui/InCallActivity;->isRTTVisible()Z
+
+    move-result v0
 
     if-eqz v0, :cond_3
 
@@ -15967,7 +16143,7 @@
 
     move-result-object v5
 
-    const v6, 0x7f0f0106
+    const v6, 0x7f0e0109
 
     invoke-virtual {v5, v6}, Landroid/content/res/Resources;->getColor(I)I
 
@@ -16010,7 +16186,7 @@
 
     move-result-object v5
 
-    const v6, 0x7f0f0105
+    const v6, 0x7f0e0108
 
     invoke-virtual {v5, v6}, Landroid/content/res/Resources;->getColor(I)I
 
@@ -16082,7 +16258,7 @@
 
     move-result-object v5
 
-    const v6, 0x7f0f0107
+    const v6, 0x7f0e010a
 
     invoke-virtual {v5, v6}, Landroid/content/res/Resources;->getColor(I)I
 
@@ -16122,7 +16298,7 @@
 
     move-result-object v5
 
-    const v6, 0x7f0f0106
+    const v6, 0x7f0e0109
 
     invoke-virtual {v5, v6}, Landroid/content/res/Resources;->getColor(I)I
 
@@ -16245,11 +16421,11 @@
 .method public updateStatusBarColor(I)V
     .locals 6
 
-    const v5, 0x7f0f00c3
+    const v5, 0x7f0e00c6
 
     const/4 v1, 0x1
 
-    const v4, 0x7f0f01d8
+    const v4, 0x7f0e01e8
 
     const/4 v2, 0x0
 
@@ -16366,7 +16542,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f0f01eb
+    const v2, 0x7f0e01fb
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getColor(I)I
 
@@ -16408,7 +16584,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f0f01dc
+    const v2, 0x7f0e01ec
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getColor(I)I
 
@@ -16630,11 +16806,15 @@
 
     move-result v0
 
-    if-eqz v0, :cond_7
+    if-eqz v0, :cond_6
 
     invoke-virtual {p0}, Lcom/android/incallui/InCallActivity;->isDialpadVisible()Z
 
     move-result v0
+
+    if-eqz v0, :cond_6
+
+    iget-boolean v0, p0, Lcom/android/incallui/InCallActivity;->mIsSlideOutRunning:Z
 
     if-nez v0, :cond_6
 
@@ -16642,18 +16822,13 @@
 
     move-result v0
 
-    if-eqz v0, :cond_7
-
-    :cond_6
-    iget-boolean v0, p0, Lcom/android/incallui/InCallActivity;->mIsSlideOutRunning:Z
-
-    if-nez v0, :cond_7
+    if-nez v0, :cond_6
 
     invoke-direct {p0, v1}, Lcom/android/incallui/InCallActivity;->showStatusBarWhiteIcon(Z)V
 
     goto :goto_0
 
-    :cond_7
+    :cond_6
     packed-switch p1, :pswitch_data_1
 
     invoke-direct {p0, v2}, Lcom/android/incallui/InCallActivity;->showStatusBarWhiteIcon(Z)V
@@ -16707,9 +16882,9 @@
 
     invoke-direct {v0}, Landroid/os/Handler;-><init>()V
 
-    new-instance v1, Lcom/android/incallui/InCallActivity$17;
+    new-instance v1, Lcom/android/incallui/InCallActivity$14;
 
-    invoke-direct {v1, p0}, Lcom/android/incallui/InCallActivity$17;-><init>(Lcom/android/incallui/InCallActivity;)V
+    invoke-direct {v1, p0}, Lcom/android/incallui/InCallActivity$14;-><init>(Lcom/android/incallui/InCallActivity;)V
 
     const-wide/16 v2, 0x1f4
 

@@ -5,6 +5,10 @@
     <item android:id="@id/holdButton" android:title="@string/onscreenHoldText" />
     <item android:id="@id/extraVolumeButtonEnable" android:title="@string/secOnscreenMenuEnableExtraVolume" android:contentDescription="@string/secOnscreenMenuEnableExtraVolumeTTS" />
     <item android:id="@id/extraVolumeButtonDisable" android:title="@string/secOnscreenMenuDisableExtraVolume" android:contentDescription="@string/secOnscreenMenuDisableExtraVolumeTTS" />
+    <item android:id="@id/speakerEnable" android:title="@string/secOnscreenMenuSpeakerOnText" android:contentDescription="@string/secOnscreenMenuSpeakerOnText" />
+    <item android:id="@id/speakerDisable" android:title="@string/secOnscreenMenuSpeakerOffText" android:contentDescription="@string/secOnscreenMenuSpeakerOffText" />
+    <item android:id="@id/muteEnable" android:title="@string/secOnscreenMenuMuteText" android:contentDescription="@string/secOnscreenMenuMuteText" />
+    <item android:id="@id/muteDisable" android:title="@string/secOnscreenMenuUnmuteText" android:contentDescription="@string/secOnscreenMenuUnmuteText" />
     <item android:id="@id/viewContactsButton" android:title="@string/secOnscreenViewContactText" />
     <item android:id="@id/addContactsButton" android:title="@string/secOnscreenAddToContactsText" />
     <item android:id="@id/bluetoothButton" android:visible="false" android:title="@string/audio_mode_bluetooth" />

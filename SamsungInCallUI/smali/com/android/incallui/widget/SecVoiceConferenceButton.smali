@@ -84,7 +84,7 @@
 .method private init(Landroid/content/Context;)V
     .locals 3
 
-    const v2, 0x7f0a0334
+    const v2, 0x7f0a0327
 
     const/4 v1, 0x0
 
@@ -116,7 +116,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f0a00ff
+    const v1, 0x7f0a00fb
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -128,7 +128,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f02023b
+    const v1, 0x7f02024b
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 
@@ -155,7 +155,7 @@
 
     if-eqz v0, :cond_0
 
-    const v0, 0x7f02039e
+    const v0, 0x7f0203ae
 
     invoke-virtual {p0, v0}, Lcom/android/incallui/widget/SecVoiceConferenceButton;->setBackgroundResource(I)V
 
@@ -252,7 +252,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f02039e
+    const v1, 0x7f0203ae
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 

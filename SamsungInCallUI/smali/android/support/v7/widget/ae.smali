@@ -1,15 +1,26 @@
-.class public interface abstract Landroid/support/v7/widget/ae;
-.super Ljava/lang/Object;
+.class Landroid/support/v7/widget/ae;
+.super Landroid/support/v7/widget/ac;
 
 
-# annotations
-.annotation system Ldalvik/annotation/MemberClasses;
-    value = {
-        Landroid/support/v7/widget/ae$a;
-    }
-.end annotation
+# direct methods
+.method constructor <init>()V
+    .locals 0
+
+    invoke-direct {p0}, Landroid/support/v7/widget/ac;-><init>()V
+
+    return-void
+.end method
 
 
 # virtual methods
-.method public abstract setOnFitSystemWindowsListener(Landroid/support/v7/widget/ae$a;)V
+.method public a()V
+    .locals 1
+
+    new-instance v0, Landroid/support/v7/widget/ae$1;
+
+    invoke-direct {v0, p0}, Landroid/support/v7/widget/ae$1;-><init>(Landroid/support/v7/widget/ae;)V
+
+    sput-object v0, Landroid/support/v7/widget/as;->c:Landroid/support/v7/widget/as$a;
+
+    return-void
 .end method

@@ -1,8 +1,5 @@
 .class Lcom/android/incallui/InCallActivity$5;
-.super Ljava/lang/Object;
-
-# interfaces
-.implements Ljava/lang/Runnable;
+.super Landroid/content/BroadcastReceiver;
 
 
 # annotations
@@ -26,50 +23,59 @@
 
     iput-object p1, p0, Lcom/android/incallui/InCallActivity$5;->this$0:Lcom/android/incallui/InCallActivity;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public run()V
-    .locals 2
+.method public onReceive(Landroid/content/Context;Landroid/content/Intent;)V
+    .locals 3
 
-    const/16 v0, 0x20
-
-    invoke-static {v0}, Landroid/view/accessibility/AccessibilityEvent;->obtain(I)Landroid/view/accessibility/AccessibilityEvent;
+    invoke-virtual {p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
 
     move-result-object v0
 
-    const-string v1, "mAccessibilityTask"
+    new-instance v1, Ljava/lang/StringBuilder;
 
-    invoke-static {p0, v1}, Lcom/android/incallui/Log;->d(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
 
-    iget-object v1, p0, Lcom/android/incallui/InCallActivity$5;->this$0:Lcom/android/incallui/InCallActivity;
+    const-string v2, "mDtmfReceiver: "
 
-    invoke-virtual {v1}, Lcom/android/incallui/InCallActivity;->getApplicationContext()Landroid/content/Context;
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v1
 
-    invoke-static {v1}, Lcom/android/incallui/util/AccessibilityUtil;->isEnabled(Landroid/content/Context;)Z
+    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-static {p0, v0}, Lcom/android/incallui/Log;->d(Ljava/lang/Object;Ljava/lang/String;)V
+
+    const-string v0, "tone"
+
+    const/16 v1, 0x20
+
+    invoke-virtual {p2, v0, v1}, Landroid/content/Intent;->getCharExtra(Ljava/lang/String;C)C
+
+    move-result v0
+
+    const-string v1, "duration"
+
+    const/4 v2, 0x0
+
+    invoke-virtual {p2, v1, v2}, Landroid/content/Intent;->getIntExtra(Ljava/lang/String;I)I
 
     move-result v1
 
-    if-eqz v1, :cond_0
+    iget-object v2, p0, Lcom/android/incallui/InCallActivity$5;->this$0:Lcom/android/incallui/InCallActivity;
 
-    iget-object v1, p0, Lcom/android/incallui/InCallActivity$5;->this$0:Lcom/android/incallui/InCallActivity;
+    invoke-static {v2, v0, v1}, Lcom/android/incallui/InCallActivity;->access$400(Lcom/android/incallui/InCallActivity;CI)V
 
-    invoke-virtual {v1}, Lcom/android/incallui/InCallActivity;->getWindow()Landroid/view/Window;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Landroid/view/Window;->getDecorView()Landroid/view/View;
-
-    move-result-object v1
-
-    invoke-virtual {v1, v0}, Landroid/view/View;->sendAccessibilityEventUnchecked(Landroid/view/accessibility/AccessibilityEvent;)V
-
-    :cond_0
     return-void
 .end method

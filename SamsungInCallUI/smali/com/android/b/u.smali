@@ -453,11 +453,11 @@
 
     aput-object v3, v1, v2
 
-    const-string v2, "\u643a\u5e2f\u96fb\u8a71"
+    const-string/jumbo v2, "\u643a\u5e2f\u96fb\u8a71"
 
     aput-object v2, v1, v5
 
-    const-string v2, "\u643a\u5e2f"
+    const-string/jumbo v2, "\u643a\u5e2f"
 
     aput-object v2, v1, v4
 

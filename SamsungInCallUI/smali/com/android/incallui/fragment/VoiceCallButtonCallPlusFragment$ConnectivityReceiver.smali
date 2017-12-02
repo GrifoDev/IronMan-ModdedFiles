@@ -111,6 +111,8 @@
 
     invoke-static {v0, v4}, Lcom/android/incallui/fragment/VoiceCallButtonCallPlusFragment;->access$3602(Lcom/android/incallui/fragment/VoiceCallButtonCallPlusFragment;Z)Z
 
+    sput-boolean v4, Lcom/android/incallui/secrcs/RcsShareUI;->is2G:Z
+
     sput-boolean v5, Lcom/android/incallui/secrcs/RcsShareUI;->mIsCallPlusAvailable:Z
 
     const-string v0, "callplus button disable 8"
@@ -142,6 +144,8 @@
 
     invoke-static {v0, v5}, Lcom/android/incallui/fragment/VoiceCallButtonCallPlusFragment;->access$3602(Lcom/android/incallui/fragment/VoiceCallButtonCallPlusFragment;Z)Z
 
+    sput-boolean v5, Lcom/android/incallui/secrcs/RcsShareUI;->is2G:Z
+
     sput-boolean v4, Lcom/android/incallui/secrcs/RcsShareUI;->mIsCallPlusAvailable:Z
 
     iget-object v0, p0, Lcom/android/incallui/fragment/VoiceCallButtonCallPlusFragment$ConnectivityReceiver;->this$0:Lcom/android/incallui/fragment/VoiceCallButtonCallPlusFragment;
@@ -156,15 +160,15 @@
 
     if-nez v0, :cond_0
 
+    sget-boolean v0, Lcom/android/incallui/secrcs/RcsShareUI;->isCrane:Z
+
+    if-eqz v0, :cond_0
+
+    sget-boolean v0, Lcom/android/incallui/secrcs/RcsShareUI;->isCraneRemote:Z
+
+    if-eqz v0, :cond_0
+
     sget-boolean v0, Lcom/android/incallui/secrcs/RcsShareUI;->mIsActiveCall:Z
-
-    if-eqz v0, :cond_0
-
-    sget-boolean v0, Lcom/android/incallui/secrcs/RcsShareUI;->isInCallSelf:Z
-
-    if-eqz v0, :cond_0
-
-    sget-boolean v0, Lcom/android/incallui/secrcs/RcsShareUI;->isInCallRemote:Z
 
     if-eqz v0, :cond_0
 

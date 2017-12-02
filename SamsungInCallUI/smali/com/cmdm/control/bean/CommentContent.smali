@@ -82,7 +82,7 @@
 
     sget-object v0, Ljava/lang/System;->out:Ljava/io/PrintStream;
 
-    const-string v1, "\u6211\u7684\u554a "
+    const-string/jumbo v1, "\u6211\u7684\u554a "
 
     invoke-static {v1}, Lcom/cmdm/control/bean/CommentContent;->getRelevanceRequest(Ljava/lang/String;)Ljava/lang/String;
 

@@ -40,6 +40,8 @@
 
 .field public static final PERSONAL_VIBRATION:Ljava/lang/String; = "personal_vibration"
 
+.field public static final SMART_FOLDER_CONCEPT:Ljava/lang/String; = "smart_folder_concept"
+
 .field public static final SPR_DISPLAY_HD_ICON:Ljava/lang/String; = "spr_display_hd_icon"
 
 .field public static final SUPPORT_MOBILE_KEYBOARD:Ljava/lang/String; = "support_mobile_keyboard"

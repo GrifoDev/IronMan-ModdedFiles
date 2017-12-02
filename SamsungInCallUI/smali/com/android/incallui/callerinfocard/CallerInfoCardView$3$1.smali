@@ -34,27 +34,27 @@
 
 # virtual methods
 .method public onClick(Landroid/view/View;)V
-    .locals 1
+    .locals 2
 
     iget-object v0, p0, Lcom/android/incallui/callerinfocard/CallerInfoCardView$3$1;->this$1:Lcom/android/incallui/callerinfocard/CallerInfoCardView$3;
 
     iget-object v0, v0, Lcom/android/incallui/callerinfocard/CallerInfoCardView$3;->this$0:Lcom/android/incallui/callerinfocard/CallerInfoCardView;
 
-    invoke-static {v0}, Lcom/android/incallui/callerinfocard/CallerInfoCardView;->access$700(Lcom/android/incallui/callerinfocard/CallerInfoCardView;)Landroid/widget/PopupWindow;
+    invoke-static {v0}, Lcom/android/incallui/callerinfocard/CallerInfoCardView;->access$700(Lcom/android/incallui/callerinfocard/CallerInfoCardView;)Landroid/app/Dialog;
 
     move-result-object v0
 
-    if-eqz v0, :cond_0
+    if-eqz v0, :cond_1
 
     iget-object v0, p0, Lcom/android/incallui/callerinfocard/CallerInfoCardView$3$1;->this$1:Lcom/android/incallui/callerinfocard/CallerInfoCardView$3;
 
     iget-object v0, v0, Lcom/android/incallui/callerinfocard/CallerInfoCardView$3;->this$0:Lcom/android/incallui/callerinfocard/CallerInfoCardView;
 
-    invoke-static {v0}, Lcom/android/incallui/callerinfocard/CallerInfoCardView;->access$700(Lcom/android/incallui/callerinfocard/CallerInfoCardView;)Landroid/widget/PopupWindow;
+    invoke-static {v0}, Lcom/android/incallui/callerinfocard/CallerInfoCardView;->access$700(Lcom/android/incallui/callerinfocard/CallerInfoCardView;)Landroid/app/Dialog;
 
     move-result-object v0
 
-    invoke-virtual {v0}, Landroid/widget/PopupWindow;->isShowing()Z
+    invoke-virtual {v0}, Landroid/app/Dialog;->isShowing()Z
 
     move-result v0
 
@@ -64,12 +64,21 @@
 
     iget-object v0, v0, Lcom/android/incallui/callerinfocard/CallerInfoCardView$3;->this$0:Lcom/android/incallui/callerinfocard/CallerInfoCardView;
 
-    invoke-static {v0}, Lcom/android/incallui/callerinfocard/CallerInfoCardView;->access$700(Lcom/android/incallui/callerinfocard/CallerInfoCardView;)Landroid/widget/PopupWindow;
+    invoke-static {v0}, Lcom/android/incallui/callerinfocard/CallerInfoCardView;->access$700(Lcom/android/incallui/callerinfocard/CallerInfoCardView;)Landroid/app/Dialog;
 
     move-result-object v0
 
-    invoke-virtual {v0}, Landroid/widget/PopupWindow;->dismiss()V
+    invoke-virtual {v0}, Landroid/app/Dialog;->dismiss()V
 
     :cond_0
+    iget-object v0, p0, Lcom/android/incallui/callerinfocard/CallerInfoCardView$3$1;->this$1:Lcom/android/incallui/callerinfocard/CallerInfoCardView$3;
+
+    iget-object v0, v0, Lcom/android/incallui/callerinfocard/CallerInfoCardView$3;->this$0:Lcom/android/incallui/callerinfocard/CallerInfoCardView;
+
+    const/4 v1, 0x0
+
+    invoke-static {v0, v1}, Lcom/android/incallui/callerinfocard/CallerInfoCardView;->access$702(Lcom/android/incallui/callerinfocard/CallerInfoCardView;Landroid/app/Dialog;)Landroid/app/Dialog;
+
+    :cond_1
     return-void
 .end method

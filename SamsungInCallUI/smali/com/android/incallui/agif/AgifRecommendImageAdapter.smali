@@ -199,13 +199,13 @@
 
     iget-object v0, p0, Lcom/android/incallui/agif/AgifRecommendImageAdapter;->mInflater:Landroid/view/LayoutInflater;
 
-    const v4, 0x7f040024
+    const v4, 0x7f040025
 
     invoke-virtual {v0, v4, v3}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;)Landroid/view/View;
 
     move-result-object p2
 
-    const v0, 0x7f1000a6
+    const v0, 0x7f1000aa
 
     invoke-virtual {p2, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -215,7 +215,7 @@
 
     iput-object v0, v1, Lcom/android/incallui/agif/AgifRecommendImageAdapter$ViewHolder;->contentImage:Lcom/android/incallui/agif/AgifImageView;
 
-    const v0, 0x7f1000a7
+    const v0, 0x7f1000ab
 
     invoke-virtual {p2, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -225,7 +225,7 @@
 
     iput-object v0, v1, Lcom/android/incallui/agif/AgifRecommendImageAdapter$ViewHolder;->contentTitle:Landroid/widget/TextView;
 
-    const v0, 0x7f1000a8
+    const v0, 0x7f1000ac
 
     invoke-virtual {p2, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -324,7 +324,7 @@
 
     iget-object v1, v0, Lcom/android/incallui/agif/AgifRecommendImageAdapter$ViewHolder;->contentPrice:Landroid/widget/TextView;
 
-    const v3, 0x7f0900b5
+    const v3, 0x7f0900b6
 
     invoke-virtual {v1, v3}, Landroid/widget/TextView;->setText(I)V
 
@@ -445,7 +445,7 @@
     :cond_7
     iget-object v1, v0, Lcom/android/incallui/agif/AgifRecommendImageAdapter$ViewHolder;->contentPrice:Landroid/widget/TextView;
 
-    const v3, 0x7f0900bb
+    const v3, 0x7f0900bc
 
     invoke-virtual {v1, v3}, Landroid/widget/TextView;->setText(I)V
 

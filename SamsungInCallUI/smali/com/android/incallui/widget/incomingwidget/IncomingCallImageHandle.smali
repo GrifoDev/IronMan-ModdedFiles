@@ -105,6 +105,8 @@
 
 .field private mIsAnswerAnimating:Z
 
+.field private mIsFocusStateChanged:Z
+
 .field private mLeftArrowRes:I
 
 .field private mLeftHandleImageRes:I
@@ -182,7 +184,7 @@
 .method public constructor <init>(Landroid/content/Context;I)V
     .locals 6
 
-    const v5, 0x7f0201c2
+    const v5, 0x7f0201cc
 
     const/4 v4, 0x3
 
@@ -209,6 +211,8 @@
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/android/incallui/widget/incomingwidget/IncomingCallImageHandle;->mEnableArrowAnimation:Z
+
+    iput-boolean v2, p0, Lcom/android/incallui/widget/incomingwidget/IncomingCallImageHandle;->mIsFocusStateChanged:Z
 
     iput v2, p0, Lcom/android/incallui/widget/incomingwidget/IncomingCallImageHandle;->mHandleType:I
 
@@ -238,51 +242,51 @@
 
     iput v5, p0, Lcom/android/incallui/widget/incomingwidget/IncomingCallImageHandle;->mLeftTabPressRes:I
 
-    const v0, 0x7f0201bf
+    const v0, 0x7f0201c9
 
     iput v0, p0, Lcom/android/incallui/widget/incomingwidget/IncomingCallImageHandle;->mLeftTargetNormalRes:I
 
-    const v0, 0x7f0201c4
+    const v0, 0x7f0201ce
 
     iput v0, p0, Lcom/android/incallui/widget/incomingwidget/IncomingCallImageHandle;->mLeftTargetMovinglRes:I
 
-    const v0, 0x7f0202f3
+    const v0, 0x7f020302
 
     iput v0, p0, Lcom/android/incallui/widget/incomingwidget/IncomingCallImageHandle;->mLeftHandleImageRes:I
 
-    const v0, 0x7f0203a8
+    const v0, 0x7f0203b8
 
     iput v0, p0, Lcom/android/incallui/widget/incomingwidget/IncomingCallImageHandle;->mRightTabNormalRes:I
 
-    const v0, 0x7f0203a8
+    const v0, 0x7f0203b8
 
     iput v0, p0, Lcom/android/incallui/widget/incomingwidget/IncomingCallImageHandle;->mRightTabPressRes:I
 
-    const v0, 0x7f0203a6
+    const v0, 0x7f0203b6
 
     iput v0, p0, Lcom/android/incallui/widget/incomingwidget/IncomingCallImageHandle;->mRightTargetNormalRes:I
 
-    const v0, 0x7f0203a5
+    const v0, 0x7f0203b5
 
     iput v0, p0, Lcom/android/incallui/widget/incomingwidget/IncomingCallImageHandle;->mRightTargetMovinglRes:I
 
-    const v0, 0x7f0202f4
+    const v0, 0x7f020303
 
     iput v0, p0, Lcom/android/incallui/widget/incomingwidget/IncomingCallImageHandle;->mRightHandleImageRes:I
 
-    const v0, 0x7f020433
+    const v0, 0x7f020442
 
     iput v0, p0, Lcom/android/incallui/widget/incomingwidget/IncomingCallImageHandle;->mLeftArrowRes:I
 
-    const v0, 0x7f020434
+    const v0, 0x7f020443
 
     iput v0, p0, Lcom/android/incallui/widget/incomingwidget/IncomingCallImageHandle;->mRightArrowRes:I
 
-    const v0, 0x7f020433
+    const v0, 0x7f020442
 
     iput v0, p0, Lcom/android/incallui/widget/incomingwidget/IncomingCallImageHandle;->mRedialArrowRes:I
 
-    const v0, 0x7f020090
+    const v0, 0x7f020099
 
     iput v0, p0, Lcom/android/incallui/widget/incomingwidget/IncomingCallImageHandle;->mInCallArrowRes:I
 
@@ -364,23 +368,23 @@
 
     :array_0
     .array-data 4
-        0x7f02043f
-        0x7f020440
-        0x7f020441
+        0x7f02044f
+        0x7f020450
+        0x7f020451
     .end array-data
 
     :array_1
     .array-data 4
-        0x7f02043b
-        0x7f02043c
-        0x7f02043d
+        0x7f02044b
+        0x7f02044c
+        0x7f02044d
     .end array-data
 .end method
 
 .method public constructor <init>(Landroid/content/Context;IZ)V
     .locals 6
 
-    const v5, 0x7f0201c2
+    const v5, 0x7f0201cc
 
     const/4 v4, 0x3
 
@@ -407,6 +411,8 @@
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/android/incallui/widget/incomingwidget/IncomingCallImageHandle;->mEnableArrowAnimation:Z
+
+    iput-boolean v2, p0, Lcom/android/incallui/widget/incomingwidget/IncomingCallImageHandle;->mIsFocusStateChanged:Z
 
     iput v2, p0, Lcom/android/incallui/widget/incomingwidget/IncomingCallImageHandle;->mHandleType:I
 
@@ -436,51 +442,51 @@
 
     iput v5, p0, Lcom/android/incallui/widget/incomingwidget/IncomingCallImageHandle;->mLeftTabPressRes:I
 
-    const v0, 0x7f0201bf
+    const v0, 0x7f0201c9
 
     iput v0, p0, Lcom/android/incallui/widget/incomingwidget/IncomingCallImageHandle;->mLeftTargetNormalRes:I
 
-    const v0, 0x7f0201c4
+    const v0, 0x7f0201ce
 
     iput v0, p0, Lcom/android/incallui/widget/incomingwidget/IncomingCallImageHandle;->mLeftTargetMovinglRes:I
 
-    const v0, 0x7f0202f3
+    const v0, 0x7f020302
 
     iput v0, p0, Lcom/android/incallui/widget/incomingwidget/IncomingCallImageHandle;->mLeftHandleImageRes:I
 
-    const v0, 0x7f0203a8
+    const v0, 0x7f0203b8
 
     iput v0, p0, Lcom/android/incallui/widget/incomingwidget/IncomingCallImageHandle;->mRightTabNormalRes:I
 
-    const v0, 0x7f0203a8
+    const v0, 0x7f0203b8
 
     iput v0, p0, Lcom/android/incallui/widget/incomingwidget/IncomingCallImageHandle;->mRightTabPressRes:I
 
-    const v0, 0x7f0203a6
+    const v0, 0x7f0203b6
 
     iput v0, p0, Lcom/android/incallui/widget/incomingwidget/IncomingCallImageHandle;->mRightTargetNormalRes:I
 
-    const v0, 0x7f0203a5
+    const v0, 0x7f0203b5
 
     iput v0, p0, Lcom/android/incallui/widget/incomingwidget/IncomingCallImageHandle;->mRightTargetMovinglRes:I
 
-    const v0, 0x7f0202f4
+    const v0, 0x7f020303
 
     iput v0, p0, Lcom/android/incallui/widget/incomingwidget/IncomingCallImageHandle;->mRightHandleImageRes:I
 
-    const v0, 0x7f020433
+    const v0, 0x7f020442
 
     iput v0, p0, Lcom/android/incallui/widget/incomingwidget/IncomingCallImageHandle;->mLeftArrowRes:I
 
-    const v0, 0x7f020434
+    const v0, 0x7f020443
 
     iput v0, p0, Lcom/android/incallui/widget/incomingwidget/IncomingCallImageHandle;->mRightArrowRes:I
 
-    const v0, 0x7f020433
+    const v0, 0x7f020442
 
     iput v0, p0, Lcom/android/incallui/widget/incomingwidget/IncomingCallImageHandle;->mRedialArrowRes:I
 
-    const v0, 0x7f020090
+    const v0, 0x7f020099
 
     iput v0, p0, Lcom/android/incallui/widget/incomingwidget/IncomingCallImageHandle;->mInCallArrowRes:I
 
@@ -564,16 +570,16 @@
 
     :array_0
     .array-data 4
-        0x7f02043f
-        0x7f020440
-        0x7f020441
+        0x7f02044f
+        0x7f020450
+        0x7f020451
     .end array-data
 
     :array_1
     .array-data 4
-        0x7f02043b
-        0x7f02043c
-        0x7f02043d
+        0x7f02044b
+        0x7f02044c
+        0x7f02044d
     .end array-data
 .end method
 
@@ -609,7 +615,15 @@
     return-object v0
 .end method
 
-.method static synthetic access$1200(Lcom/android/incallui/widget/incomingwidget/IncomingCallImageHandle;)Lcom/android/incallui/widget/incomingwidget/IncomingCallImageHandle$HandleState;
+.method static synthetic access$1202(Lcom/android/incallui/widget/incomingwidget/IncomingCallImageHandle;Z)Z
+    .locals 0
+
+    iput-boolean p1, p0, Lcom/android/incallui/widget/incomingwidget/IncomingCallImageHandle;->mIsFocusStateChanged:Z
+
+    return p1
+.end method
+
+.method static synthetic access$1300(Lcom/android/incallui/widget/incomingwidget/IncomingCallImageHandle;)Lcom/android/incallui/widget/incomingwidget/IncomingCallImageHandle$HandleState;
     .locals 1
 
     iget-object v0, p0, Lcom/android/incallui/widget/incomingwidget/IncomingCallImageHandle;->mHandleState:Lcom/android/incallui/widget/incomingwidget/IncomingCallImageHandle$HandleState;
@@ -617,7 +631,7 @@
     return-object v0
 .end method
 
-.method static synthetic access$1300(Lcom/android/incallui/widget/incomingwidget/IncomingCallImageHandle;)Landroid/view/View;
+.method static synthetic access$1400(Lcom/android/incallui/widget/incomingwidget/IncomingCallImageHandle;)Landroid/view/View;
     .locals 1
 
     iget-object v0, p0, Lcom/android/incallui/widget/incomingwidget/IncomingCallImageHandle;->mArrowContainer:Landroid/view/View;
@@ -625,7 +639,7 @@
     return-object v0
 .end method
 
-.method static synthetic access$1400(Lcom/android/incallui/widget/incomingwidget/IncomingCallImageHandle;)Landroid/widget/ImageView;
+.method static synthetic access$1500(Lcom/android/incallui/widget/incomingwidget/IncomingCallImageHandle;)Landroid/widget/ImageView;
     .locals 1
 
     iget-object v0, p0, Lcom/android/incallui/widget/incomingwidget/IncomingCallImageHandle;->mArrowList:Landroid/widget/ImageView;
@@ -633,7 +647,7 @@
     return-object v0
 .end method
 
-.method static synthetic access$1500(Lcom/android/incallui/widget/incomingwidget/IncomingCallImageHandle;)Landroid/view/View;
+.method static synthetic access$1600(Lcom/android/incallui/widget/incomingwidget/IncomingCallImageHandle;)Landroid/view/View;
     .locals 1
 
     iget-object v0, p0, Lcom/android/incallui/widget/incomingwidget/IncomingCallImageHandle;->mRedialArrowContainer:Landroid/view/View;
@@ -641,7 +655,7 @@
     return-object v0
 .end method
 
-.method static synthetic access$1600(Lcom/android/incallui/widget/incomingwidget/IncomingCallImageHandle;)Landroid/widget/ImageView;
+.method static synthetic access$1700(Lcom/android/incallui/widget/incomingwidget/IncomingCallImageHandle;)Landroid/widget/ImageView;
     .locals 1
 
     iget-object v0, p0, Lcom/android/incallui/widget/incomingwidget/IncomingCallImageHandle;->mRedialArrowList:Landroid/widget/ImageView;
@@ -649,7 +663,7 @@
     return-object v0
 .end method
 
-.method static synthetic access$1700(Lcom/android/incallui/widget/incomingwidget/IncomingCallImageHandle;)Landroid/view/View;
+.method static synthetic access$1800(Lcom/android/incallui/widget/incomingwidget/IncomingCallImageHandle;)Landroid/view/View;
     .locals 1
 
     iget-object v0, p0, Lcom/android/incallui/widget/incomingwidget/IncomingCallImageHandle;->mInCallArrowContainer:Landroid/view/View;
@@ -657,7 +671,7 @@
     return-object v0
 .end method
 
-.method static synthetic access$1800(Lcom/android/incallui/widget/incomingwidget/IncomingCallImageHandle;)Landroid/widget/ImageView;
+.method static synthetic access$1900(Lcom/android/incallui/widget/incomingwidget/IncomingCallImageHandle;)Landroid/widget/ImageView;
     .locals 1
 
     iget-object v0, p0, Lcom/android/incallui/widget/incomingwidget/IncomingCallImageHandle;->mInCallArrowList:Landroid/widget/ImageView;
@@ -823,7 +837,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f0a03cd
+    const v2, 0x7f0a03c3
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getDimension(I)F
 
@@ -885,7 +899,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f0a03ce
+    const v1, 0x7f0a03c4
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDimension(I)F
 
@@ -897,7 +911,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f0e005a
+    const v2, 0x7f0f0059
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getInteger(I)I
 
@@ -909,7 +923,7 @@
 
     move-result-object v2
 
-    const v3, 0x7f0e0059
+    const v3, 0x7f0f0058
 
     invoke-virtual {v2, v3}, Landroid/content/res/Resources;->getInteger(I)I
 
@@ -921,7 +935,7 @@
 
     move-result-object v3
 
-    const v4, 0x7f0e005b
+    const v4, 0x7f0f005a
 
     invoke-virtual {v3, v4}, Landroid/content/res/Resources;->getInteger(I)I
 
@@ -1151,7 +1165,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f0a03ce
+    const v1, 0x7f0a03c4
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDimension(I)F
 
@@ -1163,7 +1177,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f0e005a
+    const v2, 0x7f0f0059
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getInteger(I)I
 
@@ -1175,7 +1189,7 @@
 
     move-result-object v2
 
-    const v3, 0x7f0e0059
+    const v3, 0x7f0f0058
 
     invoke-virtual {v2, v3}, Landroid/content/res/Resources;->getInteger(I)I
 
@@ -1187,7 +1201,7 @@
 
     move-result-object v3
 
-    const v4, 0x7f0e005b
+    const v4, 0x7f0f005a
 
     invoke-virtual {v3, v4}, Landroid/content/res/Resources;->getInteger(I)I
 
@@ -1387,7 +1401,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f0a03ce
+    const v1, 0x7f0a03c4
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDimension(I)F
 
@@ -1399,7 +1413,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f0e005a
+    const v2, 0x7f0f0059
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getInteger(I)I
 
@@ -1411,7 +1425,7 @@
 
     move-result-object v2
 
-    const v3, 0x7f0e0059
+    const v3, 0x7f0f0058
 
     invoke-virtual {v2, v3}, Landroid/content/res/Resources;->getInteger(I)I
 
@@ -1423,7 +1437,7 @@
 
     move-result-object v3
 
-    const v4, 0x7f0e005b
+    const v4, 0x7f0f005a
 
     invoke-virtual {v3, v4}, Landroid/content/res/Resources;->getInteger(I)I
 
@@ -1546,9 +1560,9 @@
 
     const/4 v10, 0x1
 
-    const v4, 0x3e4ccccd    # 0.2f
-
     const/high16 v7, 0x3f800000    # 1.0f
+
+    const v6, 0x3e4ccccd    # 0.2f
 
     const/4 v9, 0x0
 
@@ -1698,32 +1712,53 @@
     div-float v5, v0, v1
 
     :cond_8
+    const-string v0, "support_folder_hardkey"
+
+    invoke-static {v0}, Lcom/android/incallui/InCallUIFeature;->hasFeature(Ljava/lang/String;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_10
+
+    iget-boolean v0, p0, Lcom/android/incallui/widget/incomingwidget/IncomingCallImageHandle;->mIsFocusStateChanged:Z
+
+    if-eqz v0, :cond_10
+
+    const-string v0, "animateForTargetCircle - set maxScale for folder when focus on/off: "
+
+    invoke-virtual {p0, v0}, Lcom/android/incallui/widget/incomingwidget/IncomingCallImageHandle;->log(Ljava/lang/String;)V
+
+    const v0, 0x3f19999a    # 0.6f
+
+    iput-boolean v9, p0, Lcom/android/incallui/widget/incomingwidget/IncomingCallImageHandle;->mIsFocusStateChanged:Z
+
+    move v4, v0
+
+    :goto_1
     new-instance v11, Landroid/view/animation/AnimationSet;
 
     invoke-direct {v11, v10}, Landroid/view/animation/AnimationSet;-><init>(Z)V
 
     new-instance v0, Landroid/view/animation/ScaleAnimation;
 
-    if-eqz p1, :cond_a
-
-    move v1, v4
-
-    :goto_1
-    if-eqz p1, :cond_b
-
-    move v2, v7
-
-    :goto_2
-    if-eqz p1, :cond_c
-
-    move v3, v4
-
-    :goto_3
     if-eqz p1, :cond_9
 
-    move v4, v7
+    move v1, v6
 
-    :cond_9
+    :goto_2
+    if-eqz p1, :cond_a
+
+    move v2, v4
+
+    :goto_3
+    if-eqz p1, :cond_b
+
+    move v3, v6
+
+    :goto_4
+    if-eqz p1, :cond_c
+
+    :goto_5
     move v6, v5
 
     invoke-direct/range {v0 .. v6}, Landroid/view/animation/ScaleAnimation;-><init>(FFFFFF)V
@@ -1736,10 +1771,10 @@
 
     move v0, v8
 
-    :goto_4
+    :goto_6
     if-eqz p1, :cond_e
 
-    :goto_5
+    :goto_7
     invoke-direct {v1, v0, v7}, Landroid/view/animation/AlphaAnimation;-><init>(FF)V
 
     invoke-virtual {v11, v1}, Landroid/view/animation/AnimationSet;->addAnimation(Landroid/view/animation/Animation;)V
@@ -1780,35 +1815,40 @@
 
     invoke-virtual {v0, v11}, Lcom/android/incallui/widget/SecClearCircleImageView;->startAnimation(Landroid/view/animation/Animation;)V
 
-    :goto_6
+    :goto_8
     move v0, v10
 
     goto/16 :goto_0
 
-    :cond_a
-    move v1, v7
-
-    goto :goto_1
-
-    :cond_b
-    move v2, v4
+    :cond_9
+    move v1, v4
 
     goto :goto_2
 
-    :cond_c
-    move v3, v7
+    :cond_a
+    move v2, v6
 
     goto :goto_3
+
+    :cond_b
+    move v3, v4
+
+    goto :goto_4
+
+    :cond_c
+    move v4, v6
+
+    goto :goto_5
 
     :cond_d
     move v0, v7
 
-    goto :goto_4
+    goto :goto_6
 
     :cond_e
     move v7, v8
 
-    goto :goto_5
+    goto :goto_7
 
     :cond_f
     iget-object v0, p0, Lcom/android/incallui/widget/incomingwidget/IncomingCallImageHandle;->mTargetCircle:Landroid/widget/ImageView;
@@ -1823,7 +1863,12 @@
 
     invoke-virtual {v0, v11}, Landroid/widget/ImageView;->startAnimation(Landroid/view/animation/Animation;)V
 
-    goto :goto_6
+    goto :goto_8
+
+    :cond_10
+    move v4, v7
+
+    goto :goto_1
 .end method
 
 .method private assignAlphaAnimation(Landroid/animation/AnimatorSet$Builder;Landroid/view/View;IIFLandroid/view/animation/Interpolator;)V
@@ -2093,16 +2138,16 @@
 
     iget-boolean v2, p0, Lcom/android/incallui/widget/incomingwidget/IncomingCallImageHandle;->mCoverMode:Z
 
-    if-eqz v2, :cond_5
+    if-eqz v2, :cond_6
 
-    if-ne v1, v5, :cond_5
+    if-ne v1, v5, :cond_6
 
-    const v2, 0x7f0400f1
+    const v2, 0x7f0400f4
 
     invoke-virtual {v0, v2, p0, v5}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;Z)Landroid/view/View;
 
     :goto_0
-    const v0, 0x7f100319
+    const v0, 0x7f100325
 
     invoke-virtual {p0, v0}, Lcom/android/incallui/widget/incomingwidget/IncomingCallImageHandle;->findViewById(I)Landroid/view/View;
 
@@ -2112,7 +2157,7 @@
 
     iput-object v0, p0, Lcom/android/incallui/widget/incomingwidget/IncomingCallImageHandle;->mTabCircle:Landroid/widget/ImageView;
 
-    const v0, 0x7f100317
+    const v0, 0x7f100323
 
     invoke-virtual {p0, v0}, Lcom/android/incallui/widget/incomingwidget/IncomingCallImageHandle;->findViewById(I)Landroid/view/View;
 
@@ -2126,7 +2171,7 @@
 
     invoke-virtual {v0, v6}, Landroid/widget/ImageView;->setVisibility(I)V
 
-    const v0, 0x7f10031a
+    const v0, 0x7f100326
 
     invoke-virtual {p0, v0}, Lcom/android/incallui/widget/incomingwidget/IncomingCallImageHandle;->findViewById(I)Landroid/view/View;
 
@@ -2134,7 +2179,7 @@
 
     iput-object v0, p0, Lcom/android/incallui/widget/incomingwidget/IncomingCallImageHandle;->mHandleImageViewLayout:Landroid/view/View;
 
-    const v0, 0x7f10031b
+    const v0, 0x7f100327
 
     invoke-virtual {p0, v0}, Lcom/android/incallui/widget/incomingwidget/IncomingCallImageHandle;->findViewById(I)Landroid/view/View;
 
@@ -2144,7 +2189,7 @@
 
     iput-object v0, p0, Lcom/android/incallui/widget/incomingwidget/IncomingCallImageHandle;->mHandleImageView:Landroid/widget/ImageView;
 
-    const v0, 0x7f100318
+    const v0, 0x7f100324
 
     invoke-virtual {p0, v0}, Lcom/android/incallui/widget/incomingwidget/IncomingCallImageHandle;->findViewById(I)Landroid/view/View;
 
@@ -2174,7 +2219,7 @@
 
     invoke-virtual {v0, v7}, Landroid/widget/ImageView;->setVisibility(I)V
 
-    const v0, 0x7f10031e
+    const v0, 0x7f10032a
 
     invoke-virtual {p0, v0}, Lcom/android/incallui/widget/incomingwidget/IncomingCallImageHandle;->findViewById(I)Landroid/view/View;
 
@@ -2195,59 +2240,59 @@
 
     if-ne v1, v7, :cond_1
 
-    const v0, 0x7f0200c1
+    const v0, 0x7f0200cb
 
     iput v0, p0, Lcom/android/incallui/widget/incomingwidget/IncomingCallImageHandle;->mLeftTabNormalRes:I
 
-    const v0, 0x7f0200c2
+    const v0, 0x7f0200cc
 
     iput v0, p0, Lcom/android/incallui/widget/incomingwidget/IncomingCallImageHandle;->mLeftTabPressRes:I
 
-    const v0, 0x7f0200c5
+    const v0, 0x7f0200cf
 
     iput v0, p0, Lcom/android/incallui/widget/incomingwidget/IncomingCallImageHandle;->mLeftTargetNormalRes:I
 
-    const v0, 0x7f020437
+    const v0, 0x7f020446
 
     iput v0, p0, Lcom/android/incallui/widget/incomingwidget/IncomingCallImageHandle;->mLeftHandleImageRes:I
 
-    const v0, 0x7f0200c3
+    const v0, 0x7f0200cd
 
     iput v0, p0, Lcom/android/incallui/widget/incomingwidget/IncomingCallImageHandle;->mRightTabNormalRes:I
 
-    const v0, 0x7f0200c4
+    const v0, 0x7f0200ce
 
     iput v0, p0, Lcom/android/incallui/widget/incomingwidget/IncomingCallImageHandle;->mRightTabPressRes:I
 
-    const v0, 0x7f0200cb
+    const v0, 0x7f0200d5
 
     iput v0, p0, Lcom/android/incallui/widget/incomingwidget/IncomingCallImageHandle;->mRightTargetNormalRes:I
 
-    const v0, 0x7f0202f4
+    const v0, 0x7f020303
 
     iput v0, p0, Lcom/android/incallui/widget/incomingwidget/IncomingCallImageHandle;->mRightHandleImageRes:I
 
-    const v0, 0x7f0200d2
+    const v0, 0x7f0200dc
 
     iput v0, p0, Lcom/android/incallui/widget/incomingwidget/IncomingCallImageHandle;->mLeftArrowRes:I
 
-    const v0, 0x7f0200d1
+    const v0, 0x7f0200db
 
     iput v0, p0, Lcom/android/incallui/widget/incomingwidget/IncomingCallImageHandle;->mRightArrowRes:I
 
-    const v0, 0x7f0200d2
+    const v0, 0x7f0200dc
 
     iput v0, p0, Lcom/android/incallui/widget/incomingwidget/IncomingCallImageHandle;->mRedialArrowRes:I
 
-    const v0, 0x7f0200d1
+    const v0, 0x7f0200db
 
     iput v0, p0, Lcom/android/incallui/widget/incomingwidget/IncomingCallImageHandle;->mInCallArrowRes:I
 
-    const v0, 0x7f0200c6
+    const v0, 0x7f0200d0
 
     iput v0, p0, Lcom/android/incallui/widget/incomingwidget/IncomingCallImageHandle;->mLeftTargetMovinglRes:I
 
-    const v0, 0x7f0200cc
+    const v0, 0x7f0200d6
 
     iput v0, p0, Lcom/android/incallui/widget/incomingwidget/IncomingCallImageHandle;->mRightTargetMovinglRes:I
 
@@ -2278,11 +2323,40 @@
 
     if-eqz v0, :cond_2
 
-    const v0, 0x7f020114
+    const v0, 0x7f02011e
 
     iput v0, p0, Lcom/android/incallui/widget/incomingwidget/IncomingCallImageHandle;->mLeftHandleImageRes:I
 
     :cond_2
+    const-string v0, "ims_support_rtt"
+
+    invoke-static {v0}, Lcom/android/incallui/InCallUIFeature;->hasFeature(Ljava/lang/String;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_3
+
+    invoke-static {}, Lcom/android/incallui/CallList;->getInstance()Lcom/android/incallui/CallList;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lcom/android/incallui/CallList;->getIncomingCall()Lcom/android/incallui/Call;
+
+    move-result-object v0
+
+    if-eqz v0, :cond_3
+
+    invoke-static {v0}, Lcom/android/incallui/rtt/RTTUtil;->isRTTCall(Lcom/android/incallui/Call;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_3
+
+    const v0, 0x7f02021b
+
+    iput v0, p0, Lcom/android/incallui/widget/incomingwidget/IncomingCallImageHandle;->mLeftHandleImageRes:I
+
+    :cond_3
     iget-object v0, p0, Lcom/android/incallui/widget/incomingwidget/IncomingCallImageHandle;->mHandleImageViewLayout:Landroid/view/View;
 
     new-instance v1, Lcom/android/incallui/widget/incomingwidget/IncomingCallImageHandle$2;
@@ -2301,7 +2375,7 @@
 
     iget v0, p0, Lcom/android/incallui/widget/incomingwidget/IncomingCallImageHandle;->mHandleType:I
 
-    if-ne v0, v5, :cond_6
+    if-ne v0, v5, :cond_7
 
     iget-object v0, p0, Lcom/android/incallui/widget/incomingwidget/IncomingCallImageHandle;->mTabCircle:Landroid/widget/ImageView;
 
@@ -2327,7 +2401,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_3
+    if-eqz v0, :cond_4
 
     iget-object v0, p0, Lcom/android/incallui/widget/incomingwidget/IncomingCallImageHandle;->mMovingCircle:Landroid/widget/ImageView;
 
@@ -2335,14 +2409,14 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setImageResource(I)V
 
-    :cond_3
+    :cond_4
     const-string v0, "support_clear_inner_circle_widget"
 
     invoke-static {v0}, Lcom/android/incallui/InCallUIFeature;->hasFeature(Ljava/lang/String;)Z
 
     move-result v0
 
-    if-eqz v0, :cond_4
+    if-eqz v0, :cond_5
 
     iget-object v0, p0, Lcom/android/incallui/widget/incomingwidget/IncomingCallImageHandle;->mTargetCircle:Landroid/widget/ImageView;
 
@@ -2358,14 +2432,14 @@
 
     invoke-virtual {v0, v1}, Lcom/android/incallui/widget/SecClearCircleImageView;->setImageResource(I)V
 
-    :cond_4
+    :cond_5
     iget-object v0, p0, Lcom/android/incallui/widget/incomingwidget/IncomingCallImageHandle;->mHandleImageView:Landroid/widget/ImageView;
 
     iget v1, p0, Lcom/android/incallui/widget/incomingwidget/IncomingCallImageHandle;->mLeftHandleImageRes:I
 
     invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setImageResource(I)V
 
-    const v0, 0x7f100323
+    const v0, 0x7f10032f
 
     invoke-virtual {p0, v0}, Lcom/android/incallui/widget/incomingwidget/IncomingCallImageHandle;->findViewById(I)Landroid/view/View;
 
@@ -2373,7 +2447,7 @@
 
     iput-object v0, p0, Lcom/android/incallui/widget/incomingwidget/IncomingCallImageHandle;->mArrowContainer:Landroid/view/View;
 
-    const v0, 0x7f100324
+    const v0, 0x7f100330
 
     invoke-virtual {p0, v0}, Lcom/android/incallui/widget/incomingwidget/IncomingCallImageHandle;->findViewById(I)Landroid/view/View;
 
@@ -2398,74 +2472,74 @@
 
     return-void
 
-    :cond_5
-    const v2, 0x7f0400f0
+    :cond_6
+    const v2, 0x7f0400f3
 
     invoke-virtual {v0, v2, p0, v5}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;Z)Landroid/view/View;
 
     goto/16 :goto_0
 
     :pswitch_1
-    const v0, 0x7f0200ca
+    const v0, 0x7f0200d4
 
     iput v0, p0, Lcom/android/incallui/widget/incomingwidget/IncomingCallImageHandle;->mLeftTargetMovinglRes:I
 
-    const v0, 0x7f0200d0
+    const v0, 0x7f0200da
 
     iput v0, p0, Lcom/android/incallui/widget/incomingwidget/IncomingCallImageHandle;->mRightTargetMovinglRes:I
 
     goto/16 :goto_1
 
     :pswitch_2
-    const v0, 0x7f0200c6
+    const v0, 0x7f0200d0
 
     iput v0, p0, Lcom/android/incallui/widget/incomingwidget/IncomingCallImageHandle;->mLeftTargetMovinglRes:I
 
-    const v0, 0x7f0200cc
+    const v0, 0x7f0200d6
 
     iput v0, p0, Lcom/android/incallui/widget/incomingwidget/IncomingCallImageHandle;->mRightTargetMovinglRes:I
 
     goto/16 :goto_1
 
     :pswitch_3
-    const v0, 0x7f0200c7
+    const v0, 0x7f0200d1
 
     iput v0, p0, Lcom/android/incallui/widget/incomingwidget/IncomingCallImageHandle;->mLeftTargetMovinglRes:I
 
-    const v0, 0x7f0200cd
+    const v0, 0x7f0200d7
 
     iput v0, p0, Lcom/android/incallui/widget/incomingwidget/IncomingCallImageHandle;->mRightTargetMovinglRes:I
 
     goto/16 :goto_1
 
     :pswitch_4
-    const v0, 0x7f0200c9
+    const v0, 0x7f0200d3
 
     iput v0, p0, Lcom/android/incallui/widget/incomingwidget/IncomingCallImageHandle;->mLeftTargetMovinglRes:I
 
-    const v0, 0x7f0200cf
+    const v0, 0x7f0200d9
 
     iput v0, p0, Lcom/android/incallui/widget/incomingwidget/IncomingCallImageHandle;->mRightTargetMovinglRes:I
 
     goto/16 :goto_1
 
     :pswitch_5
-    const v0, 0x7f0200c8
+    const v0, 0x7f0200d2
 
     iput v0, p0, Lcom/android/incallui/widget/incomingwidget/IncomingCallImageHandle;->mLeftTargetMovinglRes:I
 
-    const v0, 0x7f0200ce
+    const v0, 0x7f0200d8
 
     iput v0, p0, Lcom/android/incallui/widget/incomingwidget/IncomingCallImageHandle;->mRightTargetMovinglRes:I
 
     goto/16 :goto_1
 
-    :cond_6
+    :cond_7
     iget v0, p0, Lcom/android/incallui/widget/incomingwidget/IncomingCallImageHandle;->mHandleType:I
 
     const/4 v1, 0x3
 
-    if-ne v0, v1, :cond_9
+    if-ne v0, v1, :cond_a
 
     iget-object v0, p0, Lcom/android/incallui/widget/incomingwidget/IncomingCallImageHandle;->mTabCircle:Landroid/widget/ImageView;
 
@@ -2491,7 +2565,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_7
+    if-eqz v0, :cond_8
 
     iget-object v0, p0, Lcom/android/incallui/widget/incomingwidget/IncomingCallImageHandle;->mMovingCircle:Landroid/widget/ImageView;
 
@@ -2499,14 +2573,14 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setImageResource(I)V
 
-    :cond_7
+    :cond_8
     const-string v0, "support_clear_inner_circle_widget"
 
     invoke-static {v0}, Lcom/android/incallui/InCallUIFeature;->hasFeature(Ljava/lang/String;)Z
 
     move-result v0
 
-    if-eqz v0, :cond_8
+    if-eqz v0, :cond_9
 
     iget-object v0, p0, Lcom/android/incallui/widget/incomingwidget/IncomingCallImageHandle;->mTargetCircle:Landroid/widget/ImageView;
 
@@ -2522,14 +2596,14 @@
 
     invoke-virtual {v0, v1}, Lcom/android/incallui/widget/SecClearCircleImageView;->setImageResource(I)V
 
-    :cond_8
+    :cond_9
     iget-object v0, p0, Lcom/android/incallui/widget/incomingwidget/IncomingCallImageHandle;->mHandleImageView:Landroid/widget/ImageView;
 
-    const v1, 0x7f0202ee
+    const v1, 0x7f0202fd
 
     invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setImageResource(I)V
 
-    const v0, 0x7f100323
+    const v0, 0x7f10032f
 
     invoke-virtual {p0, v0}, Lcom/android/incallui/widget/incomingwidget/IncomingCallImageHandle;->findViewById(I)Landroid/view/View;
 
@@ -2537,7 +2611,7 @@
 
     iput-object v0, p0, Lcom/android/incallui/widget/incomingwidget/IncomingCallImageHandle;->mArrowContainer:Landroid/view/View;
 
-    const v0, 0x7f100324
+    const v0, 0x7f100330
 
     invoke-virtual {p0, v0}, Lcom/android/incallui/widget/incomingwidget/IncomingCallImageHandle;->findViewById(I)Landroid/view/View;
 
@@ -2559,7 +2633,7 @@
 
     goto/16 :goto_2
 
-    :cond_9
+    :cond_a
     iget-object v0, p0, Lcom/android/incallui/widget/incomingwidget/IncomingCallImageHandle;->mTabCircle:Landroid/widget/ImageView;
 
     iget v1, p0, Lcom/android/incallui/widget/incomingwidget/IncomingCallImageHandle;->mRightTabNormalRes:I
@@ -2584,7 +2658,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_a
+    if-eqz v0, :cond_b
 
     iget-object v0, p0, Lcom/android/incallui/widget/incomingwidget/IncomingCallImageHandle;->mMovingCircle:Landroid/widget/ImageView;
 
@@ -2592,14 +2666,14 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setImageResource(I)V
 
-    :cond_a
+    :cond_b
     const-string v0, "support_clear_inner_circle_widget"
 
     invoke-static {v0}, Lcom/android/incallui/InCallUIFeature;->hasFeature(Ljava/lang/String;)Z
 
     move-result v0
 
-    if-eqz v0, :cond_b
+    if-eqz v0, :cond_c
 
     iget-object v0, p0, Lcom/android/incallui/widget/incomingwidget/IncomingCallImageHandle;->mTargetCircle:Landroid/widget/ImageView;
 
@@ -2615,14 +2689,14 @@
 
     invoke-virtual {v0, v1}, Lcom/android/incallui/widget/SecClearCircleImageView;->setImageResource(I)V
 
-    :cond_b
+    :cond_c
     iget-object v0, p0, Lcom/android/incallui/widget/incomingwidget/IncomingCallImageHandle;->mHandleImageView:Landroid/widget/ImageView;
 
     iget v1, p0, Lcom/android/incallui/widget/incomingwidget/IncomingCallImageHandle;->mRightHandleImageRes:I
 
     invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setImageResource(I)V
 
-    const v0, 0x7f100321
+    const v0, 0x7f10032d
 
     invoke-virtual {p0, v0}, Lcom/android/incallui/widget/incomingwidget/IncomingCallImageHandle;->findViewById(I)Landroid/view/View;
 
@@ -2630,7 +2704,7 @@
 
     iput-object v0, p0, Lcom/android/incallui/widget/incomingwidget/IncomingCallImageHandle;->mArrowContainer:Landroid/view/View;
 
-    const v0, 0x7f100322
+    const v0, 0x7f10032e
 
     invoke-virtual {p0, v0}, Lcom/android/incallui/widget/incomingwidget/IncomingCallImageHandle;->findViewById(I)Landroid/view/View;
 
@@ -2650,7 +2724,7 @@
 
     invoke-virtual {v0, v4}, Landroid/widget/ImageView;->setAlpha(F)V
 
-    const v0, 0x7f100325
+    const v0, 0x7f100331
 
     invoke-virtual {p0, v0}, Lcom/android/incallui/widget/incomingwidget/IncomingCallImageHandle;->findViewById(I)Landroid/view/View;
 
@@ -2658,7 +2732,7 @@
 
     iput-object v0, p0, Lcom/android/incallui/widget/incomingwidget/IncomingCallImageHandle;->mInCallArrowContainer:Landroid/view/View;
 
-    const v0, 0x7f100326
+    const v0, 0x7f100332
 
     invoke-virtual {p0, v0}, Lcom/android/incallui/widget/incomingwidget/IncomingCallImageHandle;->findViewById(I)Landroid/view/View;
 
@@ -2679,8 +2753,6 @@
     invoke-virtual {v0, v4}, Landroid/widget/ImageView;->setAlpha(F)V
 
     goto/16 :goto_2
-
-    nop
 
     :pswitch_data_0
     .packed-switch 0x1
@@ -2705,7 +2777,7 @@
 
     if-nez v0, :cond_0
 
-    const v0, 0x7f100325
+    const v0, 0x7f100331
 
     invoke-virtual {p0, v0}, Lcom/android/incallui/widget/incomingwidget/IncomingCallImageHandle;->findViewById(I)Landroid/view/View;
 
@@ -2713,7 +2785,7 @@
 
     iput-object v0, p0, Lcom/android/incallui/widget/incomingwidget/IncomingCallImageHandle;->mInCallArrowContainer:Landroid/view/View;
 
-    const v0, 0x7f100326
+    const v0, 0x7f100332
 
     invoke-virtual {p0, v0}, Lcom/android/incallui/widget/incomingwidget/IncomingCallImageHandle;->findViewById(I)Landroid/view/View;
 
@@ -2746,7 +2818,7 @@
 
     if-nez v0, :cond_0
 
-    const v0, 0x7f100327
+    const v0, 0x7f100333
 
     invoke-virtual {p0, v0}, Lcom/android/incallui/widget/incomingwidget/IncomingCallImageHandle;->findViewById(I)Landroid/view/View;
 
@@ -2754,7 +2826,7 @@
 
     iput-object v0, p0, Lcom/android/incallui/widget/incomingwidget/IncomingCallImageHandle;->mRedialArrowContainer:Landroid/view/View;
 
-    const v0, 0x7f100328
+    const v0, 0x7f100334
 
     invoke-virtual {p0, v0}, Lcom/android/incallui/widget/incomingwidget/IncomingCallImageHandle;->findViewById(I)Landroid/view/View;
 
@@ -2864,7 +2936,7 @@
 
     iget-boolean v0, p0, Lcom/android/incallui/widget/incomingwidget/IncomingCallImageHandle;->mCoverMode:Z
 
-    if-eqz v0, :cond_5
+    if-eqz v0, :cond_6
 
     invoke-static {}, Lcom/android/incallui/CallList;->getInstance()Lcom/android/incallui/CallList;
 
@@ -2905,9 +2977,15 @@
 
     const/16 v1, 0xb
 
-    if-ne v0, v1, :cond_5
+    if-ne v0, v1, :cond_6
 
     :cond_2
+    invoke-static {}, Lcom/android/incallui/bike/BikeModeUtils;->isBikeCall()Z
+
+    move-result v0
+
+    if-nez v0, :cond_6
+
     iget-object v0, p0, Lcom/android/incallui/widget/incomingwidget/IncomingCallImageHandle;->mArrowContainer:Landroid/view/View;
 
     if-eqz v0, :cond_3
@@ -2956,9 +3034,20 @@
 
     move-result v0
 
-    if-eqz v0, :cond_0
+    if-eqz v0, :cond_5
 
     invoke-static {}, Lcom/android/incallui/operator/dcm/AnswerMemoUtils;->isAutoAnswered()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_5
+
+    iget-object v0, p0, Lcom/android/incallui/widget/incomingwidget/IncomingCallImageHandle;->mHandler:Landroid/os/Handler;
+
+    invoke-virtual {v0, v5, v6, v7}, Landroid/os/Handler;->sendEmptyMessageDelayed(IJ)Z
+
+    :cond_5
+    invoke-static {}, Lcom/android/incallui/bike/BikeModeUtils;->isBikeCall()Z
 
     move-result v0
 
@@ -2970,7 +3059,7 @@
 
     goto :goto_0
 
-    :cond_5
+    :cond_6
     iget-object v0, p0, Lcom/android/incallui/widget/incomingwidget/IncomingCallImageHandle;->mHandler:Landroid/os/Handler;
 
     invoke-virtual {v0, v5, v6, v7}, Landroid/os/Handler;->sendEmptyMessageDelayed(IJ)Z
@@ -3261,7 +3350,7 @@
 .method public animateTabCircleForAnswer(Landroid/animation/AnimatorSet$Builder;)V
     .locals 11
 
-    const v0, 0x7f10031c
+    const v0, 0x7f100328
 
     invoke-virtual {p0, v0}, Lcom/android/incallui/widget/incomingwidget/IncomingCallImageHandle;->findViewById(I)Landroid/view/View;
 
@@ -3271,7 +3360,7 @@
 
     iput-object v0, p0, Lcom/android/incallui/widget/incomingwidget/IncomingCallImageHandle;->mTabCircleForAnim:Landroid/widget/ImageView;
 
-    const v0, 0x7f10031d
+    const v0, 0x7f100329
 
     invoke-virtual {p0, v0}, Lcom/android/incallui/widget/incomingwidget/IncomingCallImageHandle;->findViewById(I)Landroid/view/View;
 
@@ -3328,7 +3417,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f0e002b
+    const v1, 0x7f0f002a
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getInteger(I)I
 
@@ -3338,7 +3427,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f0e0029
+    const v1, 0x7f0f0028
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getInteger(I)I
 
@@ -3388,7 +3477,7 @@
     :cond_4
     iget-object v0, p0, Lcom/android/incallui/widget/incomingwidget/IncomingCallImageHandle;->mTabCircleForAnim:Landroid/widget/ImageView;
 
-    const v1, 0x7f020222
+    const v1, 0x7f020232
 
     invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setImageResource(I)V
 
@@ -3396,7 +3485,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f0a0153
+    const v1, 0x7f0a0146
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDimension(I)F
 
@@ -3468,7 +3557,7 @@
 
     if-eqz v0, :cond_8
 
-    const v0, 0x7f020066
+    const v0, 0x7f020068
 
     const-string v1, "spr_vowifi_ui"
 
@@ -3478,7 +3567,7 @@
 
     if-eqz v1, :cond_5
 
-    const v0, 0x7f02033d
+    const v0, 0x7f02034c
 
     :cond_5
     iget-object v1, p0, Lcom/android/incallui/widget/incomingwidget/IncomingCallImageHandle;->mHandleImageViewForAnim:Landroid/widget/ImageView;
@@ -3524,7 +3613,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f0e002a
+    const v1, 0x7f0f0029
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getInteger(I)I
 
@@ -3577,7 +3666,7 @@
     :cond_8
     iget-object v0, p0, Lcom/android/incallui/widget/incomingwidget/IncomingCallImageHandle;->mHandleImageViewForAnim:Landroid/widget/ImageView;
 
-    const v1, 0x7f0202f2
+    const v1, 0x7f020301
 
     invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setImageResource(I)V
 

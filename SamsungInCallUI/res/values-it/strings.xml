@@ -178,12 +178,13 @@
     <string name="account_phone">Dispositivo</string>
     <string name="acs">Chiamata vocale</string>
     <string name="active_calls">Chiamata attiva</string>
-    <string name="add_reminder">Agg. promem.</string>
+    <string name="add_reminder">Aggiungi promemoria</string>
     <string name="agif_button_close_description">Chiudi</string>
     <string name="agif_decline_message">Scusa, ora non posso parlare.</string>
     <string name="agif_decline_sticker_header">Rifiuta con adesivo</string>
     <string name="agif_decline_text_header">Rifiuta con un messaggio</string>
     <string name="agif_decline_toast">Adesivo inviato a %s.</string>
+    <string name="agif_outgoing_bubble_tip">Inviate un adesivo che esprime il vostro umore.</string>
     <string name="agif_pickers_add_tab_description">Aggiungi</string>
     <string name="agif_pickers_downloaded">Scaricati</string>
     <string name="agif_pickers_item_usage_hints_description">Tocca due volte per selezionare</string>
@@ -199,10 +200,12 @@
     <string name="agif_pickers_tab_select_description">Selezionate</string>
     <string name="agif_pickers_title">Avvio con adesivo</string>
     <string name="agif_pickers_title_top_stickers">Adesivi migliori</string>
+    <string name="agif_random_send_message">Toccate qui per inviare questo adesivo.</string>
     <string name="agif_read_permission_description">Consente a Telefono di leggere i contenuti della clip animata.</string>
     <string name="agif_read_permission_label">Legge contenuto clip animate</string>
     <string name="agif_receive_no_id">"Impossibile mostrare l'adesivo. Aggiornate %s dopo la chiamata."</string>
     <string name="agif_receive_no_id_upsupport_update">"Impossibile mostrare l'adesivo. Più adesivi saranno disponibili dopo il prossimo aggiorn. di sistema."</string>
+    <string name="agif_receive_toast">Adesivo da %s.</string>
     <string name="agif_sent_fail_message">Impossibile inviare la clip animata. Riprovate più tardi.</string>
     <string name="agif_sent_toast">Adesivo inviato.</string>
     <string name="agif_write_permission_description">Consente a Telefono di modificare i contenuti della clip animata.</string>
@@ -871,6 +874,7 @@ a 1 via"</string>
     <string name="sticker_delete_stickers">Eliminare %d adesivi?</string>
     <string name="sticker_delete_this_sticker">Eliminare questo adesivo?</string>
     <string name="sticker_setting_edit_title">Seleziona adesivi</string>
+    <string name="sticker_setting_edit_title_preload">Riordina adesivi</string>
     <string name="sticker_setting_main_title">Adesivi personali</string>
     <string name="sticker_setting_menu_delete">Elimina</string>
     <string name="sticker_setting_menu_edit">Modifica</string>
@@ -883,6 +887,7 @@ a 1 via"</string>
     <string name="swipe_right_to_answer_call_with_video">Trascinate lo schermo verso destra per rispondere alla chiamata con il video.</string>
     <string name="swipe_right_to_answer_call_without_video">Trascinate lo schermo verso destra per rispondere alla chiamata senza il video.</string>
     <string name="switch_rejected_by_mt">Richiesta di passaggio a videochiamata rifiutata.</string>
+    <string name="switch_rejected_by_mt_att">Il video non è disponibile per questa chiamata. La chiamata è stata connessa come chiamata vocale.</string>
     <string name="switch_to_video_call_failed">Richiesta di passaggio alla videochiamata non riuscita.</string>
     <string name="switch_to_video_call_failed_tmo">La richiesta di passaggio alla videochiamata è stata rifiutata.</string>
     <string name="switch_to_voice_call_failed">Richiesta di passaggio alla chiamata vocale non riuscita.</string>

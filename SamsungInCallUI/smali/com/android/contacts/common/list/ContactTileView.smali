@@ -382,7 +382,7 @@
 
     invoke-super {p0}, Landroid/widget/FrameLayout;->onFinishInflate()V
 
-    const v0, 0x7f10011b
+    const v0, 0x7f100122
 
     invoke-virtual {p0, v0}, Lcom/android/contacts/common/list/ContactTileView;->findViewById(I)Landroid/view/View;
 
@@ -392,7 +392,7 @@
 
     iput-object v0, p0, Lcom/android/contacts/common/list/ContactTileView;->f:Landroid/widget/TextView;
 
-    const v0, 0x7f10011d
+    const v0, 0x7f100124
 
     invoke-virtual {p0, v0}, Lcom/android/contacts/common/list/ContactTileView;->findViewById(I)Landroid/view/View;
 
@@ -402,7 +402,7 @@
 
     iput-object v0, p0, Lcom/android/contacts/common/list/ContactTileView;->e:Landroid/widget/QuickContactBadge;
 
-    const v0, 0x7f10011a
+    const v0, 0x7f100121
 
     invoke-virtual {p0, v0}, Lcom/android/contacts/common/list/ContactTileView;->findViewById(I)Landroid/view/View;
 
@@ -412,7 +412,7 @@
 
     iput-object v0, p0, Lcom/android/contacts/common/list/ContactTileView;->d:Landroid/widget/ImageView;
 
-    const v0, 0x7f100123
+    const v0, 0x7f10012a
 
     invoke-virtual {p0, v0}, Lcom/android/contacts/common/list/ContactTileView;->findViewById(I)Landroid/view/View;
 
@@ -422,7 +422,7 @@
 
     iput-object v0, p0, Lcom/android/contacts/common/list/ContactTileView;->g:Landroid/widget/TextView;
 
-    const v0, 0x7f10011f
+    const v0, 0x7f100126
 
     invoke-virtual {p0, v0}, Lcom/android/contacts/common/list/ContactTileView;->findViewById(I)Landroid/view/View;
 
@@ -432,7 +432,7 @@
 
     iput-object v0, p0, Lcom/android/contacts/common/list/ContactTileView;->h:Landroid/widget/TextView;
 
-    const v0, 0x7f10011e
+    const v0, 0x7f100125
 
     invoke-virtual {p0, v0}, Lcom/android/contacts/common/list/ContactTileView;->findViewById(I)Landroid/view/View;
 
@@ -442,7 +442,7 @@
 
     iput-object v0, p0, Lcom/android/contacts/common/list/ContactTileView;->i:Landroid/widget/TextView;
 
-    const v0, 0x7f100121
+    const v0, 0x7f100128
 
     invoke-virtual {p0, v0}, Lcom/android/contacts/common/list/ContactTileView;->findViewById(I)Landroid/view/View;
 
@@ -450,7 +450,7 @@
 
     iput-object v0, p0, Lcom/android/contacts/common/list/ContactTileView;->k:Landroid/view/View;
 
-    const v0, 0x7f100120
+    const v0, 0x7f100127
 
     invoke-virtual {p0, v0}, Lcom/android/contacts/common/list/ContactTileView;->findViewById(I)Landroid/view/View;
 

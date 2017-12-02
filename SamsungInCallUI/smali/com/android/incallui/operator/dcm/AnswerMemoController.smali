@@ -184,7 +184,7 @@
 
     iget-object v0, p0, Lcom/android/incallui/operator/dcm/AnswerMemoController;->mContext:Landroid/content/Context;
 
-    const v1, 0x7f0900cd
+    const v1, 0x7f0900d0
 
     const/4 v2, 0x0
 
@@ -333,7 +333,7 @@
 
     move-result-object v0
 
-    if-nez v0, :cond_8
+    if-nez v0, :cond_5
 
     invoke-static {}, Lcom/android/incallui/UiAdapter;->getInstance()Lcom/android/incallui/UiAdapter;
 

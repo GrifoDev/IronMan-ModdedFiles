@@ -174,119 +174,119 @@
 
     :array_0
     .array-data 4
-        0x7f020315
-        0x7f020319
-        0x7f020310
-        0x7f020338
-        0x7f02032e
-        0x7f020329
         0x7f020324
-        0x7f020333
+        0x7f020328
         0x7f02031f
+        0x7f020347
+        0x7f02033d
+        0x7f020338
+        0x7f020333
+        0x7f020342
+        0x7f02032e
     .end array-data
 
     :array_1
     .array-data 4
-        0x7f020097
-        0x7f020098
-        0x7f02009f
-        0x7f02009d
-        0x7f02009e
         0x7f0200a0
-        0x7f02009a
-        0x7f02009c
-        0x7f02009b
+        0x7f0200a1
+        0x7f0200a8
+        0x7f0200a6
+        0x7f0200a7
+        0x7f0200a9
+        0x7f0200a3
+        0x7f0200a5
+        0x7f0200a4
     .end array-data
 
     :array_2
     .array-data 4
-        0x7f020316
-        0x7f02031a
-        0x7f020311
-        0x7f020339
-        0x7f02032f
-        0x7f02032a
         0x7f020325
-        0x7f020334
+        0x7f020329
         0x7f020320
+        0x7f020348
+        0x7f02033e
+        0x7f020339
+        0x7f020334
+        0x7f020343
+        0x7f02032f
     .end array-data
 
     :array_3
     .array-data 4
-        0x7f0200a6
-        0x7f0200a8
-        0x7f0200ac
-        0x7f0200b8
-        0x7f0200b4
-        0x7f0200b2
-        0x7f0200b0
-        0x7f0200b6
-        0x7f0200ae
+        0x7f0200af
+        0x7f0200b1
+        0x7f0200b5
+        0x7f0200c1
+        0x7f0200bd
+        0x7f0200bb
+        0x7f0200b9
+        0x7f0200bf
+        0x7f0200b7
     .end array-data
 
     :array_4
     .array-data 4
-        0x7f020317
-        0x7f02031b
-        0x7f020313
-        0x7f02033b
-        0x7f020331
-        0x7f02032c
-        0x7f020327
-        0x7f020336
+        0x7f020326
+        0x7f02032a
         0x7f020322
+        0x7f02034a
+        0x7f020340
+        0x7f02033b
+        0x7f020336
+        0x7f020345
+        0x7f020331
     .end array-data
 
     :array_5
     .array-data 4
+        0x7f0201be
+        0x7f0201bf
+        0x7f0201af
+        0x7f0201c0
+        0x7f0201b3
+        0x7f0201b2
+        0x7f0201b1
         0x7f0201b4
-        0x7f0201b5
-        0x7f0201a5
-        0x7f0201b6
-        0x7f0201a9
-        0x7f0201a8
-        0x7f0201a7
-        0x7f0201aa
-        0x7f0201a6
+        0x7f0201b0
     .end array-data
 
     :array_6
     .array-data 4
-        0x7f0201b1
-        0x7f0201b2
-        0x7f0201ab
-        0x7f0201b3
-        0x7f0201af
-        0x7f0201ae
-        0x7f0201ad
-        0x7f0201b0
-        0x7f0201ac
+        0x7f0201bb
+        0x7f0201bc
+        0x7f0201b5
+        0x7f0201bd
+        0x7f0201b9
+        0x7f0201b8
+        0x7f0201b7
+        0x7f0201ba
+        0x7f0201b6
     .end array-data
 
     :array_7
     .array-data 4
-        0x7f02031d
-        0x7f02031e
-        0x7f020312
-        0x7f02033a
-        0x7f020330
-        0x7f02032b
-        0x7f020326
-        0x7f020335
+        0x7f02032c
+        0x7f02032d
         0x7f020321
+        0x7f020349
+        0x7f02033f
+        0x7f02033a
+        0x7f020335
+        0x7f020344
+        0x7f020330
     .end array-data
 
     :array_8
     .array-data 4
-        0x7f020137
-        0x7f020138
-        0x7f020136
-        0x7f02013e
-        0x7f02013c
-        0x7f02013b
-        0x7f02013a
-        0x7f02013d
-        0x7f020139
+        0x7f020141
+        0x7f020142
+        0x7f020140
+        0x7f020148
+        0x7f020146
+        0x7f020145
+        0x7f020144
+        0x7f020147
+        0x7f020143
     .end array-data
 .end method
 
@@ -1228,13 +1228,13 @@
     return-object v0
 
     :cond_0
-    const v2, 0x7f09024f
+    const v2, 0x7f090252
 
     invoke-virtual {v0, v2}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
     move-result-object v2
 
-    const v3, 0x7f090250
+    const v3, 0x7f090253
 
     invoke-virtual {v0, v3}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -1386,6 +1386,10 @@
 
     const/4 v1, -0x1
 
+    const-string v0, "perf - getSlotId: start"
+
+    invoke-static {v0}, Lcom/android/incallui/util/InCallUtilsMultiSIM;->log(Ljava/lang/String;)V
+
     :try_start_0
     sget-object v0, Lcom/android/incallui/util/InCallUtilsMultiSIM;->sGetPhoneId:Ljava/lang/reflect/Method;
 
@@ -1446,7 +1450,7 @@
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v2, "getSlotId("
+    const-string v2, "perf - getSlotId("
 
     invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -1456,7 +1460,7 @@
 
     move-result-object v0
 
-    const-string v2, ") : "
+    const-string v2, "): "
 
     invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -1551,6 +1555,10 @@
     goto :goto_0
 
     :cond_1
+    const-string v1, "perf - getSubId: start"
+
+    invoke-static {v1}, Lcom/android/incallui/util/InCallUtilsMultiSIM;->log(Ljava/lang/String;)V
+
     invoke-virtual {p0}, Lcom/android/incallui/Call;->getAccountHandle()Landroid/telecom/PhoneAccountHandle;
 
     move-result-object v1
@@ -1570,7 +1578,7 @@
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v2, "getSubId subId : "
+    const-string v2, "perf - getSubId: "
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -2328,6 +2336,10 @@
     return v1
 
     :cond_0
+    const-string v2, "perf - isSimSubscriptionPhoneAccountHandle: start"
+
+    invoke-static {v2}, Lcom/android/incallui/util/InCallUtilsMultiSIM;->log(Ljava/lang/String;)V
+
     invoke-virtual {v0, p0}, Landroid/telecom/TelecomManager;->getPhoneAccount(Landroid/telecom/PhoneAccountHandle;)Landroid/telecom/PhoneAccount;
 
     move-result-object v0
@@ -2345,6 +2357,10 @@
     const/4 v0, 0x1
 
     :goto_1
+    const-string v1, "perf - isSimSubscriptionPhoneAccountHandle: end"
+
+    invoke-static {v1}, Lcom/android/incallui/util/InCallUtilsMultiSIM;->log(Ljava/lang/String;)V
+
     move v1, v0
 
     goto :goto_0
@@ -2452,6 +2468,62 @@
     move-result-object v1
 
     invoke-static {v2, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
+
+    return v0
+.end method
+
+.method public static isTDCSIM(Lcom/android/incallui/Call;)Z
+    .locals 3
+
+    const/4 v0, 0x0
+
+    invoke-static {p0}, Lcom/android/incallui/util/InCallUtilsMultiSIM;->getPhoneId(Lcom/android/incallui/Call;)I
+
+    move-result v1
+
+    invoke-static {v1}, Lcom/android/incallui/util/InCallUtilsMultiSIM;->getMultiSimNumeric(I)Ljava/lang/String;
+
+    move-result-object v1
+
+    const-string v2, "23801"
+
+    invoke-virtual {v2, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v2
+
+    if-nez v2, :cond_0
+
+    const-string v2, "23810"
+
+    invoke-virtual {v2, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v1
+
+    if-eqz v1, :cond_1
+
+    :cond_0
+    const/4 v0, 0x1
+
+    :cond_1
+    new-instance v1, Ljava/lang/StringBuilder;
+
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v2, "isTDCSIM: "
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-static {v1}, Lcom/android/incallui/util/InCallUtilsMultiSIM;->log(Ljava/lang/String;)V
 
     return v0
 .end method

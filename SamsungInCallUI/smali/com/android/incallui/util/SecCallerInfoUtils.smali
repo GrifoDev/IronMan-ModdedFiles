@@ -425,9 +425,9 @@
 .method public static refreshContactInfoCache(Lcom/android/incallui/Call;Lcom/android/incallui/Call;Lcom/android/incallui/ContactInfoCache$ContactCacheEntry;Lcom/android/incallui/util/SecCallerInfoUtils$NumberChangedListener;)V
     .locals 7
 
-    const/4 v1, 0x1
-
     const/4 v0, 0x0
+
+    const/4 v1, 0x1
 
     const-string v2, "SecCallerInfoUtils"
 
@@ -631,73 +631,73 @@
 
     invoke-virtual {v2, v3}, Ljava/lang/String;->equalsIgnoreCase(Ljava/lang/String;)Z
 
-    move-result v2
+    move-result v4
 
-    if-nez v2, :cond_9
+    if-nez v4, :cond_9
 
     :cond_6
     invoke-virtual {p1}, Lcom/android/incallui/Call;->getSecCall()Lcom/android/incallui/SecCall;
 
-    move-result-object v2
+    move-result-object v4
 
-    invoke-virtual {v2}, Lcom/android/incallui/SecCall;->getAddress()Ljava/lang/String;
+    invoke-virtual {v4}, Lcom/android/incallui/SecCall;->getAddress()Ljava/lang/String;
 
-    move-result-object v2
+    move-result-object v4
 
-    if-eqz v2, :cond_7
+    if-eqz v4, :cond_7
 
-    new-instance v3, Ljava/lang/StringBuilder;
+    new-instance v5, Ljava/lang/StringBuilder;
 
-    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
 
     invoke-virtual {p1}, Lcom/android/incallui/Call;->getNumber()Ljava/lang/String;
 
-    move-result-object v4
+    move-result-object v6
 
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v3
+    move-result-object v5
 
     invoke-static {p1}, Lcom/android/incallui/util/SecCallExtraUtils;->getPostDialString(Lcom/android/incallui/Call;)Ljava/lang/String;
 
-    move-result-object v4
+    move-result-object v6
 
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v3
+    move-result-object v5
 
-    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v5}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v3
+    move-result-object v5
 
-    invoke-virtual {v2, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v4, v5}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move-result v3
+    move-result v5
 
-    if-nez v3, :cond_8
+    if-nez v5, :cond_8
 
     :cond_7
-    invoke-static {v2}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
+    invoke-static {v4}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
-    move-result v3
+    move-result v5
 
-    if-nez v3, :cond_12
+    if-nez v5, :cond_12
 
-    const-string v3, ","
+    const-string v5, ","
 
-    invoke-virtual {v2, v3}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
+    invoke-virtual {v4, v5}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
 
-    move-result v3
+    move-result v5
 
-    if-nez v3, :cond_8
+    if-nez v5, :cond_8
 
-    const-string v3, ";"
+    const-string v5, ";"
 
-    invoke-virtual {v2, v3}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
+    invoke-virtual {v4, v5}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
 
-    move-result v2
+    move-result v4
 
-    if-eqz v2, :cond_12
+    if-eqz v4, :cond_12
 
     :cond_8
     iget-boolean v2, p2, Lcom/android/incallui/ContactInfoCache$ContactCacheEntry;->queryCompleted:Z
@@ -947,6 +947,49 @@
     goto/16 :goto_2
 
     :cond_12
+    invoke-static {v2}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
+
+    move-result v4
+
+    if-nez v4, :cond_13
+
+    invoke-static {v3}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
+
+    move-result v4
+
+    if-nez v4, :cond_13
+
+    invoke-static {v2, v3}, Landroid/telephony/PhoneNumberUtils;->compare(Ljava/lang/String;Ljava/lang/String;)Z
+
+    move-result v3
+
+    if-eqz v3, :cond_13
+
+    const-string v3, "*"
+
+    invoke-virtual {v2, v3}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
+
+    move-result v3
+
+    if-nez v3, :cond_13
+
+    const-string v3, "#"
+
+    invoke-virtual {v2, v3}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
+
+    move-result v2
+
+    if-nez v2, :cond_13
+
+    const-string v2, "SecCallerInfoUtils"
+
+    const-string v3, "number is changed, but they\'re identical enough for caller ID purposes."
+
+    invoke-static {v2, v3}, Lcom/android/incallui/Log;->d(Ljava/lang/String;Ljava/lang/String;)V
+
+    goto/16 :goto_2
+
+    :cond_13
     move v0, v1
 
     goto/16 :goto_2

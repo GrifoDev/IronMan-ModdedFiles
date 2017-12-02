@@ -62,7 +62,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f0a04a0
+    const v2, 0x7f0a04ab
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getDimension(I)F
 
@@ -74,7 +74,7 @@
 
     move-result-object v2
 
-    const v3, 0x7f0a04a7
+    const v3, 0x7f0a04b2
 
     invoke-virtual {v2, v3}, Landroid/content/res/Resources;->getDimension(I)F
 
@@ -86,7 +86,7 @@
 
     move-result-object v3
 
-    const v4, 0x7f0a031f
+    const v4, 0x7f0a0310
 
     invoke-virtual {v3, v4}, Landroid/content/res/Resources;->getDimension(I)F
 
@@ -106,7 +106,7 @@
 
     move-result-object v3
 
-    const v4, 0x7f0a0367
+    const v4, 0x7f0a035d
 
     invoke-virtual {v3, v4}, Landroid/content/res/Resources;->getDimension(I)F
 
@@ -250,7 +250,7 @@
 .method public getDigitsHeight()I
     .locals 10
 
-    const v5, 0x7f0a0155
+    const v5, 0x7f0a0148
 
     const/4 v1, 0x0
 
@@ -258,7 +258,7 @@
 
     move-result-object v0
 
-    const v2, 0x7f0a0008
+    const v2, 0x7f0a0005
 
     invoke-virtual {v0, v2}, Landroid/content/res/Resources;->getDimension(I)F
 
@@ -310,7 +310,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f0a031f
+    const v2, 0x7f0a0310
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getDimension(I)F
 
@@ -330,7 +330,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f0a0367
+    const v2, 0x7f0a035d
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getDimension(I)F
 
@@ -408,7 +408,7 @@
 
     move-result-object v4
 
-    const v5, 0x7f0a01b7
+    const v5, 0x7f0a01a5
 
     invoke-virtual {v4, v5}, Landroid/content/res/Resources;->getDimension(I)F
 
@@ -420,7 +420,7 @@
 
     move-result-object v5
 
-    const v6, 0x7f0a025d
+    const v6, 0x7f0a0241
 
     invoke-virtual {v5, v6}, Landroid/content/res/Resources;->getDimension(I)F
 
@@ -501,6 +501,14 @@
     return-void
 .end method
 
+.method public onCallButtonViewChanged()V
+    .locals 0
+
+    invoke-virtual {p0}, Lcom/android/incallui/fragment/VoiceCallDialpadFragment;->setupLayout()V
+
+    return-void
+.end method
+
 .method public onContentViewChanged(Landroid/graphics/Point;)V
     .locals 0
 
@@ -547,7 +555,7 @@
 
     if-eqz v3, :cond_1
 
-    const v0, 0x7f0400e9
+    const v0, 0x7f0400ec
 
     invoke-virtual {p1, v0, p2, v1}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;Z)Landroid/view/View;
 
@@ -583,7 +591,7 @@
     if-eqz v2, :cond_3
 
     :cond_2
-    const v0, 0x7f0400de
+    const v0, 0x7f0400e1
 
     invoke-virtual {p1, v0, p2, v1}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;Z)Landroid/view/View;
 
@@ -605,7 +613,7 @@
     if-eqz v0, :cond_5
 
     :cond_4
-    const v0, 0x7f0400df
+    const v0, 0x7f0400e2
 
     invoke-virtual {p1, v0, p2, v1}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;Z)Landroid/view/View;
 
@@ -614,7 +622,7 @@
     goto :goto_1
 
     :cond_5
-    const v0, 0x7f0400e0
+    const v0, 0x7f0400e3
 
     invoke-virtual {p1, v0, p2, v1}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;Z)Landroid/view/View;
 

@@ -33,7 +33,4 @@
     <dimen name="sec_video_vga_video_width">480.0dip</dimen>
     <dimen name="sec_voice_end_under_button_margin_top">18.0dip</dimen>
     <dimen name="sec_call_popup_width">640.0dip</dimen>
-    <dimen name="sec_call_buttons_horizontal_out_line_onehand">114.0dip</dimen>
-    <dimen name="sec_call_buttons_padding_side_right_onehand">310.0dip</dimen>
-    <item type="dimen" name="sec_incall_layout_height_onehand">@dimen/sec_call_buttons_horizontal_out_line_onehand</item>
 </resources>

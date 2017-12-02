@@ -40,7 +40,7 @@
 
     iget-object v0, v0, Lcom/android/incallui/agif/AgifImageManager$1;->this$0:Lcom/android/incallui/agif/AgifImageManager;
 
-    invoke-virtual {v0}, Lcom/android/incallui/agif/AgifImageManager;->updateAgifView()V
+    invoke-static {v0}, Lcom/android/incallui/agif/AgifImageManager;->access$100(Lcom/android/incallui/agif/AgifImageManager;)V
 
     return-void
 .end method

@@ -2593,7 +2593,15 @@
 .end method
 
 .method markAsEmergency(Landroid/content/Context;Ljava/lang/String;)Lcom/android/incallui/CallerInfo;
-    .locals 1
+    .locals 3
+
+    const/4 v2, 0x1
+
+    const-string v0, "CallerInfo"
+
+    const-string v1, "markAsEmergency"
+
+    invoke-static {v0, v1, v2}, Lcom/android/incallui/Log;->v(Ljava/lang/String;Ljava/lang/String;Z)V
 
     const v0, 0x7f090053
 
@@ -2607,13 +2615,11 @@
 
     iput-object p2, p0, Lcom/android/incallui/CallerInfo;->originalNumber:Ljava/lang/String;
 
-    const v0, 0x7f020134
+    const v0, 0x7f02013e
 
     iput v0, p0, Lcom/android/incallui/CallerInfo;->photoResource:I
 
-    const/4 v0, 0x1
-
-    iput-boolean v0, p0, Lcom/android/incallui/CallerInfo;->mIsEmergency:Z
+    iput-boolean v2, p0, Lcom/android/incallui/CallerInfo;->mIsEmergency:Z
 
     return-object p0
 .end method

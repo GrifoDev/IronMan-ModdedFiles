@@ -1542,7 +1542,7 @@
 
     invoke-static {v1, v0}, Lcom/android/incallui/Log;->e(Ljava/lang/String;Ljava/lang/String;)V
 
-    const v0, 0x7f090149
+    const v0, 0x7f09014c
 
     invoke-static {v0}, Lcom/android/incallui/util/InCallUtils;->displayToastLong(I)V
 
@@ -1671,7 +1671,7 @@
     :catch_0
     move-exception v0
 
-    const v1, 0x7f090149
+    const v1, 0x7f09014c
 
     invoke-static {v1}, Lcom/android/incallui/util/InCallUtils;->displayToastLong(I)V
 
@@ -1854,7 +1854,7 @@
     :catch_0
     move-exception v0
 
-    const v1, 0x7f090149
+    const v1, 0x7f09014c
 
     invoke-static {v1}, Lcom/android/incallui/util/InCallUtils;->displayToastLong(I)V
 
@@ -1892,7 +1892,7 @@
 .method public static launchEmail(Ljava/lang/String;)V
     .locals 7
 
-    const v6, 0x7f090149
+    const v6, 0x7f09014c
 
     const/high16 v5, 0x10000000
 
@@ -2160,6 +2160,12 @@
 
     invoke-virtual {v1, v2, v3}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
+    const-string v2, "source"
+
+    const-string v3, "CALL"
+
+    invoke-virtual {v1, v2, v3}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
+
     const v2, 0x14000020
 
     invoke-virtual {v1, v2}, Landroid/content/Intent;->addFlags(I)Landroid/content/Intent;
@@ -2222,6 +2228,12 @@
     move-result-object v2
 
     invoke-virtual {v1, v2}, Landroid/content/Intent;->setData(Landroid/net/Uri;)Landroid/content/Intent;
+
+    const-string v2, "source"
+
+    const-string v3, "CALL"
+
+    invoke-virtual {v1, v2, v3}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
     const-string v2, "hideSearchBtn"
 
@@ -2361,7 +2373,7 @@
 
     invoke-static {v1, v0}, Lcom/android/incallui/Log;->e(Ljava/lang/String;Ljava/lang/String;)V
 
-    const v0, 0x7f090149
+    const v0, 0x7f09014c
 
     invoke-static {v0}, Lcom/android/incallui/util/InCallUtils;->displayToastLong(I)V
 
@@ -2452,7 +2464,7 @@
 
     invoke-static {v1, v0}, Lcom/android/incallui/Log;->e(Ljava/lang/String;Ljava/lang/String;)V
 
-    const v0, 0x7f090149
+    const v0, 0x7f09014c
 
     invoke-static {v0}, Lcom/android/incallui/util/InCallUtils;->displayToastLong(I)V
 
@@ -2516,7 +2528,7 @@
 
     if-eqz v1, :cond_3
 
-    const v1, 0x7f0902da
+    const v1, 0x7f0902dd
 
     invoke-virtual {v0, v1}, Lcom/android/incallui/InCallActivity;->getString(I)Ljava/lang/String;
 
@@ -2527,7 +2539,7 @@
     goto :goto_0
 
     :cond_3
-    const v0, 0x7f090149
+    const v0, 0x7f09014c
 
     invoke-static {v0}, Lcom/android/incallui/util/InCallUtils;->displayToastLong(I)V
 
@@ -2537,7 +2549,7 @@
 .method public static launchMessage()V
     .locals 11
 
-    const v10, 0x7f090149
+    const v10, 0x7f09014c
 
     const/high16 v9, 0x10000000
 
@@ -2993,7 +3005,7 @@
 
     invoke-static {v1, v0}, Lcom/android/incallui/Log;->e(Ljava/lang/String;Ljava/lang/String;)V
 
-    const v0, 0x7f090149
+    const v0, 0x7f09014c
 
     invoke-static {v0}, Lcom/android/incallui/util/InCallUtils;->displayToastLong(I)V
 
@@ -3314,7 +3326,7 @@
 
     invoke-direct {v1, p0}, Landroid/app/AlertDialog$Builder;-><init>(Landroid/content/Context;)V
 
-    const v2, 0x7f090156
+    const v2, 0x7f090159
 
     new-array v3, v5, [Ljava/lang/Object;
 
@@ -3334,7 +3346,7 @@
 
     move-result-object v0
 
-    const v2, 0x7f090157
+    const v2, 0x7f09015a
 
     new-instance v3, Lcom/android/incallui/util/PackageHelpers$4;
 
@@ -3344,7 +3356,7 @@
 
     move-result-object v0
 
-    const v2, 0x7f09010c
+    const v2, 0x7f09010f
 
     new-instance v3, Lcom/android/incallui/util/PackageHelpers$3;
 
@@ -3374,7 +3386,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f09015b
+    const v1, 0x7f09015e
 
     new-instance v2, Lcom/android/incallui/util/PackageHelpers$1;
 
@@ -3382,7 +3394,7 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/app/AlertDialog$Builder;->setPositiveButton(ILandroid/content/DialogInterface$OnClickListener;)Landroid/app/AlertDialog$Builder;
 
-    const v1, 0x7f09010c
+    const v1, 0x7f09010f
 
     new-instance v2, Lcom/android/incallui/util/PackageHelpers$2;
 
@@ -3390,11 +3402,11 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/app/AlertDialog$Builder;->setNegativeButton(ILandroid/content/DialogInterface$OnClickListener;)Landroid/app/AlertDialog$Builder;
 
-    const v1, 0x7f09015c
+    const v1, 0x7f09015f
 
     invoke-virtual {v0, v1}, Landroid/app/AlertDialog$Builder;->setTitle(I)Landroid/app/AlertDialog$Builder;
 
-    const v1, 0x7f09015d
+    const v1, 0x7f090160
 
     new-array v2, v3, [Ljava/lang/Object;
 

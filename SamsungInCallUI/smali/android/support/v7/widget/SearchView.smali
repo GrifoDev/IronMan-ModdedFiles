@@ -1,5 +1,5 @@
 .class public Landroid/support/v7/widget/SearchView;
-.super Landroid/support/v7/widget/ag;
+.super Landroid/support/v7/widget/al;
 
 # interfaces
 .implements Landroid/support/v7/view/c;
@@ -953,7 +953,7 @@
 
     if-eqz v0, :cond_3
 
-    new-instance v0, Landroid/support/v7/widget/ao;
+    new-instance v0, Landroid/support/v7/widget/av;
 
     invoke-virtual {p0}, Landroid/support/v7/widget/SearchView;->getContext()Landroid/content/Context;
 
@@ -963,7 +963,7 @@
 
     iget-object v4, p0, Landroid/support/v7/widget/SearchView;->R:Ljava/util/WeakHashMap;
 
-    invoke-direct {v0, v2, p0, v3, v4}, Landroid/support/v7/widget/ao;-><init>(Landroid/content/Context;Landroid/support/v7/widget/SearchView;Landroid/app/SearchableInfo;Ljava/util/WeakHashMap;)V
+    invoke-direct {v0, v2, p0, v3, v4}, Landroid/support/v7/widget/av;-><init>(Landroid/content/Context;Landroid/support/v7/widget/SearchView;Landroid/app/SearchableInfo;Ljava/util/WeakHashMap;)V
 
     iput-object v0, p0, Landroid/support/v7/widget/SearchView;->C:Landroid/support/v4/widget/f;
 
@@ -975,7 +975,7 @@
 
     iget-object v0, p0, Landroid/support/v7/widget/SearchView;->C:Landroid/support/v4/widget/f;
 
-    check-cast v0, Landroid/support/v7/widget/ao;
+    check-cast v0, Landroid/support/v7/widget/av;
 
     iget-boolean v2, p0, Landroid/support/v7/widget/SearchView;->F:Z
 
@@ -984,7 +984,7 @@
     const/4 v1, 0x2
 
     :cond_2
-    invoke-virtual {v0, v1}, Landroid/support/v7/widget/ao;->a(I)V
+    invoke-virtual {v0, v1}, Landroid/support/v7/widget/av;->a(I)V
 
     :cond_3
     return-void
@@ -1370,7 +1370,7 @@
 
     invoke-direct {p0, v1}, Landroid/support/v7/widget/SearchView;->setImeVisibility(Z)V
 
-    invoke-super {p0}, Landroid/support/v7/widget/ag;->clearFocus()V
+    invoke-super {p0}, Landroid/support/v7/widget/al;->clearFocus()V
 
     iget-object v0, p0, Landroid/support/v7/widget/SearchView;->c:Landroid/support/v7/widget/SearchView$SearchAutoComplete;
 
@@ -1536,7 +1536,7 @@
 
     invoke-virtual {p0, v0}, Landroid/support/v7/widget/SearchView;->post(Ljava/lang/Runnable;)Z
 
-    invoke-super {p0}, Landroid/support/v7/widget/ag;->onDetachedFromWindow()V
+    invoke-super {p0}, Landroid/support/v7/widget/al;->onDetachedFromWindow()V
 
     return-void
 .end method
@@ -1544,7 +1544,7 @@
 .method protected onLayout(ZIIII)V
     .locals 5
 
-    invoke-super/range {p0 .. p5}, Landroid/support/v7/widget/ag;->onLayout(ZIIII)V
+    invoke-super/range {p0 .. p5}, Landroid/support/v7/widget/al;->onLayout(ZIIII)V
 
     if-eqz p1, :cond_0
 
@@ -1617,7 +1617,7 @@
 
     if-eqz v0, :cond_0
 
-    invoke-super {p0, p1, p2}, Landroid/support/v7/widget/ag;->onMeasure(II)V
+    invoke-super {p0, p1, p2}, Landroid/support/v7/widget/al;->onMeasure(II)V
 
     :goto_0
     return-void
@@ -1654,7 +1654,7 @@
 
     move-result v1
 
-    invoke-super {p0, v0, v1}, Landroid/support/v7/widget/ag;->onMeasure(II)V
+    invoke-super {p0, v0, v1}, Landroid/support/v7/widget/al;->onMeasure(II)V
 
     goto :goto_0
 
@@ -1743,7 +1743,7 @@
 
     if-nez v0, :cond_0
 
-    invoke-super {p0, p1}, Landroid/support/v7/widget/ag;->onRestoreInstanceState(Landroid/os/Parcelable;)V
+    invoke-super {p0, p1}, Landroid/support/v7/widget/al;->onRestoreInstanceState(Landroid/os/Parcelable;)V
 
     :goto_0
     return-void
@@ -1755,7 +1755,7 @@
 
     move-result-object v0
 
-    invoke-super {p0, v0}, Landroid/support/v7/widget/ag;->onRestoreInstanceState(Landroid/os/Parcelable;)V
+    invoke-super {p0, v0}, Landroid/support/v7/widget/al;->onRestoreInstanceState(Landroid/os/Parcelable;)V
 
     iget-boolean v0, p1, Landroid/support/v7/widget/SearchView$SavedState;->b:Z
 
@@ -1769,7 +1769,7 @@
 .method protected onSaveInstanceState()Landroid/os/Parcelable;
     .locals 2
 
-    invoke-super {p0}, Landroid/support/v7/widget/ag;->onSaveInstanceState()Landroid/os/Parcelable;
+    invoke-super {p0}, Landroid/support/v7/widget/al;->onSaveInstanceState()Landroid/os/Parcelable;
 
     move-result-object v0
 
@@ -1789,7 +1789,7 @@
 .method public onWindowFocusChanged(Z)V
     .locals 0
 
-    invoke-super {p0, p1}, Landroid/support/v7/widget/ag;->onWindowFocusChanged(Z)V
+    invoke-super {p0, p1}, Landroid/support/v7/widget/al;->onWindowFocusChanged(Z)V
 
     invoke-direct {p0}, Landroid/support/v7/widget/SearchView;->i()V
 
@@ -1838,7 +1838,7 @@
     goto :goto_0
 
     :cond_3
-    invoke-super {p0, p1, p2}, Landroid/support/v7/widget/ag;->requestFocus(ILandroid/graphics/Rect;)Z
+    invoke-super {p0, p1, p2}, Landroid/support/v7/widget/al;->requestFocus(ILandroid/graphics/Rect;)Z
 
     move-result v0
 
@@ -1976,20 +1976,20 @@
 
     iget-object v0, p0, Landroid/support/v7/widget/SearchView;->C:Landroid/support/v4/widget/f;
 
-    instance-of v0, v0, Landroid/support/v7/widget/ao;
+    instance-of v0, v0, Landroid/support/v7/widget/av;
 
     if-eqz v0, :cond_0
 
     iget-object v0, p0, Landroid/support/v7/widget/SearchView;->C:Landroid/support/v4/widget/f;
 
-    check-cast v0, Landroid/support/v7/widget/ao;
+    check-cast v0, Landroid/support/v7/widget/av;
 
     if-eqz p1, :cond_1
 
     const/4 v1, 0x2
 
     :goto_0
-    invoke-virtual {v0, v1}, Landroid/support/v7/widget/ao;->a(I)V
+    invoke-virtual {v0, v1}, Landroid/support/v7/widget/av;->a(I)V
 
     :cond_0
     return-void

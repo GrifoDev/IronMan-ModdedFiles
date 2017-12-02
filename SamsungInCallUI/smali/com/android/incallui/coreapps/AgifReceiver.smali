@@ -5,6 +5,8 @@
 # static fields
 .field private static final ACTION_AGIF_CALL_REGISTRATION:Ljava/lang/String; = "com.android.contacts.action.ACTION_AGIF_CALL_REGISTRATION"
 
+.field private static final INTENT_COREAPPS_RSERVICE:Ljava/lang/String; = "com.samsung.android.coreapps.rshare.RShareService"
+
 .field private static final LOG_TAG:Ljava/lang/String; = "Agifflow-AgifReceiver"
 
 
@@ -58,9 +60,9 @@
 
     invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move-result v0
+    move-result v1
 
-    if-eqz v0, :cond_0
+    if-eqz v1, :cond_2
 
     const-string v0, "agif_call_registration"
 
@@ -118,6 +120,35 @@
     move-result-object v0
 
     invoke-virtual {v0}, Lcom/android/incallui/coreapps/CoreAppsManager;->tryDeregister()V
+
+    goto :goto_0
+
+    :cond_2
+    const-string v1, "com.samsung.android.coreapps.rshare.RShareService"
+
+    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    invoke-static {}, Lcom/android/incallui/coreapps/CoreAppsManager;->getInstance()Lcom/android/incallui/coreapps/CoreAppsManager;
+
+    move-result-object v0
+
+    const-string v1, "sending_message"
+
+    invoke-virtual {p2, v1}, Landroid/content/Intent;->getStringExtra(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v1
+
+    const-string v2, "package_name"
+
+    invoke-virtual {p2, v2}, Landroid/content/Intent;->getStringExtra(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-virtual {v0, v1, v2}, Lcom/android/incallui/coreapps/CoreAppsManager;->receiveContactUri(Ljava/lang/String;Ljava/lang/String;)V
 
     goto :goto_0
 .end method

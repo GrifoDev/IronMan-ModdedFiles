@@ -179,7 +179,7 @@
 
     move-result-object v1
 
-    const v0, 0x7f100490
+    const v0, 0x7f1004a7
 
     invoke-virtual {v1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -250,7 +250,7 @@
 
     move-result-object v0
 
-    const v3, 0x7f0a03a2
+    const v3, 0x7f0a0398
 
     invoke-virtual {v0, v3}, Landroid/content/res/Resources;->getDimension(I)F
 
@@ -268,7 +268,7 @@
 
     move-result-object v3
 
-    const v4, 0x7f0a039c
+    const v4, 0x7f0a0392
 
     invoke-virtual {v3, v4}, Landroid/content/res/Resources;->getDimension(I)F
 
@@ -286,7 +286,7 @@
 
     move-result-object v4
 
-    const v5, 0x7f0a039d
+    const v5, 0x7f0a0393
 
     invoke-virtual {v4, v5}, Landroid/content/res/Resources;->getDimension(I)F
 
@@ -306,7 +306,7 @@
 
     move-result-object v5
 
-    const v6, 0x7f0a039d
+    const v6, 0x7f0a0393
 
     invoke-virtual {v5, v6}, Landroid/content/res/Resources;->getDimension(I)F
 
@@ -326,7 +326,7 @@
 
     move-result-object v5
 
-    const v6, 0x7f0a03a0
+    const v6, 0x7f0a0396
 
     invoke-virtual {v5, v6}, Landroid/content/res/Resources;->getDimension(I)F
 
@@ -446,7 +446,7 @@
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v3, "Google maps with co-ordinates : "
+    const-string v3, "Maps with co-ordinates : "
 
     invoke-virtual {v0, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -484,6 +484,166 @@
 
     invoke-static {p0, v0}, Lcom/android/incallui/Log;->d(Ljava/lang/Object;Ljava/lang/String;)V
 
+    new-instance v0, Ljava/lang/StringBuilder;
+
+    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v3, "IsChinaFeature: "
+
+    invoke-virtual {v0, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    const-string v3, "feature_chn"
+
+    invoke-static {v3}, Lcom/android/incallui/InCallUIFeature;->hasFeature(Ljava/lang/String;)Z
+
+    move-result v3
+
+    invoke-virtual {v0, v3}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-static {p0, v0}, Lcom/android/incallui/Log;->d(Ljava/lang/Object;Ljava/lang/String;)V
+
+    const-string v0, "feature_chn"
+
+    invoke-static {v0}, Lcom/android/incallui/InCallUIFeature;->hasFeature(Ljava/lang/String;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_9
+
+    new-instance v0, Ljava/lang/StringBuilder;
+
+    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v2, "androidamap://myLocation?sourceApplication=samsung&lat="
+
+    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    iget-object v2, p0, Lcom/android/incallui/fragment/VoiceCallButtonCallPlusFragment$4;->this$0:Lcom/android/incallui/fragment/VoiceCallButtonCallPlusFragment;
+
+    invoke-static {v2}, Lcom/android/incallui/fragment/VoiceCallButtonCallPlusFragment;->access$2000(Lcom/android/incallui/fragment/VoiceCallButtonCallPlusFragment;)Ljava/lang/Double;
+
+    move-result-object v2
+
+    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    const-string v2, "&lon="
+
+    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    iget-object v2, p0, Lcom/android/incallui/fragment/VoiceCallButtonCallPlusFragment$4;->this$0:Lcom/android/incallui/fragment/VoiceCallButtonCallPlusFragment;
+
+    invoke-static {v2}, Lcom/android/incallui/fragment/VoiceCallButtonCallPlusFragment;->access$2100(Lcom/android/incallui/fragment/VoiceCallButtonCallPlusFragment;)Ljava/lang/Double;
+
+    move-result-object v2
+
+    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    const-string v2, "&dev=1&style=2"
+
+    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    new-instance v2, Landroid/content/Intent;
+
+    const-string v3, "android.intent.action.VIEW"
+
+    invoke-direct {v2, v3}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
+
+    invoke-static {v0}, Landroid/net/Uri;->parse(Ljava/lang/String;)Landroid/net/Uri;
+
+    move-result-object v3
+
+    invoke-virtual {v2, v3}, Landroid/content/Intent;->setData(Landroid/net/Uri;)Landroid/content/Intent;
+
+    const-string v3, "android.intent.category.DEFAULT"
+
+    invoke-virtual {v2, v3}, Landroid/content/Intent;->addCategory(Ljava/lang/String;)Landroid/content/Intent;
+
+    new-instance v3, Ljava/lang/StringBuilder;
+
+    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v4, "Map URI..."
+
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    invoke-virtual {v3, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-static {p0, v0}, Lcom/android/incallui/Log;->d(Ljava/lang/Object;Ljava/lang/String;)V
+
+    iget-object v0, p0, Lcom/android/incallui/fragment/VoiceCallButtonCallPlusFragment$4;->this$0:Lcom/android/incallui/fragment/VoiceCallButtonCallPlusFragment;
+
+    invoke-virtual {v0}, Lcom/android/incallui/fragment/VoiceCallButtonCallPlusFragment;->getActivity()Landroid/app/Activity;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Landroid/app/Activity;->getPackageManager()Landroid/content/pm/PackageManager;
+
+    move-result-object v0
+
+    invoke-virtual {v2, v0}, Landroid/content/Intent;->resolveActivity(Landroid/content/pm/PackageManager;)Landroid/content/ComponentName;
+
+    move-result-object v0
+
+    if-eqz v0, :cond_8
+
+    iget-object v0, p0, Lcom/android/incallui/fragment/VoiceCallButtonCallPlusFragment$4;->this$0:Lcom/android/incallui/fragment/VoiceCallButtonCallPlusFragment;
+
+    invoke-virtual {v0, v2}, Lcom/android/incallui/fragment/VoiceCallButtonCallPlusFragment;->startActivity(Landroid/content/Intent;)V
+
+    goto/16 :goto_0
+
+    :cond_8
+    const-string v0, "Can\'t resolve given pkg name..."
+
+    invoke-static {p0, v0}, Lcom/android/incallui/Log;->d(Ljava/lang/Object;Ljava/lang/String;)V
+
+    iget-object v0, p0, Lcom/android/incallui/fragment/VoiceCallButtonCallPlusFragment$4;->this$0:Lcom/android/incallui/fragment/VoiceCallButtonCallPlusFragment;
+
+    invoke-virtual {v0}, Lcom/android/incallui/fragment/VoiceCallButtonCallPlusFragment;->getContext()Landroid/content/Context;
+
+    move-result-object v0
+
+    const-string/jumbo v2, "\u8bf7\u5b89\u88c5\u9ad8\u5fb7\u5730\u56fe\u67e5\u770b"
+
+    invoke-static {v0, v2, v1}, Landroid/widget/Toast;->makeText(Landroid/content/Context;Ljava/lang/CharSequence;I)Landroid/widget/Toast;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Landroid/widget/Toast;->show()V
+
+    goto/16 :goto_0
+
+    :cond_9
     sget-object v0, Ljava/util/Locale;->ENGLISH:Ljava/util/Locale;
 
     const-string v3, "geo:%f,%f?q=%f,%f"
@@ -690,7 +850,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_8
+    if-eqz v0, :cond_a
 
     iget-object v0, p0, Lcom/android/incallui/fragment/VoiceCallButtonCallPlusFragment$4;->this$0:Lcom/android/incallui/fragment/VoiceCallButtonCallPlusFragment;
 
@@ -698,7 +858,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_8
+    if-eqz v0, :cond_a
 
     iget-object v0, p0, Lcom/android/incallui/fragment/VoiceCallButtonCallPlusFragment$4;->this$0:Lcom/android/incallui/fragment/VoiceCallButtonCallPlusFragment;
 
@@ -706,27 +866,9 @@
 
     move-result-object v0
 
-    const v1, 0x7f09010b
+    const v1, 0x7f09010e
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
-
-    move-result-object v0
-
-    const-string v1, "%s"
-
-    iget-object v2, p0, Lcom/android/incallui/fragment/VoiceCallButtonCallPlusFragment$4;->this$0:Lcom/android/incallui/fragment/VoiceCallButtonCallPlusFragment;
-
-    invoke-virtual {v2}, Lcom/android/incallui/fragment/VoiceCallButtonCallPlusFragment;->getResources()Landroid/content/res/Resources;
-
-    move-result-object v2
-
-    const v3, 0x7f0902a0
-
-    invoke-virtual {v2, v3}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-virtual {v0, v1, v2}, Ljava/lang/String;->replace(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Ljava/lang/String;
 
     move-result-object v0
 
@@ -734,7 +876,7 @@
 
     goto/16 :goto_0
 
-    :cond_8
+    :cond_a
     iget-object v0, p0, Lcom/android/incallui/fragment/VoiceCallButtonCallPlusFragment$4;->this$0:Lcom/android/incallui/fragment/VoiceCallButtonCallPlusFragment;
 
     invoke-virtual {v0}, Lcom/android/incallui/fragment/VoiceCallButtonCallPlusFragment;->getContext()Landroid/content/Context;
@@ -790,14 +932,14 @@
 
     move-result v3
 
-    if-nez v3, :cond_9
+    if-nez v3, :cond_b
 
     :goto_2
     invoke-virtual {v0, v1}, Lcom/android/incallui/CallButtonPresenter;->showDialpadClicked(Z)V
 
     goto/16 :goto_0
 
-    :cond_9
+    :cond_b
     move v1, v2
 
     goto :goto_2
@@ -833,14 +975,14 @@
 
     move-result v3
 
-    if-nez v3, :cond_a
+    if-nez v3, :cond_c
 
     :goto_3
     invoke-virtual {v0, v1}, Lcom/android/incallui/CallButtonPresenter;->muteClicked(Z)V
 
     goto/16 :goto_0
 
-    :cond_a
+    :cond_c
     move v1, v2
 
     goto :goto_3
@@ -981,7 +1123,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_b
+    if-eqz v0, :cond_d
 
     const-string v0, "Launch share screen"
 
@@ -1067,7 +1209,7 @@
 
     goto/16 :goto_0
 
-    :cond_b
+    :cond_d
     iget-object v0, p0, Lcom/android/incallui/fragment/VoiceCallButtonCallPlusFragment$4;->this$0:Lcom/android/incallui/fragment/VoiceCallButtonCallPlusFragment;
 
     invoke-virtual {v0}, Lcom/android/incallui/fragment/VoiceCallButtonCallPlusFragment;->getPresenter()Lcom/android/incallui/Presenter;
@@ -1130,31 +1272,29 @@
 
     goto/16 :goto_0
 
-    nop
-
     :sswitch_data_0
     .sparse-switch
-        0x7f1000cb -> :sswitch_b
-        0x7f1000cc -> :sswitch_a
-        0x7f100214 -> :sswitch_13
-        0x7f100382 -> :sswitch_5
-        0x7f1003d7 -> :sswitch_4
-        0x7f1003fa -> :sswitch_7
-        0x7f100417 -> :sswitch_c
-        0x7f100418 -> :sswitch_9
-        0x7f100419 -> :sswitch_8
-        0x7f10041d -> :sswitch_3
-        0x7f100468 -> :sswitch_14
-        0x7f10046a -> :sswitch_15
-        0x7f100472 -> :sswitch_2
-        0x7f100475 -> :sswitch_6
-        0x7f100482 -> :sswitch_1
-        0x7f100484 -> :sswitch_0
-        0x7f100488 -> :sswitch_d
-        0x7f10048a -> :sswitch_e
-        0x7f10048b -> :sswitch_f
-        0x7f10048d -> :sswitch_10
-        0x7f10048e -> :sswitch_11
-        0x7f10048f -> :sswitch_12
+        0x7f1000d3 -> :sswitch_b
+        0x7f1000d4 -> :sswitch_a
+        0x7f10021b -> :sswitch_13
+        0x7f10038e -> :sswitch_5
+        0x7f1003e4 -> :sswitch_4
+        0x7f1003f4 -> :sswitch_c
+        0x7f100411 -> :sswitch_7
+        0x7f100442 -> :sswitch_9
+        0x7f100443 -> :sswitch_8
+        0x7f100447 -> :sswitch_3
+        0x7f10047d -> :sswitch_14
+        0x7f10047f -> :sswitch_15
+        0x7f100487 -> :sswitch_2
+        0x7f10048a -> :sswitch_6
+        0x7f100498 -> :sswitch_1
+        0x7f10049b -> :sswitch_0
+        0x7f10049f -> :sswitch_d
+        0x7f1004a1 -> :sswitch_e
+        0x7f1004a2 -> :sswitch_f
+        0x7f1004a4 -> :sswitch_10
+        0x7f1004a5 -> :sswitch_11
+        0x7f1004a6 -> :sswitch_12
     .end sparse-switch
 .end method

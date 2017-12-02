@@ -33,19 +33,15 @@
 
 .field private static final AGIF_SENT_TOAST_DELAY:I = 0x5dc
 
-.field private static final ANIM_ALPHA_HIDE:F = 0.0f
-
-.field private static final ANIM_ALPHA_SHOW:F = 1.0f
-
-.field private static final ANIM_POPUP_SCALE:F = 1.0f
-
-.field private static final ANIM_POPUP_SCALE_DOWN:F = 0.9f
-
 .field protected static final CALLER_INFO_SCALE:F = 0.45f
 
 .field protected static final CALL_BUTTON_SCALE:F = 0.55f
 
 .field private static final LOG_TAG:Ljava/lang/String; = "AgifFragment"
+
+.field private static final SHOW_BUBBLE_TIP:I = 0xca
+
+.field private static final SHOW_BUBBLE_TIP_DELAY:I = 0x226
 
 .field private static final SMART_INFO_CHANGE:I = 0xc9
 
@@ -97,6 +93,12 @@
 
 .field protected mAgifViewPagerWidth:I
 
+.field private mBubbleTip:Landroid/widget/PopupWindow;
+
+.field private mBubbleTipTextView:Landroid/widget/TextView;
+
+.field private mBubbleTipView:Landroid/view/View;
+
 .field protected mButtonContainer:Landroid/widget/HorizontalScrollView;
 
 .field protected mCategoty:Ljava/lang/String;
@@ -120,6 +122,8 @@
 .field private mPopupOnAnimator:Landroid/animation/AnimatorSet;
 
 .field private mPopupOnButtonAnimator:Landroid/animation/AnimatorSet;
+
+.field private mPresenter:Lcom/android/incallui/AgifPresenter;
 
 .field protected mSelectedAgifUri:Ljava/lang/String;
 
@@ -165,10 +169,10 @@
     return-void
 .end method
 
-.method static synthetic access$200(Lcom/android/incallui/agif/AgifFragment;)Landroid/animation/AnimatorSet;
+.method static synthetic access$200(Lcom/android/incallui/agif/AgifFragment;)Lcom/android/incallui/AgifPresenter;
     .locals 1
 
-    iget-object v0, p0, Lcom/android/incallui/agif/AgifFragment;->mPopupOnAnimator:Landroid/animation/AnimatorSet;
+    iget-object v0, p0, Lcom/android/incallui/agif/AgifFragment;->mPresenter:Lcom/android/incallui/AgifPresenter;
 
     return-object v0
 .end method
@@ -176,67 +180,33 @@
 .method static synthetic access$300(Lcom/android/incallui/agif/AgifFragment;)Landroid/animation/AnimatorSet;
     .locals 1
 
+    iget-object v0, p0, Lcom/android/incallui/agif/AgifFragment;->mPopupOnAnimator:Landroid/animation/AnimatorSet;
+
+    return-object v0
+.end method
+
+.method static synthetic access$400(Lcom/android/incallui/agif/AgifFragment;)Landroid/animation/AnimatorSet;
+    .locals 1
+
     iget-object v0, p0, Lcom/android/incallui/agif/AgifFragment;->mPopupOffButtonAnimator:Landroid/animation/AnimatorSet;
 
     return-object v0
 .end method
 
-.method private animateForPopupOff()V
-    .locals 2
+.method static synthetic access$500(Lcom/android/incallui/agif/AgifFragment;)Landroid/widget/TextView;
+    .locals 1
 
-    const/high16 v1, 0x3f800000    # 1.0f
+    iget-object v0, p0, Lcom/android/incallui/agif/AgifFragment;->mBubbleTipTextView:Landroid/widget/TextView;
 
-    iget-object v0, p0, Lcom/android/incallui/agif/AgifFragment;->mAgifListContainer:Landroid/view/View;
+    return-object v0
+.end method
 
-    if-eqz v0, :cond_0
+.method static synthetic access$600(Lcom/android/incallui/agif/AgifFragment;)Landroid/widget/PopupWindow;
+    .locals 1
 
-    iget-object v0, p0, Lcom/android/incallui/agif/AgifFragment;->mButtonContainer:Landroid/widget/HorizontalScrollView;
+    iget-object v0, p0, Lcom/android/incallui/agif/AgifFragment;->mBubbleTip:Landroid/widget/PopupWindow;
 
-    if-nez v0, :cond_1
-
-    :cond_0
-    :goto_0
-    return-void
-
-    :cond_1
-    iget-object v0, p0, Lcom/android/incallui/agif/AgifFragment;->mPopupOnAnimator:Landroid/animation/AnimatorSet;
-
-    invoke-virtual {v0}, Landroid/animation/AnimatorSet;->isRunning()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_2
-
-    iget-object v0, p0, Lcom/android/incallui/agif/AgifFragment;->mPopupOnAnimator:Landroid/animation/AnimatorSet;
-
-    invoke-virtual {v0}, Landroid/animation/AnimatorSet;->end()V
-
-    :cond_2
-    iget-object v0, p0, Lcom/android/incallui/agif/AgifFragment;->mAgifListContainer:Landroid/view/View;
-
-    invoke-virtual {v0, v1}, Landroid/view/View;->setScaleX(F)V
-
-    iget-object v0, p0, Lcom/android/incallui/agif/AgifFragment;->mAgifListContainer:Landroid/view/View;
-
-    invoke-virtual {v0, v1}, Landroid/view/View;->setScaleY(F)V
-
-    iget-object v0, p0, Lcom/android/incallui/agif/AgifFragment;->mAgifListContainer:Landroid/view/View;
-
-    invoke-virtual {v0, v1}, Landroid/view/View;->setAlpha(F)V
-
-    iget-object v0, p0, Lcom/android/incallui/agif/AgifFragment;->mPopupOffAnimator:Landroid/animation/AnimatorSet;
-
-    invoke-virtual {v0}, Landroid/animation/AnimatorSet;->start()V
-
-    iget-object v0, p0, Lcom/android/incallui/agif/AgifFragment;->mPopupOffAnimator:Landroid/animation/AnimatorSet;
-
-    new-instance v1, Lcom/android/incallui/agif/AgifFragment$6;
-
-    invoke-direct {v1, p0}, Lcom/android/incallui/agif/AgifFragment$6;-><init>(Lcom/android/incallui/agif/AgifFragment;)V
-
-    invoke-virtual {v0, v1}, Landroid/animation/AnimatorSet;->addListener(Landroid/animation/Animator$AnimatorListener;)V
-
-    goto :goto_0
+    return-object v0
 .end method
 
 .method private animateForPopupOn()V
@@ -278,14 +248,6 @@
 
     invoke-virtual {v0}, Landroid/animation/AnimatorSet;->start()V
 
-    iget-object v0, p0, Lcom/android/incallui/agif/AgifFragment;->mPopupOnButtonAnimator:Landroid/animation/AnimatorSet;
-
-    new-instance v1, Lcom/android/incallui/agif/AgifFragment$5;
-
-    invoke-direct {v1, p0}, Lcom/android/incallui/agif/AgifFragment$5;-><init>(Lcom/android/incallui/agif/AgifFragment;)V
-
-    invoke-virtual {v0, v1}, Landroid/animation/AnimatorSet;->addListener(Landroid/animation/Animator$AnimatorListener;)V
-
     goto :goto_0
 .end method
 
@@ -317,7 +279,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f0a02d4
+    const v1, 0x7f0a02c0
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDimension(I)F
 
@@ -353,7 +315,7 @@
 
     move-result-object v2
 
-    const v3, 0x7f0a02e1
+    const v3, 0x7f0a02cd
 
     invoke-virtual {v2, v3}, Landroid/content/res/Resources;->getDimension(I)F
 
@@ -421,7 +383,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f0a028f
+    const v2, 0x7f0a0273
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getDimension(I)F
 
@@ -497,7 +459,7 @@
 .method private arrangeAgifSlidingTrayIcons(Landroid/graphics/Point;)V
     .locals 6
 
-    const/4 v3, 0x0
+    const/4 v2, 0x0
 
     iget-object v0, p0, Lcom/android/incallui/agif/AgifFragment;->mAgifSlidingTrayIcons:Lcom/android/incallui/agif/AgifSlidingTrayIcons;
 
@@ -520,15 +482,15 @@
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v2, "arrangeAgifLayout mAgifListPage = "
+    const-string v3, "arrangeAgifLayout mAgifListPage = "
 
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v1, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v1
 
-    iget v2, p0, Lcom/android/incallui/agif/AgifFragment;->mAgifListPage:I
+    iget v3, p0, Lcom/android/incallui/agif/AgifFragment;->mAgifListPage:I
 
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    invoke-virtual {v1, v3}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
     move-result-object v1
 
@@ -544,9 +506,9 @@
 
     move-result-object v1
 
-    const v2, 0x7f0a030e
+    const v3, 0x7f0a02ff
 
-    invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getDimension(I)F
+    invoke-virtual {v1, v3}, Landroid/content/res/Resources;->getDimension(I)F
 
     move-result v1
 
@@ -554,15 +516,15 @@
 
     invoke-virtual {p0}, Lcom/android/incallui/agif/AgifFragment;->getResources()Landroid/content/res/Resources;
 
-    move-result-object v2
+    move-result-object v3
 
-    const v4, 0x7f0a030a
+    const v4, 0x7f0a02fb
 
-    invoke-virtual {v2, v4}, Landroid/content/res/Resources;->getDimension(I)F
+    invoke-virtual {v3, v4}, Landroid/content/res/Resources;->getDimension(I)F
 
-    move-result v2
+    move-result v3
 
-    float-to-int v2, v2
+    float-to-int v3, v3
 
     invoke-virtual {p0}, Lcom/android/incallui/agif/AgifFragment;->getContext()Landroid/content/Context;
 
@@ -572,60 +534,30 @@
 
     move-result-object v4
 
-    const v5, 0x7f0e0001
+    const/high16 v5, 0x7f0f0000
 
     invoke-virtual {v4, v5}, Landroid/content/res/Resources;->getInteger(I)I
 
     move-result v4
 
-    mul-int/lit8 v2, v2, 0x2
+    mul-int/lit8 v3, v3, 0x2
 
-    add-int/2addr v1, v2
+    add-int/2addr v1, v3
 
     mul-int/2addr v1, v4
 
     sub-int/2addr v0, v1
 
-    div-int/lit8 v2, v0, 0x2
+    div-int/lit8 v0, v0, 0x2
 
-    iget-object v0, p0, Lcom/android/incallui/agif/AgifFragment;->mAgifSlidingTrayIcons:Lcom/android/incallui/agif/AgifSlidingTrayIcons;
-
-    invoke-virtual {v0, v3}, Lcom/android/incallui/agif/AgifSlidingTrayIcons;->getChildAt(I)Landroid/view/View;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
-
-    move-result-object v0
-
-    check-cast v0, Landroid/widget/LinearLayout$LayoutParams;
-
-    if-lez v2, :cond_2
+    if-gez v0, :cond_2
 
     move v1, v2
 
     :goto_1
-    invoke-virtual {v0, v1}, Landroid/widget/LinearLayout$LayoutParams;->setMarginStart(I)V
-
-    iget-object v1, p0, Lcom/android/incallui/agif/AgifFragment;->mAgifSlidingTrayIcons:Lcom/android/incallui/agif/AgifSlidingTrayIcons;
-
-    invoke-virtual {v1, v3}, Lcom/android/incallui/agif/AgifSlidingTrayIcons;->getChildAt(I)Landroid/view/View;
-
-    move-result-object v1
-
-    invoke-virtual {v1, v0}, Landroid/view/View;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
-
     iget-object v0, p0, Lcom/android/incallui/agif/AgifFragment;->mAgifSlidingTrayIcons:Lcom/android/incallui/agif/AgifSlidingTrayIcons;
 
-    iget-object v1, p0, Lcom/android/incallui/agif/AgifFragment;->mAgifSlidingTrayIcons:Lcom/android/incallui/agif/AgifSlidingTrayIcons;
-
-    invoke-virtual {v1}, Lcom/android/incallui/agif/AgifSlidingTrayIcons;->getChildCount()I
-
-    move-result v1
-
-    add-int/lit8 v1, v1, -0x1
-
-    invoke-virtual {v0, v1}, Lcom/android/incallui/agif/AgifSlidingTrayIcons;->getChildAt(I)Landroid/view/View;
+    invoke-virtual {v0, v2}, Lcom/android/incallui/agif/AgifSlidingTrayIcons;->getChildAt(I)Landroid/view/View;
 
     move-result-object v0
 
@@ -635,10 +567,37 @@
 
     check-cast v0, Landroid/widget/LinearLayout$LayoutParams;
 
-    if-lez v2, :cond_3
+    invoke-virtual {v0, v1}, Landroid/widget/LinearLayout$LayoutParams;->setMarginStart(I)V
 
-    :goto_2
-    invoke-virtual {v0, v2}, Landroid/widget/LinearLayout$LayoutParams;->setMarginEnd(I)V
+    iget-object v3, p0, Lcom/android/incallui/agif/AgifFragment;->mAgifSlidingTrayIcons:Lcom/android/incallui/agif/AgifSlidingTrayIcons;
+
+    invoke-virtual {v3, v2}, Lcom/android/incallui/agif/AgifSlidingTrayIcons;->getChildAt(I)Landroid/view/View;
+
+    move-result-object v2
+
+    invoke-virtual {v2, v0}, Landroid/view/View;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
+
+    iget-object v0, p0, Lcom/android/incallui/agif/AgifFragment;->mAgifSlidingTrayIcons:Lcom/android/incallui/agif/AgifSlidingTrayIcons;
+
+    iget-object v2, p0, Lcom/android/incallui/agif/AgifFragment;->mAgifSlidingTrayIcons:Lcom/android/incallui/agif/AgifSlidingTrayIcons;
+
+    invoke-virtual {v2}, Lcom/android/incallui/agif/AgifSlidingTrayIcons;->getChildCount()I
+
+    move-result v2
+
+    add-int/lit8 v2, v2, -0x1
+
+    invoke-virtual {v0, v2}, Lcom/android/incallui/agif/AgifSlidingTrayIcons;->getChildAt(I)Landroid/view/View;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
+
+    move-result-object v0
+
+    check-cast v0, Landroid/widget/LinearLayout$LayoutParams;
+
+    invoke-virtual {v0, v1}, Landroid/widget/LinearLayout$LayoutParams;->setMarginEnd(I)V
 
     iget-object v1, p0, Lcom/android/incallui/agif/AgifFragment;->mAgifSlidingTrayIcons:Lcom/android/incallui/agif/AgifSlidingTrayIcons;
 
@@ -659,18 +618,13 @@
     goto/16 :goto_0
 
     :cond_2
-    move v1, v3
+    move v1, v0
 
     goto :goto_1
-
-    :cond_3
-    move v2, v3
-
-    goto :goto_2
 .end method
 
 .method private createAgifSlidingTrayIcons(I)V
-    .locals 3
+    .locals 4
 
     const-string v0, "AgifFragment"
 
@@ -724,19 +678,36 @@
 
     move-result v0
 
-    if-eqz v0, :cond_0
+    if-eqz v0, :cond_3
 
     invoke-virtual {p0}, Lcom/android/incallui/agif/AgifFragment;->startOutgoingCallAnimation()V
+
+    :cond_3
+    iget-object v0, p0, Lcom/android/incallui/agif/AgifFragment;->mButtonContainer:Landroid/widget/HorizontalScrollView;
+
+    if-eqz v0, :cond_0
+
+    invoke-virtual {p0}, Lcom/android/incallui/agif/AgifFragment;->isShowAgifContainer()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    iget-object v0, p0, Lcom/android/incallui/agif/AgifFragment;->mHandler:Landroid/os/Handler;
+
+    new-instance v1, Lcom/android/incallui/agif/AgifFragment$4;
+
+    invoke-direct {v1, p0}, Lcom/android/incallui/agif/AgifFragment$4;-><init>(Lcom/android/incallui/agif/AgifFragment;)V
+
+    const-wide/16 v2, 0x64
+
+    invoke-virtual {v0, v1, v2, v3}, Landroid/os/Handler;->postDelayed(Ljava/lang/Runnable;J)Z
 
     goto :goto_0
 .end method
 
 .method private createAnimatorSet()V
-    .locals 6
-
-    const/4 v5, 0x1
-
-    const/4 v4, 0x0
+    .locals 2
 
     iget-object v0, p0, Lcom/android/incallui/agif/AgifFragment;->mAgifListContainer:Landroid/view/View;
 
@@ -744,131 +715,61 @@
 
     iget-object v0, p0, Lcom/android/incallui/agif/AgifFragment;->mAgifListContainer:Landroid/view/View;
 
-    iget-object v1, p0, Lcom/android/incallui/agif/AgifFragment;->mAgifListContainer:Landroid/view/View;
-
-    sget-object v1, Landroid/view/View;->SCALE_X:Landroid/util/Property;
-
-    invoke-direct {p0, v0, v1}, Lcom/android/incallui/agif/AgifFragment;->getPopupScaleUpAnimator(Landroid/view/View;Landroid/util/Property;)Landroid/animation/ObjectAnimator;
+    invoke-static {v0}, Lcom/android/incallui/agif/AgifAnimUtil;->buildPopOnAnimatorSet(Landroid/view/View;)Landroid/animation/AnimatorSet;
 
     move-result-object v0
 
-    iget-object v1, p0, Lcom/android/incallui/agif/AgifFragment;->mAgifListContainer:Landroid/view/View;
-
-    iget-object v2, p0, Lcom/android/incallui/agif/AgifFragment;->mAgifListContainer:Landroid/view/View;
-
-    sget-object v2, Landroid/view/View;->SCALE_Y:Landroid/util/Property;
-
-    invoke-direct {p0, v1, v2}, Lcom/android/incallui/agif/AgifFragment;->getPopupScaleUpAnimator(Landroid/view/View;Landroid/util/Property;)Landroid/animation/ObjectAnimator;
-
-    move-result-object v1
-
-    iget-object v2, p0, Lcom/android/incallui/agif/AgifFragment;->mAgifListContainer:Landroid/view/View;
-
-    invoke-direct {p0, v2, v5}, Lcom/android/incallui/agif/AgifFragment;->getPopupAlphaAnimator(Landroid/view/View;Z)Landroid/animation/ObjectAnimator;
-
-    move-result-object v2
-
-    new-instance v3, Landroid/animation/AnimatorSet;
-
-    invoke-direct {v3}, Landroid/animation/AnimatorSet;-><init>()V
-
-    iput-object v3, p0, Lcom/android/incallui/agif/AgifFragment;->mPopupOnAnimator:Landroid/animation/AnimatorSet;
-
-    iget-object v3, p0, Lcom/android/incallui/agif/AgifFragment;->mPopupOnAnimator:Landroid/animation/AnimatorSet;
-
-    invoke-virtual {v3, v0}, Landroid/animation/AnimatorSet;->play(Landroid/animation/Animator;)Landroid/animation/AnimatorSet$Builder;
-
-    move-result-object v0
-
-    invoke-virtual {v0, v1}, Landroid/animation/AnimatorSet$Builder;->with(Landroid/animation/Animator;)Landroid/animation/AnimatorSet$Builder;
-
-    move-result-object v0
-
-    invoke-virtual {v0, v2}, Landroid/animation/AnimatorSet$Builder;->with(Landroid/animation/Animator;)Landroid/animation/AnimatorSet$Builder;
+    iput-object v0, p0, Lcom/android/incallui/agif/AgifFragment;->mPopupOnAnimator:Landroid/animation/AnimatorSet;
 
     iget-object v0, p0, Lcom/android/incallui/agif/AgifFragment;->mAgifListContainer:Landroid/view/View;
 
-    iget-object v1, p0, Lcom/android/incallui/agif/AgifFragment;->mAgifListContainer:Landroid/view/View;
-
-    sget-object v1, Landroid/view/View;->SCALE_X:Landroid/util/Property;
-
-    invoke-direct {p0, v0, v1}, Lcom/android/incallui/agif/AgifFragment;->getPopupScaleDownAnimator(Landroid/view/View;Landroid/util/Property;)Landroid/animation/ObjectAnimator;
+    invoke-static {v0}, Lcom/android/incallui/agif/AgifAnimUtil;->buildPopOffAnimatorSet(Landroid/view/View;)Landroid/animation/AnimatorSet;
 
     move-result-object v0
 
-    iget-object v1, p0, Lcom/android/incallui/agif/AgifFragment;->mAgifListContainer:Landroid/view/View;
-
-    iget-object v2, p0, Lcom/android/incallui/agif/AgifFragment;->mAgifListContainer:Landroid/view/View;
-
-    sget-object v2, Landroid/view/View;->SCALE_Y:Landroid/util/Property;
-
-    invoke-direct {p0, v1, v2}, Lcom/android/incallui/agif/AgifFragment;->getPopupScaleDownAnimator(Landroid/view/View;Landroid/util/Property;)Landroid/animation/ObjectAnimator;
-
-    move-result-object v1
-
-    iget-object v2, p0, Lcom/android/incallui/agif/AgifFragment;->mAgifListContainer:Landroid/view/View;
-
-    invoke-direct {p0, v2, v4}, Lcom/android/incallui/agif/AgifFragment;->getPopupAlphaAnimator(Landroid/view/View;Z)Landroid/animation/ObjectAnimator;
-
-    move-result-object v2
-
-    new-instance v3, Landroid/animation/AnimatorSet;
-
-    invoke-direct {v3}, Landroid/animation/AnimatorSet;-><init>()V
-
-    iput-object v3, p0, Lcom/android/incallui/agif/AgifFragment;->mPopupOffAnimator:Landroid/animation/AnimatorSet;
-
-    iget-object v3, p0, Lcom/android/incallui/agif/AgifFragment;->mPopupOffAnimator:Landroid/animation/AnimatorSet;
-
-    invoke-virtual {v3, v0}, Landroid/animation/AnimatorSet;->play(Landroid/animation/Animator;)Landroid/animation/AnimatorSet$Builder;
-
-    move-result-object v0
-
-    invoke-virtual {v0, v1}, Landroid/animation/AnimatorSet$Builder;->with(Landroid/animation/Animator;)Landroid/animation/AnimatorSet$Builder;
-
-    move-result-object v0
-
-    invoke-virtual {v0, v2}, Landroid/animation/AnimatorSet$Builder;->with(Landroid/animation/Animator;)Landroid/animation/AnimatorSet$Builder;
+    iput-object v0, p0, Lcom/android/incallui/agif/AgifFragment;->mPopupOffAnimator:Landroid/animation/AnimatorSet;
 
     :cond_0
     iget-object v0, p0, Lcom/android/incallui/agif/AgifFragment;->mButtonContainer:Landroid/widget/HorizontalScrollView;
 
     if-eqz v0, :cond_1
 
-    new-instance v0, Landroid/animation/AnimatorSet;
+    iget-object v0, p0, Lcom/android/incallui/agif/AgifFragment;->mButtonContainer:Landroid/widget/HorizontalScrollView;
 
-    invoke-direct {v0}, Landroid/animation/AnimatorSet;-><init>()V
+    invoke-static {v0}, Lcom/android/incallui/agif/AgifAnimUtil;->buildPopOnButtonAnimatorSet(Landroid/view/View;)Landroid/animation/AnimatorSet;
+
+    move-result-object v0
 
     iput-object v0, p0, Lcom/android/incallui/agif/AgifFragment;->mPopupOnButtonAnimator:Landroid/animation/AnimatorSet;
 
-    iget-object v0, p0, Lcom/android/incallui/agif/AgifFragment;->mPopupOnButtonAnimator:Landroid/animation/AnimatorSet;
+    invoke-direct {p0}, Lcom/android/incallui/agif/AgifFragment;->createEndCallBackPopOnButtonAnim()Landroid/animation/AnimatorListenerAdapter;
 
-    iget-object v1, p0, Lcom/android/incallui/agif/AgifFragment;->mButtonContainer:Landroid/widget/HorizontalScrollView;
+    move-result-object v0
 
-    invoke-direct {p0, v1, v4}, Lcom/android/incallui/agif/AgifFragment;->getButtonAlphaAnimator(Landroid/view/View;Z)Landroid/animation/ObjectAnimator;
+    iget-object v1, p0, Lcom/android/incallui/agif/AgifFragment;->mPopupOnButtonAnimator:Landroid/animation/AnimatorSet;
 
-    move-result-object v1
+    invoke-virtual {v1, v0}, Landroid/animation/AnimatorSet;->addListener(Landroid/animation/Animator$AnimatorListener;)V
 
-    invoke-virtual {v0, v1}, Landroid/animation/AnimatorSet;->play(Landroid/animation/Animator;)Landroid/animation/AnimatorSet$Builder;
+    iget-object v0, p0, Lcom/android/incallui/agif/AgifFragment;->mButtonContainer:Landroid/widget/HorizontalScrollView;
 
-    new-instance v0, Landroid/animation/AnimatorSet;
+    invoke-static {v0}, Lcom/android/incallui/agif/AgifAnimUtil;->buildPopOffButtonAnimatorSet(Landroid/view/View;)Landroid/animation/AnimatorSet;
 
-    invoke-direct {v0}, Landroid/animation/AnimatorSet;-><init>()V
+    move-result-object v0
 
     iput-object v0, p0, Lcom/android/incallui/agif/AgifFragment;->mPopupOffButtonAnimator:Landroid/animation/AnimatorSet;
 
-    iget-object v0, p0, Lcom/android/incallui/agif/AgifFragment;->mPopupOffButtonAnimator:Landroid/animation/AnimatorSet;
-
-    iget-object v1, p0, Lcom/android/incallui/agif/AgifFragment;->mButtonContainer:Landroid/widget/HorizontalScrollView;
-
-    invoke-direct {p0, v1, v5}, Lcom/android/incallui/agif/AgifFragment;->getButtonAlphaAnimator(Landroid/view/View;Z)Landroid/animation/ObjectAnimator;
-
-    move-result-object v1
-
-    invoke-virtual {v0, v1}, Landroid/animation/AnimatorSet;->play(Landroid/animation/Animator;)Landroid/animation/AnimatorSet$Builder;
-
     :cond_1
     return-void
+.end method
+
+.method private createEndCallBackPopOnButtonAnim()Landroid/animation/AnimatorListenerAdapter;
+    .locals 1
+
+    new-instance v0, Lcom/android/incallui/agif/AgifFragment$5;
+
+    invoke-direct {v0, p0}, Lcom/android/incallui/agif/AgifFragment$5;-><init>(Lcom/android/incallui/agif/AgifFragment;)V
+
+    return-object v0
 .end method
 
 .method private displayStickerSentToast()V
@@ -902,7 +803,7 @@
 
     move-result-object v0
 
-    const v3, 0x7f0900c8
+    const v3, 0x7f0900cb
 
     invoke-virtual {v0, v3}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -926,13 +827,13 @@
 
     iget v4, v4, Landroid/graphics/Point;->y:I
 
-    const v5, 0x7f0a0301
+    const v5, 0x7f0a02f2
 
     invoke-virtual {v0, v5}, Landroid/content/res/Resources;->getDimension(I)F
 
     move-result v5
 
-    const v6, 0x7f0a0303
+    const v6, 0x7f0a02f4
 
     invoke-virtual {v0, v6}, Landroid/content/res/Resources;->getDimension(I)F
 
@@ -944,7 +845,7 @@
 
     add-float/2addr v5, v6
 
-    const v6, 0x7f0a0308
+    const v6, 0x7f0a02f9
 
     invoke-virtual {v0, v6}, Landroid/content/res/Resources;->getDimension(I)F
 
@@ -1011,7 +912,7 @@
 
     iget-object v0, p0, Lcom/android/incallui/agif/AgifFragment;->mInflater:Landroid/view/LayoutInflater;
 
-    const v1, 0x7f040026
+    const v1, 0x7f040027
 
     const/4 v4, 0x0
 
@@ -1019,7 +920,7 @@
 
     move-result-object v1
 
-    const v0, 0x7f1000ad
+    const v0, 0x7f1000b1
 
     invoke-virtual {v1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -1046,212 +947,62 @@
     goto :goto_1
 .end method
 
-.method private getButtonAlphaAnimator(Landroid/view/View;Z)Landroid/animation/ObjectAnimator;
-    .locals 5
-
-    if-eqz p2, :cond_0
-
-    const v0, 0x7f0e0021
-
-    :goto_0
-    sget-object v2, Landroid/view/View;->ALPHA:Landroid/util/Property;
-
-    const/4 v1, 0x1
-
-    new-array v3, v1, [F
-
-    const/4 v4, 0x0
-
-    if-eqz p2, :cond_1
+.method private startPopupOffAimatorSet()V
+    .locals 2
 
     const/high16 v1, 0x3f800000    # 1.0f
 
-    :goto_1
-    aput v1, v3, v4
+    iget-object v0, p0, Lcom/android/incallui/agif/AgifFragment;->mAgifListContainer:Landroid/view/View;
 
-    invoke-static {p1, v2, v3}, Landroid/animation/ObjectAnimator;->ofFloat(Ljava/lang/Object;Landroid/util/Property;[F)Landroid/animation/ObjectAnimator;
+    if-eqz v0, :cond_0
 
-    move-result-object v1
+    iget-object v0, p0, Lcom/android/incallui/agif/AgifFragment;->mButtonContainer:Landroid/widget/HorizontalScrollView;
 
-    invoke-virtual {p0}, Lcom/android/incallui/agif/AgifFragment;->getResources()Landroid/content/res/Resources;
-
-    move-result-object v2
-
-    invoke-virtual {v2, v0}, Landroid/content/res/Resources;->getInteger(I)I
-
-    move-result v0
-
-    int-to-long v2, v0
-
-    invoke-virtual {v1, v2, v3}, Landroid/animation/ObjectAnimator;->setDuration(J)Landroid/animation/ObjectAnimator;
-
-    return-object v1
+    if-nez v0, :cond_1
 
     :cond_0
-    const v0, 0x7f0e001e
-
-    goto :goto_0
-
-    :cond_1
-    const/4 v1, 0x0
-
-    goto :goto_1
-.end method
-
-.method private getPopupAlphaAnimator(Landroid/view/View;Z)Landroid/animation/ObjectAnimator;
-    .locals 5
-
-    if-eqz p2, :cond_0
-
-    const v0, 0x7f0e0020
-
     :goto_0
-    sget-object v2, Landroid/view/View;->ALPHA:Landroid/util/Property;
+    return-void
 
-    const/4 v1, 0x1
+    :cond_1
+    iget-object v0, p0, Lcom/android/incallui/agif/AgifFragment;->mPopupOnAnimator:Landroid/animation/AnimatorSet;
 
-    new-array v3, v1, [F
-
-    const/4 v4, 0x0
-
-    if-eqz p2, :cond_1
-
-    const/high16 v1, 0x3f800000    # 1.0f
-
-    :goto_1
-    aput v1, v3, v4
-
-    invoke-static {p1, v2, v3}, Landroid/animation/ObjectAnimator;->ofFloat(Ljava/lang/Object;Landroid/util/Property;[F)Landroid/animation/ObjectAnimator;
-
-    move-result-object v1
-
-    invoke-virtual {p0}, Lcom/android/incallui/agif/AgifFragment;->getResources()Landroid/content/res/Resources;
-
-    move-result-object v2
-
-    invoke-virtual {v2, v0}, Landroid/content/res/Resources;->getInteger(I)I
+    invoke-virtual {v0}, Landroid/animation/AnimatorSet;->isRunning()Z
 
     move-result v0
 
-    int-to-long v2, v0
+    if-eqz v0, :cond_2
 
-    invoke-virtual {v1, v2, v3}, Landroid/animation/ObjectAnimator;->setDuration(J)Landroid/animation/ObjectAnimator;
+    iget-object v0, p0, Lcom/android/incallui/agif/AgifFragment;->mPopupOnAnimator:Landroid/animation/AnimatorSet;
 
-    return-object v1
+    invoke-virtual {v0}, Landroid/animation/AnimatorSet;->end()V
 
-    :cond_0
-    const v0, 0x7f0e001d
+    :cond_2
+    iget-object v0, p0, Lcom/android/incallui/agif/AgifFragment;->mAgifListContainer:Landroid/view/View;
+
+    invoke-virtual {v0, v1}, Landroid/view/View;->setScaleX(F)V
+
+    iget-object v0, p0, Lcom/android/incallui/agif/AgifFragment;->mAgifListContainer:Landroid/view/View;
+
+    invoke-virtual {v0, v1}, Landroid/view/View;->setScaleY(F)V
+
+    iget-object v0, p0, Lcom/android/incallui/agif/AgifFragment;->mAgifListContainer:Landroid/view/View;
+
+    invoke-virtual {v0, v1}, Landroid/view/View;->setAlpha(F)V
+
+    iget-object v0, p0, Lcom/android/incallui/agif/AgifFragment;->mPopupOffAnimator:Landroid/animation/AnimatorSet;
+
+    invoke-virtual {v0}, Landroid/animation/AnimatorSet;->start()V
+
+    iget-object v0, p0, Lcom/android/incallui/agif/AgifFragment;->mPopupOffAnimator:Landroid/animation/AnimatorSet;
+
+    new-instance v1, Lcom/android/incallui/agif/AgifFragment$6;
+
+    invoke-direct {v1, p0}, Lcom/android/incallui/agif/AgifFragment$6;-><init>(Lcom/android/incallui/agif/AgifFragment;)V
+
+    invoke-virtual {v0, v1}, Landroid/animation/AnimatorSet;->addListener(Landroid/animation/Animator$AnimatorListener;)V
 
     goto :goto_0
-
-    :cond_1
-    const/4 v1, 0x0
-
-    goto :goto_1
-.end method
-
-.method private getPopupScaleDownAnimator(Landroid/view/View;Landroid/util/Property;)Landroid/animation/ObjectAnimator;
-    .locals 4
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Landroid/view/View;",
-            "Landroid/util/Property",
-            "<",
-            "Landroid/view/View;",
-            "Ljava/lang/Float;",
-            ">;)",
-            "Landroid/animation/ObjectAnimator;"
-        }
-    .end annotation
-
-    const/4 v0, 0x1
-
-    new-array v0, v0, [F
-
-    const/4 v1, 0x0
-
-    const v2, 0x3f666666    # 0.9f
-
-    aput v2, v0, v1
-
-    invoke-static {p1, p2, v0}, Landroid/animation/ObjectAnimator;->ofFloat(Ljava/lang/Object;Landroid/util/Property;[F)Landroid/animation/ObjectAnimator;
-
-    move-result-object v0
-
-    new-instance v1, Lcom/samsung/android/view/a/a;
-
-    invoke-direct {v1}, Lcom/samsung/android/view/a/a;-><init>()V
-
-    invoke-virtual {v0, v1}, Landroid/animation/ObjectAnimator;->setInterpolator(Landroid/animation/TimeInterpolator;)V
-
-    invoke-virtual {p0}, Lcom/android/incallui/agif/AgifFragment;->getResources()Landroid/content/res/Resources;
-
-    move-result-object v1
-
-    const v2, 0x7f0e001f
-
-    invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getInteger(I)I
-
-    move-result v1
-
-    int-to-long v2, v1
-
-    invoke-virtual {v0, v2, v3}, Landroid/animation/ObjectAnimator;->setDuration(J)Landroid/animation/ObjectAnimator;
-
-    return-object v0
-.end method
-
-.method private getPopupScaleUpAnimator(Landroid/view/View;Landroid/util/Property;)Landroid/animation/ObjectAnimator;
-    .locals 4
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Landroid/view/View;",
-            "Landroid/util/Property",
-            "<",
-            "Landroid/view/View;",
-            "Ljava/lang/Float;",
-            ">;)",
-            "Landroid/animation/ObjectAnimator;"
-        }
-    .end annotation
-
-    const/4 v0, 0x1
-
-    new-array v0, v0, [F
-
-    const/4 v1, 0x0
-
-    const/high16 v2, 0x3f800000    # 1.0f
-
-    aput v2, v0, v1
-
-    invoke-static {p1, p2, v0}, Landroid/animation/ObjectAnimator;->ofFloat(Ljava/lang/Object;Landroid/util/Property;[F)Landroid/animation/ObjectAnimator;
-
-    move-result-object v0
-
-    new-instance v1, Lcom/samsung/android/view/a/c;
-
-    invoke-direct {v1}, Lcom/samsung/android/view/a/c;-><init>()V
-
-    invoke-virtual {v0, v1}, Landroid/animation/ObjectAnimator;->setInterpolator(Landroid/animation/TimeInterpolator;)V
-
-    invoke-virtual {p0}, Lcom/android/incallui/agif/AgifFragment;->getResources()Landroid/content/res/Resources;
-
-    move-result-object v1
-
-    const v2, 0x7f0e0022
-
-    invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getInteger(I)I
-
-    move-result v1
-
-    int-to-long v2, v1
-
-    invoke-virtual {v0, v2, v3}, Landroid/animation/ObjectAnimator;->setDuration(J)Landroid/animation/ObjectAnimator;
-
-    return-object v0
 .end method
 
 .method private updateNewBadge(Z)V
@@ -1413,7 +1164,7 @@
 
     move-result-object v0
 
-    const v2, 0x7f0a0309
+    const v2, 0x7f0a02fa
 
     invoke-virtual {v0, v2}, Landroid/content/res/Resources;->getDimension(I)F
 
@@ -1492,6 +1243,8 @@
 
     invoke-direct {v0}, Lcom/android/incallui/AgifPresenter;-><init>()V
 
+    iput-object v0, p0, Lcom/android/incallui/agif/AgifFragment;->mPresenter:Lcom/android/incallui/AgifPresenter;
+
     return-object v0
 .end method
 
@@ -1529,6 +1282,25 @@
     move-result-object v0
 
     return-object v0
+.end method
+
+.method public hideBubbleTip()V
+    .locals 1
+
+    iget-object v0, p0, Lcom/android/incallui/agif/AgifFragment;->mBubbleTip:Landroid/widget/PopupWindow;
+
+    if-eqz v0, :cond_0
+
+    iget-object v0, p0, Lcom/android/incallui/agif/AgifFragment;->mBubbleTip:Landroid/widget/PopupWindow;
+
+    invoke-virtual {v0}, Landroid/widget/PopupWindow;->dismiss()V
+
+    const/4 v0, 0x0
+
+    iput-object v0, p0, Lcom/android/incallui/agif/AgifFragment;->mBubbleTip:Landroid/widget/PopupWindow;
+
+    :cond_0
+    return-void
 .end method
 
 .method public isShowAgifContainer()Z
@@ -1823,9 +1595,9 @@
 
     :sswitch_data_0
     .sparse-switch
-        0x7f10009a -> :sswitch_0
-        0x7f1000a1 -> :sswitch_1
-        0x7f1000ab -> :sswitch_2
+        0x7f10009e -> :sswitch_0
+        0x7f1000a5 -> :sswitch_1
+        0x7f1000af -> :sswitch_2
     .end sparse-switch
 .end method
 
@@ -1925,7 +1697,7 @@
 .method public onCreateView(Landroid/view/LayoutInflater;Landroid/view/ViewGroup;Landroid/os/Bundle;)Landroid/view/View;
     .locals 3
 
-    const v0, 0x7f040021
+    const v0, 0x7f040022
 
     const/4 v1, 0x0
 
@@ -1958,6 +1730,8 @@
     invoke-static {v0, v1}, Lcom/android/incallui/Log;->d(Ljava/lang/String;Ljava/lang/String;)V
 
     iput-object v2, p0, Lcom/android/incallui/agif/AgifFragment;->mInflater:Landroid/view/LayoutInflater;
+
+    invoke-virtual {p0}, Lcom/android/incallui/agif/AgifFragment;->hideBubbleTip()V
 
     const-string v0, "support_mobile_keyboard"
 
@@ -2222,7 +1996,7 @@
 
     move-result v0
 
-    if-nez v0, :cond_1
+    if-nez v0, :cond_2
 
     const/4 v0, 0x0
 
@@ -2234,9 +2008,27 @@
 
     invoke-virtual {p0, v0}, Lcom/android/incallui/agif/AgifFragment;->arrangeAgifLayout(Landroid/graphics/Point;)V
 
-    return-void
+    iget-object v0, p0, Lcom/android/incallui/agif/AgifFragment;->mAgifViewPager:Lcom/android/incallui/agif/AgifViewPager;
+
+    if-eqz v0, :cond_1
+
+    invoke-static {}, Lcom/android/incallui/InCallPresenter;->isRtl()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_3
+
+    iget-object v0, p0, Lcom/android/incallui/agif/AgifFragment;->mAgifViewPager:Lcom/android/incallui/agif/AgifViewPager;
+
+    const/high16 v1, 0x43340000    # 180.0f
+
+    invoke-virtual {v0, v1}, Lcom/android/incallui/agif/AgifViewPager;->setRotationY(F)V
 
     :cond_1
+    :goto_1
+    return-void
+
+    :cond_2
     invoke-virtual {p0}, Lcom/android/incallui/agif/AgifFragment;->isShowAgifList()Z
 
     move-result v0
@@ -2248,6 +2040,15 @@
     invoke-virtual {p0, v0}, Lcom/android/incallui/agif/AgifFragment;->showAgifList(Z)V
 
     goto :goto_0
+
+    :cond_3
+    iget-object v0, p0, Lcom/android/incallui/agif/AgifFragment;->mAgifViewPager:Lcom/android/incallui/agif/AgifViewPager;
+
+    const/4 v1, 0x0
+
+    invoke-virtual {v0, v1}, Lcom/android/incallui/agif/AgifViewPager;->setRotationY(F)V
+
+    goto :goto_1
 .end method
 
 .method public onSelectAgifContents(Landroid/net/Uri;)V
@@ -2289,6 +2090,21 @@
 
     invoke-virtual {v0, p1}, Lcom/android/incallui/coreapps/CoreAppsManager;->sendUriMessage(Landroid/net/Uri;)V
 
+    const-string v0, "agif_induce_service"
+
+    invoke-static {v0}, Lcom/android/incallui/InCallUIFeature;->hasFeature(Ljava/lang/String;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    invoke-virtual {p0}, Lcom/android/incallui/agif/AgifFragment;->getContext()Landroid/content/Context;
+
+    move-result-object v0
+
+    invoke-static {v0}, Lcom/android/incallui/agif/AgifCallServiceUtils;->insertStickerSentLog(Landroid/content/Context;)V
+
+    :cond_0
     invoke-virtual {p0}, Lcom/android/incallui/agif/AgifFragment;->cancelSentStickerToast()V
 
     iget-object v0, p0, Lcom/android/incallui/agif/AgifFragment;->mHandler:Landroid/os/Handler;
@@ -2297,7 +2113,7 @@
 
     move-result v0
 
-    if-nez v0, :cond_0
+    if-nez v0, :cond_1
 
     iget-object v0, p0, Lcom/android/incallui/agif/AgifFragment;->mHandler:Landroid/os/Handler;
 
@@ -2305,7 +2121,7 @@
 
     invoke-virtual {v0, v4, v2, v3}, Landroid/os/Handler;->sendEmptyMessageDelayed(IJ)Z
 
-    :cond_0
+    :cond_1
     return-void
 .end method
 
@@ -2364,7 +2180,7 @@
 
     invoke-static {v0, v1}, Lcom/android/incallui/Log;->d(Ljava/lang/String;Ljava/lang/String;)V
 
-    const v0, 0x7f10008f
+    const v0, 0x7f100093
 
     invoke-virtual {p1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -2372,7 +2188,7 @@
 
     iput-object v0, p0, Lcom/android/incallui/agif/AgifFragment;->mAgifContainer:Landroid/view/View;
 
-    const v0, 0x7f100094
+    const v0, 0x7f100098
 
     invoke-virtual {p1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -2382,7 +2198,7 @@
 
     iput-object v0, p0, Lcom/android/incallui/agif/AgifFragment;->mButtonContainer:Landroid/widget/HorizontalScrollView;
 
-    const v0, 0x7f100095
+    const v0, 0x7f100099
 
     invoke-virtual {p1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -2392,7 +2208,7 @@
 
     iput-object v0, p0, Lcom/android/incallui/agif/AgifFragment;->mAgifSlidingTrayIcons:Lcom/android/incallui/agif/AgifSlidingTrayIcons;
 
-    const v0, 0x7f100090
+    const v0, 0x7f100094
 
     invoke-virtual {p1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -2400,7 +2216,7 @@
 
     iput-object v0, p0, Lcom/android/incallui/agif/AgifFragment;->mAgifListContainer:Landroid/view/View;
 
-    const v0, 0x7f100092
+    const v0, 0x7f100096
 
     invoke-virtual {p1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -2408,7 +2224,7 @@
 
     iput-object v0, p0, Lcom/android/incallui/agif/AgifFragment;->mAgifBottomDivider:Landroid/view/View;
 
-    const v0, 0x7f100093
+    const v0, 0x7f100097
 
     invoke-virtual {p1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -2416,7 +2232,7 @@
 
     iput-object v0, p0, Lcom/android/incallui/agif/AgifFragment;->mAgifBottomBg:Landroid/view/View;
 
-    const v0, 0x7f100099
+    const v0, 0x7f10009d
 
     invoke-virtual {p1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -2424,7 +2240,7 @@
 
     iput-object v0, p0, Lcom/android/incallui/agif/AgifFragment;->mAgifListTextContainer:Landroid/view/View;
 
-    const v0, 0x7f10009b
+    const v0, 0x7f10009f
 
     invoke-virtual {p1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -2434,7 +2250,7 @@
 
     iput-object v0, p0, Lcom/android/incallui/agif/AgifFragment;->mAgifListText:Landroid/widget/TextView;
 
-    const v0, 0x7f10009c
+    const v0, 0x7f1000a0
 
     invoke-virtual {p1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -2464,7 +2280,7 @@
     invoke-virtual {p0, v0}, Lcom/android/incallui/agif/AgifFragment;->updateAgifListSubText(Ljava/lang/String;)V
 
     :cond_1
-    const v0, 0x7f10009d
+    const v0, 0x7f1000a1
 
     invoke-virtual {p1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -2485,7 +2301,7 @@
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setVisibility(I)V
 
     :cond_2
-    const v0, 0x7f10009a
+    const v0, 0x7f10009e
 
     invoke-virtual {p1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -2543,7 +2359,7 @@
     iput v0, p0, Lcom/android/incallui/agif/AgifFragment;->mAgifListPage:I
 
     :cond_4
-    const v0, 0x7f10009e
+    const v0, 0x7f1000a2
 
     invoke-virtual {p1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -2551,7 +2367,7 @@
 
     iput-object v0, p0, Lcom/android/incallui/agif/AgifFragment;->mAgifPageContainer:Landroid/view/View;
 
-    const v0, 0x7f10009f
+    const v0, 0x7f1000a3
 
     invoke-virtual {p1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -2581,7 +2397,7 @@
 
     iput-object v0, p0, Lcom/android/incallui/agif/AgifFragment;->mAgifPagerAdapter:Lcom/android/incallui/agif/AgifPagerAdapter;
 
-    const v0, 0x7f1000a3
+    const v0, 0x7f1000a7
 
     invoke-virtual {p1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -2591,7 +2407,7 @@
 
     iput-object v0, p0, Lcom/android/incallui/agif/AgifFragment;->mAgifSlidingTabLayout:Lcom/android/incallui/agif/AgifSlidingTabLayout;
 
-    const v0, 0x7f1000a0
+    const v0, 0x7f1000a4
 
     invoke-virtual {p1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -2599,7 +2415,7 @@
 
     iput-object v0, p0, Lcom/android/incallui/agif/AgifFragment;->mAgifTabContainer:Landroid/view/View;
 
-    const v0, 0x7f1000a4
+    const v0, 0x7f1000a8
 
     invoke-virtual {p1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -2707,7 +2523,7 @@
 
     if-eqz v0, :cond_b
 
-    const v0, 0x7f1000a1
+    const v0, 0x7f1000a5
 
     invoke-virtual {p1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -2735,7 +2551,7 @@
 
     iget-object v0, p0, Lcom/android/incallui/agif/AgifFragment;->mAgifAddButton:Landroid/widget/ImageView;
 
-    const v1, 0x7f0900b4
+    const v1, 0x7f0900b5
 
     invoke-virtual {p0, v1}, Lcom/android/incallui/agif/AgifFragment;->getString(I)Ljava/lang/String;
 
@@ -2744,7 +2560,7 @@
     invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setContentDescription(Ljava/lang/CharSequence;)V
 
     :cond_7
-    const v0, 0x7f1000a2
+    const v0, 0x7f1000a6
 
     invoke-virtual {p1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -2761,7 +2577,7 @@
     invoke-virtual {v0, v6}, Landroid/view/View;->setVisibility(I)V
 
     :cond_8
-    const v0, 0x7f1000a9
+    const v0, 0x7f1000ad
 
     invoke-virtual {p1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -2769,7 +2585,7 @@
 
     iput-object v0, p0, Lcom/android/incallui/agif/AgifFragment;->mAgifRecommendContainer:Landroid/view/View;
 
-    const v0, 0x7f1000aa
+    const v0, 0x7f1000ae
 
     invoke-virtual {p1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -2796,7 +2612,7 @@
     if-eqz v0, :cond_a
 
     :cond_9
-    const v0, 0x7f1000ab
+    const v0, 0x7f1000af
 
     invoke-virtual {p1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -2828,7 +2644,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f0a02ff
+    const v2, 0x7f0a02f0
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getDimension(I)F
 
@@ -3336,16 +3152,6 @@
     return-void
 
     :cond_4
-    invoke-static {}, Lcom/android/incallui/UiAdapter;->getInstance()Lcom/android/incallui/UiAdapter;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Lcom/android/incallui/UiAdapter;->getCallButtonUi()Lcom/android/incallui/CallButtonUi;
-
-    move-result-object v0
-
-    if-eqz v0, :cond_0
-
     invoke-static {}, Lcom/android/incallui/CallList;->getInstance()Lcom/android/incallui/CallList;
 
     move-result-object v0
@@ -3356,15 +3162,9 @@
 
     if-nez v0, :cond_0
 
-    invoke-static {}, Lcom/android/incallui/UiAdapter;->getInstance()Lcom/android/incallui/UiAdapter;
+    iget-object v0, p0, Lcom/android/incallui/agif/AgifFragment;->mPresenter:Lcom/android/incallui/AgifPresenter;
 
-    move-result-object v0
-
-    invoke-virtual {v0}, Lcom/android/incallui/UiAdapter;->getCallButtonUi()Lcom/android/incallui/CallButtonUi;
-
-    move-result-object v0
-
-    invoke-interface {v0, v4}, Lcom/android/incallui/CallButtonUi;->setVisible(Z)V
+    invoke-virtual {v0, v4}, Lcom/android/incallui/AgifPresenter;->setCallButtonUIVisible(Z)V
 
     goto :goto_0
 
@@ -3383,9 +3183,9 @@
 
     if-nez v0, :cond_6
 
-    invoke-direct {p0}, Lcom/android/incallui/agif/AgifFragment;->animateForPopupOff()V
+    invoke-direct {p0}, Lcom/android/incallui/agif/AgifFragment;->startPopupOffAimatorSet()V
 
-    goto/16 :goto_0
+    goto :goto_0
 
     :cond_6
     iget-object v0, p0, Lcom/android/incallui/agif/AgifFragment;->mButtonContainer:Landroid/widget/HorizontalScrollView;
@@ -3423,16 +3223,6 @@
     invoke-virtual {v0, v1}, Landroid/view/View;->setVisibility(I)V
 
     :cond_9
-    invoke-static {}, Lcom/android/incallui/UiAdapter;->getInstance()Lcom/android/incallui/UiAdapter;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Lcom/android/incallui/UiAdapter;->getCallButtonUi()Lcom/android/incallui/CallButtonUi;
-
-    move-result-object v0
-
-    if-eqz v0, :cond_0
-
     invoke-static {}, Lcom/android/incallui/CallList;->getInstance()Lcom/android/incallui/CallList;
 
     move-result-object v0
@@ -3443,17 +3233,11 @@
 
     if-nez v0, :cond_0
 
-    invoke-static {}, Lcom/android/incallui/UiAdapter;->getInstance()Lcom/android/incallui/UiAdapter;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Lcom/android/incallui/UiAdapter;->getCallButtonUi()Lcom/android/incallui/CallButtonUi;
-
-    move-result-object v0
+    iget-object v0, p0, Lcom/android/incallui/agif/AgifFragment;->mPresenter:Lcom/android/incallui/AgifPresenter;
 
     const/4 v1, 0x1
 
-    invoke-interface {v0, v1}, Lcom/android/incallui/CallButtonUi;->setVisible(Z)V
+    invoke-virtual {v0, v1}, Lcom/android/incallui/AgifPresenter;->setCallButtonUIVisible(Z)V
 
     goto/16 :goto_0
 
@@ -3477,6 +3261,153 @@
     invoke-interface {v2, v3, v1}, Lcom/android/incallui/CallCardUi;->setPrimaryImage(Landroid/graphics/drawable/Drawable;Z)V
 
     goto/16 :goto_1
+.end method
+
+.method public showBubbleTip()V
+    .locals 7
+
+    const/4 v6, 0x0
+
+    const/4 v5, 0x1
+
+    const-string v0, "agif_induce_service"
+
+    invoke-static {v0}, Lcom/android/incallui/InCallUIFeature;->hasFeature(Ljava/lang/String;)Z
+
+    move-result v0
+
+    if-nez v0, :cond_1
+
+    :cond_0
+    :goto_0
+    return-void
+
+    :cond_1
+    invoke-virtual {p0}, Lcom/android/incallui/agif/AgifFragment;->hideBubbleTip()V
+
+    invoke-virtual {p0}, Lcom/android/incallui/agif/AgifFragment;->getContext()Landroid/content/Context;
+
+    move-result-object v1
+
+    if-eqz v1, :cond_0
+
+    invoke-static {v1}, Landroid/view/LayoutInflater;->from(Landroid/content/Context;)Landroid/view/LayoutInflater;
+
+    move-result-object v0
+
+    const v2, 0x7f040021
+
+    const/4 v3, 0x0
+
+    invoke-virtual {v0, v2, v3}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;)Landroid/view/View;
+
+    move-result-object v0
+
+    iput-object v0, p0, Lcom/android/incallui/agif/AgifFragment;->mBubbleTipView:Landroid/view/View;
+
+    iget-object v0, p0, Lcom/android/incallui/agif/AgifFragment;->mBubbleTipView:Landroid/view/View;
+
+    const v2, 0x7f100092
+
+    invoke-virtual {v0, v2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
+
+    move-result-object v0
+
+    check-cast v0, Landroid/widget/TextView;
+
+    iput-object v0, p0, Lcom/android/incallui/agif/AgifFragment;->mBubbleTipTextView:Landroid/widget/TextView;
+
+    iget-object v0, p0, Lcom/android/incallui/agif/AgifFragment;->mBubbleTipTextView:Landroid/widget/TextView;
+
+    invoke-virtual {v1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
+
+    move-result-object v2
+
+    const v3, 0x7f0a02ba
+
+    invoke-virtual {v2, v3}, Landroid/content/res/Resources;->getDimension(I)F
+
+    move-result v2
+
+    invoke-static {v1}, Lcom/android/incallui/util/GraphicResourceUtils;->getDensity(Landroid/content/Context;)F
+
+    move-result v3
+
+    div-float/2addr v2, v3
+
+    invoke-static {v1}, Lcom/android/incallui/util/GraphicResourceUtils;->setTextSizeUntilLargeSize(Landroid/content/Context;)F
+
+    move-result v1
+
+    mul-float/2addr v1, v2
+
+    invoke-virtual {v0, v5, v1}, Landroid/widget/TextView;->setTextSize(IF)V
+
+    iget-object v0, p0, Lcom/android/incallui/agif/AgifFragment;->mBubbleTipTextView:Landroid/widget/TextView;
+
+    invoke-virtual {v0}, Landroid/widget/TextView;->getViewTreeObserver()Landroid/view/ViewTreeObserver;
+
+    move-result-object v0
+
+    new-instance v1, Lcom/android/incallui/agif/AgifFragment$7;
+
+    invoke-direct {v1, p0}, Lcom/android/incallui/agif/AgifFragment$7;-><init>(Lcom/android/incallui/agif/AgifFragment;)V
+
+    invoke-virtual {v0, v1}, Landroid/view/ViewTreeObserver;->addOnGlobalLayoutListener(Landroid/view/ViewTreeObserver$OnGlobalLayoutListener;)V
+
+    const/4 v0, 0x2
+
+    new-array v0, v0, [I
+
+    fill-array-data v0, :array_0
+
+    iget-object v1, p0, Lcom/android/incallui/agif/AgifFragment;->mAgifSlidingTrayIcons:Lcom/android/incallui/agif/AgifSlidingTrayIcons;
+
+    invoke-virtual {v1, v6}, Lcom/android/incallui/agif/AgifSlidingTrayIcons;->getChildImageView(I)Landroid/view/View;
+
+    move-result-object v1
+
+    invoke-virtual {v1, v0}, Landroid/view/View;->getLocationOnScreen([I)V
+
+    new-instance v1, Landroid/widget/PopupWindow;
+
+    iget-object v2, p0, Lcom/android/incallui/agif/AgifFragment;->mBubbleTipView:Landroid/view/View;
+
+    const/4 v3, -0x1
+
+    const/4 v4, -0x2
+
+    invoke-direct {v1, v2, v3, v4}, Landroid/widget/PopupWindow;-><init>(Landroid/view/View;II)V
+
+    iput-object v1, p0, Lcom/android/incallui/agif/AgifFragment;->mBubbleTip:Landroid/widget/PopupWindow;
+
+    iget-object v1, p0, Lcom/android/incallui/agif/AgifFragment;->mBubbleTip:Landroid/widget/PopupWindow;
+
+    invoke-virtual {v1, v5}, Landroid/widget/PopupWindow;->setTouchable(Z)V
+
+    iget-object v1, p0, Lcom/android/incallui/agif/AgifFragment;->mBubbleTip:Landroid/widget/PopupWindow;
+
+    invoke-virtual {v1, v5}, Landroid/widget/PopupWindow;->setOutsideTouchable(Z)V
+
+    iget-object v1, p0, Lcom/android/incallui/agif/AgifFragment;->mBubbleTip:Landroid/widget/PopupWindow;
+
+    iget-object v2, p0, Lcom/android/incallui/agif/AgifFragment;->mAgifSlidingTabLayout:Lcom/android/incallui/agif/AgifSlidingTabLayout;
+
+    const v3, 0x800033
+
+    aget v4, v0, v6
+
+    aget v0, v0, v5
+
+    invoke-virtual {v1, v2, v3, v4, v0}, Landroid/widget/PopupWindow;->showAtLocation(Landroid/view/View;III)V
+
+    goto :goto_0
+
+    :array_0
+    .array-data 4
+        0x0
+        0x0
+    .end array-data
 .end method
 
 .method public showRecommendPage(Z)V
@@ -3534,7 +3465,7 @@
 
     if-eqz p1, :cond_8
 
-    const v0, 0x7f0900c2
+    const v0, 0x7f0900c3
 
     :goto_1
     iget-object v3, p0, Lcom/android/incallui/agif/AgifFragment;->mAgifListText:Landroid/widget/TextView;
@@ -3644,7 +3575,7 @@
     goto/16 :goto_0
 
     :cond_8
-    const v0, 0x7f0900c1
+    const v0, 0x7f0900c2
 
     goto :goto_1
 
@@ -3676,7 +3607,9 @@
 .end method
 
 .method public startOutgoingCallAnimation()V
-    .locals 4
+    .locals 5
+
+    const/16 v4, 0xca
 
     const-string v0, "AgifFragment"
 
@@ -3686,27 +3619,12 @@
 
     iget-object v0, p0, Lcom/android/incallui/agif/AgifFragment;->mAgifSlidingTrayIcons:Lcom/android/incallui/agif/AgifSlidingTrayIcons;
 
-    if-eqz v0, :cond_1
+    if-eqz v0, :cond_0
 
     iget v0, p0, Lcom/android/incallui/agif/AgifFragment;->mAgifListPage:I
 
-    if-lez v0, :cond_1
+    if-lez v0, :cond_0
 
-    iget-object v0, p0, Lcom/android/incallui/agif/AgifFragment;->mButtonContainer:Landroid/widget/HorizontalScrollView;
-
-    if-eqz v0, :cond_0
-
-    iget-object v0, p0, Lcom/android/incallui/agif/AgifFragment;->mHandler:Landroid/os/Handler;
-
-    new-instance v1, Lcom/android/incallui/agif/AgifFragment$4;
-
-    invoke-direct {v1, p0}, Lcom/android/incallui/agif/AgifFragment$4;-><init>(Lcom/android/incallui/agif/AgifFragment;)V
-
-    const-wide/16 v2, 0x64
-
-    invoke-virtual {v0, v1, v2, v3}, Landroid/os/Handler;->postDelayed(Ljava/lang/Runnable;J)Z
-
-    :cond_0
     iget-object v0, p0, Lcom/android/incallui/agif/AgifFragment;->mAgifSlidingTrayIcons:Lcom/android/incallui/agif/AgifSlidingTrayIcons;
 
     invoke-virtual {v0}, Lcom/android/incallui/agif/AgifSlidingTrayIcons;->startOutgoingCallAnimation()V
@@ -3721,7 +3639,41 @@
 
     invoke-virtual {v0, v1}, Lcom/android/incallui/AgifPresenter;->setNeedToOutgoingAnim(Z)V
 
-    :cond_1
+    const-string v0, "agif_induce_service"
+
+    invoke-static {v0}, Lcom/android/incallui/InCallUIFeature;->hasFeature(Ljava/lang/String;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    invoke-static {}, Lcom/android/incallui/agif/AgifCallServiceUtils;->needToShowOutgoingAgifCallBubbleTip()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    invoke-virtual {p0}, Lcom/android/incallui/agif/AgifFragment;->isShowAgifContainer()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    iget-object v0, p0, Lcom/android/incallui/agif/AgifFragment;->mHandler:Landroid/os/Handler;
+
+    invoke-virtual {v0, v4}, Landroid/os/Handler;->hasMessages(I)Z
+
+    move-result v0
+
+    if-nez v0, :cond_0
+
+    iget-object v0, p0, Lcom/android/incallui/agif/AgifFragment;->mHandler:Landroid/os/Handler;
+
+    const-wide/16 v2, 0x226
+
+    invoke-virtual {v0, v4, v2, v3}, Landroid/os/Handler;->sendEmptyMessageDelayed(IJ)Z
+
+    :cond_0
     return-void
 .end method
 
@@ -3810,7 +3762,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f0900bd
+    const v2, 0x7f0900be
 
     const/4 v3, 0x1
 
@@ -3892,7 +3844,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f0a02e2
+    const v1, 0x7f0a02ce
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDimension(I)F
 

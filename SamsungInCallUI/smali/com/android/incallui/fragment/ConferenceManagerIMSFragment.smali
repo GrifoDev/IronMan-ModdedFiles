@@ -3,7 +3,6 @@
 
 # interfaces
 .implements Lcom/android/incallui/InCallPresenter$MobileKeyboardListener;
-.implements Lcom/android/incallui/InCallPresenter$OnehandModeListener;
 .implements Lcom/android/incallui/accessory/AccessoryEventHandler$AccessoryEventListener;
 
 
@@ -96,7 +95,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f0e0035
+    const v2, 0x7f0f0034
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getInteger(I)I
 
@@ -334,7 +333,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f0e0035
+    const v2, 0x7f0f0034
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getInteger(I)I
 
@@ -497,7 +496,7 @@
 
     invoke-static {p0, v0}, Lcom/android/incallui/Log;->d(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const v0, 0x7f0400c7
+    const v0, 0x7f0400ca
 
     const/4 v1, 0x0
 
@@ -521,7 +520,7 @@
 
     if-eqz v1, :cond_0
 
-    const v0, 0x7f100101
+    const v0, 0x7f100108
 
     invoke-virtual {v1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -531,7 +530,7 @@
 
     iput-object v0, p0, Lcom/android/incallui/fragment/ConferenceManagerIMSFragment;->mConferenceParticipantList:Landroid/widget/ListView;
 
-    const v0, 0x7f100100
+    const v0, 0x7f100107
 
     invoke-virtual {v1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -542,7 +541,7 @@
     iput-object v0, p0, Lcom/android/incallui/fragment/ConferenceManagerIMSFragment;->mConferencePanel:Landroid/widget/FrameLayout;
 
     :cond_0
-    const-string v0, "support_onehand_operation"
+    const-string v0, "support_mobile_keyboard"
 
     invoke-static {v0}, Lcom/android/incallui/InCallUIFeature;->hasFeature(Ljava/lang/String;)Z
 
@@ -554,24 +553,9 @@
 
     move-result-object v0
 
-    invoke-virtual {v0, p0}, Lcom/android/incallui/InCallPresenter;->addOnehandModeListener(Lcom/android/incallui/InCallPresenter$OnehandModeListener;)V
-
-    :cond_1
-    const-string v0, "support_mobile_keyboard"
-
-    invoke-static {v0}, Lcom/android/incallui/InCallUIFeature;->hasFeature(Ljava/lang/String;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_2
-
-    invoke-static {}, Lcom/android/incallui/InCallPresenter;->getInstance()Lcom/android/incallui/InCallPresenter;
-
-    move-result-object v0
-
     invoke-virtual {v0, p0}, Lcom/android/incallui/InCallPresenter;->addMobileKeyboardListener(Lcom/android/incallui/InCallPresenter$MobileKeyboardListener;)V
 
-    :cond_2
+    :cond_1
     invoke-static {}, Lcom/android/incallui/accessory/AccessoryEventHandler;->getInstance()Lcom/android/incallui/accessory/AccessoryEventHandler;
 
     move-result-object v0
@@ -593,7 +577,7 @@
     invoke-virtual {v0}, Lcom/android/incallui/ConferenceParticipantListAdapter;->stopCallTimer()V
 
     :cond_0
-    const-string v0, "support_onehand_operation"
+    const-string v0, "support_mobile_keyboard"
 
     invoke-static {v0}, Lcom/android/incallui/InCallUIFeature;->hasFeature(Ljava/lang/String;)Z
 
@@ -605,24 +589,9 @@
 
     move-result-object v0
 
-    invoke-virtual {v0, p0}, Lcom/android/incallui/InCallPresenter;->removeOnehandModeListener(Lcom/android/incallui/InCallPresenter$OnehandModeListener;)V
-
-    :cond_1
-    const-string v0, "support_mobile_keyboard"
-
-    invoke-static {v0}, Lcom/android/incallui/InCallUIFeature;->hasFeature(Ljava/lang/String;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_2
-
-    invoke-static {}, Lcom/android/incallui/InCallPresenter;->getInstance()Lcom/android/incallui/InCallPresenter;
-
-    move-result-object v0
-
     invoke-virtual {v0, p0}, Lcom/android/incallui/InCallPresenter;->removeMobileKeyboardListener(Lcom/android/incallui/InCallPresenter$MobileKeyboardListener;)V
 
-    :cond_2
+    :cond_1
     invoke-static {}, Lcom/android/incallui/accessory/AccessoryEventHandler;->getInstance()Lcom/android/incallui/accessory/AccessoryEventHandler;
 
     move-result-object v0
@@ -661,36 +630,6 @@
 
     :cond_0
     return-void
-.end method
-
-.method public onOnehandModeChanged()V
-    .locals 1
-
-    const-string v0, "onOnehandModeChanged"
-
-    invoke-static {p0, v0}, Lcom/android/incallui/Log;->d(Ljava/lang/Object;Ljava/lang/String;)V
-
-    invoke-virtual {p0}, Lcom/android/incallui/fragment/ConferenceManagerIMSFragment;->getView()Landroid/view/View;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Landroid/view/View;->getVisibility()I
-
-    move-result v0
-
-    if-nez v0, :cond_0
-
-    const/4 v0, 0x1
-
-    :goto_0
-    invoke-virtual {p0, v0}, Lcom/android/incallui/fragment/ConferenceManagerIMSFragment;->setVisible(Z)V
-
-    return-void
-
-    :cond_0
-    const/4 v0, 0x0
-
-    goto :goto_0
 .end method
 
 .method public onSideSyncCallForwardStateChanged(Z)V

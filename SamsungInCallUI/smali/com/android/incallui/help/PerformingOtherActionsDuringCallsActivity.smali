@@ -108,7 +108,7 @@
     invoke-virtual {v0, v4}, Landroid/app/ActionBar;->setDisplayShowHomeEnabled(Z)V
 
     :cond_0
-    const v0, 0x7f040088
+    const v0, 0x7f04008b
 
     invoke-virtual {p0, v0}, Lcom/android/incallui/help/PerformingOtherActionsDuringCallsActivity;->setContentView(I)V
 
@@ -120,7 +120,7 @@
 
     if-eqz v0, :cond_1
 
-    const v0, 0x7f1001d9
+    const v0, 0x7f1001e0
 
     invoke-virtual {p0, v0}, Lcom/android/incallui/help/PerformingOtherActionsDuringCallsActivity;->findViewById(I)Landroid/view/View;
 
@@ -128,11 +128,11 @@
 
     check-cast v0, Landroid/widget/ImageView;
 
-    const v1, 0x7f0204c2
+    const v1, 0x7f0204d2
 
     invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setImageResource(I)V
 
-    const v0, 0x7f0900f9
+    const v0, 0x7f0900fc
 
     invoke-virtual {p0, v0}, Lcom/android/incallui/help/PerformingOtherActionsDuringCallsActivity;->getString(I)Ljava/lang/String;
 
@@ -140,7 +140,7 @@
 
     new-array v1, v3, [Ljava/lang/Object;
 
-    const v2, 0x7f0902db
+    const v2, 0x7f0902de
 
     invoke-virtual {p0, v2}, Lcom/android/incallui/help/PerformingOtherActionsDuringCallsActivity;->getString(I)Ljava/lang/String;
 
@@ -156,7 +156,7 @@
 
     move-result-object v1
 
-    const v0, 0x7f1001dc
+    const v0, 0x7f1001e3
 
     invoke-virtual {p0, v0}, Lcom/android/incallui/help/PerformingOtherActionsDuringCallsActivity;->findViewById(I)Landroid/view/View;
 
@@ -166,7 +166,7 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    const v0, 0x7f0900f7
+    const v0, 0x7f0900fa
 
     invoke-virtual {p0, v0}, Lcom/android/incallui/help/PerformingOtherActionsDuringCallsActivity;->getString(I)Ljava/lang/String;
 
@@ -178,7 +178,7 @@
 
     invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
 
-    const v3, 0x7f0902ff
+    const v3, 0x7f090302
 
     invoke-virtual {p0, v3}, Lcom/android/incallui/help/PerformingOtherActionsDuringCallsActivity;->getString(I)Ljava/lang/String;
 
@@ -198,7 +198,7 @@
 
     move-result-object v2
 
-    const v3, 0x7f0902e2
+    const v3, 0x7f0902e5
 
     invoke-virtual {p0, v3}, Lcom/android/incallui/help/PerformingOtherActionsDuringCallsActivity;->getString(I)Ljava/lang/String;
 
@@ -218,7 +218,7 @@
 
     move-result-object v1
 
-    const v0, 0x7f1000c1
+    const v0, 0x7f1000c9
 
     invoke-virtual {p0, v0}, Lcom/android/incallui/help/PerformingOtherActionsDuringCallsActivity;->findViewById(I)Landroid/view/View;
 

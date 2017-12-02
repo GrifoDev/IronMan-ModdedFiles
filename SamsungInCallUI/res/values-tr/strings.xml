@@ -178,12 +178,13 @@
     <string name="account_phone">Cihaz</string>
     <string name="acs">Sesli arama</string>
     <string name="active_calls">Etkin arama</string>
-    <string name="add_reminder">Htrltcı ekle</string>
+    <string name="add_reminder">Hatırlatıcı ekle</string>
     <string name="agif_button_close_description">Kapat</string>
     <string name="agif_decline_message">Maalesef şu anda müsait değilim.</string>
     <string name="agif_decline_sticker_header">Etiketle reddet</string>
     <string name="agif_decline_text_header">Metinle reddet</string>
     <string name="agif_decline_toast">Etiket %s adlı kişiye gönderildi.</string>
+    <string name="agif_outgoing_bubble_tip">Nasıl hissettiğinizi göstermek için bir etiket gönderin.</string>
     <string name="agif_pickers_add_tab_description">Ekle</string>
     <string name="agif_pickers_downloaded">İndirildi</string>
     <string name="agif_pickers_item_usage_hints_description">Seçmek için çift dokunun</string>
@@ -199,10 +200,12 @@
     <string name="agif_pickers_tab_select_description">Seçildi</string>
     <string name="agif_pickers_title">Bir etiketle başla</string>
     <string name="agif_pickers_title_top_stickers">En iyi etiketler</string>
+    <string name="agif_random_send_message">Bu etiketi göndermek için buraya dokunun.</string>
     <string name="agif_read_permission_description">Telefonun AGIF içeriğini okumasına izin verir.</string>
     <string name="agif_read_permission_label">AGIF içeriğini oku</string>
     <string name="agif_receive_no_id">Etiket gösterilemiyor. Aramadan sonra %s uygulamasını güncelleyin.</string>
     <string name="agif_receive_no_id_upsupport_update">Etiket gösterilemiyor. Sonraki sistem güncellemesinden sonra daha fazla etiket sunulacak.</string>
+    <string name="agif_receive_toast">%s adlı arayandan gelen etiket.</string>
     <string name="agif_sent_fail_message">Animasyonlu GIF gönderilemiyor. Daha sonra tekrar deneyin.</string>
     <string name="agif_sent_toast">Etiket gönderildi.</string>
     <string name="agif_write_permission_description">Telefonun AGIF içeriğini değiştirmesine izin verir.</string>
@@ -871,6 +874,7 @@ Kamera"</string>
     <string name="sticker_delete_stickers">%d etiket silinsin mi?</string>
     <string name="sticker_delete_this_sticker">Bu etiket silinsin mi?</string>
     <string name="sticker_setting_edit_title">Etiket seç</string>
+    <string name="sticker_setting_edit_title_preload">Etiketleri yeniden sırala</string>
     <string name="sticker_setting_main_title">Etiketlerim</string>
     <string name="sticker_setting_menu_delete">Sil</string>
     <string name="sticker_setting_menu_edit">Düzenle</string>
@@ -883,6 +887,7 @@ Kamera"</string>
     <string name="swipe_right_to_answer_call_with_video">Aramayı videoyla yanıtlamak için sağa kaydırın.</string>
     <string name="swipe_right_to_answer_call_without_video">Aramayı videosuz yanıtlamak için sağa kaydırın.</string>
     <string name="switch_rejected_by_mt">Görüntülü görüşmeye geçme talebi reddedildi.</string>
+    <string name="switch_rejected_by_mt_att">Video unavailable for this call. Call connected as a voice call.</string>
     <string name="switch_to_video_call_failed">Görüntülü aramaya geçme talebi başarısız.</string>
     <string name="switch_to_video_call_failed_tmo">Görüntülü aramaya geçme isteği reddedildi.</string>
     <string name="switch_to_voice_call_failed">Sesli aramaya geçme talebi başarısız.</string>

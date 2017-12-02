@@ -518,115 +518,112 @@
 .end method
 
 .method public static isTalkBackEnabled(Landroid/content/Context;)Z
-    .locals 6
-
-    const/4 v1, 0x0
+    .locals 5
 
     const-string v0, "com.google.android.marvin.talkback"
 
     const-string v0, "com.samsung.android.app.talkback"
 
-    new-instance v2, Landroid/text/TextUtils$SimpleStringSplitter;
+    new-instance v1, Landroid/text/TextUtils$SimpleStringSplitter;
 
     const/16 v0, 0x3a
 
-    invoke-direct {v2, v0}, Landroid/text/TextUtils$SimpleStringSplitter;-><init>(C)V
+    invoke-direct {v1, v0}, Landroid/text/TextUtils$SimpleStringSplitter;-><init>(C)V
 
     if-nez p0, :cond_0
 
-    move v0, v1
+    invoke-static {}, Lcom/android/incallui/InCallApp;->getInstance()Lcom/android/incallui/InCallApp;
 
-    :goto_0
-    return v0
+    move-result-object v0
+
+    invoke-virtual {v0}, Lcom/android/incallui/InCallApp;->getApplicationContext()Landroid/content/Context;
+
+    move-result-object p0
 
     :cond_0
-    const/4 v0, 0x0
-
-    if-eqz p0, :cond_1
-
     invoke-virtual {p0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
     move-result-object v0
 
-    const-string v3, "enabled_accessibility_services"
+    const-string v2, "enabled_accessibility_services"
 
-    invoke-static {v0, v3}, Landroid/provider/Settings$Secure;->getString(Landroid/content/ContentResolver;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {v0, v2}, Landroid/provider/Settings$Secure;->getString(Landroid/content/ContentResolver;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
 
-    :cond_1
-    if-nez v0, :cond_2
+    if-nez v0, :cond_1
 
     const-string v0, ""
 
+    :cond_1
+    invoke-virtual {v1, v0}, Landroid/text/TextUtils$SimpleStringSplitter;->setString(Ljava/lang/String;)V
+
     :cond_2
-    invoke-virtual {v2, v0}, Landroid/text/TextUtils$SimpleStringSplitter;->setString(Ljava/lang/String;)V
+    invoke-virtual {v1}, Landroid/text/TextUtils$SimpleStringSplitter;->hasNext()Z
 
-    :cond_3
-    invoke-virtual {v2}, Landroid/text/TextUtils$SimpleStringSplitter;->hasNext()Z
+    move-result v2
 
-    move-result v3
+    if-eqz v2, :cond_5
 
-    if-eqz v3, :cond_6
+    invoke-virtual {v1}, Landroid/text/TextUtils$SimpleStringSplitter;->next()Ljava/lang/String;
 
-    invoke-virtual {v2}, Landroid/text/TextUtils$SimpleStringSplitter;->next()Ljava/lang/String;
+    move-result-object v2
 
-    move-result-object v3
+    invoke-static {v2}, Landroid/content/ComponentName;->unflattenFromString(Ljava/lang/String;)Landroid/content/ComponentName;
 
-    invoke-static {v3}, Landroid/content/ComponentName;->unflattenFromString(Ljava/lang/String;)Landroid/content/ComponentName;
+    move-result-object v2
 
-    move-result-object v3
+    if-eqz v2, :cond_2
 
-    if-eqz v3, :cond_3
+    const-string v3, "com.google.android.marvin.talkback"
 
-    const-string v4, "com.google.android.marvin.talkback"
+    invoke-virtual {v2}, Landroid/content/ComponentName;->getPackageName()Ljava/lang/String;
 
-    invoke-virtual {v3}, Landroid/content/ComponentName;->getPackageName()Ljava/lang/String;
+    move-result-object v4
 
-    move-result-object v5
-
-    invoke-virtual {v4, v5}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v4
-
-    if-eqz v4, :cond_4
-
-    const-string v4, "com.google.android.marvin.talkback/com.google.android.marvin.talkback.TalkBackService"
-
-    invoke-virtual {v0, v4}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
-
-    move-result v4
-
-    if-nez v4, :cond_5
-
-    :cond_4
-    const-string v4, "com.samsung.android.app.talkback"
-
-    invoke-virtual {v3}, Landroid/content/ComponentName;->getPackageName()Ljava/lang/String;
-
-    move-result-object v3
-
-    invoke-virtual {v4, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v3, v4}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v3
 
     if-eqz v3, :cond_3
 
-    const-string v3, "com.samsung.android.app.talkback/com.samsung.android.app.talkback.TalkBackService"
+    const-string v3, "com.google.android.marvin.talkback/com.google.android.marvin.talkback.TalkBackService"
 
     invoke-virtual {v0, v3}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
 
     move-result v3
 
-    if-eqz v3, :cond_3
+    if-nez v3, :cond_4
 
-    :cond_5
+    :cond_3
+    const-string v3, "com.samsung.android.app.talkback"
+
+    invoke-virtual {v2}, Landroid/content/ComponentName;->getPackageName()Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-virtual {v3, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v2
+
+    if-eqz v2, :cond_2
+
+    const-string v2, "com.samsung.android.app.talkback/com.samsung.android.app.talkback.TalkBackService"
+
+    invoke-virtual {v0, v2}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
+
+    move-result v2
+
+    if-eqz v2, :cond_2
+
+    :cond_4
     const/4 v0, 0x1
 
-    goto :goto_0
+    :goto_0
+    return v0
 
-    :cond_6
-    move v0, v1
+    :cond_5
+    const/4 v0, 0x0
 
     goto :goto_0
 .end method

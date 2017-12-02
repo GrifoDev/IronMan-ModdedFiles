@@ -36,9 +36,9 @@
 .method public onClick(Landroid/content/DialogInterface;I)V
     .locals 6
 
-    const v5, 0x7f09026b
+    const v5, 0x7f09026e
 
-    const v4, 0x7f090243
+    const v4, 0x7f090246
 
     const/4 v3, 0x1
 
@@ -54,7 +54,7 @@
 
     iget-object v1, v1, Lcom/android/incallui/InVideoCallMenu;->mContext:Landroid/content/Context;
 
-    const v2, 0x7f090284
+    const v2, 0x7f090287
 
     invoke-virtual {v1, v2}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -140,7 +140,7 @@
 
     iget-object v1, v1, Lcom/android/incallui/InVideoCallMenu;->mContext:Landroid/content/Context;
 
-    const v2, 0x7f090323
+    const v2, 0x7f090326
 
     invoke-virtual {v1, v2}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -201,7 +201,7 @@
 
     iget-object v1, v1, Lcom/android/incallui/InVideoCallMenu;->mContext:Landroid/content/Context;
 
-    const v2, 0x7f09026c
+    const v2, 0x7f09026f
 
     invoke-virtual {v1, v2}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -249,7 +249,7 @@
 
     iget-object v1, v1, Lcom/android/incallui/InVideoCallMenu;->mContext:Landroid/content/Context;
 
-    const v2, 0x7f09026d
+    const v2, 0x7f090270
 
     invoke-virtual {v1, v2}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 

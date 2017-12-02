@@ -121,7 +121,7 @@
 
     new-instance v3, Ljava/lang/StringBuilder;
 
-    const-string v4, "\u5220\u9664\u65e7\u7684\u5f52\u5c5e\u5730\u6570\u636e\u72b6\u6001:"
+    const-string/jumbo v4, "\u5220\u9664\u65e7\u7684\u5f52\u5c5e\u5730\u6570\u636e\u72b6\u6001:"
 
     invoke-direct {v3, v4}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
@@ -152,7 +152,7 @@
 
     new-instance v2, Ljava/lang/StringBuilder;
 
-    const-string v3, "\u91cd\u547d\u540d\u65b0\u7684\u5f52\u5c5e\u5730\u6570\u636e\u72b6\u6001:"
+    const-string/jumbo v3, "\u91cd\u547d\u540d\u65b0\u7684\u5f52\u5c5e\u5730\u6570\u636e\u72b6\u6001:"
 
     invoke-direct {v2, v3}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
@@ -174,7 +174,7 @@
 
     move-result-object v1
 
-    const-string v2, "\u65e7\u7684\u5f52\u5c5e\u5730\u6570\u636e\u4e0d\u5b58\u5728"
+    const-string/jumbo v2, "\u65e7\u7684\u5f52\u5c5e\u5730\u6570\u636e\u4e0d\u5b58\u5728"
 
     invoke-static {v1, v2}, Lcom/cmdm/control/util/PrintLog;->i(Ljava/lang/String;Ljava/lang/String;)V
     :try_end_0

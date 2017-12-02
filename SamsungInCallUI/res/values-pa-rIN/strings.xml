@@ -126,6 +126,7 @@
     <string name="agif_decline_sticker_header">ਸਟਿੱਕਰ ਦੇ ਨਾਲ ਅਸਵੀਕਾਰ ਕਰੋ</string>
     <string name="agif_decline_text_header">ਟੈਕਸਟ ਦੇ ਨਾਲ ਅਸਵੀਕਾਰ ਕਰੋ</string>
     <string name="agif_decline_toast">ਸਟਿੱਕਰ %s ਨੂੰ ਭੇਜਿਆ ਗਿਆ।</string>
+    <string name="agif_outgoing_bubble_tip">ਤੁਸੀਂ ਕਿਵੇਂ ਦਾ ਮਹਿਸੂਸ ਕਰ ਰਹੇ ਹੋ ਇਹ ਦਿਖਾਉਣ ਲਈ ਸਟਿੱਕਰ ਭੇਜੋ।</string>
     <string name="agif_pickers_add_tab_description">ਜੋੜੋ</string>
     <string name="agif_pickers_downloaded">ਡਾਉਨਲੋਡ ਕੀਤਾ ਗਿਆ</string>
     <string name="agif_pickers_item_usage_hints_description">ਚੁਣਨ ਲਈ ਦੋ ਵਾਰ ਟੈਪ ਕਰੋ</string>
@@ -141,10 +142,12 @@
     <string name="agif_pickers_tab_select_description">ਚੁਣਿਆ</string>
     <string name="agif_pickers_title">ਸਟਿੱਕਰ ਨਾਲ ਸ਼ੁਰੂਆਤ ਕਰੋ</string>
     <string name="agif_pickers_title_top_stickers">ਪ੍ਰਮੁੱਖ ਸਟਿੱਕਰਸ</string>
+    <string name="agif_random_send_message">ਇਸ ਸਟਿੱਕਰ ਨੂੰ ਭੇਜਣ ਲਈ ਇੱਥੇ ਟੈਪ ਕਰੋ।</string>
     <string name="agif_read_permission_description">ਫ਼ੋਨ ਨੂੰ AGIF ਸਮੱਗਰੀ ਪੜ੍ਹਨ ਦੀ ਆਗਿਆ ਦਿਉ।</string>
     <string name="agif_read_permission_label">AGIF ਸਮੱਗਰੀ ਪੜ੍ਹੋ</string>
     <string name="agif_receive_no_id">ਸਟਿੱਕਰ ਦਿਖਾਇਆ ਨਹੀਂ ਜਾ ਸਕਦਾ। ਕਾੱਲ ਤੋਂ ਬਾਅਦ %s ਨੂੰ ਅਪਡੇਟ ਕਰੋ।</string>
     <string name="agif_receive_no_id_upsupport_update">ਸਟਿੱਕਰ ਦਿਖਾਇਆ ਨਹੀਂ ਜਾ ਸਕਦਾ। ਅਗਲੀ ਸਿਸਟਮ ਅਪਡੇਟ ਤੋਂ ਬਾਅਦ ਹੋਰ ਸਟਿੱਕਰਸ ਉਪਲਬਧ ਹੋਣਗੇ।</string>
+    <string name="agif_receive_toast">%s ਵੱਲੋਂ ਸਟਿੱਕਰ।</string>
     <string name="agif_sent_fail_message">ਐਨੀਮੇਟਿਡ GIF ਭੇਜਿਆ ਨਹੀਂ ਜਾ ਸਕਦਾ। ਬਾਅਦ ਵਿੱਚ ਦੁਬਾਰਾ ਕੋਸ਼ਿਸ਼ ਕਰੋ।</string>
     <string name="agif_sent_toast">ਸਟਿੱਕਰ ਭੇਜਿਆ ਗਿਆ।</string>
     <string name="agif_write_permission_description">ਫ਼ੋਨ ਨੂੰ AGIF ਸਮੱਗਰੀ ਸੰਸ਼ੋਧਿਤ ਕਰਨ ਦੀ ਆਗਿਆ ਦਿਉ।</string>
@@ -813,6 +816,7 @@ IVR ਕਾਲ ਸਕ੍ਰੀਨ ਮੇਨੂ ਇੱਕ ਤੀਜੀ ਧਿਰ �
     <string name="sticker_delete_stickers">ਕੀ %d ਸਟਿੱਕਰਸ ਮਿਟਾਉਣੇ ਹਨ?</string>
     <string name="sticker_delete_this_sticker">ਕੀ ਇਸ ਸਟਿੱਕਰ ਨੂੰ ਮਿਟਾਉਣਾ ਹੈ?</string>
     <string name="sticker_setting_edit_title">ਸਟਿੱਕਰਸ ਚੁਣੋ</string>
+    <string name="sticker_setting_edit_title_preload">ਸਟਿੱਕਰਸ ਨੂੰ ਪੁਨਰ ਕ੍ਰਮ ਦਿਉ</string>
     <string name="sticker_setting_main_title">ਮੇਰੇ ਸਟਿੱਕਰਸ</string>
     <string name="sticker_setting_menu_delete">ਮਿਟਾਓ</string>
     <string name="sticker_setting_menu_edit">ਸੰਪਾਦਿਤ ਕਰੋ</string>
@@ -825,6 +829,7 @@ IVR ਕਾਲ ਸਕ੍ਰੀਨ ਮੇਨੂ ਇੱਕ ਤੀਜੀ ਧਿਰ �
     <string name="swipe_right_to_answer_call_with_video">ਵੀਡਿਓ ਦੇ ਨਾਲ ਕਾੱਲ ਦਾ ਉੱਤਰ ਦੇਣ ਲਈ ਸੱਜੇ ਪਾਸੇ ਸਵਾਈਪ ਕਰੋ।</string>
     <string name="swipe_right_to_answer_call_without_video">ਵੀਡਿਓ ਤੋਂ ਬਿਨਾਂ ਕਾੱਲ ਦਾ ਉੱਤਰ ਦੇਣ ਲਈ ਸੱਜੇ ਪਾਸੇ ਸਵਾਈਪ ਕਰੋ।</string>
     <string name="switch_rejected_by_mt">ਵੀਡਿਓ ਕਾੱਲ ਤੇ ਸਵਿੱਚ ਕਰਨ ਦੀ ਬੇਨਤੀ ਰੱਦ ਕਰ ਦਿੱਤੀ ਗਈ।</string>
+    <string name="switch_rejected_by_mt_att">Video unavailable for this call. Call connected as a voice call.</string>
     <string name="switch_to_video_call_failed">ਵੀਡਿਓ ਕਾੱਲ ਤੇ ਸਵਿੱਚ ਕਰਨ ਦੀ ਬੇਨਤੀ ਅਸਫਲ ਹੋ ਗਈ ਹੈ।</string>
     <string name="switch_to_video_call_failed_tmo">ਵੀਡਿਓ ਕਾੱਲ ਤੇ ਸਵਿੱਚ ਕਰਨ ਦੀ ਬੇਨਤੀ ਨੂੰ ਅਸਵੀਕ੍ਰਿਤ ਕੀਤਾ ਗਿਆ ਸੀ।</string>
     <string name="switch_to_voice_call_failed">ਵਾੱਇਸ ਕਾੱਲ ਤੇ ਸਵਿੱਚ ਕਰਨ ਦੀ ਬੇਨਤੀ ਅਸਫਲ ਹੋ ਗਈ ਹੈ।</string>

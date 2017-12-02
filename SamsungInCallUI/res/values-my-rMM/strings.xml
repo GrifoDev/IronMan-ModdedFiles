@@ -126,6 +126,7 @@
     <string name="agif_decline_sticker_header">စတစ်ကာသုံးပြီး ပယ်ချပါ</string>
     <string name="agif_decline_text_header">စာပို့ပြီး ပယ်ချပါ</string>
     <string name="agif_decline_toast">စတစ်ကာကို %s သို့ ပို့လိုက်သည်။</string>
+    <string name="agif_outgoing_bubble_tip">သင့်ခံစားချက်ကိုပြရန် စတစ်ကာ တစ်ခု ပေးပို့ပါ။</string>
     <string name="agif_pickers_add_tab_description">ထည့်ပါ</string>
     <string name="agif_pickers_downloaded">ဒေါင်းလုတ်လုပ်ထားသည်</string>
     <string name="agif_pickers_item_usage_hints_description">ရွေးရန် နှစ်ချက်နှိပ်ပါ</string>
@@ -141,10 +142,12 @@
     <string name="agif_pickers_tab_select_description">ရွေးထားသည်</string>
     <string name="agif_pickers_title">စတစ်ကာဖြင့် စတင်ပါ</string>
     <string name="agif_pickers_title_top_stickers">ထိပ်တန်း စတစ်ကာများ</string>
+    <string name="agif_random_send_message">ဤစတစ်ကာကို ပေးပို့ရန် ဤနေရာကို နှိပ်ပါ။</string>
     <string name="agif_read_permission_description">ဖုန်းအား AGIF အကြောင်းအရာကို ဖတ်ရှုခွင့်ပြုသည်။</string>
     <string name="agif_read_permission_label">AGIF အကြောင်းအရာကို ဖတ်ပါ</string>
     <string name="agif_receive_no_id">စတစ်ကာကို ပြသ၍မရနိုင်ပါ။ ဖုန်းခေါ်ပြီးချိန်တွင် %s ကို အပ်ဒိတ်လုပ်ပါ။</string>
     <string name="agif_receive_no_id_upsupport_update">စတစ်ကာကို ပြသ၍မရနိုင်ပါ။ နောက်ထပ် စနစ်အပ်ဒိတ်လုပ်ပြီးနောက်တွင် စတစ်ကာများ ပိုမိုရရှိနိုင်ပါမည်။</string>
+    <string name="agif_receive_toast">%s မှ စတစ်ကာ။</string>
     <string name="agif_sent_fail_message">လှုပ်ရှား GIF ကို ပေးပို့၍ မရနိုင်ပါ။ နောက်မှ ထပ်မံကြိုးစားပါ။</string>
     <string name="agif_sent_toast">စတစ်ကာ ပို့ပြီး။</string>
     <string name="agif_write_permission_description">ဖုန်းအား AGIF အကြောင်းအရာကို ပြင်ဆင်မွမ်းမံခွင့်ပြုသည်။</string>
@@ -813,6 +816,7 @@ IVR ဖုန်းခေါ်ဆို ဖန်သားပြင် မီ�
     <string name="sticker_delete_stickers">စတစ်ကာ %d ခုကို ဖျက်ပစ်မလား?</string>
     <string name="sticker_delete_this_sticker">ဤစတစ်ကာကို ဖျက်ပစ်မလား?</string>
     <string name="sticker_setting_edit_title">စတစ်ကာများ ရွေးချယ်ပါ</string>
+    <string name="sticker_setting_edit_title_preload">စတစ်ကာများကို ပြန်စီပါ</string>
     <string name="sticker_setting_main_title">ကျွန်ုပ်၏ စတစ်ကာများ</string>
     <string name="sticker_setting_menu_delete">ဖျက်ပစ်ပါ</string>
     <string name="sticker_setting_menu_edit">တည်းဖြတ်</string>
@@ -825,6 +829,7 @@ IVR ဖုန်းခေါ်ဆို ဖန်သားပြင် မီ�
     <string name="swipe_right_to_answer_call_with_video">ခေါ်ဆိုမှုကို ဗီဒီယိုဖြင့် ဖြေကြားရန် ညာဘက်သို့ ပွတ်ဆွဲပါ။</string>
     <string name="swipe_right_to_answer_call_without_video">ခေါ်ဆိုမှုကို ဗီဒီယိုမပါဘဲဖြေကြားရန် ညာဘက်သို့ ပွတ်ဆွဲပါ။</string>
     <string name="switch_rejected_by_mt">ဗွီဒီယိုခေါ်ဆိုမှု အဖြစ်ပြောင်းလဲရန် တောင်းဆိုမှု ငြင်းပယ်သည်။</string>
+    <string name="switch_rejected_by_mt_att">Video unavailable for this call. Call connected as a voice call.</string>
     <string name="switch_to_video_call_failed">ဗီဒီယို ခေါ်ဆိုမှုသို့ ပြောင်းရန် တောင်းခံမှု မအောင်မြင်ပါ။</string>
     <string name="switch_to_video_call_failed_tmo">ဗီဒီယိုဖုန်းသို့ ကူးပြောင်းရန်အတွက် တောင်းဆိုချက်ကို ပယ်ချခဲ့သည်။</string>
     <string name="switch_to_voice_call_failed">အသံ ခေါ်ဆိုမှုသို့ ပြောင်းရန် တောင်းခံမှု မအောင်မြင်ပါ။</string>

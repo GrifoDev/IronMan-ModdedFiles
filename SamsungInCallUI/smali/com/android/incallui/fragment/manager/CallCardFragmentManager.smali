@@ -6,8 +6,6 @@
 .implements Lcom/android/incallui/InCallPresenter$InCallStateListener;
 .implements Lcom/android/incallui/InCallPresenter$IncomingCallListener;
 .implements Lcom/android/incallui/InCallPresenter$MobileKeyboardListener;
-.implements Lcom/android/incallui/InCallPresenter$OnehandAnyScreenOnListener;
-.implements Lcom/android/incallui/InCallPresenter$OnehandModeListener;
 
 
 # annotations
@@ -26,9 +24,7 @@
         "Lcom/android/incallui/InCallPresenter$ConfigurationListener;",
         "Lcom/android/incallui/InCallPresenter$InCallStateListener;",
         "Lcom/android/incallui/InCallPresenter$IncomingCallListener;",
-        "Lcom/android/incallui/InCallPresenter$MobileKeyboardListener;",
-        "Lcom/android/incallui/InCallPresenter$OnehandAnyScreenOnListener;",
-        "Lcom/android/incallui/InCallPresenter$OnehandModeListener;"
+        "Lcom/android/incallui/InCallPresenter$MobileKeyboardListener;"
     }
 .end annotation
 
@@ -88,27 +84,6 @@
     invoke-virtual {v0, p0}, Lcom/android/incallui/InCallPresenter;->addMobileKeyboardListener(Lcom/android/incallui/InCallPresenter$MobileKeyboardListener;)V
 
     :cond_0
-    const-string v0, "support_onehand_operation"
-
-    invoke-static {v0}, Lcom/android/incallui/InCallUIFeature;->hasFeature(Ljava/lang/String;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_1
-
-    invoke-static {}, Lcom/android/incallui/InCallPresenter;->getInstance()Lcom/android/incallui/InCallPresenter;
-
-    move-result-object v0
-
-    invoke-virtual {v0, p0}, Lcom/android/incallui/InCallPresenter;->addOnehandModeListener(Lcom/android/incallui/InCallPresenter$OnehandModeListener;)V
-
-    invoke-static {}, Lcom/android/incallui/InCallPresenter;->getInstance()Lcom/android/incallui/InCallPresenter;
-
-    move-result-object v0
-
-    invoke-virtual {v0, p0}, Lcom/android/incallui/InCallPresenter;->addOnehandAnyScreenOnListener(Lcom/android/incallui/InCallPresenter$OnehandAnyScreenOnListener;)V
-
-    :cond_1
     return-void
 .end method
 
@@ -729,27 +704,6 @@
     invoke-virtual {v0, p0}, Lcom/android/incallui/InCallPresenter;->removeMobileKeyboardListener(Lcom/android/incallui/InCallPresenter$MobileKeyboardListener;)V
 
     :cond_0
-    const-string v0, "support_onehand_operation"
-
-    invoke-static {v0}, Lcom/android/incallui/InCallUIFeature;->hasFeature(Ljava/lang/String;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_1
-
-    invoke-static {}, Lcom/android/incallui/InCallPresenter;->getInstance()Lcom/android/incallui/InCallPresenter;
-
-    move-result-object v0
-
-    invoke-virtual {v0, p0}, Lcom/android/incallui/InCallPresenter;->removeOnehandModeListener(Lcom/android/incallui/InCallPresenter$OnehandModeListener;)V
-
-    invoke-static {}, Lcom/android/incallui/InCallPresenter;->getInstance()Lcom/android/incallui/InCallPresenter;
-
-    move-result-object v0
-
-    invoke-virtual {v0, p0}, Lcom/android/incallui/InCallPresenter;->removeOnehandAnyScreenOnListener(Lcom/android/incallui/InCallPresenter$OnehandAnyScreenOnListener;)V
-
-    :cond_1
     return-void
 .end method
 
@@ -766,26 +720,6 @@
 .end method
 
 .method public onMobileKeyboardChanged()V
-    .locals 1
-
-    const/4 v0, 0x1
-
-    invoke-virtual {p0, v0}, Lcom/android/incallui/fragment/manager/CallCardFragmentManager;->checkAndSet(Z)Lcom/android/incallui/fragment/CallCardFragment;
-
-    return-void
-.end method
-
-.method public onOnehandAnyScreenOnChanged()V
-    .locals 1
-
-    const/4 v0, 0x1
-
-    invoke-virtual {p0, v0}, Lcom/android/incallui/fragment/manager/CallCardFragmentManager;->checkAndSet(Z)Lcom/android/incallui/fragment/CallCardFragment;
-
-    return-void
-.end method
-
-.method public onOnehandModeChanged()V
     .locals 1
 
     const/4 v0, 0x1
@@ -836,7 +770,7 @@
 .method protected setFragment(Ljava/lang/Enum;Z)V
     .locals 4
 
-    const v1, 0x7f100243
+    const v1, 0x7f10024a
 
     const/4 v0, 0x0
 

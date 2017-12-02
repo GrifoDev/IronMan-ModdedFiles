@@ -166,7 +166,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f0e0079
+    const v2, 0x7f0f0078
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getInteger(I)I
 
@@ -194,7 +194,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f10016b
+    const v1, 0x7f100172
 
     new-instance v2, Lcom/android/incallui/CircularRevealFragment;
 
@@ -226,7 +226,7 @@
 .method public onCreateView(Landroid/view/LayoutInflater;Landroid/view/ViewGroup;Landroid/os/Bundle;)Landroid/view/View;
     .locals 2
 
-    const v0, 0x7f040083
+    const v0, 0x7f040086
 
     const/4 v1, 0x0
 
@@ -301,7 +301,7 @@
 
     if-eqz p1, :cond_1
 
-    const v2, 0x7f1001d4
+    const v2, 0x7f1001db
 
     invoke-virtual {v1, v2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 

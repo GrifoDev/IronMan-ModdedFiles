@@ -17,17 +17,11 @@
 
 
 # static fields
-.field public static final ACTION_SCREEN_OFF_BY_PROXIMITY:Ljava/lang/String; = "android.intent.action.ACTION_SCREEN_OFF_BY_PROXIMITY"
-
-.field public static final ACTION_SCREEN_ON_BY_PROXIMITY:Ljava/lang/String; = "android.intent.action.ACTION_SCREEN_ON_BY_PROXIMITY"
-
 .field private static final POSITIVE_DEBOUNCE_TIME:I = 0xc8
 
 .field private static final PROXIMITY_THRESHOLD:F = 5.0f
 
 .field private static final TAG:Ljava/lang/String;
-
-.field public static mIsProximityCloseDistance:Z
 
 
 # instance fields
@@ -35,7 +29,11 @@
 
 .field private mDialpadVisible:Z
 
+.field private final mDisplayListener:Lcom/android/incallui/ProximitySensor$ProximityDisplayListener;
+
 .field private mFromRcsShare:Z
+
+.field private mIsDisplayOn:Z
 
 .field private mIsHardKeyboardOpen:Z
 
@@ -43,11 +41,13 @@
 
 .field private mIsPrevVideoCall:Z
 
+.field private mIsProximityCloseDistance:Z
+
 .field private mNeedToSetDebounceTime:Z
 
 .field private final mPowerManager:Landroid/os/PowerManager;
 
-.field mProximityListener:Landroid/hardware/SensorEventListener;
+.field private mProximityListener:Landroid/hardware/SensorEventListener;
 
 .field private mProximitySensor:Landroid/hardware/Sensor;
 
@@ -55,13 +55,9 @@
 
 .field private final mSamsungAudioManager:Landroid/media/AudioManager;
 
-.field private mScreenOffByProximity:Z
-
 .field private mSensorManager:Landroid/hardware/SensorManager;
 
 .field private mUiShowing:Z
-
-.field private mWasScreenOff:Z
 
 
 # direct methods
@@ -96,9 +92,7 @@
 
     iput-boolean v0, p0, Lcom/android/incallui/ProximitySensor;->mIsPrevVideoCall:Z
 
-    iput-boolean v0, p0, Lcom/android/incallui/ProximitySensor;->mWasScreenOff:Z
-
-    iput-boolean v0, p0, Lcom/android/incallui/ProximitySensor;->mScreenOffByProximity:Z
+    iput-boolean v0, p0, Lcom/android/incallui/ProximitySensor;->mIsDisplayOn:Z
 
     new-instance v0, Lcom/android/incallui/ProximitySensor$1;
 
@@ -181,6 +175,32 @@
 
     iput-object v0, p0, Lcom/android/incallui/ProximitySensor;->mSamsungAudioManager:Landroid/media/AudioManager;
 
+    iget-object v0, p0, Lcom/android/incallui/ProximitySensor;->mPowerManager:Landroid/os/PowerManager;
+
+    invoke-virtual {v0}, Landroid/os/PowerManager;->isInteractive()Z
+
+    move-result v0
+
+    iput-boolean v0, p0, Lcom/android/incallui/ProximitySensor;->mIsDisplayOn:Z
+
+    new-instance v1, Lcom/android/incallui/ProximitySensor$ProximityDisplayListener;
+
+    const-string v0, "display"
+
+    invoke-virtual {p1, v0}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Landroid/hardware/display/DisplayManager;
+
+    invoke-direct {v1, p0, v0}, Lcom/android/incallui/ProximitySensor$ProximityDisplayListener;-><init>(Lcom/android/incallui/ProximitySensor;Landroid/hardware/display/DisplayManager;)V
+
+    iput-object v1, p0, Lcom/android/incallui/ProximitySensor;->mDisplayListener:Lcom/android/incallui/ProximitySensor$ProximityDisplayListener;
+
+    iget-object v0, p0, Lcom/android/incallui/ProximitySensor;->mDisplayListener:Lcom/android/incallui/ProximitySensor$ProximityDisplayListener;
+
+    invoke-virtual {v0}, Lcom/android/incallui/ProximitySensor$ProximityDisplayListener;->register()V
+
     iput-object p2, p0, Lcom/android/incallui/ProximitySensor;->mAudioModeProvider:Lcom/android/incallui/AudioModeProvider;
 
     iget-object v0, p0, Lcom/android/incallui/ProximitySensor;->mAudioModeProvider:Lcom/android/incallui/AudioModeProvider;
@@ -209,7 +229,23 @@
     goto :goto_0
 .end method
 
-.method static synthetic access$000(Lcom/android/incallui/ProximitySensor;)Landroid/hardware/Sensor;
+.method static synthetic access$000(Lcom/android/incallui/ProximitySensor;)Z
+    .locals 1
+
+    iget-boolean v0, p0, Lcom/android/incallui/ProximitySensor;->mIsProximityCloseDistance:Z
+
+    return v0
+.end method
+
+.method static synthetic access$002(Lcom/android/incallui/ProximitySensor;Z)Z
+    .locals 0
+
+    iput-boolean p1, p0, Lcom/android/incallui/ProximitySensor;->mIsProximityCloseDistance:Z
+
+    return p1
+.end method
+
+.method static synthetic access$100(Lcom/android/incallui/ProximitySensor;)Landroid/hardware/Sensor;
     .locals 1
 
     iget-object v0, p0, Lcom/android/incallui/ProximitySensor;->mProximitySensor:Landroid/hardware/Sensor;
@@ -217,36 +253,20 @@
     return-object v0
 .end method
 
-.method static synthetic access$100(Lcom/android/incallui/ProximitySensor;)Z
+.method static synthetic access$200(Lcom/android/incallui/ProximitySensor;)Z
     .locals 1
 
-    iget-boolean v0, p0, Lcom/android/incallui/ProximitySensor;->mWasScreenOff:Z
+    iget-boolean v0, p0, Lcom/android/incallui/ProximitySensor;->mIsDisplayOn:Z
 
     return v0
 .end method
 
-.method static synthetic access$102(Lcom/android/incallui/ProximitySensor;Z)Z
+.method static synthetic access$202(Lcom/android/incallui/ProximitySensor;Z)Z
     .locals 0
 
-    iput-boolean p1, p0, Lcom/android/incallui/ProximitySensor;->mWasScreenOff:Z
+    iput-boolean p1, p0, Lcom/android/incallui/ProximitySensor;->mIsDisplayOn:Z
 
     return p1
-.end method
-
-.method static synthetic access$200(Lcom/android/incallui/ProximitySensor;)Landroid/hardware/SensorManager;
-    .locals 1
-
-    iget-object v0, p0, Lcom/android/incallui/ProximitySensor;->mSensorManager:Landroid/hardware/SensorManager;
-
-    return-object v0
-.end method
-
-.method static synthetic access$300(Lcom/android/incallui/ProximitySensor;)V
-    .locals 0
-
-    invoke-direct {p0}, Lcom/android/incallui/ProximitySensor;->updateProximitySensorMode()V
-
-    return-void
 .end method
 
 .method private turnOnProximitySensor()V
@@ -344,7 +364,7 @@
 .end method
 
 .method private declared-synchronized updateProximitySensorMode()V
-    .locals 8
+    .locals 7
 
     const/4 v1, 0x0
 
@@ -439,23 +459,21 @@
 
     invoke-static {}, Lcom/android/incallui/util/CallTypeUtils;->isAliveVideoCall()Z
 
-    move-result v3
-
-    or-int/2addr v2, v3
+    move-result v2
 
     if-eqz v2, :cond_5
 
-    new-instance v5, Ljava/lang/StringBuilder;
+    new-instance v3, Ljava/lang/StringBuilder;
 
-    invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v6, "isForegroundVideoCallType : "
+    const-string v5, "isForegroundVideoCallType : "
 
-    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v3, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v5
+    move-result-object v3
 
-    invoke-virtual {v5, v3}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+    invoke-virtual {v3, v2}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
 
     move-result-object v3
 
@@ -472,23 +490,21 @@
 
     invoke-static {}, Lcom/android/incallui/util/AudioUtils;->isCallForwardingState()Z
 
-    move-result v3
-
-    or-int/2addr v2, v3
+    move-result v2
 
     if-eqz v2, :cond_6
 
-    new-instance v5, Ljava/lang/StringBuilder;
+    new-instance v3, Ljava/lang/StringBuilder;
 
-    invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v6, "isCallForwardingState : "
+    const-string v5, "isCallForwardingState : "
 
-    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v3, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v5
+    move-result-object v3
 
-    invoke-virtual {v5, v3}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+    invoke-virtual {v3, v2}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
 
     move-result-object v3
 
@@ -517,37 +533,35 @@
 
     if-eqz v3, :cond_7
 
-    iget-object v5, p0, Lcom/android/incallui/ProximitySensor;->mSamsungAudioManager:Landroid/media/AudioManager;
+    iget-object v2, p0, Lcom/android/incallui/ProximitySensor;->mSamsungAudioManager:Landroid/media/AudioManager;
 
-    invoke-virtual {v5}, Landroid/media/AudioManager;->semIsSplitSoundRunning()Z
+    invoke-virtual {v2}, Landroid/media/AudioManager;->semIsSplitSoundRunning()Z
 
-    move-result v5
-
-    or-int/2addr v2, v5
+    move-result v2
 
     if-eqz v2, :cond_7
 
-    new-instance v6, Ljava/lang/StringBuilder;
+    new-instance v5, Ljava/lang/StringBuilder;
 
-    invoke-direct {v6}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v7, "isWIFIDisplayOn : "
+    const-string v6, "isWIFIDisplayOn : "
 
-    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v6
+    move-result-object v5
 
-    invoke-virtual {v6, v3}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    const-string v6, " isSplitSoundRunning : "
-
-    invoke-virtual {v3, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v5, v3}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
 
     move-result-object v3
 
-    invoke-virtual {v3, v5}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+    const-string v5, " isSplitSoundRunning : "
+
+    invoke-virtual {v3, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    invoke-virtual {v3, v2}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
 
     move-result-object v3
 
@@ -560,11 +574,9 @@
     invoke-static {p0, v3, v5}, Lcom/android/incallui/Log;->v(Ljava/lang/Object;Ljava/lang/String;Z)V
 
     :cond_7
-    if-nez v2, :cond_8
+    if-nez v2, :cond_11
 
-    iget-boolean v3, p0, Lcom/android/incallui/ProximitySensor;->mFromRcsShare:Z
-
-    or-int/2addr v2, v3
+    iget-boolean v2, p0, Lcom/android/incallui/ProximitySensor;->mFromRcsShare:Z
 
     if-eqz v2, :cond_8
 
@@ -595,6 +607,7 @@
     :cond_8
     move v3, v2
 
+    :goto_2
     new-instance v2, Ljava/lang/StringBuilder;
 
     invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
@@ -629,7 +642,7 @@
 
     move v2, v0
 
-    :goto_2
+    :goto_3
     invoke-virtual {v5, v6, v2}, Lcom/google/a/a/d$a;->a(Ljava/lang/String;I)Lcom/google/a/a/d$a;
 
     move-result-object v5
@@ -642,7 +655,7 @@
 
     move v2, v0
 
-    :goto_3
+    :goto_4
     invoke-virtual {v5, v6, v2}, Lcom/google/a/a/d$a;->a(Ljava/lang/String;I)Lcom/google/a/a/d$a;
 
     move-result-object v5
@@ -655,7 +668,7 @@
 
     move v2, v0
 
-    :goto_4
+    :goto_5
     invoke-virtual {v5, v6, v2}, Lcom/google/a/a/d$a;->a(Ljava/lang/String;I)Lcom/google/a/a/d$a;
 
     move-result-object v2
@@ -666,7 +679,7 @@
 
     if-eqz v6, :cond_e
 
-    :goto_5
+    :goto_6
     invoke-virtual {v2, v5, v0}, Lcom/google/a/a/d$a;->a(Ljava/lang/String;I)Lcom/google/a/a/d$a;
 
     move-result-object v0
@@ -773,22 +786,22 @@
     :cond_b
     move v2, v1
 
-    goto/16 :goto_2
+    goto/16 :goto_3
 
     :cond_c
     move v2, v1
 
-    goto :goto_3
+    goto :goto_4
 
     :cond_d
     move v2, v1
 
-    goto :goto_4
+    goto :goto_5
 
     :cond_e
     move v0, v1
 
-    goto :goto_5
+    goto :goto_6
 
     :cond_f
     :try_start_2
@@ -826,6 +839,11 @@
     .catchall {:try_start_2 .. :try_end_2} :catchall_0
 
     goto/16 :goto_0
+
+    :cond_11
+    move v3, v2
+
+    goto/16 :goto_2
 .end method
 
 
@@ -844,12 +862,34 @@
     return-void
 .end method
 
-.method public isScreenOffByProximity()Z
+.method public isDisplayOn()Z
     .locals 1
 
-    iget-boolean v0, p0, Lcom/android/incallui/ProximitySensor;->mScreenOffByProximity:Z
+    iget-boolean v0, p0, Lcom/android/incallui/ProximitySensor;->mIsDisplayOn:Z
 
     return v0
+.end method
+
+.method public isHeldProximityWakeLock()Z
+    .locals 1
+
+    iget-object v0, p0, Lcom/android/incallui/ProximitySensor;->mProximityWakeLock:Landroid/os/PowerManager$WakeLock;
+
+    if-eqz v0, :cond_0
+
+    iget-object v0, p0, Lcom/android/incallui/ProximitySensor;->mProximityWakeLock:Landroid/os/PowerManager$WakeLock;
+
+    invoke-virtual {v0}, Landroid/os/PowerManager$WakeLock;->isHeld()Z
+
+    move-result v0
+
+    :goto_0
+    return v0
+
+    :cond_0
+    const/4 v0, 0x0
+
+    goto :goto_0
 .end method
 
 .method public isScreenReallyOff()Z
@@ -857,7 +897,7 @@
 
     iget-object v0, p0, Lcom/android/incallui/ProximitySensor;->mPowerManager:Landroid/os/PowerManager;
 
-    invoke-virtual {v0}, Landroid/os/PowerManager;->isScreenOn()Z
+    invoke-virtual {v0}, Landroid/os/PowerManager;->isInteractive()Z
 
     move-result v0
 
@@ -948,6 +988,21 @@
 
     invoke-static {p0, v0}, Lcom/android/incallui/Log;->i(Ljava/lang/Object;Ljava/lang/String;)V
 
+    iput-boolean p1, p0, Lcom/android/incallui/ProximitySensor;->mIsDisplayOn:Z
+
+    invoke-static {}, Lcom/android/incallui/InCallPresenter;->getInstance()Lcom/android/incallui/InCallPresenter;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lcom/android/incallui/InCallPresenter;->getActivity()Lcom/android/incallui/InCallActivity;
+
+    move-result-object v0
+
+    if-eqz v0, :cond_0
+
+    invoke-virtual {v0, p1}, Lcom/android/incallui/InCallActivity;->onDisplayStateChanged(Z)V
+
+    :cond_0
     return-void
 .end method
 
@@ -999,7 +1054,7 @@
     :cond_1
     iget-object v0, p0, Lcom/android/incallui/ProximitySensor;->mPowerManager:Landroid/os/PowerManager;
 
-    invoke-virtual {v0}, Landroid/os/PowerManager;->isScreenOn()Z
+    invoke-virtual {v0}, Landroid/os/PowerManager;->isInteractive()Z
 
     move-result v0
 
@@ -1046,13 +1101,13 @@
     :cond_0
     sget-object v0, Lcom/android/incallui/InCallPresenter$InCallState;->INCOMING:Lcom/android/incallui/InCallPresenter$InCallState;
 
-    if-ne v0, p2, :cond_5
+    if-ne v0, p2, :cond_6
 
     invoke-virtual {p3}, Lcom/android/incallui/CallList;->hasActiveCall()Z
 
     move-result v0
 
-    if-eqz v0, :cond_5
+    if-eqz v0, :cond_6
 
     :cond_1
     move v0, v2
@@ -1066,24 +1121,26 @@
 
     if-eq v3, p2, :cond_2
 
-    if-eqz v0, :cond_6
+    if-eqz v0, :cond_3
 
     :cond_2
-    :goto_1
+    move v1, v2
+
+    :cond_3
     iget-boolean v0, p0, Lcom/android/incallui/ProximitySensor;->mIsPhoneOffhook:Z
 
-    if-ne v2, v0, :cond_3
+    if-ne v1, v0, :cond_4
 
     invoke-static {}, Lcom/android/incallui/util/CallTypeUtils;->hasVideoState()Z
 
     move-result v0
 
-    iget-boolean v3, p0, Lcom/android/incallui/ProximitySensor;->mIsPrevVideoCall:Z
+    iget-boolean v2, p0, Lcom/android/incallui/ProximitySensor;->mIsPrevVideoCall:Z
 
-    if-eq v0, v3, :cond_4
+    if-eq v0, v2, :cond_5
 
-    :cond_3
-    iput-boolean v2, p0, Lcom/android/incallui/ProximitySensor;->mIsPhoneOffhook:Z
+    :cond_4
+    iput-boolean v1, p0, Lcom/android/incallui/ProximitySensor;->mIsPhoneOffhook:Z
 
     invoke-static {}, Lcom/android/incallui/util/CallTypeUtils;->hasVideoState()Z
 
@@ -1093,20 +1150,13 @@
 
     invoke-direct {p0}, Lcom/android/incallui/ProximitySensor;->updateProximitySensorMode()V
 
-    iput-boolean v1, p0, Lcom/android/incallui/ProximitySensor;->mWasScreenOff:Z
-
-    :cond_4
+    :cond_5
     return-void
 
-    :cond_5
+    :cond_6
     move v0, v1
 
     goto :goto_0
-
-    :cond_6
-    move v2, v1
-
-    goto :goto_1
 .end method
 
 .method public onSupportedAudioMode(I)V
@@ -1131,14 +1181,6 @@
     return-void
 .end method
 
-.method public setScreenOffByProximity(Z)V
-    .locals 0
-
-    iput-boolean p1, p0, Lcom/android/incallui/ProximitySensor;->mScreenOffByProximity:Z
-
-    return-void
-.end method
-
 .method public tearDown()V
     .locals 2
 
@@ -1158,9 +1200,9 @@
 
     invoke-virtual {v0, p0}, Lcom/android/incallui/accessory/AccessoryEventHandler;->removeListener(Lcom/android/incallui/accessory/AccessoryEventHandler$AccessoryEventListener;)V
 
-    const/4 v0, 0x0
+    iget-object v0, p0, Lcom/android/incallui/ProximitySensor;->mDisplayListener:Lcom/android/incallui/ProximitySensor$ProximityDisplayListener;
 
-    iput-boolean v0, p0, Lcom/android/incallui/ProximitySensor;->mWasScreenOff:Z
+    invoke-virtual {v0}, Lcom/android/incallui/ProximitySensor$ProximityDisplayListener;->unregister()V
 
     invoke-virtual {p0, v1}, Lcom/android/incallui/ProximitySensor;->turnOffProximitySensor(Z)V
 
@@ -1196,12 +1238,6 @@
     iget-object v2, p0, Lcom/android/incallui/ProximitySensor;->mProximityWakeLock:Landroid/os/PowerManager$WakeLock;
 
     invoke-virtual {v2, v0}, Landroid/os/PowerManager$WakeLock;->release(I)V
-
-    iget-object v0, p0, Lcom/android/incallui/ProximitySensor;->mSensorManager:Landroid/hardware/SensorManager;
-
-    iget-object v2, p0, Lcom/android/incallui/ProximitySensor;->mProximityListener:Landroid/hardware/SensorEventListener;
-
-    invoke-virtual {v0, v2}, Landroid/hardware/SensorManager;->unregisterListener(Landroid/hardware/SensorEventListener;)V
 
     :goto_1
     iput-boolean v1, p0, Lcom/android/incallui/ProximitySensor;->mNeedToSetDebounceTime:Z

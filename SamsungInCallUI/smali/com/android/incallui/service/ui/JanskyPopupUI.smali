@@ -281,7 +281,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f100283
+    const v1, 0x7f10028a
 
     invoke-virtual {v0, v1}, Lcom/android/incallui/service/SecCallPopupContainer;->findViewById(I)Landroid/view/View;
 
@@ -295,7 +295,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f100282
+    const v1, 0x7f100289
 
     invoke-virtual {v0, v1}, Lcom/android/incallui/service/SecCallPopupContainer;->findViewById(I)Landroid/view/View;
 

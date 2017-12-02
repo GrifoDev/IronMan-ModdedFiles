@@ -506,7 +506,7 @@
 
     move-result-object v0
 
-    const v2, 0x7f090257
+    const v2, 0x7f09025a
 
     invoke-virtual {v0, v2}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -1642,7 +1642,7 @@
 
     if-eqz v2, :cond_1
 
-    const v0, 0x7f090110
+    const v0, 0x7f090113
 
     invoke-virtual {v1, v0}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -7690,60 +7690,83 @@
 .end method
 
 .method public static isTDCSIM()Z
-    .locals 4
+    .locals 5
 
-    const-string v0, "gsm.sim.operator.numeric"
+    const/4 v0, 0x0
 
-    invoke-static {v0}, Landroid/os/SemSystemProperties;->get(Ljava/lang/String;)Ljava/lang/String;
+    const-string v1, "feature_multisim"
 
-    move-result-object v0
-
-    const-string v1, "InCallUtils"
-
-    new-instance v2, Ljava/lang/StringBuilder;
-
-    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v3, "simOperator : "
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-static {v1, v2}, Lcom/android/incallui/Log;->d(Ljava/lang/String;Ljava/lang/String;)V
-
-    const-string v1, "23801"
-
-    invoke-virtual {v1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-static {v1}, Lcom/android/incallui/InCallUIFeature;->hasFeature(Ljava/lang/String;)Z
 
     move-result v1
 
-    if-nez v1, :cond_0
+    if-eqz v1, :cond_1
 
-    const-string v1, "23810"
+    invoke-static {}, Lcom/android/incallui/CallList;->getInstance()Lcom/android/incallui/CallList;
 
-    invoke-virtual {v1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    move-result-object v1
+
+    const/4 v2, 0x0
+
+    invoke-static {v1, v2, v0}, Lcom/android/incallui/util/InCallUtils;->getCallToDisplay(Lcom/android/incallui/CallList;Lcom/android/incallui/Call;Z)Lcom/android/incallui/Call;
+
+    move-result-object v0
+
+    invoke-static {v0}, Lcom/android/incallui/util/InCallUtilsMultiSIM;->isTDCSIM(Lcom/android/incallui/Call;)Z
 
     move-result v0
 
-    if-eqz v0, :cond_1
-
     :cond_0
-    const/4 v0, 0x1
-
     :goto_0
     return v0
 
     :cond_1
-    const/4 v0, 0x0
+    const-string v1, "gsm.sim.operator.numeric"
+
+    invoke-static {v1}, Landroid/os/SemSystemProperties;->get(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v1
+
+    const-string v2, "InCallUtils"
+
+    new-instance v3, Ljava/lang/StringBuilder;
+
+    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v4, "simOperator : "
+
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    invoke-virtual {v3, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-static {v2, v3}, Lcom/android/incallui/Log;->d(Ljava/lang/String;Ljava/lang/String;)V
+
+    const-string v2, "23801"
+
+    invoke-virtual {v2, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v2
+
+    if-nez v2, :cond_2
+
+    const-string v2, "23810"
+
+    invoke-virtual {v2, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v1
+
+    if-eqz v1, :cond_0
+
+    :cond_2
+    const/4 v0, 0x1
 
     goto :goto_0
 .end method
@@ -8059,6 +8082,75 @@
     move-result-object v1
 
     invoke-static {v2, v1}, Lcom/android/incallui/Log;->d(Ljava/lang/String;Ljava/lang/String;)V
+
+    goto :goto_0
+.end method
+
+.method public static isVoicemailCall(Lcom/android/incallui/Call;)Z
+    .locals 4
+
+    const/4 v0, 0x0
+
+    if-eqz p0, :cond_0
+
+    invoke-static {}, Lcom/android/incallui/InCallApp;->getInstance()Lcom/android/incallui/InCallApp;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lcom/android/incallui/InCallApp;->getApplicationContext()Landroid/content/Context;
+
+    move-result-object v0
+
+    const-string v1, "feature_multisim"
+
+    invoke-static {v1}, Lcom/android/incallui/InCallUIFeature;->hasFeature(Ljava/lang/String;)Z
+
+    move-result v1
+
+    if-eqz v1, :cond_1
+
+    invoke-static {p0}, Lcom/android/incallui/util/InCallUtilsMultiSIM;->getSubId(Lcom/android/incallui/Call;)I
+
+    move-result v0
+
+    invoke-virtual {p0}, Lcom/android/incallui/Call;->getNumber()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-static {v0, v1}, Lcom/android/incallui/util/InCallUtilsWrapper;->isVoiceMailNumber(ILjava/lang/String;)Z
+
+    move-result v0
+
+    :cond_0
+    :goto_0
+    const-string v1, "InCallUtils"
+
+    new-instance v2, Ljava/lang/StringBuilder;
+
+    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v3, " isVoicemailCall = "
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-static {v1, v2}, Lcom/android/incallui/Log;->d(Ljava/lang/String;Ljava/lang/String;)V
+
+    return v0
+
+    :cond_1
+    invoke-static {v0, p0}, Lcom/android/incallui/CallerInfoUtils;->isVoiceMailNumber(Landroid/content/Context;Lcom/android/incallui/Call;)Z
+
+    move-result v0
 
     goto :goto_0
 .end method
@@ -9369,14 +9461,6 @@
     goto :goto_0
 
     :cond_2
-    const-string v2, "tablet_device"
-
-    invoke-static {v2}, Lcom/android/incallui/InCallUIFeature;->hasFeature(Ljava/lang/String;)Z
-
-    move-result v2
-
-    if-nez v2, :cond_3
-
     invoke-static {}, Lcom/android/incallui/InCallPresenter;->getInstance()Lcom/android/incallui/InCallPresenter;
 
     move-result-object v2
@@ -9418,6 +9502,16 @@
     invoke-virtual {v2}, Lcom/android/incallui/CallList;->isOffhook()Z
 
     move-result v2
+
+    if-nez v2, :cond_5
+
+    invoke-static {}, Lcom/android/incallui/CallList;->getInstance()Lcom/android/incallui/CallList;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Lcom/android/incallui/CallList;->getPendingOutgoingCall()Lcom/android/incallui/Call;
+
+    move-result-object v2
 
     if-nez v2, :cond_5
 

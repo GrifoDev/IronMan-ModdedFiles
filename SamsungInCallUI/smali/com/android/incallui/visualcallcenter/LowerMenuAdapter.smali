@@ -123,7 +123,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f040064
+    const v1, 0x7f040067
 
     const/4 v2, 0x0
 
@@ -135,7 +135,7 @@
 
     invoke-direct {v1}, Lcom/android/incallui/visualcallcenter/LowerMenuAdapter$ViewHolder;-><init>()V
 
-    const v0, 0x7f10017b
+    const v0, 0x7f100182
 
     invoke-virtual {p2, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -145,7 +145,7 @@
 
     iput-object v0, v1, Lcom/android/incallui/visualcallcenter/LowerMenuAdapter$ViewHolder;->tv_text:Landroid/widget/TextView;
 
-    const v0, 0x7f10017c
+    const v0, 0x7f100183
 
     invoke-virtual {p2, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 

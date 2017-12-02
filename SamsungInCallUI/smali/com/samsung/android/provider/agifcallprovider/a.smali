@@ -34,6 +34,10 @@
 
     invoke-virtual {p1, v0}, Landroid/database/sqlite/SQLiteDatabase;->execSQL(Ljava/lang/String;)V
 
+    const-string v0, "CREATE TABLE IF NOT EXISTS sticker_log(_ID INTEGER PRIMARY KEY AUTOINCREMENT, number TEXT, use_send_tips INTEGER, use_receive_tips INTEGER, sent_count INTEGER, last_date INTEGER )"
+
+    invoke-virtual {p1, v0}, Landroid/database/sqlite/SQLiteDatabase;->execSQL(Ljava/lang/String;)V
+
     return-void
 .end method
 
@@ -109,5 +113,14 @@
     invoke-virtual {p1, v0}, Landroid/database/sqlite/SQLiteDatabase;->execSQL(Ljava/lang/String;)V
 
     :cond_0
+    const/4 v0, 0x2
+
+    if-gt p2, v0, :cond_1
+
+    const-string v0, "CREATE TABLE IF NOT EXISTS sticker_log(_ID INTEGER PRIMARY KEY AUTOINCREMENT, number TEXT, use_send_tips INTEGER, use_receive_tips INTEGER, sent_count INTEGER, last_date INTEGER )"
+
+    invoke-virtual {p1, v0}, Landroid/database/sqlite/SQLiteDatabase;->execSQL(Ljava/lang/String;)V
+
+    :cond_1
     return-void
 .end method

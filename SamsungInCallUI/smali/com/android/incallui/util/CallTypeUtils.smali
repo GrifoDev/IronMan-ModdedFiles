@@ -645,9 +645,9 @@
 .end method
 
 .method public static isCdmaMultipartyCall()Z
-    .locals 4
+    .locals 6
 
-    const/4 v3, 0x2
+    const/4 v5, 0x2
 
     invoke-static {}, Lcom/android/incallui/CallList;->getInstance()Lcom/android/incallui/CallList;
 
@@ -665,13 +665,29 @@
 
     move-result-object v1
 
-    const-string v2, "china_cdma_call"
+    invoke-static {}, Lcom/android/incallui/CallList;->getInstance()Lcom/android/incallui/CallList;
 
-    invoke-static {v2}, Lcom/android/incallui/InCallUIFeature;->hasFeature(Ljava/lang/String;)Z
+    move-result-object v2
 
-    move-result v2
+    invoke-virtual {v2}, Lcom/android/incallui/CallList;->getActiveCall()Lcom/android/incallui/Call;
 
-    if-eqz v2, :cond_2
+    move-result-object v2
+
+    invoke-static {}, Lcom/android/incallui/CallList;->getInstance()Lcom/android/incallui/CallList;
+
+    move-result-object v3
+
+    invoke-virtual {v3}, Lcom/android/incallui/CallList;->getSecondActiveCall()Lcom/android/incallui/Call;
+
+    move-result-object v3
+
+    const-string v4, "china_cdma_call"
+
+    invoke-static {v4}, Lcom/android/incallui/InCallUIFeature;->hasFeature(Ljava/lang/String;)Z
+
+    move-result v4
+
+    if-eqz v4, :cond_3
 
     if-eqz v0, :cond_0
 
@@ -679,24 +695,41 @@
 
     move-result v0
 
-    if-eq v0, v3, :cond_1
+    if-eq v0, v5, :cond_2
 
     :cond_0
-    if-eqz v1, :cond_2
+    if-eqz v1, :cond_1
 
     invoke-virtual {v1}, Lcom/android/incallui/Call;->getPhoneType()I
 
     move-result v0
 
-    if-ne v0, v3, :cond_2
+    if-eq v0, v5, :cond_2
 
     :cond_1
+    if-eqz v2, :cond_3
+
+    invoke-virtual {v2}, Lcom/android/incallui/Call;->getPhoneType()I
+
+    move-result v0
+
+    if-ne v0, v5, :cond_3
+
+    if-eqz v3, :cond_3
+
+    invoke-virtual {v3}, Lcom/android/incallui/Call;->getPhoneType()I
+
+    move-result v0
+
+    if-ne v0, v5, :cond_3
+
+    :cond_2
     const/4 v0, 0x1
 
     :goto_0
     return v0
 
-    :cond_2
+    :cond_3
     const/4 v0, 0x0
 
     goto :goto_0
@@ -2501,12 +2534,6 @@
     const/4 v1, 0x0
 
     if-eqz p0, :cond_1
-
-    invoke-static {p0}, Lcom/android/incallui/util/CallTypeUtils;->isVoiceCall(Lcom/android/incallui/Call;)Z
-
-    move-result v2
-
-    if-eqz v2, :cond_1
 
     invoke-static {p0}, Lcom/android/incallui/util/SecCallExtraUtils;->getIsVolteGroupCall(Lcom/android/incallui/Call;)Ljava/lang/String;
 

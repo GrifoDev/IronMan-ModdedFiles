@@ -35,8 +35,6 @@
 
 .field protected mVideoCallButtonHandler:Landroid/os/Handler;
 
-.field protected mVideoState:I
-
 
 # direct methods
 .method public constructor <init>()V
@@ -44,13 +42,13 @@
 
     invoke-direct {p0}, Lcom/android/incallui/fragment/CallButtonFragment;-><init>()V
 
+    const/4 v0, 0x1
+
+    iput-boolean v0, p0, Lcom/android/incallui/fragment/VideoCallButtonFragment;->mInCallButtonVisible:Z
+
     const/4 v0, 0x0
 
     iput v0, p0, Lcom/android/incallui/fragment/VideoCallButtonFragment;->mPrevAudioMode:I
-
-    sget v0, Lcom/android/incallui/service/vt/SecVideoState;->VIDEO_NONE:I
-
-    iput v0, p0, Lcom/android/incallui/fragment/VideoCallButtonFragment;->mVideoState:I
 
     const/16 v0, 0x64
 
@@ -152,7 +150,7 @@
 
     invoke-static {v0, v1}, Lcom/android/incallui/Log;->d(Ljava/lang/String;Ljava/lang/String;)V
 
-    const v0, 0x7f090109
+    const v0, 0x7f09010c
 
     invoke-static {v0}, Lcom/android/incallui/util/InCallUtils;->displayToast(I)V
 
@@ -437,20 +435,6 @@
     goto :goto_0
 .end method
 
-.method protected isPrimaryVisible()Z
-    .locals 1
-
-    invoke-virtual {p0}, Lcom/android/incallui/fragment/VideoCallButtonFragment;->getSecUiAdapter()Lcom/android/incallui/UiAdapter;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Lcom/android/incallui/UiAdapter;->isPrimaryVisible()Z
-
-    move-result v0
-
-    return v0
-.end method
-
 .method public isVideoCallButtonVisible()Z
     .locals 1
 
@@ -480,9 +464,7 @@
 .end method
 
 .method public onClick(Landroid/view/View;)V
-    .locals 7
-
-    const/16 v6, 0x64
+    .locals 5
 
     const/4 v1, 0x0
 
@@ -528,25 +510,8 @@
 
     invoke-static {v0, v3}, Lcom/android/incallui/Log;->d(Ljava/lang/String;Ljava/lang/String;)V
 
-    iget-object v0, p0, Lcom/android/incallui/fragment/VideoCallButtonFragment;->mVideoCallButtonHandler:Landroid/os/Handler;
+    invoke-virtual {p0}, Lcom/android/incallui/fragment/VideoCallButtonFragment;->startToggleTimer()V
 
-    invoke-virtual {v0, v6}, Landroid/os/Handler;->hasMessages(I)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    iget-object v0, p0, Lcom/android/incallui/fragment/VideoCallButtonFragment;->mVideoCallButtonHandler:Landroid/os/Handler;
-
-    invoke-virtual {v0, v6}, Landroid/os/Handler;->removeMessages(I)V
-
-    iget-object v0, p0, Lcom/android/incallui/fragment/VideoCallButtonFragment;->mVideoCallButtonHandler:Landroid/os/Handler;
-
-    const-wide/16 v4, 0x1388
-
-    invoke-virtual {v0, v6, v4, v5}, Landroid/os/Handler;->sendEmptyMessageDelayed(IJ)Z
-
-    :cond_0
     invoke-static {}, Lcom/android/incallui/CallList;->getInstance()Lcom/android/incallui/CallList;
 
     move-result-object v0
@@ -557,7 +522,7 @@
 
     move-result-object v3
 
-    if-eqz v3, :cond_3
+    if-eqz v3, :cond_2
 
     invoke-virtual {v3}, Lcom/android/incallui/Call;->getState()I
 
@@ -638,11 +603,11 @@
 
     check-cast v0, Lcom/android/incallui/CallButtonPresenter;
 
-    if-nez v2, :cond_1
+    if-nez v2, :cond_0
 
     const/4 v1, 0x1
 
-    :cond_1
+    :cond_0
     invoke-virtual {v0, v1}, Lcom/android/incallui/CallButtonPresenter;->muteClicked(Z)V
 
     goto :goto_1
@@ -690,7 +655,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_2
+    if-eqz v0, :cond_1
 
     const/16 v0, 0x8
 
@@ -698,13 +663,13 @@
 
     move-result v0
 
-    if-eqz v0, :cond_2
+    if-eqz v0, :cond_1
 
     invoke-virtual {p0}, Lcom/android/incallui/fragment/VideoCallButtonFragment;->getResources()Landroid/content/res/Resources;
 
     move-result-object v0
 
-    const v1, 0x7f09010b
+    const v1, 0x7f09010e
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -714,7 +679,7 @@
 
     goto/16 :goto_1
 
-    :cond_2
+    :cond_1
     invoke-virtual {p0}, Lcom/android/incallui/fragment/VideoCallButtonFragment;->getPresenter()Lcom/android/incallui/Presenter;
 
     move-result-object v0
@@ -725,21 +690,23 @@
 
     goto/16 :goto_1
 
-    :cond_3
+    :cond_2
     move v0, v1
 
     goto/16 :goto_0
 
+    nop
+
     :sswitch_data_0
     .sparse-switch
-        0x7f1000cb -> :sswitch_4
-        0x7f1000cc -> :sswitch_3
-        0x7f1000d0 -> :sswitch_1
-        0x7f100411 -> :sswitch_0
-        0x7f100414 -> :sswitch_5
-        0x7f100415 -> :sswitch_2
-        0x7f100417 -> :sswitch_6
-        0x7f100418 -> :sswitch_7
+        0x7f1000d3 -> :sswitch_4
+        0x7f1000d4 -> :sswitch_3
+        0x7f1000d8 -> :sswitch_1
+        0x7f1003f4 -> :sswitch_6
+        0x7f10043c -> :sswitch_0
+        0x7f10043f -> :sswitch_5
+        0x7f100440 -> :sswitch_2
+        0x7f100442 -> :sswitch_7
     .end sparse-switch
 .end method
 
@@ -1142,7 +1109,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f0902d0
+    const v2, 0x7f0902d3
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -1199,6 +1166,39 @@
     return-void
 .end method
 
+.method public startToggleTimer()V
+    .locals 5
+
+    const/16 v4, 0x64
+
+    const-string v0, "VideoCallButtonFragment"
+
+    const-string v1, "startToggleTimer"
+
+    invoke-static {v0, v1}, Lcom/android/incallui/Log;->d(Ljava/lang/String;Ljava/lang/String;)V
+
+    iget-object v0, p0, Lcom/android/incallui/fragment/VideoCallButtonFragment;->mVideoCallButtonHandler:Landroid/os/Handler;
+
+    invoke-virtual {v0, v4}, Landroid/os/Handler;->hasMessages(I)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    iget-object v0, p0, Lcom/android/incallui/fragment/VideoCallButtonFragment;->mVideoCallButtonHandler:Landroid/os/Handler;
+
+    invoke-virtual {v0, v4}, Landroid/os/Handler;->removeMessages(I)V
+
+    :cond_0
+    iget-object v0, p0, Lcom/android/incallui/fragment/VideoCallButtonFragment;->mVideoCallButtonHandler:Landroid/os/Handler;
+
+    const-wide/16 v2, 0x1388
+
+    invoke-virtual {v0, v4, v2, v3}, Landroid/os/Handler;->sendEmptyMessageDelayed(IJ)Z
+
+    return-void
+.end method
+
 .method public switchCameraClicked()V
     .locals 2
 
@@ -1215,58 +1215,6 @@
     invoke-virtual {v0, v1}, Lcom/android/incallui/InCallNotifier;->notifyVideoCallUiEvent(I)V
 
     return-void
-.end method
-
-.method public toggleVideoButtonContainer()V
-    .locals 4
-
-    const/16 v1, 0x64
-
-    iget-object v0, p0, Lcom/android/incallui/fragment/VideoCallButtonFragment;->mVideoCallButtonHandler:Landroid/os/Handler;
-
-    invoke-virtual {v0, v1}, Landroid/os/Handler;->hasMessages(I)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    iget-object v0, p0, Lcom/android/incallui/fragment/VideoCallButtonFragment;->mVideoCallButtonHandler:Landroid/os/Handler;
-
-    invoke-virtual {v0, v1}, Landroid/os/Handler;->removeMessages(I)V
-
-    iget-object v0, p0, Lcom/android/incallui/fragment/VideoCallButtonFragment;->mVideoCallButtonHandler:Landroid/os/Handler;
-
-    const-wide/16 v2, 0x1388
-
-    invoke-virtual {v0, v1, v2, v3}, Landroid/os/Handler;->sendEmptyMessageDelayed(IJ)Z
-
-    :cond_0
-    iget-boolean v0, p0, Lcom/android/incallui/fragment/VideoCallButtonFragment;->mInCallButtonVisible:Z
-
-    if-eqz v0, :cond_2
-
-    invoke-virtual {p0}, Lcom/android/incallui/fragment/VideoCallButtonFragment;->isPossibleToHideButton()Z
-
-    move-result v0
-
-    if-nez v0, :cond_1
-
-    :goto_0
-    return-void
-
-    :cond_1
-    const/4 v0, 0x0
-
-    invoke-virtual {p0, v0}, Lcom/android/incallui/fragment/VideoCallButtonFragment;->showButtonContainer(Z)V
-
-    goto :goto_0
-
-    :cond_2
-    const/4 v0, 0x1
-
-    invoke-virtual {p0, v0}, Lcom/android/incallui/fragment/VideoCallButtonFragment;->showButtonContainer(Z)V
-
-    goto :goto_0
 .end method
 
 .method protected updateAudioButtons(I)V
@@ -1519,7 +1467,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f0902e4
+    const v2, 0x7f0902e7
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -1538,7 +1486,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f0902e9
+    const v2, 0x7f0902ec
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 

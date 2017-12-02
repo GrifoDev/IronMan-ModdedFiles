@@ -217,7 +217,7 @@
 
     new-instance v2, Ljava/lang/StringBuilder;
 
-    const-string v3, "\u66f4\u65b0\u4e86\u672c\u5730\u8bbe\u7f6e\u4fe1\u606f"
+    const-string/jumbo v3, "\u66f4\u65b0\u4e86\u672c\u5730\u8bbe\u7f6e\u4fe1\u606f"
 
     invoke-direct {v2, v3}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 

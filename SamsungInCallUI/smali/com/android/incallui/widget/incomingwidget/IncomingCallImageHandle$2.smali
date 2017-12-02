@@ -34,7 +34,19 @@
 
 # virtual methods
 .method public onFocusChange(Landroid/view/View;Z)V
-    .locals 1
+    .locals 2
+
+    iget-object v0, p0, Lcom/android/incallui/widget/incomingwidget/IncomingCallImageHandle$2;->this$0:Lcom/android/incallui/widget/incomingwidget/IncomingCallImageHandle;
+
+    const-string v1, "mHandleImageViewLayout - onFocusChange"
+
+    invoke-virtual {v0, v1}, Lcom/android/incallui/widget/incomingwidget/IncomingCallImageHandle;->log(Ljava/lang/String;)V
+
+    iget-object v0, p0, Lcom/android/incallui/widget/incomingwidget/IncomingCallImageHandle$2;->this$0:Lcom/android/incallui/widget/incomingwidget/IncomingCallImageHandle;
+
+    const/4 v1, 0x1
+
+    invoke-static {v0, v1}, Lcom/android/incallui/widget/incomingwidget/IncomingCallImageHandle;->access$1202(Lcom/android/incallui/widget/incomingwidget/IncomingCallImageHandle;Z)Z
 
     if-eqz p2, :cond_0
 

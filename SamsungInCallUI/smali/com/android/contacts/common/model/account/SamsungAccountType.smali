@@ -99,7 +99,7 @@
 .method private q(Landroid/content/Context;)Lcom/android/contacts/common/model/dataitem/DataKind;
     .locals 6
 
-    const v5, 0x7f0902b7
+    const v5, 0x7f0902ba
 
     const/16 v4, 0xe
 
@@ -337,7 +337,7 @@
 .method private r(Landroid/content/Context;)Lcom/android/contacts/common/model/dataitem/DataKind;
     .locals 7
 
-    const v6, 0x7f090175
+    const v6, 0x7f090178
 
     const/4 v5, 0x3
 
@@ -637,7 +637,7 @@
 
     const-string v3, "data1"
 
-    const v4, 0x7f090272
+    const v4, 0x7f090275
 
     invoke-direct {v2, v3, v4, v5}, Lcom/android/contacts/common/model/account/AccountType$EditField;-><init>(Ljava/lang/String;II)V
 
@@ -725,7 +725,7 @@
 
     const-string v3, "data1"
 
-    const v4, 0x7f090166
+    const v4, 0x7f090169
 
     const/16 v5, 0x21
 
@@ -739,11 +739,11 @@
 .method protected i(Landroid/content/Context;)Lcom/android/contacts/common/model/dataitem/DataKind;
     .locals 10
 
-    const v9, 0x7f090281
+    const v9, 0x7f090284
 
-    const v8, 0x7f090280
+    const v8, 0x7f090283
 
-    const v7, 0x7f09027f
+    const v7, 0x7f090282
 
     const/4 v6, 0x1
 
@@ -859,7 +859,7 @@
 
     const-string v3, "data8"
 
-    const v4, 0x7f090282
+    const v4, 0x7f090285
 
     invoke-direct {v2, v3, v4, v5}, Lcom/android/contacts/common/model/account/AccountType$EditField;-><init>(Ljava/lang/String;II)V
 
@@ -881,7 +881,7 @@
 
     const-string v3, "data4"
 
-    const v4, 0x7f090283
+    const v4, 0x7f090286
 
     invoke-direct {v2, v3, v4, v5}, Lcom/android/contacts/common/model/account/AccountType$EditField;-><init>(Ljava/lang/String;II)V
 
@@ -897,7 +897,7 @@
 
     const-string v3, "data4"
 
-    const v4, 0x7f090283
+    const v4, 0x7f090286
 
     invoke-direct {v2, v3, v4, v5}, Lcom/android/contacts/common/model/account/AccountType$EditField;-><init>(Ljava/lang/String;II)V
 
@@ -919,7 +919,7 @@
 
     const-string v3, "data8"
 
-    const v4, 0x7f090282
+    const v4, 0x7f090285
 
     invoke-direct {v2, v3, v4, v5}, Lcom/android/contacts/common/model/account/AccountType$EditField;-><init>(Ljava/lang/String;II)V
 

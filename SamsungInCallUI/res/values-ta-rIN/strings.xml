@@ -147,12 +147,13 @@
     <string name="account_phone">சாதனம்</string>
     <string name="acs">குரல் அழைப்பு</string>
     <string name="active_calls">செயலிலுள்ள அழைப்பு</string>
-    <string name="add_reminder">நினைவூட்டலைச் சேர்க்கவும்</string>
+    <string name="add_reminder">நினைவூட்டலை சேர்க்கவும்</string>
     <string name="agif_button_close_description">மூடுக</string>
     <string name="agif_decline_message">மன்னிக்கவும், என்னால் இப்போது பேச இயலாது.</string>
     <string name="agif_decline_sticker_header">ஸ்டிக்கருடன் தவிர்க்கவும்</string>
     <string name="agif_decline_text_header">உரையுடன் தவிர்க்கவும்</string>
     <string name="agif_decline_toast">%s-க்கு அனுப்பப்பட்டது.</string>
+    <string name="agif_outgoing_bubble_tip">நீங்கள் எவ்வாறு உணர்கிறீர்கள் என்பதைக் காட்ட ஸ்டிக்கரை அனுப்பவும்.</string>
     <string name="agif_pickers_add_tab_description">சேர்</string>
     <string name="agif_pickers_downloaded">பதிவிறக்கப்பட்டது</string>
     <string name="agif_pickers_item_usage_hints_description">தேர்வுசெய்ய, இருமுறை டேப் செய்யவும்</string>
@@ -168,10 +169,12 @@
     <string name="agif_pickers_tab_select_description">தேர்வுசெய்யப்பட்டது</string>
     <string name="agif_pickers_title">ஸ்டிக்கருடன் துவங்கவும்</string>
     <string name="agif_pickers_title_top_stickers">சிறந்த ஸ்டிக்கர்கள்</string>
+    <string name="agif_random_send_message">இந்த ஸ்டிக்கரை அனுப்புவதற்கு இங்கே டேப் செய்யவும்.</string>
     <string name="agif_read_permission_description">AGIF உள்ளடக்கத்தை வாசிக்க, ஃபோனை அனுமதிக்கிறது.</string>
     <string name="agif_read_permission_label">AGIF உள்ளடக்கத்தை வாசிக்கவும்</string>
     <string name="agif_receive_no_id">ஸ்டிக்கரைக் காட்ட இயலாது. அழைப்பிற்குப் பிறகு %s-ஐப் புதுப்பிக்கவும்.</string>
     <string name="agif_receive_no_id_upsupport_update">ஸ்டிக்கரைக் காட்ட இயலாது. அடுத்த சிஸ்டம் புதுப்பிப்பிற்குப் பிறகு கூடுதல் ஸ்டிக்கர்கள் கிடைக்கும்.</string>
+    <string name="agif_receive_toast">%s-இலிருந்து ஸ்டிக்கர்.</string>
     <string name="agif_sent_fail_message">அனிமேஷன் GIF-ஐ அனுப்ப இயலாது. பின்னர் மீண்டும் முயலவும்.</string>
     <string name="agif_sent_toast">ஸ்டிக்கர் அனுப்பப்பட்டது.</string>
     <string name="agif_write_permission_description">AGIF உள்ளடக்கத்தை மாற்ற, ஃபோனை அனுமதிக்கிறது.</string>
@@ -840,6 +843,7 @@ IVR அழைப்புத் திரை மெனு, Dianhuabang என்
     <string name="sticker_delete_stickers">%d ஸ்டிக்கர்களை நீக்கவா?</string>
     <string name="sticker_delete_this_sticker">இந்த ஸ்டிக்கரை நீக்கவா?</string>
     <string name="sticker_setting_edit_title">ஸ்டிக்கர்களை தேர்வு செய்க</string>
+    <string name="sticker_setting_edit_title_preload">ஸ்டிக்கர்களை மறுவரிசைப்படுத்தவும்</string>
     <string name="sticker_setting_main_title">எனது ஸ்டிக்கர்கள்</string>
     <string name="sticker_setting_menu_delete">நீக்கு</string>
     <string name="sticker_setting_menu_edit">திருத்துக</string>
@@ -852,6 +856,7 @@ IVR அழைப்புத் திரை மெனு, Dianhuabang என்
     <string name="swipe_right_to_answer_call_with_video">நிகழ்படத்துடன் அழைப்புக்குப் பதிலளிக்க வலது புறமாக ஸ்வைப் செய்யவும்.</string>
     <string name="swipe_right_to_answer_call_without_video">நிகழ்படம் இல்லாமல் அழைப்புக்குப் பதிலளிக்க வலது புறமாக ஸ்வைப் செய்யவும்.</string>
     <string name="switch_rejected_by_mt">தவிர்க்கப்பட்ட நிகழ்பட அழைப்பிற்கு மாறக் கோரவும்.</string>
+    <string name="switch_rejected_by_mt_att">Video unavailable for this call. Call connected as a voice call.</string>
     <string name="switch_to_video_call_failed">நிகழ்பட அழைப்பிற்கு மாறுவதற்கான கோரிக்கை தோல்வியடைந்தது.</string>
     <string name="switch_to_video_call_failed_tmo">நிகழ்பட அழைப்பிற்கு மாறுவதற்கான கோரிக்கை தவிர்க்கப்பட்டது.</string>
     <string name="switch_to_voice_call_failed">குரல் அழைப்பிற்கு மாறுவதற்கான கோரிக்கை தோல்வியுற்றது.</string>

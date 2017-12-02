@@ -184,6 +184,7 @@
     <string name="agif_decline_sticker_header">رد کردن با برچسب</string>
     <string name="agif_decline_text_header">رد کردن با نوشتار</string>
     <string name="agif_decline_toast">برچسب به %s ارسال شد.</string>
+    <string name="agif_outgoing_bubble_tip">برای نمایش احساس خود، برچسب ارسال کنید.</string>
     <string name="agif_pickers_add_tab_description">افزودن</string>
     <string name="agif_pickers_downloaded">دانلود شده</string>
     <string name="agif_pickers_item_usage_hints_description">برای انتخاب دو بار ضربه بزنید</string>
@@ -199,10 +200,12 @@
     <string name="agif_pickers_tab_select_description">انتخاب شد</string>
     <string name="agif_pickers_title">شروع با یک برچسب</string>
     <string name="agif_pickers_title_top_stickers">برچسب‌های برتر</string>
+    <string name="agif_random_send_message">برای ارسال این برچسب، اینجا ضربه بزنید.</string>
     <string name="agif_read_permission_description">به تلفن اجازه می‌دهد محتوای AGIF را بخواند.</string>
     <string name="agif_read_permission_label">خواندن محتوای AGIF</string>
     <string name="agif_receive_no_id">برچسب نمی‌تواند نشان داده شود. پس از تماس، %s را به‌روز کنید.</string>
     <string name="agif_receive_no_id_upsupport_update">برچسب نمی‌تواند نشان داده شود. برچسب‌های بیشتری پس از به‌روزرسانی بعدی سیستم در دسترس خواهند بود.</string>
+    <string name="agif_receive_toast">برچسب از طرف %s.</string>
     <string name="agif_sent_fail_message">ارسال GIF متحرک ممکن نیست. بعداً دوباره امتحان کنید.</string>
     <string name="agif_sent_toast">برچسب ارسال شد.</string>
     <string name="agif_write_permission_description">به تلفن اجازه می‌دهد محتوای AGIF را تغییر دهد.</string>
@@ -871,6 +874,7 @@
     <string name="sticker_delete_stickers">%d برچسب حذف شود؟</string>
     <string name="sticker_delete_this_sticker">این برچسب حذف شود؟</string>
     <string name="sticker_setting_edit_title">انتخاب برچسب‌ها</string>
+    <string name="sticker_setting_edit_title_preload">تغییر ترتیب برچسب‌ها</string>
     <string name="sticker_setting_main_title">برچسب‌های من</string>
     <string name="sticker_setting_menu_delete">حذف</string>
     <string name="sticker_setting_menu_edit">ویرایش</string>
@@ -883,6 +887,7 @@
     <string name="swipe_right_to_answer_call_with_video">برای پاسخ به تماس همراه با ویدیو، انگشت را به راست بکشید.</string>
     <string name="swipe_right_to_answer_call_without_video">برای پاسخ به تماس بدون ویدیو، انگشت را به راست بکشید.</string>
     <string name="switch_rejected_by_mt">درخواست برای رفتن به تماس ویدیویی رد شد.</string>
+    <string name="switch_rejected_by_mt_att">Video unavailable for this call. Call connected as a voice call.</string>
     <string name="switch_to_video_call_failed">درخواست برای تماس ویدیویی ناموفق بود.</string>
     <string name="switch_to_video_call_failed_tmo">درخواست برای تغییر وضعیت به تماس ویدیویی رد شد.</string>
     <string name="switch_to_voice_call_failed">درخواست برای تغییر به تماس صوتی ناموفق بود.</string>

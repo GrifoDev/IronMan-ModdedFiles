@@ -106,6 +106,7 @@
     <string name="agif_decline_sticker_header">စတစ္ကာသံုးၿပီး ပယ္ခ်ပါ</string>
     <string name="agif_decline_text_header">စာပုိ႔ၿပီး ပယ္ခ်ပါ</string>
     <string name="agif_decline_toast">စတစ္ကာကုိ %s သုိ႔ ပုိ႔လုိက္သည္။</string>
+    <string name="agif_outgoing_bubble_tip">သင့္ခံစားခ်က္ကုိျပရန္ စတစ္ကာ တစ္ခု ေပးပို႔ပါ။</string>
     <string name="agif_pickers_add_tab_description">ထည့္ပါ</string>
     <string name="agif_pickers_downloaded">ေဒါင္းလုတ္လုပ္ထားသည္</string>
     <string name="agif_pickers_item_usage_hints_description">ေ႐ြးရန္ ႏွစ္ခ်က္ႏွိပ္ပါ</string>
@@ -121,10 +122,12 @@
     <string name="agif_pickers_tab_select_description">ေ႐ြးထားသည္</string>
     <string name="agif_pickers_title">စတစ္ကာျဖင့္ စတင္ပါ</string>
     <string name="agif_pickers_title_top_stickers">ထိပ္တန္း စတစ္ကာမ်ား</string>
+    <string name="agif_random_send_message">ဤစတစ္ကာကို ေပးပို႔ရန္ ဤေနရာကို ႏွိပ္ပါ။</string>
     <string name="agif_read_permission_description">ဖုန္းအား AGIF အေၾကာင္းအရာကုိ ဖတ္ရႈခြင့္ျပဳသည္။</string>
     <string name="agif_read_permission_label">AGIF အေၾကာင္းအရာကုိ ဖတ္ပါ</string>
     <string name="agif_receive_no_id">စတစ္ကာကို ျပသ၍မရႏိုင္ပါ။ ဖုန္းေခၚၿပီးခ်ိန္တြင္ %s ကို အပ္ဒိတ္လုပ္ပါ။</string>
     <string name="agif_receive_no_id_upsupport_update">စတစ္ကာကို ျပသ၍မရႏိုင္ပါ။ ေနာက္ထပ္ စနစ္အပ္ဒိတ္လုပ္ၿပီးေနာက္တြင္ စတစ္ကာမ်ား ပိုမိုရရွိႏိုင္ပါမည္။</string>
+    <string name="agif_receive_toast">%s မွ စတစ္ကာ။</string>
     <string name="agif_sent_fail_message">လႈပ္ရွား GIF ကုိ ေပးပုိ႔၍ မရႏုိင္ပါ။ ေနာက္မွ ထပ္မံႀကိဳးစားပါ။</string>
     <string name="agif_sent_toast">စတစ္ကာ ပုိ႔ၿပီး။</string>
     <string name="agif_write_permission_description">ဖုန္းအား AGIF အေၾကာင္းအရာကုိ ျပင္ဆင္မြမ္းမံခြင့္ျပဳသည္။</string>
@@ -793,6 +796,7 @@ IVR ဖုန္းေခၚဆို ဖန္သားျပင္ မီႏ�
     <string name="sticker_delete_stickers">စတစ္ကာ %d ခုကို ဖ်က္ပစ္မလား?</string>
     <string name="sticker_delete_this_sticker">ဤစတစ္ကာကို ဖ်က္ပစ္မလား?</string>
     <string name="sticker_setting_edit_title">စတစ္ကာမ်ား ေရြးခ်ယ္ပါ</string>
+    <string name="sticker_setting_edit_title_preload">စတစ္ကာမ်ားကို ျပန္စီပါ</string>
     <string name="sticker_setting_main_title">ကြ်ႏ္ုပ္၏ စတစ္ကာမ်ား</string>
     <string name="sticker_setting_menu_delete">ဖ်က္ပစ္ပါ</string>
     <string name="sticker_setting_menu_edit">တည္းျဖတ္</string>
@@ -805,6 +809,7 @@ IVR ဖုန္းေခၚဆို ဖန္သားျပင္ မီႏ�
     <string name="swipe_right_to_answer_call_with_video">ေခၚဆိုမႈကို ဗီဒီယိုျဖင့္ ေျဖၾကားရန္ ညာဘက္သို႔ ပြတ္ဆြဲပါ။</string>
     <string name="swipe_right_to_answer_call_without_video">ေခၚဆိုမႈကို ဗီဒီယိုမပါဘဲေျဖၾကားရန္ ညာဘက္သို႔ ပြတ္ဆြဲပါ။</string>
     <string name="switch_rejected_by_mt">ဗြီဒီယုိေခၚဆိုမႈ အျဖစ္ေျပာင္းလဲရန္ ေတာင္းဆိုမႈ ျငင္းပယ္သည္။</string>
+    <string name="switch_rejected_by_mt_att">Video unavailable for this call. Call connected as a voice call.</string>
     <string name="switch_to_video_call_failed">ဗီဒီယို ေခၚဆိုမႈသို႔ ေျပာင္းရန္ ေတာင္းခံမႈ မေအာင္ျမင္ပါ။</string>
     <string name="switch_to_video_call_failed_tmo">ဗီဒီယိုဖုန္းသို႔ ကူးေျပာင္းရန္အတြက္ ေတာင္းဆိုခ်က္ကို ပယ္ခ်ခဲ့သည္။</string>
     <string name="switch_to_voice_call_failed">အသံ ေခၚဆိုမႈသို႔ ေျပာင္းရန္ ေတာင္းခံမႈ မေအာင္ျမင္ပါ။</string>

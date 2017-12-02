@@ -40,7 +40,7 @@
 
     move-result v0
 
-    const v1, 0x7f100417
+    const v1, 0x7f1003f4
 
     if-eq v0, v1, :cond_0
 
@@ -48,7 +48,7 @@
 
     move-result v0
 
-    const v1, 0x7f1001fc
+    const v1, 0x7f100203
 
     if-eq v0, v1, :cond_0
 
@@ -56,7 +56,7 @@
 
     move-result v0
 
-    const v1, 0x7f1001fd
+    const v1, 0x7f100204
 
     if-eq v0, v1, :cond_0
 

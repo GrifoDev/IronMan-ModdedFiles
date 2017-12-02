@@ -44,7 +44,7 @@
     .locals 6
 
     :try_start_0
-    const-string v0, "\u5f00\u59cb\u8ba1\u65f6"
+    const-string/jumbo v0, "\u5f00\u59cb\u8ba1\u65f6"
 
     invoke-static {v0}, Lcom/cmdm/control/util/ToastCustomUtil;->aM(Ljava/lang/String;)V
 

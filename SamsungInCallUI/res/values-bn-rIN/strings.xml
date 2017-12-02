@@ -100,12 +100,13 @@
     <string name="account_phone">ডিভাইস</string>
     <string name="acs">ভয়েস কল</string>
     <string name="active_calls">সক্রিয় কল</string>
-    <string name="add_reminder">রিমাই. যোগ</string>
+    <string name="add_reminder">রিমাইন্ডার যোগ করুন</string>
     <string name="agif_button_close_description">বন্ধ</string>
     <string name="agif_decline_message">দুঃখিত, আমি এখন কথা বলতে পারছি না।</string>
     <string name="agif_decline_sticker_header">একটি স্টিকার দ্বারা অস্বীকার করুন</string>
     <string name="agif_decline_text_header">একটি পাঠ্য দ্বারা অস্বীকার করুন</string>
     <string name="agif_decline_toast">%s-এ স্টিকার পাঠানো হয়েছে।</string>
+    <string name="agif_outgoing_bubble_tip">আপনি কেমন অনুভব করেন তা দেখাতে একটি স্টিকার পাঠান।</string>
     <string name="agif_pickers_add_tab_description">যোগ করুন</string>
     <string name="agif_pickers_downloaded">ডাউনলোড হয়েছে</string>
     <string name="agif_pickers_item_usage_hints_description">নির্বাচন করতে দুবার ট্যাপ করুন</string>
@@ -121,10 +122,12 @@
     <string name="agif_pickers_tab_select_description">নির্বাচিত</string>
     <string name="agif_pickers_title">একটি স্টিকার দ্বারা শুরু করুন</string>
     <string name="agif_pickers_title_top_stickers">সেরা স্টিকারগুলি</string>
+    <string name="agif_random_send_message">এই স্টিকার পাঠাতে এখানে ট্যাপ করুন।</string>
     <string name="agif_read_permission_description">ফোনকে AGIF সামগ্রী পড়তে অনুমতি দেয়।</string>
     <string name="agif_read_permission_label">AGIF সামগ্রী পড়ুন</string>
     <string name="agif_receive_no_id">স্টিকারটি দেখানো যাবে না। কলের পরে %s আপডেট করুন।</string>
     <string name="agif_receive_no_id_upsupport_update">স্টিকারটি দেখানো যাবে না। পরের সিস্টেম আপডেট করার পরে আরও স্টিকার সুলভ হবে।</string>
+    <string name="agif_receive_toast">%s-এর স্টিকার।</string>
     <string name="agif_sent_fail_message">অ্যানিমেটেড GIF পাঠানো যাচ্ছে না। পরে আবার চেষ্টা করুন।</string>
     <string name="agif_sent_toast">স্টিকার পাঠানো হয়েছে।</string>
     <string name="agif_write_permission_description">ফোনকে AGIF সামগ্রী সংশোধন করতে অনুমতি দেয়।</string>
@@ -259,8 +262,8 @@
     <string name="device_info_not_available">অসুলভ</string>
     <string name="dial_warning">ডায়াল করতে অক্ষম।</string>
     <string name="dialling_video_call">ভিডিও কল ডায়াল করা হচ্ছে</string>
-    <string name="dialog_permission_app_desc">%s খুলতে অক্ষম। সেটিংস > অনুমতিগুলি-এ যান তারপর নিম্নলিখিত অনুমতিগুলির অনুমতি দিন এবং পুনরায় চেষ্টা করুন:</string>
-    <string name="dialog_permission_function_desc">%s ব্যবহার করতে অক্ষম। সেটিংস > অনুমতিগুলি-এ যান তারপর নিম্নলিখিত অনুমতিগুলির অনুমতি দিন এবং পুনরায় চেষ্টা করুন:</string>
+    <string name="dialog_permission_app_desc">%s খুলতে অক্ষম। সেটিংস > অনুমতিগুলি-এ যান তারপর নিম্নলিখিত অনুমতিগুলির মঞ্জুরি দিন এবং পুনরায় চেষ্টা করুন:</string>
+    <string name="dialog_permission_function_desc">%s ব্যবহার করতে অক্ষম। সেটিংস > অনুমতিগুলি-এ যান তারপর নিম্নলিখিত অনুমতিগুলির মঞ্জুরি দিন এবং পুনরায় চেষ্টা করুন:</string>
     <string name="dialpad_2_sub_letters">ABC</string>
     <string name="dialpad_3_sub_letters">DEF</string>
     <string name="dialpad_4_sub_letters">GHI</string>
@@ -793,6 +796,7 @@ IVR কল স্ক্রীণের মেনু Dianhuabang নামক এ
     <string name="sticker_delete_stickers">%dটি স্টিকার মুছবেন?</string>
     <string name="sticker_delete_this_sticker">এই স্টিকারটি মুছবেন?</string>
     <string name="sticker_setting_edit_title">স্টিকারগুলি নির্বাচন</string>
+    <string name="sticker_setting_edit_title_preload">স্টিকারগুলির পুনঃক্রম</string>
     <string name="sticker_setting_main_title">আমার স্টিকারগুলি</string>
     <string name="sticker_setting_menu_delete">মুছুন</string>
     <string name="sticker_setting_menu_edit">সম্পাদনা করুন</string>
@@ -805,6 +809,7 @@ IVR কল স্ক্রীণের মেনু Dianhuabang নামক এ
     <string name="swipe_right_to_answer_call_with_video">ভিডিও সহ কলের উত্তর দিতে ডানে সোয়াইপ করুন।</string>
     <string name="swipe_right_to_answer_call_without_video">ভিডিও ছাড়া কলের উত্তর দিতে ডানে সোয়াইপ করুন।</string>
     <string name="switch_rejected_by_mt">ভিডিও কলে স্যুইচ করার অনুরোধ প্রত্যাখান করা হয়েছে।</string>
+    <string name="switch_rejected_by_mt_att">Video unavailable for this call. Call connected as a voice call.</string>
     <string name="switch_to_video_call_failed">ভিডিও কলে স্যুইচ করার অনুরোধ ব্যর্থ হয়েছে।</string>
     <string name="switch_to_video_call_failed_tmo">ভিডিও কলে স্যুইচ করার অনুরোধ অস্বীকৃত হয়েছে।</string>
     <string name="switch_to_voice_call_failed">ভয়েস কলে স্যুইচ করার অনুরোধ ব্যর্থ হয়েছে।</string>

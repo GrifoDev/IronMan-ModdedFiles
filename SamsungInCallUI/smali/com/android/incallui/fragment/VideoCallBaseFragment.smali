@@ -220,9 +220,10 @@
     packed-switch p2, :pswitch_data_0
 
     :goto_0
+    :pswitch_0
     return-object v0
 
-    :pswitch_0
+    :pswitch_1
     iget-object v1, p0, Lcom/android/incallui/fragment/VideoCallBaseFragment;->mVideoCallMetrics:Lcom/android/incallui/service/vt/VideoCallMetrics;
 
     iget-object v1, v1, Lcom/android/incallui/service/vt/VideoCallMetrics;->video:Lcom/android/incallui/service/vt/VideoMetrics;
@@ -235,7 +236,7 @@
 
     goto :goto_0
 
-    :pswitch_1
+    :pswitch_2
     iget-object v1, p0, Lcom/android/incallui/fragment/VideoCallBaseFragment;->mVideoCallMetrics:Lcom/android/incallui/service/vt/VideoCallMetrics;
 
     iget-object v1, v1, Lcom/android/incallui/service/vt/VideoCallMetrics;->video:Lcom/android/incallui/service/vt/VideoMetrics;
@@ -248,7 +249,7 @@
 
     goto :goto_0
 
-    :pswitch_2
+    :pswitch_3
     iget-object v1, p0, Lcom/android/incallui/fragment/VideoCallBaseFragment;->mVideoCallMetrics:Lcom/android/incallui/service/vt/VideoCallMetrics;
 
     iget-object v1, v1, Lcom/android/incallui/service/vt/VideoCallMetrics;->video:Lcom/android/incallui/service/vt/VideoMetrics;
@@ -261,7 +262,7 @@
 
     goto :goto_0
 
-    :pswitch_3
+    :pswitch_4
     iget v1, p0, Lcom/android/incallui/fragment/VideoCallBaseFragment;->mSecVideoState:I
 
     invoke-static {v1}, Lcom/android/incallui/service/vt/SecVideoState;->hasModifyProgressing(I)Z
@@ -295,7 +296,7 @@
 
     goto :goto_0
 
-    :pswitch_4
+    :pswitch_5
     iget-object v1, p0, Lcom/android/incallui/fragment/VideoCallBaseFragment;->mVideoCallMetrics:Lcom/android/incallui/service/vt/VideoCallMetrics;
 
     iget-object v1, v1, Lcom/android/incallui/service/vt/VideoCallMetrics;->video:Lcom/android/incallui/service/vt/VideoMetrics;
@@ -308,15 +309,30 @@
 
     goto :goto_0
 
+    :pswitch_6
+    iget-object v1, p0, Lcom/android/incallui/fragment/VideoCallBaseFragment;->mVideoCallMetrics:Lcom/android/incallui/service/vt/VideoCallMetrics;
+
+    iget-object v1, v1, Lcom/android/incallui/service/vt/VideoCallMetrics;->video:Lcom/android/incallui/service/vt/VideoMetrics;
+
+    invoke-virtual {v1, p1}, Lcom/android/incallui/service/vt/VideoMetrics;->getSmallVideoCRBTTemplete(Z)Lcom/android/incallui/util/VideoTemplate;
+
+    move-result-object v1
+
+    invoke-virtual {v0, v1}, Lcom/android/incallui/util/VideoTemplate;->update(Lcom/android/incallui/util/VideoTemplate;)V
+
+    goto :goto_0
+
     nop
 
     :pswitch_data_0
     .packed-switch 0x2
-        :pswitch_0
-        :pswitch_2
         :pswitch_1
         :pswitch_3
+        :pswitch_2
         :pswitch_4
+        :pswitch_5
+        :pswitch_0
+        :pswitch_6
     .end packed-switch
 .end method
 
@@ -356,7 +372,7 @@
 
     move-result v0
 
-    const v1, 0x7f100403
+    const v1, 0x7f10041a
 
     if-ne v0, v1, :cond_0
 
@@ -370,7 +386,7 @@
 
     move-result v0
 
-    const v1, 0x7f1003fd
+    const v1, 0x7f100414
 
     if-ne v0, v1, :cond_1
 
@@ -391,7 +407,7 @@
 
     move-result v0
 
-    const v1, 0x7f100403
+    const v1, 0x7f10041a
 
     if-ne v0, v1, :cond_0
 
@@ -405,7 +421,7 @@
 
     move-result v0
 
-    const v1, 0x7f1003fd
+    const v1, 0x7f100414
 
     if-ne v0, v1, :cond_1
 
@@ -418,7 +434,7 @@
 
     move-result v0
 
-    const v1, 0x7f1003fc
+    const v1, 0x7f100413
 
     if-ne v0, v1, :cond_2
 
@@ -872,6 +888,30 @@
 
     invoke-virtual {v2}, Landroid/view/ViewGroup;->bringToFront()V
 
+    sget-boolean v2, Lcom/android/incallui/service/vt/VideoCallConfig;->FIXED_PREVIEW_DIMENSION:Z
+
+    if-eqz v2, :cond_4
+
+    iget-object v2, p0, Lcom/android/incallui/fragment/VideoCallBaseFragment;->mVideoCallMetrics:Lcom/android/incallui/service/vt/VideoCallMetrics;
+
+    iget-object v2, v2, Lcom/android/incallui/service/vt/VideoCallMetrics;->video:Lcom/android/incallui/service/vt/VideoMetrics;
+
+    invoke-virtual {v2, v1}, Lcom/android/incallui/service/vt/VideoMetrics;->getBigTemplete(Z)Lcom/android/incallui/util/VideoTemplate;
+
+    move-result-object v2
+
+    invoke-virtual {v0, v2}, Lcom/android/incallui/util/VideoTemplate;->update(Lcom/android/incallui/util/VideoTemplate;)V
+
+    :goto_3
+    iget-object v2, p0, Lcom/android/incallui/fragment/VideoCallBaseFragment;->mPreviewAnimator:Lcom/android/incallui/util/VideoAnimator;
+
+    invoke-virtual {v2, v0}, Lcom/android/incallui/util/VideoAnimator;->change(Lcom/android/incallui/util/VideoTemplate;)V
+
+    invoke-virtual {p0, v1, v0}, Lcom/android/incallui/fragment/VideoCallBaseFragment;->saveCurrentTemplate(ZLcom/android/incallui/util/VideoTemplate;)V
+
+    goto :goto_2
+
+    :cond_4
     iget-object v2, p0, Lcom/android/incallui/fragment/VideoCallBaseFragment;->mVideoCallMetrics:Lcom/android/incallui/service/vt/VideoCallMetrics;
 
     iget-object v2, v2, Lcom/android/incallui/service/vt/VideoCallMetrics;->video:Lcom/android/incallui/service/vt/VideoMetrics;
@@ -882,13 +922,7 @@
 
     invoke-virtual {v0, v2}, Lcom/android/incallui/util/VideoTemplate;->update(Lcom/android/incallui/util/VideoTemplate;)V
 
-    iget-object v2, p0, Lcom/android/incallui/fragment/VideoCallBaseFragment;->mPreviewAnimator:Lcom/android/incallui/util/VideoAnimator;
-
-    invoke-virtual {v2, v0}, Lcom/android/incallui/util/VideoAnimator;->change(Lcom/android/incallui/util/VideoTemplate;)V
-
-    invoke-virtual {p0, v1, v0}, Lcom/android/incallui/fragment/VideoCallBaseFragment;->saveCurrentTemplate(ZLcom/android/incallui/util/VideoTemplate;)V
-
-    goto :goto_2
+    goto :goto_3
 
     :pswitch_2
     invoke-virtual {p0, v1, p2}, Lcom/android/incallui/fragment/VideoCallBaseFragment;->setBigViewLocation(ZI)V
@@ -905,7 +939,7 @@
 
     const/4 v4, 0x5
 
-    if-ne v3, v4, :cond_4
+    if-ne v3, v4, :cond_5
 
     iget-object v0, p0, Lcom/android/incallui/fragment/VideoCallBaseFragment;->mPreviewContainer:Landroid/view/ViewGroup;
 
@@ -913,7 +947,7 @@
 
     goto :goto_2
 
-    :cond_4
+    :cond_5
     iget-object v3, p0, Lcom/android/incallui/fragment/VideoCallBaseFragment;->mVideoCallMetrics:Lcom/android/incallui/service/vt/VideoCallMetrics;
 
     iget-object v3, v3, Lcom/android/incallui/service/vt/VideoCallMetrics;->video:Lcom/android/incallui/service/vt/VideoMetrics;
@@ -924,7 +958,7 @@
 
     iget v4, p0, Lcom/android/incallui/fragment/VideoCallBaseFragment;->mPreviewLocation:I
 
-    if-ne v4, v5, :cond_5
+    if-ne v4, v5, :cond_6
 
     invoke-virtual {p0, v1}, Lcom/android/incallui/fragment/VideoCallBaseFragment;->getSmallTemplete(Z)Lcom/android/incallui/util/VideoTemplate;
 
@@ -932,7 +966,7 @@
 
     invoke-virtual {v0, v2}, Lcom/android/incallui/util/VideoTemplate;->update(Lcom/android/incallui/util/VideoTemplate;)V
 
-    :goto_3
+    :goto_4
     iget-object v2, p0, Lcom/android/incallui/fragment/VideoCallBaseFragment;->mPreviewAnimator:Lcom/android/incallui/util/VideoAnimator;
 
     invoke-virtual {v2, v0, v3, p2}, Lcom/android/incallui/util/VideoAnimator;->move(Lcom/android/incallui/util/VideoTemplate;Lcom/android/incallui/util/VideoTemplate;I)V
@@ -941,14 +975,14 @@
 
     goto :goto_2
 
-    :cond_5
+    :cond_6
     invoke-virtual {p0, v2}, Lcom/android/incallui/fragment/VideoCallBaseFragment;->getBigTemplete(Z)Lcom/android/incallui/util/VideoTemplate;
 
     move-result-object v2
 
     invoke-virtual {v0, v2}, Lcom/android/incallui/util/VideoTemplate;->update(Lcom/android/incallui/util/VideoTemplate;)V
 
-    goto :goto_3
+    goto :goto_4
 
     :pswitch_data_0
     .packed-switch 0x0
@@ -2034,7 +2068,7 @@
 
     move-result v2
 
-    if-eqz v2, :cond_5
+    if-eqz v2, :cond_6
 
     :goto_1
     invoke-static {}, Lcom/android/incallui/CallList;->getInstance()Lcom/android/incallui/CallList;
@@ -2055,7 +2089,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_4
+    if-eqz v0, :cond_5
 
     const/4 v0, 0x5
 
@@ -2069,18 +2103,37 @@
 
     move-result v1
 
-    if-eqz v1, :cond_0
+    if-eqz v1, :cond_4
 
     const/4 v0, 0x6
 
+    :cond_4
+    iget-object v1, p0, Lcom/android/incallui/fragment/VideoCallBaseFragment;->mPrimaryCall:Lcom/android/incallui/Call;
+
+    if-eqz v1, :cond_0
+
+    iget-object v1, p0, Lcom/android/incallui/fragment/VideoCallBaseFragment;->mPrimaryCall:Lcom/android/incallui/Call;
+
+    invoke-virtual {v1}, Lcom/android/incallui/Call;->getCallDetails()Lcom/android/incallui/CallDetails;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Lcom/android/incallui/CallDetails;->isEarlyMedia()Z
+
+    move-result v1
+
+    if-eqz v1, :cond_0
+
+    const/16 v0, 0x8
+
     goto :goto_0
 
-    :cond_4
+    :cond_5
     const/4 v0, 0x3
 
     goto :goto_2
 
-    :cond_5
+    :cond_6
     move v0, v1
 
     goto :goto_1
@@ -2227,7 +2280,7 @@
     :cond_0
     if-eqz p1, :cond_3
 
-    const v0, 0x7f1003fc
+    const v0, 0x7f100413
 
     invoke-virtual {p1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -2235,7 +2288,7 @@
 
     iput-object v0, p0, Lcom/android/incallui/fragment/VideoCallBaseFragment;->mVideoContainerLayout:Landroid/view/View;
 
-    const v0, 0x7f1003fd
+    const v0, 0x7f100414
 
     invoke-virtual {p1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -2264,7 +2317,7 @@
     invoke-virtual {v0, v1}, Lcom/android/incallui/InCallContentViewListener;->registerListener(Landroid/view/View;)V
 
     :cond_1
-    const v0, 0x7f100403
+    const v0, 0x7f10041a
 
     invoke-virtual {p1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -2293,7 +2346,7 @@
     invoke-virtual {v0, v1}, Lcom/android/incallui/InCallContentViewListener;->registerListener(Landroid/view/View;)V
 
     :cond_2
-    const v0, 0x7f100407
+    const v0, 0x7f10041e
 
     invoke-virtual {p1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -2301,7 +2354,7 @@
 
     iput-object v0, p0, Lcom/android/incallui/fragment/VideoCallBaseFragment;->mPreviewBorder:Landroid/view/View;
 
-    const v0, 0x7f1004bf
+    const v0, 0x7f1004d9
 
     invoke-virtual {p1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -2309,7 +2362,7 @@
 
     iput-object v0, p0, Lcom/android/incallui/fragment/VideoCallBaseFragment;->mDisplayBorder:Landroid/view/View;
 
-    const v0, 0x7f1000f2
+    const v0, 0x7f1000f9
 
     invoke-virtual {p1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -2317,7 +2370,7 @@
 
     iput-object v0, p0, Lcom/android/incallui/fragment/VideoCallBaseFragment;->mPreparingAnimation:Landroid/view/View;
 
-    const v0, 0x7f100402
+    const v0, 0x7f100419
 
     invoke-virtual {p1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -2325,7 +2378,7 @@
 
     iput-object v0, p0, Lcom/android/incallui/fragment/VideoCallBaseFragment;->mDisplayCaptureAnimatinoView:Landroid/view/View;
 
-    const v0, 0x7f100406
+    const v0, 0x7f10041d
 
     invoke-virtual {p1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -2333,7 +2386,7 @@
 
     iput-object v0, p0, Lcom/android/incallui/fragment/VideoCallBaseFragment;->mPreviewCaptureAnimatinoView:Landroid/view/View;
 
-    const v0, 0x7f100405
+    const v0, 0x7f10041c
 
     invoke-virtual {p1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -2341,7 +2394,7 @@
 
     iput-object v0, p0, Lcom/android/incallui/fragment/VideoCallBaseFragment;->mPreviewSwitchAnimationView:Landroid/view/View;
 
-    const v0, 0x7f1004ba
+    const v0, 0x7f1004d4
 
     invoke-virtual {p1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -2349,7 +2402,7 @@
 
     iput-object v0, p0, Lcom/android/incallui/fragment/VideoCallBaseFragment;->mFullScreenTouchArea:Landroid/view/View;
 
-    const v0, 0x7f1004bc
+    const v0, 0x7f1004d6
 
     invoke-virtual {p1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -2359,7 +2412,7 @@
 
     iput-object v0, p0, Lcom/android/incallui/fragment/VideoCallBaseFragment;->mDisplayHoldImage:Landroid/widget/ImageView;
 
-    const v0, 0x7f1004c1
+    const v0, 0x7f1004db
 
     invoke-virtual {p1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -2369,7 +2422,7 @@
 
     iput-object v0, p0, Lcom/android/incallui/fragment/VideoCallBaseFragment;->mPreviewHoldImage:Landroid/widget/ImageView;
 
-    const v0, 0x7f1004bd
+    const v0, 0x7f1004d7
 
     invoke-virtual {p1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -2379,7 +2432,7 @@
 
     iput-object v0, p0, Lcom/android/incallui/fragment/VideoCallBaseFragment;->mDisplayContactPhoto:Landroid/widget/ImageView;
 
-    const v0, 0x7f1004c2
+    const v0, 0x7f1004dc
 
     invoke-virtual {p1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -2389,7 +2442,7 @@
 
     iput-object v0, p0, Lcom/android/incallui/fragment/VideoCallBaseFragment;->mPreviewProfilePhoto:Landroid/widget/ImageView;
 
-    const v0, 0x7f1004bb
+    const v0, 0x7f1004d5
 
     invoke-virtual {p1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -2399,7 +2452,7 @@
 
     iput-object v0, p0, Lcom/android/incallui/fragment/VideoCallBaseFragment;->mDisplayImageContainer:Landroid/view/ViewGroup;
 
-    const v0, 0x7f1004c0
+    const v0, 0x7f1004da
 
     invoke-virtual {p1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -2844,7 +2897,7 @@
     goto :goto_0
 
     :pswitch_data_0
-    .packed-switch 0x7f1003fc
+    .packed-switch 0x7f100413
         :pswitch_0
     .end packed-switch
 .end method
@@ -2868,7 +2921,7 @@
 
     move-result v0
 
-    const v1, 0x7f1004ba
+    const v1, 0x7f1004d4
 
     if-ne v0, v1, :cond_1
 
@@ -3112,7 +3165,7 @@
 
     move-result v0
 
-    const v3, 0x7f100403
+    const v3, 0x7f10041a
 
     if-ne v0, v3, :cond_0
 
@@ -3125,7 +3178,7 @@
 
     move-result v0
 
-    const v3, 0x7f1003fd
+    const v3, 0x7f100414
 
     if-ne v0, v3, :cond_4
 
@@ -4273,7 +4326,7 @@
 .end method
 
 .method protected setVideoDimension()V
-    .locals 3
+    .locals 4
 
     iget-object v0, p0, Lcom/android/incallui/fragment/VideoCallBaseFragment;->mPrimaryCall:Lcom/android/incallui/Call;
 
@@ -4338,9 +4391,11 @@
 
     invoke-static {v0}, Lcom/android/incallui/service/vt/VideoCallControl;->isSupportOnlyLandscapeUI(Lcom/android/incallui/Call;)Z
 
-    move-result v0
+    move-result v3
 
-    if-nez v0, :cond_2
+    sget-boolean v0, Lcom/android/incallui/service/vt/VideoCallConfig;->FIXED_PREVIEW_DIMENSION:Z
+
+    if-nez v0, :cond_6
 
     iget-object v0, p0, Lcom/android/incallui/fragment/VideoCallBaseFragment;->mPrimaryCall:Lcom/android/incallui/Call;
 
@@ -4358,12 +4413,14 @@
 
     if-eqz v0, :cond_6
 
-    :cond_2
     const/4 v0, 0x1
 
     :goto_1
+    if-nez v3, :cond_2
+
     if-eqz v0, :cond_3
 
+    :cond_2
     invoke-virtual {v1}, Lcom/android/incallui/service/vt/VideoDimension;->swap()V
 
     :cond_3
@@ -4506,24 +4563,27 @@
 
     move-result v4
 
-    if-eqz v4, :cond_4
+    if-eqz v4, :cond_a
 
     :cond_3
     invoke-virtual {p0}, Lcom/android/incallui/fragment/VideoCallBaseFragment;->clearDragPostion()V
 
     invoke-static {}, Lcom/android/incallui/service/vt/VideoCallManager;->getInstance()Lcom/android/incallui/service/vt/VideoCallManager;
 
-    move-result-object v4
+    move-result-object v0
 
-    invoke-virtual {v4, v1}, Lcom/android/incallui/service/vt/VideoCallManager;->setScreenResized(Z)V
+    invoke-virtual {v0, v1}, Lcom/android/incallui/service/vt/VideoCallManager;->setScreenResized(Z)V
 
     invoke-static {}, Lcom/android/incallui/service/vt/VideoCallManager;->getInstance()Lcom/android/incallui/service/vt/VideoCallManager;
 
-    move-result-object v4
+    move-result-object v0
 
-    invoke-virtual {v4, v1}, Lcom/android/incallui/service/vt/VideoCallManager;->setExchangedViews(Z)V
+    invoke-virtual {v0, v1}, Lcom/android/incallui/service/vt/VideoCallManager;->setExchangedViews(Z)V
+
+    move v0, v1
 
     :cond_4
+    :goto_3
     iget-object v4, p0, Lcom/android/incallui/fragment/VideoCallBaseFragment;->mPrimaryCall:Lcom/android/incallui/Call;
 
     invoke-virtual {v4}, Lcom/android/incallui/Call;->getCallDetails()Lcom/android/incallui/CallDetails;
@@ -4534,25 +4594,25 @@
 
     move-result v4
 
-    if-eqz v4, :cond_a
+    if-eqz v4, :cond_b
 
     move v2, v3
 
     move v4, v5
 
-    :goto_3
+    :goto_4
     invoke-virtual {p0}, Lcom/android/incallui/fragment/VideoCallBaseFragment;->needToHideSmallView()Z
 
     move-result v7
 
     if-eqz v7, :cond_5
 
-    if-ne v4, v5, :cond_b
+    if-ne v4, v5, :cond_c
 
     move v4, v1
 
     :cond_5
-    :goto_4
+    :goto_5
     invoke-virtual {p0}, Lcom/android/incallui/fragment/VideoCallBaseFragment;->canDisplayExchangedViews()Z
 
     move-result v1
@@ -4580,12 +4640,12 @@
 
     if-eqz v1, :cond_7
 
-    if-ne v2, v3, :cond_c
+    if-ne v2, v3, :cond_d
 
     move v2, v6
 
     :cond_7
-    :goto_5
+    :goto_6
     invoke-direct {p0, v4, v0}, Lcom/android/incallui/fragment/VideoCallBaseFragment;->setPreviewLocation(II)V
 
     invoke-direct {p0, v2, v0}, Lcom/android/incallui/fragment/VideoCallBaseFragment;->setDispalyLocation(II)V
@@ -4595,7 +4655,7 @@
     :cond_8
     move v4, v1
 
-    goto :goto_1
+    goto/16 :goto_1
 
     :cond_9
     move v2, v1
@@ -4603,7 +4663,20 @@
     goto :goto_2
 
     :cond_a
-    if-nez v2, :cond_d
+    iget-object v4, p0, Lcom/android/incallui/fragment/VideoCallBaseFragment;->mPrimaryCall:Lcom/android/incallui/Call;
+
+    invoke-static {v4}, Lcom/android/incallui/util/CallTypeUtils;->isModifyProgressing(Lcom/android/incallui/Call;)Z
+
+    move-result v4
+
+    if-eqz v4, :cond_4
+
+    invoke-virtual {p0}, Lcom/android/incallui/fragment/VideoCallBaseFragment;->clearDragPostion()V
+
+    goto :goto_3
+
+    :cond_b
+    if-nez v2, :cond_e
 
     invoke-virtual {p0}, Lcom/android/incallui/fragment/VideoCallBaseFragment;->getPreviewLocation()I
 
@@ -4613,28 +4686,28 @@
 
     move-result v2
 
-    goto :goto_3
+    goto :goto_4
 
-    :cond_b
+    :cond_c
     if-ne v2, v5, :cond_5
 
     move v2, v1
 
-    goto :goto_4
+    goto :goto_5
 
-    :cond_c
+    :cond_d
     if-ne v4, v3, :cond_7
 
     move v4, v6
 
-    goto :goto_5
+    goto :goto_6
 
-    :cond_d
+    :cond_e
     move v2, v3
 
     move v4, v1
 
-    goto :goto_3
+    goto :goto_4
 .end method
 
 .method public showCallBannerByDialpad(Z)V

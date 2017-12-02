@@ -170,7 +170,7 @@
 
     invoke-direct {v1, v0}, Lcom/android/incallui/rtt/ChatHistoryAdapter$ViewHolder;-><init>(Lcom/android/incallui/rtt/ChatHistoryAdapter$1;)V
 
-    const v0, 0x7f1001bc
+    const v0, 0x7f1001c3
 
     invoke-virtual {p1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -180,7 +180,7 @@
 
     iput-object v0, v1, Lcom/android/incallui/rtt/ChatHistoryAdapter$ViewHolder;->sentTxtMessageFirst:Landroid/widget/TextView;
 
-    const v0, 0x7f1001bd
+    const v0, 0x7f1001c4
 
     invoke-virtual {p1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -190,7 +190,7 @@
 
     iput-object v0, v1, Lcom/android/incallui/rtt/ChatHistoryAdapter$ViewHolder;->sentTxtMessageSec:Landroid/widget/TextView;
 
-    const v0, 0x7f1001c0
+    const v0, 0x7f1001c7
 
     invoke-virtual {p1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -200,7 +200,7 @@
 
     iput-object v0, v1, Lcom/android/incallui/rtt/ChatHistoryAdapter$ViewHolder;->recTxtMessageFirst:Landroid/widget/TextView;
 
-    const v0, 0x7f1001c1
+    const v0, 0x7f1001c8
 
     invoke-virtual {p1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -210,7 +210,7 @@
 
     iput-object v0, v1, Lcom/android/incallui/rtt/ChatHistoryAdapter$ViewHolder;->recTxtMessageSec:Landroid/widget/TextView;
 
-    const v0, 0x7f1001be
+    const v0, 0x7f1001c5
 
     invoke-virtual {p1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -218,7 +218,7 @@
 
     invoke-static {v1, v0}, Lcom/android/incallui/rtt/ChatHistoryAdapter$ViewHolder;->access$102(Lcom/android/incallui/rtt/ChatHistoryAdapter$ViewHolder;Landroid/view/View;)Landroid/view/View;
 
-    const v0, 0x7f1001bb
+    const v0, 0x7f1001c2
 
     invoke-virtual {p1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -226,7 +226,7 @@
 
     invoke-static {v1, v0}, Lcom/android/incallui/rtt/ChatHistoryAdapter$ViewHolder;->access$002(Lcom/android/incallui/rtt/ChatHistoryAdapter$ViewHolder;Landroid/view/View;)Landroid/view/View;
 
-    const v0, 0x7f1001bf
+    const v0, 0x7f1001c6
 
     invoke-virtual {p1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -483,7 +483,7 @@
 
     if-nez p2, :cond_1
 
-    const v2, 0x7f040074
+    const v2, 0x7f040077
 
     const/4 v3, 0x0
 

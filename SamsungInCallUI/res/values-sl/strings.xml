@@ -184,6 +184,7 @@
     <string name="agif_decline_sticker_header">Zavrnitev z nalepko</string>
     <string name="agif_decline_text_header">Zavrnitev z besedilom</string>
     <string name="agif_decline_toast">Nalepka poslana osebi %s.</string>
+    <string name="agif_outgoing_bubble_tip">Izberite nalepko, ki kaže vaše počutje.</string>
     <string name="agif_pickers_add_tab_description">Dodaj</string>
     <string name="agif_pickers_downloaded">Preneseno</string>
     <string name="agif_pickers_item_usage_hints_description">Dvakrat pritisnite, da izberete</string>
@@ -199,10 +200,12 @@
     <string name="agif_pickers_tab_select_description">Izbrano</string>
     <string name="agif_pickers_title">Začnite z nalepko</string>
     <string name="agif_pickers_title_top_stickers">Najboljše nalepke</string>
+    <string name="agif_random_send_message">Pritisnite tukaj, da pošljete to nalepko.</string>
     <string name="agif_read_permission_description">Telefonu omogoča branje vsebine AGIF.</string>
     <string name="agif_read_permission_label">Branje vsebine AGIF</string>
     <string name="agif_receive_no_id">Nalepke ni mogoče prikazati. Po klicu posodobite aplikacijo %s.</string>
     <string name="agif_receive_no_id_upsupport_update">Nalepke ni mogoče prikazati. Več nalepk bo na voljo po naslednji posodobitvi sistema.</string>
+    <string name="agif_receive_toast">Oseba %s je poslala nalepko.</string>
     <string name="agif_sent_fail_message">Animirane datoteke GIF ni mogoče poslati. Poskusite znova pozneje.</string>
     <string name="agif_sent_toast">Nalepka je bila poslana.</string>
     <string name="agif_write_permission_description">Telefonu omogoča spreminjanje vsebine AGIF.</string>
@@ -871,6 +874,7 @@ kamera"</string>
     <string name="sticker_delete_stickers">Želite izbrisati nekaj (%d) nalepk?</string>
     <string name="sticker_delete_this_sticker">Želite izbrisati to nalepko?</string>
     <string name="sticker_setting_edit_title">Izbira nalepk</string>
+    <string name="sticker_setting_edit_title_preload">Prerazporedi nalepke</string>
     <string name="sticker_setting_main_title">Moje nalepke</string>
     <string name="sticker_setting_menu_delete">Izbriši</string>
     <string name="sticker_setting_menu_edit">Uredi</string>
@@ -883,6 +887,7 @@ kamera"</string>
     <string name="swipe_right_to_answer_call_with_video">Podrsajte v desno za sprejem klica z videom.</string>
     <string name="swipe_right_to_answer_call_without_video">Podrsajte v desno za sprejem klica brez videa.</string>
     <string name="switch_rejected_by_mt">Zahteva za preklop na video klic zavrnjena.</string>
+    <string name="switch_rejected_by_mt_att">Video unavailable for this call. Call connected as a voice call.</string>
     <string name="switch_to_video_call_failed">Zahteva za preklop na video klic ni bila uspešna.</string>
     <string name="switch_to_video_call_failed_tmo">Zahteva za preklop na video klic je bila zavrnjena.</string>
     <string name="switch_to_voice_call_failed">Zahteva za preklop na glasovni klic ni uspela.</string>

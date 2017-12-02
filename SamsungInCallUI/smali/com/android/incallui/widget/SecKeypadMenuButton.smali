@@ -109,7 +109,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f0a00fb
+    const v1, 0x7f0a00f7
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -141,7 +141,7 @@
 
     if-eqz v0, :cond_0
 
-    const v0, 0x7f02038a
+    const v0, 0x7f02039a
 
     invoke-virtual {p0, v0}, Lcom/android/incallui/widget/SecKeypadMenuButton;->setBackgroundResource(I)V
 
@@ -155,7 +155,7 @@
 
     if-eqz v0, :cond_1
 
-    const v0, 0x7f0202e6
+    const v0, 0x7f0202f5
 
     invoke-virtual {p0, v0}, Lcom/android/incallui/widget/SecKeypadMenuButton;->setBackgroundResource(I)V
 

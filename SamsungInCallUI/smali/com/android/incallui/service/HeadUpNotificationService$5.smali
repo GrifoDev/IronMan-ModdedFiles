@@ -51,7 +51,7 @@
 
     const-string v1, "animateForHide - onAnimationEnd"
 
-    invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
     iget-object v0, p0, Lcom/android/incallui/service/HeadUpNotificationService$5;->this$0:Lcom/android/incallui/service/HeadUpNotificationService;
 
@@ -69,11 +69,35 @@
 
     iget-object v0, p0, Lcom/android/incallui/service/HeadUpNotificationService$5;->this$0:Lcom/android/incallui/service/HeadUpNotificationService;
 
-    invoke-static {v0}, Lcom/android/incallui/service/HeadUpNotificationService;->access$1200(Lcom/android/incallui/service/HeadUpNotificationService;)V
+    invoke-virtual {v0}, Lcom/android/incallui/service/HeadUpNotificationService;->onEndAnimation()V
+
+    invoke-static {}, Lcom/android/incallui/CallList;->getInstance()Lcom/android/incallui/CallList;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lcom/android/incallui/CallList;->hasAllLiveCall()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    const-string v0, "HeadUpNotificationService"
+
+    const-string v1, "animateForHide: there is no live call"
+
+    invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
     iget-object v0, p0, Lcom/android/incallui/service/HeadUpNotificationService$5;->this$0:Lcom/android/incallui/service/HeadUpNotificationService;
 
-    invoke-virtual {v0}, Lcom/android/incallui/service/HeadUpNotificationService;->onEndAnimation()V
+    invoke-static {v0}, Lcom/android/incallui/service/HeadUpNotificationService;->access$1200(Lcom/android/incallui/service/HeadUpNotificationService;)V
 
+    :goto_0
     return-void
+
+    :cond_0
+    iget-object v0, p0, Lcom/android/incallui/service/HeadUpNotificationService$5;->this$0:Lcom/android/incallui/service/HeadUpNotificationService;
+
+    invoke-static {v0}, Lcom/android/incallui/service/HeadUpNotificationService;->access$1300(Lcom/android/incallui/service/HeadUpNotificationService;)V
+
+    goto :goto_0
 .end method

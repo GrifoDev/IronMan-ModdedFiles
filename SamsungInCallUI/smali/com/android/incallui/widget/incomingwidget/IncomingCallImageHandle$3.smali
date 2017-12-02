@@ -38,7 +38,7 @@
 
     iget-object v0, p0, Lcom/android/incallui/widget/incomingwidget/IncomingCallImageHandle$3;->this$0:Lcom/android/incallui/widget/incomingwidget/IncomingCallImageHandle;
 
-    invoke-static {v0}, Lcom/android/incallui/widget/incomingwidget/IncomingCallImageHandle;->access$1200(Lcom/android/incallui/widget/incomingwidget/IncomingCallImageHandle;)Lcom/android/incallui/widget/incomingwidget/IncomingCallImageHandle$HandleState;
+    invoke-static {v0}, Lcom/android/incallui/widget/incomingwidget/IncomingCallImageHandle;->access$1300(Lcom/android/incallui/widget/incomingwidget/IncomingCallImageHandle;)Lcom/android/incallui/widget/incomingwidget/IncomingCallImageHandle$HandleState;
 
     move-result-object v0
 

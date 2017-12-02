@@ -184,6 +184,7 @@
     <string name="agif_decline_sticker_header">拒接并发送贴纸</string>
     <string name="agif_decline_text_header">拒接并发送短信</string>
     <string name="agif_decline_toast">贴纸已发送至%s</string>
+    <string name="agif_outgoing_bubble_tip">发送贴纸来表达您的感受。</string>
     <string name="agif_pickers_add_tab_description">添加</string>
     <string name="agif_pickers_downloaded">已下载</string>
     <string name="agif_pickers_item_usage_hints_description">双击以选择</string>
@@ -199,10 +200,12 @@
     <string name="agif_pickers_tab_select_description">已选中</string>
     <string name="agif_pickers_title">从贴纸开始</string>
     <string name="agif_pickers_title_top_stickers">热门贴纸</string>
+    <string name="agif_random_send_message">点击此处发送该贴纸。</string>
     <string name="agif_read_permission_description">允许【电话】读取 AGIF 内容。</string>
     <string name="agif_read_permission_label">读取 AGIF 内容</string>
     <string name="agif_receive_no_id">贴纸无法显示。请在通话后更新%s。</string>
     <string name="agif_receive_no_id_upsupport_update">贴纸无法显示。下次系统更新时将推出更多贴纸。</string>
+    <string name="agif_receive_toast">来自%s的贴纸。</string>
     <string name="agif_sent_fail_message">无法发送动画 GIF，请稍后重试。</string>
     <string name="agif_sent_toast">贴纸已发送</string>
     <string name="agif_write_permission_description">允许【电话】修改 AGIF 内容。</string>
@@ -871,6 +874,7 @@
     <string name="sticker_delete_stickers">是否删除 %d 张贴纸？</string>
     <string name="sticker_delete_this_sticker">是否删除该贴纸？</string>
     <string name="sticker_setting_edit_title">选择贴纸</string>
+    <string name="sticker_setting_edit_title_preload">贴纸重新排列</string>
     <string name="sticker_setting_main_title">我的贴纸</string>
     <string name="sticker_setting_menu_delete">删除</string>
     <string name="sticker_setting_menu_edit">编辑</string>
@@ -883,6 +887,7 @@
     <string name="swipe_right_to_answer_call_with_video">向右滑动可接听视频来电</string>
     <string name="swipe_right_to_answer_call_without_video">向右滑动可接听非视频来电</string>
     <string name="switch_rejected_by_mt">请求切换至视频通话被拒绝。</string>
+    <string name="switch_rejected_by_mt_att">已连接语音通话，此通话不能使用视频。</string>
     <string name="switch_to_video_call_failed">请求切换至视频通话失败</string>
     <string name="switch_to_video_call_failed_tmo">切换为视频通话的请求被拒绝</string>
     <string name="switch_to_voice_call_failed">请求切换至语音通话失败</string>

@@ -153,6 +153,7 @@
     <string name="agif_decline_sticker_header">একটি স্টিকার দিয়ে প্রত্যাখ্যান করুন</string>
     <string name="agif_decline_text_header">একটি টেক্সট দিয়ে প্রত্যাখ্যান করুন</string>
     <string name="agif_decline_toast">%s-কে স্টিকার পাঠানো হয়েছে৷</string>
+    <string name="agif_outgoing_bubble_tip">আপনি কেমন বোধ করছেন তা দেখানোর জন্য একটি স্টিকার পাঠান৷</string>
     <string name="agif_pickers_add_tab_description">যোগ করুন</string>
     <string name="agif_pickers_downloaded">ডাউনলোড হয়েছে</string>
     <string name="agif_pickers_item_usage_hints_description">নির্বাচন করতে দুবার ট্যাপ করুন</string>
@@ -168,10 +169,12 @@
     <string name="agif_pickers_tab_select_description">নির্বাচিত</string>
     <string name="agif_pickers_title">একটি স্টিকার দিয়ে শুরু করুন</string>
     <string name="agif_pickers_title_top_stickers">শীর্ষ স্টিকারসমূহ</string>
+    <string name="agif_random_send_message">এই স্টিকার পাঠাতে এখানে ট্যাপ করুন৷</string>
     <string name="agif_read_permission_description">ফোনকে AGIF কন্টেন্ট পড়ার সুযোগ দেয়।</string>
     <string name="agif_read_permission_label">AGIF কন্টেন্ট পড়ুন</string>
     <string name="agif_receive_no_id">এই স্টিকার দেখানো যাবে না৷ কলের পর %s আপডেট করুন৷</string>
     <string name="agif_receive_no_id_upsupport_update">স্টিকার দেখানো যাবে না৷ পরবর্তীবার সিস্টেম আপডেটের পর আরো স্টিকার পাওয়া যাবে৷</string>
+    <string name="agif_receive_toast">%s থেকে স্টিকার৷</string>
     <string name="agif_sent_fail_message">অ্যানিমেটেড GIF পাঠানো যাবে না৷ পরে আবার চেষ্টা করুন৷</string>
     <string name="agif_sent_toast">স্টিকার পাঠানো হয়েছে৷</string>
     <string name="agif_write_permission_description">ফোনকে AGIF কন্টেন্ট পরিবর্তন করার সুযোগ দেয়।</string>
@@ -839,6 +842,7 @@ IVR কল স্ক্রিন মেন্যু Dianhuabang নামের 
     <string name="sticker_delete_stickers">%dটি স্টিকার মুছবেন?</string>
     <string name="sticker_delete_this_sticker">এই স্টিকার মুছবেন?</string>
     <string name="sticker_setting_edit_title">স্টিকার বেছে নিন</string>
+    <string name="sticker_setting_edit_title_preload">স্টিকারগুলো পুনর্বিন্যাস করুন</string>
     <string name="sticker_setting_main_title">আমার স্টিকার</string>
     <string name="sticker_setting_menu_delete">মুছুন</string>
     <string name="sticker_setting_menu_edit">সম্পাদনা করুন</string>
@@ -851,6 +855,7 @@ IVR কল স্ক্রিন মেন্যু Dianhuabang নামের 
     <string name="swipe_right_to_answer_call_with_video">ভিডিওসহ কলের উত্তর দিতে ডানে সোয়াইপ করুন৷</string>
     <string name="swipe_right_to_answer_call_without_video">ভিডিও ছাড়া কলের উত্তর দিতে ডানে সোয়াইপ করুন৷</string>
     <string name="switch_rejected_by_mt">ভিডিও কলে স্যুইচ করার অনুরোধ প্রত্যাখ্যান করা হয়েছে।</string>
+    <string name="switch_rejected_by_mt_att">Video unavailable for this call. Call connected as a voice call.</string>
     <string name="switch_to_video_call_failed">ভিডিও কলে স্যুইচ করার অনুরোধ ব্যর্থ হয়েছে।</string>
     <string name="switch_to_video_call_failed_tmo">ভিডিও কলে সুইচ করার অনুরোধ প্রত্যাখ্যাত হয়েছে৷</string>
     <string name="switch_to_voice_call_failed">ভয়েস কলে স্যুইচ করার অনুরোধ ব্যর্থ হয়েছে।</string>

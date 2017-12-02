@@ -297,6 +297,37 @@
     goto :goto_2
 .end method
 
+.method public static a([Ljava/lang/Object;Ljava/lang/Object;)Z
+    .locals 4
+
+    const/4 v0, 0x0
+
+    array-length v2, p0
+
+    move v1, v0
+
+    :goto_0
+    if-ge v1, v2, :cond_0
+
+    aget-object v3, p0, v1
+
+    invoke-virtual {v3, p1}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
+
+    move-result v3
+
+    if-eqz v3, :cond_1
+
+    const/4 v0, 0x1
+
+    :cond_0
+    return v0
+
+    :cond_1
+    add-int/lit8 v1, v1, 0x1
+
+    goto :goto_0
+.end method
+
 .method public static a(Ljava/io/InputStream;)[B
     .locals 6
 
@@ -759,115 +790,4 @@
     sget-boolean v0, Lcom/samsung/android/provider/agifcallprovider/a/a;->a:Z
 
     return v0
-.end method
-
-.method public static f()Ljava/lang/String;
-    .locals 3
-
-    invoke-static {}, Landroid/os/Looper;->myLooper()Landroid/os/Looper;
-
-    move-result-object v0
-
-    if-nez v0, :cond_0
-
-    invoke-static {}, Landroid/os/Looper;->prepare()V
-
-    :cond_0
-    const-string v0, "persist.omc.sales_code"
-
-    invoke-static {v0}, Landroid/os/SemSystemProperties;->get(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-static {v0}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
-
-    move-result v1
-
-    if-nez v1, :cond_1
-
-    :goto_0
-    return-object v0
-
-    :cond_1
-    invoke-static {}, Lcom/android/incallui/external/CscParser;->getInstance()Lcom/android/incallui/external/CscParser;
-
-    move-result-object v0
-
-    const-string v1, "GeneralInfo"
-
-    invoke-virtual {v0, v1}, Lcom/android/incallui/external/CscParser;->search(Ljava/lang/String;)Lorg/w3c/dom/Node;
-
-    move-result-object v1
-
-    const-string v2, "SalesCode"
-
-    invoke-virtual {v0, v1, v2}, Lcom/android/incallui/external/CscParser;->search(Lorg/w3c/dom/Node;Ljava/lang/String;)Lorg/w3c/dom/Node;
-
-    move-result-object v1
-
-    invoke-virtual {v0, v1}, Lcom/android/incallui/external/CscParser;->getValue(Lorg/w3c/dom/Node;)Ljava/lang/String;
-
-    move-result-object v0
-
-    goto :goto_0
-.end method
-
-.method public static g()Ljava/lang/String;
-    .locals 1
-
-    invoke-static {}, Landroid/os/Looper;->myLooper()Landroid/os/Looper;
-
-    move-result-object v0
-
-    if-nez v0, :cond_0
-
-    invoke-static {}, Landroid/os/Looper;->prepare()V
-
-    :cond_0
-    const-string v0, "ro.csc.countryiso_code"
-
-    invoke-static {v0}, Landroid/os/SemSystemProperties;->get(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public static h()Z
-    .locals 2
-
-    invoke-static {}, Landroid/os/Looper;->myLooper()Landroid/os/Looper;
-
-    move-result-object v0
-
-    if-nez v0, :cond_0
-
-    invoke-static {}, Landroid/os/Looper;->prepare()V
-
-    :cond_0
-    const-string v0, "ro.build.characteristics"
-
-    invoke-static {v0}, Landroid/os/SemSystemProperties;->get(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v0
-
-    if-eqz v0, :cond_1
-
-    const-string v1, "tablet"
-
-    invoke-virtual {v0, v1}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_1
-
-    const/4 v0, 0x1
-
-    :goto_0
-    return v0
-
-    :cond_1
-    const/4 v0, 0x0
-
-    goto :goto_0
 .end method

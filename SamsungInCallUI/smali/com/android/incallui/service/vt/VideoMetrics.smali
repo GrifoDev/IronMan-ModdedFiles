@@ -238,28 +238,53 @@
 .end method
 
 .method private isCenterAlign()Z
-    .locals 1
+    .locals 3
 
-    iget-boolean v0, p0, Lcom/android/incallui/service/vt/VideoMetrics;->mIsDeviceLandScape:Z
-
-    if-nez v0, :cond_0
-
-    iget-boolean v0, p0, Lcom/android/incallui/service/vt/VideoMetrics;->mIsInMultiWindowMode:Z
-
-    if-nez v0, :cond_0
-
-    iget-boolean v0, p0, Lcom/android/incallui/service/vt/VideoMetrics;->mIsPhoneVideoUX:Z
-
-    if-nez v0, :cond_1
-
-    :cond_0
     const/4 v0, 0x1
+
+    const/4 v1, 0x0
+
+    iget-boolean v2, p0, Lcom/android/incallui/service/vt/VideoMetrics;->mIsDeviceLandScape:Z
+
+    if-nez v2, :cond_4
+
+    invoke-static {}, Lcom/android/incallui/util/DesktopModeManager;->isDesktopMode()Z
+
+    move-result v2
+
+    if-eqz v2, :cond_1
+
+    iget-boolean v2, p0, Lcom/android/incallui/service/vt/VideoMetrics;->mIsPhoneVideoUX:Z
+
+    if-nez v2, :cond_0
 
     :goto_0
     return v0
 
+    :cond_0
+    move v0, v1
+
+    goto :goto_0
+
     :cond_1
-    const/4 v0, 0x0
+    iget-boolean v2, p0, Lcom/android/incallui/service/vt/VideoMetrics;->mIsInMultiWindowMode:Z
+
+    if-nez v2, :cond_2
+
+    iget-boolean v2, p0, Lcom/android/incallui/service/vt/VideoMetrics;->mIsPhoneVideoUX:Z
+
+    if-nez v2, :cond_3
+
+    :cond_2
+    move v1, v0
+
+    :cond_3
+    move v0, v1
+
+    goto :goto_0
+
+    :cond_4
+    move v0, v2
 
     goto :goto_0
 .end method
@@ -995,6 +1020,36 @@
     move-result v0
 
     goto :goto_0
+.end method
+
+.method public getSmallVideoCRBTTemplete(Z)Lcom/android/incallui/util/VideoTemplate;
+    .locals 3
+
+    invoke-virtual {p0, p1}, Lcom/android/incallui/service/vt/VideoMetrics;->getBaseSmallTemplete(Z)Lcom/android/incallui/util/VideoTemplate;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lcom/android/incallui/util/VideoTemplate;->getY()F
+
+    move-result v1
+
+    iget-object v2, p0, Lcom/android/incallui/service/vt/VideoMetrics;->mCardMetrics:Lcom/android/incallui/service/vt/VideoCardMetrics;
+
+    invoke-virtual {v2}, Lcom/android/incallui/service/vt/VideoCardMetrics;->getOutgoingCallCardHeight()I
+
+    move-result v2
+
+    int-to-float v2, v2
+
+    add-float/2addr v1, v2
+
+    invoke-direct {p0, v1}, Lcom/android/incallui/service/vt/VideoMetrics;->getSmallTempleteAlignedY(F)F
+
+    move-result v1
+
+    invoke-virtual {v0, v1}, Lcom/android/incallui/util/VideoTemplate;->setY(F)V
+
+    return-object v0
 .end method
 
 .method public getZoomInTemplete(Z)Lcom/android/incallui/util/VideoTemplate;

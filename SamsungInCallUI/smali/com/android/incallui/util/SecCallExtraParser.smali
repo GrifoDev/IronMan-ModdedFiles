@@ -204,6 +204,7 @@
     check-cast v0, Ljava/util/HashMap;
     :try_end_0
     .catch Ljava/lang/IllegalArgumentException; {:try_start_0 .. :try_end_0} :catch_0
+    .catch Ljava/lang/RuntimeException; {:try_start_0 .. :try_end_0} :catch_1
 
     :goto_0
     return-object v0
@@ -218,9 +219,21 @@
     invoke-static {v1, v2, v0}, Lcom/android/incallui/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Exception;)V
 
     :cond_0
+    :goto_1
     const/4 v0, 0x0
 
     goto :goto_0
+
+    :catch_1
+    move-exception v0
+
+    const-string v1, "SecCallExtraParser"
+
+    const-string v2, "RuntimeException getSecCallExtra ,"
+
+    invoke-static {v1, v2, v0}, Lcom/android/incallui/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Exception;)V
+
+    goto :goto_1
 .end method
 
 .method public static getSecCallExtra(Lcom/android/incallui/Call;)Ljava/util/HashMap;

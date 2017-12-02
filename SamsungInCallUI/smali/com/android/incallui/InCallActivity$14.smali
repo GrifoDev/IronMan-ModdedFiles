@@ -7,7 +7,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/android/incallui/InCallActivity;->onKeyUp(ILandroid/view/KeyEvent;)Z
+    value = Lcom/android/incallui/InCallActivity;->updatedVideoCallMenu()V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;

@@ -38,7 +38,7 @@
 
     iget-object v1, p0, Lcom/android/incallui/agif/AgifNewBadgeDrawable;->mBgPaint:Landroid/graphics/Paint;
 
-    const v2, 0x7f0f0024
+    const v2, 0x7f0e0027
 
     invoke-virtual {v0, v2}, Landroid/content/res/Resources;->getColor(I)I
 
@@ -68,7 +68,7 @@
 
     iget-object v2, p0, Lcom/android/incallui/agif/AgifNewBadgeDrawable;->mTextPaint:Landroid/graphics/Paint;
 
-    const v3, 0x7f0f001f
+    const v3, 0x7f0e0022
 
     invoke-virtual {v0, v3}, Landroid/content/res/Resources;->getColor(I)I
 
@@ -78,7 +78,7 @@
 
     iget-object v2, p0, Lcom/android/incallui/agif/AgifNewBadgeDrawable;->mTextPaint:Landroid/graphics/Paint;
 
-    const v3, 0x7f0a02d8
+    const v3, 0x7f0a02c4
 
     invoke-virtual {v0, v3}, Landroid/content/res/Resources;->getDimension(I)F
 
@@ -120,7 +120,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f0a02d7
+    const v2, 0x7f0a02c3
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getDimension(I)F
 
@@ -134,7 +134,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f0a02d6
+    const v2, 0x7f0a02c2
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getDimension(I)F
 

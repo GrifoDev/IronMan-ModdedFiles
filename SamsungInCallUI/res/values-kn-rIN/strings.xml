@@ -126,6 +126,7 @@
     <string name="agif_decline_sticker_header">ಸ್ಟಿಕರ್ ಮೂಲಕ ನಿರಾಕರಿಸಿ</string>
     <string name="agif_decline_text_header">ಪಠ್ಯ ಮೂಲಕ ನಿರಾಕರಿಸಿ</string>
     <string name="agif_decline_toast">%sಗೆ ಸ್ಟಿಕರ್ ಕಳುಹಿಸಲಾಗಿದೆ.</string>
+    <string name="agif_outgoing_bubble_tip">ನಿಮ್ಮ ಭಾವನೆ ವ್ಯಕ್ತಪಡಿಸಲು ಸ್ಟಿಕರ್ ಕಳುಹಿಸಿ.</string>
     <string name="agif_pickers_add_tab_description">ಸೇರಿಸಿ</string>
     <string name="agif_pickers_downloaded">ಡೌನ್‌ಲೋಡ್ ಆಗಿದೆ</string>
     <string name="agif_pickers_item_usage_hints_description">ಆಯ್ಕೆ ಮಾಡಲು ಎರಡುಬಾರಿ ತಟ್ಟಿ</string>
@@ -141,10 +142,12 @@
     <string name="agif_pickers_tab_select_description">ಆಯ್ಕೆ ಮಾಡಿದೆ</string>
     <string name="agif_pickers_title">ಸ್ಟಿಕರ್ ಮೂಲಕ ಪ್ರಾರಂಭಿಸು</string>
     <string name="agif_pickers_title_top_stickers">ಟಾಪ್ ಸ್ಟಿಕರ್‌ಗಳು</string>
+    <string name="agif_random_send_message">ಈ ಸ್ಟಿಕರ್ ಕಳುಹಿಸಲು ಇಲ್ಲಿ ತಟ್ಟಿ.</string>
     <string name="agif_read_permission_description">AGIF ಒಳಾಂಶವನ್ನು ಓದಲು ಫೋನ್‍ಗೆ ಅನುಮತಿಸಿ.</string>
     <string name="agif_read_permission_label">AGIF ಒಳಾಂಶ ಓದಿರಿ</string>
     <string name="agif_receive_no_id">ಸ್ಟಿಕರ್‌ಗಳನ್ನು ತೋರಿಸಲಾಗುವುದಿಲ್ಲ. ಕರೆಯ ನಂತರ %s ನವೀಕರಿಸಿ.</string>
     <string name="agif_receive_no_id_upsupport_update">ಸ್ಟಿಕರ್‌ಗಳನ್ನು ತೋರಿಸಲಾಗುವುದಿಲ್ಲ. ಮುಂದಿನ ಸಿಸ್ಟಮ್ ನವೀಕರಣದ ನಂತರ ಹೆಚ್ಚಿನ ಸ್ಟಿಕರ್ ಲಭ್ಯವಾಗುತ್ತವೆ.</string>
+    <string name="agif_receive_toast">%sನಿಂದ ಸ್ಟಿಕರ್.</string>
     <string name="agif_sent_fail_message">ಅನಿಮೇಶನ್ GIF ಕಳುಹಿಸಲು ಸಾಧ್ಯವಿಲ್ಲ. ನಂತರ ಮತ್ತೆ ಪ್ರಯತ್ನಿಸಿ.</string>
     <string name="agif_sent_toast">ಸ್ಟಿಕರ್ ಕಳುಹಿಸಿದೆ.</string>
     <string name="agif_write_permission_description">AGIF ಒಳಾಂಶವನ್ನು ಮಾರ್ಪಡಿಸಲು ಫೋನ್‍ಗೆ ಅನುಮತಿಸಿ.</string>
@@ -813,6 +816,7 @@ IVR ಕರೆಯ ಸ್ಕ್ರೀನ್ ಮೆನು Dianhuabang ಎಂದು 
     <string name="sticker_delete_stickers">%d ಸ್ಟಿಕ್ಕರ್‌ಗಳನ್ನು ಅಳಿಸುವುದೇ?</string>
     <string name="sticker_delete_this_sticker">ಈ ಸ್ಟಿಕ್ಕರ್ ಅಳಿಸುವುದೇ?</string>
     <string name="sticker_setting_edit_title">ಸ್ಟಿಕರ್‌ಗಳನ್ನು ಆಯ್ಕೆಮಾಡಿ</string>
+    <string name="sticker_setting_edit_title_preload">ಸ್ಟಿಕ್ಕರ್‌ಗಳನ್ನು ಮರುಕ್ರಮಗೊಳಿಸಿ</string>
     <string name="sticker_setting_main_title">ನನ್ನ ಸ್ಟಿಕರ್‌ಗಳು</string>
     <string name="sticker_setting_menu_delete">ಅಳಿಸು</string>
     <string name="sticker_setting_menu_edit">ತಿದ್ದಿ</string>
@@ -825,6 +829,7 @@ IVR ಕರೆಯ ಸ್ಕ್ರೀನ್ ಮೆನು Dianhuabang ಎಂದು 
     <string name="swipe_right_to_answer_call_with_video">ವೀಡಿಯೊ ಸಹಿತ ಕರೆಗೆ ಉತ್ತರಿಸಲು ಬಲಕ್ಕೆ ಸ್ವೈಪ್ ಮಾಡಿ.</string>
     <string name="swipe_right_to_answer_call_without_video">ವೀಡಿಯೊ ರಹಿತ ಕರೆಗೆ ಉತ್ತರಿಸಲು ಬಲಕ್ಕೆ ಸ್ವೈಪ್ ಮಾಡಿ.</string>
     <string name="switch_rejected_by_mt">ವೀಡಿಯೊ ಕರೆಗೆ ಸ್ವಿಚ್ ಮಾಡುವ ಕೋರಿಕೆಯನ್ನು ನಿರಾಕರಿಸಿದೆ.</string>
+    <string name="switch_rejected_by_mt_att">Video unavailable for this call. Call connected as a voice call.</string>
     <string name="switch_to_video_call_failed">ವೀಡಿಯೊ ಕರೆಗೆ ಬದಲಾಯಿಸುವ ವಿನಂತಿ ವಿಫಲಗೊಂಡಿದೆ.</string>
     <string name="switch_to_video_call_failed_tmo">ವೀಡಿಯೊ ಕರೆಗೆ ಬದಲಿಸುವ ವಿನಂತಿಯನ್ನು ನಿರಾಕರಿಸಲಾಗಿದೆ.</string>
     <string name="switch_to_voice_call_failed">ಧ್ವನಿ ಕರೆಗೆ ಬದಲಿಸುವ ಕೋರಿಕೆಯು ವಿಫಲವಾಗಿದೆ.</string>

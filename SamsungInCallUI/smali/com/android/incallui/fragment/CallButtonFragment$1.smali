@@ -82,14 +82,14 @@
 
     if-eqz v0, :cond_2
 
-    const v0, 0x7f0904b3
+    const v0, 0x7f0904b8
 
     invoke-static {v0}, Lcom/android/incallui/util/SALogging;->getString(I)Ljava/lang/String;
 
     move-result-object v0
 
     :goto_0
-    const v1, 0x7f090406
+    const v1, 0x7f09040b
 
     invoke-static {v1}, Lcom/android/incallui/util/SALogging;->getString(I)Ljava/lang/String;
 
@@ -106,7 +106,7 @@
     return-void
 
     :cond_2
-    const v0, 0x7f0904b2
+    const v0, 0x7f0904b7
 
     invoke-static {v0}, Lcom/android/incallui/util/SALogging;->getString(I)Ljava/lang/String;
 

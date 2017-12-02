@@ -178,12 +178,13 @@
     <string name="account_phone">Uređaj</string>
     <string name="acs">Glasovni poziv</string>
     <string name="active_calls">Aktivni poziv</string>
-    <string name="add_reminder">Dodaj podset.</string>
+    <string name="add_reminder">Dodaj podsetnik</string>
     <string name="agif_button_close_description">Zatvori</string>
     <string name="agif_decline_message">Izvinite, ne mogu sada da pričam.</string>
     <string name="agif_decline_sticker_header">Odbijte uz nalepnicu</string>
     <string name="agif_decline_text_header">Odbijte uz tekst</string>
     <string name="agif_decline_toast">Nalepnica je poslata osobi %s.</string>
+    <string name="agif_outgoing_bubble_tip">Pošaljite nalepnicu da biste pokazali kako se osećate.</string>
     <string name="agif_pickers_add_tab_description">Dodaj</string>
     <string name="agif_pickers_downloaded">Preuzeto</string>
     <string name="agif_pickers_item_usage_hints_description">Dvaput kucni za izbor</string>
@@ -199,10 +200,12 @@
     <string name="agif_pickers_tab_select_description">Izabrano</string>
     <string name="agif_pickers_title">Počnite uz nalepnicu</string>
     <string name="agif_pickers_title_top_stickers">Najbolje nalepnice</string>
+    <string name="agif_random_send_message">Kucnite ovde da biste poslali nalepnicu.</string>
     <string name="agif_read_permission_description">Omogućava aplikaciji Telefon da čita sadržaj AGIF-a.</string>
     <string name="agif_read_permission_label">Pročitaj sadržaj AGIF-a</string>
     <string name="agif_receive_no_id">Nalepnica ne može da se prikaže. Ažurirajte aplikaciju %s nakon poziva.</string>
     <string name="agif_receive_no_id_upsupport_update">Nalepnica ne može da se prikaže. Više nalepnica će biti dostupno nakon narednog ažuriranja sistema.</string>
+    <string name="agif_receive_toast">Nalepnica od kontakta %s.</string>
     <string name="agif_sent_fail_message">Ne može da se pošalje animirani GIF. Pokušajte ponovo kasnije.</string>
     <string name="agif_sent_toast">Nalepnica je poslata.</string>
     <string name="agif_write_permission_description">Omogućava aplikaciji Telefon da izmeni sadržaj AGIF-a.</string>
@@ -871,6 +874,7 @@ kamera"</string>
     <string name="sticker_delete_stickers">Izbrisati sledeći broj nalepnica: %d?</string>
     <string name="sticker_delete_this_sticker">Izbrisati ovu nalepnicu?</string>
     <string name="sticker_setting_edit_title">Izaberite nalepnice</string>
+    <string name="sticker_setting_edit_title_preload">Preuredite nalepnice</string>
     <string name="sticker_setting_main_title">Moje nalepnice</string>
     <string name="sticker_setting_menu_delete">Izbriši</string>
     <string name="sticker_setting_menu_edit">Izmeni</string>
@@ -883,6 +887,7 @@ kamera"</string>
     <string name="swipe_right_to_answer_call_with_video">Prevucite prstom nadesno da biste prihvatili poziv putem video zapisa.</string>
     <string name="swipe_right_to_answer_call_without_video">Prevucite prstom nadesno da biste prihvatili poziv ne koristeći video zapis.</string>
     <string name="switch_rejected_by_mt">Zahtev za prelazak na video poziv je odbijen.</string>
+    <string name="switch_rejected_by_mt_att">Video unavailable for this call. Call connected as a voice call.</string>
     <string name="switch_to_video_call_failed">Neuspešan zahtev za prelazak na video poziv.</string>
     <string name="switch_to_video_call_failed_tmo">Zahtev za prelazak na video poziv je odbijen.</string>
     <string name="switch_to_voice_call_failed">Neuspešan zahtev za prelazak na glasovni poziv.</string>

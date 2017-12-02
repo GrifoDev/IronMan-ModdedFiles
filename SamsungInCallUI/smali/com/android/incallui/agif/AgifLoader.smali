@@ -2298,7 +2298,7 @@
     goto :goto_0
 .end method
 
-.method public loadRecentContents(Ljava/lang/String;)V
+.method public loadRecentContents(Ljava/lang/String;Z)V
     .locals 8
 
     const/4 v2, 0x0
@@ -2325,7 +2325,7 @@
 
     move-result-object v3
 
-    invoke-direct {v0, p0, v3, p1}, Lcom/android/incallui/agif/AgifLoader$8;-><init>(Lcom/android/incallui/agif/AgifLoader;Landroid/content/ContentResolver;Ljava/lang/String;)V
+    invoke-direct {v0, p0, v3, p1, p2}, Lcom/android/incallui/agif/AgifLoader$8;-><init>(Lcom/android/incallui/agif/AgifLoader;Landroid/content/ContentResolver;Ljava/lang/String;Z)V
 
     const-string v5, "(call_state=?)"
 

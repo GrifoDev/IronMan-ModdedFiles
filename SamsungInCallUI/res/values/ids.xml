@@ -104,6 +104,10 @@
     <item type="id" name="list">false</item>
     <item type="id" name="country_scrollview">false</item>
     <item type="id" name="country_list_no_search_result">false</item>
+    <item type="id" name="sem_tip_popup_balloon_bg_shadow">false</item>
+    <item type="id" name="sem_tip_popup_balloon_bg_l">false</item>
+    <item type="id" name="sem_tip_popup_balloon_bg_r">false</item>
+    <item type="id" name="sem_tip_popup_message">false</item>
     <item type="id" name="agif_container">false</item>
     <item type="id" name="agif_list_container">false</item>
     <item type="id" name="agif_pickers_container">false</item>
@@ -139,6 +143,10 @@
     <item type="id" name="agif_tray_icon_container">false</item>
     <item type="id" name="agif_tray_shadow">false</item>
     <item type="id" name="agif_tray_image">false</item>
+    <item type="id" name="custom_dialog_textView">false</item>
+    <item type="id" name="custom_dialog_textView_1">false</item>
+    <item type="id" name="custom_dialog_textView1">false</item>
+    <item type="id" name="checkBox">false</item>
     <item type="id" name="heading">false</item>
     <item type="id" name="detail">false</item>
     <item type="id" name="help_page_1">false</item>
@@ -200,7 +208,6 @@
     <item type="id" name="progressBarSim2">false</item>
     <item type="id" name="operatorSim2">false</item>
     <item type="id" name="cmcc_video_crbt_stub">false</item>
-    <item type="id" name="indicator_area">false</item>
     <item type="id" name="crbt_video">false</item>
     <item type="id" name="crbt_callStateLabel">false</item>
     <item type="id" name="far_end_preparing_animation">false</item>
@@ -615,11 +622,13 @@
     <item type="id" name="callPlus_importance_layout">false</item>
     <item type="id" name="kt_two_phone_stub">false</item>
     <item type="id" name="simiconlabellarge_stub">false</item>
-    <item type="id" name="rttcall_Icon">false</item>
     <item type="id" name="smart_call_name">false</item>
     <item type="id" name="smartCallIcon">false</item>
     <item type="id" name="simiconlabel_stub">false</item>
     <item type="id" name="smart_call_number">false</item>
+    <item type="id" name="rttIconAndText">false</item>
+    <item type="id" name="rttcall_Icon">false</item>
+    <item type="id" name="rttcall_text">false</item>
     <item type="id" name="answer_memo_view">false</item>
     <item type="id" name="popup_cityid">false</item>
     <item type="id" name="callPlus_subject_layout">false</item>
@@ -653,9 +662,11 @@
     <item type="id" name="callPlusSubject">false</item>
     <item type="id" name="callPlusMap_layout">false</item>
     <item type="id" name="map_layout">false</item>
+    <item type="id" name="callPlusMapCard">false</item>
     <item type="id" name="callPlusMap">false</item>
     <item type="id" name="call_plus_address">false</item>
     <item type="id" name="image_layout">false</item>
+    <item type="id" name="callPlusImageMapCard">false</item>
     <item type="id" name="callPlusImageMap">false</item>
     <item type="id" name="call_plus_subject">false</item>
     <item type="id" name="callPlusMapIcon">false</item>
@@ -671,6 +682,7 @@
     <item type="id" name="coverEndCallButtonLayout">false</item>
     <item type="id" name="endCallImageWidget">false</item>
     <item type="id" name="sec_cover_call_card_layout">false</item>
+    <item type="id" name="indicator_area">false</item>
     <item type="id" name="elapsedTime">false</item>
     <item type="id" name="holdCallText_Stub">false</item>
     <item type="id" name="callInfoContainer">false</item>
@@ -892,6 +904,7 @@
     <item type="id" name="slash">false</item>
     <item type="id" name="mk_cityid">false</item>
     <item type="id" name="carrierImage">false</item>
+    <item type="id" name="rtt_calling">false</item>
     <item type="id" name="labelAndNumber_dummy">false</item>
     <item type="id" name="thirdPriority_layout">false</item>
     <item type="id" name="smart_call_info">false</item>
@@ -957,14 +970,24 @@
     <item type="id" name="rttChatList">false</item>
     <item type="id" name="rtt_view">false</item>
     <item type="id" name="topmargin_area">false</item>
+    <item type="id" name="photoLayout">false</item>
+    <item type="id" name="primaryCallPhoto">false</item>
+    <item type="id" name="primaryInfo">false</item>
+    <item type="id" name="endCallButton">false</item>
     <item type="id" name="rtt_secondary_container">false</item>
     <item type="id" name="Secondarymenu_container">false</item>
-    <item type="id" name="SecondaryHDiconcontainer">false</item>
-    <item type="id" name="secondaryHdWifiIcon">false</item>
-    <item type="id" name="secondarynamecontainer">false</item>
+    <item type="id" name="secondaryPhotoLayout">false</item>
+    <item type="id" name="secondaryCallPhoto">false</item>
+    <item type="id" name="secondaryInfo">false</item>
     <item type="id" name="secondaryname">false</item>
+    <item type="id" name="secondarynamecontainer">false</item>
+    <item type="id" name="secondaryHdWifiIcon">false</item>
     <item type="id" name="rttmergeButton">false</item>
     <item type="id" name="rttswapButton">false</item>
+    <item type="id" name="card_view">false</item>
+    <item type="id" name="tips">false</item>
+    <item type="id" name="tipscross">false</item>
+    <item type="id" name="tipsSummary">false</item>
     <item type="id" name="container">false</item>
     <item type="id" name="space">false</item>
     <item type="id" name="rttSendMessage">false</item>
@@ -996,6 +1019,26 @@
     <item type="id" name="incoming_hideme_image_container">false</item>
     <item type="id" name="incoming_hideme_photo">false</item>
     <item type="id" name="incoming_hideme_default_Image">false</item>
+    <item type="id" name="effectLayout">false</item>
+    <item type="id" name="effect_none_layout">false</item>
+    <item type="id" name="effect_none">false</item>
+    <item type="id" name="effect_name_none">false</item>
+    <item type="id" name="effect_beauty_layout">false</item>
+    <item type="id" name="effect_beauty">false</item>
+    <item type="id" name="effect_name_beauty">false</item>
+    <item type="id" name="effect_mono_layout">false</item>
+    <item type="id" name="effect_mono">false</item>
+    <item type="id" name="effect_name_mono">false</item>
+    <item type="id" name="effect_negative_layout">false</item>
+    <item type="id" name="effect_negative">false</item>
+    <item type="id" name="effect_name_negative">false</item>
+    <item type="id" name="effect_sepia_layout">false</item>
+    <item type="id" name="effect_sepia">false</item>
+    <item type="id" name="effect_name_sepia">false</item>
+    <item type="id" name="effect_solarise_layout">false</item>
+    <item type="id" name="effect_solarise">false</item>
+    <item type="id" name="effect_name_solarise">false</item>
+    <item type="id" name="effect_cancel">false</item>
     <item type="id" name="volumeSeekBar">false</item>
     <item type="id" name="volumeText">false</item>
     <item type="id" name="transfer_secondcall">false</item>
@@ -1008,7 +1051,6 @@
     <item type="id" name="hideShowButton">false</item>
     <item type="id" name="stopRecordingButton">false</item>
     <item type="id" name="endCallButtonArea">false</item>
-    <item type="id" name="endCallButton">false</item>
     <item type="id" name="speakerButton">false</item>
     <item type="id" name="bluetoothButton">false</item>
     <item type="id" name="hideShowMeButtonStub">false</item>
@@ -1034,26 +1076,6 @@
     <item type="id" name="nearEndSurfaceLayoutTemplate">false</item>
     <item type="id" name="cameraOnButton">false</item>
     <item type="id" name="cameraOffButton">false</item>
-    <item type="id" name="effectLayout">false</item>
-    <item type="id" name="effect_none_layout">false</item>
-    <item type="id" name="effect_none">false</item>
-    <item type="id" name="effect_name_none">false</item>
-    <item type="id" name="effect_beauty_layout">false</item>
-    <item type="id" name="effect_beauty">false</item>
-    <item type="id" name="effect_name_beauty">false</item>
-    <item type="id" name="effect_mono_layout">false</item>
-    <item type="id" name="effect_mono">false</item>
-    <item type="id" name="effect_name_mono">false</item>
-    <item type="id" name="effect_negative_layout">false</item>
-    <item type="id" name="effect_negative">false</item>
-    <item type="id" name="effect_name_negative">false</item>
-    <item type="id" name="effect_sepia_layout">false</item>
-    <item type="id" name="effect_sepia">false</item>
-    <item type="id" name="effect_name_sepia">false</item>
-    <item type="id" name="effect_solarise_layout">false</item>
-    <item type="id" name="effect_solarise">false</item>
-    <item type="id" name="effect_name_solarise">false</item>
-    <item type="id" name="effect_cancel">false</item>
     <item type="id" name="cameraEffect">false</item>
     <item type="id" name="dialercontainer">false</item>
     <item type="id" name="hideShowMeButton">false</item>
@@ -1084,7 +1106,6 @@
     <item type="id" name="modifyCallTypeButton">false</item>
     <item type="id" name="dialer_area">false</item>
     <item type="id" name="video_type_icon">false</item>
-    <item type="id" name="bottom_area">false</item>
     <item type="id" name="zoomButton">false</item>
     <item type="id" name="callButtons">false</item>
     <item type="id" name="pagerIndicatorContainer">false</item>
@@ -1115,8 +1136,10 @@
     <item type="id" name="callPlusSubject_incall">false</item>
     <item type="id" name="importance_call_toggle">false</item>
     <item type="id" name="callPlusMap_layout_incall">false</item>
+    <item type="id" name="callPlusMapCard_incall">false</item>
     <item type="id" name="callPlusMap_incall">false</item>
     <item type="id" name="call_plus_address_incall">false</item>
+    <item type="id" name="callPlusImageMapCard_incall">false</item>
     <item type="id" name="callPlusImageMap_incall">false</item>
     <item type="id" name="importance_layout_incall">false</item>
     <item type="id" name="subject_layout_incall">false</item>
@@ -1134,6 +1157,9 @@
     <item type="id" name="callPlusMap_incall_popup">false</item>
     <item type="id" name="call_plus_address_popup">false</item>
     <item type="id" name="agifNoIdText">false</item>
+    <item type="id" name="agifSendContainer">false</item>
+    <item type="id" name="agifSendImage">false</item>
+    <item type="id" name="agifSendText">false</item>
     <item type="id" name="dummy_primary_call_banner_stub">false</item>
     <item type="id" name="sugudenGuideStub">false</item>
     <item type="id" name="addCallMenuText">false</item>
@@ -1207,6 +1233,10 @@
     <item type="id" name="speakerphoneItem">false</item>
     <item type="id" name="extraVolumeButtonEnable">false</item>
     <item type="id" name="extraVolumeButtonDisable">false</item>
+    <item type="id" name="speakerEnable">false</item>
+    <item type="id" name="speakerDisable">false</item>
+    <item type="id" name="muteEnable">false</item>
+    <item type="id" name="muteDisable">false</item>
     <item type="id" name="viewContactsButton">false</item>
     <item type="id" name="addContactsButton">false</item>
     <item type="id" name="sendMessagesButton">false</item>

@@ -178,12 +178,13 @@
     <string name="account_phone">Appareil</string>
     <string name="acs">Appel vocal</string>
     <string name="active_calls">Appel en cours</string>
-    <string name="add_reminder">Ajouter rappel</string>
+    <string name="add_reminder">Ajouter un rappel</string>
     <string name="agif_button_close_description">Fermer</string>
     <string name="agif_decline_message">Désolé, je suis occupé.</string>
     <string name="agif_decline_sticker_header">Refus avec un symbole</string>
     <string name="agif_decline_text_header">Refus avec un texte</string>
     <string name="agif_decline_toast">Le symbole a été envoyé à %s.</string>
+    <string name="agif_outgoing_bubble_tip">Envoyez un symbole pour indiquer comment vous vous sentez.</string>
     <string name="agif_pickers_add_tab_description">Ajouter</string>
     <string name="agif_pickers_downloaded">Téléchargé</string>
     <string name="agif_pickers_item_usage_hints_description">Appuyez deux fois pour sélectionner</string>
@@ -199,10 +200,12 @@
     <string name="agif_pickers_tab_select_description">Sélectionné</string>
     <string name="agif_pickers_title">Démarrage avec un symbole</string>
     <string name="agif_pickers_title_top_stickers">Meilleurs symboles</string>
+    <string name="agif_random_send_message">Appuyez ici pour envoyer ce symbole.</string>
     <string name="agif_read_permission_description">"Autorise l'application Téléphone à lire le contenu AGIF."</string>
     <string name="agif_read_permission_label">Lecture du contenu AGIF</string>
     <string name="agif_receive_no_id">"Le symbole ne peut pas être affiché. Mettez à jour %s après l'appel."</string>
     <string name="agif_receive_no_id_upsupport_update">"Le symbole ne peut pas être affiché. D'autres seront disponibles après prochaine mise à jour système."</string>
+    <string name="agif_receive_toast">Symbole de %s.</string>
     <string name="agif_sent_fail_message">"Impossible d'envoyer le fichier GIF animé. Réessayez ultérieurement."</string>
     <string name="agif_sent_toast">Le symbole a été envoyé.</string>
     <string name="agif_write_permission_description">"Autorise l'application Téléphone à modifier le contenu AGIF."</string>
@@ -797,7 +800,7 @@ sens uniq."</string>
     <string name="secOnscreenSwisText">See what I see</string>
     <string name="secOnscreenSwitchCameraText">Changer Objectif</string>
     <string name="secOnscreenSwitchText">Permuter</string>
-    <string name="secOnscreenUpdateContactText">MAJ cont. exist.</string>
+    <string name="secOnscreenUpdateContactText">MÀJ cont. exist.</string>
     <string name="secOnscreenUpdateContactText_tts">Mettre à jour les contacts existants</string>
     <string name="secOnscreenVideoCallText">Appel visio</string>
     <string name="secOnscreenVideoStopText">Arrêter</string>
@@ -871,6 +874,7 @@ sens uniq."</string>
     <string name="sticker_delete_stickers">Supprimer %d symboles ?</string>
     <string name="sticker_delete_this_sticker">Supprimer ce symbole ?</string>
     <string name="sticker_setting_edit_title">Sélection de symboles</string>
+    <string name="sticker_setting_edit_title_preload">Réorganisation des symboles</string>
     <string name="sticker_setting_main_title">Mes symboles</string>
     <string name="sticker_setting_menu_delete">Supprimer</string>
     <string name="sticker_setting_menu_edit">Modifier</string>
@@ -883,6 +887,7 @@ sens uniq."</string>
     <string name="swipe_right_to_answer_call_with_video">"Faites glisser un doigt vers la droite pour répondre à l'appel avec vidéo."</string>
     <string name="swipe_right_to_answer_call_without_video">"Faites glisser un doigt vers la droite pour répondre à l'appel sans vidéo."</string>
     <string name="switch_rejected_by_mt">Demande de passage en mode appel visio rejetée</string>
+    <string name="switch_rejected_by_mt_att">"La fonction Vidéo n'est pas disponible pour cet appel. Celui-ci est basculé en appel vocal."</string>
     <string name="switch_to_video_call_failed">Échec de la demande de passage en mode appel visio.</string>
     <string name="switch_to_video_call_failed_tmo">La demande de passage en mode appel visio a été refusée.</string>
     <string name="switch_to_voice_call_failed">Échec de la demande de passage en mode appel vocal.</string>

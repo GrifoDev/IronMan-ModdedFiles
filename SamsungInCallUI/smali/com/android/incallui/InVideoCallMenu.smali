@@ -346,7 +346,7 @@
 
     iget-object v1, p0, Lcom/android/incallui/InVideoCallMenu;->mContext:Landroid/content/Context;
 
-    const v2, 0x7f0905c7
+    const v2, 0x7f0905cc
 
     invoke-virtual {v1, v2}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -430,7 +430,7 @@
 
     if-eqz v0, :cond_1
 
-    const v0, 0x7f0905ca
+    const v0, 0x7f0905cf
 
     invoke-static {v0}, Lcom/android/incallui/util/InCallUtils;->displayToast(I)V
 
@@ -469,42 +469,26 @@
 .end method
 
 .method private clickedResizeScreen(Z)V
-    .locals 3
-
-    const/4 v2, 0x1
+    .locals 1
 
     sget-boolean v0, Lcom/android/incallui/service/vt/VideoCallConfig;->RESIZE_SCREEN:Z
 
     if-eqz v0, :cond_0
 
-    if-eqz p1, :cond_1
-
     invoke-static {}, Lcom/android/incallui/service/vt/VideoCallManager;->getInstance()Lcom/android/incallui/service/vt/VideoCallManager;
 
     move-result-object v0
 
-    invoke-virtual {v0, v2}, Lcom/android/incallui/service/vt/VideoCallManager;->setScreenResized(Z)V
+    invoke-virtual {v0, p1}, Lcom/android/incallui/service/vt/VideoCallManager;->setScreenResized(Z)V
 
-    :goto_0
     invoke-direct {p0}, Lcom/android/incallui/InVideoCallMenu;->getSecUiAdapter()Lcom/android/incallui/UiAdapter;
 
     move-result-object v0
 
-    invoke-virtual {v0, v2}, Lcom/android/incallui/UiAdapter;->showVideoInCallResize(Z)V
+    invoke-virtual {v0, p1}, Lcom/android/incallui/UiAdapter;->showVideoInCallResize(Z)V
 
     :cond_0
     return-void
-
-    :cond_1
-    invoke-static {}, Lcom/android/incallui/service/vt/VideoCallManager;->getInstance()Lcom/android/incallui/service/vt/VideoCallManager;
-
-    move-result-object v0
-
-    const/4 v1, 0x0
-
-    invoke-virtual {v0, v1}, Lcom/android/incallui/service/vt/VideoCallManager;->setScreenResized(Z)V
-
-    goto :goto_0
 .end method
 
 .method private clickedSpeaker(I)V
@@ -737,15 +721,17 @@
 .end method
 
 .method private hideCameraEffectLayout()V
-    .locals 1
+    .locals 2
+
+    const/4 v1, 0x0
 
     sget-boolean v0, Lcom/android/incallui/service/vt/VideoCallConfig;->CAMERA_EFFECT:Z
 
     if-eqz v0, :cond_0
 
-    const/4 v0, 0x0
+    invoke-direct {p0, v1}, Lcom/android/incallui/InVideoCallMenu;->showCameraEffectLayout(Z)V
 
-    invoke-direct {p0, v0}, Lcom/android/incallui/InVideoCallMenu;->showCameraEffectLayout(Z)V
+    invoke-static {v1}, Lcom/android/incallui/util/CameraEffect;->setCameraEffectLayoutVisible(Z)V
 
     :cond_0
     return-void
@@ -778,7 +764,7 @@
 .method private manageAddCallMenu(Landroid/view/Menu;)V
     .locals 4
 
-    const v0, 0x7f1004e1
+    const v0, 0x7f1004ff
 
     invoke-interface {p1, v0}, Landroid/view/Menu;->findItem(I)Landroid/view/MenuItem;
 
@@ -849,7 +835,7 @@
 
     if-nez v0, :cond_0
 
-    const v0, 0x7f1004f7
+    const v0, 0x7f100515
 
     invoke-interface {p1, v0}, Landroid/view/Menu;->findItem(I)Landroid/view/MenuItem;
 
@@ -878,7 +864,7 @@
 
     move-result-object v2
 
-    const v3, 0x7f1004e6
+    const v3, 0x7f100504
 
     invoke-interface {p1, v3}, Landroid/view/Menu;->findItem(I)Landroid/view/MenuItem;
 
@@ -977,13 +963,13 @@
 
     const/4 v2, 0x0
 
-    const v0, 0x7f1004e3
+    const v0, 0x7f100501
 
     invoke-interface {p1, v0}, Landroid/view/Menu;->findItem(I)Landroid/view/MenuItem;
 
     move-result-object v0
 
-    const v1, 0x7f1004e4
+    const v1, 0x7f100502
 
     invoke-interface {p1, v1}, Landroid/view/Menu;->findItem(I)Landroid/view/MenuItem;
 
@@ -1015,7 +1001,7 @@
 
     move-result-object v3
 
-    const v0, 0x7f1000cd
+    const v0, 0x7f1000d5
 
     invoke-interface {p1, v0}, Landroid/view/Menu;->findItem(I)Landroid/view/MenuItem;
 
@@ -1128,7 +1114,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f1004e2
+    const v1, 0x7f100500
 
     invoke-interface {p1, v1}, Landroid/view/Menu;->findItem(I)Landroid/view/MenuItem;
 
@@ -1290,7 +1276,7 @@
 
     move-result-object v4
 
-    const v5, 0x7f1004e5
+    const v5, 0x7f100503
 
     invoke-interface {p1, v5}, Landroid/view/Menu;->findItem(I)Landroid/view/MenuItem;
 
@@ -1302,7 +1288,7 @@
 
     if-eqz v6, :cond_0
 
-    const v6, 0x7f0902e7
+    const v6, 0x7f0902ea
 
     invoke-interface {v5, v6}, Landroid/view/MenuItem;->setTitle(I)Landroid/view/MenuItem;
 
@@ -1351,35 +1337,18 @@
     invoke-interface {v5, v2}, Landroid/view/MenuItem;->setVisible(Z)Landroid/view/MenuItem;
 
     :goto_1
-    invoke-static {}, Lcom/android/incallui/util/CallTypeUtils;->isPSVideoCall()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_9
-
-    invoke-static {}, Lcom/android/incallui/service/vt/VideoCallManager;->getInstance()Lcom/android/incallui/service/vt/VideoCallManager;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Lcom/android/incallui/service/vt/VideoCallManager;->isLivePreview()Z
-
-    move-result v0
-
-    :goto_2
     invoke-static {}, Lcom/android/incallui/service/vt/VideoCallConfig;->isJpnUX()Z
 
-    move-result v3
+    move-result v0
 
-    if-eqz v3, :cond_5
-
-    move v0, v2
+    if-eqz v0, :cond_5
 
     :cond_5
-    if-eqz v0, :cond_a
+    if-eqz v2, :cond_9
 
     invoke-interface {v5, v2}, Landroid/view/MenuItem;->setEnabled(Z)Landroid/view/MenuItem;
 
-    :goto_3
+    :goto_2
     return-void
 
     :cond_6
@@ -1398,14 +1367,9 @@
     goto :goto_1
 
     :cond_9
-    move v0, v2
-
-    goto :goto_2
-
-    :cond_a
     invoke-interface {v5, v1}, Landroid/view/MenuItem;->setEnabled(Z)Landroid/view/MenuItem;
 
-    goto :goto_3
+    goto :goto_2
 .end method
 
 .method private manageRecordMenu(Landroid/view/Menu;)V
@@ -1423,19 +1387,19 @@
 
     move-result-object v0
 
-    const v1, 0x7f1004e7
+    const v1, 0x7f100505
 
     invoke-interface {p1, v1}, Landroid/view/Menu;->findItem(I)Landroid/view/MenuItem;
 
     move-result-object v1
 
-    const v2, 0x7f1004e8
+    const v2, 0x7f100506
 
     invoke-interface {p1, v2}, Landroid/view/Menu;->findItem(I)Landroid/view/MenuItem;
 
     move-result-object v2
 
-    const v3, 0x7f1004e9
+    const v3, 0x7f100507
 
     invoke-interface {p1, v3}, Landroid/view/Menu;->findItem(I)Landroid/view/MenuItem;
 
@@ -1528,13 +1492,13 @@
 
     move-result-object v0
 
-    const v3, 0x7f1004f2
+    const v3, 0x7f100510
 
     invoke-interface {p1, v3}, Landroid/view/Menu;->findItem(I)Landroid/view/MenuItem;
 
     move-result-object v4
 
-    const v3, 0x7f1004f1
+    const v3, 0x7f10050f
 
     invoke-interface {p1, v3}, Landroid/view/Menu;->findItem(I)Landroid/view/MenuItem;
 
@@ -1582,6 +1546,16 @@
 
     :cond_0
     invoke-static {}, Lcom/android/incallui/util/ImsCommonUtils;->isIMSConferenceCall()Z
+
+    move-result v0
+
+    if-nez v0, :cond_5
+
+    invoke-static {}, Lcom/android/incallui/UiAdapter;->getInstance()Lcom/android/incallui/UiAdapter;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lcom/android/incallui/UiAdapter;->isInMultiWindowMode()Z
 
     move-result v0
 
@@ -1713,23 +1687,27 @@
 
     move-result-object v4
 
-    const v0, 0x7f1004eb
+    invoke-static {}, Lcom/android/incallui/util/DesktopModeManager;->isDesktopMode()Z
 
-    invoke-interface {p1, v0}, Landroid/view/Menu;->findItem(I)Landroid/view/MenuItem;
+    move-result v0
+
+    const v3, 0x7f100509
+
+    invoke-interface {p1, v3}, Landroid/view/Menu;->findItem(I)Landroid/view/MenuItem;
 
     move-result-object v5
 
-    const v0, 0x7f1004ec
+    const v3, 0x7f10050a
 
-    invoke-interface {p1, v0}, Landroid/view/Menu;->findItem(I)Landroid/view/MenuItem;
+    invoke-interface {p1, v3}, Landroid/view/Menu;->findItem(I)Landroid/view/MenuItem;
 
     move-result-object v6
 
     invoke-static {}, Lcom/android/incallui/util/CallTypeUtils;->isCSVideoCall()Z
 
-    move-result v0
+    move-result v3
 
-    if-eqz v0, :cond_1
+    if-eqz v3, :cond_1
 
     move v0, v2
 
@@ -1782,11 +1760,13 @@
     :cond_1
     invoke-static {}, Lcom/android/incallui/service/vt/VideoCallConfig;->isKorUX()Z
 
-    move-result v0
+    move-result v3
 
-    if-eqz v0, :cond_3
+    if-eqz v3, :cond_3
 
     if-eqz v4, :cond_2
+
+    if-nez v0, :cond_2
 
     move v0, v1
 
@@ -1892,13 +1872,13 @@
 
     move-result-object v0
 
-    const v1, 0x7f1004ed
+    const v1, 0x7f10050b
 
     invoke-interface {p1, v1}, Landroid/view/Menu;->findItem(I)Landroid/view/MenuItem;
 
     move-result-object v1
 
-    const v2, 0x7f1004ee
+    const v2, 0x7f10050c
 
     invoke-interface {p1, v2}, Landroid/view/Menu;->findItem(I)Landroid/view/MenuItem;
 
@@ -1941,6 +1921,12 @@
     move-result v0
 
     if-eqz v0, :cond_0
+
+    invoke-static {}, Lcom/android/incallui/service/vt/VideoCallConfig;->CONCEPT_USA_ATT()Z
+
+    move-result v0
+
+    if-nez v0, :cond_0
 
     invoke-interface {v1, v6}, Landroid/view/MenuItem;->setVisible(Z)Landroid/view/MenuItem;
 
@@ -1986,7 +1972,7 @@
 .method private manageSwitchToVoiceCall(Landroid/view/Menu;)V
     .locals 2
 
-    const v0, 0x7f1004f5
+    const v0, 0x7f100513
 
     invoke-interface {p1, v0}, Landroid/view/Menu;->findItem(I)Landroid/view/MenuItem;
 
@@ -2010,7 +1996,7 @@
 
     if-eqz v0, :cond_0
 
-    const v0, 0x7f1004f6
+    const v0, 0x7f100514
 
     invoke-interface {p1, v0}, Landroid/view/Menu;->findItem(I)Landroid/view/MenuItem;
 
@@ -2060,7 +2046,7 @@
     :goto_0
     if-eqz v0, :cond_0
 
-    const v0, 0x7f1004f4
+    const v0, 0x7f100512
 
     invoke-interface {p1, v0}, Landroid/view/Menu;->findItem(I)Landroid/view/MenuItem;
 
@@ -2104,9 +2090,9 @@
 .method private showDialog(I)V
     .locals 8
 
-    const v7, 0x7f09026b
+    const v7, 0x7f09026e
 
-    const v6, 0x7f090284
+    const v6, 0x7f090287
 
     const/4 v5, 0x2
 
@@ -2120,7 +2106,7 @@
 
     if-eqz v0, :cond_0
 
-    const v0, 0x7f0902e7
+    const v0, 0x7f0902ea
 
     :goto_0
     sparse-switch p1, :sswitch_data_0
@@ -2129,7 +2115,7 @@
     return-void
 
     :cond_0
-    const v0, 0x7f0902e8
+    const v0, 0x7f0902eb
 
     goto :goto_0
 
@@ -2220,33 +2206,18 @@
 
     move-result v1
 
+    if-nez v1, :cond_2
+
+    invoke-static {}, Lcom/android/incallui/service/vt/VideoCallManager;->getInstance()Lcom/android/incallui/service/vt/VideoCallManager;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Lcom/android/incallui/service/vt/VideoCallManager;->isLivePreview()Z
+
+    move-result v1
+
     if-eqz v1, :cond_2
 
-    new-array v1, v5, [Ljava/lang/String;
-
-    iget-object v2, p0, Lcom/android/incallui/InVideoCallMenu;->mContext:Landroid/content/Context;
-
-    invoke-virtual {v2, v6}, Landroid/content/Context;->getString(I)Ljava/lang/String;
-
-    move-result-object v2
-
-    aput-object v2, v1, v3
-
-    iget-object v2, p0, Lcom/android/incallui/InVideoCallMenu;->mContext:Landroid/content/Context;
-
-    const v3, 0x7f090323
-
-    invoke-virtual {v2, v3}, Landroid/content/Context;->getString(I)Ljava/lang/String;
-
-    move-result-object v2
-
-    aput-object v2, v1, v4
-
-    iput-object v1, p0, Lcom/android/incallui/InVideoCallMenu;->mOutgoingImageList:[Ljava/lang/String;
-
-    goto :goto_2
-
-    :cond_2
     const/4 v1, 0x3
 
     new-array v1, v1, [Ljava/lang/String;
@@ -2261,7 +2232,7 @@
 
     iget-object v2, p0, Lcom/android/incallui/InVideoCallMenu;->mContext:Landroid/content/Context;
 
-    const v3, 0x7f090323
+    const v3, 0x7f090326
 
     invoke-virtual {v2, v3}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -2271,13 +2242,38 @@
 
     iget-object v2, p0, Lcom/android/incallui/InVideoCallMenu;->mContext:Landroid/content/Context;
 
-    const v3, 0x7f09026c
+    const v3, 0x7f09026f
 
     invoke-virtual {v2, v3}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
     move-result-object v2
 
     aput-object v2, v1, v5
+
+    iput-object v1, p0, Lcom/android/incallui/InVideoCallMenu;->mOutgoingImageList:[Ljava/lang/String;
+
+    goto :goto_2
+
+    :cond_2
+    new-array v1, v5, [Ljava/lang/String;
+
+    iget-object v2, p0, Lcom/android/incallui/InVideoCallMenu;->mContext:Landroid/content/Context;
+
+    invoke-virtual {v2, v6}, Landroid/content/Context;->getString(I)Ljava/lang/String;
+
+    move-result-object v2
+
+    aput-object v2, v1, v3
+
+    iget-object v2, p0, Lcom/android/incallui/InVideoCallMenu;->mContext:Landroid/content/Context;
+
+    const v3, 0x7f090326
+
+    invoke-virtual {v2, v3}, Landroid/content/Context;->getString(I)Ljava/lang/String;
+
+    move-result-object v2
+
+    aput-object v2, v1, v4
 
     iput-object v1, p0, Lcom/android/incallui/InVideoCallMenu;->mOutgoingImageList:[Ljava/lang/String;
 
@@ -2312,7 +2308,7 @@
 
     iget-object v2, p0, Lcom/android/incallui/InVideoCallMenu;->mContext:Landroid/content/Context;
 
-    const v3, 0x7f09026c
+    const v3, 0x7f09026f
 
     invoke-virtual {v2, v3}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -2385,7 +2381,7 @@
 
     iget-object v2, p0, Lcom/android/incallui/InVideoCallMenu;->mContext:Landroid/content/Context;
 
-    const v3, 0x7f09026d
+    const v3, 0x7f090270
 
     invoke-virtual {v2, v3}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -2400,7 +2396,7 @@
     :sswitch_1
     iget-object v1, p0, Lcom/android/incallui/InVideoCallMenu;->mContext:Landroid/content/Context;
 
-    const v2, 0x7f04004a
+    const v2, 0x7f04004d
 
     const/4 v3, 0x0
 
@@ -2444,7 +2440,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f09010c
+    const v1, 0x7f09010f
 
     new-instance v2, Lcom/android/incallui/InVideoCallMenu$3;
 
@@ -2640,7 +2636,7 @@
 
     if-eqz v0, :cond_0
 
-    const v0, 0x7f090109
+    const v0, 0x7f09010c
 
     invoke-static {v0}, Lcom/android/incallui/util/InCallUtils;->displayToast(I)V
 
@@ -2733,7 +2729,7 @@
 
     iget-object v0, p0, Lcom/android/incallui/InVideoCallMenu;->mContext:Landroid/content/Context;
 
-    const v1, 0x7f09031b
+    const v1, 0x7f09031e
 
     invoke-virtual {v0, v1}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -2745,7 +2741,7 @@
     :cond_0
     iget-object v0, p0, Lcom/android/incallui/InVideoCallMenu;->mContext:Landroid/content/Context;
 
-    const v1, 0x7f09031e
+    const v1, 0x7f090321
 
     invoke-virtual {v0, v1}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -2988,7 +2984,7 @@
 
     move-result-object v0
 
-    const v2, 0x7f0902dc
+    const v2, 0x7f0902df
 
     invoke-virtual {v0, v2}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -2996,7 +2992,7 @@
 
     iput-object v0, p0, Lcom/android/incallui/InVideoCallMenu;->mUniqueMenuItem:Ljava/lang/String;
 
-    const v0, 0x7f1004f8
+    const v0, 0x7f100516
 
     iput v0, p0, Lcom/android/incallui/InVideoCallMenu;->mUniqueMenuId:I
 
@@ -3409,29 +3405,29 @@
 
     :sswitch_data_0
     .sparse-switch
-        0x7f1000cd -> :sswitch_1
-        0x7f1004e1 -> :sswitch_0
-        0x7f1004e2 -> :sswitch_2
-        0x7f1004e3 -> :sswitch_3
-        0x7f1004e4 -> :sswitch_4
-        0x7f1004e5 -> :sswitch_5
-        0x7f1004e6 -> :sswitch_6
-        0x7f1004e7 -> :sswitch_7
-        0x7f1004e8 -> :sswitch_8
-        0x7f1004e9 -> :sswitch_9
-        0x7f1004ea -> :sswitch_a
-        0x7f1004eb -> :sswitch_b
-        0x7f1004ec -> :sswitch_c
-        0x7f1004ed -> :sswitch_d
-        0x7f1004ee -> :sswitch_e
-        0x7f1004f1 -> :sswitch_f
-        0x7f1004f2 -> :sswitch_10
-        0x7f1004f3 -> :sswitch_11
-        0x7f1004f4 -> :sswitch_12
-        0x7f1004f5 -> :sswitch_14
-        0x7f1004f6 -> :sswitch_15
-        0x7f1004f7 -> :sswitch_13
-        0x7f1004f8 -> :sswitch_16
+        0x7f1000d5 -> :sswitch_1
+        0x7f1004ff -> :sswitch_0
+        0x7f100500 -> :sswitch_2
+        0x7f100501 -> :sswitch_3
+        0x7f100502 -> :sswitch_4
+        0x7f100503 -> :sswitch_5
+        0x7f100504 -> :sswitch_6
+        0x7f100505 -> :sswitch_7
+        0x7f100506 -> :sswitch_8
+        0x7f100507 -> :sswitch_9
+        0x7f100508 -> :sswitch_a
+        0x7f100509 -> :sswitch_b
+        0x7f10050a -> :sswitch_c
+        0x7f10050b -> :sswitch_d
+        0x7f10050c -> :sswitch_e
+        0x7f10050f -> :sswitch_f
+        0x7f100510 -> :sswitch_10
+        0x7f100511 -> :sswitch_11
+        0x7f100512 -> :sswitch_12
+        0x7f100513 -> :sswitch_14
+        0x7f100514 -> :sswitch_15
+        0x7f100515 -> :sswitch_13
+        0x7f100516 -> :sswitch_16
     .end sparse-switch
 .end method
 
@@ -3503,7 +3499,7 @@
     goto :goto_1
 
     :sswitch_8
-    const v1, 0x7f1004ea
+    const v1, 0x7f100508
 
     invoke-interface {p1, v1}, Landroid/view/Menu;->findItem(I)Landroid/view/MenuItem;
 
@@ -3549,7 +3545,7 @@
     goto :goto_1
 
     :sswitch_10
-    const v1, 0x7f1004f8
+    const v1, 0x7f100516
 
     invoke-interface {p1, v1}, Landroid/view/Menu;->findItem(I)Landroid/view/MenuItem;
 
@@ -3568,7 +3564,7 @@
     goto :goto_1
 
     :sswitch_11
-    const v1, 0x7f1004f9
+    const v1, 0x7f100517
 
     invoke-interface {p1, v1}, Landroid/view/Menu;->findItem(I)Landroid/view/MenuItem;
 
@@ -3587,28 +3583,28 @@
 
     :sswitch_data_0
     .sparse-switch
-        0x7f1000cd -> :sswitch_2
-        0x7f1004e1 -> :sswitch_1
-        0x7f1004e2 -> :sswitch_3
-        0x7f1004e3 -> :sswitch_0
-        0x7f1004e4 -> :sswitch_4
-        0x7f1004e5 -> :sswitch_5
-        0x7f1004e6 -> :sswitch_6
-        0x7f1004e7 -> :sswitch_0
-        0x7f1004e8 -> :sswitch_7
-        0x7f1004ea -> :sswitch_8
-        0x7f1004eb -> :sswitch_0
-        0x7f1004ec -> :sswitch_9
-        0x7f1004ed -> :sswitch_0
-        0x7f1004ee -> :sswitch_a
-        0x7f1004f1 -> :sswitch_0
-        0x7f1004f2 -> :sswitch_b
-        0x7f1004f4 -> :sswitch_c
-        0x7f1004f5 -> :sswitch_d
-        0x7f1004f6 -> :sswitch_e
-        0x7f1004f7 -> :sswitch_f
-        0x7f1004f8 -> :sswitch_10
-        0x7f1004f9 -> :sswitch_11
+        0x7f1000d5 -> :sswitch_2
+        0x7f1004ff -> :sswitch_1
+        0x7f100500 -> :sswitch_3
+        0x7f100501 -> :sswitch_0
+        0x7f100502 -> :sswitch_4
+        0x7f100503 -> :sswitch_5
+        0x7f100504 -> :sswitch_6
+        0x7f100505 -> :sswitch_0
+        0x7f100506 -> :sswitch_7
+        0x7f100508 -> :sswitch_8
+        0x7f100509 -> :sswitch_0
+        0x7f10050a -> :sswitch_9
+        0x7f10050b -> :sswitch_0
+        0x7f10050c -> :sswitch_a
+        0x7f10050f -> :sswitch_0
+        0x7f100510 -> :sswitch_b
+        0x7f100512 -> :sswitch_c
+        0x7f100513 -> :sswitch_d
+        0x7f100514 -> :sswitch_e
+        0x7f100515 -> :sswitch_f
+        0x7f100516 -> :sswitch_10
+        0x7f100517 -> :sswitch_11
     .end sparse-switch
 .end method
 

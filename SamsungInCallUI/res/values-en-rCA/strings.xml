@@ -98,12 +98,13 @@
     <string name="account_phone">Device</string>
     <string name="acs">Voice call</string>
     <string name="active_calls">Active call</string>
-    <string name="add_reminder">Add reminder</string>
+    <string name="add_reminder">Add a reminder</string>
     <string name="agif_button_close_description">Close</string>
     <string name="agif_decline_message">"Sorry, I can't talk right now."</string>
     <string name="agif_decline_sticker_header">Decline with a sticker</string>
     <string name="agif_decline_text_header">Decline with a text</string>
     <string name="agif_decline_toast">Sticker sent to %s.</string>
+    <string name="agif_outgoing_bubble_tip">Send a sticker to show how you feel.</string>
     <string name="agif_pickers_add_tab_description">Add</string>
     <string name="agif_pickers_downloaded">Downloaded</string>
     <string name="agif_pickers_item_usage_hints_description">Double tap to select</string>
@@ -119,10 +120,12 @@
     <string name="agif_pickers_tab_select_description">Selected</string>
     <string name="agif_pickers_title">Start with a sticker</string>
     <string name="agif_pickers_title_top_stickers">Top stickers</string>
+    <string name="agif_random_send_message">Tap here to send this sticker.</string>
     <string name="agif_read_permission_description">Allows Phone to read AGIF content.</string>
     <string name="agif_read_permission_label">Read AGIF content</string>
     <string name="agif_receive_no_id">"The sticker can't be shown. Update %s after the call."</string>
     <string name="agif_receive_no_id_upsupport_update">"The sticker can't be shown. More stickers will be available after the next system update."</string>
+    <string name="agif_receive_toast">Sticker from %s.</string>
     <string name="agif_sent_fail_message">"Can't send the animated GIF. Try again later."</string>
     <string name="agif_sent_toast">Sticker sent.</string>
     <string name="agif_write_permission_description">Allows Phone to modify AGIF content.</string>
@@ -788,6 +791,7 @@ Camera"</string>
     <string name="sticker_delete_stickers">Delete %d stickers?</string>
     <string name="sticker_delete_this_sticker">Delete this sticker?</string>
     <string name="sticker_setting_edit_title">Select stickers</string>
+    <string name="sticker_setting_edit_title_preload">Reorder stickers</string>
     <string name="sticker_setting_main_title">My stickers</string>
     <string name="sticker_setting_menu_delete">Delete</string>
     <string name="sticker_setting_menu_edit">Edit</string>
@@ -800,6 +804,7 @@ Camera"</string>
     <string name="swipe_right_to_answer_call_with_video">Swipe right to answer call with video.</string>
     <string name="swipe_right_to_answer_call_without_video">Swipe right to answer call without video.</string>
     <string name="switch_rejected_by_mt">Request to switch to video call rejected.</string>
+    <string name="switch_rejected_by_mt_att">Video unavailable for this call. Call connected as a voice call.</string>
     <string name="switch_to_video_call_failed">Request to switch to video call failed.</string>
     <string name="switch_to_video_call_failed_tmo">Request to switch to video call was declined.</string>
     <string name="switch_to_voice_call_failed">Request to switch to voice call failed.</string>

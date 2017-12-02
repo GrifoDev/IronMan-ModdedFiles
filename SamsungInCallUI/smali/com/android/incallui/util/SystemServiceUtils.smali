@@ -1451,6 +1451,30 @@
 .method public static isScreenOn()Z
     .locals 2
 
+    invoke-static {}, Lcom/android/incallui/InCallPresenter;->getInstance()Lcom/android/incallui/InCallPresenter;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lcom/android/incallui/InCallPresenter;->getProximitySensor()Lcom/android/incallui/ProximitySensor;
+
+    move-result-object v0
+
+    if-eqz v0, :cond_0
+
+    invoke-virtual {v0}, Lcom/android/incallui/ProximitySensor;->isHeldProximityWakeLock()Z
+
+    move-result v1
+
+    if-eqz v1, :cond_0
+
+    invoke-virtual {v0}, Lcom/android/incallui/ProximitySensor;->isDisplayOn()Z
+
+    move-result v0
+
+    :goto_0
+    return v0
+
+    :cond_0
     invoke-static {}, Lcom/android/incallui/InCallApp;->getInstance()Lcom/android/incallui/InCallApp;
 
     move-result-object v0
@@ -1471,7 +1495,7 @@
 
     move-result v0
 
-    return v0
+    goto :goto_0
 .end method
 
 .method public static isSmsCapable(Landroid/content/Context;)Z

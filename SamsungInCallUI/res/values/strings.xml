@@ -184,6 +184,7 @@
     <string name="agif_decline_sticker_header">Decline with a sticker</string>
     <string name="agif_decline_text_header">Decline with a text</string>
     <string name="agif_decline_toast">Sticker sent to %s.</string>
+    <string name="agif_outgoing_bubble_tip">Send a sticker to show how you feel.</string>
     <string name="agif_pickers_add_tab_description">Add</string>
     <string name="agif_pickers_downloaded">Downloaded</string>
     <string name="agif_pickers_item_usage_hints_description">Double tap to select</string>
@@ -200,10 +201,12 @@
     <string name="agif_pickers_tab_select_description">Selected</string>
     <string name="agif_pickers_title">Start with a sticker.</string>
     <string name="agif_pickers_title_top_stickers">Top Stickers</string>
+    <string name="agif_random_send_message">Tap here to send this sticker.</string>
     <string name="agif_read_permission_description">Allows Phone to read AGIF content.</string>
     <string name="agif_read_permission_label">Read AGIF content</string>
     <string name="agif_receive_no_id">"The sticker can't be shown. Update %s after the call."</string>
     <string name="agif_receive_no_id_upsupport_update">"The sticker can't be shown. More stickers will be available after the next system update."</string>
+    <string name="agif_receive_toast">Sticker from %s.</string>
     <string name="agif_sent_fail_message">"Can't send animated GIF. Try again later."</string>
     <string name="agif_sent_toast">Sticker sent.</string>
     <string name="agif_write_permission_description">Allows Phone to modify AGIF content.</string>
@@ -872,6 +875,7 @@ Camera"</string>
     <string name="sticker_delete_stickers">Delete %d stickers?</string>
     <string name="sticker_delete_this_sticker">Delete this sticker?</string>
     <string name="sticker_setting_edit_title">Select stickers</string>
+    <string name="sticker_setting_edit_title_preload">Reorder stickers</string>
     <string name="sticker_setting_main_title">My stickers</string>
     <string name="sticker_setting_menu_delete">Delete</string>
     <string name="sticker_setting_menu_edit">Edit</string>
@@ -884,6 +888,7 @@ Camera"</string>
     <string name="swipe_right_to_answer_call_with_video">Swipe right to answer call with video.</string>
     <string name="swipe_right_to_answer_call_without_video">Swipe right to answer call without video.</string>
     <string name="switch_rejected_by_mt">Request to switch to video call rejected.</string>
+    <string name="switch_rejected_by_mt_att">Video unavailable for this call. Call connected as a voice call.</string>
     <string name="switch_to_video_call_failed">Request to switch to video call failed.</string>
     <string name="switch_to_video_call_failed_tmo">Request to switch to video call was declined.</string>
     <string name="switch_to_voice_call_failed">Request to switch to voice call failed.</string>
@@ -1623,6 +1628,13 @@ IVR call screen menu uses contents provided by a third party service provider ca
     <string name="read_media_permission_description">Read media share history</string>
     <string name="reading_vcard_canceled_title">Reading vCard data canceled</string>
     <string name="reading_vcard_failed_title">"Couldn't read vCard data"</string>
+    <string name="real_time_text_calling">Real-time text calling</string>
+    <string name="real_time_text_calling_tip">Welcome to the real-time text calling. RTT can chat during the call and text is delivered in real time.</string>
+    <string name="real_time_text_calling_tip_header">TIPS</string>
+    <string name="real_time_text_calling_tip_tmo">"Welcome to Real Time Text call.
+Enjoy live texting communication character by character in real time."</string>
+    <string name="real_time_text_forced_calling_tip_tmo">"%s has requested RTT call. Your voice call is switched to RTT call now.
+Enjoy live texting communication character by character in real time."</string>
     <string name="remotecall_onhold">on hold</string>
     <string name="remotecall_pull">Pull</string>
     <string name="remotecall_title">Remote call</string>
@@ -1632,16 +1644,44 @@ IVR call screen menu uses contents provided by a third party service provider ca
     <string name="replace_title">Remove previous shortcut for new entry. Only 2 shortcuts can be saved.</string>
     <string name="ringtone_silent">None</string>
     <string name="ringtone_unknown">Unknown ringtone</string>
-    <string name="rtt_copy_text">Copy text</string>
+    <string name="rtt_calling_desc">Real-time text calling</string>
+    <string name="rtt_chat_hint">Enter message</string>
+    <string name="rtt_copy_text">Copy</string>
     <string name="rtt_delete">Delete</string>
+    <string name="rtt_delete_msg">"The selected messages will disappear only on your chat room screen.
+
+Do you really want to delete the selected messages?"</string>
     <string name="rtt_dialog_msg">Requesting RTT session</string>
     <string name="rtt_dialog_title">Please wait...</string>
+    <string name="rtt_downgrade_on_other_party_toast">switched to voice call.</string>
     <string name="rtt_error_dialog_msg">Unable to start RTT session. Please try again.</string>
+    <string name="rtt_hint">Real time text(RTT) is mandatory from FCC to facilitate communications for deaf and hard of hearings.</string>
+    <string name="rtt_hint_dialog_heading">Real-time text (RTT) calling</string>
+    <string name="rtt_hint_dialog_msgbody1">Here are some helpful tips to let you know about RTT:</string>
+    <string name="rtt_hint_dialog_msgbody1_tmo">"Here's what you should know to get your simultaneous voice and Real Time Text(RTT) connections going:"</string>
+    <string name="rtt_hint_dialog_msgbody2">To use RTT, you need to be using a 4G LTE or Wi-Fi connection.</string>
+    <string name="rtt_hint_dialog_msgbody2_tmo">"You'll need to be on 4G LTE or a Wi-Fi connection to have both voice and text."</string>
+    <string name="rtt_hint_dialog_msgbody3">"You can start using RTT whenever you're on a call to someone with a phone that supports RTT."</string>
+    <string name="rtt_hint_dialog_msgbody3_tmo">You can start using RTT call with anyone who is on a RTT capable device.</string>
+    <string name="rtt_hint_dialog_msgbody4">An incoming RTT call will be marked with RTT icon(Real time text)</string>
+    <string name="rtt_hint_dialog_msgbody4_tmo">You can check your RTT call text log in the call log.</string>
+    <string name="rtt_hint_dialog_msgbody5">You can set for RTT call in following path:</string>
+    <string name="rtt_hint_dialog_msgbody6">Phone > MORE > Settings or Settings > Accessibility > Hearings</string>
+    <string name="rtt_hint_dialog_msgbody7">RTT texts will be saved to the call log in Phone App.</string>
+    <string name="rtt_hint_tmo">You just experienced Real Time Text call.</string>
     <string name="rtt_history_title">RTT History</string>
-    <string name="rtt_networkdowngrade_dialoge">Simultaneous voice and real-time text calling is currently available only over high speed LTE and Wi-Fi networks. The text call may be resumed based on device and network capability</string>
+    <string name="rtt_incoming_call">Incoming Real Time Text call</string>
+    <string name="rtt_networkdowngrade_dialoge">Simultaneous voice and real-time text calling is currently available only over high speed LTE and Wi-Fi networks. Real-time text may not be available over 2G/3G.</string>
+    <string name="rtt_noti_emc_change_due_emergency_domain_selection">RTT is not available for this 911 call. Your call has been connected as a voice-only call. If you experience difficulties, please place a voice or relay call to 911.</string>
+    <string name="rtt_noti_emc_downgrade_by_network">RTT is not available for this 911 call. Your call has been connected as a voice-only call. If you experience difficulties, please place a voice or relay call to 911.</string>
+    <string name="rtt_noti_emc_redial_case">RTT is not available for this 911 call. Your call has been re-dialed as a voice-only call. If you experience difficulties with voice, please place a relay call to 911.</string>
+    <string name="rtt_noti_emc_upgrade_reject_by_network">RTT is not available for this 911 call</string>
+    <string name="rtt_on_other_party_toast">has turned on Real-Time Text for this call.</string>
+    <string name="rtt_outgoing_call">Outgoing Real Time Text call</string>
     <string name="rtt_progress_dialog_emergency">RTT is turning on...</string>
     <string name="rtt_request_dialog_RTT_OFF">would like to start a chat session. Would you like to turn on RTT in order to chat via text?</string>
     <string name="rtt_request_dialog_RTT_ON">would like to start a chat session.</string>
+    <string name="rtt_video_call_not_supported">Video calling not supported during RTT mode.</string>
     <string name="rtt_video_call_off">When RTT is turned on, you will not be able to make or receive video calls or conference calls.</string>
     <string name="save">SAVE</string>
     <string name="save_record_msg">save_record_msg</string>
@@ -1661,13 +1701,14 @@ IVR call screen menu uses contents provided by a third party service provider ca
     <string name="secOnscreenMenuttyHco">TTY HCO</string>
     <string name="secOnscreenMenuttyVco">TTY VCO</string>
     <string name="secOnscreenPopupDecline">Decline</string>
-    <string name="secOnscreenRTT">RTT</string>
+    <string name="secOnscreenRTT">"Real Time 
+Text"</string>
     <string name="secOnscreenTurnOnRTT">Turn RTT on</string>
     <string name="section_contacts">Contacts</string>
     <string name="section_phone">Phone</string>
     <string name="section_phone_only_new_summary">Make calls and view your Phone log.</string>
     <string name="select_phone_account_for_calls">Call with</string>
-    <string name="sendButtonText">send</string>
+    <string name="sendButtonText">done</string>
     <string name="send_and_call_button">SEND &amp; CALL</string>
     <string name="service_is_unavailable">Service not available</string>
     <string name="set_default_account">Always use this for calls</string>

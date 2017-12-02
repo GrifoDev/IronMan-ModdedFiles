@@ -66,21 +66,21 @@
 
 .field public static final abc_select_dialog_material:I = 0x7f040019
 
-.field public static final notification_media_action:I = 0x7f04007b
+.field public static final notification_media_action:I = 0x7f04007e
 
-.field public static final notification_media_cancel_action:I = 0x7f04007c
+.field public static final notification_media_cancel_action:I = 0x7f04007f
 
-.field public static final notification_template_big_media:I = 0x7f04007d
+.field public static final notification_template_big_media:I = 0x7f040080
 
-.field public static final notification_template_big_media_narrow:I = 0x7f04007e
+.field public static final notification_template_big_media_narrow:I = 0x7f040081
 
-.field public static final notification_template_lines:I = 0x7f04007f
+.field public static final notification_template_lines:I = 0x7f040082
 
-.field public static final notification_template_media:I = 0x7f040080
+.field public static final notification_template_media:I = 0x7f040083
 
-.field public static final notification_template_part_chronometer:I = 0x7f040081
+.field public static final notification_template_part_chronometer:I = 0x7f040084
 
-.field public static final notification_template_part_time:I = 0x7f040082
+.field public static final notification_template_part_time:I = 0x7f040085
 
 .field public static final select_dialog_item_material:I = 0x7f04017d
 

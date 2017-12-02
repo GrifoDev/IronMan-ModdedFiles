@@ -102,9 +102,9 @@
 
     iget-object v4, p0, Lcom/android/incallui/fragment/VideoCallCardEndFragment$1;->this$0:Lcom/android/incallui/fragment/VideoCallCardEndFragment;
 
-    iget-object v4, v4, Lcom/android/incallui/fragment/VideoCallCardEndFragment;->mNameContainer:Landroid/view/View;
+    iget-object v4, v4, Lcom/android/incallui/fragment/VideoCallCardEndFragment;->mPrimaryName:Landroid/widget/TextView;
 
-    invoke-virtual {v4}, Landroid/view/View;->getHeight()I
+    invoke-virtual {v4}, Landroid/widget/TextView;->getHeight()I
 
     move-result v4
 

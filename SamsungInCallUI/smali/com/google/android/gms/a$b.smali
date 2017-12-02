@@ -116,6 +116,6 @@
 
 .field public static final common_signin_button_text_long:I = 0x7f090044
 
-.field public static final decline:I = 0x7f090142
+.field public static final decline:I = 0x7f090145
 
 .field public static final status_bar_notification_info_overflow:I = 0x7f090081

@@ -41,7 +41,7 @@
 .method public onReceive(Landroid/content/Context;Landroid/content/Intent;)V
     .locals 8
 
-    const v5, 0x7f09013f
+    const v5, 0x7f090142
 
     const/4 v1, 0x0
 
@@ -162,7 +162,7 @@
     :cond_3
     iget-object v0, p0, Lcom/android/incallui/InCallPresenter$InCallReceiver;->this$0:Lcom/android/incallui/InCallPresenter;
 
-    invoke-static {v0}, Lcom/android/incallui/InCallPresenter;->access$900(Lcom/android/incallui/InCallPresenter;)Lcom/android/incallui/InCallPresenter$InCallState;
+    invoke-static {v0}, Lcom/android/incallui/InCallPresenter;->access$800(Lcom/android/incallui/InCallPresenter;)Lcom/android/incallui/InCallPresenter$InCallState;
 
     move-result-object v0
 
@@ -204,7 +204,7 @@
 
     iget-object v0, p0, Lcom/android/incallui/InCallPresenter$InCallReceiver;->this$0:Lcom/android/incallui/InCallPresenter;
 
-    invoke-static {v0}, Lcom/android/incallui/InCallPresenter;->access$000(Lcom/android/incallui/InCallPresenter;)Lcom/android/incallui/InCallActivity;
+    invoke-static {v0}, Lcom/android/incallui/InCallPresenter;->access$500(Lcom/android/incallui/InCallPresenter;)Lcom/android/incallui/InCallActivity;
 
     move-result-object v0
 
@@ -212,7 +212,7 @@
 
     iget-object v0, p0, Lcom/android/incallui/InCallPresenter$InCallReceiver;->this$0:Lcom/android/incallui/InCallPresenter;
 
-    invoke-static {v0}, Lcom/android/incallui/InCallPresenter;->access$000(Lcom/android/incallui/InCallPresenter;)Lcom/android/incallui/InCallActivity;
+    invoke-static {v0}, Lcom/android/incallui/InCallPresenter;->access$500(Lcom/android/incallui/InCallPresenter;)Lcom/android/incallui/InCallActivity;
 
     move-result-object v0
 
@@ -221,15 +221,15 @@
     :cond_6
     iget-object v0, p0, Lcom/android/incallui/InCallPresenter$InCallReceiver;->this$0:Lcom/android/incallui/InCallPresenter;
 
-    invoke-static {v0}, Lcom/android/incallui/InCallPresenter;->access$1000(Lcom/android/incallui/InCallPresenter;)Lcom/android/incallui/BluetoothProfileManager;
+    invoke-static {v0}, Lcom/android/incallui/InCallPresenter;->access$900(Lcom/android/incallui/InCallPresenter;)Lcom/android/incallui/BluetoothProfileManager;
 
     move-result-object v0
 
-    if-eqz v0, :cond_16
+    if-eqz v0, :cond_15
 
     iget-object v0, p0, Lcom/android/incallui/InCallPresenter$InCallReceiver;->this$0:Lcom/android/incallui/InCallPresenter;
 
-    invoke-static {v0}, Lcom/android/incallui/InCallPresenter;->access$1000(Lcom/android/incallui/InCallPresenter;)Lcom/android/incallui/BluetoothProfileManager;
+    invoke-static {v0}, Lcom/android/incallui/InCallPresenter;->access$900(Lcom/android/incallui/InCallPresenter;)Lcom/android/incallui/BluetoothProfileManager;
 
     move-result-object v0
 
@@ -306,7 +306,7 @@
 
     iget-object v0, p0, Lcom/android/incallui/InCallPresenter$InCallReceiver;->this$0:Lcom/android/incallui/InCallPresenter;
 
-    invoke-static {v0}, Lcom/android/incallui/InCallPresenter;->access$000(Lcom/android/incallui/InCallPresenter;)Lcom/android/incallui/InCallActivity;
+    invoke-static {v0}, Lcom/android/incallui/InCallPresenter;->access$500(Lcom/android/incallui/InCallPresenter;)Lcom/android/incallui/InCallActivity;
 
     move-result-object v0
 
@@ -314,7 +314,7 @@
 
     iget-object v0, p0, Lcom/android/incallui/InCallPresenter$InCallReceiver;->this$0:Lcom/android/incallui/InCallPresenter;
 
-    invoke-static {v0}, Lcom/android/incallui/InCallPresenter;->access$000(Lcom/android/incallui/InCallPresenter;)Lcom/android/incallui/InCallActivity;
+    invoke-static {v0}, Lcom/android/incallui/InCallPresenter;->access$500(Lcom/android/incallui/InCallPresenter;)Lcom/android/incallui/InCallActivity;
 
     move-result-object v0
 
@@ -326,7 +326,7 @@
 
     iget-object v0, p0, Lcom/android/incallui/InCallPresenter$InCallReceiver;->this$0:Lcom/android/incallui/InCallPresenter;
 
-    invoke-static {v0}, Lcom/android/incallui/InCallPresenter;->access$000(Lcom/android/incallui/InCallPresenter;)Lcom/android/incallui/InCallActivity;
+    invoke-static {v0}, Lcom/android/incallui/InCallPresenter;->access$500(Lcom/android/incallui/InCallPresenter;)Lcom/android/incallui/InCallActivity;
 
     move-result-object v0
 
@@ -357,7 +357,7 @@
 
     iget-object v0, p0, Lcom/android/incallui/InCallPresenter$InCallReceiver;->this$0:Lcom/android/incallui/InCallPresenter;
 
-    invoke-static {v0}, Lcom/android/incallui/InCallPresenter;->access$000(Lcom/android/incallui/InCallPresenter;)Lcom/android/incallui/InCallActivity;
+    invoke-static {v0}, Lcom/android/incallui/InCallPresenter;->access$500(Lcom/android/incallui/InCallPresenter;)Lcom/android/incallui/InCallActivity;
 
     move-result-object v0
 
@@ -365,7 +365,7 @@
 
     iget-object v0, p0, Lcom/android/incallui/InCallPresenter$InCallReceiver;->this$0:Lcom/android/incallui/InCallPresenter;
 
-    invoke-static {v0}, Lcom/android/incallui/InCallPresenter;->access$000(Lcom/android/incallui/InCallPresenter;)Lcom/android/incallui/InCallActivity;
+    invoke-static {v0}, Lcom/android/incallui/InCallPresenter;->access$500(Lcom/android/incallui/InCallPresenter;)Lcom/android/incallui/InCallActivity;
 
     move-result-object v0
 
@@ -377,7 +377,7 @@
 
     iget-object v0, p0, Lcom/android/incallui/InCallPresenter$InCallReceiver;->this$0:Lcom/android/incallui/InCallPresenter;
 
-    invoke-static {v0}, Lcom/android/incallui/InCallPresenter;->access$000(Lcom/android/incallui/InCallPresenter;)Lcom/android/incallui/InCallActivity;
+    invoke-static {v0}, Lcom/android/incallui/InCallPresenter;->access$500(Lcom/android/incallui/InCallPresenter;)Lcom/android/incallui/InCallActivity;
 
     move-result-object v0
 
@@ -499,7 +499,7 @@
 
     iget-object v0, p0, Lcom/android/incallui/InCallPresenter$InCallReceiver;->this$0:Lcom/android/incallui/InCallPresenter;
 
-    invoke-static {v0}, Lcom/android/incallui/InCallPresenter;->access$000(Lcom/android/incallui/InCallPresenter;)Lcom/android/incallui/InCallActivity;
+    invoke-static {v0}, Lcom/android/incallui/InCallPresenter;->access$500(Lcom/android/incallui/InCallPresenter;)Lcom/android/incallui/InCallActivity;
 
     move-result-object v0
 
@@ -507,7 +507,7 @@
 
     iget-object v0, p0, Lcom/android/incallui/InCallPresenter$InCallReceiver;->this$0:Lcom/android/incallui/InCallPresenter;
 
-    invoke-static {v0}, Lcom/android/incallui/InCallPresenter;->access$000(Lcom/android/incallui/InCallPresenter;)Lcom/android/incallui/InCallActivity;
+    invoke-static {v0}, Lcom/android/incallui/InCallPresenter;->access$500(Lcom/android/incallui/InCallPresenter;)Lcom/android/incallui/InCallActivity;
 
     move-result-object v0
 
@@ -539,11 +539,11 @@
 
     if-eqz v0, :cond_10
 
-    const v0, 0x7f09013e
+    const v0, 0x7f090141
 
     iget-object v1, p0, Lcom/android/incallui/InCallPresenter$InCallReceiver;->this$0:Lcom/android/incallui/InCallPresenter;
 
-    invoke-static {v1}, Lcom/android/incallui/InCallPresenter;->access$000(Lcom/android/incallui/InCallPresenter;)Lcom/android/incallui/InCallActivity;
+    invoke-static {v1}, Lcom/android/incallui/InCallPresenter;->access$500(Lcom/android/incallui/InCallPresenter;)Lcom/android/incallui/InCallActivity;
 
     move-result-object v1
 
@@ -551,7 +551,7 @@
 
     iget-object v1, p0, Lcom/android/incallui/InCallPresenter$InCallReceiver;->this$0:Lcom/android/incallui/InCallPresenter;
 
-    invoke-static {v1}, Lcom/android/incallui/InCallPresenter;->access$000(Lcom/android/incallui/InCallPresenter;)Lcom/android/incallui/InCallActivity;
+    invoke-static {v1}, Lcom/android/incallui/InCallPresenter;->access$500(Lcom/android/incallui/InCallPresenter;)Lcom/android/incallui/InCallActivity;
 
     move-result-object v1
 
@@ -568,7 +568,7 @@
 
     iget-object v0, p0, Lcom/android/incallui/InCallPresenter$InCallReceiver;->this$0:Lcom/android/incallui/InCallPresenter;
 
-    invoke-static {v0}, Lcom/android/incallui/InCallPresenter;->access$000(Lcom/android/incallui/InCallPresenter;)Lcom/android/incallui/InCallActivity;
+    invoke-static {v0}, Lcom/android/incallui/InCallPresenter;->access$500(Lcom/android/incallui/InCallPresenter;)Lcom/android/incallui/InCallActivity;
 
     move-result-object v0
 
@@ -579,7 +579,7 @@
     :cond_11
     iget-object v0, p0, Lcom/android/incallui/InCallPresenter$InCallReceiver;->this$0:Lcom/android/incallui/InCallPresenter;
 
-    invoke-static {v0}, Lcom/android/incallui/InCallPresenter;->access$000(Lcom/android/incallui/InCallPresenter;)Lcom/android/incallui/InCallActivity;
+    invoke-static {v0}, Lcom/android/incallui/InCallPresenter;->access$500(Lcom/android/incallui/InCallPresenter;)Lcom/android/incallui/InCallActivity;
 
     move-result-object v0
 
@@ -587,7 +587,7 @@
 
     iget-object v0, p0, Lcom/android/incallui/InCallPresenter$InCallReceiver;->this$0:Lcom/android/incallui/InCallPresenter;
 
-    invoke-static {v0}, Lcom/android/incallui/InCallPresenter;->access$000(Lcom/android/incallui/InCallPresenter;)Lcom/android/incallui/InCallActivity;
+    invoke-static {v0}, Lcom/android/incallui/InCallPresenter;->access$500(Lcom/android/incallui/InCallPresenter;)Lcom/android/incallui/InCallActivity;
 
     move-result-object v0
 
@@ -653,7 +653,7 @@
 
     iget-object v1, p0, Lcom/android/incallui/InCallPresenter$InCallReceiver;->this$0:Lcom/android/incallui/InCallPresenter;
 
-    invoke-static {v1}, Lcom/android/incallui/InCallPresenter;->access$1000(Lcom/android/incallui/InCallPresenter;)Lcom/android/incallui/BluetoothProfileManager;
+    invoke-static {v1}, Lcom/android/incallui/InCallPresenter;->access$900(Lcom/android/incallui/InCallPresenter;)Lcom/android/incallui/BluetoothProfileManager;
 
     move-result-object v1
 
@@ -661,7 +661,7 @@
 
     iget-object v1, p0, Lcom/android/incallui/InCallPresenter$InCallReceiver;->this$0:Lcom/android/incallui/InCallPresenter;
 
-    invoke-static {v1}, Lcom/android/incallui/InCallPresenter;->access$1000(Lcom/android/incallui/InCallPresenter;)Lcom/android/incallui/BluetoothProfileManager;
+    invoke-static {v1}, Lcom/android/incallui/InCallPresenter;->access$900(Lcom/android/incallui/InCallPresenter;)Lcom/android/incallui/BluetoothProfileManager;
 
     move-result-object v1
 
@@ -681,7 +681,7 @@
 
     iget-object v0, p0, Lcom/android/incallui/InCallPresenter$InCallReceiver;->this$0:Lcom/android/incallui/InCallPresenter;
 
-    invoke-static {v0}, Lcom/android/incallui/InCallPresenter;->access$1000(Lcom/android/incallui/InCallPresenter;)Lcom/android/incallui/BluetoothProfileManager;
+    invoke-static {v0}, Lcom/android/incallui/InCallPresenter;->access$900(Lcom/android/incallui/InCallPresenter;)Lcom/android/incallui/BluetoothProfileManager;
 
     move-result-object v0
 
@@ -694,9 +694,9 @@
 
     invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move-result v1
+    move-result v0
 
-    if-eqz v1, :cond_15
+    if-eqz v0, :cond_0
 
     invoke-static {}, Lcom/android/incallui/CallList;->getInstance()Lcom/android/incallui/CallList;
 
@@ -718,7 +718,7 @@
 
     iget-object v0, p0, Lcom/android/incallui/InCallPresenter$InCallReceiver;->this$0:Lcom/android/incallui/InCallPresenter;
 
-    invoke-static {v0}, Lcom/android/incallui/InCallPresenter;->access$400(Lcom/android/incallui/InCallPresenter;)Lcom/android/incallui/StatusBarNotifier;
+    invoke-static {v0}, Lcom/android/incallui/InCallPresenter;->access$200(Lcom/android/incallui/InCallPresenter;)Lcom/android/incallui/StatusBarNotifier;
 
     move-result-object v0
 
@@ -727,35 +727,6 @@
     goto/16 :goto_0
 
     :cond_15
-    const-string v1, "com.samsung.android.coreapps.rshare.RShareService"
-
-    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    invoke-static {}, Lcom/android/incallui/coreapps/CoreAppsManager;->getInstance()Lcom/android/incallui/coreapps/CoreAppsManager;
-
-    move-result-object v0
-
-    const-string v1, "sending_message"
-
-    invoke-virtual {p2, v1}, Landroid/content/Intent;->getStringExtra(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v1
-
-    const-string v2, "package_name"
-
-    invoke-virtual {p2, v2}, Landroid/content/Intent;->getStringExtra(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-virtual {v0, v1, v2}, Lcom/android/incallui/coreapps/CoreAppsManager;->receiveContactUri(Ljava/lang/String;Ljava/lang/String;)V
-
-    goto/16 :goto_0
-
-    :cond_16
     move-object v3, v1
 
     goto/16 :goto_1

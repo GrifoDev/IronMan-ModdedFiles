@@ -235,9 +235,9 @@
 .method private checkAddCallMenu()Z
     .locals 7
 
-    const/4 v2, 0x0
+    const/4 v2, 0x1
 
-    const/4 v1, 0x1
+    const/4 v1, 0x0
 
     invoke-static {}, Lcom/android/incallui/InCallUISystemDB;->isConnectedMirrorLink()Z
 
@@ -247,7 +247,7 @@
 
     :cond_0
     :goto_0
-    return v2
+    return v1
 
     :cond_1
     invoke-static {}, Lcom/android/incallui/TelecomAdapter;->getInstance()Lcom/android/incallui/TelecomAdapter;
@@ -268,27 +268,27 @@
 
     const-string v0, "InCallMenu"
 
-    new-instance v2, Ljava/lang/StringBuilder;
+    new-instance v1, Ljava/lang/StringBuilder;
 
-    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
 
     const-string v4, "manageAddCallMenu: "
 
-    invoke-virtual {v2, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v1, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v2
+    move-result-object v1
 
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+    invoke-virtual {v1, v3}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
 
-    move-result-object v2
+    move-result-object v1
 
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v2
+    move-result-object v1
 
-    invoke-static {v0, v2, v1}, Lcom/android/incallui/Log;->i(Ljava/lang/String;Ljava/lang/String;Z)V
+    invoke-static {v0, v1, v2}, Lcom/android/incallui/Log;->i(Ljava/lang/String;Ljava/lang/String;Z)V
 
-    move v2, v3
+    move v1, v3
 
     goto :goto_0
 
@@ -339,13 +339,13 @@
 
     move-result-object v5
 
-    invoke-static {v4, v5, v1}, Lcom/android/incallui/Log;->i(Ljava/lang/String;Ljava/lang/String;Z)V
+    invoke-static {v4, v5, v2}, Lcom/android/incallui/Log;->i(Ljava/lang/String;Ljava/lang/String;Z)V
 
     if-eqz v0, :cond_0
 
     if-eqz v3, :cond_0
 
-    move v2, v1
+    move v1, v2
 
     goto :goto_0
 
@@ -364,51 +364,64 @@
 
     invoke-virtual {v0}, Lcom/android/incallui/InCallPresenter;->getActivity()Lcom/android/incallui/InCallActivity;
 
-    move-result-object v4
-
-    if-eqz v4, :cond_6
-
-    invoke-virtual {v4}, Lcom/android/incallui/InCallActivity;->getRTTFragment()Lcom/android/incallui/RTTUi;
-
     move-result-object v0
-
-    invoke-virtual {v4}, Lcom/android/incallui/InCallActivity;->isRTTVisible()Z
-
-    move-result v5
-
-    if-eqz v5, :cond_5
 
     if-eqz v0, :cond_5
 
-    invoke-interface {v0}, Lcom/android/incallui/RTTUi;->isRTTKeyboardOpen()Z
+    invoke-virtual {v0}, Lcom/android/incallui/InCallActivity;->getRTTFragment()Lcom/android/incallui/RTTUi;
+
+    invoke-static {}, Lcom/android/incallui/CallList;->getInstance()Lcom/android/incallui/CallList;
+
+    move-result-object v4
+
+    const/4 v5, 0x0
+
+    invoke-static {v4, v5, v1}, Lcom/android/incallui/util/InCallUtils;->getCallToDisplay(Lcom/android/incallui/CallList;Lcom/android/incallui/Call;Z)Lcom/android/incallui/Call;
+
+    move-result-object v4
+
+    invoke-static {}, Lcom/android/incallui/CallList;->getInstance()Lcom/android/incallui/CallList;
+
+    move-result-object v5
+
+    invoke-virtual {v5, v4}, Lcom/android/incallui/CallList;->isConferenceCall(Lcom/android/incallui/Call;)Z
+
+    move-result v5
+
+    invoke-static {v4}, Lcom/android/incallui/util/InCallUtils;->isVoicemailCall(Lcom/android/incallui/Call;)Z
+
+    move-result v6
+
+    invoke-virtual {v0}, Lcom/android/incallui/InCallActivity;->isRTTVisible()Z
+
+    move-result v0
+
+    if-nez v0, :cond_4
+
+    invoke-static {}, Lcom/android/incallui/InCallPresenter;->getInstance()Lcom/android/incallui/InCallPresenter;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lcom/android/incallui/InCallPresenter;->getRttCapability()Z
 
     move-result v0
 
     if-eqz v0, :cond_5
 
-    move v0, v1
+    :cond_4
+    if-nez v5, :cond_5
+
+    if-nez v6, :cond_5
+
+    invoke-static {v4}, Lcom/android/incallui/util/CallTypeUtils;->isPSDomain(Lcom/android/incallui/Call;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_5
+
+    move v0, v2
 
     :goto_1
-    invoke-virtual {v4}, Lcom/android/incallui/InCallActivity;->isRTTVisible()Z
-
-    move-result v4
-
-    if-nez v4, :cond_4
-
-    invoke-static {}, Lcom/android/incallui/InCallPresenter;->getInstance()Lcom/android/incallui/InCallPresenter;
-
-    move-result-object v4
-
-    invoke-virtual {v4}, Lcom/android/incallui/InCallPresenter;->getRttCapability()Z
-
-    move-result v4
-
-    if-ne v4, v1, :cond_4
-
-    move v0, v1
-
-    :cond_4
-    :goto_2
     const-string v4, "InCallMenu"
 
     new-instance v5, Ljava/lang/StringBuilder;
@@ -439,25 +452,20 @@
 
     move-result-object v5
 
-    invoke-static {v4, v5, v1}, Lcom/android/incallui/Log;->i(Ljava/lang/String;Ljava/lang/String;Z)V
+    invoke-static {v4, v5, v2}, Lcom/android/incallui/Log;->i(Ljava/lang/String;Ljava/lang/String;Z)V
 
     if-eqz v0, :cond_0
 
     if-eqz v3, :cond_0
 
-    move v2, v1
+    move v1, v2
 
     goto/16 :goto_0
 
     :cond_5
-    move v0, v2
+    move v0, v1
 
     goto :goto_1
-
-    :cond_6
-    move v0, v2
-
-    goto :goto_2
 .end method
 
 .method private checkAddContactsMenu()Z
@@ -1011,11 +1019,11 @@
 
     move-result v3
 
-    if-eqz v3, :cond_8
+    if-eqz v3, :cond_6
 
-    if-eqz v0, :cond_8
+    if-eqz v0, :cond_6
 
-    if-eqz v1, :cond_8
+    if-eqz v1, :cond_6
 
     invoke-static {}, Lcom/android/incallui/CallList;->getInstance()Lcom/android/incallui/CallList;
 
@@ -1025,33 +1033,18 @@
 
     move-result v1
 
-    if-eqz v1, :cond_8
+    if-eqz v1, :cond_6
 
     invoke-virtual {v4}, Lcom/android/incallui/CallList;->hasConferenceCall()Z
 
     move-result v1
 
-    if-nez v1, :cond_8
+    if-nez v1, :cond_6
 
     const-string v1, "checkCallTransfer : 1 active & 1 hold case"
 
     invoke-direct {p0, v1}, Lcom/android/incallui/InCallMenu;->log(Ljava/lang/String;)V
 
-    invoke-static {}, Lcom/android/incallui/util/CallTypeUtils;->isPSDomain()Z
-
-    move-result v1
-
-    if-eqz v1, :cond_6
-
-    const-string v1, "support_call_transfer_ps_domain"
-
-    invoke-static {v1}, Lcom/android/incallui/InCallUIFeature;->hasFeature(Ljava/lang/String;)Z
-
-    move-result v1
-
-    if-eqz v1, :cond_7
-
-    :cond_6
     invoke-virtual {v0, v6}, Lcom/android/incallui/Call;->can(I)Z
 
     move-result v0
@@ -1079,12 +1072,7 @@
 
     goto :goto_0
 
-    :cond_7
-    move v0, v2
-
-    goto :goto_1
-
-    :cond_8
+    :cond_6
     move v0, v2
 
     goto :goto_1
@@ -1307,6 +1295,24 @@
     goto :goto_0
 
     :cond_6
+    invoke-static {}, Lcom/android/incallui/bike/BikeModeUtils;->isBikeModeOn()Z
+
+    move-result v2
+
+    if-nez v2, :cond_7
+
+    invoke-static {}, Lcom/android/incallui/bike/BikeModeUtils;->isBikeModeOutgoingCall()Z
+
+    move-result v2
+
+    if-eqz v2, :cond_8
+
+    :cond_7
+    move v0, v1
+
+    goto :goto_0
+
+    :cond_8
     invoke-static {}, Lcom/android/incallui/util/ImsCommonUtils;->isAvailablePSVT()Z
 
     move-result v2
@@ -1317,11 +1323,15 @@
 
     move-result v3
 
-    if-eqz v3, :cond_9
+    if-eqz v3, :cond_b
 
-    move v2, v0
+    const-string v2, "mmtel-video"
 
-    :cond_7
+    invoke-static {v2}, Lcom/android/incallui/util/ImsCommonUtils;->isServiceAvailable(Ljava/lang/String;)Z
+
+    move-result v2
+
+    :cond_9
     :goto_1
     const-string v3, "show_switch_icon_in_button"
 
@@ -1329,11 +1339,11 @@
 
     move-result v3
 
-    if-eqz v3, :cond_8
+    if-eqz v3, :cond_a
 
     if-nez v2, :cond_0
 
-    :cond_8
+    :cond_a
     invoke-static {}, Lcom/android/incallui/util/InCallUtils;->isShowVZWVoLTEUI()Z
 
     move-result v2
@@ -1344,14 +1354,14 @@
 
     goto :goto_0
 
-    :cond_9
+    :cond_b
     const-string v3, "feature_multisim"
 
     invoke-static {v3}, Lcom/android/incallui/InCallUIFeature;->hasFeature(Ljava/lang/String;)Z
 
     move-result v3
 
-    if-eqz v3, :cond_7
+    if-eqz v3, :cond_9
 
     invoke-static {}, Lcom/android/incallui/util/InCallUtilsMultiSIM;->getDefaultVoiceSubscriptionId()I
 
@@ -1554,7 +1564,7 @@
 
     if-eqz v4, :cond_0
 
-    const-string v0, "support_folder_single_lcd"
+    const-string v0, "smart_folder_concept"
 
     invoke-static {v0}, Lcom/android/incallui/InCallUIFeature;->hasFeature(Ljava/lang/String;)Z
 
@@ -1861,11 +1871,17 @@
 
     invoke-virtual {v2}, Lcom/android/incallui/Call;->getState()I
 
+    move-result v3
+
+    const/16 v4, 0x8
+
+    if-eq v3, v4, :cond_2
+
+    invoke-virtual {v2}, Lcom/android/incallui/Call;->isEmergencyCall()Z
+
     move-result v2
 
-    const/16 v3, 0x8
-
-    if-ne v2, v3, :cond_3
+    if-eqz v2, :cond_3
 
     :cond_2
     :goto_1
@@ -1900,7 +1916,7 @@
 .end method
 
 .method private checkSwitchToVoiceCallMenu()Z
-    .locals 3
+    .locals 4
 
     const/4 v0, 0x0
 
@@ -1925,11 +1941,21 @@
 
     move-result-object v1
 
+    invoke-static {}, Lcom/android/incallui/CallList;->getInstance()Lcom/android/incallui/CallList;
+
+    move-result-object v2
+
+    const/4 v3, 0x0
+
+    invoke-static {v2, v3, v0}, Lcom/android/incallui/util/InCallUtils;->getCallToDisplay(Lcom/android/incallui/CallList;Lcom/android/incallui/Call;Z)Lcom/android/incallui/Call;
+
+    move-result-object v2
+
+    if-eqz v2, :cond_0
+
     if-eqz v1, :cond_0
 
     invoke-virtual {v1}, Lcom/android/incallui/InCallActivity;->getRTTFragment()Lcom/android/incallui/RTTUi;
-
-    move-result-object v2
 
     invoke-virtual {v1}, Lcom/android/incallui/InCallActivity;->isRTTVisible()Z
 
@@ -1937,13 +1963,11 @@
 
     if-eqz v1, :cond_0
 
-    if-eqz v2, :cond_0
-
-    invoke-interface {v2}, Lcom/android/incallui/RTTUi;->isRTTKeyboardOpen()Z
+    invoke-virtual {v2}, Lcom/android/incallui/Call;->isEmergencyCall()Z
 
     move-result v1
 
-    if-eqz v1, :cond_0
+    if-nez v1, :cond_0
 
     const/4 v0, 0x1
 
@@ -2153,7 +2177,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f09030c
+    const v1, 0x7f09030f
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -2169,7 +2193,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f090308
+    const v1, 0x7f09030b
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -2246,7 +2270,7 @@
 
     if-eqz v1, :cond_0
 
-    const v2, 0x7f09066f
+    const v2, 0x7f090693
 
     const/4 v3, 0x1
 
@@ -2345,7 +2369,7 @@
 .method private manageBluetoothMenu(Landroid/view/MenuItem;Landroid/view/MenuItem;)V
     .locals 7
 
-    const v6, 0x7f02035e
+    const v6, 0x7f02036d
 
     const/4 v5, 0x2
 
@@ -2646,6 +2670,56 @@
     goto :goto_0
 .end method
 
+.method private manageMuteRTTMenu(Landroid/view/MenuItem;Landroid/view/MenuItem;)V
+    .locals 3
+
+    const/4 v2, 0x1
+
+    const/4 v1, 0x0
+
+    invoke-static {}, Lcom/android/incallui/UiAdapter;->getInstance()Lcom/android/incallui/UiAdapter;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lcom/android/incallui/UiAdapter;->getCallButtonPresenter()Lcom/android/incallui/CallButtonPresenter;
+
+    move-result-object v0
+
+    if-eqz v0, :cond_0
+
+    invoke-static {}, Lcom/android/incallui/AudioModeProvider;->getInstance()Lcom/android/incallui/AudioModeProvider;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lcom/android/incallui/AudioModeProvider;->getMute()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    invoke-interface {p2, v2}, Landroid/view/MenuItem;->setVisible(Z)Landroid/view/MenuItem;
+
+    invoke-interface {p2, v2}, Landroid/view/MenuItem;->setEnabled(Z)Landroid/view/MenuItem;
+
+    invoke-interface {p1, v1}, Landroid/view/MenuItem;->setVisible(Z)Landroid/view/MenuItem;
+
+    invoke-interface {p1, v1}, Landroid/view/MenuItem;->setEnabled(Z)Landroid/view/MenuItem;
+
+    :goto_0
+    return-void
+
+    :cond_0
+    invoke-interface {p2, v1}, Landroid/view/MenuItem;->setVisible(Z)Landroid/view/MenuItem;
+
+    invoke-interface {p2, v1}, Landroid/view/MenuItem;->setEnabled(Z)Landroid/view/MenuItem;
+
+    invoke-interface {p1, v2}, Landroid/view/MenuItem;->setVisible(Z)Landroid/view/MenuItem;
+
+    invoke-interface {p1, v2}, Landroid/view/MenuItem;->setEnabled(Z)Landroid/view/MenuItem;
+
+    goto :goto_0
+.end method
+
 .method private manageRecordStopMenu(Landroid/view/MenuItem;)V
     .locals 1
 
@@ -2671,7 +2745,7 @@
 .end method
 
 .method private manageRttMenu(Landroid/view/MenuItem;)V
-    .locals 4
+    .locals 5
 
     const/4 v0, 0x0
 
@@ -2705,13 +2779,19 @@
 
     move-result v2
 
-    invoke-static {}, Lcom/android/incallui/InCallPresenter;->getInstance()Lcom/android/incallui/InCallPresenter;
-
-    move-result-object v3
-
-    invoke-virtual {v3}, Lcom/android/incallui/InCallPresenter;->getRttCapability()Z
+    invoke-static {v1}, Lcom/android/incallui/util/InCallUtils;->isVoicemailCall(Lcom/android/incallui/Call;)Z
 
     move-result v3
+
+    invoke-static {}, Lcom/android/incallui/InCallPresenter;->getInstance()Lcom/android/incallui/InCallPresenter;
+
+    move-result-object v4
+
+    invoke-virtual {v4}, Lcom/android/incallui/InCallPresenter;->getRttCapability()Z
+
+    move-result v4
+
+    if-nez v4, :cond_1
 
     if-nez v3, :cond_1
 
@@ -2741,6 +2821,54 @@
     invoke-interface {p1, v0}, Landroid/view/MenuItem;->setVisible(Z)Landroid/view/MenuItem;
 
     return-void
+.end method
+
+.method private manageSpeakerMenu(Landroid/view/MenuItem;Landroid/view/MenuItem;)V
+    .locals 4
+
+    const/4 v3, 0x1
+
+    const/4 v2, 0x0
+
+    invoke-static {}, Lcom/android/incallui/UiAdapter;->getInstance()Lcom/android/incallui/UiAdapter;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lcom/android/incallui/UiAdapter;->getCallButtonPresenter()Lcom/android/incallui/CallButtonPresenter;
+
+    move-result-object v0
+
+    if-eqz v0, :cond_0
+
+    const/16 v1, 0x8
+
+    invoke-virtual {v0, v1}, Lcom/android/incallui/CallButtonPresenter;->isAudio(I)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    invoke-interface {p2, v3}, Landroid/view/MenuItem;->setVisible(Z)Landroid/view/MenuItem;
+
+    invoke-interface {p2, v3}, Landroid/view/MenuItem;->setEnabled(Z)Landroid/view/MenuItem;
+
+    invoke-interface {p1, v2}, Landroid/view/MenuItem;->setVisible(Z)Landroid/view/MenuItem;
+
+    invoke-interface {p1, v2}, Landroid/view/MenuItem;->setEnabled(Z)Landroid/view/MenuItem;
+
+    :goto_0
+    return-void
+
+    :cond_0
+    invoke-interface {p2, v2}, Landroid/view/MenuItem;->setVisible(Z)Landroid/view/MenuItem;
+
+    invoke-interface {p2, v2}, Landroid/view/MenuItem;->setEnabled(Z)Landroid/view/MenuItem;
+
+    invoke-interface {p1, v3}, Landroid/view/MenuItem;->setVisible(Z)Landroid/view/MenuItem;
+
+    invoke-interface {p1, v3}, Landroid/view/MenuItem;->setEnabled(Z)Landroid/view/MenuItem;
+
+    goto :goto_0
 .end method
 
 .method private manageSwitchToVoiceCallMenu(Landroid/view/MenuItem;)V
@@ -3040,7 +3168,7 @@
 .method public holdClicked(Z)V
     .locals 5
 
-    const v4, 0x7f09018e
+    const v4, 0x7f090191
 
     invoke-static {}, Lcom/android/incallui/CallList;->getInstance()Lcom/android/incallui/CallList;
 
@@ -3271,7 +3399,7 @@
 
     if-eqz v2, :cond_2
 
-    const-string v2, "support_folder_single_lcd"
+    const-string v2, "smart_folder_concept"
 
     invoke-static {v2}, Lcom/android/incallui/InCallUIFeature;->hasFeature(Ljava/lang/String;)Z
 
@@ -3619,7 +3747,7 @@
 
     if-nez v0, :cond_0
 
-    const v0, 0x7f1004f8
+    const v0, 0x7f100516
 
     iput v0, p0, Lcom/android/incallui/InCallMenu;->mUniqueMenuId:I
 
@@ -3717,9 +3845,46 @@
     goto :goto_0
 
     :pswitch_data_0
-    .packed-switch 0x7f1004f8
+    .packed-switch 0x7f100516
         :pswitch_0
     .end packed-switch
+.end method
+
+.method public muteClicked()V
+    .locals 2
+
+    invoke-static {}, Lcom/android/incallui/UiAdapter;->getInstance()Lcom/android/incallui/UiAdapter;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lcom/android/incallui/UiAdapter;->getCallButtonPresenter()Lcom/android/incallui/CallButtonPresenter;
+
+    move-result-object v1
+
+    if-eqz v1, :cond_0
+
+    invoke-static {}, Lcom/android/incallui/AudioModeProvider;->getInstance()Lcom/android/incallui/AudioModeProvider;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lcom/android/incallui/AudioModeProvider;->getMute()Z
+
+    move-result v0
+
+    if-nez v0, :cond_1
+
+    const/4 v0, 0x1
+
+    :goto_0
+    invoke-virtual {v1, v0}, Lcom/android/incallui/CallButtonPresenter;->muteClicked(Z)V
+
+    :cond_0
+    return-void
+
+    :cond_1
+    const/4 v0, 0x0
+
+    goto :goto_0
 .end method
 
 .method public optionsItemSelected(Landroid/view/MenuItem;)Z
@@ -4000,7 +4165,7 @@
     invoke-virtual {v0}, Lcom/android/incallui/CallButtonPresenter;->toggleSpeakerphone()V
 
     :cond_7
-    const v0, 0x7f0905c2
+    const v0, 0x7f0905c7
 
     invoke-static {v0}, Lcom/android/incallui/util/InCallUtils;->displayToast(I)V
 
@@ -4037,7 +4202,7 @@
     invoke-virtual {v0}, Lcom/android/incallui/CallButtonPresenter;->toggleSpeakerphone()V
 
     :cond_9
-    const v0, 0x7f0905c3
+    const v0, 0x7f0905c8
 
     invoke-static {v0}, Lcom/android/incallui/util/InCallUtils;->displayToast(I)V
 
@@ -4050,11 +4215,17 @@
     :sswitch_4
     if-eqz v0, :cond_5
 
-    invoke-virtual {v0, v1}, Lcom/android/incallui/CallButtonPresenter;->showRTTButton(Z)V
+    invoke-virtual {v0}, Lcom/android/incallui/CallButtonPresenter;->showRTTButton()V
 
     goto :goto_1
 
     :sswitch_5
+    invoke-static {}, Lcom/android/incallui/InCallPresenter;->getInstance()Lcom/android/incallui/InCallPresenter;
+
+    move-result-object v0
+
+    invoke-virtual {v0, v2}, Lcom/android/incallui/InCallPresenter;->setrequestedRTT(Z)V
+
     invoke-virtual {p0}, Lcom/android/incallui/InCallMenu;->switchToVoiceCallClicked()V
 
     goto :goto_1
@@ -4123,37 +4294,47 @@
     goto/16 :goto_1
 
     :sswitch_c
+    invoke-virtual {p0}, Lcom/android/incallui/InCallMenu;->speakerClicked()V
+
+    goto/16 :goto_1
+
+    :sswitch_d
+    invoke-virtual {p0}, Lcom/android/incallui/InCallMenu;->muteClicked()V
+
+    goto/16 :goto_1
+
+    :sswitch_e
     invoke-static {v3}, Lcom/android/incallui/util/VoiceCallAppLogging;->fullScreen_viewContact(Lcom/android/incallui/Call;)V
 
     invoke-static {}, Lcom/android/incallui/util/PackageHelpers;->viewContactClicked()V
 
     goto/16 :goto_1
 
-    :sswitch_d
+    :sswitch_f
     invoke-static {v3}, Lcom/android/incallui/util/VoiceCallAppLogging;->fullScreen_addToContact(Lcom/android/incallui/Call;)V
 
     invoke-static {}, Lcom/android/incallui/util/PackageHelpers;->addToContactClicked()V
 
     goto/16 :goto_1
 
-    :sswitch_e
+    :sswitch_10
     invoke-static {v3}, Lcom/android/incallui/util/VoiceCallAppLogging;->fullScreen_sendMessage(Lcom/android/incallui/Call;)V
 
     invoke-static {}, Lcom/android/incallui/util/PackageHelpers;->launchMessage()V
 
     goto/16 :goto_1
 
-    :sswitch_f
+    :sswitch_11
     invoke-virtual {p0}, Lcom/android/incallui/InCallMenu;->addVoiceUserClicked()V
 
     goto/16 :goto_1
 
-    :sswitch_10
+    :sswitch_12
     invoke-direct {p0}, Lcom/android/incallui/InCallMenu;->launchRcsFileTransfer()V
 
     goto/16 :goto_1
 
-    :sswitch_11
+    :sswitch_13
     invoke-static {v3}, Lcom/android/incallui/util/VoiceCallAppLogging;->fullScreen_bluetooth(Lcom/android/incallui/Call;)V
 
     if-eqz v0, :cond_5
@@ -4162,12 +4343,12 @@
 
     goto/16 :goto_1
 
-    :sswitch_12
+    :sswitch_14
     invoke-virtual {p0}, Lcom/android/incallui/InCallMenu;->callTransferClicked()V
 
     goto/16 :goto_1
 
-    :sswitch_13
+    :sswitch_15
     invoke-static {}, Lcom/android/incallui/operator/usa/softphone/SoftPhoneTransferManager;->getInstance()Lcom/android/incallui/operator/usa/softphone/SoftPhoneTransferManager;
 
     move-result-object v0
@@ -4176,40 +4357,42 @@
 
     goto/16 :goto_1
 
-    :sswitch_14
+    :sswitch_16
     invoke-static {}, Lcom/android/incallui/util/VoiceCallAppLogging;->fullScreen_emergencyCall()V
 
     invoke-static {}, Lcom/android/incallui/util/PackageHelpers;->launchEmergencyCall()V
 
     goto/16 :goto_1
 
-    nop
-
     :sswitch_data_0
     .sparse-switch
-        0x7f1000cb -> :sswitch_6
-        0x7f1000cd -> :sswitch_9
-        0x7f1003d7 -> :sswitch_a
-        0x7f10041d -> :sswitch_8
-        0x7f100471 -> :sswitch_5
-        0x7f1004dc -> :sswitch_b
-        0x7f1004dd -> :sswitch_b
-        0x7f1004de -> :sswitch_c
-        0x7f1004df -> :sswitch_d
-        0x7f1004e0 -> :sswitch_e
-        0x7f1004f7 -> :sswitch_12
-        0x7f1004f8 -> :sswitch_13
-        0x7f1004f9 -> :sswitch_14
-        0x7f1004fa -> :sswitch_4
-        0x7f1004fb -> :sswitch_f
-        0x7f1004fd -> :sswitch_10
-        0x7f1004fe -> :sswitch_11
-        0x7f1004ff -> :sswitch_11
-        0x7f100500 -> :sswitch_0
-        0x7f100501 -> :sswitch_2
-        0x7f100502 -> :sswitch_3
-        0x7f100504 -> :sswitch_1
-        0x7f100505 -> :sswitch_7
+        0x7f1000d3 -> :sswitch_6
+        0x7f1000d5 -> :sswitch_9
+        0x7f1003e4 -> :sswitch_a
+        0x7f100447 -> :sswitch_8
+        0x7f100486 -> :sswitch_5
+        0x7f1004f6 -> :sswitch_b
+        0x7f1004f7 -> :sswitch_b
+        0x7f1004f8 -> :sswitch_c
+        0x7f1004f9 -> :sswitch_c
+        0x7f1004fa -> :sswitch_d
+        0x7f1004fb -> :sswitch_d
+        0x7f1004fc -> :sswitch_e
+        0x7f1004fd -> :sswitch_f
+        0x7f1004fe -> :sswitch_10
+        0x7f100515 -> :sswitch_14
+        0x7f100516 -> :sswitch_15
+        0x7f100517 -> :sswitch_16
+        0x7f100518 -> :sswitch_4
+        0x7f100519 -> :sswitch_11
+        0x7f10051b -> :sswitch_12
+        0x7f10051c -> :sswitch_13
+        0x7f10051d -> :sswitch_13
+        0x7f10051e -> :sswitch_0
+        0x7f10051f -> :sswitch_2
+        0x7f100520 -> :sswitch_3
+        0x7f100522 -> :sswitch_1
+        0x7f100523 -> :sswitch_7
     .end sparse-switch
 .end method
 
@@ -4243,7 +4426,7 @@
     invoke-virtual {v0, v2, v3}, Lcom/android/incallui/secrcs/RcsShareUI;->registerRcsObserver(Landroid/content/Context;I)V
 
     :cond_0
-    const-string v0, "support_folder_single_lcd"
+    const-string v0, "smart_folder_concept"
 
     invoke-static {v0}, Lcom/android/incallui/InCallUIFeature;->hasFeature(Ljava/lang/String;)Z
 
@@ -4251,13 +4434,13 @@
 
     if-eqz v0, :cond_2
 
-    const v0, 0x7f1000cb
+    const v0, 0x7f1000d3
 
     invoke-interface {p1, v0}, Landroid/view/Menu;->findItem(I)Landroid/view/MenuItem;
 
     move-result-object v0
 
-    const v1, 0x7f100505
+    const v1, 0x7f100523
 
     invoke-interface {p1, v1}, Landroid/view/Menu;->findItem(I)Landroid/view/MenuItem;
 
@@ -4295,7 +4478,7 @@
     goto :goto_0
 
     :sswitch_1
-    const v2, 0x7f10041d
+    const v2, 0x7f100447
 
     invoke-interface {p1, v2}, Landroid/view/Menu;->findItem(I)Landroid/view/MenuItem;
 
@@ -4306,7 +4489,7 @@
     goto :goto_1
 
     :sswitch_2
-    const v2, 0x7f1000cd
+    const v2, 0x7f1000d5
 
     invoke-interface {p1, v2}, Landroid/view/Menu;->findItem(I)Landroid/view/MenuItem;
 
@@ -4317,7 +4500,7 @@
     goto :goto_1
 
     :sswitch_3
-    const v2, 0x7f1003d7
+    const v2, 0x7f1003e4
 
     invoke-interface {p1, v2}, Landroid/view/Menu;->findItem(I)Landroid/view/MenuItem;
 
@@ -4328,13 +4511,13 @@
     goto :goto_1
 
     :sswitch_4
-    const v2, 0x7f1004dc
+    const v2, 0x7f1004f6
 
     invoke-interface {p1, v2}, Landroid/view/Menu;->findItem(I)Landroid/view/MenuItem;
 
     move-result-object v2
 
-    const v3, 0x7f1004dd
+    const v3, 0x7f1004f7
 
     invoke-interface {p1, v3}, Landroid/view/Menu;->findItem(I)Landroid/view/MenuItem;
 
@@ -4345,7 +4528,7 @@
     goto :goto_1
 
     :sswitch_5
-    const v2, 0x7f1004de
+    const v2, 0x7f1004fc
 
     invoke-interface {p1, v2}, Landroid/view/Menu;->findItem(I)Landroid/view/MenuItem;
 
@@ -4356,7 +4539,7 @@
     goto :goto_1
 
     :sswitch_6
-    const v2, 0x7f1004df
+    const v2, 0x7f1004fd
 
     invoke-interface {p1, v2}, Landroid/view/Menu;->findItem(I)Landroid/view/MenuItem;
 
@@ -4367,7 +4550,7 @@
     goto :goto_1
 
     :sswitch_7
-    const v2, 0x7f1004e0
+    const v2, 0x7f1004fe
 
     invoke-interface {p1, v2}, Landroid/view/Menu;->findItem(I)Landroid/view/MenuItem;
 
@@ -4378,7 +4561,7 @@
     goto :goto_1
 
     :sswitch_8
-    const v2, 0x7f1004fb
+    const v2, 0x7f100519
 
     invoke-interface {p1, v2}, Landroid/view/Menu;->findItem(I)Landroid/view/MenuItem;
 
@@ -4392,7 +4575,7 @@
 
     if-eqz v3, :cond_3
 
-    const v3, 0x7f0902d8
+    const v3, 0x7f0902db
 
     invoke-interface {v2, v3}, Landroid/view/MenuItem;->setTitle(I)Landroid/view/MenuItem;
 
@@ -4402,13 +4585,13 @@
     goto :goto_1
 
     :sswitch_9
-    const v2, 0x7f1004fd
+    const v2, 0x7f10051b
 
     invoke-interface {p1, v2}, Landroid/view/Menu;->findItem(I)Landroid/view/MenuItem;
 
     move-result-object v2
 
-    const v3, 0x7f02035f
+    const v3, 0x7f02036e
 
     invoke-interface {v2, v3}, Landroid/view/MenuItem;->setIcon(I)Landroid/view/MenuItem;
 
@@ -4476,13 +4659,13 @@
     goto/16 :goto_1
 
     :sswitch_a
-    const v2, 0x7f1004fe
+    const v2, 0x7f10051c
 
     invoke-interface {p1, v2}, Landroid/view/Menu;->findItem(I)Landroid/view/MenuItem;
 
     move-result-object v2
 
-    const v3, 0x7f1004ff
+    const v3, 0x7f10051d
 
     invoke-interface {p1, v3}, Landroid/view/Menu;->findItem(I)Landroid/view/MenuItem;
 
@@ -4493,7 +4676,7 @@
     goto/16 :goto_1
 
     :sswitch_b
-    const v2, 0x7f1004f7
+    const v2, 0x7f100515
 
     invoke-interface {p1, v2}, Landroid/view/Menu;->findItem(I)Landroid/view/MenuItem;
 
@@ -4504,7 +4687,7 @@
     goto/16 :goto_1
 
     :sswitch_c
-    const v2, 0x7f1004f8
+    const v2, 0x7f100516
 
     invoke-interface {p1, v2}, Landroid/view/Menu;->findItem(I)Landroid/view/MenuItem;
 
@@ -4523,7 +4706,7 @@
     goto/16 :goto_1
 
     :sswitch_d
-    const v2, 0x7f1004f9
+    const v2, 0x7f100517
 
     invoke-interface {p1, v2}, Landroid/view/Menu;->findItem(I)Landroid/view/MenuItem;
 
@@ -4534,7 +4717,7 @@
     goto/16 :goto_1
 
     :sswitch_e
-    const v2, 0x7f1004fa
+    const v2, 0x7f100518
 
     invoke-interface {p1, v2}, Landroid/view/Menu;->findItem(I)Landroid/view/MenuItem;
 
@@ -4545,7 +4728,7 @@
     goto/16 :goto_1
 
     :sswitch_f
-    const v2, 0x7f100471
+    const v2, 0x7f100486
 
     invoke-interface {p1, v2}, Landroid/view/Menu;->findItem(I)Landroid/view/MenuItem;
 
@@ -4555,27 +4738,65 @@
 
     goto/16 :goto_1
 
+    :sswitch_10
+    const v2, 0x7f1004f8
+
+    invoke-interface {p1, v2}, Landroid/view/Menu;->findItem(I)Landroid/view/MenuItem;
+
+    move-result-object v2
+
+    const v3, 0x7f1004f9
+
+    invoke-interface {p1, v3}, Landroid/view/Menu;->findItem(I)Landroid/view/MenuItem;
+
+    move-result-object v3
+
+    invoke-direct {p0, v2, v3}, Lcom/android/incallui/InCallMenu;->manageSpeakerMenu(Landroid/view/MenuItem;Landroid/view/MenuItem;)V
+
+    goto/16 :goto_1
+
+    :sswitch_11
+    const v2, 0x7f1004fa
+
+    invoke-interface {p1, v2}, Landroid/view/Menu;->findItem(I)Landroid/view/MenuItem;
+
+    move-result-object v2
+
+    const v3, 0x7f1004fb
+
+    invoke-interface {p1, v3}, Landroid/view/Menu;->findItem(I)Landroid/view/MenuItem;
+
+    move-result-object v3
+
+    invoke-direct {p0, v2, v3}, Lcom/android/incallui/InCallMenu;->manageMuteRTTMenu(Landroid/view/MenuItem;Landroid/view/MenuItem;)V
+
+    goto/16 :goto_1
+
     nop
 
     :sswitch_data_0
     .sparse-switch
-        0x7f1000cd -> :sswitch_2
-        0x7f1003d7 -> :sswitch_3
-        0x7f10041d -> :sswitch_1
-        0x7f100471 -> :sswitch_f
-        0x7f1004dc -> :sswitch_0
-        0x7f1004dd -> :sswitch_4
-        0x7f1004de -> :sswitch_5
-        0x7f1004df -> :sswitch_6
-        0x7f1004e0 -> :sswitch_7
-        0x7f1004f7 -> :sswitch_b
-        0x7f1004f8 -> :sswitch_c
-        0x7f1004f9 -> :sswitch_d
-        0x7f1004fa -> :sswitch_e
-        0x7f1004fb -> :sswitch_8
-        0x7f1004fd -> :sswitch_9
-        0x7f1004fe -> :sswitch_0
-        0x7f1004ff -> :sswitch_a
+        0x7f1000d5 -> :sswitch_2
+        0x7f1003e4 -> :sswitch_3
+        0x7f100447 -> :sswitch_1
+        0x7f100486 -> :sswitch_f
+        0x7f1004f6 -> :sswitch_0
+        0x7f1004f7 -> :sswitch_4
+        0x7f1004f8 -> :sswitch_0
+        0x7f1004f9 -> :sswitch_10
+        0x7f1004fa -> :sswitch_0
+        0x7f1004fb -> :sswitch_11
+        0x7f1004fc -> :sswitch_5
+        0x7f1004fd -> :sswitch_6
+        0x7f1004fe -> :sswitch_7
+        0x7f100515 -> :sswitch_b
+        0x7f100516 -> :sswitch_c
+        0x7f100517 -> :sswitch_d
+        0x7f100518 -> :sswitch_e
+        0x7f100519 -> :sswitch_8
+        0x7f10051b -> :sswitch_9
+        0x7f10051c -> :sswitch_0
+        0x7f10051d -> :sswitch_a
     .end sparse-switch
 .end method
 
@@ -4605,6 +4826,25 @@
 
     iput-boolean p1, p0, Lcom/android/incallui/InCallMenu;->mIsMenuOpen:Z
 
+    return-void
+.end method
+
+.method public speakerClicked()V
+    .locals 1
+
+    invoke-static {}, Lcom/android/incallui/UiAdapter;->getInstance()Lcom/android/incallui/UiAdapter;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lcom/android/incallui/UiAdapter;->getCallButtonPresenter()Lcom/android/incallui/CallButtonPresenter;
+
+    move-result-object v0
+
+    if-eqz v0, :cond_0
+
+    invoke-virtual {v0}, Lcom/android/incallui/CallButtonPresenter;->speakerClicked()V
+
+    :cond_0
     return-void
 .end method
 
@@ -4656,13 +4896,13 @@
 
     move-result-object v3
 
-    if-eqz v0, :cond_2
+    if-eqz v0, :cond_3
 
     invoke-virtual {v0}, Lcom/android/incallui/Call;->getSecCall()Lcom/android/incallui/SecCall;
 
     move-result-object v4
 
-    if-eqz v4, :cond_2
+    if-eqz v4, :cond_3
 
     invoke-virtual {v0}, Lcom/android/incallui/Call;->getSecCall()Lcom/android/incallui/SecCall;
 
@@ -4673,21 +4913,21 @@
     move-result v0
 
     :goto_1
-    if-eqz v3, :cond_0
+    if-eqz v3, :cond_2
 
     invoke-virtual {v3, v0}, Lcom/android/incallui/service/ims/IMSManagerWrapper;->isRttCall(I)Z
 
     move-result v3
 
-    if-eqz v3, :cond_0
+    if-eqz v3, :cond_2
 
-    if-eqz v2, :cond_0
+    if-eqz v2, :cond_2
 
     invoke-virtual {v2}, Lcom/android/incallui/InCallActivity;->isRTTVisible()Z
 
     move-result v2
 
-    if-eqz v2, :cond_0
+    if-eqz v2, :cond_2
 
     invoke-static {}, Lcom/android/incallui/UiAdapter;->getInstance()Lcom/android/incallui/UiAdapter;
 
@@ -4697,13 +4937,40 @@
 
     move-result-object v2
 
-    if-eqz v2, :cond_0
+    if-eqz v2, :cond_2
 
     invoke-virtual {v2, v0, v1}, Lcom/android/incallui/CallButtonPresenter;->sendRequestImsRTTUpgrade(IZ)V
 
+    :cond_2
+    invoke-static {}, Lcom/android/incallui/InCallPresenter;->getInstance()Lcom/android/incallui/InCallPresenter;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lcom/android/incallui/InCallPresenter;->getTempRTT()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    const-string v0, "switchToVoice - rtt db is 0"
+
+    invoke-static {p0, v0}, Lcom/android/incallui/Log;->d(Ljava/lang/Object;Ljava/lang/String;)V
+
+    invoke-static {}, Lcom/android/incallui/InCallPresenter;->getInstance()Lcom/android/incallui/InCallPresenter;
+
+    move-result-object v0
+
+    invoke-virtual {v0, v1}, Lcom/android/incallui/InCallPresenter;->setRttCapability(Z)V
+
+    invoke-static {}, Lcom/android/incallui/InCallPresenter;->getInstance()Lcom/android/incallui/InCallPresenter;
+
+    move-result-object v0
+
+    invoke-virtual {v0, v1}, Lcom/android/incallui/InCallPresenter;->setTempRTT(Z)V
+
     goto :goto_0
 
-    :cond_2
+    :cond_3
     move v0, v1
 
     goto :goto_1

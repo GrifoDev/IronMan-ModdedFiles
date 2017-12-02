@@ -378,11 +378,11 @@
     if-eqz v0, :cond_0
 
     :goto_0
-    const-string v0, "\u7edf\u4e00\u767b\u5f55sdk\u9274\u6743\u8ba4\u8bc1\u65b9\u5f0f"
+    const-string/jumbo v0, "\u7edf\u4e00\u767b\u5f55sdk\u9274\u6743\u8ba4\u8bc1\u65b9\u5f0f"
 
     new-instance v1, Ljava/lang/StringBuilder;
 
-    const-string v2, "\u9274\u6743\u65b9\u5f0f:"
+    const-string/jumbo v2, "\u9274\u6743\u65b9\u5f0f:"
 
     invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
@@ -390,7 +390,7 @@
 
     move-result-object v1
 
-    const-string v2, "\u53f7\u7801\uff1a"
+    const-string/jumbo v2, "\u53f7\u7801\uff1a"
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 

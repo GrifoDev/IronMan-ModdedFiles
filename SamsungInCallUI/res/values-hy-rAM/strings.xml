@@ -120,12 +120,13 @@
     <string name="account_phone">Սարք</string>
     <string name="acs">Ձայնականչ</string>
     <string name="active_calls">Ակտիվ զանգ</string>
-    <string name="add_reminder">Ավլցնել հշցմ</string>
+    <string name="add_reminder">Ավելացնել հիշեցում</string>
     <string name="agif_button_close_description">Փակել</string>
     <string name="agif_decline_message">Կներեք, այս պահին չեմ կարող խոսել:</string>
     <string name="agif_decline_sticker_header">Մերժել կպչուն պիտակով</string>
     <string name="agif_decline_text_header">Մերժել տեքստով</string>
     <string name="agif_decline_toast">Կպչուն պիտակն ուղարկվեց %s-ին:</string>
+    <string name="agif_outgoing_bubble_tip">Ուղարկեք կպչուն պիտակ՝ Ձեր ինքնազգացողությունը ցույց տալու համար:</string>
     <string name="agif_pickers_add_tab_description">Ավլնլ</string>
     <string name="agif_pickers_downloaded">Ներբեռնված</string>
     <string name="agif_pickers_item_usage_hints_description">Կրկնակի թակեք ընտրելու համար</string>
@@ -141,10 +142,12 @@
     <string name="agif_pickers_tab_select_description">Ընտրված</string>
     <string name="agif_pickers_title">Սկսել կպչուն պիտակով</string>
     <string name="agif_pickers_title_top_stickers">Լավագույն կպչուն պիտակներ</string>
+    <string name="agif_random_send_message">Թակեք այստեղ՝ այս կպչուն պիտակն ուղարկելու համար:</string>
     <string name="agif_read_permission_description">Թույլ է տալիս, որ Հեռախոսը կարդա AGIF բովանդակությունը:</string>
     <string name="agif_read_permission_label">Կարդալ AGIF բովանդակություն</string>
     <string name="agif_receive_no_id">Հնարավոր չէ ցույց տալ կպչուն պիտակը: Կանչից հետո թարմացրեք %s-ը:</string>
     <string name="agif_receive_no_id_upsupport_update">Հն. չէ ցույց տալ կպչուն պիտակը: Ավելի շատ պիտակներ մատչելի կլինեն համակարգի հաջորդ թարմացումից հետո:</string>
+    <string name="agif_receive_toast">Կպչուն պիտակ՝ %s-ից:</string>
     <string name="agif_sent_fail_message">Հնարավոր չէ շարժապատկերային GIF ուղարկել: Ավելի ուշ նորից փորձեք:</string>
     <string name="agif_sent_toast">Կպչուն պիտակն ուղարկվեց:</string>
     <string name="agif_write_permission_description">Թույլ է տալիս, որ Հեռախոսը փոփոխի AGIF բովանդակությունը:</string>
@@ -814,6 +817,7 @@ IVR կանչի էկրանի ընտրացանկն օգտագործում է եր�
     <string name="sticker_delete_stickers">Վերացնե՞լ %d կպչուն պիտակներ:</string>
     <string name="sticker_delete_this_sticker">Վերացնե՞լ այս կպչուն պիտակը:</string>
     <string name="sticker_setting_edit_title">Ընտրել կպչուն պիտակներ</string>
+    <string name="sticker_setting_edit_title_preload">Վերադասավորել կպչուն պիտակները</string>
     <string name="sticker_setting_main_title">Իմ կպչուն պիտակները</string>
     <string name="sticker_setting_menu_delete">Ջնջել</string>
     <string name="sticker_setting_menu_edit">Խմբագրել</string>
@@ -826,6 +830,7 @@ IVR կանչի էկրանի ընտրացանկն օգտագործում է եր�
     <string name="swipe_right_to_answer_call_with_video">Մատը սահեցրեք աջ՝ կանչին տեսանյութով պատասխանելու համար:</string>
     <string name="swipe_right_to_answer_call_without_video">Մատը սահեցրեք աջ՝ կանչին առանց տեսանյութի պատասխանելու համար:</string>
     <string name="switch_rejected_by_mt">Տեսականչի փոխելու խնդրանքը մերժվեց:</string>
+    <string name="switch_rejected_by_mt_att">Video unavailable for this call. Call connected as a voice call.</string>
     <string name="switch_to_video_call_failed">Տեսականչի փոխելու խնդրանքը ձախողվեց:</string>
     <string name="switch_to_video_call_failed_tmo">Տեսականչի փոխելու խնդրանքը մերժվեց:</string>
     <string name="switch_to_voice_call_failed">Ձայնականչի փոխելու խնդրանքը ձախողվեց:</string>

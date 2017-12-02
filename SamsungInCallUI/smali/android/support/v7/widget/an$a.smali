@@ -1,5 +1,5 @@
 .class Landroid/support/v7/widget/an$a;
-.super Landroid/widget/BaseAdapter;
+.super Landroid/support/v7/d/a/a;
 
 
 # annotations
@@ -8,116 +8,113 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x2
+    accessFlags = 0xa
     name = "a"
 .end annotation
 
 
 # instance fields
-.field final synthetic a:Landroid/support/v7/widget/an;
+.field private a:Z
 
 
 # direct methods
-.method private constructor <init>(Landroid/support/v7/widget/an;)V
-    .locals 0
+.method public constructor <init>(Landroid/graphics/drawable/Drawable;)V
+    .locals 1
 
-    iput-object p1, p0, Landroid/support/v7/widget/an$a;->a:Landroid/support/v7/widget/an;
+    invoke-direct {p0, p1}, Landroid/support/v7/d/a/a;-><init>(Landroid/graphics/drawable/Drawable;)V
 
-    invoke-direct {p0}, Landroid/widget/BaseAdapter;-><init>()V
+    const/4 v0, 0x1
 
-    return-void
-.end method
-
-.method synthetic constructor <init>(Landroid/support/v7/widget/an;Landroid/support/v7/widget/an$1;)V
-    .locals 0
-
-    invoke-direct {p0, p1}, Landroid/support/v7/widget/an$a;-><init>(Landroid/support/v7/widget/an;)V
+    iput-boolean v0, p0, Landroid/support/v7/widget/an$a;->a:Z
 
     return-void
 .end method
 
 
 # virtual methods
-.method public getCount()I
+.method a(Z)V
+    .locals 0
+
+    iput-boolean p1, p0, Landroid/support/v7/widget/an$a;->a:Z
+
+    return-void
+.end method
+
+.method public draw(Landroid/graphics/Canvas;)V
     .locals 1
 
-    iget-object v0, p0, Landroid/support/v7/widget/an$a;->a:Landroid/support/v7/widget/an;
+    iget-boolean v0, p0, Landroid/support/v7/widget/an$a;->a:Z
 
-    invoke-static {v0}, Landroid/support/v7/widget/an;->a(Landroid/support/v7/widget/an;)Landroid/support/v7/widget/ag;
+    if-eqz v0, :cond_0
 
-    move-result-object v0
+    invoke-super {p0, p1}, Landroid/support/v7/d/a/a;->draw(Landroid/graphics/Canvas;)V
 
-    invoke-virtual {v0}, Landroid/support/v7/widget/ag;->getChildCount()I
+    :cond_0
+    return-void
+.end method
+
+.method public setHotspot(FF)V
+    .locals 1
+
+    iget-boolean v0, p0, Landroid/support/v7/widget/an$a;->a:Z
+
+    if-eqz v0, :cond_0
+
+    invoke-super {p0, p1, p2}, Landroid/support/v7/d/a/a;->setHotspot(FF)V
+
+    :cond_0
+    return-void
+.end method
+
+.method public setHotspotBounds(IIII)V
+    .locals 1
+
+    iget-boolean v0, p0, Landroid/support/v7/widget/an$a;->a:Z
+
+    if-eqz v0, :cond_0
+
+    invoke-super {p0, p1, p2, p3, p4}, Landroid/support/v7/d/a/a;->setHotspotBounds(IIII)V
+
+    :cond_0
+    return-void
+.end method
+
+.method public setState([I)Z
+    .locals 1
+
+    iget-boolean v0, p0, Landroid/support/v7/widget/an$a;->a:Z
+
+    if-eqz v0, :cond_0
+
+    invoke-super {p0, p1}, Landroid/support/v7/d/a/a;->setState([I)Z
 
     move-result v0
 
-    return v0
-.end method
-
-.method public getItem(I)Ljava/lang/Object;
-    .locals 1
-
-    iget-object v0, p0, Landroid/support/v7/widget/an$a;->a:Landroid/support/v7/widget/an;
-
-    invoke-static {v0}, Landroid/support/v7/widget/an;->a(Landroid/support/v7/widget/an;)Landroid/support/v7/widget/ag;
-
-    move-result-object v0
-
-    invoke-virtual {v0, p1}, Landroid/support/v7/widget/ag;->getChildAt(I)Landroid/view/View;
-
-    move-result-object v0
-
-    check-cast v0, Landroid/support/v7/widget/an$c;
-
-    invoke-virtual {v0}, Landroid/support/v7/widget/an$c;->b()Landroid/support/v7/app/a$c;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public getItemId(I)J
-    .locals 2
-
-    int-to-long v0, p1
-
-    return-wide v0
-.end method
-
-.method public getView(ILandroid/view/View;Landroid/view/ViewGroup;)Landroid/view/View;
-    .locals 3
-
-    if-nez p2, :cond_0
-
-    iget-object v1, p0, Landroid/support/v7/widget/an$a;->a:Landroid/support/v7/widget/an;
-
-    invoke-virtual {p0, p1}, Landroid/support/v7/widget/an$a;->getItem(I)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Landroid/support/v7/app/a$c;
-
-    const/4 v2, 0x1
-
-    invoke-static {v1, v0, v2}, Landroid/support/v7/widget/an;->a(Landroid/support/v7/widget/an;Landroid/support/v7/app/a$c;Z)Landroid/support/v7/widget/an$c;
-
-    move-result-object p2
-
     :goto_0
-    return-object p2
+    return v0
 
     :cond_0
-    move-object v0, p2
+    const/4 v0, 0x0
 
-    check-cast v0, Landroid/support/v7/widget/an$c;
+    goto :goto_0
+.end method
 
-    invoke-virtual {p0, p1}, Landroid/support/v7/widget/an$a;->getItem(I)Ljava/lang/Object;
+.method public setVisible(ZZ)Z
+    .locals 1
 
-    move-result-object v1
+    iget-boolean v0, p0, Landroid/support/v7/widget/an$a;->a:Z
 
-    check-cast v1, Landroid/support/v7/app/a$c;
+    if-eqz v0, :cond_0
 
-    invoke-virtual {v0, v1}, Landroid/support/v7/widget/an$c;->a(Landroid/support/v7/app/a$c;)V
+    invoke-super {p0, p1, p2}, Landroid/support/v7/d/a/a;->setVisible(ZZ)Z
+
+    move-result v0
+
+    :goto_0
+    return v0
+
+    :cond_0
+    const/4 v0, 0x0
 
     goto :goto_0
 .end method

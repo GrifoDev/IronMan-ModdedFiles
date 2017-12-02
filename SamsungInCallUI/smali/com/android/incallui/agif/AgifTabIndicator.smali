@@ -362,7 +362,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f0a02df
+    const v2, 0x7f0a02cb
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getDimension(I)F
 
@@ -376,7 +376,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f0a02d9
+    const v2, 0x7f0a02c5
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getDimension(I)F
 
@@ -390,7 +390,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f0a02dc
+    const v2, 0x7f0a02c8
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getDimension(I)F
 
@@ -404,7 +404,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f0a02dd
+    const v2, 0x7f0a02c9
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getDimension(I)F
 
@@ -418,7 +418,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f0a02db
+    const v2, 0x7f0a02c7
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getDimension(I)F
 
@@ -490,7 +490,7 @@
 
     move-result-object v10
 
-    const v11, 0x7f020058
+    const v11, 0x7f02005a
 
     invoke-virtual {v10, v11}, Landroid/content/res/Resources;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 
@@ -506,7 +506,7 @@
 
     aget-object v1, v1, v2
 
-    const v8, 0x7f020056
+    const v8, 0x7f020058
 
     invoke-virtual {v1, v8}, Lcom/android/incallui/agif/AgifTabImageView;->setImageResource(I)V
 
@@ -518,7 +518,7 @@
 
     move-result-object v8
 
-    const v9, 0x7f0900ba
+    const v9, 0x7f0900bb
 
     invoke-virtual {v8, v9}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -578,7 +578,7 @@
 
     aget-object v1, v1, v2
 
-    const v8, 0x7f02005a
+    const v8, 0x7f02005c
 
     invoke-virtual {v1, v8}, Lcom/android/incallui/agif/AgifTabImageView;->setImageResource(I)V
 
@@ -590,7 +590,7 @@
 
     move-result-object v8
 
-    const v9, 0x7f0900bc
+    const v9, 0x7f0900bd
 
     invoke-virtual {v8, v9}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -771,7 +771,7 @@
 
     check-cast v0, Lcom/android/incallui/agif/AgifLoader$AgifPackageInfo;
 
-    iget-object v0, v0, Lcom/android/incallui/agif/AgifLoader$AgifPackageInfo;->packageName:Ljava/lang/String;
+    iget-object v0, v0, Lcom/android/incallui/agif/AgifLoader$AgifPackageInfo;->contentName:Ljava/lang/String;
 
     invoke-static {v0}, Lcom/android/incallui/util/VoiceCallAppLogging;->agifScreen_selectAgifSet(Ljava/lang/String;)V
 

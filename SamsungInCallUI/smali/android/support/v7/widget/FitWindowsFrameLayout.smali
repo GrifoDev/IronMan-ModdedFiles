@@ -2,11 +2,11 @@
 .super Landroid/widget/FrameLayout;
 
 # interfaces
-.implements Landroid/support/v7/widget/ae;
+.implements Landroid/support/v7/widget/aj;
 
 
 # instance fields
-.field private a:Landroid/support/v7/widget/ae$a;
+.field private a:Landroid/support/v7/widget/aj$a;
 
 
 # direct methods
@@ -31,13 +31,13 @@
 .method protected fitSystemWindows(Landroid/graphics/Rect;)Z
     .locals 1
 
-    iget-object v0, p0, Landroid/support/v7/widget/FitWindowsFrameLayout;->a:Landroid/support/v7/widget/ae$a;
+    iget-object v0, p0, Landroid/support/v7/widget/FitWindowsFrameLayout;->a:Landroid/support/v7/widget/aj$a;
 
     if-eqz v0, :cond_0
 
-    iget-object v0, p0, Landroid/support/v7/widget/FitWindowsFrameLayout;->a:Landroid/support/v7/widget/ae$a;
+    iget-object v0, p0, Landroid/support/v7/widget/FitWindowsFrameLayout;->a:Landroid/support/v7/widget/aj$a;
 
-    invoke-interface {v0, p1}, Landroid/support/v7/widget/ae$a;->a(Landroid/graphics/Rect;)V
+    invoke-interface {v0, p1}, Landroid/support/v7/widget/aj$a;->a(Landroid/graphics/Rect;)V
 
     :cond_0
     invoke-super {p0, p1}, Landroid/widget/FrameLayout;->fitSystemWindows(Landroid/graphics/Rect;)Z
@@ -47,10 +47,10 @@
     return v0
 .end method
 
-.method public setOnFitSystemWindowsListener(Landroid/support/v7/widget/ae$a;)V
+.method public setOnFitSystemWindowsListener(Landroid/support/v7/widget/aj$a;)V
     .locals 0
 
-    iput-object p1, p0, Landroid/support/v7/widget/FitWindowsFrameLayout;->a:Landroid/support/v7/widget/ae$a;
+    iput-object p1, p0, Landroid/support/v7/widget/FitWindowsFrameLayout;->a:Landroid/support/v7/widget/aj$a;
 
     return-void
 .end method

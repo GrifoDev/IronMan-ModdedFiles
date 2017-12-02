@@ -158,7 +158,15 @@
     return p1
 .end method
 
-.method static synthetic access$1100(Lcom/android/incallui/accessory/AccessoryEventHandler;Z)V
+.method static synthetic access$1100(Lcom/android/incallui/accessory/AccessoryEventHandler;)Lcom/android/incallui/InCallActivity;
+    .locals 1
+
+    iget-object v0, p0, Lcom/android/incallui/accessory/AccessoryEventHandler;->mActivity:Lcom/android/incallui/InCallActivity;
+
+    return-object v0
+.end method
+
+.method static synthetic access$1200(Lcom/android/incallui/accessory/AccessoryEventHandler;Z)V
     .locals 0
 
     invoke-direct {p0, p1}, Lcom/android/incallui/accessory/AccessoryEventHandler;->notifyListenersOfCoverStateChanged(Z)V
@@ -982,7 +990,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f0f014d
+    const v2, 0x7f0e015a
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getColor(I)I
 

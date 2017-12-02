@@ -178,12 +178,13 @@
     <string name="account_phone">Apparaat</string>
     <string name="acs">Spraakoproep</string>
     <string name="active_calls">Actieve oproep</string>
-    <string name="add_reminder">Herinn. toev.</string>
+    <string name="add_reminder">Herinnering toevoegen</string>
     <string name="agif_button_close_description">Sluiten</string>
     <string name="agif_decline_message">Sorry, ik kan nu niet praten.</string>
     <string name="agif_decline_sticker_header">Weigeren met een sticker</string>
     <string name="agif_decline_text_header">Weigeren met een sms</string>
     <string name="agif_decline_toast">Sticker verzonden naar %s.</string>
+    <string name="agif_outgoing_bubble_tip">Verzend een sticker om te laten zien hoe u zich voelt.</string>
     <string name="agif_pickers_add_tab_description">Voeg toe</string>
     <string name="agif_pickers_downloaded">Gedownload</string>
     <string name="agif_pickers_item_usage_hints_description">Tik twee keer om te selecteren</string>
@@ -199,10 +200,12 @@
     <string name="agif_pickers_tab_select_description">Geselecteerd</string>
     <string name="agif_pickers_title">Starten met een sticker</string>
     <string name="agif_pickers_title_top_stickers">Topstickers</string>
+    <string name="agif_random_send_message">Tik hier om deze sticker te verzenden.</string>
     <string name="agif_read_permission_description">Telefoon mag AGIF-inhoud lezen.</string>
     <string name="agif_read_permission_label">AGIF-inhoud lezen</string>
     <string name="agif_receive_no_id">Sticker kan niet worden weergeven. Werk %s bij na de oproep.</string>
     <string name="agif_receive_no_id_upsupport_update">Sticker kan niet worden weergegeven. Er zijn meer stickers beschikbaar na de volgende systeemupdate.</string>
+    <string name="agif_receive_toast">Sticker van %s.</string>
     <string name="agif_sent_fail_message">Kan GIF-animatie niet verzenden. Probeer het later opnieuw.</string>
     <string name="agif_sent_toast">Sticker verzonden.</string>
     <string name="agif_write_permission_description">Telefoon mag AGIF-inhoud wijzigen.</string>
@@ -871,6 +874,7 @@ Schermmenu IVR-oproep gebruikt inhoud van een externe serviceleverancier, Dianhu
     <string name="sticker_delete_stickers">%d stickers verwijderen?</string>
     <string name="sticker_delete_this_sticker">Deze sticker verwijderen?</string>
     <string name="sticker_setting_edit_title">Stickers selecteren</string>
+    <string name="sticker_setting_edit_title_preload">Indeling van stickers wijzigen</string>
     <string name="sticker_setting_main_title">Mijn stickers</string>
     <string name="sticker_setting_menu_delete">Verwijderen</string>
     <string name="sticker_setting_menu_edit">Bewerken</string>
@@ -883,6 +887,7 @@ Schermmenu IVR-oproep gebruikt inhoud van een externe serviceleverancier, Dianhu
     <string name="swipe_right_to_answer_call_with_video">Veeg naar rechts om oproep met video te beantwoorden.</string>
     <string name="swipe_right_to_answer_call_without_video">Veeg naar rechts om oproep zonder video te beantwoorden.</string>
     <string name="switch_rejected_by_mt">Verzoek voor overschakelen naar video-oproep geweigerd.</string>
+    <string name="switch_rejected_by_mt_att">Video unavailable for this call. Call connected as a voice call.</string>
     <string name="switch_to_video_call_failed">Verzoek voor overschakelen naar video-oproep is mislukt.</string>
     <string name="switch_to_video_call_failed_tmo">Verzoek voor overschakelen naar video-oproep is geweigerd.</string>
     <string name="switch_to_voice_call_failed">Verzoek voor overschakelen naar spraakoproep mislukt.</string>

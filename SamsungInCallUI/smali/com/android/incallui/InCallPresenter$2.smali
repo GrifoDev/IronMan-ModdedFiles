@@ -33,62 +33,82 @@
 .method public onChange(Z)V
     .locals 4
 
-    const/16 v1, 0x3ee
+    const/4 v3, 0x0
 
-    const-string v0, "mContactUpdateObserver : onChange "
+    invoke-super {p0, p1}, Landroid/database/ContentObserver;->onChange(Z)V
+
+    const-string v0, "NTT DOCOMO : onChange "
 
     invoke-static {p0, v0}, Lcom/android/incallui/Log;->i(Ljava/lang/Object;Ljava/lang/String;)V
 
-    iget-object v0, p0, Lcom/android/incallui/InCallPresenter$2;->this$0:Lcom/android/incallui/InCallPresenter;
-
-    invoke-static {v0}, Lcom/android/incallui/InCallPresenter;->access$200(Lcom/android/incallui/InCallPresenter;)Landroid/os/Handler;
-
-    move-result-object v0
-
-    if-eqz v0, :cond_0
-
-    iget-object v0, p0, Lcom/android/incallui/InCallPresenter$2;->this$0:Lcom/android/incallui/InCallPresenter;
-
-    invoke-static {v0}, Lcom/android/incallui/InCallPresenter;->access$200(Lcom/android/incallui/InCallPresenter;)Landroid/os/Handler;
-
-    move-result-object v0
-
-    invoke-virtual {v0, v1}, Landroid/os/Handler;->hasMessages(I)Z
-
-    move-result v0
-
-    if-nez v0, :cond_0
-
     invoke-static {}, Lcom/android/incallui/CallList;->getInstance()Lcom/android/incallui/CallList;
 
     move-result-object v0
 
-    invoke-virtual {v0}, Lcom/android/incallui/CallList;->getDisconnectingCall()Lcom/android/incallui/Call;
+    const/4 v1, 0x0
+
+    invoke-static {v0, v1, v3}, Lcom/android/incallui/util/InCallUtils;->getCallToDisplay(Lcom/android/incallui/CallList;Lcom/android/incallui/Call;Z)Lcom/android/incallui/Call;
 
     move-result-object v0
 
-    if-nez v0, :cond_0
+    if-eqz v0, :cond_2
 
-    invoke-static {}, Lcom/android/incallui/CallList;->getInstance()Lcom/android/incallui/CallList;
+    iget-object v1, p0, Lcom/android/incallui/InCallPresenter$2;->this$0:Lcom/android/incallui/InCallPresenter;
 
-    move-result-object v0
+    invoke-static {v1}, Lcom/android/incallui/InCallPresenter;->access$100(Lcom/android/incallui/InCallPresenter;)Landroid/content/Context;
 
-    invoke-virtual {v0}, Lcom/android/incallui/CallList;->getDisconnectedCall()Lcom/android/incallui/Call;
+    move-result-object v1
 
-    move-result-object v0
+    invoke-static {v1}, Lcom/android/incallui/ContactInfoCache;->getInstance(Landroid/content/Context;)Lcom/android/incallui/ContactInfoCache;
 
-    if-nez v0, :cond_0
+    move-result-object v1
 
-    iget-object v0, p0, Lcom/android/incallui/InCallPresenter$2;->this$0:Lcom/android/incallui/InCallPresenter;
+    invoke-virtual {v0}, Lcom/android/incallui/Call;->getId()Ljava/lang/String;
 
-    invoke-static {v0}, Lcom/android/incallui/InCallPresenter;->access$200(Lcom/android/incallui/InCallPresenter;)Landroid/os/Handler;
+    move-result-object v2
 
-    move-result-object v0
+    invoke-virtual {v1, v2}, Lcom/android/incallui/ContactInfoCache;->getInfo(Ljava/lang/String;)Lcom/android/incallui/ContactInfoCache$ContactCacheEntry;
 
-    const-wide/16 v2, 0x7d0
+    move-result-object v1
 
-    invoke-virtual {v0, v1, v2, v3}, Landroid/os/Handler;->sendEmptyMessageDelayed(IJ)Z
+    if-eqz v1, :cond_0
+
+    iput-boolean v3, v1, Lcom/android/incallui/ContactInfoCache$ContactCacheEntry;->hide_status:Z
+
+    const/4 v2, 0x1
+
+    iput-boolean v2, v1, Lcom/android/incallui/ContactInfoCache$ContactCacheEntry;->isChangedHideStatus:Z
 
     :cond_0
+    invoke-static {}, Lcom/android/incallui/UiAdapter;->getInstance()Lcom/android/incallui/UiAdapter;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Lcom/android/incallui/UiAdapter;->getCallCardPresenter()Lcom/android/incallui/CallCardPresenter;
+
+    move-result-object v2
+
+    if-eqz v2, :cond_1
+
+    invoke-virtual {v2}, Lcom/android/incallui/CallCardPresenter;->updatePrimaryDisplayInfo()V
+
+    :cond_1
+    iget-object v2, p0, Lcom/android/incallui/InCallPresenter$2;->this$0:Lcom/android/incallui/InCallPresenter;
+
+    invoke-static {v2}, Lcom/android/incallui/InCallPresenter;->access$200(Lcom/android/incallui/InCallPresenter;)Lcom/android/incallui/StatusBarNotifier;
+
+    move-result-object v2
+
+    if-eqz v2, :cond_2
+
+    iget-object v2, p0, Lcom/android/incallui/InCallPresenter$2;->this$0:Lcom/android/incallui/InCallPresenter;
+
+    invoke-static {v2}, Lcom/android/incallui/InCallPresenter;->access$200(Lcom/android/incallui/InCallPresenter;)Lcom/android/incallui/StatusBarNotifier;
+
+    move-result-object v2
+
+    invoke-virtual {v2, v0, v1, v3}, Lcom/android/incallui/StatusBarNotifier;->makeNotification(Lcom/android/incallui/Call;Lcom/android/incallui/ContactInfoCache$ContactCacheEntry;Z)V
+
+    :cond_2
     return-void
 .end method

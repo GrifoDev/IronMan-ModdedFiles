@@ -133,7 +133,7 @@
 
     move-result-object v5
 
-    const v6, 0x7f0f008b
+    const v6, 0x7f0e008e
 
     invoke-virtual {v5, v6}, Landroid/content/res/Resources;->getColor(I)I
 
@@ -219,7 +219,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f0f008b
+    const v2, 0x7f0e008e
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getColor(I)I
 
@@ -291,7 +291,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f0f008b
+    const v2, 0x7f0e008e
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getColor(I)I
 
@@ -367,7 +367,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f0f008b
+    const v2, 0x7f0e008e
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getColor(I)I
 
@@ -383,7 +383,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f0906bd
+    const v1, 0x7f0906e1
 
     invoke-virtual {p0, v1}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -435,7 +435,7 @@
 
     iget-object v0, p0, Lcom/android/contacts/common/vcard/NotificationImportExportListener;->b:Landroid/app/Activity;
 
-    const v1, 0x7f0905bb
+    const v1, 0x7f0905c0
 
     new-array v2, v2, [Ljava/lang/Object;
 
@@ -467,7 +467,7 @@
     :cond_0
     iget-object v0, p0, Lcom/android/contacts/common/vcard/NotificationImportExportListener;->b:Landroid/app/Activity;
 
-    const v1, 0x7f09059d
+    const v1, 0x7f0905a2
 
     new-array v2, v2, [Ljava/lang/Object;
 
@@ -491,7 +491,7 @@
 
     iget-object v2, p0, Lcom/android/contacts/common/vcard/NotificationImportExportListener;->b:Landroid/app/Activity;
 
-    const v3, 0x7f0906ba
+    const v3, 0x7f0906de
 
     invoke-virtual {v2, v3}, Landroid/app/Activity;->getString(I)Ljava/lang/String;
 
@@ -521,7 +521,7 @@
 
     iget-object v0, p0, Lcom/android/contacts/common/vcard/NotificationImportExportListener;->b:Landroid/app/Activity;
 
-    const v1, 0x7f090548
+    const v1, 0x7f09054d
 
     invoke-virtual {v0, v1}, Landroid/app/Activity;->getString(I)Ljava/lang/String;
 
@@ -567,7 +567,7 @@
 
     iget-object v2, p0, Lcom/android/contacts/common/vcard/NotificationImportExportListener;->b:Landroid/app/Activity;
 
-    const v3, 0x7f0906be
+    const v3, 0x7f0906e2
 
     invoke-virtual {v2, v3}, Landroid/app/Activity;->getString(I)Ljava/lang/String;
 
@@ -587,7 +587,7 @@
 
     iget-object v0, p0, Lcom/android/contacts/common/vcard/NotificationImportExportListener;->b:Landroid/app/Activity;
 
-    const v1, 0x7f0905bb
+    const v1, 0x7f0905c0
 
     const/4 v2, 0x1
 
@@ -633,7 +633,7 @@
 
     iget-object v0, p0, Lcom/android/contacts/common/vcard/NotificationImportExportListener;->b:Landroid/app/Activity;
 
-    const v2, 0x7f0906bf
+    const v2, 0x7f0906e3
 
     new-array v3, v1, [Ljava/lang/Object;
 
@@ -678,7 +678,7 @@
     :cond_1
     iget-object v0, p0, Lcom/android/contacts/common/vcard/NotificationImportExportListener;->b:Landroid/app/Activity;
 
-    const v2, 0x7f0906c1
+    const v2, 0x7f0906e5
 
     invoke-virtual {v0, v2}, Landroid/app/Activity;->getString(I)Ljava/lang/String;
 
@@ -686,7 +686,7 @@
 
     iget-object v0, p0, Lcom/android/contacts/common/vcard/NotificationImportExportListener;->b:Landroid/app/Activity;
 
-    const v2, 0x7f0906c0
+    const v2, 0x7f0906e4
 
     invoke-virtual {v0, v2}, Landroid/app/Activity;->getString(I)Ljava/lang/String;
 
@@ -700,7 +700,7 @@
 
     iget-object v0, p0, Lcom/android/contacts/common/vcard/NotificationImportExportListener;->b:Landroid/app/Activity;
 
-    const v1, 0x7f0905bd
+    const v1, 0x7f0905c2
 
     const/4 v2, 0x1
 
@@ -806,7 +806,7 @@
 
     iget-object v2, p0, Lcom/android/contacts/common/vcard/NotificationImportExportListener;->b:Landroid/app/Activity;
 
-    const v3, 0x7f090636
+    const v3, 0x7f09063b
 
     const/4 v4, 0x3
 
@@ -834,7 +834,7 @@
 
     iget-object v0, p0, Lcom/android/contacts/common/vcard/NotificationImportExportListener;->b:Landroid/app/Activity;
 
-    const v2, 0x7f0905bc
+    const v2, 0x7f0905c1
 
     new-array v4, v1, [Ljava/lang/Object;
 

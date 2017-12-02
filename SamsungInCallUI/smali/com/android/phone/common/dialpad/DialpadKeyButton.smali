@@ -187,7 +187,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f0a056a
+    const v1, 0x7f0a0584
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -213,7 +213,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f0a0270
+    const v1, 0x7f0a0254
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -225,7 +225,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f0a026f
+    const v1, 0x7f0a0253
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -237,7 +237,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f0f0165
+    const v1, 0x7f0e0172
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getColor(I)I
 
@@ -249,7 +249,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f0f0166
+    const v1, 0x7f0e0173
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getColor(I)I
 
@@ -261,7 +261,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f0f0081
+    const v1, 0x7f0e0084
 
     const/4 v2, 0x0
 
@@ -772,7 +772,7 @@
     return-void
 
     :cond_0
-    const v0, 0x7f10014e
+    const v0, 0x7f100155
 
     invoke-virtual {p0, v0}, Lcom/android/phone/common/dialpad/DialpadKeyButton;->findViewById(I)Landroid/view/View;
 
@@ -782,7 +782,7 @@
 
     iput-object v0, p0, Lcom/android/phone/common/dialpad/DialpadKeyButton;->mNumberTextView:Landroid/widget/TextView;
 
-    const v0, 0x7f10014f
+    const v0, 0x7f100156
 
     invoke-virtual {p0, v0}, Lcom/android/phone/common/dialpad/DialpadKeyButton;->findViewById(I)Landroid/view/View;
 

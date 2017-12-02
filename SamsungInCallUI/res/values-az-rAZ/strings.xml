@@ -119,12 +119,13 @@
     <string name="account_phone">Cihaz</string>
     <string name="acs">Səsli zəng</string>
     <string name="active_calls">Aktiv zəng</string>
-    <string name="add_reminder">Xatır əlv et</string>
+    <string name="add_reminder">Xatırladıcı əlavə et</string>
     <string name="agif_button_close_description">Bağla</string>
     <string name="agif_decline_message">Üzr istəyirəm, indi danışa bilmirəm.</string>
     <string name="agif_decline_sticker_header">Yapışqanla rədd et</string>
     <string name="agif_decline_text_header">Mətnlə rədd et</string>
     <string name="agif_decline_toast">Yapışqan %s göndərildi.</string>
+    <string name="agif_outgoing_bubble_tip">Necə hiss etdiyinizi göstərmək üçün yapışqan göndərin.</string>
     <string name="agif_pickers_add_tab_description">Əlv et</string>
     <string name="agif_pickers_downloaded">Yükləndi</string>
     <string name="agif_pickers_item_usage_hints_description">Seçmək üçün iki dəfə vur</string>
@@ -140,10 +141,12 @@
     <string name="agif_pickers_tab_select_description">Seçildi</string>
     <string name="agif_pickers_title">Yapışqanla başla</string>
     <string name="agif_pickers_title_top_stickers">Populyar yapışqanlar</string>
+    <string name="agif_random_send_message">Bu yapışqanı göndərmək üçün bura vurun.</string>
     <string name="agif_read_permission_description">Telefona AGIF məzmununu oxumaq imkanı verir.</string>
     <string name="agif_read_permission_label">AGIF məzmununu oxuyun</string>
     <string name="agif_receive_no_id">Yapışqan göstərilə bilməz. Zəngdən sonra %s yenilə.</string>
     <string name="agif_receive_no_id_upsupport_update">Yapışqan göstərilə bilməz. Növbəti dəfə sistem yeniləndikdən sonra daha çox yapışqan olacaq.</string>
+    <string name="agif_receive_toast">%s-dan yapışqan.</string>
     <string name="agif_sent_fail_message">Animasiyalı GIF göndərmək olmur. Daha sonra yenidən cəhd et.</string>
     <string name="agif_sent_toast">Yapışqan göndərildi.</string>
     <string name="agif_write_permission_description">Telefona AGIF məzmununu dəyişmək imkanı verir.</string>
@@ -813,6 +816,7 @@ Kamera"</string>
     <string name="sticker_delete_stickers">%d yapışqan silinsin?</string>
     <string name="sticker_delete_this_sticker">Bu yapışqan silinsin?</string>
     <string name="sticker_setting_edit_title">Yapışqan seç</string>
+    <string name="sticker_setting_edit_title_preload">Yapışqanların sırasını dəyişin</string>
     <string name="sticker_setting_main_title">Mənim stikerlərim</string>
     <string name="sticker_setting_menu_delete">Sil</string>
     <string name="sticker_setting_menu_edit">Redaktə et</string>
@@ -825,6 +829,7 @@ Kamera"</string>
     <string name="swipe_right_to_answer_call_with_video">Zəngə video ilə cavab vermək üçün sağa sürüşdür.</string>
     <string name="swipe_right_to_answer_call_without_video">Zəngə videosuz cavab vermək üçün sağa sürüşdür.</string>
     <string name="switch_rejected_by_mt">Video zəngə keçid sorğusu rədd edildi.</string>
+    <string name="switch_rejected_by_mt_att">Video unavailable for this call. Call connected as a voice call.</string>
     <string name="switch_to_video_call_failed">Video zəngə keçid sorğusu baş tutmadı.</string>
     <string name="switch_to_video_call_failed_tmo">Video zəngə keçirmə sorğusundan imtina edildi.</string>
     <string name="switch_to_voice_call_failed">Səsli zəngə keçid sorğusu verildi.</string>

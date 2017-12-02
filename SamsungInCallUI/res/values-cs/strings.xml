@@ -178,12 +178,13 @@
     <string name="account_phone">Zařízení</string>
     <string name="acs">Hlasový hovor</string>
     <string name="active_calls">Aktivní hovor</string>
-    <string name="add_reminder">Přidat přip.</string>
+    <string name="add_reminder">Přidat připomenutí</string>
     <string name="agif_button_close_description">Zavřít</string>
     <string name="agif_decline_message">Omlouvám se, teď nemohu mluvit.</string>
     <string name="agif_decline_sticker_header">Odmítnout s nálepkou</string>
     <string name="agif_decline_text_header">Odmítnout s textem</string>
     <string name="agif_decline_toast">Nálepka byla odeslána uživateli %s.</string>
+    <string name="agif_outgoing_bubble_tip">Pošlete nálepku ukazující, jak se cítíte.</string>
     <string name="agif_pickers_add_tab_description">Přid.</string>
     <string name="agif_pickers_downloaded">Stažené</string>
     <string name="agif_pickers_item_usage_hints_description">Poklepejte a vyberte</string>
@@ -199,10 +200,12 @@
     <string name="agif_pickers_tab_select_description">Vybráno</string>
     <string name="agif_pickers_title">Zahájit s nálepkou</string>
     <string name="agif_pickers_title_top_stickers">Nejlepší nálepky</string>
+    <string name="agif_random_send_message">Klepnutím sem pošlete tuto nálepku.</string>
     <string name="agif_read_permission_description">Povolí aplikaci Telefon číst obsah AGIF.</string>
     <string name="agif_read_permission_label">Číst obsah AGIF</string>
     <string name="agif_receive_no_id">Nálepku nelze zobrazit. Aktualizujte %s po dokončení hovoru.</string>
     <string name="agif_receive_no_id_upsupport_update">Nálepku nelze zobrazit. Další nálepky budou dostupné po příští aktualizaci systému.</string>
+    <string name="agif_receive_toast">Nálepka od volajícího %s.</string>
     <string name="agif_sent_fail_message">Animovaný GIF nelze odeslat. Opakujte akci později.</string>
     <string name="agif_sent_toast">Nálepka byla odeslána.</string>
     <string name="agif_write_permission_description">Povolí aplikaci Telefon upravit obsah AGIF.</string>
@@ -871,6 +874,7 @@ fotoaparát"</string>
     <string name="sticker_delete_stickers">Odstranit %d nálepek?</string>
     <string name="sticker_delete_this_sticker">Odstranit tuto nálepku?</string>
     <string name="sticker_setting_edit_title">Vyberte nálepky</string>
+    <string name="sticker_setting_edit_title_preload">Změnit pořadí nálepek</string>
     <string name="sticker_setting_main_title">Moje nálepky</string>
     <string name="sticker_setting_menu_delete">Odstranit</string>
     <string name="sticker_setting_menu_edit">Upravit</string>
@@ -883,6 +887,7 @@ fotoaparát"</string>
     <string name="swipe_right_to_answer_call_with_video">Přejetím doprava přijmete hovor s videem.</string>
     <string name="swipe_right_to_answer_call_without_video">Přejetím doprava přijmete hovor bez videa.</string>
     <string name="switch_rejected_by_mt">Požadavek na přepnutí na videohovor byl odmítnut.</string>
+    <string name="switch_rejected_by_mt_att">Video unavailable for this call. Call connected as a voice call.</string>
     <string name="switch_to_video_call_failed">Požadavek na přepnutí na videohovor se nezdařil.</string>
     <string name="switch_to_video_call_failed_tmo">Požadavek na přepnutí na videohovor byl odmítnut.</string>
     <string name="switch_to_voice_call_failed">Požadavek na přepnutí na hlasový hovor se nezdařil.</string>

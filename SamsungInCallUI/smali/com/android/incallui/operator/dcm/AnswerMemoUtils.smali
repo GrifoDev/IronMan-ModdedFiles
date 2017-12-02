@@ -853,10 +853,6 @@
 
     invoke-static {v2}, Lcom/android/incallui/operator/dcm/AnswerMemoUtils;->log(Ljava/lang/String;)V
 
-    const/4 v2, 0x1
-
-    sput-boolean v2, Lcom/android/incallui/operator/dcm/AnswerMemoUtils;->mIsGuidancePlaying:Z
-
     invoke-static {v0}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
     move-result v2
@@ -872,12 +868,6 @@
 
     sget-object v2, Lcom/android/incallui/operator/dcm/AnswerMemoUtils;->mediaPlayer:Landroid/media/MediaPlayer;
 
-    const/4 v3, 0x0
-
-    invoke-virtual {v2, v3}, Landroid/media/MediaPlayer;->setAudioStreamType(I)V
-
-    sget-object v2, Lcom/android/incallui/operator/dcm/AnswerMemoUtils;->mediaPlayer:Landroid/media/MediaPlayer;
-
     invoke-static {v0}, Landroid/net/Uri;->parse(Ljava/lang/String;)Landroid/net/Uri;
 
     move-result-object v0
@@ -886,11 +876,25 @@
 
     sget-object v0, Lcom/android/incallui/operator/dcm/AnswerMemoUtils;->mediaPlayer:Landroid/media/MediaPlayer;
 
+    const/4 v1, 0x0
+
+    invoke-virtual {v0, v1}, Landroid/media/MediaPlayer;->setAudioStreamType(I)V
+
+    sget-object v0, Lcom/android/incallui/operator/dcm/AnswerMemoUtils;->mediaPlayer:Landroid/media/MediaPlayer;
+
     invoke-virtual {v0}, Landroid/media/MediaPlayer;->prepare()V
 
     sget-object v0, Lcom/android/incallui/operator/dcm/AnswerMemoUtils;->mediaPlayer:Landroid/media/MediaPlayer;
 
     invoke-virtual {v0}, Landroid/media/MediaPlayer;->start()V
+
+    const-string v0, "Guidance playing started"
+
+    invoke-static {v0}, Lcom/android/incallui/operator/dcm/AnswerMemoUtils;->log(Ljava/lang/String;)V
+
+    const/4 v0, 0x1
+
+    sput-boolean v0, Lcom/android/incallui/operator/dcm/AnswerMemoUtils;->mIsGuidancePlaying:Z
 
     sget-object v0, Lcom/android/incallui/operator/dcm/AnswerMemoUtils;->mediaPlayer:Landroid/media/MediaPlayer;
 
@@ -937,8 +941,6 @@
     invoke-static {v0}, Lcom/android/incallui/operator/dcm/AnswerMemoUtils;->log(Ljava/lang/String;)V
 
     goto :goto_1
-
-    nop
 
     :pswitch_data_0
     .packed-switch 0x0

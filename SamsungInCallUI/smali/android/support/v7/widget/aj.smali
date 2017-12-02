@@ -2,9 +2,14 @@
 .super Ljava/lang/Object;
 
 
-# virtual methods
-.method public abstract a(Landroid/support/v7/view/menu/h;Landroid/view/MenuItem;)V
-.end method
+# annotations
+.annotation system Ldalvik/annotation/MemberClasses;
+    value = {
+        Landroid/support/v7/widget/aj$a;
+    }
+.end annotation
 
-.method public abstract b(Landroid/support/v7/view/menu/h;Landroid/view/MenuItem;)V
+
+# virtual methods
+.method public abstract setOnFitSystemWindowsListener(Landroid/support/v7/widget/aj$a;)V
 .end method

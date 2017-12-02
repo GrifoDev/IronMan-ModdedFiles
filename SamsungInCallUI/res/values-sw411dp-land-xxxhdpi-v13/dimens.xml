@@ -19,8 +19,4 @@
     <dimen name="sec_video_incoming_hideme_height">338.0dip</dimen>
     <dimen name="sec_video_incoming_hideme_width">411.0dip</dimen>
     <dimen name="sec_dialpad_key_number_height">55.0dip</dimen>
-    <dimen name="sec_primary_incoming_call_photo_size">411.0dip</dimen>
-    <dimen name="sec_call_buttons_horizontal_out_line_onehand">130.15dip</dimen>
-    <dimen name="sec_call_buttons_padding_side_right_onehand">353.90625dip</dimen>
-    <item type="dimen" name="sec_incall_layout_height_onehand">@dimen/sec_call_buttons_horizontal_out_line_onehand</item>
 </resources>

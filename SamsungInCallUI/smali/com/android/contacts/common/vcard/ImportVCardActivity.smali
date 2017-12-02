@@ -492,7 +492,7 @@
 
     const/4 v1, 0x0
 
-    const v4, 0x7f0905a7
+    const v4, 0x7f0905ac
 
     const/4 v0, 0x0
 
@@ -1247,7 +1247,7 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    const v0, 0x7f0905a7
+    const v0, 0x7f0905ac
 
     invoke-virtual {p0, v0}, Lcom/android/contacts/common/vcard/ImportVCardActivity;->a(I)V
 
@@ -1423,13 +1423,13 @@
 
     if-nez v0, :cond_0
 
-    const v0, 0x7f090508
+    const v0, 0x7f09050d
 
     invoke-virtual {p0, v0}, Lcom/android/contacts/common/vcard/ImportVCardActivity;->getString(I)Ljava/lang/String;
 
     move-result-object v0
 
-    const v1, 0x7f090507
+    const v1, 0x7f09050c
 
     invoke-virtual {p0, v1}, Lcom/android/contacts/common/vcard/ImportVCardActivity;->getString(I)Ljava/lang/String;
 
@@ -1488,7 +1488,7 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    const v0, 0x7f0905ac
+    const v0, 0x7f0905b1
 
     invoke-virtual {p0, v0}, Lcom/android/contacts/common/vcard/ImportVCardActivity;->getString(I)Ljava/lang/String;
 
@@ -1499,7 +1499,7 @@
 
     invoke-direct {v1, p0}, Landroid/app/AlertDialog$Builder;-><init>(Landroid/content/Context;)V
 
-    const v2, 0x7f090640
+    const v2, 0x7f090645
 
     invoke-virtual {p0, v2}, Lcom/android/contacts/common/vcard/ImportVCardActivity;->getString(I)Ljava/lang/String;
 

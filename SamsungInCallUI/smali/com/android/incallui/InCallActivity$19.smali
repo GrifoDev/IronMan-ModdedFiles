@@ -1,10 +1,13 @@
 .class Lcom/android/incallui/InCallActivity$19;
-.super Landroid/database/ContentObserver;
+.super Ljava/lang/Object;
+
+# interfaces
+.implements Landroid/content/DialogInterface$OnClickListener;
 
 
 # annotations
-.annotation system Ldalvik/annotation/EnclosingClass;
-    value = Lcom/android/incallui/InCallActivity;
+.annotation system Ldalvik/annotation/EnclosingMethod;
+    value = Lcom/android/incallui/InCallActivity;->onTtyNotification(Z)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -18,28 +21,28 @@
 
 
 # direct methods
-.method constructor <init>(Lcom/android/incallui/InCallActivity;Landroid/os/Handler;)V
+.method constructor <init>(Lcom/android/incallui/InCallActivity;)V
     .locals 0
 
     iput-object p1, p0, Lcom/android/incallui/InCallActivity$19;->this$0:Lcom/android/incallui/InCallActivity;
 
-    invoke-direct {p0, p2}, Landroid/database/ContentObserver;-><init>(Landroid/os/Handler;)V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public onChange(Z)V
+.method public onClick(Landroid/content/DialogInterface;I)V
     .locals 1
 
-    invoke-super {p0, p1}, Landroid/database/ContentObserver;->onChange(Z)V
+    iget-object v0, p0, Lcom/android/incallui/InCallActivity$19;->this$0:Lcom/android/incallui/InCallActivity;
 
-    invoke-static {}, Lcom/android/incallui/InCallPresenter;->getInstance()Lcom/android/incallui/InCallPresenter;
+    invoke-static {v0}, Lcom/android/incallui/InCallActivity;->access$1400(Lcom/android/incallui/InCallActivity;)Landroid/app/AlertDialog;
 
     move-result-object v0
 
-    invoke-virtual {v0}, Lcom/android/incallui/InCallPresenter;->onOnehandModeChanged()V
+    invoke-virtual {v0}, Landroid/app/AlertDialog;->dismiss()V
 
     return-void
 .end method

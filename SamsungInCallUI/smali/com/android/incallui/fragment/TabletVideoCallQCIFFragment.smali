@@ -22,7 +22,7 @@
 
     invoke-super {p0, p1}, Lcom/android/incallui/fragment/VideoCallQCIFFragment;->initializeVideoView(Landroid/view/View;)V
 
-    const v0, 0x7f100407
+    const v0, 0x7f10041e
 
     invoke-virtual {p1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -38,7 +38,7 @@
 
     invoke-super {p0, p1, p2, p3}, Lcom/android/incallui/fragment/VideoCallQCIFFragment;->onCreateView(Landroid/view/LayoutInflater;Landroid/view/ViewGroup;Landroid/os/Bundle;)Landroid/view/View;
 
-    const v0, 0x7f04012b
+    const v0, 0x7f04012f
 
     const/4 v1, 0x0
 
@@ -78,7 +78,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f0a0367
+    const v1, 0x7f0a035d
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDimension(I)F
 
@@ -371,7 +371,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f0a021a
+    const v2, 0x7f0a0200
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getDimension(I)F
 
@@ -385,7 +385,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f0a021b
+    const v2, 0x7f0a0201
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getDimension(I)F
 
@@ -462,7 +462,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f0a04d9
+    const v2, 0x7f0a04e5
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getDimension(I)F
 
@@ -479,7 +479,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f0a0029
+    const v2, 0x7f0a0026
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getDimension(I)F
 

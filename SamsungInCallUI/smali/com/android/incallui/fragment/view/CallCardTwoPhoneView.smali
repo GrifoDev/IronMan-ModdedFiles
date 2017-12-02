@@ -78,7 +78,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f100249
+    const v1, 0x7f100250
 
     invoke-virtual {v0, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -207,7 +207,7 @@
 
     move-result-object v2
 
-    const v4, 0x7f0a01e2
+    const v4, 0x7f0a01cd
 
     invoke-virtual {v2, v4}, Landroid/content/res/Resources;->getDimension(I)F
 
@@ -227,7 +227,7 @@
 
     move-result-object v4
 
-    const v5, 0x7f0a01e0
+    const v5, 0x7f0a01cb
 
     invoke-virtual {v4, v5}, Landroid/content/res/Resources;->getDimension(I)F
 
@@ -267,7 +267,7 @@
 
     if-eqz v0, :cond_0
 
-    const v0, 0x7f1002ca
+    const v0, 0x7f1002d6
 
     invoke-virtual {p2, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -285,7 +285,7 @@
 
     invoke-virtual {v0}, Landroid/view/ViewStub;->inflate()Landroid/view/View;
 
-    const v0, 0x7f10017f
+    const v0, 0x7f100186
 
     invoke-virtual {p2, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -295,7 +295,7 @@
 
     iput-object v0, p0, Lcom/android/incallui/fragment/view/CallCardTwoPhoneView;->mTwophoneIcon:Landroid/widget/ImageView;
 
-    const v0, 0x7f100180
+    const v0, 0x7f100187
 
     invoke-virtual {p2, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -320,9 +320,9 @@
 .method private updateTwoPhoneColor(Lcom/android/incallui/fragment/CallCardFragment;I)V
     .locals 6
 
-    const v5, 0x7f0f0184
+    const v5, 0x7f0e0191
 
-    const v4, 0x7f0f017e
+    const v4, 0x7f0e018b
 
     const/high16 v3, 0x3f800000    # 1.0f
 
@@ -421,9 +421,9 @@
 .method private updateTwoPhoneLayout(Lcom/android/incallui/fragment/CallCardFragment;)V
     .locals 9
 
-    const v8, 0x7f0900fd
+    const v8, 0x7f090100
 
-    const v7, 0x7f02044f
+    const v7, 0x7f02045f
 
     const/16 v3, 0x8
 
@@ -696,7 +696,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f02044e
+    const v2, 0x7f02045e
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 
@@ -715,7 +715,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f0900fc
+    const v2, 0x7f0900ff
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 

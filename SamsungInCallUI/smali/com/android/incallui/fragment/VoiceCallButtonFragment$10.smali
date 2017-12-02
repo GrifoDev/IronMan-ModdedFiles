@@ -70,7 +70,7 @@
 
     iget-object v0, v0, Lcom/android/incallui/fragment/VoiceCallButtonFragment;->mEndCallButton:Landroid/widget/ImageButton;
 
-    const v1, 0x7f0202f2
+    const v1, 0x7f020301
 
     invoke-virtual {v0, v1}, Landroid/widget/ImageButton;->setImageResource(I)V
 

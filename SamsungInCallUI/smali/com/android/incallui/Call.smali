@@ -2235,7 +2235,9 @@
 .end method
 
 .method public getPhoneType()I
-    .locals 1
+    .locals 2
+
+    const/4 v1, 0x1
 
     iget v0, p0, Lcom/android/incallui/Call;->mPhoneType:I
 
@@ -2247,11 +2249,19 @@
     return v0
 
     :cond_0
+    const-string v0, "perf - getPhoneType: start"
+
+    invoke-static {p0, v0, v1}, Lcom/android/incallui/Log;->d(Ljava/lang/Object;Ljava/lang/String;Z)V
+
     invoke-static {p0}, Lcom/android/incallui/util/InCallUtilsMultiSIM;->getPhoneType(Lcom/android/incallui/Call;)I
 
     move-result v0
 
     iput v0, p0, Lcom/android/incallui/Call;->mPhoneType:I
+
+    const-string v0, "perf - getPhoneType: end"
+
+    invoke-static {p0, v0, v1}, Lcom/android/incallui/Log;->d(Ljava/lang/Object;Ljava/lang/String;Z)V
 
     iget v0, p0, Lcom/android/incallui/Call;->mPhoneType:I
 

@@ -126,6 +126,7 @@
     <string name="agif_decline_sticker_header">کسی اسٹکر کے ذریعے مسترد کریں</string>
     <string name="agif_decline_text_header">کسی متن کے ذریعے مسترد کریں</string>
     <string name="agif_decline_toast">%s کو اسٹکر بھیجا گیا۔</string>
+    <string name="agif_outgoing_bubble_tip">آپ کیسا محسوس کرتے ہیں یہ دکھانے کے لیے کوئی اسٹکر بھیجیں۔</string>
     <string name="agif_pickers_add_tab_description">اضافہ</string>
     <string name="agif_pickers_downloaded">ڈاؤن لوڈ کیا گیا</string>
     <string name="agif_pickers_item_usage_hints_description">منتخب کرنے کے لیے دوہری تھپکی دیں</string>
@@ -141,10 +142,12 @@
     <string name="agif_pickers_tab_select_description">منتخب شدہ</string>
     <string name="agif_pickers_title">کسی اسٹکر کے ساتھ شروع کریں</string>
     <string name="agif_pickers_title_top_stickers">اعلی اسٹکرز</string>
+    <string name="agif_random_send_message">یہ sticker بھیجنے کے لیے یہاں تھپکی دیں۔</string>
     <string name="agif_read_permission_description">فون کو AGIF مواد پڑھنے کی اجازت دیں۔</string>
     <string name="agif_read_permission_label">‏AGIF مواد پڑھیں</string>
     <string name="agif_receive_no_id">اسٹکر نہیں دکھایا جاسکتا ہے۔ کال کے بعد %s اپ ڈیٹ کریں۔</string>
     <string name="agif_receive_no_id_upsupport_update">اسٹکر نہیں دکھایا جاسکتا ہے۔ اگلا سسٹم اپ ڈیٹ کرنے کے بعد مزید اسٹکرز دستیاب ہوں گے۔</string>
+    <string name="agif_receive_toast">%s سے اسٹکر۔</string>
     <string name="agif_sent_fail_message">متحرک GIF نہیں بھیجا جاسکتا۔ بعد میں دوبارہ کوشش کریں۔</string>
     <string name="agif_sent_toast">اسٹکر بھیجا گيا۔</string>
     <string name="agif_write_permission_description">فون کو AGIF مواد ترمیم کرنے کی اجازت دیں۔</string>
@@ -813,6 +816,7 @@ IVR کال اسکرین مینیو ایک تیسرے فریق خدمت فراہ�
     <string name="sticker_delete_stickers">%d اسٹیکرز حذف کریں؟</string>
     <string name="sticker_delete_this_sticker">اس اسٹیکر کو حذف کریں؟</string>
     <string name="sticker_setting_edit_title">اسٹکرز منتخب کریں</string>
+    <string name="sticker_setting_edit_title_preload">اسٹکرز دوبارہ ترتیب دیں</string>
     <string name="sticker_setting_main_title">میرے اسٹکرز</string>
     <string name="sticker_setting_menu_delete">حذف کریں</string>
     <string name="sticker_setting_menu_edit">تدوین</string>
@@ -825,6 +829,7 @@ IVR کال اسکرین مینیو ایک تیسرے فریق خدمت فراہ�
     <string name="swipe_right_to_answer_call_with_video">ویڈیو کال کا جواب دینے کے لیے دائیں سوائپ کریں۔</string>
     <string name="swipe_right_to_answer_call_without_video">ویڈیو کے بغیر کال کا جواب دینے کے لیے دائیں سوائپ کریں۔</string>
     <string name="switch_rejected_by_mt">ویڈیو کال پر منتقل ہونے کی درخواست مسترد۔</string>
+    <string name="switch_rejected_by_mt_att">Video unavailable for this call. Call connected as a voice call.</string>
     <string name="switch_to_video_call_failed">ویڈیو کال میں سوئچ کرنے کی درخواست ناکام ہوگئی۔</string>
     <string name="switch_to_video_call_failed_tmo">ویڈیو کال میں سوئچ کرنے کی درخواست مسترد ہوگئی ہے۔</string>
     <string name="switch_to_voice_call_failed">صوتی کال میں تبدیلی کی درخواست ناکام ہوگئی۔</string>

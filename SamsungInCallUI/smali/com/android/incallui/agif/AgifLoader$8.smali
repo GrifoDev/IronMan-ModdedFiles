@@ -4,7 +4,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/android/incallui/agif/AgifLoader;->loadRecentContents(Ljava/lang/String;)V
+    value = Lcom/android/incallui/agif/AgifLoader;->loadRecentContents(Ljava/lang/String;Z)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -18,14 +18,18 @@
 
 .field final synthetic val$callState:Ljava/lang/String;
 
+.field final synthetic val$isShowRandomAgif:Z
+
 
 # direct methods
-.method constructor <init>(Lcom/android/incallui/agif/AgifLoader;Landroid/content/ContentResolver;Ljava/lang/String;)V
+.method constructor <init>(Lcom/android/incallui/agif/AgifLoader;Landroid/content/ContentResolver;Ljava/lang/String;Z)V
     .locals 0
 
     iput-object p1, p0, Lcom/android/incallui/agif/AgifLoader$8;->this$0:Lcom/android/incallui/agif/AgifLoader;
 
     iput-object p3, p0, Lcom/android/incallui/agif/AgifLoader$8;->val$callState:Ljava/lang/String;
+
+    iput-boolean p4, p0, Lcom/android/incallui/agif/AgifLoader$8;->val$isShowRandomAgif:Z
 
     invoke-direct {p0, p2}, Landroid/content/AsyncQueryHandler;-><init>(Landroid/content/ContentResolver;)V
 
@@ -259,6 +263,12 @@
 
     invoke-interface {v0}, Lcom/android/incallui/AgifPresenter$AgifUi;->notifyAgifSetChanged()V
 
+    iget-boolean v0, p0, Lcom/android/incallui/agif/AgifLoader$8;->val$isShowRandomAgif:Z
+
+    if-eqz v0, :cond_4
+
+    invoke-static {}, Lcom/android/incallui/agif/AgifCallServiceUtils;->showRandomAgif()V
+
     goto :goto_2
 
     :catch_0
@@ -397,6 +407,12 @@
 
     invoke-interface {v0}, Lcom/android/incallui/AgifPresenter$AgifUi;->notifyAgifSetChanged()V
 
+    iget-boolean v0, p0, Lcom/android/incallui/agif/AgifLoader$8;->val$isShowRandomAgif:Z
+
+    if-eqz v0, :cond_4
+
+    invoke-static {}, Lcom/android/incallui/agif/AgifCallServiceUtils;->showRandomAgif()V
+
     goto/16 :goto_2
 
     :catchall_0
@@ -511,6 +527,12 @@
     move-result-object v1
 
     invoke-interface {v1}, Lcom/android/incallui/AgifPresenter$AgifUi;->notifyAgifSetChanged()V
+
+    iget-boolean v1, p0, Lcom/android/incallui/agif/AgifLoader$8;->val$isShowRandomAgif:Z
+
+    if-eqz v1, :cond_d
+
+    invoke-static {}, Lcom/android/incallui/agif/AgifCallServiceUtils;->showRandomAgif()V
 
     goto :goto_3
 .end method

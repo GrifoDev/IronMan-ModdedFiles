@@ -3622,25 +3622,67 @@
 .end method
 
 .method public hasLiveCallToDisplay()Z
-    .locals 2
+    .locals 5
 
     const/4 v0, 0x1
 
     const/4 v1, 0x0
 
-    invoke-static {p0, v1, v0}, Lcom/android/incallui/util/InCallUtils;->getCallToDisplay(Lcom/android/incallui/CallList;Lcom/android/incallui/Call;Z)Lcom/android/incallui/Call;
+    const/4 v2, 0x0
 
-    move-result-object v1
+    invoke-static {p0, v2, v0}, Lcom/android/incallui/util/InCallUtils;->getCallToDisplay(Lcom/android/incallui/CallList;Lcom/android/incallui/Call;Z)Lcom/android/incallui/Call;
 
-    if-eqz v1, :cond_0
+    move-result-object v2
+
+    const-string v3, "china_cdma_call"
+
+    invoke-static {v3}, Lcom/android/incallui/InCallUIFeature;->hasFeature(Ljava/lang/String;)Z
+
+    move-result v3
+
+    if-eqz v3, :cond_0
+
+    if-eqz v2, :cond_0
+
+    invoke-virtual {v2}, Lcom/android/incallui/Call;->getPhoneType()I
+
+    move-result v3
+
+    const/4 v4, 0x2
+
+    if-ne v3, v4, :cond_0
+
+    invoke-static {}, Lcom/android/incallui/CallList;->getInstance()Lcom/android/incallui/CallList;
+
+    move-result-object v3
+
+    invoke-virtual {v3, v2}, Lcom/android/incallui/CallList;->isLiveCall(Lcom/android/incallui/Call;)Z
+
+    move-result v3
+
+    if-nez v3, :cond_0
+
+    const-string v0, "CallList"
+
+    const-string v2, "Cdma non - hasLiveCallToDisplay"
+
+    invoke-static {v0, v2}, Lcom/android/incallui/Log;->d(Ljava/lang/String;Ljava/lang/String;)V
 
     :goto_0
-    return v0
+    return v1
 
     :cond_0
-    const/4 v0, 0x0
+    if-eqz v2, :cond_1
+
+    :goto_1
+    move v1, v0
 
     goto :goto_0
+
+    :cond_1
+    move v0, v1
+
+    goto :goto_1
 .end method
 
 .method public hasOutgoingCall()Z
@@ -4230,7 +4272,7 @@
 .end method
 
 .method public isMultipartyCall()Z
-    .locals 6
+    .locals 7
 
     const/4 v1, 0x1
 
@@ -4253,7 +4295,7 @@
 
     move-result-object v3
 
-    invoke-virtual {v3}, Lcom/android/incallui/CallList;->getBackgroundCall()Lcom/android/incallui/Call;
+    invoke-virtual {v3}, Lcom/android/incallui/CallList;->getSecondActiveCall()Lcom/android/incallui/Call;
 
     move-result-object v3
 
@@ -4266,7 +4308,7 @@
 
     move-result-object v4
 
-    invoke-virtual {v4}, Lcom/android/incallui/CallList;->getSecondBackgroundCall()Lcom/android/incallui/Call;
+    invoke-virtual {v4}, Lcom/android/incallui/CallList;->getBackgroundCall()Lcom/android/incallui/Call;
 
     move-result-object v4
 
@@ -4275,13 +4317,26 @@
     move v4, v1
 
     :goto_2
-    invoke-static {}, Lcom/android/incallui/util/CallTypeUtils;->isCdmaMultipartyCall()Z
+    invoke-static {}, Lcom/android/incallui/CallList;->getInstance()Lcom/android/incallui/CallList;
 
-    move-result v5
+    move-result-object v5
+
+    invoke-virtual {v5}, Lcom/android/incallui/CallList;->getSecondBackgroundCall()Lcom/android/incallui/Call;
+
+    move-result-object v5
 
     if-eqz v5, :cond_3
 
+    move v5, v1
+
     :goto_3
+    invoke-static {}, Lcom/android/incallui/util/CallTypeUtils;->isCdmaMultipartyCall()Z
+
+    move-result v6
+
+    if-eqz v6, :cond_4
+
+    :goto_4
     return v2
 
     :cond_0
@@ -4300,22 +4355,32 @@
     goto :goto_2
 
     :cond_3
-    if-eqz v0, :cond_4
+    move v5, v2
 
-    if-nez v3, :cond_6
+    goto :goto_3
 
     :cond_4
-    if-eqz v3, :cond_5
+    if-eqz v0, :cond_5
 
-    if-nez v4, :cond_6
+    if-nez v4, :cond_8
 
     :cond_5
-    if-eqz v0, :cond_7
+    if-eqz v4, :cond_6
 
-    if-eqz v4, :cond_7
+    if-nez v5, :cond_8
 
     :cond_6
-    :goto_4
+    if-eqz v0, :cond_7
+
+    if-nez v5, :cond_8
+
+    :cond_7
+    if-eqz v0, :cond_9
+
+    if-eqz v3, :cond_9
+
+    :cond_8
+    :goto_5
     const-string v0, "CallList"
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -4340,12 +4405,12 @@
 
     move v2, v1
 
-    goto :goto_3
+    goto :goto_4
 
-    :cond_7
+    :cond_9
     move v1, v2
 
-    goto :goto_4
+    goto :goto_5
 .end method
 
 .method public isNotUpdatingCall(Ljava/lang/String;)Z

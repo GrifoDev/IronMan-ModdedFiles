@@ -126,6 +126,7 @@
     <string name="agif_decline_sticker_header">स्टिकरसह नकार द्या</string>
     <string name="agif_decline_text_header">मजकूरासह नकार द्या</string>
     <string name="agif_decline_toast">स्टिकर %s ला पाठवला.</string>
+    <string name="agif_outgoing_bubble_tip">आपल्याला कसे वाटते हे दर्शवण्या साठी एक स्टिकर निवडा.</string>
     <string name="agif_pickers_add_tab_description">जोडा</string>
     <string name="agif_pickers_downloaded">डाउनलोड केले</string>
     <string name="agif_pickers_item_usage_hints_description">निवडण्‍यासाठी दोनदा टॅप करा</string>
@@ -141,10 +142,12 @@
     <string name="agif_pickers_tab_select_description">निवडले</string>
     <string name="agif_pickers_title">स्टिकरसह सुरू करा</string>
     <string name="agif_pickers_title_top_stickers">शीर्ष स्टिकर्स</string>
+    <string name="agif_random_send_message">हा स्टिकर पाठवण्या साठी येथे टॅप करा.</string>
     <string name="agif_read_permission_description">फोनला AGIF सामग्री वाचण्याची अनुमती देतो.</string>
     <string name="agif_read_permission_label">AGIF सामग्री वाचा</string>
     <string name="agif_receive_no_id">स्टिकर दर्शवला जाऊ शकत नाही. कॉल केल्या नंतर %s अद्ययावत करा.</string>
     <string name="agif_receive_no_id_upsupport_update">स्टिकर दर्शवले जाऊ शकत नाही. पुढील सिस्‍टम अद्ययावत केल्या नंतर अधिक स्टिकर्स उपलब्ध केले जातील.</string>
+    <string name="agif_receive_toast">%s मधून स्टिकर.</string>
     <string name="agif_sent_fail_message">अ‍ॅनिमेटेड GIF पाठवू शकत नाही. नंतर पुन्हा प्रयत्न करा.</string>
     <string name="agif_sent_toast">स्टिकर पाठवले.</string>
     <string name="agif_write_permission_description">फोनला AGIF सामग्री सुधारीत करण्याची अनुमती देतो.</string>
@@ -813,6 +816,7 @@ IVR कॉल स्क्रीन मेनू Dianhuabang नावाच्�
     <string name="sticker_delete_stickers">%d स्टिकर्स हटवायचे?</string>
     <string name="sticker_delete_this_sticker">हा स्टिकर हटवायचा?</string>
     <string name="sticker_setting_edit_title">स्टिकर्स निवडा</string>
+    <string name="sticker_setting_edit_title_preload">स्टिकर्सची पुन्हा क्रमवारी लावा</string>
     <string name="sticker_setting_main_title">माझे स्टिकर्स</string>
     <string name="sticker_setting_menu_delete">काढून टाका</string>
     <string name="sticker_setting_menu_edit">संपादित करा</string>
@@ -825,6 +829,7 @@ IVR कॉल स्क्रीन मेनू Dianhuabang नावाच्�
     <string name="swipe_right_to_answer_call_with_video">व्हिडिओसह कॉलचे उत्तर देण्यासाठी उजवीकडे स्‍वाइप करा.</string>
     <string name="swipe_right_to_answer_call_without_video">व्हिडिओशिवाय कॉलचे उत्तर देण्यासाठी उजवीकडे स्‍वाइप करा.</string>
     <string name="switch_rejected_by_mt">व्हिडिओ कॉल मध्ये स्विच करण्याची विनंती नाकारली.</string>
+    <string name="switch_rejected_by_mt_att">Video unavailable for this call. Call connected as a voice call.</string>
     <string name="switch_to_video_call_failed">व्हिडिओ कॉल मध्ये स्विच करण्याची विनंती अयशस्‍वी झाली.</string>
     <string name="switch_to_video_call_failed_tmo">व्हिडिओ कॉल मध्ये स्विच करण्याची विनंती नाकारली गेली.</string>
     <string name="switch_to_voice_call_failed">व्हॉईस कॉलमध्ये स्विच करण्याची विनंती अयशस्वी.</string>

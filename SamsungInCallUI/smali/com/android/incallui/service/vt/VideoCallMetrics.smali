@@ -960,6 +960,63 @@
     goto :goto_0
 .end method
 
+.method public isSnapWindowMode()Z
+    .locals 4
+
+    const/4 v0, 0x0
+
+    invoke-virtual {p0}, Lcom/android/incallui/service/vt/VideoCallMetrics;->isInMultiWindowMode()Z
+
+    move-result v1
+
+    if-eqz v1, :cond_0
+
+    invoke-virtual {p0}, Lcom/android/incallui/service/vt/VideoCallMetrics;->getDisplayWidth()I
+
+    move-result v1
+
+    iget v2, p0, Lcom/android/incallui/service/vt/VideoCallMetrics;->widthPixels:I
+
+    if-ne v1, v2, :cond_0
+
+    invoke-virtual {p0}, Lcom/android/incallui/service/vt/VideoCallMetrics;->getDisplayHeight()I
+
+    move-result v1
+
+    iget v2, p0, Lcom/android/incallui/service/vt/VideoCallMetrics;->heightPixels:I
+
+    invoke-direct {p0}, Lcom/android/incallui/service/vt/VideoCallMetrics;->getActivityContext()Landroid/content/Context;
+
+    move-result-object v3
+
+    invoke-static {v3}, Lcom/android/incallui/util/ScreenControlUtils;->getStatusBarHeight(Landroid/content/Context;)I
+
+    move-result v3
+
+    add-int/2addr v2, v3
+
+    if-ne v1, v2, :cond_0
+
+    const/4 v0, 0x1
+
+    :cond_0
+    return v0
+.end method
+
+.method public isTabletType()Z
+    .locals 1
+
+    invoke-virtual {p0}, Lcom/android/incallui/service/vt/VideoCallMetrics;->getVideoUXMode()I
+
+    move-result v0
+
+    invoke-static {v0}, Lcom/android/incallui/service/vt/VideoCallMetrics$VideoUXMode;->isTabletType(I)Z
+
+    move-result v0
+
+    return v0
+.end method
+
 .method public isTabletType(I)Z
     .locals 1
 

@@ -118,12 +118,13 @@
     <string name="account_phone">Прылада</string>
     <string name="acs">Галасавы выклік</string>
     <string name="active_calls">Актыўны выклік</string>
-    <string name="add_reminder">Дад. напамін</string>
+    <string name="add_reminder">Дадаць напамін</string>
     <string name="agif_button_close_description">Закрыць</string>
     <string name="agif_decline_message">Прабачце, зараз я не магу гаварыць.</string>
     <string name="agif_decline_sticker_header">Адхіліць з дапамогай стыкера</string>
     <string name="agif_decline_text_header">Адхіліць з дапамогай тэксту</string>
     <string name="agif_decline_toast">Стыкер адпраўлены карыстальніку %s.</string>
+    <string name="agif_outgoing_bubble_tip">Адпраўце налепку, каб паказаць, як вы адчуваеце сябе.</string>
     <string name="agif_pickers_add_tab_description">Дадаць</string>
     <string name="agif_pickers_downloaded">Спампавана</string>
     <string name="agif_pickers_item_usage_hints_description">Двойчы націсніце, каб выбраць</string>
@@ -139,10 +140,12 @@
     <string name="agif_pickers_tab_select_description">Выбрана</string>
     <string name="agif_pickers_title">Пачаць са стыкера</string>
     <string name="agif_pickers_title_top_stickers">Папулярныя налепкі</string>
+    <string name="agif_random_send_message">Націсніце тут, каб адправіць гэту налепку.</string>
     <string name="agif_read_permission_description">Дазваляе тэлефону чытаць змесціва AGIF.</string>
     <string name="agif_read_permission_label">Чытаць змесціва AGIF</string>
     <string name="agif_receive_no_id">Нельга паказаць наклейку. Абнавіць %s пасля выкліку.</string>
     <string name="agif_receive_no_id_upsupport_update">Нельга паказаць наклейку. Іншыя наклейкі стануць даступныя пасля наступнага абнаўлення сістэмы.</string>
+    <string name="agif_receive_toast">Стыкер ад %s.</string>
     <string name="agif_sent_fail_message">Немагчыма адправіць аніміраваны GIF. Паўтарыце спробу пазней.</string>
     <string name="agif_sent_toast">Стыкер адпраўлены.</string>
     <string name="agif_write_permission_description">Дазваляе тэлефону змяняць змесціва AGIF.</string>
@@ -808,6 +811,7 @@
     <string name="sticker_delete_stickers">Выдаліць налепкі (%d)?</string>
     <string name="sticker_delete_this_sticker">Выдаліць гэту налепку?</string>
     <string name="sticker_setting_edit_title">Выберыце налепкі</string>
+    <string name="sticker_setting_edit_title_preload">Змяніць парадак налепак</string>
     <string name="sticker_setting_main_title">Мае налепкі</string>
     <string name="sticker_setting_menu_delete">Выдаліць</string>
     <string name="sticker_setting_menu_edit">Рэдагаваць</string>
@@ -820,6 +824,7 @@
     <string name="swipe_right_to_answer_call_with_video">Правядзіце ўправа, каб адказаць на выклік з відэа.</string>
     <string name="swipe_right_to_answer_call_without_video">Правядзіце ўправа, каб адказаць на выклік без відэа.</string>
     <string name="switch_rejected_by_mt">Запыт аб пераключэнні на відэавыклік адхілены.</string>
+    <string name="switch_rejected_by_mt_att">Video unavailable for this call. Call connected as a voice call.</string>
     <string name="switch_to_video_call_failed">Памылка запыту на пераключэнне ў рэжым відэавыкліку.</string>
     <string name="switch_to_video_call_failed_tmo">Запыт на пераключэнне на відэавыклік быў адхілены.</string>
     <string name="switch_to_voice_call_failed">Памылка запыту на пераключэнне ў рэжым галасавога выкліку.</string>

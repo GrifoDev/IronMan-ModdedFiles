@@ -87,6 +87,8 @@
 
 .field public static final CONTENT_URI_RECOMMENDED:Landroid/net/Uri;
 
+.field public static final CONTENT_URI_STICKER_LOG:Landroid/net/Uri;
+
 .field public static final CONTENT_URI_STICKER_ORDER:Landroid/net/Uri;
 
 .field public static final CONTENT_URI_STICKER_RECENT:Landroid/net/Uri;
@@ -96,6 +98,8 @@
 .field public static final DATE:Ljava/lang/String; = "date"
 
 .field public static final EXTRA_ENHANCED_FEATURE:Ljava/lang/String; = "extra_enhanced_feature"
+
+.field public static final EXTRA_FEATURE_INDUCE:Ljava/lang/String; = "induce"
 
 .field public static final EXTRA_FEATURE_RECOMMEND:Ljava/lang/String; = "recommend"
 
@@ -119,6 +123,8 @@
 
 .field public static final INSTALLED:Ljava/lang/String; = "installed"
 
+.field public static final LAST_DATE:Ljava/lang/String; = "last_date"
+
 .field public static final NOTIFY_INSTALL:Ljava/lang/String; = "notify_install"
 
 .field public static final NOTIFY_RECOMMENDED_LIST:Ljava/lang/String; = "notify_recommended_list"
@@ -126,6 +132,8 @@
 .field public static final NOTIFY_UNINSTALL:Ljava/lang/String; = "notify_uninstall"
 
 .field public static final NOTIFY_UPDATE:Ljava/lang/String; = "notify_update"
+
+.field public static final NUMBER:Ljava/lang/String; = "number"
 
 .field public static final PACKAGES:Ljava/lang/String; = "packages"
 
@@ -159,6 +167,8 @@
 
 .field public static final SELLERDETAIL:Ljava/lang/String; = "SellerDetail"
 
+.field public static final SENT_COUNT:Ljava/lang/String; = "sent_count"
+
 .field public static final SEPARATOR:Ljava/lang/String; = "-"
 
 .field public static final STICKER_CENTER_AUTHORITY:Ljava/lang/String; = "com.samsung.android.stickercenter.provider"
@@ -166,6 +176,8 @@
 .field public static final STICKER_CENTER_PACKAGE_NAME:Ljava/lang/String; = "com.samsung.android.stickercenter"
 
 .field public static final STICKER_CENTER_SERVICE_CLASS:Ljava/lang/String; = "com.samsung.android.stickercenter.StickerCenterService"
+
+.field public static final STICKER_LOG:Ljava/lang/String; = "sticker_log"
 
 .field public static final STICKER_ORDER:Ljava/lang/String; = "sticker_order"
 
@@ -286,6 +298,20 @@
 
     sput-object v0, Lcom/android/incallui/agif/AgifCallContract;->CONTENT_URI_STICKER_RECENT:Landroid/net/Uri;
 
+    const-string v0, "content://com.samsung.android.provider.agifcallprovider"
+
+    invoke-static {v0}, Landroid/net/Uri;->parse(Ljava/lang/String;)Landroid/net/Uri;
+
+    move-result-object v0
+
+    const-string v1, "sticker_log"
+
+    invoke-static {v0, v1}, Landroid/net/Uri;->withAppendedPath(Landroid/net/Uri;Ljava/lang/String;)Landroid/net/Uri;
+
+    move-result-object v0
+
+    sput-object v0, Lcom/android/incallui/agif/AgifCallContract;->CONTENT_URI_STICKER_LOG:Landroid/net/Uri;
+
     const-string v0, "samsungapps://CategoryList"
 
     invoke-static {v0}, Landroid/net/Uri;->parse(Ljava/lang/String;)Landroid/net/Uri;
@@ -382,7 +408,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f0200be
+    const v1, 0x7f0200c7
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
@@ -420,7 +446,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f0200bf
+    const v1, 0x7f0200c8
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 

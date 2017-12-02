@@ -140,6 +140,10 @@
 
     if-eqz v0, :cond_1
 
+    sget-boolean v0, Lcom/android/incallui/service/vt/VideoCallConfig;->CAN_USE_SEND_STILL_IMAGE:Z
+
+    if-eqz v0, :cond_0
+
     invoke-static {}, Lcom/android/incallui/service/vt/VideoCallManager;->getInstance()Lcom/android/incallui/service/vt/VideoCallManager;
 
     move-result-object v0
@@ -1653,7 +1657,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f09036a
+    const v1, 0x7f09036f
 
     invoke-static {v0, v1, v2}, Landroid/widget/Toast;->makeText(Landroid/content/Context;II)Landroid/widget/Toast;
 

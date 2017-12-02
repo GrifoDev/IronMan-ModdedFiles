@@ -46,7 +46,7 @@
 
     const/4 v1, 0x1
 
-    invoke-static {v0, v1}, Lcom/android/incallui/secrcs/RcsShareUI;->access$2602(Lcom/android/incallui/secrcs/RcsShareUI;Z)Z
+    invoke-static {v0, v1}, Lcom/android/incallui/secrcs/RcsShareUI;->access$2702(Lcom/android/incallui/secrcs/RcsShareUI;Z)Z
 
     goto :goto_0
 
@@ -55,7 +55,7 @@
 
     const/4 v1, 0x0
 
-    invoke-static {v0, v1}, Lcom/android/incallui/secrcs/RcsShareUI;->access$2602(Lcom/android/incallui/secrcs/RcsShareUI;Z)Z
+    invoke-static {v0, v1}, Lcom/android/incallui/secrcs/RcsShareUI;->access$2702(Lcom/android/incallui/secrcs/RcsShareUI;Z)Z
 
     goto :goto_0
 

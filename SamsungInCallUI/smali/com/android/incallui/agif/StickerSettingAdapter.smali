@@ -468,7 +468,7 @@
 .method public getView(ILandroid/view/View;Landroid/view/ViewGroup;)Landroid/view/View;
     .locals 8
 
-    const v7, 0x7f0a059b
+    const v7, 0x7f0a05b0
 
     const v5, 0x7f100014
 
@@ -573,7 +573,7 @@
 
     move-result-object v3
 
-    const v4, 0x7f0a0596
+    const v4, 0x7f0a05ab
 
     invoke-virtual {v3, v4}, Landroid/content/res/Resources;->getDimension(I)F
 

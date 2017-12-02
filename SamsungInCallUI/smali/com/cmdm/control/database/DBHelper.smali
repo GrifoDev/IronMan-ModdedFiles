@@ -300,7 +300,7 @@
 
     new-instance v3, Ljava/lang/StringBuilder;
 
-    const-string v4, "\u6570\u636e\u5e93\u5f02\u5e38\u88ab\u9501\u4e86"
+    const-string/jumbo v4, "\u6570\u636e\u5e93\u5f02\u5e38\u88ab\u9501\u4e86"
 
     invoke-direct {v3, v4}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
@@ -430,7 +430,7 @@
 
     new-instance v3, Ljava/lang/StringBuilder;
 
-    const-string v4, "\u6570\u636e\u5e93\u5f02\u5e38\u88ab\u9501\u4e86"
+    const-string/jumbo v4, "\u6570\u636e\u5e93\u5f02\u5e38\u88ab\u9501\u4e86"
 
     invoke-direct {v3, v4}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
@@ -565,7 +565,7 @@
 
     new-instance v5, Ljava/lang/StringBuilder;
 
-    const-string v6, "\u6570\u636e\u5e93\u5f02\u5e38\u88ab\u9501\u4e86"
+    const-string/jumbo v6, "\u6570\u636e\u5e93\u5f02\u5e38\u88ab\u9501\u4e86"
 
     invoke-direct {v5, v6}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
@@ -680,7 +680,7 @@
 
     new-instance v3, Ljava/lang/StringBuilder;
 
-    const-string v4, "\u6570\u636e\u5e93\u5f02\u5e38\u88ab\u9501\u4e86"
+    const-string/jumbo v4, "\u6570\u636e\u5e93\u5f02\u5e38\u88ab\u9501\u4e86"
 
     invoke-direct {v3, v4}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
@@ -824,7 +824,7 @@
 
     new-instance v1, Ljava/lang/StringBuilder;
 
-    const-string v2, "\u5347\u7ea7\u6570\u636e\u5e93\u4e86newVersion="
+    const-string/jumbo v2, "\u5347\u7ea7\u6570\u636e\u5e93\u4e86newVersion="
 
     invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
@@ -916,8 +916,6 @@
     invoke-virtual {p1, v0}, Landroid/database/sqlite/SQLiteDatabase;->execSQL(Ljava/lang/String;)V
 
     goto :goto_0
-
-    nop
 
     :pswitch_data_0
     .packed-switch 0x1
@@ -1014,7 +1012,7 @@
 
     new-instance v3, Ljava/lang/StringBuilder;
 
-    const-string v4, "\u6570\u636e\u5e93\u5f02\u5e38\u88ab\u9501\u4e86"
+    const-string/jumbo v4, "\u6570\u636e\u5e93\u5f02\u5e38\u88ab\u9501\u4e86"
 
     invoke-direct {v3, v4}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
@@ -1190,7 +1188,7 @@
 
     new-instance v3, Ljava/lang/StringBuilder;
 
-    const-string v4, "\u6570\u636e\u5e93\u5f02\u5e38\u88ab\u9501\u4e86"
+    const-string/jumbo v4, "\u6570\u636e\u5e93\u5f02\u5e38\u88ab\u9501\u4e86"
 
     invoke-direct {v3, v4}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
@@ -1357,7 +1355,7 @@
 
     new-instance v3, Ljava/lang/StringBuilder;
 
-    const-string v4, "\u6570\u636e\u5e93\u5f02\u5e38\u88ab\u9501\u4e86"
+    const-string/jumbo v4, "\u6570\u636e\u5e93\u5f02\u5e38\u88ab\u9501\u4e86"
 
     invoke-direct {v3, v4}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
@@ -1524,7 +1522,7 @@
 
     new-instance v3, Ljava/lang/StringBuilder;
 
-    const-string v4, "\u6570\u636e\u5e93\u5f02\u5e38\u88ab\u9501\u4e86"
+    const-string/jumbo v4, "\u6570\u636e\u5e93\u5f02\u5e38\u88ab\u9501\u4e86"
 
     invoke-direct {v3, v4}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
@@ -1691,7 +1689,7 @@
 
     new-instance v3, Ljava/lang/StringBuilder;
 
-    const-string v4, "\u6570\u636e\u5e93\u5f02\u5e38\u88ab\u9501\u4e86"
+    const-string/jumbo v4, "\u6570\u636e\u5e93\u5f02\u5e38\u88ab\u9501\u4e86"
 
     invoke-direct {v3, v4}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
@@ -1860,7 +1858,7 @@
 
     new-instance v3, Ljava/lang/StringBuilder;
 
-    const-string v4, "\u6570\u636e\u5e93\u5f02\u5e38\u88ab\u9501\u4e86"
+    const-string/jumbo v4, "\u6570\u636e\u5e93\u5f02\u5e38\u88ab\u9501\u4e86"
 
     invoke-direct {v3, v4}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
@@ -2008,7 +2006,7 @@
 
     new-instance v4, Ljava/lang/StringBuilder;
 
-    const-string v5, "\u6570\u636e\u5e93\u5f02\u5e38\u88ab\u9501\u4e86"
+    const-string/jumbo v5, "\u6570\u636e\u5e93\u5f02\u5e38\u88ab\u9501\u4e86"
 
     invoke-direct {v4, v5}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
@@ -2134,7 +2132,7 @@
 
     new-instance v4, Ljava/lang/StringBuilder;
 
-    const-string v5, "\u6570\u636e\u5e93\u5f02\u5e38\u88ab\u9501\u4e86"
+    const-string/jumbo v5, "\u6570\u636e\u5e93\u5f02\u5e38\u88ab\u9501\u4e86"
 
     invoke-direct {v4, v5}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
@@ -2265,7 +2263,7 @@
 
     new-instance v4, Ljava/lang/StringBuilder;
 
-    const-string v5, "\u6570\u636e\u5e93\u5f02\u5e38\u88ab\u9501\u4e86"
+    const-string/jumbo v5, "\u6570\u636e\u5e93\u5f02\u5e38\u88ab\u9501\u4e86"
 
     invoke-direct {v4, v5}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 

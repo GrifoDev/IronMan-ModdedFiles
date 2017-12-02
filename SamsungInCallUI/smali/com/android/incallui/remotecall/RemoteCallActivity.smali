@@ -188,7 +188,7 @@
 .method private initializeRemoteCallButtonFragment()V
     .locals 1
 
-    const v0, 0x7f10023f
+    const v0, 0x7f100246
 
     invoke-virtual {p0, v0}, Lcom/android/incallui/remotecall/RemoteCallActivity;->findViewById(I)Landroid/view/View;
 
@@ -196,7 +196,7 @@
 
     iput-object v0, p0, Lcom/android/incallui/remotecall/RemoteCallActivity;->mRemoteCallPullButtonContainer:Landroid/view/View;
 
-    const v0, 0x7f100240
+    const v0, 0x7f100247
 
     invoke-virtual {p0, v0}, Lcom/android/incallui/remotecall/RemoteCallActivity;->findViewById(I)Landroid/view/View;
 
@@ -206,7 +206,7 @@
 
     iput-object v0, p0, Lcom/android/incallui/remotecall/RemoteCallActivity;->btnPull:Landroid/widget/ImageButton;
 
-    const v0, 0x7f100241
+    const v0, 0x7f100248
 
     invoke-virtual {p0, v0}, Lcom/android/incallui/remotecall/RemoteCallActivity;->findViewById(I)Landroid/view/View;
 
@@ -226,7 +226,7 @@
 .method private initializeRemoteCallEndButtonFragment()V
     .locals 1
 
-    const v0, 0x7f10023b
+    const v0, 0x7f100242
 
     invoke-virtual {p0, v0}, Lcom/android/incallui/remotecall/RemoteCallActivity;->findViewById(I)Landroid/view/View;
 
@@ -236,7 +236,7 @@
 
     iput-object v0, p0, Lcom/android/incallui/remotecall/RemoteCallActivity;->mEndCallButtonsLayout:Landroid/widget/LinearLayout;
 
-    const v0, 0x7f10023c
+    const v0, 0x7f100243
 
     invoke-virtual {p0, v0}, Lcom/android/incallui/remotecall/RemoteCallActivity;->findViewById(I)Landroid/view/View;
 
@@ -255,7 +255,7 @@
     invoke-virtual {v0, p0}, Landroid/widget/Button;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
     :cond_0
-    const v0, 0x7f10023d
+    const v0, 0x7f100244
 
     invoke-virtual {p0, v0}, Lcom/android/incallui/remotecall/RemoteCallActivity;->findViewById(I)Landroid/view/View;
 
@@ -274,7 +274,7 @@
     invoke-virtual {v0, p0}, Landroid/widget/Button;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
     :cond_1
-    const v0, 0x7f10023e
+    const v0, 0x7f100245
 
     invoke-virtual {p0, v0}, Lcom/android/incallui/remotecall/RemoteCallActivity;->findViewById(I)Landroid/view/View;
 
@@ -337,7 +337,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f100243
+    const v1, 0x7f10024a
 
     iget-object v2, p0, Lcom/android/incallui/remotecall/RemoteCallActivity;->mRemoteMultiPartyCallCardFragment:Lcom/android/incallui/remotecall/RemoteMultiPartyCallCardFragment;
 
@@ -417,7 +417,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f100243
+    const v1, 0x7f10024a
 
     iget-object v2, p0, Lcom/android/incallui/remotecall/RemoteCallActivity;->mRemoteCallCardFragment:Lcom/android/incallui/remotecall/RemoteCallCardFragment;
 
@@ -763,7 +763,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f0e0036
+    const v2, 0x7f0f0035
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getInteger(I)I
 
@@ -1056,7 +1056,7 @@
     nop
 
     :pswitch_data_0
-    .packed-switch 0x7f10023c
+    .packed-switch 0x7f100243
         :pswitch_1
         :pswitch_3
         :pswitch_2
@@ -1074,7 +1074,7 @@
 
     invoke-super {p0, p1}, Landroid/app/Activity;->onCreate(Landroid/os/Bundle;)V
 
-    const v0, 0x7f0400a3
+    const v0, 0x7f0400a6
 
     invoke-virtual {p0, v0}, Lcom/android/incallui/remotecall/RemoteCallActivity;->setContentView(I)V
 
@@ -1084,7 +1084,7 @@
 
     invoke-virtual {v0, p0}, Lcom/android/incallui/remotecall/RemoteCallPresenter;->addListener(Lcom/android/incallui/remotecall/RemoteCallPresenter$RemoteCallListener;)V
 
-    const v0, 0x7f100243
+    const v0, 0x7f10024a
 
     invoke-virtual {p0, v0}, Lcom/android/incallui/remotecall/RemoteCallActivity;->findViewById(I)Landroid/view/View;
 
@@ -1092,7 +1092,7 @@
 
     iput-object v0, p0, Lcom/android/incallui/remotecall/RemoteCallActivity;->mSecCallCardContainer:Landroid/view/View;
 
-    const v0, 0x7f100242
+    const v0, 0x7f100249
 
     invoke-virtual {p0, v0}, Lcom/android/incallui/remotecall/RemoteCallActivity;->findViewById(I)Landroid/view/View;
 
@@ -1165,7 +1165,7 @@
 
     move-result-object v4
 
-    const v5, 0x7f0f0106
+    const v5, 0x7f0e0109
 
     invoke-virtual {v4, v5}, Landroid/content/res/Resources;->getColor(I)I
 
@@ -1343,9 +1343,33 @@
 
     invoke-virtual {v0}, Lcom/android/incallui/service/ims/IMSManagerWrapper;->getLastDialogEvent()Lcom/sec/ims/DialogEvent;
 
+    move-result-object v1
+
+    if-eqz v1, :cond_1
+
+    invoke-virtual {v0}, Lcom/android/incallui/service/ims/IMSManagerWrapper;->getLastDialogEvent()Lcom/sec/ims/DialogEvent;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Lcom/sec/ims/DialogEvent;->getDialogList()Ljava/util/List;
+
+    move-result-object v1
+
+    if-eqz v1, :cond_1
+
+    invoke-virtual {v0}, Lcom/android/incallui/service/ims/IMSManagerWrapper;->getLastDialogEvent()Lcom/sec/ims/DialogEvent;
+
     move-result-object v0
 
-    if-eqz v0, :cond_1
+    invoke-virtual {v0}, Lcom/sec/ims/DialogEvent;->getDialogList()Ljava/util/List;
+
+    move-result-object v0
+
+    invoke-interface {v0}, Ljava/util/List;->size()I
+
+    move-result v0
+
+    if-lez v0, :cond_1
 
     invoke-static {}, Lcom/android/incallui/remotecall/RemoteCallPresenter;->getInstance()Lcom/android/incallui/remotecall/RemoteCallPresenter;
 

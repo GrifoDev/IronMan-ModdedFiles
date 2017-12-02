@@ -36,6 +36,8 @@
 
 .field public static FAKE_VIDEO_CALL:Z
 
+.field public static FIXED_PREVIEW_DIMENSION:Z
+
 .field public static MULTITASKING_PIP_ENABLED:Z
 
 .field public static PICK_GALLERY_IMAGE:Z
@@ -45,6 +47,8 @@
 .field public static PROHIBIT_CANDID_SHOT:Z
 
 .field public static RESIZE_SCREEN:Z
+
+.field public static TABLET_DEVICE:Z
 
 .field public static TEST_MODE:Z
 
@@ -137,6 +141,8 @@
 
     sput-boolean v2, Lcom/android/incallui/service/vt/VideoCallConfig;->DEVICE_ROTATION_ACCELEROMETER:Z
 
+    sput-boolean v2, Lcom/android/incallui/service/vt/VideoCallConfig;->FIXED_PREVIEW_DIMENSION:Z
+
     sput-boolean v2, Lcom/android/incallui/service/vt/VideoCallConfig;->TEST_MODE:Z
 
     sput-boolean v2, Lcom/android/incallui/service/vt/VideoCallConfig;->RESIZE_SCREEN:Z
@@ -158,6 +164,8 @@
     sput-boolean v2, Lcom/android/incallui/service/vt/VideoCallConfig;->PIP_TYPE_PREVIEW:Z
 
     sput-boolean v2, Lcom/android/incallui/service/vt/VideoCallConfig;->ZOOM_IN_VIDEO:Z
+
+    sput-boolean v2, Lcom/android/incallui/service/vt/VideoCallConfig;->TABLET_DEVICE:Z
 
     sput-boolean v2, Lcom/android/incallui/service/vt/VideoCallConfig;->FAKE_VIDEO_CALL:Z
 
@@ -1205,6 +1213,12 @@
 
     const/4 v1, 0x1
 
+    invoke-static {}, Lcom/android/incallui/InCallUIFeature;->isTablet()Z
+
+    move-result v0
+
+    sput-boolean v0, Lcom/android/incallui/service/vt/VideoCallConfig;->TABLET_DEVICE:Z
+
     invoke-static {}, Lcom/android/incallui/service/vt/VideoCallConfig;->CONCEPT_USA_VZW()Z
 
     move-result v0
@@ -1249,9 +1263,7 @@
     sput-boolean v1, Lcom/android/incallui/service/vt/VideoCallConfig;->UI_MULTIPARTY_SECONDARY_PHOTO:Z
 
     :cond_3
-    invoke-static {}, Lcom/android/incallui/InCallUIFeature;->isTablet()Z
-
-    move-result v0
+    sget-boolean v0, Lcom/android/incallui/service/vt/VideoCallConfig;->TABLET_DEVICE:Z
 
     if-eqz v0, :cond_4
 
@@ -1462,7 +1474,9 @@
 
     if-eqz v0, :cond_11
 
-    sput-boolean v2, Lcom/android/incallui/service/vt/VideoCallConfig;->DEVICE_ROTATION:Z
+    sget-boolean v0, Lcom/android/incallui/service/vt/VideoCallConfig;->TABLET_DEVICE:Z
+
+    sput-boolean v0, Lcom/android/incallui/service/vt/VideoCallConfig;->DEVICE_ROTATION:Z
 
     sput-boolean v1, Lcom/android/incallui/service/vt/VideoCallConfig;->RESIZE_SCREEN:Z
 
@@ -1470,12 +1484,20 @@
 
     sput-boolean v1, Lcom/android/incallui/service/vt/VideoCallConfig;->PICK_GALLERY_IMAGE:Z
 
+    sput-boolean v1, Lcom/android/incallui/service/vt/VideoCallConfig;->FIXED_PREVIEW_DIMENSION:Z
+
     :cond_11
     sget-boolean v0, Lcom/android/incallui/service/vt/VideoCallConfig;->DEVICE_ROTATION:Z
 
     if-eqz v0, :cond_12
 
     invoke-static {}, Lcom/android/incallui/service/vt/VideoCallConfig;->CONCEPT_USA_COMMON()Z
+
+    move-result v0
+
+    if-nez v0, :cond_16
+
+    invoke-static {}, Lcom/android/incallui/service/vt/VideoCallConfig;->CONCEPT_KOR_COMMON()Z
 
     move-result v0
 

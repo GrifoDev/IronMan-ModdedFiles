@@ -147,12 +147,13 @@
     <string name="account_phone">Enhet</string>
     <string name="acs">Taleanrop</string>
     <string name="active_calls">Aktiv samtale</string>
-    <string name="add_reminder">Legg til påm.</string>
+    <string name="add_reminder">Legg til påminnelse</string>
     <string name="agif_button_close_description">Lukk</string>
     <string name="agif_decline_message">Beklager, jeg kan ikke snakke akkurat nå.</string>
     <string name="agif_decline_sticker_header">Avslå med et klistremerke</string>
     <string name="agif_decline_text_header">Avslå med en tekstmelding</string>
     <string name="agif_decline_toast">Klistremerke ble sendt til %s.</string>
+    <string name="agif_outgoing_bubble_tip">Send et klistremerke for å vise hva du føler.</string>
     <string name="agif_pickers_add_tab_description">Tilføy</string>
     <string name="agif_pickers_downloaded">Lastet ned</string>
     <string name="agif_pickers_item_usage_hints_description">Trykk raskt to ganger for å velge</string>
@@ -168,10 +169,12 @@
     <string name="agif_pickers_tab_select_description">Valgt</string>
     <string name="agif_pickers_title">Start med et klistremerke</string>
     <string name="agif_pickers_title_top_stickers">Populære klistremerker</string>
+    <string name="agif_random_send_message">Trykk her for å sende dette klistremerket.</string>
     <string name="agif_read_permission_description">Tillat at Telefon leser AGIF-innhold.</string>
     <string name="agif_read_permission_label">Lese AGIF-innhold</string>
     <string name="agif_receive_no_id">Klistremerket kan ikke vises. Oppdater %s etter samtalen.</string>
     <string name="agif_receive_no_id_upsupport_update">Klistremerket kan ikke vises. Flere klistremerker blir tilgjengelige etter neste systemoppdatering.</string>
+    <string name="agif_receive_toast">Klistremerke fra %s.</string>
     <string name="agif_sent_fail_message">Kan ikke sende animert GIF. Prøv igjen senere.</string>
     <string name="agif_sent_toast">Klistremerke ble sendt.</string>
     <string name="agif_write_permission_description">Tillat at Telefon endrer AGIF-innhold.</string>
@@ -840,6 +843,7 @@ kamera"</string>
     <string name="sticker_delete_stickers">Vil du slette %d klistremerker?</string>
     <string name="sticker_delete_this_sticker">Vil du slette dette klistremerket?</string>
     <string name="sticker_setting_edit_title">Velg klistremerker</string>
+    <string name="sticker_setting_edit_title_preload">Omordne klistremerker</string>
     <string name="sticker_setting_main_title">Mine klistremerker</string>
     <string name="sticker_setting_menu_delete">Slett</string>
     <string name="sticker_setting_menu_edit">Rediger</string>
@@ -852,6 +856,7 @@ kamera"</string>
     <string name="swipe_right_to_answer_call_with_video">Stryk mot høyre for å besvare anrop med video.</string>
     <string name="swipe_right_to_answer_call_without_video">Stryk mot høyre for å besvare anrop uten video.</string>
     <string name="switch_rejected_by_mt">Forespørsel om å bytte til videosamtale avvist.</string>
+    <string name="switch_rejected_by_mt_att">Video unavailable for this call. Call connected as a voice call.</string>
     <string name="switch_to_video_call_failed">Forespørsel om å bytte til videoanrop mislyktes.</string>
     <string name="switch_to_video_call_failed_tmo">Forespørsel om å bytte til videoanrop ble avvist.</string>
     <string name="switch_to_voice_call_failed">Forespørsel om å bytte til taleanrop mislyktes.</string>

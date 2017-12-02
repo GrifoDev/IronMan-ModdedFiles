@@ -93,21 +93,14 @@
     <dimen name="sec_multiparty_video_call_button_text_size">13.0dip</dimen>
     <dimen name="sec_multiparty_video_call_manage_button_drawable_padding">2.0dip</dimen>
     <dimen name="sec_multiparty_video_call_name_text_size">17.0dip</dimen>
-    <dimen name="sec_primary_incoming_call_photo_size">411.5dip</dimen>
     <dimen name="sec_resume_button_stroke_width">0.0dip</dimen>
     <dimen name="sec_video_banner_height">33.099976dip</dimen>
     <item type="dimen" name="sec_video_call_button_ripple_effect_height">@dimen/sec_video_call_button_ripple_effect_width</item>
     <dimen name="sec_video_call_button_ripple_effect_width">61.649994dip</dimen>
     <dimen name="sec_video_camera_effect_layout_qcif_margin">342.0dip</dimen>
-    <dimen name="sec_call_buttons_horizontal_out_line_onehand">310.0dip</dimen>
-    <dimen name="sec_call_buttons_padding_side_right_onehand">96.0dip</dimen>
-    <dimen name="sec_incall_layout_height_onehand">311.0dip</dimen>
     <dimen name="rtt_view_margin_bottom">117.0dip</dimen>
     <dimen name="sec_endcall_button_delta_by_rtt">60.0dip</dimen>
     <dimen name="sec_incall_buttons_delta_by_rtt">178.0dip</dimen>
-    <dimen name="sec_call_banner_height_onehand_portrait">372.0dip</dimen>
-    <dimen name="sec_call_buttons_horizontal_out_line_onehand_portrait">310.0dip</dimen>
-    <dimen name="sec_call_buttons_vertical_out_line_onehand">296.0dip</dimen>
     <dimen name="sec_clear_cover_banner_height">358.0dip</dimen>
     <dimen name="sec_clear_cover_call_state_label_text_size">21.0dip</dimen>
     <dimen name="sec_clear_cover_record_label_layout_height">18.0dip</dimen>
@@ -129,8 +122,6 @@
     <dimen name="sec_incall_button_drawable_padding_onehand">4.0dip</dimen>
     <dimen name="sec_incall_button_text_size_onehand">12.0dip</dimen>
     <dimen name="sec_incall_button_width_onehand">85.0dip</dimen>
-    <dimen name="sec_incall_layout_height_onehand_portrait">311.0dip</dimen>
-    <dimen name="sec_incall_layout_width_onehand">297.0dip</dimen>
     <dimen name="sec_incall_resume_button_text_size">11.0dip</dimen>
     <dimen name="sec_incoming_call_Image_Widget_Bottom_margin">17.0dip</dimen>
     <dimen name="sec_mkeyboard_call_banner_height">187.0dip</dimen>
@@ -153,14 +144,10 @@
     <dimen name="sec_video_call_banner_kt_two_phone_image_margin_top">8.0dip</dimen>
     <dimen name="sec_video_call_banner_kt_two_phone_image_margin_top_qcif">4.0dip</dimen>
     <dimen name="sec_video_incall_button_usa_vzw_height">93.0dip</dimen>
-    <dimen name="sec_video_incall_switch_button_banner_fixed_margin_bottom_qcif">610.0dip</dimen>
     <dimen name="sec_video_qcif_incall_button_height">90.0dip</dimen>
     <dimen name="sec_video_qcif_incall_button_inside_margin">10.0dip</dimen>
     <dimen name="sec_video_qcif_incall_button_margin">44.0dip</dimen>
-    <dimen name="sec_video_qcif_incall_button_padding_bottom_onehand">12.0dip</dimen>
     <dimen name="sec_video_qcif_incall_button_padding_top">13.5dip</dimen>
-    <dimen name="sec_video_qcif_incall_button_padding_top_onehand">15.0dip</dimen>
-    <dimen name="sec_video_qcif_incall_button_text_size_onehand">13.0dip</dimen>
     <dimen name="sec_video_vga_invite_group_video_button_and_camera_effect_margin_top">182.16dip</dimen>
     <dimen name="sec_video_vga_invite_group_video_button_margin_end">11.419983dip</dimen>
     <dimen name="sec_video_vga_invite_group_video_button_margin_top">114.16dip</dimen>
@@ -190,9 +177,7 @@
     <dimen name="sec_multiparty_call_photo_size">40.0dip</dimen>
     <dimen name="sec_primary_call_name_maxwidth_with_switch_video_button">282.0dip</dimen>
     <dimen name="sec_smart_call_number_magin_top">84.0dip</dimen>
-    <dimen name="sec_video_incall_button_qcif_width_onehand">302.0dip</dimen>
     <dimen name="sec_video_qcif_view_margin_top">24.0dip</dimen>
-    <dimen name="sec_videocall_buttons_padding_side_right_onehand_qcif">100.0dip</dimen>
     <dimen name="sec_videocall_dialpad_button_height">65.5dip</dimen>
     <dimen name="sec_videocall_dialpad_button_width">121.0dip</dimen>
     <dimen name="sec_videocall_dialpad_keys_height">262.0dip</dimen>

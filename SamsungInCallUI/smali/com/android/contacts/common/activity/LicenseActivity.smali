@@ -24,11 +24,11 @@
 
     invoke-super {p0, p1}, Landroid/app/Activity;->onCreate(Landroid/os/Bundle;)V
 
-    const v0, 0x7f040072
+    const v0, 0x7f040075
 
     invoke-virtual {p0, v0}, Lcom/android/contacts/common/activity/LicenseActivity;->setContentView(I)V
 
-    const v0, 0x7f1001ba
+    const v0, 0x7f1001c1
 
     invoke-virtual {p0, v0}, Lcom/android/contacts/common/activity/LicenseActivity;->findViewById(I)Landroid/view/View;
 

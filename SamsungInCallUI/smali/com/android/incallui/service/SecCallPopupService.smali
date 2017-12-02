@@ -1000,7 +1000,49 @@
     if-nez v0, :cond_2
 
     :cond_0
-    const-string v0, "animateForShowIfNecessary: skip"
+    new-instance v0, Ljava/lang/StringBuilder;
+
+    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v1, "animateForShowIfNecessary: skip "
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    iget-boolean v1, p0, Lcom/android/incallui/service/SecCallPopupService;->mIsShowAnimationRunning:Z
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    const-string v1, " "
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    iget-boolean v1, p0, Lcom/android/incallui/service/SecCallPopupService;->mIsPopupShowing:Z
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    const-string v1, " "
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    iget-boolean v1, p0, Lcom/android/incallui/service/SecCallPopupService;->mIsViewInflated:Z
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
 
     invoke-static {p0, v0, v2}, Lcom/android/incallui/Log;->i(Ljava/lang/Object;Ljava/lang/String;Z)V
 
@@ -1175,7 +1217,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f0a00a7
+    const v2, 0x7f0a00a3
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getDimension(I)F
 
@@ -1195,7 +1237,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f0a0481
+    const v2, 0x7f0a048c
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getDimension(I)F
 
@@ -1786,13 +1828,13 @@
 
     move-result v0
 
-    if-eq v0, v2, :cond_4
+    if-eq v0, v2, :cond_5
 
     invoke-virtual {p0}, Lcom/android/incallui/service/SecCallPopupService;->isDuringCallAvailable()Z
 
     move-result v0
 
-    if-nez v0, :cond_4
+    if-nez v0, :cond_5
 
     iget-boolean v0, p0, Lcom/android/incallui/service/SecCallPopupService;->mIsFinishing:Z
 
@@ -1808,17 +1850,40 @@
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->removeMessages(I)V
 
-    invoke-virtual {p1}, Lcom/android/incallui/Call;->getState()I
+    const-string v0, "ims_support_rtt"
+
+    invoke-static {v0}, Lcom/android/incallui/InCallUIFeature;->hasFeature(Ljava/lang/String;)Z
 
     move-result v0
 
-    const/4 v1, 0x3
+    if-eqz v0, :cond_4
 
-    if-ne v0, v1, :cond_2
+    invoke-static {}, Lcom/android/incallui/InCallPresenter;->getInstance()Lcom/android/incallui/InCallPresenter;
 
-    invoke-virtual {p0}, Lcom/android/incallui/service/SecCallPopupService;->showInCallUI()V
+    move-result-object v0
+
+    invoke-virtual {v0}, Lcom/android/incallui/InCallPresenter;->isRTTCall()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_4
+
+    invoke-static {}, Lcom/android/incallui/InCallUISystemDB;->isRTTOn()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_4
+
+    invoke-static {}, Lcom/android/incallui/InCallUISystemDB;->isRTTAutomaticModeOn()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_4
+
+    invoke-virtual {p0}, Lcom/android/incallui/service/SecCallPopupService;->showInCallUIForRtt()V
 
     :cond_2
+    :goto_1
     invoke-virtual {p0}, Lcom/android/incallui/service/SecCallPopupService;->stopSelf()V
 
     :cond_3
@@ -1843,7 +1908,20 @@
 
     move-result v0
 
-    if-eq v0, v2, :cond_5
+    const/4 v1, 0x3
+
+    if-ne v0, v1, :cond_2
+
+    invoke-virtual {p0}, Lcom/android/incallui/service/SecCallPopupService;->showInCallUI()V
+
+    goto :goto_1
+
+    :cond_5
+    invoke-virtual {p1}, Lcom/android/incallui/Call;->getState()I
+
+    move-result v0
+
+    if-eq v0, v2, :cond_6
 
     invoke-virtual {p1}, Lcom/android/incallui/Call;->getState()I
 
@@ -1851,9 +1929,9 @@
 
     const/4 v1, 0x5
 
-    if-ne v0, v1, :cond_6
+    if-ne v0, v1, :cond_7
 
-    :cond_5
+    :cond_6
     iget-object v0, p0, Lcom/android/incallui/service/SecCallPopupService;->mSecCallPopupContainer:Lcom/android/incallui/service/SecCallPopupContainer;
 
     if-eqz v0, :cond_0
@@ -1864,7 +1942,7 @@
 
     goto :goto_0
 
-    :cond_6
+    :cond_7
     invoke-static {}, Lcom/android/incallui/CallList;->getInstance()Lcom/android/incallui/CallList;
 
     move-result-object v0
@@ -2110,7 +2188,7 @@
 
     iget-object v0, p0, Lcom/android/incallui/service/SecCallPopupService;->mContext:Landroid/content/Context;
 
-    const v1, 0x7f0b001b
+    const v1, 0x7f0b001a
 
     invoke-virtual {v0, v1}, Landroid/content/Context;->setTheme(I)V
 
@@ -2415,7 +2493,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f0400b2
+    const v1, 0x7f0400b5
 
     invoke-virtual {v0, v1, p1}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;)Landroid/view/View;
 
@@ -2476,7 +2554,9 @@
 .end method
 
 .method protected onCustomCreate()V
-    .locals 1
+    .locals 2
+
+    const/4 v1, 0x1
 
     invoke-virtual {p0}, Lcom/android/incallui/service/SecCallPopupService;->getContext()Landroid/content/Context;
 
@@ -2486,14 +2566,26 @@
 
     move-result v0
 
-    if-eqz v0, :cond_0
+    if-eqz v0, :cond_1
 
-    const/4 v0, 0x1
-
-    invoke-super {p0, v0}, Lcom/android/incallui/service/HeadUpNotificationService;->onFocus(Z)V
+    invoke-super {p0, v1}, Lcom/android/incallui/service/HeadUpNotificationService;->onFocus(Z)V
 
     :cond_0
+    :goto_0
     return-void
+
+    :cond_1
+    const-string v0, "support_folder_hardkey"
+
+    invoke-static {v0}, Lcom/android/incallui/InCallUIFeature;->hasFeature(Ljava/lang/String;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    invoke-super {p0, v1}, Lcom/android/incallui/service/HeadUpNotificationService;->onFocus(Z)V
+
+    goto :goto_0
 .end method
 
 .method public onDestroy()V
@@ -3469,7 +3561,7 @@
     :cond_1
     sget-object v0, Lcom/android/incallui/InCallPresenter$InCallState;->INCOMING:Lcom/android/incallui/InCallPresenter$InCallState;
 
-    if-eq p2, v0, :cond_4
+    if-eq p2, v0, :cond_5
 
     iget-object v0, p0, Lcom/android/incallui/service/SecCallPopupService;->mHandler:Landroid/os/Handler;
 
@@ -3481,7 +3573,7 @@
 
     move-result v0
 
-    if-nez v0, :cond_4
+    if-nez v0, :cond_5
 
     iget-boolean v0, p0, Lcom/android/incallui/service/SecCallPopupService;->mIsFinishing:Z
 
@@ -3489,17 +3581,40 @@
 
     iput-boolean v1, p0, Lcom/android/incallui/service/SecCallPopupService;->mIsFinishing:Z
 
-    invoke-virtual {v3}, Lcom/android/incallui/Call;->getState()I
+    const-string v0, "ims_support_rtt"
+
+    invoke-static {v0}, Lcom/android/incallui/InCallUIFeature;->hasFeature(Ljava/lang/String;)Z
 
     move-result v0
 
-    const/4 v1, 0x3
+    if-eqz v0, :cond_4
 
-    if-ne v0, v1, :cond_2
+    invoke-static {}, Lcom/android/incallui/InCallPresenter;->getInstance()Lcom/android/incallui/InCallPresenter;
 
-    invoke-virtual {p0}, Lcom/android/incallui/service/SecCallPopupService;->showInCallUI()V
+    move-result-object v0
+
+    invoke-virtual {v0}, Lcom/android/incallui/InCallPresenter;->isRTTCall()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_4
+
+    invoke-static {}, Lcom/android/incallui/InCallUISystemDB;->isRTTOn()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_4
+
+    invoke-static {}, Lcom/android/incallui/InCallUISystemDB;->isRTTAutomaticModeOn()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_4
+
+    invoke-virtual {p0}, Lcom/android/incallui/service/SecCallPopupService;->showInCallUIForRtt()V
 
     :cond_2
+    :goto_1
     invoke-virtual {p0}, Lcom/android/incallui/service/SecCallPopupService;->stopSelf()V
 
     :cond_3
@@ -3510,6 +3625,19 @@
     goto :goto_0
 
     :cond_4
+    invoke-virtual {v3}, Lcom/android/incallui/Call;->getState()I
+
+    move-result v0
+
+    const/4 v1, 0x3
+
+    if-ne v0, v1, :cond_2
+
+    invoke-virtual {p0}, Lcom/android/incallui/service/SecCallPopupService;->showInCallUI()V
+
+    goto :goto_1
+
+    :cond_5
     iput-object v3, p0, Lcom/android/incallui/service/SecCallPopupService;->mPrimaryCall:Lcom/android/incallui/Call;
 
     invoke-virtual {v3}, Lcom/android/incallui/Call;->getState()I
@@ -3518,12 +3646,12 @@
 
     const/16 v4, 0xa
 
-    if-ne v0, v4, :cond_10
+    if-ne v0, v4, :cond_11
 
     move v0, v1
 
-    :goto_1
-    if-nez v0, :cond_6
+    :goto_2
+    if-nez v0, :cond_7
 
     new-instance v4, Ljava/lang/StringBuilder;
 
@@ -3551,24 +3679,24 @@
 
     move-result v0
 
-    if-eqz v0, :cond_5
+    if-eqz v0, :cond_6
 
     iget-object v0, p0, Lcom/android/incallui/service/SecCallPopupService;->mHandler:Landroid/os/Handler;
 
     invoke-virtual {v0, v7}, Landroid/os/Handler;->removeMessages(I)V
 
-    :cond_5
+    :cond_6
     iget-object v4, p0, Lcom/android/incallui/service/SecCallPopupService;->mContext:Landroid/content/Context;
 
     invoke-virtual {v3}, Lcom/android/incallui/Call;->getState()I
 
     move-result v0
 
-    if-ne v0, v6, :cond_11
+    if-ne v0, v6, :cond_12
 
     move v0, v1
 
-    :goto_2
+    :goto_3
     invoke-static {v4, v3, v0}, Lcom/android/incallui/ContactInfoCache;->buildCacheEntryFromCall(Landroid/content/Context;Lcom/android/incallui/Call;Z)Lcom/android/incallui/ContactInfoCache$ContactCacheEntry;
 
     move-result-object v0
@@ -3583,11 +3711,11 @@
 
     move-result v0
 
-    if-eqz v0, :cond_6
+    if-eqz v0, :cond_7
 
     iget-object v0, p0, Lcom/android/incallui/service/SecCallPopupService;->mContext:Landroid/content/Context;
 
-    if-eqz v0, :cond_6
+    if-eqz v0, :cond_7
 
     iget-object v0, p0, Lcom/android/incallui/service/SecCallPopupService;->mContext:Landroid/content/Context;
 
@@ -3597,10 +3725,10 @@
 
     invoke-static {v3, v0, v4, v5}, Lcom/android/incallui/service/EcidClient;->startEcidLookupQuery(Lcom/android/incallui/Call;Landroid/content/Context;Lcom/android/incallui/ContactInfoCache$ContactCacheEntry;Lcom/android/incallui/service/EcidClient$Listener;)V
 
-    :cond_6
+    :cond_7
     iget-object v0, p0, Lcom/android/incallui/service/SecCallPopupService;->mSecCallPopupContainer:Lcom/android/incallui/service/SecCallPopupContainer;
 
-    if-eqz v0, :cond_7
+    if-eqz v0, :cond_8
 
     iget-object v0, p0, Lcom/android/incallui/service/SecCallPopupService;->mSecCallPopupContainer:Lcom/android/incallui/service/SecCallPopupContainer;
 
@@ -3616,14 +3744,14 @@
 
     invoke-virtual {v0, p1, p2, p3, v3}, Lcom/android/incallui/service/SecCallPopupContainer;->onStateChange(Lcom/android/incallui/InCallPresenter$InCallState;Lcom/android/incallui/InCallPresenter$InCallState;Lcom/android/incallui/CallList;Lcom/android/incallui/Call;)V
 
-    :cond_7
+    :cond_8
     const-string v0, "ims_callplus"
 
     invoke-static {v0}, Lcom/android/incallui/InCallUIFeature;->hasFeature(Ljava/lang/String;)Z
 
     move-result v0
 
-    if-nez v0, :cond_8
+    if-nez v0, :cond_9
 
     const-string v0, "ims_crane"
 
@@ -3631,25 +3759,25 @@
 
     move-result v0
 
-    if-eqz v0, :cond_9
-
-    :cond_8
-    invoke-direct {p0}, Lcom/android/incallui/service/SecCallPopupService;->updateCallPlusInfo()V
+    if-eqz v0, :cond_a
 
     :cond_9
+    invoke-direct {p0}, Lcom/android/incallui/service/SecCallPopupService;->updateCallPlusInfo()V
+
+    :cond_a
     sget-object v0, Lcom/android/incallui/InCallPresenter$InCallState;->INCOMING:Lcom/android/incallui/InCallPresenter$InCallState;
 
-    if-ne p1, v0, :cond_a
+    if-ne p1, v0, :cond_b
 
     sget-object v0, Lcom/android/incallui/InCallPresenter$InCallState;->INCALL:Lcom/android/incallui/InCallPresenter$InCallState;
 
-    if-ne p2, v0, :cond_a
+    if-ne p2, v0, :cond_b
 
     iget-object v0, p0, Lcom/android/incallui/service/SecCallPopupService;->mSecCallPopupWaitingCall:Lcom/android/incallui/service/SecCallPopupWaitingCall;
 
     invoke-virtual {v0}, Lcom/android/incallui/service/SecCallPopupWaitingCall;->dismissWaitingCallPopup()V
 
-    :cond_a
+    :cond_b
     invoke-virtual {v3}, Lcom/android/incallui/Call;->getState()I
 
     move-result v0
@@ -3658,46 +3786,19 @@
 
     iget v0, p0, Lcom/android/incallui/service/SecCallPopupService;->mPrevState:I
 
-    if-eq v0, v8, :cond_b
+    if-eq v0, v8, :cond_c
 
     invoke-virtual {v3}, Lcom/android/incallui/Call;->getState()I
 
     move-result v0
 
-    if-ne v0, v8, :cond_b
+    if-ne v0, v8, :cond_c
 
     invoke-static {v1}, Lcom/android/incallui/util/SALogging;->getScreenId(I)Ljava/lang/String;
 
     move-result-object v0
 
-    const v4, 0x7f090492
-
-    invoke-static {v4}, Lcom/android/incallui/util/SALogging;->getString(I)Ljava/lang/String;
-
-    move-result-object v4
-
-    invoke-static {}, Lcom/android/incallui/util/SALogging;->getNetworkType()Ljava/lang/String;
-
-    move-result-object v5
-
-    invoke-static {v0, v4, v5}, Lcom/android/incallui/util/SALogging;->sendSAEventLog(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
-
-    :cond_b
-    iget v0, p0, Lcom/android/incallui/service/SecCallPopupService;->mPrevState:I
-
-    if-eq v0, v6, :cond_c
-
-    invoke-virtual {v3}, Lcom/android/incallui/Call;->getState()I
-
-    move-result v0
-
-    if-ne v0, v6, :cond_c
-
-    invoke-static {v1}, Lcom/android/incallui/util/SALogging;->getScreenId(I)Ljava/lang/String;
-
-    move-result-object v0
-
-    const v4, 0x7f09044e
+    const v4, 0x7f090497
 
     invoke-static {v4}, Lcom/android/incallui/util/SALogging;->getString(I)Ljava/lang/String;
 
@@ -3710,9 +3811,7 @@
     invoke-static {v0, v4, v5}, Lcom/android/incallui/util/SALogging;->sendSAEventLog(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
 
     :cond_c
-    invoke-virtual {v3}, Lcom/android/incallui/Call;->getState()I
-
-    move-result v0
+    iget v0, p0, Lcom/android/incallui/service/SecCallPopupService;->mPrevState:I
 
     if-eq v0, v6, :cond_d
 
@@ -3720,11 +3819,40 @@
 
     move-result v0
 
-    const/4 v4, 0x5
+    if-ne v0, v6, :cond_d
 
-    if-ne v0, v4, :cond_e
+    invoke-static {v1}, Lcom/android/incallui/util/SALogging;->getScreenId(I)Ljava/lang/String;
+
+    move-result-object v0
+
+    const v4, 0x7f090453
+
+    invoke-static {v4}, Lcom/android/incallui/util/SALogging;->getString(I)Ljava/lang/String;
+
+    move-result-object v4
+
+    invoke-static {}, Lcom/android/incallui/util/SALogging;->getNetworkType()Ljava/lang/String;
+
+    move-result-object v5
+
+    invoke-static {v0, v4, v5}, Lcom/android/incallui/util/SALogging;->sendSAEventLog(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
 
     :cond_d
+    invoke-virtual {v3}, Lcom/android/incallui/Call;->getState()I
+
+    move-result v0
+
+    if-eq v0, v6, :cond_e
+
+    invoke-virtual {v3}, Lcom/android/incallui/Call;->getState()I
+
+    move-result v0
+
+    const/4 v4, 0x5
+
+    if-ne v0, v4, :cond_f
+
+    :cond_e
     invoke-static {}, Lcom/android/incallui/CallList;->getInstance()Lcom/android/incallui/CallList;
 
     move-result-object v0
@@ -3735,7 +3863,7 @@
 
     invoke-virtual {v0, v4, p0}, Lcom/android/incallui/CallList;->addCallUpdateListener(Ljava/lang/String;Lcom/android/incallui/CallList$CallUpdateListener;)V
 
-    :cond_e
+    :cond_f
     invoke-virtual {v3}, Lcom/android/incallui/Call;->getState()I
 
     move-result v0
@@ -3748,7 +3876,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_f
+    if-eqz v0, :cond_10
 
     new-instance v0, Ljava/lang/StringBuilder;
 
@@ -3778,7 +3906,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_f
+    if-eqz v0, :cond_10
 
     invoke-virtual {v3}, Lcom/android/incallui/Call;->getState()I
 
@@ -3786,7 +3914,7 @@
 
     const/16 v3, 0xa
 
-    if-ne v0, v3, :cond_f
+    if-ne v0, v3, :cond_10
 
     invoke-static {}, Lcom/android/incallui/CallList;->getInstance()Lcom/android/incallui/CallList;
 
@@ -3796,13 +3924,13 @@
 
     move-result v0
 
-    if-nez v0, :cond_f
+    if-nez v0, :cond_10
 
     invoke-static {}, Lcom/android/incallui/operator/kor/SmartAnswerUtils;->stopGuidance()V
 
     invoke-static {v2}, Lcom/android/incallui/operator/kor/SmartAnswerUtils;->setSmartAnswered(Z)V
 
-    :cond_f
+    :cond_10
     invoke-virtual {p3}, Lcom/android/incallui/CallList;->hasLiveCallToDisplay()Z
 
     move-result v0
@@ -3821,15 +3949,15 @@
 
     goto/16 :goto_0
 
-    :cond_10
-    move v0, v2
-
-    goto/16 :goto_1
-
     :cond_11
     move v0, v2
 
     goto/16 :goto_2
+
+    :cond_12
+    move v0, v2
+
+    goto/16 :goto_3
 .end method
 
 .method public onSupportedAudioMode(I)V
@@ -4129,6 +4257,41 @@
     return-void
 
     :cond_0
+    const-string v0, "ims_support_rtt"
+
+    invoke-static {v0}, Lcom/android/incallui/InCallUIFeature;->hasFeature(Ljava/lang/String;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_1
+
+    invoke-static {}, Lcom/android/incallui/InCallPresenter;->getInstance()Lcom/android/incallui/InCallPresenter;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lcom/android/incallui/InCallPresenter;->isRTTCall()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_1
+
+    invoke-static {}, Lcom/android/incallui/InCallUISystemDB;->isRTTOn()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_1
+
+    invoke-static {}, Lcom/android/incallui/InCallUISystemDB;->isRTTAutomaticModeOn()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_1
+
+    invoke-virtual {p0}, Lcom/android/incallui/service/SecCallPopupService;->showInCallUIForRtt()V
+
+    goto :goto_0
+
+    :cond_1
     invoke-static {}, Lcom/android/incallui/InCallPresenter;->getInstance()Lcom/android/incallui/InCallPresenter;
 
     move-result-object v0
@@ -4143,7 +4306,7 @@
 
     move-result v1
 
-    if-eqz v1, :cond_1
+    if-eqz v1, :cond_2
 
     new-instance v1, Landroid/content/Intent;
 
@@ -4157,8 +4320,8 @@
 
     invoke-virtual {v2, v1}, Landroid/content/Context;->sendBroadcast(Landroid/content/Intent;)V
 
-    :cond_1
-    if-eqz v0, :cond_2
+    :cond_2
+    if-eqz v0, :cond_3
 
     const-string v1, "fromPopup"
 
@@ -4173,7 +4336,7 @@
 
     move-result v1
 
-    if-eqz v1, :cond_3
+    if-eqz v1, :cond_4
 
     const-string v1, "startActivity with Bundle"
 
@@ -4193,7 +4356,7 @@
     :try_end_0
     .catch Landroid/content/ActivityNotFoundException; {:try_start_0 .. :try_end_0} :catch_0
 
-    :cond_2
+    :cond_3
     :goto_1
     const-string v0, "SecCallPopupService"
 
@@ -4203,7 +4366,121 @@
 
     goto :goto_0
 
-    :cond_3
+    :cond_4
+    :try_start_1
+    invoke-virtual {p0, v0}, Lcom/android/incallui/service/SecCallPopupService;->startActivity(Landroid/content/Intent;)V
+    :try_end_1
+    .catch Landroid/content/ActivityNotFoundException; {:try_start_1 .. :try_end_1} :catch_0
+
+    goto :goto_1
+
+    :catch_0
+    move-exception v0
+
+    new-instance v1, Ljava/lang/StringBuilder;
+
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v2, "startActivity() failed: "
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-static {p0, v0}, Lcom/android/incallui/Log;->e(Ljava/lang/Object;Ljava/lang/String;)V
+
+    goto :goto_1
+.end method
+
+.method showInCallUIForRtt()V
+    .locals 4
+
+    const/4 v1, 0x0
+
+    const/4 v3, 0x1
+
+    const-string v0, "ims_support_rtt"
+
+    invoke-static {v0}, Lcom/android/incallui/InCallUIFeature;->hasFeature(Ljava/lang/String;)Z
+
+    move-result v0
+
+    if-nez v0, :cond_0
+
+    :goto_0
+    return-void
+
+    :cond_0
+    invoke-static {}, Lcom/android/incallui/InCallPresenter;->getInstance()Lcom/android/incallui/InCallPresenter;
+
+    move-result-object v0
+
+    invoke-virtual {v0, v1, v1}, Lcom/android/incallui/InCallPresenter;->getInCallIntent(ZZ)Landroid/content/Intent;
+
+    move-result-object v0
+
+    if-eqz v0, :cond_1
+
+    const-string v1, "fromPopup"
+
+    invoke-virtual {v0, v1, v3}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Z)Landroid/content/Intent;
+
+    const-string v1, "fromPopupForAnswer"
+
+    invoke-virtual {v0, v1, v3}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Z)Landroid/content/Intent;
+
+    const-string v1, "SHOW_RTT_EXTRA"
+
+    invoke-virtual {v0, v1, v3}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Z)Landroid/content/Intent;
+
+    const-string v1, "SHOW_RTT_EXTRA : has been set"
+
+    invoke-static {p0, v1}, Lcom/android/incallui/Log;->d(Ljava/lang/Object;Ljava/lang/String;)V
+
+    :cond_1
+    :try_start_0
+    invoke-static {}, Lcom/android/incallui/util/DesktopModeManager;->isDesktopMode()Z
+
+    move-result v1
+
+    if-eqz v1, :cond_2
+
+    const-string v1, "startActivity with Bundle"
+
+    const/4 v2, 0x1
+
+    invoke-static {p0, v1, v2}, Lcom/android/incallui/Log;->i(Ljava/lang/Object;Ljava/lang/String;Z)V
+
+    invoke-static {}, Lcom/android/incallui/InCallPresenter;->getInstance()Lcom/android/incallui/InCallPresenter;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Lcom/android/incallui/InCallPresenter;->getInCallActivityOptions()Landroid/os/Bundle;
+
+    move-result-object v1
+
+    invoke-virtual {p0, v0, v1}, Lcom/android/incallui/service/SecCallPopupService;->startActivity(Landroid/content/Intent;Landroid/os/Bundle;)V
+    :try_end_0
+    .catch Landroid/content/ActivityNotFoundException; {:try_start_0 .. :try_end_0} :catch_0
+
+    :goto_1
+    const-string v0, "SecCallPopupService"
+
+    const-string v1, "showInCallUIForRtt"
+
+    invoke-static {v0, v1, v3}, Lcom/android/incallui/Log;->d(Ljava/lang/String;Ljava/lang/String;Z)V
+
+    goto :goto_0
+
+    :cond_2
     :try_start_1
     invoke-virtual {p0, v0}, Lcom/android/incallui/service/SecCallPopupService;->startActivity(Landroid/content/Intent;)V
     :try_end_1
@@ -4382,7 +4659,7 @@
 
     if-nez v0, :cond_1
 
-    const v0, 0x7f090263
+    const v0, 0x7f090266
 
     invoke-static {v0}, Lcom/android/incallui/util/InCallUtils;->displayToast(I)V
 

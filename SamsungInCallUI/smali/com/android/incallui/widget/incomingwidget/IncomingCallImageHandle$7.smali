@@ -71,7 +71,7 @@
 
     iget-object v0, p0, Lcom/android/incallui/widget/incomingwidget/IncomingCallImageHandle$7;->this$0:Lcom/android/incallui/widget/incomingwidget/IncomingCallImageHandle;
 
-    invoke-static {v0}, Lcom/android/incallui/widget/incomingwidget/IncomingCallImageHandle;->access$1700(Lcom/android/incallui/widget/incomingwidget/IncomingCallImageHandle;)Landroid/view/View;
+    invoke-static {v0}, Lcom/android/incallui/widget/incomingwidget/IncomingCallImageHandle;->access$1800(Lcom/android/incallui/widget/incomingwidget/IncomingCallImageHandle;)Landroid/view/View;
 
     move-result-object v0
 
@@ -79,7 +79,7 @@
 
     iget-object v0, p0, Lcom/android/incallui/widget/incomingwidget/IncomingCallImageHandle$7;->this$0:Lcom/android/incallui/widget/incomingwidget/IncomingCallImageHandle;
 
-    invoke-static {v0}, Lcom/android/incallui/widget/incomingwidget/IncomingCallImageHandle;->access$1700(Lcom/android/incallui/widget/incomingwidget/IncomingCallImageHandle;)Landroid/view/View;
+    invoke-static {v0}, Lcom/android/incallui/widget/incomingwidget/IncomingCallImageHandle;->access$1800(Lcom/android/incallui/widget/incomingwidget/IncomingCallImageHandle;)Landroid/view/View;
 
     move-result-object v0
 
@@ -87,7 +87,7 @@
 
     iget-object v0, p0, Lcom/android/incallui/widget/incomingwidget/IncomingCallImageHandle$7;->this$0:Lcom/android/incallui/widget/incomingwidget/IncomingCallImageHandle;
 
-    invoke-static {v0}, Lcom/android/incallui/widget/incomingwidget/IncomingCallImageHandle;->access$1800(Lcom/android/incallui/widget/incomingwidget/IncomingCallImageHandle;)Landroid/widget/ImageView;
+    invoke-static {v0}, Lcom/android/incallui/widget/incomingwidget/IncomingCallImageHandle;->access$1900(Lcom/android/incallui/widget/incomingwidget/IncomingCallImageHandle;)Landroid/widget/ImageView;
 
     move-result-object v0
 

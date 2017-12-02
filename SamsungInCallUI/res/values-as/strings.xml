@@ -2,7 +2,7 @@
 <resources>
     <string name="audio_mode_bluetooth">ব্লুটুথ</string>
     <string name="audio_mode_speaker">স্পিকাৰ</string>
-    <string name="calling_via_template">"%s ৰ যোগেদি ক'ল কৰি থকা হৈছে"</string>
+    <string name="calling_via_template">"%s-ৰ যোগেদি ক'ল কৰি থকা হৈছে"</string>
     <string name="card_title_call_ended">কল সমাপ্ত হৈছে</string>
     <string name="card_title_conf_call">কনফাৰেন্স কল</string>
     <string name="card_title_dialing">ডায়েল কৰি আছে</string>
@@ -106,6 +106,7 @@
     <string name="agif_decline_sticker_header">এটা ষ্টিকাৰৰ সৈতে অস্বীকাৰ কৰক</string>
     <string name="agif_decline_text_header">এটা পাঠৰ সৈতে অস্বীকাৰ কৰক</string>
     <string name="agif_decline_toast">ষ্টিকাৰ %s-লৈ প্ৰেৰণ হৈছে।</string>
+    <string name="agif_outgoing_bubble_tip">আপুনি কেনেকৈ অনুভৱ কৰে দেখুৱাবলৈ এটা ষ্টিকাৰ প্ৰেৰণ কৰক।</string>
     <string name="agif_pickers_add_tab_description">যোগ কৰক</string>
     <string name="agif_pickers_downloaded">ডাউনলোড হৈছে</string>
     <string name="agif_pickers_item_usage_hints_description">চয়ন কৰিবলৈ দুবাৰ টিপক</string>
@@ -121,10 +122,12 @@
     <string name="agif_pickers_tab_select_description">চয়নিত</string>
     <string name="agif_pickers_title">এটা ষ্টিকাৰৰ সৈতে আৰম্ভ কৰক</string>
     <string name="agif_pickers_title_top_stickers">শীৰ্ষ ষ্টিকাৰসমূহ</string>
+    <string name="agif_random_send_message">এই ষ্টিকাৰ প্ৰেৰণ কৰিবলৈ ইয়াত টিপক।</string>
     <string name="agif_read_permission_description">AGIF সমল পঢ়িবলৈ ফোনক অনুমতি দিয়ে।</string>
     <string name="agif_read_permission_label">AGIF সমল পঢ়ক</string>
     <string name="agif_receive_no_id">ষ্টিকাৰ দেখুৱাব নোৱাৰি। কলৰ পিছত %s আপডেট কৰক।</string>
     <string name="agif_receive_no_id_upsupport_update">"ষ্টিকাৰ দেখুৱাব নোৱাৰি। পৰৱৰ্তী ছিষ্টেম আপডেটৰ পিছত অধিক ষ্টিকাৰ উপলব্ধ হ'ব।"</string>
+    <string name="agif_receive_toast">%s-ৰ পৰা ষ্টিকাৰ।</string>
     <string name="agif_sent_fail_message">এনিমেট কৰা GIF প্ৰেৰণ কৰিব নোৱাৰে। পিছত পুনঃচেষ্টা কৰক।</string>
     <string name="agif_sent_toast">ষ্টিকাৰ প্ৰেৰণ হৈছে।</string>
     <string name="agif_write_permission_description">AGIF সমল সংশোধন কৰিবলৈ ফোনক অনুমতি দিয়ে।</string>
@@ -157,7 +160,7 @@
     <string name="call_incoming_voice_call2_tts">এটা কলৰ উত্তৰ দিবলৈ কলৰ উত্তৰ দিয়ক বুটাম টিপক৷</string>
     <string name="call_incoming_voice_call3">এটা কল অস্বীকাৰ কৰিবলৈ %s টিপক।</string>
     <string name="call_incoming_voice_call3_tts">এটা কল নাকচ কৰিবলৈ কলৰ নাকচ কৰক বুটাম টিপক৷</string>
-    <string name="call_incoming_voice_call_for_kk_1">কলৰ উত্তৰ দিবলৈ বাঁওফালৰ পৰা সোঁফাললৈ %s ঘহাওক৷</string>
+    <string name="call_incoming_voice_call_for_kk_1">কলৰ উত্তৰ দিবলৈ বাঁওফালৰ পৰা সোঁফাললৈ %s ঘহাঁওক৷</string>
     <string name="call_incoming_voice_call_for_kk_1_tts">এটা কলৰ উত্তৰ দিবলৈ উত্তৰ বুটামটো বাঁওৰ পৰা সোঁ দিশলৈ ঘঁহাওক৷</string>
     <string name="call_incoming_voice_call_for_kk_2">এটা কল অস্বীকাৰ কৰিবলৈ সোঁফালৰ পৰা বাঁওফাললৈ %s ঘহাঁওক।</string>
     <string name="call_incoming_voice_call_for_kk_2_tts">এটা কল নাকচ কৰিবলৈ নাকচ বুটামটো সোঁৰ পৰা বাঁও দিশলৈ ঘঁহাওক৷</string>
@@ -385,7 +388,7 @@
     <string name="kor_psvt_session_403_cause2065_single">"মাত বা ভিডিঅ' কলসমূহ কৰিবলৈ অক্ষম৷ যদি আপোনাৰ ডিভাইচ পুনৰাৰম্ভ কৰাৰ পাছত সমস্যাটো চলি থাকে, গ্ৰাহক সেৱা কেন্দ্ৰৰ (%s) সৈতে যোগাযোগ কৰক৷"</string>
     <string name="kor_psvt_session_403_cause2065_vzw">কলসমূহ কৰিবলৈ অক্ষম৷ সাময়িকভাৱে নেটৱৰ্ক ত্ৰুটি সংঘটিত হৈছে৷ ছেটিংছত 3G/4G ডাটা অক্ষম কৰক, ইয়াৰ পিছত ইয়াক সক্ষম কৰক আৰু পুনৰাই চেষ্টা কৰক৷</string>
     <string name="kor_psvt_session_403_cause4021">"গ্ৰুপ কলিংৰ বাবে এটা সেৱা প্লেনৰ গ্ৰাহকভুক্ত হ'ব লাগিব৷ গ্ৰাহকভুক্তিৰ বাবে গ্ৰাহক কেন্দ্ৰৰ সৈতে যোগাযোগ কৰক৷"</string>
-    <string name="kor_psvt_session_403_cause4021_single">আপোনাৰ ডিভাইচ পঞ্জীয়ন হোৱা নাই। আপোনাৰ ডিভাইচ অফ কৰক, তাৰপিছত পুনৰ অন কৰক। যদি এই মেচেজটো পুনৰ দৃশ্যমান হয়, গ্ৰাহক সেৱালৈ যোগাযোগ কৰক(%s)।</string>
+    <string name="kor_psvt_session_403_cause4021_single">আপোনাৰ ডিভাইচ পঞ্জীয়ন হোৱা নাই। আপোনাৰ ডিভাইচ অফ কৰক, তাৰপিছত পুনৰ অন কৰক। যদি এই মেচেজটো পুনৰ দৃশ্যমান হয়, গ্ৰাহক সেৱালৈ যোগাযোগ কৰক (%s)।</string>
     <string name="kor_psvt_session_403_cause4053">আউটগয়িং কল কৰিবৰ বাবে নেটৱৰ্ক উপলব্ধ নহয় বা নম্বৰ অৱৰোধ কৰা আছে৷</string>
     <string name="kor_psvt_session_403_cause4053_single">কলসমূহ কৰিবলৈ অক্ষম। গ্ৰাহক কেন্দ্ৰলৈ যোগাযোগ কৰক (%s)।</string>
     <string name="kor_psvt_session_403_divert_auto_lgt_uicc">"ভিডিঅ' কলসমূহ অস্থায়ীভাৱে উপলব্ধ নহয়৷ কলক মাত কললৈ সলনি কৰা হৈছে৷"</string>
@@ -424,15 +427,15 @@
     <string name="kor_psvt_session_499_divert_auto">"এই প্ৰাপ্তকৰ্তাৰ বাবে ভিডিঅ' কল উপলভ্য নহয়৷ মাত কললৈ সলনি কৰি আছে…"</string>
     <string name="kor_psvt_session_499_divert_auto_lgt_uicc">"ভিডিঅ' কলসমূহ অস্থায়ীভাৱে উপলব্ধ নহয়৷ কলক মাত কললৈ সলনি কৰা হৈছে৷"</string>
     <string name="kor_psvt_session_499_divert_lgt_uicc">"ভিডিঅ' কল অস্থায়ীভাৱে উপলব্ধ নহয়৷ কলটোক এটা মাত কললৈ সলনি কৰা হ'ব৷"</string>
-    <string name="kor_psvt_session_500">"ভিডিঅ' কল উপলভ্য নহয়. পিছত চেষ্টা কৰক"</string>
+    <string name="kor_psvt_session_500">"ভিডিঅ' কল উপলভ্য নহয়. পিছত চেষ্টা কৰক৷"</string>
     <string name="kor_psvt_session_500_divert_auto_lgt_uicc">"ভিডিঅ' কলসমূহ অস্থায়ীভাৱে উপলব্ধ নহয়৷ কলক মাত কললৈ সলনি কৰা হৈছে৷"</string>
     <string name="kor_psvt_session_500_divert_lgt_uicc">"ভিডিঅ' কল অস্থায়ীভাৱে উপলব্ধ নহয়৷ কলটোক এটা মাত কললৈ সলনি কৰা হ'ব৷"</string>
     <string name="kor_psvt_session_500_ktt">"ভিডিঅ' কলসমূহ উপলভ্য নহয়৷ মাত কললৈ সলনি কৰি আছে…"</string>
-    <string name="kor_psvt_session_503">"ভিডিঅ' কল তৈয়াৰ কৰিবলৈ অক্ষম৷ পিছত চেষ্টা কৰক"</string>
+    <string name="kor_psvt_session_503">"ভিডিঅ' কল তৈয়াৰ কৰিবলৈ অক্ষম৷ পিছত চেষ্টা কৰক৷"</string>
     <string name="kor_psvt_session_503_divert_auto_lgt_uicc">"ভিডিঅ' কলসমূহ অস্থায়ীভাৱে উপলব্ধ নহয়৷ কলক মাত কললৈ সলনি কৰা হৈছে৷"</string>
     <string name="kor_psvt_session_503_divert_lgt_uicc">"ভিডিঅ' কল অস্থায়ীভাৱে উপলব্ধ নহয়৷ কলটোক এটা মাত কললৈ সলনি কৰা হ'ব৷"</string>
     <string name="kor_psvt_session_503_ktt">"ভিডিঅ' কলসমূহ উপলভ্য নহয়৷ মাত কললৈ সলনি কৰি আছে…"</string>
-    <string name="kor_psvt_session_504">"ভিডিঅ' কল উপলভ্য নহয়. পিছত চেষ্টা কৰক"</string>
+    <string name="kor_psvt_session_504">"ভিডিঅ' কল উপলভ্য নহয়. পিছত চেষ্টা কৰক৷"</string>
     <string name="kor_psvt_session_504_divert_auto_lgt_uicc">"ভিডিঅ' কলসমূহ অস্থায়ীভাৱে উপলব্ধ নহয়৷ কলক মাত কললৈ সলনি কৰা হৈছে৷"</string>
     <string name="kor_psvt_session_504_divert_lgt_uicc">"ভিডিঅ' কল অস্থায়ীভাৱে উপলব্ধ নহয়৷ কলটোক এটা মাত কললৈ সলনি কৰা হ'ব৷"</string>
     <string name="kor_psvt_session_504_ktt">"ভিডিঅ' কলসমূহ উপলভ্য নহয়৷ মাত কললৈ সলনি কৰি আছে…"</string>
@@ -454,7 +457,7 @@
     <string name="kor_volte_session_403_cause2065_single">"মাত বা ভিডিঅ' কলসমূহ কৰিবলৈ অক্ষম৷ যদি আপোনাৰ ডিভাইচ পুনৰাৰম্ভ কৰাৰ পাছত সমস্যাটো চলি থাকে, গ্ৰাহক সেৱা কেন্দ্ৰৰ (%s) সৈতে যোগাযোগ কৰক৷"</string>
     <string name="kor_volte_session_403_cause2065_vzw">কলসমূহ কৰিবলৈ অক্ষম৷ সাময়িকভাৱে নেটৱৰ্ক ত্ৰুটি সংঘটিত হৈছে৷ ছেটিংছত 3G/4G ডাটা অক্ষম কৰক, ইয়াৰ পিছত ইয়াক সক্ষম কৰক আৰু পুনৰাই চেষ্টা কৰক৷</string>
     <string name="kor_volte_session_403_cause4021">"গ্ৰুপ কলিংৰ বাবে এটা সেৱা প্লেনৰ গ্ৰাহকভুক্ত হ'ব লাগিব৷ গ্ৰাহকভুক্তিৰ বাবে গ্ৰাহক কেন্দ্ৰৰ সৈতে যোগাযোগ কৰক৷"</string>
-    <string name="kor_volte_session_403_cause4021_single">আপোনাৰ ডিভাইচ পঞ্জীয়ন হোৱা নাই। আপোনাৰ ডিভাইচ অফ কৰক, তাৰপিছত পুনৰ অন কৰক। যদি এই মেচেজটো পুনৰ দৃশ্যমান হয়, গ্ৰাহক সেৱালৈ যোগাযোগ কৰক(%s)।</string>
+    <string name="kor_volte_session_403_cause4021_single">আপোনাৰ ডিভাইচ পঞ্জীয়ন হোৱা নাই। আপোনাৰ ডিভাইচ অফ কৰক, তাৰপিছত পুনৰ অন কৰক। যদি এই মেচেজটো পুনৰ দৃশ্যমান হয়, গ্ৰাহক সেৱালৈ যোগাযোগ কৰক (%s)।</string>
     <string name="kor_volte_session_403_cause4053">আউটগয়িং কল কৰিবৰ বাবে নেটৱৰ্ক উপলব্ধ নহয় বা নম্বৰ অৱৰোধ কৰা আছে৷</string>
     <string name="kor_volte_session_403_cause4053_single">কলসমূহ কৰিবলৈ অক্ষম। গ্ৰাহক কেন্দ্ৰলৈ যোগাযোগ কৰক (%s)।</string>
     <string name="kor_volte_session_403_ktt">"HD মাত কলসমূহ উপলভ্য নহয়৷ এই কলটো স্বাভাৱিক গুণমানলৈ সলনি কৰা হ'ব৷"</string>
@@ -512,7 +515,7 @@ IVR কল চেণ্টাৰ মেনুয়ে Dianhuabang নামৰ এ
     <string name="message_greeting">অভিবাদন</string>
     <string name="modify_to_video_start">"ভিডিঅ' কললৈ সলনি কৰিবলৈ অনুৰোধ কৰি আছে…"</string>
     <string name="modify_to_voice_start">মাত কললৈ সলনি কৰি আছে…</string>
-    <string name="msg_for_video_show_never_again">"কিছুমান ফাইল সজ্জা সমৰ্থিত নহয়৷ কেৱল সমৰ্থিত ফাইল গেলেৰীত দেখুওৱা হ'ব"</string>
+    <string name="msg_for_video_show_never_again">"কিছুমান ফাইল সজ্জা সমৰ্থিত নহয়৷ কেৱল সমৰ্থিত ফাইল গেলেৰীত দেখুওৱা হ'ব।"</string>
     <string name="mt_dialog_progress">"আপোনাৰ SMS ক'ড স্বয়ংক্ৰিয়ভাৱে সত্যাপন হৈ আছে…"</string>
     <string name="mt_vt_not_possible">"%s-এ এই সময়ত ভিডিঅ' কল প্ৰাপ্ত কৰিব নোৱাৰে। আপোনাক এতিয়া এটা মাত কলৰ যোগেদি সংযোগ কৰা হ'ব।"</string>
     <string name="nameLabelsGroup">নাম</string>
@@ -743,7 +746,7 @@ IVR কল চেণ্টাৰ মেনুয়ে Dianhuabang নামৰ এ
     <string name="select_your_country">আপোনাৰ দেশ চয়ন কৰক</string>
     <string name="send_file_via_filetransfer">ফাইল স্থানান্তৰ সৈ ফাইল ভাগ বতৰা কৰক</string>
     <string name="send_msg">মেচেজ প্ৰেৰণ কৰক</string>
-    <string name="server_error_try_later">চাৰ্ভাৰ ত্ৰুটি ঘটিছে৷ পিছত চেষ্টা কৰক</string>
+    <string name="server_error_try_later">চাৰ্ভাৰ ত্ৰুটি ঘটিছে৷ পিছত চেষ্টা কৰক।</string>
     <string name="settings">ছেটিংছ</string>
     <string name="settings_defalut_glance_reply">মই এতিয়া আপোনাৰ কলৰ উত্তৰ দিব নোৱাৰো৷ মই সোনকালেই আপোনাক যোগাযোগ কৰিম৷</string>
     <string name="settings_glance_reply">ক্ষিপ্ৰ প্ৰত্যুত্তৰ দিয়ক</string>
@@ -793,6 +796,7 @@ IVR কল চেণ্টাৰ মেনুয়ে Dianhuabang নামৰ এ
     <string name="sticker_delete_stickers">%d টা ষ্টিকাৰ বিলোপ কৰিবনে?</string>
     <string name="sticker_delete_this_sticker">এই ষ্টিকাৰটো বিলোপ কৰিবনে?</string>
     <string name="sticker_setting_edit_title">ষ্টিকাৰসমূহ চয়ন কৰক</string>
+    <string name="sticker_setting_edit_title_preload">ষ্টিকাৰসমূহ পুনঃক্ৰম কৰক</string>
     <string name="sticker_setting_main_title">মোৰ ষ্টিকাৰসমূহ</string>
     <string name="sticker_setting_menu_delete">বিলোপ কৰক</string>
     <string name="sticker_setting_menu_edit">সম্পাদনা কৰক</string>
@@ -805,6 +809,7 @@ IVR কল চেণ্টাৰ মেনুয়ে Dianhuabang নামৰ এ
     <string name="swipe_right_to_answer_call_with_video">"ভিডিঅ'ৰ সৈতে কলৰ উত্তৰ দিবলৈ সোঁফালে ঘহাঁওক।"</string>
     <string name="swipe_right_to_answer_call_without_video">"ভিডিঅ' নোহোৱাকৈ কলৰ উত্তৰ দিবলৈ সোঁফালে ঘহাঁওক।"</string>
     <string name="switch_rejected_by_mt">"ভিডিঅ' কললৈ সলনি কৰিবলৈ কৰা অনুৰোধক নাকচ কৰা হৈছে৷"</string>
+    <string name="switch_rejected_by_mt_att">Video unavailable for this call. Call connected as a voice call.</string>
     <string name="switch_to_video_call_failed">"ভিডিঅ' কললৈ চুইচ কৰিবলৈ কৰা অনুৰোধ বিফল হৈছে৷"</string>
     <string name="switch_to_video_call_failed_tmo">"ভিডিঅ' কললৈ সলনি কৰাৰ অনুৰোধ অস্বীকাৰ কৰিছে।"</string>
     <string name="switch_to_voice_call_failed">মাত কললৈ সলনি কৰিবলৈ কৰা অনুৰোধ বিফল হৈছে৷</string>
@@ -907,8 +912,8 @@ IVR কল চেণ্টাৰ মেনুয়ে Dianhuabang নামৰ এ
     <string name="video_saved">"ভিডিঅ'টো %s-লৈ সংৰক্ষণ কৰা হৈছে৷"</string>
     <string name="video_saved_by_memory_full">"পৰ্যাপ্ত ডিভাইচ সংগ্ৰহণ নাই৷ ভিডিঅ'টো %s-লৈ সংৰক্ষণ কৰা হৈছে৷"</string>
     <string name="voiceonly">কেৱল মাত</string>
-    <string name="waiting_call_dialog_Ending">%sৰ সৈতে কল সমাপ্ত কৰক</string>
-    <string name="waiting_call_dialog_Holding">"%sক হ'ল্ডত ৰাখক"</string>
+    <string name="waiting_call_dialog_Ending">%s-ৰ সৈতে কল সমাপ্ত কৰক</string>
+    <string name="waiting_call_dialog_Holding">"%s-ক হ'ল্ডত ৰাখক"</string>
     <string name="waiting_call_dialog_Merging">%s-ৰ সৈতে মাৰ্জ কৰক</string>
     <string name="waiting_call_dialog_Merging_not_possible">"ভিডিঅ' কলৰ বাবে কনফাৰেন্স কলিং উপলব্ধ নহয়"</string>
     <string name="waiting_call_dialog_dismiss_toast">%1$s-ৰ দ্বাৰা কল সমাপ্ত কৰা হৈছে৷ %2$s-ৰ সৈতে কল পুনৰ কৰি আছে…</string>
@@ -918,5 +923,5 @@ IVR কল চেণ্টাৰ মেনুয়ে Dianhuabang নামৰ এ
     <string name="yellow_pages">হালধীয়া পৃষ্ঠা</string>
     <string name="you_have_entered_incorrect_code">"আপুনি এটা অশুদ্ধ সত্যাপন ক'ড প্ৰৱিষ্ট কৰিছে৷ পুনৰ চেষ্টা কৰক৷"</string>
     <string name="you_have_reached_your_daily_sms_limit">আপুনি আপোনাৰ দৈনিক SMS সীমাত উপনিত হৈছে৷ %d ঘণ্টাত পুনৰ চেষ্টা কৰক</string>
-    <string name="you_have_reached_your_daliy_voice_limit">"আপুনি আপোনাৰ দৈনিক মাত সত্যাপন সীমাত উপনীত হ'ল। %d ঘন্টাত পুনৰ চেষ্টা কৰক"</string>
+    <string name="you_have_reached_your_daliy_voice_limit">"আপুনি আপোনাৰ দৈনিক ভইচ সত্যাপন সীমাত উপনীত হ'ল। %d ঘন্টাত পুনৰ চেষ্টা কৰক"</string>
 </resources>

@@ -54,6 +54,8 @@
 
 .field private static final DEVICE_CONFIG_CHANGED:Ljava/lang/String; = "com.samsung.nsds.action.DEVICE_CONFIG_CHANGED"
 
+.field private static final TAG:Ljava/lang/String; = "InCallApp"
+
 .field private static sMe:Lcom/android/incallui/InCallApp;
 
 
@@ -272,17 +274,17 @@
 .method public onCreate()V
     .locals 3
 
-    const/4 v2, 0x1
-
     const-string v0, "onCreate"
 
     invoke-static {v0}, Landroid/os/Trace;->beginSection(Ljava/lang/String;)V
 
     invoke-super {p0}, Landroid/app/Application;->onCreate()V
 
-    const-string v0, "perf - onCreate."
+    const-string v0, "InCallApp"
 
-    invoke-static {p0, v0, v2}, Lcom/android/incallui/Log;->d(Ljava/lang/Object;Ljava/lang/String;Z)V
+    const-string v1, "perf - onCreate."
+
+    invoke-static {v0, v1}, Lcom/android/incallui/log/InCallUILog;->out(Ljava/lang/String;Ljava/lang/String;)V
 
     invoke-virtual {p0}, Lcom/android/incallui/InCallApp;->setSAConfiguration()V
 
@@ -296,29 +298,31 @@
 
     invoke-virtual {p0, v0}, Lcom/android/incallui/InCallApp;->setAppVerionName(Ljava/lang/String;)V
 
-    new-instance v0, Ljava/lang/StringBuilder;
+    const-string v0, "InCallApp"
 
-    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
+    new-instance v1, Ljava/lang/StringBuilder;
 
-    const-string v1, "Version name : "
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    const-string v2, "Version name : "
 
-    move-result-object v0
-
-    invoke-virtual {p0}, Lcom/android/incallui/InCallApp;->getAppVerionName()Ljava/lang/String;
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v1
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {p0}, Lcom/android/incallui/InCallApp;->getAppVerionName()Ljava/lang/String;
 
-    move-result-object v0
+    move-result-object v2
 
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v0
+    move-result-object v1
 
-    invoke-static {p0, v0}, Lcom/android/incallui/Log;->i(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-static {v0, v1}, Lcom/android/incallui/log/InCallUILog;->out(Ljava/lang/String;Ljava/lang/String;)V
 
     invoke-virtual {p0}, Lcom/android/incallui/InCallApp;->getApplicationContext()Landroid/content/Context;
 
@@ -407,23 +411,15 @@
 
     invoke-static {}, Lcom/android/incallui/util/VisualCallCenter;->getInstance()Lcom/android/incallui/util/VisualCallCenter;
 
-    invoke-virtual {p0}, Lcom/android/incallui/InCallApp;->getApplicationContext()Landroid/content/Context;
-
     move-result-object v0
 
-    invoke-static {v0}, Lcom/android/incallui/util/VisualCallCenter;->VCC_init(Landroid/content/Context;)V
+    invoke-virtual {p0}, Lcom/android/incallui/InCallApp;->getApplicationContext()Landroid/content/Context;
+
+    move-result-object v1
+
+    invoke-virtual {v0, v1}, Lcom/android/incallui/util/VisualCallCenter;->VCC_init(Landroid/content/Context;)V
 
     :cond_5
-    const-string v0, "ro.debuggable"
-
-    const/4 v1, 0x0
-
-    invoke-static {v0, v1}, Landroid/os/SemSystemProperties;->getInt(Ljava/lang/String;I)I
-
-    move-result v0
-
-    if-ne v0, v2, :cond_6
-
     new-instance v0, Lcom/android/incallui/util/SecUncaughtExceptionHandler;
 
     invoke-virtual {p0}, Lcom/android/incallui/InCallApp;->getApplicationContext()Landroid/content/Context;
@@ -438,18 +434,17 @@
 
     invoke-static {v0}, Ljava/lang/Thread;->setDefaultUncaughtExceptionHandler(Ljava/lang/Thread$UncaughtExceptionHandler;)V
 
-    :cond_6
     const-string v0, "callprotect_enable"
 
     invoke-static {v0}, Lcom/android/incallui/InCallUIFeature;->hasFeature(Ljava/lang/String;)Z
 
     move-result v0
 
-    if-eqz v0, :cond_7
+    if-eqz v0, :cond_6
 
     invoke-static {}, Lcom/whitepages/nameid/f;->a()V
 
-    :cond_7
+    :cond_6
     invoke-virtual {p0}, Lcom/android/incallui/InCallApp;->getApplicationContext()Landroid/content/Context;
 
     move-result-object v0
@@ -466,6 +461,17 @@
 
     invoke-virtual {v0, v1}, Lcom/samsung/android/sdk/bixby/a;->a(Lcom/samsung/android/sdk/bixby/a$i;)V
 
+    const-string v0, "agif_call_service"
+
+    invoke-static {v0}, Lcom/android/incallui/InCallUIFeature;->hasFeature(Ljava/lang/String;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_7
+
+    invoke-static {}, Lcom/android/incallui/agif/AgifManager;->getInstance()Lcom/android/incallui/agif/AgifManager;
+
+    :cond_7
     invoke-static {}, Landroid/os/Trace;->endSection()V
 
     return-void

@@ -4,7 +4,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/android/incallui/agif/AgifFragment;->animateForPopupOn()V
+    value = Lcom/android/incallui/agif/AgifFragment;->createEndCallBackPopOnButtonAnim()Landroid/animation/AnimatorListenerAdapter;
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -98,16 +98,6 @@
     invoke-virtual {v0, v1}, Landroid/view/View;->setAlpha(F)V
 
     :cond_2
-    invoke-static {}, Lcom/android/incallui/UiAdapter;->getInstance()Lcom/android/incallui/UiAdapter;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Lcom/android/incallui/UiAdapter;->getCallButtonUi()Lcom/android/incallui/CallButtonUi;
-
-    move-result-object v0
-
-    if-eqz v0, :cond_3
-
     invoke-static {}, Lcom/android/incallui/CallList;->getInstance()Lcom/android/incallui/CallList;
 
     move-result-object v0
@@ -118,20 +108,18 @@
 
     if-nez v0, :cond_3
 
-    invoke-static {}, Lcom/android/incallui/UiAdapter;->getInstance()Lcom/android/incallui/UiAdapter;
+    iget-object v0, p0, Lcom/android/incallui/agif/AgifFragment$5;->this$0:Lcom/android/incallui/agif/AgifFragment;
+
+    invoke-static {v0}, Lcom/android/incallui/agif/AgifFragment;->access$200(Lcom/android/incallui/agif/AgifFragment;)Lcom/android/incallui/AgifPresenter;
 
     move-result-object v0
 
-    invoke-virtual {v0}, Lcom/android/incallui/UiAdapter;->getCallButtonUi()Lcom/android/incallui/CallButtonUi;
-
-    move-result-object v0
-
-    invoke-interface {v0, v2}, Lcom/android/incallui/CallButtonUi;->setVisible(Z)V
+    invoke-virtual {v0, v2}, Lcom/android/incallui/AgifPresenter;->setCallButtonUIVisible(Z)V
 
     :cond_3
     iget-object v0, p0, Lcom/android/incallui/agif/AgifFragment$5;->this$0:Lcom/android/incallui/agif/AgifFragment;
 
-    invoke-static {v0}, Lcom/android/incallui/agif/AgifFragment;->access$200(Lcom/android/incallui/agif/AgifFragment;)Landroid/animation/AnimatorSet;
+    invoke-static {v0}, Lcom/android/incallui/agif/AgifFragment;->access$300(Lcom/android/incallui/agif/AgifFragment;)Landroid/animation/AnimatorSet;
 
     move-result-object v0
 

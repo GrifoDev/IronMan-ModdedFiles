@@ -120,12 +120,13 @@
     <string name="account_phone">Түзмөк</string>
     <string name="acs">Үн чалуу</string>
     <string name="active_calls">Активдүү чалуу</string>
-    <string name="add_reminder">Эскер. кошуу</string>
+    <string name="add_reminder">Эскертүүнү кошуу</string>
     <string name="agif_button_close_description">Жабуу</string>
     <string name="agif_decline_message">Кечириңиз, мен азыр сүйлөй албайм.</string>
     <string name="agif_decline_sticker_header">Стикер менен четке кагуу</string>
     <string name="agif_decline_text_header">Текст менен четке кагуу</string>
     <string name="agif_decline_toast">Стикер %s жөнөтүлдү.</string>
+    <string name="agif_outgoing_bubble_tip">Сезимиңизди көрсөтүү үчүн стикерди жөнөтүңүз.</string>
     <string name="agif_pickers_add_tab_description">Кошуу</string>
     <string name="agif_pickers_downloaded">Жүктөлдү</string>
     <string name="agif_pickers_item_usage_hints_description">Тандоого эки эселенте басыңыз</string>
@@ -141,10 +142,12 @@
     <string name="agif_pickers_tab_select_description">Тандалган</string>
     <string name="agif_pickers_title">Стикер менен баштоо</string>
     <string name="agif_pickers_title_top_stickers">Эң башкы стикерлер</string>
+    <string name="agif_random_send_message">Бул стикерди жөнөтүү үчүн бул жерди басыңыз.</string>
     <string name="agif_read_permission_description">AGIF мазмунун окуу үчүн Телефонго уруксат бериңиз.</string>
     <string name="agif_read_permission_label">AGIF мазмунун окуңуз</string>
     <string name="agif_receive_no_id">Стикер көрсөтүлбөйт. Чалуудан кийин %s жаңыртыңыз.</string>
     <string name="agif_receive_no_id_upsupport_update">Стикер көрсөтүлбөйт. Дагы көбүрөөк стикерлер кийинки системалык жаңыртуудан кийин байкалат.</string>
+    <string name="agif_receive_toast">%s дегенден стикер.</string>
     <string name="agif_sent_fail_message">Анимацияланган GIF жүктөөгө болбойт. Кийинчерээк дагы аракеттениңиз.</string>
     <string name="agif_sent_toast">Чаптама жөнөтүлдү.</string>
     <string name="agif_write_permission_description">AGIF мазмунун өзгөртүү үчүн Телефонго уруксат бериңиз.</string>
@@ -813,6 +816,7 @@ IVR чалуу экран менюсу Dianhuabang деп аталган үчү�
     <string name="sticker_delete_stickers">%d стикерлери өчүрүлсүнбү?</string>
     <string name="sticker_delete_this_sticker">Бул стикер өчүрүлсүнбү?</string>
     <string name="sticker_setting_edit_title">Стикерлерди тандоо</string>
+    <string name="sticker_setting_edit_title_preload">Стикерлердин ордуларын кайра ирээттөө</string>
     <string name="sticker_setting_main_title">Стикерлерим</string>
     <string name="sticker_setting_menu_delete">Өчүрүү</string>
     <string name="sticker_setting_menu_edit">Оңдоо</string>
@@ -825,6 +829,7 @@ IVR чалуу экран менюсу Dianhuabang деп аталган үчү�
     <string name="swipe_right_to_answer_call_with_video">Чалууга видео менен жооп берүү үчүн, оңго жылдырыңыз.</string>
     <string name="swipe_right_to_answer_call_without_video">Чалууга видеосуз жооп берүү үчүн, оңго жылдырыңыз.</string>
     <string name="switch_rejected_by_mt">Видео чалууга которуу суроосу четке кагылды</string>
+    <string name="switch_rejected_by_mt_att">Video unavailable for this call. Call connected as a voice call.</string>
     <string name="switch_to_video_call_failed">Видео чалууга которуу суроосу кыйрады.</string>
     <string name="switch_to_video_call_failed_tmo">Видео чалууга которуу суроосу четке кагылды.</string>
     <string name="switch_to_voice_call_failed">Үн чалууга которуу суроосу кыйрады.</string>

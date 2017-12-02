@@ -178,12 +178,13 @@
     <string name="account_phone">Perangkat</string>
     <string name="acs">Panggilan suara</string>
     <string name="active_calls">Panggilan aktif</string>
-    <string name="add_reminder">Tbh pngingat</string>
+    <string name="add_reminder">Tambah pengingat</string>
     <string name="agif_button_close_description">Tutup</string>
     <string name="agif_decline_message">Maaf, tidak bisa bicara sekarang.</string>
     <string name="agif_decline_sticker_header">Tolak dengan stiker</string>
     <string name="agif_decline_text_header">Tolak dengan teks</string>
     <string name="agif_decline_toast">Stiker dikirim ke %s.</string>
+    <string name="agif_outgoing_bubble_tip">Kirim stiker untuk menunjukkan perasaan Anda.</string>
     <string name="agif_pickers_add_tab_description">Tambahkn</string>
     <string name="agif_pickers_downloaded">Diunduh</string>
     <string name="agif_pickers_item_usage_hints_description">Ketuk dua kali untuk memilih</string>
@@ -199,10 +200,12 @@
     <string name="agif_pickers_tab_select_description">Terpilih</string>
     <string name="agif_pickers_title">Mulai dengan stiker</string>
     <string name="agif_pickers_title_top_stickers">Stiker teratas</string>
+    <string name="agif_random_send_message">Ketuk di sini untuk mengirimkan stiker ini.</string>
     <string name="agif_read_permission_description">Izinkan Ponsel membaca konten AGIF.</string>
     <string name="agif_read_permission_label">Baca konten AGIF</string>
     <string name="agif_receive_no_id">Stiker tidak dapat ditampilkan. Perbarui %s setelah panggilan.</string>
     <string name="agif_receive_no_id_upsupport_update">Stiker tidak dapat ditampilkan. Stiker lainnya akan tersedia setelah pembaruan sistem berikutnya.</string>
+    <string name="agif_receive_toast">Stiker dari %s.</string>
     <string name="agif_sent_fail_message">Tidak dapat mengirim GIF animasi. Coba lagi nanti.</string>
     <string name="agif_sent_toast">Stiker dikirim.</string>
     <string name="agif_write_permission_description">Izinkan Ponsel memodifikasi konten AGIF.</string>
@@ -871,6 +874,7 @@ Satu Arah"</string>
     <string name="sticker_delete_stickers">Hapus %d stiker?</string>
     <string name="sticker_delete_this_sticker">Hapus stiker ini?</string>
     <string name="sticker_setting_edit_title">Pilih stiker</string>
+    <string name="sticker_setting_edit_title_preload">Susun ulang stiker</string>
     <string name="sticker_setting_main_title">Stiker saya</string>
     <string name="sticker_setting_menu_delete">Hapus</string>
     <string name="sticker_setting_menu_edit">Ubah</string>
@@ -883,6 +887,7 @@ Satu Arah"</string>
     <string name="swipe_right_to_answer_call_with_video">Usap ke kanan untuk menjawab panggilan dengan video.</string>
     <string name="swipe_right_to_answer_call_without_video">Usap ke kanan untuk menjawab panggilan tanpa video.</string>
     <string name="switch_rejected_by_mt">Permintaan untuk beralih ke panggilan video ditolak.</string>
+    <string name="switch_rejected_by_mt_att">Video unavailable for this call. Call connected as a voice call.</string>
     <string name="switch_to_video_call_failed">Permintaan untuk beralih ke panggilan video gagal.</string>
     <string name="switch_to_video_call_failed_tmo">Permintaan untuk beralih ke panggilan video ditolak.</string>
     <string name="switch_to_voice_call_failed">Permintaan untuk beralih ke panggilan suara gagal.</string>

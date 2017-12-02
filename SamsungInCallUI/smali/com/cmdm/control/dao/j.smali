@@ -97,7 +97,7 @@
 
     if-lez v1, :cond_0
 
-    const-string v1, "\u5173\u952e\u65f6\u523b\u6389\u94fe\u5b50\u4e86,\u7a0b\u5e8f\u733f\u6b63\u5728\u52aa\u529b\u4fee\u8865\u4e2d!"
+    const-string/jumbo v1, "\u5173\u952e\u65f6\u523b\u6389\u94fe\u5b50\u4e86,\u7a0b\u5e8f\u733f\u6b63\u5728\u52aa\u529b\u4fee\u8865\u4e2d!"
 
     invoke-virtual {v0, v1}, Lcom/cmdm/control/bean/ErrorXMLException;->setText(Ljava/lang/String;)V
 
@@ -105,7 +105,7 @@
     return-object v0
 
     :cond_0
-    const-string v1, "\u54a6\uff0c\u7f51\u7edc\u597d\u50cf\u4e0d\u7ed9\u529b\uff0c\u8bf7\u7a0d\u540e\u91cd\u8bd5~"
+    const-string/jumbo v1, "\u54a6\uff0c\u7f51\u7edc\u597d\u50cf\u4e0d\u7ed9\u529b\uff0c\u8bf7\u7a0d\u540e\u91cd\u8bd5~"
 
     invoke-virtual {v0, v1}, Lcom/cmdm/control/bean/ErrorXMLException;->setText(Ljava/lang/String;)V
 
@@ -1335,7 +1335,7 @@
 
     const/16 v2, 0xf
 
-    const-string v3, "\u8bf7\u6c42\u6210\u529f\uff0c\u4f46\u662f\u6ca1\u6709\u6570\u636e"
+    const-string/jumbo v3, "\u8bf7\u6c42\u6210\u529f\uff0c\u4f46\u662f\u6ca1\u6709\u6570\u636e"
 
     invoke-direct {v0, v2, v3, v1}, Lcom/cmdm/control/util/client/ResultUtil;-><init>(ILjava/lang/String;Ljava/lang/Object;)V
 
@@ -1426,7 +1426,7 @@
 
     const/16 v1, 0xf
 
-    const-string v2, "\u8bf7\u6c42\u6210\u529f\uff0c\u4f46\u662f\u6ca1\u6709\u6570\u636e"
+    const-string/jumbo v2, "\u8bf7\u6c42\u6210\u529f\uff0c\u4f46\u662f\u6ca1\u6709\u6570\u636e"
 
     invoke-direct {v0, v1, v2, v7}, Lcom/cmdm/control/util/client/ResultUtil;-><init>(ILjava/lang/String;Ljava/lang/Object;)V
 
@@ -1975,7 +1975,7 @@
 
     const-string v1, "CaiYinSDK"
 
-    const-string v2, "\u8bf7\u6c42\u670d\u52a1\u5668\u6570\u636e"
+    const-string/jumbo v2, "\u8bf7\u6c42\u670d\u52a1\u5668\u6570\u636e"
 
     invoke-static {v1, v2}, Lcom/cmdm/control/util/PrintLog;->i(Ljava/lang/String;Ljava/lang/String;)V
 
@@ -3108,7 +3108,7 @@
 
     const/16 v2, 0xc
 
-    const-string v3, "\u672c\u5730\u6587\u4ef6\u672a\u627e\u5230"
+    const-string/jumbo v3, "\u672c\u5730\u6587\u4ef6\u672a\u627e\u5230"
 
     const/4 v4, 0x0
 

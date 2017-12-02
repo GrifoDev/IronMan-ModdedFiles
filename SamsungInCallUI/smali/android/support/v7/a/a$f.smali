@@ -14,7 +14,7 @@
 
 
 # static fields
-.field public static final action0:I = 0x7f1001c7
+.field public static final action0:I = 0x7f1001ce
 
 .field public static final action_bar:I = 0x7f100063
 
@@ -32,7 +32,7 @@
 
 .field public static final action_context_bar:I = 0x7f100064
 
-.field public static final action_divider:I = 0x7f1001cb
+.field public static final action_divider:I = 0x7f1001d2
 
 .field public static final action_menu_divider:I = 0x7f100002
 
@@ -58,11 +58,11 @@
 
 .field public static final buttonPanel:I = 0x7f10004c
 
-.field public static final cancel_action:I = 0x7f1001c8
+.field public static final cancel_action:I = 0x7f1001cf
 
 .field public static final checkbox:I = 0x7f10005a
 
-.field public static final chronometer:I = 0x7f1001ce
+.field public static final chronometer:I = 0x7f1001d5
 
 .field public static final collapseActionView:I = 0x7f100038
 
@@ -82,7 +82,7 @@
 
 .field public static final end:I = 0x7f100033
 
-.field public static final end_padder:I = 0x7f1001d3
+.field public static final end_padder:I = 0x7f1001da
 
 .field public static final expand_activities_button:I = 0x7f100046
 
@@ -98,17 +98,17 @@
 
 .field public static final image:I = 0x7f100047
 
-.field public static final info:I = 0x7f1001d2
+.field public static final info:I = 0x7f1001d9
 
-.field public static final line1:I = 0x7f1001cc
+.field public static final line1:I = 0x7f1001d3
 
-.field public static final line3:I = 0x7f1001d0
+.field public static final line3:I = 0x7f1001d7
 
 .field public static final listMode:I = 0x7f10001b
 
 .field public static final list_item:I = 0x7f100049
 
-.field public static final media_actions:I = 0x7f1001ca
+.field public static final media_actions:I = 0x7f1001d1
 
 .field public static final middle:I = 0x7f100034
 
@@ -176,7 +176,7 @@
 
 .field public static final src_over:I = 0x7f10002a
 
-.field public static final status_bar_latest_event_content:I = 0x7f1001c9
+.field public static final status_bar_latest_event_content:I = 0x7f1001d0
 
 .field public static final submenuarrow:I = 0x7f10005d
 
@@ -184,13 +184,13 @@
 
 .field public static final tabMode:I = 0x7f10001d
 
-.field public static final text:I = 0x7f1001d1
+.field public static final text:I = 0x7f1001d8
 
-.field public static final text2:I = 0x7f1001cf
+.field public static final text2:I = 0x7f1001d6
 
 .field public static final textSpacerNoButtons:I = 0x7f100055
 
-.field public static final time:I = 0x7f1001cd
+.field public static final time:I = 0x7f1001d4
 
 .field public static final title:I = 0x7f10004b
 

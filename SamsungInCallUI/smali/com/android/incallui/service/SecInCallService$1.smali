@@ -184,11 +184,6 @@
 
     goto :goto_0
 
-    :pswitch_8
-    invoke-static {}, Lcom/android/incallui/operator/dcm/AnswerMemoUtils;->stopGuidance()V
-
-    goto :goto_0
-
     :pswitch_data_0
     .packed-switch 0x1
         :pswitch_1
@@ -199,6 +194,5 @@
         :pswitch_5
         :pswitch_6
         :pswitch_7
-        :pswitch_8
     .end packed-switch
 .end method

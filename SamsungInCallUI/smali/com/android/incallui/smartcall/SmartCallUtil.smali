@@ -327,7 +327,7 @@
 
     move-result-object v0
 
-    const v2, 0x7f09033a
+    const v2, 0x7f09033d
 
     invoke-virtual {v0, v2}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -432,7 +432,7 @@
 
     if-ne p0, v2, :cond_1
 
-    const v0, 0x7f090343
+    const v0, 0x7f090346
 
     invoke-virtual {v1, v0}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -447,7 +447,7 @@
 
     if-ne p0, v2, :cond_2
 
-    const v0, 0x7f090344
+    const v0, 0x7f090347
 
     invoke-virtual {v1, v0}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -468,7 +468,7 @@
 
     if-eqz v0, :cond_3
 
-    const v0, 0x7f090346
+    const v0, 0x7f090349
 
     invoke-virtual {v1, v0}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -477,7 +477,7 @@
     goto :goto_0
 
     :cond_3
-    const v0, 0x7f090345
+    const v0, 0x7f090348
 
     invoke-virtual {v1, v0}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -503,7 +503,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f0204a2
+    const v1, 0x7f0204b3
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 
@@ -522,7 +522,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f0204a5
+    const v1, 0x7f0204b6
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 
@@ -539,7 +539,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f0204a4
+    const v1, 0x7f0204b5
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 
@@ -565,7 +565,7 @@
 
     move-result-object v0
 
-    const v2, 0x7f0204a2
+    const v2, 0x7f0204b3
 
     invoke-virtual {v0, v2}, Landroid/content/res/Resources;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 
@@ -588,7 +588,7 @@
 
     move-result-object v0
 
-    const v2, 0x7f0204a5
+    const v2, 0x7f0204b6
 
     invoke-virtual {v0, v2}, Landroid/content/res/Resources;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 
@@ -609,7 +609,7 @@
 
     move-result-object v0
 
-    const v2, 0x7f0204a4
+    const v2, 0x7f0204b5
 
     invoke-virtual {v0, v2}, Landroid/content/res/Resources;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 
@@ -1050,12 +1050,31 @@
 
     move-result v2
 
-    if-ne v2, v0, :cond_0
+    const-string v3, "support_smart_call"
+
+    invoke-static {v3}, Lcom/android/incallui/InCallUIFeature;->hasFeature(Ljava/lang/String;)Z
+
+    move-result v3
+
+    if-eqz v3, :cond_0
+
+    const-string v3, "com.samsung.android.smartcallprovider"
+
+    invoke-static {v3}, Lcom/android/incallui/InCallUIFeature;->isApplicationEnabled(Ljava/lang/String;)Z
+
+    move-result v3
+
+    if-nez v3, :cond_0
+
+    move v2, v1
+
+    :cond_0
+    if-ne v2, v0, :cond_1
 
     :goto_0
     return v0
 
-    :cond_0
+    :cond_1
     move v0, v1
 
     goto :goto_0

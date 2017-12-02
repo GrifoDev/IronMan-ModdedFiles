@@ -214,41 +214,39 @@
     return-object v0
 
     :pswitch_0
-    const-string v0, "\u5468\u65e5"
+    const-string/jumbo v0, "\u5468\u65e5"
 
     goto :goto_0
 
     :pswitch_1
-    const-string v0, "\u5468\u4e00"
+    const-string/jumbo v0, "\u5468\u4e00"
 
     goto :goto_0
 
     :pswitch_2
-    const-string v0, "\u5468\u4e8c"
+    const-string/jumbo v0, "\u5468\u4e8c"
 
     goto :goto_0
 
     :pswitch_3
-    const-string v0, "\u5468\u4e09"
+    const-string/jumbo v0, "\u5468\u4e09"
 
     goto :goto_0
 
     :pswitch_4
-    const-string v0, "\u5468\u56db"
+    const-string/jumbo v0, "\u5468\u56db"
 
     goto :goto_0
 
     :pswitch_5
-    const-string v0, "\u5468\u4e94"
+    const-string/jumbo v0, "\u5468\u4e94"
 
     goto :goto_0
 
     :pswitch_6
-    const-string v0, "\u5468\u516d"
+    const-string/jumbo v0, "\u5468\u516d"
 
     goto :goto_0
-
-    nop
 
     :pswitch_data_0
     .packed-switch 0x1

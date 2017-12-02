@@ -33,9 +33,9 @@
 .method public onAnimationEnd(Landroid/animation/Animator;)V
     .locals 8
 
-    const v2, 0x7f09031d
+    const v2, 0x7f090320
 
-    const v3, 0x7f09031c
+    const v3, 0x7f09031f
 
     const/4 v7, 0x2
 
@@ -133,7 +133,7 @@
 
     move-result-object v4
 
-    const v5, 0x7f090198
+    const v5, 0x7f09019b
 
     invoke-virtual {v4, v5}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -151,7 +151,7 @@
 
     move-result-object v4
 
-    const v5, 0x7f09019a
+    const v5, 0x7f09019d
 
     invoke-virtual {v4, v5}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -264,7 +264,7 @@
 
     new-array v5, v7, [I
 
-    const v0, 0x7f090328
+    const v0, 0x7f09032b
 
     aput v0, v5, v1
 

@@ -1,5 +1,5 @@
 .class Landroid/support/v7/widget/w$1;
-.super Landroid/support/v7/widget/af;
+.super Landroid/support/v7/widget/ak;
 
 
 # annotations
@@ -27,7 +27,7 @@
 
     iput-object p3, p0, Landroid/support/v7/widget/w$1;->a:Landroid/support/v7/widget/w$b;
 
-    invoke-direct {p0, p2}, Landroid/support/v7/widget/af;-><init>(Landroid/view/View;)V
+    invoke-direct {p0, p2}, Landroid/support/v7/widget/ak;-><init>(Landroid/view/View;)V
 
     return-void
 .end method

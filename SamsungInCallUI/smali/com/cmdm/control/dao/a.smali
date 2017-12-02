@@ -97,7 +97,7 @@
 
     if-lez v1, :cond_0
 
-    const-string v1, "\u5173\u952e\u65f6\u523b\u6389\u94fe\u5b50\u4e86,\u7a0b\u5e8f\u733f\u6b63\u5728\u52aa\u529b\u4fee\u8865\u4e2d!"
+    const-string/jumbo v1, "\u5173\u952e\u65f6\u523b\u6389\u94fe\u5b50\u4e86,\u7a0b\u5e8f\u733f\u6b63\u5728\u52aa\u529b\u4fee\u8865\u4e2d!"
 
     invoke-virtual {v0, v1}, Lcom/cmdm/control/bean/ErrorXMLException;->setText(Ljava/lang/String;)V
 
@@ -105,7 +105,7 @@
     return-object v0
 
     :cond_0
-    const-string v1, "\u54a6\uff0c\u7f51\u7edc\u597d\u50cf\u4e0d\u7ed9\u529b\uff0c\u8bf7\u7a0d\u540e\u91cd\u8bd5~"
+    const-string/jumbo v1, "\u54a6\uff0c\u7f51\u7edc\u597d\u50cf\u4e0d\u7ed9\u529b\uff0c\u8bf7\u7a0d\u540e\u91cd\u8bd5~"
 
     invoke-virtual {v0, v1}, Lcom/cmdm/control/bean/ErrorXMLException;->setText(Ljava/lang/String;)V
 
@@ -1620,7 +1620,7 @@
 
     const/16 v2, 0xf
 
-    const-string v3, "\u8bf7\u6c42\u6210\u529f\uff0c\u4f46\u662f\u6ca1\u6709\u6570\u636e"
+    const-string/jumbo v3, "\u8bf7\u6c42\u6210\u529f\uff0c\u4f46\u662f\u6ca1\u6709\u6570\u636e"
 
     invoke-direct {v0, v2, v3, v1}, Lcom/cmdm/control/util/client/ResultUtil;-><init>(ILjava/lang/String;Ljava/lang/Object;)V
 
@@ -1711,7 +1711,7 @@
 
     const/16 v1, 0xf
 
-    const-string v2, "\u8bf7\u6c42\u6210\u529f\uff0c\u4f46\u662f\u6ca1\u6709\u6570\u636e"
+    const-string/jumbo v2, "\u8bf7\u6c42\u6210\u529f\uff0c\u4f46\u662f\u6ca1\u6709\u6570\u636e"
 
     invoke-direct {v0, v1, v2, v7}, Lcom/cmdm/control/util/client/ResultUtil;-><init>(ILjava/lang/String;Ljava/lang/Object;)V
 
@@ -2998,7 +2998,7 @@
     :try_start_1
     const-string v0, "CaiYinSDK"
 
-    const-string v1, "\u5f00\u59cb\u89e3\u6790xml"
+    const-string/jumbo v1, "\u5f00\u59cb\u89e3\u6790xml"
 
     invoke-static {v0, v1}, Lcom/cmdm/control/util/PrintLog;->i(Ljava/lang/String;Ljava/lang/String;)V
 
@@ -3034,7 +3034,7 @@
 
     const-string v2, "CaiYinSDK"
 
-    const-string v4, "\u5f00\u59cb\u89e3\u6790saveData"
+    const-string/jumbo v4, "\u5f00\u59cb\u89e3\u6790saveData"
 
     invoke-static {v2, v4}, Lcom/cmdm/control/util/PrintLog;->i(Ljava/lang/String;Ljava/lang/String;)V
 
@@ -3124,7 +3124,7 @@
 
     const-string v5, "CaiYinSDK"
 
-    const-string v6, "\u5f00\u59cb\u4fdd\u5b58\u7f29\u7565\u56fe"
+    const-string/jumbo v6, "\u5f00\u59cb\u4fdd\u5b58\u7f29\u7565\u56fe"
 
     invoke-static {v5, v6}, Lcom/cmdm/control/util/PrintLog;->i(Ljava/lang/String;Ljava/lang/String;)V
 
@@ -3136,7 +3136,7 @@
 
     new-instance v6, Ljava/lang/StringBuilder;
 
-    const-string v7, "\u7f29\u7565\u56fe\u7f51\u7edc\u5730\u5740\uff1a"
+    const-string/jumbo v7, "\u7f29\u7565\u56fe\u7f51\u7edc\u5730\u5740\uff1a"
 
     invoke-direct {v6, v7}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
@@ -3166,7 +3166,7 @@
 
     const-string v0, "CaiYinSDK"
 
-    const-string v5, "\u4fdd\u5b58\u7f29\u7565\u56fe\u6210\u529f"
+    const-string/jumbo v5, "\u4fdd\u5b58\u7f29\u7565\u56fe\u6210\u529f"
 
     invoke-static {v0, v5}, Lcom/cmdm/control/util/PrintLog;->i(Ljava/lang/String;Ljava/lang/String;)V
 
@@ -3181,7 +3181,7 @@
     :cond_3
     const-string v0, "CaiYinSDK"
 
-    const-string v5, "\u4fdd\u5b58\u7f29\u7565\u56fe\u5931\u8d25"
+    const-string/jumbo v5, "\u4fdd\u5b58\u7f29\u7565\u56fe\u5931\u8d25"
 
     invoke-static {v0, v5}, Lcom/cmdm/control/util/PrintLog;->i(Ljava/lang/String;Ljava/lang/String;)V
     :try_end_1
@@ -4013,7 +4013,7 @@
 
     const-string v1, "CaiYinSDK"
 
-    const-string v2, "\u8bf7\u6c42\u670d\u52a1\u5668\u6570\u636e"
+    const-string/jumbo v2, "\u8bf7\u6c42\u670d\u52a1\u5668\u6570\u636e"
 
     invoke-static {v1, v2}, Lcom/cmdm/control/util/PrintLog;->i(Ljava/lang/String;Ljava/lang/String;)V
 
@@ -5433,7 +5433,7 @@
     :try_start_1
     const-string v0, "CaiYinSDK"
 
-    const-string v1, "\u5f00\u59cb\u89e3\u6790xml"
+    const-string/jumbo v1, "\u5f00\u59cb\u89e3\u6790xml"
 
     invoke-static {v0, v1}, Lcom/cmdm/control/util/PrintLog;->i(Ljava/lang/String;Ljava/lang/String;)V
 
@@ -5469,7 +5469,7 @@
 
     const-string v2, "CaiYinSDK"
 
-    const-string v4, "\u5f00\u59cb\u89e3\u6790saveData"
+    const-string/jumbo v4, "\u5f00\u59cb\u89e3\u6790saveData"
 
     invoke-static {v2, v4}, Lcom/cmdm/control/util/PrintLog;->i(Ljava/lang/String;Ljava/lang/String;)V
 
@@ -5559,7 +5559,7 @@
 
     const-string v5, "CaiYinSDK"
 
-    const-string v6, "\u5f00\u59cb\u4fdd\u5b58\u7f29\u7565\u56fe"
+    const-string/jumbo v6, "\u5f00\u59cb\u4fdd\u5b58\u7f29\u7565\u56fe"
 
     invoke-static {v5, v6}, Lcom/cmdm/control/util/PrintLog;->i(Ljava/lang/String;Ljava/lang/String;)V
 
@@ -5571,7 +5571,7 @@
 
     new-instance v6, Ljava/lang/StringBuilder;
 
-    const-string v7, "\u7f29\u7565\u56fe\u7f51\u7edc\u5730\u5740\uff1a"
+    const-string/jumbo v7, "\u7f29\u7565\u56fe\u7f51\u7edc\u5730\u5740\uff1a"
 
     invoke-direct {v6, v7}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
@@ -5601,7 +5601,7 @@
 
     const-string v0, "CaiYinSDK"
 
-    const-string v5, "\u4fdd\u5b58\u7f29\u7565\u56fe\u6210\u529f"
+    const-string/jumbo v5, "\u4fdd\u5b58\u7f29\u7565\u56fe\u6210\u529f"
 
     invoke-static {v0, v5}, Lcom/cmdm/control/util/PrintLog;->i(Ljava/lang/String;Ljava/lang/String;)V
 
@@ -5616,7 +5616,7 @@
     :cond_3
     const-string v0, "CaiYinSDK"
 
-    const-string v5, "\u4fdd\u5b58\u7f29\u7565\u56fe\u5931\u8d25"
+    const-string/jumbo v5, "\u4fdd\u5b58\u7f29\u7565\u56fe\u5931\u8d25"
 
     invoke-static {v0, v5}, Lcom/cmdm/control/util/PrintLog;->i(Ljava/lang/String;Ljava/lang/String;)V
     :try_end_1
@@ -6877,7 +6877,7 @@
 
     const/16 v2, 0xc
 
-    const-string v3, "\u672c\u5730\u6587\u4ef6\u672a\u627e\u5230"
+    const-string/jumbo v3, "\u672c\u5730\u6587\u4ef6\u672a\u627e\u5230"
 
     const/4 v4, 0x0
 
@@ -8252,7 +8252,7 @@
     :try_start_1
     const-string v0, "CaiYinSDK"
 
-    const-string v1, "\u5f00\u59cb\u89e3\u6790xml"
+    const-string/jumbo v1, "\u5f00\u59cb\u89e3\u6790xml"
 
     invoke-static {v0, v1}, Lcom/cmdm/control/util/PrintLog;->i(Ljava/lang/String;Ljava/lang/String;)V
 
@@ -8288,7 +8288,7 @@
 
     const-string v2, "CaiYinSDK"
 
-    const-string v4, "\u5f00\u59cb\u89e3\u6790saveData"
+    const-string/jumbo v4, "\u5f00\u59cb\u89e3\u6790saveData"
 
     invoke-static {v2, v4}, Lcom/cmdm/control/util/PrintLog;->i(Ljava/lang/String;Ljava/lang/String;)V
 
@@ -8378,7 +8378,7 @@
 
     const-string v5, "CaiYinSDK"
 
-    const-string v6, "\u5f00\u59cb\u4fdd\u5b58\u7f29\u7565\u56fe"
+    const-string/jumbo v6, "\u5f00\u59cb\u4fdd\u5b58\u7f29\u7565\u56fe"
 
     invoke-static {v5, v6}, Lcom/cmdm/control/util/PrintLog;->i(Ljava/lang/String;Ljava/lang/String;)V
 
@@ -8390,7 +8390,7 @@
 
     new-instance v6, Ljava/lang/StringBuilder;
 
-    const-string v7, "\u7f29\u7565\u56fe\u7f51\u7edc\u5730\u5740\uff1a"
+    const-string/jumbo v7, "\u7f29\u7565\u56fe\u7f51\u7edc\u5730\u5740\uff1a"
 
     invoke-direct {v6, v7}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
@@ -8420,7 +8420,7 @@
 
     const-string v0, "CaiYinSDK"
 
-    const-string v5, "\u4fdd\u5b58\u7f29\u7565\u56fe\u6210\u529f"
+    const-string/jumbo v5, "\u4fdd\u5b58\u7f29\u7565\u56fe\u6210\u529f"
 
     invoke-static {v0, v5}, Lcom/cmdm/control/util/PrintLog;->i(Ljava/lang/String;Ljava/lang/String;)V
 
@@ -8435,7 +8435,7 @@
     :cond_3
     const-string v0, "CaiYinSDK"
 
-    const-string v5, "\u4fdd\u5b58\u7f29\u7565\u56fe\u5931\u8d25"
+    const-string/jumbo v5, "\u4fdd\u5b58\u7f29\u7565\u56fe\u5931\u8d25"
 
     invoke-static {v0, v5}, Lcom/cmdm/control/util/PrintLog;->i(Ljava/lang/String;Ljava/lang/String;)V
     :try_end_1
@@ -8568,7 +8568,7 @@
 
     new-instance v1, Ljava/lang/StringBuilder;
 
-    const-string v2, "\u8bf7\u6c42\u5730\u5740\uff1a"
+    const-string/jumbo v2, "\u8bf7\u6c42\u5730\u5740\uff1a"
 
     invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 

@@ -285,6 +285,9 @@
 .method public abstract updateAgifImage()V
 .end method
 
+.method public abstract updateAgifRandomContainer()V
+.end method
+
 .method public abstract updateBelowButtonMargin(Z)V
 .end method
 
@@ -322,6 +325,9 @@
 .end method
 
 .method public abstract updateNavigationBar()V
+.end method
+
+.method public abstract updatePeerDimension(II)V
 .end method
 
 .method public abstract updatePhotoringState(Lcom/android/incallui/util/PhotoringUtil$PhotoringMTState;I)V

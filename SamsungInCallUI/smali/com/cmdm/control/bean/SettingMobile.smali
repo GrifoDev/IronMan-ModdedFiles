@@ -94,7 +94,7 @@
 
     new-instance v1, Ljava/lang/StringBuilder;
 
-    const-string v2, "\u8bbe\u7f6e\u5185\u5bb9\uff1a"
+    const-string/jumbo v2, "\u8bbe\u7f6e\u5185\u5bb9\uff1a"
 
     invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
@@ -197,7 +197,7 @@
 
     sget-object v1, Ljava/lang/System;->out:Ljava/io/PrintStream;
 
-    const-string v2, "\u6211\u7684\u8bbe\u7f6e\u554a"
+    const-string/jumbo v2, "\u6211\u7684\u8bbe\u7f6e\u554a"
 
     const-string v3, "dddddddd"
 

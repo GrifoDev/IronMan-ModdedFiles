@@ -120,7 +120,9 @@
     :goto_0
     iget-object v1, p0, Lcom/android/incallui/agif/AgifLoader$AgifRecentObserver;->this$0:Lcom/android/incallui/agif/AgifLoader;
 
-    invoke-virtual {v1, v0}, Lcom/android/incallui/agif/AgifLoader;->loadRecentContents(Ljava/lang/String;)V
+    const/4 v2, 0x0
+
+    invoke-virtual {v1, v0, v2}, Lcom/android/incallui/agif/AgifLoader;->loadRecentContents(Ljava/lang/String;Z)V
 
     :cond_0
     return-void

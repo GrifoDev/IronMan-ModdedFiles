@@ -172,7 +172,29 @@
 
     const-string v0, "IMSManagerWrapper"
 
-    const-string v1, "getRttMode"
+    new-instance v1, Ljava/lang/StringBuilder;
+
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v2, "getRttMode : "
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    iget-object v2, p0, Lcom/android/incallui/service/ims/IMSManagerWrapper;->mImsManager:Lcom/sec/ims/ImsManager;
+
+    invoke-virtual {v2}, Lcom/sec/ims/ImsManager;->getRttMode()I
+
+    move-result v2
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v1
 
     const/4 v2, 0x1
 

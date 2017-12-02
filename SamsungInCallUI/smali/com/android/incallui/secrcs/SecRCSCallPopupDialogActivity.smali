@@ -334,9 +334,9 @@
 .method private showRCSDialog(ILjava/lang/Long;)V
     .locals 6
 
-    const v5, 0x7f090297
+    const v5, 0x7f09029a
 
-    const v3, 0x7f090294
+    const v3, 0x7f090297
 
     const/4 v4, 0x0
 
@@ -366,7 +366,7 @@
 
     new-instance v1, Landroid/view/ContextThemeWrapper;
 
-    const v2, 0x7f0b0010
+    const v2, 0x7f0b000f
 
     invoke-direct {v1, p0, v2}, Landroid/view/ContextThemeWrapper;-><init>(Landroid/content/Context;I)V
 
@@ -386,7 +386,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f040093
+    const v2, 0x7f040096
 
     invoke-virtual {v0, v2}, Landroid/app/Dialog;->setContentView(I)V
 
@@ -411,7 +411,7 @@
 
     iget-object v0, p0, Lcom/android/incallui/secrcs/SecRCSCallPopupDialogActivity;->indialogbuilder:Landroid/app/AlertDialog$Builder;
 
-    const v1, 0x7f0902af
+    const v1, 0x7f0902b2
 
     new-instance v2, Lcom/android/incallui/secrcs/SecRCSCallPopupDialogActivity$2;
 
@@ -426,7 +426,7 @@
 
     iget-object v0, p0, Lcom/android/incallui/secrcs/SecRCSCallPopupDialogActivity;->indialogbuilder:Landroid/app/AlertDialog$Builder;
 
-    const v1, 0x7f090298
+    const v1, 0x7f09029b
 
     invoke-virtual {v0, v1}, Landroid/app/AlertDialog$Builder;->setMessage(I)Landroid/app/AlertDialog$Builder;
 

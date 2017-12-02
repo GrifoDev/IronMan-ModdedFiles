@@ -56,7 +56,7 @@
 
     iget-object v2, p0, Lcom/android/incallui/secrcs/RcsShareUI$7;->this$0:Lcom/android/incallui/secrcs/RcsShareUI;
 
-    invoke-static {v2}, Lcom/android/incallui/secrcs/RcsShareUI;->access$2700(Lcom/android/incallui/secrcs/RcsShareUI;)Landroid/app/Dialog;
+    invoke-static {v2}, Lcom/android/incallui/secrcs/RcsShareUI;->access$2800(Lcom/android/incallui/secrcs/RcsShareUI;)Landroid/app/Dialog;
 
     move-result-object v2
 

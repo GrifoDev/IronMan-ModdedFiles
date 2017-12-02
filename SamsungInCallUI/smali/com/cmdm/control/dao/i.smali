@@ -363,7 +363,7 @@
 
     const/4 v4, 0x0
 
-    const-string v5, "\u5bc6\u7801\u8fde\u7eed\u8f93\u5165\u9519\u8bef\u6b21\u6570\u8d85\u8fc75\u6b21,\u8bf730\u5206\u949f\u540e\u91cd\u8bd5!"
+    const-string/jumbo v5, "\u5bc6\u7801\u8fde\u7eed\u8f93\u5165\u9519\u8bef\u6b21\u6570\u8d85\u8fc75\u6b21,\u8bf730\u5206\u949f\u540e\u91cd\u8bd5!"
 
     invoke-direct {v3, v4, v5}, Lcom/cmdm/control/util/client/ResultEntity;-><init>(ILjava/lang/String;)V
     :try_end_1
@@ -1880,7 +1880,7 @@
 
     if-lez v1, :cond_0
 
-    const-string v1, "\u5173\u952e\u65f6\u523b\u6389\u94fe\u5b50\u4e86,\u7a0b\u5e8f\u733f\u6b63\u5728\u52aa\u529b\u4fee\u8865\u4e2d!"
+    const-string/jumbo v1, "\u5173\u952e\u65f6\u523b\u6389\u94fe\u5b50\u4e86,\u7a0b\u5e8f\u733f\u6b63\u5728\u52aa\u529b\u4fee\u8865\u4e2d!"
 
     invoke-virtual {v0, v1}, Lcom/cmdm/control/bean/ErrorXMLException;->setText(Ljava/lang/String;)V
 
@@ -1888,7 +1888,7 @@
     return-object v0
 
     :cond_0
-    const-string v1, "\u54a6\uff0c\u7f51\u7edc\u597d\u50cf\u4e0d\u7ed9\u529b\uff0c\u8bf7\u7a0d\u540e\u91cd\u8bd5~"
+    const-string/jumbo v1, "\u54a6\uff0c\u7f51\u7edc\u597d\u50cf\u4e0d\u7ed9\u529b\uff0c\u8bf7\u7a0d\u540e\u91cd\u8bd5~"
 
     invoke-virtual {v0, v1}, Lcom/cmdm/control/bean/ErrorXMLException;->setText(Ljava/lang/String;)V
 
@@ -2114,7 +2114,7 @@
 
     const-string v1, "CaiYinSDK"
 
-    const-string v3, "\u521d\u59cb\u5316\u4fe1\u606f\u6210\u529f"
+    const-string/jumbo v3, "\u521d\u59cb\u5316\u4fe1\u606f\u6210\u529f"
 
     invoke-static {v1, v3}, Lcom/cmdm/control/util/PrintLog;->i(Ljava/lang/String;Ljava/lang/String;)V
 
@@ -4231,7 +4231,7 @@
 
     const/4 v5, 0x0
 
-    const-string v6, "\u5bc6\u7801\u8fde\u7eed\u8f93\u5165\u9519\u8bef\u6b21\u6570\u8d85\u8fc75\u6b21,\u8bf730\u5206\u949f\u540e\u91cd\u8bd5!"
+    const-string/jumbo v6, "\u5bc6\u7801\u8fde\u7eed\u8f93\u5165\u9519\u8bef\u6b21\u6570\u8d85\u8fc75\u6b21,\u8bf730\u5206\u949f\u540e\u91cd\u8bd5!"
 
     invoke-direct {v4, v5, v6}, Lcom/cmdm/control/util/client/ResultEntity;-><init>(ILjava/lang/String;)V
     :try_end_1

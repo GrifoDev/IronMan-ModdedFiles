@@ -247,6 +247,16 @@
 
     iput-object v0, p0, Lcom/android/incallui/StatusBarNotifier;->mStatusBarManager:Landroid/app/SemStatusBarManager;
 
+    invoke-static {}, Lcom/android/incallui/InCallApp;->getInstance()Lcom/android/incallui/InCallApp;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lcom/android/incallui/InCallApp;->getIMSManagerWrapper()Lcom/android/incallui/service/ims/IMSManagerWrapper;
+
+    move-result-object v0
+
+    iput-object v0, p0, Lcom/android/incallui/StatusBarNotifier;->mIMSManagerWrapper:Lcom/android/incallui/service/ims/IMSManagerWrapper;
+
     sget-boolean v0, Lcom/android/incallui/StatusBarNotifier;->SUPPORT_SEC_WFC:Z
 
     if-eqz v0, :cond_0
@@ -270,16 +280,6 @@
     iget-object v0, p0, Lcom/android/incallui/StatusBarNotifier;->mWfcRegistrationStateHelper:Lcom/samsung/tmowfc/wfcutils/WfcRegistrationStateHelper;
 
     invoke-virtual {v0}, Lcom/samsung/tmowfc/wfcutils/WfcRegistrationStateHelper;->registerObserver()V
-
-    invoke-static {}, Lcom/android/incallui/InCallApp;->getInstance()Lcom/android/incallui/InCallApp;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Lcom/android/incallui/InCallApp;->getIMSManagerWrapper()Lcom/android/incallui/service/ims/IMSManagerWrapper;
-
-    move-result-object v0
-
-    iput-object v0, p0, Lcom/android/incallui/StatusBarNotifier;->mIMSManagerWrapper:Lcom/android/incallui/service/ims/IMSManagerWrapper;
 
     invoke-direct {p0}, Lcom/android/incallui/StatusBarNotifier;->registerImsRegistrationListener()V
 
@@ -614,9 +614,9 @@
 
     if-nez v2, :cond_5
 
-    move-object/from16 v0, p2
+    invoke-virtual {v3}, Lcom/android/incallui/Call;->getNumber()Ljava/lang/String;
 
-    iget-object v2, v0, Lcom/android/incallui/ContactInfoCache$ContactCacheEntry;->number:Ljava/lang/String;
+    move-result-object v2
 
     invoke-static {v2}, Lcom/android/incallui/util/CallTypeUtils;->isSrvccConference(Ljava/lang/String;)Z
 
@@ -871,7 +871,7 @@
 
     move-result-object v8
 
-    const v14, 0x7f0400f9
+    const v14, 0x7f0400fc
 
     invoke-direct {v2, v8, v14}, Lcom/android/incallui/widget/SecMiniController;-><init>(Ljava/lang/String;I)V
 
@@ -1726,7 +1726,7 @@
 
     invoke-static {v0, v1}, Lcom/android/incallui/Log;->d(Ljava/lang/String;Ljava/lang/String;)V
 
-    const v0, 0x7f0201a4
+    const v0, 0x7f0201ae
 
     :goto_0
     return v0
@@ -1765,7 +1765,7 @@
 
     if-eqz v0, :cond_4
 
-    const v0, 0x7f020352
+    const v0, 0x7f020361
 
     goto :goto_0
 
@@ -1817,31 +1817,31 @@
 
     if-eqz v2, :cond_8
 
-    const v0, 0x7f020345
+    const v0, 0x7f020354
 
     goto :goto_0
 
     :cond_6
     if-eqz v2, :cond_7
 
-    const v0, 0x7f020347
+    const v0, 0x7f020356
 
     goto :goto_0
 
     :cond_7
-    const v0, 0x7f020348
+    const v0, 0x7f020357
 
     goto :goto_0
 
     :cond_8
-    const v0, 0x7f020346
+    const v0, 0x7f020355
 
     goto :goto_0
 
     :cond_9
     if-eqz v0, :cond_a
 
-    const v0, 0x7f020351
+    const v0, 0x7f020360
 
     goto :goto_0
 
@@ -1868,7 +1868,7 @@
 
     if-nez v0, :cond_b
 
-    const v0, 0x7f020349
+    const v0, 0x7f020358
 
     goto :goto_0
 
@@ -1879,19 +1879,19 @@
 
     if-ne v0, v1, :cond_c
 
-    const v0, 0x7f02034a
+    const v0, 0x7f020359
 
     goto/16 :goto_0
 
     :cond_c
     if-eqz v2, :cond_d
 
-    const v0, 0x7f020343
+    const v0, 0x7f020352
 
     goto/16 :goto_0
 
     :cond_d
-    const v0, 0x7f020344
+    const v0, 0x7f020353
 
     goto/16 :goto_0
 .end method
@@ -1934,7 +1934,7 @@
 
     if-eqz v0, :cond_1
 
-    const v0, 0x7f020354
+    const v0, 0x7f020363
 
     :goto_1
     return v0
@@ -1978,31 +1978,31 @@
 
     if-eqz v2, :cond_5
 
-    const v0, 0x7f02034d
+    const v0, 0x7f02035c
 
     goto :goto_1
 
     :cond_3
     if-eqz v2, :cond_4
 
-    const v0, 0x7f02034f
+    const v0, 0x7f02035e
 
     goto :goto_1
 
     :cond_4
-    const v0, 0x7f020350
+    const v0, 0x7f02035f
 
     goto :goto_1
 
     :cond_5
-    const v0, 0x7f02034e
+    const v0, 0x7f02035d
 
     goto :goto_1
 
     :cond_6
     if-eqz v0, :cond_7
 
-    const v0, 0x7f020353
+    const v0, 0x7f020362
 
     goto :goto_1
 
@@ -2029,7 +2029,7 @@
 
     if-nez v0, :cond_8
 
-    const v0, 0x7f020349
+    const v0, 0x7f020358
 
     goto :goto_1
 
@@ -2040,19 +2040,19 @@
 
     if-ne v0, v1, :cond_9
 
-    const v0, 0x7f02034a
+    const v0, 0x7f020359
 
     goto :goto_1
 
     :cond_9
     if-eqz v2, :cond_a
 
-    const v0, 0x7f02034b
+    const v0, 0x7f02035a
 
     goto :goto_1
 
     :cond_a
-    const v0, 0x7f02034c
+    const v0, 0x7f02035b
 
     goto :goto_1
 .end method
@@ -2147,11 +2147,11 @@
     goto :goto_0
 
     :cond_1
-    const v0, 0x7f0f01c9
+    const v0, 0x7f0e01d7
 
     iget-object v1, p0, Lcom/android/incallui/StatusBarNotifier;->mContext:Landroid/content/Context;
 
-    const v2, 0x7f020104
+    const v2, 0x7f02010e
 
     invoke-static {v1, v2}, Lcom/android/incallui/util/GraphicResourceUtils;->getBitmapFromSprDrawable(Landroid/content/Context;I)Landroid/graphics/Bitmap;
 
@@ -2273,7 +2273,7 @@
 
     move-result-object v0
 
-    const v2, 0x7f02048c
+    const v2, 0x7f02049d
 
     invoke-static {v0, v2}, Landroid/graphics/BitmapFactory;->decodeResource(Landroid/content/res/Resources;I)Landroid/graphics/Bitmap;
     :try_end_1
@@ -2292,7 +2292,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f0a0261
+    const v2, 0x7f0a0245
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getDimension(I)F
 
@@ -2393,7 +2393,7 @@
 
     iget-object v0, p0, Lcom/android/incallui/StatusBarNotifier;->mContext:Landroid/content/Context;
 
-    const v2, 0x7f0201ef
+    const v2, 0x7f0201fb
 
     invoke-static {v0, v2}, Lcom/android/incallui/util/GraphicResourceUtils;->getBitmapFromSprDrawable(Landroid/content/Context;I)Landroid/graphics/Bitmap;
 
@@ -2408,7 +2408,7 @@
 
     iget-object v0, p0, Lcom/android/incallui/StatusBarNotifier;->mContext:Landroid/content/Context;
 
-    const v2, 0x7f0201f1
+    const v2, 0x7f0201fd
 
     invoke-static {v0, v2}, Lcom/android/incallui/util/GraphicResourceUtils;->getBitmapFromSprDrawable(Landroid/content/Context;I)Landroid/graphics/Bitmap;
 
@@ -2423,7 +2423,7 @@
 
     iget-object v0, p0, Lcom/android/incallui/StatusBarNotifier;->mContext:Landroid/content/Context;
 
-    const v2, 0x7f0201f0
+    const v2, 0x7f0201fc
 
     invoke-static {v0, v2}, Lcom/android/incallui/util/GraphicResourceUtils;->getBitmapFromSprDrawable(Landroid/content/Context;I)Landroid/graphics/Bitmap;
     :try_end_3
@@ -2638,7 +2638,7 @@
 
     move-result-object v0
 
-    const v2, 0x7f0f0192
+    const v2, 0x7f0e019f
 
     invoke-virtual {v0, v2}, Landroid/content/res/Resources;->getColor(I)I
 
@@ -2657,7 +2657,7 @@
 
     move-result-object v0
 
-    const v2, 0x7f0f0191
+    const v2, 0x7f0e019e
 
     invoke-virtual {v0, v2}, Landroid/content/res/Resources;->getColor(I)I
 
@@ -2784,7 +2784,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f0400fa
+    const v2, 0x7f0400fd
 
     invoke-direct {v0, v1, v2}, Lcom/android/incallui/widget/SecMiniControllerHidden;-><init>(Ljava/lang/String;I)V
 
@@ -2826,7 +2826,9 @@
 .end method
 
 .method private showNotification(Lcom/android/incallui/Call;Z)V
-    .locals 4
+    .locals 5
+
+    const/4 v2, 0x1
 
     const/4 v1, 0x0
 
@@ -2834,227 +2836,92 @@
 
     move-result v0
 
-    const/4 v2, 0x4
+    const/4 v3, 0x4
 
-    if-eq v0, v2, :cond_0
+    if-eq v0, v3, :cond_0
 
     invoke-virtual {p1}, Lcom/android/incallui/Call;->getState()I
 
     move-result v0
 
-    const/4 v2, 0x5
+    const/4 v3, 0x5
 
-    if-ne v0, v2, :cond_3
+    if-ne v0, v3, :cond_3
 
     :cond_0
-    const/4 v0, 0x1
+    move v0, v2
 
     :goto_0
-    iget-object v2, p0, Lcom/android/incallui/StatusBarNotifier;->mCallId:Ljava/lang/String;
+    iget-object v3, p0, Lcom/android/incallui/StatusBarNotifier;->mCallId:Ljava/lang/String;
 
-    invoke-static {v2}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
+    invoke-static {v3}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
-    move-result v2
+    move-result v3
 
-    if-nez v2, :cond_1
+    if-nez v3, :cond_1
 
     invoke-static {}, Lcom/android/incallui/CallList;->getInstance()Lcom/android/incallui/CallList;
 
-    move-result-object v2
+    move-result-object v3
 
-    iget-object v3, p0, Lcom/android/incallui/StatusBarNotifier;->mCallId:Ljava/lang/String;
+    iget-object v4, p0, Lcom/android/incallui/StatusBarNotifier;->mCallId:Ljava/lang/String;
 
-    invoke-virtual {v2, v3, p0}, Lcom/android/incallui/CallList;->removeCallUpdateListener(Ljava/lang/String;Lcom/android/incallui/CallList$CallUpdateListener;)V
+    invoke-virtual {v3, v4, p0}, Lcom/android/incallui/CallList;->removeCallUpdateListener(Ljava/lang/String;Lcom/android/incallui/CallList$CallUpdateListener;)V
 
     :cond_1
     invoke-virtual {p1}, Lcom/android/incallui/Call;->getId()Ljava/lang/String;
 
-    move-result-object v2
+    move-result-object v3
 
-    iput-object v2, p0, Lcom/android/incallui/StatusBarNotifier;->mCallId:Ljava/lang/String;
+    iput-object v3, p0, Lcom/android/incallui/StatusBarNotifier;->mCallId:Ljava/lang/String;
 
     invoke-static {}, Lcom/android/incallui/CallList;->getInstance()Lcom/android/incallui/CallList;
 
-    move-result-object v2
+    move-result-object v3
 
     invoke-virtual {p1}, Lcom/android/incallui/Call;->getId()Ljava/lang/String;
 
-    move-result-object v3
+    move-result-object v4
 
-    invoke-virtual {v2, v3, p0}, Lcom/android/incallui/CallList;->addCallUpdateListener(Ljava/lang/String;Lcom/android/incallui/CallList$CallUpdateListener;)V
+    invoke-virtual {v3, v4, p0}, Lcom/android/incallui/CallList;->addCallUpdateListener(Ljava/lang/String;Lcom/android/incallui/CallList$CallUpdateListener;)V
 
-    iget-object v2, p0, Lcom/android/incallui/StatusBarNotifier;->mMakeNotificationCallback:Lcom/android/incallui/StatusBarNotifier$MakeNotificationCallback;
+    iget-object v3, p0, Lcom/android/incallui/StatusBarNotifier;->mMakeNotificationCallback:Lcom/android/incallui/StatusBarNotifier$MakeNotificationCallback;
 
-    if-nez v2, :cond_2
+    if-nez v3, :cond_2
 
-    new-instance v2, Lcom/android/incallui/StatusBarNotifier$MakeNotificationCallback;
+    new-instance v3, Lcom/android/incallui/StatusBarNotifier$MakeNotificationCallback;
 
-    invoke-direct {v2, p0, v1}, Lcom/android/incallui/StatusBarNotifier$MakeNotificationCallback;-><init>(Lcom/android/incallui/StatusBarNotifier;Z)V
+    invoke-direct {v3, p0, v1}, Lcom/android/incallui/StatusBarNotifier$MakeNotificationCallback;-><init>(Lcom/android/incallui/StatusBarNotifier;Z)V
 
-    iput-object v2, p0, Lcom/android/incallui/StatusBarNotifier;->mMakeNotificationCallback:Lcom/android/incallui/StatusBarNotifier$MakeNotificationCallback;
+    iput-object v3, p0, Lcom/android/incallui/StatusBarNotifier;->mMakeNotificationCallback:Lcom/android/incallui/StatusBarNotifier$MakeNotificationCallback;
 
     :cond_2
-    invoke-direct {p0, p1, v0, p2}, Lcom/android/incallui/StatusBarNotifier;->startContactInfoSearch(Lcom/android/incallui/Call;ZZ)V
+    if-eqz p2, :cond_4
 
+    iget-object v1, p0, Lcom/android/incallui/StatusBarNotifier;->mContactInfoCache:Lcom/android/incallui/ContactInfoCache;
+
+    new-instance v3, Lcom/android/incallui/StatusBarNotifier$MakeNotificationCallback;
+
+    invoke-direct {v3, p0, v2}, Lcom/android/incallui/StatusBarNotifier$MakeNotificationCallback;-><init>(Lcom/android/incallui/StatusBarNotifier;Z)V
+
+    invoke-virtual {v1, p1, v0, v3}, Lcom/android/incallui/ContactInfoCache;->findInfo(Lcom/android/incallui/Call;ZLcom/android/incallui/ContactInfoCache$ContactInfoCacheCallback;)V
+
+    :goto_1
     return-void
 
     :cond_3
     move v0, v1
 
     goto :goto_0
-.end method
-
-.method private startContactInfoSearch(Lcom/android/incallui/Call;ZZ)V
-    .locals 6
-
-    const/4 v5, 0x1
-
-    if-nez p1, :cond_0
-
-    :goto_0
-    return-void
-
-    :cond_0
-    invoke-static {}, Lcom/android/incallui/CallList;->getInstance()Lcom/android/incallui/CallList;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Lcom/android/incallui/CallList;->getRedialCall()Lcom/android/incallui/Call;
-
-    move-result-object v0
-
-    if-eqz p1, :cond_4
-
-    if-eqz v0, :cond_4
-
-    invoke-virtual {v0}, Lcom/android/incallui/Call;->getNumber()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-static {v1}, Landroid/telephony/PhoneNumberUtils;->normalizeNumber(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-virtual {p1}, Lcom/android/incallui/Call;->getNumber()Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-static {v2}, Landroid/telephony/PhoneNumberUtils;->normalizeNumber(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-virtual {p1}, Lcom/android/incallui/Call;->getState()I
-
-    move-result v3
-
-    const/16 v4, 0xd
-
-    if-eq v3, v4, :cond_1
-
-    invoke-virtual {p1}, Lcom/android/incallui/Call;->getState()I
-
-    move-result v3
-
-    const/4 v4, 0x6
-
-    if-ne v3, v4, :cond_4
-
-    :cond_1
-    invoke-static {v1, v2}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
-
-    move-result v1
-
-    if-eqz v1, :cond_4
-
-    const-string v1, "skip startContactInfoSearch - number is same with previous call"
-
-    invoke-static {p0, v1, v5}, Lcom/android/incallui/Log;->d(Ljava/lang/Object;Ljava/lang/String;Z)V
-
-    iget-object v1, p0, Lcom/android/incallui/StatusBarNotifier;->mContactInfoCache:Lcom/android/incallui/ContactInfoCache;
-
-    invoke-virtual {v0}, Lcom/android/incallui/Call;->getId()Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-virtual {v1, v0}, Lcom/android/incallui/ContactInfoCache;->getInfo(Ljava/lang/String;)Lcom/android/incallui/ContactInfoCache$ContactCacheEntry;
-
-    move-result-object v0
-
-    iget-object v1, p0, Lcom/android/incallui/StatusBarNotifier;->mContactInfoCache:Lcom/android/incallui/ContactInfoCache;
-
-    invoke-virtual {p1}, Lcom/android/incallui/Call;->getId()Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-virtual {v1, v2, v0}, Lcom/android/incallui/ContactInfoCache;->putContactInfoCache(Ljava/lang/String;Lcom/android/incallui/ContactInfoCache$ContactCacheEntry;)V
-
-    const-string v1, "agif_call_service"
-
-    invoke-static {v1}, Lcom/android/incallui/InCallUIFeature;->hasFeature(Ljava/lang/String;)Z
-
-    move-result v1
-
-    if-eqz v1, :cond_2
-
-    if-eqz v0, :cond_2
-
-    invoke-static {}, Lcom/android/incallui/coreapps/CoreAppsManager;->getInstance()Lcom/android/incallui/coreapps/CoreAppsManager;
-
-    move-result-object v1
-
-    invoke-virtual {v1, v0}, Lcom/android/incallui/coreapps/CoreAppsManager;->resetEnableState(Lcom/android/incallui/ContactInfoCache$ContactCacheEntry;)V
-
-    :cond_2
-    iget-object v0, p0, Lcom/android/incallui/StatusBarNotifier;->mMakeNotificationCallback:Lcom/android/incallui/StatusBarNotifier$MakeNotificationCallback;
-
-    if-nez v0, :cond_3
-
-    new-instance v0, Lcom/android/incallui/StatusBarNotifier$MakeNotificationCallback;
-
-    const/4 v1, 0x0
-
-    invoke-direct {v0, p0, v1}, Lcom/android/incallui/StatusBarNotifier$MakeNotificationCallback;-><init>(Lcom/android/incallui/StatusBarNotifier;Z)V
-
-    iput-object v0, p0, Lcom/android/incallui/StatusBarNotifier;->mMakeNotificationCallback:Lcom/android/incallui/StatusBarNotifier$MakeNotificationCallback;
-
-    :cond_3
-    iget-object v0, p0, Lcom/android/incallui/StatusBarNotifier;->mContactInfoCache:Lcom/android/incallui/ContactInfoCache;
-
-    iget-object v1, p0, Lcom/android/incallui/StatusBarNotifier;->mMakeNotificationCallback:Lcom/android/incallui/StatusBarNotifier$MakeNotificationCallback;
-
-    invoke-virtual {v0, p1, p2, v1}, Lcom/android/incallui/ContactInfoCache;->findInfoWithCache(Lcom/android/incallui/Call;ZLcom/android/incallui/ContactInfoCache$ContactInfoCacheCallback;)V
-
-    invoke-static {}, Lcom/android/incallui/CallList;->getInstance()Lcom/android/incallui/CallList;
-
-    move-result-object v0
-
-    const/4 v1, 0x0
-
-    invoke-virtual {v0, v1}, Lcom/android/incallui/CallList;->setRedialCall(Lcom/android/incallui/Call;)V
-
-    goto :goto_0
 
     :cond_4
-    if-eqz p3, :cond_5
+    iget-object v1, p0, Lcom/android/incallui/StatusBarNotifier;->mContactInfoCache:Lcom/android/incallui/ContactInfoCache;
 
-    iget-object v0, p0, Lcom/android/incallui/StatusBarNotifier;->mContactInfoCache:Lcom/android/incallui/ContactInfoCache;
+    iget-object v2, p0, Lcom/android/incallui/StatusBarNotifier;->mMakeNotificationCallback:Lcom/android/incallui/StatusBarNotifier$MakeNotificationCallback;
 
-    new-instance v1, Lcom/android/incallui/StatusBarNotifier$MakeNotificationCallback;
+    invoke-virtual {v1, p1, v0, v2}, Lcom/android/incallui/ContactInfoCache;->findInfo(Lcom/android/incallui/Call;ZLcom/android/incallui/ContactInfoCache$ContactInfoCacheCallback;)V
 
-    invoke-direct {v1, p0, v5}, Lcom/android/incallui/StatusBarNotifier$MakeNotificationCallback;-><init>(Lcom/android/incallui/StatusBarNotifier;Z)V
-
-    invoke-virtual {v0, p1, p2, v1}, Lcom/android/incallui/ContactInfoCache;->findInfo(Lcom/android/incallui/Call;ZLcom/android/incallui/ContactInfoCache$ContactInfoCacheCallback;)V
-
-    goto/16 :goto_0
-
-    :cond_5
-    iget-object v0, p0, Lcom/android/incallui/StatusBarNotifier;->mContactInfoCache:Lcom/android/incallui/ContactInfoCache;
-
-    iget-object v1, p0, Lcom/android/incallui/StatusBarNotifier;->mMakeNotificationCallback:Lcom/android/incallui/StatusBarNotifier$MakeNotificationCallback;
-
-    invoke-virtual {v0, p1, p2, v1}, Lcom/android/incallui/ContactInfoCache;->findInfo(Lcom/android/incallui/Call;ZLcom/android/incallui/ContactInfoCache$ContactInfoCacheCallback;)V
-
-    goto/16 :goto_0
+    goto :goto_1
 .end method
 
 .method private unregisterImsCallStatusListener()V
@@ -3927,7 +3794,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f0f0193
+    const v2, 0x7f0e01a0
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getColor(I)I
 
@@ -4255,7 +4122,7 @@
 
     invoke-direct {v2, v3}, Landroid/app/Notification$Builder;-><init>(Landroid/content/Context;)V
 
-    const v3, 0x7f0201fb
+    const v3, 0x7f020207
 
     invoke-virtual {v2, v3}, Landroid/app/Notification$Builder;->setSmallIcon(I)Landroid/app/Notification$Builder;
 
@@ -4263,7 +4130,7 @@
 
     iget-object v4, p0, Lcom/android/incallui/StatusBarNotifier;->mContext:Landroid/content/Context;
 
-    const v5, 0x7f090608
+    const v5, 0x7f09060d
 
     invoke-virtual {v4, v5}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -4275,7 +4142,7 @@
 
     iget-object v4, p0, Lcom/android/incallui/StatusBarNotifier;->mContext:Landroid/content/Context;
 
-    const v5, 0x7f090607
+    const v5, 0x7f09060c
 
     invoke-virtual {v4, v5}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -4819,7 +4686,7 @@
 
     invoke-direct {v5, v6}, Landroid/app/Notification$Builder;-><init>(Landroid/content/Context;)V
 
-    const v6, 0x7f020340
+    const v6, 0x7f02034f
 
     invoke-virtual {v5, v6}, Landroid/app/Notification$Builder;->setSmallIcon(I)Landroid/app/Notification$Builder;
 
@@ -4831,7 +4698,7 @@
 
     move-result-object v7
 
-    const v8, 0x7f0f01d2
+    const v8, 0x7f0e01e0
 
     invoke-virtual {v7, v8}, Landroid/content/res/Resources;->getColor(I)I
 
@@ -4843,7 +4710,7 @@
 
     iget-object v7, p0, Lcom/android/incallui/StatusBarNotifier;->mContext:Landroid/content/Context;
 
-    const v8, 0x7f0902b6
+    const v8, 0x7f0902b9
 
     invoke-virtual {v7, v8}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -4903,7 +4770,7 @@
 
     iget-object v1, p0, Lcom/android/incallui/StatusBarNotifier;->mContext:Landroid/content/Context;
 
-    const v3, 0x7f090316
+    const v3, 0x7f090319
 
     invoke-virtual {v1, v3}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -4919,7 +4786,7 @@
 
     iget-object v1, p0, Lcom/android/incallui/StatusBarNotifier;->mContext:Landroid/content/Context;
 
-    const v3, 0x7f0902b5
+    const v3, 0x7f0902b8
 
     invoke-virtual {v1, v3}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -5164,7 +5031,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f0f0193
+    const v2, 0x7f0e01a0
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getColor(I)I
 

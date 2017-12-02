@@ -78,7 +78,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f0a04e4
+    const v1, 0x7f0a04f0
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -90,7 +90,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f0a04e3
+    const v1, 0x7f0a04ef
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -134,7 +134,7 @@
 
     if-eqz v0, :cond_1
 
-    const v0, 0x7f020389
+    const v0, 0x7f020399
 
     invoke-virtual {p0, v0}, Lcom/android/incallui/widget/SecPopupVoiceToggleButton;->setBackgroundResource(I)V
 
@@ -260,7 +260,7 @@
 
     if-eqz v2, :cond_2
 
-    const v2, 0x7f090333
+    const v2, 0x7f090336
 
     :goto_1
     const/16 v4, 0x4000
@@ -279,7 +279,7 @@
 
     move-result-object v1
 
-    const v5, 0x7f0900dc
+    const v5, 0x7f0900df
 
     invoke-virtual {v3, v5}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -310,7 +310,7 @@
     goto :goto_0
 
     :cond_2
-    const v2, 0x7f090332
+    const v2, 0x7f090335
 
     goto :goto_1
 .end method

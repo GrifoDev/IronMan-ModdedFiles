@@ -137,7 +137,7 @@
 
     iget-object v1, p0, Lcom/android/incallui/visualcallcenter/VoiceCallButtonVCCFragment$VisualCallPagerAdapter;->mInflater:Landroid/view/LayoutInflater;
 
-    const v2, 0x7f040066
+    const v2, 0x7f040069
 
     invoke-virtual {v1, v2, v0}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;)Landroid/view/View;
 
@@ -162,7 +162,7 @@
     :cond_1
     iget-object v1, p0, Lcom/android/incallui/visualcallcenter/VoiceCallButtonVCCFragment$VisualCallPagerAdapter;->mInflater:Landroid/view/LayoutInflater;
 
-    const v2, 0x7f040065
+    const v2, 0x7f040068
 
     invoke-virtual {v1, v2, v0}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;)Landroid/view/View;
 

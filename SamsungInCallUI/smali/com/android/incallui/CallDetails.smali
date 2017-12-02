@@ -840,6 +840,19 @@
 .method private setEarlyMediaState(Landroid/os/Bundle;)V
     .locals 4
 
+    const-string v0, "crbt_video_cmcc"
+
+    invoke-static {v0}, Lcom/android/incallui/InCallUIFeature;->hasFeature(Ljava/lang/String;)Z
+
+    move-result v0
+
+    if-nez v0, :cond_1
+
+    :cond_0
+    :goto_0
+    return-void
+
+    :cond_1
     const/4 v0, 0x0
 
     invoke-static {p1}, Lcom/android/incallui/util/CallExtraParser;->getVideoCrbt(Landroid/os/Bundle;)Ljava/lang/String;
@@ -850,7 +863,7 @@
 
     move-result v2
 
-    if-eqz v2, :cond_0
+    if-eqz v2, :cond_2
 
     iget-object v2, p0, Lcom/android/incallui/CallDetails;->mCall:Lcom/android/incallui/Call;
 
@@ -860,7 +873,7 @@
 
     const/4 v3, 0x6
 
-    if-ne v2, v3, :cond_0
+    if-ne v2, v3, :cond_2
 
     const-string v2, "true"
 
@@ -868,14 +881,14 @@
 
     move-result v1
 
-    if-eqz v1, :cond_0
+    if-eqz v1, :cond_2
 
     const/4 v0, 0x1
 
-    :cond_0
+    :cond_2
     iget-boolean v1, p0, Lcom/android/incallui/CallDetails;->mIsEarlyMedia:Z
 
-    if-eq v1, v0, :cond_1
+    if-eq v1, v0, :cond_0
 
     iput-boolean v0, p0, Lcom/android/incallui/CallDetails;->mIsEarlyMedia:Z
 
@@ -901,8 +914,7 @@
 
     invoke-virtual {p0, v0}, Lcom/android/incallui/CallDetails;->log(Ljava/lang/String;)V
 
-    :cond_1
-    return-void
+    goto :goto_0
 .end method
 
 .method private setHDIcon(Landroid/os/Bundle;)V

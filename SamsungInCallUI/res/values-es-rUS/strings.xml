@@ -178,12 +178,13 @@
     <string name="account_phone">Dispositivo</string>
     <string name="acs">Llamada de voz</string>
     <string name="active_calls">Llamada activa</string>
-    <string name="add_reminder">Recordatorio</string>
+    <string name="add_reminder">Añadir recordatorio</string>
     <string name="agif_button_close_description">Cerrar</string>
     <string name="agif_decline_message">Lo siento, no puedo hablar ahora mismo.</string>
     <string name="agif_decline_sticker_header">Rechazar con un adhesivo</string>
     <string name="agif_decline_text_header">Rechazar con un mensaje</string>
     <string name="agif_decline_toast">Se envió un adhesivo a %s.</string>
+    <string name="agif_outgoing_bubble_tip">Envíe un adhesivo para mostrar cómo se siente.</string>
     <string name="agif_pickers_add_tab_description">Añadir</string>
     <string name="agif_pickers_downloaded">Descargado</string>
     <string name="agif_pickers_item_usage_hints_description">Pulsar dos veces para seleccionar</string>
@@ -199,10 +200,12 @@
     <string name="agif_pickers_tab_select_description">Seleccionado</string>
     <string name="agif_pickers_title">Comience con un adhesivo</string>
     <string name="agif_pickers_title_top_stickers">Mejores adhesivos</string>
+    <string name="agif_random_send_message">Pulse aquí para enviar este adhesivo.</string>
     <string name="agif_read_permission_description">Permitir que Teléfono lea contenidos AGIF.</string>
     <string name="agif_read_permission_label">Leer contenido AGIF</string>
     <string name="agif_receive_no_id">No es posible mostrar el adhesivo. Actualice %s cuando finalice la llamada.</string>
     <string name="agif_receive_no_id_upsupport_update">No es posible mostrar el adhesivo. Habrá nuevos adhesivos tras la próxima actualización del sistema.</string>
+    <string name="agif_receive_toast">Adhesivo de %s.</string>
     <string name="agif_sent_fail_message">No es posible enviar el GIF animado. Inténtelo de nuevo más tarde.</string>
     <string name="agif_sent_toast">Se envió el adhesivo.</string>
     <string name="agif_write_permission_description">Permitir que Teléfono modifique contenidos AGIF.</string>
@@ -870,6 +873,7 @@ El menú IVR de la pantalla de llamada utiliza contenidos proporcionados por un 
     <string name="sticker_delete_stickers">¿Desea eliminar %d adhesivos?</string>
     <string name="sticker_delete_this_sticker">¿Desea eliminar este adhesivo?</string>
     <string name="sticker_setting_edit_title">Seleccionar adhesivos</string>
+    <string name="sticker_setting_edit_title_preload">Reorganizar adhesivos</string>
     <string name="sticker_setting_main_title">Mis adhesivos</string>
     <string name="sticker_setting_menu_delete">Eliminar</string>
     <string name="sticker_setting_menu_edit">Editar</string>
@@ -882,6 +886,7 @@ El menú IVR de la pantalla de llamada utiliza contenidos proporcionados por un 
     <string name="swipe_right_to_answer_call_with_video">Deslice hacia la derecha para responder la llamada con video.</string>
     <string name="swipe_right_to_answer_call_without_video">Deslice hacia la derecha para responder la llamada sin video.</string>
     <string name="switch_rejected_by_mt">Se ha rechazado la solicitud de cambio a videollamada.</string>
+    <string name="switch_rejected_by_mt_att">Esta llamada no puede usar video. La llamada se ha conectado como llamada de voz.</string>
     <string name="switch_to_video_call_failed">No se pudo cambiar a videollamada.</string>
     <string name="switch_to_video_call_failed_tmo">Se ha rechazado la solicitud de cambio a videollamada.</string>
     <string name="switch_to_voice_call_failed">No se pudo cambiar a llamada de voz.</string>

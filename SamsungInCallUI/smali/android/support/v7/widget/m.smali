@@ -25,7 +25,7 @@
 .method public constructor <init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
     .locals 2
 
-    invoke-static {p1}, Landroid/support/v7/widget/ar;->a(Landroid/content/Context;)Landroid/content/Context;
+    invoke-static {p1}, Landroid/support/v7/widget/ay;->a(Landroid/content/Context;)Landroid/content/Context;
 
     move-result-object v0
 

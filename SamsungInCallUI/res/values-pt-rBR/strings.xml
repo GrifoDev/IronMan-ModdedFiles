@@ -151,12 +151,13 @@
     <string name="account_phone">Dispositivo</string>
     <string name="acs">Chamada de voz</string>
     <string name="active_calls">Chamada ativa</string>
-    <string name="add_reminder">Ad. lembrete</string>
+    <string name="add_reminder">Adicionar lembrete</string>
     <string name="agif_button_close_description">Fechar</string>
     <string name="agif_decline_message">Não posso falar agora.</string>
     <string name="agif_decline_sticker_header">Recusar com um adesivo</string>
     <string name="agif_decline_text_header">Recusar com um texto</string>
     <string name="agif_decline_toast">Adesivo enviado para %s.</string>
+    <string name="agif_outgoing_bubble_tip">Envie um adesivo para mostrar como se sente.</string>
     <string name="agif_pickers_add_tab_description">Adicionar</string>
     <string name="agif_pickers_downloaded">Baixados</string>
     <string name="agif_pickers_item_usage_hints_description">Toque duas vezes para selecionar</string>
@@ -172,10 +173,12 @@
     <string name="agif_pickers_tab_select_description">Selecionado</string>
     <string name="agif_pickers_title">Começar com um adesivo</string>
     <string name="agif_pickers_title_top_stickers">Adesivos populares</string>
+    <string name="agif_random_send_message">Toque aqui para enviar este adesivo.</string>
     <string name="agif_read_permission_description">Permite que o Telefone leia o conteúdo AGIF.</string>
     <string name="agif_read_permission_label">Ler o conteúdo AGIF</string>
     <string name="agif_receive_no_id">O adesivo não pode ser exibido. Atualize %s depois da chamada.</string>
     <string name="agif_receive_no_id_upsupport_update">Impossível exibir adesivo. Mais adesivos serão disponibilizados após próxima atualização do sistema.</string>
+    <string name="agif_receive_toast">Adesivo de %s.</string>
     <string name="agif_sent_fail_message">Não é possível enviar GIF animado. Tente novamente mais tarde.</string>
     <string name="agif_sent_toast">Adesivo enviado.</string>
     <string name="agif_write_permission_description">Permite que o Telefone modifique o conteúdo AGIF.</string>
@@ -844,6 +847,7 @@ unidirec."</string>
     <string name="sticker_delete_stickers">Excluir %d adesivos?</string>
     <string name="sticker_delete_this_sticker">Excluir este adesivo?</string>
     <string name="sticker_setting_edit_title">Selecionar adesivos</string>
+    <string name="sticker_setting_edit_title_preload">Reorganizar adesivos</string>
     <string name="sticker_setting_main_title">Meus adesivos</string>
     <string name="sticker_setting_menu_delete">Excluir</string>
     <string name="sticker_setting_menu_edit">Editar</string>
@@ -856,6 +860,7 @@ unidirec."</string>
     <string name="swipe_right_to_answer_call_with_video">Deslize para a direita para atender a chamada com vídeo.</string>
     <string name="swipe_right_to_answer_call_without_video">Deslize para a direita para atender a chamada sem vídeo.</string>
     <string name="switch_rejected_by_mt">Solicitação de mudança para videochamada rejeitada.</string>
+    <string name="switch_rejected_by_mt_att">Vídeo indisponível para esta chamada. Chamada conectada como chamada de voz.</string>
     <string name="switch_to_video_call_failed">Falha na solicitação de mudança para chamada de vídeo.</string>
     <string name="switch_to_video_call_failed_tmo">A solicitação para alternar para videochamada foi recusada.</string>
     <string name="switch_to_voice_call_failed">Falha na solicitação de mudança para chamada com voz.</string>

@@ -150,7 +150,7 @@
 
     move-result-object v3
 
-    const v4, 0x7f0b0010
+    const v4, 0x7f0b000f
 
     invoke-direct {v2, v3, v4}, Landroid/view/ContextThemeWrapper;-><init>(Landroid/content/Context;I)V
 

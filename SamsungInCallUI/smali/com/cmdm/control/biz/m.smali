@@ -22,7 +22,7 @@
 
     new-instance v1, Ljava/lang/StringBuilder;
 
-    const-string v2, "\u521d\u59cb\u5316\u5305\u540d"
+    const-string/jumbo v2, "\u521d\u59cb\u5316\u5305\u540d"
 
     invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
@@ -339,7 +339,7 @@
 
     const/4 v1, 0x1
 
-    const-string v2, "\u521d\u59cb\u5316\u6210\u529f"
+    const-string/jumbo v2, "\u521d\u59cb\u5316\u6210\u529f"
 
     invoke-direct {v0, v1, v2}, Lcom/cmdm/control/util/client/ResultEntity;-><init>(ILjava/lang/String;)V
 
@@ -351,7 +351,7 @@
 
     const/4 v1, 0x0
 
-    const-string v2, "\u521d\u59cb\u5316\u5931\u8d25"
+    const-string/jumbo v2, "\u521d\u59cb\u5316\u5931\u8d25"
 
     invoke-direct {v0, v1, v2}, Lcom/cmdm/control/util/client/ResultEntity;-><init>(ILjava/lang/String;)V
 

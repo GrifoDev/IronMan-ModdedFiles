@@ -136,9 +136,9 @@
     <string name="unknown">번호정보 없음</string>
     <string name="wait_prompt_str">"다음 톤을 보낼까요?
 "</string>
-    <string name="Anniversary_passedDays1">어제 기념일</string>
-    <string name="Anniversary_passedDays7">1주 전 기념일</string>
-    <string name="Anniversary_passedDaysEtc">%d일 전 기념일</string>
+    <string name="Anniversary_passedDays1">기념일 1일 지남</string>
+    <string name="Anniversary_passedDays7">기념일 1주일 지남</string>
+    <string name="Anniversary_passedDaysEtc">기념일 %d일 지남</string>
     <string name="Anniversary_remainedDays0">오늘 기념일</string>
     <string name="Anniversary_remainedDays1">내일 기념일</string>
     <string name="Anniversary_remainedDays7">1주 후 기념일</string>
@@ -184,6 +184,7 @@
     <string name="agif_decline_sticker_header">스티커로 거절</string>
     <string name="agif_decline_text_header">문자로 거절</string>
     <string name="agif_decline_toast">%s 님에게 스티커를 보냈습니다.</string>
+    <string name="agif_outgoing_bubble_tip">스티커를 보내 지금 기분을 표현해 보세요.</string>
     <string name="agif_pickers_add_tab_description">추가</string>
     <string name="agif_pickers_downloaded">다운로드됨</string>
     <string name="agif_pickers_item_usage_hints_description">선택하려면 두 번 누르세요.</string>
@@ -199,10 +200,12 @@
     <string name="agif_pickers_tab_select_description">선택됨</string>
     <string name="agif_pickers_title">스티커 보내기</string>
     <string name="agif_pickers_title_top_stickers">인기 스티커</string>
+    <string name="agif_random_send_message">이 스티커를 보내려면 여기를 누르세요.</string>
     <string name="agif_read_permission_description">전화 앱에서 움직이는 GIF 사진 콘텐츠를 읽을 수 있도록 허용합니다.</string>
     <string name="agif_read_permission_label">움직이는 GIF 사진 콘텐츠 읽기</string>
     <string name="agif_receive_no_id">스티커를 표시할 수 없습니다. 통화를 종료한 후 %s 앱을 업데이트하세요.</string>
     <string name="agif_receive_no_id_upsupport_update">스티커를 표시할 수 없습니다. 다음 시스템 업데이트 후 더 다양한 스티커를 사용할 수 있습니다.</string>
+    <string name="agif_receive_toast">%s 님이 보낸 스티커예요.</string>
     <string name="agif_sent_fail_message">움직이는 GIF 파일을 보낼 수 없습니다. 나중에 다시 시도하세요.</string>
     <string name="agif_sent_toast">스티커를 보냈습니다.</string>
     <string name="agif_write_permission_description">전화 앱에서 움직이는 GIF 사진 콘텐츠를 수정할 수 있도록 허용합니다.</string>
@@ -871,6 +874,7 @@ IVR 통화 화면 메뉴는 제3자 서비스 제공자인 Dianhuabang에서 제
     <string name="sticker_delete_stickers">스티커 %d개를 삭제할까요?</string>
     <string name="sticker_delete_this_sticker">이 스티커를 삭제할까요?</string>
     <string name="sticker_setting_edit_title">스티커 선택</string>
+    <string name="sticker_setting_edit_title_preload">스티커 순서 변경</string>
     <string name="sticker_setting_main_title">내 스티커</string>
     <string name="sticker_setting_menu_delete">삭제</string>
     <string name="sticker_setting_menu_edit">편집</string>
@@ -883,6 +887,7 @@ IVR 통화 화면 메뉴는 제3자 서비스 제공자인 Dianhuabang에서 제
     <string name="swipe_right_to_answer_call_with_video">영상통화로 받으려면 오른쪽으로 미세요.</string>
     <string name="swipe_right_to_answer_call_without_video">음성통화로 받으려면 오른쪽으로 미세요.</string>
     <string name="switch_rejected_by_mt">영상통화 전환 요청을 거절했습니다.</string>
+    <string name="switch_rejected_by_mt_att">영상통화를 사용할 수 없어 음성통화로 연결했습니다.</string>
     <string name="switch_to_video_call_failed">영상통화 전환을 요청하지 못했습니다.</string>
     <string name="switch_to_video_call_failed_tmo">상대방이 영상통화 전환 요청을 거절했습니다.</string>
     <string name="switch_to_voice_call_failed">음성통화 전환을 요청하지 못했습니다.</string>

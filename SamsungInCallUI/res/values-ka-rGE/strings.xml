@@ -120,12 +120,13 @@
     <string name="account_phone">მოწყობილობა</string>
     <string name="acs">ხმოვანი ზარი</string>
     <string name="active_calls">აქტიური ზარი</string>
-    <string name="add_reminder">შეხსენ. დამ.</string>
+    <string name="add_reminder">შეხსენების დამატება</string>
     <string name="agif_button_close_description">დახურვა</string>
     <string name="agif_decline_message">უკაცრავად, ახლა ვერ ვილაპარაკებ.</string>
     <string name="agif_decline_sticker_header">უარყოფა სტიკერით</string>
     <string name="agif_decline_text_header">უარყოფა ტექსტით</string>
     <string name="agif_decline_toast">სტიკერი გაიგზავნა მიმღებთან: %s.</string>
+    <string name="agif_outgoing_bubble_tip">გრძნობის გამოსახატად გაგზავნეთ სტიკერი.</string>
     <string name="agif_pickers_add_tab_description">დამატ.</string>
     <string name="agif_pickers_downloaded">ჩამოტვირთული</string>
     <string name="agif_pickers_item_usage_hints_description">შესარჩევად შეეხეთ ორჯერ</string>
@@ -141,10 +142,12 @@
     <string name="agif_pickers_tab_select_description">არჩეულია</string>
     <string name="agif_pickers_title">სტიკერით დაწყება</string>
     <string name="agif_pickers_title_top_stickers">პოპულარული სტიკერები</string>
+    <string name="agif_random_send_message">ამ სტიკერის გასაგზავნად, შეეხეთ აქ.</string>
     <string name="agif_read_permission_description">ტელეფონს მიეცით AGIF შიგთავსის წაკითხვის ნებართვა.</string>
     <string name="agif_read_permission_label">AGIF შიგთავსის წაკითხვა</string>
     <string name="agif_receive_no_id">სტიკერის ჩვენება შეუძლებელია. ზარის შემდეგ განაახლეთ %s.</string>
     <string name="agif_receive_no_id_upsupport_update">სტიკერის ჩვენება შეუძლებელია. სხვა სტიკერები ხელმისაწვდომი გახდება სისტემის განახლების შემდეგ.</string>
+    <string name="agif_receive_toast">სტიკერი %s-დან.</string>
     <string name="agif_sent_fail_message">ანიმაციური GIF-ის გაგზავნა შეუძლებელია. მოგვიანებით სცადეთ.</string>
     <string name="agif_sent_toast">სტიკერი გაიგზავნა.</string>
     <string name="agif_write_permission_description">ტელეფონს მიეცით AGIF შიგთავსის მოდიფიცირების ნებართვა.</string>
@@ -814,6 +817,7 @@ IVR ზარის ეკრანული მენიუ იყენებ�
     <string name="sticker_delete_stickers">წაიშალოს %d სტიკერი?</string>
     <string name="sticker_delete_this_sticker">წაიშალოს ეს სტიკერი?</string>
     <string name="sticker_setting_edit_title">აირჩიეთ სტიკერები</string>
+    <string name="sticker_setting_edit_title_preload">სტიკერების თავიდან დალაგება</string>
     <string name="sticker_setting_main_title">ჩემი სტიკერები</string>
     <string name="sticker_setting_menu_delete">წაშლა</string>
     <string name="sticker_setting_menu_edit">შეცვლა</string>
@@ -826,6 +830,7 @@ IVR ზარის ეკრანული მენიუ იყენებ�
     <string name="swipe_right_to_answer_call_with_video">გადაუსვით თითი მარჯვნივ, რომ უპასუხოთ ზარს ვიდეოთი.</string>
     <string name="swipe_right_to_answer_call_without_video">გადაუსვით თითი მარჯვნივ, რომ უპასუხოთ ზარს ვიდეოს გარეშე.</string>
     <string name="switch_rejected_by_mt">ვიდეო ზარზე გადართვის მოთხოვნა უარყოფილია.</string>
+    <string name="switch_rejected_by_mt_att">Video unavailable for this call. Call connected as a voice call.</string>
     <string name="switch_to_video_call_failed">ვიდეო ზარზე გადართვის მოთხოვნა ვერ შესრულდა.</string>
     <string name="switch_to_video_call_failed_tmo">ვიდეო ზარზე გადართვის მოთხოვნა უარყოფილია.</string>
     <string name="switch_to_voice_call_failed">ხმოვან ზარზე გადართვის მოთხოვნა ვერ შესრულდა.</string>

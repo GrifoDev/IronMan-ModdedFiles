@@ -260,7 +260,7 @@
 
     aget-object v0, v0, p1
 
-    const v1, 0x7f1000db
+    const v1, 0x7f1000e3
 
     invoke-virtual {v0, v1}, Landroid/view/ViewGroup;->findViewById(I)Landroid/view/View;
 
@@ -272,7 +272,7 @@
 
     aget-object v1, v1, p1
 
-    const v2, 0x7f1000dc
+    const v2, 0x7f1000e4
 
     invoke-virtual {v1, v2}, Landroid/view/ViewGroup;->findViewById(I)Landroid/view/View;
 
@@ -284,7 +284,7 @@
 
     aget-object v2, v2, p1
 
-    const v3, 0x7f1000dd
+    const v3, 0x7f1000e5
 
     invoke-virtual {v2, v3}, Landroid/view/ViewGroup;->findViewById(I)Landroid/view/View;
 
@@ -296,7 +296,7 @@
 
     aget-object v3, v3, p1
 
-    const v4, 0x7f1000de
+    const v4, 0x7f1000e6
 
     invoke-virtual {v3, v4}, Landroid/view/ViewGroup;->findViewById(I)Landroid/view/View;
 
@@ -310,7 +310,7 @@
 
     move-result-object v4
 
-    const v5, 0x7f0a01d9
+    const v5, 0x7f0a01c4
 
     invoke-virtual {v4, v5}, Landroid/content/res/Resources;->getDimension(I)F
 
@@ -322,7 +322,7 @@
 
     move-result-object v5
 
-    const v6, 0x7f02027b
+    const v6, 0x7f02028a
 
     invoke-virtual {v5, v6}, Landroid/content/res/Resources;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 
@@ -366,7 +366,7 @@
 
     move-result-object v5
 
-    const v6, 0x7f020105
+    const v6, 0x7f02010f
 
     invoke-virtual {v5, v6}, Landroid/content/res/Resources;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 
@@ -432,13 +432,13 @@
 
     const/4 v1, 0x0
 
-    const v0, 0x7f040037
+    const v0, 0x7f04003a
 
     invoke-virtual {p1, v0, p2, v1}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;Z)Landroid/view/View;
 
     move-result-object v2
 
-    const v0, 0x7f100100
+    const v0, 0x7f100107
 
     invoke-virtual {v2, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -448,7 +448,7 @@
 
     iput-object v0, p0, Lcom/android/incallui/fragment/ConferenceManagerVideoFragment;->mConferencePanel:Landroid/widget/FrameLayout;
 
-    const v0, 0x7f100108
+    const v0, 0x7f10010f
 
     invoke-virtual {v2, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -530,7 +530,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f0a0152
+    const v1, 0x7f0a0145
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDimension(I)F
 
@@ -550,11 +550,11 @@
 
     :array_0
     .array-data 4
-        0x7f100103
-        0x7f100104
-        0x7f100105
-        0x7f100106
-        0x7f100107
+        0x7f10010a
+        0x7f10010b
+        0x7f10010c
+        0x7f10010d
+        0x7f10010e
     .end array-data
 .end method
 
@@ -691,7 +691,7 @@
 
     aget-object v0, v0, p1
 
-    const v1, 0x7f1000e0
+    const v1, 0x7f1000e8
 
     invoke-virtual {v0, v1}, Landroid/view/ViewGroup;->findViewById(I)Landroid/view/View;
 

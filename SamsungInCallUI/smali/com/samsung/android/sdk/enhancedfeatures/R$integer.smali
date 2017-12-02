@@ -14,11 +14,11 @@
 
 
 # static fields
-.field public static final custom_match_parent:I = 0x7f0e004c
+.field public static final custom_match_parent:I = 0x7f0f004b
 
-.field public static final custom_wrap_content:I = 0x7f0e004d
+.field public static final custom_wrap_content:I = 0x7f0f004c
 
-.field public static final google_play_services_version:I = 0x7f0e0055
+.field public static final google_play_services_version:I = 0x7f0f0054
 
 
 # direct methods

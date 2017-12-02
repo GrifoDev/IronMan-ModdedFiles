@@ -89,7 +89,7 @@
 
     invoke-direct {v1, p0, v2}, Lcom/android/incallui/SelectPhoneAccountDialogFragment$SelectAccountListAdapter$ViewHolder;-><init>(Lcom/android/incallui/SelectPhoneAccountDialogFragment$SelectAccountListAdapter;Lcom/android/incallui/SelectPhoneAccountDialogFragment$1;)V
 
-    const v0, 0x7f100160
+    const v0, 0x7f100167
 
     invoke-virtual {p2, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -99,7 +99,7 @@
 
     iput-object v0, v1, Lcom/android/incallui/SelectPhoneAccountDialogFragment$SelectAccountListAdapter$ViewHolder;->labelTextView:Landroid/widget/TextView;
 
-    const v0, 0x7f10013c
+    const v0, 0x7f100143
 
     invoke-virtual {p2, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 

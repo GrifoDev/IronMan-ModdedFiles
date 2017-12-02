@@ -184,6 +184,7 @@
     <string name="agif_decline_sticker_header">透過貼紙拒絕</string>
     <string name="agif_decline_text_header">透過文字拒絕</string>
     <string name="agif_decline_toast">已發送貼紙至 %s。</string>
+    <string name="agif_outgoing_bubble_tip">發送貼紙以表達您的感受。</string>
     <string name="agif_pickers_add_tab_description">新增</string>
     <string name="agif_pickers_downloaded">已下載</string>
     <string name="agif_pickers_item_usage_hints_description">輕觸兩下以選擇</string>
@@ -199,10 +200,12 @@
     <string name="agif_pickers_tab_select_description">已選擇</string>
     <string name="agif_pickers_title">透過貼紙開始</string>
     <string name="agif_pickers_title_top_stickers">熱門貼紙</string>
+    <string name="agif_random_send_message">輕觸此處以發送此貼紙。</string>
     <string name="agif_read_permission_description">允許電話讀取 AGIF 內容。</string>
     <string name="agif_read_permission_label">讀取 AGIF 內容</string>
     <string name="agif_receive_no_id">無法顯示貼紙。請在通話結束後更新 %s。</string>
     <string name="agif_receive_no_id_upsupport_update">無法顯示貼紙。將在下次系統更新後有更多貼紙可用。</string>
+    <string name="agif_receive_toast">貼紙來自 %s。</string>
     <string name="agif_sent_fail_message">無法發送動畫 GIF。請稍後再試。</string>
     <string name="agif_sent_toast">已發送貼紙。</string>
     <string name="agif_write_permission_description">允許手機修改 AGIF 內容。</string>
@@ -406,7 +409,7 @@
     <string name="incall_decline_simultaneous_call_limit_with_mdn_vzw">%s的所有可用線路均在使用中。若要撥打電話，請掛斷手機或平板電腦上的其中一個通話。</string>
     <string name="incall_decline_transferred_to_another_device">通話已轉駁至另一個裝置。</string>
     <string name="incall_error_supp_service_switch">無法切換通話。</string>
-    <string name="incall_extra_volume_disabled_BT">藍牙耳機連接時無法使用 [額外音量範圍]。</string>
+    <string name="incall_extra_volume_disabled_BT">藍牙耳機連接時無法使用 [額外音量]。</string>
     <string name="incall_extra_volume_disabled_HAC">在 [助聽器] 已啟用時無法啟用 [額外音量]。</string>
     <string name="incall_extra_volume_disabled_HAC_vzw">在 [助聽器] 已啟用時無法啟用 [額外音量]。</string>
     <string name="incall_extra_volume_disabled_headset">耳機連接時無法使用 [額外音量]。</string>
@@ -871,6 +874,7 @@
     <string name="sticker_delete_stickers">刪除 %d 張貼紙嗎？</string>
     <string name="sticker_delete_this_sticker">刪除此貼紙嗎？</string>
     <string name="sticker_setting_edit_title">選擇貼紙</string>
+    <string name="sticker_setting_edit_title_preload">重新排列貼紙</string>
     <string name="sticker_setting_main_title">我的貼紙</string>
     <string name="sticker_setting_menu_delete">刪除</string>
     <string name="sticker_setting_menu_edit">編輯</string>
@@ -883,6 +887,7 @@
     <string name="swipe_right_to_answer_call_with_video">向右滑動以接聽視像來電</string>
     <string name="swipe_right_to_answer_call_without_video">向右滑動以接聽非視像來電</string>
     <string name="switch_rejected_by_mt">要求切換至視像通話被拒絕。</string>
+    <string name="switch_rejected_by_mt_att">本次通話無法使用視像。已作為語音通話連接通話。</string>
     <string name="switch_to_video_call_failed">請求切換至視像通話失敗。</string>
     <string name="switch_to_video_call_failed_tmo">切換為視像通話的請求已被拒絕。</string>
     <string name="switch_to_voice_call_failed">請求切換至語音通話失敗。</string>
@@ -894,7 +899,7 @@
     <string name="switching_to_voice_call">正在切換至語音通話…</string>
     <string name="the_verification_has_failed">驗證失敗。請重試。</string>
     <string name="toast_text_max_Length">已超過字元上限。</string>
-    <string name="tts_hours">%d 個小時</string>
+    <string name="tts_hours">%d 小時</string>
     <string name="tts_minutes">%d 分鐘</string>
     <string name="tts_pager">第 %1$d 頁，共 %2$d 頁。</string>
     <string name="tts_seconds">%d 秒</string>

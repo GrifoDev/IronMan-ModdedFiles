@@ -28,10 +28,6 @@
 
 .field public static final IA_STATE_ID_INCOMING_CALL:Ljava/lang/String; = "IncomingCall"
 
-.field public static final IA_STATE_ID_INCOMING_VIDEO_CALL:Ljava/lang/String; = "IncomingVideoCall"
-
-.field public static final IA_STATE_ID_INCOMING_VOICE_CALL:Ljava/lang/String; = "IncomingVoiceCall"
-
 .field public static final IA_STATE_ID_OUTGOINGCALL:Ljava/lang/String; = "OutgoingCall"
 
 .field public static final IA_STATE_ID_REJECT_CALL:Ljava/lang/String; = "CallReject"

@@ -46,11 +46,11 @@
 
     iget-object v0, p0, Landroid/support/v7/view/menu/t$1;->a:Landroid/support/v7/view/menu/t;
 
-    invoke-static {v0}, Landroid/support/v7/view/menu/t;->a(Landroid/support/v7/view/menu/t;)Landroid/support/v7/widget/ak;
+    invoke-static {v0}, Landroid/support/v7/view/menu/t;->a(Landroid/support/v7/view/menu/t;)Landroid/support/v7/widget/ap;
 
     move-result-object v0
 
-    invoke-virtual {v0}, Landroid/support/v7/widget/ak;->g()Z
+    invoke-virtual {v0}, Landroid/support/v7/widget/ap;->g()Z
 
     move-result v0
 
@@ -82,11 +82,11 @@
     :cond_2
     iget-object v0, p0, Landroid/support/v7/view/menu/t$1;->a:Landroid/support/v7/view/menu/t;
 
-    invoke-static {v0}, Landroid/support/v7/view/menu/t;->a(Landroid/support/v7/view/menu/t;)Landroid/support/v7/widget/ak;
+    invoke-static {v0}, Landroid/support/v7/view/menu/t;->a(Landroid/support/v7/view/menu/t;)Landroid/support/v7/widget/ap;
 
     move-result-object v0
 
-    invoke-virtual {v0}, Landroid/support/v7/widget/ak;->a()V
+    invoke-virtual {v0}, Landroid/support/v7/widget/ap;->a()V
 
     goto :goto_0
 .end method

@@ -178,12 +178,13 @@
     <string name="account_phone">Устройство</string>
     <string name="acs">Голосовой вызов</string>
     <string name="active_calls">Активный вызов</string>
-    <string name="add_reminder">Доб. напом.</string>
+    <string name="add_reminder">Добавить напоминание</string>
     <string name="agif_button_close_description">Закрыть</string>
     <string name="agif_decline_message">К сожалению, сейчас я не могу ответить.</string>
     <string name="agif_decline_sticker_header">Отклонение с отправкой стикера</string>
     <string name="agif_decline_text_header">Отклонение с отправкой текстового сообщения</string>
     <string name="agif_decline_toast">Стикер отправлен пользователю %s.</string>
+    <string name="agif_outgoing_bubble_tip">Отправьте стикер, чтобы выразить свои чувства.</string>
     <string name="agif_pickers_add_tab_description">Добав.</string>
     <string name="agif_pickers_downloaded">Загруженные</string>
     <string name="agif_pickers_item_usage_hints_description">Дважды коснуться для выбора</string>
@@ -199,10 +200,12 @@
     <string name="agif_pickers_tab_select_description">Выбрано</string>
     <string name="agif_pickers_title">Добавление стикера</string>
     <string name="agif_pickers_title_top_stickers">Лучшие наклейки</string>
+    <string name="agif_random_send_message">Коснитесь здесь, чтобы отправить этот стикер.</string>
     <string name="agif_read_permission_description">Телефон получает возможность считывать содержимое AGIF-файлов.</string>
     <string name="agif_read_permission_label">Чтение содержимого AGIF-файлов</string>
     <string name="agif_receive_no_id">Невозможно отобразить стикер. По завершении вызова обновите %s.</string>
     <string name="agif_receive_no_id_upsupport_update">Невозможно отобразить стикер. Новые стикеры станут доступны после следующего обновления системы.</string>
+    <string name="agif_receive_toast">Стикер от %s.</string>
     <string name="agif_sent_fail_message">Невозможно отправить анимированный GIF-файл. Повторите попытку позже.</string>
     <string name="agif_sent_toast">Стикер отправлен.</string>
     <string name="agif_write_permission_description">Телефон получает возможность изменять содержимое AGIF-файлов.</string>
@@ -871,6 +874,7 @@
     <string name="sticker_delete_stickers">Удалить наклейки (%d)?</string>
     <string name="sticker_delete_this_sticker">Удалить эту наклейку?</string>
     <string name="sticker_setting_edit_title">Выбрать наклейки</string>
+    <string name="sticker_setting_edit_title_preload">Изменение порядка стикеров</string>
     <string name="sticker_setting_main_title">Мои стикеры</string>
     <string name="sticker_setting_menu_delete">Удалить</string>
     <string name="sticker_setting_menu_edit">Изменить</string>
@@ -883,6 +887,7 @@
     <string name="swipe_right_to_answer_call_with_video">Проведите вправо для ответа на вызов с видео.</string>
     <string name="swipe_right_to_answer_call_without_video">Проведите вправо для ответа на вызов без видео.</string>
     <string name="switch_rejected_by_mt">Предложение переключиться на видеовызов отклонено.</string>
+    <string name="switch_rejected_by_mt_att">Video unavailable for this call. Call connected as a voice call.</string>
     <string name="switch_to_video_call_failed">Сбой предложения переключиться на видеовызов.</string>
     <string name="switch_to_video_call_failed_tmo">Предложение переключиться на видеовызов отклонено.</string>
     <string name="switch_to_voice_call_failed">Сбой предложения переключиться на голосовой вызов.</string>

@@ -200,7 +200,7 @@
 
     move-result-object v2
 
-    const v4, 0x7f0a02cf
+    const v4, 0x7f0a02bb
 
     invoke-virtual {v2, v4}, Landroid/content/res/Resources;->getDimension(I)F
 
@@ -232,7 +232,7 @@
 
     iget-object v4, v4, Lcom/android/incallui/fragment/VoiceCallCardFragment;->mCallerInfoView:Lcom/android/incallui/fragment/view/CallCardCallerInfoView;
 
-    if-eqz v4, :cond_25
+    if-eqz v4, :cond_27
 
     move-object/from16 v0, p0
 
@@ -303,7 +303,7 @@
 
     move-result-object v2
 
-    const v6, 0x7f0a0057
+    const v6, 0x7f0a0054
 
     invoke-virtual {v2, v6}, Landroid/content/res/Resources;->getDimension(I)F
 
@@ -325,7 +325,7 @@
 
     move-result-object v2
 
-    const v8, 0x7f0a0058
+    const v8, 0x7f0a0055
 
     invoke-virtual {v2, v8}, Landroid/content/res/Resources;->getDimension(I)F
 
@@ -395,7 +395,7 @@
 
     move-result-object v8
 
-    const v9, 0x7f0a0155
+    const v9, 0x7f0a0148
 
     invoke-virtual {v8, v9}, Landroid/content/res/Resources;->getDimension(I)F
 
@@ -414,7 +414,7 @@
 
     move-result-object v2
 
-    const v10, 0x7f0a023d
+    const v10, 0x7f0a0221
 
     invoke-virtual {v2, v10}, Landroid/content/res/Resources;->getDimension(I)F
 
@@ -426,7 +426,7 @@
 
     move-result v2
 
-    if-eqz v2, :cond_24
+    if-eqz v2, :cond_26
 
     move-object/from16 v0, p0
 
@@ -472,7 +472,7 @@
 
     move-result-object v2
 
-    const v5, 0x7f0a0485
+    const v5, 0x7f0a0490
 
     invoke-virtual {v2, v5}, Landroid/content/res/Resources;->getDimension(I)F
 
@@ -495,7 +495,7 @@
 
     move-result-object v5
 
-    const v14, 0x7f0a0155
+    const v14, 0x7f0a0148
 
     invoke-virtual {v5, v14}, Landroid/content/res/Resources;->getDimension(I)F
 
@@ -693,7 +693,7 @@
 
     cmpg-double v3, v4, v6
 
-    if-gtz v3, :cond_1e
+    if-gtz v3, :cond_1f
 
     if-eqz v22, :cond_a
 
@@ -813,7 +813,7 @@
     :cond_b
     cmpg-double v3, v4, v6
 
-    if-gtz v3, :cond_21
+    if-gtz v3, :cond_25
 
     if-eqz v2, :cond_1a
 
@@ -855,11 +855,11 @@
     if-nez v3, :cond_e
 
     :cond_d
-    if-eqz v2, :cond_21
+    if-eqz v2, :cond_1e
 
     cmpg-double v3, v4, v6
 
-    if-gez v3, :cond_21
+    if-gez v3, :cond_1e
 
     :cond_e
     const/16 v3, 0x9
@@ -927,9 +927,9 @@
 
     move-result v6
 
-    if-eqz v6, :cond_22
+    if-eqz v6, :cond_23
 
-    if-eqz v2, :cond_22
+    if-eqz v2, :cond_23
 
     move-object/from16 v0, p0
 
@@ -1079,7 +1079,7 @@
 
     move-result-object v2
 
-    const v5, 0x7f0a0485
+    const v5, 0x7f0a0490
 
     invoke-virtual {v2, v5}, Landroid/content/res/Resources;->getDimension(I)F
 
@@ -1122,7 +1122,7 @@
 
     move-result-object v2
 
-    const v5, 0x7f0a0485
+    const v5, 0x7f0a0490
 
     invoke-virtual {v2, v5}, Landroid/content/res/Resources;->getDimension(I)F
 
@@ -1143,7 +1143,7 @@
 
     iget-object v2, v2, Lcom/android/incallui/fragment/VoiceCallCardFragment;->mCallerInfoView:Lcom/android/incallui/fragment/view/CallCardCallerInfoView;
 
-    if-eqz v2, :cond_24
+    if-eqz v2, :cond_26
 
     move-object/from16 v0, p0
 
@@ -1155,7 +1155,7 @@
 
     move-result v2
 
-    if-eqz v2, :cond_24
+    if-eqz v2, :cond_26
 
     move-object/from16 v0, p0
 
@@ -1165,7 +1165,7 @@
 
     move-result-object v2
 
-    const v5, 0x7f0a0485
+    const v5, 0x7f0a0490
 
     invoke-virtual {v2, v5}, Landroid/content/res/Resources;->getDimension(I)F
 
@@ -1196,7 +1196,7 @@
 
     move-result-object v5
 
-    const v14, 0x7f0a03cf
+    const v14, 0x7f0a03c5
 
     invoke-virtual {v5, v14}, Landroid/content/res/Resources;->getDimension(I)F
 
@@ -1325,16 +1325,51 @@
 
     move/from16 v0, v17
 
-    if-ne v0, v3, :cond_21
+    if-ne v0, v3, :cond_25
 
-    if-eqz v2, :cond_21
+    if-eqz v2, :cond_25
 
     const/4 v3, 0x4
 
     goto/16 :goto_9
 
     :cond_1e
-    if-eqz v22, :cond_1f
+    cmpl-double v3, v4, v6
+
+    if-lez v3, :cond_25
+
+    const/16 v3, 0x8
+
+    move/from16 v0, v17
+
+    if-ne v0, v3, :cond_25
+
+    move-object/from16 v0, p0
+
+    iget-object v3, v0, Lcom/android/incallui/fragment/VoiceCallCardFragment$14;->this$0:Lcom/android/incallui/fragment/VoiceCallCardFragment;
+
+    iget-object v3, v3, Lcom/android/incallui/fragment/VoiceCallCardFragment;->mResumeCallBtn:Landroid/widget/Button;
+
+    if-eqz v3, :cond_25
+
+    move-object/from16 v0, p0
+
+    iget-object v3, v0, Lcom/android/incallui/fragment/VoiceCallCardFragment$14;->this$0:Lcom/android/incallui/fragment/VoiceCallCardFragment;
+
+    iget-object v3, v3, Lcom/android/incallui/fragment/VoiceCallCardFragment;->mResumeCallBtn:Landroid/widget/Button;
+
+    invoke-virtual {v3}, Landroid/widget/Button;->getVisibility()I
+
+    move-result v3
+
+    if-eqz v3, :cond_25
+
+    const/4 v3, 0x1
+
+    goto/16 :goto_9
+
+    :cond_1f
+    if-eqz v22, :cond_20
 
     move-object/from16 v0, p0
 
@@ -1342,12 +1377,12 @@
 
     iget-object v3, v3, Lcom/android/incallui/fragment/VoiceCallCardFragment;->mForthPriorityInfoLayout:Landroid/view/View;
 
-    const/4 v6, 0x0
+    const/4 v8, 0x0
 
-    invoke-virtual {v3, v6}, Landroid/view/View;->setVisibility(I)V
+    invoke-virtual {v3, v8}, Landroid/view/View;->setVisibility(I)V
 
-    :cond_1f
-    if-eqz v21, :cond_20
+    :cond_20
+    if-eqz v21, :cond_21
 
     move-object/from16 v0, p0
 
@@ -1355,12 +1390,12 @@
 
     iget-object v3, v3, Lcom/android/incallui/fragment/VoiceCallCardFragment;->mThirdPriorityInfoLayout:Landroid/view/View;
 
-    const/4 v6, 0x0
+    const/4 v8, 0x0
 
-    invoke-virtual {v3, v6}, Landroid/view/View;->setVisibility(I)V
+    invoke-virtual {v3, v8}, Landroid/view/View;->setVisibility(I)V
 
-    :cond_20
-    if-eqz v20, :cond_21
+    :cond_21
+    if-eqz v20, :cond_22
 
     move-object/from16 v0, p0
 
@@ -1368,16 +1403,46 @@
 
     iget-object v3, v3, Lcom/android/incallui/fragment/VoiceCallCardFragment;->mCallNumberAndLabel:Landroid/view/View;
 
-    const/4 v6, 0x0
+    const/4 v8, 0x0
 
-    invoke-virtual {v3, v6}, Landroid/view/View;->setVisibility(I)V
+    invoke-virtual {v3, v8}, Landroid/view/View;->setVisibility(I)V
 
-    :cond_21
-    move v3, v12
+    :cond_22
+    cmpl-double v3, v4, v6
+
+    if-lez v3, :cond_25
+
+    const/16 v3, 0x8
+
+    move/from16 v0, v17
+
+    if-ne v0, v3, :cond_25
+
+    move-object/from16 v0, p0
+
+    iget-object v3, v0, Lcom/android/incallui/fragment/VoiceCallCardFragment$14;->this$0:Lcom/android/incallui/fragment/VoiceCallCardFragment;
+
+    iget-object v3, v3, Lcom/android/incallui/fragment/VoiceCallCardFragment;->mResumeCallBtn:Landroid/widget/Button;
+
+    if-eqz v3, :cond_25
+
+    move-object/from16 v0, p0
+
+    iget-object v3, v0, Lcom/android/incallui/fragment/VoiceCallCardFragment$14;->this$0:Lcom/android/incallui/fragment/VoiceCallCardFragment;
+
+    iget-object v3, v3, Lcom/android/incallui/fragment/VoiceCallCardFragment;->mResumeCallBtn:Landroid/widget/Button;
+
+    invoke-virtual {v3}, Landroid/widget/Button;->getVisibility()I
+
+    move-result v3
+
+    if-eqz v3, :cond_25
+
+    const/4 v3, 0x1
 
     goto/16 :goto_9
 
-    :cond_22
+    :cond_23
     invoke-static {}, Lcom/android/incallui/UiAdapter;->getInstance()Lcom/android/incallui/UiAdapter;
 
     move-result-object v2
@@ -1386,23 +1451,23 @@
 
     move-result v2
 
-    if-eqz v2, :cond_23
+    if-eqz v2, :cond_24
 
     sget-boolean v2, Lcom/android/incallui/secrcs/RcsShareUI;->isCrane:Z
 
-    if-nez v2, :cond_23
+    if-nez v2, :cond_24
 
-    if-nez v22, :cond_23
+    if-nez v22, :cond_24
 
-    if-nez v21, :cond_23
+    if-nez v21, :cond_24
 
-    if-nez v20, :cond_23
+    if-nez v20, :cond_24
 
     const-wide/16 v6, 0x0
 
     cmpl-double v2, v4, v6
 
-    if-lez v2, :cond_23
+    if-lez v2, :cond_24
 
     move-object/from16 v0, p0
 
@@ -1416,7 +1481,7 @@
 
     goto/16 :goto_a
 
-    :cond_23
+    :cond_24
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/android/incallui/fragment/VoiceCallCardFragment$14;->this$0:Lcom/android/incallui/fragment/VoiceCallCardFragment;
@@ -1429,12 +1494,17 @@
 
     goto/16 :goto_a
 
-    :cond_24
+    :cond_25
+    move v3, v12
+
+    goto/16 :goto_9
+
+    :cond_26
     move v2, v5
 
     goto/16 :goto_5
 
-    :cond_25
+    :cond_27
     move v4, v2
 
     goto/16 :goto_2

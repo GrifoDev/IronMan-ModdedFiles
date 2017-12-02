@@ -1,4 +1,4 @@
-.class public Lcom/android/incallui/ProximitySensor$ProximityDisplayListener;
+.class Lcom/android/incallui/ProximitySensor$ProximityDisplayListener;
 .super Ljava/lang/Object;
 
 # interfaces
@@ -11,7 +11,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x1
+    accessFlags = 0x2
     name = "ProximityDisplayListener"
 .end annotation
 
@@ -19,22 +19,16 @@
 # instance fields
 .field private mDisplayManager:Landroid/hardware/display/DisplayManager;
 
-.field private mIsDisplayOn:Z
-
 .field final synthetic this$0:Lcom/android/incallui/ProximitySensor;
 
 
 # direct methods
 .method constructor <init>(Lcom/android/incallui/ProximitySensor;Landroid/hardware/display/DisplayManager;)V
-    .locals 1
+    .locals 0
 
     iput-object p1, p0, Lcom/android/incallui/ProximitySensor$ProximityDisplayListener;->this$0:Lcom/android/incallui/ProximitySensor;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    const/4 v0, 0x1
-
-    iput-boolean v0, p0, Lcom/android/incallui/ProximitySensor$ProximityDisplayListener;->mIsDisplayOn:Z
 
     iput-object p2, p0, Lcom/android/incallui/ProximitySensor$ProximityDisplayListener;->mDisplayManager:Landroid/hardware/display/DisplayManager;
 
@@ -50,34 +44,66 @@
 .end method
 
 .method public onDisplayChanged(I)V
-    .locals 2
+    .locals 4
 
-    const/4 v0, 0x1
+    const/4 v1, 0x1
 
     if-nez p1, :cond_0
 
-    iget-object v1, p0, Lcom/android/incallui/ProximitySensor$ProximityDisplayListener;->mDisplayManager:Landroid/hardware/display/DisplayManager;
+    iget-object v0, p0, Lcom/android/incallui/ProximitySensor$ProximityDisplayListener;->mDisplayManager:Landroid/hardware/display/DisplayManager;
 
-    invoke-virtual {v1, p1}, Landroid/hardware/display/DisplayManager;->getDisplay(I)Landroid/view/Display;
+    invoke-virtual {v0, p1}, Landroid/hardware/display/DisplayManager;->getDisplay(I)Landroid/view/Display;
 
-    move-result-object v1
+    move-result-object v0
 
-    invoke-virtual {v1}, Landroid/view/Display;->getState()I
+    invoke-virtual {v0}, Landroid/view/Display;->getState()I
 
-    move-result v1
+    move-result v0
 
-    if-eq v1, v0, :cond_1
+    if-eq v0, v1, :cond_1
+
+    move v0, v1
 
     :goto_0
-    iget-boolean v1, p0, Lcom/android/incallui/ProximitySensor$ProximityDisplayListener;->mIsDisplayOn:Z
+    iget-object v2, p0, Lcom/android/incallui/ProximitySensor$ProximityDisplayListener;->this$0:Lcom/android/incallui/ProximitySensor;
 
-    if-eq v0, v1, :cond_0
+    invoke-static {v2}, Lcom/android/incallui/ProximitySensor;->access$200(Lcom/android/incallui/ProximitySensor;)Z
 
-    iput-boolean v0, p0, Lcom/android/incallui/ProximitySensor$ProximityDisplayListener;->mIsDisplayOn:Z
+    move-result v2
+
+    if-eq v0, v2, :cond_0
+
+    new-instance v2, Ljava/lang/StringBuilder;
+
+    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v3, "onDisplayChanged : "
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-static {p0, v2, v1}, Lcom/android/incallui/Log;->d(Ljava/lang/Object;Ljava/lang/String;Z)V
+
+    iget-object v1, p0, Lcom/android/incallui/ProximitySensor$ProximityDisplayListener;->this$0:Lcom/android/incallui/ProximitySensor;
+
+    invoke-static {v1, v0}, Lcom/android/incallui/ProximitySensor;->access$202(Lcom/android/incallui/ProximitySensor;Z)Z
 
     iget-object v0, p0, Lcom/android/incallui/ProximitySensor$ProximityDisplayListener;->this$0:Lcom/android/incallui/ProximitySensor;
 
-    iget-boolean v1, p0, Lcom/android/incallui/ProximitySensor$ProximityDisplayListener;->mIsDisplayOn:Z
+    iget-object v1, p0, Lcom/android/incallui/ProximitySensor$ProximityDisplayListener;->this$0:Lcom/android/incallui/ProximitySensor;
+
+    invoke-static {v1}, Lcom/android/incallui/ProximitySensor;->access$200(Lcom/android/incallui/ProximitySensor;)Z
+
+    move-result v1
 
     invoke-virtual {v0, v1}, Lcom/android/incallui/ProximitySensor;->onDisplayStateChanged(Z)V
 

@@ -20,7 +20,7 @@
 
     new-instance v0, Ljava/lang/StringBuilder;
 
-    const-string v1, "\u7ed3\u675f\u65f6\u95f4"
+    const-string/jumbo v1, "\u7ed3\u675f\u65f6\u95f4"
 
     invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
@@ -151,7 +151,7 @@
     :goto_0
     const/4 v0, 0x2
 
-    const-string v1, "\u5f00\u59cb\u65f6\u95f4"
+    const-string/jumbo v1, "\u5f00\u59cb\u65f6\u95f4"
 
     invoke-static {v1}, Lcom/cmdm/control/util/ToastCustomUtil;->aL(Ljava/lang/String;)V
 
@@ -201,7 +201,7 @@
     :goto_0
     const/4 v0, 0x2
 
-    const-string v1, "\u5f00\u59cb\u65f6\u95f4"
+    const-string/jumbo v1, "\u5f00\u59cb\u65f6\u95f4"
 
     invoke-static {v1}, Lcom/cmdm/control/util/ToastCustomUtil;->aL(Ljava/lang/String;)V
 

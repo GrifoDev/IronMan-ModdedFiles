@@ -126,6 +126,7 @@
     <string name="agif_decline_sticker_header">បដិសេធ​ជាមួយ​ស្ទីកឃ័រ</string>
     <string name="agif_decline_text_header">បដិសេធ​ជាមួយ​អត្ថបទ</string>
     <string name="agif_decline_toast">បាន​ផ្ញើ​ស្ទីកឃ័រ​ទៅ %s។</string>
+    <string name="agif_outgoing_bubble_tip">ផ្ញើ​ស្ទីកឃ័រ​មួយ ដើម្បី​បង្ហាញ​ពី​អារម្មណ៍​របស់​អ្នក។</string>
     <string name="agif_pickers_add_tab_description">ថែម</string>
     <string name="agif_pickers_downloaded">បាន​ទាញយក</string>
     <string name="agif_pickers_item_usage_hints_description">ប៉ះ​ពីរដង ដើម្បី​ជ្រើស</string>
@@ -141,10 +142,12 @@
     <string name="agif_pickers_tab_select_description">បាន​ជ្រើស</string>
     <string name="agif_pickers_title">ចាប់ផ្ដើម​ជាមួយ​ស្ទីកឃ័រ</string>
     <string name="agif_pickers_title_top_stickers">ស្ទីកឃ័រ​កំពូល</string>
+    <string name="agif_random_send_message">ប៉ះ​ទីនេះ ដើម្បី​ផ្ញើ​ស្ទីកឃ័រ​នេះ។</string>
     <string name="agif_read_permission_description">អនុញ្ញាត​ឲ្យ​ទូរសព្ទ​អាន​ខ្លឹមព័ត៌មាន AGIF។</string>
     <string name="agif_read_permission_label">អាន​ខ្លឹមព័ត៌មាន AGIF</string>
     <string name="agif_receive_no_id">ស្ទីកឃ័រ​មិន​អាច​បង្ហាញ​ឡើយ។ អាប់ដេត %s បន្ទាប់​ពី​ការហៅ។</string>
     <string name="agif_receive_no_id_upsupport_update">ស្ទីកឃ័រ​មិន​អាច​បង្ហាញ​ឡើយ។ ស្ទីកឃ័រ​ច្រើនទៀត​នឹង​អាច​ប្រើ​បាន បន្ទាប់​ពី​អាប់ដេត​ប្រព័ន្ធ​លើកក្រោយ។</string>
+    <string name="agif_receive_toast">ស្ទីកឃ័រ​ពី %s។</string>
     <string name="agif_sent_fail_message">មិន​អាច​ផ្ញើ GIF ជីវចល។ សាកល្បង​ម្ដងទៀត​ពេលក្រោយ។</string>
     <string name="agif_sent_toast">បាន​ផ្ញើ​ស្ទីកឃ័រ។</string>
     <string name="agif_write_permission_description">អនុញ្ញាត​ឲ្យ​ទូរសព្ទ​កែ​ខ្លឹមព័ត៌មាន AGIF។</string>
@@ -813,6 +816,7 @@
     <string name="sticker_delete_stickers">លុប​ស្ទីកឃ័រ %d?</string>
     <string name="sticker_delete_this_sticker">លុប​ស្ទីកឃ័រ​នេះ?</string>
     <string name="sticker_setting_edit_title">ជ្រើស​ស្ទីកឃ័រ</string>
+    <string name="sticker_setting_edit_title_preload">រៀបលំដាប់​ស្ទីកឃ័រ​ឡើងវិញ</string>
     <string name="sticker_setting_main_title">ស្ទីកឃ័រ​ខ្ញុំ</string>
     <string name="sticker_setting_menu_delete">លុប</string>
     <string name="sticker_setting_menu_edit">កែ</string>
@@ -825,6 +829,7 @@
     <string name="swipe_right_to_answer_call_with_video">អូស​ទៅ​ស្ដាំ​ដើម្បី​ឆ្លើយ​ការហៅ​ជាមួយ​វីដេអូ។</string>
     <string name="swipe_right_to_answer_call_without_video">អូស​ទៅ​ស្ដាំ​ដើម្បី​ឆ្លើយ​ការហៅ​ដោយ​គ្មាន​វីដេអូ។</string>
     <string name="switch_rejected_by_mt">បាន​ច្រានចោល​សំណើ​ឲ្យ​ប្ដូរ​ទៅ​ការហៅ​វីដេអូ។</string>
+    <string name="switch_rejected_by_mt_att">Video unavailable for this call. Call connected as a voice call.</string>
     <string name="switch_to_video_call_failed">សំណើ​សុំ​ប្ដូរ​ទៅ​ការហៅ​វីដេអូ​ត្រូវ​បាន​បរាជ័យ។</string>
     <string name="switch_to_video_call_failed_tmo">សំណើ​សុំ​ប្ដូរ​ទៅ​ការហៅ​វីដេអូ​ត្រូវ​បាន​បដិសេធ។</string>
     <string name="switch_to_voice_call_failed">សំណើ​សុំ​ប្ដូរ​ទៅ​ការហៅ​សំឡេង​បាន​បរាជ័យ។</string>

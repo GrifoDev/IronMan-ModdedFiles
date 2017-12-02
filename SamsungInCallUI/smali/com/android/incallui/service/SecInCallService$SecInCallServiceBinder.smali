@@ -462,15 +462,7 @@
     goto/16 :goto_1
 
     :pswitch_7
-    iget-object v0, p0, Lcom/android/incallui/service/SecInCallService$SecInCallServiceBinder;->this$0:Lcom/android/incallui/service/SecInCallService;
-
-    invoke-static {v0}, Lcom/android/incallui/service/SecInCallService;->access$000(Lcom/android/incallui/service/SecInCallService;)Landroid/os/Handler;
-
-    move-result-object v0
-
-    const/16 v1, 0x9
-
-    invoke-virtual {v0, v1}, Landroid/os/Handler;->sendEmptyMessage(I)Z
+    invoke-static {}, Lcom/android/incallui/operator/dcm/AnswerMemoUtils;->stopGuidance()V
 
     goto/16 :goto_1
 

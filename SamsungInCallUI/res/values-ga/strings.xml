@@ -100,12 +100,13 @@
     <string name="account_phone">Gléas</string>
     <string name="acs">Glao gutha</string>
     <string name="active_calls">Glao gníomhach</string>
-    <string name="add_reminder">Cuir meabhrú.</string>
+    <string name="add_reminder">Cuir meabhrúchán leis</string>
     <string name="agif_button_close_description">Dún</string>
     <string name="agif_decline_message">Mo leithscéal, ní féidir liom labhairt anois.</string>
     <string name="agif_decline_sticker_header">Diúltaigh dó le greamán</string>
     <string name="agif_decline_text_header">Diúltaigh dó le téacs</string>
     <string name="agif_decline_toast">Greamán seolta chuig %s.</string>
+    <string name="agif_outgoing_bubble_tip">Seol greamán leis an gcaoi a mothaíonn tú a léiriú.</string>
     <string name="agif_pickers_add_tab_description">Cuir leis</string>
     <string name="agif_pickers_downloaded">Íoslódáilte</string>
     <string name="agif_pickers_item_usage_hints_description">Déthapáil le roghnú</string>
@@ -121,10 +122,12 @@
     <string name="agif_pickers_tab_select_description">Roghnaithe</string>
     <string name="agif_pickers_title">Tosaigh le greamán</string>
     <string name="agif_pickers_title_top_stickers">Barrghreamáin</string>
+    <string name="agif_random_send_message">Tapáil anseo leis an ngreamán seo a sheoladh.</string>
     <string name="agif_read_permission_description">Ceadaítear don fhón inneachar AGIF a léamh.</string>
     <string name="agif_read_permission_label">Inneachar AGIF a léamh</string>
     <string name="agif_receive_no_id">Ní féidir an greamán a thaispeáint. Nuashonraigh %s tar éis an ghlao.</string>
     <string name="agif_receive_no_id_upsupport_update">Ní féidir an greamán a thaispeáint. Beidh greamáin eile ar fáil tar éis an chéad nuashonraithe eile.</string>
+    <string name="agif_receive_toast">Greamán ó %s.</string>
     <string name="agif_sent_fail_message">Ní féidir GIF beoite a sheoladh. Triail arís níos moille.</string>
     <string name="agif_sent_toast">Greamán seolta.</string>
     <string name="agif_write_permission_description">Ceadaítear don fhón inneachar AGIF a mhionathrú.</string>
@@ -793,6 +796,7 @@ Aontreoch"</string>
     <string name="sticker_delete_stickers">Scrios %d greamán?</string>
     <string name="sticker_delete_this_sticker">Scrios an greamán seo?</string>
     <string name="sticker_setting_edit_title">Roghnaigh greamáin</string>
+    <string name="sticker_setting_edit_title_preload">Cuir greamáin in ord nua</string>
     <string name="sticker_setting_main_title">Mo ghreamáin</string>
     <string name="sticker_setting_menu_delete">Scrios</string>
     <string name="sticker_setting_menu_edit">Cuir in eagar</string>
@@ -805,6 +809,7 @@ Aontreoch"</string>
     <string name="swipe_right_to_answer_call_with_video">Svaidhpeáil ar dheis le glao a fhreagairt le físeán.</string>
     <string name="swipe_right_to_answer_call_without_video">Svaidhpeáil ar dheis le glao a fhreagairt gan fhíseán.</string>
     <string name="switch_rejected_by_mt">Diúltaíodh don iarratas ar aistriú go glao físe.</string>
+    <string name="switch_rejected_by_mt_att">Video unavailable for this call. Call connected as a voice call.</string>
     <string name="switch_to_video_call_failed">Theip ar an iarratas ar aistriú go glao físe.</string>
     <string name="switch_to_video_call_failed_tmo">Diúltaíodh don iarratas ar aistriú go glao físe.</string>
     <string name="switch_to_voice_call_failed">Theip ar an iarratas ar aistriú go glao gutha.</string>

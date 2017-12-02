@@ -2,9 +2,9 @@
 <selector
   xmlns:android="http://schemas.android.com/apk/res/android">
     <item android:state_enabled="false">
-        <bitmap android:src="@drawable/voicecall_multiparty_btn_swap" android:tint="#ff000000" />
+        <bitmap android:src="@drawable/voicecall_multiparty_btn_swap" android:tint="#fffafafa" android:alpha="0.4" />
     </item>
     <item>
-        <bitmap android:src="@drawable/voicecall_multiparty_btn_swap" android:tint="#ff000000" />
+        <bitmap android:src="@drawable/voicecall_multiparty_btn_swap" android:tint="#fffafafa" />
     </item>
 </selector>

@@ -235,7 +235,7 @@
 
     invoke-direct {v1, p0}, Landroid/app/AlertDialog$Builder;-><init>(Landroid/content/Context;)V
 
-    const v2, 0x7f0900d5
+    const v2, 0x7f0900d8
 
     new-instance v3, Lcom/android/incallui/agif/AppUpdateDialog$1;
 
@@ -243,7 +243,7 @@
 
     invoke-virtual {v1, v2, v3}, Landroid/app/AlertDialog$Builder;->setPositiveButton(ILandroid/content/DialogInterface$OnClickListener;)Landroid/app/AlertDialog$Builder;
 
-    const v2, 0x7f0900d4
+    const v2, 0x7f0900d7
 
     new-instance v3, Lcom/android/incallui/agif/AppUpdateDialog$2;
 
@@ -251,7 +251,7 @@
 
     invoke-virtual {v1, v2, v3}, Landroid/app/AlertDialog$Builder;->setNegativeButton(ILandroid/content/DialogInterface$OnClickListener;)Landroid/app/AlertDialog$Builder;
 
-    const v2, 0x7f0900d6
+    const v2, 0x7f0900d9
 
     new-array v3, v5, [Ljava/lang/Object;
 
@@ -263,7 +263,7 @@
 
     invoke-virtual {v1, v2}, Landroid/app/AlertDialog$Builder;->setTitle(Ljava/lang/CharSequence;)Landroid/app/AlertDialog$Builder;
 
-    const v2, 0x7f0900d3
+    const v2, 0x7f0900d6
 
     new-array v3, v5, [Ljava/lang/Object;
 

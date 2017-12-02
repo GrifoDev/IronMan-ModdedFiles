@@ -184,6 +184,7 @@
     <string name="agif_decline_sticker_header">الرفض باستخدام ملصق</string>
     <string name="agif_decline_text_header">الرفض باستخدام نص</string>
     <string name="agif_decline_toast">تم إرسال الملصق إلى %s.</string>
+    <string name="agif_outgoing_bubble_tip">أرسل ملصقاً لإظهار ما تشعر به.</string>
     <string name="agif_pickers_add_tab_description">إضافة</string>
     <string name="agif_pickers_downloaded">تم التنزيل</string>
     <string name="agif_pickers_item_usage_hints_description">النقر نقراً مزدوجاً للتحديد</string>
@@ -199,10 +200,12 @@
     <string name="agif_pickers_tab_select_description">تم التحديد</string>
     <string name="agif_pickers_title">البدء باستخدام ملصق</string>
     <string name="agif_pickers_title_top_stickers">أفضل الملصقات</string>
+    <string name="agif_random_send_message">انقر هنا لإرسال هذا الملصق.</string>
     <string name="agif_read_permission_description">يتيح للهاتف قراءة محتوى AGIF.</string>
     <string name="agif_read_permission_label">قراءة محتوى AGIF</string>
     <string name="agif_receive_no_id">يتعذر إظهار الملصق. تحديث %s بعد المكالمة.</string>
     <string name="agif_receive_no_id_upsupport_update">يتعذر إظهار الملصق. سيتوفر المزيد من الملصقات بعد عملية تحديث النظام التالية.</string>
+    <string name="agif_receive_toast">ملصق من %s.</string>
     <string name="agif_sent_fail_message">يتعذر إرسال صور GIF متحركة. حاول مرة أخرى لاحقاً.</string>
     <string name="agif_sent_toast">تم إرسال الملصق.</string>
     <string name="agif_write_permission_description">يتيح للهاتف تعديل محتوى AGIF.</string>
@@ -224,7 +227,7 @@
     <string name="banner_calls_have_been_merged">تم دمج المكالمات.</string>
     <string name="banner_conferenc_call_with">في مكالمة جماعية مع %s</string>
     <string name="bluetooth_popup_title">تحديد جهاز الصوت</string>
-    <string name="button">الزر</string>
+    <string name="button">زر</string>
     <string name="call_accept_reject_tip1">اضغط على أحد طرفي مفتاح مستوى الصوت لكتم نغمة الرنين للمكالمات الواردة.</string>
     <string name="call_drug_up_panel_for_kk">اسحب زر إرسال رسالة إلى الأعلى لإرسال رسالة سريعة ورفض مكالمة واردة.</string>
     <string name="call_drug_up_panel_for_kk_tts">اسحب المكالمة التي تم رفضها مع توجيه لوحة الرسالة للأعلى لإرسال رسالة رفض مكالمات عند رفض مكالمة واردة.</string>
@@ -871,6 +874,7 @@
     <string name="sticker_delete_stickers">هل تريد حذف %d من الملصقات؟</string>
     <string name="sticker_delete_this_sticker">هل تريد حذف هذا الملصق؟</string>
     <string name="sticker_setting_edit_title">تحديد ملصقات</string>
+    <string name="sticker_setting_edit_title_preload">إعادة ترتيب الملصقات</string>
     <string name="sticker_setting_main_title">ملصقاتي</string>
     <string name="sticker_setting_menu_delete">حذف</string>
     <string name="sticker_setting_menu_edit">تعديل</string>
@@ -883,6 +887,7 @@
     <string name="swipe_right_to_answer_call_with_video">اسحب لليمين للرد على المكالمة مع الفيديو.</string>
     <string name="swipe_right_to_answer_call_without_video">اسحب لليمين للرد على المكالمة من دون الفيديو.</string>
     <string name="switch_rejected_by_mt">تم رفض طلب التبديل إلى مكالمة فيديو.</string>
+    <string name="switch_rejected_by_mt_att">Video unavailable for this call. Call connected as a voice call.</string>
     <string name="switch_to_video_call_failed">فشل طلب التبديل إلى مكالمة فيديو.</string>
     <string name="switch_to_video_call_failed_tmo">تم رفض طلب التبديل إلى مكالمة فيديو.</string>
     <string name="switch_to_voice_call_failed">فشل طلب التبديل إلى المكالمة الصوتية.</string>

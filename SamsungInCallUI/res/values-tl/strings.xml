@@ -153,6 +153,7 @@
     <string name="agif_decline_sticker_header">Tanggihan gamit ang isang sticker</string>
     <string name="agif_decline_text_header">Tanggihan gamit ang isang text</string>
     <string name="agif_decline_toast">Naipadala ang sticker kay %s.</string>
+    <string name="agif_outgoing_bubble_tip">Magpadala ng sticker para ipakita ang nadarama mo.</string>
     <string name="agif_pickers_add_tab_description">Idagdag</string>
     <string name="agif_pickers_downloaded">Nai-download</string>
     <string name="agif_pickers_item_usage_hints_description">I-tap nang dalawang beses para piliin</string>
@@ -168,10 +169,12 @@
     <string name="agif_pickers_tab_select_description">Napili</string>
     <string name="agif_pickers_title">Magsimula gamit ang isang sticker</string>
     <string name="agif_pickers_title_top_stickers">Mga nangungunang sticker</string>
+    <string name="agif_random_send_message">I-tap dito para ipadala ang sticker na ito.</string>
     <string name="agif_read_permission_description">Pinapahintulot na basahin ng Phone ang AGIF content.</string>
     <string name="agif_read_permission_label">Basahin ang content ng AGIF</string>
     <string name="agif_receive_no_id">Hindi maipapakita ang sticker. I-update ang %s pagkatapos ng tawag.</string>
     <string name="agif_receive_no_id_upsupport_update">Hindi maipapakita ang sticker. Mas maraming sticker ang magagamit pagkatapos ng susunod na pag-update sa system.</string>
+    <string name="agif_receive_toast">Sticker mula kay %s.</string>
     <string name="agif_sent_fail_message">Hindi maipadala ang animated GIF. Subukan muli mamaya.</string>
     <string name="agif_sent_toast">Naipadala ang sticker.</string>
     <string name="agif_write_permission_description">Pinahihintulot na baguhin ng Phone ang AGIF content.</string>
@@ -840,6 +843,7 @@ Camera"</string>
     <string name="sticker_delete_stickers">Tanggalin ang %d sticker?</string>
     <string name="sticker_delete_this_sticker">Tanggalin ang sticker na ito?</string>
     <string name="sticker_setting_edit_title">Pumili ng mga sticker</string>
+    <string name="sticker_setting_edit_title_preload">Muling mag-order ng mga sticker</string>
     <string name="sticker_setting_main_title">Mga sticker ko</string>
     <string name="sticker_setting_menu_delete">I-delete</string>
     <string name="sticker_setting_menu_edit">I-edit</string>
@@ -852,6 +856,7 @@ Camera"</string>
     <string name="swipe_right_to_answer_call_with_video">Mag-swipe pakanan para sagutin ang tawag nang may video.</string>
     <string name="swipe_right_to_answer_call_without_video">Mag-swipe pakanan para sagutin ang tawag nang walang video.</string>
     <string name="switch_rejected_by_mt">Tinanggihan ang kahilingan na lumipat sa video call.</string>
+    <string name="switch_rejected_by_mt_att">Video unavailable for this call. Call connected as a voice call.</string>
     <string name="switch_to_video_call_failed">Nabigo ang kahilingang lumipat sa video call.</string>
     <string name="switch_to_video_call_failed_tmo">Tinanggihan ang hiling na lumipat sa video call.</string>
     <string name="switch_to_voice_call_failed">Hindi pinayagan ang hiling na lumipat sa voice call.</string>

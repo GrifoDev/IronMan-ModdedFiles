@@ -6,6 +6,7 @@
 .implements Lcom/android/incallui/CallList$CallUpdateListener;
 .implements Lcom/android/incallui/CallOrgInfoController$SecCallOrgInfoListener;
 .implements Lcom/android/incallui/DistanceHelper$Listener;
+.implements Lcom/android/incallui/InCallNotifier$VideoDetailsListener;
 .implements Lcom/android/incallui/InCallNotifier$VideoSessionEventListener;
 .implements Lcom/android/incallui/InCallPresenter$CanAddCallListener;
 .implements Lcom/android/incallui/InCallPresenter$InCallDetailsListener;
@@ -39,6 +40,7 @@
         "Lcom/android/incallui/CallList$CallUpdateListener;",
         "Lcom/android/incallui/CallOrgInfoController$SecCallOrgInfoListener;",
         "Lcom/android/incallui/DistanceHelper$Listener;",
+        "Lcom/android/incallui/InCallNotifier$VideoDetailsListener;",
         "Lcom/android/incallui/InCallNotifier$VideoSessionEventListener;",
         "Lcom/android/incallui/InCallPresenter$CanAddCallListener;",
         "Lcom/android/incallui/InCallPresenter$InCallDetailsListener;",
@@ -529,7 +531,7 @@
 
     if-eqz v0, :cond_0
 
-    const v0, 0x7f0201a3
+    const v0, 0x7f0201ad
 
     :goto_0
     invoke-virtual {p0}, Lcom/android/incallui/CallCardPresenter;->getContext()Landroid/content/Context;
@@ -551,7 +553,7 @@
     return-object v0
 
     :cond_0
-    const v0, 0x7f02019f
+    const v0, 0x7f0201a9
 
     goto :goto_0
 .end method
@@ -5134,6 +5136,12 @@
 
     move-result-object v0
 
+    invoke-virtual {v0, p0}, Lcom/android/incallui/InCallNotifier;->addVideoDetailsListener(Lcom/android/incallui/InCallNotifier$VideoDetailsListener;)V
+
+    invoke-static {}, Lcom/android/incallui/InCallNotifier;->getInstance()Lcom/android/incallui/InCallNotifier;
+
+    move-result-object v0
+
     invoke-virtual {v0, p0}, Lcom/android/incallui/InCallNotifier;->addVideoSessionEventListener(Lcom/android/incallui/InCallNotifier$VideoSessionEventListener;)V
 
     :cond_3
@@ -5370,6 +5378,12 @@
 
     move-result-object v0
 
+    invoke-virtual {v0, p0}, Lcom/android/incallui/InCallNotifier;->removeVideoDetailsListener(Lcom/android/incallui/InCallNotifier$VideoDetailsListener;)V
+
+    invoke-static {}, Lcom/android/incallui/InCallNotifier;->getInstance()Lcom/android/incallui/InCallNotifier;
+
+    move-result-object v0
+
     invoke-virtual {v0, p0}, Lcom/android/incallui/InCallNotifier;->removeVideoSessionEventListener(Lcom/android/incallui/InCallNotifier$VideoSessionEventListener;)V
 
     :cond_5
@@ -5440,6 +5454,69 @@
     const/4 v0, 0x0
 
     goto :goto_0
+.end method
+
+.method public onVideoDetailsChanged(Lcom/android/incallui/Call;)V
+    .locals 3
+
+    invoke-static {}, Lcom/android/incallui/CallList;->getInstance()Lcom/android/incallui/CallList;
+
+    move-result-object v0
+
+    const/4 v1, 0x0
+
+    const/4 v2, 0x0
+
+    invoke-static {v0, v1, v2}, Lcom/android/incallui/util/InCallUtils;->getCallToDisplay(Lcom/android/incallui/CallList;Lcom/android/incallui/Call;Z)Lcom/android/incallui/Call;
+
+    move-result-object v0
+
+    if-eqz p1, :cond_0
+
+    invoke-virtual {p1, v0}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    invoke-virtual {p1}, Lcom/android/incallui/Call;->getCallDetails()Lcom/android/incallui/CallDetails;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lcom/android/incallui/CallDetails;->isEarlyMedia()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    invoke-virtual {p0}, Lcom/android/incallui/CallCardPresenter;->getUi()Lcom/android/incallui/Ui;
+
+    move-result-object v0
+
+    if-eqz v0, :cond_0
+
+    invoke-virtual {p1}, Lcom/android/incallui/Call;->getVideoDetails()Lcom/android/incallui/service/vt/VideoDetails;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lcom/android/incallui/service/vt/VideoDetails;->getPeerDimension()Lcom/android/incallui/service/vt/VideoDimension;
+
+    move-result-object v1
+
+    invoke-virtual {p0}, Lcom/android/incallui/CallCardPresenter;->getUi()Lcom/android/incallui/Ui;
+
+    move-result-object v0
+
+    check-cast v0, Lcom/android/incallui/CallCardUi;
+
+    iget v2, v1, Lcom/android/incallui/service/vt/VideoDimension;->width:I
+
+    iget v1, v1, Lcom/android/incallui/service/vt/VideoDimension;->height:I
+
+    invoke-interface {v0, v2, v1}, Lcom/android/incallui/CallCardUi;->updatePeerDimension(II)V
+
+    :cond_0
+    return-void
 .end method
 
 .method public onVideoSessionEvent(ILcom/android/incallui/Call;)V
@@ -6565,7 +6642,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f09052f
+    const v2, 0x7f090534
 
     new-array v5, v4, [Ljava/lang/Object;
 
@@ -6761,23 +6838,34 @@
 
     invoke-virtual {p0, v3}, Lcom/android/incallui/CallCardPresenter;->getNameForCall(Lcom/android/incallui/ContactInfoCache$ContactCacheEntry;)Ljava/lang/String;
 
-    move-result-object v5
-
-    iget-object v3, p0, Lcom/android/incallui/CallCardPresenter;->mSecondary:Lcom/android/incallui/Call;
-
-    if-eqz v3, :cond_3
-
-    iget-object v3, p0, Lcom/android/incallui/CallCardPresenter;->mSecondary:Lcom/android/incallui/Call;
-
-    invoke-virtual {v3}, Lcom/android/incallui/Call;->getNumber()Ljava/lang/String;
-
     move-result-object v3
 
-    invoke-static {v3}, Lcom/android/incallui/util/CallTypeUtils;->isSrvccConference(Ljava/lang/String;)Z
+    invoke-static {v3}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
-    move-result v3
+    move-result v5
 
-    if-eqz v3, :cond_3
+    if-eqz v5, :cond_3
+
+    iget-object v3, p0, Lcom/android/incallui/CallCardPresenter;->mSecondaryContactInfo:Lcom/android/incallui/ContactInfoCache$ContactCacheEntry;
+
+    iget-object v3, v3, Lcom/android/incallui/ContactInfoCache$ContactCacheEntry;->number:Ljava/lang/String;
+
+    :cond_3
+    iget-object v5, p0, Lcom/android/incallui/CallCardPresenter;->mSecondary:Lcom/android/incallui/Call;
+
+    if-eqz v5, :cond_6
+
+    iget-object v5, p0, Lcom/android/incallui/CallCardPresenter;->mSecondary:Lcom/android/incallui/Call;
+
+    invoke-virtual {v5}, Lcom/android/incallui/Call;->getNumber()Ljava/lang/String;
+
+    move-result-object v5
+
+    invoke-static {v5}, Lcom/android/incallui/util/CallTypeUtils;->isSrvccConference(Ljava/lang/String;)Z
+
+    move-result v5
+
+    if-eqz v5, :cond_6
 
     sget-object v3, Lcom/android/incallui/CallCardPresenter;->TAG:Ljava/lang/String;
 
@@ -6785,9 +6873,11 @@
 
     invoke-static {v3, v5}, Lcom/android/incallui/Log;->d(Ljava/lang/String;Ljava/lang/String;)V
 
-    const-string v5, "Conference call"
+    const-string v3, "Conference call"
 
-    :cond_3
+    move-object v5, v3
+
+    :goto_1
     if-eqz v5, :cond_4
 
     iget-object v3, p0, Lcom/android/incallui/CallCardPresenter;->mSecondaryContactInfo:Lcom/android/incallui/ContactInfoCache$ContactCacheEntry;
@@ -6802,7 +6892,7 @@
 
     move v6, v4
 
-    :goto_1
+    :goto_2
     iget-object v3, p0, Lcom/android/incallui/CallCardPresenter;->mSecondary:Lcom/android/incallui/Call;
 
     invoke-direct {p0, v3}, Lcom/android/incallui/CallCardPresenter;->getCallProviderLabel(Lcom/android/incallui/Call;)Ljava/lang/String;
@@ -6830,7 +6920,7 @@
     :cond_4
     move v6, v1
 
-    goto :goto_1
+    goto :goto_2
 
     :cond_5
     move v3, v1
@@ -6848,4 +6938,9 @@
     invoke-interface/range {v0 .. v8}, Lcom/android/incallui/CallCardUi;->setSecondary(ZLjava/lang/String;ZLjava/lang/String;Landroid/graphics/drawable/Drawable;ZZLcom/android/incallui/ContactInfoCache$ContactCacheEntry;)V
 
     goto/16 :goto_0
+
+    :cond_6
+    move-object v5, v3
+
+    goto :goto_1
 .end method

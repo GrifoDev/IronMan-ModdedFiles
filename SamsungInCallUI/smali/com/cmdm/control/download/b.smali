@@ -495,7 +495,7 @@
 
     new-instance v3, Ljava/lang/StringBuilder;
 
-    const-string v4, "\u5df2\u7ecf\u5b58\u5728\u4e0b\u8f7d\u6587\u4ef6\uff0c\u6587\u4ef6\u5927\u5c0f\u548c\u7f51\u7edc\u6587\u4ef6\u5927\u5c0f\u4e00\u81f4"
+    const-string/jumbo v4, "\u5df2\u7ecf\u5b58\u5728\u4e0b\u8f7d\u6587\u4ef6\uff0c\u6587\u4ef6\u5927\u5c0f\u548c\u7f51\u7edc\u6587\u4ef6\u5927\u5c0f\u4e00\u81f4"
 
     invoke-direct {v3, v4}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
@@ -544,7 +544,7 @@
 
     new-instance v3, Ljava/lang/StringBuilder;
 
-    const-string v4, "\u5df2\u7ecf\u5b58\u5728\u4e0b\u8f7d\u6587\u4ef6\uff0c\u6587\u4ef6\u5927\u5c0f\u548c\u7f51\u7edc\u6587\u4ef6\u5927\u5c0f\u4e0d\u4e00\u81f4"
+    const-string/jumbo v4, "\u5df2\u7ecf\u5b58\u5728\u4e0b\u8f7d\u6587\u4ef6\uff0c\u6587\u4ef6\u5927\u5c0f\u548c\u7f51\u7edc\u6587\u4ef6\u5927\u5c0f\u4e0d\u4e00\u81f4"
 
     invoke-direct {v3, v4}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
@@ -828,7 +828,7 @@
     :try_start_a
     sget-object v1, Lcom/cmdm/control/download/b;->TAG:Ljava/lang/String;
 
-    const-string v3, "\u6ca1\u6709\u8db3\u591f\u7684\u7a7a\u95f4\u4e0b\u8f7d"
+    const-string/jumbo v3, "\u6ca1\u6709\u8db3\u591f\u7684\u7a7a\u95f4\u4e0b\u8f7d"
 
     invoke-static {v1, v3}, Lcom/cmdm/control/util/PrintLog;->i(Ljava/lang/String;Ljava/lang/String;)V
 
@@ -1232,7 +1232,7 @@
 
     new-instance v3, Ljava/lang/StringBuilder;
 
-    const-string v4, "\u5f00\u59cb\u4e0b\u8f7d"
+    const-string/jumbo v4, "\u5f00\u59cb\u4e0b\u8f7d"
 
     invoke-direct {v3, v4}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 

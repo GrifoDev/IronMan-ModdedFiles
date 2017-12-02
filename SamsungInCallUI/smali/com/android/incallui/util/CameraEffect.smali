@@ -115,11 +115,25 @@
 
     move-result-object v0
 
-    const v1, 0x7f04013f
+    invoke-static {}, Lcom/android/incallui/InCallUIFeature;->isTablet()Z
+
+    move-result v1
+
+    if-eqz v1, :cond_0
+
+    const v1, 0x7f040130
 
     invoke-virtual {v0, v1, p0, v2}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;Z)Landroid/view/View;
 
+    :goto_0
     return-void
+
+    :cond_0
+    const v1, 0x7f040144
+
+    invoke-virtual {v0, v1, p0, v2}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;Z)Landroid/view/View;
+
+    goto :goto_0
 .end method
 
 .method public static isCameraEffectLayoutVisible()Z
@@ -246,8 +260,18 @@
 
     invoke-virtual {v0}, Lcom/android/incallui/service/vt/VideoCallManager;->resetFullScreenMode()V
 
+    const/4 v0, 0x0
+
+    sput-boolean v0, Lcom/android/incallui/util/CameraEffect;->mCameraEffectLayoutVisible:Z
+
     :cond_0
     invoke-direct {p0}, Lcom/android/incallui/util/CameraEffect;->updateInviteGroupVideoButtonLayout()V
+
+    invoke-static {}, Lcom/android/incallui/UiAdapter;->getInstance()Lcom/android/incallui/UiAdapter;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lcom/android/incallui/UiAdapter;->updateCameraEffectLayout()V
 
     return-void
 .end method
@@ -255,7 +279,7 @@
 .method protected init()V
     .locals 1
 
-    const v0, 0x7f100431
+    const v0, 0x7f100422
 
     invoke-virtual {p0, v0}, Lcom/android/incallui/util/CameraEffect;->findViewById(I)Landroid/view/View;
 
@@ -265,7 +289,7 @@
 
     iput-object v0, p0, Lcom/android/incallui/util/CameraEffect;->mEffectLayout:Landroid/view/ViewGroup;
 
-    const v0, 0x7f100433
+    const v0, 0x7f100424
 
     invoke-virtual {p0, v0}, Lcom/android/incallui/util/CameraEffect;->findViewById(I)Landroid/view/View;
 
@@ -284,7 +308,7 @@
     invoke-virtual {v0, p0}, Landroid/widget/ImageButton;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
     :cond_0
-    const v0, 0x7f100436
+    const v0, 0x7f100427
 
     invoke-virtual {p0, v0}, Lcom/android/incallui/util/CameraEffect;->findViewById(I)Landroid/view/View;
 
@@ -303,7 +327,7 @@
     invoke-virtual {v0, p0}, Landroid/widget/ImageButton;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
     :cond_1
-    const v0, 0x7f100439
+    const v0, 0x7f10042a
 
     invoke-virtual {p0, v0}, Lcom/android/incallui/util/CameraEffect;->findViewById(I)Landroid/view/View;
 
@@ -322,7 +346,7 @@
     invoke-virtual {v0, p0}, Landroid/widget/ImageButton;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
     :cond_2
-    const v0, 0x7f10043c
+    const v0, 0x7f10042d
 
     invoke-virtual {p0, v0}, Lcom/android/incallui/util/CameraEffect;->findViewById(I)Landroid/view/View;
 
@@ -341,7 +365,7 @@
     invoke-virtual {v0, p0}, Landroid/widget/ImageButton;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
     :cond_3
-    const v0, 0x7f10043f
+    const v0, 0x7f100430
 
     invoke-virtual {p0, v0}, Lcom/android/incallui/util/CameraEffect;->findViewById(I)Landroid/view/View;
 
@@ -360,7 +384,7 @@
     invoke-virtual {v0, p0}, Landroid/widget/ImageButton;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
     :cond_4
-    const v0, 0x7f100442
+    const v0, 0x7f100433
 
     invoke-virtual {p0, v0}, Lcom/android/incallui/util/CameraEffect;->findViewById(I)Landroid/view/View;
 
@@ -379,7 +403,7 @@
     invoke-virtual {v0, p0}, Landroid/widget/ImageButton;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
     :cond_5
-    const v0, 0x7f100444
+    const v0, 0x7f100435
 
     invoke-virtual {p0, v0}, Lcom/android/incallui/util/CameraEffect;->findViewById(I)Landroid/view/View;
 
@@ -520,7 +544,11 @@
     :sswitch_6
     sput-boolean v3, Lcom/android/incallui/util/CameraEffect;->mCameraEffectLayoutVisible:Z
 
-    invoke-virtual {p0}, Lcom/android/incallui/util/CameraEffect;->hideEffectLayout()V
+    invoke-static {}, Lcom/android/incallui/UiAdapter;->getInstance()Lcom/android/incallui/UiAdapter;
+
+    move-result-object v0
+
+    invoke-virtual {v0, v3}, Lcom/android/incallui/UiAdapter;->showCameraEffectLayout(Z)V
 
     goto :goto_0
 
@@ -528,13 +556,13 @@
 
     :sswitch_data_0
     .sparse-switch
-        0x7f100433 -> :sswitch_0
-        0x7f100436 -> :sswitch_1
-        0x7f100439 -> :sswitch_2
-        0x7f10043c -> :sswitch_3
-        0x7f10043f -> :sswitch_4
-        0x7f100442 -> :sswitch_5
-        0x7f100444 -> :sswitch_6
+        0x7f100424 -> :sswitch_0
+        0x7f100427 -> :sswitch_1
+        0x7f10042a -> :sswitch_2
+        0x7f10042d -> :sswitch_3
+        0x7f100430 -> :sswitch_4
+        0x7f100433 -> :sswitch_5
+        0x7f100435 -> :sswitch_6
     .end sparse-switch
 .end method
 

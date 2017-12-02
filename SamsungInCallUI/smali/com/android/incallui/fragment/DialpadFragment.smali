@@ -132,7 +132,7 @@
 
     sget-object v0, Lcom/android/incallui/fragment/DialpadFragment;->mDisplayMap:Ljava/util/HashMap;
 
-    const v1, 0x7f100150
+    const v1, 0x7f100157
 
     invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
@@ -148,7 +148,7 @@
 
     sget-object v0, Lcom/android/incallui/fragment/DialpadFragment;->mDisplayMap:Ljava/util/HashMap;
 
-    const v1, 0x7f100146
+    const v1, 0x7f10014d
 
     invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
@@ -164,7 +164,7 @@
 
     sget-object v0, Lcom/android/incallui/fragment/DialpadFragment;->mDisplayMap:Ljava/util/HashMap;
 
-    const v1, 0x7f100147
+    const v1, 0x7f10014e
 
     invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
@@ -180,7 +180,7 @@
 
     sget-object v0, Lcom/android/incallui/fragment/DialpadFragment;->mDisplayMap:Ljava/util/HashMap;
 
-    const v1, 0x7f100148
+    const v1, 0x7f10014f
 
     invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
@@ -196,7 +196,7 @@
 
     sget-object v0, Lcom/android/incallui/fragment/DialpadFragment;->mDisplayMap:Ljava/util/HashMap;
 
-    const v1, 0x7f100149
+    const v1, 0x7f100150
 
     invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
@@ -212,7 +212,7 @@
 
     sget-object v0, Lcom/android/incallui/fragment/DialpadFragment;->mDisplayMap:Ljava/util/HashMap;
 
-    const v1, 0x7f10014a
+    const v1, 0x7f100151
 
     invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
@@ -228,7 +228,7 @@
 
     sget-object v0, Lcom/android/incallui/fragment/DialpadFragment;->mDisplayMap:Ljava/util/HashMap;
 
-    const v1, 0x7f10014b
+    const v1, 0x7f100152
 
     invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
@@ -244,7 +244,7 @@
 
     sget-object v0, Lcom/android/incallui/fragment/DialpadFragment;->mDisplayMap:Ljava/util/HashMap;
 
-    const v1, 0x7f10014c
+    const v1, 0x7f100153
 
     invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
@@ -260,7 +260,7 @@
 
     sget-object v0, Lcom/android/incallui/fragment/DialpadFragment;->mDisplayMap:Ljava/util/HashMap;
 
-    const v1, 0x7f10014d
+    const v1, 0x7f100154
 
     invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
@@ -276,7 +276,7 @@
 
     sget-object v0, Lcom/android/incallui/fragment/DialpadFragment;->mDisplayMap:Ljava/util/HashMap;
 
-    const v1, 0x7f100154
+    const v1, 0x7f10015b
 
     invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
@@ -292,7 +292,7 @@
 
     sget-object v0, Lcom/android/incallui/fragment/DialpadFragment;->mDisplayMap:Ljava/util/HashMap;
 
-    const v1, 0x7f100152
+    const v1, 0x7f100159
 
     invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
@@ -308,7 +308,7 @@
 
     sget-object v0, Lcom/android/incallui/fragment/DialpadFragment;->mDisplayMap:Ljava/util/HashMap;
 
-    const v1, 0x7f100153
+    const v1, 0x7f10015a
 
     invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
@@ -396,18 +396,18 @@
 
     :array_0
     .array-data 4
-        0x7f100154
-        0x7f100150
-        0x7f100146
-        0x7f100147
-        0x7f100148
-        0x7f100149
-        0x7f10014a
-        0x7f10014b
-        0x7f10014c
+        0x7f10015b
+        0x7f100157
         0x7f10014d
-        0x7f100153
+        0x7f10014e
+        0x7f10014f
+        0x7f100150
+        0x7f100151
         0x7f100152
+        0x7f100153
+        0x7f100154
+        0x7f10015a
+        0x7f100159
     .end array-data
 .end method
 
@@ -631,7 +631,7 @@
 
     move-result-object v1
 
-    const v0, 0x7f1000ad
+    const v0, 0x7f1000b1
 
     invoke-virtual {v1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -651,7 +651,7 @@
 
     move-result-object v2
 
-    const v3, 0x7f0f0161
+    const v3, 0x7f0e016e
 
     invoke-virtual {v2, v3}, Landroid/content/res/Resources;->getColor(I)I
 
@@ -1117,7 +1117,7 @@
 
     if-nez v0, :cond_0
 
-    const v0, 0x7f1002f2
+    const v0, 0x7f1002fe
 
     invoke-virtual {p1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -1136,7 +1136,7 @@
 
     invoke-virtual {v0}, Landroid/view/ViewStub;->inflate()Landroid/view/View;
 
-    const v0, 0x7f10049a
+    const v0, 0x7f1004b4
 
     invoke-virtual {p1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -1156,7 +1156,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f0f0164
+    const v2, 0x7f0e0171
 
     invoke-virtual {v1, v2}, Landroid/content/Context;->getColor(I)I
 
@@ -1257,6 +1257,12 @@
     invoke-static {p0, v1}, Lcom/android/incallui/Log;->d(Ljava/lang/Object;Ljava/lang/String;)V
 
     return v0
+.end method
+
+.method public onCallButtonViewChanged()V
+    .locals 0
+
+    return-void
 .end method
 
 .method public onClick(Landroid/view/View;)V
@@ -1372,9 +1378,9 @@
 
     :sswitch_data_0
     .sparse-switch
-        0x7f1002f0 -> :sswitch_0
-        0x7f1002f4 -> :sswitch_2
-        0x7f10049a -> :sswitch_1
+        0x7f1002fc -> :sswitch_0
+        0x7f100300 -> :sswitch_2
+        0x7f1004b4 -> :sswitch_1
     .end sparse-switch
 .end method
 
@@ -1465,22 +1471,29 @@
 
     invoke-static {p0, v1}, Lcom/android/incallui/Log;->d(Ljava/lang/Object;Ljava/lang/String;)V
 
+    const/16 v1, 0x52
+
+    if-ne p1, v1, :cond_0
+
+    invoke-direct {p0}, Lcom/android/incallui/fragment/DialpadFragment;->menuButtonClicked()V
+
+    :cond_0
     iget-object v1, p0, Lcom/android/incallui/fragment/DialpadFragment;->mDtmfDialerField:Landroid/widget/EditText;
 
-    if-eqz v1, :cond_0
+    if-eqz v1, :cond_1
 
     const/16 v1, 0x13
 
-    if-ne p1, v1, :cond_0
+    if-ne p1, v1, :cond_1
 
     iget-object v1, p0, Lcom/android/incallui/fragment/DialpadFragment;->mDtmfDialerField:Landroid/widget/EditText;
 
     invoke-virtual {v1, v0}, Landroid/widget/EditText;->setFocusable(Z)V
 
-    :cond_0
+    :cond_1
     iget-object v1, p0, Lcom/android/incallui/fragment/DialpadFragment;->mDialerKeyListener:Lcom/android/incallui/fragment/DialpadFragment$DTMFKeyListener;
 
-    if-eqz v1, :cond_2
+    if-eqz v1, :cond_3
 
     const-string v0, "support_folder_single_lcd"
 
@@ -1488,7 +1501,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_1
+    if-eqz v0, :cond_2
 
     invoke-static {}, Lcom/android/incallui/InCallApp;->getInstance()Lcom/android/incallui/InCallApp;
 
@@ -1502,18 +1515,18 @@
 
     move-result v0
 
-    if-eqz v0, :cond_1
+    if-eqz v0, :cond_2
 
     invoke-direct {p0, p1}, Lcom/android/incallui/fragment/DialpadFragment;->postAccessibilityEvent(I)V
 
-    :cond_1
+    :cond_2
     iget-object v0, p0, Lcom/android/incallui/fragment/DialpadFragment;->mDialerKeyListener:Lcom/android/incallui/fragment/DialpadFragment$DTMFKeyListener;
 
     invoke-virtual {v0, p2}, Lcom/android/incallui/fragment/DialpadFragment$DTMFKeyListener;->onKeyUp(Landroid/view/KeyEvent;)Z
 
     move-result v0
 
-    :cond_2
+    :cond_3
     return v0
 .end method
 
@@ -1538,7 +1551,7 @@
     nop
 
     :pswitch_data_0
-    .packed-switch 0x7f100309
+    .packed-switch 0x7f100315
         :pswitch_0
     .end packed-switch
 .end method
@@ -1859,7 +1872,7 @@
     goto :goto_0
 
     :pswitch_data_0
-    .packed-switch 0x7f1002f0
+    .packed-switch 0x7f1002fc
         :pswitch_0
     .end packed-switch
 .end method
@@ -2105,7 +2118,7 @@
 .method public onViewCreated(Landroid/view/View;Landroid/os/Bundle;)V
     .locals 5
 
-    const v4, 0x7f1002f0
+    const v4, 0x7f1002fc
 
     const/4 v1, 0x0
 
@@ -2125,7 +2138,7 @@
 
     iget-object v0, p0, Lcom/android/incallui/fragment/DialpadFragment;->mView:Landroid/view/View;
 
-    const v2, 0x7f1000ef
+    const v2, 0x7f1002d1
 
     invoke-virtual {v0, v2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -2137,7 +2150,7 @@
 
     iget-object v0, p0, Lcom/android/incallui/fragment/DialpadFragment;->mView:Landroid/view/View;
 
-    const v2, 0x7f100155
+    const v2, 0x7f10015c
 
     invoke-virtual {v0, v2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -2158,7 +2171,7 @@
     :cond_0
     iget-object v0, p0, Lcom/android/incallui/fragment/DialpadFragment;->mView:Landroid/view/View;
 
-    const v2, 0x7f10015a
+    const v2, 0x7f100161
 
     invoke-virtual {v0, v2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -2168,7 +2181,7 @@
 
     iget-object v0, p0, Lcom/android/incallui/fragment/DialpadFragment;->mView:Landroid/view/View;
 
-    const v2, 0x7f1002ee
+    const v2, 0x7f1002fa
 
     invoke-virtual {v0, v2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -2178,7 +2191,7 @@
 
     iget-object v0, p0, Lcom/android/incallui/fragment/DialpadFragment;->mView:Landroid/view/View;
 
-    const v2, 0x7f1002f3
+    const v2, 0x7f1002ff
 
     invoke-virtual {v0, v2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -2188,7 +2201,7 @@
 
     iget-object v0, p0, Lcom/android/incallui/fragment/DialpadFragment;->mView:Landroid/view/View;
 
-    const v2, 0x7f10015d
+    const v2, 0x7f100164
 
     invoke-virtual {v0, v2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -2239,7 +2252,7 @@
     :cond_1
     iget-object v0, p0, Lcom/android/incallui/fragment/DialpadFragment;->mView:Landroid/view/View;
 
-    const v2, 0x7f1002c6
+    const v2, 0x7f1002d2
 
     invoke-virtual {v0, v2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -2251,7 +2264,7 @@
 
     iget-object v0, p0, Lcom/android/incallui/fragment/DialpadFragment;->mView:Landroid/view/View;
 
-    const v2, 0x7f100145
+    const v2, 0x7f10014c
 
     invoke-virtual {v0, v2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -2297,7 +2310,7 @@
     :cond_3
     iget-object v0, p0, Lcom/android/incallui/fragment/DialpadFragment;->mView:Landroid/view/View;
 
-    const v2, 0x7f1002f4
+    const v2, 0x7f100300
 
     invoke-virtual {v0, v2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -2318,7 +2331,7 @@
     :cond_4
     iget-object v0, p0, Lcom/android/incallui/fragment/DialpadFragment;->mView:Landroid/view/View;
 
-    const v2, 0x7f100150
+    const v2, 0x7f100157
 
     invoke-virtual {v0, v2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -2330,7 +2343,7 @@
 
     iget-object v0, p0, Lcom/android/incallui/fragment/DialpadFragment;->mView:Landroid/view/View;
 
-    const v2, 0x7f100147
+    const v2, 0x7f10014e
 
     invoke-virtual {v0, v2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -2354,7 +2367,7 @@
 
     iget-object v0, p0, Lcom/android/incallui/fragment/DialpadFragment;->mOnScreenMenuIcon:Landroid/widget/ImageButton;
 
-    const v2, 0x7f100146
+    const v2, 0x7f10014d
 
     invoke-virtual {v0, v2}, Landroid/widget/ImageButton;->setNextFocusDownId(I)V
 
@@ -2395,9 +2408,9 @@
 
     :array_0
     .array-data 4
-        0x7f100150
-        0x7f100146
-        0x7f100147
+        0x7f100157
+        0x7f10014d
+        0x7f10014e
     .end array-data
 .end method
 
@@ -2606,7 +2619,7 @@
 
     aput-object v4, v7, v2
 
-    const v4, 0x7f090373
+    const v4, 0x7f090378
 
     invoke-virtual {p0, v4}, Lcom/android/incallui/fragment/DialpadFragment;->getText(I)Ljava/lang/CharSequence;
 
@@ -2624,7 +2637,7 @@
 
     aput-object v5, v7, v2
 
-    const v5, 0x7f090375
+    const v5, 0x7f09037a
 
     invoke-virtual {p0, v5}, Lcom/android/incallui/fragment/DialpadFragment;->getText(I)Ljava/lang/CharSequence;
 
@@ -2648,7 +2661,7 @@
 
     aput-object v1, v0, v2
 
-    const v1, 0x7f090372
+    const v1, 0x7f090377
 
     invoke-virtual {p0, v1}, Lcom/android/incallui/fragment/DialpadFragment;->getText(I)Ljava/lang/CharSequence;
 

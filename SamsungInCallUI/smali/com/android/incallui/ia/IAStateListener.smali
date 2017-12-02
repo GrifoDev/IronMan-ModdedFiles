@@ -40,6 +40,168 @@
     return-object v0
 .end method
 
+.method private isAlreadySetReminder(Z)Z
+    .locals 4
+
+    const/4 v1, 0x1
+
+    const-string v0, "IAStateListener"
+
+    new-instance v2, Ljava/lang/StringBuilder;
+
+    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v3, "Bixby_InCall - isAlreadySetReminder "
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    invoke-virtual {v2, p1}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-static {v0, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    invoke-static {}, Lcom/android/incallui/InCallPresenter;->getInstance()Lcom/android/incallui/InCallPresenter;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lcom/android/incallui/InCallPresenter;->getActivity()Lcom/android/incallui/InCallActivity;
+
+    move-result-object v0
+
+    invoke-static {}, Lcom/android/incallui/InCallPresenter;->getInstance()Lcom/android/incallui/InCallPresenter;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Lcom/android/incallui/InCallPresenter;->getCallPopupService()Lcom/android/incallui/service/SecCallPopupService;
+
+    move-result-object v2
+
+    if-eqz v0, :cond_1
+
+    invoke-virtual {v0}, Lcom/android/incallui/InCallActivity;->getAnswerFragment()Lcom/android/incallui/AnswerUi;
+
+    move-result-object v2
+
+    if-eqz v2, :cond_2
+
+    invoke-virtual {v0}, Lcom/android/incallui/InCallActivity;->getAnswerFragment()Lcom/android/incallui/AnswerUi;
+
+    move-result-object v2
+
+    instance-of v2, v2, Lcom/android/incallui/fragment/AnswerImageFragment;
+
+    if-eqz v2, :cond_2
+
+    invoke-virtual {v0}, Lcom/android/incallui/InCallActivity;->getAnswerFragment()Lcom/android/incallui/AnswerUi;
+
+    move-result-object v0
+
+    check-cast v0, Lcom/android/incallui/fragment/AnswerImageFragment;
+
+    iget-object v2, v0, Lcom/android/incallui/fragment/AnswerImageFragment;->mRejectCallWithMsgContent:Lcom/android/incallui/RejectMsgContent;
+
+    if-eqz v2, :cond_2
+
+    iget-object v2, v0, Lcom/android/incallui/fragment/AnswerImageFragment;->mRejectCallWithMsgContent:Lcom/android/incallui/RejectMsgContent;
+
+    invoke-virtual {v2}, Lcom/android/incallui/RejectMsgContent;->getReminderCheckBox()Landroid/widget/CheckBox;
+
+    move-result-object v2
+
+    if-eqz v2, :cond_2
+
+    iget-object v2, v0, Lcom/android/incallui/fragment/AnswerImageFragment;->mRejectCallWithMsgContent:Lcom/android/incallui/RejectMsgContent;
+
+    invoke-virtual {v2}, Lcom/android/incallui/RejectMsgContent;->getReminderCheckBox()Landroid/widget/CheckBox;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Landroid/widget/CheckBox;->isChecked()Z
+
+    move-result v2
+
+    if-ne v2, p1, :cond_2
+
+    iget-object v2, v0, Lcom/android/incallui/fragment/AnswerImageFragment;->mRejectCallWithMsgDrawer:Lcom/android/incallui/widget/incomingwidget/IncomingCallSlidingDrawer;
+
+    if-eqz v2, :cond_0
+
+    iget-object v2, v0, Lcom/android/incallui/fragment/AnswerImageFragment;->mRejectCallWithMsgDrawer:Lcom/android/incallui/widget/incomingwidget/IncomingCallSlidingDrawer;
+
+    invoke-virtual {v2}, Lcom/android/incallui/widget/incomingwidget/IncomingCallSlidingDrawer;->isOpened()Z
+
+    move-result v2
+
+    if-nez v2, :cond_0
+
+    const-string v2, "IAStateListener"
+
+    const-string v3, "Bixby_InCall - isAlreadySetReminder drawer is closed - open it"
+
+    invoke-static {v2, v3}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    iget-object v0, v0, Lcom/android/incallui/fragment/AnswerImageFragment;->mRejectCallWithMsgDrawer:Lcom/android/incallui/widget/incomingwidget/IncomingCallSlidingDrawer;
+
+    invoke-virtual {v0}, Lcom/android/incallui/widget/incomingwidget/IncomingCallSlidingDrawer;->toggle()V
+
+    :cond_0
+    move v0, v1
+
+    :goto_0
+    return v0
+
+    :cond_1
+    if-eqz v2, :cond_2
+
+    invoke-virtual {v2}, Lcom/android/incallui/service/SecCallPopupService;->getPopupContainer()Lcom/android/incallui/service/SecCallPopupContainer;
+
+    move-result-object v0
+
+    if-eqz v0, :cond_2
+
+    iget-object v2, v0, Lcom/android/incallui/service/SecCallPopupContainer;->mRejectMsgContent:Lcom/android/incallui/RejectMsgContentPopup;
+
+    if-eqz v2, :cond_2
+
+    iget-object v2, v0, Lcom/android/incallui/service/SecCallPopupContainer;->mRejectMsgContent:Lcom/android/incallui/RejectMsgContentPopup;
+
+    invoke-virtual {v2}, Lcom/android/incallui/RejectMsgContentPopup;->getReminderCheckBox()Landroid/widget/CheckBox;
+
+    move-result-object v2
+
+    if-eqz v2, :cond_2
+
+    iget-object v2, v0, Lcom/android/incallui/service/SecCallPopupContainer;->mRejectMsgContent:Lcom/android/incallui/RejectMsgContentPopup;
+
+    invoke-virtual {v2}, Lcom/android/incallui/RejectMsgContentPopup;->getReminderCheckBox()Landroid/widget/CheckBox;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Landroid/widget/CheckBox;->isChecked()Z
+
+    move-result v2
+
+    if-ne v2, p1, :cond_2
+
+    invoke-virtual {v0, v1}, Lcom/android/incallui/service/SecCallPopupContainer;->showRejectMsgContent(Z)V
+
+    move v0, v1
+
+    goto :goto_0
+
+    :cond_2
+    const/4 v0, 0x0
+
+    goto :goto_0
+.end method
+
 .method private rejectCallWithMsg()V
     .locals 3
 
@@ -353,14 +515,6 @@
 
     :cond_1
     :goto_0
-    invoke-static {}, Lcom/samsung/android/sdk/bixby/a;->a()Lcom/samsung/android/sdk/bixby/a;
-
-    move-result-object v0
-
-    sget-object v1, Lcom/samsung/android/sdk/bixby/a$h;->c:Lcom/samsung/android/sdk/bixby/a$h;
-
-    invoke-virtual {v0, v1}, Lcom/samsung/android/sdk/bixby/a;->a(Lcom/samsung/android/sdk/bixby/a$h;)V
-
     return-void
 
     :cond_2
@@ -795,7 +949,7 @@
 .end method
 
 .method public onScreenStatesRequested()Lcom/samsung/android/sdk/bixby/data/c;
-    .locals 6
+    .locals 5
 
     const/4 v0, 0x0
 
@@ -807,49 +961,42 @@
 
     invoke-static {v1, v0, v2}, Lcom/android/incallui/util/InCallUtils;->getCallToDisplay(Lcom/android/incallui/CallList;Lcom/android/incallui/Call;Z)Lcom/android/incallui/Call;
 
-    move-result-object v2
+    move-result-object v1
 
-    const-string v1, "InCall"
+    if-eqz v1, :cond_0
 
-    if-eqz v2, :cond_0
+    invoke-virtual {v1}, Lcom/android/incallui/Call;->getState()I
 
-    invoke-virtual {v2}, Lcom/android/incallui/Call;->getState()I
+    move-result v1
 
-    move-result v3
+    const/4 v2, 0x4
 
-    const/4 v4, 0x4
-
-    if-ne v3, v4, :cond_0
-
-    const-string v1, "IncomingCall"
-
-    invoke-virtual {v2}, Lcom/android/incallui/Call;->isVideoCall()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_2
-
-    const-string v0, "IncomingVideoCall"
+    if-eq v1, v2, :cond_1
 
     :cond_0
     :goto_0
-    new-instance v2, Lcom/samsung/android/sdk/bixby/data/c;
+    return-object v0
 
-    invoke-direct {v2, v1}, Lcom/samsung/android/sdk/bixby/data/c;-><init>(Ljava/lang/String;)V
+    :cond_1
+    const-string v1, "IncomingCall"
 
-    const-string v3, "IAStateListener"
+    new-instance v0, Lcom/samsung/android/sdk/bixby/data/c;
 
-    new-instance v4, Ljava/lang/StringBuilder;
+    invoke-direct {v0, v1}, Lcom/samsung/android/sdk/bixby/data/c;-><init>(Ljava/lang/String;)V
 
-    invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
+    const-string v2, "IAStateListener"
 
-    const-string v5, "Bixby_InCall - onScreenStatesRequested - currentState1 : "
+    new-instance v3, Ljava/lang/StringBuilder;
 
-    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
 
-    move-result-object v4
+    const-string v4, "Bixby_InCall - onScreenStatesRequested - currentState : "
 
-    invoke-virtual {v4, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    invoke-virtual {v3, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v1
 
@@ -857,39 +1004,7 @@
 
     move-result-object v1
 
-    invoke-static {v3, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
-    if-eqz v0, :cond_1
-
-    invoke-virtual {v2, v0}, Lcom/samsung/android/sdk/bixby/data/c;->a(Ljava/lang/String;)Lcom/samsung/android/sdk/bixby/data/c;
-
-    const-string v1, "IAStateListener"
-
-    new-instance v3, Ljava/lang/StringBuilder;
-
-    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v4, "Bixby_InCall - onScreenStatesRequested - currentState2 : "
-
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    invoke-virtual {v3, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-static {v1, v0}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
-    :cond_1
-    return-object v2
-
-    :cond_2
-    const-string v0, "IncomingVoiceCall"
+    invoke-static {v2, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
     goto :goto_0
 .end method
@@ -897,13 +1012,13 @@
 .method public onStateReceived(Lcom/samsung/android/sdk/bixby/data/State;)V
     .locals 10
 
-    const/4 v2, 0x1
-
     const/16 v5, 0x8
 
     const/4 v4, 0x3
 
     const/4 v3, 0x2
+
+    const/4 v2, 0x1
 
     const/4 v1, 0x0
 
@@ -921,12 +1036,6 @@
 
     move-result-object v7
 
-    if-nez v7, :cond_0
-
-    :goto_0
-    return-void
-
-    :cond_0
     const-string v0, "IAStateListener"
 
     new-instance v8, Ljava/lang/StringBuilder;
@@ -949,10 +1058,97 @@
 
     invoke-static {v0, v8}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
+    if-nez v7, :cond_0
+
+    const-string v0, "IAStateListener"
+
+    const-string v1, "Bixby_InCall - There is no incoming call now"
+
+    invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    invoke-static {}, Lcom/samsung/android/sdk/bixby/a;->a()Lcom/samsung/android/sdk/bixby/a;
+
+    move-result-object v0
+
+    new-instance v1, Lcom/samsung/android/sdk/bixby/data/a;
+
+    const-string v2, "IncomingCall"
+
+    invoke-direct {v1, v2}, Lcom/samsung/android/sdk/bixby/data/a;-><init>(Ljava/lang/String;)V
+
+    const-string v2, "IncomingCall"
+
+    const-string v3, "Valid"
+
+    const-string v4, "no"
+
+    invoke-virtual {v1, v2, v3, v4}, Lcom/samsung/android/sdk/bixby/data/a;->a(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Lcom/samsung/android/sdk/bixby/data/a;
+
+    move-result-object v1
+
+    invoke-virtual {v0, v1}, Lcom/samsung/android/sdk/bixby/a;->a(Lcom/samsung/android/sdk/bixby/data/a;)V
+
+    invoke-static {}, Lcom/samsung/android/sdk/bixby/a;->a()Lcom/samsung/android/sdk/bixby/a;
+
+    move-result-object v0
+
+    sget-object v1, Lcom/samsung/android/sdk/bixby/a$h;->d:Lcom/samsung/android/sdk/bixby/a$h;
+
+    invoke-virtual {v0, v1}, Lcom/samsung/android/sdk/bixby/a;->a(Lcom/samsung/android/sdk/bixby/a$h;)V
+
+    :goto_0
+    return-void
+
+    :cond_0
     invoke-virtual {v7}, Lcom/android/incallui/Call;->getNumber()Ljava/lang/String;
 
     move-result-object v8
 
+    invoke-static {}, Lcom/android/incallui/InCallUISystemDB;->isTPhoneMode()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_1
+
+    const-string v0, "IAStateListener"
+
+    const-string v1, "Bixby_InCall - This is not a samsung call application"
+
+    invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    invoke-static {}, Lcom/samsung/android/sdk/bixby/a;->a()Lcom/samsung/android/sdk/bixby/a;
+
+    move-result-object v0
+
+    new-instance v1, Lcom/samsung/android/sdk/bixby/data/a;
+
+    const-string v2, "IncomingCall"
+
+    invoke-direct {v1, v2}, Lcom/samsung/android/sdk/bixby/data/a;-><init>(Ljava/lang/String;)V
+
+    const-string v2, "3rdPartyCallApp"
+
+    const-string v3, "Valid"
+
+    const-string v4, "yes"
+
+    invoke-virtual {v1, v2, v3, v4}, Lcom/samsung/android/sdk/bixby/data/a;->a(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Lcom/samsung/android/sdk/bixby/data/a;
+
+    move-result-object v1
+
+    invoke-virtual {v0, v1}, Lcom/samsung/android/sdk/bixby/a;->a(Lcom/samsung/android/sdk/bixby/data/a;)V
+
+    invoke-static {}, Lcom/samsung/android/sdk/bixby/a;->a()Lcom/samsung/android/sdk/bixby/a;
+
+    move-result-object v0
+
+    sget-object v1, Lcom/samsung/android/sdk/bixby/a$h;->d:Lcom/samsung/android/sdk/bixby/a$h;
+
+    invoke-virtual {v0, v1}, Lcom/samsung/android/sdk/bixby/a;->a(Lcom/samsung/android/sdk/bixby/a$h;)V
+
+    goto :goto_0
+
+    :cond_1
     const/4 v0, -0x1
 
     invoke-virtual {v6}, Ljava/lang/String;->hashCode()I
@@ -961,7 +1157,7 @@
 
     sparse-switch v9, :sswitch_data_0
 
-    :cond_1
+    :cond_2
     :goto_1
     packed-switch v0, :pswitch_data_0
 
@@ -985,7 +1181,7 @@
 
     move-result v6
 
-    if-eqz v6, :cond_1
+    if-eqz v6, :cond_2
 
     move v0, v1
 
@@ -998,7 +1194,7 @@
 
     move-result v6
 
-    if-eqz v6, :cond_1
+    if-eqz v6, :cond_2
 
     move v0, v2
 
@@ -1011,7 +1207,7 @@
 
     move-result v6
 
-    if-eqz v6, :cond_1
+    if-eqz v6, :cond_2
 
     move v0, v3
 
@@ -1024,7 +1220,7 @@
 
     move-result v6
 
-    if-eqz v6, :cond_1
+    if-eqz v6, :cond_2
 
     move v0, v4
 
@@ -1037,7 +1233,7 @@
 
     move-result v6
 
-    if-eqz v6, :cond_1
+    if-eqz v6, :cond_2
 
     const/4 v0, 0x4
 
@@ -1050,7 +1246,7 @@
 
     move-result v6
 
-    if-eqz v6, :cond_1
+    if-eqz v6, :cond_2
 
     const/4 v0, 0x5
 
@@ -1063,7 +1259,7 @@
 
     move-result v6
 
-    if-eqz v6, :cond_1
+    if-eqz v6, :cond_2
 
     const/4 v0, 0x6
 
@@ -1076,7 +1272,7 @@
 
     move-result v6
 
-    if-eqz v6, :cond_1
+    if-eqz v6, :cond_2
 
     const/4 v0, 0x7
 
@@ -1089,7 +1285,7 @@
 
     move-result v6
 
-    if-eqz v6, :cond_1
+    if-eqz v6, :cond_2
 
     move v0, v5
 
@@ -1102,7 +1298,7 @@
 
     move-result v6
 
-    if-eqz v6, :cond_1
+    if-eqz v6, :cond_2
 
     const/16 v0, 0x9
 
@@ -1115,7 +1311,7 @@
 
     move-result v6
 
-    if-eqz v6, :cond_1
+    if-eqz v6, :cond_2
 
     const/16 v0, 0xa
 
@@ -1128,7 +1324,7 @@
 
     move-result v6
 
-    if-eqz v6, :cond_1
+    if-eqz v6, :cond_2
 
     const/16 v0, 0xb
 
@@ -1141,7 +1337,7 @@
 
     move-result v6
 
-    if-eqz v6, :cond_1
+    if-eqz v6, :cond_2
 
     const/16 v0, 0xc
 
@@ -1154,7 +1350,7 @@
 
     move-result v6
 
-    if-eqz v6, :cond_1
+    if-eqz v6, :cond_2
 
     const/16 v0, 0xd
 
@@ -1167,7 +1363,7 @@
 
     move-result v6
 
-    if-eqz v6, :cond_1
+    if-eqz v6, :cond_2
 
     const/16 v0, 0xe
 
@@ -1180,7 +1376,7 @@
 
     move-result v6
 
-    if-eqz v6, :cond_1
+    if-eqz v6, :cond_2
 
     const/16 v0, 0xf
 
@@ -1193,7 +1389,7 @@
 
     move-result v6
 
-    if-eqz v6, :cond_1
+    if-eqz v6, :cond_2
 
     const/16 v0, 0x10
 
@@ -1222,11 +1418,13 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
+    if-eqz v7, :cond_4
+
     invoke-virtual {v7}, Lcom/android/incallui/Call;->isVideoCall()Z
 
     move-result v0
 
-    if-eqz v0, :cond_3
+    if-eqz v0, :cond_4
 
     const-string v0, "IAStateListener"
 
@@ -1254,7 +1452,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_2
+    if-eqz v0, :cond_3
 
     invoke-static {}, Lcom/android/incallui/InCallPresenter;->getInstance()Lcom/android/incallui/InCallPresenter;
 
@@ -1277,7 +1475,7 @@
 
     goto/16 :goto_0
 
-    :cond_2
+    :cond_3
     invoke-static {}, Lcom/android/incallui/InCallPresenter;->getInstance()Lcom/android/incallui/InCallPresenter;
 
     move-result-object v0
@@ -1290,7 +1488,7 @@
 
     goto :goto_2
 
-    :cond_3
+    :cond_4
     const-string v0, "IAStateListener"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -1354,17 +1552,19 @@
 
     invoke-static {v0, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
+    if-eqz v7, :cond_6
+
     invoke-virtual {v7}, Lcom/android/incallui/Call;->isVideoCall()Z
 
     move-result v0
 
-    if-eqz v0, :cond_5
+    if-eqz v0, :cond_6
 
     invoke-static {}, Lcom/android/incallui/service/vt/VideoCallConfig;->CONCEPT_USA_CDMA()Z
 
     move-result v0
 
-    if-eqz v0, :cond_4
+    if-eqz v0, :cond_5
 
     invoke-static {}, Lcom/android/incallui/InCallPresenter;->getInstance()Lcom/android/incallui/InCallPresenter;
 
@@ -1387,7 +1587,7 @@
 
     goto/16 :goto_0
 
-    :cond_4
+    :cond_5
     invoke-static {}, Lcom/android/incallui/InCallPresenter;->getInstance()Lcom/android/incallui/InCallPresenter;
 
     move-result-object v0
@@ -1400,7 +1600,7 @@
 
     goto :goto_3
 
-    :cond_5
+    :cond_6
     invoke-static {}, Lcom/android/incallui/TelecomAdapter;->getInstance()Lcom/android/incallui/TelecomAdapter;
 
     move-result-object v0
@@ -1480,7 +1680,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_6
+    if-eqz v0, :cond_7
 
     const-string v0, "IAStateListener"
 
@@ -1510,7 +1710,7 @@
 
     invoke-virtual {v0, v1}, Lcom/samsung/android/sdk/bixby/a;->a(Lcom/samsung/android/sdk/bixby/data/a;)V
 
-    :cond_6
+    :cond_7
     invoke-direct {p0}, Lcom/android/incallui/ia/IAStateListener;->rejectCallWithMsg()V
 
     invoke-static {}, Lcom/samsung/android/sdk/bixby/a;->a()Lcom/samsung/android/sdk/bixby/a;
@@ -1597,7 +1797,7 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    if-ne v0, v5, :cond_7
+    if-ne v0, v5, :cond_8
 
     invoke-static {}, Lcom/samsung/android/sdk/bixby/a;->a()Lcom/samsung/android/sdk/bixby/a;
 
@@ -1609,7 +1809,7 @@
 
     goto/16 :goto_0
 
-    :cond_7
+    :cond_8
     invoke-static {}, Lcom/android/incallui/TelecomAdapter;->getInstance()Lcom/android/incallui/TelecomAdapter;
 
     move-result-object v0
@@ -1643,7 +1843,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_8
+    if-eqz v0, :cond_9
 
     const-string v0, "IAStateListener"
 
@@ -1673,6 +1873,7 @@
 
     invoke-virtual {v0, v1}, Lcom/samsung/android/sdk/bixby/a;->a(Lcom/samsung/android/sdk/bixby/data/a;)V
 
+    :goto_4
     invoke-static {}, Lcom/samsung/android/sdk/bixby/a;->a()Lcom/samsung/android/sdk/bixby/a;
 
     move-result-object v0
@@ -1683,39 +1884,76 @@
 
     goto/16 :goto_0
 
-    :cond_8
+    :cond_9
+    invoke-direct {p0, v2}, Lcom/android/incallui/ia/IAStateListener;->isAlreadySetReminder(Z)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_a
+
+    const-string v0, "IAStateListener"
+
+    const-string v1, "Bixby_InCall - requestNlg - ReminderOn, ReminderOn, AlreadySet, yes"
+
+    invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+
     invoke-static {}, Lcom/samsung/android/sdk/bixby/a;->a()Lcom/samsung/android/sdk/bixby/a;
 
     move-result-object v0
 
     new-instance v1, Lcom/samsung/android/sdk/bixby/data/a;
 
-    const-string v3, "ReminderOn"
+    const-string v2, "ReminderOn"
 
-    invoke-direct {v1, v3}, Lcom/samsung/android/sdk/bixby/data/a;-><init>(Ljava/lang/String;)V
+    invoke-direct {v1, v2}, Lcom/samsung/android/sdk/bixby/data/a;-><init>(Ljava/lang/String;)V
 
-    const-string v3, "IncomingCallNumber"
+    const-string v2, "ReminderOn"
 
-    const-string v4, "Exist"
+    const-string v3, "AlreadySet"
 
-    const-string v5, "yes"
+    const-string v4, "yes"
 
-    invoke-virtual {v1, v3, v4, v5}, Lcom/samsung/android/sdk/bixby/data/a;->a(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Lcom/samsung/android/sdk/bixby/data/a;
+    invoke-virtual {v1, v2, v3, v4}, Lcom/samsung/android/sdk/bixby/data/a;->a(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Lcom/samsung/android/sdk/bixby/data/a;
 
     move-result-object v1
 
     invoke-virtual {v0, v1}, Lcom/samsung/android/sdk/bixby/a;->a(Lcom/samsung/android/sdk/bixby/data/a;)V
 
+    goto :goto_4
+
+    :cond_a
     invoke-direct {p0, v2}, Lcom/android/incallui/ia/IAStateListener;->setReminder(Z)V
 
-    goto/16 :goto_0
+    invoke-static {}, Lcom/samsung/android/sdk/bixby/a;->a()Lcom/samsung/android/sdk/bixby/a;
+
+    move-result-object v0
+
+    new-instance v1, Lcom/samsung/android/sdk/bixby/data/a;
+
+    const-string v2, "ReminderOn"
+
+    invoke-direct {v1, v2}, Lcom/samsung/android/sdk/bixby/data/a;-><init>(Ljava/lang/String;)V
+
+    const-string v2, "ReminderOn"
+
+    const-string v3, "AlreadySet"
+
+    const-string v4, "no"
+
+    invoke-virtual {v1, v2, v3, v4}, Lcom/samsung/android/sdk/bixby/data/a;->a(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Lcom/samsung/android/sdk/bixby/data/a;
+
+    move-result-object v1
+
+    invoke-virtual {v0, v1}, Lcom/samsung/android/sdk/bixby/a;->a(Lcom/samsung/android/sdk/bixby/data/a;)V
+
+    goto :goto_4
 
     :pswitch_9
     invoke-static {v8}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
     move-result v0
 
-    if-eqz v0, :cond_9
+    if-eqz v0, :cond_b
 
     const-string v0, "IAStateListener"
 
@@ -1745,6 +1983,7 @@
 
     invoke-virtual {v0, v1}, Lcom/samsung/android/sdk/bixby/a;->a(Lcom/samsung/android/sdk/bixby/data/a;)V
 
+    :goto_5
     invoke-static {}, Lcom/samsung/android/sdk/bixby/a;->a()Lcom/samsung/android/sdk/bixby/a;
 
     move-result-object v0
@@ -1755,39 +1994,76 @@
 
     goto/16 :goto_0
 
-    :cond_9
+    :cond_b
+    invoke-direct {p0, v1}, Lcom/android/incallui/ia/IAStateListener;->isAlreadySetReminder(Z)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_c
+
+    const-string v0, "IAStateListener"
+
+    const-string v1, "Bixby_InCall - requestNlg - ReminderOff, ReminderOff, AlreadySet, yes"
+
+    invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+
     invoke-static {}, Lcom/samsung/android/sdk/bixby/a;->a()Lcom/samsung/android/sdk/bixby/a;
 
     move-result-object v0
 
-    new-instance v2, Lcom/samsung/android/sdk/bixby/data/a;
+    new-instance v1, Lcom/samsung/android/sdk/bixby/data/a;
 
-    const-string v3, "ReminderOff"
+    const-string v2, "ReminderOff"
 
-    invoke-direct {v2, v3}, Lcom/samsung/android/sdk/bixby/data/a;-><init>(Ljava/lang/String;)V
+    invoke-direct {v1, v2}, Lcom/samsung/android/sdk/bixby/data/a;-><init>(Ljava/lang/String;)V
 
-    const-string v3, "IncomingCallNumber"
+    const-string v2, "ReminderOff"
 
-    const-string v4, "Exist"
+    const-string v3, "AlreadySet"
 
-    const-string v5, "yes"
+    const-string v4, "yes"
 
-    invoke-virtual {v2, v3, v4, v5}, Lcom/samsung/android/sdk/bixby/data/a;->a(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Lcom/samsung/android/sdk/bixby/data/a;
+    invoke-virtual {v1, v2, v3, v4}, Lcom/samsung/android/sdk/bixby/data/a;->a(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Lcom/samsung/android/sdk/bixby/data/a;
 
-    move-result-object v2
+    move-result-object v1
 
-    invoke-virtual {v0, v2}, Lcom/samsung/android/sdk/bixby/a;->a(Lcom/samsung/android/sdk/bixby/data/a;)V
+    invoke-virtual {v0, v1}, Lcom/samsung/android/sdk/bixby/a;->a(Lcom/samsung/android/sdk/bixby/data/a;)V
 
+    goto :goto_5
+
+    :cond_c
     invoke-direct {p0, v1}, Lcom/android/incallui/ia/IAStateListener;->setReminder(Z)V
 
-    goto/16 :goto_0
+    invoke-static {}, Lcom/samsung/android/sdk/bixby/a;->a()Lcom/samsung/android/sdk/bixby/a;
+
+    move-result-object v0
+
+    new-instance v1, Lcom/samsung/android/sdk/bixby/data/a;
+
+    const-string v2, "ReminderOff"
+
+    invoke-direct {v1, v2}, Lcom/samsung/android/sdk/bixby/data/a;-><init>(Ljava/lang/String;)V
+
+    const-string v2, "ReminderOff"
+
+    const-string v3, "AlreadySet"
+
+    const-string v4, "no"
+
+    invoke-virtual {v1, v2, v3, v4}, Lcom/samsung/android/sdk/bixby/data/a;->a(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Lcom/samsung/android/sdk/bixby/data/a;
+
+    move-result-object v1
+
+    invoke-virtual {v0, v1}, Lcom/samsung/android/sdk/bixby/a;->a(Lcom/samsung/android/sdk/bixby/data/a;)V
+
+    goto :goto_5
 
     :pswitch_a
     invoke-static {v8}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
     move-result v0
 
-    if-eqz v0, :cond_a
+    if-eqz v0, :cond_d
 
     const-string v0, "IAStateListener"
 
@@ -1827,7 +2103,7 @@
 
     goto/16 :goto_0
 
-    :cond_a
+    :cond_d
     invoke-static {}, Lcom/samsung/android/sdk/bixby/a;->a()Lcom/samsung/android/sdk/bixby/a;
 
     move-result-object v0
@@ -1859,7 +2135,7 @@
 
     move-result v0
 
-    if-nez v0, :cond_b
+    if-nez v0, :cond_e
 
     invoke-static {}, Lcom/samsung/android/sdk/bixby/a;->a()Lcom/samsung/android/sdk/bixby/a;
 
@@ -1876,161 +2152,6 @@
     const-string v3, "Value"
 
     const-string v4, "Off"
-
-    invoke-virtual {v1, v2, v3, v4}, Lcom/samsung/android/sdk/bixby/data/a;->a(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Lcom/samsung/android/sdk/bixby/data/a;
-
-    move-result-object v1
-
-    invoke-virtual {v0, v1}, Lcom/samsung/android/sdk/bixby/a;->a(Lcom/samsung/android/sdk/bixby/data/a;)V
-
-    invoke-static {}, Lcom/samsung/android/sdk/bixby/a;->a()Lcom/samsung/android/sdk/bixby/a;
-
-    move-result-object v0
-
-    sget-object v1, Lcom/samsung/android/sdk/bixby/a$h;->d:Lcom/samsung/android/sdk/bixby/a$h;
-
-    invoke-virtual {v0, v1}, Lcom/samsung/android/sdk/bixby/a;->a(Lcom/samsung/android/sdk/bixby/a$h;)V
-
-    goto/16 :goto_0
-
-    :cond_b
-    invoke-static {}, Lcom/samsung/android/sdk/bixby/a;->a()Lcom/samsung/android/sdk/bixby/a;
-
-    move-result-object v0
-
-    sget-object v1, Lcom/samsung/android/sdk/bixby/a$h;->c:Lcom/samsung/android/sdk/bixby/a$h;
-
-    invoke-virtual {v0, v1}, Lcom/samsung/android/sdk/bixby/a;->a(Lcom/samsung/android/sdk/bixby/a$h;)V
-
-    goto/16 :goto_0
-
-    :pswitch_c
-    invoke-static {}, Lcom/android/incallui/smartcall/SmartCallUtil;->isSpamEnable()Z
-
-    move-result v0
-
-    if-nez v0, :cond_c
-
-    invoke-static {}, Lcom/samsung/android/sdk/bixby/a;->a()Lcom/samsung/android/sdk/bixby/a;
-
-    move-result-object v0
-
-    new-instance v1, Lcom/samsung/android/sdk/bixby/data/a;
-
-    const-string v2, "SmartCallReport"
-
-    invoke-direct {v1, v2}, Lcom/samsung/android/sdk/bixby/data/a;-><init>(Ljava/lang/String;)V
-
-    const-string v2, "SmartCall"
-
-    const-string v3, "Value"
-
-    const-string v4, "Off"
-
-    invoke-virtual {v1, v2, v3, v4}, Lcom/samsung/android/sdk/bixby/data/a;->a(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Lcom/samsung/android/sdk/bixby/data/a;
-
-    move-result-object v1
-
-    invoke-virtual {v0, v1}, Lcom/samsung/android/sdk/bixby/a;->a(Lcom/samsung/android/sdk/bixby/data/a;)V
-
-    invoke-static {}, Lcom/samsung/android/sdk/bixby/a;->a()Lcom/samsung/android/sdk/bixby/a;
-
-    move-result-object v0
-
-    sget-object v1, Lcom/samsung/android/sdk/bixby/a$h;->d:Lcom/samsung/android/sdk/bixby/a$h;
-
-    invoke-virtual {v0, v1}, Lcom/samsung/android/sdk/bixby/a;->a(Lcom/samsung/android/sdk/bixby/a$h;)V
-
-    goto/16 :goto_0
-
-    :cond_c
-    invoke-static {}, Lcom/samsung/android/sdk/bixby/a;->a()Lcom/samsung/android/sdk/bixby/a;
-
-    move-result-object v0
-
-    sget-object v1, Lcom/samsung/android/sdk/bixby/a$h;->c:Lcom/samsung/android/sdk/bixby/a$h;
-
-    invoke-virtual {v0, v1}, Lcom/samsung/android/sdk/bixby/a;->a(Lcom/samsung/android/sdk/bixby/a$h;)V
-
-    goto/16 :goto_0
-
-    :pswitch_d
-    invoke-static {}, Lcom/android/incallui/InCallApp;->getInstance()Lcom/android/incallui/InCallApp;
-
-    move-result-object v0
-
-    invoke-static {v0}, Lcom/android/incallui/ContactInfoCache;->getInstance(Landroid/content/Context;)Lcom/android/incallui/ContactInfoCache;
-
-    move-result-object v0
-
-    invoke-virtual {v7}, Lcom/android/incallui/Call;->getId()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-virtual {v0, v1}, Lcom/android/incallui/ContactInfoCache;->getInfo(Ljava/lang/String;)Lcom/android/incallui/ContactInfoCache$ContactCacheEntry;
-
-    move-result-object v0
-
-    if-eqz v0, :cond_d
-
-    iget-boolean v0, v0, Lcom/android/incallui/ContactInfoCache$ContactCacheEntry;->contactExists:Z
-
-    if-eqz v0, :cond_d
-
-    invoke-static {}, Lcom/samsung/android/sdk/bixby/a;->a()Lcom/samsung/android/sdk/bixby/a;
-
-    move-result-object v0
-
-    new-instance v1, Lcom/samsung/android/sdk/bixby/data/a;
-
-    const-string v2, "SmartCallSpam"
-
-    invoke-direct {v1, v2}, Lcom/samsung/android/sdk/bixby/data/a;-><init>(Ljava/lang/String;)V
-
-    const-string v2, "UnsavedNumber"
-
-    const-string v3, "Value"
-
-    const-string v4, "no"
-
-    invoke-virtual {v1, v2, v3, v4}, Lcom/samsung/android/sdk/bixby/data/a;->a(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Lcom/samsung/android/sdk/bixby/data/a;
-
-    move-result-object v1
-
-    invoke-virtual {v0, v1}, Lcom/samsung/android/sdk/bixby/a;->a(Lcom/samsung/android/sdk/bixby/data/a;)V
-
-    invoke-static {}, Lcom/samsung/android/sdk/bixby/a;->a()Lcom/samsung/android/sdk/bixby/a;
-
-    move-result-object v0
-
-    sget-object v1, Lcom/samsung/android/sdk/bixby/a$h;->d:Lcom/samsung/android/sdk/bixby/a$h;
-
-    invoke-virtual {v0, v1}, Lcom/samsung/android/sdk/bixby/a;->a(Lcom/samsung/android/sdk/bixby/a$h;)V
-
-    goto/16 :goto_0
-
-    :cond_d
-    invoke-static {v7}, Lcom/android/incallui/smartcall/SmartCallUtil;->getSmartCallState(Lcom/android/incallui/Call;)I
-
-    move-result v0
-
-    if-ge v0, v3, :cond_e
-
-    invoke-static {}, Lcom/samsung/android/sdk/bixby/a;->a()Lcom/samsung/android/sdk/bixby/a;
-
-    move-result-object v0
-
-    new-instance v1, Lcom/samsung/android/sdk/bixby/data/a;
-
-    const-string v2, "SmartCallSpam"
-
-    invoke-direct {v1, v2}, Lcom/samsung/android/sdk/bixby/data/a;-><init>(Ljava/lang/String;)V
-
-    const-string v2, "MoreSpamScore2"
-
-    const-string v3, "Value"
-
-    const-string v4, "no"
 
     invoke-virtual {v1, v2, v3, v4}, Lcom/samsung/android/sdk/bixby/data/a;->a(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Lcom/samsung/android/sdk/bixby/data/a;
 
@@ -2049,11 +2170,71 @@
     goto/16 :goto_0
 
     :cond_e
-    invoke-direct {p0}, Lcom/android/incallui/ia/IAStateListener;->spamBlockClicked()V
+    invoke-static {}, Lcom/samsung/android/sdk/bixby/a;->a()Lcom/samsung/android/sdk/bixby/a;
+
+    move-result-object v0
+
+    sget-object v1, Lcom/samsung/android/sdk/bixby/a$h;->c:Lcom/samsung/android/sdk/bixby/a$h;
+
+    invoke-virtual {v0, v1}, Lcom/samsung/android/sdk/bixby/a;->a(Lcom/samsung/android/sdk/bixby/a$h;)V
 
     goto/16 :goto_0
 
-    :pswitch_e
+    :pswitch_c
+    invoke-static {}, Lcom/android/incallui/smartcall/SmartCallUtil;->isSpamEnable()Z
+
+    move-result v0
+
+    if-nez v0, :cond_f
+
+    invoke-static {}, Lcom/samsung/android/sdk/bixby/a;->a()Lcom/samsung/android/sdk/bixby/a;
+
+    move-result-object v0
+
+    new-instance v1, Lcom/samsung/android/sdk/bixby/data/a;
+
+    const-string v2, "SmartCallReport"
+
+    invoke-direct {v1, v2}, Lcom/samsung/android/sdk/bixby/data/a;-><init>(Ljava/lang/String;)V
+
+    const-string v2, "SmartCall"
+
+    const-string v3, "Value"
+
+    const-string v4, "Off"
+
+    invoke-virtual {v1, v2, v3, v4}, Lcom/samsung/android/sdk/bixby/data/a;->a(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Lcom/samsung/android/sdk/bixby/data/a;
+
+    move-result-object v1
+
+    invoke-virtual {v0, v1}, Lcom/samsung/android/sdk/bixby/a;->a(Lcom/samsung/android/sdk/bixby/data/a;)V
+
+    invoke-static {}, Lcom/samsung/android/sdk/bixby/a;->a()Lcom/samsung/android/sdk/bixby/a;
+
+    move-result-object v0
+
+    sget-object v1, Lcom/samsung/android/sdk/bixby/a$h;->d:Lcom/samsung/android/sdk/bixby/a$h;
+
+    invoke-virtual {v0, v1}, Lcom/samsung/android/sdk/bixby/a;->a(Lcom/samsung/android/sdk/bixby/a$h;)V
+
+    goto/16 :goto_0
+
+    :cond_f
+    invoke-static {}, Lcom/samsung/android/sdk/bixby/a;->a()Lcom/samsung/android/sdk/bixby/a;
+
+    move-result-object v0
+
+    sget-object v1, Lcom/samsung/android/sdk/bixby/a$h;->c:Lcom/samsung/android/sdk/bixby/a$h;
+
+    invoke-virtual {v0, v1}, Lcom/samsung/android/sdk/bixby/a;->a(Lcom/samsung/android/sdk/bixby/a$h;)V
+
+    goto/16 :goto_0
+
+    :pswitch_d
+    const/4 v0, 0x0
+
+    if-eqz v7, :cond_10
+
     invoke-static {}, Lcom/android/incallui/InCallApp;->getInstance()Lcom/android/incallui/InCallApp;
 
     move-result-object v0
@@ -2070,11 +2251,116 @@
 
     move-result-object v0
 
-    if-eqz v0, :cond_f
+    :cond_10
+    if-eqz v0, :cond_11
 
     iget-boolean v0, v0, Lcom/android/incallui/ContactInfoCache$ContactCacheEntry;->contactExists:Z
 
-    if-eqz v0, :cond_f
+    if-eqz v0, :cond_11
+
+    invoke-static {}, Lcom/samsung/android/sdk/bixby/a;->a()Lcom/samsung/android/sdk/bixby/a;
+
+    move-result-object v0
+
+    new-instance v1, Lcom/samsung/android/sdk/bixby/data/a;
+
+    const-string v2, "SmartCallSpam"
+
+    invoke-direct {v1, v2}, Lcom/samsung/android/sdk/bixby/data/a;-><init>(Ljava/lang/String;)V
+
+    const-string v2, "UnsavedNumber"
+
+    const-string v3, "Value"
+
+    const-string v4, "no"
+
+    invoke-virtual {v1, v2, v3, v4}, Lcom/samsung/android/sdk/bixby/data/a;->a(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Lcom/samsung/android/sdk/bixby/data/a;
+
+    move-result-object v1
+
+    invoke-virtual {v0, v1}, Lcom/samsung/android/sdk/bixby/a;->a(Lcom/samsung/android/sdk/bixby/data/a;)V
+
+    invoke-static {}, Lcom/samsung/android/sdk/bixby/a;->a()Lcom/samsung/android/sdk/bixby/a;
+
+    move-result-object v0
+
+    sget-object v1, Lcom/samsung/android/sdk/bixby/a$h;->d:Lcom/samsung/android/sdk/bixby/a$h;
+
+    invoke-virtual {v0, v1}, Lcom/samsung/android/sdk/bixby/a;->a(Lcom/samsung/android/sdk/bixby/a$h;)V
+
+    goto/16 :goto_0
+
+    :cond_11
+    invoke-static {v7}, Lcom/android/incallui/smartcall/SmartCallUtil;->getSmartCallState(Lcom/android/incallui/Call;)I
+
+    move-result v0
+
+    if-ge v0, v3, :cond_12
+
+    invoke-static {}, Lcom/samsung/android/sdk/bixby/a;->a()Lcom/samsung/android/sdk/bixby/a;
+
+    move-result-object v0
+
+    new-instance v1, Lcom/samsung/android/sdk/bixby/data/a;
+
+    const-string v2, "SmartCallSpam"
+
+    invoke-direct {v1, v2}, Lcom/samsung/android/sdk/bixby/data/a;-><init>(Ljava/lang/String;)V
+
+    const-string v2, "MoreSpamScore2"
+
+    const-string v3, "Value"
+
+    const-string v4, "no"
+
+    invoke-virtual {v1, v2, v3, v4}, Lcom/samsung/android/sdk/bixby/data/a;->a(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Lcom/samsung/android/sdk/bixby/data/a;
+
+    move-result-object v1
+
+    invoke-virtual {v0, v1}, Lcom/samsung/android/sdk/bixby/a;->a(Lcom/samsung/android/sdk/bixby/data/a;)V
+
+    invoke-static {}, Lcom/samsung/android/sdk/bixby/a;->a()Lcom/samsung/android/sdk/bixby/a;
+
+    move-result-object v0
+
+    sget-object v1, Lcom/samsung/android/sdk/bixby/a$h;->d:Lcom/samsung/android/sdk/bixby/a$h;
+
+    invoke-virtual {v0, v1}, Lcom/samsung/android/sdk/bixby/a;->a(Lcom/samsung/android/sdk/bixby/a$h;)V
+
+    goto/16 :goto_0
+
+    :cond_12
+    invoke-direct {p0}, Lcom/android/incallui/ia/IAStateListener;->spamBlockClicked()V
+
+    goto/16 :goto_0
+
+    :pswitch_e
+    const/4 v0, 0x0
+
+    if-eqz v7, :cond_13
+
+    invoke-static {}, Lcom/android/incallui/InCallApp;->getInstance()Lcom/android/incallui/InCallApp;
+
+    move-result-object v0
+
+    invoke-static {v0}, Lcom/android/incallui/ContactInfoCache;->getInstance(Landroid/content/Context;)Lcom/android/incallui/ContactInfoCache;
+
+    move-result-object v0
+
+    invoke-virtual {v7}, Lcom/android/incallui/Call;->getId()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-virtual {v0, v1}, Lcom/android/incallui/ContactInfoCache;->getInfo(Ljava/lang/String;)Lcom/android/incallui/ContactInfoCache$ContactCacheEntry;
+
+    move-result-object v0
+
+    :cond_13
+    if-eqz v0, :cond_14
+
+    iget-boolean v0, v0, Lcom/android/incallui/ContactInfoCache$ContactCacheEntry;->contactExists:Z
+
+    if-eqz v0, :cond_14
 
     invoke-static {}, Lcom/samsung/android/sdk/bixby/a;->a()Lcom/samsung/android/sdk/bixby/a;
 
@@ -2108,12 +2394,12 @@
 
     goto/16 :goto_0
 
-    :cond_f
+    :cond_14
     invoke-static {v7}, Lcom/android/incallui/smartcall/SmartCallUtil;->getSmartCallState(Lcom/android/incallui/Call;)I
 
     move-result v0
 
-    if-ge v0, v3, :cond_10
+    if-ge v0, v3, :cond_15
 
     invoke-static {}, Lcom/samsung/android/sdk/bixby/a;->a()Lcom/samsung/android/sdk/bixby/a;
 
@@ -2147,7 +2433,7 @@
 
     goto/16 :goto_0
 
-    :cond_10
+    :cond_15
     invoke-direct {p0}, Lcom/android/incallui/ia/IAStateListener;->spamReportClicked()V
 
     goto/16 :goto_0
@@ -2157,7 +2443,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_11
+    if-eqz v0, :cond_16
 
     const-string v0, "IAStateListener"
 
@@ -2197,7 +2483,7 @@
 
     goto/16 :goto_0
 
-    :cond_11
+    :cond_16
     invoke-static {}, Lcom/samsung/android/sdk/bixby/a;->a()Lcom/samsung/android/sdk/bixby/a;
 
     move-result-object v0
@@ -2229,7 +2515,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_12
+    if-eqz v0, :cond_17
 
     const-string v0, "IAStateListener"
 
@@ -2269,12 +2555,10 @@
 
     goto/16 :goto_0
 
-    :cond_12
+    :cond_17
     invoke-direct {p0}, Lcom/android/incallui/ia/IAStateListener;->rejectCallWithRecentAgif()V
 
     goto/16 :goto_0
-
-    nop
 
     :sswitch_data_0
     .sparse-switch

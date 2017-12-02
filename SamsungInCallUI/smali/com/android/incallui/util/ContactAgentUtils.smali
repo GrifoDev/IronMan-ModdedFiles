@@ -69,32 +69,32 @@
     goto :goto_0
 
     :sswitch_2
-    const v0, 0x7f02010d
+    const v0, 0x7f020117
 
     goto :goto_0
 
     :sswitch_3
-    const v0, 0x7f02010c
+    const v0, 0x7f020116
 
     goto :goto_0
 
     :sswitch_4
-    const v0, 0x7f02010b
+    const v0, 0x7f020115
 
     goto :goto_0
 
     :sswitch_5
-    const v0, 0x7f02010f
+    const v0, 0x7f020119
 
     goto :goto_0
 
     :sswitch_6
-    const v0, 0x7f02010a
+    const v0, 0x7f020114
 
     goto :goto_0
 
     :sswitch_7
-    const v0, 0x7f02010e
+    const v0, 0x7f020118
 
     goto :goto_0
 
@@ -106,32 +106,32 @@
     goto :goto_0
 
     :sswitch_9
-    const v0, 0x7f0201f5
+    const v0, 0x7f020201
 
     goto :goto_0
 
     :sswitch_a
-    const v0, 0x7f0201fa
+    const v0, 0x7f020206
 
     goto :goto_0
 
     :sswitch_b
-    const v0, 0x7f0201f9
+    const v0, 0x7f020205
 
     goto :goto_0
 
     :sswitch_c
-    const v0, 0x7f0201f8
+    const v0, 0x7f020204
 
     goto :goto_0
 
     :sswitch_d
-    const v0, 0x7f0201f6
+    const v0, 0x7f020202
 
     goto :goto_0
 
     :sswitch_e
-    const v0, 0x7f0201f7
+    const v0, 0x7f020203
 
     goto :goto_0
 
@@ -673,16 +673,17 @@
 .end method
 
 .method public static startContactAgent(Landroid/content/Context;Ljava/lang/String;ZZ)V
-    .locals 4
+    .locals 5
+
+    const/4 v4, 0x1
 
     const-string v0, "ContactAgentUtils"
 
     const-string v1, "startContactAgent"
 
-    const/4 v2, 0x1
+    invoke-static {v0, v1, v4}, Lcom/android/incallui/Log;->i(Ljava/lang/String;Ljava/lang/String;Z)V
 
-    invoke-static {v0, v1, v2}, Lcom/android/incallui/Log;->d(Ljava/lang/String;Ljava/lang/String;Z)V
-
+    :try_start_0
     new-instance v1, Landroid/content/Intent;
 
     sget-object v0, Lcom/android/incallui/util/ContactAgentUtils;->ACTION_CONTACT_ORIGINAL_IMAGE:Ljava/lang/String;
@@ -724,12 +725,26 @@
 
     invoke-virtual {p0, v1}, Landroid/content/Context;->startService(Landroid/content/Intent;)Landroid/content/ComponentName;
 
+    :goto_1
     return-void
 
     :cond_0
     const-string v0, "Out"
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
     goto :goto_0
+
+    :catch_0
+    move-exception v0
+
+    const-string v0, "ContactAgentUtils"
+
+    const-string v1, "startContactAgent - exception occured"
+
+    invoke-static {v0, v1, v4}, Lcom/android/incallui/Log;->i(Ljava/lang/String;Ljava/lang/String;Z)V
+
+    goto :goto_1
 .end method
 
 .method public static startContactAgentAsync(Ljava/lang/String;ZZ)V

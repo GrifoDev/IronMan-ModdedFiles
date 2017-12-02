@@ -154,7 +154,7 @@
     <string name="DivertToVoice_enable">Cuộc gọi video không có sẵn cho số này. Chuyển sang cuộc gọi thoại…</string>
     <string name="Lunar_anniversary_passedDays1">Lễ kỷ niệm âm lịch hôm qua</string>
     <string name="Lunar_anniversary_remainedDays0">Lễ kỷ niệm âm lịch hôm nay</string>
-    <string name="Lunar_anniversary_remainedDays1">Lễ kỷ niệm Ngày mai</string>
+    <string name="Lunar_anniversary_remainedDays1">Lễ kỷ niệm âm lịch ngày mai</string>
     <string name="Lunar_anniversary_remainedDays7">Lễ kỷ niệm âm lịch: 1 tuần</string>
     <string name="Lunar_anniversary_remainedDaysEtc">Lễ kỷ niệm âm lịch: %d ngày</string>
     <string name="Lunar_birthDay_passedDays1">Sinh nhật âm lịch hôm qua</string>
@@ -184,6 +184,7 @@
     <string name="agif_decline_sticker_header">Từ chối bằng sticker</string>
     <string name="agif_decline_text_header">Từ chối bằng tin nhắn</string>
     <string name="agif_decline_toast">Sticker đã được gửi đến %s.</string>
+    <string name="agif_outgoing_bubble_tip">Gửi sticker để thể hiện cảm xúc của bạn.</string>
     <string name="agif_pickers_add_tab_description">Thêm</string>
     <string name="agif_pickers_downloaded">Đã tải về</string>
     <string name="agif_pickers_item_usage_hints_description">Chạm hai lần để chọn</string>
@@ -199,10 +200,12 @@
     <string name="agif_pickers_tab_select_description">Đã chọn</string>
     <string name="agif_pickers_title">Bắt đầu với sticker</string>
     <string name="agif_pickers_title_top_stickers">Sticker hàng đầu</string>
+    <string name="agif_random_send_message">Chạm vào đây để gửi sticker này.</string>
     <string name="agif_read_permission_description">Cho phép Điện thoại đọc nội dung AGIF.</string>
     <string name="agif_read_permission_label">Đọc nội dung AGIF</string>
     <string name="agif_receive_no_id">Không thể hiển thị sticker. Hãy cập nhật %s sau cuộc gọi.</string>
     <string name="agif_receive_no_id_upsupport_update">Không thể hiển thị sticker. Sẽ có thêm các sticker khác sau lần cập nhật hệ thống tiếp theo.</string>
+    <string name="agif_receive_toast">Sticker từ %s.</string>
     <string name="agif_sent_fail_message">Không thể gửi ảnh GIF động. Hãy thử lại sau.</string>
     <string name="agif_sent_toast">Đã gửi sticker.</string>
     <string name="agif_write_permission_description">Cho phép Điện thoại sửa đổi nội dung AGIF.</string>
@@ -830,7 +833,7 @@ một chiều"</string>
     <string name="settings_glance_reply_reached_maximum_text">Đã đạt số ký tự tối đa (%d).</string>
     <string name="settings_glance_reply_text">Tin nhắn Trả lời nhanh</string>
     <string name="settings_subappbar_switch_dimmed">Tối</string>
-    <string name="settings_subappbar_switch_off">\"TẮT\"</string>
+    <string name="settings_subappbar_switch_off">TẮT</string>
     <string name="settings_subappbar_switch_on">Bật</string>
     <string name="simple_sharing">Link sharing</string>
     <string name="skip">Bỏ qua</string>
@@ -871,6 +874,7 @@ một chiều"</string>
     <string name="sticker_delete_stickers">Xóa %d sticker?</string>
     <string name="sticker_delete_this_sticker">Xóa sticker này?</string>
     <string name="sticker_setting_edit_title">Chọn sticker</string>
+    <string name="sticker_setting_edit_title_preload">Sắp xếp lại sticker</string>
     <string name="sticker_setting_main_title">Sticker của bạn</string>
     <string name="sticker_setting_menu_delete">Xóa</string>
     <string name="sticker_setting_menu_edit">Sửa</string>
@@ -883,6 +887,7 @@ một chiều"</string>
     <string name="swipe_right_to_answer_call_with_video">Vuốt sang phải để trả lời cuộc gọi có video.</string>
     <string name="swipe_right_to_answer_call_without_video">Vuốt sang phải để trả lời cuộc gọi không có video.</string>
     <string name="switch_rejected_by_mt">Yêu cầu chuyển sang cuộc gọi video bị từ chối.</string>
+    <string name="switch_rejected_by_mt_att">Không có video cho cuộc gọi này. Cuộc gọi được kết nối như cuộc gọi thoại.</string>
     <string name="switch_to_video_call_failed">Yêu cầu chuyển sang cuộc gọi video không thành công.</string>
     <string name="switch_to_video_call_failed_tmo">Yêu cầu chuyển sang cuộc gọi video đã bị từ chối.</string>
     <string name="switch_to_voice_call_failed">Yêu cầu chuyển sang cuộc gọi thoại không thành công.</string>

@@ -299,17 +299,17 @@
 .end method
 
 .method private updateCallerInfoCardView(Landroid/database/Cursor;)V
-    .locals 9
+    .locals 10
 
-    const/4 v8, 0x5
+    const/4 v7, 0x5
 
-    const/4 v7, 0x4
+    const/4 v6, 0x4
 
-    const/4 v4, 0x3
+    const/4 v5, 0x3
 
-    const/4 v6, 0x1
+    const/4 v9, 0x1
 
-    const/4 v5, 0x0
+    const/4 v8, 0x0
 
     const-string v0, "CallCardCallPlusView"
 
@@ -331,7 +331,7 @@
 
     move-result-object v1
 
-    invoke-static {v0, v1, v6}, Lcom/android/incallui/Log;->d(Ljava/lang/String;Ljava/lang/String;Z)V
+    invoke-static {v0, v1, v9}, Lcom/android/incallui/Log;->d(Ljava/lang/String;Ljava/lang/String;Z)V
 
     if-eqz p1, :cond_0
 
@@ -359,7 +359,7 @@
 
     move-result-object v1
 
-    invoke-static {v0, v1, v6}, Lcom/android/incallui/Log;->d(Ljava/lang/String;Ljava/lang/String;Z)V
+    invoke-static {v0, v1, v9}, Lcom/android/incallui/Log;->d(Ljava/lang/String;Ljava/lang/String;Z)V
 
     :cond_0
     const/4 v0, 0x0
@@ -388,198 +388,156 @@
 
     move-result-object v1
 
-    if-eqz p1, :cond_9
+    invoke-virtual {v0}, Lcom/android/incallui/fragment/VoiceCallCardFragment;->getDisplayHeight()I
+
+    move-result v2
+
+    invoke-virtual {v1, v2}, Lcom/android/incallui/callerinfocard/CallerInfoCardView;->setScreenSize(I)V
+
+    if-eqz p1, :cond_8
 
     invoke-interface {p1}, Landroid/database/Cursor;->moveToFirst()Z
 
-    move-result v2
+    move-result v3
 
-    if-eqz v2, :cond_9
+    if-eqz v3, :cond_8
 
-    const-string v2, "CallCardCallPlusView"
+    const-string v3, "CallCardCallPlusView"
 
-    const-string v3, "CallPlus available ,incoming call"
+    const-string v4, "CallPlus available ,incoming call"
 
-    invoke-static {v2, v3, v6}, Lcom/android/incallui/Log;->d(Ljava/lang/String;Ljava/lang/String;Z)V
+    invoke-static {v3, v4, v9}, Lcom/android/incallui/Log;->d(Ljava/lang/String;Ljava/lang/String;Z)V
 
-    iput-boolean v6, p0, Lcom/android/incallui/fragment/view/CallCardCallPlusView;->mIsCallPlus:Z
+    iput-boolean v9, p0, Lcom/android/incallui/fragment/view/CallCardCallPlusView;->mIsCallPlus:Z
 
-    const-string v2, "ims_crane"
+    const-string v3, "ims_crane"
 
-    invoke-static {v2}, Lcom/android/incallui/InCallUIFeature;->hasFeature(Ljava/lang/String;)Z
+    invoke-static {v3}, Lcom/android/incallui/InCallUIFeature;->hasFeature(Ljava/lang/String;)Z
 
-    move-result v2
+    move-result v3
 
-    if-eqz v2, :cond_4
+    if-eqz v3, :cond_4
 
-    invoke-interface {p1, v5}, Landroid/database/Cursor;->getInt(I)I
+    invoke-interface {p1, v8}, Landroid/database/Cursor;->getInt(I)I
 
-    move-result v2
+    move-result v3
 
-    iput v2, p0, Lcom/android/incallui/fragment/view/CallCardCallPlusView;->mImportance:I
+    iput v3, p0, Lcom/android/incallui/fragment/view/CallCardCallPlusView;->mImportance:I
 
-    invoke-interface {p1, v6}, Landroid/database/Cursor;->getString(I)Ljava/lang/String;
+    invoke-interface {p1, v9}, Landroid/database/Cursor;->getString(I)Ljava/lang/String;
 
-    move-result-object v2
+    move-result-object v3
 
-    iput-object v2, p0, Lcom/android/incallui/fragment/view/CallCardCallPlusView;->mSubject:Ljava/lang/String;
+    iput-object v3, p0, Lcom/android/incallui/fragment/view/CallCardCallPlusView;->mSubject:Ljava/lang/String;
 
-    const/4 v2, 0x2
+    const/4 v3, 0x2
 
-    invoke-interface {p1, v2}, Landroid/database/Cursor;->getString(I)Ljava/lang/String;
+    invoke-interface {p1, v3}, Landroid/database/Cursor;->getString(I)Ljava/lang/String;
 
-    move-result-object v2
+    move-result-object v3
 
-    iput-object v2, p0, Lcom/android/incallui/fragment/view/CallCardCallPlusView;->mLocation:Ljava/lang/String;
-
-    invoke-interface {p1, v8}, Landroid/database/Cursor;->getString(I)Ljava/lang/String;
-
-    move-result-object v2
-
-    iput-object v2, p0, Lcom/android/incallui/fragment/view/CallCardCallPlusView;->mLocationLatLong:Ljava/lang/String;
-
-    invoke-interface {p1, v4}, Landroid/database/Cursor;->getString(I)Ljava/lang/String;
-
-    move-result-object v2
-
-    iput-object v2, p0, Lcom/android/incallui/fragment/view/CallCardCallPlusView;->mLocation_map:Ljava/lang/String;
+    iput-object v3, p0, Lcom/android/incallui/fragment/view/CallCardCallPlusView;->mLocation:Ljava/lang/String;
 
     invoke-interface {p1, v7}, Landroid/database/Cursor;->getString(I)Ljava/lang/String;
 
-    move-result-object v2
+    move-result-object v3
 
-    iput-object v2, p0, Lcom/android/incallui/fragment/view/CallCardCallPlusView;->mBackground:Ljava/lang/String;
+    iput-object v3, p0, Lcom/android/incallui/fragment/view/CallCardCallPlusView;->mLocationLatLong:Ljava/lang/String;
+
+    invoke-interface {p1, v5}, Landroid/database/Cursor;->getString(I)Ljava/lang/String;
+
+    move-result-object v3
+
+    iput-object v3, p0, Lcom/android/incallui/fragment/view/CallCardCallPlusView;->mLocation_map:Ljava/lang/String;
+
+    invoke-interface {p1, v6}, Landroid/database/Cursor;->getString(I)Ljava/lang/String;
+
+    move-result-object v3
+
+    iput-object v3, p0, Lcom/android/incallui/fragment/view/CallCardCallPlusView;->mBackground:Ljava/lang/String;
 
     :goto_1
-    const-string v2, "CallCardCallPlusView"
+    const-string v3, "CallCardCallPlusView"
 
-    new-instance v3, Ljava/lang/StringBuilder;
+    new-instance v4, Ljava/lang/StringBuilder;
 
-    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v4, "updateView mImportance :"
+    const-string v5, "updateView mImportance :"
 
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v3
+    move-result-object v4
 
-    iget v4, p0, Lcom/android/incallui/fragment/view/CallCardCallPlusView;->mImportance:I
+    iget v5, p0, Lcom/android/incallui/fragment/view/CallCardCallPlusView;->mImportance:I
 
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    move-result-object v3
+    move-result-object v4
 
-    const-string v4, "mSubject "
+    const-string v5, "mSubject "
 
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v3
+    move-result-object v4
 
-    iget-object v4, p0, Lcom/android/incallui/fragment/view/CallCardCallPlusView;->mSubject:Ljava/lang/String;
+    iget-object v5, p0, Lcom/android/incallui/fragment/view/CallCardCallPlusView;->mSubject:Ljava/lang/String;
 
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v3
+    move-result-object v4
 
-    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v3
+    move-result-object v4
 
-    invoke-static {v2, v3, v6}, Lcom/android/incallui/Log;->d(Ljava/lang/String;Ljava/lang/String;Z)V
-
-    const-string v2, "CallCardCallPlusView"
-
-    new-instance v3, Ljava/lang/StringBuilder;
-
-    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v4, "updateView mLocation :"
-
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    iget-object v4, p0, Lcom/android/incallui/fragment/view/CallCardCallPlusView;->mLocation:Ljava/lang/String;
-
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    const-string v4, "mLocation_map "
-
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    iget-object v4, p0, Lcom/android/incallui/fragment/view/CallCardCallPlusView;->mLocation_map:Ljava/lang/String;
-
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    const-string v4, "mBackground "
-
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    iget-object v4, p0, Lcom/android/incallui/fragment/view/CallCardCallPlusView;->mBackground:Ljava/lang/String;
-
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v3
-
-    invoke-static {v2, v3, v6}, Lcom/android/incallui/Log;->d(Ljava/lang/String;Ljava/lang/String;Z)V
+    invoke-static {v3, v4, v9}, Lcom/android/incallui/Log;->d(Ljava/lang/String;Ljava/lang/String;Z)V
 
     invoke-static {}, Lcom/android/incallui/CallList;->getInstance()Lcom/android/incallui/CallList;
 
-    move-result-object v2
+    move-result-object v3
 
-    const/4 v3, 0x0
+    const/4 v4, 0x0
 
-    invoke-static {v2, v3, v5}, Lcom/android/incallui/util/InCallUtils;->getCallToDisplay(Lcom/android/incallui/CallList;Lcom/android/incallui/Call;Z)Lcom/android/incallui/Call;
+    invoke-static {v3, v4, v8}, Lcom/android/incallui/util/InCallUtils;->getCallToDisplay(Lcom/android/incallui/CallList;Lcom/android/incallui/Call;Z)Lcom/android/incallui/Call;
 
-    move-result-object v2
+    move-result-object v3
 
-    if-eqz v2, :cond_2
+    if-eqz v3, :cond_2
 
     invoke-virtual {v0}, Lcom/android/incallui/fragment/VoiceCallCardFragment;->getView()Landroid/view/View;
 
+    move-result-object v4
+
+    invoke-virtual {v4}, Landroid/view/View;->getContext()Landroid/content/Context;
+
+    move-result-object v4
+
+    invoke-static {v4}, Lcom/android/incallui/ContactInfoCache;->getInstance(Landroid/content/Context;)Lcom/android/incallui/ContactInfoCache;
+
+    move-result-object v4
+
+    invoke-virtual {v3}, Lcom/android/incallui/Call;->getId()Ljava/lang/String;
+
     move-result-object v3
 
-    invoke-virtual {v3}, Landroid/view/View;->getContext()Landroid/content/Context;
+    invoke-virtual {v4, v3}, Lcom/android/incallui/ContactInfoCache;->getInfo(Ljava/lang/String;)Lcom/android/incallui/ContactInfoCache$ContactCacheEntry;
 
     move-result-object v3
 
-    invoke-static {v3}, Lcom/android/incallui/ContactInfoCache;->getInstance(Landroid/content/Context;)Lcom/android/incallui/ContactInfoCache;
+    if-eqz v3, :cond_2
 
-    move-result-object v3
+    iget-object v4, v3, Lcom/android/incallui/ContactInfoCache$ContactCacheEntry;->photo:Landroid/graphics/drawable/Drawable;
 
-    invoke-virtual {v2}, Lcom/android/incallui/Call;->getId()Ljava/lang/String;
+    iget-boolean v3, v3, Lcom/android/incallui/ContactInfoCache$ContactCacheEntry;->isPersonalPhotoAvailable:Z
 
-    move-result-object v2
-
-    invoke-virtual {v3, v2}, Lcom/android/incallui/ContactInfoCache;->getInfo(Ljava/lang/String;)Lcom/android/incallui/ContactInfoCache$ContactCacheEntry;
-
-    move-result-object v2
-
-    if-eqz v2, :cond_2
-
-    iget-object v3, v2, Lcom/android/incallui/ContactInfoCache$ContactCacheEntry;->photo:Landroid/graphics/drawable/Drawable;
-
-    iget-boolean v2, v2, Lcom/android/incallui/ContactInfoCache$ContactCacheEntry;->isPersonalPhotoAvailable:Z
-
-    invoke-virtual {v0, v3, v2}, Lcom/android/incallui/fragment/VoiceCallCardFragment;->setPrimaryImage(Landroid/graphics/drawable/Drawable;Z)V
+    invoke-virtual {v0, v4, v3}, Lcom/android/incallui/fragment/VoiceCallCardFragment;->setPrimaryImage(Landroid/graphics/drawable/Drawable;Z)V
 
     if-eqz v1, :cond_2
 
     invoke-virtual {v1}, Lcom/android/incallui/callerinfocard/CallerInfoCardView;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
 
-    move-result-object v2
+    move-result-object v3
 
     invoke-virtual {v1}, Lcom/android/incallui/callerinfocard/CallerInfoCardView;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
 
@@ -587,54 +545,25 @@
 
     check-cast v0, Landroid/view/ViewGroup$MarginLayoutParams;
 
-    iget-object v3, p0, Lcom/android/incallui/fragment/view/CallCardCallPlusView;->mFragment:Lcom/android/incallui/fragment/CallCardFragment;
+    int-to-double v4, v2
 
-    invoke-virtual {v3}, Lcom/android/incallui/fragment/CallCardFragment;->getActivity()Landroid/app/Activity;
+    const-wide v6, 0x3fcb851eb851eb85L    # 0.215
 
-    move-result-object v3
+    mul-double/2addr v4, v6
 
-    invoke-virtual {v3}, Landroid/app/Activity;->getResources()Landroid/content/res/Resources;
+    const-wide/high16 v6, 0x4034000000000000L    # 20.0
 
-    move-result-object v3
+    add-double/2addr v4, v6
 
-    const v4, 0x7f0a0391
+    double-to-int v4, v4
 
-    invoke-virtual {v3, v4}, Landroid/content/res/Resources;->getDimension(I)F
+    iput v4, v3, Landroid/view/ViewGroup$LayoutParams;->height:I
 
-    move-result v3
+    invoke-direct {p0, v0, v2}, Lcom/android/incallui/fragment/view/CallCardCallPlusView;->updateCraneTopMargin(Landroid/view/ViewGroup$MarginLayoutParams;I)Landroid/view/ViewGroup$MarginLayoutParams;
 
-    float-to-int v3, v3
+    move-result-object v0
 
-    iput v3, v2, Landroid/view/ViewGroup$LayoutParams;->height:I
-
-    invoke-direct {p0}, Lcom/android/incallui/fragment/view/CallCardCallPlusView;->isEasyMode()Z
-
-    move-result v3
-
-    if-eqz v3, :cond_5
-
-    iget-object v3, p0, Lcom/android/incallui/fragment/view/CallCardCallPlusView;->mFragment:Lcom/android/incallui/fragment/CallCardFragment;
-
-    invoke-virtual {v3}, Lcom/android/incallui/fragment/CallCardFragment;->getActivity()Landroid/app/Activity;
-
-    move-result-object v3
-
-    invoke-virtual {v3}, Landroid/app/Activity;->getResources()Landroid/content/res/Resources;
-
-    move-result-object v3
-
-    const v4, 0x7f0a0393
-
-    invoke-virtual {v3, v4}, Landroid/content/res/Resources;->getDimension(I)F
-
-    move-result v3
-
-    float-to-int v3, v3
-
-    iput v3, v0, Landroid/view/ViewGroup$MarginLayoutParams;->topMargin:I
-
-    :goto_2
-    invoke-virtual {v1, v2}, Lcom/android/incallui/callerinfocard/CallerInfoCardView;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
+    invoke-virtual {v1, v3}, Lcom/android/incallui/callerinfocard/CallerInfoCardView;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
 
     invoke-virtual {v1, v0}, Lcom/android/incallui/callerinfocard/CallerInfoCardView;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
 
@@ -644,9 +573,79 @@
 
     iget-object v0, p0, Lcom/android/incallui/fragment/view/CallCardCallPlusView;->mLocation:Ljava/lang/String;
 
-    if-nez v0, :cond_6
+    if-nez v0, :cond_5
 
     iget-object v0, p0, Lcom/android/incallui/fragment/view/CallCardCallPlusView;->mBackground:Ljava/lang/String;
+
+    if-nez v0, :cond_5
+
+    iget-boolean v0, p0, Lcom/android/incallui/fragment/view/CallCardCallPlusView;->mIsCallPlus:Z
+
+    iget v2, p0, Lcom/android/incallui/fragment/view/CallCardCallPlusView;->mImportance:I
+
+    invoke-virtual {v1, v0, v2}, Lcom/android/incallui/callerinfocard/CallerInfoCardView;->setCallPlusImportance(ZI)V
+
+    iget-boolean v0, p0, Lcom/android/incallui/fragment/view/CallCardCallPlusView;->mIsCallPlus:Z
+
+    iget-object v2, p0, Lcom/android/incallui/fragment/view/CallCardCallPlusView;->mSubject:Ljava/lang/String;
+
+    invoke-virtual {v1, v0, v2}, Lcom/android/incallui/callerinfocard/CallerInfoCardView;->setCallPlusSubject(ZLjava/lang/String;)V
+
+    iget-object v0, p0, Lcom/android/incallui/fragment/view/CallCardCallPlusView;->mLocation:Ljava/lang/String;
+
+    iget-object v2, p0, Lcom/android/incallui/fragment/view/CallCardCallPlusView;->mLocationLatLong:Ljava/lang/String;
+
+    invoke-virtual {v1, v8, v0, v2}, Lcom/android/incallui/callerinfocard/CallerInfoCardView;->setCallPlusAddress(ZLjava/lang/String;Ljava/lang/String;)V
+
+    iget-object v0, p0, Lcom/android/incallui/fragment/view/CallCardCallPlusView;->mLocation_map:Ljava/lang/String;
+
+    invoke-virtual {v1, v8, v0, v8}, Lcom/android/incallui/callerinfocard/CallerInfoCardView;->setCallPlusMap(ZLjava/lang/String;Z)V
+
+    iget-object v0, p0, Lcom/android/incallui/fragment/view/CallCardCallPlusView;->mBackground:Ljava/lang/String;
+
+    invoke-virtual {v1, v8, v0, v8}, Lcom/android/incallui/callerinfocard/CallerInfoCardView;->setCallPlusMapImage(ZLjava/lang/String;Z)V
+
+    goto/16 :goto_0
+
+    :cond_4
+    invoke-interface {p1, v5}, Landroid/database/Cursor;->getInt(I)I
+
+    move-result v3
+
+    iput v3, p0, Lcom/android/incallui/fragment/view/CallCardCallPlusView;->mImportance:I
+
+    const/4 v3, 0x7
+
+    invoke-interface {p1, v3}, Landroid/database/Cursor;->getString(I)Ljava/lang/String;
+
+    move-result-object v3
+
+    iput-object v3, p0, Lcom/android/incallui/fragment/view/CallCardCallPlusView;->mSubject:Ljava/lang/String;
+
+    invoke-interface {p1, v6}, Landroid/database/Cursor;->getString(I)Ljava/lang/String;
+
+    move-result-object v3
+
+    iput-object v3, p0, Lcom/android/incallui/fragment/view/CallCardCallPlusView;->mLocation:Ljava/lang/String;
+
+    invoke-interface {p1, v7}, Landroid/database/Cursor;->getString(I)Ljava/lang/String;
+
+    move-result-object v3
+
+    iput-object v3, p0, Lcom/android/incallui/fragment/view/CallCardCallPlusView;->mLocation_map:Ljava/lang/String;
+
+    const/4 v3, 0x6
+
+    invoke-interface {p1, v3}, Landroid/database/Cursor;->getString(I)Ljava/lang/String;
+
+    move-result-object v3
+
+    iput-object v3, p0, Lcom/android/incallui/fragment/view/CallCardCallPlusView;->mBackground:Ljava/lang/String;
+
+    goto/16 :goto_1
+
+    :cond_5
+    iget-object v0, p0, Lcom/android/incallui/fragment/view/CallCardCallPlusView;->mLocation:Ljava/lang/String;
 
     if-nez v0, :cond_6
 
@@ -666,80 +665,22 @@
 
     iget-object v2, p0, Lcom/android/incallui/fragment/view/CallCardCallPlusView;->mLocationLatLong:Ljava/lang/String;
 
-    invoke-virtual {v1, v5, v0, v2}, Lcom/android/incallui/callerinfocard/CallerInfoCardView;->setCallPlusAddress(ZLjava/lang/String;Ljava/lang/String;)V
+    invoke-virtual {v1, v8, v0, v2}, Lcom/android/incallui/callerinfocard/CallerInfoCardView;->setCallPlusAddress(ZLjava/lang/String;Ljava/lang/String;)V
 
     iget-object v0, p0, Lcom/android/incallui/fragment/view/CallCardCallPlusView;->mLocation_map:Ljava/lang/String;
 
-    invoke-virtual {v1, v5, v0, v5}, Lcom/android/incallui/callerinfocard/CallerInfoCardView;->setCallPlusMap(ZLjava/lang/String;Z)V
+    invoke-virtual {v1, v8, v0, v8}, Lcom/android/incallui/callerinfocard/CallerInfoCardView;->setCallPlusMap(ZLjava/lang/String;Z)V
 
-    iget-object v0, p0, Lcom/android/incallui/fragment/view/CallCardCallPlusView;->mBackground:Ljava/lang/String;
+    iget-boolean v0, p0, Lcom/android/incallui/fragment/view/CallCardCallPlusView;->mIsCallPlus:Z
 
-    invoke-virtual {v1, v5, v0, v5}, Lcom/android/incallui/callerinfocard/CallerInfoCardView;->setCallPlusMapImage(ZLjava/lang/String;Z)V
+    iget-object v2, p0, Lcom/android/incallui/fragment/view/CallCardCallPlusView;->mBackground:Ljava/lang/String;
+
+    invoke-virtual {v1, v0, v2, v9}, Lcom/android/incallui/callerinfocard/CallerInfoCardView;->setCallPlusMapImage(ZLjava/lang/String;Z)V
 
     goto/16 :goto_0
 
-    :cond_4
-    invoke-interface {p1, v4}, Landroid/database/Cursor;->getInt(I)I
-
-    move-result v2
-
-    iput v2, p0, Lcom/android/incallui/fragment/view/CallCardCallPlusView;->mImportance:I
-
-    const/4 v2, 0x7
-
-    invoke-interface {p1, v2}, Landroid/database/Cursor;->getString(I)Ljava/lang/String;
-
-    move-result-object v2
-
-    iput-object v2, p0, Lcom/android/incallui/fragment/view/CallCardCallPlusView;->mSubject:Ljava/lang/String;
-
-    invoke-interface {p1, v7}, Landroid/database/Cursor;->getString(I)Ljava/lang/String;
-
-    move-result-object v2
-
-    iput-object v2, p0, Lcom/android/incallui/fragment/view/CallCardCallPlusView;->mLocation:Ljava/lang/String;
-
-    invoke-interface {p1, v8}, Landroid/database/Cursor;->getString(I)Ljava/lang/String;
-
-    move-result-object v2
-
-    iput-object v2, p0, Lcom/android/incallui/fragment/view/CallCardCallPlusView;->mLocation_map:Ljava/lang/String;
-
-    const/4 v2, 0x6
-
-    invoke-interface {p1, v2}, Landroid/database/Cursor;->getString(I)Ljava/lang/String;
-
-    move-result-object v2
-
-    iput-object v2, p0, Lcom/android/incallui/fragment/view/CallCardCallPlusView;->mBackground:Ljava/lang/String;
-
-    goto/16 :goto_1
-
-    :cond_5
-    iget-object v3, p0, Lcom/android/incallui/fragment/view/CallCardCallPlusView;->mFragment:Lcom/android/incallui/fragment/CallCardFragment;
-
-    invoke-virtual {v3}, Lcom/android/incallui/fragment/CallCardFragment;->getActivity()Landroid/app/Activity;
-
-    move-result-object v3
-
-    invoke-virtual {v3}, Landroid/app/Activity;->getResources()Landroid/content/res/Resources;
-
-    move-result-object v3
-
-    const v4, 0x7f0a0392
-
-    invoke-virtual {v3, v4}, Landroid/content/res/Resources;->getDimension(I)F
-
-    move-result v3
-
-    float-to-int v3, v3
-
-    iput v3, v0, Landroid/view/ViewGroup$MarginLayoutParams;->topMargin:I
-
-    goto :goto_2
-
     :cond_6
-    iget-object v0, p0, Lcom/android/incallui/fragment/view/CallCardCallPlusView;->mLocation:Ljava/lang/String;
+    iget-object v0, p0, Lcom/android/incallui/fragment/view/CallCardCallPlusView;->mBackground:Ljava/lang/String;
 
     if-nez v0, :cond_7
 
@@ -755,29 +696,27 @@
 
     invoke-virtual {v1, v0, v2}, Lcom/android/incallui/callerinfocard/CallerInfoCardView;->setCallPlusSubject(ZLjava/lang/String;)V
 
-    iget-object v0, p0, Lcom/android/incallui/fragment/view/CallCardCallPlusView;->mLocation:Ljava/lang/String;
+    iget-boolean v0, p0, Lcom/android/incallui/fragment/view/CallCardCallPlusView;->mIsCallPlus:Z
 
-    iget-object v2, p0, Lcom/android/incallui/fragment/view/CallCardCallPlusView;->mLocationLatLong:Ljava/lang/String;
+    iget-object v2, p0, Lcom/android/incallui/fragment/view/CallCardCallPlusView;->mLocation:Ljava/lang/String;
 
-    invoke-virtual {v1, v5, v0, v2}, Lcom/android/incallui/callerinfocard/CallerInfoCardView;->setCallPlusAddress(ZLjava/lang/String;Ljava/lang/String;)V
+    iget-object v3, p0, Lcom/android/incallui/fragment/view/CallCardCallPlusView;->mLocationLatLong:Ljava/lang/String;
 
-    iget-object v0, p0, Lcom/android/incallui/fragment/view/CallCardCallPlusView;->mLocation_map:Ljava/lang/String;
+    invoke-virtual {v1, v0, v2, v3}, Lcom/android/incallui/callerinfocard/CallerInfoCardView;->setCallPlusAddress(ZLjava/lang/String;Ljava/lang/String;)V
 
-    invoke-virtual {v1, v5, v0, v5}, Lcom/android/incallui/callerinfocard/CallerInfoCardView;->setCallPlusMap(ZLjava/lang/String;Z)V
+    iget-object v0, p0, Lcom/android/incallui/fragment/view/CallCardCallPlusView;->mBackground:Ljava/lang/String;
+
+    invoke-virtual {v1, v8, v0, v8}, Lcom/android/incallui/callerinfocard/CallerInfoCardView;->setCallPlusMapImage(ZLjava/lang/String;Z)V
 
     iget-boolean v0, p0, Lcom/android/incallui/fragment/view/CallCardCallPlusView;->mIsCallPlus:Z
 
-    iget-object v2, p0, Lcom/android/incallui/fragment/view/CallCardCallPlusView;->mBackground:Ljava/lang/String;
+    iget-object v2, p0, Lcom/android/incallui/fragment/view/CallCardCallPlusView;->mLocation_map:Ljava/lang/String;
 
-    invoke-virtual {v1, v0, v2, v6}, Lcom/android/incallui/callerinfocard/CallerInfoCardView;->setCallPlusMapImage(ZLjava/lang/String;Z)V
+    invoke-virtual {v1, v0, v2, v9}, Lcom/android/incallui/callerinfocard/CallerInfoCardView;->setCallPlusMap(ZLjava/lang/String;Z)V
 
     goto/16 :goto_0
 
     :cond_7
-    iget-object v0, p0, Lcom/android/incallui/fragment/view/CallCardCallPlusView;->mBackground:Ljava/lang/String;
-
-    if-nez v0, :cond_8
-
     iget-boolean v0, p0, Lcom/android/incallui/fragment/view/CallCardCallPlusView;->mIsCallPlus:Z
 
     iget v2, p0, Lcom/android/incallui/fragment/view/CallCardCallPlusView;->mImportance:I
@@ -798,61 +737,28 @@
 
     invoke-virtual {v1, v0, v2, v3}, Lcom/android/incallui/callerinfocard/CallerInfoCardView;->setCallPlusAddress(ZLjava/lang/String;Ljava/lang/String;)V
 
-    iget-object v0, p0, Lcom/android/incallui/fragment/view/CallCardCallPlusView;->mBackground:Ljava/lang/String;
+    iget-boolean v0, p0, Lcom/android/incallui/fragment/view/CallCardCallPlusView;->mIsCallPlus:Z
 
-    invoke-virtual {v1, v5, v0, v5}, Lcom/android/incallui/callerinfocard/CallerInfoCardView;->setCallPlusMapImage(ZLjava/lang/String;Z)V
+    iget-object v2, p0, Lcom/android/incallui/fragment/view/CallCardCallPlusView;->mBackground:Ljava/lang/String;
+
+    invoke-virtual {v1, v0, v2, v8}, Lcom/android/incallui/callerinfocard/CallerInfoCardView;->setCallPlusMapImage(ZLjava/lang/String;Z)V
 
     iget-boolean v0, p0, Lcom/android/incallui/fragment/view/CallCardCallPlusView;->mIsCallPlus:Z
 
     iget-object v2, p0, Lcom/android/incallui/fragment/view/CallCardCallPlusView;->mLocation_map:Ljava/lang/String;
 
-    invoke-virtual {v1, v0, v2, v6}, Lcom/android/incallui/callerinfocard/CallerInfoCardView;->setCallPlusMap(ZLjava/lang/String;Z)V
+    invoke-virtual {v1, v0, v2, v8}, Lcom/android/incallui/callerinfocard/CallerInfoCardView;->setCallPlusMap(ZLjava/lang/String;Z)V
 
     goto/16 :goto_0
 
     :cond_8
-    iget-boolean v0, p0, Lcom/android/incallui/fragment/view/CallCardCallPlusView;->mIsCallPlus:Z
-
-    iget v2, p0, Lcom/android/incallui/fragment/view/CallCardCallPlusView;->mImportance:I
-
-    invoke-virtual {v1, v0, v2}, Lcom/android/incallui/callerinfocard/CallerInfoCardView;->setCallPlusImportance(ZI)V
-
-    iget-boolean v0, p0, Lcom/android/incallui/fragment/view/CallCardCallPlusView;->mIsCallPlus:Z
-
-    iget-object v2, p0, Lcom/android/incallui/fragment/view/CallCardCallPlusView;->mSubject:Ljava/lang/String;
-
-    invoke-virtual {v1, v0, v2}, Lcom/android/incallui/callerinfocard/CallerInfoCardView;->setCallPlusSubject(ZLjava/lang/String;)V
-
-    iget-boolean v0, p0, Lcom/android/incallui/fragment/view/CallCardCallPlusView;->mIsCallPlus:Z
-
-    iget-object v2, p0, Lcom/android/incallui/fragment/view/CallCardCallPlusView;->mLocation:Ljava/lang/String;
-
-    iget-object v3, p0, Lcom/android/incallui/fragment/view/CallCardCallPlusView;->mLocationLatLong:Ljava/lang/String;
-
-    invoke-virtual {v1, v0, v2, v3}, Lcom/android/incallui/callerinfocard/CallerInfoCardView;->setCallPlusAddress(ZLjava/lang/String;Ljava/lang/String;)V
-
-    iget-boolean v0, p0, Lcom/android/incallui/fragment/view/CallCardCallPlusView;->mIsCallPlus:Z
-
-    iget-object v2, p0, Lcom/android/incallui/fragment/view/CallCardCallPlusView;->mBackground:Ljava/lang/String;
-
-    invoke-virtual {v1, v0, v2, v5}, Lcom/android/incallui/callerinfocard/CallerInfoCardView;->setCallPlusMapImage(ZLjava/lang/String;Z)V
-
-    iget-boolean v0, p0, Lcom/android/incallui/fragment/view/CallCardCallPlusView;->mIsCallPlus:Z
-
-    iget-object v2, p0, Lcom/android/incallui/fragment/view/CallCardCallPlusView;->mLocation_map:Ljava/lang/String;
-
-    invoke-virtual {v1, v0, v2, v5}, Lcom/android/incallui/callerinfocard/CallerInfoCardView;->setCallPlusMap(ZLjava/lang/String;Z)V
-
-    goto/16 :goto_0
-
-    :cond_9
     const-string v0, "CallCardCallPlusView"
 
     const-string v2, "CallPlus not available ,incoming call"
 
-    invoke-static {v0, v2, v6}, Lcom/android/incallui/Log;->d(Ljava/lang/String;Ljava/lang/String;Z)V
+    invoke-static {v0, v2, v9}, Lcom/android/incallui/Log;->d(Ljava/lang/String;Ljava/lang/String;Z)V
 
-    iput-boolean v5, p0, Lcom/android/incallui/fragment/view/CallCardCallPlusView;->mIsCallPlus:Z
+    iput-boolean v8, p0, Lcom/android/incallui/fragment/view/CallCardCallPlusView;->mIsCallPlus:Z
 
     iget-boolean v0, p0, Lcom/android/incallui/fragment/view/CallCardCallPlusView;->mIsCallPlus:Z
 
@@ -878,15 +784,81 @@
 
     iget-object v2, p0, Lcom/android/incallui/fragment/view/CallCardCallPlusView;->mBackground:Ljava/lang/String;
 
-    invoke-virtual {v1, v0, v2, v5}, Lcom/android/incallui/callerinfocard/CallerInfoCardView;->setCallPlusMapImage(ZLjava/lang/String;Z)V
+    invoke-virtual {v1, v0, v2, v8}, Lcom/android/incallui/callerinfocard/CallerInfoCardView;->setCallPlusMapImage(ZLjava/lang/String;Z)V
 
     iget-boolean v0, p0, Lcom/android/incallui/fragment/view/CallCardCallPlusView;->mIsCallPlus:Z
 
     iget-object v2, p0, Lcom/android/incallui/fragment/view/CallCardCallPlusView;->mLocation_map:Ljava/lang/String;
 
-    invoke-virtual {v1, v0, v2, v5}, Lcom/android/incallui/callerinfocard/CallerInfoCardView;->setCallPlusMap(ZLjava/lang/String;Z)V
+    invoke-virtual {v1, v0, v2, v8}, Lcom/android/incallui/callerinfocard/CallerInfoCardView;->setCallPlusMap(ZLjava/lang/String;Z)V
 
     goto/16 :goto_0
+.end method
+
+.method private updateCraneTopMargin(Landroid/view/ViewGroup$MarginLayoutParams;I)Landroid/view/ViewGroup$MarginLayoutParams;
+    .locals 1
+
+    iget v0, p0, Lcom/android/incallui/fragment/view/CallCardCallPlusView;->mImportance:I
+
+    if-nez v0, :cond_0
+
+    iget-object v0, p0, Lcom/android/incallui/fragment/view/CallCardCallPlusView;->mSubject:Ljava/lang/String;
+
+    if-eqz v0, :cond_3
+
+    :cond_0
+    iget-object v0, p0, Lcom/android/incallui/fragment/view/CallCardCallPlusView;->mLocation_map:Ljava/lang/String;
+
+    if-nez v0, :cond_1
+
+    iget-object v0, p0, Lcom/android/incallui/fragment/view/CallCardCallPlusView;->mBackground:Ljava/lang/String;
+
+    if-eqz v0, :cond_3
+
+    :cond_1
+    mul-int/lit8 v0, p2, 0x2d
+
+    div-int/lit8 v0, v0, 0x64
+
+    iput v0, p1, Landroid/view/ViewGroup$MarginLayoutParams;->topMargin:I
+
+    :cond_2
+    :goto_0
+    return-object p1
+
+    :cond_3
+    iget-object v0, p0, Lcom/android/incallui/fragment/view/CallCardCallPlusView;->mLocation_map:Ljava/lang/String;
+
+    if-nez v0, :cond_4
+
+    iget-object v0, p0, Lcom/android/incallui/fragment/view/CallCardCallPlusView;->mBackground:Ljava/lang/String;
+
+    if-nez v0, :cond_4
+
+    mul-int/lit8 v0, p2, 0x3c
+
+    div-int/lit8 v0, v0, 0x64
+
+    iput v0, p1, Landroid/view/ViewGroup$MarginLayoutParams;->topMargin:I
+
+    goto :goto_0
+
+    :cond_4
+    iget v0, p0, Lcom/android/incallui/fragment/view/CallCardCallPlusView;->mImportance:I
+
+    if-nez v0, :cond_2
+
+    iget-object v0, p0, Lcom/android/incallui/fragment/view/CallCardCallPlusView;->mSubject:Ljava/lang/String;
+
+    if-nez v0, :cond_2
+
+    mul-int/lit8 v0, p2, 0x32
+
+    div-int/lit8 v0, v0, 0x64
+
+    iput v0, p1, Landroid/view/ViewGroup$MarginLayoutParams;->topMargin:I
+
+    goto :goto_0
 .end method
 
 

@@ -40,7 +40,7 @@
 
     invoke-super {p0}, Landroid/widget/RelativeLayout;->onFinishInflate()V
 
-    const v0, 0x7f1004a6
+    const v0, 0x7f1004c0
 
     invoke-virtual {p0, v0}, Lcom/android/incallui/agif/StickerSettingItem;->findViewById(I)Landroid/view/View;
 
@@ -50,7 +50,7 @@
 
     iput-object v0, p0, Lcom/android/incallui/agif/StickerSettingItem;->mCheckBox:Landroid/widget/CheckBox;
 
-    const v0, 0x7f1004a8
+    const v0, 0x7f1004c2
 
     invoke-virtual {p0, v0}, Lcom/android/incallui/agif/StickerSettingItem;->findViewById(I)Landroid/view/View;
 
@@ -60,7 +60,7 @@
 
     iput-object v0, p0, Lcom/android/incallui/agif/StickerSettingItem;->mTrayImage:Landroid/widget/ImageView;
 
-    const v0, 0x7f1004a9
+    const v0, 0x7f1004c3
 
     invoke-virtual {p0, v0}, Lcom/android/incallui/agif/StickerSettingItem;->findViewById(I)Landroid/view/View;
 
@@ -70,7 +70,7 @@
 
     iput-object v0, p0, Lcom/android/incallui/agif/StickerSettingItem;->mTitle:Landroid/widget/TextView;
 
-    const v0, 0x7f1004aa
+    const v0, 0x7f1004c4
 
     invoke-virtual {p0, v0}, Lcom/android/incallui/agif/StickerSettingItem;->findViewById(I)Landroid/view/View;
 

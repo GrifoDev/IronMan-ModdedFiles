@@ -197,7 +197,15 @@
     return-void
 .end method
 
-.method static synthetic access$600(Lcom/android/incallui/phonevoicerecorder/PhoneVoiceRecorderManager;)Lcom/android/incallui/phonevoicerecorder/PhoneVoiceRecorderStorageManager;
+.method static synthetic access$602(Lcom/android/incallui/Call;)Lcom/android/incallui/Call;
+    .locals 0
+
+    sput-object p0, Lcom/android/incallui/phonevoicerecorder/PhoneVoiceRecorderManager;->mAutoRecordedCall:Lcom/android/incallui/Call;
+
+    return-object p0
+.end method
+
+.method static synthetic access$700(Lcom/android/incallui/phonevoicerecorder/PhoneVoiceRecorderManager;)Lcom/android/incallui/phonevoicerecorder/PhoneVoiceRecorderStorageManager;
     .locals 1
 
     iget-object v0, p0, Lcom/android/incallui/phonevoicerecorder/PhoneVoiceRecorderManager;->mStorageManager:Lcom/android/incallui/phonevoicerecorder/PhoneVoiceRecorderStorageManager;
@@ -206,69 +214,95 @@
 .end method
 
 .method private canRecordInCTCCDMACall(Lcom/android/incallui/Call;)Z
-    .locals 6
+    .locals 7
 
-    const/4 v0, 0x1
+    const/4 v2, 0x0
+
+    const/4 v1, 0x1
 
     invoke-static {p1}, Lcom/android/incallui/util/InCallUtils;->getLineCtrlEvent(Lcom/android/incallui/Call;)B
 
-    move-result v1
+    move-result v3
 
     invoke-virtual {p1}, Lcom/android/incallui/Call;->getState()I
 
-    move-result v2
+    move-result v4
 
-    const-string v3, "PhoneVoiceRecorderManager"
+    const-string v5, "PhoneVoiceRecorderManager"
 
-    new-instance v4, Ljava/lang/StringBuilder;
+    new-instance v0, Ljava/lang/StringBuilder;
 
-    invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v5, "canRecordInCTCCDMACall: lineCtrlEvent-"
+    const-string v6, "canRecordInCTCCDMACall: lineCtrlEvent-"
 
-    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v4
+    move-result-object v0
 
-    invoke-virtual {v4, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, v3}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    move-result-object v4
+    move-result-object v0
 
-    const-string v5, " state"
+    const-string v6, " state"
 
-    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v4
+    move-result-object v0
 
-    invoke-virtual {v4, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, v4}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    move-result-object v4
+    move-result-object v0
 
-    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    const-string v6, " !isRecording()-"
 
-    move-result-object v4
+    invoke-virtual {v0, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-static {v3, v4}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
+    move-result-object v6
 
-    const/4 v3, 0x3
+    invoke-virtual {p0}, Lcom/android/incallui/phonevoicerecorder/PhoneVoiceRecorderManager;->isRecording()Z
 
-    if-ne v2, v3, :cond_0
+    move-result v0
 
-    if-ne v1, v0, :cond_0
+    if-nez v0, :cond_0
+
+    move v0, v1
 
     :goto_0
-    return v0
+    invoke-virtual {v6, v0}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-static {v5, v0}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
+
+    const/4 v0, 0x3
+
+    if-ne v4, v0, :cond_1
+
+    if-ne v3, v1, :cond_1
+
+    :goto_1
+    return v1
 
     :cond_0
-    const/4 v0, 0x0
+    move v0, v2
 
     goto :goto_0
+
+    :cond_1
+    move v1, v2
+
+    goto :goto_1
 .end method
 
 .method private checkStatePauseRecord(Lcom/android/incallui/Call;)V
     .locals 7
 
-    const/16 v6, 0x8
+    const/4 v6, 0x6
 
     const/4 v2, 0x1
 
@@ -285,11 +319,11 @@
     move v3, v2
 
     :goto_0
-    const/4 v0, 0x6
+    if-eq v4, v6, :cond_0
 
-    if-eq v4, v0, :cond_0
+    const/16 v0, 0x8
 
-    if-ne v4, v6, :cond_3
+    if-ne v4, v0, :cond_3
 
     :cond_0
     move v0, v2
@@ -307,14 +341,10 @@
 
     and-int/2addr v3, v5
 
-    invoke-direct {p0, p1}, Lcom/android/incallui/phonevoicerecorder/PhoneVoiceRecorderManager;->canRecordInCTCCDMACall(Lcom/android/incallui/Call;)Z
-
-    move-result v5
-
-    if-nez v5, :cond_4
+    if-nez v3, :cond_4
 
     :goto_2
-    or-int/2addr v0, v2
+    and-int/2addr v0, v2
 
     move v1, v3
 
@@ -359,9 +389,9 @@
 
     invoke-virtual {p0}, Lcom/android/incallui/phonevoicerecorder/PhoneVoiceRecorderManager;->pauseRecord()V
 
-    if-eq v4, v6, :cond_1
+    if-ne v4, v6, :cond_1
 
-    const v0, 0x7f09027d
+    const v0, 0x7f090280
 
     invoke-static {v0}, Lcom/android/incallui/util/InCallUtils;->displayToast(I)V
 
@@ -420,7 +450,7 @@
 
     const-string v1, "record_calls_automatically_type"
 
-    const/4 v2, 0x1
+    const/4 v2, 0x0
 
     invoke-static {v0, v1, v2}, Landroid/provider/Settings$System;->getInt(Landroid/content/ContentResolver;Ljava/lang/String;I)I
 
@@ -541,6 +571,68 @@
     goto :goto_0
 .end method
 
+.method private hasEnoughStorageAndShowRecordNoti(Lcom/android/incallui/Call;I)Z
+    .locals 5
+
+    const/16 v4, 0x12
+
+    const/4 v0, 0x1
+
+    invoke-virtual {p0, p2}, Lcom/android/incallui/phonevoicerecorder/PhoneVoiceRecorderManager;->hasEnoughStorage(I)Z
+
+    move-result v1
+
+    if-nez v1, :cond_1
+
+    const-string v1, "PhoneVoiceRecorderManager"
+
+    new-instance v2, Ljava/lang/StringBuilder;
+
+    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v3, "hasEnoughStorageAndShowRecordNoti: there\'s not enough storage for recordType-"
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    invoke-virtual {v2, p2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    if-ne p2, v0, :cond_2
+
+    sget-object v0, Lcom/android/incallui/phonevoicerecorder/PhoneVoiceRecorderManager;->mAutoRecordedCall:Lcom/android/incallui/Call;
+
+    if-nez v0, :cond_2
+
+    invoke-virtual {p0, v4}, Lcom/android/incallui/phonevoicerecorder/PhoneVoiceRecorderManager;->showRecordNoti(I)V
+
+    sput-object p1, Lcom/android/incallui/phonevoicerecorder/PhoneVoiceRecorderManager;->mAutoRecordedCall:Lcom/android/incallui/Call;
+
+    :cond_0
+    :goto_0
+    const/4 v0, 0x0
+
+    :cond_1
+    return v0
+
+    :cond_2
+    const/4 v0, 0x2
+
+    if-ne p2, v0, :cond_0
+
+    invoke-virtual {p0, v4}, Lcom/android/incallui/phonevoicerecorder/PhoneVoiceRecorderManager;->showRecordNoti(I)V
+
+    goto :goto_0
+.end method
+
 .method private isAutoRecordOn()Z
     .locals 4
 
@@ -652,11 +744,24 @@
 
     if-nez v2, :cond_0
 
-    invoke-direct {p0, p1}, Lcom/android/incallui/phonevoicerecorder/PhoneVoiceRecorderManager;->shouldCanRecordAtCTC(Lcom/android/incallui/Call;)Z
+    invoke-static {}, Lcom/android/incallui/bike/BikeModeUtils;->isBikeModeOn()Z
 
     move-result v2
 
     if-eqz v2, :cond_2
+
+    invoke-static {}, Lcom/android/incallui/bike/BikeModeUtils;->isBikeCallAnswered()Z
+
+    move-result v2
+
+    if-eqz v2, :cond_0
+
+    :cond_2
+    invoke-direct {p0, p1}, Lcom/android/incallui/phonevoicerecorder/PhoneVoiceRecorderManager;->shouldCanRecordAtCTC(Lcom/android/incallui/Call;)Z
+
+    move-result v2
+
+    if-eqz v2, :cond_3
 
     invoke-direct {p0, p1}, Lcom/android/incallui/phonevoicerecorder/PhoneVoiceRecorderManager;->canRecordInCTCCDMACall(Lcom/android/incallui/Call;)Z
 
@@ -664,7 +769,7 @@
 
     if-eqz v2, :cond_0
 
-    :cond_2
+    :cond_3
     invoke-direct {p0}, Lcom/android/incallui/phonevoicerecorder/PhoneVoiceRecorderManager;->getAutoRecordType()I
 
     move-result v2
@@ -673,7 +778,7 @@
 
     move v0, v1
 
-    :cond_3
+    :cond_4
     :goto_1
     :pswitch_0
     move v1, v0
@@ -696,7 +801,7 @@
 
     move-result v2
 
-    if-eqz v2, :cond_3
+    if-eqz v2, :cond_4
 
     move v0, v1
 
@@ -1203,23 +1308,11 @@
 
     move-result v0
 
-    if-eqz v0, :cond_0
-
-    :goto_0
-    return-void
+    if-eqz v0, :cond_1
 
     :cond_0
-    invoke-virtual {p0, p2}, Lcom/android/incallui/phonevoicerecorder/PhoneVoiceRecorderManager;->hasEnoughStorage(I)Z
-
-    move-result v0
-
-    if-nez v0, :cond_1
-
-    const/16 v0, 0x12
-
-    invoke-virtual {p0, v0}, Lcom/android/incallui/phonevoicerecorder/PhoneVoiceRecorderManager;->showRecordNoti(I)V
-
-    goto :goto_0
+    :goto_0
+    return-void
 
     :cond_1
     const-string v0, "PhoneVoiceRecorderManager"
@@ -1247,6 +1340,12 @@
     iget-object v0, p0, Lcom/android/incallui/phonevoicerecorder/PhoneVoiceRecorderManager;->mStorageManager:Lcom/android/incallui/phonevoicerecorder/PhoneVoiceRecorderStorageManager;
 
     invoke-virtual {v0, p2}, Lcom/android/incallui/phonevoicerecorder/PhoneVoiceRecorderStorageManager;->checkStorage(I)V
+
+    invoke-direct {p0, p1, p2}, Lcom/android/incallui/phonevoicerecorder/PhoneVoiceRecorderManager;->hasEnoughStorageAndShowRecordNoti(Lcom/android/incallui/Call;I)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
 
     const/4 v0, 0x1
 
@@ -2325,7 +2424,7 @@
 
     move-result-object v0
 
-    const v2, 0x7f0902c5
+    const v2, 0x7f0902c8
 
     invoke-virtual {v0, v2}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 

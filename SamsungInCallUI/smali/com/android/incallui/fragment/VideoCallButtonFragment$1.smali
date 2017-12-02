@@ -31,7 +31,7 @@
 
 # virtual methods
 .method public handleMessage(Landroid/os/Message;)V
-    .locals 4
+    .locals 3
 
     iget v0, p1, Landroid/os/Message;->what:I
 
@@ -41,6 +41,34 @@
     return-void
 
     :pswitch_0
+    const-string v0, "VideoCallButtonFragment"
+
+    new-instance v1, Ljava/lang/StringBuilder;
+
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v2, "HIDE_INCALL_BUTTONS - "
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    iget-object v2, p0, Lcom/android/incallui/fragment/VideoCallButtonFragment$1;->this$0:Lcom/android/incallui/fragment/VideoCallButtonFragment;
+
+    invoke-virtual {v2}, Lcom/android/incallui/fragment/VideoCallButtonFragment;->isPossibleToHideButton()Z
+
+    move-result v2
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-static {v0, v1}, Lcom/android/incallui/Log;->d(Ljava/lang/String;Ljava/lang/String;)V
+
     iget-object v0, p0, Lcom/android/incallui/fragment/VideoCallButtonFragment$1;->this$0:Lcom/android/incallui/fragment/VideoCallButtonFragment;
 
     invoke-virtual {v0}, Lcom/android/incallui/fragment/VideoCallButtonFragment;->isPossibleToHideButton()Z
@@ -58,13 +86,7 @@
     :cond_0
     iget-object v0, p0, Lcom/android/incallui/fragment/VideoCallButtonFragment$1;->this$0:Lcom/android/incallui/fragment/VideoCallButtonFragment;
 
-    iget-object v0, v0, Lcom/android/incallui/fragment/VideoCallButtonFragment;->mVideoCallButtonHandler:Landroid/os/Handler;
-
-    const/16 v1, 0x64
-
-    const-wide/16 v2, 0x1388
-
-    invoke-virtual {v0, v1, v2, v3}, Landroid/os/Handler;->sendEmptyMessageDelayed(IJ)Z
+    invoke-virtual {v0}, Lcom/android/incallui/fragment/VideoCallButtonFragment;->startToggleTimer()V
 
     goto :goto_0
 

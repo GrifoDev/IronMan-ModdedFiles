@@ -106,6 +106,7 @@
     <string name="agif_decline_sticker_header">Ôdciepywanie z przilepkōm</string>
     <string name="agif_decline_text_header">Ôdciepywanie ze SMS-em</string>
     <string name="agif_decline_toast">Posłano przilepka do użytkownika %s.</string>
+    <string name="agif_outgoing_bubble_tip">Poślij przilepka, coby pokŏzać, jak sie czujesz.</string>
     <string name="agif_pickers_add_tab_description">Przidej</string>
     <string name="agif_pickers_downloaded">Zebrano</string>
     <string name="agif_pickers_item_usage_hints_description">Tyknij 2 razy coby ôbrać</string>
@@ -121,10 +122,12 @@
     <string name="agif_pickers_tab_select_description">Ôbrane</string>
     <string name="agif_pickers_title">Sztart z przilepkōm</string>
     <string name="agif_pickers_title_top_stickers">Nojwiyncyj modne nalepki</string>
+    <string name="agif_random_send_message">Tyknij sam, coby posłać ta przilepka.</string>
     <string name="agif_read_permission_description">Przizwŏlo aplikacyji Mobilniŏk czytać treść AGIF.</string>
     <string name="agif_read_permission_label">Czytej treść AGIF</string>
     <string name="agif_receive_no_id">Niy idzie pokŏzać abcybildru. Zaktualizuj aplikacyjŏ %s po gŏdce.</string>
     <string name="agif_receive_no_id_upsupport_update">Niy idzie pokŏzać abcybildru. Dŏlsze abcybildry bydōm podŏwane po dŏlszyj aktualizacyji systymu.</string>
+    <string name="agif_receive_toast">Przilepka ôd rozmōwcy %s.</string>
     <string name="agif_sent_fail_message">Niy idzie posłać animowanego pliku GIF. Wybadej drugi rŏz niyskorzij.</string>
     <string name="agif_sent_toast">Posłano abcybilder.</string>
     <string name="agif_write_permission_description">Przizwŏlo aplikacyji Mobilniŏk na polepszanie treści AGIF.</string>
@@ -793,6 +796,7 @@ jednoker."</string>
     <string name="sticker_delete_stickers">Wyciepać nalepek: %d?</string>
     <string name="sticker_delete_this_sticker">Wyciepać ta nalepka?</string>
     <string name="sticker_setting_edit_title">Ôbiyranie nalepek</string>
+    <string name="sticker_setting_edit_title_preload">Pōmiana raje przilepek</string>
     <string name="sticker_setting_main_title">Moje nalepki</string>
     <string name="sticker_setting_menu_delete">Wyciep</string>
     <string name="sticker_setting_menu_edit">Poprŏw</string>
@@ -805,6 +809,7 @@ jednoker."</string>
     <string name="swipe_right_to_answer_call_with_video">Szibnij na prawo, coby przijōńć gŏdka z wideo.</string>
     <string name="swipe_right_to_answer_call_without_video">Szibnij na prawo, coby przijōńć gŏdka bez wideo.</string>
     <string name="switch_rejected_by_mt">Odciepany przikŏz, coby przelyź do gŏdki video.</string>
+    <string name="switch_rejected_by_mt_att">Video unavailable for this call. Call connected as a voice call.</string>
     <string name="switch_to_video_call_failed">Niyudane dopōmniyniy przełōnczyniŏ na gŏdka video.</string>
     <string name="switch_to_video_call_failed_tmo">Dopōminanie sie coby przelyź na videogŏdka ôstało ôdciepniynte.</string>
     <string name="switch_to_voice_call_failed">Żōndaniy przełōnaczeniŏ do gŏdki niy podarziło się.</string>

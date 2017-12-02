@@ -184,6 +184,7 @@
     <string name="agif_decline_sticker_header">דחה בעזרת מדבקה</string>
     <string name="agif_decline_text_header">דחה בעזרת טקסט</string>
     <string name="agif_decline_toast">מדבקה נשלחה אל %s.</string>
+    <string name="agif_outgoing_bubble_tip">שלח מדבקה כדי להביע את הרגשתך.</string>
     <string name="agif_pickers_add_tab_description">הוספה</string>
     <string name="agif_pickers_downloaded">ההורדה בוצעה</string>
     <string name="agif_pickers_item_usage_hints_description">הקש הקשה כפולה כדי לבחור</string>
@@ -199,10 +200,12 @@
     <string name="agif_pickers_tab_select_description">נבחר</string>
     <string name="agif_pickers_title">התחלה עם מדבקה</string>
     <string name="agif_pickers_title_top_stickers">המדבקות הלוהטות</string>
+    <string name="agif_random_send_message">הקש כאן כדי לשלוח את המדבקה.</string>
     <string name="agif_read_permission_description">הרשאה המאפשרת לטלפון לקרוא תוכן AGIF.</string>
     <string name="agif_read_permission_label">קרא תוכן AGIF</string>
     <string name="agif_receive_no_id">לא ניתן להציג את המדבקה. עדכן את %s לאחר השיחה.</string>
     <string name="agif_receive_no_id_upsupport_update">לא ניתן להציג את המדבקה. מדבקות נוספות יהיו זמינות לאחר עדכון המערכת הבא.</string>
+    <string name="agif_receive_toast">מדבקה מאת %s.</string>
     <string name="agif_sent_fail_message">לא ניתן לשלוח GIF עם הנפשה. נסה שוב מאוחר יותר.</string>
     <string name="agif_sent_toast">המדבקה נשלחה.</string>
     <string name="agif_write_permission_description">הרשאה המאפשרת לטלפון לשנות תוכן AGIF.</string>
@@ -871,6 +874,7 @@
     <string name="sticker_delete_stickers">האם למחוק %d מדבקות?</string>
     <string name="sticker_delete_this_sticker">האם למחוק מדבקה זו?</string>
     <string name="sticker_setting_edit_title">בחירת מדבקות</string>
+    <string name="sticker_setting_edit_title_preload">שינוי סדר המדבקות</string>
     <string name="sticker_setting_main_title">המדבקות שלי</string>
     <string name="sticker_setting_menu_delete">מחק</string>
     <string name="sticker_setting_menu_edit">ערוך</string>
@@ -883,6 +887,7 @@
     <string name="swipe_right_to_answer_call_with_video">החלק לימין כדי לקבל שיחה עם וידאו.</string>
     <string name="swipe_right_to_answer_call_without_video">החלק לימין כדי לקבל שיחה ללא וידאו.</string>
     <string name="switch_rejected_by_mt">הבקשה לעבור לשיחת וידאו נדחתה.</string>
+    <string name="switch_rejected_by_mt_att">Video unavailable for this call. Call connected as a voice call.</string>
     <string name="switch_to_video_call_failed">הבקשה לעבור לשיחת וידאו נדחתה.</string>
     <string name="switch_to_video_call_failed_tmo">נדחתה הבקשה לעבור לשיחת וידאו.</string>
     <string name="switch_to_voice_call_failed">הבקשה לעבור לשיחה קולית נדחתה.</string>

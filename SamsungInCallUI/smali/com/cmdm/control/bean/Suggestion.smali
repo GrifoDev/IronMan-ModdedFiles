@@ -97,7 +97,7 @@
 
     sget-object v0, Ljava/lang/System;->out:Ljava/io/PrintStream;
 
-    const-string v1, "\u8f6f\u4ef6\u66f4\u65b0 "
+    const-string/jumbo v1, "\u8f6f\u4ef6\u66f4\u65b0 "
 
     invoke-static {v1}, Lcom/cmdm/control/bean/Suggestion;->getSuggestion(Ljava/lang/String;)Ljava/lang/String;
 

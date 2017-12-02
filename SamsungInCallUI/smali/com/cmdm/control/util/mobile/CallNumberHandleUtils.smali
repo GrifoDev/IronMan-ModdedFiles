@@ -357,7 +357,7 @@
 
     if-nez v1, :cond_0
 
-    const-string v1, "\u672a\u77e5\u53f7\u7801"
+    const-string/jumbo v1, "\u672a\u77e5\u53f7\u7801"
 
     invoke-virtual {p0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
@@ -366,11 +366,11 @@
     if-eqz v1, :cond_1
 
     :cond_0
-    const-string v1, "\u672a\u77e5\u53f7\u7801"
+    const-string/jumbo v1, "\u672a\u77e5\u53f7\u7801"
 
     iput-object v1, v0, Lcom/cmdm/control/bean/ContactInfo;->contactname:Ljava/lang/String;
 
-    const-string v1, "\u672a\u77e5\u53f7\u7801"
+    const-string/jumbo v1, "\u672a\u77e5\u53f7\u7801"
 
     iput-object v1, v0, Lcom/cmdm/control/bean/ContactInfo;->contactnum:Ljava/lang/String;
 
@@ -770,7 +770,7 @@
     goto :goto_0
 
     :cond_2
-    const-string v0, "\u672a\u77e5\u5f52\u5c5e\u5730"
+    const-string/jumbo v0, "\u672a\u77e5\u5f52\u5c5e\u5730"
 
     goto :goto_0
 .end method
@@ -814,7 +814,7 @@
 
     if-eqz v1, :cond_1
 
-    const-string v0, "\u7535\u4fe1"
+    const-string/jumbo v0, "\u7535\u4fe1"
 
     :goto_1
     sget-object v1, Lcom/cmdm/control/util/mobile/CallNumberHandleUtils;->DATABASE_PATH:Ljava/lang/String;
@@ -852,7 +852,7 @@
 
     if-eqz v1, :cond_2
 
-    const-string v0, "\u8054\u901a"
+    const-string/jumbo v0, "\u8054\u901a"
 
     goto :goto_1
 
@@ -865,7 +865,7 @@
 
     if-eqz v0, :cond_3
 
-    const-string v0, "\u79fb\u52a8"
+    const-string/jumbo v0, "\u79fb\u52a8"
 
     goto :goto_1
 
@@ -1319,7 +1319,7 @@
     if-eqz v0, :cond_3
 
     :cond_2
-    const-string v0, "\u964c\u751f\u53f7\u7801"
+    const-string/jumbo v0, "\u964c\u751f\u53f7\u7801"
 
     iput-object v0, v6, Lcom/cmdm/control/bean/ContactInfo;->contactname:Ljava/lang/String;
 

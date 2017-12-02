@@ -1,304 +1,206 @@
-.class Landroid/support/v7/widget/ap;
-.super Ljava/lang/Object;
+.class public Landroid/support/v7/widget/ap;
+.super Landroid/support/v7/widget/am;
+
+# interfaces
+.implements Landroid/support/v7/widget/ao;
+
+
+# annotations
+.annotation system Ldalvik/annotation/MemberClasses;
+    value = {
+        Landroid/support/v7/widget/ap$a;
+    }
+.end annotation
 
 
 # static fields
-.field static final a:[I
+.field private static a:Ljava/lang/reflect/Method;
 
-.field static final b:[I
 
-.field static final c:[I
-
-.field static final d:[I
-
-.field static final e:[I
-
-.field static final f:[I
-
-.field static final g:[I
-
-.field static final h:[I
-
-.field private static final i:Ljava/lang/ThreadLocal;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "Ljava/lang/ThreadLocal",
-            "<",
-            "Landroid/util/TypedValue;",
-            ">;"
-        }
-    .end annotation
-.end field
-
-.field private static final j:[I
+# instance fields
+.field private d:Landroid/support/v7/widget/ao;
 
 
 # direct methods
 .method static constructor <clinit>()V
-    .locals 4
-
-    const/4 v3, 0x1
-
-    const/4 v2, 0x0
-
-    new-instance v0, Ljava/lang/ThreadLocal;
-
-    invoke-direct {v0}, Ljava/lang/ThreadLocal;-><init>()V
-
-    sput-object v0, Landroid/support/v7/widget/ap;->i:Ljava/lang/ThreadLocal;
-
-    new-array v0, v3, [I
-
-    const v1, -0x101009e
-
-    aput v1, v0, v2
-
-    sput-object v0, Landroid/support/v7/widget/ap;->a:[I
-
-    new-array v0, v3, [I
-
-    const v1, 0x101009c
-
-    aput v1, v0, v2
-
-    sput-object v0, Landroid/support/v7/widget/ap;->b:[I
-
-    new-array v0, v3, [I
-
-    const v1, 0x10102fe
-
-    aput v1, v0, v2
-
-    sput-object v0, Landroid/support/v7/widget/ap;->c:[I
-
-    new-array v0, v3, [I
-
-    const v1, 0x10100a7
-
-    aput v1, v0, v2
-
-    sput-object v0, Landroid/support/v7/widget/ap;->d:[I
-
-    new-array v0, v3, [I
-
-    const v1, 0x10100a0
-
-    aput v1, v0, v2
-
-    sput-object v0, Landroid/support/v7/widget/ap;->e:[I
-
-    new-array v0, v3, [I
-
-    const v1, 0x10100a1
-
-    aput v1, v0, v2
-
-    sput-object v0, Landroid/support/v7/widget/ap;->f:[I
-
-    const/4 v0, 0x2
-
-    new-array v0, v0, [I
-
-    fill-array-data v0, :array_0
-
-    sput-object v0, Landroid/support/v7/widget/ap;->g:[I
-
-    new-array v0, v2, [I
-
-    sput-object v0, Landroid/support/v7/widget/ap;->h:[I
-
-    new-array v0, v3, [I
-
-    sput-object v0, Landroid/support/v7/widget/ap;->j:[I
-
-    return-void
-
-    :array_0
-    .array-data 4
-        -0x10100a7
-        -0x101009c
-    .end array-data
-.end method
-
-.method public static a(Landroid/content/Context;I)I
-    .locals 3
-
-    const/4 v1, 0x0
-
-    sget-object v0, Landroid/support/v7/widget/ap;->j:[I
-
-    aput p1, v0, v1
-
-    const/4 v0, 0x0
-
-    sget-object v1, Landroid/support/v7/widget/ap;->j:[I
-
-    invoke-static {p0, v0, v1}, Landroid/support/v7/widget/au;->a(Landroid/content/Context;Landroid/util/AttributeSet;[I)Landroid/support/v7/widget/au;
-
-    move-result-object v0
-
-    const/4 v1, 0x0
-
-    const/4 v2, 0x0
+    .locals 5
 
     :try_start_0
-    invoke-virtual {v0, v1, v2}, Landroid/support/v7/widget/au;->b(II)I
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    const-class v0, Landroid/widget/PopupWindow;
 
-    move-result v1
+    const-string v1, "setTouchModal"
 
-    invoke-virtual {v0}, Landroid/support/v7/widget/au;->a()V
+    const/4 v2, 0x1
 
-    return v1
+    new-array v2, v2, [Ljava/lang/Class;
 
-    :catchall_0
-    move-exception v1
+    const/4 v3, 0x0
 
-    invoke-virtual {v0}, Landroid/support/v7/widget/au;->a()V
+    sget-object v4, Ljava/lang/Boolean;->TYPE:Ljava/lang/Class;
 
-    throw v1
-.end method
+    aput-object v4, v2, v3
 
-.method static a(Landroid/content/Context;IF)I
-    .locals 2
-
-    invoke-static {p0, p1}, Landroid/support/v7/widget/ap;->a(Landroid/content/Context;I)I
-
-    move-result v0
-
-    invoke-static {v0}, Landroid/graphics/Color;->alpha(I)I
-
-    move-result v1
-
-    int-to-float v1, v1
-
-    mul-float/2addr v1, p2
-
-    invoke-static {v1}, Ljava/lang/Math;->round(F)I
-
-    move-result v1
-
-    invoke-static {v0, v1}, Landroid/support/v4/a/a;->b(II)I
-
-    move-result v0
-
-    return v0
-.end method
-
-.method private static a()Landroid/util/TypedValue;
-    .locals 2
-
-    sget-object v0, Landroid/support/v7/widget/ap;->i:Ljava/lang/ThreadLocal;
-
-    invoke-virtual {v0}, Ljava/lang/ThreadLocal;->get()Ljava/lang/Object;
+    invoke-virtual {v0, v1, v2}, Ljava/lang/Class;->getDeclaredMethod(Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
 
     move-result-object v0
 
-    check-cast v0, Landroid/util/TypedValue;
+    sput-object v0, Landroid/support/v7/widget/ap;->a:Ljava/lang/reflect/Method;
+    :try_end_0
+    .catch Ljava/lang/NoSuchMethodException; {:try_start_0 .. :try_end_0} :catch_0
 
-    if-nez v0, :cond_0
+    :goto_0
+    return-void
 
-    new-instance v0, Landroid/util/TypedValue;
+    :catch_0
+    move-exception v0
 
-    invoke-direct {v0}, Landroid/util/TypedValue;-><init>()V
+    const-string v0, "MenuPopupWindow"
 
-    sget-object v1, Landroid/support/v7/widget/ap;->i:Ljava/lang/ThreadLocal;
+    const-string v1, "Could not find method setTouchModal() on PopupWindow. Oh well."
 
-    invoke-virtual {v1, v0}, Ljava/lang/ThreadLocal;->set(Ljava/lang/Object;)V
+    invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    :cond_0
+    goto :goto_0
+.end method
+
+.method public constructor <init>(Landroid/content/Context;Landroid/util/AttributeSet;II)V
+    .locals 0
+
+    invoke-direct {p0, p1, p2, p3, p4}, Landroid/support/v7/widget/am;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;II)V
+
+    return-void
+.end method
+
+
+# virtual methods
+.method a(Landroid/content/Context;Z)Landroid/support/v7/widget/ai;
+    .locals 1
+
+    new-instance v0, Landroid/support/v7/widget/ap$a;
+
+    invoke-direct {v0, p1, p2}, Landroid/support/v7/widget/ap$a;-><init>(Landroid/content/Context;Z)V
+
+    invoke-virtual {v0, p0}, Landroid/support/v7/widget/ap$a;->setHoverListener(Landroid/support/v7/widget/ao;)V
+
     return-object v0
 .end method
 
-.method public static b(Landroid/content/Context;I)Landroid/content/res/ColorStateList;
-    .locals 2
+.method public a(Landroid/support/v7/view/menu/h;Landroid/view/MenuItem;)V
+    .locals 1
 
-    const/4 v1, 0x0
-
-    sget-object v0, Landroid/support/v7/widget/ap;->j:[I
-
-    aput p1, v0, v1
-
-    const/4 v0, 0x0
-
-    sget-object v1, Landroid/support/v7/widget/ap;->j:[I
-
-    invoke-static {p0, v0, v1}, Landroid/support/v7/widget/au;->a(Landroid/content/Context;Landroid/util/AttributeSet;[I)Landroid/support/v7/widget/au;
-
-    move-result-object v0
-
-    const/4 v1, 0x0
-
-    :try_start_0
-    invoke-virtual {v0, v1}, Landroid/support/v7/widget/au;->e(I)Landroid/content/res/ColorStateList;
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    move-result-object v1
-
-    invoke-virtual {v0}, Landroid/support/v7/widget/au;->a()V
-
-    return-object v1
-
-    :catchall_0
-    move-exception v1
-
-    invoke-virtual {v0}, Landroid/support/v7/widget/au;->a()V
-
-    throw v1
-.end method
-
-.method public static c(Landroid/content/Context;I)I
-    .locals 4
-
-    invoke-static {p0, p1}, Landroid/support/v7/widget/ap;->b(Landroid/content/Context;I)Landroid/content/res/ColorStateList;
-
-    move-result-object v0
+    iget-object v0, p0, Landroid/support/v7/widget/ap;->d:Landroid/support/v7/widget/ao;
 
     if-eqz v0, :cond_0
 
-    invoke-virtual {v0}, Landroid/content/res/ColorStateList;->isStateful()Z
+    iget-object v0, p0, Landroid/support/v7/widget/ap;->d:Landroid/support/v7/widget/ao;
 
-    move-result v1
-
-    if-eqz v1, :cond_0
-
-    sget-object v1, Landroid/support/v7/widget/ap;->a:[I
-
-    invoke-virtual {v0}, Landroid/content/res/ColorStateList;->getDefaultColor()I
-
-    move-result v2
-
-    invoke-virtual {v0, v1, v2}, Landroid/content/res/ColorStateList;->getColorForState([II)I
-
-    move-result v0
-
-    :goto_0
-    return v0
+    invoke-interface {v0, p1, p2}, Landroid/support/v7/widget/ao;->a(Landroid/support/v7/view/menu/h;Landroid/view/MenuItem;)V
 
     :cond_0
-    invoke-static {}, Landroid/support/v7/widget/ap;->a()Landroid/util/TypedValue;
+    return-void
+.end method
 
-    move-result-object v0
+.method public a(Landroid/support/v7/widget/ao;)V
+    .locals 0
 
-    invoke-virtual {p0}, Landroid/content/Context;->getTheme()Landroid/content/res/Resources$Theme;
+    iput-object p1, p0, Landroid/support/v7/widget/ap;->d:Landroid/support/v7/widget/ao;
 
-    move-result-object v1
+    return-void
+.end method
 
-    const v2, 0x1010033
+.method public a(Ljava/lang/Object;)V
+    .locals 2
 
-    const/4 v3, 0x1
+    sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
 
-    invoke-virtual {v1, v2, v0, v3}, Landroid/content/res/Resources$Theme;->resolveAttribute(ILandroid/util/TypedValue;Z)Z
+    const/16 v1, 0x17
 
-    invoke-virtual {v0}, Landroid/util/TypedValue;->getFloat()F
+    if-lt v0, v1, :cond_0
 
-    move-result v0
+    iget-object v0, p0, Landroid/support/v7/widget/ap;->c:Landroid/widget/PopupWindow;
 
-    invoke-static {p0, p1, v0}, Landroid/support/v7/widget/ap;->a(Landroid/content/Context;IF)I
+    check-cast p1, Landroid/transition/Transition;
 
-    move-result v0
+    invoke-virtual {v0, p1}, Landroid/widget/PopupWindow;->setEnterTransition(Landroid/transition/Transition;)V
+
+    :cond_0
+    return-void
+.end method
+
+.method public b(Landroid/support/v7/view/menu/h;Landroid/view/MenuItem;)V
+    .locals 1
+
+    iget-object v0, p0, Landroid/support/v7/widget/ap;->d:Landroid/support/v7/widget/ao;
+
+    if-eqz v0, :cond_0
+
+    iget-object v0, p0, Landroid/support/v7/widget/ap;->d:Landroid/support/v7/widget/ao;
+
+    invoke-interface {v0, p1, p2}, Landroid/support/v7/widget/ao;->b(Landroid/support/v7/view/menu/h;Landroid/view/MenuItem;)V
+
+    :cond_0
+    return-void
+.end method
+
+.method public b(Ljava/lang/Object;)V
+    .locals 2
+
+    sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
+
+    const/16 v1, 0x17
+
+    if-lt v0, v1, :cond_0
+
+    iget-object v0, p0, Landroid/support/v7/widget/ap;->c:Landroid/widget/PopupWindow;
+
+    check-cast p1, Landroid/transition/Transition;
+
+    invoke-virtual {v0, p1}, Landroid/widget/PopupWindow;->setExitTransition(Landroid/transition/Transition;)V
+
+    :cond_0
+    return-void
+.end method
+
+.method public b(Z)V
+    .locals 5
+
+    sget-object v0, Landroid/support/v7/widget/ap;->a:Ljava/lang/reflect/Method;
+
+    if-eqz v0, :cond_0
+
+    :try_start_0
+    sget-object v0, Landroid/support/v7/widget/ap;->a:Ljava/lang/reflect/Method;
+
+    iget-object v1, p0, Landroid/support/v7/widget/ap;->c:Landroid/widget/PopupWindow;
+
+    const/4 v2, 0x1
+
+    new-array v2, v2, [Ljava/lang/Object;
+
+    const/4 v3, 0x0
+
+    invoke-static {p1}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+
+    move-result-object v4
+
+    aput-object v4, v2, v3
+
+    invoke-virtual {v0, v1, v2}, Ljava/lang/reflect/Method;->invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
+
+    :cond_0
+    :goto_0
+    return-void
+
+    :catch_0
+    move-exception v0
+
+    const-string v0, "MenuPopupWindow"
+
+    const-string v1, "Could not invoke setTouchModal() on PopupWindow. Oh well."
+
+    invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
     goto :goto_0
 .end method

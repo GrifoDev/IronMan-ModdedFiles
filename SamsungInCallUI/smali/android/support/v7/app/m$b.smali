@@ -56,11 +56,11 @@
 
     iget-object v0, p0, Landroid/support/v7/app/m$b;->a:Landroid/support/v7/app/m;
 
-    invoke-static {v0}, Landroid/support/v7/app/m;->b(Landroid/support/v7/app/m;)Landroid/support/v7/widget/ab;
+    invoke-static {v0}, Landroid/support/v7/app/m;->b(Landroid/support/v7/app/m;)Landroid/support/v7/widget/ag;
 
     move-result-object v0
 
-    invoke-interface {v0}, Landroid/support/v7/widget/ab;->i()Z
+    invoke-interface {v0}, Landroid/support/v7/widget/ag;->i()Z
 
     move-result v0
 

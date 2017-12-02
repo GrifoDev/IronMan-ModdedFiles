@@ -6,6 +6,9 @@
 
 
 # virtual methods
+.method public abstract enableRttMsgBox(Z)V
+.end method
+
 .method public abstract getView()Landroid/view/View;
 .end method
 

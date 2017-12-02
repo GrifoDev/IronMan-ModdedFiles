@@ -178,7 +178,7 @@
 
     invoke-direct {v1, v0}, Lcom/android/incallui/rtt/ChatAdapter$ViewHolder;-><init>(Lcom/android/incallui/rtt/ChatAdapter$1;)V
 
-    const v0, 0x7f1001bc
+    const v0, 0x7f1001c3
 
     invoke-virtual {p1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -188,7 +188,7 @@
 
     iput-object v0, v1, Lcom/android/incallui/rtt/ChatAdapter$ViewHolder;->sentTxtMessageFirst:Landroid/widget/TextView;
 
-    const v0, 0x7f1001bd
+    const v0, 0x7f1001c4
 
     invoke-virtual {p1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -198,7 +198,7 @@
 
     iput-object v0, v1, Lcom/android/incallui/rtt/ChatAdapter$ViewHolder;->sentTxtMessageSec:Landroid/widget/TextView;
 
-    const v0, 0x7f1001c0
+    const v0, 0x7f1001c7
 
     invoke-virtual {p1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -208,7 +208,7 @@
 
     iput-object v0, v1, Lcom/android/incallui/rtt/ChatAdapter$ViewHolder;->recTxtMessageFirst:Landroid/widget/TextView;
 
-    const v0, 0x7f1001c1
+    const v0, 0x7f1001c8
 
     invoke-virtual {p1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -218,7 +218,7 @@
 
     iput-object v0, v1, Lcom/android/incallui/rtt/ChatAdapter$ViewHolder;->recTxtMessageSec:Landroid/widget/TextView;
 
-    const v0, 0x7f1001be
+    const v0, 0x7f1001c5
 
     invoke-virtual {p1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -226,7 +226,7 @@
 
     invoke-static {v1, v0}, Lcom/android/incallui/rtt/ChatAdapter$ViewHolder;->access$102(Lcom/android/incallui/rtt/ChatAdapter$ViewHolder;Landroid/view/View;)Landroid/view/View;
 
-    const v0, 0x7f1001bb
+    const v0, 0x7f1001c2
 
     invoke-virtual {p1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -234,7 +234,7 @@
 
     invoke-static {v1, v0}, Lcom/android/incallui/rtt/ChatAdapter$ViewHolder;->access$002(Lcom/android/incallui/rtt/ChatAdapter$ViewHolder;Landroid/view/View;)Landroid/view/View;
 
-    const v0, 0x7f1001bf
+    const v0, 0x7f1001c6
 
     invoke-virtual {p1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -245,6 +245,38 @@
     iput-object v0, v1, Lcom/android/incallui/rtt/ChatAdapter$ViewHolder;->mPhoto:Landroid/widget/ImageView;
 
     return-object v1
+.end method
+
+.method private findChatMesgTextSize()I
+    .locals 1
+
+    invoke-static {}, Lcom/android/incallui/InCallUISystemDB;->isRTTSystemFontOn()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    invoke-static {}, Lcom/android/incallui/InCallApp;->getInstance()Lcom/android/incallui/InCallApp;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lcom/android/incallui/InCallApp;->getApplicationContext()Landroid/content/Context;
+
+    move-result-object v0
+
+    invoke-static {v0}, Lcom/android/incallui/rtt/FontSizeController;->getSystemFontSizeIndex(Landroid/content/Context;)I
+
+    move-result v0
+
+    :goto_0
+    return v0
+
+    :cond_0
+    invoke-static {}, Lcom/android/incallui/InCallUISystemDB;->getRTTFontSize()I
+
+    move-result v0
+
+    goto :goto_0
 .end method
 
 .method private getContactPhoto()Landroid/graphics/drawable/Drawable;
@@ -294,7 +326,7 @@
 
     move-result-object v0
 
-    const v2, 0x7f0a042e
+    const v2, 0x7f0a0434
 
     invoke-virtual {v0, v2}, Landroid/content/res/Resources;->getDimension(I)F
 
@@ -340,7 +372,11 @@
 .end method
 
 .method private setMsg(Lcom/android/incallui/rtt/ChatAdapter$ViewHolder;ZZLjava/lang/String;)V
-    .locals 8
+    .locals 10
+
+    const/4 v9, 0x6
+
+    const/4 v8, 0x1
 
     const/4 v7, 0x0
 
@@ -360,7 +396,7 @@
 
     int-to-double v0, v0
 
-    const-wide v2, 0x3fe1eb851eb851ecL    # 0.56
+    const-wide v2, 0x3fe5c28f5c28f5c3L    # 0.68
 
     mul-double/2addr v0, v2
 
@@ -402,6 +438,18 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setMaxWidth(I)V
 
+    iget-object v0, p1, Lcom/android/incallui/rtt/ChatAdapter$ViewHolder;->sentTxtMessageFirst:Landroid/widget/TextView;
+
+    invoke-direct {p0}, Lcom/android/incallui/rtt/ChatAdapter;->findChatMesgTextSize()I
+
+    move-result v1
+
+    invoke-static {v9, v1}, Lcom/android/incallui/rtt/FontSizeController;->getFontSize(II)F
+
+    move-result v1
+
+    invoke-virtual {v0, v8, v1}, Landroid/widget/TextView;->setTextSize(IF)V
+
     iget-object v0, p1, Lcom/android/incallui/rtt/ChatAdapter$ViewHolder;->sentTxtMessageSec:Landroid/widget/TextView;
 
     invoke-virtual {v0, v6}, Landroid/widget/TextView;->setVisibility(I)V
@@ -421,6 +469,18 @@
     iget-object v0, p1, Lcom/android/incallui/rtt/ChatAdapter$ViewHolder;->sentTxtMessageSec:Landroid/widget/TextView;
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setMaxWidth(I)V
+
+    iget-object v0, p1, Lcom/android/incallui/rtt/ChatAdapter$ViewHolder;->sentTxtMessageSec:Landroid/widget/TextView;
+
+    invoke-direct {p0}, Lcom/android/incallui/rtt/ChatAdapter;->findChatMesgTextSize()I
+
+    move-result v1
+
+    invoke-static {v9, v1}, Lcom/android/incallui/rtt/FontSizeController;->getFontSize(II)F
+
+    move-result v1
+
+    invoke-virtual {v0, v8, v1}, Landroid/widget/TextView;->setTextSize(IF)V
 
     iget-object v0, p1, Lcom/android/incallui/rtt/ChatAdapter$ViewHolder;->sentTxtMessageFirst:Landroid/widget/TextView;
 
@@ -477,7 +537,7 @@
 
     move-result-object v3
 
-    const v4, 0x7f0a0428
+    const v4, 0x7f0a042e
 
     invoke-virtual {v3, v4}, Landroid/content/res/Resources;->getDimension(I)F
 
@@ -508,11 +568,23 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setMaxWidth(I)V
 
+    iget-object v0, p1, Lcom/android/incallui/rtt/ChatAdapter$ViewHolder;->recTxtMessageFirst:Landroid/widget/TextView;
+
+    invoke-direct {p0}, Lcom/android/incallui/rtt/ChatAdapter;->findChatMesgTextSize()I
+
+    move-result v1
+
+    invoke-static {v9, v1}, Lcom/android/incallui/rtt/FontSizeController;->getFontSize(II)F
+
+    move-result v1
+
+    invoke-virtual {v0, v8, v1}, Landroid/widget/TextView;->setTextSize(IF)V
+
     iget-object v0, p1, Lcom/android/incallui/rtt/ChatAdapter$ViewHolder;->recTxtMessageSec:Landroid/widget/TextView;
 
     invoke-virtual {v0, v6}, Landroid/widget/TextView;->setVisibility(I)V
 
-    goto :goto_0
+    goto/16 :goto_0
 
     :cond_2
     iget-object v0, p1, Lcom/android/incallui/rtt/ChatAdapter$ViewHolder;->mPhoto:Landroid/widget/ImageView;
@@ -540,7 +612,7 @@
 
     move-result-object v3
 
-    const v4, 0x7f0a0429
+    const v4, 0x7f0a042f
 
     invoke-virtual {v3, v4}, Landroid/content/res/Resources;->getDimension(I)F
 
@@ -570,6 +642,18 @@
     iget-object v0, p1, Lcom/android/incallui/rtt/ChatAdapter$ViewHolder;->recTxtMessageSec:Landroid/widget/TextView;
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setMaxWidth(I)V
+
+    iget-object v0, p1, Lcom/android/incallui/rtt/ChatAdapter$ViewHolder;->recTxtMessageSec:Landroid/widget/TextView;
+
+    invoke-direct {p0}, Lcom/android/incallui/rtt/ChatAdapter;->findChatMesgTextSize()I
+
+    move-result v1
+
+    invoke-static {v9, v1}, Lcom/android/incallui/rtt/FontSizeController;->getFontSize(II)F
+
+    move-result v1
+
+    invoke-virtual {v0, v8, v1}, Landroid/widget/TextView;->setTextSize(IF)V
 
     iget-object v0, p1, Lcom/android/incallui/rtt/ChatAdapter$ViewHolder;->recTxtMessageFirst:Landroid/widget/TextView;
 
@@ -812,9 +896,13 @@
 .end method
 
 .method public getView(ILandroid/view/View;Landroid/view/ViewGroup;)Landroid/view/View;
-    .locals 7
+    .locals 8
 
-    const/4 v6, 0x1
+    const/4 v7, 0x1
+
+    const v6, 0x7f0e0132
+
+    const v5, 0x7f0e0131
 
     invoke-virtual {p0, p1}, Lcom/android/incallui/rtt/ChatAdapter;->getItem(I)Lcom/android/incallui/rtt/ChatMessage;
 
@@ -832,7 +920,7 @@
 
     if-nez p2, :cond_1
 
-    const v2, 0x7f040074
+    const v2, 0x7f040077
 
     const/4 v3, 0x0
 
@@ -901,15 +989,43 @@
 
     iget-object v3, v0, Lcom/android/incallui/rtt/ChatAdapter$ViewHolder;->sentTxtMessageFirst:Landroid/widget/TextView;
 
-    const v4, 0x7f02020b
+    const v4, 0x7f020217
+
+    invoke-virtual {v3, v4}, Landroid/widget/TextView;->setBackgroundResource(I)V
+
+    iget-object v3, v0, Lcom/android/incallui/rtt/ChatAdapter$ViewHolder;->sentTxtMessageFirst:Landroid/widget/TextView;
+
+    iget-object v4, p0, Lcom/android/incallui/rtt/ChatAdapter;->context:Landroid/app/Activity;
+
+    invoke-virtual {v4}, Landroid/app/Activity;->getResources()Landroid/content/res/Resources;
+
+    move-result-object v4
+
+    invoke-virtual {v4, v5}, Landroid/content/res/Resources;->getColor(I)I
+
+    move-result v4
+
+    invoke-virtual {v3, v4}, Landroid/widget/TextView;->setTextColor(I)V
+
+    iget-object v3, v0, Lcom/android/incallui/rtt/ChatAdapter$ViewHolder;->sentTxtMessageSec:Landroid/widget/TextView;
+
+    const v4, 0x7f02030c
 
     invoke-virtual {v3, v4}, Landroid/widget/TextView;->setBackgroundResource(I)V
 
     iget-object v3, v0, Lcom/android/incallui/rtt/ChatAdapter$ViewHolder;->sentTxtMessageSec:Landroid/widget/TextView;
 
-    const v4, 0x7f0202fd
+    iget-object v4, p0, Lcom/android/incallui/rtt/ChatAdapter;->context:Landroid/app/Activity;
 
-    invoke-virtual {v3, v4}, Landroid/widget/TextView;->setBackgroundResource(I)V
+    invoke-virtual {v4}, Landroid/app/Activity;->getResources()Landroid/content/res/Resources;
+
+    move-result-object v4
+
+    invoke-virtual {v4, v5}, Landroid/content/res/Resources;->getColor(I)I
+
+    move-result v4
+
+    invoke-virtual {v3, v4}, Landroid/widget/TextView;->setTextColor(I)V
 
     :goto_1
     if-lez p1, :cond_6
@@ -963,20 +1079,48 @@
 
     check-cast v0, Lcom/android/incallui/rtt/ChatAdapter$ViewHolder;
 
-    goto :goto_0
+    goto/16 :goto_0
 
     :cond_2
     iget-object v3, v0, Lcom/android/incallui/rtt/ChatAdapter$ViewHolder;->sentTxtMessageFirst:Landroid/widget/TextView;
 
-    const v4, 0x7f0202fe
+    const v4, 0x7f02030d
+
+    invoke-virtual {v3, v4}, Landroid/widget/TextView;->setBackgroundResource(I)V
+
+    iget-object v3, v0, Lcom/android/incallui/rtt/ChatAdapter$ViewHolder;->sentTxtMessageFirst:Landroid/widget/TextView;
+
+    iget-object v4, p0, Lcom/android/incallui/rtt/ChatAdapter;->context:Landroid/app/Activity;
+
+    invoke-virtual {v4}, Landroid/app/Activity;->getResources()Landroid/content/res/Resources;
+
+    move-result-object v4
+
+    invoke-virtual {v4, v6}, Landroid/content/res/Resources;->getColor(I)I
+
+    move-result v4
+
+    invoke-virtual {v3, v4}, Landroid/widget/TextView;->setTextColor(I)V
+
+    iget-object v3, v0, Lcom/android/incallui/rtt/ChatAdapter$ViewHolder;->sentTxtMessageSec:Landroid/widget/TextView;
+
+    const v4, 0x7f02030e
 
     invoke-virtual {v3, v4}, Landroid/widget/TextView;->setBackgroundResource(I)V
 
     iget-object v3, v0, Lcom/android/incallui/rtt/ChatAdapter$ViewHolder;->sentTxtMessageSec:Landroid/widget/TextView;
 
-    const v4, 0x7f0202ff
+    iget-object v4, p0, Lcom/android/incallui/rtt/ChatAdapter;->context:Landroid/app/Activity;
 
-    invoke-virtual {v3, v4}, Landroid/widget/TextView;->setBackgroundResource(I)V
+    invoke-virtual {v4}, Landroid/app/Activity;->getResources()Landroid/content/res/Resources;
+
+    move-result-object v4
+
+    invoke-virtual {v4, v6}, Landroid/content/res/Resources;->getColor(I)I
+
+    move-result v4
+
+    invoke-virtual {v3, v4}, Landroid/widget/TextView;->setTextColor(I)V
 
     goto :goto_1
 
@@ -989,50 +1133,106 @@
 
     iget-object v3, v0, Lcom/android/incallui/rtt/ChatAdapter$ViewHolder;->recTxtMessageFirst:Landroid/widget/TextView;
 
+    const v4, 0x7f020216
+
+    invoke-virtual {v3, v4}, Landroid/widget/TextView;->setBackgroundResource(I)V
+
+    iget-object v3, v0, Lcom/android/incallui/rtt/ChatAdapter$ViewHolder;->recTxtMessageFirst:Landroid/widget/TextView;
+
+    iget-object v4, p0, Lcom/android/incallui/rtt/ChatAdapter;->context:Landroid/app/Activity;
+
+    invoke-virtual {v4}, Landroid/app/Activity;->getResources()Landroid/content/res/Resources;
+
+    move-result-object v4
+
+    invoke-virtual {v4, v5}, Landroid/content/res/Resources;->getColor(I)I
+
+    move-result v4
+
+    invoke-virtual {v3, v4}, Landroid/widget/TextView;->setTextColor(I)V
+
+    iget-object v3, v0, Lcom/android/incallui/rtt/ChatAdapter$ViewHolder;->recTxtMessageSec:Landroid/widget/TextView;
+
+    const v4, 0x7f02020b
+
+    invoke-virtual {v3, v4}, Landroid/widget/TextView;->setBackgroundResource(I)V
+
+    iget-object v3, v0, Lcom/android/incallui/rtt/ChatAdapter$ViewHolder;->recTxtMessageSec:Landroid/widget/TextView;
+
+    iget-object v4, p0, Lcom/android/incallui/rtt/ChatAdapter;->context:Landroid/app/Activity;
+
+    invoke-virtual {v4}, Landroid/app/Activity;->getResources()Landroid/content/res/Resources;
+
+    move-result-object v4
+
+    invoke-virtual {v4, v5}, Landroid/content/res/Resources;->getColor(I)I
+
+    move-result v4
+
+    invoke-virtual {v3, v4}, Landroid/widget/TextView;->setTextColor(I)V
+
+    goto/16 :goto_1
+
+    :cond_4
+    iget-object v3, v0, Lcom/android/incallui/rtt/ChatAdapter$ViewHolder;->recTxtMessageFirst:Landroid/widget/TextView;
+
+    const v4, 0x7f020209
+
+    invoke-virtual {v3, v4}, Landroid/widget/TextView;->setBackgroundResource(I)V
+
+    iget-object v3, v0, Lcom/android/incallui/rtt/ChatAdapter$ViewHolder;->recTxtMessageFirst:Landroid/widget/TextView;
+
+    iget-object v4, p0, Lcom/android/incallui/rtt/ChatAdapter;->context:Landroid/app/Activity;
+
+    invoke-virtual {v4}, Landroid/app/Activity;->getResources()Landroid/content/res/Resources;
+
+    move-result-object v4
+
+    invoke-virtual {v4, v6}, Landroid/content/res/Resources;->getColor(I)I
+
+    move-result v4
+
+    invoke-virtual {v3, v4}, Landroid/widget/TextView;->setTextColor(I)V
+
+    iget-object v3, v0, Lcom/android/incallui/rtt/ChatAdapter$ViewHolder;->recTxtMessageSec:Landroid/widget/TextView;
+
     const v4, 0x7f02020a
 
     invoke-virtual {v3, v4}, Landroid/widget/TextView;->setBackgroundResource(I)V
 
     iget-object v3, v0, Lcom/android/incallui/rtt/ChatAdapter$ViewHolder;->recTxtMessageSec:Landroid/widget/TextView;
 
-    const v4, 0x7f0201ff
+    iget-object v4, p0, Lcom/android/incallui/rtt/ChatAdapter;->context:Landroid/app/Activity;
 
-    invoke-virtual {v3, v4}, Landroid/widget/TextView;->setBackgroundResource(I)V
+    invoke-virtual {v4}, Landroid/app/Activity;->getResources()Landroid/content/res/Resources;
 
-    goto :goto_1
+    move-result-object v4
 
-    :cond_4
-    iget-object v3, v0, Lcom/android/incallui/rtt/ChatAdapter$ViewHolder;->recTxtMessageFirst:Landroid/widget/TextView;
+    invoke-virtual {v4, v6}, Landroid/content/res/Resources;->getColor(I)I
 
-    const v4, 0x7f0201fd
+    move-result v4
 
-    invoke-virtual {v3, v4}, Landroid/widget/TextView;->setBackgroundResource(I)V
+    invoke-virtual {v3, v4}, Landroid/widget/TextView;->setTextColor(I)V
 
-    iget-object v3, v0, Lcom/android/incallui/rtt/ChatAdapter$ViewHolder;->recTxtMessageSec:Landroid/widget/TextView;
-
-    const v4, 0x7f0201fe
-
-    invoke-virtual {v3, v4}, Landroid/widget/TextView;->setBackgroundResource(I)V
-
-    goto :goto_1
+    goto/16 :goto_1
 
     :cond_5
     invoke-virtual {v1}, Lcom/android/incallui/rtt/ChatMessage;->getMessage()Ljava/lang/String;
 
     move-result-object v1
 
-    invoke-direct {p0, v0, v2, v6, v1}, Lcom/android/incallui/rtt/ChatAdapter;->setMsg(Lcom/android/incallui/rtt/ChatAdapter$ViewHolder;ZZLjava/lang/String;)V
+    invoke-direct {p0, v0, v2, v7, v1}, Lcom/android/incallui/rtt/ChatAdapter;->setMsg(Lcom/android/incallui/rtt/ChatAdapter$ViewHolder;ZZLjava/lang/String;)V
 
-    goto :goto_2
+    goto/16 :goto_2
 
     :cond_6
     invoke-virtual {v1}, Lcom/android/incallui/rtt/ChatMessage;->getMessage()Ljava/lang/String;
 
     move-result-object v1
 
-    invoke-direct {p0, v0, v2, v6, v1}, Lcom/android/incallui/rtt/ChatAdapter;->setMsg(Lcom/android/incallui/rtt/ChatAdapter$ViewHolder;ZZLjava/lang/String;)V
+    invoke-direct {p0, v0, v2, v7, v1}, Lcom/android/incallui/rtt/ChatAdapter;->setMsg(Lcom/android/incallui/rtt/ChatAdapter$ViewHolder;ZZLjava/lang/String;)V
 
-    goto :goto_2
+    goto/16 :goto_2
 .end method
 
 .method public remove(I)V

@@ -186,7 +186,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f0e007e
+    const v1, 0x7f0f007d
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getInteger(I)I
 
@@ -972,6 +972,12 @@
 
     if-eqz v0, :cond_0
 
+    invoke-virtual {p0}, Lcom/android/incallui/fragment/VideoCallFragment;->isPeerVideoVisible()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
     const/4 v0, 0x1
 
     :goto_0
@@ -1027,6 +1033,12 @@
     if-eqz v0, :cond_0
 
     iget-boolean v0, p0, Lcom/android/incallui/fragment/VideoCallFragment;->mIsPreviewReady:Z
+
+    if-eqz v0, :cond_0
+
+    invoke-virtual {p0}, Lcom/android/incallui/fragment/VideoCallFragment;->isPreviewVisible()Z
+
+    move-result v0
 
     if-eqz v0, :cond_0
 
@@ -1130,7 +1142,7 @@
 
     iget-object v0, p0, Lcom/android/incallui/fragment/VideoCallFragment;->mVideoViews:Landroid/view/View;
 
-    const v1, 0x7f1003fe
+    const v1, 0x7f100415
 
     invoke-virtual {v0, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -1165,7 +1177,7 @@
     :cond_0
     iget-object v0, p0, Lcom/android/incallui/fragment/VideoCallFragment;->mVideoViews:Landroid/view/View;
 
-    const v1, 0x7f100404
+    const v1, 0x7f10041b
 
     invoke-virtual {v0, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -1221,45 +1233,28 @@
     return v0
 .end method
 
-.method public isInMultiWindowMode()Z
-    .locals 2
+.method public isPeerVideoVisible()Z
+    .locals 1
 
-    const/4 v1, 0x0
-
-    invoke-virtual {p0}, Lcom/android/incallui/fragment/VideoCallFragment;->isDesktopMode()Z
-
-    move-result v0
+    iget-object v0, p0, Lcom/android/incallui/fragment/VideoCallFragment;->mDisplayContainer:Landroid/view/ViewGroup;
 
     if-eqz v0, :cond_0
 
-    invoke-virtual {p0}, Lcom/android/incallui/fragment/VideoCallFragment;->getUiAdapter()Lcom/android/incallui/UiAdapter;
+    iget-object v0, p0, Lcom/android/incallui/fragment/VideoCallFragment;->mDisplayContainer:Landroid/view/ViewGroup;
 
-    move-result-object v0
-
-    invoke-virtual {v0}, Lcom/android/incallui/UiAdapter;->isShowMultiWindowMode()Z
+    invoke-virtual {v0}, Landroid/view/ViewGroup;->getVisibility()I
 
     move-result v0
+
+    if-nez v0, :cond_0
+
+    const/4 v0, 0x1
 
     :goto_0
     return v0
 
     :cond_0
-    invoke-virtual {p0}, Lcom/android/incallui/fragment/VideoCallFragment;->getActivity()Landroid/app/Activity;
-
-    move-result-object v0
-
-    check-cast v0, Lcom/android/incallui/InCallActivity;
-
-    if-eqz v0, :cond_1
-
-    invoke-virtual {v0}, Lcom/android/incallui/InCallActivity;->isInMultiWindowMode()Z
-
-    move-result v0
-
-    goto :goto_0
-
-    :cond_1
-    move v0, v1
+    const/4 v0, 0x0
 
     goto :goto_0
 .end method
@@ -1270,6 +1265,32 @@
     iget-boolean v0, p0, Lcom/android/incallui/fragment/VideoCallFragment;->mIsPreviewReady:Z
 
     return v0
+.end method
+
+.method public isPreviewVisible()Z
+    .locals 1
+
+    iget-object v0, p0, Lcom/android/incallui/fragment/VideoCallFragment;->mPreviewContainer:Landroid/view/ViewGroup;
+
+    if-eqz v0, :cond_0
+
+    iget-object v0, p0, Lcom/android/incallui/fragment/VideoCallFragment;->mPreviewContainer:Landroid/view/ViewGroup;
+
+    invoke-virtual {v0}, Landroid/view/ViewGroup;->getVisibility()I
+
+    move-result v0
+
+    if-nez v0, :cond_0
+
+    const/4 v0, 0x1
+
+    :goto_0
+    return v0
+
+    :cond_0
+    const/4 v0, 0x0
+
+    goto :goto_0
 .end method
 
 .method public isShowingPreparingAnimation()Z
@@ -2766,37 +2787,6 @@
     .locals 0
 
     return-void
-.end method
-
-.method public updateVideoIndicatorArea()V
-    .locals 1
-
-    invoke-virtual {p0}, Lcom/android/incallui/fragment/VideoCallFragment;->isInMultiWindowMode()Z
-
-    move-result v0
-
-    if-nez v0, :cond_0
-
-    invoke-virtual {p0}, Lcom/android/incallui/fragment/VideoCallFragment;->isDesktopMode()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_1
-
-    :cond_0
-    const/4 v0, 0x0
-
-    invoke-virtual {p0, v0}, Lcom/android/incallui/fragment/VideoCallFragment;->showVideoIndicatorArea(Z)V
-
-    :goto_0
-    return-void
-
-    :cond_1
-    const/4 v0, 0x1
-
-    invoke-virtual {p0, v0}, Lcom/android/incallui/fragment/VideoCallFragment;->showVideoIndicatorArea(Z)V
-
-    goto :goto_0
 .end method
 
 .method public updateVideoSessionEvent(ILcom/android/incallui/Call;)V

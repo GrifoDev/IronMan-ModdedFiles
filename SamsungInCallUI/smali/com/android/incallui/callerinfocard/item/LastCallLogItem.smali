@@ -20,11 +20,11 @@
 .method protected setItem(Landroid/content/Context;Landroid/net/Uri;Landroid/database/Cursor;Ljava/lang/Object;)V
     .locals 2
 
-    const v0, 0x7f020442
+    const v0, 0x7f020452
 
     iput v0, p0, Lcom/android/incallui/callerinfocard/item/LastCallLogItem;->mIconRes:I
 
-    const v0, 0x7f0900fe
+    const v0, 0x7f090101
 
     invoke-virtual {p1, v0}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 

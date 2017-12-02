@@ -242,7 +242,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f04004c
+    const v1, 0x7f04004f
 
     const/4 v4, 0x0
 
@@ -252,7 +252,7 @@
 
     check-cast v0, Landroid/widget/LinearLayout;
 
-    const v1, 0x7f100137
+    const v1, 0x7f10013e
 
     invoke-virtual {v0, v1}, Landroid/widget/LinearLayout;->findViewById(I)Landroid/view/View;
 

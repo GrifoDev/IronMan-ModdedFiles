@@ -1569,7 +1569,7 @@
 
     new-instance v1, Ljava/lang/StringBuilder;
 
-    const-string v2, "\u670d\u52a1\u5668\u7aef\u4e0d\u5b58\u5728url==="
+    const-string/jumbo v2, "\u670d\u52a1\u5668\u7aef\u4e0d\u5b58\u5728url==="
 
     invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 

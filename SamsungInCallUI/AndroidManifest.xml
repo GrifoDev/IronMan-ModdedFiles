@@ -2,7 +2,6 @@
     <protected-broadcast android:name="com.android.phone.CALLER_NAME"/>
     <protected-broadcast android:name="com.android.phone.ACTION_HD_VOICE_CALL"/>
     <protected-broadcast android:name="com.sec.android.phone.action.ACTION_CALL_TIME"/>
-    <protected-broadcast android:name="com.samsung.android.communicationservice.ACTION_BACKGROUND_SEND"/>
     <permission android:label="UPDATE_MUTE_STATUS" android:name="com.sec.android.phone.permission.UPDATE_MUTE_STATUS" android:protectionLevel="signatureOrSystem"/>
     <uses-permission android:name="com.sec.android.phone.permission.UPDATE_MUTE_STATUS"/>
     <permission android:description="@string/permission_transporting_caller_name_description" android:label="@string/permission_transporting_caller_name_label" android:name="com.sec.android.phone.permission.TRANSPORTING_CALLER_NAME" android:protectionLevel="signatureOrSystem"/>
@@ -210,6 +209,7 @@
         <receiver android:name="com.android.incallui.coreapps.AgifReceiver" android:permission="com.android.contacts.permission.ACTION_AGIF_CALL_REGISTRATION">
             <intent-filter>
                 <action android:name="com.android.contacts.action.ACTION_AGIF_CALL_REGISTRATION"/>
+                <action android:name="com.samsung.android.coreapps.rshare.RShareService"/>
             </intent-filter>
         </receiver>
         <service android:directBootAware="true" android:name="com.android.incallui.service.SecInCallService" android:permission="android.permission.BIND_INCALL_SERVICE">
@@ -365,9 +365,15 @@
                 <action android:name="android.intent.action.MAIN"/>
             </intent-filter>
         </activity>
+        <activity android:configChanges="keyboardHidden|screenSize" android:excludeFromRecents="true" android:exported="false" android:launchMode="singleInstance" android:name="com.android.incallui.rtt.RTTAlertDialogActivity" android:theme="@style/RttHintDialogTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+            </intent-filter>
+        </activity>
         <activity android:configChanges="keyboardHidden|orientation|screenSize" android:excludeFromRecents="true" android:exported="false" android:launchMode="singleTop" android:name="com.samsung.android.sdk.enhancedfeatures.internal.common.ui.PermissionActivity" android:singleUser="true" android:theme="@style/Theme.DimBGTheme.Dialog"/>
         <activity android:name="com.samsung.android.sdk.enhancedfeatures.internal.common.ui.PermissionDialogActivity" android:theme="@style/Theme.DimBGTheme"/>
         <service android:exported="false" android:name="com.samsung.android.sdk.enhancedfeatures.internal.common.transaction.SppAckService"/>
+        <service android:exported="false" android:name="com.samsung.android.sdk.enhancedfeatures.internal.common.transaction.SppAckJob" android:permission="android.permission.BIND_JOB_SERVICE"/>
         <activity android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize" android:excludeFromRecents="true" android:exported="false" android:launchMode="singleTop" android:name="com.samsung.android.sdk.enhancedfeatures.easysignup.internal.ui.AcsAuthenticatorActivity" android:singleUser="true" android:theme="@style/Theme.ICS_White" android:uiOptions="splitActionBarWhenNarrow" android:windowSoftInputMode="stateHidden"/>
         <activity android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize" android:excludeFromRecents="true" android:exported="false" android:launchMode="singleTop" android:name="com.samsung.android.sdk.enhancedfeatures.easysignup.internal.ui.SmsAuthenticatorActivity" android:singleUser="true" android:theme="@style/Theme.ICS_White" android:uiOptions="splitActionBarWhenNarrow" android:windowSoftInputMode="stateAlwaysVisible"/>
         <activity android:excludeFromRecents="true" android:exported="false" android:launchMode="singleTop" android:name="com.samsung.android.sdk.enhancedfeatures.easysignup.internal.ui.CountryActivity" android:singleUser="true" android:theme="@style/Theme.ICS_White"/>
@@ -407,7 +413,7 @@
         </receiver>
         <activity android:exported="false" android:name="com.google.android.gms.common.api.GoogleApiActivity" android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
         <provider android:authorities="com.samsung.android.incallui.firebaseinitprovider" android:exported="false" android:initOrder="100" android:name="com.google.firebase.provider.FirebaseInitProvider"/>
-        <meta-data android:name="SPDE.build.signature" android:value="4512873/16637245/release/SamsungInCallUI-217026-2.3.01"/>
-        <meta-data android:name="SPDE.env.version" android:value="2.3.3/L25.1.4/25.1.3"/>
+        <meta-data android:name="SPDE.build.signature" android:value="4730670/18053215/release/SamsungInCallUI-217019-2.3.03"/>
+        <meta-data android:name="SPDE.env.version" android:value="2.3.3/L25.1.4/25.1.4"/>
     </application>
 </manifest>

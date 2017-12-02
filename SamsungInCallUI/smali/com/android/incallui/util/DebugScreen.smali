@@ -363,7 +363,7 @@
 .method public create(Lcom/android/incallui/InCallActivity;)V
     .locals 3
 
-    const v0, 0x7f10016b
+    const v0, 0x7f100172
 
     invoke-virtual {p1, v0}, Lcom/android/incallui/InCallActivity;->findViewById(I)Landroid/view/View;
 
@@ -381,7 +381,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f04004b
+    const v1, 0x7f04004e
 
     const/4 v2, 0x0
 
@@ -395,7 +395,7 @@
 
     sget-object v0, Lcom/android/incallui/util/DebugScreen;->mDebugScreenLayout:Landroid/widget/FrameLayout;
 
-    const v1, 0x7f100129
+    const v1, 0x7f100130
 
     invoke-virtual {v0, v1}, Landroid/widget/FrameLayout;->findViewById(I)Landroid/view/View;
 
@@ -409,7 +409,7 @@
 
     sget-object v0, Lcom/android/incallui/util/DebugScreen;->mDebugScreenLayout:Landroid/widget/FrameLayout;
 
-    const v1, 0x7f10012a
+    const v1, 0x7f100131
 
     invoke-virtual {v0, v1}, Landroid/widget/FrameLayout;->findViewById(I)Landroid/view/View;
 
@@ -454,7 +454,7 @@
 
     sget-object v0, Lcom/android/incallui/util/DebugScreen;->mDebugScreenLayout:Landroid/widget/FrameLayout;
 
-    const v2, 0x7f10012d
+    const v2, 0x7f100134
 
     invoke-virtual {v0, v2}, Landroid/widget/FrameLayout;->findViewById(I)Landroid/view/View;
 
@@ -474,7 +474,7 @@
 
     sget-object v0, Lcom/android/incallui/util/DebugScreen;->mDebugScreenLayout:Landroid/widget/FrameLayout;
 
-    const v2, 0x7f100133
+    const v2, 0x7f10013a
 
     invoke-virtual {v0, v2}, Landroid/widget/FrameLayout;->findViewById(I)Landroid/view/View;
 
@@ -494,7 +494,7 @@
 
     sget-object v0, Lcom/android/incallui/util/DebugScreen;->mDebugScreenLayout:Landroid/widget/FrameLayout;
 
-    const v2, 0x7f100130
+    const v2, 0x7f100137
 
     invoke-virtual {v0, v2}, Landroid/widget/FrameLayout;->findViewById(I)Landroid/view/View;
 
@@ -514,7 +514,7 @@
 
     sget-object v0, Lcom/android/incallui/util/DebugScreen;->mDebugScreenLayout:Landroid/widget/FrameLayout;
 
-    const v2, 0x7f100131
+    const v2, 0x7f100138
 
     invoke-virtual {v0, v2}, Landroid/widget/FrameLayout;->findViewById(I)Landroid/view/View;
 
@@ -534,7 +534,7 @@
 
     sget-object v0, Lcom/android/incallui/util/DebugScreen;->mDebugScreenLayout:Landroid/widget/FrameLayout;
 
-    const v2, 0x7f100132
+    const v2, 0x7f100139
 
     invoke-virtual {v0, v2}, Landroid/widget/FrameLayout;->findViewById(I)Landroid/view/View;
 
@@ -554,7 +554,7 @@
 
     sget-object v0, Lcom/android/incallui/util/DebugScreen;->mDebugScreenLayout:Landroid/widget/FrameLayout;
 
-    const v2, 0x7f10012f
+    const v2, 0x7f100136
 
     invoke-virtual {v0, v2}, Landroid/widget/FrameLayout;->findViewById(I)Landroid/view/View;
 
@@ -582,7 +582,7 @@
 
     sget-object v0, Lcom/android/incallui/util/DebugScreen;->mDebugScreenLayout:Landroid/widget/FrameLayout;
 
-    const v2, 0x7f100135
+    const v2, 0x7f10013c
 
     invoke-virtual {v0, v2}, Landroid/widget/FrameLayout;->findViewById(I)Landroid/view/View;
 
@@ -718,7 +718,7 @@
     nop
 
     :pswitch_data_0
-    .packed-switch 0x7f10012d
+    .packed-switch 0x7f100134
         :pswitch_1
         :pswitch_0
         :pswitch_0

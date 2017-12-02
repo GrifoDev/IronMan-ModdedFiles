@@ -1486,7 +1486,7 @@
 
     if-lez v1, :cond_0
 
-    const-string v1, "\u5173\u952e\u65f6\u523b\u6389\u94fe\u5b50\u4e86,\u7a0b\u5e8f\u733f\u6b63\u5728\u52aa\u529b\u4fee\u8865\u4e2d!"
+    const-string/jumbo v1, "\u5173\u952e\u65f6\u523b\u6389\u94fe\u5b50\u4e86,\u7a0b\u5e8f\u733f\u6b63\u5728\u52aa\u529b\u4fee\u8865\u4e2d!"
 
     invoke-virtual {v0, v1}, Lcom/cmdm/control/bean/ErrorXMLException;->setText(Ljava/lang/String;)V
 
@@ -1494,7 +1494,7 @@
     return-object v0
 
     :cond_0
-    const-string v1, "\u54a6\uff0c\u7f51\u7edc\u597d\u50cf\u4e0d\u7ed9\u529b\uff0c\u8bf7\u7a0d\u540e\u91cd\u8bd5~"
+    const-string/jumbo v1, "\u54a6\uff0c\u7f51\u7edc\u597d\u50cf\u4e0d\u7ed9\u529b\uff0c\u8bf7\u7a0d\u540e\u91cd\u8bd5~"
 
     invoke-virtual {v0, v1}, Lcom/cmdm/control/bean/ErrorXMLException;->setText(Ljava/lang/String;)V
 
@@ -3888,7 +3888,7 @@
 
     new-instance v1, Ljava/lang/StringBuilder;
 
-    const-string v6, "\u662f\u5426\u52a0\u8f7d\u7f13\u5b58isCache=="
+    const-string/jumbo v6, "\u662f\u5426\u52a0\u8f7d\u7f13\u5b58isCache=="
 
     invoke-direct {v1, v6}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
@@ -3971,7 +3971,7 @@
 
     new-instance v2, Ljava/lang/StringBuilder;
 
-    const-string v5, "\u7b2c\u4e8c\u9875\u52a0\u7f13\u5b58isCache=="
+    const-string/jumbo v5, "\u7b2c\u4e8c\u9875\u52a0\u7f13\u5b58isCache=="
 
     invoke-direct {v2, v5}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
@@ -4227,7 +4227,7 @@
     :cond_3
     const-string v1, "CaiYinSDK"
 
-    const-string v2, "\u7b2c\u4e00\u9875\u4e0d\u662f\u7c7b\u522b"
+    const-string/jumbo v2, "\u7b2c\u4e00\u9875\u4e0d\u662f\u7c7b\u522b"
 
     invoke-static {v1, v2}, Lcom/cmdm/control/util/PrintLog;->i(Ljava/lang/String;Ljava/lang/String;)V
 
@@ -4495,7 +4495,7 @@
 
     new-instance v7, Ljava/lang/StringBuilder;
 
-    const-string v10, "\u7b2c\u4e8c\u9875\u52a0\u7f13\u5b58isCache=="
+    const-string/jumbo v10, "\u7b2c\u4e8c\u9875\u52a0\u7f13\u5b58isCache=="
 
     invoke-direct {v7, v10}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
@@ -4716,7 +4716,7 @@
     :try_start_2
     const-string v7, "CaiYinSDK"
 
-    const-string v10, "\u7b2c\u4e00\u9875\u5e76\u4e14\u662f\u6587\u672c\u7c7b\u522b"
+    const-string/jumbo v10, "\u7b2c\u4e00\u9875\u5e76\u4e14\u662f\u6587\u672c\u7c7b\u522b"
 
     invoke-static {v7, v10}, Lcom/cmdm/control/util/PrintLog;->i(Ljava/lang/String;Ljava/lang/String;)V
 
@@ -4747,7 +4747,7 @@
 
     new-instance v11, Ljava/lang/StringBuilder;
 
-    const-string v12, "\u7b2c\u4e00\u9875\u5e76\u4e14\u662f\u6587\u672c\u7c7b\u522b\u672c\u5730\u6709\u7f13\u5b58"
+    const-string/jumbo v12, "\u7b2c\u4e00\u9875\u5e76\u4e14\u662f\u6587\u672c\u7c7b\u522b\u672c\u5730\u6709\u7f13\u5b58"
 
     invoke-direct {v11, v12}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
@@ -4755,7 +4755,7 @@
 
     move-result-object v11
 
-    const-string v12, "\u540e\u53f0\u540c\u6b65\u53bb\u66f4\u65b0"
+    const-string/jumbo v12, "\u540e\u53f0\u540c\u6b65\u53bb\u66f4\u65b0"
 
     invoke-virtual {v11, v12}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -4790,7 +4790,7 @@
     :cond_3
     const-string v5, "CaiYinSDK"
 
-    const-string v7, "\u7b2c\u4e00\u9875\u5e76\u4e14\u662f\u6587\u672c\u7c7b\u522b\u672c\u5730\u65e0\u7f13\u5b58\uff0c\u7f51\u7edc\u8bf7\u6c42"
+    const-string/jumbo v7, "\u7b2c\u4e00\u9875\u5e76\u4e14\u662f\u6587\u672c\u7c7b\u522b\u672c\u5730\u65e0\u7f13\u5b58\uff0c\u7f51\u7edc\u8bf7\u6c42"
 
     invoke-static {v5, v7}, Lcom/cmdm/control/util/PrintLog;->i(Ljava/lang/String;Ljava/lang/String;)V
 
@@ -4844,7 +4844,7 @@
 
     new-instance v9, Ljava/lang/StringBuilder;
 
-    const-string v5, "\u7b2c\u4e00\u9875\u5e76\u4e14\u662f\u6587\u672c\u7c7b\u522b\u672c\u5730\u65e0\u7f13\u5b58\uff0c\u7f51\u7edc\u8bf7\u6c42"
+    const-string/jumbo v5, "\u7b2c\u4e00\u9875\u5e76\u4e14\u662f\u6587\u672c\u7c7b\u522b\u672c\u5730\u65e0\u7f13\u5b58\uff0c\u7f51\u7edc\u8bf7\u6c42"
 
     invoke-direct {v9, v5}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
@@ -5164,7 +5164,7 @@
 
     new-instance v7, Ljava/lang/StringBuilder;
 
-    const-string v9, "\u7b2c\u4e8c\u9875\u52a0\u7f13\u5b58isCache=="
+    const-string/jumbo v9, "\u7b2c\u4e8c\u9875\u52a0\u7f13\u5b58isCache=="
 
     invoke-direct {v7, v9}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
@@ -5391,7 +5391,7 @@
     :try_start_2
     const-string v7, "CaiYinSDK"
 
-    const-string v9, "\u7b2c\u4e00\u9875\u5e76\u4e14\u662f\u89c6\u9891\u7c7b\u522b"
+    const-string/jumbo v9, "\u7b2c\u4e00\u9875\u5e76\u4e14\u662f\u89c6\u9891\u7c7b\u522b"
 
     invoke-static {v7, v9}, Lcom/cmdm/control/util/PrintLog;->i(Ljava/lang/String;Ljava/lang/String;)V
 
@@ -5422,7 +5422,7 @@
 
     new-instance v10, Ljava/lang/StringBuilder;
 
-    const-string v11, "\u7b2c\u4e00\u9875\u5e76\u4e14\u662f\u89c6\u9891\u7c7b\u522b\u672c\u5730\u6709\u7f13\u5b58"
+    const-string/jumbo v11, "\u7b2c\u4e00\u9875\u5e76\u4e14\u662f\u89c6\u9891\u7c7b\u522b\u672c\u5730\u6709\u7f13\u5b58"
 
     invoke-direct {v10, v11}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
@@ -5430,7 +5430,7 @@
 
     move-result-object v10
 
-    const-string v11, "\u540e\u53f0\u540c\u6b65\u53bb\u66f4\u65b0"
+    const-string/jumbo v11, "\u540e\u53f0\u540c\u6b65\u53bb\u66f4\u65b0"
 
     invoke-virtual {v10, v11}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -5467,7 +5467,7 @@
     :cond_3
     const-string v5, "CaiYinSDK"
 
-    const-string v7, "\u7b2c\u4e00\u9875\u5e76\u4e14\u662f\u89c6\u9891\u7c7b\u522b\u672c\u5730\u65e0\u7f13\u5b58\uff0c\u7f51\u7edc\u8bf7\u6c42"
+    const-string/jumbo v7, "\u7b2c\u4e00\u9875\u5e76\u4e14\u662f\u89c6\u9891\u7c7b\u522b\u672c\u5730\u65e0\u7f13\u5b58\uff0c\u7f51\u7edc\u8bf7\u6c42"
 
     invoke-static {v5, v7}, Lcom/cmdm/control/util/PrintLog;->i(Ljava/lang/String;Ljava/lang/String;)V
 
@@ -5523,7 +5523,7 @@
 
     new-instance v9, Ljava/lang/StringBuilder;
 
-    const-string v5, "\u7b2c\u4e00\u9875\u5e76\u4e14\u662f\u89c6\u9891\u7c7b\u522b\u672c\u5730\u65e0\u7f13\u5b58\uff0c\u7f51\u7edc\u8bf7\u6c42"
+    const-string/jumbo v5, "\u7b2c\u4e00\u9875\u5e76\u4e14\u662f\u89c6\u9891\u7c7b\u522b\u672c\u5730\u65e0\u7f13\u5b58\uff0c\u7f51\u7edc\u8bf7\u6c42"
 
     invoke-direct {v9, v5}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
@@ -5756,7 +5756,7 @@
 
     new-instance v3, Ljava/lang/StringBuilder;
 
-    const-string v4, "\u672c\u5730\u6709\u7f13\u5b58"
+    const-string/jumbo v4, "\u672c\u5730\u6709\u7f13\u5b58"
 
     invoke-direct {v3, v4}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
@@ -5807,7 +5807,7 @@
 
     const-string v2, "CaiYinSDK"
 
-    const-string v3, "\u7f51\u7edc\u8bf7\u6c42\u66f4\u65b0"
+    const-string/jumbo v3, "\u7f51\u7edc\u8bf7\u6c42\u66f4\u65b0"
 
     invoke-static {v2, v3}, Lcom/cmdm/control/util/PrintLog;->i(Ljava/lang/String;Ljava/lang/String;)V
 
@@ -5857,7 +5857,7 @@
 
     const-string v0, "CaiYinSDK"
 
-    const-string v2, "\u66f4\u65b0\u5b8c\u6210"
+    const-string/jumbo v2, "\u66f4\u65b0\u5b8c\u6210"
 
     invoke-static {v0, v2}, Lcom/cmdm/control/util/PrintLog;->i(Ljava/lang/String;Ljava/lang/String;)V
 
@@ -5896,7 +5896,7 @@
     :catch_2
     move-exception v2
 
-    goto :goto_0
+    goto/16 :goto_0
 .end method
 
 .method public a(Ljava/lang/String;Lcom/cmdm/control/http/c;Ljava/util/HashMap;)Ljava/util/List;
@@ -5950,7 +5950,7 @@
 
     new-instance v3, Ljava/lang/StringBuilder;
 
-    const-string v4, "\u672c\u5730\u6709\u7f13\u5b58"
+    const-string/jumbo v4, "\u672c\u5730\u6709\u7f13\u5b58"
 
     invoke-direct {v3, v4}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
@@ -5958,7 +5958,7 @@
 
     move-result-object v3
 
-    const-string v4, "\u540e\u53f0\u540c\u6b65\u53bb\u66f4\u65b0"
+    const-string/jumbo v4, "\u540e\u53f0\u540c\u6b65\u53bb\u66f4\u65b0"
 
     invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -5984,7 +5984,7 @@
     :cond_0
     const-string v1, "CaiYinSDK"
 
-    const-string v2, "\u672c\u5730\u65e0\u7f13\u5b58\u76f4\u63a5\u540c\u6b65\u53bb\u66f4\u65b0"
+    const-string/jumbo v2, "\u672c\u5730\u65e0\u7f13\u5b58\u76f4\u63a5\u540c\u6b65\u53bb\u66f4\u65b0"
 
     invoke-static {v1, v2}, Lcom/cmdm/control/util/PrintLog;->i(Ljava/lang/String;Ljava/lang/String;)V
 
@@ -6034,7 +6034,7 @@
 
     const-string v0, "CaiYinSDK"
 
-    const-string v2, "\u672c\u5730\u65e0\u7f13\u5b58\u76f4\u63a5\u540c\u6b65\u53bb\u66f4\u65b0\u5e76\u4e14\u66f4\u65b0\u5b8c\u6210"
+    const-string/jumbo v2, "\u672c\u5730\u65e0\u7f13\u5b58\u76f4\u63a5\u540c\u6b65\u53bb\u66f4\u65b0\u5e76\u4e14\u66f4\u65b0\u5b8c\u6210"
 
     invoke-static {v0, v2}, Lcom/cmdm/control/util/PrintLog;->i(Ljava/lang/String;Ljava/lang/String;)V
 
@@ -6075,7 +6075,7 @@
     :catch_2
     move-exception v2
 
-    goto :goto_0
+    goto/16 :goto_0
 .end method
 
 .method public a(Lcom/cmdm/control/http/c;Ljava/lang/String;Ljava/util/HashMap;)V
@@ -7105,7 +7105,7 @@
 
     new-instance v7, Ljava/lang/StringBuilder;
 
-    const-string v10, "\u7b2c\u4e8c\u9875\u52a0\u7f13\u5b58isCache=="
+    const-string/jumbo v10, "\u7b2c\u4e8c\u9875\u52a0\u7f13\u5b58isCache=="
 
     invoke-direct {v7, v10}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
@@ -7326,7 +7326,7 @@
     :try_start_2
     const-string v7, "CaiYinSDK"
 
-    const-string v10, "\u7b2c\u4e00\u9875\u5e76\u4e14\u662f\u6587\u672c\u5f69\u5370\u76d2\u7c7b\u522b"
+    const-string/jumbo v10, "\u7b2c\u4e00\u9875\u5e76\u4e14\u662f\u6587\u672c\u5f69\u5370\u76d2\u7c7b\u522b"
 
     invoke-static {v7, v10}, Lcom/cmdm/control/util/PrintLog;->i(Ljava/lang/String;Ljava/lang/String;)V
 
@@ -7357,7 +7357,7 @@
 
     new-instance v11, Ljava/lang/StringBuilder;
 
-    const-string v12, "\u7b2c\u4e00\u9875\u5e76\u4e14\u662f\u6587\u672c\u5f69\u5370\u76d2\u7c7b\u522b\u672c\u5730\u6709\u7f13\u5b58"
+    const-string/jumbo v12, "\u7b2c\u4e00\u9875\u5e76\u4e14\u662f\u6587\u672c\u5f69\u5370\u76d2\u7c7b\u522b\u672c\u5730\u6709\u7f13\u5b58"
 
     invoke-direct {v11, v12}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
@@ -7365,7 +7365,7 @@
 
     move-result-object v11
 
-    const-string v12, "\u540e\u53f0\u540c\u6b65\u53bb\u66f4\u65b0"
+    const-string/jumbo v12, "\u540e\u53f0\u540c\u6b65\u53bb\u66f4\u65b0"
 
     invoke-virtual {v11, v12}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -7400,7 +7400,7 @@
     :cond_3
     const-string v5, "CaiYinSDK"
 
-    const-string v7, "\u7b2c\u4e00\u9875\u5e76\u4e14\u662f\u6587\u672c\u5f69\u5370\u76d2\u7c7b\u522b\u672c\u5730\u65e0\u7f13\u5b58\uff0c\u7f51\u7edc\u8bf7\u6c42"
+    const-string/jumbo v7, "\u7b2c\u4e00\u9875\u5e76\u4e14\u662f\u6587\u672c\u5f69\u5370\u76d2\u7c7b\u522b\u672c\u5730\u65e0\u7f13\u5b58\uff0c\u7f51\u7edc\u8bf7\u6c42"
 
     invoke-static {v5, v7}, Lcom/cmdm/control/util/PrintLog;->i(Ljava/lang/String;Ljava/lang/String;)V
 
@@ -7454,7 +7454,7 @@
 
     new-instance v9, Ljava/lang/StringBuilder;
 
-    const-string v5, "\u7b2c\u4e00\u9875\u5e76\u4e14\u662f\u6587\u672c\u5f69\u5370\u76d2\u7c7b\u522b\u672c\u5730\u65e0\u7f13\u5b58\uff0c\u7f51\u7edc\u8bf7\u6c42"
+    const-string/jumbo v5, "\u7b2c\u4e00\u9875\u5e76\u4e14\u662f\u6587\u672c\u5f69\u5370\u76d2\u7c7b\u522b\u672c\u5730\u65e0\u7f13\u5b58\uff0c\u7f51\u7edc\u8bf7\u6c42"
 
     invoke-direct {v9, v5}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
@@ -7974,7 +7974,7 @@
     if-eqz v3, :cond_2
 
     :cond_1
-    const-string v3, "\u60a8\u7684DIY\u56fe\u5e93\u5df2\u6ee1\uff0c\u8bf7\u5220\u9664\u540e\u518d\u4e0a\u4f20"
+    const-string/jumbo v3, "\u60a8\u7684DIY\u56fe\u5e93\u5df2\u6ee1\uff0c\u8bf7\u5220\u9664\u540e\u518d\u4e0a\u4f20"
 
     move-object v4, v3
 
@@ -9553,7 +9553,7 @@
 
     if-eqz v5, :cond_2
 
-    const-string v3, "\u60a8\u7684DIY\u56fe\u7247\u5df2\u6ee1\uff0c\u8bf7\u5220\u9664\u540e\u518d\u4e0a\u4f20"
+    const-string/jumbo v3, "\u60a8\u7684DIY\u56fe\u7247\u5df2\u6ee1\uff0c\u8bf7\u5220\u9664\u540e\u518d\u4e0a\u4f20"
 
     move-object v4, v3
 
@@ -9646,7 +9646,7 @@
 
     if-eqz v5, :cond_3
 
-    const-string v3, "\u60a8\u7684DIY\u89c6\u9891\u5df2\u6ee1\uff0c\u8bf7\u5220\u9664\u540e\u518d\u4e0a\u4f20"
+    const-string/jumbo v3, "\u60a8\u7684DIY\u89c6\u9891\u5df2\u6ee1\uff0c\u8bf7\u5220\u9664\u540e\u518d\u4e0a\u4f20"
 
     move-object v4, v3
 
@@ -10274,7 +10274,7 @@
     if-eqz v4, :cond_2
 
     :cond_1
-    const-string v4, "\u60a8\u7684DIY\u89c6\u9891\u5df2\u6ee1\uff0c\u8bf7\u5220\u9664\u540e\u518d\u4e0a\u4f20"
+    const-string/jumbo v4, "\u60a8\u7684DIY\u89c6\u9891\u5df2\u6ee1\uff0c\u8bf7\u5220\u9664\u540e\u518d\u4e0a\u4f20"
 
     move-object v5, v4
 
@@ -15704,7 +15704,7 @@
 
     new-instance v6, Ljava/lang/StringBuilder;
 
-    const-string v7, "\u5f02\u5e38()=="
+    const-string/jumbo v7, "\u5f02\u5e38()=="
 
     invoke-direct {v6, v7}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 

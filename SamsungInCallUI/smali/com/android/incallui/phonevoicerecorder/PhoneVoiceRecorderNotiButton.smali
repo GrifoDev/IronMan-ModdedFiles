@@ -54,7 +54,7 @@
 
     if-eqz p1, :cond_0
 
-    const v0, 0x7f02039c
+    const v0, 0x7f0203ac
 
     invoke-virtual {p0, v0}, Lcom/android/incallui/phonevoicerecorder/PhoneVoiceRecorderNotiButton;->setBackgroundResource(I)V
 

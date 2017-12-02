@@ -251,7 +251,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f0e0058
+    const v1, 0x7f0f0057
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getInteger(I)I
 
@@ -359,7 +359,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f0a0155
+    const v1, 0x7f0a0148
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDimension(I)F
 
@@ -496,7 +496,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f0e0057
+    const v1, 0x7f0f0056
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getInteger(I)I
 
@@ -600,7 +600,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f0e0057
+    const v1, 0x7f0f0056
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getInteger(I)I
 
@@ -677,7 +677,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f0e0056
+    const v1, 0x7f0f0055
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getInteger(I)I
 
@@ -762,7 +762,7 @@
 
     iput v0, v2, Landroid/view/WindowManager$LayoutParams;->gravity:I
 
-    const v0, 0x7f0b0011
+    const v0, 0x7f0b0010
 
     iput v0, v2, Landroid/view/WindowManager$LayoutParams;->windowAnimations:I
 

@@ -7,7 +7,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/android/incallui/fragment/CallCardFragment;->updateTextColor(I)V
+    value = Lcom/android/incallui/fragment/CallCardFragment;->startTextColorEndCallAnimation(IIIII)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -82,5 +82,51 @@
     invoke-virtual {v1, v0}, Landroid/widget/TextView;->setTextColor(I)V
 
     :cond_1
+    iget-object v0, p0, Lcom/android/incallui/fragment/CallCardFragment$4;->this$0:Lcom/android/incallui/fragment/CallCardFragment;
+
+    iget-object v0, v0, Lcom/android/incallui/fragment/CallCardFragment;->mRTTCallText:Landroid/widget/TextView;
+
+    if-eqz v0, :cond_2
+
+    iget-object v0, p0, Lcom/android/incallui/fragment/CallCardFragment$4;->this$0:Lcom/android/incallui/fragment/CallCardFragment;
+
+    iget-object v1, v0, Lcom/android/incallui/fragment/CallCardFragment;->mRTTCallText:Landroid/widget/TextView;
+
+    invoke-virtual {p1}, Landroid/animation/ValueAnimator;->getAnimatedValue()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Ljava/lang/Integer;
+
+    invoke-virtual {v0}, Ljava/lang/Integer;->intValue()I
+
+    move-result v0
+
+    invoke-virtual {v1, v0}, Landroid/widget/TextView;->setTextColor(I)V
+
+    :cond_2
+    iget-object v0, p0, Lcom/android/incallui/fragment/CallCardFragment$4;->this$0:Lcom/android/incallui/fragment/CallCardFragment;
+
+    iget-object v0, v0, Lcom/android/incallui/fragment/CallCardFragment;->mRttCallIcon:Landroid/widget/ImageView;
+
+    if-eqz v0, :cond_3
+
+    iget-object v0, p0, Lcom/android/incallui/fragment/CallCardFragment$4;->this$0:Lcom/android/incallui/fragment/CallCardFragment;
+
+    iget-object v1, v0, Lcom/android/incallui/fragment/CallCardFragment;->mRttCallIcon:Landroid/widget/ImageView;
+
+    invoke-virtual {p1}, Landroid/animation/ValueAnimator;->getAnimatedValue()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Ljava/lang/Integer;
+
+    invoke-virtual {v0}, Ljava/lang/Integer;->intValue()I
+
+    move-result v0
+
+    invoke-virtual {v1, v0}, Landroid/widget/ImageView;->setColorFilter(I)V
+
+    :cond_3
     return-void
 .end method

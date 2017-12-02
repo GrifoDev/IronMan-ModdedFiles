@@ -178,12 +178,13 @@
     <string name="account_phone">Dispositivo</string>
     <string name="acs">Chamada de voz</string>
     <string name="active_calls">Chamada activa</string>
-    <string name="add_reminder">Adic. lembrete</string>
+    <string name="add_reminder">Adicionar lembrete</string>
     <string name="agif_button_close_description">Fechar</string>
     <string name="agif_decline_message">Lamento, mas não posso falar neste momento.</string>
     <string name="agif_decline_sticker_header">Recusar com um autocolante</string>
     <string name="agif_decline_text_header">Recusar com um texto</string>
     <string name="agif_decline_toast">Autocolante enviado para %s.</string>
+    <string name="agif_outgoing_bubble_tip">Envie um autocolante para mostrar como se sente.</string>
     <string name="agif_pickers_add_tab_description">Adicion.</string>
     <string name="agif_pickers_downloaded">Transferidos</string>
     <string name="agif_pickers_item_usage_hints_description">Toque duas vezes para seleccionar</string>
@@ -199,10 +200,12 @@
     <string name="agif_pickers_tab_select_description">Seleccionado</string>
     <string name="agif_pickers_title">Começar com um autocolante</string>
     <string name="agif_pickers_title_top_stickers">Autocolantes populares</string>
+    <string name="agif_random_send_message">Toque aqui para enviar este autocolante.</string>
     <string name="agif_read_permission_description">Permitir que a aplicação Telefone leia conteúdo AGIF.</string>
     <string name="agif_read_permission_label">Ler conteúdo AGIF</string>
     <string name="agif_receive_no_id">Impossível mostrar autocolante. Actualize %s após a chamada.</string>
     <string name="agif_receive_no_id_upsupport_update">Impossível mostrar autocolante. Mais autocolantes disponíveis após a próxima actualização de sistema.</string>
+    <string name="agif_receive_toast">Autocolante de %s.</string>
     <string name="agif_sent_fail_message">Impossível enviar GIF animado. Tente novamente mais tarde.</string>
     <string name="agif_sent_toast">Autocolante enviado.</string>
     <string name="agif_write_permission_description">Permitir que a aplicação Telefone modifique conteúdo AGIF.</string>
@@ -871,6 +874,7 @@ Unidirec."</string>
     <string name="sticker_delete_stickers">Eliminar %d autocolantes?</string>
     <string name="sticker_delete_this_sticker">Eliminar este autocolante?</string>
     <string name="sticker_setting_edit_title">Seleccionar autocolantes</string>
+    <string name="sticker_setting_edit_title_preload">Reordenar autocolantes</string>
     <string name="sticker_setting_main_title">Os meus autocolantes</string>
     <string name="sticker_setting_menu_delete">Eliminar</string>
     <string name="sticker_setting_menu_edit">Editar</string>
@@ -883,6 +887,7 @@ Unidirec."</string>
     <string name="swipe_right_to_answer_call_with_video">Deslize para a direita, para atender a chamada com vídeo.</string>
     <string name="swipe_right_to_answer_call_without_video">Deslize para a direita, para atender a chamada sem vídeo.</string>
     <string name="switch_rejected_by_mt">Pedido para mudança para chamada de vídeo rejeitado.</string>
+    <string name="switch_rejected_by_mt_att">Video unavailable for this call. Call connected as a voice call.</string>
     <string name="switch_to_video_call_failed">Pedido de mudança para chamada de vídeo falhou.</string>
     <string name="switch_to_video_call_failed_tmo">Pedido de mudança para chamada de vídeo recusado.</string>
     <string name="switch_to_voice_call_failed">Pedido de mudança para chamada de voz falhou.</string>

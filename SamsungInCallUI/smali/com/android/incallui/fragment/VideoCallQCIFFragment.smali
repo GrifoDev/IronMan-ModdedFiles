@@ -131,7 +131,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f0a0155
+    const v1, 0x7f0a0148
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDimension(I)F
 
@@ -170,6 +170,37 @@
     invoke-virtual {p0}, Lcom/android/incallui/fragment/VideoCallQCIFFragment;->setBigTemplateMargin()V
 
     return-void
+.end method
+
+.method private updateVideoIndicatorArea()V
+    .locals 1
+
+    invoke-virtual {p0}, Lcom/android/incallui/fragment/VideoCallQCIFFragment;->isInMultiWindowMode()Z
+
+    move-result v0
+
+    if-nez v0, :cond_0
+
+    invoke-virtual {p0}, Lcom/android/incallui/fragment/VideoCallQCIFFragment;->isDesktopMode()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_1
+
+    :cond_0
+    const/4 v0, 0x0
+
+    invoke-virtual {p0, v0}, Lcom/android/incallui/fragment/VideoCallQCIFFragment;->showVideoIndicatorArea(Z)V
+
+    :goto_0
+    return-void
+
+    :cond_1
+    const/4 v0, 0x1
+
+    invoke-virtual {p0, v0}, Lcom/android/incallui/fragment/VideoCallQCIFFragment;->showVideoIndicatorArea(Z)V
+
+    goto :goto_0
 .end method
 
 
@@ -315,7 +346,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f1000ef
+    const v1, 0x7f1002d1
 
     invoke-virtual {v0, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -325,11 +356,11 @@
 
     iput-object v0, p0, Lcom/android/incallui/fragment/VideoCallQCIFFragment;->mIndicatorArea:Landroid/view/ViewGroup;
 
-    invoke-virtual {p0}, Lcom/android/incallui/fragment/VideoCallQCIFFragment;->updateVideoIndicatorArea()V
+    invoke-direct {p0}, Lcom/android/incallui/fragment/VideoCallQCIFFragment;->updateVideoIndicatorArea()V
 
     if-eqz p1, :cond_0
 
-    const v0, 0x7f1003fc
+    const v0, 0x7f100413
 
     invoke-virtual {p1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -337,7 +368,7 @@
 
     iput-object v0, p0, Lcom/android/incallui/fragment/VideoCallQCIFFragment;->mVideoContainerLayout:Landroid/view/View;
 
-    const v0, 0x7f1003fd
+    const v0, 0x7f100414
 
     invoke-virtual {p1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -347,7 +378,7 @@
 
     iput-object v0, p0, Lcom/android/incallui/fragment/VideoCallQCIFFragment;->mDisplayContainer:Landroid/view/ViewGroup;
 
-    const v0, 0x7f100403
+    const v0, 0x7f10041a
 
     invoke-virtual {p1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -357,7 +388,7 @@
 
     iput-object v0, p0, Lcom/android/incallui/fragment/VideoCallQCIFFragment;->mPreviewContainer:Landroid/view/ViewGroup;
 
-    const v0, 0x7f10042c
+    const v0, 0x7f100456
 
     invoke-virtual {p1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -367,7 +398,7 @@
 
     iput-object v0, p0, Lcom/android/incallui/fragment/VideoCallQCIFFragment;->mFarEndContainerTemplate:Landroid/view/ViewGroup;
 
-    const v0, 0x7f10042d
+    const v0, 0x7f100457
 
     invoke-virtual {p1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -377,7 +408,7 @@
 
     iput-object v0, p0, Lcom/android/incallui/fragment/VideoCallQCIFFragment;->mFarEndContainerResizeTemplate:Landroid/view/ViewGroup;
 
-    const v0, 0x7f10042e
+    const v0, 0x7f100458
 
     invoke-virtual {p1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -387,7 +418,7 @@
 
     iput-object v0, p0, Lcom/android/incallui/fragment/VideoCallQCIFFragment;->mNearEndContainerTemplate:Landroid/view/ViewGroup;
 
-    const v0, 0x7f1000f2
+    const v0, 0x7f1000f9
 
     invoke-virtual {p1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -395,7 +426,7 @@
 
     iput-object v0, p0, Lcom/android/incallui/fragment/VideoCallQCIFFragment;->mPreparingAnimation:Landroid/view/View;
 
-    const v0, 0x7f1003ff
+    const v0, 0x7f100416
 
     invoke-virtual {p1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -403,7 +434,7 @@
 
     iput-object v0, p0, Lcom/android/incallui/fragment/VideoCallQCIFFragment;->mFarEndPhotoContainer:Landroid/view/View;
 
-    const v0, 0x7f100400
+    const v0, 0x7f100417
 
     invoke-virtual {p1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -413,7 +444,7 @@
 
     iput-object v0, p0, Lcom/android/incallui/fragment/VideoCallQCIFFragment;->mFarEndPhoto:Landroid/widget/ImageView;
 
-    const v0, 0x7f100401
+    const v0, 0x7f100418
 
     invoke-virtual {p1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -423,7 +454,7 @@
 
     iput-object v0, p0, Lcom/android/incallui/fragment/VideoCallQCIFFragment;->mFarEndDefaultImage:Landroid/widget/ImageView;
 
-    const v0, 0x7f100402
+    const v0, 0x7f100419
 
     invoke-virtual {p1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -431,7 +462,7 @@
 
     iput-object v0, p0, Lcom/android/incallui/fragment/VideoCallQCIFFragment;->mDisplayCaptureAnimatinoView:Landroid/view/View;
 
-    const v0, 0x7f100406
+    const v0, 0x7f10041d
 
     invoke-virtual {p1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -439,7 +470,7 @@
 
     iput-object v0, p0, Lcom/android/incallui/fragment/VideoCallQCIFFragment;->mPreviewCaptureAnimatinoView:Landroid/view/View;
 
-    const v0, 0x7f100405
+    const v0, 0x7f10041c
 
     invoke-virtual {p1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -447,7 +478,7 @@
 
     iput-object v0, p0, Lcom/android/incallui/fragment/VideoCallQCIFFragment;->mPreviewSwitchAnimationView:Landroid/view/View;
 
-    const v0, 0x7f100408
+    const v0, 0x7f10041f
 
     invoke-virtual {p1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -455,7 +486,7 @@
 
     iput-object v0, p0, Lcom/android/incallui/fragment/VideoCallQCIFFragment;->mIncomingHideMeImageContainer:Landroid/view/View;
 
-    const v0, 0x7f100409
+    const v0, 0x7f100420
 
     invoke-virtual {p1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -465,7 +496,7 @@
 
     iput-object v0, p0, Lcom/android/incallui/fragment/VideoCallQCIFFragment;->mIncomingHideMePhoto:Landroid/widget/ImageView;
 
-    const v0, 0x7f10040a
+    const v0, 0x7f100421
 
     invoke-virtual {p1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -514,6 +545,70 @@
     return-void
 .end method
 
+.method public isInMultiWindowMode()Z
+    .locals 3
+
+    const/4 v1, 0x0
+
+    invoke-virtual {p0}, Lcom/android/incallui/fragment/VideoCallQCIFFragment;->isDesktopMode()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    invoke-virtual {p0}, Lcom/android/incallui/fragment/VideoCallQCIFFragment;->getUiAdapter()Lcom/android/incallui/UiAdapter;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lcom/android/incallui/UiAdapter;->isShowMultiWindowMode()Z
+
+    move-result v0
+
+    :goto_0
+    return v0
+
+    :cond_0
+    invoke-virtual {p0}, Lcom/android/incallui/fragment/VideoCallQCIFFragment;->getActivity()Landroid/app/Activity;
+
+    move-result-object v0
+
+    check-cast v0, Lcom/android/incallui/InCallActivity;
+
+    if-eqz v0, :cond_2
+
+    invoke-virtual {v0}, Lcom/android/incallui/InCallActivity;->isInMultiWindowMode()Z
+
+    move-result v2
+
+    if-eqz v2, :cond_1
+
+    invoke-virtual {v0}, Lcom/android/incallui/InCallActivity;->getVideoCallMetrics()Lcom/android/incallui/service/vt/VideoCallMetrics;
+
+    move-result-object v0
+
+    if-eqz v0, :cond_1
+
+    invoke-virtual {v0}, Lcom/android/incallui/service/vt/VideoCallMetrics;->isSnapWindowMode()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_1
+
+    move v0, v1
+
+    goto :goto_0
+
+    :cond_1
+    move v0, v2
+
+    goto :goto_0
+
+    :cond_2
+    move v0, v1
+
+    goto :goto_0
+.end method
+
 .method public onConfigurationChanged(Landroid/content/res/Configuration;)V
     .locals 0
 
@@ -539,7 +634,7 @@
 
     if-eqz v0, :cond_0
 
-    const v0, 0x7f04013c
+    const v0, 0x7f040141
 
     invoke-virtual {p1, v0, p2, v1}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;Z)Landroid/view/View;
 
@@ -549,7 +644,7 @@
     return-object v0
 
     :cond_0
-    const v0, 0x7f04013b
+    const v0, 0x7f040140
 
     invoke-virtual {p1, v0, p2, v1}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;Z)Landroid/view/View;
 
@@ -739,7 +834,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f0a0367
+    const v1, 0x7f0a035d
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDimension(I)F
 
@@ -828,7 +923,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f0a003c
+    const v1, 0x7f0a0039
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDimension(I)F
 
@@ -940,7 +1035,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f0a0367
+    const v1, 0x7f0a035d
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDimension(I)F
 
@@ -1060,7 +1155,7 @@
 .method protected setHideMeContainerPosition()V
     .locals 4
 
-    const v3, 0x7f0a003c
+    const v3, 0x7f0a0039
 
     const/4 v0, 0x0
 
@@ -1135,7 +1230,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f0a009f
+    const v2, 0x7f0a009b
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getDimension(I)F
 
@@ -1149,7 +1244,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f0a009a
+    const v2, 0x7f0a0096
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getDimension(I)F
 
@@ -1184,7 +1279,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f0a04d9
+    const v2, 0x7f0a04e5
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getDimension(I)F
 
@@ -1294,7 +1389,7 @@
 
     move-result-object v3
 
-    const v4, 0x7f0f0209
+    const v4, 0x7f0e021c
 
     invoke-virtual {v3, v4}, Landroid/content/res/Resources;->getColor(I)I
 
@@ -1336,7 +1431,7 @@
 
     move-result-object v2
 
-    const v3, 0x7f0f01fd
+    const v3, 0x7f0e020d
 
     invoke-virtual {v2, v3}, Landroid/content/res/Resources;->getColor(I)I
 
@@ -1374,7 +1469,7 @@
 .method protected setPreviewPosition()V
     .locals 6
 
-    const v4, 0x7f0a04d9
+    const v4, 0x7f0a04e5
 
     const/4 v2, 0x0
 
@@ -1417,7 +1512,7 @@
 
     move-result v1
 
-    if-eqz v1, :cond_5
+    if-eqz v1, :cond_3
 
     invoke-virtual {p0}, Lcom/android/incallui/fragment/VideoCallQCIFFragment;->isDesktopMode()Z
 
@@ -1458,11 +1553,26 @@
     goto :goto_0
 
     :cond_2
-    invoke-static {}, Lcom/android/incallui/util/ScreenControlUtils;->isSplitMode()Z
+    invoke-virtual {p0}, Lcom/android/incallui/fragment/VideoCallQCIFFragment;->getResources()Landroid/content/res/Resources;
+
+    move-result-object v1
+
+    invoke-virtual {v1, v4}, Landroid/content/res/Resources;->getDimension(I)F
 
     move-result v1
 
-    if-nez v1, :cond_3
+    float-to-int v1, v1
+
+    iput v1, v0, Landroid/view/ViewGroup$MarginLayoutParams;->topMargin:I
+
+    goto :goto_1
+
+    :cond_3
+    invoke-static {}, Lcom/android/incallui/util/InCallUtils;->isMobileKeyboardCovered()Z
+
+    move-result v1
+
+    if-eqz v1, :cond_5
 
     invoke-virtual {v3}, Lcom/android/incallui/Call;->getState()I
 
@@ -1470,43 +1580,6 @@
 
     if-ne v1, v5, :cond_4
 
-    :cond_3
-    invoke-virtual {p0}, Lcom/android/incallui/fragment/VideoCallQCIFFragment;->getResources()Landroid/content/res/Resources;
-
-    move-result-object v1
-
-    invoke-virtual {v1, v4}, Landroid/content/res/Resources;->getDimension(I)F
-
-    move-result v1
-
-    float-to-int v1, v1
-
-    iput v1, v0, Landroid/view/ViewGroup$MarginLayoutParams;->topMargin:I
-
-    goto :goto_1
-
-    :cond_4
-    invoke-virtual {p0}, Lcom/android/incallui/fragment/VideoCallQCIFFragment;->getBigTemplateHeight()I
-
-    move-result v1
-
-    iput v1, v0, Landroid/view/ViewGroup$MarginLayoutParams;->topMargin:I
-
-    goto :goto_1
-
-    :cond_5
-    invoke-static {}, Lcom/android/incallui/util/InCallUtils;->isMobileKeyboardCovered()Z
-
-    move-result v1
-
-    if-eqz v1, :cond_7
-
-    invoke-virtual {v3}, Lcom/android/incallui/Call;->getState()I
-
-    move-result v1
-
-    if-ne v1, v5, :cond_6
-
     invoke-virtual {p0}, Lcom/android/incallui/fragment/VideoCallQCIFFragment;->getResources()Landroid/content/res/Resources;
 
     move-result-object v1
@@ -1523,7 +1596,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f0a009f
+    const v2, 0x7f0a009b
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getDimension(I)F
 
@@ -1537,7 +1610,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f0a009a
+    const v2, 0x7f0a0096
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getDimension(I)F
 
@@ -1549,7 +1622,7 @@
 
     goto :goto_2
 
-    :cond_6
+    :cond_4
     invoke-virtual {p0}, Lcom/android/incallui/fragment/VideoCallQCIFFragment;->getBigTemplateWidth()I
 
     move-result v1
@@ -1576,12 +1649,12 @@
 
     goto :goto_2
 
-    :cond_7
+    :cond_5
     invoke-virtual {p0}, Lcom/android/incallui/fragment/VideoCallQCIFFragment;->getResources()Landroid/content/res/Resources;
 
     move-result-object v1
 
-    const v4, 0x7f0a022f
+    const v4, 0x7f0a0214
 
     invoke-virtual {v1, v4}, Landroid/content/res/Resources;->getDimension(I)F
 
@@ -1599,13 +1672,13 @@
 
     move-result v3
 
-    if-ne v3, v5, :cond_9
+    if-ne v3, v5, :cond_7
 
     invoke-virtual {p0}, Lcom/android/incallui/fragment/VideoCallQCIFFragment;->getResources()Landroid/content/res/Resources;
 
     move-result-object v1
 
-    const v3, 0x7f0a003c
+    const v3, 0x7f0a0039
 
     invoke-virtual {v1, v3}, Landroid/content/res/Resources;->getDimension(I)F
 
@@ -1613,7 +1686,7 @@
 
     float-to-int v1, v1
 
-    :cond_8
+    :cond_6
     :goto_3
     invoke-virtual {p0}, Lcom/android/incallui/fragment/VideoCallQCIFFragment;->getBigTemplateMargin()I
 
@@ -1639,12 +1712,12 @@
 
     goto/16 :goto_2
 
-    :cond_9
+    :cond_7
     invoke-virtual {p0}, Lcom/android/incallui/fragment/VideoCallQCIFFragment;->isDesktopMode()Z
 
     move-result v3
 
-    if-eqz v3, :cond_b
+    if-eqz v3, :cond_9
 
     invoke-virtual {p0}, Lcom/android/incallui/fragment/VideoCallQCIFFragment;->getBigTemplateHeight()I
 
@@ -1656,34 +1729,34 @@
 
     add-int/2addr v1, v3
 
-    :cond_a
+    :cond_8
     :goto_4
     iget v3, p0, Lcom/android/incallui/fragment/VideoCallQCIFFragment;->mOldCallState:I
 
-    if-ne v3, v5, :cond_8
+    if-ne v3, v5, :cond_6
 
     iget v3, p0, Lcom/android/incallui/fragment/VideoCallQCIFFragment;->mCurrentCallState:I
 
     const/4 v4, 0x3
 
-    if-ne v3, v4, :cond_8
+    if-ne v3, v4, :cond_6
 
     const/16 v2, 0x1f4
 
     goto :goto_3
 
-    :cond_b
+    :cond_9
     invoke-virtual {p0}, Lcom/android/incallui/fragment/VideoCallQCIFFragment;->hasNavigationBar()Z
 
     move-result v3
 
-    if-eqz v3, :cond_a
+    if-eqz v3, :cond_8
 
     invoke-virtual {p0}, Lcom/android/incallui/fragment/VideoCallQCIFFragment;->getResources()Landroid/content/res/Resources;
 
     move-result-object v1
 
-    const v3, 0x7f0a00af
+    const v3, 0x7f0a00ab
 
     invoke-virtual {v1, v3}, Landroid/content/res/Resources;->getDimension(I)F
 
@@ -1955,7 +2028,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f0a04d9
+    const v2, 0x7f0a04e5
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getDimension(I)F
 
@@ -1972,7 +2045,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f0a022f
+    const v2, 0x7f0a0214
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getDimension(I)F
 
@@ -1992,7 +2065,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f0a00af
+    const v2, 0x7f0a00ab
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getDimension(I)F
 
@@ -2101,7 +2174,7 @@
     :goto_2
     if-nez v0, :cond_1
 
-    invoke-static {}, Lcom/android/incallui/util/ScreenControlUtils;->isSplitMode()Z
+    invoke-virtual {p0}, Lcom/android/incallui/fragment/VideoCallQCIFFragment;->isInMultiWindowMode()Z
 
     move-result v0
 
@@ -2146,15 +2219,7 @@
 
     const/16 v0, 0xfa
 
-    invoke-static {}, Lcom/android/incallui/service/vt/VideoCallManager;->getInstance()Lcom/android/incallui/service/vt/VideoCallManager;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Lcom/android/incallui/service/vt/VideoCallManager;->isScreenResized()Z
-
-    move-result v1
-
-    if-eqz v1, :cond_1
+    if-eqz p1, :cond_1
 
     iget-object v1, p0, Lcom/android/incallui/fragment/VideoCallQCIFFragment;->mDisplayContainer:Landroid/view/ViewGroup;
 
@@ -2316,7 +2381,7 @@
 .method protected updatePreviewContainer(Lcom/android/incallui/Call;)V
     .locals 2
 
-    invoke-static {}, Lcom/android/incallui/util/ScreenControlUtils;->isSplitMode()Z
+    invoke-virtual {p0}, Lcom/android/incallui/fragment/VideoCallQCIFFragment;->isInMultiWindowMode()Z
 
     move-result v0
 
@@ -2361,9 +2426,9 @@
 .method public updatePrimaryCall(Lcom/android/incallui/Call;)V
     .locals 5
 
-    const/4 v4, 0x4
-
     const/4 v2, 0x1
+
+    const/4 v4, 0x4
 
     const/4 v1, 0x0
 
@@ -2411,13 +2476,7 @@
     invoke-virtual {v3, v0}, Landroid/view/View;->setVisibility(I)V
 
     :cond_1
-    invoke-static {}, Lcom/android/incallui/service/vt/VideoCallManager;->getInstance()Lcom/android/incallui/service/vt/VideoCallManager;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Lcom/android/incallui/service/vt/VideoCallManager;->isScreenResized()Z
-
-    move-result v0
+    sget-boolean v0, Lcom/android/incallui/service/vt/VideoCallConfig;->RESIZE_SCREEN:Z
 
     if-eqz v0, :cond_2
 
@@ -2429,7 +2488,29 @@
 
     if-ne v0, v3, :cond_2
 
-    invoke-virtual {p0, v2}, Lcom/android/incallui/fragment/VideoCallQCIFFragment;->showVideoInCallResize(Z)V
+    invoke-virtual {p0}, Lcom/android/incallui/fragment/VideoCallQCIFFragment;->isInMultiWindowMode()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_2
+
+    invoke-static {}, Lcom/android/incallui/service/vt/VideoCallManager;->getInstance()Lcom/android/incallui/service/vt/VideoCallManager;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lcom/android/incallui/service/vt/VideoCallManager;->isScreenResized()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_2
+
+    invoke-static {}, Lcom/android/incallui/service/vt/VideoCallManager;->getInstance()Lcom/android/incallui/service/vt/VideoCallManager;
+
+    move-result-object v0
+
+    invoke-virtual {v0, v1}, Lcom/android/incallui/service/vt/VideoCallManager;->setScreenResized(Z)V
+
+    invoke-virtual {p0, v1}, Lcom/android/incallui/fragment/VideoCallQCIFFragment;->showVideoInCallResize(Z)V
 
     :cond_2
     invoke-virtual {p0}, Lcom/android/incallui/fragment/VideoCallQCIFFragment;->setPreviewPosition()V
@@ -2691,7 +2772,7 @@
     goto :goto_2
 
     :cond_6
-    invoke-static {}, Lcom/android/incallui/util/ScreenControlUtils;->isSplitMode()Z
+    invoke-virtual {p0}, Lcom/android/incallui/fragment/VideoCallQCIFFragment;->isInMultiWindowMode()Z
 
     move-result v0
 

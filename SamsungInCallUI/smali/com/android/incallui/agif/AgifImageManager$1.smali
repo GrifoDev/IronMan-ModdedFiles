@@ -54,7 +54,7 @@
 
     iget-object v0, p0, Lcom/android/incallui/agif/AgifImageManager$1;->this$0:Lcom/android/incallui/agif/AgifImageManager;
 
-    invoke-static {v0}, Lcom/android/incallui/agif/AgifImageManager;->access$100(Lcom/android/incallui/agif/AgifImageManager;)Landroid/os/Handler;
+    invoke-static {v0}, Lcom/android/incallui/agif/AgifImageManager;->access$200(Lcom/android/incallui/agif/AgifImageManager;)Landroid/os/Handler;
 
     move-result-object v0
 

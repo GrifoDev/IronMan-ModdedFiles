@@ -1,5 +1,5 @@
 .class Landroid/support/v7/view/menu/ActionMenuItemView$a;
-.super Landroid/support/v7/widget/af;
+.super Landroid/support/v7/widget/ak;
 
 
 # annotations
@@ -23,7 +23,7 @@
 
     iput-object p1, p0, Landroid/support/v7/view/menu/ActionMenuItemView$a;->a:Landroid/support/v7/view/menu/ActionMenuItemView;
 
-    invoke-direct {p0, p1}, Landroid/support/v7/widget/af;-><init>(Landroid/view/View;)V
+    invoke-direct {p0, p1}, Landroid/support/v7/widget/ak;-><init>(Landroid/view/View;)V
 
     return-void
 .end method

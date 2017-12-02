@@ -646,7 +646,7 @@
 
     if-eqz v0, :cond_3
 
-    const v0, 0x7f090245
+    const v0, 0x7f090248
 
     invoke-static {v0, p1}, Lcom/android/incallui/util/NameNumberUtils;->displayToastLongwithName(ILcom/android/incallui/Call;)V
 
@@ -686,7 +686,7 @@
 
     if-eqz v0, :cond_4
 
-    const v0, 0x7f0903c3
+    const v0, 0x7f0903c8
 
     invoke-static {v0}, Lcom/android/incallui/util/InCallUtils;->displayToastLong(I)V
 
@@ -701,14 +701,14 @@
 
     if-eqz v0, :cond_5
 
-    const v0, 0x7f090382
+    const v0, 0x7f090387
 
     invoke-static {v0}, Lcom/android/incallui/util/InCallUtils;->displayToastLong(I)V
 
     goto :goto_1
 
     :cond_5
-    const v0, 0x7f0903c1
+    const v0, 0x7f0903c6
 
     invoke-static {v0}, Lcom/android/incallui/util/InCallUtils;->displayToastLong(I)V
 
@@ -1422,9 +1422,9 @@
 .method public getVideoTypeIcon(Lcom/android/incallui/Call;)I
     .locals 6
 
-    const v1, 0x7f0203af
+    const v1, 0x7f0203bf
 
-    const v0, 0x7f020085
+    const v0, 0x7f02008e
 
     new-instance v2, Ljava/lang/StringBuilder;
 
@@ -1482,17 +1482,21 @@
 
     invoke-virtual {v2, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-static {}, Lcom/android/incallui/service/vt/VideoCallConfig;->CONCEPT_USA_VZW()Z
+    sget-boolean v4, Lcom/android/incallui/service/vt/VideoCallConfig;->UI_SOFTPHONE:Z
+
+    if-eqz v4, :cond_0
+
+    invoke-static {}, Lcom/android/incallui/util/SystemServiceUtils;->isDeviceOnWiFi()Z
 
     move-result v4
 
     if-eqz v4, :cond_2
 
-    const v1, 0x7f0203b1
+    move v1, v0
 
     :cond_0
     :goto_0
-    if-eqz v3, :cond_5
+    if-eqz v3, :cond_4
 
     invoke-static {}, Lcom/android/incallui/service/vt/VideoCallConfig;->CONCEPT_USA_VZW()Z
 
@@ -1504,15 +1508,15 @@
 
     move-result v0
 
-    if-nez v0, :cond_4
+    if-nez v0, :cond_3
 
     invoke-virtual {p1}, Lcom/android/incallui/Call;->isModifyProgressing()Z
 
     move-result v0
 
-    if-eqz v0, :cond_4
+    if-eqz v0, :cond_3
 
-    const v0, 0x7f0204ae
+    const v0, 0x7f0204be
 
     :cond_1
     :goto_1
@@ -1525,21 +1529,6 @@
     return v0
 
     :cond_2
-    sget-boolean v4, Lcom/android/incallui/service/vt/VideoCallConfig;->UI_SOFTPHONE:Z
-
-    if-eqz v4, :cond_0
-
-    invoke-static {}, Lcom/android/incallui/util/SystemServiceUtils;->isDeviceOnWiFi()Z
-
-    move-result v4
-
-    if-eqz v4, :cond_3
-
-    move v1, v0
-
-    goto :goto_0
-
-    :cond_3
     invoke-static {}, Lcom/android/incallui/util/SystemServiceUtils;->isDeviceOnLTE()Z
 
     move-result v4
@@ -1550,12 +1539,12 @@
 
     goto :goto_0
 
-    :cond_4
-    const v0, 0x7f020087
+    :cond_3
+    const v0, 0x7f020090
 
     goto :goto_1
 
-    :cond_5
+    :cond_4
     move v0, v1
 
     goto :goto_1

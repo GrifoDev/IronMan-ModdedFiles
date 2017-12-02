@@ -137,7 +137,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f0e0050
+    const v2, 0x7f0f004f
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getInteger(I)I
 
@@ -176,7 +176,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f0f0234
+    const v2, 0x7f0e0247
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getColor(I)I
 
@@ -333,7 +333,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f10028f
+    const v1, 0x7f100295
 
     invoke-virtual {v0, v1}, Lcom/android/incallui/service/SecCallPopupContainer;->findViewById(I)Landroid/view/View;
 
@@ -347,7 +347,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f100292
+    const v1, 0x7f100298
 
     invoke-virtual {v0, v1}, Lcom/android/incallui/service/SecCallPopupContainer;->findViewById(I)Landroid/view/View;
 
@@ -361,7 +361,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f10027d
+    const v1, 0x7f100284
 
     invoke-virtual {v0, v1}, Lcom/android/incallui/service/SecCallPopupContainer;->findViewById(I)Landroid/view/View;
 
@@ -375,7 +375,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f100297
+    const v1, 0x7f1002a0
 
     invoke-virtual {v0, v1}, Lcom/android/incallui/service/SecCallPopupContainer;->findViewById(I)Landroid/view/View;
 
@@ -397,7 +397,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f1004a3
+    const v1, 0x7f1004bd
 
     invoke-virtual {v0, v1}, Lcom/android/incallui/service/SecCallPopupContainer;->findViewById(I)Landroid/view/View;
 
@@ -412,7 +412,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f100290
+    const v1, 0x7f100296
 
     invoke-virtual {v0, v1}, Lcom/android/incallui/service/SecCallPopupContainer;->findViewById(I)Landroid/view/View;
 
@@ -434,7 +434,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f1003f3
+    const v1, 0x7f10040a
 
     invoke-virtual {v0, v1}, Lcom/android/incallui/service/SecCallPopupContainer;->findViewById(I)Landroid/view/View;
 
@@ -449,7 +449,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f10027e
+    const v1, 0x7f100285
 
     invoke-virtual {v0, v1}, Lcom/android/incallui/service/SecCallPopupContainer;->findViewById(I)Landroid/view/View;
 
@@ -471,7 +471,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f1003f4
+    const v1, 0x7f10040b
 
     invoke-virtual {v0, v1}, Lcom/android/incallui/service/SecCallPopupContainer;->findViewById(I)Landroid/view/View;
 
@@ -522,7 +522,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f0204ca
+    const v1, 0x7f0204da
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 
@@ -747,7 +747,7 @@
 
     move-result-object v1
 
-    const v5, 0x7f0a0466
+    const v5, 0x7f0a0471
 
     invoke-virtual {v1, v5}, Landroid/content/res/Resources;->getDimension(I)F
 
@@ -839,7 +839,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f090355
+    const v2, 0x7f090358
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -976,7 +976,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f090357
+    const v2, 0x7f09035a
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -1410,7 +1410,7 @@
 
     move-result-object v4
 
-    const v5, 0x7f0a0466
+    const v5, 0x7f0a0471
 
     invoke-virtual {v4, v5}, Landroid/content/res/Resources;->getDimension(I)F
 
@@ -1524,38 +1524,6 @@
 
     invoke-virtual {v0, v9}, Landroid/widget/ImageView;->setVisibility(I)V
 
-    invoke-virtual {p0}, Lcom/android/incallui/service/ui/SmartCallPopupUI;->getParentView()Lcom/android/incallui/service/SecCallPopupContainer;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Lcom/android/incallui/service/SecCallPopupContainer;->getNameLayout()Landroid/widget/LinearLayout;
-
-    move-result-object v3
-
-    invoke-virtual {v3}, Landroid/widget/LinearLayout;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
-
-    move-result-object v0
-
-    check-cast v0, Landroid/widget/RelativeLayout$LayoutParams;
-
-    iget-object v4, p0, Lcom/android/incallui/service/ui/SmartCallPopupUI;->mContext:Landroid/content/Context;
-
-    invoke-virtual {v4}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
-
-    move-result-object v4
-
-    const v5, 0x7f0a0064
-
-    invoke-virtual {v4, v5}, Landroid/content/res/Resources;->getDimension(I)F
-
-    move-result v4
-
-    float-to-int v4, v4
-
-    iput v4, v0, Landroid/widget/RelativeLayout$LayoutParams;->width:I
-
-    invoke-virtual {v3, v0}, Landroid/widget/LinearLayout;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
-
     :cond_8
     iget-object v0, p0, Lcom/android/incallui/service/ui/SmartCallPopupUI;->mContext:Landroid/content/Context;
 
@@ -1609,7 +1577,7 @@
 
     iget-object v3, p0, Lcom/android/incallui/service/ui/SmartCallPopupUI;->mContext:Landroid/content/Context;
 
-    const v4, 0x7f090341
+    const v4, 0x7f090344
 
     invoke-virtual {v3, v4}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -1691,7 +1659,7 @@
 
     move-result-object v0
 
-    const v4, 0x7f0a0466
+    const v4, 0x7f0a0471
 
     invoke-virtual {v0, v4}, Landroid/content/res/Resources;->getDimension(I)F
 
@@ -1711,7 +1679,7 @@
 
     move-result-object v4
 
-    const v5, 0x7f0204a2
+    const v5, 0x7f0204b3
 
     invoke-virtual {v4, v5}, Landroid/content/res/Resources;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 
@@ -1740,7 +1708,7 @@
 
     move-result-object v4
 
-    const v5, 0x7f0204a5
+    const v5, 0x7f0204b6
 
     invoke-virtual {v4, v5}, Landroid/content/res/Resources;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 
@@ -1767,7 +1735,7 @@
 
     move-result-object v4
 
-    const v5, 0x7f0204a4
+    const v5, 0x7f0204b5
 
     invoke-virtual {v4, v5}, Landroid/content/res/Resources;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 
@@ -2026,7 +1994,7 @@
 
     move-result-object v2
 
-    const v3, 0x7f090342
+    const v3, 0x7f090345
 
     invoke-virtual {v2, v3}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -2164,7 +2132,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f0f01b6
+    const v1, 0x7f0e01c4
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getColor(I)I
 
@@ -2176,7 +2144,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f0f01b0
+    const v2, 0x7f0e01bd
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getColor(I)I
 
@@ -2188,7 +2156,7 @@
 
     move-result-object v2
 
-    const v3, 0x7f0f0180
+    const v3, 0x7f0e018d
 
     invoke-virtual {v2, v3}, Landroid/content/res/Resources;->getColor(I)I
 
@@ -2200,7 +2168,7 @@
 
     move-result-object v3
 
-    const v4, 0x7f0f017e
+    const v4, 0x7f0e018b
 
     invoke-virtual {v3, v4}, Landroid/content/res/Resources;->getColor(I)I
 
@@ -2212,7 +2180,7 @@
 
     move-result-object v4
 
-    const v5, 0x7f0f004b
+    const v5, 0x7f0e004e
 
     invoke-virtual {v4, v5}, Landroid/content/res/Resources;->getColor(I)I
 
@@ -2224,7 +2192,7 @@
 
     move-result-object v5
 
-    const v6, 0x7f0f0180
+    const v6, 0x7f0e018d
 
     invoke-virtual {v5, v6}, Landroid/content/res/Resources;->getColor(I)I
 
@@ -2490,7 +2458,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f0e0050
+    const v2, 0x7f0f004f
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getInteger(I)I
 

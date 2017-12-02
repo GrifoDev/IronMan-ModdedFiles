@@ -140,7 +140,7 @@
 
     new-instance v0, Ljava/lang/StringBuilder;
 
-    const-string v2, "\u7ef4\u62a4\u6307\u5b9a\u6587\u4ef6\u5939"
+    const-string/jumbo v2, "\u7ef4\u62a4\u6307\u5b9a\u6587\u4ef6\u5939"
 
     invoke-direct {v0, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
@@ -154,7 +154,7 @@
 
     new-instance v2, Ljava/lang/StringBuilder;
 
-    const-string v3, "\u9700\u8981\u4e0b\u8f7d\u6307\u5b9a\u6587\u4ef6\u7b49\u4e8e\uff1a"
+    const-string/jumbo v3, "\u9700\u8981\u4e0b\u8f7d\u6307\u5b9a\u6587\u4ef6\u7b49\u4e8e\uff1a"
 
     invoke-direct {v2, v3}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
@@ -198,7 +198,7 @@
 
     new-instance v6, Ljava/lang/StringBuilder;
 
-    const-string v7, "\u53ef\u7528\u6307\u5b9a\u6587\u4ef6\u5939"
+    const-string/jumbo v7, "\u53ef\u7528\u6307\u5b9a\u6587\u4ef6\u5939"
 
     invoke-direct {v6, v7}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
@@ -212,7 +212,7 @@
 
     new-instance v7, Ljava/lang/StringBuilder;
 
-    const-string v8, "\u9ed8\u8ba4\u6587\u4ef6\u5927\u5c0f\u7b49\u4e8e\uff1a"
+    const-string/jumbo v8, "\u9ed8\u8ba4\u6587\u4ef6\u5927\u5c0f\u7b49\u4e8e\uff1a"
 
     invoke-direct {v7, v8}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
@@ -220,7 +220,7 @@
 
     move-result-object v7
 
-    const-string v8, "\u53ef\u7528\u63a7\u4ef6\uff1a"
+    const-string/jumbo v8, "\u53ef\u7528\u63a7\u4ef6\uff1a"
 
     invoke-virtual {v7, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -345,7 +345,7 @@
 
     new-instance v5, Ljava/lang/StringBuilder;
 
-    const-string v6, "\u7ef4\u62a4\u6307\u5b9a\u6587\u4ef6\u5939"
+    const-string/jumbo v6, "\u7ef4\u62a4\u6307\u5b9a\u6587\u4ef6\u5939"
 
     invoke-direct {v5, v6}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
@@ -359,7 +359,7 @@
 
     new-instance v6, Ljava/lang/StringBuilder;
 
-    const-string v7, "\u5220\u9664\u4e86\u6307\u5b9a\u6587\u4ef6\uff1a"
+    const-string/jumbo v7, "\u5220\u9664\u4e86\u6307\u5b9a\u6587\u4ef6\uff1a"
 
     invoke-direct {v6, v7}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
@@ -421,7 +421,7 @@
 
     new-instance v0, Ljava/lang/StringBuilder;
 
-    const-string v1, "\u7ef4\u62a4\u6307\u5b9a\u6587\u4ef6\u5939"
+    const-string/jumbo v1, "\u7ef4\u62a4\u6307\u5b9a\u6587\u4ef6\u5939"
 
     invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
@@ -433,7 +433,7 @@
 
     move-result-object v0
 
-    const-string v1, "\u7ef4\u62a4\u4e4b\u540e\u7a7a\u4f59\u7a7a\u95f4\u5927\u5c0f\uff1a"
+    const-string/jumbo v1, "\u7ef4\u62a4\u4e4b\u540e\u7a7a\u4f59\u7a7a\u95f4\u5927\u5c0f\uff1a"
 
     invoke-static {v0, v1}, Lcom/cmdm/control/util/PrintLog;->i(Ljava/lang/String;Ljava/lang/String;)V
 
@@ -541,7 +541,7 @@
 
     new-instance v4, Ljava/lang/StringBuilder;
 
-    const-string v5, "\u7ef4\u62a4\u6307\u5b9a\u6587\u4ef6\u5939"
+    const-string/jumbo v5, "\u7ef4\u62a4\u6307\u5b9a\u6587\u4ef6\u5939"
 
     invoke-direct {v4, v5}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
@@ -555,7 +555,7 @@
 
     new-instance v5, Ljava/lang/StringBuilder;
 
-    const-string v6, "\u5220\u9664\u4e86\u6307\u5b9a\u6587\u4ef6\uff1a"
+    const-string/jumbo v6, "\u5220\u9664\u4e86\u6307\u5b9a\u6587\u4ef6\uff1a"
 
     invoke-direct {v5, v6}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
@@ -617,7 +617,7 @@
 
     new-instance v0, Ljava/lang/StringBuilder;
 
-    const-string v1, "\u7ef4\u62a4\u6307\u5b9a\u6587\u4ef6\u5939"
+    const-string/jumbo v1, "\u7ef4\u62a4\u6307\u5b9a\u6587\u4ef6\u5939"
 
     invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
@@ -629,7 +629,7 @@
 
     move-result-object v0
 
-    const-string v1, "\u7ef4\u62a4\u4e4b\u540e\u7a7a\u4f59\u7a7a\u95f4\u5927\u5c0f\uff1a"
+    const-string/jumbo v1, "\u7ef4\u62a4\u4e4b\u540e\u7a7a\u4f59\u7a7a\u95f4\u5927\u5c0f\uff1a"
 
     invoke-static {v0, v1}, Lcom/cmdm/control/util/PrintLog;->i(Ljava/lang/String;Ljava/lang/String;)V
 

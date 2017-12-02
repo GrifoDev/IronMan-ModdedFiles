@@ -89,7 +89,7 @@
 .method public instantiateItem(Landroid/view/View;I)Ljava/lang/Object;
     .locals 6
 
-    const v5, 0x7f0a0395
+    const v5, 0x7f0a038b
 
     const/4 v4, 0x0
 
@@ -157,11 +157,7 @@
 
     if-eqz v1, :cond_2
 
-    const-string v1, "ims_rcs_bb"
-
-    invoke-static {v1}, Lcom/android/incallui/InCallUIFeature;->hasFeature(Ljava/lang/String;)Z
-
-    move-result v1
+    sget-boolean v1, Lcom/android/incallui/secrcs/RcsShareUI;->isBB:Z
 
     if-nez v1, :cond_2
 
@@ -177,7 +173,7 @@
 
     move-result-object v2
 
-    const v0, 0x7f10047d
+    const v0, 0x7f100492
 
     invoke-virtual {v2, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -295,11 +291,7 @@
 
     if-eqz v1, :cond_4
 
-    const-string v1, "ims_rcs_bb"
-
-    invoke-static {v1}, Lcom/android/incallui/InCallUIFeature;->hasFeature(Ljava/lang/String;)Z
-
-    move-result v1
+    sget-boolean v1, Lcom/android/incallui/secrcs/RcsShareUI;->isBB:Z
 
     if-nez v1, :cond_4
 
@@ -315,7 +307,7 @@
 
     move-result-object v2
 
-    const v0, 0x7f100470
+    const v0, 0x7f100485
 
     invoke-virtual {v2, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 

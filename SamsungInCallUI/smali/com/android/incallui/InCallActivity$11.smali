@@ -7,7 +7,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/android/incallui/InCallActivity;->onResume()V
+    value = Lcom/android/incallui/InCallActivity;->onKeyUp(ILandroid/view/KeyEvent;)Z
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -34,17 +34,11 @@
 
 # virtual methods
 .method public run()V
-    .locals 3
+    .locals 1
 
     iget-object v0, p0, Lcom/android/incallui/InCallActivity$11;->this$0:Lcom/android/incallui/InCallActivity;
 
-    new-instance v1, Landroid/content/Intent;
-
-    const-string v2, "com.samsung.rcs.intent.action.RESUME_SHARING_SERVICE_DIALOG"
-
-    invoke-direct {v1, v2}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
-
-    invoke-virtual {v0, v1}, Lcom/android/incallui/InCallActivity;->sendBroadcast(Landroid/content/Intent;)V
+    invoke-virtual {v0}, Lcom/android/incallui/InCallActivity;->showInCallMenu()V
 
     return-void
 .end method

@@ -108,7 +108,7 @@
 
     if-eqz v0, :cond_0
 
-    const v0, 0x7f02038e
+    const v0, 0x7f02039e
 
     invoke-virtual {p0, v0}, Lcom/android/incallui/widget/SecMoreButton;->setBackgroundResource(I)V
 

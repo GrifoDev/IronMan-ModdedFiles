@@ -2,12 +2,12 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lcom/android/incallui/widget/GradientAnimationView$ScaleAnimationCallback;
+.implements Landroid/content/DialogInterface$OnClickListener;
 
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/android/incallui/InCallActivity;->animateForShrinkBackground(Z)V
+    value = Lcom/android/incallui/InCallActivity;->displayE911RttDialog()V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -19,16 +19,12 @@
 # instance fields
 .field final synthetic this$0:Lcom/android/incallui/InCallActivity;
 
-.field final synthetic val$isIncoming:Z
-
 
 # direct methods
-.method constructor <init>(Lcom/android/incallui/InCallActivity;Z)V
+.method constructor <init>(Lcom/android/incallui/InCallActivity;)V
     .locals 0
 
     iput-object p1, p0, Lcom/android/incallui/InCallActivity$31;->this$0:Lcom/android/incallui/InCallActivity;
-
-    iput-boolean p2, p0, Lcom/android/incallui/InCallActivity$31;->val$isIncoming:Z
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -37,72 +33,14 @@
 
 
 # virtual methods
-.method public onScaleAnimationEnd()V
-    .locals 3
+.method public onClick(Landroid/content/DialogInterface;I)V
+    .locals 1
 
-    const/4 v2, 0x1
+    const-string v0, "dismiss - rtt e911 dialog"
 
-    const-string v0, "InCallActivity"
+    invoke-static {p0, v0}, Lcom/android/incallui/Log;->i(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-string v1, "animateForShrinkBackground: onScaleAnimationEnd"
+    invoke-interface {p1}, Landroid/content/DialogInterface;->dismiss()V
 
-    invoke-static {v0, v1, v2}, Lcom/android/incallui/Log;->i(Ljava/lang/String;Ljava/lang/String;Z)V
-
-    iget-object v0, p0, Lcom/android/incallui/InCallActivity$31;->this$0:Lcom/android/incallui/InCallActivity;
-
-    invoke-static {v0}, Lcom/android/incallui/InCallActivity;->access$1900(Lcom/android/incallui/InCallActivity;)Lcom/android/incallui/widget/GradientAnimationView;
-
-    move-result-object v0
-
-    if-eqz v0, :cond_0
-
-    iget-object v0, p0, Lcom/android/incallui/InCallActivity$31;->this$0:Lcom/android/incallui/InCallActivity;
-
-    invoke-static {v0}, Lcom/android/incallui/InCallActivity;->access$1900(Lcom/android/incallui/InCallActivity;)Lcom/android/incallui/widget/GradientAnimationView;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Lcom/android/incallui/widget/GradientAnimationView;->resetGradientFactor()V
-
-    :cond_0
-    iget-boolean v0, p0, Lcom/android/incallui/InCallActivity$31;->val$isIncoming:Z
-
-    if-eqz v0, :cond_2
-
-    invoke-static {}, Lcom/android/incallui/CallList;->getInstance()Lcom/android/incallui/CallList;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Lcom/android/incallui/CallList;->hasIncomingCall()Z
-
-    move-result v0
-
-    if-nez v0, :cond_1
-
-    invoke-static {}, Lcom/android/incallui/InCallPresenter;->getInstance()Lcom/android/incallui/InCallPresenter;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Lcom/android/incallui/InCallPresenter;->forceUpdateForegroundCall()V
-
-    :goto_0
     return-void
-
-    :cond_1
-    const-string v0, "InCallActivity"
-
-    const-string v1, "animateForShrinkBackground: skip update"
-
-    invoke-static {v0, v1, v2}, Lcom/android/incallui/Log;->i(Ljava/lang/String;Ljava/lang/String;Z)V
-
-    goto :goto_0
-
-    :cond_2
-    invoke-static {}, Lcom/android/incallui/InCallPresenter;->getInstance()Lcom/android/incallui/InCallPresenter;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Lcom/android/incallui/InCallPresenter;->forceUpdateForegroundCall()V
-
-    goto :goto_0
 .end method

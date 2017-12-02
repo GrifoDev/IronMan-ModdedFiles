@@ -20,6 +20,6 @@
             </LinearLayout>
         </LinearLayout>
     </FrameLayout>
-    <ViewStub android:layout_gravity="bottom" android:id="@id/inviteGroupVideoButtonStub" android:layout="@layout/sec_invite_group_video_button_stub" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginBottom="@dimen/sec_video_incall_switch_button_banner_fixed_margin_bottom_qcif" />
-    <ViewStub android:layout_gravity="bottom" android:id="@id/cameraEffectStub" android:layout="@layout/sec_video_camera_effect_viewstub" android:layout_width="fill_parent" android:layout_height="wrap_content" />
+    <ViewStub android:id="@id/inviteGroupVideoButtonStub" android:layout="@layout/sec_invite_group_video_button_stub" android:layout_width="fill_parent" android:layout_height="wrap_content" />
+    <ViewStub android:layout_gravity="top" android:id="@id/cameraEffectStub" android:layout="@layout/sec_video_camera_effect_viewstub" android:layout_width="fill_parent" android:layout_height="wrap_content" />
 </FrameLayout>

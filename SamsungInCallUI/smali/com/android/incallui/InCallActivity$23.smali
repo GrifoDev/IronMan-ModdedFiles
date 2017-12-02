@@ -7,7 +7,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/android/incallui/InCallActivity;->onTtyNotification(Z)V
+    value = Lcom/android/incallui/InCallActivity;->showNotifyWifiToLteDialog()V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -34,15 +34,9 @@
 
 # virtual methods
 .method public onClick(Landroid/content/DialogInterface;I)V
-    .locals 1
+    .locals 0
 
-    iget-object v0, p0, Lcom/android/incallui/InCallActivity$23;->this$0:Lcom/android/incallui/InCallActivity;
-
-    invoke-static {v0}, Lcom/android/incallui/InCallActivity;->access$1800(Lcom/android/incallui/InCallActivity;)Landroid/app/AlertDialog;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Landroid/app/AlertDialog;->dismiss()V
+    invoke-interface {p1}, Landroid/content/DialogInterface;->dismiss()V
 
     return-void
 .end method

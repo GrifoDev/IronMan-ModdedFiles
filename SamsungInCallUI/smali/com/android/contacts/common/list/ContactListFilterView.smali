@@ -104,7 +104,7 @@
 
     iput-object v0, p0, Lcom/android/contacts/common/list/ContactListFilterView;->b:Landroid/widget/ImageView;
 
-    const v0, 0x7f100117
+    const v0, 0x7f10011e
 
     invoke-virtual {p0, v0}, Lcom/android/contacts/common/list/ContactListFilterView;->findViewById(I)Landroid/view/View;
 
@@ -114,7 +114,7 @@
 
     iput-object v0, p0, Lcom/android/contacts/common/list/ContactListFilterView;->c:Landroid/widget/TextView;
 
-    const v0, 0x7f100118
+    const v0, 0x7f10011f
 
     invoke-virtual {p0, v0}, Lcom/android/contacts/common/list/ContactListFilterView;->findViewById(I)Landroid/view/View;
 
@@ -124,7 +124,7 @@
 
     iput-object v0, p0, Lcom/android/contacts/common/list/ContactListFilterView;->d:Landroid/widget/TextView;
 
-    const v0, 0x7f100119
+    const v0, 0x7f100120
 
     invoke-virtual {p0, v0}, Lcom/android/contacts/common/list/ContactListFilterView;->findViewById(I)Landroid/view/View;
 
@@ -149,7 +149,7 @@
 
     iget-object v0, p0, Lcom/android/contacts/common/list/ContactListFilterView;->c:Landroid/widget/TextView;
 
-    const v1, 0x7f090547
+    const v1, 0x7f09054c
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(I)V
 
@@ -180,39 +180,39 @@
     goto :goto_0
 
     :pswitch_1
-    const v0, 0x7f0905e1
+    const v0, 0x7f0905e6
 
     invoke-direct {p0, v2, v0}, Lcom/android/contacts/common/list/ContactListFilterView;->a(II)V
 
     goto :goto_1
 
     :pswitch_2
-    const v0, 0x7f020184
+    const v0, 0x7f02018e
 
-    const v1, 0x7f0905e2
+    const v1, 0x7f0905e7
 
     invoke-direct {p0, v0, v1}, Lcom/android/contacts/common/list/ContactListFilterView;->a(II)V
 
     goto :goto_1
 
     :pswitch_3
-    const v0, 0x7f020183
+    const v0, 0x7f02018d
 
-    const v1, 0x7f0905e3
+    const v1, 0x7f0905e8
 
     invoke-direct {p0, v0, v1}, Lcom/android/contacts/common/list/ContactListFilterView;->a(II)V
 
     goto :goto_1
 
     :pswitch_4
-    const v0, 0x7f0905e4
+    const v0, 0x7f0905e9
 
     invoke-direct {p0, v2, v0}, Lcom/android/contacts/common/list/ContactListFilterView;->a(II)V
 
     goto :goto_1
 
     :pswitch_5
-    const v0, 0x7f0905e6
+    const v0, 0x7f0905eb
 
     invoke-direct {p0, v2, v0}, Lcom/android/contacts/common/list/ContactListFilterView;->a(II)V
 
@@ -279,7 +279,7 @@
     :cond_2
     iget-object v0, p0, Lcom/android/contacts/common/list/ContactListFilterView;->b:Landroid/widget/ImageView;
 
-    const v1, 0x7f0203a4
+    const v1, 0x7f0203b4
 
     invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setImageResource(I)V
 
@@ -381,7 +381,7 @@
 
     if-eqz v0, :cond_3
 
-    const v0, 0x7f0904fe
+    const v0, 0x7f090503
 
     :goto_0
     const/4 v3, 0x1
@@ -403,7 +403,7 @@
     return-object v0
 
     :cond_3
-    const v0, 0x7f0904ff
+    const v0, 0x7f090504
 
     goto :goto_0
 .end method

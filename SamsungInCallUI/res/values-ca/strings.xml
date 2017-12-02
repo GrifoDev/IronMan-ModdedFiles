@@ -178,12 +178,13 @@
     <string name="account_phone">Dispositiu</string>
     <string name="acs">Trucada de veu</string>
     <string name="active_calls">Trucada activa</string>
-    <string name="add_reminder">Afeg record</string>
+    <string name="add_reminder">Afegir recordatori</string>
     <string name="agif_button_close_description">Tancar</string>
     <string name="agif_decline_message">Ho sento, ara no puc parlar.</string>
     <string name="agif_decline_sticker_header">Rebutjar amb un adhesiu</string>
     <string name="agif_decline_text_header">Rebutjar amb un text</string>
     <string name="agif_decline_toast">"L'adhesiu s'ha enviat a %s."</string>
+    <string name="agif_outgoing_bubble_tip">Envia un adhesiu per mostrar com et sents.</string>
     <string name="agif_pickers_add_tab_description">Afegir</string>
     <string name="agif_pickers_downloaded">Descarregat</string>
     <string name="agif_pickers_item_usage_hints_description">Toqui dos cops per seleccionar</string>
@@ -199,10 +200,12 @@
     <string name="agif_pickers_tab_select_description">Seleccionat</string>
     <string name="agif_pickers_title">Iniciar amb un adhesiu</string>
     <string name="agif_pickers_title_top_stickers">Millors adhesius</string>
+    <string name="agif_random_send_message">Toca aquí per enviar aquest adhesiu.</string>
     <string name="agif_read_permission_description">Permet que Telèfon llegeixi el contingut AGIF.</string>
     <string name="agif_read_permission_label">"Llegir el contingut d'AGIF"</string>
     <string name="agif_receive_no_id">"No es pot mostrar l'adhesiu. Actualitza %s després de la trucada."</string>
     <string name="agif_receive_no_id_upsupport_update">No es pot mostrar adhesiu. Hi haurà més adhesius disponibles després propera actualització sistema.</string>
+    <string name="agif_receive_toast">Adhesiu de %s.</string>
     <string name="agif_sent_fail_message">No es pot enviar el GIF animat. Torna-ho a intentar més tard.</string>
     <string name="agif_sent_toast">"S'ha enviat l'adhesiu."</string>
     <string name="agif_write_permission_description">Permet que Telèfon modifiqui el contingut AGIF.</string>
@@ -871,6 +874,7 @@ unidirecc"</string>
     <string name="sticker_delete_stickers">Vols esborrar %d adhesius?</string>
     <string name="sticker_delete_this_sticker">Vols esborrar aquest adhesiu?</string>
     <string name="sticker_setting_edit_title">Seleccionar adhesius</string>
+    <string name="sticker_setting_edit_title_preload">"Canviar l'ordre dels adhesius"</string>
     <string name="sticker_setting_main_title">Els meus adhesius</string>
     <string name="sticker_setting_menu_delete">Esborrar</string>
     <string name="sticker_setting_menu_edit">Editar</string>
@@ -883,6 +887,7 @@ unidirecc"</string>
     <string name="swipe_right_to_answer_call_with_video">"Desplaci's cap a la dreta per respondre la trucada amb vídeo."</string>
     <string name="swipe_right_to_answer_call_without_video">"Desplaci's cap a la dreta per respondre la trucada sense vídeo."</string>
     <string name="switch_rejected_by_mt">Sol·licitud de canvi a videotrucada rebutjada</string>
+    <string name="switch_rejected_by_mt_att">Video unavailable for this call. Call connected as a voice call.</string>
     <string name="switch_to_video_call_failed">Ha fallat la sol·licitud de canvi a videotrucada.</string>
     <string name="switch_to_video_call_failed_tmo">"S'ha rebutjat la sol·licitud de canvi a videotrucada."</string>
     <string name="switch_to_voice_call_failed">Ha fallat la sol·licitud de canvi a trucada de veu.</string>

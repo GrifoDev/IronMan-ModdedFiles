@@ -112,7 +112,7 @@
     <string name="SS_CONTENTS_SHARING_STOPPED_BATTERY_LOW">కంటెంట్లు పంచుకోవడం ఆగినది. బ్యాటరీ తక్కువగా ఉంది.</string>
     <string name="SS_UNABLE_TO_RECEIVE_FILE_IT_EXCEEDS_MAXIMUM_FILE_SIZE">ఫైల్‌ను స్వీకరించడం సాధ్యం కాదు. ఇది గరిష్ఠ ఫైల్ సైజ్ కు మించిపోయింది.</string>
     <string name="TS_ADD_REASON_BUTTON_ABB_VODA">కారణం జోడించు</string>
-    <string name="TS_IMPORTANT_CALL_BODY_VODA">అత్యవసర కాల్</string>
+    <string name="TS_IMPORTANT_CALL_BODY_VODA">ముఖ్యమైన కాల్</string>
     <string name="TS_SHARING_INVITATION_DECLINED_TPOP_VODA">భాగస్వామ్యం చేయడానికి ఆహానం తిరస్కరించబడింది.</string>
     <string name="a_verification_code_will_be_sent">దిగువ నంబర్‌కు ధృవీకరణ కోడ్ పంపబడుతుంది.</string>
     <string name="about_open_source_licenses">ఓపెన్ సోర్స్ లైసెన్స్‌లు</string>
@@ -126,6 +126,7 @@
     <string name="agif_decline_sticker_header">స్టిక్కర్‌తో తిరస్కరించండి</string>
     <string name="agif_decline_text_header">టెక్స్ట్‌తో తిరస్కరించండి</string>
     <string name="agif_decline_toast">%sకు స్టిక్కర్ పంపబడింది.</string>
+    <string name="agif_outgoing_bubble_tip">మీరు ఎలా ఉన్నాయో తెలియజేయడానికి స్టిక్కర్‌ని పంపండి.</string>
     <string name="agif_pickers_add_tab_description">జోడించు</string>
     <string name="agif_pickers_downloaded">డౌన్‌లోడ్ అయింది</string>
     <string name="agif_pickers_item_usage_hints_description">ఎంచుకోవడానికి రెండుసార్లు ట్యాప్ చేయండి</string>
@@ -141,10 +142,12 @@
     <string name="agif_pickers_tab_select_description">ఎంచుకోబడ్డాయి</string>
     <string name="agif_pickers_title">స్టిక్కర్‌తో ప్రారంభించండి</string>
     <string name="agif_pickers_title_top_stickers">అగ్ర స్టిక్కర్‌లు</string>
+    <string name="agif_random_send_message">మీ స్టిక్కర్‌ని పంపడానికి ఇక్కడ నొక్కండి.</string>
     <string name="agif_read_permission_description">AGIF కంటెంట్‌ను చదవడానికి ఫోన్‌ను అనుమతిస్తుంది.</string>
     <string name="agif_read_permission_label">AGIF కంటెంట్‌ను చదవండి</string>
     <string name="agif_receive_no_id">స్టిక్కర్ చూపబడదు. కాల్ తర్వాత %sని అప్‌డేట్ చేయండి.</string>
     <string name="agif_receive_no_id_upsupport_update">స్టిక్కర్ చూపబడదు. సిస్టమ్ అప్‌డేట్ చేయబడిన తర్వాత మరిన్ని స్టిక్కర్‌లు అందుబాటులో ఉంటాయి.</string>
+    <string name="agif_receive_toast">%s నుండి స్టిక్కర్.</string>
     <string name="agif_sent_fail_message">యానిమేట్ చేసిన GIFను పంపలేరు. తర్వాత మళ్లీ ప్రయత్నించండి.</string>
     <string name="agif_sent_toast">స్టిక్కర్ పంపబడింది.</string>
     <string name="agif_write_permission_description">AGIF కంటెంట్‌ను సవరించడానికి ఫోన్‌ను అనుమతిస్తుంది.</string>
@@ -813,6 +816,7 @@ Dianhuabang అనే మూడవ పక్ష సేవా ప్రదాత 
     <string name="sticker_delete_stickers">%d స్టిక్కర్‌లను తొలగించాలా?</string>
     <string name="sticker_delete_this_sticker">ఈ స్టిక్కర్‌ని తొలగించాలా?</string>
     <string name="sticker_setting_edit_title">స్టిక్కర్‌లను ఎంచుకోండి</string>
+    <string name="sticker_setting_edit_title_preload">స్టిక్కర్‌ల క్రమాన్ని మార్చు</string>
     <string name="sticker_setting_main_title">నా స్టిక్కర్‌లు</string>
     <string name="sticker_setting_menu_delete">తొలగించు</string>
     <string name="sticker_setting_menu_edit">సవరించు</string>
@@ -825,6 +829,7 @@ Dianhuabang అనే మూడవ పక్ష సేవా ప్రదాత 
     <string name="swipe_right_to_answer_call_with_video">వీడియోతో కాల్‌కు సమాధానం ఇవ్వడానికి కుడివైపుకి స్వైప్ చేయండి.</string>
     <string name="swipe_right_to_answer_call_without_video">వీడియో లేకుండా కాల్‌కు సమాధానం ఇవ్వడానికి కుడివైపుకి స్వైప్ చేయండి.</string>
     <string name="switch_rejected_by_mt">వీడియో కాల్‌కు మారే అభ్యర్థన తిరస్కరించబడింది.</string>
+    <string name="switch_rejected_by_mt_att">Video unavailable for this call. Call connected as a voice call.</string>
     <string name="switch_to_video_call_failed">వీడియో కాల్‌కు మారేందుకు చేసిన విజ్ఞప్తి విఫలమైంది.</string>
     <string name="switch_to_video_call_failed_tmo">వీడియో కాల్‌కు మారడానికి అభ్యర్థన తిరస్కరించబడింది.</string>
     <string name="switch_to_voice_call_failed">వాయిస్ కాల్‌ను మార్చేందుకు చేసిన విజ్ఞప్తి విఫలమైంది.</string>

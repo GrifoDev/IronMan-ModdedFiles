@@ -478,7 +478,7 @@
 
     if-ne v0, v1, :cond_1
 
-    const v0, 0x7f090192
+    const v0, 0x7f090195
 
     invoke-static {v0}, Lcom/android/incallui/util/InCallUtils;->displayToast(I)V
 
@@ -520,7 +520,7 @@
 
     if-ne v0, v1, :cond_0
 
-    const v0, 0x7f09018f
+    const v0, 0x7f090192
 
     invoke-static {v0}, Lcom/android/incallui/util/InCallUtils;->displayToast(I)V
 
@@ -653,7 +653,7 @@
 
     if-nez v2, :cond_1
 
-    const v0, 0x7f090263
+    const v0, 0x7f090266
 
     invoke-static {v0}, Lcom/android/incallui/util/InCallUtils;->displayToast(I)V
 

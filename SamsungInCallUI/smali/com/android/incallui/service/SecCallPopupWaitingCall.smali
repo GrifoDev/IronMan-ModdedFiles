@@ -145,9 +145,9 @@
 .method public DisplayWaitingCallDialogWhenDoNotHaveHoldingCall()V
     .locals 13
 
-    const v12, 0x7f0903c9
+    const v12, 0x7f0903ce
 
-    const v11, 0x7f0903c8
+    const v11, 0x7f0903cd
 
     const/4 v10, 0x2
 
@@ -402,7 +402,7 @@
 
     move-result-object v4
 
-    const v5, 0x7f0903ca
+    const v5, 0x7f0903cf
 
     invoke-virtual {v4, v5}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -436,7 +436,7 @@
 
     iget-object v0, p0, Lcom/android/incallui/service/SecCallPopupWaitingCall;->mContext:Landroid/content/Context;
 
-    const v4, 0x7f0903cd
+    const v4, 0x7f0903d2
 
     invoke-virtual {v0, v4}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -559,7 +559,7 @@
 
     iget-object v0, p0, Lcom/android/incallui/service/SecCallPopupWaitingCall;->mContext:Landroid/content/Context;
 
-    const v4, 0x7f0903cd
+    const v4, 0x7f0903d2
 
     invoke-virtual {v0, v4}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -587,9 +587,9 @@
 .method public DisplayWaitingCallDialogWhenHaveHoldingCall()V
     .locals 11
 
-    const v10, 0x7f0903cd
+    const v10, 0x7f0903d2
 
-    const v1, 0x7f0903c8
+    const v1, 0x7f0903cd
 
     const/4 v9, 0x2
 
@@ -613,7 +613,7 @@
 
     move-result-object v4
 
-    const v0, 0x7f09016c
+    const v0, 0x7f09016f
 
     if-eqz v2, :cond_0
 
@@ -740,7 +740,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f09016d
+    const v1, 0x7f090170
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -793,7 +793,7 @@
 
     move-result-object v5
 
-    const v6, 0x7f090181
+    const v6, 0x7f090184
 
     invoke-virtual {v5, v6}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -1123,7 +1123,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f0902c5
+    const v1, 0x7f0902c8
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -1422,7 +1422,7 @@
 
     iget-object v2, p0, Lcom/android/incallui/service/SecCallPopupWaitingCall;->mContext:Landroid/content/Context;
 
-    const v3, 0x7f0b0010
+    const v3, 0x7f0b000f
 
     invoke-direct {v1, v2, v3}, Landroid/view/ContextThemeWrapper;-><init>(Landroid/content/Context;I)V
 
@@ -1466,7 +1466,7 @@
 
     iget-object v2, p0, Lcom/android/incallui/service/SecCallPopupWaitingCall;->mContext:Landroid/content/Context;
 
-    const v3, 0x7f0b0010
+    const v3, 0x7f0b000f
 
     invoke-direct {v1, v2, v3}, Landroid/view/ContextThemeWrapper;-><init>(Landroid/content/Context;I)V
 
@@ -1516,7 +1516,7 @@
 
     iget-object v2, p0, Lcom/android/incallui/service/SecCallPopupWaitingCall;->mContext:Landroid/content/Context;
 
-    const v3, 0x7f0b0010
+    const v3, 0x7f0b000f
 
     invoke-direct {v1, v2, v3}, Landroid/view/ContextThemeWrapper;-><init>(Landroid/content/Context;I)V
 

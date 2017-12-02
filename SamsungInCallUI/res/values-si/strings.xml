@@ -131,12 +131,13 @@
     <string name="account_phone">උපාංගය</string>
     <string name="acs">හඬ ඇමතුම</string>
     <string name="active_calls">සක්‍රිය ඇමතුම</string>
-    <string name="add_reminder">සිහික. එ. ක.</string>
+    <string name="add_reminder">සිහිකැඳවීම එක් කරන්න</string>
     <string name="agif_button_close_description">වසන්න</string>
     <string name="agif_decline_message">සමාවන්න, මට දැන් කතා කළ නොහැක.</string>
     <string name="agif_decline_sticker_header">ස්ටිකරයක් සමග ප්‍රතික්ෂේපය</string>
     <string name="agif_decline_text_header">පෙළක් සමග ප්‍රතික්ෂේපය</string>
     <string name="agif_decline_toast">ස්ටිකරය %s වෙත යැවිණි.</string>
+    <string name="agif_outgoing_bubble_tip">ඔබට හැඟෙන ආකාරය පෙන්වීමට ස්ටිකරයක් යවන්න.</string>
     <string name="agif_pickers_add_tab_description">එක් කර.</string>
     <string name="agif_pickers_downloaded">බාගැනිණි</string>
     <string name="agif_pickers_item_usage_hints_description">තේරීමට දෙවරක් තට්ටු කරන්න</string>
@@ -152,10 +153,12 @@
     <string name="agif_pickers_tab_select_description">තෝරා ගැනිණි</string>
     <string name="agif_pickers_title">ස්ටිකරයක් සමග ඇරඹීම</string>
     <string name="agif_pickers_title_top_stickers">ඉහළම ස්ටිකර්</string>
+    <string name="agif_random_send_message">මෙම ස්ටිකරය යැවීමට මෙතැන තට්ටු කරන්න.</string>
     <string name="agif_read_permission_description">දුරකථනයට AGIF අන්තර්ගතය කියවීමට ඉඩ දෙයි.</string>
     <string name="agif_read_permission_label">AGIF අන්තර්ගතය කියවන්න</string>
     <string name="agif_receive_no_id">ස්ටිකරය පෙන්විය නොහැක. ඇමතුමෙන් පසුව %s යාවත්කාල කරන්න.</string>
     <string name="agif_receive_no_id_upsupport_update">ස්ටිකරය පෙන්විය නොහැක. තවත් ස්ටිකර් ඊළඟ පද්ධති යාවත්කාලයෙන් පසුව ලබා ගත හැකි වනු ඇත.</string>
+    <string name="agif_receive_toast">%s වෙතින් ස්ටිකරයක්.</string>
     <string name="agif_sent_fail_message">සජීවීකෘත GIF යැවිය නොහැක. පසුව නැවත උත්සාහ කරන්න.</string>
     <string name="agif_sent_toast">ස්ටිකරය යැවිණි.</string>
     <string name="agif_write_permission_description">දුරකථනයට AGIF අන්තර්ගතය වෙනස් කිරීමට ඉඩ දෙයි.</string>
@@ -171,7 +174,7 @@
     <string name="app_update_dialog_message">%s හි නව අනුවාදයක් ලද හැක.</string>
     <string name="app_update_dialog_negative">පසුව</string>
     <string name="app_update_dialog_positive">යාවත්කාලය</string>
-    <string name="app_update_dialog_title">%s යාවත්කාල කරන්න ද?</string>
+    <string name="app_update_dialog_title">%s යාවත්කාල කරන්නද?</string>
     <string name="application_not_found">යෙදුම හමු නොවිණි.</string>
     <string name="auto_update_database_via_wlan">Auto update database via WLAN</string>
     <string name="banner_calls_have_been_merged">ඇමතුම් ඒකාබද්ධ කර ඇත.</string>
@@ -327,7 +330,7 @@
     <string name="end">අවසානය</string>
     <string name="end_all_calls">සියලු වත්මන් ඇමතුම් අවසන් ක.</string>
     <string name="endncall_select_sub_number">අංකය තෝරන්න</string>
-    <string name="enhanced_messaging">ඉහළ නැංවූ පණිවිඩකරණය</string>
+    <string name="enhanced_messaging">ඉහළ නැංවූ පණිවුඩකරණය</string>
     <string name="enter_code">කේතය ඇතුළු කිරීම</string>
     <string name="enter_number">අංක ඇතුළත් කරන්න.</string>
     <string name="enter_phone_country_number">මෙම දුරකථනයේ රටේ කේතය සහ දුරකථන අංකය ඇතුළු කරන්න.</string>
@@ -824,6 +827,7 @@ IVR ඇමතුම් තිර මෙනුව විසින් Dianhuabang 
     <string name="sticker_delete_stickers">ස්ටිකර %dක් මකන්න ද?</string>
     <string name="sticker_delete_this_sticker">මෙම ස්ටිකරය මකන්න ද?</string>
     <string name="sticker_setting_edit_title">ස්ටිකර් තේරීම</string>
+    <string name="sticker_setting_edit_title_preload">ස්ටිකර් යළි පෙළගැස්වීම</string>
     <string name="sticker_setting_main_title">මගේ ස්ටිකර්</string>
     <string name="sticker_setting_menu_delete">මකන්න</string>
     <string name="sticker_setting_menu_edit">සංස්කරණය කරන්න</string>
@@ -836,6 +840,7 @@ IVR ඇමතුම් තිර මෙනුව විසින් Dianhuabang 
     <string name="swipe_right_to_answer_call_with_video">වීඩියෝව සමග ඇමතුමට පිළිතුරු දීමට දකුණට ස්වයිප් කරන්න.</string>
     <string name="swipe_right_to_answer_call_without_video">වීඩියෝවෙන් තොරව ඇමතුමට පිළිතුරු දීමට දකුණට ස්වයිප් කරන්න.</string>
     <string name="switch_rejected_by_mt">වීඩියෝ ඇමතුමට සම්බන්ධ වීම සඳහා ඉල්ලුම ප්‍රතික්ෂේප කෙරිණි.</string>
+    <string name="switch_rejected_by_mt_att">Video unavailable for this call. Call connected as a voice call.</string>
     <string name="switch_to_video_call_failed">වීඩියෝ ඇමතුමට මාරු වීමට ඉල්ලීම අසාර්ථක විය.</string>
     <string name="switch_to_video_call_failed_tmo">වීඩියෝ ඇමතුම වෙත මාරු වීමට ඉල්ලුම ප්‍රතික්ෂේප කරන ලදී.</string>
     <string name="switch_to_voice_call_failed">හඬ ඇමතුමට මාරු වීම සඳහා ඉල්ලීම අසාර්ථක විය.</string>
@@ -949,5 +954,5 @@ IVR ඇමතුම් තිර මෙනුව විසින් Dianhuabang 
     <string name="yellow_pages">කහ පිටු</string>
     <string name="you_have_entered_incorrect_code">ඔබ වැරදි තහවුරුකරණ කේතයක් ඇතුළත් කර තිබේ. නැවත උත්සාහ කරන්න.</string>
     <string name="you_have_reached_your_daily_sms_limit">ඔබ දෛනික SMS සීමාව වෙත ළඟා වී තිබේ. පැය %d කින් නැවත උත්සාහ කරන්න</string>
-    <string name="you_have_reached_your_daliy_voice_limit">ඔබ ඔබේ දෛනික හඬ තහවුරු කිරීමේ සීමාවට ළඟා වී ඇත. පැය %d කින් නැවත උත්සාහ කරන්න</string>
+    <string name="you_have_reached_your_daliy_voice_limit">ඔබ ඔබේ දෛනික හඬ තහවුරුකිරීමේ සීමාවට ළඟා වී ඇත. පැය %d කින් නැවත උත්සාහ කරන්න</string>
 </resources>

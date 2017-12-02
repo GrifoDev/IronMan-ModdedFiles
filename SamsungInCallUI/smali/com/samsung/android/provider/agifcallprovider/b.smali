@@ -1872,7 +1872,7 @@
 
     const-string v0, "VZW"
 
-    invoke-static {}, Lcom/samsung/android/provider/agifcallprovider/a/a;->f()Ljava/lang/String;
+    invoke-static {}, Lcom/android/incallui/agif/AgifFeature;->getSalesCode()Ljava/lang/String;
 
     move-result-object v3
 

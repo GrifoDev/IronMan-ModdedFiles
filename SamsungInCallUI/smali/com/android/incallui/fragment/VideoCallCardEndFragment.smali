@@ -94,7 +94,7 @@
 
     invoke-super {p0, p1}, Lcom/android/incallui/fragment/VideoCallCardBaseFragment;->initializeCallCardView(Landroid/view/View;)V
 
-    const v0, 0x7f1000ef
+    const v0, 0x7f1002d1
 
     invoke-virtual {p1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -104,7 +104,7 @@
 
     iput-object v0, p0, Lcom/android/incallui/fragment/VideoCallCardEndFragment;->mIndicatorArea:Landroid/view/ViewGroup;
 
-    const v0, 0x7f10024d
+    const v0, 0x7f100254
 
     invoke-virtual {p1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -114,7 +114,7 @@
 
     iput-object v0, p0, Lcom/android/incallui/fragment/VideoCallCardEndFragment;->mPhoneNumber:Landroid/widget/TextView;
 
-    const v0, 0x7f10013b
+    const v0, 0x7f100142
 
     invoke-virtual {p1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -133,7 +133,7 @@
     invoke-virtual {v0, v3}, Landroid/widget/TextView;->setElegantTextHeight(Z)V
 
     :cond_0
-    const v0, 0x7f1003c0
+    const v0, 0x7f1003cd
 
     invoke-virtual {p1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -152,7 +152,7 @@
     invoke-virtual {v0, v3}, Landroid/widget/TextView;->setElegantTextHeight(Z)V
 
     :cond_1
-    const v0, 0x7f100160
+    const v0, 0x7f100167
 
     invoke-virtual {p1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -162,7 +162,7 @@
 
     iput-object v0, p0, Lcom/android/incallui/fragment/VideoCallCardEndFragment;->mNumberLabel:Landroid/widget/TextView;
 
-    const v0, 0x7f100249
+    const v0, 0x7f100250
 
     invoke-virtual {p1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -170,7 +170,7 @@
 
     iput-object v0, p0, Lcom/android/incallui/fragment/VideoCallCardEndFragment;->mPhotoContainer:Landroid/view/View;
 
-    const v0, 0x7f1001bf
+    const v0, 0x7f1001c6
 
     invoke-virtual {p1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -180,7 +180,7 @@
 
     iput-object v0, p0, Lcom/android/incallui/fragment/VideoCallCardEndFragment;->mPhoto:Landroid/widget/ImageView;
 
-    const v0, 0x7f10038f
+    const v0, 0x7f10039b
 
     invoke-virtual {p1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -190,7 +190,7 @@
 
     iput-object v0, p0, Lcom/android/incallui/fragment/VideoCallCardEndFragment;->mCallStateIcon:Landroid/widget/ImageView;
 
-    const v0, 0x7f100246
+    const v0, 0x7f10024d
 
     invoke-virtual {p1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -209,7 +209,7 @@
     invoke-virtual {v0, v3}, Landroid/widget/TextView;->setElegantTextHeight(Z)V
 
     :cond_2
-    const v0, 0x7f10024c
+    const v0, 0x7f100253
 
     invoke-virtual {p1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -217,7 +217,7 @@
 
     iput-object v0, p0, Lcom/android/incallui/fragment/VideoCallCardEndFragment;->mCallNumberAndLabel:Landroid/view/View;
 
-    const v0, 0x7f1002c6
+    const v0, 0x7f1002d2
 
     invoke-virtual {p1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -227,7 +227,7 @@
 
     iput-object v0, p0, Lcom/android/incallui/fragment/VideoCallCardEndFragment;->mElapsedTime:Landroid/widget/TextView;
 
-    const v0, 0x7f10023a
+    const v0, 0x7f100241
 
     invoke-virtual {p1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -235,7 +235,7 @@
 
     iput-object v0, p0, Lcom/android/incallui/fragment/VideoCallCardEndFragment;->mPrimaryCallCardContainer:Landroid/view/View;
 
-    const v0, 0x7f10035c
+    const v0, 0x7f100368
 
     invoke-virtual {p1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -245,7 +245,7 @@
 
     iput-object v0, p0, Lcom/android/incallui/fragment/VideoCallCardEndFragment;->mPrimaryCallInfo:Landroid/view/ViewGroup;
 
-    const v0, 0x7f100245
+    const v0, 0x7f10024c
 
     invoke-virtual {p1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -253,7 +253,7 @@
 
     iput-object v0, p0, Lcom/android/incallui/fragment/VideoCallCardEndFragment;->mCallStateContainer:Landroid/view/View;
 
-    const v0, 0x7f1003c3
+    const v0, 0x7f1003d0
 
     invoke-virtual {p1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -261,7 +261,7 @@
 
     iput-object v0, p0, Lcom/android/incallui/fragment/VideoCallCardEndFragment;->mMoreButtonContainer:Landroid/view/View;
 
-    const v0, 0x7f1002c8
+    const v0, 0x7f1002d4
 
     invoke-virtual {p1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -269,7 +269,7 @@
 
     iput-object v0, p0, Lcom/android/incallui/fragment/VideoCallCardEndFragment;->mCallInfoContainer:Landroid/view/View;
 
-    const v0, 0x7f1003c4
+    const v0, 0x7f1003d1
 
     invoke-virtual {p1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -293,7 +293,7 @@
 
     if-eqz v0, :cond_3
 
-    const v0, 0x7f1003a9
+    const v0, 0x7f1003b6
 
     invoke-virtual {p1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -309,7 +309,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f0f018b
+    const v2, 0x7f0e0198
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getColor(I)I
 
@@ -337,7 +337,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f0a0061
+    const v2, 0x7f0a005e
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getDimension(I)F
 
@@ -354,7 +354,7 @@
 
     invoke-super {p0, p1, p2, p3}, Lcom/android/incallui/fragment/VideoCallCardBaseFragment;->onCreateView(Landroid/view/LayoutInflater;Landroid/view/ViewGroup;Landroid/os/Bundle;)Landroid/view/View;
 
-    const v0, 0x7f040133
+    const v0, 0x7f040138
 
     const/4 v1, 0x0
 
@@ -572,7 +572,7 @@
 
     const/4 v3, 0x3
 
-    const v4, 0x7f100245
+    const v4, 0x7f10024c
 
     invoke-virtual {v2, v3, v4}, Landroid/widget/RelativeLayout$LayoutParams;->addRule(II)V
 
@@ -580,7 +580,7 @@
 
     move-result-object v3
 
-    const v4, 0x7f0a0155
+    const v4, 0x7f0a0148
 
     invoke-virtual {v3, v4}, Landroid/content/res/Resources;->getDimension(I)F
 
@@ -594,7 +594,7 @@
 
     move-result-object v3
 
-    const v4, 0x7f0a0549
+    const v4, 0x7f0a0564
 
     invoke-virtual {v3, v4}, Landroid/content/res/Resources;->getDimension(I)F
 
@@ -703,7 +703,7 @@
 
     const/4 v2, 0x3
 
-    const v3, 0x7f100245
+    const v3, 0x7f10024c
 
     invoke-virtual {v1, v2, v3}, Landroid/widget/RelativeLayout$LayoutParams;->addRule(II)V
 
@@ -712,7 +712,7 @@
 
     move-result-object v2
 
-    const v3, 0x7f0a0540
+    const v3, 0x7f0a0553
 
     invoke-virtual {v2, v3}, Landroid/content/res/Resources;->getDimension(I)F
 
@@ -801,7 +801,7 @@
 
     const/16 v6, 0x11
 
-    const v7, 0x7f1002c6
+    const v7, 0x7f1002d2
 
     invoke-virtual {v2, v6, v7}, Landroid/widget/RelativeLayout$LayoutParams;->addRule(II)V
 
@@ -809,7 +809,7 @@
 
     move-result-object v6
 
-    const v7, 0x7f0a0086
+    const v7, 0x7f0a0082
 
     invoke-virtual {v6, v7}, Landroid/content/res/Resources;->getDimension(I)F
 
@@ -823,7 +823,7 @@
 
     move-result-object v6
 
-    const v7, 0x7f0a053e
+    const v7, 0x7f0a0551
 
     invoke-virtual {v6, v7}, Landroid/content/res/Resources;->getDimension(I)F
 
@@ -837,7 +837,7 @@
 
     move-result-object v6
 
-    const v7, 0x7f0a002e
+    const v7, 0x7f0a002b
 
     invoke-virtual {v6, v7}, Landroid/content/res/Resources;->getDimension(I)F
 

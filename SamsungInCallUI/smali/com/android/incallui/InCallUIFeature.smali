@@ -1379,13 +1379,33 @@
 .end method
 
 .method public static makeFeatureForCanada()V
-    .locals 16
-
-    const/4 v1, 0x0
-
-    const/4 v2, 0x1
+    .locals 15
 
     const-string v0, "RWC"
+
+    sget-object v1, Lcom/android/incallui/InCallUIFeature;->salesCode:Ljava/lang/String;
+
+    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    invoke-static {v0}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+
+    move-result-object v1
+
+    const-string v0, "FMC"
+
+    sget-object v2, Lcom/android/incallui/InCallUIFeature;->salesCode:Ljava/lang/String;
+
+    invoke-virtual {v0, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    invoke-static {v0}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+
+    move-result-object v2
+
+    const-string v0, "RWA"
 
     sget-object v3, Lcom/android/incallui/InCallUIFeature;->salesCode:Ljava/lang/String;
 
@@ -1397,7 +1417,7 @@
 
     move-result-object v3
 
-    const-string v0, "FMC"
+    const-string v0, "BMC"
 
     sget-object v4, Lcom/android/incallui/InCallUIFeature;->salesCode:Ljava/lang/String;
 
@@ -1409,7 +1429,7 @@
 
     move-result-object v4
 
-    const-string v0, "RWA"
+    const-string v0, "VTR"
 
     sget-object v5, Lcom/android/incallui/InCallUIFeature;->salesCode:Ljava/lang/String;
 
@@ -1421,7 +1441,7 @@
 
     move-result-object v5
 
-    const-string v0, "BMC"
+    const-string v0, "BMA"
 
     sget-object v6, Lcom/android/incallui/InCallUIFeature;->salesCode:Ljava/lang/String;
 
@@ -1433,7 +1453,7 @@
 
     move-result-object v6
 
-    const-string v0, "VTR"
+    const-string v0, "VMC"
 
     sget-object v7, Lcom/android/incallui/InCallUIFeature;->salesCode:Ljava/lang/String;
 
@@ -1445,7 +1465,7 @@
 
     move-result-object v7
 
-    const-string v0, "BMA"
+    const-string v0, "BWA"
 
     sget-object v8, Lcom/android/incallui/InCallUIFeature;->salesCode:Ljava/lang/String;
 
@@ -1455,33 +1475,33 @@
 
     invoke-static {v0}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
-    move-result-object v8
+    move-result-object v0
 
-    const-string v0, "VMC"
+    const-string v8, "TLS"
 
     sget-object v9, Lcom/android/incallui/InCallUIFeature;->salesCode:Ljava/lang/String;
 
-    invoke-virtual {v0, v9}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v8, v9}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move-result v0
+    move-result v8
 
-    invoke-static {v0}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+    invoke-static {v8}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
-    move-result-object v9
+    move-result-object v8
 
-    const-string v0, "BWA"
+    const-string v9, "KDO"
 
     sget-object v10, Lcom/android/incallui/InCallUIFeature;->salesCode:Ljava/lang/String;
 
-    invoke-virtual {v0, v10}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v9, v10}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move-result v0
+    move-result v9
 
-    invoke-static {v0}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+    invoke-static {v9}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
-    move-result-object v0
+    move-result-object v9
 
-    const-string v10, "TLS"
+    const-string v10, "ESK"
 
     sget-object v11, Lcom/android/incallui/InCallUIFeature;->salesCode:Ljava/lang/String;
 
@@ -1493,7 +1513,7 @@
 
     move-result-object v10
 
-    const-string v11, "KDO"
+    const-string v11, "GLW"
 
     sget-object v12, Lcom/android/incallui/InCallUIFeature;->salesCode:Ljava/lang/String;
 
@@ -1505,7 +1525,7 @@
 
     move-result-object v11
 
-    const-string v12, "ESK"
+    const-string v12, "MTA"
 
     sget-object v13, Lcom/android/incallui/InCallUIFeature;->salesCode:Ljava/lang/String;
 
@@ -1517,7 +1537,7 @@
 
     move-result-object v12
 
-    const-string v13, "GLW"
+    const-string v13, "XAC"
 
     sget-object v14, Lcom/android/incallui/InCallUIFeature;->salesCode:Ljava/lang/String;
 
@@ -1529,61 +1549,61 @@
 
     move-result-object v13
 
-    const-string v14, "MTA"
-
-    sget-object v15, Lcom/android/incallui/InCallUIFeature;->salesCode:Ljava/lang/String;
-
-    invoke-virtual {v14, v15}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v5}, Ljava/lang/Boolean;->booleanValue()Z
 
     move-result v14
 
-    invoke-static {v14}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
-
-    move-result-object v14
-
-    invoke-virtual {v7}, Ljava/lang/Boolean;->booleanValue()Z
-
-    move-result v15
-
-    if-nez v15, :cond_0
-
-    invoke-virtual {v8}, Ljava/lang/Boolean;->booleanValue()Z
-
-    move-result v15
-
-    if-nez v15, :cond_0
-
-    invoke-virtual {v3}, Ljava/lang/Boolean;->booleanValue()Z
-
-    move-result v15
-
-    if-nez v15, :cond_0
-
-    invoke-virtual {v4}, Ljava/lang/Boolean;->booleanValue()Z
-
-    move-result v15
-
-    if-nez v15, :cond_0
-
-    invoke-virtual {v5}, Ljava/lang/Boolean;->booleanValue()Z
-
-    move-result v15
-
-    if-nez v15, :cond_0
+    if-nez v14, :cond_0
 
     invoke-virtual {v6}, Ljava/lang/Boolean;->booleanValue()Z
 
-    move-result v15
+    move-result v14
 
-    if-nez v15, :cond_0
+    if-nez v14, :cond_0
 
-    invoke-virtual {v9}, Ljava/lang/Boolean;->booleanValue()Z
+    invoke-virtual {v1}, Ljava/lang/Boolean;->booleanValue()Z
 
-    move-result v15
+    move-result v14
 
-    if-nez v15, :cond_0
+    if-nez v14, :cond_0
+
+    invoke-virtual {v2}, Ljava/lang/Boolean;->booleanValue()Z
+
+    move-result v14
+
+    if-nez v14, :cond_0
+
+    invoke-virtual {v3}, Ljava/lang/Boolean;->booleanValue()Z
+
+    move-result v14
+
+    if-nez v14, :cond_0
+
+    invoke-virtual {v4}, Ljava/lang/Boolean;->booleanValue()Z
+
+    move-result v14
+
+    if-nez v14, :cond_0
+
+    invoke-virtual {v7}, Ljava/lang/Boolean;->booleanValue()Z
+
+    move-result v14
+
+    if-nez v14, :cond_0
 
     invoke-virtual {v0}, Ljava/lang/Boolean;->booleanValue()Z
+
+    move-result v0
+
+    if-nez v0, :cond_0
+
+    invoke-virtual {v8}, Ljava/lang/Boolean;->booleanValue()Z
+
+    move-result v0
+
+    if-nez v0, :cond_0
+
+    invoke-virtual {v9}, Ljava/lang/Boolean;->booleanValue()Z
 
     move-result v0
 
@@ -1611,16 +1631,10 @@
 
     move-result v0
 
-    if-nez v0, :cond_0
-
-    invoke-virtual {v14}, Ljava/lang/Boolean;->booleanValue()Z
-
-    move-result v0
-
     if-eqz v0, :cond_1
 
     :cond_0
-    move v0, v2
+    const/4 v0, 0x1
 
     :goto_0
     if-nez v0, :cond_2
@@ -1629,20 +1643,22 @@
     return-void
 
     :cond_1
-    move v0, v1
+    const/4 v0, 0x0
 
     goto :goto_0
 
     :cond_2
     sget-object v0, Lcom/android/incallui/InCallUIFeature;->mFeatureList:Ljava/util/concurrent/ConcurrentHashMap;
 
-    const-string v10, "feature_can"
+    const-string v8, "feature_can"
 
-    invoke-static {v2}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+    const/4 v9, 0x1
 
-    move-result-object v11
+    invoke-static {v9}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
-    invoke-virtual {v0, v10, v11}, Ljava/util/concurrent/ConcurrentHashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    move-result-object v9
+
+    invoke-virtual {v0, v8, v9}, Ljava/util/concurrent/ConcurrentHashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     const-string v0, "enabled"
 
@@ -1650,49 +1666,43 @@
 
     move-result v0
 
-    if-eqz v0, :cond_8
+    if-eqz v0, :cond_7
 
     sget-object v0, Lcom/android/incallui/InCallUIFeature;->mFeatureList:Ljava/util/concurrent/ConcurrentHashMap;
 
-    const-string v10, "canada_volte_ui"
+    const-string v8, "canada_volte_ui"
 
-    sget-object v11, Lcom/android/incallui/InCallUIFeature;->opStyleForVolte:Ljava/lang/String;
+    sget-object v9, Lcom/android/incallui/InCallUIFeature;->opStyleForVolte:Ljava/lang/String;
 
-    const-string v12, "CANADA_"
+    const-string v10, "CANADA_"
 
-    invoke-virtual {v11, v12}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
+    invoke-virtual {v9, v10}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
 
-    move-result v11
+    move-result v9
 
-    invoke-static {v11}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+    invoke-static {v9}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
-    move-result-object v11
+    move-result-object v9
 
-    invoke-virtual {v0, v10, v11}, Ljava/util/concurrent/ConcurrentHashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v0, v8, v9}, Ljava/util/concurrent/ConcurrentHashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    sget-object v10, Lcom/android/incallui/InCallUIFeature;->mFeatureList:Ljava/util/concurrent/ConcurrentHashMap;
+    sget-object v8, Lcom/android/incallui/InCallUIFeature;->mFeatureList:Ljava/util/concurrent/ConcurrentHashMap;
 
-    const-string v11, "video_connected_as_voice"
+    const-string v9, "video_connected_as_voice"
+
+    invoke-virtual {v1}, Ljava/lang/Boolean;->booleanValue()Z
+
+    move-result v0
+
+    if-nez v0, :cond_3
+
+    invoke-virtual {v2}, Ljava/lang/Boolean;->booleanValue()Z
+
+    move-result v0
+
+    if-nez v0, :cond_3
 
     invoke-virtual {v3}, Ljava/lang/Boolean;->booleanValue()Z
-
-    move-result v0
-
-    if-nez v0, :cond_3
-
-    invoke-virtual {v4}, Ljava/lang/Boolean;->booleanValue()Z
-
-    move-result v0
-
-    if-nez v0, :cond_3
-
-    invoke-virtual {v5}, Ljava/lang/Boolean;->booleanValue()Z
-
-    move-result v0
-
-    if-nez v0, :cond_3
-
-    invoke-virtual {v8}, Ljava/lang/Boolean;->booleanValue()Z
 
     move-result v0
 
@@ -1704,7 +1714,7 @@
 
     if-nez v0, :cond_3
 
-    invoke-virtual {v9}, Ljava/lang/Boolean;->booleanValue()Z
+    invoke-virtual {v4}, Ljava/lang/Boolean;->booleanValue()Z
 
     move-result v0
 
@@ -1714,41 +1724,41 @@
 
     move-result v0
 
-    if-eqz v0, :cond_9
+    if-nez v0, :cond_3
+
+    invoke-virtual {v5}, Ljava/lang/Boolean;->booleanValue()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_8
 
     :cond_3
-    move v0, v2
+    const/4 v0, 0x1
 
     :goto_2
     invoke-static {v0}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
     move-result-object v0
 
-    invoke-virtual {v10, v11, v0}, Ljava/util/concurrent/ConcurrentHashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v8, v9, v0}, Ljava/util/concurrent/ConcurrentHashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    sget-object v10, Lcom/android/incallui/InCallUIFeature;->mFeatureList:Ljava/util/concurrent/ConcurrentHashMap;
+    sget-object v8, Lcom/android/incallui/InCallUIFeature;->mFeatureList:Ljava/util/concurrent/ConcurrentHashMap;
 
-    const-string v11, "incoming_call_widget_for_volte"
+    const-string v9, "incoming_call_widget_for_volte"
+
+    invoke-virtual {v1}, Ljava/lang/Boolean;->booleanValue()Z
+
+    move-result v0
+
+    if-nez v0, :cond_4
+
+    invoke-virtual {v2}, Ljava/lang/Boolean;->booleanValue()Z
+
+    move-result v0
+
+    if-nez v0, :cond_4
 
     invoke-virtual {v3}, Ljava/lang/Boolean;->booleanValue()Z
-
-    move-result v0
-
-    if-nez v0, :cond_4
-
-    invoke-virtual {v4}, Ljava/lang/Boolean;->booleanValue()Z
-
-    move-result v0
-
-    if-nez v0, :cond_4
-
-    invoke-virtual {v5}, Ljava/lang/Boolean;->booleanValue()Z
-
-    move-result v0
-
-    if-nez v0, :cond_4
-
-    invoke-virtual {v8}, Ljava/lang/Boolean;->booleanValue()Z
 
     move-result v0
 
@@ -1760,7 +1770,7 @@
 
     if-nez v0, :cond_4
 
-    invoke-virtual {v9}, Ljava/lang/Boolean;->booleanValue()Z
+    invoke-virtual {v4}, Ljava/lang/Boolean;->booleanValue()Z
 
     move-result v0
 
@@ -1770,27 +1780,33 @@
 
     move-result v0
 
-    if-eqz v0, :cond_a
+    if-nez v0, :cond_4
+
+    invoke-virtual {v5}, Ljava/lang/Boolean;->booleanValue()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_9
 
     :cond_4
-    move v0, v2
+    const/4 v0, 0x1
 
     :goto_3
     invoke-static {v0}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
     move-result-object v0
 
-    invoke-virtual {v10, v11, v0}, Ljava/util/concurrent/ConcurrentHashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v8, v9, v0}, Ljava/util/concurrent/ConcurrentHashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    sget-object v3, Lcom/android/incallui/InCallUIFeature;->mFeatureList:Ljava/util/concurrent/ConcurrentHashMap;
+    sget-object v1, Lcom/android/incallui/InCallUIFeature;->mFeatureList:Ljava/util/concurrent/ConcurrentHashMap;
 
-    const-string v4, "canada_bmc_volte_ui"
+    const-string v2, "canada_bmc_volte_ui"
 
     sget-object v0, Lcom/android/incallui/InCallUIFeature;->opStyleForVolte:Ljava/lang/String;
 
-    const-string v5, "BMC_"
+    const-string v3, "BMC_"
 
-    invoke-virtual {v0, v5}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
+    invoke-virtual {v0, v3}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
 
     move-result v0
 
@@ -1798,57 +1814,57 @@
 
     sget-object v0, Lcom/android/incallui/InCallUIFeature;->opStyleForVolte:Ljava/lang/String;
 
-    const-string v5, "VMC"
+    const-string v3, "VMC"
 
-    invoke-virtual {v0, v5}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
+    invoke-virtual {v0, v3}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
 
     move-result v0
 
-    if-eqz v0, :cond_b
+    if-eqz v0, :cond_a
 
     :cond_5
-    move v0, v2
+    const/4 v0, 0x1
 
     :goto_4
     invoke-static {v0}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
     move-result-object v0
 
-    invoke-virtual {v3, v4, v0}, Ljava/util/concurrent/ConcurrentHashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v1, v2, v0}, Ljava/util/concurrent/ConcurrentHashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    sget-object v0, Lcom/android/incallui/InCallUIFeature;->mFeatureList:Ljava/util/concurrent/ConcurrentHashMap;
+    sget-object v1, Lcom/android/incallui/InCallUIFeature;->mFeatureList:Ljava/util/concurrent/ConcurrentHashMap;
 
-    const-string v3, "canada_rwc_fmc_volte_ui"
+    const-string v2, "canada_rwc_fmc_volte_ui"
 
-    sget-object v4, Lcom/android/incallui/InCallUIFeature;->opStyleForVolte:Ljava/lang/String;
+    sget-object v0, Lcom/android/incallui/InCallUIFeature;->opStyleForVolte:Ljava/lang/String;
 
-    const-string v5, "RWC_"
+    const-string v3, "RWC_"
 
-    invoke-virtual {v4, v5}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
+    invoke-virtual {v0, v3}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
 
-    move-result v4
+    move-result v0
 
-    if-nez v4, :cond_6
+    if-nez v0, :cond_6
 
-    sget-object v4, Lcom/android/incallui/InCallUIFeature;->opStyleForVolte:Ljava/lang/String;
+    sget-object v0, Lcom/android/incallui/InCallUIFeature;->opStyleForVolte:Ljava/lang/String;
 
-    const-string v5, "FMC_"
+    const-string v3, "FMC_"
 
-    invoke-virtual {v4, v5}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
+    invoke-virtual {v0, v3}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
 
-    move-result v4
+    move-result v0
 
-    if-eqz v4, :cond_7
+    if-eqz v0, :cond_b
 
     :cond_6
-    move v1, v2
+    const/4 v0, 0x1
 
-    :cond_7
-    invoke-static {v1}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+    :goto_5
+    invoke-static {v0}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
-    move-result-object v1
+    move-result-object v0
 
-    invoke-virtual {v0, v3, v1}, Ljava/util/concurrent/ConcurrentHashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v1, v2, v0}, Ljava/util/concurrent/ConcurrentHashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     sget-object v0, Lcom/android/incallui/InCallUIFeature;->mFeatureList:Ljava/util/concurrent/ConcurrentHashMap;
 
@@ -1866,7 +1882,40 @@
 
     invoke-virtual {v0, v1, v2}, Ljava/util/concurrent/ConcurrentHashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    :cond_8
+    sget-object v1, Lcom/android/incallui/InCallUIFeature;->mFeatureList:Ljava/util/concurrent/ConcurrentHashMap;
+
+    const-string v2, "ims_capability_check_on_call_end"
+
+    invoke-static {}, Lcom/samsung/android/feature/SemCscFeature;->getInstance()Lcom/samsung/android/feature/SemCscFeature;
+
+    move-result-object v0
+
+    const-string v3, "CscFeature_IMS_EnableRCSe"
+
+    invoke-virtual {v0, v3}, Lcom/samsung/android/feature/SemCscFeature;->getBoolean(Ljava/lang/String;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_c
+
+    const-string v0, "ims_rcs_bb"
+
+    invoke-static {v0}, Lcom/android/incallui/InCallUIFeature;->hasFeature(Ljava/lang/String;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_c
+
+    const/4 v0, 0x1
+
+    :goto_6
+    invoke-static {v0}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+
+    move-result-object v0
+
+    invoke-virtual {v1, v2, v0}, Ljava/util/concurrent/ConcurrentHashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    :cond_7
     sget-object v0, Lcom/android/incallui/InCallUIFeature;->mFeatureList:Ljava/util/concurrent/ConcurrentHashMap;
 
     const-string v1, "show_switch_icon_in_button"
@@ -1885,20 +1934,30 @@
 
     goto/16 :goto_1
 
-    :cond_9
-    move v0, v1
+    :cond_8
+    const/4 v0, 0x0
 
     goto/16 :goto_2
 
+    :cond_9
+    const/4 v0, 0x0
+
+    goto/16 :goto_3
+
     :cond_a
-    move v0, v1
-
-    goto :goto_3
-
-    :cond_b
-    move v0, v1
+    const/4 v0, 0x0
 
     goto :goto_4
+
+    :cond_b
+    const/4 v0, 0x0
+
+    goto :goto_5
+
+    :cond_c
+    const/4 v0, 0x0
+
+    goto :goto_6
 .end method
 
 .method public static makeFeatureForChina()V
@@ -2552,6 +2611,22 @@
 
     invoke-virtual {v0, v1, v2}, Ljava/util/concurrent/ConcurrentHashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
+    sget-object v0, Lcom/android/incallui/InCallUIFeature;->mFeatureList:Ljava/util/concurrent/ConcurrentHashMap;
+
+    const-string v1, "agif_induce_service"
+
+    const-string v2, "induce"
+
+    invoke-static {v2}, Lcom/android/incallui/InCallUIFeature;->supportAgifCallEnhancedService(Ljava/lang/String;)Z
+
+    move-result v2
+
+    invoke-static {v2}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+
+    move-result-object v2
+
+    invoke-virtual {v0, v1, v2}, Ljava/util/concurrent/ConcurrentHashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
     goto/16 :goto_2
 
     :cond_a
@@ -2673,21 +2748,34 @@
 
     invoke-virtual {v0, v4, v5}, Ljava/util/concurrent/ConcurrentHashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    sget-object v0, Lcom/android/incallui/InCallUIFeature;->mFeatureList:Ljava/util/concurrent/ConcurrentHashMap;
+    sget-object v4, Lcom/android/incallui/InCallUIFeature;->mFeatureList:Ljava/util/concurrent/ConcurrentHashMap;
 
-    const-string v4, "support_folder_single_lcd"
+    const-string v5, "support_folder_single_lcd"
 
-    const-string v5, "com.sec.feature.folder_type"
+    const-string v0, "com.sec.feature.folder_type"
 
-    invoke-static {v5}, Lcom/android/incallui/InCallUIFeature;->hasSystemFeature(Ljava/lang/String;)Z
+    invoke-static {v0}, Lcom/android/incallui/InCallUIFeature;->hasSystemFeature(Ljava/lang/String;)Z
 
-    move-result v5
+    move-result v0
 
-    invoke-static {v5}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+    if-eqz v0, :cond_f
 
-    move-result-object v5
+    const-string v0, "com.sec.feature.dual_lcd"
 
-    invoke-virtual {v0, v4, v5}, Ljava/util/concurrent/ConcurrentHashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-static {v0}, Lcom/android/incallui/InCallUIFeature;->hasSystemFeature(Ljava/lang/String;)Z
+
+    move-result v0
+
+    if-nez v0, :cond_f
+
+    move v0, v2
+
+    :goto_1
+    invoke-static {v0}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+
+    move-result-object v0
+
+    invoke-virtual {v4, v5, v0}, Ljava/util/concurrent/ConcurrentHashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     sget-object v0, Lcom/android/incallui/InCallUIFeature;->mFeatureList:Ljava/util/concurrent/ConcurrentHashMap;
 
@@ -2713,11 +2801,11 @@
 
     move-result v0
 
-    if-nez v0, :cond_f
+    if-nez v0, :cond_10
 
     move v0, v2
 
-    :goto_1
+    :goto_2
     invoke-static {v0}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
     move-result-object v0
@@ -2776,11 +2864,11 @@
 
     move-result v0
 
-    if-nez v0, :cond_10
+    if-nez v0, :cond_11
 
     move v0, v2
 
-    :goto_2
+    :goto_3
     invoke-static {v0}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
     move-result-object v0
@@ -2817,7 +2905,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_11
+    if-eqz v0, :cond_12
 
     const-string v0, "SLK"
 
@@ -2837,12 +2925,12 @@
 
     move-result v0
 
-    if-eqz v0, :cond_11
+    if-eqz v0, :cond_12
 
     :cond_1
     move v0, v2
 
-    :goto_3
+    :goto_4
     invoke-static {v0}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
     move-result-object v0
@@ -2897,12 +2985,12 @@
 
     move-result v0
 
-    if-eqz v0, :cond_12
+    if-eqz v0, :cond_13
 
     :cond_2
     move v0, v2
 
-    :goto_4
+    :goto_5
     invoke-static {v0}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
     move-result-object v0
@@ -3001,7 +3089,7 @@
 
     move-result v6
 
-    if-eqz v6, :cond_13
+    if-eqz v6, :cond_14
 
     const-string v6, "reserve"
 
@@ -3009,11 +3097,11 @@
 
     move-result v0
 
-    if-eqz v0, :cond_13
+    if-eqz v0, :cond_14
 
     move v0, v2
 
-    :goto_5
+    :goto_6
     invoke-static {v0}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
     move-result-object v0
@@ -3046,7 +3134,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_14
+    if-eqz v0, :cond_15
 
     const-string v0, "voice_call_recording_menu"
 
@@ -3054,11 +3142,11 @@
 
     move-result v0
 
-    if-nez v0, :cond_14
+    if-nez v0, :cond_15
 
     move v0, v2
 
-    :goto_6
+    :goto_7
     invoke-static {v0}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
     move-result-object v0
@@ -3083,12 +3171,12 @@
 
     move-result v0
 
-    if-eqz v0, :cond_15
+    if-eqz v0, :cond_16
 
     :cond_3
     move v0, v2
 
-    :goto_7
+    :goto_8
     invoke-static {v0}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
     move-result-object v0
@@ -3195,11 +3283,11 @@
 
     move-result v0
 
-    if-nez v0, :cond_16
+    if-nez v0, :cond_17
 
     move v0, v2
 
-    :goto_8
+    :goto_9
     invoke-static {v0}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
     move-result-object v0
@@ -3312,38 +3400,15 @@
 
     move-result v0
 
-    if-eqz v0, :cond_17
+    if-eqz v0, :cond_18
 
     :cond_4
     move v0, v2
 
-    :goto_9
+    :goto_a
     sget-object v5, Lcom/android/incallui/InCallUIFeature;->mFeatureList:Ljava/util/concurrent/ConcurrentHashMap;
 
     const-string v6, "show_vowifi_endcall_button"
-
-    if-eqz v4, :cond_18
-
-    const-string v3, "support_vowifi"
-
-    invoke-static {v3}, Lcom/android/incallui/InCallUIFeature;->hasFeature(Ljava/lang/String;)Z
-
-    move-result v3
-
-    if-eqz v3, :cond_18
-
-    move v3, v2
-
-    :goto_a
-    invoke-static {v3}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
-
-    move-result-object v3
-
-    invoke-virtual {v5, v6, v3}, Ljava/util/concurrent/ConcurrentHashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
-    sget-object v5, Lcom/android/incallui/InCallUIFeature;->mFeatureList:Ljava/util/concurrent/ConcurrentHashMap;
-
-    const-string v6, "show_vowifi_incomingcall_button"
 
     if-eqz v4, :cond_19
 
@@ -3364,11 +3429,34 @@
 
     invoke-virtual {v5, v6, v3}, Ljava/util/concurrent/ConcurrentHashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
+    sget-object v5, Lcom/android/incallui/InCallUIFeature;->mFeatureList:Ljava/util/concurrent/ConcurrentHashMap;
+
+    const-string v6, "show_vowifi_incomingcall_button"
+
+    if-eqz v4, :cond_1a
+
+    const-string v3, "support_vowifi"
+
+    invoke-static {v3}, Lcom/android/incallui/InCallUIFeature;->hasFeature(Ljava/lang/String;)Z
+
+    move-result v3
+
+    if-eqz v3, :cond_1a
+
+    move v3, v2
+
+    :goto_c
+    invoke-static {v3}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+
+    move-result-object v3
+
+    invoke-virtual {v5, v6, v3}, Ljava/util/concurrent/ConcurrentHashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
     sget-object v3, Lcom/android/incallui/InCallUIFeature;->mFeatureList:Ljava/util/concurrent/ConcurrentHashMap;
 
     const-string v4, "show_vowifi_voicecall_button"
 
-    if-eqz v0, :cond_1a
+    if-eqz v0, :cond_1b
 
     const-string v0, "support_vowifi"
 
@@ -3376,11 +3464,11 @@
 
     move-result v0
 
-    if-eqz v0, :cond_1a
+    if-eqz v0, :cond_1b
 
     move v0, v2
 
-    :goto_c
+    :goto_d
     invoke-static {v0}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
     move-result-object v0
@@ -3397,7 +3485,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_1b
+    if-eqz v0, :cond_1c
 
     const-string v0, "SEC_FLOATING_FEATURE_LCD_SUPPORT_AMOLED_DISPLAY"
 
@@ -3405,11 +3493,11 @@
 
     move-result v0
 
-    if-eqz v0, :cond_1b
+    if-eqz v0, :cond_1c
 
     move v0, v2
 
-    :goto_d
+    :goto_e
     invoke-static {v0}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
     move-result-object v0
@@ -3428,11 +3516,11 @@
 
     move-result v0
 
-    if-nez v0, :cond_1c
+    if-nez v0, :cond_1d
 
     move v0, v2
 
-    :goto_e
+    :goto_f
     invoke-static {v0}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
     move-result-object v0
@@ -3467,17 +3555,17 @@
 
     move-result v0
 
-    if-nez v0, :cond_1d
+    if-nez v0, :cond_1e
 
     invoke-static {}, Lcom/android/incallui/InCallUIFeature;->isTablet()Z
 
     move-result v0
 
-    if-nez v0, :cond_1d
+    if-nez v0, :cond_1e
 
     move v0, v2
 
-    :goto_f
+    :goto_10
     invoke-static {v0}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
     move-result-object v0
@@ -3534,11 +3622,11 @@
 
     move-result v0
 
-    if-nez v0, :cond_1e
+    if-nez v0, :cond_1f
 
     move v0, v2
 
-    :goto_10
+    :goto_11
     invoke-static {v0}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
     move-result-object v0
@@ -3571,7 +3659,7 @@
 
     move-result-object v0
 
-    if-eqz v0, :cond_1f
+    if-eqz v0, :cond_20
 
     const-string v0, "SEC_FLOATING_FEATURE_COMMON_CONFIG_EDGE"
 
@@ -3585,11 +3673,11 @@
 
     move-result v0
 
-    if-eqz v0, :cond_1f
+    if-eqz v0, :cond_20
 
     move v0, v2
 
-    :goto_11
+    :goto_12
     invoke-static {v0}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
     move-result-object v0
@@ -3604,11 +3692,11 @@
 
     move-result v0
 
-    if-nez v0, :cond_20
+    if-nez v0, :cond_21
 
     move v0, v2
 
-    :goto_12
+    :goto_13
     invoke-static {v0}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
     move-result-object v0
@@ -3717,7 +3805,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_21
+    if-eqz v0, :cond_22
 
     const-string v0, "BMC"
 
@@ -3727,7 +3815,7 @@
 
     move-result v0
 
-    if-nez v0, :cond_21
+    if-nez v0, :cond_22
 
     const-string v0, "VMC"
 
@@ -3747,7 +3835,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_21
+    if-eqz v0, :cond_22
 
     :cond_5
     invoke-static {}, Lcom/samsung/android/feature/SemCscFeature;->getInstance()Lcom/samsung/android/feature/SemCscFeature;
@@ -3766,11 +3854,11 @@
 
     move-result v0
 
-    if-nez v0, :cond_21
+    if-nez v0, :cond_22
 
     move v0, v2
 
-    :goto_13
+    :goto_14
     invoke-static {v0}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
     move-result-object v0
@@ -3837,7 +3925,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_22
+    if-eqz v0, :cond_23
 
     const-string v0, "ims_rcs"
 
@@ -3845,11 +3933,11 @@
 
     move-result v0
 
-    if-eqz v0, :cond_22
+    if-eqz v0, :cond_23
 
     move v0, v2
 
-    :goto_14
+    :goto_15
     invoke-static {v0}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
     move-result-object v0
@@ -3878,12 +3966,12 @@
 
     move-result v0
 
-    if-eqz v0, :cond_23
+    if-eqz v0, :cond_24
 
     :cond_6
     move v0, v2
 
-    :goto_15
+    :goto_16
     invoke-static {v0}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
     move-result-object v0
@@ -3982,12 +4070,12 @@
 
     move-result v0
 
-    if-eqz v0, :cond_24
+    if-eqz v0, :cond_25
 
     :cond_7
     move v0, v2
 
-    :goto_16
+    :goto_17
     sget-object v3, Lcom/android/incallui/InCallUIFeature;->mFeatureList:Ljava/util/concurrent/ConcurrentHashMap;
 
     const-string v4, "singapore_volte_ui"
@@ -4113,11 +4201,11 @@
 
     move-result v0
 
-    if-nez v0, :cond_25
+    if-nez v0, :cond_26
 
     move v0, v2
 
-    :goto_17
+    :goto_18
     invoke-static {v0}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
     move-result-object v0
@@ -4262,12 +4350,12 @@
 
     move-result v0
 
-    if-eqz v0, :cond_26
+    if-eqz v0, :cond_27
 
     :cond_9
     move v0, v2
 
-    :goto_18
+    :goto_19
     invoke-static {v0}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
     move-result-object v0
@@ -4288,11 +4376,11 @@
 
     move-result v0
 
-    if-nez v0, :cond_27
+    if-nez v0, :cond_28
 
     move v0, v2
 
-    :goto_19
+    :goto_1a
     invoke-static {v0}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
     move-result-object v0
@@ -4353,12 +4441,12 @@
 
     move-result v0
 
-    if-eqz v0, :cond_28
+    if-eqz v0, :cond_29
 
     :cond_a
     move v0, v2
 
-    :goto_1a
+    :goto_1b
     invoke-static {v0}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
     move-result-object v0
@@ -4510,12 +4598,12 @@
 
     move-result v0
 
-    if-eqz v0, :cond_29
+    if-eqz v0, :cond_2a
 
     :cond_c
     move v0, v2
 
-    :goto_1b
+    :goto_1c
     invoke-static {v0}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
     move-result-object v0
@@ -4578,7 +4666,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_2a
+    if-eqz v0, :cond_2b
 
     invoke-static {}, Lcom/samsung/android/feature/SemCscFeature;->getInstance()Lcom/samsung/android/feature/SemCscFeature;
 
@@ -4590,11 +4678,11 @@
 
     move-result v0
 
-    if-eqz v0, :cond_2a
+    if-eqz v0, :cond_2b
 
     move v0, v2
 
-    :goto_1c
+    :goto_1d
     invoke-static {v0}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
     move-result-object v0
@@ -4729,7 +4817,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_2b
+    if-eqz v0, :cond_2c
 
     invoke-static {}, Lcom/samsung/android/feature/SemCscFeature;->getInstance()Lcom/samsung/android/feature/SemCscFeature;
 
@@ -4741,11 +4829,11 @@
 
     move-result v0
 
-    if-nez v0, :cond_2b
+    if-nez v0, :cond_2c
 
     move v0, v2
 
-    :goto_1d
+    :goto_1e
     invoke-static {v0}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
     move-result-object v0
@@ -4770,12 +4858,12 @@
 
     move-result v0
 
-    if-eqz v0, :cond_2c
+    if-eqz v0, :cond_2d
 
     :cond_d
     move v0, v2
 
-    :goto_1e
+    :goto_1f
     invoke-static {v0}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
     move-result-object v0
@@ -4808,21 +4896,34 @@
 
     invoke-virtual {v0, v3, v4}, Ljava/util/concurrent/ConcurrentHashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    sget-object v0, Lcom/android/incallui/InCallUIFeature;->mFeatureList:Ljava/util/concurrent/ConcurrentHashMap;
+    sget-object v3, Lcom/android/incallui/InCallUIFeature;->mFeatureList:Ljava/util/concurrent/ConcurrentHashMap;
 
-    const-string v3, "agif_enhanced_service"
+    const-string v4, "agif_enhanced_service"
 
-    const-string v4, "recommend"
+    const-string v0, "recommend"
 
-    invoke-static {v4}, Lcom/android/incallui/InCallUIFeature;->supportAgifCallEnhancedService(Ljava/lang/String;)Z
+    invoke-static {v0}, Lcom/android/incallui/InCallUIFeature;->supportAgifCallEnhancedService(Ljava/lang/String;)Z
 
-    move-result v4
+    move-result v0
 
-    invoke-static {v4}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+    if-eqz v0, :cond_2e
 
-    move-result-object v4
+    const-string v0, "support_sticker_center"
 
-    invoke-virtual {v0, v3, v4}, Ljava/util/concurrent/ConcurrentHashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-static {v0}, Lcom/android/incallui/InCallUIFeature;->hasFeature(Ljava/lang/String;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_2e
+
+    move v0, v2
+
+    :goto_20
+    invoke-static {v0}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+
+    move-result-object v0
+
+    invoke-virtual {v3, v4, v0}, Ljava/util/concurrent/ConcurrentHashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     sget-object v0, Lcom/android/incallui/InCallUIFeature;->mFeatureList:Ljava/util/concurrent/ConcurrentHashMap;
 
@@ -4834,7 +4935,7 @@
 
     move-result-object v4
 
-    if-eqz v4, :cond_2d
+    if-eqz v4, :cond_2f
 
     const-string v4, "SEC_FLOATING_FEATURE_FRAMEWORK_SUPPORT_TSP_STATE_MANAGER"
 
@@ -4848,9 +4949,9 @@
 
     move-result v4
 
-    if-eqz v4, :cond_2d
+    if-eqz v4, :cond_2f
 
-    :goto_1f
+    :goto_21
     invoke-static {v2}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
     move-result-object v1
@@ -4910,7 +5011,7 @@
     goto/16 :goto_9
 
     :cond_18
-    move v3, v1
+    move v0, v1
 
     goto/16 :goto_a
 
@@ -4920,7 +5021,7 @@
     goto/16 :goto_b
 
     :cond_1a
-    move v0, v1
+    move v3, v1
 
     goto/16 :goto_c
 
@@ -5015,9 +5116,19 @@
     goto/16 :goto_1e
 
     :cond_2d
+    move v0, v1
+
+    goto/16 :goto_1f
+
+    :cond_2e
+    move v0, v1
+
+    goto/16 :goto_20
+
+    :cond_2f
     move v2, v1
 
-    goto :goto_1f
+    goto :goto_21
 .end method
 
 .method public static makeFeatureForHKTW()V
@@ -5844,7 +5955,7 @@
 .end method
 
 .method public static makeFeatureForKor()V
-    .locals 10
+    .locals 11
 
     const/4 v2, 0x1
 
@@ -6022,13 +6133,13 @@
     :goto_4
     invoke-static {v0}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
-    move-result-object v0
+    move-result-object v7
 
-    invoke-virtual {v0}, Ljava/lang/Boolean;->booleanValue()Z
+    invoke-virtual {v7}, Ljava/lang/Boolean;->booleanValue()Z
 
-    move-result v7
+    move-result v0
 
-    if-nez v7, :cond_a
+    if-nez v0, :cond_a
 
     :goto_5
     return-void
@@ -6059,57 +6170,57 @@
     goto :goto_4
 
     :cond_a
-    sget-object v7, Lcom/android/incallui/InCallUIFeature;->mFeatureList:Ljava/util/concurrent/ConcurrentHashMap;
+    sget-object v0, Lcom/android/incallui/InCallUIFeature;->mFeatureList:Ljava/util/concurrent/ConcurrentHashMap;
 
     const-string v8, "feature_kor"
 
-    invoke-virtual {v7, v8, v0}, Ljava/util/concurrent/ConcurrentHashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v0, v8, v7}, Ljava/util/concurrent/ConcurrentHashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     sget-object v0, Lcom/android/incallui/InCallUIFeature;->mFeatureList:Ljava/util/concurrent/ConcurrentHashMap;
 
-    const-string v7, "feature_skt"
+    const-string v8, "feature_skt"
 
-    invoke-virtual {v0, v7, v3}, Ljava/util/concurrent/ConcurrentHashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
-    sget-object v0, Lcom/android/incallui/InCallUIFeature;->mFeatureList:Ljava/util/concurrent/ConcurrentHashMap;
-
-    const-string v7, "feature_ktt"
-
-    invoke-virtual {v0, v7, v4}, Ljava/util/concurrent/ConcurrentHashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v0, v8, v3}, Ljava/util/concurrent/ConcurrentHashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     sget-object v0, Lcom/android/incallui/InCallUIFeature;->mFeatureList:Ljava/util/concurrent/ConcurrentHashMap;
 
-    const-string v7, "feature_lgt"
+    const-string v8, "feature_ktt"
 
-    invoke-virtual {v0, v7, v5}, Ljava/util/concurrent/ConcurrentHashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v0, v8, v4}, Ljava/util/concurrent/ConcurrentHashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     sget-object v0, Lcom/android/incallui/InCallUIFeature;->mFeatureList:Ljava/util/concurrent/ConcurrentHashMap;
 
-    const-string v7, "feature_kor_open"
+    const-string v8, "feature_lgt"
 
-    invoke-virtual {v0, v7, v6}, Ljava/util/concurrent/ConcurrentHashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v0, v8, v5}, Ljava/util/concurrent/ConcurrentHashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    sget-object v0, Lcom/android/incallui/InCallUIFeature;->mFeatureList:Ljava/util/concurrent/ConcurrentHashMap;
+
+    const-string v8, "feature_kor_open"
+
+    invoke-virtual {v0, v8, v6}, Ljava/util/concurrent/ConcurrentHashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     sget-object v6, Lcom/android/incallui/InCallUIFeature;->mFeatureList:Ljava/util/concurrent/ConcurrentHashMap;
 
-    const-string v7, "support_tphone"
+    const-string v8, "support_tphone"
 
     const-string v0, "tphone"
 
     invoke-static {}, Lcom/samsung/android/feature/SemCscFeature;->getInstance()Lcom/samsung/android/feature/SemCscFeature;
 
-    move-result-object v8
+    move-result-object v9
 
-    const-string v9, "CscFeature_Setting_ConfigOperatorCallService"
+    const-string v10, "CscFeature_Setting_ConfigOperatorCallService"
 
-    invoke-virtual {v8, v9}, Lcom/samsung/android/feature/SemCscFeature;->getString(Ljava/lang/String;)Ljava/lang/String;
+    invoke-virtual {v9, v10}, Lcom/samsung/android/feature/SemCscFeature;->getString(Ljava/lang/String;)Ljava/lang/String;
 
-    move-result-object v8
+    move-result-object v9
 
-    invoke-virtual {v0, v8}, Ljava/lang/String;->equalsIgnoreCase(Ljava/lang/String;)Z
+    invoke-virtual {v0, v9}, Ljava/lang/String;->equalsIgnoreCase(Ljava/lang/String;)Z
 
     move-result v0
 
-    if-eqz v0, :cond_12
+    if-eqz v0, :cond_13
 
     const-string v0, "com.skt.prod.phone"
 
@@ -6125,7 +6236,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_12
+    if-eqz v0, :cond_13
 
     :cond_b
     move v0, v2
@@ -6135,23 +6246,23 @@
 
     move-result-object v0
 
-    invoke-virtual {v6, v7, v0}, Ljava/util/concurrent/ConcurrentHashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v6, v8, v0}, Ljava/util/concurrent/ConcurrentHashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     sget-object v0, Lcom/android/incallui/InCallUIFeature;->mFeatureList:Ljava/util/concurrent/ConcurrentHashMap;
 
     const-string v6, "support_tgroupon"
 
-    const-string v7, "com.skt.tgroupon"
+    const-string v8, "com.skt.tgroupon"
 
-    invoke-static {v7}, Lcom/android/incallui/InCallUIFeature;->hasPackage(Ljava/lang/String;)Z
+    invoke-static {v8}, Lcom/android/incallui/InCallUIFeature;->hasPackage(Ljava/lang/String;)Z
 
-    move-result v7
+    move-result v8
 
-    invoke-static {v7}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+    invoke-static {v8}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
-    move-result-object v7
+    move-result-object v8
 
-    invoke-virtual {v0, v6, v7}, Ljava/util/concurrent/ConcurrentHashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v0, v6, v8}, Ljava/util/concurrent/ConcurrentHashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     sget-object v0, Lcom/android/incallui/InCallUIFeature;->mFeatureList:Ljava/util/concurrent/ConcurrentHashMap;
 
@@ -6159,19 +6270,19 @@
 
     invoke-static {}, Lcom/samsung/android/feature/SemCscFeature;->getInstance()Lcom/samsung/android/feature/SemCscFeature;
 
-    move-result-object v7
+    move-result-object v8
 
-    const-string v8, "CscFeature_Common_SupportTwoPhoneService"
+    const-string v9, "CscFeature_Common_SupportTwoPhoneService"
 
-    invoke-virtual {v7, v8}, Lcom/samsung/android/feature/SemCscFeature;->getBoolean(Ljava/lang/String;)Z
+    invoke-virtual {v8, v9}, Lcom/samsung/android/feature/SemCscFeature;->getBoolean(Ljava/lang/String;)Z
 
-    move-result v7
+    move-result v8
 
-    invoke-static {v7}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+    invoke-static {v8}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
-    move-result-object v7
+    move-result-object v8
 
-    invoke-virtual {v0, v6, v7}, Ljava/util/concurrent/ConcurrentHashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v0, v6, v8}, Ljava/util/concurrent/ConcurrentHashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     sget-object v0, Lcom/android/incallui/InCallUIFeature;->mFeatureList:Ljava/util/concurrent/ConcurrentHashMap;
 
@@ -6179,19 +6290,19 @@
 
     invoke-static {}, Lcom/samsung/android/feature/SemCscFeature;->getInstance()Lcom/samsung/android/feature/SemCscFeature;
 
-    move-result-object v7
+    move-result-object v8
 
-    const-string v8, "CscFeature_Common_SupportUwaApp"
+    const-string v9, "CscFeature_Common_SupportUwaApp"
 
-    invoke-virtual {v7, v8}, Lcom/samsung/android/feature/SemCscFeature;->getBoolean(Ljava/lang/String;)Z
+    invoke-virtual {v8, v9}, Lcom/samsung/android/feature/SemCscFeature;->getBoolean(Ljava/lang/String;)Z
 
-    move-result v7
+    move-result v8
 
-    invoke-static {v7}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+    invoke-static {v8}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
-    move-result-object v7
+    move-result-object v8
 
-    invoke-virtual {v0, v6, v7}, Ljava/util/concurrent/ConcurrentHashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v0, v6, v8}, Ljava/util/concurrent/ConcurrentHashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     sget-object v0, Lcom/android/incallui/InCallUIFeature;->mFeatureList:Ljava/util/concurrent/ConcurrentHashMap;
 
@@ -6199,29 +6310,29 @@
 
     invoke-static {}, Lcom/samsung/android/feature/SemCscFeature;->getInstance()Lcom/samsung/android/feature/SemCscFeature;
 
-    move-result-object v7
+    move-result-object v8
 
-    const-string v8, "CscFeature_VoiceCall_ConfigOpStyleForFindMobile"
+    const-string v9, "CscFeature_VoiceCall_ConfigOpStyleForFindMobile"
 
-    invoke-virtual {v7, v8}, Lcom/samsung/android/feature/SemCscFeature;->getString(Ljava/lang/String;)Ljava/lang/String;
+    invoke-virtual {v8, v9}, Lcom/samsung/android/feature/SemCscFeature;->getString(Ljava/lang/String;)Ljava/lang/String;
 
-    move-result-object v7
+    move-result-object v8
 
-    const-string v8, "LOST_PHONE_LOCK_LGU"
+    const-string v9, "LOST_PHONE_LOCK_LGU"
 
-    invoke-virtual {v7, v8}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
+    invoke-virtual {v8, v9}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
 
-    move-result v7
+    move-result v8
 
-    invoke-static {v7}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+    invoke-static {v8}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
-    move-result-object v7
+    move-result-object v8
 
-    invoke-virtual {v0, v6, v7}, Ljava/util/concurrent/ConcurrentHashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v0, v6, v8}, Ljava/util/concurrent/ConcurrentHashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     sget-object v6, Lcom/android/incallui/InCallUIFeature;->mFeatureList:Ljava/util/concurrent/ConcurrentHashMap;
 
-    const-string v7, "roaming_auto_dial"
+    const-string v8, "roaming_auto_dial"
 
     invoke-virtual {v3}, Ljava/lang/Boolean;->booleanValue()Z
 
@@ -6239,7 +6350,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_13
+    if-eqz v0, :cond_14
 
     :cond_c
     move v0, v2
@@ -6249,7 +6360,7 @@
 
     move-result-object v0
 
-    invoke-virtual {v6, v7, v0}, Ljava/util/concurrent/ConcurrentHashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v6, v8, v0}, Ljava/util/concurrent/ConcurrentHashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     const-string v0, "enabled"
 
@@ -6263,19 +6374,19 @@
 
     const-string v6, "auto_call_test"
 
-    const-string v7, "eng"
+    const-string v8, "eng"
 
-    sget-object v8, Landroid/os/Build;->TYPE:Ljava/lang/String;
+    sget-object v9, Landroid/os/Build;->TYPE:Ljava/lang/String;
 
-    invoke-virtual {v7, v8}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v8, v9}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move-result v7
+    move-result v8
 
-    invoke-static {v7}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+    invoke-static {v8}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
-    move-result-object v7
+    move-result-object v8
 
-    invoke-virtual {v0, v6, v7}, Ljava/util/concurrent/ConcurrentHashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v0, v6, v8}, Ljava/util/concurrent/ConcurrentHashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     sget-object v0, Lcom/android/incallui/InCallUIFeature;->mFeatureList:Ljava/util/concurrent/ConcurrentHashMap;
 
@@ -6283,27 +6394,27 @@
 
     invoke-static {v2}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
-    move-result-object v7
+    move-result-object v8
 
-    invoke-virtual {v0, v6, v7}, Ljava/util/concurrent/ConcurrentHashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v0, v6, v8}, Ljava/util/concurrent/ConcurrentHashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     sget-object v0, Lcom/android/incallui/InCallUIFeature;->mFeatureList:Ljava/util/concurrent/ConcurrentHashMap;
 
     const-string v6, "common_volte_kor"
 
-    sget-object v7, Lcom/android/incallui/InCallUIFeature;->opStyleForVolte:Ljava/lang/String;
+    sget-object v8, Lcom/android/incallui/InCallUIFeature;->opStyleForVolte:Ljava/lang/String;
 
-    const-string v8, "KOR_"
+    const-string v9, "KOR_"
 
-    invoke-virtual {v7, v8}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
+    invoke-virtual {v8, v9}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
 
-    move-result v7
+    move-result v8
 
-    invoke-static {v7}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+    invoke-static {v8}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
-    move-result-object v7
+    move-result-object v8
 
-    invoke-virtual {v0, v6, v7}, Ljava/util/concurrent/ConcurrentHashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v0, v6, v8}, Ljava/util/concurrent/ConcurrentHashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     :cond_d
     const-string v0, "common_volte_kor"
@@ -6320,9 +6431,9 @@
 
     invoke-static {v2}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
-    move-result-object v7
+    move-result-object v8
 
-    invoke-virtual {v0, v6, v7}, Ljava/util/concurrent/ConcurrentHashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v0, v6, v8}, Ljava/util/concurrent/ConcurrentHashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     sget-object v0, Lcom/android/incallui/InCallUIFeature;->mFeatureList:Ljava/util/concurrent/ConcurrentHashMap;
 
@@ -6330,19 +6441,19 @@
 
     invoke-static {}, Lcom/samsung/android/feature/SemCscFeature;->getInstance()Lcom/samsung/android/feature/SemCscFeature;
 
-    move-result-object v7
+    move-result-object v8
 
-    const-string v8, "CscFeature_IMS_SupportVolteDuringRoaming"
+    const-string v9, "CscFeature_IMS_SupportVolteDuringRoaming"
 
-    invoke-virtual {v7, v8}, Lcom/samsung/android/feature/SemCscFeature;->getBoolean(Ljava/lang/String;)Z
+    invoke-virtual {v8, v9}, Lcom/samsung/android/feature/SemCscFeature;->getBoolean(Ljava/lang/String;)Z
 
-    move-result v7
+    move-result v8
 
-    invoke-static {v7}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+    invoke-static {v8}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
-    move-result-object v7
+    move-result-object v8
 
-    invoke-virtual {v0, v6, v7}, Ljava/util/concurrent/ConcurrentHashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v0, v6, v8}, Ljava/util/concurrent/ConcurrentHashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     sget-object v0, Lcom/android/incallui/InCallUIFeature;->mFeatureList:Ljava/util/concurrent/ConcurrentHashMap;
 
@@ -6350,13 +6461,13 @@
 
     invoke-static {v2}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
-    move-result-object v7
+    move-result-object v8
 
-    invoke-virtual {v0, v6, v7}, Ljava/util/concurrent/ConcurrentHashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v0, v6, v8}, Ljava/util/concurrent/ConcurrentHashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     sget-object v6, Lcom/android/incallui/InCallUIFeature;->mFeatureList:Ljava/util/concurrent/ConcurrentHashMap;
 
-    const-string v7, "show_switch_icon_in_button"
+    const-string v8, "show_switch_icon_in_button"
 
     const-string v0, "show_switch_icon_on_callcard"
 
@@ -6364,7 +6475,7 @@
 
     move-result v0
 
-    if-nez v0, :cond_14
+    if-nez v0, :cond_15
 
     move v0, v2
 
@@ -6373,7 +6484,7 @@
 
     move-result-object v0
 
-    invoke-virtual {v6, v7, v0}, Ljava/util/concurrent/ConcurrentHashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v6, v8, v0}, Ljava/util/concurrent/ConcurrentHashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     :cond_e
     sget-object v0, Lcom/android/incallui/InCallUIFeature;->mFeatureList:Ljava/util/concurrent/ConcurrentHashMap;
@@ -6382,19 +6493,19 @@
 
     invoke-static {}, Lcom/samsung/android/feature/SemCscFeature;->getInstance()Lcom/samsung/android/feature/SemCscFeature;
 
-    move-result-object v7
+    move-result-object v8
 
-    const-string v8, "CscFeature_VoiceCall_SupportImsPsBarring"
+    const-string v9, "CscFeature_VoiceCall_SupportImsPsBarring"
 
-    invoke-virtual {v7, v8}, Lcom/samsung/android/feature/SemCscFeature;->getBoolean(Ljava/lang/String;)Z
+    invoke-virtual {v8, v9}, Lcom/samsung/android/feature/SemCscFeature;->getBoolean(Ljava/lang/String;)Z
 
-    move-result v7
+    move-result v8
 
-    invoke-static {v7}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+    invoke-static {v8}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
-    move-result-object v7
+    move-result-object v8
 
-    invoke-virtual {v0, v6, v7}, Ljava/util/concurrent/ConcurrentHashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v0, v6, v8}, Ljava/util/concurrent/ConcurrentHashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     sget-object v0, Lcom/android/incallui/InCallUIFeature;->mFeatureList:Ljava/util/concurrent/ConcurrentHashMap;
 
@@ -6402,19 +6513,19 @@
 
     invoke-static {}, Lcom/samsung/android/feature/SemCscFeature;->getInstance()Lcom/samsung/android/feature/SemCscFeature;
 
-    move-result-object v7
+    move-result-object v8
 
-    const-string v8, "CscFeature_VoiceCall_EnableGroupCallMenu"
+    const-string v9, "CscFeature_VoiceCall_EnableGroupCallMenu"
 
-    invoke-virtual {v7, v8}, Lcom/samsung/android/feature/SemCscFeature;->getBoolean(Ljava/lang/String;)Z
+    invoke-virtual {v8, v9}, Lcom/samsung/android/feature/SemCscFeature;->getBoolean(Ljava/lang/String;)Z
 
-    move-result v7
+    move-result v8
 
-    invoke-static {v7}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+    invoke-static {v8}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
-    move-result-object v7
+    move-result-object v8
 
-    invoke-virtual {v0, v6, v7}, Ljava/util/concurrent/ConcurrentHashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v0, v6, v8}, Ljava/util/concurrent/ConcurrentHashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     sget-object v0, Lcom/android/incallui/InCallUIFeature;->mFeatureList:Ljava/util/concurrent/ConcurrentHashMap;
 
@@ -6424,23 +6535,23 @@
 
     sget-object v0, Lcom/android/incallui/InCallUIFeature;->mFeatureList:Ljava/util/concurrent/ConcurrentHashMap;
 
-    const-string v5, "ims_support_multimedia_caller_id"
+    const-string v6, "ims_support_multimedia_caller_id"
 
     invoke-static {}, Lcom/samsung/android/feature/SemCscFeature;->getInstance()Lcom/samsung/android/feature/SemCscFeature;
 
-    move-result-object v6
+    move-result-object v8
 
-    const-string v7, "CscFeature_VoiceCall_SupportMCID"
+    const-string v9, "CscFeature_VoiceCall_SupportMCID"
 
-    invoke-virtual {v6, v7}, Lcom/samsung/android/feature/SemCscFeature;->getBoolean(Ljava/lang/String;)Z
+    invoke-virtual {v8, v9}, Lcom/samsung/android/feature/SemCscFeature;->getBoolean(Ljava/lang/String;)Z
 
-    move-result v6
+    move-result v8
 
-    invoke-static {v6}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+    invoke-static {v8}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
-    move-result-object v6
+    move-result-object v8
 
-    invoke-virtual {v0, v5, v6}, Ljava/util/concurrent/ConcurrentHashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v0, v6, v8}, Ljava/util/concurrent/ConcurrentHashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     invoke-virtual {v3}, Ljava/lang/Boolean;->booleanValue()Z
 
@@ -6457,54 +6568,54 @@
     :cond_f
     sget-object v0, Lcom/android/incallui/InCallUIFeature;->mFeatureList:Ljava/util/concurrent/ConcurrentHashMap;
 
-    const-string v5, "support_conference_call"
+    const-string v6, "support_conference_call"
 
     invoke-static {v1}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
-    move-result-object v6
+    move-result-object v8
 
-    invoke-virtual {v0, v5, v6}, Ljava/util/concurrent/ConcurrentHashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v0, v6, v8}, Ljava/util/concurrent/ConcurrentHashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     :cond_10
     sget-object v0, Lcom/android/incallui/InCallUIFeature;->mFeatureList:Ljava/util/concurrent/ConcurrentHashMap;
 
-    const-string v5, "support_merge_call"
+    const-string v6, "support_merge_call"
 
     invoke-static {v1}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
-    move-result-object v6
+    move-result-object v8
 
-    invoke-virtual {v0, v5, v6}, Ljava/util/concurrent/ConcurrentHashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
-    sget-object v0, Lcom/android/incallui/InCallUIFeature;->mFeatureList:Ljava/util/concurrent/ConcurrentHashMap;
-
-    const-string v5, "block_data_during_call"
-
-    invoke-virtual {v0, v5, v3}, Ljava/util/concurrent/ConcurrentHashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v0, v6, v8}, Ljava/util/concurrent/ConcurrentHashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     sget-object v0, Lcom/android/incallui/InCallUIFeature;->mFeatureList:Ljava/util/concurrent/ConcurrentHashMap;
 
-    const-string v5, "hd_voice_network_prefer"
+    const-string v6, "block_data_during_call"
+
+    invoke-virtual {v0, v6, v3}, Ljava/util/concurrent/ConcurrentHashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    sget-object v0, Lcom/android/incallui/InCallUIFeature;->mFeatureList:Ljava/util/concurrent/ConcurrentHashMap;
+
+    const-string v6, "hd_voice_network_prefer"
 
     invoke-static {}, Lcom/samsung/android/feature/SemCscFeature;->getInstance()Lcom/samsung/android/feature/SemCscFeature;
 
-    move-result-object v6
+    move-result-object v8
 
-    const-string v7, "CscFeature_Common_EnableHDVoiceDuring3GConnection"
+    const-string v9, "CscFeature_Common_EnableHDVoiceDuring3GConnection"
 
-    invoke-virtual {v6, v7}, Lcom/samsung/android/feature/SemCscFeature;->getBoolean(Ljava/lang/String;)Z
+    invoke-virtual {v8, v9}, Lcom/samsung/android/feature/SemCscFeature;->getBoolean(Ljava/lang/String;)Z
 
-    move-result v6
+    move-result v8
 
-    invoke-static {v6}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+    invoke-static {v8}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
-    move-result-object v6
+    move-result-object v8
 
-    invoke-virtual {v0, v5, v6}, Ljava/util/concurrent/ConcurrentHashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v0, v6, v8}, Ljava/util/concurrent/ConcurrentHashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    sget-object v5, Lcom/android/incallui/InCallUIFeature;->mFeatureList:Ljava/util/concurrent/ConcurrentHashMap;
+    sget-object v6, Lcom/android/incallui/InCallUIFeature;->mFeatureList:Ljava/util/concurrent/ConcurrentHashMap;
 
-    const-string v6, "government_request_project"
+    const-string v8, "government_request_project"
 
     const-string v0, "feature_kor_open"
 
@@ -6512,7 +6623,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_15
+    if-eqz v0, :cond_16
 
     const-string v0, "com.android.email"
 
@@ -6520,7 +6631,7 @@
 
     move-result v0
 
-    if-nez v0, :cond_15
+    if-nez v0, :cond_16
 
     const-string v0, "com.google.android.gm"
 
@@ -6528,7 +6639,7 @@
 
     move-result v0
 
-    if-nez v0, :cond_15
+    if-nez v0, :cond_16
 
     move v0, v2
 
@@ -6537,61 +6648,61 @@
 
     move-result-object v0
 
-    invoke-virtual {v5, v6, v0}, Ljava/util/concurrent/ConcurrentHashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v6, v8, v0}, Ljava/util/concurrent/ConcurrentHashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     sget-object v0, Lcom/android/incallui/InCallUIFeature;->mFeatureList:Ljava/util/concurrent/ConcurrentHashMap;
 
-    const-string v5, "clear_dialpad_digits"
+    const-string v6, "clear_dialpad_digits"
 
-    sget-object v6, Lcom/android/incallui/InCallUIFeature;->opStyleForVolte:Ljava/lang/String;
+    sget-object v8, Lcom/android/incallui/InCallUIFeature;->opStyleForVolte:Ljava/lang/String;
 
-    const-string v7, "KOR_"
+    const-string v9, "KOR_"
 
-    invoke-virtual {v6, v7}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
+    invoke-virtual {v8, v9}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
 
-    move-result v6
+    move-result v8
 
-    invoke-static {v6}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+    invoke-static {v8}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
-    move-result-object v6
+    move-result-object v8
 
-    invoke-virtual {v0, v5, v6}, Ljava/util/concurrent/ConcurrentHashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v0, v6, v8}, Ljava/util/concurrent/ConcurrentHashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     sget-object v0, Lcom/android/incallui/InCallUIFeature;->mFeatureList:Ljava/util/concurrent/ConcurrentHashMap;
 
-    const-string v5, "emergency_find_lost_phone"
+    const-string v6, "emergency_find_lost_phone"
 
     invoke-static {}, Lcom/samsung/android/feature/SemCscFeature;->getInstance()Lcom/samsung/android/feature/SemCscFeature;
 
-    move-result-object v6
+    move-result-object v8
 
-    const-string v7, "CscFeature_VoiceCall_ConfigOpStyleForFindMobile"
+    const-string v9, "CscFeature_VoiceCall_ConfigOpStyleForFindMobile"
 
-    invoke-virtual {v6, v7}, Lcom/samsung/android/feature/SemCscFeature;->getString(Ljava/lang/String;)Ljava/lang/String;
+    invoke-virtual {v8, v9}, Lcom/samsung/android/feature/SemCscFeature;->getString(Ljava/lang/String;)Ljava/lang/String;
 
-    move-result-object v6
+    move-result-object v8
 
-    const-string v7, "TRUE"
+    const-string v9, "TRUE"
 
-    invoke-virtual {v6, v7}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
+    invoke-virtual {v8, v9}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
 
-    move-result v6
+    move-result v8
 
-    invoke-static {v6}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+    invoke-static {v8}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
-    move-result-object v6
+    move-result-object v8
 
-    invoke-virtual {v0, v5, v6}, Ljava/util/concurrent/ConcurrentHashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v0, v6, v8}, Ljava/util/concurrent/ConcurrentHashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     sget-object v0, Lcom/android/incallui/InCallUIFeature;->mFeatureList:Ljava/util/concurrent/ConcurrentHashMap;
 
-    const-string v5, "support_nsri_secure"
+    const-string v6, "support_nsri_secure"
 
-    invoke-virtual {v0, v5, v3}, Ljava/util/concurrent/ConcurrentHashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v0, v6, v3}, Ljava/util/concurrent/ConcurrentHashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    sget-object v5, Lcom/android/incallui/InCallUIFeature;->mFeatureList:Ljava/util/concurrent/ConcurrentHashMap;
+    sget-object v6, Lcom/android/incallui/InCallUIFeature;->mFeatureList:Ljava/util/concurrent/ConcurrentHashMap;
 
-    const-string v6, "display_uhd_voice_icon"
+    const-string v8, "display_uhd_voice_icon"
 
     const-string v0, "enabled"
 
@@ -6599,17 +6710,17 @@
 
     move-result v0
 
-    if-eqz v0, :cond_16
+    if-eqz v0, :cond_17
 
     sget-object v0, Lcom/android/incallui/InCallUIFeature;->opStyleForHDicon:Ljava/lang/String;
 
-    const-string v7, "LGU_UHD"
+    const-string v9, "LGU_UHD"
 
-    invoke-virtual {v0, v7}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
+    invoke-virtual {v0, v9}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
 
     move-result v0
 
-    if-eqz v0, :cond_16
+    if-eqz v0, :cond_17
 
     move v0, v2
 
@@ -6618,39 +6729,39 @@
 
     move-result-object v0
 
-    invoke-virtual {v5, v6, v0}, Ljava/util/concurrent/ConcurrentHashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v6, v8, v0}, Ljava/util/concurrent/ConcurrentHashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     sget-object v0, Lcom/android/incallui/InCallUIFeature;->mFeatureList:Ljava/util/concurrent/ConcurrentHashMap;
 
-    const-string v5, "cnap_supplementary_service"
+    const-string v6, "cnap_supplementary_service"
 
     invoke-static {}, Lcom/samsung/android/feature/SemCscFeature;->getInstance()Lcom/samsung/android/feature/SemCscFeature;
 
-    move-result-object v6
+    move-result-object v8
 
-    const-string v7, "CscFeature_VoiceCall_ConfigCnap"
+    const-string v9, "CscFeature_VoiceCall_ConfigCnap"
 
-    invoke-virtual {v6, v7}, Lcom/samsung/android/feature/SemCscFeature;->getString(Ljava/lang/String;)Ljava/lang/String;
+    invoke-virtual {v8, v9}, Lcom/samsung/android/feature/SemCscFeature;->getString(Ljava/lang/String;)Ljava/lang/String;
 
-    move-result-object v6
+    move-result-object v8
 
-    const-string v7, "_CNAP"
+    const-string v9, "_CNAP"
 
-    invoke-virtual {v6, v7}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
+    invoke-virtual {v8, v9}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
 
-    move-result v6
+    move-result v8
 
-    invoke-static {v6}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+    invoke-static {v8}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
-    move-result-object v6
+    move-result-object v8
 
-    invoke-virtual {v0, v5, v6}, Ljava/util/concurrent/ConcurrentHashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v0, v6, v8}, Ljava/util/concurrent/ConcurrentHashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     sget-object v0, Lcom/android/incallui/InCallUIFeature;->mFeatureList:Ljava/util/concurrent/ConcurrentHashMap;
 
-    const-string v5, "cdnip_supplementary_service"
+    const-string v6, "cdnip_supplementary_service"
 
-    invoke-virtual {v0, v5, v3}, Ljava/util/concurrent/ConcurrentHashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v0, v6, v3}, Ljava/util/concurrent/ConcurrentHashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     sget-object v0, Lcom/android/incallui/InCallUIFeature;->mFeatureList:Ljava/util/concurrent/ConcurrentHashMap;
 
@@ -6658,19 +6769,19 @@
 
     invoke-static {}, Lcom/samsung/android/feature/SemCscFeature;->getInstance()Lcom/samsung/android/feature/SemCscFeature;
 
-    move-result-object v5
+    move-result-object v6
 
-    const-string v6, "CscFeature_VoiceCall_DisableGeoDescription"
+    const-string v8, "CscFeature_VoiceCall_DisableGeoDescription"
 
-    invoke-virtual {v5, v6}, Lcom/samsung/android/feature/SemCscFeature;->getBoolean(Ljava/lang/String;)Z
+    invoke-virtual {v6, v8}, Lcom/samsung/android/feature/SemCscFeature;->getBoolean(Ljava/lang/String;)Z
 
-    move-result v5
+    move-result v6
 
-    invoke-static {v5}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+    invoke-static {v6}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
-    move-result-object v5
+    move-result-object v6
 
-    invoke-virtual {v0, v3, v5}, Ljava/util/concurrent/ConcurrentHashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v0, v3, v6}, Ljava/util/concurrent/ConcurrentHashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     sget-object v0, Lcom/android/incallui/InCallUIFeature;->mFeatureList:Ljava/util/concurrent/ConcurrentHashMap;
 
@@ -6678,109 +6789,166 @@
 
     invoke-static {}, Lcom/samsung/android/feature/SemCscFeature;->getInstance()Lcom/samsung/android/feature/SemCscFeature;
 
-    move-result-object v5
+    move-result-object v6
 
-    const-string v6, "CscFeature_VoiceCall_DisableNotiBarExpandDuringOta"
+    const-string v8, "CscFeature_VoiceCall_DisableNotiBarExpandDuringOta"
 
-    invoke-virtual {v5, v6}, Lcom/samsung/android/feature/SemCscFeature;->getBoolean(Ljava/lang/String;)Z
+    invoke-virtual {v6, v8}, Lcom/samsung/android/feature/SemCscFeature;->getBoolean(Ljava/lang/String;)Z
 
-    move-result v5
+    move-result v6
 
-    invoke-static {v5}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+    invoke-static {v6}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
-    move-result-object v5
+    move-result-object v6
 
-    invoke-virtual {v0, v3, v5}, Ljava/util/concurrent/ConcurrentHashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v0, v3, v6}, Ljava/util/concurrent/ConcurrentHashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    sget-object v3, Lcom/android/incallui/InCallUIFeature;->mFeatureList:Ljava/util/concurrent/ConcurrentHashMap;
+
+    const-string v6, "smart_auto_answering"
+
+    invoke-virtual {v4}, Ljava/lang/Boolean;->booleanValue()Z
+
+    move-result v0
+
+    if-nez v0, :cond_11
+
+    invoke-virtual {v5}, Ljava/lang/Boolean;->booleanValue()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_18
+
+    :cond_11
+    move v0, v2
+
+    :goto_b
+    invoke-static {v0}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+
+    move-result-object v0
+
+    invoke-virtual {v3, v6, v0}, Ljava/util/concurrent/ConcurrentHashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    sget-object v3, Lcom/android/incallui/InCallUIFeature;->mFeatureList:Ljava/util/concurrent/ConcurrentHashMap;
+
+    const-string v4, "single_lte"
+
+    const-string v0, "government_request_project"
+
+    invoke-static {v0}, Lcom/android/incallui/InCallUIFeature;->hasFeature(Ljava/lang/String;)Z
+
+    move-result v0
+
+    if-nez v0, :cond_12
+
+    invoke-static {}, Lcom/samsung/android/feature/SemCscFeature;->getInstance()Lcom/samsung/android/feature/SemCscFeature;
+
+    move-result-object v0
+
+    const-string v5, "CscFeature_VoiceCall_SupportSingleLTE"
+
+    invoke-virtual {v0, v5}, Lcom/samsung/android/feature/SemCscFeature;->getBoolean(Ljava/lang/String;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_19
+
+    :cond_12
+    move v0, v2
+
+    :goto_c
+    invoke-static {v0}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+
+    move-result-object v0
+
+    invoke-virtual {v3, v4, v0}, Ljava/util/concurrent/ConcurrentHashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     sget-object v0, Lcom/android/incallui/InCallUIFeature;->mFeatureList:Ljava/util/concurrent/ConcurrentHashMap;
 
-    const-string v3, "smart_auto_answering"
+    const-string v3, "ims_rcs"
+
+    invoke-static {v1}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+
+    move-result-object v4
 
     invoke-virtual {v0, v3, v4}, Ljava/util/concurrent/ConcurrentHashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     sget-object v0, Lcom/android/incallui/InCallUIFeature;->mFeatureList:Ljava/util/concurrent/ConcurrentHashMap;
 
-    const-string v3, "single_lte"
+    const-string v3, "ims_rcs_bb"
 
-    const-string v4, "government_request_project"
+    invoke-static {v1}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+
+    move-result-object v4
+
+    invoke-virtual {v0, v3, v4}, Ljava/util/concurrent/ConcurrentHashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    sget-object v0, Lcom/android/incallui/InCallUIFeature;->mFeatureList:Ljava/util/concurrent/ConcurrentHashMap;
+
+    const-string v3, "smart_folder_concept"
+
+    const-string v4, "support_folder_single_lcd"
 
     invoke-static {v4}, Lcom/android/incallui/InCallUIFeature;->hasFeature(Ljava/lang/String;)Z
 
     move-result v4
 
-    if-nez v4, :cond_11
+    if-eqz v4, :cond_1a
 
-    invoke-static {}, Lcom/samsung/android/feature/SemCscFeature;->getInstance()Lcom/samsung/android/feature/SemCscFeature;
-
-    move-result-object v4
-
-    const-string v5, "CscFeature_VoiceCall_SupportSingleLTE"
-
-    invoke-virtual {v4, v5}, Lcom/samsung/android/feature/SemCscFeature;->getBoolean(Ljava/lang/String;)Z
+    invoke-virtual {v7}, Ljava/lang/Boolean;->booleanValue()Z
 
     move-result v4
 
-    if-eqz v4, :cond_17
+    if-eqz v4, :cond_1a
 
-    :cond_11
-    :goto_b
+    :goto_d
     invoke-static {v2}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
-
-    move-result-object v2
-
-    invoke-virtual {v0, v3, v2}, Ljava/util/concurrent/ConcurrentHashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
-    sget-object v0, Lcom/android/incallui/InCallUIFeature;->mFeatureList:Ljava/util/concurrent/ConcurrentHashMap;
-
-    const-string v2, "ims_rcs"
-
-    invoke-static {v1}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
-
-    move-result-object v3
-
-    invoke-virtual {v0, v2, v3}, Ljava/util/concurrent/ConcurrentHashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
-    sget-object v0, Lcom/android/incallui/InCallUIFeature;->mFeatureList:Ljava/util/concurrent/ConcurrentHashMap;
-
-    const-string v2, "ims_rcs_bb"
-
-    invoke-static {v1}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
     move-result-object v1
 
-    invoke-virtual {v0, v2, v1}, Ljava/util/concurrent/ConcurrentHashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v0, v3, v1}, Ljava/util/concurrent/ConcurrentHashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     goto/16 :goto_5
-
-    :cond_12
-    move v0, v1
-
-    goto/16 :goto_6
 
     :cond_13
     move v0, v1
 
-    goto/16 :goto_7
+    goto/16 :goto_6
 
     :cond_14
     move v0, v1
 
-    goto/16 :goto_8
+    goto/16 :goto_7
 
     :cond_15
     move v0, v1
 
-    goto/16 :goto_9
+    goto/16 :goto_8
 
     :cond_16
     move v0, v1
 
-    goto/16 :goto_a
+    goto/16 :goto_9
 
     :cond_17
-    move v2, v1
+    move v0, v1
+
+    goto/16 :goto_a
+
+    :cond_18
+    move v0, v1
 
     goto :goto_b
+
+    :cond_19
+    move v0, v1
+
+    goto :goto_c
+
+    :cond_1a
+    move v2, v1
+
+    goto :goto_d
 .end method
 
 .method public static makeFeatureForLatin()V
@@ -9003,6 +9171,14 @@
     if-nez v0, :cond_1b
 
     const-string v0, "att_volte_ui"
+
+    invoke-static {v0}, Lcom/android/incallui/InCallUIFeature;->hasFeature(Ljava/lang/String;)Z
+
+    move-result v0
+
+    if-nez v0, :cond_1b
+
+    const-string v0, "show_vowifi_endcall_button"
 
     invoke-static {v0}, Lcom/android/incallui/InCallUIFeature;->hasFeature(Ljava/lang/String;)Z
 

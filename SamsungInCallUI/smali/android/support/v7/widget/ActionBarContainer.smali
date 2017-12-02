@@ -1051,7 +1051,7 @@
     goto :goto_0
 .end method
 
-.method public setTabContainer(Landroid/support/v7/widget/an;)V
+.method public setTabContainer(Landroid/support/v7/widget/au;)V
     .locals 2
 
     iget-object v0, p0, Landroid/support/v7/widget/ActionBarContainer;->g:Landroid/view/View;
@@ -1069,7 +1069,7 @@
 
     invoke-virtual {p0, p1}, Landroid/support/v7/widget/ActionBarContainer;->addView(Landroid/view/View;)V
 
-    invoke-virtual {p1}, Landroid/support/v7/widget/an;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
+    invoke-virtual {p1}, Landroid/support/v7/widget/au;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
 
     move-result-object v0
 
@@ -1083,7 +1083,7 @@
 
     const/4 v0, 0x0
 
-    invoke-virtual {p1, v0}, Landroid/support/v7/widget/an;->setAllowCollapse(Z)V
+    invoke-virtual {p1, v0}, Landroid/support/v7/widget/au;->setAllowCollapse(Z)V
 
     :cond_1
     return-void

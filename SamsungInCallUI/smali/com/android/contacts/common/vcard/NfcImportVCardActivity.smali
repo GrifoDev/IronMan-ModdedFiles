@@ -133,7 +133,7 @@
 
     move-result-object v2
 
-    const v4, 0x7f09060f
+    const v4, 0x7f090614
 
     invoke-virtual {p0, v4}, Lcom/android/contacts/common/vcard/NfcImportVCardActivity;->getString(I)Ljava/lang/String;
 

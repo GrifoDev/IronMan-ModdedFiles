@@ -178,12 +178,13 @@
     <string name="account_phone">Eszköz</string>
     <string name="acs">Hanghívás</string>
     <string name="active_calls">Aktív hívás</string>
-    <string name="add_reminder">Emlék. h.ad.</string>
+    <string name="add_reminder">Emlékeztető hozzáadása</string>
     <string name="agif_button_close_description">Bezárás</string>
     <string name="agif_decline_message">Sajnos most nem tudok beszélni.</string>
     <string name="agif_decline_sticker_header">Elutasítás matricával</string>
     <string name="agif_decline_text_header">Elutasítás szöveges üzenettel</string>
     <string name="agif_decline_toast">Elküldte a matricát %s számára.</string>
+    <string name="agif_outgoing_bubble_tip">Matrica küldésével megmutathatja, milyen a kedve.</string>
     <string name="agif_pickers_add_tab_description">Hozzáad</string>
     <string name="agif_pickers_downloaded">Letöltött</string>
     <string name="agif_pickers_item_usage_hints_description">Érintse meg kétszer a kijelöléshez</string>
@@ -199,10 +200,12 @@
     <string name="agif_pickers_tab_select_description">Kijelölve</string>
     <string name="agif_pickers_title">Indítás matricával</string>
     <string name="agif_pickers_title_top_stickers">Legjobb matricák</string>
+    <string name="agif_random_send_message">Érintse meg itt a matrica küldéséhez.</string>
     <string name="agif_read_permission_description">Az AGIF-tartalom olvasásának engedélyezése a Telefon számára.</string>
     <string name="agif_read_permission_label">AGIF-tartalom olvasása</string>
     <string name="agif_receive_no_id">Nem jeleníthető meg a matrica. A hívás után frissítse a(z) %s alkalmazást.</string>
     <string name="agif_receive_no_id_upsupport_update">Nem jeleníthető meg a matrica. További matricák a következő rendszerfrissítéssel érkeznek.</string>
+    <string name="agif_receive_toast">%s matricát küldött.</string>
     <string name="agif_sent_fail_message">Nem lehet animált GIF-képet küldeni. Próbálja meg később.</string>
     <string name="agif_sent_toast">Matricát küldött.</string>
     <string name="agif_write_permission_description">Az AGIF-tartalom módosításának engedélyezése a Telefon számára.</string>
@@ -871,6 +874,7 @@ kamera"</string>
     <string name="sticker_delete_stickers">Töröl %d matricát?</string>
     <string name="sticker_delete_this_sticker">Törli a matricát?</string>
     <string name="sticker_setting_edit_title">Matricák kiválasztása</string>
+    <string name="sticker_setting_edit_title_preload">Matricák átrendezése</string>
     <string name="sticker_setting_main_title">Saját matricák</string>
     <string name="sticker_setting_menu_delete">Töröl</string>
     <string name="sticker_setting_menu_edit">Szerkeszt</string>
@@ -883,6 +887,7 @@ kamera"</string>
     <string name="swipe_right_to_answer_call_with_video">A hívás videóval történő fogadásához simítson jobbra.</string>
     <string name="swipe_right_to_answer_call_without_video">A hívás videó nélküli fogadásához simítson jobbra.</string>
     <string name="switch_rejected_by_mt">Videohívásra kapcsolás kérése elutasítva.</string>
+    <string name="switch_rejected_by_mt_att">Video unavailable for this call. Call connected as a voice call.</string>
     <string name="switch_to_video_call_failed">A videohívásra kapcsolás kérése sikertelen volt.</string>
     <string name="switch_to_video_call_failed_tmo">A másik fél elutasította a videohívásra kapcsolásra vonatkozó kérést.</string>
     <string name="switch_to_voice_call_failed">A hanghívásra kapcsolás kérése sikertelen volt.</string>

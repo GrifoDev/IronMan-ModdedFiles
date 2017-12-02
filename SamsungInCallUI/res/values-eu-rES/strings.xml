@@ -126,6 +126,7 @@
     <string name="agif_decline_sticker_header">Ukatu pegatina batekin</string>
     <string name="agif_decline_text_header">Ukatu testuarekin</string>
     <string name="agif_decline_toast">%s erabiltzaileari bidali zaio pegatina.</string>
+    <string name="agif_outgoing_bubble_tip">Bidali sticker bat zure umorea ezagutarazteko.</string>
     <string name="agif_pickers_add_tab_description">Gehitu</string>
     <string name="agif_pickers_downloaded">Deskargatuta</string>
     <string name="agif_pickers_item_usage_hints_description">Ukitu bi aldiz hautatzeko</string>
@@ -141,10 +142,12 @@
     <string name="agif_pickers_tab_select_description">Hautatuta</string>
     <string name="agif_pickers_title">Hasi pegatina bat erabiliz</string>
     <string name="agif_pickers_title_top_stickers">Pegatina nagusiak</string>
+    <string name="agif_random_send_message">Ukitu hau sticker hau bidaltzeko.</string>
     <string name="agif_read_permission_description">AGIF edukia irakurtzea baimentzen dio Telefonoari.</string>
     <string name="agif_read_permission_label">Irakurri AGIF edukia</string>
     <string name="agif_receive_no_id">Ezin da erakutsi pegatina. Deia amaitzean, eguneratu %s.</string>
     <string name="agif_receive_no_id_upsupport_update">Ezin da erakutsi pegatina. Pegatina gehiago izango dira eskuragarri hurrengo sistema eguneraketan.</string>
+    <string name="agif_receive_toast">%s deitzailearen sticker-a.</string>
     <string name="agif_sent_fail_message">Ezin da bidali GIF animatua. Saiatu berriz geroago.</string>
     <string name="agif_sent_toast">Bidali da pegatina.</string>
     <string name="agif_write_permission_description">AGIF edukia aldatzea baimentzen dio Telefonoari.</string>
@@ -813,6 +816,7 @@ kamera"</string>
     <string name="sticker_delete_stickers">%d pegatina ezabatu?</string>
     <string name="sticker_delete_this_sticker">Pegatina hau ezabatu?</string>
     <string name="sticker_setting_edit_title">Hautatu pegatinak</string>
+    <string name="sticker_setting_edit_title_preload">Ordenatu pegatinak berriz</string>
     <string name="sticker_setting_main_title">Nire pegatinak</string>
     <string name="sticker_setting_menu_delete">Ezabatu</string>
     <string name="sticker_setting_menu_edit">Editatu</string>
@@ -825,6 +829,7 @@ kamera"</string>
     <string name="swipe_right_to_answer_call_with_video">Deiari bideoarekin erantzuteko, irristatu eskuinera.</string>
     <string name="swipe_right_to_answer_call_without_video">Deiari bideorik gabe erantzuteko, irristatu eskuinera.</string>
     <string name="switch_rejected_by_mt">Bideo deira aldatzeko eskera ukatuta</string>
+    <string name="switch_rejected_by_mt_att">Video unavailable for this call. Call connected as a voice call.</string>
     <string name="switch_to_video_call_failed">Bideo deira aldatzeko eskaerak huts egin du.</string>
     <string name="switch_to_video_call_failed_tmo">Bideo deira aldatzeko eskaera ukatu da.</string>
     <string name="switch_to_voice_call_failed">Ahots deira aldatzeko eskaerak huts egin du.</string>

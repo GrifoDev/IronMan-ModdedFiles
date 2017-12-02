@@ -3637,7 +3637,7 @@
 
     if-eqz v0, :cond_3
 
-    const v1, 0x7f100312
+    const v1, 0x7f10031e
 
     invoke-virtual {v0, v1}, Lcom/android/incallui/InCallActivity;->findViewById(I)Landroid/view/View;
 
@@ -3668,7 +3668,7 @@
 .end method
 
 .method public sendRequestImsRTTUpgrade(IZ)V
-    .locals 2
+    .locals 3
 
     const-string v0, "ims_support_rtt"
 
@@ -3687,11 +3687,37 @@
 
     if-eqz v0, :cond_0
 
-    iget-object v0, p0, Lcom/android/incallui/CallButtonPresenter;->mIMSManagerWrapper:Lcom/android/incallui/service/ims/IMSManagerWrapper;
+    const-string v0, "CallButtonPresenter"
 
-    const/4 v1, 0x4
+    new-instance v1, Ljava/lang/StringBuilder;
 
-    invoke-virtual {v0, v1}, Lcom/android/incallui/service/ims/IMSManagerWrapper;->setRttMode(I)V
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v2, "sendRequestImsRTTUpgrade - sessionId-"
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    const-string v2, " mode-"
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1, p2}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-static {v0, v1}, Lcom/android/incallui/Log;->d(Ljava/lang/String;Ljava/lang/String;)V
 
     iget-object v0, p0, Lcom/android/incallui/CallButtonPresenter;->mIMSManagerWrapper:Lcom/android/incallui/service/ims/IMSManagerWrapper;
 
@@ -3701,7 +3727,7 @@
 .end method
 
 .method public sendResponseImsRTTUpgrade(IZ)V
-    .locals 2
+    .locals 3
 
     const-string v0, "ims_support_rtt"
 
@@ -3720,11 +3746,37 @@
 
     if-eqz v0, :cond_0
 
-    iget-object v0, p0, Lcom/android/incallui/CallButtonPresenter;->mIMSManagerWrapper:Lcom/android/incallui/service/ims/IMSManagerWrapper;
+    const-string v0, "CallButtonPresenter"
 
-    const/4 v1, 0x4
+    new-instance v1, Ljava/lang/StringBuilder;
 
-    invoke-virtual {v0, v1}, Lcom/android/incallui/service/ims/IMSManagerWrapper;->setRttMode(I)V
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v2, "sendRttSessionModifyResponse - sessionId-"
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    const-string v2, " accept-"
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1, p2}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-static {v0, v1}, Lcom/android/incallui/Log;->d(Ljava/lang/String;Ljava/lang/String;)V
 
     iget-object v0, p0, Lcom/android/incallui/CallButtonPresenter;->mIMSManagerWrapper:Lcom/android/incallui/service/ims/IMSManagerWrapper;
 
@@ -3954,7 +4006,7 @@
 
     if-eqz p1, :cond_1
 
-    const v1, 0x7f100311
+    const v1, 0x7f10031d
 
     invoke-virtual {v0, v1}, Lcom/android/incallui/InCallActivity;->findViewById(I)Landroid/view/View;
 
@@ -3974,7 +4026,7 @@
     return-void
 .end method
 
-.method public showRTTButton(Z)V
+.method public showRTTButton()V
     .locals 2
 
     const-string v0, "ims_support_rtt"
@@ -3983,15 +4035,13 @@
 
     move-result v0
 
-    if-eqz v0, :cond_1
-
-    if-eqz p1, :cond_1
+    if-eqz v0, :cond_0
 
     invoke-virtual {p0}, Lcom/android/incallui/CallButtonPresenter;->getUi()Lcom/android/incallui/Ui;
 
     move-result-object v0
 
-    if-eqz v0, :cond_1
+    if-eqz v0, :cond_0
 
     const-string v0, "CallButtonPresenter"
 
@@ -3999,34 +4049,11 @@
 
     invoke-static {v0, v1}, Lcom/android/incallui/Log;->v(Ljava/lang/String;Ljava/lang/String;)V
 
-    invoke-static {}, Lcom/android/incallui/InCallPresenter;->getInstance()Lcom/android/incallui/InCallPresenter;
-
-    move-result-object v0
-
-    invoke-virtual {v0, p1}, Lcom/android/incallui/InCallPresenter;->setRttCapability(Z)V
-
-    invoke-static {}, Lcom/android/incallui/InCallPresenter;->getInstance()Lcom/android/incallui/InCallPresenter;
-
-    move-result-object v0
-
-    invoke-virtual {v0, p1}, Lcom/android/incallui/InCallPresenter;->setTempRTT(Z)V
-
-    iget-object v0, p0, Lcom/android/incallui/CallButtonPresenter;->mIMSManagerWrapper:Lcom/android/incallui/service/ims/IMSManagerWrapper;
-
-    if-eqz v0, :cond_0
-
-    iget-object v0, p0, Lcom/android/incallui/CallButtonPresenter;->mIMSManagerWrapper:Lcom/android/incallui/service/ims/IMSManagerWrapper;
-
-    const/4 v1, 0x4
-
-    invoke-virtual {v0, v1}, Lcom/android/incallui/service/ims/IMSManagerWrapper;->setRttMode(I)V
-
-    :cond_0
     invoke-virtual {p0}, Lcom/android/incallui/CallButtonPresenter;->getUi()Lcom/android/incallui/Ui;
 
     move-result-object v0
 
-    if-eqz v0, :cond_1
+    if-eqz v0, :cond_0
 
     invoke-virtual {p0}, Lcom/android/incallui/CallButtonPresenter;->getUi()Lcom/android/incallui/Ui;
 
@@ -4036,7 +4063,7 @@
 
     invoke-interface {v0}, Lcom/android/incallui/CallButtonUi;->updateRTTButtonFromMenu()V
 
-    :cond_1
+    :cond_0
     return-void
 .end method
 
@@ -4063,7 +4090,7 @@
 
     if-nez v0, :cond_0
 
-    const v0, 0x7f090263
+    const v0, 0x7f090266
 
     invoke-static {v0}, Lcom/android/incallui/util/InCallUtils;->displayToast(I)V
 

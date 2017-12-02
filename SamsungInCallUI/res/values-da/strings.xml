@@ -178,12 +178,13 @@
     <string name="account_phone">Enhed</string>
     <string name="acs">Stemmeopkald</string>
     <string name="active_calls">Aktivt opkald</string>
-    <string name="add_reminder">Tilføj påmi.</string>
+    <string name="add_reminder">Tilføj påmindelse</string>
     <string name="agif_button_close_description">Luk</string>
     <string name="agif_decline_message">Beklager, jeg kan ikke tale lige nu.</string>
     <string name="agif_decline_sticker_header">Afslå med en sticker</string>
     <string name="agif_decline_text_header">Afslå med en tekst</string>
     <string name="agif_decline_toast">Sticker er sendt til %s.</string>
+    <string name="agif_outgoing_bubble_tip">Send en sticker for at vise, hvordan du har det.</string>
     <string name="agif_pickers_add_tab_description">Tilføj</string>
     <string name="agif_pickers_downloaded">Downloadet</string>
     <string name="agif_pickers_item_usage_hints_description">Dobbelttryk for at vælge</string>
@@ -199,10 +200,12 @@
     <string name="agif_pickers_tab_select_description">Valgt</string>
     <string name="agif_pickers_title">Start med en sticker</string>
     <string name="agif_pickers_title_top_stickers">Topstickers</string>
+    <string name="agif_random_send_message">Tryk her for at sende denne sticker.</string>
     <string name="agif_read_permission_description">Giver Telefon mulighed for at læse AGIF-indhold.</string>
     <string name="agif_read_permission_label">Læs AGIF-indhold</string>
     <string name="agif_receive_no_id">Stickeren kan ikke vises. Opdater %s efter opkaldet.</string>
     <string name="agif_receive_no_id_upsupport_update">Stickeren kan ikke vises. Flere stickers vil være tilgængelige efter næste systemopdatering.</string>
+    <string name="agif_receive_toast">Sticker fra %s.</string>
     <string name="agif_sent_fail_message">Kan ikke sende animeret GIF-fil. Prøv igen senere.</string>
     <string name="agif_sent_toast">Sticker sendt.</string>
     <string name="agif_write_permission_description">Giver Telefon mulighed for at ændre AGIF-indhold.</string>
@@ -622,7 +625,7 @@ IVR-opkaldsskærmmenuen bruger indhold, som er leveret af tredjepartsserviceudby
     <string name="onscreenBluetoothTextOn_att">Skift til telefon</string>
     <string name="onscreenBluetoothTextOn_tmo">Skift til telefon</string>
     <string name="onscreenWebexText">WebEx</string>
-    <string name="open_folder_for_speakeroff">Åbn flip-telefonen for at slå højttalertelefonen fra.</string>
+    <string name="open_folder_for_speakeroff">Åbn klaptelefonen for at slå højttalertelefonen fra.</string>
     <string name="open_the_cover">Åbn coveret.</string>
     <string name="open_the_cover_incoming">Åbn omslaget for at besvare eller afvise videoopkaldet.</string>
     <string name="open_the_cover_modify_call">Den kaldte part ønsker at skifte til videoopkald. Åbn omslaget for at acceptere/afvise anmodningen.</string>
@@ -872,6 +875,7 @@ stillinger"</string>
     <string name="sticker_delete_stickers">Slet %d stickers?</string>
     <string name="sticker_delete_this_sticker">Slet denne sticker?</string>
     <string name="sticker_setting_edit_title">Vælg stickers</string>
+    <string name="sticker_setting_edit_title_preload">Omarranger stickers</string>
     <string name="sticker_setting_main_title">Mine stickers</string>
     <string name="sticker_setting_menu_delete">Slet</string>
     <string name="sticker_setting_menu_edit">Rediger</string>
@@ -884,6 +888,7 @@ stillinger"</string>
     <string name="swipe_right_to_answer_call_with_video">Stryg til højre for at besvare opkald med video.</string>
     <string name="swipe_right_to_answer_call_without_video">Stryg til højre for at besvare opkald uden video.</string>
     <string name="switch_rejected_by_mt">Anmodning om at skifte til videoopkald er afvist.</string>
+    <string name="switch_rejected_by_mt_att">Video unavailable for this call. Call connected as a voice call.</string>
     <string name="switch_to_video_call_failed">Anmodning om at skifte til videoopkald mislykkedes.</string>
     <string name="switch_to_video_call_failed_tmo">Anmodning om at skifte til videoopkald blev afslået.</string>
     <string name="switch_to_voice_call_failed">Anmodning om at skifte til stemmeopkald mislykkedes.</string>

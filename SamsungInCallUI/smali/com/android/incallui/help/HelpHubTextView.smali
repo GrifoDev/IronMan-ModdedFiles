@@ -491,7 +491,7 @@
 
     iput v1, v2, Lcom/android/incallui/help/HelpHubImageSpan;->fontScale:F
 
-    const v1, 0x7f0a03cb
+    const v1, 0x7f0a03c1
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDimension(I)F
 

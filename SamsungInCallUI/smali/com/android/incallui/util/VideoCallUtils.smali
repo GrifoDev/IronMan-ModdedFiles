@@ -1024,7 +1024,7 @@
 
     const/4 v0, 0x0
 
-    const v2, 0x7f0203c0
+    const v2, 0x7f0203d0
 
     const/4 v3, -0x1
 
@@ -1098,7 +1098,7 @@
 
     if-eqz v5, :cond_3
 
-    const v2, 0x7f0200a4
+    const v2, 0x7f0200ad
 
     :cond_0
     :goto_0
@@ -1121,7 +1121,7 @@
 
     if-eqz v5, :cond_4
 
-    const v2, 0x7f0203bf
+    const v2, 0x7f0203cf
 
     goto :goto_0
 
@@ -1150,7 +1150,7 @@
 
     if-eqz v2, :cond_5
 
-    const v2, 0x7f0203ab
+    const v2, 0x7f0203bb
 
     goto :goto_0
 
@@ -1163,7 +1163,7 @@
 
     if-eqz v2, :cond_6
 
-    const v2, 0x7f020082
+    const v2, 0x7f02008a
 
     goto :goto_0
 
@@ -1176,7 +1176,7 @@
 
     if-eqz v2, :cond_7
 
-    const v2, 0x7f0200a3
+    const v2, 0x7f0200ac
 
     goto :goto_0
 
@@ -2071,7 +2071,7 @@
     throw v0
 
     :cond_3
-    const v0, 0x7f09017b
+    const v0, 0x7f09017e
 
     invoke-static {v0}, Lcom/android/incallui/util/InCallUtils;->displayToastLong(I)V
 
@@ -2858,6 +2858,14 @@
 
     move-result v1
 
+    if-nez v1, :cond_0
+
+    const-string v1, "+"
+
+    invoke-virtual {v0, v1}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
+
+    move-result v1
+
     if-eqz v1, :cond_1
 
     :cond_0
@@ -2870,6 +2878,14 @@
     move-result-object v0
 
     const-string v1, "#"
+
+    const-string v2, ""
+
+    invoke-virtual {v0, v1, v2}, Ljava/lang/String;->replace(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Ljava/lang/String;
+
+    move-result-object v0
+
+    const-string v1, "+"
 
     const-string v2, ""
 
@@ -3370,7 +3386,7 @@
     :goto_0
     if-eqz v0, :cond_2
 
-    const v0, 0x7f090109
+    const v0, 0x7f09010c
 
     invoke-static {v0}, Lcom/android/incallui/util/InCallUtils;->displayToastLong(I)V
 
@@ -3549,7 +3565,7 @@
 
     if-eqz v7, :cond_e
 
-    const v0, 0x7f0901b4
+    const v0, 0x7f0901b7
 
     :goto_5
     if-eqz v3, :cond_c
@@ -3593,19 +3609,19 @@
     :cond_e
     if-eqz v8, :cond_f
 
-    const v0, 0x7f090225
+    const v0, 0x7f090228
 
     goto :goto_5
 
     :cond_f
-    const v0, 0x7f0901b7
+    const v0, 0x7f0901ba
 
     goto :goto_5
 
     :cond_10
     if-eqz v8, :cond_11
 
-    const v0, 0x7f09022a
+    const v0, 0x7f09022d
 
     goto :goto_6
 
@@ -3625,7 +3641,7 @@
     :cond_12
     if-eqz v8, :cond_13
 
-    const v0, 0x7f090229
+    const v0, 0x7f09022c
 
     goto :goto_7
 
@@ -3762,7 +3778,7 @@
 
     invoke-static {v0}, Lcom/android/incallui/util/VideoCallUtils;->log(Ljava/lang/String;)V
 
-    const v0, 0x7f09023d
+    const v0, 0x7f090240
 
     invoke-static {v0}, Lcom/android/incallui/util/InCallUtils;->displayToastLong(I)V
 
@@ -4671,7 +4687,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f0903c6
+    const v1, 0x7f0903cb
 
     new-array v2, v2, [Ljava/lang/Object;
 
@@ -4691,7 +4707,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f0903c5
+    const v1, 0x7f0903ca
 
     new-array v2, v2, [Ljava/lang/Object;
 

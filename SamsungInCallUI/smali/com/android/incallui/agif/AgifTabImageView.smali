@@ -79,7 +79,7 @@
 
     if-eqz v1, :cond_2
 
-    const v1, 0x7f0900c0
+    const v1, 0x7f0900c1
 
     :goto_0
     const/16 v2, 0x4000
@@ -104,7 +104,7 @@
 
     iget-object v4, p0, Lcom/android/incallui/agif/AgifTabImageView;->mContext:Landroid/content/Context;
 
-    const v5, 0x7f0900dc
+    const v5, 0x7f0900df
 
     invoke-virtual {v4, v5}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -130,7 +130,7 @@
     return-void
 
     :cond_2
-    const v1, 0x7f0900bf
+    const v1, 0x7f0900c0
 
     goto :goto_0
 .end method

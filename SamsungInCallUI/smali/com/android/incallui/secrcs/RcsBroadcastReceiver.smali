@@ -551,6 +551,16 @@
 
     if-nez v1, :cond_8
 
+    invoke-static {}, Lcom/android/incallui/secrcs/RcsShareUI;->getInstance()Lcom/android/incallui/secrcs/RcsShareUI;
+
+    move-result-object v1
+
+    invoke-virtual {v1, p1}, Lcom/android/incallui/secrcs/RcsShareUI;->isSharingDialogTopMostActivity(Landroid/content/Context;)Z
+
+    move-result v1
+
+    if-nez v1, :cond_8
+
     const-string v1, ""
 
     if-nez v3, :cond_4
@@ -578,7 +588,7 @@
 
     move-result v1
 
-    const v7, 0x7f090293
+    const v7, 0x7f090296
 
     const/4 v8, 0x1
 
@@ -652,7 +662,7 @@
     goto/16 :goto_0
 
     :cond_5
-    const v1, 0x7f090297
+    const v1, 0x7f09029a
 
     invoke-virtual {p1, v1}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -695,7 +705,7 @@
 
     move-result-object v7
 
-    const v8, 0x7f020343
+    const v8, 0x7f020352
 
     invoke-virtual {v7, v8}, Landroid/app/Notification$Builder;->setSmallIcon(I)Landroid/app/Notification$Builder;
 
@@ -747,7 +757,7 @@
 
     move-result-object v7
 
-    const v8, 0x7f020341
+    const v8, 0x7f020350
 
     invoke-virtual {v7, v8}, Landroid/app/Notification$Builder;->setSmallIcon(I)Landroid/app/Notification$Builder;
 

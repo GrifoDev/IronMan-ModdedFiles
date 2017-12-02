@@ -110,7 +110,7 @@
 .method protected c(Landroid/content/Context;)Lcom/android/contacts/common/model/dataitem/DataKind;
     .locals 8
 
-    const v3, 0x7f090246
+    const v3, 0x7f090249
 
     const/16 v7, 0xc1
 
@@ -158,7 +158,7 @@
 
     const-string v3, "data4"
 
-    const v4, 0x7f09024e
+    const v4, 0x7f090251
 
     invoke-direct {v2, v3, v4, v5}, Lcom/android/contacts/common/model/account/AccountType$EditField;-><init>(Ljava/lang/String;II)V
 
@@ -174,7 +174,7 @@
 
     const-string v3, "data3"
 
-    const v4, 0x7f090247
+    const v4, 0x7f09024a
 
     invoke-direct {v2, v3, v4, v5}, Lcom/android/contacts/common/model/account/AccountType$EditField;-><init>(Ljava/lang/String;II)V
 
@@ -186,7 +186,7 @@
 
     const-string v3, "data5"
 
-    const v4, 0x7f090249
+    const v4, 0x7f09024c
 
     invoke-direct {v2, v3, v4, v5}, Lcom/android/contacts/common/model/account/AccountType$EditField;-><init>(Ljava/lang/String;II)V
 
@@ -198,7 +198,7 @@
 
     const-string v3, "data2"
 
-    const v4, 0x7f090248
+    const v4, 0x7f09024b
 
     invoke-direct {v2, v3, v4, v5}, Lcom/android/contacts/common/model/account/AccountType$EditField;-><init>(Ljava/lang/String;II)V
 
@@ -210,7 +210,7 @@
 
     const-string v3, "data6"
 
-    const v4, 0x7f090251
+    const v4, 0x7f090254
 
     invoke-direct {v2, v3, v4, v5}, Lcom/android/contacts/common/model/account/AccountType$EditField;-><init>(Ljava/lang/String;II)V
 
@@ -222,7 +222,7 @@
 
     const-string v3, "data9"
 
-    const v4, 0x7f09024b
+    const v4, 0x7f09024e
 
     invoke-direct {v2, v3, v4, v7}, Lcom/android/contacts/common/model/account/AccountType$EditField;-><init>(Ljava/lang/String;II)V
 
@@ -234,7 +234,7 @@
 
     const-string v3, "data7"
 
-    const v4, 0x7f09024c
+    const v4, 0x7f09024f
 
     invoke-direct {v2, v3, v4, v7}, Lcom/android/contacts/common/model/account/AccountType$EditField;-><init>(Ljava/lang/String;II)V
 
@@ -246,11 +246,11 @@
 .method protected d(Landroid/content/Context;)Lcom/android/contacts/common/model/dataitem/DataKind;
     .locals 11
 
-    const v10, 0x7f090249
+    const v10, 0x7f09024c
 
-    const v9, 0x7f090248
+    const v9, 0x7f09024b
 
-    const v8, 0x7f090247
+    const v8, 0x7f09024a
 
     const/4 v7, 0x1
 
@@ -260,7 +260,7 @@
 
     const-string v1, "#displayName"
 
-    const v2, 0x7f090246
+    const v2, 0x7f090249
 
     const/4 v3, -0x1
 
@@ -294,7 +294,7 @@
 
     const-string v4, "data4"
 
-    const v5, 0x7f09024e
+    const v5, 0x7f090251
 
     invoke-direct {v3, v4, v5, v6}, Lcom/android/contacts/common/model/account/AccountType$EditField;-><init>(Ljava/lang/String;II)V
 
@@ -347,7 +347,7 @@
 
     const-string v3, "data6"
 
-    const v4, 0x7f090251
+    const v4, 0x7f090254
 
     invoke-direct {v2, v3, v4, v6}, Lcom/android/contacts/common/model/account/AccountType$EditField;-><init>(Ljava/lang/String;II)V
 
@@ -416,7 +416,7 @@
 
     const-string v1, "#phoneticName"
 
-    const v2, 0x7f09024a
+    const v2, 0x7f09024d
 
     const/4 v3, -0x1
 
@@ -428,7 +428,7 @@
 
     new-instance v1, Lcom/android/contacts/common/model/account/BaseAccountType$SimpleInflater;
 
-    const v2, 0x7f090246
+    const v2, 0x7f090249
 
     invoke-direct {v1, v2}, Lcom/android/contacts/common/model/account/BaseAccountType$SimpleInflater;-><init>(I)V
 
@@ -456,7 +456,7 @@
 
     const-string v3, "data9"
 
-    const v4, 0x7f09024b
+    const v4, 0x7f09024e
 
     invoke-direct {v2, v3, v4, v5}, Lcom/android/contacts/common/model/account/AccountType$EditField;-><init>(Ljava/lang/String;II)V
 
@@ -468,7 +468,7 @@
 
     const-string v3, "data7"
 
-    const v4, 0x7f09024c
+    const v4, 0x7f09024f
 
     invoke-direct {v2, v3, v4, v5}, Lcom/android/contacts/common/model/account/AccountType$EditField;-><init>(Ljava/lang/String;II)V
 
@@ -500,7 +500,7 @@
 
     const-string v3, "data1"
 
-    const v4, 0x7f090255
+    const v4, 0x7f090258
 
     const/16 v5, 0x2061
 
@@ -726,7 +726,7 @@
 
     const-string v3, "data1"
 
-    const v4, 0x7f090272
+    const v4, 0x7f090275
 
     invoke-direct {v2, v3, v4, v5}, Lcom/android/contacts/common/model/account/AccountType$EditField;-><init>(Ljava/lang/String;II)V
 
@@ -758,7 +758,7 @@
 
     const-string v3, "data1"
 
-    const v4, 0x7f090166
+    const v4, 0x7f090169
 
     const/16 v5, 0x21
 
@@ -772,11 +772,11 @@
 .method protected i(Landroid/content/Context;)Lcom/android/contacts/common/model/dataitem/DataKind;
     .locals 10
 
-    const v9, 0x7f090281
+    const v9, 0x7f090284
 
-    const v8, 0x7f090280
+    const v8, 0x7f090283
 
-    const v7, 0x7f09027f
+    const v7, 0x7f090282
 
     const/4 v6, 0x1
 
@@ -892,7 +892,7 @@
 
     const-string v3, "data8"
 
-    const v4, 0x7f090282
+    const v4, 0x7f090285
 
     invoke-direct {v2, v3, v4, v5}, Lcom/android/contacts/common/model/account/AccountType$EditField;-><init>(Ljava/lang/String;II)V
 
@@ -914,7 +914,7 @@
 
     const-string v3, "data4"
 
-    const v4, 0x7f090283
+    const v4, 0x7f090286
 
     invoke-direct {v2, v3, v4, v5}, Lcom/android/contacts/common/model/account/AccountType$EditField;-><init>(Ljava/lang/String;II)V
 
@@ -930,7 +930,7 @@
 
     const-string v3, "data4"
 
-    const v4, 0x7f090283
+    const v4, 0x7f090286
 
     invoke-direct {v2, v3, v4, v5}, Lcom/android/contacts/common/model/account/AccountType$EditField;-><init>(Ljava/lang/String;II)V
 
@@ -952,7 +952,7 @@
 
     const-string v3, "data8"
 
-    const v4, 0x7f090282
+    const v4, 0x7f090285
 
     invoke-direct {v2, v3, v4, v5}, Lcom/android/contacts/common/model/account/AccountType$EditField;-><init>(Ljava/lang/String;II)V
 
@@ -1024,7 +1024,7 @@
 
     const-string v3, "data1"
 
-    const v4, 0x7f090185
+    const v4, 0x7f090188
 
     const/16 v5, 0x21
 
@@ -1068,7 +1068,7 @@
 
     const-string v3, "data1"
 
-    const v4, 0x7f09017d
+    const v4, 0x7f090180
 
     invoke-direct {v2, v3, v4, v5}, Lcom/android/contacts/common/model/account/AccountType$EditField;-><init>(Ljava/lang/String;II)V
 
@@ -1080,7 +1080,7 @@
 
     const-string v3, "data4"
 
-    const v4, 0x7f09017e
+    const v4, 0x7f090181
 
     invoke-direct {v2, v3, v4, v5}, Lcom/android/contacts/common/model/account/AccountType$EditField;-><init>(Ljava/lang/String;II)V
 
@@ -1140,7 +1140,7 @@
 
     const-string v3, "data1"
 
-    const v4, 0x7f09022b
+    const v4, 0x7f09022e
 
     const v5, 0x24001
 
@@ -1174,7 +1174,7 @@
 
     const-string v3, "data1"
 
-    const v4, 0x7f0903cf
+    const v4, 0x7f0903d4
 
     const/16 v5, 0x11
 
@@ -1188,7 +1188,7 @@
 .method protected q(Landroid/content/Context;)Lcom/android/contacts/common/model/dataitem/DataKind;
     .locals 6
 
-    const v5, 0x7f090175
+    const v5, 0x7f090178
 
     const/4 v4, 0x1
 

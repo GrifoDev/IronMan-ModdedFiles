@@ -178,12 +178,13 @@
     <string name="account_phone">Gerät</string>
     <string name="acs">Sprachanruf</string>
     <string name="active_calls">Aktiver Anruf</string>
-    <string name="add_reminder">Neue Erinnerung</string>
+    <string name="add_reminder">Erinnerung hinzufügen</string>
     <string name="agif_button_close_description">Schließen</string>
     <string name="agif_decline_message">Ich kann leider gerade nicht sprechen.</string>
     <string name="agif_decline_sticker_header">Ablehnen mit einem Sticker</string>
     <string name="agif_decline_text_header">Ablehnen mit einem Text</string>
     <string name="agif_decline_toast">Sticker an %s gesendet.</string>
+    <string name="agif_outgoing_bubble_tip">Senden Sie einen Sticker, um zu zeigen, wie Sie sich fühlen.</string>
     <string name="agif_pickers_add_tab_description">Hzfg.</string>
     <string name="agif_pickers_downloaded">Heruntergeladen</string>
     <string name="agif_pickers_item_usage_hints_description">Zum Auswählen zweimal tippen</string>
@@ -199,10 +200,12 @@
     <string name="agif_pickers_tab_select_description">Ausgewählt</string>
     <string name="agif_pickers_title">Verwenden von Stickern</string>
     <string name="agif_pickers_title_top_stickers">Beste Sticker</string>
+    <string name="agif_random_send_message">Tippen Sie hier um diesen Sticker zu senden.</string>
     <string name="agif_read_permission_description">Ermöglicht dem Telefon das Lesen von AGIF-Inhalt.</string>
     <string name="agif_read_permission_label">AGIF-Inhalt lesen</string>
     <string name="agif_receive_no_id">Sticker kann nicht angezeigt werden. Aktualisieren Sie %s nach dem Anruf.</string>
     <string name="agif_receive_no_id_upsupport_update">Sticker kann nicht angezeigt werden. Nach dem nächsten System-Update sind weitere Sticker verfügbar.</string>
+    <string name="agif_receive_toast">Sticker von %s.</string>
     <string name="agif_sent_fail_message">Animiertes GIF kann nicht gesendet werden. Versuchen Sie es später erneut.</string>
     <string name="agif_sent_toast">Sticker gesendet.</string>
     <string name="agif_write_permission_description">Ermöglicht dem Telefon das Modifizieren von AGIF-Inhalt.</string>
@@ -745,11 +748,11 @@ Das Bildschirmmenü für IVR-Anruf nutzt Inhalte eines Drittanbieters namens Dia
     <string name="secOnscreenMenuAddCallText">Anruf hinzufügen</string>
     <string name="secOnscreenMenuCallTransfer">Übertragen</string>
     <string name="secOnscreenMenuCaptureImageText">Foto aufnehmen</string>
-    <string name="secOnscreenMenuDisableExtraVolume">Extralautst. deakt.</string>
+    <string name="secOnscreenMenuDisableExtraVolume">Extralautstärke deaktiv.</string>
     <string name="secOnscreenMenuDisableExtraVolumeTTS">Extralautstärke deaktivieren</string>
     <string name="secOnscreenMenuDualCameraOffText">Dual Camera deaktivieren</string>
     <string name="secOnscreenMenuDualCameraOnText">Dual Camera aktivieren</string>
-    <string name="secOnscreenMenuEnableExtraVolume">Extralautst. aktiv.</string>
+    <string name="secOnscreenMenuEnableExtraVolume">Extralautstärke aktiv.</string>
     <string name="secOnscreenMenuEnableExtraVolumeTTS">Extralautstärke aktivieren</string>
     <string name="secOnscreenMenuHideMeText">Mich verbergen</string>
     <string name="secOnscreenMenuImageEffectText">Bildeffekt</string>
@@ -798,7 +801,7 @@ Kamera"</string>
     <string name="secOnscreenSwitchCameraText">Kamera wechseln</string>
     <string name="secOnscreenSwitchText">Wechseln</string>
     <string name="secOnscreenUpdateContactText">Vorhandene aktualisieren</string>
-    <string name="secOnscreenUpdateContactText_tts">Vorhandene aktualisieren</string>
+    <string name="secOnscreenUpdateContactText_tts">Aktualisieren</string>
     <string name="secOnscreenVideoCallText">Videoanruf</string>
     <string name="secOnscreenVideoStopText">Stopp</string>
     <string name="secOnscreenViewContactText">Kontakt anzeigen</string>
@@ -871,6 +874,7 @@ Kamera"</string>
     <string name="sticker_delete_stickers">%d Sticker löschen?</string>
     <string name="sticker_delete_this_sticker">Diesen Sticker löschen?</string>
     <string name="sticker_setting_edit_title">Sticker-Auswahl</string>
+    <string name="sticker_setting_edit_title_preload">Neuanordnung von Stickern</string>
     <string name="sticker_setting_main_title">Meine Sticker</string>
     <string name="sticker_setting_menu_delete">Löschen</string>
     <string name="sticker_setting_menu_edit">Bearbeiten</string>
@@ -883,6 +887,7 @@ Kamera"</string>
     <string name="swipe_right_to_answer_call_with_video">Nach rechts streichen, um einen Anruf mit Video anzunehmen.</string>
     <string name="swipe_right_to_answer_call_without_video">Nach rechts streichen, um einen Anruf ohne Video anzunehmen.</string>
     <string name="switch_rejected_by_mt">Anfrage auf Wechsel zu Videoanruf abgelehnt</string>
+    <string name="switch_rejected_by_mt_att">Video ist für diesen Anruf nicht verfügbar. Anruf ist als Sprachanruf verbunden.</string>
     <string name="switch_to_video_call_failed">Anfrage nach Wechsel zu Videoanruf fehlgeschlagen.</string>
     <string name="switch_to_video_call_failed_tmo">Anfrage nach Wechsel zu Videoanruf wurde abgelehnt.</string>
     <string name="switch_to_voice_call_failed">Anfrage nach Wechsel zu Sprachanruf fehlgeschlagen.</string>

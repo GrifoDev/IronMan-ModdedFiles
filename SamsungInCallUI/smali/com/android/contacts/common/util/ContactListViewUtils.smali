@@ -16,13 +16,13 @@
 
     const/4 v3, 0x0
 
-    const v0, 0x7f0e0049
+    const v0, 0x7f0f0048
 
     invoke-virtual {p0, v0}, Landroid/content/res/Resources;->getInteger(I)I
 
     move-result v0
 
-    const v1, 0x7f0e0048
+    const v1, 0x7f0f0047
 
     invoke-virtual {p0, v1}, Landroid/content/res/Resources;->getInteger(I)I
 
@@ -34,7 +34,7 @@
 
     invoke-virtual {p2, v3}, Landroid/view/View;->setBackgroundResource(I)V
 
-    const v2, 0x7f100113
+    const v2, 0x7f10011a
 
     invoke-virtual {p2, v2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 

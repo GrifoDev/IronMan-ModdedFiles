@@ -156,7 +156,7 @@
 
     invoke-static {v0}, Lcom/android/incallui/util/VideoCallUtils;->mediaScan(Ljava/lang/String;)V
 
-    const v0, 0x7f09010e
+    const v0, 0x7f090111
 
     invoke-static {v0}, Lcom/android/incallui/util/InCallUtils;->displayToastLong(I)V
 
@@ -183,7 +183,7 @@
     return-void
 
     :cond_1
-    const v0, 0x7f09010d
+    const v0, 0x7f090110
 
     invoke-static {v0}, Lcom/android/incallui/util/InCallUtils;->displayToastLong(I)V
 
@@ -451,7 +451,7 @@
 
     invoke-static {v2}, Lcom/android/incallui/service/vt/VideoCallControl;->sendStillImage(Z)V
 
-    const v0, 0x7f09010e
+    const v0, 0x7f090111
 
     invoke-static {v0}, Lcom/android/incallui/util/InCallUtils;->displayToastLong(I)V
 
@@ -467,7 +467,7 @@
 
     invoke-virtual {v0, v1}, Lcom/android/incallui/service/vt/VideoCallManager;->setLivePreview(Z)V
 
-    const v0, 0x7f09010d
+    const v0, 0x7f090110
 
     invoke-static {v0}, Lcom/android/incallui/util/InCallUtils;->displayToastLong(I)V
 
@@ -614,7 +614,7 @@
     goto :goto_0
 
     :cond_2
-    const v0, 0x7f09023d
+    const v0, 0x7f090240
 
     invoke-static {v0}, Lcom/android/incallui/util/InCallUtils;->displayToastLong(I)V
 
@@ -1477,7 +1477,11 @@
 
     if-eqz v0, :cond_0
 
-    const/4 v0, 0x5
+    sget-boolean v0, Lcom/android/incallui/service/vt/VideoCallConfig;->DEVICE_ROTATION:Z
+
+    if-nez v0, :cond_0
+
+    const/4 v0, 0x7
 
     invoke-static {v0}, Lcom/android/incallui/util/VideoCallUtils;->setRequestedOrientation(I)V
 
@@ -1852,7 +1856,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f0a0216
+    const v1, 0x7f0a01fc
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDimension(I)F
 
@@ -2762,7 +2766,7 @@
     return v0
 
     :cond_2
-    const v1, 0x7f09023d
+    const v1, 0x7f090240
 
     invoke-static {v1}, Lcom/android/incallui/util/InCallUtils;->displayToastLong(I)V
 

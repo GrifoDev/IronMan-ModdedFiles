@@ -9,6 +9,8 @@
 # instance fields
 .field private mBackgroundDrawable:Landroid/graphics/drawable/Drawable;
 
+.field private mContext:Landroid/content/Context;
+
 .field private mMeasuredHeight:I
 
 .field private mMeasuredWidth:I
@@ -68,94 +70,86 @@
 .end method
 
 .method private init(Landroid/content/Context;)V
-    .locals 4
+    .locals 3
 
-    const/4 v3, 0x0
+    const/4 v2, 0x0
 
-    invoke-static {}, Lcom/android/incallui/CallList;->getInstance()Lcom/android/incallui/CallList;
+    iput-object p1, p0, Lcom/android/incallui/widget/SecVideoButton;->mContext:Landroid/content/Context;
+
+    invoke-virtual {p1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
     move-result-object v0
 
-    const/4 v1, 0x0
+    const v1, 0x7f0a0108
 
-    invoke-static {v0, v1, v3}, Lcom/android/incallui/util/InCallUtils;->getCallToDisplay(Lcom/android/incallui/CallList;Lcom/android/incallui/Call;Z)Lcom/android/incallui/Call;
+    invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
+
+    move-result v0
+
+    iput v0, p0, Lcom/android/incallui/widget/SecVideoButton;->mRippleEffectWidth:I
+
+    invoke-virtual {p1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
     move-result-object v0
 
-    invoke-virtual {p1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
+    const v1, 0x7f0a0107
 
-    move-result-object v1
+    invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
-    const v2, 0x7f0a010c
+    move-result v0
 
-    invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
+    iput v0, p0, Lcom/android/incallui/widget/SecVideoButton;->mRippleEffectHeight:I
 
-    move-result v1
-
-    iput v1, p0, Lcom/android/incallui/widget/SecVideoButton;->mRippleEffectWidth:I
+    iput v2, p0, Lcom/android/incallui/widget/SecVideoButton;->mMeasuredWidth:I
 
     invoke-virtual {p1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
-    move-result-object v1
+    move-result-object v0
 
-    const v2, 0x7f0a010b
+    const v1, 0x7f0a000b
 
-    invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
+    invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
-    move-result v1
+    move-result v0
 
-    iput v1, p0, Lcom/android/incallui/widget/SecVideoButton;->mRippleEffectHeight:I
+    iput v0, p0, Lcom/android/incallui/widget/SecVideoButton;->mMeasuredHeight:I
 
-    iput v3, p0, Lcom/android/incallui/widget/SecVideoButton;->mMeasuredWidth:I
+    const/4 v0, 0x1
 
-    invoke-virtual {p1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
+    new-array v0, v0, [I
 
-    move-result-object v1
+    const v1, 0x101039c
 
-    const v2, 0x7f0a000e
+    aput v1, v0, v2
 
-    invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
+    if-eqz v0, :cond_0
 
-    move-result v1
+    invoke-virtual {p1, v0}, Landroid/content/Context;->obtainStyledAttributes([I)Landroid/content/res/TypedArray;
 
-    iput v1, p0, Lcom/android/incallui/widget/SecVideoButton;->mMeasuredHeight:I
+    move-result-object v0
 
-    const/4 v1, 0x1
+    if-eqz v0, :cond_0
 
-    new-array v1, v1, [I
-
-    const v2, 0x101039c
-
-    aput v2, v1, v3
-
-    if-eqz v1, :cond_0
-
-    invoke-virtual {p1, v1}, Landroid/content/Context;->obtainStyledAttributes([I)Landroid/content/res/TypedArray;
+    invoke-virtual {v0, v2}, Landroid/content/res/TypedArray;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 
     move-result-object v1
 
-    if-eqz v1, :cond_0
+    iput-object v1, p0, Lcom/android/incallui/widget/SecVideoButton;->mBackgroundDrawable:Landroid/graphics/drawable/Drawable;
 
-    invoke-virtual {v1, v3}, Landroid/content/res/TypedArray;->getDrawable(I)Landroid/graphics/drawable/Drawable;
-
-    move-result-object v2
-
-    iput-object v2, p0, Lcom/android/incallui/widget/SecVideoButton;->mBackgroundDrawable:Landroid/graphics/drawable/Drawable;
-
-    invoke-virtual {v1}, Landroid/content/res/TypedArray;->recycle()V
+    invoke-virtual {v0}, Landroid/content/res/TypedArray;->recycle()V
 
     :cond_0
-    iget-object v1, p0, Lcom/android/incallui/widget/SecVideoButton;->mBackgroundDrawable:Landroid/graphics/drawable/Drawable;
+    iget-object v0, p0, Lcom/android/incallui/widget/SecVideoButton;->mBackgroundDrawable:Landroid/graphics/drawable/Drawable;
 
-    if-eqz v1, :cond_1
+    if-eqz v0, :cond_1
 
-    invoke-direct {p0, v0}, Lcom/android/incallui/widget/SecVideoButton;->updateButtonBackground(Lcom/android/incallui/Call;)V
+    invoke-direct {p0}, Lcom/android/incallui/widget/SecVideoButton;->updateButtonBackground()V
 
     :cond_1
     return-void
 .end method
 
-.method private updateButtonBackground(Lcom/android/incallui/Call;)V
+.method private updateButtonBackground()V
     .locals 1
 
     invoke-static {}, Lcom/android/incallui/InCallUISystemDB;->isEnabledShowButtonBackground()Z
@@ -170,7 +164,7 @@
 
     if-eqz v0, :cond_1
 
-    const v0, 0x7f020392
+    const v0, 0x7f0203a2
 
     invoke-virtual {p0, v0}, Lcom/android/incallui/widget/SecVideoButton;->setBackgroundResource(I)V
 
@@ -179,7 +173,7 @@
     return-void
 
     :cond_1
-    const v0, 0x7f020396
+    const v0, 0x7f0203a6
 
     invoke-virtual {p0, v0}, Lcom/android/incallui/widget/SecVideoButton;->setBackgroundResource(I)V
 
@@ -189,19 +183,13 @@
 
 # virtual methods
 .method protected onDraw(Landroid/graphics/Canvas;)V
-    .locals 5
+    .locals 4
 
-    invoke-static {}, Lcom/android/incallui/CallList;->getInstance()Lcom/android/incallui/CallList;
+    invoke-static {}, Lcom/android/incallui/util/VideoCallUtils;->isQCIF()Z
 
-    move-result-object v0
+    move-result v0
 
-    const/4 v1, 0x0
-
-    const/4 v2, 0x0
-
-    invoke-static {v0, v1, v2}, Lcom/android/incallui/util/InCallUtils;->getCallToDisplay(Lcom/android/incallui/CallList;Lcom/android/incallui/Call;Z)Lcom/android/incallui/Call;
-
-    move-result-object v2
+    if-eqz v0, :cond_5
 
     invoke-virtual {p0}, Lcom/android/incallui/widget/SecVideoButton;->getMeasuredWidth()I
 
@@ -247,17 +235,18 @@
 
     iget v1, p0, Lcom/android/incallui/widget/SecVideoButton;->mMeasuredHeight:I
 
-    iget v3, p0, Lcom/android/incallui/widget/SecVideoButton;->mRippleEffectWidth:I
+    iget v2, p0, Lcom/android/incallui/widget/SecVideoButton;->mRippleEffectWidth:I
 
-    iget v4, p0, Lcom/android/incallui/widget/SecVideoButton;->mRippleEffectHeight:I
+    iget v3, p0, Lcom/android/incallui/widget/SecVideoButton;->mRippleEffectHeight:I
 
-    invoke-static {p0, v0, v1, v3, v4}, Lcom/android/incallui/util/GraphicResourceUtils;->setRippleSize(Landroid/view/View;IIII)V
+    invoke-static {p0, v0, v1, v2, v3}, Lcom/android/incallui/util/GraphicResourceUtils;->setRippleSize(Landroid/view/View;IIII)V
 
+    :goto_2
     iget-object v0, p0, Lcom/android/incallui/widget/SecVideoButton;->mBackgroundDrawable:Landroid/graphics/drawable/Drawable;
 
     if-eqz v0, :cond_2
 
-    invoke-direct {p0, v2}, Lcom/android/incallui/widget/SecVideoButton;->updateButtonBackground(Lcom/android/incallui/Call;)V
+    invoke-direct {p0}, Lcom/android/incallui/widget/SecVideoButton;->updateButtonBackground()V
 
     :cond_2
     invoke-super {p0, p1}, Landroid/widget/Button;->onDraw(Landroid/graphics/Canvas;)V
@@ -273,14 +262,114 @@
     iget v0, p0, Lcom/android/incallui/widget/SecVideoButton;->mMeasuredHeight:I
 
     goto :goto_1
+
+    :cond_5
+    invoke-virtual {p0}, Lcom/android/incallui/widget/SecVideoButton;->getMeasuredWidth()I
+
+    move-result v0
+
+    invoke-virtual {p0}, Lcom/android/incallui/widget/SecVideoButton;->getMeasuredHeight()I
+
+    move-result v1
+
+    iget v2, p0, Lcom/android/incallui/widget/SecVideoButton;->mRippleEffectWidth:I
+
+    iget v3, p0, Lcom/android/incallui/widget/SecVideoButton;->mRippleEffectHeight:I
+
+    invoke-static {p0, v0, v1, v2, v3}, Lcom/android/incallui/util/GraphicResourceUtils;->setRippleSize(Landroid/view/View;IIII)V
+
+    goto :goto_2
 .end method
 
-.method public setMeasuredSizeForRipple(II)V
-    .locals 0
+.method public sendAccessibilityEvent(I)V
+    .locals 5
 
-    iput p1, p0, Lcom/android/incallui/widget/SecVideoButton;->mMeasuredWidth:I
+    invoke-static {}, Lcom/android/incallui/InCallUISystemDB;->isUniversalSwitchEnable()Z
 
-    iput p2, p0, Lcom/android/incallui/widget/SecVideoButton;->mMeasuredHeight:I
+    move-result v0
 
+    if-nez v0, :cond_1
+
+    const v0, 0x8000
+
+    if-ne v0, p1, :cond_1
+
+    iget-object v0, p0, Lcom/android/incallui/widget/SecVideoButton;->mContext:Landroid/content/Context;
+
+    const-string v1, "accessibility"
+
+    invoke-virtual {v0, v1}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Landroid/view/accessibility/AccessibilityManager;
+
+    if-eqz v0, :cond_1
+
+    invoke-virtual {v0}, Landroid/view/accessibility/AccessibilityManager;->isEnabled()Z
+
+    move-result v1
+
+    if-eqz v1, :cond_1
+
+    const/16 v1, 0x4000
+
+    invoke-static {v1}, Landroid/view/accessibility/AccessibilityEvent;->obtain(I)Landroid/view/accessibility/AccessibilityEvent;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Landroid/view/accessibility/AccessibilityEvent;->getText()Ljava/util/List;
+
+    move-result-object v2
+
+    invoke-virtual {p0}, Lcom/android/incallui/widget/SecVideoButton;->getText()Ljava/lang/CharSequence;
+
+    move-result-object v3
+
+    invoke-interface {v2, v3}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+
+    invoke-virtual {v1}, Landroid/view/accessibility/AccessibilityEvent;->getText()Ljava/util/List;
+
+    move-result-object v2
+
+    iget-object v3, p0, Lcom/android/incallui/widget/SecVideoButton;->mContext:Landroid/content/Context;
+
+    const v4, 0x7f0900df
+
+    invoke-virtual {v3, v4}, Landroid/content/Context;->getString(I)Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-interface {v2, v3}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+
+    invoke-virtual {p0}, Lcom/android/incallui/widget/SecVideoButton;->isEnabled()Z
+
+    move-result v2
+
+    if-nez v2, :cond_0
+
+    invoke-virtual {v1}, Landroid/view/accessibility/AccessibilityEvent;->getText()Ljava/util/List;
+
+    move-result-object v2
+
+    iget-object v3, p0, Lcom/android/incallui/widget/SecVideoButton;->mContext:Landroid/content/Context;
+
+    const v4, 0x7f090334
+
+    invoke-virtual {v3, v4}, Landroid/content/Context;->getString(I)Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-interface {v2, v3}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+
+    :cond_0
+    invoke-virtual {v0, v1}, Landroid/view/accessibility/AccessibilityManager;->sendAccessibilityEvent(Landroid/view/accessibility/AccessibilityEvent;)V
+
+    :goto_0
     return-void
+
+    :cond_1
+    invoke-super {p0, p1}, Landroid/widget/Button;->sendAccessibilityEvent(I)V
+
+    goto :goto_0
 .end method

@@ -178,12 +178,13 @@
     <string name="account_phone">裝置</string>
     <string name="acs">語音通話</string>
     <string name="active_calls">進行中通話</string>
-    <string name="add_reminder">新增Reminder</string>
+    <string name="add_reminder">新增提醒</string>
     <string name="agif_button_close_description">關閉</string>
     <string name="agif_decline_message">抱歉，現在不方便說話。</string>
     <string name="agif_decline_sticker_header">透過動態貼圖拒接</string>
     <string name="agif_decline_text_header">透過簡訊拒接</string>
     <string name="agif_decline_toast">已傳送動態貼圖給 %s。</string>
+    <string name="agif_outgoing_bubble_tip">傳送貼圖，表達您此刻的心情。</string>
     <string name="agif_pickers_add_tab_description">新增</string>
     <string name="agif_pickers_downloaded">已下載</string>
     <string name="agif_pickers_item_usage_hints_description">輕觸兩下來選擇</string>
@@ -199,10 +200,12 @@
     <string name="agif_pickers_tab_select_description">已選擇</string>
     <string name="agif_pickers_title">以動態貼圖開始通話</string>
     <string name="agif_pickers_title_top_stickers">熱門貼圖</string>
+    <string name="agif_random_send_message">輕觸此處以傳送此貼圖。</string>
     <string name="agif_read_permission_description">允許電話讀取 AGIF 內容。</string>
     <string name="agif_read_permission_label">讀取 AGIF 內容</string>
     <string name="agif_receive_no_id">無法顯示動態貼圖。請於通話結束後更新 %s。</string>
     <string name="agif_receive_no_id_upsupport_update">無法顯示動態貼圖。下次系統更新後將提供更多動態貼圖。</string>
+    <string name="agif_receive_toast">來自 %s 的貼圖。</string>
     <string name="agif_sent_fail_message">無法傳送 GIF 動畫。請稍後重試。</string>
     <string name="agif_sent_toast">已傳送動態貼圖。</string>
     <string name="agif_write_permission_description">允許電話修改 AGIF 內容。</string>
@@ -406,7 +409,7 @@
     <string name="incall_decline_simultaneous_call_limit_with_mdn_vzw">所有%s可用線路均在使用中。若要撥打電話，請掛斷行動電話或平板上的其中一個通話。</string>
     <string name="incall_decline_transferred_to_another_device">已將來電轉接到另一部裝置。</string>
     <string name="incall_error_supp_service_switch">無法切換通話。</string>
-    <string name="incall_extra_volume_disabled_BT">藍牙耳機連接時無法使用 [增強音量範圍]。</string>
+    <string name="incall_extra_volume_disabled_BT">藍牙耳機連接時無法使用 [增強音量]。</string>
     <string name="incall_extra_volume_disabled_HAC">[助聽器] 啟用時無法啟用 [最大音量]。</string>
     <string name="incall_extra_volume_disabled_HAC_vzw">[助聽器] 啟用時無法啟用 [最大音量]。</string>
     <string name="incall_extra_volume_disabled_headset">耳機連接時無法使用 [增強音量]。</string>
@@ -871,6 +874,7 @@
     <string name="sticker_delete_stickers">刪除 %d 個貼圖嗎？</string>
     <string name="sticker_delete_this_sticker">刪除此貼圖嗎？</string>
     <string name="sticker_setting_edit_title">選擇貼圖</string>
+    <string name="sticker_setting_edit_title_preload">重新排序貼圖</string>
     <string name="sticker_setting_main_title">我的貼圖</string>
     <string name="sticker_setting_menu_delete">刪除</string>
     <string name="sticker_setting_menu_edit">編輯</string>
@@ -883,6 +887,7 @@
     <string name="swipe_right_to_answer_call_with_video">向右滑動以接聽視訊來電</string>
     <string name="swipe_right_to_answer_call_without_video">向右滑動以接聽非視訊來電</string>
     <string name="switch_rejected_by_mt">要求切換至視訊通話被拒絕。</string>
+    <string name="switch_rejected_by_mt_att">此通話無法使用視訊。已透過語音通話連接。</string>
     <string name="switch_to_video_call_failed">要求切換至視訊通話失敗。</string>
     <string name="switch_to_video_call_failed_tmo">切換為視訊通話的要求被拒。</string>
     <string name="switch_to_voice_call_failed">要求切換至語音通話失敗。</string>
@@ -894,7 +899,7 @@
     <string name="switching_to_voice_call">正在切換為語音通話…</string>
     <string name="the_verification_has_failed">驗證失敗。請重試。</string>
     <string name="toast_text_max_Length">已達字元數量上限。</string>
-    <string name="tts_hours">%d 個小時</string>
+    <string name="tts_hours">%d 小時</string>
     <string name="tts_minutes">%d 分鐘</string>
     <string name="tts_pager">頁 %2$d 之 %1$d。</string>
     <string name="tts_seconds">%d 秒</string>

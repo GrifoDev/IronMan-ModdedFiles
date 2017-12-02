@@ -304,7 +304,7 @@
 
     iget-object v0, p0, Lcom/android/incallui/agif/StickerSettingActivity;->mDndAnimator:Lcom/samsung/android/animation/SemDragAndDropListAnimator;
 
-    const v1, 0x7f020355
+    const v1, 0x7f020364
 
     invoke-virtual {v0, v1}, Lcom/samsung/android/animation/SemDragAndDropListAnimator;->setDragGrabHandleDrawable(I)V
 
@@ -341,7 +341,7 @@
 
     iget-object v0, p0, Lcom/android/incallui/agif/StickerSettingActivity;->mMenu:Landroid/view/Menu;
 
-    const v1, 0x7f09035d
+    const v1, 0x7f090361
 
     invoke-interface {v0, v2, v3, v2, v1}, Landroid/view/Menu;->add(IIII)Landroid/view/MenuItem;
 
@@ -467,7 +467,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f0a0598
+    const v1, 0x7f0a05ad
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDimension(I)F
 
@@ -485,7 +485,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f0a0599
+    const v1, 0x7f0a05ae
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDimension(I)F
 
@@ -599,7 +599,7 @@
 
     if-le v0, v4, :cond_0
 
-    const v1, 0x7f090358
+    const v1, 0x7f09035b
 
     new-array v2, v4, [Ljava/lang/Object;
 
@@ -620,7 +620,7 @@
 
     invoke-direct {v1, p0}, Landroid/app/AlertDialog$Builder;-><init>(Landroid/content/Context;)V
 
-    const v2, 0x7f09035c
+    const v2, 0x7f090360
 
     new-instance v3, Lcom/android/incallui/agif/StickerSettingActivity$4;
 
@@ -649,7 +649,7 @@
     return-void
 
     :cond_0
-    const v0, 0x7f090359
+    const v0, 0x7f09035c
 
     invoke-virtual {p0, v0}, Lcom/android/incallui/agif/StickerSettingActivity;->getString(I)Ljava/lang/String;
 
@@ -704,7 +704,7 @@
 
     move-result-object v0
 
-    const v3, 0x7f10050f
+    const v3, 0x7f10052d
 
     invoke-interface {v0, v3}, Landroid/view/Menu;->findItem(I)Landroid/view/MenuItem;
 
@@ -763,23 +763,38 @@
 .end method
 
 .method public onCheckChange()V
-    .locals 3
+    .locals 4
+
+    const/4 v1, 0x1
 
     const/4 v2, 0x0
 
     const-string v0, "StickerSettingActivity"
 
-    const-string v1, "onCheckChange"
+    const-string v3, "onCheckChange"
 
-    invoke-static {v0, v1}, Lcom/android/incallui/Log;->d(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v0, v3}, Lcom/android/incallui/Log;->d(Ljava/lang/String;Ljava/lang/String;)V
 
-    iget-object v0, p0, Lcom/android/incallui/agif/StickerSettingActivity;->mSelectText:Landroid/widget/TextView;
+    iget-object v0, p0, Lcom/android/incallui/agif/StickerSettingActivity;->mStickerSettingAdapter:Lcom/android/incallui/agif/StickerSettingAdapter;
 
-    if-eqz v0, :cond_0
+    invoke-virtual {v0}, Lcom/android/incallui/agif/StickerSettingAdapter;->getAllCheckedCount()I
 
-    iget-object v0, p0, Lcom/android/incallui/agif/StickerSettingActivity;->mSelectAll:Landroid/widget/CheckBox;
+    move-result v0
 
-    if-eqz v0, :cond_0
+    if-nez v0, :cond_1
+
+    move v0, v1
+
+    :goto_0
+    iget-object v3, p0, Lcom/android/incallui/agif/StickerSettingActivity;->mSelectText:Landroid/widget/TextView;
+
+    if-eqz v3, :cond_0
+
+    iget-object v3, p0, Lcom/android/incallui/agif/StickerSettingActivity;->mSelectAll:Landroid/widget/CheckBox;
+
+    if-eqz v3, :cond_0
+
+    if-nez v0, :cond_0
 
     iget-object v0, p0, Lcom/android/incallui/agif/StickerSettingActivity;->mStickerSettingAdapter:Lcom/android/incallui/agif/StickerSettingAdapter;
 
@@ -787,21 +802,21 @@
 
     move-result v0
 
-    if-lez v0, :cond_2
+    if-lez v0, :cond_3
 
     iget-object v0, p0, Lcom/android/incallui/agif/StickerSettingActivity;->mSelectText:Landroid/widget/TextView;
 
-    iget-object v1, p0, Lcom/android/incallui/agif/StickerSettingActivity;->mStickerSettingAdapter:Lcom/android/incallui/agif/StickerSettingAdapter;
+    iget-object v3, p0, Lcom/android/incallui/agif/StickerSettingActivity;->mStickerSettingAdapter:Lcom/android/incallui/agif/StickerSettingAdapter;
 
-    invoke-virtual {v1}, Lcom/android/incallui/agif/StickerSettingAdapter;->getCheckedCount()I
+    invoke-virtual {v3}, Lcom/android/incallui/agif/StickerSettingAdapter;->getCheckedCount()I
 
-    move-result v1
+    move-result v3
 
-    invoke-static {v1}, Ljava/lang/Integer;->toString(I)Ljava/lang/String;
+    invoke-static {v3}, Ljava/lang/Integer;->toString(I)Ljava/lang/String;
 
-    move-result-object v1
+    move-result-object v3
 
-    invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+    invoke-virtual {v0, v3}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
     iget-object v0, p0, Lcom/android/incallui/agif/StickerSettingActivity;->mStickerSettingAdapter:Lcom/android/incallui/agif/StickerSettingAdapter;
 
@@ -809,13 +824,13 @@
 
     move-result v0
 
-    iget-object v1, p0, Lcom/android/incallui/agif/StickerSettingActivity;->mStickerSettingAdapter:Lcom/android/incallui/agif/StickerSettingAdapter;
+    iget-object v3, p0, Lcom/android/incallui/agif/StickerSettingActivity;->mStickerSettingAdapter:Lcom/android/incallui/agif/StickerSettingAdapter;
 
-    invoke-virtual {v1}, Lcom/android/incallui/agif/StickerSettingAdapter;->getAllCheckedCount()I
+    invoke-virtual {v3}, Lcom/android/incallui/agif/StickerSettingAdapter;->getAllCheckedCount()I
 
-    move-result v1
+    move-result v3
 
-    if-ge v0, v1, :cond_1
+    if-ge v0, v3, :cond_2
 
     iget-object v0, p0, Lcom/android/incallui/agif/StickerSettingActivity;->mSelectAll:Landroid/widget/CheckBox;
 
@@ -830,17 +845,22 @@
     invoke-virtual {v0, v2}, Landroid/widget/CheckBox;->setChecked(Z)V
 
     :cond_0
-    :goto_0
+    :goto_1
     invoke-direct {p0}, Lcom/android/incallui/agif/StickerSettingActivity;->updateMenuItem()V
 
     return-void
 
     :cond_1
+    move v0, v2
+
+    goto :goto_0
+
+    :cond_2
     iget-object v0, p0, Lcom/android/incallui/agif/StickerSettingActivity;->mSelectText:Landroid/widget/TextView;
 
-    const v1, 0x7f09035e
+    const v2, 0x7f090362
 
-    invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(I)V
+    invoke-virtual {v0, v2}, Landroid/widget/TextView;->setText(I)V
 
     iget-object v0, p0, Lcom/android/incallui/agif/StickerSettingActivity;->mSelectAll:Landroid/widget/CheckBox;
 
@@ -852,16 +872,14 @@
 
     iget-object v0, p0, Lcom/android/incallui/agif/StickerSettingActivity;->mSelectAll:Landroid/widget/CheckBox;
 
-    const/4 v1, 0x1
-
     invoke-virtual {v0, v1}, Landroid/widget/CheckBox;->setChecked(Z)V
 
-    goto :goto_0
+    goto :goto_1
 
-    :cond_2
+    :cond_3
     iget-object v0, p0, Lcom/android/incallui/agif/StickerSettingActivity;->mSelectText:Landroid/widget/TextView;
 
-    const v1, 0x7f09035a
+    const v1, 0x7f09035d
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(I)V
 
@@ -877,7 +895,7 @@
 
     invoke-virtual {v0, v2}, Landroid/widget/CheckBox;->setChecked(Z)V
 
-    goto :goto_0
+    goto :goto_1
 .end method
 
 .method protected onCreate(Landroid/os/Bundle;)V
@@ -906,7 +924,7 @@
     invoke-virtual {v0, v3}, Landroid/app/ActionBar;->setDisplayHomeAsUpEnabled(Z)V
 
     :cond_0
-    const v0, 0x7f09035b
+    const v0, 0x7f09035f
 
     invoke-virtual {p0, v0}, Lcom/android/incallui/agif/StickerSettingActivity;->setTitle(I)V
 
@@ -952,7 +970,7 @@
     iput-object v0, p0, Lcom/android/incallui/agif/StickerSettingActivity;->mItemCheckedState:[Z
 
     :cond_1
-    const v0, 0x7f1004a5
+    const v0, 0x7f1004bf
 
     invoke-virtual {p0, v0}, Lcom/android/incallui/agif/StickerSettingActivity;->findViewById(I)Landroid/view/View;
 

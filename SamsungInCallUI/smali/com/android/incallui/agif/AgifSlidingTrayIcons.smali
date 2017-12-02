@@ -14,24 +14,6 @@
 
 
 # static fields
-.field private static final ANIM_DURING_TRAY_IMAGE_POSITION_Y_UP:F = -10.0f
-
-.field private static final ANIM_DURING_TRAY_SHADOW_SCALE:F = 1.0f
-
-.field private static final ANIM_DURING_TRAY_SHADOW_SCALE_UP:F = 1.2f
-
-.field private static final ANIM_FLOAT_ZERO:F = 0.0f
-
-.field private static final ANIM_OUTGOING_CONTAINER_POSITION_X:F = 440.0f
-
-.field private static final ANIM_OUTGOING_TRAY_ALPHA_FROM:F = 1.0f
-
-.field private static final ANIM_OUTGOING_TRAY_POSITION_Y:F = 30.0f
-
-.field private static final ANIM_OUTGOING_TRAY_SCALE_FROM:F = 0.7f
-
-.field private static final ANIM_OUTGOING_TRAY_SCALE_TO:F = 1.0f
-
 .field private static final LOG_TAG:Ljava/lang/String; = "AgifSlidingTrayIcons"
 
 
@@ -179,52 +161,6 @@
     return-void
 .end method
 
-.method private getContainerTranslationAnimator()Landroid/animation/ObjectAnimator;
-    .locals 4
-
-    const/high16 v0, 0x43dc0000    # 440.0f
-
-    invoke-virtual {p0, v0}, Lcom/android/incallui/agif/AgifSlidingTrayIcons;->setTranslationX(F)V
-
-    sget-object v0, Lcom/android/incallui/agif/AgifSlidingTrayIcons;->TRANSLATION_X:Landroid/util/Property;
-
-    const/4 v1, 0x1
-
-    new-array v1, v1, [F
-
-    const/4 v2, 0x0
-
-    const/4 v3, 0x0
-
-    aput v3, v1, v2
-
-    invoke-static {p0, v0, v1}, Landroid/animation/ObjectAnimator;->ofFloat(Ljava/lang/Object;Landroid/util/Property;[F)Landroid/animation/ObjectAnimator;
-
-    move-result-object v0
-
-    new-instance v1, Lcom/samsung/android/view/a/g;
-
-    invoke-direct {v1}, Lcom/samsung/android/view/a/g;-><init>()V
-
-    invoke-virtual {v0, v1}, Landroid/animation/ObjectAnimator;->setInterpolator(Landroid/animation/TimeInterpolator;)V
-
-    invoke-virtual {p0}, Lcom/android/incallui/agif/AgifSlidingTrayIcons;->getResources()Landroid/content/res/Resources;
-
-    move-result-object v1
-
-    const v2, 0x7f0e001a
-
-    invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getInteger(I)I
-
-    move-result v1
-
-    int-to-long v2, v1
-
-    invoke-virtual {v0, v2, v3}, Landroid/animation/ObjectAnimator;->setDuration(J)Landroid/animation/ObjectAnimator;
-
-    return-object v0
-.end method
-
 .method private getOutgoingCallAnimation(Landroid/animation/AnimatorSet;)Landroid/animation/AnimatorSet;
     .locals 8
 
@@ -251,27 +187,35 @@
     return-object p1
 
     :cond_2
-    invoke-direct {p0}, Lcom/android/incallui/agif/AgifSlidingTrayIcons;->getContainerTranslationAnimator()Landroid/animation/ObjectAnimator;
+    invoke-static {p0}, Lcom/android/incallui/agif/AgifAnimUtil;->getContainerTranslationAnimator(Landroid/view/View;)Landroid/animation/ObjectAnimator;
 
     move-result-object v1
 
-    invoke-direct {p0}, Lcom/android/incallui/agif/AgifSlidingTrayIcons;->getTrayIconTransAnimator()[Landroid/animation/ObjectAnimator;
+    iget-object v0, p0, Lcom/android/incallui/agif/AgifSlidingTrayIcons;->mTrayIconViews:[Lcom/android/incallui/agif/AgifSlidingTrayIcons$TayIconView;
+
+    invoke-static {v0}, Lcom/android/incallui/agif/AgifAnimUtil;->getTrayIconTransAnimator([Lcom/android/incallui/agif/AgifSlidingTrayIcons$TayIconView;)[Landroid/animation/ObjectAnimator;
 
     move-result-object v2
 
-    sget-object v0, Landroid/view/View;->SCALE_X:Landroid/util/Property;
+    iget-object v0, p0, Lcom/android/incallui/agif/AgifSlidingTrayIcons;->mTrayIconViews:[Lcom/android/incallui/agif/AgifSlidingTrayIcons$TayIconView;
 
-    invoke-direct {p0, v0}, Lcom/android/incallui/agif/AgifSlidingTrayIcons;->getTrayIconScaleAnimator(Landroid/util/Property;)[Landroid/animation/ObjectAnimator;
+    sget-object v3, Landroid/view/View;->SCALE_X:Landroid/util/Property;
+
+    invoke-static {v0, v3}, Lcom/android/incallui/agif/AgifAnimUtil;->getTrayIconScaleAnimator([Lcom/android/incallui/agif/AgifSlidingTrayIcons$TayIconView;Landroid/util/Property;)[Landroid/animation/ObjectAnimator;
 
     move-result-object v3
 
-    sget-object v0, Landroid/view/View;->SCALE_Y:Landroid/util/Property;
+    iget-object v0, p0, Lcom/android/incallui/agif/AgifSlidingTrayIcons;->mTrayIconViews:[Lcom/android/incallui/agif/AgifSlidingTrayIcons$TayIconView;
 
-    invoke-direct {p0, v0}, Lcom/android/incallui/agif/AgifSlidingTrayIcons;->getTrayIconScaleAnimator(Landroid/util/Property;)[Landroid/animation/ObjectAnimator;
+    sget-object v4, Landroid/view/View;->SCALE_Y:Landroid/util/Property;
+
+    invoke-static {v0, v4}, Lcom/android/incallui/agif/AgifAnimUtil;->getTrayIconScaleAnimator([Lcom/android/incallui/agif/AgifSlidingTrayIcons$TayIconView;Landroid/util/Property;)[Landroid/animation/ObjectAnimator;
 
     move-result-object v4
 
-    invoke-direct {p0}, Lcom/android/incallui/agif/AgifSlidingTrayIcons;->getTrayIconAlphaAnimator()[Landroid/animation/ObjectAnimator;
+    iget-object v0, p0, Lcom/android/incallui/agif/AgifSlidingTrayIcons;->mTrayIconViews:[Lcom/android/incallui/agif/AgifSlidingTrayIcons$TayIconView;
+
+    invoke-static {v0}, Lcom/android/incallui/agif/AgifAnimUtil;->getTrayIconAlphaAnimator([Lcom/android/incallui/agif/AgifSlidingTrayIcons$TayIconView;)[Landroid/animation/ObjectAnimator;
 
     move-result-object v5
 
@@ -313,646 +257,6 @@
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_0
-.end method
-
-.method private getRandomStartDelay()J
-    .locals 6
-
-    invoke-virtual {p0}, Lcom/android/incallui/agif/AgifSlidingTrayIcons;->getResources()Landroid/content/res/Resources;
-
-    move-result-object v0
-
-    const v1, 0x7f0e0016
-
-    invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getInteger(I)I
-
-    move-result v0
-
-    int-to-long v0, v0
-
-    iget-object v2, p0, Lcom/android/incallui/agif/AgifSlidingTrayIcons;->mRandom:Ljava/util/Random;
-
-    invoke-virtual {v2}, Ljava/util/Random;->nextLong()J
-
-    move-result-wide v2
-
-    invoke-static {v2, v3}, Ljava/lang/Math;->abs(J)J
-
-    move-result-wide v2
-
-    invoke-virtual {p0}, Lcom/android/incallui/agif/AgifSlidingTrayIcons;->getResources()Landroid/content/res/Resources;
-
-    move-result-object v4
-
-    const v5, 0x7f0e0017
-
-    invoke-virtual {v4, v5}, Landroid/content/res/Resources;->getInteger(I)I
-
-    move-result v4
-
-    int-to-long v4, v4
-
-    rem-long/2addr v2, v4
-
-    add-long/2addr v0, v2
-
-    return-wide v0
-.end method
-
-.method private getShadowScaleDownAnimator(Landroid/view/View;Landroid/util/Property;)Landroid/animation/ObjectAnimator;
-    .locals 4
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Landroid/view/View;",
-            "Landroid/util/Property",
-            "<",
-            "Landroid/view/View;",
-            "Ljava/lang/Float;",
-            ">;)",
-            "Landroid/animation/ObjectAnimator;"
-        }
-    .end annotation
-
-    const/4 v0, 0x1
-
-    new-array v0, v0, [F
-
-    const/4 v1, 0x0
-
-    const/high16 v2, 0x3f800000    # 1.0f
-
-    aput v2, v0, v1
-
-    invoke-static {p1, p2, v0}, Landroid/animation/ObjectAnimator;->ofFloat(Ljava/lang/Object;Landroid/util/Property;[F)Landroid/animation/ObjectAnimator;
-
-    move-result-object v0
-
-    invoke-virtual {p0}, Lcom/android/incallui/agif/AgifSlidingTrayIcons;->getResources()Landroid/content/res/Resources;
-
-    move-result-object v1
-
-    const v2, 0x7f0e0018
-
-    invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getInteger(I)I
-
-    move-result v1
-
-    int-to-long v2, v1
-
-    invoke-virtual {v0, v2, v3}, Landroid/animation/ObjectAnimator;->setStartDelay(J)V
-
-    invoke-virtual {p0}, Lcom/android/incallui/agif/AgifSlidingTrayIcons;->getResources()Landroid/content/res/Resources;
-
-    move-result-object v1
-
-    const v2, 0x7f0e0019
-
-    invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getInteger(I)I
-
-    move-result v1
-
-    int-to-long v2, v1
-
-    invoke-virtual {v0, v2, v3}, Landroid/animation/ObjectAnimator;->setDuration(J)Landroid/animation/ObjectAnimator;
-
-    return-object v0
-.end method
-
-.method private getShadowScaleUpAnimator(Landroid/view/View;Landroid/util/Property;)Landroid/animation/ObjectAnimator;
-    .locals 4
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Landroid/view/View;",
-            "Landroid/util/Property",
-            "<",
-            "Landroid/view/View;",
-            "Ljava/lang/Float;",
-            ">;)",
-            "Landroid/animation/ObjectAnimator;"
-        }
-    .end annotation
-
-    const/4 v0, 0x1
-
-    new-array v0, v0, [F
-
-    const/4 v1, 0x0
-
-    const v2, 0x3f99999a    # 1.2f
-
-    aput v2, v0, v1
-
-    invoke-static {p1, p2, v0}, Landroid/animation/ObjectAnimator;->ofFloat(Ljava/lang/Object;Landroid/util/Property;[F)Landroid/animation/ObjectAnimator;
-
-    move-result-object v0
-
-    invoke-virtual {p0}, Lcom/android/incallui/agif/AgifSlidingTrayIcons;->getResources()Landroid/content/res/Resources;
-
-    move-result-object v1
-
-    const v2, 0x7f0e0019
-
-    invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getInteger(I)I
-
-    move-result v1
-
-    int-to-long v2, v1
-
-    invoke-virtual {v0, v2, v3}, Landroid/animation/ObjectAnimator;->setDuration(J)Landroid/animation/ObjectAnimator;
-
-    return-object v0
-.end method
-
-.method private getTrayIconAlphaAnimator()[Landroid/animation/ObjectAnimator;
-    .locals 9
-
-    const/4 v1, 0x0
-
-    invoke-virtual {p0}, Lcom/android/incallui/agif/AgifSlidingTrayIcons;->getResources()Landroid/content/res/Resources;
-
-    move-result-object v0
-
-    const v2, 0x7f0e001c
-
-    invoke-virtual {v0, v2}, Landroid/content/res/Resources;->getInteger(I)I
-
-    move-result v2
-
-    invoke-virtual {p0}, Lcom/android/incallui/agif/AgifSlidingTrayIcons;->getResources()Landroid/content/res/Resources;
-
-    move-result-object v0
-
-    const v3, 0x7f0e001b
-
-    invoke-virtual {v0, v3}, Landroid/content/res/Resources;->getInteger(I)I
-
-    move-result v3
-
-    iget-object v0, p0, Lcom/android/incallui/agif/AgifSlidingTrayIcons;->mTrayIconViews:[Lcom/android/incallui/agif/AgifSlidingTrayIcons$TayIconView;
-
-    array-length v0, v0
-
-    new-array v4, v0, [Landroid/animation/ObjectAnimator;
-
-    move v0, v1
-
-    :goto_0
-    iget-object v5, p0, Lcom/android/incallui/agif/AgifSlidingTrayIcons;->mTrayIconViews:[Lcom/android/incallui/agif/AgifSlidingTrayIcons$TayIconView;
-
-    array-length v5, v5
-
-    if-ge v0, v5, :cond_0
-
-    iget-object v5, p0, Lcom/android/incallui/agif/AgifSlidingTrayIcons;->mTrayIconViews:[Lcom/android/incallui/agif/AgifSlidingTrayIcons$TayIconView;
-
-    aget-object v5, v5, v0
-
-    iget-object v5, v5, Lcom/android/incallui/agif/AgifSlidingTrayIcons$TayIconView;->trayContainer:Landroid/view/View;
-
-    const/4 v6, 0x0
-
-    invoke-virtual {v5, v6}, Landroid/view/View;->setAlpha(F)V
-
-    iget-object v5, p0, Lcom/android/incallui/agif/AgifSlidingTrayIcons;->mTrayIconViews:[Lcom/android/incallui/agif/AgifSlidingTrayIcons$TayIconView;
-
-    aget-object v5, v5, v0
-
-    iget-object v5, v5, Lcom/android/incallui/agif/AgifSlidingTrayIcons$TayIconView;->trayContainer:Landroid/view/View;
-
-    sget-object v6, Landroid/view/View;->ALPHA:Landroid/util/Property;
-
-    const/4 v7, 0x1
-
-    new-array v7, v7, [F
-
-    const/high16 v8, 0x3f800000    # 1.0f
-
-    aput v8, v7, v1
-
-    invoke-static {v5, v6, v7}, Landroid/animation/ObjectAnimator;->ofFloat(Ljava/lang/Object;Landroid/util/Property;[F)Landroid/animation/ObjectAnimator;
-
-    move-result-object v5
-
-    aput-object v5, v4, v0
-
-    aget-object v5, v4, v0
-
-    new-instance v6, Lcom/samsung/android/view/a/g;
-
-    invoke-direct {v6}, Lcom/samsung/android/view/a/g;-><init>()V
-
-    invoke-virtual {v5, v6}, Landroid/animation/ObjectAnimator;->setInterpolator(Landroid/animation/TimeInterpolator;)V
-
-    aget-object v5, v4, v0
-
-    mul-int v6, v2, v0
-
-    int-to-long v6, v6
-
-    invoke-virtual {v5, v6, v7}, Landroid/animation/ObjectAnimator;->setStartDelay(J)V
-
-    aget-object v5, v4, v0
-
-    int-to-long v6, v3
-
-    invoke-virtual {v5, v6, v7}, Landroid/animation/ObjectAnimator;->setDuration(J)Landroid/animation/ObjectAnimator;
-
-    add-int/lit8 v0, v0, 0x1
-
-    goto :goto_0
-
-    :cond_0
-    return-object v4
-.end method
-
-.method private getTrayIconAnimation(Landroid/animation/AnimatorSet;Lcom/android/incallui/agif/AgifSlidingTrayIcons$TayIconView;)Landroid/animation/AnimatorSet;
-    .locals 11
-
-    const-string v0, "AgifSlidingTrayIcons"
-
-    const-string v1, "getTrayIconAnimation"
-
-    invoke-static {v0, v1}, Lcom/android/incallui/Log;->d(Ljava/lang/String;Ljava/lang/String;)V
-
-    invoke-direct {p0}, Lcom/android/incallui/agif/AgifSlidingTrayIcons;->getRandomStartDelay()J
-
-    move-result-wide v0
-
-    invoke-virtual {p0}, Lcom/android/incallui/agif/AgifSlidingTrayIcons;->getRandomReturnDelay()J
-
-    move-result-wide v2
-
-    iget-object v4, p2, Lcom/android/incallui/agif/AgifSlidingTrayIcons$TayIconView;->trayImage:Landroid/widget/ImageView;
-
-    const/high16 v5, -0x3ee00000    # -10.0f
-
-    invoke-direct {p0, v4, v5}, Lcom/android/incallui/agif/AgifSlidingTrayIcons;->getTrayTranslationAnimator(Landroid/view/View;F)Landroid/animation/ObjectAnimator;
-
-    move-result-object v4
-
-    iget-object v5, p2, Lcom/android/incallui/agif/AgifSlidingTrayIcons$TayIconView;->trayImage:Landroid/widget/ImageView;
-
-    const/4 v6, 0x0
-
-    invoke-direct {p0, v5, v6}, Lcom/android/incallui/agif/AgifSlidingTrayIcons;->getTrayTranslationAnimator(Landroid/view/View;F)Landroid/animation/ObjectAnimator;
-
-    move-result-object v5
-
-    iget-object v6, p2, Lcom/android/incallui/agif/AgifSlidingTrayIcons$TayIconView;->trayShadow:Landroid/widget/ImageView;
-
-    sget-object v7, Landroid/view/View;->SCALE_X:Landroid/util/Property;
-
-    invoke-direct {p0, v6, v7}, Lcom/android/incallui/agif/AgifSlidingTrayIcons;->getShadowScaleUpAnimator(Landroid/view/View;Landroid/util/Property;)Landroid/animation/ObjectAnimator;
-
-    move-result-object v6
-
-    iget-object v7, p2, Lcom/android/incallui/agif/AgifSlidingTrayIcons$TayIconView;->trayShadow:Landroid/widget/ImageView;
-
-    sget-object v8, Landroid/view/View;->SCALE_Y:Landroid/util/Property;
-
-    invoke-direct {p0, v7, v8}, Lcom/android/incallui/agif/AgifSlidingTrayIcons;->getShadowScaleUpAnimator(Landroid/view/View;Landroid/util/Property;)Landroid/animation/ObjectAnimator;
-
-    move-result-object v7
-
-    iget-object v8, p2, Lcom/android/incallui/agif/AgifSlidingTrayIcons$TayIconView;->trayShadow:Landroid/widget/ImageView;
-
-    sget-object v9, Landroid/view/View;->SCALE_X:Landroid/util/Property;
-
-    invoke-direct {p0, v8, v9}, Lcom/android/incallui/agif/AgifSlidingTrayIcons;->getShadowScaleDownAnimator(Landroid/view/View;Landroid/util/Property;)Landroid/animation/ObjectAnimator;
-
-    move-result-object v8
-
-    iget-object v9, p2, Lcom/android/incallui/agif/AgifSlidingTrayIcons$TayIconView;->trayShadow:Landroid/widget/ImageView;
-
-    sget-object v10, Landroid/view/View;->SCALE_Y:Landroid/util/Property;
-
-    invoke-direct {p0, v9, v10}, Lcom/android/incallui/agif/AgifSlidingTrayIcons;->getShadowScaleDownAnimator(Landroid/view/View;Landroid/util/Property;)Landroid/animation/ObjectAnimator;
-
-    move-result-object v9
-
-    invoke-virtual {p1, v4}, Landroid/animation/AnimatorSet;->play(Landroid/animation/Animator;)Landroid/animation/AnimatorSet$Builder;
-
-    move-result-object v10
-
-    invoke-virtual {v10, v6}, Landroid/animation/AnimatorSet$Builder;->with(Landroid/animation/Animator;)Landroid/animation/AnimatorSet$Builder;
-
-    move-result-object v6
-
-    invoke-virtual {v6, v7}, Landroid/animation/AnimatorSet$Builder;->with(Landroid/animation/Animator;)Landroid/animation/AnimatorSet$Builder;
-
-    move-result-object v6
-
-    invoke-virtual {v6, v0, v1}, Landroid/animation/AnimatorSet$Builder;->after(J)Landroid/animation/AnimatorSet$Builder;
-
-    invoke-virtual {p1, v5}, Landroid/animation/AnimatorSet;->play(Landroid/animation/Animator;)Landroid/animation/AnimatorSet$Builder;
-
-    move-result-object v0
-
-    invoke-virtual {v0, v4}, Landroid/animation/AnimatorSet$Builder;->after(Landroid/animation/Animator;)Landroid/animation/AnimatorSet$Builder;
-
-    move-result-object v0
-
-    invoke-virtual {v0, v2, v3}, Landroid/animation/AnimatorSet$Builder;->after(J)Landroid/animation/AnimatorSet$Builder;
-
-    invoke-virtual {p1, v5}, Landroid/animation/AnimatorSet;->play(Landroid/animation/Animator;)Landroid/animation/AnimatorSet$Builder;
-
-    move-result-object v0
-
-    invoke-virtual {v0, v8}, Landroid/animation/AnimatorSet$Builder;->with(Landroid/animation/Animator;)Landroid/animation/AnimatorSet$Builder;
-
-    move-result-object v0
-
-    invoke-virtual {v0, v9}, Landroid/animation/AnimatorSet$Builder;->with(Landroid/animation/Animator;)Landroid/animation/AnimatorSet$Builder;
-
-    new-instance v0, Lcom/android/incallui/agif/AgifSlidingTrayIcons$2;
-
-    invoke-direct {v0, p0}, Lcom/android/incallui/agif/AgifSlidingTrayIcons$2;-><init>(Lcom/android/incallui/agif/AgifSlidingTrayIcons;)V
-
-    invoke-virtual {p1, v0}, Landroid/animation/AnimatorSet;->addListener(Landroid/animation/Animator$AnimatorListener;)V
-
-    return-object p1
-.end method
-
-.method private getTrayIconScaleAnimator(Landroid/util/Property;)[Landroid/animation/ObjectAnimator;
-    .locals 9
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Landroid/util/Property",
-            "<",
-            "Landroid/view/View;",
-            "Ljava/lang/Float;",
-            ">;)[",
-            "Landroid/animation/ObjectAnimator;"
-        }
-    .end annotation
-
-    const/4 v1, 0x0
-
-    const v8, 0x3f333333    # 0.7f
-
-    invoke-virtual {p0}, Lcom/android/incallui/agif/AgifSlidingTrayIcons;->getResources()Landroid/content/res/Resources;
-
-    move-result-object v0
-
-    const v2, 0x7f0e001c
-
-    invoke-virtual {v0, v2}, Landroid/content/res/Resources;->getInteger(I)I
-
-    move-result v2
-
-    invoke-virtual {p0}, Lcom/android/incallui/agif/AgifSlidingTrayIcons;->getResources()Landroid/content/res/Resources;
-
-    move-result-object v0
-
-    const v3, 0x7f0e001b
-
-    invoke-virtual {v0, v3}, Landroid/content/res/Resources;->getInteger(I)I
-
-    move-result v3
-
-    iget-object v0, p0, Lcom/android/incallui/agif/AgifSlidingTrayIcons;->mTrayIconViews:[Lcom/android/incallui/agif/AgifSlidingTrayIcons$TayIconView;
-
-    array-length v0, v0
-
-    new-array v4, v0, [Landroid/animation/ObjectAnimator;
-
-    move v0, v1
-
-    :goto_0
-    iget-object v5, p0, Lcom/android/incallui/agif/AgifSlidingTrayIcons;->mTrayIconViews:[Lcom/android/incallui/agif/AgifSlidingTrayIcons$TayIconView;
-
-    array-length v5, v5
-
-    if-ge v0, v5, :cond_2
-
-    sget-object v5, Landroid/view/View;->SCALE_X:Landroid/util/Property;
-
-    if-ne p1, v5, :cond_1
-
-    iget-object v5, p0, Lcom/android/incallui/agif/AgifSlidingTrayIcons;->mTrayIconViews:[Lcom/android/incallui/agif/AgifSlidingTrayIcons$TayIconView;
-
-    aget-object v5, v5, v0
-
-    iget-object v5, v5, Lcom/android/incallui/agif/AgifSlidingTrayIcons$TayIconView;->trayContainer:Landroid/view/View;
-
-    invoke-virtual {v5, v8}, Landroid/view/View;->setScaleX(F)V
-
-    :cond_0
-    :goto_1
-    iget-object v5, p0, Lcom/android/incallui/agif/AgifSlidingTrayIcons;->mTrayIconViews:[Lcom/android/incallui/agif/AgifSlidingTrayIcons$TayIconView;
-
-    aget-object v5, v5, v0
-
-    iget-object v5, v5, Lcom/android/incallui/agif/AgifSlidingTrayIcons$TayIconView;->trayContainer:Landroid/view/View;
-
-    const/4 v6, 0x1
-
-    new-array v6, v6, [F
-
-    const/high16 v7, 0x3f800000    # 1.0f
-
-    aput v7, v6, v1
-
-    invoke-static {v5, p1, v6}, Landroid/animation/ObjectAnimator;->ofFloat(Ljava/lang/Object;Landroid/util/Property;[F)Landroid/animation/ObjectAnimator;
-
-    move-result-object v5
-
-    aput-object v5, v4, v0
-
-    aget-object v5, v4, v0
-
-    new-instance v6, Lcom/samsung/android/view/a/g;
-
-    invoke-direct {v6}, Lcom/samsung/android/view/a/g;-><init>()V
-
-    invoke-virtual {v5, v6}, Landroid/animation/ObjectAnimator;->setInterpolator(Landroid/animation/TimeInterpolator;)V
-
-    aget-object v5, v4, v0
-
-    mul-int v6, v2, v0
-
-    int-to-long v6, v6
-
-    invoke-virtual {v5, v6, v7}, Landroid/animation/ObjectAnimator;->setStartDelay(J)V
-
-    aget-object v5, v4, v0
-
-    int-to-long v6, v3
-
-    invoke-virtual {v5, v6, v7}, Landroid/animation/ObjectAnimator;->setDuration(J)Landroid/animation/ObjectAnimator;
-
-    add-int/lit8 v0, v0, 0x1
-
-    goto :goto_0
-
-    :cond_1
-    sget-object v5, Landroid/view/View;->SCALE_Y:Landroid/util/Property;
-
-    if-ne p1, v5, :cond_0
-
-    iget-object v5, p0, Lcom/android/incallui/agif/AgifSlidingTrayIcons;->mTrayIconViews:[Lcom/android/incallui/agif/AgifSlidingTrayIcons$TayIconView;
-
-    aget-object v5, v5, v0
-
-    iget-object v5, v5, Lcom/android/incallui/agif/AgifSlidingTrayIcons$TayIconView;->trayContainer:Landroid/view/View;
-
-    invoke-virtual {v5, v8}, Landroid/view/View;->setScaleY(F)V
-
-    goto :goto_1
-
-    :cond_2
-    return-object v4
-.end method
-
-.method private getTrayIconTransAnimator()[Landroid/animation/ObjectAnimator;
-    .locals 9
-
-    const/4 v1, 0x0
-
-    invoke-virtual {p0}, Lcom/android/incallui/agif/AgifSlidingTrayIcons;->getResources()Landroid/content/res/Resources;
-
-    move-result-object v0
-
-    const v2, 0x7f0e001c
-
-    invoke-virtual {v0, v2}, Landroid/content/res/Resources;->getInteger(I)I
-
-    move-result v2
-
-    invoke-virtual {p0}, Lcom/android/incallui/agif/AgifSlidingTrayIcons;->getResources()Landroid/content/res/Resources;
-
-    move-result-object v0
-
-    const v3, 0x7f0e001b
-
-    invoke-virtual {v0, v3}, Landroid/content/res/Resources;->getInteger(I)I
-
-    move-result v3
-
-    iget-object v0, p0, Lcom/android/incallui/agif/AgifSlidingTrayIcons;->mTrayIconViews:[Lcom/android/incallui/agif/AgifSlidingTrayIcons$TayIconView;
-
-    array-length v0, v0
-
-    new-array v4, v0, [Landroid/animation/ObjectAnimator;
-
-    move v0, v1
-
-    :goto_0
-    iget-object v5, p0, Lcom/android/incallui/agif/AgifSlidingTrayIcons;->mTrayIconViews:[Lcom/android/incallui/agif/AgifSlidingTrayIcons$TayIconView;
-
-    array-length v5, v5
-
-    if-ge v0, v5, :cond_0
-
-    iget-object v5, p0, Lcom/android/incallui/agif/AgifSlidingTrayIcons;->mTrayIconViews:[Lcom/android/incallui/agif/AgifSlidingTrayIcons$TayIconView;
-
-    aget-object v5, v5, v0
-
-    iget-object v5, v5, Lcom/android/incallui/agif/AgifSlidingTrayIcons$TayIconView;->trayContainer:Landroid/view/View;
-
-    const/high16 v6, 0x41f00000    # 30.0f
-
-    invoke-virtual {v5, v6}, Landroid/view/View;->setTranslationY(F)V
-
-    iget-object v5, p0, Lcom/android/incallui/agif/AgifSlidingTrayIcons;->mTrayIconViews:[Lcom/android/incallui/agif/AgifSlidingTrayIcons$TayIconView;
-
-    aget-object v5, v5, v0
-
-    iget-object v5, v5, Lcom/android/incallui/agif/AgifSlidingTrayIcons$TayIconView;->trayContainer:Landroid/view/View;
-
-    iget-object v6, p0, Lcom/android/incallui/agif/AgifSlidingTrayIcons;->mTrayIconViews:[Lcom/android/incallui/agif/AgifSlidingTrayIcons$TayIconView;
-
-    aget-object v6, v6, v0
-
-    iget-object v6, v6, Lcom/android/incallui/agif/AgifSlidingTrayIcons$TayIconView;->trayContainer:Landroid/view/View;
-
-    sget-object v6, Landroid/view/View;->TRANSLATION_Y:Landroid/util/Property;
-
-    const/4 v7, 0x1
-
-    new-array v7, v7, [F
-
-    const/4 v8, 0x0
-
-    aput v8, v7, v1
-
-    invoke-static {v5, v6, v7}, Landroid/animation/ObjectAnimator;->ofFloat(Ljava/lang/Object;Landroid/util/Property;[F)Landroid/animation/ObjectAnimator;
-
-    move-result-object v5
-
-    aput-object v5, v4, v0
-
-    aget-object v5, v4, v0
-
-    new-instance v6, Lcom/samsung/android/view/a/g;
-
-    invoke-direct {v6}, Lcom/samsung/android/view/a/g;-><init>()V
-
-    invoke-virtual {v5, v6}, Landroid/animation/ObjectAnimator;->setInterpolator(Landroid/animation/TimeInterpolator;)V
-
-    aget-object v5, v4, v0
-
-    mul-int v6, v2, v0
-
-    int-to-long v6, v6
-
-    invoke-virtual {v5, v6, v7}, Landroid/animation/ObjectAnimator;->setStartDelay(J)V
-
-    aget-object v5, v4, v0
-
-    int-to-long v6, v3
-
-    invoke-virtual {v5, v6, v7}, Landroid/animation/ObjectAnimator;->setDuration(J)Landroid/animation/ObjectAnimator;
-
-    add-int/lit8 v0, v0, 0x1
-
-    goto :goto_0
-
-    :cond_0
-    return-object v4
-.end method
-
-.method private getTrayTranslationAnimator(Landroid/view/View;F)Landroid/animation/ObjectAnimator;
-    .locals 4
-
-    sget-object v0, Landroid/view/View;->TRANSLATION_Y:Landroid/util/Property;
-
-    const/4 v1, 0x1
-
-    new-array v1, v1, [F
-
-    const/4 v2, 0x0
-
-    aput p2, v1, v2
-
-    invoke-static {p1, v0, v1}, Landroid/animation/ObjectAnimator;->ofFloat(Ljava/lang/Object;Landroid/util/Property;[F)Landroid/animation/ObjectAnimator;
-
-    move-result-object v0
-
-    new-instance v1, Lcom/samsung/android/view/a/e;
-
-    invoke-direct {v1}, Lcom/samsung/android/view/a/e;-><init>()V
-
-    invoke-virtual {v0, v1}, Landroid/animation/ObjectAnimator;->setInterpolator(Landroid/animation/TimeInterpolator;)V
-
-    invoke-virtual {p0}, Lcom/android/incallui/agif/AgifSlidingTrayIcons;->getResources()Landroid/content/res/Resources;
-
-    move-result-object v1
-
-    const v2, 0x7f0e0013
-
-    invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getInteger(I)I
-
-    move-result v1
-
-    int-to-long v2, v1
-
-    invoke-virtual {v0, v2, v3}, Landroid/animation/ObjectAnimator;->setDuration(J)Landroid/animation/ObjectAnimator;
-
-    return-object v0
 .end method
 
 .method private onOutgoingAnimationEnd(Landroid/animation/Animator;)V
@@ -1213,7 +517,7 @@
 
     aget-object v3, v3, v0
 
-    invoke-direct {p0, v2, v3}, Lcom/android/incallui/agif/AgifSlidingTrayIcons;->getTrayIconAnimation(Landroid/animation/AnimatorSet;Lcom/android/incallui/agif/AgifSlidingTrayIcons$TayIconView;)Landroid/animation/AnimatorSet;
+    invoke-static {v2, v3}, Lcom/android/incallui/agif/AgifAnimUtil;->getTrayIconAnimation(Landroid/animation/AnimatorSet;Lcom/android/incallui/agif/AgifSlidingTrayIcons$TayIconView;)Landroid/animation/AnimatorSet;
 
     move-result-object v2
 
@@ -1374,7 +678,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f0a030a
+    const v1, 0x7f0a02fb
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDimension(I)F
 
@@ -1388,7 +692,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f0a030e
+    const v1, 0x7f0a02ff
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDimension(I)F
 
@@ -1406,7 +710,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f090504
+    const v1, 0x7f090509
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -1423,7 +727,7 @@
 
     iget-object v0, p0, Lcom/android/incallui/agif/AgifSlidingTrayIcons;->mInflater:Landroid/view/LayoutInflater;
 
-    const v7, 0x7f040028
+    const v7, 0x7f040029
 
     const/4 v8, 0x0
 
@@ -1449,7 +753,7 @@
 
     iget-object v0, v6, Lcom/android/incallui/agif/AgifSlidingTrayIcons$TayIconView;->trayContainer:Landroid/view/View;
 
-    const v7, 0x7f1000b1
+    const v7, 0x7f1000b5
 
     invoke-virtual {v0, v7}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -1461,7 +765,7 @@
 
     iget-object v0, v6, Lcom/android/incallui/agif/AgifSlidingTrayIcons$TayIconView;->trayContainer:Landroid/view/View;
 
-    const v7, 0x7f1000b0
+    const v7, 0x7f1000b4
 
     invoke-virtual {v0, v7}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -1610,48 +914,16 @@
     goto/16 :goto_0
 .end method
 
-.method protected getRandomReturnDelay()J
-    .locals 6
+.method public getChildImageView(I)Landroid/view/View;
+    .locals 1
 
-    invoke-virtual {p0}, Lcom/android/incallui/agif/AgifSlidingTrayIcons;->getResources()Landroid/content/res/Resources;
+    iget-object v0, p0, Lcom/android/incallui/agif/AgifSlidingTrayIcons;->mTrayIconViews:[Lcom/android/incallui/agif/AgifSlidingTrayIcons$TayIconView;
 
-    move-result-object v0
+    aget-object v0, v0, p1
 
-    const v1, 0x7f0e0014
+    iget-object v0, v0, Lcom/android/incallui/agif/AgifSlidingTrayIcons$TayIconView;->trayImage:Landroid/widget/ImageView;
 
-    invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getInteger(I)I
-
-    move-result v0
-
-    int-to-long v0, v0
-
-    iget-object v2, p0, Lcom/android/incallui/agif/AgifSlidingTrayIcons;->mRandom:Ljava/util/Random;
-
-    invoke-virtual {v2}, Ljava/util/Random;->nextLong()J
-
-    move-result-wide v2
-
-    invoke-static {v2, v3}, Ljava/lang/Math;->abs(J)J
-
-    move-result-wide v2
-
-    invoke-virtual {p0}, Lcom/android/incallui/agif/AgifSlidingTrayIcons;->getResources()Landroid/content/res/Resources;
-
-    move-result-object v4
-
-    const v5, 0x7f0e0015
-
-    invoke-virtual {v4, v5}, Landroid/content/res/Resources;->getInteger(I)I
-
-    move-result v4
-
-    int-to-long v4, v4
-
-    rem-long/2addr v2, v4
-
-    add-long/2addr v0, v2
-
-    return-wide v0
+    return-object v0
 .end method
 
 .method public onClick(Landroid/view/View;)V
@@ -1713,7 +985,7 @@
 
     check-cast v0, Lcom/android/incallui/agif/AgifLoader$AgifPackageInfo;
 
-    iget-object v0, v0, Lcom/android/incallui/agif/AgifLoader$AgifPackageInfo;->packageName:Ljava/lang/String;
+    iget-object v0, v0, Lcom/android/incallui/agif/AgifLoader$AgifPackageInfo;->contentName:Ljava/lang/String;
 
     invoke-static {v0}, Lcom/android/incallui/util/VoiceCallAppLogging;->agifScreen_selectAgifSet(Ljava/lang/String;)V
 

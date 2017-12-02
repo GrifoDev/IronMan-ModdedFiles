@@ -178,12 +178,13 @@
     <string name="account_phone">Устройство</string>
     <string name="acs">Гласово повикване</string>
     <string name="active_calls">Активно повикване</string>
-    <string name="add_reminder">Доб. напом.</string>
+    <string name="add_reminder">Добавяне на напомняне</string>
     <string name="agif_button_close_description">Затвори</string>
     <string name="agif_decline_message">Съжалявам, не мога да говоря в момента.</string>
     <string name="agif_decline_sticker_header">Отказ със стикер</string>
     <string name="agif_decline_text_header">Отказ с текст</string>
     <string name="agif_decline_toast">Стикерът е изпратен до %s.</string>
+    <string name="agif_outgoing_bubble_tip">Изберете стикер, за да покажете как се чувствате.</string>
     <string name="agif_pickers_add_tab_description">Добави</string>
     <string name="agif_pickers_downloaded">Изтеглени</string>
     <string name="agif_pickers_item_usage_hints_description">Двукратно докосване за избор</string>
@@ -199,10 +200,12 @@
     <string name="agif_pickers_tab_select_description">Избрани</string>
     <string name="agif_pickers_title">Стартиране със стикер</string>
     <string name="agif_pickers_title_top_stickers">Топ стикери</string>
+    <string name="agif_random_send_message">Докоснете тук, за да изпратите този стикер.</string>
     <string name="agif_read_permission_description">Позволява на „Телефон“ да чете AGIF съдържание.</string>
     <string name="agif_read_permission_label">Прочитане на AGIF съдържание</string>
     <string name="agif_receive_no_id">Стикерът не може да се покаже. Актуализирайте %s след повикването.</string>
     <string name="agif_receive_no_id_upsupport_update">Стикерът не може да се покаже. Още стикери ще са налични след следващата актуализация на системата.</string>
+    <string name="agif_receive_toast">Стикер от %s.</string>
     <string name="agif_sent_fail_message">Не може да се изпрати анимиран GIF. Опитайте отново по-късно.</string>
     <string name="agif_sent_toast">Стикерът е изпратен.</string>
     <string name="agif_write_permission_description">Позволява на „Телефон“ да променя AGIF съдържание.</string>
@@ -871,6 +874,7 @@
     <string name="sticker_delete_stickers">Изтриване на %d стикера?</string>
     <string name="sticker_delete_this_sticker">Изтриване на този стикер?</string>
     <string name="sticker_setting_edit_title">Избор на стикери</string>
+    <string name="sticker_setting_edit_title_preload">Пренареждане на стикерите</string>
     <string name="sticker_setting_main_title">Моите стикери</string>
     <string name="sticker_setting_menu_delete">Изтриване</string>
     <string name="sticker_setting_menu_edit">Редакт.</string>
@@ -883,6 +887,7 @@
     <string name="swipe_right_to_answer_call_with_video">Плъзнете надясно, за да отговаряте на повиквания с видео.</string>
     <string name="swipe_right_to_answer_call_without_video">Плъзнете надясно, за да отговаряте на повиквания без видео.</string>
     <string name="switch_rejected_by_mt">Заявката за превключване на видео разговор е отхвърлена.</string>
+    <string name="switch_rejected_by_mt_att">Video unavailable for this call. Call connected as a voice call.</string>
     <string name="switch_to_video_call_failed">Заявката за превключване на видео разговор е неуспешна.</string>
     <string name="switch_to_video_call_failed_tmo">Заявката за превключване на видеоразговор е отхвърлена.</string>
     <string name="switch_to_voice_call_failed">Заявката за превключване към гласов разговор е неуспешна.</string>

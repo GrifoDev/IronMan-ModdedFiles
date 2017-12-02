@@ -114,7 +114,7 @@
 
     invoke-direct {v1, p0}, Landroid/app/AlertDialog$Builder;-><init>(Landroid/content/Context;)V
 
-    const v2, 0x7f090564
+    const v2, 0x7f090569
 
     invoke-virtual {v1, v2}, Landroid/app/AlertDialog$Builder;->setTitle(I)Landroid/app/AlertDialog$Builder;
 
@@ -140,7 +140,7 @@
 .method public static a(Landroid/content/Context;ILcom/android/contacts/common/model/account/AccountWithDataSet;I)V
     .locals 1
 
-    const v0, 0x7f0905b7
+    const v0, 0x7f0905bc
 
     if-ne p1, v0, :cond_1
 
@@ -151,7 +151,7 @@
     return-void
 
     :cond_1
-    const v0, 0x7f0905ba
+    const v0, 0x7f0905bf
 
     if-ne p1, v0, :cond_0
 

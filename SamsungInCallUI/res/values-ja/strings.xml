@@ -178,12 +178,13 @@
     <string name="account_phone">本体</string>
     <string name="acs">音声通話</string>
     <string name="active_calls">現在の通話</string>
-    <string name="add_reminder">ﾘﾏｲﾝﾀﾞｰ追加</string>
+    <string name="add_reminder">リマインダーを追加</string>
     <string name="agif_button_close_description">閉じる</string>
     <string name="agif_decline_message">ただいま電話に出ることができません。</string>
     <string name="agif_decline_sticker_header">拒否してスタンプ送信</string>
     <string name="agif_decline_text_header">拒否してテキスト送信</string>
     <string name="agif_decline_toast">%sさんにスタンプを送信しました。</string>
+    <string name="agif_outgoing_bubble_tip">スタンプを送信して、今の気分を伝えましょう。</string>
     <string name="agif_pickers_add_tab_description">追加</string>
     <string name="agif_pickers_downloaded">ダウンロード済み</string>
     <string name="agif_pickers_item_usage_hints_description">ダブルタップして選択</string>
@@ -199,10 +200,12 @@
     <string name="agif_pickers_tab_select_description">選択中</string>
     <string name="agif_pickers_title">スタンプ付きで発信</string>
     <string name="agif_pickers_title_top_stickers">人気のスタンプ</string>
+    <string name="agif_random_send_message">このスタンプを送信するには、ここをタップしてください。</string>
     <string name="agif_read_permission_description">AGIFコンテンツの読み取りを端末に許可します。</string>
     <string name="agif_read_permission_label">AGIFコンテンツの読み取り</string>
     <string name="agif_receive_no_id">スタンプを表示できません。通話後に%sを更新してください。</string>
     <string name="agif_receive_no_id_upsupport_update">スタンプを表示できません。次回のシステム更新後にさまざまな種類のスタンプが利用可能になります。</string>
+    <string name="agif_receive_toast">%sさんからのスタンプです。</string>
     <string name="agif_sent_fail_message">アニメーションGIFを送信できません。後ほどお試しください。</string>
     <string name="agif_sent_toast">スタンプを送信しました。</string>
     <string name="agif_write_permission_description">AGIFコンテンツの変更を端末に許可します。</string>
@@ -871,6 +874,7 @@ IVR通話画面メニューには、Dianhuabangという第三者サービスプ
     <string name="sticker_delete_stickers">%d件のスタンプを削除しますか？</string>
     <string name="sticker_delete_this_sticker">このスタンプを削除しますか？</string>
     <string name="sticker_setting_edit_title">スタンプを選択</string>
+    <string name="sticker_setting_edit_title_preload">スタンプを並べ替え</string>
     <string name="sticker_setting_main_title">マイスタンプ</string>
     <string name="sticker_setting_menu_delete">削除</string>
     <string name="sticker_setting_menu_edit">編集</string>
@@ -883,6 +887,7 @@ IVR通話画面メニューには、Dianhuabangという第三者サービスプ
     <string name="swipe_right_to_answer_call_with_video">ビデオコールで応答するには、右にスワイプしてください。</string>
     <string name="swipe_right_to_answer_call_without_video">音声通話で応答するには、右にスワイプしてください。</string>
     <string name="switch_rejected_by_mt">ビデオコールへの切り替え要求は拒否されました。</string>
+    <string name="switch_rejected_by_mt_att">この通話ではビデオコールを使用できません。音声通話で接続しました。</string>
     <string name="switch_to_video_call_failed">ビデオコールへの切り替え要求に失敗しました。</string>
     <string name="switch_to_video_call_failed_tmo">ビデオコールへの切り替え要求は拒否されました。</string>
     <string name="switch_to_voice_call_failed">音声通話への切り替え要求に失敗しました。</string>
@@ -996,5 +1001,5 @@ IVR通話画面メニューには、Dianhuabangという第三者サービスプ
     <string name="yellow_pages">イエローページ</string>
     <string name="you_have_entered_incorrect_code">入力した認証コードが正しくありません。再度入力してください。</string>
     <string name="you_have_reached_your_daily_sms_limit">SMS認証を試行できる最大回数に達しました。%d時間後に再度お試しください。</string>
-    <string name="you_have_reached_your_daliy_voice_limit">1日の音声認証の上限回数に達しました。%d時間後に再度お試しください。</string>
+    <string name="you_have_reached_your_daliy_voice_limit">1日の音声認証上限回数に達しました。%d時間後に再度お試しください。</string>
 </resources>

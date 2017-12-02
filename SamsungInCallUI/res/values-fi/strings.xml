@@ -178,12 +178,13 @@
     <string name="account_phone">Laite</string>
     <string name="acs">Äänipuhelu</string>
     <string name="active_calls">Käynnissä oleva puhelu</string>
-    <string name="add_reminder">Lisää muist.</string>
+    <string name="add_reminder">Lisää muistutus</string>
     <string name="agif_button_close_description">Sulje</string>
     <string name="agif_decline_message">En valitettavasti voi puhua nyt.</string>
     <string name="agif_decline_sticker_header">Hylkää tarralla</string>
     <string name="agif_decline_text_header">Hylkää tekstillä</string>
     <string name="agif_decline_toast">Tarra lähetetty henkilölle %s.</string>
+    <string name="agif_outgoing_bubble_tip">Lähetä tarra näyttääksesi, miltä sinusta tuntuu.</string>
     <string name="agif_pickers_add_tab_description">Lisää</string>
     <string name="agif_pickers_downloaded">Ladattu</string>
     <string name="agif_pickers_item_usage_hints_description">Valitse kaksoisnapauttamalla</string>
@@ -199,10 +200,12 @@
     <string name="agif_pickers_tab_select_description">Valittu</string>
     <string name="agif_pickers_title">Aloita tarralla</string>
     <string name="agif_pickers_title_top_stickers">Suosituimmat tarrat</string>
+    <string name="agif_random_send_message">Lähetä tämä tarra napauttamalla tätä.</string>
     <string name="agif_read_permission_description">Anna Puhelimen lukea AGIF-sisältöjä.</string>
     <string name="agif_read_permission_label">Lue AGIF-sisältöä</string>
     <string name="agif_receive_no_id">Tarraa ei voi näyttää. Päivitä %s puhelun jälkeen.</string>
     <string name="agif_receive_no_id_upsupport_update">Tarraa ei voi näyttää. Lisää päivityksiä on saatavilla seuraavan järjestelmäpäivityksen jälkeen.</string>
+    <string name="agif_receive_toast">Tarra soittajalta %s.</string>
     <string name="agif_sent_fail_message">Animoitua GIF-tiedostoa ei voi lähettää. Yritä myöhemmin uudelleen.</string>
     <string name="agif_sent_toast">Tarra lähetetty.</string>
     <string name="agif_write_permission_description">Anna Puhelimen muuttaa AGIF-sisältöjä.</string>
@@ -872,6 +875,7 @@ kamera"</string>
     <string name="sticker_delete_stickers">Poistetaanko %d tarraa?</string>
     <string name="sticker_delete_this_sticker">Poistetaanko tämä tarra?</string>
     <string name="sticker_setting_edit_title">Valitse tarrat</string>
+    <string name="sticker_setting_edit_title_preload">Järjestä tarrat uudelleen</string>
     <string name="sticker_setting_main_title">Omat tarrat</string>
     <string name="sticker_setting_menu_delete">Poista</string>
     <string name="sticker_setting_menu_edit">Muokkaa</string>
@@ -884,6 +888,7 @@ kamera"</string>
     <string name="swipe_right_to_answer_call_with_video">Pyyhkäise oikealle, jos haluat vastata puheluun kuvan kanssa.</string>
     <string name="swipe_right_to_answer_call_without_video">Pyyhkäise oikealle, jos haluat vastata puheluun ilman kuvaa.</string>
     <string name="switch_rejected_by_mt">Pyyntö vaihtaa videopuheluun on hylätty.</string>
+    <string name="switch_rejected_by_mt_att">Video unavailable for this call. Call connected as a voice call.</string>
     <string name="switch_to_video_call_failed">Pyyntö vaihtaa videopuheluun epäonnistui.</string>
     <string name="switch_to_video_call_failed_tmo">Pyyntö vaihtaa videopuheluun on hylätty.</string>
     <string name="switch_to_voice_call_failed">Pyyntö vaihtaa äänipuheluun epäonnistui.</string>
