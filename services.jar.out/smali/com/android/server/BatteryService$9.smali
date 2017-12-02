@@ -45,7 +45,7 @@
     :try_start_0
     iget-object v0, p0, Lcom/android/server/BatteryService$9;->this$0:Lcom/android/server/BatteryService;
 
-    invoke-static {v0}, Lcom/android/server/BatteryService;->-wrap12(Lcom/android/server/BatteryService;)V
+    invoke-static {v0}, Lcom/android/server/BatteryService;->-wrap13(Lcom/android/server/BatteryService;)V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 

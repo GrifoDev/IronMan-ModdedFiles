@@ -15,6 +15,8 @@
 
 
 # static fields
+.field private static final CCIC_DOCK_STATE_PATH:Ljava/lang/String; = "/sys/class/switch/ccic_dock/state"
+
 .field private static final CCIC_DOCK_UEVENT_MATCH:Ljava/lang/String; = "DEVPATH=/devices/virtual/switch/ccic_dock"
 
 .field private static final DOCK_STATE_DEX_STATION:I = 0x6e
@@ -194,6 +196,8 @@
 
     invoke-virtual {p0}, Lcom/samsung/accessory/manager/control/dexstation/DexMonitor;->initSIOPlevel()V
 
+    invoke-direct {p0}, Lcom/samsung/accessory/manager/control/dexstation/DexMonitor;->initDexMode()V
+
     new-instance v0, Lcom/samsung/accessory/manager/control/dexstation/fancontrol/DexFanControlManager;
 
     iget-boolean v1, p0, Lcom/samsung/accessory/manager/control/dexstation/DexMonitor;->mDexMode:Z
@@ -221,6 +225,116 @@
     invoke-direct {p0}, Lcom/samsung/accessory/manager/control/dexstation/DexMonitor;->initFanControlReceiver()V
 
     return-void
+.end method
+
+.method private initDexMode()V
+    .locals 9
+
+    const/16 v6, 0x400
+
+    :try_start_0
+    new-array v0, v6, [C
+
+    new-instance v3, Ljava/io/FileReader;
+
+    const-string/jumbo v6, "/sys/class/switch/ccic_dock/state"
+
+    invoke-direct {v3, v6}, Ljava/io/FileReader;-><init>(Ljava/lang/String;)V
+    :try_end_0
+    .catch Ljava/io/FileNotFoundException; {:try_start_0 .. :try_end_0} :catch_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_1
+
+    const/4 v6, 0x0
+
+    const/16 v7, 0x400
+
+    :try_start_1
+    invoke-virtual {v3, v0, v6, v7}, Ljava/io/FileReader;->read([CII)I
+
+    move-result v4
+
+    new-instance v6, Ljava/lang/String;
+
+    const/4 v7, 0x0
+
+    invoke-direct {v6, v0, v7, v4}, Ljava/lang/String;-><init>([CII)V
+
+    invoke-virtual {v6}, Ljava/lang/String;->trim()Ljava/lang/String;
+
+    move-result-object v6
+
+    invoke-static {v6}, Ljava/lang/Integer;->valueOf(Ljava/lang/String;)Ljava/lang/Integer;
+
+    move-result-object v6
+
+    invoke-virtual {v6}, Ljava/lang/Integer;->intValue()I
+
+    move-result v5
+
+    sget-object v6, Lcom/samsung/accessory/manager/control/dexstation/DexMonitor;->TAG:Ljava/lang/String;
+
+    new-instance v7, Ljava/lang/StringBuilder;
+
+    invoke-direct {v7}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string/jumbo v8, "dock state = "
+
+    invoke-virtual {v7, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v7
+
+    invoke-virtual {v7, v5}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v7
+
+    invoke-virtual {v7}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v7
+
+    invoke-static {v6, v7}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    const/16 v6, 0x6e
+
+    if-ne v5, v6, :cond_0
+
+    const/4 v6, 0x1
+
+    iput-boolean v6, p0, Lcom/samsung/accessory/manager/control/dexstation/DexMonitor;->mDexMode:Z
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+
+    :cond_0
+    :try_start_2
+    invoke-virtual {v3}, Ljava/io/FileReader;->close()V
+
+    :goto_0
+    return-void
+
+    :catchall_0
+    move-exception v6
+
+    invoke-virtual {v3}, Ljava/io/FileReader;->close()V
+
+    throw v6
+    :try_end_2
+    .catch Ljava/io/FileNotFoundException; {:try_start_2 .. :try_end_2} :catch_0
+    .catch Ljava/lang/Exception; {:try_start_2 .. :try_end_2} :catch_1
+
+    :catch_0
+    move-exception v1
+
+    sget-object v6, Lcom/samsung/accessory/manager/control/dexstation/DexMonitor;->TAG:Ljava/lang/String;
+
+    const-string/jumbo v7, "This kernel does not have ccic dock station support"
+
+    invoke-static {v6, v7}, Landroid/util/Slog;->e(Ljava/lang/String;Ljava/lang/String;)I
+
+    goto :goto_0
+
+    :catch_1
+    move-exception v2
+
+    goto :goto_0
 .end method
 
 .method private initFanControlReceiver()V

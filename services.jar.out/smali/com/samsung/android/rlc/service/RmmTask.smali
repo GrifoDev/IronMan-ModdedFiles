@@ -1000,7 +1000,11 @@
 
     if-nez v29, :cond_1
 
-    invoke-static {v9}, Ljava/lang/Boolean;->getBoolean(Ljava/lang/String;)Z
+    invoke-static {v9}, Ljava/lang/Boolean;->valueOf(Ljava/lang/String;)Ljava/lang/Boolean;
+
+    move-result-object v29
+
+    invoke-virtual/range {v29 .. v29}, Ljava/lang/Boolean;->booleanValue()Z
 
     move-result v29
 

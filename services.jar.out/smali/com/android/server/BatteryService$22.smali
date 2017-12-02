@@ -64,6 +64,38 @@
 
     invoke-static {v0, v2, v3}, Lcom/android/server/BatteryService;->-set8(Lcom/android/server/BatteryService;J)J
 
+    sget-boolean v0, Lcom/android/server/power/PowerManagerUtil;->SEC_FEATURE_BATTERY_SW_ASOC:Z
+
+    if-eqz v0, :cond_0
+
+    iget-object v0, p0, Lcom/android/server/BatteryService$22;->this$0:Lcom/android/server/BatteryService;
+
+    invoke-static {v0}, Lcom/android/server/BatteryService;->-get23(Lcom/android/server/BatteryService;)J
+
+    move-result-wide v2
+
+    const-wide/16 v4, 0x1e
+
+    cmp-long v0, v2, v4
+
+    if-gez v0, :cond_2
+
+    iget-object v0, p0, Lcom/android/server/BatteryService$22;->this$0:Lcom/android/server/BatteryService;
+
+    const-string/jumbo v2, "/efs/FactoryApp/asoc"
+
+    const-wide/16 v4, 0x64
+
+    invoke-static {v0, v2, v4, v5}, Lcom/android/server/BatteryService;->-wrap1(Lcom/android/server/BatteryService;Ljava/lang/String;J)I
+
+    const-string/jumbo v0, "/sys/class/power_supply/battery/fg_asoc"
+
+    const/16 v2, 0x64
+
+    invoke-static {v0, v2}, Lcom/android/server/BatteryService;->-wrap8(Ljava/lang/String;I)V
+
+    :cond_0
+    :goto_0
     iget-object v0, p0, Lcom/android/server/BatteryService$22;->this$0:Lcom/android/server/BatteryService;
 
     iget-object v2, p0, Lcom/android/server/BatteryService$22;->this$0:Lcom/android/server/BatteryService;
@@ -78,7 +110,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_0
+    if-eqz v0, :cond_1
 
     iget-object v0, p0, Lcom/android/server/BatteryService$22;->this$0:Lcom/android/server/BatteryService;
 
@@ -96,7 +128,7 @@
 
     invoke-static {v0, v2, v4, v5}, Lcom/android/server/BatteryService;->-wrap1(Lcom/android/server/BatteryService;Ljava/lang/String;J)I
 
-    :cond_0
+    :cond_1
     iget-object v0, p0, Lcom/android/server/BatteryService$22;->this$0:Lcom/android/server/BatteryService;
 
     iget-object v2, p0, Lcom/android/server/BatteryService$22;->this$0:Lcom/android/server/BatteryService;
@@ -122,6 +154,24 @@
     monitor-exit v1
 
     return-void
+
+    :cond_2
+    :try_start_1
+    const-string/jumbo v0, "/sys/class/power_supply/battery/fg_asoc"
+
+    iget-object v2, p0, Lcom/android/server/BatteryService$22;->this$0:Lcom/android/server/BatteryService;
+
+    invoke-static {v2}, Lcom/android/server/BatteryService;->-get23(Lcom/android/server/BatteryService;)J
+
+    move-result-wide v2
+
+    long-to-int v2, v2
+
+    invoke-static {v0, v2}, Lcom/android/server/BatteryService;->-wrap8(Ljava/lang/String;I)V
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+
+    goto :goto_0
 
     :catchall_0
     move-exception v0

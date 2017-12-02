@@ -9291,7 +9291,7 @@
 .end method
 
 .method final startActivities(Landroid/app/IApplicationThread;ILjava/lang/String;[Landroid/content/Intent;[Ljava/lang/String;Landroid/os/IBinder;Landroid/os/Bundle;I)I
-    .locals 39
+    .locals 40
 
     if-nez p4, :cond_0
 
@@ -9351,9 +9351,9 @@
 
     iget-object v0, v0, Lcom/android/server/am/ActivityStarter;->mService:Lcom/android/server/am/ActivityManagerService;
 
-    move-object/from16 v38, v0
+    move-object/from16 v39, v0
 
-    monitor-enter v38
+    monitor-enter v39
 
     :try_start_0
     invoke-static {}, Lcom/android/server/am/ActivityManagerService;->boostPriorityForLockedSection()V
@@ -9383,6 +9383,14 @@
     const/16 v34, 0x1
 
     :goto_1
+    move-object/from16 v0, p0
+
+    iget-object v2, v0, Lcom/android/server/am/ActivityStarter;->mSupervisor:Lcom/android/server/am/ActivityStackSupervisor;
+
+    iget-boolean v0, v2, Lcom/android/server/am/ActivityStackSupervisor;->mSnapWindowRunning:Z
+
+    move/from16 v38, v0
+
     if-eqz v34, :cond_3
 
     move-object/from16 v0, p0
@@ -9488,6 +9496,22 @@
 
     invoke-interface {v6, v0}, Lcom/android/server/am/IMultiWindowManagerServiceBridge;->postStartPairActivities(Ljava/lang/String;)V
 
+    sget-boolean v6, Lcom/samsung/android/framework/feature/MultiWindowFeatures;->SNAP_WINDOW_SUPPORT:Z
+
+    if-eqz v6, :cond_9
+
+    if-eqz v38, :cond_9
+
+    move-object/from16 v0, p0
+
+    iget-object v6, v0, Lcom/android/server/am/ActivityStarter;->mService:Lcom/android/server/am/ActivityManagerService;
+
+    iget-object v6, v6, Lcom/android/server/am/ActivityManagerService;->mMultiWindowManager:Lcom/android/server/am/IMultiWindowManagerServiceBridge;
+
+    const/4 v7, 0x0
+
+    invoke-interface {v6, v7}, Lcom/android/server/am/IMultiWindowManagerServiceBridge;->resizeDockedStack(I)V
+
     :cond_9
     invoke-static/range {v36 .. v37}, Landroid/os/Binder;->restoreCallingIdentity(J)V
 
@@ -9498,7 +9522,7 @@
     :catchall_1
     move-exception v2
 
-    monitor-exit v38
+    monitor-exit v39
 
     invoke-static {}, Lcom/android/server/am/ActivityManagerService;->resetPriorityAfterLockedSection()V
 
@@ -9730,12 +9754,28 @@
 
     invoke-interface {v2, v0}, Lcom/android/server/am/IMultiWindowManagerServiceBridge;->postStartPairActivities(Ljava/lang/String;)V
 
+    sget-boolean v2, Lcom/samsung/android/framework/feature/MultiWindowFeatures;->SNAP_WINDOW_SUPPORT:Z
+
+    if-eqz v2, :cond_12
+
+    if-eqz v38, :cond_12
+
+    move-object/from16 v0, p0
+
+    iget-object v2, v0, Lcom/android/server/am/ActivityStarter;->mService:Lcom/android/server/am/ActivityManagerService;
+
+    iget-object v2, v2, Lcom/android/server/am/ActivityManagerService;->mMultiWindowManager:Lcom/android/server/am/IMultiWindowManagerServiceBridge;
+
+    const/4 v6, 0x0
+
+    invoke-interface {v2, v6}, Lcom/android/server/am/IMultiWindowManagerServiceBridge;->resizeDockedStack(I)V
+
     :cond_12
     invoke-static/range {v36 .. v37}, Landroid/os/Binder;->restoreCallingIdentity(J)V
     :try_end_4
     .catchall {:try_start_4 .. :try_end_4} :catchall_1
 
-    monitor-exit v38
+    monitor-exit v39
 
     invoke-static {}, Lcom/android/server/am/ActivityManagerService;->resetPriorityAfterLockedSection()V
 
@@ -9789,12 +9829,28 @@
 
     invoke-interface {v2, v0}, Lcom/android/server/am/IMultiWindowManagerServiceBridge;->postStartPairActivities(Ljava/lang/String;)V
 
+    sget-boolean v2, Lcom/samsung/android/framework/feature/MultiWindowFeatures;->SNAP_WINDOW_SUPPORT:Z
+
+    if-eqz v2, :cond_17
+
+    if-eqz v38, :cond_17
+
+    move-object/from16 v0, p0
+
+    iget-object v2, v0, Lcom/android/server/am/ActivityStarter;->mService:Lcom/android/server/am/ActivityManagerService;
+
+    iget-object v2, v2, Lcom/android/server/am/ActivityManagerService;->mMultiWindowManager:Lcom/android/server/am/IMultiWindowManagerServiceBridge;
+
+    const/4 v6, 0x0
+
+    invoke-interface {v2, v6}, Lcom/android/server/am/IMultiWindowManagerServiceBridge;->resizeDockedStack(I)V
+
     :cond_17
     invoke-static/range {v36 .. v37}, Landroid/os/Binder;->restoreCallingIdentity(J)V
     :try_end_6
     .catchall {:try_start_6 .. :try_end_6} :catchall_1
 
-    monitor-exit v38
+    monitor-exit v39
 
     invoke-static {}, Lcom/android/server/am/ActivityManagerService;->resetPriorityAfterLockedSection()V
 

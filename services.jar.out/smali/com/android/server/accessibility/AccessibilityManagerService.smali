@@ -5910,28 +5910,28 @@
 .end method
 
 .method private updateLegacyCapabilitiesLocked(Lcom/android/server/accessibility/AccessibilityManagerService$UserState;)V
-    .locals 7
-
-    iget-object v5, p1, Lcom/android/server/accessibility/AccessibilityManagerService$UserState;->mInstalledServices:Ljava/util/List;
-
-    invoke-interface {v5}, Ljava/util/List;->size()I
-
-    move-result v2
+    .locals 6
 
     const/4 v1, 0x0
 
     :goto_0
-    if-ge v1, v2, :cond_2
+    iget-object v4, p1, Lcom/android/server/accessibility/AccessibilityManagerService$UserState;->mInstalledServices:Ljava/util/List;
 
-    iget-object v5, p1, Lcom/android/server/accessibility/AccessibilityManagerService$UserState;->mInstalledServices:Ljava/util/List;
+    invoke-interface {v4}, Ljava/util/List;->size()I
 
-    invoke-interface {v5, v1}, Ljava/util/List;->get(I)Ljava/lang/Object;
+    move-result v4
 
-    move-result-object v4
+    if-ge v1, v4, :cond_2
 
-    check-cast v4, Landroid/accessibilityservice/AccessibilityServiceInfo;
+    iget-object v4, p1, Lcom/android/server/accessibility/AccessibilityManagerService$UserState;->mInstalledServices:Ljava/util/List;
 
-    if-nez v4, :cond_1
+    invoke-interface {v4, v1}, Ljava/util/List;->get(I)Ljava/lang/Object;
+
+    move-result-object v3
+
+    check-cast v3, Landroid/accessibilityservice/AccessibilityServiceInfo;
+
+    if-nez v3, :cond_1
 
     :cond_0
     :goto_1
@@ -5940,55 +5940,55 @@
     goto :goto_0
 
     :cond_1
-    invoke-virtual {v4}, Landroid/accessibilityservice/AccessibilityServiceInfo;->getResolveInfo()Landroid/content/pm/ResolveInfo;
+    invoke-virtual {v3}, Landroid/accessibilityservice/AccessibilityServiceInfo;->getResolveInfo()Landroid/content/pm/ResolveInfo;
 
-    move-result-object v3
+    move-result-object v2
 
-    invoke-virtual {v4}, Landroid/accessibilityservice/AccessibilityServiceInfo;->getCapabilities()I
+    invoke-virtual {v3}, Landroid/accessibilityservice/AccessibilityServiceInfo;->getCapabilities()I
 
-    move-result v5
+    move-result v4
 
-    and-int/lit8 v5, v5, 0x2
+    and-int/lit8 v4, v4, 0x2
 
-    if-nez v5, :cond_0
+    if-nez v4, :cond_0
 
-    iget-object v5, v3, Landroid/content/pm/ResolveInfo;->serviceInfo:Landroid/content/pm/ServiceInfo;
+    iget-object v4, v2, Landroid/content/pm/ResolveInfo;->serviceInfo:Landroid/content/pm/ServiceInfo;
 
-    iget-object v5, v5, Landroid/content/pm/ServiceInfo;->applicationInfo:Landroid/content/pm/ApplicationInfo;
+    iget-object v4, v4, Landroid/content/pm/ServiceInfo;->applicationInfo:Landroid/content/pm/ApplicationInfo;
 
-    iget v5, v5, Landroid/content/pm/ApplicationInfo;->targetSdkVersion:I
+    iget v4, v4, Landroid/content/pm/ApplicationInfo;->targetSdkVersion:I
 
-    const/16 v6, 0x11
+    const/16 v5, 0x11
 
-    if-gt v5, v6, :cond_0
+    if-gt v4, v5, :cond_0
 
     new-instance v0, Landroid/content/ComponentName;
 
-    iget-object v5, v3, Landroid/content/pm/ResolveInfo;->serviceInfo:Landroid/content/pm/ServiceInfo;
+    iget-object v4, v2, Landroid/content/pm/ResolveInfo;->serviceInfo:Landroid/content/pm/ServiceInfo;
 
-    iget-object v5, v5, Landroid/content/pm/ServiceInfo;->packageName:Ljava/lang/String;
+    iget-object v4, v4, Landroid/content/pm/ServiceInfo;->packageName:Ljava/lang/String;
 
-    iget-object v6, v3, Landroid/content/pm/ResolveInfo;->serviceInfo:Landroid/content/pm/ServiceInfo;
+    iget-object v5, v2, Landroid/content/pm/ResolveInfo;->serviceInfo:Landroid/content/pm/ServiceInfo;
 
-    iget-object v6, v6, Landroid/content/pm/ServiceInfo;->name:Ljava/lang/String;
+    iget-object v5, v5, Landroid/content/pm/ServiceInfo;->name:Ljava/lang/String;
 
-    invoke-direct {v0, v5, v6}, Landroid/content/ComponentName;-><init>(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-direct {v0, v4, v5}, Landroid/content/ComponentName;-><init>(Ljava/lang/String;Ljava/lang/String;)V
 
-    iget-object v5, p1, Lcom/android/server/accessibility/AccessibilityManagerService$UserState;->mTouchExplorationGrantedServices:Ljava/util/Set;
+    iget-object v4, p1, Lcom/android/server/accessibility/AccessibilityManagerService$UserState;->mTouchExplorationGrantedServices:Ljava/util/Set;
 
-    invoke-interface {v5, v0}, Ljava/util/Set;->contains(Ljava/lang/Object;)Z
+    invoke-interface {v4, v0}, Ljava/util/Set;->contains(Ljava/lang/Object;)Z
 
-    move-result v5
+    move-result v4
 
-    if-eqz v5, :cond_0
+    if-eqz v4, :cond_0
 
-    invoke-virtual {v4}, Landroid/accessibilityservice/AccessibilityServiceInfo;->getCapabilities()I
+    invoke-virtual {v3}, Landroid/accessibilityservice/AccessibilityServiceInfo;->getCapabilities()I
 
-    move-result v5
+    move-result v4
 
-    or-int/lit8 v5, v5, 0x2
+    or-int/lit8 v4, v4, 0x2
 
-    invoke-virtual {v4, v5}, Landroid/accessibilityservice/AccessibilityServiceInfo;->setCapabilities(I)V
+    invoke-virtual {v3, v4}, Landroid/accessibilityservice/AccessibilityServiceInfo;->setCapabilities(I)V
 
     goto :goto_1
 

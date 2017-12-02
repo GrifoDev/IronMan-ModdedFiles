@@ -24,20 +24,24 @@
 
 .field final synthetic val$secureFolderId:I
 
+.field final synthetic val$shouldLockcase:Z
+
 .field final synthetic val$top:Lcom/android/server/am/ActivityRecord;
 
 
 # direct methods
-.method constructor <init>(Lcom/android/server/am/ActivityStackSupervisor$1;ILcom/android/server/am/ActivityRecord;Lcom/android/server/pm/PersonaManagerService;)V
+.method constructor <init>(Lcom/android/server/am/ActivityStackSupervisor$1;ZILcom/android/server/am/ActivityRecord;Lcom/android/server/pm/PersonaManagerService;)V
     .locals 0
 
     iput-object p1, p0, Lcom/android/server/am/ActivityStackSupervisor$1$1;->this$1:Lcom/android/server/am/ActivityStackSupervisor$1;
 
-    iput p2, p0, Lcom/android/server/am/ActivityStackSupervisor$1$1;->val$secureFolderId:I
+    iput-boolean p2, p0, Lcom/android/server/am/ActivityStackSupervisor$1$1;->val$shouldLockcase:Z
 
-    iput-object p3, p0, Lcom/android/server/am/ActivityStackSupervisor$1$1;->val$top:Lcom/android/server/am/ActivityRecord;
+    iput p3, p0, Lcom/android/server/am/ActivityStackSupervisor$1$1;->val$secureFolderId:I
 
-    iput-object p4, p0, Lcom/android/server/am/ActivityStackSupervisor$1$1;->val$pms:Lcom/android/server/pm/PersonaManagerService;
+    iput-object p4, p0, Lcom/android/server/am/ActivityStackSupervisor$1$1;->val$top:Lcom/android/server/am/ActivityRecord;
+
+    iput-object p5, p0, Lcom/android/server/am/ActivityStackSupervisor$1$1;->val$pms:Lcom/android/server/pm/PersonaManagerService;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -48,6 +52,10 @@
 # virtual methods
 .method public run()V
     .locals 3
+
+    iget-boolean v0, p0, Lcom/android/server/am/ActivityStackSupervisor$1$1;->val$shouldLockcase:Z
+
+    if-nez v0, :cond_0
 
     iget-object v0, p0, Lcom/android/server/am/ActivityStackSupervisor$1$1;->this$1:Lcom/android/server/am/ActivityStackSupervisor$1;
 
@@ -61,8 +69,12 @@
 
     move-result v0
 
-    if-nez v0, :cond_0
+    if-eqz v0, :cond_0
 
+    :goto_0
+    return-void
+
+    :cond_0
     iget-object v0, p0, Lcom/android/server/am/ActivityStackSupervisor$1$1;->val$pms:Lcom/android/server/pm/PersonaManagerService;
 
     iget v1, p0, Lcom/android/server/am/ActivityStackSupervisor$1$1;->val$secureFolderId:I
@@ -75,6 +87,5 @@
 
     invoke-static {v0, v1}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    :cond_0
-    return-void
+    goto :goto_0
 .end method

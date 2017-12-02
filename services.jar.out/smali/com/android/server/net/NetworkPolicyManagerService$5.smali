@@ -122,7 +122,7 @@
 
     iget-object v3, p0, Lcom/android/server/net/NetworkPolicyManagerService$5;->this$0:Lcom/android/server/net/NetworkPolicyManagerService;
 
-    invoke-static {v3, v2}, Lcom/android/server/net/NetworkPolicyManagerService;->-set0(Lcom/android/server/net/NetworkPolicyManagerService;Z)Z
+    invoke-static {v3, v2}, Lcom/android/server/net/NetworkPolicyManagerService;->-set1(Lcom/android/server/net/NetworkPolicyManagerService;Z)Z
 
     if-eqz v1, :cond_1
 

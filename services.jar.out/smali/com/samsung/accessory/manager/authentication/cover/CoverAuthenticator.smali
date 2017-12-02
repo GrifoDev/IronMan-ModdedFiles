@@ -787,6 +787,12 @@
     invoke-static {v4, v5}, Landroid/util/Slog;->secE(Ljava/lang/String;Ljava/lang/String;)I
 
     :cond_0
+    move-object/from16 v0, p0
+
+    iget-object v4, v0, Lcom/samsung/accessory/manager/authentication/cover/CoverAuthenticator;->mCoverAuthWakeLock:Landroid/os/PowerManager$WakeLock;
+
+    invoke-virtual {v4}, Landroid/os/PowerManager$WakeLock;->release()V
+
     return-void
 
     :cond_1
@@ -3304,6 +3310,12 @@
     iput-boolean v0, p0, Lcom/samsung/accessory/manager/authentication/cover/CoverAuthenticator;->mPreparing:Z
 
     :cond_1
+    sget-object v0, Lcom/samsung/accessory/manager/authentication/cover/CoverAuthenticator;->TAG:Ljava/lang/String;
+
+    const-string/jumbo v1, "startAuthentication delayed 1000ms : Start"
+
+    invoke-static {v0, v1}, Landroid/util/Slog;->secE(Ljava/lang/String;Ljava/lang/String;)I
+
     iget-object v0, p0, Lcom/samsung/accessory/manager/authentication/cover/CoverAuthenticator;->mCoverAuthHandler:Lcom/samsung/accessory/manager/authentication/cover/CoverAuthenticator$CoverAuthHandler;
 
     const/4 v1, 0x2
@@ -4151,7 +4163,7 @@
 .method public onCoverAttached(JZI)V
     .locals 9
 
-    const-wide/16 v6, 0x0
+    const-wide/16 v6, 0x3e8
 
     const/4 v4, 0x1
 
@@ -4192,7 +4204,9 @@
 
     iget-wide v2, p0, Lcom/samsung/accessory/manager/authentication/cover/CoverAuthenticator;->mCoverAttachedWhenNanos:J
 
-    cmp-long v2, v2, v6
+    const-wide/16 v4, 0x0
+
+    cmp-long v2, v2, v4
 
     if-eqz v2, :cond_2
 
@@ -4211,9 +4225,7 @@
     :cond_2
     iget-object v2, p0, Lcom/samsung/accessory/manager/authentication/cover/CoverAuthenticator;->mSafetyDetachTimeoutWakeLock:Landroid/os/PowerManager$WakeLock;
 
-    const-wide/16 v4, 0x3e8
-
-    invoke-virtual {v2, v4, v5}, Landroid/os/PowerManager$WakeLock;->acquire(J)V
+    invoke-virtual {v2, v6, v7}, Landroid/os/PowerManager$WakeLock;->acquire(J)V
 
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 

@@ -605,38 +605,6 @@
 
     invoke-static {v4, v5}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    new-instance v14, Landroid/content/IntentFilter;
-
-    invoke-direct {v14}, Landroid/content/IntentFilter;-><init>()V
-
-    const-string/jumbo v4, "android.intent.action.PACKAGE_REMOVED"
-
-    invoke-virtual {v14, v4}, Landroid/content/IntentFilter;->addAction(Ljava/lang/String;)V
-
-    const-string/jumbo v4, "package"
-
-    invoke-virtual {v14, v4}, Landroid/content/IntentFilter;->addDataScheme(Ljava/lang/String;)V
-
-    invoke-static {}, Lcom/android/server/SdpManagerService;->-get10()Landroid/content/Context;
-
-    move-result-object v4
-
-    new-instance v5, Lcom/android/server/SdpManagerService$ActionReceiver;
-
-    move-object/from16 v0, p0
-
-    iget-object v6, v0, Lcom/android/server/SdpManagerService$SdpHandler;->this$0:Lcom/android/server/SdpManagerService;
-
-    const/4 v7, 0x0
-
-    invoke-direct {v5, v6, v7}, Lcom/android/server/SdpManagerService$ActionReceiver;-><init>(Lcom/android/server/SdpManagerService;Lcom/android/server/SdpManagerService$ActionReceiver;)V
-
-    const-string/jumbo v6, "com.samsung.container.ACCESS_RECEIVER"
-
-    const/4 v7, 0x0
-
-    invoke-virtual {v4, v5, v14, v6, v7}, Landroid/content/Context;->registerReceiver(Landroid/content/BroadcastReceiver;Landroid/content/IntentFilter;Ljava/lang/String;Landroid/os/Handler;)Landroid/content/Intent;
-
     move-object/from16 v0, p0
 
     iget-object v4, v0, Lcom/android/server/SdpManagerService$SdpHandler;->this$0:Lcom/android/server/SdpManagerService;

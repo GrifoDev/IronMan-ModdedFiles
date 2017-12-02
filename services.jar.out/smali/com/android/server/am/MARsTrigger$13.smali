@@ -34,68 +34,63 @@
 .method public onReceive(Landroid/content/Context;Landroid/content/Intent;)V
     .locals 4
 
-    if-eqz p2, :cond_0
-
-    invoke-virtual {p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
-
-    move-result-object v2
-
-    if-nez v2, :cond_1
-
-    :cond_0
-    return-void
-
-    :cond_1
     invoke-virtual {p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
 
     move-result-object v0
 
-    const-string/jumbo v2, "com.samsung.intent.action.EMERGENCY_STATE_CHANGED"
+    const-string/jumbo v1, "MARsTrigger"
 
-    invoke-virtual {v0, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    new-instance v2, Ljava/lang/StringBuilder;
 
-    move-result v2
+    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
 
-    if-eqz v2, :cond_2
+    const-string/jumbo v3, "mAppStartUpIntentReceiver onReceive : "
 
-    const-string/jumbo v2, "reason"
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    const/4 v3, 0x0
+    move-result-object v2
 
-    invoke-virtual {p2, v2, v3}, Landroid/content/Intent;->getIntExtra(Ljava/lang/String;I)I
+    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-static {v1, v2}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    iget-object v1, p0, Lcom/android/server/am/MARsTrigger$13;->this$0:Lcom/android/server/am/MARsTrigger;
+
+    iget-object v1, v1, Lcom/android/server/am/MARsTrigger;->mPolicyManager:Lcom/android/server/am/MARsPolicyManager;
+
+    sget-boolean v1, Lcom/android/server/am/MARsPolicyManager;->App_StartUp_History:Z
+
+    if-eqz v1, :cond_1
+
+    const-string/jumbo v1, "android.intent.action.ACTION_SHUTDOWN"
+
+    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v1
 
-    const/4 v2, 0x5
+    if-nez v1, :cond_0
 
-    if-ne v1, v2, :cond_2
+    const-string/jumbo v1, "android.intent.action.REBOOT"
 
-    const-string/jumbo v2, "MARsTrigger"
+    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    const-string/jumbo v3, "disable ultra power saving mode"
+    move-result v1
 
-    invoke-static {v2, v3}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
+    if-eqz v1, :cond_1
 
-    iget-object v2, p0, Lcom/android/server/am/MARsTrigger$13;->this$0:Lcom/android/server/am/MARsTrigger;
+    :cond_0
+    iget-object v1, p0, Lcom/android/server/am/MARsTrigger$13;->this$0:Lcom/android/server/am/MARsTrigger;
 
-    iget-object v2, v2, Lcom/android/server/am/MARsTrigger;->mPolicyManager:Lcom/android/server/am/MARsPolicyManager;
+    iget-object v1, v1, Lcom/android/server/am/MARsTrigger;->mPolicyManager:Lcom/android/server/am/MARsPolicyManager;
 
-    sget-boolean v2, Lcom/android/server/am/MARsPolicyManager;->MARs_ENABLE:Z
+    invoke-virtual {v1}, Lcom/android/server/am/MARsPolicyManager;->handlePowerOff()V
 
-    if-nez v2, :cond_2
-
-    iget-object v2, p0, Lcom/android/server/am/MARsTrigger$13;->this$0:Lcom/android/server/am/MARsTrigger;
-
-    invoke-virtual {v2}, Lcom/android/server/am/MARsTrigger;->unregisterEmStateReceiver()V
-
-    iget-object v2, p0, Lcom/android/server/am/MARsTrigger$13;->this$0:Lcom/android/server/am/MARsTrigger;
-
-    iget-object v2, v2, Lcom/android/server/am/MARsTrigger;->mPolicyManager:Lcom/android/server/am/MARsPolicyManager;
-
-    const/4 v3, 0x1
-
-    invoke-virtual {v2, v3}, Lcom/android/server/am/MARsPolicyManager;->init(Z)V
-
-    :cond_2
+    :cond_1
     return-void
 .end method

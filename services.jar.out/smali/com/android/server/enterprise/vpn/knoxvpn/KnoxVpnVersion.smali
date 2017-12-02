@@ -8,7 +8,7 @@
 
 .field private static final KNOX_VPN_NUMBER:Ljava/lang/String; = "6"
 
-.field private static final KNOX_VPN_VERSION:Ljava/lang/String; = "2.3.0"
+.field private static final KNOX_VPN_VERSION:Ljava/lang/String; = "2.4.0"
 
 .field private static final PROP_KNOX_VPN_VERSION:Ljava/lang/String; = "net.knoxvpn.version"
 
@@ -281,7 +281,7 @@
 
     move-result v1
 
-    const/16 v2, 0x13
+    const/16 v2, 0x12
 
     aput v2, v0, v1
     :try_end_11
@@ -295,7 +295,7 @@
 
     move-result v1
 
-    const/16 v2, 0x12
+    const/16 v2, 0x13
 
     aput v2, v0, v1
     :try_end_12
@@ -421,7 +421,7 @@
 .method public static getVersion()Ljava/lang/String;
     .locals 1
 
-    const-string/jumbo v0, "2.3.0"
+    const-string/jumbo v0, "2.4.0"
 
     return-object v0
 .end method
@@ -504,6 +504,7 @@
         :pswitch_3
         :pswitch_4
         :pswitch_4
+        :pswitch_5
         :pswitch_5
         :pswitch_0
     .end packed-switch

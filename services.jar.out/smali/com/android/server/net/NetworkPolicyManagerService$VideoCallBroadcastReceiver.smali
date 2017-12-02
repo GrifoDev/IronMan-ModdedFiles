@@ -138,7 +138,7 @@
 
     move-result v8
 
-    invoke-static {v7, v8}, Lcom/android/server/net/NetworkPolicyManagerService;->-set2(Lcom/android/server/net/NetworkPolicyManagerService;Z)Z
+    invoke-static {v7, v8}, Lcom/android/server/net/NetworkPolicyManagerService;->-set3(Lcom/android/server/net/NetworkPolicyManagerService;Z)Z
 
     const-string/jumbo v7, "NetworkPolicy"
 
@@ -230,7 +230,7 @@
 
     iget-object v7, p0, Lcom/android/server/net/NetworkPolicyManagerService$VideoCallBroadcastReceiver;->this$0:Lcom/android/server/net/NetworkPolicyManagerService;
 
-    invoke-static {v7, v3}, Lcom/android/server/net/NetworkPolicyManagerService;->-set3(Lcom/android/server/net/NetworkPolicyManagerService;Z)Z
+    invoke-static {v7, v3}, Lcom/android/server/net/NetworkPolicyManagerService;->-set4(Lcom/android/server/net/NetworkPolicyManagerService;Z)Z
 
     const-string/jumbo v7, "NetworkPolicy"
 
@@ -269,15 +269,15 @@
 
     iget-object v7, p0, Lcom/android/server/net/NetworkPolicyManagerService$VideoCallBroadcastReceiver;->this$0:Lcom/android/server/net/NetworkPolicyManagerService;
 
-    invoke-static {v7, v4}, Lcom/android/server/net/NetworkPolicyManagerService;->-set3(Lcom/android/server/net/NetworkPolicyManagerService;Z)Z
-
-    iget-object v7, p0, Lcom/android/server/net/NetworkPolicyManagerService$VideoCallBroadcastReceiver;->this$0:Lcom/android/server/net/NetworkPolicyManagerService;
-
-    invoke-static {v7, v10}, Lcom/android/server/net/NetworkPolicyManagerService;->-set7(Lcom/android/server/net/NetworkPolicyManagerService;Z)Z
+    invoke-static {v7, v4}, Lcom/android/server/net/NetworkPolicyManagerService;->-set4(Lcom/android/server/net/NetworkPolicyManagerService;Z)Z
 
     iget-object v7, p0, Lcom/android/server/net/NetworkPolicyManagerService$VideoCallBroadcastReceiver;->this$0:Lcom/android/server/net/NetworkPolicyManagerService;
 
     invoke-static {v7, v10}, Lcom/android/server/net/NetworkPolicyManagerService;->-set8(Lcom/android/server/net/NetworkPolicyManagerService;Z)Z
+
+    iget-object v7, p0, Lcom/android/server/net/NetworkPolicyManagerService$VideoCallBroadcastReceiver;->this$0:Lcom/android/server/net/NetworkPolicyManagerService;
+
+    invoke-static {v7, v10}, Lcom/android/server/net/NetworkPolicyManagerService;->-set9(Lcom/android/server/net/NetworkPolicyManagerService;Z)Z
 
     const-string/jumbo v7, "NetworkPolicy"
 

@@ -2216,6 +2216,14 @@
 
     iput v0, v10, Landroid/content/res/Configuration;->screenHeightDp:I
 
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcom/android/server/am/TaskRecord;->stack:Lcom/android/server/am/ActivityStack;
+
+    move-object/from16 v23, v0
+
+    if-eqz v23, :cond_7
+
     move-object/from16 v0, v19
 
     iget v0, v0, Landroid/content/res/Configuration;->orientation:I

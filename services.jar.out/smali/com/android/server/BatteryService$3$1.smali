@@ -83,7 +83,7 @@
 
     iget-object v0, v0, Lcom/android/server/BatteryService$3;->this$0:Lcom/android/server/BatteryService;
 
-    invoke-static {v0}, Lcom/android/server/BatteryService;->-wrap8(Lcom/android/server/BatteryService;)V
+    invoke-static {v0}, Lcom/android/server/BatteryService;->-wrap9(Lcom/android/server/BatteryService;)V
 
     :goto_0
     return-void

@@ -51,7 +51,7 @@
 
     const/16 v4, 0x14
 
-    if-ne v3, v4, :cond_2
+    if-ne v3, v4, :cond_1
 
     iget v3, p1, Lcom/samsung/android/desktopmode/SemDesktopModeState;->enabled:I
 
@@ -59,17 +59,17 @@
 
     iget v3, p1, Lcom/samsung/android/desktopmode/SemDesktopModeState;->enabled:I
 
-    if-ne v3, v1, :cond_2
+    if-ne v3, v1, :cond_1
 
     :cond_0
     iget v3, p1, Lcom/samsung/android/desktopmode/SemDesktopModeState;->enabled:I
 
-    if-ne v3, v5, :cond_3
+    if-ne v3, v5, :cond_2
 
     move v0, v1
 
     :goto_0
-    if-eqz v0, :cond_4
+    if-eqz v0, :cond_3
 
     const-string/jumbo v3, "InputManager"
 
@@ -99,7 +99,7 @@
 
     const/4 v3, -0x3
 
-    invoke-static {v2, v3}, Lcom/android/server/input/InputManagerService;->-set6(Lcom/android/server/input/InputManagerService;I)I
+    invoke-static {v2, v3}, Lcom/android/server/input/InputManagerService;->-set5(Lcom/android/server/input/InputManagerService;I)I
 
     :goto_1
     iget-object v2, p0, Lcom/android/server/input/InputManagerService$5;->this$0:Lcom/android/server/input/InputManagerService;
@@ -120,13 +120,12 @@
 
     move-result v2
 
-    if-eqz v2, :cond_5
+    if-eqz v2, :cond_4
 
     iget-object v1, p0, Lcom/android/server/input/InputManagerService$5;->this$0:Lcom/android/server/input/InputManagerService;
 
     invoke-static {v1}, Lcom/android/server/input/InputManagerService;->-wrap7(Lcom/android/server/input/InputManagerService;)V
 
-    :cond_1
     :goto_2
     sput-boolean v0, Landroid/view/PointerIcon;->mDesktopMode:Z
 
@@ -136,15 +135,15 @@
 
     invoke-virtual {v1}, Lcom/android/server/input/InputManagerService;->updatePointerSpeedFromSettings()V
 
-    :cond_2
+    :cond_1
     return-void
 
-    :cond_3
+    :cond_2
     move v0, v2
 
     goto :goto_0
 
-    :cond_4
+    :cond_3
     const-string/jumbo v3, "InputManager"
 
     const-string/jumbo v4, "set STATE_LOADING_SCREEN_SHOWN disabled"
@@ -153,7 +152,7 @@
 
     iget-object v3, p0, Lcom/android/server/input/InputManagerService$5;->this$0:Lcom/android/server/input/InputManagerService;
 
-    invoke-static {v3, v2}, Lcom/android/server/input/InputManagerService;->-set6(Lcom/android/server/input/InputManagerService;I)I
+    invoke-static {v3, v2}, Lcom/android/server/input/InputManagerService;->-set5(Lcom/android/server/input/InputManagerService;I)I
 
     iget-object v2, p0, Lcom/android/server/input/InputManagerService$5;->this$0:Lcom/android/server/input/InputManagerService;
 
@@ -173,41 +172,66 @@
 
     goto :goto_1
 
-    :cond_5
+    :cond_4
     iget-object v2, p0, Lcom/android/server/input/InputManagerService$5;->this$0:Lcom/android/server/input/InputManagerService;
 
-    invoke-static {v2}, Lcom/android/server/input/InputManagerService;->-get11(Lcom/android/server/input/InputManagerService;)I
+    invoke-static {v2}, Lcom/android/server/input/InputManagerService;->-get12(Lcom/android/server/input/InputManagerService;)Ljava/lang/Object;
 
-    move-result v2
+    move-result-object v2
 
-    if-le v2, v1, :cond_6
+    monitor-enter v2
+
+    :try_start_0
+    iget-object v3, p0, Lcom/android/server/input/InputManagerService$5;->this$0:Lcom/android/server/input/InputManagerService;
+
+    invoke-static {v3}, Lcom/android/server/input/InputManagerService;->-get10(Lcom/android/server/input/InputManagerService;)I
+
+    move-result v3
+
+    if-le v3, v1, :cond_6
 
     iget-object v1, p0, Lcom/android/server/input/InputManagerService$5;->this$0:Lcom/android/server/input/InputManagerService;
 
-    const/4 v2, 0x0
+    const/4 v3, 0x0
 
-    invoke-static {v1, v2}, Lcom/android/server/input/InputManagerService;->-wrap23(Lcom/android/server/input/InputManagerService;Landroid/view/InputDevice;)V
+    invoke-static {v1, v3}, Lcom/android/server/input/InputManagerService;->-wrap23(Lcom/android/server/input/InputManagerService;Landroid/view/InputDevice;)V
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    :cond_5
+    :goto_3
+    monitor-exit v2
 
     goto :goto_2
 
     :cond_6
-    iget-object v2, p0, Lcom/android/server/input/InputManagerService$5;->this$0:Lcom/android/server/input/InputManagerService;
+    :try_start_1
+    iget-object v3, p0, Lcom/android/server/input/InputManagerService$5;->this$0:Lcom/android/server/input/InputManagerService;
 
-    invoke-static {v2}, Lcom/android/server/input/InputManagerService;->-get11(Lcom/android/server/input/InputManagerService;)I
+    invoke-static {v3}, Lcom/android/server/input/InputManagerService;->-get10(Lcom/android/server/input/InputManagerService;)I
 
-    move-result v2
+    move-result v3
 
-    if-ne v2, v1, :cond_1
+    if-ne v3, v1, :cond_5
 
     iget-object v1, p0, Lcom/android/server/input/InputManagerService$5;->this$0:Lcom/android/server/input/InputManagerService;
 
-    iget-object v2, p0, Lcom/android/server/input/InputManagerService$5;->this$0:Lcom/android/server/input/InputManagerService;
+    iget-object v3, p0, Lcom/android/server/input/InputManagerService$5;->this$0:Lcom/android/server/input/InputManagerService;
 
-    invoke-static {v2}, Lcom/android/server/input/InputManagerService;->-get12(Lcom/android/server/input/InputManagerService;)Landroid/view/InputDevice;
+    invoke-static {v3}, Lcom/android/server/input/InputManagerService;->-get11(Lcom/android/server/input/InputManagerService;)Landroid/view/InputDevice;
 
-    move-result-object v2
+    move-result-object v3
 
-    invoke-static {v1, v2}, Lcom/android/server/input/InputManagerService;->-wrap23(Lcom/android/server/input/InputManagerService;Landroid/view/InputDevice;)V
+    invoke-static {v1, v3}, Lcom/android/server/input/InputManagerService;->-wrap23(Lcom/android/server/input/InputManagerService;Landroid/view/InputDevice;)V
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    goto :goto_2
+    goto :goto_3
+
+    :catchall_0
+    move-exception v1
+
+    monitor-exit v2
+
+    throw v1
 .end method

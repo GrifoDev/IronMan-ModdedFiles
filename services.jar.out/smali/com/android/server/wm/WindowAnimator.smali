@@ -2662,9 +2662,23 @@
 
     move-result v11
 
+    if-eqz v11, :cond_6
+
+    iget-object v11, v5, Lcom/android/server/wm/WindowState;->mAttrs:Landroid/view/WindowManager$LayoutParams;
+
+    iget v11, v11, Landroid/view/WindowManager$LayoutParams;->flags:I
+
+    const/high16 v12, 0x400000
+
+    and-int/2addr v11, v12
+
     if-eqz v11, :cond_7
 
-    const/4 v8, 0x0
+    iget-object v11, p0, Lcom/android/server/wm/WindowAnimator;->mPolicy:Landroid/view/WindowManagerPolicy;
+
+    invoke-interface {v11}, Landroid/view/WindowManagerPolicy;->canShowDismissingWindowWhileLockedLw()Z
+
+    move-result v8
 
     :goto_0
     invoke-direct {p0}, Lcom/android/server/wm/WindowAnimator;->getWinShowWhenLockedOrAnimating()Lcom/android/server/wm/WindowState;
@@ -2894,7 +2908,7 @@
     goto/16 :goto_0
 
     :cond_7
-    const/4 v8, 0x1
+    const/4 v8, 0x0
 
     goto/16 :goto_0
 

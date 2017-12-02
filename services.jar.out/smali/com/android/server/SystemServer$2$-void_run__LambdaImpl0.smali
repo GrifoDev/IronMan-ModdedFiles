@@ -39,7 +39,7 @@
 
     iget-object v0, p0, Lcom/android/server/SystemServer$2$-void_run__LambdaImpl0;->val$this:Lcom/android/server/SystemServer$2;
 
-    invoke-virtual {v0}, Lcom/android/server/SystemServer$2;->-com_android_server_SystemServer$2_lambda$3()V
+    invoke-virtual {v0}, Lcom/android/server/SystemServer$2;->-com_android_server_SystemServer$2_lambda$2()V
 
     return-void
 .end method

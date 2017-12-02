@@ -10,6 +10,7 @@
         Lcom/android/server/am/MARsTrigger$11;,
         Lcom/android/server/am/MARsTrigger$12;,
         Lcom/android/server/am/MARsTrigger$13;,
+        Lcom/android/server/am/MARsTrigger$14;,
         Lcom/android/server/am/MARsTrigger$1;,
         Lcom/android/server/am/MARsTrigger$2;,
         Lcom/android/server/am/MARsTrigger$3;,
@@ -106,6 +107,10 @@
 .field private mCheckCharging:Z
 
 .field mContext:Landroid/content/Context;
+
+.field private mDualAppPkgIntentReceiver:Landroid/content/BroadcastReceiver;
+
+.field private mDualAppReceiverRegistered:Z
 
 .field private mEmStateReceiverRegistered:Z
 
@@ -406,6 +411,8 @@
 
     iput-boolean v2, p0, Lcom/android/server/am/MARsTrigger;->mSecureFolderReceiverRegistered:Z
 
+    iput-boolean v2, p0, Lcom/android/server/am/MARsTrigger;->mDualAppReceiverRegistered:Z
+
     iput-boolean v2, p0, Lcom/android/server/am/MARsTrigger;->mTriggerAREsPolicy:Z
 
     iput-boolean v2, p0, Lcom/android/server/am/MARsTrigger;->mEmergencyKillForce:Z
@@ -456,35 +463,41 @@
 
     invoke-direct {v0, p0}, Lcom/android/server/am/MARsTrigger$8;-><init>(Lcom/android/server/am/MARsTrigger;)V
 
-    iput-object v0, p0, Lcom/android/server/am/MARsTrigger;->mTimeIntentReceiver:Landroid/content/BroadcastReceiver;
+    iput-object v0, p0, Lcom/android/server/am/MARsTrigger;->mDualAppPkgIntentReceiver:Landroid/content/BroadcastReceiver;
 
     new-instance v0, Lcom/android/server/am/MARsTrigger$9;
 
     invoke-direct {v0, p0}, Lcom/android/server/am/MARsTrigger$9;-><init>(Lcom/android/server/am/MARsTrigger;)V
 
-    iput-object v0, p0, Lcom/android/server/am/MARsTrigger;->mScpmUpdateIntentReceiver:Landroid/content/BroadcastReceiver;
+    iput-object v0, p0, Lcom/android/server/am/MARsTrigger;->mTimeIntentReceiver:Landroid/content/BroadcastReceiver;
 
     new-instance v0, Lcom/android/server/am/MARsTrigger$10;
 
     invoke-direct {v0, p0}, Lcom/android/server/am/MARsTrigger$10;-><init>(Lcom/android/server/am/MARsTrigger;)V
 
-    iput-object v0, p0, Lcom/android/server/am/MARsTrigger;->mUserActionReceiver:Landroid/content/BroadcastReceiver;
+    iput-object v0, p0, Lcom/android/server/am/MARsTrigger;->mScpmUpdateIntentReceiver:Landroid/content/BroadcastReceiver;
 
     new-instance v0, Lcom/android/server/am/MARsTrigger$11;
 
     invoke-direct {v0, p0}, Lcom/android/server/am/MARsTrigger$11;-><init>(Lcom/android/server/am/MARsTrigger;)V
 
-    iput-object v0, p0, Lcom/android/server/am/MARsTrigger;->mUserIntentReceiver:Landroid/content/BroadcastReceiver;
+    iput-object v0, p0, Lcom/android/server/am/MARsTrigger;->mUserActionReceiver:Landroid/content/BroadcastReceiver;
 
     new-instance v0, Lcom/android/server/am/MARsTrigger$12;
 
     invoke-direct {v0, p0}, Lcom/android/server/am/MARsTrigger$12;-><init>(Lcom/android/server/am/MARsTrigger;)V
 
-    iput-object v0, p0, Lcom/android/server/am/MARsTrigger;->mAppStartUpIntentReceiver:Landroid/content/BroadcastReceiver;
+    iput-object v0, p0, Lcom/android/server/am/MARsTrigger;->mUserIntentReceiver:Landroid/content/BroadcastReceiver;
 
     new-instance v0, Lcom/android/server/am/MARsTrigger$13;
 
     invoke-direct {v0, p0}, Lcom/android/server/am/MARsTrigger$13;-><init>(Lcom/android/server/am/MARsTrigger;)V
+
+    iput-object v0, p0, Lcom/android/server/am/MARsTrigger;->mAppStartUpIntentReceiver:Landroid/content/BroadcastReceiver;
+
+    new-instance v0, Lcom/android/server/am/MARsTrigger$14;
+
+    invoke-direct {v0, p0}, Lcom/android/server/am/MARsTrigger$14;-><init>(Lcom/android/server/am/MARsTrigger;)V
 
     iput-object v0, p0, Lcom/android/server/am/MARsTrigger;->mEmergencyStateChangedReceiver:Landroid/content/BroadcastReceiver;
 
@@ -1343,6 +1356,53 @@
 
 
 # virtual methods
+.method public registerDualAppReceiver(I)V
+    .locals 6
+
+    const/4 v4, 0x0
+
+    iget-boolean v0, p0, Lcom/android/server/am/MARsTrigger;->mDualAppReceiverRegistered:Z
+
+    if-eqz v0, :cond_0
+
+    return-void
+
+    :cond_0
+    new-instance v3, Landroid/content/IntentFilter;
+
+    invoke-direct {v3}, Landroid/content/IntentFilter;-><init>()V
+
+    const-string/jumbo v0, "android.intent.action.PACKAGE_ADDED"
+
+    invoke-virtual {v3, v0}, Landroid/content/IntentFilter;->addAction(Ljava/lang/String;)V
+
+    const-string/jumbo v0, "android.intent.action.PACKAGE_REMOVED"
+
+    invoke-virtual {v3, v0}, Landroid/content/IntentFilter;->addAction(Ljava/lang/String;)V
+
+    const-string/jumbo v0, "package"
+
+    invoke-virtual {v3, v0}, Landroid/content/IntentFilter;->addDataScheme(Ljava/lang/String;)V
+
+    iget-object v0, p0, Lcom/android/server/am/MARsTrigger;->mContext:Landroid/content/Context;
+
+    iget-object v1, p0, Lcom/android/server/am/MARsTrigger;->mDualAppPkgIntentReceiver:Landroid/content/BroadcastReceiver;
+
+    new-instance v2, Landroid/os/UserHandle;
+
+    invoke-direct {v2, p1}, Landroid/os/UserHandle;-><init>(I)V
+
+    move-object v5, v4
+
+    invoke-virtual/range {v0 .. v5}, Landroid/content/Context;->registerReceiverAsUser(Landroid/content/BroadcastReceiver;Landroid/os/UserHandle;Landroid/content/IntentFilter;Ljava/lang/String;Landroid/os/Handler;)Landroid/content/Intent;
+
+    const/4 v0, 0x1
+
+    iput-boolean v0, p0, Lcom/android/server/am/MARsTrigger;->mDualAppReceiverRegistered:Z
+
+    return-void
+.end method
+
 .method public registerEmStateReceiver()V
     .locals 3
 
@@ -1569,11 +1629,15 @@
 
     invoke-direct {v8}, Landroid/content/IntentFilter;-><init>()V
 
-    const-string/jumbo v9, "android.intent.action.USER_STOPPED"
+    const-string/jumbo v9, "android.intent.action.USER_ADDED"
 
     invoke-virtual {v8, v9}, Landroid/content/IntentFilter;->addAction(Ljava/lang/String;)V
 
     const-string/jumbo v9, "com.samsung.knox.securefolder.SETUP_COMPLETE"
+
+    invoke-virtual {v8, v9}, Landroid/content/IntentFilter;->addAction(Ljava/lang/String;)V
+
+    const-string/jumbo v9, "android.intent.action.USER_STOPPED"
 
     invoke-virtual {v8, v9}, Landroid/content/IntentFilter;->addAction(Ljava/lang/String;)V
 
@@ -1850,6 +1914,44 @@
     iput-object v0, p0, Lcom/android/server/am/MARsTrigger;->user:Landroid/os/UserHandle;
 
     return-void
+.end method
+
+.method public unregisterDualAppReceiver()V
+    .locals 3
+
+    iget-boolean v1, p0, Lcom/android/server/am/MARsTrigger;->mDualAppReceiverRegistered:Z
+
+    if-nez v1, :cond_0
+
+    return-void
+
+    :cond_0
+    :try_start_0
+    iget-object v1, p0, Lcom/android/server/am/MARsTrigger;->mContext:Landroid/content/Context;
+
+    iget-object v2, p0, Lcom/android/server/am/MARsTrigger;->mDualAppPkgIntentReceiver:Landroid/content/BroadcastReceiver;
+
+    invoke-virtual {v1, v2}, Landroid/content/Context;->unregisterReceiver(Landroid/content/BroadcastReceiver;)V
+
+    const/4 v1, 0x0
+
+    iput-boolean v1, p0, Lcom/android/server/am/MARsTrigger;->mDualAppReceiverRegistered:Z
+    :try_end_0
+    .catch Ljava/lang/IllegalArgumentException; {:try_start_0 .. :try_end_0} :catch_0
+
+    :goto_0
+    return-void
+
+    :catch_0
+    move-exception v0
+
+    const-string/jumbo v1, "MARsTrigger"
+
+    const-string/jumbo v2, "IllegalArgumentException occurred in unregisterDualAppReceiver()"
+
+    invoke-static {v1, v2}, Landroid/util/Slog;->e(Ljava/lang/String;Ljava/lang/String;)I
+
+    goto :goto_0
 .end method
 
 .method public unregisterEmStateReceiver()V

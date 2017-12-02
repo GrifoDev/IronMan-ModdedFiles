@@ -99,7 +99,7 @@
 
     iget-object v1, v1, Lcom/android/server/enterprise/container/KnoxMUMContainerPolicy$5;->this$0:Lcom/android/server/enterprise/container/KnoxMUMContainerPolicy;
 
-    invoke-static {v1}, Lcom/android/server/enterprise/container/KnoxMUMContainerPolicy;->-wrap5(Lcom/android/server/enterprise/container/KnoxMUMContainerPolicy;)Lcom/samsung/android/knox/SemPersonaManager;
+    invoke-static {v1}, Lcom/android/server/enterprise/container/KnoxMUMContainerPolicy;->-wrap4(Lcom/android/server/enterprise/container/KnoxMUMContainerPolicy;)Lcom/samsung/android/knox/SemPersonaManager;
 
     move-result-object v1
 
@@ -111,7 +111,7 @@
 
     iget-object v1, v1, Lcom/android/server/enterprise/container/KnoxMUMContainerPolicy$5;->this$0:Lcom/android/server/enterprise/container/KnoxMUMContainerPolicy;
 
-    invoke-static {v1}, Lcom/android/server/enterprise/container/KnoxMUMContainerPolicy;->-wrap5(Lcom/android/server/enterprise/container/KnoxMUMContainerPolicy;)Lcom/samsung/android/knox/SemPersonaManager;
+    invoke-static {v1}, Lcom/android/server/enterprise/container/KnoxMUMContainerPolicy;->-wrap4(Lcom/android/server/enterprise/container/KnoxMUMContainerPolicy;)Lcom/samsung/android/knox/SemPersonaManager;
 
     move-result-object v1
 
@@ -193,7 +193,7 @@
 
     iget-object v1, v1, Lcom/android/server/enterprise/container/KnoxMUMContainerPolicy$5;->this$0:Lcom/android/server/enterprise/container/KnoxMUMContainerPolicy;
 
-    invoke-static {v1}, Lcom/android/server/enterprise/container/KnoxMUMContainerPolicy;->-wrap5(Lcom/android/server/enterprise/container/KnoxMUMContainerPolicy;)Lcom/samsung/android/knox/SemPersonaManager;
+    invoke-static {v1}, Lcom/android/server/enterprise/container/KnoxMUMContainerPolicy;->-wrap4(Lcom/android/server/enterprise/container/KnoxMUMContainerPolicy;)Lcom/samsung/android/knox/SemPersonaManager;
 
     move-result-object v1
 
@@ -205,7 +205,7 @@
 
     iget-object v1, v1, Lcom/android/server/enterprise/container/KnoxMUMContainerPolicy$5;->this$0:Lcom/android/server/enterprise/container/KnoxMUMContainerPolicy;
 
-    invoke-static {v1}, Lcom/android/server/enterprise/container/KnoxMUMContainerPolicy;->-wrap5(Lcom/android/server/enterprise/container/KnoxMUMContainerPolicy;)Lcom/samsung/android/knox/SemPersonaManager;
+    invoke-static {v1}, Lcom/android/server/enterprise/container/KnoxMUMContainerPolicy;->-wrap4(Lcom/android/server/enterprise/container/KnoxMUMContainerPolicy;)Lcom/samsung/android/knox/SemPersonaManager;
 
     move-result-object v1
 
@@ -318,7 +318,7 @@
 
     iget v3, v0, Lcom/android/server/enterprise/container/KnoxMUMContainerPolicy$5$1;->val$personaId:I
 
-    invoke-static {v1, v3}, Lcom/android/server/enterprise/container/KnoxMUMContainerPolicy;->-wrap6(Lcom/android/server/enterprise/container/KnoxMUMContainerPolicy;I)Lcom/samsung/android/knox/container/ContainerCreationParams;
+    invoke-static {v1, v3}, Lcom/android/server/enterprise/container/KnoxMUMContainerPolicy;->-wrap5(Lcom/android/server/enterprise/container/KnoxMUMContainerPolicy;I)Lcom/samsung/android/knox/container/ContainerCreationParams;
 
     move-result-object v18
 
@@ -340,7 +340,7 @@
 
     move-object/from16 v0, v18
 
-    invoke-static {v1, v0, v3, v7}, Lcom/android/server/enterprise/container/KnoxMUMContainerPolicy;->-wrap17(Lcom/android/server/enterprise/container/KnoxMUMContainerPolicy;Lcom/samsung/android/knox/container/ContainerCreationParams;II)V
+    invoke-static {v1, v0, v3, v7}, Lcom/android/server/enterprise/container/KnoxMUMContainerPolicy;->-wrap16(Lcom/android/server/enterprise/container/KnoxMUMContainerPolicy;Lcom/samsung/android/knox/container/ContainerCreationParams;II)V
 
     if-eqz v16, :cond_5
 
@@ -356,7 +356,7 @@
 
     const-string/jumbo v7, "com.sec.knox.containeragent.klms.created.b2c"
 
-    invoke-static {v1, v3, v7}, Lcom/android/server/enterprise/container/KnoxMUMContainerPolicy;->-wrap16(Lcom/android/server/enterprise/container/KnoxMUMContainerPolicy;ILjava/lang/String;)V
+    invoke-static {v1, v3, v7}, Lcom/android/server/enterprise/container/KnoxMUMContainerPolicy;->-wrap15(Lcom/android/server/enterprise/container/KnoxMUMContainerPolicy;ILjava/lang/String;)V
 
     :cond_3
     :goto_0
@@ -364,7 +364,7 @@
 
     iget-object v1, v0, Lcom/android/server/enterprise/container/KnoxMUMContainerPolicy$5$1;->val$oldState:Lcom/samsung/android/knox/SemPersonaState;
 
-    invoke-static {v1}, Lcom/android/server/enterprise/container/KnoxMUMContainerPolicy;->-wrap8(Lcom/samsung/android/knox/SemPersonaState;)I
+    invoke-static {v1}, Lcom/android/server/enterprise/container/KnoxMUMContainerPolicy;->-wrap7(Lcom/samsung/android/knox/SemPersonaState;)I
 
     move-result v5
 
@@ -372,7 +372,7 @@
 
     iget-object v1, v0, Lcom/android/server/enterprise/container/KnoxMUMContainerPolicy$5$1;->val$newState:Lcom/samsung/android/knox/SemPersonaState;
 
-    invoke-static {v1}, Lcom/android/server/enterprise/container/KnoxMUMContainerPolicy;->-wrap8(Lcom/samsung/android/knox/SemPersonaState;)I
+    invoke-static {v1}, Lcom/android/server/enterprise/container/KnoxMUMContainerPolicy;->-wrap7(Lcom/samsung/android/knox/SemPersonaState;)I
 
     move-result v6
 
@@ -417,7 +417,7 @@
 
     iget v3, v0, Lcom/android/server/enterprise/container/KnoxMUMContainerPolicy$5$1;->val$personaId:I
 
-    invoke-static/range {v1 .. v6}, Lcom/android/server/enterprise/container/KnoxMUMContainerPolicy;->-wrap15(Lcom/android/server/enterprise/container/KnoxMUMContainerPolicy;Ljava/lang/String;IIII)V
+    invoke-static/range {v1 .. v6}, Lcom/android/server/enterprise/container/KnoxMUMContainerPolicy;->-wrap14(Lcom/android/server/enterprise/container/KnoxMUMContainerPolicy;Ljava/lang/String;IIII)V
 
     add-int/lit8 v1, v7, 0x1
 
@@ -446,7 +446,7 @@
 
     const/4 v7, 0x1
 
-    invoke-static {v1, v3, v7}, Lcom/android/server/enterprise/container/KnoxMUMContainerPolicy;->-wrap7(Lcom/android/server/enterprise/container/KnoxMUMContainerPolicy;IZ)I
+    invoke-static {v1, v3, v7}, Lcom/android/server/enterprise/container/KnoxMUMContainerPolicy;->-wrap6(Lcom/android/server/enterprise/container/KnoxMUMContainerPolicy;IZ)I
 
     return-void
 
@@ -463,7 +463,7 @@
 
     const-string/jumbo v7, "com.sec.knox.containeragent.klms.created.b2b"
 
-    invoke-static {v1, v3, v7}, Lcom/android/server/enterprise/container/KnoxMUMContainerPolicy;->-wrap16(Lcom/android/server/enterprise/container/KnoxMUMContainerPolicy;ILjava/lang/String;)V
+    invoke-static {v1, v3, v7}, Lcom/android/server/enterprise/container/KnoxMUMContainerPolicy;->-wrap15(Lcom/android/server/enterprise/container/KnoxMUMContainerPolicy;ILjava/lang/String;)V
 
     goto :goto_0
 
@@ -494,7 +494,7 @@
 
     const-string/jumbo v7, "com.sec.knox.containeragent.klms.removed.b2c"
 
-    invoke-static {v1, v3, v7}, Lcom/android/server/enterprise/container/KnoxMUMContainerPolicy;->-wrap16(Lcom/android/server/enterprise/container/KnoxMUMContainerPolicy;ILjava/lang/String;)V
+    invoke-static {v1, v3, v7}, Lcom/android/server/enterprise/container/KnoxMUMContainerPolicy;->-wrap15(Lcom/android/server/enterprise/container/KnoxMUMContainerPolicy;ILjava/lang/String;)V
 
     goto/16 :goto_0
 
@@ -511,7 +511,7 @@
 
     const-string/jumbo v7, "com.sec.knox.containeragent.klms.removed.b2b"
 
-    invoke-static {v1, v3, v7}, Lcom/android/server/enterprise/container/KnoxMUMContainerPolicy;->-wrap16(Lcom/android/server/enterprise/container/KnoxMUMContainerPolicy;ILjava/lang/String;)V
+    invoke-static {v1, v3, v7}, Lcom/android/server/enterprise/container/KnoxMUMContainerPolicy;->-wrap15(Lcom/android/server/enterprise/container/KnoxMUMContainerPolicy;ILjava/lang/String;)V
 
     goto/16 :goto_0
 
@@ -534,7 +534,7 @@
 
     move v12, v6
 
-    invoke-static/range {v7 .. v12}, Lcom/android/server/enterprise/container/KnoxMUMContainerPolicy;->-wrap15(Lcom/android/server/enterprise/container/KnoxMUMContainerPolicy;Ljava/lang/String;IIII)V
+    invoke-static/range {v7 .. v12}, Lcom/android/server/enterprise/container/KnoxMUMContainerPolicy;->-wrap14(Lcom/android/server/enterprise/container/KnoxMUMContainerPolicy;Ljava/lang/String;IIII)V
 
     :cond_9
     move-object/from16 v0, p0
@@ -599,7 +599,7 @@
 
     iget v8, v0, Lcom/android/server/enterprise/container/KnoxMUMContainerPolicy$5$1;->val$personaId:I
 
-    invoke-static {v7, v2, v8, v4}, Lcom/android/server/enterprise/container/KnoxMUMContainerPolicy;->-wrap12(Lcom/android/server/enterprise/container/KnoxMUMContainerPolicy;Ljava/lang/String;II)V
+    invoke-static {v7, v2, v8, v4}, Lcom/android/server/enterprise/container/KnoxMUMContainerPolicy;->-wrap11(Lcom/android/server/enterprise/container/KnoxMUMContainerPolicy;Ljava/lang/String;II)V
 
     add-int/lit8 v1, v1, 0x1
 
@@ -618,7 +618,7 @@
 
     const/4 v7, 0x0
 
-    invoke-static {v1, v7, v3, v4}, Lcom/android/server/enterprise/container/KnoxMUMContainerPolicy;->-wrap12(Lcom/android/server/enterprise/container/KnoxMUMContainerPolicy;Ljava/lang/String;II)V
+    invoke-static {v1, v7, v3, v4}, Lcom/android/server/enterprise/container/KnoxMUMContainerPolicy;->-wrap11(Lcom/android/server/enterprise/container/KnoxMUMContainerPolicy;Ljava/lang/String;II)V
 
     :cond_c
     return-void

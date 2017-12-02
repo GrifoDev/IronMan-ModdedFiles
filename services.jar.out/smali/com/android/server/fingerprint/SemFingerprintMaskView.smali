@@ -1225,7 +1225,7 @@
 
     iget-object v2, p0, Lcom/android/server/fingerprint/SemFingerprintMaskView;->mContext:Landroid/content/Context;
 
-    const v3, 0x1040b0a
+    const v3, 0x1040b0b
 
     invoke-virtual {v2, v3}, Landroid/content/Context;->getText(I)Ljava/lang/CharSequence;
 
@@ -1381,7 +1381,7 @@
 
     iget-object v3, p0, Lcom/android/server/fingerprint/SemFingerprintMaskView;->mContext:Landroid/content/Context;
 
-    const v4, 0x1040b0a
+    const v4, 0x1040b0b
 
     invoke-virtual {v3, v4}, Landroid/content/Context;->getText(I)Ljava/lang/CharSequence;
 
@@ -1886,7 +1886,7 @@
 
     iget-object v3, p0, Lcom/android/server/fingerprint/SemFingerprintMaskView;->mContext:Landroid/content/Context;
 
-    const v4, 0x1040b0a
+    const v4, 0x1040b0b
 
     invoke-virtual {v3, v4}, Landroid/content/Context;->getText(I)Ljava/lang/CharSequence;
 

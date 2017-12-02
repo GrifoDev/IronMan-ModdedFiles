@@ -664,10 +664,6 @@
 
     invoke-virtual/range {v22 .. v22}, Landroid/os/Message;->sendToTarget()V
 
-    sget-boolean v22, Lcom/samsung/android/framework/feature/MultiWindowFeatures;->SAMSUNG_MULTIWINDOW_DYNAMIC_ENABLED:Z
-
-    if-eqz v22, :cond_8
-
     move-object/from16 v0, p0
 
     iget-boolean v0, v0, Lcom/android/server/wm/TaskTapPointerEventListener;->mIsDesktopMode:Z
@@ -715,7 +711,7 @@
 
     invoke-direct/range {p0 .. p0}, Lcom/android/server/wm/TaskTapPointerEventListener;->stopTwoFingerScroll()V
 
-    goto/16 :goto_3
+    goto :goto_3
 
     :pswitch_3
     invoke-virtual/range {p1 .. p1}, Landroid/view/MotionEvent;->getX()F
@@ -802,13 +798,14 @@
 
     move/from16 v22, v0
 
-    if-eqz v22, :cond_c
+    if-eqz v22, :cond_11
 
     invoke-static {v8}, Lcom/samsung/android/multiwindow/MultiWindowEdgeDetector$Utils;->convertDesktopMouseIcon(I)I
 
     move-result v8
 
     :cond_c
+    :goto_6
     if-eqz v9, :cond_d
 
     invoke-virtual {v9, v8}, Landroid/view/InputDevice;->setPointerType(I)V
@@ -825,7 +822,7 @@
     .catchall {:try_start_3 .. :try_end_3} :catchall_2
 
     :cond_e
-    :goto_6
+    :goto_7
     monitor-exit v23
 
     goto/16 :goto_3
@@ -876,7 +873,7 @@
 
     move-result v22
 
-    if-eqz v22, :cond_11
+    if-eqz v22, :cond_12
 
     :cond_10
     const/16 v22, 0x1
@@ -889,7 +886,7 @@
     :try_end_4
     .catchall {:try_start_4 .. :try_end_4} :catchall_2
 
-    goto :goto_6
+    goto :goto_7
 
     :catchall_2
     move-exception v22
@@ -899,6 +896,19 @@
     throw v22
 
     :cond_11
+    const/16 v22, 0x2
+
+    move/from16 v0, v22
+
+    move/from16 v1, v16
+
+    if-ne v0, v1, :cond_c
+
+    const/16 v8, 0x4e21
+
+    goto :goto_6
+
+    :cond_12
     const/16 v22, 0x1
 
     :try_start_5
@@ -914,11 +924,11 @@
 
     sget-boolean v22, Lcom/samsung/android/framework/feature/MultiWindowFeatures;->SAMSUNG_MULTIWINDOW_DYNAMIC_ENABLED:Z
 
-    if-eqz v22, :cond_12
+    if-eqz v22, :cond_13
 
     const/16 v6, 0x8
 
-    :cond_12
+    :cond_13
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/server/wm/TaskTapPointerEventListener;->mTmpRect:Landroid/graphics/Rect;
@@ -937,7 +947,7 @@
 
     move/from16 v1, v22
 
-    if-ge v0, v1, :cond_1b
+    if-ge v0, v1, :cond_1c
 
     move-object/from16 v0, p0
 
@@ -957,19 +967,19 @@
 
     move/from16 v1, v22
 
-    if-ge v0, v1, :cond_19
+    if-ge v0, v1, :cond_1a
 
     const/16 v8, 0x3f9
 
-    :cond_13
-    :goto_7
+    :cond_14
+    :goto_8
     move-object/from16 v0, p0
 
     iget-boolean v0, v0, Lcom/android/server/wm/TaskTapPointerEventListener;->mIsDesktopMode:Z
 
     move/from16 v22, v0
 
-    if-nez v22, :cond_18
+    if-nez v22, :cond_19
 
     const/16 v22, 0x0
 
@@ -987,12 +997,12 @@
 
     move/from16 v1, v24
 
-    if-ne v0, v1, :cond_14
+    if-ne v0, v1, :cond_15
 
     packed-switch v8, :pswitch_data_1
 
-    :cond_14
-    :goto_8
+    :cond_15
+    :goto_9
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/server/wm/TaskTapPointerEventListener;->mService:Lcom/android/server/wm/WindowManagerService;
@@ -1005,7 +1015,7 @@
 
     const/4 v10, 0x0
 
-    if-nez v11, :cond_16
+    if-nez v11, :cond_17
 
     move-object/from16 v0, p0
 
@@ -1021,12 +1031,12 @@
 
     move-result-object v18
 
-    :cond_15
+    :cond_16
     invoke-interface/range {v18 .. v18}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v22
 
-    if-eqz v22, :cond_16
+    if-eqz v22, :cond_17
 
     invoke-interface/range {v18 .. v18}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -1050,7 +1060,7 @@
 
     move/from16 v1, v24
 
-    if-ne v0, v1, :cond_15
+    if-ne v0, v1, :cond_16
 
     move-object/from16 v0, v17
 
@@ -1058,7 +1068,7 @@
 
     move/from16 v22, v0
 
-    if-nez v22, :cond_15
+    if-nez v22, :cond_16
 
     move-object/from16 v0, v17
 
@@ -1076,11 +1086,11 @@
 
     move-result v22
 
-    if-eqz v22, :cond_15
+    if-eqz v22, :cond_16
 
     const/4 v10, 0x1
 
-    :cond_16
+    :cond_17
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/server/wm/TaskTapPointerEventListener;->mService:Lcom/android/server/wm/WindowManagerService;
@@ -1093,7 +1103,7 @@
 
     move-object/from16 v22, v0
 
-    if-eqz v22, :cond_20
+    if-eqz v22, :cond_21
 
     move-object/from16 v0, p0
 
@@ -1111,20 +1121,20 @@
 
     move-result-object v13
 
-    :goto_9
+    :goto_a
     move-object/from16 v0, p0
 
     iget-boolean v0, v0, Lcom/android/server/wm/TaskTapPointerEventListener;->mIsDesktopMode:Z
 
     move/from16 v22, v0
 
-    if-nez v22, :cond_18
+    if-nez v22, :cond_19
 
-    if-nez v11, :cond_17
+    if-nez v11, :cond_18
 
-    if-nez v10, :cond_17
+    if-nez v10, :cond_18
 
-    if-eqz v13, :cond_21
+    if-eqz v13, :cond_22
 
     iget v0, v13, Landroid/view/WindowManager$LayoutParams;->type:I
 
@@ -1136,13 +1146,13 @@
 
     move/from16 v1, v24
 
-    if-ne v0, v1, :cond_21
-
-    :cond_17
-    :goto_a
-    const/16 v8, 0x3e8
+    if-ne v0, v1, :cond_22
 
     :cond_18
+    :goto_b
+    const/16 v8, 0x3e8
+
+    :cond_19
     move-object/from16 v0, p0
 
     iget v0, v0, Lcom/android/server/wm/TaskTapPointerEventListener;->mPointerIconType:I
@@ -1159,13 +1169,13 @@
 
     move/from16 v22, v0
 
-    if-eqz v22, :cond_25
+    if-eqz v22, :cond_27
 
     invoke-virtual {v15}, Lcom/android/server/wm/Task;->isResizeable()Z
 
     move-result v22
 
-    if-nez v22, :cond_22
+    if-nez v22, :cond_24
 
     const/16 v22, 0x3e8
 
@@ -1189,9 +1199,9 @@
 
     invoke-virtual {v9, v8}, Landroid/view/InputDevice;->setPointerType(I)V
 
-    goto/16 :goto_6
+    goto/16 :goto_7
 
-    :cond_19
+    :cond_1a
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/server/wm/TaskTapPointerEventListener;->mTmpRect:Landroid/graphics/Rect;
@@ -1210,18 +1220,18 @@
 
     move/from16 v1, v22
 
-    if-le v0, v1, :cond_1a
+    if-le v0, v1, :cond_1b
 
     const/16 v8, 0x3f8
 
-    goto/16 :goto_7
-
-    :cond_1a
-    const/16 v8, 0x3f6
-
-    goto/16 :goto_7
+    goto/16 :goto_8
 
     :cond_1b
+    const/16 v8, 0x3f6
+
+    goto/16 :goto_8
+
+    :cond_1c
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/server/wm/TaskTapPointerEventListener;->mTmpRect:Landroid/graphics/Rect;
@@ -1240,7 +1250,7 @@
 
     move/from16 v1, v22
 
-    if-le v0, v1, :cond_1e
+    if-le v0, v1, :cond_1f
 
     move-object/from16 v0, p0
 
@@ -1260,13 +1270,13 @@
 
     move/from16 v1, v22
 
-    if-ge v0, v1, :cond_1c
+    if-ge v0, v1, :cond_1d
 
     const/16 v8, 0x3f8
 
-    goto/16 :goto_7
+    goto/16 :goto_8
 
-    :cond_1c
+    :cond_1d
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/server/wm/TaskTapPointerEventListener;->mTmpRect:Landroid/graphics/Rect;
@@ -1285,18 +1295,18 @@
 
     move/from16 v1, v22
 
-    if-le v0, v1, :cond_1d
+    if-le v0, v1, :cond_1e
 
     const/16 v8, 0x3f9
 
-    goto/16 :goto_7
-
-    :cond_1d
-    const/16 v8, 0x3f6
-
-    goto/16 :goto_7
+    goto/16 :goto_8
 
     :cond_1e
+    const/16 v8, 0x3f6
+
+    goto/16 :goto_8
+
+    :cond_1f
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/server/wm/TaskTapPointerEventListener;->mTmpRect:Landroid/graphics/Rect;
@@ -1313,7 +1323,7 @@
 
     move/from16 v1, v22
 
-    if-lt v0, v1, :cond_1f
+    if-lt v0, v1, :cond_20
 
     move-object/from16 v0, p0
 
@@ -1331,39 +1341,54 @@
 
     move/from16 v1, v22
 
-    if-le v0, v1, :cond_13
+    if-le v0, v1, :cond_14
 
-    :cond_1f
+    :cond_20
     const/16 v8, 0x3f7
 
-    goto/16 :goto_7
+    goto/16 :goto_8
 
     :pswitch_4
     const/16 v8, 0x4e28
 
-    goto/16 :goto_8
+    goto/16 :goto_9
 
     :pswitch_5
     const/16 v8, 0x4e29
 
-    goto/16 :goto_8
+    goto/16 :goto_9
 
     :pswitch_6
     const/16 v8, 0x4e26
 
-    goto/16 :goto_8
+    goto/16 :goto_9
 
     :pswitch_7
     const/16 v8, 0x4e27
 
-    goto/16 :goto_8
-
-    :cond_20
-    const/4 v13, 0x0
-
     goto/16 :goto_9
 
     :cond_21
+    const/4 v13, 0x0
+
+    goto/16 :goto_a
+
+    :cond_22
+    if-eqz v13, :cond_23
+
+    iget v0, v13, Landroid/view/WindowManager$LayoutParams;->type:I
+
+    move/from16 v22, v0
+
+    const/16 v24, 0x96b
+
+    move/from16 v0, v22
+
+    move/from16 v1, v24
+
+    if-eq v0, v1, :cond_18
+
+    :cond_23
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/server/wm/TaskTapPointerEventListener;->mService:Lcom/android/server/wm/WindowManagerService;
@@ -1386,11 +1411,11 @@
 
     move-result v22
 
-    if-eqz v22, :cond_18
+    if-eqz v22, :cond_19
 
-    goto/16 :goto_a
+    goto/16 :goto_b
 
-    :cond_22
+    :cond_24
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/server/wm/TaskTapPointerEventListener;->mTmpExcludeRegion:Landroid/graphics/Region;
@@ -1403,7 +1428,7 @@
 
     move-result v22
 
-    if-eqz v22, :cond_24
+    if-eqz v22, :cond_26
 
     monitor-enter p0
     :try_end_5
@@ -1460,29 +1485,29 @@
 
     move-result v22
 
-    if-eqz v22, :cond_23
+    if-eqz v22, :cond_25
 
     :try_start_7
     monitor-exit p0
 
-    goto/16 :goto_6
+    goto/16 :goto_7
 
-    :cond_23
+    :cond_25
     monitor-exit p0
 
-    :cond_24
+    :cond_26
     invoke-static {v8}, Lcom/samsung/android/multiwindow/MultiWindowEdgeDetector$Utils;->convertDesktopMouseIcon(I)I
 
     move-result v8
 
-    :cond_25
+    :cond_27
     move-object/from16 v0, p0
 
     iput v8, v0, Lcom/android/server/wm/TaskTapPointerEventListener;->mPointerIconType:I
 
     invoke-virtual {v9, v8}, Landroid/view/InputDevice;->setPointerType(I)V
 
-    goto/16 :goto_6
+    goto/16 :goto_7
 
     :catchall_3
     move-exception v22
@@ -1517,18 +1542,6 @@
     goto/16 :goto_3
 
     :pswitch_9
-    sget-boolean v22, Lcom/samsung/android/framework/feature/MultiWindowFeatures;->SAMSUNG_MULTIWINDOW_DYNAMIC_ENABLED:Z
-
-    if-eqz v22, :cond_27
-
-    move-object/from16 v0, p0
-
-    iget-boolean v0, v0, Lcom/android/server/wm/TaskTapPointerEventListener;->mIsDesktopMode:Z
-
-    move/from16 v22, v0
-
-    if-eqz v22, :cond_27
-
     monitor-enter p0
 
     :try_start_8
@@ -1538,7 +1551,7 @@
 
     move/from16 v22, v0
 
-    if-eqz v22, :cond_26
+    if-eqz v22, :cond_28
 
     const/16 v22, 0x0
 
@@ -1564,22 +1577,23 @@
 
     move-result-object v7
 
+    const/16 v22, 0x11
+
+    move/from16 v0, v22
+
+    invoke-virtual {v7, v0}, Landroid/os/Handler;->removeMessages(I)V
+
     const/16 v22, 0x10
 
     move/from16 v0, v22
 
-    invoke-virtual {v7, v0}, Landroid/os/Handler;->obtainMessage(I)Landroid/os/Message;
-
-    move-result-object v22
-
-    invoke-virtual/range {v22 .. v22}, Landroid/os/Message;->sendToTarget()V
+    invoke-virtual {v7, v0}, Landroid/os/Handler;->sendEmptyMessage(I)Z
     :try_end_8
     .catchall {:try_start_8 .. :try_end_8} :catchall_4
 
-    :cond_26
+    :cond_28
     monitor-exit p0
 
-    :cond_27
     :pswitch_a
     invoke-direct/range {p0 .. p0}, Lcom/android/server/wm/TaskTapPointerEventListener;->stopTwoFingerScroll()V
 
@@ -1591,8 +1605,6 @@
     monitor-exit p0
 
     throw v22
-
-    nop
 
     :pswitch_data_0
     .packed-switch 0x0

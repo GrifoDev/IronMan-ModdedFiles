@@ -162,7 +162,7 @@
     :pswitch_4
     iget-object v3, p0, Lcom/android/server/accessibility/MagnificationGestureHandler$StateViewportDraggingHandler;->this$0:Lcom/android/server/accessibility/MagnificationGestureHandler;
 
-    invoke-static {v3}, Lcom/android/server/accessibility/MagnificationGestureHandler;->-get4(Lcom/android/server/accessibility/MagnificationGestureHandler;)Z
+    invoke-static {v3}, Lcom/android/server/accessibility/MagnificationGestureHandler;->-get3(Lcom/android/server/accessibility/MagnificationGestureHandler;)Z
 
     move-result v3
 

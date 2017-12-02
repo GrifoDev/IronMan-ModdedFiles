@@ -116,7 +116,7 @@
 
 
 # virtual methods
-.method synthetic -com_android_server_SystemServer$2_lambda$3()V
+.method synthetic -com_android_server_SystemServer$2_lambda$2()V
     .locals 4
 
     const-wide/32 v2, 0x80000

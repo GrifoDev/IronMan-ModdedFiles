@@ -112,6 +112,14 @@
     goto :goto_0
 
     :cond_1
+    invoke-static {}, Lcom/samsung/accessory/manager/authentication/cover/CoverAuthenticator;->-get2()Ljava/lang/String;
+
+    move-result-object v1
+
+    const-string/jumbo v2, "startAuthentication delayed 1000ms : Stop"
+
+    invoke-static {v1, v2}, Landroid/util/Slog;->secE(Ljava/lang/String;Ljava/lang/String;)I
+
     iget-object v1, p0, Lcom/samsung/accessory/manager/authentication/cover/CoverAuthenticator$CoverAuthHandler;->this$0:Lcom/samsung/accessory/manager/authentication/cover/CoverAuthenticator;
 
     invoke-static {v1}, Lcom/samsung/accessory/manager/authentication/cover/CoverAuthenticator;->-wrap4(Lcom/samsung/accessory/manager/authentication/cover/CoverAuthenticator;)V

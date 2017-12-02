@@ -3404,7 +3404,7 @@
 
     const-string/jumbo v6, "UsbDevices"
 
-    const v1, 0x1040afd
+    const v1, 0x1040afe
 
     const v3, 0x10808d3
 
@@ -3463,7 +3463,7 @@
 
     const-string/jumbo v6, "UsbDevices"
 
-    const v1, 0x1040b00
+    const v1, 0x1040b01
 
     const v3, 0x10808d3
 

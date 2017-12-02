@@ -549,6 +549,14 @@
     return-void
 .end method
 
+.method static synthetic -wrap6(Lcom/android/server/am/ActivityStackSupervisor;I)V
+    .locals 0
+
+    invoke-direct {p0, p1}, Lcom/android/server/am/ActivityStackSupervisor;->lockSecureFolderIfNeeded(I)V
+
+    return-void
+.end method
+
 .method static constructor <clinit>()V
     .locals 3
 
@@ -2928,6 +2936,26 @@
     invoke-static {v2, v3}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
     return v6
+.end method
+
+.method private lockSecureFolderIfNeeded(I)V
+    .locals 2
+
+    new-instance v0, Landroid/os/Handler;
+
+    invoke-static {}, Landroid/os/Looper;->getMainLooper()Landroid/os/Looper;
+
+    move-result-object v1
+
+    invoke-direct {v0, v1}, Landroid/os/Handler;-><init>(Landroid/os/Looper;)V
+
+    new-instance v1, Lcom/android/server/am/ActivityStackSupervisor$1;
+
+    invoke-direct {v1, p0, p1}, Lcom/android/server/am/ActivityStackSupervisor$1;-><init>(Lcom/android/server/am/ActivityStackSupervisor;I)V
+
+    invoke-virtual {v0, v1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
+
+    return-void
 .end method
 
 .method private lockTaskModeToString()Ljava/lang/String;
@@ -11360,21 +11388,11 @@
 .end method
 
 .method public lockSecureFolderIfNeeded()V
-    .locals 2
+    .locals 1
 
-    new-instance v0, Landroid/os/Handler;
+    const/4 v0, 0x0
 
-    invoke-static {}, Landroid/os/Looper;->getMainLooper()Landroid/os/Looper;
-
-    move-result-object v1
-
-    invoke-direct {v0, v1}, Landroid/os/Handler;-><init>(Landroid/os/Looper;)V
-
-    new-instance v1, Lcom/android/server/am/ActivityStackSupervisor$1;
-
-    invoke-direct {v1, p0}, Lcom/android/server/am/ActivityStackSupervisor$1;-><init>(Lcom/android/server/am/ActivityStackSupervisor;)V
-
-    invoke-virtual {v0, v1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
+    invoke-direct {p0, v0}, Lcom/android/server/am/ActivityStackSupervisor;->lockSecureFolderIfNeeded(I)V
 
     return-void
 .end method
@@ -19526,7 +19544,7 @@
 .end method
 
 .method final startActivityFromRecentsInner(ILandroid/os/Bundle;)I
-    .locals 30
+    .locals 31
 
     if-eqz p2, :cond_0
 
@@ -19557,17 +19575,17 @@
 
     invoke-virtual {v0, v1, v3, v4}, Lcom/android/server/am/ActivityStackSupervisor;->anyTaskForIdLocked(IZI)Lcom/android/server/am/TaskRecord;
 
-    move-result-object v29
+    move-result-object v30
 
-    if-eqz v29, :cond_2
+    if-eqz v30, :cond_2
 
-    move-object/from16 v0, v29
+    move-object/from16 v0, v30
 
     iget-object v3, v0, Lcom/android/server/am/TaskRecord;->intent:Landroid/content/Intent;
 
     if-eqz v3, :cond_2
 
-    move-object/from16 v0, v29
+    move-object/from16 v0, v30
 
     iget-object v3, v0, Lcom/android/server/am/TaskRecord;->intent:Landroid/content/Intent;
 
@@ -19605,15 +19623,15 @@
 
     iget-object v3, v3, Lcom/android/server/am/ActivityManagerService;->mContext:Landroid/content/Context;
 
-    move-object/from16 v0, v29
+    move-object/from16 v0, v30
 
     iget-object v4, v0, Lcom/android/server/am/TaskRecord;->intent:Landroid/content/Intent;
 
-    move-object/from16 v0, v29
+    move-object/from16 v0, v30
 
     iget v6, v0, Lcom/android/server/am/TaskRecord;->userId:I
 
-    move-object/from16 v0, v29
+    move-object/from16 v0, v30
 
     iget-object v10, v0, Lcom/android/server/am/TaskRecord;->realActivity:Landroid/content/ComponentName;
 
@@ -20286,6 +20304,7 @@
 
     move/from16 v16, v0
 
+    :try_start_1
     move-object/from16 v0, p0
 
     iget-object v6, v0, Lcom/android/server/am/ActivityStackSupervisor;->mService:Lcom/android/server/am/ActivityManagerService;
@@ -20305,6 +20324,8 @@
     move-object/from16 v15, p2
 
     invoke-virtual/range {v6 .. v18}, Lcom/android/server/am/ActivityManagerService;->startActivityInPackage(ILjava/lang/String;Landroid/content/Intent;Ljava/lang/String;Landroid/os/IBinder;Ljava/lang/String;IILandroid/os/Bundle;ILandroid/app/IActivityContainer;Lcom/android/server/am/TaskRecord;)I
+    :try_end_1
+    .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_1
 
     move-result v27
 
@@ -20350,6 +20371,34 @@
 
     :cond_22
     return v27
+
+    :catch_1
+    move-exception v20
+
+    const/4 v3, 0x3
+
+    if-ne v5, v3, :cond_23
+
+    const/4 v3, 0x3
+
+    move-object/from16 v0, p0
+
+    invoke-virtual {v0, v3}, Lcom/android/server/am/ActivityStackSupervisor;->getStack(I)Lcom/android/server/am/ActivityStack;
+
+    move-result-object v29
+
+    move-object/from16 v0, p0
+
+    iget-object v3, v0, Lcom/android/server/am/ActivityStackSupervisor;->mService:Lcom/android/server/am/ActivityManagerService;
+
+    iget-object v3, v3, Lcom/android/server/am/ActivityManagerService;->mMultiWindowManager:Lcom/android/server/am/IMultiWindowManagerServiceBridge;
+
+    move-object/from16 v0, v29
+
+    invoke-interface {v3, v0}, Lcom/android/server/am/IMultiWindowManagerServiceBridge;->detachStackIfNoActivitiesLocked(Lcom/android/server/am/ActivityStack;)V
+
+    :cond_23
+    throw v20
 .end method
 
 .method startSpecificActivityLocked(Lcom/android/server/am/ActivityRecord;ZZ)V

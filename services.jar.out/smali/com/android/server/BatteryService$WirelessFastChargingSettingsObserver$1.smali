@@ -125,7 +125,7 @@
 
     move-result v3
 
-    invoke-static {v1, v3}, Lcom/android/server/BatteryService;->-wrap9(Lcom/android/server/BatteryService;Z)V
+    invoke-static {v1, v3}, Lcom/android/server/BatteryService;->-wrap10(Lcom/android/server/BatteryService;Z)V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 

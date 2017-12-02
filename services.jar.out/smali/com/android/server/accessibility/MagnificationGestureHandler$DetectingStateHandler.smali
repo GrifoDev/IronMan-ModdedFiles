@@ -612,25 +612,6 @@
     goto :goto_0
 
     :pswitch_3
-    iget-object v4, p0, Lcom/android/server/accessibility/MagnificationGestureHandler$DetectingStateHandler;->this$0:Lcom/android/server/accessibility/MagnificationGestureHandler;
-
-    invoke-static {v4}, Lcom/android/server/accessibility/MagnificationGestureHandler;->-get2(Lcom/android/server/accessibility/MagnificationGestureHandler;)Lcom/android/server/accessibility/EventStreamTransformation;
-
-    move-result-object v4
-
-    if-eqz v4, :cond_0
-
-    iget-object v4, p0, Lcom/android/server/accessibility/MagnificationGestureHandler$DetectingStateHandler;->this$0:Lcom/android/server/accessibility/MagnificationGestureHandler;
-
-    invoke-static {v4}, Lcom/android/server/accessibility/MagnificationGestureHandler;->-get2(Lcom/android/server/accessibility/MagnificationGestureHandler;)Lcom/android/server/accessibility/EventStreamTransformation;
-
-    move-result-object v4
-
-    invoke-interface {v4, p1, p2, p3}, Lcom/android/server/accessibility/EventStreamTransformation;->onMotionEvent(Landroid/view/MotionEvent;Landroid/view/MotionEvent;I)V
-
-    goto/16 :goto_0
-
-    :pswitch_4
     iget-object v4, p0, Lcom/android/server/accessibility/MagnificationGestureHandler$DetectingStateHandler;->mLastDownEvent:Landroid/view/MotionEvent;
 
     if-eqz v4, :cond_0
@@ -661,7 +642,7 @@
 
     goto/16 :goto_0
 
-    :pswitch_5
+    :pswitch_4
     iget-object v4, p0, Lcom/android/server/accessibility/MagnificationGestureHandler$DetectingStateHandler;->mLastDownEvent:Landroid/view/MotionEvent;
 
     if-nez v4, :cond_5
@@ -764,15 +745,16 @@
 
     goto/16 :goto_0
 
+    nop
+
     :pswitch_data_0
     .packed-switch 0x0
         :pswitch_1
-        :pswitch_5
         :pswitch_4
+        :pswitch_3
         :pswitch_0
         :pswitch_0
         :pswitch_2
         :pswitch_0
-        :pswitch_3
     .end packed-switch
 .end method

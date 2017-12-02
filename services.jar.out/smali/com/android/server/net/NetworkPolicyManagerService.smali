@@ -21,6 +21,7 @@
         Lcom/android/server/net/NetworkPolicyManagerService$21;,
         Lcom/android/server/net/NetworkPolicyManagerService$22;,
         Lcom/android/server/net/NetworkPolicyManagerService$23;,
+        Lcom/android/server/net/NetworkPolicyManagerService$24;,
         Lcom/android/server/net/NetworkPolicyManagerService$2;,
         Lcom/android/server/net/NetworkPolicyManagerService$3;,
         Lcom/android/server/net/NetworkPolicyManagerService$4;,
@@ -196,6 +197,8 @@
 
 # instance fields
 .field volatile DataWarningFlag:Z
+
+.field private isSubIdValid:Z
 
 .field private final mActiveNotifs:Landroid/util/ArraySet;
     .annotation build Lcom/android/internal/annotations/GuardedBy;
@@ -440,6 +443,20 @@
 
 .field private final mStatsReceiver:Landroid/content/BroadcastReceiver;
 
+.field private mStoredSubscriberIds:Ljava/util/HashMap;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Ljava/util/HashMap",
+            "<",
+            "Ljava/lang/Integer;",
+            "Ljava/lang/String;",
+            ">;"
+        }
+    .end annotation
+.end field
+
+.field private final mSubIdReceiver:Landroid/content/BroadcastReceiver;
+
 .field private final mSuppressDefaultPolicy:Z
 
 .field volatile mSystemReady:Z
@@ -527,6 +544,8 @@
 
 .field private volatile mdeleteNotifications:Z
 
+.field storedSubIds:[I
+
 
 # direct methods
 .method static synthetic -get0(Lcom/android/server/net/NetworkPolicyManagerService;)Landroid/util/ArraySet;
@@ -585,7 +604,15 @@
     return v0
 .end method
 
-.method static synthetic -get15(Lcom/android/server/net/NetworkPolicyManagerService;)Z
+.method static synthetic -get15(Lcom/android/server/net/NetworkPolicyManagerService;)Ljava/util/HashMap;
+    .locals 1
+
+    iget-object v0, p0, Lcom/android/server/net/NetworkPolicyManagerService;->mStoredSubscriberIds:Ljava/util/HashMap;
+
+    return-object v0
+.end method
+
+.method static synthetic -get16(Lcom/android/server/net/NetworkPolicyManagerService;)Z
     .locals 1
 
     iget-boolean v0, p0, Lcom/android/server/net/NetworkPolicyManagerService;->mWifiConnected:Z
@@ -660,12 +687,28 @@
 .method static synthetic -set0(Lcom/android/server/net/NetworkPolicyManagerService;Z)Z
     .locals 0
 
+    iput-boolean p1, p0, Lcom/android/server/net/NetworkPolicyManagerService;->isSubIdValid:Z
+
+    return p1
+.end method
+
+.method static synthetic -set1(Lcom/android/server/net/NetworkPolicyManagerService;Z)Z
+    .locals 0
+
     iput-boolean p1, p0, Lcom/android/server/net/NetworkPolicyManagerService;->mChargingState:Z
 
     return p1
 .end method
 
-.method static synthetic -set1(Lcom/android/server/net/NetworkPolicyManagerService;I)I
+.method static synthetic -set10(Lcom/android/server/net/NetworkPolicyManagerService;Z)Z
+    .locals 0
+
+    iput-boolean p1, p0, Lcom/android/server/net/NetworkPolicyManagerService;->mWifiConnected:Z
+
+    return p1
+.end method
+
+.method static synthetic -set2(Lcom/android/server/net/NetworkPolicyManagerService;I)I
     .locals 0
 
     iput p1, p0, Lcom/android/server/net/NetworkPolicyManagerService;->mDensityDpi:I
@@ -673,7 +716,7 @@
     return p1
 .end method
 
-.method static synthetic -set2(Lcom/android/server/net/NetworkPolicyManagerService;Z)Z
+.method static synthetic -set3(Lcom/android/server/net/NetworkPolicyManagerService;Z)Z
     .locals 0
 
     iput-boolean p1, p0, Lcom/android/server/net/NetworkPolicyManagerService;->mHasEpdgCall:Z
@@ -681,7 +724,7 @@
     return p1
 .end method
 
-.method static synthetic -set3(Lcom/android/server/net/NetworkPolicyManagerService;Z)Z
+.method static synthetic -set4(Lcom/android/server/net/NetworkPolicyManagerService;Z)Z
     .locals 0
 
     iput-boolean p1, p0, Lcom/android/server/net/NetworkPolicyManagerService;->mIsVideoCall:Z
@@ -689,7 +732,7 @@
     return p1
 .end method
 
-.method static synthetic -set4(Z)Z
+.method static synthetic -set5(Z)Z
     .locals 0
 
     sput-boolean p0, Lcom/android/server/net/NetworkPolicyManagerService;->mRoamingState:Z
@@ -697,7 +740,7 @@
     return p0
 .end method
 
-.method static synthetic -set5(Z)Z
+.method static synthetic -set6(Z)Z
     .locals 0
 
     sput-boolean p0, Lcom/android/server/net/NetworkPolicyManagerService;->mRrEnabledInCscChameleon:Z
@@ -705,7 +748,7 @@
     return p0
 .end method
 
-.method static synthetic -set6(Lcom/android/server/net/NetworkPolicyManagerService;Ljava/util/List;)Ljava/util/List;
+.method static synthetic -set7(Lcom/android/server/net/NetworkPolicyManagerService;Ljava/util/List;)Ljava/util/List;
     .locals 0
 
     iput-object p1, p0, Lcom/android/server/net/NetworkPolicyManagerService;->mUserRestrictBackgroundUidList:Ljava/util/List;
@@ -713,7 +756,7 @@
     return-object p1
 .end method
 
-.method static synthetic -set7(Lcom/android/server/net/NetworkPolicyManagerService;Z)Z
+.method static synthetic -set8(Lcom/android/server/net/NetworkPolicyManagerService;Z)Z
     .locals 0
 
     iput-boolean p1, p0, Lcom/android/server/net/NetworkPolicyManagerService;->mVideoCallLimitAlreadySent:Z
@@ -721,18 +764,10 @@
     return p1
 .end method
 
-.method static synthetic -set8(Lcom/android/server/net/NetworkPolicyManagerService;Z)Z
-    .locals 0
-
-    iput-boolean p1, p0, Lcom/android/server/net/NetworkPolicyManagerService;->mVideoCallWarningAlreadySent:Z
-
-    return p1
-.end method
-
 .method static synthetic -set9(Lcom/android/server/net/NetworkPolicyManagerService;Z)Z
     .locals 0
 
-    iput-boolean p1, p0, Lcom/android/server/net/NetworkPolicyManagerService;->mWifiConnected:Z
+    iput-boolean p1, p0, Lcom/android/server/net/NetworkPolicyManagerService;->mVideoCallWarningAlreadySent:Z
 
     return p1
 .end method
@@ -1032,15 +1067,15 @@
 .end method
 
 .method public constructor <init>(Landroid/content/Context;Landroid/app/IActivityManager;Landroid/net/INetworkStatsService;Landroid/os/INetworkManagementService;Landroid/util/TrustedTime;Ljava/io/File;Z)V
-    .locals 6
+    .locals 7
+
+    const/4 v6, 0x0
 
     const/4 v5, 0x0
 
-    const/4 v3, 0x0
-
     invoke-direct {p0}, Landroid/net/INetworkPolicyManager$Stub;-><init>()V
 
-    iput-object v5, p0, Lcom/android/server/net/NetworkPolicyManagerService;->mTelephonyManager:Landroid/telephony/TelephonyManager;
+    iput-object v6, p0, Lcom/android/server/net/NetworkPolicyManagerService;->mTelephonyManager:Landroid/telephony/TelephonyManager;
 
     new-instance v2, Landroid/util/SparseIntArray;
 
@@ -1054,15 +1089,15 @@
 
     iput-object v2, p0, Lcom/android/server/net/NetworkPolicyManagerService;->mRoamingReductionRule:Landroid/util/SparseBooleanArray;
 
-    iput-boolean v3, p0, Lcom/android/server/net/NetworkPolicyManagerService;->mRRWhiteListApplied:Z
+    iput-boolean v5, p0, Lcom/android/server/net/NetworkPolicyManagerService;->mRRWhiteListApplied:Z
 
-    iput-boolean v3, p0, Lcom/android/server/net/NetworkPolicyManagerService;->mRoamingReduction:Z
+    iput-boolean v5, p0, Lcom/android/server/net/NetworkPolicyManagerService;->mRoamingReduction:Z
 
-    iput-object v5, p0, Lcom/android/server/net/NetworkPolicyManagerService;->mRoamingAppliedReason:Ljava/lang/String;
+    iput-object v6, p0, Lcom/android/server/net/NetworkPolicyManagerService;->mRoamingAppliedReason:Ljava/lang/String;
 
-    iput-boolean v3, p0, Lcom/android/server/net/NetworkPolicyManagerService;->mWifiConnected:Z
+    iput-boolean v5, p0, Lcom/android/server/net/NetworkPolicyManagerService;->mWifiConnected:Z
 
-    iput-boolean v3, p0, Lcom/android/server/net/NetworkPolicyManagerService;->DataWarningFlag:Z
+    iput-boolean v5, p0, Lcom/android/server/net/NetworkPolicyManagerService;->DataWarningFlag:Z
 
     new-instance v2, Ljava/lang/Object;
 
@@ -1076,9 +1111,9 @@
 
     iput-object v2, p0, Lcom/android/server/net/NetworkPolicyManagerService;->mNetworkPoliciesSecondLock:Ljava/lang/Object;
 
-    iput-boolean v3, p0, Lcom/android/server/net/NetworkPolicyManagerService;->mChargingState:Z
+    iput-boolean v5, p0, Lcom/android/server/net/NetworkPolicyManagerService;->mChargingState:Z
 
-    iput-boolean v3, p0, Lcom/android/server/net/NetworkPolicyManagerService;->mdeleteNotifications:Z
+    iput-boolean v5, p0, Lcom/android/server/net/NetworkPolicyManagerService;->mdeleteNotifications:Z
 
     new-instance v2, Landroid/util/ArrayMap;
 
@@ -1212,15 +1247,15 @@
 
     iput-object v2, p0, Lcom/android/server/net/NetworkPolicyManagerService;->mListeners:Landroid/os/RemoteCallbackList;
 
-    iput-boolean v3, p0, Lcom/android/server/net/NetworkPolicyManagerService;->mIsVideoCall:Z
+    iput-boolean v5, p0, Lcom/android/server/net/NetworkPolicyManagerService;->mIsVideoCall:Z
 
-    iput-boolean v3, p0, Lcom/android/server/net/NetworkPolicyManagerService;->mVideoCallLimitAlreadySent:Z
+    iput-boolean v5, p0, Lcom/android/server/net/NetworkPolicyManagerService;->mVideoCallLimitAlreadySent:Z
 
-    iput-boolean v3, p0, Lcom/android/server/net/NetworkPolicyManagerService;->mVideoCallWarningAlreadySent:Z
+    iput-boolean v5, p0, Lcom/android/server/net/NetworkPolicyManagerService;->mVideoCallWarningAlreadySent:Z
 
-    iput-boolean v3, p0, Lcom/android/server/net/NetworkPolicyManagerService;->mHasEpdgCall:Z
+    iput-boolean v5, p0, Lcom/android/server/net/NetworkPolicyManagerService;->mHasEpdgCall:Z
 
-    iput-boolean v3, p0, Lcom/android/server/net/NetworkPolicyManagerService;->mProxSensorScreenOff:Z
+    iput-boolean v5, p0, Lcom/android/server/net/NetworkPolicyManagerService;->mProxSensorScreenOff:Z
 
     invoke-static {}, Lcom/samsung/android/feature/SemCscFeature;->getInstance()Lcom/samsung/android/feature/SemCscFeature;
 
@@ -1235,6 +1270,14 @@
     move-result-object v2
 
     iput-object v2, p0, Lcom/android/server/net/NetworkPolicyManagerService;->mcfgNetTypeCap:Ljava/lang/String;
+
+    iput-boolean v5, p0, Lcom/android/server/net/NetworkPolicyManagerService;->isSubIdValid:Z
+
+    new-instance v2, Ljava/util/HashMap;
+
+    invoke-direct {v2}, Ljava/util/HashMap;-><init>()V
+
+    iput-object v2, p0, Lcom/android/server/net/NetworkPolicyManagerService;->mStoredSubscriberIds:Ljava/util/HashMap;
 
     new-instance v2, Lcom/android/server/net/NetworkPolicyManagerService$1;
 
@@ -1330,35 +1373,31 @@
 
     invoke-direct {v2, p0}, Lcom/android/server/net/NetworkPolicyManagerService$16;-><init>(Lcom/android/server/net/NetworkPolicyManagerService;)V
 
-    iput-object v2, p0, Lcom/android/server/net/NetworkPolicyManagerService;->mAlertObserver:Landroid/net/INetworkManagementEventObserver;
+    iput-object v2, p0, Lcom/android/server/net/NetworkPolicyManagerService;->mSubIdReceiver:Landroid/content/BroadcastReceiver;
 
     new-instance v2, Lcom/android/server/net/NetworkPolicyManagerService$17;
 
     invoke-direct {v2, p0}, Lcom/android/server/net/NetworkPolicyManagerService$17;-><init>(Lcom/android/server/net/NetworkPolicyManagerService;)V
 
-    iput-object v2, p0, Lcom/android/server/net/NetworkPolicyManagerService;->mConnReceiver:Landroid/content/BroadcastReceiver;
+    iput-object v2, p0, Lcom/android/server/net/NetworkPolicyManagerService;->mAlertObserver:Landroid/net/INetworkManagementEventObserver;
 
     new-instance v2, Lcom/android/server/net/NetworkPolicyManagerService$18;
 
     invoke-direct {v2, p0}, Lcom/android/server/net/NetworkPolicyManagerService$18;-><init>(Lcom/android/server/net/NetworkPolicyManagerService;)V
 
-    iput-object v2, p0, Lcom/android/server/net/NetworkPolicyManagerService;->mLocaleReceiver:Landroid/content/BroadcastReceiver;
+    iput-object v2, p0, Lcom/android/server/net/NetworkPolicyManagerService;->mConnReceiver:Landroid/content/BroadcastReceiver;
 
     new-instance v2, Lcom/android/server/net/NetworkPolicyManagerService$19;
 
     invoke-direct {v2, p0}, Lcom/android/server/net/NetworkPolicyManagerService$19;-><init>(Lcom/android/server/net/NetworkPolicyManagerService;)V
 
-    iput-object v2, p0, Lcom/android/server/net/NetworkPolicyManagerService;->mConfigReceiver:Landroid/content/BroadcastReceiver;
+    iput-object v2, p0, Lcom/android/server/net/NetworkPolicyManagerService;->mLocaleReceiver:Landroid/content/BroadcastReceiver;
 
     new-instance v2, Lcom/android/server/net/NetworkPolicyManagerService$20;
 
-    new-instance v3, Landroid/os/Handler;
+    invoke-direct {v2, p0}, Lcom/android/server/net/NetworkPolicyManagerService$20;-><init>(Lcom/android/server/net/NetworkPolicyManagerService;)V
 
-    invoke-direct {v3}, Landroid/os/Handler;-><init>()V
-
-    invoke-direct {v2, p0, v3}, Lcom/android/server/net/NetworkPolicyManagerService$20;-><init>(Lcom/android/server/net/NetworkPolicyManagerService;Landroid/os/Handler;)V
-
-    iput-object v2, p0, Lcom/android/server/net/NetworkPolicyManagerService;->mRestrictBgInLowPowerObserver:Landroid/database/ContentObserver;
+    iput-object v2, p0, Lcom/android/server/net/NetworkPolicyManagerService;->mConfigReceiver:Landroid/content/BroadcastReceiver;
 
     new-instance v2, Lcom/android/server/net/NetworkPolicyManagerService$21;
 
@@ -1368,7 +1407,7 @@
 
     invoke-direct {v2, p0, v3}, Lcom/android/server/net/NetworkPolicyManagerService$21;-><init>(Lcom/android/server/net/NetworkPolicyManagerService;Landroid/os/Handler;)V
 
-    iput-object v2, p0, Lcom/android/server/net/NetworkPolicyManagerService;->mRestrictBgInMaxLowPowerObserver:Landroid/database/ContentObserver;
+    iput-object v2, p0, Lcom/android/server/net/NetworkPolicyManagerService;->mRestrictBgInLowPowerObserver:Landroid/database/ContentObserver;
 
     new-instance v2, Lcom/android/server/net/NetworkPolicyManagerService$22;
 
@@ -1378,11 +1417,21 @@
 
     invoke-direct {v2, p0, v3}, Lcom/android/server/net/NetworkPolicyManagerService$22;-><init>(Lcom/android/server/net/NetworkPolicyManagerService;Landroid/os/Handler;)V
 
-    iput-object v2, p0, Lcom/android/server/net/NetworkPolicyManagerService;->mBackGroundDataSetObserver:Landroid/database/ContentObserver;
+    iput-object v2, p0, Lcom/android/server/net/NetworkPolicyManagerService;->mRestrictBgInMaxLowPowerObserver:Landroid/database/ContentObserver;
 
     new-instance v2, Lcom/android/server/net/NetworkPolicyManagerService$23;
 
-    invoke-direct {v2, p0}, Lcom/android/server/net/NetworkPolicyManagerService$23;-><init>(Lcom/android/server/net/NetworkPolicyManagerService;)V
+    new-instance v3, Landroid/os/Handler;
+
+    invoke-direct {v3}, Landroid/os/Handler;-><init>()V
+
+    invoke-direct {v2, p0, v3}, Lcom/android/server/net/NetworkPolicyManagerService$23;-><init>(Lcom/android/server/net/NetworkPolicyManagerService;Landroid/os/Handler;)V
+
+    iput-object v2, p0, Lcom/android/server/net/NetworkPolicyManagerService;->mBackGroundDataSetObserver:Landroid/database/ContentObserver;
+
+    new-instance v2, Lcom/android/server/net/NetworkPolicyManagerService$24;
+
+    invoke-direct {v2, p0}, Lcom/android/server/net/NetworkPolicyManagerService$24;-><init>(Lcom/android/server/net/NetworkPolicyManagerService;)V
 
     iput-object v2, p0, Lcom/android/server/net/NetworkPolicyManagerService;->mHandlerCallback:Landroid/os/Handler$Callback;
 
@@ -1514,7 +1563,7 @@
 
     new-instance v3, Lcom/android/server/net/NetworkPolicyManagerService$NetworkPolicyManagerInternalImpl;
 
-    invoke-direct {v3, p0, v5}, Lcom/android/server/net/NetworkPolicyManagerService$NetworkPolicyManagerInternalImpl;-><init>(Lcom/android/server/net/NetworkPolicyManagerService;Lcom/android/server/net/NetworkPolicyManagerService$NetworkPolicyManagerInternalImpl;)V
+    invoke-direct {v3, p0, v6}, Lcom/android/server/net/NetworkPolicyManagerService$NetworkPolicyManagerInternalImpl;-><init>(Lcom/android/server/net/NetworkPolicyManagerService;Lcom/android/server/net/NetworkPolicyManagerService$NetworkPolicyManagerInternalImpl;)V
 
     invoke-static {v2, v3}, Lcom/android/server/LocalServices;->addService(Ljava/lang/Class;Ljava/lang/Object;)V
 
@@ -1543,6 +1592,12 @@
     iput-boolean v2, p0, Lcom/android/server/net/NetworkPolicyManagerService;->mRoamingReduction:Z
 
     :cond_0
+    iput-boolean v5, p0, Lcom/android/server/net/NetworkPolicyManagerService;->isSubIdValid:Z
+
+    iget-object v2, p0, Lcom/android/server/net/NetworkPolicyManagerService;->mStoredSubscriberIds:Ljava/util/HashMap;
+
+    invoke-virtual {v2}, Ljava/util/HashMap;->clear()V
+
     return-void
 .end method
 
@@ -2201,6 +2256,56 @@
     move v3, v2
 
     goto :goto_1
+.end method
+
+.method private checkReadPhoneState(Ljava/lang/String;Ljava/lang/String;)Z
+    .locals 6
+
+    const/4 v1, 0x1
+
+    const/4 v2, 0x0
+
+    :try_start_0
+    iget-object v3, p0, Lcom/android/server/net/NetworkPolicyManagerService;->mContext:Landroid/content/Context;
+
+    const-string/jumbo v4, "android.permission.READ_PRIVILEGED_PHONE_STATE"
+
+    invoke-virtual {v3, v4, p2}, Landroid/content/Context;->enforceCallingOrSelfPermission(Ljava/lang/String;Ljava/lang/String;)V
+    :try_end_0
+    .catch Ljava/lang/SecurityException; {:try_start_0 .. :try_end_0} :catch_0
+
+    return v1
+
+    :catch_0
+    move-exception v0
+
+    iget-object v3, p0, Lcom/android/server/net/NetworkPolicyManagerService;->mContext:Landroid/content/Context;
+
+    const-string/jumbo v4, "android.permission.READ_PHONE_STATE"
+
+    invoke-virtual {v3, v4, p2}, Landroid/content/Context;->enforceCallingOrSelfPermission(Ljava/lang/String;Ljava/lang/String;)V
+
+    iget-object v3, p0, Lcom/android/server/net/NetworkPolicyManagerService;->mAppOps:Landroid/app/AppOpsManager;
+
+    invoke-static {}, Landroid/os/Binder;->getCallingUid()I
+
+    move-result v4
+
+    const/16 v5, 0x33
+
+    invoke-virtual {v3, v5, v4, p1}, Landroid/app/AppOpsManager;->noteOp(IILjava/lang/String;)I
+
+    move-result v3
+
+    if-nez v3, :cond_0
+
+    :goto_0
+    return v1
+
+    :cond_0
+    move v1, v2
+
+    goto :goto_0
 .end method
 
 .method private static collectKeys(Landroid/util/SparseIntArray;Landroid/util/SparseBooleanArray;)V
@@ -3087,56 +3192,44 @@
 .end method
 
 .method private ensureActiveEntPolicyLocked()V
-    .locals 7
+    .locals 5
 
-    iget-boolean v5, p0, Lcom/android/server/net/NetworkPolicyManagerService;->mSuppressDefaultPolicy:Z
+    iget-boolean v3, p0, Lcom/android/server/net/NetworkPolicyManagerService;->mSuppressDefaultPolicy:Z
 
-    if-eqz v5, :cond_0
+    if-eqz v3, :cond_0
 
     return-void
 
     :cond_0
-    iget-object v5, p0, Lcom/android/server/net/NetworkPolicyManagerService;->mContext:Landroid/content/Context;
-
-    invoke-static {v5}, Landroid/telephony/TelephonyManager;->from(Landroid/content/Context;)Landroid/telephony/TelephonyManager;
-
-    move-result-object v4
-
-    iget-object v5, p0, Lcom/android/server/net/NetworkPolicyManagerService;->mContext:Landroid/content/Context;
-
-    invoke-static {v5}, Landroid/telephony/SubscriptionManager;->from(Landroid/content/Context;)Landroid/telephony/SubscriptionManager;
-
-    move-result-object v0
-
     invoke-direct {p0}, Lcom/android/server/net/NetworkPolicyManagerService;->isDdsSimStateReady()Z
 
-    move-result v5
+    move-result v3
 
-    if-nez v5, :cond_1
+    if-nez v3, :cond_1
 
     return-void
 
     :cond_1
-    invoke-virtual {v0}, Landroid/telephony/SubscriptionManager;->getActiveSubscriptionIdList()[I
+    invoke-direct {p0}, Lcom/android/server/net/NetworkPolicyManagerService;->getActiveSubscriptionIdList()[I
+
+    move-result-object v1
+
+    const/4 v3, 0x0
+
+    array-length v4, v1
+
+    :goto_0
+    if-ge v3, v4, :cond_2
+
+    aget v0, v1, v3
+
+    invoke-direct {p0, v0}, Lcom/android/server/net/NetworkPolicyManagerService;->getSubscriberId(I)Ljava/lang/String;
 
     move-result-object v2
 
-    const/4 v5, 0x0
+    invoke-direct {p0, v2}, Lcom/android/server/net/NetworkPolicyManagerService;->ensureActiveEntPolicyLocked(Ljava/lang/String;)V
 
-    array-length v6, v2
-
-    :goto_0
-    if-ge v5, v6, :cond_2
-
-    aget v1, v2, v5
-
-    invoke-virtual {v4, v1}, Landroid/telephony/TelephonyManager;->getSubscriberId(I)Ljava/lang/String;
-
-    move-result-object v3
-
-    invoke-direct {p0, v3}, Lcom/android/server/net/NetworkPolicyManagerService;->ensureActiveEntPolicyLocked(Ljava/lang/String;)V
-
-    add-int/lit8 v5, v5, 0x1
+    add-int/lit8 v3, v3, 0x1
 
     goto :goto_0
 
@@ -3145,7 +3238,7 @@
 .end method
 
 .method private ensureActiveEntPolicyLocked(Ljava/lang/String;)V
-    .locals 22
+    .locals 21
 
     const-string/jumbo v3, "NetworkPolicy"
 
@@ -3208,14 +3301,6 @@
     goto :goto_0
 
     :cond_1
-    move-object/from16 v0, p0
-
-    iget-object v3, v0, Lcom/android/server/net/NetworkPolicyManagerService;->mContext:Landroid/content/Context;
-
-    invoke-static {v3}, Landroid/telephony/SubscriptionManager;->from(Landroid/content/Context;)Landroid/telephony/SubscriptionManager;
-
-    move-result-object v20
-
     const-string/jumbo v3, "NetworkPolicy"
 
     new-instance v6, Ljava/lang/StringBuilder;
@@ -3250,15 +3335,15 @@
 
     const-wide/16 v8, -0x1
 
-    new-instance v21, Landroid/text/format/Time;
+    new-instance v20, Landroid/text/format/Time;
 
-    invoke-direct/range {v21 .. v21}, Landroid/text/format/Time;-><init>()V
+    invoke-direct/range {v20 .. v20}, Landroid/text/format/Time;-><init>()V
 
-    invoke-virtual/range {v21 .. v21}, Landroid/text/format/Time;->setToNow()V
+    invoke-virtual/range {v20 .. v20}, Landroid/text/format/Time;->setToNow()V
 
     const/16 v18, 0x1
 
-    move-object/from16 v0, v21
+    move-object/from16 v0, v20
 
     iget-object v7, v0, Landroid/text/format/Time;->timezone:Ljava/lang/String;
 
@@ -3290,56 +3375,44 @@
 .end method
 
 .method private ensureActiveMobilePolicyNL()V
-    .locals 7
+    .locals 5
 
-    iget-boolean v5, p0, Lcom/android/server/net/NetworkPolicyManagerService;->mSuppressDefaultPolicy:Z
+    iget-boolean v3, p0, Lcom/android/server/net/NetworkPolicyManagerService;->mSuppressDefaultPolicy:Z
 
-    if-eqz v5, :cond_0
+    if-eqz v3, :cond_0
 
     return-void
 
     :cond_0
-    iget-object v5, p0, Lcom/android/server/net/NetworkPolicyManagerService;->mContext:Landroid/content/Context;
-
-    invoke-static {v5}, Landroid/telephony/TelephonyManager;->from(Landroid/content/Context;)Landroid/telephony/TelephonyManager;
-
-    move-result-object v4
-
-    iget-object v5, p0, Lcom/android/server/net/NetworkPolicyManagerService;->mContext:Landroid/content/Context;
-
-    invoke-static {v5}, Landroid/telephony/SubscriptionManager;->from(Landroid/content/Context;)Landroid/telephony/SubscriptionManager;
-
-    move-result-object v0
-
     invoke-direct {p0}, Lcom/android/server/net/NetworkPolicyManagerService;->isDdsSimStateReady()Z
 
-    move-result v5
+    move-result v3
 
-    if-nez v5, :cond_1
+    if-nez v3, :cond_1
 
     return-void
 
     :cond_1
-    invoke-virtual {v0}, Landroid/telephony/SubscriptionManager;->getActiveSubscriptionIdList()[I
+    invoke-direct {p0}, Lcom/android/server/net/NetworkPolicyManagerService;->getActiveSubscriptionIdList()[I
+
+    move-result-object v1
+
+    const/4 v3, 0x0
+
+    array-length v4, v1
+
+    :goto_0
+    if-ge v3, v4, :cond_2
+
+    aget v0, v1, v3
+
+    invoke-direct {p0, v0}, Lcom/android/server/net/NetworkPolicyManagerService;->getSubscriberId(I)Ljava/lang/String;
 
     move-result-object v2
 
-    const/4 v5, 0x0
+    invoke-direct {p0, v2}, Lcom/android/server/net/NetworkPolicyManagerService;->ensureActiveMobilePolicyNL(Ljava/lang/String;)V
 
-    array-length v6, v2
-
-    :goto_0
-    if-ge v5, v6, :cond_2
-
-    aget v1, v2, v5
-
-    invoke-virtual {v4, v1}, Landroid/telephony/TelephonyManager;->getSubscriberId(I)Ljava/lang/String;
-
-    move-result-object v3
-
-    invoke-direct {p0, v3}, Lcom/android/server/net/NetworkPolicyManagerService;->ensureActiveMobilePolicyNL(Ljava/lang/String;)V
-
-    add-int/lit8 v5, v5, 0x1
+    add-int/lit8 v3, v3, 0x1
 
     goto :goto_0
 
@@ -3348,7 +3421,7 @@
 .end method
 
 .method private ensureActiveMobilePolicyNL(Ljava/lang/String;)V
-    .locals 22
+    .locals 21
 
     new-instance v2, Landroid/net/NetworkIdentity;
 
@@ -3405,14 +3478,6 @@
     goto :goto_0
 
     :cond_1
-    move-object/from16 v0, p0
-
-    iget-object v3, v0, Lcom/android/server/net/NetworkPolicyManagerService;->mContext:Landroid/content/Context;
-
-    invoke-static {v3}, Landroid/telephony/SubscriptionManager;->from(Landroid/content/Context;)Landroid/telephony/SubscriptionManager;
-
-    move-result-object v20
-
     const-string/jumbo v3, "NetworkPolicy"
 
     new-instance v6, Ljava/lang/StringBuilder;
@@ -3464,15 +3529,15 @@
     const-wide/16 v8, -0x1
 
     :cond_2
-    new-instance v21, Landroid/text/format/Time;
+    new-instance v20, Landroid/text/format/Time;
 
-    invoke-direct/range {v21 .. v21}, Landroid/text/format/Time;-><init>()V
+    invoke-direct/range {v20 .. v20}, Landroid/text/format/Time;-><init>()V
 
-    invoke-virtual/range {v21 .. v21}, Landroid/text/format/Time;->setToNow()V
+    invoke-virtual/range {v20 .. v20}, Landroid/text/format/Time;->setToNow()V
 
     const/16 v18, 0x1
 
-    move-object/from16 v0, v21
+    move-object/from16 v0, v20
 
     iget-object v7, v0, Landroid/text/format/Time;->timezone:Ljava/lang/String;
 
@@ -3516,7 +3581,9 @@
 .end method
 
 .method private findPolicyForNetworkNL(Landroid/net/NetworkIdentity;)Landroid/net/NetworkPolicy;
-    .locals 3
+    .locals 4
+
+    const/4 v3, 0x0
 
     iget-object v2, p0, Lcom/android/server/net/NetworkPolicyManagerService;->mNetworkPolicy:Landroid/util/ArrayMap;
 
@@ -3527,7 +3594,7 @@
     add-int/lit8 v0, v2, -0x1
 
     :goto_0
-    if-ltz v0, :cond_1
+    if-ltz v0, :cond_2
 
     iget-object v2, p0, Lcom/android/server/net/NetworkPolicyManagerService;->mNetworkPolicy:Landroid/util/ArrayMap;
 
@@ -3539,6 +3606,16 @@
 
     iget-object v2, v1, Landroid/net/NetworkPolicy;->template:Landroid/net/NetworkTemplate;
 
+    if-nez v2, :cond_1
+
+    :cond_0
+    add-int/lit8 v0, v0, -0x1
+
+    goto :goto_0
+
+    :cond_1
+    iget-object v2, v1, Landroid/net/NetworkPolicy;->template:Landroid/net/NetworkTemplate;
+
     invoke-virtual {v2, p1}, Landroid/net/NetworkTemplate;->matches(Landroid/net/NetworkIdentity;)Z
 
     move-result v2
@@ -3547,15 +3624,61 @@
 
     return-object v1
 
+    :cond_2
+    return-object v3
+.end method
+
+.method private getActiveSubscriptionIdList()[I
+    .locals 4
+
+    iget-boolean v1, p0, Lcom/android/server/net/NetworkPolicyManagerService;->isSubIdValid:Z
+
+    if-nez v1, :cond_0
+
+    iget-object v1, p0, Lcom/android/server/net/NetworkPolicyManagerService;->mContext:Landroid/content/Context;
+
+    invoke-static {v1}, Landroid/telephony/SubscriptionManager;->from(Landroid/content/Context;)Landroid/telephony/SubscriptionManager;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Landroid/telephony/SubscriptionManager;->getActiveSubscriptionIdList()[I
+
+    move-result-object v1
+
+    iput-object v1, p0, Lcom/android/server/net/NetworkPolicyManagerService;->storedSubIds:[I
+
+    const-string/jumbo v1, "NetworkPolicy"
+
+    new-instance v2, Ljava/lang/StringBuilder;
+
+    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string/jumbo v3, "getActiveSubscriptionIdList : subId updated! - "
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    iget-object v3, p0, Lcom/android/server/net/NetworkPolicyManagerService;->storedSubIds:[I
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-static {v1, v2}, Landroid/util/Slog;->v(Ljava/lang/String;Ljava/lang/String;)I
+
+    const/4 v1, 0x1
+
+    iput-boolean v1, p0, Lcom/android/server/net/NetworkPolicyManagerService;->isSubIdValid:Z
+
     :cond_0
-    add-int/lit8 v0, v0, -0x1
+    iget-object v1, p0, Lcom/android/server/net/NetworkPolicyManagerService;->storedSubIds:[I
 
-    goto :goto_0
-
-    :cond_1
-    const/4 v2, 0x0
-
-    return-object v2
+    return-object v1
 .end method
 
 .method private getBackgroundDataRestrictList()Ljava/util/List;
@@ -3630,6 +3753,46 @@
 
     :cond_1
     return-object v3
+.end method
+
+.method private getDefaultDataSlotId()I
+    .locals 4
+
+    iget-object v1, p0, Lcom/android/server/net/NetworkPolicyManagerService;->mContext:Landroid/content/Context;
+
+    invoke-virtual {v1}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
+
+    move-result-object v1
+
+    const-string/jumbo v2, "multi_sim_data_call_slot"
+
+    const/4 v3, -0x1
+
+    invoke-static {v1, v2, v3}, Landroid/provider/Settings$Global;->getInt(Landroid/content/ContentResolver;Ljava/lang/String;I)I
+
+    move-result v0
+
+    return v0
+.end method
+
+.method private getDefaultDataSubscriptionId()I
+    .locals 4
+
+    iget-object v1, p0, Lcom/android/server/net/NetworkPolicyManagerService;->mContext:Landroid/content/Context;
+
+    invoke-virtual {v1}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
+
+    move-result-object v1
+
+    const-string/jumbo v2, "multi_sim_data_call"
+
+    const/4 v3, -0x1
+
+    invoke-static {v1, v2, v3}, Landroid/provider/Settings$Global;->getInt(Landroid/content/ContentResolver;Ljava/lang/String;I)I
+
+    move-result v0
+
+    return v0
 .end method
 
 .method private getDefaultWarningBytes()I
@@ -4232,6 +4395,98 @@
     goto :goto_0
 .end method
 
+.method private getSubscriberId(I)Ljava/lang/String;
+    .locals 5
+
+    const/4 v4, 0x0
+
+    iget-object v2, p0, Lcom/android/server/net/NetworkPolicyManagerService;->mStoredSubscriberIds:Ljava/util/HashMap;
+
+    invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v3
+
+    invoke-virtual {v2, v3}, Ljava/util/HashMap;->containsKey(Ljava/lang/Object;)Z
+
+    move-result v2
+
+    if-nez v2, :cond_1
+
+    iget-object v2, p0, Lcom/android/server/net/NetworkPolicyManagerService;->mContext:Landroid/content/Context;
+
+    invoke-static {v2}, Landroid/telephony/TelephonyManager;->from(Landroid/content/Context;)Landroid/telephony/TelephonyManager;
+
+    move-result-object v1
+
+    invoke-virtual {v1, p1}, Landroid/telephony/TelephonyManager;->getSubscriberId(I)Ljava/lang/String;
+
+    move-result-object v0
+
+    if-eqz v0, :cond_0
+
+    const-string/jumbo v2, "NetworkPolicy"
+
+    new-instance v3, Ljava/lang/StringBuilder;
+
+    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string/jumbo v4, "getSubscriberId : subscriberId updated! - "
+
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    invoke-virtual {v3, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-static {v2, v3}, Landroid/util/Slog;->v(Ljava/lang/String;Ljava/lang/String;)I
+
+    iget-object v2, p0, Lcom/android/server/net/NetworkPolicyManagerService;->mStoredSubscriberIds:Ljava/util/HashMap;
+
+    invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v3
+
+    invoke-virtual {v2, v3, v0}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    :cond_0
+    iget-object v2, p0, Lcom/android/server/net/NetworkPolicyManagerService;->mStoredSubscriberIds:Ljava/util/HashMap;
+
+    invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v3
+
+    invoke-virtual {v2, v3}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v2
+
+    check-cast v2, Ljava/lang/String;
+
+    return-object v2
+
+    :cond_1
+    iget-object v2, p0, Lcom/android/server/net/NetworkPolicyManagerService;->mContext:Landroid/content/Context;
+
+    invoke-virtual {v2}, Landroid/content/Context;->getOpPackageName()Ljava/lang/String;
+
+    move-result-object v2
+
+    const-string/jumbo v3, "getSubscriberId"
+
+    invoke-direct {p0, v2, v3}, Lcom/android/server/net/NetworkPolicyManagerService;->checkReadPhoneState(Ljava/lang/String;Ljava/lang/String;)Z
+
+    move-result v2
+
+    if-nez v2, :cond_0
+
+    return-object v4
+.end method
+
 .method private static getSystemDir()Ljava/io/File;
     .locals 3
 
@@ -4659,37 +4914,60 @@
 .end method
 
 .method private isDdsSimStateReady()Z
-    .locals 5
+    .locals 7
 
-    iget-object v3, p0, Lcom/android/server/net/NetworkPolicyManagerService;->mContext:Landroid/content/Context;
+    const/4 v6, 0x1
 
-    invoke-static {v3}, Landroid/telephony/TelephonyManager;->from(Landroid/content/Context;)Landroid/telephony/TelephonyManager;
+    const-string/jumbo v5, "ro.multisim.simslotcount"
 
-    move-result-object v2
-
-    invoke-static {}, Landroid/telephony/SubscriptionManager;->getDefaultDataSubscriptionId()I
-
-    move-result v3
-
-    invoke-static {v3}, Landroid/telephony/SubscriptionManager;->getPhoneId(I)I
+    invoke-static {v5, v6}, Landroid/os/SystemProperties;->getInt(Ljava/lang/String;I)I
 
     move-result v0
 
-    const-string/jumbo v3, "gsm.sim.state"
+    if-le v0, v6, :cond_0
 
-    const-string/jumbo v4, "ABSENT"
+    invoke-direct {p0}, Lcom/android/server/net/NetworkPolicyManagerService;->getDefaultDataSlotId()I
 
-    invoke-static {v0, v3, v4}, Landroid/telephony/TelephonyManager;->getTelephonyProperty(ILjava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    move-result v1
 
-    move-result-object v1
+    iget-object v5, p0, Lcom/android/server/net/NetworkPolicyManagerService;->mContext:Landroid/content/Context;
 
-    const-string/jumbo v3, "READY"
+    invoke-static {v5}, Landroid/telephony/TelephonyManager;->from(Landroid/content/Context;)Landroid/telephony/TelephonyManager;
 
-    invoke-virtual {v3, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    move-result-object v4
 
-    move-result v3
+    const-string/jumbo v5, "gsm.sim.state"
 
-    return v3
+    const-string/jumbo v6, "ABSENT"
+
+    invoke-static {v1, v5, v6}, Landroid/telephony/TelephonyManager;->getTelephonyProperty(ILjava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v3
+
+    const-string/jumbo v5, "READY"
+
+    invoke-virtual {v5, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v5
+
+    return v5
+
+    :cond_0
+    const-string/jumbo v5, "gsm.sim.state"
+
+    const-string/jumbo v6, "ABSENT"
+
+    invoke-static {v5, v6}, Landroid/os/SystemProperties;->get(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v2
+
+    const-string/jumbo v5, "READY"
+
+    invoke-virtual {v5, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v5
+
+    return v5
 .end method
 
 .method private isNaGsm()Z
@@ -4821,7 +5099,7 @@
 .end method
 
 .method private isTemplateRelevant(Landroid/net/NetworkTemplate;)Z
-    .locals 13
+    .locals 12
 
     const/4 v6, 0x1
 
@@ -4837,15 +5115,9 @@
 
     invoke-static {v2}, Landroid/telephony/TelephonyManager;->from(Landroid/content/Context;)Landroid/telephony/TelephonyManager;
 
-    move-result-object v10
+    move-result-object v9
 
-    iget-object v2, p0, Lcom/android/server/net/NetworkPolicyManagerService;->mContext:Landroid/content/Context;
-
-    invoke-static {v2}, Landroid/telephony/SubscriptionManager;->from(Landroid/content/Context;)Landroid/telephony/SubscriptionManager;
-
-    move-result-object v7
-
-    invoke-virtual {v10}, Landroid/telephony/TelephonyManager;->getSimCount()I
+    invoke-virtual {v9}, Landroid/telephony/TelephonyManager;->getSimCount()I
 
     move-result v2
 
@@ -4857,11 +5129,11 @@
 
     if-eqz v2, :cond_0
 
-    invoke-static {}, Landroid/telephony/SubscriptionManager;->getDefaultDataSubscriptionId()I
+    invoke-direct {p0}, Lcom/android/server/net/NetworkPolicyManagerService;->getDefaultDataSubscriptionId()I
 
     move-result v1
 
-    invoke-virtual {v10, v1}, Landroid/telephony/TelephonyManager;->getSubscriberId(I)Ljava/lang/String;
+    invoke-direct {p0, v1}, Lcom/android/server/net/NetworkPolicyManagerService;->getSubscriberId(I)Ljava/lang/String;
 
     move-result-object v1
 
@@ -4876,20 +5148,20 @@
     return v1
 
     :cond_0
-    invoke-virtual {v7}, Landroid/telephony/SubscriptionManager;->getActiveSubscriptionIdList()[I
+    invoke-direct {p0}, Lcom/android/server/net/NetworkPolicyManagerService;->getActiveSubscriptionIdList()[I
 
-    move-result-object v9
+    move-result-object v8
 
-    array-length v12, v9
+    array-length v11, v8
 
-    move v11, v1
+    move v10, v1
 
     :goto_0
-    if-ge v11, v12, :cond_2
+    if-ge v10, v11, :cond_2
 
-    aget v8, v9, v11
+    aget v7, v8, v10
 
-    invoke-virtual {v10, v8}, Landroid/telephony/TelephonyManager;->getSubscriberId(I)Ljava/lang/String;
+    invoke-direct {p0, v7}, Lcom/android/server/net/NetworkPolicyManagerService;->getSubscriberId(I)Ljava/lang/String;
 
     move-result-object v3
 
@@ -4912,9 +5184,9 @@
     return v6
 
     :cond_1
-    add-int/lit8 v2, v11, 0x1
+    add-int/lit8 v2, v10, 0x1
 
-    move v11, v2
+    move v10, v2
 
     goto :goto_0
 
@@ -6952,83 +7224,69 @@
 .end method
 
 .method private setNetworkTemplateEnabled(Landroid/net/NetworkTemplate;Z)V
-    .locals 15
+    .locals 13
+
+    const/4 v6, 0x1
+
+    const/4 v1, 0x0
 
     iget-object v2, p0, Lcom/android/server/net/NetworkPolicyManagerService;->mContext:Landroid/content/Context;
 
     invoke-static {v2}, Landroid/telephony/TelephonyManager;->from(Landroid/content/Context;)Landroid/telephony/TelephonyManager;
 
-    move-result-object v11
+    move-result-object v9
 
-    invoke-virtual/range {p1 .. p1}, Landroid/net/NetworkTemplate;->getMatchRule()I
+    invoke-virtual {p1}, Landroid/net/NetworkTemplate;->getMatchRule()I
 
     move-result v2
 
-    const/4 v3, 0x1
-
-    if-ne v2, v3, :cond_1
-
-    iget-object v2, p0, Lcom/android/server/net/NetworkPolicyManagerService;->mContext:Landroid/content/Context;
-
-    invoke-static {v2}, Landroid/telephony/SubscriptionManager;->from(Landroid/content/Context;)Landroid/telephony/SubscriptionManager;
-
-    move-result-object v8
+    if-ne v2, v6, :cond_1
 
     iget-object v2, p0, Lcom/android/server/net/NetworkPolicyManagerService;->mContext:Landroid/content/Context;
 
     invoke-static {v2}, Landroid/telephony/TelephonyManager;->from(Landroid/content/Context;)Landroid/telephony/TelephonyManager;
 
-    move-result-object v12
-
-    invoke-virtual {v8}, Landroid/telephony/SubscriptionManager;->getActiveSubscriptionIdList()[I
-
     move-result-object v10
 
-    const/4 v2, 0x0
+    invoke-direct {p0}, Lcom/android/server/net/NetworkPolicyManagerService;->getActiveSubscriptionIdList()[I
 
-    array-length v14, v10
+    move-result-object v8
 
-    move v13, v2
+    array-length v12, v8
+
+    move v11, v1
 
     :goto_0
-    if-ge v13, v14, :cond_1
+    if-ge v11, v12, :cond_1
 
-    aget v9, v10, v13
+    aget v7, v8, v11
 
-    invoke-virtual {v12, v9}, Landroid/telephony/TelephonyManager;->getSubscriberId(I)Ljava/lang/String;
+    invoke-direct {p0, v7}, Lcom/android/server/net/NetworkPolicyManagerService;->getSubscriberId(I)Ljava/lang/String;
 
-    move-result-object v4
+    move-result-object v3
 
-    new-instance v1, Landroid/net/NetworkIdentity;
+    new-instance v0, Landroid/net/NetworkIdentity;
 
-    const/4 v2, 0x0
+    const/4 v4, 0x0
 
-    const/4 v3, 0x0
+    move v2, v1
 
-    const/4 v5, 0x0
+    move v5, v1
 
-    const/4 v6, 0x0
+    invoke-direct/range {v0 .. v6}, Landroid/net/NetworkIdentity;-><init>(IILjava/lang/String;Ljava/lang/String;ZZ)V
 
-    const/4 v7, 0x1
-
-    invoke-direct/range {v1 .. v7}, Landroid/net/NetworkIdentity;-><init>(IILjava/lang/String;Ljava/lang/String;ZZ)V
-
-    move-object/from16 v0, p1
-
-    invoke-virtual {v0, v1}, Landroid/net/NetworkTemplate;->matches(Landroid/net/NetworkIdentity;)Z
+    invoke-virtual {p1, v0}, Landroid/net/NetworkTemplate;->matches(Landroid/net/NetworkIdentity;)Z
 
     move-result v2
 
     if-eqz v2, :cond_0
 
-    move/from16 v0, p2
-
-    invoke-virtual {v12, v0, v9}, Landroid/telephony/TelephonyManager;->setPolicyDataEnabled(ZI)V
+    invoke-virtual {v10, p2, v7}, Landroid/telephony/TelephonyManager;->setPolicyDataEnabled(ZI)V
 
     :cond_0
-    add-int/lit8 v2, v13, 0x1
+    add-int/lit8 v2, v11, 0x1
 
-    move v13, v2
+    move v11, v2
 
     goto :goto_0
 
@@ -14683,50 +14941,50 @@
 .end method
 
 .method public systemReady()V
-    .locals 31
+    .locals 32
 
-    const-string/jumbo v26, "systemReady"
+    const-string/jumbo v27, "systemReady"
 
     const-wide/32 v28, 0x200000
 
     move-wide/from16 v0, v28
 
-    move-object/from16 v2, v26
+    move-object/from16 v2, v27
 
     invoke-static {v0, v1, v2}, Landroid/os/Trace;->traceBegin(JLjava/lang/String;)V
 
     :try_start_0
     invoke-direct/range {p0 .. p0}, Lcom/android/server/net/NetworkPolicyManagerService;->isBandwidthControlEnabled()Z
 
-    move-result v26
+    move-result v27
 
-    if-nez v26, :cond_0
+    if-nez v27, :cond_0
 
-    const-string/jumbo v26, "NetworkPolicy"
+    const-string/jumbo v27, "NetworkPolicy"
 
-    const-string/jumbo v27, "bandwidth controls disabled, unable to enforce policy"
+    const-string/jumbo v28, "bandwidth controls disabled, unable to enforce policy"
 
-    invoke-static/range {v26 .. v27}, Landroid/util/Slog;->w(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static/range {v27 .. v28}, Landroid/util/Slog;->w(Ljava/lang/String;Ljava/lang/String;)I
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    const-wide/32 v26, 0x200000
+    const-wide/32 v28, 0x200000
 
-    invoke-static/range {v26 .. v27}, Landroid/os/Trace;->traceEnd(J)V
+    invoke-static/range {v28 .. v29}, Landroid/os/Trace;->traceEnd(J)V
 
     return-void
 
     :cond_0
     :try_start_1
-    const-class v26, Landroid/app/usage/UsageStatsManagerInternal;
+    const-class v27, Landroid/app/usage/UsageStatsManagerInternal;
 
-    invoke-static/range {v26 .. v26}, Lcom/android/server/LocalServices;->getService(Ljava/lang/Class;)Ljava/lang/Object;
+    invoke-static/range {v27 .. v27}, Lcom/android/server/LocalServices;->getService(Ljava/lang/Class;)Ljava/lang/Object;
 
-    move-result-object v26
+    move-result-object v27
 
-    check-cast v26, Landroid/app/usage/UsageStatsManagerInternal;
+    check-cast v27, Landroid/app/usage/UsageStatsManagerInternal;
 
-    move-object/from16 v0, v26
+    move-object/from16 v0, v27
 
     move-object/from16 v1, p0
 
@@ -14734,49 +14992,49 @@
 
     invoke-static {}, Lcom/samsung/android/feature/SemCscFeature;->getInstance()Lcom/samsung/android/feature/SemCscFeature;
 
-    move-result-object v26
+    move-result-object v27
 
-    const-string/jumbo v27, "CscFeature_RIL_ConfigNetworkTypeCapability"
+    const-string/jumbo v28, "CscFeature_RIL_ConfigNetworkTypeCapability"
 
-    invoke-virtual/range {v26 .. v27}, Lcom/samsung/android/feature/SemCscFeature;->getString(Ljava/lang/String;)Ljava/lang/String;
+    invoke-virtual/range {v27 .. v28}, Lcom/samsung/android/feature/SemCscFeature;->getString(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v10
 
     if-eqz v10, :cond_1
 
-    const-string/jumbo v26, "SPR-"
+    const-string/jumbo v27, "SPR-"
 
-    move-object/from16 v0, v26
+    move-object/from16 v0, v27
 
     invoke-virtual {v10, v0}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
 
-    move-result v26
+    move-result v27
 
-    if-eqz v26, :cond_1
+    if-eqz v27, :cond_1
 
     move-object/from16 v0, p0
 
     iget-boolean v0, v0, Lcom/android/server/net/NetworkPolicyManagerService;->mRoamingReduction:Z
 
-    move/from16 v26, v0
+    move/from16 v27, v0
 
-    if-eqz v26, :cond_1
+    if-eqz v27, :cond_1
 
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/server/net/NetworkPolicyManagerService;->mContext:Landroid/content/Context;
 
-    move-object/from16 v26, v0
+    move-object/from16 v27, v0
 
-    const-string/jumbo v27, "phone"
+    const-string/jumbo v28, "phone"
 
-    invoke-virtual/range {v26 .. v27}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
+    invoke-virtual/range {v27 .. v28}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
 
-    move-result-object v26
+    move-result-object v27
 
-    check-cast v26, Landroid/telephony/TelephonyManager;
+    check-cast v27, Landroid/telephony/TelephonyManager;
 
-    move-object/from16 v0, v26
+    move-object/from16 v0, v27
 
     move-object/from16 v1, p0
 
@@ -14786,46 +15044,46 @@
 
     iget-object v0, v0, Lcom/android/server/net/NetworkPolicyManagerService;->mTelephonyManager:Landroid/telephony/TelephonyManager;
 
-    move-object/from16 v26, v0
+    move-object/from16 v27, v0
 
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/server/net/NetworkPolicyManagerService;->mPhoneStateListener:Landroid/telephony/PhoneStateListener;
 
-    move-object/from16 v27, v0
+    move-object/from16 v28, v0
 
-    const/16 v28, 0x1
+    const/16 v29, 0x1
 
-    invoke-virtual/range {v26 .. v28}, Landroid/telephony/TelephonyManager;->listen(Landroid/telephony/PhoneStateListener;I)V
+    invoke-virtual/range {v27 .. v29}, Landroid/telephony/TelephonyManager;->listen(Landroid/telephony/PhoneStateListener;I)V
 
-    const-string/jumbo v26, "NetworkPolicy"
+    const-string/jumbo v27, "NetworkPolicy"
 
-    const-string/jumbo v27, "listener registered"
+    const-string/jumbo v28, "listener registered"
 
-    invoke-static/range {v26 .. v27}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static/range {v27 .. v28}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
     :cond_1
     move-object/from16 v0, p0
 
     iget-boolean v0, v0, Lcom/android/server/net/NetworkPolicyManagerService;->mRoamingReduction:Z
 
-    move/from16 v26, v0
+    move/from16 v27, v0
 
-    if-eqz v26, :cond_2
+    if-eqz v27, :cond_2
 
-    const-string/jumbo v26, "NetworkPolicy"
+    const-string/jumbo v27, "NetworkPolicy"
 
-    const-string/jumbo v27, "rrChanged intent registered"
+    const-string/jumbo v28, "rrChanged intent registered"
 
-    invoke-static/range {v26 .. v27}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static/range {v27 .. v28}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
     new-instance v19, Landroid/content/IntentFilter;
 
-    const-string/jumbo v26, "android.intent.action.CHAMELEON_RR_UPDATE"
+    const-string/jumbo v27, "android.intent.action.CHAMELEON_RR_UPDATE"
 
     move-object/from16 v0, v19
 
-    move-object/from16 v1, v26
+    move-object/from16 v1, v27
 
     invoke-direct {v0, v1}, Landroid/content/IntentFilter;-><init>(Ljava/lang/String;)V
 
@@ -14833,122 +15091,122 @@
 
     iget-object v0, v0, Lcom/android/server/net/NetworkPolicyManagerService;->mContext:Landroid/content/Context;
 
-    move-object/from16 v26, v0
+    move-object/from16 v27, v0
 
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/server/net/NetworkPolicyManagerService;->mCscChameleonUpdateReceiver:Landroid/content/BroadcastReceiver;
 
-    move-object/from16 v27, v0
+    move-object/from16 v28, v0
 
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/server/net/NetworkPolicyManagerService;->mHandler:Landroid/os/Handler;
 
-    move-object/from16 v28, v0
+    move-object/from16 v29, v0
 
-    const/16 v29, 0x0
+    const/16 v30, 0x0
 
-    move-object/from16 v0, v26
+    move-object/from16 v0, v27
 
-    move-object/from16 v1, v27
+    move-object/from16 v1, v28
 
     move-object/from16 v2, v19
 
-    move-object/from16 v3, v29
+    move-object/from16 v3, v30
 
-    move-object/from16 v4, v28
+    move-object/from16 v4, v29
 
     invoke-virtual {v0, v1, v2, v3, v4}, Landroid/content/Context;->registerReceiver(Landroid/content/BroadcastReceiver;Landroid/content/IntentFilter;Ljava/lang/String;Landroid/os/Handler;)Landroid/content/Intent;
 
-    const-string/jumbo v26, "ro.home.operator.rrenabled"
+    const-string/jumbo v27, "ro.home.operator.rrenabled"
 
-    const-string/jumbo v27, "1"
+    const-string/jumbo v28, "1"
 
-    invoke-static/range {v26 .. v27}, Landroid/os/SystemProperties;->get(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static/range {v27 .. v28}, Landroid/os/SystemProperties;->get(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
-    move-result-object v26
+    move-result-object v27
 
-    const-string/jumbo v27, "0"
+    const-string/jumbo v28, "0"
 
-    invoke-virtual/range {v26 .. v27}, Ljava/lang/String;->equalsIgnoreCase(Ljava/lang/String;)Z
+    invoke-virtual/range {v27 .. v28}, Ljava/lang/String;->equalsIgnoreCase(Ljava/lang/String;)Z
 
-    move-result v26
+    move-result v27
 
-    if-eqz v26, :cond_2
+    if-eqz v27, :cond_2
 
-    const-string/jumbo v26, "NetworkPolicy"
+    const-string/jumbo v27, "NetworkPolicy"
 
-    const-string/jumbo v27, "mRrEnabledInCscChameleon = false"
+    const-string/jumbo v28, "mRrEnabledInCscChameleon = false"
 
-    invoke-static/range {v26 .. v27}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static/range {v27 .. v28}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    const/16 v26, 0x0
+    const/16 v27, 0x0
 
-    sput-boolean v26, Lcom/android/server/net/NetworkPolicyManagerService;->mRrEnabledInCscChameleon:Z
+    sput-boolean v27, Lcom/android/server/net/NetworkPolicyManagerService;->mRrEnabledInCscChameleon:Z
 
     :cond_2
     invoke-static {}, Lcom/samsung/android/feature/SemCscFeature;->getInstance()Lcom/samsung/android/feature/SemCscFeature;
 
-    move-result-object v26
+    move-result-object v27
 
-    const-string/jumbo v27, "CscFeature_SmartManager_ConfigSubFeatures"
+    const-string/jumbo v28, "CscFeature_SmartManager_ConfigSubFeatures"
 
-    invoke-virtual/range {v26 .. v27}, Lcom/samsung/android/feature/SemCscFeature;->getString(Ljava/lang/String;)Ljava/lang/String;
+    invoke-virtual/range {v27 .. v28}, Lcom/samsung/android/feature/SemCscFeature;->getString(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v12
 
     if-eqz v12, :cond_3
 
-    const-string/jumbo v26, "trafficmanager"
+    const-string/jumbo v27, "trafficmanager"
 
-    move-object/from16 v0, v26
+    move-object/from16 v0, v27
 
     invoke-virtual {v12, v0}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
 
-    move-result v26
+    move-result v27
 
-    if-eqz v26, :cond_3
+    if-eqz v27, :cond_3
 
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/server/net/NetworkPolicyManagerService;->mContext:Landroid/content/Context;
 
-    move-object/from16 v26, v0
+    move-object/from16 v27, v0
 
-    invoke-virtual/range {v26 .. v26}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
-
-    move-result-object v26
-
-    const-string/jumbo v27, "user_restrict_background_uidlist"
-
-    invoke-static/range {v27 .. v27}, Landroid/provider/Settings$System;->getUriFor(Ljava/lang/String;)Landroid/net/Uri;
+    invoke-virtual/range {v27 .. v27}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
     move-result-object v27
+
+    const-string/jumbo v28, "user_restrict_background_uidlist"
+
+    invoke-static/range {v28 .. v28}, Landroid/provider/Settings$System;->getUriFor(Ljava/lang/String;)Landroid/net/Uri;
+
+    move-result-object v28
 
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/server/net/NetworkPolicyManagerService;->mBackGroundDataSetObserver:Landroid/database/ContentObserver;
 
-    move-object/from16 v28, v0
+    move-object/from16 v29, v0
 
-    const/16 v29, 0x1
+    const/16 v30, 0x1
 
-    move-object/from16 v0, v26
+    move-object/from16 v0, v27
 
-    move-object/from16 v1, v27
+    move-object/from16 v1, v28
 
-    move/from16 v2, v29
+    move/from16 v2, v30
 
-    move-object/from16 v3, v28
+    move-object/from16 v3, v29
 
     invoke-virtual {v0, v1, v2, v3}, Landroid/content/ContentResolver;->registerContentObserver(Landroid/net/Uri;ZLandroid/database/ContentObserver;)V
 
     invoke-direct/range {p0 .. p0}, Lcom/android/server/net/NetworkPolicyManagerService;->getBackgroundDataRestrictList()Ljava/util/List;
 
-    move-result-object v26
+    move-result-object v27
 
-    move-object/from16 v0, v26
+    move-object/from16 v0, v27
 
     move-object/from16 v1, p0
 
@@ -14961,9 +15219,9 @@
 
     iget-object v0, v0, Lcom/android/server/net/NetworkPolicyManagerService;->mNetworkManager:Landroid/os/INetworkManagementService;
 
-    move-object/from16 v26, v0
+    move-object/from16 v27, v0
 
-    invoke-interface/range {v26 .. v26}, Landroid/os/INetworkManagementService;->buildFirewall()V
+    invoke-interface/range {v27 .. v27}, Landroid/os/INetworkManagementService;->buildFirewall()V
     :try_end_2
     .catch Ljava/lang/Exception; {:try_start_2 .. :try_end_2} :catch_0
     .catchall {:try_start_2 .. :try_end_2} :catchall_0
@@ -14975,9 +15233,9 @@
 
     iget-object v0, v0, Lcom/android/server/net/NetworkPolicyManagerService;->mUidRulesFirstLock:Ljava/lang/Object;
 
-    move-object/from16 v27, v0
+    move-object/from16 v28, v0
 
-    monitor-enter v27
+    monitor-enter v28
     :try_end_3
     .catchall {:try_start_3 .. :try_end_3} :catchall_0
 
@@ -14986,24 +15244,24 @@
 
     iget-object v0, v0, Lcom/android/server/net/NetworkPolicyManagerService;->mNetworkPoliciesSecondLock:Ljava/lang/Object;
 
-    move-object/from16 v28, v0
+    move-object/from16 v29, v0
 
-    monitor-enter v28
+    monitor-enter v29
     :try_end_4
     .catchall {:try_start_4 .. :try_end_4} :catchall_2
 
     :try_start_5
     invoke-virtual/range {p0 .. p0}, Lcom/android/server/net/NetworkPolicyManagerService;->updatePowerSaveWhitelistUL()V
 
-    const-class v26, Landroid/os/PowerManagerInternal;
+    const-class v27, Landroid/os/PowerManagerInternal;
 
-    invoke-static/range {v26 .. v26}, Lcom/android/server/LocalServices;->getService(Ljava/lang/Class;)Ljava/lang/Object;
+    invoke-static/range {v27 .. v27}, Lcom/android/server/LocalServices;->getService(Ljava/lang/Class;)Ljava/lang/Object;
 
-    move-result-object v26
+    move-result-object v27
 
-    check-cast v26, Landroid/os/PowerManagerInternal;
+    check-cast v27, Landroid/os/PowerManagerInternal;
 
-    move-object/from16 v0, v26
+    move-object/from16 v0, v27
 
     move-object/from16 v1, p0
 
@@ -15013,49 +15271,49 @@
 
     iget-object v0, v0, Lcom/android/server/net/NetworkPolicyManagerService;->mPowerManagerInternal:Landroid/os/PowerManagerInternal;
 
-    move-object/from16 v26, v0
+    move-object/from16 v27, v0
 
-    new-instance v29, Lcom/android/server/net/NetworkPolicyManagerService$24;
+    new-instance v30, Lcom/android/server/net/NetworkPolicyManagerService$25;
 
-    move-object/from16 v0, v29
+    move-object/from16 v0, v30
 
     move-object/from16 v1, p0
 
-    invoke-direct {v0, v1}, Lcom/android/server/net/NetworkPolicyManagerService$24;-><init>(Lcom/android/server/net/NetworkPolicyManagerService;)V
+    invoke-direct {v0, v1}, Lcom/android/server/net/NetworkPolicyManagerService$25;-><init>(Lcom/android/server/net/NetworkPolicyManagerService;)V
 
-    move-object/from16 v0, v26
+    move-object/from16 v0, v27
 
-    move-object/from16 v1, v29
+    move-object/from16 v1, v30
 
     invoke-virtual {v0, v1}, Landroid/os/PowerManagerInternal;->registerLowPowerModeObserver(Landroid/os/PowerManagerInternal$LowPowerModeListener;)V
 
     invoke-direct/range {p0 .. p0}, Lcom/android/server/net/NetworkPolicyManagerService;->getRestrictBackgroundInLowerPowerMode()Z
 
-    move-result v26
+    move-result v27
 
-    if-eqz v26, :cond_4
+    if-eqz v27, :cond_4
 
     move-object/from16 v0, p0
 
     iget-boolean v0, v0, Lcom/android/server/net/NetworkPolicyManagerService;->mChargingState:Z
 
-    move/from16 v26, v0
+    move/from16 v27, v0
 
-    if-eqz v26, :cond_6
+    if-eqz v27, :cond_6
 
     :cond_4
-    const/16 v26, 0x0
+    const/16 v27, 0x0
 
     :goto_1
-    move/from16 v0, v26
+    move/from16 v0, v27
 
     move-object/from16 v1, p0
 
     iput-boolean v0, v1, Lcom/android/server/net/NetworkPolicyManagerService;->mRestrictPower:Z
 
-    const/16 v26, 0x1
+    const/16 v27, 0x1
 
-    move/from16 v0, v26
+    move/from16 v0, v27
 
     move-object/from16 v1, p0
 
@@ -15065,9 +15323,9 @@
 
     invoke-virtual/range {p0 .. p0}, Lcom/android/server/net/NetworkPolicyManagerService;->addDefaultRestrictBackgroundWhitelistUidsUL()Z
 
-    move-result v26
+    move-result v27
 
-    if-eqz v26, :cond_5
+    if-eqz v27, :cond_5
 
     invoke-virtual/range {p0 .. p0}, Lcom/android/server/net/NetworkPolicyManagerService;->writePolicyAL()V
 
@@ -15076,19 +15334,19 @@
 
     iget-boolean v0, v0, Lcom/android/server/net/NetworkPolicyManagerService;->mRestrictBackground:Z
 
-    move/from16 v26, v0
+    move/from16 v27, v0
 
     move-object/from16 v0, p0
 
-    move/from16 v1, v26
+    move/from16 v1, v27
 
     invoke-direct {v0, v1}, Lcom/android/server/net/NetworkPolicyManagerService;->setRestrictBackgroundUL(Z)V
 
-    const/16 v26, 0x0
+    const/16 v27, 0x0
 
     move-object/from16 v0, p0
 
-    move/from16 v1, v26
+    move/from16 v1, v27
 
     invoke-direct {v0, v1}, Lcom/android/server/net/NetworkPolicyManagerService;->updateRulesForGlobalChangeAL(Z)V
 
@@ -15097,12 +15355,12 @@
     .catchall {:try_start_5 .. :try_end_5} :catchall_1
 
     :try_start_6
-    monitor-exit v28
+    monitor-exit v29
     :try_end_6
     .catchall {:try_start_6 .. :try_end_6} :catchall_2
 
     :try_start_7
-    monitor-exit v27
+    monitor-exit v28
     :try_end_7
     .catchall {:try_start_7 .. :try_end_7} :catchall_0
 
@@ -15111,44 +15369,44 @@
 
     iget-object v0, v0, Lcom/android/server/net/NetworkPolicyManagerService;->mActivityManager:Landroid/app/IActivityManager;
 
-    move-object/from16 v26, v0
+    move-object/from16 v27, v0
 
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/server/net/NetworkPolicyManagerService;->mUidObserver:Landroid/app/IUidObserver;
 
-    move-object/from16 v27, v0
+    move-object/from16 v28, v0
 
-    const/16 v28, 0x3
+    const/16 v29, 0x3
 
-    invoke-interface/range {v26 .. v28}, Landroid/app/IActivityManager;->registerUidObserver(Landroid/app/IUidObserver;I)V
+    invoke-interface/range {v27 .. v29}, Landroid/app/IActivityManager;->registerUidObserver(Landroid/app/IUidObserver;I)V
 
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/server/net/NetworkPolicyManagerService;->mNetworkManager:Landroid/os/INetworkManagementService;
 
-    move-object/from16 v26, v0
+    move-object/from16 v27, v0
 
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/server/net/NetworkPolicyManagerService;->mAlertObserver:Landroid/net/INetworkManagementEventObserver;
 
-    move-object/from16 v27, v0
+    move-object/from16 v28, v0
 
-    invoke-interface/range {v26 .. v27}, Landroid/os/INetworkManagementService;->registerObserver(Landroid/net/INetworkManagementEventObserver;)V
+    invoke-interface/range {v27 .. v28}, Landroid/os/INetworkManagementService;->registerObserver(Landroid/net/INetworkManagementEventObserver;)V
     :try_end_8
     .catch Landroid/os/RemoteException; {:try_start_8 .. :try_end_8} :catch_1
     .catchall {:try_start_8 .. :try_end_8} :catchall_0
 
     :goto_2
     :try_start_9
-    new-instance v23, Landroid/content/IntentFilter;
+    new-instance v24, Landroid/content/IntentFilter;
 
-    const-string/jumbo v26, "android.os.action.POWER_SAVE_WHITELIST_CHANGED"
+    const-string/jumbo v27, "android.os.action.POWER_SAVE_WHITELIST_CHANGED"
 
-    move-object/from16 v0, v23
+    move-object/from16 v0, v24
 
-    move-object/from16 v1, v26
+    move-object/from16 v1, v27
 
     invoke-direct {v0, v1}, Landroid/content/IntentFilter;-><init>(Ljava/lang/String;)V
 
@@ -15156,69 +15414,13 @@
 
     iget-object v0, v0, Lcom/android/server/net/NetworkPolicyManagerService;->mContext:Landroid/content/Context;
 
-    move-object/from16 v26, v0
+    move-object/from16 v27, v0
 
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/server/net/NetworkPolicyManagerService;->mPowerSaveWhitelistReceiver:Landroid/content/BroadcastReceiver;
 
-    move-object/from16 v27, v0
-
-    move-object/from16 v0, p0
-
-    iget-object v0, v0, Lcom/android/server/net/NetworkPolicyManagerService;->mHandler:Landroid/os/Handler;
-
     move-object/from16 v28, v0
-
-    const/16 v29, 0x0
-
-    move-object/from16 v0, v26
-
-    move-object/from16 v1, v27
-
-    move-object/from16 v2, v23
-
-    move-object/from16 v3, v29
-
-    move-object/from16 v4, v28
-
-    invoke-virtual {v0, v1, v2, v3, v4}, Landroid/content/Context;->registerReceiver(Landroid/content/BroadcastReceiver;Landroid/content/IntentFilter;Ljava/lang/String;Landroid/os/Handler;)Landroid/content/Intent;
-
-    const-class v26, Lcom/android/server/DeviceIdleController$LocalService;
-
-    invoke-static/range {v26 .. v26}, Lcom/android/server/LocalServices;->getService(Ljava/lang/Class;)Ljava/lang/Object;
-
-    move-result-object v13
-
-    check-cast v13, Lcom/android/server/DeviceIdleController$LocalService;
-
-    move-object/from16 v0, p0
-
-    iget-object v0, v0, Lcom/android/server/net/NetworkPolicyManagerService;->mTempPowerSaveChangedCallback:Ljava/lang/Runnable;
-
-    move-object/from16 v26, v0
-
-    move-object/from16 v0, v26
-
-    invoke-virtual {v13, v0}, Lcom/android/server/DeviceIdleController$LocalService;->setNetworkPolicyTempWhitelistCallback(Ljava/lang/Runnable;)V
-
-    move-object/from16 v0, p0
-
-    iget-object v0, v0, Lcom/android/server/net/NetworkPolicyManagerService;->mContext:Landroid/content/Context;
-
-    move-object/from16 v26, v0
-
-    move-object/from16 v0, p0
-
-    iget-object v0, v0, Lcom/android/server/net/NetworkPolicyManagerService;->mUidRemovedReceiver:Landroid/content/BroadcastReceiver;
-
-    move-object/from16 v27, v0
-
-    new-instance v28, Landroid/content/IntentFilter;
-
-    const-string/jumbo v29, "android.intent.action.UID_REMOVED"
-
-    invoke-direct/range {v28 .. v29}, Landroid/content/IntentFilter;-><init>(Ljava/lang/String;)V
 
     move-object/from16 v0, p0
 
@@ -15228,11 +15430,11 @@
 
     const/16 v30, 0x0
 
-    move-object/from16 v0, v26
+    move-object/from16 v0, v27
 
-    move-object/from16 v1, v27
+    move-object/from16 v1, v28
 
-    move-object/from16 v2, v28
+    move-object/from16 v2, v24
 
     move-object/from16 v3, v30
 
@@ -15240,23 +15442,79 @@
 
     invoke-virtual {v0, v1, v2, v3, v4}, Landroid/content/Context;->registerReceiver(Landroid/content/BroadcastReceiver;Landroid/content/IntentFilter;Ljava/lang/String;Landroid/os/Handler;)Landroid/content/Intent;
 
-    new-instance v22, Landroid/content/IntentFilter;
+    const-class v27, Lcom/android/server/DeviceIdleController$LocalService;
 
-    invoke-direct/range {v22 .. v22}, Landroid/content/IntentFilter;-><init>()V
+    invoke-static/range {v27 .. v27}, Lcom/android/server/LocalServices;->getService(Ljava/lang/Class;)Ljava/lang/Object;
 
-    const-string/jumbo v26, "android.intent.action.USER_ADDED"
+    move-result-object v13
 
-    move-object/from16 v0, v22
+    check-cast v13, Lcom/android/server/DeviceIdleController$LocalService;
 
-    move-object/from16 v1, v26
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcom/android/server/net/NetworkPolicyManagerService;->mTempPowerSaveChangedCallback:Ljava/lang/Runnable;
+
+    move-object/from16 v27, v0
+
+    move-object/from16 v0, v27
+
+    invoke-virtual {v13, v0}, Lcom/android/server/DeviceIdleController$LocalService;->setNetworkPolicyTempWhitelistCallback(Ljava/lang/Runnable;)V
+
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcom/android/server/net/NetworkPolicyManagerService;->mContext:Landroid/content/Context;
+
+    move-object/from16 v27, v0
+
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcom/android/server/net/NetworkPolicyManagerService;->mUidRemovedReceiver:Landroid/content/BroadcastReceiver;
+
+    move-object/from16 v28, v0
+
+    new-instance v29, Landroid/content/IntentFilter;
+
+    const-string/jumbo v30, "android.intent.action.UID_REMOVED"
+
+    invoke-direct/range {v29 .. v30}, Landroid/content/IntentFilter;-><init>(Ljava/lang/String;)V
+
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcom/android/server/net/NetworkPolicyManagerService;->mHandler:Landroid/os/Handler;
+
+    move-object/from16 v30, v0
+
+    const/16 v31, 0x0
+
+    move-object/from16 v0, v27
+
+    move-object/from16 v1, v28
+
+    move-object/from16 v2, v29
+
+    move-object/from16 v3, v31
+
+    move-object/from16 v4, v30
+
+    invoke-virtual {v0, v1, v2, v3, v4}, Landroid/content/Context;->registerReceiver(Landroid/content/BroadcastReceiver;Landroid/content/IntentFilter;Ljava/lang/String;Landroid/os/Handler;)Landroid/content/Intent;
+
+    new-instance v23, Landroid/content/IntentFilter;
+
+    invoke-direct/range {v23 .. v23}, Landroid/content/IntentFilter;-><init>()V
+
+    const-string/jumbo v27, "android.intent.action.USER_ADDED"
+
+    move-object/from16 v0, v23
+
+    move-object/from16 v1, v27
 
     invoke-virtual {v0, v1}, Landroid/content/IntentFilter;->addAction(Ljava/lang/String;)V
 
-    const-string/jumbo v26, "android.intent.action.USER_REMOVED"
+    const-string/jumbo v27, "android.intent.action.USER_REMOVED"
 
-    move-object/from16 v0, v22
+    move-object/from16 v0, v23
 
-    move-object/from16 v1, v26
+    move-object/from16 v1, v27
 
     invoke-virtual {v0, v1}, Landroid/content/IntentFilter;->addAction(Ljava/lang/String;)V
 
@@ -15264,39 +15522,39 @@
 
     iget-object v0, v0, Lcom/android/server/net/NetworkPolicyManagerService;->mContext:Landroid/content/Context;
 
-    move-object/from16 v26, v0
+    move-object/from16 v27, v0
 
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/server/net/NetworkPolicyManagerService;->mUserReceiver:Landroid/content/BroadcastReceiver;
 
-    move-object/from16 v27, v0
+    move-object/from16 v28, v0
 
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/server/net/NetworkPolicyManagerService;->mHandler:Landroid/os/Handler;
 
-    move-object/from16 v28, v0
+    move-object/from16 v29, v0
 
-    const/16 v29, 0x0
+    const/16 v30, 0x0
 
-    move-object/from16 v0, v26
+    move-object/from16 v0, v27
 
-    move-object/from16 v1, v27
+    move-object/from16 v1, v28
 
-    move-object/from16 v2, v22
+    move-object/from16 v2, v23
 
-    move-object/from16 v3, v29
+    move-object/from16 v3, v30
 
-    move-object/from16 v4, v28
+    move-object/from16 v4, v29
 
     invoke-virtual {v0, v1, v2, v3, v4}, Landroid/content/Context;->registerReceiver(Landroid/content/BroadcastReceiver;Landroid/content/IntentFilter;Ljava/lang/String;Landroid/os/Handler;)Landroid/content/Intent;
 
     new-instance v11, Landroid/content/IntentFilter;
 
-    const-string/jumbo v26, "android.net.conn.CONNECTIVITY_CHANGE"
+    const-string/jumbo v27, "android.net.conn.CONNECTIVITY_CHANGE"
 
-    move-object/from16 v0, v26
+    move-object/from16 v0, v27
 
     invoke-direct {v11, v0}, Landroid/content/IntentFilter;-><init>(Ljava/lang/String;)V
 
@@ -15304,39 +15562,39 @@
 
     iget-object v0, v0, Lcom/android/server/net/NetworkPolicyManagerService;->mContext:Landroid/content/Context;
 
-    move-object/from16 v26, v0
+    move-object/from16 v27, v0
 
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/server/net/NetworkPolicyManagerService;->mConnReceiver:Landroid/content/BroadcastReceiver;
 
-    move-object/from16 v27, v0
+    move-object/from16 v28, v0
 
-    const-string/jumbo v28, "android.permission.CONNECTIVITY_INTERNAL"
+    const-string/jumbo v29, "android.permission.CONNECTIVITY_INTERNAL"
 
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/server/net/NetworkPolicyManagerService;->mHandler:Landroid/os/Handler;
 
-    move-object/from16 v29, v0
+    move-object/from16 v30, v0
 
-    move-object/from16 v0, v26
+    move-object/from16 v0, v27
 
-    move-object/from16 v1, v27
+    move-object/from16 v1, v28
 
-    move-object/from16 v2, v28
+    move-object/from16 v2, v29
 
-    move-object/from16 v3, v29
+    move-object/from16 v3, v30
 
     invoke-virtual {v0, v1, v11, v2, v3}, Landroid/content/Context;->registerReceiver(Landroid/content/BroadcastReceiver;Landroid/content/IntentFilter;Ljava/lang/String;Landroid/os/Handler;)Landroid/content/Intent;
 
     new-instance v21, Landroid/content/IntentFilter;
 
-    const-string/jumbo v26, "com.android.server.action.NETWORK_STATS_UPDATED"
+    const-string/jumbo v27, "com.android.server.action.NETWORK_STATS_UPDATED"
 
     move-object/from16 v0, v21
 
-    move-object/from16 v1, v26
+    move-object/from16 v1, v27
 
     invoke-direct {v0, v1}, Landroid/content/IntentFilter;-><init>(Ljava/lang/String;)V
 
@@ -15344,39 +15602,39 @@
 
     iget-object v0, v0, Lcom/android/server/net/NetworkPolicyManagerService;->mContext:Landroid/content/Context;
 
-    move-object/from16 v26, v0
+    move-object/from16 v27, v0
 
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/server/net/NetworkPolicyManagerService;->mStatsReceiver:Landroid/content/BroadcastReceiver;
 
-    move-object/from16 v27, v0
+    move-object/from16 v28, v0
 
-    const-string/jumbo v28, "android.permission.READ_NETWORK_USAGE_HISTORY"
+    const-string/jumbo v29, "android.permission.READ_NETWORK_USAGE_HISTORY"
 
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/server/net/NetworkPolicyManagerService;->mHandler:Landroid/os/Handler;
 
-    move-object/from16 v29, v0
+    move-object/from16 v30, v0
 
-    move-object/from16 v0, v26
+    move-object/from16 v0, v27
 
-    move-object/from16 v1, v27
+    move-object/from16 v1, v28
 
     move-object/from16 v2, v21
 
-    move-object/from16 v3, v28
+    move-object/from16 v3, v29
 
-    move-object/from16 v4, v29
+    move-object/from16 v4, v30
 
     invoke-virtual {v0, v1, v2, v3, v4}, Landroid/content/Context;->registerReceiver(Landroid/content/BroadcastReceiver;Landroid/content/IntentFilter;Ljava/lang/String;Landroid/os/Handler;)Landroid/content/Intent;
 
     new-instance v6, Landroid/content/IntentFilter;
 
-    const-string/jumbo v26, "com.android.server.net.action.ALLOW_BACKGROUND"
+    const-string/jumbo v27, "com.android.server.net.action.ALLOW_BACKGROUND"
 
-    move-object/from16 v0, v26
+    move-object/from16 v0, v27
 
     invoke-direct {v6, v0}, Landroid/content/IntentFilter;-><init>(Ljava/lang/String;)V
 
@@ -15384,29 +15642,29 @@
 
     iget-object v0, v0, Lcom/android/server/net/NetworkPolicyManagerService;->mContext:Landroid/content/Context;
 
-    move-object/from16 v26, v0
+    move-object/from16 v27, v0
 
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/server/net/NetworkPolicyManagerService;->mAllowReceiver:Landroid/content/BroadcastReceiver;
 
-    move-object/from16 v27, v0
+    move-object/from16 v28, v0
 
-    const-string/jumbo v28, "android.permission.MANAGE_NETWORK_POLICY"
+    const-string/jumbo v29, "android.permission.MANAGE_NETWORK_POLICY"
 
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/server/net/NetworkPolicyManagerService;->mHandler:Landroid/os/Handler;
 
-    move-object/from16 v29, v0
+    move-object/from16 v30, v0
 
-    move-object/from16 v0, v26
+    move-object/from16 v0, v27
 
-    move-object/from16 v1, v27
+    move-object/from16 v1, v28
 
-    move-object/from16 v2, v28
+    move-object/from16 v2, v29
 
-    move-object/from16 v3, v29
+    move-object/from16 v3, v30
 
     invoke-virtual {v0, v1, v6, v2, v3}, Landroid/content/Context;->registerReceiver(Landroid/content/BroadcastReceiver;Landroid/content/IntentFilter;Ljava/lang/String;Landroid/os/Handler;)Landroid/content/Intent;
 
@@ -15414,27 +15672,27 @@
 
     invoke-direct/range {v18 .. v18}, Landroid/content/IntentFilter;-><init>()V
 
-    const-string/jumbo v26, "android.intent.action.PACKAGE_ADDED"
+    const-string/jumbo v27, "android.intent.action.PACKAGE_ADDED"
 
     move-object/from16 v0, v18
 
-    move-object/from16 v1, v26
+    move-object/from16 v1, v27
 
     invoke-virtual {v0, v1}, Landroid/content/IntentFilter;->addAction(Ljava/lang/String;)V
 
-    const-string/jumbo v26, "android.intent.action.PACKAGE_REMOVED"
+    const-string/jumbo v27, "android.intent.action.PACKAGE_REMOVED"
 
     move-object/from16 v0, v18
 
-    move-object/from16 v1, v26
+    move-object/from16 v1, v27
 
     invoke-virtual {v0, v1}, Landroid/content/IntentFilter;->addAction(Ljava/lang/String;)V
 
-    const-string/jumbo v26, "package"
+    const-string/jumbo v27, "package"
 
     move-object/from16 v0, v18
 
-    move-object/from16 v1, v26
+    move-object/from16 v1, v27
 
     invoke-virtual {v0, v1}, Landroid/content/IntentFilter;->addDataScheme(Ljava/lang/String;)V
 
@@ -15442,57 +15700,13 @@
 
     iget-object v0, v0, Lcom/android/server/net/NetworkPolicyManagerService;->mContext:Landroid/content/Context;
 
-    move-object/from16 v26, v0
+    move-object/from16 v27, v0
 
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/server/net/NetworkPolicyManagerService;->mPackageReceiver:Landroid/content/BroadcastReceiver;
 
-    move-object/from16 v27, v0
-
-    move-object/from16 v0, p0
-
-    iget-object v0, v0, Lcom/android/server/net/NetworkPolicyManagerService;->mHandler:Landroid/os/Handler;
-
     move-object/from16 v28, v0
-
-    const/16 v29, 0x0
-
-    move-object/from16 v0, v26
-
-    move-object/from16 v1, v27
-
-    move-object/from16 v2, v18
-
-    move-object/from16 v3, v29
-
-    move-object/from16 v4, v28
-
-    invoke-virtual {v0, v1, v2, v3, v4}, Landroid/content/Context;->registerReceiver(Landroid/content/BroadcastReceiver;Landroid/content/IntentFilter;Ljava/lang/String;Landroid/os/Handler;)Landroid/content/Intent;
-
-    new-instance v20, Landroid/content/IntentFilter;
-
-    const-string/jumbo v26, "com.android.server.net.action.SNOOZE_WARNING"
-
-    move-object/from16 v0, v20
-
-    move-object/from16 v1, v26
-
-    invoke-direct {v0, v1}, Landroid/content/IntentFilter;-><init>(Ljava/lang/String;)V
-
-    move-object/from16 v0, p0
-
-    iget-object v0, v0, Lcom/android/server/net/NetworkPolicyManagerService;->mContext:Landroid/content/Context;
-
-    move-object/from16 v26, v0
-
-    move-object/from16 v0, p0
-
-    iget-object v0, v0, Lcom/android/server/net/NetworkPolicyManagerService;->mSnoozeWarningReceiver:Landroid/content/BroadcastReceiver;
-
-    move-object/from16 v27, v0
-
-    const-string/jumbo v28, "android.permission.MANAGE_NETWORK_POLICY"
 
     move-object/from16 v0, p0
 
@@ -15500,25 +15714,27 @@
 
     move-object/from16 v29, v0
 
-    move-object/from16 v0, v26
+    const/16 v30, 0x0
 
-    move-object/from16 v1, v27
+    move-object/from16 v0, v27
 
-    move-object/from16 v2, v20
+    move-object/from16 v1, v28
 
-    move-object/from16 v3, v28
+    move-object/from16 v2, v18
+
+    move-object/from16 v3, v30
 
     move-object/from16 v4, v29
 
     invoke-virtual {v0, v1, v2, v3, v4}, Landroid/content/Context;->registerReceiver(Landroid/content/BroadcastReceiver;Landroid/content/IntentFilter;Ljava/lang/String;Landroid/os/Handler;)Landroid/content/Intent;
 
-    new-instance v24, Landroid/content/IntentFilter;
+    new-instance v20, Landroid/content/IntentFilter;
 
-    const-string/jumbo v26, "android.net.wifi.CONFIGURED_NETWORKS_CHANGE"
+    const-string/jumbo v27, "com.android.server.net.action.SNOOZE_WARNING"
 
-    move-object/from16 v0, v24
+    move-object/from16 v0, v20
 
-    move-object/from16 v1, v26
+    move-object/from16 v1, v27
 
     invoke-direct {v0, v1}, Landroid/content/IntentFilter;-><init>(Ljava/lang/String;)V
 
@@ -15526,69 +15742,111 @@
 
     iget-object v0, v0, Lcom/android/server/net/NetworkPolicyManagerService;->mContext:Landroid/content/Context;
 
-    move-object/from16 v26, v0
+    move-object/from16 v27, v0
 
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/android/server/net/NetworkPolicyManagerService;->mWifiConfigReceiver:Landroid/content/BroadcastReceiver;
+    iget-object v0, v0, Lcom/android/server/net/NetworkPolicyManagerService;->mSnoozeWarningReceiver:Landroid/content/BroadcastReceiver;
 
-    move-object/from16 v27, v0
+    move-object/from16 v28, v0
+
+    const-string/jumbo v29, "android.permission.MANAGE_NETWORK_POLICY"
 
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/server/net/NetworkPolicyManagerService;->mHandler:Landroid/os/Handler;
 
-    move-object/from16 v28, v0
+    move-object/from16 v30, v0
 
-    const/16 v29, 0x0
+    move-object/from16 v0, v27
 
-    move-object/from16 v0, v26
+    move-object/from16 v1, v28
 
-    move-object/from16 v1, v27
-
-    move-object/from16 v2, v24
+    move-object/from16 v2, v20
 
     move-object/from16 v3, v29
 
-    move-object/from16 v4, v28
+    move-object/from16 v4, v30
 
     invoke-virtual {v0, v1, v2, v3, v4}, Landroid/content/Context;->registerReceiver(Landroid/content/BroadcastReceiver;Landroid/content/IntentFilter;Ljava/lang/String;Landroid/os/Handler;)Landroid/content/Intent;
 
     new-instance v25, Landroid/content/IntentFilter;
 
-    const-string/jumbo v26, "android.net.wifi.STATE_CHANGE"
+    const-string/jumbo v27, "android.net.wifi.CONFIGURED_NETWORKS_CHANGE"
 
-    invoke-direct/range {v25 .. v26}, Landroid/content/IntentFilter;-><init>(Ljava/lang/String;)V
+    move-object/from16 v0, v25
+
+    move-object/from16 v1, v27
+
+    invoke-direct {v0, v1}, Landroid/content/IntentFilter;-><init>(Ljava/lang/String;)V
 
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/server/net/NetworkPolicyManagerService;->mContext:Landroid/content/Context;
 
-    move-object/from16 v26, v0
+    move-object/from16 v27, v0
 
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/android/server/net/NetworkPolicyManagerService;->mWifiStateReceiver:Landroid/content/BroadcastReceiver;
+    iget-object v0, v0, Lcom/android/server/net/NetworkPolicyManagerService;->mWifiConfigReceiver:Landroid/content/BroadcastReceiver;
 
-    move-object/from16 v27, v0
+    move-object/from16 v28, v0
 
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/server/net/NetworkPolicyManagerService;->mHandler:Landroid/os/Handler;
 
-    move-object/from16 v28, v0
+    move-object/from16 v29, v0
 
-    const/16 v29, 0x0
+    const/16 v30, 0x0
 
-    move-object/from16 v0, v26
+    move-object/from16 v0, v27
 
-    move-object/from16 v1, v27
+    move-object/from16 v1, v28
 
     move-object/from16 v2, v25
 
-    move-object/from16 v3, v29
+    move-object/from16 v3, v30
 
-    move-object/from16 v4, v28
+    move-object/from16 v4, v29
+
+    invoke-virtual {v0, v1, v2, v3, v4}, Landroid/content/Context;->registerReceiver(Landroid/content/BroadcastReceiver;Landroid/content/IntentFilter;Ljava/lang/String;Landroid/os/Handler;)Landroid/content/Intent;
+
+    new-instance v26, Landroid/content/IntentFilter;
+
+    const-string/jumbo v27, "android.net.wifi.STATE_CHANGE"
+
+    invoke-direct/range {v26 .. v27}, Landroid/content/IntentFilter;-><init>(Ljava/lang/String;)V
+
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcom/android/server/net/NetworkPolicyManagerService;->mContext:Landroid/content/Context;
+
+    move-object/from16 v27, v0
+
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcom/android/server/net/NetworkPolicyManagerService;->mWifiStateReceiver:Landroid/content/BroadcastReceiver;
+
+    move-object/from16 v28, v0
+
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcom/android/server/net/NetworkPolicyManagerService;->mHandler:Landroid/os/Handler;
+
+    move-object/from16 v29, v0
+
+    const/16 v30, 0x0
+
+    move-object/from16 v0, v27
+
+    move-object/from16 v1, v28
+
+    move-object/from16 v2, v26
+
+    move-object/from16 v3, v30
+
+    move-object/from16 v4, v29
 
     invoke-virtual {v0, v1, v2, v3, v4}, Landroid/content/Context;->registerReceiver(Landroid/content/BroadcastReceiver;Landroid/content/IntentFilter;Ljava/lang/String;Landroid/os/Handler;)Landroid/content/Intent;
 
@@ -15596,35 +15854,35 @@
 
     iget-object v0, v0, Lcom/android/server/net/NetworkPolicyManagerService;->mUsageStats:Landroid/app/usage/UsageStatsManagerInternal;
 
-    move-object/from16 v26, v0
+    move-object/from16 v27, v0
 
-    new-instance v27, Lcom/android/server/net/NetworkPolicyManagerService$AppIdleStateChangeListener;
+    new-instance v28, Lcom/android/server/net/NetworkPolicyManagerService$AppIdleStateChangeListener;
 
-    const/16 v28, 0x0
+    const/16 v29, 0x0
 
-    move-object/from16 v0, v27
+    move-object/from16 v0, v28
 
     move-object/from16 v1, p0
 
-    move-object/from16 v2, v28
+    move-object/from16 v2, v29
 
     invoke-direct {v0, v1, v2}, Lcom/android/server/net/NetworkPolicyManagerService$AppIdleStateChangeListener;-><init>(Lcom/android/server/net/NetworkPolicyManagerService;Lcom/android/server/net/NetworkPolicyManagerService$AppIdleStateChangeListener;)V
 
-    invoke-virtual/range {v26 .. v27}, Landroid/app/usage/UsageStatsManagerInternal;->addAppIdleStateChangeListener(Landroid/app/usage/UsageStatsManagerInternal$AppIdleStateChangeListener;)V
+    invoke-virtual/range {v27 .. v28}, Landroid/app/usage/UsageStatsManagerInternal;->addAppIdleStateChangeListener(Landroid/app/usage/UsageStatsManagerInternal$AppIdleStateChangeListener;)V
 
     new-instance v8, Landroid/content/IntentFilter;
 
     invoke-direct {v8}, Landroid/content/IntentFilter;-><init>()V
 
-    const-string/jumbo v26, "android.os.action.CHARGING"
+    const-string/jumbo v27, "android.os.action.CHARGING"
 
-    move-object/from16 v0, v26
+    move-object/from16 v0, v27
 
     invoke-virtual {v8, v0}, Landroid/content/IntentFilter;->addAction(Ljava/lang/String;)V
 
-    const-string/jumbo v26, "android.os.action.DISCHARGING"
+    const-string/jumbo v27, "android.os.action.DISCHARGING"
 
-    move-object/from16 v0, v26
+    move-object/from16 v0, v27
 
     invoke-virtual {v8, v0}, Landroid/content/IntentFilter;->addAction(Ljava/lang/String;)V
 
@@ -15632,17 +15890,17 @@
 
     iget-object v0, v0, Lcom/android/server/net/NetworkPolicyManagerService;->mContext:Landroid/content/Context;
 
-    move-object/from16 v26, v0
+    move-object/from16 v27, v0
 
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/server/net/NetworkPolicyManagerService;->mChargingStateReceiver:Landroid/content/BroadcastReceiver;
 
-    move-object/from16 v27, v0
+    move-object/from16 v28, v0
 
-    move-object/from16 v0, v26
+    move-object/from16 v0, v27
 
-    move-object/from16 v1, v27
+    move-object/from16 v1, v28
 
     invoke-virtual {v0, v1, v8}, Landroid/content/Context;->registerReceiver(Landroid/content/BroadcastReceiver;Landroid/content/IntentFilter;)Landroid/content/Intent;
 
@@ -15650,33 +15908,33 @@
 
     iget-object v0, v0, Lcom/android/server/net/NetworkPolicyManagerService;->mContext:Landroid/content/Context;
 
-    move-object/from16 v26, v0
+    move-object/from16 v27, v0
 
-    invoke-virtual/range {v26 .. v26}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
-
-    move-result-object v26
-
-    const-string/jumbo v27, "low_power_back_data_off"
-
-    invoke-static/range {v27 .. v27}, Landroid/provider/Settings$Global;->getUriFor(Ljava/lang/String;)Landroid/net/Uri;
+    invoke-virtual/range {v27 .. v27}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
     move-result-object v27
+
+    const-string/jumbo v28, "low_power_back_data_off"
+
+    invoke-static/range {v28 .. v28}, Landroid/provider/Settings$Global;->getUriFor(Ljava/lang/String;)Landroid/net/Uri;
+
+    move-result-object v28
 
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/server/net/NetworkPolicyManagerService;->mRestrictBgInLowPowerObserver:Landroid/database/ContentObserver;
 
-    move-object/from16 v28, v0
+    move-object/from16 v29, v0
 
-    const/16 v29, 0x1
+    const/16 v30, 0x1
 
-    move-object/from16 v0, v26
+    move-object/from16 v0, v27
 
-    move-object/from16 v1, v27
+    move-object/from16 v1, v28
 
-    move/from16 v2, v29
+    move/from16 v2, v30
 
-    move-object/from16 v3, v28
+    move-object/from16 v3, v29
 
     invoke-virtual {v0, v1, v2, v3}, Landroid/content/ContentResolver;->registerContentObserver(Landroid/net/Uri;ZLandroid/database/ContentObserver;)V
 
@@ -15684,41 +15942,41 @@
 
     iget-object v0, v0, Lcom/android/server/net/NetworkPolicyManagerService;->mContext:Landroid/content/Context;
 
-    move-object/from16 v26, v0
+    move-object/from16 v27, v0
 
-    invoke-virtual/range {v26 .. v26}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
-
-    move-result-object v26
-
-    const-string/jumbo v27, "ultra_power_mode_back_data_off"
-
-    invoke-static/range {v27 .. v27}, Landroid/provider/Settings$Global;->getUriFor(Ljava/lang/String;)Landroid/net/Uri;
+    invoke-virtual/range {v27 .. v27}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
     move-result-object v27
+
+    const-string/jumbo v28, "ultra_power_mode_back_data_off"
+
+    invoke-static/range {v28 .. v28}, Landroid/provider/Settings$Global;->getUriFor(Ljava/lang/String;)Landroid/net/Uri;
+
+    move-result-object v28
 
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/server/net/NetworkPolicyManagerService;->mRestrictBgInMaxLowPowerObserver:Landroid/database/ContentObserver;
 
-    move-object/from16 v28, v0
+    move-object/from16 v29, v0
 
-    const/16 v29, 0x1
+    const/16 v30, 0x1
 
-    move-object/from16 v0, v26
+    move-object/from16 v0, v27
 
-    move-object/from16 v1, v27
+    move-object/from16 v1, v28
 
-    move/from16 v2, v29
+    move/from16 v2, v30
 
-    move-object/from16 v3, v28
+    move-object/from16 v3, v29
 
     invoke-virtual {v0, v1, v2, v3}, Landroid/content/ContentResolver;->registerContentObserver(Landroid/net/Uri;ZLandroid/database/ContentObserver;)V
 
-    const-string/jumbo v26, "NetworkPolicy"
+    const-string/jumbo v27, "NetworkPolicy"
 
-    const-string/jumbo v27, ">> NetworkPolicyManagerService"
+    const-string/jumbo v28, ">> NetworkPolicyManagerService"
 
-    invoke-static/range {v26 .. v27}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static/range {v27 .. v28}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
     new-instance v17, Lcom/android/server/net/NetworkPolicyManagerService$VideoCallBroadcastReceiver;
 
@@ -15732,9 +15990,9 @@
 
     invoke-direct {v7}, Landroid/content/IntentFilter;-><init>()V
 
-    const-string/jumbo v26, "android.intent.action.PRECISE_CALL_STATE"
+    const-string/jumbo v27, "android.intent.action.PRECISE_CALL_STATE"
 
-    move-object/from16 v0, v26
+    move-object/from16 v0, v27
 
     invoke-virtual {v7, v0}, Landroid/content/IntentFilter;->addAction(Ljava/lang/String;)V
 
@@ -15742,27 +16000,27 @@
 
     iget-object v0, v0, Lcom/android/server/net/NetworkPolicyManagerService;->mContext:Landroid/content/Context;
 
-    move-object/from16 v26, v0
+    move-object/from16 v27, v0
 
-    move-object/from16 v0, v26
+    move-object/from16 v0, v27
 
     move-object/from16 v1, v17
 
     invoke-virtual {v0, v1, v7}, Landroid/content/Context;->registerReceiver(Landroid/content/BroadcastReceiver;Landroid/content/IntentFilter;)Landroid/content/Intent;
 
-    const-string/jumbo v26, "NetworkPolicy"
+    const-string/jumbo v27, "NetworkPolicy"
 
-    const-string/jumbo v27, "<< NetworkPolicyManagerService"
+    const-string/jumbo v28, "<< NetworkPolicyManagerService"
 
-    invoke-static/range {v26 .. v27}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static/range {v27 .. v28}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
     new-instance v16, Landroid/content/IntentFilter;
 
-    const-string/jumbo v26, "android.intent.action.LOCALE_CHANGED"
+    const-string/jumbo v27, "android.intent.action.LOCALE_CHANGED"
 
     move-object/from16 v0, v16
 
-    move-object/from16 v1, v26
+    move-object/from16 v1, v27
 
     invoke-direct {v0, v1}, Landroid/content/IntentFilter;-><init>(Ljava/lang/String;)V
 
@@ -15770,39 +16028,39 @@
 
     iget-object v0, v0, Lcom/android/server/net/NetworkPolicyManagerService;->mContext:Landroid/content/Context;
 
-    move-object/from16 v26, v0
+    move-object/from16 v27, v0
 
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/server/net/NetworkPolicyManagerService;->mLocaleReceiver:Landroid/content/BroadcastReceiver;
 
-    move-object/from16 v27, v0
+    move-object/from16 v28, v0
 
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/server/net/NetworkPolicyManagerService;->mHandler:Landroid/os/Handler;
 
-    move-object/from16 v28, v0
+    move-object/from16 v29, v0
 
-    const/16 v29, 0x0
+    const/16 v30, 0x0
 
-    move-object/from16 v0, v26
+    move-object/from16 v0, v27
 
-    move-object/from16 v1, v27
+    move-object/from16 v1, v28
 
     move-object/from16 v2, v16
 
-    move-object/from16 v3, v29
+    move-object/from16 v3, v30
 
-    move-object/from16 v4, v28
+    move-object/from16 v4, v29
 
     invoke-virtual {v0, v1, v2, v3, v4}, Landroid/content/Context;->registerReceiver(Landroid/content/BroadcastReceiver;Landroid/content/IntentFilter;Ljava/lang/String;Landroid/os/Handler;)Landroid/content/Intent;
 
     new-instance v9, Landroid/content/IntentFilter;
 
-    const-string/jumbo v26, "android.intent.action.CONFIGURATION_CHANGED"
+    const-string/jumbo v27, "android.intent.action.CONFIGURATION_CHANGED"
 
-    move-object/from16 v0, v26
+    move-object/from16 v0, v27
 
     invoke-direct {v9, v0}, Landroid/content/IntentFilter;-><init>(Ljava/lang/String;)V
 
@@ -15810,29 +16068,29 @@
 
     iget-object v0, v0, Lcom/android/server/net/NetworkPolicyManagerService;->mContext:Landroid/content/Context;
 
-    move-object/from16 v26, v0
+    move-object/from16 v27, v0
 
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/server/net/NetworkPolicyManagerService;->mConfigReceiver:Landroid/content/BroadcastReceiver;
 
-    move-object/from16 v27, v0
+    move-object/from16 v28, v0
 
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/server/net/NetworkPolicyManagerService;->mHandler:Landroid/os/Handler;
 
-    move-object/from16 v28, v0
+    move-object/from16 v29, v0
 
-    const/16 v29, 0x0
+    const/16 v30, 0x0
 
-    move-object/from16 v0, v26
+    move-object/from16 v0, v27
 
-    move-object/from16 v1, v27
+    move-object/from16 v1, v28
 
-    move-object/from16 v2, v29
+    move-object/from16 v2, v30
 
-    move-object/from16 v3, v28
+    move-object/from16 v3, v29
 
     invoke-virtual {v0, v1, v9, v2, v3}, Landroid/content/Context;->registerReceiver(Landroid/content/BroadcastReceiver;Landroid/content/IntentFilter;Ljava/lang/String;Landroid/os/Handler;)Landroid/content/Intent;
 
@@ -15840,33 +16098,85 @@
 
     iget-object v0, v0, Lcom/android/server/net/NetworkPolicyManagerService;->mContext:Landroid/content/Context;
 
-    move-object/from16 v26, v0
+    move-object/from16 v27, v0
 
-    invoke-virtual/range {v26 .. v26}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
+    invoke-virtual/range {v27 .. v27}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
-    move-result-object v26
+    move-result-object v27
 
-    invoke-virtual/range {v26 .. v26}, Landroid/content/res/Resources;->getConfiguration()Landroid/content/res/Configuration;
+    invoke-virtual/range {v27 .. v27}, Landroid/content/res/Resources;->getConfiguration()Landroid/content/res/Configuration;
 
-    move-result-object v26
+    move-result-object v27
 
-    move-object/from16 v0, v26
+    move-object/from16 v0, v27
 
     iget v0, v0, Landroid/content/res/Configuration;->densityDpi:I
 
-    move/from16 v26, v0
+    move/from16 v27, v0
 
-    move/from16 v0, v26
+    move/from16 v0, v27
 
     move-object/from16 v1, p0
 
     iput v0, v1, Lcom/android/server/net/NetworkPolicyManagerService;->mDensityDpi:I
+
+    new-instance v22, Landroid/content/IntentFilter;
+
+    invoke-direct/range {v22 .. v22}, Landroid/content/IntentFilter;-><init>()V
+
+    const-string/jumbo v27, "android.intent.action.ACTION_SUBINFO_RECORD_UPDATED"
+
+    move-object/from16 v0, v22
+
+    move-object/from16 v1, v27
+
+    invoke-virtual {v0, v1}, Landroid/content/IntentFilter;->addAction(Ljava/lang/String;)V
+
+    const-string/jumbo v27, "com.samsung.intent.action.SIMHOTSWAP"
+
+    move-object/from16 v0, v22
+
+    move-object/from16 v1, v27
+
+    invoke-virtual {v0, v1}, Landroid/content/IntentFilter;->addAction(Ljava/lang/String;)V
+
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcom/android/server/net/NetworkPolicyManagerService;->mContext:Landroid/content/Context;
+
+    move-object/from16 v27, v0
+
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcom/android/server/net/NetworkPolicyManagerService;->mSubIdReceiver:Landroid/content/BroadcastReceiver;
+
+    move-object/from16 v28, v0
+
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcom/android/server/net/NetworkPolicyManagerService;->mHandler:Landroid/os/Handler;
+
+    move-object/from16 v29, v0
+
+    const/16 v30, 0x0
+
+    move-object/from16 v0, v27
+
+    move-object/from16 v1, v28
+
+    move-object/from16 v2, v22
+
+    move-object/from16 v3, v30
+
+    move-object/from16 v4, v29
+
+    invoke-virtual {v0, v1, v2, v3, v4}, Landroid/content/Context;->registerReceiver(Landroid/content/BroadcastReceiver;Landroid/content/IntentFilter;Ljava/lang/String;Landroid/os/Handler;)Landroid/content/Intent;
     :try_end_9
     .catchall {:try_start_9 .. :try_end_9} :catchall_0
 
-    const-wide/32 v26, 0x200000
+    const-wide/32 v28, 0x200000
 
-    invoke-static/range {v26 .. v27}, Landroid/os/Trace;->traceEnd(J)V
+    invoke-static/range {v28 .. v29}, Landroid/os/Trace;->traceEnd(J)V
 
     return-void
 
@@ -15874,13 +16184,13 @@
     move-exception v15
 
     :try_start_a
-    const-string/jumbo v26, "NetworkPolicy"
+    const-string/jumbo v27, "NetworkPolicy"
 
-    const-string/jumbo v27, "buildFirewall exception"
+    const-string/jumbo v28, "buildFirewall exception"
 
-    move-object/from16 v0, v26
+    move-object/from16 v0, v27
 
-    move-object/from16 v1, v27
+    move-object/from16 v1, v28
 
     invoke-static {v0, v1, v15}, Landroid/util/Log;->wtf(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
     :try_end_a
@@ -15889,36 +16199,36 @@
     goto/16 :goto_0
 
     :catchall_0
-    move-exception v26
+    move-exception v27
 
     const-wide/32 v28, 0x200000
 
     invoke-static/range {v28 .. v29}, Landroid/os/Trace;->traceEnd(J)V
 
-    throw v26
+    throw v27
 
     :cond_6
-    const/16 v26, 0x1
+    const/16 v27, 0x1
 
     goto/16 :goto_1
 
     :catchall_1
-    move-exception v26
+    move-exception v27
 
     :try_start_b
-    monitor-exit v28
+    monitor-exit v29
 
-    throw v26
+    throw v27
     :try_end_b
     .catchall {:try_start_b .. :try_end_b} :catchall_2
 
     :catchall_2
-    move-exception v26
+    move-exception v27
 
     :try_start_c
-    monitor-exit v27
+    monitor-exit v28
 
-    throw v26
+    throw v27
     :try_end_c
     .catchall {:try_start_c .. :try_end_c} :catchall_0
 

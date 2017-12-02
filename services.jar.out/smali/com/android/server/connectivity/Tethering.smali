@@ -9517,6 +9517,12 @@
 
     if-eqz v4, :cond_c
 
+    invoke-static/range {v36 .. v36}, Lcom/android/internal/telephony/TelephonyFeatures;->isKdiSim(I)Z
+
+    move-result v4
+
+    if-eqz v4, :cond_c
+
     const/16 v27, 0x1
 
     :cond_c

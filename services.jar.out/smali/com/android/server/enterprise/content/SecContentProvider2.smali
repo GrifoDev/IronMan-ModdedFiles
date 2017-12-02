@@ -3712,9 +3712,9 @@
 
     move-result-object v38
 
-    if-eqz v38, :cond_7a
+    if-eqz v38, :cond_7b
 
-    if-eqz p3, :cond_7a
+    if-eqz p3, :cond_7b
 
     const-string/jumbo v5, "getSealedNotificationMessagesState"
 
@@ -5755,7 +5755,7 @@
 
     move-result v5
 
-    if-gtz v5, :cond_77
+    if-gtz v5, :cond_78
 
     :cond_72
     if-eqz p4, :cond_73
@@ -5774,7 +5774,7 @@
 
     move-result v5
 
-    if-eqz v5, :cond_79
+    if-eqz v5, :cond_77
 
     if-eqz p4, :cond_75
 
@@ -5782,7 +5782,7 @@
 
     move-result v5
 
-    if-gtz v5, :cond_78
+    if-gtz v5, :cond_79
 
     :cond_75
     if-eqz p4, :cond_76
@@ -5791,6 +5791,65 @@
     const/4 v5, 0x0
 
     return-object v5
+
+    :cond_77
+    const-string/jumbo v5, "getAirGestureOptionState"
+
+    move-object/from16 v0, p3
+
+    invoke-virtual {v0, v5}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v5
+
+    if-eqz v5, :cond_7a
+
+    const/16 v79, 0x1
+
+    const/4 v5, 0x0
+
+    :try_start_3b
+    move-object/from16 v0, v38
+
+    invoke-interface {v0, v5}, Lcom/samsung/android/knox/custom/IKnoxCustomManager;->getAirGestureOptionState(I)Z
+    :try_end_3b
+    .catch Landroid/os/RemoteException; {:try_start_3b .. :try_end_3b} :catch_3d
+
+    move-result v79
+
+    :goto_46
+    new-instance v53, Lcom/android/server/enterprise/content/EnterpriseMatrixCursor;
+
+    const/4 v5, 0x1
+
+    new-array v5, v5, [Ljava/lang/String;
+
+    const-string/jumbo v6, "getAirGestureOptionState"
+
+    const/4 v7, 0x0
+
+    aput-object v6, v5, v7
+
+    move-object/from16 v0, v53
+
+    invoke-direct {v0, v5}, Lcom/android/server/enterprise/content/EnterpriseMatrixCursor;-><init>([Ljava/lang/String;)V
+
+    const/4 v5, 0x1
+
+    new-array v5, v5, [Ljava/lang/Boolean;
+
+    invoke-static/range {v79 .. v79}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+
+    move-result-object v6
+
+    const/4 v7, 0x0
+
+    aput-object v6, v5, v7
+
+    move-object/from16 v0, v53
+
+    invoke-virtual {v0, v5}, Landroid/database/MatrixCursor;->addRow([Ljava/lang/Object;)V
+
+    goto/16 :goto_1f
 
     :catch_18
     move-exception v27
@@ -6247,23 +6306,23 @@
 
     goto/16 :goto_44
 
-    :cond_77
+    :cond_78
     const/16 v78, -0x1
 
     const/4 v5, 0x0
 
-    :try_start_3b
+    :try_start_3c
     aget-object v5, p4, v5
 
     move-object/from16 v0, v38
 
     invoke-interface {v0, v5}, Lcom/samsung/android/knox/custom/IKnoxCustomManager;->getAutoCallNumberDelay(Ljava/lang/String;)I
-    :try_end_3b
-    .catch Landroid/os/RemoteException; {:try_start_3b .. :try_end_3b} :catch_3b
+    :try_end_3c
+    .catch Landroid/os/RemoteException; {:try_start_3c .. :try_end_3c} :catch_3b
 
     move-result v78
 
-    :goto_46
+    :goto_47
     new-instance v53, Lcom/android/server/enterprise/content/EnterpriseMatrixCursor;
 
     const/4 v5, 0x1
@@ -6309,25 +6368,25 @@
 
     invoke-static {v5, v6, v0}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    goto :goto_46
+    goto :goto_47
 
-    :cond_78
+    :cond_79
     const/16 v78, -0x1
 
     const/4 v5, 0x0
 
-    :try_start_3c
+    :try_start_3d
     aget-object v5, p4, v5
 
     move-object/from16 v0, v38
 
     invoke-interface {v0, v5}, Lcom/samsung/android/knox/custom/IKnoxCustomManager;->getAutoCallNumberAnswerMode(Ljava/lang/String;)I
-    :try_end_3c
-    .catch Landroid/os/RemoteException; {:try_start_3c .. :try_end_3c} :catch_3c
+    :try_end_3d
+    .catch Landroid/os/RemoteException; {:try_start_3d .. :try_end_3d} :catch_3c
 
     move-result v78
 
-    :goto_47
+    :goto_48
     new-instance v53, Lcom/android/server/enterprise/content/EnterpriseMatrixCursor;
 
     const/4 v5, 0x1
@@ -6373,14 +6432,27 @@
 
     invoke-static {v5, v6, v0}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    goto :goto_47
+    goto :goto_48
 
-    :cond_79
+    :catch_3d
+    move-exception v27
+
+    const-string/jumbo v5, "SecContentProvider2"
+
+    const-string/jumbo v6, "Failed talking with KnoxCustomManager service"
+
+    move-object/from16 v0, v27
+
+    invoke-static {v5, v6, v0}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
+
+    goto/16 :goto_46
+
+    :cond_7a
     const/4 v5, 0x0
 
     return-object v5
 
-    :cond_7a
+    :cond_7b
     if-nez p3, :cond_0
 
     goto/16 :goto_0
@@ -6404,22 +6476,22 @@
 
     move-result v5
 
-    if-eqz v5, :cond_7c
+    if-eqz v5, :cond_7d
 
-    if-eqz p4, :cond_7b
+    if-eqz p4, :cond_7c
 
     invoke-static/range {p4 .. p4}, Ljava/lang/reflect/Array;->getLength(Ljava/lang/Object;)I
 
     move-result v5
 
-    if-gtz v5, :cond_a8
+    if-gtz v5, :cond_a9
 
-    :cond_7b
+    :cond_7c
     const/4 v5, 0x0
 
     return-object v5
 
-    :cond_7c
+    :cond_7d
     const-string/jumbo v5, "isApplicationInstalled"
 
     move-object/from16 v0, p3
@@ -6428,22 +6500,22 @@
 
     move-result v5
 
-    if-eqz v5, :cond_7e
+    if-eqz v5, :cond_7f
 
-    if-eqz p4, :cond_7d
+    if-eqz p4, :cond_7e
 
     invoke-static/range {p4 .. p4}, Ljava/lang/reflect/Array;->getLength(Ljava/lang/Object;)I
 
     move-result v5
 
-    if-gtz v5, :cond_a9
+    if-gtz v5, :cond_aa
 
-    :cond_7d
+    :cond_7e
     const/4 v5, 0x0
 
     return-object v5
 
-    :cond_7e
+    :cond_7f
     const-string/jumbo v5, "isIntentDisabled"
 
     move-object/from16 v0, p3
@@ -6452,22 +6524,22 @@
 
     move-result v5
 
-    if-eqz v5, :cond_80
+    if-eqz v5, :cond_81
 
-    if-eqz p4, :cond_7f
+    if-eqz p4, :cond_80
 
     invoke-static/range {p4 .. p4}, Ljava/lang/reflect/Array;->getLength(Ljava/lang/Object;)I
 
     move-result v5
 
-    if-gtz v5, :cond_aa
+    if-gtz v5, :cond_ab
 
-    :cond_7f
+    :cond_80
     const/4 v5, 0x0
 
     return-object v5
 
-    :cond_80
+    :cond_81
     const-string/jumbo v5, "getApplicationNotificationMode"
 
     move-object/from16 v0, p3
@@ -6476,22 +6548,22 @@
 
     move-result v5
 
-    if-eqz v5, :cond_82
+    if-eqz v5, :cond_83
 
-    if-eqz p4, :cond_81
+    if-eqz p4, :cond_82
 
     invoke-static/range {p4 .. p4}, Ljava/lang/reflect/Array;->getLength(Ljava/lang/Object;)I
 
     move-result v5
 
-    if-gtz v5, :cond_ab
+    if-gtz v5, :cond_ac
 
-    :cond_81
+    :cond_82
     const/4 v5, 0x0
 
     return-object v5
 
-    :cond_82
+    :cond_83
     const-string/jumbo v5, "getAppInstallToSdCard"
 
     move-object/from16 v0, p3
@@ -6500,7 +6572,7 @@
 
     move-result v5
 
-    if-eqz v5, :cond_84
+    if-eqz v5, :cond_85
 
     const/16 v72, 0x1
 
@@ -6536,11 +6608,11 @@
 
     invoke-virtual {v0, v5}, Landroid/database/MatrixCursor;->addRow([Ljava/lang/Object;)V
 
-    :cond_83
-    :goto_48
+    :cond_84
+    :goto_49
     return-object v53
 
-    :cond_84
+    :cond_85
     const-string/jumbo v5, "isApplicationForceStopDisabled"
 
     move-object/from16 v0, p3
@@ -6549,9 +6621,9 @@
 
     move-result v5
 
-    if-eqz v5, :cond_86
+    if-eqz v5, :cond_87
 
-    if-eqz p4, :cond_85
+    if-eqz p4, :cond_86
 
     invoke-static/range {p4 .. p4}, Ljava/lang/reflect/Array;->getLength(Ljava/lang/Object;)I
 
@@ -6559,14 +6631,14 @@
 
     const/4 v6, 0x5
 
-    if-gt v5, v6, :cond_ac
+    if-gt v5, v6, :cond_ad
 
-    :cond_85
+    :cond_86
     const/4 v5, 0x0
 
     return-object v5
 
-    :cond_86
+    :cond_87
     const-string/jumbo v5, "isApplicationClearDataDisabled"
 
     move-object/from16 v0, p3
@@ -6575,35 +6647,9 @@
 
     move-result v5
 
-    if-eqz v5, :cond_88
+    if-eqz v5, :cond_89
 
-    if-eqz p4, :cond_87
-
-    invoke-static/range {p4 .. p4}, Ljava/lang/reflect/Array;->getLength(Ljava/lang/Object;)I
-
-    move-result v5
-
-    const/4 v6, 0x2
-
-    if-gt v5, v6, :cond_ad
-
-    :cond_87
-    const/4 v5, 0x0
-
-    return-object v5
-
-    :cond_88
-    const-string/jumbo v5, "isApplicationClearCacheDisabled"
-
-    move-object/from16 v0, p3
-
-    invoke-virtual {v0, v5}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v5
-
-    if-eqz v5, :cond_8a
-
-    if-eqz p4, :cond_89
+    if-eqz p4, :cond_88
 
     invoke-static/range {p4 .. p4}, Ljava/lang/reflect/Array;->getLength(Ljava/lang/Object;)I
 
@@ -6613,12 +6659,38 @@
 
     if-gt v5, v6, :cond_ae
 
-    :cond_89
+    :cond_88
     const/4 v5, 0x0
 
     return-object v5
 
+    :cond_89
+    const-string/jumbo v5, "isApplicationClearCacheDisabled"
+
+    move-object/from16 v0, p3
+
+    invoke-virtual {v0, v5}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v5
+
+    if-eqz v5, :cond_8b
+
+    if-eqz p4, :cond_8a
+
+    invoke-static/range {p4 .. p4}, Ljava/lang/reflect/Array;->getLength(Ljava/lang/Object;)I
+
+    move-result v5
+
+    const/4 v6, 0x2
+
+    if-gt v5, v6, :cond_af
+
     :cond_8a
+    const/4 v5, 0x0
+
+    return-object v5
+
+    :cond_8b
     const-string/jumbo v5, "getApplicationNameFromDb"
 
     move-object/from16 v0, p3
@@ -6627,35 +6699,9 @@
 
     move-result v5
 
-    if-eqz v5, :cond_8c
+    if-eqz v5, :cond_8d
 
-    if-eqz p4, :cond_8b
-
-    invoke-static/range {p4 .. p4}, Ljava/lang/reflect/Array;->getLength(Ljava/lang/Object;)I
-
-    move-result v5
-
-    const/4 v6, 0x1
-
-    if-gt v5, v6, :cond_af
-
-    :cond_8b
-    const/4 v5, 0x0
-
-    return-object v5
-
-    :cond_8c
-    const-string/jumbo v5, "isPackageUpdateAllowed"
-
-    move-object/from16 v0, p3
-
-    invoke-virtual {v0, v5}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v5
-
-    if-eqz v5, :cond_8e
-
-    if-eqz p4, :cond_8d
+    if-eqz p4, :cond_8c
 
     invoke-static/range {p4 .. p4}, Ljava/lang/reflect/Array;->getLength(Ljava/lang/Object;)I
 
@@ -6665,12 +6711,38 @@
 
     if-gt v5, v6, :cond_b0
 
-    :cond_8d
+    :cond_8c
     const/4 v5, 0x0
 
     return-object v5
 
+    :cond_8d
+    const-string/jumbo v5, "isPackageUpdateAllowed"
+
+    move-object/from16 v0, p3
+
+    invoke-virtual {v0, v5}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v5
+
+    if-eqz v5, :cond_8f
+
+    if-eqz p4, :cond_8e
+
+    invoke-static/range {p4 .. p4}, Ljava/lang/reflect/Array;->getLength(Ljava/lang/Object;)I
+
+    move-result v5
+
+    const/4 v6, 0x1
+
+    if-gt v5, v6, :cond_b1
+
     :cond_8e
+    const/4 v5, 0x0
+
+    return-object v5
+
+    :cond_8f
     const-string/jumbo v5, "getApplicationComponentState"
 
     move-object/from16 v0, p3
@@ -6679,22 +6751,22 @@
 
     move-result v5
 
-    if-eqz v5, :cond_90
+    if-eqz v5, :cond_91
 
-    if-eqz p4, :cond_8f
+    if-eqz p4, :cond_90
 
     invoke-static/range {p4 .. p4}, Ljava/lang/reflect/Array;->getLength(Ljava/lang/Object;)I
 
     move-result v5
 
-    if-gtz v5, :cond_b1
+    if-gtz v5, :cond_b2
 
-    :cond_8f
+    :cond_90
     const/4 v5, 0x0
 
     return-object v5
 
-    :cond_90
+    :cond_91
     const-string/jumbo v5, "getApplicationStateEnabled"
 
     move-object/from16 v0, p3
@@ -6703,22 +6775,22 @@
 
     move-result v5
 
-    if-eqz v5, :cond_92
+    if-eqz v5, :cond_93
 
-    if-eqz p4, :cond_91
+    if-eqz p4, :cond_92
 
     invoke-static/range {p4 .. p4}, Ljava/lang/reflect/Array;->getLength(Ljava/lang/Object;)I
 
     move-result v5
 
-    if-gtz v5, :cond_b2
+    if-gtz v5, :cond_b3
 
-    :cond_91
+    :cond_92
     const/4 v5, 0x0
 
     return-object v5
 
-    :cond_92
+    :cond_93
     const-string/jumbo v5, "isUsbDevicePermittedForPackage"
 
     move-object/from16 v0, p3
@@ -6727,9 +6799,9 @@
 
     move-result v5
 
-    if-eqz v5, :cond_94
+    if-eqz v5, :cond_95
 
-    if-eqz p4, :cond_93
+    if-eqz p4, :cond_94
 
     invoke-static/range {p4 .. p4}, Ljava/lang/reflect/Array;->getLength(Ljava/lang/Object;)I
 
@@ -6737,14 +6809,14 @@
 
     const/4 v6, 0x2
 
-    if-gt v5, v6, :cond_b3
+    if-gt v5, v6, :cond_b4
 
-    :cond_93
+    :cond_94
     const/4 v5, 0x0
 
     return-object v5
 
-    :cond_94
+    :cond_95
     const-string/jumbo v5, "getApplicationIconFromDb"
 
     move-object/from16 v0, p3
@@ -6753,9 +6825,9 @@
 
     move-result v5
 
-    if-eqz v5, :cond_96
+    if-eqz v5, :cond_97
 
-    if-eqz p4, :cond_95
+    if-eqz p4, :cond_96
 
     invoke-static/range {p4 .. p4}, Ljava/lang/reflect/Array;->getLength(Ljava/lang/Object;)I
 
@@ -6763,14 +6835,14 @@
 
     const/4 v6, 0x1
 
-    if-ge v5, v6, :cond_b4
+    if-ge v5, v6, :cond_b5
 
-    :cond_95
+    :cond_96
     const/4 v5, 0x0
 
     return-object v5
 
-    :cond_96
+    :cond_97
     const-string/jumbo v5, "isChangeSmsDefaultAppAllowed"
 
     move-object/from16 v0, p3
@@ -6779,9 +6851,9 @@
 
     move-result v5
 
-    if-eqz v5, :cond_98
+    if-eqz v5, :cond_99
 
-    if-eqz p4, :cond_97
+    if-eqz p4, :cond_98
 
     invoke-static/range {p4 .. p4}, Ljava/lang/reflect/Array;->getLength(Ljava/lang/Object;)I
 
@@ -6789,14 +6861,14 @@
 
     const/4 v6, 0x2
 
-    if-ge v5, v6, :cond_b5
+    if-ge v5, v6, :cond_b6
 
-    :cond_97
+    :cond_98
     const/4 v5, 0x0
 
     return-object v5
 
-    :cond_98
+    :cond_99
     const-string/jumbo v5, "isChangeAssistDefaultAppAllowed"
 
     move-object/from16 v0, p3
@@ -6805,9 +6877,9 @@
 
     move-result v5
 
-    if-eqz v5, :cond_9a
+    if-eqz v5, :cond_9b
 
-    if-eqz p4, :cond_99
+    if-eqz p4, :cond_9a
 
     invoke-static/range {p4 .. p4}, Ljava/lang/reflect/Array;->getLength(Ljava/lang/Object;)I
 
@@ -6815,14 +6887,14 @@
 
     const/4 v6, 0x1
 
-    if-ge v5, v6, :cond_b6
+    if-ge v5, v6, :cond_b7
 
-    :cond_99
+    :cond_9a
     const/4 v5, 0x0
 
     return-object v5
 
-    :cond_9a
+    :cond_9b
     const-string/jumbo v5, "isApplicationSetToDefault"
 
     move-object/from16 v0, p3
@@ -6831,35 +6903,9 @@
 
     move-result v5
 
-    if-eqz v5, :cond_9c
+    if-eqz v5, :cond_9d
 
-    if-eqz p4, :cond_9b
-
-    invoke-static/range {p4 .. p4}, Ljava/lang/reflect/Array;->getLength(Ljava/lang/Object;)I
-
-    move-result v5
-
-    const/4 v6, 0x2
-
-    if-ge v5, v6, :cond_b7
-
-    :cond_9b
-    const/4 v5, 0x0
-
-    return-object v5
-
-    :cond_9c
-    const-string/jumbo v5, "getDefaultApplicationInternal"
-
-    move-object/from16 v0, p3
-
-    invoke-virtual {v0, v5}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v5
-
-    if-eqz v5, :cond_9e
-
-    if-eqz p4, :cond_9d
+    if-eqz p4, :cond_9c
 
     invoke-static/range {p4 .. p4}, Ljava/lang/reflect/Array;->getLength(Ljava/lang/Object;)I
 
@@ -6869,13 +6915,13 @@
 
     if-ge v5, v6, :cond_b8
 
-    :cond_9d
+    :cond_9c
     const/4 v5, 0x0
 
     return-object v5
 
-    :cond_9e
-    const-string/jumbo v5, "getApplicationStateDisabledList"
+    :cond_9d
+    const-string/jumbo v5, "getDefaultApplicationInternal"
 
     move-object/from16 v0, p3
 
@@ -6885,19 +6931,45 @@
 
     if-eqz v5, :cond_9f
 
+    if-eqz p4, :cond_9e
+
+    invoke-static/range {p4 .. p4}, Ljava/lang/reflect/Array;->getLength(Ljava/lang/Object;)I
+
+    move-result v5
+
+    const/4 v6, 0x2
+
+    if-ge v5, v6, :cond_b9
+
+    :cond_9e
+    const/4 v5, 0x0
+
+    return-object v5
+
+    :cond_9f
+    const-string/jumbo v5, "getApplicationStateDisabledList"
+
+    move-object/from16 v0, p3
+
+    invoke-virtual {v0, v5}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v5
+
+    if-eqz v5, :cond_a0
+
     move/from16 v0, v17
 
     invoke-virtual {v4, v0}, Lcom/android/server/enterprise/application/ApplicationPolicy;->getApplicationStateDisabledList(I)Ljava/util/List;
 
     move-result-object v12
 
-    if-eqz v12, :cond_b9
+    if-eqz v12, :cond_ba
 
     invoke-interface {v12}, Ljava/util/List;->isEmpty()Z
 
     move-result v5
 
-    if-nez v5, :cond_b9
+    if-nez v5, :cond_ba
 
     new-instance v53, Lcom/android/server/enterprise/content/EnterpriseMatrixCursor;
 
@@ -6917,12 +6989,12 @@
 
     move-result-object v88
 
-    :goto_49
+    :goto_4a
     invoke-interface/range {v88 .. v88}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v5
 
-    if-eqz v5, :cond_83
+    if-eqz v5, :cond_84
 
     invoke-interface/range {v88 .. v88}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -6966,9 +7038,9 @@
 
     invoke-virtual {v0, v5}, Landroid/database/MatrixCursor;->addRow([Ljava/lang/Object;)V
 
-    goto :goto_49
+    goto :goto_4a
 
-    :cond_9f
+    :cond_a0
     const-string/jumbo v5, "getApplicationInstallUninstallList"
 
     move-object/from16 v0, p3
@@ -6977,9 +7049,9 @@
 
     move-result v5
 
-    if-eqz v5, :cond_a1
+    if-eqz v5, :cond_a2
 
-    if-eqz p4, :cond_a0
+    if-eqz p4, :cond_a1
 
     invoke-static/range {p4 .. p4}, Ljava/lang/reflect/Array;->getLength(Ljava/lang/Object;)I
 
@@ -6987,9 +7059,9 @@
 
     const/4 v6, 0x1
 
-    if-ge v5, v6, :cond_ba
+    if-ge v5, v6, :cond_bb
 
-    :cond_a0
+    :cond_a1
     const-string/jumbo v5, "SecContentProvider2"
 
     const-string/jumbo v6, "getApplicationInstallUninstallList selectionArgs is null"
@@ -7000,7 +7072,7 @@
 
     return-object v5
 
-    :cond_a1
+    :cond_a2
     const-string/jumbo v5, "getAppInstallationMode"
 
     move-object/from16 v0, p3
@@ -7009,7 +7081,7 @@
 
     move-result v5
 
-    if-eqz v5, :cond_a2
+    if-eqz v5, :cond_a3
 
     new-instance v5, Lcom/samsung/android/knox/ContextInfo;
 
@@ -7051,9 +7123,9 @@
 
     invoke-virtual {v0, v5}, Landroid/database/MatrixCursor;->addRow([Ljava/lang/Object;)V
 
-    goto/16 :goto_48
+    goto/16 :goto_49
 
-    :cond_a2
+    :cond_a3
     const-string/jumbo v5, "getApplicationUninstallationMode"
 
     move-object/from16 v0, p3
@@ -7062,7 +7134,7 @@
 
     move-result v5
 
-    if-eqz v5, :cond_a3
+    if-eqz v5, :cond_a4
 
     new-instance v5, Lcom/samsung/android/knox/ContextInfo;
 
@@ -7104,9 +7176,9 @@
 
     invoke-virtual {v0, v5}, Landroid/database/MatrixCursor;->addRow([Ljava/lang/Object;)V
 
-    goto/16 :goto_48
+    goto/16 :goto_49
 
-    :cond_a3
+    :cond_a4
     const-string/jumbo v5, "getAllPackagesFromBatteryOptimizationWhiteList"
 
     move-object/from16 v0, p3
@@ -7115,7 +7187,7 @@
 
     move-result v5
 
-    if-eqz v5, :cond_a4
+    if-eqz v5, :cond_a5
 
     invoke-virtual {v4}, Lcom/android/server/enterprise/application/ApplicationPolicy;->getAllPackagesFromBatteryOptimizationWhiteList()Ljava/util/List;
 
@@ -7135,24 +7207,24 @@
 
     invoke-direct {v0, v5}, Lcom/android/server/enterprise/content/EnterpriseMatrixCursor;-><init>([Ljava/lang/String;)V
 
-    if-eqz v73, :cond_83
+    if-eqz v73, :cond_84
 
     invoke-interface/range {v73 .. v73}, Ljava/util/List;->isEmpty()Z
 
     move-result v5
 
-    if-nez v5, :cond_83
+    if-nez v5, :cond_84
 
     invoke-interface/range {v73 .. v73}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
     move-result-object v68
 
-    :goto_4a
+    :goto_4b
     invoke-interface/range {v68 .. v68}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v5
 
-    if-eqz v5, :cond_83
+    if-eqz v5, :cond_84
 
     invoke-interface/range {v68 .. v68}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -7172,9 +7244,9 @@
 
     invoke-virtual {v0, v5}, Landroid/database/MatrixCursor;->addRow([Ljava/lang/Object;)V
 
-    goto :goto_4a
+    goto :goto_4b
 
-    :cond_a4
+    :cond_a5
     const-string/jumbo v5, "getPackagesFromDisableClipboardBlackList"
 
     move-object/from16 v0, p3
@@ -7183,19 +7255,19 @@
 
     move-result v5
 
-    if-eqz v5, :cond_a5
+    if-eqz v5, :cond_a6
 
     const/16 v71, 0x0
 
     const/16 v20, 0x0
 
-    if-eqz p4, :cond_bc
+    if-eqz p4, :cond_bd
 
     invoke-static/range {p4 .. p4}, Ljava/lang/reflect/Array;->getLength(Ljava/lang/Object;)I
 
     move-result v5
 
-    if-lez v5, :cond_bc
+    if-lez v5, :cond_bd
 
     const/4 v5, 0x0
 
@@ -7217,7 +7289,7 @@
 
     move-result-object v20
 
-    :goto_4b
+    :goto_4c
     new-instance v53, Lcom/android/server/enterprise/content/EnterpriseMatrixCursor;
 
     const/4 v5, 0x1
@@ -7232,24 +7304,24 @@
 
     invoke-direct {v0, v5}, Lcom/android/server/enterprise/content/EnterpriseMatrixCursor;-><init>([Ljava/lang/String;)V
 
-    if-eqz v20, :cond_bd
+    if-eqz v20, :cond_be
 
     invoke-interface/range {v20 .. v20}, Ljava/util/List;->isEmpty()Z
 
     move-result v5
 
-    if-nez v5, :cond_bd
+    if-nez v5, :cond_be
 
     invoke-interface/range {v20 .. v20}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
     move-result-object v88
 
-    :goto_4c
+    :goto_4d
     invoke-interface/range {v88 .. v88}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v5
 
-    if-eqz v5, :cond_83
+    if-eqz v5, :cond_84
 
     invoke-interface/range {v88 .. v88}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -7269,9 +7341,9 @@
 
     invoke-virtual {v0, v5}, Landroid/database/MatrixCursor;->addRow([Ljava/lang/Object;)V
 
-    goto :goto_4c
+    goto :goto_4d
 
-    :cond_a5
+    :cond_a6
     const-string/jumbo v5, "getPackagesFromDisableClipboardWhiteList"
 
     move-object/from16 v0, p3
@@ -7280,19 +7352,19 @@
 
     move-result v5
 
-    if-eqz v5, :cond_a6
+    if-eqz v5, :cond_a7
 
     const/16 v71, 0x0
 
     const/16 v22, 0x0
 
-    if-eqz p4, :cond_be
+    if-eqz p4, :cond_bf
 
     invoke-static/range {p4 .. p4}, Ljava/lang/reflect/Array;->getLength(Ljava/lang/Object;)I
 
     move-result v5
 
-    if-lez v5, :cond_be
+    if-lez v5, :cond_bf
 
     const/4 v5, 0x0
 
@@ -7314,7 +7386,7 @@
 
     move-result-object v22
 
-    :goto_4d
+    :goto_4e
     new-instance v53, Lcom/android/server/enterprise/content/EnterpriseMatrixCursor;
 
     const/4 v5, 0x1
@@ -7329,24 +7401,24 @@
 
     invoke-direct {v0, v5}, Lcom/android/server/enterprise/content/EnterpriseMatrixCursor;-><init>([Ljava/lang/String;)V
 
-    if-eqz v22, :cond_bf
+    if-eqz v22, :cond_c0
 
     invoke-interface/range {v22 .. v22}, Ljava/util/List;->isEmpty()Z
 
     move-result v5
 
-    if-nez v5, :cond_bf
+    if-nez v5, :cond_c0
 
     invoke-interface/range {v22 .. v22}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
     move-result-object v88
 
-    :goto_4e
+    :goto_4f
     invoke-interface/range {v88 .. v88}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v5
 
-    if-eqz v5, :cond_83
+    if-eqz v5, :cond_84
 
     invoke-interface/range {v88 .. v88}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -7366,9 +7438,9 @@
 
     invoke-virtual {v0, v5}, Landroid/database/MatrixCursor;->addRow([Ljava/lang/Object;)V
 
-    goto :goto_4e
+    goto :goto_4f
 
-    :cond_a6
+    :cond_a7
     const-string/jumbo v5, "getPackagesFromDisableClipboardBlackListPerUidInternal"
 
     move-object/from16 v0, p3
@@ -7377,19 +7449,19 @@
 
     move-result v5
 
-    if-eqz v5, :cond_a7
+    if-eqz v5, :cond_a8
 
     const/16 v71, 0x0
 
     const/16 v21, 0x0
 
-    if-eqz p4, :cond_c0
+    if-eqz p4, :cond_c1
 
     invoke-static/range {p4 .. p4}, Ljava/lang/reflect/Array;->getLength(Ljava/lang/Object;)I
 
     move-result v5
 
-    if-lez v5, :cond_c0
+    if-lez v5, :cond_c1
 
     const/4 v5, 0x0
 
@@ -7447,9 +7519,9 @@
 
     invoke-virtual {v0, v1}, Lcom/android/server/enterprise/content/EnterpriseMatrixCursor;->setBundle(Landroid/os/Bundle;)V
 
-    goto/16 :goto_48
+    goto/16 :goto_49
 
-    :cond_a7
+    :cond_a8
     const-string/jumbo v5, "getPackagesFromDisableClipboardWhiteListPerUidInternal"
 
     move-object/from16 v0, p3
@@ -7458,19 +7530,19 @@
 
     move-result v5
 
-    if-eqz v5, :cond_c2
+    if-eqz v5, :cond_c3
 
     const/16 v71, 0x0
 
     const/16 v23, 0x0
 
-    if-eqz p4, :cond_c1
+    if-eqz p4, :cond_c2
 
     invoke-static/range {p4 .. p4}, Ljava/lang/reflect/Array;->getLength(Ljava/lang/Object;)I
 
     move-result v5
 
-    if-lez v5, :cond_c1
+    if-lez v5, :cond_c2
 
     const/4 v5, 0x0
 
@@ -7528,9 +7600,9 @@
 
     invoke-virtual {v0, v1}, Lcom/android/server/enterprise/content/EnterpriseMatrixCursor;->setBundle(Landroid/os/Bundle;)V
 
-    goto/16 :goto_48
+    goto/16 :goto_49
 
-    :cond_a8
+    :cond_a9
     new-instance v5, Lcom/samsung/android/knox/ContextInfo;
 
     move/from16 v0, v17
@@ -7577,9 +7649,9 @@
 
     invoke-virtual {v0, v5}, Landroid/database/MatrixCursor;->addRow([Ljava/lang/Object;)V
 
-    goto/16 :goto_48
+    goto/16 :goto_49
 
-    :cond_a9
+    :cond_aa
     new-instance v5, Lcom/samsung/android/knox/ContextInfo;
 
     move/from16 v0, v17
@@ -7626,9 +7698,9 @@
 
     invoke-virtual {v0, v5}, Landroid/database/MatrixCursor;->addRow([Ljava/lang/Object;)V
 
-    goto/16 :goto_48
+    goto/16 :goto_49
 
-    :cond_aa
+    :cond_ab
     const/4 v5, 0x0
 
     aget-object v5, p4, v5
@@ -7675,9 +7747,9 @@
 
     invoke-virtual {v0, v5}, Landroid/database/MatrixCursor;->addRow([Ljava/lang/Object;)V
 
-    goto/16 :goto_48
+    goto/16 :goto_49
 
-    :cond_ab
+    :cond_ac
     new-instance v5, Lcom/samsung/android/knox/ContextInfo;
 
     move/from16 v0, v17
@@ -7728,9 +7800,9 @@
 
     invoke-virtual {v0, v5}, Landroid/database/MatrixCursor;->addRow([Ljava/lang/Object;)V
 
-    goto/16 :goto_48
+    goto/16 :goto_49
 
-    :cond_ac
+    :cond_ad
     const/4 v5, 0x0
 
     aget-object v5, p4, v5
@@ -7799,9 +7871,9 @@
 
     invoke-virtual {v0, v5}, Landroid/database/MatrixCursor;->addRow([Ljava/lang/Object;)V
 
-    goto/16 :goto_48
+    goto/16 :goto_49
 
-    :cond_ad
+    :cond_ae
     const/4 v5, 0x0
 
     aget-object v5, p4, v5
@@ -7858,9 +7930,9 @@
 
     invoke-virtual {v0, v5}, Landroid/database/MatrixCursor;->addRow([Ljava/lang/Object;)V
 
-    goto/16 :goto_48
+    goto/16 :goto_49
 
-    :cond_ae
+    :cond_af
     const/4 v5, 0x0
 
     aget-object v5, p4, v5
@@ -7917,9 +7989,9 @@
 
     invoke-virtual {v0, v5}, Landroid/database/MatrixCursor;->addRow([Ljava/lang/Object;)V
 
-    goto/16 :goto_48
+    goto/16 :goto_49
 
-    :cond_af
+    :cond_b0
     const/4 v5, 0x0
 
     aget-object v5, p4, v5
@@ -7964,9 +8036,9 @@
 
     invoke-virtual {v0, v5}, Landroid/database/MatrixCursor;->addRow([Ljava/lang/Object;)V
 
-    goto/16 :goto_48
+    goto/16 :goto_49
 
-    :cond_b0
+    :cond_b1
     const/4 v5, 0x0
 
     aget-object v5, p4, v5
@@ -8015,9 +8087,9 @@
 
     invoke-virtual {v0, v5}, Landroid/database/MatrixCursor;->addRow([Ljava/lang/Object;)V
 
-    goto/16 :goto_48
+    goto/16 :goto_49
 
-    :cond_b1
+    :cond_b2
     new-instance v6, Lcom/samsung/android/knox/ContextInfo;
 
     move/from16 v0, v17
@@ -8070,9 +8142,9 @@
 
     invoke-virtual {v0, v5}, Landroid/database/MatrixCursor;->addRow([Ljava/lang/Object;)V
 
-    goto/16 :goto_48
+    goto/16 :goto_49
 
-    :cond_b2
+    :cond_b3
     new-instance v5, Lcom/samsung/android/knox/ContextInfo;
 
     move/from16 v0, v17
@@ -8119,9 +8191,9 @@
 
     invoke-virtual {v0, v5}, Landroid/database/MatrixCursor;->addRow([Ljava/lang/Object;)V
 
-    goto/16 :goto_48
+    goto/16 :goto_49
 
-    :cond_b3
+    :cond_b4
     const/4 v5, 0x0
 
     aget-object v5, p4, v5
@@ -8180,9 +8252,9 @@
 
     invoke-virtual {v0, v5}, Landroid/database/MatrixCursor;->addRow([Ljava/lang/Object;)V
 
-    goto/16 :goto_48
+    goto/16 :goto_49
 
-    :cond_b4
+    :cond_b5
     new-instance v5, Lcom/samsung/android/knox/ContextInfo;
 
     move/from16 v0, v17
@@ -8225,9 +8297,9 @@
 
     invoke-virtual {v0, v5}, Landroid/database/MatrixCursor;->addRow([Ljava/lang/Object;)V
 
-    goto/16 :goto_48
+    goto/16 :goto_49
 
-    :cond_b5
+    :cond_b6
     const/4 v5, 0x0
 
     aget-object v5, p4, v5
@@ -8276,9 +8348,9 @@
 
     invoke-virtual {v0, v5}, Landroid/database/MatrixCursor;->addRow([Ljava/lang/Object;)V
 
-    goto/16 :goto_48
+    goto/16 :goto_49
 
-    :cond_b6
+    :cond_b7
     const/4 v5, 0x0
 
     aget-object v5, p4, v5
@@ -8323,9 +8395,9 @@
 
     invoke-virtual {v0, v5}, Landroid/database/MatrixCursor;->addRow([Ljava/lang/Object;)V
 
-    goto/16 :goto_48
+    goto/16 :goto_49
 
-    :cond_b7
+    :cond_b8
     const/4 v5, 0x0
 
     aget-object v5, p4, v5
@@ -8374,25 +8446,25 @@
 
     invoke-virtual {v0, v5}, Landroid/database/MatrixCursor;->addRow([Ljava/lang/Object;)V
 
-    goto/16 :goto_48
+    goto/16 :goto_49
 
-    :cond_b8
+    :cond_b9
     const/16 v37, 0x0
 
     const/4 v5, 0x0
 
-    :try_start_3d
+    :try_start_3e
     aget-object v5, p4, v5
 
     const/4 v6, 0x0
 
     invoke-static {v5, v6}, Landroid/content/Intent;->parseUri(Ljava/lang/String;I)Landroid/content/Intent;
-    :try_end_3d
-    .catch Ljava/net/URISyntaxException; {:try_start_3d .. :try_end_3d} :catch_3d
+    :try_end_3e
+    .catch Ljava/net/URISyntaxException; {:try_start_3e .. :try_end_3e} :catch_3e
 
     move-result-object v37
 
-    :goto_4f
+    :goto_50
     const/4 v5, 0x1
 
     aget-object v5, p4, v5
@@ -8423,7 +8495,7 @@
 
     invoke-direct {v0, v5}, Lcom/android/server/enterprise/content/EnterpriseMatrixCursor;-><init>([Ljava/lang/String;)V
 
-    if-eqz v24, :cond_83
+    if-eqz v24, :cond_84
 
     const/4 v5, 0x1
 
@@ -8441,9 +8513,9 @@
 
     invoke-virtual {v0, v5}, Landroid/database/MatrixCursor;->addRow([Ljava/lang/Object;)V
 
-    goto/16 :goto_48
+    goto/16 :goto_49
 
-    :catch_3d
+    :catch_3e
     move-exception v29
 
     const-string/jumbo v5, "SecContentProvider2"
@@ -8470,9 +8542,9 @@
 
     invoke-static {v5, v6}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    goto :goto_4f
+    goto :goto_50
 
-    :cond_b9
+    :cond_ba
     const-string/jumbo v5, "SecContentProvider2"
 
     const-string/jumbo v6, "getApplicationStateDisabledList null"
@@ -8483,7 +8555,7 @@
 
     return-object v5
 
-    :cond_ba
+    :cond_bb
     const-string/jumbo v5, "SecContentProvider2"
 
     const-string/jumbo v6, "getApplicationInstallUninstallList"
@@ -8514,24 +8586,24 @@
 
     invoke-direct {v0, v5}, Lcom/android/server/enterprise/content/EnterpriseMatrixCursor;-><init>([Ljava/lang/String;)V
 
-    if-eqz v36, :cond_bb
+    if-eqz v36, :cond_bc
 
     invoke-interface/range {v36 .. v36}, Ljava/util/List;->isEmpty()Z
 
     move-result v5
 
-    if-nez v5, :cond_bb
+    if-nez v5, :cond_bc
 
     invoke-interface/range {v36 .. v36}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
     move-result-object v88
 
-    :goto_50
+    :goto_51
     invoke-interface/range {v88 .. v88}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v5
 
-    if-eqz v5, :cond_83
+    if-eqz v5, :cond_84
 
     invoke-interface/range {v88 .. v88}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -8575,9 +8647,9 @@
 
     invoke-virtual {v0, v5}, Landroid/database/MatrixCursor;->addRow([Ljava/lang/Object;)V
 
-    goto :goto_50
+    goto :goto_51
 
-    :cond_bb
+    :cond_bc
     const-string/jumbo v5, "SecContentProvider2"
 
     const-string/jumbo v6, "getApplicationInstallUninstallList null"
@@ -8588,7 +8660,7 @@
 
     return-object v5
 
-    :cond_bc
+    :cond_bd
     new-instance v5, Lcom/samsung/android/knox/ContextInfo;
 
     move/from16 v0, v17
@@ -8599,14 +8671,14 @@
 
     move-result-object v20
 
-    goto/16 :goto_4b
+    goto/16 :goto_4c
 
-    :cond_bd
+    :cond_be
     const/4 v5, 0x0
 
     return-object v5
 
-    :cond_be
+    :cond_bf
     new-instance v5, Lcom/samsung/android/knox/ContextInfo;
 
     move/from16 v0, v17
@@ -8617,12 +8689,7 @@
 
     move-result-object v20
 
-    goto/16 :goto_4d
-
-    :cond_bf
-    const/4 v5, 0x0
-
-    return-object v5
+    goto/16 :goto_4e
 
     :cond_c0
     const/4 v5, 0x0
@@ -8635,6 +8702,11 @@
     return-object v5
 
     :cond_c2
+    const/4 v5, 0x0
+
+    return-object v5
+
+    :cond_c3
     const-string/jumbo v5, "SecContentProvider2"
 
     const-string/jumbo v6, "return null"
@@ -8666,22 +8738,22 @@
 
     move-result v5
 
-    if-eqz v5, :cond_c4
+    if-eqz v5, :cond_c5
 
-    if-eqz p4, :cond_c3
+    if-eqz p4, :cond_c4
 
     invoke-static/range {p4 .. p4}, Ljava/lang/reflect/Array;->getLength(Ljava/lang/Object;)I
 
     move-result v5
 
-    if-gtz v5, :cond_de
+    if-gtz v5, :cond_df
 
-    :cond_c3
+    :cond_c4
     const/4 v5, 0x0
 
     return-object v5
 
-    :cond_c4
+    :cond_c5
     const-string/jumbo v5, "getRequiredEncryptedMIMEMessages"
 
     move-object/from16 v0, p3
@@ -8690,22 +8762,22 @@
 
     move-result v5
 
-    if-eqz v5, :cond_c6
+    if-eqz v5, :cond_c7
 
-    if-eqz p4, :cond_c5
+    if-eqz p4, :cond_c6
 
     invoke-static/range {p4 .. p4}, Ljava/lang/reflect/Array;->getLength(Ljava/lang/Object;)I
 
     move-result v5
 
-    if-gtz v5, :cond_df
+    if-gtz v5, :cond_e0
 
-    :cond_c5
+    :cond_c6
     const/4 v5, 0x0
 
     return-object v5
 
-    :cond_c6
+    :cond_c7
     const-string/jumbo v5, "getForceSMIMECertificate"
 
     move-object/from16 v0, p3
@@ -8714,22 +8786,22 @@
 
     move-result v5
 
-    if-eqz v5, :cond_c8
+    if-eqz v5, :cond_c9
 
-    if-eqz p4, :cond_c7
+    if-eqz p4, :cond_c8
 
     invoke-static/range {p4 .. p4}, Ljava/lang/reflect/Array;->getLength(Ljava/lang/Object;)I
 
     move-result v5
 
-    if-gtz v5, :cond_e0
+    if-gtz v5, :cond_e1
 
-    :cond_c7
+    :cond_c8
     const/4 v5, 0x0
 
     return-object v5
 
-    :cond_c8
+    :cond_c9
     const-string/jumbo v5, "isIncomingAttachmentsAllowed"
 
     move-object/from16 v0, p3
@@ -8738,22 +8810,22 @@
 
     move-result v5
 
-    if-eqz v5, :cond_ca
+    if-eqz v5, :cond_cb
 
-    if-eqz p4, :cond_c9
+    if-eqz p4, :cond_ca
 
     invoke-static/range {p4 .. p4}, Ljava/lang/reflect/Array;->getLength(Ljava/lang/Object;)I
 
     move-result v5
 
-    if-gtz v5, :cond_e1
+    if-gtz v5, :cond_e2
 
-    :cond_c9
+    :cond_ca
     const/4 v5, 0x0
 
     return-object v5
 
-    :cond_ca
+    :cond_cb
     const-string/jumbo v5, "getIncomingAttachmentSize"
 
     move-object/from16 v0, p3
@@ -8762,22 +8834,22 @@
 
     move-result v5
 
-    if-eqz v5, :cond_cc
+    if-eqz v5, :cond_cd
 
-    if-eqz p4, :cond_cb
+    if-eqz p4, :cond_cc
 
     invoke-static/range {p4 .. p4}, Ljava/lang/reflect/Array;->getLength(Ljava/lang/Object;)I
 
     move-result v5
 
-    if-gtz v5, :cond_e2
+    if-gtz v5, :cond_e3
 
-    :cond_cb
+    :cond_cc
     const/4 v5, 0x0
 
     return-object v5
 
-    :cond_cc
+    :cond_cd
     const-string/jumbo v5, "getMaxCalendarAgeFilter"
 
     move-object/from16 v0, p3
@@ -8786,22 +8858,22 @@
 
     move-result v5
 
-    if-eqz v5, :cond_ce
+    if-eqz v5, :cond_cf
 
-    if-eqz p4, :cond_cd
+    if-eqz p4, :cond_ce
 
     invoke-static/range {p4 .. p4}, Ljava/lang/reflect/Array;->getLength(Ljava/lang/Object;)I
 
     move-result v5
 
-    if-gtz v5, :cond_e3
+    if-gtz v5, :cond_e4
 
-    :cond_cd
+    :cond_ce
     const/4 v5, 0x0
 
     return-object v5
 
-    :cond_ce
+    :cond_cf
     const-string/jumbo v5, "getMaxEmailBodyTruncationSize"
 
     move-object/from16 v0, p3
@@ -8810,22 +8882,22 @@
 
     move-result v5
 
-    if-eqz v5, :cond_d0
+    if-eqz v5, :cond_d1
 
-    if-eqz p4, :cond_cf
+    if-eqz p4, :cond_d0
 
     invoke-static/range {p4 .. p4}, Ljava/lang/reflect/Array;->getLength(Ljava/lang/Object;)I
 
     move-result v5
 
-    if-gtz v5, :cond_e4
+    if-gtz v5, :cond_e5
 
-    :cond_cf
+    :cond_d0
     const/4 v5, 0x0
 
     return-object v5
 
-    :cond_d0
+    :cond_d1
     const-string/jumbo v5, "getMaxEmailHTMLBodyTruncationSize"
 
     move-object/from16 v0, p3
@@ -8834,22 +8906,22 @@
 
     move-result v5
 
-    if-eqz v5, :cond_d2
+    if-eqz v5, :cond_d3
 
-    if-eqz p4, :cond_d1
+    if-eqz p4, :cond_d2
 
     invoke-static/range {p4 .. p4}, Ljava/lang/reflect/Array;->getLength(Ljava/lang/Object;)I
 
     move-result v5
 
-    if-gtz v5, :cond_e5
+    if-gtz v5, :cond_e6
 
-    :cond_d1
+    :cond_d2
     const/4 v5, 0x0
 
     return-object v5
 
-    :cond_d2
+    :cond_d3
     const-string/jumbo v5, "getForceSMIMECertificateForSigning"
 
     move-object/from16 v0, p3
@@ -8858,22 +8930,22 @@
 
     move-result v5
 
-    if-eqz v5, :cond_d4
+    if-eqz v5, :cond_d5
 
-    if-eqz p4, :cond_d3
+    if-eqz p4, :cond_d4
 
     invoke-static/range {p4 .. p4}, Ljava/lang/reflect/Array;->getLength(Ljava/lang/Object;)I
 
     move-result v5
 
-    if-gtz v5, :cond_e6
+    if-gtz v5, :cond_e7
 
-    :cond_d3
+    :cond_d4
     const/4 v5, 0x0
 
     return-object v5
 
-    :cond_d4
+    :cond_d5
     const-string/jumbo v5, "getForceSMIMECertificateForEncryption"
 
     move-object/from16 v0, p3
@@ -8882,22 +8954,22 @@
 
     move-result v5
 
-    if-eqz v5, :cond_d6
+    if-eqz v5, :cond_d7
 
-    if-eqz p4, :cond_d5
+    if-eqz p4, :cond_d6
 
     invoke-static/range {p4 .. p4}, Ljava/lang/reflect/Array;->getLength(Ljava/lang/Object;)I
 
     move-result v5
 
-    if-gtz v5, :cond_e7
+    if-gtz v5, :cond_e8
 
-    :cond_d5
+    :cond_d6
     const/4 v5, 0x0
 
     return-object v5
 
-    :cond_d6
+    :cond_d7
     const-string/jumbo v5, "getAccountEmailPassword"
 
     move-object/from16 v0, p3
@@ -8906,22 +8978,22 @@
 
     move-result v5
 
-    if-eqz v5, :cond_d8
+    if-eqz v5, :cond_d9
 
-    if-eqz p4, :cond_d7
+    if-eqz p4, :cond_d8
 
     invoke-static/range {p4 .. p4}, Ljava/lang/reflect/Array;->getLength(Ljava/lang/Object;)I
 
     move-result v5
 
-    if-gtz v5, :cond_e8
+    if-gtz v5, :cond_e9
 
-    :cond_d7
+    :cond_d8
     const/4 v5, 0x0
 
     return-object v5
 
-    :cond_d8
+    :cond_d9
     const-string/jumbo v5, "getAccountCertificatePassword"
 
     move-object/from16 v0, p3
@@ -8930,22 +9002,22 @@
 
     move-result v5
 
-    if-eqz v5, :cond_da
+    if-eqz v5, :cond_db
 
-    if-eqz p4, :cond_d9
+    if-eqz p4, :cond_da
 
     invoke-static/range {p4 .. p4}, Ljava/lang/reflect/Array;->getLength(Ljava/lang/Object;)I
 
     move-result v5
 
-    if-gtz v5, :cond_e9
+    if-gtz v5, :cond_ea
 
-    :cond_d9
+    :cond_da
     const/4 v5, 0x0
 
     return-object v5
 
-    :cond_da
+    :cond_db
     const-string/jumbo v5, "getMaxEmailAgeFilter"
 
     move-object/from16 v0, p3
@@ -8954,22 +9026,22 @@
 
     move-result v5
 
-    if-eqz v5, :cond_dc
+    if-eqz v5, :cond_dd
 
-    if-eqz p4, :cond_db
+    if-eqz p4, :cond_dc
 
     invoke-static/range {p4 .. p4}, Ljava/lang/reflect/Array;->getLength(Ljava/lang/Object;)I
 
     move-result v5
 
-    if-gtz v5, :cond_ea
+    if-gtz v5, :cond_eb
 
-    :cond_db
+    :cond_dc
     const/4 v5, 0x0
 
     return-object v5
 
-    :cond_dc
+    :cond_dd
     const-string/jumbo v5, "setAccountEmailPassword"
 
     move-object/from16 v0, p3
@@ -8978,9 +9050,9 @@
 
     move-result v5
 
-    if-eqz v5, :cond_ec
+    if-eqz v5, :cond_ed
 
-    if-eqz p4, :cond_dd
+    if-eqz p4, :cond_de
 
     invoke-static/range {p4 .. p4}, Ljava/lang/reflect/Array;->getLength(Ljava/lang/Object;)I
 
@@ -8988,14 +9060,14 @@
 
     const/4 v6, 0x1
 
-    if-ge v5, v6, :cond_eb
+    if-ge v5, v6, :cond_ec
 
-    :cond_dd
+    :cond_de
     const/4 v5, 0x0
 
     return-object v5
 
-    :cond_de
+    :cond_df
     new-instance v5, Lcom/samsung/android/knox/ContextInfo;
 
     move/from16 v0, v17
@@ -9048,10 +9120,10 @@
 
     invoke-virtual {v0, v5}, Landroid/database/MatrixCursor;->addRow([Ljava/lang/Object;)V
 
-    :goto_51
+    :goto_52
     return-object v53
 
-    :cond_df
+    :cond_e0
     new-instance v5, Lcom/samsung/android/knox/ContextInfo;
 
     move/from16 v0, v17
@@ -9104,9 +9176,9 @@
 
     invoke-virtual {v0, v5}, Landroid/database/MatrixCursor;->addRow([Ljava/lang/Object;)V
 
-    goto :goto_51
+    goto :goto_52
 
-    :cond_e0
+    :cond_e1
     new-instance v5, Lcom/samsung/android/knox/ContextInfo;
 
     move/from16 v0, v17
@@ -9159,9 +9231,9 @@
 
     invoke-virtual {v0, v5}, Landroid/database/MatrixCursor;->addRow([Ljava/lang/Object;)V
 
-    goto :goto_51
+    goto :goto_52
 
-    :cond_e1
+    :cond_e2
     new-instance v5, Lcom/samsung/android/knox/ContextInfo;
 
     move/from16 v0, v17
@@ -9214,9 +9286,9 @@
 
     invoke-virtual {v0, v5}, Landroid/database/MatrixCursor;->addRow([Ljava/lang/Object;)V
 
-    goto/16 :goto_51
+    goto/16 :goto_52
 
-    :cond_e2
+    :cond_e3
     new-instance v5, Lcom/samsung/android/knox/ContextInfo;
 
     move/from16 v0, v17
@@ -9269,9 +9341,9 @@
 
     invoke-virtual {v0, v5}, Landroid/database/MatrixCursor;->addRow([Ljava/lang/Object;)V
 
-    goto/16 :goto_51
+    goto/16 :goto_52
 
-    :cond_e3
+    :cond_e4
     new-instance v5, Lcom/samsung/android/knox/ContextInfo;
 
     move/from16 v0, v17
@@ -9324,9 +9396,9 @@
 
     invoke-virtual {v0, v5}, Landroid/database/MatrixCursor;->addRow([Ljava/lang/Object;)V
 
-    goto/16 :goto_51
+    goto/16 :goto_52
 
-    :cond_e4
+    :cond_e5
     new-instance v5, Lcom/samsung/android/knox/ContextInfo;
 
     move/from16 v0, v17
@@ -9379,9 +9451,9 @@
 
     invoke-virtual {v0, v5}, Landroid/database/MatrixCursor;->addRow([Ljava/lang/Object;)V
 
-    goto/16 :goto_51
+    goto/16 :goto_52
 
-    :cond_e5
+    :cond_e6
     new-instance v5, Lcom/samsung/android/knox/ContextInfo;
 
     move/from16 v0, v17
@@ -9434,9 +9506,9 @@
 
     invoke-virtual {v0, v5}, Landroid/database/MatrixCursor;->addRow([Ljava/lang/Object;)V
 
-    goto/16 :goto_51
+    goto/16 :goto_52
 
-    :cond_e6
+    :cond_e7
     new-instance v5, Lcom/samsung/android/knox/ContextInfo;
 
     move/from16 v0, v17
@@ -9489,9 +9561,9 @@
 
     invoke-virtual {v0, v5}, Landroid/database/MatrixCursor;->addRow([Ljava/lang/Object;)V
 
-    goto/16 :goto_51
+    goto/16 :goto_52
 
-    :cond_e7
+    :cond_e8
     new-instance v5, Lcom/samsung/android/knox/ContextInfo;
 
     move/from16 v0, v17
@@ -9544,9 +9616,9 @@
 
     invoke-virtual {v0, v5}, Landroid/database/MatrixCursor;->addRow([Ljava/lang/Object;)V
 
-    goto/16 :goto_51
+    goto/16 :goto_52
 
-    :cond_e8
+    :cond_e9
     new-instance v5, Lcom/samsung/android/knox/ContextInfo;
 
     move/from16 v0, v17
@@ -9595,9 +9667,9 @@
 
     invoke-virtual {v0, v5}, Landroid/database/MatrixCursor;->addRow([Ljava/lang/Object;)V
 
-    goto/16 :goto_51
+    goto/16 :goto_52
 
-    :cond_e9
+    :cond_ea
     new-instance v5, Lcom/samsung/android/knox/ContextInfo;
 
     move/from16 v0, v17
@@ -9646,9 +9718,9 @@
 
     invoke-virtual {v0, v5}, Landroid/database/MatrixCursor;->addRow([Ljava/lang/Object;)V
 
-    goto/16 :goto_51
+    goto/16 :goto_52
 
-    :cond_ea
+    :cond_eb
     new-instance v5, Lcom/samsung/android/knox/ContextInfo;
 
     move/from16 v0, v17
@@ -9701,9 +9773,9 @@
 
     invoke-virtual {v0, v5}, Landroid/database/MatrixCursor;->addRow([Ljava/lang/Object;)V
 
-    goto/16 :goto_51
+    goto/16 :goto_52
 
-    :cond_eb
+    :cond_ec
     new-instance v5, Lcom/samsung/android/knox/ContextInfo;
 
     move/from16 v0, v17
@@ -9752,9 +9824,9 @@
 
     invoke-virtual {v0, v5}, Landroid/database/MatrixCursor;->addRow([Ljava/lang/Object;)V
 
-    goto/16 :goto_51
+    goto/16 :goto_52
 
-    :cond_ec
+    :cond_ed
     const-string/jumbo v5, "SecContentProvider2"
 
     const-string/jumbo v6, "return null"
@@ -9786,7 +9858,7 @@
 
     move-result v5
 
-    if-eqz v5, :cond_ee
+    if-eqz v5, :cond_ef
 
     new-instance v5, Lcom/samsung/android/knox/ContextInfo;
 
@@ -9832,11 +9904,11 @@
 
     invoke-virtual {v0, v5}, Landroid/database/MatrixCursor;->addRow([Ljava/lang/Object;)V
 
-    :cond_ed
-    :goto_52
+    :cond_ee
+    :goto_53
     return-object v53
 
-    :cond_ee
+    :cond_ef
     const-string/jumbo v5, "getAllowUserProfiles"
 
     move-object/from16 v0, p3
@@ -9845,22 +9917,22 @@
 
     move-result v5
 
-    if-eqz v5, :cond_f0
+    if-eqz v5, :cond_f1
 
-    if-eqz p4, :cond_ef
+    if-eqz p4, :cond_f0
 
     invoke-static/range {p4 .. p4}, Ljava/lang/reflect/Array;->getLength(Ljava/lang/Object;)I
 
     move-result v5
 
-    if-gtz v5, :cond_fd
+    if-gtz v5, :cond_fe
 
-    :cond_ef
+    :cond_f0
     const/4 v5, 0x0
 
     return-object v5
 
-    :cond_f0
+    :cond_f1
     const-string/jumbo v5, "getAutomaticConnectionToWifi"
 
     move-object/from16 v0, p3
@@ -9869,7 +9941,7 @@
 
     move-result v5
 
-    if-eqz v5, :cond_f1
+    if-eqz v5, :cond_f2
 
     new-instance v5, Lcom/samsung/android/knox/ContextInfo;
 
@@ -9915,9 +9987,9 @@
 
     invoke-virtual {v0, v5}, Landroid/database/MatrixCursor;->addRow([Ljava/lang/Object;)V
 
-    goto :goto_52
+    goto :goto_53
 
-    :cond_f1
+    :cond_f2
     const-string/jumbo v5, "getPasswordHidden"
 
     move-object/from16 v0, p3
@@ -9926,7 +9998,7 @@
 
     move-result v5
 
-    if-eqz v5, :cond_f2
+    if-eqz v5, :cond_f3
 
     new-instance v5, Lcom/samsung/android/knox/ContextInfo;
 
@@ -9972,9 +10044,9 @@
 
     invoke-virtual {v0, v5}, Landroid/database/MatrixCursor;->addRow([Ljava/lang/Object;)V
 
-    goto/16 :goto_52
+    goto/16 :goto_53
 
-    :cond_f2
+    :cond_f3
     const-string/jumbo v5, "getPromptCredentialsEnabled"
 
     move-object/from16 v0, p3
@@ -9983,7 +10055,7 @@
 
     move-result v5
 
-    if-eqz v5, :cond_f3
+    if-eqz v5, :cond_f4
 
     new-instance v5, Lcom/samsung/android/knox/ContextInfo;
 
@@ -10029,9 +10101,9 @@
 
     invoke-virtual {v0, v5}, Landroid/database/MatrixCursor;->addRow([Ljava/lang/Object;)V
 
-    goto/16 :goto_52
+    goto/16 :goto_53
 
-    :cond_f3
+    :cond_f4
     const-string/jumbo v5, "isEnterpriseNetwork"
 
     move-object/from16 v0, p3
@@ -10040,22 +10112,22 @@
 
     move-result v5
 
-    if-eqz v5, :cond_f5
+    if-eqz v5, :cond_f6
 
-    if-eqz p4, :cond_f4
+    if-eqz p4, :cond_f5
 
     invoke-static/range {p4 .. p4}, Ljava/lang/reflect/Array;->getLength(Ljava/lang/Object;)I
 
     move-result v5
 
-    if-gtz v5, :cond_fe
+    if-gtz v5, :cond_ff
 
-    :cond_f4
+    :cond_f5
     const/4 v5, 0x0
 
     return-object v5
 
-    :cond_f5
+    :cond_f6
     const-string/jumbo v5, "isWifiApSettingUserModificationAllowed"
 
     move-object/from16 v0, p3
@@ -10064,7 +10136,7 @@
 
     move-result v5
 
-    if-eqz v5, :cond_f6
+    if-eqz v5, :cond_f7
 
     new-instance v5, Lcom/samsung/android/knox/ContextInfo;
 
@@ -10110,9 +10182,9 @@
 
     invoke-virtual {v0, v5}, Landroid/database/MatrixCursor;->addRow([Ljava/lang/Object;)V
 
-    goto/16 :goto_52
+    goto/16 :goto_53
 
-    :cond_f6
+    :cond_f7
     const-string/jumbo v5, "isWifiStateChangeAllowed"
 
     move-object/from16 v0, p3
@@ -10121,7 +10193,7 @@
 
     move-result v5
 
-    if-eqz v5, :cond_f7
+    if-eqz v5, :cond_f8
 
     new-instance v5, Lcom/samsung/android/knox/ContextInfo;
 
@@ -10167,9 +10239,9 @@
 
     invoke-virtual {v0, v5}, Landroid/database/MatrixCursor;->addRow([Ljava/lang/Object;)V
 
-    goto/16 :goto_52
+    goto/16 :goto_53
 
-    :cond_f7
+    :cond_f8
     const-string/jumbo v5, "isOpenWifiApAllowed"
 
     move-object/from16 v0, p3
@@ -10178,7 +10250,7 @@
 
     move-result v5
 
-    if-eqz v5, :cond_f8
+    if-eqz v5, :cond_f9
 
     new-instance v5, Lcom/samsung/android/knox/ContextInfo;
 
@@ -10224,9 +10296,9 @@
 
     invoke-virtual {v0, v5}, Landroid/database/MatrixCursor;->addRow([Ljava/lang/Object;)V
 
-    goto/16 :goto_52
+    goto/16 :goto_53
 
-    :cond_f8
+    :cond_f9
     const-string/jumbo v5, "getAllSsidBlacklist"
 
     move-object/from16 v0, p3
@@ -10235,7 +10307,7 @@
 
     move-result v5
 
-    if-eqz v5, :cond_fa
+    if-eqz v5, :cond_fb
 
     new-instance v5, Lcom/samsung/android/knox/ContextInfo;
 
@@ -10265,15 +10337,15 @@
 
     invoke-direct {v0, v5}, Lcom/android/server/enterprise/content/EnterpriseMatrixCursor;-><init>([Ljava/lang/String;)V
 
-    if-eqz v15, :cond_f9
+    if-eqz v15, :cond_fa
 
     invoke-interface {v15}, Ljava/util/List;->isEmpty()Z
 
     move-result v5
 
-    if-eqz v5, :cond_ff
+    if-eqz v5, :cond_100
 
-    :cond_f9
+    :cond_fa
     const/4 v5, 0x1
 
     new-array v5, v5, [Ljava/lang/String;
@@ -10288,9 +10360,9 @@
 
     invoke-virtual {v0, v5}, Landroid/database/MatrixCursor;->addRow([Ljava/lang/Object;)V
 
-    goto/16 :goto_52
+    goto/16 :goto_53
 
-    :cond_fa
+    :cond_fb
     const-string/jumbo v5, "getAllSsidWhitelist"
 
     move-object/from16 v0, p3
@@ -10299,7 +10371,7 @@
 
     move-result v5
 
-    if-eqz v5, :cond_fc
+    if-eqz v5, :cond_fd
 
     new-instance v5, Lcom/samsung/android/knox/ContextInfo;
 
@@ -10329,15 +10401,15 @@
 
     invoke-direct {v0, v5}, Lcom/android/server/enterprise/content/EnterpriseMatrixCursor;-><init>([Ljava/lang/String;)V
 
-    if-eqz v89, :cond_fb
+    if-eqz v89, :cond_fc
 
     invoke-interface/range {v89 .. v89}, Ljava/util/List;->isEmpty()Z
 
     move-result v5
 
-    if-eqz v5, :cond_100
+    if-eqz v5, :cond_101
 
-    :cond_fb
+    :cond_fc
     const/4 v5, 0x1
 
     new-array v5, v5, [Ljava/lang/String;
@@ -10352,9 +10424,9 @@
 
     invoke-virtual {v0, v5}, Landroid/database/MatrixCursor;->addRow([Ljava/lang/Object;)V
 
-    goto/16 :goto_52
+    goto/16 :goto_53
 
-    :cond_fc
+    :cond_fd
     const-string/jumbo v5, "isWifiSsidRestrictionActive"
 
     move-object/from16 v0, p3
@@ -10363,7 +10435,7 @@
 
     move-result v5
 
-    if-eqz v5, :cond_101
+    if-eqz v5, :cond_102
 
     new-instance v5, Lcom/samsung/android/knox/ContextInfo;
 
@@ -10409,9 +10481,9 @@
 
     invoke-virtual {v0, v5}, Landroid/database/MatrixCursor;->addRow([Ljava/lang/Object;)V
 
-    goto/16 :goto_52
+    goto/16 :goto_53
 
-    :cond_fd
+    :cond_fe
     new-instance v5, Lcom/samsung/android/knox/ContextInfo;
 
     move/from16 v0, v17
@@ -10466,9 +10538,9 @@
 
     invoke-virtual {v0, v5}, Landroid/database/MatrixCursor;->addRow([Ljava/lang/Object;)V
 
-    goto/16 :goto_52
+    goto/16 :goto_53
 
-    :cond_fe
+    :cond_ff
     const/4 v5, 0x0
 
     aget-object v5, p4, v5
@@ -10511,19 +10583,19 @@
 
     invoke-virtual {v0, v5}, Landroid/database/MatrixCursor;->addRow([Ljava/lang/Object;)V
 
-    goto/16 :goto_52
+    goto/16 :goto_53
 
-    :cond_ff
+    :cond_100
     invoke-interface {v15}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
     move-result-object v88
 
-    :goto_53
+    :goto_54
     invoke-interface/range {v88 .. v88}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v5
 
-    if-eqz v5, :cond_ed
+    if-eqz v5, :cond_ee
 
     invoke-interface/range {v88 .. v88}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -10567,19 +10639,19 @@
 
     invoke-virtual {v0, v5}, Landroid/database/MatrixCursor;->addRow([Ljava/lang/Object;)V
 
-    goto :goto_53
+    goto :goto_54
 
-    :cond_100
+    :cond_101
     invoke-interface/range {v89 .. v89}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
     move-result-object v88
 
-    :goto_54
+    :goto_55
     invoke-interface/range {v88 .. v88}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v5
 
-    if-eqz v5, :cond_ed
+    if-eqz v5, :cond_ee
 
     invoke-interface/range {v88 .. v88}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -10623,9 +10695,9 @@
 
     invoke-virtual {v0, v5}, Landroid/database/MatrixCursor;->addRow([Ljava/lang/Object;)V
 
-    goto :goto_54
+    goto :goto_55
 
-    :cond_101
+    :cond_102
     const/4 v5, 0x0
 
     return-object v5
@@ -10649,7 +10721,7 @@
 
     move-result v5
 
-    if-eqz v5, :cond_103
+    if-eqz v5, :cond_104
 
     new-instance v5, Lcom/samsung/android/knox/ContextInfo;
 
@@ -10695,11 +10767,11 @@
 
     invoke-virtual {v0, v5}, Landroid/database/MatrixCursor;->addRow([Ljava/lang/Object;)V
 
-    :cond_102
-    :goto_55
+    :cond_103
+    :goto_56
     return-object v53
 
-    :cond_103
+    :cond_104
     const-string/jumbo v5, "isMultiWindowModeAllowed"
 
     move-object/from16 v0, p3
@@ -10708,49 +10780,23 @@
 
     move-result v5
 
-    if-eqz v5, :cond_105
+    if-eqz v5, :cond_106
 
-    if-eqz p4, :cond_104
+    if-eqz p4, :cond_105
 
     invoke-static/range {p4 .. p4}, Ljava/lang/reflect/Array;->getLength(Ljava/lang/Object;)I
 
     move-result v5
 
-    if-gtz v5, :cond_114
-
-    :cond_104
-    const/4 v5, 0x0
-
-    return-object v5
+    if-gtz v5, :cond_115
 
     :cond_105
-    const-string/jumbo v5, "isMultiWindowModeAllowedAsUser"
-
-    move-object/from16 v0, p3
-
-    invoke-virtual {v0, v5}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v5
-
-    if-eqz v5, :cond_107
-
-    if-eqz p4, :cond_106
-
-    invoke-static/range {p4 .. p4}, Ljava/lang/reflect/Array;->getLength(Ljava/lang/Object;)I
-
-    move-result v5
-
-    const/4 v6, 0x1
-
-    if-ge v5, v6, :cond_115
-
-    :cond_106
     const/4 v5, 0x0
 
     return-object v5
 
-    :cond_107
-    const-string/jumbo v5, "isAirCommandModeAllowed"
+    :cond_106
+    const-string/jumbo v5, "isMultiWindowModeAllowedAsUser"
 
     move-object/from16 v0, p3
 
@@ -10760,7 +10806,33 @@
 
     if-eqz v5, :cond_108
 
-    if-nez p4, :cond_116
+    if-eqz p4, :cond_107
+
+    invoke-static/range {p4 .. p4}, Ljava/lang/reflect/Array;->getLength(Ljava/lang/Object;)I
+
+    move-result v5
+
+    const/4 v6, 0x1
+
+    if-ge v5, v6, :cond_116
+
+    :cond_107
+    const/4 v5, 0x0
+
+    return-object v5
+
+    :cond_108
+    const-string/jumbo v5, "isAirCommandModeAllowed"
+
+    move-object/from16 v0, p3
+
+    invoke-virtual {v0, v5}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v5
+
+    if-eqz v5, :cond_109
+
+    if-nez p4, :cond_117
 
     new-instance v5, Lcom/samsung/android/knox/ContextInfo;
 
@@ -10774,7 +10846,7 @@
 
     move-result v72
 
-    :goto_56
+    :goto_57
     const-string/jumbo v5, "SecContentProvider2"
 
     new-instance v6, Ljava/lang/StringBuilder;
@@ -10831,9 +10903,9 @@
 
     invoke-virtual {v0, v5}, Landroid/database/MatrixCursor;->addRow([Ljava/lang/Object;)V
 
-    goto/16 :goto_55
+    goto/16 :goto_56
 
-    :cond_108
+    :cond_109
     const-string/jumbo v5, "isAirViewModeAllowed"
 
     move-object/from16 v0, p3
@@ -10842,9 +10914,9 @@
 
     move-result v5
 
-    if-eqz v5, :cond_109
+    if-eqz v5, :cond_10a
 
-    if-nez p4, :cond_117
+    if-nez p4, :cond_118
 
     new-instance v5, Lcom/samsung/android/knox/ContextInfo;
 
@@ -10858,7 +10930,7 @@
 
     move-result v72
 
-    :goto_57
+    :goto_58
     const-string/jumbo v5, "SecContentProvider2"
 
     new-instance v6, Ljava/lang/StringBuilder;
@@ -10915,9 +10987,9 @@
 
     invoke-virtual {v0, v5}, Landroid/database/MatrixCursor;->addRow([Ljava/lang/Object;)V
 
-    goto/16 :goto_55
+    goto/16 :goto_56
 
-    :cond_109
+    :cond_10a
     const-string/jumbo v5, "getBlockedHwKeysCache"
 
     move-object/from16 v0, p3
@@ -10926,7 +10998,7 @@
 
     move-result v5
 
-    if-eqz v5, :cond_10a
+    if-eqz v5, :cond_10b
 
     invoke-virtual/range {v46 .. v46}, Lcom/android/server/enterprise/kioskmode/KioskModeService;->getBlockedHwKeysCache()Ljava/util/Map;
 
@@ -10960,34 +11032,10 @@
 
     invoke-virtual {v0, v5}, Landroid/database/MatrixCursor;->addRow([Ljava/lang/Object;)V
 
-    goto/16 :goto_55
-
-    :cond_10a
-    const-string/jumbo v5, "isTaskManagerAllowed"
-
-    move-object/from16 v0, p3
-
-    invoke-virtual {v0, v5}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v5
-
-    if-eqz v5, :cond_10c
-
-    if-eqz p4, :cond_10b
-
-    invoke-static/range {p4 .. p4}, Ljava/lang/reflect/Array;->getLength(Ljava/lang/Object;)I
-
-    move-result v5
-
-    if-gtz v5, :cond_118
+    goto/16 :goto_56
 
     :cond_10b
-    const/4 v5, 0x0
-
-    return-object v5
-
-    :cond_10c
-    const-string/jumbo v5, "isKioskModeEnabled"
+    const-string/jumbo v5, "isTaskManagerAllowed"
 
     move-object/from16 v0, p3
 
@@ -10997,7 +11045,31 @@
 
     if-eqz v5, :cond_10d
 
-    if-nez p4, :cond_119
+    if-eqz p4, :cond_10c
+
+    invoke-static/range {p4 .. p4}, Ljava/lang/reflect/Array;->getLength(Ljava/lang/Object;)I
+
+    move-result v5
+
+    if-gtz v5, :cond_119
+
+    :cond_10c
+    const/4 v5, 0x0
+
+    return-object v5
+
+    :cond_10d
+    const-string/jumbo v5, "isKioskModeEnabled"
+
+    move-object/from16 v0, p3
+
+    invoke-virtual {v0, v5}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v5
+
+    if-eqz v5, :cond_10e
+
+    if-nez p4, :cond_11a
 
     new-instance v5, Lcom/samsung/android/knox/ContextInfo;
 
@@ -11011,7 +11083,7 @@
 
     move-result v72
 
-    :goto_58
+    :goto_59
     const-string/jumbo v5, "SecContentProvider2"
 
     new-instance v6, Ljava/lang/StringBuilder;
@@ -11068,9 +11140,9 @@
 
     invoke-virtual {v0, v5}, Landroid/database/MatrixCursor;->addRow([Ljava/lang/Object;)V
 
-    goto/16 :goto_55
+    goto/16 :goto_56
 
-    :cond_10d
+    :cond_10e
     const-string/jumbo v5, "getKioskHomePackage"
 
     move-object/from16 v0, p3
@@ -11079,7 +11151,7 @@
 
     move-result v5
 
-    if-eqz v5, :cond_10e
+    if-eqz v5, :cond_10f
 
     new-instance v5, Lcom/samsung/android/knox/ContextInfo;
 
@@ -11121,9 +11193,9 @@
 
     invoke-virtual {v0, v5}, Landroid/database/MatrixCursor;->addRow([Ljava/lang/Object;)V
 
-    goto/16 :goto_55
+    goto/16 :goto_56
 
-    :cond_10e
+    :cond_10f
     const-string/jumbo v5, "isNightClockAllowed"
 
     move-object/from16 v0, p3
@@ -11132,7 +11204,7 @@
 
     move-result v5
 
-    if-eqz v5, :cond_10f
+    if-eqz v5, :cond_110
 
     const/4 v5, 0x0
 
@@ -11174,9 +11246,9 @@
 
     invoke-virtual {v0, v5}, Landroid/database/MatrixCursor;->addRow([Ljava/lang/Object;)V
 
-    goto/16 :goto_55
+    goto/16 :goto_56
 
-    :cond_10f
+    :cond_110
     const-string/jumbo v5, "isPeopleEdgeAllowed"
 
     move-object/from16 v0, p3
@@ -11185,7 +11257,7 @@
 
     move-result v5
 
-    if-eqz v5, :cond_110
+    if-eqz v5, :cond_111
 
     const/4 v5, 0x0
 
@@ -11227,9 +11299,9 @@
 
     invoke-virtual {v0, v5}, Landroid/database/MatrixCursor;->addRow([Ljava/lang/Object;)V
 
-    goto/16 :goto_55
+    goto/16 :goto_56
 
-    :cond_110
+    :cond_111
     const-string/jumbo v5, "isEdgeLightingAllowed"
 
     move-object/from16 v0, p3
@@ -11238,7 +11310,7 @@
 
     move-result v5
 
-    if-eqz v5, :cond_111
+    if-eqz v5, :cond_112
 
     const/4 v5, 0x0
 
@@ -11280,9 +11352,9 @@
 
     invoke-virtual {v0, v5}, Landroid/database/MatrixCursor;->addRow([Ljava/lang/Object;)V
 
-    goto/16 :goto_55
+    goto/16 :goto_56
 
-    :cond_111
+    :cond_112
     const-string/jumbo v5, "isInformationStreamAllowed"
 
     move-object/from16 v0, p3
@@ -11291,7 +11363,7 @@
 
     move-result v5
 
-    if-eqz v5, :cond_112
+    if-eqz v5, :cond_113
 
     const/4 v5, 0x0
 
@@ -11333,9 +11405,9 @@
 
     invoke-virtual {v0, v5}, Landroid/database/MatrixCursor;->addRow([Ljava/lang/Object;)V
 
-    goto/16 :goto_55
+    goto/16 :goto_56
 
-    :cond_112
+    :cond_113
     const-string/jumbo v5, "isAppsEdgeAllowed"
 
     move-object/from16 v0, p3
@@ -11344,7 +11416,7 @@
 
     move-result v5
 
-    if-eqz v5, :cond_113
+    if-eqz v5, :cond_114
 
     const/4 v5, 0x0
 
@@ -11386,9 +11458,9 @@
 
     invoke-virtual {v0, v5}, Landroid/database/MatrixCursor;->addRow([Ljava/lang/Object;)V
 
-    goto/16 :goto_55
+    goto/16 :goto_56
 
-    :cond_113
+    :cond_114
     const-string/jumbo v5, "isEdgeAllowed"
 
     move-object/from16 v0, p3
@@ -11397,7 +11469,7 @@
 
     move-result v5
 
-    if-eqz v5, :cond_102
+    if-eqz v5, :cond_103
 
     const/4 v5, 0x0
 
@@ -11439,9 +11511,9 @@
 
     invoke-virtual {v0, v5}, Landroid/database/MatrixCursor;->addRow([Ljava/lang/Object;)V
 
-    goto/16 :goto_55
+    goto/16 :goto_56
 
-    :cond_114
+    :cond_115
     new-instance v5, Lcom/samsung/android/knox/ContextInfo;
 
     move/from16 v0, v17
@@ -11494,9 +11566,9 @@
 
     invoke-virtual {v0, v5}, Landroid/database/MatrixCursor;->addRow([Ljava/lang/Object;)V
 
-    goto/16 :goto_55
+    goto/16 :goto_56
 
-    :cond_115
+    :cond_116
     const/4 v5, 0x0
 
     aget-object v5, p4, v5
@@ -11567,9 +11639,9 @@
 
     invoke-virtual {v0, v5}, Landroid/database/MatrixCursor;->addRow([Ljava/lang/Object;)V
 
-    goto/16 :goto_55
+    goto/16 :goto_56
 
-    :cond_116
+    :cond_117
     new-instance v5, Lcom/samsung/android/knox/ContextInfo;
 
     const/4 v6, 0x0
@@ -11618,9 +11690,9 @@
 
     invoke-static {v5, v6}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    goto/16 :goto_56
+    goto/16 :goto_57
 
-    :cond_117
+    :cond_118
     new-instance v5, Lcom/samsung/android/knox/ContextInfo;
 
     const/4 v6, 0x0
@@ -11669,9 +11741,9 @@
 
     invoke-static {v5, v6}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    goto/16 :goto_57
+    goto/16 :goto_58
 
-    :cond_118
+    :cond_119
     new-instance v5, Lcom/samsung/android/knox/ContextInfo;
 
     move/from16 v0, v17
@@ -11724,9 +11796,9 @@
 
     invoke-virtual {v0, v5}, Landroid/database/MatrixCursor;->addRow([Ljava/lang/Object;)V
 
-    goto/16 :goto_55
+    goto/16 :goto_56
 
-    :cond_119
+    :cond_11a
     new-instance v5, Lcom/samsung/android/knox/ContextInfo;
 
     const/4 v6, 0x0
@@ -11775,7 +11847,7 @@
 
     invoke-static {v5, v6}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    goto/16 :goto_58
+    goto/16 :goto_59
 
     :pswitch_8
     invoke-static {}, Lcom/android/server/enterprise/EnterpriseDeviceManagerService;->getInstance()Lcom/android/server/enterprise/EnterpriseDeviceManagerService;
@@ -11794,22 +11866,22 @@
 
     move-result v5
 
-    if-eqz v5, :cond_11b
+    if-eqz v5, :cond_11c
 
-    if-eqz p4, :cond_11a
+    if-eqz p4, :cond_11b
 
     invoke-static/range {p4 .. p4}, Ljava/lang/reflect/Array;->getLength(Ljava/lang/Object;)I
 
     move-result v5
 
-    if-gtz v5, :cond_12c
+    if-gtz v5, :cond_12d
 
-    :cond_11a
+    :cond_11b
     const/4 v5, 0x0
 
     return-object v5
 
-    :cond_11b
+    :cond_11c
     const-string/jumbo v5, "getActiveAdmins"
 
     move-object/from16 v0, p3
@@ -11818,22 +11890,22 @@
 
     move-result v5
 
-    if-eqz v5, :cond_11d
+    if-eqz v5, :cond_11e
 
-    if-eqz p4, :cond_11c
+    if-eqz p4, :cond_11d
 
     invoke-static/range {p4 .. p4}, Ljava/lang/reflect/Array;->getLength(Ljava/lang/Object;)I
 
     move-result v5
 
-    if-gtz v5, :cond_12d
+    if-gtz v5, :cond_12e
 
-    :cond_11c
+    :cond_11d
     const/4 v5, 0x0
 
     return-object v5
 
-    :cond_11d
+    :cond_11e
     const-string/jumbo v5, "getRemoveWarning"
 
     move-object/from16 v0, p3
@@ -11842,9 +11914,9 @@
 
     move-result v5
 
-    if-eqz v5, :cond_11f
+    if-eqz v5, :cond_120
 
-    if-eqz p4, :cond_11e
+    if-eqz p4, :cond_11f
 
     invoke-static/range {p4 .. p4}, Ljava/lang/reflect/Array;->getLength(Ljava/lang/Object;)I
 
@@ -11852,14 +11924,14 @@
 
     const/4 v6, 0x1
 
-    if-gt v5, v6, :cond_12e
+    if-gt v5, v6, :cond_12f
 
-    :cond_11e
+    :cond_11f
     const/4 v5, 0x0
 
     return-object v5
 
-    :cond_11f
+    :cond_120
     const-string/jumbo v5, "isAdminRemovable"
 
     move-object/from16 v0, p3
@@ -11868,9 +11940,9 @@
 
     move-result v5
 
-    if-eqz v5, :cond_121
+    if-eqz v5, :cond_122
 
-    if-eqz p4, :cond_120
+    if-eqz p4, :cond_121
 
     invoke-static/range {p4 .. p4}, Ljava/lang/reflect/Array;->getLength(Ljava/lang/Object;)I
 
@@ -11878,14 +11950,14 @@
 
     const/4 v6, 0x1
 
-    if-ge v5, v6, :cond_12f
+    if-ge v5, v6, :cond_130
 
-    :cond_120
+    :cond_121
     const/4 v5, 0x0
 
     return-object v5
 
-    :cond_121
+    :cond_122
     const-string/jumbo v5, "setActiveAdmin"
 
     move-object/from16 v0, p3
@@ -11894,9 +11966,9 @@
 
     move-result v5
 
-    if-eqz v5, :cond_123
+    if-eqz v5, :cond_124
 
-    if-eqz p4, :cond_122
+    if-eqz p4, :cond_123
 
     invoke-static/range {p4 .. p4}, Ljava/lang/reflect/Array;->getLength(Ljava/lang/Object;)I
 
@@ -11904,14 +11976,14 @@
 
     const/4 v6, 0x2
 
-    if-ge v5, v6, :cond_130
+    if-ge v5, v6, :cond_131
 
-    :cond_122
+    :cond_123
     const/4 v5, 0x0
 
     return-object v5
 
-    :cond_123
+    :cond_124
     const-string/jumbo v5, "removeActiveAdmin"
 
     move-object/from16 v0, p3
@@ -11920,9 +11992,9 @@
 
     move-result v5
 
-    if-eqz v5, :cond_125
+    if-eqz v5, :cond_126
 
-    if-eqz p4, :cond_124
+    if-eqz p4, :cond_125
 
     invoke-static/range {p4 .. p4}, Ljava/lang/reflect/Array;->getLength(Ljava/lang/Object;)I
 
@@ -11930,14 +12002,14 @@
 
     const/4 v6, 0x1
 
-    if-ge v5, v6, :cond_131
+    if-ge v5, v6, :cond_132
 
-    :cond_124
+    :cond_125
     const/4 v5, 0x0
 
     return-object v5
 
-    :cond_125
+    :cond_126
     const-string/jumbo v5, "setAdminRemovable"
 
     move-object/from16 v0, p3
@@ -11946,9 +12018,9 @@
 
     move-result v5
 
-    if-eqz v5, :cond_127
+    if-eqz v5, :cond_128
 
-    if-eqz p4, :cond_126
+    if-eqz p4, :cond_127
 
     invoke-static/range {p4 .. p4}, Ljava/lang/reflect/Array;->getLength(Ljava/lang/Object;)I
 
@@ -11956,14 +12028,14 @@
 
     const/4 v6, 0x1
 
-    if-gt v5, v6, :cond_132
+    if-gt v5, v6, :cond_133
 
-    :cond_126
+    :cond_127
     const/4 v5, 0x0
 
     return-object v5
 
-    :cond_127
+    :cond_128
     const-string/jumbo v5, "updateAdminPermissions"
 
     move-object/from16 v0, p3
@@ -11972,13 +12044,13 @@
 
     move-result v5
 
-    if-eqz v5, :cond_129
-
-    :cond_128
-    :goto_59
-    return-object v53
+    if-eqz v5, :cond_12a
 
     :cond_129
+    :goto_5a
+    return-object v53
+
+    :cond_12a
     const-string/jumbo v5, "getMyKnoxAdmin"
 
     move-object/from16 v0, p3
@@ -11987,7 +12059,7 @@
 
     move-result v5
 
-    if-eqz v5, :cond_12a
+    if-eqz v5, :cond_12b
 
     new-instance v5, Lcom/samsung/android/knox/ContextInfo;
 
@@ -12029,9 +12101,9 @@
 
     invoke-virtual {v0, v5}, Landroid/database/MatrixCursor;->addRow([Ljava/lang/Object;)V
 
-    goto :goto_59
+    goto :goto_5a
 
-    :cond_12a
+    :cond_12b
     const-string/jumbo v5, "isMdmAdminPresent"
 
     move-object/from16 v0, p3
@@ -12040,13 +12112,13 @@
 
     move-result v5
 
-    if-eqz v5, :cond_12b
+    if-eqz v5, :cond_12c
 
     invoke-static {}, Landroid/os/Binder;->clearCallingIdentity()J
 
     move-result-wide v82
 
-    :try_start_3e
+    :try_start_3f
     invoke-virtual/range {v45 .. v45}, Lcom/android/server/enterprise/EnterpriseDeviceManagerService;->isMdmAdminPresent()Z
 
     move-result v72
@@ -12064,12 +12136,12 @@
     move-object/from16 v0, v56
 
     invoke-direct {v0, v5}, Lcom/android/server/enterprise/content/EnterpriseMatrixCursor;-><init>([Ljava/lang/String;)V
-    :try_end_3e
-    .catchall {:try_start_3e .. :try_end_3e} :catchall_0
+    :try_end_3f
+    .catchall {:try_start_3f .. :try_end_3f} :catchall_0
 
     const/4 v5, 0x1
 
-    :try_start_3f
+    :try_start_40
     new-array v5, v5, [Ljava/lang/Boolean;
 
     invoke-static/range {v72 .. v72}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
@@ -12083,16 +12155,16 @@
     move-object/from16 v0, v56
 
     invoke-virtual {v0, v5}, Landroid/database/MatrixCursor;->addRow([Ljava/lang/Object;)V
-    :try_end_3f
-    .catchall {:try_start_3f .. :try_end_3f} :catchall_1
+    :try_end_40
+    .catchall {:try_start_40 .. :try_end_40} :catchall_1
 
     invoke-static/range {v82 .. v83}, Landroid/os/Binder;->restoreCallingIdentity(J)V
 
     move-object/from16 v53, v56
 
-    goto :goto_59
+    goto :goto_5a
 
-    :cond_12b
+    :cond_12c
     const-string/jumbo v5, "getEnterpriseSdkVer"
 
     move-object/from16 v0, p3
@@ -12101,7 +12173,7 @@
 
     move-result v5
 
-    if-eqz v5, :cond_128
+    if-eqz v5, :cond_129
 
     const-string/jumbo v5, "20"
 
@@ -12141,9 +12213,9 @@
 
     invoke-virtual {v0, v5}, Landroid/database/MatrixCursor;->addRow([Ljava/lang/Object;)V
 
-    goto/16 :goto_59
+    goto/16 :goto_5a
 
-    :cond_12c
+    :cond_12d
     new-instance v5, Lcom/samsung/android/knox/ContextInfo;
 
     move/from16 v0, v17
@@ -12192,9 +12264,9 @@
 
     invoke-virtual {v0, v5}, Landroid/database/MatrixCursor;->addRow([Ljava/lang/Object;)V
 
-    goto/16 :goto_59
+    goto/16 :goto_5a
 
-    :cond_12d
+    :cond_12e
     const/4 v5, 0x0
 
     aget-object v5, p4, v5
@@ -12225,24 +12297,24 @@
 
     invoke-direct {v0, v5}, Lcom/android/server/enterprise/content/EnterpriseMatrixCursor;-><init>([Ljava/lang/String;)V
 
-    if-eqz v52, :cond_128
+    if-eqz v52, :cond_129
 
     invoke-interface/range {v52 .. v52}, Ljava/util/List;->isEmpty()Z
 
     move-result v5
 
-    if-nez v5, :cond_128
+    if-nez v5, :cond_129
 
     invoke-interface/range {v52 .. v52}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
     move-result-object v88
 
-    :goto_5a
+    :goto_5b
     invoke-interface/range {v88 .. v88}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v5
 
-    if-eqz v5, :cond_128
+    if-eqz v5, :cond_129
 
     invoke-interface/range {v88 .. v88}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -12266,12 +12338,12 @@
 
     invoke-virtual {v0, v5}, Landroid/database/MatrixCursor;->addRow([Ljava/lang/Object;)V
 
-    goto :goto_5a
+    goto :goto_5b
 
-    :cond_12e
+    :cond_12f
     const/4 v5, 0x0
 
-    :try_start_40
+    :try_start_41
     aget-object v5, p4, v5
 
     invoke-static {v5}, Landroid/content/ComponentName;->unflattenFromString(Ljava/lang/String;)Landroid/content/ComponentName;
@@ -12291,19 +12363,19 @@
     move-object/from16 v0, v45
 
     invoke-virtual {v0, v6, v5}, Lcom/android/server/enterprise/EnterpriseDeviceManagerService;->getRemoveWarning(Landroid/content/ComponentName;Landroid/os/RemoteCallback;)V
-    :try_end_40
-    .catch Landroid/os/RemoteException; {:try_start_40 .. :try_end_40} :catch_3e
+    :try_end_41
+    .catch Landroid/os/RemoteException; {:try_start_41 .. :try_end_41} :catch_3f
 
-    goto/16 :goto_59
+    goto/16 :goto_5a
 
-    :catch_3e
+    :catch_3f
     move-exception v27
 
     invoke-virtual/range {v27 .. v27}, Ljava/lang/Throwable;->printStackTrace()V
 
-    goto/16 :goto_59
+    goto/16 :goto_5a
 
-    :cond_12f
+    :cond_130
     const/4 v5, 0x0
 
     aget-object v5, p4, v5
@@ -12350,12 +12422,12 @@
 
     invoke-virtual {v0, v5}, Landroid/database/MatrixCursor;->addRow([Ljava/lang/Object;)V
 
-    goto/16 :goto_59
+    goto/16 :goto_5a
 
-    :cond_130
+    :cond_131
     const/4 v5, 0x0
 
-    :try_start_41
+    :try_start_42
     aget-object v5, p4, v5
 
     invoke-static {v5}, Landroid/content/ComponentName;->unflattenFromString(Ljava/lang/String;)Landroid/content/ComponentName;
@@ -12373,22 +12445,22 @@
     move-object/from16 v0, v45
 
     invoke-virtual {v0, v5, v6}, Lcom/android/server/enterprise/EnterpriseDeviceManagerService;->setActiveAdmin(Landroid/content/ComponentName;Z)V
-    :try_end_41
-    .catch Landroid/os/RemoteException; {:try_start_41 .. :try_end_41} :catch_3f
+    :try_end_42
+    .catch Landroid/os/RemoteException; {:try_start_42 .. :try_end_42} :catch_40
 
-    goto/16 :goto_59
+    goto/16 :goto_5a
 
-    :catch_3f
+    :catch_40
     move-exception v27
 
     invoke-virtual/range {v27 .. v27}, Ljava/lang/Throwable;->printStackTrace()V
 
-    goto/16 :goto_59
+    goto/16 :goto_5a
 
-    :cond_131
+    :cond_132
     const/4 v5, 0x0
 
-    :try_start_42
+    :try_start_43
     aget-object v5, p4, v5
 
     invoke-static {v5}, Landroid/content/ComponentName;->unflattenFromString(Ljava/lang/String;)Landroid/content/ComponentName;
@@ -12398,19 +12470,19 @@
     move-object/from16 v0, v45
 
     invoke-virtual {v0, v5}, Lcom/android/server/enterprise/EnterpriseDeviceManagerService;->removeActiveAdmin(Landroid/content/ComponentName;)V
-    :try_end_42
-    .catch Landroid/os/RemoteException; {:try_start_42 .. :try_end_42} :catch_40
+    :try_end_43
+    .catch Landroid/os/RemoteException; {:try_start_43 .. :try_end_43} :catch_41
 
-    goto/16 :goto_59
+    goto/16 :goto_5a
 
-    :catch_40
+    :catch_41
     move-exception v27
 
     invoke-virtual/range {v27 .. v27}, Ljava/lang/Throwable;->printStackTrace()V
 
-    goto/16 :goto_59
+    goto/16 :goto_5a
 
-    :cond_132
+    :cond_133
     new-instance v5, Lcom/samsung/android/knox/ContextInfo;
 
     move/from16 v0, v17
@@ -12467,12 +12539,12 @@
 
     invoke-virtual {v0, v5}, Landroid/database/MatrixCursor;->addRow([Ljava/lang/Object;)V
 
-    goto/16 :goto_59
+    goto/16 :goto_5a
 
     :catchall_0
     move-exception v5
 
-    :goto_5b
+    :goto_5c
     invoke-static/range {v82 .. v83}, Landroid/os/Binder;->restoreCallingIdentity(J)V
 
     throw v5
@@ -12498,7 +12570,7 @@
 
     move-result v5
 
-    if-eqz v5, :cond_133
+    if-eqz v5, :cond_134
 
     new-instance v5, Lcom/samsung/android/knox/ContextInfo;
 
@@ -12544,10 +12616,10 @@
 
     invoke-virtual {v0, v5}, Landroid/database/MatrixCursor;->addRow([Ljava/lang/Object;)V
 
-    :goto_5c
+    :goto_5d
     return-object v53
 
-    :cond_133
+    :cond_134
     const-string/jumbo v5, "getAllowEmailForwarding"
 
     move-object/from16 v0, p3
@@ -12556,22 +12628,22 @@
 
     move-result v5
 
-    if-eqz v5, :cond_135
+    if-eqz v5, :cond_136
 
-    if-eqz p4, :cond_134
+    if-eqz p4, :cond_135
 
     invoke-static/range {p4 .. p4}, Ljava/lang/reflect/Array;->getLength(Ljava/lang/Object;)I
 
     move-result v5
 
-    if-gtz v5, :cond_13f
+    if-gtz v5, :cond_140
 
-    :cond_134
+    :cond_135
     const/4 v5, 0x0
 
     return-object v5
 
-    :cond_135
+    :cond_136
     const-string/jumbo v5, "isEmailSettingsChangesAllowed"
 
     move-object/from16 v0, p3
@@ -12580,22 +12652,22 @@
 
     move-result v5
 
-    if-eqz v5, :cond_137
+    if-eqz v5, :cond_138
 
-    if-eqz p4, :cond_136
+    if-eqz p4, :cond_137
 
     invoke-static/range {p4 .. p4}, Ljava/lang/reflect/Array;->getLength(Ljava/lang/Object;)I
 
     move-result v5
 
-    if-gtz v5, :cond_140
+    if-gtz v5, :cond_141
 
-    :cond_136
+    :cond_137
     const/4 v5, 0x0
 
     return-object v5
 
-    :cond_137
+    :cond_138
     const-string/jumbo v5, "isEmailNotificationsEnabled"
 
     move-object/from16 v0, p3
@@ -12604,22 +12676,22 @@
 
     move-result v5
 
-    if-eqz v5, :cond_139
+    if-eqz v5, :cond_13a
 
-    if-eqz p4, :cond_138
+    if-eqz p4, :cond_139
 
     invoke-static/range {p4 .. p4}, Ljava/lang/reflect/Array;->getLength(Ljava/lang/Object;)I
 
     move-result v5
 
-    if-gtz v5, :cond_141
+    if-gtz v5, :cond_142
 
-    :cond_138
+    :cond_139
     const/4 v5, 0x0
 
     return-object v5
 
-    :cond_139
+    :cond_13a
     const-string/jumbo v5, "getAllowHtmlEmail"
 
     move-object/from16 v0, p3
@@ -12628,22 +12700,22 @@
 
     move-result v5
 
-    if-eqz v5, :cond_13b
+    if-eqz v5, :cond_13c
 
-    if-eqz p4, :cond_13a
+    if-eqz p4, :cond_13b
 
     invoke-static/range {p4 .. p4}, Ljava/lang/reflect/Array;->getLength(Ljava/lang/Object;)I
 
     move-result v5
 
-    if-gtz v5, :cond_142
+    if-gtz v5, :cond_143
 
-    :cond_13a
+    :cond_13b
     const/4 v5, 0x0
 
     return-object v5
 
-    :cond_13b
+    :cond_13c
     const-string/jumbo v5, "getEnterpriseExchangeAccountObject"
 
     move-object/from16 v0, p3
@@ -12652,22 +12724,22 @@
 
     move-result v5
 
-    if-eqz v5, :cond_13d
+    if-eqz v5, :cond_13e
 
-    if-eqz p4, :cond_13c
+    if-eqz p4, :cond_13d
 
     invoke-static/range {p4 .. p4}, Ljava/lang/reflect/Array;->getLength(Ljava/lang/Object;)I
 
     move-result v5
 
-    if-gtz v5, :cond_143
+    if-gtz v5, :cond_144
 
-    :cond_13c
+    :cond_13d
     const/4 v5, 0x0
 
     return-object v5
 
-    :cond_13d
+    :cond_13e
     const-string/jumbo v5, "getEnterpriseEmailAccountObject"
 
     move-object/from16 v0, p3
@@ -12676,22 +12748,22 @@
 
     move-result v5
 
-    if-eqz v5, :cond_145
+    if-eqz v5, :cond_146
 
-    if-eqz p4, :cond_13e
+    if-eqz p4, :cond_13f
 
     invoke-static/range {p4 .. p4}, Ljava/lang/reflect/Array;->getLength(Ljava/lang/Object;)I
 
     move-result v5
 
-    if-gtz v5, :cond_144
+    if-gtz v5, :cond_145
 
-    :cond_13e
+    :cond_13f
     const/4 v5, 0x0
 
     return-object v5
 
-    :cond_13f
+    :cond_140
     new-instance v5, Lcom/samsung/android/knox/ContextInfo;
 
     move/from16 v0, v17
@@ -12740,9 +12812,9 @@
 
     invoke-virtual {v0, v5}, Landroid/database/MatrixCursor;->addRow([Ljava/lang/Object;)V
 
-    goto/16 :goto_5c
+    goto/16 :goto_5d
 
-    :cond_140
+    :cond_141
     new-instance v5, Lcom/samsung/android/knox/ContextInfo;
 
     move/from16 v0, v17
@@ -12795,9 +12867,9 @@
 
     invoke-virtual {v0, v5}, Landroid/database/MatrixCursor;->addRow([Ljava/lang/Object;)V
 
-    goto/16 :goto_5c
+    goto/16 :goto_5d
 
-    :cond_141
+    :cond_142
     new-instance v5, Lcom/samsung/android/knox/ContextInfo;
 
     move/from16 v0, v17
@@ -12850,9 +12922,9 @@
 
     invoke-virtual {v0, v5}, Landroid/database/MatrixCursor;->addRow([Ljava/lang/Object;)V
 
-    goto/16 :goto_5c
+    goto/16 :goto_5d
 
-    :cond_142
+    :cond_143
     new-instance v5, Lcom/samsung/android/knox/ContextInfo;
 
     move/from16 v0, v17
@@ -12901,9 +12973,9 @@
 
     invoke-virtual {v0, v5}, Landroid/database/MatrixCursor;->addRow([Ljava/lang/Object;)V
 
-    goto/16 :goto_5c
+    goto/16 :goto_5d
 
-    :cond_143
+    :cond_144
     new-instance v5, Lcom/samsung/android/knox/ContextInfo;
 
     move/from16 v0, v17
@@ -12956,9 +13028,9 @@
 
     invoke-virtual {v0, v1}, Lcom/android/server/enterprise/content/EnterpriseMatrixCursor;->setBundle(Landroid/os/Bundle;)V
 
-    goto/16 :goto_5c
+    goto/16 :goto_5d
 
-    :cond_144
+    :cond_145
     new-instance v5, Lcom/samsung/android/knox/ContextInfo;
 
     move/from16 v0, v17
@@ -13011,9 +13083,9 @@
 
     invoke-virtual {v0, v1}, Lcom/android/server/enterprise/content/EnterpriseMatrixCursor;->setBundle(Landroid/os/Bundle;)V
 
-    goto/16 :goto_5c
+    goto/16 :goto_5d
 
-    :cond_145
+    :cond_146
     const/4 v5, 0x0
 
     return-object v5
@@ -13037,22 +13109,22 @@
 
     move-result v5
 
-    if-eqz v5, :cond_147
+    if-eqz v5, :cond_148
 
-    if-eqz p4, :cond_146
+    if-eqz p4, :cond_147
 
     invoke-static/range {p4 .. p4}, Ljava/lang/reflect/Array;->getLength(Ljava/lang/Object;)I
 
     move-result v5
 
-    if-gtz v5, :cond_14d
+    if-gtz v5, :cond_14e
 
-    :cond_146
+    :cond_147
     const/4 v5, 0x0
 
     return-object v5
 
-    :cond_147
+    :cond_148
     const-string/jumbo v5, "isUserAddProfilesAllowed"
 
     move-object/from16 v0, p3
@@ -13061,17 +13133,17 @@
 
     move-result v5
 
-    if-eqz v5, :cond_149
+    if-eqz v5, :cond_14a
 
     const/4 v13, 0x0
 
-    if-eqz p4, :cond_148
+    if-eqz p4, :cond_149
 
     invoke-static/range {p4 .. p4}, Ljava/lang/reflect/Array;->getLength(Ljava/lang/Object;)I
 
     move-result v5
 
-    if-lez v5, :cond_148
+    if-lez v5, :cond_149
 
     const/4 v5, 0x0
 
@@ -13081,7 +13153,7 @@
 
     move-result v13
 
-    :cond_148
+    :cond_149
     new-instance v5, Lcom/samsung/android/knox/ContextInfo;
 
     move/from16 v0, v17
@@ -13126,10 +13198,10 @@
 
     invoke-virtual {v0, v5}, Landroid/database/MatrixCursor;->addRow([Ljava/lang/Object;)V
 
-    :goto_5d
+    :goto_5e
     return-object v53
 
-    :cond_149
+    :cond_14a
     const-string/jumbo v5, "isUserChangeProfilesAllowed"
 
     move-object/from16 v0, p3
@@ -13138,17 +13210,17 @@
 
     move-result v5
 
-    if-eqz v5, :cond_14b
+    if-eqz v5, :cond_14c
 
     const/4 v13, 0x0
 
-    if-eqz p4, :cond_14a
+    if-eqz p4, :cond_14b
 
     invoke-static/range {p4 .. p4}, Ljava/lang/reflect/Array;->getLength(Ljava/lang/Object;)I
 
     move-result v5
 
-    if-lez v5, :cond_14a
+    if-lez v5, :cond_14b
 
     const/4 v5, 0x0
 
@@ -13158,7 +13230,7 @@
 
     move-result v13
 
-    :cond_14a
+    :cond_14b
     new-instance v5, Lcom/samsung/android/knox/ContextInfo;
 
     move/from16 v0, v17
@@ -13203,9 +13275,9 @@
 
     invoke-virtual {v0, v5}, Landroid/database/MatrixCursor;->addRow([Ljava/lang/Object;)V
 
-    goto :goto_5d
+    goto :goto_5e
 
-    :cond_14b
+    :cond_14c
     const-string/jumbo v5, "isUserSetAlwaysOnAllowed"
 
     move-object/from16 v0, p3
@@ -13214,17 +13286,17 @@
 
     move-result v5
 
-    if-eqz v5, :cond_14e
+    if-eqz v5, :cond_14f
 
     const/4 v13, 0x0
 
-    if-eqz p4, :cond_14c
+    if-eqz p4, :cond_14d
 
     invoke-static/range {p4 .. p4}, Ljava/lang/reflect/Array;->getLength(Ljava/lang/Object;)I
 
     move-result v5
 
-    if-lez v5, :cond_14c
+    if-lez v5, :cond_14d
 
     const/4 v5, 0x0
 
@@ -13234,7 +13306,7 @@
 
     move-result v13
 
-    :cond_14c
+    :cond_14d
     new-instance v5, Lcom/samsung/android/knox/ContextInfo;
 
     move/from16 v0, v17
@@ -13279,9 +13351,9 @@
 
     invoke-virtual {v0, v5}, Landroid/database/MatrixCursor;->addRow([Ljava/lang/Object;)V
 
-    goto/16 :goto_5d
+    goto/16 :goto_5e
 
-    :cond_14d
+    :cond_14e
     new-instance v5, Lcom/samsung/android/knox/ContextInfo;
 
     move/from16 v0, v17
@@ -13328,9 +13400,9 @@
 
     invoke-virtual {v0, v5}, Landroid/database/MatrixCursor;->addRow([Ljava/lang/Object;)V
 
-    goto/16 :goto_5d
+    goto/16 :goto_5e
 
-    :cond_14e
+    :cond_14f
     const/4 v5, 0x0
 
     return-object v5
@@ -13354,9 +13426,9 @@
 
     move-result v5
 
-    if-eqz v5, :cond_150
+    if-eqz v5, :cond_151
 
-    if-eqz p4, :cond_14f
+    if-eqz p4, :cond_150
 
     invoke-static/range {p4 .. p4}, Ljava/lang/reflect/Array;->getLength(Ljava/lang/Object;)I
 
@@ -13364,14 +13436,14 @@
 
     const/4 v6, 0x2
 
-    if-ge v5, v6, :cond_155
+    if-ge v5, v6, :cond_156
 
-    :cond_14f
+    :cond_150
     const/4 v5, 0x0
 
     return-object v5
 
-    :cond_150
+    :cond_151
     const-string/jumbo v5, "deleteCertificate"
 
     move-object/from16 v0, p3
@@ -13380,22 +13452,22 @@
 
     move-result v5
 
-    if-eqz v5, :cond_152
+    if-eqz v5, :cond_153
 
-    if-eqz p4, :cond_151
+    if-eqz p4, :cond_152
 
     invoke-static/range {p4 .. p4}, Ljava/lang/reflect/Array;->getLength(Ljava/lang/Object;)I
 
     move-result v5
 
-    if-gtz v5, :cond_157
+    if-gtz v5, :cond_158
 
-    :cond_151
+    :cond_152
     const/4 v5, 0x0
 
     return-object v5
 
-    :cond_152
+    :cond_153
     const-string/jumbo v5, "isCCMPolicyEnabledForPackage"
 
     move-object/from16 v0, p3
@@ -13404,22 +13476,22 @@
 
     move-result v5
 
-    if-eqz v5, :cond_154
+    if-eqz v5, :cond_155
 
-    if-eqz p4, :cond_153
+    if-eqz p4, :cond_154
 
     invoke-static/range {p4 .. p4}, Ljava/lang/reflect/Array;->getLength(Ljava/lang/Object;)I
 
     move-result v5
 
-    if-gtz v5, :cond_158
+    if-gtz v5, :cond_159
 
-    :cond_153
+    :cond_154
     const/4 v5, 0x0
 
     return-object v5
 
-    :cond_154
+    :cond_155
     const-string/jumbo v5, "getCCMVersion"
 
     move-object/from16 v0, p3
@@ -13428,7 +13500,7 @@
 
     move-result v5
 
-    if-eqz v5, :cond_159
+    if-eqz v5, :cond_15a
 
     invoke-virtual/range {v39 .. v39}, Lcom/android/server/enterprise/ccm/ClientCertificateManager;->getCCMVersion()Ljava/lang/String;
 
@@ -13462,10 +13534,10 @@
 
     invoke-virtual {v0, v5}, Landroid/database/MatrixCursor;->addRow([Ljava/lang/Object;)V
 
-    :goto_5e
+    :goto_5f
     return-object v53
 
-    :cond_155
+    :cond_156
     invoke-static/range {p4 .. p4}, Ljava/lang/reflect/Array;->getLength(Ljava/lang/Object;)I
 
     move-result v14
@@ -13524,7 +13596,7 @@
 
     const/16 v34, 0x4
 
-    :goto_5f
+    :goto_60
     invoke-static/range {p4 .. p4}, Ljava/lang/reflect/Array;->getLength(Ljava/lang/Object;)I
 
     move-result v5
@@ -13533,7 +13605,7 @@
 
     move/from16 v0, v34
 
-    if-ge v0, v5, :cond_156
+    if-ge v0, v5, :cond_157
 
     aget-object v5, p4, v34
 
@@ -13543,9 +13615,9 @@
 
     add-int/lit8 v34, v34, 0x1
 
-    goto :goto_5f
+    goto :goto_60
 
-    :cond_156
+    :cond_157
     move-object/from16 v0, v61
 
     move-object/from16 v1, v25
@@ -13610,9 +13682,9 @@
 
     invoke-virtual {v0, v5}, Landroid/database/MatrixCursor;->addRow([Ljava/lang/Object;)V
 
-    goto/16 :goto_5e
+    goto/16 :goto_5f
 
-    :cond_157
+    :cond_158
     new-instance v5, Lcom/samsung/android/knox/ContextInfo;
 
     move/from16 v0, v17
@@ -13661,9 +13733,9 @@
 
     invoke-virtual {v0, v5}, Landroid/database/MatrixCursor;->addRow([Ljava/lang/Object;)V
 
-    goto/16 :goto_5e
+    goto/16 :goto_5f
 
-    :cond_158
+    :cond_159
     new-instance v5, Lcom/samsung/android/knox/ContextInfo;
 
     move/from16 v0, v17
@@ -13712,9 +13784,9 @@
 
     invoke-virtual {v0, v5}, Landroid/database/MatrixCursor;->addRow([Ljava/lang/Object;)V
 
-    goto/16 :goto_5e
+    goto/16 :goto_5f
 
-    :cond_159
+    :cond_15a
     const/4 v5, 0x0
 
     return-object v5
@@ -13738,17 +13810,17 @@
 
     move-result v5
 
-    if-eqz v5, :cond_15b
+    if-eqz v5, :cond_15c
 
     const/4 v13, 0x0
 
-    if-eqz p4, :cond_15a
+    if-eqz p4, :cond_15b
 
     invoke-static/range {p4 .. p4}, Ljava/lang/reflect/Array;->getLength(Ljava/lang/Object;)I
 
     move-result v5
 
-    if-lez v5, :cond_15a
+    if-lez v5, :cond_15b
 
     const/4 v5, 0x0
 
@@ -13758,8 +13830,8 @@
 
     move-result v13
 
-    :cond_15a
-    :try_start_43
+    :cond_15b
+    :try_start_44
     new-instance v5, Lcom/samsung/android/knox/ContextInfo;
 
     move/from16 v0, v17
@@ -13769,8 +13841,8 @@
     move-object/from16 v0, v48
 
     invoke-virtual {v0, v5, v13}, Lcom/android/server/enterprise/multiuser/MultiUserManagerService;->multipleUsersAllowed(Lcom/samsung/android/knox/ContextInfo;Z)I
-    :try_end_43
-    .catch Landroid/os/RemoteException; {:try_start_43 .. :try_end_43} :catch_41
+    :try_end_44
+    .catch Landroid/os/RemoteException; {:try_start_44 .. :try_end_44} :catch_42
 
     move-result v71
 
@@ -13806,10 +13878,10 @@
 
     invoke-virtual {v0, v5}, Landroid/database/MatrixCursor;->addRow([Ljava/lang/Object;)V
 
-    :goto_60
+    :goto_61
     return-object v53
 
-    :cond_15b
+    :cond_15c
     const-string/jumbo v5, "isUserCreationAllowed"
 
     move-object/from16 v0, p3
@@ -13818,17 +13890,17 @@
 
     move-result v5
 
-    if-eqz v5, :cond_15d
+    if-eqz v5, :cond_15e
 
     const/4 v13, 0x0
 
-    if-eqz p4, :cond_15c
+    if-eqz p4, :cond_15d
 
     invoke-static/range {p4 .. p4}, Ljava/lang/reflect/Array;->getLength(Ljava/lang/Object;)I
 
     move-result v5
 
-    if-lez v5, :cond_15c
+    if-lez v5, :cond_15d
 
     const/4 v5, 0x0
 
@@ -13838,8 +13910,8 @@
 
     move-result v13
 
-    :cond_15c
-    :try_start_44
+    :cond_15d
+    :try_start_45
     new-instance v5, Lcom/samsung/android/knox/ContextInfo;
 
     move/from16 v0, v17
@@ -13849,8 +13921,8 @@
     move-object/from16 v0, v48
 
     invoke-virtual {v0, v5, v13}, Lcom/android/server/enterprise/multiuser/MultiUserManagerService;->isUserCreationAllowed(Lcom/samsung/android/knox/ContextInfo;Z)Z
-    :try_end_44
-    .catch Ljava/lang/Exception; {:try_start_44 .. :try_end_44} :catch_42
+    :try_end_45
+    .catch Ljava/lang/Exception; {:try_start_45 .. :try_end_45} :catch_43
 
     move-result v72
 
@@ -13886,9 +13958,9 @@
 
     invoke-virtual {v0, v5}, Landroid/database/MatrixCursor;->addRow([Ljava/lang/Object;)V
 
-    goto :goto_60
+    goto :goto_61
 
-    :cond_15d
+    :cond_15e
     const-string/jumbo v5, "isUserRemovalAllowed"
 
     move-object/from16 v0, p3
@@ -13897,17 +13969,17 @@
 
     move-result v5
 
-    if-eqz v5, :cond_15f
+    if-eqz v5, :cond_160
 
     const/4 v13, 0x0
 
-    if-eqz p4, :cond_15e
+    if-eqz p4, :cond_15f
 
     invoke-static/range {p4 .. p4}, Ljava/lang/reflect/Array;->getLength(Ljava/lang/Object;)I
 
     move-result v5
 
-    if-lez v5, :cond_15e
+    if-lez v5, :cond_15f
 
     const/4 v5, 0x0
 
@@ -13917,8 +13989,8 @@
 
     move-result v13
 
-    :cond_15e
-    :try_start_45
+    :cond_15f
+    :try_start_46
     new-instance v5, Lcom/samsung/android/knox/ContextInfo;
 
     move/from16 v0, v17
@@ -13928,8 +14000,8 @@
     move-object/from16 v0, v48
 
     invoke-virtual {v0, v5, v13}, Lcom/android/server/enterprise/multiuser/MultiUserManagerService;->isUserRemovalAllowed(Lcom/samsung/android/knox/ContextInfo;Z)Z
-    :try_end_45
-    .catch Landroid/os/RemoteException; {:try_start_45 .. :try_end_45} :catch_43
+    :try_end_46
+    .catch Landroid/os/RemoteException; {:try_start_46 .. :try_end_46} :catch_44
 
     move-result v72
 
@@ -13965,9 +14037,9 @@
 
     invoke-virtual {v0, v5}, Landroid/database/MatrixCursor;->addRow([Ljava/lang/Object;)V
 
-    goto/16 :goto_60
+    goto/16 :goto_61
 
-    :cond_15f
+    :cond_160
     const-string/jumbo v5, "multipleUsersSupported"
 
     move-object/from16 v0, p3
@@ -13976,9 +14048,9 @@
 
     move-result v5
 
-    if-eqz v5, :cond_160
+    if-eqz v5, :cond_161
 
-    :try_start_46
+    :try_start_47
     new-instance v5, Lcom/samsung/android/knox/ContextInfo;
 
     move/from16 v0, v17
@@ -13988,8 +14060,8 @@
     move-object/from16 v0, v48
 
     invoke-virtual {v0, v5}, Lcom/android/server/enterprise/multiuser/MultiUserManagerService;->multipleUsersSupported(Lcom/samsung/android/knox/ContextInfo;)Z
-    :try_end_46
-    .catch Landroid/os/RemoteException; {:try_start_46 .. :try_end_46} :catch_44
+    :try_end_47
+    .catch Landroid/os/RemoteException; {:try_start_47 .. :try_end_47} :catch_45
 
     move-result v72
 
@@ -14023,24 +14095,17 @@
 
     invoke-virtual {v0, v5}, Landroid/database/MatrixCursor;->addRow([Ljava/lang/Object;)V
 
-    goto/16 :goto_60
-
-    :catch_41
-    move-exception v27
-
-    const/4 v5, 0x0
-
-    return-object v5
+    goto/16 :goto_61
 
     :catch_42
-    move-exception v28
+    move-exception v27
 
     const/4 v5, 0x0
 
     return-object v5
 
     :catch_43
-    move-exception v27
+    move-exception v28
 
     const/4 v5, 0x0
 
@@ -14053,7 +14118,14 @@
 
     return-object v5
 
-    :cond_160
+    :catch_45
+    move-exception v27
+
+    const/4 v5, 0x0
+
+    return-object v5
+
+    :cond_161
     const/4 v5, 0x0
 
     return-object v5
@@ -14079,35 +14151,9 @@
 
     move-result v5
 
-    if-eqz v5, :cond_162
+    if-eqz v5, :cond_163
 
-    if-eqz p4, :cond_161
-
-    invoke-static/range {p4 .. p4}, Ljava/lang/reflect/Array;->getLength(Ljava/lang/Object;)I
-
-    move-result v5
-
-    const/4 v6, 0x3
-
-    if-ge v5, v6, :cond_164
-
-    :cond_161
-    const/4 v5, 0x0
-
-    return-object v5
-
-    :cond_162
-    const-string/jumbo v5, "isAccountAdditionAllowed"
-
-    move-object/from16 v0, p3
-
-    invoke-virtual {v0, v5}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v5
-
-    if-eqz v5, :cond_166
-
-    if-eqz p4, :cond_163
+    if-eqz p4, :cond_162
 
     invoke-static/range {p4 .. p4}, Ljava/lang/reflect/Array;->getLength(Ljava/lang/Object;)I
 
@@ -14117,12 +14163,38 @@
 
     if-ge v5, v6, :cond_165
 
-    :cond_163
+    :cond_162
     const/4 v5, 0x0
 
     return-object v5
 
+    :cond_163
+    const-string/jumbo v5, "isAccountAdditionAllowed"
+
+    move-object/from16 v0, p3
+
+    invoke-virtual {v0, v5}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v5
+
+    if-eqz v5, :cond_167
+
+    if-eqz p4, :cond_164
+
+    invoke-static/range {p4 .. p4}, Ljava/lang/reflect/Array;->getLength(Ljava/lang/Object;)I
+
+    move-result v5
+
+    const/4 v6, 0x3
+
+    if-ge v5, v6, :cond_166
+
     :cond_164
+    const/4 v5, 0x0
+
+    return-object v5
+
+    :cond_165
     const/4 v5, 0x0
 
     aget-object v5, p4, v5
@@ -14177,10 +14249,10 @@
 
     invoke-virtual {v0, v5}, Landroid/database/MatrixCursor;->addRow([Ljava/lang/Object;)V
 
-    :goto_61
+    :goto_62
     return-object v53
 
-    :cond_165
+    :cond_166
     const/4 v5, 0x0
 
     aget-object v5, p4, v5
@@ -14235,9 +14307,9 @@
 
     invoke-virtual {v0, v5}, Landroid/database/MatrixCursor;->addRow([Ljava/lang/Object;)V
 
-    goto :goto_61
+    goto :goto_62
 
-    :cond_166
+    :cond_167
     const/4 v5, 0x0
 
     return-object v5
@@ -14263,7 +14335,7 @@
 
     move-result v5
 
-    if-eqz v5, :cond_167
+    if-eqz v5, :cond_168
 
     new-instance v5, Lcom/samsung/android/knox/ContextInfo;
 
@@ -14305,10 +14377,10 @@
 
     invoke-virtual {v0, v5}, Landroid/database/MatrixCursor;->addRow([Ljava/lang/Object;)V
 
-    :goto_62
+    :goto_63
     return-object v53
 
-    :cond_167
+    :cond_168
     const-string/jumbo v5, "isNFCStateChangeAllowed"
 
     move-object/from16 v0, p3
@@ -14317,7 +14389,7 @@
 
     move-result v5
 
-    if-eqz v5, :cond_168
+    if-eqz v5, :cond_169
 
     invoke-virtual/range {v47 .. v47}, Lcom/android/server/enterprise/general/MiscPolicy;->isNFCStateChangeAllowed()Z
 
@@ -14355,9 +14427,9 @@
 
     invoke-virtual {v0, v5}, Landroid/database/MatrixCursor;->addRow([Ljava/lang/Object;)V
 
-    goto :goto_62
+    goto :goto_63
 
-    :cond_168
+    :cond_169
     const/4 v5, 0x0
 
     return-object v5
@@ -14383,22 +14455,22 @@
 
     move-result v5
 
-    if-eqz v5, :cond_16a
+    if-eqz v5, :cond_16b
 
-    if-eqz p4, :cond_169
+    if-eqz p4, :cond_16a
 
     invoke-static/range {p4 .. p4}, Ljava/lang/reflect/Array;->getLength(Ljava/lang/Object;)I
 
     move-result v5
 
-    if-gtz v5, :cond_170
+    if-gtz v5, :cond_171
 
-    :cond_169
+    :cond_16a
     const/4 v5, 0x0
 
     return-object v5
 
-    :cond_16a
+    :cond_16b
     const-string/jumbo v5, "getSecurityOutgoingServerPassword"
 
     move-object/from16 v0, p3
@@ -14407,22 +14479,22 @@
 
     move-result v5
 
-    if-eqz v5, :cond_16c
+    if-eqz v5, :cond_16d
 
-    if-eqz p4, :cond_16b
+    if-eqz p4, :cond_16c
 
     invoke-static/range {p4 .. p4}, Ljava/lang/reflect/Array;->getLength(Ljava/lang/Object;)I
 
     move-result v5
 
-    if-gtz v5, :cond_171
+    if-gtz v5, :cond_172
 
-    :cond_16b
+    :cond_16c
     const/4 v5, 0x0
 
     return-object v5
 
-    :cond_16c
+    :cond_16d
     const-string/jumbo v5, "setSecurityInComingServerPassword"
 
     move-object/from16 v0, p3
@@ -14431,35 +14503,9 @@
 
     move-result v5
 
-    if-eqz v5, :cond_16e
+    if-eqz v5, :cond_16f
 
-    if-eqz p4, :cond_16d
-
-    invoke-static/range {p4 .. p4}, Ljava/lang/reflect/Array;->getLength(Ljava/lang/Object;)I
-
-    move-result v5
-
-    const/4 v6, 0x1
-
-    if-ge v5, v6, :cond_172
-
-    :cond_16d
-    const/4 v5, 0x0
-
-    return-object v5
-
-    :cond_16e
-    const-string/jumbo v5, "setSecurityOutGoingServerPassword"
-
-    move-object/from16 v0, p3
-
-    invoke-virtual {v0, v5}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v5
-
-    if-eqz v5, :cond_174
-
-    if-eqz p4, :cond_16f
+    if-eqz p4, :cond_16e
 
     invoke-static/range {p4 .. p4}, Ljava/lang/reflect/Array;->getLength(Ljava/lang/Object;)I
 
@@ -14469,12 +14515,38 @@
 
     if-ge v5, v6, :cond_173
 
-    :cond_16f
+    :cond_16e
     const/4 v5, 0x0
 
     return-object v5
 
+    :cond_16f
+    const-string/jumbo v5, "setSecurityOutGoingServerPassword"
+
+    move-object/from16 v0, p3
+
+    invoke-virtual {v0, v5}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v5
+
+    if-eqz v5, :cond_175
+
+    if-eqz p4, :cond_170
+
+    invoke-static/range {p4 .. p4}, Ljava/lang/reflect/Array;->getLength(Ljava/lang/Object;)I
+
+    move-result v5
+
+    const/4 v6, 0x1
+
+    if-ge v5, v6, :cond_174
+
     :cond_170
+    const/4 v5, 0x0
+
+    return-object v5
+
+    :cond_171
     new-instance v5, Lcom/samsung/android/knox/ContextInfo;
 
     move/from16 v0, v17
@@ -14523,10 +14595,10 @@
 
     invoke-virtual {v0, v5}, Landroid/database/MatrixCursor;->addRow([Ljava/lang/Object;)V
 
-    :goto_63
+    :goto_64
     return-object v53
 
-    :cond_171
+    :cond_172
     new-instance v5, Lcom/samsung/android/knox/ContextInfo;
 
     move/from16 v0, v17
@@ -14575,9 +14647,9 @@
 
     invoke-virtual {v0, v5}, Landroid/database/MatrixCursor;->addRow([Ljava/lang/Object;)V
 
-    goto :goto_63
+    goto :goto_64
 
-    :cond_172
+    :cond_173
     new-instance v5, Lcom/samsung/android/knox/ContextInfo;
 
     move/from16 v0, v17
@@ -14624,9 +14696,9 @@
 
     invoke-virtual {v0, v5}, Landroid/database/MatrixCursor;->addRow([Ljava/lang/Object;)V
 
-    goto :goto_63
+    goto :goto_64
 
-    :cond_173
+    :cond_174
     new-instance v5, Lcom/samsung/android/knox/ContextInfo;
 
     move/from16 v0, v17
@@ -14673,9 +14745,9 @@
 
     invoke-virtual {v0, v5}, Landroid/database/MatrixCursor;->addRow([Ljava/lang/Object;)V
 
-    goto/16 :goto_63
+    goto/16 :goto_64
 
-    :cond_174
+    :cond_175
     const/4 v5, 0x0
 
     return-object v5
@@ -14754,7 +14826,9 @@
 
     move-object/from16 v53, v56
 
-    goto/16 :goto_5b
+    goto/16 :goto_5c
+
+    nop
 
     :pswitch_data_0
     .packed-switch 0x1

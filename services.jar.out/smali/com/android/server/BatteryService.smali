@@ -806,10 +806,10 @@
     return v0
 .end method
 
-.method static synthetic -wrap10(Lcom/android/server/BatteryService;)V
+.method static synthetic -wrap10(Lcom/android/server/BatteryService;Z)V
     .locals 0
 
-    invoke-direct {p0}, Lcom/android/server/BatteryService;->shutdownIfWeakChargerEmptySOCLocked()V
+    invoke-direct {p0, p1}, Lcom/android/server/BatteryService;->setWirelessFastCharging(Z)V
 
     return-void
 .end method
@@ -817,7 +817,7 @@
 .method static synthetic -wrap11(Lcom/android/server/BatteryService;)V
     .locals 0
 
-    invoke-direct {p0}, Lcom/android/server/BatteryService;->shutdownIfWeakChargerVoltageCheckLocked()V
+    invoke-direct {p0}, Lcom/android/server/BatteryService;->shutdownIfWeakChargerEmptySOCLocked()V
 
     return-void
 .end method
@@ -825,12 +825,20 @@
 .method static synthetic -wrap12(Lcom/android/server/BatteryService;)V
     .locals 0
 
+    invoke-direct {p0}, Lcom/android/server/BatteryService;->shutdownIfWeakChargerVoltageCheckLocked()V
+
+    return-void
+.end method
+
+.method static synthetic -wrap13(Lcom/android/server/BatteryService;)V
+    .locals 0
+
     invoke-direct {p0}, Lcom/android/server/BatteryService;->updateBatteryWarningLevelLocked()V
 
     return-void
 .end method
 
-.method static synthetic -wrap13(Lcom/android/server/BatteryService;Landroid/os/BatteryProperties;)V
+.method static synthetic -wrap14(Lcom/android/server/BatteryService;Landroid/os/BatteryProperties;)V
     .locals 0
 
     invoke-direct {p0, p1}, Lcom/android/server/BatteryService;->update(Landroid/os/BatteryProperties;)V
@@ -896,18 +904,18 @@
     return-void
 .end method
 
-.method static synthetic -wrap8(Lcom/android/server/BatteryService;)V
+.method static synthetic -wrap8(Ljava/lang/String;I)V
     .locals 0
 
-    invoke-direct {p0}, Lcom/android/server/BatteryService;->sendOTGIntentLocked()V
+    invoke-static {p0, p1}, Lcom/android/server/BatteryService;->fileWriteInt(Ljava/lang/String;I)V
 
     return-void
 .end method
 
-.method static synthetic -wrap9(Lcom/android/server/BatteryService;Z)V
+.method static synthetic -wrap9(Lcom/android/server/BatteryService;)V
     .locals 0
 
-    invoke-direct {p0, p1}, Lcom/android/server/BatteryService;->setWirelessFastCharging(Z)V
+    invoke-direct {p0}, Lcom/android/server/BatteryService;->sendOTGIntentLocked()V
 
     return-void
 .end method

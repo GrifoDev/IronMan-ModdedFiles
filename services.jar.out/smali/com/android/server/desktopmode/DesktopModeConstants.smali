@@ -48,6 +48,8 @@
 
 .field static final MONITOR_INFO_PATH:Ljava/lang/String; = "/sys/class/dp_sec/monitor_info"
 
+.field static final PSM_RESTRICTED_DEVICE_PERFORMANCE:Ljava/lang/String; = "restricted_device_performance"
+
 .field static final SPEN_ENABLED_PATH:Ljava/lang/String; = "/sys/class/sec/sec_epen/input/enabled"
 
 .field static final SPEN_ENABLED_SLEEP:I = 0x0

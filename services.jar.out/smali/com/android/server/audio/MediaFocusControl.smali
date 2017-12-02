@@ -74,6 +74,8 @@
     .end annotation
 .end field
 
+.field private mIgnoredFocus:Lcom/android/server/audio/FocusRequester;
+
 .field private mIsMySpaceEffectFocus:Z
 
 .field private mIsRinging:Z
@@ -87,6 +89,8 @@
 .field private mNotifyFocusOwnerOnDuck:Z
 
 .field private mRilState:I
+
+.field private mRingOrCallActive:Z
 
 .field private mSimCount:I
 
@@ -140,7 +144,15 @@
     return-object v0
 .end method
 
-.method static synthetic -get5(Lcom/android/server/audio/MediaFocusControl;)Lcom/android/server/audio/MediaFocusControl$MultiFocusStack;
+.method static synthetic -get5(Lcom/android/server/audio/MediaFocusControl;)Lcom/android/server/audio/FocusRequester;
+    .locals 1
+
+    iget-object v0, p0, Lcom/android/server/audio/MediaFocusControl;->mIgnoredFocus:Lcom/android/server/audio/FocusRequester;
+
+    return-object v0
+.end method
+
+.method static synthetic -get6(Lcom/android/server/audio/MediaFocusControl;)Lcom/android/server/audio/MediaFocusControl$MultiFocusStack;
     .locals 1
 
     iget-object v0, p0, Lcom/android/server/audio/MediaFocusControl;->mMultiFocusStack:Lcom/android/server/audio/MediaFocusControl$MultiFocusStack;
@@ -148,7 +160,7 @@
     return-object v0
 .end method
 
-.method static synthetic -get6(Lcom/android/server/audio/MediaFocusControl;)I
+.method static synthetic -get7(Lcom/android/server/audio/MediaFocusControl;)I
     .locals 1
 
     iget v0, p0, Lcom/android/server/audio/MediaFocusControl;->mRilState:I
@@ -156,7 +168,7 @@
     return v0
 .end method
 
-.method static synthetic -get7()Ljava/lang/Object;
+.method static synthetic -get8()Ljava/lang/Object;
     .locals 1
 
     sget-object v0, Lcom/android/server/audio/MediaFocusControl;->mRingingLock:Ljava/lang/Object;
@@ -164,7 +176,7 @@
     return-object v0
 .end method
 
-.method static synthetic -get8(Lcom/android/server/audio/MediaFocusControl;)Z
+.method static synthetic -get9(Lcom/android/server/audio/MediaFocusControl;)Z
     .locals 1
 
     iget-boolean v0, p0, Lcom/android/server/audio/MediaFocusControl;->mSplitSoundService:Z
@@ -180,7 +192,15 @@
     return-object p1
 .end method
 
-.method static synthetic -set1(Lcom/android/server/audio/MediaFocusControl;Z)Z
+.method static synthetic -set1(Lcom/android/server/audio/MediaFocusControl;Lcom/android/server/audio/FocusRequester;)Lcom/android/server/audio/FocusRequester;
+    .locals 0
+
+    iput-object p1, p0, Lcom/android/server/audio/MediaFocusControl;->mIgnoredFocus:Lcom/android/server/audio/FocusRequester;
+
+    return-object p1
+.end method
+
+.method static synthetic -set2(Lcom/android/server/audio/MediaFocusControl;Z)Z
     .locals 0
 
     iput-boolean p1, p0, Lcom/android/server/audio/MediaFocusControl;->mIsRinging:Z
@@ -188,7 +208,7 @@
     return p1
 .end method
 
-.method static synthetic -set2(Lcom/android/server/audio/MediaFocusControl;I)I
+.method static synthetic -set3(Lcom/android/server/audio/MediaFocusControl;I)I
     .locals 0
 
     iput p1, p0, Lcom/android/server/audio/MediaFocusControl;->mRilState:I
@@ -196,7 +216,7 @@
     return p1
 .end method
 
-.method static synthetic -set3(Lcom/android/server/audio/MediaFocusControl;Z)Z
+.method static synthetic -set4(Lcom/android/server/audio/MediaFocusControl;Z)Z
     .locals 0
 
     iput-boolean p1, p0, Lcom/android/server/audio/MediaFocusControl;->mSplitSoundService:Z
@@ -243,13 +263,13 @@
 .end method
 
 .method protected constructor <init>(Landroid/os/Looper;Landroid/content/Context;Lcom/android/server/audio/AudioService;)V
-    .locals 4
+    .locals 5
 
-    const/4 v3, 0x2
+    const/4 v4, 0x2
 
-    const/4 v2, -0x1
+    const/4 v3, -0x1
 
-    const/4 v0, 0x0
+    const/4 v2, 0x0
 
     const/4 v1, 0x0
 
@@ -259,15 +279,15 @@
 
     iput-boolean v1, p0, Lcom/android/server/audio/MediaFocusControl;->mSplitSoundService:Z
 
-    iput-object v0, p0, Lcom/android/server/audio/MediaFocusControl;->mSplitSoundFR:Lcom/android/server/audio/FocusRequester;
+    iput-object v2, p0, Lcom/android/server/audio/MediaFocusControl;->mSplitSoundFR:Lcom/android/server/audio/FocusRequester;
 
-    iput-object v0, p0, Lcom/android/server/audio/MediaFocusControl;->mSplitSoundCb:Landroid/os/IBinder;
+    iput-object v2, p0, Lcom/android/server/audio/MediaFocusControl;->mSplitSoundCb:Landroid/os/IBinder;
 
-    iput-object v0, p0, Lcom/android/server/audio/MediaFocusControl;->mCallClientId:Ljava/lang/String;
+    iput-object v2, p0, Lcom/android/server/audio/MediaFocusControl;->mCallClientId:Ljava/lang/String;
 
-    iput-object v0, p0, Lcom/android/server/audio/MediaFocusControl;->mTmgr:Landroid/telephony/TelephonyManager;
+    iput-object v2, p0, Lcom/android/server/audio/MediaFocusControl;->mTmgr:Landroid/telephony/TelephonyManager;
 
-    iput v2, p0, Lcom/android/server/audio/MediaFocusControl;->mRilState:I
+    iput v3, p0, Lcom/android/server/audio/MediaFocusControl;->mRilState:I
 
     iput v1, p0, Lcom/android/server/audio/MediaFocusControl;->mSimCount:I
 
@@ -279,6 +299,10 @@
 
     iput-boolean v1, p0, Lcom/android/server/audio/MediaFocusControl;->mIsRinging:Z
 
+    iput-object v2, p0, Lcom/android/server/audio/MediaFocusControl;->mIgnoredFocus:Lcom/android/server/audio/FocusRequester;
+
+    iput-boolean v1, p0, Lcom/android/server/audio/MediaFocusControl;->mRingOrCallActive:Z
+
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/android/server/audio/MediaFocusControl;->mNotifyFocusOwnerOnDuck:Z
@@ -289,9 +313,9 @@
 
     iput-object v0, p0, Lcom/android/server/audio/MediaFocusControl;->mFocusFollowers:Ljava/util/ArrayList;
 
-    iput v2, p0, Lcom/android/server/audio/MediaFocusControl;->mDumpEffectType:I
+    iput v3, p0, Lcom/android/server/audio/MediaFocusControl;->mDumpEffectType:I
 
-    iput v2, p0, Lcom/android/server/audio/MediaFocusControl;->mDumpStreamType:I
+    iput v3, p0, Lcom/android/server/audio/MediaFocusControl;->mDumpStreamType:I
 
     sget-boolean v0, Lcom/android/server/audio/MediaFocusControl;->MULTISOUND_ENABLED:Z
 
@@ -335,7 +359,7 @@
 
     move-result-object v1
 
-    invoke-virtual {v1, v3}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    invoke-virtual {v1, v4}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
     move-result-object v1
 
@@ -345,7 +369,7 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    iput v3, p0, Lcom/android/server/audio/MediaFocusControl;->mDevice:I
+    iput v4, p0, Lcom/android/server/audio/MediaFocusControl;->mDevice:I
 
     :cond_0
     new-instance v0, Lcom/android/server/audio/MediaFocusControl$MultiFocusStack;
@@ -661,6 +685,18 @@
     const-string/jumbo v3, "------------------------------"
 
     invoke-virtual {p1, v3}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
+
+    iget-object v3, p0, Lcom/android/server/audio/MediaFocusControl;->mIgnoredFocus:Lcom/android/server/audio/FocusRequester;
+
+    if-eqz v3, :cond_2
+
+    const-string/jumbo v3, "Ignored focus"
+
+    invoke-virtual {p1, v3}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
+
+    iget-object v3, p0, Lcom/android/server/audio/MediaFocusControl;->mIgnoredFocus:Lcom/android/server/audio/FocusRequester;
+
+    invoke-virtual {v3, p1}, Lcom/android/server/audio/FocusRequester;->dump(Ljava/io/PrintWriter;)V
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
@@ -1538,187 +1574,189 @@
 
 # virtual methods
 .method protected abandonAudioFocus(Landroid/media/IAudioFocusDispatcher;Ljava/lang/String;Landroid/media/AudioAttributes;)I
-    .locals 8
+    .locals 10
 
-    const/4 v7, 0x1
+    const/4 v5, 0x1
 
-    const-string/jumbo v3, "MediaFocusControl"
+    const/4 v6, 0x0
 
-    new-instance v4, Ljava/lang/StringBuilder;
+    const-string/jumbo v4, "MediaFocusControl"
 
-    invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
+    new-instance v7, Ljava/lang/StringBuilder;
 
-    const-string/jumbo v5, " AudioFocus  abandonAudioFocus() from uid/pid "
+    invoke-direct {v7}, Ljava/lang/StringBuilder;-><init>()V
 
-    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    const-string/jumbo v8, " AudioFocus  abandonAudioFocus() from uid/pid "
 
-    move-result-object v4
+    invoke-virtual {v7, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v7
 
     invoke-static {}, Landroid/os/Binder;->getCallingUid()I
 
-    move-result v5
+    move-result v8
 
-    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    invoke-virtual {v7, v8}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    move-result-object v4
+    move-result-object v7
 
-    const-string/jumbo v5, "/"
+    const-string/jumbo v8, "/"
 
-    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v7, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v4
+    move-result-object v7
 
     invoke-static {}, Landroid/os/Binder;->getCallingPid()I
 
-    move-result v5
+    move-result v8
 
-    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    invoke-virtual {v7, v8}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    move-result-object v4
+    move-result-object v7
 
-    const-string/jumbo v5, " clientId="
+    const-string/jumbo v8, " clientId="
 
-    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v7, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v4
+    move-result-object v7
 
-    invoke-virtual {v4, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v7, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v4
+    move-result-object v7
 
-    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v7}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v4
+    move-result-object v7
 
-    invoke-static {v3, v4}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {v4, v7}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
     :try_start_0
-    sget-object v4, Lcom/android/server/audio/MediaFocusControl;->mAudioFocusLock:Ljava/lang/Object;
+    sget-object v7, Lcom/android/server/audio/MediaFocusControl;->mAudioFocusLock:Ljava/lang/Object;
 
-    monitor-enter v4
+    monitor-enter v7
     :try_end_0
     .catch Ljava/util/ConcurrentModificationException; {:try_start_0 .. :try_end_0} :catch_0
 
     :try_start_1
-    sget-boolean v3, Lcom/android/server/audio/MediaFocusControl;->MULTISOUND_ENABLED:Z
+    sget-boolean v4, Lcom/android/server/audio/MediaFocusControl;->MULTISOUND_ENABLED:Z
 
-    if-eqz v3, :cond_4
+    if-eqz v4, :cond_4
 
-    const/4 v1, 0x0
+    const/4 v2, 0x0
 
     if-nez p3, :cond_0
 
-    iget-object v3, p0, Lcom/android/server/audio/MediaFocusControl;->mMultiFocusStack:Lcom/android/server/audio/MediaFocusControl$MultiFocusStack;
+    iget-object v4, p0, Lcom/android/server/audio/MediaFocusControl;->mMultiFocusStack:Lcom/android/server/audio/MediaFocusControl$MultiFocusStack;
 
     invoke-static {}, Landroid/os/Binder;->getCallingUid()I
 
-    move-result v5
+    move-result v8
 
-    const/4 v6, 0x0
+    const/4 v9, 0x0
 
-    invoke-virtual {v3, v5, p2, v6}, Lcom/android/server/audio/MediaFocusControl$MultiFocusStack;->getFocusRequester(ILjava/lang/String;Z)Lcom/android/server/audio/FocusRequester;
+    invoke-virtual {v4, v8, p2, v9}, Lcom/android/server/audio/MediaFocusControl$MultiFocusStack;->getFocusRequester(ILjava/lang/String;Z)Lcom/android/server/audio/FocusRequester;
 
-    move-result-object v1
+    move-result-object v2
 
-    if-eqz v1, :cond_0
+    if-eqz v2, :cond_0
 
-    invoke-virtual {v1}, Lcom/android/server/audio/FocusRequester;->getAudioAttributes()Landroid/media/AudioAttributes;
+    invoke-virtual {v2}, Lcom/android/server/audio/FocusRequester;->getAudioAttributes()Landroid/media/AudioAttributes;
 
     move-result-object p3
 
     :cond_0
-    iget-object v3, p0, Lcom/android/server/audio/MediaFocusControl;->mCallClientId:Ljava/lang/String;
+    iget-object v4, p0, Lcom/android/server/audio/MediaFocusControl;->mCallClientId:Ljava/lang/String;
 
-    invoke-virtual {p2, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {p2, v4}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move-result v3
+    move-result v4
 
-    if-nez v3, :cond_1
+    if-nez v4, :cond_1
 
     if-eqz p3, :cond_3
 
     invoke-virtual {p3}, Landroid/media/AudioAttributes;->getContentType()I
 
-    move-result v3
+    move-result v4
 
-    if-eq v3, v7, :cond_1
+    if-eq v4, v5, :cond_1
 
     invoke-virtual {p3}, Landroid/media/AudioAttributes;->getContentType()I
 
-    move-result v3
+    move-result v4
 
-    const/4 v5, 0x4
+    const/4 v8, 0x4
 
-    if-ne v3, v5, :cond_3
+    if-ne v4, v8, :cond_3
 
     :cond_1
-    const-string/jumbo v3, "MediaFocusControl"
+    const-string/jumbo v4, "MediaFocusControl"
 
-    new-instance v5, Ljava/lang/StringBuilder;
+    new-instance v8, Ljava/lang/StringBuilder;
 
-    invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {v8}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string/jumbo v6, "abandonAudioFocus, mCallClientId = "
+    const-string/jumbo v9, "abandonAudioFocus, mCallClientId = "
 
-    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v8, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v5
+    move-result-object v8
 
-    iget-object v6, p0, Lcom/android/server/audio/MediaFocusControl;->mCallClientId:Ljava/lang/String;
+    iget-object v9, p0, Lcom/android/server/audio/MediaFocusControl;->mCallClientId:Ljava/lang/String;
 
-    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v8, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v5
+    move-result-object v8
 
-    invoke-virtual {v5}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v8}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v5
+    move-result-object v8
 
-    invoke-static {v3, v5}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {v4, v8}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    const/4 v2, 0x0
+    const/4 v3, 0x0
 
     :goto_0
-    iget-object v3, p0, Lcom/android/server/audio/MediaFocusControl;->mMultiFocusStack:Lcom/android/server/audio/MediaFocusControl$MultiFocusStack;
+    iget-object v4, p0, Lcom/android/server/audio/MediaFocusControl;->mMultiFocusStack:Lcom/android/server/audio/MediaFocusControl$MultiFocusStack;
 
-    invoke-virtual {v3}, Lcom/android/server/audio/MediaFocusControl$MultiFocusStack;->size()I
+    invoke-virtual {v4}, Lcom/android/server/audio/MediaFocusControl$MultiFocusStack;->size()I
 
-    move-result v3
+    move-result v4
 
-    if-ge v2, v3, :cond_3
+    if-ge v3, v4, :cond_3
 
-    iget-object v3, p0, Lcom/android/server/audio/MediaFocusControl;->mMultiFocusStack:Lcom/android/server/audio/MediaFocusControl$MultiFocusStack;
+    iget-object v4, p0, Lcom/android/server/audio/MediaFocusControl;->mMultiFocusStack:Lcom/android/server/audio/MediaFocusControl$MultiFocusStack;
 
-    invoke-virtual {v3, v2}, Lcom/android/server/audio/MediaFocusControl$MultiFocusStack;->valueAt(I)Ljava/util/Stack;
+    invoke-virtual {v4, v3}, Lcom/android/server/audio/MediaFocusControl$MultiFocusStack;->valueAt(I)Ljava/util/Stack;
 
-    move-result-object v3
+    move-result-object v4
 
-    iput-object v3, p0, Lcom/android/server/audio/MediaFocusControl;->mFocusStack:Ljava/util/Stack;
+    iput-object v4, p0, Lcom/android/server/audio/MediaFocusControl;->mFocusStack:Ljava/util/Stack;
 
-    iget-object v3, p0, Lcom/android/server/audio/MediaFocusControl;->mFocusStack:Ljava/util/Stack;
+    iget-object v4, p0, Lcom/android/server/audio/MediaFocusControl;->mFocusStack:Ljava/util/Stack;
 
-    invoke-virtual {v3}, Ljava/util/Stack;->empty()Z
+    invoke-virtual {v4}, Ljava/util/Stack;->empty()Z
 
-    move-result v3
+    move-result v4
 
-    if-nez v3, :cond_2
+    if-nez v4, :cond_2
 
-    iget-object v3, p0, Lcom/android/server/audio/MediaFocusControl;->mFocusStack:Ljava/util/Stack;
+    iget-object v4, p0, Lcom/android/server/audio/MediaFocusControl;->mFocusStack:Ljava/util/Stack;
 
-    invoke-virtual {v3}, Ljava/util/Stack;->peek()Ljava/lang/Object;
+    invoke-virtual {v4}, Ljava/util/Stack;->peek()Ljava/lang/Object;
 
-    move-result-object v3
+    move-result-object v4
 
-    check-cast v3, Lcom/android/server/audio/FocusRequester;
+    check-cast v4, Lcom/android/server/audio/FocusRequester;
 
-    invoke-virtual {v3, p2}, Lcom/android/server/audio/FocusRequester;->hasSameClient(Ljava/lang/String;)Z
+    invoke-virtual {v4, p2}, Lcom/android/server/audio/FocusRequester;->hasSameClient(Ljava/lang/String;)Z
 
-    move-result v3
+    move-result v4
 
-    if-eqz v3, :cond_2
+    if-eqz v4, :cond_2
 
     :goto_1
-    add-int/lit8 v2, v2, 0x1
+    add-int/lit8 v3, v3, 0x1
 
     goto :goto_0
 
@@ -1730,154 +1768,217 @@
     goto :goto_1
 
     :catchall_0
-    move-exception v3
+    move-exception v4
 
     :try_start_2
-    monitor-exit v4
+    monitor-exit v7
 
-    throw v3
+    throw v4
     :try_end_2
     .catch Ljava/util/ConcurrentModificationException; {:try_start_2 .. :try_end_2} :catch_0
 
     :catch_0
     move-exception v0
 
-    const-string/jumbo v3, "MediaFocusControl"
+    const-string/jumbo v4, "MediaFocusControl"
 
-    new-instance v4, Ljava/lang/StringBuilder;
+    new-instance v6, Ljava/lang/StringBuilder;
 
-    invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {v6}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string/jumbo v5, "FATAL EXCEPTION AudioFocus  abandonAudioFocus() caused "
+    const-string/jumbo v7, "FATAL EXCEPTION AudioFocus  abandonAudioFocus() caused "
 
-    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v4
+    move-result-object v6
 
-    invoke-virtual {v4, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    invoke-virtual {v6, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
-    move-result-object v4
+    move-result-object v6
 
-    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v6}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v4
+    move-result-object v6
 
-    invoke-static {v3, v4}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {v4, v6}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
     invoke-virtual {v0}, Ljava/util/ConcurrentModificationException;->printStackTrace()V
 
     :goto_2
-    return v7
+    return v5
 
     :cond_3
     :try_start_3
     invoke-static {}, Landroid/os/Binder;->getCallingUid()I
 
-    move-result v3
+    move-result v4
 
-    invoke-direct {p0, v3}, Lcom/android/server/audio/MediaFocusControl;->selectFocusStack(I)Ljava/util/Stack;
+    invoke-direct {p0, v4}, Lcom/android/server/audio/MediaFocusControl;->selectFocusStack(I)Ljava/util/Stack;
 
-    move-result-object v3
+    move-result-object v4
 
-    iput-object v3, p0, Lcom/android/server/audio/MediaFocusControl;->mFocusStack:Ljava/util/Stack;
+    iput-object v4, p0, Lcom/android/server/audio/MediaFocusControl;->mFocusStack:Ljava/util/Stack;
 
     :cond_4
-    iget-object v3, p0, Lcom/android/server/audio/MediaFocusControl;->mAudioService:Lcom/android/server/audio/AudioService;
+    iget-object v4, p0, Lcom/android/server/audio/MediaFocusControl;->mAudioService:Lcom/android/server/audio/AudioService;
 
-    iget-boolean v3, v3, Lcom/android/server/audio/AudioService;->mHMTDocked:Z
+    iget-boolean v4, v4, Lcom/android/server/audio/AudioService;->mHMTDocked:Z
 
-    if-nez v3, :cond_5
+    if-nez v4, :cond_5
 
-    iget-boolean v3, p0, Lcom/android/server/audio/MediaFocusControl;->mIsMySpaceEffectFocus:Z
+    iget-boolean v4, p0, Lcom/android/server/audio/MediaFocusControl;->mIsMySpaceEffectFocus:Z
 
-    if-eqz v3, :cond_5
+    if-eqz v4, :cond_5
 
-    iget-object v3, p0, Lcom/android/server/audio/MediaFocusControl;->mFocusStack:Ljava/util/Stack;
+    iget-object v4, p0, Lcom/android/server/audio/MediaFocusControl;->mFocusStack:Ljava/util/Stack;
 
-    invoke-virtual {v3}, Ljava/util/Stack;->empty()Z
+    invoke-virtual {v4}, Ljava/util/Stack;->empty()Z
 
-    move-result v3
+    move-result v4
 
-    if-nez v3, :cond_5
+    if-nez v4, :cond_5
 
-    iget-object v3, p0, Lcom/android/server/audio/MediaFocusControl;->mFocusStack:Ljava/util/Stack;
+    iget-object v4, p0, Lcom/android/server/audio/MediaFocusControl;->mFocusStack:Ljava/util/Stack;
 
-    invoke-virtual {v3}, Ljava/util/Stack;->peek()Ljava/lang/Object;
+    invoke-virtual {v4}, Ljava/util/Stack;->peek()Ljava/lang/Object;
 
-    move-result-object v3
+    move-result-object v4
 
-    check-cast v3, Lcom/android/server/audio/FocusRequester;
+    check-cast v4, Lcom/android/server/audio/FocusRequester;
 
-    invoke-virtual {v3, p2}, Lcom/android/server/audio/FocusRequester;->hasSameClient(Ljava/lang/String;)Z
+    invoke-virtual {v4, p2}, Lcom/android/server/audio/FocusRequester;->hasSameClient(Ljava/lang/String;)Z
 
-    move-result v3
+    move-result v4
 
-    if-eqz v3, :cond_5
+    if-eqz v4, :cond_5
 
-    const-string/jumbo v3, "AudioFocus_For_Phone_Ring_And_Calls"
+    const-string/jumbo v4, "AudioFocus_For_Phone_Ring_And_Calls"
 
-    invoke-virtual {p2, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {p2, v4}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move-result v3
+    move-result v4
 
-    if-eqz v3, :cond_5
+    if-eqz v4, :cond_5
 
-    iget-object v3, p0, Lcom/android/server/audio/MediaFocusControl;->mMySpaceManager:Landroid/media/MySpaceManager;
+    iget-object v4, p0, Lcom/android/server/audio/MediaFocusControl;->mMySpaceManager:Landroid/media/MySpaceManager;
 
-    iget-object v5, p0, Lcom/android/server/audio/MediaFocusControl;->mMySpaceManager:Landroid/media/MySpaceManager;
+    iget-object v8, p0, Lcom/android/server/audio/MediaFocusControl;->mMySpaceManager:Landroid/media/MySpaceManager;
 
-    iget-object v5, v5, Landroid/media/MySpaceManager;->mMusicAttributes:Landroid/media/AudioAttributes;
+    iget-object v8, v8, Landroid/media/MySpaceManager;->mMusicAttributes:Landroid/media/AudioAttributes;
 
-    const/4 v6, 0x0
+    const/4 v9, 0x0
 
-    invoke-virtual {v3, v5, v6}, Landroid/media/MySpaceManager;->playMySpaceEffect(Landroid/media/AudioAttributes;I)V
+    invoke-virtual {v4, v8, v9}, Landroid/media/MySpaceManager;->playMySpaceEffect(Landroid/media/AudioAttributes;I)V
 
-    const/4 v3, 0x0
+    const/4 v4, 0x0
 
-    iput-boolean v3, p0, Lcom/android/server/audio/MediaFocusControl;->mIsMySpaceEffectFocus:Z
+    iput-boolean v4, p0, Lcom/android/server/audio/MediaFocusControl;->mIsMySpaceEffectFocus:Z
 
-    const-string/jumbo v3, "MediaFocusControl"
+    const-string/jumbo v4, "MediaFocusControl"
 
-    const-string/jumbo v5, "AudioFocus playMySpaceEffect MUSIC FADE IN"
+    const-string/jumbo v8, "AudioFocus playMySpaceEffect MUSIC FADE IN"
 
-    invoke-static {v3, v5}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {v4, v8}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
 
     :cond_5
-    iget-object v3, p0, Lcom/android/server/audio/MediaFocusControl;->mCallClientId:Ljava/lang/String;
+    iget-object v4, p0, Lcom/android/server/audio/MediaFocusControl;->mCallClientId:Ljava/lang/String;
 
-    invoke-virtual {p2, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {p2, v4}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move-result v3
+    move-result v4
 
-    if-eqz v3, :cond_6
+    if-eqz v4, :cond_6
 
-    const/4 v3, 0x0
+    const/4 v4, 0x0
 
-    iput-object v3, p0, Lcom/android/server/audio/MediaFocusControl;->mCallClientId:Ljava/lang/String;
+    iput-object v4, p0, Lcom/android/server/audio/MediaFocusControl;->mCallClientId:Ljava/lang/String;
 
     :cond_6
-    const/4 v3, 0x1
+    const/4 v4, 0x1
 
-    const/4 v5, 0x1
+    const/4 v8, 0x1
 
-    invoke-direct {p0, p2, v3, v5}, Lcom/android/server/audio/MediaFocusControl;->removeFocusStackEntry(Ljava/lang/String;ZZ)V
+    invoke-direct {p0, p2, v4, v8}, Lcom/android/server/audio/MediaFocusControl;->removeFocusStackEntry(Ljava/lang/String;ZZ)V
 
-    const/4 v3, 0x0
+    iget-boolean v8, p0, Lcom/android/server/audio/MediaFocusControl;->mRingOrCallActive:Z
 
-    iput-object v3, p0, Lcom/android/server/audio/MediaFocusControl;->mSplitSoundFR:Lcom/android/server/audio/FocusRequester;
+    const-string/jumbo v4, "AudioFocus_For_Phone_Ring_And_Calls"
 
-    const/4 v3, 0x0
+    invoke-virtual {v4, p2}, Ljava/lang/String;->compareTo(Ljava/lang/String;)I
 
-    iput-object v3, p0, Lcom/android/server/audio/MediaFocusControl;->mSplitSoundCb:Landroid/os/IBinder;
+    move-result v4
+
+    if-nez v4, :cond_9
+
+    move v4, v5
+
+    :goto_3
+    and-int v1, v8, v4
+
+    if-eqz v1, :cond_7
+
+    const/4 v4, 0x0
+
+    iput-boolean v4, p0, Lcom/android/server/audio/MediaFocusControl;->mRingOrCallActive:Z
+
+    :cond_7
+    iget-object v4, p0, Lcom/android/server/audio/MediaFocusControl;->mIgnoredFocus:Lcom/android/server/audio/FocusRequester;
+
+    if-eqz v4, :cond_8
+
+    if-eqz v1, :cond_a
+
+    iget-object v4, p0, Lcom/android/server/audio/MediaFocusControl;->mIgnoredFocus:Lcom/android/server/audio/FocusRequester;
+
+    const/4 v6, 0x1
+
+    invoke-virtual {v4, v6}, Lcom/android/server/audio/FocusRequester;->handleFocusGain(I)V
+
+    :cond_8
+    :goto_4
+    const/4 v4, 0x0
+
+    iput-object v4, p0, Lcom/android/server/audio/MediaFocusControl;->mSplitSoundFR:Lcom/android/server/audio/FocusRequester;
+
+    const/4 v4, 0x0
+
+    iput-object v4, p0, Lcom/android/server/audio/MediaFocusControl;->mSplitSoundCb:Landroid/os/IBinder;
     :try_end_3
     .catchall {:try_start_3 .. :try_end_3} :catchall_0
 
     :try_start_4
-    monitor-exit v4
+    monitor-exit v7
     :try_end_4
     .catch Ljava/util/ConcurrentModificationException; {:try_start_4 .. :try_end_4} :catch_0
 
     goto :goto_2
+
+    :cond_9
+    move v4, v6
+
+    goto :goto_3
+
+    :cond_a
+    :try_start_5
+    iget-object v4, p0, Lcom/android/server/audio/MediaFocusControl;->mIgnoredFocus:Lcom/android/server/audio/FocusRequester;
+
+    invoke-virtual {v4, p2}, Lcom/android/server/audio/FocusRequester;->hasSameClient(Ljava/lang/String;)Z
+
+    move-result v4
+
+    if-eqz v4, :cond_8
+
+    iget-object v4, p0, Lcom/android/server/audio/MediaFocusControl;->mIgnoredFocus:Lcom/android/server/audio/FocusRequester;
+
+    invoke-virtual {v4}, Lcom/android/server/audio/FocusRequester;->release()V
+
+    const/4 v4, 0x0
+
+    iput-object v4, p0, Lcom/android/server/audio/MediaFocusControl;->mIgnoredFocus:Lcom/android/server/audio/FocusRequester;
+    :try_end_5
+    .catchall {:try_start_5 .. :try_end_5} :catchall_0
+
+    goto :goto_4
 .end method
 
 .method addFocusFollower(Landroid/media/audiopolicy/IAudioPolicyCallback;)V
@@ -2785,7 +2886,7 @@
 .end method
 
 .method protected requestAudioFocus(Landroid/media/AudioAttributes;ILandroid/os/IBinder;Landroid/media/IAudioFocusDispatcher;Ljava/lang/String;Ljava/lang/String;I)I
-    .locals 19
+    .locals 20
 
     const-string/jumbo v3, "MediaFocusControl"
 
@@ -2919,20 +3020,55 @@
     return v3
 
     :cond_1
-    sget-object v18, Lcom/android/server/audio/MediaFocusControl;->mAudioFocusLock:Ljava/lang/Object;
+    sget-object v19, Lcom/android/server/audio/MediaFocusControl;->mAudioFocusLock:Ljava/lang/Object;
 
-    monitor-enter v18
+    monitor-enter v19
 
     :try_start_0
-    sget-boolean v3, Lcom/android/server/audio/MediaFocusControl;->MULTISOUND_ENABLED:Z
+    move-object/from16 v0, p0
+
+    iget-boolean v3, v0, Lcom/android/server/audio/MediaFocusControl;->mRingOrCallActive:Z
 
     if-eqz v3, :cond_3
+
+    const/4 v3, 0x0
+
+    move v4, v3
+
+    :goto_0
+    const-string/jumbo v3, "AudioFocus_For_Phone_Ring_And_Calls"
+
+    move-object/from16 v0, p5
+
+    invoke-virtual {v3, v0}, Ljava/lang/String;->compareTo(Ljava/lang/String;)I
+
+    move-result v3
+
+    if-nez v3, :cond_4
+
+    const/4 v3, 0x1
+
+    :goto_1
+    and-int v14, v4, v3
+
+    if-eqz v14, :cond_2
+
+    const/4 v3, 0x1
+
+    move-object/from16 v0, p0
+
+    iput-boolean v3, v0, Lcom/android/server/audio/MediaFocusControl;->mRingOrCallActive:Z
+
+    :cond_2
+    sget-boolean v3, Lcom/android/server/audio/MediaFocusControl;->MULTISOUND_ENABLED:Z
+
+    if-eqz v3, :cond_6
 
     move-object/from16 v0, p0
 
     iget-object v3, v0, Lcom/android/server/audio/MediaFocusControl;->mCallClientId:Ljava/lang/String;
 
-    if-eqz v3, :cond_2
+    if-eqz v3, :cond_5
 
     const-string/jumbo v3, "MediaFocusControl"
 
@@ -2944,11 +3080,23 @@
 
     const/4 v3, 0x0
 
-    monitor-exit v18
+    monitor-exit v19
 
     return v3
 
-    :cond_2
+    :cond_3
+    const/4 v3, 0x1
+
+    move v4, v3
+
+    goto :goto_0
+
+    :cond_4
+    const/4 v3, 0x0
+
+    goto :goto_1
+
+    :cond_5
     :try_start_1
     invoke-static {}, Landroid/os/Binder;->getCallingUid()I
 
@@ -2964,54 +3112,9 @@
 
     iput-object v3, v0, Lcom/android/server/audio/MediaFocusControl;->mFocusStack:Ljava/util/Stack;
 
-    move-object/from16 v0, p0
+    :cond_6
+    const/4 v15, 0x0
 
-    iget-object v3, v0, Lcom/android/server/audio/MediaFocusControl;->mAudioService:Lcom/android/server/audio/AudioService;
-
-    iget v3, v3, Lcom/android/server/audio/AudioService;->mIgnoreAudioFocusUid:I
-
-    invoke-static {}, Landroid/os/Binder;->getCallingUid()I
-
-    move-result v4
-
-    if-ne v3, v4, :cond_3
-
-    const-string/jumbo v3, "MediaFocusControl"
-
-    new-instance v4, Ljava/lang/StringBuilder;
-
-    invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string/jumbo v5, "Ignore AudioFocus for "
-
-    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v4
-
-    move-object/from16 v0, p6
-
-    invoke-virtual {v4, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v4
-
-    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v4
-
-    invoke-static {v3, v4}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
-
-    const/4 v3, 0x1
-
-    monitor-exit v18
-
-    return v3
-
-    :cond_3
-    const/4 v14, 0x0
-
-    :try_start_2
     const-string/jumbo v3, "com.android.server.telecom"
 
     move-object/from16 v0, p6
@@ -3020,7 +3123,7 @@
 
     move-result v3
 
-    if-nez v3, :cond_4
+    if-nez v3, :cond_7
 
     invoke-virtual/range {p1 .. p1}, Landroid/media/AudioAttributes;->getUsage()I
 
@@ -3028,16 +3131,16 @@
 
     const/4 v4, 0x5
 
-    if-ne v3, v4, :cond_6
+    if-ne v3, v4, :cond_9
 
-    :cond_4
+    :cond_7
     move-object/from16 v0, p0
 
     iget-object v3, v0, Lcom/android/server/audio/MediaFocusControl;->mAudioService:Lcom/android/server/audio/AudioService;
 
     iget-boolean v3, v3, Lcom/android/server/audio/AudioService;->mSplitSound:Z
 
-    if-eqz v3, :cond_7
+    if-eqz v3, :cond_a
 
     const-string/jumbo v3, "AudioFocus_For_Phone_Ring_And_Calls"
 
@@ -3047,7 +3150,7 @@
 
     move-result v3
 
-    if-eqz v3, :cond_5
+    if-eqz v3, :cond_8
 
     new-instance v2, Lcom/android/server/audio/FocusRequester;
 
@@ -3084,25 +3187,25 @@
     move-object/from16 v1, p0
 
     iput-object v0, v1, Lcom/android/server/audio/MediaFocusControl;->mSplitSoundCb:Landroid/os/IBinder;
-    :try_end_2
-    .catchall {:try_start_2 .. :try_end_2} :catchall_0
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    :cond_5
+    :cond_8
     const/4 v3, 0x1
 
-    monitor-exit v18
+    monitor-exit v19
 
     return v3
 
-    :cond_6
-    :try_start_3
+    :cond_9
+    :try_start_2
     invoke-virtual/range {p1 .. p1}, Landroid/media/AudioAttributes;->getUsage()I
 
     move-result v3
 
     const/4 v4, 0x6
 
-    if-eq v3, v4, :cond_4
+    if-eq v3, v4, :cond_7
 
     invoke-virtual/range {p1 .. p1}, Landroid/media/AudioAttributes;->getUsage()I
 
@@ -3110,9 +3213,9 @@
 
     const/4 v4, 0x4
 
-    if-eq v3, v4, :cond_4
+    if-eq v3, v4, :cond_7
 
-    :cond_7
+    :cond_a
     const-string/jumbo v3, "com.android.server.telecom"
 
     move-object/from16 v0, p6
@@ -3121,7 +3224,7 @@
 
     move-result v3
 
-    if-eqz v3, :cond_8
+    if-eqz v3, :cond_b
 
     move-object/from16 v0, p5
 
@@ -3129,30 +3232,30 @@
 
     iput-object v0, v1, Lcom/android/server/audio/MediaFocusControl;->mCallClientId:Ljava/lang/String;
 
-    :cond_8
+    :cond_b
     invoke-direct/range {p0 .. p0}, Lcom/android/server/audio/MediaFocusControl;->canReassignAudioFocus()Z
-    :try_end_3
-    .catchall {:try_start_3 .. :try_end_3} :catchall_0
+    :try_end_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_0
 
     move-result v3
 
-    if-nez v3, :cond_a
+    if-nez v3, :cond_d
 
     and-int/lit8 v3, p7, 0x1
 
-    if-nez v3, :cond_9
+    if-nez v3, :cond_c
 
     const/4 v3, 0x0
 
-    monitor-exit v18
+    monitor-exit v19
 
     return v3
 
-    :cond_9
-    const/4 v14, 0x1
+    :cond_c
+    const/4 v15, 0x1
 
-    :cond_a
-    :try_start_4
+    :cond_d
+    :try_start_3
     new-instance v9, Lcom/android/server/audio/MediaFocusControl$AudioFocusDeathHandler;
 
     move-object/from16 v0, p0
@@ -3160,27 +3263,27 @@
     move-object/from16 v1, p3
 
     invoke-direct {v9, v0, v1}, Lcom/android/server/audio/MediaFocusControl$AudioFocusDeathHandler;-><init>(Lcom/android/server/audio/MediaFocusControl;Landroid/os/IBinder;)V
-    :try_end_4
-    .catchall {:try_start_4 .. :try_end_4} :catchall_0
+    :try_end_3
+    .catchall {:try_start_3 .. :try_end_3} :catchall_0
 
     const/4 v3, 0x0
 
-    :try_start_5
+    :try_start_4
     move-object/from16 v0, p3
 
     invoke-interface {v0, v9, v3}, Landroid/os/IBinder;->linkToDeath(Landroid/os/IBinder$DeathRecipient;I)V
-    :try_end_5
-    .catch Landroid/os/RemoteException; {:try_start_5 .. :try_end_5} :catch_0
-    .catchall {:try_start_5 .. :try_end_5} :catchall_0
+    :try_end_4
+    .catch Landroid/os/RemoteException; {:try_start_4 .. :try_end_4} :catch_0
+    .catchall {:try_start_4 .. :try_end_4} :catchall_0
 
-    :try_start_6
+    :try_start_5
     move-object/from16 v0, p0
 
     iget-object v3, v0, Lcom/android/server/audio/MediaFocusControl;->mAudioService:Lcom/android/server/audio/AudioService;
 
     iget-boolean v3, v3, Lcom/android/server/audio/AudioService;->mHMTDocked:Z
 
-    if-nez v3, :cond_c
+    if-nez v3, :cond_f
 
     const-string/jumbo v3, "AudioFocus_For_Phone_Ring_And_Calls"
 
@@ -3190,7 +3293,7 @@
 
     move-result v3
 
-    if-eqz v3, :cond_c
+    if-eqz v3, :cond_f
 
     const/4 v3, 0x3
 
@@ -3200,7 +3303,7 @@
 
     move-result v3
 
-    if-eqz v3, :cond_c
+    if-eqz v3, :cond_f
 
     move-object/from16 v0, p0
 
@@ -3210,7 +3313,7 @@
 
     move-result v3
 
-    if-nez v3, :cond_b
+    if-nez v3, :cond_e
 
     move-object/from16 v0, p0
 
@@ -3234,31 +3337,31 @@
 
     invoke-static {v3, v4}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
 
-    :cond_b
+    :cond_e
     const/4 v3, 0x1
 
     move-object/from16 v0, p0
 
     iput-boolean v3, v0, Lcom/android/server/audio/MediaFocusControl;->mIsMySpaceEffectFocus:Z
 
-    :cond_c
+    :cond_f
     const/4 v3, 0x2
 
     move/from16 v0, p2
 
-    if-eq v0, v3, :cond_d
+    if-eq v0, v3, :cond_10
 
     const/4 v3, 0x3
 
     move/from16 v0, p2
 
-    if-eq v0, v3, :cond_d
+    if-eq v0, v3, :cond_10
 
     const/4 v3, 0x4
 
     move/from16 v0, p2
 
-    if-eq v0, v3, :cond_d
+    if-eq v0, v3, :cond_10
 
     invoke-static {}, Landroid/os/Binder;->getCallingUid()I
 
@@ -3266,7 +3369,7 @@
 
     const v4, 0x186a0
 
-    div-int v17, v3, v4
+    div-int v18, v3, v4
 
     move-object/from16 v0, p0
 
@@ -3276,7 +3379,7 @@
 
     move-result v3
 
-    if-nez v3, :cond_d
+    if-nez v3, :cond_10
 
     move-object/from16 v0, p0
 
@@ -3284,19 +3387,19 @@
 
     invoke-virtual {v3}, Ljava/util/Stack;->peek()Ljava/lang/Object;
 
-    move-result-object v15
+    move-result-object v16
 
-    check-cast v15, Lcom/android/server/audio/FocusRequester;
+    check-cast v16, Lcom/android/server/audio/FocusRequester;
 
-    invoke-virtual {v15}, Lcom/android/server/audio/FocusRequester;->getUserId()I
+    invoke-virtual/range {v16 .. v16}, Lcom/android/server/audio/FocusRequester;->getUserId()I
 
     move-result v3
 
-    move/from16 v0, v17
+    move/from16 v0, v18
 
-    if-eq v3, v0, :cond_f
+    if-eq v3, v0, :cond_12
 
-    invoke-virtual {v15}, Lcom/android/server/audio/FocusRequester;->getPackageName()Ljava/lang/String;
+    invoke-virtual/range {v16 .. v16}, Lcom/android/server/audio/FocusRequester;->getPackageName()Ljava/lang/String;
 
     move-result-object v3
 
@@ -3306,12 +3409,12 @@
 
     move-result v3
 
-    if-eqz v3, :cond_f
+    if-eqz v3, :cond_12
 
     invoke-virtual/range {p0 .. p0}, Lcom/android/server/audio/MediaFocusControl;->discardAudioFocusOwner()V
 
-    :cond_d
-    :goto_0
+    :cond_10
+    :goto_2
     move-object/from16 v0, p0
 
     iget-object v3, v0, Lcom/android/server/audio/MediaFocusControl;->mFocusStack:Ljava/util/Stack;
@@ -3320,7 +3423,7 @@
 
     move-result v3
 
-    if-nez v3, :cond_11
+    if-nez v3, :cond_14
 
     move-object/from16 v0, p0
 
@@ -3338,7 +3441,7 @@
 
     move-result v3
 
-    if-eqz v3, :cond_11
+    if-eqz v3, :cond_14
 
     move-object/from16 v0, p0
 
@@ -3346,25 +3449,25 @@
 
     invoke-virtual {v3}, Ljava/util/Stack;->peek()Ljava/lang/Object;
 
-    move-result-object v15
+    move-result-object v16
 
-    check-cast v15, Lcom/android/server/audio/FocusRequester;
+    check-cast v16, Lcom/android/server/audio/FocusRequester;
 
-    invoke-virtual {v15}, Lcom/android/server/audio/FocusRequester;->getGainRequest()I
+    invoke-virtual/range {v16 .. v16}, Lcom/android/server/audio/FocusRequester;->getGainRequest()I
 
     move-result v3
 
     move/from16 v0, p2
 
-    if-ne v3, v0, :cond_10
+    if-ne v3, v0, :cond_13
 
-    invoke-virtual {v15}, Lcom/android/server/audio/FocusRequester;->getGrantFlags()I
+    invoke-virtual/range {v16 .. v16}, Lcom/android/server/audio/FocusRequester;->getGrantFlags()I
 
     move-result v3
 
     move/from16 v0, p7
 
-    if-ne v3, v0, :cond_10
+    if-ne v3, v0, :cond_13
 
     const/4 v3, 0x0
 
@@ -3372,7 +3475,7 @@
 
     invoke-interface {v0, v9, v3}, Landroid/os/IBinder;->unlinkToDeath(Landroid/os/IBinder$DeathRecipient;I)Z
 
-    invoke-virtual {v15}, Lcom/android/server/audio/FocusRequester;->toAudioFocusInfo()Landroid/media/AudioFocusInfo;
+    invoke-virtual/range {v16 .. v16}, Lcom/android/server/audio/FocusRequester;->toAudioFocusInfo()Landroid/media/AudioFocusInfo;
 
     move-result-object v3
 
@@ -3386,23 +3489,23 @@
 
     move/from16 v0, p2
 
-    if-ne v0, v3, :cond_e
+    if-ne v0, v3, :cond_11
 
     invoke-virtual/range {p0 .. p0}, Lcom/android/server/audio/MediaFocusControl;->resetFocusLossReceived()V
-    :try_end_6
-    .catchall {:try_start_6 .. :try_end_6} :catchall_0
+    :try_end_5
+    .catchall {:try_start_5 .. :try_end_5} :catchall_0
 
-    :cond_e
+    :cond_11
     const/4 v3, 0x1
 
-    monitor-exit v18
+    monitor-exit v19
 
     return v3
 
     :catch_0
     move-exception v13
 
-    :try_start_7
+    :try_start_6
     const-string/jumbo v3, "MediaFocusControl"
 
     new-instance v4, Ljava/lang/StringBuilder;
@@ -3432,52 +3535,54 @@
     move-result-object v4
 
     invoke-static {v3, v4}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
-    :try_end_7
-    .catchall {:try_start_7 .. :try_end_7} :catchall_0
+    :try_end_6
+    .catchall {:try_start_6 .. :try_end_6} :catchall_0
 
     const/4 v3, 0x0
 
-    monitor-exit v18
+    monitor-exit v19
 
     return v3
 
-    :cond_f
-    :try_start_8
+    :cond_12
+    :try_start_7
     move-object/from16 v0, p0
 
-    move/from16 v1, v17
+    move/from16 v1, v18
 
     invoke-direct {v0, v1}, Lcom/android/server/audio/MediaFocusControl;->isPersonaId(I)Z
 
     move-result v3
 
-    if-eqz v3, :cond_d
+    if-eqz v3, :cond_10
 
     move-object/from16 v0, p0
 
-    move/from16 v1, v17
+    move/from16 v1, v18
 
     invoke-direct {v0, v1}, Lcom/android/server/audio/MediaFocusControl;->isPersonaLocked(I)Z
 
     move-result v3
 
-    if-eqz v3, :cond_d
+    if-eqz v3, :cond_10
 
-    invoke-virtual {v15}, Lcom/android/server/audio/FocusRequester;->getUserId()I
-
-    move-result v3
-
-    move/from16 v0, v17
-
-    if-ne v3, v0, :cond_d
-
-    move-object/from16 v0, p5
-
-    invoke-virtual {v15, v0}, Lcom/android/server/audio/FocusRequester;->hasSameClient(Ljava/lang/String;)Z
+    invoke-virtual/range {v16 .. v16}, Lcom/android/server/audio/FocusRequester;->getUserId()I
 
     move-result v3
 
-    if-eqz v3, :cond_d
+    move/from16 v0, v18
+
+    if-ne v3, v0, :cond_10
+
+    move-object/from16 v0, v16
+
+    move-object/from16 v1, p5
+
+    invoke-virtual {v0, v1}, Lcom/android/server/audio/FocusRequester;->hasSameClient(Ljava/lang/String;)Z
+
+    move-result v3
+
+    if-eqz v3, :cond_10
 
     const-string/jumbo v3, "MediaFocusControl"
 
@@ -3496,31 +3601,31 @@
     check-cast v3, Lcom/android/server/audio/FocusRequester;
 
     invoke-virtual {v3}, Lcom/android/server/audio/FocusRequester;->release()V
-    :try_end_8
-    .catchall {:try_start_8 .. :try_end_8} :catchall_0
+    :try_end_7
+    .catchall {:try_start_7 .. :try_end_7} :catchall_0
 
-    goto/16 :goto_0
+    goto/16 :goto_2
 
     :catchall_0
     move-exception v3
 
-    monitor-exit v18
+    monitor-exit v19
 
     throw v3
 
-    :cond_10
-    if-nez v14, :cond_11
+    :cond_13
+    if-nez v15, :cond_14
 
-    :try_start_9
+    :try_start_8
     move-object/from16 v0, p0
 
     iget-object v3, v0, Lcom/android/server/audio/MediaFocusControl;->mFocusStack:Ljava/util/Stack;
 
     invoke-virtual {v3}, Ljava/util/Stack;->pop()Ljava/lang/Object;
 
-    invoke-virtual {v15}, Lcom/android/server/audio/FocusRequester;->release()V
+    invoke-virtual/range {v16 .. v16}, Lcom/android/server/audio/FocusRequester;->release()V
 
-    :cond_11
+    :cond_14
     const/4 v3, 0x0
 
     const/4 v4, 0x0
@@ -3533,7 +3638,7 @@
 
     sget-boolean v3, Lcom/android/server/audio/MediaFocusControl;->MULTISOUND_ENABLED:Z
 
-    if-eqz v3, :cond_15
+    if-eqz v3, :cond_19
 
     move-object/from16 v0, p0
 
@@ -3549,14 +3654,14 @@
 
     invoke-virtual {v3, v4, v0, v5}, Lcom/android/server/audio/MediaFocusControl$MultiFocusStack;->getFocusRequester(ILjava/lang/String;Z)Lcom/android/server/audio/FocusRequester;
 
-    move-result-object v15
+    move-result-object v16
 
-    if-eqz v15, :cond_12
+    if-eqz v16, :cond_15
 
-    invoke-virtual {v15}, Lcom/android/server/audio/FocusRequester;->resetFocusLossReceived()V
+    invoke-virtual/range {v16 .. v16}, Lcom/android/server/audio/FocusRequester;->resetFocusLossReceived()V
 
-    :cond_12
-    if-nez v15, :cond_14
+    :cond_15
+    if-nez v16, :cond_18
 
     new-instance v2, Lcom/android/server/audio/FocusRequester;
 
@@ -3582,7 +3687,7 @@
 
     invoke-direct/range {v2 .. v12}, Lcom/android/server/audio/FocusRequester;-><init>(Landroid/media/AudioAttributes;IILandroid/media/IAudioFocusDispatcher;Landroid/os/IBinder;Ljava/lang/String;Lcom/android/server/audio/MediaFocusControl$AudioFocusDeathHandler;Ljava/lang/String;ILcom/android/server/audio/MediaFocusControl;)V
 
-    :goto_1
+    :goto_3
     invoke-virtual {v2}, Lcom/android/server/audio/FocusRequester;->getCallingUid()I
 
     move-result v3
@@ -3595,41 +3700,102 @@
 
     invoke-virtual {v2, v3}, Lcom/android/server/audio/FocusRequester;->setDevice(I)V
 
-    :goto_2
-    if-eqz v14, :cond_16
+    :goto_4
+    move-object/from16 v0, p0
+
+    iget-object v3, v0, Lcom/android/server/audio/MediaFocusControl;->mAudioService:Lcom/android/server/audio/AudioService;
+
+    iget v3, v3, Lcom/android/server/audio/AudioService;->mIgnoreAudioFocusUid:I
+
+    invoke-static {}, Landroid/os/Binder;->getCallingUid()I
+
+    move-result v4
+
+    if-ne v3, v4, :cond_1a
+
+    const-string/jumbo v3, "MediaFocusControl"
+
+    new-instance v4, Ljava/lang/StringBuilder;
+
+    invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string/jumbo v5, "Ignore AudioFocus for "
+
+    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v4
+
+    move-object/from16 v0, p6
+
+    invoke-virtual {v4, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v4
+
+    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v4
+
+    invoke-static {v3, v4}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
     move-object/from16 v0, p0
 
-    invoke-direct {v0, v2}, Lcom/android/server/audio/MediaFocusControl;->pushBelowLockedFocusOwners(Lcom/android/server/audio/FocusRequester;)I
+    iget-object v3, v0, Lcom/android/server/audio/MediaFocusControl;->mIgnoredFocus:Lcom/android/server/audio/FocusRequester;
 
-    move-result v16
-
-    if-eqz v16, :cond_13
-
-    invoke-virtual {v2}, Lcom/android/server/audio/FocusRequester;->toAudioFocusInfo()Landroid/media/AudioFocusInfo;
-
-    move-result-object v3
+    if-eqz v3, :cond_17
 
     move-object/from16 v0, p0
 
-    move/from16 v1, v16
+    iget-object v3, v0, Lcom/android/server/audio/MediaFocusControl;->mIgnoredFocus:Lcom/android/server/audio/FocusRequester;
 
-    invoke-virtual {v0, v3, v1}, Lcom/android/server/audio/MediaFocusControl;->notifyExtPolicyFocusGrant_syncAf(Landroid/media/AudioFocusInfo;I)V
-    :try_end_9
-    .catchall {:try_start_9 .. :try_end_9} :catchall_0
+    move-object/from16 v0, p5
 
-    :cond_13
-    monitor-exit v18
+    invoke-virtual {v3, v0}, Lcom/android/server/audio/FocusRequester;->hasSameClient(Ljava/lang/String;)Z
 
-    return v16
+    move-result v3
 
-    :cond_14
-    move-object v2, v15
+    if-nez v3, :cond_16
 
-    goto :goto_1
+    move-object/from16 v0, p0
 
-    :cond_15
-    :try_start_a
+    iget-object v3, v0, Lcom/android/server/audio/MediaFocusControl;->mIgnoredFocus:Lcom/android/server/audio/FocusRequester;
+
+    move/from16 v0, p2
+
+    invoke-virtual {v3, v0}, Lcom/android/server/audio/FocusRequester;->handleExternalFocusGain(I)V
+
+    :cond_16
+    move-object/from16 v0, p0
+
+    iget-object v3, v0, Lcom/android/server/audio/MediaFocusControl;->mIgnoredFocus:Lcom/android/server/audio/FocusRequester;
+
+    invoke-virtual {v3}, Lcom/android/server/audio/FocusRequester;->release()V
+
+    const/4 v3, 0x0
+
+    move-object/from16 v0, p0
+
+    iput-object v3, v0, Lcom/android/server/audio/MediaFocusControl;->mIgnoredFocus:Lcom/android/server/audio/FocusRequester;
+
+    :cond_17
+    move-object/from16 v0, p0
+
+    iput-object v2, v0, Lcom/android/server/audio/MediaFocusControl;->mIgnoredFocus:Lcom/android/server/audio/FocusRequester;
+    :try_end_8
+    .catchall {:try_start_8 .. :try_end_8} :catchall_0
+
+    const/4 v3, 0x1
+
+    monitor-exit v19
+
+    return v3
+
+    :cond_18
+    move-object/from16 v2, v16
+
+    goto :goto_3
+
+    :cond_19
+    :try_start_9
     new-instance v2, Lcom/android/server/audio/FocusRequester;
 
     invoke-static {}, Landroid/os/Binder;->getCallingUid()I
@@ -3654,9 +3820,55 @@
 
     invoke-direct/range {v2 .. v12}, Lcom/android/server/audio/FocusRequester;-><init>(Landroid/media/AudioAttributes;IILandroid/media/IAudioFocusDispatcher;Landroid/os/IBinder;Ljava/lang/String;Lcom/android/server/audio/MediaFocusControl$AudioFocusDeathHandler;Ljava/lang/String;ILcom/android/server/audio/MediaFocusControl;)V
 
-    goto :goto_2
+    goto :goto_4
 
-    :cond_16
+    :cond_1a
+    if-eqz v14, :cond_1b
+
+    move-object/from16 v0, p0
+
+    iget-object v3, v0, Lcom/android/server/audio/MediaFocusControl;->mIgnoredFocus:Lcom/android/server/audio/FocusRequester;
+
+    if-eqz v3, :cond_1b
+
+    move-object/from16 v0, p0
+
+    iget-object v3, v0, Lcom/android/server/audio/MediaFocusControl;->mIgnoredFocus:Lcom/android/server/audio/FocusRequester;
+
+    move/from16 v0, p2
+
+    invoke-virtual {v3, v0}, Lcom/android/server/audio/FocusRequester;->handleExternalFocusGain(I)V
+
+    :cond_1b
+    if-eqz v15, :cond_1d
+
+    move-object/from16 v0, p0
+
+    invoke-direct {v0, v2}, Lcom/android/server/audio/MediaFocusControl;->pushBelowLockedFocusOwners(Lcom/android/server/audio/FocusRequester;)I
+
+    move-result v17
+
+    if-eqz v17, :cond_1c
+
+    invoke-virtual {v2}, Lcom/android/server/audio/FocusRequester;->toAudioFocusInfo()Landroid/media/AudioFocusInfo;
+
+    move-result-object v3
+
+    move-object/from16 v0, p0
+
+    move/from16 v1, v17
+
+    invoke-virtual {v0, v3, v1}, Lcom/android/server/audio/MediaFocusControl;->notifyExtPolicyFocusGrant_syncAf(Landroid/media/AudioFocusInfo;I)V
+    :try_end_9
+    .catchall {:try_start_9 .. :try_end_9} :catchall_0
+
+    :cond_1c
+    monitor-exit v19
+
+    return v17
+
+    :cond_1d
+    :try_start_a
     move-object/from16 v0, p0
 
     iget-object v3, v0, Lcom/android/server/audio/MediaFocusControl;->mFocusStack:Ljava/util/Stack;
@@ -3665,7 +3877,7 @@
 
     move-result v3
 
-    if-nez v3, :cond_17
+    if-nez v3, :cond_1e
 
     move-object/from16 v0, p0
 
@@ -3673,10 +3885,10 @@
 
     invoke-direct {v0, v1}, Lcom/android/server/audio/MediaFocusControl;->propagateFocusLossFromGain_syncAf(I)V
 
-    :cond_17
+    :cond_1e
     sget-boolean v3, Lcom/android/server/audio/MediaFocusControl;->MULTISOUND_ENABLED:Z
 
-    if-eqz v3, :cond_19
+    if-eqz v3, :cond_20
 
     const-string/jumbo v3, "com.android.server.telecom"
 
@@ -3686,7 +3898,7 @@
 
     move-result v3
 
-    if-nez v3, :cond_18
+    if-nez v3, :cond_1f
 
     invoke-virtual/range {p1 .. p1}, Landroid/media/AudioAttributes;->getContentType()I
 
@@ -3694,7 +3906,7 @@
 
     const/4 v4, 0x1
 
-    if-eq v3, v4, :cond_18
+    if-eq v3, v4, :cond_1f
 
     invoke-virtual/range {p1 .. p1}, Landroid/media/AudioAttributes;->getContentType()I
 
@@ -3702,16 +3914,16 @@
 
     const/4 v4, 0x4
 
-    if-ne v3, v4, :cond_19
+    if-ne v3, v4, :cond_20
 
-    :cond_18
+    :cond_1f
     move-object/from16 v0, p0
 
     move/from16 v1, p2
 
     invoke-direct {v0, v1}, Lcom/android/server/audio/MediaFocusControl;->propagateFocusLossFromGainToAll(I)V
 
-    :cond_19
+    :cond_20
     move-object/from16 v0, p0
 
     iget-object v3, v0, Lcom/android/server/audio/MediaFocusControl;->mFocusStack:Ljava/util/Stack;
@@ -3730,7 +3942,7 @@
     :try_end_a
     .catchall {:try_start_a .. :try_end_a} :catchall_0
 
-    monitor-exit v18
+    monitor-exit v19
 
     invoke-static {}, Landroid/os/Binder;->getCallingUid()I
 
@@ -3738,27 +3950,27 @@
 
     const v4, 0x186a0
 
-    div-int v17, v3, v4
+    div-int v18, v3, v4
 
     move-object/from16 v0, p0
 
-    move/from16 v1, v17
+    move/from16 v1, v18
 
     invoke-direct {v0, v1}, Lcom/android/server/audio/MediaFocusControl;->isPersonaId(I)Z
 
     move-result v3
 
-    if-eqz v3, :cond_1a
+    if-eqz v3, :cond_21
 
     move-object/from16 v0, p0
 
-    move/from16 v1, v17
+    move/from16 v1, v18
 
     invoke-direct {v0, v1}, Lcom/android/server/audio/MediaFocusControl;->isPersonaLocked(I)Z
 
     move-result v3
 
-    if-eqz v3, :cond_1a
+    if-eqz v3, :cond_21
 
     const-string/jumbo v3, "MediaFocusControl"
 
@@ -3774,7 +3986,7 @@
 
     move-result v3
 
-    if-nez v3, :cond_1a
+    if-nez v3, :cond_21
 
     move-object/from16 v0, p0
 
@@ -3790,13 +4002,13 @@
 
     move-result v3
 
-    move/from16 v0, v17
+    move/from16 v0, v18
 
-    if-ne v3, v0, :cond_1a
+    if-ne v3, v0, :cond_21
 
     invoke-virtual/range {p0 .. p0}, Lcom/android/server/audio/MediaFocusControl;->discardAudioFocusOwner()V
 
-    :cond_1a
+    :cond_21
     const/4 v3, 0x1
 
     return v3
@@ -3838,13 +4050,24 @@
 
     const/4 v12, 0x2
 
+    if-nez p1, :cond_0
+
+    const-string/jumbo v8, "MediaFocusControl"
+
+    const-string/jumbo v9, "incorrect parameter"
+
+    invoke-static {v8, v9}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    return-void
+
+    :cond_0
     sget-object v9, Lcom/android/server/audio/MediaFocusControl;->mAudioFocusLock:Ljava/lang/Object;
 
     monitor-enter v9
 
     and-int/lit8 v8, p1, 0xd
 
-    if-eqz v8, :cond_1
+    if-eqz v8, :cond_2
 
     :try_start_0
     const-string/jumbo v8, "MediaFocusControl"
@@ -3883,13 +4106,13 @@
 
     const/4 p1, 0x2
 
-    :cond_0
+    :cond_1
     :goto_0
     iget v6, p0, Lcom/android/server/audio/MediaFocusControl;->mDevice:I
 
     move v5, p1
 
-    if-ne v6, p1, :cond_2
+    if-ne v6, p1, :cond_3
 
     const-string/jumbo v8, "MediaFocusControl"
 
@@ -3903,16 +4126,16 @@
 
     return-void
 
-    :cond_1
+    :cond_2
     and-int/lit16 v8, p1, 0x3f0
 
-    if-eqz v8, :cond_0
+    if-eqz v8, :cond_1
 
     const/16 p1, 0x80
 
     goto :goto_0
 
-    :cond_2
+    :cond_3
     :try_start_1
     const-string/jumbo v8, "MediaFocusControl"
 
@@ -3988,13 +4211,13 @@
 
     move-result-object v7
 
-    :cond_3
+    :cond_4
     :goto_1
     invoke-interface {v7}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v8
 
-    if-eqz v8, :cond_4
+    if-eqz v8, :cond_5
 
     invoke-interface {v7}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -4016,7 +4239,7 @@
 
     move-result v8
 
-    if-ne v8, v6, :cond_3
+    if-ne v8, v6, :cond_4
 
     invoke-interface {v7}, Ljava/util/Iterator;->remove()V
 
@@ -4033,7 +4256,7 @@
 
     throw v8
 
-    :cond_4
+    :cond_5
     :try_start_2
     const-string/jumbo v8, "MediaFocusControl"
 
@@ -4081,7 +4304,7 @@
 
     move-result v8
 
-    if-nez v8, :cond_5
+    if-nez v8, :cond_6
 
     new-instance v8, Ljava/lang/StringBuilder;
 
@@ -4117,7 +4340,7 @@
 
     move-result-object v4
 
-    :cond_5
+    :cond_6
     const/4 v3, 0x0
 
     const-string/jumbo v8, "TRUE"
@@ -4126,7 +4349,7 @@
 
     move-result v8
 
-    if-eqz v8, :cond_7
+    if-eqz v8, :cond_8
 
     iget-object v8, p0, Lcom/android/server/audio/MediaFocusControl;->mFocusStack:Ljava/util/Stack;
 
@@ -4136,7 +4359,7 @@
 
     check-cast v3, Lcom/android/server/audio/FocusRequester;
 
-    :cond_6
+    :cond_7
     :goto_2
     invoke-virtual {v1}, Ljava/util/Stack;->iterator()Ljava/util/Iterator;
 
@@ -4147,7 +4370,7 @@
 
     move-result v8
 
-    if-eqz v8, :cond_8
+    if-eqz v8, :cond_9
 
     invoke-interface {v7}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -4163,12 +4386,12 @@
 
     goto :goto_3
 
-    :cond_7
+    :cond_8
     invoke-virtual {v1}, Ljava/util/Stack;->isEmpty()Z
 
     move-result v8
 
-    if-nez v8, :cond_6
+    if-nez v8, :cond_7
 
     const/4 v8, 0x1
 
@@ -4176,25 +4399,25 @@
 
     goto :goto_2
 
-    :cond_8
-    if-eqz v3, :cond_a
+    :cond_9
+    if-eqz v3, :cond_b
 
     invoke-virtual {v3}, Lcom/android/server/audio/FocusRequester;->getGainRequest()I
 
     move-result v8
 
-    if-eq v8, v12, :cond_9
+    if-eq v8, v12, :cond_a
 
     const/4 v8, 0x1
 
     invoke-direct {p0, v8}, Lcom/android/server/audio/MediaFocusControl;->propagateFocusLossFromGain_syncAf(I)V
 
-    :cond_9
+    :cond_a
     iget-object v8, p0, Lcom/android/server/audio/MediaFocusControl;->mFocusStack:Ljava/util/Stack;
 
     invoke-virtual {v8, v3}, Ljava/util/Stack;->push(Ljava/lang/Object;)Ljava/lang/Object;
 
-    :cond_a
+    :cond_b
     iput p1, p0, Lcom/android/server/audio/MediaFocusControl;->mDevice:I
     :try_end_2
     .catchall {:try_start_2 .. :try_end_2} :catchall_0
@@ -4220,6 +4443,108 @@
     const/4 v0, 0x1
 
     goto :goto_0
+.end method
+
+.method protected setIgnoreAudioFocus(IZ)V
+    .locals 4
+
+    sget-object v2, Lcom/android/server/audio/MediaFocusControl;->mAudioFocusLock:Ljava/lang/Object;
+
+    monitor-enter v2
+
+    :try_start_0
+    iget-object v1, p0, Lcom/android/server/audio/MediaFocusControl;->mIgnoredFocus:Lcom/android/server/audio/FocusRequester;
+
+    if-eqz v1, :cond_0
+
+    iget-object v1, p0, Lcom/android/server/audio/MediaFocusControl;->mIgnoredFocus:Lcom/android/server/audio/FocusRequester;
+
+    invoke-virtual {v1, p1}, Lcom/android/server/audio/FocusRequester;->hasSameUid(I)Z
+
+    move-result v1
+
+    if-eqz v1, :cond_1
+
+    if-eqz p2, :cond_1
+
+    :goto_0
+    iget-object v1, p0, Lcom/android/server/audio/MediaFocusControl;->mIgnoredFocus:Lcom/android/server/audio/FocusRequester;
+
+    invoke-virtual {v1}, Lcom/android/server/audio/FocusRequester;->release()V
+
+    const/4 v1, 0x0
+
+    iput-object v1, p0, Lcom/android/server/audio/MediaFocusControl;->mIgnoredFocus:Lcom/android/server/audio/FocusRequester;
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    :cond_0
+    if-nez p2, :cond_2
+
+    monitor-exit v2
+
+    return-void
+
+    :cond_1
+    :try_start_1
+    iget-object v1, p0, Lcom/android/server/audio/MediaFocusControl;->mIgnoredFocus:Lcom/android/server/audio/FocusRequester;
+
+    const/4 v3, -0x1
+
+    invoke-virtual {v1, v3}, Lcom/android/server/audio/FocusRequester;->handleFocusLoss(I)V
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+
+    goto :goto_0
+
+    :catchall_0
+    move-exception v1
+
+    monitor-exit v2
+
+    throw v1
+
+    :cond_2
+    :try_start_2
+    iget-object v1, p0, Lcom/android/server/audio/MediaFocusControl;->mMultiFocusStack:Lcom/android/server/audio/MediaFocusControl$MultiFocusStack;
+
+    invoke-virtual {v1, p1}, Lcom/android/server/audio/MediaFocusControl$MultiFocusStack;->getFocusRequester(I)Ljava/util/ArrayList;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/util/ArrayList;->isEmpty()Z
+    :try_end_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_0
+
+    move-result v1
+
+    if-eqz v1, :cond_3
+
+    monitor-exit v2
+
+    return-void
+
+    :cond_3
+    :try_start_3
+    invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
+
+    move-result v1
+
+    add-int/lit8 v1, v1, -0x1
+
+    invoke-virtual {v0, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Lcom/android/server/audio/FocusRequester;
+
+    iput-object v1, p0, Lcom/android/server/audio/MediaFocusControl;->mIgnoredFocus:Lcom/android/server/audio/FocusRequester;
+    :try_end_3
+    .catchall {:try_start_3 .. :try_end_3} :catchall_0
+
+    monitor-exit v2
+
+    return-void
 .end method
 
 .method protected unregisterAudioFocusClient(Ljava/lang/String;)V

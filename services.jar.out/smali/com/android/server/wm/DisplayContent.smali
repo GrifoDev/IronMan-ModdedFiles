@@ -2565,650 +2565,43 @@
 .end method
 
 .method setTouchExcludeRegion(Lcom/android/server/wm/Task;)V
-    .locals 18
+    .locals 21
 
     move-object/from16 v0, p0
 
-    iget-object v14, v0, Lcom/android/server/wm/DisplayContent;->mTouchExcludeRegion:Landroid/graphics/Region;
+    iget-object v0, v0, Lcom/android/server/wm/DisplayContent;->mTouchExcludeRegion:Landroid/graphics/Region;
 
-    move-object/from16 v0, p0
-
-    iget-object v15, v0, Lcom/android/server/wm/DisplayContent;->mBaseDisplayRect:Landroid/graphics/Rect;
-
-    invoke-virtual {v14, v15}, Landroid/graphics/Region;->set(Landroid/graphics/Rect;)Z
-
-    move-object/from16 v0, p0
-
-    iget-object v14, v0, Lcom/android/server/wm/DisplayContent;->mService:Lcom/android/server/wm/WindowManagerService;
-
-    move-object/from16 v0, p0
-
-    iget-object v14, v0, Lcom/android/server/wm/DisplayContent;->mDisplayMetrics:Landroid/util/DisplayMetrics;
-
-    const/16 v15, 0x1e
-
-    invoke-static {v15, v14}, Lcom/android/server/wm/WindowManagerService;->dipToPixel(ILandroid/util/DisplayMetrics;)I
-
-    move-result v2
-
-    move-object/from16 v0, p0
-
-    iget-object v14, v0, Lcom/android/server/wm/DisplayContent;->mTouchExcludePointerRegion:Landroid/graphics/Region;
-
-    move-object/from16 v0, p0
-
-    iget-object v15, v0, Lcom/android/server/wm/DisplayContent;->mBaseDisplayRect:Landroid/graphics/Rect;
-
-    invoke-virtual {v14, v15}, Landroid/graphics/Region;->set(Landroid/graphics/Rect;)Z
-
-    move-object/from16 v0, p0
-
-    iget-object v14, v0, Lcom/android/server/wm/DisplayContent;->mService:Lcom/android/server/wm/WindowManagerService;
-
-    move-object/from16 v0, p0
-
-    iget-object v14, v0, Lcom/android/server/wm/DisplayContent;->mDisplayMetrics:Landroid/util/DisplayMetrics;
-
-    const/4 v15, 0x6
-
-    invoke-static {v15, v14}, Lcom/android/server/wm/WindowManagerService;->dipToPixel(ILandroid/util/DisplayMetrics;)I
-
-    move-result v6
-
-    const/4 v1, 0x0
-
-    move-object/from16 v0, p0
-
-    iget-object v14, v0, Lcom/android/server/wm/DisplayContent;->mNonResizeableRegion:Landroid/graphics/Region;
-
-    invoke-virtual {v14}, Landroid/graphics/Region;->setEmpty()V
-
-    move-object/from16 v0, p0
-
-    iget-object v14, v0, Lcom/android/server/wm/DisplayContent;->mStacks:Ljava/util/ArrayList;
-
-    invoke-virtual {v14}, Ljava/util/ArrayList;->size()I
-
-    move-result v14
-
-    add-int/lit8 v8, v14, -0x1
-
-    :goto_0
-    if-ltz v8, :cond_c
-
-    move-object/from16 v0, p0
-
-    iget-object v14, v0, Lcom/android/server/wm/DisplayContent;->mStacks:Ljava/util/ArrayList;
-
-    invoke-virtual {v14, v8}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
-
-    move-result-object v7
-
-    check-cast v7, Lcom/android/server/wm/TaskStack;
-
-    invoke-virtual {v7}, Lcom/android/server/wm/TaskStack;->getTasks()Ljava/util/ArrayList;
-
-    move-result-object v11
-
-    invoke-virtual {v11}, Ljava/util/ArrayList;->size()I
-
-    move-result v14
-
-    add-int/lit8 v10, v14, -0x1
-
-    :goto_1
-    if-ltz v10, :cond_a
-
-    invoke-virtual {v11, v10}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
-
-    move-result-object v9
-
-    check-cast v9, Lcom/android/server/wm/Task;
-
-    invoke-virtual {v9}, Lcom/android/server/wm/Task;->inFreeformWorkspace()Z
-
-    move-result v14
-
-    if-eqz v14, :cond_1
-
-    invoke-virtual {v9}, Lcom/android/server/wm/Task;->getTopVisibleNowWindow()Lcom/android/server/wm/WindowState;
-
-    move-result-object v13
-
-    if-nez v13, :cond_2
-
-    :cond_0
-    add-int/lit8 v10, v10, -0x1
-
-    goto :goto_1
-
-    :cond_1
-    invoke-virtual {v9}, Lcom/android/server/wm/Task;->getTopVisibleAppToken()Lcom/android/server/wm/AppWindowToken;
-
-    move-result-object v12
-
-    if-eqz v12, :cond_0
-
-    invoke-virtual {v12}, Lcom/android/server/wm/AppWindowToken;->isVisible()Z
-
-    move-result v14
-
-    if-eqz v14, :cond_0
-
-    :cond_2
-    move-object/from16 v0, p0
-
-    iget-object v14, v0, Lcom/android/server/wm/DisplayContent;->mTmpRect:Landroid/graphics/Rect;
-
-    invoke-virtual {v9, v14}, Lcom/android/server/wm/Task;->getDimBounds(Landroid/graphics/Rect;)V
-
-    sget-boolean v14, Lcom/samsung/android/framework/feature/MultiWindowFeatures;->SAMSUNG_MULTIWINDOW_DYNAMIC_ENABLED:Z
-
-    if-nez v14, :cond_b
-
-    move-object/from16 v0, p1
-
-    if-ne v9, v0, :cond_3
-
-    const/4 v1, 0x1
-
-    move-object/from16 v0, p0
-
-    iget-object v14, v0, Lcom/android/server/wm/DisplayContent;->mTmpRect2:Landroid/graphics/Rect;
-
-    move-object/from16 v0, p0
-
-    iget-object v15, v0, Lcom/android/server/wm/DisplayContent;->mTmpRect:Landroid/graphics/Rect;
-
-    invoke-virtual {v14, v15}, Landroid/graphics/Rect;->set(Landroid/graphics/Rect;)V
-
-    :cond_3
-    :goto_2
-    invoke-virtual {v9}, Lcom/android/server/wm/Task;->inFreeformWorkspace()Z
-
-    move-result v5
-
-    move-object/from16 v0, p1
-
-    if-ne v9, v0, :cond_4
-
-    if-eqz v5, :cond_9
-
-    :cond_4
-    if-eqz v5, :cond_8
-
-    sget-boolean v14, Lcom/samsung/android/framework/feature/MultiWindowFeatures;->SAMSUNG_MULTIWINDOW_DYNAMIC_ENABLED:Z
-
-    if-eqz v14, :cond_6
-
-    move-object/from16 v0, p1
-
-    if-ne v9, v0, :cond_5
-
-    const/4 v1, 0x1
-
-    move-object/from16 v0, p0
-
-    iget-object v14, v0, Lcom/android/server/wm/DisplayContent;->mTmpRect2:Landroid/graphics/Rect;
-
-    move-object/from16 v0, p0
-
-    iget-object v15, v0, Lcom/android/server/wm/DisplayContent;->mTmpRect:Landroid/graphics/Rect;
-
-    invoke-virtual {v14, v15}, Landroid/graphics/Rect;->set(Landroid/graphics/Rect;)V
-
-    :cond_5
-    move-object/from16 v0, p0
-
-    iget-object v14, v0, Lcom/android/server/wm/DisplayContent;->mTmpPointerRect:Landroid/graphics/Rect;
-
-    neg-int v15, v6
-
-    neg-int v0, v6
-
-    move/from16 v16, v0
-
-    invoke-virtual/range {v14 .. v16}, Landroid/graphics/Rect;->inset(II)V
-
-    move-object/from16 v0, p0
-
-    iget-object v14, v0, Lcom/android/server/wm/DisplayContent;->mTmpPointerRect:Landroid/graphics/Rect;
-
-    move-object/from16 v0, p0
-
-    iget-object v15, v0, Lcom/android/server/wm/DisplayContent;->mContentRect:Landroid/graphics/Rect;
-
-    invoke-virtual {v14, v15}, Landroid/graphics/Rect;->intersect(Landroid/graphics/Rect;)Z
-
-    :cond_6
-    move-object/from16 v0, p0
-
-    iget-object v14, v0, Lcom/android/server/wm/DisplayContent;->mTmpRect:Landroid/graphics/Rect;
-
-    neg-int v15, v2
-
-    neg-int v0, v2
-
-    move/from16 v16, v0
-
-    invoke-virtual/range {v14 .. v16}, Landroid/graphics/Rect;->inset(II)V
-
-    sget-boolean v14, Lcom/samsung/android/framework/feature/MultiWindowFeatures;->SAMSUNG_MULTIWINDOW_DYNAMIC_ENABLED:Z
-
-    if-eqz v14, :cond_7
-
-    sget-boolean v14, Lcom/samsung/android/framework/feature/MultiWindowFeatures;->FREEFORM_GHOST_MODE:Z
-
-    if-eqz v14, :cond_7
-
-    iget-boolean v14, v9, Lcom/android/server/wm/Task;->mFreeformAlphaMode:Z
-
-    if-eqz v14, :cond_7
-
-    move-object/from16 v0, p0
-
-    iget-object v14, v0, Lcom/android/server/wm/DisplayContent;->mTmpRect:Landroid/graphics/Rect;
-
-    invoke-virtual {v14, v2, v2}, Landroid/graphics/Rect;->inset(II)V
-
-    move-object/from16 v0, p0
-
-    iget-object v14, v0, Lcom/android/server/wm/DisplayContent;->mTmpRect:Landroid/graphics/Rect;
-
-    move-object/from16 v0, p0
-
-    iget-object v15, v0, Lcom/android/server/wm/DisplayContent;->mTmpRect:Landroid/graphics/Rect;
-
-    iget v15, v15, Landroid/graphics/Rect;->top:I
-
-    iget v0, v9, Lcom/android/server/wm/Task;->mCurrentCaptionHieght:I
-
-    move/from16 v16, v0
-
-    add-int v15, v15, v16
-
-    iput v15, v14, Landroid/graphics/Rect;->bottom:I
-
-    :cond_7
-    move-object/from16 v0, p0
-
-    iget-object v14, v0, Lcom/android/server/wm/DisplayContent;->mTmpRect:Landroid/graphics/Rect;
-
-    move-object/from16 v0, p0
-
-    iget-object v15, v0, Lcom/android/server/wm/DisplayContent;->mContentRect:Landroid/graphics/Rect;
-
-    invoke-virtual {v14, v15}, Landroid/graphics/Rect;->intersect(Landroid/graphics/Rect;)Z
-
-    :cond_8
-    move-object/from16 v0, p0
-
-    iget-object v14, v0, Lcom/android/server/wm/DisplayContent;->mTouchExcludeRegion:Landroid/graphics/Region;
-
-    move-object/from16 v0, p0
-
-    iget-object v15, v0, Lcom/android/server/wm/DisplayContent;->mTmpRect:Landroid/graphics/Rect;
-
-    sget-object v16, Landroid/graphics/Region$Op;->DIFFERENCE:Landroid/graphics/Region$Op;
-
-    invoke-virtual/range {v14 .. v16}, Landroid/graphics/Region;->op(Landroid/graphics/Rect;Landroid/graphics/Region$Op;)Z
-
-    move-object/from16 v0, p0
-
-    iget-object v14, v0, Lcom/android/server/wm/DisplayContent;->mTouchExcludePointerRegion:Landroid/graphics/Region;
-
-    move-object/from16 v0, p0
-
-    iget-object v15, v0, Lcom/android/server/wm/DisplayContent;->mTmpPointerRect:Landroid/graphics/Rect;
-
-    sget-object v16, Landroid/graphics/Region$Op;->DIFFERENCE:Landroid/graphics/Region$Op;
-
-    invoke-virtual/range {v14 .. v16}, Landroid/graphics/Region;->op(Landroid/graphics/Rect;Landroid/graphics/Region$Op;)Z
-
-    :cond_9
-    invoke-virtual {v9}, Lcom/android/server/wm/Task;->isTwoFingerScrollMode()Z
-
-    move-result v14
-
-    if-eqz v14, :cond_0
-
-    move-object/from16 v0, p0
-
-    iget-object v14, v0, Lcom/android/server/wm/DisplayContent;->mTmpRect:Landroid/graphics/Rect;
-
-    invoke-virtual {v7, v14}, Lcom/android/server/wm/TaskStack;->getBounds(Landroid/graphics/Rect;)V
-
-    move-object/from16 v0, p0
-
-    iget-object v14, v0, Lcom/android/server/wm/DisplayContent;->mNonResizeableRegion:Landroid/graphics/Region;
-
-    move-object/from16 v0, p0
-
-    iget-object v15, v0, Lcom/android/server/wm/DisplayContent;->mTmpRect:Landroid/graphics/Rect;
-
-    sget-object v16, Landroid/graphics/Region$Op;->UNION:Landroid/graphics/Region$Op;
-
-    invoke-virtual/range {v14 .. v16}, Landroid/graphics/Region;->op(Landroid/graphics/Rect;Landroid/graphics/Region$Op;)Z
+    move-object/from16 v17, v0
 
-    :cond_a
-    add-int/lit8 v8, v8, -0x1
-
-    goto/16 :goto_0
-
-    :cond_b
-    move-object/from16 v0, p0
-
-    iget-object v14, v0, Lcom/android/server/wm/DisplayContent;->mTmpPointerRect:Landroid/graphics/Rect;
-
-    move-object/from16 v0, p0
-
-    iget-object v15, v0, Lcom/android/server/wm/DisplayContent;->mTmpRect:Landroid/graphics/Rect;
-
-    invoke-virtual {v14, v15}, Landroid/graphics/Rect;->set(Landroid/graphics/Rect;)V
-
-    goto/16 :goto_2
-
-    :cond_c
-    if-eqz v1, :cond_d
-
-    move-object/from16 v0, p0
-
-    iget-object v14, v0, Lcom/android/server/wm/DisplayContent;->mTouchExcludeRegion:Landroid/graphics/Region;
-
-    move-object/from16 v0, p0
-
-    iget-object v15, v0, Lcom/android/server/wm/DisplayContent;->mTmpRect2:Landroid/graphics/Rect;
-
-    sget-object v16, Landroid/graphics/Region$Op;->UNION:Landroid/graphics/Region$Op;
-
-    invoke-virtual/range {v14 .. v16}, Landroid/graphics/Region;->op(Landroid/graphics/Rect;Landroid/graphics/Region$Op;)Z
-
-    move-object/from16 v0, p0
-
-    iget-object v14, v0, Lcom/android/server/wm/DisplayContent;->mTouchExcludePointerRegion:Landroid/graphics/Region;
-
-    move-object/from16 v0, p0
-
-    iget-object v15, v0, Lcom/android/server/wm/DisplayContent;->mTmpRect2:Landroid/graphics/Rect;
-
-    sget-object v16, Landroid/graphics/Region$Op;->UNION:Landroid/graphics/Region$Op;
-
-    invoke-virtual/range {v14 .. v16}, Landroid/graphics/Region;->op(Landroid/graphics/Rect;Landroid/graphics/Region$Op;)Z
-
-    :cond_d
-    move-object/from16 v0, p0
-
-    iget-object v14, v0, Lcom/android/server/wm/DisplayContent;->mService:Lcom/android/server/wm/WindowManagerService;
-
-    iget-object v4, v14, Lcom/android/server/wm/WindowManagerService;->mInputMethodWindow:Lcom/android/server/wm/WindowState;
-
-    if-eqz v4, :cond_e
-
-    invoke-virtual {v4}, Lcom/android/server/wm/WindowState;->isVisibleLw()Z
-
-    move-result v14
-
-    if-eqz v14, :cond_e
-
-    move-object/from16 v0, p0
-
-    iget-object v14, v0, Lcom/android/server/wm/DisplayContent;->mTmpRegion:Landroid/graphics/Region;
-
-    invoke-virtual {v4, v14}, Lcom/android/server/wm/WindowState;->getTouchableRegion(Landroid/graphics/Region;)V
-
-    move-object/from16 v0, p0
-
-    iget-object v14, v0, Lcom/android/server/wm/DisplayContent;->mTouchExcludeRegion:Landroid/graphics/Region;
-
-    move-object/from16 v0, p0
-
-    iget-object v15, v0, Lcom/android/server/wm/DisplayContent;->mTmpRegion:Landroid/graphics/Region;
-
-    sget-object v16, Landroid/graphics/Region$Op;->UNION:Landroid/graphics/Region$Op;
-
-    invoke-virtual/range {v14 .. v16}, Landroid/graphics/Region;->op(Landroid/graphics/Region;Landroid/graphics/Region$Op;)Z
-
-    move-object/from16 v0, p0
-
-    iget-object v14, v0, Lcom/android/server/wm/DisplayContent;->mTouchExcludePointerRegion:Landroid/graphics/Region;
-
-    move-object/from16 v0, p0
-
-    iget-object v15, v0, Lcom/android/server/wm/DisplayContent;->mTmpRegion:Landroid/graphics/Region;
-
-    sget-object v16, Landroid/graphics/Region$Op;->UNION:Landroid/graphics/Region$Op;
-
-    invoke-virtual/range {v14 .. v16}, Landroid/graphics/Region;->op(Landroid/graphics/Region;Landroid/graphics/Region$Op;)Z
-
-    :cond_e
-    move-object/from16 v0, p0
-
-    iget-object v14, v0, Lcom/android/server/wm/DisplayContent;->mTapExcludedWindows:Ljava/util/ArrayList;
-
-    invoke-virtual {v14}, Ljava/util/ArrayList;->size()I
-
-    move-result v14
-
-    add-int/lit8 v3, v14, -0x1
-
-    :goto_3
-    if-ltz v3, :cond_10
-
-    move-object/from16 v0, p0
-
-    iget-object v14, v0, Lcom/android/server/wm/DisplayContent;->mTapExcludedWindows:Ljava/util/ArrayList;
-
-    invoke-virtual {v14, v3}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
-
-    move-result-object v13
-
-    check-cast v13, Lcom/android/server/wm/WindowState;
-
-    invoke-virtual {v13}, Lcom/android/server/wm/WindowState;->isVisibleNow()Z
-
-    move-result v14
-
-    if-eqz v14, :cond_f
-
-    move-object/from16 v0, p0
-
-    iget-object v14, v0, Lcom/android/server/wm/DisplayContent;->mTmpRegion:Landroid/graphics/Region;
-
-    invoke-virtual {v13, v14}, Lcom/android/server/wm/WindowState;->getTouchableRegion(Landroid/graphics/Region;)V
-
-    move-object/from16 v0, p0
-
-    iget-object v14, v0, Lcom/android/server/wm/DisplayContent;->mTouchExcludeRegion:Landroid/graphics/Region;
-
-    move-object/from16 v0, p0
-
-    iget-object v15, v0, Lcom/android/server/wm/DisplayContent;->mTmpRegion:Landroid/graphics/Region;
-
-    sget-object v16, Landroid/graphics/Region$Op;->UNION:Landroid/graphics/Region$Op;
-
-    invoke-virtual/range {v14 .. v16}, Landroid/graphics/Region;->op(Landroid/graphics/Region;Landroid/graphics/Region$Op;)Z
-
-    move-object/from16 v0, p0
-
-    iget-object v14, v0, Lcom/android/server/wm/DisplayContent;->mTouchExcludePointerRegion:Landroid/graphics/Region;
-
-    move-object/from16 v0, p0
-
-    iget-object v15, v0, Lcom/android/server/wm/DisplayContent;->mTmpRegion:Landroid/graphics/Region;
-
-    sget-object v16, Landroid/graphics/Region$Op;->UNION:Landroid/graphics/Region$Op;
-
-    invoke-virtual/range {v14 .. v16}, Landroid/graphics/Region;->op(Landroid/graphics/Region;Landroid/graphics/Region$Op;)Z
-
-    :cond_f
-    add-int/lit8 v3, v3, -0x1
-
-    goto :goto_3
-
-    :cond_10
-    invoke-virtual/range {p0 .. p0}, Lcom/android/server/wm/DisplayContent;->getDockedStackVisibleForUserLocked()Lcom/android/server/wm/TaskStack;
-
-    move-result-object v14
-
-    if-eqz v14, :cond_12
-
-    move-object/from16 v0, p0
-
-    iget-object v14, v0, Lcom/android/server/wm/DisplayContent;->mDividerControllerLocked:Lcom/android/server/wm/DockedStackDividerController;
-
-    invoke-virtual {v14}, Lcom/android/server/wm/DockedStackDividerController;->isAdjustedForIme()Z
-
-    move-result v14
-
-    if-nez v14, :cond_11
-
-    move-object/from16 v0, p0
-
-    iget-object v14, v0, Lcom/android/server/wm/DisplayContent;->mDividerControllerLocked:Lcom/android/server/wm/DockedStackDividerController;
-
-    move-object/from16 v0, p0
-
-    iget-object v15, v0, Lcom/android/server/wm/DisplayContent;->mTmpRect:Landroid/graphics/Rect;
-
-    invoke-virtual {v14, v15}, Lcom/android/server/wm/DockedStackDividerController;->getTouchRegion(Landroid/graphics/Rect;)V
-
-    move-object/from16 v0, p0
-
-    iget-object v14, v0, Lcom/android/server/wm/DisplayContent;->mTmpRegion:Landroid/graphics/Region;
-
-    move-object/from16 v0, p0
-
-    iget-object v15, v0, Lcom/android/server/wm/DisplayContent;->mTmpRect:Landroid/graphics/Rect;
-
-    invoke-virtual {v14, v15}, Landroid/graphics/Region;->set(Landroid/graphics/Rect;)Z
-
-    move-object/from16 v0, p0
-
-    iget-object v14, v0, Lcom/android/server/wm/DisplayContent;->mTouchExcludeRegion:Landroid/graphics/Region;
-
-    move-object/from16 v0, p0
-
-    iget-object v15, v0, Lcom/android/server/wm/DisplayContent;->mTmpRegion:Landroid/graphics/Region;
-
-    sget-object v16, Landroid/graphics/Region$Op;->UNION:Landroid/graphics/Region$Op;
-
-    invoke-virtual/range {v14 .. v16}, Landroid/graphics/Region;->op(Landroid/graphics/Region;Landroid/graphics/Region$Op;)Z
-
-    move-object/from16 v0, p0
-
-    iget-object v14, v0, Lcom/android/server/wm/DisplayContent;->mTouchExcludePointerRegion:Landroid/graphics/Region;
-
-    move-object/from16 v0, p0
-
-    iget-object v15, v0, Lcom/android/server/wm/DisplayContent;->mTmpRegion:Landroid/graphics/Region;
-
-    sget-object v16, Landroid/graphics/Region$Op;->UNION:Landroid/graphics/Region$Op;
-
-    invoke-virtual/range {v14 .. v16}, Landroid/graphics/Region;->op(Landroid/graphics/Region;Landroid/graphics/Region$Op;)Z
-
-    :cond_11
-    move-object/from16 v0, p0
-
-    iget-object v14, v0, Lcom/android/server/wm/DisplayContent;->mDividerControllerLocked:Lcom/android/server/wm/DockedStackDividerController;
-
-    move-object/from16 v0, p0
-
-    iget-object v15, v0, Lcom/android/server/wm/DisplayContent;->mTmpRect2:Landroid/graphics/Rect;
-
-    invoke-virtual {v14, v15}, Lcom/android/server/wm/DockedStackDividerController;->getButtonsTouchRegion(Landroid/graphics/Rect;)V
-
-    move-object/from16 v0, p0
-
-    iget-object v14, v0, Lcom/android/server/wm/DisplayContent;->mTmpRect2:Landroid/graphics/Rect;
-
-    invoke-virtual {v14}, Landroid/graphics/Rect;->isEmpty()Z
-
-    move-result v14
-
-    if-nez v14, :cond_12
-
-    move-object/from16 v0, p0
-
-    iget-object v14, v0, Lcom/android/server/wm/DisplayContent;->mTmpRegion:Landroid/graphics/Region;
-
-    move-object/from16 v0, p0
-
-    iget-object v15, v0, Lcom/android/server/wm/DisplayContent;->mTmpRect2:Landroid/graphics/Rect;
-
-    invoke-virtual {v14, v15}, Landroid/graphics/Region;->set(Landroid/graphics/Rect;)Z
-
-    move-object/from16 v0, p0
-
-    iget-object v14, v0, Lcom/android/server/wm/DisplayContent;->mTouchExcludeRegion:Landroid/graphics/Region;
-
-    move-object/from16 v0, p0
-
-    iget-object v15, v0, Lcom/android/server/wm/DisplayContent;->mTmpRegion:Landroid/graphics/Region;
-
-    sget-object v16, Landroid/graphics/Region$Op;->UNION:Landroid/graphics/Region$Op;
-
-    invoke-virtual/range {v14 .. v16}, Landroid/graphics/Region;->op(Landroid/graphics/Region;Landroid/graphics/Region$Op;)Z
-
-    move-object/from16 v0, p0
-
-    iget-object v14, v0, Lcom/android/server/wm/DisplayContent;->mTouchExcludePointerRegion:Landroid/graphics/Region;
-
-    move-object/from16 v0, p0
-
-    iget-object v15, v0, Lcom/android/server/wm/DisplayContent;->mTmpRegion:Landroid/graphics/Region;
-
-    sget-object v16, Landroid/graphics/Region$Op;->UNION:Landroid/graphics/Region$Op;
-
-    invoke-virtual/range {v14 .. v16}, Landroid/graphics/Region;->op(Landroid/graphics/Region;Landroid/graphics/Region$Op;)Z
-
-    :cond_12
-    move-object/from16 v0, p0
-
-    iget-object v14, v0, Lcom/android/server/wm/DisplayContent;->mService:Lcom/android/server/wm/WindowManagerService;
-
-    iget-object v14, v14, Lcom/android/server/wm/WindowManagerService;->mMultiWindowManagerInternal:Lcom/android/server/wm/IMultiWindowManagerInternalBridge;
-
     move-object/from16 v0, p0
 
-    iget-object v15, v0, Lcom/android/server/wm/DisplayContent;->mTouchExcludeRegion:Landroid/graphics/Region;
+    iget-object v0, v0, Lcom/android/server/wm/DisplayContent;->mBaseDisplayRect:Landroid/graphics/Rect;
 
-    move-object/from16 v0, p0
-
-    invoke-interface {v14, v0, v15}, Lcom/android/server/wm/IMultiWindowManagerInternalBridge;->getTouchExcludeRegionLocked(Lcom/android/server/wm/DisplayContent;Landroid/graphics/Region;)V
-
-    move-object/from16 v0, p0
+    move-object/from16 v18, v0
 
-    iget-object v14, v0, Lcom/android/server/wm/DisplayContent;->mService:Lcom/android/server/wm/WindowManagerService;
+    invoke-virtual/range {v17 .. v18}, Landroid/graphics/Region;->set(Landroid/graphics/Rect;)Z
 
-    iget-object v14, v14, Lcom/android/server/wm/WindowManagerService;->mMultiWindowManagerInternal:Lcom/android/server/wm/IMultiWindowManagerInternalBridge;
-
     move-object/from16 v0, p0
-
-    iget-object v15, v0, Lcom/android/server/wm/DisplayContent;->mTouchExcludePointerRegion:Landroid/graphics/Region;
 
-    move-object/from16 v0, p0
+    iget-object v0, v0, Lcom/android/server/wm/DisplayContent;->mService:Lcom/android/server/wm/WindowManagerService;
 
-    invoke-interface {v14, v0, v15}, Lcom/android/server/wm/IMultiWindowManagerInternalBridge;->getTouchExcludeRegionLocked(Lcom/android/server/wm/DisplayContent;Landroid/graphics/Region;)V
+    move-object/from16 v17, v0
 
     move-object/from16 v0, p0
-
-    iget-object v14, v0, Lcom/android/server/wm/DisplayContent;->mTapDetector:Lcom/android/server/wm/TaskTapPointerEventListener;
-
-    if-eqz v14, :cond_13
 
-    move-object/from16 v0, p0
+    iget-object v0, v0, Lcom/android/server/wm/DisplayContent;->mDisplayMetrics:Landroid/util/DisplayMetrics;
 
-    iget-object v14, v0, Lcom/android/server/wm/DisplayContent;->mTapDetector:Lcom/android/server/wm/TaskTapPointerEventListener;
+    move-object/from16 v17, v0
 
-    move-object/from16 v0, p0
+    const/16 v18, 0x1e
 
-    iget-object v15, v0, Lcom/android/server/wm/DisplayContent;->mTouchExcludeRegion:Landroid/graphics/Region;
+    move/from16 v0, v18
 
-    move-object/from16 v0, p0
+    move-object/from16 v1, v17
 
-    iget-object v0, v0, Lcom/android/server/wm/DisplayContent;->mNonResizeableRegion:Landroid/graphics/Region;
+    invoke-static {v0, v1}, Lcom/android/server/wm/WindowManagerService;->dipToPixel(ILandroid/util/DisplayMetrics;)I
 
-    move-object/from16 v16, v0
+    move-result v4
 
     move-object/from16 v0, p0
 
@@ -3216,9 +2609,857 @@
 
     move-object/from16 v17, v0
 
-    invoke-virtual/range {v14 .. v17}, Lcom/android/server/wm/TaskTapPointerEventListener;->setTouchExcludeRegion(Landroid/graphics/Region;Landroid/graphics/Region;Landroid/graphics/Region;)V
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcom/android/server/wm/DisplayContent;->mBaseDisplayRect:Landroid/graphics/Rect;
+
+    move-object/from16 v18, v0
+
+    invoke-virtual/range {v17 .. v18}, Landroid/graphics/Region;->set(Landroid/graphics/Rect;)Z
+
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcom/android/server/wm/DisplayContent;->mService:Lcom/android/server/wm/WindowManagerService;
+
+    move-object/from16 v17, v0
+
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcom/android/server/wm/DisplayContent;->mDisplayMetrics:Landroid/util/DisplayMetrics;
+
+    move-object/from16 v17, v0
+
+    const/16 v18, 0x6
+
+    move/from16 v0, v18
+
+    move-object/from16 v1, v17
+
+    invoke-static {v0, v1}, Lcom/android/server/wm/WindowManagerService;->dipToPixel(ILandroid/util/DisplayMetrics;)I
+
+    move-result v9
+
+    const/4 v5, 0x0
+
+    const/4 v3, 0x0
+
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcom/android/server/wm/DisplayContent;->mNonResizeableRegion:Landroid/graphics/Region;
+
+    move-object/from16 v17, v0
+
+    invoke-virtual/range {v17 .. v17}, Landroid/graphics/Region;->setEmpty()V
+
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcom/android/server/wm/DisplayContent;->mStacks:Ljava/util/ArrayList;
+
+    move-object/from16 v17, v0
+
+    invoke-virtual/range {v17 .. v17}, Ljava/util/ArrayList;->size()I
+
+    move-result v17
+
+    add-int/lit8 v11, v17, -0x1
+
+    :goto_0
+    if-ltz v11, :cond_e
+
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcom/android/server/wm/DisplayContent;->mStacks:Ljava/util/ArrayList;
+
+    move-object/from16 v17, v0
+
+    move-object/from16 v0, v17
+
+    invoke-virtual {v0, v11}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+
+    move-result-object v10
+
+    check-cast v10, Lcom/android/server/wm/TaskStack;
+
+    invoke-virtual {v10}, Lcom/android/server/wm/TaskStack;->getTasks()Ljava/util/ArrayList;
+
+    move-result-object v14
+
+    invoke-virtual {v14}, Ljava/util/ArrayList;->size()I
+
+    move-result v17
+
+    add-int/lit8 v13, v17, -0x1
+
+    :goto_1
+    if-ltz v13, :cond_a
+
+    invoke-virtual {v14, v13}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+
+    move-result-object v12
+
+    check-cast v12, Lcom/android/server/wm/Task;
+
+    invoke-virtual {v12}, Lcom/android/server/wm/Task;->inFreeformWorkspace()Z
+
+    move-result v17
+
+    if-eqz v17, :cond_1
+
+    invoke-virtual {v12}, Lcom/android/server/wm/Task;->getTopVisibleNowWindow()Lcom/android/server/wm/WindowState;
+
+    move-result-object v16
+
+    if-nez v16, :cond_2
+
+    :cond_0
+    add-int/lit8 v13, v13, -0x1
+
+    goto :goto_1
+
+    :cond_1
+    invoke-virtual {v12}, Lcom/android/server/wm/Task;->getTopVisibleAppToken()Lcom/android/server/wm/AppWindowToken;
+
+    move-result-object v15
+
+    if-eqz v15, :cond_0
+
+    invoke-virtual {v15}, Lcom/android/server/wm/AppWindowToken;->isVisible()Z
+
+    move-result v17
+
+    if-eqz v17, :cond_0
+
+    :cond_2
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcom/android/server/wm/DisplayContent;->mTmpRect:Landroid/graphics/Rect;
+
+    move-object/from16 v17, v0
+
+    move-object/from16 v0, v17
+
+    invoke-virtual {v12, v0}, Lcom/android/server/wm/Task;->getDimBounds(Landroid/graphics/Rect;)V
+
+    sget-boolean v17, Lcom/samsung/android/framework/feature/MultiWindowFeatures;->SAMSUNG_MULTIWINDOW_DYNAMIC_ENABLED:Z
+
+    if-nez v17, :cond_b
+
+    move-object/from16 v0, p1
+
+    if-ne v12, v0, :cond_3
+
+    const/4 v3, 0x1
+
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcom/android/server/wm/DisplayContent;->mTmpRect2:Landroid/graphics/Rect;
+
+    move-object/from16 v17, v0
+
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcom/android/server/wm/DisplayContent;->mTmpRect:Landroid/graphics/Rect;
+
+    move-object/from16 v18, v0
+
+    invoke-virtual/range {v17 .. v18}, Landroid/graphics/Rect;->set(Landroid/graphics/Rect;)V
+
+    :cond_3
+    :goto_2
+    invoke-virtual {v12}, Lcom/android/server/wm/Task;->inFreeformWorkspace()Z
+
+    move-result v8
+
+    move-object/from16 v0, p1
+
+    if-ne v12, v0, :cond_4
+
+    if-eqz v8, :cond_9
+
+    :cond_4
+    if-eqz v8, :cond_8
+
+    sget-boolean v17, Lcom/samsung/android/framework/feature/MultiWindowFeatures;->SAMSUNG_MULTIWINDOW_DYNAMIC_ENABLED:Z
+
+    if-eqz v17, :cond_6
+
+    move-object/from16 v0, p1
+
+    if-ne v12, v0, :cond_5
+
+    const/4 v3, 0x1
+
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcom/android/server/wm/DisplayContent;->mTmpRect2:Landroid/graphics/Rect;
+
+    move-object/from16 v17, v0
+
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcom/android/server/wm/DisplayContent;->mTmpRect:Landroid/graphics/Rect;
+
+    move-object/from16 v18, v0
+
+    invoke-virtual/range {v17 .. v18}, Landroid/graphics/Rect;->set(Landroid/graphics/Rect;)V
+
+    :cond_5
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcom/android/server/wm/DisplayContent;->mTmpPointerRect:Landroid/graphics/Rect;
+
+    move-object/from16 v17, v0
+
+    neg-int v0, v9
+
+    move/from16 v18, v0
+
+    neg-int v0, v9
+
+    move/from16 v19, v0
+
+    invoke-virtual/range {v17 .. v19}, Landroid/graphics/Rect;->inset(II)V
+
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcom/android/server/wm/DisplayContent;->mTmpPointerRect:Landroid/graphics/Rect;
+
+    move-object/from16 v17, v0
+
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcom/android/server/wm/DisplayContent;->mContentRect:Landroid/graphics/Rect;
+
+    move-object/from16 v18, v0
+
+    invoke-virtual/range {v17 .. v18}, Landroid/graphics/Rect;->intersect(Landroid/graphics/Rect;)Z
+
+    const/4 v5, 0x1
+
+    :cond_6
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcom/android/server/wm/DisplayContent;->mTmpRect:Landroid/graphics/Rect;
+
+    move-object/from16 v17, v0
+
+    neg-int v0, v4
+
+    move/from16 v18, v0
+
+    neg-int v0, v4
+
+    move/from16 v19, v0
+
+    invoke-virtual/range {v17 .. v19}, Landroid/graphics/Rect;->inset(II)V
+
+    sget-boolean v17, Lcom/samsung/android/framework/feature/MultiWindowFeatures;->SAMSUNG_MULTIWINDOW_DYNAMIC_ENABLED:Z
+
+    if-eqz v17, :cond_7
+
+    sget-boolean v17, Lcom/samsung/android/framework/feature/MultiWindowFeatures;->FREEFORM_GHOST_MODE:Z
+
+    if-eqz v17, :cond_7
+
+    iget-boolean v0, v12, Lcom/android/server/wm/Task;->mFreeformAlphaMode:Z
+
+    move/from16 v17, v0
+
+    if-eqz v17, :cond_7
+
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcom/android/server/wm/DisplayContent;->mTmpRect:Landroid/graphics/Rect;
+
+    move-object/from16 v17, v0
+
+    move-object/from16 v0, v17
+
+    invoke-virtual {v0, v4, v4}, Landroid/graphics/Rect;->inset(II)V
+
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcom/android/server/wm/DisplayContent;->mTmpRect:Landroid/graphics/Rect;
+
+    move-object/from16 v17, v0
+
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcom/android/server/wm/DisplayContent;->mTmpRect:Landroid/graphics/Rect;
+
+    move-object/from16 v18, v0
+
+    move-object/from16 v0, v18
+
+    iget v0, v0, Landroid/graphics/Rect;->top:I
+
+    move/from16 v18, v0
+
+    iget v0, v12, Lcom/android/server/wm/Task;->mCurrentCaptionHieght:I
+
+    move/from16 v19, v0
+
+    add-int v18, v18, v19
+
+    move/from16 v0, v18
+
+    move-object/from16 v1, v17
+
+    iput v0, v1, Landroid/graphics/Rect;->bottom:I
+
+    :cond_7
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcom/android/server/wm/DisplayContent;->mTmpRect:Landroid/graphics/Rect;
+
+    move-object/from16 v17, v0
+
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcom/android/server/wm/DisplayContent;->mContentRect:Landroid/graphics/Rect;
+
+    move-object/from16 v18, v0
+
+    invoke-virtual/range {v17 .. v18}, Landroid/graphics/Rect;->intersect(Landroid/graphics/Rect;)Z
+
+    :cond_8
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcom/android/server/wm/DisplayContent;->mTouchExcludeRegion:Landroid/graphics/Region;
+
+    move-object/from16 v17, v0
+
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcom/android/server/wm/DisplayContent;->mTmpRect:Landroid/graphics/Rect;
+
+    move-object/from16 v18, v0
+
+    sget-object v19, Landroid/graphics/Region$Op;->DIFFERENCE:Landroid/graphics/Region$Op;
+
+    invoke-virtual/range {v17 .. v19}, Landroid/graphics/Region;->op(Landroid/graphics/Rect;Landroid/graphics/Region$Op;)Z
+
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcom/android/server/wm/DisplayContent;->mTouchExcludePointerRegion:Landroid/graphics/Region;
+
+    move-object/from16 v17, v0
+
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcom/android/server/wm/DisplayContent;->mTmpPointerRect:Landroid/graphics/Rect;
+
+    move-object/from16 v18, v0
+
+    sget-object v19, Landroid/graphics/Region$Op;->DIFFERENCE:Landroid/graphics/Region$Op;
+
+    invoke-virtual/range {v17 .. v19}, Landroid/graphics/Region;->op(Landroid/graphics/Rect;Landroid/graphics/Region$Op;)Z
+
+    :cond_9
+    invoke-virtual {v12}, Lcom/android/server/wm/Task;->isTwoFingerScrollMode()Z
+
+    move-result v17
+
+    if-eqz v17, :cond_0
+
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcom/android/server/wm/DisplayContent;->mTmpRect:Landroid/graphics/Rect;
+
+    move-object/from16 v17, v0
+
+    move-object/from16 v0, v17
+
+    invoke-virtual {v10, v0}, Lcom/android/server/wm/TaskStack;->getBounds(Landroid/graphics/Rect;)V
+
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcom/android/server/wm/DisplayContent;->mNonResizeableRegion:Landroid/graphics/Region;
+
+    move-object/from16 v17, v0
+
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcom/android/server/wm/DisplayContent;->mTmpRect:Landroid/graphics/Rect;
+
+    move-object/from16 v18, v0
+
+    sget-object v19, Landroid/graphics/Region$Op;->UNION:Landroid/graphics/Region$Op;
+
+    invoke-virtual/range {v17 .. v19}, Landroid/graphics/Region;->op(Landroid/graphics/Rect;Landroid/graphics/Region$Op;)Z
+
+    :cond_a
+    add-int/lit8 v11, v11, -0x1
+
+    goto/16 :goto_0
+
+    :cond_b
+    move-object/from16 v0, p1
+
+    if-ne v12, v0, :cond_c
+
+    invoke-virtual {v12}, Lcom/android/server/wm/Task;->inFreeformWorkspace()Z
+
+    move-result v17
+
+    if-eqz v17, :cond_d
+
+    :cond_c
+    :goto_3
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcom/android/server/wm/DisplayContent;->mTmpPointerRect:Landroid/graphics/Rect;
+
+    move-object/from16 v17, v0
+
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcom/android/server/wm/DisplayContent;->mTmpRect:Landroid/graphics/Rect;
+
+    move-object/from16 v18, v0
+
+    invoke-virtual/range {v17 .. v18}, Landroid/graphics/Rect;->set(Landroid/graphics/Rect;)V
+
+    goto/16 :goto_2
+
+    :cond_d
+    if-nez v5, :cond_c
+
+    const/4 v3, 0x1
+
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcom/android/server/wm/DisplayContent;->mTmpRect2:Landroid/graphics/Rect;
+
+    move-object/from16 v17, v0
+
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcom/android/server/wm/DisplayContent;->mTmpRect:Landroid/graphics/Rect;
+
+    move-object/from16 v18, v0
+
+    invoke-virtual/range {v17 .. v18}, Landroid/graphics/Rect;->set(Landroid/graphics/Rect;)V
+
+    goto :goto_3
+
+    :cond_e
+    if-eqz v3, :cond_f
+
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcom/android/server/wm/DisplayContent;->mTouchExcludeRegion:Landroid/graphics/Region;
+
+    move-object/from16 v17, v0
+
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcom/android/server/wm/DisplayContent;->mTmpRect2:Landroid/graphics/Rect;
+
+    move-object/from16 v18, v0
+
+    sget-object v19, Landroid/graphics/Region$Op;->UNION:Landroid/graphics/Region$Op;
+
+    invoke-virtual/range {v17 .. v19}, Landroid/graphics/Region;->op(Landroid/graphics/Rect;Landroid/graphics/Region$Op;)Z
+
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcom/android/server/wm/DisplayContent;->mTouchExcludePointerRegion:Landroid/graphics/Region;
+
+    move-object/from16 v17, v0
+
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcom/android/server/wm/DisplayContent;->mTmpRect2:Landroid/graphics/Rect;
+
+    move-object/from16 v18, v0
+
+    sget-object v19, Landroid/graphics/Region$Op;->UNION:Landroid/graphics/Region$Op;
+
+    invoke-virtual/range {v17 .. v19}, Landroid/graphics/Region;->op(Landroid/graphics/Rect;Landroid/graphics/Region$Op;)Z
+
+    :cond_f
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcom/android/server/wm/DisplayContent;->mService:Lcom/android/server/wm/WindowManagerService;
+
+    move-object/from16 v17, v0
+
+    move-object/from16 v0, v17
+
+    iget-object v7, v0, Lcom/android/server/wm/WindowManagerService;->mInputMethodWindow:Lcom/android/server/wm/WindowState;
+
+    if-eqz v7, :cond_10
+
+    invoke-virtual {v7}, Lcom/android/server/wm/WindowState;->isVisibleLw()Z
+
+    move-result v17
+
+    if-eqz v17, :cond_10
+
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcom/android/server/wm/DisplayContent;->mTmpRegion:Landroid/graphics/Region;
+
+    move-object/from16 v17, v0
+
+    move-object/from16 v0, v17
+
+    invoke-virtual {v7, v0}, Lcom/android/server/wm/WindowState;->getTouchableRegion(Landroid/graphics/Region;)V
+
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcom/android/server/wm/DisplayContent;->mTouchExcludeRegion:Landroid/graphics/Region;
+
+    move-object/from16 v17, v0
+
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcom/android/server/wm/DisplayContent;->mTmpRegion:Landroid/graphics/Region;
+
+    move-object/from16 v18, v0
+
+    sget-object v19, Landroid/graphics/Region$Op;->UNION:Landroid/graphics/Region$Op;
+
+    invoke-virtual/range {v17 .. v19}, Landroid/graphics/Region;->op(Landroid/graphics/Region;Landroid/graphics/Region$Op;)Z
+
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcom/android/server/wm/DisplayContent;->mTouchExcludePointerRegion:Landroid/graphics/Region;
+
+    move-object/from16 v17, v0
+
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcom/android/server/wm/DisplayContent;->mTmpRegion:Landroid/graphics/Region;
+
+    move-object/from16 v18, v0
+
+    sget-object v19, Landroid/graphics/Region$Op;->UNION:Landroid/graphics/Region$Op;
+
+    invoke-virtual/range {v17 .. v19}, Landroid/graphics/Region;->op(Landroid/graphics/Region;Landroid/graphics/Region$Op;)Z
+
+    :cond_10
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcom/android/server/wm/DisplayContent;->mTapExcludedWindows:Ljava/util/ArrayList;
+
+    move-object/from16 v17, v0
+
+    invoke-virtual/range {v17 .. v17}, Ljava/util/ArrayList;->size()I
+
+    move-result v17
+
+    add-int/lit8 v6, v17, -0x1
+
+    :goto_4
+    if-ltz v6, :cond_12
+
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcom/android/server/wm/DisplayContent;->mTapExcludedWindows:Ljava/util/ArrayList;
+
+    move-object/from16 v17, v0
+
+    move-object/from16 v0, v17
+
+    invoke-virtual {v0, v6}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+
+    move-result-object v16
+
+    check-cast v16, Lcom/android/server/wm/WindowState;
+
+    invoke-virtual/range {v16 .. v16}, Lcom/android/server/wm/WindowState;->isVisibleNow()Z
+
+    move-result v17
+
+    if-eqz v17, :cond_11
+
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcom/android/server/wm/DisplayContent;->mTmpRegion:Landroid/graphics/Region;
+
+    move-object/from16 v17, v0
+
+    invoke-virtual/range {v16 .. v17}, Lcom/android/server/wm/WindowState;->getTouchableRegion(Landroid/graphics/Region;)V
+
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcom/android/server/wm/DisplayContent;->mTouchExcludeRegion:Landroid/graphics/Region;
+
+    move-object/from16 v17, v0
+
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcom/android/server/wm/DisplayContent;->mTmpRegion:Landroid/graphics/Region;
+
+    move-object/from16 v18, v0
+
+    sget-object v19, Landroid/graphics/Region$Op;->UNION:Landroid/graphics/Region$Op;
+
+    invoke-virtual/range {v17 .. v19}, Landroid/graphics/Region;->op(Landroid/graphics/Region;Landroid/graphics/Region$Op;)Z
+
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcom/android/server/wm/DisplayContent;->mTouchExcludePointerRegion:Landroid/graphics/Region;
+
+    move-object/from16 v17, v0
+
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcom/android/server/wm/DisplayContent;->mTmpRegion:Landroid/graphics/Region;
+
+    move-object/from16 v18, v0
+
+    sget-object v19, Landroid/graphics/Region$Op;->UNION:Landroid/graphics/Region$Op;
+
+    invoke-virtual/range {v17 .. v19}, Landroid/graphics/Region;->op(Landroid/graphics/Region;Landroid/graphics/Region$Op;)Z
+
+    :cond_11
+    add-int/lit8 v6, v6, -0x1
+
+    goto :goto_4
+
+    :cond_12
+    invoke-virtual/range {p0 .. p0}, Lcom/android/server/wm/DisplayContent;->getDockedStackVisibleForUserLocked()Lcom/android/server/wm/TaskStack;
+
+    move-result-object v17
+
+    if-eqz v17, :cond_14
+
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcom/android/server/wm/DisplayContent;->mDividerControllerLocked:Lcom/android/server/wm/DockedStackDividerController;
+
+    move-object/from16 v17, v0
+
+    invoke-virtual/range {v17 .. v17}, Lcom/android/server/wm/DockedStackDividerController;->isAdjustedForIme()Z
+
+    move-result v17
+
+    if-nez v17, :cond_13
+
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcom/android/server/wm/DisplayContent;->mDividerControllerLocked:Lcom/android/server/wm/DockedStackDividerController;
+
+    move-object/from16 v17, v0
+
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcom/android/server/wm/DisplayContent;->mTmpRect:Landroid/graphics/Rect;
+
+    move-object/from16 v18, v0
+
+    invoke-virtual/range {v17 .. v18}, Lcom/android/server/wm/DockedStackDividerController;->getTouchRegion(Landroid/graphics/Rect;)V
+
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcom/android/server/wm/DisplayContent;->mTmpRegion:Landroid/graphics/Region;
+
+    move-object/from16 v17, v0
+
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcom/android/server/wm/DisplayContent;->mTmpRect:Landroid/graphics/Rect;
+
+    move-object/from16 v18, v0
+
+    invoke-virtual/range {v17 .. v18}, Landroid/graphics/Region;->set(Landroid/graphics/Rect;)Z
+
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcom/android/server/wm/DisplayContent;->mTouchExcludeRegion:Landroid/graphics/Region;
+
+    move-object/from16 v17, v0
+
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcom/android/server/wm/DisplayContent;->mTmpRegion:Landroid/graphics/Region;
+
+    move-object/from16 v18, v0
+
+    sget-object v19, Landroid/graphics/Region$Op;->UNION:Landroid/graphics/Region$Op;
+
+    invoke-virtual/range {v17 .. v19}, Landroid/graphics/Region;->op(Landroid/graphics/Region;Landroid/graphics/Region$Op;)Z
+
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcom/android/server/wm/DisplayContent;->mTouchExcludePointerRegion:Landroid/graphics/Region;
+
+    move-object/from16 v17, v0
+
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcom/android/server/wm/DisplayContent;->mTmpRegion:Landroid/graphics/Region;
+
+    move-object/from16 v18, v0
+
+    sget-object v19, Landroid/graphics/Region$Op;->UNION:Landroid/graphics/Region$Op;
+
+    invoke-virtual/range {v17 .. v19}, Landroid/graphics/Region;->op(Landroid/graphics/Region;Landroid/graphics/Region$Op;)Z
 
     :cond_13
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcom/android/server/wm/DisplayContent;->mDividerControllerLocked:Lcom/android/server/wm/DockedStackDividerController;
+
+    move-object/from16 v17, v0
+
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcom/android/server/wm/DisplayContent;->mTmpRect2:Landroid/graphics/Rect;
+
+    move-object/from16 v18, v0
+
+    invoke-virtual/range {v17 .. v18}, Lcom/android/server/wm/DockedStackDividerController;->getButtonsTouchRegion(Landroid/graphics/Rect;)V
+
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcom/android/server/wm/DisplayContent;->mTmpRect2:Landroid/graphics/Rect;
+
+    move-object/from16 v17, v0
+
+    invoke-virtual/range {v17 .. v17}, Landroid/graphics/Rect;->isEmpty()Z
+
+    move-result v17
+
+    if-nez v17, :cond_14
+
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcom/android/server/wm/DisplayContent;->mTmpRegion:Landroid/graphics/Region;
+
+    move-object/from16 v17, v0
+
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcom/android/server/wm/DisplayContent;->mTmpRect2:Landroid/graphics/Rect;
+
+    move-object/from16 v18, v0
+
+    invoke-virtual/range {v17 .. v18}, Landroid/graphics/Region;->set(Landroid/graphics/Rect;)Z
+
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcom/android/server/wm/DisplayContent;->mTouchExcludeRegion:Landroid/graphics/Region;
+
+    move-object/from16 v17, v0
+
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcom/android/server/wm/DisplayContent;->mTmpRegion:Landroid/graphics/Region;
+
+    move-object/from16 v18, v0
+
+    sget-object v19, Landroid/graphics/Region$Op;->UNION:Landroid/graphics/Region$Op;
+
+    invoke-virtual/range {v17 .. v19}, Landroid/graphics/Region;->op(Landroid/graphics/Region;Landroid/graphics/Region$Op;)Z
+
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcom/android/server/wm/DisplayContent;->mTouchExcludePointerRegion:Landroid/graphics/Region;
+
+    move-object/from16 v17, v0
+
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcom/android/server/wm/DisplayContent;->mTmpRegion:Landroid/graphics/Region;
+
+    move-object/from16 v18, v0
+
+    sget-object v19, Landroid/graphics/Region$Op;->UNION:Landroid/graphics/Region$Op;
+
+    invoke-virtual/range {v17 .. v19}, Landroid/graphics/Region;->op(Landroid/graphics/Region;Landroid/graphics/Region$Op;)Z
+
+    :cond_14
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcom/android/server/wm/DisplayContent;->mService:Lcom/android/server/wm/WindowManagerService;
+
+    move-object/from16 v17, v0
+
+    move-object/from16 v0, v17
+
+    iget-object v0, v0, Lcom/android/server/wm/WindowManagerService;->mMultiWindowManagerInternal:Lcom/android/server/wm/IMultiWindowManagerInternalBridge;
+
+    move-object/from16 v17, v0
+
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcom/android/server/wm/DisplayContent;->mTouchExcludeRegion:Landroid/graphics/Region;
+
+    move-object/from16 v18, v0
+
+    move-object/from16 v0, v17
+
+    move-object/from16 v1, p0
+
+    move-object/from16 v2, v18
+
+    invoke-interface {v0, v1, v2}, Lcom/android/server/wm/IMultiWindowManagerInternalBridge;->getTouchExcludeRegionLocked(Lcom/android/server/wm/DisplayContent;Landroid/graphics/Region;)V
+
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcom/android/server/wm/DisplayContent;->mService:Lcom/android/server/wm/WindowManagerService;
+
+    move-object/from16 v17, v0
+
+    move-object/from16 v0, v17
+
+    iget-object v0, v0, Lcom/android/server/wm/WindowManagerService;->mMultiWindowManagerInternal:Lcom/android/server/wm/IMultiWindowManagerInternalBridge;
+
+    move-object/from16 v17, v0
+
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcom/android/server/wm/DisplayContent;->mTouchExcludePointerRegion:Landroid/graphics/Region;
+
+    move-object/from16 v18, v0
+
+    move-object/from16 v0, v17
+
+    move-object/from16 v1, p0
+
+    move-object/from16 v2, v18
+
+    invoke-interface {v0, v1, v2}, Lcom/android/server/wm/IMultiWindowManagerInternalBridge;->getTouchExcludeRegionLocked(Lcom/android/server/wm/DisplayContent;Landroid/graphics/Region;)V
+
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcom/android/server/wm/DisplayContent;->mTapDetector:Lcom/android/server/wm/TaskTapPointerEventListener;
+
+    move-object/from16 v17, v0
+
+    if-eqz v17, :cond_15
+
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcom/android/server/wm/DisplayContent;->mTapDetector:Lcom/android/server/wm/TaskTapPointerEventListener;
+
+    move-object/from16 v17, v0
+
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcom/android/server/wm/DisplayContent;->mTouchExcludeRegion:Landroid/graphics/Region;
+
+    move-object/from16 v18, v0
+
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcom/android/server/wm/DisplayContent;->mNonResizeableRegion:Landroid/graphics/Region;
+
+    move-object/from16 v19, v0
+
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcom/android/server/wm/DisplayContent;->mTouchExcludePointerRegion:Landroid/graphics/Region;
+
+    move-object/from16 v20, v0
+
+    invoke-virtual/range {v17 .. v20}, Lcom/android/server/wm/TaskTapPointerEventListener;->setTouchExcludeRegion(Landroid/graphics/Region;Landroid/graphics/Region;Landroid/graphics/Region;)V
+
+    :cond_15
     return-void
 .end method
 

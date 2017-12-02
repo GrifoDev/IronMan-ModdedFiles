@@ -569,9 +569,9 @@
 
     const/4 v10, 0x0
 
-    const/4 v9, 0x1
+    const/high16 v9, 0x3f800000    # 1.0f
 
-    const/high16 v8, 0x3f800000    # 1.0f
+    const/4 v8, 0x1
 
     iget-object v3, p0, Lcom/android/server/wm/DockedStackDividerController;->mService:Lcom/android/server/wm/WindowManagerService;
 
@@ -589,7 +589,7 @@
 
     if-nez v3, :cond_0
 
-    iput-boolean v9, p0, Lcom/android/server/wm/DockedStackDividerController;->mAnimationStarted:Z
+    iput-boolean v8, p0, Lcom/android/server/wm/DockedStackDividerController;->mAnimationStarted:Z
 
     iput-wide p1, p0, Lcom/android/server/wm/DockedStackDividerController;->mAnimationStartTime:J
 
@@ -597,7 +597,7 @@
 
     move-result v3
 
-    if-eqz v3, :cond_3
+    if-eqz v3, :cond_4
 
     iget-object v3, p0, Lcom/android/server/wm/DockedStackDividerController;->mService:Lcom/android/server/wm/WindowManagerService;
 
@@ -655,7 +655,7 @@
 
     div-float/2addr v3, v6
 
-    invoke-static {v8, v3}, Ljava/lang/Math;->min(FF)F
+    invoke-static {v9, v3}, Ljava/lang/Math;->min(FF)F
 
     move-result v2
 
@@ -663,7 +663,7 @@
 
     move-result v3
 
-    if-eqz v3, :cond_4
+    if-eqz v3, :cond_5
 
     sget-object v3, Lcom/android/server/wm/AppTransition;->TOUCH_RESPONSE_INTERPOLATOR:Landroid/view/animation/Interpolator;
 
@@ -674,7 +674,7 @@
 
     const/high16 v0, -0x40800000    # -1.0f
 
-    if-eqz v1, :cond_1
+    if-eqz v1, :cond_2
 
     invoke-direct {p0, v1, v2}, Lcom/android/server/wm/DockedStackDividerController;->getMinimizeAmount(Lcom/android/server/wm/TaskStack;F)F
 
@@ -684,24 +684,33 @@
 
     move-result v3
 
-    if-eqz v3, :cond_1
+    if-eqz v3, :cond_2
 
-    invoke-virtual {p0, v9, v0}, Lcom/android/server/wm/DockedStackDividerController;->setResizeDockedStackColorLayer(ZF)V
+    invoke-virtual {p0, v8, v0}, Lcom/android/server/wm/DockedStackDividerController;->setResizeDockedStackColorLayer(ZF)V
 
+    cmpl-float v3, v0, v10
+
+    if-nez v3, :cond_1
+
+    iget-object v3, p0, Lcom/android/server/wm/DockedStackDividerController;->mService:Lcom/android/server/wm/WindowManagerService;
+
+    iput-boolean v8, v3, Lcom/android/server/wm/WindowManagerService;->mFocusMayChange:Z
+
+    :cond_1
     iget-object v3, p0, Lcom/android/server/wm/DockedStackDividerController;->mService:Lcom/android/server/wm/WindowManagerService;
 
     iget-object v3, v3, Lcom/android/server/wm/WindowManagerService;->mWindowPlacerLocked:Lcom/android/server/wm/WindowSurfacePlacer;
 
     invoke-virtual {v3}, Lcom/android/server/wm/WindowSurfacePlacer;->performSurfacePlacement()V
 
-    :cond_1
-    cmpl-float v3, v2, v8
+    :cond_2
+    cmpl-float v3, v2, v9
 
-    if-ltz v3, :cond_6
+    if-ltz v3, :cond_7
 
-    cmpl-float v3, v0, v8
+    cmpl-float v3, v0, v9
 
-    if-nez v3, :cond_5
+    if-nez v3, :cond_6
 
     iget-object v3, p0, Lcom/android/server/wm/DockedStackDividerController;->mService:Lcom/android/server/wm/WindowManagerService;
 
@@ -709,35 +718,35 @@
 
     invoke-interface {v3}, Lcom/android/server/wm/IMultiWindowManagerInternalBridge;->ensureDockedStackVisible()V
 
-    invoke-virtual {p0, v9, v8}, Lcom/android/server/wm/DockedStackDividerController;->setResizeDockedStackColorLayer(ZF)V
-
-    :cond_2
-    :goto_2
-    iput-boolean v10, p0, Lcom/android/server/wm/DockedStackDividerController;->mAnimatingForMinimizedDockedStack:Z
-
-    return v10
+    invoke-virtual {p0, v8, v9}, Lcom/android/server/wm/DockedStackDividerController;->setResizeDockedStackColorLayer(ZF)V
 
     :cond_3
+    :goto_2
+    iput-boolean v11, p0, Lcom/android/server/wm/DockedStackDividerController;->mAnimatingForMinimizedDockedStack:Z
+
+    return v11
+
+    :cond_4
     const-wide/16 v4, 0x150
 
     goto :goto_0
 
-    :cond_4
+    :cond_5
     iget-object v3, p0, Lcom/android/server/wm/DockedStackDividerController;->mMinimizedDockInterpolator:Landroid/view/animation/Interpolator;
 
     goto :goto_1
 
-    :cond_5
-    cmpl-float v3, v0, v11
+    :cond_6
+    cmpl-float v3, v0, v10
 
-    if-nez v3, :cond_2
+    if-nez v3, :cond_3
 
-    invoke-virtual {p0, v10, v11}, Lcom/android/server/wm/DockedStackDividerController;->setResizeDockedStackColorLayer(ZF)V
+    invoke-virtual {p0, v11, v10}, Lcom/android/server/wm/DockedStackDividerController;->setResizeDockedStackColorLayer(ZF)V
 
     goto :goto_2
 
-    :cond_6
-    return v9
+    :cond_7
+    return v8
 .end method
 
 .method private checkMinimizeChanged(Z)V

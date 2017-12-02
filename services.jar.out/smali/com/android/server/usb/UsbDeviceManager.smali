@@ -2502,9 +2502,9 @@
 
     const/4 v9, 0x0
 
-    const v8, 0x1040ada
+    const v8, 0x1040adb
 
-    const v0, 0x1040ada
+    const v0, 0x1040adb
 
     iget-object v5, p0, Lcom/android/server/usb/UsbDeviceManager;->mNotificationManager:Landroid/app/NotificationManager;
 
@@ -2578,7 +2578,7 @@
 
     move-result-object v4
 
-    const v5, 0x1040adb
+    const v5, 0x1040adc
 
     invoke-virtual {v3, v5}, Landroid/content/res/Resources;->getText(I)Ljava/lang/CharSequence;
 

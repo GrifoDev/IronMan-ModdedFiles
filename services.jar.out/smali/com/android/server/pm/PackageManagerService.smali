@@ -254,10 +254,6 @@
 
 .field private static final KILL_REASON_APP_OP_CHANGE:Ljava/lang/String; = "Permission related app op changed"
 
-.field private static final KNOX_VERIFICATION_INSTALLER_UID_KEY:Ljava/lang/String; = "KNOXVerificationInstallerUid"
-
-.field private static final KNOX_VERIFICATION_PACKAGE_PATH:Ljava/lang/String; = "KNOXVerificationPackagePath"
-
 .field static final LOG_PREF_VERIFY:Ljava/lang/String; = "VERIFY"
 
 .field private static final LOG_UID:I = 0x3ef
@@ -7115,7 +7111,55 @@
 
     move-result v2
 
+    if-eqz v2, :cond_24
+
+    move-object/from16 v0, v45
+
+    iget-object v2, v0, Lcom/android/server/pm/PackageSetting;->pkg:Landroid/content/pm/PackageParser$Package;
+
     if-nez v2, :cond_21
+
+    new-instance v2, Ljava/lang/StringBuilder;
+
+    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string/jumbo v4, "System package "
+
+    invoke-virtual {v2, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    move-object/from16 v0, v75
+
+    iget-object v4, v0, Lcom/android/server/pm/PackageSetting;->name:Ljava/lang/String;
+
+    invoke-virtual {v2, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    const-string/jumbo v4, " no exists; it seems to be removed by fota"
+
+    invoke-virtual {v2, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v2
+
+    const/4 v4, 0x5
+
+    invoke-static {v4, v2}, Lcom/android/server/pm/PackageManagerService;->logCriticalInfo(ILjava/lang/String;)V
+
+    move-object/from16 v0, v75
+
+    iget-object v2, v0, Lcom/android/server/pm/PackageSetting;->name:Ljava/lang/String;
+
+    move-object/from16 v0, v74
+
+    invoke-interface {v0, v2}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+
+    goto/16 :goto_11
 
     :cond_24
     move-object/from16 v0, v75
@@ -110341,6 +110385,40 @@
     throw v8
 .end method
 
+.method public getDexoptState(Ljava/lang/String;)Ljava/lang/String;
+    .locals 3
+
+    iget-object v2, p0, Lcom/android/server/pm/PackageManagerService;->mPackages:Landroid/util/ArrayMap;
+
+    invoke-virtual {v2, p1}, Landroid/util/ArrayMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Landroid/content/pm/PackageParser$Package;
+
+    if-nez v1, :cond_0
+
+    const-string/jumbo v2, "package_not_found"
+
+    return-object v2
+
+    :cond_0
+    iget-object v2, p0, Lcom/android/server/pm/PackageManagerService;->mPackageDexOptimizer:Lcom/android/server/pm/PackageDexOptimizer;
+
+    invoke-virtual {v2, v1}, Lcom/android/server/pm/PackageDexOptimizer;->getDexoptState(Landroid/content/pm/PackageParser$Package;)Ljava/lang/String;
+
+    move-result-object v0
+
+    if-nez v0, :cond_1
+
+    const-string/jumbo v2, "no-info"
+
+    return-object v2
+
+    :cond_1
+    return-object v0
+.end method
+
 .method public getDisplayChooserResolveInfo()Landroid/content/pm/ResolveInfo;
     .locals 1
 
@@ -116254,7 +116332,7 @@
 
     move-result v2
 
-    if-eqz v2, :cond_b
+    if-eqz v2, :cond_c
 
     :cond_9
     invoke-static {}, Landroid/os/Binder;->clearCallingIdentity()J
@@ -116270,7 +116348,7 @@
 
     move-result v2
 
-    if-eqz v2, :cond_a
+    if-eqz v2, :cond_b
 
     const-class v2, Landroid/os/storage/MountServiceInternal;
 
@@ -116286,14 +116364,21 @@
 
     invoke-virtual {v13, v0, v1}, Landroid/os/storage/MountServiceInternal;->onExternalStoragePolicyChanged(ILjava/lang/String;)V
 
-    if-nez p3, :cond_a
+    if-nez p3, :cond_b
 
     invoke-static/range {p1 .. p1}, Lcom/samsung/android/app/SemDualAppManager;->isInstalledWhitelistedPackage(Ljava/lang/String;)Z
 
     move-result v2
 
-    if-eqz v2, :cond_a
+    if-nez v2, :cond_a
 
+    invoke-static/range {p1 .. p1}, Lcom/android/server/DualAppManagerService;->isDefalutAppPackage(Ljava/lang/String;)Z
+
+    move-result v2
+
+    if-eqz v2, :cond_b
+
+    :cond_a
     invoke-static {}, Lcom/samsung/android/app/SemDualAppManager;->getDualAppProfileId()I
 
     move-result v11
@@ -116302,7 +116387,7 @@
 
     move-result v2
 
-    if-eqz v2, :cond_a
+    if-eqz v2, :cond_b
 
     move/from16 v0, v20
 
@@ -116316,7 +116401,7 @@
 
     move-result v2
 
-    if-eqz v2, :cond_a
+    if-eqz v2, :cond_b
 
     move-object/from16 v0, p1
 
@@ -116324,10 +116409,10 @@
     :try_end_5
     .catchall {:try_start_5 .. :try_end_5} :catchall_1
 
-    :cond_a
+    :cond_b
     invoke-static/range {v18 .. v19}, Landroid/os/Binder;->restoreCallingIdentity(J)V
 
-    :cond_b
+    :cond_c
     return-void
 
     :pswitch_1

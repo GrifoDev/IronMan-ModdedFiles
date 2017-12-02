@@ -938,7 +938,7 @@
 
     move/from16 v0, v32
 
-    if-ne v0, v4, :cond_32
+    if-ne v0, v4, :cond_31
 
     :try_start_0
     move-object/from16 v0, p0
@@ -996,7 +996,7 @@
 
     move-result v4
 
-    if-nez v4, :cond_30
+    if-nez v4, :cond_2f
 
     const/16 v16, 0x1
 
@@ -1059,7 +1059,7 @@
 
     if-eqz v4, :cond_b
 
-    if-eqz v16, :cond_31
+    if-eqz v16, :cond_30
 
     :cond_b
     :goto_f
@@ -1752,41 +1752,6 @@
 
     iget-object v4, v0, Lcom/android/server/pm/PackageManagerService$InstallParams;->verificationInfo:Lcom/android/server/pm/PackageManagerService$VerificationInfo;
 
-    if-eqz v4, :cond_2e
-
-    const-string/jumbo v4, "KNOXVerificationInstallerUid"
-
-    move-object/from16 v0, p0
-
-    iget-object v6, v0, Lcom/android/server/pm/PackageManagerService$InstallParams;->verificationInfo:Lcom/android/server/pm/PackageManagerService$VerificationInfo;
-
-    iget v6, v6, Lcom/android/server/pm/PackageManagerService$VerificationInfo;->installerUid:I
-
-    move-object/from16 v0, v38
-
-    invoke-virtual {v0, v4, v6}, Landroid/content/Intent;->putExtra(Ljava/lang/String;I)Landroid/content/Intent;
-
-    :goto_12
-    const-string/jumbo v4, "KNOXVerificationPackagePath"
-
-    move-object/from16 v0, p0
-
-    iget-object v6, v0, Lcom/android/server/pm/PackageManagerService$InstallParams;->origin:Lcom/android/server/pm/PackageManagerService$OriginInfo;
-
-    iget-object v6, v6, Lcom/android/server/pm/PackageManagerService$OriginInfo;->file:Ljava/io/File;
-
-    invoke-virtual {v6}, Ljava/io/File;->getAbsolutePath()Ljava/lang/String;
-
-    move-result-object v6
-
-    move-object/from16 v0, v38
-
-    invoke-virtual {v0, v4, v6}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
-
-    move-object/from16 v0, p0
-
-    iget-object v4, v0, Lcom/android/server/pm/PackageManagerService$InstallParams;->verificationInfo:Lcom/android/server/pm/PackageManagerService$VerificationInfo;
-
     if-eqz v4, :cond_2a
 
     move-object/from16 v0, p0
@@ -1921,7 +1886,7 @@
 
     move-result v10
 
-    if-nez v10, :cond_2f
+    if-nez v10, :cond_2e
 
     const-string/jumbo v4, "PackageManager"
 
@@ -2051,20 +2016,9 @@
     goto/16 :goto_11
 
     :cond_2e
-    const-string/jumbo v4, "KNOXVerificationInstallerUid"
-
-    const/4 v6, -0x1
-
-    move-object/from16 v0, v38
-
-    invoke-virtual {v0, v4, v6}, Landroid/content/Intent;->putExtra(Ljava/lang/String;I)Landroid/content/Intent;
-
-    goto/16 :goto_12
-
-    :cond_2f
     const/4 v14, 0x0
 
-    :goto_13
+    :goto_12
     if-ge v14, v10, :cond_2b
 
     move-object/from16 v0, v37
@@ -2103,14 +2057,14 @@
 
     add-int/lit8 v14, v14, 0x1
 
-    goto :goto_13
+    goto :goto_12
 
-    :cond_30
+    :cond_2f
     const/16 v16, 0x0
 
     goto/16 :goto_e
 
-    :cond_31
+    :cond_30
     :try_start_2
     move-object/from16 v0, p0
 
@@ -2149,7 +2103,7 @@
 
     goto/16 :goto_f
 
-    :cond_32
+    :cond_31
     move-object/from16 v0, p0
 
     iget-object v4, v0, Lcom/android/server/pm/PackageManagerService$InstallParams;->this$0:Lcom/android/server/pm/PackageManagerService;

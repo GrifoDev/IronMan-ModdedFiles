@@ -40,7 +40,7 @@
 
     if-ne p1, v1, :cond_2
 
-    invoke-static {}, Lcom/android/server/audio/MediaFocusControl;->-get7()Ljava/lang/Object;
+    invoke-static {}, Lcom/android/server/audio/MediaFocusControl;->-get8()Ljava/lang/Object;
 
     move-result-object v2
 
@@ -51,7 +51,7 @@
 
     const/4 v3, 0x1
 
-    invoke-static {v1, v3}, Lcom/android/server/audio/MediaFocusControl;->-set1(Lcom/android/server/audio/MediaFocusControl;Z)Z
+    invoke-static {v1, v3}, Lcom/android/server/audio/MediaFocusControl;->-set2(Lcom/android/server/audio/MediaFocusControl;Z)Z
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
@@ -75,7 +75,7 @@
     if-nez p1, :cond_1
 
     :cond_3
-    invoke-static {}, Lcom/android/server/audio/MediaFocusControl;->-get7()Ljava/lang/Object;
+    invoke-static {}, Lcom/android/server/audio/MediaFocusControl;->-get8()Ljava/lang/Object;
 
     move-result-object v2
 
@@ -86,7 +86,7 @@
 
     const/4 v3, 0x0
 
-    invoke-static {v1, v3}, Lcom/android/server/audio/MediaFocusControl;->-set1(Lcom/android/server/audio/MediaFocusControl;Z)Z
+    invoke-static {v1, v3}, Lcom/android/server/audio/MediaFocusControl;->-set2(Lcom/android/server/audio/MediaFocusControl;Z)Z
 
     if-ne p1, v4, :cond_4
 
@@ -142,14 +142,14 @@
 
     const/4 v3, 0x1
 
-    invoke-static {v1, v3}, Lcom/android/server/audio/MediaFocusControl;->-set3(Lcom/android/server/audio/MediaFocusControl;Z)Z
+    invoke-static {v1, v3}, Lcom/android/server/audio/MediaFocusControl;->-set4(Lcom/android/server/audio/MediaFocusControl;Z)Z
 
     :cond_4
     if-nez p1, :cond_0
 
     iget-object v1, p0, Lcom/android/server/audio/MediaFocusControl$2;->this$0:Lcom/android/server/audio/MediaFocusControl;
 
-    invoke-static {v1}, Lcom/android/server/audio/MediaFocusControl;->-get8(Lcom/android/server/audio/MediaFocusControl;)Z
+    invoke-static {v1}, Lcom/android/server/audio/MediaFocusControl;->-get9(Lcom/android/server/audio/MediaFocusControl;)Z
 
     move-result v1
 
@@ -181,7 +181,7 @@
 
     const/4 v3, 0x0
 
-    invoke-static {v1, v3}, Lcom/android/server/audio/MediaFocusControl;->-set3(Lcom/android/server/audio/MediaFocusControl;Z)Z
+    invoke-static {v1, v3}, Lcom/android/server/audio/MediaFocusControl;->-set4(Lcom/android/server/audio/MediaFocusControl;Z)Z
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_1
 
@@ -206,7 +206,7 @@
 
     iget-object v1, p0, Lcom/android/server/audio/MediaFocusControl$2;->this$0:Lcom/android/server/audio/MediaFocusControl;
 
-    invoke-static {v1}, Lcom/android/server/audio/MediaFocusControl;->-get6(Lcom/android/server/audio/MediaFocusControl;)I
+    invoke-static {v1}, Lcom/android/server/audio/MediaFocusControl;->-get7(Lcom/android/server/audio/MediaFocusControl;)I
 
     move-result v1
 
@@ -232,7 +232,7 @@
 
     iget-object v3, p0, Lcom/android/server/audio/MediaFocusControl$2;->this$0:Lcom/android/server/audio/MediaFocusControl;
 
-    invoke-static {v3}, Lcom/android/server/audio/MediaFocusControl;->-get6(Lcom/android/server/audio/MediaFocusControl;)I
+    invoke-static {v3}, Lcom/android/server/audio/MediaFocusControl;->-get7(Lcom/android/server/audio/MediaFocusControl;)I
 
     move-result v3
 
@@ -273,7 +273,7 @@
     :cond_0
     iget-object v1, p0, Lcom/android/server/audio/MediaFocusControl$2;->this$0:Lcom/android/server/audio/MediaFocusControl;
 
-    invoke-static {v1, v0}, Lcom/android/server/audio/MediaFocusControl;->-set2(Lcom/android/server/audio/MediaFocusControl;I)I
+    invoke-static {v1, v0}, Lcom/android/server/audio/MediaFocusControl;->-set3(Lcom/android/server/audio/MediaFocusControl;I)I
 
     :cond_1
     return-void

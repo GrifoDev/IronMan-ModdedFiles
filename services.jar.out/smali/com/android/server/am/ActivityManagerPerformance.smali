@@ -23,13 +23,19 @@
 
 .field static DEBUG_TRACE:Z = false
 
-.field private static final DISABLE_MSG_ACT_RESUME:I = 0x3
+.field private static final MSG_CFMS_EXEC_ACTIVITY:I = 0x5
 
-.field private static final DISABLE_MSG_ACT_START:I = 0x2
+.field private static final MSG_CFMS_HINT_AMS_HOME:I = 0x7
 
-.field private static final DISABLE_MSG_APP_SWITCH:I = 0x1
+.field private static final MSG_CFMS_HINT_AMS_SWITCH:I = 0x6
 
-.field private static final ENABLE_MSG_ACT_RESUME_TAIL:I = 0x4
+.field private static final MSG_DISABLE_ACT_RESUME:I = 0x3
+
+.field private static final MSG_DISABLE_ACT_START:I = 0x2
+
+.field private static final MSG_DISABLE_APP_SWITCH:I = 0x1
+
+.field private static final MSG_ENABLE_ACT_RESUME_TAIL:I = 0x4
 
 .field static NOT_USER_BINARY:Z = false
 
@@ -1556,9 +1562,17 @@
     if-eqz v8, :cond_2
 
     :cond_1
-    const-string/jumbo v8, "EXEC_ACTIVITY"
+    iget-object v8, p0, Lcom/android/server/am/ActivityManagerPerformance;->mHandler:Lcom/android/server/am/ActivityManagerPerformance$MainHandler;
 
-    invoke-static {v8, v6}, Lcom/samsung/android/os/SemPerfManager;->sendCommandToSsrm(Ljava/lang/String;Ljava/lang/String;)V
+    iget-object v9, p0, Lcom/android/server/am/ActivityManagerPerformance;->mHandler:Lcom/android/server/am/ActivityManagerPerformance$MainHandler;
+
+    const/4 v10, 0x5
+
+    invoke-virtual {v9, v10, v6}, Lcom/android/server/am/ActivityManagerPerformance$MainHandler;->obtainMessage(ILjava/lang/Object;)Landroid/os/Message;
+
+    move-result-object v9
+
+    invoke-virtual {v8, v9}, Lcom/android/server/am/ActivityManagerPerformance$MainHandler;->sendMessage(Landroid/os/Message;)Z
 
     :cond_2
     iget-object v8, p0, Lcom/android/server/am/ActivityManagerPerformance;->mBoosterActResume:Lcom/samsung/android/os/SemDvfsManager;
@@ -2058,9 +2072,17 @@
     if-eqz v8, :cond_2
 
     :cond_1
-    const-string/jumbo v8, "EXEC_ACTIVITY"
+    iget-object v8, p0, Lcom/android/server/am/ActivityManagerPerformance;->mHandler:Lcom/android/server/am/ActivityManagerPerformance$MainHandler;
 
-    invoke-static {v8, v6}, Lcom/samsung/android/os/SemPerfManager;->sendCommandToSsrm(Ljava/lang/String;Ljava/lang/String;)V
+    iget-object v9, p0, Lcom/android/server/am/ActivityManagerPerformance;->mHandler:Lcom/android/server/am/ActivityManagerPerformance$MainHandler;
+
+    const/4 v10, 0x5
+
+    invoke-virtual {v9, v10, v6}, Lcom/android/server/am/ActivityManagerPerformance$MainHandler;->obtainMessage(ILjava/lang/Object;)Landroid/os/Message;
+
+    move-result-object v9
+
+    invoke-virtual {v8, v9}, Lcom/android/server/am/ActivityManagerPerformance$MainHandler;->sendMessage(Landroid/os/Message;)Z
 
     :cond_2
     sget-boolean v8, Lcom/android/server/am/ActivityManagerPerformance;->AMP_PERF_ENABLE:Z
@@ -2633,9 +2655,17 @@
     if-eqz v8, :cond_2
 
     :cond_1
-    const-string/jumbo v8, "EXEC_ACTIVITY"
+    iget-object v8, p0, Lcom/android/server/am/ActivityManagerPerformance;->mHandler:Lcom/android/server/am/ActivityManagerPerformance$MainHandler;
 
-    invoke-static {v8, v6}, Lcom/samsung/android/os/SemPerfManager;->sendCommandToSsrm(Ljava/lang/String;Ljava/lang/String;)V
+    iget-object v9, p0, Lcom/android/server/am/ActivityManagerPerformance;->mHandler:Lcom/android/server/am/ActivityManagerPerformance$MainHandler;
+
+    const/4 v10, 0x5
+
+    invoke-virtual {v9, v10, v6}, Lcom/android/server/am/ActivityManagerPerformance$MainHandler;->obtainMessage(ILjava/lang/Object;)Landroid/os/Message;
+
+    move-result-object v9
+
+    invoke-virtual {v8, v9}, Lcom/android/server/am/ActivityManagerPerformance$MainHandler;->sendMessage(Landroid/os/Message;)Z
 
     :cond_2
     iget-object v8, p0, Lcom/android/server/am/ActivityManagerPerformance;->mBoosterAppSwitch:Lcom/samsung/android/os/SemDvfsManager;
@@ -2708,10 +2738,6 @@
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
     :try_start_1
-    const-string/jumbo v8, "AMS_APP_SWITCH"
-
-    invoke-static {v8, v6}, Lcom/samsung/android/os/SemPerfManager;->sendCommandToSsrm(Ljava/lang/String;Ljava/lang/String;)V
-
     invoke-virtual {v2}, Lcom/samsung/android/os/SemDvfsManager;->acquire()V
 
     iput-object p2, p0, Lcom/android/server/am/ActivityManagerPerformance;->rCurBoostAppSwitch:Lcom/android/server/am/ActivityRecord;
@@ -2740,6 +2766,18 @@
     int-to-long v10, v0
 
     invoke-virtual {v8, v5, v10, v11}, Lcom/android/server/am/ActivityManagerPerformance$MainHandler;->sendMessageDelayed(Landroid/os/Message;J)Z
+
+    iget-object v8, p0, Lcom/android/server/am/ActivityManagerPerformance;->mHandler:Lcom/android/server/am/ActivityManagerPerformance$MainHandler;
+
+    iget-object v9, p0, Lcom/android/server/am/ActivityManagerPerformance;->mHandler:Lcom/android/server/am/ActivityManagerPerformance$MainHandler;
+
+    const/4 v10, 0x6
+
+    invoke-virtual {v9, v10, v6}, Lcom/android/server/am/ActivityManagerPerformance$MainHandler;->obtainMessage(ILjava/lang/Object;)Landroid/os/Message;
+
+    move-result-object v9
+
+    invoke-virtual {v8, v9}, Lcom/android/server/am/ActivityManagerPerformance$MainHandler;->sendMessage(Landroid/os/Message;)Z
     :try_end_2
     .catch Ljava/lang/Exception; {:try_start_2 .. :try_end_2} :catch_0
 
@@ -3528,31 +3566,9 @@
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
     :try_start_1
-    const-string/jumbo v8, "AMS_APP_HOME"
-
-    invoke-static {v8, v6}, Lcom/samsung/android/os/SemPerfManager;->sendCommandToSsrm(Ljava/lang/String;Ljava/lang/String;)V
-
     invoke-virtual {v0}, Lcom/samsung/android/os/SemDvfsManager;->acquire()V
 
     iput-object p3, p0, Lcom/android/server/am/ActivityManagerPerformance;->rLastActHome:Lcom/android/server/am/ActivityRecord;
-
-    iget-object v8, p0, Lcom/android/server/am/ActivityManagerPerformance;->mHandler:Lcom/android/server/am/ActivityManagerPerformance$MainHandler;
-
-    const/4 v10, 0x4
-
-    invoke-virtual {v8, v10, p3}, Lcom/android/server/am/ActivityManagerPerformance$MainHandler;->obtainMessage(ILjava/lang/Object;)Landroid/os/Message;
-
-    move-result-object v3
-
-    iget-object v8, p0, Lcom/android/server/am/ActivityManagerPerformance;->mHandler:Lcom/android/server/am/ActivityManagerPerformance$MainHandler;
-
-    invoke-virtual {v0}, Lcom/samsung/android/os/SemDvfsManager;->getTimeOut()I
-
-    move-result v10
-
-    int-to-long v10, v10
-
-    invoke-virtual {v8, v3, v10, v11}, Lcom/android/server/am/ActivityManagerPerformance$MainHandler;->sendMessageDelayed(Landroid/os/Message;J)Z
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
@@ -3564,6 +3580,36 @@
     const-string/jumbo v9, "AMP_acquire() HOME"
 
     invoke-static {v8, v9}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    iget-object v8, p0, Lcom/android/server/am/ActivityManagerPerformance;->mHandler:Lcom/android/server/am/ActivityManagerPerformance$MainHandler;
+
+    const/4 v9, 0x4
+
+    invoke-virtual {v8, v9, p3}, Lcom/android/server/am/ActivityManagerPerformance$MainHandler;->obtainMessage(ILjava/lang/Object;)Landroid/os/Message;
+
+    move-result-object v3
+
+    iget-object v8, p0, Lcom/android/server/am/ActivityManagerPerformance;->mHandler:Lcom/android/server/am/ActivityManagerPerformance$MainHandler;
+
+    invoke-virtual {v0}, Lcom/samsung/android/os/SemDvfsManager;->getTimeOut()I
+
+    move-result v9
+
+    int-to-long v10, v9
+
+    invoke-virtual {v8, v3, v10, v11}, Lcom/android/server/am/ActivityManagerPerformance$MainHandler;->sendMessageDelayed(Landroid/os/Message;J)Z
+
+    iget-object v8, p0, Lcom/android/server/am/ActivityManagerPerformance;->mHandler:Lcom/android/server/am/ActivityManagerPerformance$MainHandler;
+
+    iget-object v9, p0, Lcom/android/server/am/ActivityManagerPerformance;->mHandler:Lcom/android/server/am/ActivityManagerPerformance$MainHandler;
+
+    const/4 v10, 0x7
+
+    invoke-virtual {v9, v10, v6}, Lcom/android/server/am/ActivityManagerPerformance$MainHandler;->obtainMessage(ILjava/lang/Object;)Landroid/os/Message;
+
+    move-result-object v9
+
+    invoke-virtual {v8, v9}, Lcom/android/server/am/ActivityManagerPerformance$MainHandler;->sendMessage(Landroid/os/Message;)Z
 
     :goto_3
     return-void

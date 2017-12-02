@@ -91,7 +91,7 @@
 
     if-eq v3, v1, :cond_1
 
-    invoke-static {v1}, Lcom/android/server/net/NetworkPolicyManagerService;->-set5(Z)Z
+    invoke-static {v1}, Lcom/android/server/net/NetworkPolicyManagerService;->-set6(Z)Z
 
     invoke-static {}, Lcom/android/server/net/NetworkPolicyManagerService;->-get14()Z
 
@@ -117,7 +117,7 @@
 
     iget-object v4, p0, Lcom/android/server/net/NetworkPolicyManagerService$2;->this$0:Lcom/android/server/net/NetworkPolicyManagerService;
 
-    invoke-static {v4}, Lcom/android/server/net/NetworkPolicyManagerService;->-get15(Lcom/android/server/net/NetworkPolicyManagerService;)Z
+    invoke-static {v4}, Lcom/android/server/net/NetworkPolicyManagerService;->-get16(Lcom/android/server/net/NetworkPolicyManagerService;)Z
 
     move-result v4
 

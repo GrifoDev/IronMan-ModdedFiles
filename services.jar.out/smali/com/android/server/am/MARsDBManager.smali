@@ -106,7 +106,7 @@
 
 .field static final MARS_CHECK_SCPM_PARAMETERS_MSG:I = 0xd
 
-.field static final MARS_DB_DELETE_PACKAGES_FOR_SECURE_FOLDER_MSG:I = 0xb
+.field static final MARS_DB_DELETE_PACKAGES_AS_USER_MSG:I = 0xb
 
 .field static final MARS_DB_DELETE_PACKAGE_MSG:I = 0x9
 
@@ -120,7 +120,7 @@
 
 .field static final MARS_DB_INIT_SKT_PACKAGE_MSG:I = 0xc
 
-.field static final MARS_DB_INSERT_PACKAGES_FOR_SECURE_FOLDER_MSG:I = 0xa
+.field static final MARS_DB_INSERT_PACKAGES_AS_USER_MSG:I = 0xa
 
 .field static final MARS_DB_INSERT_PACKAGE_MSG:I = 0x8
 
@@ -350,7 +350,17 @@
     return p1
 .end method
 
-.method static synthetic -wrap0(Lcom/android/server/am/MARsDBManager;)Ljava/util/ArrayList;
+.method static synthetic -wrap0(Lcom/android/server/am/MARsDBManager;I)Z
+    .locals 1
+
+    invoke-direct {p0, p1}, Lcom/android/server/am/MARsDBManager;->queryDataExistAsUser(I)Z
+
+    move-result v0
+
+    return v0
+.end method
+
+.method static synthetic -wrap1(Lcom/android/server/am/MARsDBManager;)Ljava/util/ArrayList;
     .locals 1
 
     invoke-direct {p0}, Lcom/android/server/am/MARsDBManager;->getManagedPackagesFromDB()Ljava/util/ArrayList;
@@ -360,18 +370,10 @@
     return-object v0
 .end method
 
-.method static synthetic -wrap1(Lcom/android/server/am/MARsDBManager;Ljava/lang/String;I)V
+.method static synthetic -wrap10(Lcom/android/server/am/MARsDBManager;Ljava/lang/String;I)V
     .locals 0
 
-    invoke-direct {p0, p1, p2}, Lcom/android/server/am/MARsDBManager;->deletePackage(Ljava/lang/String;I)V
-
-    return-void
-.end method
-
-.method static synthetic -wrap10(Lcom/android/server/am/MARsDBManager;ZLjava/util/ArrayList;Z)V
-    .locals 0
-
-    invoke-direct {p0, p1, p2, p3}, Lcom/android/server/am/MARsDBManager;->insertPkgInfoFromMARsToSM(ZLjava/util/ArrayList;Z)V
+    invoke-direct {p0, p1, p2}, Lcom/android/server/am/MARsDBManager;->insertPackage(Ljava/lang/String;I)V
 
     return-void
 .end method
@@ -379,12 +381,20 @@
 .method static synthetic -wrap11(Lcom/android/server/am/MARsDBManager;ZLjava/util/ArrayList;ZI)V
     .locals 0
 
-    invoke-direct {p0, p1, p2, p3, p4}, Lcom/android/server/am/MARsDBManager;->insertSecureFolderPkgInfoFromMARsToSM(ZLjava/util/ArrayList;ZI)V
+    invoke-direct {p0, p1, p2, p3, p4}, Lcom/android/server/am/MARsDBManager;->insertPackagesAsUserFromMARsToSM(ZLjava/util/ArrayList;ZI)V
 
     return-void
 .end method
 
-.method static synthetic -wrap12(Lcom/android/server/am/MARsDBManager;Ljava/lang/String;ILcom/android/server/am/MARsDBManager$SMDBValue;)V
+.method static synthetic -wrap12(Lcom/android/server/am/MARsDBManager;ZLjava/util/ArrayList;Z)V
+    .locals 0
+
+    invoke-direct {p0, p1, p2, p3}, Lcom/android/server/am/MARsDBManager;->insertPkgInfoFromMARsToSM(ZLjava/util/ArrayList;Z)V
+
+    return-void
+.end method
+
+.method static synthetic -wrap13(Lcom/android/server/am/MARsDBManager;Ljava/lang/String;ILcom/android/server/am/MARsDBManager$SMDBValue;)V
     .locals 0
 
     invoke-direct {p0, p1, p2, p3}, Lcom/android/server/am/MARsDBManager;->updateDBSpecific(Ljava/lang/String;ILcom/android/server/am/MARsDBManager$SMDBValue;)V
@@ -392,7 +402,7 @@
     return-void
 .end method
 
-.method static synthetic -wrap13(Lcom/android/server/am/MARsDBManager;Ljava/lang/String;IZ)V
+.method static synthetic -wrap14(Lcom/android/server/am/MARsDBManager;Ljava/lang/String;IZ)V
     .locals 0
 
     invoke-direct {p0, p1, p2, p3}, Lcom/android/server/am/MARsDBManager;->updateDataClearedPackageFromMARsToSM(Ljava/lang/String;IZ)V
@@ -400,7 +410,7 @@
     return-void
 .end method
 
-.method static synthetic -wrap14(Lcom/android/server/am/MARsDBManager;Ljava/lang/String;Ljava/lang/String;ZJ)V
+.method static synthetic -wrap15(Lcom/android/server/am/MARsDBManager;Ljava/lang/String;Ljava/lang/String;ZJ)V
     .locals 0
 
     invoke-direct/range {p0 .. p5}, Lcom/android/server/am/MARsDBManager;->updateInfo(Ljava/lang/String;Ljava/lang/String;ZJ)V
@@ -408,7 +418,7 @@
     return-void
 .end method
 
-.method static synthetic -wrap15(Lcom/android/server/am/MARsDBManager;Ljava/lang/String;)V
+.method static synthetic -wrap16(Lcom/android/server/am/MARsDBManager;Ljava/lang/String;)V
     .locals 0
 
     invoke-direct {p0, p1}, Lcom/android/server/am/MARsDBManager;->updateUserId(Ljava/lang/String;)V
@@ -416,15 +426,23 @@
     return-void
 .end method
 
-.method static synthetic -wrap2(Lcom/android/server/am/MARsDBManager;I)V
+.method static synthetic -wrap2(Lcom/android/server/am/MARsDBManager;Ljava/lang/String;I)V
     .locals 0
 
-    invoke-direct {p0, p1}, Lcom/android/server/am/MARsDBManager;->deleteSecureFolderPackages(I)V
+    invoke-direct {p0, p1, p2}, Lcom/android/server/am/MARsDBManager;->deletePackage(Ljava/lang/String;I)V
 
     return-void
 .end method
 
-.method static synthetic -wrap3(Lcom/android/server/am/MARsDBManager;ILjava/util/ArrayList;)V
+.method static synthetic -wrap3(Lcom/android/server/am/MARsDBManager;I)V
+    .locals 0
+
+    invoke-direct {p0, p1}, Lcom/android/server/am/MARsDBManager;->deletePackagesAsUser(I)V
+
+    return-void
+.end method
+
+.method static synthetic -wrap4(Lcom/android/server/am/MARsDBManager;ILjava/util/ArrayList;)V
     .locals 0
 
     invoke-direct {p0, p1, p2}, Lcom/android/server/am/MARsDBManager;->doUpdateFromMARsToSM(ILjava/util/ArrayList;)V
@@ -432,7 +450,7 @@
     return-void
 .end method
 
-.method static synthetic -wrap4(Lcom/android/server/am/MARsDBManager;)V
+.method static synthetic -wrap5(Lcom/android/server/am/MARsDBManager;)V
     .locals 0
 
     invoke-direct {p0}, Lcom/android/server/am/MARsDBManager;->getExcludedAppDBValues()V
@@ -440,7 +458,7 @@
     return-void
 .end method
 
-.method static synthetic -wrap5(Lcom/android/server/am/MARsDBManager;Z)V
+.method static synthetic -wrap6(Lcom/android/server/am/MARsDBManager;Z)V
     .locals 0
 
     invoke-direct {p0, p1}, Lcom/android/server/am/MARsDBManager;->getPolicyDefaultInfoFromSMToMARs(Z)V
@@ -448,7 +466,7 @@
     return-void
 .end method
 
-.method static synthetic -wrap6(Lcom/android/server/am/MARsDBManager;)V
+.method static synthetic -wrap7(Lcom/android/server/am/MARsDBManager;)V
     .locals 0
 
     invoke-direct {p0}, Lcom/android/server/am/MARsDBManager;->getSCPMParametersFromDB()V
@@ -456,7 +474,7 @@
     return-void
 .end method
 
-.method static synthetic -wrap7(Lcom/android/server/am/MARsDBManager;Z)V
+.method static synthetic -wrap8(Lcom/android/server/am/MARsDBManager;Z)V
     .locals 0
 
     invoke-direct {p0, p1}, Lcom/android/server/am/MARsDBManager;->getSettingsValueFromDB(Z)V
@@ -464,18 +482,10 @@
     return-void
 .end method
 
-.method static synthetic -wrap8(Lcom/android/server/am/MARsDBManager;)V
+.method static synthetic -wrap9(Lcom/android/server/am/MARsDBManager;)V
     .locals 0
 
     invoke-direct {p0}, Lcom/android/server/am/MARsDBManager;->initManagedPackagesInternal()V
-
-    return-void
-.end method
-
-.method static synthetic -wrap9(Lcom/android/server/am/MARsDBManager;Ljava/lang/String;I)V
-    .locals 0
-
-    invoke-direct {p0, p1, p2}, Lcom/android/server/am/MARsDBManager;->insertPackage(Ljava/lang/String;I)V
 
     return-void
 .end method
@@ -757,7 +767,7 @@
     goto :goto_1
 .end method
 
-.method private deleteSecureFolderPackages(I)V
+.method private deletePackagesAsUser(I)V
     .locals 7
 
     const/4 v5, 0x0
@@ -5116,6 +5126,348 @@
     goto :goto_2
 .end method
 
+.method private insertPackagesAsUserFromMARsToSM(ZLjava/util/ArrayList;ZI)V
+    .locals 22
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(Z",
+            "Ljava/util/ArrayList",
+            "<",
+            "Lcom/android/server/am/MARsDBManager$SMDBValue;",
+            ">;ZI)V"
+        }
+    .end annotation
+
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcom/android/server/am/MARsDBManager;->mPolicyManager:Lcom/android/server/am/MARsPolicyManager;
+
+    move-object/from16 v19, v0
+
+    sget-boolean v19, Lcom/android/server/am/MARsPolicyManager;->DEBUG_MARs:Z
+
+    if-eqz v19, :cond_0
+
+    const-string/jumbo v19, "MARsDBManager"
+
+    new-instance v20, Ljava/lang/StringBuilder;
+
+    invoke-direct/range {v20 .. v20}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string/jumbo v21, "insertSecureFolderPkgInfoFromMARsToSM, --- generate = "
+
+    invoke-virtual/range {v20 .. v21}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v20
+
+    move-object/from16 v0, v20
+
+    move/from16 v1, p1
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+
+    move-result-object v20
+
+    const-string/jumbo v21, " --onUpgrade = "
+
+    invoke-virtual/range {v20 .. v21}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v20
+
+    move-object/from16 v0, v20
+
+    move/from16 v1, p3
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+
+    move-result-object v20
+
+    invoke-virtual/range {v20 .. v20}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v20
+
+    invoke-static/range {v19 .. v20}, Landroid/util/Slog;->v(Ljava/lang/String;Ljava/lang/String;)I
+
+    :cond_0
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcom/android/server/am/MARsDBManager;->mContext:Landroid/content/Context;
+
+    move-object/from16 v19, v0
+
+    invoke-virtual/range {v19 .. v19}, Landroid/content/Context;->getPackageManager()Landroid/content/pm/PackageManager;
+
+    move-result-object v13
+
+    const/16 v4, 0x100f
+
+    move/from16 v0, p4
+
+    invoke-virtual {v13, v4, v0}, Landroid/content/pm/PackageManager;->getInstalledPackagesAsUser(II)Ljava/util/List;
+
+    move-result-object v8
+
+    :try_start_0
+    new-instance v18, Ljava/util/ArrayList;
+
+    invoke-direct/range {v18 .. v18}, Ljava/util/ArrayList;-><init>()V
+
+    const/4 v6, 0x0
+
+    const/4 v14, 0x0
+
+    const/4 v5, 0x0
+
+    :goto_0
+    invoke-interface {v8}, Ljava/util/List;->size()I
+
+    move-result v19
+
+    move/from16 v0, v19
+
+    if-ge v5, v0, :cond_6
+
+    invoke-interface {v8, v5}, Ljava/util/List;->get(I)Ljava/lang/Object;
+
+    move-result-object v10
+
+    check-cast v10, Landroid/content/pm/PackageInfo;
+
+    iget-object v12, v10, Landroid/content/pm/PackageInfo;->packageName:Ljava/lang/String;
+
+    const/4 v9, 0x0
+
+    move-object/from16 v0, p0
+
+    invoke-direct {v0, v10}, Lcom/android/server/am/MARsDBManager;->getPackageType(Landroid/content/pm/PackageInfo;)I
+
+    move-result v9
+
+    new-instance v17, Landroid/content/ContentValues;
+
+    invoke-direct/range {v17 .. v17}, Landroid/content/ContentValues;-><init>()V
+
+    const-string/jumbo v19, "package_name"
+
+    move-object/from16 v0, v17
+
+    move-object/from16 v1, v19
+
+    invoke-virtual {v0, v1, v12}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/String;)V
+
+    const-string/jumbo v19, "isSMFreezed"
+
+    const-string/jumbo v20, "0"
+
+    move-object/from16 v0, v17
+
+    move-object/from16 v1, v19
+
+    move-object/from16 v2, v20
+
+    invoke-virtual {v0, v1, v2}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/String;)V
+
+    const-string/jumbo v19, "packageType"
+
+    invoke-static {v9}, Ljava/lang/Integer;->toString(I)Ljava/lang/String;
+
+    move-result-object v20
+
+    move-object/from16 v0, v17
+
+    move-object/from16 v1, v19
+
+    move-object/from16 v2, v20
+
+    invoke-virtual {v0, v1, v2}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/String;)V
+
+    const-string/jumbo v19, "uid"
+
+    invoke-static/range {p4 .. p4}, Ljava/lang/Integer;->toString(I)Ljava/lang/String;
+
+    move-result-object v20
+
+    move-object/from16 v0, v17
+
+    move-object/from16 v1, v19
+
+    move-object/from16 v2, v20
+
+    invoke-virtual {v0, v1, v2}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/String;)V
+
+    if-nez v6, :cond_1
+
+    new-instance v15, Ljava/util/ArrayList;
+
+    invoke-direct {v15}, Ljava/util/ArrayList;-><init>()V
+
+    move-object/from16 v0, v18
+
+    invoke-interface {v0, v15}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+
+    :cond_1
+    move-object/from16 v0, v18
+
+    invoke-interface {v0, v14}, Ljava/util/List;->get(I)Ljava/lang/Object;
+
+    move-result-object v16
+
+    check-cast v16, Ljava/util/List;
+
+    if-eqz v16, :cond_5
+
+    move-object/from16 v0, v18
+
+    invoke-interface {v0, v14}, Ljava/util/List;->get(I)Ljava/lang/Object;
+
+    move-result-object v19
+
+    check-cast v19, Ljava/util/List;
+
+    move-object/from16 v0, v19
+
+    move-object/from16 v1, v17
+
+    invoke-interface {v0, v1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+
+    add-int/lit8 v6, v6, 0x1
+
+    const/16 v19, 0x64
+
+    move/from16 v0, v19
+
+    if-eq v6, v0, :cond_2
+
+    invoke-interface {v8}, Ljava/util/List;->size()I
+
+    move-result v19
+
+    add-int/lit8 v19, v19, -0x1
+
+    move/from16 v0, v19
+
+    if-ne v5, v0, :cond_3
+
+    :cond_2
+    invoke-interface/range {v16 .. v16}, Ljava/util/List;->size()I
+
+    move-result v19
+
+    move/from16 v0, v19
+
+    new-array v7, v0, [Landroid/content/ContentValues;
+
+    move-object/from16 v0, v16
+
+    invoke-interface {v0, v7}, Ljava/util/List;->toArray([Ljava/lang/Object;)[Ljava/lang/Object;
+
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcom/android/server/am/MARsDBManager;->mContext:Landroid/content/Context;
+
+    move-object/from16 v19, v0
+
+    invoke-virtual/range {v19 .. v19}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
+
+    move-result-object v19
+
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcom/android/server/am/MARsDBManager;->SMART_MGR_URI:Landroid/net/Uri;
+
+    move-object/from16 v20, v0
+
+    move-object/from16 v0, v19
+
+    move-object/from16 v1, v20
+
+    invoke-virtual {v0, v1, v7}, Landroid/content/ContentResolver;->bulkInsert(Landroid/net/Uri;[Landroid/content/ContentValues;)I
+
+    const/16 v19, 0x64
+
+    move/from16 v0, v19
+
+    if-ne v6, v0, :cond_3
+
+    add-int/lit8 v14, v14, 0x1
+
+    const/4 v6, 0x0
+
+    :cond_3
+    if-eqz p1, :cond_4
+
+    and-int/lit8 v19, v9, 0x2
+
+    if-eqz v19, :cond_4
+
+    new-instance v11, Lcom/android/server/am/MARsDBManager$SMDBValue;
+
+    invoke-static/range {p4 .. p4}, Ljava/lang/Integer;->toString(I)Ljava/lang/String;
+
+    move-result-object v19
+
+    move-object/from16 v0, p0
+
+    move-object/from16 v1, v19
+
+    invoke-direct {v11, v0, v12, v1}, Lcom/android/server/am/MARsDBManager$SMDBValue;-><init>(Lcom/android/server/am/MARsDBManager;Ljava/lang/String;Ljava/lang/String;)V
+
+    move-object/from16 v0, p2
+
+    invoke-virtual {v0, v11}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+
+    :cond_4
+    :goto_1
+    add-int/lit8 v5, v5, 0x1
+
+    goto/16 :goto_0
+
+    :cond_5
+    const-string/jumbo v19, "MARsDBManager"
+
+    const-string/jumbo v20, "Unfortunately error !!!! "
+
+    invoke-static/range {v19 .. v20}, Landroid/util/Slog;->e(Ljava/lang/String;Ljava/lang/String;)I
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
+
+    goto :goto_1
+
+    :catch_0
+    move-exception v3
+
+    const-string/jumbo v19, "MARsDBManager"
+
+    new-instance v20, Ljava/lang/StringBuilder;
+
+    invoke-direct/range {v20 .. v20}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string/jumbo v21, "Exception on handling DB : "
+
+    invoke-virtual/range {v20 .. v21}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v20
+
+    invoke-virtual {v3}, Ljava/lang/Exception;->getMessage()Ljava/lang/String;
+
+    move-result-object v21
+
+    invoke-virtual/range {v20 .. v21}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v20
+
+    invoke-virtual/range {v20 .. v20}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v20
+
+    invoke-static/range {v19 .. v20}, Landroid/util/Slog;->e(Ljava/lang/String;Ljava/lang/String;)I
+
+    invoke-virtual {v3}, Ljava/lang/Exception;->printStackTrace()V
+
+    :cond_6
+    return-void
+.end method
+
 .method private insertPkgInfoFromMARsToSM(ZLjava/util/ArrayList;Z)V
     .locals 23
     .annotation system Ldalvik/annotation/Signature;
@@ -5626,435 +5978,6 @@
     invoke-static {v5, v6}, Landroid/util/Slog;->e(Ljava/lang/String;Ljava/lang/String;)I
 
     goto :goto_1
-.end method
-
-.method private insertSecureFolderPackages(I)V
-    .locals 7
-
-    const/4 v5, 0x0
-
-    const-string/jumbo v3, "uid=?"
-
-    const/4 v4, 0x1
-
-    new-array v2, v4, [Ljava/lang/String;
-
-    invoke-static {p1}, Ljava/lang/Integer;->toString(I)Ljava/lang/String;
-
-    move-result-object v4
-
-    aput-object v4, v2, v5
-
-    const/4 v1, 0x0
-
-    :try_start_0
-    iget-object v4, p0, Lcom/android/server/am/MARsDBManager;->mContext:Landroid/content/Context;
-
-    invoke-virtual {v4}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
-
-    move-result-object v4
-
-    iget-object v5, p0, Lcom/android/server/am/MARsDBManager;->SMART_MGR_URI:Landroid/net/Uri;
-
-    invoke-virtual {v4, v5, v3, v2}, Landroid/content/ContentResolver;->delete(Landroid/net/Uri;Ljava/lang/String;[Ljava/lang/String;)I
-    :try_end_0
-    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
-
-    move-result v1
-
-    :goto_0
-    if-gez v1, :cond_0
-
-    const-string/jumbo v4, "MARsDBManager"
-
-    const-string/jumbo v5, "insertPackage error!"
-
-    invoke-static {v4, v5}, Landroid/util/Slog;->e(Ljava/lang/String;Ljava/lang/String;)I
-
-    :cond_0
-    return-void
-
-    :catch_0
-    move-exception v0
-
-    const-string/jumbo v4, "MARsDBManager"
-
-    new-instance v5, Ljava/lang/StringBuilder;
-
-    invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string/jumbo v6, "Exception with contentResolver : "
-
-    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v5
-
-    invoke-virtual {v0}, Ljava/lang/Exception;->getMessage()Ljava/lang/String;
-
-    move-result-object v6
-
-    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v5
-
-    invoke-virtual {v5}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v5
-
-    invoke-static {v4, v5}, Landroid/util/Slog;->e(Ljava/lang/String;Ljava/lang/String;)I
-
-    goto :goto_0
-.end method
-
-.method private insertSecureFolderPkgInfoFromMARsToSM(ZLjava/util/ArrayList;ZI)V
-    .locals 22
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(Z",
-            "Ljava/util/ArrayList",
-            "<",
-            "Lcom/android/server/am/MARsDBManager$SMDBValue;",
-            ">;ZI)V"
-        }
-    .end annotation
-
-    move-object/from16 v0, p0
-
-    iget-object v0, v0, Lcom/android/server/am/MARsDBManager;->mPolicyManager:Lcom/android/server/am/MARsPolicyManager;
-
-    move-object/from16 v19, v0
-
-    sget-boolean v19, Lcom/android/server/am/MARsPolicyManager;->DEBUG_MARs:Z
-
-    if-eqz v19, :cond_0
-
-    const-string/jumbo v19, "MARsDBManager"
-
-    new-instance v20, Ljava/lang/StringBuilder;
-
-    invoke-direct/range {v20 .. v20}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string/jumbo v21, "insertSecureFolderPkgInfoFromMARsToSM, --- generate = "
-
-    invoke-virtual/range {v20 .. v21}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v20
-
-    move-object/from16 v0, v20
-
-    move/from16 v1, p1
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
-
-    move-result-object v20
-
-    const-string/jumbo v21, " --onUpgrade = "
-
-    invoke-virtual/range {v20 .. v21}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v20
-
-    move-object/from16 v0, v20
-
-    move/from16 v1, p3
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
-
-    move-result-object v20
-
-    invoke-virtual/range {v20 .. v20}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v20
-
-    invoke-static/range {v19 .. v20}, Landroid/util/Slog;->v(Ljava/lang/String;Ljava/lang/String;)I
-
-    :cond_0
-    move-object/from16 v0, p0
-
-    iget-object v0, v0, Lcom/android/server/am/MARsDBManager;->mContext:Landroid/content/Context;
-
-    move-object/from16 v19, v0
-
-    invoke-virtual/range {v19 .. v19}, Landroid/content/Context;->getPackageManager()Landroid/content/pm/PackageManager;
-
-    move-result-object v13
-
-    const/16 v4, 0x100f
-
-    move/from16 v0, p4
-
-    invoke-virtual {v13, v4, v0}, Landroid/content/pm/PackageManager;->getInstalledPackagesAsUser(II)Ljava/util/List;
-
-    move-result-object v8
-
-    :try_start_0
-    new-instance v18, Ljava/util/ArrayList;
-
-    invoke-direct/range {v18 .. v18}, Ljava/util/ArrayList;-><init>()V
-
-    const/4 v6, 0x0
-
-    const/4 v14, 0x0
-
-    const/4 v5, 0x0
-
-    :goto_0
-    invoke-interface {v8}, Ljava/util/List;->size()I
-
-    move-result v19
-
-    move/from16 v0, v19
-
-    if-ge v5, v0, :cond_7
-
-    invoke-interface {v8, v5}, Ljava/util/List;->get(I)Ljava/lang/Object;
-
-    move-result-object v10
-
-    check-cast v10, Landroid/content/pm/PackageInfo;
-
-    iget-object v12, v10, Landroid/content/pm/PackageInfo;->packageName:Ljava/lang/String;
-
-    const/4 v9, 0x0
-
-    move-object/from16 v0, p0
-
-    invoke-direct {v0, v10}, Lcom/android/server/am/MARsDBManager;->getPackageType(Landroid/content/pm/PackageInfo;)I
-
-    move-result v9
-
-    new-instance v17, Landroid/content/ContentValues;
-
-    invoke-direct/range {v17 .. v17}, Landroid/content/ContentValues;-><init>()V
-
-    const-string/jumbo v19, "package_name"
-
-    move-object/from16 v0, v17
-
-    move-object/from16 v1, v19
-
-    invoke-virtual {v0, v1, v12}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/String;)V
-
-    const-string/jumbo v19, "isSMFreezed"
-
-    const-string/jumbo v20, "0"
-
-    move-object/from16 v0, v17
-
-    move-object/from16 v1, v19
-
-    move-object/from16 v2, v20
-
-    invoke-virtual {v0, v1, v2}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/String;)V
-
-    const-string/jumbo v19, "packageType"
-
-    invoke-static {v9}, Ljava/lang/Integer;->toString(I)Ljava/lang/String;
-
-    move-result-object v20
-
-    move-object/from16 v0, v17
-
-    move-object/from16 v1, v19
-
-    move-object/from16 v2, v20
-
-    invoke-virtual {v0, v1, v2}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/String;)V
-
-    move-object/from16 v0, p0
-
-    iget-boolean v0, v0, Lcom/android/server/am/MARsDBManager;->mIsUidColumnExist:Z
-
-    move/from16 v19, v0
-
-    if-eqz v19, :cond_1
-
-    const-string/jumbo v19, "uid"
-
-    invoke-static/range {p4 .. p4}, Ljava/lang/Integer;->toString(I)Ljava/lang/String;
-
-    move-result-object v20
-
-    move-object/from16 v0, v17
-
-    move-object/from16 v1, v19
-
-    move-object/from16 v2, v20
-
-    invoke-virtual {v0, v1, v2}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/String;)V
-
-    :cond_1
-    if-nez v6, :cond_2
-
-    new-instance v15, Ljava/util/ArrayList;
-
-    invoke-direct {v15}, Ljava/util/ArrayList;-><init>()V
-
-    move-object/from16 v0, v18
-
-    invoke-interface {v0, v15}, Ljava/util/List;->add(Ljava/lang/Object;)Z
-
-    :cond_2
-    move-object/from16 v0, v18
-
-    invoke-interface {v0, v14}, Ljava/util/List;->get(I)Ljava/lang/Object;
-
-    move-result-object v16
-
-    check-cast v16, Ljava/util/List;
-
-    if-eqz v16, :cond_6
-
-    move-object/from16 v0, v18
-
-    invoke-interface {v0, v14}, Ljava/util/List;->get(I)Ljava/lang/Object;
-
-    move-result-object v19
-
-    check-cast v19, Ljava/util/List;
-
-    move-object/from16 v0, v19
-
-    move-object/from16 v1, v17
-
-    invoke-interface {v0, v1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
-
-    add-int/lit8 v6, v6, 0x1
-
-    const/16 v19, 0x64
-
-    move/from16 v0, v19
-
-    if-eq v6, v0, :cond_3
-
-    invoke-interface {v8}, Ljava/util/List;->size()I
-
-    move-result v19
-
-    add-int/lit8 v19, v19, -0x1
-
-    move/from16 v0, v19
-
-    if-ne v5, v0, :cond_4
-
-    :cond_3
-    invoke-interface/range {v16 .. v16}, Ljava/util/List;->size()I
-
-    move-result v19
-
-    move/from16 v0, v19
-
-    new-array v7, v0, [Landroid/content/ContentValues;
-
-    move-object/from16 v0, v16
-
-    invoke-interface {v0, v7}, Ljava/util/List;->toArray([Ljava/lang/Object;)[Ljava/lang/Object;
-
-    move-object/from16 v0, p0
-
-    iget-object v0, v0, Lcom/android/server/am/MARsDBManager;->mContext:Landroid/content/Context;
-
-    move-object/from16 v19, v0
-
-    invoke-virtual/range {v19 .. v19}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
-
-    move-result-object v19
-
-    move-object/from16 v0, p0
-
-    iget-object v0, v0, Lcom/android/server/am/MARsDBManager;->SMART_MGR_URI:Landroid/net/Uri;
-
-    move-object/from16 v20, v0
-
-    move-object/from16 v0, v19
-
-    move-object/from16 v1, v20
-
-    invoke-virtual {v0, v1, v7}, Landroid/content/ContentResolver;->bulkInsert(Landroid/net/Uri;[Landroid/content/ContentValues;)I
-
-    const/16 v19, 0x64
-
-    move/from16 v0, v19
-
-    if-ne v6, v0, :cond_4
-
-    add-int/lit8 v14, v14, 0x1
-
-    const/4 v6, 0x0
-
-    :cond_4
-    if-eqz p1, :cond_5
-
-    and-int/lit8 v19, v9, 0x2
-
-    if-eqz v19, :cond_5
-
-    new-instance v11, Lcom/android/server/am/MARsDBManager$SMDBValue;
-
-    invoke-static/range {p4 .. p4}, Ljava/lang/Integer;->toString(I)Ljava/lang/String;
-
-    move-result-object v19
-
-    move-object/from16 v0, p0
-
-    move-object/from16 v1, v19
-
-    invoke-direct {v11, v0, v12, v1}, Lcom/android/server/am/MARsDBManager$SMDBValue;-><init>(Lcom/android/server/am/MARsDBManager;Ljava/lang/String;Ljava/lang/String;)V
-
-    move-object/from16 v0, p2
-
-    invoke-virtual {v0, v11}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
-
-    :cond_5
-    :goto_1
-    add-int/lit8 v5, v5, 0x1
-
-    goto/16 :goto_0
-
-    :cond_6
-    const-string/jumbo v19, "MARsDBManager"
-
-    const-string/jumbo v20, "Unfortunately error !!!! "
-
-    invoke-static/range {v19 .. v20}, Landroid/util/Slog;->e(Ljava/lang/String;Ljava/lang/String;)I
-    :try_end_0
-    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
-
-    goto :goto_1
-
-    :catch_0
-    move-exception v3
-
-    const-string/jumbo v19, "MARsDBManager"
-
-    new-instance v20, Ljava/lang/StringBuilder;
-
-    invoke-direct/range {v20 .. v20}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string/jumbo v21, "Exception on handling DB : "
-
-    invoke-virtual/range {v20 .. v21}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v20
-
-    invoke-virtual {v3}, Ljava/lang/Exception;->getMessage()Ljava/lang/String;
-
-    move-result-object v21
-
-    invoke-virtual/range {v20 .. v21}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v20
-
-    invoke-virtual/range {v20 .. v20}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v20
-
-    invoke-static/range {v19 .. v20}, Landroid/util/Slog;->e(Ljava/lang/String;Ljava/lang/String;)I
-
-    invoke-virtual {v3}, Ljava/lang/Exception;->printStackTrace()V
-
-    :cond_7
-    return-void
 .end method
 
 .method private isAutoRunDefaultOffExceptionPackage(Landroid/content/pm/PackageInfo;)Z
@@ -6616,6 +6539,169 @@
 
     :cond_4
     return v5
+.end method
+
+.method private queryDataExistAsUser(I)Z
+    .locals 11
+
+    const/4 v10, 0x1
+
+    const/4 v9, 0x0
+
+    const/4 v6, 0x0
+
+    const/4 v0, 0x1
+
+    :try_start_0
+    new-array v2, v0, [Ljava/lang/String;
+
+    const-string/jumbo v0, "uid"
+
+    const/4 v1, 0x0
+
+    aput-object v0, v2, v1
+
+    const-string/jumbo v3, "uid=?"
+
+    const/4 v0, 0x1
+
+    new-array v4, v0, [Ljava/lang/String;
+
+    invoke-static {p1}, Ljava/lang/Integer;->toString(I)Ljava/lang/String;
+
+    move-result-object v0
+
+    const/4 v1, 0x0
+
+    aput-object v0, v4, v1
+
+    const/4 v0, 0x1
+
+    new-array v4, v0, [Ljava/lang/String;
+
+    invoke-static {p1}, Ljava/lang/Integer;->toString(I)Ljava/lang/String;
+
+    move-result-object v0
+
+    const/4 v1, 0x0
+
+    aput-object v0, v4, v1
+
+    iget-object v0, p0, Lcom/android/server/am/MARsDBManager;->mContext:Landroid/content/Context;
+
+    invoke-virtual {v0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
+
+    move-result-object v0
+
+    iget-object v1, p0, Lcom/android/server/am/MARsDBManager;->SMART_MGR_URI:Landroid/net/Uri;
+
+    const/4 v5, 0x0
+
+    invoke-virtual/range {v0 .. v5}, Landroid/content/ContentResolver;->query(Landroid/net/Uri;[Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Ljava/lang/String;)Landroid/database/Cursor;
+
+    move-result-object v6
+
+    const/4 v8, 0x0
+
+    if-eqz v6, :cond_0
+
+    invoke-interface {v6}, Landroid/database/Cursor;->getCount()I
+
+    move-result v8
+
+    :cond_0
+    if-lez v8, :cond_2
+
+    const-string/jumbo v0, "MARsDBManager"
+
+    new-instance v1, Ljava/lang/StringBuilder;
+
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string/jumbo v5, "we will skip to insert packages from userID :"
+
+    invoke-virtual {v1, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-static {v0, v1}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    if-eqz v6, :cond_1
+
+    invoke-interface {v6}, Landroid/database/Cursor;->close()V
+
+    :cond_1
+    return v10
+
+    :cond_2
+    if-eqz v6, :cond_3
+
+    invoke-interface {v6}, Landroid/database/Cursor;->close()V
+
+    :cond_3
+    :goto_0
+    return v9
+
+    :catch_0
+    move-exception v7
+
+    :try_start_1
+    const-string/jumbo v0, "MARsDBManager"
+
+    new-instance v1, Ljava/lang/StringBuilder;
+
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string/jumbo v5, "Exception with queryDataExistAsUser() : "
+
+    invoke-virtual {v1, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v7}, Ljava/lang/Exception;->getMessage()Ljava/lang/String;
+
+    move-result-object v5
+
+    invoke-virtual {v1, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-static {v0, v1}, Landroid/util/Slog;->e(Ljava/lang/String;Ljava/lang/String;)I
+
+    invoke-virtual {v7}, Ljava/lang/Exception;->printStackTrace()V
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+
+    if-eqz v6, :cond_3
+
+    invoke-interface {v6}, Landroid/database/Cursor;->close()V
+
+    goto :goto_0
+
+    :catchall_0
+    move-exception v0
+
+    if-eqz v6, :cond_4
+
+    invoke-interface {v6}, Landroid/database/Cursor;->close()V
+
+    :cond_4
+    throw v0
 .end method
 
 .method private updateDB(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
@@ -7644,7 +7730,7 @@
     return-void
 .end method
 
-.method public deleteSecureFolderPackagesInDB(I)V
+.method public deletePackagesAsUserInDB(I)V
     .locals 4
 
     iget-object v2, p0, Lcom/android/server/am/MARsDBManager;->mDBHandler:Lcom/android/server/am/MARsDBManager$DBHandler;
@@ -7901,7 +7987,7 @@
     return-void
 .end method
 
-.method public insertSecureFolderPackagesToDB(I)V
+.method public insertPackagesAsUserToDB(I)V
     .locals 4
 
     iget-object v2, p0, Lcom/android/server/am/MARsDBManager;->mDBHandler:Lcom/android/server/am/MARsDBManager$DBHandler;

@@ -1288,6 +1288,8 @@
 
     invoke-direct {p0, p1, p2}, Lcom/android/server/desktopmode/DesktopModeService;->setVirtualKeyboard(ZI)V
 
+    invoke-direct {p0, p1, p2}, Lcom/android/server/desktopmode/DesktopModeService;->setPsmSpeedLimit(ZI)V
+
     iget-object v0, p0, Lcom/android/server/desktopmode/DesktopModeService;->mResolver:Landroid/content/ContentResolver;
 
     const-string/jumbo v1, "enabled"
@@ -1529,6 +1531,55 @@
     move-result v0
 
     return v0
+.end method
+
+.method private getPsmValue(Ljava/lang/String;)I
+    .locals 5
+
+    iget-object v3, p0, Lcom/android/server/desktopmode/DesktopModeService;->mResolver:Landroid/content/ContentResolver;
+
+    invoke-static {v3, p1}, Landroid/provider/Settings$Global;->getString(Landroid/content/ContentResolver;Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v2
+
+    if-eqz v2, :cond_0
+
+    const/16 v3, 0x2c
+
+    invoke-virtual {v2, v3}, Ljava/lang/String;->indexOf(I)I
+
+    move-result v1
+
+    if-lez v1, :cond_0
+
+    const/4 v3, 0x0
+
+    :try_start_0
+    invoke-virtual {v2, v3, v1}, Ljava/lang/String;->substring(II)Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-static {v3}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
+    :try_end_0
+    .catch Ljava/lang/NumberFormatException; {:try_start_0 .. :try_end_0} :catch_0
+
+    move-result v3
+
+    return v3
+
+    :catch_0
+    move-exception v0
+
+    sget-object v3, Lcom/android/server/desktopmode/DesktopModeService;->TAG:Ljava/lang/String;
+
+    const-string/jumbo v4, "NumberFormatException in getPsmValue"
+
+    invoke-static {v3, v4}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
+
+    :cond_0
+    const/4 v3, -0x1
+
+    return v3
 .end method
 
 .method private initializeStates()V
@@ -1856,6 +1907,27 @@
 
     :cond_1
     return v5
+.end method
+
+.method private isLowPowerMode()Z
+    .locals 3
+
+    const/4 v0, 0x0
+
+    iget-object v1, p0, Lcom/android/server/desktopmode/DesktopModeService;->mResolver:Landroid/content/ContentResolver;
+
+    const-string/jumbo v2, "low_power"
+
+    invoke-static {v1, v2, v0}, Landroid/provider/Settings$Global;->getInt(Landroid/content/ContentResolver;Ljava/lang/String;I)I
+
+    move-result v1
+
+    if-eqz v1, :cond_0
+
+    const/4 v0, 0x1
+
+    :cond_0
+    return v0
 .end method
 
 .method private isPackageAvailable(Ljava/lang/String;)Z
@@ -2402,7 +2474,7 @@
 
     move-result-object v1
 
-    const-string/jumbo v2, " CurrentUser="
+    const-string/jumbo v2, ", CurrentUser="
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -2423,21 +2495,11 @@
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
     :cond_0
-    iget-object v0, p0, Lcom/android/server/desktopmode/DesktopModeService;->mContext:Landroid/content/Context;
-
-    invoke-static {v0}, Landroid/os/UserManager;->get(Landroid/content/Context;)Landroid/os/UserManager;
-
-    move-result-object v0
-
-    invoke-virtual {v0, p1}, Landroid/os/UserManager;->getUserInfo(I)Landroid/content/pm/UserInfo;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Landroid/content/pm/UserInfo;->supportsSwitchToByUser()Z
+    invoke-static {}, Landroid/app/ActivityManager;->getCurrentUser()I
 
     move-result v0
 
-    if-nez v0, :cond_1
+    if-eq p1, v0, :cond_1
 
     iget-object v0, p0, Lcom/android/server/desktopmode/DesktopModeService;->mPersonaManager:Lcom/samsung/android/knox/SemPersonaManager;
 
@@ -2445,7 +2507,7 @@
 
     move-result v0
 
-    if-ne v0, p1, :cond_2
+    if-ne p1, v0, :cond_2
 
     :cond_1
     invoke-direct {p0, p1}, Lcom/android/server/desktopmode/DesktopModeService;->onUserChanged(I)V
@@ -2477,7 +2539,7 @@
 
     move-result-object v1
 
-    const-string/jumbo v2, " CurrentUser="
+    const-string/jumbo v2, ", CurrentUser="
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -2498,30 +2560,22 @@
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
     :cond_0
-    invoke-static {p1}, Lcom/samsung/android/knox/SemPersonaManager;->isKnoxId(I)Z
+    iget-object v0, p0, Lcom/android/server/desktopmode/DesktopModeService;->mPersonaManager:Lcom/samsung/android/knox/SemPersonaManager;
+
+    invoke-virtual {v0}, Lcom/samsung/android/knox/SemPersonaManager;->getKioskId()I
 
     move-result v0
 
-    if-eqz v0, :cond_1
+    if-ne p1, v0, :cond_1
 
-    invoke-static {p1}, Lcom/samsung/android/knox/SemPersonaManager;->isSecureFolderId(I)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_2
-
-    :cond_1
-    :goto_0
-    return-void
-
-    :cond_2
     invoke-static {}, Landroid/app/ActivityManager;->getCurrentUser()I
 
     move-result v0
 
     invoke-direct {p0, v0}, Lcom/android/server/desktopmode/DesktopModeService;->onUserChanged(I)V
 
-    goto :goto_0
+    :cond_1
+    return-void
 .end method
 
 .method private onSwitchUser(I)V
@@ -4428,6 +4482,270 @@
     invoke-static {v0, v1, p1, p2}, Landroid/provider/Settings$Secure;->putIntForUser(Landroid/content/ContentResolver;Ljava/lang/String;II)Z
 
     return-void
+.end method
+
+.method private setPsmSpeedLimit(ZI)V
+    .locals 7
+
+    const/4 v6, 0x1
+
+    const/4 v5, 0x0
+
+    invoke-direct {p0}, Lcom/android/server/desktopmode/DesktopModeService;->isLowPowerMode()Z
+
+    move-result v2
+
+    if-eqz v2, :cond_1
+
+    if-eqz p1, :cond_2
+
+    const-string/jumbo v2, "restricted_device_performance"
+
+    invoke-direct {p0, v2}, Lcom/android/server/desktopmode/DesktopModeService;->getPsmValue(Ljava/lang/String;)I
+
+    move-result v1
+
+    sget-boolean v2, Lcom/android/server/desktopmode/DesktopModeService;->DEBUG:Z
+
+    if-eqz v2, :cond_0
+
+    sget-object v2, Lcom/android/server/desktopmode/DesktopModeService;->TAG:Ljava/lang/String;
+
+    new-instance v3, Ljava/lang/StringBuilder;
+
+    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string/jumbo v4, "setPsmSpeedLimit(), current value="
+
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    invoke-virtual {v3, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-static {v2, v3}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    :cond_0
+    if-ne v1, v6, :cond_1
+
+    iget-object v2, p0, Lcom/android/server/desktopmode/DesktopModeService;->mResolver:Landroid/content/ContentResolver;
+
+    const-string/jumbo v3, "speed_limit_backup"
+
+    invoke-static {v2, v3, v1, p2}, Lcom/android/server/desktopmode/DesktopModeSettingsManager;->setSettingsAsUser(Landroid/content/ContentResolver;Ljava/lang/String;II)V
+
+    const-string/jumbo v2, "restricted_device_performance"
+
+    invoke-direct {p0, v2, v5}, Lcom/android/server/desktopmode/DesktopModeService;->setPsmValue(Ljava/lang/String;I)V
+
+    sget-boolean v2, Lcom/android/server/desktopmode/DesktopModeService;->DEBUG:Z
+
+    if-eqz v2, :cond_1
+
+    sget-object v2, Lcom/android/server/desktopmode/DesktopModeService;->TAG:Ljava/lang/String;
+
+    new-instance v3, Ljava/lang/StringBuilder;
+
+    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string/jumbo v4, "setPsmSpeedLimit(), check current value if disabled = "
+
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    const-string/jumbo v4, "restricted_device_performance"
+
+    invoke-direct {p0, v4}, Lcom/android/server/desktopmode/DesktopModeService;->getPsmValue(Ljava/lang/String;)I
+
+    move-result v4
+
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-static {v2, v3}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    :cond_1
+    :goto_0
+    return-void
+
+    :cond_2
+    iget-object v2, p0, Lcom/android/server/desktopmode/DesktopModeService;->mResolver:Landroid/content/ContentResolver;
+
+    const-string/jumbo v3, "speed_limit_backup"
+
+    invoke-static {v2, v3, v5, p2}, Lcom/android/server/desktopmode/DesktopModeSettingsManager;->getSettingsAsUser(Landroid/content/ContentResolver;Ljava/lang/String;II)I
+
+    move-result v0
+
+    if-ne v0, v6, :cond_1
+
+    sget-boolean v2, Lcom/android/server/desktopmode/DesktopModeService;->DEBUG:Z
+
+    if-eqz v2, :cond_3
+
+    sget-object v2, Lcom/android/server/desktopmode/DesktopModeService;->TAG:Ljava/lang/String;
+
+    new-instance v3, Ljava/lang/StringBuilder;
+
+    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string/jumbo v4, "setPsmSpeedLimit(), Restoring backed up value="
+
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    invoke-virtual {v3, v0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-static {v2, v3}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    :cond_3
+    const-string/jumbo v2, "restricted_device_performance"
+
+    invoke-direct {p0, v2, v0}, Lcom/android/server/desktopmode/DesktopModeService;->setPsmValue(Ljava/lang/String;I)V
+
+    iget-object v2, p0, Lcom/android/server/desktopmode/DesktopModeService;->mResolver:Landroid/content/ContentResolver;
+
+    const-string/jumbo v3, "speed_limit_backup"
+
+    invoke-static {v2, v3, v5, p2}, Lcom/android/server/desktopmode/DesktopModeSettingsManager;->setSettingsAsUser(Landroid/content/ContentResolver;Ljava/lang/String;II)V
+
+    goto :goto_0
+.end method
+
+.method private setPsmValue(Ljava/lang/String;I)V
+    .locals 7
+
+    iget-object v4, p0, Lcom/android/server/desktopmode/DesktopModeService;->mResolver:Landroid/content/ContentResolver;
+
+    invoke-static {v4, p1}, Landroid/provider/Settings$Global;->getString(Landroid/content/ContentResolver;Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v3
+
+    const/4 v2, 0x0
+
+    if-eqz v3, :cond_0
+
+    const/16 v4, 0x2c
+
+    invoke-virtual {v3, v4}, Ljava/lang/String;->indexOf(I)I
+
+    move-result v1
+
+    if-lez v1, :cond_0
+
+    add-int/lit8 v4, v1, 0x1
+
+    :try_start_0
+    invoke-virtual {v3, v4}, Ljava/lang/String;->substring(I)Ljava/lang/String;
+
+    move-result-object v4
+
+    invoke-virtual {v4}, Ljava/lang/String;->trim()Ljava/lang/String;
+
+    move-result-object v4
+
+    invoke-static {v4}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
+    :try_end_0
+    .catch Ljava/lang/NumberFormatException; {:try_start_0 .. :try_end_0} :catch_0
+
+    move-result v2
+
+    :cond_0
+    :goto_0
+    iget-object v4, p0, Lcom/android/server/desktopmode/DesktopModeService;->mResolver:Landroid/content/ContentResolver;
+
+    new-instance v5, Ljava/lang/StringBuilder;
+
+    invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
+
+    invoke-virtual {v5, p2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v5
+
+    const-string/jumbo v6, ", "
+
+    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v5
+
+    invoke-virtual {v5, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v5
+
+    invoke-virtual {v5}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v5
+
+    invoke-static {v4, p1, v5}, Landroid/provider/Settings$Global;->putString(Landroid/content/ContentResolver;Ljava/lang/String;Ljava/lang/String;)Z
+
+    sget-boolean v4, Lcom/android/server/desktopmode/DesktopModeService;->DEBUG:Z
+
+    if-eqz v4, :cond_1
+
+    sget-object v4, Lcom/android/server/desktopmode/DesktopModeService;->TAG:Ljava/lang/String;
+
+    new-instance v5, Ljava/lang/StringBuilder;
+
+    invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string/jumbo v6, "setPsmValue = "
+
+    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v5
+
+    invoke-virtual {v5, p2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v5
+
+    const-string/jumbo v6, ", "
+
+    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v5
+
+    invoke-virtual {v5, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v5
+
+    invoke-virtual {v5}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v5
+
+    invoke-static {v4, v5}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    :cond_1
+    return-void
+
+    :catch_0
+    move-exception v0
+
+    sget-object v4, Lcom/android/server/desktopmode/DesktopModeService;->TAG:Ljava/lang/String;
+
+    const-string/jumbo v5, "NumberFormatException in setPsmValue"
+
+    invoke-static {v4, v5}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
+
+    goto :goto_0
 .end method
 
 .method private setScreenOffTimeout(ZI)V
@@ -7387,7 +7705,7 @@
 
     move-result-object v3
 
-    const/16 v4, 0x8
+    const/4 v4, 0x7
 
     invoke-static {v4}, Lcom/android/server/desktopmode/DefaultBlocker;->reasonToString(I)Ljava/lang/String;
 

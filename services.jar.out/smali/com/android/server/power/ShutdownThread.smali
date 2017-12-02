@@ -2236,10 +2236,6 @@
 
     invoke-virtual {v0, v8}, Landroid/widget/TextView;->setSingleLine(Z)V
 
-    const/4 v5, 0x3
-
-    invoke-virtual {v0, v5}, Landroid/widget/TextView;->setMaxLines(I)V
-
     const/16 v5, 0x11
 
     invoke-virtual {v0, v5}, Landroid/widget/TextView;->setGravity(I)V

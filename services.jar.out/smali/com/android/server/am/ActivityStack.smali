@@ -1365,26 +1365,34 @@
 .end method
 
 .method private adjustFocusedActivityLocked(Lcom/android/server/am/ActivityRecord;Ljava/lang/String;)V
-    .locals 15
+    .locals 16
 
-    iget-object v1, p0, Lcom/android/server/am/ActivityStack;->mStackSupervisor:Lcom/android/server/am/ActivityStackSupervisor;
+    move-object/from16 v0, p0
 
-    invoke-virtual {v1, p0}, Lcom/android/server/am/ActivityStackSupervisor;->isFocusedStack(Lcom/android/server/am/ActivityStack;)Z
+    iget-object v1, v0, Lcom/android/server/am/ActivityStack;->mStackSupervisor:Lcom/android/server/am/ActivityStackSupervisor;
+
+    move-object/from16 v0, p0
+
+    invoke-virtual {v1, v0}, Lcom/android/server/am/ActivityStackSupervisor;->isFocusedStack(Lcom/android/server/am/ActivityStack;)Z
 
     move-result v1
 
     if-eqz v1, :cond_0
 
-    iget-object v1, p0, Lcom/android/server/am/ActivityStack;->mService:Lcom/android/server/am/ActivityManagerService;
+    move-object/from16 v0, p0
+
+    iget-object v1, v0, Lcom/android/server/am/ActivityStack;->mService:Lcom/android/server/am/ActivityManagerService;
 
     iget-object v1, v1, Lcom/android/server/am/ActivityManagerService;->mFocusedActivity:Lcom/android/server/am/ActivityRecord;
 
     move-object/from16 v0, p1
 
-    if-eq v1, v0, :cond_2
+    if-eq v1, v0, :cond_3
 
     :cond_0
-    iget-object v1, p0, Lcom/android/server/am/ActivityStack;->mService:Lcom/android/server/am/ActivityManagerService;
+    move-object/from16 v0, p0
+
+    iget-object v1, v0, Lcom/android/server/am/ActivityStack;->mService:Lcom/android/server/am/ActivityManagerService;
 
     iget-object v1, v1, Lcom/android/server/am/ActivityManagerService;->mFocusedActivity:Lcom/android/server/am/ActivityRecord;
 
@@ -1396,7 +1404,7 @@
 
     move-result-object v1
 
-    invoke-virtual {p0}, Lcom/android/server/am/ActivityStack;->getDisplayId()I
+    invoke-virtual/range {p0 .. p0}, Lcom/android/server/am/ActivityStack;->getDisplayId()I
 
     move-result v2
 
@@ -1406,15 +1414,19 @@
 
     if-eqz v1, :cond_1
 
-    iget-object v1, p0, Lcom/android/server/am/ActivityStack;->mStackSupervisor:Lcom/android/server/am/ActivityStackSupervisor;
+    move-object/from16 v0, p0
+
+    iget-object v1, v0, Lcom/android/server/am/ActivityStack;->mStackSupervisor:Lcom/android/server/am/ActivityStackSupervisor;
 
     invoke-virtual {v1}, Lcom/android/server/am/ActivityStackSupervisor;->topRunningActivityLocked()Lcom/android/server/am/ActivityRecord;
 
-    move-result-object v13
+    move-result-object v14
 
-    if-eqz v13, :cond_1
+    if-eqz v14, :cond_1
 
-    iget-object v1, p0, Lcom/android/server/am/ActivityStack;->mService:Lcom/android/server/am/ActivityManagerService;
+    move-object/from16 v0, p0
+
+    iget-object v1, v0, Lcom/android/server/am/ActivityStack;->mService:Lcom/android/server/am/ActivityManagerService;
 
     new-instance v2, Ljava/lang/StringBuilder;
 
@@ -1436,15 +1448,88 @@
 
     move-result-object v2
 
-    invoke-virtual {v1, v13, v2}, Lcom/android/server/am/ActivityManagerService;->setFocusedActivityLocked(Lcom/android/server/am/ActivityRecord;Ljava/lang/String;)Z
+    invoke-virtual {v1, v14, v2}, Lcom/android/server/am/ActivityManagerService;->setFocusedActivityLocked(Lcom/android/server/am/ActivityRecord;Ljava/lang/String;)Z
 
     :cond_1
-    return-void
+    move-object/from16 v0, p0
+
+    iget-object v1, v0, Lcom/android/server/am/ActivityStack;->mStackSupervisor:Lcom/android/server/am/ActivityStackSupervisor;
+
+    invoke-virtual {v1}, Lcom/android/server/am/ActivityStackSupervisor;->getFocusedStack()Lcom/android/server/am/ActivityStack;
+
+    move-result-object v9
+
+    move-object/from16 v0, p1
+
+    iget-boolean v1, v0, Lcom/android/server/am/ActivityRecord;->frontOfTask:Z
+
+    if-eqz v1, :cond_2
+
+    const-string/jumbo v1, "finishActivity"
+
+    move-object/from16 v0, p2
+
+    invoke-virtual {v1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v1
+
+    if-eqz v1, :cond_2
+
+    move-object/from16 v0, p1
+
+    iget-object v1, v0, Lcom/android/server/am/ActivityRecord;->task:Lcom/android/server/am/TaskRecord;
+
+    invoke-virtual {v1}, Lcom/android/server/am/TaskRecord;->isOverHomeStack()Z
+
+    move-result v1
+
+    if-eqz v1, :cond_2
+
+    move-object/from16 v0, p0
+
+    iget-object v1, v0, Lcom/android/server/am/ActivityStack;->mService:Lcom/android/server/am/ActivityManagerService;
+
+    iget-object v1, v1, Lcom/android/server/am/ActivityManagerService;->mFocusedActivity:Lcom/android/server/am/ActivityRecord;
+
+    move-object/from16 v0, p1
+
+    if-eq v1, v0, :cond_2
+
+    move-object/from16 v0, p0
+
+    iget v1, v0, Lcom/android/server/am/ActivityStack;->mStackId:I
+
+    const/4 v2, 0x1
+
+    if-ne v1, v2, :cond_2
+
+    if-eqz v9, :cond_2
+
+    iget v1, v9, Lcom/android/server/am/ActivityStack;->mStackId:I
+
+    const/4 v2, 0x2
+
+    if-ne v1, v2, :cond_2
+
+    move-object/from16 v0, p0
+
+    iget-object v1, v0, Lcom/android/server/am/ActivityStack;->mStackSupervisor:Lcom/android/server/am/ActivityStackSupervisor;
+
+    const-string/jumbo v2, "adjustFocusedActivity"
+
+    const/4 v3, 0x1
+
+    const/4 v4, 0x0
+
+    invoke-virtual {v1, v3, v4, v2}, Lcom/android/server/am/ActivityStackSupervisor;->resumeHomeStackTask(ILcom/android/server/am/ActivityRecord;Ljava/lang/String;)Z
 
     :cond_2
-    invoke-virtual {p0}, Lcom/android/server/am/ActivityStack;->topRunningActivityLocked()Lcom/android/server/am/ActivityRecord;
+    return-void
 
-    move-result-object v10
+    :cond_3
+    invoke-virtual/range {p0 .. p0}, Lcom/android/server/am/ActivityStack;->topRunningActivityLocked()Lcom/android/server/am/ActivityRecord;
+
+    move-result-object v11
 
     new-instance v1, Ljava/lang/StringBuilder;
 
@@ -1464,125 +1549,145 @@
 
     invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v9
+    move-result-object v10
 
     move-object/from16 v0, p1
 
-    if-eq v10, v0, :cond_c
+    if-eq v11, v0, :cond_d
 
-    if-eqz v10, :cond_3
+    if-eqz v11, :cond_4
 
-    iget v1, p0, Lcom/android/server/am/ActivityStack;->mStackId:I
+    move-object/from16 v0, p0
+
+    iget v1, v0, Lcom/android/server/am/ActivityStack;->mStackId:I
 
     invoke-static {v1}, Landroid/app/ActivityManager$StackId;->keepFocusInStackIfPossible(I)Z
 
     move-result v1
 
-    if-eqz v1, :cond_3
+    if-eqz v1, :cond_4
 
-    invoke-virtual {p0}, Lcom/android/server/am/ActivityStack;->isFocusable()Z
+    invoke-virtual/range {p0 .. p0}, Lcom/android/server/am/ActivityStack;->isFocusable()Z
 
     move-result v1
 
-    if-eqz v1, :cond_3
+    if-eqz v1, :cond_4
 
-    iget-object v1, p0, Lcom/android/server/am/ActivityStack;->mService:Lcom/android/server/am/ActivityManagerService;
+    move-object/from16 v0, p0
 
-    invoke-virtual {v1, v10, v9}, Lcom/android/server/am/ActivityManagerService;->setFocusedActivityLocked(Lcom/android/server/am/ActivityRecord;Ljava/lang/String;)Z
+    iget-object v1, v0, Lcom/android/server/am/ActivityStack;->mService:Lcom/android/server/am/ActivityManagerService;
+
+    invoke-virtual {v1, v11, v10}, Lcom/android/server/am/ActivityManagerService;->setFocusedActivityLocked(Lcom/android/server/am/ActivityRecord;Ljava/lang/String;)Z
 
     return-void
 
-    :cond_3
+    :cond_4
     move-object/from16 v0, p1
 
-    iget-object v11, v0, Lcom/android/server/am/ActivityRecord;->task:Lcom/android/server/am/TaskRecord;
+    iget-object v12, v0, Lcom/android/server/am/ActivityRecord;->task:Lcom/android/server/am/TaskRecord;
 
     move-object/from16 v0, p1
 
     iget-boolean v1, v0, Lcom/android/server/am/ActivityRecord;->frontOfTask:Z
 
-    if-nez v1, :cond_4
+    if-nez v1, :cond_5
 
-    invoke-direct {p0, v11}, Lcom/android/server/am/ActivityStack;->isAllActivitiesFinishingLocked(Lcom/android/server/am/TaskRecord;)Z
+    move-object/from16 v0, p0
+
+    invoke-direct {v0, v12}, Lcom/android/server/am/ActivityStack;->isAllActivitiesFinishingLocked(Lcom/android/server/am/TaskRecord;)Z
 
     move-result v1
 
-    if-eqz v1, :cond_b
+    if-eqz v1, :cond_c
 
-    :cond_4
-    invoke-virtual {p0}, Lcom/android/server/am/ActivityStack;->topTask()Lcom/android/server/am/TaskRecord;
+    :cond_5
+    invoke-virtual/range {p0 .. p0}, Lcom/android/server/am/ActivityStack;->topTask()Lcom/android/server/am/TaskRecord;
 
     move-result-object v1
 
-    if-ne v11, v1, :cond_b
+    if-ne v12, v1, :cond_c
 
-    invoke-virtual {v11}, Lcom/android/server/am/TaskRecord;->isOverHomeStack()Z
-
-    move-result v1
-
-    if-nez v1, :cond_5
-
-    invoke-virtual {p0, v11}, Lcom/android/server/am/ActivityStack;->checkBelowTasksToGoHomeStackLocked(Lcom/android/server/am/TaskRecord;)Z
+    invoke-virtual {v12}, Lcom/android/server/am/TaskRecord;->isOverHomeStack()Z
 
     move-result v1
 
-    if-eqz v1, :cond_b
+    if-nez v1, :cond_6
 
-    :cond_5
-    invoke-virtual {v11}, Lcom/android/server/am/TaskRecord;->getTaskToReturnTo()I
+    move-object/from16 v0, p0
 
-    move-result v12
+    invoke-virtual {v0, v12}, Lcom/android/server/am/ActivityStack;->checkBelowTasksToGoHomeStackLocked(Lcom/android/server/am/TaskRecord;)Z
+
+    move-result v1
+
+    if-eqz v1, :cond_c
+
+    :cond_6
+    invoke-virtual {v12}, Lcom/android/server/am/TaskRecord;->getTaskToReturnTo()I
+
+    move-result v13
 
     sget-boolean v1, Lcom/samsung/android/framework/feature/MultiWindowFeatures;->SAMSUNG_MULTIWINDOW_DYNAMIC_ENABLED:Z
 
-    if-eqz v1, :cond_6
+    if-eqz v1, :cond_7
 
-    iget-object v1, v11, Lcom/android/server/am/TaskRecord;->stack:Lcom/android/server/am/ActivityStack;
+    iget-object v1, v12, Lcom/android/server/am/TaskRecord;->stack:Lcom/android/server/am/ActivityStack;
 
     iget v1, v1, Lcom/android/server/am/ActivityStack;->mStackId:I
 
     const/4 v2, 0x2
 
-    if-ne v1, v2, :cond_6
+    if-ne v1, v2, :cond_7
 
-    invoke-direct {p0, v12, v9}, Lcom/android/server/am/ActivityStack;->adjustFocusToNextFocusableStackLocked(ILjava/lang/String;)Z
+    move-object/from16 v0, p0
+
+    invoke-direct {v0, v13, v10}, Lcom/android/server/am/ActivityStack;->adjustFocusToNextFocusableStackLocked(ILjava/lang/String;)Z
 
     move-result v1
 
-    if-eqz v1, :cond_6
+    if-eqz v1, :cond_7
 
     return-void
-
-    :cond_6
-    sget-boolean v1, Lcom/samsung/android/framework/feature/MultiWindowFeatures;->MINIMIZED_DOCK_DYNAMIC_ENABLED:Z
-
-    if-eqz v1, :cond_8
 
     :cond_7
-    iget-boolean v1, p0, Lcom/android/server/am/ActivityStack;->mFullscreen:Z
+    sget-boolean v1, Lcom/samsung/android/framework/feature/MultiWindowFeatures;->MINIMIZED_DOCK_DYNAMIC_ENABLED:Z
 
-    if-nez v1, :cond_a
+    if-eqz v1, :cond_9
 
-    invoke-direct {p0, v12, v9}, Lcom/android/server/am/ActivityStack;->adjustFocusToNextFocusableStackLocked(ILjava/lang/String;)Z
+    :cond_8
+    move-object/from16 v0, p0
+
+    iget-boolean v1, v0, Lcom/android/server/am/ActivityStack;->mFullscreen:Z
+
+    if-nez v1, :cond_b
+
+    move-object/from16 v0, p0
+
+    invoke-direct {v0, v13, v10}, Lcom/android/server/am/ActivityStack;->adjustFocusToNextFocusableStackLocked(ILjava/lang/String;)Z
 
     move-result v1
 
-    if-eqz v1, :cond_a
+    if-eqz v1, :cond_b
 
     return-void
 
-    :cond_8
-    iget v1, p0, Lcom/android/server/am/ActivityStack;->mStackId:I
+    :cond_9
+    move-object/from16 v0, p0
+
+    iget v1, v0, Lcom/android/server/am/ActivityStack;->mStackId:I
 
     const/4 v2, 0x1
 
-    if-ne v1, v2, :cond_7
+    if-ne v1, v2, :cond_8
 
-    iget-boolean v1, p0, Lcom/android/server/am/ActivityStack;->mFullscreen:Z
+    move-object/from16 v0, p0
 
-    if-nez v1, :cond_7
+    iget-boolean v1, v0, Lcom/android/server/am/ActivityStack;->mFullscreen:Z
 
-    iget-object v1, p0, Lcom/android/server/am/ActivityStack;->mStackSupervisor:Lcom/android/server/am/ActivityStackSupervisor;
+    if-nez v1, :cond_8
+
+    move-object/from16 v0, p0
+
+    iget-object v1, v0, Lcom/android/server/am/ActivityStack;->mStackSupervisor:Lcom/android/server/am/ActivityStackSupervisor;
 
     const/4 v2, 0x3
 
@@ -1590,7 +1695,7 @@
 
     move-result-object v8
 
-    if-eqz v8, :cond_9
+    if-eqz v8, :cond_a
 
     const/4 v1, 0x0
 
@@ -1600,14 +1705,16 @@
 
     const/4 v2, 0x1
 
-    if-ne v1, v2, :cond_9
+    if-ne v1, v2, :cond_a
 
-    const/4 v14, 0x1
+    const/4 v15, 0x1
 
     :goto_0
-    if-eqz v14, :cond_7
+    if-eqz v15, :cond_8
 
-    iget-object v1, p0, Lcom/android/server/am/ActivityStack;->mStackSupervisor:Lcom/android/server/am/ActivityStackSupervisor;
+    move-object/from16 v0, p0
+
+    iget-object v1, v0, Lcom/android/server/am/ActivityStack;->mStackSupervisor:Lcom/android/server/am/ActivityStackSupervisor;
 
     const/4 v2, 0x0
 
@@ -1625,34 +1732,36 @@
 
     return-void
 
-    :cond_9
-    const/4 v14, 0x0
+    :cond_a
+    const/4 v15, 0x0
 
     goto :goto_0
 
-    :cond_a
-    iget-object v1, p0, Lcom/android/server/am/ActivityStack;->mStackSupervisor:Lcom/android/server/am/ActivityStackSupervisor;
+    :cond_b
+    move-object/from16 v0, p0
 
-    invoke-virtual {v1, v12, v9}, Lcom/android/server/am/ActivityStackSupervisor;->moveHomeStackTaskToTop(ILjava/lang/String;)Z
+    iget-object v1, v0, Lcom/android/server/am/ActivityStack;->mStackSupervisor:Lcom/android/server/am/ActivityStackSupervisor;
+
+    invoke-virtual {v1, v13, v10}, Lcom/android/server/am/ActivityStackSupervisor;->moveHomeStackTaskToTop(ILjava/lang/String;)Z
 
     move-result v1
 
-    if-eqz v1, :cond_b
+    if-eqz v1, :cond_c
 
     return-void
 
-    :cond_b
+    :cond_c
     sget-boolean v1, Lcom/samsung/android/framework/feature/MultiWindowFeatures;->SAMSUNG_MULTIWINDOW_DYNAMIC_ENABLED:Z
 
-    if-eqz v1, :cond_c
+    if-eqz v1, :cond_d
 
-    if-nez v10, :cond_c
+    if-nez v11, :cond_d
 
     move-object/from16 v0, p1
 
     iget-object v1, v0, Lcom/android/server/am/ActivityRecord;->task:Lcom/android/server/am/TaskRecord;
 
-    if-eqz v1, :cond_c
+    if-eqz v1, :cond_d
 
     move-object/from16 v0, p1
 
@@ -1662,24 +1771,30 @@
 
     move-result v1
 
-    invoke-direct {p0, v1, v9}, Lcom/android/server/am/ActivityStack;->adjustFocusToNextFocusableStackLocked(ILjava/lang/String;)Z
+    move-object/from16 v0, p0
+
+    invoke-direct {v0, v1, v10}, Lcom/android/server/am/ActivityStack;->adjustFocusToNextFocusableStackLocked(ILjava/lang/String;)Z
 
     move-result v1
 
-    if-eqz v1, :cond_c
+    if-eqz v1, :cond_d
 
     return-void
 
-    :cond_c
-    iget-object v1, p0, Lcom/android/server/am/ActivityStack;->mService:Lcom/android/server/am/ActivityManagerService;
+    :cond_d
+    move-object/from16 v0, p0
 
-    iget-object v2, p0, Lcom/android/server/am/ActivityStack;->mStackSupervisor:Lcom/android/server/am/ActivityStackSupervisor;
+    iget-object v1, v0, Lcom/android/server/am/ActivityStack;->mService:Lcom/android/server/am/ActivityManagerService;
+
+    move-object/from16 v0, p0
+
+    iget-object v2, v0, Lcom/android/server/am/ActivityStack;->mStackSupervisor:Lcom/android/server/am/ActivityStackSupervisor;
 
     invoke-virtual {v2}, Lcom/android/server/am/ActivityStackSupervisor;->topRunningActivityLocked()Lcom/android/server/am/ActivityRecord;
 
     move-result-object v2
 
-    invoke-virtual {v1, v2, v9}, Lcom/android/server/am/ActivityManagerService;->setFocusedActivityLocked(Lcom/android/server/am/ActivityRecord;Ljava/lang/String;)Z
+    invoke-virtual {v1, v2, v10}, Lcom/android/server/am/ActivityManagerService;->setFocusedActivityLocked(Lcom/android/server/am/ActivityRecord;Ljava/lang/String;)Z
 
     return-void
 .end method
@@ -2723,6 +2838,12 @@
     iget-object v1, p0, Lcom/android/server/am/ActivityStack;->mBridge:Lcom/android/server/am/IActivityManagerServiceBridge;
 
     invoke-interface {v1, p1}, Lcom/android/server/am/IActivityManagerServiceBridge;->resetActivityKeepAlive(Lcom/android/server/am/ActivityRecord;)V
+
+    iget-object v1, p0, Lcom/android/server/am/ActivityStack;->mService:Lcom/android/server/am/ActivityManagerService;
+
+    iget-object v1, v1, Lcom/android/server/am/ActivityManagerService;->mMultiWindowManager:Lcom/android/server/am/IMultiWindowManagerServiceBridge;
+
+    invoke-interface {v1}, Lcom/android/server/am/IMultiWindowManagerServiceBridge;->notifyCompleteResumeLocked()V
 
     return-void
 
@@ -15482,733 +15603,566 @@
 .end method
 
 .method getStackVisibilityLocked(Lcom/android/server/am/ActivityRecord;)I
-    .locals 20
+    .locals 17
 
     invoke-virtual/range {p0 .. p0}, Lcom/android/server/am/ActivityStack;->isAttached()Z
 
-    move-result v17
+    move-result v14
 
-    if-nez v17, :cond_0
+    if-nez v14, :cond_0
 
-    const/16 v17, 0x0
+    const/4 v14, 0x0
 
-    return v17
+    return v14
 
     :cond_0
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/android/server/am/ActivityStack;->mBridge:Lcom/android/server/am/IActivityManagerServiceBridge;
+    iget-object v14, v0, Lcom/android/server/am/ActivityStack;->mBridge:Lcom/android/server/am/IActivityManagerServiceBridge;
 
-    move-object/from16 v17, v0
+    move-object/from16 v0, p0
 
-    move-object/from16 v0, v17
+    invoke-interface {v14, v0}, Lcom/android/server/am/IActivityManagerServiceBridge;->hideNonVSStack(Lcom/android/server/am/ActivityStack;)Z
 
-    move-object/from16 v1, p0
+    move-result v14
 
-    invoke-interface {v0, v1}, Lcom/android/server/am/IActivityManagerServiceBridge;->hideNonVSStack(Lcom/android/server/am/ActivityStack;)Z
+    if-eqz v14, :cond_1
 
-    move-result v17
+    const/4 v14, 0x0
 
-    if-eqz v17, :cond_1
-
-    const/16 v17, 0x0
-
-    return v17
+    return v14
 
     :cond_1
-    sget-boolean v17, Lcom/samsung/android/framework/feature/MultiWindowFeatures;->SAMSUNG_MULTIWINDOW_DYNAMIC_ENABLED:Z
+    sget-boolean v14, Lcom/samsung/android/framework/feature/MultiWindowFeatures;->SAMSUNG_MULTIWINDOW_DYNAMIC_ENABLED:Z
 
-    if-eqz v17, :cond_4
-
-    move-object/from16 v0, p0
-
-    iget v0, v0, Lcom/android/server/am/ActivityStack;->mStackId:I
-
-    move/from16 v17, v0
-
-    const/16 v18, 0x2
-
-    move/from16 v0, v17
-
-    move/from16 v1, v18
-
-    if-ne v0, v1, :cond_2
+    if-eqz v14, :cond_4
 
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/android/server/am/ActivityStack;->mService:Lcom/android/server/am/ActivityManagerService;
+    iget v14, v0, Lcom/android/server/am/ActivityStack;->mStackId:I
 
-    move-object/from16 v17, v0
+    const/4 v15, 0x2
 
-    move-object/from16 v0, v17
+    if-ne v14, v15, :cond_2
 
-    iget-object v0, v0, Lcom/android/server/am/ActivityManagerService;->mMultiWindowManager:Lcom/android/server/am/IMultiWindowManagerServiceBridge;
+    move-object/from16 v0, p0
 
-    move-object/from16 v17, v0
+    iget-object v14, v0, Lcom/android/server/am/ActivityStack;->mService:Lcom/android/server/am/ActivityManagerService;
 
-    const/16 v18, 0x0
+    iget-object v14, v14, Lcom/android/server/am/ActivityManagerService;->mMultiWindowManager:Lcom/android/server/am/IMultiWindowManagerServiceBridge;
 
-    move-object/from16 v0, v17
+    const/4 v15, 0x0
 
-    move-object/from16 v1, p0
+    move-object/from16 v0, p0
 
-    move/from16 v2, v18
+    invoke-interface {v14, v0, v15}, Lcom/android/server/am/IMultiWindowManagerServiceBridge;->isAllTaskHiddenLocked(Lcom/android/server/am/ActivityStack;Z)Z
 
-    invoke-interface {v0, v1, v2}, Lcom/android/server/am/IMultiWindowManagerServiceBridge;->isAllTaskHiddenLocked(Lcom/android/server/am/ActivityStack;Z)Z
+    move-result v14
 
-    move-result v17
+    if-eqz v14, :cond_2
 
-    if-eqz v17, :cond_2
+    const/4 v14, 0x0
 
-    const/16 v17, 0x0
-
-    return v17
+    return v14
 
     :cond_2
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/android/server/am/ActivityStack;->mService:Lcom/android/server/am/ActivityManagerService;
+    iget-object v14, v0, Lcom/android/server/am/ActivityStack;->mService:Lcom/android/server/am/ActivityManagerService;
 
-    move-object/from16 v17, v0
+    iget-object v14, v14, Lcom/android/server/am/ActivityManagerService;->mMultiWindowManager:Lcom/android/server/am/IMultiWindowManagerServiceBridge;
 
-    move-object/from16 v0, v17
+    move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/android/server/am/ActivityManagerService;->mMultiWindowManager:Lcom/android/server/am/IMultiWindowManagerServiceBridge;
+    move-object/from16 v1, p1
 
-    move-object/from16 v17, v0
+    invoke-interface {v14, v0, v1}, Lcom/android/server/am/IMultiWindowManagerServiceBridge;->isVisibleStackBehindFreeformLocked(Lcom/android/server/am/ActivityStack;Lcom/android/server/am/ActivityRecord;)Z
 
-    move-object/from16 v0, v17
+    move-result v14
 
-    move-object/from16 v1, p0
+    if-eqz v14, :cond_3
 
-    move-object/from16 v2, p1
+    const/4 v14, 0x1
 
-    invoke-interface {v0, v1, v2}, Lcom/android/server/am/IMultiWindowManagerServiceBridge;->isVisibleStackBehindFreeformLocked(Lcom/android/server/am/ActivityStack;Lcom/android/server/am/ActivityRecord;)Z
-
-    move-result v17
-
-    if-eqz v17, :cond_3
-
-    const/16 v17, 0x1
-
-    return v17
+    return v14
 
     :cond_3
     invoke-virtual/range {p0 .. p0}, Lcom/android/server/am/ActivityStack;->isDockedStack()Z
 
-    move-result v17
+    move-result v14
 
-    if-eqz v17, :cond_4
-
-    move-object/from16 v0, p0
-
-    iget-object v0, v0, Lcom/android/server/am/ActivityStack;->mStackSupervisor:Lcom/android/server/am/ActivityStackSupervisor;
-
-    move-object/from16 v17, v0
-
-    move-object/from16 v0, v17
-
-    iget-boolean v0, v0, Lcom/android/server/am/ActivityStackSupervisor;->mIsDockMinimized:Z
-
-    move/from16 v17, v0
-
-    if-eqz v17, :cond_4
+    if-eqz v14, :cond_4
 
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/android/server/am/ActivityStack;->mWindowManager:Lcom/android/server/wm/WindowManagerService;
+    iget-object v14, v0, Lcom/android/server/am/ActivityStack;->mStackSupervisor:Lcom/android/server/am/ActivityStackSupervisor;
 
-    move-object/from16 v17, v0
+    iget-boolean v14, v14, Lcom/android/server/am/ActivityStackSupervisor;->mIsDockMinimized:Z
 
-    move-object/from16 v0, v17
+    if-eqz v14, :cond_4
 
-    iget-object v0, v0, Lcom/android/server/wm/WindowManagerService;->mMultiWindowManagerInternal:Lcom/android/server/wm/IMultiWindowManagerInternalBridge;
+    move-object/from16 v0, p0
 
-    move-object/from16 v17, v0
+    iget-object v14, v0, Lcom/android/server/am/ActivityStack;->mWindowManager:Lcom/android/server/wm/WindowManagerService;
+
+    iget-object v14, v14, Lcom/android/server/wm/WindowManagerService;->mMultiWindowManagerInternal:Lcom/android/server/wm/IMultiWindowManagerInternalBridge;
 
     invoke-virtual/range {p0 .. p0}, Lcom/android/server/am/ActivityStack;->getDisplayId()I
 
-    move-result v18
+    move-result v15
 
-    invoke-interface/range {v17 .. v18}, Lcom/android/server/wm/IMultiWindowManagerInternalBridge;->isAnimatingForMinimizedDockedStack(I)Z
+    invoke-interface {v14, v15}, Lcom/android/server/wm/IMultiWindowManagerInternalBridge;->isAnimatingForMinimizedDockedStack(I)Z
 
-    move-result v17
+    move-result v14
 
-    if-eqz v17, :cond_6
+    if-eqz v14, :cond_6
 
     :cond_4
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/android/server/am/ActivityStack;->mStackSupervisor:Lcom/android/server/am/ActivityStackSupervisor;
-
-    move-object/from16 v17, v0
-
-    move-object/from16 v0, v17
-
-    move-object/from16 v1, p0
-
-    invoke-virtual {v0, v1}, Lcom/android/server/am/ActivityStackSupervisor;->isFrontStack(Lcom/android/server/am/ActivityStack;)Z
-
-    move-result v17
-
-    if-nez v17, :cond_5
+    iget-object v14, v0, Lcom/android/server/am/ActivityStack;->mStackSupervisor:Lcom/android/server/am/ActivityStackSupervisor;
 
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/android/server/am/ActivityStack;->mStackSupervisor:Lcom/android/server/am/ActivityStackSupervisor;
+    invoke-virtual {v14, v0}, Lcom/android/server/am/ActivityStackSupervisor;->isFrontStack(Lcom/android/server/am/ActivityStack;)Z
 
-    move-object/from16 v17, v0
+    move-result v14
 
-    move-object/from16 v0, v17
+    if-nez v14, :cond_5
 
-    move-object/from16 v1, p0
+    move-object/from16 v0, p0
 
-    invoke-virtual {v0, v1}, Lcom/android/server/am/ActivityStackSupervisor;->isFocusedStack(Lcom/android/server/am/ActivityStack;)Z
+    iget-object v14, v0, Lcom/android/server/am/ActivityStack;->mStackSupervisor:Lcom/android/server/am/ActivityStackSupervisor;
 
-    move-result v17
+    move-object/from16 v0, p0
 
-    if-eqz v17, :cond_c
+    invoke-virtual {v14, v0}, Lcom/android/server/am/ActivityStackSupervisor;->isFocusedStack(Lcom/android/server/am/ActivityStack;)Z
+
+    move-result v14
+
+    if-eqz v14, :cond_c
 
     :cond_5
-    const/16 v17, 0x1
+    const/4 v14, 0x1
 
-    return v17
+    return v14
 
     :cond_6
     if-eqz p1, :cond_7
 
     invoke-virtual/range {p1 .. p1}, Lcom/android/server/am/ActivityRecord;->isHomeActivity()Z
 
-    move-result v17
+    move-result v14
 
-    if-eqz v17, :cond_7
+    if-eqz v14, :cond_7
 
-    const/16 v17, 0x0
+    const/4 v14, 0x0
 
-    return v17
+    return v14
 
     :cond_7
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/android/server/am/ActivityStack;->mStackSupervisor:Lcom/android/server/am/ActivityStackSupervisor;
+    iget-object v14, v0, Lcom/android/server/am/ActivityStack;->mStackSupervisor:Lcom/android/server/am/ActivityStackSupervisor;
 
-    move-object/from16 v17, v0
+    const/4 v15, 0x0
 
-    const/16 v18, 0x0
+    invoke-virtual {v14, v15}, Lcom/android/server/am/ActivityStackSupervisor;->getStack(I)Lcom/android/server/am/ActivityStack;
 
-    invoke-virtual/range {v17 .. v18}, Lcom/android/server/am/ActivityStackSupervisor;->getStack(I)Lcom/android/server/am/ActivityStack;
+    move-result-object v7
 
-    move-result-object v8
+    if-eqz v7, :cond_a
 
-    if-eqz v8, :cond_a
-
-    iget-object v7, v8, Lcom/android/server/am/ActivityStack;->mResumedActivity:Lcom/android/server/am/ActivityRecord;
+    iget-object v6, v7, Lcom/android/server/am/ActivityStack;->mResumedActivity:Lcom/android/server/am/ActivityRecord;
 
     :goto_0
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/android/server/am/ActivityStack;->mStackSupervisor:Lcom/android/server/am/ActivityStackSupervisor;
+    iget-object v14, v0, Lcom/android/server/am/ActivityStack;->mStackSupervisor:Lcom/android/server/am/ActivityStackSupervisor;
 
-    move-object/from16 v17, v0
+    const/4 v15, 0x2
 
-    const/16 v18, 0x2
+    invoke-virtual {v14, v15}, Lcom/android/server/am/ActivityStackSupervisor;->getStack(I)Lcom/android/server/am/ActivityStack;
 
-    invoke-virtual/range {v17 .. v18}, Lcom/android/server/am/ActivityStackSupervisor;->getStack(I)Lcom/android/server/am/ActivityStack;
+    move-result-object v5
 
-    move-result-object v6
+    if-eqz v5, :cond_b
 
-    if-eqz v6, :cond_b
-
-    iget-object v5, v6, Lcom/android/server/am/ActivityStack;->mResumedActivity:Lcom/android/server/am/ActivityRecord;
+    iget-object v4, v5, Lcom/android/server/am/ActivityStack;->mResumedActivity:Lcom/android/server/am/ActivityRecord;
 
     :goto_1
     if-nez p1, :cond_4
 
-    if-eqz v7, :cond_8
+    if-eqz v6, :cond_8
 
-    invoke-virtual {v7}, Lcom/android/server/am/ActivityRecord;->isHomeActivity()Z
+    invoke-virtual {v6}, Lcom/android/server/am/ActivityRecord;->isHomeActivity()Z
 
-    move-result v17
+    move-result v14
 
-    if-nez v17, :cond_9
+    if-nez v14, :cond_9
 
     :cond_8
-    if-eqz v5, :cond_4
+    if-eqz v4, :cond_4
 
     :cond_9
-    const/16 v17, 0x0
+    const/4 v14, 0x0
 
-    return v17
+    return v14
 
     :cond_a
-    const/4 v7, 0x0
+    const/4 v6, 0x0
 
     goto :goto_0
 
     :cond_b
-    const/4 v5, 0x0
+    const/4 v4, 0x0
 
     goto :goto_1
 
     :cond_c
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/android/server/am/ActivityStack;->mStacks:Ljava/util/ArrayList;
-
-    move-object/from16 v17, v0
-
-    move-object/from16 v0, v17
-
-    move-object/from16 v1, p0
-
-    invoke-virtual {v0, v1}, Ljava/util/ArrayList;->indexOf(Ljava/lang/Object;)I
-
-    move-result v15
-
-    invoke-virtual/range {p0 .. p0}, Lcom/android/server/am/ActivityStack;->isOnHomeDisplay()Z
-
-    move-result v17
-
-    if-eqz v17, :cond_d
+    iget-object v14, v0, Lcom/android/server/am/ActivityStack;->mStacks:Ljava/util/ArrayList;
 
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/android/server/am/ActivityStack;->mStacks:Ljava/util/ArrayList;
+    invoke-virtual {v14, v0}, Ljava/util/ArrayList;->indexOf(Ljava/lang/Object;)I
 
-    move-object/from16 v17, v0
+    move-result v13
 
-    invoke-virtual/range {v17 .. v17}, Ljava/util/ArrayList;->size()I
+    invoke-virtual/range {p0 .. p0}, Lcom/android/server/am/ActivityStack;->isOnHomeDisplay()Z
 
-    move-result v17
+    move-result v14
 
-    add-int/lit8 v17, v17, -0x1
+    if-eqz v14, :cond_d
 
-    move/from16 v0, v17
+    move-object/from16 v0, p0
 
-    if-ne v15, v0, :cond_d
+    iget-object v14, v0, Lcom/android/server/am/ActivityStack;->mStacks:Ljava/util/ArrayList;
 
-    sget-object v17, Lcom/android/server/am/ActivityStack;->TAG:Ljava/lang/String;
+    invoke-virtual {v14}, Ljava/util/ArrayList;->size()I
 
-    new-instance v18, Ljava/lang/StringBuilder;
+    move-result v14
 
-    invoke-direct/range {v18 .. v18}, Ljava/lang/StringBuilder;-><init>()V
+    add-int/lit8 v14, v14, -0x1
 
-    const-string/jumbo v19, "Stack="
+    if-ne v13, v14, :cond_d
 
-    invoke-virtual/range {v18 .. v19}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    sget-object v14, Lcom/android/server/am/ActivityStack;->TAG:Ljava/lang/String;
 
-    move-result-object v18
+    new-instance v15, Ljava/lang/StringBuilder;
 
-    move-object/from16 v0, v18
+    invoke-direct {v15}, Ljava/lang/StringBuilder;-><init>()V
 
-    move-object/from16 v1, p0
+    const-string/jumbo v16, "Stack="
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    invoke-virtual/range {v15 .. v16}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v18
+    move-result-object v15
 
-    const-string/jumbo v19, " isn\'t front stack but is at the top of the stack list"
+    move-object/from16 v0, p0
 
-    invoke-virtual/range {v18 .. v19}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v15, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
-    move-result-object v18
+    move-result-object v15
 
-    invoke-virtual/range {v18 .. v18}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    const-string/jumbo v16, " isn\'t front stack but is at the top of the stack list"
 
-    move-result-object v18
+    invoke-virtual/range {v15 .. v16}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-static/range {v17 .. v18}, Landroid/util/Slog;->wtf(Ljava/lang/String;Ljava/lang/String;)I
+    move-result-object v15
 
-    const/16 v17, 0x0
+    invoke-virtual {v15}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    return v17
+    move-result-object v15
+
+    invoke-static {v14, v15}, Landroid/util/Slog;->wtf(Ljava/lang/String;Ljava/lang/String;)I
+
+    const/4 v14, 0x0
+
+    return v14
 
     :cond_d
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/android/server/am/ActivityStack;->mStackSupervisor:Lcom/android/server/am/ActivityStackSupervisor;
+    iget-object v14, v0, Lcom/android/server/am/ActivityStack;->mStackSupervisor:Lcom/android/server/am/ActivityStackSupervisor;
 
-    move-object/from16 v17, v0
+    invoke-virtual {v14}, Lcom/android/server/am/ActivityStackSupervisor;->getFocusedStack()Lcom/android/server/am/ActivityStack;
 
-    invoke-virtual/range {v17 .. v17}, Lcom/android/server/am/ActivityStackSupervisor;->getFocusedStack()Lcom/android/server/am/ActivityStack;
+    move-result-object v2
 
-    move-result-object v3
+    invoke-virtual {v2}, Lcom/android/server/am/ActivityStack;->getDisplayId()I
 
-    invoke-virtual {v3}, Lcom/android/server/am/ActivityStack;->getDisplayId()I
-
-    move-result v17
+    move-result v14
 
     invoke-virtual/range {p0 .. p0}, Lcom/android/server/am/ActivityStack;->getDisplayId()I
 
-    move-result v18
+    move-result v15
 
-    move/from16 v0, v17
-
-    move/from16 v1, v18
-
-    if-eq v0, v1, :cond_e
+    if-eq v14, v15, :cond_e
 
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/android/server/am/ActivityStack;->mStacks:Ljava/util/ArrayList;
+    iget-object v14, v0, Lcom/android/server/am/ActivityStack;->mStacks:Ljava/util/ArrayList;
 
-    move-object/from16 v17, v0
+    invoke-virtual {v14}, Ljava/util/ArrayList;->size()I
 
-    invoke-virtual/range {v17 .. v17}, Ljava/util/ArrayList;->size()I
+    move-result v9
 
-    move-result v11
-
-    if-lez v11, :cond_e
+    if-lez v9, :cond_e
 
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/android/server/am/ActivityStack;->mStacks:Ljava/util/ArrayList;
+    iget-object v14, v0, Lcom/android/server/am/ActivityStack;->mStacks:Ljava/util/ArrayList;
 
-    move-object/from16 v17, v0
+    add-int/lit8 v15, v9, -0x1
 
-    add-int/lit8 v18, v11, -0x1
+    invoke-virtual {v14, v15}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
-    invoke-virtual/range {v17 .. v18}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+    move-result-object v2
 
-    move-result-object v3
-
-    check-cast v3, Lcom/android/server/am/ActivityStack;
+    check-cast v2, Lcom/android/server/am/ActivityStack;
 
     :cond_e
-    iget v4, v3, Lcom/android/server/am/ActivityStack;->mStackId:I
+    iget v3, v2, Lcom/android/server/am/ActivityStack;->mStackId:I
 
     move-object/from16 v0, p0
 
-    iget v0, v0, Lcom/android/server/am/ActivityStack;->mStackId:I
+    iget v14, v0, Lcom/android/server/am/ActivityStack;->mStackId:I
 
-    move/from16 v17, v0
+    const/4 v15, 0x1
 
-    const/16 v18, 0x1
-
-    move/from16 v0, v17
-
-    move/from16 v1, v18
-
-    if-ne v0, v1, :cond_f
+    if-ne v14, v15, :cond_f
 
     invoke-virtual/range {p0 .. p0}, Lcom/android/server/am/ActivityStack;->hasVisibleBehindActivity()Z
 
-    move-result v17
+    move-result v14
 
-    if-eqz v17, :cond_f
+    if-eqz v14, :cond_f
 
-    if-nez v4, :cond_f
+    if-nez v3, :cond_f
 
-    invoke-virtual {v3}, Lcom/android/server/am/ActivityStack;->topActivity()Lcom/android/server/am/ActivityRecord;
+    invoke-virtual {v2}, Lcom/android/server/am/ActivityStack;->topActivity()Lcom/android/server/am/ActivityRecord;
 
-    move-result-object v17
+    move-result-object v14
 
-    move-object/from16 v0, v17
+    iget-boolean v14, v14, Lcom/android/server/am/ActivityRecord;->fullscreen:Z
 
-    iget-boolean v0, v0, Lcom/android/server/am/ActivityRecord;->fullscreen:Z
-
-    move/from16 v17, v0
-
-    if-eqz v17, :cond_11
+    if-eqz v14, :cond_10
 
     :cond_f
     move-object/from16 v0, p0
 
-    iget v0, v0, Lcom/android/server/am/ActivityStack;->mStackId:I
+    iget v14, v0, Lcom/android/server/am/ActivityStack;->mStackId:I
 
-    move/from16 v17, v0
+    const/4 v15, 0x3
 
-    const/16 v18, 0x3
+    if-ne v14, v15, :cond_11
 
-    move/from16 v0, v17
+    const/4 v14, 0x1
 
-    move/from16 v1, v18
-
-    if-ne v0, v1, :cond_14
-
-    invoke-virtual {v3}, Lcom/android/server/am/ActivityStack;->topRunningActivityLocked()Lcom/android/server/am/ActivityRecord;
-
-    move-result-object v10
-
-    if-eqz v10, :cond_12
-
-    iget-object v0, v10, Lcom/android/server/am/ActivityRecord;->task:Lcom/android/server/am/TaskRecord;
-
-    move-object/from16 v16, v0
-
-    :goto_2
-    if-eqz v16, :cond_10
-
-    invoke-virtual/range {v16 .. v16}, Lcom/android/server/am/TaskRecord;->canGoInDockedStack()Z
-
-    move-result v17
-
-    if-nez v17, :cond_10
-
-    invoke-virtual/range {v16 .. v16}, Lcom/android/server/am/TaskRecord;->isHomeTask()Z
-
-    move-result v17
-
-    if-eqz v17, :cond_13
+    return v14
 
     :cond_10
-    const/16 v17, 0x1
+    const/4 v14, 0x2
 
-    :goto_3
-    return v17
+    return v14
 
     :cond_11
-    const/16 v17, 0x2
+    move-object/from16 v0, p0
 
-    return v17
+    iget-object v14, v0, Lcom/android/server/am/ActivityStack;->mStacks:Ljava/util/ArrayList;
 
-    :cond_12
-    const/16 v16, 0x0
+    invoke-virtual {v14, v2}, Ljava/util/ArrayList;->indexOf(Ljava/lang/Object;)I
+
+    move-result v14
+
+    add-int/lit8 v12, v14, -0x1
+
+    :goto_2
+    if-ltz v12, :cond_12
+
+    move-object/from16 v0, p0
+
+    iget-object v14, v0, Lcom/android/server/am/ActivityStack;->mStacks:Ljava/util/ArrayList;
+
+    invoke-virtual {v14, v12}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+
+    move-result-object v14
+
+    check-cast v14, Lcom/android/server/am/ActivityStack;
+
+    invoke-virtual {v14}, Lcom/android/server/am/ActivityStack;->topRunningActivityLocked()Lcom/android/server/am/ActivityRecord;
+
+    move-result-object v14
+
+    if-nez v14, :cond_12
+
+    add-int/lit8 v12, v12, -0x1
 
     goto :goto_2
 
+    :cond_12
+    const/4 v14, 0x3
+
+    if-eq v3, v14, :cond_13
+
+    const/4 v14, 0x4
+
+    if-ne v3, v14, :cond_14
+
     :cond_13
-    const/16 v17, 0x0
+    if-ne v13, v12, :cond_14
+
+    const/4 v14, 0x1
+
+    return v14
+
+    :cond_14
+    if-ltz v12, :cond_15
+
+    move-object/from16 v0, p0
+
+    iget-object v14, v0, Lcom/android/server/am/ActivityStack;->mStacks:Ljava/util/ArrayList;
+
+    invoke-virtual {v14, v12}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+
+    move-result-object v14
+
+    check-cast v14, Lcom/android/server/am/ActivityStack;
+
+    iget v11, v14, Lcom/android/server/am/ActivityStack;->mStackId:I
+
+    :goto_3
+    const/4 v14, 0x1
+
+    if-ne v3, v14, :cond_18
+
+    move-object/from16 v0, p1
+
+    invoke-direct {v2, v0, v11}, Lcom/android/server/am/ActivityStack;->isStackTranslucent(Lcom/android/server/am/ActivityRecord;I)Z
+
+    move-result v14
+
+    if-eqz v14, :cond_18
+
+    if-ne v13, v12, :cond_16
+
+    const/4 v14, 0x1
+
+    return v14
+
+    :cond_15
+    const/4 v11, -0x1
 
     goto :goto_3
 
-    :cond_14
+    :cond_16
+    if-ltz v12, :cond_18
+
+    const/4 v14, 0x3
+
+    if-eq v11, v14, :cond_17
+
+    const/4 v14, 0x4
+
+    if-ne v11, v14, :cond_18
+
+    :cond_17
+    add-int/lit8 v14, v12, -0x1
+
+    if-ne v13, v14, :cond_18
+
+    const/4 v14, 0x1
+
+    return v14
+
+    :cond_18
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/android/server/am/ActivityStack;->mStacks:Ljava/util/ArrayList;
+    iget v14, v0, Lcom/android/server/am/ActivityStack;->mStackId:I
 
-    move-object/from16 v17, v0
+    invoke-static {v14}, Landroid/app/ActivityManager$StackId;->isStaticStack(I)Z
 
-    move-object/from16 v0, v17
+    move-result v14
 
-    invoke-virtual {v0, v3}, Ljava/util/ArrayList;->indexOf(Ljava/lang/Object;)I
+    if-eqz v14, :cond_19
 
-    move-result v17
+    const/4 v14, 0x0
 
-    add-int/lit8 v14, v17, -0x1
+    return v14
+
+    :cond_19
+    add-int/lit8 v8, v13, 0x1
 
     :goto_4
-    if-ltz v14, :cond_15
+    move-object/from16 v0, p0
+
+    iget-object v14, v0, Lcom/android/server/am/ActivityStack;->mStacks:Ljava/util/ArrayList;
+
+    invoke-virtual {v14}, Ljava/util/ArrayList;->size()I
+
+    move-result v14
+
+    if-ge v8, v14, :cond_1d
 
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/android/server/am/ActivityStack;->mStacks:Ljava/util/ArrayList;
+    iget-object v14, v0, Lcom/android/server/am/ActivityStack;->mStacks:Ljava/util/ArrayList;
 
-    move-object/from16 v17, v0
+    invoke-virtual {v14, v8}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
-    move-object/from16 v0, v17
+    move-result-object v10
 
-    invoke-virtual {v0, v14}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+    check-cast v10, Lcom/android/server/am/ActivityStack;
 
-    move-result-object v17
+    iget-boolean v14, v10, Lcom/android/server/am/ActivityStack;->mFullscreen:Z
 
-    check-cast v17, Lcom/android/server/am/ActivityStack;
+    if-nez v14, :cond_1a
 
-    invoke-virtual/range {v17 .. v17}, Lcom/android/server/am/ActivityStack;->topRunningActivityLocked()Lcom/android/server/am/ActivityRecord;
+    invoke-direct {v10}, Lcom/android/server/am/ActivityStack;->hasFullscreenTask()Z
 
-    move-result-object v17
+    move-result v14
 
-    if-nez v17, :cond_15
+    if-eqz v14, :cond_1c
 
-    add-int/lit8 v14, v14, -0x1
+    :cond_1a
+    iget v14, v10, Lcom/android/server/am/ActivityStack;->mStackId:I
+
+    invoke-static {v14}, Landroid/app/ActivityManager$StackId;->isDynamicStacksVisibleBehindAllowed(I)Z
+
+    move-result v14
+
+    if-nez v14, :cond_1b
+
+    const/4 v14, 0x0
+
+    return v14
+
+    :cond_1b
+    const/4 v14, -0x1
+
+    move-object/from16 v0, p1
+
+    invoke-direct {v10, v0, v14}, Lcom/android/server/am/ActivityStack;->isStackTranslucent(Lcom/android/server/am/ActivityRecord;I)Z
+
+    move-result v14
+
+    if-nez v14, :cond_1c
+
+    const/4 v14, 0x0
+
+    return v14
+
+    :cond_1c
+    add-int/lit8 v8, v8, 0x1
 
     goto :goto_4
 
-    :cond_15
-    const/16 v17, 0x3
-
-    move/from16 v0, v17
-
-    if-eq v4, v0, :cond_16
-
-    const/16 v17, 0x4
-
-    move/from16 v0, v17
-
-    if-ne v4, v0, :cond_17
-
-    :cond_16
-    if-ne v15, v14, :cond_17
-
-    const/16 v17, 0x1
-
-    return v17
-
-    :cond_17
-    if-ltz v14, :cond_18
-
-    move-object/from16 v0, p0
-
-    iget-object v0, v0, Lcom/android/server/am/ActivityStack;->mStacks:Ljava/util/ArrayList;
-
-    move-object/from16 v17, v0
-
-    move-object/from16 v0, v17
-
-    invoke-virtual {v0, v14}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
-
-    move-result-object v17
-
-    check-cast v17, Lcom/android/server/am/ActivityStack;
-
-    move-object/from16 v0, v17
-
-    iget v13, v0, Lcom/android/server/am/ActivityStack;->mStackId:I
-
-    :goto_5
-    const/16 v17, 0x1
-
-    move/from16 v0, v17
-
-    if-ne v4, v0, :cond_1b
-
-    move-object/from16 v0, p1
-
-    invoke-direct {v3, v0, v13}, Lcom/android/server/am/ActivityStack;->isStackTranslucent(Lcom/android/server/am/ActivityRecord;I)Z
-
-    move-result v17
-
-    if-eqz v17, :cond_1b
-
-    if-ne v15, v14, :cond_19
-
-    const/16 v17, 0x1
-
-    return v17
-
-    :cond_18
-    const/4 v13, -0x1
-
-    goto :goto_5
-
-    :cond_19
-    if-ltz v14, :cond_1b
-
-    const/16 v17, 0x3
-
-    move/from16 v0, v17
-
-    if-eq v13, v0, :cond_1a
-
-    const/16 v17, 0x4
-
-    move/from16 v0, v17
-
-    if-ne v13, v0, :cond_1b
-
-    :cond_1a
-    add-int/lit8 v17, v14, -0x1
-
-    move/from16 v0, v17
-
-    if-ne v15, v0, :cond_1b
-
-    const/16 v17, 0x1
-
-    return v17
-
-    :cond_1b
-    move-object/from16 v0, p0
-
-    iget v0, v0, Lcom/android/server/am/ActivityStack;->mStackId:I
-
-    move/from16 v17, v0
-
-    invoke-static/range {v17 .. v17}, Landroid/app/ActivityManager$StackId;->isStaticStack(I)Z
-
-    move-result v17
-
-    if-eqz v17, :cond_1c
-
-    const/16 v17, 0x0
-
-    return v17
-
-    :cond_1c
-    add-int/lit8 v9, v15, 0x1
-
-    :goto_6
-    move-object/from16 v0, p0
-
-    iget-object v0, v0, Lcom/android/server/am/ActivityStack;->mStacks:Ljava/util/ArrayList;
-
-    move-object/from16 v17, v0
-
-    invoke-virtual/range {v17 .. v17}, Ljava/util/ArrayList;->size()I
-
-    move-result v17
-
-    move/from16 v0, v17
-
-    if-ge v9, v0, :cond_20
-
-    move-object/from16 v0, p0
-
-    iget-object v0, v0, Lcom/android/server/am/ActivityStack;->mStacks:Ljava/util/ArrayList;
-
-    move-object/from16 v17, v0
-
-    move-object/from16 v0, v17
-
-    invoke-virtual {v0, v9}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
-
-    move-result-object v12
-
-    check-cast v12, Lcom/android/server/am/ActivityStack;
-
-    iget-boolean v0, v12, Lcom/android/server/am/ActivityStack;->mFullscreen:Z
-
-    move/from16 v17, v0
-
-    if-nez v17, :cond_1d
-
-    invoke-direct {v12}, Lcom/android/server/am/ActivityStack;->hasFullscreenTask()Z
-
-    move-result v17
-
-    if-eqz v17, :cond_1f
-
     :cond_1d
-    iget v0, v12, Lcom/android/server/am/ActivityStack;->mStackId:I
+    const/4 v14, 0x1
 
-    move/from16 v17, v0
-
-    invoke-static/range {v17 .. v17}, Landroid/app/ActivityManager$StackId;->isDynamicStacksVisibleBehindAllowed(I)Z
-
-    move-result v17
-
-    if-nez v17, :cond_1e
-
-    const/16 v17, 0x0
-
-    return v17
-
-    :cond_1e
-    const/16 v17, -0x1
-
-    move-object/from16 v0, p1
-
-    move/from16 v1, v17
-
-    invoke-direct {v12, v0, v1}, Lcom/android/server/am/ActivityStack;->isStackTranslucent(Lcom/android/server/am/ActivityRecord;I)Z
-
-    move-result v17
-
-    if-nez v17, :cond_1f
-
-    const/16 v17, 0x0
-
-    return v17
-
-    :cond_1f
-    add-int/lit8 v9, v9, 0x1
-
-    goto :goto_6
-
-    :cond_20
-    const/16 v17, 0x1
-
-    return v17
+    return v14
 .end method
 
 .method getTaskPositioner()Lcom/android/server/am/LaunchingTaskPositioner;

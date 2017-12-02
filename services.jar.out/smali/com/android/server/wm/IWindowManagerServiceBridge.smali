@@ -89,6 +89,9 @@
     .end annotation
 .end method
 
+.method public abstract getFreezeSurfaceLayer(Landroid/view/Display;)I
+.end method
+
 .method public abstract getInitialDisplayProperties(I)[I
 .end method
 

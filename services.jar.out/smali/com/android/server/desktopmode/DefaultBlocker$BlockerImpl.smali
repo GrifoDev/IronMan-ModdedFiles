@@ -60,8 +60,9 @@
 
     iget v1, p0, Lcom/android/server/desktopmode/DefaultBlocker$BlockerImpl;->reasonCode:I
 
-    sparse-switch v1, :sswitch_data_0
+    packed-switch v1, :pswitch_data_0
 
+    :pswitch_0
     sget v0, Lcom/samsung/android/framework/res/R$string;->dex_toast_unavailable_mode:I
 
     :goto_0
@@ -77,29 +78,22 @@
 
     return-object v1
 
-    :sswitch_0
-    sget v0, Lcom/samsung/android/framework/res/R$string;->dex_toast_mid_power_saving:I
-
-    goto :goto_0
-
-    :sswitch_1
+    :pswitch_1
     sget v0, Lcom/samsung/android/framework/res/R$string;->dex_toast_safe_mode:I
 
     goto :goto_0
 
-    :sswitch_2
+    :pswitch_2
     sget v0, Lcom/samsung/android/framework/res/R$string;->dex_toast_multiuser_mode:I
 
     goto :goto_0
 
-    nop
-
-    :sswitch_data_0
-    .sparse-switch
-        0x1 -> :sswitch_0
-        0x5 -> :sswitch_1
-        0x7 -> :sswitch_2
-    .end sparse-switch
+    :pswitch_data_0
+    .packed-switch 0x4
+        :pswitch_1
+        :pswitch_0
+        :pswitch_2
+    .end packed-switch
 .end method
 
 .method public getIdentifier()Ljava/lang/String;

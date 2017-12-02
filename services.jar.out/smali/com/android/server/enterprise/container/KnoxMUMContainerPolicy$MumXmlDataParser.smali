@@ -464,7 +464,7 @@
 
     iget-object v0, p0, Lcom/android/server/enterprise/container/KnoxMUMContainerPolicy$MumXmlDataParser;->fotaCloneAppDisableList:Ljava/util/List;
 
-    invoke-static {v0}, Lcom/android/server/enterprise/container/KnoxMUMContainerPolicy;->-wrap9(Ljava/util/List;)Ljava/util/List;
+    invoke-static {v0}, Lcom/android/server/enterprise/container/KnoxMUMContainerPolicy;->-wrap8(Ljava/util/List;)Ljava/util/List;
 
     move-result-object v0
 
@@ -485,7 +485,7 @@
 
     iget-object v0, p0, Lcom/android/server/enterprise/container/KnoxMUMContainerPolicy$MumXmlDataParser;->fotaCloneAppInstallList:Ljava/util/List;
 
-    invoke-static {v0}, Lcom/android/server/enterprise/container/KnoxMUMContainerPolicy;->-wrap9(Ljava/util/List;)Ljava/util/List;
+    invoke-static {v0}, Lcom/android/server/enterprise/container/KnoxMUMContainerPolicy;->-wrap8(Ljava/util/List;)Ljava/util/List;
 
     move-result-object v0
 
@@ -506,7 +506,7 @@
 
     iget-object v0, p0, Lcom/android/server/enterprise/container/KnoxMUMContainerPolicy$MumXmlDataParser;->fotaCloneAppReenableList:Ljava/util/List;
 
-    invoke-static {v0}, Lcom/android/server/enterprise/container/KnoxMUMContainerPolicy;->-wrap9(Ljava/util/List;)Ljava/util/List;
+    invoke-static {v0}, Lcom/android/server/enterprise/container/KnoxMUMContainerPolicy;->-wrap8(Ljava/util/List;)Ljava/util/List;
 
     move-result-object v0
 
@@ -527,7 +527,7 @@
 
     iget-object v0, p0, Lcom/android/server/enterprise/container/KnoxMUMContainerPolicy$MumXmlDataParser;->fotaCloneAppRemoveList:Ljava/util/List;
 
-    invoke-static {v0}, Lcom/android/server/enterprise/container/KnoxMUMContainerPolicy;->-wrap9(Ljava/util/List;)Ljava/util/List;
+    invoke-static {v0}, Lcom/android/server/enterprise/container/KnoxMUMContainerPolicy;->-wrap8(Ljava/util/List;)Ljava/util/List;
 
     move-result-object v0
 
@@ -4037,7 +4037,7 @@
 
     if-eqz v40, :cond_0
 
-    invoke-static/range {v39 .. v39}, Lcom/android/server/enterprise/container/KnoxMUMContainerPolicy;->-wrap2(Ljava/lang/String;)Z
+    invoke-static/range {v39 .. v39}, Lcom/android/server/enterprise/container/KnoxMUMContainerPolicy;->-wrap1(Ljava/lang/String;)Z
 
     move-result v40
 
@@ -4722,7 +4722,7 @@
 
     move-result v40
 
-    if-eqz v40, :cond_81
+    if-eqz v40, :cond_7e
 
     if-eqz v14, :cond_0
 
@@ -4821,33 +4821,6 @@
 
     if-eqz v39, :cond_0
 
-    const-string/jumbo v40, "com.android.chrome"
-
-    invoke-virtual/range {v39 .. v40}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v40
-
-    if-eqz v40, :cond_7f
-
-    invoke-static {}, Lcom/android/server/enterprise/container/KnoxMUMContainerPolicy;->-wrap1()Z
-
-    move-result v40
-
-    if-eqz v40, :cond_7e
-
-    const/16 v19, 0x1
-
-    :cond_7e
-    if-eqz v19, :cond_7f
-
-    invoke-direct/range {p0 .. p0}, Lcom/android/server/enterprise/container/KnoxMUMContainerPolicy$MumXmlDataParser;->isBrowserInstalled()Z
-
-    move-result v40
-
-    if-eqz v40, :cond_80
-
-    :cond_7f
-    :goto_6
     if-eqz v19, :cond_0
 
     move-object/from16 v0, v39
@@ -4856,22 +4829,7 @@
 
     goto/16 :goto_1
 
-    :cond_80
-    move-object/from16 v0, p0
-
-    move-object/from16 v1, v34
-
-    invoke-direct {v0, v1}, Lcom/android/server/enterprise/container/KnoxMUMContainerPolicy$MumXmlDataParser;->isLwcContainerType(Lcom/samsung/android/knox/container/KnoxConfigurationType;)Z
-
-    move-result v40
-
-    if-nez v40, :cond_7f
-
-    const/16 v19, 0x0
-
-    goto :goto_6
-
-    :cond_81
+    :cond_7e
     const-string/jumbo v40, "fotadisablePkg"
 
     move-object/from16 v0, v40
@@ -4882,7 +4840,7 @@
 
     move-result v40
 
-    if-eqz v40, :cond_83
+    if-eqz v40, :cond_80
 
     if-eqz v4, :cond_0
 
@@ -4934,7 +4892,7 @@
 
     move-result-object v32
 
-    if-eqz v32, :cond_82
+    if-eqz v32, :cond_7f
 
     const-string/jumbo v40, "true"
 
@@ -4946,7 +4904,7 @@
 
     move-result v40
 
-    if-eqz v40, :cond_82
+    if-eqz v40, :cond_7f
 
     move-object/from16 v0, v39
 
@@ -4954,14 +4912,14 @@
 
     goto/16 :goto_1
 
-    :cond_82
+    :cond_7f
     move-object/from16 v0, v39
 
     invoke-interface {v4, v0}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
     goto/16 :goto_1
 
-    :cond_83
+    :cond_80
     const-string/jumbo v40, "knoxCore"
 
     move-object/from16 v0, v40
@@ -5001,22 +4959,22 @@
 
     move-result v40
 
-    if-eqz v40, :cond_96
+    if-eqz v40, :cond_93
 
-    if-eqz v34, :cond_96
+    if-eqz v34, :cond_93
 
-    if-eqz v6, :cond_85
+    if-eqz v6, :cond_82
 
     const/4 v15, 0x0
 
-    :goto_7
+    :goto_6
     invoke-interface {v6}, Ljava/util/List;->size()I
 
     move-result v40
 
     move/from16 v0, v40
 
-    if-ge v15, v0, :cond_85
+    if-ge v15, v0, :cond_82
 
     invoke-interface {v6, v15}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
@@ -5030,96 +4988,96 @@
 
     move-result v40
 
-    if-eqz v40, :cond_84
+    if-eqz v40, :cond_81
 
     invoke-interface {v6, v15}, Ljava/util/List;->remove(I)Ljava/lang/Object;
 
-    :cond_84
+    :cond_81
     add-int/lit8 v15, v15, 0x1
 
-    goto :goto_7
+    goto :goto_6
 
-    :cond_85
-    if-eqz v27, :cond_86
+    :cond_82
+    if-eqz v27, :cond_83
 
     invoke-interface/range {v27 .. v27}, Ljava/util/List;->isEmpty()Z
+
+    move-result v40
+
+    if-eqz v40, :cond_8b
+
+    :cond_83
+    :goto_7
+    if-eqz v13, :cond_84
+
+    invoke-interface {v13}, Ljava/util/List;->isEmpty()Z
+
+    move-result v40
+
+    if-eqz v40, :cond_8c
+
+    :cond_84
+    :goto_8
+    if-eqz v6, :cond_85
+
+    invoke-interface {v6}, Ljava/util/List;->isEmpty()Z
+
+    move-result v40
+
+    if-eqz v40, :cond_8d
+
+    :cond_85
+    :goto_9
+    if-eqz v7, :cond_86
+
+    invoke-interface {v7}, Ljava/util/List;->isEmpty()Z
 
     move-result v40
 
     if-eqz v40, :cond_8e
 
     :cond_86
-    :goto_8
-    if-eqz v13, :cond_87
+    :goto_a
+    if-eqz v31, :cond_87
 
-    invoke-interface {v13}, Ljava/util/List;->isEmpty()Z
+    invoke-interface/range {v31 .. v31}, Ljava/util/List;->isEmpty()Z
 
     move-result v40
 
     if-eqz v40, :cond_8f
 
     :cond_87
-    :goto_9
-    if-eqz v6, :cond_88
+    :goto_b
+    if-eqz v14, :cond_88
 
-    invoke-interface {v6}, Ljava/util/List;->isEmpty()Z
+    invoke-interface {v14}, Ljava/util/List;->isEmpty()Z
 
     move-result v40
 
     if-eqz v40, :cond_90
 
     :cond_88
-    :goto_a
-    if-eqz v7, :cond_89
+    :goto_c
+    if-eqz v4, :cond_89
 
-    invoke-interface {v7}, Ljava/util/List;->isEmpty()Z
+    invoke-interface {v4}, Ljava/util/List;->isEmpty()Z
 
     move-result v40
 
     if-eqz v40, :cond_91
 
     :cond_89
-    :goto_b
-    if-eqz v31, :cond_8a
+    :goto_d
+    if-eqz v5, :cond_8a
 
-    invoke-interface/range {v31 .. v31}, Ljava/util/List;->isEmpty()Z
+    invoke-interface {v5}, Ljava/util/List;->isEmpty()Z
 
     move-result v40
 
     if-eqz v40, :cond_92
 
     :cond_8a
-    :goto_c
-    if-eqz v14, :cond_8b
-
-    invoke-interface {v14}, Ljava/util/List;->isEmpty()Z
-
-    move-result v40
-
-    if-eqz v40, :cond_93
-
-    :cond_8b
-    :goto_d
-    if-eqz v4, :cond_8c
-
-    invoke-interface {v4}, Ljava/util/List;->isEmpty()Z
-
-    move-result v40
-
-    if-eqz v40, :cond_94
-
-    :cond_8c
     :goto_e
-    if-eqz v5, :cond_8d
-
-    invoke-interface {v5}, Ljava/util/List;->isEmpty()Z
-
-    move-result v40
-
-    if-eqz v40, :cond_95
-
-    :cond_8d
-    :goto_f
     invoke-virtual/range {v34 .. v34}, Lcom/samsung/android/knox/container/KnoxConfigurationType;->dumpState()V
 
     const/16 v27, 0x0
@@ -5156,67 +5114,67 @@
 
     goto/16 :goto_1
 
-    :cond_8e
+    :cond_8b
     move-object/from16 v0, v34
 
     move-object/from16 v1, v27
 
     invoke-virtual {v0, v1}, Lcom/samsung/android/knox/container/KnoxConfigurationType;->setPersonaList(Ljava/util/List;)V
 
-    goto :goto_8
+    goto :goto_7
 
-    :cond_8f
+    :cond_8c
     move-object/from16 v0, v34
 
     invoke-virtual {v0, v13}, Lcom/samsung/android/knox/container/KnoxConfigurationType;->setForbiddenStrings(Ljava/util/List;)V
 
-    goto :goto_9
+    goto :goto_8
 
-    :cond_90
+    :cond_8d
     move-object/from16 v0, v34
 
     invoke-virtual {v0, v6}, Lcom/samsung/android/knox/container/KnoxConfigurationType;->setAppInstallationList(Ljava/util/List;)V
 
-    goto :goto_a
+    goto :goto_9
 
-    :cond_91
+    :cond_8e
     move-object/from16 v0, v34
 
     invoke-virtual {v0, v7}, Lcom/samsung/android/knox/container/KnoxConfigurationType;->setAppRemoveList(Ljava/util/List;)V
 
-    goto :goto_b
+    goto :goto_a
 
-    :cond_92
+    :cond_8f
     move-object/from16 v0, v34
 
     move-object/from16 v1, v31
 
     invoke-virtual {v0, v1}, Lcom/samsung/android/knox/container/KnoxConfigurationType;->setProtectedPackageList(Ljava/util/List;)V
 
-    goto :goto_c
+    goto :goto_b
 
-    :cond_93
+    :cond_90
     move-object/from16 v0, v34
 
     invoke-virtual {v0, v14}, Lcom/samsung/android/knox/container/KnoxConfigurationType;->setGoogleAppsList(Ljava/util/List;)V
 
-    goto :goto_d
+    goto :goto_c
 
-    :cond_94
+    :cond_91
     move-object/from16 v0, v34
 
     invoke-virtual {v0, v4}, Lcom/samsung/android/knox/container/KnoxConfigurationType;->setFOTADisableList(Ljava/util/List;)V
 
-    goto :goto_e
+    goto :goto_d
 
-    :cond_95
+    :cond_92
     move-object/from16 v0, v34
 
     invoke-virtual {v0, v5}, Lcom/samsung/android/knox/container/KnoxConfigurationType;->setFOTAReenableList(Ljava/util/List;)V
 
-    goto :goto_f
+    goto :goto_e
 
-    :cond_96
+    :cond_93
     const-string/jumbo v40, "provider"
 
     move-object/from16 v0, v40
@@ -5227,7 +5185,7 @@
 
     move-result v40
 
-    if-eqz v40, :cond_99
+    if-eqz v40, :cond_96
 
     if-eqz v21, :cond_0
 
@@ -5249,12 +5207,12 @@
 
     move-result-object v25
 
-    :goto_10
+    :goto_f
     invoke-interface/range {v25 .. v25}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v40
 
-    if-eqz v40, :cond_98
+    if-eqz v40, :cond_95
 
     invoke-interface/range {v25 .. v25}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -5262,7 +5220,7 @@
 
     check-cast v24, Landroid/util/Pair;
 
-    if-eqz v20, :cond_97
+    if-eqz v20, :cond_94
 
     move-object/from16 v0, v24
 
@@ -5290,9 +5248,9 @@
 
     invoke-virtual {v0, v1, v2, v3}, Lcom/samsung/android/knox/container/KnoxConfigurationType;->setDataSyncPolicy(Ljava/util/List;Ljava/lang/String;Ljava/lang/String;)V
 
-    goto :goto_10
+    goto :goto_f
 
-    :cond_97
+    :cond_94
     move-object/from16 v0, v24
 
     iget-object v0, v0, Landroid/util/Pair;->second:Ljava/lang/Object;
@@ -5321,16 +5279,16 @@
 
     invoke-virtual {v0, v1, v2, v9}, Lcom/samsung/android/knox/container/KnoxConfigurationType;->setAllowChangeDataSyncPolicy(Ljava/util/List;Ljava/lang/String;Z)V
 
-    goto :goto_10
+    goto :goto_f
 
-    :cond_98
+    :cond_95
     invoke-interface/range {v21 .. v21}, Ljava/util/List;->clear()V
 
     const/16 v26, 0x0
 
     goto/16 :goto_1
 
-    :cond_99
+    :cond_96
     const-string/jumbo v40, "package"
 
     move-object/from16 v0, v40
@@ -5341,7 +5299,7 @@
 
     move-result v40
 
-    if-eqz v40, :cond_9b
+    if-eqz v40, :cond_98
 
     if-eqz v21, :cond_0
 
@@ -5363,12 +5321,12 @@
 
     move-result-object v25
 
-    :goto_11
+    :goto_10
     invoke-interface/range {v25 .. v25}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v40
 
-    if-eqz v40, :cond_9a
+    if-eqz v40, :cond_97
 
     invoke-interface/range {v25 .. v25}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -5402,16 +5360,16 @@
 
     invoke-virtual {v0, v1, v2, v3}, Lcom/samsung/android/knox/container/KnoxConfigurationType;->setNotificationSyncPolicy(Ljava/util/List;Ljava/lang/String;Ljava/lang/String;)V
 
-    goto :goto_11
+    goto :goto_10
 
-    :cond_9a
+    :cond_97
     invoke-interface/range {v21 .. v21}, Ljava/util/List;->clear()V
 
     const/16 v26, 0x0
 
     goto/16 :goto_1
 
-    :cond_9b
+    :cond_98
     const-string/jumbo v40, "knoxCore"
 
     move-object/from16 v0, v40
@@ -5422,18 +5380,18 @@
 
     move-result v40
 
-    if-eqz v40, :cond_9f
+    if-eqz v40, :cond_9c
 
-    if-eqz v28, :cond_9c
+    if-eqz v28, :cond_99
 
     invoke-interface/range {v28 .. v28}, Ljava/util/List;->isEmpty()Z
 
     move-result v40
 
-    if-eqz v40, :cond_9e
+    if-eqz v40, :cond_9b
 
-    :cond_9c
-    :goto_12
+    :cond_99
+    :goto_11
     const/16 v28, 0x0
 
     move-object/from16 v0, p0
@@ -5446,8 +5404,8 @@
 
     move-result-object v38
 
-    :cond_9d
-    :goto_13
+    :cond_9a
+    :goto_12
     invoke-interface/range {v38 .. v38}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v40
@@ -5466,7 +5424,7 @@
 
     move/from16 v40, v0
 
-    if-nez v40, :cond_9d
+    if-nez v40, :cond_9a
 
     invoke-virtual/range {v37 .. v37}, Lcom/samsung/android/knox/container/KnoxConfigurationType;->getAppInstallationList()Ljava/util/List;
 
@@ -5478,14 +5436,14 @@
 
     invoke-interface/range {v40 .. v41}, Ljava/util/List;->addAll(Ljava/util/Collection;)Z
 
-    goto :goto_13
-
-    :cond_9e
-    invoke-static/range {v28 .. v28}, Lcom/android/server/enterprise/container/KnoxMUMContainerPolicy;->-set0(Ljava/util/List;)Ljava/util/List;
-
     goto :goto_12
 
-    :cond_9f
+    :cond_9b
+    invoke-static/range {v28 .. v28}, Lcom/android/server/enterprise/container/KnoxMUMContainerPolicy;->-set0(Ljava/util/List;)Ljava/util/List;
+
+    goto :goto_11
+
+    :cond_9c
     const-string/jumbo v40, "BadgePolicy"
 
     move-object/from16 v0, v40
@@ -9368,7 +9326,7 @@
 
     move-result-object v21
 
-    invoke-static/range {v21 .. v21}, Lcom/android/server/enterprise/container/KnoxMUMContainerPolicy;->-wrap9(Ljava/util/List;)Ljava/util/List;
+    invoke-static/range {v21 .. v21}, Lcom/android/server/enterprise/container/KnoxMUMContainerPolicy;->-wrap8(Ljava/util/List;)Ljava/util/List;
 
     move-result-object v21
 
@@ -9468,7 +9426,7 @@
 
     move-result-object v35
 
-    invoke-static/range {v35 .. v35}, Lcom/android/server/enterprise/container/KnoxMUMContainerPolicy;->-wrap9(Ljava/util/List;)Ljava/util/List;
+    invoke-static/range {v35 .. v35}, Lcom/android/server/enterprise/container/KnoxMUMContainerPolicy;->-wrap8(Ljava/util/List;)Ljava/util/List;
 
     move-result-object v35
 
@@ -9569,7 +9527,7 @@
 
     move-result-object v21
 
-    invoke-static/range {v21 .. v21}, Lcom/android/server/enterprise/container/KnoxMUMContainerPolicy;->-wrap9(Ljava/util/List;)Ljava/util/List;
+    invoke-static/range {v21 .. v21}, Lcom/android/server/enterprise/container/KnoxMUMContainerPolicy;->-wrap8(Ljava/util/List;)Ljava/util/List;
 
     move-result-object v21
 
@@ -9684,7 +9642,7 @@
 
     move-result-object v21
 
-    invoke-static/range {v21 .. v21}, Lcom/android/server/enterprise/container/KnoxMUMContainerPolicy;->-wrap9(Ljava/util/List;)Ljava/util/List;
+    invoke-static/range {v21 .. v21}, Lcom/android/server/enterprise/container/KnoxMUMContainerPolicy;->-wrap8(Ljava/util/List;)Ljava/util/List;
 
     move-result-object v21
 
@@ -9797,7 +9755,7 @@
 
     move-result-object v21
 
-    invoke-static/range {v21 .. v21}, Lcom/android/server/enterprise/container/KnoxMUMContainerPolicy;->-wrap9(Ljava/util/List;)Ljava/util/List;
+    invoke-static/range {v21 .. v21}, Lcom/android/server/enterprise/container/KnoxMUMContainerPolicy;->-wrap8(Ljava/util/List;)Ljava/util/List;
 
     move-result-object v21
 
@@ -9897,7 +9855,7 @@
 
     move-result-object v32
 
-    invoke-static/range {v32 .. v32}, Lcom/android/server/enterprise/container/KnoxMUMContainerPolicy;->-wrap9(Ljava/util/List;)Ljava/util/List;
+    invoke-static/range {v32 .. v32}, Lcom/android/server/enterprise/container/KnoxMUMContainerPolicy;->-wrap8(Ljava/util/List;)Ljava/util/List;
 
     move-result-object v32
 

@@ -6201,9 +6201,9 @@
 
     :cond_b
     :goto_11
-    if-nez v14, :cond_c
+    if-nez v23, :cond_c
 
-    if-eqz v16, :cond_d
+    if-eqz v24, :cond_d
 
     :cond_c
     invoke-virtual/range {p0 .. p0}, Lcom/android/server/notification/NotificationManagerService;->getContext()Landroid/content/Context;

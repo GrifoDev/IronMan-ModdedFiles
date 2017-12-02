@@ -666,7 +666,7 @@
 
     instance-of v0, p1, Landroid/view/MotionEvent;
 
-    if-eqz v0, :cond_4
+    if-eqz v0, :cond_5
 
     const/16 v0, 0x2002
 
@@ -698,7 +698,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_6
+    if-eqz v0, :cond_7
 
     check-cast p1, Landroid/view/MotionEvent;
 
@@ -708,20 +708,27 @@
 
     const/4 v1, 0x2
 
-    if-ne v0, v1, :cond_2
+    if-ne v0, v1, :cond_3
 
     iget v0, p0, Lcom/android/server/accessibility/AccessibilityInputFilter;->mEnabledFeatures:I
 
     and-int/lit8 v0, v0, 0x2
 
-    if-eqz v0, :cond_2
+    if-nez v0, :cond_2
 
-    return-object v2
+    iget v0, p0, Lcom/android/server/accessibility/AccessibilityInputFilter;->mEnabledFeatures:I
+
+    and-int/lit8 v0, v0, 0x1
+
+    if-eqz v0, :cond_3
 
     :cond_2
+    return-object v2
+
+    :cond_3
     iget-object v0, p0, Lcom/android/server/accessibility/AccessibilityInputFilter;->mTouchScreenStreamState:Lcom/android/server/accessibility/AccessibilityInputFilter$EventStreamState;
 
-    if-nez v0, :cond_3
+    if-nez v0, :cond_4
 
     new-instance v0, Lcom/android/server/accessibility/AccessibilityInputFilter$TouchScreenEventStreamState;
 
@@ -729,15 +736,15 @@
 
     iput-object v0, p0, Lcom/android/server/accessibility/AccessibilityInputFilter;->mTouchScreenStreamState:Lcom/android/server/accessibility/AccessibilityInputFilter$EventStreamState;
 
-    :cond_3
+    :cond_4
     iget-object v0, p0, Lcom/android/server/accessibility/AccessibilityInputFilter;->mTouchScreenStreamState:Lcom/android/server/accessibility/AccessibilityInputFilter$EventStreamState;
 
     return-object v0
 
-    :cond_4
+    :cond_5
     instance-of v0, p1, Landroid/view/KeyEvent;
 
-    if-eqz v0, :cond_6
+    if-eqz v0, :cond_7
 
     const/16 v0, 0x101
 
@@ -745,11 +752,11 @@
 
     move-result v0
 
-    if-eqz v0, :cond_6
+    if-eqz v0, :cond_7
 
     iget-object v0, p0, Lcom/android/server/accessibility/AccessibilityInputFilter;->mKeyboardStreamState:Lcom/android/server/accessibility/AccessibilityInputFilter$EventStreamState;
 
-    if-nez v0, :cond_5
+    if-nez v0, :cond_6
 
     new-instance v0, Lcom/android/server/accessibility/AccessibilityInputFilter$KeyboardEventStreamState;
 
@@ -757,12 +764,12 @@
 
     iput-object v0, p0, Lcom/android/server/accessibility/AccessibilityInputFilter;->mKeyboardStreamState:Lcom/android/server/accessibility/AccessibilityInputFilter$EventStreamState;
 
-    :cond_5
+    :cond_6
     iget-object v0, p0, Lcom/android/server/accessibility/AccessibilityInputFilter;->mKeyboardStreamState:Lcom/android/server/accessibility/AccessibilityInputFilter$EventStreamState;
 
     return-object v0
 
-    :cond_6
+    :cond_7
     return-object v2
 .end method
 

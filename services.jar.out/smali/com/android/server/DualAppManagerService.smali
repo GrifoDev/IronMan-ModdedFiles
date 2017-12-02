@@ -39,6 +39,10 @@
 
 .field private static final COMMAND_STRING:Ljava/lang/String; = "command"
 
+.field private static final DAAGENT_EMPTY_CLASS:Ljava/lang/String; = "com.samsung.android.da.daagent.activity.EmptyActivity"
+
+.field private static final DAAGENT_FORWARD_SHARE_CLASS:Ljava/lang/String; = "com.samsung.android.da.daagent.activity.ForwardShareActivity"
+
 .field private static final DAAGENT_PACKAGE_NAME:Ljava/lang/String; = "com.samsung.android.da.daagent"
 
 .field private static final DAAGENT_REMOVE_CLASS_NAME:Ljava/lang/String; = "com.samsung.android.da.daagent.RemoveDualIM"
@@ -82,6 +86,8 @@
 .field private static final RESULT_DESC_FAIL:Ljava/lang/String; = "fail"
 
 .field private static final RESULT_DESC_SUCCESS:Ljava/lang/String; = "success"
+
+.field private static final SAMSUNG_PAY_PACKAGE_NAME:Ljava/lang/String; = "com.samsung.android.spay"
 
 .field private static final SETTINGS_PACKAGE_NAME:Ljava/lang/String; = "com.android.settings"
 
@@ -208,7 +214,7 @@
 
     sput-object v0, Lcom/android/server/DualAppManagerService;->DEFAULT_PACKAGES_NOT_FORWARDING:[Ljava/lang/String;
 
-    const/4 v0, 0x5
+    const/4 v0, 0x7
 
     new-array v0, v0, [Ljava/lang/String;
 
@@ -231,6 +237,18 @@
     const-string/jumbo v1, "com.sec.android.provider.badge"
 
     const/4 v2, 0x4
+
+    aput-object v1, v0, v2
+
+    const-string/jumbo v1, "com.bst.floatingmsgproxy"
+
+    const/4 v2, 0x5
+
+    aput-object v1, v0, v2
+
+    const-string/jumbo v1, "com.bst.airmessage"
+
+    const/4 v2, 0x6
 
     aput-object v1, v0, v2
 
@@ -1366,6 +1384,335 @@
     return v2
 .end method
 
+.method static hasExternalAppDirPath(Landroid/content/Intent;Ljava/lang/String;)Z
+    .locals 10
+
+    const/4 v9, 0x1
+
+    new-instance v7, Ljava/lang/StringBuilder;
+
+    invoke-direct {v7}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string/jumbo v8, "/storage/emulated/0/Android/data/"
+
+    invoke-virtual {v7, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v7
+
+    invoke-virtual {v7, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v7
+
+    invoke-virtual {v7}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    const-string/jumbo v7, "android.intent.action.SEND_MULTIPLE"
+
+    invoke-virtual {p0}, Landroid/content/Intent;->getAction()Ljava/lang/String;
+
+    move-result-object v8
+
+    invoke-virtual {v7, v8}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v7
+
+    if-eqz v7, :cond_4
+
+    invoke-virtual {p0}, Landroid/content/Intent;->getClipData()Landroid/content/ClipData;
+
+    move-result-object v1
+
+    if-eqz v1, :cond_1
+
+    new-instance v6, Ljava/util/ArrayList;
+
+    invoke-direct {v6}, Ljava/util/ArrayList;-><init>()V
+
+    invoke-virtual {v1, v6}, Landroid/content/ClipData;->collectUris(Ljava/util/List;)V
+
+    invoke-interface {v6}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
+
+    move-result-object v4
+
+    :cond_0
+    invoke-interface {v4}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v7
+
+    if-eqz v7, :cond_1
+
+    invoke-interface {v4}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v3
+
+    check-cast v3, Landroid/net/Uri;
+
+    if-eqz v3, :cond_0
+
+    const-string/jumbo v7, "file"
+
+    invoke-virtual {v3}, Landroid/net/Uri;->getScheme()Ljava/lang/String;
+
+    move-result-object v8
+
+    invoke-virtual {v7, v8}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v7
+
+    if-eqz v7, :cond_0
+
+    invoke-virtual {v3}, Landroid/net/Uri;->getPath()Ljava/lang/String;
+
+    move-result-object v2
+
+    if-eqz v2, :cond_0
+
+    invoke-virtual {v2, v0}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
+
+    move-result v7
+
+    if-eqz v7, :cond_0
+
+    return v9
+
+    :cond_1
+    invoke-virtual {p0}, Landroid/content/Intent;->getData()Landroid/net/Uri;
+
+    move-result-object v3
+
+    if-eqz v3, :cond_2
+
+    const-string/jumbo v7, "file"
+
+    invoke-virtual {v3}, Landroid/net/Uri;->getScheme()Ljava/lang/String;
+
+    move-result-object v8
+
+    invoke-virtual {v7, v8}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v7
+
+    if-eqz v7, :cond_2
+
+    invoke-virtual {v3}, Landroid/net/Uri;->getPath()Ljava/lang/String;
+
+    move-result-object v2
+
+    if-eqz v2, :cond_2
+
+    invoke-virtual {v2, v0}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
+
+    move-result v7
+
+    if-eqz v7, :cond_2
+
+    return v9
+
+    :cond_2
+    const-string/jumbo v7, "android.intent.extra.STREAM"
+
+    invoke-virtual {p0, v7}, Landroid/content/Intent;->getParcelableArrayListExtra(Ljava/lang/String;)Ljava/util/ArrayList;
+
+    move-result-object v5
+
+    if-eqz v5, :cond_8
+
+    invoke-interface {v5}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
+
+    move-result-object v4
+
+    :cond_3
+    invoke-interface {v4}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v7
+
+    if-eqz v7, :cond_8
+
+    invoke-interface {v4}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v3
+
+    check-cast v3, Landroid/net/Uri;
+
+    if-eqz v3, :cond_3
+
+    const-string/jumbo v7, "file"
+
+    invoke-virtual {v3}, Landroid/net/Uri;->getScheme()Ljava/lang/String;
+
+    move-result-object v8
+
+    invoke-virtual {v7, v8}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v7
+
+    if-eqz v7, :cond_3
+
+    invoke-virtual {v3}, Landroid/net/Uri;->getPath()Ljava/lang/String;
+
+    move-result-object v2
+
+    if-eqz v2, :cond_3
+
+    invoke-virtual {v2, v0}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
+
+    move-result v7
+
+    if-eqz v7, :cond_3
+
+    return v9
+
+    :cond_4
+    const-string/jumbo v7, "android.intent.action.SEND"
+
+    invoke-virtual {p0}, Landroid/content/Intent;->getAction()Ljava/lang/String;
+
+    move-result-object v8
+
+    invoke-virtual {v7, v8}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v7
+
+    if-eqz v7, :cond_8
+
+    invoke-virtual {p0}, Landroid/content/Intent;->getClipData()Landroid/content/ClipData;
+
+    move-result-object v1
+
+    if-eqz v1, :cond_6
+
+    new-instance v6, Ljava/util/ArrayList;
+
+    invoke-direct {v6}, Ljava/util/ArrayList;-><init>()V
+
+    invoke-virtual {v1, v6}, Landroid/content/ClipData;->collectUris(Ljava/util/List;)V
+
+    invoke-interface {v6}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
+
+    move-result-object v4
+
+    :cond_5
+    invoke-interface {v4}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v7
+
+    if-eqz v7, :cond_6
+
+    invoke-interface {v4}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v3
+
+    check-cast v3, Landroid/net/Uri;
+
+    if-eqz v3, :cond_5
+
+    const-string/jumbo v7, "file"
+
+    invoke-virtual {v3}, Landroid/net/Uri;->getScheme()Ljava/lang/String;
+
+    move-result-object v8
+
+    invoke-virtual {v7, v8}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v7
+
+    if-eqz v7, :cond_5
+
+    invoke-virtual {v3}, Landroid/net/Uri;->getPath()Ljava/lang/String;
+
+    move-result-object v2
+
+    if-eqz v2, :cond_5
+
+    invoke-virtual {v2, v0}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
+
+    move-result v7
+
+    if-eqz v7, :cond_5
+
+    return v9
+
+    :cond_6
+    invoke-virtual {p0}, Landroid/content/Intent;->getData()Landroid/net/Uri;
+
+    move-result-object v3
+
+    if-eqz v3, :cond_7
+
+    const-string/jumbo v7, "file"
+
+    invoke-virtual {v3}, Landroid/net/Uri;->getScheme()Ljava/lang/String;
+
+    move-result-object v8
+
+    invoke-virtual {v7, v8}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v7
+
+    if-eqz v7, :cond_7
+
+    invoke-virtual {v3}, Landroid/net/Uri;->getPath()Ljava/lang/String;
+
+    move-result-object v2
+
+    if-eqz v2, :cond_7
+
+    invoke-virtual {v2, v0}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
+
+    move-result v7
+
+    if-eqz v7, :cond_7
+
+    return v9
+
+    :cond_7
+    invoke-virtual {p0}, Landroid/content/Intent;->getExtras()Landroid/os/Bundle;
+
+    move-result-object v7
+
+    const-string/jumbo v8, "android.intent.extra.STREAM"
+
+    invoke-virtual {v7, v8}, Landroid/os/Bundle;->getParcelable(Ljava/lang/String;)Landroid/os/Parcelable;
+
+    move-result-object v3
+
+    check-cast v3, Landroid/net/Uri;
+
+    if-eqz v3, :cond_8
+
+    const-string/jumbo v7, "file"
+
+    invoke-virtual {v3}, Landroid/net/Uri;->getScheme()Ljava/lang/String;
+
+    move-result-object v8
+
+    invoke-virtual {v7, v8}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v7
+
+    if-eqz v7, :cond_8
+
+    invoke-virtual {v3}, Landroid/net/Uri;->getPath()Ljava/lang/String;
+
+    move-result-object v2
+
+    if-eqz v2, :cond_8
+
+    invoke-virtual {v2, v0}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
+
+    move-result v7
+
+    if-eqz v7, :cond_8
+
+    return v9
+
+    :cond_8
+    const/4 v7, 0x0
+
+    return v7
+.end method
+
 .method public static isDefalutAppPackage(Ljava/lang/String;)Z
     .locals 6
 
@@ -1727,6 +2074,186 @@
     const/4 v0, 0x1
 
     return v0
+.end method
+
+.method public static mayForwardShare(Landroid/content/Intent;Ljava/lang/String;II)Z
+    .locals 8
+
+    const/4 v7, 0x1
+
+    const/4 v6, 0x0
+
+    invoke-static {p1}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
+
+    move-result v4
+
+    if-eqz v4, :cond_0
+
+    return v6
+
+    :cond_0
+    :try_start_0
+    invoke-static {p3}, Lcom/samsung/android/app/SemDualAppManager;->isDualAppId(I)Z
+
+    move-result v4
+
+    if-eqz v4, :cond_6
+
+    move-object v2, p0
+
+    if-eqz p0, :cond_1
+
+    const-string/jumbo v4, "android.intent.action.CHOOSER"
+
+    invoke-virtual {p0}, Landroid/content/Intent;->getAction()Ljava/lang/String;
+
+    move-result-object v5
+
+    invoke-virtual {v4, v5}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v4
+
+    if-eqz v4, :cond_1
+
+    invoke-virtual {p0}, Landroid/content/Intent;->getExtras()Landroid/os/Bundle;
+
+    move-result-object v4
+
+    const-string/jumbo v5, "android.intent.extra.INTENT"
+
+    invoke-virtual {v4, v5}, Landroid/os/Bundle;->getParcelable(Ljava/lang/String;)Landroid/os/Parcelable;
+
+    move-result-object v2
+
+    check-cast v2, Landroid/content/Intent;
+
+    :cond_1
+    if-nez v2, :cond_2
+
+    return v6
+
+    :cond_2
+    invoke-virtual {v2}, Landroid/content/Intent;->getComponent()Landroid/content/ComponentName;
+
+    move-result-object v4
+
+    if-eqz v4, :cond_3
+
+    return v6
+
+    :cond_3
+    invoke-virtual {v2}, Landroid/content/Intent;->getPackage()Ljava/lang/String;
+
+    move-result-object v4
+
+    if-eqz v4, :cond_4
+
+    return v6
+
+    :cond_4
+    const-string/jumbo v4, "com.samsung.android.da.daagent"
+
+    invoke-virtual {v4, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v4
+
+    if-eqz v4, :cond_5
+
+    return v6
+
+    :cond_5
+    invoke-static {v2, p1}, Lcom/android/server/DualAppManagerService;->hasExternalAppDirPath(Landroid/content/Intent;Ljava/lang/String;)Z
+
+    move-result v4
+
+    if-eqz v4, :cond_9
+
+    const-string/jumbo v4, "com.samsung.android.da.daagent"
+
+    const-string/jumbo v5, "com.samsung.android.da.daagent.activity.ForwardShareActivity"
+
+    invoke-virtual {p0, v4, v5}, Landroid/content/Intent;->setClassName(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
+
+    return v7
+
+    :cond_6
+    if-nez p3, :cond_9
+
+    invoke-virtual {p0}, Landroid/content/Intent;->getPackage()Ljava/lang/String;
+
+    move-result-object v3
+
+    if-nez v3, :cond_7
+
+    invoke-virtual {p0}, Landroid/content/Intent;->getComponent()Landroid/content/ComponentName;
+
+    move-result-object v0
+
+    if-eqz v0, :cond_7
+
+    invoke-virtual {v0}, Landroid/content/ComponentName;->getPackageName()Ljava/lang/String;
+
+    move-result-object v3
+
+    :cond_7
+    const-string/jumbo v4, "com.samsung.android.da.daagent"
+
+    invoke-virtual {v4, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v4
+
+    if-eqz v4, :cond_8
+
+    return v6
+
+    :cond_8
+    invoke-static {p2}, Lcom/samsung/android/app/SemDualAppManager;->isDualAppId(I)Z
+
+    move-result v4
+
+    if-eqz v4, :cond_9
+
+    invoke-virtual {p1, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v4
+
+    if-eqz v4, :cond_9
+
+    invoke-static {p0, p1}, Lcom/android/server/DualAppManagerService;->hasExternalAppDirPath(Landroid/content/Intent;Ljava/lang/String;)Z
+
+    move-result v4
+
+    if-eqz v4, :cond_9
+
+    const-string/jumbo v5, "android.intent.extra.INTENT"
+
+    invoke-virtual {p0}, Landroid/content/Intent;->clone()Ljava/lang/Object;
+
+    move-result-object v4
+
+    check-cast v4, Landroid/os/Parcelable;
+
+    invoke-virtual {p0, v5, v4}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Landroid/os/Parcelable;)Landroid/content/Intent;
+
+    const-string/jumbo v4, "com.samsung.android.da.daagent.FORWARD_SHARE_FROM_OWNER"
+
+    invoke-virtual {p0, v4}, Landroid/content/Intent;->setAction(Ljava/lang/String;)Landroid/content/Intent;
+
+    const-string/jumbo v4, "com.samsung.android.da.daagent"
+
+    const-string/jumbo v5, "com.samsung.android.da.daagent.activity.ForwardShareActivity"
+
+    invoke-virtual {p0, v4, v5}, Landroid/content/Intent;->setClassName(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
+
+    return v7
+
+    :catch_0
+    move-exception v1
+
+    :cond_9
+    return v6
 .end method
 
 .method public static notifyActivityDrawn(IZI)V
@@ -2450,455 +2977,500 @@
 .end method
 
 .method public static startDAChooserActivity(Landroid/content/Intent;IILjava/lang/String;)Landroid/content/Intent;
-    .locals 11
+    .locals 12
 
-    const/16 v9, 0x3e8
+    const/16 v10, 0x3e8
 
-    const/4 v10, 0x0
+    const/4 v11, 0x0
 
+    const-string/jumbo v8, "com.bst.floatingmsgproxy"
+
+    invoke-virtual {v8, p3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v8
+
+    if-nez v8, :cond_0
+
+    const-string/jumbo v8, "com.bst.airmessage"
+
+    invoke-virtual {v8, p3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v8
+
+    if-nez v8, :cond_0
+
+    const-string/jumbo v8, "com.samsung.android.da.daagent"
+
+    invoke-virtual {v8, p3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v8
+
+    if-nez v8, :cond_0
+
+    const-string/jumbo v8, "com.samsung.android.spay"
+
+    invoke-virtual {v8, p3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v8
+
+    if-eqz v8, :cond_1
+
+    :cond_0
+    return-object v11
+
+    :cond_1
     :try_start_0
     invoke-static {p1}, Lcom/samsung/android/app/SemDualAppManager;->isDualAppId(I)Z
 
-    move-result v5
+    move-result v6
 
-    const/4 v6, 0x0
+    const/4 v7, 0x0
 
     const/4 v1, 0x0
 
-    const-string/jumbo v7, "android.intent.action.SEND"
+    new-instance v2, Landroid/content/ComponentName;
 
-    invoke-virtual {p0}, Landroid/content/Intent;->getAction()Ljava/lang/String;
+    const-string/jumbo v8, "com.samsung.android.da.daagent"
 
-    move-result-object v8
+    const-string/jumbo v9, "com.samsung.android.da.daagent.activity.ForwardShareActivity"
 
-    invoke-virtual {v7, v8}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-direct {v2, v8, v9}, Landroid/content/ComponentName;-><init>(Ljava/lang/String;Ljava/lang/String;)V
 
-    move-result v7
-
-    if-nez v7, :cond_0
-
-    const-string/jumbo v7, "android.intent.action.SEND_MULTIPLE"
-
-    invoke-virtual {p0}, Landroid/content/Intent;->getAction()Ljava/lang/String;
+    invoke-virtual {p0}, Landroid/content/Intent;->getComponent()Landroid/content/ComponentName;
 
     move-result-object v8
 
-    invoke-virtual {v7, v8}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v2, v8}, Landroid/content/ComponentName;->equals(Ljava/lang/Object;)Z
 
-    move-result v7
+    move-result v8
 
-    if-eqz v7, :cond_6
+    if-eqz v8, :cond_2
 
-    :cond_0
-    if-nez v5, :cond_1
+    const-string/jumbo v8, "com.samsung.android.da.daagent"
 
-    if-nez p1, :cond_6
+    const-string/jumbo v9, "com.samsung.android.da.daagent.activity.EmptyActivity"
 
-    :cond_1
+    invoke-virtual {p0, v8, v9}, Landroid/content/Intent;->setClassName(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
+
+    const-string/jumbo v8, "DualAppManagerService"
+
+    const-string/jumbo v9, "Invalid call to share"
+
+    invoke-static {v8, v9}, Landroid/util/secutil/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    return-object v11
+
+    :cond_2
+    if-eqz v6, :cond_3
+
+    invoke-static {p0, p3, p2, p1}, Lcom/android/server/DualAppManagerService;->mayForwardShare(Landroid/content/Intent;Ljava/lang/String;II)Z
+
+    move-result v8
+
+    if-eqz v8, :cond_3
+
+    return-object v11
+
+    :cond_3
+    const-string/jumbo v8, "android.intent.action.SEND"
+
+    invoke-virtual {p0}, Landroid/content/Intent;->getAction()Ljava/lang/String;
+
+    move-result-object v9
+
+    invoke-virtual {v8, v9}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v8
+
+    if-nez v8, :cond_4
+
+    const-string/jumbo v8, "android.intent.action.SEND_MULTIPLE"
+
+    invoke-virtual {p0}, Landroid/content/Intent;->getAction()Ljava/lang/String;
+
+    move-result-object v9
+
+    invoke-virtual {v8, v9}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v8
+
+    if-eqz v8, :cond_a
+
+    :cond_4
+    if-nez v6, :cond_5
+
+    if-nez p1, :cond_a
+
+    :cond_5
     const/4 v0, 0x0
 
     invoke-virtual {p0}, Landroid/content/Intent;->getComponent()Landroid/content/ComponentName;
 
-    move-result-object v7
+    move-result-object v8
 
-    if-eqz v7, :cond_4
+    if-eqz v8, :cond_8
 
     invoke-virtual {p0}, Landroid/content/Intent;->getComponent()Landroid/content/ComponentName;
 
-    move-result-object v7
+    move-result-object v8
 
-    invoke-virtual {v7}, Landroid/content/ComponentName;->getPackageName()Ljava/lang/String;
+    invoke-virtual {v8}, Landroid/content/ComponentName;->getPackageName()Ljava/lang/String;
 
     move-result-object v0
 
     :goto_0
-    if-eqz p3, :cond_2
+    if-eqz p3, :cond_6
 
-    if-eqz v0, :cond_2
+    if-eqz v0, :cond_6
 
     invoke-virtual {p3, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move-result v7
+    move-result v8
 
-    if-eqz v7, :cond_5
+    if-eqz v8, :cond_9
 
-    :cond_2
+    :cond_6
     :goto_1
-    if-eqz v6, :cond_d
+    if-eqz v7, :cond_12
 
-    new-instance v4, Ljava/util/ArrayList;
+    new-instance v5, Ljava/util/ArrayList;
 
-    invoke-direct {v4}, Ljava/util/ArrayList;-><init>()V
+    invoke-direct {v5}, Ljava/util/ArrayList;-><init>()V
 
-    if-eqz v5, :cond_3
+    if-eqz v6, :cond_7
 
     invoke-static {p0, p1}, Lcom/android/server/DualAppManagerService;->changeUriForDualApp(Landroid/content/Intent;I)V
 
-    :cond_3
-    invoke-interface {v4, p0}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+    :cond_7
+    invoke-interface {v5, p0}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    invoke-interface {v4}, Ljava/util/List;->size()I
+    invoke-interface {v5}, Ljava/util/List;->size()I
 
-    move-result v7
+    move-result v8
 
-    new-array v7, v7, [Landroid/content/Intent;
+    new-array v8, v8, [Landroid/content/Intent;
 
-    invoke-interface {v4, v7}, Ljava/util/List;->toArray([Ljava/lang/Object;)[Ljava/lang/Object;
+    invoke-interface {v5, v8}, Ljava/util/List;->toArray([Ljava/lang/Object;)[Ljava/lang/Object;
 
-    move-result-object v3
+    move-result-object v4
 
-    check-cast v3, [Landroid/content/Intent;
+    check-cast v4, [Landroid/content/Intent;
 
-    const-string/jumbo v7, "android.intent.extra.INITIAL_INTENTS"
+    const-string/jumbo v8, "android.intent.extra.INITIAL_INTENTS"
 
-    invoke-virtual {v1, v7, v3}, Landroid/content/Intent;->putExtra(Ljava/lang/String;[Landroid/os/Parcelable;)Landroid/content/Intent;
+    invoke-virtual {v1, v8, v4}, Landroid/content/Intent;->putExtra(Ljava/lang/String;[Landroid/os/Parcelable;)Landroid/content/Intent;
 
     return-object v1
 
-    :cond_4
+    :cond_8
     invoke-virtual {p0}, Landroid/content/Intent;->getPackage()Ljava/lang/String;
 
     move-result-object v0
 
     goto :goto_0
 
-    :cond_5
+    :cond_9
     invoke-static {v0}, Lcom/samsung/android/app/SemDualAppManager;->isInstalledWhitelistedPackage(Ljava/lang/String;)Z
 
-    move-result v7
+    move-result v8
 
-    if-eqz v7, :cond_2
+    if-eqz v8, :cond_6
 
-    new-instance v7, Landroid/content/Intent;
+    new-instance v8, Landroid/content/Intent;
 
-    invoke-direct {v7}, Landroid/content/Intent;-><init>()V
+    invoke-direct {v8}, Landroid/content/Intent;-><init>()V
 
-    sget-object v8, Lcom/android/server/DualAppManagerService;->mContext:Landroid/content/Context;
+    sget-object v9, Lcom/android/server/DualAppManagerService;->mContext:Landroid/content/Context;
 
-    const v9, 0x104082e
+    const v10, 0x104082e
 
-    invoke-virtual {v8, v9}, Landroid/content/Context;->getString(I)Ljava/lang/String;
+    invoke-virtual {v9, v10}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
-    move-result-object v8
+    move-result-object v9
 
-    invoke-static {v7, v8}, Landroid/content/Intent;->createChooser(Landroid/content/Intent;Ljava/lang/CharSequence;)Landroid/content/Intent;
+    invoke-static {v8, v9}, Landroid/content/Intent;->createChooser(Landroid/content/Intent;Ljava/lang/CharSequence;)Landroid/content/Intent;
 
     move-result-object v1
 
-    const/4 v6, 0x1
+    const/4 v7, 0x1
 
     goto :goto_1
 
-    :cond_6
-    if-nez p2, :cond_7
+    :cond_a
+    if-nez p2, :cond_b
 
     invoke-virtual {p0}, Landroid/content/Intent;->getComponent()Landroid/content/ComponentName;
 
-    move-result-object v7
+    move-result-object v8
 
-    if-eqz v7, :cond_7
+    if-eqz v8, :cond_b
 
     invoke-static {}, Landroid/os/Binder;->getCallingUid()I
 
-    move-result v7
+    move-result v8
 
-    if-eq v7, v9, :cond_7
-
-    invoke-virtual {p0}, Landroid/content/Intent;->getComponent()Landroid/content/ComponentName;
-
-    move-result-object v7
-
-    invoke-virtual {v7}, Landroid/content/ComponentName;->getPackageName()Ljava/lang/String;
-
-    move-result-object v7
-
-    invoke-virtual {v7, p3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v7
-
-    if-eqz v7, :cond_9
-
-    :cond_7
-    invoke-virtual {p0}, Landroid/content/Intent;->getComponent()Landroid/content/ComponentName;
-
-    move-result-object v7
-
-    if-nez v7, :cond_a
-
-    invoke-virtual {p0}, Landroid/content/Intent;->getPackage()Ljava/lang/String;
-
-    move-result-object v7
-
-    if-nez v7, :cond_a
-
-    invoke-virtual {p0}, Landroid/content/Intent;->getData()Landroid/net/Uri;
-
-    move-result-object v7
-
-    if-eqz v7, :cond_a
-
-    const-string/jumbo v7, "mqqapi"
-
-    invoke-virtual {p0}, Landroid/content/Intent;->getData()Landroid/net/Uri;
-
-    move-result-object v8
-
-    invoke-virtual {v8}, Landroid/net/Uri;->getScheme()Ljava/lang/String;
-
-    move-result-object v8
-
-    invoke-virtual {v7, v8}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v7
-
-    if-eqz v7, :cond_a
-
-    const-string/jumbo v7, "com.tencent.mobileqq"
-
-    invoke-static {v7}, Lcom/samsung/android/app/SemDualAppManager;->isInstalledWhitelistedPackage(Ljava/lang/String;)Z
-
-    move-result v7
-
-    if-nez v7, :cond_8
-
-    const-string/jumbo v7, "com.tencent.mobileqqi"
-
-    invoke-static {v7}, Lcom/samsung/android/app/SemDualAppManager;->isInstalledWhitelistedPackage(Ljava/lang/String;)Z
-
-    move-result v7
-
-    if-eqz v7, :cond_a
-
-    :cond_8
-    new-instance v7, Landroid/content/Intent;
-
-    invoke-direct {v7}, Landroid/content/Intent;-><init>()V
-
-    sget-object v8, Lcom/android/server/DualAppManagerService;->mContext:Landroid/content/Context;
-
-    const v9, 0x104082e
-
-    invoke-virtual {v8, v9}, Landroid/content/Context;->getString(I)Ljava/lang/String;
-
-    move-result-object v8
-
-    invoke-static {v7, v8}, Landroid/content/Intent;->createChooser(Landroid/content/Intent;Ljava/lang/CharSequence;)Landroid/content/Intent;
-
-    move-result-object v1
-
-    const/4 v6, 0x1
-
-    goto/16 :goto_1
-
-    :cond_9
-    invoke-virtual {p0}, Landroid/content/Intent;->getComponent()Landroid/content/ComponentName;
-
-    move-result-object v7
-
-    invoke-virtual {v7}, Landroid/content/ComponentName;->getClassName()Ljava/lang/String;
-
-    move-result-object v7
-
-    invoke-static {v7}, Lcom/samsung/android/app/SemDualAppManager;->isChooserRequired(Ljava/lang/String;)Z
-
-    move-result v7
-
-    if-eqz v7, :cond_7
+    if-eq v8, v10, :cond_b
 
     invoke-virtual {p0}, Landroid/content/Intent;->getComponent()Landroid/content/ComponentName;
 
-    move-result-object v7
+    move-result-object v8
 
-    invoke-virtual {v7}, Landroid/content/ComponentName;->getPackageName()Ljava/lang/String;
-
-    move-result-object v7
-
-    invoke-static {v7}, Lcom/samsung/android/app/SemDualAppManager;->isInstalledWhitelistedPackage(Ljava/lang/String;)Z
-
-    move-result v7
-
-    if-eqz v7, :cond_7
-
-    new-instance v7, Landroid/content/Intent;
-
-    invoke-direct {v7}, Landroid/content/Intent;-><init>()V
-
-    sget-object v8, Lcom/android/server/DualAppManagerService;->mContext:Landroid/content/Context;
-
-    const v9, 0x104038c
-
-    invoke-virtual {v8, v9}, Landroid/content/Context;->getString(I)Ljava/lang/String;
+    invoke-virtual {v8}, Landroid/content/ComponentName;->getPackageName()Ljava/lang/String;
 
     move-result-object v8
 
-    invoke-static {v7, v8}, Landroid/content/Intent;->createChooser(Landroid/content/Intent;Ljava/lang/CharSequence;)Landroid/content/Intent;
+    invoke-virtual {v8, p3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move-result-object v1
+    move-result v8
 
-    const/4 v6, 0x1
-
-    goto/16 :goto_1
-
-    :cond_a
-    invoke-virtual {p0}, Landroid/content/Intent;->getComponent()Landroid/content/ComponentName;
-
-    move-result-object v7
-
-    if-nez v7, :cond_b
-
-    invoke-virtual {p0}, Landroid/content/Intent;->getPackage()Ljava/lang/String;
-
-    move-result-object v7
-
-    if-nez v7, :cond_b
-
-    invoke-virtual {p0}, Landroid/content/Intent;->getData()Landroid/net/Uri;
-
-    move-result-object v7
-
-    if-eqz v7, :cond_b
-
-    const-string/jumbo v7, "weixin"
-
-    invoke-virtual {p0}, Landroid/content/Intent;->getData()Landroid/net/Uri;
-
-    move-result-object v8
-
-    invoke-virtual {v8}, Landroid/net/Uri;->getScheme()Ljava/lang/String;
-
-    move-result-object v8
-
-    invoke-virtual {v7, v8}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v7
-
-    if-eqz v7, :cond_b
-
-    const-string/jumbo v7, "com.tencent.mm"
-
-    invoke-static {v7}, Lcom/samsung/android/app/SemDualAppManager;->isInstalledWhitelistedPackage(Ljava/lang/String;)Z
-
-    move-result v7
-
-    if-eqz v7, :cond_b
-
-    new-instance v7, Landroid/content/Intent;
-
-    invoke-direct {v7}, Landroid/content/Intent;-><init>()V
-
-    sget-object v8, Lcom/android/server/DualAppManagerService;->mContext:Landroid/content/Context;
-
-    const v9, 0x104038c
-
-    invoke-virtual {v8, v9}, Landroid/content/Context;->getString(I)Ljava/lang/String;
-
-    move-result-object v8
-
-    invoke-static {v7, v8}, Landroid/content/Intent;->createChooser(Landroid/content/Intent;Ljava/lang/CharSequence;)Landroid/content/Intent;
-
-    move-result-object v1
-
-    const/4 v6, 0x1
-
-    goto/16 :goto_1
+    if-eqz v8, :cond_d
 
     :cond_b
-    if-nez p2, :cond_2
+    invoke-virtual {p0}, Landroid/content/Intent;->getData()Landroid/net/Uri;
+
+    move-result-object v8
+
+    if-eqz v8, :cond_e
+
+    const-string/jumbo v8, "mqqapi"
+
+    invoke-virtual {p0}, Landroid/content/Intent;->getData()Landroid/net/Uri;
+
+    move-result-object v9
+
+    invoke-virtual {v9}, Landroid/net/Uri;->getScheme()Ljava/lang/String;
+
+    move-result-object v9
+
+    invoke-virtual {v8, v9}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v8
+
+    if-eqz v8, :cond_e
+
+    const-string/jumbo v8, "com.tencent.mobileqq"
+
+    invoke-static {v8}, Lcom/samsung/android/app/SemDualAppManager;->isInstalledWhitelistedPackage(Ljava/lang/String;)Z
+
+    move-result v8
+
+    if-nez v8, :cond_c
+
+    const-string/jumbo v8, "com.tencent.mobileqqi"
+
+    invoke-static {v8}, Lcom/samsung/android/app/SemDualAppManager;->isInstalledWhitelistedPackage(Ljava/lang/String;)Z
+
+    move-result v8
+
+    if-eqz v8, :cond_e
+
+    :cond_c
+    new-instance v8, Landroid/content/Intent;
+
+    invoke-direct {v8}, Landroid/content/Intent;-><init>()V
+
+    sget-object v9, Lcom/android/server/DualAppManagerService;->mContext:Landroid/content/Context;
+
+    const v10, 0x104082e
+
+    invoke-virtual {v9, v10}, Landroid/content/Context;->getString(I)Ljava/lang/String;
+
+    move-result-object v9
+
+    invoke-static {v8, v9}, Landroid/content/Intent;->createChooser(Landroid/content/Intent;Ljava/lang/CharSequence;)Landroid/content/Intent;
+
+    move-result-object v1
+
+    const/4 v7, 0x1
+
+    goto/16 :goto_1
+
+    :cond_d
+    invoke-virtual {p0}, Landroid/content/Intent;->getComponent()Landroid/content/ComponentName;
+
+    move-result-object v8
+
+    invoke-virtual {v8}, Landroid/content/ComponentName;->getClassName()Ljava/lang/String;
+
+    move-result-object v8
+
+    invoke-static {v8}, Lcom/samsung/android/app/SemDualAppManager;->isChooserRequired(Ljava/lang/String;)Z
+
+    move-result v8
+
+    if-eqz v8, :cond_b
+
+    invoke-virtual {p0}, Landroid/content/Intent;->getComponent()Landroid/content/ComponentName;
+
+    move-result-object v8
+
+    invoke-virtual {v8}, Landroid/content/ComponentName;->getPackageName()Ljava/lang/String;
+
+    move-result-object v8
+
+    invoke-static {v8}, Lcom/samsung/android/app/SemDualAppManager;->isInstalledWhitelistedPackage(Ljava/lang/String;)Z
+
+    move-result v8
+
+    if-eqz v8, :cond_b
+
+    new-instance v8, Landroid/content/Intent;
+
+    invoke-direct {v8}, Landroid/content/Intent;-><init>()V
+
+    sget-object v9, Lcom/android/server/DualAppManagerService;->mContext:Landroid/content/Context;
+
+    const v10, 0x104038c
+
+    invoke-virtual {v9, v10}, Landroid/content/Context;->getString(I)Ljava/lang/String;
+
+    move-result-object v9
+
+    invoke-static {v8, v9}, Landroid/content/Intent;->createChooser(Landroid/content/Intent;Ljava/lang/CharSequence;)Landroid/content/Intent;
+
+    move-result-object v1
+
+    const/4 v7, 0x1
+
+    goto/16 :goto_1
+
+    :cond_e
+    invoke-virtual {p0}, Landroid/content/Intent;->getData()Landroid/net/Uri;
+
+    move-result-object v8
+
+    if-eqz v8, :cond_f
+
+    const-string/jumbo v8, "weixin"
+
+    invoke-virtual {p0}, Landroid/content/Intent;->getData()Landroid/net/Uri;
+
+    move-result-object v9
+
+    invoke-virtual {v9}, Landroid/net/Uri;->getScheme()Ljava/lang/String;
+
+    move-result-object v9
+
+    invoke-virtual {v8, v9}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v8
+
+    if-eqz v8, :cond_f
+
+    const-string/jumbo v8, "com.tencent.mm"
+
+    invoke-static {v8}, Lcom/samsung/android/app/SemDualAppManager;->isInstalledWhitelistedPackage(Ljava/lang/String;)Z
+
+    move-result v8
+
+    if-eqz v8, :cond_f
+
+    new-instance v8, Landroid/content/Intent;
+
+    invoke-direct {v8}, Landroid/content/Intent;-><init>()V
+
+    sget-object v9, Lcom/android/server/DualAppManagerService;->mContext:Landroid/content/Context;
+
+    const v10, 0x104038c
+
+    invoke-virtual {v9, v10}, Landroid/content/Context;->getString(I)Ljava/lang/String;
+
+    move-result-object v9
+
+    invoke-static {v8, v9}, Landroid/content/Intent;->createChooser(Landroid/content/Intent;Ljava/lang/CharSequence;)Landroid/content/Intent;
+
+    move-result-object v1
+
+    const/4 v7, 0x1
+
+    goto/16 :goto_1
+
+    :cond_f
+    if-nez p2, :cond_6
 
     invoke-static {}, Landroid/os/Binder;->getCallingUid()I
 
-    move-result v7
+    move-result v8
 
-    if-eq v7, v9, :cond_2
+    if-eq v8, v10, :cond_6
 
-    invoke-static {p3}, Lcom/samsung/android/app/SemDualAppManager;->isAfwSupportLauncher(Ljava/lang/String;)Z
+    const-string/jumbo v8, "com.taobao.taobao"
 
-    move-result v7
+    invoke-virtual {v8, p3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    if-nez v7, :cond_2
+    move-result v8
 
-    invoke-static {p3}, Lcom/samsung/android/app/SemDualAppManager;->isSamsungLauncher(Ljava/lang/String;)Z
+    if-nez v8, :cond_10
 
-    move-result v7
+    const-string/jumbo v8, "com.tmall.wireless"
 
-    if-nez v7, :cond_2
+    invoke-virtual {v8, p3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    const-string/jumbo v7, "com.android.systemui"
+    move-result v8
 
-    invoke-virtual {v7, p3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    if-eqz v8, :cond_6
 
-    move-result v7
-
-    if-nez v7, :cond_2
-
-    const-string/jumbo v7, "com.samsung.android.app.galaxyfinder"
-
-    invoke-virtual {v7, p3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v7
-
-    if-nez v7, :cond_2
-
+    :cond_10
     const/4 v0, 0x0
 
     invoke-virtual {p0}, Landroid/content/Intent;->getComponent()Landroid/content/ComponentName;
 
-    move-result-object v7
+    move-result-object v8
 
-    if-eqz v7, :cond_c
+    if-eqz v8, :cond_11
 
     invoke-virtual {p0}, Landroid/content/Intent;->getComponent()Landroid/content/ComponentName;
 
-    move-result-object v7
+    move-result-object v8
 
-    invoke-virtual {v7}, Landroid/content/ComponentName;->getPackageName()Ljava/lang/String;
+    invoke-virtual {v8}, Landroid/content/ComponentName;->getPackageName()Ljava/lang/String;
 
     move-result-object v0
 
     :goto_2
-    if-eqz p3, :cond_2
+    if-eqz p3, :cond_6
 
-    if-eqz v0, :cond_2
+    if-eqz v0, :cond_6
 
     invoke-virtual {p3, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move-result v7
+    move-result v8
 
-    if-nez v7, :cond_2
+    if-nez v8, :cond_6
 
     invoke-static {v0}, Lcom/samsung/android/app/SemDualAppManager;->isChinaDualApp(Ljava/lang/String;)Z
 
-    move-result v7
+    move-result v8
 
-    if-eqz v7, :cond_2
+    if-eqz v8, :cond_6
 
     invoke-static {v0}, Lcom/samsung/android/app/SemDualAppManager;->isInstalledWhitelistedPackage(Ljava/lang/String;)Z
 
-    move-result v7
+    move-result v8
 
-    if-eqz v7, :cond_2
+    if-eqz v8, :cond_6
 
-    new-instance v7, Landroid/content/Intent;
+    new-instance v8, Landroid/content/Intent;
 
-    invoke-direct {v7}, Landroid/content/Intent;-><init>()V
+    invoke-direct {v8}, Landroid/content/Intent;-><init>()V
 
-    sget-object v8, Lcom/android/server/DualAppManagerService;->mContext:Landroid/content/Context;
+    sget-object v9, Lcom/android/server/DualAppManagerService;->mContext:Landroid/content/Context;
 
-    const v9, 0x104082e
+    const v10, 0x104082e
 
-    invoke-virtual {v8, v9}, Landroid/content/Context;->getString(I)Ljava/lang/String;
+    invoke-virtual {v9, v10}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
-    move-result-object v8
+    move-result-object v9
 
-    invoke-static {v7, v8}, Landroid/content/Intent;->createChooser(Landroid/content/Intent;Ljava/lang/CharSequence;)Landroid/content/Intent;
+    invoke-static {v8, v9}, Landroid/content/Intent;->createChooser(Landroid/content/Intent;Ljava/lang/CharSequence;)Landroid/content/Intent;
 
     move-result-object v1
 
-    const/4 v6, 0x1
+    const/4 v7, 0x1
 
     goto/16 :goto_1
 
-    :cond_c
+    :cond_11
     invoke-virtual {p0}, Landroid/content/Intent;->getPackage()Ljava/lang/String;
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
@@ -2908,18 +3480,18 @@
     goto :goto_2
 
     :catch_0
-    move-exception v2
+    move-exception v3
 
-    const-string/jumbo v7, "DualAppManagerService"
+    const-string/jumbo v8, "DualAppManagerService"
 
-    const-string/jumbo v8, "fail startDAChooserActivity"
+    const-string/jumbo v9, "fail startDAChooserActivity"
 
-    invoke-static {v7, v8}, Landroid/util/secutil/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {v8, v9}, Landroid/util/secutil/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    invoke-virtual {v2}, Ljava/lang/Exception;->printStackTrace()V
+    invoke-virtual {v3}, Ljava/lang/Exception;->printStackTrace()V
 
-    :cond_d
-    return-object v10
+    :cond_12
+    return-object v11
 .end method
 
 .method private updateManagedProfile(I)V

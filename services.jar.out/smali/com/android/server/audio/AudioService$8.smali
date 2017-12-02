@@ -63,7 +63,7 @@
 
     iget-object v0, p0, Lcom/android/server/audio/AudioService$8;->this$0:Lcom/android/server/audio/AudioService;
 
-    invoke-static {v0}, Lcom/android/server/audio/AudioService;->-get51(Lcom/android/server/audio/AudioService;)Z
+    invoke-static {v0}, Lcom/android/server/audio/AudioService;->-get50(Lcom/android/server/audio/AudioService;)Z
 
     move-result v0
 
@@ -91,7 +91,7 @@
 
     iget-object v2, p0, Lcom/android/server/audio/AudioService$8;->this$0:Lcom/android/server/audio/AudioService;
 
-    invoke-static {v2}, Lcom/android/server/audio/AudioService;->-get68(Lcom/android/server/audio/AudioService;)Z
+    invoke-static {v2}, Lcom/android/server/audio/AudioService;->-get67(Lcom/android/server/audio/AudioService;)Z
 
     move-result v2
 
@@ -114,7 +114,7 @@
 
     iget-object v0, p0, Lcom/android/server/audio/AudioService$8;->this$0:Lcom/android/server/audio/AudioService;
 
-    invoke-static {v0}, Lcom/android/server/audio/AudioService;->-get51(Lcom/android/server/audio/AudioService;)Z
+    invoke-static {v0}, Lcom/android/server/audio/AudioService;->-get50(Lcom/android/server/audio/AudioService;)Z
 
     move-result v0
 
@@ -161,7 +161,7 @@
 
     iget-object v0, p0, Lcom/android/server/audio/AudioService$8;->this$0:Lcom/android/server/audio/AudioService;
 
-    invoke-static {v0}, Lcom/android/server/audio/AudioService;->-get52(Lcom/android/server/audio/AudioService;)Lcom/android/server/audio/MediaFocusControl;
+    invoke-static {v0}, Lcom/android/server/audio/AudioService;->-get51(Lcom/android/server/audio/AudioService;)Lcom/android/server/audio/MediaFocusControl;
 
     move-result-object v0
 

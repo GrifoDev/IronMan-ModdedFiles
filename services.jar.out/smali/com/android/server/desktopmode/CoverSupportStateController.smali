@@ -46,6 +46,8 @@
 
 .field private mManager:Lcom/samsung/android/desktopmode/SemDesktopModeManager;
 
+.field private mScreenMirroringDisabled:Z
+
 .field private mService:Lcom/android/server/desktopmode/DesktopModeService;
 
 
@@ -150,6 +152,8 @@
     iput-boolean v0, p0, Lcom/android/server/desktopmode/CoverSupportStateController;->mKeyboardCoverEnabled:Z
 
     iput-boolean v0, p0, Lcom/android/server/desktopmode/CoverSupportStateController;->mDesktopDockConnected:Z
+
+    iput-boolean v0, p0, Lcom/android/server/desktopmode/CoverSupportStateController;->mScreenMirroringDisabled:Z
 
     const/4 v0, 0x1
 
@@ -258,6 +262,26 @@
     .end packed-switch
 .end method
 
+.method private getSettingMirroringSwitchDisabled()Z
+    .locals 3
+
+    iget-object v0, p0, Lcom/android/server/desktopmode/CoverSupportStateController;->mContext:Landroid/content/Context;
+
+    invoke-virtual {v0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
+
+    move-result-object v0
+
+    const-string/jumbo v1, "mirroring_switch_disabled"
+
+    const/4 v2, 0x0
+
+    invoke-static {v0, v1, v2}, Lcom/android/server/desktopmode/DesktopModeSettingsManager;->getSettings(Landroid/content/ContentResolver;Ljava/lang/String;Z)Z
+
+    move-result v0
+
+    return v0
+.end method
+
 .method private initializeCoverState()V
     .locals 6
 
@@ -270,6 +294,12 @@
     invoke-virtual {v3}, Lcom/samsung/android/cover/CoverManager;->getCoverState()Lcom/samsung/android/cover/CoverState;
 
     move-result-object v0
+
+    invoke-direct {p0}, Lcom/android/server/desktopmode/CoverSupportStateController;->getSettingMirroringSwitchDisabled()Z
+
+    move-result v3
+
+    iput-boolean v3, p0, Lcom/android/server/desktopmode/CoverSupportStateController;->mScreenMirroringDisabled:Z
 
     if-eqz v0, :cond_0
 
@@ -321,65 +351,98 @@
     goto :goto_0
 .end method
 
+.method private setMirroringSwitchDisabled(Z)V
+    .locals 2
+
+    iput-boolean p1, p0, Lcom/android/server/desktopmode/CoverSupportStateController;->mScreenMirroringDisabled:Z
+
+    iget-object v0, p0, Lcom/android/server/desktopmode/CoverSupportStateController;->mContext:Landroid/content/Context;
+
+    invoke-virtual {v0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
+
+    move-result-object v0
+
+    const-string/jumbo v1, "mirroring_switch_disabled"
+
+    invoke-static {v0, v1, p1}, Lcom/android/server/desktopmode/DesktopModeSettingsManager;->setSettings(Landroid/content/ContentResolver;Ljava/lang/String;Z)V
+
+    return-void
+.end method
+
 .method private updateCoverSupportState()Z
-    .locals 6
+    .locals 7
 
-    const/4 v5, 0x2
+    const/4 v4, 0x1
 
-    const/4 v2, 0x0
+    const/4 v6, 0x2
+
+    const/4 v3, 0x0
 
     const/4 v0, 0x1
 
     const/4 v1, 0x0
 
-    iget-boolean v3, p0, Lcom/android/server/desktopmode/CoverSupportStateController;->mKeyboardCoverEnabled:Z
+    iget-boolean v2, p0, Lcom/android/server/desktopmode/CoverSupportStateController;->mKeyboardCoverEnabled:Z
 
-    if-eqz v3, :cond_4
+    if-eqz v2, :cond_4
 
     const/4 v0, 0x3
 
     :cond_0
     :goto_0
-    iget v3, p0, Lcom/android/server/desktopmode/CoverSupportStateController;->mCoverSupportState:I
+    iget v2, p0, Lcom/android/server/desktopmode/CoverSupportStateController;->mCoverSupportState:I
 
-    if-eq v3, v0, :cond_2
+    if-eq v2, v0, :cond_1
 
     iput v0, p0, Lcom/android/server/desktopmode/CoverSupportStateController;->mCoverSupportState:I
 
-    const/4 v3, 0x3
+    const/4 v2, 0x3
 
-    if-ne v0, v3, :cond_8
+    if-ne v0, v2, :cond_8
 
-    iget-object v3, p0, Lcom/android/server/desktopmode/CoverSupportStateController;->mManager:Lcom/samsung/android/desktopmode/SemDesktopModeManager;
+    iget-object v2, p0, Lcom/android/server/desktopmode/CoverSupportStateController;->mManager:Lcom/samsung/android/desktopmode/SemDesktopModeManager;
 
-    iget-object v4, p0, Lcom/android/server/desktopmode/CoverSupportStateController;->mBlocker:Lcom/samsung/android/desktopmode/SemDesktopModeManager$DesktopModeBlocker;
+    iget-object v5, p0, Lcom/android/server/desktopmode/CoverSupportStateController;->mBlocker:Lcom/samsung/android/desktopmode/SemDesktopModeManager$DesktopModeBlocker;
 
-    invoke-virtual {v3, v4}, Lcom/samsung/android/desktopmode/SemDesktopModeManager;->registerBlocker(Lcom/samsung/android/desktopmode/SemDesktopModeManager$DesktopModeBlocker;)V
+    invoke-virtual {v2, v5}, Lcom/samsung/android/desktopmode/SemDesktopModeManager;->registerBlocker(Lcom/samsung/android/desktopmode/SemDesktopModeManager$DesktopModeBlocker;)V
 
     :goto_1
-    iget v3, p0, Lcom/android/server/desktopmode/CoverSupportStateController;->mCoverSupportState:I
+    iget v2, p0, Lcom/android/server/desktopmode/CoverSupportStateController;->mCoverSupportState:I
 
-    if-ne v3, v5, :cond_1
+    if-ne v2, v6, :cond_a
 
-    iget-object v3, p0, Lcom/android/server/desktopmode/CoverSupportStateController;->mService:Lcom/android/server/desktopmode/DesktopModeService;
+    iget-object v2, p0, Lcom/android/server/desktopmode/CoverSupportStateController;->mService:Lcom/android/server/desktopmode/DesktopModeService;
 
-    invoke-virtual {v3}, Lcom/android/server/desktopmode/DesktopModeService;->getDesktopModeState()Lcom/samsung/android/desktopmode/SemDesktopModeState;
+    invoke-virtual {v2}, Lcom/android/server/desktopmode/DesktopModeService;->getDesktopModeState()Lcom/samsung/android/desktopmode/SemDesktopModeState;
 
-    move-result-object v3
+    move-result-object v2
 
-    invoke-virtual {v3, v5, v2}, Lcom/samsung/android/desktopmode/SemDesktopModeState;->compareTo(II)Z
+    invoke-virtual {v2, v6, v3}, Lcom/samsung/android/desktopmode/SemDesktopModeState;->compareTo(II)Z
 
-    move-result v3
+    move-result v2
 
-    if-eqz v3, :cond_9
+    if-eqz v2, :cond_9
 
-    :cond_1
+    move v2, v3
+
     :goto_2
     invoke-virtual {p0, v2}, Lcom/android/server/desktopmode/CoverSupportStateController;->disableCoverManager(Z)V
 
     const/4 v1, 0x1
 
+    :cond_1
+    iget-boolean v2, p0, Lcom/android/server/desktopmode/CoverSupportStateController;->mDesktopDockConnected:Z
+
+    if-eqz v2, :cond_b
+
+    iget v2, p0, Lcom/android/server/desktopmode/CoverSupportStateController;->mCoverSupportState:I
+
+    if-ne v2, v6, :cond_b
+
+    invoke-direct {p0, v4}, Lcom/android/server/desktopmode/CoverSupportStateController;->setMirroringSwitchDisabled(Z)V
+
     :cond_2
+    :goto_3
     sget-boolean v2, Lcom/samsung/android/desktopmode/DesktopModeFeature;->DEBUG:Z
 
     if-eqz v2, :cond_3
@@ -452,27 +515,27 @@
     return v1
 
     :cond_4
-    iget-object v3, p0, Lcom/android/server/desktopmode/CoverSupportStateController;->mCoverState:Lcom/samsung/android/cover/CoverState;
+    iget-object v2, p0, Lcom/android/server/desktopmode/CoverSupportStateController;->mCoverState:Lcom/samsung/android/cover/CoverState;
 
-    iget-boolean v3, v3, Lcom/samsung/android/cover/CoverState;->attached:Z
+    iget-boolean v2, v2, Lcom/samsung/android/cover/CoverState;->attached:Z
 
-    if-eqz v3, :cond_0
+    if-eqz v2, :cond_0
 
-    iget-object v3, p0, Lcom/android/server/desktopmode/CoverSupportStateController;->mCoverState:Lcom/samsung/android/cover/CoverState;
+    iget-object v2, p0, Lcom/android/server/desktopmode/CoverSupportStateController;->mCoverState:Lcom/samsung/android/cover/CoverState;
 
-    iget v3, v3, Lcom/samsung/android/cover/CoverState;->type:I
+    iget v2, v2, Lcom/samsung/android/cover/CoverState;->type:I
 
-    const/16 v4, 0xc
+    const/16 v5, 0xc
 
-    if-eq v3, v4, :cond_5
+    if-eq v2, v5, :cond_5
 
-    iget-object v3, p0, Lcom/android/server/desktopmode/CoverSupportStateController;->mCoverState:Lcom/samsung/android/cover/CoverState;
+    iget-object v2, p0, Lcom/android/server/desktopmode/CoverSupportStateController;->mCoverState:Lcom/samsung/android/cover/CoverState;
 
-    iget v3, v3, Lcom/samsung/android/cover/CoverState;->type:I
+    iget v2, v2, Lcom/samsung/android/cover/CoverState;->type:I
 
-    const/16 v4, 0x9
+    const/16 v5, 0x9
 
-    if-ne v3, v4, :cond_6
+    if-ne v2, v5, :cond_6
 
     :cond_5
     const/4 v0, 0x1
@@ -480,23 +543,29 @@
     goto/16 :goto_0
 
     :cond_6
-    iget-object v3, p0, Lcom/android/server/desktopmode/CoverSupportStateController;->mCoverState:Lcom/samsung/android/cover/CoverState;
+    iget-object v2, p0, Lcom/android/server/desktopmode/CoverSupportStateController;->mCoverState:Lcom/samsung/android/cover/CoverState;
 
-    iget v3, v3, Lcom/samsung/android/cover/CoverState;->type:I
+    iget v2, v2, Lcom/samsung/android/cover/CoverState;->type:I
 
-    const/16 v4, 0xa
+    const/16 v5, 0xa
 
-    if-eq v3, v4, :cond_5
+    if-eq v2, v5, :cond_5
 
-    iget-boolean v3, p0, Lcom/android/server/desktopmode/CoverSupportStateController;->mDesktopDockConnected:Z
+    iget-object v2, p0, Lcom/android/server/desktopmode/CoverSupportStateController;->mCoverState:Lcom/samsung/android/cover/CoverState;
 
-    if-eqz v3, :cond_7
+    iget v2, v2, Lcom/samsung/android/cover/CoverState;->type:I
 
-    iget-object v3, p0, Lcom/android/server/desktopmode/CoverSupportStateController;->mCoverState:Lcom/samsung/android/cover/CoverState;
+    if-eq v2, v6, :cond_5
 
-    iget-boolean v3, v3, Lcom/samsung/android/cover/CoverState;->switchState:Z
+    iget-boolean v2, p0, Lcom/android/server/desktopmode/CoverSupportStateController;->mDesktopDockConnected:Z
 
-    if-eqz v3, :cond_7
+    if-eqz v2, :cond_7
+
+    iget-object v2, p0, Lcom/android/server/desktopmode/CoverSupportStateController;->mCoverState:Lcom/samsung/android/cover/CoverState;
+
+    iget-boolean v2, v2, Lcom/samsung/android/cover/CoverState;->switchState:Z
+
+    if-eqz v2, :cond_7
 
     const/4 v0, 0x3
 
@@ -508,18 +577,32 @@
     goto/16 :goto_0
 
     :cond_8
-    iget-object v3, p0, Lcom/android/server/desktopmode/CoverSupportStateController;->mManager:Lcom/samsung/android/desktopmode/SemDesktopModeManager;
+    iget-object v2, p0, Lcom/android/server/desktopmode/CoverSupportStateController;->mManager:Lcom/samsung/android/desktopmode/SemDesktopModeManager;
 
-    iget-object v4, p0, Lcom/android/server/desktopmode/CoverSupportStateController;->mBlocker:Lcom/samsung/android/desktopmode/SemDesktopModeManager$DesktopModeBlocker;
+    iget-object v5, p0, Lcom/android/server/desktopmode/CoverSupportStateController;->mBlocker:Lcom/samsung/android/desktopmode/SemDesktopModeManager$DesktopModeBlocker;
 
-    invoke-virtual {v3, v4}, Lcom/samsung/android/desktopmode/SemDesktopModeManager;->unregisterBlocker(Lcom/samsung/android/desktopmode/SemDesktopModeManager$DesktopModeBlocker;)V
+    invoke-virtual {v2, v5}, Lcom/samsung/android/desktopmode/SemDesktopModeManager;->unregisterBlocker(Lcom/samsung/android/desktopmode/SemDesktopModeManager$DesktopModeBlocker;)V
 
     goto/16 :goto_1
 
     :cond_9
-    const/4 v2, 0x1
+    move v2, v4
 
     goto/16 :goto_2
+
+    :cond_a
+    move v2, v3
+
+    goto/16 :goto_2
+
+    :cond_b
+    iget-boolean v2, p0, Lcom/android/server/desktopmode/CoverSupportStateController;->mScreenMirroringDisabled:Z
+
+    if-eqz v2, :cond_2
+
+    invoke-direct {p0, v3}, Lcom/android/server/desktopmode/CoverSupportStateController;->setMirroringSwitchDisabled(Z)V
+
+    goto/16 :goto_3
 .end method
 
 

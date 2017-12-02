@@ -3170,19 +3170,34 @@
     return v1
 
     :cond_0
+    invoke-static {p1}, Lcom/samsung/android/app/SemDualAppManager;->isDualAppId(I)Z
+
+    move-result v2
+
+    if-eqz v2, :cond_1
+
+    const-string/jumbo v2, "FingerprintService"
+
+    const-string/jumbo v3, "isWorkProfile: dual app profile!"
+
+    invoke-static {v2, v3}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    return v1
+
+    :cond_1
     iget-object v2, p0, Lcom/android/server/fingerprint/FingerprintService;->mUserManager:Landroid/os/UserManager;
 
     invoke-virtual {v2, p1}, Landroid/os/UserManager;->getUserInfo(I)Landroid/content/pm/UserInfo;
 
     move-result-object v0
 
-    if-eqz v0, :cond_1
+    if-eqz v0, :cond_2
 
     invoke-virtual {v0}, Landroid/content/pm/UserInfo;->isManagedProfile()Z
 
     move-result v1
 
-    :cond_1
+    :cond_2
     return v1
 .end method
 
@@ -5252,37 +5267,34 @@
     :cond_3
     const/4 v1, 0x0
 
-    iget-object v2, p0, Lcom/android/server/fingerprint/FingerprintService;->syncObj:Ljava/lang/Object;
+    iget-object v3, p0, Lcom/android/server/fingerprint/FingerprintService;->syncObj:Ljava/lang/Object;
 
-    monitor-enter v2
+    monitor-enter v3
 
     :try_start_0
     invoke-virtual {p1}, Lcom/android/server/fingerprint/ClientMonitor;->start()I
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     move-result v1
 
-    monitor-exit v2
+    iput-object p1, p0, Lcom/android/server/fingerprint/FingerprintService;->mCurrentClient:Lcom/android/server/fingerprint/ClientMonitor;
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    monitor-exit v3
 
     if-eqz v1, :cond_4
 
     invoke-direct {p0, p1}, Lcom/android/server/fingerprint/FingerprintService;->removeClient(Lcom/android/server/fingerprint/ClientMonitor;)V
 
-    :goto_0
+    :cond_4
     return-void
 
     :catchall_0
-    move-exception v3
+    move-exception v2
 
-    monitor-exit v2
+    monitor-exit v3
 
-    throw v3
-
-    :cond_4
-    iput-object p1, p0, Lcom/android/server/fingerprint/FingerprintService;->mCurrentClient:Lcom/android/server/fingerprint/ClientMonitor;
-
-    goto :goto_0
+    throw v2
 .end method
 
 .method private startEnrollment(Landroid/os/IBinder;[BILandroid/hardware/fingerprint/IFingerprintServiceReceiver;IZLjava/lang/String;Landroid/os/Bundle;)V
@@ -6598,21 +6610,21 @@
 .end method
 
 .method getEffectiveUserId(I)I
-    .locals 7
+    .locals 8
 
-    iget-object v4, p0, Lcom/android/server/fingerprint/FingerprintService;->mContext:Landroid/content/Context;
+    iget-object v5, p0, Lcom/android/server/fingerprint/FingerprintService;->mContext:Landroid/content/Context;
 
-    invoke-static {v4}, Landroid/os/UserManager;->get(Landroid/content/Context;)Landroid/os/UserManager;
+    invoke-static {v5}, Landroid/os/UserManager;->get(Landroid/content/Context;)Landroid/os/UserManager;
 
-    move-result-object v3
+    move-result-object v4
 
-    if-eqz v3, :cond_3
+    if-eqz v4, :cond_5
 
     invoke-static {}, Landroid/os/Binder;->clearCallingIdentity()J
 
     move-result-wide v0
 
-    invoke-virtual {v3, p1}, Landroid/os/UserManager;->getCredentialOwnerProfile(I)I
+    invoke-virtual {v4, p1}, Landroid/os/UserManager;->getCredentialOwnerProfile(I)I
 
     move-result p1
 
@@ -6621,93 +6633,152 @@
     :goto_0
     invoke-direct {p0, p1}, Lcom/android/server/fingerprint/FingerprintService;->isKnoxProfile(I)Z
 
-    move-result v4
+    move-result v5
 
-    if-eqz v4, :cond_1
+    if-eqz v5, :cond_1
 
     invoke-static {}, Landroid/os/Binder;->clearCallingIdentity()J
 
     move-result-wide v0
 
-    iget-object v4, p0, Lcom/android/server/fingerprint/FingerprintService;->mContext:Landroid/content/Context;
+    iget-object v5, p0, Lcom/android/server/fingerprint/FingerprintService;->mContext:Landroid/content/Context;
 
-    const-string/jumbo v5, "persona"
+    const-string/jumbo v6, "persona"
 
-    invoke-virtual {v4, v5}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
+    invoke-virtual {v5, v6}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
 
-    move-result-object v2
+    move-result-object v3
 
-    check-cast v2, Lcom/samsung/android/knox/SemPersonaManager;
+    check-cast v3, Lcom/samsung/android/knox/SemPersonaManager;
 
-    if-eqz v2, :cond_0
+    if-eqz v3, :cond_0
 
-    invoke-virtual {v2, p1}, Lcom/samsung/android/knox/SemPersonaManager;->getParentId(I)I
+    invoke-virtual {v3, p1}, Lcom/samsung/android/knox/SemPersonaManager;->getParentId(I)I
 
     move-result p1
 
     :cond_0
     invoke-static {v0, v1}, Landroid/os/Binder;->restoreCallingIdentity(J)V
 
-    const-string/jumbo v4, "FingerprintService"
+    const-string/jumbo v5, "FingerprintService"
 
-    new-instance v5, Ljava/lang/StringBuilder;
+    new-instance v6, Ljava/lang/StringBuilder;
 
-    invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {v6}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string/jumbo v6, "getEffectiveUserId: SemPersonaManager ParentId = "
+    const-string/jumbo v7, "getEffectiveUserId: SemPersonaManager ParentId = "
 
-    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v5
+    move-result-object v6
 
-    invoke-virtual {v5, p1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    invoke-virtual {v6, p1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    move-result-object v5
+    move-result-object v6
 
-    invoke-virtual {v5}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v6}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v5
+    move-result-object v6
 
-    invoke-static {v4, v5}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {v5, v6}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
     :cond_1
-    sget-boolean v4, Lcom/android/server/fingerprint/FingerprintService;->DEBUG:Z
+    invoke-static {p1}, Lcom/samsung/android/app/SemDualAppManager;->isDualAppId(I)Z
+
+    move-result v5
+
+    if-eqz v5, :cond_3
+
+    invoke-static {}, Landroid/os/Binder;->clearCallingIdentity()J
+
+    move-result-wide v0
 
     if-eqz v4, :cond_2
 
-    const-string/jumbo v4, "FingerprintService"
-
-    new-instance v5, Ljava/lang/StringBuilder;
-
-    invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string/jumbo v6, "getEffectiveUserId return "
-
-    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    :try_start_0
+    invoke-virtual {v4, p1}, Landroid/os/UserManager;->getProfileParent(I)Landroid/content/pm/UserInfo;
 
     move-result-object v5
 
-    invoke-virtual {v5, p1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v5
-
-    invoke-virtual {v5}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v5
-
-    invoke-static {v4, v5}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
+    iget p1, v5, Landroid/content/pm/UserInfo;->id:I
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
     :cond_2
-    return p1
+    :goto_1
+    invoke-static {v0, v1}, Landroid/os/Binder;->restoreCallingIdentity(J)V
+
+    const-string/jumbo v5, "FingerprintService"
+
+    new-instance v6, Ljava/lang/StringBuilder;
+
+    invoke-direct {v6}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string/jumbo v7, "getEffectiveUserId : DualAppId ParentId =  "
+
+    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v6
+
+    invoke-virtual {v6, p1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v6
+
+    invoke-virtual {v6}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v6
+
+    invoke-static {v5, v6}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
     :cond_3
-    const-string/jumbo v4, "FingerprintService"
+    sget-boolean v5, Lcom/android/server/fingerprint/FingerprintService;->DEBUG:Z
 
-    const-string/jumbo v5, "Unable to acquire UserManager"
+    if-eqz v5, :cond_4
 
-    invoke-static {v4, v5}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
+    const-string/jumbo v5, "FingerprintService"
 
-    goto :goto_0
+    new-instance v6, Ljava/lang/StringBuilder;
+
+    invoke-direct {v6}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string/jumbo v7, "getEffectiveUserId return "
+
+    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v6
+
+    invoke-virtual {v6, p1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v6
+
+    invoke-virtual {v6}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v6
+
+    invoke-static {v5, v6}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
+
+    :cond_4
+    return p1
+
+    :cond_5
+    const-string/jumbo v5, "FingerprintService"
+
+    const-string/jumbo v6, "Unable to acquire UserManager"
+
+    invoke-static {v5, v6}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
+
+    goto/16 :goto_0
+
+    :catch_0
+    move-exception v2
+
+    const-string/jumbo v5, "FingerprintService"
+
+    const-string/jumbo v6, "getEffectiveUserId : "
+
+    invoke-static {v5, v6, v2}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
+
+    goto :goto_1
 .end method
 
 .method public getEnrolledFingerprints(I)Ljava/util/List;

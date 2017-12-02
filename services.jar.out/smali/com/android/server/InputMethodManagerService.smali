@@ -3409,6 +3409,39 @@
     return v1
 .end method
 
+.method private isPasswordInputType(I)Z
+    .locals 3
+
+    const/4 v1, 0x1
+
+    and-int/lit16 v0, p1, 0xff0
+
+    const/16 v2, 0x80
+
+    if-eq v0, v2, :cond_0
+
+    const/16 v2, 0xe0
+
+    if-ne v0, v2, :cond_1
+
+    :cond_0
+    :goto_0
+    return v1
+
+    :cond_1
+    const/16 v2, 0x90
+
+    if-eq v0, v2, :cond_0
+
+    const/16 v2, 0x10
+
+    if-eq v0, v2, :cond_0
+
+    const/4 v1, 0x0
+
+    goto :goto_0
+.end method
+
 .method private isSKBDPacakge(Ljava/lang/String;)Z
     .locals 1
 
@@ -3759,43 +3792,15 @@
     return v3
 
     :cond_3
-    const/16 v3, 0x80
+    invoke-direct {p0, v1}, Lcom/android/server/InputMethodManagerService;->isPasswordInputType(I)Z
 
-    if-eq v1, v3, :cond_4
+    move-result v3
 
-    const/16 v3, 0x90
+    if-eqz v3, :cond_1
 
-    if-ne v1, v3, :cond_5
-
-    :cond_4
-    :goto_1
     const/4 v2, 0x1
 
     goto :goto_0
-
-    :cond_5
-    const/16 v3, 0xe0
-
-    if-eq v1, v3, :cond_4
-
-    const/4 v3, 0x2
-
-    if-ne v1, v3, :cond_6
-
-    const/16 v3, 0x10
-
-    if-eq v1, v3, :cond_4
-
-    :cond_6
-    const/16 v3, 0x81
-
-    if-eq v1, v3, :cond_4
-
-    const/16 v3, 0x91
-
-    if-ne v1, v3, :cond_1
-
-    goto :goto_1
 .end method
 
 .method private notifyInputMethodSubtypeChanged(ILandroid/view/inputmethod/InputMethodInfo;Landroid/view/inputmethod/InputMethodSubtype;)V
@@ -9773,6 +9778,111 @@
 .method public addServiceForDirectPenInput(Ljava/lang/String;Landroid/os/IBinder;)V
     .locals 3
 
+    const-string/jumbo v0, "directpeninputmanagerservice"
+
+    invoke-virtual {v0, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-nez v0, :cond_0
+
+    const-string/jumbo v0, "directpeninputmanagerserviceknox0"
+
+    invoke-virtual {v0, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-nez v0, :cond_0
+
+    const-string/jumbo v0, "directpeninputmanagerserviceknox1"
+
+    invoke-virtual {v0, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-nez v0, :cond_0
+
+    const-string/jumbo v0, "directpeninputmanagerserviceknox2"
+
+    invoke-virtual {v0, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-nez v0, :cond_0
+
+    const-string/jumbo v0, "directpeninputmanagerserviceknox3"
+
+    invoke-virtual {v0, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-nez v0, :cond_0
+
+    const-string/jumbo v0, "directpeninputmanagerserviceknox4"
+
+    invoke-virtual {v0, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-nez v0, :cond_0
+
+    const-string/jumbo v0, "directpeninputmanagerserviceknox5"
+
+    invoke-virtual {v0, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-nez v0, :cond_0
+
+    const-string/jumbo v0, "directpeninputmanagerservicerestricted0"
+
+    invoke-virtual {v0, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-nez v0, :cond_0
+
+    const-string/jumbo v0, "directpeninputmanagerservicerestricted1"
+
+    invoke-virtual {v0, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-nez v0, :cond_0
+
+    const-string/jumbo v0, "directpeninputmanagerservicerestricted2"
+
+    invoke-virtual {v0, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-nez v0, :cond_0
+
+    const-string/jumbo v0, "directpeninputmanagerservicerestricted3"
+
+    invoke-virtual {v0, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-nez v0, :cond_0
+
+    const-string/jumbo v0, "directpeninputmanagerservicerestricted4"
+
+    invoke-virtual {v0, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-nez v0, :cond_0
+
+    const-string/jumbo v0, "directpeninputmanagerservicerestricted5"
+
+    invoke-virtual {v0, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_1
+
+    :cond_0
     const-string/jumbo v0, "InputMethodManagerService"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -9797,6 +9907,7 @@
 
     invoke-static {p1, p2}, Landroid/os/ServiceManager;->addService(Ljava/lang/String;Landroid/os/IBinder;)V
 
+    :cond_1
     return-void
 .end method
 

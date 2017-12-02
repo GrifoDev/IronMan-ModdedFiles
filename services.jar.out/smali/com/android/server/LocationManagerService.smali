@@ -48,6 +48,8 @@
 
 .field private static final LAST_LOCATION_REQUEST_NSFLP:I = 0x5
 
+.field private static final LISTENER_BLACKLIST_CHANGED:I = 0xd
+
 .field private static final LOCATION_REMOVE_NSFLP:I = 0x2
 
 .field private static final LOCATION_REQUEST_NSFLP:I = 0x1
@@ -197,6 +199,17 @@
             "<",
             "Ljava/lang/String;",
             "Landroid/location/Location;",
+            ">;"
+        }
+    .end annotation
+.end field
+
+.field private final mListenerBlacklist:Ljava/util/HashSet;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Ljava/util/HashSet",
+            "<",
+            "Ljava/lang/String;",
             ">;"
         }
     .end annotation
@@ -420,7 +433,15 @@
     return-object v0
 .end method
 
-.method static synthetic -get10()Ljava/lang/String;
+.method static synthetic -get10(Lcom/android/server/LocationManagerService;)Lcom/android/server/location/LocationRequestStatistics;
+    .locals 1
+
+    iget-object v0, p0, Lcom/android/server/LocationManagerService;->mRequestStatistics:Lcom/android/server/location/LocationRequestStatistics;
+
+    return-object v0
+.end method
+
+.method static synthetic -get11()Ljava/lang/String;
     .locals 1
 
     sget-object v0, Lcom/android/server/LocationManagerService;->mSecSalesCode:Ljava/lang/String;
@@ -436,7 +457,15 @@
     return v0
 .end method
 
-.method static synthetic -get3(Lcom/android/server/LocationManagerService;)Lcom/android/server/LocationManagerService$LocationWorkerHandler;
+.method static synthetic -get3(Lcom/android/server/LocationManagerService;)Ljava/util/HashSet;
+    .locals 1
+
+    iget-object v0, p0, Lcom/android/server/LocationManagerService;->mListenerBlacklist:Ljava/util/HashSet;
+
+    return-object v0
+.end method
+
+.method static synthetic -get4(Lcom/android/server/LocationManagerService;)Lcom/android/server/LocationManagerService$LocationWorkerHandler;
     .locals 1
 
     iget-object v0, p0, Lcom/android/server/LocationManagerService;->mLocationHandler:Lcom/android/server/LocationManagerService$LocationWorkerHandler;
@@ -444,7 +473,7 @@
     return-object v0
 .end method
 
-.method static synthetic -get4(Lcom/android/server/LocationManagerService;)Ljava/lang/Object;
+.method static synthetic -get5(Lcom/android/server/LocationManagerService;)Ljava/lang/Object;
     .locals 1
 
     iget-object v0, p0, Lcom/android/server/LocationManagerService;->mLock:Ljava/lang/Object;
@@ -452,7 +481,7 @@
     return-object v0
 .end method
 
-.method static synthetic -get5(Lcom/android/server/LocationManagerService;)Landroid/os/PowerManager;
+.method static synthetic -get6(Lcom/android/server/LocationManagerService;)Landroid/os/PowerManager;
     .locals 1
 
     iget-object v0, p0, Lcom/android/server/LocationManagerService;->mPowerManager:Landroid/os/PowerManager;
@@ -460,7 +489,7 @@
     return-object v0
 .end method
 
-.method static synthetic -get6(Lcom/android/server/LocationManagerService;)Ljava/util/HashMap;
+.method static synthetic -get7(Lcom/android/server/LocationManagerService;)Ljava/util/HashMap;
     .locals 1
 
     iget-object v0, p0, Lcom/android/server/LocationManagerService;->mProvidersByName:Ljava/util/HashMap;
@@ -468,7 +497,7 @@
     return-object v0
 .end method
 
-.method static synthetic -get7(Lcom/android/server/LocationManagerService;)Ljava/util/HashMap;
+.method static synthetic -get8(Lcom/android/server/LocationManagerService;)Ljava/util/HashMap;
     .locals 1
 
     iget-object v0, p0, Lcom/android/server/LocationManagerService;->mReceivers:Ljava/util/HashMap;
@@ -476,18 +505,10 @@
     return-object v0
 .end method
 
-.method static synthetic -get8(Lcom/android/server/LocationManagerService;)Ljava/util/HashMap;
+.method static synthetic -get9(Lcom/android/server/LocationManagerService;)Ljava/util/HashMap;
     .locals 1
 
     iget-object v0, p0, Lcom/android/server/LocationManagerService;->mRecordsByProvider:Ljava/util/HashMap;
-
-    return-object v0
-.end method
-
-.method static synthetic -get9(Lcom/android/server/LocationManagerService;)Lcom/android/server/location/LocationRequestStatistics;
-    .locals 1
-
-    iget-object v0, p0, Lcom/android/server/LocationManagerService;->mRequestStatistics:Lcom/android/server/location/LocationRequestStatistics;
 
     return-object v0
 .end method
@@ -756,6 +777,12 @@
     invoke-direct {v1}, Ljava/util/ArrayList;-><init>()V
 
     iput-object v1, p0, Lcom/android/server/LocationManagerService;->mLocBindHistroy:Ljava/util/ArrayList;
+
+    new-instance v1, Ljava/util/HashSet;
+
+    invoke-direct {v1}, Ljava/util/HashSet;-><init>()V
+
+    iput-object v1, p0, Lcom/android/server/LocationManagerService;->mListenerBlacklist:Ljava/util/HashSet;
 
     iput v2, p0, Lcom/android/server/LocationManagerService;->mCurrentUserId:I
 
@@ -5027,9 +5054,9 @@
 
     if-eqz v3, :cond_c
 
-    const v7, 0x1040aa9
+    const v7, 0x1040aaa
 
-    const v33, 0x1040aac
+    const v33, 0x1040aad
 
     :goto_0
     invoke-static {}, Lcom/samsung/android/feature/SemCscFeature;->getInstance()Lcom/samsung/android/feature/SemCscFeature;
@@ -5044,7 +5071,7 @@
 
     if-nez v3, :cond_1
 
-    const v13, 0x1040aad
+    const v13, 0x1040aae
 
     :cond_1
     const v8, 0x10700b5
@@ -5057,7 +5084,7 @@
 
     if-eqz v3, :cond_3
 
-    const v7, 0x1040aa6
+    const v7, 0x1040aa7
 
     const v6, 0x11200f3
 
@@ -5817,9 +5844,9 @@
     throw v3
 
     :cond_c
-    const v7, 0x1040aa7
+    const v7, 0x1040aa8
 
-    const v33, 0x1040aaa
+    const v33, 0x1040aab
 
     goto/16 :goto_0
 
@@ -5834,9 +5861,9 @@
 
     if-eqz v3, :cond_2
 
-    const v7, 0x1040aa8
+    const v7, 0x1040aa9
 
-    const v33, 0x1040aab
+    const v33, 0x1040aac
 
     invoke-static {}, Lcom/samsung/android/feature/SemCscFeature;->getInstance()Lcom/samsung/android/feature/SemCscFeature;
 
@@ -5850,7 +5877,7 @@
 
     if-nez v3, :cond_e
 
-    const v13, 0x1040aad
+    const v13, 0x1040aae
 
     :cond_e
     const v8, 0x10700b5
@@ -12891,6 +12918,48 @@
     move-result-wide v12
 
     :try_start_0
+    iget-object v2, p0, Lcom/android/server/LocationManagerService;->mListenerBlacklist:Ljava/util/HashSet;
+
+    move-object/from16 v0, p4
+
+    invoke-virtual {v2, v0}, Ljava/util/HashSet;->contains(Ljava/lang/Object;)Z
+
+    move-result v2
+
+    if-eqz v2, :cond_3
+
+    const-string/jumbo v2, "LocationManagerService"
+
+    new-instance v3, Ljava/lang/StringBuilder;
+
+    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string/jumbo v7, "listener size is over threshold, so return : "
+
+    invoke-virtual {v3, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    move-object/from16 v0, p4
+
+    invoke-virtual {v3, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-static {v2, v3}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_1
+
+    invoke-static {v12, v13}, Landroid/os/Binder;->restoreCallingIdentity(J)V
+
+    return-void
+
+    :cond_3
+    :try_start_1
     move-object/from16 v0, p4
 
     invoke-virtual {p0, v5, v6, v0, v10}, Lcom/android/server/LocationManagerService;->checkLocationAccess(IILjava/lang/String;I)Z
@@ -12898,8 +12967,8 @@
     iget-object v14, p0, Lcom/android/server/LocationManagerService;->mLock:Ljava/lang/Object;
 
     monitor-enter v14
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_1
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_1
 
     move-object v2, p0
 
@@ -12909,7 +12978,7 @@
 
     move-object/from16 v7, p4
 
-    :try_start_1
+    :try_start_2
     invoke-direct/range {v2 .. v9}, Lcom/android/server/LocationManagerService;->checkListenerOrIntentLocked(Landroid/location/ILocationListener;Landroid/app/PendingIntent;IILjava/lang/String;Landroid/os/WorkSource;Z)Lcom/android/server/LocationManagerService$Receiver;
 
     move-result-object v4
@@ -12921,13 +12990,13 @@
     move-object/from16 v7, p4
 
     invoke-direct/range {v2 .. v7}, Lcom/android/server/LocationManagerService;->requestLocationUpdatesLocked(Landroid/location/LocationRequest;Lcom/android/server/LocationManagerService$Receiver;IILjava/lang/String;)V
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
-
-    :try_start_2
-    monitor-exit v14
     :try_end_2
-    .catchall {:try_start_2 .. :try_end_2} :catchall_1
+    .catchall {:try_start_2 .. :try_end_2} :catchall_0
+
+    :try_start_3
+    monitor-exit v14
+    :try_end_3
+    .catchall {:try_start_3 .. :try_end_3} :catchall_1
 
     invoke-static {v12, v13}, Landroid/os/Binder;->restoreCallingIdentity(J)V
 
@@ -12936,12 +13005,12 @@
     :catchall_0
     move-exception v2
 
-    :try_start_3
+    :try_start_4
     monitor-exit v14
 
     throw v2
-    :try_end_3
-    .catchall {:try_start_3 .. :try_end_3} :catchall_1
+    :try_end_4
+    .catchall {:try_start_4 .. :try_end_4} :catchall_1
 
     :catchall_1
     move-exception v2
@@ -13321,109 +13390,164 @@
 .end method
 
 .method public setDataFromNSFLP(ILandroid/os/Bundle;)V
-    .locals 3
+    .locals 4
 
-    const-string/jumbo v0, "LocationManagerService"
+    const-string/jumbo v1, "LocationManagerService"
 
-    new-instance v1, Ljava/lang/StringBuilder;
+    new-instance v2, Ljava/lang/StringBuilder;
 
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string/jumbo v2, "setDataFromNSFLP, type = "
+    const-string/jumbo v3, "setDataFromNSFLP, type = "
 
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v1
+    move-result-object v2
 
-    invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    invoke-virtual {v2, p1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    move-result-object v1
+    move-result-object v2
 
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v1
+    move-result-object v2
 
-    invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {v1, v2}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
     packed-switch p1, :pswitch_data_0
 
+    :cond_0
     :goto_0
     return-void
 
     :pswitch_0
-    const-string/jumbo v0, "gpsblacklist"
+    const-string/jumbo v1, "gpsblacklist"
 
-    invoke-direct {p0, v0, p2}, Lcom/android/server/LocationManagerService;->addToLocationList(Ljava/lang/String;Landroid/os/Bundle;)V
+    invoke-direct {p0, v1, p2}, Lcom/android/server/LocationManagerService;->addToLocationList(Ljava/lang/String;Landroid/os/Bundle;)V
 
-    const-string/jumbo v0, "LocationManagerService"
+    const-string/jumbo v1, "LocationManagerService"
 
-    new-instance v1, Ljava/lang/StringBuilder;
+    new-instance v2, Ljava/lang/StringBuilder;
 
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string/jumbo v2, "size of mLocBlacklist = "
+    const-string/jumbo v3, "size of mLocBlacklist = "
 
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v1
+    move-result-object v2
 
-    iget-object v2, p0, Lcom/android/server/LocationManagerService;->mLocBlacklist:Ljava/util/HashMap;
+    iget-object v3, p0, Lcom/android/server/LocationManagerService;->mLocBlacklist:Ljava/util/HashMap;
 
-    invoke-virtual {v2}, Ljava/util/HashMap;->size()I
+    invoke-virtual {v3}, Ljava/util/HashMap;->size()I
 
-    move-result v2
+    move-result v3
 
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    move-result-object v1
+    move-result-object v2
 
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v1
+    move-result-object v2
 
-    invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {v1, v2}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
     goto :goto_0
 
     :pswitch_1
-    const-string/jumbo v0, "gpswhitelist"
+    const-string/jumbo v1, "gpswhitelist"
 
-    invoke-direct {p0, v0, p2}, Lcom/android/server/LocationManagerService;->addToLocationList(Ljava/lang/String;Landroid/os/Bundle;)V
+    invoke-direct {p0, v1, p2}, Lcom/android/server/LocationManagerService;->addToLocationList(Ljava/lang/String;Landroid/os/Bundle;)V
 
-    const-string/jumbo v0, "LocationManagerService"
+    const-string/jumbo v1, "LocationManagerService"
 
-    new-instance v1, Ljava/lang/StringBuilder;
+    new-instance v2, Ljava/lang/StringBuilder;
 
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string/jumbo v2, "size of mLocWhitelist = "
+    const-string/jumbo v3, "size of mLocWhitelist = "
 
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v1
+    move-result-object v2
 
-    iget-object v2, p0, Lcom/android/server/LocationManagerService;->mLocWhitelist:Ljava/util/HashMap;
+    iget-object v3, p0, Lcom/android/server/LocationManagerService;->mLocWhitelist:Ljava/util/HashMap;
 
-    invoke-virtual {v2}, Ljava/util/HashMap;->size()I
+    invoke-virtual {v3}, Ljava/util/HashMap;->size()I
 
-    move-result v2
+    move-result v3
 
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    move-result-object v1
+    move-result-object v2
 
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v1
+    move-result-object v2
 
-    invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {v1, v2}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
     goto :goto_0
+
+    :pswitch_2
+    const-string/jumbo v1, "LocationManagerService"
+
+    const-string/jumbo v2, "setData for ListenerBlacklist"
+
+    invoke-static {v1, v2}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
+
+    const-string/jumbo v1, "listenerblacklist"
+
+    invoke-virtual {p2, v1}, Landroid/os/Bundle;->getStringArrayList(Ljava/lang/String;)Ljava/util/ArrayList;
+
+    move-result-object v0
+
+    iget-object v1, p0, Lcom/android/server/LocationManagerService;->mListenerBlacklist:Ljava/util/HashSet;
+
+    invoke-virtual {v1}, Ljava/util/HashSet;->clear()V
+
+    if-eqz v0, :cond_0
+
+    iget-object v1, p0, Lcom/android/server/LocationManagerService;->mListenerBlacklist:Ljava/util/HashSet;
+
+    invoke-virtual {v1, v0}, Ljava/util/HashSet;->addAll(Ljava/util/Collection;)Z
+
+    const-string/jumbo v1, "LocationManagerService"
+
+    new-instance v2, Ljava/lang/StringBuilder;
+
+    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string/jumbo v3, "size of mListenerBlacklist = "
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    iget-object v3, p0, Lcom/android/server/LocationManagerService;->mListenerBlacklist:Ljava/util/HashSet;
+
+    invoke-virtual {v3}, Ljava/util/HashSet;->size()I
+
+    move-result v3
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-static {v1, v2}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
+
+    goto/16 :goto_0
 
     :pswitch_data_0
     .packed-switch 0xb
         :pswitch_0
         :pswitch_1
+        :pswitch_2
     .end packed-switch
 .end method
 
@@ -13919,7 +14043,7 @@
 
     move-result-object v0
 
-    const v2, 0x1040aa6
+    const v2, 0x1040aa7
 
     invoke-virtual {v0, v2}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 

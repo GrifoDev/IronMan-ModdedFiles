@@ -11940,7 +11940,7 @@
 .method private makeActionsItems()V
     .locals 14
 
-    const v13, 0x1040970
+    const v13, 0x1040971
 
     const/16 v12, 0x32
 
@@ -12064,13 +12064,13 @@
 
     sget-object v0, Lcom/android/server/policy/GlobalActions;->mProKioskExitAlertDialogBuilder:Landroid/app/AlertDialog$Builder;
 
-    const v1, 0x1040972
+    const v1, 0x1040973
 
     invoke-virtual {v0, v1}, Landroid/app/AlertDialog$Builder;->setTitle(I)Landroid/app/AlertDialog$Builder;
 
     sget-object v0, Lcom/android/server/policy/GlobalActions;->mProKioskExitAlertDialogBuilder:Landroid/app/AlertDialog$Builder;
 
-    const v1, 0x1040973
+    const v1, 0x1040974
 
     invoke-virtual {v0, v1}, Landroid/app/AlertDialog$Builder;->setMessage(I)Landroid/app/AlertDialog$Builder;
 
@@ -12158,7 +12158,7 @@
     const v3, 0x1080401
 
     :goto_5
-    const v4, 0x104096f
+    const v4, 0x1040970
 
     move-object v1, p0
 
@@ -12497,17 +12497,17 @@
     :cond_5
     const v2, 0x1080400
 
-    goto :goto_4
+    goto/16 :goto_4
 
     :cond_6
     const v3, 0x1080400
 
-    goto :goto_5
+    goto/16 :goto_5
 
     :cond_7
     const v0, 0x1080a2e
 
-    goto :goto_6
+    goto/16 :goto_6
 
     :cond_8
     const v2, 0x1080a36

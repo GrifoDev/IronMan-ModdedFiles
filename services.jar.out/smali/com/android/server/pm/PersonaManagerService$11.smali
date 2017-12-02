@@ -62,7 +62,7 @@
 
     iget v1, p0, Lcom/android/server/pm/PersonaManagerService$11;->val$personaId:I
 
-    invoke-static {v0, v1}, Lcom/android/server/pm/PersonaManagerService;->-wrap68(Lcom/android/server/pm/PersonaManagerService;I)V
+    invoke-static {v0, v1}, Lcom/android/server/pm/PersonaManagerService;->-wrap69(Lcom/android/server/pm/PersonaManagerService;I)V
 
     return-void
 .end method

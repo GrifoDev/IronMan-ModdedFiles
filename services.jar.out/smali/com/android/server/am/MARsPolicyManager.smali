@@ -70,11 +70,11 @@
 
 .field private static final IMPORTANT_PKG_TYPE_ACTIVE_TRAFFIC:I = 0x80
 
+.field private static final IMPORTANT_PKG_TYPE_DEFAULT_APP:I = 0x400
+
 .field private static final IMPORTANT_PKG_TYPE_DEVICE_ADMIN:I = 0x100
 
 .field private static final IMPORTANT_PKG_TYPE_HOME:I = 0x800
-
-.field private static final IMPORTANT_PKG_TYPE_IME:I = 0x400
 
 .field private static final IMPORTANT_PKG_TYPE_LATEST_PROTECTED:I = 0x2
 
@@ -168,9 +168,9 @@
 
 .field private static final RESTRICTION_TYPES_BIGDATA_FLAG_APPLOCKER:I = 0x14140000
 
-.field private static final RESTRICTION_TYPES_BIGDATA_FLAG_ARES:I = 0x1c0000
+.field private static final RESTRICTION_TYPES_BIGDATA_FLAG_ARES:I = 0x101c0880
 
-.field private static final RESTRICTION_TYPES_BIGDATA_FLAG_AUTORUN:I = 0x1c0880
+.field private static final RESTRICTION_TYPES_BIGDATA_FLAG_AUTORUN:I = 0x101c0880
 
 .field public static final RESTRICTION_TYPES_COLLECTION_FOR_APPLOCKER:I = 0x15158110
 
@@ -258,8 +258,6 @@
 
 .field private SKIP_RATIO:I
 
-.field public SecureFolderUserId:I
-
 .field private final TREATLIKE_SYSTEMTIME_CHANGED_INTERNAL_TIME:J
 
 .field private UNUSEDPACKAGES_DEFAULT_LOCKING_TIME:J
@@ -344,6 +342,10 @@
 
 .field public mDataTrafficAmount:J
 
+.field private mDefaultDialerPackage:Ljava/lang/String;
+
+.field mDefaultDialerSettingsObserver:Landroid/database/ContentObserver;
+
 .field private mDefaultIMEList:Landroid/util/ArrayMap;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -355,6 +357,12 @@
         }
     .end annotation
 .end field
+
+.field private mDefaultSmsPackage:Ljava/lang/String;
+
+.field mDefaultSmsSettingsObserver:Landroid/database/ContentObserver;
+
+.field private mDualAppUserId:I
 
 .field mEdm:Landroid/app/enterprise/EnterpriseDeviceManager;
 
@@ -546,6 +554,10 @@
 
 .field private mRegisteredCocktailBarSettingsObserver:Z
 
+.field private mRegisteredDefaultDialerSettingsObserver:Z
+
+.field private mRegisteredDefaultSmsSettingsObserver:Z
+
 .field private mRegisteredInputMethodObserver:Z
 
 .field private mRestrictedPackages:Ljava/util/ArrayList;
@@ -643,6 +655,8 @@
 .end field
 
 .field private mScreenOn:Z
+
+.field private mSecureFolderUserId:I
 
 .field private mSemHqmManager:Landroid/os/SemHqmManager;
 
@@ -744,6 +758,14 @@
     return-object v0
 .end method
 
+.method static synthetic -get10(Lcom/android/server/am/MARsPolicyManager;)Landroid/util/ArrayMap;
+    .locals 1
+
+    iget-object v0, p0, Lcom/android/server/am/MARsPolicyManager;->mStorageStatMap:Landroid/util/ArrayMap;
+
+    return-object v0
+.end method
+
 .method static synthetic -get2(Lcom/android/server/am/MARsPolicyManager;)Lcom/android/server/am/MARsPolicyManager$Policy;
     .locals 1
 
@@ -800,12 +822,12 @@
     return v0
 .end method
 
-.method static synthetic -get9(Lcom/android/server/am/MARsPolicyManager;)Landroid/util/ArrayMap;
+.method static synthetic -get9(Lcom/android/server/am/MARsPolicyManager;)I
     .locals 1
 
-    iget-object v0, p0, Lcom/android/server/am/MARsPolicyManager;->mStorageStatMap:Landroid/util/ArrayMap;
+    iget v0, p0, Lcom/android/server/am/MARsPolicyManager;->mSecureFolderUserId:I
 
-    return-object v0
+    return v0
 .end method
 
 .method static synthetic -wrap0(Lcom/android/server/am/MARsPolicyManager;Ljava/util/ArrayList;Ljava/lang/String;I)Lcom/android/server/am/MARsPackageStatus;
@@ -847,12 +869,28 @@
 .method static synthetic -wrap4(Lcom/android/server/am/MARsPolicyManager;I)V
     .locals 0
 
+    invoke-direct {p0, p1}, Lcom/android/server/am/MARsPolicyManager;->getDefaultDialerPackage(I)V
+
+    return-void
+.end method
+
+.method static synthetic -wrap5(Lcom/android/server/am/MARsPolicyManager;I)V
+    .locals 0
+
     invoke-direct {p0, p1}, Lcom/android/server/am/MARsPolicyManager;->getDefaultIMEPackage(I)V
 
     return-void
 .end method
 
-.method static synthetic -wrap5(Lcom/android/server/am/MARsPolicyManager;)V
+.method static synthetic -wrap6(Lcom/android/server/am/MARsPolicyManager;I)V
+    .locals 0
+
+    invoke-direct {p0, p1}, Lcom/android/server/am/MARsPolicyManager;->getDefaultSmsPackage(I)V
+
+    return-void
+.end method
+
+.method static synthetic -wrap7(Lcom/android/server/am/MARsPolicyManager;)V
     .locals 0
 
     invoke-direct {p0}, Lcom/android/server/am/MARsPolicyManager;->getEnabledAccessibilityPackage()V
@@ -860,7 +898,7 @@
     return-void
 .end method
 
-.method static synthetic -wrap6(Lcom/android/server/am/MARsPolicyManager;)V
+.method static synthetic -wrap8(Lcom/android/server/am/MARsPolicyManager;)V
     .locals 0
 
     invoke-direct {p0}, Lcom/android/server/am/MARsPolicyManager;->updateFromMARsThread()V
@@ -868,7 +906,7 @@
     return-void
 .end method
 
-.method static synthetic -wrap7(Lcom/android/server/am/MARsPolicyManager;)V
+.method static synthetic -wrap9(Lcom/android/server/am/MARsPolicyManager;)V
     .locals 0
 
     invoke-direct {p0}, Lcom/android/server/am/MARsPolicyManager;->updateLaunchedBeforeInitToManaged()V
@@ -993,6 +1031,10 @@
 
     iput-object v8, p0, Lcom/android/server/am/MARsPolicyManager;->mCocktailBarSettingsObserver:Landroid/database/ContentObserver;
 
+    iput-object v8, p0, Lcom/android/server/am/MARsPolicyManager;->mDefaultDialerSettingsObserver:Landroid/database/ContentObserver;
+
+    iput-object v8, p0, Lcom/android/server/am/MARsPolicyManager;->mDefaultSmsSettingsObserver:Landroid/database/ContentObserver;
+
     iput-object v8, p0, Lcom/android/server/am/MARsPolicyManager;->mEdm:Landroid/app/enterprise/EnterpriseDeviceManager;
 
     iput-boolean v2, p0, Lcom/android/server/am/MARsPolicyManager;->mRegisteredInputMethodObserver:Z
@@ -1000,6 +1042,10 @@
     iput-boolean v2, p0, Lcom/android/server/am/MARsPolicyManager;->mRegisteredAccessibilityContentObserver:Z
 
     iput-boolean v2, p0, Lcom/android/server/am/MARsPolicyManager;->mRegisteredCocktailBarSettingsObserver:Z
+
+    iput-boolean v2, p0, Lcom/android/server/am/MARsPolicyManager;->mRegisteredDefaultDialerSettingsObserver:Z
+
+    iput-boolean v2, p0, Lcom/android/server/am/MARsPolicyManager;->mRegisteredDefaultSmsSettingsObserver:Z
 
     iput-object v8, p0, Lcom/android/server/am/MARsPolicyManager;->appLockerPolicy:Lcom/android/server/am/MARsPolicyManager$Policy;
 
@@ -1348,6 +1394,10 @@
     invoke-direct {v0}, Landroid/util/ArrayMap;-><init>()V
 
     iput-object v0, p0, Lcom/android/server/am/MARsPolicyManager;->mDefaultIMEList:Landroid/util/ArrayMap;
+
+    iput-object v8, p0, Lcom/android/server/am/MARsPolicyManager;->mDefaultDialerPackage:Ljava/lang/String;
+
+    iput-object v8, p0, Lcom/android/server/am/MARsPolicyManager;->mDefaultSmsPackage:Ljava/lang/String;
 
     iput-object v8, p0, Lcom/android/server/am/MARsPolicyManager;->mCurrentHomePackage:Ljava/lang/String;
 
@@ -2996,6 +3046,29 @@
     throw v6
 .end method
 
+.method private getDefaultDialerPackage(I)V
+    .locals 3
+
+    iget-object v1, p0, Lcom/android/server/am/MARsPolicyManager;->mContext:Landroid/content/Context;
+
+    invoke-virtual {v1}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
+
+    move-result-object v1
+
+    const-string/jumbo v2, "dialer_default_application"
+
+    invoke-static {v1, v2, p1}, Landroid/provider/Settings$Secure;->getStringForUser(Landroid/content/ContentResolver;Ljava/lang/String;I)Ljava/lang/String;
+
+    move-result-object v0
+
+    if-eqz v0, :cond_0
+
+    iput-object v0, p0, Lcom/android/server/am/MARsPolicyManager;->mDefaultDialerPackage:Ljava/lang/String;
+
+    :cond_0
+    return-void
+.end method
+
 .method private getDefaultIMEPackage(I)V
     .locals 6
 
@@ -3144,6 +3217,29 @@
     monitor-exit v4
 
     throw v3
+.end method
+
+.method private getDefaultSmsPackage(I)V
+    .locals 3
+
+    iget-object v1, p0, Lcom/android/server/am/MARsPolicyManager;->mContext:Landroid/content/Context;
+
+    invoke-virtual {v1}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
+
+    move-result-object v1
+
+    const-string/jumbo v2, "sms_default_application"
+
+    invoke-static {v1, v2, p1}, Landroid/provider/Settings$Secure;->getStringForUser(Landroid/content/ContentResolver;Ljava/lang/String;I)Ljava/lang/String;
+
+    move-result-object v0
+
+    if-eqz v0, :cond_0
+
+    iput-object v0, p0, Lcom/android/server/am/MARsPolicyManager;->mDefaultSmsPackage:Ljava/lang/String;
+
+    :cond_0
+    return-void
 .end method
 
 .method private getEnabledAccessibilityPackage()V
@@ -3433,6 +3529,104 @@
     monitor-exit v4
 
     throw v3
+.end method
+
+.method private getLaunchIntentForPackageAsUser(Ljava/lang/String;I)Landroid/content/Intent;
+    .locals 7
+
+    const/4 v5, 0x0
+
+    const/4 v6, 0x0
+
+    iget-object v4, p0, Lcom/android/server/am/MARsPolicyManager;->mContext:Landroid/content/Context;
+
+    invoke-virtual {v4}, Landroid/content/Context;->getPackageManager()Landroid/content/pm/PackageManager;
+
+    move-result-object v2
+
+    new-instance v1, Landroid/content/Intent;
+
+    const-string/jumbo v4, "android.intent.action.MAIN"
+
+    invoke-direct {v1, v4}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
+
+    const-string/jumbo v4, "android.intent.category.INFO"
+
+    invoke-virtual {v1, v4}, Landroid/content/Intent;->addCategory(Ljava/lang/String;)Landroid/content/Intent;
+
+    invoke-virtual {v1, p1}, Landroid/content/Intent;->setPackage(Ljava/lang/String;)Landroid/content/Intent;
+
+    invoke-virtual {v2, v1, v6, p2}, Landroid/content/pm/PackageManager;->queryIntentActivitiesAsUser(Landroid/content/Intent;II)Ljava/util/List;
+
+    move-result-object v3
+
+    if-eqz v3, :cond_0
+
+    invoke-interface {v3}, Ljava/util/List;->size()I
+
+    move-result v4
+
+    if-gtz v4, :cond_1
+
+    :cond_0
+    const-string/jumbo v4, "android.intent.category.INFO"
+
+    invoke-virtual {v1, v4}, Landroid/content/Intent;->removeCategory(Ljava/lang/String;)V
+
+    const-string/jumbo v4, "android.intent.category.LAUNCHER"
+
+    invoke-virtual {v1, v4}, Landroid/content/Intent;->addCategory(Ljava/lang/String;)Landroid/content/Intent;
+
+    invoke-virtual {v1, p1}, Landroid/content/Intent;->setPackage(Ljava/lang/String;)Landroid/content/Intent;
+
+    invoke-virtual {v2, v1, v6, p2}, Landroid/content/pm/PackageManager;->queryIntentActivitiesAsUser(Landroid/content/Intent;II)Ljava/util/List;
+
+    move-result-object v3
+
+    :cond_1
+    if-eqz v3, :cond_2
+
+    invoke-interface {v3}, Ljava/util/List;->size()I
+
+    move-result v4
+
+    if-gtz v4, :cond_3
+
+    :cond_2
+    return-object v5
+
+    :cond_3
+    new-instance v0, Landroid/content/Intent;
+
+    invoke-direct {v0, v1}, Landroid/content/Intent;-><init>(Landroid/content/Intent;)V
+
+    const/high16 v4, 0x10000000
+
+    invoke-virtual {v0, v4}, Landroid/content/Intent;->setFlags(I)Landroid/content/Intent;
+
+    invoke-interface {v3, v6}, Ljava/util/List;->get(I)Ljava/lang/Object;
+
+    move-result-object v4
+
+    check-cast v4, Landroid/content/pm/ResolveInfo;
+
+    iget-object v4, v4, Landroid/content/pm/ResolveInfo;->activityInfo:Landroid/content/pm/ActivityInfo;
+
+    iget-object v5, v4, Landroid/content/pm/ActivityInfo;->packageName:Ljava/lang/String;
+
+    invoke-interface {v3, v6}, Ljava/util/List;->get(I)Ljava/lang/Object;
+
+    move-result-object v4
+
+    check-cast v4, Landroid/content/pm/ResolveInfo;
+
+    iget-object v4, v4, Landroid/content/pm/ResolveInfo;->activityInfo:Landroid/content/pm/ActivityInfo;
+
+    iget-object v4, v4, Landroid/content/pm/ActivityInfo;->name:Ljava/lang/String;
+
+    invoke-virtual {v0, v5, v4}, Landroid/content/Intent;->setClassName(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
+
+    return-object v0
 .end method
 
 .method private getLaunchedAppBeforeInit(Ljava/lang/String;I)Lcom/android/server/am/MARsPolicyManager$AppInfoBeforeInit;
@@ -4892,9 +5086,163 @@
     return v0
 .end method
 
-.method private isDefaultIMEPackage(Lcom/android/server/am/MARsPackageStatus;Z)Z
-    .locals 5
+.method private isDefaultPackage(Lcom/android/server/am/MARsPackageStatus;Z)Z
+    .locals 6
 
+    const/4 v5, 0x1
+
+    iget v1, p1, Lcom/android/server/am/MARsPackageStatus;->userId:I
+
+    iget-object v2, p0, Lcom/android/server/am/MARsPolicyManager;->mContext:Landroid/content/Context;
+
+    invoke-virtual {v2}, Landroid/content/Context;->getUserId()I
+
+    move-result v2
+
+    if-ne v1, v2, :cond_5
+
+    iget-object v1, p0, Lcom/android/server/am/MARsPolicyManager;->mDefaultDialerPackage:Ljava/lang/String;
+
+    if-eqz v1, :cond_2
+
+    iget-object v1, p0, Lcom/android/server/am/MARsPolicyManager;->mDefaultDialerPackage:Ljava/lang/String;
+
+    iget-object v2, p1, Lcom/android/server/am/MARsPackageStatus;->name:Ljava/lang/String;
+
+    invoke-virtual {v1, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v1
+
+    if-eqz v1, :cond_2
+
+    if-nez p2, :cond_1
+
+    sget-boolean v1, Lcom/android/server/am/MARsPolicyManager;->DEBUG_MARs:Z
+
+    if-eqz v1, :cond_0
+
+    const-string/jumbo v1, "MARsPolicyManager"
+
+    new-instance v2, Ljava/lang/StringBuilder;
+
+    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string/jumbo v3, "CurrentImportantPackage "
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    iget-object v3, p1, Lcom/android/server/am/MARsPackageStatus;->name:Ljava/lang/String;
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    const-string/jumbo v3, "(userId : "
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    iget v3, p1, Lcom/android/server/am/MARsPackageStatus;->userId:I
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    const-string/jumbo v3, ")-default dialer package!"
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-static {v1, v2}, Landroid/util/Slog;->v(Ljava/lang/String;Ljava/lang/String;)I
+
+    :cond_0
+    const-string/jumbo v1, "DefaultDialer"
+
+    iput-object v1, p1, Lcom/android/server/am/MARsPackageStatus;->skipReason:Ljava/lang/String;
+
+    :cond_1
+    return v5
+
+    :cond_2
+    iget-object v1, p0, Lcom/android/server/am/MARsPolicyManager;->mDefaultSmsPackage:Ljava/lang/String;
+
+    if-eqz v1, :cond_5
+
+    iget-object v1, p0, Lcom/android/server/am/MARsPolicyManager;->mDefaultSmsPackage:Ljava/lang/String;
+
+    iget-object v2, p1, Lcom/android/server/am/MARsPackageStatus;->name:Ljava/lang/String;
+
+    invoke-virtual {v1, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v1
+
+    if-eqz v1, :cond_5
+
+    if-nez p2, :cond_4
+
+    sget-boolean v1, Lcom/android/server/am/MARsPolicyManager;->DEBUG_MARs:Z
+
+    if-eqz v1, :cond_3
+
+    const-string/jumbo v1, "MARsPolicyManager"
+
+    new-instance v2, Ljava/lang/StringBuilder;
+
+    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string/jumbo v3, "CurrentImportantPackage "
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    iget-object v3, p1, Lcom/android/server/am/MARsPackageStatus;->name:Ljava/lang/String;
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    const-string/jumbo v3, "(userId : "
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    iget v3, p1, Lcom/android/server/am/MARsPackageStatus;->userId:I
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    const-string/jumbo v3, ")-default sms package!"
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-static {v1, v2}, Landroid/util/Slog;->v(Ljava/lang/String;Ljava/lang/String;)I
+
+    :cond_3
+    const-string/jumbo v1, "DefaultSMS"
+
+    iput-object v1, p1, Lcom/android/server/am/MARsPackageStatus;->skipReason:Ljava/lang/String;
+
+    :cond_4
+    return v5
+
+    :cond_5
     iget-object v2, p0, Lcom/android/server/am/MARsPolicyManager;->mMARsLock:Ljava/lang/Object;
 
     monitor-enter v2
@@ -4902,7 +5250,7 @@
     :try_start_0
     iget-object v1, p0, Lcom/android/server/am/MARsPolicyManager;->mDefaultIMEList:Landroid/util/ArrayMap;
 
-    if-eqz v1, :cond_2
+    if-eqz v1, :cond_8
 
     iget-object v1, p0, Lcom/android/server/am/MARsPolicyManager;->mDefaultIMEList:Landroid/util/ArrayMap;
 
@@ -4918,7 +5266,7 @@
 
     check-cast v0, Ljava/lang/String;
 
-    if-eqz v0, :cond_2
+    if-eqz v0, :cond_8
 
     iget-object v1, p1, Lcom/android/server/am/MARsPackageStatus;->name:Ljava/lang/String;
 
@@ -4926,13 +5274,13 @@
 
     move-result v1
 
-    if-eqz v1, :cond_2
+    if-eqz v1, :cond_8
 
-    if-nez p2, :cond_1
+    if-nez p2, :cond_7
 
     sget-boolean v1, Lcom/android/server/am/MARsPolicyManager;->DEBUG_MARs:Z
 
-    if-eqz v1, :cond_0
+    if-eqz v1, :cond_6
 
     const-string/jumbo v1, "MARsPolicyManager"
 
@@ -4976,21 +5324,19 @@
 
     invoke-static {v1, v3}, Landroid/util/Slog;->v(Ljava/lang/String;Ljava/lang/String;)I
 
-    :cond_0
+    :cond_6
     const-string/jumbo v1, "DefaultIME"
 
     iput-object v1, p1, Lcom/android/server/am/MARsPackageStatus;->skipReason:Ljava/lang/String;
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    :cond_1
-    const/4 v1, 0x1
-
+    :cond_7
     monitor-exit v2
 
-    return v1
+    return v5
 
-    :cond_2
+    :cond_8
     monitor-exit v2
 
     const/4 v1, 0x0
@@ -5842,141 +6188,135 @@
 .end method
 
 .method private isLauncherableApp(Ljava/lang/String;I)Z
-    .locals 8
+    .locals 7
 
-    const/4 v7, 0x1
+    const/4 v6, 0x1
 
-    const-string/jumbo v4, "com.baidu.searchbox_samsung"
+    const-string/jumbo v3, "com.baidu.searchbox_samsung"
 
-    invoke-virtual {v4, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v3, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move-result v4
+    move-result v3
 
-    if-nez v4, :cond_0
+    if-nez v3, :cond_0
 
-    const-string/jumbo v4, "com.bst.floatingmsgproxy"
+    const-string/jumbo v3, "com.bst.floatingmsgproxy"
 
-    invoke-virtual {v4, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v3, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move-result v4
+    move-result v3
 
-    if-eqz v4, :cond_1
+    if-eqz v3, :cond_1
 
     :cond_0
-    return v7
+    return v6
 
     :cond_1
     :try_start_0
-    iget-object v4, p0, Lcom/android/server/am/MARsPolicyManager;->mContext:Landroid/content/Context;
-
-    invoke-virtual {v4}, Landroid/content/Context;->getPackageManager()Landroid/content/pm/PackageManager;
-
-    move-result-object v2
-
-    invoke-virtual {v2, p1}, Landroid/content/pm/PackageManager;->getLaunchIntentForPackage(Ljava/lang/String;)Landroid/content/Intent;
+    invoke-direct {p0, p1, p2}, Lcom/android/server/am/MARsPolicyManager;->getLaunchIntentForPackageAsUser(Ljava/lang/String;I)Landroid/content/Intent;
 
     move-result-object v1
 
     if-nez v1, :cond_5
 
-    iget-object v4, p0, Lcom/android/server/am/MARsPolicyManager;->mManagedPackages:Ljava/util/ArrayList;
+    iget-object v3, p0, Lcom/android/server/am/MARsPolicyManager;->mManagedPackages:Ljava/util/ArrayList;
 
-    invoke-direct {p0, v4, p1, p2}, Lcom/android/server/am/MARsPolicyManager;->getMARsPackageStatus(Ljava/util/ArrayList;Ljava/lang/String;I)Lcom/android/server/am/MARsPackageStatus;
+    invoke-direct {p0, v3, p1, p2}, Lcom/android/server/am/MARsPolicyManager;->getMARsPackageStatus(Ljava/util/ArrayList;Ljava/lang/String;I)Lcom/android/server/am/MARsPackageStatus;
 
-    move-result-object v3
+    move-result-object v2
 
-    if-nez v3, :cond_3
+    if-nez v2, :cond_3
 
-    sget-boolean v4, Lcom/android/server/am/MARsPolicyManager;->DEBUG_MARs:Z
+    sget-boolean v3, Lcom/android/server/am/MARsPolicyManager;->DEBUG_MARs:Z
 
-    if-eqz v4, :cond_2
+    if-eqz v3, :cond_2
 
-    const-string/jumbo v4, "MARsPolicyManager"
+    const-string/jumbo v3, "MARsPolicyManager"
 
-    new-instance v5, Ljava/lang/StringBuilder;
+    new-instance v4, Ljava/lang/StringBuilder;
 
-    invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string/jumbo v6, "AutoRun Policy isLauncherableApp -- Not launcherable system package:"
+    const-string/jumbo v5, "AutoRun Policy isLauncherableApp -- Not launcherable system package:"
 
-    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v5
+    move-result-object v4
 
-    invoke-virtual {v5, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v4, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v5
+    move-result-object v4
 
-    invoke-virtual {v5}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v5
+    move-result-object v4
 
-    invoke-static {v4, v5}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {v3, v4}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
     :cond_2
-    const/4 v4, 0x0
+    const/4 v3, 0x0
 
-    return v4
+    return v3
 
     :cond_3
-    sget-boolean v4, Lcom/android/server/am/MARsPolicyManager;->DEBUG_MARs:Z
+    sget-boolean v3, Lcom/android/server/am/MARsPolicyManager;->DEBUG_MARs:Z
 
-    if-eqz v4, :cond_4
+    if-eqz v3, :cond_4
 
-    const-string/jumbo v4, "MARsPolicyManager"
+    const-string/jumbo v3, "MARsPolicyManager"
 
-    new-instance v5, Ljava/lang/StringBuilder;
+    new-instance v4, Ljava/lang/StringBuilder;
 
-    invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string/jumbo v6, "AutoRun Policy isLauncherableApp -- Not launcherable 3rd party package:"
+    const-string/jumbo v5, "AutoRun Policy isLauncherableApp -- Not launcherable 3rd party package:"
 
-    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v5
+    move-result-object v4
 
-    invoke-virtual {v5, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v4, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v5
+    move-result-object v4
 
-    invoke-virtual {v5}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v5
+    move-result-object v4
 
-    invoke-static {v4, v5}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {v3, v4}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
     :cond_4
-    return v7
+    return v6
 
     :catch_0
     move-exception v0
 
-    const-string/jumbo v4, "MARsPolicyManager"
+    const-string/jumbo v3, "MARsPolicyManager"
 
-    new-instance v5, Ljava/lang/StringBuilder;
+    new-instance v4, Ljava/lang/StringBuilder;
 
-    invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string/jumbo v6, "isLaucherableApp exception="
+    const-string/jumbo v5, "isLaucherableApp exception="
 
-    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v5
+    move-result-object v4
 
-    invoke-virtual {v5, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    invoke-virtual {v4, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
-    move-result-object v5
+    move-result-object v4
 
-    invoke-virtual {v5}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v5
+    move-result-object v4
 
-    invoke-static {v4, v5}, Landroid/util/Slog;->e(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {v3, v4}, Landroid/util/Slog;->e(Ljava/lang/String;Ljava/lang/String;)I
 
     :cond_5
-    return v7
+    return v6
 .end method
 
 .method private isLockScreenPackage(Lcom/android/server/am/MARsPackageStatus;Z)Z
@@ -9449,10 +9789,10 @@
     goto :goto_3
 .end method
 
-.method private registerDefaultInputMethodChanged()V
+.method private registerDefaultDialerSettingsChanged()V
     .locals 5
 
-    iget-boolean v0, p0, Lcom/android/server/am/MARsPolicyManager;->mRegisteredInputMethodObserver:Z
+    iget-boolean v0, p0, Lcom/android/server/am/MARsPolicyManager;->mRegisteredDefaultDialerSettingsObserver:Z
 
     if-nez v0, :cond_0
 
@@ -9463,6 +9803,55 @@
     invoke-direct {v1}, Landroid/os/Handler;-><init>()V
 
     invoke-direct {v0, p0, v1}, Lcom/android/server/am/MARsPolicyManager$3;-><init>(Lcom/android/server/am/MARsPolicyManager;Landroid/os/Handler;)V
+
+    iput-object v0, p0, Lcom/android/server/am/MARsPolicyManager;->mDefaultDialerSettingsObserver:Landroid/database/ContentObserver;
+
+    iget-object v0, p0, Lcom/android/server/am/MARsPolicyManager;->mContext:Landroid/content/Context;
+
+    invoke-virtual {v0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
+
+    move-result-object v0
+
+    const-string/jumbo v1, "dialer_default_application"
+
+    invoke-static {v1}, Landroid/provider/Settings$Secure;->getUriFor(Ljava/lang/String;)Landroid/net/Uri;
+
+    move-result-object v1
+
+    iget-object v2, p0, Lcom/android/server/am/MARsPolicyManager;->mDefaultDialerSettingsObserver:Landroid/database/ContentObserver;
+
+    iget-object v3, p0, Lcom/android/server/am/MARsPolicyManager;->mContext:Landroid/content/Context;
+
+    invoke-virtual {v3}, Landroid/content/Context;->getUserId()I
+
+    move-result v3
+
+    const/4 v4, 0x0
+
+    invoke-virtual {v0, v1, v4, v2, v3}, Landroid/content/ContentResolver;->registerContentObserver(Landroid/net/Uri;ZLandroid/database/ContentObserver;I)V
+
+    const/4 v0, 0x1
+
+    iput-boolean v0, p0, Lcom/android/server/am/MARsPolicyManager;->mRegisteredDefaultDialerSettingsObserver:Z
+
+    :cond_0
+    return-void
+.end method
+
+.method private registerDefaultInputMethodChanged()V
+    .locals 5
+
+    iget-boolean v0, p0, Lcom/android/server/am/MARsPolicyManager;->mRegisteredInputMethodObserver:Z
+
+    if-nez v0, :cond_0
+
+    new-instance v0, Lcom/android/server/am/MARsPolicyManager$5;
+
+    new-instance v1, Landroid/os/Handler;
+
+    invoke-direct {v1}, Landroid/os/Handler;-><init>()V
+
+    invoke-direct {v0, p0, v1}, Lcom/android/server/am/MARsPolicyManager$5;-><init>(Lcom/android/server/am/MARsPolicyManager;Landroid/os/Handler;)V
 
     iput-object v0, p0, Lcom/android/server/am/MARsPolicyManager;->mInputMethodObserver:Landroid/database/ContentObserver;
 
@@ -9498,10 +9887,10 @@
     return-void
 .end method
 
-.method private registerEnabledAccessibilityServicesChanged()V
+.method private registerDefaultSmsSettingsChanged()V
     .locals 5
 
-    iget-boolean v0, p0, Lcom/android/server/am/MARsPolicyManager;->mRegisteredAccessibilityContentObserver:Z
+    iget-boolean v0, p0, Lcom/android/server/am/MARsPolicyManager;->mRegisteredDefaultSmsSettingsObserver:Z
 
     if-nez v0, :cond_0
 
@@ -9512,6 +9901,55 @@
     invoke-direct {v1}, Landroid/os/Handler;-><init>()V
 
     invoke-direct {v0, p0, v1}, Lcom/android/server/am/MARsPolicyManager$4;-><init>(Lcom/android/server/am/MARsPolicyManager;Landroid/os/Handler;)V
+
+    iput-object v0, p0, Lcom/android/server/am/MARsPolicyManager;->mDefaultSmsSettingsObserver:Landroid/database/ContentObserver;
+
+    iget-object v0, p0, Lcom/android/server/am/MARsPolicyManager;->mContext:Landroid/content/Context;
+
+    invoke-virtual {v0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
+
+    move-result-object v0
+
+    const-string/jumbo v1, "sms_default_application"
+
+    invoke-static {v1}, Landroid/provider/Settings$Secure;->getUriFor(Ljava/lang/String;)Landroid/net/Uri;
+
+    move-result-object v1
+
+    iget-object v2, p0, Lcom/android/server/am/MARsPolicyManager;->mDefaultSmsSettingsObserver:Landroid/database/ContentObserver;
+
+    iget-object v3, p0, Lcom/android/server/am/MARsPolicyManager;->mContext:Landroid/content/Context;
+
+    invoke-virtual {v3}, Landroid/content/Context;->getUserId()I
+
+    move-result v3
+
+    const/4 v4, 0x0
+
+    invoke-virtual {v0, v1, v4, v2, v3}, Landroid/content/ContentResolver;->registerContentObserver(Landroid/net/Uri;ZLandroid/database/ContentObserver;I)V
+
+    const/4 v0, 0x1
+
+    iput-boolean v0, p0, Lcom/android/server/am/MARsPolicyManager;->mRegisteredDefaultSmsSettingsObserver:Z
+
+    :cond_0
+    return-void
+.end method
+
+.method private registerEnabledAccessibilityServicesChanged()V
+    .locals 5
+
+    iget-boolean v0, p0, Lcom/android/server/am/MARsPolicyManager;->mRegisteredAccessibilityContentObserver:Z
+
+    if-nez v0, :cond_0
+
+    new-instance v0, Lcom/android/server/am/MARsPolicyManager$6;
+
+    new-instance v1, Landroid/os/Handler;
+
+    invoke-direct {v1}, Landroid/os/Handler;-><init>()V
+
+    invoke-direct {v0, p0, v1}, Lcom/android/server/am/MARsPolicyManager$6;-><init>(Lcom/android/server/am/MARsPolicyManager;Landroid/os/Handler;)V
 
     iput-object v0, p0, Lcom/android/server/am/MARsPolicyManager;->mAccessibilityContentObserver:Landroid/database/ContentObserver;
 
@@ -9554,13 +9992,13 @@
 
     if-nez v0, :cond_0
 
-    new-instance v0, Lcom/android/server/am/MARsPolicyManager$5;
+    new-instance v0, Lcom/android/server/am/MARsPolicyManager$7;
 
     new-instance v1, Landroid/os/Handler;
 
     invoke-direct {v1}, Landroid/os/Handler;-><init>()V
 
-    invoke-direct {v0, p0, v1}, Lcom/android/server/am/MARsPolicyManager$5;-><init>(Lcom/android/server/am/MARsPolicyManager;Landroid/os/Handler;)V
+    invoke-direct {v0, p0, v1}, Lcom/android/server/am/MARsPolicyManager$7;-><init>(Lcom/android/server/am/MARsPolicyManager;Landroid/os/Handler;)V
 
     iput-object v0, p0, Lcom/android/server/am/MARsPolicyManager;->mCocktailBarSettingsObserver:Landroid/database/ContentObserver;
 
@@ -9650,11 +10088,11 @@
 .method private runMARsUpdatePackagesThread()V
     .locals 2
 
-    new-instance v0, Lcom/android/server/am/MARsPolicyManager$8;
+    new-instance v0, Lcom/android/server/am/MARsPolicyManager$10;
 
     const-string/jumbo v1, "MARsUpdatePackages"
 
-    invoke-direct {v0, p0, v1}, Lcom/android/server/am/MARsPolicyManager$8;-><init>(Lcom/android/server/am/MARsPolicyManager;Ljava/lang/String;)V
+    invoke-direct {v0, p0, v1}, Lcom/android/server/am/MARsPolicyManager$10;-><init>(Lcom/android/server/am/MARsPolicyManager;Ljava/lang/String;)V
 
     iput-object v0, p0, Lcom/android/server/am/MARsPolicyManager;->mMARsUpdatePackagesThread:Ljava/lang/Thread;
 
@@ -10600,7 +11038,7 @@
 
     move-object/from16 v1, v19
 
-    invoke-direct {v0, v1, v3}, Lcom/android/server/am/MARsPolicyManager;->isDefaultIMEPackage(Lcom/android/server/am/MARsPackageStatus;Z)Z
+    invoke-direct {v0, v1, v3}, Lcom/android/server/am/MARsPolicyManager;->isDefaultPackage(Lcom/android/server/am/MARsPackageStatus;Z)Z
 
     move-result v3
 
@@ -12111,14 +12549,17 @@
 
     move-result v1
 
-    if-eqz v1, :cond_d
+    if-nez v1, :cond_d
 
-    const/16 v0, 0x400
+    const-string/jumbo v1, "DefaultDialer"
 
-    goto/16 :goto_0
+    invoke-virtual {v1, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    :cond_d
-    const-string/jumbo v1, "CurrentHome"
+    move-result v1
+
+    if-nez v1, :cond_d
+
+    const-string/jumbo v1, "DefaultSMS"
 
     invoke-virtual {v1, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
@@ -12126,12 +12567,13 @@
 
     if-eqz v1, :cond_e
 
-    const/16 v0, 0x800
+    :cond_d
+    const/16 v0, 0x400
 
     goto/16 :goto_0
 
     :cond_e
-    const-string/jumbo v1, "Top"
+    const-string/jumbo v1, "CurrentHome"
 
     invoke-virtual {v1, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
@@ -12139,12 +12581,12 @@
 
     if-eqz v1, :cond_f
 
-    const/16 v0, 0x1000
+    const/16 v0, 0x800
 
     goto/16 :goto_0
 
     :cond_f
-    const-string/jumbo v1, "DependsOnSystem"
+    const-string/jumbo v1, "Top"
 
     invoke-virtual {v1, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
@@ -12152,11 +12594,24 @@
 
     if-eqz v1, :cond_10
 
-    const/16 v0, 0x4000
+    const/16 v0, 0x1000
 
     goto/16 :goto_0
 
     :cond_10
+    const-string/jumbo v1, "DependsOnSystem"
+
+    invoke-virtual {v1, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v1
+
+    if-eqz v1, :cond_11
+
+    const/16 v0, 0x4000
+
+    goto/16 :goto_0
+
+    :cond_11
     const-string/jumbo v1, "RunningLocation"
 
     invoke-virtual {v1, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -12398,23 +12853,40 @@
 
     if-nez v0, :cond_0
 
-    iget v0, p0, Lcom/android/server/am/MARsPolicyManager;->SecureFolderUserId:I
+    iget v0, p0, Lcom/android/server/am/MARsPolicyManager;->mSecureFolderUserId:I
 
     const/16 v1, 0x96
 
     if-lt v0, v1, :cond_0
 
-    iget v0, p0, Lcom/android/server/am/MARsPolicyManager;->SecureFolderUserId:I
+    iget v0, p0, Lcom/android/server/am/MARsPolicyManager;->mSecureFolderUserId:I
 
     const/16 v1, 0xa0
 
     if-gt v0, v1, :cond_0
 
-    iget v0, p0, Lcom/android/server/am/MARsPolicyManager;->SecureFolderUserId:I
+    iget v0, p0, Lcom/android/server/am/MARsPolicyManager;->mSecureFolderUserId:I
 
     invoke-virtual {p0, p1, p2, v0}, Lcom/android/server/am/MARsPolicyManager;->cancelPolicy(Ljava/lang/String;II)V
 
     :cond_0
+    iget v0, p0, Lcom/android/server/am/MARsPolicyManager;->mDualAppUserId:I
+
+    const/16 v1, 0x5f
+
+    if-lt v0, v1, :cond_1
+
+    iget v0, p0, Lcom/android/server/am/MARsPolicyManager;->mDualAppUserId:I
+
+    const/16 v1, 0x63
+
+    if-gt v0, v1, :cond_1
+
+    iget v0, p0, Lcom/android/server/am/MARsPolicyManager;->mDualAppUserId:I
+
+    invoke-virtual {p0, p1, p2, v0}, Lcom/android/server/am/MARsPolicyManager;->cancelPolicy(Ljava/lang/String;II)V
+
+    :cond_1
     return-void
 .end method
 
@@ -14505,7 +14977,7 @@
     :cond_18
     move-object/from16 v0, p0
 
-    iget v11, v0, Lcom/android/server/am/MARsPolicyManager;->SecureFolderUserId:I
+    iget v11, v0, Lcom/android/server/am/MARsPolicyManager;->mSecureFolderUserId:I
 
     const/16 v14, 0x96
 
@@ -14513,7 +14985,7 @@
 
     move-object/from16 v0, p0
 
-    iget v11, v0, Lcom/android/server/am/MARsPolicyManager;->SecureFolderUserId:I
+    iget v11, v0, Lcom/android/server/am/MARsPolicyManager;->mSecureFolderUserId:I
 
     const/16 v14, 0xa0
 
@@ -14525,7 +14997,7 @@
 
     move-object/from16 v0, p0
 
-    iget v14, v0, Lcom/android/server/am/MARsPolicyManager;->SecureFolderUserId:I
+    iget v14, v0, Lcom/android/server/am/MARsPolicyManager;->mSecureFolderUserId:I
 
     invoke-static {v14}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
@@ -14561,7 +15033,7 @@
 
     move-object/from16 v0, p0
 
-    iget v14, v0, Lcom/android/server/am/MARsPolicyManager;->SecureFolderUserId:I
+    iget v14, v0, Lcom/android/server/am/MARsPolicyManager;->mSecureFolderUserId:I
 
     invoke-virtual {v11, v14}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
@@ -17801,6 +18273,14 @@
     return v5
 .end method
 
+.method getDualAppUserId()I
+    .locals 1
+
+    iget v0, p0, Lcom/android/server/am/MARsPolicyManager;->mDualAppUserId:I
+
+    return v0
+.end method
+
 .method public getEmergencyKillEnabled()Z
     .locals 1
 
@@ -18783,7 +19263,7 @@
 
     move-object/from16 v0, p0
 
-    iget v5, v0, Lcom/android/server/am/MARsPolicyManager;->SecureFolderUserId:I
+    iget v5, v0, Lcom/android/server/am/MARsPolicyManager;->mSecureFolderUserId:I
 
     const/16 v6, 0x96
 
@@ -18791,7 +19271,7 @@
 
     move-object/from16 v0, p0
 
-    iget v5, v0, Lcom/android/server/am/MARsPolicyManager;->SecureFolderUserId:I
+    iget v5, v0, Lcom/android/server/am/MARsPolicyManager;->mSecureFolderUserId:I
 
     const/16 v6, 0xa0
 
@@ -18799,7 +19279,7 @@
 
     move-object/from16 v0, p0
 
-    iget v5, v0, Lcom/android/server/am/MARsPolicyManager;->SecureFolderUserId:I
+    iget v5, v0, Lcom/android/server/am/MARsPolicyManager;->mSecureFolderUserId:I
 
     move-object/from16 v0, p0
 
@@ -19037,6 +19517,14 @@
     return v0
 .end method
 
+.method getSecureFolderUserId()I
+    .locals 1
+
+    iget v0, p0, Lcom/android/server/am/MARsPolicyManager;->mSecureFolderUserId:I
+
+    return v0
+.end method
+
 .method public handleAlertToastWindowStarted(Ljava/lang/String;I)V
     .locals 4
 
@@ -19090,9 +19578,9 @@
 
     iget-object v1, v1, Lcom/android/server/am/ActivityManagerService;->mHandler:Lcom/android/server/am/ActivityManagerService$MainHandler;
 
-    new-instance v2, Lcom/android/server/am/MARsPolicyManager$6;
+    new-instance v2, Lcom/android/server/am/MARsPolicyManager$8;
 
-    invoke-direct {v2, p0, p1, p2}, Lcom/android/server/am/MARsPolicyManager$6;-><init>(Lcom/android/server/am/MARsPolicyManager;Ljava/lang/String;I)V
+    invoke-direct {v2, p0, p1, p2}, Lcom/android/server/am/MARsPolicyManager$8;-><init>(Lcom/android/server/am/MARsPolicyManager;Ljava/lang/String;I)V
 
     invoke-virtual {v1, v2}, Lcom/android/server/am/ActivityManagerService$MainHandler;->post(Ljava/lang/Runnable;)Z
 
@@ -19458,9 +19946,9 @@
 
     iget-object v1, v1, Lcom/android/server/am/ActivityManagerService;->mHandler:Lcom/android/server/am/ActivityManagerService$MainHandler;
 
-    new-instance v2, Lcom/android/server/am/MARsPolicyManager$7;
+    new-instance v2, Lcom/android/server/am/MARsPolicyManager$9;
 
-    invoke-direct {v2, p0, p1, p2}, Lcom/android/server/am/MARsPolicyManager$7;-><init>(Lcom/android/server/am/MARsPolicyManager;Ljava/lang/String;I)V
+    invoke-direct {v2, p0, p1, p2}, Lcom/android/server/am/MARsPolicyManager$9;-><init>(Lcom/android/server/am/MARsPolicyManager;Ljava/lang/String;I)V
 
     invoke-virtual {v1, v2}, Lcom/android/server/am/ActivityManagerService$MainHandler;->post(Ljava/lang/Runnable;)Z
 
@@ -20550,101 +21038,101 @@
 .end method
 
 .method public init(Z)V
-    .locals 7
+    .locals 8
 
-    const/4 v4, 0x0
+    const/4 v5, 0x0
 
-    const/4 v6, 0x1
+    const/4 v7, 0x1
 
-    iget-object v3, p0, Lcom/android/server/am/MARsPolicyManager;->mTrigger:Lcom/android/server/am/MARsTrigger;
+    iget-object v4, p0, Lcom/android/server/am/MARsPolicyManager;->mTrigger:Lcom/android/server/am/MARsTrigger;
 
-    invoke-virtual {v3}, Lcom/android/server/am/MARsTrigger;->registerEmStateReceiver()V
+    invoke-virtual {v4}, Lcom/android/server/am/MARsTrigger;->registerEmStateReceiver()V
 
     invoke-virtual {p0}, Lcom/android/server/am/MARsPolicyManager;->isAppOptUIAvailable()Z
 
-    move-result v3
+    move-result v4
 
-    if-nez v3, :cond_0
+    if-nez v4, :cond_0
 
-    sput-boolean v4, Lcom/android/server/am/MARsPolicyManager;->MARs_ENABLE:Z
+    sput-boolean v5, Lcom/android/server/am/MARsPolicyManager;->MARs_ENABLE:Z
 
     return-void
 
     :cond_0
-    sput-boolean v6, Lcom/android/server/am/MARsPolicyManager;->MARs_ENABLE:Z
+    sput-boolean v7, Lcom/android/server/am/MARsPolicyManager;->MARs_ENABLE:Z
 
     invoke-virtual {p0}, Lcom/android/server/am/MARsPolicyManager;->isAppSleepUIAvailable()Z
 
-    move-result v3
+    move-result v4
 
-    if-eqz v3, :cond_1
+    if-eqz v4, :cond_1
 
-    const-string/jumbo v3, "MARsPolicyManager"
+    const-string/jumbo v4, "MARsPolicyManager"
 
-    const-string/jumbo v4, "AppSleepUI is available"
+    const-string/jumbo v5, "AppSleepUI is available"
 
-    invoke-static {v3, v4}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {v4, v5}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    sput-boolean v6, Lcom/android/server/am/MARsPolicyManager;->AppSleep_Enable:Z
+    sput-boolean v7, Lcom/android/server/am/MARsPolicyManager;->AppSleep_Enable:Z
 
     :cond_1
     :try_start_0
-    const-string/jumbo v3, "sys.config.mars_version"
+    const-string/jumbo v4, "sys.config.mars_version"
 
-    const-string/jumbo v4, "2.10"
+    const-string/jumbo v5, "2.10"
 
-    invoke-static {v3, v4}, Landroid/os/SystemProperties;->set(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v4, v5}, Landroid/os/SystemProperties;->set(Ljava/lang/String;Ljava/lang/String;)V
     :try_end_0
     .catch Ljava/lang/IllegalArgumentException; {:try_start_0 .. :try_end_0} :catch_0
 
     :goto_0
     :try_start_1
-    const-string/jumbo v3, "sys.config.mars_version"
+    const-string/jumbo v4, "sys.config.mars_version"
 
-    invoke-static {v3}, Landroid/os/SystemProperties;->get(Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {v4}, Landroid/os/SystemProperties;->get(Ljava/lang/String;)Ljava/lang/String;
 
-    move-result-object v3
+    move-result-object v4
 
-    iput-object v3, p0, Lcom/android/server/am/MARsPolicyManager;->MARS_VERSION:Ljava/lang/String;
+    iput-object v4, p0, Lcom/android/server/am/MARsPolicyManager;->MARS_VERSION:Ljava/lang/String;
     :try_end_1
     .catch Ljava/lang/IllegalArgumentException; {:try_start_1 .. :try_end_1} :catch_1
 
     :goto_1
     :try_start_2
-    iget-object v3, p0, Lcom/android/server/am/MARsPolicyManager;->mContext:Landroid/content/Context;
+    iget-object v4, p0, Lcom/android/server/am/MARsPolicyManager;->mContext:Landroid/content/Context;
 
-    invoke-virtual {v3}, Landroid/content/Context;->getUserId()I
+    invoke-virtual {v4}, Landroid/content/Context;->getUserId()I
 
-    move-result v3
+    move-result v4
 
-    invoke-virtual {p0, v3}, Lcom/android/server/am/MARsPolicyManager;->getDatabaseVersion(I)I
+    invoke-virtual {p0, v4}, Lcom/android/server/am/MARsPolicyManager;->getDatabaseVersion(I)I
 
-    move-result v3
+    move-result v4
 
-    invoke-static {v3}, Ljava/lang/Integer;->toString(I)Ljava/lang/String;
+    invoke-static {v4}, Ljava/lang/Integer;->toString(I)Ljava/lang/String;
 
-    move-result-object v3
+    move-result-object v4
 
-    const/4 v4, 0x0
+    const/4 v5, 0x0
 
-    const/4 v5, 0x4
+    const/4 v6, 0x4
 
-    invoke-virtual {v3, v4, v5}, Ljava/lang/String;->substring(II)Ljava/lang/String;
+    invoke-virtual {v4, v5, v6}, Ljava/lang/String;->substring(II)Ljava/lang/String;
 
-    move-result-object v3
+    move-result-object v4
 
-    iput-object v3, p0, Lcom/android/server/am/MARsPolicyManager;->MARSDB_VERSION:Ljava/lang/String;
+    iput-object v4, p0, Lcom/android/server/am/MARsPolicyManager;->MARSDB_VERSION:Ljava/lang/String;
     :try_end_2
     .catch Ljava/lang/StringIndexOutOfBoundsException; {:try_start_2 .. :try_end_2} :catch_2
 
     :goto_2
-    iget-object v3, p0, Lcom/android/server/am/MARsPolicyManager;->mDBManager:Lcom/android/server/am/MARsDBManager;
+    iget-object v4, p0, Lcom/android/server/am/MARsPolicyManager;->mDBManager:Lcom/android/server/am/MARsDBManager;
 
-    invoke-virtual {v3, p1}, Lcom/android/server/am/MARsDBManager;->getMARsPolicyCondition(Z)V
+    invoke-virtual {v4, p1}, Lcom/android/server/am/MARsDBManager;->getMARsPolicyCondition(Z)V
 
-    iget-object v3, p0, Lcom/android/server/am/MARsPolicyManager;->mTrigger:Lcom/android/server/am/MARsTrigger;
+    iget-object v4, p0, Lcom/android/server/am/MARsPolicyManager;->mTrigger:Lcom/android/server/am/MARsTrigger;
 
-    invoke-virtual {v3, v6}, Lcom/android/server/am/MARsTrigger;->registerReceiver(Z)V
+    invoke-virtual {v4, v7}, Lcom/android/server/am/MARsTrigger;->registerReceiver(Z)V
 
     invoke-direct {p0}, Lcom/android/server/am/MARsPolicyManager;->registerDefaultInputMethodChanged()V
 
@@ -20652,139 +21140,207 @@
 
     invoke-direct {p0}, Lcom/android/server/am/MARsPolicyManager;->registerEnabledCocktailBarChanged()V
 
-    iget-object v3, p0, Lcom/android/server/am/MARsPolicyManager;->mContext:Landroid/content/Context;
+    invoke-direct {p0}, Lcom/android/server/am/MARsPolicyManager;->registerDefaultDialerSettingsChanged()V
 
-    invoke-virtual {v3}, Landroid/content/Context;->getUserId()I
+    invoke-direct {p0}, Lcom/android/server/am/MARsPolicyManager;->registerDefaultSmsSettingsChanged()V
 
-    move-result v3
+    iget-object v4, p0, Lcom/android/server/am/MARsPolicyManager;->mContext:Landroid/content/Context;
 
-    invoke-direct {p0, v3}, Lcom/android/server/am/MARsPolicyManager;->getActiveAdminsPackages(I)V
+    invoke-virtual {v4}, Landroid/content/Context;->getUserId()I
 
-    iget-object v3, p0, Lcom/android/server/am/MARsPolicyManager;->mDBManager:Lcom/android/server/am/MARsDBManager;
+    move-result v4
 
-    invoke-virtual {v3}, Lcom/android/server/am/MARsDBManager;->initSettingFromUI()V
+    invoke-direct {p0, v4}, Lcom/android/server/am/MARsPolicyManager;->getActiveAdminsPackages(I)V
 
-    iget-object v3, p0, Lcom/android/server/am/MARsPolicyManager;->mDBManager:Lcom/android/server/am/MARsDBManager;
+    iget-object v4, p0, Lcom/android/server/am/MARsPolicyManager;->mDBManager:Lcom/android/server/am/MARsDBManager;
 
-    invoke-virtual {v3}, Lcom/android/server/am/MARsDBManager;->initManagedPackages()V
+    invoke-virtual {v4}, Lcom/android/server/am/MARsDBManager;->initSettingFromUI()V
 
-    iget-object v3, p0, Lcom/android/server/am/MARsPolicyManager;->mDBManager:Lcom/android/server/am/MARsDBManager;
+    iget-object v4, p0, Lcom/android/server/am/MARsPolicyManager;->mDBManager:Lcom/android/server/am/MARsDBManager;
 
-    invoke-virtual {v3}, Lcom/android/server/am/MARsDBManager;->initSKTPackagesWhiteList()V
+    invoke-virtual {v4}, Lcom/android/server/am/MARsDBManager;->initManagedPackages()V
+
+    iget-object v4, p0, Lcom/android/server/am/MARsPolicyManager;->mDBManager:Lcom/android/server/am/MARsDBManager;
+
+    invoke-virtual {v4}, Lcom/android/server/am/MARsDBManager;->initSKTPackagesWhiteList()V
 
     invoke-virtual {p0}, Lcom/android/server/am/MARsPolicyManager;->checkSCPMParameters()V
 
-    iget-object v3, p0, Lcom/android/server/am/MARsPolicyManager;->mContext:Landroid/content/Context;
+    iget-object v4, p0, Lcom/android/server/am/MARsPolicyManager;->mContext:Landroid/content/Context;
 
-    invoke-virtual {v3}, Landroid/content/Context;->getUserId()I
+    invoke-virtual {v4}, Landroid/content/Context;->getUserId()I
 
-    move-result v3
+    move-result v4
 
-    invoke-direct {p0, v3}, Lcom/android/server/am/MARsPolicyManager;->getDefaultIMEPackage(I)V
+    invoke-direct {p0, v4}, Lcom/android/server/am/MARsPolicyManager;->getDefaultIMEPackage(I)V
+
+    iget-object v4, p0, Lcom/android/server/am/MARsPolicyManager;->mContext:Landroid/content/Context;
+
+    invoke-virtual {v4}, Landroid/content/Context;->getUserId()I
+
+    move-result v4
+
+    invoke-direct {p0, v4}, Lcom/android/server/am/MARsPolicyManager;->getDefaultDialerPackage(I)V
+
+    iget-object v4, p0, Lcom/android/server/am/MARsPolicyManager;->mContext:Landroid/content/Context;
+
+    invoke-virtual {v4}, Landroid/content/Context;->getUserId()I
+
+    move-result v4
+
+    invoke-direct {p0, v4}, Lcom/android/server/am/MARsPolicyManager;->getDefaultSmsPackage(I)V
 
     invoke-direct {p0}, Lcom/android/server/am/MARsPolicyManager;->getEnabledCocktailBarList()V
 
-    iget-object v3, p0, Lcom/android/server/am/MARsPolicyManager;->mContext:Landroid/content/Context;
+    iget-object v4, p0, Lcom/android/server/am/MARsPolicyManager;->mContext:Landroid/content/Context;
 
-    const-string/jumbo v4, "persona"
+    const-string/jumbo v5, "persona"
 
-    invoke-virtual {v3, v4}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
-
-    move-result-object v2
-
-    check-cast v2, Lcom/samsung/android/knox/SemPersonaManager;
-
-    if-eqz v2, :cond_2
-
-    const/4 v3, 0x2
-
-    invoke-virtual {v2, v3, v6}, Lcom/samsung/android/knox/SemPersonaManager;->getKnoxId(IZ)I
-
-    move-result v3
-
-    iput v3, p0, Lcom/android/server/am/MARsPolicyManager;->SecureFolderUserId:I
-
-    iget-object v3, p0, Lcom/android/server/am/MARsPolicyManager;->mContext:Landroid/content/Context;
-
-    invoke-virtual {v3}, Landroid/content/Context;->getUserId()I
-
-    move-result v3
-
-    if-nez v3, :cond_2
-
-    iget v3, p0, Lcom/android/server/am/MARsPolicyManager;->SecureFolderUserId:I
-
-    const/16 v4, 0x96
-
-    if-lt v3, v4, :cond_2
-
-    iget v3, p0, Lcom/android/server/am/MARsPolicyManager;->SecureFolderUserId:I
-
-    const/16 v4, 0xa0
-
-    if-gt v3, v4, :cond_2
-
-    iget-object v3, p0, Lcom/android/server/am/MARsPolicyManager;->mTrigger:Lcom/android/server/am/MARsTrigger;
-
-    iget v4, p0, Lcom/android/server/am/MARsPolicyManager;->SecureFolderUserId:I
-
-    invoke-virtual {v3, v4}, Lcom/android/server/am/MARsTrigger;->registerSecureFolderReceiver(I)V
-
-    iget v3, p0, Lcom/android/server/am/MARsPolicyManager;->SecureFolderUserId:I
-
-    invoke-direct {p0, v3}, Lcom/android/server/am/MARsPolicyManager;->getActiveAdminsPackages(I)V
-
-    iget v3, p0, Lcom/android/server/am/MARsPolicyManager;->SecureFolderUserId:I
-
-    invoke-direct {p0, v3}, Lcom/android/server/am/MARsPolicyManager;->getDefaultIMEPackage(I)V
-
-    :cond_2
-    invoke-direct {p0}, Lcom/android/server/am/MARsPolicyManager;->registerNotificationListener()V
-
-    const-string/jumbo v3, "window"
-
-    invoke-static {v3}, Landroid/os/ServiceManager;->getService(Ljava/lang/String;)Landroid/os/IBinder;
+    invoke-virtual {v4, v5}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
 
     move-result-object v3
 
-    check-cast v3, Lcom/android/server/wm/WindowManagerService;
+    check-cast v3, Lcom/samsung/android/knox/SemPersonaManager;
 
-    iput-object v3, p0, Lcom/android/server/am/MARsPolicyManager;->mWindowManager:Lcom/android/server/wm/WindowManagerService;
+    if-eqz v3, :cond_2
+
+    const/4 v4, 0x2
+
+    invoke-virtual {v3, v4, v7}, Lcom/samsung/android/knox/SemPersonaManager;->getKnoxId(IZ)I
+
+    move-result v4
+
+    iput v4, p0, Lcom/android/server/am/MARsPolicyManager;->mSecureFolderUserId:I
+
+    iget-object v4, p0, Lcom/android/server/am/MARsPolicyManager;->mContext:Landroid/content/Context;
+
+    invoke-virtual {v4}, Landroid/content/Context;->getUserId()I
+
+    move-result v4
+
+    if-nez v4, :cond_2
+
+    iget v4, p0, Lcom/android/server/am/MARsPolicyManager;->mSecureFolderUserId:I
+
+    const/16 v5, 0x96
+
+    if-lt v4, v5, :cond_2
+
+    iget v4, p0, Lcom/android/server/am/MARsPolicyManager;->mSecureFolderUserId:I
+
+    const/16 v5, 0xa0
+
+    if-gt v4, v5, :cond_2
+
+    iget-object v4, p0, Lcom/android/server/am/MARsPolicyManager;->mTrigger:Lcom/android/server/am/MARsTrigger;
+
+    iget v5, p0, Lcom/android/server/am/MARsPolicyManager;->mSecureFolderUserId:I
+
+    invoke-virtual {v4, v5}, Lcom/android/server/am/MARsTrigger;->registerSecureFolderReceiver(I)V
+
+    iget v4, p0, Lcom/android/server/am/MARsPolicyManager;->mSecureFolderUserId:I
+
+    invoke-direct {p0, v4}, Lcom/android/server/am/MARsPolicyManager;->getActiveAdminsPackages(I)V
+
+    iget v4, p0, Lcom/android/server/am/MARsPolicyManager;->mSecureFolderUserId:I
+
+    invoke-direct {p0, v4}, Lcom/android/server/am/MARsPolicyManager;->getDefaultIMEPackage(I)V
+
+    :cond_2
+    :try_start_3
+    const-string/jumbo v4, "sys.dualapp.profile_id"
+
+    const-string/jumbo v5, "-1"
+
+    invoke-static {v4, v5}, Landroid/os/SystemProperties;->get(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v4
+
+    invoke-static {v4}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
+
+    move-result v4
+
+    iput v4, p0, Lcom/android/server/am/MARsPolicyManager;->mDualAppUserId:I
+
+    iget v4, p0, Lcom/android/server/am/MARsPolicyManager;->mDualAppUserId:I
+
+    const/16 v5, 0x5f
+
+    if-lt v4, v5, :cond_3
+
+    iget v4, p0, Lcom/android/server/am/MARsPolicyManager;->mDualAppUserId:I
+
+    const/16 v5, 0x63
+
+    if-gt v4, v5, :cond_3
+
+    iget-object v4, p0, Lcom/android/server/am/MARsPolicyManager;->mTrigger:Lcom/android/server/am/MARsTrigger;
+
+    iget v5, p0, Lcom/android/server/am/MARsPolicyManager;->mDualAppUserId:I
+
+    invoke-virtual {v4, v5}, Lcom/android/server/am/MARsTrigger;->registerDualAppReceiver(I)V
+    :try_end_3
+    .catch Ljava/lang/NumberFormatException; {:try_start_3 .. :try_end_3} :catch_3
+
+    :cond_3
+    :goto_3
+    invoke-direct {p0}, Lcom/android/server/am/MARsPolicyManager;->registerNotificationListener()V
+
+    const-string/jumbo v4, "window"
+
+    invoke-static {v4}, Landroid/os/ServiceManager;->getService(Ljava/lang/String;)Landroid/os/IBinder;
+
+    move-result-object v4
+
+    check-cast v4, Lcom/android/server/wm/WindowManagerService;
+
+    iput-object v4, p0, Lcom/android/server/am/MARsPolicyManager;->mWindowManager:Lcom/android/server/wm/WindowManagerService;
 
     return-void
 
     :catch_0
     move-exception v0
 
-    const-string/jumbo v3, "MARsPolicyManager"
+    const-string/jumbo v4, "MARsPolicyManager"
 
-    const-string/jumbo v4, "init(), we cannot set system property"
+    const-string/jumbo v5, "init(), we cannot set system property"
 
-    invoke-static {v3, v4}, Landroid/util/Slog;->e(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {v4, v5}, Landroid/util/Slog;->e(Ljava/lang/String;Ljava/lang/String;)I
 
     goto/16 :goto_0
 
     :catch_1
     move-exception v0
 
-    const-string/jumbo v3, "MARsPolicyManager"
+    const-string/jumbo v4, "MARsPolicyManager"
 
-    const-string/jumbo v4, "init(), we cannot get MARsVersion"
+    const-string/jumbo v5, "init(), we cannot get MARsVersion"
 
-    invoke-static {v3, v4}, Landroid/util/Slog;->e(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {v4, v5}, Landroid/util/Slog;->e(Ljava/lang/String;Ljava/lang/String;)I
 
     goto/16 :goto_1
 
     :catch_2
-    move-exception v1
+    move-exception v2
 
-    const-string/jumbo v3, "MARsPolicyManager"
+    const-string/jumbo v4, "MARsPolicyManager"
 
-    const-string/jumbo v4, "init(), IndexOutOfBoundsException"
+    const-string/jumbo v5, "init(), IndexOutOfBoundsException"
 
-    invoke-static {v3, v4}, Landroid/util/Slog;->e(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {v4, v5}, Landroid/util/Slog;->e(Ljava/lang/String;Ljava/lang/String;)I
 
     goto/16 :goto_2
+
+    :catch_3
+    move-exception v1
+
+    const-string/jumbo v4, "MARsPolicyManager"
+
+    const-string/jumbo v5, "init() get DualAppUserId failed!"
+
+    invoke-static {v4, v5}, Landroid/util/Slog;->e(Ljava/lang/String;Ljava/lang/String;)I
+
+    goto :goto_3
 .end method
 
 .method public initBigdataPackage(Lcom/android/server/am/MARsPackageStatus;)V
@@ -22769,7 +23325,7 @@
 
     move-object/from16 v1, p1
 
-    invoke-direct {v0, v1, v4}, Lcom/android/server/am/MARsPolicyManager;->isDefaultIMEPackage(Lcom/android/server/am/MARsPackageStatus;Z)Z
+    invoke-direct {v0, v1, v4}, Lcom/android/server/am/MARsPolicyManager;->isDefaultPackage(Lcom/android/server/am/MARsPackageStatus;Z)Z
 
     move-result v15
 
@@ -23055,7 +23611,7 @@
     goto :goto_1
 
     :sswitch_b
-    invoke-direct {p0, p1, v6}, Lcom/android/server/am/MARsPolicyManager;->isDefaultIMEPackage(Lcom/android/server/am/MARsPackageStatus;Z)Z
+    invoke-direct {p0, p1, v6}, Lcom/android/server/am/MARsPolicyManager;->isDefaultPackage(Lcom/android/server/am/MARsPackageStatus;Z)Z
 
     move-result v1
 
@@ -24782,7 +25338,7 @@
     goto/16 :goto_6
 
     :pswitch_1
-    const v4, 0x1c0880
+    const v4, 0x101c0880
 
     move-object/from16 v0, p0
 
@@ -24791,7 +25347,7 @@
     goto/16 :goto_6
 
     :pswitch_2
-    const/high16 v4, 0x1c0000
+    const v4, 0x101c0880
 
     move-object/from16 v0, p0
 
@@ -24800,8 +25356,6 @@
     .catchall {:try_start_4 .. :try_end_4} :catchall_0
 
     goto/16 :goto_6
-
-    nop
 
     :pswitch_data_0
     .packed-switch 0x1
@@ -25676,6 +26230,14 @@
     goto :goto_0
 .end method
 
+.method setDualAppUserId(I)V
+    .locals 0
+
+    iput p1, p0, Lcom/android/server/am/MARsPolicyManager;->mDualAppUserId:I
+
+    return-void
+.end method
+
 .method public setEmergencyKillEnabled(Z)V
     .locals 0
 
@@ -26410,6 +26972,14 @@
     return-void
 .end method
 
+.method setSecureFolderUserId(I)V
+    .locals 0
+
+    iput p1, p0, Lcom/android/server/am/MARsPolicyManager;->mSecureFolderUserId:I
+
+    return-void
+.end method
+
 .method setWhiteListIntentsForSKT(Ljava/util/ArrayList;)V
     .locals 2
     .annotation system Ldalvik/annotation/Signature;
@@ -26523,10 +27093,48 @@
     const/4 v2, 0x0
 
     iput-boolean v2, p0, Lcom/android/server/am/MARsPolicyManager;->mRegisteredCocktailBarSettingsObserver:Z
+
+    :cond_2
+    iget-boolean v2, p0, Lcom/android/server/am/MARsPolicyManager;->mRegisteredDefaultDialerSettingsObserver:Z
+
+    if-eqz v2, :cond_3
+
+    iget-object v2, p0, Lcom/android/server/am/MARsPolicyManager;->mContext:Landroid/content/Context;
+
+    invoke-virtual {v2}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
+
+    move-result-object v2
+
+    iget-object v3, p0, Lcom/android/server/am/MARsPolicyManager;->mDefaultDialerSettingsObserver:Landroid/database/ContentObserver;
+
+    invoke-virtual {v2, v3}, Landroid/content/ContentResolver;->unregisterContentObserver(Landroid/database/ContentObserver;)V
+
+    const/4 v2, 0x0
+
+    iput-boolean v2, p0, Lcom/android/server/am/MARsPolicyManager;->mRegisteredDefaultDialerSettingsObserver:Z
+
+    :cond_3
+    iget-boolean v2, p0, Lcom/android/server/am/MARsPolicyManager;->mRegisteredDefaultSmsSettingsObserver:Z
+
+    if-eqz v2, :cond_4
+
+    iget-object v2, p0, Lcom/android/server/am/MARsPolicyManager;->mContext:Landroid/content/Context;
+
+    invoke-virtual {v2}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
+
+    move-result-object v2
+
+    iget-object v3, p0, Lcom/android/server/am/MARsPolicyManager;->mDefaultSmsSettingsObserver:Landroid/database/ContentObserver;
+
+    invoke-virtual {v2, v3}, Landroid/content/ContentResolver;->unregisterContentObserver(Landroid/database/ContentObserver;)V
+
+    const/4 v2, 0x0
+
+    iput-boolean v2, p0, Lcom/android/server/am/MARsPolicyManager;->mRegisteredDefaultSmsSettingsObserver:Z
     :try_end_0
     .catch Ljava/lang/IllegalArgumentException; {:try_start_0 .. :try_end_0} :catch_0
 
-    :cond_2
+    :cond_4
     :goto_0
     :try_start_1
     iget-object v2, p0, Lcom/android/server/am/MARsPolicyManager;->mMARsNotificationListener:Landroid/service/notification/NotificationListenerService;
@@ -26567,25 +27175,25 @@
 
     iget-object v2, p0, Lcom/android/server/am/MARsPolicyManager;->mManagedPackages:Ljava/util/ArrayList;
 
-    if-eqz v2, :cond_3
+    if-eqz v2, :cond_5
 
     iget-object v2, p0, Lcom/android/server/am/MARsPolicyManager;->mManagedPackages:Ljava/util/ArrayList;
 
     invoke-virtual {v2}, Ljava/util/ArrayList;->clear()V
 
-    :cond_3
+    :cond_5
     iget-object v2, p0, Lcom/android/server/am/MARsPolicyManager;->mRestrictedPackages:Ljava/util/ArrayList;
 
-    if-eqz v2, :cond_4
+    if-eqz v2, :cond_6
 
     iget-object v2, p0, Lcom/android/server/am/MARsPolicyManager;->mRestrictedPackages:Ljava/util/ArrayList;
 
     invoke-virtual {v2}, Ljava/util/ArrayList;->clear()V
 
-    :cond_4
+    :cond_6
     iget-object v2, p0, Lcom/android/server/am/MARsPolicyManager;->mPolicyExceptionList:Ljava/util/ArrayList;
 
-    if-eqz v2, :cond_5
+    if-eqz v2, :cond_7
 
     iget-object v2, p0, Lcom/android/server/am/MARsPolicyManager;->mPolicyExceptionList:Ljava/util/ArrayList;
 
@@ -26593,7 +27201,7 @@
     :try_end_2
     .catchall {:try_start_2 .. :try_end_2} :catchall_0
 
-    :cond_5
+    :cond_7
     monitor-exit v3
 
     invoke-static {}, Lcom/android/server/am/ActivityManagerService;->resetPriorityAfterLockedSection()V
@@ -26605,133 +27213,133 @@
     :try_start_3
     iget-object v2, p0, Lcom/android/server/am/MARsPolicyManager;->mLatestProtectedPackages:Landroid/util/ArrayMap;
 
-    if-eqz v2, :cond_6
+    if-eqz v2, :cond_8
 
     iget-object v2, p0, Lcom/android/server/am/MARsPolicyManager;->mLatestProtectedPackages:Landroid/util/ArrayMap;
 
     invoke-virtual {v2}, Landroid/util/ArrayMap;->clear()V
 
-    :cond_6
+    :cond_8
     iget-object v2, p0, Lcom/android/server/am/MARsPolicyManager;->mTrafficStatMap:Landroid/util/ArrayMap;
 
-    if-eqz v2, :cond_7
+    if-eqz v2, :cond_9
 
     iget-object v2, p0, Lcom/android/server/am/MARsPolicyManager;->mTrafficStatMap:Landroid/util/ArrayMap;
 
     invoke-virtual {v2}, Landroid/util/ArrayMap;->clear()V
 
-    :cond_7
-    iget-object v2, p0, Lcom/android/server/am/MARsPolicyManager;->mRunningLocationPackages:Ljava/util/ArrayList;
-
-    if-eqz v2, :cond_8
-
-    iget-object v2, p0, Lcom/android/server/am/MARsPolicyManager;->mRunningLocationPackages:Ljava/util/ArrayList;
-
-    invoke-virtual {v2}, Ljava/util/ArrayList;->clear()V
-
-    :cond_8
-    iget-object v2, p0, Lcom/android/server/am/MARsPolicyManager;->mBoundAppWidgetPackages:Ljava/util/ArrayList;
-
-    if-eqz v2, :cond_9
-
-    iget-object v2, p0, Lcom/android/server/am/MARsPolicyManager;->mBoundAppWidgetPackages:Ljava/util/ArrayList;
-
-    invoke-virtual {v2}, Ljava/util/ArrayList;->clear()V
-
     :cond_9
-    iget-object v2, p0, Lcom/android/server/am/MARsPolicyManager;->mLaunchedAppBeforeInit:Ljava/util/ArrayList;
+    iget-object v2, p0, Lcom/android/server/am/MARsPolicyManager;->mRunningLocationPackages:Ljava/util/ArrayList;
 
     if-eqz v2, :cond_a
 
-    iget-object v2, p0, Lcom/android/server/am/MARsPolicyManager;->mLaunchedAppBeforeInit:Ljava/util/ArrayList;
+    iget-object v2, p0, Lcom/android/server/am/MARsPolicyManager;->mRunningLocationPackages:Ljava/util/ArrayList;
 
     invoke-virtual {v2}, Ljava/util/ArrayList;->clear()V
 
     :cond_a
-    iget-object v2, p0, Lcom/android/server/am/MARsPolicyManager;->mOngoingNotificationList:Landroid/util/ArrayMap;
+    iget-object v2, p0, Lcom/android/server/am/MARsPolicyManager;->mBoundAppWidgetPackages:Ljava/util/ArrayList;
 
     if-eqz v2, :cond_b
 
+    iget-object v2, p0, Lcom/android/server/am/MARsPolicyManager;->mBoundAppWidgetPackages:Ljava/util/ArrayList;
+
+    invoke-virtual {v2}, Ljava/util/ArrayList;->clear()V
+
+    :cond_b
+    iget-object v2, p0, Lcom/android/server/am/MARsPolicyManager;->mLaunchedAppBeforeInit:Ljava/util/ArrayList;
+
+    if-eqz v2, :cond_c
+
+    iget-object v2, p0, Lcom/android/server/am/MARsPolicyManager;->mLaunchedAppBeforeInit:Ljava/util/ArrayList;
+
+    invoke-virtual {v2}, Ljava/util/ArrayList;->clear()V
+
+    :cond_c
+    iget-object v2, p0, Lcom/android/server/am/MARsPolicyManager;->mOngoingNotificationList:Landroid/util/ArrayMap;
+
+    if-eqz v2, :cond_d
+
     iget-object v2, p0, Lcom/android/server/am/MARsPolicyManager;->mOngoingNotificationList:Landroid/util/ArrayMap;
 
     invoke-virtual {v2}, Landroid/util/ArrayMap;->clear()V
 
-    :cond_b
-    iget-object v2, p0, Lcom/android/server/am/MARsPolicyManager;->mNotificationListenerList:Landroid/util/ArrayMap;
-
-    if-eqz v2, :cond_c
-
-    iget-object v2, p0, Lcom/android/server/am/MARsPolicyManager;->mNotificationListenerList:Landroid/util/ArrayMap;
-
-    invoke-virtual {v2}, Landroid/util/ArrayMap;->clear()V
-
-    :cond_c
-    iget-object v2, p0, Lcom/android/server/am/MARsPolicyManager;->mEnabledAccessibilityPackages:Ljava/util/ArrayList;
-
-    if-eqz v2, :cond_d
-
-    iget-object v2, p0, Lcom/android/server/am/MARsPolicyManager;->mEnabledAccessibilityPackages:Ljava/util/ArrayList;
-
-    invoke-virtual {v2}, Ljava/util/ArrayList;->clear()V
-
     :cond_d
-    iget-object v2, p0, Lcom/android/server/am/MARsPolicyManager;->mActiveAdmins:Landroid/util/ArrayMap;
+    iget-object v2, p0, Lcom/android/server/am/MARsPolicyManager;->mNotificationListenerList:Landroid/util/ArrayMap;
 
     if-eqz v2, :cond_e
 
-    iget-object v2, p0, Lcom/android/server/am/MARsPolicyManager;->mActiveAdmins:Landroid/util/ArrayMap;
+    iget-object v2, p0, Lcom/android/server/am/MARsPolicyManager;->mNotificationListenerList:Landroid/util/ArrayMap;
 
     invoke-virtual {v2}, Landroid/util/ArrayMap;->clear()V
 
     :cond_e
-    iget-object v2, p0, Lcom/android/server/am/MARsPolicyManager;->mLockScreenList:Landroid/util/ArrayMap;
+    iget-object v2, p0, Lcom/android/server/am/MARsPolicyManager;->mEnabledAccessibilityPackages:Ljava/util/ArrayList;
 
     if-eqz v2, :cond_f
 
+    iget-object v2, p0, Lcom/android/server/am/MARsPolicyManager;->mEnabledAccessibilityPackages:Ljava/util/ArrayList;
+
+    invoke-virtual {v2}, Ljava/util/ArrayList;->clear()V
+
+    :cond_f
+    iget-object v2, p0, Lcom/android/server/am/MARsPolicyManager;->mActiveAdmins:Landroid/util/ArrayMap;
+
+    if-eqz v2, :cond_10
+
+    iget-object v2, p0, Lcom/android/server/am/MARsPolicyManager;->mActiveAdmins:Landroid/util/ArrayMap;
+
+    invoke-virtual {v2}, Landroid/util/ArrayMap;->clear()V
+
+    :cond_10
+    iget-object v2, p0, Lcom/android/server/am/MARsPolicyManager;->mLockScreenList:Landroid/util/ArrayMap;
+
+    if-eqz v2, :cond_11
+
     iget-object v2, p0, Lcom/android/server/am/MARsPolicyManager;->mLockScreenList:Landroid/util/ArrayMap;
 
     invoke-virtual {v2}, Landroid/util/ArrayMap;->clear()V
 
-    :cond_f
-    iget-object v2, p0, Lcom/android/server/am/MARsPolicyManager;->mSpecialSKTPackages:Ljava/util/ArrayList;
-
-    if-eqz v2, :cond_10
-
-    iget-object v2, p0, Lcom/android/server/am/MARsPolicyManager;->mSpecialSKTPackages:Ljava/util/ArrayList;
-
-    invoke-virtual {v2}, Ljava/util/ArrayList;->clear()V
-
-    :cond_10
-    iget-object v2, p0, Lcom/android/server/am/MARsPolicyManager;->mWhiteListIntentsForSKT:Ljava/util/ArrayList;
-
-    if-eqz v2, :cond_11
-
-    iget-object v2, p0, Lcom/android/server/am/MARsPolicyManager;->mWhiteListIntentsForSKT:Ljava/util/ArrayList;
-
-    invoke-virtual {v2}, Ljava/util/ArrayList;->clear()V
-
     :cond_11
-    iget-object v2, p0, Lcom/android/server/am/MARsPolicyManager;->mVpnServicePackage:Landroid/util/ArrayMap;
+    iget-object v2, p0, Lcom/android/server/am/MARsPolicyManager;->mSpecialSKTPackages:Ljava/util/ArrayList;
 
     if-eqz v2, :cond_12
 
+    iget-object v2, p0, Lcom/android/server/am/MARsPolicyManager;->mSpecialSKTPackages:Ljava/util/ArrayList;
+
+    invoke-virtual {v2}, Ljava/util/ArrayList;->clear()V
+
+    :cond_12
+    iget-object v2, p0, Lcom/android/server/am/MARsPolicyManager;->mWhiteListIntentsForSKT:Ljava/util/ArrayList;
+
+    if-eqz v2, :cond_13
+
+    iget-object v2, p0, Lcom/android/server/am/MARsPolicyManager;->mWhiteListIntentsForSKT:Ljava/util/ArrayList;
+
+    invoke-virtual {v2}, Ljava/util/ArrayList;->clear()V
+
+    :cond_13
+    iget-object v2, p0, Lcom/android/server/am/MARsPolicyManager;->mVpnServicePackage:Landroid/util/ArrayMap;
+
+    if-eqz v2, :cond_14
+
     iget-object v2, p0, Lcom/android/server/am/MARsPolicyManager;->mVpnServicePackage:Landroid/util/ArrayMap;
 
     invoke-virtual {v2}, Landroid/util/ArrayMap;->clear()V
 
-    :cond_12
+    :cond_14
     iget-object v2, p0, Lcom/android/server/am/MARsPolicyManager;->mDefaultIMEList:Landroid/util/ArrayMap;
 
-    if-eqz v2, :cond_13
+    if-eqz v2, :cond_15
 
     iget-object v2, p0, Lcom/android/server/am/MARsPolicyManager;->mDefaultIMEList:Landroid/util/ArrayMap;
 
     invoke-virtual {v2}, Landroid/util/ArrayMap;->clear()V
 
-    :cond_13
+    :cond_15
     iget-object v2, p0, Lcom/android/server/am/MARsPolicyManager;->mCocktailBarList:Ljava/util/ArrayList;
 
-    if-eqz v2, :cond_14
+    if-eqz v2, :cond_16
 
     iget-object v2, p0, Lcom/android/server/am/MARsPolicyManager;->mCocktailBarList:Ljava/util/ArrayList;
 
@@ -26739,7 +27347,7 @@
     :try_end_3
     .catchall {:try_start_3 .. :try_end_3} :catchall_1
 
-    :cond_14
+    :cond_16
     monitor-exit v3
 
     iput-boolean v5, p0, Lcom/android/server/am/MARsPolicyManager;->mFirstTimeUpdatePackages:Z

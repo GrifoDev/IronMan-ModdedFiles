@@ -12,25 +12,23 @@
 
 
 # static fields
-.field static final REASON_KIDS_MODE:I = 0x9
+.field static final REASON_KIDS_MODE:I = 0x8
 
-.field static final REASON_KIOSK_MODE:I = 0x2
+.field static final REASON_KIOSK_MODE:I = 0x1
 
-.field static final REASON_LOCK_TASK_MODE:I = 0x3
-
-.field static final REASON_MID_POWER_SAVING_MODE:I = 0x1
+.field static final REASON_LOCK_TASK_MODE:I = 0x2
 
 .field static final REASON_NOT_BLOCKED:I = 0x0
 
-.field static final REASON_PRO_KIOSK_MODE:I = 0x4
+.field static final REASON_PRO_KIOSK_MODE:I = 0x3
 
-.field static final REASON_SAFE_MODE:I = 0x5
+.field static final REASON_SAFE_MODE:I = 0x4
 
-.field static final REASON_SHARED_DEVICE_MODE:I = 0x6
+.field static final REASON_SHARED_DEVICE_MODE:I = 0x5
 
-.field static final REASON_UNAVAILABLE_USER:I = 0x7
+.field static final REASON_UNAVAILABLE_USER:I = 0x6
 
-.field static final REASON_UPDATING_POLICY_DATABASE:I = 0x8
+.field static final REASON_UPDATING_POLICY_DATABASE:I = 0x7
 
 
 # instance fields
@@ -164,31 +162,6 @@
     goto :goto_0
 .end method
 
-.method private isLowPowerMode()Z
-    .locals 3
-
-    const/4 v0, 0x0
-
-    iget-object v1, p0, Lcom/android/server/desktopmode/DefaultBlocker;->mContext:Landroid/content/Context;
-
-    invoke-virtual {v1}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
-
-    move-result-object v1
-
-    const-string/jumbo v2, "low_power"
-
-    invoke-static {v1, v2, v0}, Landroid/provider/Settings$Global;->getInt(Landroid/content/ContentResolver;Ljava/lang/String;I)I
-
-    move-result v1
-
-    if-eqz v1, :cond_0
-
-    const/4 v0, 0x1
-
-    :cond_0
-    return v0
-.end method
-
 .method private isProKioskMode()Z
     .locals 2
 
@@ -306,46 +279,41 @@
     return-object v0
 
     :pswitch_1
-    const-string/jumbo v0, "REASON_MID_POWER_SAVING_MODE"
-
-    return-object v0
-
-    :pswitch_2
     const-string/jumbo v0, "REASON_KIOSK_MODE"
 
     return-object v0
 
-    :pswitch_3
+    :pswitch_2
     const-string/jumbo v0, "REASON_LOCK_TASK_MODE"
 
     return-object v0
 
-    :pswitch_4
+    :pswitch_3
     const-string/jumbo v0, "REASON_PRO_KIOSK_MODE"
 
     return-object v0
 
-    :pswitch_5
+    :pswitch_4
     const-string/jumbo v0, "REASON_SAFE_MODE"
 
     return-object v0
 
-    :pswitch_6
+    :pswitch_5
     const-string/jumbo v0, "REASON_SHARED_DEVICE_MODE"
 
     return-object v0
 
-    :pswitch_7
+    :pswitch_6
     const-string/jumbo v0, "REASON_UNAVAILABLE_USER"
 
     return-object v0
 
-    :pswitch_8
+    :pswitch_7
     const-string/jumbo v0, "REASON_UPDATING_POLICY_DATABASE"
 
     return-object v0
 
-    :pswitch_9
+    :pswitch_8
     const-string/jumbo v0, "REASON_KIDS_MODE"
 
     return-object v0
@@ -361,7 +329,6 @@
         :pswitch_6
         :pswitch_7
         :pswitch_8
-        :pswitch_9
     .end packed-switch
 .end method
 
@@ -370,7 +337,9 @@
 .method getBlocker()Lcom/samsung/android/desktopmode/IDesktopModeBlocker;
     .locals 2
 
-    invoke-direct {p0}, Lcom/android/server/desktopmode/DefaultBlocker;->isLowPowerMode()Z
+    iget-object v0, p0, Lcom/android/server/desktopmode/DefaultBlocker;->mContext:Landroid/content/Context;
+
+    invoke-static {v0}, Lcom/samsung/android/knox/SemPersonaManager;->isKioskModeEnabled(Landroid/content/Context;)Z
 
     move-result v0
 
@@ -388,9 +357,7 @@
     return-object v0
 
     :cond_0
-    iget-object v0, p0, Lcom/android/server/desktopmode/DefaultBlocker;->mContext:Landroid/content/Context;
-
-    invoke-static {v0}, Lcom/samsung/android/knox/SemPersonaManager;->isKioskModeEnabled(Landroid/content/Context;)Z
+    invoke-direct {p0}, Lcom/android/server/desktopmode/DefaultBlocker;->isLockTaskMode()Z
 
     move-result v0
 
@@ -405,7 +372,7 @@
     goto :goto_0
 
     :cond_1
-    invoke-direct {p0}, Lcom/android/server/desktopmode/DefaultBlocker;->isLockTaskMode()Z
+    invoke-direct {p0}, Lcom/android/server/desktopmode/DefaultBlocker;->isProKioskMode()Z
 
     move-result v0
 
@@ -420,7 +387,13 @@
     goto :goto_0
 
     :cond_2
-    invoke-direct {p0}, Lcom/android/server/desktopmode/DefaultBlocker;->isProKioskMode()Z
+    iget-object v0, p0, Lcom/android/server/desktopmode/DefaultBlocker;->mContext:Landroid/content/Context;
+
+    invoke-virtual {v0}, Landroid/content/Context;->getPackageManager()Landroid/content/pm/PackageManager;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Landroid/content/pm/PackageManager;->isSafeMode()Z
 
     move-result v0
 
@@ -435,13 +408,7 @@
     goto :goto_0
 
     :cond_3
-    iget-object v0, p0, Lcom/android/server/desktopmode/DefaultBlocker;->mContext:Landroid/content/Context;
-
-    invoke-virtual {v0}, Landroid/content/Context;->getPackageManager()Landroid/content/pm/PackageManager;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Landroid/content/pm/PackageManager;->isSafeMode()Z
+    invoke-direct {p0}, Lcom/android/server/desktopmode/DefaultBlocker;->isSharedDeviceMode()Z
 
     move-result v0
 
@@ -456,7 +423,7 @@
     goto :goto_0
 
     :cond_4
-    invoke-direct {p0}, Lcom/android/server/desktopmode/DefaultBlocker;->isSharedDeviceMode()Z
+    invoke-direct {p0}, Lcom/android/server/desktopmode/DefaultBlocker;->isUnavailableUser()Z
 
     move-result v0
 
@@ -471,11 +438,11 @@
     goto :goto_0
 
     :cond_5
-    invoke-direct {p0}, Lcom/android/server/desktopmode/DefaultBlocker;->isUnavailableUser()Z
+    invoke-static {}, Lcom/android/server/desktopmode/DesktopModePolicyManager;->isLaunchModePolicyAvailable()Z
 
     move-result v0
 
-    if-eqz v0, :cond_6
+    if-nez v0, :cond_6
 
     iget-object v0, p0, Lcom/android/server/desktopmode/DefaultBlocker;->mBlocker:Lcom/android/server/desktopmode/DefaultBlocker$BlockerImpl;
 
@@ -486,11 +453,11 @@
     goto :goto_0
 
     :cond_6
-    invoke-static {}, Lcom/android/server/desktopmode/DesktopModePolicyManager;->isLaunchModePolicyAvailable()Z
+    invoke-direct {p0}, Lcom/android/server/desktopmode/DefaultBlocker;->isKidsLauncherMode()Z
 
     move-result v0
 
-    if-nez v0, :cond_7
+    if-eqz v0, :cond_7
 
     iget-object v0, p0, Lcom/android/server/desktopmode/DefaultBlocker;->mBlocker:Lcom/android/server/desktopmode/DefaultBlocker$BlockerImpl;
 
@@ -501,21 +468,6 @@
     goto :goto_0
 
     :cond_7
-    invoke-direct {p0}, Lcom/android/server/desktopmode/DefaultBlocker;->isKidsLauncherMode()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_8
-
-    iget-object v0, p0, Lcom/android/server/desktopmode/DefaultBlocker;->mBlocker:Lcom/android/server/desktopmode/DefaultBlocker$BlockerImpl;
-
-    const/16 v1, 0x9
-
-    iput v1, v0, Lcom/android/server/desktopmode/DefaultBlocker$BlockerImpl;->reasonCode:I
-
-    goto :goto_0
-
-    :cond_8
     const/4 v0, 0x0
 
     return-object v0

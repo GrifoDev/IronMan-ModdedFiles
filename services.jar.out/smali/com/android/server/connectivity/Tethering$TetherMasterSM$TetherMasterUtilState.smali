@@ -954,6 +954,62 @@
     goto :goto_0
 
     :cond_0
+    const-string/jumbo v3, "LGT"
+
+    invoke-static {}, Lcom/android/internal/telephony/TelephonyFeatures;->getMainOperatorName()Ljava/lang/String;
+
+    move-result-object v4
+
+    invoke-virtual {v3, v4}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v3
+
+    if-nez v3, :cond_1
+
+    const-string/jumbo v3, "TEL"
+
+    invoke-static {}, Lcom/samsung/android/feature/SemCscFeature;->getInstance()Lcom/samsung/android/feature/SemCscFeature;
+
+    move-result-object v4
+
+    const-string/jumbo v5, "CscFeature_RIL_PDPRetryMechanism4"
+
+    invoke-virtual {v4, v5}, Lcom/samsung/android/feature/SemCscFeature;->getString(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v4
+
+    invoke-virtual {v3, v4}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v3
+
+    if-eqz v3, :cond_2
+
+    :cond_1
+    iget-object v3, p0, Lcom/android/server/connectivity/Tethering$TetherMasterSM$TetherMasterUtilState;->this$1:Lcom/android/server/connectivity/Tethering$TetherMasterSM;
+
+    iget-object v3, v3, Lcom/android/server/connectivity/Tethering$TetherMasterSM;->this$0:Lcom/android/server/connectivity/Tethering;
+
+    invoke-static {v3}, Lcom/android/server/connectivity/Tethering;->-get20(Lcom/android/server/connectivity/Tethering;)I
+
+    move-result v3
+
+    const/4 v4, 0x4
+
+    if-ne v3, v4, :cond_2
+
+    iget-object v3, p0, Lcom/android/server/connectivity/Tethering$TetherMasterSM$TetherMasterUtilState;->this$1:Lcom/android/server/connectivity/Tethering$TetherMasterSM;
+
+    iget-object v3, v3, Lcom/android/server/connectivity/Tethering$TetherMasterSM;->this$0:Lcom/android/server/connectivity/Tethering;
+
+    invoke-static {v3}, Lcom/android/server/connectivity/Tethering;->-get25(Lcom/android/server/connectivity/Tethering;)Lcom/android/internal/util/StateMachine;
+
+    move-result-object v3
+
+    const v4, 0x50007
+
+    invoke-virtual {v3, v4}, Lcom/android/internal/util/StateMachine;->sendMessage(I)V
+
+    :cond_2
     return-void
 .end method
 

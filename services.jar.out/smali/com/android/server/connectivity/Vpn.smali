@@ -883,6 +883,102 @@
     goto :goto_0
 .end method
 
+.method private addUidsToRanges(Ljava/util/Set;Ljava/util/List;)V
+    .locals 7
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Ljava/util/Set",
+            "<",
+            "Landroid/net/UidRange;",
+            ">;",
+            "Ljava/util/List",
+            "<",
+            "Ljava/lang/Integer;",
+            ">;)V"
+        }
+    .end annotation
+
+    const/4 v6, -0x1
+
+    if-eqz p2, :cond_4
+
+    const/4 v0, -0x1
+
+    const/4 v1, -0x1
+
+    invoke-interface {p2}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
+
+    move-result-object v3
+
+    :goto_0
+    invoke-interface {v3}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v5
+
+    if-eqz v5, :cond_3
+
+    invoke-interface {v3}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v5
+
+    check-cast v5, Ljava/lang/Integer;
+
+    invoke-virtual {v5}, Ljava/lang/Integer;->intValue()I
+
+    move-result v2
+
+    if-ne v0, v6, :cond_1
+
+    move v0, v2
+
+    :cond_0
+    :goto_1
+    move v1, v2
+
+    goto :goto_0
+
+    :cond_1
+    add-int/lit8 v5, v1, 0x1
+
+    if-eq v2, v5, :cond_0
+
+    new-instance v4, Landroid/net/UidRange;
+
+    invoke-direct {v4, v0, v1}, Landroid/net/UidRange;-><init>(II)V
+
+    invoke-direct {p0, p1, v4}, Lcom/android/server/connectivity/Vpn;->containsRange(Ljava/util/Set;Landroid/net/UidRange;)Z
+
+    move-result v5
+
+    if-nez v5, :cond_2
+
+    invoke-interface {p1, v4}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
+
+    :cond_2
+    move v0, v2
+
+    goto :goto_1
+
+    :cond_3
+    if-eq v0, v6, :cond_4
+
+    new-instance v4, Landroid/net/UidRange;
+
+    invoke-direct {v4, v0, v1}, Landroid/net/UidRange;-><init>(II)V
+
+    invoke-direct {p0, p1, v4}, Lcom/android/server/connectivity/Vpn;->containsRange(Ljava/util/Set;Landroid/net/UidRange;)Z
+
+    move-result v5
+
+    if-nez v5, :cond_4
+
+    invoke-interface {p1, v4}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
+
+    :cond_4
+    return-void
+.end method
+
 .method private agentConnect()V
     .locals 13
 
@@ -908,7 +1004,7 @@
 
     move-result v1
 
-    if-eqz v1, :cond_2
+    if-eqz v1, :cond_3
 
     :cond_0
     iget-object v1, p0, Lcom/android/server/connectivity/Vpn;->mNetworkCapabilities:Landroid/net/NetworkCapabilities;
@@ -934,7 +1030,7 @@
 
     iget-boolean v1, p0, Lcom/android/server/connectivity/Vpn;->mLockdown:Z
 
-    if-eqz v1, :cond_3
+    if-eqz v1, :cond_4
 
     :cond_1
     :goto_1
@@ -985,6 +1081,23 @@
 
     iput-object v0, p0, Lcom/android/server/connectivity/Vpn;->mVpnUsers:Ljava/util/Set;
 
+    iget-object v0, p0, Lcom/android/server/connectivity/Vpn;->mContext:Landroid/content/Context;
+
+    invoke-direct {p0, v0}, Lcom/android/server/connectivity/Vpn;->isSecureWifiPackage(Landroid/content/Context;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_2
+
+    iget-object v0, p0, Lcom/android/server/connectivity/Vpn;->mVpnUsers:Ljava/util/Set;
+
+    iget-object v1, p0, Lcom/android/server/connectivity/Vpn;->mConfig:Lcom/android/internal/net/VpnConfig;
+
+    iget-object v1, v1, Lcom/android/internal/net/VpnConfig;->allowedUids:Ljava/util/List;
+
+    invoke-direct {p0, v0, v1}, Lcom/android/server/connectivity/Vpn;->addUidsToRanges(Ljava/util/Set;Ljava/util/List;)V
+
+    :cond_2
     iget-object v1, p0, Lcom/android/server/connectivity/Vpn;->mNetworkAgent:Landroid/net/NetworkAgent;
 
     iget-object v0, p0, Lcom/android/server/connectivity/Vpn;->mVpnUsers:Ljava/util/Set;
@@ -1017,14 +1130,14 @@
 
     return-void
 
-    :cond_2
+    :cond_3
     iget-object v1, p0, Lcom/android/server/connectivity/Vpn;->mNetworkCapabilities:Landroid/net/NetworkCapabilities;
 
     invoke-virtual {v1, v2}, Landroid/net/NetworkCapabilities;->removeCapability(I)Landroid/net/NetworkCapabilities;
 
     goto :goto_0
 
-    :cond_3
+    :cond_4
     move v0, v12
 
     goto :goto_1
@@ -1127,6 +1240,53 @@
     invoke-static {v0, v1}, Landroid/os/Binder;->restoreCallingIdentity(J)V
 
     throw v2
+.end method
+
+.method private containsRange(Ljava/util/Set;Landroid/net/UidRange;)Z
+    .locals 3
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Ljava/util/Set",
+            "<",
+            "Landroid/net/UidRange;",
+            ">;",
+            "Landroid/net/UidRange;",
+            ")Z"
+        }
+    .end annotation
+
+    invoke-interface {p1}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
+
+    move-result-object v1
+
+    :cond_0
+    invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v2
+
+    if-eqz v2, :cond_1
+
+    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Landroid/net/UidRange;
+
+    invoke-virtual {v0, p2}, Landroid/net/UidRange;->containsRange(Landroid/net/UidRange;)Z
+
+    move-result v2
+
+    if-eqz v2, :cond_0
+
+    const/4 v2, 0x1
+
+    return v2
+
+    :cond_1
+    const/4 v2, 0x0
+
+    return v2
 .end method
 
 .method private enforceControlPermission()V
@@ -1566,9 +1726,9 @@
 
     const/4 v3, 0x0
 
-    iget-object v1, p0, Lcom/android/server/connectivity/Vpn;->mPackage:Ljava/lang/String;
+    const-string/jumbo v1, "com.samsung.android.fast"
 
-    const-string/jumbo v2, "com.samsung.android.fast"
+    iget-object v2, p0, Lcom/android/server/connectivity/Vpn;->mPackage:Ljava/lang/String;
 
     invoke-virtual {v1, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
@@ -1597,7 +1757,7 @@
     :cond_0
     const-string/jumbo v1, "Vpn"
 
-    const-string/jumbo v2, "Secure Wi-Fi packagename is same but signature is not matched!"
+    const-string/jumbo v2, "Secure Wi-Fi signature mismatched"
 
     invoke-static {v1, v2}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
@@ -3079,7 +3239,7 @@
         }
     .end annotation
 
-    if-eqz p3, :cond_6
+    if-eqz p3, :cond_4
 
     const/16 v16, -0x1
 
@@ -3190,6 +3350,247 @@
     :goto_2
     move-object/from16 v0, p0
 
+    iget-object v0, v0, Lcom/android/server/connectivity/Vpn;->mContext:Landroid/content/Context;
+
+    move-object/from16 v24, v0
+
+    move-object/from16 v0, p0
+
+    move-object/from16 v1, v24
+
+    invoke-direct {v0, v1}, Lcom/android/server/connectivity/Vpn;->isSecureWifiPackage(Landroid/content/Context;)Z
+
+    move-result v24
+
+    if-eqz v24, :cond_8
+
+    const-string/jumbo v24, "Vpn"
+
+    const-string/jumbo v25, "FAST uses Secure WiFi notification."
+
+    invoke-static/range {v24 .. v25}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
+
+    return-void
+
+    :cond_4
+    if-eqz p4, :cond_7
+
+    invoke-static/range {p2 .. p2}, Landroid/net/UidRange;->createForUser(I)Landroid/net/UidRange;
+
+    move-result-object v22
+
+    move-object/from16 v0, v22
+
+    iget v0, v0, Landroid/net/UidRange;->start:I
+
+    move/from16 v16, v0
+
+    move-object/from16 v0, p0
+
+    move-object/from16 v1, p4
+
+    move/from16 v2, p2
+
+    invoke-direct {v0, v1, v2}, Lcom/android/server/connectivity/Vpn;->getAppsUids(Ljava/util/List;I)Ljava/util/SortedSet;
+
+    move-result-object v24
+
+    invoke-interface/range {v24 .. v24}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
+
+    move-result-object v21
+
+    :goto_3
+    invoke-interface/range {v21 .. v21}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v24
+
+    if-eqz v24, :cond_6
+
+    invoke-interface/range {v21 .. v21}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v24
+
+    check-cast v24, Ljava/lang/Integer;
+
+    invoke-virtual/range {v24 .. v24}, Ljava/lang/Integer;->intValue()I
+
+    move-result v20
+
+    move/from16 v0, v20
+
+    move/from16 v1, v16
+
+    if-ne v0, v1, :cond_5
+
+    add-int/lit8 v16, v16, 0x1
+
+    goto :goto_3
+
+    :cond_5
+    new-instance v24, Landroid/net/UidRange;
+
+    add-int/lit8 v25, v20, -0x1
+
+    move-object/from16 v0, v24
+
+    move/from16 v1, v16
+
+    move/from16 v2, v25
+
+    invoke-direct {v0, v1, v2}, Landroid/net/UidRange;-><init>(II)V
+
+    move-object/from16 v0, p1
+
+    move-object/from16 v1, v24
+
+    invoke-interface {v0, v1}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
+
+    add-int/lit8 v16, v20, 0x1
+
+    goto :goto_3
+
+    :cond_6
+    move-object/from16 v0, v22
+
+    iget v0, v0, Landroid/net/UidRange;->stop:I
+
+    move/from16 v24, v0
+
+    move/from16 v0, v16
+
+    move/from16 v1, v24
+
+    if-gt v0, v1, :cond_3
+
+    new-instance v24, Landroid/net/UidRange;
+
+    move-object/from16 v0, v22
+
+    iget v0, v0, Landroid/net/UidRange;->stop:I
+
+    move/from16 v25, v0
+
+    move-object/from16 v0, v24
+
+    move/from16 v1, v16
+
+    move/from16 v2, v25
+
+    invoke-direct {v0, v1, v2}, Landroid/net/UidRange;-><init>(II)V
+
+    move-object/from16 v0, p1
+
+    move-object/from16 v1, v24
+
+    invoke-interface {v0, v1}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
+
+    goto/16 :goto_2
+
+    :cond_7
+    invoke-static/range {p2 .. p2}, Landroid/net/UidRange;->createForUser(I)Landroid/net/UidRange;
+
+    move-result-object v24
+
+    move-object/from16 v0, p1
+
+    move-object/from16 v1, v24
+
+    invoke-interface {v0, v1}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
+
+    invoke-static {}, Lcom/samsung/android/security/CCManager;->isMdfEnforced()Z
+
+    move-result v24
+
+    if-eqz v24, :cond_3
+
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcom/android/server/connectivity/Vpn;->mContext:Landroid/content/Context;
+
+    move-object/from16 v24, v0
+
+    const-string/jumbo v25, "persona"
+
+    invoke-virtual/range {v24 .. v25}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
+
+    move-result-object v15
+
+    check-cast v15, Lcom/samsung/android/knox/SemPersonaManager;
+
+    invoke-virtual {v15}, Lcom/samsung/android/knox/SemPersonaManager;->getPersonas()Ljava/util/List;
+
+    move-result-object v13
+
+    if-eqz v13, :cond_3
+
+    invoke-interface {v13}, Ljava/util/List;->size()I
+
+    move-result v24
+
+    if-lez v24, :cond_3
+
+    invoke-interface {v13}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
+
+    move-result-object v11
+
+    :goto_4
+    invoke-interface {v11}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v24
+
+    if-eqz v24, :cond_3
+
+    invoke-interface {v11}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v10
+
+    check-cast v10, Lcom/samsung/android/knox/SemPersonaInfo;
+
+    invoke-virtual {v10}, Lcom/samsung/android/knox/SemPersonaInfo;->getId()I
+
+    move-result v24
+
+    invoke-static/range {v24 .. v24}, Landroid/net/UidRange;->createForUser(I)Landroid/net/UidRange;
+
+    move-result-object v24
+
+    move-object/from16 v0, p1
+
+    move-object/from16 v1, v24
+
+    invoke-interface {v0, v1}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
+
+    const-string/jumbo v24, "Vpn"
+
+    new-instance v25, Ljava/lang/StringBuilder;
+
+    invoke-direct/range {v25 .. v25}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string/jumbo v26, "Add UID with prefix "
+
+    invoke-virtual/range {v25 .. v26}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v25
+
+    invoke-virtual {v10}, Lcom/samsung/android/knox/SemPersonaInfo;->getId()I
+
+    move-result v26
+
+    invoke-virtual/range {v25 .. v26}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v25
+
+    invoke-virtual/range {v25 .. v25}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v25
+
+    invoke-static/range {v24 .. v25}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    goto :goto_4
+
+    :cond_8
+    move-object/from16 v0, p0
+
     move/from16 v1, p2
 
     invoke-direct {v0, v1}, Lcom/android/server/connectivity/Vpn;->prepareStatusIntent(I)V
@@ -3200,7 +3601,7 @@
 
     move-object/from16 v24, v0
 
-    if-eqz v24, :cond_5
+    if-eqz v24, :cond_a
 
     move-object/from16 v0, p0
 
@@ -3261,7 +3662,7 @@
 
     move-result-object v4
 
-    if-eqz v4, :cond_4
+    if-eqz v4, :cond_9
 
     invoke-virtual {v4, v14}, Landroid/content/pm/ApplicationInfo;->loadLabel(Landroid/content/pm/PackageManager;)Ljava/lang/CharSequence;
 
@@ -3279,13 +3680,13 @@
 
     move-result v24
 
-    if-lez v24, :cond_4
+    if-lez v24, :cond_9
 
     invoke-virtual {v9}, Landroid/graphics/drawable/Drawable;->getIntrinsicHeight()I
 
     move-result v24
 
-    if-lez v24, :cond_4
+    if-lez v24, :cond_9
 
     move-object/from16 v0, p0
 
@@ -3356,250 +3757,18 @@
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    :cond_4
+    :cond_9
     invoke-static/range {v18 .. v19}, Landroid/os/Binder;->restoreCallingIdentity(J)V
 
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/android/server/connectivity/Vpn;->mContext:Landroid/content/Context;
+    move/from16 v1, p2
 
-    move-object/from16 v24, v0
+    invoke-direct {v0, v12, v5, v1}, Lcom/android/server/connectivity/Vpn;->showNotification(Ljava/lang/String;Landroid/graphics/Bitmap;I)V
 
-    move-object/from16 v0, p0
-
-    move-object/from16 v1, v24
-
-    invoke-direct {v0, v1}, Lcom/android/server/connectivity/Vpn;->isSecureWifiPackage(Landroid/content/Context;)Z
-
-    move-result v24
-
-    if-eqz v24, :cond_a
-
-    const-string/jumbo v24, "Vpn"
-
-    const-string/jumbo v25, "FAST uses Secure WiFi notification."
-
-    invoke-static/range {v24 .. v25}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
-    :cond_5
-    :goto_3
-    return-void
-
-    :cond_6
-    if-eqz p4, :cond_9
-
-    invoke-static/range {p2 .. p2}, Landroid/net/UidRange;->createForUser(I)Landroid/net/UidRange;
-
-    move-result-object v22
-
-    move-object/from16 v0, v22
-
-    iget v0, v0, Landroid/net/UidRange;->start:I
-
-    move/from16 v16, v0
-
-    move-object/from16 v0, p0
-
-    move-object/from16 v1, p4
-
-    move/from16 v2, p2
-
-    invoke-direct {v0, v1, v2}, Lcom/android/server/connectivity/Vpn;->getAppsUids(Ljava/util/List;I)Ljava/util/SortedSet;
-
-    move-result-object v24
-
-    invoke-interface/range {v24 .. v24}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
-
-    move-result-object v21
-
-    :goto_4
-    invoke-interface/range {v21 .. v21}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v24
-
-    if-eqz v24, :cond_8
-
-    invoke-interface/range {v21 .. v21}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v24
-
-    check-cast v24, Ljava/lang/Integer;
-
-    invoke-virtual/range {v24 .. v24}, Ljava/lang/Integer;->intValue()I
-
-    move-result v20
-
-    move/from16 v0, v20
-
-    move/from16 v1, v16
-
-    if-ne v0, v1, :cond_7
-
-    add-int/lit8 v16, v16, 0x1
-
-    goto :goto_4
-
-    :cond_7
-    new-instance v24, Landroid/net/UidRange;
-
-    add-int/lit8 v25, v20, -0x1
-
-    move-object/from16 v0, v24
-
-    move/from16 v1, v16
-
-    move/from16 v2, v25
-
-    invoke-direct {v0, v1, v2}, Landroid/net/UidRange;-><init>(II)V
-
-    move-object/from16 v0, p1
-
-    move-object/from16 v1, v24
-
-    invoke-interface {v0, v1}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
-
-    add-int/lit8 v16, v20, 0x1
-
-    goto :goto_4
-
-    :cond_8
-    move-object/from16 v0, v22
-
-    iget v0, v0, Landroid/net/UidRange;->stop:I
-
-    move/from16 v24, v0
-
-    move/from16 v0, v16
-
-    move/from16 v1, v24
-
-    if-gt v0, v1, :cond_3
-
-    new-instance v24, Landroid/net/UidRange;
-
-    move-object/from16 v0, v22
-
-    iget v0, v0, Landroid/net/UidRange;->stop:I
-
-    move/from16 v25, v0
-
-    move-object/from16 v0, v24
-
-    move/from16 v1, v16
-
-    move/from16 v2, v25
-
-    invoke-direct {v0, v1, v2}, Landroid/net/UidRange;-><init>(II)V
-
-    move-object/from16 v0, p1
-
-    move-object/from16 v1, v24
-
-    invoke-interface {v0, v1}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
-
-    goto/16 :goto_2
-
-    :cond_9
-    invoke-static/range {p2 .. p2}, Landroid/net/UidRange;->createForUser(I)Landroid/net/UidRange;
-
-    move-result-object v24
-
-    move-object/from16 v0, p1
-
-    move-object/from16 v1, v24
-
-    invoke-interface {v0, v1}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
-
-    invoke-static {}, Lcom/samsung/android/security/CCManager;->isMdfEnforced()Z
-
-    move-result v24
-
-    if-eqz v24, :cond_3
-
-    move-object/from16 v0, p0
-
-    iget-object v0, v0, Lcom/android/server/connectivity/Vpn;->mContext:Landroid/content/Context;
-
-    move-object/from16 v24, v0
-
-    const-string/jumbo v25, "persona"
-
-    invoke-virtual/range {v24 .. v25}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
-
-    move-result-object v15
-
-    check-cast v15, Lcom/samsung/android/knox/SemPersonaManager;
-
-    invoke-virtual {v15}, Lcom/samsung/android/knox/SemPersonaManager;->getPersonas()Ljava/util/List;
-
-    move-result-object v13
-
-    if-eqz v13, :cond_3
-
-    invoke-interface {v13}, Ljava/util/List;->size()I
-
-    move-result v24
-
-    if-lez v24, :cond_3
-
-    invoke-interface {v13}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
-
-    move-result-object v11
-
+    :cond_a
     :goto_5
-    invoke-interface {v11}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v24
-
-    if-eqz v24, :cond_3
-
-    invoke-interface {v11}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v10
-
-    check-cast v10, Lcom/samsung/android/knox/SemPersonaInfo;
-
-    invoke-virtual {v10}, Lcom/samsung/android/knox/SemPersonaInfo;->getId()I
-
-    move-result v24
-
-    invoke-static/range {v24 .. v24}, Landroid/net/UidRange;->createForUser(I)Landroid/net/UidRange;
-
-    move-result-object v24
-
-    move-object/from16 v0, p1
-
-    move-object/from16 v1, v24
-
-    invoke-interface {v0, v1}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
-
-    const-string/jumbo v24, "Vpn"
-
-    new-instance v25, Ljava/lang/StringBuilder;
-
-    invoke-direct/range {v25 .. v25}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string/jumbo v26, "Add UID with prefix "
-
-    invoke-virtual/range {v25 .. v26}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v25
-
-    invoke-virtual {v10}, Lcom/samsung/android/knox/SemPersonaInfo;->getId()I
-
-    move-result v26
-
-    invoke-virtual/range {v25 .. v26}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v25
-
-    invoke-virtual/range {v25 .. v25}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v25
-
-    invoke-static/range {v24 .. v25}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
-    goto :goto_5
+    return-void
 
     :catch_0
     move-exception v7
@@ -3622,41 +3791,7 @@
 
     throw v24
 
-    :cond_a
-    move-object/from16 v0, p0
-
-    move/from16 v1, p2
-
-    invoke-direct {v0, v12, v5, v1}, Lcom/android/server/connectivity/Vpn;->showNotification(Ljava/lang/String;Landroid/graphics/Bitmap;I)V
-
-    goto/16 :goto_3
-
     :cond_b
-    move-object/from16 v0, p0
-
-    iget-object v0, v0, Lcom/android/server/connectivity/Vpn;->mContext:Landroid/content/Context;
-
-    move-object/from16 v24, v0
-
-    move-object/from16 v0, p0
-
-    move-object/from16 v1, v24
-
-    invoke-direct {v0, v1}, Lcom/android/server/connectivity/Vpn;->isSecureWifiPackage(Landroid/content/Context;)Z
-
-    move-result v24
-
-    if-eqz v24, :cond_c
-
-    const-string/jumbo v24, "Vpn"
-
-    const-string/jumbo v25, "FAST uses Secure WiFi notification."
-
-    invoke-static/range {v24 .. v25}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
-    goto/16 :goto_3
-
-    :cond_c
     const/16 v24, 0x0
 
     const/16 v25, 0x0
@@ -3671,7 +3806,7 @@
 
     invoke-direct {v0, v1, v2, v3}, Lcom/android/server/connectivity/Vpn;->showNotification(Ljava/lang/String;Landroid/graphics/Bitmap;I)V
 
-    goto/16 :goto_3
+    goto :goto_5
 .end method
 
 .method public declared-synchronized appliesToUid(I)Z

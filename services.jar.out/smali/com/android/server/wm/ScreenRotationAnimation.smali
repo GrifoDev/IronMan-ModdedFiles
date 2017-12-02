@@ -189,7 +189,7 @@
 .end method
 
 .method public constructor <init>(Landroid/content/Context;Lcom/android/server/wm/DisplayContent;Landroid/view/SurfaceSession;ZZZI)V
-    .locals 22
+    .locals 23
 
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
@@ -393,7 +393,7 @@
 
     move/from16 v0, p7
 
-    if-eq v0, v2, :cond_9
+    if-eq v0, v2, :cond_a
 
     const/4 v2, 0x1
 
@@ -416,13 +416,13 @@
 
     invoke-virtual/range {v16 .. v16}, Landroid/view/Display;->getRotation()I
 
-    move-result v20
+    move-result v21
 
     invoke-virtual/range {p2 .. p2}, Lcom/android/server/wm/DisplayContent;->getDisplayInfo()Landroid/view/DisplayInfo;
 
     move-result-object v17
 
-    if-eqz p5, :cond_a
+    if-eqz p5, :cond_b
 
     const/4 v2, 0x1
 
@@ -434,13 +434,13 @@
 
     iget v0, v0, Lcom/android/server/wm/DisplayContent;->mBaseDisplayWidth:I
 
-    move/from16 v21, v0
+    move/from16 v22, v0
 
     move-object/from16 v0, p2
 
     iget v0, v0, Lcom/android/server/wm/DisplayContent;->mBaseDisplayHeight:I
 
-    move/from16 v19, v0
+    move/from16 v20, v0
 
     :goto_1
     move-object/from16 v0, p2
@@ -453,20 +453,20 @@
 
     if-eqz v2, :cond_0
 
-    const/16 v20, 0x1
+    const/16 v21, 0x1
 
     :cond_0
     const/4 v2, 0x1
 
-    move/from16 v0, v20
+    move/from16 v0, v21
 
     if-eq v0, v2, :cond_1
 
     const/4 v2, 0x3
 
-    move/from16 v0, v20
+    move/from16 v0, v21
 
-    if-ne v0, v2, :cond_e
+    if-ne v0, v2, :cond_f
 
     :cond_1
     move-object/from16 v0, p2
@@ -479,35 +479,35 @@
 
     iget v2, v0, Lcom/android/server/wm/DisplayContent;->mPrevDisplayHeight:I
 
-    if-eqz v2, :cond_d
+    if-eqz v2, :cond_e
 
     :cond_2
-    move/from16 v0, v21
+    move/from16 v0, v22
 
     move-object/from16 v1, p0
 
     iput v0, v1, Lcom/android/server/wm/ScreenRotationAnimation;->mWidth:I
 
-    move/from16 v0, v19
+    move/from16 v0, v20
 
     move-object/from16 v1, p0
 
     iput v0, v1, Lcom/android/server/wm/ScreenRotationAnimation;->mHeight:I
 
     :goto_2
-    move/from16 v0, v20
+    move/from16 v0, v21
 
     move-object/from16 v1, p0
 
     iput v0, v1, Lcom/android/server/wm/ScreenRotationAnimation;->mOriginalRotation:I
 
-    move/from16 v0, v21
+    move/from16 v0, v22
 
     move-object/from16 v1, p0
 
     iput v0, v1, Lcom/android/server/wm/ScreenRotationAnimation;->mOriginalWidth:I
 
-    move/from16 v0, v19
+    move/from16 v0, v20
 
     move-object/from16 v1, p0
 
@@ -539,7 +539,7 @@
     :try_start_0
     sget-boolean v2, Lcom/android/server/wm/WindowManagerDebugConfig;->DEBUG_SURFACE_TRACE:Z
 
-    if-eqz v2, :cond_f
+    if-eqz v2, :cond_10
 
     new-instance v2, Lcom/android/server/wm/WindowSurfaceController$SurfaceTrace;
 
@@ -608,7 +608,7 @@
 
     iget-boolean v2, v0, Lcom/android/server/wm/ScreenRotationAnimation;->mIsTranslucentScreenshot:Z
 
-    if-eqz v2, :cond_13
+    if-eqz v2, :cond_14
 
     const/4 v2, 0x0
 
@@ -651,6 +651,31 @@
 
     invoke-virtual {v2, v3}, Landroid/view/SurfaceControl;->setLayer(I)V
 
+    move-object/from16 v0, p2
+
+    iget-object v2, v0, Lcom/android/server/wm/DisplayContent;->mService:Lcom/android/server/wm/WindowManagerService;
+
+    invoke-virtual {v2}, Lcom/android/server/wm/WindowManagerService;->getBridge()Lcom/android/server/wm/IWindowManagerServiceBridge;
+
+    move-result-object v2
+
+    move-object/from16 v0, v16
+
+    invoke-interface {v2, v0}, Lcom/android/server/wm/IWindowManagerServiceBridge;->getFreezeSurfaceLayer(Landroid/view/Display;)I
+
+    move-result v19
+
+    if-eqz v19, :cond_6
+
+    move-object/from16 v0, p0
+
+    iget-object v2, v0, Lcom/android/server/wm/ScreenRotationAnimation;->mSurfaceControl:Landroid/view/SurfaceControl;
+
+    move/from16 v0, v19
+
+    invoke-virtual {v2, v0}, Landroid/view/SurfaceControl;->setLayer(I)V
+
+    :cond_6
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/android/server/wm/ScreenRotationAnimation;->mSurfaceControl:Landroid/view/SurfaceControl;
@@ -674,13 +699,13 @@
     :try_start_1
     sget-boolean v2, Lcom/android/server/wm/WindowManagerDebugConfig;->SHOW_TRANSACTIONS:Z
 
-    if-nez v2, :cond_6
+    if-nez v2, :cond_7
 
     sget-boolean v2, Lcom/android/server/wm/WindowManagerDebugConfig;->SHOW_SURFACE_ALLOC:Z
 
-    if-eqz v2, :cond_7
+    if-eqz v2, :cond_8
 
-    :cond_6
+    :cond_7
     const-string/jumbo v2, "WindowManager"
 
     new-instance v3, Ljava/lang/StringBuilder;
@@ -713,22 +738,22 @@
 
     invoke-static {v2, v3}, Landroid/util/Slog;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    :cond_7
+    :cond_8
     move-object/from16 v0, p0
 
-    move/from16 v1, v20
+    move/from16 v1, v21
 
     invoke-direct {v0, v1}, Lcom/android/server/wm/ScreenRotationAnimation;->setRotationInTransaction(I)V
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    if-nez p4, :cond_8
+    if-nez p4, :cond_9
 
     invoke-static {}, Landroid/view/SurfaceControl;->closeTransaction()V
 
     sget-boolean v2, Lcom/android/server/wm/WindowManagerDebugConfig;->SHOW_LIGHT_TRANSACTIONS:Z
 
-    if-eqz v2, :cond_8
+    if-eqz v2, :cond_9
 
     const-string/jumbo v2, "WindowManager"
 
@@ -736,83 +761,68 @@
 
     invoke-static {v2, v3}, Landroid/util/Slog;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    :cond_8
+    :cond_9
     return-void
 
-    :cond_9
+    :cond_a
     const/4 v2, 0x0
 
     goto/16 :goto_0
 
-    :cond_a
+    :cond_b
     move-object/from16 v0, p2
 
     iget v2, v0, Lcom/android/server/wm/DisplayContent;->mPrevDisplayWidth:I
 
-    if-eqz v2, :cond_b
+    if-eqz v2, :cond_c
 
     move-object/from16 v0, p2
 
     iget v0, v0, Lcom/android/server/wm/DisplayContent;->mPrevDisplayWidth:I
 
-    move/from16 v21, v0
+    move/from16 v22, v0
 
     :goto_6
     move-object/from16 v0, p2
 
     iget v2, v0, Lcom/android/server/wm/DisplayContent;->mPrevDisplayHeight:I
 
-    if-eqz v2, :cond_c
+    if-eqz v2, :cond_d
 
     move-object/from16 v0, p2
 
     iget v0, v0, Lcom/android/server/wm/DisplayContent;->mPrevDisplayHeight:I
 
-    move/from16 v19, v0
+    move/from16 v20, v0
 
     goto/16 :goto_1
-
-    :cond_b
-    move-object/from16 v0, v17
-
-    iget v0, v0, Landroid/view/DisplayInfo;->logicalWidth:I
-
-    move/from16 v21, v0
-
-    goto :goto_6
 
     :cond_c
     move-object/from16 v0, v17
 
+    iget v0, v0, Landroid/view/DisplayInfo;->logicalWidth:I
+
+    move/from16 v22, v0
+
+    goto :goto_6
+
+    :cond_d
+    move-object/from16 v0, v17
+
     iget v0, v0, Landroid/view/DisplayInfo;->logicalHeight:I
 
-    move/from16 v19, v0
+    move/from16 v20, v0
 
     goto/16 :goto_1
 
-    :cond_d
-    move/from16 v0, v19
-
-    move-object/from16 v1, p0
-
-    iput v0, v1, Lcom/android/server/wm/ScreenRotationAnimation;->mWidth:I
-
-    move/from16 v0, v21
-
-    move-object/from16 v1, p0
-
-    iput v0, v1, Lcom/android/server/wm/ScreenRotationAnimation;->mHeight:I
-
-    goto/16 :goto_2
-
     :cond_e
-    move/from16 v0, v21
+    move/from16 v0, v20
 
     move-object/from16 v1, p0
 
     iput v0, v1, Lcom/android/server/wm/ScreenRotationAnimation;->mWidth:I
 
-    move/from16 v0, v19
+    move/from16 v0, v22
 
     move-object/from16 v1, p0
 
@@ -821,6 +831,21 @@
     goto/16 :goto_2
 
     :cond_f
+    move/from16 v0, v22
+
+    move-object/from16 v1, p0
+
+    iput v0, v1, Lcom/android/server/wm/ScreenRotationAnimation;->mWidth:I
+
+    move/from16 v0, v20
+
+    move-object/from16 v1, p0
+
+    iput v0, v1, Lcom/android/server/wm/ScreenRotationAnimation;->mHeight:I
+
+    goto/16 :goto_2
+
+    :cond_10
     :try_start_2
     new-instance v9, Landroid/view/SurfaceControl;
 
@@ -838,7 +863,7 @@
 
     iget-boolean v2, v0, Lcom/android/server/wm/ScreenRotationAnimation;->mIsTranslucentScreenshot:Z
 
-    if-eqz v2, :cond_11
+    if-eqz v2, :cond_12
 
     const/4 v14, -0x3
 
@@ -847,7 +872,7 @@
 
     iget-boolean v2, v0, Lcom/android/server/wm/ScreenRotationAnimation;->mIsTranslucentScreenshot:Z
 
-    if-eqz v2, :cond_12
+    if-eqz v2, :cond_13
 
     const/high16 v2, 0x20000000
 
@@ -886,13 +911,13 @@
     :catchall_0
     move-exception v2
 
-    if-nez p4, :cond_10
+    if-nez p4, :cond_11
 
     invoke-static {}, Landroid/view/SurfaceControl;->closeTransaction()V
 
     sget-boolean v3, Lcom/android/server/wm/WindowManagerDebugConfig;->SHOW_LIGHT_TRANSACTIONS:Z
 
-    if-eqz v3, :cond_10
+    if-eqz v3, :cond_11
 
     const-string/jumbo v3, "WindowManager"
 
@@ -900,20 +925,20 @@
 
     invoke-static {v3, v4}, Landroid/util/Slog;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    :cond_10
+    :cond_11
     throw v2
 
-    :cond_11
+    :cond_12
     const/4 v14, -0x1
 
     goto :goto_7
 
-    :cond_12
+    :cond_13
     const/4 v2, 0x0
 
     goto :goto_8
 
-    :cond_13
+    :cond_14
     const/4 v2, 0x0
 
     :try_start_4

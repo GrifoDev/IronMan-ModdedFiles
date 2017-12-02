@@ -870,7 +870,7 @@
 
     iget-object v9, p0, Lcom/android/server/wm/WallpaperController;->mWallpaperTarget:Lcom/android/server/wm/WindowState;
 
-    if-eq v9, v7, :cond_10
+    if-eq v9, v7, :cond_11
 
     iget-object v9, p0, Lcom/android/server/wm/WallpaperController;->mLowerWallpaperTarget:Lcom/android/server/wm/WindowState;
 
@@ -878,7 +878,7 @@
 
     iget-object v9, p0, Lcom/android/server/wm/WallpaperController;->mLowerWallpaperTarget:Lcom/android/server/wm/WindowState;
 
-    if-eq v9, v7, :cond_10
+    if-eq v9, v7, :cond_11
 
     :cond_0
     sget-boolean v9, Lcom/android/server/wm/WindowManagerDebugConfig;->DEBUG_WALLPAPER_LIGHT:Z
@@ -930,9 +930,14 @@
 
     const/4 v6, 0x1
 
-    if-eqz v7, :cond_7
+    if-nez v5, :cond_2
 
-    if-eqz v5, :cond_7
+    iput-object v12, p0, Lcom/android/server/wm/WallpaperController;->mDeferredHideWallpaper:Lcom/android/server/wm/WindowState;
+
+    :cond_2
+    if-eqz v7, :cond_8
+
+    if-eqz v5, :cond_8
 
     invoke-virtual {v5}, Lcom/android/server/wm/WindowState;->isAnimatingLw()Z
 
@@ -944,7 +949,7 @@
 
     sget-boolean v9, Lcom/android/server/wm/WindowManagerDebugConfig;->DEBUG_WALLPAPER_LIGHT:Z
 
-    if-eqz v9, :cond_2
+    if-eqz v9, :cond_3
 
     sget-object v9, Lcom/android/server/wm/WallpaperController;->TAG:Ljava/lang/String;
 
@@ -978,10 +983,10 @@
 
     invoke-static {v9, v10}, Landroid/util/Slog;->v(Ljava/lang/String;Ljava/lang/String;)I
 
-    :cond_2
-    if-eqz v0, :cond_7
+    :cond_3
+    if-eqz v0, :cond_8
 
-    if-eqz v2, :cond_7
+    if-eqz v2, :cond_8
 
     invoke-virtual {p1, v5}, Lcom/android/server/wm/WindowList;->indexOf(Ljava/lang/Object;)I
 
@@ -989,7 +994,7 @@
 
     sget-boolean v9, Lcom/android/server/wm/WindowManagerDebugConfig;->DEBUG_WALLPAPER_LIGHT:Z
 
-    if-eqz v9, :cond_3
+    if-eqz v9, :cond_4
 
     sget-object v9, Lcom/android/server/wm/WallpaperController;->TAG:Ljava/lang/String;
 
@@ -1023,12 +1028,12 @@
 
     invoke-static {v9, v10}, Landroid/util/Slog;->v(Ljava/lang/String;Ljava/lang/String;)I
 
-    :cond_3
-    if-ltz v3, :cond_7
+    :cond_4
+    if-ltz v3, :cond_8
 
     iget-object v9, v7, Lcom/android/server/wm/WindowState;->mAppToken:Lcom/android/server/wm/AppWindowToken;
 
-    if-eqz v9, :cond_8
+    if-eqz v9, :cond_9
 
     iget-object v9, v7, Lcom/android/server/wm/WindowState;->mAppToken:Lcom/android/server/wm/AppWindowToken;
 
@@ -1037,7 +1042,7 @@
     :goto_0
     iget-object v9, v5, Lcom/android/server/wm/WindowState;->mAppToken:Lcom/android/server/wm/AppWindowToken;
 
-    if-eqz v9, :cond_9
+    if-eqz v9, :cond_a
 
     iget-object v9, v5, Lcom/android/server/wm/WindowState;->mAppToken:Lcom/android/server/wm/AppWindowToken;
 
@@ -1046,7 +1051,7 @@
     :goto_1
     sget-boolean v9, Lcom/android/server/wm/WindowManagerDebugConfig;->DEBUG_WALLPAPER_LIGHT:Z
 
-    if-eqz v9, :cond_4
+    if-eqz v9, :cond_5
 
     sget-object v9, Lcom/android/server/wm/WallpaperController;->TAG:Ljava/lang/String;
 
@@ -1120,12 +1125,12 @@
 
     invoke-static {v9, v10}, Landroid/util/Slog;->v(Ljava/lang/String;Ljava/lang/String;)I
 
-    :cond_4
-    if-le v8, v3, :cond_a
+    :cond_5
+    if-le v8, v3, :cond_b
 
     sget-boolean v9, Lcom/android/server/wm/WindowManagerDebugConfig;->DEBUG_WALLPAPER_LIGHT:Z
 
-    if-eqz v9, :cond_5
+    if-eqz v9, :cond_6
 
     sget-object v9, Lcom/android/server/wm/WallpaperController;->TAG:Ljava/lang/String;
 
@@ -1133,7 +1138,7 @@
 
     invoke-static {v9, v10}, Landroid/util/Slog;->v(Ljava/lang/String;Ljava/lang/String;)I
 
-    :cond_5
+    :cond_6
     iput-object v7, p0, Lcom/android/server/wm/WallpaperController;->mUpperWallpaperTarget:Lcom/android/server/wm/WindowState;
 
     iput-object v5, p0, Lcom/android/server/wm/WallpaperController;->mLowerWallpaperTarget:Lcom/android/server/wm/WindowState;
@@ -1143,12 +1148,12 @@
     move v8, v3
 
     :goto_2
-    if-eqz v1, :cond_6
+    if-eqz v1, :cond_7
 
-    if-eqz v4, :cond_c
+    if-eqz v4, :cond_d
 
-    :cond_6
-    if-ne v1, v4, :cond_7
+    :cond_7
+    if-ne v1, v4, :cond_8
 
     iget-object v9, p0, Lcom/android/server/wm/WallpaperController;->mService:Lcom/android/server/wm/WindowManagerService;
 
@@ -1160,28 +1165,28 @@
 
     move-result v9
 
-    if-eqz v9, :cond_e
+    if-eqz v9, :cond_f
 
-    :cond_7
+    :cond_8
     :goto_3
     invoke-virtual {p2, v7, v8}, Lcom/android/server/wm/WallpaperController$FindWallpaperTargetResult;->setWallpaperTarget(Lcom/android/server/wm/WindowState;I)V
 
     return v6
 
-    :cond_8
+    :cond_9
     const/4 v1, 0x0
 
     goto/16 :goto_0
 
-    :cond_9
+    :cond_a
     const/4 v4, 0x0
 
     goto/16 :goto_1
 
-    :cond_a
+    :cond_b
     sget-boolean v9, Lcom/android/server/wm/WindowManagerDebugConfig;->DEBUG_WALLPAPER_LIGHT:Z
 
-    if-eqz v9, :cond_b
+    if-eqz v9, :cond_c
 
     sget-object v9, Lcom/android/server/wm/WallpaperController;->TAG:Ljava/lang/String;
 
@@ -1189,17 +1194,17 @@
 
     invoke-static {v9, v10}, Landroid/util/Slog;->v(Ljava/lang/String;Ljava/lang/String;)I
 
-    :cond_b
+    :cond_c
     iput-object v5, p0, Lcom/android/server/wm/WallpaperController;->mUpperWallpaperTarget:Lcom/android/server/wm/WindowState;
 
     iput-object v7, p0, Lcom/android/server/wm/WallpaperController;->mLowerWallpaperTarget:Lcom/android/server/wm/WindowState;
 
     goto :goto_2
 
-    :cond_c
+    :cond_d
     sget-boolean v9, Lcom/android/server/wm/WindowManagerDebugConfig;->DEBUG_WALLPAPER_LIGHT:Z
 
-    if-eqz v9, :cond_d
+    if-eqz v9, :cond_e
 
     sget-object v9, Lcom/android/server/wm/WallpaperController;->TAG:Ljava/lang/String;
 
@@ -1207,12 +1212,12 @@
 
     invoke-static {v9, v10}, Landroid/util/Slog;->v(Ljava/lang/String;Ljava/lang/String;)I
 
-    :cond_d
+    :cond_e
     iput-object v5, p0, Lcom/android/server/wm/WallpaperController;->mWallpaperTarget:Lcom/android/server/wm/WindowState;
 
     goto :goto_3
 
-    :cond_e
+    :cond_f
     iget-object v9, p0, Lcom/android/server/wm/WallpaperController;->mService:Lcom/android/server/wm/WindowManagerService;
 
     iget-object v9, v9, Lcom/android/server/wm/WindowManagerService;->mOpeningApps:Landroid/util/ArraySet;
@@ -1223,7 +1228,7 @@
 
     move-result v9
 
-    if-nez v9, :cond_f
+    if-nez v9, :cond_10
 
     iget-object v9, p0, Lcom/android/server/wm/WallpaperController;->mService:Lcom/android/server/wm/WindowManagerService;
 
@@ -1235,17 +1240,17 @@
 
     move-result v9
 
-    if-eqz v9, :cond_7
+    if-eqz v9, :cond_8
 
-    :cond_f
+    :cond_10
     iput-object v5, p0, Lcom/android/server/wm/WallpaperController;->mWallpaperTarget:Lcom/android/server/wm/WindowState;
 
     goto :goto_3
 
-    :cond_10
+    :cond_11
     iget-object v9, p0, Lcom/android/server/wm/WallpaperController;->mLowerWallpaperTarget:Lcom/android/server/wm/WindowState;
 
-    if-eqz v9, :cond_7
+    if-eqz v9, :cond_8
 
     iget-object v9, p0, Lcom/android/server/wm/WallpaperController;->mLowerWallpaperTarget:Lcom/android/server/wm/WindowState;
 
@@ -1253,7 +1258,7 @@
 
     move-result v9
 
-    if-eqz v9, :cond_11
+    if-eqz v9, :cond_12
 
     iget-object v9, p0, Lcom/android/server/wm/WallpaperController;->mUpperWallpaperTarget:Lcom/android/server/wm/WindowState;
 
@@ -1261,12 +1266,12 @@
 
     move-result v9
 
-    if-nez v9, :cond_7
+    if-nez v9, :cond_8
 
-    :cond_11
+    :cond_12
     sget-boolean v9, Lcom/android/server/wm/WindowManagerDebugConfig;->DEBUG_WALLPAPER_LIGHT:Z
 
-    if-eqz v9, :cond_12
+    if-eqz v9, :cond_13
 
     sget-object v9, Lcom/android/server/wm/WallpaperController;->TAG:Ljava/lang/String;
 
@@ -1274,7 +1279,7 @@
 
     invoke-static {v9, v10}, Landroid/util/Slog;->v(Ljava/lang/String;Ljava/lang/String;)I
 
-    :cond_12
+    :cond_13
     iput-object v12, p0, Lcom/android/server/wm/WallpaperController;->mLowerWallpaperTarget:Lcom/android/server/wm/WindowState;
 
     iput-object v12, p0, Lcom/android/server/wm/WallpaperController;->mUpperWallpaperTarget:Lcom/android/server/wm/WindowState;

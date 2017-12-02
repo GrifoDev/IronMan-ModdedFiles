@@ -21,6 +21,8 @@
 
 .field public isPassedAlarm:Z
 
+.field private isSuspiciousAlarm:Z
+
 .field public isWhitelist:Z
 
 .field public keyId:I
@@ -225,6 +227,12 @@
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
     :goto_3
+    const/4 v2, 0x1
+
+    move-object/from16 v0, p0
+
+    iput-boolean v2, v0, Lcom/android/server/AlarmManagerServiceExt$AlarmExt;->isSuspiciousAlarm:Z
+
     return-void
 
     :cond_0
@@ -281,12 +289,37 @@
 
 
 # virtual methods
+.method public checkSuspiciousAlarm(J)V
+    .locals 3
+
+    const-wide/16 v0, 0x2710
+
+    cmp-long v0, p1, v0
+
+    if-gez v0, :cond_0
+
+    const/4 v0, 0x0
+
+    iput-boolean v0, p0, Lcom/android/server/AlarmManagerServiceExt$AlarmExt;->isSuspiciousAlarm:Z
+
+    :cond_0
+    return-void
+.end method
+
 .method public bridge synthetic dump(Ljava/io/PrintWriter;Ljava/lang/String;JJLjava/text/SimpleDateFormat;)V
     .locals 1
 
     invoke-super/range {p0 .. p7}, Lcom/android/server/AlarmManagerService$Alarm;->dump(Ljava/io/PrintWriter;Ljava/lang/String;JJLjava/text/SimpleDateFormat;)V
 
     return-void
+.end method
+
+.method public isSuspiciousAlarm()Z
+    .locals 1
+
+    iget-boolean v0, p0, Lcom/android/server/AlarmManagerServiceExt$AlarmExt;->isSuspiciousAlarm:Z
+
+    return v0
 .end method
 
 .method public bridge synthetic makeWakeupEvent(J)Lcom/android/server/AlarmManagerService$WakeupEvent;

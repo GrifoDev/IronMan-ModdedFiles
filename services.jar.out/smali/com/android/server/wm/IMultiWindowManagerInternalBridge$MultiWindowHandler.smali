@@ -19,7 +19,7 @@
 
 .field public static final MULTIWINDOW_BEHAVIOR_LOG:I = 0xc
 
-.field public static final MULTIWINDOW_DEPRESS_DIVIDER_VISIBLE_TIMEOUT:I = 0x12
+.field public static final MULTIWINDOW_DEPRESS_DIVIDER_VISIBLE_TIMEOUT:I = 0x15
 
 .field public static final MULTIWINDOW_DEPRESS_DIVIDER_VISIBLE_TIMEOUT_DURATION:I = 0x7d0
 
@@ -29,7 +29,7 @@
 
 .field public static final MULTIWINDOW_ENSURE_DOCKED_RESIZE:I = 0xe
 
-.field public static final MULTIWINDOW_ENSURE_DOCKED_STACK_VISIBLE:I = 0x11
+.field public static final MULTIWINDOW_ENSURE_DOCKED_STACK_VISIBLE:I = 0x14
 
 .field public static final MULTIWINDOW_ENTER_FREEFORM_TASK:I = 0x1
 
@@ -56,5 +56,9 @@
 .field public static final MULTIWINDOW_SWAP_ANIMATION_TIMEOUT_DURATION:I = 0x1388
 
 .field public static final TAP_OUTSIDE_TASK_DESTROY_GUIDE_WINDOW:I = 0x10
+
+.field public static final TAP_OUTSIDE_TASK_DESTROY_GUIDE_WINDOW_TIMEOUT:I = 0x11
+
+.field public static final TAP_OUTSIDE_TASK_DESTROY_GUIDE_WINDOW_TIMEOUT_DURATION:I = 0xbb8
 
 .field public static final TAP_OUTSIDE_TASK_MAKE_GUIDE_WINDOW:I = 0xf

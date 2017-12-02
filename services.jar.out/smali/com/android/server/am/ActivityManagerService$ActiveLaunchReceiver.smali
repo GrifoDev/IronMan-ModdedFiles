@@ -32,15 +32,15 @@
 
 # virtual methods
 .method public onReceive(Landroid/content/Context;Landroid/content/Intent;)V
-    .locals 14
+    .locals 16
 
     if-eqz p2, :cond_0
 
     invoke-virtual/range {p2 .. p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
 
-    move-result-object v11
+    move-result-object v13
 
-    if-nez v11, :cond_1
+    if-nez v13, :cond_1
 
     :cond_0
     return-void
@@ -48,355 +48,408 @@
     :cond_1
     invoke-virtual/range {p2 .. p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
 
-    move-result-object v11
+    move-result-object v13
 
-    const-string/jumbo v12, "com.samsung.DO_ACTIVE_LAUNCH"
+    const-string/jumbo v14, "com.samsung.DO_ACTIVE_LAUNCH"
 
-    invoke-virtual {v11, v12}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v13, v14}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move-result v11
+    move-result v13
 
-    if-eqz v11, :cond_6
+    if-eqz v13, :cond_7
 
     invoke-virtual/range {p2 .. p2}, Landroid/content/Intent;->getExtras()Landroid/os/Bundle;
 
-    move-result-object v7
+    move-result-object v9
 
-    if-eqz v7, :cond_6
+    if-eqz v9, :cond_7
 
-    invoke-virtual {p1}, Landroid/content/Context;->getPackageManager()Landroid/content/pm/PackageManager;
-
-    move-result-object v8
-
-    const-string/jumbo v11, "package_name"
-
-    invoke-virtual {v7, v11}, Landroid/os/Bundle;->getString(Ljava/lang/String;)Ljava/lang/String;
+    invoke-virtual/range {p1 .. p1}, Landroid/content/Context;->getPackageManager()Landroid/content/pm/PackageManager;
 
     move-result-object v10
 
-    const/4 v3, 0x0
+    const-string/jumbo v13, "package_name"
 
-    const/4 v4, 0x1
+    invoke-virtual {v9, v13}, Landroid/os/Bundle;->getString(Ljava/lang/String;)Ljava/lang/String;
 
-    const/4 v1, 0x1
+    move-result-object v12
+
+    const/4 v5, 0x0
+
+    const/4 v6, 0x1
+
+    const/4 v3, 0x1
+
+    const/4 v4, 0x0
 
     const/4 v2, 0x0
 
-    iget-object v11, p0, Lcom/android/server/am/ActivityManagerService$ActiveLaunchReceiver;->this$0:Lcom/android/server/am/ActivityManagerService;
+    move-object/from16 v0, p0
 
-    invoke-static {v11}, Lcom/android/server/am/ActivityManagerService;->-get10(Lcom/android/server/am/ActivityManagerService;)Lcom/android/server/am/SchedPolicyManager;
+    iget-object v13, v0, Lcom/android/server/am/ActivityManagerService$ActiveLaunchReceiver;->this$0:Lcom/android/server/am/ActivityManagerService;
 
-    move-result-object v11
+    invoke-static {v13}, Lcom/android/server/am/ActivityManagerService;->-get10(Lcom/android/server/am/ActivityManagerService;)Lcom/android/server/am/SchedPolicyManager;
 
-    if-eqz v11, :cond_2
+    move-result-object v13
 
-    iget-object v11, p0, Lcom/android/server/am/ActivityManagerService$ActiveLaunchReceiver;->this$0:Lcom/android/server/am/ActivityManagerService;
+    if-eqz v13, :cond_2
 
-    invoke-static {v11}, Lcom/android/server/am/ActivityManagerService;->-get10(Lcom/android/server/am/ActivityManagerService;)Lcom/android/server/am/SchedPolicyManager;
+    move-object/from16 v0, p0
 
-    move-result-object v11
+    iget-object v13, v0, Lcom/android/server/am/ActivityManagerService$ActiveLaunchReceiver;->this$0:Lcom/android/server/am/ActivityManagerService;
 
-    invoke-virtual {v11, v10}, Lcom/android/server/am/SchedPolicyManager;->isPossibleToActiveLaunch(Ljava/lang/String;)Z
+    invoke-static {v13}, Lcom/android/server/am/ActivityManagerService;->-get10(Lcom/android/server/am/ActivityManagerService;)Lcom/android/server/am/SchedPolicyManager;
 
-    move-result v2
+    move-result-object v13
 
-    if-nez v2, :cond_2
+    invoke-virtual {v13, v12}, Lcom/android/server/am/SchedPolicyManager;->isPossibleToActiveLaunch(Ljava/lang/String;)Z
+
+    move-result v4
+
+    if-nez v4, :cond_2
 
     invoke-static {}, Lcom/android/server/am/ActivityManagerService;->-get0()Ljava/lang/String;
 
-    move-result-object v11
+    move-result-object v13
 
-    new-instance v12, Ljava/lang/StringBuilder;
+    new-instance v14, Ljava/lang/StringBuilder;
 
-    invoke-direct {v12}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {v14}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string/jumbo v13, "Checking for the Active launch isEnabledAtScpm :"
+    const-string/jumbo v15, "Checking for the Active launch isEnabledAtScpm :"
 
-    invoke-virtual {v12, v13}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v14, v15}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v12
+    move-result-object v14
 
-    invoke-virtual {v12, v2}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+    invoke-virtual {v14, v4}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
 
-    move-result-object v12
+    move-result-object v14
 
-    invoke-virtual {v12}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v14}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v12
+    move-result-object v14
 
-    invoke-static {v11, v12}, Landroid/util/Slog;->e(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {v13, v14}, Landroid/util/Slog;->e(Ljava/lang/String;Ljava/lang/String;)I
 
     return-void
 
     :cond_2
     :try_start_0
-    iget-object v11, p0, Lcom/android/server/am/ActivityManagerService$ActiveLaunchReceiver;->this$0:Lcom/android/server/am/ActivityManagerService;
+    move-object/from16 v0, p0
 
-    invoke-virtual {v11}, Lcom/android/server/am/ActivityManagerService;->getPackageManagerInternalLocked()Landroid/content/pm/PackageManagerInternal;
+    iget-object v13, v0, Lcom/android/server/am/ActivityManagerService$ActiveLaunchReceiver;->this$0:Lcom/android/server/am/ActivityManagerService;
 
-    move-result-object v9
+    invoke-virtual {v13}, Lcom/android/server/am/ActivityManagerService;->getPackageManagerInternalLocked()Landroid/content/pm/PackageManagerInternal;
 
-    if-eqz v9, :cond_4
+    move-result-object v11
 
-    invoke-static {}, Landroid/os/UserHandle;->myUserId()I
-
-    move-result v11
-
-    invoke-virtual {v9, v10, v11}, Landroid/content/pm/PackageManagerInternal;->wasPackageEverLaunched(Ljava/lang/String;I)Z
-
-    move-result v3
+    if-eqz v11, :cond_4
 
     invoke-static {}, Landroid/os/UserHandle;->myUserId()I
 
-    move-result v11
+    move-result v13
 
-    invoke-virtual {v9, v10, v11}, Landroid/content/pm/PackageManagerInternal;->wasPackageStopped(Ljava/lang/String;I)Z
+    invoke-virtual {v11, v12, v13}, Landroid/content/pm/PackageManagerInternal;->wasPackageEverLaunched(Ljava/lang/String;I)Z
 
-    move-result v4
+    move-result v5
 
-    if-eqz v3, :cond_3
+    invoke-static {}, Landroid/os/UserHandle;->myUserId()I
 
-    if-eqz v4, :cond_4
+    move-result v13
+
+    invoke-virtual {v11, v12, v13}, Landroid/content/pm/PackageManagerInternal;->wasPackageStopped(Ljava/lang/String;I)Z
+
+    move-result v6
+
+    if-eqz v5, :cond_3
+
+    if-eqz v6, :cond_4
 
     :cond_3
     invoke-static {}, Lcom/android/server/am/ActivityManagerService;->-get0()Ljava/lang/String;
 
-    move-result-object v11
+    move-result-object v13
 
-    new-instance v12, Ljava/lang/StringBuilder;
+    new-instance v14, Ljava/lang/StringBuilder;
 
-    invoke-direct {v12}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {v14}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string/jumbo v13, "Checking for the Active launch isPkgEverLaunched :"
+    const-string/jumbo v15, "Checking for the Active launch isPkgEverLaunched :"
 
-    invoke-virtual {v12, v13}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v14, v15}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v12
+    move-result-object v14
 
-    invoke-virtual {v12, v3}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+    invoke-virtual {v14, v5}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
 
-    move-result-object v12
+    move-result-object v14
 
-    const-string/jumbo v13, ", isPkgStopped : "
+    const-string/jumbo v15, ", isPkgStopped : "
 
-    invoke-virtual {v12, v13}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v14, v15}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v12
+    move-result-object v14
 
-    invoke-virtual {v12, v4}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+    invoke-virtual {v14, v6}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
 
-    move-result-object v12
+    move-result-object v14
 
-    invoke-virtual {v12}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v14}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v12
+    move-result-object v14
 
-    invoke-static {v11, v12}, Landroid/util/Slog;->e(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {v13, v14}, Landroid/util/Slog;->e(Ljava/lang/String;Ljava/lang/String;)I
 
     return-void
 
     :cond_4
-    sget-boolean v11, Lcom/android/server/am/MARsPolicyManager;->MARs_ENABLE:Z
+    sget-boolean v13, Lcom/android/server/am/MARsPolicyManager;->MARs_ENABLE:Z
 
-    if-eqz v11, :cond_5
+    if-eqz v13, :cond_6
 
-    iget-object v11, p0, Lcom/android/server/am/ActivityManagerService$ActiveLaunchReceiver;->this$0:Lcom/android/server/am/ActivityManagerService;
+    move-object/from16 v0, p0
 
-    iget-object v11, v11, Lcom/android/server/am/ActivityManagerService;->mMARsPolicyManager:Lcom/android/server/am/MARsPolicyManager;
+    iget-object v13, v0, Lcom/android/server/am/ActivityManagerService$ActiveLaunchReceiver;->this$0:Lcom/android/server/am/ActivityManagerService;
 
-    if-eqz v11, :cond_5
+    iget-object v13, v13, Lcom/android/server/am/ActivityManagerService;->mMARsPolicyManager:Lcom/android/server/am/MARsPolicyManager;
 
-    iget-object v11, p0, Lcom/android/server/am/ActivityManagerService$ActiveLaunchReceiver;->this$0:Lcom/android/server/am/ActivityManagerService;
+    if-eqz v13, :cond_6
 
-    iget-object v11, v11, Lcom/android/server/am/ActivityManagerService;->mMARsPolicyManager:Lcom/android/server/am/MARsPolicyManager;
+    move-object/from16 v0, p0
+
+    iget-object v13, v0, Lcom/android/server/am/ActivityManagerService$ActiveLaunchReceiver;->this$0:Lcom/android/server/am/ActivityManagerService;
+
+    iget-object v13, v13, Lcom/android/server/am/ActivityManagerService;->mMARsPolicyManager:Lcom/android/server/am/MARsPolicyManager;
 
     invoke-static {}, Landroid/os/UserHandle;->myUserId()I
 
-    move-result v12
+    move-result v14
 
-    invoke-virtual {v11, v10, v12}, Lcom/android/server/am/MARsPolicyManager;->getIsDataCleared(Ljava/lang/String;I)Z
+    invoke-virtual {v13, v12, v14}, Lcom/android/server/am/MARsPolicyManager;->getIsDataCleared(Ljava/lang/String;I)Z
 
-    move-result v1
+    move-result v3
 
-    if-eqz v1, :cond_5
+    move-object/from16 v0, p0
 
+    iget-object v13, v0, Lcom/android/server/am/ActivityManagerService$ActiveLaunchReceiver;->this$0:Lcom/android/server/am/ActivityManagerService;
+
+    iget-object v13, v13, Lcom/android/server/am/ActivityManagerService;->mMARsPolicyManager:Lcom/android/server/am/MARsPolicyManager;
+
+    invoke-static {}, Landroid/os/UserHandle;->myUserId()I
+
+    move-result v14
+
+    invoke-virtual {v13, v12, v14}, Lcom/android/server/am/MARsPolicyManager;->isAutoRunBlockedApp(Ljava/lang/String;I)Z
+
+    move-result v2
+
+    if-nez v3, :cond_5
+
+    if-eqz v2, :cond_6
+
+    :cond_5
     invoke-static {}, Lcom/android/server/am/ActivityManagerService;->-get0()Ljava/lang/String;
 
-    move-result-object v11
+    move-result-object v13
 
-    new-instance v12, Ljava/lang/StringBuilder;
+    new-instance v14, Ljava/lang/StringBuilder;
 
-    invoke-direct {v12}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {v14}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string/jumbo v13, "Checking for the Active launch isDataCleared :"
+    const-string/jumbo v15, "Checking for the Active launch isDataCleared :"
 
-    invoke-virtual {v12, v13}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v14, v15}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v12
+    move-result-object v14
 
-    invoke-virtual {v12, v1}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+    invoke-virtual {v14, v3}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
 
-    move-result-object v12
+    move-result-object v14
 
-    invoke-virtual {v12}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    const-string/jumbo v15, ", isAutoRunBlocked : "
 
-    move-result-object v12
+    invoke-virtual {v14, v15}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-static {v11, v12}, Landroid/util/Slog;->e(Ljava/lang/String;Ljava/lang/String;)I
+    move-result-object v14
+
+    invoke-virtual {v14, v2}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+
+    move-result-object v14
+
+    invoke-virtual {v14}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v14
+
+    invoke-static {v13, v14}, Landroid/util/Slog;->e(Ljava/lang/String;Ljava/lang/String;)I
     :try_end_0
     .catch Ljava/lang/IllegalArgumentException; {:try_start_0 .. :try_end_0} :catch_0
 
     return-void
 
     :catch_0
-    move-exception v0
+    move-exception v1
 
     invoke-static {}, Lcom/android/server/am/ActivityManagerService;->-get0()Ljava/lang/String;
 
-    move-result-object v11
+    move-result-object v13
 
-    new-instance v12, Ljava/lang/StringBuilder;
+    new-instance v14, Ljava/lang/StringBuilder;
 
-    invoke-direct {v12}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {v14}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string/jumbo v13, "Failed active Launch package : "
+    const-string/jumbo v15, "Failed active Launch package : "
 
-    invoke-virtual {v12, v13}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v14, v15}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v12
+    move-result-object v14
 
-    invoke-virtual {v12, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v14, v12}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v12
+    move-result-object v14
 
-    const-string/jumbo v13, ": "
+    const-string/jumbo v15, ": "
 
-    invoke-virtual {v12, v13}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v14, v15}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v12
+    move-result-object v14
 
-    invoke-virtual {v12, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    invoke-virtual {v14, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
-    move-result-object v12
+    move-result-object v14
 
-    invoke-virtual {v12}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v14}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v12
+    move-result-object v14
 
-    invoke-static {v11, v12}, Landroid/util/Slog;->w(Ljava/lang/String;Ljava/lang/String;)I
-
-    :cond_5
-    invoke-static {}, Lcom/android/server/am/ActivityManagerService;->-get0()Ljava/lang/String;
-
-    move-result-object v11
-
-    new-instance v12, Ljava/lang/StringBuilder;
-
-    invoke-direct {v12}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string/jumbo v13, "Checking for the Active launch isPkgEverLaunched :"
-
-    invoke-virtual {v12, v13}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v12
-
-    invoke-virtual {v12, v3}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
-
-    move-result-object v12
-
-    const-string/jumbo v13, ", isPkgStopped : "
-
-    invoke-virtual {v12, v13}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v12
-
-    invoke-virtual {v12, v4}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
-
-    move-result-object v12
-
-    const-string/jumbo v13, ", isDataCleared :"
-
-    invoke-virtual {v12, v13}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v12
-
-    invoke-virtual {v12, v1}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
-
-    move-result-object v12
-
-    const-string/jumbo v13, ", isEnabledAtScpm :"
-
-    invoke-virtual {v12, v13}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v12
-
-    invoke-virtual {v12, v2}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
-
-    move-result-object v12
-
-    invoke-virtual {v12}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v12
-
-    invoke-static {v11, v12}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
-
-    if-eqz v8, :cond_6
-
-    if-eqz v10, :cond_6
-
-    if-eqz v3, :cond_6
-
-    if-eqz v4, :cond_7
+    invoke-static {v13, v14}, Landroid/util/Slog;->w(Ljava/lang/String;Ljava/lang/String;)I
 
     :cond_6
+    invoke-static {}, Lcom/android/server/am/ActivityManagerService;->-get0()Ljava/lang/String;
+
+    move-result-object v13
+
+    new-instance v14, Ljava/lang/StringBuilder;
+
+    invoke-direct {v14}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string/jumbo v15, "Checking for the Active launch isPkgEverLaunched :"
+
+    invoke-virtual {v14, v15}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v14
+
+    invoke-virtual {v14, v5}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+
+    move-result-object v14
+
+    const-string/jumbo v15, ", isPkgStopped : "
+
+    invoke-virtual {v14, v15}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v14
+
+    invoke-virtual {v14, v6}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+
+    move-result-object v14
+
+    const-string/jumbo v15, ", isDataCleared :"
+
+    invoke-virtual {v14, v15}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v14
+
+    invoke-virtual {v14, v3}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+
+    move-result-object v14
+
+    const-string/jumbo v15, ", isAutoRunBlocked : "
+
+    invoke-virtual {v14, v15}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v14
+
+    invoke-virtual {v14, v2}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+
+    move-result-object v14
+
+    const-string/jumbo v15, ", isEnabledAtScpm :"
+
+    invoke-virtual {v14, v15}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v14
+
+    invoke-virtual {v14, v4}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+
+    move-result-object v14
+
+    invoke-virtual {v14}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v14
+
+    invoke-static {v13, v14}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    if-eqz v10, :cond_7
+
+    if-eqz v12, :cond_7
+
+    if-eqz v5, :cond_7
+
+    if-eqz v6, :cond_8
+
+    :cond_7
     :goto_0
     return-void
 
-    :cond_7
-    if-nez v1, :cond_6
+    :cond_8
+    if-nez v3, :cond_7
 
-    if-eqz v2, :cond_6
+    if-eqz v4, :cond_7
 
-    invoke-virtual {v8, v10}, Landroid/content/pm/PackageManager;->getLaunchIntentForPackage(Ljava/lang/String;)Landroid/content/Intent;
+    if-nez v2, :cond_7
 
-    move-result-object v5
+    invoke-virtual {v10, v12}, Landroid/content/pm/PackageManager;->getLaunchIntentForPackage(Ljava/lang/String;)Landroid/content/Intent;
 
-    if-eqz v5, :cond_8
+    move-result-object v7
+
+    if-eqz v7, :cond_9
 
     invoke-static {}, Landroid/app/ActivityOptions;->makeBasic()Landroid/app/ActivityOptions;
 
-    move-result-object v6
+    move-result-object v8
 
-    if-eqz v6, :cond_6
+    if-eqz v8, :cond_7
 
-    const/4 v11, 0x1
+    const/4 v13, 0x1
 
-    invoke-virtual {v6, v11}, Landroid/app/ActivityOptions;->setActiveApplaunch(Z)V
+    invoke-virtual {v8, v13}, Landroid/app/ActivityOptions;->setActiveApplaunch(Z)V
 
-    invoke-virtual {v6}, Landroid/app/ActivityOptions;->toBundle()Landroid/os/Bundle;
+    invoke-virtual {v8}, Landroid/app/ActivityOptions;->toBundle()Landroid/os/Bundle;
 
-    move-result-object v11
+    move-result-object v13
 
-    invoke-virtual {p1, v5, v11}, Landroid/content/Context;->startActivity(Landroid/content/Intent;Landroid/os/Bundle;)V
+    move-object/from16 v0, p1
+
+    invoke-virtual {v0, v7, v13}, Landroid/content/Context;->startActivity(Landroid/content/Intent;Landroid/os/Bundle;)V
 
     invoke-static {}, Lcom/android/server/am/ActivityManagerService;->-get0()Ljava/lang/String;
 
-    move-result-object v11
+    move-result-object v13
 
-    const-string/jumbo v12, "starting Active launch"
+    const-string/jumbo v14, "starting Active launch"
 
-    invoke-static {v11, v12}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {v13, v14}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
     goto :goto_0
 
-    :cond_8
+    :cond_9
     invoke-static {}, Lcom/android/server/am/ActivityManagerService;->-get0()Ljava/lang/String;
 
-    move-result-object v11
+    move-result-object v13
 
-    const-string/jumbo v12, "Received intent is null"
+    const-string/jumbo v14, "Received intent is null"
 
-    invoke-static {v11, v12}, Landroid/util/Slog;->e(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {v13, v14}, Landroid/util/Slog;->e(Ljava/lang/String;Ljava/lang/String;)I
 
     goto :goto_0
 .end method

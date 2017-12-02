@@ -2725,7 +2725,7 @@
 
     if-eqz v0, :cond_0
 
-    const v1, 0x1040a74
+    const v1, 0x1040a75
 
     invoke-static {v1}, Lcom/android/server/enterprise/RestrictionToastManager;->show(I)V
 
@@ -2810,7 +2810,7 @@
 
     if-eqz v0, :cond_0
 
-    const v2, 0x1040a75
+    const v2, 0x1040a76
 
     invoke-static {v2}, Lcom/android/server/enterprise/RestrictionToastManager;->show(I)V
 
@@ -2963,7 +2963,7 @@
     return v0
 
     :cond_1
-    const v1, 0x1040a77
+    const v1, 0x1040a78
 
     invoke-static {v1}, Lcom/android/server/enterprise/RestrictionToastManager;->show(I)V
 
@@ -7296,7 +7296,7 @@
 .end method
 
 .method public allowFastEncryption(Lcom/samsung/android/knox/ContextInfo;Z)Z
-    .locals 12
+    .locals 7
 
     const/4 v4, 0x0
 
@@ -7314,7 +7314,7 @@
 
     invoke-virtual {v0, v1, v2, v3, p2}, Lcom/android/server/enterprise/storage/EdmStorageProvider;->putBoolean(ILjava/lang/String;Ljava/lang/String;Z)Z
 
-    move-result v8
+    move-result v6
 
     const-string/jumbo v0, "RestrictionPolicy"
 
@@ -7348,95 +7348,7 @@
 
     invoke-direct/range {v0 .. v5}, Lcom/android/server/enterprise/restriction/RestrictionPolicy;->updateRestrictionCache(Ljava/lang/String;JZI)V
 
-    if-eqz v8, :cond_0
-
-    invoke-static {}, Landroid/os/Binder;->clearCallingIdentity()J
-
-    move-result-wide v10
-
-    :try_start_0
-    invoke-static {}, Landroid/app/ActivityManagerNative;->getDefault()Landroid/app/IActivityManager;
-
-    move-result-object v0
-
-    const-string/jumbo v1, "com.android.settings"
-
-    const/4 v2, 0x0
-
-    invoke-interface {v0, v1, v2}, Landroid/app/IActivityManager;->forceStopPackage(Ljava/lang/String;I)V
-    :try_end_0
-    .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_1
-    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    invoke-static {v10, v11}, Landroid/os/Binder;->restoreCallingIdentity(J)V
-
-    :cond_0
-    :goto_0
-    return v8
-
-    :catch_0
-    move-exception v6
-
-    :try_start_1
-    const-string/jumbo v0, "RestrictionPolicy"
-
-    const-string/jumbo v1, "RestrictionPolicy.allowFastEncryption() exception : "
-
-    invoke-static {v0, v1}, Lcom/android/server/enterprise/log/Log;->w(Ljava/lang/String;Ljava/lang/String;)V
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
-
-    const/4 v8, 0x0
-
-    invoke-static {v10, v11}, Landroid/os/Binder;->restoreCallingIdentity(J)V
-
-    goto :goto_0
-
-    :catch_1
-    move-exception v7
-
-    :try_start_2
-    const-string/jumbo v0, "RestrictionPolicy"
-
-    new-instance v1, Ljava/lang/StringBuilder;
-
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string/jumbo v2, "Fail getting ActivityManager "
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v7}, Landroid/os/RemoteException;->getMessage()Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-static {v0, v1}, Lcom/android/server/enterprise/log/Log;->e(Ljava/lang/String;Ljava/lang/String;)V
-    :try_end_2
-    .catchall {:try_start_2 .. :try_end_2} :catchall_0
-
-    const/4 v8, 0x0
-
-    invoke-static {v10, v11}, Landroid/os/Binder;->restoreCallingIdentity(J)V
-
-    goto :goto_0
-
-    :catchall_0
-    move-exception v0
-
-    invoke-static {v10, v11}, Landroid/os/Binder;->restoreCallingIdentity(J)V
-
-    throw v0
+    return v6
 .end method
 
 .method public allowFirmwareAutoUpdate(Lcom/samsung/android/knox/ContextInfo;Z)Z
@@ -11532,7 +11444,7 @@
 
     if-nez v0, :cond_0
 
-    const v0, 0x1040a74
+    const v0, 0x1040a75
 
     invoke-static {v0}, Lcom/android/server/enterprise/RestrictionToastManager;->show(I)V
 
@@ -12824,7 +12736,7 @@
     return v0
 
     :cond_1
-    const v1, 0x1040a6c
+    const v1, 0x1040a6d
 
     invoke-static {v1}, Lcom/android/server/enterprise/RestrictionToastManager;->show(I)V
 
@@ -13005,7 +12917,7 @@
     return v0
 
     :cond_1
-    const v1, 0x1040a2e
+    const v1, 0x1040a2f
 
     invoke-static {v1}, Lcom/android/server/enterprise/RestrictionToastManager;->show(I)V
 
@@ -13056,7 +12968,7 @@
     return v0
 
     :cond_1
-    const v1, 0x1040a18
+    const v1, 0x1040a19
 
     invoke-static {v1}, Lcom/android/server/enterprise/RestrictionToastManager;->show(I)V
 
@@ -13119,7 +13031,7 @@
     return v0
 
     :cond_1
-    const v2, 0x1040a13
+    const v2, 0x1040a14
 
     invoke-static {v2}, Lcom/android/server/enterprise/RestrictionToastManager;->show(I)V
 
@@ -13246,7 +13158,7 @@
     return v0
 
     :cond_1
-    const v1, 0x1040a63
+    const v1, 0x1040a64
 
     invoke-static {v1}, Lcom/android/server/enterprise/RestrictionToastManager;->show(I)V
 
@@ -13441,7 +13353,7 @@
     return v1
 
     :cond_2
-    const v2, 0x1040a76
+    const v2, 0x1040a77
 
     invoke-static {v2}, Lcom/android/server/enterprise/RestrictionToastManager;->show(I)V
 
@@ -13530,7 +13442,7 @@
     return v0
 
     :cond_1
-    const v2, 0x1040a5e
+    const v2, 0x1040a5f
 
     invoke-static {v2}, Lcom/android/server/enterprise/RestrictionToastManager;->show(I)V
 
@@ -13772,7 +13684,7 @@
     return v0
 
     :cond_1
-    const v1, 0x1040a6a
+    const v1, 0x1040a6b
 
     invoke-static {v1}, Lcom/android/server/enterprise/RestrictionToastManager;->show(I)V
 
@@ -13900,7 +13812,7 @@
     return v0
 
     :cond_1
-    const v1, 0x1040a6f
+    const v1, 0x1040a70
 
     invoke-static {v1}, Lcom/android/server/enterprise/RestrictionToastManager;->show(I)V
 
@@ -13949,7 +13861,7 @@
     return v0
 
     :cond_1
-    const v1, 0x1040a6b
+    const v1, 0x1040a6c
 
     invoke-static {v1}, Lcom/android/server/enterprise/RestrictionToastManager;->show(I)V
 
@@ -14189,7 +14101,7 @@
     return v0
 
     :cond_1
-    const v1, 0x1040a6d
+    const v1, 0x1040a6e
 
     invoke-static {v1}, Lcom/android/server/enterprise/RestrictionToastManager;->show(I)V
 
@@ -14242,7 +14154,7 @@
     return v0
 
     :cond_1
-    const v2, 0x1040a27
+    const v2, 0x1040a28
 
     invoke-static {v2}, Lcom/android/server/enterprise/RestrictionToastManager;->show(I)V
 
@@ -14305,7 +14217,7 @@
     return v0
 
     :cond_1
-    const v1, 0x1040a5f
+    const v1, 0x1040a60
 
     invoke-static {v1}, Lcom/android/server/enterprise/RestrictionToastManager;->show(I)V
 
@@ -14592,7 +14504,7 @@
     return v0
 
     :cond_3
-    const v1, 0x1040a60
+    const v1, 0x1040a61
 
     invoke-static {v1}, Lcom/android/server/enterprise/RestrictionToastManager;->show(I)V
 
@@ -14707,7 +14619,7 @@
     return v0
 
     :cond_1
-    const v1, 0x1040a22
+    const v1, 0x1040a23
 
     invoke-static {v1}, Lcom/android/server/enterprise/RestrictionToastManager;->show(I)V
 
@@ -15050,7 +14962,7 @@
     return v0
 
     :cond_1
-    const v2, 0x1040976
+    const v2, 0x1040977
 
     invoke-static {v2}, Lcom/android/server/enterprise/RestrictionToastManager;->show(I)V
 
@@ -15117,7 +15029,7 @@
     return v0
 
     :cond_1
-    const v1, 0x1040a17
+    const v1, 0x1040a18
 
     invoke-static {v1}, Lcom/android/server/enterprise/RestrictionToastManager;->show(I)V
 
@@ -15170,7 +15082,7 @@
     return v0
 
     :cond_1
-    const v2, 0x1040a6e
+    const v2, 0x1040a6f
 
     invoke-static {v2}, Lcom/android/server/enterprise/RestrictionToastManager;->show(I)V
 
@@ -15310,7 +15222,7 @@
     return v0
 
     :cond_2
-    const v1, 0x1040a16
+    const v1, 0x1040a17
 
     invoke-static {v1}, Lcom/android/server/enterprise/RestrictionToastManager;->show(I)V
 
@@ -15515,7 +15427,7 @@
     return v0
 
     :cond_3
-    const v1, 0x1040a61
+    const v1, 0x1040a62
 
     invoke-static {v1}, Lcom/android/server/enterprise/RestrictionToastManager;->show(I)V
 
@@ -15716,7 +15628,7 @@
     return v0
 
     :cond_1
-    const v1, 0x1040a32
+    const v1, 0x1040a33
 
     invoke-static {v1}, Lcom/android/server/enterprise/RestrictionToastManager;->show(I)V
 
@@ -15816,7 +15728,7 @@
     return v0
 
     :cond_2
-    const v1, 0x1040a2b
+    const v1, 0x1040a2c
 
     invoke-static {v1}, Lcom/android/server/enterprise/RestrictionToastManager;->show(I)V
 
@@ -16126,7 +16038,7 @@
     return v0
 
     :cond_1
-    const v1, 0x1040a2a
+    const v1, 0x1040a2b
 
     invoke-static {v1}, Lcom/android/server/enterprise/RestrictionToastManager;->show(I)V
 
@@ -16213,7 +16125,7 @@
     goto :goto_0
 
     :cond_2
-    const v1, 0x1040a64
+    const v1, 0x1040a65
 
     invoke-static {v1}, Lcom/android/server/enterprise/RestrictionToastManager;->show(I)V
 
@@ -16418,7 +16330,7 @@
     return v0
 
     :cond_1
-    const v2, 0x1040a14
+    const v2, 0x1040a15
 
     invoke-static {v2}, Lcom/android/server/enterprise/RestrictionToastManager;->show(I)V
 
@@ -16509,7 +16421,7 @@
     return v0
 
     :cond_1
-    const v2, 0x1040a1b
+    const v2, 0x1040a1c
 
     invoke-static {v2}, Lcom/android/server/enterprise/RestrictionToastManager;->show(I)V
 
@@ -16674,7 +16586,7 @@
     return v0
 
     :cond_1
-    const v1, 0x1040a15
+    const v1, 0x1040a16
 
     invoke-static {v1}, Lcom/android/server/enterprise/RestrictionToastManager;->show(I)V
 

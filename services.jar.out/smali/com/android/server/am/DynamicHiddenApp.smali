@@ -4016,7 +4016,7 @@
 
     if-eqz v27, :cond_20
 
-    invoke-static {}, Landroid/os/SystemClock;->uptimeMillis()J
+    invoke-static {}, Landroid/os/SystemClock;->elapsedRealtime()J
 
     move-result-wide v32
 
@@ -6177,7 +6177,7 @@
 
     if-eqz v27, :cond_49
 
-    invoke-static {}, Landroid/os/SystemClock;->uptimeMillis()J
+    invoke-static {}, Landroid/os/SystemClock;->elapsedRealtime()J
 
     move-result-wide v32
 

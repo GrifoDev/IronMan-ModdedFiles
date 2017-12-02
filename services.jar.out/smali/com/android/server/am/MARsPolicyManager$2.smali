@@ -90,7 +90,7 @@
     :try_start_0
     iget-object v2, p0, Lcom/android/server/am/MARsPolicyManager$2;->this$0:Lcom/android/server/am/MARsPolicyManager;
 
-    invoke-static {v2}, Lcom/android/server/am/MARsPolicyManager;->-get9(Lcom/android/server/am/MARsPolicyManager;)Landroid/util/ArrayMap;
+    invoke-static {v2}, Lcom/android/server/am/MARsPolicyManager;->-get10(Lcom/android/server/am/MARsPolicyManager;)Landroid/util/ArrayMap;
 
     move-result-object v2
 
@@ -108,7 +108,7 @@
 
     iget-object v2, p0, Lcom/android/server/am/MARsPolicyManager$2;->this$0:Lcom/android/server/am/MARsPolicyManager;
 
-    invoke-static {v2}, Lcom/android/server/am/MARsPolicyManager;->-get9(Lcom/android/server/am/MARsPolicyManager;)Landroid/util/ArrayMap;
+    invoke-static {v2}, Lcom/android/server/am/MARsPolicyManager;->-get10(Lcom/android/server/am/MARsPolicyManager;)Landroid/util/ArrayMap;
 
     move-result-object v2
 
@@ -140,7 +140,7 @@
 
     iget-object v2, p0, Lcom/android/server/am/MARsPolicyManager$2;->this$0:Lcom/android/server/am/MARsPolicyManager;
 
-    invoke-static {v2}, Lcom/android/server/am/MARsPolicyManager;->-get9(Lcom/android/server/am/MARsPolicyManager;)Landroid/util/ArrayMap;
+    invoke-static {v2}, Lcom/android/server/am/MARsPolicyManager;->-get10(Lcom/android/server/am/MARsPolicyManager;)Landroid/util/ArrayMap;
 
     move-result-object v2
 
@@ -169,7 +169,7 @@
 
     iget-object v2, p0, Lcom/android/server/am/MARsPolicyManager$2;->this$0:Lcom/android/server/am/MARsPolicyManager;
 
-    invoke-static {v2}, Lcom/android/server/am/MARsPolicyManager;->-get9(Lcom/android/server/am/MARsPolicyManager;)Landroid/util/ArrayMap;
+    invoke-static {v2}, Lcom/android/server/am/MARsPolicyManager;->-get10(Lcom/android/server/am/MARsPolicyManager;)Landroid/util/ArrayMap;
 
     move-result-object v2
 

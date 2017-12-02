@@ -2478,13 +2478,13 @@
 
     if-ne v2, v6, :cond_1
 
-    const v2, 0x1100022
+    const v2, 0x1100023
 
     invoke-direct {p0, p1, v2, v5}, Lcom/android/server/display/ColorFade;->loadShader(Landroid/content/Context;II)I
 
     move-result v1
 
-    const v2, 0x1100021
+    const v2, 0x1100022
 
     invoke-direct {p0, p1, v2, v3}, Lcom/android/server/display/ColorFade;->loadShader(Landroid/content/Context;II)I
 
@@ -2505,13 +2505,13 @@
 
     if-ne v2, v7, :cond_2
 
-    const v2, 0x1100024
+    const v2, 0x1100025
 
     invoke-direct {p0, p1, v2, v5}, Lcom/android/server/display/ColorFade;->loadShader(Landroid/content/Context;II)I
 
     move-result v1
 
-    const v2, 0x1100023
+    const v2, 0x1100024
 
     invoke-direct {p0, p1, v2, v3}, Lcom/android/server/display/ColorFade;->loadShader(Landroid/content/Context;II)I
 

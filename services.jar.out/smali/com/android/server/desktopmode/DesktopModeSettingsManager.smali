@@ -40,6 +40,8 @@
 
 .field public static final SETTINGS_KEY_LAUNCH_POLICY_MODE:Ljava/lang/String; = "launch_policy_mode"
 
+.field public static final SETTINGS_KEY_MIRRORING_SWITCH_DISABLED:Ljava/lang/String; = "mirroring_switch_disabled"
+
 .field public static final SETTINGS_KEY_MONITOR_CHANGED:Ljava/lang/String; = "monitor_changed"
 
 .field public static final SETTINGS_KEY_MONITOR_INFO:Ljava/lang/String; = "monitor_info"
@@ -47,6 +49,8 @@
 .field public static final SETTINGS_KEY_SCREEN_OFF_TIMEOUT:Ljava/lang/String; = "timeout_dex"
 
 .field public static final SETTINGS_KEY_SCREEN_OFF_TIMEOUT_BACKUP:Ljava/lang/String; = "timeout_backup"
+
+.field public static final SETTINGS_KEY_SPEED_LIMIT_BACKUP:Ljava/lang/String; = "speed_limit_backup"
 
 .field public static final SETTINGS_KEY_SPEN_MODE:Ljava/lang/String; = "spen_mode"
 

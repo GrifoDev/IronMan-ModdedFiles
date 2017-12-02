@@ -648,81 +648,7 @@
     return-object v0
 .end method
 
-.method static synthetic -wrap1()Z
-    .locals 1
-
-    invoke-static {}, Lcom/android/server/enterprise/container/KnoxMUMContainerPolicy;->isNoteVzwProject()Z
-
-    move-result v0
-
-    return v0
-.end method
-
-.method static synthetic -wrap10(Lcom/android/server/enterprise/container/KnoxMUMContainerPolicy;Ljava/lang/String;I)V
-    .locals 0
-
-    invoke-direct {p0, p1, p2}, Lcom/android/server/enterprise/container/KnoxMUMContainerPolicy;->packageInstalledForExternalStorage(Ljava/lang/String;I)V
-
-    return-void
-.end method
-
-.method static synthetic -wrap11(Lcom/android/server/enterprise/container/KnoxMUMContainerPolicy;Ljava/lang/String;I)V
-    .locals 0
-
-    invoke-direct {p0, p1, p2}, Lcom/android/server/enterprise/container/KnoxMUMContainerPolicy;->packageRemovedForExternalStorage(Ljava/lang/String;I)V
-
-    return-void
-.end method
-
-.method static synthetic -wrap12(Lcom/android/server/enterprise/container/KnoxMUMContainerPolicy;Ljava/lang/String;II)V
-    .locals 0
-
-    invoke-direct {p0, p1, p2, p3}, Lcom/android/server/enterprise/container/KnoxMUMContainerPolicy;->sendContainerAdminLockIntent(Ljava/lang/String;II)V
-
-    return-void
-.end method
-
-.method static synthetic -wrap13(Lcom/android/server/enterprise/container/KnoxMUMContainerPolicy;Ljava/lang/String;IIII)V
-    .locals 0
-
-    invoke-direct/range {p0 .. p5}, Lcom/android/server/enterprise/container/KnoxMUMContainerPolicy;->sendContainerCreationIntentBC(Ljava/lang/String;IIII)V
-
-    return-void
-.end method
-
-.method static synthetic -wrap14(Lcom/android/server/enterprise/container/KnoxMUMContainerPolicy;Ljava/lang/String;IIIII)V
-    .locals 0
-
-    invoke-direct/range {p0 .. p6}, Lcom/android/server/enterprise/container/KnoxMUMContainerPolicy;->sendContainerCreationIntent(Ljava/lang/String;IIIII)V
-
-    return-void
-.end method
-
-.method static synthetic -wrap15(Lcom/android/server/enterprise/container/KnoxMUMContainerPolicy;Ljava/lang/String;IIII)V
-    .locals 0
-
-    invoke-direct/range {p0 .. p5}, Lcom/android/server/enterprise/container/KnoxMUMContainerPolicy;->sendContainerStateChangeIntent(Ljava/lang/String;IIII)V
-
-    return-void
-.end method
-
-.method static synthetic -wrap16(Lcom/android/server/enterprise/container/KnoxMUMContainerPolicy;ILjava/lang/String;)V
-    .locals 0
-
-    invoke-direct {p0, p1, p2}, Lcom/android/server/enterprise/container/KnoxMUMContainerPolicy;->sendIntentBroadcastForContainer(ILjava/lang/String;)V
-
-    return-void
-.end method
-
-.method static synthetic -wrap17(Lcom/android/server/enterprise/container/KnoxMUMContainerPolicy;Lcom/samsung/android/knox/container/ContainerCreationParams;II)V
-    .locals 0
-
-    invoke-direct {p0, p1, p2, p3}, Lcom/android/server/enterprise/container/KnoxMUMContainerPolicy;->updateContainerCreationStatus(Lcom/samsung/android/knox/container/ContainerCreationParams;II)V
-
-    return-void
-.end method
-
-.method static synthetic -wrap2(Ljava/lang/String;)Z
+.method static synthetic -wrap1(Ljava/lang/String;)Z
     .locals 1
 
     invoke-static {p0}, Lcom/android/server/enterprise/container/KnoxMUMContainerPolicy;->isSystemApp(Ljava/lang/String;)Z
@@ -732,7 +658,63 @@
     return v0
 .end method
 
-.method static synthetic -wrap3(Lcom/android/server/enterprise/container/KnoxMUMContainerPolicy;Lcom/samsung/android/knox/container/ContainerCreationParams;I)Z
+.method static synthetic -wrap10(Lcom/android/server/enterprise/container/KnoxMUMContainerPolicy;Ljava/lang/String;I)V
+    .locals 0
+
+    invoke-direct {p0, p1, p2}, Lcom/android/server/enterprise/container/KnoxMUMContainerPolicy;->packageRemovedForExternalStorage(Ljava/lang/String;I)V
+
+    return-void
+.end method
+
+.method static synthetic -wrap11(Lcom/android/server/enterprise/container/KnoxMUMContainerPolicy;Ljava/lang/String;II)V
+    .locals 0
+
+    invoke-direct {p0, p1, p2, p3}, Lcom/android/server/enterprise/container/KnoxMUMContainerPolicy;->sendContainerAdminLockIntent(Ljava/lang/String;II)V
+
+    return-void
+.end method
+
+.method static synthetic -wrap12(Lcom/android/server/enterprise/container/KnoxMUMContainerPolicy;Ljava/lang/String;IIII)V
+    .locals 0
+
+    invoke-direct/range {p0 .. p5}, Lcom/android/server/enterprise/container/KnoxMUMContainerPolicy;->sendContainerCreationIntentBC(Ljava/lang/String;IIII)V
+
+    return-void
+.end method
+
+.method static synthetic -wrap13(Lcom/android/server/enterprise/container/KnoxMUMContainerPolicy;Ljava/lang/String;IIIII)V
+    .locals 0
+
+    invoke-direct/range {p0 .. p6}, Lcom/android/server/enterprise/container/KnoxMUMContainerPolicy;->sendContainerCreationIntent(Ljava/lang/String;IIIII)V
+
+    return-void
+.end method
+
+.method static synthetic -wrap14(Lcom/android/server/enterprise/container/KnoxMUMContainerPolicy;Ljava/lang/String;IIII)V
+    .locals 0
+
+    invoke-direct/range {p0 .. p5}, Lcom/android/server/enterprise/container/KnoxMUMContainerPolicy;->sendContainerStateChangeIntent(Ljava/lang/String;IIII)V
+
+    return-void
+.end method
+
+.method static synthetic -wrap15(Lcom/android/server/enterprise/container/KnoxMUMContainerPolicy;ILjava/lang/String;)V
+    .locals 0
+
+    invoke-direct {p0, p1, p2}, Lcom/android/server/enterprise/container/KnoxMUMContainerPolicy;->sendIntentBroadcastForContainer(ILjava/lang/String;)V
+
+    return-void
+.end method
+
+.method static synthetic -wrap16(Lcom/android/server/enterprise/container/KnoxMUMContainerPolicy;Lcom/samsung/android/knox/container/ContainerCreationParams;II)V
+    .locals 0
+
+    invoke-direct {p0, p1, p2, p3}, Lcom/android/server/enterprise/container/KnoxMUMContainerPolicy;->updateContainerCreationStatus(Lcom/samsung/android/knox/container/ContainerCreationParams;II)V
+
+    return-void
+.end method
+
+.method static synthetic -wrap2(Lcom/android/server/enterprise/container/KnoxMUMContainerPolicy;Lcom/samsung/android/knox/container/ContainerCreationParams;I)Z
     .locals 1
 
     invoke-direct {p0, p1, p2}, Lcom/android/server/enterprise/container/KnoxMUMContainerPolicy;->processCreationParams(Lcom/samsung/android/knox/container/ContainerCreationParams;I)Z
@@ -742,7 +724,7 @@
     return v0
 .end method
 
-.method static synthetic -wrap4(Lcom/android/server/enterprise/container/KnoxMUMContainerPolicy;Lcom/samsung/android/knox/container/ContainerCreationParams;)Z
+.method static synthetic -wrap3(Lcom/android/server/enterprise/container/KnoxMUMContainerPolicy;Lcom/samsung/android/knox/container/ContainerCreationParams;)Z
     .locals 1
 
     invoke-direct {p0, p1}, Lcom/android/server/enterprise/container/KnoxMUMContainerPolicy;->removeCreationParams(Lcom/samsung/android/knox/container/ContainerCreationParams;)Z
@@ -752,7 +734,7 @@
     return v0
 .end method
 
-.method static synthetic -wrap5(Lcom/android/server/enterprise/container/KnoxMUMContainerPolicy;)Lcom/samsung/android/knox/SemPersonaManager;
+.method static synthetic -wrap4(Lcom/android/server/enterprise/container/KnoxMUMContainerPolicy;)Lcom/samsung/android/knox/SemPersonaManager;
     .locals 1
 
     invoke-direct {p0}, Lcom/android/server/enterprise/container/KnoxMUMContainerPolicy;->getService()Lcom/samsung/android/knox/SemPersonaManager;
@@ -762,7 +744,7 @@
     return-object v0
 .end method
 
-.method static synthetic -wrap6(Lcom/android/server/enterprise/container/KnoxMUMContainerPolicy;I)Lcom/samsung/android/knox/container/ContainerCreationParams;
+.method static synthetic -wrap5(Lcom/android/server/enterprise/container/KnoxMUMContainerPolicy;I)Lcom/samsung/android/knox/container/ContainerCreationParams;
     .locals 1
 
     invoke-direct {p0, p1}, Lcom/android/server/enterprise/container/KnoxMUMContainerPolicy;->getCreationParams(I)Lcom/samsung/android/knox/container/ContainerCreationParams;
@@ -772,7 +754,7 @@
     return-object v0
 .end method
 
-.method static synthetic -wrap7(Lcom/android/server/enterprise/container/KnoxMUMContainerPolicy;IZ)I
+.method static synthetic -wrap6(Lcom/android/server/enterprise/container/KnoxMUMContainerPolicy;IZ)I
     .locals 1
 
     invoke-direct {p0, p1, p2}, Lcom/android/server/enterprise/container/KnoxMUMContainerPolicy;->removeContainer(IZ)I
@@ -782,7 +764,7 @@
     return v0
 .end method
 
-.method static synthetic -wrap8(Lcom/samsung/android/knox/SemPersonaState;)I
+.method static synthetic -wrap7(Lcom/samsung/android/knox/SemPersonaState;)I
     .locals 1
 
     invoke-static {p0}, Lcom/android/server/enterprise/container/KnoxMUMContainerPolicy;->translateStatus(Lcom/samsung/android/knox/SemPersonaState;)I
@@ -792,7 +774,7 @@
     return v0
 .end method
 
-.method static synthetic -wrap9(Ljava/util/List;)Ljava/util/List;
+.method static synthetic -wrap8(Ljava/util/List;)Ljava/util/List;
     .locals 1
 
     invoke-static {p0}, Lcom/android/server/enterprise/container/KnoxMUMContainerPolicy;->removeDuplicatedItems(Ljava/util/List;)Ljava/util/List;
@@ -800,6 +782,14 @@
     move-result-object v0
 
     return-object v0
+.end method
+
+.method static synthetic -wrap9(Lcom/android/server/enterprise/container/KnoxMUMContainerPolicy;Ljava/lang/String;I)V
+    .locals 0
+
+    invoke-direct {p0, p1, p2}, Lcom/android/server/enterprise/container/KnoxMUMContainerPolicy;->packageInstalledForExternalStorage(Ljava/lang/String;I)V
+
+    return-void
 .end method
 
 .method static constructor <clinit>()V

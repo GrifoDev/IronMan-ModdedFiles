@@ -2333,11 +2333,11 @@
     invoke-static {v0, v8}, Landroid/util/Slog;->v(Ljava/lang/String;Ljava/lang/String;)I
 
     :cond_1
-    const-wide/16 v0, 0x2710
+    invoke-virtual {p2}, Lcom/android/server/AlarmManagerServiceExt$AlarmExt;->isSuspiciousAlarm()Z
 
-    cmp-long v0, p5, v0
+    move-result v0
 
-    if-gtz v0, :cond_6
+    if-nez v0, :cond_6
 
     const/4 v0, 0x1
 
@@ -8616,6 +8616,8 @@
     move-wide/from16 v12, v28
 
     :goto_2
+    invoke-virtual {v9, v12, v13}, Lcom/android/server/AlarmManagerServiceExt$AlarmExt;->checkSuspiciousAlarm(J)V
+
     const-wide/32 v18, 0x325aa0
 
     cmp-long v7, v28, v18

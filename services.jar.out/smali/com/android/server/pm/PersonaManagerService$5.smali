@@ -122,7 +122,7 @@
 
     iget-object v4, p0, Lcom/android/server/pm/PersonaManagerService$5;->this$0:Lcom/android/server/pm/PersonaManagerService;
 
-    invoke-static {v4, v0}, Lcom/android/server/pm/PersonaManagerService;->-wrap65(Lcom/android/server/pm/PersonaManagerService;I)V
+    invoke-static {v4, v0}, Lcom/android/server/pm/PersonaManagerService;->-wrap66(Lcom/android/server/pm/PersonaManagerService;I)V
 
     :cond_0
     :goto_0
@@ -205,7 +205,7 @@
 
     iget-object v4, p0, Lcom/android/server/pm/PersonaManagerService$5;->this$0:Lcom/android/server/pm/PersonaManagerService;
 
-    invoke-static {v4, v3}, Lcom/android/server/pm/PersonaManagerService;->-wrap70(Lcom/android/server/pm/PersonaManagerService;Ljava/lang/String;)V
+    invoke-static {v4, v3}, Lcom/android/server/pm/PersonaManagerService;->-wrap71(Lcom/android/server/pm/PersonaManagerService;Ljava/lang/String;)V
 
     goto :goto_0
 
@@ -220,9 +220,9 @@
 
     move-result v4
 
-    if-eqz v4, :cond_0
+    if-eqz v4, :cond_3
 
-    if-nez p3, :cond_0
+    if-nez p3, :cond_3
 
     iget-object v4, p0, Lcom/android/server/pm/PersonaManagerService$5;->this$0:Lcom/android/server/pm/PersonaManagerService;
 
@@ -259,6 +259,27 @@
     iget-object v4, p0, Lcom/android/server/pm/PersonaManagerService$5;->this$0:Lcom/android/server/pm/PersonaManagerService;
 
     invoke-static {v4, v2}, Lcom/android/server/pm/PersonaManagerService;->-wrap23(Lcom/android/server/pm/PersonaManagerService;Ljava/lang/String;)V
+
+    goto/16 :goto_0
+
+    :cond_3
+    const-string/jumbo v4, "display_size_forced"
+
+    invoke-static {v4}, Landroid/provider/Settings$Global;->getUriFor(Ljava/lang/String;)Landroid/net/Uri;
+
+    move-result-object v4
+
+    invoke-virtual {p2, v4}, Landroid/net/Uri;->equals(Ljava/lang/Object;)Z
+
+    move-result v4
+
+    if-eqz v4, :cond_0
+
+    iget-object v4, p0, Lcom/android/server/pm/PersonaManagerService$5;->this$0:Lcom/android/server/pm/PersonaManagerService;
+
+    const/4 v5, 0x1
+
+    invoke-static {v4, v5}, Lcom/android/server/pm/PersonaManagerService;->-set10(Lcom/android/server/pm/PersonaManagerService;Z)Z
 
     goto/16 :goto_0
 .end method

@@ -178,6 +178,9 @@
 .method public abstract getStatusBarHeight()I
 .end method
 
+.method public abstract getSurfaceLayerCarModeBar()I
+.end method
+
 .method public abstract getTaskBarHeightInDesktopMode()I
 .end method
 

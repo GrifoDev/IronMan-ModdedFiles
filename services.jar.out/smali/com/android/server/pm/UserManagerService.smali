@@ -14793,19 +14793,7 @@
 
     :try_start_7
     monitor-exit v11
-    :try_end_7
-    .catchall {:try_start_7 .. :try_end_7} :catchall_1
 
-    :try_start_8
-    iget-object v11, p0, Lcom/android/server/pm/UserManagerService;->mAppOpsService:Lcom/android/internal/app/IAppOpsService;
-
-    invoke-interface {v11, p1}, Lcom/android/internal/app/IAppOpsService;->removeUser(I)V
-    :try_end_8
-    .catch Landroid/os/RemoteException; {:try_start_8 .. :try_end_8} :catch_0
-    .catchall {:try_start_8 .. :try_end_8} :catchall_1
-
-    :goto_0
-    :try_start_9
     iget-object v11, v7, Lcom/android/server/pm/UserManagerService$UserData;->info:Landroid/content/pm/UserInfo;
 
     const/4 v12, 0x1
@@ -14821,12 +14809,24 @@
     iput v12, v11, Landroid/content/pm/UserInfo;->flags:I
 
     invoke-direct {p0, v7}, Lcom/android/server/pm/UserManagerService;->writeUserLP(Lcom/android/server/pm/UserManagerService$UserData;)V
-    :try_end_9
-    .catchall {:try_start_9 .. :try_end_9} :catchall_1
+    :try_end_7
+    .catchall {:try_start_7 .. :try_end_7} :catchall_1
 
-    :try_start_a
+    :try_start_8
     monitor-exit v10
+    :try_end_8
+    .catchall {:try_start_8 .. :try_end_8} :catchall_2
 
+    :try_start_9
+    iget-object v10, p0, Lcom/android/server/pm/UserManagerService;->mAppOpsService:Lcom/android/internal/app/IAppOpsService;
+
+    invoke-interface {v10, p1}, Lcom/android/internal/app/IAppOpsService;->removeUser(I)V
+    :try_end_9
+    .catch Landroid/os/RemoteException; {:try_start_9 .. :try_end_9} :catch_0
+    .catchall {:try_start_9 .. :try_end_9} :catchall_2
+
+    :goto_0
+    :try_start_a
     iget-object v10, v7, Lcom/android/server/pm/UserManagerService$UserData;->info:Landroid/content/pm/UserInfo;
 
     iget v10, v10, Landroid/content/pm/UserInfo;->profileGroupId:I
@@ -15012,28 +15012,25 @@
     move-exception v3
 
     :try_start_11
-    const-string/jumbo v11, "UserManagerService"
+    const-string/jumbo v10, "UserManagerService"
 
-    const-string/jumbo v12, "Unable to notify AppOpsService of removing user"
+    const-string/jumbo v11, "Unable to notify AppOpsService of removing user"
 
-    invoke-static {v11, v12, v3}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
-    :try_end_11
-    .catchall {:try_start_11 .. :try_end_11} :catchall_1
+    invoke-static {v10, v11, v3}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
     goto/16 :goto_0
 
     :catchall_3
     move-exception v8
 
-    :try_start_12
     monitor-exit v10
 
     throw v8
-    :try_end_12
-    .catchall {:try_start_12 .. :try_end_12} :catchall_2
+    :try_end_11
+    .catchall {:try_start_11 .. :try_end_11} :catchall_2
 
     :cond_9
-    :try_start_13
+    :try_start_12
     invoke-static {}, Landroid/app/ActivityManagerNative;->getDefault()Landroid/app/IActivityManager;
 
     move-result-object v10
@@ -15045,9 +15042,9 @@
     const/4 v12, 0x1
 
     invoke-interface {v10, p1, v12, v11}, Landroid/app/IActivityManager;->stopUser(IZLandroid/app/IStopUserCallback;)I
-    :try_end_13
-    .catch Landroid/os/RemoteException; {:try_start_13 .. :try_end_13} :catch_1
-    .catchall {:try_start_13 .. :try_end_13} :catchall_2
+    :try_end_12
+    .catch Landroid/os/RemoteException; {:try_start_12 .. :try_end_12} :catch_1
+    .catchall {:try_start_12 .. :try_end_12} :catchall_2
 
     move-result v6
 

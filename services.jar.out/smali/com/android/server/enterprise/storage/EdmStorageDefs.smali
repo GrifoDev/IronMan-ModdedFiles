@@ -1170,6 +1170,8 @@
 
 .field public static final KNOX_CUSTOM_GEAR_NOTIFICATION_STATE:Ljava/lang/String; = "gearNotificationState"
 
+.field public static final KNOX_CUSTOM_GESTURE_AIR_COMMAND:Ljava/lang/String; = "gestureAirCommand"
+
 .field public static final KNOX_CUSTOM_INFRARED_STATE:Ljava/lang/String; = "infraredState"
 
 .field public static final KNOX_CUSTOM_INPUT_RESTRICTION_STATE:Ljava/lang/String; = "inputRestrictionState"

@@ -15,6 +15,8 @@
 
 
 # static fields
+.field private static final ACTION_AIR_COMMAND_STATUS_CHANGED:Ljava/lang/String; = "com.samsung.android.knox.intent.action.AIR_COMMAND_STATUS_CHANGED"
+
 .field private static final ACTION_BIND_WIDGET:Ljava/lang/String; = "com.sec.android.launcher.action.BIND_WIDGET"
 
 .field private static final ACTION_BIND_WIDGET_LEGACY:Ljava/lang/String; = "com.android.launcher.action.BIND_WIDGET"
@@ -210,8 +212,6 @@
 .field private mKnoxCustomCurtainModeIsRunning:Z
 
 .field private mLauncherConfiguration:Lcom/sec/server/enterprise/knoxcustom/LauncherConfigurationInternal;
-
-.field private mOldHomePackage:Ljava/lang/String;
 
 .field private mPhoneStatusBarInit:Z
 
@@ -596,8 +596,6 @@
     iput-object v12, p0, Lcom/sec/server/enterprise/knoxcustom/KnoxCustomManagerService;->mEdmStorageProvider:Lcom/android/server/enterprise/storage/EdmStorageProvider;
 
     iput-boolean v10, p0, Lcom/sec/server/enterprise/knoxcustom/KnoxCustomManagerService;->mIsTablet:Z
-
-    iput-object v12, p0, Lcom/sec/server/enterprise/knoxcustom/KnoxCustomManagerService;->mOldHomePackage:Ljava/lang/String;
 
     iput-boolean v10, p0, Lcom/sec/server/enterprise/knoxcustom/KnoxCustomManagerService;->mAmericanoUI:Z
 
@@ -1340,24 +1338,6 @@
     const/4 v4, 0x1
 
     return v4
-.end method
-
-.method private closeApp(Ljava/lang/String;)V
-    .locals 3
-
-    iget-object v1, p0, Lcom/sec/server/enterprise/knoxcustom/KnoxCustomManagerService;->mContext:Landroid/content/Context;
-
-    const-string/jumbo v2, "activity"
-
-    invoke-virtual {v1, v2}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Landroid/app/ActivityManager;
-
-    invoke-virtual {v0, p1}, Landroid/app/ActivityManager;->forceStopPackage(Ljava/lang/String;)V
-
-    return-void
 .end method
 
 .method private closeLauncherApp()V
@@ -6267,501 +6247,260 @@
 .end method
 
 .method private startProKioskMode()V
-    .locals 23
+    .locals 15
+
+    const/4 v13, 0x4
+
+    const/4 v9, 0x0
 
     invoke-static {}, Lcom/samsung/android/desktopmode/SemDesktopModeManager;->isDesktopMode()Z
 
-    move-result v17
+    move-result v8
 
-    if-eqz v17, :cond_0
+    if-eqz v8, :cond_0
 
-    const-string/jumbo v17, "KnoxCustomManagerService"
+    const-string/jumbo v8, "KnoxCustomManagerService"
 
-    const-string/jumbo v18, "Desktop mode is enabled."
+    const-string/jumbo v9, "Desktop mode is enabled."
 
-    invoke-static/range {v17 .. v18}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {v8, v9}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
     return-void
 
     :cond_0
-    invoke-virtual/range {p0 .. p0}, Lcom/sec/server/enterprise/knoxcustom/KnoxCustomManagerService;->getHomeActivity()Ljava/lang/String;
+    invoke-static {}, Landroid/os/Binder;->clearCallingIdentity()J
 
-    move-result-object v10
-
-    const/4 v4, 0x0
-
-    if-eqz v10, :cond_1
+    move-result-wide v6
 
     :try_start_0
-    invoke-static {}, Landroid/os/Binder;->getCallingUid()I
+    const-string/jumbo v8, "statusbar"
 
-    move-result v16
+    invoke-static {v8}, Landroid/os/ServiceManager;->checkService(Ljava/lang/String;)Landroid/os/IBinder;
 
-    move-object/from16 v0, p0
+    move-result-object v8
 
-    iget-object v0, v0, Lcom/sec/server/enterprise/knoxcustom/KnoxCustomManagerService;->mContext:Landroid/content/Context;
+    invoke-static {v8}, Lcom/android/internal/statusbar/IStatusBarService$Stub;->asInterface(Landroid/os/IBinder;)Lcom/android/internal/statusbar/IStatusBarService;
 
-    move-object/from16 v17, v0
+    move-result-object v5
 
-    invoke-virtual/range {v17 .. v17}, Landroid/content/Context;->getPackageManager()Landroid/content/pm/PackageManager;
+    if-eqz v5, :cond_2
 
-    move-result-object v17
+    iget v8, p0, Lcom/sec/server/enterprise/knoxcustom/KnoxCustomManagerService;->mFlag:I
 
-    move-object/from16 v0, v17
+    const/high16 v10, 0x1030000
 
-    move/from16 v1, v16
+    or-int v3, v8, v10
 
-    invoke-virtual {v0, v1}, Landroid/content/pm/PackageManager;->getPackagesForUid(I)[Ljava/lang/String;
+    iget-object v8, p0, Lcom/sec/server/enterprise/knoxcustom/KnoxCustomManagerService;->mEdmStorageProvider:Lcom/android/server/enterprise/storage/EdmStorageProvider;
 
-    move-result-object v11
+    const-string/jumbo v10, "KNOX_CUSTOM"
 
-    const/16 v17, 0x0
+    const-string/jumbo v11, "statusBarClockState"
 
-    aget-object v4, v11, v17
+    const/16 v12, 0x3e8
+
+    invoke-virtual {v8, v12, v10, v11}, Lcom/android/server/enterprise/storage/EdmStorageProvider;->getInt(ILjava/lang/String;Ljava/lang/String;)I
+
+    move-result v8
+
+    if-ne v8, v13, :cond_1
+
+    const/high16 v8, 0x800000
+
+    or-int/2addr v3, v8
+
+    :cond_1
+    iput v3, p0, Lcom/sec/server/enterprise/knoxcustom/KnoxCustomManagerService;->mFlag:I
+
+    iget-object v8, p0, Lcom/sec/server/enterprise/knoxcustom/KnoxCustomManagerService;->mToken:Landroid/os/IBinder;
+
+    iget-object v10, p0, Lcom/sec/server/enterprise/knoxcustom/KnoxCustomManagerService;->mKey:Ljava/lang/String;
+
+    invoke-interface {v5, v3, v8, v10}, Lcom/android/internal/statusbar/IStatusBarService;->disable(ILandroid/os/IBinder;Ljava/lang/String;)V
+
+    :cond_2
+    iget-object v8, p0, Lcom/sec/server/enterprise/knoxcustom/KnoxCustomManagerService;->mSystemUiCallback:Lcom/samsung/android/knox/custom/IKnoxCustomManagerSystemUiCallback;
+
+    if-eqz v8, :cond_5
+
+    iget-object v8, p0, Lcom/sec/server/enterprise/knoxcustom/KnoxCustomManagerService;->mSystemUiCallback:Lcom/samsung/android/knox/custom/IKnoxCustomManagerSystemUiCallback;
+
+    const/4 v10, 0x0
+
+    invoke-interface {v8, v10}, Lcom/samsung/android/knox/custom/IKnoxCustomManagerSystemUiCallback;->setStatusBarNotificationsState(Z)V
+
+    iget-object v8, p0, Lcom/sec/server/enterprise/knoxcustom/KnoxCustomManagerService;->mEdmStorageProvider:Lcom/android/server/enterprise/storage/EdmStorageProvider;
+
+    const-string/jumbo v10, "KNOX_CUSTOM"
+
+    const-string/jumbo v11, "statusBarIconsState"
+
+    const/16 v12, 0x3e8
+
+    invoke-virtual {v8, v12, v10, v11}, Lcom/android/server/enterprise/storage/EdmStorageProvider;->getInt(ILjava/lang/String;Ljava/lang/String;)I
+
+    move-result v8
+
+    if-ne v8, v13, :cond_3
+
+    iget-object v8, p0, Lcom/sec/server/enterprise/knoxcustom/KnoxCustomManagerService;->mSystemUiCallback:Lcom/samsung/android/knox/custom/IKnoxCustomManagerSystemUiCallback;
+
+    const/4 v10, 0x0
+
+    invoke-interface {v8, v10}, Lcom/samsung/android/knox/custom/IKnoxCustomManagerSystemUiCallback;->setStatusBarIconsState(Z)V
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    :cond_1
-    :goto_0
-    invoke-static {}, Landroid/os/Binder;->clearCallingIdentity()J
-
-    move-result-wide v14
-
-    :try_start_1
-    const-string/jumbo v17, "statusbar"
-
-    invoke-static/range {v17 .. v17}, Landroid/os/ServiceManager;->checkService(Ljava/lang/String;)Landroid/os/IBinder;
-
-    move-result-object v17
-
-    invoke-static/range {v17 .. v17}, Lcom/android/internal/statusbar/IStatusBarService$Stub;->asInterface(Landroid/os/IBinder;)Lcom/android/internal/statusbar/IStatusBarService;
-
-    move-result-object v13
-
-    if-eqz v13, :cond_3
-
-    move-object/from16 v0, p0
-
-    iget v0, v0, Lcom/sec/server/enterprise/knoxcustom/KnoxCustomManagerService;->mFlag:I
-
-    move/from16 v17, v0
-
-    const/high16 v18, 0x1030000
-
-    or-int v8, v17, v18
-
-    move-object/from16 v0, p0
-
-    iget-object v0, v0, Lcom/sec/server/enterprise/knoxcustom/KnoxCustomManagerService;->mEdmStorageProvider:Lcom/android/server/enterprise/storage/EdmStorageProvider;
-
-    move-object/from16 v17, v0
-
-    const-string/jumbo v18, "KNOX_CUSTOM"
-
-    const-string/jumbo v19, "statusBarClockState"
-
-    const/16 v20, 0x3e8
-
-    move-object/from16 v0, v17
-
-    move/from16 v1, v20
-
-    move-object/from16 v2, v18
-
-    move-object/from16 v3, v19
-
-    invoke-virtual {v0, v1, v2, v3}, Lcom/android/server/enterprise/storage/EdmStorageProvider;->getInt(ILjava/lang/String;Ljava/lang/String;)I
-
-    move-result v17
-
-    const/16 v18, 0x4
-
-    move/from16 v0, v17
-
-    move/from16 v1, v18
-
-    if-ne v0, v1, :cond_2
-
-    const/high16 v17, 0x800000
-
-    or-int v8, v8, v17
-
-    :cond_2
-    move-object/from16 v0, p0
-
-    iput v8, v0, Lcom/sec/server/enterprise/knoxcustom/KnoxCustomManagerService;->mFlag:I
-
-    move-object/from16 v0, p0
-
-    iget-object v0, v0, Lcom/sec/server/enterprise/knoxcustom/KnoxCustomManagerService;->mToken:Landroid/os/IBinder;
-
-    move-object/from16 v17, v0
-
-    move-object/from16 v0, p0
-
-    iget-object v0, v0, Lcom/sec/server/enterprise/knoxcustom/KnoxCustomManagerService;->mKey:Ljava/lang/String;
-
-    move-object/from16 v18, v0
-
-    move-object/from16 v0, v17
-
-    move-object/from16 v1, v18
-
-    invoke-interface {v13, v8, v0, v1}, Lcom/android/internal/statusbar/IStatusBarService;->disable(ILandroid/os/IBinder;Ljava/lang/String;)V
-
     :cond_3
-    move-object/from16 v0, p0
+    :goto_0
+    invoke-direct {p0}, Lcom/sec/server/enterprise/knoxcustom/KnoxCustomManagerService;->updateStatusBarLocal()V
 
-    iget-object v0, v0, Lcom/sec/server/enterprise/knoxcustom/KnoxCustomManagerService;->mSystemUiCallback:Lcom/samsung/android/knox/custom/IKnoxCustomManagerSystemUiCallback;
+    sget-object v10, Lcom/sec/server/enterprise/knoxcustom/KnoxCustomManagerService;->dependencyPackages:[Ljava/lang/String;
 
-    move-object/from16 v17, v0
+    array-length v11, v10
 
-    if-eqz v17, :cond_6
+    move v8, v9
 
-    move-object/from16 v0, p0
-
-    iget-object v0, v0, Lcom/sec/server/enterprise/knoxcustom/KnoxCustomManagerService;->mSystemUiCallback:Lcom/samsung/android/knox/custom/IKnoxCustomManagerSystemUiCallback;
-
-    move-object/from16 v17, v0
-
-    const/16 v18, 0x0
-
-    invoke-interface/range {v17 .. v18}, Lcom/samsung/android/knox/custom/IKnoxCustomManagerSystemUiCallback;->setStatusBarNotificationsState(Z)V
-
-    move-object/from16 v0, p0
-
-    iget-object v0, v0, Lcom/sec/server/enterprise/knoxcustom/KnoxCustomManagerService;->mEdmStorageProvider:Lcom/android/server/enterprise/storage/EdmStorageProvider;
-
-    move-object/from16 v17, v0
-
-    const-string/jumbo v18, "KNOX_CUSTOM"
-
-    const-string/jumbo v19, "statusBarIconsState"
-
-    const/16 v20, 0x3e8
-
-    move-object/from16 v0, v17
-
-    move/from16 v1, v20
-
-    move-object/from16 v2, v18
-
-    move-object/from16 v3, v19
-
-    invoke-virtual {v0, v1, v2, v3}, Lcom/android/server/enterprise/storage/EdmStorageProvider;->getInt(ILjava/lang/String;Ljava/lang/String;)I
-
-    move-result v17
-
-    const/16 v18, 0x4
-
-    move/from16 v0, v17
-
-    move/from16 v1, v18
-
-    if-ne v0, v1, :cond_4
-
-    move-object/from16 v0, p0
-
-    iget-object v0, v0, Lcom/sec/server/enterprise/knoxcustom/KnoxCustomManagerService;->mSystemUiCallback:Lcom/samsung/android/knox/custom/IKnoxCustomManagerSystemUiCallback;
-
-    move-object/from16 v17, v0
-
-    const/16 v18, 0x0
-
-    invoke-interface/range {v17 .. v18}, Lcom/samsung/android/knox/custom/IKnoxCustomManagerSystemUiCallback;->setStatusBarIconsState(Z)V
-    :try_end_1
-    .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_1
-
-    :cond_4
     :goto_1
-    invoke-direct/range {p0 .. p0}, Lcom/sec/server/enterprise/knoxcustom/KnoxCustomManagerService;->updateStatusBarLocal()V
+    if-ge v8, v11, :cond_6
 
-    sget-object v18, Lcom/sec/server/enterprise/knoxcustom/KnoxCustomManagerService;->dependencyPackages:[Ljava/lang/String;
+    aget-object v0, v10, v8
 
-    const/16 v17, 0x0
-
-    move-object/from16 v0, v18
-
-    array-length v0, v0
-
-    move/from16 v19, v0
-
-    :goto_2
-    move/from16 v0, v17
-
-    move/from16 v1, v19
-
-    if-ge v0, v1, :cond_7
-
-    aget-object v5, v18, v17
-
-    invoke-direct/range {p0 .. p0}, Lcom/sec/server/enterprise/knoxcustom/KnoxCustomManagerService;->getEDM()Lcom/samsung/android/knox/EnterpriseDeviceManager;
-
-    move-result-object v20
-
-    invoke-virtual/range {v20 .. v20}, Lcom/samsung/android/knox/EnterpriseDeviceManager;->getApplicationPolicy()Lcom/samsung/android/knox/application/ApplicationPolicy;
-
-    move-result-object v20
-
-    move-object/from16 v0, v20
-
-    invoke-virtual {v0, v5}, Lcom/samsung/android/knox/application/ApplicationPolicy;->getApplicationStateEnabled(Ljava/lang/String;)Z
-
-    move-result v20
-
-    if-eqz v20, :cond_5
-
-    :try_start_2
-    invoke-direct/range {p0 .. p0}, Lcom/sec/server/enterprise/knoxcustom/KnoxCustomManagerService;->getEDM()Lcom/samsung/android/knox/EnterpriseDeviceManager;
-
-    move-result-object v20
-
-    invoke-virtual/range {v20 .. v20}, Lcom/samsung/android/knox/EnterpriseDeviceManager;->getApplicationPolicy()Lcom/samsung/android/knox/application/ApplicationPolicy;
-
-    move-result-object v20
-
-    move-object/from16 v0, v20
-
-    invoke-virtual {v0, v5}, Lcom/samsung/android/knox/application/ApplicationPolicy;->setDisableApplication(Ljava/lang/String;)Z
-    :try_end_2
-    .catch Ljava/lang/SecurityException; {:try_start_2 .. :try_end_2} :catch_2
-
-    :cond_5
-    :goto_3
-    add-int/lit8 v17, v17, 0x1
-
-    goto :goto_2
-
-    :catch_0
-    move-exception v6
-
-    const-string/jumbo v17, "KnoxCustomManagerService"
-
-    new-instance v18, Ljava/lang/StringBuilder;
-
-    invoke-direct/range {v18 .. v18}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string/jumbo v19, "setProKioskState() failed - persistence problem "
-
-    invoke-virtual/range {v18 .. v19}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v18
-
-    move-object/from16 v0, v18
-
-    invoke-virtual {v0, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    move-result-object v18
-
-    invoke-virtual/range {v18 .. v18}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v18
-
-    invoke-static/range {v17 .. v18}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
-
-    goto/16 :goto_0
-
-    :cond_6
-    :try_start_3
-    const-string/jumbo v17, "KnoxCustomManagerService"
-
-    const-string/jumbo v18, "mSystemUiCallback is not available in startProKioskMode"
-
-    invoke-static/range {v17 .. v18}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
-    :try_end_3
-    .catch Ljava/lang/Exception; {:try_start_3 .. :try_end_3} :catch_1
-
-    goto :goto_1
-
-    :catch_1
-    move-exception v6
-
-    const-string/jumbo v17, "KnoxCustomManagerService"
-
-    new-instance v18, Ljava/lang/StringBuilder;
-
-    invoke-direct/range {v18 .. v18}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string/jumbo v19, "startProKioskMode() failed - persistence problem "
-
-    invoke-virtual/range {v18 .. v19}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v18
-
-    move-object/from16 v0, v18
-
-    invoke-virtual {v0, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    move-result-object v18
-
-    invoke-virtual/range {v18 .. v18}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v18
-
-    invoke-static/range {v17 .. v18}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
-
-    goto :goto_1
-
-    :catch_2
-    move-exception v7
-
-    const-string/jumbo v20, "KnoxCustomManagerService"
-
-    new-instance v21, Ljava/lang/StringBuilder;
-
-    invoke-direct/range {v21 .. v21}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string/jumbo v22, "Warning: could not disable "
-
-    invoke-virtual/range {v21 .. v22}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v21
-
-    move-object/from16 v0, v21
-
-    invoke-virtual {v0, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v21
-
-    invoke-virtual/range {v21 .. v21}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v21
-
-    invoke-static/range {v20 .. v21}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
-
-    goto :goto_3
-
-    :cond_7
-    move-object/from16 v0, p0
-
-    iget-object v0, v0, Lcom/sec/server/enterprise/knoxcustom/KnoxCustomManagerService;->mContext:Landroid/content/Context;
-
-    move-object/from16 v17, v0
-
-    invoke-virtual/range {v17 .. v17}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
-
-    move-result-object v17
-
-    const-string/jumbo v18, "people_stripe"
-
-    const/16 v19, 0x0
-
-    invoke-static/range {v17 .. v19}, Landroid/provider/Settings$System;->putInt(Landroid/content/ContentResolver;Ljava/lang/String;I)Z
-
-    move-object/from16 v0, p0
-
-    iget-object v0, v0, Lcom/sec/server/enterprise/knoxcustom/KnoxCustomManagerService;->mContext:Landroid/content/Context;
-
-    move-object/from16 v17, v0
-
-    invoke-virtual/range {v17 .. v17}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
-
-    move-result-object v17
-
-    const-string/jumbo v18, "task_edge"
-
-    const/16 v19, 0x0
-
-    invoke-static/range {v17 .. v19}, Landroid/provider/Settings$System;->putInt(Landroid/content/ContentResolver;Ljava/lang/String;I)Z
-
-    const/16 v17, 0x0
-
-    move-object/from16 v0, p0
-
-    move/from16 v1, v17
-
-    invoke-virtual {v0, v1}, Lcom/sec/server/enterprise/knoxcustom/KnoxCustomManagerService;->setUsbMassStorageState(Z)I
-
-    invoke-direct/range {p0 .. p0}, Lcom/sec/server/enterprise/knoxcustom/KnoxCustomManagerService;->getEDM()Lcom/samsung/android/knox/EnterpriseDeviceManager;
-
-    move-result-object v17
-
-    invoke-virtual/range {v17 .. v17}, Lcom/samsung/android/knox/EnterpriseDeviceManager;->getRestrictionPolicy()Lcom/samsung/android/knox/restriction/RestrictionPolicy;
+    invoke-direct {p0}, Lcom/sec/server/enterprise/knoxcustom/KnoxCustomManagerService;->getEDM()Lcom/samsung/android/knox/EnterpriseDeviceManager;
 
     move-result-object v12
 
-    const/16 v17, 0x0
+    invoke-virtual {v12}, Lcom/samsung/android/knox/EnterpriseDeviceManager;->getApplicationPolicy()Lcom/samsung/android/knox/application/ApplicationPolicy;
 
-    move/from16 v0, v17
+    move-result-object v12
 
-    invoke-virtual {v12, v0}, Lcom/samsung/android/knox/restriction/RestrictionPolicy;->allowSafeMode(Z)Z
+    invoke-virtual {v12, v0}, Lcom/samsung/android/knox/application/ApplicationPolicy;->getApplicationStateEnabled(Ljava/lang/String;)Z
 
-    if-eqz v10, :cond_8
+    move-result v12
 
-    move-object/from16 v0, p0
+    if-eqz v12, :cond_4
 
-    iget-object v0, v0, Lcom/sec/server/enterprise/knoxcustom/KnoxCustomManagerService;->mOldHomePackage:Ljava/lang/String;
+    :try_start_1
+    invoke-direct {p0}, Lcom/sec/server/enterprise/knoxcustom/KnoxCustomManagerService;->getEDM()Lcom/samsung/android/knox/EnterpriseDeviceManager;
 
-    move-object/from16 v17, v0
+    move-result-object v12
 
-    if-eqz v17, :cond_8
+    invoke-virtual {v12}, Lcom/samsung/android/knox/EnterpriseDeviceManager;->getApplicationPolicy()Lcom/samsung/android/knox/application/ApplicationPolicy;
 
-    invoke-direct/range {p0 .. p0}, Lcom/sec/server/enterprise/knoxcustom/KnoxCustomManagerService;->getEDM()Lcom/samsung/android/knox/EnterpriseDeviceManager;
+    move-result-object v12
 
-    move-result-object v17
+    invoke-virtual {v12, v0}, Lcom/samsung/android/knox/application/ApplicationPolicy;->setDisableApplication(Ljava/lang/String;)Z
+    :try_end_1
+    .catch Ljava/lang/SecurityException; {:try_start_1 .. :try_end_1} :catch_1
 
-    invoke-virtual/range {v17 .. v17}, Lcom/samsung/android/knox/EnterpriseDeviceManager;->getKioskMode()Lcom/samsung/android/knox/kiosk/KioskMode;
+    :cond_4
+    :goto_2
+    add-int/lit8 v8, v8, 0x1
 
-    move-result-object v17
+    goto :goto_1
 
-    invoke-virtual/range {v17 .. v17}, Lcom/samsung/android/knox/kiosk/KioskMode;->wipeRecentTasks()Z
+    :cond_5
+    :try_start_2
+    const-string/jumbo v8, "KnoxCustomManagerService"
 
-    move-object/from16 v0, p0
+    const-string/jumbo v10, "mSystemUiCallback is not available in startProKioskMode"
 
-    iget-object v0, v0, Lcom/sec/server/enterprise/knoxcustom/KnoxCustomManagerService;->mOldHomePackage:Ljava/lang/String;
+    invoke-static {v8, v10}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
+    :try_end_2
+    .catch Ljava/lang/Exception; {:try_start_2 .. :try_end_2} :catch_0
 
-    move-object/from16 v17, v0
+    goto :goto_0
 
-    move-object/from16 v0, p0
+    :catch_0
+    move-exception v1
 
-    move-object/from16 v1, v17
+    const-string/jumbo v8, "KnoxCustomManagerService"
 
-    invoke-direct {v0, v1}, Lcom/sec/server/enterprise/knoxcustom/KnoxCustomManagerService;->closeApp(Ljava/lang/String;)V
+    new-instance v10, Ljava/lang/StringBuilder;
 
-    new-instance v9, Landroid/content/Intent;
+    invoke-direct {v10}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string/jumbo v17, "android.intent.action.MAIN"
+    const-string/jumbo v11, "startProKioskMode() failed - persistence problem "
 
-    move-object/from16 v0, v17
+    invoke-virtual {v10, v11}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-direct {v9, v0}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
+    move-result-object v10
 
-    const-string/jumbo v17, "android.intent.category.HOME"
+    invoke-virtual {v10, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
-    move-object/from16 v0, v17
+    move-result-object v10
 
-    invoke-virtual {v9, v0}, Landroid/content/Intent;->addCategory(Ljava/lang/String;)Landroid/content/Intent;
+    invoke-virtual {v10}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-object/from16 v0, p0
+    move-result-object v10
 
-    iget-object v0, v0, Lcom/sec/server/enterprise/knoxcustom/KnoxCustomManagerService;->mContext:Landroid/content/Context;
+    invoke-static {v8, v10}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    move-object/from16 v17, v0
+    goto :goto_0
 
-    move-object/from16 v0, v17
+    :catch_1
+    move-exception v2
 
-    invoke-virtual {v0, v9}, Landroid/content/Context;->startActivity(Landroid/content/Intent;)V
+    const-string/jumbo v12, "KnoxCustomManagerService"
 
-    if-eqz v4, :cond_8
+    new-instance v13, Ljava/lang/StringBuilder;
 
-    invoke-virtual {v4, v10}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-direct {v13}, Ljava/lang/StringBuilder;-><init>()V
 
-    move-result v17
+    const-string/jumbo v14, "Warning: could not disable "
 
-    if-eqz v17, :cond_9
+    invoke-virtual {v13, v14}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    :cond_8
-    :goto_4
-    invoke-static {v14, v15}, Landroid/os/Binder;->restoreCallingIdentity(J)V
+    move-result-object v13
+
+    invoke-virtual {v13, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v13
+
+    invoke-virtual {v13}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v13
+
+    invoke-static {v12, v13}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
+
+    goto :goto_2
+
+    :cond_6
+    iget-object v8, p0, Lcom/sec/server/enterprise/knoxcustom/KnoxCustomManagerService;->mContext:Landroid/content/Context;
+
+    invoke-virtual {v8}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
+
+    move-result-object v8
+
+    const-string/jumbo v10, "people_stripe"
+
+    invoke-static {v8, v10, v9}, Landroid/provider/Settings$System;->putInt(Landroid/content/ContentResolver;Ljava/lang/String;I)Z
+
+    iget-object v8, p0, Lcom/sec/server/enterprise/knoxcustom/KnoxCustomManagerService;->mContext:Landroid/content/Context;
+
+    invoke-virtual {v8}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
+
+    move-result-object v8
+
+    const-string/jumbo v10, "task_edge"
+
+    invoke-static {v8, v10, v9}, Landroid/provider/Settings$System;->putInt(Landroid/content/ContentResolver;Ljava/lang/String;I)Z
+
+    invoke-virtual {p0, v9}, Lcom/sec/server/enterprise/knoxcustom/KnoxCustomManagerService;->setUsbMassStorageState(Z)I
+
+    invoke-direct {p0}, Lcom/sec/server/enterprise/knoxcustom/KnoxCustomManagerService;->getEDM()Lcom/samsung/android/knox/EnterpriseDeviceManager;
+
+    move-result-object v8
+
+    invoke-virtual {v8}, Lcom/samsung/android/knox/EnterpriseDeviceManager;->getRestrictionPolicy()Lcom/samsung/android/knox/restriction/RestrictionPolicy;
+
+    move-result-object v4
+
+    invoke-virtual {v4, v9}, Lcom/samsung/android/knox/restriction/RestrictionPolicy;->allowSafeMode(Z)Z
+
+    invoke-static {v6, v7}, Landroid/os/Binder;->restoreCallingIdentity(J)V
 
     return-void
-
-    :cond_9
-    move-object/from16 v0, p0
-
-    invoke-direct {v0, v4}, Lcom/sec/server/enterprise/knoxcustom/KnoxCustomManagerService;->closeApp(Ljava/lang/String;)V
-
-    goto :goto_4
 .end method
 
 .method private startStopUsbNet(Landroid/content/Context;)V
@@ -8327,8 +8066,13 @@
 
     move-result v7
 
-    if-nez v7, :cond_5
+    if-eqz v7, :cond_5
 
+    const/16 v9, -0x36
+
+    if-ne v7, v9, :cond_6
+
+    :cond_5
     iget-object v9, p0, Lcom/sec/server/enterprise/knoxcustom/KnoxCustomManagerService;->mLauncherConfiguration:Lcom/sec/server/enterprise/knoxcustom/LauncherConfigurationInternal;
 
     new-instance v12, Landroid/content/ComponentName;
@@ -8347,7 +8091,7 @@
 
     move-result v7
 
-    :cond_5
+    :cond_6
     :goto_0
     invoke-static {v10, v11}, Landroid/os/Binder;->restoreCallingIdentity(J)V
 
@@ -9695,8 +9439,13 @@
 
     move-result v8
 
-    if-nez v8, :cond_4
+    if-eqz v8, :cond_4
 
+    const/16 v14, -0x36
+
+    if-ne v8, v14, :cond_5
+
+    :cond_4
     move-object/from16 v0, p0
 
     iget-object v14, v0, Lcom/sec/server/enterprise/knoxcustom/KnoxCustomManagerService;->mLauncherConfiguration:Lcom/sec/server/enterprise/knoxcustom/LauncherConfigurationInternal;
@@ -9720,7 +9469,7 @@
 
     move-result v8
 
-    :cond_4
+    :cond_5
     :goto_0
     invoke-static {v10, v11}, Landroid/os/Binder;->restoreCallingIdentity(J)V
 
@@ -13623,8 +13372,6 @@
 .method public getAirGestureOptionState(I)Z
     .locals 6
 
-    const/4 v5, 0x1
-
     const/4 v1, 0x1
 
     packed-switch p1, :pswitch_data_0
@@ -13636,30 +13383,19 @@
 
     :pswitch_0
     :try_start_0
-    iget-object v2, p0, Lcom/sec/server/enterprise/knoxcustom/KnoxCustomManagerService;->mContext:Landroid/content/Context;
+    iget-object v2, p0, Lcom/sec/server/enterprise/knoxcustom/KnoxCustomManagerService;->mEdmStorageProvider:Lcom/android/server/enterprise/storage/EdmStorageProvider;
 
-    invoke-virtual {v2}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
+    const-string/jumbo v3, "KNOX_CUSTOM"
 
-    move-result-object v2
+    const-string/jumbo v4, "gestureAirCommand"
 
-    const-string/jumbo v3, "air_button_onoff"
+    const/16 v5, 0x3e8
 
-    const/4 v4, 0x0
-
-    invoke-static {v2, v3, v4}, Landroid/provider/Settings$System;->getInt(Landroid/content/ContentResolver;Ljava/lang/String;I)I
+    invoke-virtual {v2, v5, v3, v4}, Lcom/android/server/enterprise/storage/EdmStorageProvider;->getBoolean(ILjava/lang/String;Ljava/lang/String;)Z
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    move-result v2
-
-    if-ne v2, v5, :cond_0
-
-    const/4 v1, 0x1
-
-    goto :goto_0
-
-    :cond_0
-    const/4 v1, 0x0
+    move-result v1
 
     goto :goto_0
 
@@ -13710,13 +13446,15 @@
 
     move-result v2
 
-    if-ne v2, v5, :cond_1
+    const/4 v3, 0x1
+
+    if-ne v2, v3, :cond_0
 
     const/4 v1, 0x1
 
     goto :goto_0
 
-    :cond_1
+    :cond_0
     const/4 v1, 0x0
 
     goto :goto_0
@@ -13749,8 +13487,6 @@
     const/4 v1, 0x0
 
     goto :goto_0
-
-    nop
 
     :pswitch_data_0
     .packed-switch 0x0
@@ -23518,13 +23254,13 @@
 .end method
 
 .method public setAirGestureOptionState(IZ)I
-    .locals 11
+    .locals 12
 
-    const/4 v5, 0x1
+    const/4 v8, 0x1
 
-    const/4 v8, 0x0
+    const/4 v9, 0x0
 
-    const/4 v4, -0x6
+    const/4 v5, -0x6
 
     invoke-direct {p0}, Lcom/sec/server/enterprise/knoxcustom/KnoxCustomManagerService;->enforceSettingPermission()I
 
@@ -23534,49 +23270,49 @@
 
     move-result-wide v6
 
-    iget-object v9, p0, Lcom/sec/server/enterprise/knoxcustom/KnoxCustomManagerService;->mContext:Landroid/content/Context;
+    iget-object v10, p0, Lcom/sec/server/enterprise/knoxcustom/KnoxCustomManagerService;->mContext:Landroid/content/Context;
 
-    invoke-static {v9}, Lcom/samsung/android/knox/kiosk/KioskMode;->getInstance(Landroid/content/Context;)Lcom/samsung/android/knox/kiosk/KioskMode;
+    invoke-static {v10}, Lcom/samsung/android/knox/kiosk/KioskMode;->getInstance(Landroid/content/Context;)Lcom/samsung/android/knox/kiosk/KioskMode;
 
-    move-result-object v3
+    move-result-object v4
 
-    invoke-virtual {v3}, Lcom/samsung/android/knox/kiosk/KioskMode;->isAirCommandModeAllowed()Z
+    invoke-virtual {v4}, Lcom/samsung/android/knox/kiosk/KioskMode;->isAirCommandModeAllowed()Z
 
-    move-result v9
+    move-result v10
 
-    if-eqz v9, :cond_0
+    if-eqz v10, :cond_0
 
-    const/4 v2, 0x0
+    const/4 v3, 0x0
 
     :goto_0
     invoke-static {v6, v7}, Landroid/os/Binder;->restoreCallingIdentity(J)V
 
-    if-eqz v2, :cond_1
+    if-eqz v3, :cond_1
 
-    const-string/jumbo v5, "KnoxCustomManagerService"
+    const-string/jumbo v8, "KnoxCustomManagerService"
 
-    const-string/jumbo v8, "setAirGestureOptionState() - eSDK Air Command not allowed"
+    const-string/jumbo v9, "setAirGestureOptionState() - eSDK Air Command not allowed"
 
-    invoke-static {v5, v8}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {v8, v9}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    const/4 v5, -0x7
+    const/4 v8, -0x7
 
-    return v5
+    return v8
 
     :cond_0
-    const/4 v2, 0x1
+    const/4 v3, 0x1
 
     goto :goto_0
 
     :cond_1
     if-ltz p1, :cond_2
 
-    if-le p1, v5, :cond_3
+    if-le p1, v8, :cond_3
 
     :cond_2
-    const/16 v5, -0x32
+    const/16 v8, -0x32
 
-    return v5
+    return v8
 
     :cond_3
     invoke-static {}, Landroid/os/Binder;->clearCallingIdentity()J
@@ -23586,43 +23322,60 @@
     :try_start_0
     invoke-static {}, Lcom/samsung/android/feature/SemFloatingFeature;->getInstance()Lcom/samsung/android/feature/SemFloatingFeature;
 
-    move-result-object v9
+    move-result-object v10
 
-    const-string/jumbo v10, "SEC_FLOATING_FEATURE_SETTINGS_SUPPORT_S_PEN_HOVERING_N_DETACHMENT"
+    const-string/jumbo v11, "SEC_FLOATING_FEATURE_SETTINGS_SUPPORT_S_PEN_HOVERING_N_DETACHMENT"
 
-    invoke-virtual {v9, v10}, Lcom/samsung/android/feature/SemFloatingFeature;->getBoolean(Ljava/lang/String;)Z
+    invoke-virtual {v10, v11}, Lcom/samsung/android/feature/SemFloatingFeature;->getBoolean(Ljava/lang/String;)Z
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    move-result v9
+    move-result v10
 
-    if-eqz v9, :cond_4
+    if-eqz v10, :cond_4
 
     packed-switch p1, :pswitch_data_0
 
     :goto_1
-    const/4 v4, 0x0
+    const/4 v5, 0x0
 
     :cond_4
     :goto_2
     invoke-static {v6, v7}, Landroid/os/Binder;->restoreCallingIdentity(J)V
 
-    return v4
+    return v5
 
     :pswitch_0
     :try_start_1
-    iget-object v9, p0, Lcom/sec/server/enterprise/knoxcustom/KnoxCustomManagerService;->mContext:Landroid/content/Context;
+    iget-object v8, p0, Lcom/sec/server/enterprise/knoxcustom/KnoxCustomManagerService;->mEdmStorageProvider:Lcom/android/server/enterprise/storage/EdmStorageProvider;
 
-    invoke-virtual {v9}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
+    const-string/jumbo v9, "KNOX_CUSTOM"
 
-    move-result-object v9
+    const-string/jumbo v10, "gestureAirCommand"
 
-    const-string/jumbo v10, "air_button_onoff"
+    invoke-virtual {v8, v0, v9, v10, p2}, Lcom/android/server/enterprise/storage/EdmStorageProvider;->putBoolean(ILjava/lang/String;Ljava/lang/String;Z)Z
 
-    if-eqz p2, :cond_5
+    new-instance v2, Landroid/content/Intent;
 
-    :goto_3
-    invoke-static {v9, v10, v5}, Landroid/provider/Settings$System;->putInt(Landroid/content/ContentResolver;Ljava/lang/String;I)Z
+    const-string/jumbo v8, "com.samsung.android.knox.intent.action.AIR_COMMAND_STATUS_CHANGED"
+
+    invoke-direct {v2, v8}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
+
+    const-string/jumbo v8, "com.samsung.android.service.aircommand"
+
+    invoke-virtual {v2, v8}, Landroid/content/Intent;->setPackage(Ljava/lang/String;)Landroid/content/Intent;
+
+    iget-object v8, p0, Lcom/sec/server/enterprise/knoxcustom/KnoxCustomManagerService;->mContext:Landroid/content/Context;
+
+    new-instance v9, Landroid/os/UserHandle;
+
+    const/4 v10, -0x2
+
+    invoke-direct {v9, v10}, Landroid/os/UserHandle;-><init>(I)V
+
+    const-string/jumbo v10, "com.samsung.android.knox.permission.KNOX_CUSTOM_SETTING"
+
+    invoke-virtual {v8, v2, v9, v10}, Landroid/content/Context;->sendBroadcastAsUser(Landroid/content/Intent;Landroid/os/UserHandle;Ljava/lang/String;)V
     :try_end_1
     .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_0
 
@@ -23631,58 +23384,55 @@
     :catch_0
     move-exception v1
 
-    const-string/jumbo v5, "KnoxCustomManagerService"
+    const-string/jumbo v8, "KnoxCustomManagerService"
 
-    new-instance v8, Ljava/lang/StringBuilder;
+    new-instance v9, Ljava/lang/StringBuilder;
 
-    invoke-direct {v8}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {v9}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string/jumbo v9, "setAirGestureOptionState() failed "
+    const-string/jumbo v10, "setAirGestureOptionState() failed "
 
-    invoke-virtual {v8, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v8
-
-    invoke-virtual {v8, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    move-result-object v8
-
-    invoke-virtual {v8}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v8
-
-    invoke-static {v5, v8}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
-
-    goto :goto_2
-
-    :cond_5
-    move v5, v8
-
-    goto :goto_3
-
-    :pswitch_1
-    :try_start_2
-    iget-object v9, p0, Lcom/sec/server/enterprise/knoxcustom/KnoxCustomManagerService;->mContext:Landroid/content/Context;
-
-    invoke-virtual {v9}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
+    invoke-virtual {v9, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v9
 
-    const-string/jumbo v10, "pen_hovering"
+    invoke-virtual {v9, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
-    if-eqz p2, :cond_6
+    move-result-object v9
 
-    :goto_4
-    invoke-static {v9, v10, v5}, Landroid/provider/Settings$System;->putInt(Landroid/content/ContentResolver;Ljava/lang/String;I)Z
+    invoke-virtual {v9}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v9
+
+    invoke-static {v8, v9}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
+
+    goto :goto_2
+
+    :pswitch_1
+    :try_start_2
+    iget-object v10, p0, Lcom/sec/server/enterprise/knoxcustom/KnoxCustomManagerService;->mContext:Landroid/content/Context;
+
+    invoke-virtual {v10}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
+
+    move-result-object v10
+
+    const-string/jumbo v11, "pen_hovering"
+
+    if-eqz p2, :cond_5
+
+    :goto_3
+    invoke-static {v10, v11, v8}, Landroid/provider/Settings$System;->putInt(Landroid/content/ContentResolver;Ljava/lang/String;I)Z
     :try_end_2
     .catch Ljava/lang/Exception; {:try_start_2 .. :try_end_2} :catch_0
 
     goto :goto_1
 
-    :cond_6
-    move v5, v8
+    :cond_5
+    move v8, v9
 
-    goto :goto_4
+    goto :goto_3
+
+    nop
 
     :pswitch_data_0
     .packed-switch 0x0
@@ -32937,7 +32687,7 @@
 .end method
 
 .method public setProKioskState(ZLjava/lang/String;)I
-    .locals 18
+    .locals 17
 
     invoke-direct/range {p0 .. p0}, Lcom/sec/server/enterprise/knoxcustom/KnoxCustomManagerService;->enforceProKioskPermission()I
 
@@ -32945,153 +32695,110 @@
 
     invoke-static {}, Lcom/samsung/android/desktopmode/SemDesktopModeManager;->isDesktopMode()Z
 
-    move-result v14
+    move-result v13
 
-    if-eqz v14, :cond_0
+    if-eqz v13, :cond_0
 
-    const-string/jumbo v14, "KnoxCustomManagerService"
+    const-string/jumbo v13, "KnoxCustomManagerService"
 
-    const-string/jumbo v15, "Desktop mode is enabled."
+    const-string/jumbo v14, "Desktop mode is enabled."
 
-    invoke-static {v14, v15}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {v13, v14}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    const/4 v14, -0x1
+    const/4 v13, -0x1
 
-    return v14
+    return v13
 
     :cond_0
     invoke-static {}, Landroid/os/Binder;->clearCallingIdentity()J
 
-    move-result-wide v12
+    move-result-wide v10
 
     move-object/from16 v0, p0
 
-    iget-object v14, v0, Lcom/sec/server/enterprise/knoxcustom/KnoxCustomManagerService;->mContext:Landroid/content/Context;
+    iget-object v13, v0, Lcom/sec/server/enterprise/knoxcustom/KnoxCustomManagerService;->mContext:Landroid/content/Context;
 
-    invoke-static {v14}, Lcom/samsung/android/knox/kiosk/KioskMode;->getInstance(Landroid/content/Context;)Lcom/samsung/android/knox/kiosk/KioskMode;
+    invoke-static {v13}, Lcom/samsung/android/knox/kiosk/KioskMode;->getInstance(Landroid/content/Context;)Lcom/samsung/android/knox/kiosk/KioskMode;
 
-    move-result-object v7
+    move-result-object v6
 
-    invoke-virtual {v7}, Lcom/samsung/android/knox/kiosk/KioskMode;->isKioskModeEnabled()Z
+    invoke-virtual {v6}, Lcom/samsung/android/knox/kiosk/KioskMode;->isKioskModeEnabled()Z
 
-    move-result v6
+    move-result v5
 
-    invoke-static {v12, v13}, Landroid/os/Binder;->restoreCallingIdentity(J)V
+    invoke-static {v10, v11}, Landroid/os/Binder;->restoreCallingIdentity(J)V
 
-    if-eqz v6, :cond_1
+    if-eqz v5, :cond_1
 
-    const-string/jumbo v14, "KnoxCustomManagerService"
+    const-string/jumbo v13, "KnoxCustomManagerService"
 
-    const-string/jumbo v15, "setProKioskState() - eSDK kiosk mode already enabled"
+    const-string/jumbo v14, "setProKioskState() - eSDK kiosk mode already enabled"
 
-    invoke-static {v14, v15}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {v13, v14}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    const/4 v14, -0x7
+    const/4 v13, -0x7
 
-    return v14
+    return v13
 
     :cond_1
-    const/4 v9, -0x1
+    const/4 v8, -0x1
 
     :try_start_0
-    invoke-virtual/range {p0 .. p0}, Lcom/sec/server/enterprise/knoxcustom/KnoxCustomManagerService;->getHomeActivity()Ljava/lang/String;
-
-    move-result-object v14
-
-    if-eqz v14, :cond_2
-
-    new-instance v5, Landroid/content/Intent;
-
-    const-string/jumbo v14, "android.intent.action.MAIN"
-
-    invoke-direct {v5, v14}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
-
-    const-string/jumbo v14, "android.intent.category.HOME"
-
-    invoke-virtual {v5, v14}, Landroid/content/Intent;->addCategory(Ljava/lang/String;)Landroid/content/Intent;
-
     move-object/from16 v0, p0
 
-    iget-object v14, v0, Lcom/sec/server/enterprise/knoxcustom/KnoxCustomManagerService;->mContext:Landroid/content/Context;
+    iget-object v13, v0, Lcom/sec/server/enterprise/knoxcustom/KnoxCustomManagerService;->mEdmStorageProvider:Lcom/android/server/enterprise/storage/EdmStorageProvider;
 
-    invoke-virtual {v14}, Landroid/content/Context;->getPackageManager()Landroid/content/pm/PackageManager;
+    const-string/jumbo v14, "KNOX_CUSTOM"
 
-    move-result-object v14
+    const-string/jumbo v15, "sealedState"
 
-    const/high16 v15, 0x10000
-
-    invoke-virtual {v14, v5, v15}, Landroid/content/pm/PackageManager;->resolveActivity(Landroid/content/Intent;I)Landroid/content/pm/ResolveInfo;
-
-    move-result-object v14
-
-    iget-object v14, v14, Landroid/content/pm/ResolveInfo;->activityInfo:Landroid/content/pm/ActivityInfo;
-
-    iget-object v14, v14, Landroid/content/pm/ActivityInfo;->packageName:Ljava/lang/String;
-
-    move-object/from16 v0, p0
-
-    iput-object v14, v0, Lcom/sec/server/enterprise/knoxcustom/KnoxCustomManagerService;->mOldHomePackage:Ljava/lang/String;
-
-    :cond_2
-    move-object/from16 v0, p0
-
-    iget-object v14, v0, Lcom/sec/server/enterprise/knoxcustom/KnoxCustomManagerService;->mEdmStorageProvider:Lcom/android/server/enterprise/storage/EdmStorageProvider;
-
-    const-string/jumbo v15, "KNOX_CUSTOM"
-
-    const-string/jumbo v16, "sealedState"
-
-    move-object/from16 v0, v16
-
-    invoke-virtual {v14, v2, v15, v0}, Lcom/android/server/enterprise/storage/EdmStorageProvider;->getBoolean(ILjava/lang/String;Ljava/lang/String;)Z
+    invoke-virtual {v13, v2, v14, v15}, Lcom/android/server/enterprise/storage/EdmStorageProvider;->getBoolean(ILjava/lang/String;Ljava/lang/String;)Z
 
     move-result v3
 
-    if-eqz p1, :cond_5
+    if-eqz p1, :cond_4
 
-    if-eqz v3, :cond_3
+    if-eqz v3, :cond_2
 
-    const-string/jumbo v14, "KnoxCustomManagerService"
+    const-string/jumbo v13, "KnoxCustomManagerService"
 
-    const-string/jumbo v15, "setProKioskState() - Already in ProKiosk mode - Passcode not changed"
+    const-string/jumbo v14, "setProKioskState() - Already in ProKiosk mode - Passcode not changed"
 
-    invoke-static {v14, v15}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {v13, v14}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    const/4 v9, -0x3
+    const/4 v8, -0x3
 
     :goto_0
-    return v9
+    return v8
 
-    :cond_3
-    if-eqz p2, :cond_4
+    :cond_2
+    if-eqz p2, :cond_3
 
     invoke-virtual/range {p2 .. p2}, Ljava/lang/String;->length()I
 
-    move-result v14
+    move-result v13
 
-    if-eqz v14, :cond_4
-
-    move-object/from16 v0, p0
-
-    iget-object v14, v0, Lcom/sec/server/enterprise/knoxcustom/KnoxCustomManagerService;->mEdmStorageProvider:Lcom/android/server/enterprise/storage/EdmStorageProvider;
-
-    const-string/jumbo v15, "KNOX_CUSTOM"
-
-    const-string/jumbo v16, "sealedState"
-
-    move-object/from16 v0, v16
-
-    move/from16 v1, p1
-
-    invoke-virtual {v14, v2, v15, v0, v1}, Lcom/android/server/enterprise/storage/EdmStorageProvider;->putBoolean(ILjava/lang/String;Ljava/lang/String;Z)Z
+    if-eqz v13, :cond_3
 
     move-object/from16 v0, p0
 
-    iget-object v14, v0, Lcom/sec/server/enterprise/knoxcustom/KnoxCustomManagerService;->mEdmStorageProvider:Lcom/android/server/enterprise/storage/EdmStorageProvider;
+    iget-object v13, v0, Lcom/sec/server/enterprise/knoxcustom/KnoxCustomManagerService;->mEdmStorageProvider:Lcom/android/server/enterprise/storage/EdmStorageProvider;
 
-    const-string/jumbo v15, "KNOX_CUSTOM"
+    const-string/jumbo v14, "KNOX_CUSTOM"
 
-    const-string/jumbo v16, "prokioskPinCode"
+    const-string/jumbo v15, "sealedState"
+
+    move/from16 v0, p1
+
+    invoke-virtual {v13, v2, v14, v15, v0}, Lcom/android/server/enterprise/storage/EdmStorageProvider;->putBoolean(ILjava/lang/String;Ljava/lang/String;Z)Z
+
+    move-object/from16 v0, p0
+
+    iget-object v13, v0, Lcom/sec/server/enterprise/knoxcustom/KnoxCustomManagerService;->mEdmStorageProvider:Lcom/android/server/enterprise/storage/EdmStorageProvider;
+
+    const-string/jumbo v14, "KNOX_CUSTOM"
+
+    const-string/jumbo v15, "prokioskPinCode"
 
     move-object/from16 v0, p0
 
@@ -33099,55 +32806,51 @@
 
     invoke-virtual {v0, v1}, Lcom/sec/server/enterprise/knoxcustom/KnoxCustomManagerService;->hash(Ljava/lang/String;)Ljava/lang/String;
 
-    move-result-object v17
+    move-result-object v16
 
     move-object/from16 v0, v16
 
-    move-object/from16 v1, v17
-
-    invoke-virtual {v14, v2, v15, v0, v1}, Lcom/android/server/enterprise/storage/EdmStorageProvider;->putString(ILjava/lang/String;Ljava/lang/String;Ljava/lang/String;)Z
+    invoke-virtual {v13, v2, v14, v15, v0}, Lcom/android/server/enterprise/storage/EdmStorageProvider;->putString(ILjava/lang/String;Ljava/lang/String;Ljava/lang/String;)Z
 
     move-object/from16 v0, p0
 
-    iget-object v14, v0, Lcom/sec/server/enterprise/knoxcustom/KnoxCustomManagerService;->mEdmStorageProvider:Lcom/android/server/enterprise/storage/EdmStorageProvider;
+    iget-object v13, v0, Lcom/sec/server/enterprise/knoxcustom/KnoxCustomManagerService;->mEdmStorageProvider:Lcom/android/server/enterprise/storage/EdmStorageProvider;
 
-    const-string/jumbo v15, "KNOX_CUSTOM"
+    const-string/jumbo v14, "KNOX_CUSTOM"
 
-    const-string/jumbo v16, "sealedPinCode"
+    const-string/jumbo v15, "sealedPinCode"
 
-    const/16 v17, 0x0
+    const/16 v16, 0x0
 
     move-object/from16 v0, v16
 
-    move-object/from16 v1, v17
-
-    invoke-virtual {v14, v2, v15, v0, v1}, Lcom/android/server/enterprise/storage/EdmStorageProvider;->putString(ILjava/lang/String;Ljava/lang/String;Ljava/lang/String;)Z
+    invoke-virtual {v13, v2, v14, v15, v0}, Lcom/android/server/enterprise/storage/EdmStorageProvider;->putString(ILjava/lang/String;Ljava/lang/String;Ljava/lang/String;)Z
 
     invoke-direct/range {p0 .. p0}, Lcom/sec/server/enterprise/knoxcustom/KnoxCustomManagerService;->startProKioskMode()V
 
-    const/4 v9, 0x0
+    const/4 v8, 0x0
 
     invoke-direct/range {p0 .. p0}, Lcom/sec/server/enterprise/knoxcustom/KnoxCustomManagerService;->closeSettingsApp()V
 
-    const-string/jumbo v14, "content://com.sec.knox.provider2/KnoxCustomManagerService1"
+    const-string/jumbo v13, "content://com.sec.knox.provider2/KnoxCustomManagerService1"
 
-    invoke-static {v14}, Landroid/net/Uri;->parse(Ljava/lang/String;)Landroid/net/Uri;
+    invoke-static {v13}, Landroid/net/Uri;->parse(Ljava/lang/String;)Landroid/net/Uri;
 
-    move-result-object v11
+    move-result-object v12
 
     move-object/from16 v0, p0
 
-    iget-object v14, v0, Lcom/sec/server/enterprise/knoxcustom/KnoxCustomManagerService;->mContext:Landroid/content/Context;
+    iget-object v13, v0, Lcom/sec/server/enterprise/knoxcustom/KnoxCustomManagerService;->mContext:Landroid/content/Context;
 
-    invoke-virtual {v14}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
+    invoke-virtual {v13}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
-    move-result-object v14
+    move-result-object v13
 
-    new-instance v15, Landroid/content/ContentValues;
+    new-instance v14, Landroid/content/ContentValues;
 
-    invoke-direct {v15}, Landroid/content/ContentValues;-><init>()V
+    invoke-direct {v14}, Landroid/content/ContentValues;-><init>()V
 
-    invoke-virtual {v14, v11, v15}, Landroid/content/ContentResolver;->insert(Landroid/net/Uri;Landroid/content/ContentValues;)Landroid/net/Uri;
+    invoke-virtual {v13, v12, v14}, Landroid/content/ContentResolver;->insert(Landroid/net/Uri;Landroid/content/ContentValues;)Landroid/net/Uri;
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
@@ -33156,62 +32859,60 @@
     :catch_0
     move-exception v4
 
-    const-string/jumbo v14, "KnoxCustomManagerService"
+    const-string/jumbo v13, "KnoxCustomManagerService"
 
-    new-instance v15, Ljava/lang/StringBuilder;
+    new-instance v14, Ljava/lang/StringBuilder;
 
-    invoke-direct {v15}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {v14}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string/jumbo v16, "setProKioskState() failed - persistence problem "
+    const-string/jumbo v15, "setProKioskState() failed - persistence problem "
 
-    invoke-virtual/range {v15 .. v16}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v14, v15}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v15
+    move-result-object v14
 
-    invoke-virtual {v15, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    invoke-virtual {v14, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
-    move-result-object v15
+    move-result-object v14
 
-    invoke-virtual {v15}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v14}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v15
+    move-result-object v14
 
-    invoke-static {v14, v15}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {v13, v14}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    const/4 v9, -0x1
+    const/4 v8, -0x1
+
+    goto :goto_0
+
+    :cond_3
+    :try_start_1
+    const-string/jumbo v13, "KnoxCustomManagerService"
+
+    const-string/jumbo v14, "setProKioskState() - Invalid passcode"
+
+    invoke-static {v13, v14}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
+
+    const/16 v8, -0x20
 
     goto/16 :goto_0
 
     :cond_4
-    :try_start_1
-    const-string/jumbo v14, "KnoxCustomManagerService"
-
-    const-string/jumbo v15, "setProKioskState() - Invalid passcode"
-
-    invoke-static {v14, v15}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
-
-    const/16 v9, -0x20
-
-    goto/16 :goto_0
-
-    :cond_5
-    if-eqz v3, :cond_a
+    if-eqz v3, :cond_9
 
     move-object/from16 v0, p0
 
-    iget-object v14, v0, Lcom/sec/server/enterprise/knoxcustom/KnoxCustomManagerService;->mEdmStorageProvider:Lcom/android/server/enterprise/storage/EdmStorageProvider;
+    iget-object v13, v0, Lcom/sec/server/enterprise/knoxcustom/KnoxCustomManagerService;->mEdmStorageProvider:Lcom/android/server/enterprise/storage/EdmStorageProvider;
 
-    const-string/jumbo v15, "KNOX_CUSTOM"
+    const-string/jumbo v14, "KNOX_CUSTOM"
 
-    const-string/jumbo v16, "prokioskPinCode"
+    const-string/jumbo v15, "prokioskPinCode"
 
-    move-object/from16 v0, v16
+    invoke-virtual {v13, v2, v14, v15}, Lcom/android/server/enterprise/storage/EdmStorageProvider;->getString(ILjava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
-    invoke-virtual {v14, v2, v15, v0}, Lcom/android/server/enterprise/storage/EdmStorageProvider;->getString(ILjava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    move-result-object v9
 
-    move-result-object v10
-
-    if-eqz v10, :cond_7
+    if-eqz v9, :cond_6
 
     move-object/from16 v0, p0
 
@@ -33219,112 +32920,108 @@
 
     invoke-virtual {v0, v1}, Lcom/sec/server/enterprise/knoxcustom/KnoxCustomManagerService;->hash(Ljava/lang/String;)Ljava/lang/String;
 
-    move-result-object v14
+    move-result-object v13
 
-    invoke-virtual {v10, v14}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v9, v13}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move-result v8
+    move-result v7
 
     :goto_1
-    if-nez v8, :cond_6
+    if-nez v7, :cond_5
 
     move-object/from16 v0, p0
 
-    iget-object v14, v0, Lcom/sec/server/enterprise/knoxcustom/KnoxCustomManagerService;->mEdmStorageProvider:Lcom/android/server/enterprise/storage/EdmStorageProvider;
+    iget-object v13, v0, Lcom/sec/server/enterprise/knoxcustom/KnoxCustomManagerService;->mEdmStorageProvider:Lcom/android/server/enterprise/storage/EdmStorageProvider;
 
-    const-string/jumbo v15, "KNOX_CUSTOM"
+    const-string/jumbo v14, "KNOX_CUSTOM"
 
-    const-string/jumbo v16, "sealedPinCode"
+    const-string/jumbo v15, "sealedPinCode"
 
-    move-object/from16 v0, v16
+    invoke-virtual {v13, v2, v14, v15}, Lcom/android/server/enterprise/storage/EdmStorageProvider;->getString(ILjava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
-    invoke-virtual {v14, v2, v15, v0}, Lcom/android/server/enterprise/storage/EdmStorageProvider;->getString(ILjava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    move-result-object v9
 
-    move-result-object v10
-
-    if-eqz v10, :cond_8
+    if-eqz v9, :cond_7
 
     move-object/from16 v0, p2
 
-    invoke-virtual {v10, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v9, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move-result v8
+    move-result v7
 
-    :cond_6
+    :cond_5
     :goto_2
-    if-eqz v8, :cond_9
+    if-eqz v7, :cond_8
 
     move-object/from16 v0, p0
 
-    iget-object v14, v0, Lcom/sec/server/enterprise/knoxcustom/KnoxCustomManagerService;->mEdmStorageProvider:Lcom/android/server/enterprise/storage/EdmStorageProvider;
+    iget-object v13, v0, Lcom/sec/server/enterprise/knoxcustom/KnoxCustomManagerService;->mEdmStorageProvider:Lcom/android/server/enterprise/storage/EdmStorageProvider;
 
-    const-string/jumbo v15, "KNOX_CUSTOM"
+    const-string/jumbo v14, "KNOX_CUSTOM"
 
-    const-string/jumbo v16, "sealedState"
+    const-string/jumbo v15, "sealedState"
 
-    move-object/from16 v0, v16
+    move/from16 v0, p1
 
-    move/from16 v1, p1
-
-    invoke-virtual {v14, v2, v15, v0, v1}, Lcom/android/server/enterprise/storage/EdmStorageProvider;->putBoolean(ILjava/lang/String;Ljava/lang/String;Z)Z
+    invoke-virtual {v13, v2, v14, v15, v0}, Lcom/android/server/enterprise/storage/EdmStorageProvider;->putBoolean(ILjava/lang/String;Ljava/lang/String;Z)Z
 
     invoke-direct/range {p0 .. p0}, Lcom/sec/server/enterprise/knoxcustom/KnoxCustomManagerService;->stopProKioskMode()V
 
-    const/4 v9, 0x0
+    const/4 v8, 0x0
 
-    const-string/jumbo v14, "content://com.sec.knox.provider2/KnoxCustomManagerService1"
+    const-string/jumbo v13, "content://com.sec.knox.provider2/KnoxCustomManagerService1"
 
-    invoke-static {v14}, Landroid/net/Uri;->parse(Ljava/lang/String;)Landroid/net/Uri;
+    invoke-static {v13}, Landroid/net/Uri;->parse(Ljava/lang/String;)Landroid/net/Uri;
 
-    move-result-object v11
+    move-result-object v12
 
     move-object/from16 v0, p0
 
-    iget-object v14, v0, Lcom/sec/server/enterprise/knoxcustom/KnoxCustomManagerService;->mContext:Landroid/content/Context;
+    iget-object v13, v0, Lcom/sec/server/enterprise/knoxcustom/KnoxCustomManagerService;->mContext:Landroid/content/Context;
 
-    invoke-virtual {v14}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
+    invoke-virtual {v13}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
-    move-result-object v14
+    move-result-object v13
 
-    new-instance v15, Landroid/content/ContentValues;
+    new-instance v14, Landroid/content/ContentValues;
 
-    invoke-direct {v15}, Landroid/content/ContentValues;-><init>()V
+    invoke-direct {v14}, Landroid/content/ContentValues;-><init>()V
 
-    invoke-virtual {v14, v11, v15}, Landroid/content/ContentResolver;->insert(Landroid/net/Uri;Landroid/content/ContentValues;)Landroid/net/Uri;
+    invoke-virtual {v13, v12, v14}, Landroid/content/ContentResolver;->insert(Landroid/net/Uri;Landroid/content/ContentValues;)Landroid/net/Uri;
 
     goto/16 :goto_0
 
-    :cond_7
-    const/4 v8, 0x0
+    :cond_6
+    const/4 v7, 0x0
 
     goto :goto_1
 
-    :cond_8
-    const/4 v8, 0x0
+    :cond_7
+    const/4 v7, 0x0
 
     goto :goto_2
 
-    :cond_9
-    const-string/jumbo v14, "KnoxCustomManagerService"
+    :cond_8
+    const-string/jumbo v13, "KnoxCustomManagerService"
 
-    const-string/jumbo v15, "setProKioskState() - Invalid passcode"
+    const-string/jumbo v14, "setProKioskState() - Invalid passcode"
 
-    invoke-static {v14, v15}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {v13, v14}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    const/16 v9, -0x20
+    const/16 v8, -0x20
 
     goto/16 :goto_0
 
-    :cond_a
-    const-string/jumbo v14, "KnoxCustomManagerService"
+    :cond_9
+    const-string/jumbo v13, "KnoxCustomManagerService"
 
-    const-string/jumbo v15, "setProKioskState() - Not in ProKiosk Mode"
+    const-string/jumbo v14, "setProKioskState() - Not in ProKiosk Mode"
 
-    invoke-static {v14, v15}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {v13, v14}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
     :try_end_1
     .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_0
 
-    const/4 v9, -0x2
+    const/4 v8, -0x2
 
     goto/16 :goto_0
 .end method

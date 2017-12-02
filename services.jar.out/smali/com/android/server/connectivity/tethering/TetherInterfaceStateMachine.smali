@@ -73,8 +73,6 @@
 
 
 # instance fields
-.field private final CMD_DISCONNECT_DUN:I
-
 .field mActualUpstreamIfaceName:Ljava/lang/String;
 
 .field private final mIPv6TetherSvc:Lcom/android/server/connectivity/tethering/IPv6TetheringInterfaceServices;
@@ -93,13 +91,9 @@
 
 .field private final mNMService:Landroid/os/INetworkManagementService;
 
-.field private mPreferredUpstreamMobileApn:I
-
 .field private final mStatsService:Landroid/net/INetworkStatsService;
 
 .field private final mTetherController:Lcom/android/server/connectivity/tethering/IControlsTethering;
-
-.field private mTetherMasterSM:Lcom/android/internal/util/StateMachine;
 
 .field private final mTetheredState:Lcom/android/internal/util/State;
 
@@ -123,23 +117,7 @@
     return-object v0
 .end method
 
-.method static synthetic -get10(Lcom/android/server/connectivity/tethering/TetherInterfaceStateMachine;)Lcom/android/internal/util/StateMachine;
-    .locals 1
-
-    iget-object v0, p0, Lcom/android/server/connectivity/tethering/TetherInterfaceStateMachine;->mTetherMasterSM:Lcom/android/internal/util/StateMachine;
-
-    return-object v0
-.end method
-
-.method static synthetic -get11(Lcom/android/server/connectivity/tethering/TetherInterfaceStateMachine;)Lcom/android/internal/util/State;
-    .locals 1
-
-    iget-object v0, p0, Lcom/android/server/connectivity/tethering/TetherInterfaceStateMachine;->mTetheredState:Lcom/android/internal/util/State;
-
-    return-object v0
-.end method
-
-.method static synthetic -get12(Lcom/android/server/connectivity/tethering/TetherInterfaceStateMachine;)Lcom/android/internal/util/State;
+.method static synthetic -get10(Lcom/android/server/connectivity/tethering/TetherInterfaceStateMachine;)Lcom/android/internal/util/State;
     .locals 1
 
     iget-object v0, p0, Lcom/android/server/connectivity/tethering/TetherInterfaceStateMachine;->mUnavailableState:Lcom/android/internal/util/State;
@@ -187,15 +165,7 @@
     return-object v0
 .end method
 
-.method static synthetic -get7(Lcom/android/server/connectivity/tethering/TetherInterfaceStateMachine;)I
-    .locals 1
-
-    iget v0, p0, Lcom/android/server/connectivity/tethering/TetherInterfaceStateMachine;->mPreferredUpstreamMobileApn:I
-
-    return v0
-.end method
-
-.method static synthetic -get8(Lcom/android/server/connectivity/tethering/TetherInterfaceStateMachine;)Landroid/net/INetworkStatsService;
+.method static synthetic -get7(Lcom/android/server/connectivity/tethering/TetherInterfaceStateMachine;)Landroid/net/INetworkStatsService;
     .locals 1
 
     iget-object v0, p0, Lcom/android/server/connectivity/tethering/TetherInterfaceStateMachine;->mStatsService:Landroid/net/INetworkStatsService;
@@ -203,10 +173,18 @@
     return-object v0
 .end method
 
-.method static synthetic -get9(Lcom/android/server/connectivity/tethering/TetherInterfaceStateMachine;)Lcom/android/server/connectivity/tethering/IControlsTethering;
+.method static synthetic -get8(Lcom/android/server/connectivity/tethering/TetherInterfaceStateMachine;)Lcom/android/server/connectivity/tethering/IControlsTethering;
     .locals 1
 
     iget-object v0, p0, Lcom/android/server/connectivity/tethering/TetherInterfaceStateMachine;->mTetherController:Lcom/android/server/connectivity/tethering/IControlsTethering;
+
+    return-object v0
+.end method
+
+.method static synthetic -get9(Lcom/android/server/connectivity/tethering/TetherInterfaceStateMachine;)Lcom/android/internal/util/State;
+    .locals 1
+
+    iget-object v0, p0, Lcom/android/server/connectivity/tethering/TetherInterfaceStateMachine;->mTetheredState:Lcom/android/internal/util/State;
 
     return-object v0
 .end method
@@ -285,14 +263,6 @@
     const/4 v3, 0x0
 
     invoke-direct {p0, p1, p2}, Lcom/android/internal/util/StateMachine;-><init>(Ljava/lang/String;Landroid/os/Looper;)V
-
-    const v0, 0x50007
-
-    iput v0, p0, Lcom/android/server/connectivity/tethering/TetherInterfaceStateMachine;->CMD_DISCONNECT_DUN:I
-
-    const/4 v0, -0x1
-
-    iput v0, p0, Lcom/android/server/connectivity/tethering/TetherInterfaceStateMachine;->mPreferredUpstreamMobileApn:I
 
     iput-object p4, p0, Lcom/android/server/connectivity/tethering/TetherInterfaceStateMachine;->mNMService:Landroid/os/INetworkManagementService;
 
@@ -543,20 +513,4 @@
     iget v0, p0, Lcom/android/server/connectivity/tethering/TetherInterfaceStateMachine;->mInterfaceType:I
 
     return v0
-.end method
-
-.method public setPreferredUpstreamMobileApnInstance(I)V
-    .locals 0
-
-    iput p1, p0, Lcom/android/server/connectivity/tethering/TetherInterfaceStateMachine;->mPreferredUpstreamMobileApn:I
-
-    return-void
-.end method
-
-.method public setTetherMasterSMInstance(Lcom/android/internal/util/StateMachine;)V
-    .locals 0
-
-    iput-object p1, p0, Lcom/android/server/connectivity/tethering/TetherInterfaceStateMachine;->mTetherMasterSM:Lcom/android/internal/util/StateMachine;
-
-    return-void
 .end method

@@ -2827,75 +2827,6 @@
     goto :goto_0
 .end method
 
-.method private isAuSLServiceRunning()Z
-    .locals 6
-
-    iget-object v4, p0, Lcom/android/server/display/WifiDisplayController;->mContext:Landroid/content/Context;
-
-    const-string/jumbo v5, "activity"
-
-    invoke-virtual {v4, v5}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
-
-    move-result-object v1
-
-    check-cast v1, Landroid/app/ActivityManager;
-
-    const v4, 0x7fffffff
-
-    invoke-virtual {v1, v4}, Landroid/app/ActivityManager;->getRunningServices(I)Ljava/util/List;
-
-    move-result-object v0
-
-    const/4 v3, 0x0
-
-    :goto_0
-    invoke-interface {v0}, Ljava/util/List;->size()I
-
-    move-result v4
-
-    if-ge v3, v4, :cond_1
-
-    invoke-interface {v0, v3}, Ljava/util/List;->get(I)Ljava/lang/Object;
-
-    move-result-object v4
-
-    check-cast v4, Landroid/app/ActivityManager$RunningServiceInfo;
-
-    iget-object v4, v4, Landroid/app/ActivityManager$RunningServiceInfo;->service:Landroid/content/ComponentName;
-
-    invoke-virtual {v4}, Landroid/content/ComponentName;->getClassName()Ljava/lang/String;
-
-    move-result-object v2
-
-    const-string/jumbo v4, "com.sec.kddi.ausharelink.service"
-
-    invoke-virtual {v2, v4}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
-
-    move-result v4
-
-    if-eqz v4, :cond_0
-
-    const-string/jumbo v4, "WifiDisplayController"
-
-    const-string/jumbo v5, "isAuSLServiceRunning"
-
-    invoke-static {v4, v5}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
-    const/4 v4, 0x1
-
-    return v4
-
-    :cond_0
-    add-int/lit8 v3, v3, 0x1
-
-    goto :goto_0
-
-    :cond_1
-    const/4 v4, 0x0
-
-    return v4
-.end method
-
 .method private isGCastConnected()Z
     .locals 6
 
@@ -3323,7 +3254,7 @@
 
     if-eqz v3, :cond_4
 
-    invoke-direct {p0}, Lcom/android/server/display/WifiDisplayController;->isAuSLServiceRunning()Z
+    invoke-virtual {p0}, Lcom/android/server/display/WifiDisplayController;->isAuSLServiceRunning()Z
 
     move-result v5
 
@@ -4290,7 +4221,7 @@
 
     iget-object v2, v0, Lcom/android/server/display/WifiDisplayController;->mConnectedDevice:Landroid/net/wifi/p2p/WifiP2pDevice;
 
-    if-eqz v2, :cond_4
+    if-eqz v2, :cond_5
 
     move-object/from16 v0, p0
 
@@ -4300,7 +4231,7 @@
 
     iget-object v4, v0, Lcom/android/server/display/WifiDisplayController;->mDesiredDevice:Landroid/net/wifi/p2p/WifiP2pDevice;
 
-    if-eq v2, v4, :cond_4
+    if-eq v2, v4, :cond_5
 
     const-string/jumbo v2, "WifiDisplayController"
 
@@ -4346,7 +4277,7 @@
 
     iget-object v2, v0, Lcom/android/server/display/WifiDisplayController;->mConnectedDeviceGroupInfo:Landroid/net/wifi/p2p/WifiP2pGroup;
 
-    if-eqz v2, :cond_3
+    if-eqz v2, :cond_4
 
     move-object/from16 v0, p0
 
@@ -4356,8 +4287,23 @@
 
     move-result v2
 
+    if-eqz v2, :cond_4
+
+    move-object/from16 v0, p0
+
+    iget-boolean v2, v0, Lcom/android/server/display/WifiDisplayController;->mWifiDisplayCertMode:Z
+
     if-eqz v2, :cond_3
 
+    move-object/from16 v0, p0
+
+    iget-object v2, v0, Lcom/android/server/display/WifiDisplayController;->configDisconnect:Landroid/net/wifi/p2p/WifiP2pConfig;
+
+    if-nez v2, :cond_3
+
+    return-void
+
+    :cond_3
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/android/server/display/WifiDisplayController;->mWifiP2pManager:Landroid/net/wifi/p2p/WifiP2pManager;
@@ -4381,7 +4327,7 @@
     :goto_0
     return-void
 
-    :cond_3
+    :cond_4
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/android/server/display/WifiDisplayController;->mWifiP2pManager:Landroid/net/wifi/p2p/WifiP2pManager;
@@ -4400,12 +4346,12 @@
 
     goto :goto_0
 
-    :cond_4
+    :cond_5
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/android/server/display/WifiDisplayController;->mCancelingDevice:Landroid/net/wifi/p2p/WifiP2pDevice;
 
-    if-eqz v2, :cond_5
+    if-eqz v2, :cond_6
 
     const-string/jumbo v2, "WifiDisplayController"
 
@@ -4435,12 +4381,12 @@
 
     return-void
 
-    :cond_5
+    :cond_6
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/android/server/display/WifiDisplayController;->mConnectingDevice:Landroid/net/wifi/p2p/WifiP2pDevice;
 
-    if-eqz v2, :cond_6
+    if-eqz v2, :cond_7
 
     move-object/from16 v0, p0
 
@@ -4450,7 +4396,7 @@
 
     iget-object v4, v0, Lcom/android/server/display/WifiDisplayController;->mDesiredDevice:Landroid/net/wifi/p2p/WifiP2pDevice;
 
-    if-eq v2, v4, :cond_6
+    if-eq v2, v4, :cond_7
 
     const-string/jumbo v2, "WifiDisplayController"
 
@@ -4510,18 +4456,18 @@
 
     return-void
 
-    :cond_6
+    :cond_7
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/android/server/display/WifiDisplayController;->mDesiredDevice:Landroid/net/wifi/p2p/WifiP2pDevice;
 
-    if-nez v2, :cond_8
+    if-nez v2, :cond_9
 
     move-object/from16 v0, p0
 
     iget-boolean v2, v0, Lcom/android/server/display/WifiDisplayController;->mWifiDisplayCertMode:Z
 
-    if-eqz v2, :cond_7
+    if-eqz v2, :cond_8
 
     move-object/from16 v0, p0
 
@@ -4541,23 +4487,23 @@
 
     invoke-interface {v2, v4}, Lcom/android/server/display/WifiDisplayController$Listener;->onDisplaySessionInfo(Landroid/hardware/display/WifiDisplaySessionInfo;)V
 
-    :cond_7
+    :cond_8
     invoke-direct/range {p0 .. p0}, Lcom/android/server/display/WifiDisplayController;->unadvertiseDisplay()V
 
     return-void
 
-    :cond_8
+    :cond_9
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/android/server/display/WifiDisplayController;->mConnectedDevice:Landroid/net/wifi/p2p/WifiP2pDevice;
 
-    if-nez v2, :cond_9
+    if-nez v2, :cond_a
 
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/android/server/display/WifiDisplayController;->mConnectingDevice:Landroid/net/wifi/p2p/WifiP2pDevice;
 
-    if-nez v2, :cond_9
+    if-nez v2, :cond_a
 
     const-string/jumbo v2, "WifiDisplayController"
 
@@ -4651,18 +4597,18 @@
 
     return-void
 
-    :cond_9
+    :cond_a
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/android/server/display/WifiDisplayController;->mConnectedDevice:Landroid/net/wifi/p2p/WifiP2pDevice;
 
-    if-eqz v2, :cond_10
+    if-eqz v2, :cond_11
 
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/android/server/display/WifiDisplayController;->mRemoteDisplay:Landroid/media/RemoteDisplay;
 
-    if-nez v2, :cond_10
+    if-nez v2, :cond_11
 
     move-object/from16 v0, p0
 
@@ -4672,7 +4618,7 @@
 
     move-result-object v8
 
-    if-nez v8, :cond_a
+    if-nez v8, :cond_b
 
     const-string/jumbo v2, "WifiDisplayController"
 
@@ -4710,7 +4656,7 @@
 
     return-void
 
-    :cond_a
+    :cond_b
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/android/server/display/WifiDisplayController;->mWifiP2pManager:Landroid/net/wifi/p2p/WifiP2pManager;
@@ -4809,7 +4755,7 @@
 
     iget-object v2, v0, Lcom/android/server/display/WifiDisplayController;->mWfdUibcManager:Lcom/android/server/display/WFDUibcManager;
 
-    if-eqz v2, :cond_b
+    if-eqz v2, :cond_c
 
     move-object/from16 v0, p0
 
@@ -4817,7 +4763,7 @@
 
     invoke-virtual {v2}, Lcom/android/server/display/WFDUibcManager;->start()Z
 
-    :cond_b
+    :cond_c
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/android/server/display/WifiDisplayController;->mContext:Landroid/content/Context;
@@ -4878,7 +4824,7 @@
 
     move-result v2
 
-    if-nez v2, :cond_c
+    if-nez v2, :cond_d
 
     const-string/jumbo v2, "exynos3"
 
@@ -4888,7 +4834,7 @@
 
     move-result v2
 
-    if-nez v2, :cond_c
+    if-nez v2, :cond_d
 
     const-string/jumbo v2, "msm8226"
 
@@ -4898,7 +4844,7 @@
 
     move-result v2
 
-    if-nez v2, :cond_c
+    if-nez v2, :cond_d
 
     const-string/jumbo v2, "msm8916"
 
@@ -4908,9 +4854,9 @@
 
     move-result v2
 
-    if-eqz v2, :cond_11
+    if-eqz v2, :cond_12
 
-    :cond_c
+    :cond_d
     const/16 v20, 0x500
 
     const/16 v19, 0x2d0
@@ -4965,7 +4911,7 @@
 
     iget-boolean v2, v0, Lcom/android/server/display/WifiDisplayController;->mRequestPendingSetup:Z
 
-    if-eqz v2, :cond_d
+    if-eqz v2, :cond_e
 
     const-string/jumbo v2, "WifiDisplayController"
 
@@ -4981,7 +4927,7 @@
 
     invoke-virtual {v12, v2, v4}, Lorg/json/JSONObject;->put(Ljava/lang/String;Z)Lorg/json/JSONObject;
 
-    :cond_d
+    :cond_e
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/android/server/display/WifiDisplayController;->mConnectedDevice:Landroid/net/wifi/p2p/WifiP2pDevice;
@@ -4990,7 +4936,7 @@
 
     xor-int/lit16 v2, v2, 0x702
 
-    if-eqz v2, :cond_e
+    if-eqz v2, :cond_f
 
     move-object/from16 v0, p0
 
@@ -5000,9 +4946,9 @@
 
     xor-int/lit16 v2, v2, 0x701
 
-    if-nez v2, :cond_f
+    if-nez v2, :cond_10
 
-    :cond_e
+    :cond_f
     const-string/jumbo v2, "WifiDisplayController"
 
     const-string/jumbo v4, "audio_only true"
@@ -5017,7 +4963,7 @@
     :try_end_0
     .catch Lorg/json/JSONException; {:try_start_0 .. :try_end_0} :catch_0
 
-    :cond_f
+    :cond_10
     :goto_2
     new-instance v13, Lcom/android/server/display/WifiDisplayController$26;
 
@@ -5053,7 +4999,7 @@
 
     iget-boolean v2, v0, Lcom/android/server/display/WifiDisplayController;->mWifiDisplayCertMode:Z
 
-    if-eqz v2, :cond_12
+    if-eqz v2, :cond_13
 
     const/16 v18, 0x78
 
@@ -5074,10 +5020,10 @@
 
     invoke-virtual {v2, v4, v6, v7}, Landroid/os/Handler;->postDelayed(Ljava/lang/Runnable;J)Z
 
-    :cond_10
+    :cond_11
     return-void
 
-    :cond_11
+    :cond_12
     const/16 v20, 0x780
 
     const/16 v19, 0x438
@@ -5097,7 +5043,7 @@
 
     goto :goto_2
 
-    :cond_12
+    :cond_13
     const/16 v18, 0x1e
 
     goto :goto_3
@@ -7037,6 +6983,75 @@
     const/4 v0, 0x0
 
     return-object v0
+.end method
+
+.method public isAuSLServiceRunning()Z
+    .locals 6
+
+    iget-object v4, p0, Lcom/android/server/display/WifiDisplayController;->mContext:Landroid/content/Context;
+
+    const-string/jumbo v5, "activity"
+
+    invoke-virtual {v4, v5}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Landroid/app/ActivityManager;
+
+    const v4, 0x7fffffff
+
+    invoke-virtual {v1, v4}, Landroid/app/ActivityManager;->getRunningServices(I)Ljava/util/List;
+
+    move-result-object v0
+
+    const/4 v3, 0x0
+
+    :goto_0
+    invoke-interface {v0}, Ljava/util/List;->size()I
+
+    move-result v4
+
+    if-ge v3, v4, :cond_1
+
+    invoke-interface {v0, v3}, Ljava/util/List;->get(I)Ljava/lang/Object;
+
+    move-result-object v4
+
+    check-cast v4, Landroid/app/ActivityManager$RunningServiceInfo;
+
+    iget-object v4, v4, Landroid/app/ActivityManager$RunningServiceInfo;->service:Landroid/content/ComponentName;
+
+    invoke-virtual {v4}, Landroid/content/ComponentName;->getClassName()Ljava/lang/String;
+
+    move-result-object v2
+
+    const-string/jumbo v4, "com.sec.kddi.ausharelink.service"
+
+    invoke-virtual {v2, v4}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
+
+    move-result v4
+
+    if-eqz v4, :cond_0
+
+    const-string/jumbo v4, "WifiDisplayController"
+
+    const-string/jumbo v5, "isAuSLServiceRunning"
+
+    invoke-static {v4, v5}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    const/4 v4, 0x1
+
+    return v4
+
+    :cond_0
+    add-int/lit8 v3, v3, 0x1
+
+    goto :goto_0
+
+    :cond_1
+    const/4 v4, 0x0
+
+    return v4
 .end method
 
 .method public isConnWithPinSupported(Ljava/lang/String;)Z

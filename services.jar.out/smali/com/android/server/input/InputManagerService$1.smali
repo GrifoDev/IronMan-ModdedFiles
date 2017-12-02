@@ -54,7 +54,7 @@
 
     move-object/from16 v17, v0
 
-    invoke-static/range {v17 .. v17}, Lcom/android/server/input/InputManagerService;->-get10(Lcom/android/server/input/InputManagerService;)Z
+    invoke-static/range {v17 .. v17}, Lcom/android/server/input/InputManagerService;->-get9(Lcom/android/server/input/InputManagerService;)Z
 
     move-result v17
 
@@ -320,7 +320,7 @@
 
     const/16 v18, 0x1
 
-    invoke-static/range {v17 .. v18}, Lcom/android/server/input/InputManagerService;->-set4(Lcom/android/server/input/InputManagerService;Z)Z
+    invoke-static/range {v17 .. v18}, Lcom/android/server/input/InputManagerService;->-set3(Lcom/android/server/input/InputManagerService;Z)Z
 
     const/4 v9, 0x1
 
@@ -374,7 +374,7 @@
 
     const/16 v18, 0x0
 
-    invoke-static/range {v17 .. v18}, Lcom/android/server/input/InputManagerService;->-set4(Lcom/android/server/input/InputManagerService;Z)Z
+    invoke-static/range {v17 .. v18}, Lcom/android/server/input/InputManagerService;->-set3(Lcom/android/server/input/InputManagerService;Z)Z
 
     goto :goto_1
 
@@ -453,7 +453,7 @@
 
     const/16 v18, 0x1
 
-    invoke-static/range {v17 .. v18}, Lcom/android/server/input/InputManagerService;->-set5(Lcom/android/server/input/InputManagerService;Z)Z
+    invoke-static/range {v17 .. v18}, Lcom/android/server/input/InputManagerService;->-set4(Lcom/android/server/input/InputManagerService;Z)Z
 
     move-object/from16 v0, p0
 
@@ -492,7 +492,7 @@
 
     const/16 v18, 0x0
 
-    invoke-static/range {v17 .. v18}, Lcom/android/server/input/InputManagerService;->-set5(Lcom/android/server/input/InputManagerService;Z)Z
+    invoke-static/range {v17 .. v18}, Lcom/android/server/input/InputManagerService;->-set4(Lcom/android/server/input/InputManagerService;Z)Z
 
     goto/16 :goto_0
 

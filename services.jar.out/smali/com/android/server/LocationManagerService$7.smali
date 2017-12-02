@@ -201,7 +201,7 @@
     :cond_5
     const-string/jumbo v5, "ATT"
 
-    invoke-static {}, Lcom/android/server/LocationManagerService;->-get10()Ljava/lang/String;
+    invoke-static {}, Lcom/android/server/LocationManagerService;->-get11()Ljava/lang/String;
 
     move-result-object v6
 
@@ -213,7 +213,7 @@
 
     const-string/jumbo v5, "AIO"
 
-    invoke-static {}, Lcom/android/server/LocationManagerService;->-get10()Ljava/lang/String;
+    invoke-static {}, Lcom/android/server/LocationManagerService;->-get11()Ljava/lang/String;
 
     move-result-object v6
 

@@ -1225,6 +1225,111 @@
     return-void
 .end method
 
+.method getDexoptState(Landroid/content/pm/PackageParser$Package;)Ljava/lang/String;
+    .locals 13
+
+    iget-object v9, p1, Landroid/content/pm/PackageParser$Package;->applicationInfo:Landroid/content/pm/ApplicationInfo;
+
+    invoke-static {v9}, Lcom/android/server/pm/InstructionSets;->getAppDexInstructionSets(Landroid/content/pm/ApplicationInfo;)[Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-static {v2}, Lcom/android/server/pm/InstructionSets;->getDexCodeInstructionSets([Ljava/lang/String;)[Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-virtual {p1}, Landroid/content/pm/PackageParser$Package;->getAllCodePathsExcludingResourceOnly()Ljava/util/List;
+
+    move-result-object v6
+
+    const/4 v7, 0x0
+
+    const/4 v9, 0x0
+
+    array-length v10, v0
+
+    :goto_0
+    if-ge v9, v10, :cond_3
+
+    aget-object v1, v0, v9
+
+    invoke-interface {v6}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
+
+    move-result-object v5
+
+    :cond_0
+    :goto_1
+    invoke-interface {v5}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v11
+
+    if-eqz v11, :cond_2
+
+    invoke-interface {v5}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v4
+
+    check-cast v4, Ljava/lang/String;
+
+    const/4 v8, 0x0
+
+    :try_start_0
+    invoke-static {v4, v1}, Ldalvik/system/DexFile;->getDexFileStatus(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    :try_end_0
+    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
+
+    move-result-object v8
+
+    :goto_2
+    if-eqz v8, :cond_0
+
+    if-eqz v7, :cond_1
+
+    new-instance v11, Ljava/lang/StringBuilder;
+
+    invoke-direct {v11}, Ljava/lang/StringBuilder;-><init>()V
+
+    invoke-virtual {v11, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v11
+
+    const-string/jumbo v12, ", "
+
+    invoke-virtual {v11, v12}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v11
+
+    invoke-virtual {v11, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v11
+
+    invoke-virtual {v11}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v7
+
+    goto :goto_1
+
+    :catch_0
+    move-exception v3
+
+    const-string/jumbo v8, "exception"
+
+    goto :goto_2
+
+    :cond_1
+    move-object v7, v8
+
+    goto :goto_1
+
+    :cond_2
+    add-int/lit8 v9, v9, 0x1
+
+    goto :goto_0
+
+    :cond_3
+    return-object v7
+.end method
+
 .method performDexOpt(Landroid/content/pm/PackageParser$Package;[Ljava/lang/String;[Ljava/lang/String;ZLjava/lang/String;Lcom/android/server/pm/CompilerStats$PackageStats;)I
     .locals 8
 

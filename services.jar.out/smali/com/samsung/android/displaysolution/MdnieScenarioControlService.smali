@@ -8429,13 +8429,13 @@
 
     move-result-object v6
 
-    const v7, 0x1040900
+    const v7, 0x1040901
 
     invoke-virtual {v6, v7}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
     move-result-object v6
 
-    const-string/jumbo v7, "NOTIFICATION_SETTINGS"
+    const-string/jumbo v7, "NOTIFICATION_DISMISS"
 
     invoke-direct {p0, v7}, Lcom/samsung/android/displaysolution/MdnieScenarioControlService;->pendingBroadcast(Ljava/lang/String;)Landroid/app/PendingIntent;
 
@@ -8451,13 +8451,13 @@
 
     move-result-object v6
 
-    const v7, 0x1040901
+    const v7, 0x1040900
 
     invoke-virtual {v6, v7}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
     move-result-object v6
 
-    const-string/jumbo v7, "NOTIFICATION_DISMISS"
+    const-string/jumbo v7, "NOTIFICATION_SETTINGS"
 
     invoke-direct {p0, v7}, Lcom/samsung/android/displaysolution/MdnieScenarioControlService;->pendingBroadcast(Ljava/lang/String;)Landroid/app/PendingIntent;
 
@@ -8664,13 +8664,13 @@
 
     move-result-object v6
 
-    const v7, 0x1040900
+    const v7, 0x1040901
 
     invoke-virtual {v6, v7}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
     move-result-object v6
 
-    const-string/jumbo v7, "NOTIFICATION_SETTINGS"
+    const-string/jumbo v7, "NOTIFICATION_DISMISS"
 
     invoke-direct {p0, v7}, Lcom/samsung/android/displaysolution/MdnieScenarioControlService;->pendingBroadcast(Ljava/lang/String;)Landroid/app/PendingIntent;
 
@@ -8686,13 +8686,13 @@
 
     move-result-object v6
 
-    const v7, 0x1040901
+    const v7, 0x1040900
 
     invoke-virtual {v6, v7}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
     move-result-object v6
 
-    const-string/jumbo v7, "NOTIFICATION_DISMISS"
+    const-string/jumbo v7, "NOTIFICATION_SETTINGS"
 
     invoke-direct {p0, v7}, Lcom/samsung/android/displaysolution/MdnieScenarioControlService;->pendingBroadcast(Ljava/lang/String;)Landroid/app/PendingIntent;
 

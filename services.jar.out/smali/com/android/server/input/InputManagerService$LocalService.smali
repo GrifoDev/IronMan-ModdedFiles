@@ -92,7 +92,7 @@
 .end method
 
 .method public setInteractive(Z)V
-    .locals 4
+    .locals 2
 
     iget-object v0, p0, Lcom/android/server/input/InputManagerService$LocalService;->this$0:Lcom/android/server/input/InputManagerService;
 
@@ -102,34 +102,7 @@
 
     invoke-static {v0, v1, p1}, Lcom/android/server/input/InputManagerService;->-wrap9(JZ)V
 
-    if-eqz p1, :cond_0
-
-    iget-object v0, p0, Lcom/android/server/input/InputManagerService$LocalService;->this$0:Lcom/android/server/input/InputManagerService;
-
-    invoke-static {v0}, Lcom/android/server/input/InputManagerService;->-get9(Lcom/android/server/input/InputManagerService;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_1
-
-    :cond_0
-    :goto_0
-    iget-object v0, p0, Lcom/android/server/input/InputManagerService$LocalService;->this$0:Lcom/android/server/input/InputManagerService;
-
-    invoke-static {v0, p1}, Lcom/android/server/input/InputManagerService;->-set3(Lcom/android/server/input/InputManagerService;Z)Z
-
     return-void
-
-    :cond_1
-    iget-object v0, p0, Lcom/android/server/input/InputManagerService$LocalService;->this$0:Lcom/android/server/input/InputManagerService;
-
-    invoke-static {}, Landroid/os/SystemClock;->elapsedRealtime()J
-
-    move-result-wide v2
-
-    invoke-static {v0, v2, v3}, Lcom/android/server/input/InputManagerService;->-set7(Lcom/android/server/input/InputManagerService;J)J
-
-    goto :goto_0
 .end method
 
 .method public setMouseControlType(I)V

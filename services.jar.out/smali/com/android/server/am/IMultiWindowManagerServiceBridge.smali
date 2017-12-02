@@ -40,6 +40,9 @@
 .method public abstract deferDetachDockStackLocked()V
 .end method
 
+.method public abstract detachStackIfNoActivitiesLocked(Lcom/android/server/am/ActivityStack;)V
+.end method
+
 .method public abstract dumpLocked(Ljava/io/PrintWriter;Z)V
 .end method
 
@@ -202,6 +205,9 @@
 .method public abstract notifyApplyFreeformMinimizePolicy(I)V
 .end method
 
+.method public abstract notifyCompleteResumeLocked()V
+.end method
+
 .method public abstract notifyDockedStackMinimizedChange(Z)V
 .end method
 
@@ -242,6 +248,9 @@
 .end method
 
 .method public abstract requestAutoResizingIfNeeded(Landroid/graphics/Rect;)Z
+.end method
+
+.method public abstract resizeDockedStack(I)V
 .end method
 
 .method public abstract restoreFullscreenStateLocked(Ljava/lang/String;Lcom/android/server/am/TaskRecord;)V
