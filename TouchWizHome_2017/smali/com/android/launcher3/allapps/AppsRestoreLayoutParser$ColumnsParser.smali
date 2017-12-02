@@ -69,7 +69,7 @@
 
     move-result v5
 
-    invoke-static {v4, v5}, Lcom/android/launcher3/allapps/AppsRestoreLayoutParser;->access$1002(Lcom/android/launcher3/allapps/AppsRestoreLayoutParser;I)I
+    invoke-static {v4, v5}, Lcom/android/launcher3/allapps/AppsRestoreLayoutParser;->access$1102(Lcom/android/launcher3/allapps/AppsRestoreLayoutParser;I)I
 
     const-string v4, "Launcher.AppsRestore"
 
@@ -85,7 +85,7 @@
 
     iget-object v6, p0, Lcom/android/launcher3/allapps/AppsRestoreLayoutParser$ColumnsParser;->this$0:Lcom/android/launcher3/allapps/AppsRestoreLayoutParser;
 
-    invoke-static {v6}, Lcom/android/launcher3/allapps/AppsRestoreLayoutParser;->access$1000(Lcom/android/launcher3/allapps/AppsRestoreLayoutParser;)I
+    invoke-static {v6}, Lcom/android/launcher3/allapps/AppsRestoreLayoutParser;->access$1100(Lcom/android/launcher3/allapps/AppsRestoreLayoutParser;)I
 
     move-result v6
 
@@ -144,7 +144,7 @@
 
     iget-object v6, p0, Lcom/android/launcher3/allapps/AppsRestoreLayoutParser$ColumnsParser;->this$0:Lcom/android/launcher3/allapps/AppsRestoreLayoutParser;
 
-    invoke-static {v6}, Lcom/android/launcher3/allapps/AppsRestoreLayoutParser;->access$1000(Lcom/android/launcher3/allapps/AppsRestoreLayoutParser;)I
+    invoke-static {v6}, Lcom/android/launcher3/allapps/AppsRestoreLayoutParser;->access$1100(Lcom/android/launcher3/allapps/AppsRestoreLayoutParser;)I
 
     move-result v6
 
@@ -156,7 +156,7 @@
 
     iget-object v6, p0, Lcom/android/launcher3/allapps/AppsRestoreLayoutParser$ColumnsParser;->this$0:Lcom/android/launcher3/allapps/AppsRestoreLayoutParser;
 
-    invoke-static {v6}, Lcom/android/launcher3/allapps/AppsRestoreLayoutParser;->access$900(Lcom/android/launcher3/allapps/AppsRestoreLayoutParser;)I
+    invoke-static {v6}, Lcom/android/launcher3/allapps/AppsRestoreLayoutParser;->access$1000(Lcom/android/launcher3/allapps/AppsRestoreLayoutParser;)I
 
     move-result v6
 
@@ -178,7 +178,7 @@
 
     iget-object v6, p0, Lcom/android/launcher3/allapps/AppsRestoreLayoutParser$ColumnsParser;->this$0:Lcom/android/launcher3/allapps/AppsRestoreLayoutParser;
 
-    invoke-static {v6}, Lcom/android/launcher3/allapps/AppsRestoreLayoutParser;->access$1000(Lcom/android/launcher3/allapps/AppsRestoreLayoutParser;)I
+    invoke-static {v6}, Lcom/android/launcher3/allapps/AppsRestoreLayoutParser;->access$1100(Lcom/android/launcher3/allapps/AppsRestoreLayoutParser;)I
 
     move-result v6
 
@@ -194,7 +194,7 @@
 
     iget-object v6, p0, Lcom/android/launcher3/allapps/AppsRestoreLayoutParser$ColumnsParser;->this$0:Lcom/android/launcher3/allapps/AppsRestoreLayoutParser;
 
-    invoke-static {v6}, Lcom/android/launcher3/allapps/AppsRestoreLayoutParser;->access$900(Lcom/android/launcher3/allapps/AppsRestoreLayoutParser;)I
+    invoke-static {v6}, Lcom/android/launcher3/allapps/AppsRestoreLayoutParser;->access$1000(Lcom/android/launcher3/allapps/AppsRestoreLayoutParser;)I
 
     move-result v6
 
@@ -213,19 +213,19 @@
 
     iget-object v4, p0, Lcom/android/launcher3/allapps/AppsRestoreLayoutParser$ColumnsParser;->this$0:Lcom/android/launcher3/allapps/AppsRestoreLayoutParser;
 
-    invoke-static {v4}, Lcom/android/launcher3/allapps/AppsRestoreLayoutParser;->access$1100(Lcom/android/launcher3/allapps/AppsRestoreLayoutParser;)Landroid/content/Context;
+    invoke-static {v4}, Lcom/android/launcher3/allapps/AppsRestoreLayoutParser;->access$1200(Lcom/android/launcher3/allapps/AppsRestoreLayoutParser;)Landroid/content/Context;
 
     move-result-object v4
 
     iget-object v5, p0, Lcom/android/launcher3/allapps/AppsRestoreLayoutParser$ColumnsParser;->this$0:Lcom/android/launcher3/allapps/AppsRestoreLayoutParser;
 
-    invoke-static {v5}, Lcom/android/launcher3/allapps/AppsRestoreLayoutParser;->access$1000(Lcom/android/launcher3/allapps/AppsRestoreLayoutParser;)I
+    invoke-static {v5}, Lcom/android/launcher3/allapps/AppsRestoreLayoutParser;->access$1100(Lcom/android/launcher3/allapps/AppsRestoreLayoutParser;)I
 
     move-result v5
 
     iget-object v6, p0, Lcom/android/launcher3/allapps/AppsRestoreLayoutParser$ColumnsParser;->this$0:Lcom/android/launcher3/allapps/AppsRestoreLayoutParser;
 
-    invoke-static {v6}, Lcom/android/launcher3/allapps/AppsRestoreLayoutParser;->access$900(Lcom/android/launcher3/allapps/AppsRestoreLayoutParser;)I
+    invoke-static {v6}, Lcom/android/launcher3/allapps/AppsRestoreLayoutParser;->access$1000(Lcom/android/launcher3/allapps/AppsRestoreLayoutParser;)I
 
     move-result v6
 
@@ -240,7 +240,7 @@
     :cond_3
     iget-object v4, p0, Lcom/android/launcher3/allapps/AppsRestoreLayoutParser$ColumnsParser;->this$0:Lcom/android/launcher3/allapps/AppsRestoreLayoutParser;
 
-    invoke-static {v4}, Lcom/android/launcher3/allapps/AppsRestoreLayoutParser;->access$1200(Lcom/android/launcher3/allapps/AppsRestoreLayoutParser;)Landroid/content/Context;
+    invoke-static {v4}, Lcom/android/launcher3/allapps/AppsRestoreLayoutParser;->access$1300(Lcom/android/launcher3/allapps/AppsRestoreLayoutParser;)Landroid/content/Context;
 
     move-result-object v4
 
@@ -258,19 +258,19 @@
 
     iget-object v4, p0, Lcom/android/launcher3/allapps/AppsRestoreLayoutParser$ColumnsParser;->this$0:Lcom/android/launcher3/allapps/AppsRestoreLayoutParser;
 
-    invoke-static {v4}, Lcom/android/launcher3/allapps/AppsRestoreLayoutParser;->access$1300(Lcom/android/launcher3/allapps/AppsRestoreLayoutParser;)Landroid/content/Context;
+    invoke-static {v4}, Lcom/android/launcher3/allapps/AppsRestoreLayoutParser;->access$1400(Lcom/android/launcher3/allapps/AppsRestoreLayoutParser;)Landroid/content/Context;
 
     move-result-object v4
 
     iget-object v5, p0, Lcom/android/launcher3/allapps/AppsRestoreLayoutParser$ColumnsParser;->this$0:Lcom/android/launcher3/allapps/AppsRestoreLayoutParser;
 
-    invoke-static {v5}, Lcom/android/launcher3/allapps/AppsRestoreLayoutParser;->access$1000(Lcom/android/launcher3/allapps/AppsRestoreLayoutParser;)I
+    invoke-static {v5}, Lcom/android/launcher3/allapps/AppsRestoreLayoutParser;->access$1100(Lcom/android/launcher3/allapps/AppsRestoreLayoutParser;)I
 
     move-result v5
 
     iget-object v6, p0, Lcom/android/launcher3/allapps/AppsRestoreLayoutParser$ColumnsParser;->this$0:Lcom/android/launcher3/allapps/AppsRestoreLayoutParser;
 
-    invoke-static {v6}, Lcom/android/launcher3/allapps/AppsRestoreLayoutParser;->access$900(Lcom/android/launcher3/allapps/AppsRestoreLayoutParser;)I
+    invoke-static {v6}, Lcom/android/launcher3/allapps/AppsRestoreLayoutParser;->access$1000(Lcom/android/launcher3/allapps/AppsRestoreLayoutParser;)I
 
     move-result v6
 

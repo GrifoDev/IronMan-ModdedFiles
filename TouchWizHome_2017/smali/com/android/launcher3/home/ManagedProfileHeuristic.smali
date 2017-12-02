@@ -4,8 +4,6 @@
 
 
 # static fields
-.field private static final AUTO_ADD_TO_FOLDER_DURATION:J = 0x1b77400L
-
 .field private static final TAG:Ljava/lang/String; = "ManagedProfileHeuristic"
 
 
@@ -30,8 +28,6 @@
 .field private final mPrefs:Landroid/content/SharedPreferences;
 
 .field private final mUser:Lcom/android/launcher3/common/compat/UserHandleCompat;
-
-.field private final mUserCreationTime:J
 
 .field private final mUserSerial:J
 
@@ -76,12 +72,6 @@
     move-result-wide v2
 
     iput-wide v2, p0, Lcom/android/launcher3/home/ManagedProfileHeuristic;->mUserSerial:J
-
-    invoke-virtual {v0, p2}, Lcom/android/launcher3/common/compat/UserManagerCompat;->getUserCreationTime(Lcom/android/launcher3/common/compat/UserHandleCompat;)J
-
-    move-result-wide v2
-
-    iput-wide v2, p0, Lcom/android/launcher3/home/ManagedProfileHeuristic;->mUserCreationTime:J
 
     new-instance v1, Ljava/lang/StringBuilder;
 
@@ -711,7 +701,7 @@
 
     iget-object v9, p0, Lcom/android/launcher3/home/ManagedProfileHeuristic;->mContext:Landroid/content/Context;
 
-    const v10, 0x7f0900dd
+    const v10, 0x7f0900e5
 
     invoke-virtual {v9, v10}, Landroid/content/Context;->getText(I)Ljava/lang/CharSequence;
 
@@ -1075,22 +1065,11 @@
     return-void
 .end method
 
-.method private markForAddition(Lcom/android/launcher3/common/compat/LauncherActivityInfoCompat;J)V
-    .locals 6
-
-    iget-wide v2, p0, Lcom/android/launcher3/home/ManagedProfileHeuristic;->mUserCreationTime:J
-
-    const-wide/32 v4, 0x1b77400
-
-    add-long/2addr v2, v4
-
-    cmp-long v1, p2, v2
-
-    if-gtz v1, :cond_0
+.method private markForAddition(Lcom/android/launcher3/common/compat/LauncherActivityInfoCompat;)V
+    .locals 2
 
     iget-object v0, p0, Lcom/android/launcher3/home/ManagedProfileHeuristic;->mWorkFolderApps:Ljava/util/ArrayList;
 
-    :goto_0
     iget-object v1, p0, Lcom/android/launcher3/home/ManagedProfileHeuristic;->mContext:Landroid/content/Context;
 
     invoke-static {p1, v1}, Lcom/android/launcher3/common/base/item/IconInfo;->fromActivityInfo(Lcom/android/launcher3/common/compat/LauncherActivityInfoCompat;Landroid/content/Context;)Lcom/android/launcher3/common/base/item/IconInfo;
@@ -1100,11 +1079,6 @@
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     return-void
-
-    :cond_0
-    iget-object v0, p0, Lcom/android/launcher3/home/ManagedProfileHeuristic;->mHomescreenApps:Ljava/util/ArrayList;
-
-    goto :goto_0
 .end method
 
 .method public static processAllUsers(Ljava/util/List;Landroid/content/Context;)V
@@ -1272,106 +1246,102 @@
 
 # virtual methods
 .method public processPackageAdd([Ljava/lang/String;)V
-    .locals 12
+    .locals 10
 
-    const/4 v10, 0x0
+    const/4 v8, 0x0
 
-    new-instance v8, Ljava/util/ArrayList;
+    new-instance v6, Ljava/util/ArrayList;
 
-    invoke-direct {v8}, Ljava/util/ArrayList;-><init>()V
+    invoke-direct {v6}, Ljava/util/ArrayList;-><init>()V
 
-    iput-object v8, p0, Lcom/android/launcher3/home/ManagedProfileHeuristic;->mHomescreenApps:Ljava/util/ArrayList;
+    iput-object v6, p0, Lcom/android/launcher3/home/ManagedProfileHeuristic;->mHomescreenApps:Ljava/util/ArrayList;
 
-    new-instance v8, Ljava/util/ArrayList;
+    new-instance v6, Ljava/util/ArrayList;
 
-    invoke-direct {v8}, Ljava/util/ArrayList;-><init>()V
+    invoke-direct {v6}, Ljava/util/ArrayList;-><init>()V
 
-    iput-object v8, p0, Lcom/android/launcher3/home/ManagedProfileHeuristic;->mWorkFolderApps:Ljava/util/ArrayList;
+    iput-object v6, p0, Lcom/android/launcher3/home/ManagedProfileHeuristic;->mWorkFolderApps:Ljava/util/ArrayList;
 
-    new-instance v6, Ljava/util/HashSet;
+    new-instance v4, Ljava/util/HashSet;
 
-    invoke-direct {v6}, Ljava/util/HashSet;-><init>()V
+    invoke-direct {v4}, Ljava/util/HashSet;-><init>()V
 
-    invoke-direct {p0, v6}, Lcom/android/launcher3/home/ManagedProfileHeuristic;->getUserApps(Ljava/util/HashSet;)Z
+    invoke-direct {p0, v4}, Lcom/android/launcher3/home/ManagedProfileHeuristic;->getUserApps(Ljava/util/HashSet;)Z
 
-    move-result v7
+    move-result v5
 
-    const/4 v4, 0x0
+    const/4 v2, 0x0
 
-    invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
+    iget-object v6, p0, Lcom/android/launcher3/home/ManagedProfileHeuristic;->mContext:Landroid/content/Context;
 
-    move-result-wide v2
-
-    iget-object v8, p0, Lcom/android/launcher3/home/ManagedProfileHeuristic;->mContext:Landroid/content/Context;
-
-    invoke-static {v8}, Lcom/android/launcher3/common/compat/LauncherAppsCompat;->getInstance(Landroid/content/Context;)Lcom/android/launcher3/common/compat/LauncherAppsCompat;
+    invoke-static {v6}, Lcom/android/launcher3/common/compat/LauncherAppsCompat;->getInstance(Landroid/content/Context;)Lcom/android/launcher3/common/compat/LauncherAppsCompat;
 
     move-result-object v1
 
-    array-length v11, p1
+    array-length v9, p1
 
-    move v9, v10
+    move v7, v8
 
     :goto_0
-    if-ge v9, v11, :cond_1
+    if-ge v7, v9, :cond_1
 
-    aget-object v5, p1, v9
+    aget-object v3, p1, v7
 
-    invoke-virtual {v6, v5}, Ljava/util/HashSet;->contains(Ljava/lang/Object;)Z
+    invoke-virtual {v4, v3}, Ljava/util/HashSet;->contains(Ljava/lang/Object;)Z
 
-    move-result v8
+    move-result v6
 
-    if-nez v8, :cond_0
+    if-nez v6, :cond_0
 
-    invoke-virtual {v6, v5}, Ljava/util/HashSet;->add(Ljava/lang/Object;)Z
+    invoke-virtual {v4, v3}, Ljava/util/HashSet;->add(Ljava/lang/Object;)Z
 
-    const/4 v4, 0x1
+    const/4 v2, 0x1
 
-    iget-object v8, p0, Lcom/android/launcher3/home/ManagedProfileHeuristic;->mUser:Lcom/android/launcher3/common/compat/UserHandleCompat;
+    iget-object v6, p0, Lcom/android/launcher3/home/ManagedProfileHeuristic;->mUser:Lcom/android/launcher3/common/compat/UserHandleCompat;
 
-    invoke-virtual {v1, v5, v8}, Lcom/android/launcher3/common/compat/LauncherAppsCompat;->getActivityList(Ljava/lang/String;Lcom/android/launcher3/common/compat/UserHandleCompat;)Ljava/util/List;
+    invoke-virtual {v1, v3, v6}, Lcom/android/launcher3/common/compat/LauncherAppsCompat;->getActivityList(Ljava/lang/String;Lcom/android/launcher3/common/compat/UserHandleCompat;)Ljava/util/List;
 
     move-result-object v0
 
     invoke-interface {v0}, Ljava/util/List;->isEmpty()Z
 
-    move-result v8
+    move-result v6
 
-    if-nez v8, :cond_0
+    if-nez v6, :cond_0
 
-    invoke-interface {v0, v10}, Ljava/util/List;->get(I)Ljava/lang/Object;
+    invoke-interface {v0, v8}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
-    move-result-object v8
+    move-result-object v6
 
-    check-cast v8, Lcom/android/launcher3/common/compat/LauncherActivityInfoCompat;
+    check-cast v6, Lcom/android/launcher3/common/compat/LauncherActivityInfoCompat;
 
-    invoke-direct {p0, v8, v2, v3}, Lcom/android/launcher3/home/ManagedProfileHeuristic;->markForAddition(Lcom/android/launcher3/common/compat/LauncherActivityInfoCompat;J)V
+    invoke-direct {p0, v6}, Lcom/android/launcher3/home/ManagedProfileHeuristic;->markForAddition(Lcom/android/launcher3/common/compat/LauncherActivityInfoCompat;)V
 
     :cond_0
-    add-int/lit8 v8, v9, 0x1
+    add-int/lit8 v6, v7, 0x1
 
-    move v9, v8
+    move v7, v6
 
     goto :goto_0
 
     :cond_1
-    if-eqz v4, :cond_2
+    if-eqz v2, :cond_2
 
-    iget-object v8, p0, Lcom/android/launcher3/home/ManagedProfileHeuristic;->mPrefs:Landroid/content/SharedPreferences;
+    iget-object v6, p0, Lcom/android/launcher3/home/ManagedProfileHeuristic;->mPrefs:Landroid/content/SharedPreferences;
 
-    invoke-interface {v8}, Landroid/content/SharedPreferences;->edit()Landroid/content/SharedPreferences$Editor;
+    invoke-interface {v6}, Landroid/content/SharedPreferences;->edit()Landroid/content/SharedPreferences$Editor;
 
-    move-result-object v8
+    move-result-object v6
 
-    iget-object v9, p0, Lcom/android/launcher3/home/ManagedProfileHeuristic;->mPackageSetKey:Ljava/lang/String;
+    iget-object v7, p0, Lcom/android/launcher3/home/ManagedProfileHeuristic;->mPackageSetKey:Ljava/lang/String;
 
-    invoke-interface {v8, v9, v6}, Landroid/content/SharedPreferences$Editor;->putStringSet(Ljava/lang/String;Ljava/util/Set;)Landroid/content/SharedPreferences$Editor;
+    invoke-interface {v6, v7, v4}, Landroid/content/SharedPreferences$Editor;->putStringSet(Ljava/lang/String;Ljava/util/Set;)Landroid/content/SharedPreferences$Editor;
 
-    move-result-object v8
+    move-result-object v6
 
-    invoke-interface {v8}, Landroid/content/SharedPreferences$Editor;->apply()V
+    invoke-interface {v6}, Landroid/content/SharedPreferences$Editor;->apply()V
 
-    invoke-direct {p0, v7}, Lcom/android/launcher3/home/ManagedProfileHeuristic;->finalizeAdditions(Z)V
+    invoke-direct {p0, v5}, Lcom/android/launcher3/home/ManagedProfileHeuristic;->finalizeAdditions(Z)V
 
     :cond_2
     return-void
@@ -1432,7 +1402,7 @@
 .end method
 
 .method public processUserApps(Ljava/util/List;)V
-    .locals 20
+    .locals 18
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -1459,57 +1429,56 @@
 
     iput-object v2, v0, Lcom/android/launcher3/home/ManagedProfileHeuristic;->mWorkFolderApps:Ljava/util/ArrayList;
 
-    new-instance v13, Ljava/util/HashSet;
+    new-instance v12, Ljava/util/HashSet;
 
-    invoke-direct {v13}, Ljava/util/HashSet;-><init>()V
+    invoke-direct {v12}, Ljava/util/HashSet;-><init>()V
 
     move-object/from16 v0, p0
 
-    invoke-direct {v0, v13}, Lcom/android/launcher3/home/ManagedProfileHeuristic;->getUserApps(Ljava/util/HashSet;)Z
+    invoke-direct {v0, v12}, Lcom/android/launcher3/home/ManagedProfileHeuristic;->getUserApps(Ljava/util/HashSet;)Z
 
-    move-result v15
+    move-result v13
 
-    const/4 v11, 0x0
+    const/4 v10, 0x0
 
     invoke-interface/range {p1 .. p1}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
-    move-result-object v16
+    move-result-object v14
 
     :cond_0
     :goto_0
-    invoke-interface/range {v16 .. v16}, Ljava/util/Iterator;->hasNext()Z
+    invoke-interface {v14}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v2
 
     if-eqz v2, :cond_3
 
-    invoke-interface/range {v16 .. v16}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    invoke-interface {v14}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
-    move-result-object v10
+    move-result-object v9
 
-    check-cast v10, Lcom/android/launcher3/common/compat/LauncherActivityInfoCompat;
+    check-cast v9, Lcom/android/launcher3/common/compat/LauncherActivityInfoCompat;
 
-    invoke-virtual {v10}, Lcom/android/launcher3/common/compat/LauncherActivityInfoCompat;->getComponentName()Landroid/content/ComponentName;
+    invoke-virtual {v9}, Lcom/android/launcher3/common/compat/LauncherActivityInfoCompat;->getComponentName()Landroid/content/ComponentName;
 
     move-result-object v2
 
     invoke-virtual {v2}, Landroid/content/ComponentName;->getPackageName()Ljava/lang/String;
 
-    move-result-object v12
+    move-result-object v11
 
-    invoke-virtual {v13, v12}, Ljava/util/HashSet;->contains(Ljava/lang/Object;)Z
+    invoke-virtual {v12, v11}, Ljava/util/HashSet;->contains(Ljava/lang/Object;)Z
 
     move-result v2
 
     if-nez v2, :cond_0
 
-    invoke-virtual {v13, v12}, Ljava/util/HashSet;->add(Ljava/lang/Object;)Z
+    invoke-virtual {v12, v11}, Ljava/util/HashSet;->add(Ljava/lang/Object;)Z
 
-    const/4 v11, 0x1
+    const/4 v10, 0x1
 
     const/4 v2, 0x1
 
-    :try_start_0
     new-array v4, v2, [Ljava/lang/String;
 
     const/4 v2, 0x0
@@ -1560,9 +1529,9 @@
 
     iget-wide v0, v0, Lcom/android/launcher3/home/ManagedProfileHeuristic;->mUserSerial:J
 
-    move-wide/from16 v18, v0
+    move-wide/from16 v16, v0
 
-    invoke-static/range {v18 .. v19}, Ljava/lang/String;->valueOf(J)Ljava/lang/String;
+    invoke-static/range {v16 .. v17}, Ljava/lang/String;->valueOf(J)Ljava/lang/String;
 
     move-result-object v3
 
@@ -1590,7 +1559,7 @@
 
     move-result-object v3
 
-    invoke-virtual {v10}, Lcom/android/launcher3/common/compat/LauncherActivityInfoCompat;->getComponentName()Landroid/content/ComponentName;
+    invoke-virtual {v9}, Lcom/android/launcher3/common/compat/LauncherActivityInfoCompat;->getComponentName()Landroid/content/ComponentName;
 
     move-result-object v7
 
@@ -1627,14 +1596,12 @@
     const/4 v7, 0x0
 
     invoke-virtual/range {v2 .. v7}, Landroid/content/ContentResolver;->query(Landroid/net/Uri;[Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Ljava/lang/String;)Landroid/database/Cursor;
-    :try_end_0
-    .catch Landroid/content/pm/PackageManager$NameNotFoundException; {:try_start_0 .. :try_end_0} :catch_0
 
     move-result-object v8
 
     if-eqz v8, :cond_2
 
-    :try_start_1
+    :try_start_0
     invoke-interface {v8}, Landroid/database/Cursor;->getCount()I
 
     move-result v2
@@ -1653,7 +1620,7 @@
 
     move-result-object v3
 
-    invoke-virtual {v10}, Lcom/android/launcher3/common/compat/LauncherActivityInfoCompat;->getLabel()Ljava/lang/CharSequence;
+    invoke-virtual {v9}, Lcom/android/launcher3/common/compat/LauncherActivityInfoCompat;->getLabel()Ljava/lang/CharSequence;
 
     move-result-object v7
 
@@ -1666,67 +1633,20 @@
     move-result-object v3
 
     invoke-static {v2, v3}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    :try_start_2
     invoke-interface {v8}, Landroid/database/Cursor;->close()V
-    :try_end_2
-    .catch Landroid/content/pm/PackageManager$NameNotFoundException; {:try_start_2 .. :try_end_2} :catch_0
-
-    goto/16 :goto_0
-
-    :catch_0
-    move-exception v9
-
-    const-string v2, "ManagedProfileHeuristic"
-
-    new-instance v3, Ljava/lang/StringBuilder;
-
-    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v7, "Unknown package "
-
-    invoke-virtual {v3, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    invoke-virtual {v3, v12}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v3
-
-    invoke-static {v2, v3, v9}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
     goto/16 :goto_0
 
     :cond_1
-    :try_start_3
     invoke-interface {v8}, Landroid/database/Cursor;->close()V
 
     :cond_2
     move-object/from16 v0, p0
 
-    iget-object v2, v0, Lcom/android/launcher3/home/ManagedProfileHeuristic;->mContext:Landroid/content/Context;
-
-    invoke-virtual {v2}, Landroid/content/Context;->getPackageManager()Landroid/content/pm/PackageManager;
-
-    move-result-object v2
-
-    const/16 v3, 0x2000
-
-    invoke-virtual {v2, v12, v3}, Landroid/content/pm/PackageManager;->getPackageInfo(Ljava/lang/String;I)Landroid/content/pm/PackageInfo;
-
-    move-result-object v14
-
-    iget-wide v2, v14, Landroid/content/pm/PackageInfo;->firstInstallTime:J
-
-    move-object/from16 v0, p0
-
-    invoke-direct {v0, v10, v2, v3}, Lcom/android/launcher3/home/ManagedProfileHeuristic;->markForAddition(Lcom/android/launcher3/common/compat/LauncherActivityInfoCompat;J)V
+    invoke-direct {v0, v9}, Lcom/android/launcher3/home/ManagedProfileHeuristic;->markForAddition(Lcom/android/launcher3/common/compat/LauncherActivityInfoCompat;)V
 
     goto/16 :goto_0
 
@@ -1736,11 +1656,9 @@
     invoke-interface {v8}, Landroid/database/Cursor;->close()V
 
     throw v2
-    :try_end_3
-    .catch Landroid/content/pm/PackageManager$NameNotFoundException; {:try_start_3 .. :try_end_3} :catch_0
 
     :cond_3
-    if-eqz v11, :cond_4
+    if-eqz v10, :cond_4
 
     move-object/from16 v0, p0
 
@@ -1754,7 +1672,7 @@
 
     iget-object v3, v0, Lcom/android/launcher3/home/ManagedProfileHeuristic;->mPackageSetKey:Ljava/lang/String;
 
-    invoke-interface {v2, v3, v13}, Landroid/content/SharedPreferences$Editor;->putStringSet(Ljava/lang/String;Ljava/util/Set;)Landroid/content/SharedPreferences$Editor;
+    invoke-interface {v2, v3, v12}, Landroid/content/SharedPreferences$Editor;->putStringSet(Ljava/lang/String;Ljava/util/Set;)Landroid/content/SharedPreferences$Editor;
 
     move-result-object v2
 
@@ -1762,7 +1680,7 @@
 
     move-object/from16 v0, p0
 
-    invoke-direct {v0, v15}, Lcom/android/launcher3/home/ManagedProfileHeuristic;->finalizeAdditions(Z)V
+    invoke-direct {v0, v13}, Lcom/android/launcher3/home/ManagedProfileHeuristic;->finalizeAdditions(Z)V
 
     :cond_4
     return-void

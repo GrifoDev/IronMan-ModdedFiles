@@ -3,12 +3,12 @@
 .source "HomeController.java"
 
 # interfaces
-.implements Lcom/android/launcher3/common/base/item/ItemOperator;
+.implements Lcom/android/launcher3/common/model/DataLoader$ItemInfoFilter;
 
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/android/launcher3/home/HomeController;->updateShortcuts(Ljava/util/ArrayList;Lcom/android/launcher3/common/model/IconCache;)V
+    value = Lcom/android/launcher3/home/HomeController;->removeItemsByMatcher(Lcom/android/launcher3/util/ItemInfoMatcher;)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -20,24 +20,28 @@
 # instance fields
 .field final synthetic this$0:Lcom/android/launcher3/home/HomeController;
 
-.field final synthetic val$folderIconsToRefresh:Ljava/util/ArrayList;
+.field final synthetic val$children:Ljava/util/HashMap;
 
-.field final synthetic val$iconCache:Lcom/android/launcher3/common/model/IconCache;
+.field final synthetic val$childrenToRemove:Ljava/util/ArrayList;
 
-.field final synthetic val$updates:Ljava/util/HashSet;
+.field final synthetic val$folderAppsToRemove:Ljava/util/HashMap;
+
+.field final synthetic val$matcher:Lcom/android/launcher3/util/ItemInfoMatcher;
 
 
 # direct methods
-.method constructor <init>(Lcom/android/launcher3/home/HomeController;Ljava/util/HashSet;Lcom/android/launcher3/common/model/IconCache;Ljava/util/ArrayList;)V
+.method constructor <init>(Lcom/android/launcher3/home/HomeController;Lcom/android/launcher3/util/ItemInfoMatcher;Ljava/util/HashMap;Ljava/util/ArrayList;Ljava/util/HashMap;)V
     .locals 0
 
     iput-object p1, p0, Lcom/android/launcher3/home/HomeController$25;->this$0:Lcom/android/launcher3/home/HomeController;
 
-    iput-object p2, p0, Lcom/android/launcher3/home/HomeController$25;->val$updates:Ljava/util/HashSet;
+    iput-object p2, p0, Lcom/android/launcher3/home/HomeController$25;->val$matcher:Lcom/android/launcher3/util/ItemInfoMatcher;
 
-    iput-object p3, p0, Lcom/android/launcher3/home/HomeController$25;->val$iconCache:Lcom/android/launcher3/common/model/IconCache;
+    iput-object p3, p0, Lcom/android/launcher3/home/HomeController$25;->val$folderAppsToRemove:Ljava/util/HashMap;
 
-    iput-object p4, p0, Lcom/android/launcher3/home/HomeController$25;->val$folderIconsToRefresh:Ljava/util/ArrayList;
+    iput-object p4, p0, Lcom/android/launcher3/home/HomeController$25;->val$childrenToRemove:Ljava/util/ArrayList;
+
+    iput-object p5, p0, Lcom/android/launcher3/home/HomeController$25;->val$children:Ljava/util/HashMap;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -46,101 +50,86 @@
 
 
 # virtual methods
-.method public evaluate(Lcom/android/launcher3/common/base/item/ItemInfo;Landroid/view/View;Landroid/view/View;)Z
-    .locals 8
+.method public filterItem(Lcom/android/launcher3/common/base/item/ItemInfo;Lcom/android/launcher3/common/base/item/ItemInfo;Landroid/content/ComponentName;)Z
+    .locals 5
 
-    const/4 v4, 0x1
+    const/4 v2, 0x1
 
-    const/4 v5, 0x0
+    instance-of v3, p1, Lcom/android/launcher3/folder/FolderInfo;
 
-    instance-of v6, p1, Lcom/android/launcher3/common/base/item/IconInfo;
+    if-eqz v3, :cond_2
 
-    if-eqz v6, :cond_0
+    iget-object v3, p0, Lcom/android/launcher3/home/HomeController$25;->val$matcher:Lcom/android/launcher3/util/ItemInfoMatcher;
 
-    instance-of v6, p2, Lcom/android/launcher3/common/view/IconView;
+    invoke-virtual {v3, p2, p3}, Lcom/android/launcher3/util/ItemInfoMatcher;->matches(Lcom/android/launcher3/common/base/item/ItemInfo;Landroid/content/ComponentName;)Z
 
-    if-eqz v6, :cond_0
+    move-result v3
 
-    iget-object v6, p0, Lcom/android/launcher3/home/HomeController$25;->val$updates:Ljava/util/HashSet;
+    if-eqz v3, :cond_0
 
-    invoke-virtual {v6, p1}, Ljava/util/HashSet;->contains(Ljava/lang/Object;)Z
+    move-object v1, p1
 
-    move-result v6
+    check-cast v1, Lcom/android/launcher3/folder/FolderInfo;
 
-    if-eqz v6, :cond_0
+    iget-object v3, p0, Lcom/android/launcher3/home/HomeController$25;->val$folderAppsToRemove:Ljava/util/HashMap;
 
-    move-object v0, p1
+    invoke-virtual {v3, v1}, Ljava/util/HashMap;->containsKey(Ljava/lang/Object;)Z
 
-    check-cast v0, Lcom/android/launcher3/common/base/item/IconInfo;
+    move-result v3
 
-    move-object v1, p2
+    if-eqz v3, :cond_1
 
-    check-cast v1, Lcom/android/launcher3/common/view/IconView;
+    iget-object v3, p0, Lcom/android/launcher3/home/HomeController$25;->val$folderAppsToRemove:Ljava/util/HashMap;
 
-    invoke-virtual {v1}, Lcom/android/launcher3/common/view/IconView;->getIcon()Landroid/graphics/drawable/Drawable;
+    invoke-virtual {v3, v1}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
-    move-result-object v2
+    move-result-object v0
 
-    instance-of v6, v2, Lcom/android/launcher3/common/drawable/PreloadIconDrawable;
-
-    if-eqz v6, :cond_1
-
-    check-cast v2, Lcom/android/launcher3/common/drawable/PreloadIconDrawable;
-
-    invoke-virtual {v2}, Lcom/android/launcher3/common/drawable/PreloadIconDrawable;->hasNotCompleted()Z
-
-    move-result v6
-
-    if-eqz v6, :cond_1
-
-    move v3, v4
+    check-cast v0, Ljava/util/ArrayList;
 
     :goto_0
-    iget-object v6, p0, Lcom/android/launcher3/home/HomeController$25;->val$iconCache:Lcom/android/launcher3/common/model/IconCache;
+    check-cast p2, Lcom/android/launcher3/common/base/item/IconInfo;
 
-    invoke-virtual {v0}, Lcom/android/launcher3/common/base/item/IconInfo;->isPromise()Z
-
-    move-result v7
-
-    if-eq v7, v3, :cond_2
-
-    :goto_1
-    invoke-virtual {v1, v0, v6, v4}, Lcom/android/launcher3/common/view/IconView;->applyFromShortcutInfo(Lcom/android/launcher3/common/base/item/IconInfo;Lcom/android/launcher3/common/model/IconCache;Z)V
-
-    instance-of v4, p3, Lcom/android/launcher3/folder/view/FolderIconView;
-
-    if-eqz v4, :cond_0
-
-    iget v4, p1, Lcom/android/launcher3/common/base/item/ItemInfo;->rank:I
-
-    const/16 v6, 0x9
-
-    if-ge v4, v6, :cond_0
-
-    iget-object v4, p0, Lcom/android/launcher3/home/HomeController$25;->val$folderIconsToRefresh:Ljava/util/ArrayList;
-
-    invoke-virtual {v4, p3}, Ljava/util/ArrayList;->contains(Ljava/lang/Object;)Z
-
-    move-result v4
-
-    if-nez v4, :cond_0
-
-    iget-object v4, p0, Lcom/android/launcher3/home/HomeController$25;->val$folderIconsToRefresh:Ljava/util/ArrayList;
-
-    check-cast p3, Lcom/android/launcher3/folder/view/FolderIconView;
-
-    invoke-virtual {v4, p3}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+    invoke-virtual {v0, p2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     :cond_0
-    return v5
+    :goto_1
+    return v2
 
     :cond_1
-    move v3, v5
+    new-instance v0, Ljava/util/ArrayList;
+
+    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
+
+    iget-object v3, p0, Lcom/android/launcher3/home/HomeController$25;->val$folderAppsToRemove:Ljava/util/HashMap;
+
+    invoke-virtual {v3, v1, v0}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     goto :goto_0
 
     :cond_2
-    move v4, v5
+    iget-object v3, p0, Lcom/android/launcher3/home/HomeController$25;->val$matcher:Lcom/android/launcher3/util/ItemInfoMatcher;
+
+    invoke-virtual {v3, p2, p3}, Lcom/android/launcher3/util/ItemInfoMatcher;->matches(Lcom/android/launcher3/common/base/item/ItemInfo;Landroid/content/ComponentName;)Z
+
+    move-result v3
+
+    if-eqz v3, :cond_3
+
+    iget-object v3, p0, Lcom/android/launcher3/home/HomeController$25;->val$childrenToRemove:Ljava/util/ArrayList;
+
+    iget-object v4, p0, Lcom/android/launcher3/home/HomeController$25;->val$children:Ljava/util/HashMap;
+
+    invoke-virtual {v4, p2}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v4
+
+    invoke-virtual {v3, v4}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+
+    goto :goto_1
+
+    :cond_3
+    const/4 v2, 0x0
 
     goto :goto_1
 .end method

@@ -27,6 +27,9 @@
 .method public abstract getDropTarget()Lcom/android/launcher3/common/drag/DropTarget;
 .end method
 
+.method public abstract getScreenDivision()Lcom/android/launcher3/util/event/ScreenDivision;
+.end method
+
 .method public abstract getTrayBgBlurAmount()F
 .end method
 

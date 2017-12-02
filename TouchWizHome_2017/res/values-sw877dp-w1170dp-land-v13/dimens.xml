@@ -11,6 +11,8 @@
     <dimen name="appsPicker_icon_text_size">17.0dip</dimen>
     <dimen name="badge_text_size">17.0dip</dimen>
     <dimen name="drop_target_bar_height">77.0dip</dimen>
+    <dimen name="home_default_cellHeight_port">114.0dip</dimen>
+    <dimen name="home_default_cellWidth_port">171.0dip</dimen>
     <dimen name="home_workspace_animate_offsetY_overview">5.0dip</dimen>
     <dimen name="home_workspace_indicator_margin_bottom_overview">145.0dip</dimen>
     <dimen name="multi_select_pannel_height">69.0dip</dimen>
@@ -74,16 +76,21 @@
     <dimen name="widget_page_padding_left">58.0dip</dimen>
     <dimen name="widget_page_padding_right">58.0dip</dimen>
     <dimen name="widget_page_padding_top">0.0dip</dimen>
+    <dimen name="appsearch_menu_searchHeight">44.0dip</dimen>
+    <dimen name="tidyup_container_height">64.0dip</dimen>
+    <dimen name="tidyup_container_margin_top">27.0dip</dimen>
     <dimen name="widget_folder_page_cellgap_x">41.0dip</dimen>
     <dimen name="widget_folder_page_cellgap_y">41.0dip</dimen>
     <dimen name="widget_folder_pageindicator_container_height">72.0dip</dimen>
     <dimen name="widget_page_indicator_bottom_margin">43.0dip</dimen>
     <dimen name="widget_page_top_margin">112.0dip</dimen>
+    <dimen name="appsearch_container_Height">44.0dip</dimen>
     <dimen name="overview_home_button_size">50.0dip</dimen>
     <dimen name="overview_pannel_options_button_drawable_size">49.0dip</dimen>
     <dimen name="overview_pannel_options_button_width">154.0dip</dimen>
     <dimen name="widget_title_bottom_padding">11.0dip</dimen>
     <dimen name="apps_hint_page_width">29.0dip</dimen>
+    <dimen name="apps_search_titlebar_margin_left">88.0dip</dimen>
     <dimen name="drop_target_cancel_text_size">15.0dip</dimen>
     <dimen name="drop_target_margin_top">0.0dip</dimen>
     <dimen name="multi_select_help_dialog_margin_left">64.0dip</dimen>
@@ -99,6 +106,8 @@
     <dimen name="overview_zeropage_switch_text_padding_left">16.0dip</dimen>
     <dimen name="overview_zeropage_switch_text_padding_right">11.0dip</dimen>
     <dimen name="overview_zeropage_switch_text_size">19.0dip</dimen>
-    <dimen name="status_bar_height">40.0dip</dimen>
+    <dimen name="status_bar_height">30.0dip</dimen>
+    <dimen name="home_6x6_cellHeight_port">96.0dip</dimen>
+    <dimen name="home_6x6_cellWidth_port">171.0dip</dimen>
     <dimen name="app_icon_size">82.0dip</dimen>
 </resources>

@@ -106,6 +106,7 @@
     <dimen name="apps_search_titlebar_padding_top">0.0dip</dimen>
     <dimen name="appsearch_menu_searchHeight">36.0dip</dimen>
     <dimen name="tidyup_container_height">43.0dip</dimen>
+    <item type="dimen" name="tidyup_container_margin_top">@dimen/status_bar_height</item>
     <item type="dimen" name="widget_folder_page_cellgap_x">@dimen/widget_page_cellgap_x</item>
     <dimen name="widget_folder_page_cellgap_y">33.0dip</dimen>
     <dimen name="widget_folder_pageindicator_container_height">23.0dip</dimen>

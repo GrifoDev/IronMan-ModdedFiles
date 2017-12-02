@@ -8,7 +8,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/android/launcher3/allapps/controller/AppsController;->onOptionSelectedSearchRecommend()V
+    value = Lcom/android/launcher3/allapps/controller/AppsController;->deleteFolder(Lcom/android/launcher3/folder/FolderInfo;)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -35,19 +35,27 @@
 
 # virtual methods
 .method public run()V
-    .locals 3
+    .locals 2
 
     iget-object v0, p0, Lcom/android/launcher3/allapps/controller/AppsController$14;->this$0:Lcom/android/launcher3/allapps/controller/AppsController;
 
-    invoke-virtual {v0}, Lcom/android/launcher3/allapps/controller/AppsController;->searchSettingCheck()V
+    invoke-static {v0}, Lcom/android/launcher3/allapps/controller/AppsController;->access$000(Lcom/android/launcher3/allapps/controller/AppsController;)Lcom/android/launcher3/allapps/view/AppsPagedView;
 
-    iget-object v0, p0, Lcom/android/launcher3/allapps/controller/AppsController$14;->this$0:Lcom/android/launcher3/allapps/controller/AppsController;
+    move-result-object v0
 
-    const/4 v1, 0x3
+    iget-object v1, p0, Lcom/android/launcher3/allapps/controller/AppsController$14;->this$0:Lcom/android/launcher3/allapps/controller/AppsController;
 
-    const/4 v2, 0x0
+    invoke-static {v1}, Lcom/android/launcher3/allapps/controller/AppsController;->access$000(Lcom/android/launcher3/allapps/controller/AppsController;)Lcom/android/launcher3/allapps/view/AppsPagedView;
 
-    invoke-virtual {v0, v1, v2}, Lcom/android/launcher3/allapps/controller/AppsController;->changeState(IZ)Z
+    move-result-object v1
+
+    invoke-virtual {v1}, Lcom/android/launcher3/allapps/view/AppsPagedView;->getPageCount()I
+
+    move-result v1
+
+    add-int/lit8 v1, v1, -0x1
+
+    invoke-virtual {v0, v1}, Lcom/android/launcher3/allapps/view/AppsPagedView;->snapToPageImmediately(I)V
 
     return-void
 .end method

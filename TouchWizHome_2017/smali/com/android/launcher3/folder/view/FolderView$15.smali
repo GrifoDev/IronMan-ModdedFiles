@@ -66,7 +66,7 @@
 
     move-result-object v2
 
-    invoke-static {v0, v1, v2}, Lcom/android/launcher3/folder/view/FolderView;->access$1200(Lcom/android/launcher3/folder/view/FolderView;ILjava/lang/String;)V
+    invoke-static {v0, v1, v2}, Lcom/android/launcher3/folder/view/FolderView;->access$1300(Lcom/android/launcher3/folder/view/FolderView;ILjava/lang/String;)V
 
     iget-object v0, p0, Lcom/android/launcher3/folder/view/FolderView$15;->this$0:Lcom/android/launcher3/folder/view/FolderView;
 

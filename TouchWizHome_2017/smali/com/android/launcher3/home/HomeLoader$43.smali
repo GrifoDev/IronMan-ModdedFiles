@@ -57,7 +57,7 @@
 .method public run()V
     .locals 19
 
-    invoke-static {}, Lcom/android/launcher3/home/HomeLoader;->access$11300()Ljava/lang/Object;
+    invoke-static {}, Lcom/android/launcher3/home/HomeLoader;->access$11600()Ljava/lang/Object;
 
     move-result-object v13
 
@@ -68,7 +68,7 @@
 
     iget-object v12, v0, Lcom/android/launcher3/home/HomeLoader$43;->this$0:Lcom/android/launcher3/home/HomeLoader;
 
-    invoke-static {v12}, Lcom/android/launcher3/home/HomeLoader;->access$11400(Lcom/android/launcher3/home/HomeLoader;)Ljava/util/ArrayList;
+    invoke-static {v12}, Lcom/android/launcher3/home/HomeLoader;->access$11700(Lcom/android/launcher3/home/HomeLoader;)Ljava/util/ArrayList;
 
     move-result-object v12
 
@@ -128,7 +128,7 @@
 
     iget-object v12, v0, Lcom/android/launcher3/home/HomeLoader$43;->this$0:Lcom/android/launcher3/home/HomeLoader;
 
-    invoke-static {v12}, Lcom/android/launcher3/home/HomeLoader;->access$11500(Lcom/android/launcher3/home/HomeLoader;)Ljava/util/ArrayList;
+    invoke-static {v12}, Lcom/android/launcher3/home/HomeLoader;->access$11800(Lcom/android/launcher3/home/HomeLoader;)Ljava/util/ArrayList;
 
     move-result-object v12
 
@@ -202,7 +202,7 @@
 
     iget-object v12, v0, Lcom/android/launcher3/home/HomeLoader$43;->this$0:Lcom/android/launcher3/home/HomeLoader;
 
-    invoke-static {v12}, Lcom/android/launcher3/home/HomeLoader;->access$11600(Lcom/android/launcher3/home/HomeLoader;)Ljava/util/HashMap;
+    invoke-static {v12}, Lcom/android/launcher3/home/HomeLoader;->access$11900(Lcom/android/launcher3/home/HomeLoader;)Ljava/util/HashMap;
 
     move-result-object v12
 
@@ -347,7 +347,7 @@
 
     invoke-direct {v14, v0, v2, v7}, Lcom/android/launcher3/home/HomeLoader$43$1;-><init>(Lcom/android/launcher3/home/HomeLoader$43;Lcom/android/launcher3/home/HomeLoader$HomeCallbacks;Ljava/util/ArrayList;)V
 
-    invoke-static {v12, v14}, Lcom/android/launcher3/home/HomeLoader;->access$11700(Lcom/android/launcher3/home/HomeLoader;Ljava/lang/Runnable;)V
+    invoke-static {v12, v14}, Lcom/android/launcher3/home/HomeLoader;->access$12000(Lcom/android/launcher3/home/HomeLoader;Ljava/lang/Runnable;)V
 
     :cond_5
     invoke-virtual {v4}, Ljava/util/ArrayList;->isEmpty()Z
@@ -360,7 +360,7 @@
 
     iget-object v12, v0, Lcom/android/launcher3/home/HomeLoader$43;->this$0:Lcom/android/launcher3/home/HomeLoader;
 
-    invoke-static {}, Lcom/android/launcher3/home/HomeLoader;->access$11800()Landroid/content/Context;
+    invoke-static {}, Lcom/android/launcher3/home/HomeLoader;->access$12100()Landroid/content/Context;
 
     move-result-object v14
 

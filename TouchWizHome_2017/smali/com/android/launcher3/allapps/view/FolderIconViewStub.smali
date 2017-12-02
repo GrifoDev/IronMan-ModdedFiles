@@ -581,15 +581,15 @@
     invoke-static {v5, v6}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
     :cond_2
-    if-nez p3, :cond_4
+    if-nez p3, :cond_5
 
-    if-eqz v3, :cond_4
+    if-eqz v3, :cond_5
 
-    if-eqz v4, :cond_4
+    if-eqz v4, :cond_5
 
     instance-of v5, v4, Landroid/view/ViewGroup;
 
-    if-eqz v5, :cond_4
+    if-eqz v5, :cond_5
 
     move-object v2, v4
 
@@ -605,8 +605,21 @@
 
     move-result-object v1
 
-    if-eqz v1, :cond_3
+    if-eqz v1, :cond_4
 
+    instance-of v5, v1, Lcom/android/launcher3/common/base/view/CellLayout$LayoutParams;
+
+    if-eqz v5, :cond_3
+
+    move-object v5, v1
+
+    check-cast v5, Lcom/android/launcher3/common/base/view/CellLayout$LayoutParams;
+
+    const/4 v6, 0x1
+
+    iput-boolean v6, v5, Lcom/android/launcher3/common/base/view/CellLayout$LayoutParams;->isLockedToGrid:Z
+
+    :cond_3
     invoke-virtual {v2, v3, v0, v1}, Landroid/view/ViewGroup;->addView(Landroid/view/View;ILandroid/view/ViewGroup$LayoutParams;)V
 
     :goto_1
@@ -631,12 +644,12 @@
 
     goto :goto_0
 
-    :cond_3
+    :cond_4
     invoke-virtual {v2, v3, v0}, Landroid/view/ViewGroup;->addView(Landroid/view/View;I)V
 
     goto :goto_1
 
-    :cond_4
+    :cond_5
     const-string v5, "FolderIconViewStub"
 
     const-string v6, "replaceView : already replaced or stub removed"

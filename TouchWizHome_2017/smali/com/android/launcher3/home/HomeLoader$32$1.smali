@@ -51,7 +51,7 @@
 
     iget-object v2, p0, Lcom/android/launcher3/home/HomeLoader$32$1;->val$oldCallbacks:Lcom/android/launcher3/home/HomeLoader$HomeCallbacks;
 
-    invoke-static {}, Lcom/android/launcher3/home/HomeLoader;->access$9300()Lcom/android/launcher3/LauncherModel;
+    invoke-static {}, Lcom/android/launcher3/home/HomeLoader;->access$9600()Lcom/android/launcher3/LauncherModel;
 
     move-result-object v3
 
@@ -59,7 +59,7 @@
 
     move-result-object v3
 
-    invoke-static {v1, v2, v3}, Lcom/android/launcher3/home/HomeLoader;->access$4900(Lcom/android/launcher3/home/HomeLoader;Lcom/android/launcher3/home/HomeLoader$HomeCallbacks;Lcom/android/launcher3/common/model/DataLoader$DataLoaderState;)Lcom/android/launcher3/home/HomeLoader$HomeCallbacks;
+    invoke-static {v1, v2, v3}, Lcom/android/launcher3/home/HomeLoader;->access$5200(Lcom/android/launcher3/home/HomeLoader;Lcom/android/launcher3/home/HomeLoader$HomeCallbacks;Lcom/android/launcher3/common/model/DataLoader$DataLoaderState;)Lcom/android/launcher3/home/HomeLoader$HomeCallbacks;
 
     move-result-object v0
 

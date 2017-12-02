@@ -8,7 +8,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/android/launcher3/home/HomeController;->removeItemsByMatcher(Lcom/android/launcher3/util/ItemInfoMatcher;)V
+    value = Lcom/android/launcher3/home/HomeController;->removeItemsByComponentName(Ljava/util/HashSet;Lcom/android/launcher3/common/compat/UserHandleCompat;)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -22,16 +22,16 @@
 
 .field final synthetic val$child:Landroid/view/View;
 
-.field final synthetic val$layoutParent:Lcom/android/launcher3/common/base/view/CellLayout;
+.field final synthetic val$item:Lcom/android/launcher3/common/base/item/ItemInfo;
 
 
 # direct methods
-.method constructor <init>(Lcom/android/launcher3/home/HomeController;Lcom/android/launcher3/common/base/view/CellLayout;Landroid/view/View;)V
+.method constructor <init>(Lcom/android/launcher3/home/HomeController;Lcom/android/launcher3/common/base/item/ItemInfo;Landroid/view/View;)V
     .locals 0
 
     iput-object p1, p0, Lcom/android/launcher3/home/HomeController$24;->this$0:Lcom/android/launcher3/home/HomeController;
 
-    iput-object p2, p0, Lcom/android/launcher3/home/HomeController$24;->val$layoutParent:Lcom/android/launcher3/common/base/view/CellLayout;
+    iput-object p2, p0, Lcom/android/launcher3/home/HomeController$24;->val$item:Lcom/android/launcher3/common/base/item/ItemInfo;
 
     iput-object p3, p0, Lcom/android/launcher3/home/HomeController$24;->val$child:Landroid/view/View;
 
@@ -49,13 +49,15 @@
 .end method
 
 .method public onAnimationEnd(Landroid/animation/Animator;)V
-    .locals 2
+    .locals 3
 
-    iget-object v0, p0, Lcom/android/launcher3/home/HomeController$24;->val$layoutParent:Lcom/android/launcher3/common/base/view/CellLayout;
+    iget-object v0, p0, Lcom/android/launcher3/home/HomeController$24;->this$0:Lcom/android/launcher3/home/HomeController;
 
-    iget-object v1, p0, Lcom/android/launcher3/home/HomeController$24;->val$child:Landroid/view/View;
+    iget-object v1, p0, Lcom/android/launcher3/home/HomeController$24;->val$item:Lcom/android/launcher3/common/base/item/ItemInfo;
 
-    invoke-virtual {v0, v1}, Lcom/android/launcher3/common/base/view/CellLayout;->removeViewInLayout(Landroid/view/View;)V
+    iget-object v2, p0, Lcom/android/launcher3/home/HomeController$24;->val$child:Landroid/view/View;
+
+    invoke-virtual {v0, v1, v2}, Lcom/android/launcher3/home/HomeController;->removeHomeOrFolderItem(Lcom/android/launcher3/common/base/item/ItemInfo;Landroid/view/View;)Z
 
     return-void
 .end method

@@ -375,7 +375,7 @@
 
     if-nez v2, :cond_0
 
-    const v2, 0x7f090185
+    const v2, 0x7f090192
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -546,12 +546,12 @@
     return v0
 .end method
 
-.method static synthetic access$1000(Lcom/android/launcher3/folder/view/FolderView;)V
-    .locals 0
+.method static synthetic access$1000(Lcom/android/launcher3/folder/view/FolderView;)Lcom/android/launcher3/folder/view/FolderIconView;
+    .locals 1
 
-    invoke-direct {p0}, Lcom/android/launcher3/folder/view/FolderView;->replaceFolderWithFinalItem()V
+    iget-object v0, p0, Lcom/android/launcher3/folder/view/FolderView;->mFolderIconView:Lcom/android/launcher3/folder/view/FolderIconView;
 
-    return-void
+    return-object v0
 .end method
 
 .method static synthetic access$102(Lcom/android/launcher3/folder/view/FolderView;Z)Z
@@ -562,7 +562,15 @@
     return p1
 .end method
 
-.method static synthetic access$1100(Lcom/android/launcher3/folder/view/FolderView;)Lcom/android/launcher3/folder/view/FolderPagedView;
+.method static synthetic access$1100(Lcom/android/launcher3/folder/view/FolderView;)V
+    .locals 0
+
+    invoke-direct {p0}, Lcom/android/launcher3/folder/view/FolderView;->replaceFolderWithFinalItem()V
+
+    return-void
+.end method
+
+.method static synthetic access$1200(Lcom/android/launcher3/folder/view/FolderView;)Lcom/android/launcher3/folder/view/FolderPagedView;
     .locals 1
 
     iget-object v0, p0, Lcom/android/launcher3/folder/view/FolderView;->mContent:Lcom/android/launcher3/folder/view/FolderPagedView;
@@ -570,7 +578,7 @@
     return-object v0
 .end method
 
-.method static synthetic access$1200(Lcom/android/launcher3/folder/view/FolderView;ILjava/lang/String;)V
+.method static synthetic access$1300(Lcom/android/launcher3/folder/view/FolderView;ILjava/lang/String;)V
     .locals 0
 
     invoke-direct {p0, p1, p2}, Lcom/android/launcher3/folder/view/FolderView;->sendCustomAccessibilityEvent(ILjava/lang/String;)V
@@ -578,7 +586,7 @@
     return-void
 .end method
 
-.method static synthetic access$1400(Lcom/android/launcher3/folder/view/FolderView;)I
+.method static synthetic access$1500(Lcom/android/launcher3/folder/view/FolderView;)I
     .locals 1
 
     iget v0, p0, Lcom/android/launcher3/folder/view/FolderView;->mEmptyCellRank:I
@@ -586,7 +594,7 @@
     return v0
 .end method
 
-.method static synthetic access$1402(Lcom/android/launcher3/folder/view/FolderView;I)I
+.method static synthetic access$1502(Lcom/android/launcher3/folder/view/FolderView;I)I
     .locals 0
 
     iput p1, p0, Lcom/android/launcher3/folder/view/FolderView;->mEmptyCellRank:I
@@ -594,7 +602,7 @@
     return p1
 .end method
 
-.method static synthetic access$1500(Lcom/android/launcher3/folder/view/FolderView;)I
+.method static synthetic access$1600(Lcom/android/launcher3/folder/view/FolderView;)I
     .locals 1
 
     iget v0, p0, Lcom/android/launcher3/folder/view/FolderView;->mTargetRank:I
@@ -602,7 +610,7 @@
     return v0
 .end method
 
-.method static synthetic access$1600(Lcom/android/launcher3/folder/view/FolderView;)Lcom/android/launcher3/common/base/controller/ControllerBase;
+.method static synthetic access$1700(Lcom/android/launcher3/folder/view/FolderView;)Lcom/android/launcher3/common/base/controller/ControllerBase;
     .locals 1
 
     iget-object v0, p0, Lcom/android/launcher3/folder/view/FolderView;->mController:Lcom/android/launcher3/common/base/controller/ControllerBase;
@@ -610,7 +618,31 @@
     return-object v0
 .end method
 
-.method static synthetic access$1700(Lcom/android/launcher3/folder/view/FolderView;)Ljava/util/ArrayList;
+.method static synthetic access$1800(Lcom/android/launcher3/folder/view/FolderView;)Lcom/android/launcher3/common/multiselect/MultiSelectManager;
+    .locals 1
+
+    iget-object v0, p0, Lcom/android/launcher3/folder/view/FolderView;->mMultiSelectManager:Lcom/android/launcher3/common/multiselect/MultiSelectManager;
+
+    return-object v0
+.end method
+
+.method static synthetic access$1900(Lcom/android/launcher3/folder/view/FolderView;)Lcom/android/launcher3/Launcher;
+    .locals 1
+
+    iget-object v0, p0, Lcom/android/launcher3/folder/view/FolderView;->mLauncher:Lcom/android/launcher3/Launcher;
+
+    return-object v0
+.end method
+
+.method static synthetic access$200(Lcom/android/launcher3/folder/view/FolderView;)I
+    .locals 1
+
+    iget v0, p0, Lcom/android/launcher3/folder/view/FolderView;->mFadeInOutDuration:I
+
+    return v0
+.end method
+
+.method static synthetic access$2000(Lcom/android/launcher3/folder/view/FolderView;)Ljava/util/ArrayList;
     .locals 1
 
     iget-object v0, p0, Lcom/android/launcher3/folder/view/FolderView;->mItemsInReadingOrder:Ljava/util/ArrayList;
@@ -618,7 +650,7 @@
     return-object v0
 .end method
 
-.method static synthetic access$1800(Lcom/android/launcher3/folder/view/FolderView;)I
+.method static synthetic access$2100(Lcom/android/launcher3/folder/view/FolderView;)I
     .locals 1
 
     iget v0, p0, Lcom/android/launcher3/folder/view/FolderView;->mCurrentScrollDir:I
@@ -626,7 +658,7 @@
     return v0
 .end method
 
-.method static synthetic access$1802(Lcom/android/launcher3/folder/view/FolderView;I)I
+.method static synthetic access$2102(Lcom/android/launcher3/folder/view/FolderView;I)I
     .locals 0
 
     iput p1, p0, Lcom/android/launcher3/folder/view/FolderView;->mCurrentScrollDir:I
@@ -634,7 +666,7 @@
     return p1
 .end method
 
-.method static synthetic access$1902(Lcom/android/launcher3/folder/view/FolderView;I)I
+.method static synthetic access$2202(Lcom/android/launcher3/folder/view/FolderView;I)I
     .locals 0
 
     iput p1, p0, Lcom/android/launcher3/folder/view/FolderView;->mScrollHintDir:I
@@ -642,15 +674,7 @@
     return p1
 .end method
 
-.method static synthetic access$200(Lcom/android/launcher3/folder/view/FolderView;)Lcom/android/launcher3/folder/view/FolderNameEditText;
-    .locals 1
-
-    iget-object v0, p0, Lcom/android/launcher3/folder/view/FolderView;->mFolderName:Lcom/android/launcher3/folder/view/FolderNameEditText;
-
-    return-object v0
-.end method
-
-.method static synthetic access$2000(Lcom/android/launcher3/folder/view/FolderView;)Lcom/android/launcher3/util/alarm/Alarm;
+.method static synthetic access$2300(Lcom/android/launcher3/folder/view/FolderView;)Lcom/android/launcher3/util/alarm/Alarm;
     .locals 1
 
     iget-object v0, p0, Lcom/android/launcher3/folder/view/FolderView;->mScrollPauseAlarm:Lcom/android/launcher3/util/alarm/Alarm;
@@ -658,7 +682,7 @@
     return-object v0
 .end method
 
-.method static synthetic access$2100(Lcom/android/launcher3/folder/view/FolderView;Lcom/android/launcher3/common/drag/DropTarget$DragObject;I)V
+.method static synthetic access$2400(Lcom/android/launcher3/folder/view/FolderView;Lcom/android/launcher3/common/drag/DropTarget$DragObject;I)V
     .locals 0
 
     invoke-direct {p0, p1, p2}, Lcom/android/launcher3/folder/view/FolderView;->onDragOver(Lcom/android/launcher3/common/drag/DropTarget$DragObject;I)V
@@ -666,7 +690,15 @@
     return-void
 .end method
 
-.method static synthetic access$300(Lcom/android/launcher3/folder/view/FolderView;)Landroid/view/inputmethod/InputMethodManager;
+.method static synthetic access$300(Lcom/android/launcher3/folder/view/FolderView;)Lcom/android/launcher3/folder/view/FolderNameEditText;
+    .locals 1
+
+    iget-object v0, p0, Lcom/android/launcher3/folder/view/FolderView;->mFolderName:Lcom/android/launcher3/folder/view/FolderNameEditText;
+
+    return-object v0
+.end method
+
+.method static synthetic access$400(Lcom/android/launcher3/folder/view/FolderView;)Landroid/view/inputmethod/InputMethodManager;
     .locals 1
 
     iget-object v0, p0, Lcom/android/launcher3/folder/view/FolderView;->mInputMethodManager:Landroid/view/inputmethod/InputMethodManager;
@@ -674,7 +706,7 @@
     return-object v0
 .end method
 
-.method static synthetic access$400(Lcom/android/launcher3/folder/view/FolderView;Z)V
+.method static synthetic access$500(Lcom/android/launcher3/folder/view/FolderView;Z)V
     .locals 0
 
     invoke-direct {p0, p1}, Lcom/android/launcher3/folder/view/FolderView;->doneEditingFolderName(Z)V
@@ -682,7 +714,7 @@
     return-void
 .end method
 
-.method static synthetic access$500(Lcom/android/launcher3/folder/view/FolderView;)Lcom/android/launcher3/folder/FolderInfo;
+.method static synthetic access$600(Lcom/android/launcher3/folder/view/FolderView;)Lcom/android/launcher3/folder/FolderInfo;
     .locals 1
 
     iget-object v0, p0, Lcom/android/launcher3/folder/view/FolderView;->mInfo:Lcom/android/launcher3/folder/FolderInfo;
@@ -690,7 +722,7 @@
     return-object v0
 .end method
 
-.method static synthetic access$600(Lcom/android/launcher3/folder/view/FolderView;)Landroid/widget/ImageView;
+.method static synthetic access$700(Lcom/android/launcher3/folder/view/FolderView;)Landroid/widget/ImageView;
     .locals 1
 
     iget-object v0, p0, Lcom/android/launcher3/folder/view/FolderView;->mFolderOptionButton:Landroid/widget/ImageView;
@@ -698,7 +730,7 @@
     return-object v0
 .end method
 
-.method static synthetic access$700(Lcom/android/launcher3/folder/view/FolderView;Landroid/view/View;)Lcom/android/launcher3/folder/view/FolderView$FolderColor;
+.method static synthetic access$800(Lcom/android/launcher3/folder/view/FolderView;Landroid/view/View;)Lcom/android/launcher3/folder/view/FolderView$FolderColor;
     .locals 1
 
     invoke-direct {p0, p1}, Lcom/android/launcher3/folder/view/FolderView;->getFolderColorByView(Landroid/view/View;)Lcom/android/launcher3/folder/view/FolderView$FolderColor;
@@ -708,20 +740,12 @@
     return-object v0
 .end method
 
-.method static synthetic access$800(Lcom/android/launcher3/folder/view/FolderView;Lcom/android/launcher3/folder/view/FolderView$FolderColor;Z)V
+.method static synthetic access$900(Lcom/android/launcher3/folder/view/FolderView;Lcom/android/launcher3/folder/view/FolderView$FolderColor;Z)V
     .locals 0
 
     invoke-direct {p0, p1, p2}, Lcom/android/launcher3/folder/view/FolderView;->setFolderColor(Lcom/android/launcher3/folder/view/FolderView$FolderColor;Z)V
 
     return-void
-.end method
-
-.method static synthetic access$900(Lcom/android/launcher3/folder/view/FolderView;)Lcom/android/launcher3/folder/view/FolderIconView;
-    .locals 1
-
-    iget-object v0, p0, Lcom/android/launcher3/folder/view/FolderView;->mFolderIconView:Lcom/android/launcher3/folder/view/FolderIconView;
-
-    return-object v0
 .end method
 
 .method private animateAppear(Landroid/view/View;)V
@@ -900,9 +924,9 @@
     invoke-virtual {v0, v2, v3}, Landroid/view/animation/Animation;->setDuration(J)V
 
     :cond_1
-    new-instance v2, Lcom/android/launcher3/folder/view/FolderView$22;
+    new-instance v2, Lcom/android/launcher3/folder/view/FolderView$23;
 
-    invoke-direct {v2, p0, p1, p2}, Lcom/android/launcher3/folder/view/FolderView$22;-><init>(Lcom/android/launcher3/folder/view/FolderView;Landroid/view/View;Z)V
+    invoke-direct {v2, p0, p1, p2}, Lcom/android/launcher3/folder/view/FolderView$23;-><init>(Lcom/android/launcher3/folder/view/FolderView;Landroid/view/View;Z)V
 
     invoke-virtual {v0, v2}, Landroid/view/animation/Animation;->setAnimationListener(Landroid/view/animation/Animation$AnimationListener;)V
 
@@ -1653,13 +1677,19 @@
     if-eqz p1, :cond_2
 
     :cond_2
-    invoke-virtual {p0}, Lcom/android/launcher3/folder/view/FolderView;->requestFocus()Z
+    iget-object v1, p0, Lcom/android/launcher3/folder/view/FolderView;->mFolderName:Lcom/android/launcher3/folder/view/FolderNameEditText;
 
-    iput-boolean v11, p0, Lcom/android/launcher3/folder/view/FolderView;->mNeedToShowCursor:Z
+    invoke-virtual {v1, v11}, Lcom/android/launcher3/folder/view/FolderNameEditText;->setFocusableInTouchMode(Z)V
 
     iget-object v1, p0, Lcom/android/launcher3/folder/view/FolderView;->mFolderName:Lcom/android/launcher3/folder/view/FolderNameEditText;
 
-    invoke-virtual {v1, v11}, Lcom/android/launcher3/folder/view/FolderNameEditText;->setCursorVisible(Z)V
+    invoke-virtual {v1}, Lcom/android/launcher3/folder/view/FolderNameEditText;->clearFocus()V
+
+    iget-object v1, p0, Lcom/android/launcher3/folder/view/FolderView;->mFolderName:Lcom/android/launcher3/folder/view/FolderNameEditText;
+
+    invoke-virtual {v1, v6}, Lcom/android/launcher3/folder/view/FolderNameEditText;->setFocusableInTouchMode(Z)V
+
+    iput-boolean v11, p0, Lcom/android/launcher3/folder/view/FolderView;->mNeedToShowCursor:Z
 
     iget-object v1, p0, Lcom/android/launcher3/folder/view/FolderView;->mFolderName:Lcom/android/launcher3/folder/view/FolderNameEditText;
 
@@ -3743,7 +3773,7 @@
 
     if-eqz p1, :cond_1
 
-    const v2, 0x7f090189
+    const v2, 0x7f090196
 
     :goto_0
     const/16 v3, 0x8
@@ -3774,7 +3804,7 @@
     return-void
 
     :cond_1
-    const v2, 0x7f090188
+    const v2, 0x7f090195
 
     goto :goto_0
 .end method
@@ -4163,7 +4193,7 @@
 
     move-result v8
 
-    const v20, 0x7f0a0172
+    const v20, 0x7f0a0177
 
     move/from16 v0, v20
 
@@ -4531,7 +4561,7 @@
 
     move-result-object v8
 
-    const v9, 0x7f0900ad
+    const v9, 0x7f0900af
 
     invoke-virtual {v8, v9}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -5793,6 +5823,14 @@
     return-object v0
 .end method
 
+.method public getFolderNameView()Lcom/android/launcher3/folder/view/FolderNameEditText;
+    .locals 1
+
+    iget-object v0, p0, Lcom/android/launcher3/folder/view/FolderView;->mFolderName:Lcom/android/launcher3/folder/view/FolderNameEditText;
+
+    return-object v0
+.end method
+
 .method public getFolderState()I
     .locals 2
 
@@ -5921,9 +5959,9 @@
 
     iget-object v0, p0, Lcom/android/launcher3/folder/view/FolderView;->mContent:Lcom/android/launcher3/folder/view/FolderPagedView;
 
-    new-instance v1, Lcom/android/launcher3/folder/view/FolderView$21;
+    new-instance v1, Lcom/android/launcher3/folder/view/FolderView$22;
 
-    invoke-direct {v1, p0}, Lcom/android/launcher3/folder/view/FolderView$21;-><init>(Lcom/android/launcher3/folder/view/FolderView;)V
+    invoke-direct {v1, p0}, Lcom/android/launcher3/folder/view/FolderView$22;-><init>(Lcom/android/launcher3/folder/view/FolderView;)V
 
     invoke-virtual {v0, v1}, Lcom/android/launcher3/folder/view/FolderPagedView;->iterateOverItems(Lcom/android/launcher3/common/base/item/ItemOperator;)Landroid/view/View;
 
@@ -6137,9 +6175,9 @@
 
     iget-object v0, p0, Lcom/android/launcher3/folder/view/FolderView;->mContent:Lcom/android/launcher3/folder/view/FolderPagedView;
 
-    new-instance v1, Lcom/android/launcher3/folder/view/FolderView$20;
+    new-instance v1, Lcom/android/launcher3/folder/view/FolderView$21;
 
-    invoke-direct {v1, p0, p1}, Lcom/android/launcher3/folder/view/FolderView$20;-><init>(Lcom/android/launcher3/folder/view/FolderView;Lcom/android/launcher3/common/base/item/IconInfo;)V
+    invoke-direct {v1, p0, p1}, Lcom/android/launcher3/folder/view/FolderView$21;-><init>(Lcom/android/launcher3/folder/view/FolderView;Lcom/android/launcher3/common/base/item/IconInfo;)V
 
     invoke-virtual {v0, v1}, Lcom/android/launcher3/folder/view/FolderPagedView;->iterateOverItems(Lcom/android/launcher3/common/base/item/ItemOperator;)Landroid/view/View;
 
@@ -6527,14 +6565,14 @@
 
     if-eqz v6, :cond_5
 
-    const v6, 0x7f090196
+    const v6, 0x7f0901a3
 
     invoke-virtual {v3, v6}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
     move-result-object v4
 
     :goto_1
-    const v6, 0x7f090121
+    const v6, 0x7f09012a
 
     invoke-virtual {v3, v6}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -6549,7 +6587,7 @@
     goto/16 :goto_0
 
     :cond_5
-    const v6, 0x7f0901a2
+    const v6, 0x7f0901af
 
     invoke-virtual {v3, v6}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -7289,7 +7327,7 @@
 
     move-result-object v3
 
-    const v5, 0x7f0900ca
+    const v5, 0x7f0900d2
 
     invoke-virtual {v3, v5}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -8297,351 +8335,407 @@
 .end method
 
 .method protected onFinishInflate()V
-    .locals 7
+    .locals 9
 
-    const/4 v6, 0x0
+    const/4 v8, 0x0
+
+    const/4 v7, 0x1
 
     invoke-super {p0}, Landroid/widget/FrameLayout;->onFinishInflate()V
 
-    const v3, 0x7f110074
+    const v5, 0x7f110074
 
-    invoke-virtual {p0, v3}, Lcom/android/launcher3/folder/view/FolderView;->findViewById(I)Landroid/view/View;
+    invoke-virtual {p0, v5}, Lcom/android/launcher3/folder/view/FolderView;->findViewById(I)Landroid/view/View;
 
-    move-result-object v3
+    move-result-object v5
 
-    iput-object v3, p0, Lcom/android/launcher3/folder/view/FolderView;->mFolderContainer:Landroid/view/View;
+    iput-object v5, p0, Lcom/android/launcher3/folder/view/FolderView;->mFolderContainer:Landroid/view/View;
 
-    const v3, 0x7f11007e
+    const v5, 0x7f11007e
 
-    invoke-virtual {p0, v3}, Lcom/android/launcher3/folder/view/FolderView;->findViewById(I)Landroid/view/View;
+    invoke-virtual {p0, v5}, Lcom/android/launcher3/folder/view/FolderView;->findViewById(I)Landroid/view/View;
 
-    move-result-object v3
+    move-result-object v5
 
-    iput-object v3, p0, Lcom/android/launcher3/folder/view/FolderView;->mContentContainer:Landroid/view/View;
+    iput-object v5, p0, Lcom/android/launcher3/folder/view/FolderView;->mContentContainer:Landroid/view/View;
 
-    const v3, 0x7f11007b
+    const v5, 0x7f11007b
 
-    invoke-virtual {p0, v3}, Lcom/android/launcher3/folder/view/FolderView;->findViewById(I)Landroid/view/View;
+    invoke-virtual {p0, v5}, Lcom/android/launcher3/folder/view/FolderView;->findViewById(I)Landroid/view/View;
 
-    move-result-object v3
+    move-result-object v5
 
-    check-cast v3, Lcom/android/launcher3/folder/view/FolderPagedView;
+    check-cast v5, Lcom/android/launcher3/folder/view/FolderPagedView;
 
-    iput-object v3, p0, Lcom/android/launcher3/folder/view/FolderView;->mContent:Lcom/android/launcher3/folder/view/FolderPagedView;
+    iput-object v5, p0, Lcom/android/launcher3/folder/view/FolderView;->mContent:Lcom/android/launcher3/folder/view/FolderPagedView;
 
-    iget-object v3, p0, Lcom/android/launcher3/folder/view/FolderView;->mContent:Lcom/android/launcher3/folder/view/FolderPagedView;
+    iget-object v5, p0, Lcom/android/launcher3/folder/view/FolderView;->mContent:Lcom/android/launcher3/folder/view/FolderPagedView;
 
-    invoke-virtual {v3, p0}, Lcom/android/launcher3/folder/view/FolderPagedView;->setFolder(Lcom/android/launcher3/folder/view/FolderView;)V
+    invoke-virtual {v5, p0}, Lcom/android/launcher3/folder/view/FolderPagedView;->setFolder(Lcom/android/launcher3/folder/view/FolderView;)V
 
-    const v3, 0x7f110078
+    const v5, 0x7f110078
 
-    invoke-virtual {p0, v3}, Lcom/android/launcher3/folder/view/FolderView;->findViewById(I)Landroid/view/View;
+    invoke-virtual {p0, v5}, Lcom/android/launcher3/folder/view/FolderView;->findViewById(I)Landroid/view/View;
 
-    move-result-object v3
+    move-result-object v5
 
-    check-cast v3, Lcom/android/launcher3/folder/view/FolderNameEditText;
+    check-cast v5, Lcom/android/launcher3/folder/view/FolderNameEditText;
 
-    iput-object v3, p0, Lcom/android/launcher3/folder/view/FolderView;->mFolderName:Lcom/android/launcher3/folder/view/FolderNameEditText;
+    iput-object v5, p0, Lcom/android/launcher3/folder/view/FolderView;->mFolderName:Lcom/android/launcher3/folder/view/FolderNameEditText;
 
-    iget-object v3, p0, Lcom/android/launcher3/folder/view/FolderView;->mFolderName:Lcom/android/launcher3/folder/view/FolderNameEditText;
+    iget-object v5, p0, Lcom/android/launcher3/folder/view/FolderView;->mFolderName:Lcom/android/launcher3/folder/view/FolderNameEditText;
 
-    new-instance v4, Lcom/android/launcher3/folder/view/FolderView$3;
+    new-instance v6, Lcom/android/launcher3/folder/view/FolderView$3;
 
-    invoke-direct {v4, p0}, Lcom/android/launcher3/folder/view/FolderView$3;-><init>(Lcom/android/launcher3/folder/view/FolderView;)V
+    invoke-direct {v6, p0}, Lcom/android/launcher3/folder/view/FolderView$3;-><init>(Lcom/android/launcher3/folder/view/FolderView;)V
 
-    invoke-virtual {v3, v4}, Lcom/android/launcher3/folder/view/FolderNameEditText;->setOnFocusChangeListener(Landroid/view/View$OnFocusChangeListener;)V
+    invoke-virtual {v5, v6}, Lcom/android/launcher3/folder/view/FolderNameEditText;->setOnFocusChangeListener(Landroid/view/View$OnFocusChangeListener;)V
 
-    iget-object v3, p0, Lcom/android/launcher3/folder/view/FolderView;->mFolderName:Lcom/android/launcher3/folder/view/FolderNameEditText;
+    iget-object v5, p0, Lcom/android/launcher3/folder/view/FolderView;->mFolderName:Lcom/android/launcher3/folder/view/FolderNameEditText;
 
-    new-instance v4, Lcom/android/launcher3/folder/view/FolderView$4;
+    new-instance v6, Lcom/android/launcher3/folder/view/FolderView$4;
 
-    invoke-direct {v4, p0}, Lcom/android/launcher3/folder/view/FolderView$4;-><init>(Lcom/android/launcher3/folder/view/FolderView;)V
+    invoke-direct {v6, p0}, Lcom/android/launcher3/folder/view/FolderView$4;-><init>(Lcom/android/launcher3/folder/view/FolderView;)V
 
-    invoke-virtual {v3, v4}, Lcom/android/launcher3/folder/view/FolderNameEditText;->setOnTouchListener(Landroid/view/View$OnTouchListener;)V
+    invoke-virtual {v5, v6}, Lcom/android/launcher3/folder/view/FolderNameEditText;->setOnTouchListener(Landroid/view/View$OnTouchListener;)V
 
-    iget-object v3, p0, Lcom/android/launcher3/folder/view/FolderView;->mFolderName:Lcom/android/launcher3/folder/view/FolderNameEditText;
+    iget-object v5, p0, Lcom/android/launcher3/folder/view/FolderView;->mFolderName:Lcom/android/launcher3/folder/view/FolderNameEditText;
 
-    new-instance v4, Lcom/android/launcher3/folder/view/FolderView$5;
+    new-instance v6, Lcom/android/launcher3/folder/view/FolderView$5;
 
-    invoke-direct {v4, p0}, Lcom/android/launcher3/folder/view/FolderView$5;-><init>(Lcom/android/launcher3/folder/view/FolderView;)V
+    invoke-direct {v6, p0}, Lcom/android/launcher3/folder/view/FolderView$5;-><init>(Lcom/android/launcher3/folder/view/FolderView;)V
 
-    invoke-virtual {v3, v4}, Lcom/android/launcher3/folder/view/FolderNameEditText;->setOnClickListener(Landroid/view/View$OnClickListener;)V
+    invoke-virtual {v5, v6}, Lcom/android/launcher3/folder/view/FolderNameEditText;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    iget-object v3, p0, Lcom/android/launcher3/folder/view/FolderView;->mFolderName:Lcom/android/launcher3/folder/view/FolderNameEditText;
+    iget-object v5, p0, Lcom/android/launcher3/folder/view/FolderView;->mFolderName:Lcom/android/launcher3/folder/view/FolderNameEditText;
 
-    new-instance v4, Lcom/android/launcher3/folder/view/FolderView$6;
+    new-instance v6, Lcom/android/launcher3/folder/view/FolderView$6;
 
-    invoke-direct {v4, p0}, Lcom/android/launcher3/folder/view/FolderView$6;-><init>(Lcom/android/launcher3/folder/view/FolderView;)V
+    invoke-direct {v6, p0}, Lcom/android/launcher3/folder/view/FolderView$6;-><init>(Lcom/android/launcher3/folder/view/FolderView;)V
 
-    invoke-virtual {v3, v4}, Lcom/android/launcher3/folder/view/FolderNameEditText;->setOnLongClickListener(Landroid/view/View$OnLongClickListener;)V
+    invoke-virtual {v5, v6}, Lcom/android/launcher3/folder/view/FolderNameEditText;->setOnLongClickListener(Landroid/view/View$OnLongClickListener;)V
 
-    iget-object v3, p0, Lcom/android/launcher3/folder/view/FolderView;->mFolderName:Lcom/android/launcher3/folder/view/FolderNameEditText;
+    iget-object v5, p0, Lcom/android/launcher3/folder/view/FolderView;->mFolderName:Lcom/android/launcher3/folder/view/FolderNameEditText;
 
-    new-instance v4, Lcom/android/launcher3/folder/view/FolderView$7;
+    new-instance v6, Lcom/android/launcher3/folder/view/FolderView$7;
 
-    invoke-direct {v4, p0}, Lcom/android/launcher3/folder/view/FolderView$7;-><init>(Lcom/android/launcher3/folder/view/FolderView;)V
+    invoke-direct {v6, p0}, Lcom/android/launcher3/folder/view/FolderView$7;-><init>(Lcom/android/launcher3/folder/view/FolderView;)V
 
-    invoke-virtual {v3, v4}, Lcom/android/launcher3/folder/view/FolderNameEditText;->setOnEventListener(Lcom/android/launcher3/folder/view/FolderNameEditText$OnEventListener;)V
+    invoke-virtual {v5, v6}, Lcom/android/launcher3/folder/view/FolderNameEditText;->setOnEventListener(Lcom/android/launcher3/folder/view/FolderNameEditText$OnEventListener;)V
 
-    iget-object v3, p0, Lcom/android/launcher3/folder/view/FolderView;->mFolderName:Lcom/android/launcher3/folder/view/FolderNameEditText;
+    iget-object v5, p0, Lcom/android/launcher3/folder/view/FolderView;->mFolderName:Lcom/android/launcher3/folder/view/FolderNameEditText;
 
-    invoke-virtual {v3, p0}, Lcom/android/launcher3/folder/view/FolderNameEditText;->setOnEditorActionListener(Landroid/widget/TextView$OnEditorActionListener;)V
+    invoke-virtual {v5, p0}, Lcom/android/launcher3/folder/view/FolderNameEditText;->setOnEditorActionListener(Landroid/widget/TextView$OnEditorActionListener;)V
 
-    iget-object v3, p0, Lcom/android/launcher3/folder/view/FolderView;->mFolderName:Lcom/android/launcher3/folder/view/FolderNameEditText;
+    iget-object v5, p0, Lcom/android/launcher3/folder/view/FolderView;->mFolderName:Lcom/android/launcher3/folder/view/FolderNameEditText;
 
-    invoke-virtual {v3, v6}, Lcom/android/launcher3/folder/view/FolderNameEditText;->setSelectAllOnFocus(Z)V
+    invoke-virtual {v5, v8}, Lcom/android/launcher3/folder/view/FolderNameEditText;->setSelectAllOnFocus(Z)V
 
-    iget-object v3, p0, Lcom/android/launcher3/folder/view/FolderView;->mFolderName:Lcom/android/launcher3/folder/view/FolderNameEditText;
+    iget-object v5, p0, Lcom/android/launcher3/folder/view/FolderView;->mFolderName:Lcom/android/launcher3/folder/view/FolderNameEditText;
 
-    invoke-virtual {v3, v6}, Lcom/android/launcher3/folder/view/FolderNameEditText;->setCursorVisible(Z)V
+    invoke-virtual {v5, v7}, Lcom/android/launcher3/folder/view/FolderNameEditText;->setFocusableInTouchMode(Z)V
 
-    iget-object v3, p0, Lcom/android/launcher3/folder/view/FolderView;->mFolderName:Lcom/android/launcher3/folder/view/FolderNameEditText;
+    iget-object v5, p0, Lcom/android/launcher3/folder/view/FolderView;->mFolderName:Lcom/android/launcher3/folder/view/FolderNameEditText;
 
-    const/4 v4, 0x1
+    iget-object v6, p0, Lcom/android/launcher3/folder/view/FolderView;->mFolderName:Lcom/android/launcher3/folder/view/FolderNameEditText;
 
-    invoke-virtual {v3, v4}, Lcom/android/launcher3/folder/view/FolderNameEditText;->setFocusableInTouchMode(Z)V
+    invoke-virtual {v6}, Lcom/android/launcher3/folder/view/FolderNameEditText;->getInputType()I
 
-    iget-object v3, p0, Lcom/android/launcher3/folder/view/FolderView;->mFolderName:Lcom/android/launcher3/folder/view/FolderNameEditText;
+    move-result v6
 
-    iget-object v4, p0, Lcom/android/launcher3/folder/view/FolderView;->mFolderName:Lcom/android/launcher3/folder/view/FolderNameEditText;
+    or-int/lit16 v6, v6, 0x2000
 
-    invoke-virtual {v4}, Lcom/android/launcher3/folder/view/FolderNameEditText;->getInputType()I
+    invoke-virtual {v5, v6}, Lcom/android/launcher3/folder/view/FolderNameEditText;->setInputType(I)V
 
-    move-result v4
-
-    or-int/lit16 v4, v4, 0x2000
-
-    invoke-virtual {v3, v4}, Lcom/android/launcher3/folder/view/FolderNameEditText;->setInputType(I)V
-
-    iget-object v3, p0, Lcom/android/launcher3/folder/view/FolderView;->mFolderName:Lcom/android/launcher3/folder/view/FolderNameEditText;
+    iget-object v5, p0, Lcom/android/launcher3/folder/view/FolderView;->mFolderName:Lcom/android/launcher3/folder/view/FolderNameEditText;
 
     invoke-virtual {p0}, Lcom/android/launcher3/folder/view/FolderView;->getContext()Landroid/content/Context;
 
-    move-result-object v4
+    move-result-object v6
 
-    const/16 v5, 0x1e
+    const/16 v7, 0x1e
 
-    invoke-static {v4, v5}, Lcom/android/launcher3/Utilities;->getEditTextMaxLengthFilter(Landroid/content/Context;I)[Landroid/text/InputFilter;
+    invoke-static {v6, v7}, Lcom/android/launcher3/Utilities;->getEditTextMaxLengthFilter(Landroid/content/Context;I)[Landroid/text/InputFilter;
 
-    move-result-object v4
+    move-result-object v6
 
-    invoke-virtual {v3, v4}, Lcom/android/launcher3/folder/view/FolderNameEditText;->setFilters([Landroid/text/InputFilter;)V
+    invoke-virtual {v5, v6}, Lcom/android/launcher3/folder/view/FolderNameEditText;->setFilters([Landroid/text/InputFilter;)V
 
-    const v3, 0x7f110079
+    const v5, 0x7f110079
 
-    invoke-virtual {p0, v3}, Lcom/android/launcher3/folder/view/FolderView;->findViewById(I)Landroid/view/View;
+    invoke-virtual {p0, v5}, Lcom/android/launcher3/folder/view/FolderView;->findViewById(I)Landroid/view/View;
 
-    move-result-object v3
+    move-result-object v5
 
-    check-cast v3, Landroid/widget/ImageView;
+    check-cast v5, Landroid/widget/ImageView;
 
-    iput-object v3, p0, Lcom/android/launcher3/folder/view/FolderView;->mFolderOptionButton:Landroid/widget/ImageView;
+    iput-object v5, p0, Lcom/android/launcher3/folder/view/FolderView;->mFolderOptionButton:Landroid/widget/ImageView;
 
-    const v3, 0x7f11007c
+    const v5, 0x7f11007c
 
-    invoke-virtual {p0, v3}, Lcom/android/launcher3/folder/view/FolderView;->findViewById(I)Landroid/view/View;
+    invoke-virtual {p0, v5}, Lcom/android/launcher3/folder/view/FolderView;->findViewById(I)Landroid/view/View;
 
-    move-result-object v3
+    move-result-object v5
 
-    iput-object v3, p0, Lcom/android/launcher3/folder/view/FolderView;->mColorPickerView:Landroid/view/View;
+    iput-object v5, p0, Lcom/android/launcher3/folder/view/FolderView;->mColorPickerView:Landroid/view/View;
 
-    new-instance v1, Lcom/android/launcher3/folder/view/FolderView$8;
+    new-instance v3, Lcom/android/launcher3/folder/view/FolderView$8;
 
-    invoke-direct {v1, p0}, Lcom/android/launcher3/folder/view/FolderView$8;-><init>(Lcom/android/launcher3/folder/view/FolderView;)V
+    invoke-direct {v3, p0}, Lcom/android/launcher3/folder/view/FolderView$8;-><init>(Lcom/android/launcher3/folder/view/FolderView;)V
 
-    iget-object v3, p0, Lcom/android/launcher3/folder/view/FolderView;->mFolderOptionButton:Landroid/widget/ImageView;
+    iget-object v5, p0, Lcom/android/launcher3/folder/view/FolderView;->mFolderOptionButton:Landroid/widget/ImageView;
 
-    invoke-virtual {v3, v1}, Landroid/widget/ImageView;->setOnClickListener(Landroid/view/View$OnClickListener;)V
+    invoke-virtual {v5, v3}, Landroid/widget/ImageView;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    new-instance v2, Lcom/android/launcher3/folder/view/FolderView$9;
+    new-instance v4, Lcom/android/launcher3/folder/view/FolderView$9;
 
-    invoke-direct {v2, p0}, Lcom/android/launcher3/folder/view/FolderView$9;-><init>(Lcom/android/launcher3/folder/view/FolderView;)V
+    invoke-direct {v4, p0}, Lcom/android/launcher3/folder/view/FolderView$9;-><init>(Lcom/android/launcher3/folder/view/FolderView;)V
 
-    iget-object v3, p0, Lcom/android/launcher3/folder/view/FolderView;->mFolderOptionButton:Landroid/widget/ImageView;
+    iget-object v5, p0, Lcom/android/launcher3/folder/view/FolderView;->mFolderOptionButton:Landroid/widget/ImageView;
 
-    invoke-virtual {v3, v2}, Landroid/widget/ImageView;->setOnTouchListener(Landroid/view/View$OnTouchListener;)V
+    invoke-virtual {v5, v4}, Landroid/widget/ImageView;->setOnTouchListener(Landroid/view/View$OnTouchListener;)V
 
-    const v3, 0x7f110075
+    :try_start_0
+    iget-object v5, p0, Lcom/android/launcher3/folder/view/FolderView;->mFolderOptionButton:Landroid/widget/ImageView;
 
-    invoke-virtual {p0, v3}, Lcom/android/launcher3/folder/view/FolderView;->findViewById(I)Landroid/view/View;
+    const/4 v6, 0x1
 
-    move-result-object v3
+    invoke-virtual {v5, v6}, Landroid/widget/ImageView;->semSetHoverPopupType(I)V
 
-    iput-object v3, p0, Lcom/android/launcher3/folder/view/FolderView;->mHeader:Landroid/view/View;
+    iget-object v5, p0, Lcom/android/launcher3/folder/view/FolderView;->mFolderOptionButton:Landroid/widget/ImageView;
 
-    const v3, 0x7f11007d
+    const/4 v6, 0x1
 
-    invoke-virtual {p0, v3}, Lcom/android/launcher3/folder/view/FolderView;->findViewById(I)Landroid/view/View;
+    invoke-virtual {v5, v6}, Landroid/widget/ImageView;->semGetHoverPopup(Z)Lcom/samsung/android/widget/SemHoverPopupWindow;
 
-    move-result-object v3
+    move-result-object v2
 
-    iput-object v3, p0, Lcom/android/launcher3/folder/view/FolderView;->mHeaderBottomLine:Landroid/view/View;
+    if-eqz v2, :cond_0
 
-    const v3, 0x7f110080
+    iget-object v5, p0, Lcom/android/launcher3/folder/view/FolderView;->mFolderOptionButton:Landroid/widget/ImageView;
 
-    invoke-virtual {p0, v3}, Lcom/android/launcher3/folder/view/FolderView;->findViewById(I)Landroid/view/View;
+    invoke-virtual {v5}, Landroid/widget/ImageView;->getContentDescription()Ljava/lang/CharSequence;
 
-    move-result-object v3
+    move-result-object v5
 
-    iput-object v3, p0, Lcom/android/launcher3/folder/view/FolderView;->mFooter:Landroid/view/View;
+    invoke-virtual {v2, v5}, Lcom/samsung/android/widget/SemHoverPopupWindow;->setContent(Ljava/lang/CharSequence;)V
+    :try_end_0
+    .catch Ljava/lang/NoSuchMethodError; {:try_start_0 .. :try_end_0} :catch_0
 
-    const v3, 0x7f110082
+    :cond_0
+    :goto_0
+    const v5, 0x7f110075
 
-    invoke-virtual {p0, v3}, Lcom/android/launcher3/folder/view/FolderView;->findViewById(I)Landroid/view/View;
+    invoke-virtual {p0, v5}, Lcom/android/launcher3/folder/view/FolderView;->findViewById(I)Landroid/view/View;
 
-    move-result-object v3
+    move-result-object v5
 
-    iput-object v3, p0, Lcom/android/launcher3/folder/view/FolderView;->mOuterAddButtonContainer:Landroid/view/View;
+    iput-object v5, p0, Lcom/android/launcher3/folder/view/FolderView;->mHeader:Landroid/view/View;
 
-    const v3, 0x7f110081
+    const v5, 0x7f11007d
 
-    invoke-virtual {p0, v3}, Lcom/android/launcher3/folder/view/FolderView;->findViewById(I)Landroid/view/View;
+    invoke-virtual {p0, v5}, Lcom/android/launcher3/folder/view/FolderView;->findViewById(I)Landroid/view/View;
 
-    move-result-object v3
+    move-result-object v5
 
-    check-cast v3, Landroid/widget/ImageView;
+    iput-object v5, p0, Lcom/android/launcher3/folder/view/FolderView;->mHeaderBottomLine:Landroid/view/View;
 
-    iput-object v3, p0, Lcom/android/launcher3/folder/view/FolderView;->mBorder:Landroid/widget/ImageView;
+    const v5, 0x7f110080
+
+    invoke-virtual {p0, v5}, Lcom/android/launcher3/folder/view/FolderView;->findViewById(I)Landroid/view/View;
+
+    move-result-object v5
+
+    iput-object v5, p0, Lcom/android/launcher3/folder/view/FolderView;->mFooter:Landroid/view/View;
+
+    const v5, 0x7f110082
+
+    invoke-virtual {p0, v5}, Lcom/android/launcher3/folder/view/FolderView;->findViewById(I)Landroid/view/View;
+
+    move-result-object v5
+
+    iput-object v5, p0, Lcom/android/launcher3/folder/view/FolderView;->mOuterAddButtonContainer:Landroid/view/View;
+
+    const v5, 0x7f110081
+
+    invoke-virtual {p0, v5}, Lcom/android/launcher3/folder/view/FolderView;->findViewById(I)Landroid/view/View;
+
+    move-result-object v5
+
+    check-cast v5, Landroid/widget/ImageView;
+
+    iput-object v5, p0, Lcom/android/launcher3/folder/view/FolderView;->mBorder:Landroid/widget/ImageView;
 
     invoke-static {}, Lcom/android/launcher3/LauncherFeature;->supportNavigationBar()Z
 
-    move-result v3
+    move-result v5
 
-    if-eqz v3, :cond_0
+    if-eqz v5, :cond_1
 
-    iget-object v3, p0, Lcom/android/launcher3/folder/view/FolderView;->mBorder:Landroid/widget/ImageView;
+    iget-object v5, p0, Lcom/android/launcher3/folder/view/FolderView;->mBorder:Landroid/widget/ImageView;
 
     invoke-virtual {p0}, Lcom/android/launcher3/folder/view/FolderView;->getResources()Landroid/content/res/Resources;
 
-    move-result-object v4
+    move-result-object v6
 
-    const v5, 0x7f0900bb
+    const v7, 0x7f0900c2
 
-    invoke-virtual {v4, v5}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
+    invoke-virtual {v6, v7}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
-    move-result-object v4
+    move-result-object v6
 
-    invoke-virtual {v3, v4}, Landroid/widget/ImageView;->setContentDescription(Ljava/lang/CharSequence;)V
+    invoke-virtual {v5, v6}, Landroid/widget/ImageView;->setContentDescription(Ljava/lang/CharSequence;)V
 
-    :cond_0
+    :cond_1
     invoke-direct {p0}, Lcom/android/launcher3/folder/view/FolderView;->setupFolderLayout()V
 
     invoke-direct {p0}, Lcom/android/launcher3/folder/view/FolderView;->createAddButton()Landroid/view/View;
 
-    move-result-object v3
+    move-result-object v5
 
-    iput-object v3, p0, Lcom/android/launcher3/folder/view/FolderView;->mAddButton:Landroid/view/View;
+    iput-object v5, p0, Lcom/android/launcher3/folder/view/FolderView;->mAddButton:Landroid/view/View;
 
-    invoke-virtual {p0, v6}, Lcom/android/launcher3/folder/view/FolderView;->showAddButton(Z)V
+    invoke-virtual {p0, v8}, Lcom/android/launcher3/folder/view/FolderView;->showAddButton(Z)V
 
-    new-instance v3, Ljava/util/HashMap;
+    new-instance v5, Ljava/util/HashMap;
 
-    invoke-direct {v3}, Ljava/util/HashMap;-><init>()V
+    invoke-direct {v5}, Ljava/util/HashMap;-><init>()V
 
-    iput-object v3, p0, Lcom/android/launcher3/folder/view/FolderView;->mColorPickerItems:Ljava/util/HashMap;
+    iput-object v5, p0, Lcom/android/launcher3/folder/view/FolderView;->mColorPickerItems:Ljava/util/HashMap;
 
-    iget-object v4, p0, Lcom/android/launcher3/folder/view/FolderView;->mColorPickerItems:Ljava/util/HashMap;
+    iget-object v6, p0, Lcom/android/launcher3/folder/view/FolderView;->mColorPickerItems:Ljava/util/HashMap;
 
-    sget-object v5, Lcom/android/launcher3/folder/view/FolderView$FolderColor;->FOLDER_COLOR_1:Lcom/android/launcher3/folder/view/FolderView$FolderColor;
+    sget-object v7, Lcom/android/launcher3/folder/view/FolderView$FolderColor;->FOLDER_COLOR_1:Lcom/android/launcher3/folder/view/FolderView$FolderColor;
 
-    const v3, 0x7f110087
+    const v5, 0x7f110087
 
-    invoke-virtual {p0, v3}, Lcom/android/launcher3/folder/view/FolderView;->findViewById(I)Landroid/view/View;
+    invoke-virtual {p0, v5}, Lcom/android/launcher3/folder/view/FolderView;->findViewById(I)Landroid/view/View;
 
-    move-result-object v3
+    move-result-object v5
 
-    check-cast v3, Landroid/widget/ImageView;
+    check-cast v5, Landroid/widget/ImageView;
 
-    invoke-virtual {v4, v5, v3}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v6, v7, v5}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    iget-object v4, p0, Lcom/android/launcher3/folder/view/FolderView;->mColorPickerItems:Ljava/util/HashMap;
+    iget-object v6, p0, Lcom/android/launcher3/folder/view/FolderView;->mColorPickerItems:Ljava/util/HashMap;
 
-    sget-object v5, Lcom/android/launcher3/folder/view/FolderView$FolderColor;->FOLDER_COLOR_2:Lcom/android/launcher3/folder/view/FolderView$FolderColor;
+    sget-object v7, Lcom/android/launcher3/folder/view/FolderView$FolderColor;->FOLDER_COLOR_2:Lcom/android/launcher3/folder/view/FolderView$FolderColor;
 
-    const v3, 0x7f110088
+    const v5, 0x7f110088
 
-    invoke-virtual {p0, v3}, Lcom/android/launcher3/folder/view/FolderView;->findViewById(I)Landroid/view/View;
+    invoke-virtual {p0, v5}, Lcom/android/launcher3/folder/view/FolderView;->findViewById(I)Landroid/view/View;
 
-    move-result-object v3
+    move-result-object v5
 
-    check-cast v3, Landroid/widget/ImageView;
+    check-cast v5, Landroid/widget/ImageView;
 
-    invoke-virtual {v4, v5, v3}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v6, v7, v5}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    iget-object v4, p0, Lcom/android/launcher3/folder/view/FolderView;->mColorPickerItems:Ljava/util/HashMap;
+    iget-object v6, p0, Lcom/android/launcher3/folder/view/FolderView;->mColorPickerItems:Ljava/util/HashMap;
 
-    sget-object v5, Lcom/android/launcher3/folder/view/FolderView$FolderColor;->FOLDER_COLOR_3:Lcom/android/launcher3/folder/view/FolderView$FolderColor;
+    sget-object v7, Lcom/android/launcher3/folder/view/FolderView$FolderColor;->FOLDER_COLOR_3:Lcom/android/launcher3/folder/view/FolderView$FolderColor;
 
-    const v3, 0x7f110089
+    const v5, 0x7f110089
 
-    invoke-virtual {p0, v3}, Lcom/android/launcher3/folder/view/FolderView;->findViewById(I)Landroid/view/View;
+    invoke-virtual {p0, v5}, Lcom/android/launcher3/folder/view/FolderView;->findViewById(I)Landroid/view/View;
 
-    move-result-object v3
+    move-result-object v5
 
-    check-cast v3, Landroid/widget/ImageView;
+    check-cast v5, Landroid/widget/ImageView;
 
-    invoke-virtual {v4, v5, v3}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v6, v7, v5}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    iget-object v4, p0, Lcom/android/launcher3/folder/view/FolderView;->mColorPickerItems:Ljava/util/HashMap;
+    iget-object v6, p0, Lcom/android/launcher3/folder/view/FolderView;->mColorPickerItems:Ljava/util/HashMap;
 
-    sget-object v5, Lcom/android/launcher3/folder/view/FolderView$FolderColor;->FOLDER_COLOR_4:Lcom/android/launcher3/folder/view/FolderView$FolderColor;
+    sget-object v7, Lcom/android/launcher3/folder/view/FolderView$FolderColor;->FOLDER_COLOR_4:Lcom/android/launcher3/folder/view/FolderView$FolderColor;
 
-    const v3, 0x7f11008a
+    const v5, 0x7f11008a
 
-    invoke-virtual {p0, v3}, Lcom/android/launcher3/folder/view/FolderView;->findViewById(I)Landroid/view/View;
+    invoke-virtual {p0, v5}, Lcom/android/launcher3/folder/view/FolderView;->findViewById(I)Landroid/view/View;
 
-    move-result-object v3
+    move-result-object v5
 
-    check-cast v3, Landroid/widget/ImageView;
+    check-cast v5, Landroid/widget/ImageView;
 
-    invoke-virtual {v4, v5, v3}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v6, v7, v5}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    iget-object v4, p0, Lcom/android/launcher3/folder/view/FolderView;->mColorPickerItems:Ljava/util/HashMap;
+    iget-object v6, p0, Lcom/android/launcher3/folder/view/FolderView;->mColorPickerItems:Ljava/util/HashMap;
 
-    sget-object v5, Lcom/android/launcher3/folder/view/FolderView$FolderColor;->FOLDER_COLOR_5:Lcom/android/launcher3/folder/view/FolderView$FolderColor;
+    sget-object v7, Lcom/android/launcher3/folder/view/FolderView$FolderColor;->FOLDER_COLOR_5:Lcom/android/launcher3/folder/view/FolderView$FolderColor;
 
-    const v3, 0x7f11008b
+    const v5, 0x7f11008b
 
-    invoke-virtual {p0, v3}, Lcom/android/launcher3/folder/view/FolderView;->findViewById(I)Landroid/view/View;
+    invoke-virtual {p0, v5}, Lcom/android/launcher3/folder/view/FolderView;->findViewById(I)Landroid/view/View;
 
-    move-result-object v3
+    move-result-object v5
 
-    check-cast v3, Landroid/widget/ImageView;
+    check-cast v5, Landroid/widget/ImageView;
 
-    invoke-virtual {v4, v5, v3}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v6, v7, v5}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    iget-object v3, p0, Lcom/android/launcher3/folder/view/FolderView;->mColorPickerItems:Ljava/util/HashMap;
+    iget-object v5, p0, Lcom/android/launcher3/folder/view/FolderView;->mColorPickerItems:Ljava/util/HashMap;
 
-    invoke-virtual {v3}, Ljava/util/HashMap;->values()Ljava/util/Collection;
+    invoke-virtual {v5}, Ljava/util/HashMap;->values()Ljava/util/Collection;
 
-    move-result-object v3
+    move-result-object v5
 
-    invoke-interface {v3}, Ljava/util/Collection;->iterator()Ljava/util/Iterator;
+    invoke-interface {v5}, Ljava/util/Collection;->iterator()Ljava/util/Iterator;
 
-    move-result-object v3
+    move-result-object v5
 
-    :goto_0
-    invoke-interface {v3}, Ljava/util/Iterator;->hasNext()Z
+    :goto_1
+    invoke-interface {v5}, Ljava/util/Iterator;->hasNext()Z
 
-    move-result v4
+    move-result v6
 
-    if-eqz v4, :cond_1
+    if-eqz v6, :cond_2
 
-    invoke-interface {v3}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    invoke-interface {v5}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
     move-result-object v0
 
     check-cast v0, Landroid/widget/ImageView;
 
-    new-instance v4, Lcom/android/launcher3/folder/view/FolderView$10;
+    new-instance v6, Lcom/android/launcher3/folder/view/FolderView$10;
 
-    invoke-direct {v4, p0}, Lcom/android/launcher3/folder/view/FolderView$10;-><init>(Lcom/android/launcher3/folder/view/FolderView;)V
+    invoke-direct {v6, p0}, Lcom/android/launcher3/folder/view/FolderView$10;-><init>(Lcom/android/launcher3/folder/view/FolderView;)V
 
-    invoke-virtual {v0, v4}, Landroid/widget/ImageView;->setOnClickListener(Landroid/view/View$OnClickListener;)V
+    invoke-virtual {v0, v6}, Landroid/widget/ImageView;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    goto :goto_0
+    goto :goto_1
 
-    :cond_1
+    :catch_0
+    move-exception v1
+
+    const-string v5, "FolderView"
+
+    new-instance v6, Ljava/lang/StringBuilder;
+
+    invoke-direct {v6}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v7, "Method not found : "
+
+    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v6
+
+    invoke-virtual {v1}, Ljava/lang/NoSuchMethodError;->toString()Ljava/lang/String;
+
+    move-result-object v7
+
+    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v6
+
+    invoke-virtual {v6}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v6
+
+    invoke-static {v5, v6}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
+
+    goto/16 :goto_0
+
+    :cond_2
     return-void
 .end method
 
@@ -8929,7 +9023,7 @@
 
     iget v1, p0, Lcom/android/launcher3/folder/view/FolderView;->mViewState:I
 
-    if-ne v1, v2, :cond_5
+    if-ne v1, v2, :cond_4
 
     iput-boolean v2, p0, Lcom/android/launcher3/folder/view/FolderView;->mRearrangeOnClose:Z
 
@@ -8944,11 +9038,11 @@
 
     iget-boolean v1, v1, Lcom/android/launcher3/folder/FolderInfo;->opened:Z
 
-    if-eqz v1, :cond_6
+    if-eqz v1, :cond_5
 
     iget-object v1, p0, Lcom/android/launcher3/folder/view/FolderView;->mFolderController:Lcom/android/launcher3/folder/controller/FolderController;
 
-    if-eqz v1, :cond_6
+    if-eqz v1, :cond_5
 
     invoke-virtual {p0}, Lcom/android/launcher3/folder/view/FolderView;->isAppsAlphabeticViewType()Z
 
@@ -8965,43 +9059,22 @@
 
     :cond_3
     :goto_2
-    iget-object v1, p0, Lcom/android/launcher3/folder/view/FolderView;->mMultiSelectManager:Lcom/android/launcher3/common/multiselect/MultiSelectManager;
+    new-instance v1, Lcom/android/launcher3/folder/view/FolderView$20;
 
-    if-eqz v1, :cond_4
+    invoke-direct {v1, p0, v0, p1}, Lcom/android/launcher3/folder/view/FolderView$20;-><init>(Lcom/android/launcher3/folder/view/FolderView;Landroid/view/View;Lcom/android/launcher3/common/base/item/IconInfo;)V
 
-    iget-object v1, p0, Lcom/android/launcher3/folder/view/FolderView;->mMultiSelectManager:Lcom/android/launcher3/common/multiselect/MultiSelectManager;
+    invoke-virtual {p0, v1}, Lcom/android/launcher3/folder/view/FolderView;->post(Ljava/lang/Runnable;)Z
 
-    invoke-virtual {v1}, Lcom/android/launcher3/common/multiselect/MultiSelectManager;->isMultiSelectMode()Z
-
-    move-result v1
-
-    if-eqz v1, :cond_4
-
-    if-eqz v0, :cond_4
-
-    iget-object v1, p0, Lcom/android/launcher3/folder/view/FolderView;->mLauncher:Lcom/android/launcher3/Launcher;
-
-    invoke-static {v1, p1}, Lcom/android/launcher3/Utilities;->isAppEnabled(Landroid/content/Context;Lcom/android/launcher3/common/base/item/IconInfo;)Z
-
-    move-result v1
-
-    if-nez v1, :cond_4
-
-    iget-object v1, p0, Lcom/android/launcher3/folder/view/FolderView;->mMultiSelectManager:Lcom/android/launcher3/common/multiselect/MultiSelectManager;
-
-    invoke-virtual {v1, v0}, Lcom/android/launcher3/common/multiselect/MultiSelectManager;->removeCheckedApp(Landroid/view/View;)V
-
-    :cond_4
     invoke-virtual {p0}, Lcom/android/launcher3/folder/view/FolderView;->updateContentFocus()V
 
     goto :goto_0
 
-    :cond_5
+    :cond_4
     invoke-virtual {p0}, Lcom/android/launcher3/folder/view/FolderView;->rearrangeChildren()V
 
     goto :goto_1
 
-    :cond_6
+    :cond_5
     invoke-direct {p0}, Lcom/android/launcher3/folder/view/FolderView;->replaceFolderWithFinalItem()V
 
     goto :goto_2
@@ -10126,9 +10199,9 @@
 
     iget-object v2, p0, Lcom/android/launcher3/folder/view/FolderView;->mFolderName:Lcom/android/launcher3/folder/view/FolderNameEditText;
 
-    new-instance v3, Lcom/android/launcher3/folder/view/FolderView$23;
+    new-instance v3, Lcom/android/launcher3/folder/view/FolderView$24;
 
-    invoke-direct {v3, p0}, Lcom/android/launcher3/folder/view/FolderView$23;-><init>(Lcom/android/launcher3/folder/view/FolderView;)V
+    invoke-direct {v3, p0}, Lcom/android/launcher3/folder/view/FolderView$24;-><init>(Lcom/android/launcher3/folder/view/FolderView;)V
 
     cmp-long v4, p1, v0
 
@@ -10276,14 +10349,14 @@
 
     if-eqz v3, :cond_0
 
-    const v3, 0x7f090196
+    const v3, 0x7f0901a3
 
     invoke-virtual {v1, v3}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
     move-result-object v2
 
     :goto_0
-    const v3, 0x7f09012a
+    const v3, 0x7f090133
 
     invoke-virtual {v1, v3}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -10298,7 +10371,7 @@
     return-void
 
     :cond_0
-    const v3, 0x7f0901a2
+    const v3, 0x7f0901af
 
     invoke-virtual {v1, v3}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 

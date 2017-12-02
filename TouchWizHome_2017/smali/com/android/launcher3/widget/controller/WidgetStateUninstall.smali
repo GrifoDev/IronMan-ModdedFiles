@@ -42,6 +42,33 @@
 
     if-eqz v2, :cond_0
 
+    iget-object v2, v0, Lcom/android/launcher3/common/base/item/PendingAddItemInfo;->user:Lcom/android/launcher3/common/compat/UserHandleCompat;
+
+    invoke-virtual {v2}, Lcom/android/launcher3/common/compat/UserHandleCompat;->getUser()Landroid/os/UserHandle;
+
+    move-result-object v2
+
+    invoke-static {v2}, Lcom/android/launcher3/Utilities;->isKnoxEnabledApp(Landroid/os/UserHandle;)Z
+
+    move-result v2
+
+    if-eqz v2, :cond_1
+
+    iget-object v2, p0, Lcom/android/launcher3/widget/controller/WidgetStateUninstall;->mContext:Landroid/content/Context;
+
+    invoke-static {}, Lcom/android/launcher3/common/compat/UserHandleCompat;->myUserHandle()Lcom/android/launcher3/common/compat/UserHandleCompat;
+
+    move-result-object v3
+
+    iget-object v4, v0, Lcom/android/launcher3/common/base/item/PendingAddItemInfo;->componentName:Landroid/content/ComponentName;
+
+    invoke-static {v2, v3, v4}, Lcom/android/launcher3/util/UninstallAppUtils;->startUninstallActivity(Landroid/content/Context;Lcom/android/launcher3/common/compat/UserHandleCompat;Landroid/content/ComponentName;)V
+
+    :cond_0
+    :goto_0
+    return-void
+
+    :cond_1
     iget-object v2, p0, Lcom/android/launcher3/widget/controller/WidgetStateUninstall;->mContext:Landroid/content/Context;
 
     iget-object v3, v0, Lcom/android/launcher3/common/base/item/PendingAddItemInfo;->user:Lcom/android/launcher3/common/compat/UserHandleCompat;
@@ -50,8 +77,7 @@
 
     invoke-static {v2, v3, v4}, Lcom/android/launcher3/util/UninstallAppUtils;->startUninstallActivity(Landroid/content/Context;Lcom/android/launcher3/common/compat/UserHandleCompat;Landroid/content/ComponentName;)V
 
-    :cond_0
-    return-void
+    goto :goto_0
 .end method
 
 

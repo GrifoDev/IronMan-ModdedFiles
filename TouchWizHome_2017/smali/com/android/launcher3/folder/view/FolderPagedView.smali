@@ -1584,7 +1584,7 @@
 .end method
 
 .method public bindItems(Ljava/util/ArrayList;)Ljava/util/ArrayList;
-    .locals 9
+    .locals 12
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -1599,7 +1599,9 @@
         }
     .end annotation
 
-    const/4 v8, 0x0
+    const/4 v11, 0x1
+
+    const/4 v10, 0x0
 
     new-instance v1, Ljava/util/ArrayList;
 
@@ -1620,7 +1622,7 @@
 
     move-result v6
 
-    if-eqz v6, :cond_1
+    if-eqz v6, :cond_2
 
     invoke-interface {v5}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -1628,19 +1630,36 @@
 
     check-cast v2, Lcom/android/launcher3/common/base/item/IconInfo;
 
+    iget-object v6, p0, Lcom/android/launcher3/folder/view/FolderPagedView;->mFolder:Lcom/android/launcher3/folder/view/FolderView;
+
+    invoke-virtual {v6}, Lcom/android/launcher3/folder/view/FolderView;->getInfo()Lcom/android/launcher3/folder/FolderInfo;
+
+    move-result-object v6
+
+    iget-wide v6, v6, Lcom/android/launcher3/folder/FolderInfo;->container:J
+
+    const-wide/16 v8, -0x66
+
+    cmp-long v6, v6, v8
+
+    if-nez v6, :cond_0
+
+    iput-boolean v11, v2, Lcom/android/launcher3/common/base/item/IconInfo;->ignoreCheckItemInfo:Z
+
+    :cond_0
     invoke-virtual {v1}, Ljava/util/ArrayList;->size()I
 
     move-result v6
 
     const/16 v7, 0x9
 
-    if-lt v6, v7, :cond_0
+    if-lt v6, v7, :cond_1
 
     iget v6, v2, Lcom/android/launcher3/common/base/item/IconInfo;->itemType:I
 
-    if-nez v6, :cond_0
+    if-nez v6, :cond_1
 
-    invoke-virtual {p0, v2, v8}, Lcom/android/launcher3/folder/view/FolderPagedView;->createNewView(Lcom/android/launcher3/common/base/item/IconInfo;Z)Landroid/view/View;
+    invoke-virtual {p0, v2, v10}, Lcom/android/launcher3/folder/view/FolderPagedView;->createNewView(Lcom/android/launcher3/common/base/item/IconInfo;Z)Landroid/view/View;
 
     move-result-object v4
 
@@ -1650,10 +1669,8 @@
 
     goto :goto_0
 
-    :cond_0
-    const/4 v6, 0x1
-
-    invoke-virtual {p0, v2, v6}, Lcom/android/launcher3/folder/view/FolderPagedView;->createNewView(Lcom/android/launcher3/common/base/item/IconInfo;Z)Landroid/view/View;
+    :cond_1
+    invoke-virtual {p0, v2, v11}, Lcom/android/launcher3/folder/view/FolderPagedView;->createNewView(Lcom/android/launcher3/common/base/item/IconInfo;Z)Landroid/view/View;
 
     move-result-object v6
 
@@ -1661,12 +1678,12 @@
 
     goto :goto_0
 
-    :cond_1
+    :cond_2
     invoke-virtual {v1}, Ljava/util/ArrayList;->size()I
 
     move-result v5
 
-    invoke-direct {p0, v1, v5, v8}, Lcom/android/launcher3/folder/view/FolderPagedView;->arrangeChildren(Ljava/util/ArrayList;IZ)V
+    invoke-direct {p0, v1, v5, v10}, Lcom/android/launcher3/folder/view/FolderPagedView;->arrangeChildren(Ljava/util/ArrayList;IZ)V
 
     invoke-direct {p0}, Lcom/android/launcher3/folder/view/FolderPagedView;->handleIconViewStubs()V
 
@@ -4678,14 +4695,14 @@
 
     if-eqz v4, :cond_1
 
-    const v4, 0x7f090198
+    const v4, 0x7f0901a5
 
     invoke-virtual {v2, v4}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
     move-result-object v3
 
     :goto_1
-    const v4, 0x7f09012e
+    const v4, 0x7f090137
 
     invoke-virtual {v2, v4}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -4708,7 +4725,7 @@
     goto :goto_0
 
     :cond_1
-    const v4, 0x7f0901a4
+    const v4, 0x7f0901b1
 
     invoke-virtual {v2, v4}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -4729,14 +4746,14 @@
 
     if-eqz v4, :cond_3
 
-    const v4, 0x7f090196
+    const v4, 0x7f0901a3
 
     invoke-virtual {v2, v4}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
     move-result-object v3
 
     :goto_3
-    const v4, 0x7f090125
+    const v4, 0x7f09012e
 
     invoke-virtual {v2, v4}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -4745,7 +4762,7 @@
     goto :goto_2
 
     :cond_3
-    const v4, 0x7f0901a2
+    const v4, 0x7f0901af
 
     invoke-virtual {v2, v4}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 

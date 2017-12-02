@@ -56,6 +56,14 @@
     return v0
 .end method
 
+.method static synthetic access$4500(Lcom/android/launcher3/home/HomeLoader$HomeLoaderTask;)Z
+    .locals 1
+
+    iget-boolean v0, p0, Lcom/android/launcher3/home/HomeLoader$HomeLoaderTask;->mStopped:Z
+
+    return v0
+.end method
+
 .method private finalCheckForDuplicateInfo()V
     .locals 11
 
@@ -384,7 +392,7 @@
 
     invoke-direct {v6, p0}, Lcom/android/launcher3/home/HomeLoader$HomeLoaderTask$2;-><init>(Lcom/android/launcher3/home/HomeLoader$HomeLoaderTask;)V
 
-    invoke-static {v6}, Lcom/android/launcher3/home/HomeLoader;->access$4800(Ljava/lang/Runnable;)V
+    invoke-static {v6}, Lcom/android/launcher3/home/HomeLoader;->access$5100(Ljava/lang/Runnable;)V
 
     iget-object v6, p0, Lcom/android/launcher3/home/HomeLoader$HomeLoaderTask;->this$0:Lcom/android/launcher3/home/HomeLoader;
 
@@ -411,7 +419,7 @@
 
     invoke-direct {v7, p0, v4, v5}, Lcom/android/launcher3/home/HomeLoader$HomeLoaderTask$3;-><init>(Lcom/android/launcher3/home/HomeLoader$HomeLoaderTask;Lcom/android/launcher3/home/HomeLoader$HomeCallbacks;Lcom/android/launcher3/common/model/DataLoader$DataLoaderState;)V
 
-    invoke-static {v6, v7}, Lcom/android/launcher3/home/HomeLoader;->access$5300(Lcom/android/launcher3/home/HomeLoader;Ljava/lang/Runnable;)V
+    invoke-static {v6, v7}, Lcom/android/launcher3/home/HomeLoader;->access$5600(Lcom/android/launcher3/home/HomeLoader;Ljava/lang/Runnable;)V
 
     goto/16 :goto_0
 .end method

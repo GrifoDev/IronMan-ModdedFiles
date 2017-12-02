@@ -633,7 +633,7 @@
 
     move-result-object v3
 
-    const v4, 0x7f090192
+    const v4, 0x7f09019f
 
     invoke-virtual {v3, v4}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -684,7 +684,7 @@
 
     iget-object v2, v0, Lcom/android/launcher3/home/HomeBindController;->mLauncher:Lcom/android/launcher3/Launcher;
 
-    const v4, 0x7f090185
+    const v4, 0x7f090192
 
     invoke-virtual {v2, v4}, Lcom/android/launcher3/Launcher;->getText(I)Ljava/lang/CharSequence;
 
@@ -3705,19 +3705,20 @@
 
     move-result v4
 
-    if-eqz v4, :cond_0
+    if-eqz v4, :cond_1
 
+    :cond_0
     :goto_0
     return-void
 
-    :cond_0
+    :cond_1
     iget-object v4, p0, Lcom/android/launcher3/home/HomeBindController;->mLauncher:Lcom/android/launcher3/Launcher;
 
     invoke-virtual {v4}, Lcom/android/launcher3/Launcher;->getSavedState()Landroid/os/Bundle;
 
     move-result-object v4
 
-    if-eqz v4, :cond_2
+    if-eqz v4, :cond_3
 
     iget-object v4, p0, Lcom/android/launcher3/home/HomeBindController;->mWorkspace:Lcom/android/launcher3/home/Workspace;
 
@@ -3725,7 +3726,7 @@
 
     move-result v4
 
-    if-nez v4, :cond_1
+    if-nez v4, :cond_2
 
     iget-object v4, p0, Lcom/android/launcher3/home/HomeBindController;->mWorkspace:Lcom/android/launcher3/home/Workspace;
 
@@ -3739,38 +3740,38 @@
 
     move-result-object v0
 
-    if-eqz v0, :cond_1
+    if-eqz v0, :cond_2
 
     invoke-virtual {v0}, Landroid/view/View;->requestFocus()Z
 
-    :cond_1
+    :cond_2
     iget-object v4, p0, Lcom/android/launcher3/home/HomeBindController;->mLauncher:Lcom/android/launcher3/Launcher;
 
     invoke-virtual {v4, v8}, Lcom/android/launcher3/Launcher;->setSavedState(Landroid/os/Bundle;)V
 
-    :cond_2
+    :cond_3
     iget-object v4, p0, Lcom/android/launcher3/home/HomeBindController;->mWorkspace:Lcom/android/launcher3/home/Workspace;
 
     invoke-virtual {v4}, Lcom/android/launcher3/home/Workspace;->restoreInstanceStateForRemainingPages()V
 
     iget-boolean v4, p0, Lcom/android/launcher3/home/HomeBindController;->mHotseatLoading:Z
 
-    if-eqz v4, :cond_3
+    if-eqz v4, :cond_4
 
     iput-boolean v6, p0, Lcom/android/launcher3/home/HomeBindController;->mHotseatLoading:Z
 
-    :cond_3
+    :cond_4
     invoke-static {}, Lcom/android/launcher3/LauncherFeature;->supportCustomerDialerChange()Z
 
     move-result v4
 
-    if-eqz v4, :cond_4
+    if-eqz v4, :cond_5
 
     iget-object v4, p0, Lcom/android/launcher3/home/HomeBindController;->mHomeController:Lcom/android/launcher3/home/HomeController;
 
     invoke-virtual {v4}, Lcom/android/launcher3/home/HomeController;->changeDialerApp()V
 
-    :cond_4
+    :cond_5
     invoke-virtual {p0, v6}, Lcom/android/launcher3/home/HomeBindController;->setWorkspaceLoading(Z)V
 
     invoke-direct {p0}, Lcom/android/launcher3/home/HomeBindController;->sendLoadingCompleteBroadcastIfNecessary()V
@@ -3781,7 +3782,7 @@
 
     move-result-object v4
 
-    if-eqz v4, :cond_5
+    if-eqz v4, :cond_6
 
     iget-object v4, p0, Lcom/android/launcher3/home/HomeBindController;->mHomeController:Lcom/android/launcher3/home/HomeController;
 
@@ -3807,7 +3808,7 @@
 
     invoke-virtual {v4, v8}, Lcom/android/launcher3/home/HomeController;->setPendingAddItem(Lcom/android/launcher3/home/HomeController$PendingAddArguments;)V
 
-    :cond_5
+    :cond_6
     invoke-static {}, Lcom/android/launcher3/LauncherAppState;->getInstance()Lcom/android/launcher3/LauncherAppState;
 
     move-result-object v4
@@ -3846,7 +3847,7 @@
 
     move-result v4
 
-    if-nez v4, :cond_6
+    if-nez v4, :cond_7
 
     iget-object v4, p0, Lcom/android/launcher3/home/HomeBindController;->mHomeController:Lcom/android/launcher3/home/HomeController;
 
@@ -3854,7 +3855,7 @@
 
     move-result-object v4
 
-    if-eqz v4, :cond_6
+    if-eqz v4, :cond_7
 
     iget-object v4, p0, Lcom/android/launcher3/home/HomeBindController;->mWorkspace:Lcom/android/launcher3/home/Workspace;
 
@@ -3862,7 +3863,7 @@
 
     move-result-object v4
 
-    if-eqz v4, :cond_6
+    if-eqz v4, :cond_7
 
     iget-object v4, p0, Lcom/android/launcher3/home/HomeBindController;->mHomeController:Lcom/android/launcher3/home/HomeController;
 
@@ -3878,7 +3879,7 @@
 
     invoke-virtual {v4, v5, v7}, Lcom/android/launcher3/home/ZeroPageController;->updatePageIndicatorForZeroPage(ZZ)V
 
-    :cond_6
+    :cond_7
     iget-object v4, p0, Lcom/android/launcher3/home/HomeBindController;->mDragMgr:Lcom/android/launcher3/common/drag/DragManager;
 
     iget-object v5, p0, Lcom/android/launcher3/home/HomeBindController;->mWorkspace:Lcom/android/launcher3/home/Workspace;
@@ -3888,6 +3889,14 @@
     move-result-object v5
 
     invoke-virtual {v4, v5}, Lcom/android/launcher3/common/drag/DragManager;->setWindowToken(Landroid/os/IBinder;)V
+
+    iget-object v4, p0, Lcom/android/launcher3/home/HomeBindController;->mLauncher:Lcom/android/launcher3/Launcher;
+
+    invoke-virtual {v4}, Lcom/android/launcher3/Launcher;->isPaused()Z
+
+    move-result v4
+
+    if-nez v4, :cond_0
 
     iget-object v4, p0, Lcom/android/launcher3/home/HomeBindController;->mHomeController:Lcom/android/launcher3/home/HomeController;
 

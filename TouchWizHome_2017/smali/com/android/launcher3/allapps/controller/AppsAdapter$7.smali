@@ -43,171 +43,267 @@
 
 # virtual methods
 .method public run()V
-    .locals 9
+    .locals 15
 
-    const/4 v8, -0x1
+    const/4 v14, -0x1
 
-    iget-object v4, p0, Lcom/android/launcher3/allapps/controller/AppsAdapter$7;->this$0:Lcom/android/launcher3/allapps/controller/AppsAdapter;
+    iget-object v10, p0, Lcom/android/launcher3/allapps/controller/AppsAdapter$7;->this$0:Lcom/android/launcher3/allapps/controller/AppsAdapter;
 
-    iget-object v4, v4, Lcom/android/launcher3/allapps/controller/AppsAdapter;->mListener:Lcom/android/launcher3/allapps/controller/AppsAdapter$DataListener;
+    iget-object v10, v10, Lcom/android/launcher3/allapps/controller/AppsAdapter;->mListener:Lcom/android/launcher3/allapps/controller/AppsAdapter$DataListener;
 
-    iget-object v5, p0, Lcom/android/launcher3/allapps/controller/AppsAdapter$7;->val$folder:Lcom/android/launcher3/folder/FolderInfo;
+    iget-object v11, p0, Lcom/android/launcher3/allapps/controller/AppsAdapter$7;->val$folder:Lcom/android/launcher3/folder/FolderInfo;
 
-    iget-wide v6, v5, Lcom/android/launcher3/folder/FolderInfo;->id:J
+    iget-wide v12, v11, Lcom/android/launcher3/folder/FolderInfo;->id:J
 
-    invoke-interface {v4, v6, v7}, Lcom/android/launcher3/allapps/controller/AppsAdapter$DataListener;->getAppsIconByItemId(J)Landroid/view/View;
+    invoke-interface {v10, v12, v13}, Lcom/android/launcher3/allapps/controller/AppsAdapter$DataListener;->getAppsIconByItemId(J)Landroid/view/View;
 
-    move-result-object v4
+    move-result-object v10
 
-    instance-of v4, v4, Lcom/android/launcher3/folder/view/FolderIconView;
+    instance-of v10, v10, Lcom/android/launcher3/folder/view/FolderIconView;
 
-    if-nez v4, :cond_3
+    if-nez v10, :cond_4
 
-    iget-object v4, p0, Lcom/android/launcher3/allapps/controller/AppsAdapter$7;->val$items:Ljava/util/ArrayList;
+    iget-object v10, p0, Lcom/android/launcher3/allapps/controller/AppsAdapter$7;->val$items:Ljava/util/ArrayList;
 
-    invoke-virtual {v4}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
+    invoke-virtual {v10}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
 
-    move-result-object v4
+    move-result-object v10
 
     :cond_0
     :goto_0
-    invoke-interface {v4}, Ljava/util/Iterator;->hasNext()Z
+    invoke-interface {v10}, Ljava/util/Iterator;->hasNext()Z
 
-    move-result v5
+    move-result v11
 
-    if-eqz v5, :cond_1
+    if-eqz v11, :cond_1
 
-    invoke-interface {v4}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    invoke-interface {v10}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
-    move-result-object v0
+    move-result-object v3
 
-    check-cast v0, Lcom/android/launcher3/common/base/item/IconInfo;
+    check-cast v3, Lcom/android/launcher3/common/base/item/IconInfo;
 
-    iget-object v5, p0, Lcom/android/launcher3/allapps/controller/AppsAdapter$7;->this$0:Lcom/android/launcher3/allapps/controller/AppsAdapter;
+    iget-object v11, p0, Lcom/android/launcher3/allapps/controller/AppsAdapter$7;->this$0:Lcom/android/launcher3/allapps/controller/AppsAdapter;
 
-    iget-object v5, v5, Lcom/android/launcher3/allapps/controller/AppsAdapter;->mItems:Ljava/util/ArrayList;
+    iget-object v11, v11, Lcom/android/launcher3/allapps/controller/AppsAdapter;->mItems:Ljava/util/ArrayList;
 
-    invoke-virtual {v5, v0}, Ljava/util/ArrayList;->contains(Ljava/lang/Object;)Z
+    invoke-virtual {v11, v3}, Ljava/util/ArrayList;->contains(Ljava/lang/Object;)Z
 
-    move-result v5
+    move-result v11
 
-    if-eqz v5, :cond_0
+    if-eqz v11, :cond_0
 
-    iget-object v5, p0, Lcom/android/launcher3/allapps/controller/AppsAdapter$7;->this$0:Lcom/android/launcher3/allapps/controller/AppsAdapter;
+    iget-object v11, p0, Lcom/android/launcher3/allapps/controller/AppsAdapter$7;->this$0:Lcom/android/launcher3/allapps/controller/AppsAdapter;
 
-    iget-object v5, v5, Lcom/android/launcher3/allapps/controller/AppsAdapter;->mItems:Ljava/util/ArrayList;
+    iget-object v11, v11, Lcom/android/launcher3/allapps/controller/AppsAdapter;->mItems:Ljava/util/ArrayList;
 
-    invoke-virtual {v5, v0}, Ljava/util/ArrayList;->remove(Ljava/lang/Object;)Z
+    invoke-virtual {v11, v3}, Ljava/util/ArrayList;->remove(Ljava/lang/Object;)Z
 
-    iget-object v5, p0, Lcom/android/launcher3/allapps/controller/AppsAdapter$7;->this$0:Lcom/android/launcher3/allapps/controller/AppsAdapter;
+    iget-object v11, p0, Lcom/android/launcher3/allapps/controller/AppsAdapter$7;->this$0:Lcom/android/launcher3/allapps/controller/AppsAdapter;
 
-    invoke-virtual {v5, v0}, Lcom/android/launcher3/allapps/controller/AppsAdapter;->removeViewAndReorder(Lcom/android/launcher3/common/base/item/IconInfo;)V
+    invoke-virtual {v11, v3}, Lcom/android/launcher3/allapps/controller/AppsAdapter;->removeViewAndReorder(Lcom/android/launcher3/common/base/item/IconInfo;)V
 
     goto :goto_0
 
     :cond_1
-    new-instance v3, Ljava/util/ArrayList;
+    new-instance v9, Ljava/util/ArrayList;
 
-    invoke-direct {v3}, Ljava/util/ArrayList;-><init>()V
+    invoke-direct {v9}, Ljava/util/ArrayList;-><init>()V
 
-    new-instance v1, Ljava/util/ArrayList;
+    new-instance v4, Ljava/util/ArrayList;
 
-    invoke-direct {v1}, Ljava/util/ArrayList;-><init>()V
+    invoke-direct {v4}, Ljava/util/ArrayList;-><init>()V
 
-    iget-object v4, p0, Lcom/android/launcher3/allapps/controller/AppsAdapter$7;->val$items:Ljava/util/ArrayList;
+    iget-object v10, p0, Lcom/android/launcher3/allapps/controller/AppsAdapter$7;->val$items:Ljava/util/ArrayList;
 
-    invoke-virtual {v4}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
+    invoke-virtual {v10}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
 
-    move-result-object v4
+    move-result-object v11
 
     :goto_1
-    invoke-interface {v4}, Ljava/util/Iterator;->hasNext()Z
+    invoke-interface {v11}, Ljava/util/Iterator;->hasNext()Z
 
-    move-result v5
+    move-result v10
 
-    if-eqz v5, :cond_2
+    if-eqz v10, :cond_3
 
-    invoke-interface {v4}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    invoke-interface {v11}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
-    move-result-object v0
+    move-result-object v3
 
-    check-cast v0, Lcom/android/launcher3/common/base/item/IconInfo;
+    check-cast v3, Lcom/android/launcher3/common/base/item/IconInfo;
 
-    iget-object v5, p0, Lcom/android/launcher3/allapps/controller/AppsAdapter$7;->val$folder:Lcom/android/launcher3/folder/FolderInfo;
+    :try_start_0
+    iget-wide v6, v3, Lcom/android/launcher3/common/base/item/IconInfo;->container:J
 
-    iget-wide v6, v5, Lcom/android/launcher3/folder/FolderInfo;->id:J
+    const-wide/16 v12, -0x66
 
-    iput-wide v6, v0, Lcom/android/launcher3/common/base/item/IconInfo;->container:J
+    cmp-long v10, v6, v12
 
-    const-wide/16 v6, -0x1
+    if-eqz v10, :cond_2
 
-    iput-wide v6, v0, Lcom/android/launcher3/common/base/item/IconInfo;->screenId:J
+    iget-object v10, p0, Lcom/android/launcher3/allapps/controller/AppsAdapter$7;->this$0:Lcom/android/launcher3/allapps/controller/AppsAdapter;
 
-    iput v8, v0, Lcom/android/launcher3/common/base/item/IconInfo;->rank:I
+    iget-object v10, v10, Lcom/android/launcher3/allapps/controller/AppsAdapter;->mAppsModel:Lcom/android/launcher3/allapps/model/AppsModel;
 
-    const/4 v5, 0x1
+    invoke-virtual {v10, v6, v7}, Lcom/android/launcher3/allapps/model/AppsModel;->getItemById(J)Lcom/android/launcher3/common/base/item/ItemInfo;
 
-    iput-boolean v5, v0, Lcom/android/launcher3/common/base/item/IconInfo;->mDirty:Z
+    move-result-object v5
 
-    new-instance v2, Landroid/content/ContentValues;
+    instance-of v10, v5, Lcom/android/launcher3/folder/FolderInfo;
 
-    invoke-direct {v2}, Landroid/content/ContentValues;-><init>()V
+    if-eqz v10, :cond_2
 
-    const-string v5, "container"
+    move-object v0, v5
 
-    iget-object v6, p0, Lcom/android/launcher3/allapps/controller/AppsAdapter$7;->val$folder:Lcom/android/launcher3/folder/FolderInfo;
+    check-cast v0, Lcom/android/launcher3/folder/FolderInfo;
 
-    iget-wide v6, v6, Lcom/android/launcher3/folder/FolderInfo;->id:J
+    move-object v10, v0
 
-    invoke-static {v6, v7}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+    invoke-virtual {v10, v3}, Lcom/android/launcher3/folder/FolderInfo;->remove(Lcom/android/launcher3/common/base/item/IconInfo;)V
 
-    move-result-object v6
+    const-string v10, "AppsAdapter"
 
-    invoke-virtual {v2, v5, v6}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/Long;)V
+    new-instance v12, Ljava/lang/StringBuilder;
 
-    const-string v5, "screen"
+    invoke-direct {v12}, Ljava/lang/StringBuilder;-><init>()V
 
-    invoke-static {v8}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    const-string v13, "remove from oldParent : "
 
-    move-result-object v6
+    invoke-virtual {v12, v13}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v2, v5, v6}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/Integer;)V
+    move-result-object v12
 
-    const-string v5, "rank"
+    invoke-virtual {v12, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
-    invoke-static {v8}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    move-result-object v12
 
-    move-result-object v6
+    const-string v13, " , "
 
-    invoke-virtual {v2, v5, v6}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/Integer;)V
+    invoke-virtual {v12, v13}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v3, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+    move-result-object v12
 
-    invoke-virtual {v1, v0}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+    invoke-virtual {v12, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
-    goto :goto_1
+    move-result-object v12
+
+    invoke-virtual {v12}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v12
+
+    invoke-static {v10, v12}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
     :cond_2
-    iget-object v4, p0, Lcom/android/launcher3/allapps/controller/AppsAdapter$7;->this$0:Lcom/android/launcher3/allapps/controller/AppsAdapter;
+    :goto_2
+    iget-object v10, p0, Lcom/android/launcher3/allapps/controller/AppsAdapter$7;->val$folder:Lcom/android/launcher3/folder/FolderInfo;
 
-    iget-object v5, p0, Lcom/android/launcher3/allapps/controller/AppsAdapter$7;->this$0:Lcom/android/launcher3/allapps/controller/AppsAdapter;
+    iget-wide v12, v10, Lcom/android/launcher3/folder/FolderInfo;->id:J
 
-    iget-object v5, v5, Lcom/android/launcher3/allapps/controller/AppsAdapter;->mLauncher:Lcom/android/launcher3/Launcher;
+    iput-wide v12, v3, Lcom/android/launcher3/common/base/item/IconInfo;->container:J
 
-    invoke-virtual {v4, v5, v3, v1}, Lcom/android/launcher3/allapps/controller/AppsAdapter;->updateItemsInDatabaseHelper(Landroid/content/Context;Ljava/util/ArrayList;Ljava/util/ArrayList;)V
+    const-wide/16 v12, -0x1
+
+    iput-wide v12, v3, Lcom/android/launcher3/common/base/item/IconInfo;->screenId:J
+
+    iput v14, v3, Lcom/android/launcher3/common/base/item/IconInfo;->rank:I
+
+    const/4 v10, 0x1
+
+    iput-boolean v10, v3, Lcom/android/launcher3/common/base/item/IconInfo;->mDirty:Z
+
+    new-instance v8, Landroid/content/ContentValues;
+
+    invoke-direct {v8}, Landroid/content/ContentValues;-><init>()V
+
+    const-string v10, "container"
+
+    iget-object v12, p0, Lcom/android/launcher3/allapps/controller/AppsAdapter$7;->val$folder:Lcom/android/launcher3/folder/FolderInfo;
+
+    iget-wide v12, v12, Lcom/android/launcher3/folder/FolderInfo;->id:J
+
+    invoke-static {v12, v13}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+
+    move-result-object v12
+
+    invoke-virtual {v8, v10, v12}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/Long;)V
+
+    const-string v10, "screen"
+
+    invoke-static {v14}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v12
+
+    invoke-virtual {v8, v10, v12}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/Integer;)V
+
+    const-string v10, "rank"
+
+    invoke-static {v14}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v12
+
+    invoke-virtual {v8, v10, v12}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/Integer;)V
+
+    invoke-virtual {v9, v8}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+
+    invoke-virtual {v4, v3}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+
+    goto/16 :goto_1
+
+    :catch_0
+    move-exception v2
+
+    const-string v10, "AppsAdapter"
+
+    new-instance v12, Ljava/lang/StringBuilder;
+
+    invoke-direct {v12}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v13, "error while removing item from oldParent : "
+
+    invoke-virtual {v12, v13}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v12
+
+    invoke-virtual {v2}, Ljava/lang/Exception;->toString()Ljava/lang/String;
+
+    move-result-object v13
+
+    invoke-virtual {v12, v13}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v12
+
+    invoke-virtual {v12}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v12
+
+    invoke-static {v10, v12}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
+
+    goto :goto_2
 
     :cond_3
-    const-string v4, "addItemToFolder item : "
+    iget-object v10, p0, Lcom/android/launcher3/allapps/controller/AppsAdapter$7;->this$0:Lcom/android/launcher3/allapps/controller/AppsAdapter;
 
-    iget-object v5, p0, Lcom/android/launcher3/allapps/controller/AppsAdapter$7;->val$items:Ljava/util/ArrayList;
+    iget-object v11, p0, Lcom/android/launcher3/allapps/controller/AppsAdapter$7;->this$0:Lcom/android/launcher3/allapps/controller/AppsAdapter;
 
-    invoke-static {v4, v5}, Lcom/android/launcher3/allapps/controller/AppsAdapter;->debugItemInfo(Ljava/lang/String;Ljava/util/ArrayList;)V
+    iget-object v11, v11, Lcom/android/launcher3/allapps/controller/AppsAdapter;->mLauncher:Lcom/android/launcher3/Launcher;
 
-    iget-object v4, p0, Lcom/android/launcher3/allapps/controller/AppsAdapter$7;->val$folder:Lcom/android/launcher3/folder/FolderInfo;
+    invoke-virtual {v10, v11, v9, v4}, Lcom/android/launcher3/allapps/controller/AppsAdapter;->updateItemsInDatabaseHelper(Landroid/content/Context;Ljava/util/ArrayList;Ljava/util/ArrayList;)V
 
-    iget-object v5, p0, Lcom/android/launcher3/allapps/controller/AppsAdapter$7;->val$items:Ljava/util/ArrayList;
+    :cond_4
+    const-string v10, "addItemToFolder item : "
 
-    invoke-virtual {v4, v5}, Lcom/android/launcher3/folder/FolderInfo;->add(Ljava/util/ArrayList;)V
+    iget-object v11, p0, Lcom/android/launcher3/allapps/controller/AppsAdapter$7;->val$items:Ljava/util/ArrayList;
+
+    invoke-static {v10, v11}, Lcom/android/launcher3/allapps/controller/AppsAdapter;->debugItemInfo(Ljava/lang/String;Ljava/util/ArrayList;)V
+
+    iget-object v10, p0, Lcom/android/launcher3/allapps/controller/AppsAdapter$7;->val$folder:Lcom/android/launcher3/folder/FolderInfo;
+
+    iget-object v11, p0, Lcom/android/launcher3/allapps/controller/AppsAdapter$7;->val$items:Ljava/util/ArrayList;
+
+    invoke-virtual {v10, v11}, Lcom/android/launcher3/folder/FolderInfo;->add(Ljava/util/ArrayList;)V
 
     return-void
 .end method

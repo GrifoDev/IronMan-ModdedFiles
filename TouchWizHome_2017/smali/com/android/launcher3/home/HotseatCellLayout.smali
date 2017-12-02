@@ -492,7 +492,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f0900c5
+    const v2, 0x7f0900cd
 
     invoke-virtual {v1, v2}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -695,46 +695,6 @@
     const/4 v0, 0x0
 
     goto :goto_0
-.end method
-
-.method markCellsAsOccupiedForAllChild()V
-    .locals 4
-
-    invoke-virtual {p0}, Lcom/android/launcher3/home/HotseatCellLayout;->getCellLayoutChildren()Lcom/android/launcher3/common/base/view/CellLayoutChildren;
-
-    move-result-object v3
-
-    invoke-virtual {v3}, Lcom/android/launcher3/common/base/view/CellLayoutChildren;->getChildCount()I
-
-    move-result v1
-
-    const/4 v2, 0x0
-
-    :goto_0
-    if-ge v2, v1, :cond_1
-
-    invoke-virtual {p0}, Lcom/android/launcher3/home/HotseatCellLayout;->getCellLayoutChildren()Lcom/android/launcher3/common/base/view/CellLayoutChildren;
-
-    move-result-object v3
-
-    invoke-virtual {v3, v2}, Lcom/android/launcher3/common/base/view/CellLayoutChildren;->getChildAt(I)Landroid/view/View;
-
-    move-result-object v0
-
-    if-nez v0, :cond_0
-
-    :goto_1
-    add-int/lit8 v2, v2, 0x1
-
-    goto :goto_0
-
-    :cond_0
-    invoke-virtual {p0, v0}, Lcom/android/launcher3/home/HotseatCellLayout;->markCellsAsOccupiedForView(Landroid/view/View;)V
-
-    goto :goto_1
-
-    :cond_1
-    return-void
 .end method
 
 .method realTimeReorder(II)Landroid/animation/AnimatorSet;
@@ -1040,13 +1000,13 @@
 
     move-result-object v1
 
-    const v2, 0x7f0901ad
+    const v2, 0x7f0901b8
 
     invoke-virtual {v7, v2}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
     move-result-object v2
 
-    const v4, 0x7f090166
+    const v4, 0x7f090171
 
     invoke-virtual {v7, v4}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 

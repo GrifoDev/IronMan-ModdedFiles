@@ -106,6 +106,14 @@
     return-object v0
 .end method
 
+.method static synthetic access$100(Lcom/android/launcher3/common/quickoption/QuickOptionView;)Landroid/animation/AnimatorSet;
+    .locals 1
+
+    iget-object v0, p0, Lcom/android/launcher3/common/quickoption/QuickOptionView;->mShowAnim:Landroid/animation/AnimatorSet;
+
+    return-object v0
+.end method
+
 .method static synthetic access$102(Lcom/android/launcher3/common/quickoption/QuickOptionView;Landroid/animation/AnimatorSet;)Landroid/animation/AnimatorSet;
     .locals 0
 
@@ -159,7 +167,7 @@
 
     move-result-object v5
 
-    const v8, 0x7f0a00cd
+    const v8, 0x7f0a00cf
 
     invoke-virtual {v5, v8}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -171,7 +179,7 @@
 
     move-result-object v5
 
-    const v8, 0x7f0a00cc
+    const v8, 0x7f0a00ce
 
     invoke-virtual {v5, v8}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -445,9 +453,9 @@
 
     iget-object v3, p0, Lcom/android/launcher3/common/quickoption/QuickOptionView;->mHideAnim:Landroid/animation/AnimatorSet;
 
-    new-instance v4, Lcom/android/launcher3/common/quickoption/QuickOptionView$4;
+    new-instance v4, Lcom/android/launcher3/common/quickoption/QuickOptionView$5;
 
-    invoke-direct {v4, p0, p1}, Lcom/android/launcher3/common/quickoption/QuickOptionView$4;-><init>(Lcom/android/launcher3/common/quickoption/QuickOptionView;Ljava/lang/Runnable;)V
+    invoke-direct {v4, p0, p1}, Lcom/android/launcher3/common/quickoption/QuickOptionView$5;-><init>(Lcom/android/launcher3/common/quickoption/QuickOptionView;Ljava/lang/Runnable;)V
 
     invoke-virtual {v3, v4}, Landroid/animation/AnimatorSet;->addListener(Landroid/animation/Animator$AnimatorListener;)V
 
@@ -565,9 +573,11 @@
 
     invoke-virtual {v3, v4}, Landroid/animation/AnimatorSet;->addListener(Landroid/animation/Animator$AnimatorListener;)V
 
-    iget-object v3, p0, Lcom/android/launcher3/common/quickoption/QuickOptionView;->mShowAnim:Landroid/animation/AnimatorSet;
+    new-instance v3, Lcom/android/launcher3/common/quickoption/QuickOptionView$4;
 
-    invoke-virtual {v3}, Landroid/animation/AnimatorSet;->start()V
+    invoke-direct {v3, p0}, Lcom/android/launcher3/common/quickoption/QuickOptionView$4;-><init>(Lcom/android/launcher3/common/quickoption/QuickOptionView;)V
+
+    invoke-virtual {p0, v3}, Lcom/android/launcher3/common/quickoption/QuickOptionView;->post(Ljava/lang/Runnable;)Z
 
     return-void
 .end method
@@ -964,7 +974,7 @@
 
     move-result-object v9
 
-    const v10, 0x7f0a00d0
+    const v10, 0x7f0a00d2
 
     invoke-virtual {v9, v10}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -992,7 +1002,7 @@
 
     move-result-object v9
 
-    const v10, 0x7f0a017e
+    const v10, 0x7f0a0183
 
     invoke-virtual {v9, v10}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -1004,7 +1014,7 @@
 
     move-result-object v9
 
-    const v10, 0x7f0a00cc
+    const v10, 0x7f0a00ce
 
     invoke-virtual {v9, v10}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -1117,7 +1127,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f0a00cb
+    const v1, 0x7f0a00cd
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -1272,7 +1282,7 @@
 
     move-result-object v12
 
-    const v13, 0x7f0a017c
+    const v13, 0x7f0a0181
 
     invoke-virtual {v12, v13}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -1327,7 +1337,7 @@
 
     move-result-object v12
 
-    const v13, 0x7f0a00cd
+    const v13, 0x7f0a00cf
 
     invoke-virtual {v12, v13}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -1516,7 +1526,7 @@
     return-void
 
     :cond_2
-    const v12, 0x7f0a00ce
+    const v12, 0x7f0a00d0
 
     goto/16 :goto_0
 
@@ -2038,16 +2048,6 @@
     invoke-direct {p0}, Lcom/android/launcher3/common/quickoption/QuickOptionView;->setBG()V
 
     invoke-direct {p0}, Lcom/android/launcher3/common/quickoption/QuickOptionView;->animateShow()V
-
-    invoke-static {}, Lcom/android/launcher3/util/logging/SALogging;->getInstance()Lcom/android/launcher3/util/logging/SALogging;
-
-    move-result-object v1
-
-    iget-object v2, p0, Lcom/android/launcher3/common/quickoption/QuickOptionView;->mItemInfo:Lcom/android/launcher3/common/base/item/ItemInfo;
-
-    iget-object v3, p0, Lcom/android/launcher3/common/quickoption/QuickOptionView;->mLauncher:Lcom/android/launcher3/Launcher;
-
-    invoke-virtual {v1, v2, v3}, Lcom/android/launcher3/util/logging/SALogging;->insertQuickViewEventLog(Lcom/android/launcher3/common/base/item/ItemInfo;Lcom/android/launcher3/Launcher;)V
 
     :cond_1
     return-void

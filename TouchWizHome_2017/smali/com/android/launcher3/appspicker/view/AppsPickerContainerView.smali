@@ -845,7 +845,7 @@
 
     move-result-object v3
 
-    const v4, 0x7f0900ad
+    const v4, 0x7f0900af
 
     invoke-virtual {v3, v4}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -1046,7 +1046,7 @@
 .method public changeColorAndBackground()V
     .locals 14
 
-    const v13, 0x7f0a019e
+    const v13, 0x7f0a01a3
 
     const/4 v12, 0x0
 

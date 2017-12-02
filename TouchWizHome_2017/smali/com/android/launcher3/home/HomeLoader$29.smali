@@ -51,7 +51,7 @@
 
     iget-object v3, p0, Lcom/android/launcher3/home/HomeLoader$29;->val$task:Lcom/android/launcher3/common/model/DataLoader$DataLoaderState;
 
-    invoke-static {v1, v2, v3}, Lcom/android/launcher3/home/HomeLoader;->access$4900(Lcom/android/launcher3/home/HomeLoader;Lcom/android/launcher3/home/HomeLoader$HomeCallbacks;Lcom/android/launcher3/common/model/DataLoader$DataLoaderState;)Lcom/android/launcher3/home/HomeLoader$HomeCallbacks;
+    invoke-static {v1, v2, v3}, Lcom/android/launcher3/home/HomeLoader;->access$5200(Lcom/android/launcher3/home/HomeLoader;Lcom/android/launcher3/home/HomeLoader$HomeCallbacks;Lcom/android/launcher3/common/model/DataLoader$DataLoaderState;)Lcom/android/launcher3/home/HomeLoader$HomeCallbacks;
 
     move-result-object v0
 
@@ -62,7 +62,7 @@
     :cond_0
     iget-object v1, p0, Lcom/android/launcher3/home/HomeLoader$29;->this$0:Lcom/android/launcher3/home/HomeLoader;
 
-    invoke-static {v1}, Lcom/android/launcher3/home/HomeLoader;->access$5100(Lcom/android/launcher3/home/HomeLoader;)V
+    invoke-static {v1}, Lcom/android/launcher3/home/HomeLoader;->access$5400(Lcom/android/launcher3/home/HomeLoader;)V
 
     return-void
 .end method

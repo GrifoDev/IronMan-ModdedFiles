@@ -45,7 +45,7 @@
 
     iget-boolean v1, p0, Lcom/android/launcher3/LauncherModel$5;->val$refresh:Z
 
-    invoke-static {v0, v1}, Lcom/android/launcher3/LauncherModel;->access$2300(Lcom/android/launcher3/LauncherModel;Z)V
+    invoke-static {v0, v1}, Lcom/android/launcher3/LauncherModel;->access$2500(Lcom/android/launcher3/LauncherModel;Z)V
 
     return-void
 .end method

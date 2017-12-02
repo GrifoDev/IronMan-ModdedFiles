@@ -490,9 +490,9 @@
     .annotation build Landroid/support/annotation/UiThread;
     .end annotation
 
-    const/4 v6, 0x1
-
     const/4 v7, 0x0
+
+    const/4 v6, 0x1
 
     iget-object v5, p0, Lcom/android/launcher3/allapps/view/AppsIconViewStub;->mLauncher:Lcom/android/launcher3/Launcher;
 
@@ -517,19 +517,19 @@
 
     move-result-object v4
 
-    if-nez p2, :cond_5
+    if-nez p2, :cond_6
 
-    if-eqz p1, :cond_5
+    if-eqz p1, :cond_6
 
-    if-eqz v4, :cond_5
+    if-eqz v4, :cond_6
 
     instance-of v5, v4, Landroid/view/ViewGroup;
 
-    if-eqz v5, :cond_5
+    if-eqz v5, :cond_6
 
     iget-boolean v5, p0, Lcom/android/launcher3/allapps/view/AppsIconViewStub;->mMarkToRemove:Z
 
-    if-nez v5, :cond_5
+    if-nez v5, :cond_6
 
     move-object v3, v4
 
@@ -556,8 +556,19 @@
 
     move-result-object v2
 
-    if-eqz v2, :cond_4
+    if-eqz v2, :cond_5
 
+    instance-of v5, v2, Lcom/android/launcher3/common/base/view/CellLayout$LayoutParams;
+
+    if-eqz v5, :cond_3
+
+    move-object v5, v2
+
+    check-cast v5, Lcom/android/launcher3/common/base/view/CellLayout$LayoutParams;
+
+    iput-boolean v6, v5, Lcom/android/launcher3/common/base/view/CellLayout$LayoutParams;->isLockedToGrid:Z
+
+    :cond_3
     invoke-virtual {v3, p1, v1, v2}, Landroid/view/ViewGroup;->addView(Landroid/view/View;ILandroid/view/ViewGroup$LayoutParams;)V
 
     :goto_1
@@ -574,11 +585,11 @@
 
     iget-boolean v5, p0, Lcom/android/launcher3/allapps/view/AppsIconViewStub;->mMarkToRemove:Z
 
-    if-nez v5, :cond_3
+    if-nez v5, :cond_4
 
-    if-eqz p2, :cond_7
+    if-eqz p2, :cond_8
 
-    :cond_3
+    :cond_4
     move v0, v6
 
     :goto_3
@@ -592,12 +603,12 @@
 
     goto :goto_0
 
-    :cond_4
+    :cond_5
     invoke-virtual {v3, p1, v1}, Landroid/view/ViewGroup;->addView(Landroid/view/View;I)V
 
     goto :goto_1
 
-    :cond_5
+    :cond_6
     const-string v8, "AppsIconViewStub"
 
     new-instance v5, Ljava/lang/StringBuilder;
@@ -610,7 +621,7 @@
 
     move-result-object v9
 
-    if-eqz v4, :cond_6
+    if-eqz v4, :cond_7
 
     move v5, v6
 
@@ -649,12 +660,12 @@
 
     goto :goto_2
 
-    :cond_6
+    :cond_7
     move v5, v7
 
     goto :goto_4
 
-    :cond_7
+    :cond_8
     move v0, v7
 
     goto :goto_3

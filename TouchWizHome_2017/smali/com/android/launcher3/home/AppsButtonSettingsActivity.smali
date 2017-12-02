@@ -230,7 +230,7 @@
 
     move-result-object v20
 
-    const v21, 0x7f0a0129
+    const v21, 0x7f0a012e
 
     invoke-virtual/range {v20 .. v21}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -240,7 +240,7 @@
 
     move-result-object v20
 
-    const v21, 0x7f0a012a
+    const v21, 0x7f0a012f
 
     invoke-virtual/range {v20 .. v21}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -449,7 +449,7 @@
 
     move-result-object v7
 
-    const v8, 0x7f0a00f2
+    const v8, 0x7f0a00f6
 
     invoke-virtual {v7, v8}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -781,7 +781,7 @@
 
     move-result-object v2
 
-    const v3, 0x7f0a00f2
+    const v3, 0x7f0a00f6
 
     invoke-virtual {v2, v3}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -1422,7 +1422,7 @@
 
     move-result-object v0
 
-    const v2, 0x7f090194
+    const v2, 0x7f0901a1
 
     invoke-virtual {v0, v2}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -1434,7 +1434,7 @@
 
     move-result-object v0
 
-    const v3, 0x7f09017f
+    const v3, 0x7f09018c
 
     invoke-virtual {v0, v3}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -1450,7 +1450,7 @@
 
     move-result-object v0
 
-    const v3, 0x7f09013f
+    const v3, 0x7f090148
 
     invoke-virtual {v0, v3}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -1590,7 +1590,7 @@
 
     move-result-object v1
 
-    const v3, 0x7f090194
+    const v3, 0x7f0901a1
 
     invoke-virtual {v1, v3}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -1600,7 +1600,7 @@
 
     move-result-object v1
 
-    const v4, 0x7f0900fc
+    const v4, 0x7f090105
 
     invoke-virtual {v1, v4}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -1621,7 +1621,7 @@
 
     move-result-object v1
 
-    const v3, 0x7f0901b3
+    const v3, 0x7f0901c0
 
     invoke-virtual {v1, v3}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -1694,7 +1694,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f090194
+    const v2, 0x7f0901a1
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -1704,7 +1704,7 @@
 
     move-result-object v2
 
-    const v3, 0x7f090115
+    const v3, 0x7f09011e
 
     invoke-virtual {v2, v3}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -1767,13 +1767,13 @@
 
     move-result v0
 
-    if-eqz v0, :cond_1
+    if-eqz v0, :cond_0
 
     const/4 v0, -0x1
 
     invoke-virtual {p0, v0}, Lcom/android/launcher3/home/AppsButtonSettingsActivity;->setRequestedOrientation(I)V
 
-    :goto_0
+    :cond_0
     invoke-static {}, Lcom/android/launcher3/LauncherAppState;->getInstance()Lcom/android/launcher3/LauncherAppState;
 
     move-result-object v0
@@ -1788,7 +1788,7 @@
 
     move-result-object v0
 
-    if-eqz v0, :cond_0
+    if-eqz v0, :cond_1
 
     invoke-virtual {p0}, Lcom/android/launcher3/home/AppsButtonSettingsActivity;->getIntent()Landroid/content/Intent;
 
@@ -1798,7 +1798,7 @@
 
     move-result-object v0
 
-    if-eqz v0, :cond_0
+    if-eqz v0, :cond_1
 
     invoke-virtual {p0}, Lcom/android/launcher3/home/AppsButtonSettingsActivity;->getIntent()Landroid/content/Intent;
 
@@ -1814,7 +1814,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_0
+    if-eqz v0, :cond_1
 
     invoke-virtual {p0}, Lcom/android/launcher3/home/AppsButtonSettingsActivity;->getIntent()Landroid/content/Intent;
 
@@ -1832,7 +1832,7 @@
 
     invoke-virtual {p0}, Lcom/android/launcher3/home/AppsButtonSettingsActivity;->finish()V
 
-    :cond_0
+    :cond_1
     const v0, 0x7f04000a
 
     invoke-virtual {p0, v0}, Lcom/android/launcher3/home/AppsButtonSettingsActivity;->setContentView(I)V
@@ -1854,11 +1854,4 @@
     invoke-virtual {v0, p0}, Lcom/android/launcher3/LauncherAppState;->setAppsButtonSettingsActivity(Lcom/android/launcher3/home/AppsButtonSettingsActivity;)V
 
     return-void
-
-    :cond_1
-    const/4 v0, 0x5
-
-    invoke-virtual {p0, v0}, Lcom/android/launcher3/home/AppsButtonSettingsActivity;->setRequestedOrientation(I)V
-
-    goto :goto_0
 .end method

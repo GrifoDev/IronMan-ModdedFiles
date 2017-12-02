@@ -1287,7 +1287,7 @@
 
     move-result-object v6
 
-    const v9, 0x7f0900b6
+    const v9, 0x7f0900bd
 
     invoke-virtual {v6, v9}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -2069,7 +2069,7 @@
 
     invoke-direct {v0, v1}, Landroid/app/AlertDialog$Builder;-><init>(Landroid/content/Context;)V
 
-    const v1, 0x7f0900a7
+    const v1, 0x7f0900a9
 
     invoke-virtual {v0, v1}, Landroid/app/AlertDialog$Builder;->setMessage(I)Landroid/app/AlertDialog$Builder;
 
@@ -2081,7 +2081,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f0900a8
+    const v1, 0x7f0900aa
 
     new-instance v2, Lcom/android/launcher3/home/Workspace$19;
 
@@ -2427,7 +2427,7 @@
 
     move-result-object v2
 
-    const v3, 0x7f0900ad
+    const v3, 0x7f0900af
 
     invoke-virtual {v2, v3}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -2469,6 +2469,10 @@
     iget-object v2, p0, Lcom/android/launcher3/home/Workspace;->mDefaultHomeIcon:Landroid/view/View;
 
     invoke-virtual {v2, v0}, Landroid/view/View;->setContentDescription(Ljava/lang/CharSequence;)V
+
+    iget-object v2, p0, Lcom/android/launcher3/home/Workspace;->mDefaultHomeIcon:Landroid/view/View;
+
+    invoke-static {v2, v0}, Lcom/android/launcher3/Utilities;->setHoverPopupContentDescription(Landroid/view/View;Ljava/lang/CharSequence;)V
 
     return-void
 
@@ -2623,7 +2627,7 @@
 
     move-result-object v2
 
-    const v3, 0x7f0901a6
+    const v3, 0x7f0901b3
 
     invoke-virtual {v2, v3}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -2633,7 +2637,7 @@
 
     move-result-object v3
 
-    const v4, 0x7f090117
+    const v4, 0x7f090120
 
     invoke-virtual {v3, v4}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -2990,7 +2994,7 @@
 
     move-result-object v6
 
-    const v7, 0x7f0901a6
+    const v7, 0x7f0901b3
 
     invoke-virtual {v6, v7}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -3000,7 +3004,7 @@
 
     move-result-object v7
 
-    const v8, 0x7f0900eb
+    const v8, 0x7f0900f4
 
     invoke-virtual {v7, v8}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -3087,7 +3091,7 @@
 
     move-result-object v1
 
-    const v3, 0x7f0901a6
+    const v3, 0x7f0901b3
 
     invoke-virtual {v1, v3}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -3101,7 +3105,7 @@
 
     move-result-object v1
 
-    const v4, 0x7f0900ed
+    const v4, 0x7f0900f6
 
     invoke-virtual {v1, v4}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -3132,7 +3136,7 @@
 
     move-result-object v1
 
-    const v4, 0x7f0900ec
+    const v4, 0x7f0900f5
 
     invoke-virtual {v1, v4}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -7008,13 +7012,13 @@
 
     move-result-object v4
 
-    const v6, 0x7f0901aa
+    const v6, 0x7f0901b7
 
     invoke-virtual {v3, v6}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
     move-result-object v6
 
-    const v7, 0x7f090140
+    const v7, 0x7f090149
 
     invoke-virtual {v3, v7}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -7596,10 +7600,12 @@
     goto :goto_1
 .end method
 
-.method onPause()V
+.method public onPause()V
     .locals 7
 
     const/4 v3, 0x0
+
+    invoke-super {p0}, Lcom/android/launcher3/common/base/view/PagedView;->onPause()V
 
     iget-object v0, p0, Lcom/android/launcher3/home/Workspace;->mRemoveScreenDialog:Landroid/app/AlertDialog;
 
@@ -7741,8 +7747,10 @@
     goto :goto_0
 .end method
 
-.method onResume()V
+.method public onResume()V
     .locals 1
+
+    invoke-super {p0}, Lcom/android/launcher3/common/base/view/PagedView;->onResume()V
 
     invoke-static {}, Lcom/android/launcher3/LauncherAppState;->getInstance()Lcom/android/launcher3/LauncherAppState;
 
@@ -8712,7 +8720,7 @@
 
     move-result-object v2
 
-    const v3, 0x7f0901a6
+    const v3, 0x7f0901b3
 
     invoke-virtual {v2, v3}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -8722,7 +8730,7 @@
 
     move-result-object v3
 
-    const v4, 0x7f090117
+    const v4, 0x7f090120
 
     invoke-virtual {v3, v4}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -9401,13 +9409,13 @@
 
     move-result-object v2
 
-    const v3, 0x7f0901ac
+    const v3, 0x7f0901b9
 
     invoke-virtual {v1, v3}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
     move-result-object v3
 
-    const v4, 0x7f090176
+    const v4, 0x7f090183
 
     invoke-virtual {v1, v4}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -9440,13 +9448,13 @@
 
     move-result-object v2
 
-    const v3, 0x7f0901a6
+    const v3, 0x7f0901b3
 
     invoke-virtual {v1, v3}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
     move-result-object v3
 
-    const v4, 0x7f09011a
+    const v4, 0x7f090123
 
     invoke-virtual {v1, v4}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -9463,13 +9471,13 @@
 
     move-result-object v2
 
-    const v3, 0x7f0901aa
+    const v3, 0x7f0901b7
 
     invoke-virtual {v1, v3}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
     move-result-object v3
 
-    const v4, 0x7f090153
+    const v4, 0x7f09015c
 
     invoke-virtual {v1, v4}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 

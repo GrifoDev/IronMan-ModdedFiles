@@ -306,7 +306,7 @@
 
     move-result-object v1
 
-    const v4, 0x7f0900ad
+    const v4, 0x7f0900af
 
     invoke-virtual {v1, v4}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -327,7 +327,7 @@
 
     invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
 
-    const v5, 0x7f0901d5
+    const v5, 0x7f0900c3
 
     invoke-virtual {v1, v5}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -705,7 +705,7 @@
     return-object v0
 .end method
 
-.method getScreenGridTopConatiner()Landroid/view/View;
+.method public getScreenGridTopConatiner()Landroid/view/View;
     .locals 1
 
     iget-object v0, p0, Lcom/android/launcher3/home/ScreenGridPanel;->mScreenGridTopContainer:Landroid/view/View;
@@ -786,7 +786,7 @@
 
     move-result-object v2
 
-    const v3, 0x7f0900ab
+    const v3, 0x7f0900ad
 
     const/4 v4, 0x2
 
@@ -1139,7 +1139,7 @@
 
     move-result-object v5
 
-    const v18, 0x7f0901d5
+    const v18, 0x7f0900c3
 
     move/from16 v0, v18
 
@@ -1165,7 +1165,7 @@
 
     move-result v12
 
-    const v18, 0x7f0a0184
+    const v18, 0x7f0a0189
 
     move/from16 v0, v18
 
@@ -1294,7 +1294,7 @@
 
     move/from16 v16, v0
 
-    const v18, 0x7f0a0186
+    const v18, 0x7f0a018b
 
     move/from16 v0, v18
 
@@ -1332,7 +1332,7 @@
 
     if-lt v0, v1, :cond_6
 
-    const v18, 0x7f0a0187
+    const v18, 0x7f0a018c
 
     move/from16 v0, v18
 

@@ -39,7 +39,7 @@
 
     iget-object v2, p0, Lcom/android/launcher3/LauncherModel$10;->this$0:Lcom/android/launcher3/LauncherModel;
 
-    invoke-static {v2}, Lcom/android/launcher3/LauncherModel;->access$2400(Lcom/android/launcher3/LauncherModel;)Lcom/android/launcher3/common/model/BadgeCache;
+    invoke-static {v2}, Lcom/android/launcher3/LauncherModel;->access$2600(Lcom/android/launcher3/LauncherModel;)Lcom/android/launcher3/common/model/BadgeCache;
 
     move-result-object v2
 

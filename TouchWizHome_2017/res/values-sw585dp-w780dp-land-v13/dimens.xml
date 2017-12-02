@@ -13,6 +13,8 @@
     <dimen name="appsPicker_title_layout_height">43.0dip</dimen>
     <dimen name="badge_text_size">11.0dip</dimen>
     <dimen name="drop_target_bar_height">52.0dip</dimen>
+    <dimen name="home_default_cellHeight_port">76.0dip</dimen>
+    <dimen name="home_default_cellWidth_port">114.0dip</dimen>
     <dimen name="home_workspace_animate_offsetY_overview">6.0dip</dimen>
     <dimen name="home_workspace_indicator_margin_bottom_overview">95.0dip</dimen>
     <dimen name="multi_select_pannel_height">59.0dip</dimen>
@@ -82,24 +84,24 @@
     <dimen name="widget_search_titlebar_padding_right">21.0dip</dimen>
     <dimen name="widget_searchbar_anchorview_margin_end">4.0dip</dimen>
     <dimen name="widget_searchbar_anchorview_margin_top">1.0dip</dimen>
-    <dimen name="widget_searchbar_divider_height">18.0dip</dimen>
+    <dimen name="widget_searchbar_divider_height">16.0dip</dimen>
     <dimen name="widget_searchbar_searchview_height">34.0dip</dimen>
     <dimen name="widget_searchbar_searchview_padding_end">-13.0dip</dimen>
     <dimen name="widget_searchbar_searchview_padding_start">-7.0dip</dimen>
     <dimen name="widget_searchview_text_size">12.0dip</dimen>
     <dimen name="widget_title_bar_height">33.0dip</dimen>
-    <dimen name="all_apps_search_view_margin_top">27.0dip</dimen>
+    <item type="dimen" name="all_apps_search_view_margin_top">@dimen/status_bar_height</item>
     <dimen name="apps_search_titlebar_padding_bottom">0.0dip</dimen>
     <dimen name="apps_search_titlebar_padding_top">0.0dip</dimen>
-    <dimen name="appsearch_menu_searchHeight">34.0dip</dimen>
-    <dimen name="tidyup_container_height">42.0dip</dimen>
-    <dimen name="tidyup_container_margin_top">18.0dip</dimen>
+    <dimen name="appsearch_menu_searchHeight">36.0dip</dimen>
+    <dimen name="tidyup_container_height">43.0dip</dimen>
+    <dimen name="tidyup_container_margin_top">20.0dip</dimen>
     <dimen name="widget_folder_page_cellgap_x">27.0dip</dimen>
     <dimen name="widget_folder_page_cellgap_y">27.0dip</dimen>
     <dimen name="widget_folder_pageindicator_container_height">48.0dip</dimen>
     <dimen name="widget_page_indicator_bottom_margin">29.0dip</dimen>
     <dimen name="widget_page_top_margin">69.0dip</dimen>
-    <dimen name="appsearch_container_Height">34.0dip</dimen>
+    <dimen name="appsearch_container_Height">36.0dip</dimen>
     <dimen name="overview_home_button_size">34.0dip</dimen>
     <dimen name="overview_pannel_options_button_drawable_size">33.0dip</dimen>
     <dimen name="overview_pannel_options_button_width">103.0dip</dimen>
@@ -108,8 +110,7 @@
     <dimen name="searchbar_searchview_padding_end">-18.0dip</dimen>
     <dimen name="searchbar_searchview_padding_start">-18.5dip</dimen>
     <dimen name="apps_hint_page_width">19.0dip</dimen>
-    <dimen name="apps_search_titlebar_btn_margin">9.0dip</dimen>
-    <dimen name="apps_search_titlebar_margin_left">21.0dip</dimen>
+    <dimen name="apps_search_titlebar_margin_left">58.5dip</dimen>
     <dimen name="apps_search_titlebar_text_margin_left">34.0dip</dimen>
     <dimen name="apps_search_titlebar_text_margin_right">10.0dip</dimen>
     <dimen name="apps_search_titlebar_text_size">17.0dip</dimen>
@@ -129,5 +130,7 @@
     <dimen name="overview_zeropage_switch_text_padding_left">19.0dip</dimen>
     <dimen name="overview_zeropage_switch_text_padding_right">11.0dip</dimen>
     <dimen name="overview_zeropage_switch_text_size">13.0dip</dimen>
-    <dimen name="status_bar_height">24.0dip</dimen>
+    <dimen name="status_bar_height">30.0dip</dimen>
+    <dimen name="home_6x6_cellHeight_port">64.0dip</dimen>
+    <dimen name="home_6x6_cellWidth_port">114.0dip</dimen>
 </resources>

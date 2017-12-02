@@ -84,6 +84,8 @@
 
 .field private static final MAXIMUM_POOL_SIZE:I
 
+.field public static final NOTIFICATION_PANEL_SETTING_PREFERENCE_KEY:Ljava/lang/String; = "pref_notification_panel_setting"
+
 .field public static final SCREEN_GRID_SUMMARY:Ljava/lang/String; = "screen_grid_summary"
 
 .field public static final SMARTSWITCH_RESTORE_ERROR_CODE:Ljava/lang/String; = "smartswitch_restore_error_code"
@@ -897,44 +899,67 @@
 .end method
 
 .method public static canDisable(Landroid/content/Context;Ljava/lang/String;)Z
-    .locals 2
+    .locals 4
 
-    const/4 v0, 0x0
+    const/4 v2, 0x0
 
     invoke-static {p1}, Lcom/android/launcher3/Utilities;->isBlockUninstallAndDisableByEDM(Ljava/lang/String;)Z
 
-    move-result v1
+    move-result v3
 
-    if-eqz v1, :cond_1
+    if-eqz v3, :cond_1
 
     :cond_0
     :goto_0
-    return v0
+    return v2
 
     :cond_1
+    const-string v3, "device_policy"
+
+    invoke-virtual {p0, v3}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Landroid/app/admin/DevicePolicyManager;
+
+    if-eqz v1, :cond_2
+
+    invoke-static {}, Lcom/android/launcher3/util/TestHelper;->isRoboUnitTest()Z
+
+    move-result v3
+
+    if-nez v3, :cond_2
+
+    invoke-virtual {v1, p1}, Landroid/app/admin/DevicePolicyManager;->semHasActiveAdminForPackage(Ljava/lang/String;)Z
+
+    move-result v0
+
+    if-nez v0, :cond_0
+
+    :cond_2
     invoke-static {p0, p1}, Lcom/android/launcher3/Utilities;->canUninstall(Landroid/content/Context;Ljava/lang/String;)Z
 
-    move-result v1
+    move-result v3
 
-    if-nez v1, :cond_0
+    if-nez v3, :cond_0
 
-    sget-object v1, Lcom/android/launcher3/common/model/DisableableAppCache;->mDisableableItems:Ljava/util/ArrayList;
+    sget-object v3, Lcom/android/launcher3/common/model/DisableableAppCache;->mDisableableItems:Ljava/util/ArrayList;
 
-    invoke-virtual {v1, p1}, Ljava/util/ArrayList;->contains(Ljava/lang/Object;)Z
+    invoke-virtual {v3, p1}, Ljava/util/ArrayList;->contains(Ljava/lang/Object;)Z
 
-    move-result v1
+    move-result v3
 
-    if-eqz v1, :cond_0
+    if-eqz v3, :cond_0
 
-    sget-object v1, Lcom/android/launcher3/common/model/DisableableAppCache;->mDisableBlockedItems:Ljava/util/ArrayList;
+    sget-object v3, Lcom/android/launcher3/common/model/DisableableAppCache;->mDisableBlockedItems:Ljava/util/ArrayList;
 
-    invoke-virtual {v1, p1}, Ljava/util/ArrayList;->contains(Ljava/lang/Object;)Z
+    invoke-virtual {v3, p1}, Ljava/util/ArrayList;->contains(Ljava/lang/Object;)Z
 
-    move-result v1
+    move-result v3
 
-    if-nez v1, :cond_0
+    if-nez v3, :cond_0
 
-    const/4 v0, 0x1
+    const/4 v2, 0x1
 
     goto :goto_0
 .end method
@@ -970,7 +995,7 @@
     return v4
 
     :cond_1
-    const/4 v5, 0x0
+    const/16 v5, 0x2000
 
     invoke-virtual {v2, p1, v5}, Landroid/content/pm/PackageManager;->getApplicationInfo(Ljava/lang/String;I)Landroid/content/pm/ApplicationInfo;
 
@@ -1426,6 +1451,27 @@
     div-float/2addr v1, v0
 
     return v1
+.end method
+
+.method public static expandNotificationsPanel(Landroid/content/Context;)V
+    .locals 2
+
+    if-eqz p0, :cond_0
+
+    const-string v1, "sem_statusbar"
+
+    invoke-virtual {p0, v1}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Landroid/app/SemStatusBarManager;
+
+    if-eqz v0, :cond_0
+
+    invoke-virtual {v0}, Landroid/app/SemStatusBarManager;->expandNotificationsPanel()V
+
+    :cond_0
+    return-void
 .end method
 
 .method public static findSystemApk(Ljava/lang/String;Landroid/content/pm/PackageManager;)Landroid/util/Pair;
@@ -2516,7 +2562,7 @@
     return v1
 .end method
 
-.method public static getFullScreenSize(Landroid/app/Activity;Landroid/graphics/Point;)V
+.method private static getFullScreenSize(Landroid/app/Activity;Landroid/graphics/Point;)V
     .locals 1
 
     if-eqz p0, :cond_0
@@ -2887,6 +2933,94 @@
     return-object v1
 .end method
 
+.method public static getSystemProperty(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    .locals 8
+
+    :try_start_0
+    const-string v4, "android.os.SystemProperties"
+
+    invoke-static {v4}, Ljava/lang/Class;->forName(Ljava/lang/String;)Ljava/lang/Class;
+
+    move-result-object v0
+
+    const-string v4, "get"
+
+    const/4 v5, 0x1
+
+    new-array v5, v5, [Ljava/lang/Class;
+
+    const/4 v6, 0x0
+
+    const-class v7, Ljava/lang/String;
+
+    aput-object v7, v5, v6
+
+    invoke-virtual {v0, v4, v5}, Ljava/lang/Class;->getDeclaredMethod(Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
+
+    move-result-object v2
+
+    const/4 v4, 0x0
+
+    const/4 v5, 0x1
+
+    new-array v5, v5, [Ljava/lang/Object;
+
+    const/4 v6, 0x0
+
+    aput-object p0, v5, v6
+
+    invoke-virtual {v2, v4, v5}, Ljava/lang/reflect/Method;->invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v3
+
+    check-cast v3, Ljava/lang/String;
+
+    invoke-static {v3}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
+
+    move-result v4
+
+    if-nez v4, :cond_0
+
+    :goto_0
+    return-object v3
+
+    :catch_0
+    move-exception v1
+
+    const-string v4, "Launcher.Utilities"
+
+    new-instance v5, Ljava/lang/StringBuilder;
+
+    invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v6, "Unable to read system properties e="
+
+    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v5
+
+    invoke-virtual {v1}, Ljava/lang/Exception;->toString()Ljava/lang/String;
+
+    move-result-object v6
+
+    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v5
+
+    invoke-virtual {v5}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v5
+
+    invoke-static {v4, v5}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
+
+    :cond_0
+    move-object v3, p1
+
+    goto :goto_0
+.end method
+
 .method public static getVersionCode(Landroid/content/Context;Ljava/lang/String;)I
     .locals 8
 
@@ -3170,21 +3304,46 @@
 .end method
 
 .method public static hideStatusBar(Landroid/view/Window;Z)V
-    .locals 1
+    .locals 4
 
-    const/16 v0, 0x800
+    const/16 v3, 0x800
 
-    if-eqz p1, :cond_0
+    invoke-virtual {p0}, Landroid/view/Window;->getAttributes()Landroid/view/WindowManager$LayoutParams;
 
-    invoke-virtual {p0, v0}, Landroid/view/Window;->clearFlags(I)V
+    move-result-object v2
+
+    iget v0, v2, Landroid/view/WindowManager$LayoutParams;->flags:I
+
+    and-int/lit16 v2, v0, 0x800
+
+    if-eqz v2, :cond_1
+
+    const/4 v1, 0x1
 
     :goto_0
-    return-void
+    if-eqz v1, :cond_2
+
+    if-eqz p1, :cond_2
+
+    invoke-virtual {p0, v3}, Landroid/view/Window;->clearFlags(I)V
 
     :cond_0
-    invoke-virtual {p0, v0}, Landroid/view/Window;->addFlags(I)V
+    :goto_1
+    return-void
+
+    :cond_1
+    const/4 v1, 0x0
 
     goto :goto_0
+
+    :cond_2
+    if-nez v1, :cond_0
+
+    if-nez p1, :cond_0
+
+    invoke-virtual {p0, v3}, Landroid/view/Window;->addFlags(I)V
+
+    goto :goto_1
 .end method
 
 .method public static isAppEnabled(Landroid/content/Context;Lcom/android/launcher3/common/base/item/IconInfo;)Z
@@ -3359,6 +3518,26 @@
     const/4 v0, 0x0
 
     goto :goto_0
+.end method
+
+.method public static isBootCompleted()Z
+    .locals 3
+
+    const-string v0, "1"
+
+    const-string v1, "sys.boot_completed"
+
+    const-string v2, "0"
+
+    invoke-static {v1, v2}, Lcom/android/launcher3/Utilities;->getSystemProperty(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    return v0
 .end method
 
 .method public static isComponentActive(Landroid/content/Context;Landroid/content/ComponentName;[Landroid/content/pm/ComponentInfo;)Z
@@ -3711,6 +3890,36 @@
     move-result v0
 
     if-eqz v0, :cond_0
+
+    const/4 v0, 0x1
+
+    :goto_0
+    return v0
+
+    :cond_0
+    const/4 v0, 0x0
+
+    goto :goto_0
+.end method
+
+.method public static isKnoxEnabledApp(Landroid/os/UserHandle;)Z
+    .locals 2
+
+    invoke-virtual {p0}, Landroid/os/UserHandle;->semGetIdentifier()I
+
+    move-result v0
+
+    const/16 v1, 0xc3
+
+    if-lt v0, v1, :cond_0
+
+    invoke-virtual {p0}, Landroid/os/UserHandle;->semGetIdentifier()I
+
+    move-result v0
+
+    const/16 v1, 0xc8
+
+    if-gt v0, v1, :cond_0
 
     const/4 v0, 0x1
 
@@ -4986,6 +5195,94 @@
     return-void
 .end method
 
+.method public static setHoverPopupContentDescription(Landroid/view/View;Ljava/lang/CharSequence;)V
+    .locals 5
+
+    const/4 v2, 0x1
+
+    :try_start_0
+    invoke-virtual {p0, v2}, Landroid/view/View;->semSetHoverPopupType(I)V
+
+    const/4 v2, 0x1
+
+    invoke-virtual {p0, v2}, Landroid/view/View;->semGetHoverPopup(Z)Lcom/samsung/android/widget/SemHoverPopupWindow;
+
+    move-result-object v1
+
+    if-eqz v1, :cond_0
+
+    invoke-virtual {v1, p1}, Lcom/samsung/android/widget/SemHoverPopupWindow;->setContent(Ljava/lang/CharSequence;)V
+    :try_end_0
+    .catch Ljava/lang/NoSuchMethodError; {:try_start_0 .. :try_end_0} :catch_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_1
+
+    :cond_0
+    :goto_0
+    return-void
+
+    :catch_0
+    move-exception v0
+
+    const-string v2, "Launcher.Utilities"
+
+    new-instance v3, Ljava/lang/StringBuilder;
+
+    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v4, "Method not found : "
+
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    invoke-virtual {v0}, Ljava/lang/NoSuchMethodError;->toString()Ljava/lang/String;
+
+    move-result-object v4
+
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-static {v2, v3}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
+
+    goto :goto_0
+
+    :catch_1
+    move-exception v0
+
+    const-string v2, "Launcher.Utilities"
+
+    new-instance v3, Ljava/lang/StringBuilder;
+
+    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v4, "setHoverPopupContentDescription : "
+
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    invoke-virtual {v0}, Ljava/lang/Exception;->toString()Ljava/lang/String;
+
+    move-result-object v4
+
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-static {v2, v3}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
+
+    goto :goto_0
+.end method
+
 .method public static setZeroPageKey(Landroid/content/Context;ZLjava/lang/String;)V
     .locals 4
 
@@ -5177,7 +5474,7 @@
 
     if-nez v11, :cond_0
 
-    const v11, 0x7f0900a9
+    const v11, 0x7f0900ab
 
     const/4 v12, 0x0
 
@@ -5859,7 +6156,7 @@
 
     move-result-object v2
 
-    const v3, 0x7f0900b3
+    const v3, 0x7f0900b7
 
     invoke-virtual {v2, v3}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 

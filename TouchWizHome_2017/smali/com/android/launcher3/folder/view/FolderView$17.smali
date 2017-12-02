@@ -39,19 +39,19 @@
 
     iget-object v0, p0, Lcom/android/launcher3/folder/view/FolderView$17;->this$0:Lcom/android/launcher3/folder/view/FolderView;
 
-    invoke-static {v0}, Lcom/android/launcher3/folder/view/FolderView;->access$1100(Lcom/android/launcher3/folder/view/FolderView;)Lcom/android/launcher3/folder/view/FolderPagedView;
+    invoke-static {v0}, Lcom/android/launcher3/folder/view/FolderView;->access$1200(Lcom/android/launcher3/folder/view/FolderView;)Lcom/android/launcher3/folder/view/FolderPagedView;
 
     move-result-object v0
 
     iget-object v1, p0, Lcom/android/launcher3/folder/view/FolderView$17;->this$0:Lcom/android/launcher3/folder/view/FolderView;
 
-    invoke-static {v1}, Lcom/android/launcher3/folder/view/FolderView;->access$1400(Lcom/android/launcher3/folder/view/FolderView;)I
+    invoke-static {v1}, Lcom/android/launcher3/folder/view/FolderView;->access$1500(Lcom/android/launcher3/folder/view/FolderView;)I
 
     move-result v1
 
     iget-object v2, p0, Lcom/android/launcher3/folder/view/FolderView$17;->this$0:Lcom/android/launcher3/folder/view/FolderView;
 
-    invoke-static {v2}, Lcom/android/launcher3/folder/view/FolderView;->access$1500(Lcom/android/launcher3/folder/view/FolderView;)I
+    invoke-static {v2}, Lcom/android/launcher3/folder/view/FolderView;->access$1600(Lcom/android/launcher3/folder/view/FolderView;)I
 
     move-result v2
 
@@ -63,11 +63,11 @@
 
     iget-object v1, p0, Lcom/android/launcher3/folder/view/FolderView$17;->this$0:Lcom/android/launcher3/folder/view/FolderView;
 
-    invoke-static {v1}, Lcom/android/launcher3/folder/view/FolderView;->access$1500(Lcom/android/launcher3/folder/view/FolderView;)I
+    invoke-static {v1}, Lcom/android/launcher3/folder/view/FolderView;->access$1600(Lcom/android/launcher3/folder/view/FolderView;)I
 
     move-result v1
 
-    invoke-static {v0, v1}, Lcom/android/launcher3/folder/view/FolderView;->access$1402(Lcom/android/launcher3/folder/view/FolderView;I)I
+    invoke-static {v0, v1}, Lcom/android/launcher3/folder/view/FolderView;->access$1502(Lcom/android/launcher3/folder/view/FolderView;I)I
 
     return-void
 .end method

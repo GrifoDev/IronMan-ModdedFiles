@@ -124,6 +124,8 @@ Microsoft"</string>
     <string name="no_space_page">Brak miejsca na stronie. Spróbuj dodać skrót na innej stronie.</string>
     <string name="no_space_page_for_widget">Niyma placu na tyj zajcie.</string>
     <string name="not_selected">Niyŏbrane</string>
+    <string name="notification_panel_setting_summary">Szibnij na spodek, coby ôdewrzić panel nowin z ekranu sztartowego.</string>
+    <string name="notification_panel_setting_title">Gibko ôdewrzij panel nowin</string>
     <string name="ok">OK</string>
     <string name="only_one_widget_instance_allowed">Widget %s je już przidany do ekranu sztartowego.</string>
     <string name="option_menu_contact_up">Pogŏdej z nami</string>
@@ -170,7 +172,7 @@ Microsoft"</string>
     <string name="remove_popup_msg">Wyciepać zajta?</string>
     <string name="remove_popup_positive">Wyciep</string>
     <string name="safemode_shortcut_error">Zebrane aplikacyje sōm wyłōnczōne, kej załōnczōny je tryb bezpieczny.</string>
-    <string name="safemode_widget_error">Widgety są wyłączone, gdy włączony jest tryb bezpieczny.</string>
+    <string name="safemode_widget_error">Widgety sōm wyłōnczōne, kej załōnczōny je tryb bezpieczny.</string>
     <string name="screen_grid_explain_text">"Rozłożynie ekr. Aplikacyji je pōmiynione na
 %1$d x %2$d, coby ône przipasować do ukł. ekr. sztart."</string>
     <string name="search_for_widgets">Sznupej za widgetami</string>
@@ -180,15 +182,21 @@ Microsoft"</string>
     <string name="shortcut_installed">Przidano skrōt do trybu %s na ekranie bazowym.</string>
     <string name="shortcut_moved_to_game_launcher">Ikōny szpilōw przeciepane do aplikacyji Game Launcher.</string>
     <string name="shortcut_uninstalled">Wyciepniynto skrōt %s.</string>
+    <string name="sound_mode_to_sound">Tryb klangu nasztalowano na Klang</string>
+    <string name="sound_mode_to_vibrate">Tryb klangu nasztalowano na wibracjyŏ</string>
     <string name="speak_now">Gŏdej terŏzki</string>
     <string name="swipe_up_for_more_apps">Szibnij palcym ku wiyrchu abo na spodek dlo wszyjskich aplikacyji</string>
     <string name="swipe_up_for_more_apps_att">Szibnij ku wiyrchu abo na spodek po ekranie dlo wszyjskich aplikacyji</string>
+    <string name="swipe_up_for_more_apps_quick_noti_pannel_on">Szibnij na wiyrch, coby ôbejrzeć wszyjske aplikacyje</string>
+    <string name="swipe_up_for_more_apps_quick_noti_pannel_on_att">Szibnij na wiyrch po ekranie dlo wszyjskich aplikacyji</string>
+    <string name="swipe_up_for_more_apps_quick_noti_pannel_on_tts">Przeciągnij dwoma palcami w górę, aby wyświetlić wszystkie aplikacje.</string>
     <string name="swipe_up_for_more_apps_with_two_fingers">Przejedź na wiyrch abo na spodek dwōma palami do wszyjskich aplikacyj.</string>
     <string name="talkback_changed_to_ps">Zmieniono na %s.</string>
     <string name="talkback_folder">Katalog</string>
     <string name="talkback_n_items">Elymyntōw: %d.</string>
     <string name="talkback_press_back_key_to_close_folder">Naciś knefel Nazŏd coby zawrzić katatalog.</string>
     <string name="talkback_tab_back_button_to_close_folder">Tyknij knefla Nazŏd, coby zawrzić katalog.</string>
+    <string name="talkback_widget_dims_format">%1$d x %2$d</string>
     <string name="title_settings">%s — sztalowania</string>
     <string name="tts_add_shortcut_on_home_screen_notice">Przejedź na wiyrch ekranu, coby przidać na ekranie bazowym.</string>
     <string name="tts_bottom_handle">Hynkel spodni</string>

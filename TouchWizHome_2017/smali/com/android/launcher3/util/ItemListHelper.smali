@@ -1,4 +1,4 @@
-.class Lcom/android/launcher3/proxy/ItemListHelper;
+.class public Lcom/android/launcher3/util/ItemListHelper;
 .super Ljava/lang/Object;
 .source "ItemListHelper.java"
 
@@ -6,7 +6,7 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
-        Lcom/android/launcher3/proxy/ItemListHelper$ItemInfoFilter;
+        Lcom/android/launcher3/util/ItemListHelper$ItemInfoFilter;
     }
 .end annotation
 
@@ -20,7 +20,7 @@
     return-void
 .end method
 
-.method static filterItems(Ljava/util/List;Lcom/android/launcher3/proxy/ItemListHelper$ItemInfoFilter;)Ljava/util/List;
+.method public static filterItems(Ljava/util/List;Lcom/android/launcher3/util/ItemListHelper$ItemInfoFilter;)Ljava/util/List;
     .locals 4
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -29,7 +29,7 @@
             "<",
             "Lcom/android/launcher3/common/base/item/ItemInfo;",
             ">;",
-            "Lcom/android/launcher3/proxy/ItemListHelper$ItemInfoFilter;",
+            "Lcom/android/launcher3/util/ItemListHelper$ItemInfoFilter;",
             ")",
             "Ljava/util/List",
             "<",
@@ -60,7 +60,7 @@
 
     check-cast v1, Lcom/android/launcher3/common/base/item/ItemInfo;
 
-    invoke-interface {p1, v1}, Lcom/android/launcher3/proxy/ItemListHelper$ItemInfoFilter;->filter(Lcom/android/launcher3/common/base/item/ItemInfo;)Z
+    invoke-interface {p1, v1}, Lcom/android/launcher3/util/ItemListHelper$ItemInfoFilter;->filter(Lcom/android/launcher3/common/base/item/ItemInfo;)Z
 
     move-result v3
 
@@ -74,7 +74,7 @@
     return-object v0
 .end method
 
-.method static getAllItemMap()Ljava/util/Map;
+.method public static getAllItemMap()Ljava/util/Map;
     .locals 8
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -95,7 +95,7 @@
 
     invoke-direct {v2}, Ljava/util/HashMap;-><init>()V
 
-    invoke-static {v0}, Lcom/android/launcher3/proxy/ItemListHelper;->getUnhiddenItemList(Ljava/util/List;)Ljava/util/List;
+    invoke-static {v0}, Lcom/android/launcher3/util/ItemListHelper;->getUnhiddenItemList(Ljava/util/List;)Ljava/util/List;
 
     move-result-object v3
 
@@ -130,7 +130,7 @@
     return-object v2
 .end method
 
-.method static getContainerIdMatchedItemList(Ljava/util/List;I)Ljava/util/List;
+.method public static varargs getContainerIdMatchedItemList(Ljava/util/List;[I)Ljava/util/List;
     .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -138,7 +138,7 @@
             "Ljava/util/List",
             "<",
             "Lcom/android/launcher3/common/base/item/ItemInfo;",
-            ">;I)",
+            ">;[I)",
             "Ljava/util/List",
             "<",
             "Lcom/android/launcher3/common/base/item/ItemInfo;",
@@ -146,18 +146,18 @@
         }
     .end annotation
 
-    new-instance v0, Lcom/android/launcher3/proxy/ItemListHelper$3;
+    new-instance v0, Lcom/android/launcher3/util/ItemListHelper$4;
 
-    invoke-direct {v0, p1}, Lcom/android/launcher3/proxy/ItemListHelper$3;-><init>(I)V
+    invoke-direct {v0, p1}, Lcom/android/launcher3/util/ItemListHelper$4;-><init>([I)V
 
-    invoke-static {p0, v0}, Lcom/android/launcher3/proxy/ItemListHelper;->filterItems(Ljava/util/List;Lcom/android/launcher3/proxy/ItemListHelper$ItemInfoFilter;)Ljava/util/List;
+    invoke-static {p0, v0}, Lcom/android/launcher3/util/ItemListHelper;->filterItems(Ljava/util/List;Lcom/android/launcher3/util/ItemListHelper$ItemInfoFilter;)Ljava/util/List;
 
     move-result-object v1
 
     return-object v1
 .end method
 
-.method static getFolderItemList(Ljava/util/List;)Ljava/util/List;
+.method public static getFolderItemList(Ljava/util/List;)Ljava/util/List;
     .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -173,18 +173,45 @@
         }
     .end annotation
 
-    new-instance v0, Lcom/android/launcher3/proxy/ItemListHelper$2;
+    new-instance v0, Lcom/android/launcher3/util/ItemListHelper$3;
 
-    invoke-direct {v0}, Lcom/android/launcher3/proxy/ItemListHelper$2;-><init>()V
+    invoke-direct {v0}, Lcom/android/launcher3/util/ItemListHelper$3;-><init>()V
 
-    invoke-static {p0, v0}, Lcom/android/launcher3/proxy/ItemListHelper;->filterItems(Ljava/util/List;Lcom/android/launcher3/proxy/ItemListHelper$ItemInfoFilter;)Ljava/util/List;
+    invoke-static {p0, v0}, Lcom/android/launcher3/util/ItemListHelper;->filterItems(Ljava/util/List;Lcom/android/launcher3/util/ItemListHelper$ItemInfoFilter;)Ljava/util/List;
 
     move-result-object v1
 
     return-object v1
 .end method
 
-.method static getTitleMatchedItemList(Ljava/util/List;Ljava/lang/String;)Ljava/util/List;
+.method public static getFolderList(Ljava/util/List;)Ljava/util/List;
+    .locals 2
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Ljava/util/List",
+            "<",
+            "Lcom/android/launcher3/common/base/item/ItemInfo;",
+            ">;)",
+            "Ljava/util/List",
+            "<",
+            "Lcom/android/launcher3/common/base/item/ItemInfo;",
+            ">;"
+        }
+    .end annotation
+
+    new-instance v0, Lcom/android/launcher3/util/ItemListHelper$2;
+
+    invoke-direct {v0}, Lcom/android/launcher3/util/ItemListHelper$2;-><init>()V
+
+    invoke-static {p0, v0}, Lcom/android/launcher3/util/ItemListHelper;->filterItems(Ljava/util/List;Lcom/android/launcher3/util/ItemListHelper$ItemInfoFilter;)Ljava/util/List;
+
+    move-result-object v1
+
+    return-object v1
+.end method
+
+.method public static getTitleMatchedItemList(Ljava/util/List;Ljava/lang/String;)Ljava/util/List;
     .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -202,18 +229,18 @@
         }
     .end annotation
 
-    new-instance v0, Lcom/android/launcher3/proxy/ItemListHelper$1;
+    new-instance v0, Lcom/android/launcher3/util/ItemListHelper$1;
 
-    invoke-direct {v0, p1}, Lcom/android/launcher3/proxy/ItemListHelper$1;-><init>(Ljava/lang/String;)V
+    invoke-direct {v0, p1}, Lcom/android/launcher3/util/ItemListHelper$1;-><init>(Ljava/lang/String;)V
 
-    invoke-static {p0, v0}, Lcom/android/launcher3/proxy/ItemListHelper;->filterItems(Ljava/util/List;Lcom/android/launcher3/proxy/ItemListHelper$ItemInfoFilter;)Ljava/util/List;
+    invoke-static {p0, v0}, Lcom/android/launcher3/util/ItemListHelper;->filterItems(Ljava/util/List;Lcom/android/launcher3/util/ItemListHelper$ItemInfoFilter;)Ljava/util/List;
 
     move-result-object v1
 
     return-object v1
 .end method
 
-.method static getUnhiddenItemList(Ljava/util/List;)Ljava/util/List;
+.method public static getUnhiddenItemList(Ljava/util/List;)Ljava/util/List;
     .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -229,11 +256,11 @@
         }
     .end annotation
 
-    new-instance v0, Lcom/android/launcher3/proxy/ItemListHelper$4;
+    new-instance v0, Lcom/android/launcher3/util/ItemListHelper$5;
 
-    invoke-direct {v0}, Lcom/android/launcher3/proxy/ItemListHelper$4;-><init>()V
+    invoke-direct {v0}, Lcom/android/launcher3/util/ItemListHelper$5;-><init>()V
 
-    invoke-static {p0, v0}, Lcom/android/launcher3/proxy/ItemListHelper;->filterItems(Ljava/util/List;Lcom/android/launcher3/proxy/ItemListHelper$ItemInfoFilter;)Ljava/util/List;
+    invoke-static {p0, v0}, Lcom/android/launcher3/util/ItemListHelper;->filterItems(Ljava/util/List;Lcom/android/launcher3/util/ItemListHelper$ItemInfoFilter;)Ljava/util/List;
 
     move-result-object v1
 

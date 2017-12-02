@@ -51,7 +51,7 @@
 
     iget-object v1, p0, Lcom/android/launcher3/util/logging/SALogging$31;->val$screenID:Ljava/lang/String;
 
-    invoke-static {}, Lcom/android/launcher3/util/logging/SALogging;->access$1600()Ljava/lang/String;
+    invoke-static {}, Lcom/android/launcher3/util/logging/SALogging;->access$1700()Ljava/lang/String;
 
     move-result-object v2
 
@@ -86,7 +86,7 @@
 
     move-result-object v2
 
-    invoke-static {}, Lcom/android/launcher3/util/logging/SALogging;->access$1600()Ljava/lang/String;
+    invoke-static {}, Lcom/android/launcher3/util/logging/SALogging;->access$1700()Ljava/lang/String;
 
     move-result-object v3
 
@@ -106,7 +106,7 @@
     :cond_1
     iget-object v1, p0, Lcom/android/launcher3/util/logging/SALogging$31;->val$screenID:Ljava/lang/String;
 
-    invoke-static {v1}, Lcom/android/launcher3/util/logging/SALogging;->access$1602(Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {v1}, Lcom/android/launcher3/util/logging/SALogging;->access$1702(Ljava/lang/String;)Ljava/lang/String;
 
     :try_start_0
     invoke-static {}, Lcom/samsung/context/sdk/samsunganalytics/SamsungAnalytics;->getInstance()Lcom/samsung/context/sdk/samsunganalytics/SamsungAnalytics;

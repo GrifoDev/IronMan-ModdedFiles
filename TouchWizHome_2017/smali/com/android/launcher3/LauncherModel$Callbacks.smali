@@ -34,6 +34,9 @@
 .method public abstract isHomeNormal()Z
 .end method
 
+.method public abstract isTrayAnimating()Z
+.end method
+
 .method public abstract recreateLauncher()V
 .end method
 

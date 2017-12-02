@@ -41,7 +41,7 @@
 .method public run()V
     .locals 9
 
-    invoke-static {}, Lcom/android/launcher3/home/HomeLoader;->access$10100()Ljava/lang/Object;
+    invoke-static {}, Lcom/android/launcher3/home/HomeLoader;->access$10400()Ljava/lang/Object;
 
     move-result-object v6
 
@@ -52,7 +52,7 @@
 
     iget-object v7, p0, Lcom/android/launcher3/home/HomeLoader$42;->this$0:Lcom/android/launcher3/home/HomeLoader;
 
-    invoke-static {v7}, Lcom/android/launcher3/home/HomeLoader;->access$10200(Lcom/android/launcher3/home/HomeLoader;)Ljava/util/ArrayList;
+    invoke-static {v7}, Lcom/android/launcher3/home/HomeLoader;->access$10500(Lcom/android/launcher3/home/HomeLoader;)Ljava/util/ArrayList;
 
     move-result-object v7
 
@@ -77,7 +77,7 @@
     :cond_0
     iget-object v3, p0, Lcom/android/launcher3/home/HomeLoader$42;->this$0:Lcom/android/launcher3/home/HomeLoader;
 
-    invoke-static {v3}, Lcom/android/launcher3/home/HomeLoader;->access$10300(Lcom/android/launcher3/home/HomeLoader;)Ljava/util/ArrayList;
+    invoke-static {v3}, Lcom/android/launcher3/home/HomeLoader;->access$10600(Lcom/android/launcher3/home/HomeLoader;)Ljava/util/ArrayList;
 
     move-result-object v3
 
@@ -95,7 +95,7 @@
 
     iget-object v3, p0, Lcom/android/launcher3/home/HomeLoader$42;->this$0:Lcom/android/launcher3/home/HomeLoader;
 
-    invoke-static {v3}, Lcom/android/launcher3/home/HomeLoader;->access$10400(Lcom/android/launcher3/home/HomeLoader;)Ljava/util/HashMap;
+    invoke-static {v3}, Lcom/android/launcher3/home/HomeLoader;->access$10700(Lcom/android/launcher3/home/HomeLoader;)Ljava/util/HashMap;
 
     move-result-object v3
 
@@ -111,7 +111,7 @@
 
     iget-object v3, p0, Lcom/android/launcher3/home/HomeLoader$42;->this$0:Lcom/android/launcher3/home/HomeLoader;
 
-    invoke-static {v3}, Lcom/android/launcher3/home/HomeLoader;->access$10500(Lcom/android/launcher3/home/HomeLoader;)Ljava/util/HashMap;
+    invoke-static {v3}, Lcom/android/launcher3/home/HomeLoader;->access$10800(Lcom/android/launcher3/home/HomeLoader;)Ljava/util/HashMap;
 
     move-result-object v3
 
@@ -179,7 +179,7 @@
     :try_start_1
     iget-object v3, p0, Lcom/android/launcher3/home/HomeLoader$42;->this$0:Lcom/android/launcher3/home/HomeLoader;
 
-    invoke-static {v3}, Lcom/android/launcher3/home/HomeLoader;->access$10600(Lcom/android/launcher3/home/HomeLoader;)Ljava/util/HashMap;
+    invoke-static {v3}, Lcom/android/launcher3/home/HomeLoader;->access$10900(Lcom/android/launcher3/home/HomeLoader;)Ljava/util/HashMap;
 
     move-result-object v3
 
@@ -197,7 +197,7 @@
 
     iget-object v3, p0, Lcom/android/launcher3/home/HomeLoader$42;->this$0:Lcom/android/launcher3/home/HomeLoader;
 
-    invoke-static {v3}, Lcom/android/launcher3/home/HomeLoader;->access$10700(Lcom/android/launcher3/home/HomeLoader;)Lcom/android/launcher3/common/model/FavoritesUpdater;
+    invoke-static {v3}, Lcom/android/launcher3/home/HomeLoader;->access$11000(Lcom/android/launcher3/home/HomeLoader;)Lcom/android/launcher3/common/model/FavoritesUpdater;
 
     move-result-object v3
 
@@ -206,7 +206,7 @@
     :cond_4
     iget-object v3, p0, Lcom/android/launcher3/home/HomeLoader$42;->this$0:Lcom/android/launcher3/home/HomeLoader;
 
-    invoke-static {v3}, Lcom/android/launcher3/home/HomeLoader;->access$10800(Lcom/android/launcher3/home/HomeLoader;)Ljava/util/ArrayList;
+    invoke-static {v3}, Lcom/android/launcher3/home/HomeLoader;->access$11100(Lcom/android/launcher3/home/HomeLoader;)Ljava/util/ArrayList;
 
     move-result-object v3
 
@@ -216,17 +216,17 @@
 
     iget-object v3, p0, Lcom/android/launcher3/home/HomeLoader$42;->this$0:Lcom/android/launcher3/home/HomeLoader;
 
-    invoke-static {v3}, Lcom/android/launcher3/home/HomeLoader;->access$11100(Lcom/android/launcher3/home/HomeLoader;)Lcom/android/launcher3/common/model/FavoritesUpdater;
+    invoke-static {v3}, Lcom/android/launcher3/home/HomeLoader;->access$11400(Lcom/android/launcher3/home/HomeLoader;)Lcom/android/launcher3/common/model/FavoritesUpdater;
 
     move-result-object v3
 
-    invoke-static {}, Lcom/android/launcher3/home/HomeLoader;->access$10900()Landroid/content/Context;
+    invoke-static {}, Lcom/android/launcher3/home/HomeLoader;->access$11200()Landroid/content/Context;
 
     move-result-object v7
 
     iget-object v8, p0, Lcom/android/launcher3/home/HomeLoader$42;->this$0:Lcom/android/launcher3/home/HomeLoader;
 
-    invoke-static {v8}, Lcom/android/launcher3/home/HomeLoader;->access$11000(Lcom/android/launcher3/home/HomeLoader;)Ljava/util/ArrayList;
+    invoke-static {v8}, Lcom/android/launcher3/home/HomeLoader;->access$11300(Lcom/android/launcher3/home/HomeLoader;)Ljava/util/ArrayList;
 
     move-result-object v8
 
@@ -244,7 +244,7 @@
 
     invoke-direct {v7, p0, v0, v2}, Lcom/android/launcher3/home/HomeLoader$42$1;-><init>(Lcom/android/launcher3/home/HomeLoader$42;Lcom/android/launcher3/home/HomeLoader$HomeCallbacks;Ljava/util/ArrayList;)V
 
-    invoke-static {v3, v7}, Lcom/android/launcher3/home/HomeLoader;->access$11200(Lcom/android/launcher3/home/HomeLoader;Ljava/lang/Runnable;)V
+    invoke-static {v3, v7}, Lcom/android/launcher3/home/HomeLoader;->access$11500(Lcom/android/launcher3/home/HomeLoader;Ljava/lang/Runnable;)V
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 

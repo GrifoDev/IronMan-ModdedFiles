@@ -3,12 +3,12 @@
 .source "AppsController.java"
 
 # interfaces
-.implements Ljava/lang/Runnable;
+.implements Lcom/android/launcher3/allapps/AppsViewTypeDialog$OnViewTypeChagnedListener;
 
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/android/launcher3/allapps/controller/AppsController;->switchInternalState(Lcom/android/launcher3/common/stage/StageEntry;)Landroid/animation/Animator;
+    value = Lcom/android/launcher3/allapps/controller/AppsController;->chooseViewType()V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -34,16 +34,42 @@
 
 
 # virtual methods
-.method public run()V
-    .locals 1
+.method public onDismiss()V
+    .locals 2
 
-    iget-object v0, p0, Lcom/android/launcher3/allapps/controller/AppsController$7;->this$0:Lcom/android/launcher3/allapps/controller/AppsController;
-
-    invoke-static {v0}, Lcom/android/launcher3/allapps/controller/AppsController;->access$100(Lcom/android/launcher3/allapps/controller/AppsController;)Lcom/android/launcher3/allapps/AppsScreenGridPanel;
+    invoke-static {}, Lcom/android/launcher3/LauncherAppState;->getInstance()Lcom/android/launcher3/LauncherAppState;
 
     move-result-object v0
 
-    invoke-virtual {v0}, Lcom/android/launcher3/allapps/AppsScreenGridPanel;->updateApplyCancelButton()V
+    invoke-virtual {v0}, Lcom/android/launcher3/LauncherAppState;->getTopViewChangedMessageHandler()Lcom/android/launcher3/proxy/LauncherTopViewChangedMessageHandler;
+
+    move-result-object v0
+
+    const/4 v1, 0x2
+
+    invoke-virtual {v0, v1}, Lcom/android/launcher3/proxy/LauncherTopViewChangedMessageHandler;->sendMessage(I)V
+
+    return-void
+.end method
+
+.method public onResult(Lcom/android/launcher3/allapps/controller/AppsController$ViewType;)V
+    .locals 2
+
+    iget-object v0, p0, Lcom/android/launcher3/allapps/controller/AppsController$7;->this$0:Lcom/android/launcher3/allapps/controller/AppsController;
+
+    invoke-virtual {v0, p1}, Lcom/android/launcher3/allapps/controller/AppsController;->setViewType(Lcom/android/launcher3/allapps/controller/AppsController$ViewType;)V
+
+    invoke-static {}, Lcom/android/launcher3/LauncherAppState;->getInstance()Lcom/android/launcher3/LauncherAppState;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lcom/android/launcher3/LauncherAppState;->getTopViewChangedMessageHandler()Lcom/android/launcher3/proxy/LauncherTopViewChangedMessageHandler;
+
+    move-result-object v0
+
+    const/4 v1, 0x2
+
+    invoke-virtual {v0, v1}, Lcom/android/launcher3/proxy/LauncherTopViewChangedMessageHandler;->sendMessage(I)V
 
     return-void
 .end method

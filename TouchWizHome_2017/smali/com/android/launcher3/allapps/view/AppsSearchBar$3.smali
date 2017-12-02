@@ -37,7 +37,7 @@
 .method public onMenuItemClick(Landroid/view/MenuItem;)Z
     .locals 4
 
-    const v2, 0x7f09019c
+    const v2, 0x7f0901a9
 
     invoke-interface {p1}, Landroid/view/MenuItem;->getItemId()I
 
@@ -67,7 +67,7 @@
 
     move-result-object v2
 
-    const v3, 0x7f090110
+    const v3, 0x7f090119
 
     invoke-virtual {v2, v3}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -118,7 +118,7 @@
 
     move-result-object v2
 
-    const v3, 0x7f090109
+    const v3, 0x7f090112
 
     invoke-virtual {v2, v3}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -165,7 +165,7 @@
 
     move-result-object v2
 
-    const v3, 0x7f090105
+    const v3, 0x7f09010e
 
     invoke-virtual {v2, v3}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -212,7 +212,7 @@
 
     move-result-object v2
 
-    const v3, 0x7f09010f
+    const v3, 0x7f090118
 
     invoke-virtual {v2, v3}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -267,7 +267,7 @@
 
     move-result-object v2
 
-    const v3, 0x7f090137
+    const v3, 0x7f090140
 
     invoke-virtual {v2, v3}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 

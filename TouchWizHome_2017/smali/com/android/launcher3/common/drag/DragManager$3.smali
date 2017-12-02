@@ -20,20 +20,24 @@
 # instance fields
 .field final synthetic this$0:Lcom/android/launcher3/common/drag/DragManager;
 
+.field final synthetic val$deferredDragInfo:Ljava/lang/Object;
+
 .field final synthetic val$deferredDragObject:Lcom/android/launcher3/common/drag/DropTarget$DragObject;
 
 .field final synthetic val$deferredDragView:Lcom/android/launcher3/common/drag/DragView;
 
 
 # direct methods
-.method constructor <init>(Lcom/android/launcher3/common/drag/DragManager;Lcom/android/launcher3/common/drag/DragView;Lcom/android/launcher3/common/drag/DropTarget$DragObject;)V
+.method constructor <init>(Lcom/android/launcher3/common/drag/DragManager;Ljava/lang/Object;Lcom/android/launcher3/common/drag/DragView;Lcom/android/launcher3/common/drag/DropTarget$DragObject;)V
     .locals 0
 
     iput-object p1, p0, Lcom/android/launcher3/common/drag/DragManager$3;->this$0:Lcom/android/launcher3/common/drag/DragManager;
 
-    iput-object p2, p0, Lcom/android/launcher3/common/drag/DragManager$3;->val$deferredDragView:Lcom/android/launcher3/common/drag/DragView;
+    iput-object p2, p0, Lcom/android/launcher3/common/drag/DragManager$3;->val$deferredDragInfo:Ljava/lang/Object;
 
-    iput-object p3, p0, Lcom/android/launcher3/common/drag/DragManager$3;->val$deferredDragObject:Lcom/android/launcher3/common/drag/DropTarget$DragObject;
+    iput-object p3, p0, Lcom/android/launcher3/common/drag/DragManager$3;->val$deferredDragView:Lcom/android/launcher3/common/drag/DragView;
+
+    iput-object p4, p0, Lcom/android/launcher3/common/drag/DragManager$3;->val$deferredDragObject:Lcom/android/launcher3/common/drag/DropTarget$DragObject;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -43,102 +47,130 @@
 
 # virtual methods
 .method public run()V
-    .locals 3
+    .locals 4
 
-    iget-object v0, p0, Lcom/android/launcher3/common/drag/DragManager$3;->val$deferredDragView:Lcom/android/launcher3/common/drag/DragView;
+    iget-object v1, p0, Lcom/android/launcher3/common/drag/DragManager$3;->val$deferredDragInfo:Ljava/lang/Object;
 
-    invoke-virtual {v0}, Lcom/android/launcher3/common/drag/DragView;->getParent()Landroid/view/ViewParent;
+    instance-of v1, v1, Lcom/android/launcher3/common/base/item/PendingAddItemInfo;
 
-    move-result-object v0
+    if-eqz v1, :cond_1
 
-    if-eqz v0, :cond_0
+    iget-object v1, p0, Lcom/android/launcher3/common/drag/DragManager$3;->val$deferredDragInfo:Ljava/lang/Object;
 
-    iget-object v0, p0, Lcom/android/launcher3/common/drag/DragManager$3;->val$deferredDragView:Lcom/android/launcher3/common/drag/DragView;
+    check-cast v1, Lcom/android/launcher3/common/base/item/PendingAddItemInfo;
 
-    invoke-virtual {v0}, Lcom/android/launcher3/common/drag/DragView;->remove()V
-
-    const-string v0, "Launcher.DragManager"
-
-    new-instance v1, Ljava/lang/StringBuilder;
-
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v2, "force remove deferredDragView - cancelled="
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v1}, Lcom/android/launcher3/common/base/item/PendingAddItemInfo;->getProviderInfo()Ljava/lang/Object;
 
     move-result-object v1
 
-    iget-object v2, p0, Lcom/android/launcher3/common/drag/DragManager$3;->val$deferredDragObject:Lcom/android/launcher3/common/drag/DropTarget$DragObject;
+    instance-of v1, v1, Lcom/android/launcher3/common/model/LauncherAppWidgetProviderInfo;
 
-    iget-boolean v2, v2, Lcom/android/launcher3/common/drag/DropTarget$DragObject;->cancelled:Z
+    if-eqz v1, :cond_1
 
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+    const/4 v0, 0x1
 
-    move-result-object v1
+    :goto_0
+    iget-object v1, p0, Lcom/android/launcher3/common/drag/DragManager$3;->val$deferredDragView:Lcom/android/launcher3/common/drag/DragView;
 
-    const-string v2, ", cancelDropFolder="
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    iget-object v2, p0, Lcom/android/launcher3/common/drag/DragManager$3;->val$deferredDragObject:Lcom/android/launcher3/common/drag/DropTarget$DragObject;
-
-    iget-boolean v2, v2, Lcom/android/launcher3/common/drag/DropTarget$DragObject;->cancelDropFolder:Z
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+    invoke-virtual {v1}, Lcom/android/launcher3/common/drag/DragView;->getParent()Landroid/view/ViewParent;
 
     move-result-object v1
 
-    const-string v2, ", restored="
+    if-eqz v1, :cond_0
 
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    if-nez v0, :cond_0
 
-    move-result-object v1
+    iget-object v1, p0, Lcom/android/launcher3/common/drag/DragManager$3;->val$deferredDragView:Lcom/android/launcher3/common/drag/DragView;
 
-    iget-object v2, p0, Lcom/android/launcher3/common/drag/DragManager$3;->val$deferredDragObject:Lcom/android/launcher3/common/drag/DropTarget$DragObject;
+    invoke-virtual {v1}, Lcom/android/launcher3/common/drag/DragView;->remove()V
 
-    iget-boolean v2, v2, Lcom/android/launcher3/common/drag/DropTarget$DragObject;->restored:Z
+    const-string v1, "Launcher.DragManager"
 
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+    new-instance v2, Ljava/lang/StringBuilder;
 
-    move-result-object v1
+    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v2, ", source="
+    const-string v3, "force remove deferredDragView - cancelled="
 
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v1
+    move-result-object v2
 
-    iget-object v2, p0, Lcom/android/launcher3/common/drag/DragManager$3;->val$deferredDragObject:Lcom/android/launcher3/common/drag/DropTarget$DragObject;
+    iget-object v3, p0, Lcom/android/launcher3/common/drag/DragManager$3;->val$deferredDragObject:Lcom/android/launcher3/common/drag/DropTarget$DragObject;
 
-    iget-object v2, v2, Lcom/android/launcher3/common/drag/DropTarget$DragObject;->dragSource:Lcom/android/launcher3/common/drag/DragSource;
+    iget-boolean v3, v3, Lcom/android/launcher3/common/drag/DropTarget$DragObject;->cancelled:Z
 
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
 
-    move-result-object v1
+    move-result-object v2
 
-    const-string v2, ", info="
+    const-string v3, ", cancelDropFolder="
 
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v1
+    move-result-object v2
 
-    iget-object v2, p0, Lcom/android/launcher3/common/drag/DragManager$3;->val$deferredDragObject:Lcom/android/launcher3/common/drag/DropTarget$DragObject;
+    iget-object v3, p0, Lcom/android/launcher3/common/drag/DragManager$3;->val$deferredDragObject:Lcom/android/launcher3/common/drag/DropTarget$DragObject;
 
-    iget-object v2, v2, Lcom/android/launcher3/common/drag/DropTarget$DragObject;->dragInfo:Ljava/lang/Object;
+    iget-boolean v3, v3, Lcom/android/launcher3/common/drag/DropTarget$DragObject;->cancelDropFolder:Z
 
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
 
-    move-result-object v1
+    move-result-object v2
 
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    const-string v3, ", restored="
 
-    move-result-object v1
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-static {v0, v1}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
+    move-result-object v2
+
+    iget-object v3, p0, Lcom/android/launcher3/common/drag/DragManager$3;->val$deferredDragObject:Lcom/android/launcher3/common/drag/DropTarget$DragObject;
+
+    iget-boolean v3, v3, Lcom/android/launcher3/common/drag/DropTarget$DragObject;->restored:Z
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    const-string v3, ", source="
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    iget-object v3, p0, Lcom/android/launcher3/common/drag/DragManager$3;->val$deferredDragObject:Lcom/android/launcher3/common/drag/DropTarget$DragObject;
+
+    iget-object v3, v3, Lcom/android/launcher3/common/drag/DropTarget$DragObject;->dragSource:Lcom/android/launcher3/common/drag/DragSource;
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    const-string v3, ", info="
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    iget-object v3, p0, Lcom/android/launcher3/common/drag/DragManager$3;->val$deferredDragObject:Lcom/android/launcher3/common/drag/DropTarget$DragObject;
+
+    iget-object v3, v3, Lcom/android/launcher3/common/drag/DropTarget$DragObject;->dragInfo:Ljava/lang/Object;
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-static {v1, v2}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
     :cond_0
     return-void
+
+    :cond_1
+    const/4 v0, 0x0
+
+    goto :goto_0
 .end method

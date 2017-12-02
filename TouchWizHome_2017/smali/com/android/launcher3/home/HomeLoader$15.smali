@@ -41,7 +41,7 @@
 .method public run()V
     .locals 6
 
-    invoke-static {}, Lcom/android/launcher3/home/HomeLoader;->access$7100()Lcom/android/launcher3/util/LongArrayMap;
+    invoke-static {}, Lcom/android/launcher3/home/HomeLoader;->access$7400()Lcom/android/launcher3/util/LongArrayMap;
 
     move-result-object v1
 
@@ -91,7 +91,7 @@
     :cond_0
     iget-object v1, p0, Lcom/android/launcher3/home/HomeLoader$15;->this$0:Lcom/android/launcher3/home/HomeLoader;
 
-    invoke-static {v1}, Lcom/android/launcher3/home/HomeLoader;->access$7200(Lcom/android/launcher3/home/HomeLoader;)Lcom/android/launcher3/common/model/FavoritesUpdater;
+    invoke-static {v1}, Lcom/android/launcher3/home/HomeLoader;->access$7500(Lcom/android/launcher3/home/HomeLoader;)Lcom/android/launcher3/common/model/FavoritesUpdater;
 
     move-result-object v1
 
@@ -129,7 +129,7 @@
 
     iget-object v1, p0, Lcom/android/launcher3/home/HomeLoader$15;->this$0:Lcom/android/launcher3/home/HomeLoader;
 
-    invoke-static {}, Lcom/android/launcher3/home/HomeLoader;->access$7300()Landroid/content/Context;
+    invoke-static {}, Lcom/android/launcher3/home/HomeLoader;->access$7600()Landroid/content/Context;
 
     move-result-object v2
 

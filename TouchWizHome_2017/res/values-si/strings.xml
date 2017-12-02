@@ -40,7 +40,7 @@
     <string name="apps_button_title">යෙදුම් බොත්තම</string>
     <string name="apps_screen">යෙදුම් තිරය</string>
     <string name="autoalign_popup_message">ඔබ ඒවා පෙළගැස්වූ පසු, ඔබට ඔබේ පෙර පෙළගැස්මට ආපසු යා නොහැකියි.</string>
-    <string name="autoalign_popup_title">පිටුවේ අයිතම පෙළ ගස්වන්න ද?</string>
+    <string name="autoalign_popup_title">පිටුවේ අයිතම පෙළ ගස්වන්නද?</string>
     <string name="available_galaxyapps">Galaxy Apps තුළ ඇත</string>
     <string name="badge_manage_explain">එක් එක් යෙදුම සඳහා ලාංඡන පෙන්වා ද සඟවනවා ද යන්න තෝරන්න.</string>
     <string name="badge_manage_summary">එක් එක් යෙදුම සඳහා ලාංඡන පෙන්වා ද සඟවනවා ද යන්න තෝරන්න.</string>
@@ -78,7 +78,7 @@
     <string name="home_screen_layout">මුල් තිරයේ පිරිසැලසුම</string>
     <string name="home_screen_mode_apps">මුල් සහ යෙදුම් තිර</string>
     <string name="home_screen_mode_change_alert_text">ඔබ මුල් තිරයට කර ඇති ඕනෑම අභිමතකරණයක් ඉවත දැමෙනු ඇත.</string>
-    <string name="home_screen_mode_change_dialog_title">තෝරාගත් මුල් තිර පිරිසැලසුම යොදන්න ද?</string>
+    <string name="home_screen_mode_change_dialog_title">තෝරාගත් මුල් තිර පිරිසැලසුම යොදන්නද?</string>
     <string name="home_screen_mode_change_with_copy_layout">ඔබ යෙදුම් තිරය සඳහා දැනට භාවිතා කරන අයිකන පිරිසැලසුම මුල් තිරයට යොදනු ඇත.</string>
     <string name="home_screen_mode_home_apps_body_text">වෙනම යෙදුම් තිරයක් ලබා ගත හැකි වනු ඇත. එය පෙන්වීමට මුල් තිරය මත උඩට හෝ පහළට ස්වයිප් කරන්න. ඔබට යුහු ප්‍රවේශය සඳහා මුල් තිරය මත ඔබේ වඩාත් වැදගත් යෙදුම් ද දැමිය හැක.</string>
     <string name="home_screen_mode_home_only_body_text">ඔබේ යෙදුම් සියල්ල මුල් තිරය මත පෙන්වනු ලැබේ.</string>
@@ -124,6 +124,8 @@
     <string name="no_space_page">පිටුවේ ඉඩක් නැත. වෙනස් පිටුවකට කෙටිමඟ එක් කිරීමට උත්සාහ කරන්න.</string>
     <string name="no_space_page_for_widget">මෙම පිටුවේ ඉඩ නොමැත.</string>
     <string name="not_selected">තෝරා නොගැනිණි</string>
+    <string name="notification_panel_setting_summary">මුල් තිරයෙන් දැනුම්දීම් පැනලය විවෘත කිරීමට පහළට ස්වයිප් කරන්න.</string>
+    <string name="notification_panel_setting_title">දැනුම්දීම් පැනලය යුහු-විවෘතය</string>
     <string name="ok">හරි</string>
     <string name="only_one_widget_instance_allowed">%s විජෙට්ටුව දැනටමත් මුල් තිරයට එක් කර ඇත.</string>
     <string name="option_menu_contact_up">අපව අමතන්න</string>
@@ -134,7 +136,7 @@
     <string name="options_menu_sort">සුබෙදන්න</string>
     <string name="options_menu_tide_up_pages">පිටු පිරිසිදු කරන්න</string>
     <string name="organize_apps_confirm_alert">තිරය මත අයිතම ඒවා අතර යම් හිස් අවකාශයන් පිරවීම සඳහා යළි පෙළගැස්වෙනු ඇත.</string>
-    <string name="organize_apps_confirm_alert_title">පිටු පිරිසිදු කරන්න ද?</string>
+    <string name="organize_apps_confirm_alert_title">පිටු පිරිසිදු කරන්නද?</string>
     <string name="out_of_space">මෙම පිටුවෙහි තවත් ඉඩ නැත</string>
     <string name="out_of_space_dialog">මෙම පිටුවේ වැඩි ඉඩක් නැත. අයිතමය නව පිටුවකට එක් කරනු ඇත.</string>
     <string name="permdesc_install_widget">මෙම යෙදුමට මුල් තිරය වෙත විජෙට්ටු එක් කළ හැක.</string>
@@ -167,7 +169,7 @@
     <string name="quick_option_sleep_alert">මෙම යෙදුම නින්දට දැමීමෙන් පසුබිමේ බැටරිය භාවිතා කිරීමෙන් එය වළක්වනු ඇත. නිද්‍රා යෙදුම් යාවත්කාල නොලබනු ඇති හෝ ඔබට දැනුම්දීම් නොඑවනු ඇති නමුත්, ඔබ ඒවා විවෘත කළ විට ඒවා අවදි වනු ඇත.</string>
     <string name="quick_option_uninstall">අස්ථාපනය</string>
     <string name="quick_option_unlock">අගුලු අරින්න</string>
-    <string name="remove_popup_msg">පිටුව මකන්න ද?</string>
+    <string name="remove_popup_msg">පිටුව මකන්නද?</string>
     <string name="remove_popup_positive">මකන්න</string>
     <string name="safemode_shortcut_error">සුරක්ෂිත ප්‍රකාරය සක්‍රිය අතරතුර බාගත් යෙදුම් අක්‍රියයි.</string>
     <string name="safemode_widget_error">සුරක්ෂිත ප්‍රකාරය සක්‍රිය අතරේ විජෙට්ටු අක්‍රියයි.</string>
@@ -180,15 +182,21 @@
     <string name="shortcut_installed">%s වෙත කෙටිමඟ මුල් තිරය මත එක් කෙරිණි.</string>
     <string name="shortcut_moved_to_game_launcher">ක්‍රීඩා අයිකනය Game Launcher වෙත ගෙන යැවිණි.</string>
     <string name="shortcut_uninstalled">%s කෙටිමඟ ඉවත් කරන ලදී.</string>
+    <string name="sound_mode_to_sound">ශබ්ද මාදිලිය ශබ්දය ලෙස සැකසිණ.</string>
+    <string name="sound_mode_to_vibrate">ශබ්ද මාදිලිය කම්පනය ලෙස සැකසිණ.</string>
     <string name="speak_now">දැන් කථා කරන්න</string>
     <string name="swipe_up_for_more_apps">සියලු යෙදුම් සඳහා උඩට හෝ පහළට ස්වයිප් කරන්න</string>
     <string name="swipe_up_for_more_apps_att">සියලු යෙදුම් සඳහා තිරයේ උඩට හෝ පහළට ස්වයිප් කරන්න</string>
+    <string name="swipe_up_for_more_apps_quick_noti_pannel_on">සියලු යෙදුම් සඳහා ඉහළට ස්වයිප් කරන්න</string>
+    <string name="swipe_up_for_more_apps_quick_noti_pannel_on_att">සියලු යෙදුම් සඳහා තිරයේ ඉහළට ස්වයිප් කරන්න</string>
+    <string name="swipe_up_for_more_apps_quick_noti_pannel_on_tts">සියලු යෙදුම් සඳහා ඇඟිලි දෙකකින් උඩට ස්වයිප් කරන්න.</string>
     <string name="swipe_up_for_more_apps_with_two_fingers">සියලු යෙදුම් සඳහා ඇඟිලි දෙකකින් උඩට හෝ පහළට ස්වයිප් කරන්න.</string>
     <string name="talkback_changed_to_ps">%sට මාරු විය.</string>
     <string name="talkback_folder">ෆෝල්ඩරය</string>
     <string name="talkback_n_items">අයිතම %d</string>
     <string name="talkback_press_back_key_to_close_folder">ෆෝල්ඩරය වැසීමට ආපසු යතුර ඔබන්න.</string>
     <string name="talkback_tab_back_button_to_close_folder">ෆෝල්ඩරය වැසීමට ආපසු බොත්තම තට්ටු කරන්න.</string>
+    <string name="talkback_widget_dims_format">%2$d මගින් %1$d</string>
     <string name="title_settings">%s සැකසුම්</string>
     <string name="tts_add_shortcut_on_home_screen_notice">මුල් තිරය මත එක් කිරීමට අයිකනය තිරයේ ඉහළට අදින්න.</string>
     <string name="tts_bottom_handle">පහළ හසුරුව</string>

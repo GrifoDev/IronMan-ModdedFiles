@@ -127,6 +127,33 @@
 
 
 # virtual methods
+.method public disableAllAppsBadge()Z
+    .locals 2
+
+    const/4 v0, 0x1
+
+    iget v1, p0, Lcom/android/launcher3/SettingsActivity;->mVisibleFragment:I
+
+    if-ne v1, v0, :cond_0
+
+    iget-object v1, p0, Lcom/android/launcher3/SettingsActivity;->mBadgeSettingsFragment:Lcom/android/launcher3/common/model/BadgeSettingsFragment;
+
+    if-nez v1, :cond_1
+
+    :cond_0
+    const/4 v0, 0x0
+
+    :goto_0
+    return v0
+
+    :cond_1
+    iget-object v1, p0, Lcom/android/launcher3/SettingsActivity;->mBadgeSettingsFragment:Lcom/android/launcher3/common/model/BadgeSettingsFragment;
+
+    invoke-virtual {v1}, Lcom/android/launcher3/common/model/BadgeSettingsFragment;->disableAllAppsBadge()V
+
+    goto :goto_0
+.end method
+
 .method public enableAllAppsBadge(Z)Z
     .locals 2
 
@@ -177,6 +204,64 @@
     iget-object v1, p0, Lcom/android/launcher3/SettingsActivity;->mBadgeSettingsFragment:Lcom/android/launcher3/common/model/BadgeSettingsFragment;
 
     invoke-virtual {v1, p1, p2}, Lcom/android/launcher3/common/model/BadgeSettingsFragment;->enableAppBadge(Ljava/lang/String;Z)V
+
+    goto :goto_0
+.end method
+
+.method public hasAppsBadge()Z
+    .locals 2
+
+    iget v0, p0, Lcom/android/launcher3/SettingsActivity;->mVisibleFragment:I
+
+    const/4 v1, 0x1
+
+    if-ne v0, v1, :cond_0
+
+    iget-object v0, p0, Lcom/android/launcher3/SettingsActivity;->mBadgeSettingsFragment:Lcom/android/launcher3/common/model/BadgeSettingsFragment;
+
+    if-nez v0, :cond_1
+
+    :cond_0
+    const/4 v0, 0x0
+
+    :goto_0
+    return v0
+
+    :cond_1
+    iget-object v0, p0, Lcom/android/launcher3/SettingsActivity;->mBadgeSettingsFragment:Lcom/android/launcher3/common/model/BadgeSettingsFragment;
+
+    invoke-virtual {v0}, Lcom/android/launcher3/common/model/BadgeSettingsFragment;->hasAppsBadge()Z
+
+    move-result v0
+
+    goto :goto_0
+.end method
+
+.method public isAllAppsBadgeSwitchChecked()Z
+    .locals 2
+
+    iget v0, p0, Lcom/android/launcher3/SettingsActivity;->mVisibleFragment:I
+
+    const/4 v1, 0x1
+
+    if-ne v0, v1, :cond_0
+
+    iget-object v0, p0, Lcom/android/launcher3/SettingsActivity;->mBadgeSettingsFragment:Lcom/android/launcher3/common/model/BadgeSettingsFragment;
+
+    if-nez v0, :cond_1
+
+    :cond_0
+    const/4 v0, 0x0
+
+    :goto_0
+    return v0
+
+    :cond_1
+    iget-object v0, p0, Lcom/android/launcher3/SettingsActivity;->mBadgeSettingsFragment:Lcom/android/launcher3/common/model/BadgeSettingsFragment;
+
+    invoke-virtual {v0}, Lcom/android/launcher3/common/model/BadgeSettingsFragment;->isAllAppsBadgeSwitchChecked()Z
+
+    move-result v0
 
     goto :goto_0
 .end method
@@ -303,13 +388,13 @@
 
     move-result v1
 
-    if-eqz v1, :cond_2
+    if-eqz v1, :cond_1
 
     const/4 v1, -0x1
 
     invoke-virtual {p0, v1}, Lcom/android/launcher3/SettingsActivity;->setRequestedOrientation(I)V
 
-    :goto_0
+    :cond_1
     const v1, 0x7f040050
 
     invoke-virtual {p0, v1}, Lcom/android/launcher3/SettingsActivity;->setContentView(I)V
@@ -368,8 +453,8 @@
 
     invoke-virtual {p0}, Lcom/android/launcher3/SettingsActivity;->showSettingsFragment()V
 
-    :cond_1
-    :goto_1
+    :cond_2
+    :goto_0
     invoke-static {}, Lcom/android/launcher3/LauncherAppState;->getInstance()Lcom/android/launcher3/LauncherAppState;
 
     move-result-object v1
@@ -390,19 +475,12 @@
 
     return-void
 
-    :cond_2
-    const/4 v1, 0x5
-
-    invoke-virtual {p0, v1}, Lcom/android/launcher3/SettingsActivity;->setRequestedOrientation(I)V
-
-    goto :goto_0
-
     :cond_3
-    if-ne v0, v3, :cond_1
+    if-ne v0, v3, :cond_2
 
     invoke-virtual {p0}, Lcom/android/launcher3/SettingsActivity;->showBadgeManagerSettings()V
 
-    goto :goto_1
+    goto :goto_0
 
     :cond_4
     const-string v1, "SettingsActivity"
@@ -413,7 +491,7 @@
 
     invoke-virtual {p0}, Lcom/android/launcher3/SettingsActivity;->showSettingsFragment()V
 
-    goto :goto_1
+    goto :goto_0
 .end method
 
 .method public onDestroy()V
@@ -457,7 +535,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f0901a9
+    const v2, 0x7f0901b6
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -467,7 +545,7 @@
 
     move-result-object v2
 
-    const v3, 0x7f090161
+    const v3, 0x7f09016b
 
     invoke-virtual {v2, v3}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 

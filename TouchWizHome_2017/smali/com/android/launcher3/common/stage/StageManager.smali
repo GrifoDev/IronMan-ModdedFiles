@@ -99,7 +99,15 @@
     return-void
 .end method
 
-.method static synthetic access$100(Lcom/android/launcher3/common/stage/StageManager;Lcom/android/launcher3/common/stage/Stage;ZZLcom/android/launcher3/common/stage/StageEntry;)V
+.method static synthetic access$100(Lcom/android/launcher3/common/stage/StageManager;)Lcom/android/launcher3/Launcher;
+    .locals 1
+
+    iget-object v0, p0, Lcom/android/launcher3/common/stage/StageManager;->mActivity:Lcom/android/launcher3/Launcher;
+
+    return-object v0
+.end method
+
+.method static synthetic access$200(Lcom/android/launcher3/common/stage/StageManager;Lcom/android/launcher3/common/stage/Stage;ZZLcom/android/launcher3/common/stage/StageEntry;)V
     .locals 0
 
     invoke-direct {p0, p1, p2, p3, p4}, Lcom/android/launcher3/common/stage/StageManager;->transitAnimEnd(Lcom/android/launcher3/common/stage/Stage;ZZLcom/android/launcher3/common/stage/StageEntry;)V
@@ -107,7 +115,7 @@
     return-void
 .end method
 
-.method static synthetic access$200(Lcom/android/launcher3/common/stage/StageManager;Lcom/android/launcher3/common/stage/Stage;)V
+.method static synthetic access$300(Lcom/android/launcher3/common/stage/StageManager;Lcom/android/launcher3/common/stage/Stage;)V
     .locals 0
 
     invoke-direct {p0, p1}, Lcom/android/launcher3/common/stage/StageManager;->dumpStageView(Lcom/android/launcher3/common/stage/Stage;)V
@@ -115,7 +123,7 @@
     return-void
 .end method
 
-.method static synthetic access$300(Lcom/android/launcher3/common/stage/StageManager;)Landroid/animation/AnimatorSet;
+.method static synthetic access$400(Lcom/android/launcher3/common/stage/StageManager;)Landroid/animation/AnimatorSet;
     .locals 1
 
     iget-object v0, p0, Lcom/android/launcher3/common/stage/StageManager;->mCurrentAnimation:Landroid/animation/AnimatorSet;
@@ -123,7 +131,7 @@
     return-object v0
 .end method
 
-.method static synthetic access$400(Lcom/android/launcher3/common/stage/StageManager;)V
+.method static synthetic access$500(Lcom/android/launcher3/common/stage/StageManager;)V
     .locals 0
 
     invoke-direct {p0}, Lcom/android/launcher3/common/stage/StageManager;->dumpStack()V
@@ -131,20 +139,12 @@
     return-void
 .end method
 
-.method static synthetic access$500(Lcom/android/launcher3/common/stage/StageManager;Lcom/android/launcher3/common/stage/Stage;ZZLcom/android/launcher3/common/stage/StageEntry;)V
+.method static synthetic access$600(Lcom/android/launcher3/common/stage/StageManager;Lcom/android/launcher3/common/stage/Stage;ZZLcom/android/launcher3/common/stage/StageEntry;)V
     .locals 0
 
     invoke-direct {p0, p1, p2, p3, p4}, Lcom/android/launcher3/common/stage/StageManager;->transitAnimStart(Lcom/android/launcher3/common/stage/Stage;ZZLcom/android/launcher3/common/stage/StageEntry;)V
 
     return-void
-.end method
-
-.method static synthetic access$600(Lcom/android/launcher3/common/stage/StageManager;)Lcom/android/launcher3/Launcher;
-    .locals 1
-
-    iget-object v0, p0, Lcom/android/launcher3/common/stage/StageManager;->mActivity:Lcom/android/launcher3/Launcher;
-
-    return-object v0
 .end method
 
 .method private assertTransitInProgress()V
@@ -671,7 +671,7 @@
 
     invoke-direct {p0, v0, v3, v6, v1}, Lcom/android/launcher3/common/stage/StageManager;->transitAnimPrepare(Lcom/android/launcher3/common/stage/Stage;ZZLcom/android/launcher3/common/stage/StageEntry;)V
 
-    new-instance v2, Lcom/android/launcher3/common/stage/StageManager$1;
+    new-instance v2, Lcom/android/launcher3/common/stage/StageManager$2;
 
     move-object v3, p0
 
@@ -683,7 +683,7 @@
 
     move-object/from16 v7, p2
 
-    invoke-direct/range {v2 .. v7}, Lcom/android/launcher3/common/stage/StageManager$1;-><init>(Lcom/android/launcher3/common/stage/StageManager;Lcom/android/launcher3/common/stage/Stage;Landroid/animation/Animator;Lcom/android/launcher3/common/stage/StageEntry;Lcom/android/launcher3/common/stage/Stage;)V
+    invoke-direct/range {v2 .. v7}, Lcom/android/launcher3/common/stage/StageManager$2;-><init>(Lcom/android/launcher3/common/stage/StageManager;Lcom/android/launcher3/common/stage/Stage;Landroid/animation/Animator;Lcom/android/launcher3/common/stage/StageEntry;Lcom/android/launcher3/common/stage/Stage;)V
 
     invoke-virtual {v11, v2}, Landroid/animation/AnimatorSet;->addListener(Landroid/animation/Animator$AnimatorListener;)V
 
@@ -691,7 +691,7 @@
 
     move-result-wide v4
 
-    new-instance v2, Lcom/android/launcher3/common/stage/StageManager$2;
+    new-instance v2, Lcom/android/launcher3/common/stage/StageManager$3;
 
     move-object v3, p0
 
@@ -705,7 +705,7 @@
 
     move-object/from16 v10, p5
 
-    invoke-direct/range {v2 .. v10}, Lcom/android/launcher3/common/stage/StageManager$2;-><init>(Lcom/android/launcher3/common/stage/StageManager;JLandroid/animation/AnimatorSet;Lcom/android/launcher3/common/stage/Stage;Lcom/android/launcher3/common/stage/Stage;Landroid/animation/Animator;Lcom/android/launcher3/common/stage/StageEntry;)V
+    invoke-direct/range {v2 .. v10}, Lcom/android/launcher3/common/stage/StageManager$3;-><init>(Lcom/android/launcher3/common/stage/StageManager;JLandroid/animation/AnimatorSet;Lcom/android/launcher3/common/stage/Stage;Lcom/android/launcher3/common/stage/Stage;Landroid/animation/Animator;Lcom/android/launcher3/common/stage/StageEntry;)V
 
     invoke-static/range {p3 .. p3}, Lcom/android/launcher3/Utilities;->getAnimationDuration(Landroid/animation/Animator;)J
 
@@ -1598,7 +1598,17 @@
 .end method
 
 .method public getSecondTopStage()Lcom/android/launcher3/common/stage/Stage;
-    .locals 3
+    .locals 4
+
+    iget-object v1, p0, Lcom/android/launcher3/common/stage/StageManager;->mStack:Ljava/util/Stack;
+
+    invoke-virtual {v1}, Ljava/util/Stack;->size()I
+
+    move-result v1
+
+    const/4 v2, 0x2
+
+    if-lt v1, v2, :cond_0
 
     :try_start_0
     iget-object v1, p0, Lcom/android/launcher3/common/stage/StageManager;->mStack:Ljava/util/Stack;
@@ -1627,12 +1637,33 @@
 
     const-string v1, "StageManager"
 
-    invoke-virtual {v0}, Ljava/lang/Exception;->toString()Ljava/lang/String;
+    new-instance v2, Ljava/lang/StringBuilder;
+
+    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v3, "mStack.size() = "
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v2
 
-    invoke-static {v1, v2}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
+    iget-object v3, p0, Lcom/android/launcher3/common/stage/StageManager;->mStack:Ljava/util/Stack;
 
+    invoke-virtual {v3}, Ljava/util/Stack;->size()I
+
+    move-result v3
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-static {v1, v2, v0}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
+
+    :cond_0
     const/4 v1, 0x0
 
     goto :goto_0
@@ -3001,6 +3032,149 @@
     move-result v0
 
     goto :goto_1
+.end method
+
+.method public startStageByTray(I)V
+    .locals 9
+
+    invoke-virtual {p0}, Lcom/android/launcher3/common/stage/StageManager;->getTopStage()Lcom/android/launcher3/common/stage/Stage;
+
+    move-result-object v5
+
+    if-eqz v5, :cond_0
+
+    invoke-virtual {v5}, Lcom/android/launcher3/common/stage/Stage;->getMode()I
+
+    move-result v6
+
+    if-ne v6, p1, :cond_0
+
+    const-string v6, "StageManager"
+
+    new-instance v7, Ljava/lang/StringBuilder;
+
+    invoke-direct {v7}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v8, "startStageByTray : "
+
+    invoke-virtual {v7, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v7
+
+    invoke-virtual {v7, p1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v7
+
+    const-string v8, " is already on top"
+
+    invoke-virtual {v7, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v7
+
+    invoke-virtual {v7}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v7
+
+    invoke-static {v6, v7}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
+
+    :goto_0
+    return-void
+
+    :cond_0
+    invoke-direct {p0}, Lcom/android/launcher3/common/stage/StageManager;->assertTransitInProgress()V
+
+    const/4 v1, 0x0
+
+    const/4 v2, 0x0
+
+    iget-object v6, p0, Lcom/android/launcher3/common/stage/StageManager;->mStageMap:Ljava/util/HashMap;
+
+    invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v7
+
+    invoke-virtual {v6, v7}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v4
+
+    check-cast v4, Lcom/android/launcher3/common/stage/Stage;
+
+    if-nez v4, :cond_1
+
+    invoke-virtual {p0, p1}, Lcom/android/launcher3/common/stage/StageManager;->getStage(I)Lcom/android/launcher3/common/stage/Stage;
+
+    move-result-object v4
+
+    :cond_1
+    invoke-virtual {v4}, Lcom/android/launcher3/common/stage/Stage;->isViewInitiated()Z
+
+    move-result v6
+
+    if-nez v6, :cond_2
+
+    invoke-virtual {v4}, Lcom/android/launcher3/common/stage/Stage;->initStageView()V
+
+    :cond_2
+    invoke-direct {p0}, Lcom/android/launcher3/common/stage/StageManager;->cancelAnimation()V
+
+    iget-object v6, p0, Lcom/android/launcher3/common/stage/StageManager;->mStack:Ljava/util/Stack;
+
+    invoke-virtual {v6}, Ljava/util/Stack;->isEmpty()Z
+
+    move-result v6
+
+    if-nez v6, :cond_3
+
+    iget-object v6, p0, Lcom/android/launcher3/common/stage/StageManager;->mStack:Ljava/util/Stack;
+
+    invoke-virtual {v6}, Ljava/util/Stack;->peek()Ljava/lang/Object;
+
+    move-result-object v3
+
+    check-cast v3, Lcom/android/launcher3/common/stage/Stage;
+
+    invoke-virtual {v3}, Lcom/android/launcher3/common/stage/Stage;->onStageExitByTray()Landroid/animation/Animator;
+
+    move-result-object v2
+
+    :cond_3
+    iget-object v6, p0, Lcom/android/launcher3/common/stage/StageManager;->mStack:Ljava/util/Stack;
+
+    invoke-virtual {v6, v4}, Ljava/util/Stack;->push(Ljava/lang/Object;)Ljava/lang/Object;
+
+    invoke-virtual {v4}, Lcom/android/launcher3/common/stage/Stage;->onStageEnterByTray()Landroid/animation/Animator;
+
+    move-result-object v1
+
+    if-nez v1, :cond_4
+
+    if-eqz v2, :cond_5
+
+    :cond_4
+    invoke-static {}, Lcom/android/launcher3/util/animation/LauncherAnimUtils;->createAnimatorSet()Landroid/animation/AnimatorSet;
+
+    move-result-object v0
+
+    invoke-virtual {v0, v1}, Landroid/animation/AnimatorSet;->play(Landroid/animation/Animator;)Landroid/animation/AnimatorSet$Builder;
+
+    invoke-virtual {v0, v2}, Landroid/animation/AnimatorSet;->play(Landroid/animation/Animator;)Landroid/animation/AnimatorSet$Builder;
+
+    iput-object v0, p0, Lcom/android/launcher3/common/stage/StageManager;->mCurrentAnimation:Landroid/animation/AnimatorSet;
+
+    new-instance v6, Lcom/android/launcher3/common/stage/StageManager$1;
+
+    invoke-direct {v6, p0, p1}, Lcom/android/launcher3/common/stage/StageManager$1;-><init>(Lcom/android/launcher3/common/stage/StageManager;I)V
+
+    invoke-virtual {v0, v6}, Landroid/animation/AnimatorSet;->addListener(Landroid/animation/Animator$AnimatorListener;)V
+
+    invoke-virtual {v0}, Landroid/animation/AnimatorSet;->start()V
+
+    :cond_5
+    const/4 v6, 0x0
+
+    iput-boolean v6, p0, Lcom/android/launcher3/common/stage/StageManager;->mInProgressTransit:Z
+
+    goto :goto_0
 .end method
 
 .method public switchInternalState(Lcom/android/launcher3/common/stage/Stage;Lcom/android/launcher3/common/stage/StageEntry;)V

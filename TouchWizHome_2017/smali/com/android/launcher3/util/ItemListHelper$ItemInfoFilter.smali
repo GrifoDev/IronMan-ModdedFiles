@@ -1,11 +1,11 @@
-.class interface abstract Lcom/android/launcher3/proxy/ItemListHelper$ItemInfoFilter;
+.class interface abstract Lcom/android/launcher3/util/ItemListHelper$ItemInfoFilter;
 .super Ljava/lang/Object;
 .source "ItemListHelper.java"
 
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingClass;
-    value = Lcom/android/launcher3/proxy/ItemListHelper;
+    value = Lcom/android/launcher3/util/ItemListHelper;
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;

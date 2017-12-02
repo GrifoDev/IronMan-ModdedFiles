@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <dimen name="appsPicker_container_margin_end">32.0dip</dimen>
-    <dimen name="appsPicker_container_margin_start">8.0dip</dimen>
+    <item type="dimen" name="appsPicker_container_margin_start">@dimen/appsPicker_header_margin_start</item>
     <dimen name="appsPicker_header_margin_end">9.0dip</dimen>
     <dimen name="appsPicker_header_margin_start">16.0dip</dimen>
     <dimen name="appsPicker_header_text_padding">6.0dip</dimen>

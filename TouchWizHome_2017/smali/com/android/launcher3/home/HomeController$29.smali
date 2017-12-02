@@ -3,12 +3,12 @@
 .source "HomeController.java"
 
 # interfaces
-.implements Ljava/lang/Runnable;
+.implements Lcom/android/launcher3/common/base/item/ItemOperator;
 
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/android/launcher3/home/HomeController;->changeHomeScreenMode(Ljava/lang/String;)V
+    value = Lcom/android/launcher3/home/HomeController;->updateRestoreItems(Ljava/util/HashSet;)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -20,16 +20,16 @@
 # instance fields
 .field final synthetic this$0:Lcom/android/launcher3/home/HomeController;
 
-.field final synthetic val$HomeOnlySettingValue:Z
+.field final synthetic val$updates:Ljava/util/HashSet;
 
 
 # direct methods
-.method constructor <init>(Lcom/android/launcher3/home/HomeController;Z)V
+.method constructor <init>(Lcom/android/launcher3/home/HomeController;Ljava/util/HashSet;)V
     .locals 0
 
     iput-object p1, p0, Lcom/android/launcher3/home/HomeController$29;->this$0:Lcom/android/launcher3/home/HomeController;
 
-    iput-boolean p2, p0, Lcom/android/launcher3/home/HomeController$29;->val$HomeOnlySettingValue:Z
+    iput-object p2, p0, Lcom/android/launcher3/home/HomeController$29;->val$updates:Ljava/util/HashSet;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -38,40 +38,55 @@
 
 
 # virtual methods
-.method public run()V
-    .locals 3
+.method public evaluate(Lcom/android/launcher3/common/base/item/ItemInfo;Landroid/view/View;Landroid/view/View;)Z
+    .locals 2
 
-    const/4 v1, 0x1
+    const/4 v1, 0x0
 
-    invoke-static {}, Lcom/android/launcher3/LauncherAppState;->getInstance()Lcom/android/launcher3/LauncherAppState;
+    instance-of v0, p1, Lcom/android/launcher3/common/base/item/IconInfo;
 
-    move-result-object v0
+    if-eqz v0, :cond_1
 
-    invoke-virtual {v0}, Lcom/android/launcher3/LauncherAppState;->getModel()Lcom/android/launcher3/LauncherModel;
+    instance-of v0, p2, Lcom/android/launcher3/common/view/IconView;
 
-    move-result-object v2
+    if-eqz v0, :cond_1
 
-    iget-boolean v0, p0, Lcom/android/launcher3/home/HomeController$29;->val$HomeOnlySettingValue:Z
+    iget-object v0, p0, Lcom/android/launcher3/home/HomeController$29;->val$updates:Ljava/util/HashSet;
 
-    if-nez v0, :cond_0
+    invoke-virtual {v0, p1}, Ljava/util/HashSet;->contains(Ljava/lang/Object;)Z
 
-    move v0, v1
+    move-result v0
 
-    :goto_0
-    invoke-virtual {v2, v0, v1}, Lcom/android/launcher3/LauncherModel;->resetLoadedState(ZZ)V
+    if-eqz v0, :cond_1
 
-    iget-object v0, p0, Lcom/android/launcher3/home/HomeController$29;->this$0:Lcom/android/launcher3/home/HomeController;
+    check-cast p2, Lcom/android/launcher3/common/view/IconView;
 
-    invoke-static {v0}, Lcom/android/launcher3/home/HomeController;->access$1300(Lcom/android/launcher3/home/HomeController;)Lcom/android/launcher3/Launcher;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Lcom/android/launcher3/Launcher;->recreateLauncher()V
-
-    return-void
+    invoke-virtual {p2, v1}, Lcom/android/launcher3/common/view/IconView;->applyState(Z)V
 
     :cond_0
-    const/4 v0, 0x0
+    :goto_0
+    return v1
+
+    :cond_1
+    instance-of v0, p2, Lcom/android/launcher3/home/PendingAppWidgetHostView;
+
+    if-eqz v0, :cond_0
+
+    instance-of v0, p1, Lcom/android/launcher3/home/LauncherAppWidgetInfo;
+
+    if-eqz v0, :cond_0
+
+    iget-object v0, p0, Lcom/android/launcher3/home/HomeController$29;->val$updates:Ljava/util/HashSet;
+
+    invoke-virtual {v0, p1}, Ljava/util/HashSet;->contains(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    check-cast p2, Lcom/android/launcher3/home/PendingAppWidgetHostView;
+
+    invoke-virtual {p2}, Lcom/android/launcher3/home/PendingAppWidgetHostView;->applyState()V
 
     goto :goto_0
 .end method

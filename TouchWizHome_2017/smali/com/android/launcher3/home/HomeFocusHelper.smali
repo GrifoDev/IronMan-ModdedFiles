@@ -827,7 +827,7 @@
 
     move/from16 v0, v17
 
-    if-ne v0, v2, :cond_a
+    if-ne v0, v2, :cond_9
 
     add-int/lit8 v2, v7, 0x1
 
@@ -952,19 +952,12 @@
     goto :goto_1
 
     :cond_7
-    const/16 v2, 0x43
-
-    move/from16 v0, p1
-
-    if-eq v0, v2, :cond_8
-
     const/16 v2, 0x70
 
     move/from16 v0, p1
 
-    if-ne v0, v2, :cond_9
+    if-ne v0, v2, :cond_8
 
-    :cond_8
     invoke-virtual {v15}, Lcom/android/launcher3/Launcher;->getHomeController()Lcom/android/launcher3/home/HomeController;
 
     move-result-object v20
@@ -983,7 +976,7 @@
 
     goto/16 :goto_0
 
-    :cond_9
+    :cond_8
     invoke-static {v11}, Lcom/android/launcher3/home/HomeFocusLogic;->createSparseMatrix(Lcom/android/launcher3/common/base/view/CellLayout;)[[I
 
     move-result-object v5
@@ -1000,12 +993,12 @@
 
     goto/16 :goto_1
 
-    :cond_a
+    :cond_9
     const/4 v2, -0x4
 
     move/from16 v0, v17
 
-    if-ne v0, v2, :cond_b
+    if-ne v0, v2, :cond_a
 
     add-int/lit8 v2, v7, -0x1
 
@@ -1033,12 +1026,12 @@
 
     goto/16 :goto_2
 
-    :cond_b
+    :cond_a
     const/16 v2, -0xb
 
     move/from16 v0, v17
 
-    if-ne v0, v2, :cond_c
+    if-ne v0, v2, :cond_b
 
     const/4 v2, -0x1
 
@@ -1048,7 +1041,7 @@
 
     goto/16 :goto_2
 
-    :cond_c
+    :cond_b
     const/4 v2, -0x3
 
     move/from16 v0, v17
@@ -1223,7 +1216,7 @@
 
     packed-switch v26, :pswitch_data_0
 
-    if-ltz v26, :cond_9
+    if-ltz v26, :cond_8
 
     invoke-virtual {v9}, Lcom/android/launcher3/common/base/view/CellLayoutChildren;->getChildCount()I
 
@@ -1231,7 +1224,7 @@
 
     move/from16 v0, v26
 
-    if-ge v0, v2, :cond_9
+    if-ge v0, v2, :cond_8
 
     move/from16 v0, v26
 
@@ -1282,19 +1275,12 @@
     goto :goto_1
 
     :cond_4
-    const/16 v2, 0x43
-
-    move/from16 v0, p1
-
-    if-eq v0, v2, :cond_5
-
     const/16 v2, 0x70
 
     move/from16 v0, p1
 
-    if-ne v0, v2, :cond_6
+    if-ne v0, v2, :cond_5
 
-    :cond_5
     invoke-virtual/range {v24 .. v24}, Lcom/android/launcher3/Launcher;->getHomeController()Lcom/android/launcher3/home/HomeController;
 
     move-result-object v10
@@ -1311,7 +1297,7 @@
 
     goto/16 :goto_0
 
-    :cond_6
+    :cond_5
     invoke-static/range {v23 .. v23}, Lcom/android/launcher3/home/HomeFocusLogic;->createSparseMatrix(Lcom/android/launcher3/common/base/view/CellLayout;)[[I
 
     move-result-object v5
@@ -1325,11 +1311,11 @@
 
     move/from16 v0, v26
 
-    if-ne v0, v2, :cond_7
+    if-ne v0, v2, :cond_6
 
     add-int/lit8 v15, v7, 0x1
 
-    :cond_7
+    :cond_6
     invoke-virtual/range {p0 .. p0}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
 
     move-result-object v2
@@ -1486,11 +1472,11 @@
 
     move/from16 v0, v26
 
-    if-ne v0, v2, :cond_8
+    if-ne v0, v2, :cond_7
 
     add-int/lit8 v15, v7, -0x1
 
-    :cond_8
+    :cond_7
     invoke-virtual/range {p0 .. p0}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
 
     move-result-object v2
@@ -1590,7 +1576,7 @@
 
     goto/16 :goto_2
 
-    :cond_9
+    :cond_8
     invoke-virtual {v9}, Lcom/android/launcher3/common/base/view/CellLayoutChildren;->getChildCount()I
 
     move-result v2
@@ -1998,29 +1984,33 @@
 .end method
 
 .method private static handleScreenGridPanelOptionButtonKeyEvent(Landroid/view/View;ILandroid/view/KeyEvent;)Z
-    .locals 10
+    .locals 11
 
-    const/16 v9, 0x16
+    const/16 v10, 0x16
 
-    const/16 v8, 0x15
+    const/16 v9, 0x15
 
-    const/4 v5, 0x1
+    const/4 v6, 0x1
 
-    const/4 v6, 0x0
+    const/4 v7, 0x0
 
-    if-eq p1, v8, :cond_0
+    if-eq p1, v9, :cond_0
 
-    if-ne p1, v9, :cond_2
+    if-eq p1, v10, :cond_0
+
+    const/16 v8, 0x13
+
+    if-ne p1, v8, :cond_2
 
     :cond_0
-    move v1, v5
+    move v1, v6
 
     :goto_0
     invoke-virtual {p2}, Landroid/view/KeyEvent;->getAction()I
 
-    move-result v7
+    move-result v8
 
-    if-eq v7, v5, :cond_1
+    if-eq v8, v6, :cond_1
 
     if-nez v1, :cond_3
 
@@ -2029,47 +2019,61 @@
     return v1
 
     :cond_2
-    move v1, v6
+    move v1, v7
 
     goto :goto_0
 
     :cond_3
     invoke-virtual {p0}, Landroid/view/View;->getContext()Landroid/content/Context;
 
-    move-result-object v5
+    move-result-object v6
 
-    check-cast v5, Lcom/android/launcher3/Launcher;
+    check-cast v6, Lcom/android/launcher3/Launcher;
 
-    invoke-virtual {v5}, Lcom/android/launcher3/Launcher;->getHomeController()Lcom/android/launcher3/home/HomeController;
+    invoke-virtual {v6}, Lcom/android/launcher3/Launcher;->getHomeController()Lcom/android/launcher3/home/HomeController;
 
     move-result-object v3
 
     const/4 v2, 0x0
 
+    const/4 v5, 0x0
+
     if-eqz v3, :cond_4
 
     invoke-virtual {v3}, Lcom/android/launcher3/home/HomeController;->getScreenGridPanel()Lcom/android/launcher3/home/ScreenGridPanel;
 
-    move-result-object v5
+    move-result-object v6
 
-    if-eqz v5, :cond_4
+    if-eqz v6, :cond_4
 
     invoke-virtual {v3}, Lcom/android/launcher3/home/HomeController;->getScreenGridPanel()Lcom/android/launcher3/home/ScreenGridPanel;
 
-    move-result-object v5
+    move-result-object v6
 
-    invoke-virtual {v5}, Lcom/android/launcher3/home/ScreenGridPanel;->getGriBtnLayout()Landroid/widget/LinearLayout;
+    invoke-virtual {v6}, Lcom/android/launcher3/home/ScreenGridPanel;->getGriBtnLayout()Landroid/widget/LinearLayout;
 
     move-result-object v2
+
+    invoke-virtual {v3}, Lcom/android/launcher3/home/HomeController;->getScreenGridPanel()Lcom/android/launcher3/home/ScreenGridPanel;
+
+    move-result-object v6
+
+    invoke-virtual {v6}, Lcom/android/launcher3/home/ScreenGridPanel;->getScreenGridTopConatiner()Landroid/view/View;
+
+    move-result-object v5
+
+    check-cast v5, Landroid/widget/LinearLayout;
 
     :cond_4
     if-eqz v2, :cond_1
 
-    sget-boolean v5, Lcom/android/launcher3/Utilities;->sIsRtl:Z
+    if-eqz v5, :cond_1
 
-    if-eqz v5, :cond_5
+    sget-boolean v6, Lcom/android/launcher3/Utilities;->sIsRtl:Z
 
-    if-ne p1, v8, :cond_6
+    if-eqz v6, :cond_5
+
+    if-ne p1, v9, :cond_6
 
     const/16 p1, 0x16
 
@@ -2081,36 +2085,35 @@
 
     packed-switch p1, :pswitch_data_0
 
+    :pswitch_0
     goto :goto_1
 
-    :pswitch_0
-    if-eqz v4, :cond_1
+    :pswitch_1
+    if-eqz v5, :cond_1
 
-    add-int/lit8 v5, v4, -0x1
+    invoke-virtual {v5, v7}, Landroid/widget/LinearLayout;->getChildAt(I)Landroid/view/View;
 
-    invoke-virtual {v2, v5}, Landroid/widget/LinearLayout;->getChildAt(I)Landroid/view/View;
+    move-result-object v6
 
-    move-result-object v0
+    invoke-virtual {v6}, Landroid/view/View;->requestFocus()Z
 
-    if-eqz v0, :cond_1
-
-    invoke-virtual {v0}, Landroid/view/View;->requestFocus()Z
-
-    invoke-virtual {v0, v6}, Landroid/view/View;->playSoundEffect(I)V
+    invoke-static {p1, p0}, Lcom/android/launcher3/util/focus/FocusHelper;->playSoundEffect(ILandroid/view/View;)V
 
     goto :goto_1
 
     :cond_6
-    if-ne p1, v9, :cond_5
+    if-ne p1, v10, :cond_5
 
     const/16 p1, 0x15
 
     goto :goto_2
 
-    :pswitch_1
-    add-int/lit8 v5, v4, 0x1
+    :pswitch_2
+    if-eqz v4, :cond_1
 
-    invoke-virtual {v2, v5}, Landroid/widget/LinearLayout;->getChildAt(I)Landroid/view/View;
+    add-int/lit8 v6, v4, -0x1
+
+    invoke-virtual {v2, v6}, Landroid/widget/LinearLayout;->getChildAt(I)Landroid/view/View;
 
     move-result-object v0
 
@@ -2118,105 +2121,216 @@
 
     invoke-virtual {v0}, Landroid/view/View;->requestFocus()Z
 
-    invoke-virtual {v0, v6}, Landroid/view/View;->playSoundEffect(I)V
+    invoke-virtual {v0, v7}, Landroid/view/View;->playSoundEffect(I)V
+
+    goto :goto_1
+
+    :pswitch_3
+    add-int/lit8 v6, v4, 0x1
+
+    invoke-virtual {v2, v6}, Landroid/widget/LinearLayout;->getChildAt(I)Landroid/view/View;
+
+    move-result-object v0
+
+    if-eqz v0, :cond_1
+
+    invoke-virtual {v0}, Landroid/view/View;->requestFocus()Z
+
+    invoke-virtual {v0, v7}, Landroid/view/View;->playSoundEffect(I)V
 
     goto :goto_1
 
     :pswitch_data_0
-    .packed-switch 0x15
-        :pswitch_0
+    .packed-switch 0x13
         :pswitch_1
+        :pswitch_0
+        :pswitch_2
+        :pswitch_3
     .end packed-switch
 .end method
 
 .method private static handleScreenGridPanelTopButtonKeyEvent(Landroid/view/View;ILandroid/view/KeyEvent;)Z
-    .locals 6
+    .locals 11
 
-    const/4 v3, 0x1
+    const/4 v8, 0x1
 
-    const/4 v4, 0x0
+    const/4 v9, 0x0
 
-    const/16 v5, 0x14
+    const/16 v10, 0x14
 
-    if-eq p1, v5, :cond_0
+    if-eq p1, v10, :cond_0
 
-    const/16 v5, 0x3d
+    const/16 v10, 0x3d
 
-    if-ne p1, v5, :cond_2
+    if-eq p1, v10, :cond_0
+
+    const/16 v10, 0x15
+
+    if-eq p1, v10, :cond_0
+
+    const/16 v10, 0x16
+
+    if-ne p1, v10, :cond_2
 
     :cond_0
-    move v0, v3
+    move v2, v8
 
     :goto_0
     invoke-virtual {p2}, Landroid/view/KeyEvent;->getAction()I
 
-    move-result v5
+    move-result v10
 
-    if-eq v5, v3, :cond_1
+    if-eq v10, v8, :cond_1
 
-    if-nez v0, :cond_3
+    if-nez v2, :cond_3
 
     :cond_1
     :goto_1
-    return v0
+    return v2
 
     :cond_2
-    move v0, v4
+    move v2, v9
 
     goto :goto_0
 
     :cond_3
     invoke-virtual {p0}, Landroid/view/View;->getContext()Landroid/content/Context;
 
+    move-result-object v8
+
+    check-cast v8, Lcom/android/launcher3/Launcher;
+
+    invoke-virtual {v8}, Lcom/android/launcher3/Launcher;->getHomeController()Lcom/android/launcher3/home/HomeController;
+
+    move-result-object v4
+
+    const/4 v3, 0x0
+
+    const/4 v6, 0x0
+
+    if-eqz v4, :cond_4
+
+    invoke-virtual {v4}, Lcom/android/launcher3/home/HomeController;->getScreenGridPanel()Lcom/android/launcher3/home/ScreenGridPanel;
+
+    move-result-object v8
+
+    if-eqz v8, :cond_4
+
+    invoke-virtual {v4}, Lcom/android/launcher3/home/HomeController;->getScreenGridPanel()Lcom/android/launcher3/home/ScreenGridPanel;
+
+    move-result-object v8
+
+    invoke-virtual {v8}, Lcom/android/launcher3/home/ScreenGridPanel;->getGriBtnLayout()Landroid/widget/LinearLayout;
+
     move-result-object v3
 
-    check-cast v3, Lcom/android/launcher3/Launcher;
+    invoke-virtual {v4}, Lcom/android/launcher3/home/HomeController;->getScreenGridPanel()Lcom/android/launcher3/home/ScreenGridPanel;
 
-    invoke-virtual {v3}, Lcom/android/launcher3/Launcher;->getHomeController()Lcom/android/launcher3/home/HomeController;
+    move-result-object v8
 
-    move-result-object v2
+    invoke-virtual {v8}, Lcom/android/launcher3/home/ScreenGridPanel;->getScreenGridTopConatiner()Landroid/view/View;
 
-    const/4 v1, 0x0
+    move-result-object v6
 
-    if-eqz v2, :cond_4
-
-    invoke-virtual {v2}, Lcom/android/launcher3/home/HomeController;->getScreenGridPanel()Lcom/android/launcher3/home/ScreenGridPanel;
-
-    move-result-object v3
-
-    if-eqz v3, :cond_4
-
-    invoke-virtual {v2}, Lcom/android/launcher3/home/HomeController;->getScreenGridPanel()Lcom/android/launcher3/home/ScreenGridPanel;
-
-    move-result-object v3
-
-    invoke-virtual {v3}, Lcom/android/launcher3/home/ScreenGridPanel;->getGriBtnLayout()Landroid/widget/LinearLayout;
-
-    move-result-object v1
+    check-cast v6, Landroid/widget/LinearLayout;
 
     :cond_4
-    if-eqz v1, :cond_1
+    const v8, 0x7f110096
+
+    invoke-virtual {v6, v8}, Landroid/widget/LinearLayout;->findViewById(I)Landroid/view/View;
+
+    move-result-object v7
+
+    check-cast v7, Landroid/widget/LinearLayout;
+
+    if-eqz v3, :cond_1
+
+    if-eqz v7, :cond_1
+
+    invoke-virtual {v7, p0}, Landroid/view/ViewGroup;->indexOfChild(Landroid/view/View;)I
+
+    move-result v5
+
+    invoke-virtual {v7}, Landroid/widget/LinearLayout;->getChildCount()I
+
+    move-result v0
 
     sparse-switch p1, :sswitch_data_0
 
     goto :goto_1
 
     :sswitch_0
-    if-eqz v1, :cond_1
+    if-eqz v3, :cond_1
 
-    invoke-virtual {v1, v4}, Landroid/widget/LinearLayout;->getChildAt(I)Landroid/view/View;
+    invoke-virtual {v3, v9}, Landroid/widget/LinearLayout;->getChildAt(I)Landroid/view/View;
 
-    move-result-object v3
+    move-result-object v8
 
-    invoke-virtual {v3}, Landroid/view/View;->requestFocus()Z
+    invoke-virtual {v8}, Landroid/view/View;->requestFocus()Z
 
     invoke-static {p1, p0}, Lcom/android/launcher3/util/focus/FocusHelper;->playSoundEffect(ILandroid/view/View;)V
 
     goto :goto_1
 
+    :sswitch_1
+    add-int/lit8 v8, v5, -0x1
+
+    invoke-static {v8, v9}, Ljava/lang/Math;->max(II)I
+
+    move-result v8
+
+    invoke-virtual {v7, v8}, Landroid/widget/LinearLayout;->getChildAt(I)Landroid/view/View;
+
+    move-result-object v1
+
+    if-eqz v1, :cond_1
+
+    invoke-virtual {v1}, Landroid/view/View;->isEnabled()Z
+
+    move-result v8
+
+    if-eqz v8, :cond_1
+
+    invoke-virtual {v1}, Landroid/view/View;->requestFocus()Z
+
+    invoke-static {p1, p0}, Lcom/android/launcher3/util/focus/FocusHelper;->playSoundEffect(ILandroid/view/View;)V
+
+    goto :goto_1
+
+    :sswitch_2
+    add-int/lit8 v8, v5, 0x1
+
+    add-int/lit8 v9, v0, -0x1
+
+    invoke-static {v8, v9}, Ljava/lang/Math;->min(II)I
+
+    move-result v8
+
+    invoke-virtual {v7, v8}, Landroid/widget/LinearLayout;->getChildAt(I)Landroid/view/View;
+
+    move-result-object v1
+
+    if-eqz v1, :cond_1
+
+    invoke-virtual {v1}, Landroid/view/View;->isEnabled()Z
+
+    move-result v8
+
+    if-eqz v8, :cond_1
+
+    invoke-virtual {v1}, Landroid/view/View;->requestFocus()Z
+
+    invoke-static {p1, p0}, Lcom/android/launcher3/util/focus/FocusHelper;->playSoundEffect(ILandroid/view/View;)V
+
+    goto/16 :goto_1
+
+    nop
+
     :sswitch_data_0
     .sparse-switch
         0x14 -> :sswitch_0
+        0x15 -> :sswitch_1
+        0x16 -> :sswitch_2
         0x3d -> :sswitch_0
     .end sparse-switch
 .end method

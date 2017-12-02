@@ -51,7 +51,7 @@
 
     iget-boolean v2, p0, Lcom/android/launcher3/home/WorkspaceDragController$8;->val$fromOther:Z
 
-    invoke-static {v0, v1, v2}, Lcom/android/launcher3/home/WorkspaceDragController;->access$500(Lcom/android/launcher3/home/WorkspaceDragController;Ljava/util/ArrayList;Z)V
+    invoke-static {v0, v1, v2}, Lcom/android/launcher3/home/WorkspaceDragController;->access$600(Lcom/android/launcher3/home/WorkspaceDragController;Ljava/util/ArrayList;Z)V
 
     return-void
 .end method

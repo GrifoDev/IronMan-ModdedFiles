@@ -63,20 +63,20 @@
     return-void
 .end method
 
+.method static synthetic access$1300(Lcom/android/launcher3/home/HomeController$State;)I
+    .locals 1
+
+    iget v0, p0, Lcom/android/launcher3/home/HomeController$State;->mCurrentState:I
+
+    return v0
+.end method
+
 .method static synthetic access$200(Lcom/android/launcher3/home/HomeController$State;)I
     .locals 1
 
     invoke-direct {p0}, Lcom/android/launcher3/home/HomeController$State;->get()I
 
     move-result v0
-
-    return v0
-.end method
-
-.method static synthetic access$300(Lcom/android/launcher3/home/HomeController$State;)I
-    .locals 1
-
-    iget v0, p0, Lcom/android/launcher3/home/HomeController$State;->mCurrentState:I
 
     return v0
 .end method

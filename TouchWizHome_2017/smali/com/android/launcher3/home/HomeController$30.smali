@@ -8,7 +8,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/android/launcher3/home/HomeController;->switchInternalStateChange(II)V
+    value = Lcom/android/launcher3/home/HomeController;->moveItemFromFolder(Lcom/android/launcher3/common/base/item/IconInfo;)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -20,16 +20,16 @@
 # instance fields
 .field final synthetic this$0:Lcom/android/launcher3/home/HomeController;
 
-.field final synthetic val$fromState:I
+.field final synthetic val$iconInfo:Lcom/android/launcher3/common/base/item/IconInfo;
 
 
 # direct methods
-.method constructor <init>(Lcom/android/launcher3/home/HomeController;I)V
+.method constructor <init>(Lcom/android/launcher3/home/HomeController;Lcom/android/launcher3/common/base/item/IconInfo;)V
     .locals 0
 
     iput-object p1, p0, Lcom/android/launcher3/home/HomeController$30;->this$0:Lcom/android/launcher3/home/HomeController;
 
-    iput p2, p0, Lcom/android/launcher3/home/HomeController$30;->val$fromState:I
+    iput-object p2, p0, Lcom/android/launcher3/home/HomeController$30;->val$iconInfo:Lcom/android/launcher3/common/base/item/IconInfo;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -39,34 +39,37 @@
 
 # virtual methods
 .method public run()V
-    .locals 3
+    .locals 4
 
     iget-object v0, p0, Lcom/android/launcher3/home/HomeController$30;->this$0:Lcom/android/launcher3/home/HomeController;
 
-    invoke-static {v0}, Lcom/android/launcher3/home/HomeController;->access$1400(Lcom/android/launcher3/home/HomeController;)Lcom/android/launcher3/home/ZeroPageController;
+    invoke-static {v0}, Lcom/android/launcher3/home/HomeController;->access$1900(Lcom/android/launcher3/home/HomeController;)Lcom/android/launcher3/Launcher;
 
     move-result-object v0
 
-    if-eqz v0, :cond_0
-
-    iget v0, p0, Lcom/android/launcher3/home/HomeController$30;->val$fromState:I
-
-    const/4 v1, 0x4
-
-    if-eq v0, v1, :cond_0
+    invoke-virtual {v0}, Lcom/android/launcher3/Launcher;->closeFolder()V
 
     iget-object v0, p0, Lcom/android/launcher3/home/HomeController$30;->this$0:Lcom/android/launcher3/home/HomeController;
 
-    invoke-static {v0}, Lcom/android/launcher3/home/HomeController;->access$1400(Lcom/android/launcher3/home/HomeController;)Lcom/android/launcher3/home/ZeroPageController;
+    invoke-static {v0}, Lcom/android/launcher3/home/HomeController;->access$500(Lcom/android/launcher3/home/HomeController;)Lcom/android/launcher3/home/Workspace;
 
     move-result-object v0
 
-    const/4 v1, 0x1
+    iget-object v1, p0, Lcom/android/launcher3/home/HomeController$30;->this$0:Lcom/android/launcher3/home/HomeController;
 
-    const/4 v2, 0x0
+    invoke-static {v1}, Lcom/android/launcher3/home/HomeController;->access$500(Lcom/android/launcher3/home/HomeController;)Lcom/android/launcher3/home/Workspace;
 
-    invoke-virtual {v0, v1, v2}, Lcom/android/launcher3/home/ZeroPageController;->updatePageIndicatorForZeroPage(ZZ)V
+    move-result-object v1
 
-    :cond_0
+    iget-object v2, p0, Lcom/android/launcher3/home/HomeController$30;->val$iconInfo:Lcom/android/launcher3/common/base/item/IconInfo;
+
+    iget-wide v2, v2, Lcom/android/launcher3/common/base/item/IconInfo;->screenId:J
+
+    invoke-virtual {v1, v2, v3}, Lcom/android/launcher3/home/Workspace;->getPageIndexForScreenId(J)I
+
+    move-result v1
+
+    invoke-virtual {v0, v1}, Lcom/android/launcher3/home/Workspace;->snapToPageImmediately(I)V
+
     return-void
 .end method

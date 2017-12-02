@@ -87,6 +87,10 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
+    iget-object v1, p0, Lcom/android/launcher3/allapps/AppsRestoreLayoutParser$CategoryParser;->this$0:Lcom/android/launcher3/allapps/AppsRestoreLayoutParser;
+
+    invoke-static {v1, v0}, Lcom/android/launcher3/allapps/AppsRestoreLayoutParser;->access$302(Lcom/android/launcher3/allapps/AppsRestoreLayoutParser;Ljava/lang/String;)Ljava/lang/String;
+
     if-nez v0, :cond_0
 
     const-string v1, "Launcher.AppsRestore"
@@ -124,7 +128,7 @@
     :cond_2
     iget-object v1, p0, Lcom/android/launcher3/allapps/AppsRestoreLayoutParser$CategoryParser;->this$0:Lcom/android/launcher3/allapps/AppsRestoreLayoutParser;
 
-    invoke-static {v1}, Lcom/android/launcher3/allapps/AppsRestoreLayoutParser;->access$400(Lcom/android/launcher3/allapps/AppsRestoreLayoutParser;)Ljava/util/HashMap;
+    invoke-static {v1}, Lcom/android/launcher3/allapps/AppsRestoreLayoutParser;->access$500(Lcom/android/launcher3/allapps/AppsRestoreLayoutParser;)Ljava/util/HashMap;
 
     move-result-object v1
 
@@ -140,7 +144,7 @@
 
     iget-object v1, p0, Lcom/android/launcher3/allapps/AppsRestoreLayoutParser$CategoryParser;->this$0:Lcom/android/launcher3/allapps/AppsRestoreLayoutParser;
 
-    invoke-static {v1}, Lcom/android/launcher3/allapps/AppsRestoreLayoutParser;->access$400(Lcom/android/launcher3/allapps/AppsRestoreLayoutParser;)Ljava/util/HashMap;
+    invoke-static {v1}, Lcom/android/launcher3/allapps/AppsRestoreLayoutParser;->access$500(Lcom/android/launcher3/allapps/AppsRestoreLayoutParser;)Ljava/util/HashMap;
 
     move-result-object v1
 
@@ -156,7 +160,7 @@
 
     iget-object v1, p0, Lcom/android/launcher3/allapps/AppsRestoreLayoutParser$CategoryParser;->this$0:Lcom/android/launcher3/allapps/AppsRestoreLayoutParser;
 
-    invoke-static {v1}, Lcom/android/launcher3/allapps/AppsRestoreLayoutParser;->access$400(Lcom/android/launcher3/allapps/AppsRestoreLayoutParser;)Ljava/util/HashMap;
+    invoke-static {v1}, Lcom/android/launcher3/allapps/AppsRestoreLayoutParser;->access$500(Lcom/android/launcher3/allapps/AppsRestoreLayoutParser;)Ljava/util/HashMap;
 
     move-result-object v1
 
@@ -172,7 +176,7 @@
 
     iget-object v1, p0, Lcom/android/launcher3/allapps/AppsRestoreLayoutParser$CategoryParser;->this$0:Lcom/android/launcher3/allapps/AppsRestoreLayoutParser;
 
-    invoke-static {v1}, Lcom/android/launcher3/allapps/AppsRestoreLayoutParser;->access$400(Lcom/android/launcher3/allapps/AppsRestoreLayoutParser;)Ljava/util/HashMap;
+    invoke-static {v1}, Lcom/android/launcher3/allapps/AppsRestoreLayoutParser;->access$500(Lcom/android/launcher3/allapps/AppsRestoreLayoutParser;)Ljava/util/HashMap;
 
     move-result-object v1
 
@@ -188,7 +192,7 @@
 
     iget-object v1, p0, Lcom/android/launcher3/allapps/AppsRestoreLayoutParser$CategoryParser;->this$0:Lcom/android/launcher3/allapps/AppsRestoreLayoutParser;
 
-    invoke-static {v1}, Lcom/android/launcher3/allapps/AppsRestoreLayoutParser;->access$400(Lcom/android/launcher3/allapps/AppsRestoreLayoutParser;)Ljava/util/HashMap;
+    invoke-static {v1}, Lcom/android/launcher3/allapps/AppsRestoreLayoutParser;->access$500(Lcom/android/launcher3/allapps/AppsRestoreLayoutParser;)Ljava/util/HashMap;
 
     move-result-object v1
 

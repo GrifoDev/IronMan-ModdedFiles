@@ -320,7 +320,7 @@
 
     move/from16 v26, v0
 
-    const v29, 0x7f0a0159
+    const v29, 0x7f0a015e
 
     move-object/from16 v0, v22
 
@@ -330,7 +330,7 @@
 
     move-result v20
 
-    const v29, 0x7f0a0158
+    const v29, 0x7f0a015d
 
     move-object/from16 v0, v22
 
@@ -340,7 +340,7 @@
 
     move-result v18
 
-    const v29, 0x7f0a015c
+    const v29, 0x7f0a0161
 
     move-object/from16 v0, v22
 
@@ -360,7 +360,7 @@
 
     move-result v6
 
-    const v29, 0x7f0a015d
+    const v29, 0x7f0a0162
 
     move-object/from16 v0, v22
 
@@ -380,7 +380,7 @@
 
     move-result v16
 
-    const v29, 0x7f0a0160
+    const v29, 0x7f0a0165
 
     move-object/from16 v0, v22
 
@@ -677,7 +677,7 @@
 
     sub-int v30, v15, v8
 
-    const v31, 0x7f0a015b
+    const v31, 0x7f0a0160
 
     move-object/from16 v0, v22
 

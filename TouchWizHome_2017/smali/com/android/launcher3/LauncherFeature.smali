@@ -44,6 +44,8 @@
 
 .field private static sIsSPR:Z
 
+.field private static sIsTabAOSupProject:Z
+
 .field private static sIsTablet:Z
 
 .field private static sIsVZW:Z
@@ -103,6 +105,10 @@
 .field private static sSupportNavigationBar:Z
 
 .field private static sSupportNfcHwKeyboard:Z
+
+.field private static sSupportNotificationPanelExpansion:Z
+
+.field private static sSupportNotificationPanelExpansionWithHomeMoving:Z
 
 .field private static sSupportQuickOption:Z
 
@@ -209,6 +215,10 @@
 
     sput-boolean v1, Lcom/android/launcher3/LauncherFeature;->sSupportNfcHwKeyboard:Z
 
+    sput-boolean v2, Lcom/android/launcher3/LauncherFeature;->sSupportNotificationPanelExpansion:Z
+
+    sput-boolean v1, Lcom/android/launcher3/LauncherFeature;->sSupportNotificationPanelExpansionWithHomeMoving:Z
+
     sput-boolean v2, Lcom/android/launcher3/LauncherFeature;->sSupportAboutPage:Z
 
     sput-boolean v1, Lcom/android/launcher3/LauncherFeature;->sSupportZeroPageHome:Z
@@ -242,6 +252,8 @@
     sput-boolean v1, Lcom/android/launcher3/LauncherFeature;->sIsDreamProject:Z
 
     sput-boolean v1, Lcom/android/launcher3/LauncherFeature;->sIsCruiserProject:Z
+
+    sput-boolean v1, Lcom/android/launcher3/LauncherFeature;->sIsTabAOSupProject:Z
 
     sput-boolean v1, Lcom/android/launcher3/LauncherFeature;->sEnableStartActivityTouchDown:Z
 
@@ -724,6 +736,110 @@
     move-result v0
 
     return v0
+.end method
+
+.method public static isTabAOSupProject()Z
+    .locals 2
+
+    sget-object v0, Lcom/android/launcher3/LauncherFeature;->sProductName:Ljava/lang/String;
+
+    if-eqz v0, :cond_1
+
+    sget-object v0, Lcom/android/launcher3/LauncherFeature;->sProductName:Ljava/lang/String;
+
+    const-string v1, "gt58"
+
+    invoke-virtual {v0, v1}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
+
+    move-result v0
+
+    if-nez v0, :cond_0
+
+    sget-object v0, Lcom/android/launcher3/LauncherFeature;->sBuildFlavor:Ljava/lang/String;
+
+    const-string v1, "gt58"
+
+    invoke-virtual {v0, v1}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
+
+    move-result v0
+
+    if-nez v0, :cond_0
+
+    sget-object v0, Lcom/android/launcher3/LauncherFeature;->sProductName:Ljava/lang/String;
+
+    const-string v1, "gt510"
+
+    invoke-virtual {v0, v1}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
+
+    move-result v0
+
+    if-nez v0, :cond_0
+
+    sget-object v0, Lcom/android/launcher3/LauncherFeature;->sBuildFlavor:Ljava/lang/String;
+
+    const-string v1, "gt510"
+
+    invoke-virtual {v0, v1}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
+
+    move-result v0
+
+    if-nez v0, :cond_0
+
+    sget-object v0, Lcom/android/launcher3/LauncherFeature;->sProductName:Ljava/lang/String;
+
+    const-string v1, "gt5note8"
+
+    invoke-virtual {v0, v1}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
+
+    move-result v0
+
+    if-nez v0, :cond_0
+
+    sget-object v0, Lcom/android/launcher3/LauncherFeature;->sBuildFlavor:Ljava/lang/String;
+
+    const-string v1, "gt5note8"
+
+    invoke-virtual {v0, v1}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
+
+    move-result v0
+
+    if-nez v0, :cond_0
+
+    sget-object v0, Lcom/android/launcher3/LauncherFeature;->sProductName:Ljava/lang/String;
+
+    const-string v1, "gt5note10"
+
+    invoke-virtual {v0, v1}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
+
+    move-result v0
+
+    if-nez v0, :cond_0
+
+    sget-object v0, Lcom/android/launcher3/LauncherFeature;->sBuildFlavor:Ljava/lang/String;
+
+    const-string v1, "gt5note10"
+
+    invoke-virtual {v0, v1}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_2
+
+    :cond_0
+    const/4 v0, 0x1
+
+    :goto_0
+    sput-boolean v0, Lcom/android/launcher3/LauncherFeature;->sIsTabAOSupProject:Z
+
+    :cond_1
+    sget-boolean v0, Lcom/android/launcher3/LauncherFeature;->sIsTabAOSupProject:Z
+
+    return v0
+
+    :cond_2
+    const/4 v0, 0x0
+
+    goto :goto_0
 .end method
 
 .method public static isTablet()Z
@@ -1768,6 +1884,36 @@
     sget-boolean v0, Lcom/android/launcher3/LauncherFeature;->sSupportNfcHwKeyboard:Z
 
     return v0
+.end method
+
+.method public static supportNotificationPanelExpansion()Z
+    .locals 1
+
+    sget-boolean v0, Lcom/android/launcher3/LauncherFeature;->sSupportNotificationPanelExpansion:Z
+
+    return v0
+.end method
+
+.method public static supportNotificationPanelExpansionWithHomeMoving()Z
+    .locals 1
+
+    sget-boolean v0, Lcom/android/launcher3/LauncherFeature;->sSupportNotificationPanelExpansion:Z
+
+    if-eqz v0, :cond_0
+
+    sget-boolean v0, Lcom/android/launcher3/LauncherFeature;->sSupportNotificationPanelExpansionWithHomeMoving:Z
+
+    if-eqz v0, :cond_0
+
+    const/4 v0, 0x1
+
+    :goto_0
+    return v0
+
+    :cond_0
+    const/4 v0, 0x0
+
+    goto :goto_0
 .end method
 
 .method public static supportQuickOption()Z

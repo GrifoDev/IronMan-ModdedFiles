@@ -37,7 +37,7 @@
 .method public onMenuItemClick(Landroid/view/MenuItem;)Z
     .locals 4
 
-    const v2, 0x7f0901af
+    const v2, 0x7f0901bc
 
     iget-object v0, p0, Lcom/android/launcher3/widget/view/WidgetSearchbar$5;->this$0:Lcom/android/launcher3/widget/view/WidgetSearchbar;
 
@@ -83,7 +83,7 @@
 
     move-result-object v2
 
-    const v3, 0x7f09011d
+    const v3, 0x7f090126
 
     invoke-virtual {v2, v3}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -135,7 +135,7 @@
 
     move-result-object v2
 
-    const v3, 0x7f090180
+    const v3, 0x7f09018d
 
     invoke-virtual {v2, v3}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 

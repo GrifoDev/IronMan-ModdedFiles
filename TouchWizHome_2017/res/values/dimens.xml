@@ -191,6 +191,8 @@
     <dimen name="overview_zeropage_switch_text_size">17.0dip</dimen>
     <dimen name="pageIndicator_dot_margin">2.0dip</dimen>
     <dimen name="status_bar_height">24.0dip</dimen>
+    <dimen name="home_6x6_cellHeight_port">121.0dip</dimen>
+    <dimen name="home_6x6_cellWidth_port">115.0dip</dimen>
     <dimen name="zero_page_single_preview_height">314.0dip</dimen>
     <dimen name="zero_page_single_preview_width">176.0dip</dimen>
     <dimen name="all_apps_icon_top_bottom_padding">8.0dip</dimen>
@@ -222,12 +224,14 @@
     <dimen name="about_licence_margin_bottom">29.0dip</dimen>
     <dimen name="about_licence_text_size">15.0sp</dimen>
     <dimen name="about_notice_bottom_margin">11.0dip</dimen>
-    <dimen name="about_page_area">500.0dip</dimen>
+    <dimen name="about_notice_instruction_margin">3.0dip</dimen>
+    <dimen name="about_page_area">528.0dip</dimen>
     <dimen name="about_text_bottom_padding">10.0dip</dimen>
     <dimen name="about_text_top_margin">10.0dip</dimen>
     <dimen name="about_title_bottom_margin">7.0dip</dimen>
     <dimen name="about_version">15.0sp</dimen>
     <dimen name="about_version_description">14.0sp</dimen>
+    <dimen name="align_items_checkbox_margin_left">15.0dip</dimen>
     <dimen name="align_items_checkbox_padding">8.0dip</dimen>
     <dimen name="align_items_checkbox_textsize">16.0sp</dimen>
     <dimen name="all_apps_grid_section_text_size">24.0sp</dimen>
@@ -245,6 +249,7 @@
     <dimen name="apps_celllayout_extra_padding_top">4.0dip</dimen>
     <dimen name="apps_screen_grid_panel_width">144.5dip</dimen>
     <dimen name="apps_search_list_top_bottom_padding">8.0dip</dimen>
+    <dimen name="apps_search_titlebar_guest_margin_right">20.0dip</dimen>
     <dimen name="appsearch_font_size">14.0sp</dimen>
     <dimen name="appsearch_grid_margin_left_right">7.5dip</dimen>
     <dimen name="appsearch_list_padding_top">10.0dip</dimen>

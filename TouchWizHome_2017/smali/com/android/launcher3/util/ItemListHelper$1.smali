@@ -1,14 +1,14 @@
-.class final Lcom/android/launcher3/proxy/ItemListHelper$1;
+.class final Lcom/android/launcher3/util/ItemListHelper$1;
 .super Ljava/lang/Object;
 .source "ItemListHelper.java"
 
 # interfaces
-.implements Lcom/android/launcher3/proxy/ItemListHelper$ItemInfoFilter;
+.implements Lcom/android/launcher3/util/ItemListHelper$ItemInfoFilter;
 
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/android/launcher3/proxy/ItemListHelper;->getTitleMatchedItemList(Ljava/util/List;Ljava/lang/String;)Ljava/util/List;
+    value = Lcom/android/launcher3/util/ItemListHelper;->getTitleMatchedItemList(Ljava/util/List;Ljava/lang/String;)Ljava/util/List;
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -25,7 +25,7 @@
 .method constructor <init>(Ljava/lang/String;)V
     .locals 0
 
-    iput-object p1, p0, Lcom/android/launcher3/proxy/ItemListHelper$1;->val$itemTitle:Ljava/lang/String;
+    iput-object p1, p0, Lcom/android/launcher3/util/ItemListHelper$1;->val$itemTitle:Ljava/lang/String;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -43,7 +43,7 @@
 
     if-eqz v0, :cond_0
 
-    iget-object v0, p0, Lcom/android/launcher3/proxy/ItemListHelper$1;->val$itemTitle:Ljava/lang/String;
+    iget-object v0, p0, Lcom/android/launcher3/util/ItemListHelper$1;->val$itemTitle:Ljava/lang/String;
 
     const-string v1, "\\s"
 

@@ -1,4 +1,4 @@
-.class Lcom/android/launcher3/common/quickoption/QuickOptionView$4$1;
+.class Lcom/android/launcher3/common/quickoption/QuickOptionView$5$1;
 .super Ljava/lang/Object;
 .source "QuickOptionView.java"
 
@@ -8,7 +8,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/android/launcher3/common/quickoption/QuickOptionView$4;->onAnimationEnd(Landroid/animation/Animator;)V
+    value = Lcom/android/launcher3/common/quickoption/QuickOptionView$5;->onAnimationEnd(Landroid/animation/Animator;)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -18,14 +18,14 @@
 
 
 # instance fields
-.field final synthetic this$1:Lcom/android/launcher3/common/quickoption/QuickOptionView$4;
+.field final synthetic this$1:Lcom/android/launcher3/common/quickoption/QuickOptionView$5;
 
 
 # direct methods
-.method constructor <init>(Lcom/android/launcher3/common/quickoption/QuickOptionView$4;)V
+.method constructor <init>(Lcom/android/launcher3/common/quickoption/QuickOptionView$5;)V
     .locals 0
 
-    iput-object p1, p0, Lcom/android/launcher3/common/quickoption/QuickOptionView$4$1;->this$1:Lcom/android/launcher3/common/quickoption/QuickOptionView$4;
+    iput-object p1, p0, Lcom/android/launcher3/common/quickoption/QuickOptionView$5$1;->this$1:Lcom/android/launcher3/common/quickoption/QuickOptionView$5;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -37,9 +37,9 @@
 .method public run()V
     .locals 2
 
-    iget-object v0, p0, Lcom/android/launcher3/common/quickoption/QuickOptionView$4$1;->this$1:Lcom/android/launcher3/common/quickoption/QuickOptionView$4;
+    iget-object v0, p0, Lcom/android/launcher3/common/quickoption/QuickOptionView$5$1;->this$1:Lcom/android/launcher3/common/quickoption/QuickOptionView$5;
 
-    iget-object v0, v0, Lcom/android/launcher3/common/quickoption/QuickOptionView$4;->this$0:Lcom/android/launcher3/common/quickoption/QuickOptionView;
+    iget-object v0, v0, Lcom/android/launcher3/common/quickoption/QuickOptionView$5;->this$0:Lcom/android/launcher3/common/quickoption/QuickOptionView;
 
     invoke-static {v0}, Lcom/android/launcher3/common/quickoption/QuickOptionView;->access$400(Lcom/android/launcher3/common/quickoption/QuickOptionView;)Lcom/android/launcher3/common/quickoption/QuickOptionManager;
 
@@ -51,9 +51,9 @@
 
     if-eqz v0, :cond_1
 
-    iget-object v0, p0, Lcom/android/launcher3/common/quickoption/QuickOptionView$4$1;->this$1:Lcom/android/launcher3/common/quickoption/QuickOptionView$4;
+    iget-object v0, p0, Lcom/android/launcher3/common/quickoption/QuickOptionView$5$1;->this$1:Lcom/android/launcher3/common/quickoption/QuickOptionView$5;
 
-    iget-object v0, v0, Lcom/android/launcher3/common/quickoption/QuickOptionView$4;->this$0:Lcom/android/launcher3/common/quickoption/QuickOptionView;
+    iget-object v0, v0, Lcom/android/launcher3/common/quickoption/QuickOptionView$5;->this$0:Lcom/android/launcher3/common/quickoption/QuickOptionView;
 
     invoke-static {v0}, Lcom/android/launcher3/common/quickoption/QuickOptionView;->access$000(Lcom/android/launcher3/common/quickoption/QuickOptionView;)Lcom/android/launcher3/Launcher;
 
@@ -71,9 +71,9 @@
 
     if-ne v0, v1, :cond_0
 
-    iget-object v0, p0, Lcom/android/launcher3/common/quickoption/QuickOptionView$4$1;->this$1:Lcom/android/launcher3/common/quickoption/QuickOptionView$4;
+    iget-object v0, p0, Lcom/android/launcher3/common/quickoption/QuickOptionView$5$1;->this$1:Lcom/android/launcher3/common/quickoption/QuickOptionView$5;
 
-    iget-object v0, v0, Lcom/android/launcher3/common/quickoption/QuickOptionView$4;->this$0:Lcom/android/launcher3/common/quickoption/QuickOptionView;
+    iget-object v0, v0, Lcom/android/launcher3/common/quickoption/QuickOptionView$5;->this$0:Lcom/android/launcher3/common/quickoption/QuickOptionView;
 
     invoke-static {v0}, Lcom/android/launcher3/common/quickoption/QuickOptionView;->access$000(Lcom/android/launcher3/common/quickoption/QuickOptionView;)Lcom/android/launcher3/Launcher;
 
@@ -88,9 +88,9 @@
     invoke-virtual {v0, v1}, Lcom/android/launcher3/home/HomeController;->exitResizeState(Z)V
 
     :cond_0
-    iget-object v0, p0, Lcom/android/launcher3/common/quickoption/QuickOptionView$4$1;->this$1:Lcom/android/launcher3/common/quickoption/QuickOptionView$4;
+    iget-object v0, p0, Lcom/android/launcher3/common/quickoption/QuickOptionView$5$1;->this$1:Lcom/android/launcher3/common/quickoption/QuickOptionView$5;
 
-    iget-object v0, v0, Lcom/android/launcher3/common/quickoption/QuickOptionView$4;->this$0:Lcom/android/launcher3/common/quickoption/QuickOptionView;
+    iget-object v0, v0, Lcom/android/launcher3/common/quickoption/QuickOptionView$5;->this$0:Lcom/android/launcher3/common/quickoption/QuickOptionView;
 
     invoke-static {v0}, Lcom/android/launcher3/common/quickoption/QuickOptionView;->access$400(Lcom/android/launcher3/common/quickoption/QuickOptionView;)Lcom/android/launcher3/common/quickoption/QuickOptionManager;
 
@@ -102,9 +102,9 @@
 
     invoke-virtual {v0}, Lcom/android/launcher3/common/quickoption/ItemRemoveAnimation;->animate()V
 
-    iget-object v0, p0, Lcom/android/launcher3/common/quickoption/QuickOptionView$4$1;->this$1:Lcom/android/launcher3/common/quickoption/QuickOptionView$4;
+    iget-object v0, p0, Lcom/android/launcher3/common/quickoption/QuickOptionView$5$1;->this$1:Lcom/android/launcher3/common/quickoption/QuickOptionView$5;
 
-    iget-object v0, v0, Lcom/android/launcher3/common/quickoption/QuickOptionView$4;->this$0:Lcom/android/launcher3/common/quickoption/QuickOptionView;
+    iget-object v0, v0, Lcom/android/launcher3/common/quickoption/QuickOptionView$5;->this$0:Lcom/android/launcher3/common/quickoption/QuickOptionView;
 
     invoke-static {v0}, Lcom/android/launcher3/common/quickoption/QuickOptionView;->access$400(Lcom/android/launcher3/common/quickoption/QuickOptionView;)Lcom/android/launcher3/common/quickoption/QuickOptionManager;
 

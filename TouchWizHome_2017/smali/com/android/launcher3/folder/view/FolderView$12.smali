@@ -35,7 +35,7 @@
 
 # virtual methods
 .method public run()V
-    .locals 3
+    .locals 4
 
     iget-object v0, p0, Lcom/android/launcher3/folder/view/FolderView$12;->this$0:Lcom/android/launcher3/folder/view/FolderView;
 
@@ -55,7 +55,7 @@
 
     iget-object v0, p0, Lcom/android/launcher3/folder/view/FolderView$12;->this$0:Lcom/android/launcher3/folder/view/FolderView;
 
-    invoke-static {v0}, Lcom/android/launcher3/folder/view/FolderView;->access$300(Lcom/android/launcher3/folder/view/FolderView;)Landroid/view/inputmethod/InputMethodManager;
+    invoke-static {v0}, Lcom/android/launcher3/folder/view/FolderView;->access$400(Lcom/android/launcher3/folder/view/FolderView;)Landroid/view/inputmethod/InputMethodManager;
 
     move-result-object v0
 
@@ -63,13 +63,13 @@
 
     iget-object v0, p0, Lcom/android/launcher3/folder/view/FolderView$12;->this$0:Lcom/android/launcher3/folder/view/FolderView;
 
-    invoke-static {v0}, Lcom/android/launcher3/folder/view/FolderView;->access$300(Lcom/android/launcher3/folder/view/FolderView;)Landroid/view/inputmethod/InputMethodManager;
+    invoke-static {v0}, Lcom/android/launcher3/folder/view/FolderView;->access$400(Lcom/android/launcher3/folder/view/FolderView;)Landroid/view/inputmethod/InputMethodManager;
 
     move-result-object v0
 
     iget-object v1, p0, Lcom/android/launcher3/folder/view/FolderView$12;->this$0:Lcom/android/launcher3/folder/view/FolderView;
 
-    invoke-static {v1}, Lcom/android/launcher3/folder/view/FolderView;->access$200(Lcom/android/launcher3/folder/view/FolderView;)Lcom/android/launcher3/folder/view/FolderNameEditText;
+    invoke-static {v1}, Lcom/android/launcher3/folder/view/FolderView;->access$300(Lcom/android/launcher3/folder/view/FolderView;)Lcom/android/launcher3/folder/view/FolderNameEditText;
 
     move-result-object v1
 
@@ -89,7 +89,19 @@
     :cond_0
     iget-object v0, p0, Lcom/android/launcher3/folder/view/FolderView$12;->this$0:Lcom/android/launcher3/folder/view/FolderView;
 
-    invoke-static {v0}, Lcom/android/launcher3/folder/view/FolderView;->access$200(Lcom/android/launcher3/folder/view/FolderView;)Lcom/android/launcher3/folder/view/FolderNameEditText;
+    iget-object v1, p0, Lcom/android/launcher3/folder/view/FolderView$12;->this$0:Lcom/android/launcher3/folder/view/FolderView;
+
+    invoke-static {v1}, Lcom/android/launcher3/folder/view/FolderView;->access$200(Lcom/android/launcher3/folder/view/FolderView;)I
+
+    move-result v1
+
+    int-to-long v2, v1
+
+    invoke-virtual {v0, v2, v3}, Lcom/android/launcher3/folder/view/FolderView;->setSuppressFolderNameFocus(J)V
+
+    iget-object v0, p0, Lcom/android/launcher3/folder/view/FolderView$12;->this$0:Lcom/android/launcher3/folder/view/FolderView;
+
+    invoke-static {v0}, Lcom/android/launcher3/folder/view/FolderView;->access$300(Lcom/android/launcher3/folder/view/FolderView;)Lcom/android/launcher3/folder/view/FolderNameEditText;
 
     move-result-object v0
 

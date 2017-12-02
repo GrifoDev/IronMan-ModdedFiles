@@ -58,7 +58,7 @@
     :cond_1
     iget-object v7, p0, Lcom/android/launcher3/home/HomeLoader$12;->this$0:Lcom/android/launcher3/home/HomeLoader;
 
-    invoke-static {v7}, Lcom/android/launcher3/home/HomeLoader;->access$6600(Lcom/android/launcher3/home/HomeLoader;)Ljava/util/ArrayList;
+    invoke-static {v7}, Lcom/android/launcher3/home/HomeLoader;->access$6900(Lcom/android/launcher3/home/HomeLoader;)Ljava/util/ArrayList;
 
     move-result-object v7
 
@@ -191,7 +191,7 @@
 
     invoke-direct {v4, p0, v3, v5}, Lcom/android/launcher3/home/HomeLoader$12$1;-><init>(Lcom/android/launcher3/home/HomeLoader$12;Lcom/android/launcher3/home/HomeLoader$HomeCallbacks;Ljava/util/HashSet;)V
 
-    invoke-static {}, Lcom/android/launcher3/home/HomeLoader;->access$6700()Lcom/android/launcher3/common/model/DeferredHandler;
+    invoke-static {}, Lcom/android/launcher3/home/HomeLoader;->access$7000()Lcom/android/launcher3/common/model/DeferredHandler;
 
     move-result-object v7
 

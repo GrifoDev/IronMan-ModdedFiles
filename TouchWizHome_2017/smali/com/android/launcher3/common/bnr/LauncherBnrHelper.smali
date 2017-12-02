@@ -2875,28 +2875,30 @@
 .end method
 
 .method private restoreLayout(Landroid/content/Context;Ljava/lang/String;Ljava/io/File;ILcom/android/launcher3/common/bnr/LauncherBnrListener;)V
-    .locals 10
+    .locals 12
 
-    const/4 v3, 0x0
+    const/4 v4, 0x0
 
-    const/4 v5, 0x0
+    const/4 v7, 0x0
 
-    iget-object v7, p0, Lcom/android/launcher3/common/bnr/LauncherBnrHelper;->mRestoredTable:Ljava/util/ArrayList;
+    iget-object v9, p0, Lcom/android/launcher3/common/bnr/LauncherBnrHelper;->mRestoredTable:Ljava/util/ArrayList;
 
-    invoke-virtual {v7}, Ljava/util/ArrayList;->clear()V
+    invoke-virtual {v9}, Ljava/util/ArrayList;->clear()V
 
     invoke-direct {p0, p1}, Lcom/android/launcher3/common/bnr/LauncherBnrHelper;->loadChangedComponentFromRes(Landroid/content/Context;)V
 
     invoke-direct {p0, p1, p2}, Lcom/android/launcher3/common/bnr/LauncherBnrHelper;->loadChangedComponentFromPath(Landroid/content/Context;Ljava/lang/String;)V
 
-    const/16 v7, 0x3ec
+    const/16 v9, 0x3ec
 
-    if-ne p4, v7, :cond_3
+    move/from16 v0, p4
+
+    if-ne v0, v9, :cond_3
 
     :try_start_0
-    new-instance v4, Ljava/io/FileInputStream;
+    new-instance v5, Ljava/io/FileInputStream;
 
-    invoke-direct {v4, p3}, Ljava/io/FileInputStream;-><init>(Ljava/io/File;)V
+    invoke-direct {v5, p3}, Ljava/io/FileInputStream;-><init>(Ljava/io/File;)V
     :try_end_0
     .catch Ljava/security/GeneralSecurityException; {:try_start_0 .. :try_end_0} :catch_0
     .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_2
@@ -2904,30 +2906,32 @@
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     :try_start_1
-    invoke-interface {p5, v4}, Lcom/android/launcher3/common/bnr/LauncherBnrListener;->getDecryptStream(Ljava/io/FileInputStream;)Ljava/io/InputStream;
+    move-object/from16 v0, p5
 
-    move-result-object v5
+    invoke-interface {v0, v5}, Lcom/android/launcher3/common/bnr/LauncherBnrListener;->getDecryptStream(Ljava/io/FileInputStream;)Ljava/io/InputStream;
 
-    if-eqz v5, :cond_8
+    move-result-object v7
 
-    invoke-direct {p0, p2, v4, v5}, Lcom/android/launcher3/common/bnr/LauncherBnrHelper;->makeDebugLayoutFile(Ljava/lang/String;Ljava/io/FileInputStream;Ljava/io/InputStream;)V
+    if-eqz v7, :cond_9
+
+    invoke-direct {p0, p2, v5, v7}, Lcom/android/launcher3/common/bnr/LauncherBnrHelper;->makeDebugLayoutFile(Ljava/lang/String;Ljava/io/FileInputStream;Ljava/io/InputStream;)V
     :try_end_1
     .catch Ljava/security/GeneralSecurityException; {:try_start_1 .. :try_end_1} :catch_5
     .catch Ljava/io/IOException; {:try_start_1 .. :try_end_1} :catch_4
     .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_3
     .catchall {:try_start_1 .. :try_end_1} :catchall_1
 
-    if-eqz v5, :cond_0
+    if-eqz v7, :cond_0
+
+    invoke-static {v7}, Lcom/android/launcher3/common/bnr/LauncherBnrHelper;->close(Ljava/io/InputStream;)V
+
+    :cond_0
+    if-eqz v5, :cond_1
 
     invoke-static {v5}, Lcom/android/launcher3/common/bnr/LauncherBnrHelper;->close(Ljava/io/InputStream;)V
 
-    :cond_0
-    if-eqz v4, :cond_1
-
-    invoke-static {v4}, Lcom/android/launcher3/common/bnr/LauncherBnrHelper;->close(Ljava/io/InputStream;)V
-
     :cond_1
-    move-object v3, v4
+    move-object v4, v5
 
     :cond_2
     :goto_0
@@ -2935,36 +2939,55 @@
 
     :cond_3
     :try_start_2
-    sget-object v7, Lcom/android/launcher3/common/bnr/LauncherBnrHelper;->sCallBack:Ljava/util/ArrayList;
+    invoke-static {}, Lcom/android/launcher3/LauncherAppState;->getInstance()Lcom/android/launcher3/LauncherAppState;
 
-    invoke-virtual {v7}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
+    move-result-object v9
+
+    invoke-virtual {v9}, Lcom/android/launcher3/LauncherAppState;->getModel()Lcom/android/launcher3/LauncherModel;
+
+    move-result-object v6
+
+    if-eqz v6, :cond_4
+
+    const-string v9, "LauncherBnrHelper"
+
+    const-string v10, "Stop loader before restore layout"
+
+    invoke-static {v9, v10}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    invoke-virtual {v6}, Lcom/android/launcher3/LauncherModel;->stopLoader()V
+
+    :cond_4
+    sget-object v9, Lcom/android/launcher3/common/bnr/LauncherBnrHelper;->sCallBack:Ljava/util/ArrayList;
+
+    invoke-virtual {v9}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
     :try_end_2
     .catch Ljava/security/GeneralSecurityException; {:try_start_2 .. :try_end_2} :catch_0
     .catch Ljava/io/IOException; {:try_start_2 .. :try_end_2} :catch_2
     .catch Ljava/lang/Exception; {:try_start_2 .. :try_end_2} :catch_1
     .catchall {:try_start_2 .. :try_end_2} :catchall_0
 
-    move-result-object v7
+    move-result-object v9
 
-    move-object v4, v3
+    move-object v5, v4
 
     :goto_1
     :try_start_3
-    invoke-interface {v7}, Ljava/util/Iterator;->hasNext()Z
+    invoke-interface {v9}, Ljava/util/Iterator;->hasNext()Z
 
-    move-result v8
+    move-result v10
 
-    if-eqz v8, :cond_8
+    if-eqz v10, :cond_9
 
-    invoke-interface {v7}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    invoke-interface {v9}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
-    move-result-object v0
+    move-result-object v1
 
-    check-cast v0, Lcom/android/launcher3/common/bnr/LauncherBnrCallBack;
+    check-cast v1, Lcom/android/launcher3/common/bnr/LauncherBnrCallBack;
 
-    new-instance v3, Ljava/io/FileInputStream;
+    new-instance v4, Ljava/io/FileInputStream;
 
-    invoke-direct {v3, p3}, Ljava/io/FileInputStream;-><init>(Ljava/io/File;)V
+    invoke-direct {v4, p3}, Ljava/io/FileInputStream;-><init>(Ljava/io/File;)V
     :try_end_3
     .catch Ljava/security/GeneralSecurityException; {:try_start_3 .. :try_end_3} :catch_5
     .catch Ljava/io/IOException; {:try_start_3 .. :try_end_3} :catch_4
@@ -2972,235 +2995,237 @@
     .catchall {:try_start_3 .. :try_end_3} :catchall_1
 
     :try_start_4
-    invoke-interface {p5, v3}, Lcom/android/launcher3/common/bnr/LauncherBnrListener;->getDecryptStream(Ljava/io/FileInputStream;)Ljava/io/InputStream;
+    move-object/from16 v0, p5
 
-    move-result-object v5
+    invoke-interface {v0, v4}, Lcom/android/launcher3/common/bnr/LauncherBnrListener;->getDecryptStream(Ljava/io/FileInputStream;)Ljava/io/InputStream;
 
-    if-eqz v5, :cond_4
+    move-result-object v7
+
+    if-eqz v7, :cond_5
 
     invoke-static {}, Lorg/xmlpull/v1/XmlPullParserFactory;->newInstance()Lorg/xmlpull/v1/XmlPullParserFactory;
 
-    move-result-object v2
+    move-result-object v3
 
-    invoke-virtual {v2}, Lorg/xmlpull/v1/XmlPullParserFactory;->newPullParser()Lorg/xmlpull/v1/XmlPullParser;
+    invoke-virtual {v3}, Lorg/xmlpull/v1/XmlPullParserFactory;->newPullParser()Lorg/xmlpull/v1/XmlPullParser;
 
-    move-result-object v6
+    move-result-object v8
 
-    const-string v8, "utf-8"
+    const-string v10, "utf-8"
 
-    invoke-interface {v6, v5, v8}, Lorg/xmlpull/v1/XmlPullParser;->setInput(Ljava/io/InputStream;Ljava/lang/String;)V
+    invoke-interface {v8, v7, v10}, Lorg/xmlpull/v1/XmlPullParser;->setInput(Ljava/io/InputStream;Ljava/lang/String;)V
 
-    iget-object v8, p0, Lcom/android/launcher3/common/bnr/LauncherBnrHelper;->mRestoredTable:Ljava/util/ArrayList;
+    iget-object v10, p0, Lcom/android/launcher3/common/bnr/LauncherBnrHelper;->mRestoredTable:Ljava/util/ArrayList;
 
-    iget-object v9, p0, Lcom/android/launcher3/common/bnr/LauncherBnrHelper;->mBnrResult:Lcom/android/launcher3/common/bnr/LauncherBnrListener$Result;
+    iget-object v11, p0, Lcom/android/launcher3/common/bnr/LauncherBnrHelper;->mBnrResult:Lcom/android/launcher3/common/bnr/LauncherBnrListener$Result;
 
-    invoke-interface {v0, p1, v6, v8, v9}, Lcom/android/launcher3/common/bnr/LauncherBnrCallBack;->restoreLayout(Landroid/content/Context;Lorg/xmlpull/v1/XmlPullParser;Ljava/util/ArrayList;Lcom/android/launcher3/common/bnr/LauncherBnrListener$Result;)V
-
-    :cond_4
-    iget-object v8, p0, Lcom/android/launcher3/common/bnr/LauncherBnrHelper;->mBnrResult:Lcom/android/launcher3/common/bnr/LauncherBnrListener$Result;
-
-    iget v8, v8, Lcom/android/launcher3/common/bnr/LauncherBnrListener$Result;->result:I
-
-    const/4 v9, 0x1
-
-    if-ne v8, v9, :cond_5
-
-    iget-object v8, p0, Lcom/android/launcher3/common/bnr/LauncherBnrHelper;->mBnrResult:Lcom/android/launcher3/common/bnr/LauncherBnrListener$Result;
-
-    const/4 v9, 0x3
-
-    iput v9, v8, Lcom/android/launcher3/common/bnr/LauncherBnrListener$Result;->errorCode:I
+    invoke-interface {v1, p1, v8, v10, v11}, Lcom/android/launcher3/common/bnr/LauncherBnrCallBack;->restoreLayout(Landroid/content/Context;Lorg/xmlpull/v1/XmlPullParser;Ljava/util/ArrayList;Lcom/android/launcher3/common/bnr/LauncherBnrListener$Result;)V
 
     :cond_5
-    if-eqz v5, :cond_6
+    iget-object v10, p0, Lcom/android/launcher3/common/bnr/LauncherBnrHelper;->mBnrResult:Lcom/android/launcher3/common/bnr/LauncherBnrListener$Result;
 
-    invoke-static {v5}, Lcom/android/launcher3/common/bnr/LauncherBnrHelper;->close(Ljava/io/InputStream;)V
+    iget v10, v10, Lcom/android/launcher3/common/bnr/LauncherBnrListener$Result;->result:I
+
+    const/4 v11, 0x1
+
+    if-ne v10, v11, :cond_6
+
+    iget-object v10, p0, Lcom/android/launcher3/common/bnr/LauncherBnrHelper;->mBnrResult:Lcom/android/launcher3/common/bnr/LauncherBnrListener$Result;
+
+    const/4 v11, 0x3
+
+    iput v11, v10, Lcom/android/launcher3/common/bnr/LauncherBnrListener$Result;->errorCode:I
 
     :cond_6
-    if-eqz v3, :cond_7
+    if-eqz v7, :cond_7
 
-    invoke-static {v3}, Lcom/android/launcher3/common/bnr/LauncherBnrHelper;->close(Ljava/io/InputStream;)V
+    invoke-static {v7}, Lcom/android/launcher3/common/bnr/LauncherBnrHelper;->close(Ljava/io/InputStream;)V
+
+    :cond_7
+    if-eqz v4, :cond_8
+
+    invoke-static {v4}, Lcom/android/launcher3/common/bnr/LauncherBnrHelper;->close(Ljava/io/InputStream;)V
     :try_end_4
     .catch Ljava/security/GeneralSecurityException; {:try_start_4 .. :try_end_4} :catch_0
     .catch Ljava/io/IOException; {:try_start_4 .. :try_end_4} :catch_2
     .catch Ljava/lang/Exception; {:try_start_4 .. :try_end_4} :catch_1
     .catchall {:try_start_4 .. :try_end_4} :catchall_0
 
-    :cond_7
-    move-object v4, v3
+    :cond_8
+    move-object v5, v4
 
     goto :goto_1
 
-    :cond_8
-    move-object v3, v4
-
-    if-eqz v5, :cond_9
-
-    invoke-static {v5}, Lcom/android/launcher3/common/bnr/LauncherBnrHelper;->close(Ljava/io/InputStream;)V
-
     :cond_9
-    if-eqz v3, :cond_2
+    move-object v4, v5
 
-    invoke-static {v3}, Lcom/android/launcher3/common/bnr/LauncherBnrHelper;->close(Ljava/io/InputStream;)V
+    if-eqz v7, :cond_a
+
+    invoke-static {v7}, Lcom/android/launcher3/common/bnr/LauncherBnrHelper;->close(Ljava/io/InputStream;)V
+
+    :cond_a
+    if-eqz v4, :cond_2
+
+    invoke-static {v4}, Lcom/android/launcher3/common/bnr/LauncherBnrHelper;->close(Ljava/io/InputStream;)V
 
     goto :goto_0
 
     :catch_0
-    move-exception v7
+    move-exception v9
 
     :goto_2
-    move-object v1, v7
+    move-object v2, v9
 
     :goto_3
     :try_start_5
-    iget-object v7, p0, Lcom/android/launcher3/common/bnr/LauncherBnrHelper;->mBnrResult:Lcom/android/launcher3/common/bnr/LauncherBnrListener$Result;
+    iget-object v9, p0, Lcom/android/launcher3/common/bnr/LauncherBnrHelper;->mBnrResult:Lcom/android/launcher3/common/bnr/LauncherBnrListener$Result;
 
-    const/4 v8, 0x1
+    const/4 v10, 0x1
 
-    iput v8, v7, Lcom/android/launcher3/common/bnr/LauncherBnrListener$Result;->result:I
+    iput v10, v9, Lcom/android/launcher3/common/bnr/LauncherBnrListener$Result;->result:I
 
-    iget-object v7, p0, Lcom/android/launcher3/common/bnr/LauncherBnrHelper;->mBnrResult:Lcom/android/launcher3/common/bnr/LauncherBnrListener$Result;
+    iget-object v9, p0, Lcom/android/launcher3/common/bnr/LauncherBnrHelper;->mBnrResult:Lcom/android/launcher3/common/bnr/LauncherBnrListener$Result;
 
-    const/4 v8, 0x1
+    const/4 v10, 0x1
 
-    iput v8, v7, Lcom/android/launcher3/common/bnr/LauncherBnrListener$Result;->errorCode:I
+    iput v10, v9, Lcom/android/launcher3/common/bnr/LauncherBnrListener$Result;->errorCode:I
 
-    const-string v7, "LauncherBnrHelper"
+    const-string v9, "LauncherBnrHelper"
 
-    new-instance v8, Ljava/lang/StringBuilder;
+    new-instance v10, Ljava/lang/StringBuilder;
 
-    invoke-direct {v8}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {v10}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v9, "bnr fail, occur exception : "
+    const-string v11, "bnr fail, occur exception : "
 
-    invoke-virtual {v8, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v10, v11}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v8
+    move-result-object v10
 
-    invoke-virtual {v8, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    invoke-virtual {v10, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
-    move-result-object v8
+    move-result-object v10
 
-    invoke-virtual {v8}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v10}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v8
+    move-result-object v10
 
-    invoke-static {v7, v8}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {v9, v10}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
     :try_end_5
     .catchall {:try_start_5 .. :try_end_5} :catchall_0
 
-    if-eqz v5, :cond_a
+    if-eqz v7, :cond_b
 
-    invoke-static {v5}, Lcom/android/launcher3/common/bnr/LauncherBnrHelper;->close(Ljava/io/InputStream;)V
+    invoke-static {v7}, Lcom/android/launcher3/common/bnr/LauncherBnrHelper;->close(Ljava/io/InputStream;)V
 
-    :cond_a
-    if-eqz v3, :cond_2
+    :cond_b
+    if-eqz v4, :cond_2
 
-    invoke-static {v3}, Lcom/android/launcher3/common/bnr/LauncherBnrHelper;->close(Ljava/io/InputStream;)V
+    invoke-static {v4}, Lcom/android/launcher3/common/bnr/LauncherBnrHelper;->close(Ljava/io/InputStream;)V
 
     goto/16 :goto_0
 
     :catch_1
-    move-exception v1
+    move-exception v2
 
     :goto_4
     :try_start_6
-    iget-object v7, p0, Lcom/android/launcher3/common/bnr/LauncherBnrHelper;->mBnrResult:Lcom/android/launcher3/common/bnr/LauncherBnrListener$Result;
+    iget-object v9, p0, Lcom/android/launcher3/common/bnr/LauncherBnrHelper;->mBnrResult:Lcom/android/launcher3/common/bnr/LauncherBnrListener$Result;
 
-    const/4 v8, 0x1
+    const/4 v10, 0x1
 
-    iput v8, v7, Lcom/android/launcher3/common/bnr/LauncherBnrListener$Result;->result:I
+    iput v10, v9, Lcom/android/launcher3/common/bnr/LauncherBnrListener$Result;->result:I
 
-    iget-object v7, p0, Lcom/android/launcher3/common/bnr/LauncherBnrHelper;->mBnrResult:Lcom/android/launcher3/common/bnr/LauncherBnrListener$Result;
+    iget-object v9, p0, Lcom/android/launcher3/common/bnr/LauncherBnrHelper;->mBnrResult:Lcom/android/launcher3/common/bnr/LauncherBnrListener$Result;
 
-    const/4 v8, 0x2
+    const/4 v10, 0x2
 
-    iput v8, v7, Lcom/android/launcher3/common/bnr/LauncherBnrListener$Result;->errorCode:I
+    iput v10, v9, Lcom/android/launcher3/common/bnr/LauncherBnrListener$Result;->errorCode:I
 
-    const-string v7, "LauncherBnrHelper"
+    const-string v9, "LauncherBnrHelper"
 
-    new-instance v8, Ljava/lang/StringBuilder;
+    new-instance v10, Ljava/lang/StringBuilder;
 
-    invoke-direct {v8}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {v10}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v9, "bnr fail, occur exception : "
+    const-string v11, "bnr fail, occur exception : "
 
-    invoke-virtual {v8, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v10, v11}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v8
+    move-result-object v10
 
-    invoke-virtual {v8, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    invoke-virtual {v10, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
-    move-result-object v8
+    move-result-object v10
 
-    invoke-virtual {v8}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v10}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v8
+    move-result-object v10
 
-    invoke-static {v7, v8}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {v9, v10}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
     :try_end_6
     .catchall {:try_start_6 .. :try_end_6} :catchall_0
 
-    if-eqz v5, :cond_b
+    if-eqz v7, :cond_c
 
-    invoke-static {v5}, Lcom/android/launcher3/common/bnr/LauncherBnrHelper;->close(Ljava/io/InputStream;)V
+    invoke-static {v7}, Lcom/android/launcher3/common/bnr/LauncherBnrHelper;->close(Ljava/io/InputStream;)V
 
-    :cond_b
-    if-eqz v3, :cond_2
+    :cond_c
+    if-eqz v4, :cond_2
 
-    invoke-static {v3}, Lcom/android/launcher3/common/bnr/LauncherBnrHelper;->close(Ljava/io/InputStream;)V
+    invoke-static {v4}, Lcom/android/launcher3/common/bnr/LauncherBnrHelper;->close(Ljava/io/InputStream;)V
 
     goto/16 :goto_0
 
     :catchall_0
-    move-exception v7
+    move-exception v9
 
     :goto_5
-    if-eqz v5, :cond_c
+    if-eqz v7, :cond_d
 
-    invoke-static {v5}, Lcom/android/launcher3/common/bnr/LauncherBnrHelper;->close(Ljava/io/InputStream;)V
-
-    :cond_c
-    if-eqz v3, :cond_d
-
-    invoke-static {v3}, Lcom/android/launcher3/common/bnr/LauncherBnrHelper;->close(Ljava/io/InputStream;)V
+    invoke-static {v7}, Lcom/android/launcher3/common/bnr/LauncherBnrHelper;->close(Ljava/io/InputStream;)V
 
     :cond_d
-    throw v7
+    if-eqz v4, :cond_e
+
+    invoke-static {v4}, Lcom/android/launcher3/common/bnr/LauncherBnrHelper;->close(Ljava/io/InputStream;)V
+
+    :cond_e
+    throw v9
 
     :catch_2
-    move-exception v7
+    move-exception v9
 
     :goto_6
-    move-object v1, v7
+    move-object v2, v9
 
     goto :goto_3
 
     :catchall_1
-    move-exception v7
+    move-exception v9
 
-    move-object v3, v4
+    move-object v4, v5
 
     goto :goto_5
 
     :catch_3
-    move-exception v1
+    move-exception v2
 
-    move-object v3, v4
+    move-object v4, v5
 
     goto :goto_4
 
     :catch_4
-    move-exception v7
+    move-exception v9
 
-    move-object v3, v4
+    move-object v4, v5
 
     goto :goto_6
 
     :catch_5
-    move-exception v7
+    move-exception v9
 
-    move-object v3, v4
+    move-object v4, v5
 
     goto :goto_2
 .end method

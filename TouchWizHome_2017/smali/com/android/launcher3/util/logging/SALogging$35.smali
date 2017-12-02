@@ -8,7 +8,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/android/launcher3/util/logging/SALogging;->insertGesturePointOnTrayChange(ILandroid/graphics/Point;II)V
+    value = Lcom/android/launcher3/util/logging/SALogging;->insertGesturePointOnTrayChange(III)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -20,28 +20,24 @@
 # instance fields
 .field final synthetic this$0:Lcom/android/launcher3/util/logging/SALogging;
 
-.field final synthetic val$from:Landroid/graphics/Point;
+.field final synthetic val$end:I
 
 .field final synthetic val$level:I
 
-.field final synthetic val$toX:I
-
-.field final synthetic val$toY:I
+.field final synthetic val$start:I
 
 
 # direct methods
-.method constructor <init>(Lcom/android/launcher3/util/logging/SALogging;Landroid/graphics/Point;III)V
+.method constructor <init>(Lcom/android/launcher3/util/logging/SALogging;III)V
     .locals 0
 
     iput-object p1, p0, Lcom/android/launcher3/util/logging/SALogging$35;->this$0:Lcom/android/launcher3/util/logging/SALogging;
 
-    iput-object p2, p0, Lcom/android/launcher3/util/logging/SALogging$35;->val$from:Landroid/graphics/Point;
+    iput p2, p0, Lcom/android/launcher3/util/logging/SALogging$35;->val$start:I
 
-    iput p3, p0, Lcom/android/launcher3/util/logging/SALogging$35;->val$toX:I
+    iput p3, p0, Lcom/android/launcher3/util/logging/SALogging$35;->val$end:I
 
-    iput p4, p0, Lcom/android/launcher3/util/logging/SALogging$35;->val$toY:I
-
-    iput p5, p0, Lcom/android/launcher3/util/logging/SALogging$35;->val$level:I
+    iput p4, p0, Lcom/android/launcher3/util/logging/SALogging$35;->val$level:I
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -69,9 +65,7 @@
 
     move-result-object v3
 
-    iget-object v4, p0, Lcom/android/launcher3/util/logging/SALogging$35;->val$from:Landroid/graphics/Point;
-
-    iget v4, v4, Landroid/graphics/Point;->x:I
+    iget v4, p0, Lcom/android/launcher3/util/logging/SALogging$35;->val$start:I
 
     invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
@@ -83,41 +77,15 @@
 
     move-result-object v3
 
-    iget-object v4, p0, Lcom/android/launcher3/util/logging/SALogging$35;->val$from:Landroid/graphics/Point;
-
-    iget v4, v4, Landroid/graphics/Point;->y:I
+    iget v4, p0, Lcom/android/launcher3/util/logging/SALogging$35;->val$end:I
 
     invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
     move-result-object v3
 
-    const-string v4, "),("
+    const-string v4, ")"
 
     invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    iget v4, p0, Lcom/android/launcher3/util/logging/SALogging$35;->val$toX:I
-
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    const/16 v4, 0x2c
-
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    iget v4, p0, Lcom/android/launcher3/util/logging/SALogging$35;->val$toY:I
-
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    const/16 v4, 0x29
-
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
     move-result-object v3
 
@@ -129,7 +97,7 @@
 
     if-nez v3, :cond_0
 
-    const v3, 0x7f090138
+    const v3, 0x7f090141
 
     invoke-virtual {v2, v3}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -140,7 +108,7 @@
 
     move-result-object v3
 
-    const v4, 0x7f0901aa
+    const v4, 0x7f0901b7
 
     invoke-virtual {v2, v4}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -151,7 +119,7 @@
     return-void
 
     :cond_0
-    const v3, 0x7f090139
+    const v3, 0x7f090142
 
     invoke-virtual {v2, v3}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 

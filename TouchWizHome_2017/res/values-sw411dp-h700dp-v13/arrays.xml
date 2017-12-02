@@ -2,10 +2,12 @@
 <resources>
     <string-array name="apps_grid_info">
         <item>4|5|3|59|15|2|2|8.5|90|33|5</item>
+        <item>4|6|3|59|15|2|2|8|85|58|7</item>
         <item>5|5|3|53|15|2|2|8.5|100|30|5</item>
+        <item>5|6|3|53|15|2|2|8|85|48|7</item>
     </string-array>
     <string-array name="folder_grid_info">
-        <item>4|4|2|59|15.5|2|2|50|170|162</item>
+        <item>4|4|2|52|15.5|2|2|50|170|162</item>
     </string-array>
     <string-array name="home_grid_info">
         <item>4|4|3|59|15.5|2|2|8.5|57|188|154|103|10|34</item>

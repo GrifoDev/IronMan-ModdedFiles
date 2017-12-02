@@ -580,7 +580,7 @@
 
     move-result-object v2
 
-    const v4, 0x7f0900ad
+    const v4, 0x7f0900af
 
     invoke-virtual {v2, v4}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -1119,10 +1119,6 @@
     :goto_0
     invoke-virtual {p0, p1, p3, v0}, Lcom/android/launcher3/common/view/IconView;->refreshIcon(Lcom/android/launcher3/common/base/item/IconInfo;ZLandroid/graphics/Bitmap;)V
 
-    iget-object v2, p1, Lcom/android/launcher3/common/base/item/IconInfo;->title:Ljava/lang/CharSequence;
-
-    invoke-virtual {p0, v2}, Lcom/android/launcher3/common/view/IconView;->setContentDescription(Ljava/lang/CharSequence;)V
-
     invoke-static {}, Lcom/android/launcher3/util/WhiteBgManager;->isWhiteBg()Z
 
     move-result v2
@@ -1245,7 +1241,7 @@
 
     move-result-object v0
 
-    goto/16 :goto_0
+    goto :goto_0
 
     :cond_4
     invoke-virtual {p1, p2}, Lcom/android/launcher3/common/base/item/IconInfo;->getIcon(Lcom/android/launcher3/common/model/IconCache;)Landroid/graphics/Bitmap;
@@ -2742,7 +2738,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f0a0100
+    const v2, 0x7f0a0105
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getDimension(I)F
 
@@ -3450,54 +3446,52 @@
 .end method
 
 .method public refreshBadge()V
-    .locals 15
+    .locals 13
 
-    const/4 v11, 0x1
+    const/4 v9, 0x1
 
-    const/4 v12, 0x0
+    const/4 v10, 0x0
 
-    iget-object v10, p0, Lcom/android/launcher3/common/view/IconView;->mBadgeView:Landroid/widget/TextView;
+    iget-object v8, p0, Lcom/android/launcher3/common/view/IconView;->mBadgeView:Landroid/widget/TextView;
 
-    if-eqz v10, :cond_4
+    if-eqz v8, :cond_3
 
-    iget-object v10, p0, Lcom/android/launcher3/common/view/IconView;->mLauncher:Lcom/android/launcher3/Launcher;
+    iget-object v8, p0, Lcom/android/launcher3/common/view/IconView;->mLauncher:Lcom/android/launcher3/Launcher;
 
-    invoke-virtual {v10}, Lcom/android/launcher3/Launcher;->getMultiSelectManager()Lcom/android/launcher3/common/multiselect/MultiSelectManager;
+    invoke-virtual {v8}, Lcom/android/launcher3/Launcher;->getMultiSelectManager()Lcom/android/launcher3/common/multiselect/MultiSelectManager;
 
-    move-result-object v7
+    move-result-object v6
 
-    if-eqz v7, :cond_5
+    if-eqz v6, :cond_4
 
-    invoke-virtual {v7}, Lcom/android/launcher3/common/multiselect/MultiSelectManager;->isMultiSelectMode()Z
+    invoke-virtual {v6}, Lcom/android/launcher3/common/multiselect/MultiSelectManager;->isMultiSelectMode()Z
 
-    move-result v10
+    move-result v8
 
-    if-eqz v10, :cond_5
+    if-eqz v8, :cond_4
 
-    move v8, v11
+    move v7, v9
 
     :goto_0
-    if-nez v8, :cond_8
+    if-nez v7, :cond_7
 
     invoke-virtual {p0}, Lcom/android/launcher3/common/view/IconView;->getTag()Ljava/lang/Object;
 
-    move-result-object v10
+    move-result-object v8
 
-    instance-of v10, v10, Lcom/android/launcher3/common/base/item/IconInfo;
+    instance-of v8, v8, Lcom/android/launcher3/common/base/item/IconInfo;
 
-    if-eqz v10, :cond_8
+    if-eqz v8, :cond_7
 
     invoke-virtual {p0}, Lcom/android/launcher3/common/view/IconView;->getTag()Ljava/lang/Object;
 
-    move-result-object v10
+    move-result-object v8
 
-    check-cast v10, Lcom/android/launcher3/common/base/item/IconInfo;
+    check-cast v8, Lcom/android/launcher3/common/base/item/IconInfo;
 
-    iget v10, v10, Lcom/android/launcher3/common/base/item/IconInfo;->mBadgeCount:I
+    iget v8, v8, Lcom/android/launcher3/common/base/item/IconInfo;->mBadgeCount:I
 
-    if-eqz v10, :cond_8
-
-    const/4 v6, 0x0
+    if-eqz v8, :cond_7
 
     invoke-virtual {p0}, Lcom/android/launcher3/common/view/IconView;->getTag()Ljava/lang/Object;
 
@@ -3507,83 +3501,81 @@
 
     iget v0, v4, Lcom/android/launcher3/common/base/item/IconInfo;->mBadgeCount:I
 
-    const/16 v10, 0x3e8
+    const/16 v8, 0x3e8
 
-    if-lt v0, v10, :cond_0
-
-    const/4 v6, 0x1
+    if-lt v0, v8, :cond_0
 
     const/16 v0, 0x3e7
 
     :cond_0
-    if-ne v0, v11, :cond_6
+    if-ne v0, v9, :cond_5
 
-    new-instance v10, Ljava/lang/StringBuilder;
+    new-instance v8, Ljava/lang/StringBuilder;
 
-    invoke-direct {v10}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {v8}, Ljava/lang/StringBuilder;-><init>()V
 
-    iget-object v11, v4, Lcom/android/launcher3/common/base/item/IconInfo;->contentDescription:Ljava/lang/CharSequence;
+    iget-object v9, v4, Lcom/android/launcher3/common/base/item/IconInfo;->contentDescription:Ljava/lang/CharSequence;
 
-    invoke-virtual {v10, v11}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    invoke-virtual {v8, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
-    move-result-object v10
+    move-result-object v8
 
-    const-string v11, ", "
+    const-string v9, ", "
 
-    invoke-virtual {v10, v11}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v8, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v10
+    move-result-object v8
 
     invoke-virtual {p0}, Lcom/android/launcher3/common/view/IconView;->getResources()Landroid/content/res/Resources;
 
-    move-result-object v11
+    move-result-object v9
 
-    const v13, 0x7f090075
+    const v11, 0x7f090075
 
-    invoke-virtual {v11, v13}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
+    invoke-virtual {v9, v11}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
-    move-result-object v11
+    move-result-object v9
 
-    invoke-virtual {v10, v11}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v8, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v10
+    move-result-object v8
 
-    invoke-virtual {v10}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v8}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v10
+    move-result-object v8
 
-    invoke-virtual {p0, v10}, Lcom/android/launcher3/common/view/IconView;->setContentDescription(Ljava/lang/CharSequence;)V
+    invoke-virtual {p0, v8}, Lcom/android/launcher3/common/view/IconView;->setContentDescription(Ljava/lang/CharSequence;)V
 
     :goto_1
     invoke-static {v0}, Ljava/lang/String;->valueOf(I)Ljava/lang/String;
 
     move-result-object v2
 
-    iget-object v10, p0, Lcom/android/launcher3/common/view/IconView;->mLauncher:Lcom/android/launcher3/Launcher;
+    iget-object v8, p0, Lcom/android/launcher3/common/view/IconView;->mLauncher:Lcom/android/launcher3/Launcher;
 
-    invoke-static {v10}, Lcom/android/launcher3/Utilities;->getLocale(Landroid/content/Context;)Ljava/util/Locale;
+    invoke-static {v8}, Lcom/android/launcher3/Utilities;->getLocale(Landroid/content/Context;)Ljava/util/Locale;
 
-    move-result-object v10
+    move-result-object v8
 
-    invoke-virtual {v10}, Ljava/util/Locale;->getLanguage()Ljava/lang/String;
+    invoke-virtual {v8}, Ljava/util/Locale;->getLanguage()Ljava/lang/String;
 
     move-result-object v3
 
-    const-string v10, "ar"
+    const-string v8, "ar"
 
-    invoke-virtual {v10, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v8, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move-result v10
+    move-result v8
 
-    if-nez v10, :cond_1
+    if-nez v8, :cond_1
 
-    const-string v10, "fa"
+    const-string v8, "fa"
 
-    invoke-virtual {v10, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v8, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move-result v10
+    move-result v8
 
-    if-eqz v10, :cond_7
+    if-eqz v8, :cond_6
 
     :cond_1
     invoke-static {v2, v3}, Lcom/android/launcher3/Utilities;->toArabicDigits(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
@@ -3591,123 +3583,108 @@
     move-result-object v2
 
     :goto_2
-    if-eqz v6, :cond_2
-
-    new-instance v9, Ljava/lang/StringBuffer;
-
-    invoke-direct {v9, v2}, Ljava/lang/StringBuffer;-><init>(Ljava/lang/String;)V
-
-    const/16 v10, 0x2b
-
-    invoke-virtual {v9, v10}, Ljava/lang/StringBuffer;->append(C)Ljava/lang/StringBuffer;
-
-    invoke-virtual {v9}, Ljava/lang/StringBuffer;->toString()Ljava/lang/String;
-
-    move-result-object v2
-
-    :cond_2
     invoke-virtual {p0}, Lcom/android/launcher3/common/view/IconView;->getBadgeBgDrawable()Landroid/graphics/drawable/Drawable;
 
     move-result-object v1
 
-    if-eqz v1, :cond_3
+    if-eqz v1, :cond_2
 
-    iget-object v10, p0, Lcom/android/launcher3/common/view/IconView;->mBadgeView:Landroid/widget/TextView;
+    iget-object v8, p0, Lcom/android/launcher3/common/view/IconView;->mBadgeView:Landroid/widget/TextView;
 
-    invoke-virtual {v10, v1}, Landroid/widget/TextView;->setBackground(Landroid/graphics/drawable/Drawable;)V
+    invoke-virtual {v8, v1}, Landroid/widget/TextView;->setBackground(Landroid/graphics/drawable/Drawable;)V
 
-    :cond_3
-    iget-object v10, p0, Lcom/android/launcher3/common/view/IconView;->mBadgeView:Landroid/widget/TextView;
+    :cond_2
+    iget-object v8, p0, Lcom/android/launcher3/common/view/IconView;->mBadgeView:Landroid/widget/TextView;
 
-    invoke-virtual {v10, v2}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+    invoke-virtual {v8, v2}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
     invoke-virtual {p0}, Lcom/android/launcher3/common/view/IconView;->updateBadgeLayout()V
 
-    iget-object v10, p0, Lcom/android/launcher3/common/view/IconView;->mBadgeView:Landroid/widget/TextView;
+    iget-object v8, p0, Lcom/android/launcher3/common/view/IconView;->mBadgeView:Landroid/widget/TextView;
 
-    invoke-virtual {v10, v12}, Landroid/widget/TextView;->setVisibility(I)V
+    invoke-virtual {v8, v10}, Landroid/widget/TextView;->setVisibility(I)V
 
-    :cond_4
+    :cond_3
     :goto_3
     return-void
 
-    :cond_5
-    move v8, v12
+    :cond_4
+    move v7, v10
 
     goto/16 :goto_0
 
-    :cond_6
-    new-instance v10, Ljava/lang/StringBuilder;
+    :cond_5
+    new-instance v8, Ljava/lang/StringBuilder;
 
-    invoke-direct {v10}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {v8}, Ljava/lang/StringBuilder;-><init>()V
 
-    iget-object v13, v4, Lcom/android/launcher3/common/base/item/IconInfo;->contentDescription:Ljava/lang/CharSequence;
+    iget-object v11, v4, Lcom/android/launcher3/common/base/item/IconInfo;->contentDescription:Ljava/lang/CharSequence;
 
-    invoke-virtual {v10, v13}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    invoke-virtual {v8, v11}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
-    move-result-object v10
+    move-result-object v8
 
-    const-string v13, ", "
+    const-string v11, ", "
 
-    invoke-virtual {v10, v13}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v8, v11}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v10
+    move-result-object v8
 
     invoke-virtual {p0}, Lcom/android/launcher3/common/view/IconView;->getResources()Landroid/content/res/Resources;
 
-    move-result-object v13
+    move-result-object v11
 
-    const v14, 0x7f090076
+    const v12, 0x7f090076
 
-    invoke-virtual {v13, v14}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
-
-    move-result-object v13
-
-    new-array v11, v11, [Ljava/lang/Object;
-
-    invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v14
-
-    aput-object v14, v11, v12
-
-    invoke-static {v13, v11}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
+    invoke-virtual {v11, v12}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
     move-result-object v11
 
-    invoke-virtual {v10, v11}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    new-array v9, v9, [Ljava/lang/Object;
 
-    move-result-object v10
+    invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    invoke-virtual {v10}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    move-result-object v12
 
-    move-result-object v10
+    aput-object v12, v9, v10
 
-    invoke-virtual {p0, v10}, Lcom/android/launcher3/common/view/IconView;->setContentDescription(Ljava/lang/CharSequence;)V
+    invoke-static {v11, v9}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
 
-    goto/16 :goto_1
+    move-result-object v9
 
-    :cond_7
+    invoke-virtual {v8, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v8
+
+    invoke-virtual {v8}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v8
+
+    invoke-virtual {p0, v8}, Lcom/android/launcher3/common/view/IconView;->setContentDescription(Ljava/lang/CharSequence;)V
+
+    goto :goto_1
+
+    :cond_6
     invoke-static {v2}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v2
 
     goto :goto_2
 
-    :cond_8
-    iget-object v10, p0, Lcom/android/launcher3/common/view/IconView;->mBadgeView:Landroid/widget/TextView;
+    :cond_7
+    iget-object v8, p0, Lcom/android/launcher3/common/view/IconView;->mBadgeView:Landroid/widget/TextView;
 
-    const/4 v11, 0x4
+    const/4 v9, 0x4
 
-    invoke-virtual {v10, v11}, Landroid/widget/TextView;->setVisibility(I)V
+    invoke-virtual {v8, v9}, Landroid/widget/TextView;->setVisibility(I)V
 
     invoke-virtual {p0}, Lcom/android/launcher3/common/view/IconView;->getTag()Ljava/lang/Object;
 
-    move-result-object v10
+    move-result-object v8
 
-    instance-of v10, v10, Lcom/android/launcher3/common/base/item/IconInfo;
+    instance-of v8, v8, Lcom/android/launcher3/common/base/item/IconInfo;
 
-    if-eqz v10, :cond_4
+    if-eqz v8, :cond_3
 
     invoke-virtual {p0}, Lcom/android/launcher3/common/view/IconView;->getTag()Ljava/lang/Object;
 
@@ -3715,76 +3692,76 @@
 
     check-cast v5, Lcom/android/launcher3/common/base/item/IconInfo;
 
-    iget-object v10, v5, Lcom/android/launcher3/common/base/item/IconInfo;->contentDescription:Ljava/lang/CharSequence;
+    iget-object v8, v5, Lcom/android/launcher3/common/base/item/IconInfo;->contentDescription:Ljava/lang/CharSequence;
 
-    if-eqz v10, :cond_4
+    if-eqz v8, :cond_3
 
-    if-eqz v8, :cond_a
+    if-eqz v7, :cond_9
 
-    new-instance v10, Ljava/lang/StringBuilder;
+    new-instance v8, Ljava/lang/StringBuilder;
 
-    invoke-direct {v10}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {v8}, Ljava/lang/StringBuilder;-><init>()V
 
-    iget-object v11, v5, Lcom/android/launcher3/common/base/item/IconInfo;->contentDescription:Ljava/lang/CharSequence;
+    iget-object v9, v5, Lcom/android/launcher3/common/base/item/IconInfo;->contentDescription:Ljava/lang/CharSequence;
 
-    invoke-virtual {v10, v11}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    invoke-virtual {v8, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
-    move-result-object v10
+    move-result-object v8
 
-    const-string v11, ", "
+    const-string v9, ", "
 
-    invoke-virtual {v10, v11}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v8, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v11
+    move-result-object v9
 
-    iget-object v10, p0, Lcom/android/launcher3/common/view/IconView;->mCheckBox:Landroid/widget/CheckBox;
+    iget-object v8, p0, Lcom/android/launcher3/common/view/IconView;->mCheckBox:Landroid/widget/CheckBox;
 
-    invoke-virtual {v10}, Landroid/widget/CheckBox;->isChecked()Z
+    invoke-virtual {v8}, Landroid/widget/CheckBox;->isChecked()Z
 
-    move-result v10
+    move-result v8
 
-    if-eqz v10, :cond_9
+    if-eqz v8, :cond_8
 
     invoke-virtual {p0}, Lcom/android/launcher3/common/view/IconView;->getResources()Landroid/content/res/Resources;
 
-    move-result-object v10
+    move-result-object v8
 
-    const v12, 0x7f0900ad
+    const v10, 0x7f0900af
 
-    invoke-virtual {v10, v12}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
+    invoke-virtual {v8, v10}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
-    move-result-object v10
+    move-result-object v8
 
     :goto_4
-    invoke-virtual {v11, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v9, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v10
+    move-result-object v8
 
-    invoke-virtual {v10}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v8}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v10
+    move-result-object v8
 
-    invoke-virtual {p0, v10}, Lcom/android/launcher3/common/view/IconView;->setContentDescription(Ljava/lang/CharSequence;)V
+    invoke-virtual {p0, v8}, Lcom/android/launcher3/common/view/IconView;->setContentDescription(Ljava/lang/CharSequence;)V
 
     goto/16 :goto_3
 
-    :cond_9
+    :cond_8
     invoke-virtual {p0}, Lcom/android/launcher3/common/view/IconView;->getResources()Landroid/content/res/Resources;
 
-    move-result-object v10
+    move-result-object v8
 
-    const v12, 0x7f09007b
+    const v10, 0x7f09007b
 
-    invoke-virtual {v10, v12}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
+    invoke-virtual {v8, v10}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
-    move-result-object v10
+    move-result-object v8
 
     goto :goto_4
 
-    :cond_a
-    iget-object v10, v5, Lcom/android/launcher3/common/base/item/IconInfo;->contentDescription:Ljava/lang/CharSequence;
+    :cond_9
+    iget-object v8, v5, Lcom/android/launcher3/common/base/item/IconInfo;->contentDescription:Ljava/lang/CharSequence;
 
-    invoke-virtual {p0, v10}, Lcom/android/launcher3/common/view/IconView;->setContentDescription(Ljava/lang/CharSequence;)V
+    invoke-virtual {p0, v8}, Lcom/android/launcher3/common/view/IconView;->setContentDescription(Ljava/lang/CharSequence;)V
 
     goto/16 :goto_3
 .end method
@@ -4018,20 +3995,55 @@
 .end method
 
 .method public setTag(Ljava/lang/Object;)V
-    .locals 1
+    .locals 6
 
-    if-eqz p1, :cond_0
+    if-eqz p1, :cond_1
 
-    move-object v0, p1
+    instance-of v1, p1, Lcom/android/launcher3/common/base/item/ItemInfo;
 
-    check-cast v0, Lcom/android/launcher3/common/base/item/ItemInfo;
+    if-eqz v1, :cond_2
 
-    invoke-static {v0}, Lcom/android/launcher3/common/model/FavoritesUpdater;->checkItemInfo(Lcom/android/launcher3/common/base/item/ItemInfo;)V
+    move-object v1, p1
+
+    check-cast v1, Lcom/android/launcher3/common/base/item/ItemInfo;
+
+    iget-wide v2, v1, Lcom/android/launcher3/common/base/item/ItemInfo;->container:J
+
+    const-wide/16 v4, -0x66
+
+    cmp-long v1, v2, v4
+
+    if-eqz v1, :cond_0
+
+    move-object v1, p1
+
+    check-cast v1, Lcom/android/launcher3/common/base/item/ItemInfo;
+
+    iget-boolean v1, v1, Lcom/android/launcher3/common/base/item/ItemInfo;->ignoreCheckItemInfo:Z
+
+    if-eqz v1, :cond_2
 
     :cond_0
+    const/4 v0, 0x1
+
+    :goto_0
+    if-nez v0, :cond_1
+
+    move-object v1, p1
+
+    check-cast v1, Lcom/android/launcher3/common/base/item/ItemInfo;
+
+    invoke-static {v1}, Lcom/android/launcher3/common/model/FavoritesUpdater;->checkItemInfo(Lcom/android/launcher3/common/base/item/ItemInfo;)V
+
+    :cond_1
     invoke-super {p0, p1}, Landroid/widget/FrameLayout;->setTag(Ljava/lang/Object;)V
 
     return-void
+
+    :cond_2
+    const/4 v0, 0x0
+
+    goto :goto_0
 .end method
 
 .method public setText(Ljava/lang/CharSequence;)V

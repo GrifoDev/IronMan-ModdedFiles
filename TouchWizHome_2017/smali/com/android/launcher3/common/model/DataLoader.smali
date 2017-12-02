@@ -21,7 +21,7 @@
 
 .field private static final TAG:Ljava/lang/String; = "DataLoader"
 
-.field protected static mIsSdCardReady:Z
+.field protected static mIsBootCompleted:Z
 
 .field protected static sBadgeCache:Lcom/android/launcher3/common/model/BadgeCache;
 
@@ -1175,7 +1175,7 @@
     :goto_3
     sget-object v6, Lcom/android/launcher3/common/model/DataLoader;->sFavoritesProvider:Lcom/android/launcher3/common/model/FavoritesProvider;
 
-    invoke-virtual {v6}, Lcom/android/launcher3/common/model/FavoritesProvider;->checkChangedComponentExist()V
+    invoke-virtual {v6, v2}, Lcom/android/launcher3/common/model/FavoritesProvider;->checkChangedComponentExist(Z)V
 
     if-eqz v2, :cond_7
 
@@ -2829,81 +2829,79 @@
 .end method
 
 .method protected init(Landroid/content/Context;Lcom/android/launcher3/LauncherAppState;Lcom/android/launcher3/LauncherModel;Lcom/android/launcher3/common/model/IconCache;Lcom/android/launcher3/common/model/BadgeCache;Lcom/android/launcher3/common/model/DataLoader;)V
-    .locals 5
+    .locals 3
 
-    const/4 v4, 0x0
+    sget-object v0, Lcom/android/launcher3/common/model/DataLoader;->sContext:Landroid/content/Context;
 
-    const/4 v1, 0x1
-
-    const/4 v0, 0x0
-
-    sget-object v2, Lcom/android/launcher3/common/model/DataLoader;->sContext:Landroid/content/Context;
-
-    if-nez v2, :cond_0
+    if-nez v0, :cond_0
 
     sput-object p1, Lcom/android/launcher3/common/model/DataLoader;->sContext:Landroid/content/Context;
 
-    new-instance v2, Landroid/os/Handler;
+    new-instance v0, Landroid/os/Handler;
 
     invoke-static {}, Lcom/android/launcher3/LauncherModel;->getWorkerLooper()Landroid/os/Looper;
 
-    move-result-object v3
+    move-result-object v1
 
-    invoke-direct {v2, v3}, Landroid/os/Handler;-><init>(Landroid/os/Looper;)V
+    invoke-direct {v0, v1}, Landroid/os/Handler;-><init>(Landroid/os/Looper;)V
 
-    sput-object v2, Lcom/android/launcher3/common/model/DataLoader;->sWorkerHandler:Landroid/os/Handler;
+    sput-object v0, Lcom/android/launcher3/common/model/DataLoader;->sWorkerHandler:Landroid/os/Handler;
 
     invoke-virtual {p1}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
-    move-result-object v2
+    move-result-object v0
 
-    sput-object v2, Lcom/android/launcher3/common/model/DataLoader;->sContentResolver:Landroid/content/ContentResolver;
+    sput-object v0, Lcom/android/launcher3/common/model/DataLoader;->sContentResolver:Landroid/content/ContentResolver;
 
     invoke-virtual {p1}, Landroid/content/Context;->getPackageManager()Landroid/content/pm/PackageManager;
 
-    move-result-object v2
+    move-result-object v0
 
-    invoke-virtual {v2}, Landroid/content/pm/PackageManager;->isSafeMode()Z
+    invoke-virtual {v0}, Landroid/content/pm/PackageManager;->isSafeMode()Z
 
-    move-result v2
+    move-result v0
 
-    sput-boolean v2, Lcom/android/launcher3/common/model/DataLoader;->sIsSafeMode:Z
+    sput-boolean v0, Lcom/android/launcher3/common/model/DataLoader;->sIsSafeMode:Z
 
     invoke-static {p1}, Lcom/android/launcher3/common/compat/LauncherAppsCompat;->getInstance(Landroid/content/Context;)Lcom/android/launcher3/common/compat/LauncherAppsCompat;
 
-    move-result-object v2
+    move-result-object v0
 
-    sput-object v2, Lcom/android/launcher3/common/model/DataLoader;->sLauncherApps:Lcom/android/launcher3/common/compat/LauncherAppsCompat;
+    sput-object v0, Lcom/android/launcher3/common/model/DataLoader;->sLauncherApps:Lcom/android/launcher3/common/compat/LauncherAppsCompat;
 
     invoke-virtual {p2}, Lcom/android/launcher3/LauncherAppState;->getDeviceProfile()Lcom/android/launcher3/common/deviceprofile/DeviceProfile;
 
-    move-result-object v2
+    move-result-object v0
 
-    sput-object v2, Lcom/android/launcher3/common/model/DataLoader;->sProfile:Lcom/android/launcher3/common/deviceprofile/DeviceProfile;
+    sput-object v0, Lcom/android/launcher3/common/model/DataLoader;->sProfile:Lcom/android/launcher3/common/deviceprofile/DeviceProfile;
 
     invoke-static {p1}, Lcom/android/launcher3/common/compat/UserManagerCompat;->getInstance(Landroid/content/Context;)Lcom/android/launcher3/common/compat/UserManagerCompat;
 
-    move-result-object v2
+    move-result-object v0
 
-    sput-object v2, Lcom/android/launcher3/common/model/DataLoader;->sUserManager:Lcom/android/launcher3/common/compat/UserManagerCompat;
+    sput-object v0, Lcom/android/launcher3/common/model/DataLoader;->sUserManager:Lcom/android/launcher3/common/compat/UserManagerCompat;
 
     invoke-virtual {p1}, Landroid/content/Context;->getPackageManager()Landroid/content/pm/PackageManager;
 
-    move-result-object v2
+    move-result-object v0
 
-    sput-object v2, Lcom/android/launcher3/common/model/DataLoader;->sPackageManager:Landroid/content/pm/PackageManager;
+    sput-object v0, Lcom/android/launcher3/common/model/DataLoader;->sPackageManager:Landroid/content/pm/PackageManager;
 
-    sget-object v2, Lcom/android/launcher3/common/model/DataLoader;->sPackageManager:Landroid/content/pm/PackageManager;
+    sget-object v0, Lcom/android/launcher3/common/model/DataLoader;->sPackageManager:Landroid/content/pm/PackageManager;
 
-    invoke-static {v4}, Lcom/android/launcher3/LauncherModel;->getOmcIntent(Ljava/lang/String;)Landroid/content/Intent;
+    const/4 v1, 0x0
 
-    move-result-object v3
+    invoke-static {v1}, Lcom/android/launcher3/LauncherModel;->getOmcIntent(Ljava/lang/String;)Landroid/content/Intent;
 
-    invoke-virtual {v2, v3, v0}, Landroid/content/pm/PackageManager;->queryIntentActivities(Landroid/content/Intent;I)Ljava/util/List;
+    move-result-object v1
 
-    move-result-object v2
+    const/4 v2, 0x0
 
-    sput-object v2, Lcom/android/launcher3/common/model/DataLoader;->sOmcActivity:Ljava/util/List;
+    invoke-virtual {v0, v1, v2}, Landroid/content/pm/PackageManager;->queryIntentActivities(Landroid/content/Intent;I)Ljava/util/List;
+
+    move-result-object v0
+
+    sput-object v0, Lcom/android/launcher3/common/model/DataLoader;->sOmcActivity:Ljava/util/List;
 
     sput-object p4, Lcom/android/launcher3/common/model/DataLoader;->sIconCache:Lcom/android/launcher3/common/model/IconCache;
 
@@ -2913,50 +2911,22 @@
 
     invoke-virtual {p3}, Lcom/android/launcher3/LauncherModel;->getHandler()Lcom/android/launcher3/common/model/DeferredHandler;
 
-    move-result-object v2
+    move-result-object v0
 
-    sput-object v2, Lcom/android/launcher3/common/model/DataLoader;->sHandler:Lcom/android/launcher3/common/model/DeferredHandler;
+    sput-object v0, Lcom/android/launcher3/common/model/DataLoader;->sHandler:Lcom/android/launcher3/common/model/DeferredHandler;
 
     invoke-static {}, Lcom/android/launcher3/common/model/FavoritesProvider;->getInstance()Lcom/android/launcher3/common/model/FavoritesProvider;
 
-    move-result-object v2
+    move-result-object v0
 
-    sput-object v2, Lcom/android/launcher3/common/model/DataLoader;->sFavoritesProvider:Lcom/android/launcher3/common/model/FavoritesProvider;
+    sput-object v0, Lcom/android/launcher3/common/model/DataLoader;->sFavoritesProvider:Lcom/android/launcher3/common/model/FavoritesProvider;
 
     :cond_0
     invoke-virtual {p2}, Lcom/android/launcher3/LauncherAppState;->getShortcutManager()Lcom/android/launcher3/common/quickoption/shortcuts/DeepShortcutManager;
 
-    move-result-object v2
+    move-result-object v0
 
-    iput-object v2, p0, Lcom/android/launcher3/common/model/DataLoader;->mDeepShortcutManager:Lcom/android/launcher3/common/quickoption/shortcuts/DeepShortcutManager;
-
-    new-instance v2, Landroid/content/IntentFilter;
-
-    const-string v3, "com.android.launcher3.SYSTEM_READY"
-
-    invoke-direct {v2, v3}, Landroid/content/IntentFilter;-><init>(Ljava/lang/String;)V
-
-    invoke-virtual {p1, v4, v2}, Landroid/content/Context;->registerReceiver(Landroid/content/BroadcastReceiver;Landroid/content/IntentFilter;)Landroid/content/Intent;
-
-    move-result-object v2
-
-    if-eqz v2, :cond_1
-
-    move v0, v1
-
-    :cond_1
-    sput-boolean v0, Lcom/android/launcher3/common/model/DataLoader;->mIsSdCardReady:Z
-
-    invoke-static {p1}, Lcom/android/launcher3/Utilities;->isExistSdCard(Landroid/content/Context;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_2
-
-    sget-boolean v1, Lcom/android/launcher3/common/model/DataLoader;->mIsSdCardReady:Z
-
-    :cond_2
-    sput-boolean v1, Lcom/android/launcher3/common/model/DataLoader;->mIsSdCardReady:Z
+    iput-object v0, p0, Lcom/android/launcher3/common/model/DataLoader;->mDeepShortcutManager:Lcom/android/launcher3/common/quickoption/shortcuts/DeepShortcutManager;
 
     invoke-virtual {p0}, Lcom/android/launcher3/common/model/DataLoader;->updateUsersList()V
 
@@ -2966,110 +2936,110 @@
 
     move-result v0
 
-    if-nez v0, :cond_3
+    if-nez v0, :cond_1
 
     sget-object v0, Lcom/android/launcher3/common/model/DataLoader;->sLoaderList:Ljava/util/ArrayList;
 
     invoke-virtual {v0, p6}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    :cond_3
+    :cond_1
     return-void
 .end method
 
-.method protected isNotAvailableApps(Ljava/lang/String;I)Z
-    .locals 9
+.method protected isNotAvailableApps(Ljava/lang/String;)I
+    .locals 8
 
-    const/4 v5, 0x1
+    const/4 v3, 0x1
 
-    const/4 v6, 0x0
+    const/4 v5, 0x0
 
     :try_start_0
-    sget-object v7, Lcom/android/launcher3/common/model/DataLoader;->sPackageManager:Landroid/content/pm/PackageManager;
+    sget-object v6, Lcom/android/launcher3/common/model/DataLoader;->sPackageManager:Landroid/content/pm/PackageManager;
 
-    invoke-virtual {v7, p1, p2}, Landroid/content/pm/PackageManager;->getApplicationInfo(Ljava/lang/String;I)Landroid/content/pm/ApplicationInfo;
+    const/16 v7, 0x2000
+
+    invoke-virtual {v6, p1, v7}, Landroid/content/pm/PackageManager;->getApplicationInfo(Ljava/lang/String;I)Landroid/content/pm/ApplicationInfo;
 
     move-result-object v0
 
-    if-eqz v0, :cond_2
+    if-eqz v0, :cond_1
 
-    iget v7, v0, Landroid/content/pm/ApplicationInfo;->flags:I
+    iget v6, v0, Landroid/content/pm/ApplicationInfo;->flags:I
 
-    and-int/lit8 v7, v7, 0x1
+    and-int/lit8 v6, v6, 0x1
 
-    if-eqz v7, :cond_3
+    if-eqz v6, :cond_2
 
-    move v4, v5
+    move v4, v3
 
     :goto_0
-    iget v7, v0, Landroid/content/pm/ApplicationInfo;->flags:I
+    iget v6, v0, Landroid/content/pm/ApplicationInfo;->flags:I
 
-    const/high16 v8, 0x40000
+    const/high16 v7, 0x40000
 
-    and-int/2addr v7, v8
+    and-int/2addr v6, v7
 
-    if-eqz v7, :cond_4
+    if-eqz v6, :cond_3
 
-    move v2, v5
+    move v2, v3
 
     :goto_1
-    if-nez v4, :cond_5
+    if-nez v4, :cond_4
 
-    if-nez v2, :cond_5
+    if-nez v2, :cond_4
 
-    iget v7, v0, Landroid/content/pm/ApplicationInfo;->flags:I
+    iget v6, v0, Landroid/content/pm/ApplicationInfo;->flags:I
 
-    const/high16 v8, 0x800000
+    const/high16 v7, 0x800000
 
-    and-int/2addr v7, v8
+    and-int/2addr v6, v7
 
-    if-eqz v7, :cond_5
-
-    move v3, v5
+    if-eqz v6, :cond_4
 
     :goto_2
-    sget-boolean v7, Lcom/android/launcher3/common/model/DataLoader;->sIsSafeMode:Z
+    sget-boolean v6, Lcom/android/launcher3/common/model/DataLoader;->sIsSafeMode:Z
     :try_end_0
     .catch Landroid/content/pm/PackageManager$NameNotFoundException; {:try_start_0 .. :try_end_0} :catch_0
 
-    if-eqz v7, :cond_0
+    if-eqz v6, :cond_5
 
-    if-nez v3, :cond_1
+    if-nez v3, :cond_0
+
+    if-eqz v2, :cond_1
 
     :cond_0
-    if-eqz v2, :cond_6
+    const/4 v5, 0x2
 
     :cond_1
     :goto_3
-    move v6, v5
+    return v5
 
     :cond_2
-    :goto_4
-    return v6
-
-    :cond_3
-    move v4, v6
+    move v4, v5
 
     goto :goto_0
 
-    :cond_4
-    move v2, v6
+    :cond_3
+    move v2, v5
 
     goto :goto_1
 
-    :cond_5
-    move v3, v6
+    :cond_4
+    move v3, v5
 
     goto :goto_2
 
-    :cond_6
-    move v5, v6
+    :cond_5
+    if-eqz v2, :cond_1
+
+    const/16 v5, 0x20
 
     goto :goto_3
 
     :catch_0
     move-exception v1
 
-    goto :goto_4
+    goto :goto_3
 .end method
 
 .method protected isStopped(Lcom/android/launcher3/common/model/DataLoader$DataLoaderState;)Z

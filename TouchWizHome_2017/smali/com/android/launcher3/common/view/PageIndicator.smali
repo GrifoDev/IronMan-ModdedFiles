@@ -148,7 +148,7 @@
 
     iput v2, p0, Lcom/android/launcher3/common/view/PageIndicator;->mMarkerWidth:I
 
-    const v2, 0x7f0a0173
+    const v2, 0x7f0a0178
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -397,58 +397,6 @@
     goto :goto_0
 .end method
 
-.method private disableLayoutTransitions()V
-    .locals 2
-
-    invoke-virtual {p0}, Lcom/android/launcher3/common/view/PageIndicator;->getLayoutTransition()Landroid/animation/LayoutTransition;
-
-    move-result-object v0
-
-    const/4 v1, 0x2
-
-    invoke-virtual {v0, v1}, Landroid/animation/LayoutTransition;->disableTransitionType(I)V
-
-    const/4 v1, 0x3
-
-    invoke-virtual {v0, v1}, Landroid/animation/LayoutTransition;->disableTransitionType(I)V
-
-    const/4 v1, 0x0
-
-    invoke-virtual {v0, v1}, Landroid/animation/LayoutTransition;->disableTransitionType(I)V
-
-    const/4 v1, 0x1
-
-    invoke-virtual {v0, v1}, Landroid/animation/LayoutTransition;->disableTransitionType(I)V
-
-    return-void
-.end method
-
-.method private enableLayoutTransitions()V
-    .locals 2
-
-    invoke-virtual {p0}, Lcom/android/launcher3/common/view/PageIndicator;->getLayoutTransition()Landroid/animation/LayoutTransition;
-
-    move-result-object v0
-
-    const/4 v1, 0x2
-
-    invoke-virtual {v0, v1}, Landroid/animation/LayoutTransition;->enableTransitionType(I)V
-
-    const/4 v1, 0x3
-
-    invoke-virtual {v0, v1}, Landroid/animation/LayoutTransition;->enableTransitionType(I)V
-
-    const/4 v1, 0x0
-
-    invoke-virtual {v0, v1}, Landroid/animation/LayoutTransition;->enableTransitionType(I)V
-
-    const/4 v1, 0x1
-
-    invoke-virtual {v0, v1}, Landroid/animation/LayoutTransition;->enableTransitionType(I)V
-
-    return-void
-.end method
-
 .method private getAdjustedPageIndex(I)I
     .locals 6
 
@@ -694,13 +642,13 @@
 
     move-result-object v3
 
-    const v5, 0x7f0a0175
+    const v5, 0x7f0a017a
 
     invoke-virtual {v3, v5}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
     move-result v0
 
-    const v5, 0x7f0a0176
+    const v5, 0x7f0a017b
 
     invoke-virtual {v3, v5}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -918,7 +866,7 @@
 
     const/4 v3, 0x0
 
-    invoke-direct {p0}, Lcom/android/launcher3/common/view/PageIndicator;->disableLayoutTransitions()V
+    invoke-virtual {p0}, Lcom/android/launcher3/common/view/PageIndicator;->disableLayoutTransitions()V
 
     const/4 v0, 0x0
 
@@ -956,7 +904,7 @@
     goto :goto_1
 
     :cond_1
-    invoke-direct {p0}, Lcom/android/launcher3/common/view/PageIndicator;->enableLayoutTransitions()V
+    invoke-virtual {p0}, Lcom/android/launcher3/common/view/PageIndicator;->enableLayoutTransitions()V
 
     return-void
 .end method
@@ -1078,6 +1026,32 @@
     invoke-virtual {v0}, Lcom/android/launcher3/common/view/PageIndicatorMarker;->performClick()Z
 
     :cond_0
+    return-void
+.end method
+
+.method public disableLayoutTransitions()V
+    .locals 2
+
+    invoke-virtual {p0}, Lcom/android/launcher3/common/view/PageIndicator;->getLayoutTransition()Landroid/animation/LayoutTransition;
+
+    move-result-object v0
+
+    const/4 v1, 0x2
+
+    invoke-virtual {v0, v1}, Landroid/animation/LayoutTransition;->disableTransitionType(I)V
+
+    const/4 v1, 0x3
+
+    invoke-virtual {v0, v1}, Landroid/animation/LayoutTransition;->disableTransitionType(I)V
+
+    const/4 v1, 0x0
+
+    invoke-virtual {v0, v1}, Landroid/animation/LayoutTransition;->disableTransitionType(I)V
+
+    const/4 v1, 0x1
+
+    invoke-virtual {v0, v1}, Landroid/animation/LayoutTransition;->disableTransitionType(I)V
+
     return-void
 .end method
 
@@ -1324,6 +1298,45 @@
 
     invoke-virtual {v2, v3}, Ljava/io/PrintStream;->println(Ljava/lang/String;)V
 
+    return-void
+.end method
+
+.method public enableLayoutTransitions()V
+    .locals 2
+
+    iget-object v1, p0, Lcom/android/launcher3/common/view/PageIndicator;->mPagedView:Lcom/android/launcher3/common/base/view/PagedView;
+
+    if-eqz v1, :cond_0
+
+    iget-object v1, p0, Lcom/android/launcher3/common/view/PageIndicator;->mPagedView:Lcom/android/launcher3/common/base/view/PagedView;
+
+    invoke-virtual {v1}, Lcom/android/launcher3/common/base/view/PagedView;->isResumed()Z
+
+    move-result v1
+
+    if-eqz v1, :cond_0
+
+    invoke-virtual {p0}, Lcom/android/launcher3/common/view/PageIndicator;->getLayoutTransition()Landroid/animation/LayoutTransition;
+
+    move-result-object v0
+
+    const/4 v1, 0x2
+
+    invoke-virtual {v0, v1}, Landroid/animation/LayoutTransition;->enableTransitionType(I)V
+
+    const/4 v1, 0x3
+
+    invoke-virtual {v0, v1}, Landroid/animation/LayoutTransition;->enableTransitionType(I)V
+
+    const/4 v1, 0x0
+
+    invoke-virtual {v0, v1}, Landroid/animation/LayoutTransition;->enableTransitionType(I)V
+
+    const/4 v1, 0x1
+
+    invoke-virtual {v0, v1}, Landroid/animation/LayoutTransition;->enableTransitionType(I)V
+
+    :cond_0
     return-void
 .end method
 
@@ -1623,7 +1636,7 @@
     :goto_0
     if-nez p1, :cond_2
 
-    invoke-direct/range {p0 .. p0}, Lcom/android/launcher3/common/view/PageIndicator;->disableLayoutTransitions()V
+    invoke-virtual/range {p0 .. p0}, Lcom/android/launcher3/common/view/PageIndicator;->disableLayoutTransitions()V
 
     :cond_2
     invoke-virtual/range {p0 .. p0}, Lcom/android/launcher3/common/view/PageIndicator;->getChildCount()I
@@ -1918,7 +1931,7 @@
     :cond_e
     if-nez p1, :cond_f
 
-    invoke-direct/range {p0 .. p0}, Lcom/android/launcher3/common/view/PageIndicator;->enableLayoutTransitions()V
+    invoke-virtual/range {p0 .. p0}, Lcom/android/launcher3/common/view/PageIndicator;->enableLayoutTransitions()V
 
     :cond_f
     move-object/from16 v0, p0

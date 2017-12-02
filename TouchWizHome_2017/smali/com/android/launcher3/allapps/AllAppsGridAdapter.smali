@@ -145,7 +145,7 @@
 
     iput-object p2, p0, Lcom/android/launcher3/allapps/AllAppsGridAdapter;->mApps:Lcom/android/launcher3/allapps/AlphabeticalAppsList;
 
-    const v3, 0x7f0900e5
+    const v3, 0x7f0900ed
 
     invoke-virtual {v2, v3}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -187,7 +187,7 @@
 
     iput-object p4, p0, Lcom/android/launcher3/allapps/AllAppsGridAdapter;->mIconClickListener:Landroid/view/View$OnClickListener;
 
-    const v3, 0x7f0a00ec
+    const v3, 0x7f0a00f0
 
     invoke-virtual {v2, v3}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -195,7 +195,7 @@
 
     iput v3, p0, Lcom/android/launcher3/allapps/AllAppsGridAdapter;->mSectionNamesMargin:I
 
-    const v3, 0x7f0a00ea
+    const v3, 0x7f0a00ee
 
     invoke-virtual {v2, v3}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -211,7 +211,7 @@
 
     iget-object v3, p0, Lcom/android/launcher3/allapps/AllAppsGridAdapter;->mSectionTextPaint:Landroid/graphics/Paint;
 
-    const v4, 0x7f0a00e9
+    const v4, 0x7f0a00ed
 
     invoke-virtual {v2, v4}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -267,7 +267,7 @@
 
     invoke-virtual {v3, v6}, Landroid/graphics/Paint;->setAntiAlias(Z)V
 
-    const v3, 0x7f0a00c5
+    const v3, 0x7f0a00c7
 
     invoke-virtual {v2, v3}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -275,7 +275,7 @@
 
     neg-int v3, v3
 
-    const v4, 0x7f0a00c3
+    const v4, 0x7f0a00c5
 
     invoke-virtual {v2, v4}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -938,7 +938,7 @@
 
     move-result-object v23
 
-    const v24, 0x7f0900d5
+    const v24, 0x7f0900dd
 
     invoke-virtual/range {v23 .. v24}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -985,7 +985,7 @@
 
     move-result-object v23
 
-    const v24, 0x7f0900d6
+    const v24, 0x7f0900de
 
     invoke-virtual/range {v23 .. v24}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -1091,7 +1091,7 @@
 
     move-result-object v23
 
-    const v24, 0x7f09018a
+    const v24, 0x7f090197
 
     invoke-virtual/range {v23 .. v24}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -1598,7 +1598,7 @@
 
     if-eqz v1, :cond_0
 
-    const v1, 0x7f0900e6
+    const v1, 0x7f0900ee
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 

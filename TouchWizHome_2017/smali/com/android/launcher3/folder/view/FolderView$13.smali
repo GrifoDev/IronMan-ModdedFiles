@@ -49,7 +49,7 @@
 
     iget-object v0, p0, Lcom/android/launcher3/folder/view/FolderView$13;->this$0:Lcom/android/launcher3/folder/view/FolderView;
 
-    invoke-static {v0}, Lcom/android/launcher3/folder/view/FolderView;->access$1000(Lcom/android/launcher3/folder/view/FolderView;)V
+    invoke-static {v0}, Lcom/android/launcher3/folder/view/FolderView;->access$1100(Lcom/android/launcher3/folder/view/FolderView;)V
 
     :cond_0
     return-void

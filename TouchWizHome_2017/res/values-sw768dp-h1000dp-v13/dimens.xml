@@ -14,6 +14,8 @@
     <dimen name="appsPicker_icon_text_size">15.0dip</dimen>
     <dimen name="appsPicker_index_scroll_default_interval">35.0dip</dimen>
     <dimen name="badge_text_size">15.0dip</dimen>
+    <dimen name="home_default_cellHeight_port">147.0dip</dimen>
+    <dimen name="home_default_cellWidth_port">115.0dip</dimen>
     <dimen name="home_workspace_animate_offsetY_overview">12.0dip</dimen>
     <dimen name="home_workspace_indicator_margin_bottom_overview">160.0dip</dimen>
     <dimen name="more_icon_btn_bg_width">24.0dip</dimen>
@@ -94,6 +96,10 @@
     <dimen name="widget_searchbar_searchview_padding_start">-8.5dip</dimen>
     <dimen name="widget_searchview_text_size">11.0dip</dimen>
     <dimen name="widget_title_bar_height">44.0dip</dimen>
+    <item type="dimen" name="all_apps_search_view_margin_top">@dimen/status_bar_height</item>
+    <dimen name="appsearch_menu_searchHeight">44.0dip</dimen>
+    <dimen name="tidyup_container_height">56.0dip</dimen>
+    <dimen name="tidyup_container_margin_top">24.0dip</dimen>
     <dimen name="widget_folder_page_cellgap_x">36.0dip</dimen>
     <dimen name="widget_folder_page_cellgap_y">13.0dip</dimen>
     <dimen name="widget_folder_pageindicator_container_height">70.0dip</dimen>
@@ -106,6 +112,7 @@
     <item type="dimen" name="widget_searchbar_top_margin">@dimen/status_bar_height</item>
     <dimen name="widget_title_bottom_padding">10.0dip</dimen>
     <dimen name="apps_hint_page_width">22.0dip</dimen>
+    <dimen name="apps_search_titlebar_margin_left">57.5dip</dimen>
     <dimen name="multi_select_help_dialog_margin_left">56.0dip</dimen>
     <dimen name="multi_select_pannel_margin_end">14.0dip</dimen>
     <dimen name="multi_select_pannel_margin_start">14.0dip</dimen>
@@ -121,6 +128,8 @@
     <dimen name="overview_zeropage_switch_text_size">17.0dip</dimen>
     <dimen name="pageIndicator_dot_margin">6.0dip</dimen>
     <dimen name="status_bar_height">30.0dip</dimen>
+    <dimen name="home_6x6_cellHeight_port">121.0dip</dimen>
+    <dimen name="home_6x6_cellWidth_port">115.0dip</dimen>
     <dimen name="zero_page_single_preview_height">599.0dip</dimen>
     <dimen name="zero_page_single_preview_width">461.0dip</dimen>
     <dimen name="app_icon_size">72.0dip</dimen>

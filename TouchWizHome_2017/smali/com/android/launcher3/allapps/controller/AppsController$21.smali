@@ -8,7 +8,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/android/launcher3/allapps/controller/AppsController;->restoreScreenGrid(IZ)V
+    value = Lcom/android/launcher3/allapps/controller/AppsController;->createFolder()V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -20,16 +20,20 @@
 # instance fields
 .field final synthetic this$0:Lcom/android/launcher3/allapps/controller/AppsController;
 
-.field final synthetic val$finishStage:Z
+.field final synthetic val$folder:Lcom/android/launcher3/folder/view/FolderIconView;
+
+.field final synthetic val$runnable:Ljava/lang/Runnable;
 
 
 # direct methods
-.method constructor <init>(Lcom/android/launcher3/allapps/controller/AppsController;Z)V
+.method constructor <init>(Lcom/android/launcher3/allapps/controller/AppsController;Ljava/lang/Runnable;Lcom/android/launcher3/folder/view/FolderIconView;)V
     .locals 0
 
     iput-object p1, p0, Lcom/android/launcher3/allapps/controller/AppsController$21;->this$0:Lcom/android/launcher3/allapps/controller/AppsController;
 
-    iput-boolean p2, p0, Lcom/android/launcher3/allapps/controller/AppsController$21;->val$finishStage:Z
+    iput-object p2, p0, Lcom/android/launcher3/allapps/controller/AppsController$21;->val$runnable:Ljava/lang/Runnable;
+
+    iput-object p3, p0, Lcom/android/launcher3/allapps/controller/AppsController$21;->val$folder:Lcom/android/launcher3/folder/view/FolderIconView;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -39,66 +43,31 @@
 
 # virtual methods
 .method public run()V
-    .locals 4
-
-    const/4 v3, 0x0
-
-    const/4 v2, 0x2
-
-    new-array v1, v2, [I
-
-    iget-object v2, p0, Lcom/android/launcher3/allapps/controller/AppsController$21;->this$0:Lcom/android/launcher3/allapps/controller/AppsController;
-
-    invoke-static {v2}, Lcom/android/launcher3/allapps/controller/AppsController;->access$1000(Lcom/android/launcher3/allapps/controller/AppsController;)Lcom/android/launcher3/Launcher;
-
-    move-result-object v2
-
-    invoke-static {v2, v1}, Lcom/android/launcher3/util/ScreenGridUtilities;->loadCurrentAppsGridSize(Landroid/content/Context;[I)V
-
-    iget-object v2, p0, Lcom/android/launcher3/allapps/controller/AppsController$21;->this$0:Lcom/android/launcher3/allapps/controller/AppsController;
-
-    invoke-static {v2, v1}, Lcom/android/launcher3/allapps/controller/AppsController;->access$1100(Lcom/android/launcher3/allapps/controller/AppsController;[I)V
-
-    iget-object v2, p0, Lcom/android/launcher3/allapps/controller/AppsController$21;->this$0:Lcom/android/launcher3/allapps/controller/AppsController;
-
-    invoke-virtual {v2}, Lcom/android/launcher3/allapps/controller/AppsController;->updateDirtyItems()V
-
-    iget-boolean v2, p0, Lcom/android/launcher3/allapps/controller/AppsController$21;->val$finishStage:Z
-
-    if-eqz v2, :cond_0
-
-    iget-object v2, p0, Lcom/android/launcher3/allapps/controller/AppsController$21;->this$0:Lcom/android/launcher3/allapps/controller/AppsController;
-
-    invoke-virtual {v2, v3, v3}, Lcom/android/launcher3/allapps/controller/AppsController;->changeState(IZ)Z
+    .locals 3
 
     new-instance v0, Lcom/android/launcher3/common/stage/StageEntry;
 
     invoke-direct {v0}, Lcom/android/launcher3/common/stage/StageEntry;-><init>()V
 
-    iput-boolean v3, v0, Lcom/android/launcher3/common/stage/StageEntry;->enableAnimation:Z
+    iget-object v1, p0, Lcom/android/launcher3/allapps/controller/AppsController$21;->val$runnable:Ljava/lang/Runnable;
 
-    iget-object v2, p0, Lcom/android/launcher3/allapps/controller/AppsController$21;->this$0:Lcom/android/launcher3/allapps/controller/AppsController;
+    invoke-virtual {v0, v1}, Lcom/android/launcher3/common/stage/StageEntry;->addOnCompleteRunnableCallBack(Ljava/lang/Runnable;)V
 
-    invoke-static {v2}, Lcom/android/launcher3/allapps/controller/AppsController;->access$1200(Lcom/android/launcher3/allapps/controller/AppsController;)Lcom/android/launcher3/common/stage/StageManager;
+    const-string v1, "KEY_FOLDER_ICON_VIEW"
 
-    move-result-object v2
+    iget-object v2, p0, Lcom/android/launcher3/allapps/controller/AppsController$21;->val$folder:Lcom/android/launcher3/folder/view/FolderIconView;
 
-    iget-object v3, p0, Lcom/android/launcher3/allapps/controller/AppsController$21;->this$0:Lcom/android/launcher3/allapps/controller/AppsController;
+    invoke-virtual {v0, v1, v2}, Lcom/android/launcher3/common/stage/StageEntry;->putExtras(Ljava/lang/String;Ljava/lang/Object;)V
 
-    invoke-virtual {v2, v3, v0}, Lcom/android/launcher3/common/stage/StageManager;->finishStage(Lcom/android/launcher3/common/stage/Stage;Lcom/android/launcher3/common/stage/StageEntry;)V
+    iget-object v1, p0, Lcom/android/launcher3/allapps/controller/AppsController$21;->this$0:Lcom/android/launcher3/allapps/controller/AppsController;
 
-    invoke-static {}, Lcom/android/launcher3/LauncherAppState;->getInstance()Lcom/android/launcher3/LauncherAppState;
+    invoke-static {v1}, Lcom/android/launcher3/allapps/controller/AppsController;->access$1500(Lcom/android/launcher3/allapps/controller/AppsController;)Lcom/android/launcher3/common/stage/StageManager;
 
-    move-result-object v2
+    move-result-object v1
 
-    invoke-virtual {v2}, Lcom/android/launcher3/LauncherAppState;->getTopViewChangedMessageHandler()Lcom/android/launcher3/proxy/LauncherTopViewChangedMessageHandler;
+    const/4 v2, 0x5
 
-    move-result-object v2
+    invoke-virtual {v1, v2, v0}, Lcom/android/launcher3/common/stage/StageManager;->startStage(ILcom/android/launcher3/common/stage/StageEntry;)V
 
-    const/4 v3, 0x6
-
-    invoke-virtual {v2, v3}, Lcom/android/launcher3/proxy/LauncherTopViewChangedMessageHandler;->sendMessage(I)V
-
-    :cond_0
     return-void
 .end method

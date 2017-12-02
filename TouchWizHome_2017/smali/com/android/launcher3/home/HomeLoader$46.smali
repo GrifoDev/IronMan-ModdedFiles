@@ -41,7 +41,7 @@
 .method public run()V
     .locals 10
 
-    invoke-static {}, Lcom/android/launcher3/home/HomeLoader;->access$12700()Ljava/lang/Object;
+    invoke-static {}, Lcom/android/launcher3/home/HomeLoader;->access$13000()Ljava/lang/Object;
 
     move-result-object v4
 
@@ -50,7 +50,7 @@
     :try_start_0
     iget-object v3, p0, Lcom/android/launcher3/home/HomeLoader$46;->this$0:Lcom/android/launcher3/home/HomeLoader;
 
-    invoke-static {v3}, Lcom/android/launcher3/home/HomeLoader;->access$12400(Lcom/android/launcher3/home/HomeLoader;)Ljava/util/ArrayList;
+    invoke-static {v3}, Lcom/android/launcher3/home/HomeLoader;->access$12700(Lcom/android/launcher3/home/HomeLoader;)Ljava/util/ArrayList;
 
     move-result-object v3
 
@@ -98,7 +98,7 @@
 
     iget-object v3, p0, Lcom/android/launcher3/home/HomeLoader$46;->this$0:Lcom/android/launcher3/home/HomeLoader;
 
-    invoke-static {v3, v2}, Lcom/android/launcher3/home/HomeLoader;->access$12800(Lcom/android/launcher3/home/HomeLoader;Lcom/android/launcher3/common/base/item/ItemInfo;)V
+    invoke-static {v3, v2}, Lcom/android/launcher3/home/HomeLoader;->access$13100(Lcom/android/launcher3/home/HomeLoader;Lcom/android/launcher3/common/base/item/ItemInfo;)V
 
     :cond_2
     monitor-exit v4

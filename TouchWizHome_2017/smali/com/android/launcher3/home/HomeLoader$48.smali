@@ -123,7 +123,7 @@
     return-void
 
     :cond_1
-    invoke-static {}, Lcom/android/launcher3/home/HomeLoader;->access$13400()Lcom/android/launcher3/common/compat/LauncherAppsCompat;
+    invoke-static {}, Lcom/android/launcher3/home/HomeLoader;->access$13700()Lcom/android/launcher3/common/compat/LauncherAppsCompat;
 
     move-result-object v4
 
@@ -170,7 +170,7 @@
 
     if-eqz v5, :cond_2
 
-    invoke-static {}, Lcom/android/launcher3/home/HomeLoader;->access$13500()Landroid/content/Context;
+    invoke-static {}, Lcom/android/launcher3/home/HomeLoader;->access$13800()Landroid/content/Context;
 
     move-result-object v4
 
@@ -189,7 +189,7 @@
 
     iget v5, p0, Lcom/android/launcher3/home/HomeLoader$48;->val$index:I
 
-    invoke-static {v4, v2, v5}, Lcom/android/launcher3/home/HomeLoader;->access$12600(Lcom/android/launcher3/home/HomeLoader;Lcom/android/launcher3/common/base/item/ItemInfo;I)V
+    invoke-static {v4, v2, v5}, Lcom/android/launcher3/home/HomeLoader;->access$12900(Lcom/android/launcher3/home/HomeLoader;Lcom/android/launcher3/common/base/item/ItemInfo;I)V
 
     goto :goto_1
 .end method

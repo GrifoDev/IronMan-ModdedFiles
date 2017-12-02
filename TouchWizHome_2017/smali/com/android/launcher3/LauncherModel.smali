@@ -90,6 +90,10 @@
     .end annotation
 .end field
 
+.field private volatile mConfigMccWhenLoaded:I
+
+.field private volatile mConfigMncWhenLoaded:I
+
 .field private mDeepShortcutManager:Lcom/android/launcher3/common/quickoption/shortcuts/DeepShortcutManager;
 
 .field private mDeepShortcutsLoaded:Z
@@ -371,7 +375,15 @@
     return p1
 .end method
 
-.method static synthetic access$1600(Lcom/android/launcher3/LauncherModel;)Lcom/android/launcher3/LauncherModel$LoaderTask;
+.method static synthetic access$1600(Lcom/android/launcher3/LauncherModel;Landroid/content/Context;)V
+    .locals 0
+
+    invoke-direct {p0, p1}, Lcom/android/launcher3/LauncherModel;->deleteDeviceOnwerOMCItem(Landroid/content/Context;)V
+
+    return-void
+.end method
+
+.method static synthetic access$1700(Lcom/android/launcher3/LauncherModel;)Lcom/android/launcher3/LauncherModel$LoaderTask;
     .locals 1
 
     iget-object v0, p0, Lcom/android/launcher3/LauncherModel;->mLoaderTask:Lcom/android/launcher3/LauncherModel$LoaderTask;
@@ -379,7 +391,7 @@
     return-object v0
 .end method
 
-.method static synthetic access$1602(Lcom/android/launcher3/LauncherModel;Lcom/android/launcher3/LauncherModel$LoaderTask;)Lcom/android/launcher3/LauncherModel$LoaderTask;
+.method static synthetic access$1702(Lcom/android/launcher3/LauncherModel;Lcom/android/launcher3/LauncherModel$LoaderTask;)Lcom/android/launcher3/LauncherModel$LoaderTask;
     .locals 0
 
     iput-object p1, p0, Lcom/android/launcher3/LauncherModel;->mLoaderTask:Lcom/android/launcher3/LauncherModel$LoaderTask;
@@ -387,7 +399,7 @@
     return-object p1
 .end method
 
-.method static synthetic access$1700(Lcom/android/launcher3/LauncherModel;)Z
+.method static synthetic access$1800(Lcom/android/launcher3/LauncherModel;)Z
     .locals 1
 
     iget-boolean v0, p0, Lcom/android/launcher3/LauncherModel;->mHasLoaderCompletedOnce:Z
@@ -395,7 +407,7 @@
     return v0
 .end method
 
-.method static synthetic access$1702(Lcom/android/launcher3/LauncherModel;Z)Z
+.method static synthetic access$1802(Lcom/android/launcher3/LauncherModel;Z)Z
     .locals 0
 
     iput-boolean p1, p0, Lcom/android/launcher3/LauncherModel;->mHasLoaderCompletedOnce:Z
@@ -403,28 +415,12 @@
     return p1
 .end method
 
-.method static synthetic access$1800()Ljava/util/ArrayList;
+.method static synthetic access$1900()Ljava/util/ArrayList;
     .locals 1
 
     sget-object v0, Lcom/android/launcher3/LauncherModel;->sPackageChangeRunnables:Ljava/util/ArrayList;
 
     return-object v0
-.end method
-
-.method static synthetic access$1900(Lcom/android/launcher3/LauncherModel;)Z
-    .locals 1
-
-    iget-boolean v0, p0, Lcom/android/launcher3/LauncherModel;->mNeedLoadAllAppItemList:Z
-
-    return v0
-.end method
-
-.method static synthetic access$1902(Lcom/android/launcher3/LauncherModel;Z)Z
-    .locals 0
-
-    iput-boolean p1, p0, Lcom/android/launcher3/LauncherModel;->mNeedLoadAllAppItemList:Z
-
-    return p1
 .end method
 
 .method static synthetic access$200(Lcom/android/launcher3/LauncherModel;)Z
@@ -435,12 +431,20 @@
     return v0
 .end method
 
-.method static synthetic access$2000(Lcom/android/launcher3/LauncherModel;)Ljava/lang/ref/WeakReference;
+.method static synthetic access$2000(Lcom/android/launcher3/LauncherModel;)Z
     .locals 1
 
-    iget-object v0, p0, Lcom/android/launcher3/LauncherModel;->mCallbacks:Ljava/lang/ref/WeakReference;
+    iget-boolean v0, p0, Lcom/android/launcher3/LauncherModel;->mNeedLoadAllAppItemList:Z
 
-    return-object v0
+    return v0
+.end method
+
+.method static synthetic access$2002(Lcom/android/launcher3/LauncherModel;Z)Z
+    .locals 0
+
+    iput-boolean p1, p0, Lcom/android/launcher3/LauncherModel;->mNeedLoadAllAppItemList:Z
+
+    return p1
 .end method
 
 .method static synthetic access$202(Lcom/android/launcher3/LauncherModel;Z)Z
@@ -451,7 +455,23 @@
     return p1
 .end method
 
-.method static synthetic access$2100(Landroid/content/Context;Ljava/lang/String;Lcom/android/launcher3/common/compat/UserHandleCompat;)Z
+.method static synthetic access$2100(Lcom/android/launcher3/LauncherModel;)V
+    .locals 0
+
+    invoke-direct {p0}, Lcom/android/launcher3/LauncherModel;->loadAllAppItemList()V
+
+    return-void
+.end method
+
+.method static synthetic access$2200(Lcom/android/launcher3/LauncherModel;)Ljava/lang/ref/WeakReference;
+    .locals 1
+
+    iget-object v0, p0, Lcom/android/launcher3/LauncherModel;->mCallbacks:Ljava/lang/ref/WeakReference;
+
+    return-object v0
+.end method
+
+.method static synthetic access$2300(Landroid/content/Context;Ljava/lang/String;Lcom/android/launcher3/common/compat/UserHandleCompat;)Z
     .locals 1
 
     invoke-static {p0, p1, p2}, Lcom/android/launcher3/LauncherModel;->isPackageDisabled(Landroid/content/Context;Ljava/lang/String;Lcom/android/launcher3/common/compat/UserHandleCompat;)Z
@@ -461,7 +481,7 @@
     return v0
 .end method
 
-.method static synthetic access$2200(Lcom/android/launcher3/LauncherModel;Ljava/lang/Runnable;)V
+.method static synthetic access$2400(Lcom/android/launcher3/LauncherModel;Ljava/lang/Runnable;)V
     .locals 0
 
     invoke-direct {p0, p1}, Lcom/android/launcher3/LauncherModel;->runOnMainThread(Ljava/lang/Runnable;)V
@@ -469,7 +489,7 @@
     return-void
 .end method
 
-.method static synthetic access$2300(Lcom/android/launcher3/LauncherModel;Z)V
+.method static synthetic access$2500(Lcom/android/launcher3/LauncherModel;Z)V
     .locals 0
 
     invoke-direct {p0, p1}, Lcom/android/launcher3/LauncherModel;->updateWidgetsProviders(Z)V
@@ -477,7 +497,7 @@
     return-void
 .end method
 
-.method static synthetic access$2400(Lcom/android/launcher3/LauncherModel;)Lcom/android/launcher3/common/model/BadgeCache;
+.method static synthetic access$2600(Lcom/android/launcher3/LauncherModel;)Lcom/android/launcher3/common/model/BadgeCache;
     .locals 1
 
     iget-object v0, p0, Lcom/android/launcher3/LauncherModel;->mBadgeCache:Lcom/android/launcher3/common/model/BadgeCache;
@@ -539,6 +559,83 @@
     iput-boolean p1, p0, Lcom/android/launcher3/LauncherModel;->mAllAppsLoaded:Z
 
     return p1
+.end method
+
+.method private deleteDeviceOnwerOMCItem(Landroid/content/Context;)V
+    .locals 8
+
+    const-string v5, "device_policy"
+
+    invoke-virtual {p1, v5}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Landroid/app/admin/DevicePolicyManager;
+
+    if-eqz v1, :cond_0
+
+    invoke-virtual {v1}, Landroid/app/admin/DevicePolicyManager;->semGetDeviceOwner()Ljava/lang/String;
+
+    move-result-object v5
+
+    if-eqz v5, :cond_0
+
+    invoke-virtual {p1}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
+
+    move-result-object v0
+
+    const-string v3, "restored=?"
+
+    const/4 v5, 0x1
+
+    new-array v4, v5, [Ljava/lang/String;
+
+    const/4 v5, 0x0
+
+    const/16 v6, 0x20
+
+    invoke-static {v6}, Ljava/lang/String;->valueOf(I)Ljava/lang/String;
+
+    move-result-object v6
+
+    aput-object v6, v4, v5
+
+    sget-object v5, Lcom/android/launcher3/common/model/LauncherSettings$Favorites;->CONTENT_URI:Landroid/net/Uri;
+
+    invoke-virtual {v0, v5, v3, v4}, Landroid/content/ContentResolver;->delete(Landroid/net/Uri;Ljava/lang/String;[Ljava/lang/String;)I
+
+    move-result v2
+
+    const-string v5, "Launcher.Model"
+
+    new-instance v6, Ljava/lang/StringBuilder;
+
+    invoke-direct {v6}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v7, "deleteDeviceOnwerOMCItem - "
+
+    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v6
+
+    invoke-virtual {v6, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v6
+
+    const-string v7, " items removed."
+
+    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v6
+
+    invoke-virtual {v6}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v6
+
+    invoke-static {v5, v6}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    :cond_0
+    return-void
 .end method
 
 .method private doLocaleChange()V
@@ -674,6 +771,33 @@
     move-result-object v0
 
     return-object v0
+.end method
+
+.method private isNetworkCodeChanged(Landroid/content/res/Configuration;)Z
+    .locals 2
+
+    iget v0, p0, Lcom/android/launcher3/LauncherModel;->mConfigMccWhenLoaded:I
+
+    iget v1, p1, Landroid/content/res/Configuration;->mcc:I
+
+    if-ne v0, v1, :cond_0
+
+    iget v0, p0, Lcom/android/launcher3/LauncherModel;->mConfigMncWhenLoaded:I
+
+    iget v1, p1, Landroid/content/res/Configuration;->mnc:I
+
+    if-eq v0, v1, :cond_1
+
+    :cond_0
+    const/4 v0, 0x1
+
+    :goto_0
+    return v0
+
+    :cond_1
+    const/4 v0, 0x0
+
+    goto :goto_0
 .end method
 
 .method private static isPackageDisabled(Landroid/content/Context;Ljava/lang/String;Lcom/android/launcher3/common/compat/UserHandleCompat;)Z
@@ -849,6 +973,16 @@
     goto :goto_0
 .end method
 
+.method private loadAllAppItemList()V
+    .locals 1
+
+    const/4 v0, 0x0
+
+    invoke-virtual {p0, v0}, Lcom/android/launcher3/LauncherModel;->loadAllAppItemList(Lcom/android/launcher3/LauncherModel$OnAllAppItemListLoadCompletedListener;)V
+
+    return-void
+.end method
+
 .method private loadWidgets([Ljava/lang/String;Lcom/android/launcher3/common/compat/UserHandleCompat;Z)V
     .locals 1
 
@@ -913,6 +1047,34 @@
     invoke-virtual {v0, p0}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
     goto :goto_0
+.end method
+
+.method private setNetworkLocked()V
+    .locals 2
+
+    iget-object v1, p0, Lcom/android/launcher3/LauncherModel;->mApp:Lcom/android/launcher3/LauncherAppState;
+
+    invoke-virtual {v1}, Lcom/android/launcher3/LauncherAppState;->getContext()Landroid/content/Context;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Landroid/content/res/Resources;->getConfiguration()Landroid/content/res/Configuration;
+
+    move-result-object v0
+
+    iget v1, v0, Landroid/content/res/Configuration;->mcc:I
+
+    iput v1, p0, Lcom/android/launcher3/LauncherModel;->mConfigMccWhenLoaded:I
+
+    iget v1, v0, Landroid/content/res/Configuration;->mnc:I
+
+    iput v1, p0, Lcom/android/launcher3/LauncherModel;->mConfigMncWhenLoaded:I
+
+    return-void
 .end method
 
 .method private stopLoaderLocked()V
@@ -1201,6 +1363,24 @@
     return-void
 .end method
 
+.method public flushPendingQueue()V
+    .locals 2
+
+    iget-object v0, p0, Lcom/android/launcher3/LauncherModel;->mHandler:Lcom/android/launcher3/common/model/DeferredHandler;
+
+    const/4 v1, 0x1
+
+    invoke-virtual {v0, v1}, Lcom/android/launcher3/common/model/DeferredHandler;->startPendingQueueFlush(Z)V
+
+    new-instance v0, Lcom/android/launcher3/LauncherModel$13;
+
+    invoke-direct {v0, p0}, Lcom/android/launcher3/LauncherModel$13;-><init>(Lcom/android/launcher3/LauncherModel;)V
+
+    invoke-static {v0}, Lcom/android/launcher3/LauncherModel;->runOnWorkerThread(Ljava/lang/Runnable;)V
+
+    return-void
+.end method
+
 .method public forceIconReload()V
     .locals 2
 
@@ -1326,7 +1506,7 @@
 .end method
 
 .method public initialize(Lcom/android/launcher3/LauncherModel$Callbacks;)V
-    .locals 2
+    .locals 3
 
     iget-object v1, p0, Lcom/android/launcher3/LauncherModel;->mLock:Ljava/lang/Object;
 
@@ -1340,6 +1520,14 @@
     invoke-direct {v0, p1}, Ljava/lang/ref/WeakReference;-><init>(Ljava/lang/Object;)V
 
     iput-object v0, p0, Lcom/android/launcher3/LauncherModel;->mCallbacks:Ljava/lang/ref/WeakReference;
+
+    invoke-direct {p0}, Lcom/android/launcher3/LauncherModel;->setNetworkLocked()V
+
+    iget-object v0, p0, Lcom/android/launcher3/LauncherModel;->mHandler:Lcom/android/launcher3/common/model/DeferredHandler;
+
+    iget-object v2, p0, Lcom/android/launcher3/LauncherModel;->mCallbacks:Ljava/lang/ref/WeakReference;
+
+    invoke-virtual {v0, p0, v2}, Lcom/android/launcher3/common/model/DeferredHandler;->setCallbacks(Lcom/android/launcher3/LauncherModel;Ljava/lang/ref/WeakReference;)V
 
     monitor-exit v1
 
@@ -1381,6 +1569,32 @@
     goto :goto_0
 .end method
 
+.method public isModelIdle()Z
+    .locals 1
+
+    iget-boolean v0, p0, Lcom/android/launcher3/LauncherModel;->mAllAppsLoaded:Z
+
+    if-eqz v0, :cond_0
+
+    iget-boolean v0, p0, Lcom/android/launcher3/LauncherModel;->mWorkspaceLoaded:Z
+
+    if-eqz v0, :cond_0
+
+    iget-boolean v0, p0, Lcom/android/launcher3/LauncherModel;->mIsLoaderTaskRunning:Z
+
+    if-nez v0, :cond_0
+
+    const/4 v0, 0x1
+
+    :goto_0
+    return v0
+
+    :cond_0
+    const/4 v0, 0x0
+
+    goto :goto_0
+.end method
+
 .method public isSupportVirtualScreen()Z
     .locals 1
 
@@ -1391,12 +1605,43 @@
     return v0
 .end method
 
-.method public loadAllAppItemList()V
-    .locals 1
+.method public loadAllAppItemList(Lcom/android/launcher3/LauncherModel$OnAllAppItemListLoadCompletedListener;)V
+    .locals 3
 
     iget-object v0, p0, Lcom/android/launcher3/LauncherModel;->mOnAllAppItemListLoadCompletedListener:Lcom/android/launcher3/LauncherModel$OnAllAppItemListLoadCompletedListener;
 
-    if-eqz v0, :cond_0
+    if-nez v0, :cond_0
+
+    iput-object p1, p0, Lcom/android/launcher3/LauncherModel;->mOnAllAppItemListLoadCompletedListener:Lcom/android/launcher3/LauncherModel$OnAllAppItemListLoadCompletedListener;
+
+    const-string v0, "Launcher.Model"
+
+    new-instance v1, Ljava/lang/StringBuilder;
+
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v2, "mOnAllAppItemListLoadCompletedListener = "
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    iget-object v2, p0, Lcom/android/launcher3/LauncherModel;->mOnAllAppItemListLoadCompletedListener:Lcom/android/launcher3/LauncherModel$OnAllAppItemListLoadCompletedListener;
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    :cond_0
+    iget-object v0, p0, Lcom/android/launcher3/LauncherModel;->mOnAllAppItemListLoadCompletedListener:Lcom/android/launcher3/LauncherModel$OnAllAppItemListLoadCompletedListener;
+
+    if-eqz v0, :cond_1
 
     iget-object v0, p0, Lcom/android/launcher3/LauncherModel;->mOnAllAppItemListLoadCompletedListener:Lcom/android/launcher3/LauncherModel$OnAllAppItemListLoadCompletedListener;
 
@@ -1404,26 +1649,26 @@
 
     move-result v0
 
-    if-eqz v0, :cond_0
+    if-eqz v0, :cond_1
 
     iget-boolean v0, p0, Lcom/android/launcher3/LauncherModel;->mIsLoaderTaskRunning:Z
 
-    if-eqz v0, :cond_1
+    if-eqz v0, :cond_2
 
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/android/launcher3/LauncherModel;->mNeedLoadAllAppItemList:Z
 
-    :cond_0
+    :cond_1
     :goto_0
     return-void
 
-    :cond_1
+    :cond_2
     invoke-static {}, Lcom/android/launcher3/LauncherFeature;->supportHomeModeChange()Z
 
     move-result v0
 
-    if-eqz v0, :cond_2
+    if-eqz v0, :cond_3
 
     invoke-static {}, Lcom/android/launcher3/LauncherAppState;->getInstance()Lcom/android/launcher3/LauncherAppState;
 
@@ -1433,7 +1678,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_2
+    if-eqz v0, :cond_3
 
     iget-object v0, p0, Lcom/android/launcher3/LauncherModel;->mHomeLoader:Lcom/android/launcher3/home/HomeLoader;
 
@@ -1445,7 +1690,7 @@
 
     goto :goto_0
 
-    :cond_2
+    :cond_3
     iget-object v0, p0, Lcom/android/launcher3/LauncherModel;->mAppsModel:Lcom/android/launcher3/allapps/model/AppsModel;
 
     invoke-virtual {v0}, Lcom/android/launcher3/allapps/model/AppsModel;->getAllAppItemInApps()Ljava/util/ArrayList;
@@ -1877,363 +2122,424 @@
 .end method
 
 .method public onReceive(Landroid/content/Context;Landroid/content/Intent;)V
-    .locals 14
+    .locals 16
 
     invoke-virtual/range {p2 .. p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
 
-    move-result-object v0
+    move-result-object v1
 
-    const-string v10, "android.intent.action.LOCALE_CHANGED"
+    const-string v12, "android.intent.action.LOCALE_CHANGED"
 
-    invoke-virtual {v10, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v12, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move-result v10
+    move-result v12
 
-    if-eqz v10, :cond_1
+    if-eqz v12, :cond_1
 
-    invoke-direct {p0}, Lcom/android/launcher3/LauncherModel;->doLocaleChange()V
+    invoke-direct/range {p0 .. p0}, Lcom/android/launcher3/LauncherModel;->doLocaleChange()V
 
     :cond_0
     :goto_0
     return-void
 
     :cond_1
-    const-string v10, "com.samsung.settings.ICON_BACKGROUNDS_CHANGED"
+    const-string v12, "com.samsung.settings.ICON_BACKGROUNDS_CHANGED"
 
-    invoke-virtual {v10, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v12, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move-result v10
+    move-result v12
 
-    if-eqz v10, :cond_2
+    if-eqz v12, :cond_2
 
-    invoke-static {p1}, Lcom/android/launcher3/util/ShortcutTray;->checkIconTrayEnabled(Landroid/content/Context;)V
+    invoke-static/range {p1 .. p1}, Lcom/android/launcher3/util/ShortcutTray;->checkIconTrayEnabled(Landroid/content/Context;)V
 
-    invoke-virtual {p0}, Lcom/android/launcher3/LauncherModel;->forceIconReload()V
+    invoke-virtual/range {p0 .. p0}, Lcom/android/launcher3/LauncherModel;->forceIconReload()V
 
     goto :goto_0
 
     :cond_2
-    const-string v10, "android.intent.action.MANAGED_PROFILE_ADDED"
+    const-string v12, "android.intent.action.MANAGED_PROFILE_ADDED"
 
-    invoke-virtual {v10, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v12, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move-result v10
+    move-result v12
 
-    if-nez v10, :cond_3
+    if-nez v12, :cond_3
 
-    const-string v10, "android.intent.action.MANAGED_PROFILE_REMOVED"
+    const-string v12, "android.intent.action.MANAGED_PROFILE_REMOVED"
 
-    invoke-virtual {v10, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v12, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move-result v10
+    move-result v12
 
-    if-eqz v10, :cond_4
+    if-eqz v12, :cond_4
 
     :cond_3
-    invoke-static {p1}, Lcom/android/launcher3/common/compat/UserManagerCompat;->getInstance(Landroid/content/Context;)Lcom/android/launcher3/common/compat/UserManagerCompat;
+    invoke-static/range {p1 .. p1}, Lcom/android/launcher3/common/compat/UserManagerCompat;->getInstance(Landroid/content/Context;)Lcom/android/launcher3/common/compat/UserManagerCompat;
 
-    move-result-object v10
+    move-result-object v12
 
-    invoke-virtual {v10}, Lcom/android/launcher3/common/compat/UserManagerCompat;->enableAndResetCache()V
+    invoke-virtual {v12}, Lcom/android/launcher3/common/compat/UserManagerCompat;->enableAndResetCache()V
 
-    iget-object v10, p0, Lcom/android/launcher3/LauncherModel;->mHomeLoader:Lcom/android/launcher3/home/HomeLoader;
+    move-object/from16 v0, p0
 
-    invoke-virtual {v10}, Lcom/android/launcher3/home/HomeLoader;->updateUsersList()V
+    iget-object v12, v0, Lcom/android/launcher3/LauncherModel;->mHomeLoader:Lcom/android/launcher3/home/HomeLoader;
 
-    iget-object v10, p0, Lcom/android/launcher3/LauncherModel;->mAppsModel:Lcom/android/launcher3/allapps/model/AppsModel;
+    invoke-virtual {v12}, Lcom/android/launcher3/home/HomeLoader;->updateUsersList()V
 
-    invoke-virtual {v10}, Lcom/android/launcher3/allapps/model/AppsModel;->updateUsersList()V
+    move-object/from16 v0, p0
+
+    iget-object v12, v0, Lcom/android/launcher3/LauncherModel;->mAppsModel:Lcom/android/launcher3/allapps/model/AppsModel;
+
+    invoke-virtual {v12}, Lcom/android/launcher3/allapps/model/AppsModel;->updateUsersList()V
 
     invoke-virtual/range {p2 .. p2}, Landroid/content/Intent;->getExtras()Landroid/os/Bundle;
 
-    move-result-object v1
+    move-result-object v2
 
-    const-string v10, "com.samsung.sec.knox.EXTRA_PERSONA_ID"
+    const-string v12, "com.samsung.sec.knox.EXTRA_PERSONA_ID"
 
-    invoke-virtual {v1, v10}, Landroid/os/Bundle;->getInt(Ljava/lang/String;)I
+    invoke-virtual {v2, v12}, Landroid/os/Bundle;->getInt(Ljava/lang/String;)I
 
-    move-result v9
+    move-result v11
 
-    const-string v10, "Launcher.Model"
+    const-string v12, "Launcher.Model"
 
-    new-instance v11, Ljava/lang/StringBuilder;
+    new-instance v13, Ljava/lang/StringBuilder;
 
-    invoke-direct {v11}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {v13}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v12, "userId:"
+    const-string v14, "userId:"
 
-    invoke-virtual {v11, v12}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v13, v14}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v11
+    move-result-object v13
 
-    invoke-virtual {v11, v9}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    invoke-virtual {v13, v11}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    move-result-object v11
+    move-result-object v13
 
-    invoke-virtual {v11}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v13}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v11
+    move-result-object v13
 
-    invoke-static {v10, v11}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {v12, v13}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    invoke-static {v9}, Lcom/samsung/android/knox/SemPersonaManager;->isKnoxId(I)Z
+    invoke-static {v11}, Lcom/samsung/android/knox/SemPersonaManager;->isKnoxId(I)Z
 
-    move-result v10
+    move-result v12
 
-    if-nez v10, :cond_0
+    if-nez v12, :cond_0
 
-    invoke-virtual {p0}, Lcom/android/launcher3/LauncherModel;->forceReload()V
+    invoke-virtual/range {p0 .. p0}, Lcom/android/launcher3/LauncherModel;->forceReload()V
 
     goto :goto_0
 
     :cond_4
-    const-string v10, "android.intent.action.MANAGED_PROFILE_AVAILABLE"
+    const-string v12, "android.intent.action.MANAGED_PROFILE_AVAILABLE"
 
-    invoke-virtual {v10, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v12, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move-result v10
+    move-result v12
 
-    if-nez v10, :cond_5
+    if-nez v12, :cond_5
 
-    const-string v10, "android.intent.action.MANAGED_PROFILE_UNAVAILABLE"
+    const-string v12, "android.intent.action.MANAGED_PROFILE_UNAVAILABLE"
 
-    invoke-virtual {v10, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v12, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move-result v10
+    move-result v12
 
-    if-eqz v10, :cond_6
+    if-eqz v12, :cond_6
 
     :cond_5
     invoke-static/range {p2 .. p2}, Lcom/android/launcher3/common/compat/UserHandleCompat;->fromIntent(Landroid/content/Intent;)Lcom/android/launcher3/common/compat/UserHandleCompat;
+
+    move-result-object v10
+
+    if-eqz v10, :cond_0
+
+    new-instance v12, Lcom/android/launcher3/LauncherModel$PackageUpdatedTask;
+
+    const/4 v13, 0x7
+
+    const/4 v14, 0x0
+
+    new-array v14, v14, [Ljava/lang/String;
+
+    move-object/from16 v0, p0
+
+    invoke-direct {v12, v0, v13, v14, v10}, Lcom/android/launcher3/LauncherModel$PackageUpdatedTask;-><init>(Lcom/android/launcher3/LauncherModel;I[Ljava/lang/String;Lcom/android/launcher3/common/compat/UserHandleCompat;)V
+
+    move-object/from16 v0, p0
+
+    invoke-virtual {v0, v12}, Lcom/android/launcher3/LauncherModel;->enqueueItemUpdatedTask(Ljava/lang/Runnable;)V
+
+    goto/16 :goto_0
+
+    :cond_6
+    const-string v12, "android.intent.action.STK_TITLE_IS_LOADED"
+
+    invoke-virtual {v12, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v12
+
+    if-eqz v12, :cond_9
+
+    const-string v12, "Launcher.Model"
+
+    const-string v13, "receive ACTION_STK_TITLE_IS_LOADED"
+
+    invoke-static {v12, v13}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    invoke-static {}, Lcom/samsung/android/feature/SemCscFeature;->getInstance()Lcom/samsung/android/feature/SemCscFeature;
+
+    move-result-object v12
+
+    const-string v13, "CscFeature_RIL_FixedStkMenu"
+
+    invoke-virtual {v12, v13}, Lcom/samsung/android/feature/SemCscFeature;->getBoolean(Ljava/lang/String;)Z
+
+    move-result v5
+
+    invoke-static {}, Lcom/samsung/android/feature/SemCscFeature;->getInstance()Lcom/samsung/android/feature/SemCscFeature;
+
+    move-result-object v12
+
+    const-string v13, "CscFeature_Launcher_FixedStkTitleAs"
+
+    invoke-virtual {v12, v13}, Lcom/samsung/android/feature/SemCscFeature;->getString(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v4
+
+    const-string v12, "gsm.STK_SETUP_MENU"
+
+    const/4 v13, 0x0
+
+    invoke-static {v12, v13}, Landroid/os/SemSystemProperties;->get(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v9
+
+    if-eqz v4, :cond_7
+
+    invoke-virtual {v4}, Ljava/lang/String;->length()I
+
+    move-result v12
+
+    if-lez v12, :cond_7
+
+    const-string v12, "NoSIM%"
+
+    invoke-virtual {v4, v12}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
+
+    move-result v12
+
+    if-eqz v12, :cond_0
+
+    :cond_7
+    if-eqz v9, :cond_0
+
+    invoke-virtual {v9}, Ljava/lang/String;->length()I
+
+    move-result v12
+
+    if-lez v12, :cond_0
+
+    invoke-virtual/range {p2 .. p2}, Landroid/content/Intent;->getData()Landroid/net/Uri;
+
+    move-result-object v12
+
+    invoke-virtual {v12}, Landroid/net/Uri;->getSchemeSpecificPart()Ljava/lang/String;
+
+    move-result-object v7
+
+    if-eqz v7, :cond_0
+
+    invoke-virtual {v7}, Ljava/lang/String;->length()I
+
+    move-result v12
+
+    if-eqz v12, :cond_0
+
+    const-string v12, "Launcher.Model"
+
+    new-instance v13, Ljava/lang/StringBuilder;
+
+    invoke-direct {v13}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v14, "ACTION_STK_TITLE_IS_LOADED stkTitleFromSIM = "
+
+    invoke-virtual {v13, v14}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v13
+
+    invoke-virtual {v13, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v13
+
+    invoke-virtual {v13}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v13
+
+    invoke-static {v12, v13}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    const/4 v6, 0x2
+
+    if-eqz v5, :cond_8
+
+    new-instance v12, Lcom/android/launcher3/LauncherModel$PackageUpdatedTask;
+
+    const/4 v13, 0x2
+
+    new-array v13, v13, [Ljava/lang/String;
+
+    const/4 v14, 0x0
+
+    aput-object v7, v13, v14
+
+    const/4 v14, 0x1
+
+    const-string v15, "com.sec.android.app.latin.launcher.stk"
+
+    aput-object v15, v13, v14
+
+    invoke-static {}, Lcom/android/launcher3/common/compat/UserHandleCompat;->myUserHandle()Lcom/android/launcher3/common/compat/UserHandleCompat;
+
+    move-result-object v14
+
+    move-object/from16 v0, p0
+
+    invoke-direct {v12, v0, v6, v13, v14}, Lcom/android/launcher3/LauncherModel$PackageUpdatedTask;-><init>(Lcom/android/launcher3/LauncherModel;I[Ljava/lang/String;Lcom/android/launcher3/common/compat/UserHandleCompat;)V
+
+    move-object/from16 v0, p0
+
+    invoke-virtual {v0, v12}, Lcom/android/launcher3/LauncherModel;->enqueueItemUpdatedTask(Ljava/lang/Runnable;)V
+
+    goto/16 :goto_0
+
+    :cond_8
+    new-instance v12, Lcom/android/launcher3/LauncherModel$PackageUpdatedTask;
+
+    const/4 v13, 0x1
+
+    new-array v13, v13, [Ljava/lang/String;
+
+    const/4 v14, 0x0
+
+    aput-object v7, v13, v14
+
+    invoke-static {}, Lcom/android/launcher3/common/compat/UserHandleCompat;->myUserHandle()Lcom/android/launcher3/common/compat/UserHandleCompat;
+
+    move-result-object v14
+
+    move-object/from16 v0, p0
+
+    invoke-direct {v12, v0, v6, v13, v14}, Lcom/android/launcher3/LauncherModel$PackageUpdatedTask;-><init>(Lcom/android/launcher3/LauncherModel;I[Ljava/lang/String;Lcom/android/launcher3/common/compat/UserHandleCompat;)V
+
+    move-object/from16 v0, p0
+
+    invoke-virtual {v0, v12}, Lcom/android/launcher3/LauncherModel;->enqueueItemUpdatedTask(Ljava/lang/Runnable;)V
+
+    goto/16 :goto_0
+
+    :cond_9
+    const-string v12, "com.sec.sprextension.FORCE_LAUNCHER_REFRESH"
+
+    invoke-virtual {v12, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v12
+
+    if-eqz v12, :cond_a
+
+    invoke-static {}, Lcom/android/launcher3/LauncherAppState;->getLauncherProviderID()Lcom/android/launcher3/LauncherProviderID;
 
     move-result-object v8
 
     if-eqz v8, :cond_0
 
-    new-instance v10, Lcom/android/launcher3/LauncherModel$PackageUpdatedTask;
+    const-string v12, "Launcher.Model"
 
-    const/4 v11, 0x7
+    const-string v13, "[SPRINT] FLR Intent received. Refreshing Launcher..."
 
-    const/4 v12, 0x0
+    invoke-static {v12, v13}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    new-array v12, v12, [Ljava/lang/String;
+    invoke-virtual {v8}, Lcom/android/launcher3/LauncherProviderID;->getScreenIndex()I
 
-    invoke-direct {v10, p0, v11, v12, v8}, Lcom/android/launcher3/LauncherModel$PackageUpdatedTask;-><init>(Lcom/android/launcher3/LauncherModel;I[Ljava/lang/String;Lcom/android/launcher3/common/compat/UserHandleCompat;)V
+    move-result v12
 
-    invoke-virtual {p0, v10}, Lcom/android/launcher3/LauncherModel;->enqueueItemUpdatedTask(Ljava/lang/Runnable;)V
+    const-string v13, "com.sec.android.app.launcher.home.defaultpage.prefs"
 
-    goto :goto_0
+    move-object/from16 v0, p1
 
-    :cond_6
-    const-string v10, "android.intent.action.STK_TITLE_IS_LOADED"
+    invoke-static {v0, v12, v13}, Lcom/android/launcher3/Utilities;->setHomeDefaultPageKey(Landroid/content/Context;ILjava/lang/String;)V
 
-    invoke-virtual {v10, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v10
-
-    if-eqz v10, :cond_9
-
-    const-string v10, "Launcher.Model"
-
-    const-string v11, "receive ACTION_STK_TITLE_IS_LOADED"
-
-    invoke-static {v10, v11}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
-    invoke-static {}, Lcom/samsung/android/feature/SemCscFeature;->getInstance()Lcom/samsung/android/feature/SemCscFeature;
-
-    move-result-object v10
-
-    const-string v11, "CscFeature_RIL_FixedStkMenu"
-
-    invoke-virtual {v10, v11}, Lcom/samsung/android/feature/SemCscFeature;->getBoolean(Ljava/lang/String;)Z
-
-    move-result v3
-
-    invoke-static {}, Lcom/samsung/android/feature/SemCscFeature;->getInstance()Lcom/samsung/android/feature/SemCscFeature;
-
-    move-result-object v10
-
-    const-string v11, "CscFeature_Launcher_FixedStkTitleAs"
-
-    invoke-virtual {v10, v11}, Lcom/samsung/android/feature/SemCscFeature;->getString(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v2
-
-    const-string v10, "gsm.STK_SETUP_MENU"
-
-    const/4 v11, 0x0
-
-    invoke-static {v10, v11}, Landroid/os/SemSystemProperties;->get(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v7
-
-    if-eqz v2, :cond_7
-
-    invoke-virtual {v2}, Ljava/lang/String;->length()I
-
-    move-result v10
-
-    if-lez v10, :cond_7
-
-    const-string v10, "NoSIM%"
-
-    invoke-virtual {v2, v10}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
-
-    move-result v10
-
-    if-eqz v10, :cond_0
-
-    :cond_7
-    if-eqz v7, :cond_0
-
-    invoke-virtual {v7}, Ljava/lang/String;->length()I
-
-    move-result v10
-
-    if-lez v10, :cond_0
-
-    invoke-virtual/range {p2 .. p2}, Landroid/content/Intent;->getData()Landroid/net/Uri;
-
-    move-result-object v10
-
-    invoke-virtual {v10}, Landroid/net/Uri;->getSchemeSpecificPart()Ljava/lang/String;
-
-    move-result-object v5
-
-    if-eqz v5, :cond_0
-
-    invoke-virtual {v5}, Ljava/lang/String;->length()I
-
-    move-result v10
-
-    if-eqz v10, :cond_0
-
-    const-string v10, "Launcher.Model"
-
-    new-instance v11, Ljava/lang/StringBuilder;
-
-    invoke-direct {v11}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v12, "ACTION_STK_TITLE_IS_LOADED stkTitleFromSIM = "
-
-    invoke-virtual {v11, v12}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v11
-
-    invoke-virtual {v11, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v11
-
-    invoke-virtual {v11}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v11
-
-    invoke-static {v10, v11}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
-    const/4 v4, 0x2
-
-    if-eqz v3, :cond_8
-
-    new-instance v10, Lcom/android/launcher3/LauncherModel$PackageUpdatedTask;
-
-    const/4 v11, 0x2
-
-    new-array v11, v11, [Ljava/lang/String;
-
-    const/4 v12, 0x0
-
-    aput-object v5, v11, v12
-
-    const/4 v12, 0x1
-
-    const-string v13, "com.sec.android.app.latin.launcher.stk"
-
-    aput-object v13, v11, v12
-
-    invoke-static {}, Lcom/android/launcher3/common/compat/UserHandleCompat;->myUserHandle()Lcom/android/launcher3/common/compat/UserHandleCompat;
-
-    move-result-object v12
-
-    invoke-direct {v10, p0, v4, v11, v12}, Lcom/android/launcher3/LauncherModel$PackageUpdatedTask;-><init>(Lcom/android/launcher3/LauncherModel;I[Ljava/lang/String;Lcom/android/launcher3/common/compat/UserHandleCompat;)V
-
-    invoke-virtual {p0, v10}, Lcom/android/launcher3/LauncherModel;->enqueueItemUpdatedTask(Ljava/lang/Runnable;)V
-
-    goto/16 :goto_0
-
-    :cond_8
-    new-instance v10, Lcom/android/launcher3/LauncherModel$PackageUpdatedTask;
-
-    const/4 v11, 0x1
-
-    new-array v11, v11, [Ljava/lang/String;
-
-    const/4 v12, 0x0
-
-    aput-object v5, v11, v12
-
-    invoke-static {}, Lcom/android/launcher3/common/compat/UserHandleCompat;->myUserHandle()Lcom/android/launcher3/common/compat/UserHandleCompat;
-
-    move-result-object v12
-
-    invoke-direct {v10, p0, v4, v11, v12}, Lcom/android/launcher3/LauncherModel$PackageUpdatedTask;-><init>(Lcom/android/launcher3/LauncherModel;I[Ljava/lang/String;Lcom/android/launcher3/common/compat/UserHandleCompat;)V
-
-    invoke-virtual {p0, v10}, Lcom/android/launcher3/LauncherModel;->enqueueItemUpdatedTask(Ljava/lang/Runnable;)V
-
-    goto/16 :goto_0
-
-    :cond_9
-    const-string v10, "com.sec.sprextension.FORCE_LAUNCHER_REFRESH"
-
-    invoke-virtual {v10, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v10
-
-    if-eqz v10, :cond_a
-
-    invoke-static {}, Lcom/android/launcher3/LauncherAppState;->getLauncherProviderID()Lcom/android/launcher3/LauncherProviderID;
-
-    move-result-object v6
-
-    if-eqz v6, :cond_0
-
-    const-string v10, "Launcher.Model"
-
-    const-string v11, "[SPRINT] FLR Intent received. Refreshing Launcher..."
-
-    invoke-static {v10, v11}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
-    invoke-virtual {v6}, Lcom/android/launcher3/LauncherProviderID;->getScreenIndex()I
-
-    move-result v10
-
-    const-string v11, "com.sec.android.app.launcher.home.defaultpage.prefs"
-
-    invoke-static {p1, v10, v11}, Lcom/android/launcher3/Utilities;->setHomeDefaultPageKey(Landroid/content/Context;ILjava/lang/String;)V
-
-    invoke-virtual {p0}, Lcom/android/launcher3/LauncherModel;->forceReload()V
+    invoke-virtual/range {p0 .. p0}, Lcom/android/launcher3/LauncherModel;->forceReload()V
 
     goto/16 :goto_0
 
     :cond_a
-    const-string v10, "com.samsung.android.knox.intent.action.EDM_UNINSTALL_STATUS_INTERNAL"
+    const-string v12, "com.samsung.android.knox.intent.action.EDM_UNINSTALL_STATUS_INTERNAL"
 
     invoke-virtual/range {p2 .. p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
 
-    move-result-object v11
+    move-result-object v13
 
-    invoke-virtual {v10, v11}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v12, v13}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move-result v10
+    move-result v12
 
-    if-eqz v10, :cond_0
+    if-eqz v12, :cond_b
 
-    iget-object v10, p0, Lcom/android/launcher3/LauncherModel;->mDisableableAppCache:Lcom/android/launcher3/common/model/DisableableAppCache;
+    move-object/from16 v0, p0
 
-    if-eqz v10, :cond_0
+    iget-object v12, v0, Lcom/android/launcher3/LauncherModel;->mDisableableAppCache:Lcom/android/launcher3/common/model/DisableableAppCache;
 
-    iget-object v10, p0, Lcom/android/launcher3/LauncherModel;->mDisableableAppCache:Lcom/android/launcher3/common/model/DisableableAppCache;
+    if-eqz v12, :cond_0
 
-    invoke-virtual {v10}, Lcom/android/launcher3/common/model/DisableableAppCache;->getEnterprisePolicyBlockUninstallList()V
+    move-object/from16 v0, p0
+
+    iget-object v12, v0, Lcom/android/launcher3/LauncherModel;->mDisableableAppCache:Lcom/android/launcher3/common/model/DisableableAppCache;
+
+    invoke-virtual {v12}, Lcom/android/launcher3/common/model/DisableableAppCache;->getEnterprisePolicyBlockUninstallList()V
+
+    goto/16 :goto_0
+
+    :cond_b
+    const-string v12, "android.intent.action.CONFIGURATION_CHANGED"
+
+    invoke-virtual {v12, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v12
+
+    if-eqz v12, :cond_0
+
+    move-object/from16 v0, p0
+
+    iget-object v12, v0, Lcom/android/launcher3/LauncherModel;->mApp:Lcom/android/launcher3/LauncherAppState;
+
+    invoke-virtual {v12}, Lcom/android/launcher3/LauncherAppState;->getContext()Landroid/content/Context;
+
+    move-result-object v12
+
+    invoke-virtual {v12}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
+
+    move-result-object v12
+
+    invoke-virtual {v12}, Landroid/content/res/Resources;->getConfiguration()Landroid/content/res/Configuration;
+
+    move-result-object v3
+
+    move-object/from16 v0, p0
+
+    invoke-direct {v0, v3}, Lcom/android/launcher3/LauncherModel;->isNetworkCodeChanged(Landroid/content/res/Configuration;)Z
+
+    move-result v12
+
+    if-eqz v12, :cond_0
+
+    invoke-direct/range {p0 .. p0}, Lcom/android/launcher3/LauncherModel;->setNetworkLocked()V
+
+    invoke-virtual/range {p0 .. p0}, Lcom/android/launcher3/LauncherModel;->forceIconReload()V
 
     goto/16 :goto_0
 .end method
@@ -2303,7 +2609,13 @@
 .end method
 
 .method public registerOnAllAppItemListLoadCompletedListener(Lcom/android/launcher3/LauncherModel$OnAllAppItemListLoadCompletedListener;)V
-    .locals 0
+    .locals 2
+
+    const-string v0, "Launcher.Model"
+
+    const-string v1, "registerOnAllAppItemListLoadCompletedListener"
+
+    invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
     iput-object p1, p0, Lcom/android/launcher3/LauncherModel;->mOnAllAppItemListLoadCompletedListener:Lcom/android/launcher3/LauncherModel$OnAllAppItemListLoadCompletedListener;
 
@@ -2397,7 +2709,7 @@
 .end method
 
 .method public startLoader(I)V
-    .locals 4
+    .locals 3
 
     iget-object v0, p0, Lcom/android/launcher3/LauncherModel;->mApp:Lcom/android/launcher3/LauncherAppState;
 
@@ -2454,55 +2766,45 @@
 
     invoke-direct {p0}, Lcom/android/launcher3/LauncherModel;->stopLoaderLocked()V
 
-    new-instance v2, Lcom/android/launcher3/LauncherModel$LoaderTask;
+    new-instance v0, Lcom/android/launcher3/LauncherModel$LoaderTask;
 
-    iget-object v0, p0, Lcom/android/launcher3/LauncherModel;->mApp:Lcom/android/launcher3/LauncherAppState;
+    iget-object v2, p0, Lcom/android/launcher3/LauncherModel;->mApp:Lcom/android/launcher3/LauncherAppState;
 
-    invoke-virtual {v0}, Lcom/android/launcher3/LauncherAppState;->getContext()Landroid/content/Context;
+    invoke-virtual {v2}, Lcom/android/launcher3/LauncherAppState;->getContext()Landroid/content/Context;
 
-    move-result-object v3
+    move-result-object v2
 
-    if-ltz p1, :cond_1
+    invoke-direct {v0, p0, v2}, Lcom/android/launcher3/LauncherModel$LoaderTask;-><init>(Lcom/android/launcher3/LauncherModel;Landroid/content/Context;)V
 
-    move v0, p1
-
-    :goto_0
-    invoke-direct {v2, p0, v3, v0}, Lcom/android/launcher3/LauncherModel$LoaderTask;-><init>(Lcom/android/launcher3/LauncherModel;Landroid/content/Context;I)V
-
-    iput-object v2, p0, Lcom/android/launcher3/LauncherModel;->mLoaderTask:Lcom/android/launcher3/LauncherModel$LoaderTask;
+    iput-object v0, p0, Lcom/android/launcher3/LauncherModel;->mLoaderTask:Lcom/android/launcher3/LauncherModel$LoaderTask;
 
     const/16 v0, -0x3e9
 
-    if-eq p1, v0, :cond_2
+    if-eq p1, v0, :cond_1
 
     iget-boolean v0, p0, Lcom/android/launcher3/LauncherModel;->mAllAppsLoaded:Z
 
-    if-eqz v0, :cond_2
+    if-eqz v0, :cond_1
 
     iget-boolean v0, p0, Lcom/android/launcher3/LauncherModel;->mWorkspaceLoaded:Z
 
-    if-eqz v0, :cond_2
+    if-eqz v0, :cond_1
 
     iget-boolean v0, p0, Lcom/android/launcher3/LauncherModel;->mIsLoaderTaskRunning:Z
 
-    if-nez v0, :cond_2
+    if-nez v0, :cond_1
 
     iget-object v0, p0, Lcom/android/launcher3/LauncherModel;->mLoaderTask:Lcom/android/launcher3/LauncherModel$LoaderTask;
 
     invoke-virtual {v0, p1}, Lcom/android/launcher3/LauncherModel$LoaderTask;->runBindSynchronousPage(I)V
 
     :cond_0
-    :goto_1
+    :goto_0
     monitor-exit v1
 
     return-void
 
     :cond_1
-    const/4 v0, -0x1
-
-    goto :goto_0
-
-    :cond_2
     sget-object v0, Lcom/android/launcher3/LauncherModel;->sWorkerThread:Landroid/os/HandlerThread;
 
     const/4 v2, 0x5
@@ -2515,7 +2817,7 @@
 
     invoke-virtual {v0, v2}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
-    goto :goto_1
+    goto :goto_0
 
     :catchall_0
     move-exception v0
@@ -2601,13 +2903,19 @@
 .end method
 
 .method public unregisterOnAllAppItemListLoadCompletedListener(Lcom/android/launcher3/Launcher;)V
-    .locals 1
+    .locals 2
 
     invoke-virtual {p0, p1}, Lcom/android/launcher3/LauncherModel;->isCurrentCallbacks(Lcom/android/launcher3/LauncherModel$Callbacks;)Z
 
     move-result v0
 
     if-eqz v0, :cond_0
+
+    const-string v0, "Launcher.Model"
+
+    const-string v1, "unregisterOnAllAppItemListLoadCompletedListener"
+
+    invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
     const/4 v0, 0x0
 

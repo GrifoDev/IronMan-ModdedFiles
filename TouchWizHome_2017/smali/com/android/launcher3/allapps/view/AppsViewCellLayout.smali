@@ -45,7 +45,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f0a00eb
+    const v1, 0x7f0a00ef
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDimensionPixelOffset(I)I
 
@@ -498,7 +498,7 @@
     return v0
 .end method
 
-.method public updateIconViews()V
+.method public updateIconViews(Z)V
     .locals 5
 
     iget-object v4, p0, Lcom/android/launcher3/allapps/view/AppsViewCellLayout;->mChildren:Lcom/android/launcher3/common/base/view/CellLayoutChildren;
@@ -528,7 +528,7 @@
 
     check-cast v1, Lcom/android/launcher3/folder/view/FolderIconView;
 
-    invoke-virtual {v1}, Lcom/android/launcher3/folder/view/FolderIconView;->applyStyle()V
+    invoke-virtual {v1, p1}, Lcom/android/launcher3/folder/view/FolderIconView;->applyStyle(Z)V
 
     :cond_0
     :goto_1
@@ -546,6 +546,8 @@
     check-cast v3, Lcom/android/launcher3/common/view/IconView;
 
     invoke-virtual {v3}, Lcom/android/launcher3/common/view/IconView;->applyStyle()V
+
+    if-eqz p1, :cond_0
 
     invoke-virtual {v0}, Landroid/view/View;->getTag()Ljava/lang/Object;
 

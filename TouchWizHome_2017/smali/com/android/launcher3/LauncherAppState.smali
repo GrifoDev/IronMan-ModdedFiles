@@ -114,9 +114,9 @@
 
 .field private final mModel:Lcom/android/launcher3/LauncherModel;
 
-.field public mPortraitProfile:Lcom/android/launcher3/common/deviceprofile/DeviceProfile;
+.field private mNotificationPanelExpansionEnabled:Z
 
-.field private mSavedHotseatIconsBitmap:[Landroid/os/Parcelable;
+.field public mPortraitProfile:Lcom/android/launcher3/common/deviceprofile/DeviceProfile;
 
 .field private mStateManager:Lcom/android/launcher3/executor/StateManager;
 
@@ -162,6 +162,8 @@
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     iput-boolean v9, p0, Lcom/android/launcher3/LauncherAppState;->mCloneItemEnabled:Z
+
+    iput-boolean v8, p0, Lcom/android/launcher3/LauncherAppState;->mNotificationPanelExpansionEnabled:Z
 
     iput-boolean v8, p0, Lcom/android/launcher3/LauncherAppState;->mIsEasyMode:Z
 
@@ -310,6 +312,10 @@
 
     invoke-virtual {v6, v0}, Landroid/content/IntentFilter;->addAction(Ljava/lang/String;)V
 
+    const-string v0, "android.intent.action.CONFIGURATION_CHANGED"
+
+    invoke-virtual {v6, v0}, Landroid/content/IntentFilter;->addAction(Ljava/lang/String;)V
+
     const-string v0, "com.samsung.settings.ICON_BACKGROUNDS_CHANGED"
 
     invoke-virtual {v6, v0}, Landroid/content/IntentFilter;->addAction(Ljava/lang/String;)V
@@ -401,15 +407,30 @@
 
     iput-boolean v0, p0, Lcom/android/launcher3/LauncherAppState;->mCloneItemEnabled:Z
 
-    invoke-static {}, Lcom/android/launcher3/LauncherFeature;->supportEasyModeChange()Z
+    invoke-static {}, Lcom/android/launcher3/LauncherFeature;->supportNotificationPanelExpansion()Z
 
     move-result v0
 
     if-eqz v0, :cond_2
 
-    invoke-direct {p0}, Lcom/android/launcher3/LauncherAppState;->initEasyMode()V
+    const-string v0, "pref_notification_panel_setting"
+
+    invoke-interface {v7, v0, v8}, Landroid/content/SharedPreferences;->getBoolean(Ljava/lang/String;Z)Z
+
+    move-result v0
+
+    iput-boolean v0, p0, Lcom/android/launcher3/LauncherAppState;->mNotificationPanelExpansionEnabled:Z
 
     :cond_2
+    invoke-static {}, Lcom/android/launcher3/LauncherFeature;->supportEasyModeChange()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_3
+
+    invoke-direct {p0}, Lcom/android/launcher3/LauncherAppState;->initEasyMode()V
+
+    :cond_3
     invoke-virtual {p0}, Lcom/android/launcher3/LauncherAppState;->initHomeOnlyMode()V
 
     iget-boolean v0, p0, Lcom/android/launcher3/LauncherAppState;->mIsHomeOnlyMode:Z
@@ -420,13 +441,13 @@
 
     move-result v0
 
-    if-nez v0, :cond_3
+    if-nez v0, :cond_4
 
     iget-object v0, p0, Lcom/android/launcher3/LauncherAppState;->mModel:Lcom/android/launcher3/LauncherModel;
 
     invoke-virtual {v0, p0}, Lcom/android/launcher3/LauncherModel;->reloadBadges(Lcom/android/launcher3/LauncherAppState;)V
 
-    :cond_3
+    :cond_4
     new-instance v0, Lcom/android/launcher3/executor/StateManager;
 
     invoke-direct {v0}, Lcom/android/launcher3/executor/StateManager;-><init>()V
@@ -907,6 +928,14 @@
     iget-object v0, p0, Lcom/android/launcher3/LauncherAppState;->mModel:Lcom/android/launcher3/LauncherModel;
 
     return-object v0
+.end method
+
+.method public getNotificationPanelExpansionEnabled()Z
+    .locals 1
+
+    iget-boolean v0, p0, Lcom/android/launcher3/LauncherAppState;->mNotificationPanelExpansionEnabled:Z
+
+    return v0
 .end method
 
 .method public getSettingsActivity()Lcom/android/launcher3/SettingsActivity;
@@ -1824,6 +1853,21 @@
     iget-object v0, p0, Lcom/android/launcher3/LauncherAppState;->mModel:Lcom/android/launcher3/LauncherModel;
 
     return-object v0
+.end method
+
+.method public setNotificationPanelExpansionEnabled(Z)V
+    .locals 1
+
+    invoke-static {}, Lcom/android/launcher3/LauncherFeature;->supportNotificationPanelExpansion()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    iput-boolean p1, p0, Lcom/android/launcher3/LauncherAppState;->mNotificationPanelExpansionEnabled:Z
+
+    :cond_0
+    return-void
 .end method
 
 .method setSettingsActivity(Lcom/android/launcher3/SettingsActivity;)V

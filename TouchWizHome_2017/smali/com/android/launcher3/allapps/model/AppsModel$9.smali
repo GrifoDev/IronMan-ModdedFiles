@@ -37,6 +37,12 @@
 .method public run()V
     .locals 8
 
+    sget-object v3, Lcom/android/launcher3/allapps/model/AppsModel;->TAG:Ljava/lang/String;
+
+    const-string v4, "onLauncherBindingItemsCompleted"
+
+    invoke-static {v3, v4}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
+
     invoke-static {}, Lcom/android/launcher3/gamehome/GameHomeManager;->getInstance()Lcom/android/launcher3/gamehome/GameHomeManager;
 
     move-result-object v3
@@ -78,9 +84,35 @@
     invoke-virtual {v1, v2}, Lcom/android/launcher3/common/model/IconCache;->updateDbIcons(Ljava/util/Set;)V
 
     :cond_0
+    sget-object v3, Lcom/android/launcher3/allapps/model/AppsModel;->TAG:Ljava/lang/String;
+
+    new-instance v4, Ljava/lang/StringBuilder;
+
+    invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v5, "onLauncherBindingItemsCompleted mIsBootCompleted = "
+
+    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v4
+
+    invoke-static {}, Lcom/android/launcher3/allapps/model/AppsModel;->access$2900()Z
+
+    move-result v5
+
+    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+
+    move-result-object v4
+
+    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v4
+
+    invoke-static {v3, v4}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
+
     iget-object v3, p0, Lcom/android/launcher3/allapps/model/AppsModel$9;->this$0:Lcom/android/launcher3/allapps/model/AppsModel;
 
-    invoke-static {v3}, Lcom/android/launcher3/allapps/model/AppsModel;->access$2900(Lcom/android/launcher3/allapps/model/AppsModel;)Lcom/android/launcher3/allapps/model/AppsModel$LoadTask;
+    invoke-static {v3}, Lcom/android/launcher3/allapps/model/AppsModel;->access$3000(Lcom/android/launcher3/allapps/model/AppsModel;)Lcom/android/launcher3/allapps/model/AppsModel$LoadTask;
 
     move-result-object v3
 
@@ -88,7 +120,7 @@
 
     iget-object v3, p0, Lcom/android/launcher3/allapps/model/AppsModel$9;->this$0:Lcom/android/launcher3/allapps/model/AppsModel;
 
-    invoke-static {v3}, Lcom/android/launcher3/allapps/model/AppsModel;->access$2900(Lcom/android/launcher3/allapps/model/AppsModel;)Lcom/android/launcher3/allapps/model/AppsModel$LoadTask;
+    invoke-static {v3}, Lcom/android/launcher3/allapps/model/AppsModel;->access$3000(Lcom/android/launcher3/allapps/model/AppsModel;)Lcom/android/launcher3/allapps/model/AppsModel$LoadTask;
 
     move-result-object v3
 
@@ -98,13 +130,13 @@
 
     if-nez v3, :cond_1
 
-    invoke-static {}, Lcom/android/launcher3/allapps/model/AppsModel;->access$3000()Z
+    invoke-static {}, Lcom/android/launcher3/allapps/model/AppsModel;->access$3100()Z
 
     move-result v3
 
     if-nez v3, :cond_1
 
-    invoke-static {}, Lcom/android/launcher3/allapps/model/AppsModel;->access$3100()Ljava/util/HashMap;
+    invoke-static {}, Lcom/android/launcher3/allapps/model/AppsModel;->access$3200()Ljava/util/HashMap;
 
     move-result-object v3
 
@@ -120,7 +152,7 @@
 
     invoke-static {v3, v4}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    invoke-static {}, Lcom/android/launcher3/allapps/model/AppsModel;->access$3300()Landroid/content/Context;
+    invoke-static {}, Lcom/android/launcher3/allapps/model/AppsModel;->access$3400()Landroid/content/Context;
 
     move-result-object v3
 
@@ -136,12 +168,22 @@
 
     const/4 v6, 0x0
 
-    invoke-static {}, Lcom/android/launcher3/allapps/model/AppsModel;->access$3200()Landroid/os/Handler;
+    invoke-static {}, Lcom/android/launcher3/allapps/model/AppsModel;->access$3300()Landroid/os/Handler;
 
     move-result-object v7
 
     invoke-virtual {v3, v4, v5, v6, v7}, Landroid/content/Context;->registerReceiver(Landroid/content/BroadcastReceiver;Landroid/content/IntentFilter;Ljava/lang/String;Landroid/os/Handler;)Landroid/content/Intent;
 
     :cond_1
+    invoke-static {}, Lcom/android/launcher3/util/logging/SALogging;->getInstance()Lcom/android/launcher3/util/logging/SALogging;
+
+    move-result-object v3
+
+    invoke-static {}, Lcom/android/launcher3/allapps/model/AppsModel;->access$3500()Landroid/content/Context;
+
+    move-result-object v4
+
+    invoke-virtual {v3, v4}, Lcom/android/launcher3/util/logging/SALogging;->setDefaultValueForAppStatusLog(Landroid/content/Context;)V
+
     return-void
 .end method

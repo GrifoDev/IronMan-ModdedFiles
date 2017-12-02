@@ -45,7 +45,7 @@
 .method public run()V
     .locals 10
 
-    invoke-static {}, Lcom/android/launcher3/home/HomeLoader;->access$12300()Ljava/lang/Object;
+    invoke-static {}, Lcom/android/launcher3/home/HomeLoader;->access$12600()Ljava/lang/Object;
 
     move-result-object v5
 
@@ -54,7 +54,7 @@
     :try_start_0
     iget-object v4, p0, Lcom/android/launcher3/home/HomeLoader$45;->this$0:Lcom/android/launcher3/home/HomeLoader;
 
-    invoke-static {v4}, Lcom/android/launcher3/home/HomeLoader;->access$12400(Lcom/android/launcher3/home/HomeLoader;)Ljava/util/ArrayList;
+    invoke-static {v4}, Lcom/android/launcher3/home/HomeLoader;->access$12700(Lcom/android/launcher3/home/HomeLoader;)Ljava/util/ArrayList;
 
     move-result-object v4
 
@@ -80,7 +80,7 @@
 
     iget-object v4, p0, Lcom/android/launcher3/home/HomeLoader$45;->this$0:Lcom/android/launcher3/home/HomeLoader;
 
-    invoke-static {v4}, Lcom/android/launcher3/home/HomeLoader;->access$12400(Lcom/android/launcher3/home/HomeLoader;)Ljava/util/ArrayList;
+    invoke-static {v4}, Lcom/android/launcher3/home/HomeLoader;->access$12700(Lcom/android/launcher3/home/HomeLoader;)Ljava/util/ArrayList;
 
     move-result-object v4
 
@@ -111,7 +111,7 @@
 
     iget-object v4, p0, Lcom/android/launcher3/home/HomeLoader$45;->this$0:Lcom/android/launcher3/home/HomeLoader;
 
-    invoke-static {v4}, Lcom/android/launcher3/home/HomeLoader;->access$12500(Lcom/android/launcher3/home/HomeLoader;)Lcom/android/launcher3/common/model/FavoritesUpdater;
+    invoke-static {v4}, Lcom/android/launcher3/home/HomeLoader;->access$12800(Lcom/android/launcher3/home/HomeLoader;)Lcom/android/launcher3/common/model/FavoritesUpdater;
 
     move-result-object v4
 
@@ -168,7 +168,7 @@
 
     iget-object v6, p0, Lcom/android/launcher3/home/HomeLoader$45;->val$appsButton:Lcom/android/launcher3/common/base/item/IconInfo;
 
-    invoke-static {v4, v6, v1}, Lcom/android/launcher3/home/HomeLoader;->access$12600(Lcom/android/launcher3/home/HomeLoader;Lcom/android/launcher3/common/base/item/ItemInfo;I)V
+    invoke-static {v4, v6, v1}, Lcom/android/launcher3/home/HomeLoader;->access$12900(Lcom/android/launcher3/home/HomeLoader;Lcom/android/launcher3/common/base/item/ItemInfo;I)V
 
     monitor-exit v5
 

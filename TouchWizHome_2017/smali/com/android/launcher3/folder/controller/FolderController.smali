@@ -978,6 +978,20 @@
     return v0
 .end method
 
+.method protected getSupportSoftInputParam(Landroid/view/Window;)I
+    .locals 2
+
+    invoke-virtual {p1}, Landroid/view/Window;->getAttributes()Landroid/view/WindowManager$LayoutParams;
+
+    move-result-object v1
+
+    iget v0, v1, Landroid/view/WindowManager$LayoutParams;->softInputMode:I
+
+    and-int/lit8 v1, v0, -0x11
+
+    return v1
+.end method
+
 .method getTargetFolderIconView()Lcom/android/launcher3/folder/view/FolderIconView;
     .locals 1
 
@@ -1071,6 +1085,12 @@
     if-eqz v2, :cond_0
 
     invoke-virtual {v0}, Lcom/android/launcher3/folder/view/FolderView;->dismissEditingName()V
+
+    invoke-virtual {v0}, Lcom/android/launcher3/folder/view/FolderView;->isInTouchMode()Z
+
+    move-result v2
+
+    if-eqz v2, :cond_0
 
     :goto_0
     return v1
@@ -1178,7 +1198,7 @@
 
     move-result-object v3
 
-    const v4, 0x7f0900c0
+    const v4, 0x7f0900c8
 
     invoke-virtual {v3, v4}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -1344,7 +1364,7 @@
     .end packed-switch
 .end method
 
-.method public onConfigurationChangedIfNeeded()V
+.method public onConfigurationChangedIfNeeded(Z)V
     .locals 1
 
     const/4 v0, 0x0
@@ -1876,6 +1896,14 @@
     goto/16 :goto_1
 .end method
 
+.method protected onStageEnterByTray()Landroid/animation/Animator;
+    .locals 1
+
+    const/4 v0, 0x0
+
+    return-object v0
+.end method
+
 .method protected onStageExit(Lcom/android/launcher3/common/stage/StageEntry;)Landroid/animation/Animator;
     .locals 12
 
@@ -2062,14 +2090,14 @@
 
     if-eqz v10, :cond_d
 
-    const v10, 0x7f090196
+    const v10, 0x7f0901a3
 
     invoke-virtual {v6, v10}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
     move-result-object v7
 
     :goto_4
-    const v10, 0x7f090127
+    const v10, 0x7f090130
 
     invoke-virtual {v6, v10}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -2137,7 +2165,7 @@
     goto :goto_3
 
     :cond_d
-    const v10, 0x7f0901a2
+    const v10, 0x7f0901af
 
     invoke-virtual {v6, v10}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -2181,6 +2209,14 @@
     move-result-object v2
 
     goto :goto_5
+.end method
+
+.method protected onStageExitByTray()Landroid/animation/Animator;
+    .locals 1
+
+    const/4 v0, 0x0
+
+    return-object v0
 .end method
 
 .method protected onStageMovingToInitial(Lcom/android/launcher3/common/stage/StageEntry;)V

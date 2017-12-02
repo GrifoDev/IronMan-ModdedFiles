@@ -168,7 +168,7 @@
 
     iget-object v5, p0, Lcom/android/launcher3/common/quickoption/QuickOptionListAdapter;->mLauncher:Lcom/android/launcher3/Launcher;
 
-    const v6, 0x7f0900a1
+    const v6, 0x7f0900a3
 
     invoke-virtual {v5, v6}, Lcom/android/launcher3/Launcher;->getString(I)Ljava/lang/String;
 
@@ -243,7 +243,7 @@
 
     move-result v5
 
-    const v6, 0x7f09009a
+    const v6, 0x7f09009c
 
     if-ne v5, v6, :cond_2
 

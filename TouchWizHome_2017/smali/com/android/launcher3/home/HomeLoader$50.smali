@@ -65,7 +65,7 @@
 .method public run()V
     .locals 35
 
-    invoke-static {}, Lcom/android/launcher3/home/HomeLoader;->access$14300()Ljava/lang/Object;
+    invoke-static {}, Lcom/android/launcher3/home/HomeLoader;->access$14600()Ljava/lang/Object;
 
     move-result-object v29
 
@@ -78,7 +78,7 @@
 
     move-object/from16 v28, v0
 
-    invoke-static/range {v28 .. v28}, Lcom/android/launcher3/home/HomeLoader;->access$14400(Lcom/android/launcher3/home/HomeLoader;)Ljava/util/ArrayList;
+    invoke-static/range {v28 .. v28}, Lcom/android/launcher3/home/HomeLoader;->access$14700(Lcom/android/launcher3/home/HomeLoader;)Ljava/util/ArrayList;
 
     move-result-object v28
 
@@ -163,7 +163,7 @@
 
     move-object/from16 v28, v0
 
-    invoke-static {}, Lcom/android/launcher3/home/HomeLoader;->access$14500()Landroid/content/Context;
+    invoke-static {}, Lcom/android/launcher3/home/HomeLoader;->access$14800()Landroid/content/Context;
 
     move-result-object v30
 
@@ -219,7 +219,7 @@
 
     move-object/from16 v28, v0
 
-    invoke-static/range {v28 .. v28}, Lcom/android/launcher3/home/HomeLoader;->access$14600(Lcom/android/launcher3/home/HomeLoader;)Ljava/util/ArrayList;
+    invoke-static/range {v28 .. v28}, Lcom/android/launcher3/home/HomeLoader;->access$14900(Lcom/android/launcher3/home/HomeLoader;)Ljava/util/ArrayList;
 
     move-result-object v28
 
@@ -255,7 +255,7 @@
 
     if-eqz v28, :cond_5
 
-    invoke-static {}, Lcom/android/launcher3/home/HomeLoader;->access$14700()Landroid/content/Context;
+    invoke-static {}, Lcom/android/launcher3/home/HomeLoader;->access$15000()Landroid/content/Context;
 
     move-result-object v28
 
@@ -281,7 +281,7 @@
 
     new-instance v9, Landroid/appwidget/AppWidgetHost;
 
-    invoke-static {}, Lcom/android/launcher3/home/HomeLoader;->access$14800()Landroid/content/Context;
+    invoke-static {}, Lcom/android/launcher3/home/HomeLoader;->access$15100()Landroid/content/Context;
 
     move-result-object v28
 
@@ -299,7 +299,7 @@
 
     if-eqz v22, :cond_1
 
-    invoke-static {}, Lcom/android/launcher3/home/HomeLoader;->access$14900()Landroid/content/Context;
+    invoke-static {}, Lcom/android/launcher3/home/HomeLoader;->access$15200()Landroid/content/Context;
 
     move-result-object v28
 
@@ -510,7 +510,7 @@
     goto :goto_2
 
     :cond_7
-    invoke-static {}, Lcom/android/launcher3/home/HomeLoader;->access$15000()Lcom/android/launcher3/common/compat/LauncherAppsCompat;
+    invoke-static {}, Lcom/android/launcher3/home/HomeLoader;->access$15300()Lcom/android/launcher3/common/compat/LauncherAppsCompat;
 
     move-result-object v28
 
@@ -569,7 +569,7 @@
 
     if-eqz v30, :cond_8
 
-    invoke-static {}, Lcom/android/launcher3/home/HomeLoader;->access$15100()Landroid/content/Context;
+    invoke-static {}, Lcom/android/launcher3/home/HomeLoader;->access$15400()Landroid/content/Context;
 
     move-result-object v28
 
@@ -646,7 +646,7 @@
 
     move-object/from16 v28, v0
 
-    invoke-static/range {v28 .. v28}, Lcom/android/launcher3/home/HomeLoader;->access$15200(Lcom/android/launcher3/home/HomeLoader;)Ljava/util/HashMap;
+    invoke-static/range {v28 .. v28}, Lcom/android/launcher3/home/HomeLoader;->access$15500(Lcom/android/launcher3/home/HomeLoader;)Ljava/util/HashMap;
 
     move-result-object v28
 
@@ -903,7 +903,7 @@
 
     move-object/from16 v28, v0
 
-    invoke-static/range {v28 .. v28}, Lcom/android/launcher3/home/HomeLoader;->access$15300(Lcom/android/launcher3/home/HomeLoader;)Lcom/android/launcher3/common/model/FavoritesUpdater;
+    invoke-static/range {v28 .. v28}, Lcom/android/launcher3/home/HomeLoader;->access$15600(Lcom/android/launcher3/home/HomeLoader;)Lcom/android/launcher3/common/model/FavoritesUpdater;
 
     move-result-object v28
 
@@ -926,7 +926,7 @@
 
     move-object/from16 v28, v0
 
-    invoke-static {}, Lcom/android/launcher3/home/HomeLoader;->access$15500()Landroid/content/Context;
+    invoke-static {}, Lcom/android/launcher3/home/HomeLoader;->access$15800()Landroid/content/Context;
 
     move-result-object v30
 
@@ -977,7 +977,7 @@
 
     move-object/from16 v1, v30
 
-    invoke-static {v0, v1}, Lcom/android/launcher3/home/HomeLoader;->access$15600(Lcom/android/launcher3/home/HomeLoader;Ljava/lang/Runnable;)V
+    invoke-static {v0, v1}, Lcom/android/launcher3/home/HomeLoader;->access$15900(Lcom/android/launcher3/home/HomeLoader;Ljava/lang/Runnable;)V
 
     :goto_7
     monitor-exit v29
@@ -1002,7 +1002,7 @@
 
     move-object/from16 v28, v0
 
-    invoke-static/range {v28 .. v28}, Lcom/android/launcher3/home/HomeLoader;->access$15400(Lcom/android/launcher3/home/HomeLoader;)Lcom/android/launcher3/common/model/FavoritesUpdater;
+    invoke-static/range {v28 .. v28}, Lcom/android/launcher3/home/HomeLoader;->access$15700(Lcom/android/launcher3/home/HomeLoader;)Lcom/android/launcher3/common/model/FavoritesUpdater;
 
     move-result-object v28
 

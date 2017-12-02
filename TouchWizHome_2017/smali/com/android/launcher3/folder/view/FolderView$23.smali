@@ -3,12 +3,12 @@
 .source "FolderView.java"
 
 # interfaces
-.implements Ljava/lang/Runnable;
+.implements Landroid/view/animation/Animation$AnimationListener;
 
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/android/launcher3/folder/view/FolderView;->setSuppressFolderNameFocus(J)V
+    value = Lcom/android/launcher3/folder/view/FolderView;->animateDismiss(Landroid/view/View;Z)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -20,12 +20,20 @@
 # instance fields
 .field final synthetic this$0:Lcom/android/launcher3/folder/view/FolderView;
 
+.field final synthetic val$keepLayout:Z
+
+.field final synthetic val$targetView:Landroid/view/View;
+
 
 # direct methods
-.method constructor <init>(Lcom/android/launcher3/folder/view/FolderView;)V
+.method constructor <init>(Lcom/android/launcher3/folder/view/FolderView;Landroid/view/View;Z)V
     .locals 0
 
     iput-object p1, p0, Lcom/android/launcher3/folder/view/FolderView$23;->this$0:Lcom/android/launcher3/folder/view/FolderView;
+
+    iput-object p2, p0, Lcom/android/launcher3/folder/view/FolderView$23;->val$targetView:Landroid/view/View;
+
+    iput-boolean p3, p0, Lcom/android/launcher3/folder/view/FolderView$23;->val$keepLayout:Z
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -34,18 +42,41 @@
 
 
 # virtual methods
-.method public run()V
+.method public onAnimationEnd(Landroid/view/animation/Animation;)V
     .locals 2
 
-    iget-object v0, p0, Lcom/android/launcher3/folder/view/FolderView$23;->this$0:Lcom/android/launcher3/folder/view/FolderView;
+    iget-object v0, p0, Lcom/android/launcher3/folder/view/FolderView$23;->val$targetView:Landroid/view/View;
 
-    invoke-static {v0}, Lcom/android/launcher3/folder/view/FolderView;->access$200(Lcom/android/launcher3/folder/view/FolderView;)Lcom/android/launcher3/folder/view/FolderNameEditText;
+    if-eqz v0, :cond_0
 
-    move-result-object v0
+    iget-object v1, p0, Lcom/android/launcher3/folder/view/FolderView$23;->val$targetView:Landroid/view/View;
 
-    const/4 v1, 0x1
+    iget-boolean v0, p0, Lcom/android/launcher3/folder/view/FolderView$23;->val$keepLayout:Z
 
-    invoke-virtual {v0, v1}, Lcom/android/launcher3/folder/view/FolderNameEditText;->setFocusableInTouchMode(Z)V
+    if-eqz v0, :cond_1
+
+    const/4 v0, 0x4
+
+    :goto_0
+    invoke-virtual {v1, v0}, Landroid/view/View;->setVisibility(I)V
+
+    :cond_0
+    return-void
+
+    :cond_1
+    const/16 v0, 0x8
+
+    goto :goto_0
+.end method
+
+.method public onAnimationRepeat(Landroid/view/animation/Animation;)V
+    .locals 0
+
+    return-void
+.end method
+
+.method public onAnimationStart(Landroid/view/animation/Animation;)V
+    .locals 0
 
     return-void
 .end method

@@ -164,6 +164,14 @@
     return-object v0
 .end method
 
+.method static synthetic access$600(Lcom/android/launcher3/home/HomeTransitionAnimation;)Lcom/android/launcher3/home/HomeController;
+    .locals 1
+
+    iget-object v0, p0, Lcom/android/launcher3/home/HomeTransitionAnimation;->mHomeController:Lcom/android/launcher3/home/HomeController;
+
+    return-object v0
+.end method
+
 .method private animateExitAppsOrWidget(Landroid/animation/AnimatorSet;ZZ)V
     .locals 7
 
@@ -257,34 +265,57 @@
 .end method
 
 .method private animateSwipeHometray(Landroid/animation/AnimatorSet;ZJZ)V
-    .locals 13
+    .locals 11
 
-    if-eqz p2, :cond_0
+    const/4 v9, 0x0
+
+    iget-object v0, p0, Lcom/android/launcher3/home/HomeTransitionAnimation;->mTrayManager:Lcom/android/launcher3/common/tray/TrayManager;
+
+    if-eqz v0, :cond_1
+
+    iget-object v0, p0, Lcom/android/launcher3/home/HomeTransitionAnimation;->mTrayManager:Lcom/android/launcher3/common/tray/TrayManager;
+
+    invoke-virtual {v0}, Lcom/android/launcher3/common/tray/TrayManager;->getTrayMovingRange()I
+
+    move-result v10
+
+    iget-object v0, p0, Lcom/android/launcher3/home/HomeTransitionAnimation;->mTrayManager:Lcom/android/launcher3/common/tray/TrayManager;
+
+    invoke-virtual {v0}, Lcom/android/launcher3/common/tray/TrayManager;->getTrayMovingDistance()F
+
+    move-result v9
+
+    :goto_0
+    if-eqz p2, :cond_2
 
     const/4 v3, 0x0
 
-    :goto_0
+    :goto_1
     const-wide/16 v0, 0x0
 
     cmp-long v0, p3, v0
 
-    if-gez v0, :cond_3
+    if-gez v0, :cond_6
 
-    invoke-direct {p0, p2}, Lcom/android/launcher3/home/HomeTransitionAnimation;->getSwipeAnimationDuration(Z)I
+    if-eqz v10, :cond_0
+
+    const/4 v0, 0x0
+
+    cmpl-float v0, v9, v0
+
+    if-nez v0, :cond_4
+
+    :cond_0
+    const/4 v0, 0x0
+
+    :goto_2
+    invoke-direct {p0, p2, v0}, Lcom/android/launcher3/home/HomeTransitionAnimation;->getSwipeAnimationDuration(ZF)I
 
     move-result v0
 
-    int-to-long v8, v0
+    int-to-long v4, v0
 
-    :goto_1
-    long-to-float v0, v8
-
-    const v1, 0x3f4ccccd    # 0.8f
-
-    mul-float/2addr v0, v1
-
-    float-to-long v4, v0
-
+    :goto_3
     iget-object v0, p0, Lcom/android/launcher3/home/HomeTransitionAnimation;->mHomeRootView:Landroid/view/View;
 
     sget-object v1, Landroid/view/View;->TRANSLATION_Y:Landroid/util/Property;
@@ -303,13 +334,13 @@
 
     invoke-static {v0, v1, v2}, Lcom/android/launcher3/util/animation/LauncherAnimUtils;->ofFloat(Landroid/view/View;Ljava/lang/String;[F)Landroid/animation/ObjectAnimator;
 
-    move-result-object v10
+    move-result-object v8
 
-    invoke-virtual {v10, v8, v9}, Landroid/animation/Animator;->setDuration(J)Landroid/animation/Animator;
+    invoke-virtual {v8, v4, v5}, Landroid/animation/Animator;->setDuration(J)Landroid/animation/Animator;
 
     iget-object v0, p0, Lcom/android/launcher3/home/HomeTransitionAnimation;->mSwipeInterpolator:Landroid/view/animation/Interpolator;
 
-    invoke-virtual {v10, v0}, Landroid/animation/Animator;->setInterpolator(Landroid/animation/TimeInterpolator;)V
+    invoke-virtual {v8, v0}, Landroid/animation/Animator;->setInterpolator(Landroid/animation/TimeInterpolator;)V
 
     new-instance v0, Lcom/android/launcher3/home/HomeTransitionAnimation$7;
 
@@ -321,26 +352,24 @@
 
     invoke-direct/range {v0 .. v6}, Lcom/android/launcher3/home/HomeTransitionAnimation$7;-><init>(Lcom/android/launcher3/home/HomeTransitionAnimation;ZFJZ)V
 
-    invoke-virtual {v10, v0}, Landroid/animation/Animator;->addListener(Landroid/animation/Animator$AnimatorListener;)V
+    invoke-virtual {v8, v0}, Landroid/animation/Animator;->addListener(Landroid/animation/Animator$AnimatorListener;)V
 
-    invoke-virtual {p1, v10}, Landroid/animation/AnimatorSet;->play(Landroid/animation/Animator;)Landroid/animation/AnimatorSet$Builder;
+    invoke-virtual {p1, v8}, Landroid/animation/AnimatorSet;->play(Landroid/animation/Animator;)Landroid/animation/AnimatorSet$Builder;
 
     return-void
 
-    :cond_0
+    :cond_1
+    iget-object v0, p0, Lcom/android/launcher3/home/HomeTransitionAnimation;->mLauncher:Lcom/android/launcher3/Launcher;
+
+    invoke-static {v0}, Lcom/android/launcher3/Utilities;->getFullScreenHeight(Landroid/app/Activity;)I
+
+    move-result v10
+
+    goto :goto_0
+
+    :cond_2
     const/4 v7, 0x0
 
-    iget-object v0, p0, Lcom/android/launcher3/home/HomeTransitionAnimation;->mTrayManager:Lcom/android/launcher3/common/tray/TrayManager;
-
-    if-eqz v0, :cond_1
-
-    iget-object v0, p0, Lcom/android/launcher3/home/HomeTransitionAnimation;->mTrayManager:Lcom/android/launcher3/common/tray/TrayManager;
-
-    invoke-virtual {v0}, Lcom/android/launcher3/common/tray/TrayManager;->getTrayMovingRange()I
-
-    move-result v11
-
-    :goto_2
     iget-object v0, p0, Lcom/android/launcher3/home/HomeTransitionAnimation;->mHomeRootView:Landroid/view/View;
 
     invoke-virtual {v0}, Landroid/view/View;->getTranslationY()F
@@ -351,36 +380,55 @@
 
     cmpl-float v0, v0, v1
 
-    if-lez v0, :cond_2
+    if-lez v0, :cond_3
 
-    sub-int v0, v11, v7
+    sub-int v0, v10, v7
 
     int-to-float v3, v0
 
-    goto :goto_0
+    goto :goto_1
 
-    :cond_1
-    iget-object v0, p0, Lcom/android/launcher3/home/HomeTransitionAnimation;->mLauncher:Lcom/android/launcher3/Launcher;
-
-    invoke-static {v0}, Lcom/android/launcher3/Utilities;->getFullScreenHeight(Landroid/app/Activity;)I
-
-    move-result v11
-
-    goto :goto_2
-
-    :cond_2
-    neg-int v0, v11
+    :cond_3
+    neg-int v0, v10
 
     add-int/2addr v0, v7
 
     int-to-float v3, v0
 
-    goto :goto_0
-
-    :cond_3
-    move-wide/from16 v8, p3
-
     goto :goto_1
+
+    :cond_4
+    if-eqz p2, :cond_5
+
+    int-to-float v0, v10
+
+    div-float v0, v9, v0
+
+    invoke-static {v0}, Ljava/lang/Math;->abs(F)F
+
+    move-result v0
+
+    goto :goto_2
+
+    :cond_5
+    const/high16 v0, 0x3f800000    # 1.0f
+
+    int-to-float v1, v10
+
+    div-float v1, v9, v1
+
+    invoke-static {v1}, Ljava/lang/Math;->abs(F)F
+
+    move-result v1
+
+    sub-float/2addr v0, v1
+
+    goto :goto_2
+
+    :cond_6
+    move-wide v4, p3
+
+    goto :goto_3
 .end method
 
 .method private cancelStageAnimation()V
@@ -1118,100 +1166,47 @@
     goto :goto_0
 .end method
 
-.method private getSwipeAnimationDuration(Z)I
-    .locals 8
+.method private getSwipeAnimationDuration(ZF)I
+    .locals 3
 
-    const/4 v7, 0x2
+    const/4 v2, 0x2
 
-    const/4 v6, 0x1
-
-    iget-object v5, p0, Lcom/android/launcher3/home/HomeTransitionAnimation;->mLauncher:Lcom/android/launcher3/Launcher;
-
-    invoke-static {v5}, Lcom/android/launcher3/Utilities;->getFullScreenHeight(Landroid/app/Activity;)I
-
-    move-result v4
-
-    iget-object v5, p0, Lcom/android/launcher3/home/HomeTransitionAnimation;->mTrayManager:Lcom/android/launcher3/common/tray/TrayManager;
-
-    if-eqz v5, :cond_0
-
-    iget-object v5, p0, Lcom/android/launcher3/home/HomeTransitionAnimation;->mTrayManager:Lcom/android/launcher3/common/tray/TrayManager;
-
-    invoke-virtual {v5}, Lcom/android/launcher3/common/tray/TrayManager;->getTrayMovingRange()I
-
-    move-result v3
-
-    :goto_0
-    iget-object v5, p0, Lcom/android/launcher3/home/HomeTransitionAnimation;->mHomeRootView:Landroid/view/View;
-
-    invoke-virtual {v5}, Landroid/view/View;->getTranslationY()F
-
-    move-result v5
-
-    invoke-static {v5}, Ljava/lang/Math;->abs(F)F
-
-    move-result v2
+    const/4 v1, 0x1
 
     if-eqz p1, :cond_1
 
-    invoke-direct {p0, v7, v6}, Lcom/android/launcher3/home/HomeTransitionAnimation;->getStageAnimationDuration(II)I
-
-    move-result v1
-
-    int-to-float v5, v1
-
-    int-to-float v6, v3
-
-    div-float v6, v2, v6
-
-    mul-float/2addr v5, v6
-
-    int-to-float v6, v1
-
-    invoke-static {v5, v6}, Ljava/lang/Math;->min(FF)F
-
-    move-result v5
-
-    float-to-int v0, v5
-
-    :goto_1
-    div-int/lit8 v5, v1, 0x2
-
-    invoke-static {v0, v5}, Ljava/lang/Math;->max(II)I
+    invoke-direct {p0, v2, v1}, Lcom/android/launcher3/home/HomeTransitionAnimation;->getStageAnimationDuration(II)I
 
     move-result v0
 
-    return v0
+    :goto_0
+    iget-object v1, p0, Lcom/android/launcher3/home/HomeTransitionAnimation;->mTrayManager:Lcom/android/launcher3/common/tray/TrayManager;
+
+    if-eqz v1, :cond_0
+
+    const/4 v1, 0x0
+
+    cmpl-float v1, p2, v1
+
+    if-nez v1, :cond_2
 
     :cond_0
-    move v3, v4
+    :goto_1
+    return v0
+
+    :cond_1
+    invoke-direct {p0, v1, v2}, Lcom/android/launcher3/home/HomeTransitionAnimation;->getStageAnimationDuration(II)I
+
+    move-result v0
 
     goto :goto_0
 
-    :cond_1
-    invoke-direct {p0, v6, v7}, Lcom/android/launcher3/home/HomeTransitionAnimation;->getStageAnimationDuration(II)I
+    :cond_2
+    iget-object v1, p0, Lcom/android/launcher3/home/HomeTransitionAnimation;->mTrayManager:Lcom/android/launcher3/common/tray/TrayManager;
 
-    move-result v1
+    invoke-virtual {v1, p2, v0}, Lcom/android/launcher3/common/tray/TrayManager;->calculateDuration(FI)I
 
-    int-to-float v5, v1
-
-    const/high16 v6, 0x3f800000    # 1.0f
-
-    int-to-float v7, v3
-
-    div-float v7, v2, v7
-
-    sub-float/2addr v6, v7
-
-    mul-float/2addr v5, v6
-
-    int-to-float v6, v1
-
-    invoke-static {v5, v6}, Ljava/lang/Math;->min(FF)F
-
-    move-result v5
-
-    float-to-int v0, v5
+    move-result v0
 
     goto :goto_1
 .end method
@@ -1546,6 +1541,10 @@
 
 .method getEnterFromAppsAnimation(ZLjava/util/HashMap;)Landroid/animation/Animator;
     .locals 9
+    .param p2    # Ljava/util/HashMap;
+        .annotation build Landroid/support/annotation/Nullable;
+        .end annotation
+    .end param
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(Z",
@@ -1572,13 +1571,15 @@
 
     invoke-direct {p0}, Lcom/android/launcher3/home/HomeTransitionAnimation;->cancelStageAnimation()V
 
-    if-eqz p1, :cond_1
+    if-eqz p1, :cond_2
 
     invoke-static {}, Lcom/android/launcher3/util/animation/LauncherAnimUtils;->createAnimatorSet()Landroid/animation/AnimatorSet;
 
     move-result-object v1
 
     iput-object v1, p0, Lcom/android/launcher3/home/HomeTransitionAnimation;->mStageAnimator:Landroid/animation/AnimatorSet;
+
+    if-eqz p2, :cond_0
 
     iget-object v1, p0, Lcom/android/launcher3/home/HomeTransitionAnimation;->mHomeRootView:Landroid/view/View;
 
@@ -1588,11 +1589,12 @@
 
     invoke-virtual {p2, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
+    :cond_0
     invoke-static {}, Lcom/android/launcher3/LauncherFeature;->supportTraySwipeInteraction()Z
 
     move-result v1
 
-    if-eqz v1, :cond_0
+    if-eqz v1, :cond_1
 
     iget-object v2, p0, Lcom/android/launcher3/home/HomeTransitionAnimation;->mStageAnimator:Landroid/animation/AnimatorSet;
 
@@ -1607,7 +1609,7 @@
 
     return-object v1
 
-    :cond_0
+    :cond_1
     iget-object v1, p0, Lcom/android/launcher3/home/HomeTransitionAnimation;->mHomeRootView:Landroid/view/View;
 
     sget-object v2, Landroid/view/View;->ALPHA:Landroid/util/Property;
@@ -1650,7 +1652,7 @@
 
     goto :goto_0
 
-    :cond_1
+    :cond_2
     iget-object v1, p0, Lcom/android/launcher3/home/HomeTransitionAnimation;->mHomeRootView:Landroid/view/View;
 
     const/4 v2, 0x0
@@ -1675,13 +1677,13 @@
 
     move-result-object v8
 
-    if-eqz v8, :cond_2
+    if-eqz v8, :cond_3
 
     invoke-virtual {v8, v5}, Landroid/view/View;->setScaleX(F)V
 
     invoke-virtual {v8, v5}, Landroid/view/View;->setScaleY(F)V
 
-    :cond_2
+    :cond_3
     iget-object v1, p0, Lcom/android/launcher3/home/HomeTransitionAnimation;->mHomeRootView:Landroid/view/View;
 
     invoke-static {v1, v0}, Lcom/android/launcher3/home/AlphaUpdateListener;->updateVisibility(Landroid/view/View;Z)V
@@ -2234,6 +2236,10 @@
 
 .method getExitToAppsAnimation(ZLjava/util/HashMap;)Landroid/animation/Animator;
     .locals 8
+    .param p2    # Ljava/util/HashMap;
+        .annotation build Landroid/support/annotation/Nullable;
+        .end annotation
+    .end param
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(Z",
@@ -2260,13 +2266,15 @@
 
     invoke-direct {p0}, Lcom/android/launcher3/home/HomeTransitionAnimation;->cancelStageAnimation()V
 
-    if-eqz p1, :cond_1
+    if-eqz p1, :cond_2
 
     invoke-static {}, Lcom/android/launcher3/util/animation/LauncherAnimUtils;->createAnimatorSet()Landroid/animation/AnimatorSet;
 
     move-result-object v1
 
     iput-object v1, p0, Lcom/android/launcher3/home/HomeTransitionAnimation;->mStageAnimator:Landroid/animation/AnimatorSet;
+
+    if-eqz p2, :cond_0
 
     iget-object v1, p0, Lcom/android/launcher3/home/HomeTransitionAnimation;->mHomeRootView:Landroid/view/View;
 
@@ -2276,11 +2284,12 @@
 
     invoke-virtual {p2, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
+    :cond_0
     invoke-static {}, Lcom/android/launcher3/LauncherFeature;->supportTraySwipeInteraction()Z
 
     move-result v1
 
-    if-eqz v1, :cond_0
+    if-eqz v1, :cond_1
 
     iget-object v2, p0, Lcom/android/launcher3/home/HomeTransitionAnimation;->mStageAnimator:Landroid/animation/AnimatorSet;
 
@@ -2297,7 +2306,7 @@
 
     return-object v1
 
-    :cond_0
+    :cond_1
     iget-object v1, p0, Lcom/android/launcher3/home/HomeTransitionAnimation;->mHomeRootView:Landroid/view/View;
 
     sget-object v2, Landroid/view/View;->ALPHA:Landroid/util/Property;
@@ -2340,7 +2349,7 @@
 
     goto :goto_0
 
-    :cond_1
+    :cond_2
     iget-object v1, p0, Lcom/android/launcher3/home/HomeTransitionAnimation;->mHomeRootView:Landroid/view/View;
 
     iget-object v2, p0, Lcom/android/launcher3/home/HomeTransitionAnimation;->mLauncher:Lcom/android/launcher3/Launcher;
@@ -2349,7 +2358,7 @@
 
     move-result-object v2
 
-    const v3, 0x7f0a0198
+    const v3, 0x7f0a019d
 
     invoke-virtual {v2, v3}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -3214,7 +3223,7 @@
 
     invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
 
-    const v3, 0x7f0900c1
+    const v3, 0x7f0900c9
 
     invoke-virtual {v15, v3}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -3445,7 +3454,7 @@
 
     move-result-object v3
 
-    invoke-virtual {v3}, Lcom/android/launcher3/common/deviceprofile/DeviceProfile;->getOffsetIndicator()I
+    invoke-virtual {v3}, Lcom/android/launcher3/common/deviceprofile/DeviceProfile;->getOffsetIndicatorForScreenGrid()I
 
     move-result v3
 
@@ -4065,7 +4074,7 @@
 
     move-result-object v13
 
-    const v2, 0x7f0a0160
+    const v2, 0x7f0a0165
 
     invoke-virtual {v13, v2}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 

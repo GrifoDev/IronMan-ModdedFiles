@@ -51,7 +51,7 @@
 
     iget-object v7, p0, Lcom/android/launcher3/home/HomeLoader$13;->this$0:Lcom/android/launcher3/home/HomeLoader;
 
-    invoke-static {v7}, Lcom/android/launcher3/home/HomeLoader;->access$6600(Lcom/android/launcher3/home/HomeLoader;)Ljava/util/ArrayList;
+    invoke-static {v7}, Lcom/android/launcher3/home/HomeLoader;->access$6900(Lcom/android/launcher3/home/HomeLoader;)Ljava/util/ArrayList;
 
     move-result-object v7
 
@@ -113,7 +113,7 @@
 
     if-eqz v8, :cond_2
 
-    invoke-static {}, Lcom/android/launcher3/home/HomeLoader;->access$6800()Lcom/android/launcher3/common/model/IconCache;
+    invoke-static {}, Lcom/android/launcher3/home/HomeLoader;->access$7100()Lcom/android/launcher3/common/model/IconCache;
 
     move-result-object v8
 
@@ -140,7 +140,7 @@
 
     if-nez v8, :cond_1
 
-    invoke-static {}, Lcom/android/launcher3/home/HomeLoader;->access$6900()Lcom/android/launcher3/common/model/IconCache;
+    invoke-static {}, Lcom/android/launcher3/home/HomeLoader;->access$7200()Lcom/android/launcher3/common/model/IconCache;
 
     move-result-object v8
 
@@ -165,7 +165,7 @@
 
     invoke-direct {v4, p0, v3, v5, v6}, Lcom/android/launcher3/home/HomeLoader$13$1;-><init>(Lcom/android/launcher3/home/HomeLoader$13;Lcom/android/launcher3/home/HomeLoader$HomeCallbacks;Ljava/util/ArrayList;Lcom/android/launcher3/common/compat/UserHandleCompat;)V
 
-    invoke-static {}, Lcom/android/launcher3/home/HomeLoader;->access$7000()Lcom/android/launcher3/common/model/DeferredHandler;
+    invoke-static {}, Lcom/android/launcher3/home/HomeLoader;->access$7300()Lcom/android/launcher3/common/model/DeferredHandler;
 
     move-result-object v7
 

@@ -1,14 +1,14 @@
-.class final Lcom/android/launcher3/proxy/ItemListHelper$2;
+.class final Lcom/android/launcher3/util/ItemListHelper$5;
 .super Ljava/lang/Object;
 .source "ItemListHelper.java"
 
 # interfaces
-.implements Lcom/android/launcher3/proxy/ItemListHelper$ItemInfoFilter;
+.implements Lcom/android/launcher3/util/ItemListHelper$ItemInfoFilter;
 
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/android/launcher3/proxy/ItemListHelper;->getFolderItemList(Ljava/util/List;)Ljava/util/List;
+    value = Lcom/android/launcher3/util/ItemListHelper;->getUnhiddenItemList(Ljava/util/List;)Ljava/util/List;
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -29,15 +29,11 @@
 
 # virtual methods
 .method public filter(Lcom/android/launcher3/common/base/item/ItemInfo;)Z
-    .locals 4
+    .locals 1
 
-    iget-wide v0, p1, Lcom/android/launcher3/common/base/item/ItemInfo;->container:J
+    iget v0, p1, Lcom/android/launcher3/common/base/item/ItemInfo;->hidden:I
 
-    const-wide/16 v2, 0x0
-
-    cmp-long v0, v0, v2
-
-    if-lez v0, :cond_0
+    if-nez v0, :cond_0
 
     const/4 v0, 0x0
 

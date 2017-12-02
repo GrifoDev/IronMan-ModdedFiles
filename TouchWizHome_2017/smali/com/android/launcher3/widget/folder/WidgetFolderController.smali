@@ -442,7 +442,7 @@
     return-void
 .end method
 
-.method public onConfigurationChangedIfNeeded()V
+.method public onConfigurationChangedIfNeeded(Z)V
     .locals 1
 
     iget-object v0, p0, Lcom/android/launcher3/widget/folder/WidgetFolderController;->mWidgetFolder:Lcom/android/launcher3/widget/view/WidgetFolder;
@@ -471,7 +471,11 @@
 .end method
 
 .method public onPauseActivity()V
-    .locals 0
+    .locals 1
+
+    iget-object v0, p0, Lcom/android/launcher3/widget/folder/WidgetFolderController;->mPagedView:Lcom/android/launcher3/widget/view/WidgetPagedView;
+
+    invoke-virtual {v0}, Lcom/android/launcher3/widget/view/WidgetPagedView;->onPause()V
 
     return-void
 .end method
@@ -483,7 +487,11 @@
 .end method
 
 .method public onResumeActivity()V
-    .locals 0
+    .locals 1
+
+    iget-object v0, p0, Lcom/android/launcher3/widget/folder/WidgetFolderController;->mPagedView:Lcom/android/launcher3/widget/view/WidgetPagedView;
+
+    invoke-virtual {v0}, Lcom/android/launcher3/widget/view/WidgetPagedView;->onResume()V
 
     return-void
 .end method
@@ -591,6 +599,14 @@
     goto :goto_0
 .end method
 
+.method protected onStageEnterByTray()Landroid/animation/Animator;
+    .locals 1
+
+    const/4 v0, 0x0
+
+    return-object v0
+.end method
+
 .method protected onStageExit(Lcom/android/launcher3/common/stage/StageEntry;)Landroid/animation/Animator;
     .locals 6
 
@@ -694,6 +710,14 @@
     move v1, v2
 
     goto :goto_1
+.end method
+
+.method protected onStageExitByTray()Landroid/animation/Animator;
+    .locals 1
+
+    const/4 v0, 0x0
+
+    return-object v0
 .end method
 
 .method public onWidgetItemClick(Landroid/view/View;)V

@@ -85,7 +85,7 @@
 
     iput-object v1, p0, Lcom/android/launcher3/widget/view/WidgetCell;->mStylusEventHelper:Lcom/android/launcher3/util/event/StylusEventHelper;
 
-    const v1, 0x7f0901d6
+    const v1, 0x7f0901e3
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 

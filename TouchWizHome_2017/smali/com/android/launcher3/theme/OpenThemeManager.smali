@@ -1207,7 +1207,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f0a013a
+    const v1, 0x7f0a013f
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -1215,7 +1215,7 @@
 
     iput v1, p0, Lcom/android/launcher3/theme/OpenThemeManager;->mTextBackgroundExtraPadding:I
 
-    const v1, 0x7f0a0139
+    const v1, 0x7f0a013e
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 

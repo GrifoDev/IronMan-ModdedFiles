@@ -30,9 +30,11 @@
 
 .field private mStateAnimator:Landroid/animation/AnimatorSet;
 
+.field private mTrayManager:Lcom/android/launcher3/common/tray/TrayManager;
+
 
 # direct methods
-.method public constructor <init>(Lcom/android/launcher3/Launcher;Lcom/android/launcher3/allapps/controller/AppsController;)V
+.method public constructor <init>(Lcom/android/launcher3/Launcher;Lcom/android/launcher3/allapps/controller/AppsController;Lcom/android/launcher3/common/tray/TrayManager;)V
     .locals 3
 
     const/4 v2, 0x1
@@ -104,6 +106,8 @@
     move-result v1
 
     iput v1, p0, Lcom/android/launcher3/allapps/AppsTransitionAnimation;->mFolderBgGrowFactor:F
+
+    iput-object p3, p0, Lcom/android/launcher3/allapps/AppsTransitionAnimation;->mTrayManager:Lcom/android/launcher3/common/tray/TrayManager;
 
     return-void
 .end method
@@ -601,6 +605,51 @@
     const/4 v1, 0x0
 
     goto :goto_0
+.end method
+
+.method private getSwipeAnimationDuration(ZF)I
+    .locals 3
+
+    const/4 v2, 0x2
+
+    const/4 v1, 0x1
+
+    if-eqz p1, :cond_1
+
+    invoke-direct {p0, v1, v2}, Lcom/android/launcher3/allapps/AppsTransitionAnimation;->getStageAnimationDuration(II)I
+
+    move-result v0
+
+    :goto_0
+    iget-object v1, p0, Lcom/android/launcher3/allapps/AppsTransitionAnimation;->mTrayManager:Lcom/android/launcher3/common/tray/TrayManager;
+
+    if-eqz v1, :cond_0
+
+    const/4 v1, 0x0
+
+    cmpl-float v1, p2, v1
+
+    if-nez v1, :cond_2
+
+    :cond_0
+    :goto_1
+    return v0
+
+    :cond_1
+    invoke-direct {p0, v2, v1}, Lcom/android/launcher3/allapps/AppsTransitionAnimation;->getStageAnimationDuration(II)I
+
+    move-result v0
+
+    goto :goto_0
+
+    :cond_2
+    iget-object v1, p0, Lcom/android/launcher3/allapps/AppsTransitionAnimation;->mTrayManager:Lcom/android/launcher3/common/tray/TrayManager;
+
+    invoke-virtual {v1, p2, v0}, Lcom/android/launcher3/common/tray/TrayManager;->calculateDuration(FI)I
+
+    move-result v0
+
+    goto :goto_1
 .end method
 
 .method private getViewInOutAnimator(Ljava/util/HashMap;ILcom/android/launcher3/common/stage/StageEntry;Ljava/lang/Runnable;)V
@@ -2160,7 +2209,7 @@
 .end method
 
 .method public getEnterFromHomeAnimation(ZLjava/util/HashMap;)Landroid/animation/Animator;
-    .locals 8
+    .locals 10
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(Z",
@@ -2173,100 +2222,181 @@
         }
     .end annotation
 
-    const/high16 v7, 0x3f800000    # 1.0f
+    const/4 v9, 0x0
 
-    const/4 v5, 0x1
+    const/4 v5, 0x0
 
-    sget-object v3, Lcom/android/launcher3/util/Talk;->INSTANCE:Lcom/android/launcher3/util/Talk;
+    const/high16 v8, 0x3f800000    # 1.0f
 
-    invoke-virtual {v3}, Lcom/android/launcher3/util/Talk;->isAccessibilityEnabled()Z
+    const/4 v7, 0x1
+
+    sget-object v6, Lcom/android/launcher3/util/Talk;->INSTANCE:Lcom/android/launcher3/util/Talk;
+
+    invoke-virtual {v6}, Lcom/android/launcher3/util/Talk;->isAccessibilityEnabled()Z
 
     move-result v0
 
     invoke-direct {p0}, Lcom/android/launcher3/allapps/AppsTransitionAnimation;->cancelStageAnimation()V
 
-    if-eqz p1, :cond_1
+    if-eqz p1, :cond_5
 
     invoke-static {}, Lcom/android/launcher3/LauncherFeature;->supportTraySwipeInteraction()Z
 
+    move-result v6
+
+    if-eqz v6, :cond_4
+
+    if-nez p2, :cond_2
+
+    const/4 v3, 0x0
+
+    const/4 v4, 0x0
+
+    iget-object v6, p0, Lcom/android/launcher3/allapps/AppsTransitionAnimation;->mTrayManager:Lcom/android/launcher3/common/tray/TrayManager;
+
+    if-eqz v6, :cond_0
+
+    iget-object v6, p0, Lcom/android/launcher3/allapps/AppsTransitionAnimation;->mTrayManager:Lcom/android/launcher3/common/tray/TrayManager;
+
+    invoke-virtual {v6}, Lcom/android/launcher3/common/tray/TrayManager;->getTrayMovingRange()I
+
+    move-result v4
+
+    iget-object v6, p0, Lcom/android/launcher3/allapps/AppsTransitionAnimation;->mTrayManager:Lcom/android/launcher3/common/tray/TrayManager;
+
+    invoke-virtual {v6}, Lcom/android/launcher3/common/tray/TrayManager;->getTrayMovingDistance()F
+
     move-result v3
 
-    if-eqz v3, :cond_0
-
-    :goto_0
-    iget-object v3, p0, Lcom/android/launcher3/allapps/AppsTransitionAnimation;->mStageAnimator:Landroid/animation/AnimatorSet;
-
-    return-object v3
-
     :cond_0
-    invoke-static {}, Lcom/android/launcher3/util/animation/LauncherAnimUtils;->createAnimatorSet()Landroid/animation/AnimatorSet;
+    if-eqz v4, :cond_1
 
-    move-result-object v3
+    cmpl-float v6, v3, v5
 
-    iput-object v3, p0, Lcom/android/launcher3/allapps/AppsTransitionAnimation;->mStageAnimator:Landroid/animation/AnimatorSet;
+    if-nez v6, :cond_3
 
-    const/4 v3, 0x2
-
-    invoke-direct {p0, v5, v3}, Lcom/android/launcher3/allapps/AppsTransitionAnimation;->getStageAnimationDuration(II)I
+    :cond_1
+    :goto_0
+    invoke-direct {p0, v7, v5}, Lcom/android/launcher3/allapps/AppsTransitionAnimation;->getSwipeAnimationDuration(ZF)I
 
     move-result v2
 
-    iget-object v3, p0, Lcom/android/launcher3/allapps/AppsTransitionAnimation;->mAppsContentView:Landroid/view/ViewGroup;
+    invoke-static {}, Lcom/android/launcher3/util/animation/LauncherAnimUtils;->createAnimatorSet()Landroid/animation/AnimatorSet;
 
-    invoke-static {v5}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    move-result-object v5
 
-    move-result-object v4
+    iput-object v5, p0, Lcom/android/launcher3/allapps/AppsTransitionAnimation;->mStageAnimator:Landroid/animation/AnimatorSet;
 
-    invoke-virtual {p2, v3, v4}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    iget-object v5, p0, Lcom/android/launcher3/allapps/AppsTransitionAnimation;->mAppsPageIndicatorView:Landroid/view/View;
 
-    iget-object v3, p0, Lcom/android/launcher3/allapps/AppsTransitionAnimation;->mAppsContentView:Landroid/view/ViewGroup;
+    sget-object v6, Landroid/view/View;->ALPHA:Landroid/util/Property;
 
-    sget-object v4, Landroid/view/View;->ALPHA:Landroid/util/Property;
+    invoke-virtual {v6}, Landroid/util/Property;->getName()Ljava/lang/String;
 
-    invoke-virtual {v4}, Landroid/util/Property;->getName()Ljava/lang/String;
+    move-result-object v6
 
-    move-result-object v4
+    new-array v7, v7, [F
 
-    new-array v5, v5, [F
+    aput v8, v7, v9
 
-    const/4 v6, 0x0
-
-    aput v7, v5, v6
-
-    invoke-static {v3, v4, v5}, Lcom/android/launcher3/util/animation/LauncherAnimUtils;->ofFloat(Landroid/view/View;Ljava/lang/String;[F)Landroid/animation/ObjectAnimator;
+    invoke-static {v5, v6, v7}, Lcom/android/launcher3/util/animation/LauncherAnimUtils;->ofFloat(Landroid/view/View;Ljava/lang/String;[F)Landroid/animation/ObjectAnimator;
 
     move-result-object v1
 
-    int-to-long v4, v2
+    int-to-long v6, v2
 
-    invoke-virtual {v1, v4, v5}, Landroid/animation/Animator;->setDuration(J)Landroid/animation/Animator;
+    invoke-virtual {v1, v6, v7}, Landroid/animation/Animator;->setDuration(J)Landroid/animation/Animator;
 
-    iget-object v3, p0, Lcom/android/launcher3/allapps/AppsTransitionAnimation;->mStageAnimator:Landroid/animation/AnimatorSet;
+    iget-object v5, p0, Lcom/android/launcher3/allapps/AppsTransitionAnimation;->mStageAnimator:Landroid/animation/AnimatorSet;
 
-    invoke-virtual {v3, v1}, Landroid/animation/AnimatorSet;->play(Landroid/animation/Animator;)Landroid/animation/AnimatorSet$Builder;
+    invoke-virtual {v5, v1}, Landroid/animation/AnimatorSet;->play(Landroid/animation/Animator;)Landroid/animation/AnimatorSet$Builder;
 
-    iget-object v3, p0, Lcom/android/launcher3/allapps/AppsTransitionAnimation;->mStageAnimator:Landroid/animation/AnimatorSet;
+    :cond_2
+    :goto_1
+    iget-object v5, p0, Lcom/android/launcher3/allapps/AppsTransitionAnimation;->mStageAnimator:Landroid/animation/AnimatorSet;
 
-    new-instance v4, Lcom/android/launcher3/allapps/AlphaUpdateListener;
+    return-object v5
+
+    :cond_3
+    int-to-float v5, v4
+
+    div-float v5, v3, v5
+
+    invoke-static {v5}, Ljava/lang/Math;->abs(F)F
+
+    move-result v5
+
+    sub-float v5, v8, v5
+
+    goto :goto_0
+
+    :cond_4
+    invoke-static {}, Lcom/android/launcher3/util/animation/LauncherAnimUtils;->createAnimatorSet()Landroid/animation/AnimatorSet;
+
+    move-result-object v5
+
+    iput-object v5, p0, Lcom/android/launcher3/allapps/AppsTransitionAnimation;->mStageAnimator:Landroid/animation/AnimatorSet;
+
+    const/4 v5, 0x2
+
+    invoke-direct {p0, v7, v5}, Lcom/android/launcher3/allapps/AppsTransitionAnimation;->getStageAnimationDuration(II)I
+
+    move-result v2
 
     iget-object v5, p0, Lcom/android/launcher3/allapps/AppsTransitionAnimation;->mAppsContentView:Landroid/view/ViewGroup;
 
-    invoke-direct {v4, v5, v0}, Lcom/android/launcher3/allapps/AlphaUpdateListener;-><init>(Landroid/view/View;Z)V
+    invoke-static {v7}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    invoke-virtual {v3, v4}, Landroid/animation/AnimatorSet;->addListener(Landroid/animation/Animator$AnimatorListener;)V
+    move-result-object v6
 
-    goto :goto_0
+    invoke-virtual {p2, v5, v6}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    :cond_1
-    iget-object v3, p0, Lcom/android/launcher3/allapps/AppsTransitionAnimation;->mAppsContentView:Landroid/view/ViewGroup;
+    iget-object v5, p0, Lcom/android/launcher3/allapps/AppsTransitionAnimation;->mAppsContentView:Landroid/view/ViewGroup;
 
-    invoke-virtual {v3, v7}, Landroid/view/ViewGroup;->setAlpha(F)V
+    sget-object v6, Landroid/view/View;->ALPHA:Landroid/util/Property;
 
-    iget-object v3, p0, Lcom/android/launcher3/allapps/AppsTransitionAnimation;->mAppsContentView:Landroid/view/ViewGroup;
+    invoke-virtual {v6}, Landroid/util/Property;->getName()Ljava/lang/String;
 
-    invoke-static {v3, v0}, Lcom/android/launcher3/allapps/AlphaUpdateListener;->updateVisibility(Landroid/view/View;Z)V
+    move-result-object v6
 
-    goto :goto_0
+    new-array v7, v7, [F
+
+    aput v8, v7, v9
+
+    invoke-static {v5, v6, v7}, Lcom/android/launcher3/util/animation/LauncherAnimUtils;->ofFloat(Landroid/view/View;Ljava/lang/String;[F)Landroid/animation/ObjectAnimator;
+
+    move-result-object v1
+
+    int-to-long v6, v2
+
+    invoke-virtual {v1, v6, v7}, Landroid/animation/Animator;->setDuration(J)Landroid/animation/Animator;
+
+    iget-object v5, p0, Lcom/android/launcher3/allapps/AppsTransitionAnimation;->mStageAnimator:Landroid/animation/AnimatorSet;
+
+    invoke-virtual {v5, v1}, Landroid/animation/AnimatorSet;->play(Landroid/animation/Animator;)Landroid/animation/AnimatorSet$Builder;
+
+    iget-object v5, p0, Lcom/android/launcher3/allapps/AppsTransitionAnimation;->mStageAnimator:Landroid/animation/AnimatorSet;
+
+    new-instance v6, Lcom/android/launcher3/allapps/AlphaUpdateListener;
+
+    iget-object v7, p0, Lcom/android/launcher3/allapps/AppsTransitionAnimation;->mAppsContentView:Landroid/view/ViewGroup;
+
+    invoke-direct {v6, v7, v0}, Lcom/android/launcher3/allapps/AlphaUpdateListener;-><init>(Landroid/view/View;Z)V
+
+    invoke-virtual {v5, v6}, Landroid/animation/AnimatorSet;->addListener(Landroid/animation/Animator$AnimatorListener;)V
+
+    goto :goto_1
+
+    :cond_5
+    iget-object v5, p0, Lcom/android/launcher3/allapps/AppsTransitionAnimation;->mAppsContentView:Landroid/view/ViewGroup;
+
+    invoke-virtual {v5, v8}, Landroid/view/ViewGroup;->setAlpha(F)V
+
+    iget-object v5, p0, Lcom/android/launcher3/allapps/AppsTransitionAnimation;->mAppsContentView:Landroid/view/ViewGroup;
+
+    invoke-static {v5, v0}, Lcom/android/launcher3/allapps/AlphaUpdateListener;->updateVisibility(Landroid/view/View;Z)V
+
+    goto :goto_1
 .end method
 
 .method public getEnterFromSettingAnim(ZLjava/util/HashMap;)Landroid/animation/Animator;
@@ -2634,7 +2764,7 @@
 .end method
 
 .method public getExitToHomeAnimation(ZLjava/util/HashMap;)Landroid/animation/Animator;
-    .locals 8
+    .locals 10
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(Z",
@@ -2647,109 +2777,188 @@
         }
     .end annotation
 
-    const/4 v5, 0x1
+    const/4 v9, 0x0
 
-    const/4 v7, 0x0
+    const/4 v8, 0x1
 
-    sget-object v3, Lcom/android/launcher3/util/Talk;->INSTANCE:Lcom/android/launcher3/util/Talk;
+    const/4 v6, 0x0
 
-    invoke-virtual {v3}, Lcom/android/launcher3/util/Talk;->isAccessibilityEnabled()Z
+    sget-object v5, Lcom/android/launcher3/util/Talk;->INSTANCE:Lcom/android/launcher3/util/Talk;
+
+    invoke-virtual {v5}, Lcom/android/launcher3/util/Talk;->isAccessibilityEnabled()Z
 
     move-result v0
 
     invoke-direct {p0}, Lcom/android/launcher3/allapps/AppsTransitionAnimation;->cancelStageAnimation()V
 
-    if-eqz p1, :cond_1
+    if-eqz p1, :cond_5
 
     invoke-static {}, Lcom/android/launcher3/LauncherFeature;->supportTraySwipeInteraction()Z
 
+    move-result v5
+
+    if-eqz v5, :cond_4
+
+    if-nez p2, :cond_2
+
+    const/4 v3, 0x0
+
+    const/4 v4, 0x0
+
+    iget-object v5, p0, Lcom/android/launcher3/allapps/AppsTransitionAnimation;->mTrayManager:Lcom/android/launcher3/common/tray/TrayManager;
+
+    if-eqz v5, :cond_0
+
+    iget-object v5, p0, Lcom/android/launcher3/allapps/AppsTransitionAnimation;->mTrayManager:Lcom/android/launcher3/common/tray/TrayManager;
+
+    invoke-virtual {v5}, Lcom/android/launcher3/common/tray/TrayManager;->getTrayMovingRange()I
+
+    move-result v4
+
+    iget-object v5, p0, Lcom/android/launcher3/allapps/AppsTransitionAnimation;->mTrayManager:Lcom/android/launcher3/common/tray/TrayManager;
+
+    invoke-virtual {v5}, Lcom/android/launcher3/common/tray/TrayManager;->getTrayMovingDistance()F
+
     move-result v3
 
-    if-eqz v3, :cond_0
+    :cond_0
+    if-eqz v4, :cond_1
+
+    cmpl-float v5, v3, v6
+
+    if-nez v5, :cond_3
+
+    :cond_1
+    move v5, v6
 
     :goto_0
-    iget-object v3, p0, Lcom/android/launcher3/allapps/AppsTransitionAnimation;->mStageAnimator:Landroid/animation/AnimatorSet;
-
-    return-object v3
-
-    :cond_0
-    invoke-static {}, Lcom/android/launcher3/util/animation/LauncherAnimUtils;->createAnimatorSet()Landroid/animation/AnimatorSet;
-
-    move-result-object v3
-
-    iput-object v3, p0, Lcom/android/launcher3/allapps/AppsTransitionAnimation;->mStageAnimator:Landroid/animation/AnimatorSet;
-
-    const/4 v3, 0x2
-
-    invoke-direct {p0, v3, v5}, Lcom/android/launcher3/allapps/AppsTransitionAnimation;->getStageAnimationDuration(II)I
+    invoke-direct {p0, v9, v5}, Lcom/android/launcher3/allapps/AppsTransitionAnimation;->getSwipeAnimationDuration(ZF)I
 
     move-result v2
 
-    iget-object v3, p0, Lcom/android/launcher3/allapps/AppsTransitionAnimation;->mAppsContentView:Landroid/view/ViewGroup;
+    invoke-static {}, Lcom/android/launcher3/util/animation/LauncherAnimUtils;->createAnimatorSet()Landroid/animation/AnimatorSet;
 
-    invoke-static {v5}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    move-result-object v5
 
-    move-result-object v4
+    iput-object v5, p0, Lcom/android/launcher3/allapps/AppsTransitionAnimation;->mStageAnimator:Landroid/animation/AnimatorSet;
 
-    invoke-virtual {p2, v3, v4}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    iget-object v5, p0, Lcom/android/launcher3/allapps/AppsTransitionAnimation;->mAppsPageIndicatorView:Landroid/view/View;
 
-    iget-object v3, p0, Lcom/android/launcher3/allapps/AppsTransitionAnimation;->mAppsContentView:Landroid/view/ViewGroup;
+    sget-object v7, Landroid/view/View;->ALPHA:Landroid/util/Property;
 
-    sget-object v4, Landroid/view/View;->ALPHA:Landroid/util/Property;
+    invoke-virtual {v7}, Landroid/util/Property;->getName()Ljava/lang/String;
 
-    invoke-virtual {v4}, Landroid/util/Property;->getName()Ljava/lang/String;
+    move-result-object v7
 
-    move-result-object v4
+    new-array v8, v8, [F
 
-    new-array v5, v5, [F
+    aput v6, v8, v9
 
-    const/4 v6, 0x0
-
-    aput v7, v5, v6
-
-    invoke-static {v3, v4, v5}, Lcom/android/launcher3/util/animation/LauncherAnimUtils;->ofFloat(Landroid/view/View;Ljava/lang/String;[F)Landroid/animation/ObjectAnimator;
+    invoke-static {v5, v7, v8}, Lcom/android/launcher3/util/animation/LauncherAnimUtils;->ofFloat(Landroid/view/View;Ljava/lang/String;[F)Landroid/animation/ObjectAnimator;
 
     move-result-object v1
 
-    int-to-long v4, v2
+    int-to-long v6, v2
 
-    invoke-virtual {v1, v4, v5}, Landroid/animation/Animator;->setDuration(J)Landroid/animation/Animator;
+    invoke-virtual {v1, v6, v7}, Landroid/animation/Animator;->setDuration(J)Landroid/animation/Animator;
 
-    iget-object v3, p0, Lcom/android/launcher3/allapps/AppsTransitionAnimation;->mStageAnimator:Landroid/animation/AnimatorSet;
+    iget-object v5, p0, Lcom/android/launcher3/allapps/AppsTransitionAnimation;->mStageAnimator:Landroid/animation/AnimatorSet;
 
-    invoke-virtual {v3, v1}, Landroid/animation/AnimatorSet;->play(Landroid/animation/Animator;)Landroid/animation/AnimatorSet$Builder;
+    invoke-virtual {v5, v1}, Landroid/animation/AnimatorSet;->play(Landroid/animation/Animator;)Landroid/animation/AnimatorSet$Builder;
 
-    iget-object v3, p0, Lcom/android/launcher3/allapps/AppsTransitionAnimation;->mStageAnimator:Landroid/animation/AnimatorSet;
+    :cond_2
+    :goto_1
+    iget-object v5, p0, Lcom/android/launcher3/allapps/AppsTransitionAnimation;->mStageAnimator:Landroid/animation/AnimatorSet;
 
-    new-instance v4, Lcom/android/launcher3/allapps/AlphaUpdateListener;
+    return-object v5
+
+    :cond_3
+    int-to-float v5, v4
+
+    div-float v5, v3, v5
+
+    invoke-static {v5}, Ljava/lang/Math;->abs(F)F
+
+    move-result v5
+
+    goto :goto_0
+
+    :cond_4
+    invoke-static {}, Lcom/android/launcher3/util/animation/LauncherAnimUtils;->createAnimatorSet()Landroid/animation/AnimatorSet;
+
+    move-result-object v5
+
+    iput-object v5, p0, Lcom/android/launcher3/allapps/AppsTransitionAnimation;->mStageAnimator:Landroid/animation/AnimatorSet;
+
+    const/4 v5, 0x2
+
+    invoke-direct {p0, v5, v8}, Lcom/android/launcher3/allapps/AppsTransitionAnimation;->getStageAnimationDuration(II)I
+
+    move-result v2
 
     iget-object v5, p0, Lcom/android/launcher3/allapps/AppsTransitionAnimation;->mAppsContentView:Landroid/view/ViewGroup;
 
-    invoke-direct {v4, v5, v0}, Lcom/android/launcher3/allapps/AlphaUpdateListener;-><init>(Landroid/view/View;Z)V
+    invoke-static {v8}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    invoke-virtual {v3, v4}, Landroid/animation/AnimatorSet;->addListener(Landroid/animation/Animator$AnimatorListener;)V
+    move-result-object v7
 
-    goto :goto_0
+    invoke-virtual {p2, v5, v7}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    :cond_1
-    iget-object v3, p0, Lcom/android/launcher3/allapps/AppsTransitionAnimation;->mAppsContentView:Landroid/view/ViewGroup;
+    iget-object v5, p0, Lcom/android/launcher3/allapps/AppsTransitionAnimation;->mAppsContentView:Landroid/view/ViewGroup;
 
-    invoke-virtual {v3, v7}, Landroid/view/ViewGroup;->setAlpha(F)V
+    sget-object v7, Landroid/view/View;->ALPHA:Landroid/util/Property;
 
-    iget-object v3, p0, Lcom/android/launcher3/allapps/AppsTransitionAnimation;->mAppsPageIndicatorView:Landroid/view/View;
+    invoke-virtual {v7}, Landroid/util/Property;->getName()Ljava/lang/String;
 
-    if-eqz v3, :cond_2
+    move-result-object v7
 
-    iget-object v3, p0, Lcom/android/launcher3/allapps/AppsTransitionAnimation;->mAppsPageIndicatorView:Landroid/view/View;
+    new-array v8, v8, [F
 
-    invoke-virtual {v3, v7}, Landroid/view/View;->setAlpha(F)V
+    aput v6, v8, v9
 
-    :cond_2
-    iget-object v3, p0, Lcom/android/launcher3/allapps/AppsTransitionAnimation;->mAppsContentView:Landroid/view/ViewGroup;
+    invoke-static {v5, v7, v8}, Lcom/android/launcher3/util/animation/LauncherAnimUtils;->ofFloat(Landroid/view/View;Ljava/lang/String;[F)Landroid/animation/ObjectAnimator;
 
-    invoke-static {v3, v0}, Lcom/android/launcher3/allapps/AlphaUpdateListener;->updateVisibility(Landroid/view/View;Z)V
+    move-result-object v1
 
-    goto :goto_0
+    int-to-long v6, v2
+
+    invoke-virtual {v1, v6, v7}, Landroid/animation/Animator;->setDuration(J)Landroid/animation/Animator;
+
+    iget-object v5, p0, Lcom/android/launcher3/allapps/AppsTransitionAnimation;->mStageAnimator:Landroid/animation/AnimatorSet;
+
+    invoke-virtual {v5, v1}, Landroid/animation/AnimatorSet;->play(Landroid/animation/Animator;)Landroid/animation/AnimatorSet$Builder;
+
+    iget-object v5, p0, Lcom/android/launcher3/allapps/AppsTransitionAnimation;->mStageAnimator:Landroid/animation/AnimatorSet;
+
+    new-instance v6, Lcom/android/launcher3/allapps/AlphaUpdateListener;
+
+    iget-object v7, p0, Lcom/android/launcher3/allapps/AppsTransitionAnimation;->mAppsContentView:Landroid/view/ViewGroup;
+
+    invoke-direct {v6, v7, v0}, Lcom/android/launcher3/allapps/AlphaUpdateListener;-><init>(Landroid/view/View;Z)V
+
+    invoke-virtual {v5, v6}, Landroid/animation/AnimatorSet;->addListener(Landroid/animation/Animator$AnimatorListener;)V
+
+    goto :goto_1
+
+    :cond_5
+    iget-object v5, p0, Lcom/android/launcher3/allapps/AppsTransitionAnimation;->mAppsContentView:Landroid/view/ViewGroup;
+
+    invoke-virtual {v5, v6}, Landroid/view/ViewGroup;->setAlpha(F)V
+
+    iget-object v5, p0, Lcom/android/launcher3/allapps/AppsTransitionAnimation;->mAppsPageIndicatorView:Landroid/view/View;
+
+    if-eqz v5, :cond_6
+
+    iget-object v5, p0, Lcom/android/launcher3/allapps/AppsTransitionAnimation;->mAppsPageIndicatorView:Landroid/view/View;
+
+    invoke-virtual {v5, v6}, Landroid/view/View;->setAlpha(F)V
+
+    :cond_6
+    iget-object v5, p0, Lcom/android/launcher3/allapps/AppsTransitionAnimation;->mAppsContentView:Landroid/view/ViewGroup;
+
+    invoke-static {v5, v0}, Lcom/android/launcher3/allapps/AlphaUpdateListener;->updateVisibility(Landroid/view/View;Z)V
+
+    goto :goto_1
 .end method
 
 .method public getExitToWidgetAnim(ZLjava/util/HashMap;)Landroid/animation/Animator;
@@ -3003,7 +3212,7 @@
 
     move-result v4
 
-    const v5, 0x7f0a00eb
+    const v5, 0x7f0a00ef
 
     move-object/from16 v0, v29
 
@@ -3359,7 +3568,7 @@
     goto/16 :goto_0
 
     :cond_4
-    const v4, 0x7f0a00eb
+    const v4, 0x7f0a00ef
 
     move-object/from16 v0, v29
 

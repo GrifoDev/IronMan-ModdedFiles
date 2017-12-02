@@ -579,7 +579,7 @@
 
     move-result-object v0
 
-    const v2, 0x7f0901a8
+    const v2, 0x7f0901b5
 
     invoke-virtual {v0, v2}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -591,7 +591,7 @@
 
     move-result-object v0
 
-    const v3, 0x7f090144
+    const v3, 0x7f09014d
 
     invoke-virtual {v0, v3}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -607,7 +607,7 @@
 
     move-result-object v0
 
-    const v3, 0x7f090143
+    const v3, 0x7f09014c
 
     invoke-virtual {v0, v3}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -666,7 +666,7 @@
 
     move-result-object v4
 
-    const v6, 0x7f0901a8
+    const v6, 0x7f0901b5
 
     invoke-virtual {v4, v6}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -676,7 +676,7 @@
 
     move-result-object v4
 
-    const v7, 0x7f0900fd
+    const v7, 0x7f090106
 
     invoke-virtual {v4, v7}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -697,7 +697,7 @@
 
     move-result-object v4
 
-    const v6, 0x7f0901cc
+    const v6, 0x7f0901d9
 
     invoke-virtual {v4, v6}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -955,7 +955,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f0901a8
+    const v2, 0x7f0901b5
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -965,7 +965,7 @@
 
     move-result-object v2
 
-    const v3, 0x7f090116
+    const v3, 0x7f09011f
 
     invoke-virtual {v2, v3}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -1028,7 +1028,7 @@
 
     invoke-virtual {p0, v1}, Lcom/android/launcher3/home/HomeModeChangeActivity;->setRequestedOrientation(I)V
 
-    :goto_0
+    :cond_0
     const v1, 0x7f04002c
 
     invoke-virtual {p0, v1}, Lcom/android/launcher3/home/HomeModeChangeActivity;->setContentView(I)V
@@ -1084,13 +1084,6 @@
     iput-object v1, p0, Lcom/android/launcher3/home/HomeModeChangeActivity;->mSettingsActivity:Landroid/app/Activity;
 
     return-void
-
-    :cond_0
-    const/4 v1, 0x5
-
-    invoke-virtual {p0, v1}, Lcom/android/launcher3/home/HomeModeChangeActivity;->setRequestedOrientation(I)V
-
-    goto :goto_0
 .end method
 
 .method protected onDestroy()V

@@ -1160,6 +1160,25 @@
     return-object v0
 .end method
 
+.method protected getHiddenApps()Ljava/util/ArrayList;
+    .locals 1
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "()",
+            "Ljava/util/ArrayList",
+            "<",
+            "Landroid/content/ComponentName;",
+            ">;"
+        }
+    .end annotation
+
+    new-instance v0, Ljava/util/ArrayList;
+
+    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
+
+    return-object v0
+.end method
+
 .method protected getLayoutElementsMap()Ljava/util/HashMap;
     .locals 4
     .annotation system Ldalvik/annotation/Signature;
@@ -1506,28 +1525,9 @@
 
     move-object/from16 v0, p0
 
-    iget-boolean v2, v0, Lcom/android/launcher3/home/HomeDefaultLayoutParser;->mIsHomeOnly:Z
-
-    if-eqz v2, :cond_6
-
-    new-instance v13, Ljava/io/File;
-
-    move-object/from16 v0, p0
-
-    iget-object v2, v0, Lcom/android/launcher3/home/HomeDefaultLayoutParser;->mDWPathHomeOnly:Ljava/lang/String;
-
-    invoke-direct {v13, v2}, Ljava/io/File;-><init>(Ljava/lang/String;)V
-
-    move-object v12, v13
-
-    goto/16 :goto_0
-
-    :cond_6
-    move-object/from16 v0, p0
-
     iget-boolean v2, v0, Lcom/android/launcher3/home/HomeDefaultLayoutParser;->mIsGuest:Z
 
-    if-eqz v2, :cond_8
+    if-eqz v2, :cond_7
 
     new-instance v13, Ljava/io/File;
 
@@ -1547,7 +1547,7 @@
 
     move-result v2
 
-    if-eqz v2, :cond_7
+    if-eqz v2, :cond_6
 
     invoke-virtual {v13}, Ljava/io/File;->length()J
 
@@ -1559,7 +1559,7 @@
 
     if-gtz v2, :cond_16
 
-    :cond_7
+    :cond_6
     new-instance v12, Ljava/io/File;
 
     move-object/from16 v0, p0
@@ -1575,8 +1575,27 @@
 
     goto/16 :goto_0
 
-    :cond_8
+    :cond_7
     :try_start_4
+    move-object/from16 v0, p0
+
+    iget-boolean v2, v0, Lcom/android/launcher3/home/HomeDefaultLayoutParser;->mIsHomeOnly:Z
+
+    if-eqz v2, :cond_8
+
+    new-instance v13, Ljava/io/File;
+
+    move-object/from16 v0, p0
+
+    iget-object v2, v0, Lcom/android/launcher3/home/HomeDefaultLayoutParser;->mDWPathHomeOnly:Ljava/lang/String;
+
+    invoke-direct {v13, v2}, Ljava/io/File;-><init>(Ljava/lang/String;)V
+
+    move-object v12, v13
+
+    goto/16 :goto_0
+
+    :cond_8
     new-instance v13, Ljava/io/File;
 
     move-object/from16 v0, p0
@@ -1651,22 +1670,22 @@
     :cond_d
     move-object/from16 v0, p0
 
-    iget-boolean v2, v0, Lcom/android/launcher3/home/HomeDefaultLayoutParser;->mIsHomeOnly:Z
+    iget-boolean v2, v0, Lcom/android/launcher3/home/HomeDefaultLayoutParser;->mIsGuest:Z
 
     if-eqz v2, :cond_e
 
-    const v16, 0x7f080009
+    const v16, 0x7f080008
 
     goto :goto_3
 
     :cond_e
     move-object/from16 v0, p0
 
-    iget-boolean v2, v0, Lcom/android/launcher3/home/HomeDefaultLayoutParser;->mIsGuest:Z
+    iget-boolean v2, v0, Lcom/android/launcher3/home/HomeDefaultLayoutParser;->mIsHomeOnly:Z
 
     if-eqz v2, :cond_f
 
-    const v16, 0x7f080008
+    const v16, 0x7f080009
 
     goto :goto_3
 

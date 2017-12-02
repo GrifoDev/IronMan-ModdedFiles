@@ -398,6 +398,20 @@
     return-object v0
 .end method
 
+.method protected getSupportSoftInputParam(Landroid/view/Window;)I
+    .locals 2
+
+    invoke-virtual {p1}, Landroid/view/Window;->getAttributes()Landroid/view/WindowManager$LayoutParams;
+
+    move-result-object v1
+
+    iget v0, v1, Landroid/view/WindowManager$LayoutParams;->softInputMode:I
+
+    or-int/lit8 v1, v0, 0x10
+
+    return v1
+.end method
+
 .method protected initStageView()V
     .locals 2
 
@@ -442,8 +456,15 @@
 
     iput v1, p0, Lcom/android/launcher3/common/stage/Stage;->mCurrentOrientation:I
 
+    invoke-static {}, Lcom/android/launcher3/util/TestHelper;->isRoboUnitTest()Z
+
+    move-result v1
+
+    if-eqz v1, :cond_0
+
     const/4 v1, -0x1
 
+    :goto_0
     iput v1, p0, Lcom/android/launcher3/common/stage/Stage;->mCurrentMobileKeyboard:I
 
     iget v1, v0, Landroid/content/res/Configuration;->screenHeightDp:I
@@ -451,6 +472,11 @@
     iput v1, p0, Lcom/android/launcher3/common/stage/Stage;->mCurrentHeightDp:I
 
     return-void
+
+    :cond_0
+    iget v1, v0, Landroid/content/res/Configuration;->semMobileKeyboardCovered:I
+
+    goto :goto_0
 .end method
 
 .method protected isRestorable()Z
@@ -558,46 +584,60 @@
 .end method
 
 .method public onConfigurationChanged(Landroid/content/res/Configuration;)V
-    .locals 2
+    .locals 3
 
-    iget v0, p0, Lcom/android/launcher3/common/stage/Stage;->mCurrentOrientation:I
+    iget v1, p0, Lcom/android/launcher3/common/stage/Stage;->mCurrentOrientation:I
+
+    iget v2, p1, Landroid/content/res/Configuration;->orientation:I
+
+    if-ne v1, v2, :cond_0
+
+    iget v1, p0, Lcom/android/launcher3/common/stage/Stage;->mCurrentMobileKeyboard:I
+
+    iget v2, p1, Landroid/content/res/Configuration;->semMobileKeyboardCovered:I
+
+    if-ne v1, v2, :cond_0
+
+    iget v1, p0, Lcom/android/launcher3/common/stage/Stage;->mCurrentHeightDp:I
+
+    iget v2, p1, Landroid/content/res/Configuration;->screenHeightDp:I
+
+    if-eq v1, v2, :cond_1
+
+    :cond_0
+    iget v1, p0, Lcom/android/launcher3/common/stage/Stage;->mCurrentOrientation:I
+
+    iget v2, p1, Landroid/content/res/Configuration;->orientation:I
+
+    if-eq v1, v2, :cond_2
+
+    const/4 v0, 0x1
+
+    :goto_0
+    iget v1, p1, Landroid/content/res/Configuration;->semMobileKeyboardCovered:I
+
+    iput v1, p0, Lcom/android/launcher3/common/stage/Stage;->mCurrentMobileKeyboard:I
 
     iget v1, p1, Landroid/content/res/Configuration;->orientation:I
 
-    if-ne v0, v1, :cond_0
-
-    iget v0, p0, Lcom/android/launcher3/common/stage/Stage;->mCurrentMobileKeyboard:I
-
-    iget v1, p1, Landroid/content/res/Configuration;->semMobileKeyboardCovered:I
-
-    if-ne v0, v1, :cond_0
-
-    iget v0, p0, Lcom/android/launcher3/common/stage/Stage;->mCurrentHeightDp:I
+    iput v1, p0, Lcom/android/launcher3/common/stage/Stage;->mCurrentOrientation:I
 
     iget v1, p1, Landroid/content/res/Configuration;->screenHeightDp:I
 
-    if-eq v0, v1, :cond_1
+    iput v1, p0, Lcom/android/launcher3/common/stage/Stage;->mCurrentHeightDp:I
 
-    :cond_0
-    iget v0, p1, Landroid/content/res/Configuration;->semMobileKeyboardCovered:I
-
-    iput v0, p0, Lcom/android/launcher3/common/stage/Stage;->mCurrentMobileKeyboard:I
-
-    iget v0, p1, Landroid/content/res/Configuration;->orientation:I
-
-    iput v0, p0, Lcom/android/launcher3/common/stage/Stage;->mCurrentOrientation:I
-
-    iget v0, p1, Landroid/content/res/Configuration;->screenHeightDp:I
-
-    iput v0, p0, Lcom/android/launcher3/common/stage/Stage;->mCurrentHeightDp:I
-
-    invoke-virtual {p0}, Lcom/android/launcher3/common/stage/Stage;->onConfigurationChangedIfNeeded()V
+    invoke-virtual {p0, v0}, Lcom/android/launcher3/common/stage/Stage;->onConfigurationChangedIfNeeded(Z)V
 
     :cond_1
     return-void
+
+    :cond_2
+    const/4 v0, 0x0
+
+    goto :goto_0
 .end method
 
-.method public onConfigurationChangedIfNeeded()V
+.method public onConfigurationChangedIfNeeded(Z)V
     .locals 0
 
     return-void
@@ -644,7 +684,13 @@
 .method protected abstract onStageEnter(Lcom/android/launcher3/common/stage/StageEntry;)Landroid/animation/Animator;
 .end method
 
+.method protected abstract onStageEnterByTray()Landroid/animation/Animator;
+.end method
+
 .method protected abstract onStageExit(Lcom/android/launcher3/common/stage/StageEntry;)Landroid/animation/Animator;
+.end method
+
+.method protected abstract onStageExitByTray()Landroid/animation/Animator;
 .end method
 
 .method protected onStageMovingToInitial(Lcom/android/launcher3/common/stage/StageEntry;)V
@@ -772,6 +818,23 @@
     goto :goto_0
 .end method
 
+.method protected updateSoftInputParam(Landroid/view/Window;I)V
+    .locals 2
+
+    invoke-virtual {p1}, Landroid/view/Window;->getAttributes()Landroid/view/WindowManager$LayoutParams;
+
+    move-result-object v1
+
+    iget v0, v1, Landroid/view/WindowManager$LayoutParams;->softInputMode:I
+
+    if-eq v0, p2, :cond_0
+
+    invoke-virtual {p1, p2}, Landroid/view/Window;->setSoftInputMode(I)V
+
+    :cond_0
+    return-void
+.end method
+
 .method protected updateSystemUIForState(ILandroid/animation/AnimatorSet;J)V
     .locals 9
 
@@ -787,7 +850,7 @@
 
     move-result v6
 
-    if-eqz v6, :cond_1
+    if-eqz v6, :cond_2
 
     iget-object v6, p0, Lcom/android/launcher3/common/stage/Stage;->mLauncher:Lcom/android/launcher3/Launcher;
 
@@ -795,13 +858,13 @@
 
     move-result-object v5
 
-    if-eqz v5, :cond_0
+    if-eqz v5, :cond_1
 
     invoke-virtual {p0, p1}, Lcom/android/launcher3/common/stage/Stage;->supportStatusBarForState(I)Z
 
     move-result v6
 
-    if-nez v6, :cond_2
+    if-nez v6, :cond_3
 
     const/4 v6, 0x1
 
@@ -812,7 +875,7 @@
 
     move-result v6
 
-    if-nez v6, :cond_3
+    if-nez v6, :cond_4
 
     const/4 v6, 0x1
 
@@ -833,24 +896,31 @@
 
     cmpl-float v6, v0, v6
 
-    if-lez v6, :cond_4
+    if-lez v6, :cond_5
 
     const/4 v3, 0x1
 
     :goto_2
-    if-eqz v3, :cond_5
+    if-eqz v3, :cond_6
 
     :goto_3
     invoke-static {v3, v5, v0, p3, p4}, Lcom/android/launcher3/util/BlurUtils;->blurByWindowManager(ZLandroid/view/Window;FJ)V
 
     :cond_0
+    invoke-virtual {p0, v5}, Lcom/android/launcher3/common/stage/Stage;->getSupportSoftInputParam(Landroid/view/Window;)I
+
+    move-result v6
+
+    invoke-virtual {p0, v5, v6}, Lcom/android/launcher3/common/stage/Stage;->updateSoftInputParam(Landroid/view/Window;I)V
+
+    :cond_1
     iget-object v6, p0, Lcom/android/launcher3/common/stage/Stage;->mLauncher:Lcom/android/launcher3/Launcher;
 
     invoke-virtual {v6}, Lcom/android/launcher3/Launcher;->getDragLayer()Lcom/android/launcher3/common/view/DragLayer;
 
     move-result-object v1
 
-    if-eqz v1, :cond_1
+    if-eqz v1, :cond_2
 
     invoke-virtual {v1}, Lcom/android/launcher3/common/view/DragLayer;->getBackgroundAlpha()F
 
@@ -862,39 +932,39 @@
 
     iget-object v6, p0, Lcom/android/launcher3/common/stage/Stage;->mBackgroundDimAnim:Landroid/animation/Animator;
 
-    if-eqz v6, :cond_7
+    if-eqz v6, :cond_8
 
     iget v6, p0, Lcom/android/launcher3/common/stage/Stage;->mBackgroundDimFinalAlpha:F
 
     cmpl-float v6, v6, v2
 
-    if-nez v6, :cond_6
-
-    :cond_1
-    :goto_4
-    return-void
+    if-nez v6, :cond_7
 
     :cond_2
-    const/4 v6, 0x0
-
-    goto :goto_0
+    :goto_4
+    return-void
 
     :cond_3
     const/4 v6, 0x0
 
-    goto :goto_1
+    goto :goto_0
 
     :cond_4
+    const/4 v6, 0x0
+
+    goto :goto_1
+
+    :cond_5
     const/4 v3, 0x0
 
     goto :goto_2
 
-    :cond_5
+    :cond_6
     const/4 v0, 0x0
 
     goto :goto_3
 
-    :cond_6
+    :cond_7
     iget-object v6, p0, Lcom/android/launcher3/common/stage/Stage;->mBackgroundDimAnim:Landroid/animation/Animator;
 
     invoke-virtual {v6}, Landroid/animation/Animator;->cancel()V
@@ -903,22 +973,22 @@
 
     iput-object v6, p0, Lcom/android/launcher3/common/stage/Stage;->mBackgroundDimAnim:Landroid/animation/Animator;
 
-    :cond_7
+    :cond_8
     cmpl-float v6, v4, v2
 
-    if-eqz v6, :cond_1
+    if-eqz v6, :cond_2
 
     const/4 v6, 0x0
 
     cmpl-float v6, v2, v6
 
-    if-ltz v6, :cond_1
+    if-ltz v6, :cond_2
 
     const/high16 v6, 0x3f800000    # 1.0f
 
     cmpg-float v6, v2, v6
 
-    if-gtz v6, :cond_1
+    if-gtz v6, :cond_2
 
     iput v2, p0, Lcom/android/launcher3/common/stage/Stage;->mBackgroundDimFinalAlpha:F
 
@@ -926,11 +996,11 @@
 
     cmp-long v6, p3, v6
 
-    if-gtz v6, :cond_8
+    if-gtz v6, :cond_9
 
     const-wide/16 p3, 0x46
 
-    :cond_8
+    :cond_9
     const-string v6, "backgroundAlpha"
 
     const/4 v7, 0x2
@@ -963,7 +1033,7 @@
 
     invoke-virtual {v6, v7}, Landroid/animation/Animator;->addListener(Landroid/animation/Animator$AnimatorListener;)V
 
-    if-eqz p2, :cond_9
+    if-eqz p2, :cond_a
 
     iget-object v6, p0, Lcom/android/launcher3/common/stage/Stage;->mBackgroundDimAnim:Landroid/animation/Animator;
 
@@ -971,7 +1041,7 @@
 
     goto :goto_4
 
-    :cond_9
+    :cond_a
     iget-object v6, p0, Lcom/android/launcher3/common/stage/Stage;->mBackgroundDimAnim:Landroid/animation/Animator;
 
     invoke-virtual {v6}, Landroid/animation/Animator;->start()V

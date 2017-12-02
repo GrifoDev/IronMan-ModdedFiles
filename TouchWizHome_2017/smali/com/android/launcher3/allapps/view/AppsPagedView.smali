@@ -225,14 +225,6 @@
     return-object v0
 .end method
 
-.method static synthetic access$202(Lcom/android/launcher3/allapps/view/AppsPagedView;Z)Z
-    .locals 0
-
-    iput-boolean p1, p0, Lcom/android/launcher3/allapps/view/AppsPagedView;->mFirstLayout:Z
-
-    return p1
-.end method
-
 .method private createAppsPage(Ljava/lang/String;)Lcom/android/launcher3/allapps/view/AppsViewCellLayout;
     .locals 4
 
@@ -974,9 +966,7 @@
 
     add-int/lit8 v0, v4, -0x1
 
-    iget-object v4, p0, Lcom/android/launcher3/allapps/view/AppsPagedView;->mListener:Lcom/android/launcher3/allapps/view/AppsPagedView$Listener;
-
-    invoke-interface {v4, v0}, Lcom/android/launcher3/allapps/view/AppsPagedView$Listener;->findFirstEmptyCell(I)I
+    invoke-virtual {p0, v0}, Lcom/android/launcher3/allapps/view/AppsPagedView;->findFirstEmptyCell(I)I
 
     move-result v2
 
@@ -2154,7 +2144,7 @@
 .end method
 
 .method public onChangeScreenGrid(II)V
-    .locals 3
+    .locals 4
 
     invoke-virtual {p0}, Lcom/android/launcher3/allapps/view/AppsPagedView;->getChildCount()I
 
@@ -2178,12 +2168,14 @@
     goto :goto_0
 
     :cond_0
-    invoke-virtual {p0}, Lcom/android/launcher3/allapps/view/AppsPagedView;->updateLayout()V
+    const/4 v3, 0x1
+
+    invoke-virtual {p0, v3}, Lcom/android/launcher3/allapps/view/AppsPagedView;->updateLayout(Z)V
 
     return-void
 .end method
 
-.method public onConfigurationChangedIfNeeded()V
+.method public onConfigurationChangedIfNeeded(Z)V
     .locals 4
 
     invoke-super {p0}, Lcom/android/launcher3/common/base/view/PagedView;->onConfigurationChangedIfNeeded()V
@@ -2246,7 +2238,7 @@
 
     mul-int/lit8 v2, v0, 0x2
 
-    invoke-virtual {p0, v2}, Lcom/android/launcher3/allapps/view/AppsPagedView;->updateLayoutByConfigurationChanged(I)V
+    invoke-virtual {p0, p1, v2}, Lcom/android/launcher3/allapps/view/AppsPagedView;->updateLayoutByConfigurationChanged(ZI)V
 
     return-void
 .end method
@@ -2494,70 +2486,67 @@
 .end method
 
 .method public rearrangeAllViews(Z)V
-    .locals 20
+    .locals 22
 
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
     move-result-wide v12
 
-    new-instance v15, Ljava/util/ArrayList;
+    const/4 v14, 0x0
 
-    invoke-direct {v15}, Ljava/util/ArrayList;-><init>()V
+    new-instance v2, Ljava/util/ArrayList;
 
     move-object/from16 v0, p0
 
     iget-object v3, v0, Lcom/android/launcher3/allapps/view/AppsPagedView;->mCellLayouts:Ljava/util/ArrayList;
 
-    invoke-virtual {v3}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
+    invoke-direct {v2, v3}, Ljava/util/ArrayList;-><init>(Ljava/util/Collection;)V
 
-    move-result-object v3
+    invoke-virtual {v2}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
+
+    move-result-object v20
 
     :goto_0
-    invoke-interface {v3}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v5
-
-    if-eqz v5, :cond_0
-
-    invoke-interface {v3}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v16
-
-    check-cast v16, Lcom/android/launcher3/common/base/view/CellLayout;
-
-    invoke-virtual/range {v16 .. v16}, Lcom/android/launcher3/common/base/view/CellLayout;->getCellLayoutChildren()Lcom/android/launcher3/common/base/view/CellLayoutChildren;
-
-    move-result-object v5
-
-    invoke-virtual {v5}, Lcom/android/launcher3/common/base/view/CellLayoutChildren;->getChildren()Ljava/util/ArrayList;
-
-    move-result-object v5
-
-    invoke-virtual {v15, v5}, Ljava/util/ArrayList;->addAll(Ljava/util/Collection;)Z
-
-    goto :goto_0
-
-    :cond_0
-    const/4 v2, 0x0
-
-    invoke-virtual {v15}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
-
-    move-result-object v19
-
-    :goto_1
-    invoke-interface/range {v19 .. v19}, Ljava/util/Iterator;->hasNext()Z
+    invoke-interface/range {v20 .. v20}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v3
 
     if-eqz v3, :cond_3
 
-    invoke-interface/range {v19 .. v19}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    invoke-interface/range {v20 .. v20}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
-    move-result-object v18
+    move-result-object v17
 
-    check-cast v18, Landroid/view/View;
+    check-cast v17, Lcom/android/launcher3/common/base/view/CellLayout;
 
-    invoke-virtual/range {v18 .. v18}, Landroid/view/View;->getTag()Ljava/lang/Object;
+    invoke-virtual/range {v17 .. v17}, Lcom/android/launcher3/common/base/view/CellLayout;->getCellLayoutChildren()Lcom/android/launcher3/common/base/view/CellLayoutChildren;
+
+    move-result-object v3
+
+    invoke-virtual {v3}, Lcom/android/launcher3/common/base/view/CellLayoutChildren;->getChildren()Ljava/util/ArrayList;
+
+    move-result-object v16
+
+    invoke-virtual/range {v17 .. v17}, Lcom/android/launcher3/common/base/view/CellLayout;->clearOccupiedCells()V
+
+    invoke-virtual/range {v16 .. v16}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
+
+    move-result-object v21
+
+    :goto_1
+    invoke-interface/range {v21 .. v21}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v3
+
+    if-eqz v3, :cond_2
+
+    invoke-interface/range {v21 .. v21}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v19
+
+    check-cast v19, Landroid/view/View;
+
+    invoke-virtual/range {v19 .. v19}, Landroid/view/View;->getTag()Ljava/lang/Object;
 
     move-result-object v4
 
@@ -2571,35 +2560,35 @@
 
     invoke-virtual {v0, v3}, Lcom/android/launcher3/allapps/view/AppsPagedView;->getCellLayout(I)Lcom/android/launcher3/common/base/view/CellLayout;
 
-    move-result-object v17
+    move-result-object v18
 
-    invoke-virtual/range {v18 .. v18}, Landroid/view/View;->getParent()Landroid/view/ViewParent;
+    invoke-virtual/range {v19 .. v19}, Landroid/view/View;->getParent()Landroid/view/ViewParent;
 
     move-result-object v3
 
     invoke-interface {v3}, Landroid/view/ViewParent;->getParent()Landroid/view/ViewParent;
 
-    move-result-object v14
+    move-result-object v15
 
-    check-cast v14, Lcom/android/launcher3/common/base/view/CellLayout;
+    check-cast v15, Lcom/android/launcher3/common/base/view/CellLayout;
 
-    if-eqz v17, :cond_2
+    if-eqz v18, :cond_1
 
-    move-object/from16 v0, v17
+    move-object/from16 v0, v18
 
-    invoke-virtual {v14, v0}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v15, v0}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
 
     move-result v3
 
-    if-eqz v3, :cond_2
+    if-eqz v3, :cond_1
 
-    if-eqz p1, :cond_1
+    if-eqz p1, :cond_0
 
     iget v5, v4, Lcom/android/launcher3/common/base/item/ItemInfo;->rank:I
 
     iget-wide v6, v4, Lcom/android/launcher3/common/base/item/ItemInfo;->screenId:J
 
-    int-to-long v8, v2
+    int-to-long v8, v14
 
     const/16 v10, 0x96
 
@@ -2613,7 +2602,7 @@
 
     goto :goto_1
 
-    :cond_1
+    :cond_0
     iget v5, v4, Lcom/android/launcher3/common/base/item/ItemInfo;->rank:I
 
     iget-wide v6, v4, Lcom/android/launcher3/common/base/item/ItemInfo;->screenId:J
@@ -2632,18 +2621,23 @@
 
     goto :goto_1
 
-    :cond_2
-    move-object/from16 v0, v18
+    :cond_1
+    move-object/from16 v0, v19
 
-    invoke-virtual {v14, v0}, Lcom/android/launcher3/common/base/view/CellLayout;->removeView(Landroid/view/View;)V
+    invoke-virtual {v15, v0}, Lcom/android/launcher3/common/base/view/CellLayout;->removeView(Landroid/view/View;)V
 
     move-object/from16 v0, p0
 
-    move-object/from16 v1, v18
+    move-object/from16 v1, v19
 
     invoke-virtual {v0, v1, v4}, Lcom/android/launcher3/allapps/view/AppsPagedView;->addItem(Landroid/view/View;Lcom/android/launcher3/common/base/item/ItemInfo;)V
 
     goto :goto_1
+
+    :cond_2
+    invoke-virtual/range {v17 .. v17}, Lcom/android/launcher3/common/base/view/CellLayout;->markCellsAsOccupiedForAllChild()V
+
+    goto :goto_0
 
     :cond_3
     const-string v3, "Launcher.AppsPagedView"
@@ -3021,6 +3015,14 @@
     return-void
 .end method
 
+.method protected setFirstLayout(Z)V
+    .locals 0
+
+    iput-boolean p1, p0, Lcom/android/launcher3/allapps/view/AppsPagedView;->mFirstLayout:Z
+
+    return-void
+.end method
+
 .method public final setInsets(Landroid/graphics/Rect;)V
     .locals 1
 
@@ -3065,7 +3067,7 @@
 .method public snapToPageSALoggging(Z)V
     .locals 8
 
-    const v4, 0x7f090153
+    const v4, 0x7f09015c
 
     if-eqz p1, :cond_0
 
@@ -3094,7 +3096,7 @@
 
     move-result-object v2
 
-    const v3, 0x7f09019f
+    const v3, 0x7f0901ac
 
     invoke-virtual {v1, v3}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -3131,13 +3133,13 @@
 
     move-result-object v2
 
-    const v3, 0x7f09019d
+    const v3, 0x7f0901aa
 
     invoke-virtual {v1, v3}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
     move-result-object v3
 
-    const v4, 0x7f090108
+    const v4, 0x7f090111
 
     invoke-virtual {v1, v4}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -3154,7 +3156,7 @@
 
     move-result-object v2
 
-    const v3, 0x7f09019c
+    const v3, 0x7f0901a9
 
     invoke-virtual {v1, v3}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -3331,6 +3333,35 @@
 
     :cond_5
     return-void
+.end method
+
+.method public updateChildrenLayersEnabled(IZ)I
+    .locals 2
+
+    if-ltz p1, :cond_1
+
+    move v0, p1
+
+    :goto_0
+    invoke-virtual {p0, v0}, Lcom/android/launcher3/allapps/view/AppsPagedView;->getPageAt(I)Landroid/view/View;
+
+    move-result-object v1
+
+    check-cast v1, Lcom/android/launcher3/common/base/view/CellLayout;
+
+    if-eqz v1, :cond_0
+
+    invoke-virtual {v1, p2}, Lcom/android/launcher3/common/base/view/CellLayout;->enableHardwareLayer(Z)V
+
+    :cond_0
+    return v0
+
+    :cond_1
+    invoke-virtual {p0}, Lcom/android/launcher3/allapps/view/AppsPagedView;->getNextPage()I
+
+    move-result v0
+
+    goto :goto_0
 .end method
 
 .method public updateClockLiveIcon()V
@@ -3603,7 +3634,7 @@
     return-void
 .end method
 
-.method public updateLayout()V
+.method public updateLayout(Z)V
     .locals 3
 
     invoke-virtual {p0}, Lcom/android/launcher3/allapps/view/AppsPagedView;->getChildCount()I
@@ -3623,7 +3654,7 @@
 
     invoke-virtual {v0}, Lcom/android/launcher3/allapps/view/AppsViewCellLayout;->setCellDimensions()V
 
-    invoke-virtual {v0}, Lcom/android/launcher3/allapps/view/AppsViewCellLayout;->updateIconViews()V
+    invoke-virtual {v0, p1}, Lcom/android/launcher3/allapps/view/AppsViewCellLayout;->updateIconViews(Z)V
 
     add-int/lit8 v1, v1, 0x1
 
@@ -3633,20 +3664,28 @@
     return-void
 .end method
 
-.method public updateLayoutByConfigurationChanged(I)V
-    .locals 1
+.method public updateLayoutByConfigurationChanged(ZI)V
+    .locals 2
 
-    invoke-virtual {p0}, Lcom/android/launcher3/allapps/view/AppsPagedView;->updateLayout()V
+    const/4 v1, 0x1
 
-    iput p1, p0, Lcom/android/launcher3/allapps/view/AppsPagedView;->mPageSpacing:I
+    if-nez p1, :cond_0
 
-    new-instance v0, Lcom/android/launcher3/allapps/view/AppsPagedView$5;
+    move v0, v1
 
-    invoke-direct {v0, p0}, Lcom/android/launcher3/allapps/view/AppsPagedView$5;-><init>(Lcom/android/launcher3/allapps/view/AppsPagedView;)V
+    :goto_0
+    invoke-virtual {p0, v0}, Lcom/android/launcher3/allapps/view/AppsPagedView;->updateLayout(Z)V
 
-    invoke-virtual {p0, v0}, Lcom/android/launcher3/allapps/view/AppsPagedView;->post(Ljava/lang/Runnable;)Z
+    iput p2, p0, Lcom/android/launcher3/allapps/view/AppsPagedView;->mPageSpacing:I
+
+    invoke-virtual {p0, v1}, Lcom/android/launcher3/allapps/view/AppsPagedView;->setFirstLayout(Z)V
 
     return-void
+
+    :cond_0
+    const/4 v0, 0x0
+
+    goto :goto_0
 .end method
 
 .method public updateLiveIcon()V

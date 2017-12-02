@@ -65,7 +65,7 @@
 
     invoke-direct {v4}, Ljava/util/ArrayList;-><init>()V
 
-    invoke-static {}, Lcom/android/launcher3/home/HomeLoader;->access$7400()Lcom/android/launcher3/common/model/FavoritesProvider;
+    invoke-static {}, Lcom/android/launcher3/home/HomeLoader;->access$7700()Lcom/android/launcher3/common/model/FavoritesProvider;
 
     move-result-object v2
 
@@ -73,7 +73,7 @@
 
     move-result-object v3
 
-    invoke-static {}, Lcom/android/launcher3/home/HomeLoader;->access$7500()Ljava/lang/Object;
+    invoke-static {}, Lcom/android/launcher3/home/HomeLoader;->access$7800()Ljava/lang/Object;
 
     move-result-object v19
 
@@ -121,7 +121,7 @@
 
     iget-object v6, v13, Lcom/android/launcher3/common/base/item/ItemInfo;->user:Lcom/android/launcher3/common/compat/UserHandleCompat;
 
-    invoke-static {v2, v5, v6}, Lcom/android/launcher3/home/HomeLoader;->access$7600(Lcom/android/launcher3/home/HomeLoader;Landroid/content/Intent;Lcom/android/launcher3/common/compat/UserHandleCompat;)Z
+    invoke-static {v2, v5, v6}, Lcom/android/launcher3/home/HomeLoader;->access$7900(Lcom/android/launcher3/home/HomeLoader;Landroid/content/Intent;Lcom/android/launcher3/common/compat/UserHandleCompat;)Z
 
     move-result v2
 
@@ -229,7 +229,7 @@
 
     iget-wide v8, v14, Lcom/android/launcher3/common/base/item/ItemInfo;->screenId:J
 
-    invoke-static/range {v2 .. v9}, Lcom/android/launcher3/home/HomeLoader;->access$7700(Lcom/android/launcher3/home/HomeLoader;Ljava/util/ArrayList;Ljava/util/ArrayList;IIZJ)Landroid/util/Pair;
+    invoke-static/range {v2 .. v9}, Lcom/android/launcher3/home/HomeLoader;->access$8000(Lcom/android/launcher3/home/HomeLoader;Ljava/util/ArrayList;Ljava/util/ArrayList;IIZJ)Landroid/util/Pair;
 
     move-result-object v12
 
@@ -270,7 +270,7 @@
 
     if-eqz v2, :cond_5
 
-    invoke-static {}, Lcom/android/launcher3/home/HomeLoader;->access$7800()Lcom/android/launcher3/util/LongArrayMap;
+    invoke-static {}, Lcom/android/launcher3/home/HomeLoader;->access$8100()Lcom/android/launcher3/util/LongArrayMap;
 
     move-result-object v2
 
@@ -287,7 +287,7 @@
 
     iget-object v2, v0, Lcom/android/launcher3/home/HomeLoader$16;->this$0:Lcom/android/launcher3/home/HomeLoader;
 
-    invoke-static {v2}, Lcom/android/launcher3/home/HomeLoader;->access$7900(Lcom/android/launcher3/home/HomeLoader;)Lcom/android/launcher3/common/model/FavoritesUpdater;
+    invoke-static {v2}, Lcom/android/launcher3/home/HomeLoader;->access$8200(Lcom/android/launcher3/home/HomeLoader;)Lcom/android/launcher3/common/model/FavoritesUpdater;
 
     move-result-object v2
 
@@ -430,7 +430,7 @@
 
     iget-object v2, v0, Lcom/android/launcher3/home/HomeLoader$16;->this$0:Lcom/android/launcher3/home/HomeLoader;
 
-    invoke-static {v2}, Lcom/android/launcher3/home/HomeLoader;->access$8000(Lcom/android/launcher3/home/HomeLoader;)Lcom/android/launcher3/common/model/FavoritesUpdater;
+    invoke-static {v2}, Lcom/android/launcher3/home/HomeLoader;->access$8300(Lcom/android/launcher3/home/HomeLoader;)Lcom/android/launcher3/common/model/FavoritesUpdater;
 
     move-result-object v2
 
@@ -451,7 +451,7 @@
 
     iget-object v2, v0, Lcom/android/launcher3/home/HomeLoader$16;->this$0:Lcom/android/launcher3/home/HomeLoader;
 
-    invoke-static {v2}, Lcom/android/launcher3/home/HomeLoader;->access$8100(Lcom/android/launcher3/home/HomeLoader;)Lcom/android/launcher3/common/model/FavoritesUpdater;
+    invoke-static {v2}, Lcom/android/launcher3/home/HomeLoader;->access$8400(Lcom/android/launcher3/home/HomeLoader;)Lcom/android/launcher3/common/model/FavoritesUpdater;
 
     move-result-object v2
 
@@ -477,7 +477,7 @@
 
     invoke-direct {v5, v0, v4}, Lcom/android/launcher3/home/HomeLoader$16$1;-><init>(Lcom/android/launcher3/home/HomeLoader$16;Ljava/util/ArrayList;)V
 
-    invoke-static {v2, v5}, Lcom/android/launcher3/home/HomeLoader;->access$8200(Lcom/android/launcher3/home/HomeLoader;Ljava/lang/Runnable;)V
+    invoke-static {v2, v5}, Lcom/android/launcher3/home/HomeLoader;->access$8500(Lcom/android/launcher3/home/HomeLoader;Ljava/lang/Runnable;)V
 
     :cond_9
     invoke-virtual {v15}, Ljava/util/ArrayList;->isEmpty()Z
@@ -496,7 +496,7 @@
 
     invoke-direct {v5, v0, v15}, Lcom/android/launcher3/home/HomeLoader$16$2;-><init>(Lcom/android/launcher3/home/HomeLoader$16;Ljava/util/ArrayList;)V
 
-    invoke-static {v2, v5}, Lcom/android/launcher3/home/HomeLoader;->access$8300(Lcom/android/launcher3/home/HomeLoader;Ljava/lang/Runnable;)V
+    invoke-static {v2, v5}, Lcom/android/launcher3/home/HomeLoader;->access$8600(Lcom/android/launcher3/home/HomeLoader;Ljava/lang/Runnable;)V
 
     :cond_a
     move-object/from16 v0, p0

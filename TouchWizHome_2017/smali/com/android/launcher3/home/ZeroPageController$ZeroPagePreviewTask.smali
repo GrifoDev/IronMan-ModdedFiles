@@ -313,7 +313,7 @@
 
     float-to-int v11, v12
 
-    const v12, 0x7f0a01a8
+    const v12, 0x7f0a01ad
 
     invoke-virtual {v9, v12}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 

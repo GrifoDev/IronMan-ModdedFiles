@@ -2749,7 +2749,7 @@
     :cond_0
     sget-object v1, Lcom/android/launcher3/util/Talk;->INSTANCE:Lcom/android/launcher3/util/Talk;
 
-    const v2, 0x7f0900bd
+    const v2, 0x7f0900c5
 
     invoke-virtual {v1, v2}, Lcom/android/launcher3/util/Talk;->say(I)V
 

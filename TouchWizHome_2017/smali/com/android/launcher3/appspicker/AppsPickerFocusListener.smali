@@ -187,7 +187,7 @@
     :pswitch_0
     if-eqz v4, :cond_9
 
-    if-lez v15, :cond_e
+    if-lez v15, :cond_f
 
     invoke-virtual {v9}, Landroid/widget/ListView;->getFirstVisiblePosition()I
 
@@ -285,6 +285,20 @@
 
     move-object/from16 v21, v0
 
+    invoke-virtual/range {v21 .. v21}, Landroid/view/ViewGroup;->getVisibility()I
+
+    move-result v21
+
+    if-nez v21, :cond_a
+
+    aget-object v21, v14, v6
+
+    move-object/from16 v0, v21
+
+    iget-object v0, v0, Lcom/android/launcher3/appspicker/AppIconViewHolder;->container:Landroid/view/ViewGroup;
+
+    move-object/from16 v21, v0
+
     invoke-virtual/range {v21 .. v21}, Landroid/view/ViewGroup;->requestFocus()Z
 
     aget-object v21, v14, v6
@@ -309,7 +323,7 @@
     const/4 v8, 0x0
 
     :goto_5
-    if-ge v8, v10, :cond_b
+    if-ge v8, v10, :cond_c
 
     aget-object v21, v14, v8
 
@@ -323,16 +337,31 @@
 
     move-result-object v21
 
-    if-nez v21, :cond_d
+    if-eqz v21, :cond_b
 
-    add-int/lit8 v8, v8, -0x1
+    aget-object v21, v14, v8
+
+    move-object/from16 v0, v21
+
+    iget-object v0, v0, Lcom/android/launcher3/appspicker/AppIconViewHolder;->container:Landroid/view/ViewGroup;
+
+    move-object/from16 v21, v0
+
+    invoke-virtual/range {v21 .. v21}, Landroid/view/ViewGroup;->getVisibility()I
+
+    move-result v21
+
+    if-eqz v21, :cond_e
 
     :cond_b
-    if-ne v8, v10, :cond_c
-
     add-int/lit8 v8, v8, -0x1
 
     :cond_c
+    if-ne v8, v10, :cond_d
+
+    add-int/lit8 v8, v8, -0x1
+
+    :cond_d
     aget-object v21, v14, v8
 
     move-object/from16 v0, v21
@@ -357,12 +386,12 @@
 
     goto :goto_4
 
-    :cond_d
+    :cond_e
     add-int/lit8 v8, v8, 0x1
 
     goto :goto_5
 
-    :cond_e
+    :cond_f
     aget-object v21, v19, v6
 
     move-object/from16 v0, v21
@@ -380,7 +409,7 @@
     goto/16 :goto_1
 
     :pswitch_1
-    if-eqz v4, :cond_12
+    if-eqz v4, :cond_13
 
     invoke-virtual {v9}, Landroid/widget/ListView;->getCount()I
 
@@ -390,7 +419,7 @@
 
     move/from16 v0, v21
 
-    if-ge v15, v0, :cond_12
+    if-ge v15, v0, :cond_13
 
     invoke-virtual {v9}, Landroid/widget/ListView;->getFirstVisiblePosition()I
 
@@ -404,7 +433,7 @@
 
     move/from16 v0, v21
 
-    if-le v15, v0, :cond_f
+    if-le v15, v0, :cond_10
 
     add-int/lit8 v21, v15, 0x1
 
@@ -416,12 +445,12 @@
 
     goto/16 :goto_1
 
-    :cond_f
+    :cond_10
     add-int/lit8 v21, v7, -0x1
 
     move/from16 v0, v21
 
-    if-ne v15, v0, :cond_10
+    if-ne v15, v0, :cond_11
 
     add-int/lit8 v21, v15, 0x1
 
@@ -429,7 +458,7 @@
 
     invoke-virtual {v9, v0}, Landroid/widget/ListView;->smoothScrollToPosition(I)V
 
-    :cond_10
+    :cond_11
     add-int/lit8 v21, v15, 0x1
 
     sub-int v21, v21, v3
@@ -442,7 +471,7 @@
 
     check-cast v11, Landroid/widget/LinearLayout;
 
-    if-nez v11, :cond_11
+    if-nez v11, :cond_12
 
     const-string v21, "AppsPickerFocusListener"
 
@@ -454,7 +483,7 @@
 
     goto/16 :goto_1
 
-    :cond_11
+    :cond_12
     invoke-virtual {v11}, Landroid/widget/LinearLayout;->getTag()Ljava/lang/Object;
 
     move-result-object v21
@@ -477,7 +506,21 @@
 
     move-result-object v21
 
-    if-eqz v21, :cond_13
+    if-eqz v21, :cond_14
+
+    aget-object v21, v12, v6
+
+    move-object/from16 v0, v21
+
+    iget-object v0, v0, Lcom/android/launcher3/appspicker/AppIconViewHolder;->container:Landroid/view/ViewGroup;
+
+    move-object/from16 v21, v0
+
+    invoke-virtual/range {v21 .. v21}, Landroid/view/ViewGroup;->getVisibility()I
+
+    move-result v21
+
+    if-nez v21, :cond_14
 
     aget-object v21, v12, v6
 
@@ -501,17 +544,17 @@
 
     invoke-virtual/range {v21 .. v22}, Landroid/view/ViewGroup;->playSoundEffect(I)V
 
-    :cond_12
+    :cond_13
     :goto_6
     const/16 v20, 0x1
 
     goto/16 :goto_1
 
-    :cond_13
+    :cond_14
     const/4 v8, 0x0
 
     :goto_7
-    if-ge v8, v6, :cond_14
+    if-ge v8, v6, :cond_16
 
     aget-object v21, v12, v8
 
@@ -525,16 +568,31 @@
 
     move-result-object v21
 
-    if-nez v21, :cond_16
+    if-eqz v21, :cond_15
 
-    add-int/lit8 v8, v8, -0x1
+    aget-object v21, v12, v8
 
-    :cond_14
-    if-ne v8, v6, :cond_15
+    move-object/from16 v0, v21
 
-    add-int/lit8 v8, v8, -0x1
+    iget-object v0, v0, Lcom/android/launcher3/appspicker/AppIconViewHolder;->container:Landroid/view/ViewGroup;
+
+    move-object/from16 v21, v0
+
+    invoke-virtual/range {v21 .. v21}, Landroid/view/ViewGroup;->getVisibility()I
+
+    move-result v21
+
+    if-eqz v21, :cond_18
 
     :cond_15
+    add-int/lit8 v8, v8, -0x1
+
+    :cond_16
+    if-ne v8, v6, :cond_17
+
+    add-int/lit8 v8, v8, -0x1
+
+    :cond_17
     aget-object v21, v12, v8
 
     move-object/from16 v0, v21
@@ -559,7 +617,7 @@
 
     goto :goto_6
 
-    :cond_16
+    :cond_18
     add-int/lit8 v8, v8, 0x1
 
     goto :goto_7

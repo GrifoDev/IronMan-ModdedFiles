@@ -20,6 +20,10 @@
 
 .field static final PARAM_APPEARED:Ljava/lang/String; = "Appeared"
 
+.field static final PARAM_ATTR_ALREADY_LOCKED:Ljava/lang/String; = "Already locked"
+
+.field static final PARAM_ATTR_ALREADY_UNLOCKED:Ljava/lang/String; = "Already unlocked"
+
 .field static final PARAM_ATTR_APPLY:Ljava/lang/String; = "Apply"
 
 .field static final PARAM_ATTR_AVAILABLE:Ljava/lang/String; = "Available"
@@ -103,6 +107,8 @@
 .field static final PARAM_NLG_SECURE_FOLDER:Ljava/lang/String; = "SecureFolder"
 
 .field static final PARAM_NLG_SELECTED_ALL:Ljava/lang/String; = "SelectedAll"
+
+.field static final PARAM_NLG_SELECTED_APP_ANAPHO:Ljava/lang/String; = "SelectedAppAnapho"
 
 .field static final PARAM_NLG_SHORTCUTS:Ljava/lang/String; = "Shortcuts"
 

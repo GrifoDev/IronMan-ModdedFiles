@@ -392,7 +392,7 @@
 .end method
 
 .method public static loadOmcIfNecessary(Landroid/content/Context;)V
-    .locals 12
+    .locals 13
 
     const-string v0, "DefaultLayoutParser"
 
@@ -420,13 +420,38 @@
     return-void
 
     :cond_2
+    const-string v0, "device_policy"
+
+    invoke-virtual {p0, v0}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
+
+    move-result-object v7
+
+    check-cast v7, Landroid/app/admin/DevicePolicyManager;
+
+    if-eqz v7, :cond_3
+
+    invoke-virtual {v7}, Landroid/app/admin/DevicePolicyManager;->semGetDeviceOwner()Ljava/lang/String;
+
+    move-result-object v0
+
+    if-eqz v0, :cond_3
+
+    const-string v0, "DefaultLayoutParser"
+
+    const-string v2, "DeviceOnwerMode now."
+
+    invoke-static {v0, v2}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
+
+    goto :goto_0
+
+    :cond_3
     const-string v0, "content://com.samsung.android.omcprovider/available_title_icon"
 
     invoke-static {v0}, Landroid/net/Uri;->parse(Ljava/lang/String;)Landroid/net/Uri;
 
     move-result-object v1
 
-    if-nez v1, :cond_3
+    if-nez v1, :cond_4
 
     const-string v0, "DefaultLayoutParser"
 
@@ -436,7 +461,7 @@
 
     goto :goto_0
 
-    :cond_3
+    :cond_4
     new-instance v0, Ljava/util/HashMap;
 
     invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
@@ -462,15 +487,15 @@
 
     move-result-object v6
 
-    if-eqz v6, :cond_7
+    if-eqz v6, :cond_8
 
-    :cond_4
+    :cond_5
     :goto_1
     invoke-interface {v6}, Landroid/database/Cursor;->moveToNext()Z
 
     move-result v0
 
-    if-eqz v0, :cond_7
+    if-eqz v0, :cond_8
 
     const-string v0, "package"
 
@@ -480,9 +505,9 @@
 
     invoke-interface {v6, v0}, Landroid/database/Cursor;->getString(I)Ljava/lang/String;
 
-    move-result-object v9
+    move-result-object v10
 
-    if-eqz v9, :cond_4
+    if-eqz v10, :cond_5
 
     const-string v0, "title"
 
@@ -492,13 +517,13 @@
 
     invoke-interface {v6, v0}, Landroid/database/Cursor;->getString(I)Ljava/lang/String;
 
-    move-result-object v10
+    move-result-object v11
 
-    if-nez v10, :cond_5
+    if-nez v11, :cond_6
 
-    const-string v10, ""
+    const-string v11, ""
 
-    :cond_5
+    :cond_6
     const-string v0, "icon_drawable"
 
     invoke-interface {v6, v0}, Landroid/database/Cursor;->getColumnIndex(Ljava/lang/String;)I
@@ -507,34 +532,34 @@
 
     invoke-interface {v6, v0}, Landroid/database/Cursor;->getBlob(I)[B
 
-    move-result-object v8
+    move-result-object v9
 
-    invoke-static {v10}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
+    invoke-static {v11}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
     move-result v0
 
-    if-eqz v0, :cond_6
+    if-eqz v0, :cond_7
 
-    if-eqz v8, :cond_4
+    if-eqz v9, :cond_5
 
-    :cond_6
-    new-instance v11, Lcom/android/launcher3/common/model/DefaultLayoutParser$IconTitleValue;
+    :cond_7
+    new-instance v12, Lcom/android/launcher3/common/model/DefaultLayoutParser$IconTitleValue;
 
     const/4 v0, 0x0
 
-    invoke-direct {v11, v0}, Lcom/android/launcher3/common/model/DefaultLayoutParser$IconTitleValue;-><init>(Lcom/android/launcher3/common/model/DefaultLayoutParser$1;)V
+    invoke-direct {v12, v0}, Lcom/android/launcher3/common/model/DefaultLayoutParser$IconTitleValue;-><init>(Lcom/android/launcher3/common/model/DefaultLayoutParser$1;)V
 
-    iput-object v9, v11, Lcom/android/launcher3/common/model/DefaultLayoutParser$IconTitleValue;->iconPackage:Ljava/lang/String;
+    iput-object v10, v12, Lcom/android/launcher3/common/model/DefaultLayoutParser$IconTitleValue;->iconPackage:Ljava/lang/String;
 
-    iput-object v10, v11, Lcom/android/launcher3/common/model/DefaultLayoutParser$IconTitleValue;->title:Ljava/lang/String;
+    iput-object v11, v12, Lcom/android/launcher3/common/model/DefaultLayoutParser$IconTitleValue;->title:Ljava/lang/String;
 
-    iput-object v8, v11, Lcom/android/launcher3/common/model/DefaultLayoutParser$IconTitleValue;->icon:[B
+    iput-object v9, v12, Lcom/android/launcher3/common/model/DefaultLayoutParser$IconTitleValue;->icon:[B
 
     sget-object v0, Lcom/android/launcher3/common/model/DefaultLayoutParser;->sOmcAutoInstallApp:Ljava/util/HashMap;
 
-    iget-object v2, v11, Lcom/android/launcher3/common/model/DefaultLayoutParser$IconTitleValue;->iconPackage:Ljava/lang/String;
+    iget-object v2, v12, Lcom/android/launcher3/common/model/DefaultLayoutParser$IconTitleValue;->iconPackage:Ljava/lang/String;
 
-    invoke-virtual {v0, v2, v11}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v0, v2, v12}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     const-string v0, "DefaultLayoutParser"
 
@@ -548,7 +573,7 @@
 
     move-result-object v2
 
-    iget-object v3, v11, Lcom/android/launcher3/common/model/DefaultLayoutParser$IconTitleValue;->iconPackage:Ljava/lang/String;
+    iget-object v3, v12, Lcom/android/launcher3/common/model/DefaultLayoutParser$IconTitleValue;->iconPackage:Ljava/lang/String;
 
     invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -572,7 +597,7 @@
 
     move-result-object v2
 
-    invoke-virtual {v2, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v2, v11}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v2
 
@@ -582,7 +607,7 @@
 
     invoke-static {v0, v2}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    if-nez v8, :cond_4
+    if-nez v9, :cond_5
 
     const-string v0, "DefaultLayoutParser"
 
@@ -596,7 +621,7 @@
     goto :goto_1
 
     :catch_0
-    move-exception v7
+    move-exception v8
 
     :try_start_1
     const-string v0, "DefaultLayoutParser"
@@ -611,7 +636,7 @@
 
     move-result-object v2
 
-    invoke-virtual {v2, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    invoke-virtual {v2, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
     move-result-object v2
 
@@ -635,7 +660,7 @@
 
     goto/16 :goto_0
 
-    :cond_7
+    :cond_8
     if-eqz v6, :cond_1
 
     invoke-interface {v6}, Landroid/database/Cursor;->isClosed()Z
@@ -651,17 +676,17 @@
     :catchall_0
     move-exception v0
 
-    if-eqz v6, :cond_8
+    if-eqz v6, :cond_9
 
     invoke-interface {v6}, Landroid/database/Cursor;->isClosed()Z
 
     move-result v2
 
-    if-nez v2, :cond_8
+    if-nez v2, :cond_9
 
     invoke-interface {v6}, Landroid/database/Cursor;->close()V
 
-    :cond_8
+    :cond_9
     throw v0
 .end method
 
@@ -1132,6 +1157,18 @@
             "<",
             "Ljava/lang/String;",
             "Lcom/android/launcher3/common/model/DefaultLayoutParser$TagParser;",
+            ">;"
+        }
+    .end annotation
+.end method
+
+.method protected abstract getHiddenApps()Ljava/util/ArrayList;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "()",
+            "Ljava/util/ArrayList",
+            "<",
+            "Landroid/content/ComponentName;",
             ">;"
         }
     .end annotation

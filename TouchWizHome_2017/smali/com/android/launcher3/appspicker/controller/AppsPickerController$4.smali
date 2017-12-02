@@ -63,7 +63,7 @@
     :cond_0
     iget-object v0, p0, Lcom/android/launcher3/appspicker/controller/AppsPickerController$4;->this$0:Lcom/android/launcher3/appspicker/controller/AppsPickerController;
 
-    invoke-static {v0}, Lcom/android/launcher3/appspicker/controller/AppsPickerController;->access$400(Lcom/android/launcher3/appspicker/controller/AppsPickerController;)Ljava/util/ArrayList;
+    invoke-static {v0}, Lcom/android/launcher3/appspicker/controller/AppsPickerController;->access$600(Lcom/android/launcher3/appspicker/controller/AppsPickerController;)Ljava/util/ArrayList;
 
     move-result-object v0
 
@@ -71,7 +71,7 @@
 
     iget-object v0, p0, Lcom/android/launcher3/appspicker/controller/AppsPickerController$4;->this$0:Lcom/android/launcher3/appspicker/controller/AppsPickerController;
 
-    invoke-static {v0}, Lcom/android/launcher3/appspicker/controller/AppsPickerController;->access$400(Lcom/android/launcher3/appspicker/controller/AppsPickerController;)Ljava/util/ArrayList;
+    invoke-static {v0}, Lcom/android/launcher3/appspicker/controller/AppsPickerController;->access$600(Lcom/android/launcher3/appspicker/controller/AppsPickerController;)Ljava/util/ArrayList;
 
     move-result-object v0
 
@@ -80,7 +80,7 @@
     :cond_1
     iget-object v0, p0, Lcom/android/launcher3/appspicker/controller/AppsPickerController$4;->this$0:Lcom/android/launcher3/appspicker/controller/AppsPickerController;
 
-    invoke-static {v0}, Lcom/android/launcher3/appspicker/controller/AppsPickerController;->access$500(Lcom/android/launcher3/appspicker/controller/AppsPickerController;)V
+    invoke-static {v0}, Lcom/android/launcher3/appspicker/controller/AppsPickerController;->access$700(Lcom/android/launcher3/appspicker/controller/AppsPickerController;)V
 
     return-void
 .end method

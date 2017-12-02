@@ -227,7 +227,7 @@
 .method static synthetic access$1400()Z
     .locals 1
 
-    sget-boolean v0, Lcom/android/launcher3/allapps/model/AppsLoader;->mIsSdCardReady:Z
+    sget-boolean v0, Lcom/android/launcher3/allapps/model/AppsLoader;->mIsBootCompleted:Z
 
     return v0
 .end method
@@ -1188,7 +1188,7 @@
     const/16 v26, 0x0
 
     :cond_7
-    if-eqz v26, :cond_e
+    if-eqz v26, :cond_f
 
     move-object/from16 v0, v24
 
@@ -1202,7 +1202,7 @@
     const/16 v25, 0x0
 
     :cond_8
-    if-eqz v25, :cond_f
+    if-eqz v25, :cond_10
 
     if-eqz v21, :cond_a
 
@@ -1276,7 +1276,7 @@
     :goto_3
     const/4 v12, 0x0
 
-    if-eqz v21, :cond_1b
+    if-eqz v21, :cond_1a
 
     invoke-static {}, Lcom/android/launcher3/common/compat/UserHandleCompat;->myUserHandle()Lcom/android/launcher3/common/compat/UserHandleCompat;
 
@@ -1288,7 +1288,7 @@
 
     move-result v4
 
-    if-eqz v4, :cond_1a
+    if-eqz v4, :cond_19
 
     const-string v4, "AppsLoader"
 
@@ -1334,8 +1334,9 @@
 
     iput-object v7, v12, Lcom/android/launcher3/common/base/item/IconInfo;->intent:Landroid/content/Intent;
 
+    :cond_c
     :goto_4
-    if-eqz v12, :cond_c
+    if-eqz v12, :cond_d
 
     int-to-long v4, v14
 
@@ -1389,22 +1390,22 @@
 
     iput v4, v12, Lcom/android/launcher3/common/base/item/IconInfo;->isDisabled:I
 
-    if-eqz v21, :cond_c
+    if-eqz v21, :cond_d
 
     invoke-virtual {v12}, Lcom/android/launcher3/common/base/item/IconInfo;->getTargetComponent()Landroid/content/ComponentName;
 
     move-result-object v6
 
-    if-eqz v6, :cond_c
+    if-eqz v6, :cond_d
 
     sget-object v4, Lcom/android/launcher3/allapps/model/AppsLoader;->sInstallingPkgs:Ljava/util/HashMap;
 
-    if-nez v4, :cond_1e
+    if-nez v4, :cond_1b
 
     const/16 v20, 0x0
 
     :goto_5
-    if-eqz v20, :cond_1f
+    if-eqz v20, :cond_1c
 
     invoke-virtual/range {v20 .. v20}, Ljava/lang/Integer;->intValue()I
 
@@ -1412,11 +1413,11 @@
 
     invoke-virtual {v12, v4}, Lcom/android/launcher3/common/base/item/IconInfo;->setInstallProgress(I)V
 
-    :cond_c
+    :cond_d
     :goto_6
     const/16 v4, -0x66
 
-    if-eq v14, v4, :cond_d
+    if-eq v14, v4, :cond_e
 
     const/16 v17, 0x0
 
@@ -1447,19 +1448,19 @@
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    if-eqz v17, :cond_d
+    if-eqz v17, :cond_e
 
-    if-eqz v12, :cond_d
+    if-eqz v12, :cond_e
 
     iget v4, v12, Lcom/android/launcher3/common/base/item/IconInfo;->hidden:I
 
-    if-nez v4, :cond_d
+    if-nez v4, :cond_e
 
     move-object/from16 v0, v17
 
     invoke-virtual {v0, v12}, Lcom/android/launcher3/folder/FolderInfo;->add(Lcom/android/launcher3/common/base/item/IconInfo;)V
 
-    :cond_d
+    :cond_e
     if-eqz v12, :cond_0
 
     move-object/from16 v0, p0
@@ -1472,25 +1473,25 @@
 
     goto/16 :goto_1
 
-    :cond_e
+    :cond_f
     const/4 v10, 0x0
 
     goto/16 :goto_2
 
-    :cond_f
-    if-eqz v26, :cond_14
+    :cond_10
+    if-eqz v26, :cond_15
 
     const/4 v7, 0x0
 
     and-int/lit8 v4, v8, 0x2
 
-    if-nez v4, :cond_10
+    if-nez v4, :cond_11
 
     and-int/lit8 v4, v8, 0x20
 
-    if-eqz v4, :cond_11
+    if-eqz v4, :cond_12
 
-    :cond_10
+    :cond_11
     sget-object v4, Lcom/android/launcher3/allapps/model/AppsLoader;->sPackageManager:Landroid/content/pm/PackageManager;
 
     invoke-virtual {v6}, Landroid/content/ComponentName;->getPackageName()Ljava/lang/String;
@@ -1501,7 +1502,7 @@
 
     move-result-object v7
 
-    if-eqz v7, :cond_11
+    if-eqz v7, :cond_12
 
     new-instance v27, Landroid/content/ContentValues;
 
@@ -1527,8 +1528,8 @@
 
     invoke-virtual {v0, v1, v2, v3}, Lcom/android/launcher3/allapps/model/AppsLoader;->updateItem(JLandroid/content/ContentValues;)V
 
-    :cond_11
-    if-nez v7, :cond_12
+    :cond_12
+    if-nez v7, :cond_13
 
     const-string v4, "AppsLoader"
 
@@ -1558,10 +1559,10 @@
 
     goto/16 :goto_1
 
-    :cond_12
+    :cond_13
     and-int/lit8 v4, v8, 0x20
 
-    if-eqz v4, :cond_13
+    if-eqz v4, :cond_14
 
     new-instance v27, Landroid/content/ContentValues;
 
@@ -1593,7 +1594,7 @@
 
     invoke-virtual {v0, v1, v2, v3}, Lcom/android/launcher3/allapps/model/AppsLoader;->updateItem(JLandroid/content/ContentValues;)V
 
-    :cond_13
+    :cond_14
     invoke-static/range {v18 .. v19}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
     move-result-object v4
@@ -1606,8 +1607,8 @@
 
     goto/16 :goto_3
 
-    :cond_14
-    if-eqz v21, :cond_17
+    :cond_15
+    if-eqz v21, :cond_18
 
     const-string v4, "AppsLoader"
 
@@ -1635,16 +1636,16 @@
 
     and-int/lit8 v4, v8, 0x2
 
-    if-nez v4, :cond_15
+    if-nez v4, :cond_16
 
     and-int/lit8 v4, v8, 0x1
 
     if-eqz v4, :cond_b
 
-    :cond_15
+    :cond_16
     sget-object v4, Lcom/android/launcher3/allapps/model/AppsLoader;->sInstallingPkgs:Ljava/util/HashMap;
 
-    if-eqz v4, :cond_16
+    if-eqz v4, :cond_17
 
     sget-object v4, Lcom/android/launcher3/allapps/model/AppsLoader;->sInstallingPkgs:Ljava/util/HashMap;
 
@@ -1658,7 +1659,7 @@
 
     if-nez v4, :cond_b
 
-    :cond_16
+    :cond_17
     const-string v4, "AppsLoader"
 
     new-instance v5, Ljava/lang/StringBuilder;
@@ -1687,75 +1688,7 @@
 
     goto/16 :goto_1
 
-    :cond_17
-    sget-boolean v4, Lcom/android/launcher3/allapps/model/AppsLoader;->mIsSdCardReady:Z
-
-    if-nez v4, :cond_18
-
-    const-string v4, "AppsLoader"
-
-    new-instance v5, Ljava/lang/StringBuilder;
-
-    invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v9, "Invalid package: "
-
-    invoke-virtual {v5, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v5
-
-    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    move-result-object v5
-
-    const-string v9, " (check again later)"
-
-    invoke-virtual {v5, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v5
-
-    invoke-virtual {v5}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v5
-
-    const/4 v9, 0x1
-
-    invoke-static {v4, v5, v9}, Lcom/android/launcher3/Launcher;->addDumpLog(Ljava/lang/String;Ljava/lang/String;Z)V
-
-    invoke-virtual {v6}, Landroid/content/ComponentName;->flattenToString()Ljava/lang/String;
-
-    move-result-object v4
-
-    move-object/from16 v0, p0
-
-    move-object/from16 v1, v24
-
-    invoke-virtual {v0, v4, v1}, Lcom/android/launcher3/allapps/model/AppsLoader;->addAppToPendingPackages(Ljava/lang/String;Lcom/android/launcher3/common/compat/UserHandleCompat;)V
-
-    const/4 v11, 0x1
-
-    goto/16 :goto_3
-
     :cond_18
-    invoke-virtual {v6}, Landroid/content/ComponentName;->getPackageName()Ljava/lang/String;
-
-    move-result-object v4
-
-    const/16 v5, 0x2000
-
-    move-object/from16 v0, p0
-
-    invoke-virtual {v0, v4, v5}, Lcom/android/launcher3/allapps/model/AppsLoader;->isNotAvailableApps(Ljava/lang/String;I)Z
-
-    move-result v4
-
-    if-eqz v4, :cond_19
-
-    const/4 v11, 0x1
-
-    goto/16 :goto_3
-
-    :cond_19
     const-string v4, "AppsLoader"
 
     new-instance v5, Ljava/lang/StringBuilder;
@@ -1784,48 +1717,14 @@
 
     goto/16 :goto_1
 
-    :cond_1a
+    :cond_19
     const/4 v12, 0x0
 
     goto/16 :goto_1
 
-    :cond_1b
-    if-eqz v11, :cond_1d
+    :cond_1a
+    if-nez v11, :cond_c
 
-    sget-boolean v4, Lcom/android/launcher3/allapps/model/AppsLoader;->mIsSdCardReady:Z
-
-    if-nez v4, :cond_1c
-
-    sget-boolean v4, Lcom/android/launcher3/allapps/model/AppsLoader;->sIsSafeMode:Z
-
-    if-nez v4, :cond_1c
-
-    move-object/from16 v0, p0
-
-    move-object/from16 v1, p1
-
-    move-object/from16 v2, p2
-
-    invoke-virtual {v0, v1, v6, v7, v2}, Lcom/android/launcher3/allapps/model/AppsLoader;->getTemporaryItemInfo(Landroid/database/Cursor;Landroid/content/ComponentName;Landroid/content/Intent;Lcom/android/launcher3/common/model/CursorInfo;)Lcom/android/launcher3/common/base/item/IconInfo;
-
-    move-result-object v12
-
-    goto/16 :goto_4
-
-    :cond_1c
-    move-object/from16 v0, p0
-
-    move-object/from16 v1, p1
-
-    move-object/from16 v2, p2
-
-    invoke-virtual {v0, v1, v6, v7, v2}, Lcom/android/launcher3/allapps/model/AppsLoader;->getDisabledItemInfo(Landroid/database/Cursor;Landroid/content/ComponentName;Landroid/content/Intent;Lcom/android/launcher3/common/model/CursorInfo;)Lcom/android/launcher3/common/base/item/IconInfo;
-
-    move-result-object v12
-
-    goto/16 :goto_4
-
-    :cond_1d
     new-instance v12, Lcom/android/launcher3/common/base/item/IconInfo;
 
     sget-object v4, Lcom/android/launcher3/allapps/model/AppsLoader;->sContext:Landroid/content/Context;
@@ -1838,7 +1737,7 @@
 
     goto/16 :goto_4
 
-    :cond_1e
+    :cond_1b
     sget-object v4, Lcom/android/launcher3/allapps/model/AppsLoader;->sInstallingPkgs:Ljava/util/HashMap;
 
     invoke-virtual {v6}, Landroid/content/ComponentName;->getPackageName()Ljava/lang/String;
@@ -1855,7 +1754,7 @@
 
     goto/16 :goto_5
 
-    :cond_1f
+    :cond_1c
     iget v4, v12, Lcom/android/launcher3/common/base/item/IconInfo;->status:I
 
     and-int/lit8 v4, v4, -0x9
@@ -7999,15 +7898,13 @@
 .end method
 
 .method public setup(Lcom/android/launcher3/common/model/DataLoader$DataLoaderState;)V
-    .locals 5
-
-    const/4 v1, 0x1
+    .locals 2
 
     const-string v0, "AppsLoader"
 
-    const-string v2, "setup"
+    const-string v1, "setup"
 
-    invoke-static {v0, v2}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {v0, v1}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
     invoke-direct {p0, p1}, Lcom/android/launcher3/allapps/model/AppsLoader;->removeAllItems(Lcom/android/launcher3/common/model/DataLoader$DataLoaderState;)V
 
@@ -8048,51 +7945,7 @@
     iput-object v0, p0, Lcom/android/launcher3/allapps/model/AppsLoader;->mBgDuplicateCheckList:Ljava/util/ArrayList;
 
     :cond_0
-    sget-object v0, Lcom/android/launcher3/allapps/model/AppsLoader;->sContext:Landroid/content/Context;
-
-    if-eqz v0, :cond_2
-
-    sget-object v0, Lcom/android/launcher3/allapps/model/AppsLoader;->sContext:Landroid/content/Context;
-
-    const/4 v2, 0x0
-
-    new-instance v3, Landroid/content/IntentFilter;
-
-    const-string v4, "com.android.launcher3.SYSTEM_READY"
-
-    invoke-direct {v3, v4}, Landroid/content/IntentFilter;-><init>(Ljava/lang/String;)V
-
-    invoke-virtual {v0, v2, v3}, Landroid/content/Context;->registerReceiver(Landroid/content/BroadcastReceiver;Landroid/content/IntentFilter;)Landroid/content/Intent;
-
-    move-result-object v0
-
-    if-eqz v0, :cond_3
-
-    move v0, v1
-
-    :goto_0
-    sput-boolean v0, Lcom/android/launcher3/allapps/model/AppsLoader;->mIsSdCardReady:Z
-
-    sget-object v0, Lcom/android/launcher3/allapps/model/AppsLoader;->sContext:Landroid/content/Context;
-
-    invoke-static {v0}, Lcom/android/launcher3/Utilities;->isExistSdCard(Landroid/content/Context;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_1
-
-    sget-boolean v1, Lcom/android/launcher3/allapps/model/AppsLoader;->mIsSdCardReady:Z
-
-    :cond_1
-    sput-boolean v1, Lcom/android/launcher3/allapps/model/AppsLoader;->mIsSdCardReady:Z
-
-    :cond_2
     return-void
-
-    :cond_3
-    const/4 v0, 0x0
-
-    goto :goto_0
 .end method
 
 .method public showApps(Ljava/util/ArrayList;Z)V

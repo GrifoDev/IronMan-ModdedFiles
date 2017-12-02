@@ -3,12 +3,12 @@
 .source "AppsController.java"
 
 # interfaces
-.implements Ljava/lang/Runnable;
+.implements Lcom/android/launcher3/common/base/item/ItemOperator;
 
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/android/launcher3/allapps/controller/AppsController;->createFolder()V
+    value = Lcom/android/launcher3/allapps/controller/AppsController;->getFirstMatch(Lcom/android/launcher3/common/base/item/ItemOperator;)Landroid/view/View;
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -20,16 +20,20 @@
 # instance fields
 .field final synthetic this$0:Lcom/android/launcher3/allapps/controller/AppsController;
 
-.field final synthetic val$snapToPage:I
+.field final synthetic val$operator:Lcom/android/launcher3/common/base/item/ItemOperator;
+
+.field final synthetic val$value:[Landroid/view/View;
 
 
 # direct methods
-.method constructor <init>(Lcom/android/launcher3/allapps/controller/AppsController;I)V
+.method constructor <init>(Lcom/android/launcher3/allapps/controller/AppsController;Lcom/android/launcher3/common/base/item/ItemOperator;[Landroid/view/View;)V
     .locals 0
 
     iput-object p1, p0, Lcom/android/launcher3/allapps/controller/AppsController$17;->this$0:Lcom/android/launcher3/allapps/controller/AppsController;
 
-    iput p2, p0, Lcom/android/launcher3/allapps/controller/AppsController$17;->val$snapToPage:I
+    iput-object p2, p0, Lcom/android/launcher3/allapps/controller/AppsController$17;->val$operator:Lcom/android/launcher3/common/base/item/ItemOperator;
+
+    iput-object p3, p0, Lcom/android/launcher3/allapps/controller/AppsController$17;->val$value:[Landroid/view/View;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -38,33 +42,25 @@
 
 
 # virtual methods
-.method public run()V
+.method public evaluate(Lcom/android/launcher3/common/base/item/ItemInfo;Landroid/view/View;Landroid/view/View;)Z
     .locals 2
 
-    iget v0, p0, Lcom/android/launcher3/allapps/controller/AppsController$17;->val$snapToPage:I
+    const/4 v0, 0x0
 
-    iget-object v1, p0, Lcom/android/launcher3/allapps/controller/AppsController$17;->this$0:Lcom/android/launcher3/allapps/controller/AppsController;
+    iget-object v1, p0, Lcom/android/launcher3/allapps/controller/AppsController$17;->val$operator:Lcom/android/launcher3/common/base/item/ItemOperator;
 
-    invoke-static {v1}, Lcom/android/launcher3/allapps/controller/AppsController;->access$000(Lcom/android/launcher3/allapps/controller/AppsController;)Lcom/android/launcher3/allapps/view/AppsPagedView;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Lcom/android/launcher3/allapps/view/AppsPagedView;->getNextPage()I
+    invoke-interface {v1, p1, p2, p3}, Lcom/android/launcher3/common/base/item/ItemOperator;->evaluate(Lcom/android/launcher3/common/base/item/ItemInfo;Landroid/view/View;Landroid/view/View;)Z
 
     move-result v1
 
-    if-eq v0, v1, :cond_0
+    if-eqz v1, :cond_0
 
-    iget-object v0, p0, Lcom/android/launcher3/allapps/controller/AppsController$17;->this$0:Lcom/android/launcher3/allapps/controller/AppsController;
+    iget-object v1, p0, Lcom/android/launcher3/allapps/controller/AppsController$17;->val$value:[Landroid/view/View;
 
-    invoke-static {v0}, Lcom/android/launcher3/allapps/controller/AppsController;->access$000(Lcom/android/launcher3/allapps/controller/AppsController;)Lcom/android/launcher3/allapps/view/AppsPagedView;
+    aput-object p2, v1, v0
 
-    move-result-object v0
-
-    iget v1, p0, Lcom/android/launcher3/allapps/controller/AppsController$17;->val$snapToPage:I
-
-    invoke-virtual {v0, v1}, Lcom/android/launcher3/allapps/view/AppsPagedView;->snapToPage(I)V
+    const/4 v0, 0x1
 
     :cond_0
-    return-void
+    return v0
 .end method

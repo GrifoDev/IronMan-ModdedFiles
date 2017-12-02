@@ -1852,6 +1852,16 @@
     goto :goto_1
 .end method
 
+.method public moveItemFromFolder(Lcom/android/launcher3/common/base/item/IconInfo;)V
+    .locals 1
+
+    iget-object v0, p0, Lcom/android/launcher3/home/HomeProxyCallbacksImpl;->mHomeController:Lcom/android/launcher3/home/HomeController;
+
+    invoke-virtual {v0, p1}, Lcom/android/launcher3/home/HomeController;->moveItemFromFolder(Lcom/android/launcher3/common/base/item/IconInfo;)V
+
+    return-void
+.end method
+
 .method public movePage(I)V
     .locals 3
 

@@ -289,6 +289,14 @@
     return-object v0
 .end method
 
+.method static synthetic access$1200(Lcom/android/launcher3/common/model/IconCache;)Ljava/util/HashMap;
+    .locals 1
+
+    iget-object v0, p0, Lcom/android/launcher3/common/model/IconCache;->mCache:Ljava/util/HashMap;
+
+    return-object v0
+.end method
+
 .method static synthetic access$200(Lcom/android/launcher3/common/model/IconCache;)Ljava/lang/String;
     .locals 1
 
@@ -2905,18 +2913,13 @@
 .method public clearCache(I)V
     .locals 4
 
-    iget-object v2, p0, Lcom/android/launcher3/common/model/IconCache;->mCache:Ljava/util/HashMap;
+    iget-object v1, p0, Lcom/android/launcher3/common/model/IconCache;->mWorkerHandler:Landroid/os/Handler;
 
-    monitor-enter v2
+    new-instance v2, Lcom/android/launcher3/common/model/IconCache$3;
 
-    :try_start_0
-    iget-object v1, p0, Lcom/android/launcher3/common/model/IconCache;->mCache:Ljava/util/HashMap;
+    invoke-direct {v2, p0}, Lcom/android/launcher3/common/model/IconCache$3;-><init>(Lcom/android/launcher3/common/model/IconCache;)V
 
-    invoke-virtual {v1}, Ljava/util/HashMap;->clear()V
-
-    monitor-exit v2
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    invoke-virtual {v1, v2}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
     invoke-direct {p0, p1}, Lcom/android/launcher3/common/model/IconCache;->getLauncherIconDensity(I)I
 
@@ -2958,16 +2961,6 @@
     invoke-static {v1, v2}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
     return-void
-
-    :catchall_0
-    move-exception v1
-
-    :try_start_1
-    monitor-exit v2
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
-
-    throw v1
 .end method
 
 .method public clearDB()V

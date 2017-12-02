@@ -45,9 +45,9 @@
 .method public run()V
     .locals 15
 
-    const v14, 0x7f090156
+    const v14, 0x7f09015f
 
-    const v13, 0x7f090155
+    const v13, 0x7f09015e
 
     const/4 v12, 0x5
 
@@ -77,40 +77,14 @@
 
     iget v7, p0, Lcom/android/launcher3/util/logging/SALogging$32;->val$option:I
 
-    const v8, 0x7f0900a1
+    const v8, 0x7f0900a3
 
     if-ne v7, v8, :cond_0
 
     const-string v2, "Add to secure folder"
 
     :cond_0
-    new-instance v7, Ljava/lang/StringBuilder;
-
-    invoke-direct {v7}, Ljava/lang/StringBuilder;-><init>()V
-
-    iget-object v8, p0, Lcom/android/launcher3/util/logging/SALogging$32;->this$0:Lcom/android/launcher3/util/logging/SALogging;
-
-    iget-object v8, v8, Lcom/android/launcher3/util/logging/SALogging;->mQOInfo:Lcom/android/launcher3/util/logging/SALogging$QOAction;
-
-    iget-object v8, v8, Lcom/android/launcher3/util/logging/SALogging$QOAction;->mName:Ljava/lang/String;
-
-    invoke-virtual {v7, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v7
-
-    const-string v8, ", "
-
-    invoke-virtual {v7, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v7
-
-    invoke-virtual {v7, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v7
-
-    invoke-virtual {v7}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v0
+    move-object v0, v2
 
     iget-object v7, p0, Lcom/android/launcher3/util/logging/SALogging$32;->val$activity:Lcom/android/launcher3/Launcher;
 
@@ -130,7 +104,7 @@
 
     if-ne v6, v10, :cond_4
 
-    const v7, 0x7f0901ab
+    const v7, 0x7f0901b8
 
     invoke-virtual {v3, v7}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -159,7 +133,7 @@
     :cond_4
     if-ne v6, v11, :cond_5
 
-    const v7, 0x7f09019e
+    const v7, 0x7f0901ab
 
     invoke-virtual {v3, v7}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -172,7 +146,7 @@
 
     if-ne v5, v10, :cond_6
 
-    const v7, 0x7f0901a3
+    const v7, 0x7f0901b0
 
     invoke-virtual {v3, v7}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -183,7 +157,7 @@
     :cond_6
     if-ne v5, v11, :cond_1
 
-    const v7, 0x7f090197
+    const v7, 0x7f0901a4
 
     invoke-virtual {v3, v7}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -212,7 +186,7 @@
     :cond_8
     if-ne v6, v12, :cond_2
 
-    const v7, 0x7f09012b
+    const v7, 0x7f090134
 
     invoke-virtual {v3, v7}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -241,7 +215,7 @@
     :sswitch_2
     if-ne v6, v10, :cond_2
 
-    const v7, 0x7f090157
+    const v7, 0x7f090160
 
     invoke-virtual {v3, v7}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 

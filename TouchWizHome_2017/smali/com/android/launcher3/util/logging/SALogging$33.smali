@@ -20,16 +20,12 @@
 # instance fields
 .field final synthetic this$0:Lcom/android/launcher3/util/logging/SALogging;
 
-.field final synthetic val$cp:Landroid/content/ComponentName;
-
 
 # direct methods
-.method constructor <init>(Lcom/android/launcher3/util/logging/SALogging;Landroid/content/ComponentName;)V
+.method constructor <init>(Lcom/android/launcher3/util/logging/SALogging;)V
     .locals 0
 
     iput-object p1, p0, Lcom/android/launcher3/util/logging/SALogging$33;->this$0:Lcom/android/launcher3/util/logging/SALogging;
-
-    iput-object p2, p0, Lcom/android/launcher3/util/logging/SALogging$33;->val$cp:Landroid/content/ComponentName;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -39,44 +35,31 @@
 
 # virtual methods
 .method public run()V
-    .locals 5
+    .locals 4
 
-    sget-object v2, Lcom/android/launcher3/util/logging/Logging;->sContext:Landroid/content/Context;
+    sget-object v1, Lcom/android/launcher3/util/logging/Logging;->sContext:Landroid/content/Context;
 
-    invoke-virtual {v2}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
-
-    move-result-object v1
-
-    const-string v0, ""
-
-    iget-object v2, p0, Lcom/android/launcher3/util/logging/SALogging$33;->val$cp:Landroid/content/ComponentName;
-
-    if-eqz v2, :cond_0
-
-    iget-object v2, p0, Lcom/android/launcher3/util/logging/SALogging$33;->val$cp:Landroid/content/ComponentName;
-
-    invoke-virtual {v2}, Landroid/content/ComponentName;->getPackageName()Ljava/lang/String;
+    invoke-virtual {v1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
     move-result-object v0
 
-    :cond_0
     invoke-static {}, Lcom/android/launcher3/util/logging/SALogging;->getInstance()Lcom/android/launcher3/util/logging/SALogging;
+
+    move-result-object v1
+
+    const v2, 0x7f0901ba
+
+    invoke-virtual {v0, v2}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
     move-result-object v2
 
-    const v3, 0x7f0901ad
+    const v3, 0x7f09011d
 
-    invoke-virtual {v1, v3}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
+    invoke-virtual {v0, v3}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
     move-result-object v3
 
-    const v4, 0x7f090114
-
-    invoke-virtual {v1, v4}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
-
-    move-result-object v4
-
-    invoke-virtual {v2, v3, v4, v0}, Lcom/android/launcher3/util/logging/SALogging;->insertEventLog(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
+    invoke-virtual {v1, v2, v3}, Lcom/android/launcher3/util/logging/SALogging;->insertEventLog(Ljava/lang/String;Ljava/lang/String;)V
 
     return-void
 .end method

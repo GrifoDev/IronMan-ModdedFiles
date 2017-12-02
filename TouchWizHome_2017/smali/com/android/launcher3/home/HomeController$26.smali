@@ -3,12 +3,12 @@
 .source "HomeController.java"
 
 # interfaces
-.implements Lcom/android/launcher3/common/base/item/ItemOperator;
+.implements Landroid/animation/Animator$AnimatorListener;
 
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/android/launcher3/home/HomeController;->updateBadgeItems(Ljava/util/ArrayList;)V
+    value = Lcom/android/launcher3/home/HomeController;->removeItemsByMatcher(Lcom/android/launcher3/util/ItemInfoMatcher;)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -20,16 +20,20 @@
 # instance fields
 .field final synthetic this$0:Lcom/android/launcher3/home/HomeController;
 
-.field final synthetic val$updates:Ljava/util/HashSet;
+.field final synthetic val$child:Landroid/view/View;
+
+.field final synthetic val$layoutParent:Lcom/android/launcher3/common/base/view/CellLayout;
 
 
 # direct methods
-.method constructor <init>(Lcom/android/launcher3/home/HomeController;Ljava/util/HashSet;)V
+.method constructor <init>(Lcom/android/launcher3/home/HomeController;Lcom/android/launcher3/common/base/view/CellLayout;Landroid/view/View;)V
     .locals 0
 
     iput-object p1, p0, Lcom/android/launcher3/home/HomeController$26;->this$0:Lcom/android/launcher3/home/HomeController;
 
-    iput-object p2, p0, Lcom/android/launcher3/home/HomeController$26;->val$updates:Ljava/util/HashSet;
+    iput-object p2, p0, Lcom/android/launcher3/home/HomeController$26;->val$layoutParent:Lcom/android/launcher3/common/base/view/CellLayout;
+
+    iput-object p3, p0, Lcom/android/launcher3/home/HomeController$26;->val$child:Landroid/view/View;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -38,65 +42,32 @@
 
 
 # virtual methods
-.method public evaluate(Lcom/android/launcher3/common/base/item/ItemInfo;Landroid/view/View;Landroid/view/View;)Z
-    .locals 4
+.method public onAnimationCancel(Landroid/animation/Animator;)V
+    .locals 0
 
-    instance-of v1, p1, Lcom/android/launcher3/common/base/item/IconInfo;
+    return-void
+.end method
 
-    if-eqz v1, :cond_2
+.method public onAnimationEnd(Landroid/animation/Animator;)V
+    .locals 2
 
-    iget-object v1, p0, Lcom/android/launcher3/home/HomeController$26;->val$updates:Ljava/util/HashSet;
+    iget-object v0, p0, Lcom/android/launcher3/home/HomeController$26;->val$layoutParent:Lcom/android/launcher3/common/base/view/CellLayout;
 
-    invoke-virtual {v1, p1}, Ljava/util/HashSet;->contains(Ljava/lang/Object;)Z
+    iget-object v1, p0, Lcom/android/launcher3/home/HomeController$26;->val$child:Landroid/view/View;
 
-    move-result v1
+    invoke-virtual {v0, v1}, Lcom/android/launcher3/common/base/view/CellLayout;->removeViewInLayout(Landroid/view/View;)V
 
-    if-eqz v1, :cond_2
+    return-void
+.end method
 
-    move-object v0, p2
+.method public onAnimationRepeat(Landroid/animation/Animator;)V
+    .locals 0
 
-    iget-object v1, p0, Lcom/android/launcher3/home/HomeController$26;->this$0:Lcom/android/launcher3/home/HomeController;
+    return-void
+.end method
 
-    invoke-virtual {v1, p1}, Lcom/android/launcher3/home/HomeController;->isItemInFolder(Lcom/android/launcher3/common/base/item/ItemInfo;)Z
+.method public onAnimationStart(Landroid/animation/Animator;)V
+    .locals 0
 
-    move-result v1
-
-    if-eqz v1, :cond_0
-
-    iget-object v1, p0, Lcom/android/launcher3/home/HomeController$26;->this$0:Lcom/android/launcher3/home/HomeController;
-
-    iget-wide v2, p1, Lcom/android/launcher3/common/base/item/ItemInfo;->container:J
-
-    invoke-virtual {v1, v2, v3}, Lcom/android/launcher3/home/HomeController;->getHomescreenIconByItemId(J)Landroid/view/View;
-
-    move-result-object v0
-
-    :cond_0
-    instance-of v1, v0, Lcom/android/launcher3/common/view/IconView;
-
-    if-eqz v1, :cond_1
-
-    check-cast v0, Lcom/android/launcher3/common/view/IconView;
-
-    invoke-virtual {v0}, Lcom/android/launcher3/common/view/IconView;->refreshBadge()V
-
-    iget-object v1, p0, Lcom/android/launcher3/home/HomeController$26;->this$0:Lcom/android/launcher3/home/HomeController;
-
-    const/4 v2, 0x1
-
-    invoke-virtual {v1, v2}, Lcom/android/launcher3/home/HomeController;->notifyCapture(Z)V
-
-    :cond_1
-    instance-of v1, p3, Lcom/android/launcher3/folder/view/FolderIconView;
-
-    if-eqz v1, :cond_2
-
-    check-cast p3, Lcom/android/launcher3/folder/view/FolderIconView;
-
-    invoke-virtual {p3}, Lcom/android/launcher3/folder/view/FolderIconView;->refreshBadge()V
-
-    :cond_2
-    const/4 v1, 0x0
-
-    return v1
+    return-void
 .end method

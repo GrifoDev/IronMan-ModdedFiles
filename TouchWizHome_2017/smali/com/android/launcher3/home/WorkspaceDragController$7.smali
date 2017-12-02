@@ -49,5 +49,11 @@
 
     invoke-static {v0, v1, v2}, Lcom/android/launcher3/home/WorkspaceDragController;->access$400(Lcom/android/launcher3/home/WorkspaceDragController;Ljava/util/ArrayList;Z)V
 
+    iget-object v0, p0, Lcom/android/launcher3/home/WorkspaceDragController$7;->this$0:Lcom/android/launcher3/home/WorkspaceDragController;
+
+    const/4 v1, 0x0
+
+    invoke-static {v0, v1}, Lcom/android/launcher3/home/WorkspaceDragController;->access$500(Lcom/android/launcher3/home/WorkspaceDragController;Lcom/android/launcher3/common/base/view/CellLayout;)V
+
     return-void
 .end method
