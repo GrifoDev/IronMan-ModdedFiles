@@ -1583,7 +1583,7 @@ Memo"</string>
     <string name="tethered_notification_title_sprint">已開啟行動無線基地台或網路共享</string>
     <string name="tethered_notification_title_client">已連接%s部裝置</string>
     <string name="tethered_notification_title_one_client">已連接 1 個裝置</string>
-    <string name="tethered_notification_title_tmo">已開啟行動無線基地台或網路共享</string>
+    <string name="tethered_notification_title_tmo">網路共享或行動無線基地台使用中</string>
     <string name="tethered_notification_title_mtr">已開啟行動無線基地台或網路共享</string>
     <string name="tethered_notification_title">已開啟行動無線基地台或網路共享</string>
     <string name="permlab_transaction_event">接收 NFC 交易活動</string>

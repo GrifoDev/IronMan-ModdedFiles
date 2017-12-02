@@ -207,7 +207,7 @@
     <string name="global_action_assist">دستیار</string>
     <string name="global_action_voice_assist">دستیار صوتی</string>
     <string name="global_action_lockdown">اکنون قفل شود</string>
-    <string name="notification_hidden_text">محتواها پنهان هستند</string>
+    <string name="notification_hidden_text">محتوا مخفی شد</string>
     <string name="notification_hidden_by_policy_text">محتوا بر اساس خط‌مشی پنهان شده است</string>
     <string name="safeMode">حالت ایمن</string>
     <string name="android_system_label">سیستم Android</string>
@@ -1584,7 +1584,7 @@
     <string name="tethered_notification_title_sprint">نقطه اتصال همراه یا اینترنت باواسطه روشن است</string>
     <string name="tethered_notification_title_client">‎%s دستگاه متصل</string>
     <string name="tethered_notification_title_one_client">۱ دستگاه متصل شد</string>
-    <string name="tethered_notification_title_tmo">نقطه اتصال همراه یا اینترنت باواسطه روشن است</string>
+    <string name="tethered_notification_title_tmo">Tethering or Mobile Hotspot active</string>
     <string name="tethered_notification_title_mtr">نقطه اتصال همراه یا اینترنت باواسطه روشن است</string>
     <string name="tethered_notification_title">نقطه اتصال همراه یا اینترنت باواسطه روشن است</string>
     <string name="permlab_transaction_event">دریافت رویدادهای تراکنش NFC</string>

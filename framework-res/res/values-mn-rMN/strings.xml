@@ -203,7 +203,7 @@
     <string name="global_action_assist">Туслах</string>
     <string name="global_action_voice_assist">Дуут туслах</string>
     <string name="global_action_lockdown">Одоо түгжих</string>
-    <string name="notification_hidden_text">Контентыг нуусан</string>
+    <string name="notification_hidden_text">Контент нуугдсан</string>
     <string name="notification_hidden_by_policy_text">Удирдамжийн дагуу нуусан агуулга</string>
     <string name="safeMode">Найдвартай горим</string>
     <string name="android_system_label">Android систем</string>
@@ -1579,7 +1579,7 @@
     <string name="tethered_notification_title_sprint">Мобайл Хотспот э.л Хол.т идэвхтэй</string>
     <string name="tethered_notification_title_client">%s төхөөрөмжүүд холбогдсон</string>
     <string name="tethered_notification_title_one_client">1 төхөөрөмж холбогдсон</string>
-    <string name="tethered_notification_title_tmo">Мобайл Хотспот э.л Хол.т идэвхтэй</string>
+    <string name="tethered_notification_title_tmo">Tethering or Mobile Hotspot active</string>
     <string name="tethered_notification_title_mtr">Мобайл Хотспот э.л Хол.т идэвхтэй</string>
     <string name="tethered_notification_title">Мобайл Хотспот э.л Хол.т идэвхтэй</string>
     <string name="permlab_transaction_event">NFC гүйлгээний арга хэмжээнүүд хүлээн авах</string>
@@ -2373,7 +2373,7 @@ Turn on Airplane mode?"</string>
     <string name="securitymanager_st_tampered">Програм хангамжийг хуурамчаар үйлдсэн</string>
     <string name="securitymanager_st_face">Нүүр танилт</string>
     <string name="securitymanager_st_refresh">Refresh</string>
-    <string name="wifi_notification_adaptive_wifi_title">Тохируулж болох Wi-Fi</string>
+    <string name="wifi_notification_adaptive_wifi_title">Adaptive Wi-Fi</string>
     <string name="wifi_notification_adaptive_wifi_add_to_favorite_detail">%s-г байнга ашигладаг Wi-Fi сүлжээнүүдэд нэмсэн. Ирээдүйд энэ сүлжээ илэрсэн үед таны утас Wi-Fi-г автоматаар асаана.</string>
     <string name="wifi_notification_adaptive_wifi_remove_from_favorite_detail">%s-г таны байнга ашигладаг Wi-Fi сүлжээнүүдээс арилгасан. Хэрэв та үүнийг илүү их ашиглавал дахин нэмэх болно.</string>
     <string name="wifi_notification_auto_wifi_add_to_favorite_title">Хадгалагдсан Wi-Fi руу нэмлээ</string>

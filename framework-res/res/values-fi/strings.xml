@@ -1583,7 +1583,7 @@ komento"</string>
     <string name="tethered_notification_title_sprint">Mobiilitukias. tai yht. jako käyt.</string>
     <string name="tethered_notification_title_client">%s laitetta yhdistetty</string>
     <string name="tethered_notification_title_one_client">1 laite yhdistetty</string>
-    <string name="tethered_notification_title_tmo">Mobiilitukias. tai yht. jako käyt.</string>
+    <string name="tethered_notification_title_tmo">Tethering or Mobile Hotspot active</string>
     <string name="tethered_notification_title_mtr">Mobiilitukias. tai yht. jako käyt.</string>
     <string name="tethered_notification_title">Mobiilitukias. tai yht. jako käyt.</string>
     <string name="permlab_transaction_event">Vastaanota NFC-tapahtumia</string>
@@ -2377,7 +2377,7 @@ OSOITTEESEEN"</string>
     <string name="securitymanager_st_tampered">Havaittu ohjelmiston peukalointia</string>
     <string name="securitymanager_st_face">Kasvontunnistus</string>
     <string name="securitymanager_st_refresh">Refresh</string>
-    <string name="wifi_notification_adaptive_wifi_title">Mukautuva Wi-Fi</string>
+    <string name="wifi_notification_adaptive_wifi_title">Adaptive Wi-Fi</string>
     <string name="wifi_notification_adaptive_wifi_add_to_favorite_detail">%s on lisätty usein käytetyksi Wi-Fi-verkoksi. Puhelimesi ottaa Wi-Fi-toiminnon automaattisesti käyttöön, kun tämä verkko havaitaan tulevaisuudessa.</string>
     <string name="wifi_notification_adaptive_wifi_remove_from_favorite_detail">%s on poistettu usein käytettyjen Wi-Fi-verkkojen luettelosta. Se lisätään uudelleen, jos käytät sitä useammin.</string>
     <string name="wifi_notification_auto_wifi_add_to_favorite_title">Lisätty tall. Wi-Fi-verkkoihin</string>

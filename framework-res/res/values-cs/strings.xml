@@ -207,7 +207,7 @@
     <string name="global_action_assist">Asistence</string>
     <string name="global_action_voice_assist">Hlas. asistence</string>
     <string name="global_action_lockdown">Zamknout</string>
-    <string name="notification_hidden_text">Skrytý obsah</string>
+    <string name="notification_hidden_text">Obsah je skrytý</string>
     <string name="notification_hidden_by_policy_text">Obsah skrytý zásadami</string>
     <string name="safeMode">Bezpečný režim</string>
     <string name="android_system_label">Systém Android</string>
@@ -1583,7 +1583,7 @@ příkaz"</string>
     <string name="tethered_notification_title_sprint">Mobilní hotspot nebo Sd. př. zap.</string>
     <string name="tethered_notification_title_client">%s zařízení připojeno</string>
     <string name="tethered_notification_title_one_client">Připojeno 1 zařízení</string>
-    <string name="tethered_notification_title_tmo">Mobilní hotspot nebo Sd. př. zap.</string>
+    <string name="tethered_notification_title_tmo">Tethering or Mobile Hotspot active</string>
     <string name="tethered_notification_title_mtr">Mobilní hotspot nebo Sd. př. zap.</string>
     <string name="tethered_notification_title">Mobilní hotspot nebo Sd. př. zap.</string>
     <string name="permlab_transaction_event">Přijímat události transakcí NFC</string>
@@ -2377,7 +2377,7 @@ VRAŤTE DO"</string>
     <string name="securitymanager_st_tampered">Zjištěna manipulace se softwarem</string>
     <string name="securitymanager_st_face">Rozpoznávání obličeje</string>
     <string name="securitymanager_st_refresh">Refresh</string>
-    <string name="wifi_notification_adaptive_wifi_title">Adaptivní Wi-Fi</string>
+    <string name="wifi_notification_adaptive_wifi_title">Adaptive Wi-Fi</string>
     <string name="wifi_notification_adaptive_wifi_add_to_favorite_detail">Síť %s byla přidána jako často používaná síť Wi-Fi. Když bude v budoucnu tato síť rozpoznána, telefon automaticky zapne Wi-Fi.</string>
     <string name="wifi_notification_adaptive_wifi_remove_from_favorite_detail">Síť %s byla odebrána z často používaných sítí Wi-Fi. Když ji budete používat častěji, bude znovu přidána.</string>
     <string name="wifi_notification_auto_wifi_add_to_favorite_title">Přidána do uložených sítí Wi-Fi</string>

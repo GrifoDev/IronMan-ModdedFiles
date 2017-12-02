@@ -207,7 +207,7 @@
     <string name="global_action_assist">Assistència</string>
     <string name="global_action_voice_assist">Assist. per veu</string>
     <string name="global_action_lockdown">Bloqueja ara</string>
-    <string name="notification_hidden_text">Contingut amagat</string>
+    <string name="notification_hidden_text">Contingut ocult</string>
     <string name="notification_hidden_by_policy_text">Contingut amagat de conformitat amb la política</string>
     <string name="safeMode">Mode segur</string>
     <string name="android_system_label">Sistema Android</string>
@@ -1584,7 +1584,7 @@ command"</string>
     <string name="tethered_notification_title_sprint">Connex comp o Mòd Bluet/USB activ</string>
     <string name="tethered_notification_title_client">%s dispositius connectats</string>
     <string name="tethered_notification_title_one_client">1 dispositiu connectat</string>
-    <string name="tethered_notification_title_tmo">Connex comp o Mòd Bluet/USB activ</string>
+    <string name="tethered_notification_title_tmo">Tethering or Mobile Hotspot active</string>
     <string name="tethered_notification_title_mtr">Connex comp o Mòd Bluet/USB activ</string>
     <string name="tethered_notification_title">Connex comp o Mòd Bluet/USB activ</string>
     <string name="permlab_transaction_event">Rebre esdeveniments de transaccions NFC</string>
@@ -2378,7 +2378,7 @@ TORNI'L A"</string>
     <string name="securitymanager_st_tampered">"S'ha detectat una alteració del software"</string>
     <string name="securitymanager_st_face">Reconeixement facial</string>
     <string name="securitymanager_st_refresh">Refresh</string>
-    <string name="wifi_notification_adaptive_wifi_title">Wi-Fi adaptatiu</string>
+    <string name="wifi_notification_adaptive_wifi_title">Adaptive Wi-Fi</string>
     <string name="wifi_notification_adaptive_wifi_add_to_favorite_detail">"S'ha afegit %s com a xarxa Wi-Fi utilitzada freqüentment. El telèfon activarà el Wi-Fi automàticament quan es detecti aquesta xarxa en el futur."</string>
     <string name="wifi_notification_adaptive_wifi_remove_from_favorite_detail">"S'ha eliminat %s de les xarxes Wi-Fi utilitzades freqüentment. Es tornarà a afegir si la utilitza més sovint."</string>
     <string name="wifi_notification_auto_wifi_add_to_favorite_title">"S'ha afegit a Wi-Fi desades"</string>

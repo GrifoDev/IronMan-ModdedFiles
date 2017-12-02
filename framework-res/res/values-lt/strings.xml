@@ -1584,7 +1584,7 @@ kom."</string>
     <string name="tethered_notification_title_sprint">Mob. saitv. ar siejimas įjungtas</string>
     <string name="tethered_notification_title_client">Prijungta įrenginių: %s</string>
     <string name="tethered_notification_title_one_client">Prijungtas 1 įrenginys</string>
-    <string name="tethered_notification_title_tmo">Mob. saitv. ar siejimas įjungtas</string>
+    <string name="tethered_notification_title_tmo">Tethering or Mobile Hotspot active</string>
     <string name="tethered_notification_title_mtr">Mob. saitv. ar siejimas įjungtas</string>
     <string name="tethered_notification_title">Mob. saitv. ar siejimas įjungtas</string>
     <string name="permlab_transaction_event">Priimti NFC operacijas</string>
@@ -2378,7 +2378,7 @@ GRĄŽINKITE"</string>
     <string name="securitymanager_st_tampered">Aptiktas programinės įrangos sugadinimas</string>
     <string name="securitymanager_st_face">Veido atpažinimas</string>
     <string name="securitymanager_st_refresh">Refresh</string>
-    <string name="wifi_notification_adaptive_wifi_title">Adaptyvusis „Wi-Fi“</string>
+    <string name="wifi_notification_adaptive_wifi_title">Adaptive Wi-Fi</string>
     <string name="wifi_notification_adaptive_wifi_add_to_favorite_detail">%s pridėtas kaip dažnai naudojamas „Wi-Fi“ tinklas. Telefonas automatiškai įjungs „Wi-Fi“, kai tik bus aptiktas šis tinklas.</string>
     <string name="wifi_notification_adaptive_wifi_remove_from_favorite_detail">%s pašalintas iš dažniausiai naudojamų „Wi-Fi“ tinklų sąrašo. Jis bus vėl pridėtas, jei dažniau naudosite.</string>
     <string name="wifi_notification_auto_wifi_add_to_favorite_title">Pridėta prie išsaugotų „Wi-Fi“</string>

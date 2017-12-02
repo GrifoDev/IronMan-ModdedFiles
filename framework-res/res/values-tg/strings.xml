@@ -137,6 +137,7 @@
     <string name="global_actions_toggle_airplane_mode">Реҷаи парвоз</string>
     <string name="global_actions_airplane_mode_on_status">Фаъол</string>
     <string name="global_actions_airplane_mode_off_status">Ғайрифаъол</string>
+    <string name="notification_hidden_text">Муҳтаво пинҳон аст</string>
     <string name="safeMode">Реҷаи бехатар</string>
     <string name="android_system_label">Системаи Android</string>
     <string name="user_owner_label">Барномаҳои шахсӣ</string>
@@ -885,7 +886,7 @@
     <string name="tethered_notification_title_sprint">Нқти дстрсии моб ё Модем фрзн аст</string>
     <string name="tethered_notification_title_client">%s дастгоҳ пайваст шуд</string>
     <string name="tethered_notification_title_one_client">1 дастгоҳ пайваст шуд</string>
-    <string name="tethered_notification_title_tmo">Нқти дстрсии моб ё Модем фрзн аст</string>
+    <string name="tethered_notification_title_tmo">Tethering or Mobile Hotspot active</string>
     <string name="tethered_notification_title_mtr">Нқти дстрсии моб ё Модем фрзн аст</string>
     <string name="tethered_notification_title">Нқти дстрсии моб ё Модем фрзн аст</string>
     <string name="permlab_transaction_event">Гирифтани маълумот оиди рӯйдодҳои амалиёти NFC</string>
@@ -1679,7 +1680,7 @@ Turn on Airplane mode?"</string>
     <string name="securitymanager_st_tampered">Дахолат ба нармафзор зоҳир карда шуд</string>
     <string name="securitymanager_st_face">Шинохтагирии чеҳра</string>
     <string name="securitymanager_st_refresh">Refresh</string>
-    <string name="wifi_notification_adaptive_wifi_title">Wi-Fi адаптивӣ</string>
+    <string name="wifi_notification_adaptive_wifi_title">Adaptive Wi-Fi</string>
     <string name="wifi_notification_adaptive_wifi_add_to_favorite_detail">%s ҳамчун шабакаи мунтазам истифода мешудаи Wi-Fi илова карда шуд. Минбаъд, вақте ки ин шабака муайян карда мешавад, телефон Wi-Fi-ро ба таври худкор фурӯзон карда мешавад.</string>
     <string name="wifi_notification_adaptive_wifi_remove_from_favorite_detail">%s аз шабакаҳои мунтазам истифода мешудаи Wi-Fi нест карда шуд. Агар онро бештар истифода баред, он такроран илова карда мешавад.</string>
     <string name="wifi_notification_auto_wifi_add_to_favorite_title">Wi-Fi-ҳои захирашуда илова шуд</string>

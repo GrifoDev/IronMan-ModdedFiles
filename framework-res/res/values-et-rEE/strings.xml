@@ -203,7 +203,7 @@
     <string name="global_action_assist">Abi</string>
     <string name="global_action_voice_assist">Häälabi</string>
     <string name="global_action_lockdown">Lukusta kohe</string>
-    <string name="notification_hidden_text">Sisu on peidetud</string>
+    <string name="notification_hidden_text">Sisu peidetud</string>
     <string name="notification_hidden_by_policy_text">Sisu on eeskirjadega peidetud</string>
     <string name="safeMode">Turvaline režiim</string>
     <string name="android_system_label">Android-süsteem</string>
@@ -1580,7 +1580,7 @@ käsklus"</string>
     <string name="tethered_notification_title_sprint">Mob. kuumk. või mod. on sis. lül.</string>
     <string name="tethered_notification_title_client">%s seadet ühendatud</string>
     <string name="tethered_notification_title_one_client">1 seade on ühendatud</string>
-    <string name="tethered_notification_title_tmo">Mob. kuumk. või mod. on sis. lül.</string>
+    <string name="tethered_notification_title_tmo">Tethering or Mobile Hotspot active</string>
     <string name="tethered_notification_title_mtr">Mob. kuumk. või mod. on sis. lül.</string>
     <string name="tethered_notification_title">Mob. kuumk. või mod. on sis. lül.</string>
     <string name="permlab_transaction_event">Võta vastu NFC-tehingu sündmusi</string>
@@ -2374,7 +2374,7 @@ TAGASTADA"</string>
     <string name="securitymanager_st_tampered">Tuvastati tarkvara muutmine</string>
     <string name="securitymanager_st_face">Näotuvastus</string>
     <string name="securitymanager_st_refresh">Refresh</string>
-    <string name="wifi_notification_adaptive_wifi_title">Kohanduv Wi-Fi</string>
+    <string name="wifi_notification_adaptive_wifi_title">Adaptive Wi-Fi</string>
     <string name="wifi_notification_adaptive_wifi_add_to_favorite_detail">%s lisati sageli kasutatud Wi-Fi-võrguna. Teie telefon lülitab Wi-Fi automaatselt sisse, kui tuvastab edaspidi selle võrgu.</string>
     <string name="wifi_notification_adaptive_wifi_remove_from_favorite_detail">%s eemaldati teie sageli kasutatud Wi-Fi-võrkude hulgast. Lisatakse taas, kui kasutate seda sagedamini.</string>
     <string name="wifi_notification_auto_wifi_add_to_favorite_title">Lisati salvestatud Wi-Fi hulka</string>

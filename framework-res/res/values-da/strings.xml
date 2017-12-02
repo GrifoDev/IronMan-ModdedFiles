@@ -1584,7 +1584,7 @@ command"</string>
     <string name="tethered_notification_title_sprint">Mobilt hotspot el. Deling aktiv</string>
     <string name="tethered_notification_title_client">%s enheder har forbindelse</string>
     <string name="tethered_notification_title_one_client">1 enhed tilsluttet</string>
-    <string name="tethered_notification_title_tmo">Mobilt hotspot el. Deling aktiv</string>
+    <string name="tethered_notification_title_tmo">Tethering or Mobile Hotspot active</string>
     <string name="tethered_notification_title_mtr">Mobilt hotspot el. Deling aktiv</string>
     <string name="tethered_notification_title">Mobilt hotspot el. Deling aktiv</string>
     <string name="permlab_transaction_event">Modtag NFC-transaktionshændelser</string>
@@ -2378,7 +2378,7 @@ RETURNERES TIL"</string>
     <string name="securitymanager_st_tampered">Der er registreret softwareændring</string>
     <string name="securitymanager_st_face">Ansigtsgenkendelse</string>
     <string name="securitymanager_st_refresh">Refresh</string>
-    <string name="wifi_notification_adaptive_wifi_title">Adaptiv Wi-Fi</string>
+    <string name="wifi_notification_adaptive_wifi_title">Adaptive Wi-Fi</string>
     <string name="wifi_notification_adaptive_wifi_add_to_favorite_detail">%s er blevet tilføjet som et ofte benyttet Wi-Fi-netværk. Din telefon vil fremover automatisk aktivere Wi-Fi, når dette netværk registreres.</string>
     <string name="wifi_notification_adaptive_wifi_remove_from_favorite_detail">%s er blevet fjernet fra dine oftest benyttede Wi-Fi-netværk. Det vil blive tilføjet igen, hvis du bruger det oftere.</string>
     <string name="wifi_notification_auto_wifi_add_to_favorite_title">Føjet til gemt Wi-Fi</string>

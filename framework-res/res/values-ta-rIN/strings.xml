@@ -203,7 +203,7 @@
     <string name="global_action_assist">உதவி</string>
     <string name="global_action_voice_assist">குரல் உதவி</string>
     <string name="global_action_lockdown">இப்போது பூட்டு</string>
-    <string name="notification_hidden_text">மறைந்துள்ள உள்ளடக்கம்</string>
+    <string name="notification_hidden_text">உள்ளடக்கம் மறைக்கப்பட்டது</string>
     <string name="notification_hidden_by_policy_text">கொள்கையின்படி உள்ளடக்கம் மறைக்கப்பட்டது</string>
     <string name="safeMode">பாதுகாப்பு முறை</string>
     <string name="android_system_label">ஆண்ட்ராய்டு சிஸ்டம்</string>
@@ -1579,7 +1579,7 @@
     <string name="tethered_notification_title_sprint">மொபைல் ஹாட்ஸ்பாட் அல்லது டித்தரிங் ஆனில் உள்ளது</string>
     <string name="tethered_notification_title_client">%s சாதனங்கள் இணைக்கப்பட்டன</string>
     <string name="tethered_notification_title_one_client">1 சாதனம் இணைக்கப்பட்டது</string>
-    <string name="tethered_notification_title_tmo">மொபைல் ஹாட்ஸ்பாட் அல்லது டித்தரிங் ஆனில் உள்ளது</string>
+    <string name="tethered_notification_title_tmo">Tethering or Mobile Hotspot active</string>
     <string name="tethered_notification_title_mtr">மொபைல் ஹாட்ஸ்பாட் அல்லது டித்தரிங் ஆனில் உள்ளது</string>
     <string name="tethered_notification_title">மொபைல் ஹாட்ஸ்பாட் அல்லது டித்தரிங் ஆனில் உள்ளது</string>
     <string name="permlab_transaction_event">NFC பரிமாற்ற நிகழ்வுகளைப் பெறவும்.</string>
@@ -2373,7 +2373,7 @@ Turn on Airplane mode?"</string>
     <string name="securitymanager_st_tampered">தவறான மென்பொருள் கண்டறியப்பட்டது</string>
     <string name="securitymanager_st_face">முகம் கண்டறிதல்</string>
     <string name="securitymanager_st_refresh">Refresh</string>
-    <string name="wifi_notification_adaptive_wifi_title">அடாப்டிவ் Wi-Fi</string>
+    <string name="wifi_notification_adaptive_wifi_title">Adaptive Wi-Fi</string>
     <string name="wifi_notification_adaptive_wifi_add_to_favorite_detail">%s, அடிக்கடி பயன்படுத்திய Wi-Fi நெட்வொர்க்காக சேர்க்கப்பட்டுள்ளது. எதிர்காலத்தில் இந்த நெட்வொர்க் கண்டறியப்படும் போது, உங்கள் ஃபோன் Wi-Fi-ஐ தானாக இயக்கும்.</string>
     <string name="wifi_notification_adaptive_wifi_remove_from_favorite_detail">%s, உங்கள் அடிக்கடி பயன்படுத்திய Wi-Fi நெட்வொர்க்கிலிருந்து அகற்றப்பட்டுள்ளது. நீங்கள் மேலும் அடிக்கடி பயன்படுத்தினால், இது மீண்டும் சேர்க்கப்படும்.</string>
     <string name="wifi_notification_auto_wifi_add_to_favorite_title">சேமித்த Wi-Fi-இல் சேர்க்கப்பட்டது</string>

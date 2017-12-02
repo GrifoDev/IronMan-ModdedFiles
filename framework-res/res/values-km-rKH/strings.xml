@@ -203,7 +203,7 @@
     <string name="global_action_assist">ជំនួយ</string>
     <string name="global_action_voice_assist">ជំនួយសម្លេង</string>
     <string name="global_action_lockdown">ចាក់សោ​ឥឡូវនេះ</string>
-    <string name="notification_hidden_text">បាន​លាក់​មាតិកា</string>
+    <string name="notification_hidden_text">បាន​លាក់​ខ្លឹមព័ត៌មាន</string>
     <string name="notification_hidden_by_policy_text">មាតិកាត្រូវបានលាក់ដោយផ្អែកលើគោលការណ៍</string>
     <string name="safeMode">ទម្រង់​ដែល​មាន​សុវត្ថិភាព</string>
     <string name="android_system_label">ប្រព័ន្ធ Android</string>
@@ -1580,7 +1580,7 @@
     <string name="tethered_notification_title_sprint">បាន​បើក​ហត់ស្ប៉ត់​ចល័ត ឬ ចំណង</string>
     <string name="tethered_notification_title_client">បាន​ភ្ជាប់​ឧបករណ៍ %s</string>
     <string name="tethered_notification_title_one_client">បាន​ភ្ជាប់​ឧបករណ៍ 1</string>
-    <string name="tethered_notification_title_tmo">បាន​បើក​ហត់ស្ប៉ត់​ចល័ត ឬ ចំណង</string>
+    <string name="tethered_notification_title_tmo">Tethering or Mobile Hotspot active</string>
     <string name="tethered_notification_title_mtr">បាន​បើក​ហត់ស្ប៉ត់​ចល័ត ឬ ចំណង</string>
     <string name="tethered_notification_title">បាន​បើក​ហត់ស្ប៉ត់​ចល័ត ឬ ចំណង</string>
     <string name="permlab_transaction_event">ទទួល​ព្រឹត្តិការណ៍​ប្រតិបត្តិការ NFC</string>
@@ -2374,7 +2374,7 @@ Turn on Airplane mode?"</string>
     <string name="securitymanager_st_tampered">ចាប់​បាន​ការអុកឡុក​សុហ្វវែរ</string>
     <string name="securitymanager_st_face">ការស្គាល់​ផ្ទៃមុខ</string>
     <string name="securitymanager_st_refresh">Refresh</string>
-    <string name="wifi_notification_adaptive_wifi_title">Wi-Fi ត្រាប់</string>
+    <string name="wifi_notification_adaptive_wifi_title">Adaptive Wi-Fi</string>
     <string name="wifi_notification_adaptive_wifi_add_to_favorite_detail">%s ត្រូវ​បាន​ថែម​ជា​បណ្ដាញ Wi-Fi ដែល​បាន​ប្រើ​ញឹកញាប់។ ទូរសព្ទ​របស់​អ្នក​នឹង​បើក Wi-Fi ដោយ​ស្វ័យប្រវត្តិ នៅពេល​បណ្ដាញ​នេះ​ត្រូវ​បាន​ស្គាល់​នា​ពេល​អនាគត។</string>
     <string name="wifi_notification_adaptive_wifi_remove_from_favorite_detail">%s ត្រូវ​បាន​លុប​ពី​បណ្ដាញ Wi-Fi ដែល​បាន​ប្រើ​ញឹកញាប់។ វា​នឹង​ត្រូវ​បាន​ថែម​ម្ដងទៀត បើ​អ្នក​ប្រើ​វា​កាន់តែ​ញឹកញាប់។</string>
     <string name="wifi_notification_auto_wifi_add_to_favorite_title">បាន​ថែម​ទៅ Wi-Fi ដែល​បាន​រក្សាទុក</string>

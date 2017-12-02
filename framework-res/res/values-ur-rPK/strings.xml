@@ -203,7 +203,7 @@
     <string name="global_action_assist">اسسٹ</string>
     <string name="global_action_voice_assist">Voice Assist</string>
     <string name="global_action_lockdown">ابھی مقفل کریں</string>
-    <string name="notification_hidden_text">مواد مخفی ہیں</string>
+    <string name="notification_hidden_text">چھپے ہوئے مشمول</string>
     <string name="notification_hidden_by_policy_text">مواد پالیسی کے تحت مخفی ہے</string>
     <string name="safeMode">محفوظ وضع</string>
     <string name="android_system_label">سسٹم Android</string>
@@ -1579,7 +1579,7 @@
     <string name="tethered_notification_title_sprint">موبائل ہاٹ اسپاٹ یا ٹیتھرنگ آن ہے</string>
     <string name="tethered_notification_title_client">%s آلات مربوط</string>
     <string name="tethered_notification_title_one_client">1 آلہ مربوط ہو گیا</string>
-    <string name="tethered_notification_title_tmo">موبائل ہاٹ اسپاٹ یا ٹیتھرنگ آن ہے</string>
+    <string name="tethered_notification_title_tmo">Tethering or Mobile Hotspot active</string>
     <string name="tethered_notification_title_mtr">موبائل ہاٹ اسپاٹ یا ٹیتھرنگ آن ہے</string>
     <string name="tethered_notification_title">موبائل ہاٹ اسپاٹ یا ٹیتھرنگ آن ہے</string>
     <string name="permlab_transaction_event">‏NFC کاروباری لین دین وقوعہ جات وصول کریں</string>
@@ -2373,7 +2373,7 @@ Turn on Airplane mode?"</string>
     <string name="securitymanager_st_tampered">سافٹ ویئر کا عارضی طورپر پتہ لگا ہے</string>
     <string name="securitymanager_st_face">چہرہ کی پہچان</string>
     <string name="securitymanager_st_refresh">Refresh</string>
-    <string name="wifi_notification_adaptive_wifi_title">مطابقت پذیر Wi-Fi</string>
+    <string name="wifi_notification_adaptive_wifi_title">Adaptive Wi-Fi</string>
     <string name="wifi_notification_adaptive_wifi_add_to_favorite_detail">بکثرت استعمال کردہ Wi-Fi نیٹ ورک کے طورپر %s شامل کردیا گیا ہے۔ مستقبل میں یہ نیٹ ورک پائے جانے کے وقت آپ کا فون Wi-Fi کو خودکار طورپر آن کردے گا۔</string>
     <string name="wifi_notification_adaptive_wifi_remove_from_favorite_detail">آپ کے بکثرت استعمال کردہ Wi-Fi نیٹ ورکس سے %s ہٹا دیا گيا ہے۔ اگر آپ اس کو اکثر و بیشتر استعمال کرتے ہیں تو اسے دوبارہ شامل کردیا جائے گا۔</string>
     <string name="wifi_notification_auto_wifi_add_to_favorite_title">محفوظ شدہ Wi-Fi میں شامل ہوگیا</string>

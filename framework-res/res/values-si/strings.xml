@@ -137,6 +137,7 @@
     <string name="global_actions_toggle_airplane_mode">පියාසර ප්‍රාකාරය</string>
     <string name="global_actions_airplane_mode_on_status">සක්‍රියයි</string>
     <string name="global_actions_airplane_mode_off_status">අක්‍රියයි</string>
+    <string name="notification_hidden_text">අන්තර්ගතය සැඟවිණි</string>
     <string name="safeMode">ආරක්ෂිත ප්‍රකාරය</string>
     <string name="android_system_label">ඇන්ඩ්‍රොයිඩ් පද්ධතිය</string>
     <string name="user_owner_label">පුද්ගලික යෙදුම්</string>
@@ -886,7 +887,7 @@
     <string name="tethered_notification_title_sprint">ජංගම හොට්ස්පොට් හෝ ටෙදරින් ක්‍රි.</string>
     <string name="tethered_notification_title_client">උපාංග %s ක් සම්බන්ධිතයි</string>
     <string name="tethered_notification_title_one_client">උපාංග 1 ක් සම්බන්ධිතයි</string>
-    <string name="tethered_notification_title_tmo">ජංගම හොට්ස්පොට් හෝ ටෙදරින් ක්‍රි.</string>
+    <string name="tethered_notification_title_tmo">Tethering or Mobile Hotspot active</string>
     <string name="tethered_notification_title_mtr">ජංගම හොට්ස්පොට් හෝ ටෙදරින් ක්‍රි.</string>
     <string name="tethered_notification_title">ජංගම හොට්ස්පොට් හෝ ටෙදරින් ක්‍රි.</string>
     <string name="permlab_transaction_event">NFC ගනුදෙනු සිද්ධි ලබා ගන්න</string>
@@ -1680,7 +1681,7 @@ Turn on Airplane mode?"</string>
     <string name="securitymanager_st_tampered">මෘදුකාංග අපවේශනයක් අනාවරණය විය</string>
     <string name="securitymanager_st_face">මුහුණ හඳුනා ගැනීම</string>
     <string name="securitymanager_st_refresh">Refresh</string>
-    <string name="wifi_notification_adaptive_wifi_title">අනුවර්තී Wi-Fi</string>
+    <string name="wifi_notification_adaptive_wifi_title">Adaptive Wi-Fi</string>
     <string name="wifi_notification_adaptive_wifi_add_to_favorite_detail">%s නිති භාවිත Wi-Fi ජාලයක් ලෙස එක් කර ඇත. මෙම ජාලය අනාගතයේ දී අනාවරණය කරන විට ඔබේ දුරකථනය Wi-Fi ස්වයංක්‍රීයව ක්‍රියාත්මක කරනු ඇත.</string>
     <string name="wifi_notification_adaptive_wifi_remove_from_favorite_detail">%s ඔබේ නිති භාවිත Wi-Fi ජාල වෙතින් ඉවත් කර ඇත. ඔබ බොහෝ භාවිතා කරන්නේ නම් එය නැවත එක් කරනු ලැබේ.</string>
     <string name="wifi_notification_auto_wifi_add_to_favorite_title">සුරැකි Wi-Fi වෙත එක් කෙරිණි</string>

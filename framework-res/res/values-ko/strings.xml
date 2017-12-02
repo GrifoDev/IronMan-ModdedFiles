@@ -207,7 +207,7 @@
     <string name="global_action_assist">지원</string>
     <string name="global_action_voice_assist">음성 지원</string>
     <string name="global_action_lockdown">지금 잠그기</string>
-    <string name="notification_hidden_text">숨겨진 콘텐츠</string>
+    <string name="notification_hidden_text">내용 숨김</string>
     <string name="notification_hidden_by_policy_text">콘텐츠가 정책에 의해 숨겨졌습니다.</string>
     <string name="safeMode">안전 모드</string>
     <string name="android_system_label">안드로이드 시스템</string>
@@ -1583,7 +1583,7 @@ google.com/accounts/recovery"</string>
     <string name="tethered_notification_title_sprint">모바일 핫스팟 또는 테더링 사용 중</string>
     <string name="tethered_notification_title_client">디바이스 %s개 연결됨</string>
     <string name="tethered_notification_title_one_client">디바이스 1개 연결됨</string>
-    <string name="tethered_notification_title_tmo">모바일 핫스팟 또는 테더링 사용 중</string>
+    <string name="tethered_notification_title_tmo">테더링 또는 모바일 핫스팟 사용 중</string>
     <string name="tethered_notification_title_mtr">모바일 핫스팟 또는 테더링 사용 중</string>
     <string name="tethered_notification_title">모바일 핫스팟 또는 테더링 사용 중</string>
     <string name="permlab_transaction_event">NFC 거래 정보 수신</string>

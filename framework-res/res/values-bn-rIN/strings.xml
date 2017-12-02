@@ -137,6 +137,7 @@
     <string name="global_actions_toggle_airplane_mode">বিমান মোড</string>
     <string name="global_actions_airplane_mode_on_status">সক্ষম হয়েছে</string>
     <string name="global_actions_airplane_mode_off_status">অক্ষম হয়েছে</string>
+    <string name="notification_hidden_text">সামগ্রী লুকানো</string>
     <string name="safeMode">নিরাপদ মোড</string>
     <string name="android_system_label">অ্যান্ড্রয়েড সিস্টেম</string>
     <string name="user_owner_label">ব্যক্তিগত অ্যাপ্লিকেশনগুলি</string>
@@ -882,7 +883,7 @@
     <string name="tethered_notification_title_sprint">মোবাইল হটস্পট বা টেথারিং চালু আছে</string>
     <string name="tethered_notification_title_client">%sটি ডিভাইস সংযুক্ত হয়েছে</string>
     <string name="tethered_notification_title_one_client">1টি ডিভাইস সংযুক্ত হয়েছে</string>
-    <string name="tethered_notification_title_tmo">মোবাইল হটস্পট বা টেথারিং চালু আছে</string>
+    <string name="tethered_notification_title_tmo">Tethering or Mobile Hotspot active</string>
     <string name="tethered_notification_title_mtr">মোবাইল হটস্পট বা টেথারিং চালু আছে</string>
     <string name="tethered_notification_title">মোবাইল হটস্পট বা টেথারিং চালু আছে</string>
     <string name="permlab_transaction_event">NFC লেনদেনের ঘটনাগুলি গ্রহণ করুন</string>
@@ -1676,7 +1677,7 @@ Turn on Airplane mode?"</string>
     <string name="securitymanager_st_tampered">সফ্টওয়্যার টেম্পারিং শনাক্ত হয়েছে</string>
     <string name="securitymanager_st_face">মুখ শনাক্তকরণ</string>
     <string name="securitymanager_st_refresh">Refresh</string>
-    <string name="wifi_notification_adaptive_wifi_title">উপযোগী Wi-Fi</string>
+    <string name="wifi_notification_adaptive_wifi_title">Adaptive Wi-Fi</string>
     <string name="wifi_notification_adaptive_wifi_add_to_favorite_detail">প্রায়শই ব্যবহৃত একটি Wi-Fi নেটওয়ার্ক হিসাবে %s যুক্ত হয়েছে। ভবিষ্যতে এই নেটওয়ার্কটি শনাক্ত করা হলে আপনার ফোনটি স্বয়ংক্রিয়ভাবে Wi-Fi চালু করবে।</string>
     <string name="wifi_notification_adaptive_wifi_remove_from_favorite_detail">আপনার প্রায়শই ব্যবহৃত Wi-Fi নেটওয়ার্কগুলির থেকে %s অপসারিত হয়েছে। আপনি এটি আরও ব্যবহার করলে এটি আবার যুক্ত হবে।</string>
     <string name="wifi_notification_auto_wifi_add_to_favorite_title">সংরক্ষিত Wi-Fi-এ যুক্ত হয়েছে</string>

@@ -203,7 +203,7 @@
     <string name="global_action_assist">Assistance</string>
     <string name="global_action_voice_assist">Assist. vocale</string>
     <string name="global_action_lockdown">Verrouiller</string>
-    <string name="notification_hidden_text">Contenus masqués</string>
+    <string name="notification_hidden_text">Contenu masqué</string>
     <string name="notification_hidden_by_policy_text">Contenu masqué conformément aux politiques</string>
     <string name="safeMode">Mode sécurisé</string>
     <string name="android_system_label">Système Android</string>
@@ -1578,7 +1578,7 @@ Command"</string>
     <string name="tethered_notification_title_sprint">Point accès mobile/modem activé</string>
     <string name="tethered_notification_title_client">%s appareils connectés</string>
     <string name="tethered_notification_title_one_client">1 appareil connecté</string>
-    <string name="tethered_notification_title_tmo">Point accès mobile/modem activé</string>
+    <string name="tethered_notification_title_tmo">Modem ou point accès mobile activé</string>
     <string name="tethered_notification_title_mtr">Point accès mobile/modem activé</string>
     <string name="tethered_notification_title">Point accès mobile/modem activé</string>
     <string name="permlab_transaction_event">Recevoir des évènements de transaction NFC</string>
@@ -2372,7 +2372,7 @@ LE RENVOYER À"</string>
     <string name="securitymanager_st_tampered">Transformation de logiciel détectée</string>
     <string name="securitymanager_st_face">Reconnaissance faciale</string>
     <string name="securitymanager_st_refresh">Refresh</string>
-    <string name="wifi_notification_adaptive_wifi_title">Wifi adaptatif</string>
+    <string name="wifi_notification_adaptive_wifi_title">Adaptive Wi-Fi</string>
     <string name="wifi_notification_adaptive_wifi_add_to_favorite_detail">Le réseau %s a été ajouté en tant que réseau Wifi fréquemment utilisé. Votre téléphone activera le Wifi automatiquement lorsque ce réseau sera détecté dans le futur.</string>
     <string name="wifi_notification_adaptive_wifi_remove_from_favorite_detail">"Le réseau %s a été supprimé de vos réseaux Wifi fréquemment utilisés. Il sera ajouté à nouveau si vous l'utilisez plus souvent."</string>
     <string name="wifi_notification_auto_wifi_add_to_favorite_title">Ajouté au réseau Wifi enregistré</string>

@@ -203,7 +203,7 @@
     <string name="global_action_assist">සහාය දීම</string>
     <string name="global_action_voice_assist">හඬ සහායක</string>
     <string name="global_action_lockdown">දැන් අගුළු දමන්න</string>
-    <string name="notification_hidden_text">සැඟවුණු සම්බන්ධතා</string>
+    <string name="notification_hidden_text">අන්තර්ගතය සැඟවිණි</string>
     <string name="notification_hidden_by_policy_text">ප්‍රතිපත්තිය විසින් අන්තර්ගතය සඟවන ලදී</string>
     <string name="safeMode">ආරක්ෂිත ප්‍රකාරය</string>
     <string name="android_system_label">ඇන්ඩ්‍රොයිඩ් පද්ධතිය</string>
@@ -1416,7 +1416,7 @@
     <string name="screen_curtain_mode_disable_status">%s ක්‍රියා විරහිතයි</string>
     <string name="tethered_notification_title_verizon">ජංගම හොට්ස්පොට් හෝ ටෙදරින් ක්‍රි.</string>
     <string name="tethered_notification_title_sprint">ජංගම හොට්ස්පොට් හෝ ටෙදරින් ක්‍රි.</string>
-    <string name="tethered_notification_title_tmo">ජංගම හොට්ස්පොට් හෝ ටෙදරින් ක්‍රි.</string>
+    <string name="tethered_notification_title_tmo">Tethering or Mobile Hotspot active</string>
     <string name="tethered_notification_title_mtr">ජංගම හොට්ස්පොට් හෝ ටෙදරින් ක්‍රි.</string>
     <string name="tethered_notification_title">ජංගම හොට්ස්පොට් හෝ ටෙදරින් ක්‍රි.</string>
     <string name="vzw_cooldown_mode">Unable to open app. Your phone is getting hot.</string>
@@ -1819,7 +1819,7 @@
     <string name="securitymanager_st_tampered">මෘදුකාංග අපවේශනයක් අනාවරණය විය</string>
     <string name="securitymanager_st_face">මුහුණ හඳුනා ගැනීම</string>
     <string name="securitymanager_st_refresh">Refresh</string>
-    <string name="wifi_notification_adaptive_wifi_title">අනුවර්තී Wi-Fi</string>
+    <string name="wifi_notification_adaptive_wifi_title">Adaptive Wi-Fi</string>
     <string name="wifi_notification_adaptive_wifi_add_to_favorite_detail">%s නිති භාවිත Wi-Fi ජාලයක් ලෙස එක් කර ඇත. මෙම ජාලය අනාගතයේ දී අනාවරණය කරන විට ඔබේ දුරකථනය Wi-Fi ස්වයංක්‍රීයව ක්‍රියාත්මක කරනු ඇත.</string>
     <string name="wifi_notification_adaptive_wifi_remove_from_favorite_detail">%s ඔබේ නිති භාවිත Wi-Fi ජාල වෙතින් ඉවත් කර ඇත. ඔබ බොහෝ භාවිතා කරන්නේ නම් එය නැවත එක් කරනු ලැබේ.</string>
     <string name="wifi_notification_auto_wifi_add_to_favorite_title">සුරැකි Wi-Fi වෙත එක් කෙරිණි</string>

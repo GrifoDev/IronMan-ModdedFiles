@@ -203,7 +203,7 @@
     <string name="global_action_assist">Асистенција</string>
     <string name="global_action_voice_assist">Гласовна помош</string>
     <string name="global_action_lockdown">Заклучи сега</string>
-    <string name="notification_hidden_text">Содржините се скриени</string>
+    <string name="notification_hidden_text">Содржината е скриена</string>
     <string name="notification_hidden_by_policy_text">Содржините се скриени поради политиката</string>
     <string name="safeMode">Безбеден режим</string>
     <string name="android_system_label">Систем Андроид</string>
@@ -1577,7 +1577,7 @@
     <string name="tethered_notification_title_sprint">Моб.хотспот или Спод.врска е вкл.</string>
     <string name="tethered_notification_title_client">%s уреди се поврзани</string>
     <string name="tethered_notification_title_one_client">1 уред е поврзан</string>
-    <string name="tethered_notification_title_tmo">Моб.хотспот или Спод.врска е вкл.</string>
+    <string name="tethered_notification_title_tmo">Tethering or Mobile Hotspot active</string>
     <string name="tethered_notification_title_mtr">Моб.хотспот или Спод.врска е вкл.</string>
     <string name="tethered_notification_title">Моб.хотспот или Спод.врска е вкл.</string>
     <string name="permlab_transaction_event">Примај трансакциски настани NFC</string>
@@ -2371,7 +2371,7 @@ Turn on Airplane mode?"</string>
     <string name="securitymanager_st_tampered">Откриено е влијание врз софтверот</string>
     <string name="securitymanager_st_face">Препознавање лице</string>
     <string name="securitymanager_st_refresh">Refresh</string>
-    <string name="wifi_notification_adaptive_wifi_title">Приспособливо Wi-Fi</string>
+    <string name="wifi_notification_adaptive_wifi_title">Adaptive Wi-Fi</string>
     <string name="wifi_notification_adaptive_wifi_add_to_favorite_detail">%s е додадена како често користена мрежа Wi-Fi. Вашиот телефон ќе го вклучи Wi-Fi автоматски кога мрежава ќе се открива во иднина.</string>
     <string name="wifi_notification_adaptive_wifi_remove_from_favorite_detail">%s е отстранета од често користените мрежи Wi-Fi. Ќе се додаде повторно ако ја користите почесто.</string>
     <string name="wifi_notification_auto_wifi_add_to_favorite_title">Додадено во зачувано Wi-Fi</string>

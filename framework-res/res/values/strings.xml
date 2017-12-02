@@ -2441,6 +2441,7 @@ Turn on Airplane mode?"</string>
     <string name="conventional_mode_previous_aspect_ratio_noti">To return to previous aspect ratio, go to Settings > Display > Full screen apps.</string>
     <string name="conventional_mode_tap_here_to_fill">Tap here to fill entire screen</string>
     <string name="bixby_popup_unavailable_now">Bixby unavailable. Only phone owner or main phone number can use Bixby.</string>
+    <string name="alert_msg_wifi_display_connected">Image quality of HDR videos may be reduced on connected display device.</string>
     <string name="permlab_knoxCustomSetting">Manage device settings</string>
     <string name="permdesc_knoxCustomSetting">Configure device settings, such as Bluetooth, Location, Wi-Fi, Mobile data, and Android settings.</string>
     <string name="permlab_knoxCustomSystem">Manage system settings</string>

@@ -207,7 +207,7 @@
     <string name="global_action_assist">सहायता</string>
     <string name="global_action_voice_assist">वॉइस सहायक</string>
     <string name="global_action_lockdown">अभी लॉक करें</string>
-    <string name="notification_hidden_text">छिपी हुई सामग्री</string>
+    <string name="notification_hidden_text">सामग्री छिपाई गई</string>
     <string name="notification_hidden_by_policy_text">सामग्री पॉलिसी के द्वारा छिपी हुई है</string>
     <string name="safeMode">सुरक्षित मोड</string>
     <string name="android_system_label">एंड्रोइड सिस्टम</string>
@@ -1584,7 +1584,7 @@
     <string name="tethered_notification_title_sprint">मोबाइल हॉटस्पॉट या टेथरिंग चालू है</string>
     <string name="tethered_notification_title_client">%s डिवाइसेस कनेक्ट किए गए</string>
     <string name="tethered_notification_title_one_client">1 डिवाइस कनेक्ट है</string>
-    <string name="tethered_notification_title_tmo">मोबाइल हॉटस्पॉट या टेथरिंग चालू है</string>
+    <string name="tethered_notification_title_tmo">Tethering or Mobile Hotspot active</string>
     <string name="tethered_notification_title_mtr">मोबाइल हॉटस्पॉट या टेथरिंग चालू है</string>
     <string name="tethered_notification_title">मोबाइल हॉटस्पॉट या टेथरिंग चालू है</string>
     <string name="permlab_transaction_event">NFC लेन-देन प्रसंग प्राप्त करें</string>
@@ -2379,7 +2379,7 @@ Turn on Airplane mode?"</string>
     <string name="securitymanager_st_tampered">सॉफ्टवेयर परिवर्तन का पता चला है</string>
     <string name="securitymanager_st_face">चेहरे की पहचान</string>
     <string name="securitymanager_st_refresh">Refresh</string>
-    <string name="wifi_notification_adaptive_wifi_title">अनुकूलन Wi-Fi</string>
+    <string name="wifi_notification_adaptive_wifi_title">Adaptive Wi-Fi</string>
     <string name="wifi_notification_adaptive_wifi_add_to_favorite_detail">%s को एक अक्सर उपयोग किए गए Wi-Fi नेटवर्क के रूप में जोड़ा गया है। भविष्य में इस नेटवर्क का पता लगाए जाने पर आपका फोन स्वचालित रूप से Wi-Fi चालू करेगा।</string>
     <string name="wifi_notification_adaptive_wifi_remove_from_favorite_detail">%s को आपके अक्सर उपयोग किए गए Wi-Fi नेटवर्क्स से निकाल दिया गया है। यदि आप अक्सर इसका उपयोग करते हैं, तो इसे फिर से जोड़ा जाएगा।</string>
     <string name="wifi_notification_auto_wifi_add_to_favorite_title">सेव किए गए Wi-Fi में जोड़ा गया</string>

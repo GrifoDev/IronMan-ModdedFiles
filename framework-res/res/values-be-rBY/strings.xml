@@ -203,7 +203,7 @@
     <string name="global_action_assist">Дапамога</string>
     <string name="global_action_voice_assist">Галас. дапамога</string>
     <string name="global_action_lockdown">Заблакір. зараз</string>
-    <string name="notification_hidden_text">Змесціва схавана</string>
+    <string name="notification_hidden_text">Схваванае змесціва</string>
     <string name="notification_hidden_by_policy_text">Змесціва, схаванае ў адпаведнасці з палітыкай</string>
     <string name="safeMode">Бяспечны рэжым</string>
     <string name="android_system_label">Сістэма Android</string>
@@ -1418,7 +1418,7 @@
     <string name="screen_curtain_mode_disable_status">%s выкл.</string>
     <string name="tethered_notification_title_verizon">Маб. хот-спот або мадэм уключаны</string>
     <string name="tethered_notification_title_sprint">Маб. хот-спот або мадэм уключаны</string>
-    <string name="tethered_notification_title_tmo">Маб. хот-спот або мадэм уключаны</string>
+    <string name="tethered_notification_title_tmo">Tethering or Mobile Hotspot active</string>
     <string name="tethered_notification_title_mtr">Маб. хот-спот або мадэм уключаны</string>
     <string name="tethered_notification_title">Маб. хот-спот або мадэм уключаны</string>
     <string name="vzw_cooldown_mode">Unable to open app. Your phone is getting hot.</string>
@@ -1821,7 +1821,7 @@
     <string name="securitymanager_st_tampered">Выяўлены незаконны доступ да праграмнага забеспячэння</string>
     <string name="securitymanager_st_face">Распазнаванне твару</string>
     <string name="securitymanager_st_refresh">Refresh</string>
-    <string name="wifi_notification_adaptive_wifi_title">Адаптыўны Wi-Fi</string>
+    <string name="wifi_notification_adaptive_wifi_title">Adaptive Wi-Fi</string>
     <string name="wifi_notification_adaptive_wifi_add_to_favorite_detail">%s была дададзена як сетка Wi-Fi, якая часта выкарыстоўваецца. Ваш тэлефон аўтаматычна ўключыць Wi-Fi, калі гэта сетка будзе выяўлена ў будучыні.</string>
     <string name="wifi_notification_adaptive_wifi_remove_from_favorite_detail">%s была выдалена з сетак Wi-Fi, якія часта выкарыстоўваюцца. Яна будзе дададзена зноў, калі вы будзеце выкарыстоўваць яе часцей.</string>
     <string name="wifi_notification_auto_wifi_add_to_favorite_title">Дададзена да захаваных Wi-Fi</string>

@@ -137,6 +137,7 @@
     <string name="global_actions_toggle_airplane_mode">ଫ୍ଲାଇଟ୍ ମୋଡ୍</string>
     <string name="global_actions_airplane_mode_on_status">ସକ୍ଷମ ହୋଇଛି</string>
     <string name="global_actions_airplane_mode_off_status">ଅକ୍ଷମ ହୋଇଛି</string>
+    <string name="notification_hidden_text">ଲୁକ୍କାୟିତ ବିଷୟବସ୍ତୁ</string>
     <string name="safeMode">ସୁରକ୍ଷିତ ମୋଡ୍</string>
     <string name="android_system_label">ଆଣ୍ଡ୍ରୋଏଡ୍ ସିଷ୍ଟମ୍</string>
     <string name="user_owner_label">ବ୍ୟକ୍ତିଗତ ଆପ୍ଲିକେସନଗୁଡିକ</string>
@@ -887,7 +888,7 @@
     <string name="tethered_notification_title_sprint">ମୋବା. ହଟ. କିମ୍ୱା ଟିଥରିଂ ଅନ୍ ଅଛି</string>
     <string name="tethered_notification_title_client">%sଟି ଡିଭାଇସ୍ ସଂଯୋଜିତ</string>
     <string name="tethered_notification_title_one_client">1 ଡିଭାଇସ୍ ସଂଯୋଗ ହୋଇଛି</string>
-    <string name="tethered_notification_title_tmo">ମୋବା. ହଟ. କିମ୍ୱା ଟିଥରିଂ ଅନ୍ ଅଛି</string>
+    <string name="tethered_notification_title_tmo">Tethering or Mobile Hotspot active</string>
     <string name="tethered_notification_title_mtr">ମୋବା. ହଟ. କିମ୍ୱା ଟିଥରିଂ ଅନ୍ ଅଛି</string>
     <string name="tethered_notification_title">ମୋବା. ହଟ. କିମ୍ୱା ଟିଥରିଂ ଅନ୍ ଅଛି</string>
     <string name="permlab_transaction_event">NFC ବିନିମୟ ଇଭେଣ୍ଟଗୁଡିକ ପ୍ରାପ୍ତ କରନ୍ତୁ</string>
@@ -1681,7 +1682,7 @@ Turn on Airplane mode?"</string>
     <string name="securitymanager_st_tampered">ସଫ୍ଟୱେୟାର୍ ଟେମ୍ପରିଙ୍ଗ୍ ଚିହ୍ନଟ ହୋଇଛି</string>
     <string name="securitymanager_st_face">ମୁହଁ ଚିହ୍ନଟକରଣ</string>
     <string name="securitymanager_st_refresh">Refresh</string>
-    <string name="wifi_notification_adaptive_wifi_title">ଆଡାପ୍ଟିଭ୍‌ Wi-Fi</string>
+    <string name="wifi_notification_adaptive_wifi_title">Adaptive‌ Wi-Fi</string>
     <string name="wifi_notification_adaptive_wifi_add_to_favorite_detail">%s ବାରମ୍ଵାର ବ୍ୟବହୃତ Wi-Fi ନେଟୱାର୍କ୍‌ ଭାବେ ଯୋଡାଯାଇଛି। ଭବିଷ୍ୟତରେ ଏହି ନେଟୱାର୍କ୍ ଚିହ୍ନଟ ହୋଇଥିବା ସମୟରେ ଆପଣଙ୍କ ଫୋନ୍ ସ୍ୱତଃସ୍ପୃତ ଭାବେ Wi-Fi ଟର୍ନ୍ ଅନ୍ କରିବ।</string>
     <string name="wifi_notification_adaptive_wifi_remove_from_favorite_detail">%s କୁ ଆପଣଙ୍କୁ ବାରମ୍ଵାର ବ୍ୟବହୃତ Wi-Fi ନେଟୱାର୍କରୁ ଅପସାରଣ ହୋଇଛି। ଯଦି ଆପଣ ବାରମ୍ୱାର ଏହା ବ୍ୟବହାର କରିବେ ଏହା ପୁନଃ ଯୋଡା ହେବ।</string>
     <string name="wifi_notification_auto_wifi_add_to_favorite_title">ସଞ୍ଚୟ Wi-Fiକୁ ଯୋଡାଯାଇଛି</string>

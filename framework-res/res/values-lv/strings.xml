@@ -1584,7 +1584,7 @@ komanda"</string>
     <string name="tethered_notification_title_sprint">Ieslēgts mob. tīkl. vai piesaiste</string>
     <string name="tethered_notification_title_client">Pievienotas %s ierīces</string>
     <string name="tethered_notification_title_one_client">Pievienota 1 ierīce</string>
-    <string name="tethered_notification_title_tmo">Ieslēgts mob. tīkl. vai piesaiste</string>
+    <string name="tethered_notification_title_tmo">Tethering or Mobile Hotspot active</string>
     <string name="tethered_notification_title_mtr">Ieslēgts mob. tīkl. vai piesaiste</string>
     <string name="tethered_notification_title">Ieslēgts mob. tīkl. vai piesaiste</string>
     <string name="permlab_transaction_event">Saņemt NFC transakciju notikumus</string>
@@ -2380,7 +2380,7 @@ ATGRIEZT"</string>
     <string name="securitymanager_st_tampered">Noteikta iejaukšanās programmatūrā</string>
     <string name="securitymanager_st_face">Sejas atpazīšana</string>
     <string name="securitymanager_st_refresh">Refresh</string>
-    <string name="wifi_notification_adaptive_wifi_title">Pielāgojamais Wi-Fi</string>
+    <string name="wifi_notification_adaptive_wifi_title">Adaptive Wi-Fi</string>
     <string name="wifi_notification_adaptive_wifi_add_to_favorite_detail">Tīkls %s ir pievienots kā bieži lietotais Wi-Fi tīkls. Turpmāk, kad tiks noteikts šis tīkls, tālrunis automātiski ieslēgs Wi-Fi.</string>
     <string name="wifi_notification_adaptive_wifi_remove_from_favorite_detail">Tīkls %s ir noņemts no jūsu bieži lietotajiem Wi-Fi tīkliem. Ja to izmantosit biežāk, tas tiks atkal pievienots.</string>
     <string name="wifi_notification_auto_wifi_add_to_favorite_title">Pievienots saglabātajiem Wi-Fi</string>

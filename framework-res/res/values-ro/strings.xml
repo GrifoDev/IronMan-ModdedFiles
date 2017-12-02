@@ -1583,7 +1583,7 @@ pe ecr."</string>
     <string name="tethered_notification_title_sprint">Hotspot mobil sau Tethering activat</string>
     <string name="tethered_notification_title_client">%s dispozitive conectate</string>
     <string name="tethered_notification_title_one_client">1 dispozitiv conectat</string>
-    <string name="tethered_notification_title_tmo">Hotspot mobil sau Tethering activat</string>
+    <string name="tethered_notification_title_tmo">Tethering or Mobile Hotspot active</string>
     <string name="tethered_notification_title_mtr">Hotspot mobil sau Tethering activat</string>
     <string name="tethered_notification_title">Hotspot mobil sau Tethering activat</string>
     <string name="permlab_transaction_event">Primirea evenimentelor legate de tranzacțiile NFC</string>
@@ -2377,7 +2377,7 @@ RETURNAȚI-L LA"</string>
     <string name="securitymanager_st_tampered">Schimbare software neautorizată detectată</string>
     <string name="securitymanager_st_face">Recunoaștere facială</string>
     <string name="securitymanager_st_refresh">Refresh</string>
-    <string name="wifi_notification_adaptive_wifi_title">Wi-Fi adaptabil</string>
+    <string name="wifi_notification_adaptive_wifi_title">Adaptive Wi-Fi</string>
     <string name="wifi_notification_adaptive_wifi_add_to_favorite_detail">%s a fost adăugată ca rețea Wi-Fi utilizată frecvent. În viitor, telefonul va porni automat conexiunea Wi-Fi atunci când este detectată această rețea.</string>
     <string name="wifi_notification_adaptive_wifi_remove_from_favorite_detail">%s a fost eliminată din rețelele Wi-Fi utilizate frecvent. Aceasta va fi adăugată înapoi dacă o utilizați mai frecvent.</string>
     <string name="wifi_notification_auto_wifi_add_to_favorite_title">Adăugată la rețele Wi-Fi salvate</string>

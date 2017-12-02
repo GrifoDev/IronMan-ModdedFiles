@@ -1580,7 +1580,7 @@
     <string name="tethered_notification_title_sprint">Շարժ. թեժ կետը կամ Տեղակապ. միաց.</string>
     <string name="tethered_notification_title_client">Միացվել է %s սարք</string>
     <string name="tethered_notification_title_one_client">1 սարք միացվեց</string>
-    <string name="tethered_notification_title_tmo">Շարժ. թեժ կետը կամ Տեղակապ. միաց.</string>
+    <string name="tethered_notification_title_tmo">Tethering or Mobile Hotspot active</string>
     <string name="tethered_notification_title_mtr">Շարժ. թեժ կետը կամ Տեղակապ. միաց.</string>
     <string name="tethered_notification_title">Շարժ. թեժ կետը կամ Տեղակապ. միաց.</string>
     <string name="permlab_transaction_event">Ստանալ NFC գործարքների իրադարձություններ</string>
@@ -2374,7 +2374,7 @@ Turn on Airplane mode?"</string>
     <string name="securitymanager_st_tampered">Հայտնաբերվել է միջամտություն ծրագրակազմի աշխատանքին</string>
     <string name="securitymanager_st_face">Դեմքի ճանաչում</string>
     <string name="securitymanager_st_refresh">Refresh</string>
-    <string name="wifi_notification_adaptive_wifi_title">Հարմարողական Wi-Fi</string>
+    <string name="wifi_notification_adaptive_wifi_title">Adaptive Wi-Fi</string>
     <string name="wifi_notification_adaptive_wifi_add_to_favorite_detail">%s-ն ավելացվել է որպես հաճախակի օգտագործվող Wi-Fi ցանց: Հետագայում հեռախոսն ինքնաբերաբար կմիացնի Wi-Fi-ը, երբ հայտնաբերվի այս ցանցը:</string>
     <string name="wifi_notification_adaptive_wifi_remove_from_favorite_detail">%s-ն հեռացվել է հաճախակի օգտագործվող Wi-Fi ցանցերից: Այն նորից կավելացվի, եթե ավելի հաճախ օգտագործեք:</string>
     <string name="wifi_notification_auto_wifi_add_to_favorite_title">Ավելացվեց պահպանված Wi-Fi-ին</string>

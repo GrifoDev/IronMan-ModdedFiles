@@ -207,7 +207,7 @@
     <string name="global_action_assist">Hỗ trợ</string>
     <string name="global_action_voice_assist">Trợ lý thoại</string>
     <string name="global_action_lockdown">Khóa ngay</string>
-    <string name="notification_hidden_text">Nội dung bị ẩn</string>
+    <string name="notification_hidden_text">Nội dung ẩn</string>
     <string name="notification_hidden_by_policy_text">Nội dung bị ẩn theo chính sách</string>
     <string name="safeMode">Chế độ an toàn</string>
     <string name="android_system_label">Hệ thống Android</string>
@@ -1584,7 +1584,7 @@ không chạm"</string>
     <string name="tethered_notification_title_sprint">Đã bật Điểm tr.cập d.động hoặc Chia sẻ internet</string>
     <string name="tethered_notification_title_client">%s thiết bị đã được kết nối</string>
     <string name="tethered_notification_title_one_client">Đã kết nối 1 thiết bị</string>
-    <string name="tethered_notification_title_tmo">Đã bật Điểm tr.cập d.động hoặc Chia sẻ internet</string>
+    <string name="tethered_notification_title_tmo">Chia sẻ internet hoặc Điểm truy cập di động hoạt động</string>
     <string name="tethered_notification_title_mtr">Đã bật Điểm tr.cập d.động hoặc Chia sẻ internet</string>
     <string name="tethered_notification_title">Đã bật Điểm tr.cập d.động hoặc Chia sẻ internet</string>
     <string name="permlab_transaction_event">Nhận các sự kiện giao dịch NFC</string>
@@ -2378,7 +2378,7 @@ HÃY TRẢ VỀ"</string>
     <string name="securitymanager_st_tampered">Đã phát hiện hành động sửa đổi phần mềm</string>
     <string name="securitymanager_st_face">Nhận diện khuôn mặt</string>
     <string name="securitymanager_st_refresh">Refresh</string>
-    <string name="wifi_notification_adaptive_wifi_title">Wi-Fi phù hợp</string>
+    <string name="wifi_notification_adaptive_wifi_title">Adaptive Wi-Fi</string>
     <string name="wifi_notification_adaptive_wifi_add_to_favorite_detail">%s đã được thêm làm mạng Wi-Fi thường dùng. Điện thoại của bạn sẽ tự động bật Wi-Fi khi phát hiện thấy mạng này trong tương lai.</string>
     <string name="wifi_notification_adaptive_wifi_remove_from_favorite_detail">%s đã bị xóa khỏi mạng Wi-Fi thường dùng của bạn. Mạng này sẽ được thêm lại nếu bạn sử dụng thường xuyên hơn.</string>
     <string name="wifi_notification_auto_wifi_add_to_favorite_title">Đã thêm vào Wi-Fi đã lưu</string>

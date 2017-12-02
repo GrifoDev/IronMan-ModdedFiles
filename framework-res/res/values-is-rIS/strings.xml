@@ -203,7 +203,7 @@
     <string name="global_action_assist">Aðstoð</string>
     <string name="global_action_voice_assist">Raddaðstoð</string>
     <string name="global_action_lockdown">Læsa núna</string>
-    <string name="notification_hidden_text">Innihald falið</string>
+    <string name="notification_hidden_text">Efni falið</string>
     <string name="notification_hidden_by_policy_text">Efni falið með reglu</string>
     <string name="safeMode">Örugg stilling</string>
     <string name="android_system_label">Android-kerfi</string>
@@ -1579,7 +1579,7 @@ skipun"</string>
     <string name="tethered_notification_title_sprint">Kv. á farsímaaðgst. eða tjóðrun</string>
     <string name="tethered_notification_title_client">%s tæki tengd</string>
     <string name="tethered_notification_title_one_client">1 tæki tengt</string>
-    <string name="tethered_notification_title_tmo">Kv. á farsímaaðgst. eða tjóðrun</string>
+    <string name="tethered_notification_title_tmo">Tethering or Mobile Hotspot active</string>
     <string name="tethered_notification_title_mtr">Kv. á farsímaaðgst. eða tjóðrun</string>
     <string name="tethered_notification_title">Kv. á farsímaaðgst. eða tjóðrun</string>
     <string name="permlab_transaction_event">Taka á móti NFC-færsluatvikum</string>
@@ -2373,7 +2373,7 @@ SKILIST TIL"</string>
     <string name="securitymanager_st_tampered">Breytingar á hugbúnaði greindust</string>
     <string name="securitymanager_st_face">Andlitsgreining</string>
     <string name="securitymanager_st_refresh">Refresh</string>
-    <string name="wifi_notification_adaptive_wifi_title">Stillanlegt Wi-Fi</string>
+    <string name="wifi_notification_adaptive_wifi_title">Adaptive Wi-Fi</string>
     <string name="wifi_notification_adaptive_wifi_add_to_favorite_detail">%s var bætt við sem mikið notað Wi-Fi net. Síminn þinn kveikir sjálfkrafa á Wi-Fi þegar þetta net greinist í framtíðinni.</string>
     <string name="wifi_notification_adaptive_wifi_remove_from_favorite_detail">%s var fjarlægt úr mikið notuðum Wi-Fi netum. Því verður aftur bætt við ef þú notar það oftar.</string>
     <string name="wifi_notification_auto_wifi_add_to_favorite_title">Bætt við vistuð Wi-Fi net</string>

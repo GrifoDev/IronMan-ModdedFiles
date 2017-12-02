@@ -137,6 +137,7 @@
     <string name="global_actions_toggle_airplane_mode">"ফ্লাইট ম'ড"</string>
     <string name="global_actions_airplane_mode_on_status">সক্ষম হৈছে</string>
     <string name="global_actions_airplane_mode_off_status">অক্ষম হৈছে</string>
+    <string name="notification_hidden_text">সমল লুকুওৱা হৈছে</string>
     <string name="safeMode">"সুৰক্ষিত ম'ড"</string>
     <string name="android_system_label">এণ্ড্ৰইড ছিষ্টেম</string>
     <string name="user_owner_label">ব্যক্তিগত এপ্লিকেশ্বনসমূহ</string>
@@ -886,7 +887,7 @@
     <string name="tethered_notification_title_sprint">"ম'বাইল হ'টস্প'ট বা টিথাৰিং অন হৈছে"</string>
     <string name="tethered_notification_title_client">%s টা ডিভাইচ সংযোজিত</string>
     <string name="tethered_notification_title_one_client">1 টা ডিভাইচ সংযোগ হৈছে</string>
-    <string name="tethered_notification_title_tmo">"ম'বাইল হ'টস্প'ট বা টিথাৰিং অন হৈছে"</string>
+    <string name="tethered_notification_title_tmo">Tethering or Mobile Hotspot active</string>
     <string name="tethered_notification_title_mtr">"ম'বাইল হ'টস্প'ট বা টিথাৰিং অন হৈছে"</string>
     <string name="tethered_notification_title">"ম'বাইল হ'টস্প'ট বা টিথাৰিং অন হৈছে"</string>
     <string name="permlab_transaction_event">NFC লেনেদেনৰ ইভেণ্টসমূহ প্ৰাপ্ত কৰক</string>
@@ -1680,7 +1681,7 @@ Turn on Airplane mode?"</string>
     <string name="securitymanager_st_tampered">চফ্টৱেৰৰ হস্তক্ষেপ চিনাক্ত হৈছে</string>
     <string name="securitymanager_st_face">মুখ চিনাক্তকৰণ</string>
     <string name="securitymanager_st_refresh">Refresh</string>
-    <string name="wifi_notification_adaptive_wifi_title">এডাপ্টিভ Wi-Fi</string>
+    <string name="wifi_notification_adaptive_wifi_title">Adaptive Wi-Fi</string>
     <string name="wifi_notification_adaptive_wifi_add_to_favorite_detail">"%s এটা প্ৰায় ব্যৱহৃত Wi-Fi নেটৱৰ্কৰ ৰূপত যোগ হৈছে। এই নেটৱৰ্ক ভৱিষ্যতে চিনাক্ত হ'লে আপোনাৰ ফোনে Wi-Fi স্বয়ংক্ৰিয়ভাৱে অন কৰিব।"</string>
     <string name="wifi_notification_adaptive_wifi_remove_from_favorite_detail">"%s-ক আপোনাৰ প্ৰায় ব্যৱহৃত Wi-Fi নেটৱৰ্কৰ পৰা আঁতৰোৱা হৈছে। যদি আপুনি ইয়াক অধিক ব্যৱহাৰ কৰে তেন্তে এইটো পুনঃ যোগ হ'ব।"</string>
     <string name="wifi_notification_auto_wifi_add_to_favorite_title">সংৰক্ষিত Wi-Fi-ত যোগ হৈছে</string>

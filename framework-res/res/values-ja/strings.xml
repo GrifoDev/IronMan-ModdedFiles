@@ -207,7 +207,7 @@
     <string name="global_action_assist">サポート</string>
     <string name="global_action_voice_assist">音声アシスト</string>
     <string name="global_action_lockdown">今すぐロック</string>
-    <string name="notification_hidden_text">コンテンツが非表示</string>
+    <string name="notification_hidden_text">通知内容は非表示</string>
     <string name="notification_hidden_by_policy_text">ポリシーによって非表示になっているコンテンツ</string>
     <string name="safeMode">セーフモード</string>
     <string name="android_system_label">Androidシステム</string>
@@ -1585,7 +1585,7 @@
     <string name="tethered_notification_title_sprint">テザリングがON</string>
     <string name="tethered_notification_title_client">%s台の端末を接続</string>
     <string name="tethered_notification_title_one_client">1台のデバイスを接続</string>
-    <string name="tethered_notification_title_tmo">テザリングがON</string>
+    <string name="tethered_notification_title_tmo">テザリングが有効</string>
     <string name="tethered_notification_title_mtr">テザリングがON</string>
     <string name="tethered_notification_title">テザリングがON</string>
     <string name="permlab_transaction_event">NFCトランザクションイベントを受信</string>
@@ -1970,7 +1970,7 @@
     <string name="tw_global_actions_airplane_mode_on_status_confirm_volte">"Wi-Fiを使用しない場合、ブラウザ、Eメール、その他データ接続が必要なアプリを使用できません。機内モードがONの間は、ビデオコールを使用できません。
 機内モードをONにしますか？"</string>
     <string name="tw_global_actions_airplane_mode_on_status_confirm_china">機内モードを有効にすると、通話、メッセージ、およびデータネットワーク機能がOFFになります。また、WLANやBluetoothなどの接続機能もOFFになります。WLANやBluetoothを使用するには、設定または通知パネルからONにしてください。</string>
-    <string name="usb_charing_only_notification_title">USB給電</string>
+    <string name="usb_charing_only_notification_title">USB充電</string>
     <string name="spr_radio_toast_msg">ヘッドセットが取り外されたため、ラジオがOFFになりました。</string>
     <string name="user_guest">ゲスト</string>
     <string name="unalbe_to_use_mobile_keyboard">%sを使用するには、端末からキーボードカバーを取り外してください。</string>
@@ -2379,7 +2379,7 @@
     <string name="securitymanager_st_tampered">ソフトウェアの改ざんが検出されました。</string>
     <string name="securitymanager_st_face">顔認証</string>
     <string name="securitymanager_st_refresh">Refresh</string>
-    <string name="wifi_notification_adaptive_wifi_title">Wi-Fi接続の自動切り替え</string>
+    <string name="wifi_notification_adaptive_wifi_title">Adaptive Wi-Fi</string>
     <string name="wifi_notification_adaptive_wifi_add_to_favorite_detail">よく使うWi-Fiネットワークとして%sが追加されました。今後このネットワークが検出されると、端末のWi-Fiが自動的にONになります。</string>
     <string name="wifi_notification_adaptive_wifi_remove_from_favorite_detail">よく使うWi-Fiネットワークから%sが削除されました。削除されたネットワークを頻繁に使用すると、再度追加されます。</string>
     <string name="wifi_notification_auto_wifi_add_to_favorite_title">保存されたWi-Fiに追加</string>

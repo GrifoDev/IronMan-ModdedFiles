@@ -208,7 +208,7 @@
     <string name="global_action_assist">ผู้ช่วย</string>
     <string name="global_action_voice_assist">ตัวช่วยเสียง</string>
     <string name="global_action_lockdown">ล็อกเลย</string>
-    <string name="notification_hidden_text">เนื้อหาถูกซ่อนไว้</string>
+    <string name="notification_hidden_text">คอนเทนท์ซ่อนอยู่</string>
     <string name="notification_hidden_by_policy_text">มีการซ่อนเนื้อหาโดยนโยบาย</string>
     <string name="safeMode">โหมดความปลอดภัย</string>
     <string name="android_system_label">ระบบ Android</string>
@@ -1586,7 +1586,7 @@ memo"</string>
     <string name="tethered_notification_title_sprint">ฮอตสปอตมือถือหรือการแชร์เปิดอยู่</string>
     <string name="tethered_notification_title_client">%s อุปกรณ์เชื่อมต่ออยู่</string>
     <string name="tethered_notification_title_one_client">เชื่อมต่อ1 อุปกรณ์แล้ว</string>
-    <string name="tethered_notification_title_tmo">ฮอตสปอตมือถือหรือการแชร์เปิดอยู่</string>
+    <string name="tethered_notification_title_tmo">Tethering or Mobile Hotspot active</string>
     <string name="tethered_notification_title_mtr">ฮอตสปอตมือถือหรือการแชร์เปิดอยู่</string>
     <string name="tethered_notification_title">ฮอตสปอตมือถือหรือการแชร์เปิดอยู่</string>
     <string name="permlab_transaction_event">รับกิจกรรมการทำรายการ NFC</string>
@@ -2384,7 +2384,7 @@ Turn on Airplane mode?"</string>
     <string name="securitymanager_st_tampered">ตรวจพบการดัดแปลงซอฟต์แวร์</string>
     <string name="securitymanager_st_face">การจำแนกใบหน้า</string>
     <string name="securitymanager_st_refresh">Refresh</string>
-    <string name="wifi_notification_adaptive_wifi_title">Wi-Fi ที่ปรับได้</string>
+    <string name="wifi_notification_adaptive_wifi_title">Adaptive Wi-Fi</string>
     <string name="wifi_notification_adaptive_wifi_add_to_favorite_detail">เพิ่ม %s เป็นเครือข่าย Wi-Fi ที่ใช้บ่อยแล้ว โทรศัพท์ของคุณจะเปิด Wi-Fi โดยอัตโนมัติเมื่อตรวจพบเครือข่ายนี้ในอนาคต</string>
     <string name="wifi_notification_adaptive_wifi_remove_from_favorite_detail">%s ถูกลบออกจากเครือข่าย Wi-Fi ที่ใช้บ่อยของคุณแล้ว ซึ่งจะถูกเพิ่มอีกครั้ง หากคุณใช้บ่อยขึ้น</string>
     <string name="wifi_notification_auto_wifi_add_to_favorite_title">เพิ่มไปยัง Wi-Fi ที่บันทึกไว้</string>

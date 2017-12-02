@@ -207,7 +207,7 @@
     <string name="global_action_assist">Pomoć</string>
     <string name="global_action_voice_assist">Glasovna pomoć</string>
     <string name="global_action_lockdown">Zaključaj sada</string>
-    <string name="notification_hidden_text">Sadržaj je skriven</string>
+    <string name="notification_hidden_text">Sadržaj skriven</string>
     <string name="notification_hidden_by_policy_text">Sadržaj je skriven prema pravilima</string>
     <string name="safeMode">Sigurni način rada</string>
     <string name="android_system_label">Android sustav</string>
@@ -1584,7 +1584,7 @@ naredba"</string>
     <string name="tethered_notification_title_sprint">Uklj. Mob. pr. točka ili Dijelj.</string>
     <string name="tethered_notification_title_client">Povezani uređaji: %s</string>
     <string name="tethered_notification_title_one_client">1 uređaj spojen</string>
-    <string name="tethered_notification_title_tmo">Uklj. Mob. pr. točka ili Dijelj.</string>
+    <string name="tethered_notification_title_tmo">Tethering or Mobile Hotspot active</string>
     <string name="tethered_notification_title_mtr">Uklj. Mob. pr. točka ili Dijelj.</string>
     <string name="tethered_notification_title">Uklj. Mob. pr. točka ili Dijelj.</string>
     <string name="permlab_transaction_event">Primanje događaja o transakciji NFC-om</string>
@@ -2378,7 +2378,7 @@ VRATITE"</string>
     <string name="securitymanager_st_tampered">Prepoznato mijenjanje softvera</string>
     <string name="securitymanager_st_face">Prepoznavanje lica</string>
     <string name="securitymanager_st_refresh">Refresh</string>
-    <string name="wifi_notification_adaptive_wifi_title">Prilagodljiva Wi-Fi mreža</string>
+    <string name="wifi_notification_adaptive_wifi_title">Adaptive Wi-Fi</string>
     <string name="wifi_notification_adaptive_wifi_add_to_favorite_detail">Dodana je mreža %s kao najčešće upotrebljavana Wi-Fi mreža. Vaš će telefon u budućnosti automatski uključiti Wi-Fi mrežu kada ta mreža bude otkrivena.</string>
     <string name="wifi_notification_adaptive_wifi_remove_from_favorite_detail">Mreža %s uklonjena je s popisa najčešće upotrebljavanih Wi-Fi mreža. Ponovno će se dodati ako je češće upotrebljavate.</string>
     <string name="wifi_notification_auto_wifi_add_to_favorite_title">Dodano spremlj. Wi-Fi mrežama</string>

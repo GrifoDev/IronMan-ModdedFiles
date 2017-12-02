@@ -203,7 +203,7 @@
     <string name="global_action_assist">सहायता दिनुहोस्</string>
     <string name="global_action_voice_assist">आवाज सहायता</string>
     <string name="global_action_lockdown">अब बन्द गर्नुहोस्</string>
-    <string name="notification_hidden_text">लुकेका सामाग्रीहरू</string>
+    <string name="notification_hidden_text">लुकाइएको सामग्री</string>
     <string name="notification_hidden_by_policy_text">नीतिद्वारा लुकाइएका सामग्री</string>
     <string name="safeMode">सुरक्षित मोड</string>
     <string name="android_system_label">एन्ड्रोइड प्रणाली</string>
@@ -1412,7 +1412,7 @@
     <string name="screen_curtain_mode_disable_status">%s अफ</string>
     <string name="tethered_notification_title_verizon">मोबाइल हटस्पट वा टेथरिङ अन छ</string>
     <string name="tethered_notification_title_sprint">मोबाइल हटस्पट वा टेथरिङ अन छ</string>
-    <string name="tethered_notification_title_tmo">मोबाइल हटस्पट वा टेथरिङ अन छ</string>
+    <string name="tethered_notification_title_tmo">Tethering or Mobile Hotspot active</string>
     <string name="tethered_notification_title_mtr">मोबाइल हटस्पट वा टेथरिङ अन छ</string>
     <string name="tethered_notification_title">मोबाइल हटस्पट वा टेथरिङ अन छ</string>
     <string name="vzw_cooldown_mode">Unable to open app. Your phone is getting hot.</string>
@@ -1815,7 +1815,7 @@
     <string name="securitymanager_st_tampered">सफ्टवेयर छेडछाड पत्ता लाग्यो</string>
     <string name="securitymanager_st_face">अनुहारको पहिचान</string>
     <string name="securitymanager_st_refresh">Refresh</string>
-    <string name="wifi_notification_adaptive_wifi_title">अनुकूलनीय Wi-Fi</string>
+    <string name="wifi_notification_adaptive_wifi_title">Adaptive Wi-Fi</string>
     <string name="wifi_notification_adaptive_wifi_add_to_favorite_detail">%s लाई बारम्बार प्रयोग गरिएको Wi-Fi नेटवर्कमा थपिएको छ। भविष्यमा यो नेटवर्क पत्ला लाग्दा तपाईको फोनले स्वचालित रूपमा Wi-Fi लाई अन गर्नेछ।</string>
     <string name="wifi_notification_adaptive_wifi_remove_from_favorite_detail">%s लाई बारम्बार प्रयोग गरिएको Wi-Fi नेटवर्कबाट हटाइएको छ। तपाईले अझ धेरै यसको प्रयोग गर्नुभएमा यो फेरि थपिनेछ।</string>
     <string name="wifi_notification_auto_wifi_add_to_favorite_title">सेव गरिएको Wi-Fi मा थपियो</string>

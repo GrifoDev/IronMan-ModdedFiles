@@ -203,7 +203,7 @@
     <string name="global_action_assist">ਸਹਾਇਤਾ ਕਰੋ</string>
     <string name="global_action_voice_assist">ਵੌਇਸ ਅਸਿਸਟ</string>
     <string name="global_action_lockdown">ਹੁਣ ਲੌਕ ਕਰੋ</string>
-    <string name="notification_hidden_text">ਸਮੱਗਰੀਆਂ ਲੁਕਾਈਆਂ ਗਈਆਂ</string>
+    <string name="notification_hidden_text">ਸਮੱਗਰੀ ਲੁਕੀ ਹੋਈ ਹੈ</string>
     <string name="notification_hidden_by_policy_text">ਨੀਤੀ ਦੁਆਰਾ ਸਮੱਗਰੀ ਲੁਕਾਈ ਗਈ</string>
     <string name="safeMode">ਸੁਰੱਖਿਅਤ ਮੋਡ</string>
     <string name="android_system_label">ਐਂਡ੍ਰੋਇਡ ਸਿਸਟਮ</string>
@@ -1579,7 +1579,7 @@
     <string name="tethered_notification_title_sprint">ਮੋਬਾਈਲ ਹੌਟਸਪੌਟ ਜਾਂ ਟੈਥਰਿੰਗ ਚਾਲੂ ਹੈ</string>
     <string name="tethered_notification_title_client">%s ਡਿਵਾਈਸਿਸ ਕਨੈਕਟ ਕੀਤੇ ਗਏ</string>
     <string name="tethered_notification_title_one_client">1 ਡਿਵਾਈਸ ਕਨੈਕਟ ਹੋਇਆ</string>
-    <string name="tethered_notification_title_tmo">ਮੋਬਾਈਲ ਹੌਟਸਪੌਟ ਜਾਂ ਟੈਥਰਿੰਗ ਚਾਲੂ ਹੈ</string>
+    <string name="tethered_notification_title_tmo">Tethering or Mobile Hotspot active</string>
     <string name="tethered_notification_title_mtr">ਮੋਬਾਈਲ ਹੌਟਸਪੌਟ ਜਾਂ ਟੈਥਰਿੰਗ ਚਾਲੂ ਹੈ</string>
     <string name="tethered_notification_title">ਮੋਬਾਈਲ ਹੌਟਸਪੌਟ ਜਾਂ ਟੈਥਰਿੰਗ ਚਾਲੂ ਹੈ</string>
     <string name="permlab_transaction_event">NFC ਲੇਣਦੇਣ ਇਵੈਂਟਸ ਪ੍ਰਾਪਤ ਕਰੋ।</string>
@@ -2373,7 +2373,7 @@ Turn on Airplane mode?"</string>
     <string name="securitymanager_st_tampered">ਸੌਫਟਵੇਅਰ ਨਾਲ ਛੇੜਛਾੜ ਦਾ ਪਤਾ ਲੱਗਿਆ</string>
     <string name="securitymanager_st_face">ਚਿਹਰਾ ਪਛਾਣ</string>
     <string name="securitymanager_st_refresh">Refresh</string>
-    <string name="wifi_notification_adaptive_wifi_title">ਅਡੈਪਟਿਵ Wi-Fi</string>
+    <string name="wifi_notification_adaptive_wifi_title">Adaptive Wi-Fi</string>
     <string name="wifi_notification_adaptive_wifi_add_to_favorite_detail">%s ਨੂੰ ਅਕਸਰ ਉਪਯੋਗ ਕੀਤੇ ਜਾਣ ਵਾਲੇ Wi-Fi ਨੈੱਟਵਰਕ ਵਜੋਂ ਜੋੜ ਦਿੱਤਾ ਗਿਆ ਹੈ। ਭਵਿੱਖ ਵਿੱਚ ਇਸ ਨੈੱਟਵਰਕ ਦਾ ਪਤਾ ਲੱਗਣ ਤੇ ਤੁਹਾਡਾ ਫ਼ੋਨ Wi-Fi ਨੂੰ ਸਵੈਚਲਿਤ ਹੀ ਚਾਲੂ ਕਰ ਦੇਵੇਗਾ।</string>
     <string name="wifi_notification_adaptive_wifi_remove_from_favorite_detail">%s ਨੂੰ ਤੁਹਾਡੇ ਅਕਸਰ ਉਪਯੋਗ ਕੀਤੇ ਜਾਣ ਵਾਲੇ Wi-Fi ਨੈੱਟਵਰਕਸ ਵਿੱਚੋਂ ਹਟਾ ਦਿੱਤਾ ਗਿਆ ਹੈ। ਜੇਕਰ ਤੁਸੀਂ ਇਸ ਦੀ ਵਰਤੋਂ ਜ਼ਿਆਦਾ ਸਮੇਂ ਕਰਨ ਲੱਗ ਜਾਵੋਗੇ ਤਾਂ ਇਸ ਨੂੰ ਦੁਬਾਰਾ ਜੋੜ ਦਿੱਤਾ ਜਾਵੇਗਾ।</string>
     <string name="wifi_notification_auto_wifi_add_to_favorite_title">ਸੁਰੱਖਿਅਤ ਕੀਤੇ Wi-Fi ਵਿੱਚ ਜੋੜਿਆ ਗਿਆ</string>

@@ -207,7 +207,7 @@
     <string name="global_action_assist">Bantuan</string>
     <string name="global_action_voice_assist">Bantuan Suara</string>
     <string name="global_action_lockdown">Kunci sekarang</string>
-    <string name="notification_hidden_text">Konten tersembunyi</string>
+    <string name="notification_hidden_text">Konten disembunyikan</string>
     <string name="notification_hidden_by_policy_text">Konten disembunyikan menurut kebijakan</string>
     <string name="safeMode">Mode aman</string>
     <string name="android_system_label">Sistem Android</string>
@@ -1584,7 +1584,7 @@ udara"</string>
     <string name="tethered_notification_title_sprint">Hotspot Seluler/Penambatan aktif</string>
     <string name="tethered_notification_title_client">%s perangkat tersambung</string>
     <string name="tethered_notification_title_one_client">1 perangkat tersambung</string>
-    <string name="tethered_notification_title_tmo">Hotspot Seluler/Penambatan aktif</string>
+    <string name="tethered_notification_title_tmo">Tethering or Mobile Hotspot active</string>
     <string name="tethered_notification_title_mtr">Hotspot Seluler/Penambatan aktif</string>
     <string name="tethered_notification_title">Hotspot Seluler/Penambatan aktif</string>
     <string name="permlab_transaction_event">Terima kegiatan transaksi NFC</string>
@@ -2379,7 +2379,7 @@ tercabut."</string>
     <string name="securitymanager_st_tampered">Perusakan perangkat lunak terdeteksi</string>
     <string name="securitymanager_st_face">Pengenalan wajah</string>
     <string name="securitymanager_st_refresh">Refresh</string>
-    <string name="wifi_notification_adaptive_wifi_title">Wi-Fi Adaptif</string>
+    <string name="wifi_notification_adaptive_wifi_title">Adaptive Wi-Fi</string>
     <string name="wifi_notification_adaptive_wifi_add_to_favorite_detail">%s telah ditambahkan sebagai jaringan Wi-Fi yang sering digunakan. Ponsel akan mengaktifkan Wi-Fi secara otomatis saat jaringan ini terdeteksi di masa depan.</string>
     <string name="wifi_notification_adaptive_wifi_remove_from_favorite_detail">%s telah dihapus dari jaringan Wi-Fi yang sering digunakan. Jaringan akan ditambahkan kembali jika sering digunakan.</string>
     <string name="wifi_notification_auto_wifi_add_to_favorite_title">Ditambahkan ke Wi-Fi yg dsimpan</string>

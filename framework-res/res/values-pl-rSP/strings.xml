@@ -137,6 +137,7 @@
     <string name="global_actions_toggle_airplane_mode">Tryb fliger</string>
     <string name="global_actions_airplane_mode_on_status">Włōnczōne</string>
     <string name="global_actions_airplane_mode_off_status">Wyłōnczōne</string>
+    <string name="notification_hidden_text">Zawartość je skrytŏ</string>
     <string name="safeMode">Tryb bezpieczny</string>
     <string name="android_system_label">System Android</string>
     <string name="user_owner_label">Ôsobiste aplikacyje</string>
@@ -885,7 +886,7 @@ bez tyk."</string>
     <string name="tethered_notification_title_sprint">Router Wi-Fi lub Ud. intern. wł.</string>
     <string name="tethered_notification_title_client">Połōnczōne masziny: %s</string>
     <string name="tethered_notification_title_one_client">Połōnczonych maszin:1</string>
-    <string name="tethered_notification_title_tmo">Router Wi-Fi lub Ud. intern. wł.</string>
+    <string name="tethered_notification_title_tmo">Tethering abo Mobile HotSpot aktywne</string>
     <string name="tethered_notification_title_mtr">Router Wi-Fi lub Ud. intern. wł.</string>
     <string name="tethered_notification_title">Router Wi-Fi lub Ud. intern. wł.</string>
     <string name="permlab_transaction_event">Dostŏwej przetrefiynia transakcyje NFC.</string>

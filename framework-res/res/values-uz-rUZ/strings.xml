@@ -203,7 +203,7 @@
     <string name="global_action_assist">Yordam</string>
     <string name="global_action_voice_assist">Ovozli yordam</string>
     <string name="global_action_lockdown">Qulflash</string>
-    <string name="notification_hidden_text">Kontent yashirildi</string>
+    <string name="notification_hidden_text">Tarkib yashirilgan</string>
     <string name="notification_hidden_by_policy_text">Qoidaga muvofiq kontent yashirilgan</string>
     <string name="safeMode">Xavfsiz rejim</string>
     <string name="android_system_label">Android tizim</string>
@@ -1579,7 +1579,7 @@ buyruq"</string>
     <string name="tethered_notification_title_sprint">Mbl Faol nqt. yoki Bog‘lan. yoniq</string>
     <string name="tethered_notification_title_client">%s ta qurilma ulandi</string>
     <string name="tethered_notification_title_one_client">1ta qurilma ulandi</string>
-    <string name="tethered_notification_title_tmo">Mbl Faol nqt. yoki Bog‘lan. yoniq</string>
+    <string name="tethered_notification_title_tmo">Tethering or Mobile Hotspot active</string>
     <string name="tethered_notification_title_mtr">Mbl Faol nqt. yoki Bog‘lan. yoniq</string>
     <string name="tethered_notification_title">Mbl Faol nqt. yoki Bog‘lan. yoniq</string>
     <string name="permlab_transaction_event">NFC tranzaksiya hodisalari</string>
@@ -2373,7 +2373,7 @@ QAYTARING"</string>
     <string name="securitymanager_st_tampered">Dastur buzib kirishi aniqlandi</string>
     <string name="securitymanager_st_face">Yuzni tanish</string>
     <string name="securitymanager_st_refresh">Refresh</string>
-    <string name="wifi_notification_adaptive_wifi_title">Moslanadigan Wi-Fi</string>
+    <string name="wifi_notification_adaptive_wifi_title">Adaptive Wi-Fi</string>
     <string name="wifi_notification_adaptive_wifi_add_to_favorite_detail">%s ko‘p ishlatiladigan Wi-Fi tarmoq sifatida qo‘shilgan. Ushbu tarmoq kelajakda aniqlanganda, telefoningiz Wi-Fi tarmoqni avtomatik tarzda yoqiladi.</string>
     <string name="wifi_notification_adaptive_wifi_remove_from_favorite_detail">%s ko‘p ishlatiladigan Wi-Fi tarmoqlardan olib tashlangan. Undan yana ko‘proq foydalansangiz, u qayta qo‘shiladi.</string>
     <string name="wifi_notification_auto_wifi_add_to_favorite_title">Saqlangan Wi-Fi’ga qo‘shildi</string>

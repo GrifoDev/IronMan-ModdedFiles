@@ -1584,7 +1584,7 @@ command"</string>
     <string name="tethered_notification_title_sprint">Mobiele hotspot of Tethering aan</string>
     <string name="tethered_notification_title_client">%s verbonden apparaten</string>
     <string name="tethered_notification_title_one_client">1 apparaat aangesloten</string>
-    <string name="tethered_notification_title_tmo">Mobiele hotspot of Tethering aan</string>
+    <string name="tethered_notification_title_tmo">Tethering or Mobile Hotspot active</string>
     <string name="tethered_notification_title_mtr">Mobiele hotspot of Tethering aan</string>
     <string name="tethered_notification_title">Mobiele hotspot of Tethering aan</string>
     <string name="permlab_transaction_event">Ontvang NFC-transactiegebeurtenissen</string>
@@ -2380,7 +2380,7 @@ STUUR NAAR"</string>
     <string name="securitymanager_st_tampered">Knoeien aan software gedetecteerd</string>
     <string name="securitymanager_st_face">Gezichtsherkenning</string>
     <string name="securitymanager_st_refresh">Refresh</string>
-    <string name="wifi_notification_adaptive_wifi_title">Aanpasbare Wi-Fi</string>
+    <string name="wifi_notification_adaptive_wifi_title">Adaptive Wi-Fi</string>
     <string name="wifi_notification_adaptive_wifi_add_to_favorite_detail">%s is toegevoegd als een veelgebruikt Wi-Fi-netwerk. Uw telefoon zal Wi-Fi automatisch inschakelen als dit netwerk in de toekomst wordt gedetecteerd.</string>
     <string name="wifi_notification_adaptive_wifi_remove_from_favorite_detail">%s is verwijderd uit uw meest gebruikte Wi-Fi-netwerken. Het kan weer worden toegevoegd als het vaker wordt gebruikt.</string>
     <string name="wifi_notification_auto_wifi_add_to_favorite_title">Toegevoegd aan opgeslagen Wi-Fi</string>

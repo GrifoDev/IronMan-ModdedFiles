@@ -6,7 +6,8 @@
     enable CDATA #REQUIRED
     DVServer CDATA #REQUIRED
     DQServer CDATA #REQUIRED    
-    CFServer CDATA #REQUIRED>
+    CFServer CDATA #REQUIRED
+    LogBackup CDATA #IMPLIED>
 <!ELEMENT hwparam_info ANY>
 <!ATTLIST hwparam_info
       compID CDATA #REQUIRED
@@ -56,7 +57,7 @@
 
 <hwparam_document>
 
-    <hwparam_setting enable="true" DVServer="true" DQServer="true" CFServer="false" />
+    <hwparam_setting enable="true" DVServer="true" DQServer="true" CFServer="false" LogBackup="true"/>
     
     <!-- Device : AP -->
     <hwparam_info compID="AP" feature="SYSC" hitType="sm" compVer="0.0" compManufacture="" order_compID="1" order_feature="1" >
@@ -632,7 +633,11 @@
 	    <key_info keyname="CC_DEX" min="" max="" desc1="DEX Dock Connection Count" desc2="" desc3="" desc4="" type1="1" type2="99"/>
 	    <key_info keyname="CC_WTIME" min="" max="" desc1="Water Detection Duration (minutes)" desc2="" desc3="" desc4="" type1="1" type2="99"/>
 	    <key_info keyname="CC_WVBUS" min="" max="" desc1="Water Detection Charging Count" desc2="" desc3="" desc4="" type1="1" type2="99"/>
+	    <key_info keyname="CC_WVTIME" min="" max="" desc1="Water-Vbus Detection Duration (seconds)" desc2="" desc3="" desc4="" type1="1" type2="99"/>
 	    <key_info keyname="CC_CSHORT" min="" max="" desc1="Vbus - CC Short Count" desc2="" desc3="" desc4="" type1="1" type2="99" />
+	    <key_info keyname="M_AFCNAK" min="" max="" desc1="AFC Protocol Nack Count" desc2="" desc3="" desc4="" type1="1" type2="99"/>
+	    <key_info keyname="M_AFCERR" min="" max="" desc1="AFC Protocol Nack and Error Voltage Count" desc2="" desc3="" desc4="" type1="1" type2="99"/>
+	    <key_info keyname="M_DCDTMO" min="" max="" desc1="Data Contact Detecting Timeout Event Count" desc2="" desc3="" desc4="" type1="1" type2="99"/>
 	    <key_info keyname="CC_VER" min="" max="" desc1="CCIC FW Version" desc2="" desc3="" desc4="" type1="1" type2="99"/>
 	</sysfs_node>
     </hwparam_info>

@@ -1583,7 +1583,7 @@ ukaz"</string>
     <string name="tethered_notification_title_sprint">Mob. dost. točka ali priv. je vkl.</string>
     <string name="tethered_notification_title_client">Število povezanih naprav: %s</string>
     <string name="tethered_notification_title_one_client">1 naprava je povezana</string>
-    <string name="tethered_notification_title_tmo">Mob. dost. točka ali priv. je vkl.</string>
+    <string name="tethered_notification_title_tmo">Tethering or Mobile Hotspot active</string>
     <string name="tethered_notification_title_mtr">Mob. dost. točka ali priv. je vkl.</string>
     <string name="tethered_notification_title">Mob. dost. točka ali priv. je vkl.</string>
     <string name="permlab_transaction_event">Prejemanje transakcijskih dogodkov NFC</string>
@@ -2377,7 +2377,7 @@ VRNITE NA NASLOV"</string>
     <string name="securitymanager_st_tampered">Zaznan je poseg v programsko opremo</string>
     <string name="securitymanager_st_face">Prepoznavanje obraza</string>
     <string name="securitymanager_st_refresh">Refresh</string>
-    <string name="wifi_notification_adaptive_wifi_title">Prilagodljiv Wi-Fi</string>
+    <string name="wifi_notification_adaptive_wifi_title">Adaptive Wi-Fi</string>
     <string name="wifi_notification_adaptive_wifi_add_to_favorite_detail">Omrežje %s je bilo dodano kot pogostokrat uporabljeno omrežje Wi-Fi. Telefon bo v prihodnje samodejno vklopil vmesnik Wi-Fi, ko bo zaznano to omrežje.</string>
     <string name="wifi_notification_adaptive_wifi_remove_from_favorite_detail">Omrežje %s je bilo odstranjeno s seznama pogostokrat uporabljenih omrežij Wi-Fi. Če ga boste uporabljali bolj pogosto, bo znova dodano.</string>
     <string name="wifi_notification_auto_wifi_add_to_favorite_title">Dodano med shranjena omr. Wi-Fi</string>

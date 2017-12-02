@@ -1584,9 +1584,9 @@
     <string name="tethered_notification_title_sprint">"הופעלו 'נתב אלחוטי נייד' או קשירה"</string>
     <string name="tethered_notification_title_client">%s מכשירים מחוברים</string>
     <string name="tethered_notification_title_one_client">1 מכשיר מחובר</string>
-    <string name="tethered_notification_title_tmo">"הופעלו 'נתב אלחוטי נייד' או קשירה"</string>
+    <string name="tethered_notification_title_tmo">Tethering or Mobile Hotspot active</string>
     <string name="tethered_notification_title_mtr">"הופעלו 'נתב אלחוטי נייד' או קשירה"</string>
-    <string name="tethered_notification_title">"הופעלו 'נתב אלחוטי נייד' או קשירה"</string>
+    <string name="tethered_notification_title">"הופעלו 'נתב אלחוטי נייד' או חיבור"</string>
     <string name="permlab_transaction_event">קבל אירועי עסקות NFC</string>
     <string name="permdesc_transaction_event">מאפשר ליישום לקבל אירועי עסקת NFC, לדוגמה, במהלך תהליך התשלום.</string>
     <string name="vzw_cooldown_mode">Unable to open app. Your phone is getting hot.</string>
@@ -2378,7 +2378,7 @@ Turn on Airplane mode?"</string>
     <string name="securitymanager_st_tampered">זוהה טיפול לא מורשה בתוכנה</string>
     <string name="securitymanager_st_face">זיהוי פנים</string>
     <string name="securitymanager_st_refresh">Refresh</string>
-    <string name="wifi_notification_adaptive_wifi_title">‏Wi-Fi דינמי</string>
+    <string name="wifi_notification_adaptive_wifi_title">Adaptive Wi-Fi</string>
     <string name="wifi_notification_adaptive_wifi_add_to_favorite_detail">%s נוספה כרשת Wi-Fi בשימוש נפוץ. בעתיד, בכל פעם שהטלפון יזהה רשת זאת, הוא יפעיל באופן אוטומטי את ה-Wi-Fi.</string>
     <string name="wifi_notification_adaptive_wifi_remove_from_favorite_detail">%s הוסרה מרשימת רשתות ה-Wi-Fi בשימוש נפוץ. אם תרבה להשתמש בה, היא תתווסף מחדש.</string>
     <string name="wifi_notification_auto_wifi_add_to_favorite_title">נוסף לרשתות Wi-Fi שמורות</string>

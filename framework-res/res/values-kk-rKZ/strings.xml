@@ -1579,7 +1579,7 @@
     <string name="tethered_notification_title_sprint">Ұялы жедел нүкте не байл. қосулы</string>
     <string name="tethered_notification_title_client">%s құрылғы қосылды</string>
     <string name="tethered_notification_title_one_client">1 құрылғы қосылды</string>
-    <string name="tethered_notification_title_tmo">Ұялы жедел нүкте не байл. қосулы</string>
+    <string name="tethered_notification_title_tmo">Tethering or Mobile Hotspot active</string>
     <string name="tethered_notification_title_mtr">Ұялы жедел нүкте не байл. қосулы</string>
     <string name="tethered_notification_title">Ұялы жедел нүкте не байл. қосулы</string>
     <string name="permlab_transaction_event">NFC транзакция оқиғаларын алу</string>
@@ -2374,7 +2374,7 @@ Turn on Airplane mode?"</string>
     <string name="securitymanager_st_tampered">Бағдарламалық жасақтама зақымдалуы анықталды</string>
     <string name="securitymanager_st_face">Бетті тану</string>
     <string name="securitymanager_st_refresh">Refresh</string>
-    <string name="wifi_notification_adaptive_wifi_title">Бейімделгіш Wi-Fi</string>
+    <string name="wifi_notification_adaptive_wifi_title">Adaptive Wi-Fi</string>
     <string name="wifi_notification_adaptive_wifi_add_to_favorite_detail">%s жиі пайдаланылатын Wi-Fi желісі ретінде қосылды. Осы желі келешекте табылғанда телефоныңыз Wi-Fi желісін автоматты түрде қосады.</string>
     <string name="wifi_notification_adaptive_wifi_remove_from_favorite_detail">%s жиі пайдаланылатын Wi-Fi желілерінен жойылды. Оны жиі пайдалансаңыз, ол қайта қосылады.</string>
     <string name="wifi_notification_auto_wifi_add_to_favorite_title">Сақталған Wi-Fi-ға қосылды</string>

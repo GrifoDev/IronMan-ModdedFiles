@@ -1579,7 +1579,7 @@ Memo"</string>
     <string name="tethered_notification_title_sprint">已開啟流動熱點或網絡共享</string>
     <string name="tethered_notification_title_client">%s個裝置已連接</string>
     <string name="tethered_notification_title_one_client">1 個裝置已連接</string>
-    <string name="tethered_notification_title_tmo">已開啟流動熱點或網絡共享</string>
+    <string name="tethered_notification_title_tmo">網絡共享或流動熱點使用中</string>
     <string name="tethered_notification_title_mtr">已開啟流動熱點或網絡共享</string>
     <string name="tethered_notification_title">已開啟流動熱點或網絡共享</string>
     <string name="permlab_transaction_event">接收 NFC 交易事件</string>
@@ -2373,7 +2373,7 @@ Memo"</string>
     <string name="securitymanager_st_tampered">偵測到軟件被篡改</string>
     <string name="securitymanager_st_face">臉部識別</string>
     <string name="securitymanager_st_refresh">Refresh</string>
-    <string name="wifi_notification_adaptive_wifi_title">調適性 Wi-Fi</string>
+    <string name="wifi_notification_adaptive_wifi_title">Adaptive Wi-Fi</string>
     <string name="wifi_notification_adaptive_wifi_add_to_favorite_detail">%s 已被加入常用 Wi-Fi 網絡。當未來偵測到此網絡時，您的手機將自動開啟 Wi-Fi。</string>
     <string name="wifi_notification_adaptive_wifi_remove_from_favorite_detail">已從您的常用 Wi-Fi 網絡中移除 %s。若您更經常使用此網絡，其將被重新加入。</string>
     <string name="wifi_notification_auto_wifi_add_to_favorite_title">已加入至已儲存的 Wi-Fi</string>

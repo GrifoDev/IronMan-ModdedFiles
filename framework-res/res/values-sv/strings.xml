@@ -207,7 +207,7 @@
     <string name="global_action_assist">Hjälp</string>
     <string name="global_action_voice_assist">Voice Assist</string>
     <string name="global_action_lockdown">Lås nu</string>
-    <string name="notification_hidden_text">Innehåll har dolts</string>
+    <string name="notification_hidden_text">Innehåll dolt</string>
     <string name="notification_hidden_by_policy_text">Innehåll har dolts p.g.a. en policy</string>
     <string name="safeMode">Säkert läge</string>
     <string name="android_system_label">Android-system</string>
@@ -1584,7 +1584,7 @@ komm."</string>
     <string name="tethered_notification_title_sprint">Mobil hotspot eller Internetd. på</string>
     <string name="tethered_notification_title_client">%s enheter anslutna</string>
     <string name="tethered_notification_title_one_client">1 enhet ansluten</string>
-    <string name="tethered_notification_title_tmo">Mobil hotspot eller Internetd. på</string>
+    <string name="tethered_notification_title_tmo">Tethering or Mobile Hotspot active</string>
     <string name="tethered_notification_title_mtr">Mobil hotspot eller Internetd. på</string>
     <string name="tethered_notification_title">Mobil hotspot eller Internetd. på</string>
     <string name="permlab_transaction_event">Ta emot NFC-transaktionshändelser</string>
@@ -2378,7 +2378,7 @@ Turn on Airplane mode?"</string>
     <string name="securitymanager_st_tampered">Manipulering av programvara har upptäckts</string>
     <string name="securitymanager_st_face">Ansiktsigenkänning</string>
     <string name="securitymanager_st_refresh">Refresh</string>
-    <string name="wifi_notification_adaptive_wifi_title">Anpassad Wi-Fi</string>
+    <string name="wifi_notification_adaptive_wifi_title">Adaptive Wi-Fi</string>
     <string name="wifi_notification_adaptive_wifi_add_to_favorite_detail">%s har lagts till som ofta använt Wi-Fi-nätverk. Telefonen startar Wi-Fi automatiskt när nätverket upptäcks i fortsättningen.</string>
     <string name="wifi_notification_adaptive_wifi_remove_from_favorite_detail">%s har tagits bort som ofta använt Wi-Fi-nätverk. Det läggs till igen om du använder det oftare.</string>
     <string name="wifi_notification_auto_wifi_add_to_favorite_title">Tillagt i sparat Wi-Fi</string>

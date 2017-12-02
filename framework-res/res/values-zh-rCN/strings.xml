@@ -1587,7 +1587,7 @@
     <string name="tethered_notification_title_sprint">已开启移动热点或网络共享</string>
     <string name="tethered_notification_title_client">%s个设备已连接</string>
     <string name="tethered_notification_title_one_client">1 个设备已连接</string>
-    <string name="tethered_notification_title_tmo">已开启移动热点或网络共享</string>
+    <string name="tethered_notification_title_tmo">网络共享或移动热点已激活</string>
     <string name="tethered_notification_title_mtr">已开启移动热点或网络共享</string>
     <string name="tethered_notification_title">已开启移动热点或网络共享</string>
     <string name="permlab_transaction_event">接收 NFC 交易事件</string>

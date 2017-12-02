@@ -203,7 +203,7 @@
     <string name="global_action_assist">सहाय्यता</string>
     <string name="global_action_voice_assist">व्हॉइस सहाय्य</string>
     <string name="global_action_lockdown">आता लॉक करा</string>
-    <string name="notification_hidden_text">लपविलेली सामग्री</string>
+    <string name="notification_hidden_text">सामग्री लपविली</string>
     <string name="notification_hidden_by_policy_text">धोरणाद्वारे सामग्री लपविली</string>
     <string name="safeMode">सुरक्षित मोड</string>
     <string name="android_system_label">एनड्रॉइड सिस्टम</string>
@@ -1579,7 +1579,7 @@
     <string name="tethered_notification_title_sprint">मोबाईल हॉटस्पॉट किंवा टेथरिंग चालू आहे</string>
     <string name="tethered_notification_title_client">%s उपकरणे कनेक्ट केली</string>
     <string name="tethered_notification_title_one_client">1 उपकरण कनेक्‍ट केले</string>
-    <string name="tethered_notification_title_tmo">मोबाईल हॉटस्पॉट किंवा टेथरिंग चालू आहे</string>
+    <string name="tethered_notification_title_tmo">Tethering or Mobile Hotspot active</string>
     <string name="tethered_notification_title_mtr">मोबाईल हॉटस्पॉट किंवा टेथरिंग चालू आहे</string>
     <string name="tethered_notification_title">मोबाईल हॉटस्पॉट किंवा टेथरिंग चालू आहे</string>
     <string name="permlab_transaction_event">NFC व्‍यवहार प्रसंग प्राप्‍त करा</string>
@@ -2373,7 +2373,7 @@ Turn on Airplane mode?"</string>
     <string name="securitymanager_st_tampered">सॉफ्टवेअर फेरफार शोधले</string>
     <string name="securitymanager_st_face">चेहरा ओळख</string>
     <string name="securitymanager_st_refresh">Refresh</string>
-    <string name="wifi_notification_adaptive_wifi_title">अनुकूलित Wi-Fi</string>
+    <string name="wifi_notification_adaptive_wifi_title">Adaptive Wi-Fi</string>
     <string name="wifi_notification_adaptive_wifi_add_to_favorite_detail">%s वारंवार वापरलेले Wi-Fi नेटवर्क म्हणून जोडले गेले आहे. आपल्या फोनचे नेटवर्क भविष्यात शोधलेले असताना तो Wi-Fi स्वयंचलितपणे चालू करेल.</string>
     <string name="wifi_notification_adaptive_wifi_remove_from_favorite_detail">%s आपल्या वारंवार वापरलेल्या Wi-Fi नेटवर्क्स वरून काढले गेले आहे. आपण त्याचा अधिक उपयोग केला असल्यास ते पुन्हा जोडले जाईल.</string>
     <string name="wifi_notification_auto_wifi_add_to_favorite_title">जतन केलेल्या Wi-Fi मध्ये जोडले</string>

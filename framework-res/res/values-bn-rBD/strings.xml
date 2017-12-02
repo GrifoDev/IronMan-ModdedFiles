@@ -203,7 +203,7 @@
     <string name="global_action_assist">সহযোগিতা</string>
     <string name="global_action_voice_assist">ভয়েস সহায়তা</string>
     <string name="global_action_lockdown">এখনই লক করুন</string>
-    <string name="notification_hidden_text">লুকানো বিষয়বস্তু</string>
+    <string name="notification_hidden_text">বিষয়বস্তু লুকানো</string>
     <string name="notification_hidden_by_policy_text">নীতির কারণে সামগ্রী লুকানো আছে</string>
     <string name="safeMode">নিরাপদ মোড</string>
     <string name="android_system_label">অ্যান্ড্রয়েড সিস্টেম</string>
@@ -1579,7 +1579,7 @@
     <string name="tethered_notification_title_sprint">মোবাইল হটস্পট বা টেথারিং চালু আছে</string>
     <string name="tethered_notification_title_client">%sটি ডিভাইস সংযুক্ত হয়েছে</string>
     <string name="tethered_notification_title_one_client">একটি ডিভাইস সংযুক্ত হয়েছে</string>
-    <string name="tethered_notification_title_tmo">মোবাইল হটস্পট বা টেথারিং চালু আছে</string>
+    <string name="tethered_notification_title_tmo">Tethering or Mobile Hotspot active</string>
     <string name="tethered_notification_title_mtr">মোবাইল হটস্পট বা টেথারিং চালু আছে</string>
     <string name="tethered_notification_title">মোবাইল হটস্পট বা টেথারিং চালু আছে</string>
     <string name="permlab_transaction_event">NFC লেনদেনের ঘটনাবলি গ্রহণ করুন</string>
@@ -2373,7 +2373,7 @@ Turn on Airplane mode?"</string>
     <string name="securitymanager_st_tampered">সফটওয়্যার টেম্পারিং শনাক্ত হয়েছে</string>
     <string name="securitymanager_st_face">ফেইস সনাক্তকরণ</string>
     <string name="securitymanager_st_refresh">Refresh</string>
-    <string name="wifi_notification_adaptive_wifi_title">অ্যাডাপ্টিভ Wi-Fi</string>
+    <string name="wifi_notification_adaptive_wifi_title">Adaptive Wi-Fi</string>
     <string name="wifi_notification_adaptive_wifi_add_to_favorite_detail">%s-কে ঘন ঘন ব্যবহৃত ওয়াই-ফাই নেটওয়ার্ক হিসেবে যোগ করা হয়েছে৷ ভবিষ্যতে এই নেটওয়ার্ক শনাক্ত হলে আপনার ফোন স্বয়ংক্রিয়ভাবে ওয়াই-ফাই চালু করবে৷</string>
     <string name="wifi_notification_adaptive_wifi_remove_from_favorite_detail">আপনার ঘন ঘন ব্যবহৃত ওয়াই-ফাই নেটওয়ার্ক থেকে %s অপসারিত হয়েছে৷ আপনি এটি আরো ঘন ঘন ব্যবহার করলে এটি আবার যোগ করা হবে৷</string>
     <string name="wifi_notification_auto_wifi_add_to_favorite_title">সংরক্ষিত ওয়াই-ফাই এ যোগ করা হয়েছে</string>

@@ -203,7 +203,7 @@
     <string name="global_action_assist">Yardım</string>
     <string name="global_action_voice_assist">Səs Yardımçısı</string>
     <string name="global_action_lockdown">İndi kilidləyin</string>
-    <string name="notification_hidden_text">Məzmun gizlidir</string>
+    <string name="notification_hidden_text">Məzmun gizlədildi</string>
     <string name="notification_hidden_by_policy_text">Məzmun siyasət tərəfindən gizlədilib</string>
     <string name="safeMode">Təhlükəsiz rejim</string>
     <string name="android_system_label">Android Sistemi</string>
@@ -1580,7 +1580,7 @@ yazısı"</string>
     <string name="tethered_notification_title_sprint">Mobil Giriş Nöqt və ya Bağl yan</string>
     <string name="tethered_notification_title_client">%s cihazlar qoşuldu</string>
     <string name="tethered_notification_title_one_client">1 cihaz qoşuldu</string>
-    <string name="tethered_notification_title_tmo">Mobil Giriş Nöqt və ya Bağl yan</string>
+    <string name="tethered_notification_title_tmo">Tethering or Mobile Hotspot active</string>
     <string name="tethered_notification_title_mtr">Mobil Giriş Nöqt və ya Bağl yan</string>
     <string name="tethered_notification_title">Mobil Giriş Nöqt və ya Bağl yan</string>
     <string name="permlab_transaction_event">NFC tranzaksiya tədbirlərini qəbul edin</string>
@@ -2374,7 +2374,7 @@ QAYIT"</string>
     <string name="securitymanager_st_tampered">Proqram təminatının mənfi dəyişikliyi aşkar edildi</string>
     <string name="securitymanager_st_face">Üzün tanınması</string>
     <string name="securitymanager_st_refresh">Refresh</string>
-    <string name="wifi_notification_adaptive_wifi_title">Adaptiv Wi-Fi</string>
+    <string name="wifi_notification_adaptive_wifi_title">Adaptive Wi-Fi</string>
     <string name="wifi_notification_adaptive_wifi_add_to_favorite_detail">%s tez-tez istifadə edilən Wi-Fi şəbəkəsi kimi əlavə edildi. Telefonunuz gələcəkdə bu şəbəkəni aşkar etdikdə Wi-Fi-yı avtomatik yandıracaq.</string>
     <string name="wifi_notification_adaptive_wifi_remove_from_favorite_detail">%s tez-tez istifadə edilən Wi-Fi şəbəkələrindən silindi. Daha tez-tez istifadə etdiyinizdə o, yenidən əlavə ediləcək.</string>
     <string name="wifi_notification_auto_wifi_add_to_favorite_title">Saxlanmış Wi-Fi-ya əlavə edildi</string>

@@ -68,6 +68,7 @@
     <protected-broadcast android:name="com.samsung.intent.action.APP_PERMISSION_MONITOR_START"/>
     <protected-broadcast android:name="com.samsung.intent.action.DELETE_NOTI"/>
     <protected-broadcast android:name="com.samsung.intent.action.GOHISTORY"/>
+    <protected-broadcast android:name="com.samsung.intent.action.apm.GOACTIVITY"/>
     <protected-broadcast android:name="com.samsung.intent.action.APP_PERMISSION_MONITOR_SWITCH_CHANGED"/>
     <protected-broadcast android:name="Auth_password_wrong"/>
     <protected-broadcast android:name="android.os.action.POWER_SAVE_MODE_CHANGED"/>
@@ -924,6 +925,7 @@
     <protected-broadcast android:name="com.sec.android.wifi.geofence.state"/>
     <protected-broadcast android:name="com.kt.wifiapi.OEMExtension.NOTIFICATION"/>
     <protected-broadcast android:name="com.samsung.android.server.wifi.SCNT"/>
+    <protected-broadcast android:name="com.sec.android.wifi.notify.mhd"/>
     <protected-broadcast android:name="com.sec.enterprise.knox.shareddevice.enable"/>
     <protected-broadcast android:name="com.sec.enterprise.knox.shareddevice.usersignedin"/>
     <protected-broadcast android:name="com.sec.enterprise.knox.shareddevice.usersignedout"/>

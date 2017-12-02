@@ -1583,7 +1583,7 @@ aéreo"</string>
     <string name="tethered_notification_title_sprint">PA Móvel ou Ancoragem activa</string>
     <string name="tethered_notification_title_client">%s dispositivos ligados</string>
     <string name="tethered_notification_title_one_client">1 dispositivo ligado</string>
-    <string name="tethered_notification_title_tmo">PA Móvel ou Ancoragem activa</string>
+    <string name="tethered_notification_title_tmo">Tethering or Mobile Hotspot active</string>
     <string name="tethered_notification_title_mtr">PA Móvel ou Ancoragem activa</string>
     <string name="tethered_notification_title">PA Móvel ou Ancoragem activa</string>
     <string name="permlab_transaction_event">Receber eventos de transacção NFC</string>
@@ -2377,7 +2377,7 @@ DEVOLVER A"</string>
     <string name="securitymanager_st_tampered">Manipulação de software detectada</string>
     <string name="securitymanager_st_face">Reconhecimento de rosto</string>
     <string name="securitymanager_st_refresh">Refresh</string>
-    <string name="wifi_notification_adaptive_wifi_title">Wi-Fi adaptativo</string>
+    <string name="wifi_notification_adaptive_wifi_title">Adaptive Wi-Fi</string>
     <string name="wifi_notification_adaptive_wifi_add_to_favorite_detail">%s foi adicionada como uma rede Wi-Fi utilizada com mais frequência. O telefone irá ligar o Wi-Fi automaticamente quando esta rede for detectada no futuro.</string>
     <string name="wifi_notification_adaptive_wifi_remove_from_favorite_detail">%s foi removida das suas redes Wi-Fi utilizadas com mais frequência. Voltará a ser adicionada, se começar a utilizá-la com mais frequência.</string>
     <string name="wifi_notification_auto_wifi_add_to_favorite_title">Adicionado a Wi-Fi guardado</string>

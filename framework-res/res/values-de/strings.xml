@@ -207,7 +207,7 @@
     <string name="global_action_assist">Assistent</string>
     <string name="global_action_voice_assist">Sprachassistent</string>
     <string name="global_action_lockdown">Jetzt sperren</string>
-    <string name="notification_hidden_text">Inhalte ausgeblendet</string>
+    <string name="notification_hidden_text">Inhalt ausgeblendet</string>
     <string name="notification_hidden_by_policy_text">Inhalte aufgrund der Richtlinien ausgeblendet</string>
     <string name="safeMode">Sicherer Modus</string>
     <string name="android_system_label">Android-System</string>
@@ -1584,7 +1584,7 @@ Befehl"</string>
     <string name="tethered_notification_title_sprint">Mobile Hotspot oder Tethering ein</string>
     <string name="tethered_notification_title_client">%s verbundene Geräte</string>
     <string name="tethered_notification_title_one_client">1 Gerät verbunden</string>
-    <string name="tethered_notification_title_tmo">Mobile Hotspot oder Tethering ein</string>
+    <string name="tethered_notification_title_tmo">Tethering/Mobile Hotspot aktiv</string>
     <string name="tethered_notification_title_mtr">Mobile Hotspot oder Tethering ein</string>
     <string name="tethered_notification_title">Mobile Hotspot oder Tethering ein</string>
     <string name="permlab_transaction_event">NFC-Transaktionsereignisse erhalten</string>
@@ -2378,7 +2378,7 @@ SENDEN AN"</string>
     <string name="securitymanager_st_tampered">Softwaremodifizierung erkannt</string>
     <string name="securitymanager_st_face">Gesichtserkennung</string>
     <string name="securitymanager_st_refresh">Refresh</string>
-    <string name="wifi_notification_adaptive_wifi_title">Adaptives WLAN</string>
+    <string name="wifi_notification_adaptive_wifi_title">Adaptive Wi-Fi</string>
     <string name="wifi_notification_adaptive_wifi_add_to_favorite_detail">%s wurde als häufig verwendetes WLAN hinzugefügt. Ihr Telefon aktiviert WLAN automatisch, wenn dieses Netzwerk zukünftig erkannt wird.</string>
     <string name="wifi_notification_adaptive_wifi_remove_from_favorite_detail">%s wurde aus Ihren häufig verwendeten WLANs entfernt. Es wird erneut hinzugefügt, wenn Sie es häufiger verwenden.</string>
     <string name="wifi_notification_auto_wifi_add_to_favorite_title">Zu gespeicherten WLANs hinzugefügt</string>

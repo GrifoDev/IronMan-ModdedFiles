@@ -1580,7 +1580,7 @@ udara"</string>
     <string name="tethered_notification_title_sprint">Mobile Hotspot atau Penambatan dihidupkan</string>
     <string name="tethered_notification_title_client">%s peranti disambungkan</string>
     <string name="tethered_notification_title_one_client">1 peranti disambungkan</string>
-    <string name="tethered_notification_title_tmo">Mobile Hotspot atau Penambatan dihidupkan</string>
+    <string name="tethered_notification_title_tmo">Tethering or Mobile Hotspot active</string>
     <string name="tethered_notification_title_mtr">Mobile Hotspot atau Penambatan dihidupkan</string>
     <string name="tethered_notification_title">Mobile Hotspot atau Penambatan dihidupkan</string>
     <string name="permlab_transaction_event">Menerima peristiwa transaksi NFC</string>
@@ -2374,7 +2374,7 @@ PULANGKAN KE"</string>
     <string name="securitymanager_st_tampered">Pengusikan perisian dikesan</string>
     <string name="securitymanager_st_face">Pengecaman muka</string>
     <string name="securitymanager_st_refresh">Refresh</string>
-    <string name="wifi_notification_adaptive_wifi_title">Wi-Fi mudah suai</string>
+    <string name="wifi_notification_adaptive_wifi_title">Adaptive Wi-Fi</string>
     <string name="wifi_notification_adaptive_wifi_add_to_favorite_detail">%s telah ditambah sebagai rangkaian Wi-Fi yang kerap digunakan. Telefon anda akan menghidupkan Wi-Fi secara automatik apabila rangkaian ini dikesan pada masa depan.</string>
     <string name="wifi_notification_adaptive_wifi_remove_from_favorite_detail">%s telah dialih keluar daripada rangkaian Wi-Fi yang kerap anda gunakan. Ia akan ditambah semula jika anda selalu menggunakannya.</string>
     <string name="wifi_notification_auto_wifi_add_to_favorite_title">Ditambah ke Wi-Fi yang disimpan</string>

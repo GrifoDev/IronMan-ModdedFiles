@@ -131,6 +131,7 @@
     <string name="global_actions_toggle_airplane_mode">Airplane mode</string>
     <string name="global_actions_airplane_mode_on_status">Turned on</string>
     <string name="global_actions_airplane_mode_off_status">Turned off</string>
+    <string name="notification_hidden_text">Content hidden</string>
     <string name="safeMode">Safe mode</string>
     <string name="android_system_label">Android System</string>
     <string name="user_owner_label">Personal applications</string>
@@ -875,7 +876,7 @@ command"</string>
     <string name="tethered_notification_title_sprint">Mobile Hotspot or Tethering is on</string>
     <string name="tethered_notification_title_client">%s devices connected</string>
     <string name="tethered_notification_title_one_client">1 device connected</string>
-    <string name="tethered_notification_title_tmo">Mobile Hotspot or Tethering is on</string>
+    <string name="tethered_notification_title_tmo">Tethering or Mobile Hotspot active</string>
     <string name="tethered_notification_title_mtr">Mobile Hotspot or Tethering is on</string>
     <string name="tethered_notification_title">Mobile Hotspot or Tethering is on</string>
     <string name="permlab_transaction_event">Receive NFC transaction events</string>

@@ -203,7 +203,7 @@
     <string name="global_action_assist">సహాయం</string>
     <string name="global_action_voice_assist">వాయిస్ సహాయకం</string>
     <string name="global_action_lockdown">ఇప్పుడు లాక్ చేయండి</string>
-    <string name="notification_hidden_text">కంటెంట్‌లు దాచబడ్డాయి</string>
+    <string name="notification_hidden_text">కంటెంట్ దాచబడింది</string>
     <string name="notification_hidden_by_policy_text">విధానం ద్వారా కంటెంట్‌లు దాచబడ్డాయి</string>
     <string name="safeMode">సురక్షిత మోడ్</string>
     <string name="android_system_label">ఆండ్రాయిడ్ సిస్టమ్</string>
@@ -1579,7 +1579,7 @@
     <string name="tethered_notification_title_sprint">మొబైల్ హాట్‌స్పాట్ లేదా టీథరింగ్ ఆన్‌లో ఉంది</string>
     <string name="tethered_notification_title_client">%s పరికరాలు కనెక్ట్ చేయబడ్డాయి</string>
     <string name="tethered_notification_title_one_client">1 పరికరం కనెక్ట్ చేయబడింది</string>
-    <string name="tethered_notification_title_tmo">మొబైల్ హాట్‌స్పాట్ లేదా టీథరింగ్ ఆన్‌లో ఉంది</string>
+    <string name="tethered_notification_title_tmo">Tethering or Mobile Hotspot active</string>
     <string name="tethered_notification_title_mtr">మొబైల్ హాట్‌స్పాట్ లేదా టీథరింగ్ ఆన్‌లో ఉంది</string>
     <string name="tethered_notification_title">మొబైల్ హాట్‌స్పాట్ లేదా టీథరింగ్ ఆన్‌లో ఉంది</string>
     <string name="permlab_transaction_event">NFC లావాదేవీ ఈవెంట్‌లను స్వీకరించండి</string>
@@ -2373,7 +2373,7 @@ Turn on Airplane mode?"</string>
     <string name="securitymanager_st_tampered">సాఫ్ట్‌వేర్ దిద్దుబాటు గుర్తించబడింది</string>
     <string name="securitymanager_st_face">ముఖ గుర్తింపు</string>
     <string name="securitymanager_st_refresh">Refresh</string>
-    <string name="wifi_notification_adaptive_wifi_title">Wi-Fiని అనుకూలీకరించు</string>
+    <string name="wifi_notification_adaptive_wifi_title">Adaptive Wi-Fi</string>
     <string name="wifi_notification_adaptive_wifi_add_to_favorite_detail">%s తరచూ ఉపయోగించిన Wi-Fi నెట్‌వర్క్‌కు జోడించబడింది. భవిష్యత్‌లో ఈ నెట్‌వర్క్ గుర్తించబడినప్పుడు మీ ఫోన్ Wi-Fiని స్వయంచాలకంగా ఆన్ చేస్తుంది.</string>
     <string name="wifi_notification_adaptive_wifi_remove_from_favorite_detail">%s మీరు తరచూ ఉపయోగించే Wi-Fi నెట్‌వర్క్‌ల నుండి తీసివేయబడింది. మీరు దీన్ని మరింత తరచుగా ఉపయోగిస్తే, ఇది మళ్లీ జోడించబడుతుంది.</string>
     <string name="wifi_notification_auto_wifi_add_to_favorite_title">సేవ్ చేసిన Wi-Fiకి జోడించబడింది</string>

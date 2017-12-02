@@ -137,6 +137,7 @@
     <string name="global_actions_toggle_airplane_mode">उडान मोड</string>
     <string name="global_actions_airplane_mode_on_status">सक्षम गरिएको छ</string>
     <string name="global_actions_airplane_mode_off_status">असक्षम गरिएको छ</string>
+    <string name="notification_hidden_text">लुकाइएको सामग्री</string>
     <string name="safeMode">सुरक्षित मोड</string>
     <string name="android_system_label">एन्ड्रोइड प्रणाली</string>
     <string name="user_owner_label">व्यक्तिगत अनुप्रयोगहरू</string>
@@ -886,7 +887,7 @@
     <string name="tethered_notification_title_sprint">मोबाइल हटस्पट वा टेथरिङ अन छ</string>
     <string name="tethered_notification_title_client">%s यन्त्रहरू जडान गरिएका छन्</string>
     <string name="tethered_notification_title_one_client">1 यन्त्र जडान गरिएको छ</string>
-    <string name="tethered_notification_title_tmo">मोबाइल हटस्पट वा टेथरिङ अन छ</string>
+    <string name="tethered_notification_title_tmo">Tethering or Mobile Hotspot active</string>
     <string name="tethered_notification_title_mtr">मोबाइल हटस्पट वा टेथरिङ अन छ</string>
     <string name="tethered_notification_title">मोबाइल हटस्पट वा टेथरिङ अन छ</string>
     <string name="permlab_transaction_event">NFC लेनदेन घटनाहरू प्राप्त गर्नुहोस्</string>
@@ -1680,7 +1681,7 @@ Turn on Airplane mode?"</string>
     <string name="securitymanager_st_tampered">सफ्टवेयर छेडछाड पत्ता लाग्यो</string>
     <string name="securitymanager_st_face">अनुहारको पहिचान</string>
     <string name="securitymanager_st_refresh">Refresh</string>
-    <string name="wifi_notification_adaptive_wifi_title">अनुकूलनीय Wi-Fi</string>
+    <string name="wifi_notification_adaptive_wifi_title">Adaptive Wi-Fi</string>
     <string name="wifi_notification_adaptive_wifi_add_to_favorite_detail">%s लाई बारम्बार प्रयोग गरिएको Wi-Fi नेटवर्कमा थपिएको छ। भविष्यमा यो नेटवर्क पत्ला लाग्दा तपाईको फोनले स्वचालित रूपमा Wi-Fi लाई अन गर्नेछ।</string>
     <string name="wifi_notification_adaptive_wifi_remove_from_favorite_detail">%s लाई बारम्बार प्रयोग गरिएको Wi-Fi नेटवर्कबाट हटाइएको छ। तपाईले अझ धेरै यसको प्रयोग गर्नुभएमा यो फेरि थपिनेछ।</string>
     <string name="wifi_notification_auto_wifi_add_to_favorite_title">सेव गरिएको Wi-Fi मा थपियो</string>

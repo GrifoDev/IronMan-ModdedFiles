@@ -1584,7 +1584,7 @@ sensore"</string>
     <string name="tethered_notification_title_sprint">Router Wi-Fi o tethering attivo</string>
     <string name="tethered_notification_title_client">%s dispositivi connessi</string>
     <string name="tethered_notification_title_one_client">1 dispositivo connesso</string>
-    <string name="tethered_notification_title_tmo">Router Wi-Fi o tethering attivo</string>
+    <string name="tethered_notification_title_tmo">Tethering o Router Wi-Fi attivo</string>
     <string name="tethered_notification_title_mtr">Router Wi-Fi o tethering attivo</string>
     <string name="tethered_notification_title">Router Wi-Fi o tethering attivo</string>
     <string name="permlab_transaction_event">Ricevi eventi di transazione NFC</string>
@@ -1623,8 +1623,8 @@ sensore"</string>
     <string name="sem_resolver_send_to_nearby_devices">Trasferisci file su dispos.</string>
     <string name="sem_resolver_play_on_tv">"Vedi contenuti su TV
 (Smart View)"</string>
-    <string name="sem_resolver_share_to_device_title">Condividi su dispositivo</string>
-    <string name="sem_resolver_share_to_device_sc">Condiv. con Smart View, Samsung Connect o con i dispos. vicini.</string>
+    <string name="sem_resolver_share_to_device_title">Condividi con altro dispositivo</string>
+    <string name="sem_resolver_share_to_device_sc">Condividi con Smart View, Samsung Connect o con i dispositivi vicini.</string>
     <string name="sem_resolver_share_to_device_sm">Condividete con Smart View.</string>
     <string name="tw_resolver_afw_title">Condividi da profilo lavoro</string>
     <string name="tw_resolver_afw_personal_title">Condividi da profilo personale</string>
@@ -2378,7 +2378,7 @@ RESTITUIRE A"</string>
     <string name="securitymanager_st_tampered">Manomissione del software rilevata</string>
     <string name="securitymanager_st_face">Riconoscimento del viso</string>
     <string name="securitymanager_st_refresh">Refresh</string>
-    <string name="wifi_notification_adaptive_wifi_title">Wi-Fi adattivo</string>
+    <string name="wifi_notification_adaptive_wifi_title">Adaptive Wi-Fi</string>
     <string name="wifi_notification_adaptive_wifi_add_to_favorite_detail">%s è stata aggiunta come rete Wi-Fi utilizzata di frequente. Il telefono attiverà automaticamente il Wi-Fi quando questa rete viene rilevata in futuro.</string>
     <string name="wifi_notification_adaptive_wifi_remove_from_favorite_detail">%s è stata rimossa dalle reti Wi-Fi utilizzate di frequente. Verrà riaggiunta se la utilizzate con più frequenza.</string>
     <string name="wifi_notification_auto_wifi_add_to_favorite_title">Aggiunto a reti Wi-Fi salvate</string>

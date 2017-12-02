@@ -207,7 +207,7 @@
     <string name="global_action_assist">Asistencia</string>
     <string name="global_action_voice_assist">Asistente voz</string>
     <string name="global_action_lockdown">Bloquear ahora</string>
-    <string name="notification_hidden_text">Contenidos ocultos</string>
+    <string name="notification_hidden_text">Contenido oculto</string>
     <string name="notification_hidden_by_policy_text">Contenido oculto debido a la política</string>
     <string name="safeMode">modo Seguro</string>
     <string name="android_system_label">Sistema Android</string>
@@ -1583,7 +1583,7 @@ aéreo"</string>
     <string name="tethered_notification_title_sprint">Mobile Hotspot/Anclaje a red activ.</string>
     <string name="tethered_notification_title_client">%s dispositivos conectados</string>
     <string name="tethered_notification_title_one_client">1 dispositivo conectado</string>
-    <string name="tethered_notification_title_tmo">Mobile Hotspot/Anclaje a red activ.</string>
+    <string name="tethered_notification_title_tmo">Anclaje o Mobile Hotspot activos</string>
     <string name="tethered_notification_title_mtr">Mobile Hotspot/Anclaje a red activ.</string>
     <string name="tethered_notification_title">Mobile Hotspot/Anclaje a red activ.</string>
     <string name="permlab_transaction_event">Reciba eventos de transacción NFC</string>
@@ -2377,7 +2377,7 @@ ENVIAR A"</string>
     <string name="securitymanager_st_tampered">Se detectaron alteraciones del software</string>
     <string name="securitymanager_st_face">Reconocimiento facial</string>
     <string name="securitymanager_st_refresh">Refresh</string>
-    <string name="wifi_notification_adaptive_wifi_title">Wi-Fi adaptable</string>
+    <string name="wifi_notification_adaptive_wifi_title">Adaptive Wi-Fi</string>
     <string name="wifi_notification_adaptive_wifi_add_to_favorite_detail">Se añadió %s como red Wi-Fi frecuente. Su teléfono activará Wi-Fi automáticamente cuando vuelva a detectar esta red.</string>
     <string name="wifi_notification_adaptive_wifi_remove_from_favorite_detail">Se eliminó %s de su lista de redes Wi-Fi frecuentes. Se añadirá de nuevo si la usa con más frecuencia.</string>
     <string name="wifi_notification_auto_wifi_add_to_favorite_title">Añadido a Wi-Fi guardada</string>

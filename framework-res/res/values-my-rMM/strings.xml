@@ -203,7 +203,7 @@
     <string name="global_action_assist">အကူအညီ</string>
     <string name="global_action_voice_assist">အသံ အကူအညီ</string>
     <string name="global_action_lockdown">ယခု သော့ပိတ်ရန်</string>
-    <string name="notification_hidden_text">အကြောင်းအရာများ ဝှက်ထား</string>
+    <string name="notification_hidden_text">ဝှက်ထားသော ပါ၀င်သည့်အရာ</string>
     <string name="notification_hidden_by_policy_text">မူဝါဒမှ အကြောင်းအရာများကို ဝှက်ထားသည်</string>
     <string name="safeMode">စိတ်ချ အနေအထား</string>
     <string name="android_system_label">အန်းဒြိုက်ဒ် စနစ်</string>
@@ -1578,7 +1578,7 @@ command"</string>
     <string name="tethered_notification_title_sprint">မိုဘိုင်း ဟော့စပေါ့ (သို့) ကွန်ရက်မျှဝေခြင်းကို ဖွင့်ထားသည်</string>
     <string name="tethered_notification_title_client">ကိရိယာ %s ခုတို့ ချိတ်ဆက်ထားသည်</string>
     <string name="tethered_notification_title_one_client">ကိရိယာ ၁ ခု ချိတ်ဆက်ထားသည်</string>
-    <string name="tethered_notification_title_tmo">မိုဘိုင်း ဟော့စပေါ့ (သို့) ကွန်ရက်မျှဝေခြင်းကို ဖွင့်ထားသည်</string>
+    <string name="tethered_notification_title_tmo">Tethering or Mobile Hotspot active</string>
     <string name="tethered_notification_title_mtr">မိုဘိုင်း ဟော့စပေါ့ (သို့) ကွန်ရက်မျှဝေခြင်းကို ဖွင့်ထားသည်</string>
     <string name="tethered_notification_title">မိုဘိုင်း ဟော့စပေါ့ (သို့) ကွန်ရက်မျှဝေခြင်းကို ဖွင့်ထားသည်</string>
     <string name="permlab_transaction_event">NFC အရောင်းအဝယ် ဖြစ်ရပ်များကို လက်ခံပါ</string>
@@ -2372,7 +2372,7 @@ Turn on Airplane mode?"</string>
     <string name="securitymanager_st_tampered">ဆော့ဖ်ဝဲ အနှောင့်အယှက် တွေ့ရှိထားပါသည်</string>
     <string name="securitymanager_st_face">မျက်နှာမှတ်သားမှု</string>
     <string name="securitymanager_st_refresh">Refresh</string>
-    <string name="wifi_notification_adaptive_wifi_title">လိုက်လျောညီထွေ Wi-Fi</string>
+    <string name="wifi_notification_adaptive_wifi_title">Adaptive Wi-Fi</string>
     <string name="wifi_notification_adaptive_wifi_add_to_favorite_detail">%s ကို မကြာခဏ သုံးသော Wi-Fi ကွန်ရက်အဖြစ် ထည့်ပြီးပါပြီ။ အနာဂတ်တွင် ဤကွန်ရက်ကို ရှာတွေ့သည့်အခါ သင့်ဖုန်းက Wi-Fi ကို အလိုအလျောက် ဖွင့်ပေးပါမည်။</string>
     <string name="wifi_notification_adaptive_wifi_remove_from_favorite_detail">%s ကို မကြာခဏ သုံးသော Wi-Fi ကွန်ရက်ထဲမှ ဖယ်ရှားထားပါသည်။ ၎င်းကို ပို၍ မကြာခဏ သုံးလျှင် ပြန်ထည့်ပေးပါမည်။</string>
     <string name="wifi_notification_auto_wifi_add_to_favorite_title">သိမ်းဆည်းထားသော Wi-Fi တွင် ထည့်ထားသည်</string>

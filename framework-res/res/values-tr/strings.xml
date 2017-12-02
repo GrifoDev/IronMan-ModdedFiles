@@ -1584,7 +1584,7 @@ komut"</string>
     <string name="tethered_notification_title_sprint">Mbl Erşm Nktsı vya İnt. Pylşm açk</string>
     <string name="tethered_notification_title_client">%s cihaz bağlı</string>
     <string name="tethered_notification_title_one_client">1 cihaz bağlı</string>
-    <string name="tethered_notification_title_tmo">Mbl Erşm Nktsı vya İnt. Pylşm açk</string>
+    <string name="tethered_notification_title_tmo">Tethering or Mobile Hotspot active</string>
     <string name="tethered_notification_title_mtr">Mbl Erşm Nktsı vya İnt. Pylşm açk</string>
     <string name="tethered_notification_title">Mbl Erşm Nktsı vya İnt. Pylşm açk</string>
     <string name="permlab_transaction_event">NFC işlem olaylarını al</string>
@@ -2378,7 +2378,7 @@ Turn on Airplane mode?"</string>
     <string name="securitymanager_st_tampered">Yazılım kurcalama algılandı</string>
     <string name="securitymanager_st_face">Yüz tanıma</string>
     <string name="securitymanager_st_refresh">Refresh</string>
-    <string name="wifi_notification_adaptive_wifi_title">Uyarlanabilir Wi-Fi</string>
+    <string name="wifi_notification_adaptive_wifi_title">Adaptive Wi-Fi</string>
     <string name="wifi_notification_adaptive_wifi_add_to_favorite_detail">"%s, sık kullanılan Wi-Fi ağı olarak eklendi. Gelecekte bu ağ algılandığında telefonunuz Wi-Fi'ı otomatik olarak açar."</string>
     <string name="wifi_notification_adaptive_wifi_remove_from_favorite_detail">%s, sık kullanılan Wi-Fi ağlarınızdan kaldırıldı. Daha sık kullanırsanız tekrar eklenir.</string>
     <string name="wifi_notification_auto_wifi_add_to_favorite_title">"Kayıtlı Wi-Fi'a eklendi"</string>

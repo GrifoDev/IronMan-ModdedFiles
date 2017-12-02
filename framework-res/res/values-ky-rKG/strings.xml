@@ -203,7 +203,7 @@
     <string name="global_action_assist">Жардам</string>
     <string name="global_action_voice_assist">Үн жардамчысы</string>
     <string name="global_action_lockdown">Азыр кулпулоо</string>
-    <string name="notification_hidden_text">Мазмундар жашырылган</string>
+    <string name="notification_hidden_text">Мазмун жашырылган</string>
     <string name="notification_hidden_by_policy_text">Тийиштүү саясат боюнча жашырылган мазмундар</string>
     <string name="safeMode">Коопсуз режим</string>
     <string name="android_system_label">Android Системасы</string>
@@ -1579,7 +1579,7 @@ booker"</string>
     <string name="tethered_notification_title_sprint">Моб. Кош. чек. ж-а Таратуу күйүк</string>
     <string name="tethered_notification_title_client">%s түзмөктөр туташылган</string>
     <string name="tethered_notification_title_one_client">1 түзмөк туташкан</string>
-    <string name="tethered_notification_title_tmo">Моб. Кош. чек. ж-а Таратуу күйүк</string>
+    <string name="tethered_notification_title_tmo">Tethering or Mobile Hotspot active</string>
     <string name="tethered_notification_title_mtr">Моб. Кош. чек. ж-а Таратуу күйүк</string>
     <string name="tethered_notification_title">Моб. Кош. чек. ж-а Таратуу күйүк</string>
     <string name="permlab_transaction_event">NFC транзакция окуяларын алуу</string>
@@ -2373,7 +2373,7 @@ Turn on Airplane mode?"</string>
     <string name="securitymanager_st_tampered">Программа бузулуусу аныкталды</string>
     <string name="securitymanager_st_face">Жүз таануу</string>
     <string name="securitymanager_st_refresh">Refresh</string>
-    <string name="wifi_notification_adaptive_wifi_title">Ылайыкталган Wi-Fi</string>
+    <string name="wifi_notification_adaptive_wifi_title">Adaptive Wi-Fi</string>
     <string name="wifi_notification_adaptive_wifi_add_to_favorite_detail">"%s, эң көп колдонулган Wi-Fi тармагы катары кошулду. Бул тармак келечекте аныкталса, телефонуңуз Wi-Fi'ды автоматтык түрдө күйгүзөт."</string>
     <string name="wifi_notification_adaptive_wifi_remove_from_favorite_detail">%s эң көп колдонулган Wi-Fi тармагындагы тизмеңизден чыгарылды. Эгер аны көбүрөөк колдонсоңуз, ал кайра кошулат.</string>
     <string name="wifi_notification_auto_wifi_add_to_favorite_title">Сакталган Wi-Fi кошулду</string>

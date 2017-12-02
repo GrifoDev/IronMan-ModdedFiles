@@ -203,7 +203,7 @@
     <string name="global_action_assist">સહાય</string>
     <string name="global_action_voice_assist">વૉઇસ સહાય</string>
     <string name="global_action_lockdown">હવે લૉક કરો</string>
-    <string name="notification_hidden_text">સામગ્રીઓ છુપાવેલ છે</string>
+    <string name="notification_hidden_text">સામગ્રી છુપાવેલ છે</string>
     <string name="notification_hidden_by_policy_text">નીતિ દ્વારા સામગ્રી છુપાવાઈ</string>
     <string name="safeMode">સુરક્ષિત મોડ</string>
     <string name="android_system_label">એન્ડ્રોઇડ સિસ્ટમ</string>
@@ -1579,7 +1579,7 @@
     <string name="tethered_notification_title_sprint">મોબાઇલ હોટસ્પોટ અથવા ટેથરિંગ ચાલુ છે</string>
     <string name="tethered_notification_title_client">%s ઉપકરણો જોડેલા છે</string>
     <string name="tethered_notification_title_one_client">1 ઉપકરણ જોડ્યું</string>
-    <string name="tethered_notification_title_tmo">મોબાઇલ હોટસ્પોટ અથવા ટેથરિંગ ચાલુ છે</string>
+    <string name="tethered_notification_title_tmo">Tethering or Mobile Hotspot active</string>
     <string name="tethered_notification_title_mtr">મોબાઇલ હોટસ્પોટ અથવા ટેથરિંગ ચાલુ છે</string>
     <string name="tethered_notification_title">મોબાઇલ હોટસ્પોટ અથવા ટેથરિંગ ચાલુ છે</string>
     <string name="permlab_transaction_event">NFC વ્યવહાર પ્રસંગો પ્રાપ્ત કરો</string>
@@ -2373,7 +2373,7 @@ Turn on Airplane mode?"</string>
     <string name="securitymanager_st_tampered">સોફ્ટવેરમાં અનધિકૃત ફેરફાર શોધાયેલ છે</string>
     <string name="securitymanager_st_face">ચહેરા ઓળખ</string>
     <string name="securitymanager_st_refresh">Refresh</string>
-    <string name="wifi_notification_adaptive_wifi_title">અડેપ્ટિવ Wi-Fi</string>
+    <string name="wifi_notification_adaptive_wifi_title">Adaptive Wi-Fi</string>
     <string name="wifi_notification_adaptive_wifi_add_to_favorite_detail">%s ને વારંવાર વપરાવામાં આવેલ Wi-Fi નેટવર્કનો ઉમેરવામાં આવ્યો છે. ભવિષ્યમાં જયારે આ નેટવર્ક શોધાય ત્યારે તમારો ફોન Wi-Fi ને સ્વચાલિત રીતે ચાલુ કરશે.</string>
     <string name="wifi_notification_adaptive_wifi_remove_from_favorite_detail">%s ને વારંવાર વપરાવામાં આવેલ Wi-Fi નેટવર્કનો ઉમેરવામાં આવ્યો છે. જો તમે ઘણી વખત ઉપયોગ કરો તો તે ફરીથી ઉમેરવામાં આવશે.</string>
     <string name="wifi_notification_auto_wifi_add_to_favorite_title">સાચવેલ Wi-Fi માં ઉમેરેલ છે</string>

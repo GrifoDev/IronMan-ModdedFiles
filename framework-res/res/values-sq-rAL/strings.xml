@@ -203,7 +203,7 @@
     <string name="global_action_assist">Ndihma</string>
     <string name="global_action_voice_assist">Ndihma zanore</string>
     <string name="global_action_lockdown">Kyç tani</string>
-    <string name="notification_hidden_text">Përmbajtjet janë të fshehura</string>
+    <string name="notification_hidden_text">Materialet janë fshehur</string>
     <string name="notification_hidden_by_policy_text">Përmbajtja është e fshehur për shkak të politikës</string>
     <string name="safeMode">Regjimi i sigurt</string>
     <string name="android_system_label">Sistemi Android</string>
@@ -1578,7 +1578,7 @@ ajrore"</string>
     <string name="tethered_notification_title_sprint">Shpërndarësja ose Tetherimi ndezur</string>
     <string name="tethered_notification_title_client">%s pajisje u lidhën</string>
     <string name="tethered_notification_title_one_client">1 pajisje lidhur</string>
-    <string name="tethered_notification_title_tmo">Shpërndarësja ose Tetherimi ndezur</string>
+    <string name="tethered_notification_title_tmo">Tethering or Mobile Hotspot active</string>
     <string name="tethered_notification_title_mtr">Shpërndarësja ose Tetherimi ndezur</string>
     <string name="tethered_notification_title">Shpërndarësja ose Tetherimi ndezur</string>
     <string name="permlab_transaction_event">Merr ngjarje transaksionesh NFC</string>

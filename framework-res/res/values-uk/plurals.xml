@@ -17,16 +17,22 @@
         <item quantity="one">Останній %d день</item>
     </plurals>
     <plurals name="duration_seconds">
-        <item quantity="other">%d секунд</item>
+        <item quantity="other">%d секунди</item>
         <item quantity="one">1 секунда</item>
+        <item quantity="few">%d секунди</item>
+        <item quantity="many">%d секунд</item>
     </plurals>
     <plurals name="duration_minutes">
-        <item quantity="other">%d хвилин</item>
+        <item quantity="other">%d хвилини</item>
         <item quantity="one">1 хвилина</item>
+        <item quantity="few">%d хвилини</item>
+        <item quantity="many">%d хвилин</item>
     </plurals>
     <plurals name="duration_hours">
         <item quantity="other">%d годин(-и)</item>
-        <item quantity="one">1 годину</item>
+        <item quantity="one">1 година</item>
+        <item quantity="few">%d години</item>
+        <item quantity="many">%d годин</item>
     </plurals>
     <plurals name="duration_minutes_shortest">
         <item quantity="other">%d хв</item>

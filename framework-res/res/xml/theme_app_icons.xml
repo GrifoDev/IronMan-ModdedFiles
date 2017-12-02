@@ -26,6 +26,7 @@
     <ThemeApp className="com.samsung.android.calendar.AllInOneActivity" iconId="ic_s_planner" />
     <ThemeApp className="com.android.calendar.CalendarApplication" iconId="ic_s_planner" />
     <ThemeApp className="com.android.calendar.EditEventActivity" iconId="ic_s_planner" />
+    <ThemeApp className="com.android.calendar.event.EditEventActivity" iconId="ic_s_planner" />
     <ThemeApp className="com.sec.android.app.clockpackage.ClockPackage" iconId="ic_clock" />
     <ThemeApp className="com.sec.android.app.clockpackage.common.activity.ClockPackageApplication" iconId="ic_clock" />
     <ThemeApp className="com.android.settings.Settings" iconId="ic_settings" />

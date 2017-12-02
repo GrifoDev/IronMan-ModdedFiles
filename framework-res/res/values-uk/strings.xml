@@ -207,7 +207,7 @@
     <string name="global_action_assist">Підказки</string>
     <string name="global_action_voice_assist">Голос. підказки</string>
     <string name="global_action_lockdown">Блокувати зараз</string>
-    <string name="notification_hidden_text">Вміст сховано</string>
+    <string name="notification_hidden_text">Вміст приховано</string>
     <string name="notification_hidden_by_policy_text">Вміст сховано згідно з правилом</string>
     <string name="safeMode">Безпечний режим</string>
     <string name="android_system_label">Система Android</string>
@@ -467,7 +467,7 @@
     <string name="phoneTypeFaxWork">Робочий факс</string>
     <string name="phoneTypeFaxHome">Домашній факс</string>
     <string name="phoneTypePager">Пейджер</string>
-    <string name="phoneTypeOther">Інша</string>
+    <string name="phoneTypeOther">Інші</string>
     <string name="phoneTypeCallback">Зворотній виклик</string>
     <string name="phoneTypeCar">Автомобіль</string>
     <string name="phoneTypeCompanyMain">Головний робочий</string>
@@ -484,16 +484,16 @@
     <string name="eventTypeCustom">Настроювана</string>
     <string name="eventTypeBirthday">День народження</string>
     <string name="eventTypeAnniversary">Річниця</string>
-    <string name="eventTypeOther">Інша</string>
+    <string name="eventTypeOther">Інші</string>
     <string name="emailTypeCustom">Настроювана</string>
     <string name="emailTypeHome">Домаш.</string>
     <string name="emailTypeWork">Робота</string>
-    <string name="emailTypeOther">Інша</string>
+    <string name="emailTypeOther">Інші</string>
     <string name="emailTypeMobile">Мобільний</string>
     <string name="postalTypeCustom">Настроювана</string>
     <string name="postalTypeHome">Домаш.</string>
     <string name="postalTypeWork">Робота</string>
-    <string name="postalTypeOther">Інша</string>
+    <string name="postalTypeOther">Інші</string>
     <string name="imTypeCustom">Настроювана</string>
     <string name="imTypeHome">Дом.</string>
     <string name="imTypeWork">Робота</string>
@@ -1581,7 +1581,7 @@
     <string name="tethered_notification_title_sprint">Моб.точ.дост.чи функ.модему увімк.</string>
     <string name="tethered_notification_title_client">Підключено пристроїв: %s</string>
     <string name="tethered_notification_title_one_client">1 пристрій підключено</string>
-    <string name="tethered_notification_title_tmo">Моб.точ.дост.чи функ.модему увімк.</string>
+    <string name="tethered_notification_title_tmo">Tethering or Mobile Hotspot active</string>
     <string name="tethered_notification_title_mtr">Моб.точ.дост.чи функ.модему увімк.</string>
     <string name="tethered_notification_title">Моб.точ.дост.чи функ.модему увімк.</string>
     <string name="permlab_transaction_event">Отримати відомості про транзакцію через NFC</string>
@@ -2375,7 +2375,7 @@ Turn on Airplane mode?"</string>
     <string name="securitymanager_st_tampered">Виявлено злом ПЗ</string>
     <string name="securitymanager_st_face">Розпізнавання обличчя</string>
     <string name="securitymanager_st_refresh">Refresh</string>
-    <string name="wifi_notification_adaptive_wifi_title">Адаптивний Wi-Fi</string>
+    <string name="wifi_notification_adaptive_wifi_title">Adaptive Wi-Fi</string>
     <string name="wifi_notification_adaptive_wifi_add_to_favorite_detail">Мережу %s додано до списку мереж Wi-Fi, що часто використовуються. При виявленні цієї мережі в майбутньому, звя’зок Wi-Fi на телефоні вмикатиметься автоматично.</string>
     <string name="wifi_notification_adaptive_wifi_remove_from_favorite_detail">Мережу %s видалено зі списку мереж Wi-Fi, що часто використовуються. Якщо ви користуватиметесь нею частіше, її буде знову додано.</string>
     <string name="wifi_notification_auto_wifi_add_to_favorite_title">Додано до збережених Wi-Fi</string>

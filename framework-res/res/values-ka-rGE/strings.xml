@@ -203,7 +203,7 @@
     <string name="global_action_assist">დახმარება</string>
     <string name="global_action_voice_assist">ხმოვანი ასისტ.</string>
     <string name="global_action_lockdown">ახლა ჩაკეტვა</string>
-    <string name="notification_hidden_text">შიგთავსი დამალულია</string>
+    <string name="notification_hidden_text">მასალა დამალულია</string>
     <string name="notification_hidden_by_policy_text">შიგთავსი დამალულია წესების შესაბამისად</string>
     <string name="safeMode">უსაფრთხო რეჟიმი</string>
     <string name="android_system_label">Android სისტემა</string>
@@ -1579,7 +1579,7 @@
     <string name="tethered_notification_title_sprint">ცხელი წერტ./ზიარი ინტერნეტი ჩართ.</string>
     <string name="tethered_notification_title_client">დაკავშირებულია %s მოწყობილობა</string>
     <string name="tethered_notification_title_one_client">დაკავშირდა 1 მოწყობილობა</string>
-    <string name="tethered_notification_title_tmo">ცხელი წერტ./ზიარი ინტერნეტი ჩართ.</string>
+    <string name="tethered_notification_title_tmo">Tethering or Mobile Hotspot active</string>
     <string name="tethered_notification_title_mtr">ცხელი წერტ./ზიარი ინტერნეტი ჩართ.</string>
     <string name="tethered_notification_title">ცხელი წერტ./ზიარი ინტერნეტი ჩართ.</string>
     <string name="permlab_transaction_event">NFC ტრანზაქციის ოპერაციების მიღება</string>
@@ -2373,7 +2373,7 @@ Turn on Airplane mode?"</string>
     <string name="securitymanager_st_tampered">ამოცნობილია პროგრამაში შეჭრა</string>
     <string name="securitymanager_st_face">სახის ამოცნობა</string>
     <string name="securitymanager_st_refresh">Refresh</string>
-    <string name="wifi_notification_adaptive_wifi_title">ადაპტირებადი Wi-Fi</string>
+    <string name="wifi_notification_adaptive_wifi_title">Adaptive Wi-Fi</string>
     <string name="wifi_notification_adaptive_wifi_add_to_favorite_detail">%s დამატებულია როგორც ხშირად გამოყენებული Wi-Fi ქსელი. მომავალში თქვენი ტელეფონი ავტომატურად ჩართავს Wi-Fi-ს, როდესაც ამოიცნობს ამ ქსელს.</string>
     <string name="wifi_notification_adaptive_wifi_remove_from_favorite_detail">%s წაიშალა ხშირად გამოყენებულ Wi-Fi ქსელებში. ის ისევ დაემატება, თუ უფრო ხშირად გამოიყენებთ.</string>
     <string name="wifi_notification_auto_wifi_add_to_favorite_title">დამატებულია შენახულ Wi-Fi-ებში</string>

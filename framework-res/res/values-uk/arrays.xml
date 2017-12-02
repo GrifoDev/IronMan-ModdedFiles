@@ -3,7 +3,7 @@
     <string-array name="emailAddressTypes">
         <item>Домаш.</item>
         <item>Робота</item>
-        <item>Інша</item>
+        <item>Інші</item>
         <item>Свій список</item>
     </string-array>
     <string-array name="imProtocols">
@@ -18,7 +18,7 @@
     </string-array>
     <string-array name="organizationTypes">
         <item>Робота</item>
-        <item>Інша</item>
+        <item>Інші</item>
         <item>Свій список</item>
     </string-array>
     <string-array name="phoneTypes">
@@ -28,13 +28,13 @@
         <item>Робочий факс</item>
         <item>Домашній факс</item>
         <item>Пейджер</item>
-        <item>Інша</item>
+        <item>Інші</item>
         <item>Свій список</item>
     </string-array>
     <string-array name="postalAddressTypes">
         <item>Домаш.</item>
         <item>Робота</item>
-        <item>Інша</item>
+        <item>Інші</item>
         <item>Свій список</item>
     </string-array>
     <string-array name="wfcOperatorErrorAlertMessages">
@@ -50,7 +50,7 @@
     <string-array name="imAddressTypes">
         <item>Домаш.</item>
         <item>Робота</item>
-        <item>Інша</item>
+        <item>Інші</item>
         <item>Свій список</item>
     </string-array>
 </resources>

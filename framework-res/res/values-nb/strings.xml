@@ -1584,7 +1584,7 @@ komm."</string>
     <string name="tethered_notification_title_sprint">Mob. trådl.sone el. Intern.del på</string>
     <string name="tethered_notification_title_client">%s enheter er tilkoblet</string>
     <string name="tethered_notification_title_one_client">1 enhet tilkoblet</string>
-    <string name="tethered_notification_title_tmo">Mob. trådl.sone el. Intern.del på</string>
+    <string name="tethered_notification_title_tmo">Tethering or Mobile Hotspot active</string>
     <string name="tethered_notification_title_mtr">Mob. trådl.sone el. Intern.del på</string>
     <string name="tethered_notification_title">Mob. trådl.sone el. Intern.del på</string>
     <string name="permlab_transaction_event">Motta NFC-transaksjonshendelser</string>
@@ -2378,7 +2378,7 @@ GI TILBAKE TIL"</string>
     <string name="securitymanager_st_tampered">Programvareendring er oppdaget</string>
     <string name="securitymanager_st_face">Ansiktsgjenkjenning</string>
     <string name="securitymanager_st_refresh">Refresh</string>
-    <string name="wifi_notification_adaptive_wifi_title">Tilpasset Wi-Fi</string>
+    <string name="wifi_notification_adaptive_wifi_title">Adaptive Wi-Fi</string>
     <string name="wifi_notification_adaptive_wifi_add_to_favorite_detail">%s har blitt lagt til som et ofte brukt Wi-Fi-nettverk. Telefonen slår på Wi-Fi automatisk når dette nettverket oppdages i fremtiden.</string>
     <string name="wifi_notification_adaptive_wifi_remove_from_favorite_detail">%s har blitt fjernet fra ofte brukte Wi-Fi-nettverk. Det blir lagt til igjen hvis du bruker det oftere.</string>
     <string name="wifi_notification_auto_wifi_add_to_favorite_title">Lagt til i lagrede Wi-Fi</string>

@@ -207,7 +207,7 @@
     <string name="global_action_assist">مساعدة</string>
     <string name="global_action_voice_assist">المساعد الصوتي</string>
     <string name="global_action_lockdown">قفل الآن</string>
-    <string name="notification_hidden_text">المحتويات مخفية</string>
+    <string name="notification_hidden_text">تم إخفاء المحتوى</string>
     <string name="notification_hidden_by_policy_text">تم إخفاء المحتويات بواسطة السياسة</string>
     <string name="safeMode">الوضع الآمن</string>
     <string name="android_system_label">نظام Android</string>
@@ -1584,7 +1584,7 @@
     <string name="tethered_notification_title_sprint">تم تشغيل نقطة اتصال الهواتف المحمولة أو التقييد</string>
     <string name="tethered_notification_title_client">%s من الأجهزة المتصلة</string>
     <string name="tethered_notification_title_one_client">جهاز واحد متصل</string>
-    <string name="tethered_notification_title_tmo">تم تشغيل نقطة اتصال الهواتف المحمولة أو التقييد</string>
+    <string name="tethered_notification_title_tmo">Tethering or Mobile Hotspot active</string>
     <string name="tethered_notification_title_mtr">تم تشغيل نقطة اتصال الهواتف المحمولة أو التقييد</string>
     <string name="tethered_notification_title">تم تشغيل نقطة اتصال الهواتف المحمولة أو التقييد</string>
     <string name="permlab_transaction_event">استلام الأحداث المتعلقة بمعاملات NFC</string>
@@ -2378,7 +2378,7 @@ Turn on Airplane mode?"</string>
     <string name="securitymanager_st_tampered">تم اكتشاف عبث في البرنامج</string>
     <string name="securitymanager_st_face">التعرف على الوجه</string>
     <string name="securitymanager_st_refresh">Refresh</string>
-    <string name="wifi_notification_adaptive_wifi_title">شبكة Wi-Fi تكيفية</string>
+    <string name="wifi_notification_adaptive_wifi_title">Adaptive Wi-Fi</string>
     <string name="wifi_notification_adaptive_wifi_add_to_favorite_detail">تمت إضافة %s كشبكة Wi-Fi مستخدمة بشكلٍ متكرر. سيقوم هاتفك بتشغيل شبكة Wi-Fi تلقائياً عند اكتشاف هذه الشبكة في المستقبل.</string>
     <string name="wifi_notification_adaptive_wifi_remove_from_favorite_detail">تمت إزالة %s من شبكات Wi-Fi المستخدمة بشكلٍ متكرر. ستتم إضافتها مجدداً في حال استخدمتها بشكل متكرر أكثر.</string>
     <string name="wifi_notification_auto_wifi_add_to_favorite_title">تمت الإضافة إلى شبكة Wi-Fi المحفوظة</string>

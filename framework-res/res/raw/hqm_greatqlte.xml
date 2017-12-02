@@ -6,7 +6,8 @@
     enable CDATA #REQUIRED
     DVServer CDATA #REQUIRED
     DQServer CDATA #REQUIRED    
-    CFServer CDATA #REQUIRED>
+    CFServer CDATA #REQUIRED
+    LogBackup CDATA #IMPLIED>
 <!ELEMENT hwparam_info ANY>
 <!ATTLIST hwparam_info
       compID CDATA #REQUIRED
@@ -56,7 +57,7 @@
 
 <hwparam_document>
 
-    <hwparam_setting enable="true" DVServer="true" DQServer="true" CFServer="false" />
+    <hwparam_setting enable="true" DVServer="true" DQServer="true" CFServer="false" LogBackup="true"/>
     
     <!-- Device : BSP Qualcomm -->
     <hwparam_info compID="AP" feature="CORE" hitType="sm" compVer="0.0" compManufacture="" order_compID="1" order_feature="1" >
@@ -179,7 +180,10 @@
             <key_info keyname="P0LT" min="0" max="0" desc1="PCIe RC0 LTSSM where Linkup Failure" desc2="" desc3="" desc4="" type1="1" type2="99" />
         </sysfs_node>
     </hwparam_info>
-
+   <hwparam_info compID="AP" feature="DDRE" hitType="sm" compVer="0.0" compManufacture="" order_compID="1" order_feature="4" >
+        <sysfs_node type="M" key="EYE_INFO" value="/sys/class/sec/sec_hw_param/eye_info" clear="0" >
+        </sysfs_node>
+    </hwparam_info>
     <!-- QNAD : Info -->
     <hwparam_info compID="AP" feature="QNAD" hitType="sm" compVer="0.0" compManufacture="" order_compID="1" order_feature="2" >
         <enc_sysfs_node type="M" key="QNAD_RESULT" value="/sys/class/sec/sec_nad/nad_result" clear="0" >
@@ -283,7 +287,7 @@
         </sysfs_node>
     </hwparam_info>
 
-	<!-- Device : SDcard -->
+    <!-- Device : SDcard -->
     <hwparam_info compID="SDcard" feature="SDMC" hitType="sm" compVer="0.0" compManufacture="" order_compID="3" order_feature="1" >
         <dev_sysfs_node type="S" key="CID" value="/sys/block/mmcblk0/device/cid" clear="0" />
         <sysfs_node type="S" key="CDCNT" value="/sys/class/sec/sdcard/cd_cnt" clear="0" >
@@ -298,6 +302,12 @@
             <key_info keyname="CRC" min="" max="" desc1="CRC Error" desc2="" desc3="" desc4="" type1="1" type2="0"/>
             <key_info keyname="TMO" min="0" max="200" desc1="Timeout Error" desc2="" desc3="" desc4="" type1="1" type2="0"/>
         </sysfs_node>
+	<sysfs_node type="M" key="" value="/sys/class/sec/sdcard/sdcard_summary" clear="0" >
+	    <key_info keyname="MANID" min="" max="" desc1="Manufacture ID" desc2="" desc3="" desc4="" type1="1" type2="0"/>
+	    <key_info keyname="SERIAL" min="" max="" desc1="Partialy SD Card Serial" desc2="" desc3="" desc4="" type1="1" type2="0"/>
+	    <key_info keyname="SIZE" min="" max="" desc1="SD Card Size" desc2="" desc3="" desc4="" type1="1" type2="0"/>
+	    <key_info keyname="SPEEDMODE" min="" max="" desc1="Current SD Card run Speed Mode" desc2="" desc3="" desc4="" type1="1" type2="0"/>
+	</sysfs_node>
     </hwparam_info>
 	
     <!-- Device : Display -->
@@ -722,8 +732,11 @@
 			<key_info keyname="CC_DEX" min="" max="" desc1="DEX Dock Connection Count" desc2="" desc3="" desc4="" type1="1" type2="99" />
 			<key_info keyname="CC_WTIME" min="" max="" desc1="Water Detection Duration (minutes)" desc2="" desc3="" desc4="" type1="1" type2="99" />
 			<key_info keyname="CC_WVBUS" min="" max="" desc1="Water Detection Charging Count" desc2="" desc3="" desc4="" type1="1" type2="99" />
+	   		<key_info keyname="CC_WVTIME" min="" max="" desc1="Water-Vbus Detection Duration (seconds)" desc2="" desc3="" desc4="" type1="1" type2="99"/>
 			<key_info keyname="CC_CSHORT" min="" max="" desc1="Vbus - CC Short Count" desc2="" desc3="" desc4="" type1="1" type2="99" />
 			<key_info keyname="CC_VER" min="" max="" desc1="CCIC FW Version" desc2="" desc3="" desc4="" type1="1" type2="99" />
+			<key_info keyname="M_AFCERR" min="" max="" desc1="AFC Protocol Nack and Error Voltage Count" desc2="" desc3="" desc4="" type1="1" type2="99"/>
+	    		<key_info keyname="M_DCDTMO" min="" max="" desc1="Data Contact Detecting Timeout Event Count" desc2="" desc3="" desc4="" type1="1" type2="99"/>
 		</sysfs_node>
     </hwparam_info>
 	

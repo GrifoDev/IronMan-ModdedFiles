@@ -137,6 +137,7 @@
     <string name="global_actions_toggle_airplane_mode">Avionski režim</string>
     <string name="global_actions_airplane_mode_on_status">Omogućeno</string>
     <string name="global_actions_airplane_mode_off_status">Onemogućeno</string>
+    <string name="notification_hidden_text">Sadržaj je sakriven</string>
     <string name="safeMode">Siguran režim</string>
     <string name="android_system_label">Sistem Android</string>
     <string name="user_owner_label">Lične aplikacije</string>
@@ -867,7 +868,7 @@ zraku"</string>
     <string name="tethered_notification_title_sprint">Mob. pris. tač. ili Dijelj. uklj.</string>
     <string name="tethered_notification_title_client">Broj povezanih uređaja: %s</string>
     <string name="tethered_notification_title_one_client">Jedan uređaj je povezan</string>
-    <string name="tethered_notification_title_tmo">Mob. pris. tač. ili Dijelj. uklj.</string>
+    <string name="tethered_notification_title_tmo">Tethering or Mobile Hotspot active</string>
     <string name="tethered_notification_title_mtr">Mob. pris. tač. ili Dijelj. uklj.</string>
     <string name="tethered_notification_title">Mob. pris. tač. ili Dijelj. uklj.</string>
     <string name="permlab_transaction_event">Primi NFC prenose događaja</string>
@@ -1657,7 +1658,7 @@ VRATI NA"</string>
     <string name="securitymanager_st_tampered">Otkriveno je modifikovanje softvera</string>
     <string name="securitymanager_st_face">Prepoznavanje lica</string>
     <string name="securitymanager_st_refresh">Refresh</string>
-    <string name="wifi_notification_adaptive_wifi_title">Prilagodljivi Wi-Fi</string>
+    <string name="wifi_notification_adaptive_wifi_title">Adaptive Wi-Fi</string>
     <string name="wifi_notification_adaptive_wifi_add_to_favorite_detail">%s je dodana kao često korištena Wi-Fi mreža. Telefon će ubuduće automatski uključiti Wi-Fi kada se prepozna ova mreža.</string>
     <string name="wifi_notification_adaptive_wifi_remove_from_favorite_detail">%s je uklonjena s često korištenih Wi-Fi mreža. Ona će biti ponovno dodana ako je budete češće koristili.</string>
     <string name="wifi_notification_auto_wifi_add_to_favorite_title">Dodano u sačuvane Wi-Fi mreže</string>

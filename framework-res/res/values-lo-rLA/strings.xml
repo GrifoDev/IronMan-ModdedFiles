@@ -203,7 +203,7 @@
     <string name="global_action_assist">ຕົວຊ່ວຍ</string>
     <string name="global_action_voice_assist">ຊ່ວຍ​ເຫຼືອ​ທາງ​ສຽງ</string>
     <string name="global_action_lockdown">ລັອກ​ດຽວ​ນີ້</string>
-    <string name="notification_hidden_text">ເນື້ອຫາ​ຖືກ​ເຊື່ອງ​ໄວ້</string>
+    <string name="notification_hidden_text">ເຊື່ອງ​ເນື້ອ​ໃນ​ແລ້ວ</string>
     <string name="notification_hidden_by_policy_text">ເນື້ອຫາຖືກເຊື່ອງຕາມນະໂຍບາຍ</string>
     <string name="safeMode">ໂໝດຄວາມປອດໄພ</string>
     <string name="android_system_label">ລະບົບ ແອນດຣອຍ</string>
@@ -1579,7 +1579,7 @@
     <string name="tethered_notification_title_sprint">ຮັອດສະປັອດມືຖື ຫຼື ການເຊື່ອມໂຍງ ເປີດຢູ່</string>
     <string name="tethered_notification_title_client">ເຊື່ອມ​ຕໍ່ອຸ​ປະ​ກອນ %s ແລ້ວ</string>
     <string name="tethered_notification_title_one_client">ເຊື່ອມຕໍ່ 1 ເຄື່ອງແລ້ວ</string>
-    <string name="tethered_notification_title_tmo">ຮັອດສະປັອດມືຖື ຫຼື ການເຊື່ອມໂຍງ ເປີດຢູ່</string>
+    <string name="tethered_notification_title_tmo">Tethering or Mobile Hotspot active</string>
     <string name="tethered_notification_title_mtr">ຮັອດສະປັອດມືຖື ຫຼື ການເຊື່ອມໂຍງ ເປີດຢູ່</string>
     <string name="tethered_notification_title">ຮັອດສະປັອດມືຖື ຫຼື ການເຊື່ອມໂຍງ ເປີດຢູ່</string>
     <string name="permlab_transaction_event">ຮັບເຫດການດໍາເນີນການ NFC</string>
@@ -2374,7 +2374,7 @@ Turn on Airplane mode?"</string>
     <string name="securitymanager_st_tampered">ກວດພົບການປອມແປງຊອບແວແລ້ວ</string>
     <string name="securitymanager_st_face">ການຈົດຈຳໃບໜ້າ</string>
     <string name="securitymanager_st_refresh">Refresh</string>
-    <string name="wifi_notification_adaptive_wifi_title">Wi-Fi ທີ່ປັບໄດ້</string>
+    <string name="wifi_notification_adaptive_wifi_title">Adaptive Wi-Fi</string>
     <string name="wifi_notification_adaptive_wifi_add_to_favorite_detail">%s ໄດ້ຖືກເພີ່ມເປັນເຄືອຂ່າຍ Wi-Fi ທີ່ໃຊ້ເລື້ອຍໆແລ້ວ. ໂທລະສັບຂອງທ່ານຈະເປີດ Wi-Fi ໂດຍອັດຕະໂນມັດ ເມື່ອເຄືອຂ່າຍນີ້ຖືກກວດພົບໃນອະນາຄົດ.</string>
     <string name="wifi_notification_adaptive_wifi_remove_from_favorite_detail">%s ໄດ້ຖືກຍ້າຍອອກໄປຈາກເຄືອຂ່າຍ Wi-Fi ທີ່ໃຊ້ເລື້ອຍໆຂອງທ່ານແລ້ວ. ມັນຈະຖືກເພີ່ມອີກຄັ້ງ ຖ້າທ່ານໃຊ້ມັນເລື້ອຍໆຂຶ້ນຕື່ມ.</string>
     <string name="wifi_notification_auto_wifi_add_to_favorite_title">ເພີ່ມໃສ່ Wi-Fi ທີ່ບັນທຶກໄວ້ແລ້ວ</string>

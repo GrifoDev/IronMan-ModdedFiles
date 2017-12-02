@@ -203,7 +203,7 @@
     <string name="global_action_assist">ಸಹಾಯ ಮಾಡು</string>
     <string name="global_action_voice_assist">ಧ್ವನಿ ಸಹಾಯಕ</string>
     <string name="global_action_lockdown">ಈಗ ಲಾಕ್ ಮಾಡಿ</string>
-    <string name="notification_hidden_text">ವಿಷಯಗಳನ್ನು ಮರೆಮಾಡಲಾಗಿದೆ</string>
+    <string name="notification_hidden_text">ವಿಷಯವನ್ನು ಮರೆಮಾಡಲಾಗಿದೆ</string>
     <string name="notification_hidden_by_policy_text">ನೀತಿಯಿಂದ ಮರೆಮಾಡಲಾಗಿರುವ ವಿಷಯಗಳು</string>
     <string name="safeMode">ಸುರಕ್ಷತೆ ಮೋಡ್</string>
     <string name="android_system_label">ಅಂಡ್ರಾಯ್ಡ್ ಸಿಸ್ಟಮ್</string>
@@ -1579,7 +1579,7 @@
     <string name="tethered_notification_title_sprint">ಮೊಬೈಲ್ ಹಾಟ್‌ಸ್ಪಾಟ್ ಅತವಾ ಟೆಥರಿಂಗ್ ಆನ್ ಆಗಿದೆ</string>
     <string name="tethered_notification_title_client">%s ಸಾಧನಗಳು ಸಂಪರ್ಕಿತಗೊಂಡಿದೆ</string>
     <string name="tethered_notification_title_one_client">1 ಸಾಧನ ಸಂಪರ್ಕಿತವಾಗಿದೆ</string>
-    <string name="tethered_notification_title_tmo">ಮೊಬೈಲ್ ಹಾಟ್‌ಸ್ಪಾಟ್ ಅತವಾ ಟೆಥರಿಂಗ್ ಆನ್ ಆಗಿದೆ</string>
+    <string name="tethered_notification_title_tmo">Tethering or Mobile Hotspot active</string>
     <string name="tethered_notification_title_mtr">ಮೊಬೈಲ್ ಹಾಟ್‌ಸ್ಪಾಟ್ ಅತವಾ ಟೆಥರಿಂಗ್ ಆನ್ ಆಗಿದೆ</string>
     <string name="tethered_notification_title">ಮೊಬೈಲ್ ಹಾಟ್‌ಸ್ಪಾಟ್ ಅತವಾ ಟೆಥರಿಂಗ್ ಆನ್ ಆಗಿದೆ</string>
     <string name="permlab_transaction_event">NFC ವಹಿವಾಟು ಸಂದರ್ಭ‌ಗಳನ್ನು ಪಡೆಯಿರಿ</string>
@@ -2373,7 +2373,7 @@ Turn on Airplane mode?"</string>
     <string name="securitymanager_st_tampered">ಸಾಫ್ಟ್‌ವೇರ್ ಟ್ಯಾಂಪರಿಂಗ್ ಪತ್ತೆಯಾಗಿದೆ</string>
     <string name="securitymanager_st_face">ಮುಖ ಗುರುತಿಸುವಿಕೆ</string>
     <string name="securitymanager_st_refresh">Refresh</string>
-    <string name="wifi_notification_adaptive_wifi_title">Wi-Fi ಅಡಾಪ್ಟಿವ್</string>
+    <string name="wifi_notification_adaptive_wifi_title">Adaptive Wi-Fi</string>
     <string name="wifi_notification_adaptive_wifi_add_to_favorite_detail">ನಿರಂತರವಾಗಿ ಬಳಸಿದ Wi-Fi ನೆಟ್‍ವರ್ಕ್ ಎಂಬಂತೆ %s ಅನ್ನು ಸೇರಿಸಲಾಗಿದೆ. ಭವಿಷ್ಯದಲ್ಲಿ ಈ ನೆಟ್‍ವರ್ಕ್ ಕಂಡು ಬಂದಾಗ ಸ್ವಯಂಚಾಲಿತವಾಗಿ ನಿಮ್ಮ ಫೋನ್ Wi-Fi ಆನ್ ಮಾಡುತ್ತದೆ.</string>
     <string name="wifi_notification_adaptive_wifi_remove_from_favorite_detail">ನಿಮ್ಮ ನಿರಂತರವಾಗಿ ಬಳಸಿದ Wi-Fi ನೆಟ್‍ವರ್ಕ್‍ಗಳಿಂದ %s ತೆಗೆದುಹಾಕಲಾಗುತ್ತದೆ. ನೀವು ಹೆಚ್ಚು ಆಗಾಗ್ಗೆ ಅದನ್ನು ಬಳಕೆ ಮಾಡಿದರೇ, ಅದನ್ನು ಮತ್ತೆ ಸೇರಿಸಲಾಗುವುದು.</string>
     <string name="wifi_notification_auto_wifi_add_to_favorite_title">ಉಳಿಸಿದ Wi-Fiಗೆ ಸೇರಿಸಲಾಗಿದೆ</string>

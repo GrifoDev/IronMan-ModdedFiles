@@ -203,7 +203,7 @@
     <string name="global_action_assist">Lagundu</string>
     <string name="global_action_voice_assist">Ahots-laguntza</string>
     <string name="global_action_lockdown">Blokeatu</string>
-    <string name="notification_hidden_text">Edukiak ezkutatuta daude</string>
+    <string name="notification_hidden_text">Ezkutatutako edukia</string>
     <string name="notification_hidden_by_policy_text">Gidalerro batzuk ezkutatu dira, gidalerroei jarraiki</string>
     <string name="safeMode">Modu segurua</string>
     <string name="android_system_label">Android sistema</string>
@@ -1579,7 +1579,7 @@ command"</string>
     <string name="tethered_notification_title_sprint">Kon. partek. / Kable bidez aktibo</string>
     <string name="tethered_notification_title_client">%s gailu konektatuta</string>
     <string name="tethered_notification_title_one_client">Gailu 1 konektatuta</string>
-    <string name="tethered_notification_title_tmo">Kon. partek. / Kable bidez aktibo</string>
+    <string name="tethered_notification_title_tmo">Tethering or Mobile Hotspot active</string>
     <string name="tethered_notification_title_mtr">Kon. partek. / Kable bidez aktibo</string>
     <string name="tethered_notification_title">Kon. partek. / Kable bidez aktibo</string>
     <string name="permlab_transaction_event">Jaso NFC transakzioen gertaerak</string>
@@ -2373,7 +2373,7 @@ ITZULI HONA"</string>
     <string name="securitymanager_st_tampered">Softwarea hondatuta dagoela hauteman da</string>
     <string name="securitymanager_st_face">Aurpegi bidezko hautematea</string>
     <string name="securitymanager_st_refresh">Refresh</string>
-    <string name="wifi_notification_adaptive_wifi_title">Wi-Fi moldakorra</string>
+    <string name="wifi_notification_adaptive_wifi_title">Adaptive Wi-Fi</string>
     <string name="wifi_notification_adaptive_wifi_add_to_favorite_detail">Maiz erabilitako Wi-Fi sare gisa gehitu da %s. Telefonoak Wi-Fi eginbidea aktibatuko du automatikoki sare hori hautematen denean.</string>
     <string name="wifi_notification_adaptive_wifi_remove_from_favorite_detail">Maiz erabilitako Wi-Fi sareetatik kendu da %s. Maizago erabiltzen baduzu, berriro gehituko da.</string>
     <string name="wifi_notification_auto_wifi_add_to_favorite_title">Gordet. Wi-Fi sareetan gehituta</string>

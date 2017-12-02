@@ -207,7 +207,7 @@
     <string name="global_action_assist">Pomôcť</string>
     <string name="global_action_voice_assist">Hlasový asistent</string>
     <string name="global_action_lockdown">Uzamknúť</string>
-    <string name="notification_hidden_text">Skrytý obsah</string>
+    <string name="notification_hidden_text">Obsah je skrytý</string>
     <string name="notification_hidden_by_policy_text">Obsah je na základe pravidiel skrytý</string>
     <string name="safeMode">Bezpečný režim</string>
     <string name="android_system_label">Systém Android</string>
@@ -1584,7 +1584,7 @@ príkaz"</string>
     <string name="tethered_notification_title_sprint">Zap. Mobilný bod/Zdieľanie pripoj.</string>
     <string name="tethered_notification_title_client">Pripojené zariadenia: %s</string>
     <string name="tethered_notification_title_one_client">1 pripojené zariadenie</string>
-    <string name="tethered_notification_title_tmo">Zap. Mobilný bod/Zdieľanie pripoj.</string>
+    <string name="tethered_notification_title_tmo">Tethering or Mobile Hotspot active</string>
     <string name="tethered_notification_title_mtr">Zap. Mobilný bod/Zdieľanie pripoj.</string>
     <string name="tethered_notification_title">Zap. Mobilný bod/Zdieľanie pripoj.</string>
     <string name="permlab_transaction_event">Prijímanie transakčných udalostí NFC</string>
@@ -2378,7 +2378,7 @@ VRAŤTE HO SEM"</string>
     <string name="securitymanager_st_tampered">Zistila sa neoprávnená manipulácia so softvérom</string>
     <string name="securitymanager_st_face">Rozpoznávanie tváre</string>
     <string name="securitymanager_st_refresh">Refresh</string>
-    <string name="wifi_notification_adaptive_wifi_title">Adaptívne Wi-Fi</string>
+    <string name="wifi_notification_adaptive_wifi_title">Adaptive Wi-Fi</string>
     <string name="wifi_notification_adaptive_wifi_add_to_favorite_detail">Sieť %s bola pridaná medzi často používané siete Wi-Fi. Keď sa táto sieť v budúcnosti rozpozná, telefón automaticky zapne Wi-Fi.</string>
     <string name="wifi_notification_adaptive_wifi_remove_from_favorite_detail">Sieť %s bola odstránená z často používaných sietí Wi-Fi. Ak ju budete používať častejšie, znova sa pridá.</string>
     <string name="wifi_notification_auto_wifi_add_to_favorite_title">Pridané k uloženým sieťam Wi-Fi</string>

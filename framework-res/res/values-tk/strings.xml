@@ -137,6 +137,7 @@
     <string name="global_actions_toggle_airplane_mode">Uçuş režimi</string>
     <string name="global_actions_airplane_mode_on_status">Açyldy</string>
     <string name="global_actions_airplane_mode_off_status">Ýapyldy</string>
+    <string name="notification_hidden_text">Material gizlenen</string>
     <string name="safeMode">Howpsuz reje</string>
     <string name="android_system_label">Android Ulgamy</string>
     <string name="user_owner_label">Şahsy goýmalar</string>
@@ -885,7 +886,7 @@ buýruk"</string>
     <string name="tethered_notification_title_sprint">Mobil hotspot týa-da Baglama açyk</string>
     <string name="tethered_notification_title_client">%s enjam birikdi</string>
     <string name="tethered_notification_title_one_client">1 enjam birikdirildi</string>
-    <string name="tethered_notification_title_tmo">Mobil hotspot týa-da Baglama açyk</string>
+    <string name="tethered_notification_title_tmo">Tethering or Mobile Hotspot active</string>
     <string name="tethered_notification_title_mtr">Mobil hotspot týa-da Baglama açyk</string>
     <string name="tethered_notification_title">Mobil hotspot týa-da Baglama açyk</string>
     <string name="permlab_transaction_event">NFC amal wakalary alyň</string>
@@ -1679,7 +1680,7 @@ Turn on Airplane mode?"</string>
     <string name="securitymanager_st_tampered">Programma üpjünçiligine degmek tapyldy</string>
     <string name="securitymanager_st_face">Ýüz tanaýyş</string>
     <string name="securitymanager_st_refresh">Refresh</string>
-    <string name="wifi_notification_adaptive_wifi_title">Adaptiw Wi-Fi</string>
+    <string name="wifi_notification_adaptive_wifi_title">Adaptive Wi-Fi</string>
     <string name="wifi_notification_adaptive_wifi_add_to_favorite_detail">%s ýygy ulanylýan Wi-Fi tory edip goşuldy. Geljekde şu tor tapylanda, telefonyňyz Wi-Fi-y awtomatik açar.</string>
     <string name="wifi_notification_adaptive_wifi_remove_from_favorite_detail">%s ýygy ulanylýan Wi-Fi torlaryňyzdan aýryldy. Eger has ýygy ulansaňyz, ol ýene goşular.</string>
     <string name="wifi_notification_auto_wifi_add_to_favorite_title">Ýazdyrylan Wi-Fi-a goşuldy</string>

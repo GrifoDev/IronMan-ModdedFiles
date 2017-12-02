@@ -1579,7 +1579,7 @@ command"</string>
     <string name="tethered_notification_title_sprint">Con.compar. ou módem Bluet./USB act.</string>
     <string name="tethered_notification_title_client">%s dispositivos conectados</string>
     <string name="tethered_notification_title_one_client">1 dispositivo conectado</string>
-    <string name="tethered_notification_title_tmo">Con.compar. ou módem Bluet./USB act.</string>
+    <string name="tethered_notification_title_tmo">Tethering or Mobile Hotspot active</string>
     <string name="tethered_notification_title_mtr">Con.compar. ou módem Bluet./USB act.</string>
     <string name="tethered_notification_title">Con.compar. ou módem Bluet./USB act.</string>
     <string name="permlab_transaction_event">Recibir eventos de transacción de NFC</string>
@@ -2373,7 +2373,7 @@ VOLVE A"</string>
     <string name="securitymanager_st_tampered">Detectouse alteración do software</string>
     <string name="securitymanager_st_face">Recoñecemento de cara</string>
     <string name="securitymanager_st_refresh">Refresh</string>
-    <string name="wifi_notification_adaptive_wifi_title">Wi-Fi adaptativa</string>
+    <string name="wifi_notification_adaptive_wifi_title">Adaptive Wi-Fi</string>
     <string name="wifi_notification_adaptive_wifi_add_to_favorite_detail">%s engadiuse como rede Wi-Fi utilizada con frecuencia. O teléfono activará a Wi-Fi automaticamente cando se detecte esta rede no futuro.</string>
     <string name="wifi_notification_adaptive_wifi_remove_from_favorite_detail">%s eliminouse das túas redes Wi-Fi usadas con frecuencia. Volverase engadir se a utilizas con máis frecuencia.</string>
     <string name="wifi_notification_auto_wifi_add_to_favorite_title">Engadida ás Wi-Fi gardadas</string>

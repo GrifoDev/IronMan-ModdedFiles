@@ -207,7 +207,7 @@
     <string name="global_action_assist">Tulong</string>
     <string name="global_action_voice_assist">Voice Assist</string>
     <string name="global_action_lockdown">I-lock ngayon</string>
-    <string name="notification_hidden_text">Nakatago ang mga content</string>
+    <string name="notification_hidden_text">Nakatago ang content</string>
     <string name="notification_hidden_by_policy_text">Itinago ang mga content alinsunod sa patakaran</string>
     <string name="safeMode">Safe mode</string>
     <string name="android_system_label">Android System</string>
@@ -1584,7 +1584,7 @@ command"</string>
     <string name="tethered_notification_title_sprint">Naka-on ang Mobile Hotspot o Tethering</string>
     <string name="tethered_notification_title_client">%s device ay nakakonekta</string>
     <string name="tethered_notification_title_one_client">1 device ang nakakonekta</string>
-    <string name="tethered_notification_title_tmo">Naka-on ang Mobile Hotspot o Tethering</string>
+    <string name="tethered_notification_title_tmo">Tethering or Mobile Hotspot active</string>
     <string name="tethered_notification_title_mtr">Naka-on ang Mobile Hotspot o Tethering</string>
     <string name="tethered_notification_title">Naka-on ang Mobile Hotspot o Tethering</string>
     <string name="permlab_transaction_event">Tumanggap ng mga kagapanan ng transaksyon sa NFC</string>

@@ -1583,7 +1583,7 @@
     <string name="tethered_notification_title_sprint">Моб. точка доступа или модем вкл.</string>
     <string name="tethered_notification_title_client">Устройств подключено: %s</string>
     <string name="tethered_notification_title_one_client">Подключено 1 устройство</string>
-    <string name="tethered_notification_title_tmo">Моб. точка доступа или модем вкл.</string>
+    <string name="tethered_notification_title_tmo">Tethering or Mobile Hotspot active</string>
     <string name="tethered_notification_title_mtr">Моб. точка доступа или модем вкл.</string>
     <string name="tethered_notification_title">Моб. точка доступа или модем вкл.</string>
     <string name="permlab_transaction_event">Получать события транзакций через NFC</string>
@@ -2377,7 +2377,7 @@ Turn on Airplane mode?"</string>
     <string name="securitymanager_st_tampered">Обнаружен взлом ПО</string>
     <string name="securitymanager_st_face">Распознавание лица</string>
     <string name="securitymanager_st_refresh">Refresh</string>
-    <string name="wifi_notification_adaptive_wifi_title">Адаптивный Wi-Fi</string>
+    <string name="wifi_notification_adaptive_wifi_title">Adaptive Wi-Fi</string>
     <string name="wifi_notification_adaptive_wifi_add_to_favorite_detail">Сеть %s добавлена в список часто используемых сетей Wi-Fi. В дальнейшем ваш телефон автоматически будет включать Wi-Fi при ее обнаружении.</string>
     <string name="wifi_notification_adaptive_wifi_remove_from_favorite_detail">Сеть %s удалена из списка часто используемых сетей Wi-Fi. Если вы будете использовать ее чаще, она будет добавлена обратно.</string>
     <string name="wifi_notification_auto_wifi_add_to_favorite_title">Добавлено в сохраненные Wi-Fi</string>

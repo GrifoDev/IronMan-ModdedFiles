@@ -137,6 +137,7 @@
     <string name="global_actions_toggle_airplane_mode">Mód eitilte</string>
     <string name="global_actions_airplane_mode_on_status">Cumasaithe</string>
     <string name="global_actions_airplane_mode_off_status">Díchumasaithe</string>
+    <string name="notification_hidden_text">Inneachar folaithe</string>
     <string name="safeMode">Mód slán</string>
     <string name="android_system_label">Córas Android</string>
     <string name="user_owner_label">Feidhmchláir phearsanta</string>
@@ -884,7 +885,7 @@ scáil."</string>
     <string name="tethered_notification_title_sprint">Ball Te Móibíl. nó Nascaireacht air</string>
     <string name="tethered_notification_title_client">%s gléas nasctha</string>
     <string name="tethered_notification_title_one_client">1 ghléas nasctha</string>
-    <string name="tethered_notification_title_tmo">Ball Te Móibíl. nó Nascaireacht air</string>
+    <string name="tethered_notification_title_tmo">Tethering or Mobile Hotspot active</string>
     <string name="tethered_notification_title_mtr">Ball Te Móibíl. nó Nascaireacht air</string>
     <string name="tethered_notification_title">Ball Te Móibíl. nó Nascaireacht air</string>
     <string name="permlab_transaction_event">Faigh imeachtaí idirbhirt NFC</string>
@@ -1678,7 +1679,7 @@ CUIR AR AIS CHUIG"</string>
     <string name="securitymanager_st_tampered">Baint do bhogearraí braite</string>
     <string name="securitymanager_st_face">Aithint aghaidhe</string>
     <string name="securitymanager_st_refresh">Refresh</string>
-    <string name="wifi_notification_adaptive_wifi_title">Wi-Fi oiriúnaitheach</string>
+    <string name="wifi_notification_adaptive_wifi_title">Adaptive Wi-Fi</string>
     <string name="wifi_notification_adaptive_wifi_add_to_favorite_detail">"Tá %s curtha leis mar líonra Wi-Fi is minice úsáid. Casfar air Wi-Fi go huathoibríoch ar d'fhón nuair a bhraithfear an líonra seo amach anseo."</string>
     <string name="wifi_notification_adaptive_wifi_remove_from_favorite_detail">Tá %s bainte ó do líonraí Wi-Fi is minice úsáid. Cuirfear leis arís é má úsáideann tú níos minice é.</string>
     <string name="wifi_notification_auto_wifi_add_to_favorite_title">Curtha le Wi-Fi sábháilte</string>

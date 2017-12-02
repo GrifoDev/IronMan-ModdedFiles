@@ -1583,7 +1583,7 @@ funkc."</string>
     <string name="tethered_notification_title_sprint">M. h.spot vagy int.mego. bekapcs.</string>
     <string name="tethered_notification_title_client">%s csatlakoztatott eszköz</string>
     <string name="tethered_notification_title_one_client">1 eszköz csatlakoztatva</string>
-    <string name="tethered_notification_title_tmo">M. h.spot vagy int.mego. bekapcs.</string>
+    <string name="tethered_notification_title_tmo">Tethering or Mobile Hotspot active</string>
     <string name="tethered_notification_title_mtr">M. h.spot vagy int.mego. bekapcs.</string>
     <string name="tethered_notification_title">M. h.spot vagy int.mego. bekapcs.</string>
     <string name="permlab_transaction_event">NFC-tranzakcióesemények fogadása</string>
@@ -2377,7 +2377,7 @@ IDE KÜLDJE:"</string>
     <string name="securitymanager_st_tampered">A rendszer szoftveres manipulálást észlelt</string>
     <string name="securitymanager_st_face">Arcfelismerés</string>
     <string name="securitymanager_st_refresh">Refresh</string>
-    <string name="wifi_notification_adaptive_wifi_title">Adaptív Wi-Fi</string>
+    <string name="wifi_notification_adaptive_wifi_title">Adaptive Wi-Fi</string>
     <string name="wifi_notification_adaptive_wifi_add_to_favorite_detail">Felvette a(z) %s hálózatot a gyakran használt Wi-Fi-hálózatok közé. A jövőben a telefonon automatikusan bekapcsol a Wi-Fi, amikor észleli ezt a hálózatot.</string>
     <string name="wifi_notification_adaptive_wifi_remove_from_favorite_detail">Eltávolította a(z) %s hálózatot a gyakran használt Wi-Fi-hálózatok közül. Ha gyakrabban használja, újra bekerül közéjük.</string>
     <string name="wifi_notification_auto_wifi_add_to_favorite_title">A mentett Wi-Fi-khez adva</string>
