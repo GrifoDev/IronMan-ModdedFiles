@@ -56,7 +56,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f0d02d4
+    const v1, 0x7f0d02d6
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDimension(I)F
 
@@ -70,7 +70,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f0d02d5
+    const v1, 0x7f0d02d7
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDimension(I)F
 
@@ -84,7 +84,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f0d02d6
+    const v1, 0x7f0d02d8
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDimension(I)F
 
@@ -98,7 +98,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f0d02d9
+    const v1, 0x7f0d02db
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDimension(I)F
 
@@ -112,7 +112,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f0d02d8
+    const v1, 0x7f0d02da
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDimension(I)F
 
@@ -126,7 +126,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f0d02da
+    const v1, 0x7f0d02dc
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDimension(I)F
 
@@ -140,7 +140,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f0d02db
+    const v1, 0x7f0d02dd
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDimension(I)F
 
@@ -154,7 +154,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f0d02dc
+    const v1, 0x7f0d02de
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDimension(I)F
 
@@ -168,7 +168,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f0d02df
+    const v1, 0x7f0d02e1
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDimension(I)F
 
@@ -182,7 +182,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f0d02e0
+    const v1, 0x7f0d02e2
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDimension(I)F
 
@@ -196,7 +196,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f0d02e1
+    const v1, 0x7f0d02e3
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDimension(I)F
 

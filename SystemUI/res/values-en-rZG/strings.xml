@@ -134,6 +134,8 @@
     <string name="tts_reset_speech_pitch_title">Reset pitch</string>
     <string name="tts_reset_speech_pitch_summary">Reset the pitch at which text is read out to the default setting.</string>
     <string name="choose_profile">Select profile</string>
+    <string name="dev_logpersist_clear_warning_title">Clear persistent logger storage?</string>
+    <string name="dev_logpersist_clear_warning_message">Logger data will be deleted when the persistent logger is turned off.</string>
     <string name="select_logpersist_title">Store log data persistently</string>
     <string name="select_logpersist_dialog_title">Select log buffers to store persistently</string>
     <string name="no_application">No apps</string>
@@ -241,6 +243,7 @@ For example, your ringtone will not sound, you will not be able to answer phone 
     <string name="wifi_authentication_failed_kt">Failed to authenticate Wi-Fi AP.</string>
     <string name="wifi_authentication_no_response">Failed to connect to Wi-Fi AP.</string>
     <string name="wifi_authentication_invalid_value">Authentication failed. Check ID and password.</string>
+    <string name="wifi_disconnected">Wi-Fi disconnected.</string>
     <string name="quick_settings_bluetooth_label">Bluetooth</string>
     <string name="quick_settings_bluetooth_detail_empty_text_available">No nearby Bluetooth devices found</string>
     <string name="quick_settings_bluetooth_detail_paired_devices_title">Paired devices</string>
@@ -566,15 +569,21 @@ Any user can update apps for all other users."</string>
     <string name="dialog_battery_data_warning">Mobile Hotspot will be enabled. This will increase battery consumption and data usage.</string>
     <string name="keyboard_popup_help">Meta key: The Windows, Command, or other operating system symbol key.</string>
     <string name="keyboard_shortcut_group_system">System shortcuts</string>
+    <string name="keyboard_shortcut_group_system_home">Home</string>
+    <string name="keyboard_shortcut_group_system_recents">Recents</string>
     <string name="keyboard_shortcut_group_system_back">Back</string>
+    <string name="keyboard_shortcut_group_system_notifications">Notifications</string>
+    <string name="keyboard_shortcut_group_system_shortcuts_helper">Keyboard shorcuts</string>
     <string name="keyboard_shortcut_group_system_all_apps">All apps</string>
     <string name="keyboard_shortcut_group_system_running_apps">Running apps</string>
     <string name="keyboard_shortcut_group_system_lock_screen">Lock screen</string>
     <string name="keyboard_shortcut_group_system_switch_languages">Switch languages</string>
     <string name="keyboard_shortcut_group_applications">In-app shortcuts</string>
+    <string name="keyboard_shortcut_group_applications_browser">Browser</string>
     <string name="keyboard_shortcut_group_applications_contacts">Contacts</string>
     <string name="keyboard_shortcut_group_applications_email">Email</string>
     <string name="keyboard_shortcut_group_applications_music">Music</string>
+    <string name="keyboard_shortcut_group_applications_calendar">Calendar</string>
     <string name="keyboard_shortcut_group_applications_bixby">Bixby</string>
     <string name="keyboard_shortcut_group_applications_messages">Messages</string>
     <string name="qs_edit">EDIT</string>
@@ -758,7 +767,9 @@ Overheating can be caused by:
     <string name="battery_not_fully_connected_charging_title_vzw">Incomplete connection</string>
     <string name="battery_not_fully_connected_charging_text">For faster charging, use the charger that came with your device and make sure it is properly connected.</string>
     <string name="battery_not_fully_connected_charging_text_vzw">Make sure the charger is properly connected.</string>
+    <string name="battery_not_fully_connected_charging_text_jpn">Make sure your charger is properly connected.</string>
     <string name="battery_not_fully_connected_charging_popup_text">Make sure charger is properly connected. Use charger that came with device.</string>
+    <string name="battery_not_fully_connected_charging_popup_text_jpn">Make sure charger is properly connected.</string>
     <string name="battery_charging_level_and_time_text">"Charging: %1$d%%
 (Approximately %2$s until fully charged)"</string>
     <string name="battery_charging_level_text">Charging: %d%%</string>
@@ -983,6 +994,8 @@ Please note that in order to enable your emergency calls (e.g., such as 112 call
     <string name="qs_detail_palm_capture_title">Palm swipe to capture</string>
     <string name="noti_direct_reply_exceed_text_limit_toast">"Can't enter any more text."</string>
     <string name="airplane_mode_tts_text">Airplane mode</string>
+    <string name="all_noti_readout">One notification</string>
+    <string name="all_noti_readout2">%d notifications</string>
     <string name="keyguard_password_enter_pin_code">Type PIN code.</string>
     <string name="keyguard_password_wrong_pin_code">Incorrect PIN code.</string>
     <string name="keyguard_charged">Fully charged</string>

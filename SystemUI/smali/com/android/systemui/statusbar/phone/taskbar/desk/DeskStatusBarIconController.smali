@@ -60,7 +60,7 @@
 
     const v2, 0x1040023
 
-    const v3, 0x7f0f07c6
+    const v3, 0x7f0f07c9
 
     filled-new-array {v2, v3}, [I
 
@@ -72,7 +72,7 @@
 
     const v2, 0x1040030
 
-    const v3, 0x7f0f07c5
+    const v3, 0x7f0f07c8
 
     filled-new-array {v2, v3}, [I
 
@@ -152,7 +152,7 @@
 
     move-result-object v2
 
-    const v3, 0x7f0207bf
+    const v3, 0x7f0207c3
 
     invoke-virtual {v2, v3}, Landroid/content/res/Resources;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 
@@ -176,7 +176,7 @@
 
     iget-object v2, p0, Lcom/android/systemui/statusbar/phone/taskbar/desk/DeskStatusBarIconController;->mContext:Landroid/content/Context;
 
-    const v3, 0x7f0f07cb
+    const v3, 0x7f0f07ce
 
     invoke-virtual {v2, v3}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -204,7 +204,7 @@
 
     move-result-object v2
 
-    const v3, 0x7f0207c1
+    const v3, 0x7f0207c5
 
     invoke-virtual {v2, v3}, Landroid/content/res/Resources;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 
@@ -298,7 +298,7 @@
 .method private updateNetspeedView()V
     .locals 4
 
-    const v3, 0x7f0d06ac
+    const v3, 0x7f0d06b0
 
     const/4 v2, 0x0
 
@@ -626,7 +626,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f0d06a9
+    const v1, 0x7f0d06ad
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -640,7 +640,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f0d06aa
+    const v1, 0x7f0d06ae
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -844,19 +844,19 @@
 
     move-result-object v3
 
-    const v5, 0x7f0d0514
+    const v5, 0x7f0d0517
 
     invoke-virtual {v3, v5}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
     move-result v0
 
-    const v5, 0x7f0d0513
+    const v5, 0x7f0d0516
 
     invoke-virtual {v3, v5}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
     move-result v2
 
-    const v5, 0x7f0d06ab
+    const v5, 0x7f0d06af
 
     invoke-virtual {v3, v5}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -915,7 +915,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f0d06ac
+    const v2, 0x7f0d06b0
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -994,7 +994,7 @@
 
     iget-object v4, p0, Lcom/android/systemui/statusbar/phone/taskbar/desk/DeskStatusBarIconController;->mContext:Landroid/content/Context;
 
-    const v5, 0x7f0f07cb
+    const v5, 0x7f0f07ce
 
     invoke-virtual {v4, v5}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 

@@ -6144,6 +6144,18 @@
 
     invoke-static {p1, p2, p3}, Lcom/android/keyguard/KeyguardRune;->dump(Ljava/io/FileDescriptor;Ljava/io/PrintWriter;[Ljava/lang/String;)V
 
+    const-string/jumbo v0, "  isNationalRoaming: "
+
+    invoke-virtual {p2, v0}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
+
+    iget-object v0, p0, Lcom/android/systemui/keyguard/KeyguardViewMediator;->mContext:Landroid/content/Context;
+
+    invoke-static {v0}, Lcom/android/keyguard/KeyguardRune;->isNationalRoaming(Landroid/content/Context;)Z
+
+    move-result v0
+
+    invoke-virtual {p2, v0}, Ljava/io/PrintWriter;->println(Z)V
+
     iget-object v0, p0, Lcom/android/systemui/keyguard/KeyguardViewMediator;->mKnoxStateMonitor:Lcom/android/keyguard/KnoxStateMonitor;
 
     invoke-virtual {v0, p1, p2, p3}, Lcom/android/keyguard/KnoxStateMonitor;->dump(Ljava/io/FileDescriptor;Ljava/io/PrintWriter;[Ljava/lang/String;)V
@@ -6215,6 +6227,15 @@
     goto :goto_0
 
     :cond_2
+    if-eqz p1, :cond_3
+
+    iget-object v0, p0, Lcom/android/systemui/keyguard/KeyguardViewMediator;->mStatusBarKeyguardViewManager:Lcom/android/systemui/statusbar/phone/StatusBarKeyguardViewManager;
+
+    invoke-virtual {v0}, Lcom/android/systemui/statusbar/phone/StatusBarKeyguardViewManager;->dismiss()V
+
+    goto :goto_1
+
+    :cond_3
     iget-object v0, p0, Lcom/android/systemui/keyguard/KeyguardViewMediator;->mStatusBarKeyguardViewManager:Lcom/android/systemui/statusbar/phone/StatusBarKeyguardViewManager;
 
     invoke-virtual {v0}, Lcom/android/systemui/statusbar/phone/StatusBarKeyguardViewManager;->instantCollapseNotificationPanel()V

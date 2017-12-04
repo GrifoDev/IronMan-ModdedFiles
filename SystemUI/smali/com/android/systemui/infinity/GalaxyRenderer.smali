@@ -432,7 +432,7 @@
 .end method
 
 .method public onAutoReset()V
-    .locals 8
+    .locals 6
 
     iget-object v2, p0, Lcom/android/systemui/infinity/GalaxyRenderer;->particleSystem:Lcom/android/systemui/infinity/particle/GalaxyParticleSystem;
 
@@ -452,29 +452,6 @@
 
     invoke-virtual {v2, v0, v1, v4, v5}, Lcom/android/systemui/infinity/particle/GalaxyParticleSystem;->changeAutoResetRotateValue(FFJ)V
 
-    iget-boolean v2, p0, Lcom/android/systemui/infinity/GalaxyRenderer;->mAODBgOff:Z
-
-    if-nez v2, :cond_0
-
-    iget-object v2, p0, Lcom/android/systemui/infinity/GalaxyRenderer;->smokeSystem:Lcom/android/systemui/infinity/smoke/SmokeSystem;
-
-    invoke-static {}, Ljava/lang/Math;->random()D
-
-    move-result-wide v4
-
-    const-wide/high16 v6, 0x4008000000000000L    # 3.0
-
-    mul-double/2addr v4, v6
-
-    double-to-int v3, v4
-
-    invoke-virtual {v2, v3}, Lcom/android/systemui/infinity/smoke/SmokeSystem;->setIndex(I)V
-
-    iget-object v2, p0, Lcom/android/systemui/infinity/GalaxyRenderer;->smokeSystem:Lcom/android/systemui/infinity/smoke/SmokeSystem;
-
-    invoke-virtual {v2}, Lcom/android/systemui/infinity/smoke/SmokeSystem;->showSmoke()V
-
-    :cond_0
     return-void
 .end method
 
@@ -748,13 +725,14 @@
 
     invoke-virtual {v2}, Lcom/android/systemui/infinity/tangram/TangramSystem;->hide()V
 
-    if-eqz p1, :cond_0
+    iget-object v2, p0, Lcom/android/systemui/infinity/GalaxyRenderer;->smokeSystem:Lcom/android/systemui/infinity/smoke/SmokeSystem;
+
+    invoke-virtual {v2, p1}, Lcom/android/systemui/infinity/smoke/SmokeSystem;->setIsPlugged(Z)V
 
     iget-object v2, p0, Lcom/android/systemui/infinity/GalaxyRenderer;->smokeSystem:Lcom/android/systemui/infinity/smoke/SmokeSystem;
 
     invoke-virtual {v2}, Lcom/android/systemui/infinity/smoke/SmokeSystem;->showSmoke()V
 
-    :cond_0
     iget-object v2, p0, Lcom/android/systemui/infinity/GalaxyRenderer;->particleSystem:Lcom/android/systemui/infinity/particle/GalaxyParticleSystem;
 
     iget v0, v2, Lcom/android/systemui/infinity/particle/GalaxyParticleSystem;->currentOffRotateValue:F
@@ -1061,6 +1039,23 @@
     invoke-virtual {v0}, Lcom/altamirasoft/glanimationutil/GLEasingHelper;->pause()V
 
     :cond_0
+    return-void
+.end method
+
+.method public requestDrawFrame()V
+    .locals 1
+
+    iget-object v0, p0, Lcom/android/systemui/infinity/GalaxyRenderer;->animatorManager:Lcom/altamirasoft/glanimationutil/GLAnimatorManager;
+
+    if-nez v0, :cond_0
+
+    return-void
+
+    :cond_0
+    iget-object v0, p0, Lcom/android/systemui/infinity/GalaxyRenderer;->animatorManager:Lcom/altamirasoft/glanimationutil/GLAnimatorManager;
+
+    invoke-virtual {v0}, Lcom/altamirasoft/glanimationutil/GLAnimatorManager;->doFrame()V
+
     return-void
 .end method
 

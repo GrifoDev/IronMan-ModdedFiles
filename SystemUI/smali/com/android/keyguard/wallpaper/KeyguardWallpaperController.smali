@@ -530,6 +530,10 @@
     :cond_0
     invoke-super {p0}, Lcom/android/keyguard/wallpaper/WallpaperViewController;->handleWallpaperTypeChanged()V
 
+    iget-object v3, p0, Lcom/android/keyguard/wallpaper/KeyguardWallpaperController;->mWallpaperView:Lcom/android/keyguard/wallpaper/SystemUIWallpaperBase;
+
+    iput-object v3, p0, Lcom/android/keyguard/wallpaper/KeyguardWallpaperController;->mWallpaperOldView:Lcom/android/keyguard/wallpaper/SystemUIWallpaperBase;
+
     iget-object v3, p0, Lcom/android/keyguard/wallpaper/KeyguardWallpaperController;->mContext:Landroid/content/Context;
 
     invoke-static {v3}, Lcom/android/keyguard/util/SettingsHelper;->getInstance(Landroid/content/Context;)Lcom/android/keyguard/util/SettingsHelper;
@@ -993,6 +997,14 @@
 
     invoke-super {p0, p1}, Lcom/android/keyguard/wallpaper/WallpaperViewController;->onUserSwitchComplete(I)V
 
+    iput p1, p0, Lcom/android/keyguard/wallpaper/KeyguardWallpaperController;->mCurrentUserId:I
+
+    invoke-virtual {p0}, Lcom/android/keyguard/wallpaper/KeyguardWallpaperController;->getLockWallpaperType()I
+
+    move-result v0
+
+    iput v0, p0, Lcom/android/keyguard/wallpaper/KeyguardWallpaperController;->mWallpaperType:I
+
     const-string/jumbo v0, "KeyguardWallpaperController"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -1009,13 +1021,23 @@
 
     move-result-object v1
 
+    const-string/jumbo v2, " type="
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    iget v2, p0, Lcom/android/keyguard/wallpaper/KeyguardWallpaperController;->mWallpaperType:I
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
     invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v1
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
-    iput p1, p0, Lcom/android/keyguard/wallpaper/KeyguardWallpaperController;->mCurrentUserId:I
 
     invoke-virtual {p0}, Lcom/android/keyguard/wallpaper/KeyguardWallpaperController;->handleWallpaperTypeChanged()V
 

@@ -238,6 +238,8 @@
     <string name="wifi_allow_scan_with_traffic_summary">Salli/estä Wi-Fi-verkkovierailuskannaus liittymässä esiintyvän dataliikenteen perusteella.</string>
     <string name="select_logd_size_title">Lokipuskurien koot</string>
     <string name="select_logd_size_dialog_title">Valitse puskurikohtaiset lokikoot</string>
+    <string name="dev_logpersist_clear_warning_title">Tyhjennä pysyvän lokityökalun tallennustila?</string>
+    <string name="dev_logpersist_clear_warning_message">Lokityökalun tiedot poistetaan, kun pysyvä lokityökalu poistetaan käytöstä.</string>
     <string name="select_logpersist_title">Tallenna lokitiedot pysyvästi</string>
     <string name="select_logpersist_dialog_title">Valitse lokipuskurit pysyvään tallennukseen</string>
     <string name="select_usb_configuration_title">Valitse USB-määritykset</string>
@@ -752,6 +754,7 @@ Operaattorisi voi veloittaa sinulta lisämaksun, jos jatkat tiedonsiirtoa."</str
     <string name="wifi_authentication_failed_kt">Wi-Fi-tukiaseman todennus epäonnistui.</string>
     <string name="wifi_authentication_no_response">Yhteyden muodostaminen Wi-Fi-tukiasemaan epäonnistui.</string>
     <string name="wifi_authentication_invalid_value">Todennus epäonnistui. Tarkista tunnus ja salasana.</string>
+    <string name="wifi_disconnected">Wi-Fi katkaistu.</string>
     <string name="quick_settings_dnd_label">Älä häiritse</string>
     <string name="quick_settings_dnd_priority_label">Vain tärkeät</string>
     <string name="quick_settings_dnd_alarms_label">Vain herätykset</string>
@@ -1385,8 +1388,8 @@ Lisätietoja saat järjestelmänvalvojaltasi."</string>
     <string name="keyboard_key_numpad_template">Numeronäppäimistö %1$s</string>
     <string name="keyboard_popup_help">Metanäppäin: Windows-näppäin, komentonäppäin tai muu käyttöjärjestelmän symbolinäppäin.</string>
     <string name="keyboard_shortcut_group_system">Järjestelmän pikavalinnat</string>
-    <string name="keyboard_shortcut_group_system_home">Aloitusnäyttö</string>
-    <string name="keyboard_shortcut_group_system_recents">Viimeaikaiset</string>
+    <string name="keyboard_shortcut_group_system_home">Etusivu</string>
+    <string name="keyboard_shortcut_group_system_recents">Viimeisimmät</string>
     <string name="keyboard_shortcut_group_system_back">Takaisin</string>
     <string name="keyboard_shortcut_group_system_notifications">Ilmoitukset</string>
     <string name="keyboard_shortcut_group_system_shortcuts_helper">Pikanäppäimet</string>
@@ -1655,7 +1658,9 @@ Ylikuumenemisen syynä voi olla
     <string name="battery_not_fully_connected_charging_title_vzw">Incomplete connection</string>
     <string name="battery_not_fully_connected_charging_text">Käytä lataamisen nopeuttamiseksi laitteen mukana toimitettua laturia ja varmista, että se on kytketty oikein.</string>
     <string name="battery_not_fully_connected_charging_text_vzw">Make sure the charger is properly connected.</string>
+    <string name="battery_not_fully_connected_charging_text_jpn">Varmista, että laturisi on kytketty oikein.</string>
     <string name="battery_not_fully_connected_charging_popup_text">Varmista, että laturi on kytketty oikein. Käytä laitteen mukana toimitettua laturia.</string>
+    <string name="battery_not_fully_connected_charging_popup_text_jpn">Varmista, että laturi on kytketty oikein.</string>
     <string name="battery_charging_level_and_time_text">"Ladataan: %1$d %%
 (Noin %2$s jäljellä ennen latautumista täyteen)"</string>
     <string name="battery_charging_level_text">Ladataan: %d%%</string>
@@ -1880,6 +1885,8 @@ Please note that in order to enable your emergency calls (e.g., such as 112 call
     <string name="qs_detail_palm_capture_title">Kuvaa pyyhkäisemällä kämmenellä</string>
     <string name="noti_direct_reply_exceed_text_limit_toast">Tekstiä ei enää voi lisätä.</string>
     <string name="airplane_mode_tts_text">Lentotila</string>
+    <string name="all_noti_readout">Yksi ilmoitus</string>
+    <string name="all_noti_readout2">%d ilmoitusta</string>
     <string name="car_lockscreen_disclaimer_title">Aja varovasti</string>
     <string name="car_lockscreen_disclaimer_text">Tarkkaile huolellisesti ajo-olosuhteita ja noudata aina voimassa olevia lakeja. Reittiohjeet saattavat olla epätarkkoja, epätäydellisiä, vaarallisia, epäsopivia, kiellettyjä tai kulkea hallintoalueiden läpi. Myös yritystiedot voivat olla epätarkkoja tai epätäydellisiä. Tietoja ei päivitetä reaaliajassa eikä sijaintien tarkkuutta taata. Älä käytä ajon aikana mobiililaitettasi tai sovelluksia, joita ei ole suunniteltu Android Autolle.</string>
     <string name="pip_close">Sulje PIP</string>

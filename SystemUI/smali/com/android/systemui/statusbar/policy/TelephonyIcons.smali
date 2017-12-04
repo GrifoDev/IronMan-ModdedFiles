@@ -3470,15 +3470,15 @@
     goto :goto_1
 
     :cond_23
-    const v1, 0x7f0206ba
+    const v1, 0x7f02071f
 
-    const v2, 0x7f0206bd
+    const v2, 0x7f020721
 
-    const v3, 0x7f0206c0
+    const v3, 0x7f020723
 
-    const v4, 0x7f0206c3
+    const v4, 0x7f020725
 
-    const v5, 0x7f0206c6
+    const v5, 0x7f020727
 
     filled-new-array {v1, v2, v3, v4, v5}, [I
 
@@ -3488,15 +3488,15 @@
 
     aput-object v1, v0, v2
 
-    const v1, 0x7f0206ba
+    const v1, 0x7f02071f
 
-    const v2, 0x7f0206bd
+    const v2, 0x7f020721
 
-    const v3, 0x7f0206c0
+    const v3, 0x7f020723
 
-    const v4, 0x7f0206c3
+    const v4, 0x7f020725
 
-    const v5, 0x7f0206c6
+    const v5, 0x7f020727
 
     :goto_1
     filled-new-array {v1, v2, v3, v4, v5}, [I
@@ -3539,37 +3539,21 @@
 
     new-array v0, v0, [[I
 
-    const v1, 0x7f020761
+    const/4 v1, 0x6
 
-    const v2, 0x7f020763
+    new-array v1, v1, [I
 
-    const v3, 0x7f020765
-
-    const v4, 0x7f020767
-
-    const v5, 0x7f020769
-
-    filled-new-array {v1, v2, v3, v4, v5}, [I
-
-    move-result-object v1
+    fill-array-data v1, :array_4
 
     const/4 v2, 0x0
 
     aput-object v1, v0, v2
 
-    const v1, 0x7f020755
+    const/4 v1, 0x6
 
-    const v2, 0x7f020757
+    new-array v1, v1, [I
 
-    const v3, 0x7f020759
-
-    const v4, 0x7f02075b
-
-    const v5, 0x7f02075d
-
-    filled-new-array {v1, v2, v3, v4, v5}, [I
-
-    move-result-object v1
+    fill-array-data v1, :array_5
 
     const/4 v2, 0x1
 
@@ -3597,7 +3581,7 @@
 
     new-array v0, v0, [I
 
-    fill-array-data v0, :array_4
+    fill-array-data v0, :array_6
 
     sput-object v0, Lcom/android/systemui/statusbar/policy/TelephonyIcons;->TELEPHONY_CTC_5_LEVEL_SIGNAL_STRENGTH:[I
 
@@ -3605,7 +3589,7 @@
 
     new-array v0, v0, [I
 
-    fill-array-data v0, :array_5
+    fill-array-data v0, :array_7
 
     sput-object v0, Lcom/android/systemui/statusbar/policy/TelephonyIcons;->TELEPHONY_CTC_SIGNAL_STRENGTH_TWO_LINE:[I
 
@@ -3613,7 +3597,7 @@
 
     new-array v0, v0, [I
 
-    fill-array-data v0, :array_6
+    fill-array-data v0, :array_8
 
     sput-object v0, Lcom/android/systemui/statusbar/policy/TelephonyIcons;->TELEPHONY_CTC_5_LEVEL_SIGNAL_STRENGTH_TWO_LINE:[I
 
@@ -3751,7 +3735,7 @@
 
     new-array v1, v1, [I
 
-    fill-array-data v1, :array_7
+    fill-array-data v1, :array_9
 
     const/4 v2, 0x0
 
@@ -3761,7 +3745,7 @@
 
     new-array v1, v1, [I
 
-    fill-array-data v1, :array_8
+    fill-array-data v1, :array_a
 
     const/4 v2, 0x1
 
@@ -5501,7 +5485,7 @@
 
     new-array v0, v0, [I
 
-    fill-array-data v0, :array_9
+    fill-array-data v0, :array_b
 
     sput-object v0, Lcom/android/systemui/statusbar/policy/TelephonyIcons;->PreferredSimIcon:[I
 
@@ -5549,6 +5533,26 @@
 
     :array_4
     .array-data 4
+        0x7f020763
+        0x7f020765
+        0x7f020767
+        0x7f020769
+        0x7f02076b
+        0x7f02076d
+    .end array-data
+
+    :array_5
+    .array-data 4
+        0x7f020755
+        0x7f020757
+        0x7f020759
+        0x7f02075b
+        0x7f02075d
+        0x7f02075f
+    .end array-data
+
+    :array_6
+    .array-data 4
         0x7f0206db
         0x7f0206dc
         0x7f0206dd
@@ -5557,7 +5561,7 @@
         0x7f0206e0
     .end array-data
 
-    :array_5
+    :array_7
     .array-data 4
         0x7f0206e1
         0x7f0206e2
@@ -5586,7 +5590,7 @@
         0x7f0206f9
     .end array-data
 
-    :array_6
+    :array_8
     .array-data 4
         0x7f0206fa
         0x7f0206fb
@@ -5626,27 +5630,27 @@
         0x7f02071d
     .end array-data
 
-    :array_7
-    .array-data 4
-        0x7f0206d5
-        0x7f0206d5
-        0x7f0206d5
-        0x7f0206d5
-        0x7f0206d5
-        0x7f0206d5
-    .end array-data
-
-    :array_8
-    .array-data 4
-        0x7f0206d5
-        0x7f0206d5
-        0x7f0206d5
-        0x7f0206d5
-        0x7f0206d5
-        0x7f0206d5
-    .end array-data
-
     :array_9
+    .array-data 4
+        0x7f0206d5
+        0x7f0206d5
+        0x7f0206d5
+        0x7f0206d5
+        0x7f0206d5
+        0x7f0206d5
+    .end array-data
+
+    :array_a
+    .array-data 4
+        0x7f0206d5
+        0x7f0206d5
+        0x7f0206d5
+        0x7f0206d5
+        0x7f0206d5
+        0x7f0206d5
+    .end array-data
+
+    :array_b
     .array-data 4
         0x7f0206ac
         0x7f0206ad
@@ -5694,7 +5698,7 @@
 
     if-eqz v1, :cond_0
 
-    const v0, 0x7f02075f
+    const v0, 0x7f020761
 
     :goto_0
     return v0

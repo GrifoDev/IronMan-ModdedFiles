@@ -238,6 +238,8 @@
     <string name="wifi_allow_scan_with_traffic_summary">Permet/No permetis cerques de xarxes Wi-Fi en itinerància basades en la quantitat de dades presents a la interfície</string>
     <string name="select_logd_size_title">Mides memòria intermèdia Logger</string>
     <string name="select_logd_size_dialog_title">Mida Logger per memòria intermèdia</string>
+    <string name="dev_logpersist_clear_warning_title">Esborrar emmagatzem registrad persistent?</string>
+    <string name="dev_logpersist_clear_warning_message">"S'esborrarà el registrador de dades quan el registrador persistent estigui desactivat."</string>
     <string name="select_logpersist_title">Emmagatz dades registre persist</string>
     <string name="select_logpersist_dialog_title">Sel mem intermèdia registre emmag persist</string>
     <string name="select_usb_configuration_title">Selecciona configuració USB</string>
@@ -752,6 +754,7 @@ Si el reprens, l'operador de telefonia mòbil pot aplicar càrrecs."</string>
     <string name="wifi_authentication_failed_kt">"No s'ha pogut autenticar el punt d'accés Wi-Fi."</string>
     <string name="wifi_authentication_no_response">"Error en connectar a un punt d'accés Wi-Fi."</string>
     <string name="wifi_authentication_invalid_value">"Error d'autenticació. Comprovi ID i contransenya."</string>
+    <string name="wifi_disconnected">Wi-Fi desconnectat</string>
     <string name="quick_settings_dnd_label">No molesteu</string>
     <string name="quick_settings_dnd_priority_label">Només amb prioritat</string>
     <string name="quick_settings_dnd_alarms_label">Només alarmes</string>
@@ -1387,7 +1390,7 @@ Per obtenir més informació, contacta amb l'administrador."</string>
     <string name="keyboard_shortcut_group_system_recents">Recents</string>
     <string name="keyboard_shortcut_group_system_back">Tornar</string>
     <string name="keyboard_shortcut_group_system_notifications">Notificacions</string>
-    <string name="keyboard_shortcut_group_system_shortcuts_helper">Tecles de drecera</string>
+    <string name="keyboard_shortcut_group_system_shortcuts_helper">Accessos directes del teclat</string>
     <string name="keyboard_shortcut_group_system_switch_input">"Canvia el mètode d'introducció"</string>
     <string name="keyboard_shortcut_group_system_all_apps">Totes les aplicacions</string>
     <string name="keyboard_shortcut_group_system_running_apps">Aplicacions en curs</string>
@@ -1653,7 +1656,9 @@ El sobreescalfament pot ser causat per:
     <string name="battery_not_fully_connected_charging_title_vzw">Incomplete connection</string>
     <string name="battery_not_fully_connected_charging_text">"Perquè es carregui més ràpidament, utilitzi el carregador incorporat amb el dispositiu i asseguri's que està connectat correctament."</string>
     <string name="battery_not_fully_connected_charging_text_vzw">Make sure the charger is properly connected.</string>
+    <string name="battery_not_fully_connected_charging_text_jpn">"Assegura't que el carregador està connectat correctament."</string>
     <string name="battery_not_fully_connected_charging_popup_text">"Asseguri's que el carregador està connectat correctament. Utilitzi el carregador incorporat amb el dispositiu."</string>
+    <string name="battery_not_fully_connected_charging_popup_text_jpn">"Asseguri's que el carregador està connectat correctament."</string>
     <string name="battery_charging_level_and_time_text">"Carregant: %1$d%%
 (Aproximadament %2$s fins que estigui completament carregat)"</string>
     <string name="battery_charging_level_text">Carregant: %d%%</string>
@@ -1878,6 +1883,8 @@ Please note that in order to enable your emergency calls (e.g., such as 112 call
     <string name="qs_detail_palm_capture_title">Desplaci palmell per capturar</string>
     <string name="noti_direct_reply_exceed_text_limit_toast">No es pot introduir més text.</string>
     <string name="airplane_mode_tts_text">Mode Avió</string>
+    <string name="all_noti_readout">Una notificació</string>
+    <string name="all_noti_readout2">%d notificacions</string>
     <string name="car_lockscreen_disclaimer_title">Condueix amb precaució</string>
     <string name="car_lockscreen_disclaimer_text">"Estigues al cas de la conducció i respecta sempre les lleis aplicables. Les indicacions poden ser inexactes, perilloses, inadequades o incompletes, o bé poden comportar maniobres prohibides o que creuis circumscripcions territorials. La informació de les empreses també pot ser inexacta o incompleta. No s'ofereixen dades en temps real i no es pot garantir la precisió de les ubicacions. Mentre condueixes, no utilitzis el dispositiu mòbil ni cap aplicació que no estigui destinada a Android Auto."</string>
     <string name="pip_close">Tanca PIP</string>

@@ -316,7 +316,7 @@
 
     move-result-object v0
 
-    const v3, 0x7f130499
+    const v3, 0x7f13049b
 
     invoke-virtual {p0, v3}, Lcom/android/systemui/settings/ToggleSlider;->findViewById(I)Landroid/view/View;
 
@@ -332,7 +332,7 @@
 
     invoke-virtual {v3, v4}, Landroid/widget/CompoundButton;->setOnCheckedChangeListener(Landroid/widget/CompoundButton$OnCheckedChangeListener;)V
 
-    const v3, 0x7f130496
+    const v3, 0x7f130498
 
     invoke-virtual {p0, v3}, Lcom/android/systemui/settings/ToggleSlider;->findViewById(I)Landroid/view/View;
 
@@ -398,7 +398,7 @@
 
     invoke-virtual {v3, v4}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    const v3, 0x7f130497
+    const v3, 0x7f130499
 
     invoke-virtual {p0, v3}, Lcom/android/systemui/settings/ToggleSlider;->findViewById(I)Landroid/view/View;
 
@@ -745,6 +745,36 @@
     return v2
 .end method
 
+.method public enableToggleSlider(Z)V
+    .locals 1
+
+    iget-object v0, p0, Lcom/android/systemui/settings/ToggleSlider;->mSlider:Lcom/android/systemui/settings/ToggleSeekBar;
+
+    if-eqz v0, :cond_0
+
+    iget-object v0, p0, Lcom/android/systemui/settings/ToggleSlider;->mSlider:Lcom/android/systemui/settings/ToggleSeekBar;
+
+    invoke-virtual {v0, p1}, Lcom/android/systemui/settings/ToggleSeekBar;->setEnabled(Z)V
+
+    :cond_0
+    iget-object v0, p0, Lcom/android/systemui/settings/ToggleSlider;->mMirror:Lcom/android/systemui/settings/ToggleSlider;
+
+    if-eqz v0, :cond_1
+
+    iget-object v0, p0, Lcom/android/systemui/settings/ToggleSlider;->mMirror:Lcom/android/systemui/settings/ToggleSlider;
+
+    iput-boolean p1, v0, Lcom/android/systemui/settings/ToggleSlider;->mTouchEnabled:Z
+
+    iget-object v0, p0, Lcom/android/systemui/settings/ToggleSlider;->mMirror:Lcom/android/systemui/settings/ToggleSlider;
+
+    iget-object v0, v0, Lcom/android/systemui/settings/ToggleSlider;->mSlider:Lcom/android/systemui/settings/ToggleSeekBar;
+
+    invoke-virtual {v0, p1}, Lcom/android/systemui/settings/ToggleSeekBar;->setEnabled(Z)V
+
+    :cond_1
+    return-void
+.end method
+
 .method protected onAttachedToWindow()V
     .locals 2
 
@@ -1084,7 +1114,7 @@
 
     iget-object v1, v1, Lcom/android/systemui/settings/ToggleSlider;->mSlider:Lcom/android/systemui/settings/ToggleSeekBar;
 
-    const v2, 0x7f0207e8
+    const v2, 0x7f0207ec
 
     invoke-virtual {v0, v2, v3}, Landroid/content/res/Resources;->getDrawable(ILandroid/content/res/Resources$Theme;)Landroid/graphics/drawable/Drawable;
 

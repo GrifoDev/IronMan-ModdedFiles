@@ -187,9 +187,9 @@
 .method public constructor <init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
     .locals 6
 
-    const v5, 0x7f0d0376
+    const v5, 0x7f0d0378
 
-    const v4, 0x7f0d0375
+    const v4, 0x7f0d0377
 
     const/4 v1, 0x0
 
@@ -905,7 +905,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f0d0039
+    const v1, 0x7f0d003b
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -917,7 +917,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f0d003a
+    const v1, 0x7f0d003c
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -929,7 +929,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f0d003b
+    const v1, 0x7f0d003d
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -941,7 +941,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f0d003c
+    const v1, 0x7f0d003e
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -977,7 +977,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f0d0375
+    const v1, 0x7f0d0377
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -989,7 +989,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f0d0376
+    const v1, 0x7f0d0378
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 

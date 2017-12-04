@@ -37,7 +37,7 @@
 .method public onCheckedChanged(Landroid/widget/CompoundButton;Z)V
     .locals 8
 
-    const v6, 0x7f0f081a
+    const v6, 0x7f0f081d
 
     const/4 v7, 0x0
 
@@ -296,7 +296,7 @@
 
     move-result-object v5
 
-    const v6, 0x7f0f0819
+    const v6, 0x7f0f081c
 
     invoke-virtual {v5, v6}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 

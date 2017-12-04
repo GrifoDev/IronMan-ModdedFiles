@@ -70,11 +70,11 @@
 
 .field public static final ic_wallpapers_motion:I = 0x7f020270
 
-.field public static final indicator_code_lock_point_area_default_holo:I = 0x7f02084a
+.field public static final indicator_code_lock_point_area_default_holo:I = 0x7f02084e
 
-.field public static final indicator_code_lock_point_area_green_holo:I = 0x7f02084b
+.field public static final indicator_code_lock_point_area_green_holo:I = 0x7f02084f
 
-.field public static final indicator_code_lock_point_area_red_holo:I = 0x7f02084c
+.field public static final indicator_code_lock_point_area_red_holo:I = 0x7f020850
 
 .field public static final iris_ic_cancel:I = 0x7f02029e
 
@@ -128,25 +128,25 @@
 
 .field public static final pin_lock_btn_back_whitebg:I = 0x7f0203a6
 
-.field public static final pin_number_image_0:I = 0x7f020840
+.field public static final pin_number_image_0:I = 0x7f020844
 
-.field public static final pin_number_image_1:I = 0x7f020841
+.field public static final pin_number_image_1:I = 0x7f020845
 
-.field public static final pin_number_image_2:I = 0x7f020842
+.field public static final pin_number_image_2:I = 0x7f020846
 
-.field public static final pin_number_image_3:I = 0x7f020843
+.field public static final pin_number_image_3:I = 0x7f020847
 
-.field public static final pin_number_image_4:I = 0x7f020844
+.field public static final pin_number_image_4:I = 0x7f020848
 
-.field public static final pin_number_image_5:I = 0x7f020845
+.field public static final pin_number_image_5:I = 0x7f020849
 
-.field public static final pin_number_image_6:I = 0x7f020846
+.field public static final pin_number_image_6:I = 0x7f02084a
 
-.field public static final pin_number_image_7:I = 0x7f020847
+.field public static final pin_number_image_7:I = 0x7f02084b
 
-.field public static final pin_number_image_8:I = 0x7f020848
+.field public static final pin_number_image_8:I = 0x7f02084c
 
-.field public static final pin_number_image_9:I = 0x7f020849
+.field public static final pin_number_image_9:I = 0x7f02084d
 
 .field public static final rainline:I = 0x7f020499
 
@@ -180,7 +180,7 @@
 
 .field public static final servicebox_today_no_event_ripple_dark:I = 0x7f0205f3
 
-.field public static final theme_textclock_bg_image:I = 0x7f0207c9
+.field public static final theme_textclock_bg_image:I = 0x7f0207cd
 
 
 # direct methods

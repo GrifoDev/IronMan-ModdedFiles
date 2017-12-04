@@ -61,6 +61,10 @@
 
     iget-object v1, p0, Lcom/android/systemui/statusbar/phone/PhoneStatusBar$100;->this$0:Lcom/android/systemui/statusbar/phone/PhoneStatusBar;
 
+    invoke-virtual {v1}, Lcom/android/systemui/statusbar/phone/PhoneStatusBar;->closeContextMenu()V
+
+    iget-object v1, p0, Lcom/android/systemui/statusbar/phone/PhoneStatusBar$100;->this$0:Lcom/android/systemui/statusbar/phone/PhoneStatusBar;
+
     invoke-static {v1}, Lcom/android/systemui/statusbar/phone/PhoneStatusBar;->-get18(Lcom/android/systemui/statusbar/phone/PhoneStatusBar;)Lcom/android/systemui/statusbar/phone/taskbar/desk/DeskPanel;
 
     move-result-object v1
@@ -93,10 +97,6 @@
     move-result-object v1
 
     if-eqz v1, :cond_1
-
-    iget-object v1, p0, Lcom/android/systemui/statusbar/phone/PhoneStatusBar$100;->this$0:Lcom/android/systemui/statusbar/phone/PhoneStatusBar;
-
-    invoke-virtual {v1}, Lcom/android/systemui/statusbar/phone/PhoneStatusBar;->closeContextMenu()V
 
     iget-object v1, p0, Lcom/android/systemui/statusbar/phone/PhoneStatusBar$100;->this$0:Lcom/android/systemui/statusbar/phone/PhoneStatusBar;
 

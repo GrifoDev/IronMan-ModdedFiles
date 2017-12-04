@@ -647,7 +647,7 @@
 
     iget-object v1, p0, Lcom/android/keyguard/KeyguardPatternView;->mContext:Landroid/content/Context;
 
-    const v2, 0x1040a31
+    const v2, 0x1040a32
 
     invoke-virtual {v1, v2}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -983,69 +983,41 @@
 .end method
 
 .method private updateLayout()V
-    .locals 5
+    .locals 6
 
-    const/4 v4, 0x0
+    const/4 v5, 0x0
 
-    iget-object v1, p0, Lcom/android/keyguard/KeyguardPatternView;->mLockPatternView:Lcom/android/keyguard/LockDecoPatternView;
+    iget-object v2, p0, Lcom/android/keyguard/KeyguardPatternView;->mLockPatternView:Lcom/android/keyguard/LockDecoPatternView;
 
-    if-eqz v1, :cond_0
+    if-eqz v2, :cond_0
 
-    iget-object v1, p0, Lcom/android/keyguard/KeyguardPatternView;->mSecurityView:Landroid/widget/LinearLayout;
+    iget-object v2, p0, Lcom/android/keyguard/KeyguardPatternView;->mSecurityView:Landroid/widget/LinearLayout;
 
-    if-eqz v1, :cond_0
+    if-eqz v2, :cond_0
 
-    iget-object v1, p0, Lcom/android/keyguard/KeyguardPatternView;->mLockPatternView:Lcom/android/keyguard/LockDecoPatternView;
+    iget-object v2, p0, Lcom/android/keyguard/KeyguardPatternView;->mLockPatternView:Lcom/android/keyguard/LockDecoPatternView;
 
-    invoke-virtual {v1}, Lcom/android/keyguard/LockDecoPatternView;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
+    invoke-virtual {v2}, Lcom/android/keyguard/LockDecoPatternView;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
+
+    move-result-object v1
+
+    check-cast v1, Landroid/widget/FrameLayout$LayoutParams;
+
+    iget-object v2, p0, Lcom/android/keyguard/KeyguardPatternView;->mEcaView:Landroid/view/View;
+
+    invoke-virtual {v2}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
 
     move-result-object v0
 
-    check-cast v0, Landroid/widget/FrameLayout$LayoutParams;
+    check-cast v0, Landroid/widget/LinearLayout$LayoutParams;
 
-    iget-object v1, p0, Lcom/android/keyguard/KeyguardPatternView;->mKeyguardUpdateMonitor:Lcom/android/keyguard/KeyguardUpdateMonitor;
+    iget-object v2, p0, Lcom/android/keyguard/KeyguardPatternView;->mKeyguardUpdateMonitor:Lcom/android/keyguard/KeyguardUpdateMonitor;
 
-    invoke-virtual {v1}, Lcom/android/keyguard/KeyguardUpdateMonitor;->isDesktopMode()Z
+    invoke-virtual {v2}, Lcom/android/keyguard/KeyguardUpdateMonitor;->isDesktopMode()Z
 
-    move-result v1
+    move-result v2
 
-    if-eqz v1, :cond_1
-
-    iget-object v1, p0, Lcom/android/keyguard/KeyguardPatternView;->mContext:Landroid/content/Context;
-
-    invoke-virtual {v1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
-
-    move-result-object v1
-
-    sget v2, Lcom/android/keyguard/R$dimen;->kg_dex_pattern_lock_pattern_view_width:I
-
-    invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
-
-    move-result v1
-
-    iput v1, v0, Landroid/widget/FrameLayout$LayoutParams;->width:I
-
-    iget-object v1, p0, Lcom/android/keyguard/KeyguardPatternView;->mContext:Landroid/content/Context;
-
-    invoke-virtual {v1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
-
-    move-result-object v1
-
-    sget v2, Lcom/android/keyguard/R$dimen;->kg_dex_pattern_lock_pattern_view_hieight:I
-
-    invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
-
-    move-result v1
-
-    iput v1, v0, Landroid/widget/FrameLayout$LayoutParams;->height:I
-
-    iget-object v1, p0, Lcom/android/keyguard/KeyguardPatternView;->mSecurityView:Landroid/widget/LinearLayout;
-
-    const/16 v2, 0x30
-
-    invoke-virtual {v1, v2}, Landroid/widget/LinearLayout;->setGravity(I)V
-
-    iget-object v1, p0, Lcom/android/keyguard/KeyguardPatternView;->mSecurityView:Landroid/widget/LinearLayout;
+    if-eqz v2, :cond_1
 
     iget-object v2, p0, Lcom/android/keyguard/KeyguardPatternView;->mContext:Landroid/content/Context;
 
@@ -1053,60 +1025,102 @@
 
     move-result-object v2
 
-    sget v3, Lcom/android/keyguard/R$dimen;->kg_dex_pattern_view_padding_top:I
+    sget v3, Lcom/android/keyguard/R$dimen;->kg_dex_pattern_lock_pattern_view_width:I
 
     invoke-virtual {v2, v3}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
     move-result v2
 
-    invoke-virtual {v1, v4, v2, v4, v4}, Landroid/widget/LinearLayout;->setPadding(IIII)V
+    iput v2, v1, Landroid/widget/FrameLayout$LayoutParams;->width:I
+
+    iget-object v2, p0, Lcom/android/keyguard/KeyguardPatternView;->mContext:Landroid/content/Context;
+
+    invoke-virtual {v2}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
+
+    move-result-object v2
+
+    sget v3, Lcom/android/keyguard/R$dimen;->kg_dex_pattern_lock_pattern_view_hieight:I
+
+    invoke-virtual {v2, v3}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
+
+    move-result v2
+
+    iput v2, v1, Landroid/widget/FrameLayout$LayoutParams;->height:I
+
+    iget-object v2, p0, Lcom/android/keyguard/KeyguardPatternView;->mSecurityView:Landroid/widget/LinearLayout;
+
+    iget-object v3, p0, Lcom/android/keyguard/KeyguardPatternView;->mContext:Landroid/content/Context;
+
+    invoke-virtual {v3}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
+
+    move-result-object v3
+
+    sget v4, Lcom/android/keyguard/R$dimen;->kg_dex_pattern_view_padding_bottom:I
+
+    invoke-virtual {v3, v4}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
+
+    move-result v3
+
+    invoke-virtual {v2, v5, v5, v5, v3}, Landroid/widget/LinearLayout;->setPadding(IIII)V
+
+    iget-object v2, p0, Lcom/android/keyguard/KeyguardPatternView;->mContext:Landroid/content/Context;
+
+    invoke-virtual {v2}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
+
+    move-result-object v2
+
+    sget v3, Lcom/android/keyguard/R$dimen;->kg_dex_emergency_carrier_area_height:I
+
+    invoke-virtual {v2, v3}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
+
+    move-result v2
+
+    iput v2, v0, Landroid/widget/LinearLayout$LayoutParams;->height:I
 
     :goto_0
-    iget-object v1, p0, Lcom/android/keyguard/KeyguardPatternView;->mLockPatternView:Lcom/android/keyguard/LockDecoPatternView;
+    iget-object v2, p0, Lcom/android/keyguard/KeyguardPatternView;->mLockPatternView:Lcom/android/keyguard/LockDecoPatternView;
 
-    invoke-virtual {v1, v0}, Lcom/android/keyguard/LockDecoPatternView;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
+    invoke-virtual {v2, v1}, Lcom/android/keyguard/LockDecoPatternView;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
 
     :cond_0
     return-void
 
     :cond_1
-    iget-object v1, p0, Lcom/android/keyguard/KeyguardPatternView;->mContext:Landroid/content/Context;
+    iget-object v2, p0, Lcom/android/keyguard/KeyguardPatternView;->mContext:Landroid/content/Context;
 
-    invoke-virtual {v1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
+    invoke-virtual {v2}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
-    move-result-object v1
+    move-result-object v2
 
-    sget v2, Lcom/android/keyguard/R$dimen;->kg_pattern_lock_pattern_view_width:I
+    sget v3, Lcom/android/keyguard/R$dimen;->kg_pattern_lock_pattern_view_width:I
 
-    invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
+    invoke-virtual {v2, v3}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
-    move-result v1
+    move-result v2
 
-    iput v1, v0, Landroid/widget/FrameLayout$LayoutParams;->width:I
+    iput v2, v1, Landroid/widget/FrameLayout$LayoutParams;->width:I
 
-    iget-object v1, p0, Lcom/android/keyguard/KeyguardPatternView;->mContext:Landroid/content/Context;
+    iget-object v2, p0, Lcom/android/keyguard/KeyguardPatternView;->mContext:Landroid/content/Context;
 
-    invoke-virtual {v1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
+    invoke-virtual {v2}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
-    move-result-object v1
+    move-result-object v2
 
-    sget v2, Lcom/android/keyguard/R$dimen;->kg_pattern_lock_pattern_view_hieight:I
+    sget v3, Lcom/android/keyguard/R$dimen;->kg_pattern_lock_pattern_view_hieight:I
 
-    invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
+    invoke-virtual {v2, v3}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
-    move-result v1
+    move-result v2
 
-    iput v1, v0, Landroid/widget/FrameLayout$LayoutParams;->height:I
+    iput v2, v1, Landroid/widget/FrameLayout$LayoutParams;->height:I
 
-    iget-object v1, p0, Lcom/android/keyguard/KeyguardPatternView;->mSecurityView:Landroid/widget/LinearLayout;
+    iget-object v2, p0, Lcom/android/keyguard/KeyguardPatternView;->mSecurityView:Landroid/widget/LinearLayout;
 
-    const/16 v2, 0x50
+    invoke-virtual {v2, v5, v5, v5, v5}, Landroid/widget/LinearLayout;->setPadding(IIII)V
 
-    invoke-virtual {v1, v2}, Landroid/widget/LinearLayout;->setGravity(I)V
+    const/4 v2, -0x2
 
-    iget-object v1, p0, Lcom/android/keyguard/KeyguardPatternView;->mSecurityView:Landroid/widget/LinearLayout;
-
-    invoke-virtual {v1, v4, v4, v4, v4}, Landroid/widget/LinearLayout;->setPadding(IIII)V
+    iput v2, v0, Landroid/widget/LinearLayout$LayoutParams;->height:I
 
     goto :goto_0
 .end method

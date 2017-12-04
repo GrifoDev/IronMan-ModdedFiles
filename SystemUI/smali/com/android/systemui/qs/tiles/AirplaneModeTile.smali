@@ -937,7 +937,7 @@
 
     if-eqz v6, :cond_5
 
-    const v5, 0x7f0f04fe
+    const v5, 0x7f0f04ff
 
     :goto_1
     sget-boolean v6, Lcom/android/systemui/SystemUIRune;->IS_VZW_POPUP:Z
@@ -960,11 +960,11 @@
 
     if-eqz v6, :cond_8
 
-    const v5, 0x7f0f0504
+    const v5, 0x7f0f0505
 
     :cond_1
     :goto_2
-    const v6, 0x7f13054b
+    const v6, 0x7f13054d
 
     invoke-virtual {v0, v6}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -974,7 +974,7 @@
 
     invoke-virtual {v3, v5}, Landroid/widget/TextView;->setText(I)V
 
-    const v6, 0x7f13054c
+    const v6, 0x7f13054e
 
     invoke-virtual {v0, v6}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -1008,7 +1008,7 @@
 
     if-eqz v6, :cond_a
 
-    const v6, 0x7f0f04fd
+    const v6, 0x7f0f04fe
 
     :goto_4
     invoke-virtual {v7, v6}, Landroid/app/AlertDialog$Builder;->setTitle(I)Landroid/app/AlertDialog$Builder;
@@ -1101,7 +1101,7 @@
     goto/16 :goto_0
 
     :cond_5
-    const v5, 0x7f0f0501
+    const v5, 0x7f0f0502
 
     goto/16 :goto_1
 
@@ -1110,17 +1110,17 @@
 
     if-eqz v6, :cond_7
 
-    const v5, 0x7f0f0502
+    const v5, 0x7f0f0503
 
     goto/16 :goto_1
 
     :cond_7
-    const v5, 0x7f0f04fe
+    const v5, 0x7f0f04ff
 
     goto/16 :goto_1
 
     :cond_8
-    const v5, 0x7f0f0503
+    const v5, 0x7f0f0504
 
     goto/16 :goto_2
 
@@ -1132,7 +1132,7 @@
     goto/16 :goto_3
 
     :cond_a
-    const v6, 0x7f0f04fc
+    const v6, 0x7f0f04fd
 
     goto :goto_4
 
@@ -1480,7 +1480,7 @@
 
     iget-object v0, p0, Lcom/android/systemui/qs/tiles/AirplaneModeTile;->mContext:Landroid/content/Context;
 
-    const v2, 0x7f0f0505
+    const v2, 0x7f0f0506
 
     invoke-static {v0, v2, v1}, Landroid/widget/Toast;->makeText(Landroid/content/Context;II)Landroid/widget/Toast;
 
@@ -1625,7 +1625,7 @@
 
     iget-object v0, p0, Lcom/android/systemui/qs/tiles/AirplaneModeTile;->mContext:Landroid/content/Context;
 
-    const v3, 0x7f0f0507
+    const v3, 0x7f0f0508
 
     invoke-static {v0, v3, v1}, Landroid/widget/Toast;->makeText(Landroid/content/Context;II)Landroid/widget/Toast;
 

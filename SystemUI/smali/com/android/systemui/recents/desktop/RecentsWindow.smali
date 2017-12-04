@@ -156,7 +156,7 @@
 
     if-eqz v1, :cond_1
 
-    const v1, 0x7f0f06c2
+    const v1, 0x7f0f06c3
 
     invoke-interface {v0, v1}, Landroid/view/Menu;->add(I)Landroid/view/MenuItem;
 
@@ -177,7 +177,7 @@
     return-void
 
     :cond_2
-    const v1, 0x7f0f06bf
+    const v1, 0x7f0f06c0
 
     invoke-interface {v0, v1}, Landroid/view/Menu;->add(I)Landroid/view/MenuItem;
 
@@ -994,7 +994,7 @@
 
     iget-object v4, p0, Lcom/android/systemui/recents/desktop/RecentsWindow;->mRecentsButtonsContainer:Landroid/view/ViewGroup;
 
-    const v5, 0x7f13041d
+    const v5, 0x7f13041f
 
     invoke-virtual {v4, v5}, Landroid/view/ViewGroup;->findViewById(I)Landroid/view/View;
 
@@ -1002,7 +1002,7 @@
 
     iget-object v4, p0, Lcom/android/systemui/recents/desktop/RecentsWindow;->mRecentsButtonsContainer:Landroid/view/ViewGroup;
 
-    const v5, 0x7f130463
+    const v5, 0x7f130465
 
     invoke-virtual {v4, v5}, Landroid/view/ViewGroup;->findViewById(I)Landroid/view/View;
 
@@ -1089,7 +1089,7 @@
     :cond_3
     iget-object v4, p0, Lcom/android/systemui/recents/desktop/RecentsWindow;->mRecentsButtonsContainer:Landroid/view/ViewGroup;
 
-    const v5, 0x7f130463
+    const v5, 0x7f130465
 
     invoke-virtual {v4, v5}, Landroid/view/ViewGroup;->findViewById(I)Landroid/view/View;
 
@@ -1097,7 +1097,7 @@
 
     iget-object v4, p0, Lcom/android/systemui/recents/desktop/RecentsWindow;->mRecentsButtonsContainer:Landroid/view/ViewGroup;
 
-    const v5, 0x7f13041d
+    const v5, 0x7f13041f
 
     invoke-virtual {v4, v5}, Landroid/view/ViewGroup;->findViewById(I)Landroid/view/View;
 
@@ -1516,10 +1516,10 @@
 
     :sswitch_data_0
     .sparse-switch
-        0x7f130422 -> :sswitch_3
-        0x7f130460 -> :sswitch_1
-        0x7f130461 -> :sswitch_2
-        0x7f130464 -> :sswitch_0
+        0x7f130424 -> :sswitch_3
+        0x7f130462 -> :sswitch_1
+        0x7f130463 -> :sswitch_2
+        0x7f130466 -> :sswitch_0
     .end sparse-switch
 .end method
 
@@ -1558,7 +1558,7 @@
 
     invoke-virtual {v1, v2}, Landroid/widget/FrameLayout;->setOnTouchListener(Landroid/view/View$OnTouchListener;)V
 
-    const v1, 0x7f13045e
+    const v1, 0x7f130460
 
     invoke-virtual {p0, v1}, Lcom/android/systemui/recents/desktop/RecentsWindow;->findViewById(I)Landroid/view/View;
 
@@ -1578,7 +1578,7 @@
 
     invoke-virtual {v1, v2}, Lcom/android/systemui/recents/desktop/views/RecentsWindowView;->bindViews(Landroid/view/ViewGroup;)V
 
-    const v1, 0x7f13041c
+    const v1, 0x7f13041e
 
     invoke-virtual {p0, v1}, Lcom/android/systemui/recents/desktop/RecentsWindow;->findViewById(I)Landroid/view/View;
 
@@ -1588,7 +1588,7 @@
 
     iput-object v1, p0, Lcom/android/systemui/recents/desktop/RecentsWindow;->mRecentsButtonsContainer:Landroid/view/ViewGroup;
 
-    const v1, 0x7f130464
+    const v1, 0x7f130466
 
     invoke-virtual {p0, v1}, Lcom/android/systemui/recents/desktop/RecentsWindow;->findViewById(I)Landroid/view/View;
 
@@ -1602,7 +1602,7 @@
 
     invoke-virtual {v1, p0}, Landroid/widget/Button;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    const v1, 0x7f130422
+    const v1, 0x7f130424
 
     invoke-virtual {p0, v1}, Lcom/android/systemui/recents/desktop/RecentsWindow;->findViewById(I)Landroid/view/View;
 
@@ -1660,7 +1660,7 @@
 
     iget-object v1, p0, Lcom/android/systemui/recents/desktop/RecentsWindow;->mRecentsButtonsContainer:Landroid/view/ViewGroup;
 
-    const v2, 0x7f13041f
+    const v2, 0x7f130421
 
     invoke-virtual {v1, v2}, Landroid/view/ViewGroup;->findViewById(I)Landroid/view/View;
 
@@ -1680,7 +1680,7 @@
 
     iget-object v1, p0, Lcom/android/systemui/recents/desktop/RecentsWindow;->mRecentsButtonsContainer:Landroid/view/ViewGroup;
 
-    const v2, 0x7f13041e
+    const v2, 0x7f130420
 
     invoke-virtual {v1, v2}, Landroid/view/ViewGroup;->findViewById(I)Landroid/view/View;
 
@@ -1699,7 +1699,7 @@
     invoke-virtual {v1, v2}, Landroid/widget/Button;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
     :cond_0
-    const v1, 0x7f13045f
+    const v1, 0x7f130461
 
     invoke-virtual {p0, v1}, Lcom/android/systemui/recents/desktop/RecentsWindow;->findViewById(I)Landroid/view/View;
 
@@ -1709,7 +1709,7 @@
 
     iput-object v1, p0, Lcom/android/systemui/recents/desktop/RecentsWindow;->mScrollButtonContainer:Landroid/widget/LinearLayout;
 
-    const v1, 0x7f130460
+    const v1, 0x7f130462
 
     invoke-virtual {p0, v1}, Lcom/android/systemui/recents/desktop/RecentsWindow;->findViewById(I)Landroid/view/View;
 
@@ -1725,7 +1725,7 @@
 
     invoke-virtual {v1, v5}, Landroid/view/View;->semSetHoverPopupType(I)V
 
-    const v1, 0x7f130461
+    const v1, 0x7f130463
 
     invoke-virtual {p0, v1}, Lcom/android/systemui/recents/desktop/RecentsWindow;->findViewById(I)Landroid/view/View;
 
@@ -1741,7 +1741,7 @@
 
     invoke-virtual {v1, v5}, Landroid/view/View;->semSetHoverPopupType(I)V
 
-    const v1, 0x7f130462
+    const v1, 0x7f130464
 
     invoke-virtual {p0, v1}, Lcom/android/systemui/recents/desktop/RecentsWindow;->findViewById(I)Landroid/view/View;
 

@@ -238,6 +238,8 @@
     <string name="wifi_allow_scan_with_traffic_summary">‏התר/מנע סריקות נדידה של Wi-Fi בהתבסס על נפח תנועת הנתונים הקיימת בממשק</string>
     <string name="select_logd_size_title">גדלי מאגר של יוצר יומן</string>
     <string name="select_logd_size_dialog_title">בחר גדלים של יוצר יומן לכל מאגר יומן</string>
+    <string name="dev_logpersist_clear_warning_title">האם לנקות אחסון יומן שנותר?</string>
+    <string name="dev_logpersist_clear_warning_message">נתוני הרישום ביומן יימחקו כאשר רושם היומן המשתייר יכבה.</string>
     <string name="select_logpersist_title">שמור נתוני יומן לצמיתות</string>
     <string name="select_logpersist_dialog_title">בחר מאגרי יומנים לשמירת קבע</string>
     <string name="select_usb_configuration_title">‏בחר תצורת USB</string>
@@ -752,6 +754,7 @@ For example, your ringtone will not sound, you will not be able to answer phone 
     <string name="wifi_authentication_failed_kt">נכשל אימות נקודת גישה של Wi-Fi.</string>
     <string name="wifi_authentication_no_response">נכשלה ההתחברות לנקודת גישה של Wi-Fi.</string>
     <string name="wifi_authentication_invalid_value">Authentication failed. Check ID and password.</string>
+    <string name="wifi_disconnected">‏Wi-Fi מנותק.</string>
     <string name="quick_settings_dnd_label">נא לא להפריע</string>
     <string name="quick_settings_dnd_priority_label">עדיפות בלבד</string>
     <string name="quick_settings_dnd_alarms_label">התראות בלבד</string>
@@ -1382,11 +1385,11 @@ Turn on Airplane mode?"</string>
     <string name="keyboard_key_numpad_template">מקלדת נומרית %1$s</string>
     <string name="keyboard_popup_help">מטא-מקש: המקש עם סמל Windows, סמל של פקודה או סמל של מערכת הפעלה אחרת.</string>
     <string name="keyboard_shortcut_group_system">קיצורי דרך של המערכת</string>
-    <string name="keyboard_shortcut_group_system_home">דף הבית</string>
+    <string name="keyboard_shortcut_group_system_home">בית</string>
     <string name="keyboard_shortcut_group_system_recents">אחרונים</string>
     <string name="keyboard_shortcut_group_system_back">חזרה</string>
-    <string name="keyboard_shortcut_group_system_notifications">הודעות</string>
-    <string name="keyboard_shortcut_group_system_shortcuts_helper">מקשי קיצור במקלדת</string>
+    <string name="keyboard_shortcut_group_system_notifications">התראות</string>
+    <string name="keyboard_shortcut_group_system_shortcuts_helper">קיצורי מקלדת</string>
     <string name="keyboard_shortcut_group_system_switch_input">החלפת שיטת קלט</string>
     <string name="keyboard_shortcut_group_system_all_apps">כל היישומים</string>
     <string name="keyboard_shortcut_group_system_running_apps">יישומים פעילים</string>
@@ -1400,7 +1403,7 @@ Turn on Airplane mode?"</string>
     <string name="keyboard_shortcut_group_applications_im">שליחת הודעות מיידיות</string>
     <string name="keyboard_shortcut_group_applications_music">מוסיקה</string>
     <string name="keyboard_shortcut_group_applications_youtube">‏YouTube</string>
-    <string name="keyboard_shortcut_group_applications_calendar">יומן</string>
+    <string name="keyboard_shortcut_group_applications_calendar">לוח שנה</string>
     <string name="keyboard_shortcut_group_applications_bixby">Bixby</string>
     <string name="keyboard_shortcut_group_applications_messages">הודעות</string>
     <string name="tuner_full_zen_title">הצג עם פקדי עוצמת הקול</string>
@@ -1652,7 +1655,9 @@ Using your tablet in a very hot location."</string>
     <string name="battery_not_fully_connected_charging_title_vzw">Incomplete connection</string>
     <string name="battery_not_fully_connected_charging_text">לטעינה מהירה יותר, השתמש במטען שנמכר יחד עם המכשיר שברשותך ואל תשכח לוודא שהוא מחובר כיאות.</string>
     <string name="battery_not_fully_connected_charging_text_vzw">Make sure the charger is properly connected.</string>
+    <string name="battery_not_fully_connected_charging_text_jpn">ודא שהמטען מחובר כיאות.</string>
     <string name="battery_not_fully_connected_charging_popup_text">ודא שהמטען מחובר כיאות. השתמש במטען שנמכר יחד עם המכשיר.</string>
+    <string name="battery_not_fully_connected_charging_popup_text_jpn">ודא שהמטען מחובר כיאות.</string>
     <string name="battery_charging_level_and_time_text">"טוען: %1$d%%‏
 (עוד %2$s בקירוב עד לטעינה מלאה)"</string>
     <string name="battery_charging_level_text">טוען: %d%%</string>
@@ -1876,6 +1881,8 @@ Please note that in order to enable your emergency calls (e.g., such as 112 call
     <string name="qs_detail_palm_capture_title">החלק בעזרת כף היד ללכידה</string>
     <string name="noti_direct_reply_exceed_text_limit_toast">לא ניתן להוסיף עוד טקסט.</string>
     <string name="airplane_mode_tts_text">"מצב 'טיסה'"</string>
+    <string name="all_noti_readout">התראה אחת</string>
+    <string name="all_noti_readout2">%d התראות</string>
     <string name="car_lockscreen_disclaimer_title">נסיעה בטוחה</string>
     <string name="car_lockscreen_disclaimer_text">‏שמור על עירנות לתנאי הנסיעה וציית תמיד לכללים והחוקים. ייתכן שהמסלול לא מדויק, לא שלם, מסוכן, לא מתאים, אסור למעבר או כרוך בחציית אזורים מנהליים. ייתכן גם שחלק מהמידע העסקי לא מדויק או לא שלם. הנתונים אינם מדווחים בזמן אמת ולא ניתן להבטיח דיוק במיקום. אל תתעסק במכשיר הנייד ואל תשתמש באפליקציות שאינן מיועדות ל-Android Auto בזמן הנהיגה.</string>
     <string name="pip_close">‏סגור PIP</string>

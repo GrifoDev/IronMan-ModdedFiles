@@ -3,7 +3,7 @@
 .source "KeyguardDirectionLockView.java"
 
 # interfaces
-.implements Lcom/android/keyguard/util/SettingsHelper$OnChangedCallback;
+.implements Landroid/animation/ValueAnimator$AnimatorUpdateListener;
 
 
 # annotations
@@ -34,46 +34,45 @@
 
 
 # virtual methods
-.method public onChanged(Landroid/net/Uri;)V
-    .locals 4
+.method public onAnimationUpdate(Landroid/animation/ValueAnimator;)V
+    .locals 3
 
-    const-string/jumbo v0, "white_lockscreen_wallpaper"
+    invoke-virtual {p1}, Landroid/animation/ValueAnimator;->getAnimatedValue()Ljava/lang/Object;
 
-    invoke-static {v0}, Landroid/provider/Settings$System;->getUriFor(Ljava/lang/String;)Landroid/net/Uri;
+    move-result-object v2
+
+    check-cast v2, Ljava/lang/Float;
+
+    invoke-virtual {v2}, Ljava/lang/Float;->floatValue()F
+
+    move-result v1
+
+    iget-object v2, p0, Lcom/android/keyguard/KeyguardDirectionLockView$12;->this$0:Lcom/android/keyguard/KeyguardDirectionLockView;
+
+    invoke-static {v2}, Lcom/android/keyguard/KeyguardDirectionLockView;->-get11(Lcom/android/keyguard/KeyguardDirectionLockView;)Ljava/util/ArrayList;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
 
     move-result-object v0
 
-    invoke-virtual {p1, v0}, Landroid/net/Uri;->equals(Ljava/lang/Object;)Z
+    :goto_0
+    invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
 
-    move-result v0
+    move-result v2
 
-    if-eqz v0, :cond_0
+    if-eqz v2, :cond_0
 
-    iget-object v0, p0, Lcom/android/keyguard/KeyguardDirectionLockView$12;->this$0:Lcom/android/keyguard/KeyguardDirectionLockView;
+    invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
-    iget-object v1, p0, Lcom/android/keyguard/KeyguardDirectionLockView$12;->this$0:Lcom/android/keyguard/KeyguardDirectionLockView;
+    move-result-object v2
 
-    invoke-static {v1}, Lcom/android/keyguard/KeyguardDirectionLockView;->-get5(Lcom/android/keyguard/KeyguardDirectionLockView;)Landroid/content/Context;
+    check-cast v2, Landroid/widget/ImageView;
 
-    move-result-object v1
+    invoke-virtual {v2, v1}, Landroid/widget/ImageView;->setTranslationX(F)V
 
-    invoke-static {v1}, Lcom/android/keyguard/util/ViewStyleUtils;->getInstance(Landroid/content/Context;)Lcom/android/keyguard/util/ViewStyleUtils;
-
-    move-result-object v1
-
-    sget v2, Lcom/android/keyguard/R$drawable;->keyguard_direction_view_dot_circle:I
-
-    const/4 v3, 0x0
-
-    invoke-virtual {v1, v2, v3}, Lcom/android/keyguard/util/ViewStyleUtils;->updateImageStyle(II)Landroid/graphics/drawable/Drawable;
-
-    move-result-object v1
-
-    invoke-static {v0, v1}, Lcom/android/keyguard/KeyguardDirectionLockView;->-set2(Lcom/android/keyguard/KeyguardDirectionLockView;Landroid/graphics/drawable/Drawable;)Landroid/graphics/drawable/Drawable;
-
-    iget-object v0, p0, Lcom/android/keyguard/KeyguardDirectionLockView$12;->this$0:Lcom/android/keyguard/KeyguardDirectionLockView;
-
-    invoke-virtual {v0}, Lcom/android/keyguard/KeyguardDirectionLockView;->updateChildViewsLook()V
+    goto :goto_0
 
     :cond_0
     return-void

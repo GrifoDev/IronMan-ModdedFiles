@@ -876,97 +876,148 @@
 .end method
 
 .method private setAutoHomecityTimezone(Landroid/content/Context;)V
-    .locals 6
+    .locals 8
 
-    iget-object v3, p0, Lcom/android/keyguard/servicebox/pages/clock/KeyguardClockPage;->mContext:Landroid/content/Context;
+    iget-object v5, p0, Lcom/android/keyguard/servicebox/pages/clock/KeyguardClockPage;->mContext:Landroid/content/Context;
 
-    invoke-static {v3}, Lcom/android/keyguard/util/SettingsHelper;->getInstance(Landroid/content/Context;)Lcom/android/keyguard/util/SettingsHelper;
+    invoke-static {v5}, Lcom/android/keyguard/util/SettingsHelper;->getInstance(Landroid/content/Context;)Lcom/android/keyguard/util/SettingsHelper;
 
-    move-result-object v3
+    move-result-object v5
 
-    invoke-virtual {v3}, Lcom/android/keyguard/util/SettingsHelper;->getHomeTimeZone()Ljava/lang/String;
+    invoke-virtual {v5}, Lcom/android/keyguard/util/SettingsHelper;->getHomeTimeZone()Ljava/lang/String;
 
     move-result-object v0
 
     invoke-static {v0}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
-    move-result v3
+    move-result v5
 
-    if-nez v3, :cond_0
+    if-nez v5, :cond_0
 
-    const-string/jumbo v3, "GMT"
+    const-string/jumbo v5, "GMT"
 
-    invoke-virtual {v0, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v0, v5}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move-result v3
+    move-result v5
 
-    if-eqz v3, :cond_1
+    if-eqz v5, :cond_2
 
     :cond_0
-    invoke-static {p1}, Lcom/android/keyguard/KeyguardUpdateMonitor;->getInstance(Landroid/content/Context;)Lcom/android/keyguard/KeyguardUpdateMonitor;
+    iget-object v5, p0, Lcom/android/keyguard/servicebox/pages/clock/KeyguardClockPage;->mContext:Landroid/content/Context;
 
-    move-result-object v3
+    const-string/jumbo v6, "phone"
 
-    invoke-virtual {v3}, Lcom/android/keyguard/KeyguardUpdateMonitor;->isDeviceProvisioned()Z
+    invoke-virtual {v5, v6}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
+
+    move-result-object v4
+
+    check-cast v4, Landroid/telephony/TelephonyManager;
+
+    if-nez v4, :cond_1
+
+    return-void
+
+    :cond_1
+    invoke-virtual {v4}, Landroid/telephony/TelephonyManager;->getSimState()I
 
     move-result v3
 
-    if-eqz v3, :cond_1
+    const-string/jumbo v5, "KeyguardClockPage"
+
+    new-instance v6, Ljava/lang/StringBuilder;
+
+    invoke-direct {v6}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string/jumbo v7, "setAutoHomecityTimezone( simstateFromTelephony:"
+
+    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v6
+
+    invoke-virtual {v6, v3}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v6
+
+    const-string/jumbo v7, " )"
+
+    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v6
+
+    invoke-virtual {v6}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v6
+
+    invoke-static {v5, v6}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
+
+    invoke-static {p1}, Lcom/android/keyguard/KeyguardUpdateMonitor;->getInstance(Landroid/content/Context;)Lcom/android/keyguard/KeyguardUpdateMonitor;
+
+    move-result-object v5
+
+    invoke-virtual {v5}, Lcom/android/keyguard/KeyguardUpdateMonitor;->isDeviceProvisioned()Z
+
+    move-result v5
+
+    if-eqz v5, :cond_2
+
+    const/4 v5, 0x5
+
+    if-ne v3, v5, :cond_2
 
     const/4 v2, 0x0
 
     invoke-static {}, Lcom/android/keyguard/KeyguardRune;->shouldBeAsiaSeoulAsDefaultHomecityTimezone()Z
 
-    move-result v3
+    move-result v5
 
-    if-eqz v3, :cond_2
+    if-eqz v5, :cond_3
 
     const-string/jumbo v2, "Asia/Seoul"
 
     :goto_0
-    iget-object v3, p0, Lcom/android/keyguard/servicebox/pages/clock/KeyguardClockPage;->mContext:Landroid/content/Context;
+    iget-object v5, p0, Lcom/android/keyguard/servicebox/pages/clock/KeyguardClockPage;->mContext:Landroid/content/Context;
 
-    invoke-static {v3}, Lcom/android/keyguard/util/SettingsHelper;->getInstance(Landroid/content/Context;)Lcom/android/keyguard/util/SettingsHelper;
+    invoke-static {v5}, Lcom/android/keyguard/util/SettingsHelper;->getInstance(Landroid/content/Context;)Lcom/android/keyguard/util/SettingsHelper;
 
-    move-result-object v3
+    move-result-object v5
 
-    invoke-virtual {v3, v2}, Lcom/android/keyguard/util/SettingsHelper;->setHomeTimeZone(Ljava/lang/String;)V
+    invoke-virtual {v5, v2}, Lcom/android/keyguard/util/SettingsHelper;->setHomeTimeZone(Ljava/lang/String;)V
 
-    const-string/jumbo v3, "KeyguardClockPage"
+    const-string/jumbo v5, "KeyguardClockPage"
 
-    new-instance v4, Ljava/lang/StringBuilder;
+    new-instance v6, Ljava/lang/StringBuilder;
 
-    invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {v6}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string/jumbo v5, "homecity_timezone settings value is set by SystemUI! >> "
+    const-string/jumbo v7, "homecity_timezone settings value is set by SystemUI! >> "
 
-    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v4
+    move-result-object v6
 
-    invoke-virtual {v4, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v6, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v4
+    move-result-object v6
 
-    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v6}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v4
+    move-result-object v6
 
-    invoke-static {v3, v4}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
-
-    :cond_1
-    return-void
+    invoke-static {v5, v6}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
     :cond_2
+    return-void
+
+    :cond_3
     invoke-static {}, Ljava/util/Calendar;->getInstance()Ljava/util/Calendar;
 
     move-result-object v1
 
     invoke-virtual {v1}, Ljava/util/Calendar;->getTimeZone()Ljava/util/TimeZone;
 
-    move-result-object v3
+    move-result-object v5
 
-    invoke-virtual {v3}, Ljava/util/TimeZone;->getID()Ljava/lang/String;
+    invoke-virtual {v5}, Ljava/util/TimeZone;->getID()Ljava/lang/String;
 
     move-result-object v2
 
@@ -1078,97 +1129,76 @@
 .end method
 
 .method protected getContentsView(I)Landroid/view/View;
-    .locals 3
+    .locals 4
 
-    const/4 v2, 0x0
+    sget v0, Lcom/android/keyguard/R$layout;->keyguard_single_clock_view:I
 
     invoke-static {}, Lcom/android/keyguard/servicebox/pages/clock/KeyguardClockPage;->-getcom-android-keyguard-servicebox-pages-clock-KeyguardClockPage$ClockTypeSwitchesValues()[I
 
-    move-result-object v0
+    move-result-object v1
 
-    iget-object v1, p0, Lcom/android/keyguard/servicebox/pages/clock/KeyguardClockPage;->mType:Lcom/android/keyguard/servicebox/pages/clock/KeyguardClockPage$ClockType;
+    iget-object v2, p0, Lcom/android/keyguard/servicebox/pages/clock/KeyguardClockPage;->mType:Lcom/android/keyguard/servicebox/pages/clock/KeyguardClockPage$ClockType;
 
-    invoke-virtual {v1}, Lcom/android/keyguard/servicebox/pages/clock/KeyguardClockPage$ClockType;->ordinal()I
+    invoke-virtual {v2}, Lcom/android/keyguard/servicebox/pages/clock/KeyguardClockPage$ClockType;->ordinal()I
 
-    move-result v1
+    move-result v2
 
-    aget v0, v0, v1
+    aget v1, v1, v2
 
-    packed-switch v0, :pswitch_data_0
+    packed-switch v1, :pswitch_data_0
 
-    const-string/jumbo v0, "KeyguardClockPage"
+    const-string/jumbo v1, "KeyguardClockPage"
 
-    const-string/jumbo v1, "Lockscreen doesn\'t need to show clock."
+    const-string/jumbo v2, "Lockscreen doesn\'t need to show clock."
 
-    invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    return-object v2
+    :goto_0
+    iget-object v1, p0, Lcom/android/keyguard/servicebox/pages/clock/KeyguardClockPage;->mContext:Landroid/content/Context;
+
+    invoke-static {v1}, Landroid/view/LayoutInflater;->from(Landroid/content/Context;)Landroid/view/LayoutInflater;
+
+    move-result-object v1
+
+    iget-object v2, p0, Lcom/android/keyguard/servicebox/pages/clock/KeyguardClockPage;->mClockHolder:Landroid/widget/FrameLayout;
+
+    const/4 v3, 0x0
+
+    invoke-virtual {v1, v0, v2, v3}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;Z)Landroid/view/View;
+
+    move-result-object v1
+
+    return-object v1
 
     :pswitch_0
-    iget-object v0, p0, Lcom/android/keyguard/servicebox/pages/clock/KeyguardClockPage;->mContext:Landroid/content/Context;
+    sget v0, Lcom/android/keyguard/R$layout;->keyguard_dual_image_clock_view:I
 
-    sget v1, Lcom/android/keyguard/R$layout;->keyguard_dual_image_clock_view:I
-
-    invoke-static {v0, v1, v2}, Landroid/view/View;->inflate(Landroid/content/Context;ILandroid/view/ViewGroup;)Landroid/view/View;
-
-    move-result-object v0
-
-    return-object v0
+    goto :goto_0
 
     :pswitch_1
-    iget-object v0, p0, Lcom/android/keyguard/servicebox/pages/clock/KeyguardClockPage;->mContext:Landroid/content/Context;
+    sget v0, Lcom/android/keyguard/R$layout;->keyguard_single_image_clock_view:I
 
-    sget v1, Lcom/android/keyguard/R$layout;->keyguard_single_image_clock_view:I
-
-    invoke-static {v0, v1, v2}, Landroid/view/View;->inflate(Landroid/content/Context;ILandroid/view/ViewGroup;)Landroid/view/View;
-
-    move-result-object v0
-
-    return-object v0
+    goto :goto_0
 
     :pswitch_2
-    iget-object v0, p0, Lcom/android/keyguard/servicebox/pages/clock/KeyguardClockPage;->mContext:Landroid/content/Context;
+    sget v0, Lcom/android/keyguard/R$layout;->keyguard_dual_clock_view:I
 
-    sget v1, Lcom/android/keyguard/R$layout;->keyguard_dual_clock_view:I
-
-    invoke-static {v0, v1, v2}, Landroid/view/View;->inflate(Landroid/content/Context;ILandroid/view/ViewGroup;)Landroid/view/View;
-
-    move-result-object v0
-
-    return-object v0
+    goto :goto_0
 
     :pswitch_3
-    iget-object v0, p0, Lcom/android/keyguard/servicebox/pages/clock/KeyguardClockPage;->mContext:Landroid/content/Context;
+    sget v0, Lcom/android/keyguard/R$layout;->keyguard_single_vertical_clock_view:I
 
-    sget v1, Lcom/android/keyguard/R$layout;->keyguard_single_vertical_clock_view:I
-
-    invoke-static {v0, v1, v2}, Landroid/view/View;->inflate(Landroid/content/Context;ILandroid/view/ViewGroup;)Landroid/view/View;
-
-    move-result-object v0
-
-    return-object v0
+    goto :goto_0
 
     :pswitch_4
-    iget-object v0, p0, Lcom/android/keyguard/servicebox/pages/clock/KeyguardClockPage;->mContext:Landroid/content/Context;
+    sget v0, Lcom/android/keyguard/R$layout;->keyguard_single_vertical_image_clock_view:I
 
-    sget v1, Lcom/android/keyguard/R$layout;->keyguard_single_vertical_image_clock_view:I
-
-    invoke-static {v0, v1, v2}, Landroid/view/View;->inflate(Landroid/content/Context;ILandroid/view/ViewGroup;)Landroid/view/View;
-
-    move-result-object v0
-
-    return-object v0
+    goto :goto_0
 
     :pswitch_5
-    iget-object v0, p0, Lcom/android/keyguard/servicebox/pages/clock/KeyguardClockPage;->mContext:Landroid/content/Context;
+    sget v0, Lcom/android/keyguard/R$layout;->keyguard_single_clock_view:I
 
-    sget v1, Lcom/android/keyguard/R$layout;->keyguard_single_clock_view:I
-
-    invoke-static {v0, v1, v2}, Landroid/view/View;->inflate(Landroid/content/Context;ILandroid/view/ViewGroup;)Landroid/view/View;
-
-    move-result-object v0
-
-    return-object v0
+    goto :goto_0
 
     :pswitch_data_0
     .packed-switch 0x1

@@ -6,12 +6,16 @@
 # instance fields
 .field private mAppLabel:Landroid/widget/TextView;
 
+.field mIcon:Lcom/android/systemui/qs/QSIconView;
+
 
 # direct methods
 .method public constructor <init>(Landroid/content/Context;Lcom/android/systemui/qs/QSIconView;)V
     .locals 0
 
     invoke-direct {p0, p1, p2}, Lcom/android/systemui/qs/QSTileView;-><init>(Landroid/content/Context;Lcom/android/systemui/qs/QSIconView;)V
+
+    iput-object p2, p0, Lcom/android/systemui/qs/customize/CustomizeTileView;->mIcon:Lcom/android/systemui/qs/QSIconView;
 
     return-void
 .end method
@@ -54,6 +58,14 @@
     .locals 1
 
     iget-object v0, p0, Lcom/android/systemui/qs/customize/CustomizeTileView;->mAppLabel:Landroid/widget/TextView;
+
+    return-object v0
+.end method
+
+.method protected getIconView()Lcom/android/systemui/qs/QSIconView;
+    .locals 1
+
+    iget-object v0, p0, Lcom/android/systemui/qs/customize/CustomizeTileView;->mIcon:Lcom/android/systemui/qs/QSIconView;
 
     return-object v0
 .end method

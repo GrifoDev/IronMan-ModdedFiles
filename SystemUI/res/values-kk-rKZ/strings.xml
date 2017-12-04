@@ -238,6 +238,8 @@
     <string name="wifi_allow_scan_with_traffic_summary">Интерфейсте бар деректер трафигінің мөлшерінің негізінде Wi-Fi роумингін іздеулерге рұқсат ету/тыйым салу</string>
     <string name="select_logd_size_title">Журналға тіркеуші буферінің өлшемдері</string>
     <string name="select_logd_size_dialog_title">Әр журнал буфері үшін журналға тіркеуші өлшемдерін таңдау</string>
+    <string name="dev_logpersist_clear_warning_title">Тұрақты тіркегіш жадын тазалау керек пе?</string>
+    <string name="dev_logpersist_clear_warning_message">Тұрақты тіркегіш өшкен кезде, тіркегіш деректері жойылады.</string>
     <string name="select_logpersist_title">Журнал деректерін үнемі сақтау</string>
     <string name="select_logpersist_dialog_title">Үнемі сақталатын журнал буферлерін таңдау</string>
     <string name="select_usb_configuration_title">USB конфигурациясын таңдау</string>
@@ -752,6 +754,7 @@ For example, your ringtone will not sound, you will not be able to answer phone 
     <string name="wifi_authentication_failed_kt">Wi-Fi AP түпнұсқалығын растау сәтсіз болды.</string>
     <string name="wifi_authentication_no_response">Wi-Fi AP қосылымы сәтсіз аяқталды.</string>
     <string name="wifi_authentication_invalid_value">Authentication failed. Check ID and password.</string>
+    <string name="wifi_disconnected">Wi-Fi ажыратылған.</string>
     <string name="quick_settings_dnd_label">Мазаламау</string>
     <string name="quick_settings_dnd_priority_label">Маңыздылары ғана</string>
     <string name="quick_settings_dnd_alarms_label">Тек дабылдар</string>
@@ -1382,11 +1385,11 @@ Wi-Fi қоңырау шалу белгішесі қызмет қолжетімд
     <string name="keyboard_key_numpad_template">Сандық пернетақта %1$s</string>
     <string name="keyboard_popup_help">Мета перне: Windows, команда немесе басқа да операциялық жүйе белгісінің пернесі.</string>
     <string name="keyboard_shortcut_group_system">Жүйе жедел пернелері</string>
-    <string name="keyboard_shortcut_group_system_home">Негізгі бет</string>
-    <string name="keyboard_shortcut_group_system_recents">Жақындағылар</string>
+    <string name="keyboard_shortcut_group_system_home">Бастапқы</string>
+    <string name="keyboard_shortcut_group_system_recents">Соңғылар</string>
     <string name="keyboard_shortcut_group_system_back">Артқа</string>
     <string name="keyboard_shortcut_group_system_notifications">Хабарландырулар</string>
-    <string name="keyboard_shortcut_group_system_shortcuts_helper">Пернелер тіркесімдері</string>
+    <string name="keyboard_shortcut_group_system_shortcuts_helper">Пернетақта таңбашалары</string>
     <string name="keyboard_shortcut_group_system_switch_input">Енгізу әдісін ауыстыру</string>
     <string name="keyboard_shortcut_group_system_all_apps">Барлық қолданбалар</string>
     <string name="keyboard_shortcut_group_system_running_apps">Іске қосылған қолданбалар</string>
@@ -1652,7 +1655,9 @@ Using your tablet in a very hot location."</string>
     <string name="battery_not_fully_connected_charging_title_vzw">Incomplete connection</string>
     <string name="battery_not_fully_connected_charging_text">Жылдамырақ зарядтау үшін, құрылғыңызбен бірге берілген зарядтағышты пайдаланыңыз және оның дұрыс қосылғанына көз жеткізіңіз.</string>
     <string name="battery_not_fully_connected_charging_text_vzw">Make sure the charger is properly connected.</string>
+    <string name="battery_not_fully_connected_charging_text_jpn">Зарядтағыштың дұрыс қосылғанына көз жеткізіңіз.</string>
     <string name="battery_not_fully_connected_charging_popup_text">Зарядтағыштың дұрыс қосылғанына көз жеткізіңіз. Құрылғымен бірге берілген зарядтағышты пайдаланыңыз.</string>
+    <string name="battery_not_fully_connected_charging_popup_text_jpn">Зарядтағыштың дұрыс қосылғанына көз жеткізіңіз.</string>
     <string name="battery_charging_level_and_time_text">"Зарядтауда: %1$d%%
 (Толық зарядталғанға дейін шамамен %2$s)"</string>
     <string name="battery_charging_level_text">Зарядталуда: %d%%</string>
@@ -1878,6 +1883,8 @@ Please note that in order to enable your emergency calls (e.g., such as 112 call
     <string name="qs_detail_palm_capture_title">Сур түс үшін алақан сипаңыз</string>
     <string name="noti_direct_reply_exceed_text_limit_toast">Мәтінді бұдан артық енгізу мүмкін емес.</string>
     <string name="airplane_mode_tts_text">Ұшақ режимі</string>
+    <string name="all_noti_readout">Бір хабарландыру</string>
+    <string name="all_noti_readout2">%d хабарландыру</string>
     <string name="car_lockscreen_disclaimer_title">Қауіпсіз жүргізу</string>
     <string name="car_lockscreen_disclaimer_text">Жүргізу жағдайларын толығымен ұғыныңыз және тиісті заңдарды әрқашан сақтаңыз. Бағыттар дәл емес, толық емес, қауіпті, жарамсыз, тыйым салынған болуы немесе әкімшілік аумақтарды қиып өтуі мүмкін. Іскери ақпарат та дәл емес немесе толық емес болуы мүмкін. Деректер нақты уақыттағы деректер емес және орын дәлдігіне кепілдік берілмейді. Жүргізу кезінде мобильді құрылғыңызды ұстамаңыз немесе Android Auto қолданбасына арналмаған қолданбаларды пайдаланбаңыз.</string>
     <string name="pip_close">PIP жабу</string>

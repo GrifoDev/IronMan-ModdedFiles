@@ -405,7 +405,7 @@
 
     move-result-object v6
 
-    const v7, 0x7f120038
+    const v7, 0x7f120039
 
     invoke-virtual {v6, v7}, Landroid/content/res/Resources;->getBoolean(I)Z
 
@@ -424,7 +424,7 @@
 
     move-result-object v6
 
-    const v7, 0x7f0d0645
+    const v7, 0x7f0d0649
 
     invoke-virtual {v6, v7}, Landroid/content/res/Resources;->getDimension(I)F
 
@@ -440,7 +440,7 @@
 
     move-result-object v6
 
-    const v7, 0x7f0d0644
+    const v7, 0x7f0d0648
 
     invoke-virtual {v6, v7}, Landroid/content/res/Resources;->getDimension(I)F
     :try_end_0
@@ -1769,7 +1769,7 @@
 
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/taskbar/TaskBar;->mTaskBarView:Lcom/android/systemui/statusbar/phone/taskbar/views/TaskBarView;
 
-    const v1, 0x7f130512
+    const v1, 0x7f130514
 
     invoke-virtual {v0, v1}, Lcom/android/systemui/statusbar/phone/taskbar/views/TaskBarView;->findViewById(I)Landroid/view/View;
 

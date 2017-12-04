@@ -52,7 +52,7 @@
 .method protected onCreate(Landroid/os/Bundle;)V
     .locals 4
 
-    const v3, 0x7f0f06a6
+    const v3, 0x7f0f06a7
 
     const/4 v2, 0x0
 
@@ -99,7 +99,7 @@
 
     if-eqz v1, :cond_1
 
-    const v1, 0x7f0f06a9
+    const v1, 0x7f0f06aa
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(I)V
 
@@ -127,7 +127,7 @@
     return-void
 
     :cond_1
-    const v1, 0x7f0f06a8
+    const v1, 0x7f0f06a9
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(I)V
 

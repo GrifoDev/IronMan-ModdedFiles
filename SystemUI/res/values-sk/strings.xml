@@ -238,6 +238,8 @@
     <string name="wifi_allow_scan_with_traffic_summary">Povoliť alebo zakázať funkciu Wifi Roam Scans na základe objemu prenosu údajov v rozhraní</string>
     <string name="select_logd_size_title">Veľkosti vyrovnávacej pamäte denníka</string>
     <string name="select_logd_size_dialog_title">Veľkosť na vyrovnávaciu pamäť nástroja denníkov</string>
+    <string name="dev_logpersist_clear_warning_title">Vymazať trvalé úložisko záznamníka?</string>
+    <string name="dev_logpersist_clear_warning_message">Údaje záznamníka sa po vypnutí trvalého záznamníka odstránia.</string>
     <string name="select_logpersist_title">Trvalé ukladanie údajov denníka</string>
     <string name="select_logpersist_dialog_title">Výber medzipamätí den. na trvalé ukladanie</string>
     <string name="select_usb_configuration_title">Výber konfigurácie USB</string>
@@ -751,6 +753,7 @@ Jej opätovné spustenie môže mať za následok účtovanie poplatkov vaším 
     <string name="wifi_authentication_failed_kt">Nepodarilo sa overiť prístupový bod Wi-Fi.</string>
     <string name="wifi_authentication_no_response">Nepodarilo sa pripojiť k prístupovému bodu Wi-Fi.</string>
     <string name="wifi_authentication_invalid_value">Authentication failed. Check ID and password.</string>
+    <string name="wifi_disconnected">Wi-Fi odpojené.</string>
     <string name="quick_settings_dnd_label">Nerušiť</string>
     <string name="quick_settings_dnd_priority_label">Iba prioritné</string>
     <string name="quick_settings_dnd_alarms_label">Iba budíky</string>
@@ -1381,10 +1384,10 @@ Ste pripojený/-á k aplikácii %2$s, ktorá môže sledovať vašu aktivitu v s
     <string name="keyboard_key_numpad_template">Číselná klávesnica %1$s</string>
     <string name="keyboard_popup_help">Meta kláves: Windows, Command alebo iný kláves so symbolom operačného systému.</string>
     <string name="keyboard_shortcut_group_system">Systémové kláves. skratky</string>
-    <string name="keyboard_shortcut_group_system_home">Domovská stránka</string>
+    <string name="keyboard_shortcut_group_system_home">Domov</string>
     <string name="keyboard_shortcut_group_system_recents">Nedávne</string>
     <string name="keyboard_shortcut_group_system_back">Späť</string>
-    <string name="keyboard_shortcut_group_system_notifications">Upozornenia</string>
+    <string name="keyboard_shortcut_group_system_notifications">Oznámenia</string>
     <string name="keyboard_shortcut_group_system_shortcuts_helper">Klávesové skratky</string>
     <string name="keyboard_shortcut_group_system_switch_input">Prepnúť metódu vstupu</string>
     <string name="keyboard_shortcut_group_system_all_apps">Všetky aplikácie</string>
@@ -1651,7 +1654,9 @@ Dôvodom prehrievania môže byť:
     <string name="battery_not_fully_connected_charging_title_vzw">Incomplete connection</string>
     <string name="battery_not_fully_connected_charging_text">Z dôvodu rýchlejšieho nabíjania použite nabíjačku dodanú s týmto zariadením a skontrolujte, či je správne pripojená.</string>
     <string name="battery_not_fully_connected_charging_text_vzw">Make sure the charger is properly connected.</string>
+    <string name="battery_not_fully_connected_charging_text_jpn">Skontrolujte, či je nabíjačka správne pripojená.</string>
     <string name="battery_not_fully_connected_charging_popup_text">Skontrolujte, či je nabíjačka správne pripojená. Použite nabíjačku dodanú s týmto zariadením.</string>
+    <string name="battery_not_fully_connected_charging_popup_text_jpn">Skontrolujte, či je nabíjačka správne pripojená.</string>
     <string name="battery_charging_level_and_time_text">"Nabíja sa: %1$d %%
 (do úplného nabitia zostáva približne %2$s)"</string>
     <string name="battery_charging_level_text">Nabíja sa: %d %%</string>
@@ -1876,6 +1881,8 @@ Please note that in order to enable your emergency calls (e.g., such as 112 call
     <string name="qs_detail_palm_capture_title">Snímať potiahnutím dlane</string>
     <string name="noti_direct_reply_exceed_text_limit_toast">Nedá sa zadať žiadny ďalší text.</string>
     <string name="airplane_mode_tts_text">Lietadlový režim</string>
+    <string name="all_noti_readout">Jedno oznámenie</string>
+    <string name="all_noti_readout2">Oznámenia: %d</string>
     <string name="car_lockscreen_disclaimer_title">Jazdite bezpečne</string>
     <string name="car_lockscreen_disclaimer_text">Zachovajte si úplný prehľad o jazdných podmienkach a vždy dodržiavajte príslušné zákony. Trasy môžu byť nepresné, neúplné, nebezpečné, nevhodné, zakázané alebo môžu zahŕňať cestu cez rôzne správne oblasti. Obchodné informácie môžu byť tiež nepresné alebo neúplné. Údaje nie sú aktualizované v reálnom čase a presnosť polohy nemôžeme zaručiť. Počas jazdy nemanipulujte s mobilným zariadením ani nepoužívajte aplikácie, ktoré nie sú určené pre funkciu Android Auto.</string>
     <string name="pip_close">Zavrieť režim PIP</string>

@@ -238,6 +238,8 @@
     <string name="wifi_allow_scan_with_traffic_summary">Leisti / neleisti „Wi‑Fi“ tarptinklinio ryšio nuskaitymo, atsižvelgiant į sąsajos duomenų srauto kiekį</string>
     <string name="select_logd_size_title">Registruotuvo buferio dydžiai</string>
     <string name="select_logd_size_dialog_title">Pasir. registr. dydž. žurn. bufer.</string>
+    <string name="dev_logpersist_clear_warning_title">Valyti nuol. registr. priemonės saugyklą?</string>
+    <string name="dev_logpersist_clear_warning_message">Registravimo priemonės duomenys bus ištrinti, kai nuolatinio registravimo priemonė bus išjungta.</string>
     <string name="select_logpersist_title">Saugoti žurnalo duomenis nuolat</string>
     <string name="select_logpersist_dialog_title">Rinktis nuolat saugomus žurnalo buferius</string>
     <string name="select_usb_configuration_title">Pasirinkite USB konfigūraciją</string>
@@ -752,6 +754,7 @@ Atnaujinus gali būti taikomi operatoriaus mokesčiai."</string>
     <string name="wifi_authentication_failed_kt">Nepavyko patvirtinti „Wi-Fi“ prieigos taško.</string>
     <string name="wifi_authentication_no_response">Nepavyko prisijungti prie „Wi-Fi“ prieigos taško.</string>
     <string name="wifi_authentication_invalid_value">Authentication failed. Check ID and password.</string>
+    <string name="wifi_disconnected">„Wi-Fi“ atjungtas.</string>
     <string name="quick_settings_dnd_label">Netrukdyti</string>
     <string name="quick_settings_dnd_priority_label">Tik prioritetiniai įvykiai</string>
     <string name="quick_settings_dnd_alarms_label">Tik signalai</string>
@@ -1383,11 +1386,11 @@ Daugiau informacijos galite gauti susisiekę su administratoriumi."</string>
     <string name="keyboard_key_numpad_template">Klaviatūros skaitmenų sritis %1$s</string>
     <string name="keyboard_popup_help">Meta mygtukas: „Windows“, komandos ar kitos operacinės sistemos simbolio mygtukas.</string>
     <string name="keyboard_shortcut_group_system">Sistemos trumpiniai</string>
-    <string name="keyboard_shortcut_group_system_home">Pagrindinis ekranas</string>
-    <string name="keyboard_shortcut_group_system_recents">Naujausios veiklos ekranas</string>
+    <string name="keyboard_shortcut_group_system_home">Pradžia</string>
+    <string name="keyboard_shortcut_group_system_recents">Naujausi</string>
     <string name="keyboard_shortcut_group_system_back">Atgal</string>
     <string name="keyboard_shortcut_group_system_notifications">Pranešimai</string>
-    <string name="keyboard_shortcut_group_system_shortcuts_helper">Spartieji klavišai</string>
+    <string name="keyboard_shortcut_group_system_shortcuts_helper">Klaviatūros trumpiniai</string>
     <string name="keyboard_shortcut_group_system_switch_input">Perjungti įvesties metodą</string>
     <string name="keyboard_shortcut_group_system_all_apps">Visos programos</string>
     <string name="keyboard_shortcut_group_system_running_apps">Veikiančios programos</string>
@@ -1653,7 +1656,9 @@ Using your tablet in a very hot location."</string>
     <string name="battery_not_fully_connected_charging_title_vzw">Incomplete connection</string>
     <string name="battery_not_fully_connected_charging_text">Kad įkrautumėte greičiau, naudokite su įrenginiu gautą kroviklį ir įsitikinkite, jog jis tinkamai prijungtas.</string>
     <string name="battery_not_fully_connected_charging_text_vzw">Make sure the charger is properly connected.</string>
+    <string name="battery_not_fully_connected_charging_text_jpn">Įsitikinkite, kad kroviklis prijungtas tinkamai.</string>
     <string name="battery_not_fully_connected_charging_popup_text">Įsitikinkite, kad kroviklis prijungtas tinkamai. Naudokite su įrenginiu gautą kroviklį.</string>
+    <string name="battery_not_fully_connected_charging_popup_text_jpn">Įsitikinkite, kad kroviklis prijungtas tinkamai.</string>
     <string name="battery_charging_level_and_time_text">"Įkraunama: %1$d%%
 (apie %2$s iki visiško įkrovimo)"</string>
     <string name="battery_charging_level_text">Įkraunama: %d%%</string>
@@ -1878,6 +1883,8 @@ Please note that in order to enable your emergency calls (e.g., such as 112 call
     <string name="qs_detail_palm_capture_title">Užfiksuoti braukiant delnu</string>
     <string name="noti_direct_reply_exceed_text_limit_toast">Daugiau nebegalima įvesti teksto.</string>
     <string name="airplane_mode_tts_text">Lėktuvo režimas</string>
+    <string name="all_noti_readout">Vienas pranešimas</string>
+    <string name="all_noti_readout2">Pranešimai: %d</string>
     <string name="car_lockscreen_disclaimer_title">Vairuokite saugiai</string>
     <string name="car_lockscreen_disclaimer_text">Visada atsižvelkite į vairavimo sąlygas ir laikykitės galiojančių įstatymų. Nuorodos gali būti netikslios, neužbaigtos, pavojingos, netinkamos, draudžiamos ar nukreipiančios per administracines sritis. Įmonių informacija taip pat gali būti netiksli ar neužbaigta. Duomenys nėra teikiami realiuoju laiku ir vietovių tikslumo negalima garantuoti. Vairuodami nenaudokite mobiliojo įrenginio ar programų, kurios nėra skirtos „Android Auto“.</string>
     <string name="pip_close">Uždaryti PIP</string>

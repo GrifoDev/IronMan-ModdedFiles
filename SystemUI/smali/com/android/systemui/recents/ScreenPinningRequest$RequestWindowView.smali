@@ -125,7 +125,7 @@
 .method private inflateView(Z)V
     .locals 7
 
-    const v6, 0x7f130488
+    const v6, 0x7f13048a
 
     const/4 v5, 0x3
 
@@ -162,7 +162,7 @@
 
     iget-object v2, p0, Lcom/android/systemui/recents/ScreenPinningRequest$RequestWindowView;->mLayout:Landroid/view/ViewGroup;
 
-    const v3, 0x7f130484
+    const v3, 0x7f130486
 
     invoke-virtual {v2, v3}, Landroid/view/ViewGroup;->findViewById(I)Landroid/view/View;
 
@@ -172,7 +172,7 @@
 
     iget-object v2, p0, Lcom/android/systemui/recents/ScreenPinningRequest$RequestWindowView;->mLayout:Landroid/view/ViewGroup;
 
-    const v3, 0x7f13047e
+    const v3, 0x7f130480
 
     invoke-virtual {v2, v3}, Landroid/view/ViewGroup;->findViewById(I)Landroid/view/View;
 
@@ -195,7 +195,7 @@
     :goto_1
     iget-object v2, p0, Lcom/android/systemui/recents/ScreenPinningRequest$RequestWindowView;->mLayout:Landroid/view/ViewGroup;
 
-    const v3, 0x7f130487
+    const v3, 0x7f130489
 
     invoke-virtual {v2, v3}, Landroid/view/ViewGroup;->findViewById(I)Landroid/view/View;
 
@@ -226,7 +226,7 @@
     :goto_2
     iget-object v2, p0, Lcom/android/systemui/recents/ScreenPinningRequest$RequestWindowView;->mLayout:Landroid/view/ViewGroup;
 
-    const v3, 0x7f130486
+    const v3, 0x7f130488
 
     invoke-virtual {v2, v3}, Landroid/view/ViewGroup;->findViewById(I)Landroid/view/View;
 
@@ -234,7 +234,7 @@
 
     check-cast v2, Landroid/widget/TextView;
 
-    const v3, 0x7f0f05b5
+    const v3, 0x7f0f05b6
 
     invoke-virtual {v2, v3}, Landroid/widget/TextView;->setText(I)V
 
@@ -255,7 +255,7 @@
     :goto_3
     iget-object v2, p0, Lcom/android/systemui/recents/ScreenPinningRequest$RequestWindowView;->mLayout:Landroid/view/ViewGroup;
 
-    const v3, 0x7f130481
+    const v3, 0x7f130483
 
     invoke-virtual {v2, v3}, Landroid/view/ViewGroup;->findViewById(I)Landroid/view/View;
 
@@ -265,7 +265,7 @@
 
     iget-object v2, p0, Lcom/android/systemui/recents/ScreenPinningRequest$RequestWindowView;->mLayout:Landroid/view/ViewGroup;
 
-    const v3, 0x7f130480
+    const v3, 0x7f130482
 
     invoke-virtual {v2, v3}, Landroid/view/ViewGroup;->findViewById(I)Landroid/view/View;
 

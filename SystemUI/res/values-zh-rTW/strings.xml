@@ -238,6 +238,8 @@
     <string name="wifi_allow_scan_with_traffic_summary">根據介面中目前的數據流量允許/禁止 Wi-Fi 漫遊掃描</string>
     <string name="select_logd_size_title">紀錄器緩衝區空間</string>
     <string name="select_logd_size_dialog_title">選取每個紀錄緩衝區的紀錄器空間</string>
+    <string name="dev_logpersist_clear_warning_title">清除持續記錄器儲存空間嗎？</string>
+    <string name="dev_logpersist_clear_warning_message">持續記錄器關閉時，將刪除記錄器資料。</string>
     <string name="select_logpersist_title">持續儲存記錄資料</string>
     <string name="select_logpersist_dialog_title">選擇持續儲存的記錄緩衝</string>
     <string name="select_usb_configuration_title">選取 USB 設定</string>
@@ -753,6 +755,7 @@
     <string name="wifi_authentication_failed_kt">無法驗證 Wi-Fi AP。</string>
     <string name="wifi_authentication_no_response">無法連接至 Wi-Fi AP。</string>
     <string name="wifi_authentication_invalid_value">Authentication failed. Check ID and password.</string>
+    <string name="wifi_disconnected">Wi - Fi斷開。</string>
     <string name="quick_settings_dnd_label">零打擾</string>
     <string name="quick_settings_dnd_priority_label">僅限優先通知</string>
     <string name="quick_settings_dnd_alarms_label">僅允許鬧鐘</string>
@@ -857,6 +860,8 @@ mirroring"</string>
     <string name="quick_settings_mobile_data_label">行動數據</string>
     <string name="quick_settings_wificalling_label">"Wi-Fi
 通話"</string>
+    <string name="quick_settings_callingplus_label">"Calling
+Plus"</string>
     <string name="quick_settings_personal_mode_label">"隱私
 模式"</string>
     <string name="quick_settings_data_roaming_label">"數據
@@ -1380,11 +1385,11 @@ mirroring"</string>
     <string name="keyboard_key_numpad_template">數字鍵 %1$s</string>
     <string name="keyboard_popup_help">Meta 鍵：Windows 鍵、Command 鍵或其他作業系統符號鍵。</string>
     <string name="keyboard_shortcut_group_system">系統捷徑</string>
-    <string name="keyboard_shortcut_group_system_home">主畫面</string>
-    <string name="keyboard_shortcut_group_system_recents">近期活動</string>
+    <string name="keyboard_shortcut_group_system_home">首頁</string>
+    <string name="keyboard_shortcut_group_system_recents">最近使用的應用程式</string>
     <string name="keyboard_shortcut_group_system_back">返回</string>
     <string name="keyboard_shortcut_group_system_notifications">通知</string>
-    <string name="keyboard_shortcut_group_system_shortcuts_helper">鍵盤快速鍵</string>
+    <string name="keyboard_shortcut_group_system_shortcuts_helper">鍵盤捷徑</string>
     <string name="keyboard_shortcut_group_system_switch_input">切換輸入法</string>
     <string name="keyboard_shortcut_group_system_all_apps">所有應用程式</string>
     <string name="keyboard_shortcut_group_system_running_apps">執行中的應用程式</string>
@@ -1650,7 +1655,9 @@ mirroring"</string>
     <string name="battery_not_fully_connected_charging_title_vzw">未完成的連線</string>
     <string name="battery_not_fully_connected_charging_text">為達到更快速的充電，請使用您裝置所附的充電器並確保其已妥善地連接。</string>
     <string name="battery_not_fully_connected_charging_text_vzw">請確認充電器已妥善連接。</string>
+    <string name="battery_not_fully_connected_charging_text_jpn">請確認充電器已妥善連接。</string>
     <string name="battery_not_fully_connected_charging_popup_text">確保充電器已妥善地連接。請使用裝置所附的充電器。</string>
+    <string name="battery_not_fully_connected_charging_popup_text_jpn">確保充電器已妥善地連接。</string>
     <string name="battery_charging_level_and_time_text">"充電中：%1$d%%
 (距充滿約需 %2$s)"</string>
     <string name="battery_charging_level_text">充電中：%d%%</string>
@@ -1872,6 +1879,8 @@ Please note that in order to enable your emergency calls (e.g., such as 112 call
     <string name="qs_detail_palm_capture_title">滑動手掌以截圖</string>
     <string name="noti_direct_reply_exceed_text_limit_toast">無法再輸入更多文字。</string>
     <string name="airplane_mode_tts_text">飛航模式</string>
+    <string name="all_noti_readout">一則通知</string>
+    <string name="all_noti_readout2">%d 則通知</string>
     <string name="car_lockscreen_disclaimer_title">安全駕駛</string>
     <string name="car_lockscreen_disclaimer_text">請隨時注意周遭路況並遵守交通規則。系統所提供的路線可能有誤、不完整，或包含危險、不合適、禁止通行或管制區域的路段；此外，商家資訊也可能有誤或不完整。路況資料並非即時更新，也無法保證定位資訊必然準確無誤。駕駛時請勿操作您的行動裝置，或使用不適用於 Android Auto 的應用程式。</string>
     <string name="pip_close">關閉子母畫面</string>

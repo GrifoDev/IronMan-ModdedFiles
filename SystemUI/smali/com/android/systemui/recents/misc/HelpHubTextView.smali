@@ -122,7 +122,7 @@
 
     move-result-object v5
 
-    const v6, 0x7f0d045f
+    const v6, 0x7f0d0461
 
     invoke-virtual {v5, v6}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -487,7 +487,7 @@
 
     iput v6, v4, Lcom/android/systemui/recents/misc/HelpHubImageSpan;->fontScale:F
 
-    const v6, 0x7f0d0460
+    const v6, 0x7f0d0462
 
     invoke-virtual {v3, v6}, Landroid/content/res/Resources;->getDimension(I)F
 

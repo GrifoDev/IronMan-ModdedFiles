@@ -143,6 +143,8 @@
     <string name="tts_reset_speech_pitch_title">পিচ রিসেট করুন</string>
     <string name="tts_reset_speech_pitch_summary">ডিফল্ট সেটিংসে পাঠ্য পঠিত হওয়ার গতি রিসেট করুন।</string>
     <string name="choose_profile">প্রোফাইল নির্বাচন করুন</string>
+    <string name="dev_logpersist_clear_warning_title">স্থায়ী লগার সঞ্চয়স্থান পরিষ্কার করবেন?</string>
+    <string name="dev_logpersist_clear_warning_message">ধারাবাহিক লগার বন্ধ থাকলে লগার তথ্য মোছা হবে।</string>
     <string name="select_logpersist_title">লগ তথ্য নিরবিচ্ছিন্নভা. সঞ্চয় ক.</string>
     <string name="select_logpersist_dialog_title">নিরবিচ্ছিন্নভাবে সঞ্চয় কর. লগ বাফার নির্বা.</string>
     <string name="no_application">কোনও অ্যাপ নেই</string>
@@ -250,6 +252,7 @@ For example, your ringtone will not sound, you will not be able to answer phone 
     <string name="wifi_authentication_failed_kt">Wi-Fi AP-এ প্রমাণীকরণ করতে ব্যর্থ হয়েছে।</string>
     <string name="wifi_authentication_no_response">Wi-Fi AP-এ সংযোগ করতে ব্যর্থ হয়েছে।</string>
     <string name="wifi_authentication_invalid_value">প্রমাণীকরণ ব্যর্থ৷ ID ও পাসওয়ার্ড যাচাই করুন৷</string>
+    <string name="wifi_disconnected">Wi-Fi সংযোগ বিচ্ছিন্ন হয়েছে।</string>
     <string name="quick_settings_bluetooth_label">ব্লুটুথ</string>
     <string name="quick_settings_bluetooth_detail_empty_text_available">কোনও নিকটবর্তী ব্লুটুথ ডিভাইস খুঁজে পাওয়া যায়নি</string>
     <string name="quick_settings_bluetooth_detail_paired_devices_title">জোড়বাঁধা ডিভাইসগুলি</string>
@@ -575,15 +578,21 @@ Wi-Fi এবং ব্লুটুথও বন্ধ হবে কিন্ত�
     <string name="dialog_battery_data_warning">মোবাইল হটস্পট সক্ষম করা হবে। এটি ব্যাটারির অপচয় এবং তথ্যের ব্যবহার বাড়াবে।</string>
     <string name="keyboard_popup_help">মেটা কী: দ্য উইন্ডোজ, আদেশ বা অন্যান্য অপারেটিং সিস্টেম প্রতীকের কী।</string>
     <string name="keyboard_shortcut_group_system">সিস্টেম শর্টকাটগুলি</string>
+    <string name="keyboard_shortcut_group_system_home">হোম</string>
+    <string name="keyboard_shortcut_group_system_recents">সাম্প্রতিকগুলি</string>
     <string name="keyboard_shortcut_group_system_back">ব্যাক</string>
+    <string name="keyboard_shortcut_group_system_notifications">বিজ্ঞপ্তিগুলি</string>
+    <string name="keyboard_shortcut_group_system_shortcuts_helper">কীবোর্ড শর্টকাটগুলি</string>
     <string name="keyboard_shortcut_group_system_all_apps">সমস্ত অ্যাপ</string>
     <string name="keyboard_shortcut_group_system_running_apps">চলমান অ্যাপগুলি</string>
     <string name="keyboard_shortcut_group_system_lock_screen">লক স্ক্রিন</string>
     <string name="keyboard_shortcut_group_system_switch_languages">ভাষাগুলি স্যুইচ করুন</string>
     <string name="keyboard_shortcut_group_applications">ইন-অ্যাপ শর্টকাটগুলি</string>
+    <string name="keyboard_shortcut_group_applications_browser">ব্রাউজার</string>
     <string name="keyboard_shortcut_group_applications_contacts">পরিচিতিগুলি</string>
     <string name="keyboard_shortcut_group_applications_email">ইমেল</string>
     <string name="keyboard_shortcut_group_applications_music">সঙ্গীত</string>
+    <string name="keyboard_shortcut_group_applications_calendar">ক্যালেন্ডার</string>
     <string name="keyboard_shortcut_group_applications_bixby">Bixby</string>
     <string name="keyboard_shortcut_group_applications_messages">বার্তাগুলি</string>
     <string name="qs_edit">সম্পাদনা</string>
@@ -767,7 +776,9 @@ Using your tablet in a very hot location."</string>
     <string name="battery_not_fully_connected_charging_title_vzw">Incomplete connection</string>
     <string name="battery_not_fully_connected_charging_text">দ্রুত চার্জ দিতে, আপনার ডিভাইসের সাথে দেওয়া চার্জারটি ব্যবহার করুন ও এটি সঠিকভাবে সংযুক্ত আছে তা নিশ্চিত করুন।</string>
     <string name="battery_not_fully_connected_charging_text_vzw">Make sure the charger is properly connected.</string>
+    <string name="battery_not_fully_connected_charging_text_jpn">আপনার চার্জারটি যথাযথভাবে সংযুক্ত আছে তা নিশ্চিত করুন।</string>
     <string name="battery_not_fully_connected_charging_popup_text">চার্জারটি সঠিকভাবে সংযুক্ত আছে তা নিশ্চিত করুন। ডিভাইসের সাথে দেওয়া চার্জারটি ব্যবহার করুন।</string>
+    <string name="battery_not_fully_connected_charging_popup_text_jpn">চার্জারটি সঠিকভাবে সংযুক্ত আছে তা নিশ্চিত করুন।</string>
     <string name="battery_charging_level_and_time_text">"চার্জ হচ্ছে: %1$d%%
 (সম্পূর্ণ চার্জ না হওয়া অবধি প্রায় %2$s)"</string>
     <string name="battery_charging_level_text">চার্জ হচ্ছে: %d%%</string>
@@ -975,7 +986,7 @@ Please note that in order to enable your emergency calls (e.g., such as 112 call
     <string name="force_immersive_guide_dialog_title">নেভিগেশন বার লুকান:</string>
     <string name="force_immersive_guide_dialog_message1">নেভিগেশন বারটি লুকাতে এই বোতামটি দুবার ট্যাপ করুন।</string>
     <string name="force_immersive_guide_dialog_message2">নেভিগেশন বারটি দেখাতে চার্জিং পোর্টের কাছাকাছি স্ক্রিনের ধার থেকে ভিতরে সোয়াইপ করুন।</string>
-    <string name="force_immersive_guide_dialog_message3">ঠিক জায়গায় নেভিগেশন বারটি লক করতে এই বোতামটি দুবার ট্যাপ করুন।</string>
+    <string name="force_immersive_guide_dialog_message3">ঠিক জায়গায় নেভিগেশন বারটি লক করতে এই বোতামটি দুবার আবার ট্যাপ করুন।</string>
     <string name="force_immersive_guide_dialog_message4">হোম স্ক্রিনের মতো কিছু স্ক্রিনে, নেভিগেশন বারটি সর্বদা দেখানো হবে।</string>
     <string name="force_immersive_guide_dialog_guide_path">এই বোতামটি লুকাতে, সেটিংস > প্রদর্শনী > নেভিগেশন বারে যান।</string>
     <string name="force_immersive_guide_dialog_setting">সেটিংস</string>
@@ -992,6 +1003,8 @@ Please note that in order to enable your emergency calls (e.g., such as 112 call
     <string name="qs_detail_palm_capture_title">ক্যাপচার করতে হাতের তালু সোয়াইপ</string>
     <string name="noti_direct_reply_exceed_text_limit_toast">আর পাঠ্য লেখা যাচ্ছে না।</string>
     <string name="airplane_mode_tts_text">বিমান মোড</string>
+    <string name="all_noti_readout">একটি বিজ্ঞপ্তি</string>
+    <string name="all_noti_readout2">%dটি বিজ্ঞপ্তি</string>
     <string name="keyguard_password_enter_pin_code">PIN কোডটি টাইপ করুন।</string>
     <string name="keyguard_password_wrong_pin_code">ভুল PIN কোড।</string>
     <string name="keyguard_charged">সম্পূর্ণ চার্জ হয়েছে</string>

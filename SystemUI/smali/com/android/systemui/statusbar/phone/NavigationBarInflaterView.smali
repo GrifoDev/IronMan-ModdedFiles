@@ -758,7 +758,7 @@
 
     move-result-object v2
 
-    const v3, 0x7f0d022e
+    const v3, 0x7f0d0230
 
     invoke-virtual {v1, v3}, Landroid/content/res/Resources;->getDimensionPixelOffset(I)I
 
@@ -766,7 +766,7 @@
 
     iput v3, v2, Landroid/view/ViewGroup$LayoutParams;->width:I
 
-    const v2, 0x7f0d022f
+    const v2, 0x7f0d0231
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getDimensionPixelOffset(I)I
 

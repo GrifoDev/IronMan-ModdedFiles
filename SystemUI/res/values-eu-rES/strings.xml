@@ -238,6 +238,8 @@
     <string name="wifi_allow_scan_with_traffic_summary">Onartu edo debekatu ibiltaritzan Wi-Fi sareak bilatzea, interfazeko datu-trafikoaren arabera</string>
     <string name="select_logd_size_title">Erregistroen buffer-tamainak</string>
     <string name="select_logd_size_dialog_title">Hautatu erregistroen buffer-tamainak</string>
+    <string name="dev_logpersist_clear_warning_title">Erregistroen biltegi iraunkorra garbitu?</string>
+    <string name="dev_logpersist_clear_warning_message">Erregistroen datuak erregistro iraunkorra desaktibatzean ezabatuko dira.</string>
     <string name="select_logpersist_title">Gorde erregistr. datuak luzaroan</string>
     <string name="select_logpersist_dialog_title">Hautatu bufferrak luzaroan gordetzeko aukera</string>
     <string name="select_usb_configuration_title">Hautatu USB konfigurazioa</string>
@@ -751,6 +753,7 @@ Datuak erabiltzen jarraitzen baduzu, gastu gehiago ordaindu beharko dizkiozu agi
     <string name="wifi_authentication_failed_kt">Ez da Wi-Fi SPa autentifikatu.</string>
     <string name="wifi_authentication_no_response">Ezin izan da Wi-Fi SPra konektatu.</string>
     <string name="wifi_authentication_invalid_value">Autentifikazioak huts egin du. Egiaztatu ID eta pasahitza.</string>
+    <string name="wifi_disconnected">Wi-Fia deskonektatuta</string>
     <string name="quick_settings_dnd_label">Ez molestatu</string>
     <string name="quick_settings_dnd_priority_label">Lehentasunezkoak soilik</string>
     <string name="quick_settings_dnd_alarms_label">Alarmak soilik</string>
@@ -1383,11 +1386,11 @@ Informazio gehiago lortzeko, jarri administratzailearekin harremanetan."</string
     <string name="keyboard_key_numpad_template">Zenbaki-teklatuko %1$s</string>
     <string name="keyboard_popup_help">Meta gakoa: Windows tekla, cmd tekla, edo sistema eragileari dagokion sinboloaren tekla bat.</string>
     <string name="keyboard_shortcut_group_system">Sistemaren lasterbideak</string>
-    <string name="keyboard_shortcut_group_system_home">Hasierako pantaila</string>
+    <string name="keyboard_shortcut_group_system_home">Etxea</string>
     <string name="keyboard_shortcut_group_system_recents">Azkenak</string>
     <string name="keyboard_shortcut_group_system_back">Atzera</string>
     <string name="keyboard_shortcut_group_system_notifications">Jakinarazpenak</string>
-    <string name="keyboard_shortcut_group_system_shortcuts_helper">Lasterbideak</string>
+    <string name="keyboard_shortcut_group_system_shortcuts_helper">Teklatuko lasterbideak</string>
     <string name="keyboard_shortcut_group_system_switch_input">Aldatu idazketa-metodoa</string>
     <string name="keyboard_shortcut_group_system_all_apps">Aplikazio guztiak</string>
     <string name="keyboard_shortcut_group_system_running_apps">Abian diren aplikazioak</string>
@@ -1395,13 +1398,13 @@ Informazio gehiago lortzeko, jarri administratzailearekin harremanetan."</string
     <string name="keyboard_shortcut_group_system_switch_languages">Aldatu hizkuntzak</string>
     <string name="keyboard_shortcut_group_applications">Apl. barneko lasterbideak</string>
     <string name="keyboard_shortcut_group_applications_assist">Laguntzailea</string>
-    <string name="keyboard_shortcut_group_applications_browser">Arakatzailea</string>
+    <string name="keyboard_shortcut_group_applications_browser">Nabigatzailea</string>
     <string name="keyboard_shortcut_group_applications_contacts">Kontaktuak</string>
     <string name="keyboard_shortcut_group_applications_email">Posta elektronikoa</string>
     <string name="keyboard_shortcut_group_applications_im">Istanteko mezularitza</string>
     <string name="keyboard_shortcut_group_applications_music">Musika</string>
     <string name="keyboard_shortcut_group_applications_youtube">YouTube</string>
-    <string name="keyboard_shortcut_group_applications_calendar">Calendar</string>
+    <string name="keyboard_shortcut_group_applications_calendar">Egutegia</string>
     <string name="keyboard_shortcut_group_applications_bixby">Bixby</string>
     <string name="keyboard_shortcut_group_applications_messages">Mezuak</string>
     <string name="tuner_full_zen_title">Erakutsi bolumena kontrolatzeko aukerekin</string>
@@ -1653,7 +1656,9 @@ Gehiegi berotzearen arrazoiak:
     <string name="battery_not_fully_connected_charging_title_vzw">Incomplete connection</string>
     <string name="battery_not_fully_connected_charging_text">Azkarrago kargatzeko, erabili gailuarekin batera eman zitzaizun kargagailua, eta ziurtatu ongi konektatu duzula.</string>
     <string name="battery_not_fully_connected_charging_text_vzw">Make sure the charger is properly connected.</string>
+    <string name="battery_not_fully_connected_charging_text_jpn">Ziurtatu kargagailua behar bezala konektatuta dagoela.</string>
     <string name="battery_not_fully_connected_charging_popup_text">Ziurtatu kargagailua ongi konektatu duzula. Erabili gailuarekin batera eman zitzaizun kargagailua.</string>
+    <string name="battery_not_fully_connected_charging_popup_text_jpn">Ziurtatu kargagailua ongi konektatu duzula.</string>
     <string name="battery_charging_level_and_time_text">"Kargatzen: %%%1$d
 (%2$s inguru geratzen dira bateria erabat kargatu arte)"</string>
     <string name="battery_charging_level_text">Kargatzen: %%%d</string>
@@ -1878,6 +1883,8 @@ Please note that in order to enable your emergency calls (e.g., such as 112 call
     <string name="qs_detail_palm_capture_title">Irristatu esku-azpia kapturatzeko</string>
     <string name="noti_direct_reply_exceed_text_limit_toast">Ezin da idatzi testu gehiago.</string>
     <string name="airplane_mode_tts_text">Hegaldi modua</string>
+    <string name="all_noti_readout">Jakinarazpen bat</string>
+    <string name="all_noti_readout2">%d jakinarazpen</string>
     <string name="car_lockscreen_disclaimer_title">Gidatu zentzuz</string>
     <string name="car_lockscreen_disclaimer_text">Egon erne errepidera begira eta gorde lege aplikagarri oro. Agian jarraibideak ez dira guztiz zehatzak, osatuak edo egokiak izango; arriskutsuak izan daitezke edo debekatuta dagoen zerbait egitea edo mugak zeharkatzea proposa diezazukete. Baliteke enpresei buruzko informazioa ere guztiz zehatza edo osatua ez izatea. Datuak ez dira une-unekoak eta ezin da bermatu kokapenaren zehaztasuna. Gidatu bitartean, ez erabili gailu mugikorrik edo Android Auto zerbitzuarekin erabiltzeko egina ez dagoen aplikaziorik.</string>
     <string name="pip_close">Itxi PIPa</string>

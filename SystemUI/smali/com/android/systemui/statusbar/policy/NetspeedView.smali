@@ -17,6 +17,8 @@
 
 
 # static fields
+.field private static mActiveInterface:Ljava/lang/String;
+
 .field private static mContext:Landroid/content/Context;
 
 .field private static mNetspeedSwitch:Z
@@ -51,7 +53,15 @@
 
 
 # direct methods
-.method static synthetic -get0()Landroid/content/Context;
+.method static synthetic -get0()Ljava/lang/String;
+    .locals 1
+
+    sget-object v0, Lcom/android/systemui/statusbar/policy/NetspeedView;->mActiveInterface:Ljava/lang/String;
+
+    return-object v0
+.end method
+
+.method static synthetic -get1()Landroid/content/Context;
     .locals 1
 
     sget-object v0, Lcom/android/systemui/statusbar/policy/NetspeedView;->mContext:Landroid/content/Context;
@@ -59,7 +69,7 @@
     return-object v0
 .end method
 
-.method static synthetic -get1()Z
+.method static synthetic -get2()Z
     .locals 1
 
     sget-boolean v0, Lcom/android/systemui/statusbar/policy/NetspeedView;->mNetspeedSwitch:Z
@@ -67,7 +77,7 @@
     return v0
 .end method
 
-.method static synthetic -get2(Lcom/android/systemui/statusbar/policy/NetspeedView;)Z
+.method static synthetic -get3(Lcom/android/systemui/statusbar/policy/NetspeedView;)Z
     .locals 1
 
     iget-boolean v0, p0, Lcom/android/systemui/statusbar/policy/NetspeedView;->mNetworkStats:Z
@@ -75,7 +85,7 @@
     return v0
 .end method
 
-.method static synthetic -get3(Lcom/android/systemui/statusbar/policy/NetspeedView;)Landroid/os/Handler;
+.method static synthetic -get4(Lcom/android/systemui/statusbar/policy/NetspeedView;)Landroid/os/Handler;
     .locals 1
 
     iget-object v0, p0, Lcom/android/systemui/statusbar/policy/NetspeedView;->mNetworkStatsHandler:Landroid/os/Handler;
@@ -83,7 +93,7 @@
     return-object v0
 .end method
 
-.method static synthetic -get4(Lcom/android/systemui/statusbar/policy/NetspeedView;)Landroid/content/BroadcastReceiver;
+.method static synthetic -get5(Lcom/android/systemui/statusbar/policy/NetspeedView;)Landroid/content/BroadcastReceiver;
     .locals 1
 
     iget-object v0, p0, Lcom/android/systemui/statusbar/policy/NetspeedView;->mNetworkStatsReceiver:Landroid/content/BroadcastReceiver;
@@ -91,7 +101,7 @@
     return-object v0
 .end method
 
-.method static synthetic -get5(Lcom/android/systemui/statusbar/policy/NetspeedView;)Z
+.method static synthetic -get6(Lcom/android/systemui/statusbar/policy/NetspeedView;)Z
     .locals 1
 
     iget-boolean v0, p0, Lcom/android/systemui/statusbar/policy/NetspeedView;->mRegisterReceiver:Z
@@ -99,7 +109,7 @@
     return v0
 .end method
 
-.method static synthetic -get6()Z
+.method static synthetic -get7()Z
     .locals 1
 
     sget-boolean v0, Lcom/android/systemui/statusbar/policy/NetspeedView;->mVpnConnected:Z
@@ -107,7 +117,15 @@
     return v0
 .end method
 
-.method static synthetic -set0(Z)Z
+.method static synthetic -set0(Ljava/lang/String;)Ljava/lang/String;
+    .locals 0
+
+    sput-object p0, Lcom/android/systemui/statusbar/policy/NetspeedView;->mActiveInterface:Ljava/lang/String;
+
+    return-object p0
+.end method
+
+.method static synthetic -set1(Z)Z
     .locals 0
 
     sput-boolean p0, Lcom/android/systemui/statusbar/policy/NetspeedView;->mNetspeedSwitch:Z
@@ -115,7 +133,7 @@
     return p0
 .end method
 
-.method static synthetic -set1(Lcom/android/systemui/statusbar/policy/NetspeedView;Z)Z
+.method static synthetic -set2(Lcom/android/systemui/statusbar/policy/NetspeedView;Z)Z
     .locals 0
 
     iput-boolean p1, p0, Lcom/android/systemui/statusbar/policy/NetspeedView;->mNetworkStats:Z
@@ -123,7 +141,7 @@
     return p1
 .end method
 
-.method static synthetic -set2(Lcom/android/systemui/statusbar/policy/NetspeedView;Z)Z
+.method static synthetic -set3(Lcom/android/systemui/statusbar/policy/NetspeedView;Z)Z
     .locals 0
 
     iput-boolean p1, p0, Lcom/android/systemui/statusbar/policy/NetspeedView;->mRegisterReceiver:Z
@@ -131,7 +149,7 @@
     return p1
 .end method
 
-.method static synthetic -set3(Lcom/android/systemui/statusbar/policy/NetspeedView;Z)Z
+.method static synthetic -set4(Lcom/android/systemui/statusbar/policy/NetspeedView;Z)Z
     .locals 0
 
     iput-boolean p1, p0, Lcom/android/systemui/statusbar/policy/NetspeedView;->mScreenOn:Z
@@ -139,7 +157,7 @@
     return p1
 .end method
 
-.method static synthetic -set4(Z)Z
+.method static synthetic -set5(Z)Z
     .locals 0
 
     sput-boolean p0, Lcom/android/systemui/statusbar/policy/NetspeedView;->mVpnConnected:Z
@@ -147,7 +165,17 @@
     return p0
 .end method
 
-.method static synthetic -wrap0(Lcom/android/systemui/statusbar/policy/NetspeedView;)V
+.method static synthetic -wrap0(Lcom/android/systemui/statusbar/policy/NetspeedView;Landroid/content/Context;)Ljava/lang/String;
+    .locals 1
+
+    invoke-direct {p0, p1}, Lcom/android/systemui/statusbar/policy/NetspeedView;->getActiveInterface(Landroid/content/Context;)Ljava/lang/String;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method static synthetic -wrap1(Lcom/android/systemui/statusbar/policy/NetspeedView;)V
     .locals 0
 
     invoke-direct {p0}, Lcom/android/systemui/statusbar/policy/NetspeedView;->setNetworkSpeed()V
@@ -339,6 +367,49 @@
     sput-object p1, Lcom/android/systemui/statusbar/policy/NetspeedView;->mContext:Landroid/content/Context;
 
     return-void
+.end method
+
+.method private getActiveInterface(Landroid/content/Context;)Ljava/lang/String;
+    .locals 6
+
+    const/4 v5, 0x0
+
+    const-string/jumbo v3, "connectivity"
+
+    invoke-static {v3}, Landroid/os/ServiceManager;->getService(Ljava/lang/String;)Landroid/os/IBinder;
+
+    move-result-object v3
+
+    invoke-static {v3}, Landroid/net/IConnectivityManager$Stub;->asInterface(Landroid/os/IBinder;)Landroid/net/IConnectivityManager;
+
+    move-result-object v1
+
+    const/4 v3, 0x0
+
+    :try_start_0
+    invoke-interface {v1, v3}, Landroid/net/IConnectivityManager;->getVpnConfig(I)Lcom/android/internal/net/VpnConfig;
+
+    move-result-object v0
+
+    if-eqz v0, :cond_0
+
+    iget-object v3, v0, Lcom/android/internal/net/VpnConfig;->interfaze:Ljava/lang/String;
+    :try_end_0
+    .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
+
+    return-object v3
+
+    :catch_0
+    move-exception v2
+
+    const-string/jumbo v3, "NetworkSpeedView"
+
+    const-string/jumbo v4, "RemoteException"
+
+    invoke-static {v3, v4}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
+
+    :cond_0
+    return-object v5
 .end method
 
 .method private registerListener()V

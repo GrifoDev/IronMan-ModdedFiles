@@ -47,7 +47,7 @@
 
     const/4 v3, 0x1
 
-    const v1, 0x7f0f0515
+    const v1, 0x7f0f0516
 
     iget-object v2, p0, Lcom/android/systemui/qs/tiles/AirplaneModeTile$AirplaneModeDetailAdapter;->this$0:Lcom/android/systemui/qs/tiles/AirplaneModeTile;
 
@@ -65,7 +65,7 @@
 
     if-eqz v2, :cond_2
 
-    const v1, 0x7f0f04fe
+    const v1, 0x7f0f04ff
 
     :cond_0
     :goto_0
@@ -109,7 +109,7 @@
 
     if-ne v2, v3, :cond_5
 
-    const v1, 0x7f0f0517
+    const v1, 0x7f0f0518
 
     :cond_1
     :goto_1
@@ -126,7 +126,7 @@
     return-object v2
 
     :cond_2
-    const v1, 0x7f0f0501
+    const v1, 0x7f0f0502
 
     goto :goto_0
 
@@ -135,7 +135,7 @@
 
     if-eqz v2, :cond_4
 
-    const v1, 0x7f0f0502
+    const v1, 0x7f0f0503
 
     goto :goto_0
 
@@ -144,12 +144,12 @@
 
     if-eqz v2, :cond_0
 
-    const v1, 0x7f0f04fe
+    const v1, 0x7f0f04ff
 
     goto :goto_0
 
     :cond_5
-    const v1, 0x7f0f0516
+    const v1, 0x7f0f0517
 
     goto :goto_1
 
@@ -166,12 +166,12 @@
 
     if-ne v2, v3, :cond_7
 
-    const v1, 0x7f0f0519
+    const v1, 0x7f0f051a
 
     goto :goto_1
 
     :cond_7
-    const v1, 0x7f0f0518
+    const v1, 0x7f0f0519
 
     goto :goto_1
 .end method
@@ -261,7 +261,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f0f0514
+    const v1, 0x7f0f0515
 
     invoke-virtual {v0, v1}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -377,7 +377,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f0f0505
+    const v1, 0x7f0f0506
 
     invoke-static {v0, v1, v2}, Landroid/widget/Toast;->makeText(Landroid/content/Context;II)Landroid/widget/Toast;
 
@@ -482,7 +482,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f0f0507
+    const v1, 0x7f0f0508
 
     invoke-static {v0, v1, v2}, Landroid/widget/Toast;->makeText(Landroid/content/Context;II)Landroid/widget/Toast;
 

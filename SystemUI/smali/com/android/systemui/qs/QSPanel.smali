@@ -2040,7 +2040,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f0d0278
+    const v1, 0x7f0d027a
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -2048,7 +2048,7 @@
 
     iput v1, p0, Lcom/android/systemui/qs/QSPanel;->mPanelPaddingBottom:I
 
-    const v1, 0x7f0d027e
+    const v1, 0x7f0d0280
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 

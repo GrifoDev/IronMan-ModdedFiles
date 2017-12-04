@@ -1211,17 +1211,15 @@
 .end method
 
 .method private setBounds(Landroid/graphics/Rect;)V
-    .locals 6
+    .locals 3
 
-    const/4 v3, 0x1
+    const/4 v2, 0x3
 
-    const/4 v5, 0x3
-
-    const/4 v2, 0x0
+    const/4 v0, 0x0
 
     iget v1, p0, Lcom/android/systemui/stackdivider/DividerSnapView;->mSnapTarget:I
 
-    if-ne v1, v5, :cond_0
+    if-ne v1, v2, :cond_0
 
     if-eqz p1, :cond_0
 
@@ -1229,7 +1227,7 @@
 
     move-result v1
 
-    if-eqz v1, :cond_4
+    if-eqz v1, :cond_3
 
     :cond_0
     :goto_0
@@ -1239,107 +1237,97 @@
 
     move-result v1
 
-    if-eqz v1, :cond_5
-
-    move v1, v2
+    if-eqz v1, :cond_4
 
     :goto_1
-    iput-boolean v1, p0, Lcom/android/systemui/stackdivider/DividerSnapView;->mHasStatusBar:Z
+    iput-boolean v0, p0, Lcom/android/systemui/stackdivider/DividerSnapView;->mHasStatusBar:Z
 
-    iget-boolean v1, p0, Lcom/android/systemui/stackdivider/DividerSnapView;->mHasStatusBar:Z
+    iget-boolean v0, p0, Lcom/android/systemui/stackdivider/DividerSnapView;->mHasStatusBar:Z
 
-    if-eqz v1, :cond_1
+    if-eqz v0, :cond_1
 
-    iget v1, p0, Lcom/android/systemui/stackdivider/DividerSnapView;->mSnapTarget:I
+    iget v0, p0, Lcom/android/systemui/stackdivider/DividerSnapView;->mSnapTarget:I
 
-    if-ne v1, v5, :cond_1
+    if-ne v0, v2, :cond_1
 
-    iget v1, p1, Landroid/graphics/Rect;->top:I
+    iget v0, p1, Landroid/graphics/Rect;->top:I
 
-    iget v4, p0, Lcom/android/systemui/stackdivider/DividerSnapView;->mStatusBarHeight:I
+    iget v1, p0, Lcom/android/systemui/stackdivider/DividerSnapView;->mStatusBarHeight:I
 
-    add-int/2addr v1, v4
+    add-int/2addr v0, v1
 
-    iput v1, p1, Landroid/graphics/Rect;->top:I
+    iput v0, p1, Landroid/graphics/Rect;->top:I
 
-    iget v1, p0, Lcom/android/systemui/stackdivider/DividerSnapView;->mAdjConventionalMode:I
+    iget v0, p0, Lcom/android/systemui/stackdivider/DividerSnapView;->mAdjConventionalMode:I
 
-    if-lez v1, :cond_1
+    if-lez v0, :cond_1
 
-    iget v1, p0, Lcom/android/systemui/stackdivider/DividerSnapView;->mAdjConventionalMode:I
+    iget v0, p0, Lcom/android/systemui/stackdivider/DividerSnapView;->mAdjConventionalMode:I
 
-    iget v4, p0, Lcom/android/systemui/stackdivider/DividerSnapView;->mStatusBarHeight:I
+    iget v1, p0, Lcom/android/systemui/stackdivider/DividerSnapView;->mStatusBarHeight:I
 
-    add-int/2addr v1, v4
+    add-int/2addr v0, v1
 
-    iput v1, p0, Lcom/android/systemui/stackdivider/DividerSnapView;->mAdjConventionalMode:I
+    iput v0, p0, Lcom/android/systemui/stackdivider/DividerSnapView;->mAdjConventionalMode:I
 
     :cond_1
-    iget-object v1, p0, Lcom/android/systemui/stackdivider/DividerSnapView;->mContext:Landroid/content/Context;
+    iget-boolean v0, p0, Lcom/android/systemui/stackdivider/DividerSnapView;->mHasNavigationBar:Z
 
-    invoke-virtual {v1}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
+    if-eqz v0, :cond_2
 
-    move-result-object v1
+    iget v0, p0, Lcom/android/systemui/stackdivider/DividerSnapView;->mSnapTarget:I
 
-    const-string/jumbo v4, "navigationbar_hide_bar_enabled"
+    const/4 v1, 0x2
 
-    invoke-static {v1, v4, v2}, Landroid/provider/Settings$Global;->getInt(Landroid/content/ContentResolver;Ljava/lang/String;I)I
+    if-eq v0, v1, :cond_6
 
-    move-result v1
+    invoke-virtual {p0}, Lcom/android/systemui/stackdivider/DividerSnapView;->isForceImmersiveMode()Z
 
-    if-ne v1, v3, :cond_6
+    move-result v0
 
-    const/4 v0, 0x1
+    if-nez v0, :cond_2
 
-    :goto_2
-    iget-boolean v1, p0, Lcom/android/systemui/stackdivider/DividerSnapView;->mHasNavigationBar:Z
+    invoke-virtual {p0}, Lcom/android/systemui/stackdivider/DividerSnapView;->translucentNavigationBar()Z
 
-    if-eqz v1, :cond_3
+    move-result v0
 
-    iget v1, p0, Lcom/android/systemui/stackdivider/DividerSnapView;->mSnapTarget:I
-
-    const/4 v2, 0x2
-
-    if-eq v1, v2, :cond_2
-
-    if-nez v0, :cond_3
-
-    iget v1, p0, Lcom/android/systemui/stackdivider/DividerSnapView;->mSnapTarget:I
-
-    if-ne v1, v5, :cond_3
-
-    iget v1, p0, Lcom/android/systemui/stackdivider/DividerSnapView;->mAdjConventionalMode:I
-
-    if-nez v1, :cond_3
+    if-eqz v0, :cond_5
 
     :cond_2
-    iget v1, p1, Landroid/graphics/Rect;->bottom:I
-
-    iget v2, p0, Lcom/android/systemui/stackdivider/DividerSnapView;->mNavigationBarHeight:I
-
-    sub-int/2addr v1, v2
-
-    iput v1, p1, Landroid/graphics/Rect;->bottom:I
-
-    :cond_3
+    :goto_2
     iput-object p1, p0, Lcom/android/systemui/stackdivider/DividerSnapView;->mSnapWindowBounds:Landroid/graphics/Rect;
 
     return-void
 
-    :cond_4
+    :cond_3
     iget-object v1, p0, Lcom/android/systemui/stackdivider/DividerSnapView;->mInitSnapWindowBounds:Landroid/graphics/Rect;
 
     invoke-virtual {v1, p1}, Landroid/graphics/Rect;->set(Landroid/graphics/Rect;)V
 
     goto :goto_0
 
-    :cond_5
-    move v1, v3
+    :cond_4
+    const/4 v0, 0x1
 
     goto :goto_1
 
+    :cond_5
+    iget v0, p0, Lcom/android/systemui/stackdivider/DividerSnapView;->mSnapTarget:I
+
+    if-ne v0, v2, :cond_2
+
+    iget v0, p0, Lcom/android/systemui/stackdivider/DividerSnapView;->mAdjConventionalMode:I
+
+    if-nez v0, :cond_2
+
     :cond_6
-    const/4 v0, 0x0
+    iget v0, p1, Landroid/graphics/Rect;->bottom:I
+
+    iget v1, p0, Lcom/android/systemui/stackdivider/DividerSnapView;->mNavigationBarHeight:I
+
+    sub-int/2addr v0, v1
+
+    iput v0, p1, Landroid/graphics/Rect;->bottom:I
 
     goto :goto_2
 .end method
@@ -1533,6 +1521,31 @@
     goto :goto_0
 .end method
 
+.method isForceImmersiveMode()Z
+    .locals 3
+
+    const/4 v0, 0x0
+
+    iget-object v1, p0, Lcom/android/systemui/stackdivider/DividerSnapView;->mContext:Landroid/content/Context;
+
+    invoke-virtual {v1}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
+
+    move-result-object v1
+
+    const-string/jumbo v2, "navigationbar_hide_bar_enabled"
+
+    invoke-static {v1, v2, v0}, Landroid/provider/Settings$Global;->getInt(Landroid/content/ContentResolver;Ljava/lang/String;I)I
+
+    move-result v1
+
+    if-eqz v1, :cond_0
+
+    const/4 v0, 0x1
+
+    :cond_0
+    return v0
+.end method
+
 .method public makeVisible(ZILandroid/graphics/Rect;Ljava/lang/String;)V
     .locals 1
 
@@ -1706,7 +1719,7 @@
 
     move-result-object v2
 
-    const v3, 0x7f0d0024
+    const v3, 0x7f0d0026
 
     invoke-virtual {v2, v3}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -1782,7 +1795,7 @@
 
     move-result-object v2
 
-    const v3, 0x7f0d0036
+    const v3, 0x7f0d0038
 
     invoke-virtual {v2, v3}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -1822,7 +1835,7 @@
 
     move-result-object v2
 
-    const v3, 0x7f0d0038
+    const v3, 0x7f0d003a
 
     invoke-virtual {v2, v3}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -1846,7 +1859,7 @@
 
     move-result-object v2
 
-    const v3, 0x7f0d0028
+    const v3, 0x7f0d002a
 
     invoke-virtual {v2, v3}, Landroid/content/res/Resources;->getDimension(I)F
 
@@ -1872,7 +1885,7 @@
 
     move-result-object v2
 
-    const v3, 0x7f0d002b
+    const v3, 0x7f0d002d
 
     invoke-virtual {v2, v3}, Landroid/content/res/Resources;->getDimension(I)F
 
@@ -1908,7 +1921,7 @@
 
     move-result-object v2
 
-    const v3, 0x7f0d0032
+    const v3, 0x7f0d0034
 
     invoke-virtual {v2, v3}, Landroid/content/res/Resources;->getDimension(I)F
 
@@ -1924,7 +1937,7 @@
 
     move-result-object v2
 
-    const v3, 0x7f0d002f
+    const v3, 0x7f0d0031
 
     invoke-virtual {v2, v3}, Landroid/content/res/Resources;->getDimension(I)F
 
@@ -1940,7 +1953,7 @@
 
     move-result-object v2
 
-    const v3, 0x7f0d0030
+    const v3, 0x7f0d0032
 
     invoke-virtual {v2, v3}, Landroid/content/res/Resources;->getDimension(I)F
 
@@ -1966,7 +1979,7 @@
 
     move-result-object v2
 
-    const v3, 0x7f0d0035
+    const v3, 0x7f0d0037
 
     invoke-virtual {v2, v3}, Landroid/content/res/Resources;->getDimension(I)F
 
@@ -2341,4 +2354,16 @@
     iget v3, p0, Lcom/android/systemui/stackdivider/DividerSnapView;->mUnSnapReason:I
 
     goto :goto_1
+.end method
+
+.method translucentNavigationBar()Z
+    .locals 1
+
+    iget-object v0, p0, Lcom/android/systemui/stackdivider/DividerSnapView;->mWindowManagerProxy:Lcom/android/systemui/stackdivider/WindowManagerProxy;
+
+    invoke-virtual {v0}, Lcom/android/systemui/stackdivider/WindowManagerProxy;->isSnapTargetTranslucentNavigationBar()Z
+
+    move-result v0
+
+    return v0
 .end method

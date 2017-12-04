@@ -320,7 +320,7 @@
 
     if-eqz v11, :cond_d
 
-    const v4, 0x7f0207b0
+    const v4, 0x7f0207b4
 
     :goto_2
     const-string/jumbo v11, "zen"
@@ -424,7 +424,7 @@
 
     if-eqz v11, :cond_13
 
-    const v4, 0x7f020770
+    const v4, 0x7f020774
 
     :goto_6
     const-string/jumbo v11, "tty"
@@ -553,7 +553,7 @@
 
     if-eqz v11, :cond_e
 
-    const v4, 0x7f0207b1
+    const v4, 0x7f0207b5
 
     goto/16 :goto_2
 

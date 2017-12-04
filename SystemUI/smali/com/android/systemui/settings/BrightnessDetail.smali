@@ -305,7 +305,7 @@
 
     invoke-super {p0}, Landroid/widget/FrameLayout;->onFinishInflate()V
 
-    const v0, 0x7f130495
+    const v0, 0x7f130497
 
     invoke-virtual {p0, v0}, Lcom/android/systemui/settings/BrightnessDetail;->findViewById(I)Landroid/view/View;
 

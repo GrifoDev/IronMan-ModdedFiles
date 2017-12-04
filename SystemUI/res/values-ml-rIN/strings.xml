@@ -238,6 +238,8 @@
     <string name="wifi_allow_scan_with_traffic_summary">ഇന്റർഫേസിലെ ഡാറ്റ ട്രാഫിക്ക് സാന്നിദ്ധ്യത്തിന്റെ കണക്ക് അടിസ്ഥാനമാക്കി വൈഫൈ റോം സ്‌കാനുകൾ അനുവദിക്കുക/അനുവദിക്കാതിരിക്കുക</string>
     <string name="select_logd_size_title">ലോഗർ ബഫർ വലുപ്പം</string>
     <string name="select_logd_size_dialog_title">ഓരോ ലോഗ് ബഫറിനും വലുപ്പം തിരഞ്ഞെടുക്കൂ</string>
+    <string name="dev_logpersist_clear_warning_title">സ്ഥിരമായ ലോഗർ സംഭരണം മായ്ക്കണോ?</string>
+    <string name="dev_logpersist_clear_warning_message">സ്ഥിരമായ ലോഗർ ഓഫായിരിക്കുമ്പോൾ ലോഗർ ഡാറ്റ ഇല്ലാതാക്കപ്പെടും.</string>
     <string name="select_logpersist_title">ലോഗ് ഡാറ്റ സ്ഥിരമായി സംഭരിക്കുക</string>
     <string name="select_logpersist_dialog_title">സ്ഥിരമായി സംഭരിക്കാനുള്ള ലോഗ് ബഫറുകൾ തിരഞ്ഞെടുക്കുക</string>
     <string name="select_usb_configuration_title">USB കോൺഫിഗറേഷൻ തിരഞ്ഞെടുക്കൂ</string>
@@ -752,6 +754,7 @@ For example, your ringtone will not sound, you will not be able to answer phone 
     <string name="wifi_authentication_failed_kt">Wi-Fi AP ആധികാരികമാക്കുന്നത് പരാജയപ്പെട്ടു.</string>
     <string name="wifi_authentication_no_response">Wi-Fi AP-യിലേക്ക് ബന്ധിപ്പിക്കുന്നത് പരാജയപ്പെട്ടു.</string>
     <string name="wifi_authentication_invalid_value">Authentication failed. Check ID and password.</string>
+    <string name="wifi_disconnected">Wi-Fi വിച്ഛേദിച്ചു.</string>
     <string name="quick_settings_dnd_label">ശല്ല്യപ്പെടുത്തരുത്</string>
     <string name="quick_settings_dnd_priority_label">മുൻഗണന മാത്രം</string>
     <string name="quick_settings_dnd_alarms_label">അലാറങ്ങൾ മാത്രം</string>
@@ -1383,11 +1386,11 @@ Wi-Fi, ബ്ലൂടൂത്ത് എന്നിവ കൂടി ഓഫ് 
     <string name="keyboard_key_numpad_template">നംപാഡ് %1$s</string>
     <string name="keyboard_popup_help">മെറ്റ കീ: വിൻഡോസ്, കമാൻഡ്, അല്ലെങ്കിൽ മറ്റ് ഓപ്പറേറ്റിംഗ് സിസ്റ്റം സിംബൽ കീ.</string>
     <string name="keyboard_shortcut_group_system">സിസ്റ്റം എളുപ്പവഴികൾ</string>
-    <string name="keyboard_shortcut_group_system_home">വീട്</string>
-    <string name="keyboard_shortcut_group_system_recents">പുതിയവ</string>
+    <string name="keyboard_shortcut_group_system_home">ഹോം</string>
+    <string name="keyboard_shortcut_group_system_recents">സമീപകാലങ്ങൾ</string>
     <string name="keyboard_shortcut_group_system_back">പിന്നോട്ട്</string>
     <string name="keyboard_shortcut_group_system_notifications">അറിയിപ്പുകൾ</string>
-    <string name="keyboard_shortcut_group_system_shortcuts_helper">കീബോർഡ് കുറുക്കുവഴികൾ</string>
+    <string name="keyboard_shortcut_group_system_shortcuts_helper">കീബോർഡ് എളുപ്പവഴികൾ</string>
     <string name="keyboard_shortcut_group_system_switch_input">ടൈപ്പിംഗ് രീതി മാറുക</string>
     <string name="keyboard_shortcut_group_system_all_apps">ആപ്ലിക്കേഷനുകൾ എല്ലാം</string>
     <string name="keyboard_shortcut_group_system_running_apps">പ്രവർത്തിക്കുന്ന ആപ്ലിക്കേഷനുകൾ</string>
@@ -1653,7 +1656,9 @@ Using your tablet in a very hot location."</string>
     <string name="battery_not_fully_connected_charging_title_vzw">Incomplete connection</string>
     <string name="battery_not_fully_connected_charging_text">വേഗത്തിലുള്ള ചാർജ്ജിംഗിന്, നിങ്ങളുടെ ഉപകരണത്തോടൊപ്പം കിട്ടിയ ചാർജ്ജർ ഉപയോഗിക്കുകയും അത് ശരിയായി ബന്ധിപ്പിച്ചിട്ടുണ്ടെന്ന് ഉറപ്പാക്കുകയും ചെയ്യുക.</string>
     <string name="battery_not_fully_connected_charging_text_vzw">Make sure the charger is properly connected.</string>
+    <string name="battery_not_fully_connected_charging_text_jpn">നിങ്ങളുടെ ചാർജ്ജർ ശരിയായി ബന്ധിപ്പിച്ചിട്ടുണ്ടെന്ന് ഉറപ്പാക്കുക.</string>
     <string name="battery_not_fully_connected_charging_popup_text">ചാർജ്ജർ ശരിയായി ബന്ധിപ്പിച്ചിട്ടുണ്ടെന്ന് ഉറപ്പാക്കുക. ഉപകരണത്തോടൊപ്പം കിട്ടിയ ചാർജ്ജർ ഉപയോഗിക്കുക.</string>
+    <string name="battery_not_fully_connected_charging_popup_text_jpn">ചാർജ്ജർ ശരിയായി ബന്ധിപ്പിച്ചിട്ടുണ്ടെന്ന് ഉറപ്പാക്കുക.</string>
     <string name="battery_charging_level_and_time_text">"ചാർജ്ജ് ചെയ്യുന്നു: %1$d%%
 (പൂർണ്ണമായി ചാർജ്ജ് ചെയ്യുന്നതിന് ഏകദേശം %2$s)"</string>
     <string name="battery_charging_level_text">ചാര്‍ജ്ജ് ചെയ്യുന്നു: %d%%</string>
@@ -1878,6 +1883,8 @@ Please note that in order to enable your emergency calls (e.g., such as 112 call
     <string name="qs_detail_palm_capture_title">ചിത്രമെടുക്കുന്നതിന് ഉള്ളംകൈയില്‍ വച്ച് സ്വൈപ്പുചെയ്യുക</string>
     <string name="noti_direct_reply_exceed_text_limit_toast">ടെക്സ്റ്റ് ഇനിയും നൽകാനാവില്ല.</string>
     <string name="airplane_mode_tts_text">വിമാന മോഡ്</string>
+    <string name="all_noti_readout">ഒരു അറിയിപ്പ്</string>
+    <string name="all_noti_readout2">%d അറിയിപ്പുകൾ</string>
     <string name="car_lockscreen_disclaimer_title">സുരക്ഷിതമായി ഡ്രൈവ് ചെയ്യുക</string>
     <string name="car_lockscreen_disclaimer_text">ഡ്രൈവിംഗ് സാഹചര്യങ്ങളെ കുറിച്ച് നല്ലവണ്ണം അറിഞ്ഞുവയ്ക്കുക, എല്ലായ്പ്പോഴും ബാധകമായ നിയമങ്ങൾ അനുസരിക്കുക. ദിശാസൂചനകൾ കൃത്യമല്ലാത്തതും അപൂർണ്ണവും അപകടകരവും അനുയോജ്യമല്ലാത്തതും നിരോധിക്കപ്പെട്ടതും അഡ്‌മിനിസ്ട്രേറ്റീവ് ഏരിയകൾ അതിലംഘിച്ച് പോകേണ്ടതുമായിരിക്കാം. വിവരങ്ങൾ തത്സമയം എടുത്തിട്ടുള്ളതല്ല, അതിനാൽ ലൊക്കേഷൻ കൃത്യത ഉറപ്പാക്കാൻ കഴിയില്ല. ഡ്രൈവ് ചെയ്യുന്ന സമയത്ത് മൊബൈൽ ഉപകരണങ്ങളോ Android Auto-യ്ക്കായി ഉദ്ദേശിക്കപ്പെട്ടിട്ടില്ലാത്ത ആപ്‌സോ കൈകാര്യം ചെയ്യരുത്</string>
     <string name="pip_close">PIP അടയ്ക്കുക</string>

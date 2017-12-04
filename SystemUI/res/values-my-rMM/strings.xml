@@ -238,6 +238,8 @@
     <string name="wifi_allow_scan_with_traffic_summary">မျက်နှာပြင်တွင် ဖော်ပြသည့် အချက်လက် အသွားအလာ ပမာဏပေါ်တွင် အခြေခံ၍ WIFI ရွမ်းရှာဖွေမှုအား ဖွင့်/ပိတ်မည်</string>
     <string name="select_logd_size_title">လော့ဂါး ဘာဖား ဆိုက်များ</string>
     <string name="select_logd_size_dialog_title">လော့ ဘာဖားတွက် လော့ဂါးဆိုက် ရွေး</string>
+    <string name="dev_logpersist_clear_warning_title">ပြဿနာဆက်ဖြစ်နေသည့် လော့ဂါ သိုလှောင်ခန်းကို ရှင်းပစ်မလား?</string>
+    <string name="dev_logpersist_clear_warning_message">ပြဿနာဆက်ဖြစ်နေသည့် လော့ဂါကို ပိတ်လိုက်သည့်အခါ လော့ဂါဒေတာကို ဖျက်ပစ်ပါမည်။</string>
     <string name="select_logpersist_title">မှတ်တမ်းဒေတာကို ဆက်တိုက်သိမ်းပါ</string>
     <string name="select_logpersist_dialog_title">ဆက်တိုက်သိမ်းမည့် မှတ်တမ်း ကြားခံနယ်များကို ရွေးပါ</string>
     <string name="select_usb_configuration_title">USB စီစဉ်ဖွဲ့စည်းမှု ရွေးရန်</string>
@@ -752,6 +754,7 @@ For example, your ringtone will not sound, you will not be able to answer phone 
     <string name="wifi_authentication_failed_kt">Wi-Fi AP ကို အထောက်အထားပြုစစ်ဆေးရန် မအောင်မြင်ပါ။</string>
     <string name="wifi_authentication_no_response">Wi-Fi AP သို့ ချိတ်ဆက်ရန် မအောင်မြင်ပါ။</string>
     <string name="wifi_authentication_invalid_value">အထောက်အထားပြမှု မအောင်မြင်ပါ။ သင့် ID နှင့် စကားဝှက်ကို စစ်ဆေးပါ။</string>
+    <string name="wifi_disconnected">Wi-Fi အဆက်ဖြတ်ထားသည်။</string>
     <string name="quick_settings_dnd_label">မနှောက်ယှက်ပါနှင့်</string>
     <string name="quick_settings_dnd_priority_label">ဦးစားပေးများသာ</string>
     <string name="quick_settings_dnd_alarms_label">နှိုးစက်များသာ</string>
@@ -1384,10 +1387,10 @@ Wi-Fi နှင့်ဘလူးတုသ်ကို ပိတ်လိုက�
     <string name="keyboard_popup_help">Meta ကီး : Windows၊ ညွှန်ကြားချက် သို့မဟုတ် အခြားလုပ်ဆောင်ချက် စနစ် သင်္ကေတ ခလုတ်။</string>
     <string name="keyboard_shortcut_group_system">စနစ်ရှော့ကတ်များ</string>
     <string name="keyboard_shortcut_group_system_home">ပင်မ</string>
-    <string name="keyboard_shortcut_group_system_recents">မကြာသေးခင်က</string>
+    <string name="keyboard_shortcut_group_system_recents">လတ်တလောများ</string>
     <string name="keyboard_shortcut_group_system_back">နောက်သို့</string>
-    <string name="keyboard_shortcut_group_system_notifications">အကြောင်းကြားချက်များ</string>
-    <string name="keyboard_shortcut_group_system_shortcuts_helper">ကီးဘုတ် ဖြတ်လမ်းများ</string>
+    <string name="keyboard_shortcut_group_system_notifications">အသိပေးချက်များ</string>
+    <string name="keyboard_shortcut_group_system_shortcuts_helper">ကီးဘုတ်ရှော့ကတ်များ</string>
     <string name="keyboard_shortcut_group_system_switch_input">ထည့်သွင်းမှုနည်းလမ်းကို ပြောင်းလဲပါ</string>
     <string name="keyboard_shortcut_group_system_all_apps">အက်ပ် အားလုံး</string>
     <string name="keyboard_shortcut_group_system_running_apps">အလုပ်လုပ်နေသည့် အက်ပ်များ</string>
@@ -1395,7 +1398,7 @@ Wi-Fi နှင့်ဘလူးတုသ်ကို ပိတ်လိုက�
     <string name="keyboard_shortcut_group_system_switch_languages">ဘာသာစကားများကို ပြောင်းပါ</string>
     <string name="keyboard_shortcut_group_applications">အက်ပ်-တွင်ပါရှိသော ရှော့ကတ်များ</string>
     <string name="keyboard_shortcut_group_applications_assist">အထောက်အကူ</string>
-    <string name="keyboard_shortcut_group_applications_browser">ဘရောင်ဇာ</string>
+    <string name="keyboard_shortcut_group_applications_browser">ဘရောက်ဇာ</string>
     <string name="keyboard_shortcut_group_applications_contacts">အဆက်အသွယ်များ</string>
     <string name="keyboard_shortcut_group_applications_email">အီးမေးလ်</string>
     <string name="keyboard_shortcut_group_applications_im">အမြန်စာတိုစနစ်</string>
@@ -1653,7 +1656,9 @@ Using your tablet in a very hot location."</string>
     <string name="battery_not_fully_connected_charging_title_vzw">Incomplete connection</string>
     <string name="battery_not_fully_connected_charging_text">ပို၍မြန်စွာ အားသွင်းရန်၊ ကိရိယာနှင့်အတူပါလာသော ချာဂျာကို အသုံးပြုပြီး ၎င်းကို ကောင်းစွာ ချိတ်ဆက်ထားကြောင်း သေချာအောင်လုပ်ပါ။</string>
     <string name="battery_not_fully_connected_charging_text_vzw">Make sure the charger is properly connected.</string>
+    <string name="battery_not_fully_connected_charging_text_jpn">အားသွင်းကို ကောင်းစွာ ချိတ်ဆက်ထားကြောင်း သေချာအောင်လုပ်ပါ။</string>
     <string name="battery_not_fully_connected_charging_popup_text">ချာဂျာကို ကောင်းစွာ ချိတ်ဆက်ထားကြောင်း သေချာအောင်လုပ်ပါ။ ကိရိယာနှင့်အတူပါလာသော ချာဂျာကို အသုံးပြုပါ။</string>
+    <string name="battery_not_fully_connected_charging_popup_text_jpn">ချာဂျာကို ကောင်းစွာ ချိတ်ဆက်ထားကြောင်း သေချာအောင်လုပ်ပါ။</string>
     <string name="battery_charging_level_and_time_text">"အားသွင်းနေသည် : %1$d%%
 (အားပြည့်သည်အထိ ခန့်မှန်းခြေ %2$s)"</string>
     <string name="battery_charging_level_text">အားသွင်းနေပါသည် : %d%%</string>
@@ -1878,6 +1883,8 @@ Please note that in order to enable your emergency calls (e.g., such as 112 call
     <string name="qs_detail_palm_capture_title">ဖမ်းယူရန် ပွတ်ဆွဲခြင်း</string>
     <string name="noti_direct_reply_exceed_text_limit_toast">နောက်ထပ်စာများ ထည့်သွင်း၍ မရနိုင်ပါ။</string>
     <string name="airplane_mode_tts_text">လေယာဉ်ပျံအနေအထား</string>
+    <string name="all_noti_readout">အသိပေးချက်တစ်ခု</string>
+    <string name="all_noti_readout2">အသိပေးချက် %d ခု</string>
     <string name="car_lockscreen_disclaimer_title">ဘေးကင်းလုံခြုံစွာ မောင်းနှင်ပါ</string>
     <string name="car_lockscreen_disclaimer_text">ယာဉ်မောင်းမှုအခြေအနေများကို အပြည့်အဝအာရုံစိုက်ပြီး သက်ဆိုင်ရာဥပဒေများကို အမြဲတမ်းလိုက်နာပါ။ လမ်းညွှန်ချက်များသည် မှန်ကန်မှုမရှိခြင်း၊ မပြည့်စုံခြင်း၊ အန္တရာယ်ရှိခြင်း၊ ကိုက်ညီမှုမရှိခြင်း၊ တားမြစ်ထားခြင်း၊ သို့မဟုတ် လမ်းဖြတ်ကူးခြင်း ကြီးကြပ်ထားသည့်နေရာများ ဖြစ်နေနိုင်ပါသည်။ စီးပွားရေးအချက်အလက်များသည်လည်း မမှန်ကန်ခြင်း သို့မဟုတ် မပြည့်စုံခြင်းများ ရှိနိုင်ပါသည်။ ဒေတာသည် အချိန်နှင့်တစ်ပြေးညီ မဟုတ်ပါ၊ တည်နေရာမှန်ကန်မှုကိုလည်း အာမ မခံနိုင်ပါ။ ယာဉ်မောင်းနှင်နေစဉ် Android Auto အတွက်ရည်ရွယ်ထားခြင်းမဟုတ်သည့် မိုဘိုင်းစက်ပစ္စည်း ကိုမကိုင်တွယ်ပါနှင့် သို့မဟုတ် အက်ပ်များကို အသုံးမပြုပါနှင့်။ိ</string>
     <string name="pip_close">PIP ကိုပိတ်ပါ</string>

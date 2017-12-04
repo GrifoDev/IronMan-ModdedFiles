@@ -92,6 +92,12 @@
     return-void
 .end method
 
+.method public startDexBounceAnimation(Z)V
+    .locals 0
+
+    return-void
+.end method
+
 .method public startPhoneLaunchAnimationInSecured()V
     .locals 0
 

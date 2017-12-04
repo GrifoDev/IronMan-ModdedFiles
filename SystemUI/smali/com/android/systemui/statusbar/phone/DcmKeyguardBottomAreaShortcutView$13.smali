@@ -127,7 +127,7 @@
 
     move-result-object v5
 
-    const v6, 0x7f0f0a4b
+    const v6, 0x7f0f0a4f
 
     invoke-virtual {v5, v6}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -178,7 +178,7 @@
 
     aput-object v7, v6, v10
 
-    const v7, 0x7f0f0a4c
+    const v7, 0x7f0f0a50
 
     invoke-virtual {v5, v7, v6}, Landroid/content/res/Resources;->getString(I[Ljava/lang/Object;)Ljava/lang/String;
 
@@ -219,7 +219,7 @@
 
     aput-object v7, v6, v10
 
-    const v7, 0x7f0f0a4a
+    const v7, 0x7f0f0a4e
 
     invoke-virtual {v5, v7, v6}, Landroid/content/res/Resources;->getString(I[Ljava/lang/Object;)Ljava/lang/String;
 
@@ -262,7 +262,7 @@
 
     move-result-object v5
 
-    const v6, 0x7f0f0a4d
+    const v6, 0x7f0f0a51
 
     invoke-virtual {v5, v6}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -307,7 +307,7 @@
 
     aput-object v7, v6, v10
 
-    const v7, 0x7f0f0a4e
+    const v7, 0x7f0f0a52
 
     invoke-virtual {v5, v7, v6}, Landroid/content/res/Resources;->getString(I[Ljava/lang/Object;)Ljava/lang/String;
 
@@ -342,7 +342,7 @@
 
     move-result-object v5
 
-    const v6, 0x7f0f0a4f
+    const v6, 0x7f0f0a53
 
     invoke-virtual {v5, v6}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -385,7 +385,7 @@
 
     move-result-object v5
 
-    const v6, 0x7f0f0a52
+    const v6, 0x7f0f0a56
 
     invoke-virtual {v5, v6}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -422,7 +422,7 @@
 
     move-result-object v5
 
-    const v6, 0x7f0f0a53
+    const v6, 0x7f0f0a57
 
     invoke-virtual {v5, v6}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -461,7 +461,7 @@
 
     move-result-object v5
 
-    const v6, 0x7f0f086a
+    const v6, 0x7f0f086e
 
     invoke-virtual {v5, v6}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -496,7 +496,7 @@
 
     move-result-object v5
 
-    const v6, 0x7f0f0a54
+    const v6, 0x7f0f0a58
 
     invoke-virtual {v5, v6}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 

@@ -64,7 +64,7 @@
 
     check-cast v1, Landroid/view/View;
 
-    const v2, 0x7f130434
+    const v2, 0x7f130436
 
     invoke-virtual {v1, v2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -180,7 +180,7 @@
 
     move-result-object v13
 
-    const v14, 0x7f130432
+    const v14, 0x7f130434
 
     invoke-virtual {v13, v14}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -206,7 +206,7 @@
 
     move-result-object v14
 
-    const v15, 0x7f0d0453
+    const v15, 0x7f0d0455
 
     invoke-virtual {v14, v15}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -263,13 +263,13 @@
 
     invoke-virtual {v5, v14}, Landroid/view/ViewGroup;->setAccessibilityLiveRegion(I)V
 
-    const v14, 0x7f130433
+    const v14, 0x7f130435
 
     invoke-virtual {v13, v14}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
     move-result-object v2
 
-    const v14, 0x7f130434
+    const v14, 0x7f130436
 
     invoke-virtual {v13, v14}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -277,7 +277,7 @@
 
     check-cast v7, Landroid/widget/ImageView;
 
-    const v14, 0x7f130435
+    const v14, 0x7f130437
 
     invoke-virtual {v13, v14}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -285,7 +285,7 @@
 
     check-cast v12, Landroid/widget/TextView;
 
-    const v14, 0x7f130436
+    const v14, 0x7f130438
 
     invoke-virtual {v13, v14}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -293,7 +293,7 @@
 
     check-cast v6, Lcom/android/systemui/recents/misc/HelpHubTextView;
 
-    const v14, 0x7f130437
+    const v14, 0x7f130439
 
     invoke-virtual {v13, v14}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -384,7 +384,7 @@
 
     move-result-object v14
 
-    const v15, 0x7f0d0450
+    const v15, 0x7f0d0452
 
     invoke-virtual {v14, v15}, Landroid/content/res/Resources;->getDimensionPixelOffset(I)I
 
@@ -501,7 +501,7 @@
 
     move-result-object v14
 
-    const v15, 0x7f0d0452
+    const v15, 0x7f0d0454
 
     invoke-virtual {v14, v15}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 

@@ -431,7 +431,7 @@
     iput-object v5, p0, Lcom/android/systemui/recents/misc/SystemServicesProxy;->mDesktopModeManager:Lcom/samsung/android/desktopmode/SemDesktopModeManager;
 
     :cond_0
-    const v5, 0x7f0d03e2
+    const v5, 0x7f0d03e4
 
     invoke-virtual {v2, v5}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -549,7 +549,7 @@
 
     move-result-object v5
 
-    const v6, 0x7f0f07ce
+    const v6, 0x7f0f07d1
 
     invoke-virtual {v5, v6}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -561,7 +561,7 @@
 
     move-result-object v5
 
-    const v6, 0x7f0d04bd
+    const v6, 0x7f0d04bf
 
     invoke-virtual {v5, v6}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -575,7 +575,7 @@
 
     move-result-object v5
 
-    const v6, 0x7f0d04be
+    const v6, 0x7f0d04c0
 
     invoke-virtual {v5, v6}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -4664,7 +4664,7 @@
 
     aput-object p3, v6, v7
 
-    const v7, 0x7f0f0547
+    const v7, 0x7f0f0548
 
     invoke-virtual {p1, v7, v6}, Landroid/content/Context;->getString(I[Ljava/lang/Object;)Ljava/lang/String;
 
@@ -4688,7 +4688,7 @@
 
     aput-object p3, v6, v7
 
-    const v7, 0x7f0f06eb
+    const v7, 0x7f0f06ec
 
     invoke-virtual {p1, v7, v6}, Landroid/content/Context;->getString(I[Ljava/lang/Object;)Ljava/lang/String;
 
@@ -4865,7 +4865,7 @@
 
     aput-object p4, v3, v5
 
-    const v4, 0x7f0f06eb
+    const v4, 0x7f0f06ec
 
     invoke-virtual {p3, v4, v3}, Landroid/content/Context;->getString(I[Ljava/lang/Object;)Ljava/lang/String;
 

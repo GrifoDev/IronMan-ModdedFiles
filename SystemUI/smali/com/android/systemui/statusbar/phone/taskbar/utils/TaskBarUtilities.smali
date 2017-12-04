@@ -1896,7 +1896,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f0d0644
+    const v1, 0x7f0d0648
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDimension(I)F
 
@@ -2074,6 +2074,84 @@
 
     :cond_0
     return v7
+.end method
+
+.method public static isInstalledGalaxyApps(Landroid/content/Context;I)Z
+    .locals 6
+
+    const/4 v5, 0x0
+
+    :try_start_0
+    invoke-virtual {p0}, Landroid/content/Context;->getPackageManager()Landroid/content/pm/PackageManager;
+
+    move-result-object v2
+
+    const-string/jumbo v3, "com.sec.android.app.samsungapps"
+
+    const/4 v4, 0x0
+
+    invoke-virtual {v2, v3, v4, p1}, Landroid/content/pm/PackageManager;->getApplicationInfoAsUser(Ljava/lang/String;II)Landroid/content/pm/ApplicationInfo;
+
+    move-result-object v0
+
+    if-eqz v0, :cond_0
+
+    iget-boolean v2, v0, Landroid/content/pm/ApplicationInfo;->enabled:Z
+    :try_end_0
+    .catch Landroid/content/pm/PackageManager$NameNotFoundException; {:try_start_0 .. :try_end_0} :catch_0
+
+    return v2
+
+    :catch_0
+    move-exception v1
+
+    const-string/jumbo v2, "[DS]TaskBarUtilities"
+
+    const-string/jumbo v3, "isInstalledGalaxyApps failed"
+
+    invoke-static {v2, v3}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
+
+    :cond_0
+    return v5
+.end method
+
+.method public static isInstalledGooglePlay(Landroid/content/Context;I)Z
+    .locals 6
+
+    const/4 v5, 0x0
+
+    :try_start_0
+    invoke-virtual {p0}, Landroid/content/Context;->getPackageManager()Landroid/content/pm/PackageManager;
+
+    move-result-object v2
+
+    const-string/jumbo v3, "com.android.vending"
+
+    const/4 v4, 0x0
+
+    invoke-virtual {v2, v3, v4, p1}, Landroid/content/pm/PackageManager;->getApplicationInfoAsUser(Ljava/lang/String;II)Landroid/content/pm/ApplicationInfo;
+
+    move-result-object v0
+
+    if-eqz v0, :cond_0
+
+    iget-boolean v2, v0, Landroid/content/pm/ApplicationInfo;->enabled:Z
+    :try_end_0
+    .catch Landroid/content/pm/PackageManager$NameNotFoundException; {:try_start_0 .. :try_end_0} :catch_0
+
+    return v2
+
+    :catch_0
+    move-exception v1
+
+    const-string/jumbo v2, "[DS]TaskBarUtilities"
+
+    const-string/jumbo v3, "isInstalledGalaxyApps failed"
+
+    invoke-static {v2, v3}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
+
+    :cond_0
+    return v5
 .end method
 
 .method public static isInstalledSamsungConnect(Landroid/content/Context;I)Z

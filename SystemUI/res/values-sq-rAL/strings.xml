@@ -238,6 +238,8 @@
     <string name="wifi_allow_scan_with_traffic_summary">Lejo/Ndalo skanimet për Wi‑Fi në roaming, bazuar në sasinë e trafikut të të dhënave të pranishme në ndërfaqe</string>
     <string name="select_logd_size_title">Madhësitë e regjistruesit</string>
     <string name="select_logd_size_dialog_title">Përzgjidh madhësitë e regjistruesit</string>
+    <string name="dev_logpersist_clear_warning_title">Pastroj magazinën e loguesit të përhershëm?</string>
+    <string name="dev_logpersist_clear_warning_message">Të dhënat e loguesit do të hiqen kur loguesi i përhershëm të fiket.</string>
     <string name="select_logpersist_title">Ruaj të dhënat e logimit</string>
     <string name="select_logpersist_dialog_title">Zgjidh që zbutësit e logimit të ruhen</string>
     <string name="select_usb_configuration_title">Konfigurimi i USB-së</string>
@@ -752,6 +754,7 @@ Vazhdimi mund të sjellë tarifa nga operatori celular."</string>
     <string name="wifi_authentication_failed_kt">Dështova të autentifikoj AP-në e Wi-Fi.</string>
     <string name="wifi_authentication_no_response">Dështova të lidhem me AP-në Wi-Fi.</string>
     <string name="wifi_authentication_invalid_value">Authentication failed. Check ID and password.</string>
+    <string name="wifi_disconnected">Wi-Fi shkëputur.</string>
     <string name="quick_settings_dnd_label">Mos shqetëso</string>
     <string name="quick_settings_dnd_priority_label">Vetëm me prioritet</string>
     <string name="quick_settings_dnd_alarms_label">Vetëm alarmet</string>
@@ -1381,8 +1384,8 @@ Për më shumë informacion, kontakto me administratorin tënd."</string>
     <string name="keyboard_key_numpad_template">Tastiera numerike %1$s</string>
     <string name="keyboard_popup_help">Tasti meta: Tasti Windows, Komandë ose simbol i ndonjë sistemi tjetër operativ.</string>
     <string name="keyboard_shortcut_group_system">Shkurtoret e sistemit</string>
-    <string name="keyboard_shortcut_group_system_home">Kreu</string>
-    <string name="keyboard_shortcut_group_system_recents">Të fundit</string>
+    <string name="keyboard_shortcut_group_system_home">Bazë</string>
+    <string name="keyboard_shortcut_group_system_recents">Së fundi</string>
     <string name="keyboard_shortcut_group_system_back">Prapa</string>
     <string name="keyboard_shortcut_group_system_notifications">Njoftimet</string>
     <string name="keyboard_shortcut_group_system_shortcuts_helper">Shkurtoret e tastierës</string>
@@ -1651,7 +1654,9 @@ Mbinxehja mund të shkaktohet nga:
     <string name="battery_not_fully_connected_charging_title_vzw">Incomplete connection</string>
     <string name="battery_not_fully_connected_charging_text">Për karikim më të shpejtë, përdor karikuesin që të ka ardhur me pajisjen dhe sigurohu që është lidhur si duhet.</string>
     <string name="battery_not_fully_connected_charging_text_vzw">Make sure the charger is properly connected.</string>
+    <string name="battery_not_fully_connected_charging_text_jpn">Sigurohu që karikuesi yt është lidhur si duhet.</string>
     <string name="battery_not_fully_connected_charging_popup_text">Sigurohu që karikuesi është lidhur si duhet. Përdor karikuesin që të ka ardhur me pajisjen.</string>
+    <string name="battery_not_fully_connected_charging_popup_text_jpn">Sigurohu që karikuesi është lidhur si duhet.</string>
     <string name="battery_charging_level_and_time_text">"Duke karikuar: %1$d%%
 (Afërsisht %2$s derisa të karikohet krejt)"</string>
     <string name="battery_charging_level_text">Po ngarkohet: %d%%</string>
@@ -1876,6 +1881,8 @@ Please note that in order to enable your emergency calls (e.g., such as 112 call
     <string name="qs_detail_palm_capture_title">Rrëshqit me pëllëmbë për të kapur</string>
     <string name="noti_direct_reply_exceed_text_limit_toast">S‘mund të futësh më shumë tekst.</string>
     <string name="airplane_mode_tts_text">Regjimi Avion</string>
+    <string name="all_noti_readout">Një njoftim</string>
+    <string name="all_noti_readout2">%d njoftime</string>
     <string name="car_lockscreen_disclaimer_title">Drejtoje makinën në mënyrë të sigurt</string>
     <string name="car_lockscreen_disclaimer_text">Ji plotësisht i vetëdijshëm për kushtet e lëvizjes me makinë dhe respekto gjithmonë ligjet përkatëse. Udhëzimet mund të jenë të pasakta, jo të plota, të rrezikshme, të papërshtatshme, të ndaluara ose mund të përfshijnë kalimin në zona administrative. Informacionet e biznesit mund të jenë po ashtu të pasakta ose jo të plota. Të dhënat nuk janë në kohë reale dhe saktësia e vendndodhjes nuk mund të garantohet. Gjatë drejtimit të makinës mos e përdor pajisjen celulare ose mos përdor aplikacionet që nuk janë të planifikuara për Android Auto.</string>
     <string name="pip_close">Mbyll PIP</string>

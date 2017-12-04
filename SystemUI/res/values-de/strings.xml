@@ -238,6 +238,8 @@
     <string name="wifi_allow_scan_with_traffic_summary">WLAN-Roamingsuchen je nach Umfang des Datentraffics an der Schnittstelle zulassen bzw. nicht zulassen</string>
     <string name="select_logd_size_title">Logger-Puffergrößen</string>
     <string name="select_logd_size_dialog_title">Größe pro Protokollpuffer wählen</string>
+    <string name="dev_logpersist_clear_warning_title">Permanenten Protokollspeicher bereinigen?</string>
+    <string name="dev_logpersist_clear_warning_message">Protokollierungsdaten werden gelöscht, wenn die permanente Protokollierung deaktiviert wird.</string>
     <string name="select_logpersist_title">Protokolldaten durchg. speichern</string>
     <string name="select_logpersist_dialog_title">Auswählen von Protokollpuffern</string>
     <string name="select_usb_configuration_title">USB-Konfiguration auswählen</string>
@@ -751,6 +753,7 @@ Wenn du die Nutzung fortsetzt, entstehen möglicherweise Kosten bei deinem Mobil
     <string name="wifi_authentication_failed_kt">WLAN-AP konnte nicht authentifiziert werden.</string>
     <string name="wifi_authentication_no_response">Verbindung mit WLAN-Zugangspunkt fehlgeschlagen.</string>
     <string name="wifi_authentication_invalid_value">Authentication failed. Check ID and password.</string>
+    <string name="wifi_disconnected">WLAN getrennt</string>
     <string name="quick_settings_dnd_label">Nicht stören</string>
     <string name="quick_settings_dnd_priority_label">Nur wichtige Unterbrechungen</string>
     <string name="quick_settings_dnd_alarms_label">Nur Wecker</string>
@@ -859,6 +862,8 @@ Modus"</string>
 Daten"</string>
     <string name="quick_settings_wificalling_label">"WLAN-
 Anrufe"</string>
+    <string name="quick_settings_callingplus_label">"Calling
+Plus"</string>
     <string name="quick_settings_personal_mode_label">"Privater
 Modus"</string>
     <string name="quick_settings_data_roaming_label">"Daten-
@@ -1383,8 +1388,8 @@ Weitere Informationen erhältst du bei deinem Administrator."</string>
     <string name="keyboard_key_numpad_template">Ziffernblock %1$s</string>
     <string name="keyboard_popup_help">Metataste: Die Windows-, Befehls- oder andere Taste mit Betriebssystemsymbol.</string>
     <string name="keyboard_shortcut_group_system">System-Shortcuts</string>
-    <string name="keyboard_shortcut_group_system_home">Startseite</string>
-    <string name="keyboard_shortcut_group_system_recents">Letzte</string>
+    <string name="keyboard_shortcut_group_system_home">Hauptseite</string>
+    <string name="keyboard_shortcut_group_system_recents">Aktuell</string>
     <string name="keyboard_shortcut_group_system_back">Zurück</string>
     <string name="keyboard_shortcut_group_system_notifications">Benachrichtigungen</string>
     <string name="keyboard_shortcut_group_system_shortcuts_helper">Tastenkombinationen</string>
@@ -1635,8 +1640,8 @@ Eine Überhitzung kann folgende Ursachen haben:
     <string name="battery_low_sec_title">Akkuladung %d %%</string>
     <string name="battery_low_sec_body_phone">Laden Sie Ihr Telefon auf oder tippen Sie hier, um den Energiesparmodus zu aktivieren.</string>
     <string name="battery_low_sec_body_tablet">Laden Sie Ihr Tablet auf oder tippen Sie hier, um den Energiesparmodus zu aktivieren.</string>
-    <string name="battery_low_sec_body_phone_psm">Ihr Telefon aufladen.</string>
-    <string name="battery_low_sec_body_tablet_psm">Ihr Tablet aufladen.</string>
+    <string name="battery_low_sec_body_phone_psm">Laden Sie Ihr Telefon auf.</string>
+    <string name="battery_low_sec_body_tablet_psm">Laden Sie Ihr Tablet auf.</string>
     <string name="battery_cable_charging_title">Laden über Kabel</string>
     <string name="battery_charging_title">Aufladen</string>
     <string name="battery_fast_charging_title">Schnellladen</string>
@@ -1653,7 +1658,9 @@ Eine Überhitzung kann folgende Ursachen haben:
     <string name="battery_not_fully_connected_charging_title_vzw">Fehlerhafter Anschluss</string>
     <string name="battery_not_fully_connected_charging_text">Zum schnelleren Aufladen das Ihrem Gerät beiliegende Ladegerät nutzen und sicherstellen, dass es richtig angeschlossen ist.</string>
     <string name="battery_not_fully_connected_charging_text_vzw">Stellen Sie sicher, dass das Ladegerät richtig angeschlossen ist.</string>
+    <string name="battery_not_fully_connected_charging_text_jpn">Stellen Sie sicher, dass Ihr Ladegerät richtig angeschlossen ist.</string>
     <string name="battery_not_fully_connected_charging_popup_text">Stellen Sie sicher, dass das Ladegerät richtig angeschlossen ist. Verwenden Sie das dem Gerät beiliegende Ladegerät.</string>
+    <string name="battery_not_fully_connected_charging_popup_text_jpn">Stellen Sie sicher, dass das Ladegerät richtig angeschlossen ist.</string>
     <string name="battery_charging_level_and_time_text">"Aufladen: %1$d %%
 (ca. %2$s bis vollständig geladen)"</string>
     <string name="battery_charging_level_text">Wird geladen: %d%%</string>
@@ -1665,8 +1672,8 @@ Eine Überhitzung kann folgende Ursachen haben:
     <string name="battery_saver_recommend_notification_title">Akkuladung %d %%</string>
     <string name="battery_saver_recommend_notification_text_phone">Laden Sie Ihr Telefon auf oder tippen Sie hier, um den Energiesparmodus zu aktivieren.</string>
     <string name="battery_saver_recommend_notification_text_tablet">Laden Sie Ihr Tablet auf oder tippen Sie hier, um den Energiesparmodus zu aktivieren.</string>
-    <string name="battery_saver_recommend_notification_text_phone_psm">Ihr Telefon aufladen.</string>
-    <string name="battery_saver_recommend_notification_text_tablet_psm">Ihr Tablet aufladen.</string>
+    <string name="battery_saver_recommend_notification_text_phone_psm">Laden Sie Ihr Telefon auf.</string>
+    <string name="battery_saver_recommend_notification_text_tablet_psm">Laden Sie Ihr Tablet auf.</string>
     <string name="button_close">Schließen</string>
     <string name="statusbar_power_saving_description">Energiesparmodus ein</string>
     <string name="statusbar_maximum_power_saving_description">Maximaler Energiesparmodus ein</string>
@@ -1731,7 +1738,7 @@ Wenn Sie das Ladegerät trennen und wieder anschließen, kann der Ladevorgang ev
     <string name="kg_power_fully_charged">Vollständig geladen</string>
     <string name="kg_power_fast_charging">Schnellladen: %d %%</string>
     <string name="kg_power_charging_wirelessly">Induktives Aufladen läuft: %d %%</string>
-    <string name="kg_power_fast_charging_wirelessly">Induktives Schnellaufladen: %d %%</string>
+    <string name="kg_power_fast_charging_wirelessly">Induktives Schnellladen: %d %%</string>
     <string name="kg_power_charging">Wird geladen: %d%%</string>
     <string name="kg_power_charging_remaining_time">Ca. %s bis voll geladen</string>
     <string name="kg_power_time_format_hour_minute">%1$d h, %2$d min</string>
@@ -1862,7 +1869,7 @@ Please note that in order to enable your emergency calls (e.g., such as 112 call
     <string name="force_immersive_guide_dialog_message1">Tippen Sie zweimal auf diese Schaltfläche, um die Navigationsleiste auszublenden.</string>
     <string name="force_immersive_guide_dialog_message2">Vom Bildschirmrand in der Nähe des Ladeanschlusses nach innen streichen, um die Navigationsleiste anzuzeigen.</string>
     <string name="force_immersive_guide_dialog_message3">Tippen Sie erneut zweimal auf diese Schaltfläche, um die Navigationsleiste zu fixieren.</string>
-    <string name="force_immersive_guide_dialog_message4">Auf manchen Bildschirmen, wie z. B auf dem Startbildschirm, wird die Navigationsleiste immer angezeigt.</string>
+    <string name="force_immersive_guide_dialog_message4">Auf manchen Bildschirmen, wie z.B. auf dem Startbildschirm, wird die Navigationsleiste immer angezeigt.</string>
     <string name="force_immersive_guide_dialog_guide_path">Wechseln Sie zum Ausblenden dieser Schaltfläche zu „Einstellungen > Anzeige > Navigationsleiste“.</string>
     <string name="force_immersive_guide_dialog_setting">Einstellungen</string>
     <string name="force_immersive_guide_dialog_ok">OK</string>
@@ -1878,6 +1885,8 @@ Please note that in order to enable your emergency calls (e.g., such as 112 call
     <string name="qs_detail_palm_capture_title">Screenshot</string>
     <string name="noti_direct_reply_exceed_text_limit_toast">Es kann kein weiterer Text eingegeben werden.</string>
     <string name="airplane_mode_tts_text">Offline-Modus</string>
+    <string name="all_noti_readout">Eine Benachrichtigung</string>
+    <string name="all_noti_readout2">%d Benachrichtigungen</string>
     <string name="car_lockscreen_disclaimer_title">Sicher fahren</string>
     <string name="car_lockscreen_disclaimer_text">Achte stets auf die Straßenverhältnisse und halte dich an die geltenden Gesetze. Routen können unter Umständen fehlerhaft, unvollständig, gefährlich, ungeeignet oder verboten sein oder das Überqueren von Verwaltungsgrenzen erfordern. Informationen zum Unternehmen können ebenfalls fehlerhaft oder unvollständig sein. Die Datenübertragung erfolgt nicht in Echtzeit und die Genauigkeit der Standortangaben kann nicht gewährleistet werden. Bediene während der Fahrt nicht dein Mobilgerät und verwende keine Apps, die du nicht über Android Auto steuern kannst.</string>
     <string name="pip_close">PIP schließen</string>

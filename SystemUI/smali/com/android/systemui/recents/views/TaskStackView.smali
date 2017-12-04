@@ -13,7 +13,6 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
-        Lcom/android/systemui/recents/views/TaskStackView$-void_onBusEvent_com_android_systemui_recents_events_activity_MultiWindowSettingChangedEvent_event_LambdaImpl0;,
         Lcom/android/systemui/recents/views/TaskStackView$1;,
         Lcom/android/systemui/recents/views/TaskStackView$2;,
         Lcom/android/systemui/recents/views/TaskStackView$3;,
@@ -273,14 +272,6 @@
 
 
 # direct methods
-.method static synthetic -com_android_systemui_recents_views_TaskStackView_lambda$1(Lcom/android/systemui/recents/views/TaskView;)V
-    .locals 0
-
-    invoke-virtual {p0}, Lcom/android/systemui/recents/views/TaskView;->setNoUserInteractionState()V
-
-    return-void
-.end method
-
 .method static synthetic -get0(Lcom/android/systemui/recents/views/TaskStackView;)Lcom/android/systemui/recents/views/TaskStackAnimationHelper;
     .locals 1
 
@@ -544,7 +535,7 @@
 
     if-eqz v3, :cond_1
 
-    const v3, 0x7f0d03b3
+    const v3, 0x7f0d03b5
 
     invoke-virtual {v0, v3}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -639,7 +630,7 @@
     return-void
 
     :cond_1
-    const v3, 0x7f0d03b1
+    const v3, 0x7f0d03b3
 
     invoke-virtual {v0, v3}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -3341,7 +3332,7 @@
 
     new-array v0, v1, [I
 
-    invoke-virtual {p3, v0}, Lcom/android/systemui/recents/views/TaskView;->getLocationOnScreen([I)V
+    invoke-virtual {p3, v0}, Lcom/android/systemui/recents/views/TaskView;->getLocationInWindow([I)V
 
     iget-object v1, p0, Lcom/android/systemui/recents/views/TaskStackView;->mTmpRect:Landroid/graphics/Rect;
 
@@ -4243,18 +4234,65 @@
 .end method
 
 .method public final onBusEvent(Lcom/android/systemui/recents/events/activity/MultiWindowSettingChangedEvent;)V
-    .locals 2
+    .locals 3
 
     invoke-virtual {p0}, Lcom/android/systemui/recents/views/TaskStackView;->getTaskViews()Ljava/util/List;
 
+    move-result-object v2
+
+    invoke-interface {v2}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
+
+    move-result-object v1
+
+    :cond_0
+    :goto_0
+    invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v2
+
+    if-eqz v2, :cond_3
+
+    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
     move-result-object v0
 
-    new-instance v1, Lcom/android/systemui/recents/views/TaskStackView$-void_onBusEvent_com_android_systemui_recents_events_activity_MultiWindowSettingChangedEvent_event_LambdaImpl0;
+    check-cast v0, Lcom/android/systemui/recents/views/TaskView;
 
-    invoke-direct {v1}, Lcom/android/systemui/recents/views/TaskStackView$-void_onBusEvent_com_android_systemui_recents_events_activity_MultiWindowSettingChangedEvent_event_LambdaImpl0;-><init>()V
+    invoke-virtual {v0}, Lcom/android/systemui/recents/views/TaskView;->setNoUserInteractionState()V
 
-    invoke-interface {v0, v1}, Ljava/util/List;->forEach(Ljava/util/function/Consumer;)V
+    iget-boolean v2, v0, Lcom/android/systemui/recents/views/TaskView;->mFrontMostTaskView:Z
 
+    if-eqz v2, :cond_0
+
+    sget-boolean v2, Lcom/samsung/android/framework/feature/MultiWindowFeatures;->SAMSUNG_MULTIWINDOW_DYNAMIC_ENABLED:Z
+
+    if-eqz v2, :cond_1
+
+    invoke-static {}, Lcom/android/systemui/recents/Recents;->getSettingHelper()Lcom/android/systemui/recents/model/RecentsSettingHelper;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Lcom/android/systemui/recents/model/RecentsSettingHelper;->isMultiWindowSettingEnabled()Z
+
+    move-result v2
+
+    if-eqz v2, :cond_2
+
+    :cond_1
+    iget-object v2, v0, Lcom/android/systemui/recents/views/TaskView;->mHeaderView:Lcom/android/systemui/recents/views/TaskViewHeader;
+
+    invoke-virtual {v2}, Lcom/android/systemui/recents/views/TaskViewHeader;->showSnapButton()V
+
+    goto :goto_0
+
+    :cond_2
+    iget-object v2, v0, Lcom/android/systemui/recents/views/TaskView;->mHeaderView:Lcom/android/systemui/recents/views/TaskViewHeader;
+
+    invoke-virtual {v2}, Lcom/android/systemui/recents/views/TaskViewHeader;->hideSnapButton()V
+
+    goto :goto_0
+
+    :cond_3
     return-void
 .end method
 
@@ -7026,7 +7064,7 @@
 
     if-eqz p5, :cond_9
 
-    const v4, 0x7f0f0542
+    const v4, 0x7f0f0543
 
     :goto_0
     if-eqz p6, :cond_7
@@ -7043,7 +7081,7 @@
     return-void
 
     :cond_9
-    const v4, 0x7f0f0543
+    const v4, 0x7f0f0544
 
     goto :goto_0
 
@@ -7110,7 +7148,7 @@
 
     new-instance v3, Lcom/android/systemui/recents/events/ui/AllTaskViewsDismissedEvent;
 
-    const v4, 0x7f0f0543
+    const v4, 0x7f0f0544
 
     const/4 v5, 0x1
 

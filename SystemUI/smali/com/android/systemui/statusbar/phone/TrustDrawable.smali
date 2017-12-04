@@ -97,7 +97,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f0d0337
+    const v1, 0x7f0d0339
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDimension(I)F
 
@@ -105,7 +105,7 @@
 
     iput v1, p0, Lcom/android/systemui/statusbar/phone/TrustDrawable;->mInnerRadiusVisibleMin:F
 
-    const v1, 0x7f0d0338
+    const v1, 0x7f0d033a
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDimension(I)F
 
@@ -113,7 +113,7 @@
 
     iput v1, p0, Lcom/android/systemui/statusbar/phone/TrustDrawable;->mInnerRadiusVisibleMax:F
 
-    const v1, 0x7f0d0339
+    const v1, 0x7f0d033b
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDimension(I)F
 
@@ -121,7 +121,7 @@
 
     iput v1, p0, Lcom/android/systemui/statusbar/phone/TrustDrawable;->mInnerRadiusExit:F
 
-    const v1, 0x7f0d033a
+    const v1, 0x7f0d033c
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDimension(I)F
 
@@ -129,7 +129,7 @@
 
     iput v1, p0, Lcom/android/systemui/statusbar/phone/TrustDrawable;->mInnerRadiusEnter:F
 
-    const v1, 0x7f0d033b
+    const v1, 0x7f0d033d
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDimension(I)F
 

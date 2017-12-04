@@ -79,7 +79,7 @@
 
     iput v1, p0, Lcom/android/systemui/qs/DataUsageGraph;->mWarningColor:I
 
-    const v1, 0x7f0d0312
+    const v1, 0x7f0d0314
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 

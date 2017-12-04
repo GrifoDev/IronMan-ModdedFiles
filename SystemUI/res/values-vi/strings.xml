@@ -238,6 +238,8 @@
     <string name="wifi_allow_scan_with_traffic_summary">Cho phép/Không cho phép quét chuyển vùng Wi‑Fi dựa trên lưu lượng truy cập dữ liệu có tại giao diện</string>
     <string name="select_logd_size_title">Kích cỡ tải trình ghi</string>
     <string name="select_logd_size_dialog_title">Chọn kích thước Trình ghi/lần tải nhật ký</string>
+    <string name="dev_logpersist_clear_warning_title">Xóa bộ nhớ nhật ký bền vững?</string>
+    <string name="dev_logpersist_clear_warning_message">Dữ liệu nhật ký sẽ bị xóa khi tắt nhật ký bền vững.</string>
     <string name="select_logpersist_title">Lưu dữ liệu nhật ký liên tục</string>
     <string name="select_logpersist_dialog_title">Chọn bộ đệm nhật ký để lưu liên tục</string>
     <string name="select_usb_configuration_title">Chọn cấu hình USB</string>
@@ -752,6 +754,7 @@ Tiếp tục có thể dẫn tới nhà cung cấp dịch vụ của bạn sẽ 
     <string name="wifi_authentication_failed_kt">Có lỗi khi xác thực Điểm truy cập Wi-Fi.</string>
     <string name="wifi_authentication_no_response">Có lỗi khi kết nối với Wi-Fi AP.</string>
     <string name="wifi_authentication_invalid_value">Xác thực không thành công. Kiểm tra ID và mật mã.</string>
+    <string name="wifi_disconnected">Ngắt kết nối Wi-Fi.</string>
     <string name="quick_settings_dnd_label">Không làm phiền</string>
     <string name="quick_settings_dnd_priority_label">Chỉ ưu tiên</string>
     <string name="quick_settings_dnd_alarms_label">Chỉ báo thức</string>
@@ -860,6 +863,8 @@ sáng xanh"</string>
 di động"</string>
     <string name="quick_settings_wificalling_label">"Cuộc gọi
 Wi-Fi"</string>
+    <string name="quick_settings_callingplus_label">"Calling
+Plus"</string>
     <string name="quick_settings_personal_mode_label">"Chế độ
 Riêng tư"</string>
     <string name="quick_settings_data_roaming_label">"Ch.vùng
@@ -1382,11 +1387,11 @@ Bạn được kết nối với %2$s. Ứng dụng này có thể giám sát ho
     <string name="keyboard_key_numpad_template">Bàn phím số %1$s</string>
     <string name="keyboard_popup_help">Phím meta: Windows, Command hoặc phím biểu tượng hệ điều hành khác.</string>
     <string name="keyboard_shortcut_group_system">Phím tắt hệ thống</string>
-    <string name="keyboard_shortcut_group_system_home">Màn hình chính</string>
+    <string name="keyboard_shortcut_group_system_home">Trang chính</string>
     <string name="keyboard_shortcut_group_system_recents">Gần đây</string>
     <string name="keyboard_shortcut_group_system_back">Trở về</string>
     <string name="keyboard_shortcut_group_system_notifications">Thông báo</string>
-    <string name="keyboard_shortcut_group_system_shortcuts_helper">Phím tắt</string>
+    <string name="keyboard_shortcut_group_system_shortcuts_helper">Phím tắt bàn phím</string>
     <string name="keyboard_shortcut_group_system_switch_input">Chuyển phương thức nhập</string>
     <string name="keyboard_shortcut_group_system_all_apps">Tất cả ứng dụng</string>
     <string name="keyboard_shortcut_group_system_running_apps">Ứng dụng đang chạy</string>
@@ -1652,7 +1657,9 @@ Tình trạng quá nóng có thể do:
     <string name="battery_not_fully_connected_charging_title_vzw">Kết nối không hoàn chỉnh</string>
     <string name="battery_not_fully_connected_charging_text">Để sạc nhanh hơn, hãy sử dụng bộ sạc đi kèm với thiết bị của bạn và đảm bảo kết nối đúng cách.</string>
     <string name="battery_not_fully_connected_charging_text_vzw">Hãy đảm bảo bộ sạc được kết nối đúng cách.</string>
+    <string name="battery_not_fully_connected_charging_text_jpn">Hãy đảm bảo bộ sạc của bạn được kết nối đúng.</string>
     <string name="battery_not_fully_connected_charging_popup_text">Hãy đảm bảo bộ sạc được kết nối đúng cách. Hãy sử dụng bộ sạc đi kèm với thiết bị.</string>
+    <string name="battery_not_fully_connected_charging_popup_text_jpn">Hãy đảm bảo bộ sạc được kết nối đúng cách.</string>
     <string name="battery_charging_level_and_time_text">"Đang sạc: %1$d%%
 (Khoảng %2$s nữa sẽ sạc đầy)"</string>
     <string name="battery_charging_level_text">Đang sạc: %d%%</string>
@@ -1877,6 +1884,8 @@ Please note that in order to enable your emergency calls (e.g., such as 112 call
     <string name="qs_detail_palm_capture_title">Vuốt lòng bàn tay để chụp</string>
     <string name="noti_direct_reply_exceed_text_limit_toast">Không thể nhập thêm văn bản.</string>
     <string name="airplane_mode_tts_text">Chế độ Máy bay</string>
+    <string name="all_noti_readout">Một thông báo</string>
+    <string name="all_noti_readout2">%d thông báo</string>
     <string name="car_lockscreen_disclaimer_title">Lái xe an toàn</string>
     <string name="car_lockscreen_disclaimer_text">Luôn biết rõ điều kiện lái xe và luôn tuân thủ luật pháp hiện hành. Chỉ đường có thể không chính xác, không hoàn chỉnh, nguy hiểm, không thích hợp, bị cấm hoặc bao gồm tuyến đường giao các khu vực hành chính. Thông tin doanh nghiệp cũng có thể không chính xác hoặc không hoàn chỉnh. Dữ liệu không ở thời gian thực và không thể đảm bảo độ chính xác của vị trí. Không sử dụng thiết bị di động của bạn hoặc sử dụng ứng dụng không dành cho Android Auto trong khi lái xe.</string>
     <string name="pip_close">Đóng PIP</string>

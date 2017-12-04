@@ -330,7 +330,7 @@
 
     iget-object v1, p0, Lcom/android/systemui/statusbar/phone/taskbar/desk/DeskNotificationIconAreaController;->mContext:Landroid/content/Context;
 
-    const v2, 0x7f0f07cc
+    const v2, 0x7f0f07cf
 
     invoke-virtual {v1, v2}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -439,7 +439,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f0d06a9
+    const v1, 0x7f0d06ad
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -447,7 +447,7 @@
 
     iput v1, p0, Lcom/android/systemui/statusbar/phone/taskbar/desk/DeskNotificationIconAreaController;->mIconSize:I
 
-    const v1, 0x7f0d06aa
+    const v1, 0x7f0d06ae
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 

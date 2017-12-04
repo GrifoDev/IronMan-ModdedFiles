@@ -238,6 +238,8 @@
     <string name="wifi_allow_scan_with_traffic_summary">ਇੰਟਰਫੇਸ ਤੇ ਮੌਜੂਦ ਡਾਟਾ ਟ੍ਰੈਫਿਕ ਦੀ ਮਾਤਰਾ ਦੇ ਆਧਾਰ ਤੇ Wi‑Fi ਰੋਮ ਸਕੈਨ ਦੀ ਆਗਿਆ ਦਿਓ/ਅਸਵੀਕਾਰ ਕਰੋ</string>
     <string name="select_logd_size_title">ਲੌਗਰ ਬਫਰ ਆਕਾਰ</string>
     <string name="select_logd_size_dialog_title">ਪ੍ਰਤੀ ਲੌਗ ਬਫਰ ਲੌਗਰ ਆਕਾਰ ਚੁਣੋ</string>
+    <string name="dev_logpersist_clear_warning_title">ਕੀ ਨਿਰੰਤਰ ਲੌਗਰ ਸਟੋਰੇਜ ਨੂੰ ਸਾਫ਼ ਕਰਨਾ ਹੈ?</string>
+    <string name="dev_logpersist_clear_warning_message">ਨਿਰੰਤਰ ਲੌਗਰ ਨੂੰ ਬੰਦ ਕੀਤੇ ਜਾਣ ਤੇ ਲੌਗਰ ਡੈਟਾ ਮਿਟਾ ਦਿੱਤਾ ਜਾਵੇਗਾ।</string>
     <string name="select_logpersist_title">ਲੌਗ ਡੈਟਾ ਲਗਾਤਾਰ ਸਟੋਰ ਕਰੋ</string>
     <string name="select_logpersist_dialog_title">ਲਗਾਤਾਰ ਸਟੋਰ ਕਰਨ ਲਈ ਲੌਗ ਬੱਫਰਸ ਚੁਣੋ</string>
     <string name="select_usb_configuration_title">USB ਕੌਂਫਿਗਰੇਸ਼ਨ ਚੁਣੋ</string>
@@ -752,6 +754,7 @@ For example, your ringtone will not sound, you will not be able to answer phone 
     <string name="wifi_authentication_failed_kt">Wi-Fi AP ਨੂੰ ਪ੍ਰਮਾਣਿਤ ਕਰਨ ਵਿੱਚ ਅਸਫਲ।</string>
     <string name="wifi_authentication_no_response">Wi-Fi AP ਨਾਲ ਕਨੈਕਟ ਕਰਨ ਵਿੱਚ ਅਸਫਲ।</string>
     <string name="wifi_authentication_invalid_value">ਪੁਸ਼ਟੀਕਰਨ ਅਸਫਲ। ID ਅਤੇ ਪਾਸਵਰਡ ਦੀ ਜਾਂਚ ਕਰੋ।</string>
+    <string name="wifi_disconnected">Wi-Fi ਡਿਸਕਨੈਕਟਡ ਕੀਤਾ।</string>
     <string name="quick_settings_dnd_label">ਮੈਨੂੰ ਪਰੇਸ਼ਾਨ ਨਾ ਕਰੋ</string>
     <string name="quick_settings_dnd_priority_label">ਕੇਵਲ ਤਰਜੀਹੀ</string>
     <string name="quick_settings_dnd_alarms_label">ਕੇਵਲ ਅਲਾਰਮ</string>
@@ -1382,11 +1385,11 @@ Wi-Fi ਅਤੇ ਬਲੂਟੁੱਥ ਨੂੰ ਵੀ ਬੰਦ ਕਰ ਦਿ�
     <string name="keyboard_key_numpad_template">Numpad %1$s</string>
     <string name="keyboard_popup_help">ਮੈਟਾ ਬਟਨ: ਵਿੰਡੋਜ਼, ਕਮਾਂਡ, ਜਾਂ ਦੂਜਾ ਔਪਰੇਟਿੰਗ ਸਿਸਟਮ ਚਿੰਨ੍ਹ ਬਟਨ।</string>
     <string name="keyboard_shortcut_group_system">ਸਿਸਟਮ ਸ਼ੌਰਟਕੱਟਸ</string>
-    <string name="keyboard_shortcut_group_system_home">ਮੁੱਖ ਸਕ੍ਰੀਨ</string>
-    <string name="keyboard_shortcut_group_system_recents">ਹਾਲੀਆ</string>
+    <string name="keyboard_shortcut_group_system_home">ਹੋਮ</string>
+    <string name="keyboard_shortcut_group_system_recents">ਹਾਲ ਹੀ ਦੇ</string>
     <string name="keyboard_shortcut_group_system_back">ਵਾਪਸ ਜਾਉ</string>
     <string name="keyboard_shortcut_group_system_notifications">ਸੂਚਨਾਵਾਂ</string>
-    <string name="keyboard_shortcut_group_system_shortcuts_helper">ਕੀ-ਬੋਰਡ ਸ਼ਾਰਟਕੱਟ</string>
+    <string name="keyboard_shortcut_group_system_shortcuts_helper">ਕੀਬੋਰਡ ਸ਼ੌਰਟਕੱਟਸ</string>
     <string name="keyboard_shortcut_group_system_switch_input">"ਵਾਪਸ ਇਨਪੁੱਟ ਵਿਧੀ 'ਤੇ ਬਦਲੋ"</string>
     <string name="keyboard_shortcut_group_system_all_apps">ਸਾਰੇ ਐਪਸ</string>
     <string name="keyboard_shortcut_group_system_running_apps">ਚੱਲ ਰਹੀਆਂ ਐਪਸ</string>
@@ -1394,13 +1397,13 @@ Wi-Fi ਅਤੇ ਬਲੂਟੁੱਥ ਨੂੰ ਵੀ ਬੰਦ ਕਰ ਦਿ�
     <string name="keyboard_shortcut_group_system_switch_languages">ਭਾਸ਼ਾਵਾਂ ਸਵਿੱਚ ਕਰੋ</string>
     <string name="keyboard_shortcut_group_applications">ਇਨ-ਐਪ ਸ਼ੌਰਟਕੱਟਸ</string>
     <string name="keyboard_shortcut_group_applications_assist">ਸਹਾਇਕ</string>
-    <string name="keyboard_shortcut_group_applications_browser">ਬ੍ਰਾਊਜ਼ਰ</string>
+    <string name="keyboard_shortcut_group_applications_browser">ਬ੍ਰਾਉਜ਼ਰ</string>
     <string name="keyboard_shortcut_group_applications_contacts">ਸੰਪਰਕ</string>
     <string name="keyboard_shortcut_group_applications_email">ਈਮੇਲ</string>
     <string name="keyboard_shortcut_group_applications_im">IM</string>
     <string name="keyboard_shortcut_group_applications_music">ਸੰਗੀਤ</string>
     <string name="keyboard_shortcut_group_applications_youtube">YouTube</string>
-    <string name="keyboard_shortcut_group_applications_calendar">ਕੈਲੰਡਰ</string>
+    <string name="keyboard_shortcut_group_applications_calendar">ਕੈਲੇਂਡਰ</string>
     <string name="keyboard_shortcut_group_applications_bixby">Bixby</string>
     <string name="keyboard_shortcut_group_applications_messages">ਸੰਦੇਸ਼</string>
     <string name="tuner_full_zen_title">ਵੌਲਯੂਮ ਕੰਟਰੋਲਾਂ ਨਾਲ ਵਿਖਾਓ</string>
@@ -1652,7 +1655,9 @@ Using your tablet in a very hot location."</string>
     <string name="battery_not_fully_connected_charging_title_vzw">Incomplete connection</string>
     <string name="battery_not_fully_connected_charging_text">ਤੇਜ਼ੀ ਨਾਲ ਚਾਰਜ ਕਰਨ ਲਈ, ਆਪਣੇ ਡਿਵਾਈਸ ਦੇ ਨਾਲ ਮਿਲੇ ਚਾਰਜਰ ਦੀ ਵਰਤੋਂ ਕਰੋ ਅਤੇ ਸੁਨਿਸ਼ਚਿਤ ਕਰੋ ਕਿ ਚਾਰਜਰ ਚੰਗੀ ਤਰਾਂ ਕਨੈਕਟ ਹੋਵੇ।</string>
     <string name="battery_not_fully_connected_charging_text_vzw">Make sure the charger is properly connected.</string>
+    <string name="battery_not_fully_connected_charging_text_jpn">ਸੁਨਿਸ਼ਚਿਤ ਕਰੋ ਕਿ ਤੁਹਾਡਾ ਚਾਰਜਰ ਚੰਗੀ ਤਰਾਂ ਕਨੈਕਟ ਹੈ।</string>
     <string name="battery_not_fully_connected_charging_popup_text">ਸੁਨਿਸ਼ਚਿਤ ਕਰੋ ਕਿ ਚਾਰਜਰ ਚੰਗੀ ਤਰਾਂ ਕਨੈਕਟ ਹੋਵੇ। ਡਿਵਾਈਸ ਦੇ ਨਾਲ ਮਿਲੇ ਚਾਰਜਰ ਦੀ ਵਰਤੋਂ ਕਰੋ।</string>
+    <string name="battery_not_fully_connected_charging_popup_text_jpn">ਸੁਨਿਸ਼ਚਿਤ ਕਰੋ ਕਿ ਚਾਰਜਰ ਚੰਗੀ ਤਰਾਂ ਕਨੈਕਟ ਹੋਵੇ।</string>
     <string name="battery_charging_level_and_time_text">"ਚਾਰਜ ਹੋ ਰਿਹਾ ਹੈ: %1$d%%
 (ਪੂਰੀ ਤਰਾਂ ਚਾਰਜ ਹੋਣ ਵਿੱਚ ਲਗਭਗ %2$s)"</string>
     <string name="battery_charging_level_text">ਚਾਰਜ ਹੋ ਰਿਹਾ ਹੈ: %d%%</string>
@@ -1877,6 +1882,8 @@ Please note that in order to enable your emergency calls (e.g., such as 112 call
     <string name="qs_detail_palm_capture_title">ਕੈਪਚਰ ਕਰਨ ਲਈ ਪਾਮ ਸਵਾਈਪ ਕਰੋ</string>
     <string name="noti_direct_reply_exceed_text_limit_toast">ਹੋਰ ਟੈਕਸਟ ਦਾਖ਼ਲ ਨਹੀਂ ਕੀਤਾ ਜਾ ਸਕਦਾ।</string>
     <string name="airplane_mode_tts_text">ਏਅਰਪਲੇਨ ਮੋਡ</string>
+    <string name="all_noti_readout">ਇੱਕ ਸੂਚਨਾ</string>
+    <string name="all_noti_readout2">%d ਸੂਚਨਾਵਾਂ</string>
     <string name="car_lockscreen_disclaimer_title">ਸੁਰੱਖਿਅਤ ਢੰਗ ਨਾਲ ਗੱਡੀ ਚਲਾਓ</string>
     <string name="car_lockscreen_disclaimer_text">ਗੱਡੀ ਚਲਾਉਣ ਦੇ ਹਾਲਾਤਾਂ ਤੋਂ ਪੂਰੀ ਤਰ੍ਹਾਂ ਜਾਣੂ ਰਹੋ ਅਤੇ ਸਦਾ ਲਾਗੂ ਕਾਨੂੰਨਾਂ ਦੀ ਪਾਲਣਾ ਕਰੋ। ਦਿਸ਼ਾਵਾਂ ਗਲਤ, ਅਧੂਰੀਆਂ, ਖ਼ਤਰਨਾਕ, ਢੁੱਕਵੀਆਂ ਨਹੀਂ, ਪ੍ਰਤਿਬੰਧਿਤ ਹੋ ਸਕਦੀਆਂ ਹਨ ਜਾਂ ਪ੍ਰਸ਼ਾਸਕੀ ਖੇਤਰਾਂ ਵਿੱਚੋਂ ਲੰਘਣਾ ਸ਼ਾਮਲ ਹੋ ਸਕਦਾ ਹੈ। ਵਪਾਰਕ ਜਾਣਕਾਰੀ ਵੀ ਗਲਤ ਜਾਂ ਅਧੂਰੀ ਹੋ ਸਕਦੀ ਹੈ। ਡੈਟਾ ਰੀਅਲ-ਟਾਈਮ ਨਹੀਂ ਹੈ ਅਤੇ ਟਿਕਾਣਾ ਸਟੀਕਤਾ ਗਾਰੰਟੀਸ਼ੁਦਾ ਨਹੀਂ ਹੋ ਸਕਦੀ ਹੈ। ਗੱਡੀ ਚਲਾਉਣ ਦੌਰਾਨ ਆਪਣੀ ਮੋਬਾਈਲ ਡੀਵਾਈਸ ਜਾਂ ਉਹਨਾਂ ਐਪਾਂ ਦੀ ਵਰਤੋਂ ਨਾ ਕਰੋ ਜੋ ਕਿ Android Auto ਲਈ ਨਹੀਂ ਬਣੀਆਂ ਹਨ।</string>
     <string name="pip_close">PIP ਬੰਦ ਕਰੋ</string>

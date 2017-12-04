@@ -38,7 +38,7 @@
 
     const/4 v3, 0x0
 
-    invoke-static {}, Lcom/android/systemui/statusbar/policy/NetspeedView;->-get0()Landroid/content/Context;
+    invoke-static {}, Lcom/android/systemui/statusbar/policy/NetspeedView;->-get1()Landroid/content/Context;
 
     move-result-object v1
 
@@ -57,7 +57,7 @@
     move v1, v2
 
     :goto_0
-    invoke-static {v1}, Lcom/android/systemui/statusbar/policy/NetspeedView;->-set0(Z)Z
+    invoke-static {v1}, Lcom/android/systemui/statusbar/policy/NetspeedView;->-set1(Z)Z
 
     const-string/jumbo v1, "NetworkSpeedView"
 
@@ -71,7 +71,7 @@
 
     move-result-object v4
 
-    invoke-static {}, Lcom/android/systemui/statusbar/policy/NetspeedView;->-get1()Z
+    invoke-static {}, Lcom/android/systemui/statusbar/policy/NetspeedView;->-get2()Z
 
     move-result v5
 
@@ -87,7 +87,7 @@
 
     iget-object v5, p0, Lcom/android/systemui/statusbar/policy/NetspeedView$1;->this$0:Lcom/android/systemui/statusbar/policy/NetspeedView;
 
-    invoke-static {v5}, Lcom/android/systemui/statusbar/policy/NetspeedView;->-get5(Lcom/android/systemui/statusbar/policy/NetspeedView;)Z
+    invoke-static {v5}, Lcom/android/systemui/statusbar/policy/NetspeedView;->-get6(Lcom/android/systemui/statusbar/policy/NetspeedView;)Z
 
     move-result v5
 
@@ -101,7 +101,7 @@
 
     invoke-static {v1, v4}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    invoke-static {}, Lcom/android/systemui/statusbar/policy/NetspeedView;->-get1()Z
+    invoke-static {}, Lcom/android/systemui/statusbar/policy/NetspeedView;->-get2()Z
 
     move-result v1
 
@@ -109,7 +109,7 @@
 
     iget-object v1, p0, Lcom/android/systemui/statusbar/policy/NetspeedView$1;->this$0:Lcom/android/systemui/statusbar/policy/NetspeedView;
 
-    invoke-static {v1}, Lcom/android/systemui/statusbar/policy/NetspeedView;->-get5(Lcom/android/systemui/statusbar/policy/NetspeedView;)Z
+    invoke-static {v1}, Lcom/android/systemui/statusbar/policy/NetspeedView;->-get6(Lcom/android/systemui/statusbar/policy/NetspeedView;)Z
 
     move-result v1
 
@@ -117,7 +117,7 @@
 
     :cond_0
     :goto_1
-    invoke-static {}, Lcom/android/systemui/statusbar/policy/NetspeedView;->-get1()Z
+    invoke-static {}, Lcom/android/systemui/statusbar/policy/NetspeedView;->-get2()Z
 
     move-result v1
 
@@ -125,19 +125,19 @@
 
     iget-object v1, p0, Lcom/android/systemui/statusbar/policy/NetspeedView$1;->this$0:Lcom/android/systemui/statusbar/policy/NetspeedView;
 
-    invoke-static {v1}, Lcom/android/systemui/statusbar/policy/NetspeedView;->-get5(Lcom/android/systemui/statusbar/policy/NetspeedView;)Z
+    invoke-static {v1}, Lcom/android/systemui/statusbar/policy/NetspeedView;->-get6(Lcom/android/systemui/statusbar/policy/NetspeedView;)Z
 
     move-result v1
 
     if-eqz v1, :cond_1
 
-    invoke-static {}, Lcom/android/systemui/statusbar/policy/NetspeedView;->-get0()Landroid/content/Context;
+    invoke-static {}, Lcom/android/systemui/statusbar/policy/NetspeedView;->-get1()Landroid/content/Context;
 
     move-result-object v1
 
     iget-object v2, p0, Lcom/android/systemui/statusbar/policy/NetspeedView$1;->this$0:Lcom/android/systemui/statusbar/policy/NetspeedView;
 
-    invoke-static {v2}, Lcom/android/systemui/statusbar/policy/NetspeedView;->-get4(Lcom/android/systemui/statusbar/policy/NetspeedView;)Landroid/content/BroadcastReceiver;
+    invoke-static {v2}, Lcom/android/systemui/statusbar/policy/NetspeedView;->-get5(Lcom/android/systemui/statusbar/policy/NetspeedView;)Landroid/content/BroadcastReceiver;
 
     move-result-object v2
 
@@ -145,11 +145,11 @@
 
     iget-object v1, p0, Lcom/android/systemui/statusbar/policy/NetspeedView$1;->this$0:Lcom/android/systemui/statusbar/policy/NetspeedView;
 
-    invoke-static {v1, v3}, Lcom/android/systemui/statusbar/policy/NetspeedView;->-set2(Lcom/android/systemui/statusbar/policy/NetspeedView;Z)Z
+    invoke-static {v1, v3}, Lcom/android/systemui/statusbar/policy/NetspeedView;->-set3(Lcom/android/systemui/statusbar/policy/NetspeedView;Z)Z
 
     iget-object v1, p0, Lcom/android/systemui/statusbar/policy/NetspeedView$1;->this$0:Lcom/android/systemui/statusbar/policy/NetspeedView;
 
-    invoke-static {v1}, Lcom/android/systemui/statusbar/policy/NetspeedView;->-wrap0(Lcom/android/systemui/statusbar/policy/NetspeedView;)V
+    invoke-static {v1}, Lcom/android/systemui/statusbar/policy/NetspeedView;->-wrap1(Lcom/android/systemui/statusbar/policy/NetspeedView;)V
 
     :cond_1
     return-void
@@ -166,13 +166,13 @@
 
     invoke-direct {v0, v1}, Landroid/content/IntentFilter;-><init>(Ljava/lang/String;)V
 
-    invoke-static {}, Lcom/android/systemui/statusbar/policy/NetspeedView;->-get0()Landroid/content/Context;
+    invoke-static {}, Lcom/android/systemui/statusbar/policy/NetspeedView;->-get1()Landroid/content/Context;
 
     move-result-object v1
 
     iget-object v4, p0, Lcom/android/systemui/statusbar/policy/NetspeedView$1;->this$0:Lcom/android/systemui/statusbar/policy/NetspeedView;
 
-    invoke-static {v4}, Lcom/android/systemui/statusbar/policy/NetspeedView;->-get4(Lcom/android/systemui/statusbar/policy/NetspeedView;)Landroid/content/BroadcastReceiver;
+    invoke-static {v4}, Lcom/android/systemui/statusbar/policy/NetspeedView;->-get5(Lcom/android/systemui/statusbar/policy/NetspeedView;)Landroid/content/BroadcastReceiver;
 
     move-result-object v4
 
@@ -180,7 +180,7 @@
 
     iget-object v1, p0, Lcom/android/systemui/statusbar/policy/NetspeedView$1;->this$0:Lcom/android/systemui/statusbar/policy/NetspeedView;
 
-    invoke-static {v1, v2}, Lcom/android/systemui/statusbar/policy/NetspeedView;->-set2(Lcom/android/systemui/statusbar/policy/NetspeedView;Z)Z
+    invoke-static {v1, v2}, Lcom/android/systemui/statusbar/policy/NetspeedView;->-set3(Lcom/android/systemui/statusbar/policy/NetspeedView;Z)Z
 
     goto :goto_1
 .end method

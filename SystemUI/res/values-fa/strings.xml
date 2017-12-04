@@ -238,6 +238,8 @@
     <string name="wifi_allow_scan_with_traffic_summary">‏مجاز/غیرمجاز کردن اسکن‌های رومینگ Wi‑Fi براساس مقدار ترافیک داده موجود در واسط</string>
     <string name="select_logd_size_title">اندازه‌های حافظه موقت ثبت‌کننده</string>
     <string name="select_logd_size_dialog_title">انتخاب اندازه‌ ثبت‌کننده در حافظه موقت ثبت</string>
+    <string name="dev_logpersist_clear_warning_title">محل ذخیره گزارش‌دهنده بی‌وقفه پاک شود؟</string>
+    <string name="dev_logpersist_clear_warning_message">وقتی گزارش‌دهنده بی‌وقفه خاموش شود، داده‌های گزارش‌دهنده حذف خواهد شد.</string>
     <string name="select_logpersist_title">ذخیره مداوم اطلاعات گزارش</string>
     <string name="select_logpersist_dialog_title">انتخاب بافر گزارش برای ذخیره مداوم</string>
     <string name="select_usb_configuration_title">‏انتخاب پیکربندی USB</string>
@@ -752,6 +754,7 @@ For example, your ringtone will not sound, you will not be able to answer phone 
     <string name="wifi_authentication_failed_kt">تأیید نقطه دسترسی Wi-Fi ناموفق بود.</string>
     <string name="wifi_authentication_no_response">اتصال به نقطه دسترسی Wi-Fi ناموفق بود.</string>
     <string name="wifi_authentication_invalid_value">رد شد. شناسه و رمز را کنترل نمایید.</string>
+    <string name="wifi_disconnected">‏Wi-Fi جدا شد.</string>
     <string name="quick_settings_dnd_label">مزاحم نشوید</string>
     <string name="quick_settings_dnd_priority_label">فقط اولویت‌دار</string>
     <string name="quick_settings_dnd_alarms_label">فقط هشدارها</string>
@@ -1387,7 +1390,7 @@ Wi-Fi و بلوتوث هم خاموش می‌شوند، اما می‌توانی
     <string name="keyboard_shortcut_group_system_recents">موارد اخیر</string>
     <string name="keyboard_shortcut_group_system_back">بازگشت</string>
     <string name="keyboard_shortcut_group_system_notifications">اعلان‌ها</string>
-    <string name="keyboard_shortcut_group_system_shortcuts_helper">میان‌برهای صفحه‌کلید</string>
+    <string name="keyboard_shortcut_group_system_shortcuts_helper">میانبرهای صفحه کلید</string>
     <string name="keyboard_shortcut_group_system_switch_input">تغییر روش ورودی</string>
     <string name="keyboard_shortcut_group_system_all_apps">همه برنامه‌ها</string>
     <string name="keyboard_shortcut_group_system_running_apps">برنامه‌های درحال اجرا</string>
@@ -1653,7 +1656,9 @@ Using your tablet in a very hot location."</string>
     <string name="battery_not_fully_connected_charging_title_vzw">Incomplete connection</string>
     <string name="battery_not_fully_connected_charging_text">برای شارژ سریع‌تر، از شارژری که با دستگاهتان ارائه می‌شود استفاده کنید و بررسی کنید به طور صحیح متصل شده باشد.</string>
     <string name="battery_not_fully_connected_charging_text_vzw">Make sure the charger is properly connected.</string>
+    <string name="battery_not_fully_connected_charging_text_jpn">بررسی کنید شارژر به طور صحیح متصل شده باشد.</string>
     <string name="battery_not_fully_connected_charging_popup_text">بررسی کنید شارژر به طور صحیح متصل شده باشد. از شارژری که با دستگاهتان ارائه شده است استفاده کنید.</string>
+    <string name="battery_not_fully_connected_charging_popup_text_jpn">بررسی کنید شارژر به طور صحیح متصل شده باشد.</string>
     <string name="battery_charging_level_and_time_text">"شارژ کردن: ‎%1$d%%‎‏‎
 (تقریباً ‎%2$s تا شارژ کامل)"</string>
     <string name="battery_charging_level_text">در حال شارژ: %d%%</string>
@@ -1878,6 +1883,8 @@ Please note that in order to enable your emergency calls (e.g., such as 112 call
     <string name="qs_detail_palm_capture_title">عکس از صفحه با حرکت دست</string>
     <string name="noti_direct_reply_exceed_text_limit_toast">وارد کردن متن بیشتر ممکن نیست.</string>
     <string name="airplane_mode_tts_text">حالت پرواز</string>
+    <string name="all_noti_readout">یک اعلان</string>
+    <string name="all_noti_readout2">%d اعلان</string>
     <string name="car_lockscreen_disclaimer_title">با ایمنی برانید</string>
     <string name="car_lockscreen_disclaimer_text">‏کاملاً از شرایط رانندگی آگاه باشید و همیشه قوانین مربوطه را رعایت کنید. مسیرها ممکن است غیردقیق، ناقص، ناکامل، خطرناک، نامناسب، ممنوع یا مستلزم عبور از تقسیمات کشوری باشند. اطلاعات کسب و کار نیز ممکن است غیردقیق یا ناکامل باشند. داده‌ها بی‌درنگ نیستند و دقت مکان نمی‌تواند تضمین شود. هنگام رانندگی دستگاه همراه را در دست نگیرید یا از برنامه‌هایی که ویژه Android Auto نیستند استفاده نکنید.</string>
     <string name="pip_close">‏بستن PIP</string>

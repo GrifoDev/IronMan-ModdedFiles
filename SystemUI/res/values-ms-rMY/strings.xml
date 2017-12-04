@@ -238,6 +238,8 @@
     <string name="wifi_allow_scan_with_traffic_summary">Benarkan/Jangan benarkan Imbasan Perayauan Wi-Fi berdasarkan jumlah trafik data yang ada pada antara muka</string>
     <string name="select_logd_size_title">Saiz penimbal pengelog</string>
     <string name="select_logd_size_dialog_title">Pilih saiz Pengelog bagi setiap penimbal log</string>
+    <string name="dev_logpersist_clear_warning_title">Kosongkan storan pengelog berterusan?</string>
+    <string name="dev_logpersist_clear_warning_message">Pengelog data akan dipadamkan apabila pengelog berterusan dimatikan.</string>
     <string name="select_logpersist_title">Simpan data log secara berterusan</string>
     <string name="select_logpersist_dialog_title">Pilih penimbal log utk disimpan secara berterusan</string>
     <string name="select_usb_configuration_title">Pilih Konfigurasi USB</string>
@@ -752,6 +754,7 @@ Menyambung semula boleh menyebabkan anda dikenakan bayaran daripada pembawa anda
     <string name="wifi_authentication_failed_kt">Gagal mengesahkan Wi-Fi AP.</string>
     <string name="wifi_authentication_no_response">Gagal menyambung ke Wi-Fi AP.</string>
     <string name="wifi_authentication_invalid_value">Authentication failed. Check ID and password.</string>
+    <string name="wifi_disconnected">Wi-Fi diputuskan sambungan.</string>
     <string name="quick_settings_dnd_label">Jangan ganggu</string>
     <string name="quick_settings_dnd_priority_label">Keutamaan sahaja</string>
     <string name="quick_settings_dnd_alarms_label">Penggera sahaja</string>
@@ -1383,11 +1386,11 @@ Untuk mendapatkan maklumat lanjut, hubungi pentadbir anda."</string>
     <string name="keyboard_key_numpad_template">Pad nombor %1$s</string>
     <string name="keyboard_popup_help">Kekunci meta: Kekunci Windows, Command atau simbol sistem pengendalian lain.</string>
     <string name="keyboard_shortcut_group_system">Pintasan sistem</string>
-    <string name="keyboard_shortcut_group_system_home">Skrin Utama</string>
-    <string name="keyboard_shortcut_group_system_recents">Terbaharu</string>
+    <string name="keyboard_shortcut_group_system_home">Utama</string>
+    <string name="keyboard_shortcut_group_system_recents">Terkini</string>
     <string name="keyboard_shortcut_group_system_back">Kembali</string>
     <string name="keyboard_shortcut_group_system_notifications">Pemberitahuan</string>
-    <string name="keyboard_shortcut_group_system_shortcuts_helper">Pintasan Papan Kekunci</string>
+    <string name="keyboard_shortcut_group_system_shortcuts_helper">Pintasan papan kekunci</string>
     <string name="keyboard_shortcut_group_system_switch_input">Tukar kaedah input</string>
     <string name="keyboard_shortcut_group_system_all_apps">Semua aplikasi</string>
     <string name="keyboard_shortcut_group_system_running_apps">Aplikasi yang berjalan</string>
@@ -1395,7 +1398,7 @@ Untuk mendapatkan maklumat lanjut, hubungi pentadbir anda."</string>
     <string name="keyboard_shortcut_group_system_switch_languages">Tukar bahasa</string>
     <string name="keyboard_shortcut_group_applications">Pintasan dalam aplikasi</string>
     <string name="keyboard_shortcut_group_applications_assist">Bantu</string>
-    <string name="keyboard_shortcut_group_applications_browser">Penyemak imbas</string>
+    <string name="keyboard_shortcut_group_applications_browser">Pelayar</string>
     <string name="keyboard_shortcut_group_applications_contacts">Kenalan</string>
     <string name="keyboard_shortcut_group_applications_email">E-mel</string>
     <string name="keyboard_shortcut_group_applications_im">IM</string>
@@ -1653,7 +1656,9 @@ Kepanasan yang terlampau boleh disebabkan oleh:
     <string name="battery_not_fully_connected_charging_title_vzw">Incomplete connection</string>
     <string name="battery_not_fully_connected_charging_text">Untuk pengecasan yang lebih cepat, gunakan pengecas yang didatangkan bersama peranti anda dan pastikannya bersambung dengan betul.</string>
     <string name="battery_not_fully_connected_charging_text_vzw">Make sure the charger is properly connected.</string>
+    <string name="battery_not_fully_connected_charging_text_jpn">Pastikan pengecas anda bersambung dengan betul.</string>
     <string name="battery_not_fully_connected_charging_popup_text">Pastikan pengecas bersambung dengan betul. Gunakan pengecas yang didatangkan bersama peranti.</string>
+    <string name="battery_not_fully_connected_charging_popup_text_jpn">Pastikan pengecas bersambung dengan betul.</string>
     <string name="battery_charging_level_and_time_text">"Mengecas: %1$d%%
 (Kira-kira %2$s sehingga dicas sepenuhnya)"</string>
     <string name="battery_charging_level_text">Mengecas: %d%%</string>
@@ -1878,6 +1883,8 @@ Please note that in order to enable your emergency calls (e.g., such as 112 call
     <string name="qs_detail_palm_capture_title">Sapu telapak untuk menangkap</string>
     <string name="noti_direct_reply_exceed_text_limit_toast">Tidak dapat memasukkan teks lagi.</string>
     <string name="airplane_mode_tts_text">Mod penerbangan</string>
+    <string name="all_noti_readout">Satu pemberitahuan</string>
+    <string name="all_noti_readout2">%d pemberitahuan</string>
     <string name="car_lockscreen_disclaimer_title">Pandu dengan selamat</string>
     <string name="car_lockscreen_disclaimer_text">Pastikan anda sentiasa sedar sepenuhnya akan keadaan pemanduan dan mematuhi undang-undang yang dikenakan pada sepanjang masa. Arah mungkin tidak tepat, tidak lengkap, berbahaya, tidak sesuai, dilarang atau melibatkan lintasan kawasan pentadbiran. Maklumat perniagaan juga mungkin tidak tepat atau tidak lengkap. Data bukan masa sebenar dan ketepatan lokasi tidak dapat dijamin. Jangan kendalikan peranti mudah alih anda atau gunakan apl yang bukan untuk Android Auto semasa memandu.</string>
     <string name="pip_close">Tutup PIP</string>

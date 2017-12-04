@@ -141,6 +141,8 @@
     <string name="tts_reset_speech_pitch_title">पिच रिसेट गर्नुहोस्</string>
     <string name="tts_reset_speech_pitch_summary">पाठ पढेर सुनाइने पिचलाई पूर्वनिर्धारित सेटिङमा रिसेट गर्नुहोस्।</string>
     <string name="choose_profile">प्रोफाइल चयन गर्नुहोस्</string>
+    <string name="dev_logpersist_clear_warning_title">निरन्तर लगरको भण्डारण खोली गर्ने हो?</string>
+    <string name="dev_logpersist_clear_warning_message">निरन्तर लगरलाई अफ गरिएमा लगरको डाटा मेटाइने छ।</string>
     <string name="select_logpersist_title">निरन्तर लगको डाटा भण्डारण गर्नुहोस्</string>
     <string name="select_logpersist_dialog_title">निरन्तर भण्डारण गर्नुपर्ने लगको बफर चयन गर्नुहोस्</string>
     <string name="no_application">एप्सहरू छैनन्</string>
@@ -248,6 +250,7 @@ For example, your ringtone will not sound, you will not be able to answer phone 
     <string name="wifi_authentication_failed_kt">Wi-Fi AP मा प्रमाणित गर्न असफल भयो।</string>
     <string name="wifi_authentication_no_response">Wi-Fi AP मा जडान गर्न असफल भयो।</string>
     <string name="wifi_authentication_invalid_value">प्रमाणीकरण रद्द ID र पासवर्ड जाच्नुहोस्।</string>
+    <string name="wifi_disconnected">Wi-Fi जडान विच्‍छेद भयो।</string>
     <string name="quick_settings_bluetooth_label">ब्लुटूथ</string>
     <string name="quick_settings_bluetooth_detail_empty_text_available">कुनै नजिकैको ब्लुटूथ यन्त्रहरू फेला परेनन्</string>
     <string name="quick_settings_bluetooth_detail_paired_devices_title">जोडा बनाइएका यन्त्रहरू</string>
@@ -573,15 +576,21 @@ Wi-Fi र ब्लुटूथलाई पनि अफ गरिनेछ, �
     <string name="dialog_battery_data_warning">मोबाइल हटस्पट सक्षम गरिनेछ। यसले बैटरी खपत र डाटा प्रयोगलाई बढाउनेछ।</string>
     <string name="keyboard_popup_help">मेटा कुञ्जी: विन्डो, आदेश वा अन्य सञ्चालन प्रणालीको प्रतीकको कुञ्जी।</string>
     <string name="keyboard_shortcut_group_system">प्रणालीका शर्टकटहरू</string>
+    <string name="keyboard_shortcut_group_system_home">होम</string>
+    <string name="keyboard_shortcut_group_system_recents">हालैका</string>
     <string name="keyboard_shortcut_group_system_back">पछाडि</string>
+    <string name="keyboard_shortcut_group_system_notifications">सूचनाहरू</string>
+    <string name="keyboard_shortcut_group_system_shortcuts_helper">कीबोर्ड शर्टकटहरू</string>
     <string name="keyboard_shortcut_group_system_all_apps">सबै एप्स</string>
     <string name="keyboard_shortcut_group_system_running_apps">चलिरहेका एप्स</string>
     <string name="keyboard_shortcut_group_system_lock_screen">लक स्क्रीन</string>
     <string name="keyboard_shortcut_group_system_switch_languages">भाषाहरू स्विच गर्नुहोस्</string>
     <string name="keyboard_shortcut_group_applications">एप भित्रका शर्टकटहरू</string>
+    <string name="keyboard_shortcut_group_applications_browser">ब्राउजर</string>
     <string name="keyboard_shortcut_group_applications_contacts">सम्पर्कहरू</string>
     <string name="keyboard_shortcut_group_applications_email">ईमेल</string>
     <string name="keyboard_shortcut_group_applications_music">संगीत</string>
+    <string name="keyboard_shortcut_group_applications_calendar">पात्रो</string>
     <string name="keyboard_shortcut_group_applications_bixby">Bixby</string>
     <string name="keyboard_shortcut_group_applications_messages">संदेशहरू</string>
     <string name="qs_edit">सम्पादन</string>
@@ -765,7 +774,9 @@ Using your tablet in a very hot location."</string>
     <string name="battery_not_fully_connected_charging_title_vzw">Incomplete connection</string>
     <string name="battery_not_fully_connected_charging_text">अझ द्रुत चार्जिङका लागि आफ्नो यन्त्रसँग आएको चार्जरको प्रयोग गर्नुहोस् र त्यो राम्ररी जडान गरिएको छ भन्ने सुनिश्चित गर्नु‍होस्।</string>
     <string name="battery_not_fully_connected_charging_text_vzw">Make sure the charger is properly connected.</string>
+    <string name="battery_not_fully_connected_charging_text_jpn">तपाईको चार्जर राम्ररी जडान गरिएको छ भन्ने कुरा सुनिश्चित गर्नुहोस्।</string>
     <string name="battery_not_fully_connected_charging_popup_text">चार्जरलाई राम्ररी जडान गरिएको छ भन्ने सुनिश्चित गर्नुहोस्। यन्त्रसँग आएको चार्जरको प्रयोग गर्नु‍होस्।</string>
+    <string name="battery_not_fully_connected_charging_popup_text_jpn">चार्जरलाई राम्ररी जडान गरिएको छ भन्ने सुनिश्चित गर्नुहोस्।</string>
     <string name="battery_charging_level_and_time_text">"चार्ज हुँदैछ: %1$d%%
 (पूर्ण रूपमा चार्ज हुन लगभग %2$s)"</string>
     <string name="battery_charging_level_text">चार्ज गरिँदै: %d%%</string>
@@ -990,6 +1001,8 @@ Please note that in order to enable your emergency calls (e.g., such as 112 call
     <string name="qs_detail_palm_capture_title">क्याप्चर गर्न हत्केला स्वाइप गर्ने</string>
     <string name="noti_direct_reply_exceed_text_limit_toast">थप पाठ प्रविष्ट गर्न सकिँदैन।</string>
     <string name="airplane_mode_tts_text">हवाइजहाज मोड</string>
+    <string name="all_noti_readout">एउटा सूचना</string>
+    <string name="all_noti_readout2">%d सूचनाहरू</string>
     <string name="keyguard_sim_locked_message">SIM कार्ड लक भयो</string>
     <string name="keyguard_sim_puk_locked_message">SIM कार्डलाई PUK मार्फत लक गरियो</string>
     <string name="keyguard_sim_unlock_progress_dialog_message">SIM कार्ड अनलक गर्दै</string>

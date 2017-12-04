@@ -83,7 +83,7 @@
 
     iget-object v0, p0, Lcom/android/systemui/qs/tiles/EbookTile$EbookDetailAdapter;->mSummary:Landroid/widget/TextView;
 
-    const v1, 0x7f0f052d
+    const v1, 0x7f0f052e
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(I)V
 
@@ -93,7 +93,7 @@
     :cond_0
     iget-object v0, p0, Lcom/android/systemui/qs/tiles/EbookTile$EbookDetailAdapter;->mSummary:Landroid/widget/TextView;
 
-    const v1, 0x7f0f0528
+    const v1, 0x7f0f0529
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(I)V
 
@@ -147,7 +147,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f0f052c
+    const v1, 0x7f0f052d
 
     invoke-virtual {v0, v1}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -162,7 +162,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f0f0527
+    const v1, 0x7f0f0528
 
     invoke-virtual {v0, v1}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 

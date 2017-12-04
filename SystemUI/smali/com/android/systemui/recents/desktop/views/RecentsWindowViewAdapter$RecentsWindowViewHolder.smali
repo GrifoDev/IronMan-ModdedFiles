@@ -534,7 +534,7 @@
 
     iget-object v1, v1, Lcom/android/systemui/recents/desktop/views/RecentsWindowViewAdapter;->mContext:Landroid/content/Context;
 
-    const v4, 0x7f0f06c7
+    const v4, 0x7f0f06c8
 
     invoke-virtual {v1, v4}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -601,7 +601,7 @@
 
     iget-object v1, v1, Lcom/android/systemui/recents/desktop/views/RecentsWindowViewAdapter;->mContext:Landroid/content/Context;
 
-    const v4, 0x7f0f06c9
+    const v4, 0x7f0f06ca
 
     invoke-virtual {v1, v4}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -683,7 +683,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f0f06c6
+    const v2, 0x7f0f06c7
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 

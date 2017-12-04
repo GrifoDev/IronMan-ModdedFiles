@@ -2033,7 +2033,7 @@
 
     iget-object v3, p0, Lcom/android/systemui/volume/SecVolumeDialog;->mResources:Landroid/content/res/Resources;
 
-    const v4, 0x7f0d035e
+    const v4, 0x7f0d0360
 
     invoke-virtual {v3, v4}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -2444,7 +2444,7 @@
 
     iget-object v11, p0, Lcom/android/systemui/volume/SecVolumeDialog;->mResources:Landroid/content/res/Resources;
 
-    const v12, 0x7f0d035e
+    const v12, 0x7f0d0360
 
     invoke-virtual {v11, v12}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -2776,7 +2776,7 @@
 
     if-eqz v0, :cond_5
 
-    const v2, 0x7f0f05b3
+    const v2, 0x7f0f05b4
 
     :goto_1
     invoke-virtual {v4, v2}, Landroid/content/Context;->getString(I)Ljava/lang/String;
@@ -2813,7 +2813,7 @@
     goto :goto_0
 
     :cond_5
-    const v2, 0x7f0f05b2
+    const v2, 0x7f0f05b3
 
     goto :goto_1
 .end method
@@ -3244,7 +3244,7 @@
 
     iget-object v0, p0, Lcom/android/systemui/volume/SecVolumeDialog;->mDialog:Lcom/android/systemui/volume/SecVolumeDialog$CustomDialog;
 
-    const v1, 0x7f13049c
+    const v1, 0x7f13049e
 
     invoke-virtual {v0, v1}, Lcom/android/systemui/volume/SecVolumeDialog$CustomDialog;->findViewById(I)Landroid/view/View;
 
@@ -3257,7 +3257,7 @@
     :goto_0
     iget-object v0, p0, Lcom/android/systemui/volume/SecVolumeDialog;->mDialog:Lcom/android/systemui/volume/SecVolumeDialog$CustomDialog;
 
-    const v1, 0x7f13049d
+    const v1, 0x7f13049f
 
     invoke-virtual {v0, v1}, Lcom/android/systemui/volume/SecVolumeDialog$CustomDialog;->findViewById(I)Landroid/view/View;
 
@@ -3290,7 +3290,7 @@
     :cond_1
     iget-object v0, p0, Lcom/android/systemui/volume/SecVolumeDialog;->mDialog:Lcom/android/systemui/volume/SecVolumeDialog$CustomDialog;
 
-    const v1, 0x7f13049e
+    const v1, 0x7f1304a0
 
     invoke-virtual {v0, v1}, Lcom/android/systemui/volume/SecVolumeDialog$CustomDialog;->findViewById(I)Landroid/view/View;
 
@@ -3306,7 +3306,7 @@
 
     iget-object v0, p0, Lcom/android/systemui/volume/SecVolumeDialog;->mDialogView:Landroid/view/ViewGroup;
 
-    const v1, 0x7f13049f
+    const v1, 0x7f1304a1
 
     invoke-virtual {v0, v1}, Landroid/view/ViewGroup;->findViewById(I)Landroid/view/View;
 
@@ -3480,9 +3480,9 @@
 
     const/16 v0, 0xa
 
-    const v1, 0x7f0207d9
+    const v1, 0x7f0207dd
 
-    const v2, 0x7f0207db
+    const v2, 0x7f0207df
 
     const/4 v3, 0x0
 
@@ -3500,9 +3500,9 @@
 
     const/4 v0, 0x3
 
-    const v1, 0x7f0207e1
+    const v1, 0x7f0207e5
 
-    const v2, 0x7f0207dd
+    const v2, 0x7f0207e1
 
     const/4 v3, 0x1
 
@@ -3510,9 +3510,9 @@
 
     const/16 v0, 0xb
 
-    const v1, 0x7f0207e1
+    const v1, 0x7f0207e5
 
-    const v2, 0x7f0207dd
+    const v2, 0x7f0207e1
 
     const/4 v3, 0x1
 
@@ -3521,7 +3521,7 @@
     :goto_1
     iget-object v0, p0, Lcom/android/systemui/volume/SecVolumeDialog;->mDialog:Lcom/android/systemui/volume/SecVolumeDialog$CustomDialog;
 
-    const v1, 0x7f1304a1
+    const v1, 0x7f1304a3
 
     invoke-virtual {v0, v1}, Lcom/android/systemui/volume/SecVolumeDialog$CustomDialog;->findViewById(I)Landroid/view/View;
 
@@ -3557,7 +3557,7 @@
 
     iget-object v1, p0, Lcom/android/systemui/volume/SecVolumeDialog;->mSpTexts:Lcom/android/systemui/volume/SpTexts;
 
-    const v0, 0x7f130563
+    const v0, 0x7f130565
 
     invoke-virtual {v10, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -3588,7 +3588,7 @@
     :cond_2
     iget-object v0, p0, Lcom/android/systemui/volume/SecVolumeDialog;->mDialogDndView:Landroid/view/ViewGroup;
 
-    const v1, 0x7f130562
+    const v1, 0x7f130564
 
     invoke-virtual {v0, v1}, Landroid/view/ViewGroup;->findViewById(I)Landroid/view/View;
 
@@ -3626,7 +3626,7 @@
     :cond_3
     iget-object v0, p0, Lcom/android/systemui/volume/SecVolumeDialog;->mDialog:Lcom/android/systemui/volume/SecVolumeDialog$CustomDialog;
 
-    const v1, 0x7f1304a0
+    const v1, 0x7f1304a2
 
     invoke-virtual {v0, v1}, Lcom/android/systemui/volume/SecVolumeDialog$CustomDialog;->findViewById(I)Landroid/view/View;
 
@@ -3662,7 +3662,7 @@
 
     iget-object v1, p0, Lcom/android/systemui/volume/SecVolumeDialog;->mSpTexts:Lcom/android/systemui/volume/SpTexts;
 
-    const v0, 0x7f13055f
+    const v0, 0x7f130561
 
     invoke-virtual {v7, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -3674,7 +3674,7 @@
 
     iget-object v1, p0, Lcom/android/systemui/volume/SecVolumeDialog;->mSpTexts:Lcom/android/systemui/volume/SpTexts;
 
-    const v0, 0x7f130560
+    const v0, 0x7f130562
 
     invoke-virtual {v7, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -3684,7 +3684,7 @@
 
     invoke-virtual {v1, v0}, Lcom/android/systemui/volume/SpTexts;->add(Landroid/widget/TextView;)I
 
-    const v0, 0x7f13055f
+    const v0, 0x7f130561
 
     invoke-virtual {v7, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -3707,7 +3707,7 @@
     :cond_4
     iget-object v0, p0, Lcom/android/systemui/volume/SecVolumeDialog;->mDialogDefaultVolumeControlView:Landroid/view/ViewGroup;
 
-    const v1, 0x7f13055e
+    const v1, 0x7f130560
 
     invoke-virtual {v0, v1}, Landroid/view/ViewGroup;->findViewById(I)Landroid/view/View;
 
@@ -3745,7 +3745,7 @@
     :cond_5
     iget-object v0, p0, Lcom/android/systemui/volume/SecVolumeDialog;->mDialogView:Landroid/view/ViewGroup;
 
-    const v1, 0x7f130560
+    const v1, 0x7f130562
 
     invoke-virtual {v0, v1}, Landroid/view/ViewGroup;->findViewById(I)Landroid/view/View;
 
@@ -3876,9 +3876,9 @@
 
     const/16 v0, 0xa
 
-    const v1, 0x7f0207d9
+    const v1, 0x7f0207dd
 
-    const v2, 0x7f0207db
+    const v2, 0x7f0207df
 
     const/4 v3, 0x0
 
@@ -3896,9 +3896,9 @@
 
     const/4 v0, 0x3
 
-    const v1, 0x7f0207e1
+    const v1, 0x7f0207e5
 
-    const v2, 0x7f0207dd
+    const v2, 0x7f0207e1
 
     const/4 v3, 0x1
 
@@ -3906,9 +3906,9 @@
 
     const/16 v0, 0xb
 
-    const v1, 0x7f0207e1
+    const v1, 0x7f0207e5
 
-    const v2, 0x7f0207dd
+    const v2, 0x7f0207e1
 
     const/4 v3, 0x1
 
@@ -3948,7 +3948,7 @@
 
     iget-object v0, p0, Lcom/android/systemui/volume/SecVolumeDialog;->mResources:Landroid/content/res/Resources;
 
-    const v1, 0x7f0d03e9
+    const v1, 0x7f0d03eb
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -4001,7 +4001,7 @@
 
     move-result-object v4
 
-    const v5, 0x7f1304a3
+    const v5, 0x7f1304a5
 
     invoke-virtual {v4, v5}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -4127,6 +4127,8 @@
     move-result-object v4
 
     invoke-virtual {v4, p3}, Landroid/widget/ImageButton;->setImageResource(I)V
+
+    invoke-static {p1, p3}, Lcom/android/systemui/volume/SecVolumeDialog$VolumeRow;->-set2(Lcom/android/systemui/volume/SecVolumeDialog$VolumeRow;I)I
 
     invoke-static {p1}, Lcom/android/systemui/volume/SecVolumeDialog$VolumeRow;->-get8(Lcom/android/systemui/volume/SecVolumeDialog$VolumeRow;)Landroid/widget/ImageButton;
 
@@ -7000,7 +7002,7 @@
 
     iget-object v2, p0, Lcom/android/systemui/volume/SecVolumeDialog;->mResources:Landroid/content/res/Resources;
 
-    const v3, 0x7f0d035f
+    const v3, 0x7f0d0361
 
     invoke-virtual {v2, v3}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -7022,7 +7024,7 @@
 
     iget-object v2, p0, Lcom/android/systemui/volume/SecVolumeDialog;->mResources:Landroid/content/res/Resources;
 
-    const v3, 0x7f0d03ee
+    const v3, 0x7f0d03f0
 
     invoke-virtual {v2, v3}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -7032,7 +7034,7 @@
 
     iget-object v2, p0, Lcom/android/systemui/volume/SecVolumeDialog;->mResources:Landroid/content/res/Resources;
 
-    const v3, 0x7f0d03ef
+    const v3, 0x7f0d03f1
 
     invoke-virtual {v2, v3}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -7802,6 +7804,13 @@
     goto :goto_0
 
     :pswitch_4
+    const-string/jumbo v0, "Bixby Voice"
+
+    iput-object v0, p0, Lcom/android/systemui/volume/SecVolumeDialog;->mExtraForRingerMode:Ljava/lang/String;
+
+    goto :goto_0
+
+    :pswitch_5
     const-string/jumbo v0, "Notification"
 
     iput-object v0, p0, Lcom/android/systemui/volume/SecVolumeDialog;->mExtraForRingerMode:Ljava/lang/String;
@@ -7814,15 +7823,15 @@
         :pswitch_2
         :pswitch_3
         :pswitch_0
+        :pswitch_5
+        :pswitch_0
+        :pswitch_0
+        :pswitch_0
+        :pswitch_0
+        :pswitch_0
+        :pswitch_3
+        :pswitch_0
         :pswitch_4
-        :pswitch_0
-        :pswitch_0
-        :pswitch_0
-        :pswitch_0
-        :pswitch_0
-        :pswitch_3
-        :pswitch_0
-        :pswitch_3
     .end packed-switch
 .end method
 
@@ -8473,11 +8482,11 @@
 
     move-result-object v4
 
-    const v7, 0x7f130550
+    const v7, 0x7f130552
 
     invoke-virtual {v5, v7, v3}, Landroid/widget/RemoteViews;->setOnClickPendingIntent(ILandroid/app/PendingIntent;)V
 
-    const v7, 0x7f130551
+    const v7, 0x7f130553
 
     invoke-virtual {v5, v7, v4}, Landroid/widget/RemoteViews;->setOnClickPendingIntent(ILandroid/app/PendingIntent;)V
 
@@ -8593,7 +8602,7 @@
 
     aput-object v0, v3, v5
 
-    const v4, 0x7f0f05d9
+    const v4, 0x7f0f05da
 
     invoke-virtual {v2, v4, v3}, Landroid/content/Context;->getString(I[Ljava/lang/Object;)Ljava/lang/String;
 
@@ -8636,7 +8645,7 @@
 
     aput-object v0, v3, v5
 
-    const v4, 0x7f0f05d8
+    const v4, 0x7f0f05d9
 
     invoke-virtual {v2, v4, v3}, Landroid/content/Context;->getString(I[Ljava/lang/Object;)Ljava/lang/String;
 
@@ -8667,7 +8676,7 @@
 
     iget-object v1, p0, Lcom/android/systemui/volume/SecVolumeDialog;->mContext:Landroid/content/Context;
 
-    const v2, 0x7f0f07a5
+    const v2, 0x7f0f07a8
 
     invoke-virtual {v1, v2}, Landroid/content/Context;->getText(I)Ljava/lang/CharSequence;
 
@@ -8721,11 +8730,11 @@
 
     invoke-virtual {v0, v4}, Landroid/app/AlertDialog$Builder;->setCancelable(Z)Landroid/app/AlertDialog$Builder;
 
-    const v2, 0x7f0f05d3
+    const v2, 0x7f0f05d4
 
     invoke-virtual {v0, v2}, Landroid/app/AlertDialog$Builder;->setMessage(I)Landroid/app/AlertDialog$Builder;
 
-    const v2, 0x7f0f05d4
+    const v2, 0x7f0f05d5
 
     invoke-virtual {v0, v2}, Landroid/app/AlertDialog$Builder;->setTitle(I)Landroid/app/AlertDialog$Builder;
 
@@ -8733,7 +8742,7 @@
 
     invoke-direct {v2, p0}, Lcom/android/systemui/volume/SecVolumeDialog$18;-><init>(Lcom/android/systemui/volume/SecVolumeDialog;)V
 
-    const v3, 0x7f0f05d6
+    const v3, 0x7f0f05d7
 
     invoke-virtual {v0, v3, v2}, Landroid/app/AlertDialog$Builder;->setPositiveButton(ILandroid/content/DialogInterface$OnClickListener;)Landroid/app/AlertDialog$Builder;
 
@@ -9198,7 +9207,7 @@
     :cond_3
     iget-object v6, p0, Lcom/android/systemui/volume/SecVolumeDialog;->mResources:Landroid/content/res/Resources;
 
-    const v7, 0x7f0d0361
+    const v7, 0x7f0d0363
 
     invoke-virtual {v6, v7}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -9299,7 +9308,7 @@
 
     if-eqz v1, :cond_5
 
-    const v1, 0x7f0f05b3
+    const v1, 0x7f0f05b4
 
     :goto_2
     invoke-virtual {v3, v1}, Landroid/content/Context;->getString(I)Ljava/lang/String;
@@ -9343,7 +9352,7 @@
     goto :goto_1
 
     :cond_5
-    const v1, 0x7f0f05b2
+    const v1, 0x7f0f05b3
 
     goto :goto_2
 .end method
@@ -10078,7 +10087,7 @@
 
     iget-object v10, p0, Lcom/android/systemui/volume/SecVolumeDialog;->mResources:Landroid/content/res/Resources;
 
-    const v11, 0x7f0d035e
+    const v11, 0x7f0d0360
 
     invoke-virtual {v10, v11}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -11031,7 +11040,7 @@
 
     move-object/from16 v29, v0
 
-    const v30, 0x7f0f05d7
+    const v30, 0x7f0f05d8
 
     invoke-virtual/range {v29 .. v30}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -11192,7 +11201,7 @@
 
     aput-object v32, v31, v33
 
-    const v32, 0x7f0f05c7
+    const v32, 0x7f0f05c8
 
     move-object/from16 v0, v30
 
@@ -11329,7 +11338,7 @@
 
     move-object/from16 v29, v0
 
-    const v30, 0x7f0f05d1
+    const v30, 0x7f0f05d2
 
     invoke-virtual/range {v29 .. v30}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -11341,7 +11350,7 @@
 
     move-object/from16 v29, v0
 
-    const v30, 0x7f13055f
+    const v30, 0x7f130561
 
     invoke-virtual/range {v29 .. v30}, Landroid/view/ViewGroup;->findViewById(I)Landroid/view/View;
 
@@ -11361,7 +11370,7 @@
 
     move-object/from16 v29, v0
 
-    const v30, 0x7f0f05d2
+    const v30, 0x7f0f05d3
 
     invoke-virtual/range {v29 .. v30}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -11373,7 +11382,7 @@
 
     move-object/from16 v29, v0
 
-    const v30, 0x7f130560
+    const v30, 0x7f130562
 
     invoke-virtual/range {v29 .. v30}, Landroid/view/ViewGroup;->findViewById(I)Landroid/view/View;
 
@@ -11413,7 +11422,7 @@
 
     move-object/from16 v29, v0
 
-    const v30, 0x7f0f07a5
+    const v30, 0x7f0f07a8
 
     invoke-virtual/range {v29 .. v30}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -11425,7 +11434,7 @@
 
     move-object/from16 v29, v0
 
-    const v30, 0x7f130563
+    const v30, 0x7f130565
 
     invoke-virtual/range {v29 .. v30}, Landroid/view/ViewGroup;->findViewById(I)Landroid/view/View;
 
@@ -12218,7 +12227,7 @@
 
     aput-object v32, v31, v33
 
-    const v32, 0x7f0f05c8
+    const v32, 0x7f0f05c9
 
     move-object/from16 v0, v30
 
@@ -12263,7 +12272,7 @@
 
     aput-object v32, v31, v33
 
-    const v32, 0x7f0f05c9
+    const v32, 0x7f0f05ca
 
     move-object/from16 v0, v30
 
@@ -12333,7 +12342,7 @@
 
     aput-object v32, v31, v33
 
-    const v32, 0x7f0f05c7
+    const v32, 0x7f0f05c8
 
     move-object/from16 v0, v30
 
@@ -12378,7 +12387,7 @@
 
     aput-object v32, v31, v33
 
-    const v32, 0x7f0f05c9
+    const v32, 0x7f0f05ca
 
     move-object/from16 v0, v30
 
@@ -13106,7 +13115,7 @@
 
     iget-object v4, p0, Lcom/android/systemui/volume/SecVolumeDialog;->mResources:Landroid/content/res/Resources;
 
-    const v5, 0x7f0d023f
+    const v5, 0x7f0d0241
 
     invoke-virtual {v4, v5}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -13123,7 +13132,7 @@
 
     iget-object v4, p0, Lcom/android/systemui/volume/SecVolumeDialog;->mResources:Landroid/content/res/Resources;
 
-    const v5, 0x7f0d03e3
+    const v5, 0x7f0d03e5
 
     invoke-virtual {v4, v5}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -13198,7 +13207,7 @@
 
     iget-object v4, p0, Lcom/android/systemui/volume/SecVolumeDialog;->mResources:Landroid/content/res/Resources;
 
-    const v5, 0x7f0d03e4
+    const v5, 0x7f0d03e6
 
     invoke-virtual {v4, v5}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -13245,7 +13254,7 @@
 
     iget-object v4, p0, Lcom/android/systemui/volume/SecVolumeDialog;->mResources:Landroid/content/res/Resources;
 
-    const v5, 0x7f0d03e5
+    const v5, 0x7f0d03e7
 
     invoke-virtual {v4, v5}, Landroid/content/res/Resources;->getDimensionPixelOffset(I)I
 
@@ -13266,7 +13275,7 @@
 
     move-result-object v4
 
-    const v5, 0x7f0d03e6
+    const v5, 0x7f0d03e8
 
     invoke-virtual {v4, v5}, Landroid/content/res/Resources;->getDimensionPixelOffset(I)I
 
@@ -13593,7 +13602,7 @@
 
     iget-object v1, p0, Lcom/android/systemui/volume/SecVolumeDialog;->mContext:Landroid/content/Context;
 
-    const v2, 0x7f0f05cb
+    const v2, 0x7f0f05cc
 
     invoke-virtual {v1, v2}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 

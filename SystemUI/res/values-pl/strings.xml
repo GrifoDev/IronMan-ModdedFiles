@@ -238,6 +238,8 @@
     <string name="wifi_allow_scan_with_traffic_summary">Zezwalaj/nie zezwalaj na wyszukiwanie sieci Wi-Fi w roamingu w zależności od natężenia ruchu</string>
     <string name="select_logd_size_title">Rozmiary bufora Rejestratora</string>
     <string name="select_logd_size_dialog_title">Wybierz rozmiary Rejestratora/bufor dziennika</string>
+    <string name="dev_logpersist_clear_warning_title">Wyczyścić trwałą pamięć dziennika?</string>
+    <string name="dev_logpersist_clear_warning_message">Dane dziennika zostaną usunięte po wyłączeniu trwałego dziennika.</string>
     <string name="select_logpersist_title">Trwale przechowuj dane raportu</string>
     <string name="select_logpersist_dialog_title">Wybór buforów raportów do trwałego zapisu</string>
     <string name="select_usb_configuration_title">Wybierz konfigurację USB</string>
@@ -752,6 +754,7 @@ Wznowienie może spowodować naliczenie opłat przez operatora."</string>
     <string name="wifi_authentication_failed_kt">Uwierzytelnianie punktu dostępu Wi-Fi nie powiodło się.</string>
     <string name="wifi_authentication_no_response">Nie można nawiązać połączenia z punktem dostępowym Wi-Fi.</string>
     <string name="wifi_authentication_invalid_value">Błąd autentykacji. Sprawdż login i hasło.</string>
+    <string name="wifi_disconnected">Wi-Fi wyłączone.</string>
     <string name="quick_settings_dnd_label">Nie przeszkadzać</string>
     <string name="quick_settings_dnd_priority_label">Tylko priorytetowe</string>
     <string name="quick_settings_dnd_alarms_label">Tylko alarmy</string>
@@ -1383,11 +1386,11 @@ Aby dowiedzieć się więcej, skontaktuj się z administratorem."</string>
     <string name="keyboard_key_numpad_template">Klawiatura numeryczna %1$s</string>
     <string name="keyboard_popup_help">Klawisz Meta: klawisz symbolu systemu Windows, polecenia lub innego systemu operacyjnego.</string>
     <string name="keyboard_shortcut_group_system">Skróty systemowe</string>
-    <string name="keyboard_shortcut_group_system_home">Ekran główny</string>
+    <string name="keyboard_shortcut_group_system_home">Strona główna</string>
     <string name="keyboard_shortcut_group_system_recents">Ostatnie</string>
     <string name="keyboard_shortcut_group_system_back">Wstecz</string>
     <string name="keyboard_shortcut_group_system_notifications">Powiadomienia</string>
-    <string name="keyboard_shortcut_group_system_shortcuts_helper">Skróty klawiszowe</string>
+    <string name="keyboard_shortcut_group_system_shortcuts_helper">Skróty klawiaturowe</string>
     <string name="keyboard_shortcut_group_system_switch_input">Przełącz metodę wprowadzania</string>
     <string name="keyboard_shortcut_group_system_all_apps">Wszystkie aplikacje</string>
     <string name="keyboard_shortcut_group_system_running_apps">Uruchomione aplikacje</string>
@@ -1653,7 +1656,9 @@ Przegrzewanie może być spowodowane przez:
     <string name="battery_not_fully_connected_charging_title_vzw">Incomplete connection</string>
     <string name="battery_not_fully_connected_charging_text">W celu szybszego ładowania używaj ładowarki dostarczonej z urządzeniem i upewnij się, że jest prawidłowo podłączona.</string>
     <string name="battery_not_fully_connected_charging_text_vzw">Make sure the charger is properly connected.</string>
+    <string name="battery_not_fully_connected_charging_text_jpn">Upewnij się, że ładowarka jest prawidłowo podłączona.</string>
     <string name="battery_not_fully_connected_charging_popup_text">Upewnij się, że ładowarka jest prawidłowo podłączona. Używaj ładowarki dostarczonej z urządzeniem.</string>
+    <string name="battery_not_fully_connected_charging_popup_text_jpn">Upewnij się, że ładowarka jest prawidłowo podłączona.</string>
     <string name="battery_charging_level_and_time_text">"Ładowanie: %1$d%%
 (około %2$s do zakończenia ładowania baterii)"</string>
     <string name="battery_charging_level_text">Ładowanie: %d%%</string>
@@ -1878,6 +1883,8 @@ Zwracamy uwagę, że aby umożliwić skierowanie Twoich połączeń na numery al
     <string name="qs_detail_palm_capture_title">Przeciągnij dłonią, aby przechwycić</string>
     <string name="noti_direct_reply_exceed_text_limit_toast">Nie można wprowadzić dodatkowego tekstu.</string>
     <string name="airplane_mode_tts_text">Tryb offline</string>
+    <string name="all_noti_readout">Jedno powiadomienie</string>
+    <string name="all_noti_readout2">Powiadomień: %d</string>
     <string name="car_lockscreen_disclaimer_title">Jedź bezpiecznie</string>
     <string name="car_lockscreen_disclaimer_text">Uważnie obserwuj warunki na drodze i zawsze przestrzegaj obowiązującego prawa. Wskazówki mogą być niedokładne, niekompletne, niebezpieczne, nieprzydatne lub niezgodne z prawem, mogą też obejmować przekraczanie obszarów administracyjnych. Informacje o firmach również mogą być niedokładne lub niekompletne. Dane nie są podawane w czasie rzeczywistym. Nie ma gwarancji, że dane o lokalizacji są dokładne. Podczas prowadzenia samochodu nie obsługuj urządzenia mobilnego ani nie używaj aplikacji nieprzeznaczonych na Android Auto.</string>
     <string name="pip_close">Zamknij PIP</string>

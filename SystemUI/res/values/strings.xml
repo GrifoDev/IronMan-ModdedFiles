@@ -399,8 +399,8 @@
     <string name="wifi_allow_scan_with_traffic_summary">Allow/Disallow Wi‑Fi Roam Scans based on the amount of data traffic present at the interface</string>
     <string name="select_logd_size_title">Logger buffer sizes</string>
     <string name="select_logd_size_dialog_title">Select Logger sizes per log buffer</string>
-    <string name="dev_logpersist_clear_warning_title">Clear logger persistent storage?</string>
-    <string name="dev_logpersist_clear_warning_message">When we no longer are monitoring with the persistent logger, we are required to erase the logger data resident on your device.</string>
+    <string name="dev_logpersist_clear_warning_title">Clear persistent logger storage?</string>
+    <string name="dev_logpersist_clear_warning_message">Logger data will be deleted when the persistent logger is turned off.</string>
     <string name="select_logpersist_title">Store log data persistently</string>
     <string name="select_logpersist_dialog_title">Select log buffers to store persistently</string>
     <string name="select_usb_configuration_title">Select USB Configuration</string>
@@ -1122,6 +1122,8 @@ data"</string>
 Calling"</string>
     <string name="quick_settings_wificalling_label_non_translatable">"WiFi
 Calling"</string>
+    <string name="quick_settings_callingplus_label">"Calling
+Plus"</string>
     <string name="quick_settings_personal_mode_label">"Private
 mode"</string>
     <string name="quick_settings_data_roaming_label">"Data
@@ -1966,7 +1968,9 @@ Overheating can be caused by:
     <string name="battery_not_fully_connected_charging_title_vzw">Incomplete connection</string>
     <string name="battery_not_fully_connected_charging_text">For faster charging, use the charger that came with your device and make sure it is properly connected.</string>
     <string name="battery_not_fully_connected_charging_text_vzw">Make sure the charger is properly connected.</string>
+    <string name="battery_not_fully_connected_charging_text_jpn">Make sure your charger is properly connected.</string>
     <string name="battery_not_fully_connected_charging_popup_text">Make sure charger is properly connected. Use charger that came with device.</string>
+    <string name="battery_not_fully_connected_charging_popup_text_jpn">Make sure charger is properly connected.</string>
     <string name="battery_charging_level_and_time_text">"Charging: %1$d%%
 (Approximately %2$s until fully charged)"</string>
     <string name="battery_charging_level_text">Charging: %d%%</string>
@@ -2210,10 +2214,11 @@ Please note that in order to enable your emergency calls (e.g., such as 112 call
     <string name="qs_detail_palm_capture_title">Palm swipe to capture</string>
     <string name="noti_direct_reply_exceed_text_limit_toast">"Can't enter any more text."</string>
     <string name="airplane_mode_tts_text">Airplane mode</string>
-    <string name="all_noti_readout" formatted="false">%s %s notification</string>
-    <string name="all_noti_readout2" formatted="false">%s %s notifications</string>
-    <item type="string" name="APKTOOL_DUMMY_822">false</item>
-    <item type="string" name="APKTOOL_DUMMY_823">false</item>
+    <string name="all_noti_readout">one notification</string>
+    <string name="all_noti_readout2">%d notifications</string>
+    <string name="badge_text_for_edit">N</string>
+    <item type="string" name="APKTOOL_DUMMY_826">false</item>
+    <item type="string" name="APKTOOL_DUMMY_827">false</item>
     <string name="car_lockscreen_disclaimer_title">Drive safely</string>
     <string name="car_lockscreen_disclaimer_text">Stay fully aware of driving conditions and always obey applicable laws. Directions may be inaccurate, incomplete, dangerous, not suitable, prohibited, or involve crossing administrative areas. Business information may also be inaccurate or incomplete. Data is not real-time, and location accuracy cannot be guaranteed. Do not handle your mobile device or use apps not intended for Android Auto while driving.</string>
     <string name="pip_close">Close PIP</string>

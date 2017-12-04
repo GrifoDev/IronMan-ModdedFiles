@@ -788,7 +788,7 @@
 
     iput-object v10, v0, Lcom/android/systemui/recents/model/TaskStack$DockState$ViewState;->mHintText:Ljava/lang/String;
 
-    const v10, 0x7f0d03bf
+    const v10, 0x7f0d03c1
 
     invoke-virtual {v6, v10}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -819,7 +819,7 @@
 
     invoke-virtual {v10, v11}, Landroid/graphics/Paint;->setTextSize(F)V
 
-    const v10, 0x7f0d03c0
+    const v10, 0x7f0d03c2
 
     invoke-virtual {v6, v10}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -925,7 +925,7 @@
 
     iget-object v10, v0, Lcom/android/systemui/recents/model/TaskStack$DockState$ViewState;->mHintStrokePaint:Landroid/graphics/Paint;
 
-    const v11, 0x7f0d039f
+    const v11, 0x7f0d03a1
 
     invoke-virtual {v6, v11}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 

@@ -198,5 +198,11 @@
     invoke-virtual {v0}, Lcom/android/systemui/statusbar/NotificationBottomBarView;->updateShowButtonBackground()V
 
     :cond_0
+    iget-object v0, p0, Lcom/android/systemui/statusbar/phone/PhoneStatusBar$37;->this$0:Lcom/android/systemui/statusbar/phone/PhoneStatusBar;
+
+    iget-object v0, v0, Lcom/android/systemui/statusbar/phone/PhoneStatusBar;->mStatusBarWindowManager:Lcom/android/systemui/statusbar/phone/StatusBarWindowManager;
+
+    invoke-virtual {v0}, Lcom/android/systemui/statusbar/phone/StatusBarWindowManager;->setKeyguardFlags()V
+
     return-void
 .end method

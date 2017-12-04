@@ -36,7 +36,7 @@
 
     iget-object v0, p0, Lcom/sec/android/cover/monitor/CoverUpdateMonitor$5;->this$0:Lcom/sec/android/cover/monitor/CoverUpdateMonitor;
 
-    invoke-static {v0}, Lcom/sec/android/cover/monitor/CoverUpdateMonitor;->-wrap33(Lcom/sec/android/cover/monitor/CoverUpdateMonitor;)V
+    invoke-static {v0}, Lcom/sec/android/cover/monitor/CoverUpdateMonitor;->-wrap34(Lcom/sec/android/cover/monitor/CoverUpdateMonitor;)V
 
     return-void
 .end method

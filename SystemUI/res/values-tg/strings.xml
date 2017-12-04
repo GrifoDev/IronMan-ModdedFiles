@@ -143,6 +143,8 @@
     <string name="tts_reset_speech_pitch_title">Аз нав танзим к-ни оҳанг</string>
     <string name="tts_reset_speech_pitch_summary">Барқарор кардани оҳанги хонда дода шудани матн ба танзими пешфарз.</string>
     <string name="choose_profile">Интихоби профил</string>
+    <string name="dev_logpersist_clear_warning_title">Захирагоҳи қайдкунандаи доимиро тоза к?</string>
+    <string name="dev_logpersist_clear_warning_message">Агар қайдкунандаи доимӣ хомӯш карда шавад, иттилооти қайдкунанда нест карда мешавад.</string>
     <string name="select_logpersist_title">Нгҳдри мқсднки итт-ти дфтр қайд</string>
     <string name="select_logpersist_dialog_title">Бфрҳои дфтрҳ қайд бри нгҳдрии мқсднк интих</string>
     <string name="no_application">Ягон барнома нест</string>
@@ -250,6 +252,7 @@ For example, your ringtone will not sound, you will not be able to answer phone 
     <string name="wifi_authentication_failed_kt">Санҷиши Wi-Fi AP иҷро барор наёфт.</string>
     <string name="wifi_authentication_no_response">Пайвастшавӣ ба шабакаи Wi-Fi АР иҷро нашуд.</string>
     <string name="wifi_authentication_invalid_value">Authentication failed. Check ID and password.</string>
+    <string name="wifi_disconnected">Wi-Fi ҷудо карда шуд.</string>
     <string name="quick_settings_bluetooth_label">Bluetooth</string>
     <string name="quick_settings_bluetooth_detail_empty_text_available">Ягон дастгоҳи Bluetooth дар атроф ёфт нашуд</string>
     <string name="quick_settings_bluetooth_detail_paired_devices_title">Дастгоҳҳои ҳамроҳ</string>
@@ -576,15 +579,21 @@ Wi-Fi ва Bluetooth низ хомӯш карда мешаванд, аммо о�
     <string name="dialog_battery_data_warning">Нуқтаи дастрасии мобилӣ фаъол карда мешавад. Ин масрафи қувваи батарея ва истифодаи иттилоотро зиёд мекунад.</string>
     <string name="keyboard_popup_help">Мета-калид: Тугмаи дорои нишонаи Windows, Command ё системаи омили дигар.</string>
     <string name="keyboard_shortcut_group_system">Миёнбурҳои системавӣ</string>
+    <string name="keyboard_shortcut_group_system_home">Хона</string>
+    <string name="keyboard_shortcut_group_system_recents">Охиринҳо</string>
     <string name="keyboard_shortcut_group_system_back">Қафо</string>
+    <string name="keyboard_shortcut_group_system_notifications">Огоҳиҳо</string>
+    <string name="keyboard_shortcut_group_system_shortcuts_helper">Миёнбурҳои клавиатура</string>
     <string name="keyboard_shortcut_group_system_all_apps">Ҳамаи барномаҳо</string>
     <string name="keyboard_shortcut_group_system_running_apps">Барномаҳои иҷрошаванда</string>
     <string name="keyboard_shortcut_group_system_lock_screen">Экрани бандкунӣ</string>
     <string name="keyboard_shortcut_group_system_switch_languages">Иваз кардани забонҳо</string>
     <string name="keyboard_shortcut_group_applications">Миёнбурҳои дохили брнмҳо</string>
+    <string name="keyboard_shortcut_group_applications_browser">Браузер</string>
     <string name="keyboard_shortcut_group_applications_contacts">Алоқаҳо</string>
     <string name="keyboard_shortcut_group_applications_email">Почтаи электронӣ</string>
     <string name="keyboard_shortcut_group_applications_music">Мусиқӣ</string>
+    <string name="keyboard_shortcut_group_applications_calendar">Тақвим</string>
     <string name="keyboard_shortcut_group_applications_bixby">Bixby</string>
     <string name="keyboard_shortcut_group_applications_messages">Паёмҳо</string>
     <string name="qs_edit">ТАҲРИР</string>
@@ -768,7 +777,9 @@ Using your tablet in a very hot location."</string>
     <string name="battery_not_fully_connected_charging_title_vzw">Incomplete connection</string>
     <string name="battery_not_fully_connected_charging_text">Барои дастгоҳро зудтар барқ додан, барқдиҳакеро истифода баред, ки ҳамроҳи дастгоҳатон харидаед, ва мутмаин шавед, ки онро дуруст пайваст кардаед.</string>
     <string name="battery_not_fully_connected_charging_text_vzw">Make sure the charger is properly connected.</string>
+    <string name="battery_not_fully_connected_charging_text_jpn">Мутмаин шавед, ки барқдиҳакро дуруст пайваст кардаед.</string>
     <string name="battery_not_fully_connected_charging_popup_text">Мутмаин шавед, ки онро дуруст пайваст кардаед. Барқдиҳаки ҳамроҳи дастгоҳатон харидаро истифода баред.</string>
+    <string name="battery_not_fully_connected_charging_popup_text_jpn">Мутмаин шавед, ки онро дуруст пайваст кардаед.</string>
     <string name="battery_charging_level_and_time_text">"Барқдиҳӣ: %1$d%%
 (Тақрибан %2$s то пурра барқ гирифтан)"</string>
     <string name="battery_charging_level_text">Барқгирӣ: %d%%</string>
@@ -993,6 +1004,8 @@ Please note that in order to enable your emergency calls (e.g., such as 112 call
     <string name="qs_detail_palm_capture_title">Барои гирифтани акс, бо каф бимолед.</string>
     <string name="noti_direct_reply_exceed_text_limit_toast">Илова кардани матни бештар ғайриимкон аст.</string>
     <string name="airplane_mode_tts_text">Реҷаи Ҳавопаймо</string>
+    <string name="all_noti_readout">Як огоҳӣ</string>
+    <string name="all_noti_readout2">%d огоҳӣ</string>
     <string name="keyguard_password_enter_pin_code">Рамзи PIN­ро дохил кунед.</string>
     <string name="keyguard_password_wrong_pin_code">Рамзи PIN нодуруст аст.</string>
     <string name="keyguard_charged">Қувва пур шуд</string>

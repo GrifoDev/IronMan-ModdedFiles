@@ -33,7 +33,7 @@
 
     iget-object v0, p0, Lcom/android/systemui/recents/views/HeaderViewHolder;->itemView:Landroid/view/View;
 
-    const v1, 0x7f130427
+    const v1, 0x7f130429
 
     invoke-virtual {v0, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -53,7 +53,7 @@
 
     iput-object v0, p0, Lcom/android/systemui/recents/views/HeaderViewHolder;->labelView:Landroid/widget/TextView;
 
-    const v0, 0x7f130429
+    const v0, 0x7f13042b
 
     invoke-virtual {p1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -98,7 +98,7 @@
     :goto_0
     iget-object v0, p0, Lcom/android/systemui/recents/views/HeaderViewHolder;->labelView:Landroid/widget/TextView;
 
-    const v1, 0x7f0f06e9
+    const v1, 0x7f0f06ea
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(I)V
 
@@ -147,7 +147,7 @@
 
     iget-object v0, p0, Lcom/android/systemui/recents/views/HeaderViewHolder;->labelView:Landroid/widget/TextView;
 
-    const v1, 0x7f0f06ea
+    const v1, 0x7f0f06eb
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(I)V
 

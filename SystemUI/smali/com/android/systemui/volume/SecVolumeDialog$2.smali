@@ -37,9 +37,9 @@
 .method public onConfigurationChanged()V
     .locals 10
 
-    const v9, 0x7f0d03e8
+    const v9, 0x7f0d03ea
 
-    const v8, 0x7f0d03e4
+    const v8, 0x7f0d03e6
 
     const/4 v7, 0x1
 

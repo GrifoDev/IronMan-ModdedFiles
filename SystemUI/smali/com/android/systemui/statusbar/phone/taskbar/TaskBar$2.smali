@@ -36,7 +36,7 @@
 
     const/4 v6, 0x0
 
-    if-eqz p2, :cond_3
+    if-eqz p2, :cond_4
 
     invoke-virtual {p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
 
@@ -79,7 +79,7 @@
 
     move-result v3
 
-    if-eqz v3, :cond_4
+    if-eqz v3, :cond_5
 
     iget-object v3, p0, Lcom/android/systemui/statusbar/phone/taskbar/TaskBar$2;->this$0:Lcom/android/systemui/statusbar/phone/taskbar/TaskBar;
 
@@ -87,7 +87,7 @@
 
     move-result-object v3
 
-    if-eqz v3, :cond_3
+    if-eqz v3, :cond_4
 
     const-string/jumbo v3, "reason"
 
@@ -95,7 +95,7 @@
 
     move-result-object v2
 
-    if-eqz v2, :cond_2
+    if-eqz v2, :cond_3
 
     const-string/jumbo v3, "closeSystemDialogFromTaskBar"
 
@@ -114,6 +114,18 @@
 
     move-result v3
 
+    if-eqz v3, :cond_3
+
+    iget-object v3, p0, Lcom/android/systemui/statusbar/phone/taskbar/TaskBar$2;->this$0:Lcom/android/systemui/statusbar/phone/taskbar/TaskBar;
+
+    invoke-static {v3}, Lcom/android/systemui/statusbar/phone/taskbar/TaskBar;->-get6(Lcom/android/systemui/statusbar/phone/taskbar/TaskBar;)Lcom/android/systemui/statusbar/phone/taskbar/views/TaskBarView;
+
+    move-result-object v3
+
+    invoke-virtual {v3}, Lcom/android/systemui/statusbar/phone/taskbar/views/TaskBarView;->getDraggingView()Landroid/view/View;
+
+    move-result-object v3
+
     if-eqz v3, :cond_2
 
     iget-object v3, p0, Lcom/android/systemui/statusbar/phone/taskbar/TaskBar$2;->this$0:Lcom/android/systemui/statusbar/phone/taskbar/TaskBar;
@@ -122,11 +134,7 @@
 
     move-result-object v3
 
-    const v4, 0x7f130414
-
-    invoke-virtual {v3, v4, v6}, Lcom/android/systemui/statusbar/phone/taskbar/views/TaskBarView;->closeAllExcept(IZ)V
-
-    return-void
+    invoke-virtual {v3}, Lcom/android/systemui/statusbar/phone/taskbar/views/TaskBarView;->cancelDrag()V
 
     :cond_2
     iget-object v3, p0, Lcom/android/systemui/statusbar/phone/taskbar/TaskBar$2;->this$0:Lcom/android/systemui/statusbar/phone/taskbar/TaskBar;
@@ -135,20 +143,33 @@
 
     move-result-object v3
 
-    invoke-virtual {v3, v6}, Lcom/android/systemui/statusbar/phone/taskbar/views/TaskBarView;->closeAllView(Z)V
+    const v4, 0x7f130416
+
+    invoke-virtual {v3, v4, v6}, Lcom/android/systemui/statusbar/phone/taskbar/views/TaskBarView;->closeAllExcept(IZ)V
+
+    return-void
 
     :cond_3
+    iget-object v3, p0, Lcom/android/systemui/statusbar/phone/taskbar/TaskBar$2;->this$0:Lcom/android/systemui/statusbar/phone/taskbar/TaskBar;
+
+    invoke-static {v3}, Lcom/android/systemui/statusbar/phone/taskbar/TaskBar;->-get6(Lcom/android/systemui/statusbar/phone/taskbar/TaskBar;)Lcom/android/systemui/statusbar/phone/taskbar/views/TaskBarView;
+
+    move-result-object v3
+
+    invoke-virtual {v3, v6}, Lcom/android/systemui/statusbar/phone/taskbar/views/TaskBarView;->closeAllView(Z)V
+
+    :cond_4
     :goto_0
     return-void
 
-    :cond_4
+    :cond_5
     const-string/jumbo v3, "android.intent.action.MANAGED_PROFILE_ADDED"
 
     invoke-virtual {v3, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v3
 
-    if-nez v3, :cond_5
+    if-nez v3, :cond_6
 
     const-string/jumbo v3, "android.intent.action.MANAGED_PROFILE_REMOVED"
 
@@ -156,9 +177,9 @@
 
     move-result v3
 
-    if-eqz v3, :cond_6
+    if-eqz v3, :cond_7
 
-    :cond_5
+    :cond_6
     iget-object v3, p0, Lcom/android/systemui/statusbar/phone/taskbar/TaskBar$2;->this$0:Lcom/android/systemui/statusbar/phone/taskbar/TaskBar;
 
     invoke-static {v3}, Lcom/android/systemui/statusbar/phone/taskbar/TaskBar;->-wrap0(Lcom/android/systemui/statusbar/phone/taskbar/TaskBar;)V
@@ -173,14 +194,14 @@
 
     goto :goto_0
 
-    :cond_6
+    :cond_7
     const-string/jumbo v3, "android.intent.action.MANAGED_PROFILE_AVAILABLE"
 
     invoke-virtual {v3, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v3
 
-    if-nez v3, :cond_7
+    if-nez v3, :cond_8
 
     const-string/jumbo v3, "android.intent.action.MANAGED_PROFILE_UNAVAILABLE"
 
@@ -188,9 +209,9 @@
 
     move-result v3
 
-    if-eqz v3, :cond_8
+    if-eqz v3, :cond_9
 
-    :cond_7
+    :cond_8
     iget-object v3, p0, Lcom/android/systemui/statusbar/phone/taskbar/TaskBar$2;->this$0:Lcom/android/systemui/statusbar/phone/taskbar/TaskBar;
 
     invoke-static {v3}, Lcom/android/systemui/statusbar/phone/taskbar/TaskBar;->-get5(Lcom/android/systemui/statusbar/phone/taskbar/TaskBar;)Lcom/android/systemui/statusbar/phone/taskbar/model/TaskBarModel;
@@ -207,14 +228,14 @@
 
     goto :goto_0
 
-    :cond_8
+    :cond_9
     const-string/jumbo v3, "android.intent.action.USER_ADDED"
 
     invoke-virtual {v3, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v3
 
-    if-eqz v3, :cond_9
+    if-eqz v3, :cond_a
 
     iget-object v3, p0, Lcom/android/systemui/statusbar/phone/taskbar/TaskBar$2;->this$0:Lcom/android/systemui/statusbar/phone/taskbar/TaskBar;
 
@@ -226,14 +247,14 @@
 
     goto :goto_0
 
-    :cond_9
+    :cond_a
     const-string/jumbo v3, "android.intent.action.USER_REMOVED"
 
     invoke-virtual {v3, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v3
 
-    if-eqz v3, :cond_3
+    if-eqz v3, :cond_4
 
     invoke-static {p1}, Lcom/samsung/android/knox/SemPersonaManager;->isKioskModeEnabled(Landroid/content/Context;)Z
 
@@ -263,7 +284,7 @@
 
     invoke-static {v3, v4}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    if-nez v1, :cond_a
+    if-nez v1, :cond_b
 
     iget-object v3, p0, Lcom/android/systemui/statusbar/phone/taskbar/TaskBar$2;->this$0:Lcom/android/systemui/statusbar/phone/taskbar/TaskBar;
 
@@ -273,7 +294,7 @@
 
     invoke-static {v3, v4}, Lcom/android/systemui/statusbar/phone/taskbar/TaskBar;->-set0(Lcom/android/systemui/statusbar/phone/taskbar/TaskBar;I)I
 
-    :cond_a
+    :cond_b
     invoke-static {}, Lcom/android/systemui/statusbar/phone/taskbar/TaskBar;->-get0()Ljava/lang/String;
 
     move-result-object v3

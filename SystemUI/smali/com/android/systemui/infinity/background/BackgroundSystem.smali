@@ -200,35 +200,107 @@
 .end method
 
 .method public hide(I)V
-    .locals 1
+    .locals 4
 
-    const/4 v0, 0x0
+    const/4 v3, 0x0
+
+    const-string/jumbo v0, "GalaxyWallpaper"
+
+    new-instance v1, Ljava/lang/StringBuilder;
+
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string/jumbo v2, "BackgroundSystem hide() current alpha(l, h) : "
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    iget v2, p0, Lcom/android/systemui/infinity/background/BackgroundSystem;->backgroundLockAlpha:F
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(F)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    const-string/jumbo v2, ", "
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    iget v2, p0, Lcom/android/systemui/infinity/background/BackgroundSystem;->backgroundHomeAlpha:F
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(F)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
     if-nez p1, :cond_0
 
-    iput v0, p0, Lcom/android/systemui/infinity/background/BackgroundSystem;->backgroundHomeAlpha:F
+    iput v3, p0, Lcom/android/systemui/infinity/background/BackgroundSystem;->backgroundHomeAlpha:F
 
     :goto_0
     return-void
 
     :cond_0
-    iput v0, p0, Lcom/android/systemui/infinity/background/BackgroundSystem;->backgroundLockAlpha:F
+    iput v3, p0, Lcom/android/systemui/infinity/background/BackgroundSystem;->backgroundLockAlpha:F
 
     goto :goto_0
 .end method
 
 .method public hideAll()V
-    .locals 6
+    .locals 8
 
-    const-wide/16 v4, 0x258
+    const-wide/16 v6, 0x258
 
-    const/high16 v3, 0x3f800000    # 1.0f
+    const/high16 v4, 0x3f800000    # 1.0f
 
-    const/4 v2, 0x0
+    const/4 v3, 0x0
+
+    const-string/jumbo v0, "GalaxyWallpaper"
+
+    new-instance v1, Ljava/lang/StringBuilder;
+
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string/jumbo v2, "BackgroundSystem hideAll() current alpha(l, h) : "
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    iget v2, p0, Lcom/android/systemui/infinity/background/BackgroundSystem;->backgroundLockAlpha:F
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(F)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    const-string/jumbo v2, ", "
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    iget v2, p0, Lcom/android/systemui/infinity/background/BackgroundSystem;->backgroundHomeAlpha:F
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(F)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
     iget v0, p0, Lcom/android/systemui/infinity/background/BackgroundSystem;->backgroundLockAlpha:F
 
-    cmpl-float v0, v0, v2
+    cmpl-float v0, v0, v3
 
     if-eqz v0, :cond_1
 
@@ -247,7 +319,7 @@
 
     move-result-object v0
 
-    invoke-virtual {v0, v3, v2}, Lcom/altamirasoft/glanimationutil/GLAnimatorManager;->createValueAnimator(FF)Lcom/altamirasoft/glanimationutil/GLValueAnimator;
+    invoke-virtual {v0, v4, v3}, Lcom/altamirasoft/glanimationutil/GLAnimatorManager;->createValueAnimator(FF)Lcom/altamirasoft/glanimationutil/GLValueAnimator;
 
     move-result-object v0
 
@@ -259,7 +331,7 @@
 
     move-result-object v0
 
-    invoke-virtual {v0, v4, v5}, Lcom/altamirasoft/glanimationutil/GLValueAnimator;->setDuration(J)Lcom/altamirasoft/glanimationutil/GLValueAnimator;
+    invoke-virtual {v0, v6, v7}, Lcom/altamirasoft/glanimationutil/GLValueAnimator;->setDuration(J)Lcom/altamirasoft/glanimationutil/GLValueAnimator;
 
     move-result-object v0
 
@@ -272,7 +344,7 @@
     :cond_1
     iget v0, p0, Lcom/android/systemui/infinity/background/BackgroundSystem;->backgroundHomeAlpha:F
 
-    cmpl-float v0, v0, v2
+    cmpl-float v0, v0, v3
 
     if-eqz v0, :cond_3
 
@@ -291,7 +363,7 @@
 
     move-result-object v0
 
-    invoke-virtual {v0, v3, v2}, Lcom/altamirasoft/glanimationutil/GLAnimatorManager;->createValueAnimator(FF)Lcom/altamirasoft/glanimationutil/GLValueAnimator;
+    invoke-virtual {v0, v4, v3}, Lcom/altamirasoft/glanimationutil/GLAnimatorManager;->createValueAnimator(FF)Lcom/altamirasoft/glanimationutil/GLValueAnimator;
 
     move-result-object v0
 
@@ -303,7 +375,7 @@
 
     move-result-object v0
 
-    invoke-virtual {v0, v4, v5}, Lcom/altamirasoft/glanimationutil/GLValueAnimator;->setDuration(J)Lcom/altamirasoft/glanimationutil/GLValueAnimator;
+    invoke-virtual {v0, v6, v7}, Lcom/altamirasoft/glanimationutil/GLValueAnimator;->setDuration(J)Lcom/altamirasoft/glanimationutil/GLValueAnimator;
 
     move-result-object v0
 
@@ -444,35 +516,107 @@
 .end method
 
 .method public show(I)V
-    .locals 1
+    .locals 4
 
-    const/high16 v0, 0x3f800000    # 1.0f
+    const/high16 v3, 0x3f800000    # 1.0f
+
+    const-string/jumbo v0, "GalaxyWallpaper"
+
+    new-instance v1, Ljava/lang/StringBuilder;
+
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string/jumbo v2, "BackgroundSystem show() current alpha(l, h) : "
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    iget v2, p0, Lcom/android/systemui/infinity/background/BackgroundSystem;->backgroundLockAlpha:F
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(F)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    const-string/jumbo v2, ", "
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    iget v2, p0, Lcom/android/systemui/infinity/background/BackgroundSystem;->backgroundHomeAlpha:F
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(F)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
     if-nez p1, :cond_0
 
-    iput v0, p0, Lcom/android/systemui/infinity/background/BackgroundSystem;->backgroundHomeAlpha:F
+    iput v3, p0, Lcom/android/systemui/infinity/background/BackgroundSystem;->backgroundHomeAlpha:F
 
     :goto_0
     return-void
 
     :cond_0
-    iput v0, p0, Lcom/android/systemui/infinity/background/BackgroundSystem;->backgroundLockAlpha:F
+    iput v3, p0, Lcom/android/systemui/infinity/background/BackgroundSystem;->backgroundLockAlpha:F
 
     goto :goto_0
 .end method
 
 .method public showHome()V
-    .locals 6
+    .locals 8
 
-    const-wide/16 v4, 0x258
+    const-wide/16 v6, 0x258
 
-    const/high16 v3, 0x3f800000    # 1.0f
+    const/high16 v4, 0x3f800000    # 1.0f
 
-    const/4 v2, 0x0
+    const/4 v3, 0x0
+
+    const-string/jumbo v0, "GalaxyWallpaper"
+
+    new-instance v1, Ljava/lang/StringBuilder;
+
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string/jumbo v2, "BackgroundSystem showHome() current alpha(l, h) : "
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    iget v2, p0, Lcom/android/systemui/infinity/background/BackgroundSystem;->backgroundLockAlpha:F
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(F)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    const-string/jumbo v2, ", "
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    iget v2, p0, Lcom/android/systemui/infinity/background/BackgroundSystem;->backgroundHomeAlpha:F
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(F)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
     iget v0, p0, Lcom/android/systemui/infinity/background/BackgroundSystem;->backgroundLockAlpha:F
 
-    cmpl-float v0, v0, v2
+    cmpl-float v0, v0, v3
 
     if-eqz v0, :cond_1
 
@@ -491,7 +635,7 @@
 
     move-result-object v0
 
-    invoke-virtual {v0, v3, v2}, Lcom/altamirasoft/glanimationutil/GLAnimatorManager;->createValueAnimator(FF)Lcom/altamirasoft/glanimationutil/GLValueAnimator;
+    invoke-virtual {v0, v4, v3}, Lcom/altamirasoft/glanimationutil/GLAnimatorManager;->createValueAnimator(FF)Lcom/altamirasoft/glanimationutil/GLValueAnimator;
 
     move-result-object v0
 
@@ -503,7 +647,7 @@
 
     move-result-object v0
 
-    invoke-virtual {v0, v4, v5}, Lcom/altamirasoft/glanimationutil/GLValueAnimator;->setDuration(J)Lcom/altamirasoft/glanimationutil/GLValueAnimator;
+    invoke-virtual {v0, v6, v7}, Lcom/altamirasoft/glanimationutil/GLValueAnimator;->setDuration(J)Lcom/altamirasoft/glanimationutil/GLValueAnimator;
 
     move-result-object v0
 
@@ -516,7 +660,7 @@
     :cond_1
     iget v0, p0, Lcom/android/systemui/infinity/background/BackgroundSystem;->backgroundHomeAlpha:F
 
-    cmpl-float v0, v0, v3
+    cmpl-float v0, v0, v4
 
     if-eqz v0, :cond_3
 
@@ -535,7 +679,7 @@
 
     move-result-object v0
 
-    invoke-virtual {v0, v2, v3}, Lcom/altamirasoft/glanimationutil/GLAnimatorManager;->createValueAnimator(FF)Lcom/altamirasoft/glanimationutil/GLValueAnimator;
+    invoke-virtual {v0, v3, v4}, Lcom/altamirasoft/glanimationutil/GLAnimatorManager;->createValueAnimator(FF)Lcom/altamirasoft/glanimationutil/GLValueAnimator;
 
     move-result-object v0
 
@@ -547,7 +691,7 @@
 
     move-result-object v0
 
-    invoke-virtual {v0, v4, v5}, Lcom/altamirasoft/glanimationutil/GLValueAnimator;->setDuration(J)Lcom/altamirasoft/glanimationutil/GLValueAnimator;
+    invoke-virtual {v0, v6, v7}, Lcom/altamirasoft/glanimationutil/GLValueAnimator;->setDuration(J)Lcom/altamirasoft/glanimationutil/GLValueAnimator;
 
     move-result-object v0
 
@@ -562,19 +706,55 @@
 .end method
 
 .method public showLock()V
-    .locals 6
+    .locals 8
 
-    const-wide/16 v4, 0x535
+    const-wide/16 v6, 0x535
 
-    const/4 v2, 0x0
+    const/4 v5, 0x0
 
-    const/high16 v3, 0x3f800000    # 1.0f
+    const/high16 v4, 0x3f800000    # 1.0f
 
-    iput v3, p0, Lcom/android/systemui/infinity/background/BackgroundSystem;->backgroundLockScale:F
+    const-string/jumbo v1, "GalaxyWallpaper"
+
+    new-instance v2, Ljava/lang/StringBuilder;
+
+    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string/jumbo v3, "BackgroundSystem showLock() current alpha(l, h) : "
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    iget v3, p0, Lcom/android/systemui/infinity/background/BackgroundSystem;->backgroundLockAlpha:F
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(F)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    const-string/jumbo v3, ", "
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    iget v3, p0, Lcom/android/systemui/infinity/background/BackgroundSystem;->backgroundHomeAlpha:F
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(F)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    iput v4, p0, Lcom/android/systemui/infinity/background/BackgroundSystem;->backgroundLockScale:F
 
     iget v1, p0, Lcom/android/systemui/infinity/background/BackgroundSystem;->backgroundHomeAlpha:F
 
-    cmpl-float v1, v1, v2
+    cmpl-float v1, v1, v5
 
     if-eqz v1, :cond_1
 
@@ -595,7 +775,7 @@
 
     move-result-object v1
 
-    invoke-virtual {v1, v0, v2}, Lcom/altamirasoft/glanimationutil/GLAnimatorManager;->createValueAnimator(FF)Lcom/altamirasoft/glanimationutil/GLValueAnimator;
+    invoke-virtual {v1, v0, v5}, Lcom/altamirasoft/glanimationutil/GLAnimatorManager;->createValueAnimator(FF)Lcom/altamirasoft/glanimationutil/GLValueAnimator;
 
     move-result-object v1
 
@@ -607,7 +787,7 @@
 
     move-result-object v1
 
-    invoke-virtual {v1, v4, v5}, Lcom/altamirasoft/glanimationutil/GLValueAnimator;->setDuration(J)Lcom/altamirasoft/glanimationutil/GLValueAnimator;
+    invoke-virtual {v1, v6, v7}, Lcom/altamirasoft/glanimationutil/GLValueAnimator;->setDuration(J)Lcom/altamirasoft/glanimationutil/GLValueAnimator;
 
     move-result-object v1
 
@@ -628,7 +808,7 @@
     :cond_1
     iget v1, p0, Lcom/android/systemui/infinity/background/BackgroundSystem;->backgroundLockAlpha:F
 
-    cmpl-float v1, v1, v3
+    cmpl-float v1, v1, v4
 
     if-eqz v1, :cond_3
 
@@ -649,7 +829,7 @@
 
     move-result-object v1
 
-    invoke-virtual {v1, v0, v3}, Lcom/altamirasoft/glanimationutil/GLAnimatorManager;->createValueAnimator(FF)Lcom/altamirasoft/glanimationutil/GLValueAnimator;
+    invoke-virtual {v1, v0, v4}, Lcom/altamirasoft/glanimationutil/GLAnimatorManager;->createValueAnimator(FF)Lcom/altamirasoft/glanimationutil/GLValueAnimator;
 
     move-result-object v1
 
@@ -661,7 +841,7 @@
 
     move-result-object v1
 
-    invoke-virtual {v1, v4, v5}, Lcom/altamirasoft/glanimationutil/GLValueAnimator;->setDuration(J)Lcom/altamirasoft/glanimationutil/GLValueAnimator;
+    invoke-virtual {v1, v6, v7}, Lcom/altamirasoft/glanimationutil/GLValueAnimator;->setDuration(J)Lcom/altamirasoft/glanimationutil/GLValueAnimator;
 
     move-result-object v1
 

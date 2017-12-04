@@ -238,6 +238,8 @@
     <string name="wifi_allow_scan_with_traffic_summary">​ອະ​ນຸ​ຍາດ/ບໍ່​ອະ​ນຸ​ຍາດການ​ສະ​ແກນ​ການ​ໂຣມ Wi-Fi ອີງ​ຕາມ​ຈຳ​ນວນ​ຂໍ້​ມູນທີ່​ເກີດ​ຂຶ້ນ​ໃນ​ລະ​ດັບ​ສ່ວນ​ຕິດ​ຕໍ່</string>
     <string name="select_logd_size_title">ຂະ​ໜາດ​​ບັບ​ເຟີໂຕ​ລັອກ</string>
     <string name="select_logd_size_dialog_title">ເລືອກ​ຂະ​ໜາດ​ລັອກ​ຕໍ່​ບັບ​ເຟີ</string>
+    <string name="dev_logpersist_clear_warning_title">ລຶບບ່ອນເກັບຂໍ້ມູນລັອກເກີທີ່ຍັງມີຢູ່ບໍ?</string>
+    <string name="dev_logpersist_clear_warning_message">ຂໍ້ມູນລັອກເກີຈະຖືກລຶບ ເມື່ອລັອກເກີທີ່ມີຢູ່ຖືກປິດ.</string>
     <string name="select_logpersist_title">ຈັດເກັບຂໍ້ມູນທີ່ບັນທຶກຢ່າງຕໍ່ເນື່ອງ</string>
     <string name="select_logpersist_dialog_title">ເລືອກບັບເຟີການບັນທຶກເພື່ອຈັດເກັບຂໍ້ມູນຢ່າງຕໍ່ເນື່ອງ</string>
     <string name="select_usb_configuration_title">​ເລືອກ​ການ​ຕັ້ງ​ຄ່າ USB</string>
@@ -752,6 +754,7 @@ For example, your ringtone will not sound, you will not be able to answer phone 
     <string name="wifi_authentication_failed_kt">ຮັບຮອງ Wi-Fi AP ບໍ່ສຳເລັດ.</string>
     <string name="wifi_authentication_no_response">ບໍ່ສາມາດເຊື່ອມຕໍ່ກັບ Wi-Fi AP ໄດ້.</string>
     <string name="wifi_authentication_invalid_value">ກວດສອບລົ້ມເຫລວ,ກວດ ID ແລະ ລະຫັດຜ່ານ.</string>
+    <string name="wifi_disconnected">Wi-Fi ຖືກຕັດແລ້ວ.</string>
     <string name="quick_settings_dnd_label">ຫ້າມ​ລົບ​ກວນ</string>
     <string name="quick_settings_dnd_priority_label">ບຸ​ລິ​ມະ​ສິດເທົ່າ​ນັ້ນ</string>
     <string name="quick_settings_dnd_alarms_label">ໂມງ​ປຸກ​ເທົ່າ​ນັ້ນ</string>
@@ -1383,11 +1386,11 @@ Turn on Airplane mode?"</string>
     <string name="keyboard_key_numpad_template">Numpad %1$s</string>
     <string name="keyboard_popup_help">ປຸ່ມ Meta: ປຸ່ມ Windows, ​​ປຸ່ມຄຳ​ສັ່ງ, ຫຼື ປຸ່ມ​ສັນ​ຍາ​ລັກ​ລະ​ບົບ​ປະ​ຕິ​ບັດ​ການ​ອື່ນໆ.</string>
     <string name="keyboard_shortcut_group_system">ທາງລັດຂອງລະບົບ</string>
-    <string name="keyboard_shortcut_group_system_home">​ໜ້າຫຼັກ</string>
-    <string name="keyboard_shortcut_group_system_recents">ຫາ​ກໍ​ໃຊ້</string>
+    <string name="keyboard_shortcut_group_system_home">ໜ້າຫຼັກ</string>
+    <string name="keyboard_shortcut_group_system_recents">ຫຼ້າສຸດ</string>
     <string name="keyboard_shortcut_group_system_back">ກັບ​ຄືນ</string>
-    <string name="keyboard_shortcut_group_system_notifications">ການແຈ້ງເຕືອນ</string>
-    <string name="keyboard_shortcut_group_system_shortcuts_helper">ປຸ່ມລັດແປ້ນພິມ</string>
+    <string name="keyboard_shortcut_group_system_notifications">ການ​ແຈ້ງ​ເຕືອນ</string>
+    <string name="keyboard_shortcut_group_system_shortcuts_helper">ທາງລັດຄີບອດ</string>
     <string name="keyboard_shortcut_group_system_switch_input">ສະລັບຮູບແບບການປ້ອນຂໍ້ມູນ</string>
     <string name="keyboard_shortcut_group_system_all_apps">ແອັບທັງໝົດ</string>
     <string name="keyboard_shortcut_group_system_running_apps">ແອັບທີ່ແລ່ນຢູ່</string>
@@ -1395,7 +1398,7 @@ Turn on Airplane mode?"</string>
     <string name="keyboard_shortcut_group_system_switch_languages">ສັບປ່ຽນພາສາ</string>
     <string name="keyboard_shortcut_group_applications">ທາງລັດແອັບພາຍໃນແອັບ</string>
     <string name="keyboard_shortcut_group_applications_assist">ຕົວຊ່ວຍ</string>
-    <string name="keyboard_shortcut_group_applications_browser">ໂປຣແກຣມທ່ອງເວັບ</string>
+    <string name="keyboard_shortcut_group_applications_browser">ບຣາວເຊີ</string>
     <string name="keyboard_shortcut_group_applications_contacts">ລາຍຊື່</string>
     <string name="keyboard_shortcut_group_applications_email">ອີ​ເມ​ວ</string>
     <string name="keyboard_shortcut_group_applications_im">IM</string>
@@ -1653,7 +1656,9 @@ Using your tablet in a very hot location."</string>
     <string name="battery_not_fully_connected_charging_title_vzw">Incomplete connection</string>
     <string name="battery_not_fully_connected_charging_text">ສຳລັບການສາກໃຫ້ໄວ້ຂຶ້ນ, ໃຊ້ເຄື່ອງສາກທີ່ມາກັບອຸປະກອນຂອງທ່ານແລະເບິ່ງໃຫ້ແນ່ໃຈວ່າມັນຖືກເຊື່ອມຕໍ່ຢ່າງຖືກຕ້ອງ.</string>
     <string name="battery_not_fully_connected_charging_text_vzw">Make sure the charger is properly connected.</string>
+    <string name="battery_not_fully_connected_charging_text_jpn">ເບິ່ງໃຫ້ແນ່ໃຈວ່າເຄື່ອງສາກຖືກເຊື່ອມຕໍ່ຢ່າງຖືກຕ້ອງ.</string>
     <string name="battery_not_fully_connected_charging_popup_text">ເບິ່ງໃຫ້ແນ່ໃຈວ່າເຄື່ອງສາກຖືກເຊື່ອມຕໍ່ຢ່າງຖືກຕ້ອງ. ໃຊ້ເຄື່ອງສາກທີ່ມາກັບອຸປະກອນ.</string>
+    <string name="battery_not_fully_connected_charging_popup_text_jpn">ເບິ່ງໃຫ້ແນ່ໃຈວ່າເຄື່ອງສາກຖືກເຊື່ອມຕໍ່ຢ່າງຖືກຕ້ອງ.</string>
     <string name="battery_charging_level_and_time_text">"ກໍາລັງສາກ: %1$d%%
 (ປະ​ມານ %2$s ຈົນ​ກ່​ວາ​ຈະ​ສາກ​ເຕັມ)"</string>
     <string name="battery_charging_level_text">ກໍາລັງສາກ: %d%%</string>
@@ -1878,6 +1883,8 @@ Please note that in order to enable your emergency calls (e.g., such as 112 call
     <string name="qs_detail_palm_capture_title">ໃຊ້ຝາມືປັດເພື່ອແຄັບເຈີ</string>
     <string name="noti_direct_reply_exceed_text_limit_toast">ບໍ່ສາມາດປ້ອນຂໍ້ຄວາມເຂົ້າເພີ່ມເຕີມອີກ.</string>
     <string name="airplane_mode_tts_text">ໂໝດເຮືອບິນ</string>
+    <string name="all_noti_readout">ໜຶ່ງການແຈ້ງເຕືອນ</string>
+    <string name="all_noti_readout2">%d ການແຈ້ງເຕືອນ</string>
     <string name="car_lockscreen_disclaimer_title">ຂັບຂີ່ຢ່າງປອດໄພ</string>
     <string name="car_lockscreen_disclaimer_text">ຮູ້ຈັກສະພາບການຂັບຂີ່ຢ່າງຄົບຖ້ວນ ແລະ ປະຕິບັດຕາມກົດໝາຍທີ່ນຳໃຊ້ສະເໝີ. ຄຳແນະນຳເສັ້ນທາງອາດຈະບໍ່ຖືກຕ້ອງ, ບໍ່ຄົບຖ້ວນ, ອັນຕະລາຍ, ບໍ່ເໝາະສົມ, ຖືກຫ້າມ ຫຼື ກ່ຽວຂ້ອງກັບການຂ້າມເຂດປົກຄອງ. ຂໍ້ມູນທຸລະກິດອາດຈະບໍ່ຖືກຕ້ອງ ຫຼື ບໍ່ຄົບຖ້ວນ. ຂໍ້ມູນບໍ່ແມ່ນຂໍ້ມູນສົດ ແລະ ບໍ່ສາມາດຮັບປະກັນຄວາມຖືກຕ້ອງຂອງສະຖານທີ່ໄດ້. ຢ່າໃຊ້ອຸປະກອນມືຖືຂອງທ່ານ ຫຼື ໃຊ້ແອັບທີ່ບໍ່ມີໄວ້ສຳລັບ Android Auto ໃນຂະນະທີ່ຂັບຂີ່.</string>
     <string name="pip_close">ປິດ PIP</string>

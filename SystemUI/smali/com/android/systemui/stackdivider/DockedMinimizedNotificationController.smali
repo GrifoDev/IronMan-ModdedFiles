@@ -294,7 +294,7 @@
 .method private buildNotification(Landroid/content/Context;Ljava/lang/String;Z)Landroid/app/Notification;
     .locals 12
 
-    const v11, 0x7f0d003e
+    const v11, 0x7f0d0040
 
     const v10, 0x1020455
 

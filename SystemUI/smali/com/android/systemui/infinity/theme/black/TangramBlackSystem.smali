@@ -1012,7 +1012,7 @@
     .array-data 4
         0x3f800000    # 1.0f
         0x3f800000    # 1.0f
-        0x3f4ccccd    # 0.8f
+        0x3f800000    # 1.0f
         0x3f800000    # 1.0f
         0x3f800000    # 1.0f
         0x3f800000    # 1.0f
@@ -1163,14 +1163,14 @@
 
     :array_19
     .array-data 4
-        0x3c23d70a    # 0.01f
-        0x3c449ba6    # 0.012f
+        0x0
+        0x0
     .end array-data
 
     :array_1a
     .array-data 4
-        0x3c23d70a    # 0.01f
-        0x3c23d70a    # 0.01f
+        0x3d23d70a    # 0.04f
+        0x3d23d70a    # 0.04f
     .end array-data
 
     :array_1b
@@ -1181,8 +1181,8 @@
 
     :array_1c
     .array-data 4
-        0x3c23d70a    # 0.01f
-        0x3c449ba6    # 0.012f
+        0x0
+        0x0
     .end array-data
 
     :array_1d
@@ -1199,14 +1199,14 @@
 
     :array_1f
     .array-data 4
-        0x3d23d70a    # 0.04f
-        0x3d27ef9e    # 0.041f
+        0x3d37e910    # 0.0449f
+        0x3d37e910    # 0.0449f
     .end array-data
 
     :array_20
     .array-data 4
-        0x3c23d70a    # 0.01f
-        0x3c449ba6    # 0.012f
+        0x0
+        0x0
     .end array-data
 
     :array_21
@@ -1217,8 +1217,8 @@
 
     :array_22
     .array-data 4
-        0x3c23d70a    # 0.01f
-        0x3c449ba6    # 0.012f
+        0x0
+        0x0
     .end array-data
 
     :array_23

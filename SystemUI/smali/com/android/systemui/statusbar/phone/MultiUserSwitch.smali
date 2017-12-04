@@ -180,7 +180,7 @@
 
     iget-object v2, p0, Lcom/android/systemui/statusbar/phone/MultiUserSwitch;->mContext:Landroid/content/Context;
 
-    const v3, 0x1040a32
+    const v3, 0x1040a33
 
     invoke-virtual {v2, v3}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 

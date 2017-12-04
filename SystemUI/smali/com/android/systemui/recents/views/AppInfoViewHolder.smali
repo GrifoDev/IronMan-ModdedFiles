@@ -63,7 +63,7 @@
 
     iput-object v0, p0, Lcom/android/systemui/recents/views/AppInfoViewHolder;->mLoader:Lcom/android/systemui/recents/model/RecentsAppListLoader;
 
-    const v0, 0x7f130427
+    const v0, 0x7f130429
 
     invoke-virtual {p1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -290,7 +290,7 @@
 
     iget-object v0, p0, Lcom/android/systemui/recents/views/AppInfoViewHolder;->contentView:Landroid/widget/LinearLayout;
 
-    const v1, 0x7f130421
+    const v1, 0x7f130423
 
     invoke-virtual {v0, v1}, Landroid/widget/LinearLayout;->setNextFocusUpId(I)V
 

@@ -142,13 +142,13 @@
 
     iget-object v1, p0, Lcom/android/systemui/settings/BrightnessDetail$1$4;->this$1:Lcom/android/systemui/settings/BrightnessDetail$1;
 
-    invoke-static {v1}, Lcom/android/systemui/settings/BrightnessDetail$1;->-get2(Lcom/android/systemui/settings/BrightnessDetail$1;)Landroid/widget/Switch;
+    invoke-static {v1}, Lcom/android/systemui/settings/BrightnessDetail$1;->-get3(Lcom/android/systemui/settings/BrightnessDetail$1;)Landroid/widget/Switch;
 
     move-result-object v1
 
     iget-object v2, p0, Lcom/android/systemui/settings/BrightnessDetail$1$4;->this$1:Lcom/android/systemui/settings/BrightnessDetail$1;
 
-    invoke-static {v2}, Lcom/android/systemui/settings/BrightnessDetail$1;->-get3(Lcom/android/systemui/settings/BrightnessDetail$1;)Z
+    invoke-static {v2}, Lcom/android/systemui/settings/BrightnessDetail$1;->-get4(Lcom/android/systemui/settings/BrightnessDetail$1;)Z
 
     move-result v2
 

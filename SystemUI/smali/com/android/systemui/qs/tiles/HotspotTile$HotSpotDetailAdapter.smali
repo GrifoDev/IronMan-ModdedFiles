@@ -655,11 +655,11 @@
 
     invoke-direct {v0, v1}, Lcom/android/systemui/statusbar/phone/SystemUIDialog;-><init>(Landroid/content/Context;)V
 
-    const v1, 0x7f0f04bd
+    const v1, 0x7f0f04be
 
     invoke-virtual {v0, v1}, Lcom/android/systemui/statusbar/phone/SystemUIDialog;->setTitle(I)V
 
-    const v1, 0x7f0f04be
+    const v1, 0x7f0f04bf
 
     invoke-virtual {v0, v1}, Lcom/android/systemui/statusbar/phone/SystemUIDialog;->setMessage(I)V
 
@@ -1131,7 +1131,7 @@
 
     if-eqz v0, :cond_0
 
-    const v0, 0x7f0f04b3
+    const v0, 0x7f0f04b4
 
     :goto_0
     invoke-virtual {v1, v0}, Landroid/content/Context;->getString(I)Ljava/lang/String;
@@ -1145,12 +1145,12 @@
 
     if-eqz v0, :cond_1
 
-    const v0, 0x7f0f04b1
+    const v0, 0x7f0f04b2
 
     goto :goto_0
 
     :cond_1
-    const v0, 0x7f0f04b0
+    const v0, 0x7f0f04b1
 
     goto :goto_0
 .end method
@@ -1246,7 +1246,7 @@
     :cond_0
     iget-object v0, p0, Lcom/android/systemui/qs/tiles/HotspotTile$HotSpotDetailAdapter;->this$0:Lcom/android/systemui/qs/tiles/HotspotTile;
 
-    const v1, 0x7f0f04af
+    const v1, 0x7f0f04b0
 
     invoke-static {v0, v1}, Lcom/android/systemui/qs/tiles/HotspotTile;->-wrap4(Lcom/android/systemui/qs/tiles/HotspotTile;I)V
 
@@ -1503,7 +1503,7 @@
     :cond_2
     iget-object v3, p0, Lcom/android/systemui/qs/tiles/HotspotTile$HotSpotDetailAdapter;->mPassword:Landroid/widget/TextView;
 
-    const v4, 0x7f0f07d5
+    const v4, 0x7f0f07d8
 
     invoke-virtual {v3, v4}, Landroid/widget/TextView;->setText(I)V
 
@@ -1541,7 +1541,7 @@
 
     iget-object v3, p0, Lcom/android/systemui/qs/tiles/HotspotTile$HotSpotDetailAdapter;->mWifiSharingStatus:Landroid/widget/TextView;
 
-    const v4, 0x7f0f04bb
+    const v4, 0x7f0f04bc
 
     invoke-virtual {v3, v4}, Landroid/widget/TextView;->setText(I)V
 
@@ -1566,7 +1566,7 @@
 
     move-result-object v4
 
-    const v5, 0x7f0f04b6
+    const v5, 0x7f0f04b7
 
     invoke-virtual {v4, v5}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -1702,7 +1702,7 @@
     :cond_8
     iget-object v3, p0, Lcom/android/systemui/qs/tiles/HotspotTile$HotSpotDetailAdapter;->mWifiSharingStatus:Landroid/widget/TextView;
 
-    const v4, 0x7f0f04bc
+    const v4, 0x7f0f04bd
 
     invoke-virtual {v3, v4}, Landroid/widget/TextView;->setText(I)V
 
@@ -1729,7 +1729,7 @@
 
     move-result-object v4
 
-    const v5, 0x7f0f04b8
+    const v5, 0x7f0f04b9
 
     invoke-virtual {v4, v5}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 

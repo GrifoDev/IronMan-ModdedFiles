@@ -141,7 +141,9 @@
 .end method
 
 .method public onStateReceived(Lcom/samsung/android/sdk/bixby/data/State;)V
-    .locals 7
+    .locals 8
+
+    const/4 v7, 0x0
 
     invoke-virtual {p1}, Lcom/samsung/android/sdk/bixby/data/State;->getRuleId()Ljava/lang/String;
 
@@ -230,9 +232,17 @@
     :cond_0
     iget-object v4, p0, Lcom/android/systemui/recents/bixby/EmRecentsManager$1;->this$0:Lcom/android/systemui/recents/bixby/EmRecentsManager;
 
+    invoke-static {v4, v7}, Lcom/android/systemui/recents/bixby/EmRecentsManager;->-set0(Lcom/android/systemui/recents/bixby/EmRecentsManager;Lcom/samsung/android/sdk/bixby/data/ParamFilling;)Lcom/samsung/android/sdk/bixby/data/ParamFilling;
+
+    iget-object v4, p0, Lcom/android/systemui/recents/bixby/EmRecentsManager$1;->this$0:Lcom/android/systemui/recents/bixby/EmRecentsManager;
+
+    invoke-static {v4, v7}, Lcom/android/systemui/recents/bixby/EmRecentsManager;->-set2(Lcom/android/systemui/recents/bixby/EmRecentsManager;Lcom/samsung/android/sdk/bixby/data/State;)Lcom/samsung/android/sdk/bixby/data/State;
+
+    iget-object v4, p0, Lcom/android/systemui/recents/bixby/EmRecentsManager$1;->this$0:Lcom/android/systemui/recents/bixby/EmRecentsManager;
+
     const/4 v5, 0x0
 
-    invoke-static {v4, v5}, Lcom/android/systemui/recents/bixby/EmRecentsManager;->-set0(Lcom/android/systemui/recents/bixby/EmRecentsManager;Lcom/samsung/android/sdk/bixby/data/ParamFilling;)Lcom/samsung/android/sdk/bixby/data/ParamFilling;
+    invoke-static {v4, v5}, Lcom/android/systemui/recents/bixby/EmRecentsManager;->-set1(Lcom/android/systemui/recents/bixby/EmRecentsManager;Z)Z
 
     :cond_1
     return-void

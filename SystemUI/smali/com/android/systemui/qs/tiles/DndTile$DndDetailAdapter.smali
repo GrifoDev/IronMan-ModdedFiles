@@ -78,7 +78,7 @@
 
     iget-object v0, p0, Lcom/android/systemui/qs/tiles/DndTile$DndDetailAdapter;->mSummary:Landroid/widget/TextView;
 
-    const v1, 0x7f0f051e
+    const v1, 0x7f0f051f
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(I)V
 
@@ -124,7 +124,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f0f051d
+    const v1, 0x7f0f051e
 
     invoke-virtual {v0, v1}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 

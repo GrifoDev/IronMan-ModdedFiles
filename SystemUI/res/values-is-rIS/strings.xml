@@ -238,6 +238,8 @@
     <string name="wifi_allow_scan_with_traffic_summary">Leyfa/banna reikileit með Wi-Fi á grunni þess hversu mikil gagnaumferð er fyrir hendi í viðmótinu</string>
     <string name="select_logd_size_title">Annálsritastærðir biðminna</string>
     <string name="select_logd_size_dialog_title">Veldu annálsritastærðir á biðminni</string>
+    <string name="dev_logpersist_clear_warning_title">Hreinsa geymslu fyrir stöðuga skráningu?</string>
+    <string name="dev_logpersist_clear_warning_message">Skráningarupplýsingum verður eytt þegar slökkt er á stöðugri skráningu.</string>
     <string name="select_logpersist_title">Vista skráningargögn stöðugt</string>
     <string name="select_logpersist_dialog_title">Velja biðminni til að vista stöðugt</string>
     <string name="select_usb_configuration_title">Velja USB-stillingar</string>
@@ -759,6 +761,7 @@ Ef þú heldur áfram kann það að leiða til kostnaðar frá símafyrirtækin
     <string name="wifi_authentication_failed_kt">Mistókst að sannvotta Wi-Fi-aðgangsstað.</string>
     <string name="wifi_authentication_no_response">Mistókst að tengjast Wi-Fi aðgangsstað.</string>
     <string name="wifi_authentication_invalid_value">Authentication failed. Check ID and password.</string>
+    <string name="wifi_disconnected">Wi-Fi aftengt.</string>
     <string name="quick_settings_dnd_label">Ónáðið ekki</string>
     <string name="quick_settings_dnd_priority_label">Aðeins forgangur</string>
     <string name="quick_settings_dnd_alarms_label">Aðeins vekjarar</string>
@@ -1399,7 +1402,7 @@ Hafðu samband við kerfisstjórann til að fá frekari upplýsingar."</string>
     <string name="keyboard_shortcut_group_system_recents">Nýlegt</string>
     <string name="keyboard_shortcut_group_system_back">Til baka</string>
     <string name="keyboard_shortcut_group_system_notifications">Tilkynningar</string>
-    <string name="keyboard_shortcut_group_system_shortcuts_helper">Flýtilyklar</string>
+    <string name="keyboard_shortcut_group_system_shortcuts_helper">Lyklaborðsflýtileiðir</string>
     <string name="keyboard_shortcut_group_system_switch_input">Skipta um innsláttaraðferð</string>
     <string name="keyboard_shortcut_group_system_all_apps">Öll forrit</string>
     <string name="keyboard_shortcut_group_system_running_apps">Forrit í gangi</string>
@@ -1665,7 +1668,9 @@ Ofhitnun kann að orsakast af:
     <string name="battery_not_fully_connected_charging_title_vzw">Incomplete connection</string>
     <string name="battery_not_fully_connected_charging_text">Til að stytta hleðslutímann skaltu nota hleðslutækið sem fylgdi með tækinu og tryggja að það sé rétt tengt.</string>
     <string name="battery_not_fully_connected_charging_text_vzw">Make sure the charger is properly connected.</string>
+    <string name="battery_not_fully_connected_charging_text_jpn">Gakktu úr skugga um að hleðslutækið sé rétt tengt.</string>
     <string name="battery_not_fully_connected_charging_popup_text">Gakktu úr skugga um að hleðslutækið sé rétt tengt. Notaðu hleðslutækið sem fylgdi með tækinu.</string>
+    <string name="battery_not_fully_connected_charging_popup_text_jpn">Gakktu úr skugga um að hleðslutækið sé rétt tengt.</string>
     <string name="battery_charging_level_and_time_text">"Í hleðslu: %1$d%%
 (Fullhlaðið eftir um %2$s)"</string>
     <string name="battery_charging_level_text">Í hleðslu: %d%%</string>
@@ -1890,6 +1895,8 @@ Please note that in order to enable your emergency calls (e.g., such as 112 call
     <string name="qs_detail_palm_capture_title">Nota lófastroku til að taka</string>
     <string name="noti_direct_reply_exceed_text_limit_toast">Ekki er hægt að slá inn meiri texta.</string>
     <string name="airplane_mode_tts_text">Flugstilling</string>
+    <string name="all_noti_readout">Ein tilkynning</string>
+    <string name="all_noti_readout2">%d tilkynningar</string>
     <string name="car_lockscreen_disclaimer_title">Aktu varlega</string>
     <string name="car_lockscreen_disclaimer_text">Vertu vakandi fyrir akstursskilyrðum hverju sinni og farðu ævinlega eftir gildandi lögum. Leiðarlýsing kann að vera ónákvæm, ófullkomin, ekki við hæfi, bönnuð eða fela í sér ferðir um opinber svæði. Upplýsingar um fyrirtæki kunna einnig að vera ónákvæmar eða ófullkomnar. Gögn eru ekki í rauntíma og ekki er hægt að tryggja nákvæmni staðsetningarupplýsinga. Ekki handleika fartækið þitt meðan á akstri stendur eða nota forrit sem ekki eru hugsuð fyrir Android Auto.</string>
     <string name="pip_close">Loka mynd í mynd</string>

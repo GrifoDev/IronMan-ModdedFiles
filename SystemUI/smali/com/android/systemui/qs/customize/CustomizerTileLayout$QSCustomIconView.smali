@@ -14,11 +14,35 @@
 .end annotation
 
 
+# instance fields
+.field protected final mBadgeSizePx:I
+
+.field private mIconBadge:Landroid/widget/TextView;
+
+
 # direct methods
 .method public constructor <init>(Landroid/content/Context;)V
-    .locals 0
+    .locals 2
 
     invoke-direct {p0, p1}, Lcom/android/systemui/qs/QSIconView;-><init>(Landroid/content/Context;)V
+
+    invoke-virtual {p1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
+
+    move-result-object v0
+
+    const v1, 0x7f0d04e5
+
+    invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
+
+    move-result v1
+
+    iput v1, p0, Lcom/android/systemui/qs/customize/CustomizerTileLayout$QSCustomIconView;->mBadgeSizePx:I
+
+    invoke-virtual {p0}, Lcom/android/systemui/qs/customize/CustomizerTileLayout$QSCustomIconView;->createBadgeIcon()Landroid/widget/TextView;
+
+    move-result-object v1
+
+    iput-object v1, p0, Lcom/android/systemui/qs/customize/CustomizerTileLayout$QSCustomIconView;->mIconBadge:Landroid/widget/TextView;
 
     return-void
 .end method
@@ -50,7 +74,7 @@
 
     move-result-object v5
 
-    const v6, 0x7f0d026a
+    const v6, 0x7f0d026c
 
     invoke-virtual {v5, v6}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -72,7 +96,7 @@
 
     move-result-object v6
 
-    const v7, 0x7f0d04c2
+    const v7, 0x7f0d04c4
 
     invoke-virtual {v6, v7}, Landroid/content/res/Resources;->getFloat(I)F
 
@@ -109,6 +133,215 @@
 
 
 # virtual methods
+.method public addBadge(Lcom/android/systemui/qs/customize/CustomizeTileView;)V
+    .locals 2
+
+    invoke-virtual {p1}, Lcom/android/systemui/qs/customize/CustomizeTileView;->getIconView()Lcom/android/systemui/qs/QSIconView;
+
+    move-result-object v0
+
+    check-cast v0, Lcom/android/systemui/qs/customize/CustomizerTileLayout$QSCustomIconView;
+
+    iget-object v1, p0, Lcom/android/systemui/qs/customize/CustomizerTileLayout$QSCustomIconView;->mIconBadge:Landroid/widget/TextView;
+
+    invoke-virtual {v0, v1}, Lcom/android/systemui/qs/customize/CustomizerTileLayout$QSCustomIconView;->addView(Landroid/view/View;)V
+
+    return-void
+.end method
+
+.method public badgelayout(Landroid/view/View;II)V
+    .locals 2
+
+    invoke-virtual {p1}, Landroid/view/View;->getMeasuredWidth()I
+
+    move-result v0
+
+    sub-int v0, p2, v0
+
+    invoke-virtual {p1}, Landroid/view/View;->getMeasuredHeight()I
+
+    move-result v1
+
+    add-int/2addr v1, p3
+
+    invoke-virtual {p1, v0, p3, p2, v1}, Landroid/view/View;->layout(IIII)V
+
+    return-void
+.end method
+
+.method public createBadgeIcon()Landroid/widget/TextView;
+    .locals 5
+
+    const/4 v4, 0x0
+
+    new-instance v0, Landroid/widget/TextView;
+
+    iget-object v1, p0, Lcom/android/systemui/qs/customize/CustomizerTileLayout$QSCustomIconView;->mContext:Landroid/content/Context;
+
+    invoke-direct {v0, v1}, Landroid/widget/TextView;-><init>(Landroid/content/Context;)V
+
+    invoke-virtual {p0}, Lcom/android/systemui/qs/customize/CustomizerTileLayout$QSCustomIconView;->getContext()Landroid/content/Context;
+
+    move-result-object v1
+
+    const v2, 0x7f020062
+
+    invoke-virtual {v1, v2}, Landroid/content/Context;->getDrawable(I)Landroid/graphics/drawable/Drawable;
+
+    move-result-object v1
+
+    invoke-virtual {v0, v1}, Landroid/widget/TextView;->setBackground(Landroid/graphics/drawable/Drawable;)V
+
+    invoke-virtual {p0}, Lcom/android/systemui/qs/customize/CustomizerTileLayout$QSCustomIconView;->getResources()Landroid/content/res/Resources;
+
+    move-result-object v1
+
+    const v2, 0x7f0b019e
+
+    const/4 v3, 0x0
+
+    invoke-virtual {v1, v2, v3}, Landroid/content/res/Resources;->getColor(ILandroid/content/res/Resources$Theme;)I
+
+    move-result v1
+
+    invoke-virtual {v0, v1}, Landroid/widget/TextView;->setTextColor(I)V
+
+    invoke-virtual {p0}, Lcom/android/systemui/qs/customize/CustomizerTileLayout$QSCustomIconView;->getResources()Landroid/content/res/Resources;
+
+    move-result-object v1
+
+    const v2, 0x7f0d04e3
+
+    invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
+
+    move-result v1
+
+    int-to-float v1, v1
+
+    invoke-virtual {v0, v4, v1}, Landroid/widget/TextView;->setTextSize(IF)V
+
+    const/16 v1, 0x11
+
+    invoke-virtual {v0, v1}, Landroid/widget/TextView;->setGravity(I)V
+
+    invoke-virtual {p0}, Lcom/android/systemui/qs/customize/CustomizerTileLayout$QSCustomIconView;->getContext()Landroid/content/Context;
+
+    move-result-object v1
+
+    const v2, 0x7f0f0824
+
+    invoke-virtual {v1, v2}, Landroid/content/Context;->getString(I)Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+
+    invoke-virtual {v0, v4}, Landroid/widget/TextView;->setVisibility(I)V
+
+    return-object v0
+.end method
+
+.method protected onLayout(ZIIII)V
+    .locals 7
+
+    invoke-virtual {p0}, Lcom/android/systemui/qs/customize/CustomizerTileLayout$QSCustomIconView;->getMeasuredWidth()I
+
+    move-result v4
+
+    invoke-virtual {p0}, Lcom/android/systemui/qs/customize/CustomizerTileLayout$QSCustomIconView;->getMeasuredHeight()I
+
+    move-result v0
+
+    const/4 v3, 0x0
+
+    iget-object v5, p0, Lcom/android/systemui/qs/customize/CustomizerTileLayout$QSCustomIconView;->mIcon:Landroid/view/View;
+
+    invoke-virtual {v5}, Landroid/view/View;->getMeasuredWidth()I
+
+    move-result v2
+
+    iget-object v5, p0, Lcom/android/systemui/qs/customize/CustomizerTileLayout$QSCustomIconView;->mIcon:Landroid/view/View;
+
+    invoke-virtual {v5}, Landroid/view/View;->getMeasuredWidth()I
+
+    move-result v5
+
+    sub-int v5, v4, v5
+
+    div-int/lit8 v1, v5, 0x2
+
+    iget-object v5, p0, Lcom/android/systemui/qs/customize/CustomizerTileLayout$QSCustomIconView;->mIcon:Landroid/view/View;
+
+    invoke-virtual {p0, v5, v1, v3}, Lcom/android/systemui/qs/customize/CustomizerTileLayout$QSCustomIconView;->layout(Landroid/view/View;II)V
+
+    iget-object v5, p0, Lcom/android/systemui/qs/customize/CustomizerTileLayout$QSCustomIconView;->mIconBadge:Landroid/widget/TextView;
+
+    add-int v6, v2, v1
+
+    invoke-virtual {p0, v5, v6, v3}, Lcom/android/systemui/qs/customize/CustomizerTileLayout$QSCustomIconView;->badgelayout(Landroid/view/View;II)V
+
+    return-void
+.end method
+
+.method protected onMeasure(II)V
+    .locals 5
+
+    invoke-static {p1}, Landroid/view/View$MeasureSpec;->getSize(I)I
+
+    move-result v1
+
+    iget v3, p0, Lcom/android/systemui/qs/customize/CustomizerTileLayout$QSCustomIconView;->mIconSizePx:I
+
+    invoke-virtual {p0, v3}, Lcom/android/systemui/qs/customize/CustomizerTileLayout$QSCustomIconView;->exactly(I)I
+
+    move-result v0
+
+    iget v3, p0, Lcom/android/systemui/qs/customize/CustomizerTileLayout$QSCustomIconView;->mBadgeSizePx:I
+
+    invoke-virtual {p0, v3}, Lcom/android/systemui/qs/customize/CustomizerTileLayout$QSCustomIconView;->exactly(I)I
+
+    move-result v2
+
+    iget-object v3, p0, Lcom/android/systemui/qs/customize/CustomizerTileLayout$QSCustomIconView;->mIcon:Landroid/view/View;
+
+    invoke-virtual {v3, v0, v0}, Landroid/view/View;->measure(II)V
+
+    iget-object v3, p0, Lcom/android/systemui/qs/customize/CustomizerTileLayout$QSCustomIconView;->mIconBadge:Landroid/widget/TextView;
+
+    invoke-virtual {v3, v2, v2}, Landroid/widget/TextView;->measure(II)V
+
+    iget-object v3, p0, Lcom/android/systemui/qs/customize/CustomizerTileLayout$QSCustomIconView;->mIcon:Landroid/view/View;
+
+    invoke-virtual {v3}, Landroid/view/View;->getMeasuredHeight()I
+
+    move-result v3
+
+    iget v4, p0, Lcom/android/systemui/qs/customize/CustomizerTileLayout$QSCustomIconView;->mTilePaddingBelowIconPx:I
+
+    add-int/2addr v3, v4
+
+    invoke-virtual {p0, v1, v3}, Lcom/android/systemui/qs/customize/CustomizerTileLayout$QSCustomIconView;->setMeasuredDimension(II)V
+
+    return-void
+.end method
+
+.method public removeBadge(Lcom/android/systemui/qs/customize/CustomizerTileLayout$QSCustomIconView;)V
+    .locals 2
+
+    iget-object v0, p0, Lcom/android/systemui/qs/customize/CustomizerTileLayout$QSCustomIconView;->mIconBadge:Landroid/widget/TextView;
+
+    if-eqz v0, :cond_0
+
+    iget-object v0, p1, Lcom/android/systemui/qs/customize/CustomizerTileLayout$QSCustomIconView;->mIconBadge:Landroid/widget/TextView;
+
+    const/4 v1, 0x4
+
+    invoke-virtual {v0, v1}, Landroid/widget/TextView;->setVisibility(I)V
+
+    :cond_0
+    return-void
+.end method
+
 .method protected setIcon(Landroid/widget/ImageView;Lcom/android/systemui/qs/QSTile$State;)V
     .locals 3
 

@@ -1020,7 +1020,7 @@
 
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/FingerprintUnlockController;->mContext:Landroid/content/Context;
 
-    const v1, 0x7f0f0a78
+    const v1, 0x7f0f0a7c
 
     const/4 v2, 0x1
 

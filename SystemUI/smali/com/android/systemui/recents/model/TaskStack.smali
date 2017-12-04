@@ -369,7 +369,7 @@
 
     move-result-object v12
 
-    const v13, 0x7f0d03c1
+    const v13, 0x7f0d03c3
 
     invoke-virtual {v12, v13}, Landroid/content/res/Resources;->getFloat(I)F
 

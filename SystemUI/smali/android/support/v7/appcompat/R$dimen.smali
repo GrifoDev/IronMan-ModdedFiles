@@ -4,17 +4,17 @@
 
 
 # static fields
-.field public static final abc_cascading_menus_min_smallest_width:I = 0x7f0d01d5
+.field public static final abc_cascading_menus_min_smallest_width:I = 0x7f0d01d7
 
-.field public static final abc_config_prefDialogWidth:I = 0x7f0d01b5
+.field public static final abc_config_prefDialogWidth:I = 0x7f0d01b7
 
-.field public static final abc_dropdownitem_icon_width:I = 0x7f0d01be
+.field public static final abc_dropdownitem_icon_width:I = 0x7f0d01c0
 
-.field public static final abc_dropdownitem_text_padding_left:I = 0x7f0d01bc
+.field public static final abc_dropdownitem_text_padding_left:I = 0x7f0d01be
 
-.field public static final abc_search_view_preferred_height:I = 0x7f0d01bb
+.field public static final abc_search_view_preferred_height:I = 0x7f0d01bd
 
-.field public static final abc_search_view_preferred_width:I = 0x7f0d01ba
+.field public static final abc_search_view_preferred_width:I = 0x7f0d01bc
 
 
 # direct methods

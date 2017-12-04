@@ -238,6 +238,8 @@
     <string name="wifi_allow_scan_with_traffic_summary">Разрешаване/забраняване на сканирането за роуминг на Wi-Fi въз основа на посочения в интерфейса обем на трафика на данни</string>
     <string name="select_logd_size_title">Размери на регистрац. буфери</string>
     <string name="select_logd_size_dialog_title">Размер на един рег. буфер: Избор</string>
+    <string name="dev_logpersist_clear_warning_title">Изчистване място съхр. постоянни рег.?</string>
+    <string name="dev_logpersist_clear_warning_message">Данните на регистъра ще се изтрият, когато постоянният регистър бъде изключен.</string>
     <string name="select_logpersist_title">Постоянно съхр. данни регистри</string>
     <string name="select_logpersist_dialog_title">Избор буфери регистри постоянно съхранение</string>
     <string name="select_usb_configuration_title">Избиране на конфигурация за USB</string>
@@ -752,6 +754,7 @@ For example, your ringtone will not sound, you will not be able to answer phone 
     <string name="wifi_authentication_failed_kt">Неуспешно удостоверяване на Wi-Fi ТД.</string>
     <string name="wifi_authentication_no_response">Неуспешно свързване към точка за достъп до Wi-Fi.</string>
     <string name="wifi_authentication_invalid_value">Неуспешно идентифициране. Проверете ID и парола.</string>
+    <string name="wifi_disconnected">Прекъсната Wi-Fi връзка.</string>
     <string name="quick_settings_dnd_label">Не безпокойте</string>
     <string name="quick_settings_dnd_priority_label">Само с приоритет</string>
     <string name="quick_settings_dnd_alarms_label">Само будилници</string>
@@ -1386,7 +1389,7 @@ Wi-Fi и Bluetooth също ще бъдат изключени, но може д
     <string name="keyboard_shortcut_group_system_home">Начало</string>
     <string name="keyboard_shortcut_group_system_recents">Скорошни</string>
     <string name="keyboard_shortcut_group_system_back">Назад</string>
-    <string name="keyboard_shortcut_group_system_notifications">Известия</string>
+    <string name="keyboard_shortcut_group_system_notifications">Уведомления</string>
     <string name="keyboard_shortcut_group_system_shortcuts_helper">Клавишни комбинации</string>
     <string name="keyboard_shortcut_group_system_switch_input">Превключване на метода на въвеждане</string>
     <string name="keyboard_shortcut_group_system_all_apps">Всички приложения</string>
@@ -1653,7 +1656,9 @@ Using your tablet in a very hot location."</string>
     <string name="battery_not_fully_connected_charging_title_vzw">Incomplete connection</string>
     <string name="battery_not_fully_connected_charging_text">За по-бързо зареждане използвайте зарядното устройство, предоставено с устройството, и се уверете, че е свързано правилно.</string>
     <string name="battery_not_fully_connected_charging_text_vzw">Make sure the charger is properly connected.</string>
+    <string name="battery_not_fully_connected_charging_text_jpn">Уверете се, че зарядното устройство е свързано правилно.</string>
     <string name="battery_not_fully_connected_charging_popup_text">Уверете се, че зарядното устройство е свързано правилно. Използвайте зарядното устройство, предоставено с устройството.</string>
+    <string name="battery_not_fully_connected_charging_popup_text_jpn">Уверете се, че зарядното устройство е свързано правилно.</string>
     <string name="battery_charging_level_and_time_text">"Зареждане: %1$d%%
 (Приблизително %2$s до пълно зареждане)"</string>
     <string name="battery_charging_level_text">Зареждане: %d%%</string>
@@ -1878,6 +1883,8 @@ Please note that in order to enable your emergency calls (e.g., such as 112 call
     <string name="qs_detail_palm_capture_title">Плъзнете с длан за заснемане</string>
     <string name="noti_direct_reply_exceed_text_limit_toast">Не може да се въведе повече текст.</string>
     <string name="airplane_mode_tts_text">Самолетен режим</string>
+    <string name="all_noti_readout">Едно уведомление</string>
+    <string name="all_noti_readout2">%d известия</string>
     <string name="car_lockscreen_disclaimer_title">Карайте внимателно</string>
     <string name="car_lockscreen_disclaimer_text">Бъдете осведомени за условията при шофиране и винаги спазвайте приложимите закони. Упътванията може да са неточни, непълни, опасни, неподходящи, забранени или да включват преминаване през административни райони. Бизнес информацията може също да е неточна или непълна. Данните не са в реално време и точността на местоположението не може да се гарантира. Не работете с мобилното си устройство, нито използвайте приложения, които не са предназначени за Android Auto, докато шофирате.</string>
     <string name="pip_close">Затваряне на PIP</string>

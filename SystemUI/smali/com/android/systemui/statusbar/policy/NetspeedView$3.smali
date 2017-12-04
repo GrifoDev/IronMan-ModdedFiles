@@ -44,11 +44,11 @@
 
     const/4 v1, 0x0
 
-    invoke-static {v0, v1}, Lcom/android/systemui/statusbar/policy/NetspeedView;->-set3(Lcom/android/systemui/statusbar/policy/NetspeedView;Z)Z
+    invoke-static {v0, v1}, Lcom/android/systemui/statusbar/policy/NetspeedView;->-set4(Lcom/android/systemui/statusbar/policy/NetspeedView;Z)Z
 
     iget-object v0, p0, Lcom/android/systemui/statusbar/policy/NetspeedView$3;->this$0:Lcom/android/systemui/statusbar/policy/NetspeedView;
 
-    invoke-static {v0}, Lcom/android/systemui/statusbar/policy/NetspeedView;->-wrap0(Lcom/android/systemui/statusbar/policy/NetspeedView;)V
+    invoke-static {v0}, Lcom/android/systemui/statusbar/policy/NetspeedView;->-wrap1(Lcom/android/systemui/statusbar/policy/NetspeedView;)V
 
     return-void
 .end method
@@ -66,11 +66,11 @@
 
     const/4 v1, 0x1
 
-    invoke-static {v0, v1}, Lcom/android/systemui/statusbar/policy/NetspeedView;->-set3(Lcom/android/systemui/statusbar/policy/NetspeedView;Z)Z
+    invoke-static {v0, v1}, Lcom/android/systemui/statusbar/policy/NetspeedView;->-set4(Lcom/android/systemui/statusbar/policy/NetspeedView;Z)Z
 
     iget-object v0, p0, Lcom/android/systemui/statusbar/policy/NetspeedView$3;->this$0:Lcom/android/systemui/statusbar/policy/NetspeedView;
 
-    invoke-static {v0}, Lcom/android/systemui/statusbar/policy/NetspeedView;->-wrap0(Lcom/android/systemui/statusbar/policy/NetspeedView;)V
+    invoke-static {v0}, Lcom/android/systemui/statusbar/policy/NetspeedView;->-wrap1(Lcom/android/systemui/statusbar/policy/NetspeedView;)V
 
     return-void
 .end method

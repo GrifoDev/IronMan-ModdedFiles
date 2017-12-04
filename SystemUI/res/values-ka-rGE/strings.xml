@@ -238,6 +238,8 @@
     <string name="wifi_allow_scan_with_traffic_summary">Wifi Roam სკანირების დაშვება/აკრძალვა, ინტერფეისზე არსებული მონაცემთა ტრაფიკზე დაფუძნებით</string>
     <string name="select_logd_size_title">ჟურნალიზაციის ბუფერის ზომები</string>
     <string name="select_logd_size_dialog_title">აირჩიეთ ჟურნ. ზომა / ჟურნ. ბუფერზე</string>
+    <string name="dev_logpersist_clear_warning_title">გასუფთავდეს ჟურნალის ჩამწერის საცავი?</string>
+    <string name="dev_logpersist_clear_warning_message">ჟურნალის ჩამწერის მონაცემები წაიშლება, როდესაც ჟურნალის მუდმივი ჩამწერი გამოირთვება.</string>
     <string name="select_logpersist_title">ჟურნალის მონაცემების შენახვა</string>
     <string name="select_logpersist_dialog_title">აირჩიეთ ჩანაწერის ბუფერები, რომ შეინახოთ</string>
     <string name="select_usb_configuration_title">აირჩიეთ USB კონფიგურაცია</string>
@@ -750,6 +752,7 @@ For example, your ringtone will not sound, you will not be able to answer phone 
     <string name="wifi_authentication_failed_kt">Wi-Fi წვდომის წერტილის ავტორიზაცია ვერ შესრულდა.</string>
     <string name="wifi_authentication_no_response">Wi-Fi წვდომის წერტილი ვერ დაკავშირდა.</string>
     <string name="wifi_authentication_invalid_value">იდენტიფიკაცია ვერ შეგდა.შეამოწმეთ ID და პაროლი.</string>
+    <string name="wifi_disconnected">Wi-Fi გამოირთო.</string>
     <string name="quick_settings_dnd_label">არ შემაწუხოთ</string>
     <string name="quick_settings_dnd_priority_label">მხოლოდ პრიორიტეტული</string>
     <string name="quick_settings_dnd_alarms_label">მხოლოდ გაფრთხილებები</string>
@@ -1381,11 +1384,11 @@ Wi-Fi და Bluetooth ასევე გამოირთვება, მა
     <string name="keyboard_key_numpad_template">რიცხვთა პანელი %1$s</string>
     <string name="keyboard_popup_help">მეტა კოდი: Windows, Command, ან სხვა ოპერაციული სისტემის სიმბოლოს კოდი.</string>
     <string name="keyboard_shortcut_group_system">სისტემის ღილაკები</string>
-    <string name="keyboard_shortcut_group_system_home">მთავარი</string>
-    <string name="keyboard_shortcut_group_system_recents">ბოლოს გამოყენებული</string>
+    <string name="keyboard_shortcut_group_system_home">სახლი</string>
+    <string name="keyboard_shortcut_group_system_recents">ბოლოდროინდელები</string>
     <string name="keyboard_shortcut_group_system_back">უკან</string>
     <string name="keyboard_shortcut_group_system_notifications">შეტყობინებები</string>
-    <string name="keyboard_shortcut_group_system_shortcuts_helper">კლავიატურის მალსახმობები</string>
+    <string name="keyboard_shortcut_group_system_shortcuts_helper">კლავიატურის ღილაკები</string>
     <string name="keyboard_shortcut_group_system_switch_input">შეყვანის მეთოდის გადართვა</string>
     <string name="keyboard_shortcut_group_system_all_apps">ყველა აპლიკაცია</string>
     <string name="keyboard_shortcut_group_system_running_apps">გაშვებული აპლიკაციები</string>
@@ -1651,7 +1654,9 @@ Using your tablet in a very hot location."</string>
     <string name="battery_not_fully_connected_charging_title_vzw">Incomplete connection</string>
     <string name="battery_not_fully_connected_charging_text">უფრო სწრაფად რომ დამუხტოთ, გამოიყენეთ ის დამტენი, რომელიც მოჰყვა მოწყობილობას და დარწმუნდით, რომ ის სწორადაა შეერთებული.</string>
     <string name="battery_not_fully_connected_charging_text_vzw">Make sure the charger is properly connected.</string>
+    <string name="battery_not_fully_connected_charging_text_jpn">დარწმუნდით, რომ დამტენი სწორადაა შეერთებული.</string>
     <string name="battery_not_fully_connected_charging_popup_text">დარწმუნდით, რომ დამტენი სწორადაა შეერთებული. გამოიყენეთ ის დამტენი, რომელიც მოჰყვა მოწყობილობას.</string>
+    <string name="battery_not_fully_connected_charging_popup_text_jpn">დარწმუნდით, რომ დამტენი სწორადაა შეერთებული.</string>
     <string name="battery_charging_level_and_time_text">"იმუხტება: %1$d%%
 (სრულ შევსებამდე დარჩა დაახლოებით %2$s)"</string>
     <string name="battery_charging_level_text">იმუხტება: %d%%</string>
@@ -1876,6 +1881,8 @@ Please note that in order to enable your emergency calls (e.g., such as 112 call
     <string name="qs_detail_palm_capture_title">გადაიღეთ მტევნის გადასმით</string>
     <string name="noti_direct_reply_exceed_text_limit_toast">ტექსტს ვეღარ შეიყვანთ.</string>
     <string name="airplane_mode_tts_text">თვითმფრინავის რეჟიმი</string>
+    <string name="all_noti_readout">ერთი შეტყობინება</string>
+    <string name="all_noti_readout2">%d შეტყობინება</string>
     <string name="car_lockscreen_disclaimer_title">უსაფრთხოდ მართვის წესები</string>
     <string name="car_lockscreen_disclaimer_text">ყოველთვის გულდასმით გაეცანით მდგომარეობას გზებზე და დაიცავით მოქმედი კანონები. შეთავაზებული მიმართულებები შეიძლება იყოს უზუსტო, არასრული, სახიფათო, შეუფერებელი, აკრძალული, ან ადმინისტრაციული ერთეულების გადაკვეთას გულისხმობდეს. ბიზნეს-ინფორმაცია შეიძლება ასევე იყოს უზუსტო ან არასრული. მონაცემების განახლება რეალური დროის რეჟიმში არ ხდება და შესაბამისად, მდებარეობის სიზუსტე გარანტირებული ვერ იქნება. ავტომობილის მართვისას ნუ შეეცდებით თქვენი მობილური მოწყობილობით მანიპულირებას, ან ისეთი აპების გამოყენებას, რომლებიც Android Auto-სთვის შექმნილი არ არის.</string>
     <string name="pip_close">PIP-ის დახურვა</string>

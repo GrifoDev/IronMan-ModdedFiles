@@ -238,6 +238,8 @@
     <string name="wifi_allow_scan_with_traffic_summary">Roamingscans voor wifi (niet) toestaan op basis van de hoeveelheid dataverkeer die aanwezig is bij de interface</string>
     <string name="select_logd_size_title">Logger-buffergrootten</string>
     <string name="select_logd_size_dialog_title">Kies Logger-grootten per logbuffer</string>
+    <string name="dev_logpersist_clear_warning_title">Persistente logbestandopslag wissen?</string>
+    <string name="dev_logpersist_clear_warning_message">Logbestandgegevens worden verwijderd wanneer de persistente logboekfunctie wordt uitgeschakeld.</string>
     <string name="select_logpersist_title">Loggegevens doorlopend opslaan</string>
     <string name="select_logpersist_dialog_title">Logbuffers select. voor doorlopende opslag</string>
     <string name="select_usb_configuration_title">USB-configuratie selecteren</string>
@@ -752,6 +754,7 @@ Als u het gegevensverbruik hervat, kan je provider kosten in rekening brengen."<
     <string name="wifi_authentication_failed_kt">Kan Wi-Fi-toegangspunt niet verifiëren.</string>
     <string name="wifi_authentication_no_response">Verbinden met Wi-Fi-toegangspunt mislukt.</string>
     <string name="wifi_authentication_invalid_value">Verificatie mislukt. Controleer gebruikersnaam en wachtwoord.</string>
+    <string name="wifi_disconnected">Wi-Fi-verbinding verbroken.</string>
     <string name="quick_settings_dnd_label">Niet storen</string>
     <string name="quick_settings_dnd_priority_label">Alleen prioriteit</string>
     <string name="quick_settings_dnd_alarms_label">Alleen alarmen</string>
@@ -1385,7 +1388,7 @@ Neem contact op met je beheerder voor meer informatie."</string>
     <string name="keyboard_key_numpad_template">%1$s op numeriek toetsenblok</string>
     <string name="keyboard_popup_help">Meta-toets: toets voor Windows, Command of ander besturingssysteemsymbool.</string>
     <string name="keyboard_shortcut_group_system">Sneltoetsen systeem</string>
-    <string name="keyboard_shortcut_group_system_home">Startpagina</string>
+    <string name="keyboard_shortcut_group_system_home">Start</string>
     <string name="keyboard_shortcut_group_system_recents">Recent</string>
     <string name="keyboard_shortcut_group_system_back">Terug</string>
     <string name="keyboard_shortcut_group_system_notifications">Meldingen</string>
@@ -1655,7 +1658,9 @@ Oververhitting kan veroorzaakt worden door:
     <string name="battery_not_fully_connected_charging_title_vzw">Incomplete connection</string>
     <string name="battery_not_fully_connected_charging_text">Gebruik voor sneller opladen de oplader die u bij uw apparaat hebt ontvangen en zorg dat deze correct is aangesloten.</string>
     <string name="battery_not_fully_connected_charging_text_vzw">Make sure the charger is properly connected.</string>
+    <string name="battery_not_fully_connected_charging_text_jpn">Zorg dat uw oplader correct is aangesloten.</string>
     <string name="battery_not_fully_connected_charging_popup_text">Zorg dat de oplader correct is aangesloten. Gebruik de oplader die u bij het apparaat hebt ontvangen.</string>
+    <string name="battery_not_fully_connected_charging_popup_text_jpn">Zorg dat de oplader correct is aangesloten.</string>
     <string name="battery_charging_level_and_time_text">"Opladen: %1$d%%
 (Nog circa %2$s tot volledig opgeladen)"</string>
     <string name="battery_charging_level_text">Opladen: %d%%</string>
@@ -1880,6 +1885,8 @@ Please note that in order to enable your emergency calls (e.g., such as 112 call
     <string name="qs_detail_palm_capture_title">Vegen voor schermafbeelding</string>
     <string name="noti_direct_reply_exceed_text_limit_toast">Kan niet meer tekst invoeren.</string>
     <string name="airplane_mode_tts_text">Vliegtuigstand</string>
+    <string name="all_noti_readout">Eén melding</string>
+    <string name="all_noti_readout2">%d meldingen</string>
     <string name="car_lockscreen_disclaimer_title">Rijd veilig</string>
     <string name="car_lockscreen_disclaimer_text">Blijf je volledig bewust van de rijomstandigheden en houd je altijd aan de wet. Aanwijzingen kunnen onnauwkeurig, onvolledig, gevaarlijk, ongeschikt of verboden zijn of het doorkruisen van overheidszones vereisen. Bedrijfsinformatie kan ook onnauwkeurg of onvolledig zijn. De gegevens worden niet in realtime verstrekt en de nauwkeurigheid van een locatie kan niet worden gegarandeerd. Bedien tijdens het rijden je mobiele apparaat niet en gebruik geen apps die niet bedoeld zijn voor Android Auto.</string>
     <string name="pip_close">PIP sluiten</string>

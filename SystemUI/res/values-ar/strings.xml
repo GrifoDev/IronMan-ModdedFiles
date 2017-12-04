@@ -238,6 +238,8 @@
     <string name="wifi_allow_scan_with_traffic_summary">‏السماح/عدم السماح بعمليات فحص Wi-Fi للتجوال بناءً على حجم حركة البيانات في الواجهة</string>
     <string name="select_logd_size_title">أحجام ذاكرة التخزين المؤقت للتسجيل</string>
     <string name="select_logd_size_dialog_title">حدد أحجامًا أكبر لكل ذاكرة تخزين مؤقت للتسجيل</string>
+    <string name="dev_logpersist_clear_warning_title">هل تريد مسح وحدة تخزين المسجّل الدائم؟</string>
+    <string name="dev_logpersist_clear_warning_message">سيتم حذف بيانات المسجّل عند إيقاف تشغيل المسجّل الدائم.</string>
     <string name="select_logpersist_title">تخزين بيانات السجل باستمرار</string>
     <string name="select_logpersist_dialog_title">تحديد مخازن السجلات المؤقتة لتخزينها باستمرار</string>
     <string name="select_usb_configuration_title">‏حدد تهيئة USB</string>
@@ -752,6 +754,7 @@ For example, your ringtone will not sound, you will not be able to answer phone 
     <string name="wifi_authentication_failed_kt">فشلت مصادقة نقطة وصول Wi-Fi.</string>
     <string name="wifi_authentication_no_response">فشل الاتصال بنقطة وصول شبكة Wi-Fi.</string>
     <string name="wifi_authentication_invalid_value">فشل التوثيق. تحقق من اسم المستخدم وكلمة المرور.</string>
+    <string name="wifi_disconnected">تم قطع اتصال Wi-Fi.</string>
     <string name="quick_settings_dnd_label">الرجاء عدم الإزعاج</string>
     <string name="quick_settings_dnd_priority_label">الأولوية فقط</string>
     <string name="quick_settings_dnd_alarms_label">التنبيهات فقط</string>
@@ -1651,7 +1654,9 @@ Using your tablet in a very hot location."</string>
     <string name="battery_not_fully_connected_charging_title_vzw">Incomplete connection</string>
     <string name="battery_not_fully_connected_charging_text">للشحن بسرعة أكبر، استخدم الشاحن المُرفق بجهازك واحرص على توصيله بشكلٍ صحيح.</string>
     <string name="battery_not_fully_connected_charging_text_vzw">Make sure the charger is properly connected.</string>
+    <string name="battery_not_fully_connected_charging_text_jpn">تأكد أن الشاحن الخاص بك موصل بشكلٍ صحيح.</string>
     <string name="battery_not_fully_connected_charging_popup_text">تأكد من أن الشاحن موصول بشكلٍ صحيح. استخدم الشاحن المُرفق بالجهاز.</string>
+    <string name="battery_not_fully_connected_charging_popup_text_jpn">تأكد من أن الشاحن موصول بشكلٍ صحيح.</string>
     <string name="battery_charging_level_and_time_text">"جارٍ الشحن: %1$d%%‏
 (تبقى حوالي %2$s حتى يتم شحن البطارية بالكامل)"</string>
     <string name="battery_charging_level_text">يتم الشحن الآن : %d%%</string>
@@ -1876,6 +1881,8 @@ Please note that in order to enable your emergency calls (e.g., such as 112 call
     <string name="qs_detail_palm_capture_title">السحب براحة اليد للالتقاط</string>
     <string name="noti_direct_reply_exceed_text_limit_toast">يتعذر إدخال أي نص إضافي.</string>
     <string name="airplane_mode_tts_text">وضع الطائرة</string>
+    <string name="all_noti_readout">إشعار واحد</string>
+    <string name="all_noti_readout2">%d من الإشعارات</string>
     <string name="car_lockscreen_disclaimer_title">القيادة بأمان</string>
     <string name="car_lockscreen_disclaimer_text">‏عليك التعرف بشكل تام على ظروف القيادة والالتزام بالقوانين السارية. ويمكن أن تكون الاتجاهات غير دقيقة أو غير مكتملة أو خطيرة أو غير مناسبة أو محظورة أو تتضمن عبور مناطق إدارية. ويمكن أن تكون معلومات الأنشطة التجارية أيضًا غير دقيقة أو غير مكتملة. ولا يتم نشر البيانات في الوقت الفعلي، كما لا يمكن ضمان دقة المواقع. ولا تتعامل مع جهازك الجوّال أو تستخدم تطبيقات ليست متوافقة مع Android Auto أثناء القيادة.</string>
     <string name="pip_close">‏إغلاق PIP</string>

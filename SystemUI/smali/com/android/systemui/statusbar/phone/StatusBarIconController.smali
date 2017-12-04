@@ -255,7 +255,7 @@
 
     iput-object v2, p0, Lcom/android/systemui/statusbar/phone/StatusBarIconController;->mSystemIconArea:Landroid/widget/LinearLayout;
 
-    const v2, 0x7f130580
+    const v2, 0x7f130582
 
     invoke-virtual {p2, v2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -337,7 +337,7 @@
 
     iput-object v2, p0, Lcom/android/systemui/statusbar/phone/StatusBarIconController;->mStatusIconsKeyguard:Landroid/widget/LinearLayout;
 
-    const v2, 0x7f13050c
+    const v2, 0x7f13050e
 
     invoke-virtual {p2, v2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -347,7 +347,7 @@
 
     iput-object v2, p0, Lcom/android/systemui/statusbar/phone/StatusBarIconController;->mStatusBarBatteryRoot:Landroid/widget/FrameLayout;
 
-    const v2, 0x7f13050c
+    const v2, 0x7f13050e
 
     invoke-virtual {p3, v2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -367,7 +367,7 @@
 
     move-result-object v2
 
-    const v3, 0x7f0d04cf
+    const v3, 0x7f0d04d1
 
     invoke-virtual {v2, v3}, Landroid/content/res/Resources;->getFloat(I)F
 
@@ -381,7 +381,7 @@
 
     move-result-object v2
 
-    const v3, 0x7f0d04d0
+    const v3, 0x7f0d04d2
 
     invoke-virtual {v2, v3}, Landroid/content/res/Resources;->getFloat(I)F
 
@@ -539,7 +539,7 @@
 
     if-eqz v2, :cond_4
 
-    const v2, 0x7f1304d2
+    const v2, 0x7f1304d4
 
     invoke-virtual {p2, v2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -560,7 +560,7 @@
 
     iput-object v2, p0, Lcom/android/systemui/statusbar/phone/StatusBarIconController;->mClock:Lcom/android/systemui/statusbar/policy/Clock;
 
-    const v2, 0x7f130594
+    const v2, 0x7f130596
 
     invoke-virtual {p2, v2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -570,7 +570,7 @@
 
     iput-object v2, p0, Lcom/android/systemui/statusbar/phone/StatusBarIconController;->mClock2:Lcom/android/systemui/statusbar/policy/Clock;
 
-    const v2, 0x7f13057f
+    const v2, 0x7f130581
 
     invoke-virtual {p2, v2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -580,7 +580,7 @@
 
     iput-object v2, p0, Lcom/android/systemui/statusbar/phone/StatusBarIconController;->mClockLeft:Lcom/android/systemui/statusbar/policy/Clock;
 
-    const v2, 0x7f13057e
+    const v2, 0x7f130580
 
     invoke-virtual {p2, v2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -1214,7 +1214,7 @@
 .method private updateBatteryLevelDensity()V
     .locals 2
 
-    const v1, 0x7f0d0439
+    const v1, 0x7f0d043b
 
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/StatusBarIconController;->mBatteryText:Landroid/widget/TextView;
 
@@ -1230,11 +1230,11 @@
 .method private updateClock()V
     .locals 7
 
-    const v6, 0x7f0d0219
+    const v6, 0x7f0d021b
 
-    const v5, 0x7f0d0218
+    const v5, 0x7f0d021a
 
-    const v4, 0x7f0d0217
+    const v4, 0x7f0d0219
 
     const/4 v3, 0x0
 
@@ -1300,7 +1300,7 @@
 .method private updateNetspeedView()V
     .locals 2
 
-    const v1, 0x7f0d0217
+    const v1, 0x7f0d0219
 
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/StatusBarIconController;->mNetspeedView:Lcom/android/systemui/statusbar/policy/NetspeedView;
 
@@ -2344,7 +2344,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f0d022a
+    const v1, 0x7f0d022c
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -2652,7 +2652,7 @@
 
     invoke-direct {v6}, Landroid/util/TypedValue;-><init>()V
 
-    const v7, 0x7f0d021c
+    const v7, 0x7f0d021e
 
     const/4 v8, 0x1
 
@@ -2662,19 +2662,19 @@
 
     move-result v2
 
-    const v7, 0x7f0d0215
+    const v7, 0x7f0d0217
 
     invoke-virtual {v5, v7}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
     move-result v0
 
-    const v7, 0x7f0d0216
+    const v7, 0x7f0d0218
 
     invoke-virtual {v5, v7}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
     move-result v1
 
-    const v7, 0x7f0d0346
+    const v7, 0x7f0d0348
 
     invoke-virtual {v5, v7}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -2785,7 +2785,7 @@
 
     move-result-object v3
 
-    const v4, 0x7f0d0228
+    const v4, 0x7f0d022a
 
     invoke-virtual {v3, v4}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -3277,7 +3277,7 @@
 .method public updateBatteryTextLevel(I)V
     .locals 7
 
-    const v6, 0x7f0f070a
+    const v6, 0x7f0f070b
 
     const/4 v5, 0x1
 
@@ -3333,7 +3333,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f0d0439
+    const v2, 0x7f0d043b
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 

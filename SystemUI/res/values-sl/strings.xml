@@ -238,6 +238,8 @@
     <string name="wifi_allow_scan_with_traffic_summary">Omogoči/onemogoči iskanje omrežij Wi-Fi za gostovanje glede na količino podatkovnega prometa pri vmesniku</string>
     <string name="select_logd_size_title">Velikosti medpomn. zapisov. dnevnika</string>
     <string name="select_logd_size_dialog_title">Izberite velikost medpomnilnika dnevnika</string>
+    <string name="dev_logpersist_clear_warning_title">Želite poč. shrambo traj. zapisovalnika?</string>
+    <string name="dev_logpersist_clear_warning_message">Podatki zapisovalnika bodo izbrisani, ko izklopite trajni zapisovalnik.</string>
     <string name="select_logpersist_title">Trajno shran. podatkov dnevnika</string>
     <string name="select_logpersist_dialog_title">Izberite medpom. dnev. za trajno shran.</string>
     <string name="select_usb_configuration_title">Izbira konfiguracije USB</string>
@@ -751,6 +753,7 @@ For example, your ringtone will not sound, you will not be able to answer phone 
     <string name="wifi_authentication_failed_kt">Preverjanje pristnosti dostopne točke za Wi-Fi ni uspelo.</string>
     <string name="wifi_authentication_no_response">Vzpostavitev povezave z dostopno točko za Wi-Fi ni uspela.</string>
     <string name="wifi_authentication_invalid_value">Preverjanje ni uspelo. Preverite ID in geslo.</string>
+    <string name="wifi_disconnected">Wi-Fi prekinjen.</string>
     <string name="quick_settings_dnd_label">Ne moti</string>
     <string name="quick_settings_dnd_priority_label">Samo prednostno</string>
     <string name="quick_settings_dnd_alarms_label">Samo alarmi</string>
@@ -1381,11 +1384,11 @@ Povezani ste z aplikacijo %2$s, ki lahko nadzira omrežno dejavnost, vključno z
     <string name="keyboard_key_numpad_template">Številska tipkovnica %1$s</string>
     <string name="keyboard_popup_help">Tipka meta: Tipka Windows, ukazna tipka ali tipka s simbolom drugega operacijskega sistema.</string>
     <string name="keyboard_shortcut_group_system">Sistemske bližnjice</string>
-    <string name="keyboard_shortcut_group_system_home">Začetni zaslon</string>
-    <string name="keyboard_shortcut_group_system_recents">Nedavni</string>
+    <string name="keyboard_shortcut_group_system_home">Domov</string>
+    <string name="keyboard_shortcut_group_system_recents">Nedavno</string>
     <string name="keyboard_shortcut_group_system_back">Nazaj</string>
     <string name="keyboard_shortcut_group_system_notifications">Obvestila</string>
-    <string name="keyboard_shortcut_group_system_shortcuts_helper">Bližnjične tipke</string>
+    <string name="keyboard_shortcut_group_system_shortcuts_helper">Bližnjice na tipkovnici</string>
     <string name="keyboard_shortcut_group_system_switch_input">Preklop načina vnosa</string>
     <string name="keyboard_shortcut_group_system_all_apps">Vse aplikacije</string>
     <string name="keyboard_shortcut_group_system_running_apps">Delujoče aplikacije</string>
@@ -1651,7 +1654,9 @@ Pregrevanje je lahko posledica:
     <string name="battery_not_fully_connected_charging_title_vzw">Incomplete connection</string>
     <string name="battery_not_fully_connected_charging_text">Za hitrejše polnjenje uporabite polnilnik, ki je bil priložen napravi, in zagotovite, da je pravilno priključen.</string>
     <string name="battery_not_fully_connected_charging_text_vzw">Make sure the charger is properly connected.</string>
+    <string name="battery_not_fully_connected_charging_text_jpn">Preverite, ali je polnilnik pravilno priključen.</string>
     <string name="battery_not_fully_connected_charging_popup_text">Zagotovite, da je polnilnik pravilno priključen. Uporabite polnilnik, ki je bil priložen napravi.</string>
+    <string name="battery_not_fully_connected_charging_popup_text_jpn">Zagotovite, da je polnilnik pravilno priključen.</string>
     <string name="battery_charging_level_and_time_text">"Polnjenje: %1$d %%
 (Še približno %2$s do konca polnjenja)"</string>
     <string name="battery_charging_level_text">Polnjenje: %d%%</string>
@@ -1876,6 +1881,8 @@ Please note that in order to enable your emergency calls (e.g., such as 112 call
     <string name="qs_detail_palm_capture_title">Podrsaj s spodnjim delom dlani za zajem</string>
     <string name="noti_direct_reply_exceed_text_limit_toast">Več besedila ni mogoče vnesti.</string>
     <string name="airplane_mode_tts_text">Letalski način</string>
+    <string name="all_noti_readout">Eno obvestilo</string>
+    <string name="all_noti_readout2">Število obvestil: %d</string>
     <string name="car_lockscreen_disclaimer_title">Varna vožnja</string>
     <string name="car_lockscreen_disclaimer_text">Bodite pozorni na vozne razmere in vselej upoštevajte veljavno zakonodajo. Navodila za pot so morda nenatančna, nepopolna, nevarna, neprimerna ali prepovedana oziroma vključujejo prečkanje upravnih območij. Prav tako nenatančni ali nepopolni so lahko podatki o podjetjih. Podatki niso sprotni in natančnosti lociranja ni mogoče zagotoviti. Med vožnjo ne uporabljajte mobilne naprave ali aplikacij, ki niso namenjene za Android Auto.</string>
     <string name="pip_close">Zapri način PIP</string>

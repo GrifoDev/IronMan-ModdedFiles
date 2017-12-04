@@ -66,7 +66,7 @@
 
     iget-object v3, p0, Lcom/android/systemui/qs/customize/SecQSCustomizer$5;->this$0:Lcom/android/systemui/qs/customize/SecQSCustomizer;
 
-    invoke-static {v3}, Lcom/android/systemui/qs/customize/SecQSCustomizer;->-get10(Lcom/android/systemui/qs/customize/SecQSCustomizer;)I
+    invoke-static {v3}, Lcom/android/systemui/qs/customize/SecQSCustomizer;->-get12(Lcom/android/systemui/qs/customize/SecQSCustomizer;)I
 
     move-result v3
 

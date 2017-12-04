@@ -238,6 +238,8 @@
     <string name="wifi_allow_scan_with_traffic_summary">"Autoriser ou non la détection de réseaux Wi-Fi en itinérance en fonction de l'importance du transfert de données dans l'interface"</string>
     <string name="select_logd_size_title">"Tailles des mémoires tampons d'enregistreur"</string>
     <string name="select_logd_size_dialog_title">Tailles enreg. par tampon journal</string>
+    <string name="dev_logpersist_clear_warning_title">Effacer esp. stockage enreg. permanent ?</string>
+    <string name="dev_logpersist_clear_warning_message">"Les données de l'enregistreur seront supprimées lorsque l'enregistreur permanent sera désactivé."</string>
     <string name="select_logpersist_title">Stockage permanent données journ.</string>
     <string name="select_logpersist_dialog_title">Sélect. tampons journ. à stocker constamment</string>
     <string name="select_usb_configuration_title">Sélectionnez une configuration USB</string>
@@ -751,6 +753,7 @@ Si vous réactivez les données, votre fournisseur de services risque de vous fa
     <string name="wifi_authentication_failed_kt">"Échec de l'authentification du point d'accès Wifi."</string>
     <string name="wifi_authentication_no_response">"Impossible de se connecter au point d'accès Wifi."</string>
     <string name="wifi_authentication_invalid_value">"Échec de l'authentification. Vérifiez vos nom d'utilisateur et mot de passe."</string>
+    <string name="wifi_disconnected">wifi déconnecté</string>
     <string name="quick_settings_dnd_label">Ne pas déranger</string>
     <string name="quick_settings_dnd_priority_label">Priorités seulement</string>
     <string name="quick_settings_dnd_alarms_label">Alarmes uniquement</string>
@@ -1400,7 +1403,7 @@ Pour en savoir plus, communiquez avec votre administrateur."</string>
     <string name="keyboard_shortcut_group_applications_im">MI</string>
     <string name="keyboard_shortcut_group_applications_music">Musique</string>
     <string name="keyboard_shortcut_group_applications_youtube">YouTube</string>
-    <string name="keyboard_shortcut_group_applications_calendar">Agenda</string>
+    <string name="keyboard_shortcut_group_applications_calendar">Calendrier</string>
     <string name="keyboard_shortcut_group_applications_bixby">Bixby</string>
     <string name="keyboard_shortcut_group_applications_messages">Messages</string>
     <string name="tuner_full_zen_title">Afficher avec les commandes de volume</string>
@@ -1652,7 +1655,9 @@ Les causes de surchauffe sont diverses :
     <string name="battery_not_fully_connected_charging_title_vzw">Connexion imparfaite</string>
     <string name="battery_not_fully_connected_charging_text">"Pour accélérer le chargement, utilisez le chargeur fourni avec votre appareil et assurez-vous qu'il est correctement branché."</string>
     <string name="battery_not_fully_connected_charging_text_vzw">Assurez-vous que le chargeur est correctement branché.</string>
+    <string name="battery_not_fully_connected_charging_text_jpn">Assurez-vous que votre chargeur est correctement branché.</string>
     <string name="battery_not_fully_connected_charging_popup_text">"Assurez-vous que le chargeur est correctement branché. Utilisez le chargeur fourni avec l'appareil."</string>
+    <string name="battery_not_fully_connected_charging_popup_text_jpn">Assurez-vous que le chargeur est correctement branché.</string>
     <string name="battery_charging_level_and_time_text">"Chargement : %1$d %%
 (La pile sera entièrement chargée dans environ %2$s)"</string>
     <string name="battery_charging_level_text">Charge : %d %%</string>
@@ -1859,8 +1864,8 @@ Please note that in order to enable your emergency calls (e.g., such as 112 call
     <string name="sec_accessibility_navbar_show_pin">Verrouiller la barre de navigation</string>
     <string name="force_immersive_guide_dialog_title">Masquez la barre de navigation :</string>
     <string name="force_immersive_guide_dialog_message1">Appuyez deux fois sur cette touche pour masquer la barre de navigation.</string>
-    <string name="force_immersive_guide_dialog_message2">"Faites glisser votre doigt vers l'intérieur depuis le côté de l'écran à proximité du port de chargement pour afficher la barre de navigation."</string>
-    <string name="force_immersive_guide_dialog_message3">Appuyez deux fois sur cette touche pour que la barre de navigation reste affichée.</string>
+    <string name="force_immersive_guide_dialog_message2">"Glissez un doigt vers l'intérieur depuis le côté de l'écran à proximité du port de chargement pour afficher la barre de navigation."</string>
+    <string name="force_immersive_guide_dialog_message3">Touchez deux fois cette touche pour que la barre de navigation reste affichée.</string>
     <string name="force_immersive_guide_dialog_message4">"Sur certains écrans, tels que l'écran d'accueil, la barre de navigation sera toujours affichée."</string>
     <string name="force_immersive_guide_dialog_guide_path">Pour masquer cette touche, accédez à Paramètres > Affichage > Barre de navigation.</string>
     <string name="force_immersive_guide_dialog_setting">Paramètres</string>
@@ -1877,6 +1882,8 @@ Please note that in order to enable your emergency calls (e.g., such as 112 call
     <string name="qs_detail_palm_capture_title">"Capture d'écran par glissement de paume"</string>
     <string name="noti_direct_reply_exceed_text_limit_toast">Impossible de saisir davantage de texte.</string>
     <string name="airplane_mode_tts_text">Mode Hors-ligne</string>
+    <string name="all_noti_readout">Une notification</string>
+    <string name="all_noti_readout2">%d notifications</string>
     <string name="car_lockscreen_disclaimer_title">Conduisez prudemment</string>
     <string name="car_lockscreen_disclaimer_text">"Tenez compte des conditions de la route et respectez toujours les lois en vigueur. Les itinéraires peuvent être incorrects, incomplets, dangereux, inappropriés ou interdits, et ils peuvent traverser des zones administratives. Les renseignements sur les entreprises peuvent également être incorrects ou incomplets. Les données ne sont pas fournies en temps réel, et la précision de la localisation n'est pas garantie. Ne manipulez pas votre appareil mobile et n'utilisez pas d'applications non conçues pour Android Auto lorsque vous conduisez."</string>
     <string name="pip_close">Fermer mode IDI</string>

@@ -238,6 +238,8 @@
     <string name="wifi_allow_scan_with_traffic_summary">อนุญาต/ไม่อนุญาตการสแกน Wi-Fi ข้ามเครือข่าย ตามปริมาณข้อมูลการเข้าชมที่ปรากฏในอินเทอร์เฟซ</string>
     <string name="select_logd_size_title">ขนาดบัฟเฟอร์ของ Logger</string>
     <string name="select_logd_size_dialog_title">เลือกขนาด Logger ต่อบัฟเฟอร์ไฟล์บันทึก</string>
+    <string name="dev_logpersist_clear_warning_title">ล้างที่จัดเก็บตัวบันทึกที่คงอยู่หรือไม่</string>
+    <string name="dev_logpersist_clear_warning_message">ข้อมูลตัวบันทึกจะถูกลบเมื่อตัวบันทึกที่คงอยู่ถูกปิด</string>
     <string name="select_logpersist_title">จัดเก็บข้อมูลบันทึกตลอดเวลา</string>
     <string name="select_logpersist_dialog_title">เลือกล็อกบัฟเฟอร์เพื่อจัดเก็บตลอดเวลา</string>
     <string name="select_usb_configuration_title">เลือกการกำหนดค่า USB</string>
@@ -752,6 +754,7 @@ For example, your ringtone will not sound, you will not be able to answer phone 
     <string name="wifi_authentication_failed_kt">การรับรอง Wi-Fi AP ล้มเหลว</string>
     <string name="wifi_authentication_no_response">การเชื่อมต่อกับ Wi-Fi AP ล้มเหลว</string>
     <string name="wifi_authentication_invalid_value">Authentication failed. Check ID and password</string>
+    <string name="wifi_disconnected">ตัด​การ​เชื่อม​ต่อ Wi-Fi</string>
     <string name="quick_settings_dnd_label">ห้ามรบกวน</string>
     <string name="quick_settings_dnd_priority_label">เฉพาะเรื่องสำคัญ</string>
     <string name="quick_settings_dnd_alarms_label">เฉพาะปลุกเท่านั้น</string>
@@ -1384,11 +1387,11 @@ Wi-Fi และ Bluetooth จะถูกปิดด้วย แต่คุ�
     <string name="keyboard_key_numpad_template">แผงตัวเลข %1$s</string>
     <string name="keyboard_popup_help">เมตาคีย์: คีย์ Windows, Command, หรือคีย์สัญลักษณ์ระบบปฏิบัติการอื่นๆ</string>
     <string name="keyboard_shortcut_group_system">ทางลัดระบบ</string>
-    <string name="keyboard_shortcut_group_system_home">หน้าแรก</string>
+    <string name="keyboard_shortcut_group_system_home">หน้าหลัก</string>
     <string name="keyboard_shortcut_group_system_recents">ล่าสุด</string>
     <string name="keyboard_shortcut_group_system_back">ย้อนกลับ</string>
     <string name="keyboard_shortcut_group_system_notifications">การแจ้งเตือน</string>
-    <string name="keyboard_shortcut_group_system_shortcuts_helper">แป้นพิมพ์ลัด</string>
+    <string name="keyboard_shortcut_group_system_shortcuts_helper">ทางลัดแป้นพิมพ์</string>
     <string name="keyboard_shortcut_group_system_switch_input">สลับวิธีการป้อนข้อมูล</string>
     <string name="keyboard_shortcut_group_system_all_apps">แอพทั้งหมด</string>
     <string name="keyboard_shortcut_group_system_running_apps">แอพที่กำลังทำงาน</string>
@@ -1396,7 +1399,7 @@ Wi-Fi และ Bluetooth จะถูกปิดด้วย แต่คุ�
     <string name="keyboard_shortcut_group_system_switch_languages">สลับภาษา</string>
     <string name="keyboard_shortcut_group_applications">ทางลัดในแอพ</string>
     <string name="keyboard_shortcut_group_applications_assist">การสนับสนุน</string>
-    <string name="keyboard_shortcut_group_applications_browser">เบราว์เซอร์</string>
+    <string name="keyboard_shortcut_group_applications_browser">เบราเซอร์</string>
     <string name="keyboard_shortcut_group_applications_contacts">รายชื่อ</string>
     <string name="keyboard_shortcut_group_applications_email">อี​เมล</string>
     <string name="keyboard_shortcut_group_applications_im">IM</string>
@@ -1654,7 +1657,9 @@ Using your tablet in a very hot location."</string>
     <string name="battery_not_fully_connected_charging_title_vzw">Incomplete connection</string>
     <string name="battery_not_fully_connected_charging_text">เพื่อให้ชาร์จได้รวดเร็วขึ้น ให้ใช้เครื่องชาร์จที่มาพร้อมกับอุปกรณ์ของคุณและตรวจสอบให้แน่ใจว่าได้เสียบเครื่องชาร์จอย่างถูกต้อง</string>
     <string name="battery_not_fully_connected_charging_text_vzw">Make sure the charger is properly connected.</string>
+    <string name="battery_not_fully_connected_charging_text_jpn">ตรวจสอบให้แน่ใจว่าเชื่อมต่อกับที่ชาร์จอย่างถูกต้อง</string>
     <string name="battery_not_fully_connected_charging_popup_text">ตรวจสอบให้แน่ใจว่าเสียบเครื่องชาร์จอย่างถูกต้อง ใช้เครื่องชาร์จที่มาพร้อมกับอุปกรณ์</string>
+    <string name="battery_not_fully_connected_charging_popup_text_jpn">ตรวจสอบให้แน่ใจว่าเสียบเครื่องชาร์จอย่างถูกต้อง</string>
     <string name="battery_charging_level_and_time_text">"กำลังชาร์จ %1$d%%
 (อีกประมาณ %2$s จึงจะชาร์จเต็ม)"</string>
     <string name="battery_charging_level_text">การ​ชาร์จ: ​%d%%</string>
@@ -1879,6 +1884,8 @@ Please note that in order to enable your emergency calls (e.g., such as 112 call
     <string name="qs_detail_palm_capture_title">ใช้ฝ่ามือปัดเพื่อจับภาพ</string>
     <string name="noti_direct_reply_exceed_text_limit_toast">ไม่สามารถใส่ข้อความเพิ่มอีก</string>
     <string name="airplane_mode_tts_text">โหมดเครื่องบิน</string>
+    <string name="all_noti_readout">หนึ่งการแจ้งเตือน</string>
+    <string name="all_noti_readout2">%d การแจ้งเตือน</string>
     <string name="car_lockscreen_disclaimer_title">ขับขี่อย่างปลอดภัย</string>
     <string name="car_lockscreen_disclaimer_text">มีสติรู้ตัวเต็มที่ในสภาพการขับขี่ต่างๆ เและปฏิบัติตามกฎหมายที่บังคับใช้เสมอ ทั้งนี้เส้นทางอาจไม่ถูกต้อง ไม่ครบถ้วน เป็นอันตราย ไม่เหมาะสม ห้ามใช้ หรือมีการข้ามเขตปกครอง นอกจากนี้ข้อมูลทางธุรกิจอาจไม่ถูกต้องหรือไม่สมบูรณ์ ข้อมูลไม่ใช่แบบเรียลไทม์ และไม่สามารถรับประกันความถูกต้องของตำแหน่ง อย่าใช้งานอุปกรณ์เคลื่อนที่หรือใช้แอปที่ไม่ได้ออกแบบมาสำหรับ Android Auto ขณะขับรถ</string>
     <string name="pip_close">ปิด PIP</string>

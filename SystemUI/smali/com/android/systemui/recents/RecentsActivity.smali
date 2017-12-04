@@ -1783,7 +1783,7 @@
 
     const/4 v10, 0x0
 
-    const v9, 0x7f130415
+    const v9, 0x7f130417
 
     const/16 v8, 0x700
 
@@ -1890,7 +1890,7 @@
 
     iget-object v5, p0, Lcom/android/systemui/recents/RecentsActivity;->mSlidingView:Lcom/android/systemui/recents/views/RecentsSlidingView;
 
-    const v6, 0x7f130440
+    const v6, 0x7f130442
 
     invoke-virtual {v5, v6}, Lcom/android/systemui/recents/views/RecentsSlidingView;->findViewById(I)Landroid/view/View;
 
@@ -1998,7 +1998,7 @@
     :cond_2
     iget-object v7, p0, Lcom/android/systemui/recents/RecentsActivity;->mRecentsView:Lcom/android/systemui/recents/views/RecentsView;
 
-    const v5, 0x7f13041c
+    const v5, 0x7f13041e
 
     invoke-virtual {p0, v5}, Lcom/android/systemui/recents/RecentsActivity;->findViewById(I)Landroid/view/View;
 
@@ -2006,7 +2006,7 @@
 
     check-cast v5, Landroid/view/ViewGroup;
 
-    const v6, 0x7f13041a
+    const v6, 0x7f13041c
 
     invoke-virtual {p0, v6}, Lcom/android/systemui/recents/RecentsActivity;->findViewById(I)Landroid/view/View;
 
@@ -2046,6 +2046,10 @@
     invoke-virtual {v2, v5}, Landroid/content/IntentFilter;->addAction(Ljava/lang/String;)V
 
     const-string/jumbo v5, "android.intent.action.TIME_SET"
+
+    invoke-virtual {v2, v5}, Landroid/content/IntentFilter;->addAction(Ljava/lang/String;)V
+
+    const-string/jumbo v5, "android.intent.action.ACTION_SCREEN_OFF_BY_PROXIMITY"
 
     invoke-virtual {v2, v5}, Landroid/content/IntentFilter;->addAction(Ljava/lang/String;)V
 
@@ -2163,7 +2167,7 @@
     goto/16 :goto_0
 
     :cond_7
-    const v5, 0x7f130419
+    const v5, 0x7f13041b
 
     invoke-virtual {p0, v5}, Lcom/android/systemui/recents/RecentsActivity;->findViewById(I)Landroid/view/View;
 
@@ -2248,15 +2252,6 @@
 
     invoke-super {p0}, Landroid/app/Activity;->onEnterAnimationComplete()V
 
-    iget-object v0, p0, Lcom/android/systemui/recents/RecentsActivity;->mBixbyManager:Lcom/android/systemui/recents/bixby/EmRecentsManager;
-
-    if-eqz v0, :cond_0
-
-    iget-object v0, p0, Lcom/android/systemui/recents/RecentsActivity;->mBixbyManager:Lcom/android/systemui/recents/bixby/EmRecentsManager;
-
-    invoke-virtual {v0}, Lcom/android/systemui/recents/bixby/EmRecentsManager;->resumeBixbyRule()Z
-
-    :cond_0
     iget-object v0, p0, Lcom/android/systemui/recents/RecentsActivity;->mHandler:Landroid/os/Handler;
 
     iget-object v1, p0, Lcom/android/systemui/recents/RecentsActivity;->mSendEnterWindowAnimationCompleteRunnable:Ljava/lang/Runnable;
@@ -2276,7 +2271,7 @@
     :goto_0
     iget-boolean v0, p0, Lcom/android/systemui/recents/RecentsActivity;->mIsVisible:Z
 
-    if-eqz v0, :cond_2
+    if-eqz v0, :cond_1
 
     invoke-static {}, Lcom/android/systemui/recents/Recents;->getSettingHelper()Lcom/android/systemui/recents/model/RecentsSettingHelper;
 
@@ -2286,7 +2281,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_2
+    if-eqz v0, :cond_1
 
     const-string/jumbo v0, "RecentsFullscreenHelpPopup"
 
@@ -2298,7 +2293,7 @@
 
     iget-object v0, p0, Lcom/android/systemui/recents/RecentsActivity;->mHelpPopup:Lcom/android/systemui/recents/views/AbstractHelpPopup;
 
-    if-nez v0, :cond_1
+    if-nez v0, :cond_0
 
     new-instance v0, Lcom/android/systemui/recents/views/AbstractHelpPopup;
 
@@ -2306,7 +2301,7 @@
 
     iput-object v0, p0, Lcom/android/systemui/recents/RecentsActivity;->mHelpPopup:Lcom/android/systemui/recents/views/AbstractHelpPopup;
 
-    :cond_1
+    :cond_0
     iget-object v0, p0, Lcom/android/systemui/recents/RecentsActivity;->mHelpPopup:Lcom/android/systemui/recents/views/AbstractHelpPopup;
 
     const-string/jumbo v1, "RecentsFullscreenHelpPopup"
@@ -2317,17 +2312,17 @@
 
     invoke-virtual {v0}, Lcom/android/systemui/recents/views/AbstractHelpPopup;->show()V
 
-    :cond_2
+    :cond_1
     :goto_1
     sget-boolean v0, Lcom/android/systemui/recents/RecentsDebugFlags$Static;->EnableMoreButton:Z
 
-    if-nez v0, :cond_3
+    if-nez v0, :cond_2
 
     sget-boolean v0, Lcom/android/systemui/recents/RecentsDebugFlags$Static;->EnableAppList:Z
 
-    if-eqz v0, :cond_4
+    if-eqz v0, :cond_3
 
-    :cond_3
+    :cond_2
     invoke-static {}, Lcom/android/systemui/recents/events/EventBus;->getDefault()Lcom/android/systemui/recents/events/EventBus;
 
     move-result-object v0
@@ -2339,6 +2334,15 @@
     invoke-direct {v1, v2}, Lcom/android/systemui/recents/events/ui/ToggleRecentsButtonsContainerEvent;-><init>(Z)V
 
     invoke-virtual {v0, v1}, Lcom/android/systemui/recents/events/EventBus;->send(Lcom/android/systemui/recents/events/EventBus$Event;)V
+
+    :cond_3
+    iget-object v0, p0, Lcom/android/systemui/recents/RecentsActivity;->mBixbyManager:Lcom/android/systemui/recents/bixby/EmRecentsManager;
+
+    if-eqz v0, :cond_4
+
+    iget-object v0, p0, Lcom/android/systemui/recents/RecentsActivity;->mBixbyManager:Lcom/android/systemui/recents/bixby/EmRecentsManager;
+
+    invoke-virtual {v0}, Lcom/android/systemui/recents/bixby/EmRecentsManager;->resumeBixbyRule()Z
 
     :cond_4
     return-void
@@ -2353,7 +2357,7 @@
     :cond_6
     iget-object v0, p0, Lcom/android/systemui/recents/RecentsActivity;->mHelpPopup:Lcom/android/systemui/recents/views/AbstractHelpPopup;
 
-    if-eqz v0, :cond_2
+    if-eqz v0, :cond_1
 
     iget-object v0, p0, Lcom/android/systemui/recents/RecentsActivity;->mHelpPopup:Lcom/android/systemui/recents/views/AbstractHelpPopup;
 

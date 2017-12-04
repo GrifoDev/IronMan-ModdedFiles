@@ -238,6 +238,8 @@
     <string name="wifi_allow_scan_with_traffic_summary">Να επιτρέπεται/να μην επιτρέπεται η σάρωση Wi-Fi κατά την περιαγωγή, βάσει της ποσότητας επισκεψιμότητας δεδομένων στη διεπαφή</string>
     <string name="select_logd_size_title">Μέγεθος προσωρινής μνήμης για τη λειτουργία καταγραφής</string>
     <string name="select_logd_size_dialog_title">Μέγεθος αρχείων κατ/φής ανά προ/νή μνήμη αρχείου κατ/φής</string>
+    <string name="dev_logpersist_clear_warning_title">Εκκαθ. χώρου αποθ. εργαλ. μόνιμης καταγρ.;</string>
+    <string name="dev_logpersist_clear_warning_message">Τα δεδομένα του εργαλείου καταγραφής θα διαγραφούν μόλις απενεργοποιηθεί το εργαλείο μόνιμης καταγραφής.</string>
     <string name="select_logpersist_title">Μόνιμη αποθήκ. δεδομ. καταγρ.</string>
     <string name="select_logpersist_dialog_title">Επιλογή buffer καταγρ. για μόν. αποθήκευση</string>
     <string name="select_usb_configuration_title">Επιλογή διαμόρφωσης USB</string>
@@ -752,6 +754,7 @@ For example, your ringtone will not sound, you will not be able to answer phone 
     <string name="wifi_authentication_failed_kt">Απέτυχε ο έλεγχος ταυτότητας Wi-Fi AP.</string>
     <string name="wifi_authentication_no_response">Η σύνδεση στο σημείο πρόσβασης Wi-Fi απέτυχε.</string>
     <string name="wifi_authentication_invalid_value">Η επαλήθευση απέτυχε. Ελέγξτε το ID και τον κωδικό σας.</string>
+    <string name="wifi_disconnected">Αποσύνδεση Wi-Fi.</string>
     <string name="quick_settings_dnd_label">Μην ενοχλείτε</string>
     <string name="quick_settings_dnd_priority_label">Μόνο προτεραιότητας</string>
     <string name="quick_settings_dnd_alarms_label">Μόνο ειδοποιήσεις</string>
@@ -1383,7 +1386,7 @@ Turn on Airplane mode?"</string>
     <string name="keyboard_key_numpad_template">Αριθμητικό πληκτρολόγιο %1$s</string>
     <string name="keyboard_popup_help">Πλήκτρο μεταδεδομένων: Το πλήκτρο Windows, Command ή άλλου συμβόλου του λειτουργικού συστήματος.</string>
     <string name="keyboard_shortcut_group_system">Συντομεύσεις συστήματος</string>
-    <string name="keyboard_shortcut_group_system_home">Αρχική οθόνη</string>
+    <string name="keyboard_shortcut_group_system_home">Αρχική</string>
     <string name="keyboard_shortcut_group_system_recents">Πρόσφατα</string>
     <string name="keyboard_shortcut_group_system_back">Πίσω</string>
     <string name="keyboard_shortcut_group_system_notifications">Ειδοποιήσεις</string>
@@ -1653,7 +1656,9 @@ Using your tablet in a very hot location."</string>
     <string name="battery_not_fully_connected_charging_title_vzw">Incomplete connection</string>
     <string name="battery_not_fully_connected_charging_text">Για ταχύτερη φόρτιση, χρησιμοποιήστε το φορτιστή που συνόδευε τη συσκευή σας και βεβαιωθείτε ότι τον έχετε συνδέσει σωστά.</string>
     <string name="battery_not_fully_connected_charging_text_vzw">Make sure the charger is properly connected.</string>
+    <string name="battery_not_fully_connected_charging_text_jpn">Βεβαιωθείτε ότι έχετε συνδέσει σωστά το φορτιστή σας.</string>
     <string name="battery_not_fully_connected_charging_popup_text">Βεβαιωθείτε ότι έχετε συνδέσει σωστά το φορτιστή. Χρησιμοποιήστε το φορτιστή που συνόδευε τη συσκευή.</string>
+    <string name="battery_not_fully_connected_charging_popup_text_jpn">Βεβαιωθείτε ότι έχετε συνδέσει σωστά το φορτιστή.</string>
     <string name="battery_charging_level_and_time_text">"Γίνεται φόρτιση: %1$d%%
 (Περίπου %2$s μέχρι την πλήρη φόρτιση)"</string>
     <string name="battery_charging_level_text">Φόρτιση: %d%%</string>
@@ -1878,6 +1883,8 @@ Please note that in order to enable your emergency calls (e.g., such as 112 call
     <string name="qs_detail_palm_capture_title">Κίνηση παλάμης για λήψη</string>
     <string name="noti_direct_reply_exceed_text_limit_toast">Δεν είναι δυνατή η καταχώρηση άλλου κειμένου.</string>
     <string name="airplane_mode_tts_text">Λειτουργία πτήσης</string>
+    <string name="all_noti_readout">Μία ειδοποίηση</string>
+    <string name="all_noti_readout2">%d ειδοποιήσεις</string>
     <string name="car_lockscreen_disclaimer_title">Οδηγείτε προσεκτικά</string>
     <string name="car_lockscreen_disclaimer_text">Μείνετε πλήρως ενημερωμένοι για τις προϋποθέσεις οδήγησης και υπακούτε πάντα τους ισχύοντες νόμους. Οι οδηγίες μπορεί να είναι ανακριβείς, ελλιπείς, επικίνδυνες, ακατάλληλες, απαγορευμένες ή να ανήκουν σε άλλες διοικητικές περιοχές. Οι πληροφορίες επιχειρήσεων μπορεί επίσης να είναι ανακριβείς ή ελλιπείς. Τα δεδομένα δεν είναι σε πραγματικό χρόνο και η ακρίβεια των τοποθεσιών δεν είναι εγγυημένη. Μη χειρίζεστε την κινητή συσκευή σας και μη χρησιμοποιείτε εφαρμογές που δεν προορίζονται για το Android Auto ενώ οδηγείτε.</string>
     <string name="pip_close">Κλείσιμο PIP</string>

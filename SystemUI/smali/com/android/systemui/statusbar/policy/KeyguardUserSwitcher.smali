@@ -356,7 +356,7 @@
 
     invoke-virtual {v9, v5}, Landroid/view/ViewGroup;->addView(Landroid/view/View;)V
 
-    const v9, 0x7f0d0282
+    const v9, 0x7f0d0284
 
     invoke-static {v7, v9}, Lcom/android/systemui/FontSizeUtils;->updateFontSize(Landroid/widget/TextView;I)V
 

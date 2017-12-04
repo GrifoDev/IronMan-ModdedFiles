@@ -541,7 +541,13 @@
 
     iget-object v0, p0, Lcom/android/systemui/infinity/GalaxyWallpaperService$GalaxyWallpaperEngine;->this$0:Lcom/android/systemui/infinity/GalaxyWallpaperService;
 
-    invoke-virtual {v0}, Lcom/android/systemui/infinity/GalaxyWallpaperService;->onScreenOff()V
+    iget-object v1, p0, Lcom/android/systemui/infinity/GalaxyWallpaperService$GalaxyWallpaperEngine;->this$0:Lcom/android/systemui/infinity/GalaxyWallpaperService;
+
+    invoke-static {v1}, Lcom/android/systemui/infinity/GalaxyWallpaperService;->-get7(Lcom/android/systemui/infinity/GalaxyWallpaperService;)Z
+
+    move-result v1
+
+    invoke-virtual {v0, v1}, Lcom/android/systemui/infinity/GalaxyWallpaperService;->onScreenOff(Z)V
 
     iget-object v0, p0, Lcom/android/systemui/infinity/GalaxyWallpaperService$GalaxyWallpaperEngine;->this$0:Lcom/android/systemui/infinity/GalaxyWallpaperService;
 
@@ -680,6 +686,27 @@
 
     invoke-direct {p0}, Lcom/android/systemui/infinity/GalaxyWallpaperService$GalaxyWallpaperEngine;->init()V
 
+    return-void
+.end method
+
+.method public onOffsetsChanged(FFFFII)V
+    .locals 1
+
+    invoke-super/range {p0 .. p6}, Lcom/android/systemui/infinity/OpenGLES2WallpaperService$OpenGLES2Engine;->onOffsetsChanged(FFFFII)V
+
+    iget-object v0, p0, Lcom/android/systemui/infinity/GalaxyWallpaperService$GalaxyWallpaperEngine;->this$0:Lcom/android/systemui/infinity/GalaxyWallpaperService;
+
+    iget-object v0, v0, Lcom/android/systemui/infinity/GalaxyWallpaperService;->renderer:Lcom/android/systemui/infinity/GalaxyRenderer;
+
+    if-eqz v0, :cond_0
+
+    iget-object v0, p0, Lcom/android/systemui/infinity/GalaxyWallpaperService$GalaxyWallpaperEngine;->this$0:Lcom/android/systemui/infinity/GalaxyWallpaperService;
+
+    iget-object v0, v0, Lcom/android/systemui/infinity/GalaxyWallpaperService;->renderer:Lcom/android/systemui/infinity/GalaxyRenderer;
+
+    invoke-virtual {v0}, Lcom/android/systemui/infinity/GalaxyRenderer;->requestDrawFrame()V
+
+    :cond_0
     return-void
 .end method
 

@@ -39,7 +39,7 @@
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    const v1, 0x7f13042b
+    const v1, 0x7f13042d
 
     invoke-virtual {p1, v1}, Lcom/android/systemui/recents/tv/views/TaskCardView;->findViewById(I)Landroid/view/View;
 
@@ -49,7 +49,7 @@
 
     iput-object v1, p0, Lcom/android/systemui/recents/tv/animations/DismissAnimationsHolder;->mInfoField:Landroid/widget/LinearLayout;
 
-    const v1, 0x7f130430
+    const v1, 0x7f130432
 
     invoke-virtual {p1, v1}, Lcom/android/systemui/recents/tv/views/TaskCardView;->findViewById(I)Landroid/view/View;
 
@@ -57,7 +57,7 @@
 
     iput-object v1, p0, Lcom/android/systemui/recents/tv/animations/DismissAnimationsHolder;->mThumbnailView:Landroid/view/View;
 
-    const v1, 0x7f13042e
+    const v1, 0x7f130430
 
     invoke-virtual {p1, v1}, Lcom/android/systemui/recents/tv/views/TaskCardView;->findViewById(I)Landroid/view/View;
 
@@ -83,7 +83,7 @@
 
     invoke-virtual {v1, v2}, Landroid/graphics/drawable/TransitionDrawable;->setCrossFadeEnabled(Z)V
 
-    const v1, 0x7f13042f
+    const v1, 0x7f130431
 
     invoke-virtual {p1, v1}, Lcom/android/systemui/recents/tv/views/TaskCardView;->findViewById(I)Landroid/view/View;
 
@@ -97,7 +97,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f0d050b
+    const v1, 0x7f0d050e
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDimensionPixelOffset(I)I
 

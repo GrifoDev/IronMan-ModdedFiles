@@ -537,7 +537,7 @@
 
     invoke-super {p0}, Landroid/widget/LinearLayout;->onFinishInflate()V
 
-    const v0, 0x7f1304cd
+    const v0, 0x7f1304cf
 
     invoke-virtual {p0, v0}, Lcom/android/systemui/statusbar/policy/SplitClockView;->findViewById(I)Landroid/view/View;
 
@@ -547,7 +547,7 @@
 
     iput-object v0, p0, Lcom/android/systemui/statusbar/policy/SplitClockView;->mTimeView:Landroid/widget/TextClock;
 
-    const v0, 0x7f1304ce
+    const v0, 0x7f1304d0
 
     invoke-virtual {p0, v0}, Lcom/android/systemui/statusbar/policy/SplitClockView;->findViewById(I)Landroid/view/View;
 
@@ -557,7 +557,7 @@
 
     iput-object v0, p0, Lcom/android/systemui/statusbar/policy/SplitClockView;->mAmPmView:Landroid/widget/TextClock;
 
-    const v0, 0x7f1304cc
+    const v0, 0x7f1304ce
 
     invoke-virtual {p0, v0}, Lcom/android/systemui/statusbar/policy/SplitClockView;->findViewById(I)Landroid/view/View;
 

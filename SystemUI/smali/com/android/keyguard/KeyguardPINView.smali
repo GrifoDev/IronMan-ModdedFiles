@@ -297,68 +297,97 @@
 .method private verifyNDigitsPIN()V
     .locals 6
 
-    const/4 v3, 0x0
+    const/4 v4, 0x0
 
-    iget-object v1, p0, Lcom/android/keyguard/KeyguardPINView;->mContext:Landroid/content/Context;
+    iget-object v2, p0, Lcom/android/keyguard/KeyguardPINView;->mContext:Landroid/content/Context;
 
-    invoke-static {v1}, Lcom/android/keyguard/util/SettingsHelper;->getInstance(Landroid/content/Context;)Lcom/android/keyguard/util/SettingsHelper;
+    invoke-static {v2}, Lcom/android/keyguard/util/SettingsHelper;->getInstance(Landroid/content/Context;)Lcom/android/keyguard/util/SettingsHelper;
 
-    move-result-object v1
+    move-result-object v2
 
-    invoke-virtual {v1}, Lcom/android/keyguard/util/SettingsHelper;->getNDigitsPIN()I
+    invoke-virtual {v2}, Lcom/android/keyguard/util/SettingsHelper;->getNDigitsPIN()I
 
     move-result v0
 
-    sget-boolean v1, Lcom/android/keyguard/KeyguardRune;->SUPPORT_NDIGITS_PIN:Z
+    iget-object v2, p0, Lcom/android/keyguard/KeyguardPINView;->mSecurityModel:Lcom/android/keyguard/KeyguardSecurityModel;
 
-    if-eqz v1, :cond_0
+    if-eqz v2, :cond_0
 
-    if-eqz v0, :cond_0
+    iget-object v2, p0, Lcom/android/keyguard/KeyguardPINView;->mSecurityModel:Lcom/android/keyguard/KeyguardSecurityModel;
 
-    iget-object v1, p0, Lcom/android/keyguard/KeyguardPINView;->mPasswordEntry:Lcom/android/keyguard/PasswordTextView;
+    invoke-virtual {v2}, Lcom/android/keyguard/KeyguardSecurityModel;->getSecurityMode()Lcom/android/keyguard/KeyguardSecurityModel$SecurityMode;
 
-    invoke-virtual {v1}, Lcom/android/keyguard/PasswordTextView;->isEnabled()Z
+    move-result-object v2
 
-    move-result v1
+    iput-object v2, p0, Lcom/android/keyguard/KeyguardPINView;->mSecurityMode:Lcom/android/keyguard/KeyguardSecurityModel$SecurityMode;
 
-    if-eqz v1, :cond_0
+    :cond_0
+    iget-object v2, p0, Lcom/android/keyguard/KeyguardPINView;->mSecurityMode:Lcom/android/keyguard/KeyguardSecurityModel$SecurityMode;
 
-    iget-object v1, p0, Lcom/android/keyguard/KeyguardPINView;->mPasswordEntry:Lcom/android/keyguard/PasswordTextView;
+    sget-object v3, Lcom/android/keyguard/KeyguardSecurityModel$SecurityMode;->PIN:Lcom/android/keyguard/KeyguardSecurityModel$SecurityMode;
 
-    invoke-virtual {v1}, Lcom/android/keyguard/PasswordTextView;->getPasswordText()Ljava/lang/String;
+    if-ne v2, v3, :cond_2
 
-    move-result-object v1
+    const/4 v1, 0x1
 
-    invoke-virtual {v1}, Ljava/lang/String;->length()I
+    :goto_0
+    sget-boolean v2, Lcom/android/keyguard/KeyguardRune;->SUPPORT_NDIGITS_PIN:Z
 
-    move-result v1
+    if-eqz v2, :cond_1
 
-    if-ne v1, v0, :cond_0
+    if-eqz v0, :cond_1
 
-    const-string/jumbo v1, "KeyguardPINView"
+    if-eqz v1, :cond_1
 
-    const-string/jumbo v2, "verifyPassword by N digits pin option"
+    iget-object v2, p0, Lcom/android/keyguard/KeyguardPINView;->mPasswordEntry:Lcom/android/keyguard/PasswordTextView;
 
-    invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-virtual {v2}, Lcom/android/keyguard/PasswordTextView;->isEnabled()Z
 
-    invoke-virtual {p0, v3}, Lcom/android/keyguard/KeyguardPINView;->setPasswordEntryInputEnabled(Z)V
+    move-result v2
 
-    iget-object v1, p0, Lcom/android/keyguard/KeyguardPINView;->mHandler:Landroid/os/Handler;
+    if-eqz v2, :cond_1
 
-    iget-object v2, p0, Lcom/android/keyguard/KeyguardPINView;->mVerifyNDigitsPINRunnable:Ljava/lang/Runnable;
+    iget-object v2, p0, Lcom/android/keyguard/KeyguardPINView;->mPasswordEntry:Lcom/android/keyguard/PasswordTextView;
 
-    invoke-virtual {v1, v2}, Landroid/os/Handler;->removeCallbacks(Ljava/lang/Runnable;)V
+    invoke-virtual {v2}, Lcom/android/keyguard/PasswordTextView;->getPasswordText()Ljava/lang/String;
 
-    iget-object v1, p0, Lcom/android/keyguard/KeyguardPINView;->mHandler:Landroid/os/Handler;
+    move-result-object v2
 
-    iget-object v2, p0, Lcom/android/keyguard/KeyguardPINView;->mVerifyNDigitsPINRunnable:Ljava/lang/Runnable;
+    invoke-virtual {v2}, Ljava/lang/String;->length()I
+
+    move-result v2
+
+    if-ne v2, v0, :cond_1
+
+    const-string/jumbo v2, "KeyguardPINView"
+
+    const-string/jumbo v3, "verifyPassword by N digits pin option"
+
+    invoke-static {v2, v3}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    invoke-virtual {p0, v4}, Lcom/android/keyguard/KeyguardPINView;->setPasswordEntryInputEnabled(Z)V
+
+    iget-object v2, p0, Lcom/android/keyguard/KeyguardPINView;->mHandler:Landroid/os/Handler;
+
+    iget-object v3, p0, Lcom/android/keyguard/KeyguardPINView;->mVerifyNDigitsPINRunnable:Ljava/lang/Runnable;
+
+    invoke-virtual {v2, v3}, Landroid/os/Handler;->removeCallbacks(Ljava/lang/Runnable;)V
+
+    iget-object v2, p0, Lcom/android/keyguard/KeyguardPINView;->mHandler:Landroid/os/Handler;
+
+    iget-object v3, p0, Lcom/android/keyguard/KeyguardPINView;->mVerifyNDigitsPINRunnable:Ljava/lang/Runnable;
 
     const-wide/16 v4, 0xc8
 
-    invoke-virtual {v1, v2, v4, v5}, Landroid/os/Handler;->postDelayed(Ljava/lang/Runnable;J)Z
+    invoke-virtual {v2, v3, v4, v5}, Landroid/os/Handler;->postDelayed(Ljava/lang/Runnable;J)Z
 
-    :cond_0
+    :cond_1
     return-void
+
+    :cond_2
+    const/4 v1, 0x0
+
+    goto :goto_0
 .end method
 
 
@@ -897,20 +926,33 @@
 
     iget-object v1, p0, Lcom/android/keyguard/KeyguardPINView;->mOkButton:Landroid/view/View;
 
+    if-eqz v1, :cond_1
+
+    iget-object v1, p0, Lcom/android/keyguard/KeyguardPINView;->mSecurityModel:Lcom/android/keyguard/KeyguardSecurityModel;
+
     if-eqz v1, :cond_0
 
+    iget-object v1, p0, Lcom/android/keyguard/KeyguardPINView;->mSecurityModel:Lcom/android/keyguard/KeyguardSecurityModel;
+
+    invoke-virtual {v1}, Lcom/android/keyguard/KeyguardSecurityModel;->getSecurityMode()Lcom/android/keyguard/KeyguardSecurityModel$SecurityMode;
+
+    move-result-object v1
+
+    iput-object v1, p0, Lcom/android/keyguard/KeyguardPINView;->mSecurityMode:Lcom/android/keyguard/KeyguardSecurityModel$SecurityMode;
+
+    :cond_0
     iget-object v1, p0, Lcom/android/keyguard/KeyguardPINView;->mSecurityMode:Lcom/android/keyguard/KeyguardSecurityModel$SecurityMode;
 
     sget-object v2, Lcom/android/keyguard/KeyguardSecurityModel$SecurityMode;->PIN:Lcom/android/keyguard/KeyguardSecurityModel$SecurityMode;
 
-    if-ne v1, v2, :cond_1
+    if-ne v1, v2, :cond_2
 
     const/4 v0, 0x1
 
     :goto_0
     sget-boolean v1, Lcom/android/keyguard/KeyguardRune;->SUPPORT_NDIGITS_PIN:Z
 
-    if-eqz v1, :cond_2
+    if-eqz v1, :cond_3
 
     iget-object v1, p0, Lcom/android/keyguard/KeyguardPINView;->mContext:Landroid/content/Context;
 
@@ -922,9 +964,9 @@
 
     move-result v1
 
-    if-eqz v1, :cond_2
+    if-eqz v1, :cond_3
 
-    if-eqz v0, :cond_2
+    if-eqz v0, :cond_3
 
     iget-object v1, p0, Lcom/android/keyguard/KeyguardPINView;->mOkButton:Landroid/view/View;
 
@@ -940,16 +982,16 @@
 
     invoke-virtual {v1, v2}, Landroid/view/View;->setAlpha(F)V
 
-    :cond_0
+    :cond_1
     :goto_1
     return-void
 
-    :cond_1
+    :cond_2
     const/4 v0, 0x0
 
     goto :goto_0
 
-    :cond_2
+    :cond_3
     invoke-super {p0, p1}, Lcom/android/keyguard/KeyguardPinBasedInputView;->setOkButtonEnabled(Z)V
 
     goto :goto_1

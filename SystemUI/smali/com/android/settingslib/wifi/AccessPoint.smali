@@ -2060,49 +2060,13 @@
 
     move-result v8
 
-    if-nez v8, :cond_0
-
     if-eqz v6, :cond_2
 
-    const-string/jumbo v14, "cn"
+    if-eqz v11, :cond_0
 
-    invoke-static {}, Lcom/samsung/android/feature/SemCscFeature;->getInstance()Lcom/samsung/android/feature/SemCscFeature;
+    const/16 v14, 0x10
 
-    move-result-object v15
-
-    const-string/jumbo v16, "CountryISO"
-
-    invoke-virtual/range {v15 .. v16}, Lcom/samsung/android/feature/SemCscFeature;->getString(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v15
-
-    invoke-virtual {v15}, Ljava/lang/String;->toLowerCase()Ljava/lang/String;
-
-    move-result-object v15
-
-    invoke-virtual {v14, v15}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v14
-
-    if-nez v14, :cond_0
-
-    const-string/jumbo v14, "hk"
-
-    invoke-static {}, Lcom/samsung/android/feature/SemCscFeature;->getInstance()Lcom/samsung/android/feature/SemCscFeature;
-
-    move-result-object v15
-
-    const-string/jumbo v16, "CountryISO"
-
-    invoke-virtual/range {v15 .. v16}, Lcom/samsung/android/feature/SemCscFeature;->getString(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v15
-
-    invoke-virtual {v15}, Ljava/lang/String;->toLowerCase()Ljava/lang/String;
-
-    move-result-object v15
-
-    invoke-virtual {v14, v15}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v11, v14}, Landroid/net/NetworkCapabilities;->hasCapability(I)Z
 
     move-result v14
 
@@ -2154,6 +2118,50 @@
     goto :goto_1
 
     :cond_1
+    const-string/jumbo v14, "cn"
+
+    invoke-static {}, Lcom/samsung/android/feature/SemCscFeature;->getInstance()Lcom/samsung/android/feature/SemCscFeature;
+
+    move-result-object v15
+
+    const-string/jumbo v16, "CountryISO"
+
+    invoke-virtual/range {v15 .. v16}, Lcom/samsung/android/feature/SemCscFeature;->getString(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v15
+
+    invoke-virtual {v15}, Ljava/lang/String;->toLowerCase()Ljava/lang/String;
+
+    move-result-object v15
+
+    invoke-virtual {v14, v15}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v14
+
+    if-nez v14, :cond_0
+
+    const-string/jumbo v14, "hk"
+
+    invoke-static {}, Lcom/samsung/android/feature/SemCscFeature;->getInstance()Lcom/samsung/android/feature/SemCscFeature;
+
+    move-result-object v15
+
+    const-string/jumbo v16, "CountryISO"
+
+    invoke-virtual/range {v15 .. v16}, Lcom/samsung/android/feature/SemCscFeature;->getString(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v15
+
+    invoke-virtual {v15}, Ljava/lang/String;->toLowerCase()Ljava/lang/String;
+
+    move-result-object v15
+
+    invoke-virtual {v14, v15}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v14
+
+    if-nez v14, :cond_0
+
     sget v14, Lcom/android/settingslib/R$string;->wifi_connected_no_internet:I
 
     move-object/from16 v0, p0
@@ -2165,6 +2173,8 @@
     return-object v14
 
     :cond_2
+    if-nez v8, :cond_0
+
     if-eqz v7, :cond_7
 
     if-eqz v10, :cond_3

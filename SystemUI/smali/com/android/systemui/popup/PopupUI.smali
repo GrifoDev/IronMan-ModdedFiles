@@ -136,6 +136,15 @@
 
     invoke-virtual {v3, v0}, Landroid/content/IntentFilter;->addAction(Ljava/lang/String;)V
 
+    sget-boolean v0, Lcom/android/systemui/SystemUIRune;->SUPPORT_FLIGHTMODE_ENABLED_POPUP:Z
+
+    if-eqz v0, :cond_1
+
+    const-string/jumbo v0, "android.intent.action.AIRPLANE_MODE"
+
+    invoke-virtual {v3, v0}, Landroid/content/IntentFilter;->addAction(Ljava/lang/String;)V
+
+    :cond_1
     iget-object v0, p0, Lcom/android/systemui/popup/PopupUI;->mContext:Landroid/content/Context;
 
     iget-object v1, p0, Lcom/android/systemui/popup/PopupUI;->mPopupUIReceiver:Landroid/content/BroadcastReceiver;

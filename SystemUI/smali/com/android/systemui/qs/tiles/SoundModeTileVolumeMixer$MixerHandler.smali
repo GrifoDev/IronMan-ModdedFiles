@@ -62,7 +62,7 @@
     :pswitch_0
     iget-object v0, p0, Lcom/android/systemui/qs/tiles/SoundModeTileVolumeMixer$MixerHandler;->this$0:Lcom/android/systemui/qs/tiles/SoundModeTileVolumeMixer;
 
-    invoke-static {v0}, Lcom/android/systemui/qs/tiles/SoundModeTileVolumeMixer;->-get4(Lcom/android/systemui/qs/tiles/SoundModeTileVolumeMixer;)Lcom/android/systemui/qs/tiles/SoundModeTileVolumeMixer$VolumeMixerTileCallback;
+    invoke-static {v0}, Lcom/android/systemui/qs/tiles/SoundModeTileVolumeMixer;->-get5(Lcom/android/systemui/qs/tiles/SoundModeTileVolumeMixer;)Lcom/android/systemui/qs/tiles/SoundModeTileVolumeMixer$VolumeMixerTileCallback;
 
     move-result-object v0
 

@@ -55,6 +55,8 @@
 
 .field private final mInitiallyRegistContentUriList:[Landroid/net/Uri;
 
+.field private mIsBixbyAttached:Z
+
 .field private mIsNetworkRoaming:Z
 
 .field private final mRegisteredContentUriSet:Ljava/util/HashSet;
@@ -118,7 +120,15 @@
     return-void
 .end method
 
-.method static synthetic -wrap10(Lcom/sec/android/cover/monitor/CoverUpdateMonitor;Ljava/lang/String;)V
+.method static synthetic -wrap10(Lcom/sec/android/cover/monitor/CoverUpdateMonitor;)V
+    .locals 0
+
+    invoke-direct {p0}, Lcom/sec/android/cover/monitor/CoverUpdateMonitor;->handleDateFormatChanged()V
+
+    return-void
+.end method
+
+.method static synthetic -wrap11(Lcom/sec/android/cover/monitor/CoverUpdateMonitor;Ljava/lang/String;)V
     .locals 0
 
     invoke-direct {p0, p1}, Lcom/sec/android/cover/monitor/CoverUpdateMonitor;->handleDisasterViewUpdate(Ljava/lang/String;)V
@@ -126,7 +136,7 @@
     return-void
 .end method
 
-.method static synthetic -wrap11(Lcom/sec/android/cover/monitor/CoverUpdateMonitor;)V
+.method static synthetic -wrap12(Lcom/sec/android/cover/monitor/CoverUpdateMonitor;)V
     .locals 0
 
     invoke-direct {p0}, Lcom/sec/android/cover/monitor/CoverUpdateMonitor;->handleEmergencyStateChanged()V
@@ -134,7 +144,7 @@
     return-void
 .end method
 
-.method static synthetic -wrap12(Lcom/sec/android/cover/monitor/CoverUpdateMonitor;)V
+.method static synthetic -wrap13(Lcom/sec/android/cover/monitor/CoverUpdateMonitor;)V
     .locals 0
 
     invoke-direct {p0}, Lcom/sec/android/cover/monitor/CoverUpdateMonitor;->handleFloatingMsgHided()V
@@ -142,7 +152,7 @@
     return-void
 .end method
 
-.method static synthetic -wrap13(Lcom/sec/android/cover/monitor/CoverUpdateMonitor;)V
+.method static synthetic -wrap14(Lcom/sec/android/cover/monitor/CoverUpdateMonitor;)V
     .locals 0
 
     invoke-direct {p0}, Lcom/sec/android/cover/monitor/CoverUpdateMonitor;->handleFloatingMsgShowed()V
@@ -150,7 +160,7 @@
     return-void
 .end method
 
-.method static synthetic -wrap14(Lcom/sec/android/cover/monitor/CoverUpdateMonitor;)V
+.method static synthetic -wrap15(Lcom/sec/android/cover/monitor/CoverUpdateMonitor;)V
     .locals 0
 
     invoke-direct {p0}, Lcom/sec/android/cover/monitor/CoverUpdateMonitor;->handleHomeCityChanged()V
@@ -158,7 +168,7 @@
     return-void
 .end method
 
-.method static synthetic -wrap15(Lcom/sec/android/cover/monitor/CoverUpdateMonitor;Z)V
+.method static synthetic -wrap16(Lcom/sec/android/cover/monitor/CoverUpdateMonitor;Z)V
     .locals 0
 
     invoke-direct {p0, p1}, Lcom/sec/android/cover/monitor/CoverUpdateMonitor;->handleInsertSPen(Z)V
@@ -166,7 +176,7 @@
     return-void
 .end method
 
-.method static synthetic -wrap16(Lcom/sec/android/cover/monitor/CoverUpdateMonitor;)V
+.method static synthetic -wrap17(Lcom/sec/android/cover/monitor/CoverUpdateMonitor;)V
     .locals 0
 
     invoke-direct {p0}, Lcom/sec/android/cover/monitor/CoverUpdateMonitor;->handleLocaleChanged()V
@@ -174,7 +184,7 @@
     return-void
 .end method
 
-.method static synthetic -wrap17(Lcom/sec/android/cover/monitor/CoverUpdateMonitor;Ljava/lang/String;)V
+.method static synthetic -wrap18(Lcom/sec/android/cover/monitor/CoverUpdateMonitor;Ljava/lang/String;)V
     .locals 0
 
     invoke-direct {p0, p1}, Lcom/sec/android/cover/monitor/CoverUpdateMonitor;->handleOpenThemeUpdate(Ljava/lang/String;)V
@@ -182,18 +192,10 @@
     return-void
 .end method
 
-.method static synthetic -wrap18(Lcom/sec/android/cover/monitor/CoverUpdateMonitor;Ljava/lang/String;)V
-    .locals 0
-
-    invoke-direct {p0, p1}, Lcom/sec/android/cover/monitor/CoverUpdateMonitor;->handlePackageAdded(Ljava/lang/String;)V
-
-    return-void
-.end method
-
 .method static synthetic -wrap19(Lcom/sec/android/cover/monitor/CoverUpdateMonitor;Ljava/lang/String;)V
     .locals 0
 
-    invoke-direct {p0, p1}, Lcom/sec/android/cover/monitor/CoverUpdateMonitor;->handlePackageChanged(Ljava/lang/String;)V
+    invoke-direct {p0, p1}, Lcom/sec/android/cover/monitor/CoverUpdateMonitor;->handlePackageAdded(Ljava/lang/String;)V
 
     return-void
 .end method
@@ -209,12 +211,20 @@
 .method static synthetic -wrap20(Lcom/sec/android/cover/monitor/CoverUpdateMonitor;Ljava/lang/String;)V
     .locals 0
 
+    invoke-direct {p0, p1}, Lcom/sec/android/cover/monitor/CoverUpdateMonitor;->handlePackageChanged(Ljava/lang/String;)V
+
+    return-void
+.end method
+
+.method static synthetic -wrap21(Lcom/sec/android/cover/monitor/CoverUpdateMonitor;Ljava/lang/String;)V
+    .locals 0
+
     invoke-direct {p0, p1}, Lcom/sec/android/cover/monitor/CoverUpdateMonitor;->handlePackageRemoved(Ljava/lang/String;)V
 
     return-void
 .end method
 
-.method static synthetic -wrap21(Lcom/sec/android/cover/monitor/CoverUpdateMonitor;)V
+.method static synthetic -wrap22(Lcom/sec/android/cover/monitor/CoverUpdateMonitor;)V
     .locals 0
 
     invoke-direct {p0}, Lcom/sec/android/cover/monitor/CoverUpdateMonitor;->handlePickupCommonDay()V
@@ -222,7 +232,7 @@
     return-void
 .end method
 
-.method static synthetic -wrap22(Lcom/sec/android/cover/monitor/CoverUpdateMonitor;Ljava/lang/String;)V
+.method static synthetic -wrap23(Lcom/sec/android/cover/monitor/CoverUpdateMonitor;Ljava/lang/String;)V
     .locals 0
 
     invoke-direct {p0, p1}, Lcom/sec/android/cover/monitor/CoverUpdateMonitor;->handlePickupFestivalDay(Ljava/lang/String;)V
@@ -230,7 +240,7 @@
     return-void
 .end method
 
-.method static synthetic -wrap23(Lcom/sec/android/cover/monitor/CoverUpdateMonitor;Z)V
+.method static synthetic -wrap24(Lcom/sec/android/cover/monitor/CoverUpdateMonitor;Z)V
     .locals 0
 
     invoke-direct {p0, p1}, Lcom/sec/android/cover/monitor/CoverUpdateMonitor;->handlePowerConnectionUpdate(Z)V
@@ -238,7 +248,7 @@
     return-void
 .end method
 
-.method static synthetic -wrap24(Lcom/sec/android/cover/monitor/CoverUpdateMonitor;)V
+.method static synthetic -wrap25(Lcom/sec/android/cover/monitor/CoverUpdateMonitor;)V
     .locals 0
 
     invoke-direct {p0}, Lcom/sec/android/cover/monitor/CoverUpdateMonitor;->handlePowerSavingModeChanged()V
@@ -246,7 +256,7 @@
     return-void
 .end method
 
-.method static synthetic -wrap25(Lcom/sec/android/cover/monitor/CoverUpdateMonitor;Lcom/sec/android/cover/monitor/CoverUpdateMonitor$RemoteViewInfo;)V
+.method static synthetic -wrap26(Lcom/sec/android/cover/monitor/CoverUpdateMonitor;Lcom/sec/android/cover/monitor/CoverUpdateMonitor$RemoteViewInfo;)V
     .locals 0
 
     invoke-direct {p0, p1}, Lcom/sec/android/cover/monitor/CoverUpdateMonitor;->handleRemoteViewUpdated(Lcom/sec/android/cover/monitor/CoverUpdateMonitor$RemoteViewInfo;)V
@@ -254,7 +264,7 @@
     return-void
 .end method
 
-.method static synthetic -wrap26(Lcom/sec/android/cover/monitor/CoverUpdateMonitor;)V
+.method static synthetic -wrap27(Lcom/sec/android/cover/monitor/CoverUpdateMonitor;)V
     .locals 0
 
     invoke-direct {p0}, Lcom/sec/android/cover/monitor/CoverUpdateMonitor;->handleScreenTurnedOff()V
@@ -262,7 +272,7 @@
     return-void
 .end method
 
-.method static synthetic -wrap27(Lcom/sec/android/cover/monitor/CoverUpdateMonitor;)V
+.method static synthetic -wrap28(Lcom/sec/android/cover/monitor/CoverUpdateMonitor;)V
     .locals 0
 
     invoke-direct {p0}, Lcom/sec/android/cover/monitor/CoverUpdateMonitor;->handleScreenTurnedOn()V
@@ -270,7 +280,7 @@
     return-void
 .end method
 
-.method static synthetic -wrap28(Lcom/sec/android/cover/monitor/CoverUpdateMonitor;Landroid/content/Intent;)V
+.method static synthetic -wrap29(Lcom/sec/android/cover/monitor/CoverUpdateMonitor;Landroid/content/Intent;)V
     .locals 0
 
     invoke-direct {p0, p1}, Lcom/sec/android/cover/monitor/CoverUpdateMonitor;->handleSendAppOpen(Landroid/content/Intent;)V
@@ -278,7 +288,15 @@
     return-void
 .end method
 
-.method static synthetic -wrap29(Lcom/sec/android/cover/monitor/CoverUpdateMonitor;Landroid/app/PendingIntent;)V
+.method static synthetic -wrap3(Lcom/sec/android/cover/monitor/CoverUpdateMonitor;Z)V
+    .locals 0
+
+    invoke-direct {p0, p1}, Lcom/sec/android/cover/monitor/CoverUpdateMonitor;->handleBixbyViewStateChanged(Z)V
+
+    return-void
+.end method
+
+.method static synthetic -wrap30(Lcom/sec/android/cover/monitor/CoverUpdateMonitor;Landroid/app/PendingIntent;)V
     .locals 0
 
     invoke-direct {p0, p1}, Lcom/sec/android/cover/monitor/CoverUpdateMonitor;->handleSendNotiOpen(Landroid/app/PendingIntent;)V
@@ -286,15 +304,7 @@
     return-void
 .end method
 
-.method static synthetic -wrap3(Lcom/sec/android/cover/monitor/CoverUpdateMonitor;)V
-    .locals 0
-
-    invoke-direct {p0}, Lcom/sec/android/cover/monitor/CoverUpdateMonitor;->handleChangeCoverBackground()V
-
-    return-void
-.end method
-
-.method static synthetic -wrap30(Lcom/sec/android/cover/monitor/CoverUpdateMonitor;)V
+.method static synthetic -wrap31(Lcom/sec/android/cover/monitor/CoverUpdateMonitor;)V
     .locals 0
 
     invoke-direct {p0}, Lcom/sec/android/cover/monitor/CoverUpdateMonitor;->handleServiceStateChanged()V
@@ -302,7 +312,7 @@
     return-void
 .end method
 
-.method static synthetic -wrap31(Lcom/sec/android/cover/monitor/CoverUpdateMonitor;Z)V
+.method static synthetic -wrap32(Lcom/sec/android/cover/monitor/CoverUpdateMonitor;Z)V
     .locals 0
 
     invoke-direct {p0, p1}, Lcom/sec/android/cover/monitor/CoverUpdateMonitor;->handleShortcutDrag(Z)V
@@ -310,7 +320,7 @@
     return-void
 .end method
 
-.method static synthetic -wrap32(Lcom/sec/android/cover/monitor/CoverUpdateMonitor;Ljava/lang/String;)V
+.method static synthetic -wrap33(Lcom/sec/android/cover/monitor/CoverUpdateMonitor;Ljava/lang/String;)V
     .locals 0
 
     invoke-direct {p0, p1}, Lcom/sec/android/cover/monitor/CoverUpdateMonitor;->handleThemeFontUpdate(Ljava/lang/String;)V
@@ -318,7 +328,7 @@
     return-void
 .end method
 
-.method static synthetic -wrap33(Lcom/sec/android/cover/monitor/CoverUpdateMonitor;)V
+.method static synthetic -wrap34(Lcom/sec/android/cover/monitor/CoverUpdateMonitor;)V
     .locals 0
 
     invoke-direct {p0}, Lcom/sec/android/cover/monitor/CoverUpdateMonitor;->handleTimeUpdate()V
@@ -326,7 +336,7 @@
     return-void
 .end method
 
-.method static synthetic -wrap34(Lcom/sec/android/cover/monitor/CoverUpdateMonitor;II)V
+.method static synthetic -wrap35(Lcom/sec/android/cover/monitor/CoverUpdateMonitor;II)V
     .locals 0
 
     invoke-direct {p0, p1, p2}, Lcom/sec/android/cover/monitor/CoverUpdateMonitor;->handleUserSwitched(II)V
@@ -334,7 +344,7 @@
     return-void
 .end method
 
-.method static synthetic -wrap35(Lcom/sec/android/cover/monitor/CoverUpdateMonitor;II)V
+.method static synthetic -wrap36(Lcom/sec/android/cover/monitor/CoverUpdateMonitor;II)V
     .locals 0
 
     invoke-direct {p0, p1, p2}, Lcom/sec/android/cover/monitor/CoverUpdateMonitor;->handleVolumeChanged(II)V
@@ -345,12 +355,20 @@
 .method static synthetic -wrap4(Lcom/sec/android/cover/monitor/CoverUpdateMonitor;)V
     .locals 0
 
+    invoke-direct {p0}, Lcom/sec/android/cover/monitor/CoverUpdateMonitor;->handleChangeCoverBackground()V
+
+    return-void
+.end method
+
+.method static synthetic -wrap5(Lcom/sec/android/cover/monitor/CoverUpdateMonitor;)V
+    .locals 0
+
     invoke-direct {p0}, Lcom/sec/android/cover/monitor/CoverUpdateMonitor;->handleConfigurationChanged()V
 
     return-void
 .end method
 
-.method static synthetic -wrap5(Lcom/sec/android/cover/monitor/CoverUpdateMonitor;Landroid/net/Uri;)V
+.method static synthetic -wrap6(Lcom/sec/android/cover/monitor/CoverUpdateMonitor;Landroid/net/Uri;)V
     .locals 0
 
     invoke-direct {p0, p1}, Lcom/sec/android/cover/monitor/CoverUpdateMonitor;->handleContentChanged(Landroid/net/Uri;)V
@@ -358,7 +376,7 @@
     return-void
 .end method
 
-.method static synthetic -wrap6(Lcom/sec/android/cover/monitor/CoverUpdateMonitor;Z)V
+.method static synthetic -wrap7(Lcom/sec/android/cover/monitor/CoverUpdateMonitor;Z)V
     .locals 0
 
     invoke-direct {p0, p1}, Lcom/sec/android/cover/monitor/CoverUpdateMonitor;->handleCoverAppCovered(Z)V
@@ -366,7 +384,7 @@
     return-void
 .end method
 
-.method static synthetic -wrap7(Lcom/sec/android/cover/monitor/CoverUpdateMonitor;I)V
+.method static synthetic -wrap8(Lcom/sec/android/cover/monitor/CoverUpdateMonitor;I)V
     .locals 0
 
     invoke-direct {p0, p1}, Lcom/sec/android/cover/monitor/CoverUpdateMonitor;->handleCoverDelayedTimout(I)V
@@ -374,18 +392,10 @@
     return-void
 .end method
 
-.method static synthetic -wrap8(Lcom/sec/android/cover/monitor/CoverUpdateMonitor;Lcom/samsung/android/cover/CoverState;)V
+.method static synthetic -wrap9(Lcom/sec/android/cover/monitor/CoverUpdateMonitor;Lcom/samsung/android/cover/CoverState;)V
     .locals 0
 
     invoke-direct {p0, p1}, Lcom/sec/android/cover/monitor/CoverUpdateMonitor;->handleCoverStateChanged(Lcom/samsung/android/cover/CoverState;)V
-
-    return-void
-.end method
-
-.method static synthetic -wrap9(Lcom/sec/android/cover/monitor/CoverUpdateMonitor;)V
-    .locals 0
-
-    invoke-direct {p0}, Lcom/sec/android/cover/monitor/CoverUpdateMonitor;->handleDateFormatChanged()V
 
     return-void
 .end method
@@ -417,6 +427,8 @@
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    iput-boolean v6, p0, Lcom/sec/android/cover/monitor/CoverUpdateMonitor;->mIsBixbyAttached:Z
+
     invoke-static {}, Lcom/google/android/collect/Lists;->newArrayList()Ljava/util/ArrayList;
 
     move-result-object v5
@@ -439,7 +451,7 @@
 
     iput-object v5, p0, Lcom/sec/android/cover/monitor/CoverUpdateMonitor;->mContentObserver:Landroid/database/ContentObserver;
 
-    const/16 v5, 0x17
+    const/16 v5, 0x18
 
     new-array v5, v5, [Ljava/lang/String;
 
@@ -568,6 +580,12 @@
     const-string/jumbo v7, "android.intent.action.SERVICE_STATE"
 
     const/16 v8, 0x16
+
+    aput-object v7, v5, v8
+
+    const-string/jumbo v7, "com.samsung.android.bixby.intent.action.CLIENT_VIEW_STATE_UPDATED"
+
+    const/16 v8, 0x17
 
     aput-object v7, v5, v8
 
@@ -1104,6 +1122,92 @@
     monitor-exit v4
 
     throw v3
+.end method
+
+.method private declared-synchronized handleBixbyViewStateChanged(Z)V
+    .locals 4
+
+    monitor-enter p0
+
+    :try_start_0
+    iget-boolean v2, p0, Lcom/sec/android/cover/monitor/CoverUpdateMonitor;->mIsBixbyAttached:Z
+
+    if-eq v2, p1, :cond_2
+
+    iput-boolean p1, p0, Lcom/sec/android/cover/monitor/CoverUpdateMonitor;->mIsBixbyAttached:Z
+
+    iget-object v3, p0, Lcom/sec/android/cover/monitor/CoverUpdateMonitor;->mCallbacks:Ljava/util/ArrayList;
+
+    monitor-enter v3
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_1
+
+    const/4 v1, 0x0
+
+    :goto_0
+    :try_start_1
+    iget-object v2, p0, Lcom/sec/android/cover/monitor/CoverUpdateMonitor;->mCallbacks:Ljava/util/ArrayList;
+
+    invoke-virtual {v2}, Ljava/util/ArrayList;->size()I
+
+    move-result v2
+
+    if-ge v1, v2, :cond_1
+
+    iget-object v2, p0, Lcom/sec/android/cover/monitor/CoverUpdateMonitor;->mCallbacks:Ljava/util/ArrayList;
+
+    invoke-virtual {v2, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+
+    move-result-object v2
+
+    check-cast v2, Ljava/lang/ref/WeakReference;
+
+    invoke-virtual {v2}, Ljava/lang/ref/WeakReference;->get()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lcom/sec/android/cover/monitor/CoverUpdateMonitorCallback;
+
+    if-eqz v0, :cond_0
+
+    iget-boolean v2, p0, Lcom/sec/android/cover/monitor/CoverUpdateMonitor;->mIsBixbyAttached:Z
+
+    invoke-virtual {v0, v2}, Lcom/sec/android/cover/monitor/CoverUpdateMonitorCallback;->onBixbyViewStateChanged(Z)V
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+
+    :cond_0
+    add-int/lit8 v1, v1, 0x1
+
+    goto :goto_0
+
+    :cond_1
+    :try_start_2
+    monitor-exit v3
+    :try_end_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_1
+
+    :cond_2
+    monitor-exit p0
+
+    return-void
+
+    :catchall_0
+    move-exception v2
+
+    :try_start_3
+    monitor-exit v3
+
+    throw v2
+    :try_end_3
+    .catchall {:try_start_3 .. :try_end_3} :catchall_1
+
+    :catchall_1
+    move-exception v2
+
+    monitor-exit p0
+
+    throw v2
 .end method
 
 .method private handleChangeCoverBackground()V

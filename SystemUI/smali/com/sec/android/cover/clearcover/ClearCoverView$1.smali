@@ -31,6 +31,61 @@
 
 
 # virtual methods
+.method public onBixbyViewStateChanged(Z)V
+    .locals 3
+
+    iget-object v0, p0, Lcom/sec/android/cover/clearcover/ClearCoverView$1;->this$0:Lcom/sec/android/cover/clearcover/ClearCoverView;
+
+    invoke-virtual {v0}, Lcom/sec/android/cover/clearcover/ClearCoverView;->isCoverOpen()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    return-void
+
+    :cond_0
+    invoke-static {}, Lcom/sec/android/cover/clearcover/ClearCoverView;->-get0()Ljava/lang/String;
+
+    move-result-object v0
+
+    new-instance v1, Ljava/lang/StringBuilder;
+
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string/jumbo v2, "onBixbyViewStateChanged() "
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    if-eqz p1, :cond_1
+
+    iget-object v0, p0, Lcom/sec/android/cover/clearcover/ClearCoverView$1;->this$0:Lcom/sec/android/cover/clearcover/ClearCoverView;
+
+    invoke-static {v0}, Lcom/sec/android/cover/clearcover/ClearCoverView;->-wrap0(Lcom/sec/android/cover/clearcover/ClearCoverView;)V
+
+    :goto_0
+    return-void
+
+    :cond_1
+    iget-object v0, p0, Lcom/sec/android/cover/clearcover/ClearCoverView$1;->this$0:Lcom/sec/android/cover/clearcover/ClearCoverView;
+
+    invoke-static {v0}, Lcom/sec/android/cover/clearcover/ClearCoverView;->-wrap1(Lcom/sec/android/cover/clearcover/ClearCoverView;)V
+
+    goto :goto_0
+.end method
+
 .method public onCoverAppCovered(Z)V
     .locals 1
 

@@ -228,7 +228,7 @@
 
     iget-object v0, p0, Lcom/android/systemui/qs/external/CustomTile;->mContext:Landroid/content/Context;
 
-    const v1, 0x7f0f0481
+    const v1, 0x7f0f0482
 
     invoke-virtual {v0, v1}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -242,7 +242,7 @@
 
     iget-object v0, p0, Lcom/android/systemui/qs/external/CustomTile;->mContext:Landroid/content/Context;
 
-    const v1, 0x7f0f0482
+    const v1, 0x7f0f0483
 
     invoke-virtual {v0, v1}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -1607,7 +1607,7 @@
 
     move-result-object v6
 
-    const v7, 0x7f0d026a
+    const v7, 0x7f0d026c
 
     invoke-virtual {v6, v7}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -1639,7 +1639,7 @@
 
     move-result-object v7
 
-    const v8, 0x7f0d04c2
+    const v8, 0x7f0d04c4
 
     invoke-virtual {v7, v8}, Landroid/content/res/Resources;->getFloat(I)F
 

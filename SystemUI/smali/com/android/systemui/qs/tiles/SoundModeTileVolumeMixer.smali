@@ -7,6 +7,7 @@
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
         Lcom/android/systemui/qs/tiles/SoundModeTileVolumeMixer$1;,
+        Lcom/android/systemui/qs/tiles/SoundModeTileVolumeMixer$2;,
         Lcom/android/systemui/qs/tiles/SoundModeTileVolumeMixer$MixerHandler;,
         Lcom/android/systemui/qs/tiles/SoundModeTileVolumeMixer$SemDisplayVolumeMixerListener;,
         Lcom/android/systemui/qs/tiles/SoundModeTileVolumeMixer$VolumeMixerBarCallback;,
@@ -78,6 +79,8 @@
 
 .field private final mVolumeMixerCallback:Lcom/android/systemui/qs/tiles/SoundModeTileVolumeMixer$VolumeMixerBarCallback;
 
+.field private mVolumeMixerReceiver:Landroid/content/BroadcastReceiver;
+
 .field private mVolumeMixerTileCallback:Lcom/android/systemui/qs/tiles/SoundModeTileVolumeMixer$VolumeMixerTileCallback;
 
 .field private mZenMode:I
@@ -108,7 +111,15 @@
     return-object v0
 .end method
 
-.method static synthetic -get3(Lcom/android/systemui/qs/tiles/SoundModeTileVolumeMixer;)Z
+.method static synthetic -get3(Lcom/android/systemui/qs/tiles/SoundModeTileVolumeMixer;)Landroid/app/NotificationManager;
+    .locals 1
+
+    iget-object v0, p0, Lcom/android/systemui/qs/tiles/SoundModeTileVolumeMixer;->mNotificationManager:Landroid/app/NotificationManager;
+
+    return-object v0
+.end method
+
+.method static synthetic -get4(Lcom/android/systemui/qs/tiles/SoundModeTileVolumeMixer;)Z
     .locals 1
 
     iget-boolean v0, p0, Lcom/android/systemui/qs/tiles/SoundModeTileVolumeMixer;->mSmartViewisMute:Z
@@ -116,7 +127,7 @@
     return v0
 .end method
 
-.method static synthetic -get4(Lcom/android/systemui/qs/tiles/SoundModeTileVolumeMixer;)Lcom/android/systemui/qs/tiles/SoundModeTileVolumeMixer$VolumeMixerTileCallback;
+.method static synthetic -get5(Lcom/android/systemui/qs/tiles/SoundModeTileVolumeMixer;)Lcom/android/systemui/qs/tiles/SoundModeTileVolumeMixer$VolumeMixerTileCallback;
     .locals 1
 
     iget-object v0, p0, Lcom/android/systemui/qs/tiles/SoundModeTileVolumeMixer;->mVolumeMixerTileCallback:Lcom/android/systemui/qs/tiles/SoundModeTileVolumeMixer$VolumeMixerTileCallback;
@@ -124,7 +135,7 @@
     return-object v0
 .end method
 
-.method static synthetic -get5(Lcom/android/systemui/qs/tiles/SoundModeTileVolumeMixer;)I
+.method static synthetic -get6(Lcom/android/systemui/qs/tiles/SoundModeTileVolumeMixer;)I
     .locals 1
 
     iget v0, p0, Lcom/android/systemui/qs/tiles/SoundModeTileVolumeMixer;->mZenMode:I
@@ -152,6 +163,14 @@
     .locals 0
 
     iput-boolean p1, p0, Lcom/android/systemui/qs/tiles/SoundModeTileVolumeMixer;->mSmartViewisMute:Z
+
+    return p1
+.end method
+
+.method static synthetic -set3(Lcom/android/systemui/qs/tiles/SoundModeTileVolumeMixer;I)I
+    .locals 0
+
+    iput p1, p0, Lcom/android/systemui/qs/tiles/SoundModeTileVolumeMixer;->mZenMode:I
 
     return p1
 .end method
@@ -293,6 +312,12 @@
 
     iput-boolean v1, p0, Lcom/android/systemui/qs/tiles/SoundModeTileVolumeMixer;->mVoiceCapable:Z
 
+    new-instance v0, Lcom/android/systemui/qs/tiles/SoundModeTileVolumeMixer$2;
+
+    invoke-direct {v0, p0}, Lcom/android/systemui/qs/tiles/SoundModeTileVolumeMixer$2;-><init>(Lcom/android/systemui/qs/tiles/SoundModeTileVolumeMixer;)V
+
+    iput-object v0, p0, Lcom/android/systemui/qs/tiles/SoundModeTileVolumeMixer;->mVolumeMixerReceiver:Landroid/content/BroadcastReceiver;
+
     return-void
 .end method
 
@@ -375,20 +400,20 @@
 .end method
 
 .method private initRow(Lcom/android/systemui/qs/tiles/SoundModeTileVolumeMixer$VolumeRow;Lcom/android/systemui/qs/tiles/SoundModeTileVolumeBar;I)V
-    .locals 9
+    .locals 10
     .annotation build Landroid/annotation/SuppressLint;
         value = {
             "InflateParams"
         }
     .end annotation
 
-    const/16 v8, 0x64
+    const/16 v9, 0x64
 
-    const/16 v7, 0xa
+    const/16 v8, 0xa
 
-    const/4 v0, 0x1
+    const/4 v1, 0x1
 
-    const/4 v5, 0x0
+    const/4 v6, 0x0
 
     invoke-static {p1, p3}, Lcom/android/systemui/qs/tiles/SoundModeTileVolumeMixer$VolumeRow;->-set2(Lcom/android/systemui/qs/tiles/SoundModeTileVolumeMixer$VolumeRow;I)I
 
@@ -396,162 +421,165 @@
 
     invoke-static {p1}, Lcom/android/systemui/qs/tiles/SoundModeTileVolumeMixer$VolumeRow;->-get0(Lcom/android/systemui/qs/tiles/SoundModeTileVolumeMixer$VolumeRow;)Lcom/android/systemui/qs/tiles/SoundModeTileVolumeBar;
 
-    move-result-object v4
+    move-result-object v5
 
-    invoke-virtual {v4, p1}, Lcom/android/systemui/qs/tiles/SoundModeTileVolumeBar;->setTag(Ljava/lang/Object;)V
-
-    invoke-static {p1}, Lcom/android/systemui/qs/tiles/SoundModeTileVolumeMixer$VolumeRow;->-get0(Lcom/android/systemui/qs/tiles/SoundModeTileVolumeMixer$VolumeRow;)Lcom/android/systemui/qs/tiles/SoundModeTileVolumeBar;
-
-    move-result-object v4
-
-    const v6, 0x7f1303d9
-
-    invoke-virtual {v4, v6}, Lcom/android/systemui/qs/tiles/SoundModeTileVolumeBar;->findViewById(I)Landroid/view/View;
-
-    move-result-object v4
-
-    check-cast v4, Landroid/widget/TextView;
-
-    invoke-static {p1, v4}, Lcom/android/systemui/qs/tiles/SoundModeTileVolumeMixer$VolumeRow;->-set3(Lcom/android/systemui/qs/tiles/SoundModeTileVolumeMixer$VolumeRow;Landroid/widget/TextView;)Landroid/widget/TextView;
+    invoke-virtual {v5, p1}, Lcom/android/systemui/qs/tiles/SoundModeTileVolumeBar;->setTag(Ljava/lang/Object;)V
 
     invoke-static {p1}, Lcom/android/systemui/qs/tiles/SoundModeTileVolumeMixer$VolumeRow;->-get0(Lcom/android/systemui/qs/tiles/SoundModeTileVolumeMixer$VolumeRow;)Lcom/android/systemui/qs/tiles/SoundModeTileVolumeBar;
 
-    move-result-object v4
+    move-result-object v5
 
-    const v6, 0x7f1303db
+    const v7, 0x7f1303d9
 
-    invoke-virtual {v4, v6}, Lcom/android/systemui/qs/tiles/SoundModeTileVolumeBar;->findViewById(I)Landroid/view/View;
+    invoke-virtual {v5, v7}, Lcom/android/systemui/qs/tiles/SoundModeTileVolumeBar;->findViewById(I)Landroid/view/View;
 
-    move-result-object v4
+    move-result-object v5
 
-    check-cast v4, Landroid/widget/SeekBar;
+    check-cast v5, Landroid/widget/TextView;
 
-    invoke-static {p1, v4}, Lcom/android/systemui/qs/tiles/SoundModeTileVolumeMixer$VolumeRow;->-set1(Lcom/android/systemui/qs/tiles/SoundModeTileVolumeMixer$VolumeRow;Landroid/widget/SeekBar;)Landroid/widget/SeekBar;
+    invoke-static {p1, v5}, Lcom/android/systemui/qs/tiles/SoundModeTileVolumeMixer$VolumeRow;->-set3(Lcom/android/systemui/qs/tiles/SoundModeTileVolumeMixer$VolumeRow;Landroid/widget/TextView;)Landroid/widget/TextView;
+
+    invoke-static {p1}, Lcom/android/systemui/qs/tiles/SoundModeTileVolumeMixer$VolumeRow;->-get0(Lcom/android/systemui/qs/tiles/SoundModeTileVolumeMixer$VolumeRow;)Lcom/android/systemui/qs/tiles/SoundModeTileVolumeBar;
+
+    move-result-object v5
+
+    const v7, 0x7f1303db
+
+    invoke-virtual {v5, v7}, Lcom/android/systemui/qs/tiles/SoundModeTileVolumeBar;->findViewById(I)Landroid/view/View;
+
+    move-result-object v5
+
+    check-cast v5, Landroid/widget/SeekBar;
+
+    invoke-static {p1, v5}, Lcom/android/systemui/qs/tiles/SoundModeTileVolumeMixer$VolumeRow;->-set1(Lcom/android/systemui/qs/tiles/SoundModeTileVolumeMixer$VolumeRow;Landroid/widget/SeekBar;)Landroid/widget/SeekBar;
 
     invoke-static {p1}, Lcom/android/systemui/qs/tiles/SoundModeTileVolumeMixer$VolumeRow;->-get2(Lcom/android/systemui/qs/tiles/SoundModeTileVolumeMixer$VolumeRow;)I
 
-    move-result v4
+    move-result v5
 
-    if-ne v4, v7, :cond_6
-
-    invoke-static {p1}, Lcom/android/systemui/qs/tiles/SoundModeTileVolumeMixer$VolumeRow;->-get1(Lcom/android/systemui/qs/tiles/SoundModeTileVolumeMixer$VolumeRow;)Landroid/widget/SeekBar;
-
-    move-result-object v4
-
-    invoke-virtual {v4, v5}, Landroid/widget/SeekBar;->setMuteAnimation(Z)V
+    if-ne v5, v8, :cond_6
 
     invoke-static {p1}, Lcom/android/systemui/qs/tiles/SoundModeTileVolumeMixer$VolumeRow;->-get1(Lcom/android/systemui/qs/tiles/SoundModeTileVolumeMixer$VolumeRow;)Landroid/widget/SeekBar;
 
-    move-result-object v4
+    move-result-object v5
 
-    invoke-virtual {v4, v5}, Landroid/widget/SeekBar;->semSetFluidEnabled(Z)V
-
-    invoke-static {p1}, Lcom/android/systemui/qs/tiles/SoundModeTileVolumeMixer$VolumeRow;->-get1(Lcom/android/systemui/qs/tiles/SoundModeTileVolumeMixer$VolumeRow;)Landroid/widget/SeekBar;
-
-    move-result-object v4
-
-    invoke-virtual {v4, v0}, Landroid/widget/SeekBar;->setTouchDisabled(Z)V
+    invoke-virtual {v5, v6}, Landroid/widget/SeekBar;->setMuteAnimation(Z)V
 
     invoke-static {p1}, Lcom/android/systemui/qs/tiles/SoundModeTileVolumeMixer$VolumeRow;->-get1(Lcom/android/systemui/qs/tiles/SoundModeTileVolumeMixer$VolumeRow;)Landroid/widget/SeekBar;
 
-    move-result-object v4
+    move-result-object v5
 
-    new-instance v6, Lcom/android/systemui/qs/tiles/SoundModeTileVolumeMixer$2;
+    invoke-virtual {v5, v6}, Landroid/widget/SeekBar;->semSetFluidEnabled(Z)V
 
-    invoke-direct {v6, p0, p1}, Lcom/android/systemui/qs/tiles/SoundModeTileVolumeMixer$2;-><init>(Lcom/android/systemui/qs/tiles/SoundModeTileVolumeMixer;Lcom/android/systemui/qs/tiles/SoundModeTileVolumeMixer$VolumeRow;)V
+    invoke-static {p1}, Lcom/android/systemui/qs/tiles/SoundModeTileVolumeMixer$VolumeRow;->-get1(Lcom/android/systemui/qs/tiles/SoundModeTileVolumeMixer$VolumeRow;)Landroid/widget/SeekBar;
 
-    invoke-virtual {v4, v6}, Landroid/widget/SeekBar;->setOnTouchListener(Landroid/view/View$OnTouchListener;)V
+    move-result-object v5
+
+    invoke-virtual {v5, v1}, Landroid/widget/SeekBar;->setTouchDisabled(Z)V
+
+    invoke-static {p1}, Lcom/android/systemui/qs/tiles/SoundModeTileVolumeMixer$VolumeRow;->-get1(Lcom/android/systemui/qs/tiles/SoundModeTileVolumeMixer$VolumeRow;)Landroid/widget/SeekBar;
+
+    move-result-object v5
+
+    new-instance v7, Lcom/android/systemui/qs/tiles/SoundModeTileVolumeMixer$3;
+
+    invoke-direct {v7, p0, p1}, Lcom/android/systemui/qs/tiles/SoundModeTileVolumeMixer$3;-><init>(Lcom/android/systemui/qs/tiles/SoundModeTileVolumeMixer;Lcom/android/systemui/qs/tiles/SoundModeTileVolumeMixer$VolumeRow;)V
+
+    invoke-virtual {v5, v7}, Landroid/widget/SeekBar;->setOnTouchListener(Landroid/view/View$OnTouchListener;)V
 
     :goto_0
     invoke-static {p1}, Lcom/android/systemui/qs/tiles/SoundModeTileVolumeMixer$VolumeRow;->-get1(Lcom/android/systemui/qs/tiles/SoundModeTileVolumeMixer$VolumeRow;)Landroid/widget/SeekBar;
 
-    move-result-object v4
+    move-result-object v5
 
-    invoke-virtual {v4, v5}, Landroid/widget/SeekBar;->semSetMode(I)V
+    invoke-virtual {v5, v6}, Landroid/widget/SeekBar;->semSetMode(I)V
 
-    const/4 v1, 0x0
+    const/4 v2, 0x0
 
     invoke-static {p1}, Lcom/android/systemui/qs/tiles/SoundModeTileVolumeMixer$VolumeRow;->-get2(Lcom/android/systemui/qs/tiles/SoundModeTileVolumeMixer$VolumeRow;)I
 
-    move-result v4
+    move-result v5
 
-    if-ne v4, v7, :cond_8
+    if-ne v5, v8, :cond_8
 
-    iget-object v4, p0, Lcom/android/systemui/qs/tiles/SoundModeTileVolumeMixer;->mDisplayManager:Landroid/hardware/display/DisplayManager;
+    iget-object v5, p0, Lcom/android/systemui/qs/tiles/SoundModeTileVolumeMixer;->mDisplayManager:Landroid/hardware/display/DisplayManager;
 
-    if-eqz v4, :cond_7
+    if-eqz v5, :cond_7
 
-    sget-boolean v4, Lcom/android/systemui/volume/VolumeDialogController;->mIsDLNAStatus:Z
+    sget-boolean v5, Lcom/android/systemui/volume/VolumeDialogController;->mIsDLNAStatus:Z
 
-    if-nez v4, :cond_0
+    if-nez v5, :cond_0
 
-    sget-boolean v4, Lcom/android/systemui/volume/VolumeDialogController;->mIsSupportTvVolumeControl:Z
+    sget-boolean v5, Lcom/android/systemui/volume/VolumeDialogController;->mIsSupportTvVolumeControl:Z
 
-    if-eqz v4, :cond_1
+    if-eqz v5, :cond_1
 
     :cond_0
-    iget-object v4, p0, Lcom/android/systemui/qs/tiles/SoundModeTileVolumeMixer;->mDisplayManager:Landroid/hardware/display/DisplayManager;
+    :try_start_0
+    iget-object v5, p0, Lcom/android/systemui/qs/tiles/SoundModeTileVolumeMixer;->mDisplayManager:Landroid/hardware/display/DisplayManager;
 
-    const-string/jumbo v6, "mivo"
+    const-string/jumbo v7, "mivo"
 
-    invoke-virtual {v4, v6}, Landroid/hardware/display/DisplayManager;->semGetWifiDisplayConfiguration(Ljava/lang/String;)Ljava/lang/Object;
+    invoke-virtual {v5, v7}, Landroid/hardware/display/DisplayManager;->semGetWifiDisplayConfiguration(Ljava/lang/String;)Ljava/lang/Object;
 
-    move-result-object v4
+    move-result-object v5
 
-    check-cast v4, Ljava/lang/Integer;
+    check-cast v5, Ljava/lang/Integer;
 
-    invoke-virtual {v4}, Ljava/lang/Integer;->intValue()I
+    invoke-virtual {v5}, Ljava/lang/Integer;->intValue()I
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    move-result v1
+    move-result v2
 
     :cond_1
     :goto_1
     invoke-static {p1}, Lcom/android/systemui/qs/tiles/SoundModeTileVolumeMixer$VolumeRow;->-get1(Lcom/android/systemui/qs/tiles/SoundModeTileVolumeMixer$VolumeRow;)Landroid/widget/SeekBar;
 
-    move-result-object v4
+    move-result-object v5
 
-    invoke-virtual {v4, v1}, Landroid/widget/SeekBar;->setMax(I)V
+    invoke-virtual {v5, v2}, Landroid/widget/SeekBar;->setMax(I)V
 
     :cond_2
     :goto_2
     invoke-static {p1}, Lcom/android/systemui/qs/tiles/SoundModeTileVolumeMixer$VolumeRow;->-get2(Lcom/android/systemui/qs/tiles/SoundModeTileVolumeMixer$VolumeRow;)I
 
-    move-result v4
+    move-result v5
 
-    if-eqz v4, :cond_3
+    if-eqz v5, :cond_3
 
     invoke-static {p1}, Lcom/android/systemui/qs/tiles/SoundModeTileVolumeMixer$VolumeRow;->-get2(Lcom/android/systemui/qs/tiles/SoundModeTileVolumeMixer$VolumeRow;)I
 
-    move-result v4
+    move-result v5
 
-    const/4 v6, 0x6
+    const/4 v7, 0x6
 
-    if-ne v4, v6, :cond_a
+    if-ne v5, v7, :cond_a
 
     :cond_3
     :goto_3
-    if-eqz v0, :cond_b
+    if-eqz v1, :cond_b
 
-    add-int/lit8 v4, v1, 0x1
+    add-int/lit8 v5, v2, 0x1
 
-    mul-int/lit8 v2, v4, 0x64
+    mul-int/lit8 v3, v5, 0x64
 
     :goto_4
     invoke-static {p1}, Lcom/android/systemui/qs/tiles/SoundModeTileVolumeMixer$VolumeRow;->-get1(Lcom/android/systemui/qs/tiles/SoundModeTileVolumeMixer$VolumeRow;)Landroid/widget/SeekBar;
 
-    move-result-object v4
+    move-result-object v5
 
-    invoke-virtual {v4, v2}, Landroid/widget/SeekBar;->setMax(I)V
+    invoke-virtual {v5, v3}, Landroid/widget/SeekBar;->setMax(I)V
 
-    const/4 v3, 0x0
+    const/4 v4, 0x0
 
-    if-eqz v0, :cond_c
+    if-eqz v1, :cond_c
 
     invoke-static {p1}, Lcom/android/systemui/qs/tiles/SoundModeTileVolumeMixer$VolumeRow;->-get1(Lcom/android/systemui/qs/tiles/SoundModeTileVolumeMixer$VolumeRow;)Landroid/widget/SeekBar;
 
-    move-result-object v4
+    move-result-object v5
 
-    invoke-virtual {v4, v8}, Landroid/widget/SeekBar;->semSetMin(I)V
+    invoke-virtual {v5, v9}, Landroid/widget/SeekBar;->semSetMin(I)V
 
     :cond_4
     :goto_5
@@ -559,33 +587,33 @@
 
     invoke-static {p1}, Lcom/android/systemui/qs/tiles/SoundModeTileVolumeMixer$VolumeRow;->-get3(Lcom/android/systemui/qs/tiles/SoundModeTileVolumeMixer$VolumeRow;)Landroid/widget/TextView;
 
-    move-result-object v4
+    move-result-object v5
 
-    if-eqz v4, :cond_5
-
-    invoke-static {p1}, Lcom/android/systemui/qs/tiles/SoundModeTileVolumeMixer$VolumeRow;->-get3(Lcom/android/systemui/qs/tiles/SoundModeTileVolumeMixer$VolumeRow;)Landroid/widget/TextView;
-
-    move-result-object v4
-
-    invoke-virtual {v4}, Landroid/widget/TextView;->getText()Ljava/lang/CharSequence;
-
-    move-result-object v4
-
-    invoke-static {v4}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
-
-    move-result v4
-
-    if-eqz v4, :cond_5
+    if-eqz v5, :cond_5
 
     invoke-static {p1}, Lcom/android/systemui/qs/tiles/SoundModeTileVolumeMixer$VolumeRow;->-get3(Lcom/android/systemui/qs/tiles/SoundModeTileVolumeMixer$VolumeRow;)Landroid/widget/TextView;
 
-    move-result-object v4
+    move-result-object v5
 
-    sget-object v5, Lcom/android/systemui/qs/tiles/SoundModeTileVolumeMixer;->STREAM_TITLES:[I
+    invoke-virtual {v5}, Landroid/widget/TextView;->getText()Ljava/lang/CharSequence;
 
-    aget v5, v5, p3
+    move-result-object v5
 
-    invoke-virtual {v4, v5}, Landroid/widget/TextView;->setText(I)V
+    invoke-static {v5}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
+
+    move-result v5
+
+    if-eqz v5, :cond_5
+
+    invoke-static {p1}, Lcom/android/systemui/qs/tiles/SoundModeTileVolumeMixer$VolumeRow;->-get3(Lcom/android/systemui/qs/tiles/SoundModeTileVolumeMixer$VolumeRow;)Landroid/widget/TextView;
+
+    move-result-object v5
+
+    sget-object v6, Lcom/android/systemui/qs/tiles/SoundModeTileVolumeMixer;->STREAM_TITLES:[I
+
+    aget v6, v6, p3
+
+    invoke-virtual {v5, v6}, Landroid/widget/TextView;->setText(I)V
 
     :cond_5
     return-void
@@ -593,113 +621,130 @@
     :cond_6
     invoke-static {p1}, Lcom/android/systemui/qs/tiles/SoundModeTileVolumeMixer$VolumeRow;->-get1(Lcom/android/systemui/qs/tiles/SoundModeTileVolumeMixer$VolumeRow;)Landroid/widget/SeekBar;
 
-    move-result-object v4
+    move-result-object v5
 
-    invoke-virtual {v4, v0}, Landroid/widget/SeekBar;->setMuteAnimation(Z)V
+    invoke-virtual {v5, v1}, Landroid/widget/SeekBar;->setMuteAnimation(Z)V
 
     invoke-static {p1}, Lcom/android/systemui/qs/tiles/SoundModeTileVolumeMixer$VolumeRow;->-get1(Lcom/android/systemui/qs/tiles/SoundModeTileVolumeMixer$VolumeRow;)Landroid/widget/SeekBar;
 
-    move-result-object v4
+    move-result-object v5
 
-    invoke-virtual {v4, v0}, Landroid/widget/SeekBar;->semSetFluidEnabled(Z)V
+    invoke-virtual {v5, v1}, Landroid/widget/SeekBar;->semSetFluidEnabled(Z)V
 
     goto/16 :goto_0
 
+    :catch_0
+    move-exception v0
+
+    const/4 v2, 0x0
+
+    goto :goto_1
+
     :cond_7
-    const/4 v1, 0x0
+    const/4 v2, 0x0
 
     goto :goto_1
 
     :cond_8
     invoke-static {p1}, Lcom/android/systemui/qs/tiles/SoundModeTileVolumeMixer$VolumeRow;->-get2(Lcom/android/systemui/qs/tiles/SoundModeTileVolumeMixer$VolumeRow;)I
 
-    move-result v4
+    move-result v5
 
-    const/16 v6, 0xb
+    const/16 v7, 0xb
 
-    if-ne v4, v6, :cond_9
+    if-ne v5, v7, :cond_9
 
-    iget-object v4, p0, Lcom/android/systemui/qs/tiles/SoundModeTileVolumeMixer;->mAudioManager:Landroid/media/AudioManager;
+    iget-object v5, p0, Lcom/android/systemui/qs/tiles/SoundModeTileVolumeMixer;->mAudioManager:Landroid/media/AudioManager;
 
-    const/4 v6, 0x3
+    const/4 v7, 0x3
 
-    invoke-virtual {v4, v6}, Landroid/media/AudioManager;->getStreamMaxVolume(I)I
+    invoke-virtual {v5, v7}, Landroid/media/AudioManager;->getStreamMaxVolume(I)I
 
-    move-result v1
+    move-result v2
 
     goto :goto_2
 
     :cond_9
     invoke-static {p1}, Lcom/android/systemui/qs/tiles/SoundModeTileVolumeMixer$VolumeRow;->-get2(Lcom/android/systemui/qs/tiles/SoundModeTileVolumeMixer$VolumeRow;)I
 
-    move-result v4
+    move-result v5
 
-    if-ge v4, v8, :cond_2
+    if-ge v5, v9, :cond_2
 
-    iget-object v4, p0, Lcom/android/systemui/qs/tiles/SoundModeTileVolumeMixer;->mAudioManager:Landroid/media/AudioManager;
+    iget-object v5, p0, Lcom/android/systemui/qs/tiles/SoundModeTileVolumeMixer;->mAudioManager:Landroid/media/AudioManager;
 
-    invoke-virtual {v4, p3}, Landroid/media/AudioManager;->getStreamMaxVolume(I)I
+    invoke-virtual {v5, p3}, Landroid/media/AudioManager;->getStreamMaxVolume(I)I
 
-    move-result v1
+    move-result v2
 
     goto :goto_2
 
     :cond_a
-    move v0, v5
+    move v1, v6
 
     goto :goto_3
 
     :cond_b
-    mul-int/lit8 v2, v1, 0x64
+    mul-int/lit8 v3, v2, 0x64
 
     goto :goto_4
 
     :cond_c
     invoke-static {p1}, Lcom/android/systemui/qs/tiles/SoundModeTileVolumeMixer$VolumeRow;->-get2(Lcom/android/systemui/qs/tiles/SoundModeTileVolumeMixer$VolumeRow;)I
 
-    move-result v4
+    move-result v5
 
-    if-ne v4, v7, :cond_4
+    if-ne v5, v8, :cond_4
 
-    iget-object v4, p0, Lcom/android/systemui/qs/tiles/SoundModeTileVolumeMixer;->mDisplayManager:Landroid/hardware/display/DisplayManager;
+    iget-object v5, p0, Lcom/android/systemui/qs/tiles/SoundModeTileVolumeMixer;->mDisplayManager:Landroid/hardware/display/DisplayManager;
 
-    if-eqz v4, :cond_f
+    if-eqz v5, :cond_f
 
-    sget-boolean v4, Lcom/android/systemui/volume/VolumeDialogController;->mIsDLNAStatus:Z
+    sget-boolean v5, Lcom/android/systemui/volume/VolumeDialogController;->mIsDLNAStatus:Z
 
-    if-nez v4, :cond_d
+    if-nez v5, :cond_d
 
-    sget-boolean v4, Lcom/android/systemui/volume/VolumeDialogController;->mIsSupportTvVolumeControl:Z
+    sget-boolean v5, Lcom/android/systemui/volume/VolumeDialogController;->mIsSupportTvVolumeControl:Z
 
-    if-eqz v4, :cond_e
+    if-eqz v5, :cond_e
 
     :cond_d
-    iget-object v4, p0, Lcom/android/systemui/qs/tiles/SoundModeTileVolumeMixer;->mDisplayManager:Landroid/hardware/display/DisplayManager;
+    :try_start_1
+    iget-object v5, p0, Lcom/android/systemui/qs/tiles/SoundModeTileVolumeMixer;->mDisplayManager:Landroid/hardware/display/DisplayManager;
 
-    const-string/jumbo v5, "mavo"
+    const-string/jumbo v6, "mavo"
 
-    invoke-virtual {v4, v5}, Landroid/hardware/display/DisplayManager;->semGetWifiDisplayConfiguration(Ljava/lang/String;)Ljava/lang/Object;
+    invoke-virtual {v5, v6}, Landroid/hardware/display/DisplayManager;->semGetWifiDisplayConfiguration(Ljava/lang/String;)Ljava/lang/Object;
 
-    move-result-object v4
+    move-result-object v5
 
-    check-cast v4, Ljava/lang/Integer;
+    check-cast v5, Ljava/lang/Integer;
 
-    invoke-virtual {v4}, Ljava/lang/Integer;->intValue()I
+    invoke-virtual {v5}, Ljava/lang/Integer;->intValue()I
+    :try_end_1
+    .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_1
 
-    move-result v3
+    move-result v4
 
     :cond_e
     :goto_6
     invoke-static {p1}, Lcom/android/systemui/qs/tiles/SoundModeTileVolumeMixer$VolumeRow;->-get1(Lcom/android/systemui/qs/tiles/SoundModeTileVolumeMixer$VolumeRow;)Landroid/widget/SeekBar;
 
-    move-result-object v4
+    move-result-object v5
 
-    invoke-virtual {v4, v3}, Landroid/widget/SeekBar;->semSetMin(I)V
+    invoke-virtual {v5, v4}, Landroid/widget/SeekBar;->semSetMin(I)V
 
-    goto :goto_5
+    goto/16 :goto_5
+
+    :catch_1
+    move-exception v0
+
+    const/4 v4, 0x0
+
+    goto :goto_6
 
     :cond_f
-    const/4 v3, 0x0
+    const/4 v4, 0x0
 
     goto :goto_6
 .end method
@@ -905,125 +950,160 @@
 
 # virtual methods
 .method protected onAttachedToWindow()V
-    .locals 3
+    .locals 4
 
     invoke-super {p0}, Lcom/android/keyguard/AlphaOptimizedLinearLayout;->onAttachedToWindow()V
 
-    iget-object v0, p0, Lcom/android/systemui/qs/tiles/SoundModeTileVolumeMixer;->mContext:Landroid/content/Context;
+    iget-object v1, p0, Lcom/android/systemui/qs/tiles/SoundModeTileVolumeMixer;->mContext:Landroid/content/Context;
 
-    const-string/jumbo v1, "display"
+    const-string/jumbo v2, "display"
 
-    invoke-virtual {v0, v1}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
+    invoke-virtual {v1, v2}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
 
-    move-result-object v0
+    move-result-object v1
 
-    check-cast v0, Landroid/hardware/display/DisplayManager;
+    check-cast v1, Landroid/hardware/display/DisplayManager;
 
-    iput-object v0, p0, Lcom/android/systemui/qs/tiles/SoundModeTileVolumeMixer;->mDisplayManager:Landroid/hardware/display/DisplayManager;
+    iput-object v1, p0, Lcom/android/systemui/qs/tiles/SoundModeTileVolumeMixer;->mDisplayManager:Landroid/hardware/display/DisplayManager;
 
-    iget-object v0, p0, Lcom/android/systemui/qs/tiles/SoundModeTileVolumeMixer;->mDisplayManager:Landroid/hardware/display/DisplayManager;
+    iget-object v1, p0, Lcom/android/systemui/qs/tiles/SoundModeTileVolumeMixer;->mDisplayManager:Landroid/hardware/display/DisplayManager;
 
-    iget-object v1, p0, Lcom/android/systemui/qs/tiles/SoundModeTileVolumeMixer;->mSemDisplayVolumeMixerListener:Lcom/android/systemui/qs/tiles/SoundModeTileVolumeMixer$SemDisplayVolumeMixerListener;
+    iget-object v2, p0, Lcom/android/systemui/qs/tiles/SoundModeTileVolumeMixer;->mSemDisplayVolumeMixerListener:Lcom/android/systemui/qs/tiles/SoundModeTileVolumeMixer$SemDisplayVolumeMixerListener;
 
-    const/4 v2, 0x0
+    const/4 v3, 0x0
 
-    invoke-virtual {v0, v1, v2}, Landroid/hardware/display/DisplayManager;->semRegisterDisplayVolumeListener(Landroid/hardware/display/SemDisplayVolumeListener;Landroid/os/Handler;)V
+    invoke-virtual {v1, v2, v3}, Landroid/hardware/display/DisplayManager;->semRegisterDisplayVolumeListener(Landroid/hardware/display/SemDisplayVolumeListener;Landroid/os/Handler;)V
 
-    iget-object v0, p0, Lcom/android/systemui/qs/tiles/SoundModeTileVolumeMixer;->mContext:Landroid/content/Context;
+    iget-object v1, p0, Lcom/android/systemui/qs/tiles/SoundModeTileVolumeMixer;->mContext:Landroid/content/Context;
 
-    const-string/jumbo v1, "audio"
+    const-string/jumbo v2, "audio"
 
-    invoke-virtual {v0, v1}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
+    invoke-virtual {v1, v2}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
 
-    move-result-object v0
+    move-result-object v1
 
-    check-cast v0, Landroid/media/AudioManager;
+    check-cast v1, Landroid/media/AudioManager;
 
-    iput-object v0, p0, Lcom/android/systemui/qs/tiles/SoundModeTileVolumeMixer;->mAudioManager:Landroid/media/AudioManager;
+    iput-object v1, p0, Lcom/android/systemui/qs/tiles/SoundModeTileVolumeMixer;->mAudioManager:Landroid/media/AudioManager;
 
-    iget-object v0, p0, Lcom/android/systemui/qs/tiles/SoundModeTileVolumeMixer;->mContext:Landroid/content/Context;
+    iget-object v1, p0, Lcom/android/systemui/qs/tiles/SoundModeTileVolumeMixer;->mContext:Landroid/content/Context;
 
-    invoke-static {v0}, Lcom/android/systemui/statusbar/DeviceState;->isVoiceCapable(Landroid/content/Context;)Z
+    invoke-static {v1}, Lcom/android/systemui/statusbar/DeviceState;->isVoiceCapable(Landroid/content/Context;)Z
 
-    move-result v0
+    move-result v1
 
-    iput-boolean v0, p0, Lcom/android/systemui/qs/tiles/SoundModeTileVolumeMixer;->mVoiceCapable:Z
+    iput-boolean v1, p0, Lcom/android/systemui/qs/tiles/SoundModeTileVolumeMixer;->mVoiceCapable:Z
 
-    iget-boolean v0, p0, Lcom/android/systemui/qs/tiles/SoundModeTileVolumeMixer;->mVoiceCapable:Z
+    iget-boolean v1, p0, Lcom/android/systemui/qs/tiles/SoundModeTileVolumeMixer;->mVoiceCapable:Z
 
-    if-eqz v0, :cond_0
+    if-eqz v1, :cond_0
 
-    const/4 v0, 0x2
+    const/4 v1, 0x2
 
-    invoke-direct {p0, v0}, Lcom/android/systemui/qs/tiles/SoundModeTileVolumeMixer;->addVolumeBar(I)V
+    invoke-direct {p0, v1}, Lcom/android/systemui/qs/tiles/SoundModeTileVolumeMixer;->addVolumeBar(I)V
 
     :cond_0
-    const/4 v0, 0x3
+    const/4 v1, 0x3
 
-    invoke-direct {p0, v0}, Lcom/android/systemui/qs/tiles/SoundModeTileVolumeMixer;->addVolumeBar(I)V
+    invoke-direct {p0, v1}, Lcom/android/systemui/qs/tiles/SoundModeTileVolumeMixer;->addVolumeBar(I)V
 
-    const/4 v0, 0x5
+    const/4 v1, 0x5
 
-    invoke-direct {p0, v0}, Lcom/android/systemui/qs/tiles/SoundModeTileVolumeMixer;->addVolumeBar(I)V
+    invoke-direct {p0, v1}, Lcom/android/systemui/qs/tiles/SoundModeTileVolumeMixer;->addVolumeBar(I)V
 
-    const/4 v0, 0x1
+    const/4 v1, 0x1
 
-    invoke-direct {p0, v0}, Lcom/android/systemui/qs/tiles/SoundModeTileVolumeMixer;->addVolumeBar(I)V
+    invoke-direct {p0, v1}, Lcom/android/systemui/qs/tiles/SoundModeTileVolumeMixer;->addVolumeBar(I)V
 
     invoke-direct {p0}, Lcom/android/systemui/qs/tiles/SoundModeTileVolumeMixer;->isBixbyVoiceEnable()Z
 
-    move-result v0
+    move-result v1
 
-    if-eqz v0, :cond_1
+    if-eqz v1, :cond_1
 
-    sget v0, Lcom/android/systemui/qs/tiles/SoundModeTileVolumeMixer;->STREAM_BIXBY_VOICE:I
+    sget v1, Lcom/android/systemui/qs/tiles/SoundModeTileVolumeMixer;->STREAM_BIXBY_VOICE:I
 
-    invoke-direct {p0, v0}, Lcom/android/systemui/qs/tiles/SoundModeTileVolumeMixer;->addVolumeBar(I)V
+    invoke-direct {p0, v1}, Lcom/android/systemui/qs/tiles/SoundModeTileVolumeMixer;->addVolumeBar(I)V
 
     :cond_1
-    iget-object v0, p0, Lcom/android/systemui/qs/tiles/SoundModeTileVolumeMixer;->mContext:Landroid/content/Context;
+    iget-object v1, p0, Lcom/android/systemui/qs/tiles/SoundModeTileVolumeMixer;->mContext:Landroid/content/Context;
 
-    const-class v1, Landroid/app/NotificationManager;
+    const-class v2, Landroid/app/NotificationManager;
 
-    invoke-virtual {v0, v1}, Landroid/content/Context;->getSystemService(Ljava/lang/Class;)Ljava/lang/Object;
+    invoke-virtual {v1, v2}, Landroid/content/Context;->getSystemService(Ljava/lang/Class;)Ljava/lang/Object;
 
-    move-result-object v0
+    move-result-object v1
 
-    check-cast v0, Landroid/app/NotificationManager;
+    check-cast v1, Landroid/app/NotificationManager;
 
-    iput-object v0, p0, Lcom/android/systemui/qs/tiles/SoundModeTileVolumeMixer;->mNotificationManager:Landroid/app/NotificationManager;
+    iput-object v1, p0, Lcom/android/systemui/qs/tiles/SoundModeTileVolumeMixer;->mNotificationManager:Landroid/app/NotificationManager;
 
-    iget-object v0, p0, Lcom/android/systemui/qs/tiles/SoundModeTileVolumeMixer;->mNotificationManager:Landroid/app/NotificationManager;
+    iget-object v1, p0, Lcom/android/systemui/qs/tiles/SoundModeTileVolumeMixer;->mNotificationManager:Landroid/app/NotificationManager;
 
-    invoke-virtual {v0}, Landroid/app/NotificationManager;->getZenMode()I
+    invoke-virtual {v1}, Landroid/app/NotificationManager;->getZenMode()I
 
-    move-result v0
+    move-result v1
 
-    iput v0, p0, Lcom/android/systemui/qs/tiles/SoundModeTileVolumeMixer;->mZenMode:I
+    iput v1, p0, Lcom/android/systemui/qs/tiles/SoundModeTileVolumeMixer;->mZenMode:I
+
+    new-instance v0, Landroid/content/IntentFilter;
+
+    invoke-direct {v0}, Landroid/content/IntentFilter;-><init>()V
+
+    const-string/jumbo v1, "android.app.action.INTERRUPTION_FILTER_CHANGED"
+
+    invoke-virtual {v0, v1}, Landroid/content/IntentFilter;->addAction(Ljava/lang/String;)V
+
+    iget-object v1, p0, Lcom/android/systemui/qs/tiles/SoundModeTileVolumeMixer;->mContext:Landroid/content/Context;
+
+    iget-object v2, p0, Lcom/android/systemui/qs/tiles/SoundModeTileVolumeMixer;->mVolumeMixerReceiver:Landroid/content/BroadcastReceiver;
+
+    invoke-virtual {v1, v2, v0}, Landroid/content/Context;->registerReceiver(Landroid/content/BroadcastReceiver;Landroid/content/IntentFilter;)Landroid/content/Intent;
 
     return-void
 .end method
 
 .method protected onDetachedFromWindow()V
-    .locals 3
+    .locals 4
 
-    const/4 v2, 0x0
+    const/4 v3, 0x0
 
-    iget-object v0, p0, Lcom/android/systemui/qs/tiles/SoundModeTileVolumeMixer;->mDisplayManager:Landroid/hardware/display/DisplayManager;
+    iget-object v1, p0, Lcom/android/systemui/qs/tiles/SoundModeTileVolumeMixer;->mDisplayManager:Landroid/hardware/display/DisplayManager;
 
-    iget-object v1, p0, Lcom/android/systemui/qs/tiles/SoundModeTileVolumeMixer;->mSemDisplayVolumeMixerListener:Lcom/android/systemui/qs/tiles/SoundModeTileVolumeMixer$SemDisplayVolumeMixerListener;
+    iget-object v2, p0, Lcom/android/systemui/qs/tiles/SoundModeTileVolumeMixer;->mSemDisplayVolumeMixerListener:Lcom/android/systemui/qs/tiles/SoundModeTileVolumeMixer$SemDisplayVolumeMixerListener;
 
-    invoke-virtual {v0, v1}, Landroid/hardware/display/DisplayManager;->semUnregisterDisplayVolumeListener(Landroid/hardware/display/SemDisplayVolumeListener;)V
+    invoke-virtual {v1, v2}, Landroid/hardware/display/DisplayManager;->semUnregisterDisplayVolumeListener(Landroid/hardware/display/SemDisplayVolumeListener;)V
 
-    iput-object v2, p0, Lcom/android/systemui/qs/tiles/SoundModeTileVolumeMixer;->mDisplayManager:Landroid/hardware/display/DisplayManager;
+    iput-object v3, p0, Lcom/android/systemui/qs/tiles/SoundModeTileVolumeMixer;->mDisplayManager:Landroid/hardware/display/DisplayManager;
 
-    iput-object v2, p0, Lcom/android/systemui/qs/tiles/SoundModeTileVolumeMixer;->mAudioManager:Landroid/media/AudioManager;
+    iput-object v3, p0, Lcom/android/systemui/qs/tiles/SoundModeTileVolumeMixer;->mAudioManager:Landroid/media/AudioManager;
 
-    iput-object v2, p0, Lcom/android/systemui/qs/tiles/SoundModeTileVolumeMixer;->mNotificationManager:Landroid/app/NotificationManager;
+    iput-object v3, p0, Lcom/android/systemui/qs/tiles/SoundModeTileVolumeMixer;->mNotificationManager:Landroid/app/NotificationManager;
 
+    :try_start_0
+    iget-object v1, p0, Lcom/android/systemui/qs/tiles/SoundModeTileVolumeMixer;->mContext:Landroid/content/Context;
+
+    iget-object v2, p0, Lcom/android/systemui/qs/tiles/SoundModeTileVolumeMixer;->mVolumeMixerReceiver:Landroid/content/BroadcastReceiver;
+
+    invoke-virtual {v1, v2}, Landroid/content/Context;->unregisterReceiver(Landroid/content/BroadcastReceiver;)V
+    :try_end_0
+    .catch Ljava/lang/IllegalArgumentException; {:try_start_0 .. :try_end_0} :catch_0
+
+    :goto_0
     invoke-super {p0}, Lcom/android/keyguard/AlphaOptimizedLinearLayout;->onDetachedFromWindow()V
 
     return-void
+
+    :catch_0
+    move-exception v0
+
+    const-string/jumbo v1, "SoundModeTileVolumeMixer"
+
+    const-string/jumbo v2, "mVolumeMixerReceiver() is not registered."
+
+    invoke-static {v1, v2}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
+
+    goto :goto_0
 .end method
 
 .method public setVolumeMixerTileCallback(Lcom/android/systemui/qs/tiles/SoundModeTileVolumeMixer$VolumeMixerTileCallback;)V

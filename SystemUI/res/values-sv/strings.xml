@@ -238,6 +238,8 @@
     <string name="wifi_allow_scan_with_traffic_summary">Tillåt/tillåt inte sökning efter Wi-Fi-roaming utifrån mängden datatrafik i gränssnittet</string>
     <string name="select_logd_size_title">Buffertstorlekar för logg</string>
     <string name="select_logd_size_dialog_title">Välj loggstorlekar per loggbuffert</string>
+    <string name="dev_logpersist_clear_warning_title">Rensa ihållande loggarlagringen?</string>
+    <string name="dev_logpersist_clear_warning_message">Loggardata raderas när den ihållande loggaren stängs av.</string>
     <string name="select_logpersist_title">Lagra loggdata permanent</string>
     <string name="select_logpersist_dialog_title">Välj loggbuffertar att lagra permanent</string>
     <string name="select_usb_configuration_title">Välj USB-konfiguration</string>
@@ -752,6 +754,7 @@ Om du återupptar dataanvändningen kan avgifter från operatören tillkomma."</
     <string name="wifi_authentication_failed_kt">Det gick inte att autentisera Wi-Fi-åtkomstpunkten.</string>
     <string name="wifi_authentication_no_response">Det gick inte att ansluta till Wi-Fi-åtkomstpunkt.</string>
     <string name="wifi_authentication_invalid_value">Autentiseringen misslyckades. Kontrollera ID och lösenord.</string>
+    <string name="wifi_disconnected">Wi-Fi har kopplats från.</string>
     <string name="quick_settings_dnd_label">Stör ej</string>
     <string name="quick_settings_dnd_priority_label">Endast prioriterade</string>
     <string name="quick_settings_dnd_alarms_label">Endast alarm</string>
@@ -1383,11 +1386,11 @@ Kontakta administratören för mer information."</string>
     <string name="keyboard_key_numpad_template">Numeriskt tangentbord %1$s</string>
     <string name="keyboard_popup_help">Meta-tangenten: Windows-tangenten, kommandotangenten eller någon annan symboltangent i operativsystemet.</string>
     <string name="keyboard_shortcut_group_system">Systemgenvägar</string>
-    <string name="keyboard_shortcut_group_system_home">Startsida</string>
+    <string name="keyboard_shortcut_group_system_home">Hem</string>
     <string name="keyboard_shortcut_group_system_recents">Senaste</string>
     <string name="keyboard_shortcut_group_system_back">Bakåt</string>
     <string name="keyboard_shortcut_group_system_notifications">Aviseringar</string>
-    <string name="keyboard_shortcut_group_system_shortcuts_helper">Kortkommandon</string>
+    <string name="keyboard_shortcut_group_system_shortcuts_helper">Tangentbordsgenvägar</string>
     <string name="keyboard_shortcut_group_system_switch_input">Byt inmatningsmetod</string>
     <string name="keyboard_shortcut_group_system_all_apps">Alla appar</string>
     <string name="keyboard_shortcut_group_system_running_apps">Appar som körs</string>
@@ -1653,7 +1656,9 @@ Using your tablet in a very hot location."</string>
     <string name="battery_not_fully_connected_charging_title_vzw">Incomplete connection</string>
     <string name="battery_not_fully_connected_charging_text">Laddningen går snabbare om du använder laddaren som levererades med enheten och ser till att den är ordentligt ansluten.</string>
     <string name="battery_not_fully_connected_charging_text_vzw">Make sure the charger is properly connected.</string>
+    <string name="battery_not_fully_connected_charging_text_jpn">Se till att din laddare är ordentligt ansluten.</string>
     <string name="battery_not_fully_connected_charging_popup_text">Se till att laddaren är ordentligt ansluten. Använd laddaren som levererades med enheten.</string>
+    <string name="battery_not_fully_connected_charging_popup_text_jpn">Se till att laddaren är ordentligt ansluten.</string>
     <string name="battery_charging_level_and_time_text">"Laddning: %1$d %%
 (Ungefär %2$s tills fulladdat)"</string>
     <string name="battery_charging_level_text">Laddar: %d%%</string>
@@ -1878,6 +1883,8 @@ Please note that in order to enable your emergency calls (e.g., such as 112 call
     <string name="qs_detail_palm_capture_title">Dra handflatan för skärmbild</string>
     <string name="noti_direct_reply_exceed_text_limit_toast">Det går inte att skriva mer text.</string>
     <string name="airplane_mode_tts_text">Flygplansläge</string>
+    <string name="all_noti_readout">En avisering</string>
+    <string name="all_noti_readout2">%d aviseringar</string>
     <string name="car_lockscreen_disclaimer_title">Kör försiktigt</string>
     <string name="car_lockscreen_disclaimer_text">Håll koll på trafik- och körförhållanden och följ gällande lagar. Det kan hända att vägbeskrivningen inte stämmer, att den är ofullständig, farlig, olämplig, förbjuden eller att den innebär att du måste korsa en administrativ enhet. Det kan även hända att företagsuppgifter är felaktiga eller ofullständiga. Uppgifter visas inte i realtid och det går inte att garantera att platsen är korrekt. Hantera inte din mobila enhet och använd inte appar som inte är ämnade för Android Auto medan du kör.</string>
     <string name="pip_close">Stäng PIP</string>

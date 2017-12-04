@@ -24,6 +24,8 @@
 
 .field private static final DEBUG:Z
 
+.field private static final DEFAULT_VOLUME_URI_BIXBY:Ljava/lang/String; = "file:///system/media/audio/ui/Bixby_BOS.ogg"
+
 .field private static final DEFAULT_VOLUME_URI_MUSIC:Ljava/lang/String; = "file:///system/media/audio/ui/Media_preview_Over_the_horizon.ogg"
 
 .field private static final ICONS_COLOR_EARSHORK:I = 0x2
@@ -329,7 +331,7 @@
 
     const/4 v2, 0x3
 
-    if-ne v1, v2, :cond_0
+    if-ne v1, v2, :cond_1
 
     const-string/jumbo v1, "file:///system/media/audio/ui/Media_preview_Over_the_horizon.ogg"
 
@@ -338,7 +340,23 @@
     move-result-object v0
 
     :cond_0
+    :goto_0
     return-object v0
+
+    :cond_1
+    iget v1, p0, Lcom/android/systemui/qs/tiles/SoundModeTileVolumeBar;->mStream:I
+
+    sget v2, Lcom/android/systemui/qs/tiles/SoundModeTileVolumeMixer;->STREAM_BIXBY_VOICE:I
+
+    if-ne v1, v2, :cond_0
+
+    const-string/jumbo v1, "file:///system/media/audio/ui/Bixby_BOS.ogg"
+
+    invoke-static {v1}, Landroid/net/Uri;->parse(Ljava/lang/String;)Landroid/net/Uri;
+
+    move-result-object v0
+
+    goto :goto_0
 .end method
 
 .method private getIconType(II)I
@@ -381,70 +399,76 @@
 
     const/4 v2, 0x3
 
-    if-eq v1, v2, :cond_4
+    if-ne v1, v2, :cond_5
 
-    iget v1, p0, Lcom/android/systemui/qs/tiles/SoundModeTileVolumeBar;->mStream:I
+    if-lez p1, :cond_4
 
-    sget v2, Lcom/android/systemui/qs/tiles/SoundModeTileVolumeMixer;->STREAM_BIXBY_VOICE:I
+    iget-object v1, p0, Lcom/android/systemui/qs/tiles/SoundModeTileVolumeBar;->mVolumeBarCallback:Lcom/android/systemui/qs/tiles/SoundModeTileVolumeBar$VolumeBarCallback;
 
-    if-ne v1, v2, :cond_6
+    invoke-interface {v1}, Lcom/android/systemui/qs/tiles/SoundModeTileVolumeBar$VolumeBarCallback;->isEnableZenMode()Z
 
-    :cond_4
-    if-lez p1, :cond_5
+    move-result v1
+
+    if-eqz v1, :cond_4
 
     const/4 v0, 0x0
+
+    goto :goto_0
+
+    :cond_4
+    const/4 v0, 0x2
 
     goto :goto_0
 
     :cond_5
-    const/4 v0, 0x2
-
-    goto :goto_0
-
-    :cond_6
     iget v1, p0, Lcom/android/systemui/qs/tiles/SoundModeTileVolumeBar;->mStream:I
 
     const/4 v2, 0x5
 
-    if-ne v1, v2, :cond_a
+    if-ne v1, v2, :cond_9
 
-    if-ne p2, v3, :cond_8
+    if-ne p2, v3, :cond_7
 
-    if-lez p1, :cond_7
+    if-lez p1, :cond_6
 
     const/4 v0, 0x0
 
     goto :goto_0
 
-    :cond_7
+    :cond_6
     const/4 v0, 0x2
 
     goto :goto_0
 
-    :cond_8
-    if-ne p2, v4, :cond_9
+    :cond_7
+    if-ne p2, v4, :cond_8
 
     const/4 v0, 0x1
 
     goto :goto_0
 
-    :cond_9
+    :cond_8
     if-nez p2, :cond_0
 
     const/4 v0, 0x2
 
     goto :goto_0
 
-    :cond_a
+    :cond_9
     iget v1, p0, Lcom/android/systemui/qs/tiles/SoundModeTileVolumeBar;->mStream:I
 
-    if-ne v1, v4, :cond_d
+    if-ne v1, v4, :cond_c
 
-    if-ne p2, v3, :cond_c
+    if-ne p2, v3, :cond_b
 
-    if-lez p1, :cond_b
+    if-lez p1, :cond_a
 
     const/4 v0, 0x0
+
+    goto :goto_0
+
+    :cond_a
+    const/4 v0, 0x2
 
     goto :goto_0
 
@@ -454,216 +478,258 @@
     goto :goto_0
 
     :cond_c
-    const/4 v0, 0x2
+    iget v1, p0, Lcom/android/systemui/qs/tiles/SoundModeTileVolumeBar;->mStream:I
+
+    sget v2, Lcom/android/systemui/qs/tiles/SoundModeTileVolumeMixer;->STREAM_BIXBY_VOICE:I
+
+    if-ne v1, v2, :cond_e
+
+    if-lez p1, :cond_d
+
+    const/4 v0, 0x0
 
     goto :goto_0
 
     :cond_d
+    const/4 v0, 0x2
+
+    goto :goto_0
+
+    :cond_e
     const/4 v0, 0x0
 
     goto :goto_0
 .end method
 
 .method private handleUpdateBarViews()V
-    .locals 8
+    .locals 9
 
-    const/4 v6, 0x2
+    const/4 v7, 0x2
 
-    const/4 v7, 0x0
+    const/4 v8, 0x0
 
-    iget-object v4, p0, Lcom/android/systemui/qs/tiles/SoundModeTileVolumeBar;->mIconView:Landroid/widget/ImageView;
+    iget-object v5, p0, Lcom/android/systemui/qs/tiles/SoundModeTileVolumeBar;->mIconView:Landroid/widget/ImageView;
 
-    if-nez v4, :cond_0
+    if-nez v5, :cond_0
 
     return-void
 
     :cond_0
-    iget-object v4, p0, Lcom/android/systemui/qs/tiles/SoundModeTileVolumeBar;->mAudioManager:Landroid/media/AudioManager;
+    iget-object v5, p0, Lcom/android/systemui/qs/tiles/SoundModeTileVolumeBar;->mAudioManager:Landroid/media/AudioManager;
 
-    invoke-virtual {v4}, Landroid/media/AudioManager;->getRingerModeInternal()I
-
-    move-result v3
-
-    iget-object v4, p0, Lcom/android/systemui/qs/tiles/SoundModeTileVolumeBar;->mSeekBar:Landroid/widget/SeekBar;
-
-    invoke-virtual {v4}, Landroid/widget/SeekBar;->getProgress()I
+    invoke-virtual {v5}, Landroid/media/AudioManager;->getRingerModeInternal()I
 
     move-result v4
-
-    invoke-direct {p0, v4, v3}, Lcom/android/systemui/qs/tiles/SoundModeTileVolumeBar;->getIconType(II)I
-
-    move-result v1
-
-    iget-object v4, p0, Lcom/android/systemui/qs/tiles/SoundModeTileVolumeBar;->mIconView:Landroid/widget/ImageView;
-
-    sget-object v5, Lcom/android/systemui/qs/tiles/SoundModeTileVolumeBar;->STREAM_ICONS_RES:[I
-
-    aget v5, v5, v1
-
-    invoke-virtual {v4, v5}, Landroid/widget/ImageView;->setImageResource(I)V
-
-    iget-object v4, p0, Lcom/android/systemui/qs/tiles/SoundModeTileVolumeBar;->mSeekBar:Landroid/widget/SeekBar;
-
-    invoke-virtual {v4}, Landroid/widget/SeekBar;->isEnabled()Z
-
-    move-result v4
-
-    if-eqz v4, :cond_1
-
-    iget-object v4, p0, Lcom/android/systemui/qs/tiles/SoundModeTileVolumeBar;->mVolumeBarCallback:Lcom/android/systemui/qs/tiles/SoundModeTileVolumeBar$VolumeBarCallback;
-
-    invoke-interface {v4}, Lcom/android/systemui/qs/tiles/SoundModeTileVolumeBar$VolumeBarCallback;->isEnableZenMode()Z
-
-    move-result v4
-
-    if-eqz v4, :cond_1
-
-    iget-boolean v4, p0, Lcom/android/systemui/qs/tiles/SoundModeTileVolumeBar;->mZenMuted:Z
-
-    if-eqz v4, :cond_3
-
-    :cond_1
-    const/4 v2, 0x0
-
-    :goto_0
-    iget-object v5, p0, Lcom/android/systemui/qs/tiles/SoundModeTileVolumeBar;->mIconView:Landroid/widget/ImageView;
-
-    if-eqz v2, :cond_4
-
-    const/16 v4, 0xff
-
-    :goto_1
-    invoke-virtual {v5, v4}, Landroid/widget/ImageView;->setImageAlpha(I)V
-
-    iget-object v4, p0, Lcom/android/systemui/qs/tiles/SoundModeTileVolumeBar;->mTitleView:Landroid/widget/TextView;
-
-    if-eqz v4, :cond_2
-
-    iget-object v5, p0, Lcom/android/systemui/qs/tiles/SoundModeTileVolumeBar;->mTitleView:Landroid/widget/TextView;
-
-    if-eqz v2, :cond_5
-
-    const/high16 v4, 0x3f800000    # 1.0f
-
-    :goto_2
-    invoke-virtual {v5, v4}, Landroid/widget/TextView;->setAlpha(F)V
-
-    :cond_2
-    iget v4, p0, Lcom/android/systemui/qs/tiles/SoundModeTileVolumeBar;->mStream:I
-
-    const/4 v5, 0x3
-
-    if-ne v4, v5, :cond_6
-
-    iget-object v4, p0, Lcom/android/systemui/qs/tiles/SoundModeTileVolumeBar;->mSeekBar:Landroid/widget/SeekBar;
-
-    invoke-virtual {v4}, Landroid/widget/SeekBar;->getProgress()I
-
-    move-result v4
-
-    iget v5, p0, Lcom/android/systemui/qs/tiles/SoundModeTileVolumeBar;->mEarProtectLevel:I
-
-    if-lt v4, v5, :cond_6
-
-    iget-object v4, p0, Lcom/android/systemui/qs/tiles/SoundModeTileVolumeBar;->mAudioManager:Landroid/media/AudioManager;
-
-    invoke-virtual {v4}, Landroid/media/AudioManager;->semIsSafeMediaVolumeDeviceOn()Z
-
-    move-result v4
-
-    if-eqz v4, :cond_6
-
-    iget-object v4, p0, Lcom/android/systemui/qs/tiles/SoundModeTileVolumeBar;->mContext:Landroid/content/Context;
-
-    invoke-virtual {v4}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
-
-    move-result-object v4
-
-    sget-object v5, Lcom/android/systemui/qs/tiles/SoundModeTileVolumeBar;->STREAM_ICONS_COLOR:[I
-
-    aget v5, v5, v6
-
-    invoke-virtual {v4, v5, v7}, Landroid/content/res/Resources;->getColor(ILandroid/content/res/Resources$Theme;)I
-
-    move-result v0
-
-    :goto_3
-    iget-object v4, p0, Lcom/android/systemui/qs/tiles/SoundModeTileVolumeBar;->mIconView:Landroid/widget/ImageView;
-
-    sget-object v5, Landroid/graphics/PorterDuff$Mode;->SRC_IN:Landroid/graphics/PorterDuff$Mode;
-
-    invoke-virtual {v4, v0, v5}, Landroid/widget/ImageView;->setColorFilter(ILandroid/graphics/PorterDuff$Mode;)V
 
     iget-object v5, p0, Lcom/android/systemui/qs/tiles/SoundModeTileVolumeBar;->mSeekBar:Landroid/widget/SeekBar;
 
-    if-eqz v2, :cond_8
+    invoke-virtual {v5}, Landroid/widget/SeekBar;->getProgress()I
 
-    iget-object v4, p0, Lcom/android/systemui/qs/tiles/SoundModeTileVolumeBar;->mThumbEnabledColor:Landroid/content/res/ColorStateList;
+    move-result v5
+
+    invoke-direct {p0, v5, v4}, Lcom/android/systemui/qs/tiles/SoundModeTileVolumeBar;->getIconType(II)I
+
+    move-result v1
+
+    iget-object v5, p0, Lcom/android/systemui/qs/tiles/SoundModeTileVolumeBar;->mIconView:Landroid/widget/ImageView;
+
+    sget-object v6, Lcom/android/systemui/qs/tiles/SoundModeTileVolumeBar;->STREAM_ICONS_RES:[I
+
+    aget v6, v6, v1
+
+    invoke-virtual {v5, v6}, Landroid/widget/ImageView;->setImageResource(I)V
+
+    iget v5, p0, Lcom/android/systemui/qs/tiles/SoundModeTileVolumeBar;->mStream:I
+
+    const/4 v6, 0x3
+
+    if-ne v5, v6, :cond_2
+
+    const/4 v3, 0x1
+
+    :goto_0
+    iget-object v5, p0, Lcom/android/systemui/qs/tiles/SoundModeTileVolumeBar;->mSeekBar:Landroid/widget/SeekBar;
+
+    invoke-virtual {v5}, Landroid/widget/SeekBar;->isEnabled()Z
+
+    move-result v5
+
+    if-eqz v5, :cond_5
+
+    if-eqz v3, :cond_3
+
+    if-eqz v3, :cond_4
+
+    iget-object v5, p0, Lcom/android/systemui/qs/tiles/SoundModeTileVolumeBar;->mVolumeBarCallback:Lcom/android/systemui/qs/tiles/SoundModeTileVolumeBar$VolumeBarCallback;
+
+    invoke-interface {v5}, Lcom/android/systemui/qs/tiles/SoundModeTileVolumeBar$VolumeBarCallback;->isEnableZenMode()Z
+
+    move-result v2
+
+    :goto_1
+    iget-object v6, p0, Lcom/android/systemui/qs/tiles/SoundModeTileVolumeBar;->mIconView:Landroid/widget/ImageView;
+
+    if-eqz v2, :cond_6
+
+    const/16 v5, 0xff
+
+    :goto_2
+    invoke-virtual {v6, v5}, Landroid/widget/ImageView;->setImageAlpha(I)V
+
+    iget-object v5, p0, Lcom/android/systemui/qs/tiles/SoundModeTileVolumeBar;->mTitleView:Landroid/widget/TextView;
+
+    if-eqz v5, :cond_1
+
+    iget-object v6, p0, Lcom/android/systemui/qs/tiles/SoundModeTileVolumeBar;->mTitleView:Landroid/widget/TextView;
+
+    if-eqz v2, :cond_7
+
+    const/high16 v5, 0x3f800000    # 1.0f
+
+    :goto_3
+    invoke-virtual {v6, v5}, Landroid/widget/TextView;->setAlpha(F)V
+
+    :cond_1
+    if-eqz v3, :cond_8
+
+    iget-object v5, p0, Lcom/android/systemui/qs/tiles/SoundModeTileVolumeBar;->mSeekBar:Landroid/widget/SeekBar;
+
+    invoke-virtual {v5}, Landroid/widget/SeekBar;->getProgress()I
+
+    move-result v5
+
+    iget v6, p0, Lcom/android/systemui/qs/tiles/SoundModeTileVolumeBar;->mEarProtectLevel:I
+
+    if-lt v5, v6, :cond_8
+
+    iget-object v5, p0, Lcom/android/systemui/qs/tiles/SoundModeTileVolumeBar;->mAudioManager:Landroid/media/AudioManager;
+
+    invoke-virtual {v5}, Landroid/media/AudioManager;->semIsSafeMediaVolumeDeviceOn()Z
+
+    move-result v5
+
+    if-eqz v5, :cond_8
+
+    iget-object v5, p0, Lcom/android/systemui/qs/tiles/SoundModeTileVolumeBar;->mContext:Landroid/content/Context;
+
+    invoke-virtual {v5}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
+
+    move-result-object v5
+
+    sget-object v6, Lcom/android/systemui/qs/tiles/SoundModeTileVolumeBar;->STREAM_ICONS_COLOR:[I
+
+    aget v6, v6, v7
+
+    invoke-virtual {v5, v6, v8}, Landroid/content/res/Resources;->getColor(ILandroid/content/res/Resources$Theme;)I
+
+    move-result v0
 
     :goto_4
-    invoke-virtual {v5, v4}, Landroid/widget/SeekBar;->setThumbTintList(Landroid/content/res/ColorStateList;)V
+    iget-object v5, p0, Lcom/android/systemui/qs/tiles/SoundModeTileVolumeBar;->mIconView:Landroid/widget/ImageView;
+
+    sget-object v6, Landroid/graphics/PorterDuff$Mode;->SRC_IN:Landroid/graphics/PorterDuff$Mode;
+
+    invoke-virtual {v5, v0, v6}, Landroid/widget/ImageView;->setColorFilter(ILandroid/graphics/PorterDuff$Mode;)V
 
     return-void
+
+    :cond_2
+    const/4 v3, 0x0
+
+    goto :goto_0
 
     :cond_3
     const/4 v2, 0x1
 
-    goto :goto_0
+    goto :goto_1
 
     :cond_4
-    const/16 v4, 0x66
+    const/4 v2, 0x0
 
     goto :goto_1
 
     :cond_5
-    const v4, 0x3ecccccd    # 0.4f
+    const/4 v2, 0x0
+
+    goto :goto_1
+
+    :cond_6
+    const/16 v5, 0x66
 
     goto :goto_2
 
-    :cond_6
-    if-ne v1, v6, :cond_7
-
-    iget-object v4, p0, Lcom/android/systemui/qs/tiles/SoundModeTileVolumeBar;->mContext:Landroid/content/Context;
-
-    invoke-virtual {v4}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
-
-    move-result-object v4
-
-    sget-object v5, Lcom/android/systemui/qs/tiles/SoundModeTileVolumeBar;->STREAM_ICONS_COLOR:[I
-
-    const/4 v6, 0x1
-
-    aget v5, v5, v6
-
-    invoke-virtual {v4, v5, v7}, Landroid/content/res/Resources;->getColor(ILandroid/content/res/Resources$Theme;)I
-
-    move-result v0
-
-    goto :goto_3
-
     :cond_7
-    iget-object v4, p0, Lcom/android/systemui/qs/tiles/SoundModeTileVolumeBar;->mContext:Landroid/content/Context;
-
-    invoke-virtual {v4}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
-
-    move-result-object v4
-
-    sget-object v5, Lcom/android/systemui/qs/tiles/SoundModeTileVolumeBar;->STREAM_ICONS_COLOR:[I
-
-    const/4 v6, 0x0
-
-    aget v5, v5, v6
-
-    invoke-virtual {v4, v5, v7}, Landroid/content/res/Resources;->getColor(ILandroid/content/res/Resources$Theme;)I
-
-    move-result v0
+    const v5, 0x3ecccccd    # 0.4f
 
     goto :goto_3
 
     :cond_8
-    iget-object v4, p0, Lcom/android/systemui/qs/tiles/SoundModeTileVolumeBar;->mThumbDisabledColor:Landroid/content/res/ColorStateList;
+    if-ne v1, v7, :cond_a
+
+    iget-object v5, p0, Lcom/android/systemui/qs/tiles/SoundModeTileVolumeBar;->mContext:Landroid/content/Context;
+
+    invoke-virtual {v5}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
+
+    move-result-object v5
+
+    sget-object v6, Lcom/android/systemui/qs/tiles/SoundModeTileVolumeBar;->STREAM_ICONS_COLOR:[I
+
+    const/4 v7, 0x1
+
+    aget v6, v6, v7
+
+    invoke-virtual {v5, v6, v8}, Landroid/content/res/Resources;->getColor(ILandroid/content/res/Resources$Theme;)I
+
+    move-result v0
+
+    iget-object v6, p0, Lcom/android/systemui/qs/tiles/SoundModeTileVolumeBar;->mSeekBar:Landroid/widget/SeekBar;
+
+    if-eqz v2, :cond_9
+
+    iget-object v5, p0, Lcom/android/systemui/qs/tiles/SoundModeTileVolumeBar;->mThumbEnabledColor:Landroid/content/res/ColorStateList;
+
+    :goto_5
+    invoke-virtual {v6, v5}, Landroid/widget/SeekBar;->setThumbTintList(Landroid/content/res/ColorStateList;)V
 
     goto :goto_4
+
+    :cond_9
+    iget-object v5, p0, Lcom/android/systemui/qs/tiles/SoundModeTileVolumeBar;->mThumbDisabledColor:Landroid/content/res/ColorStateList;
+
+    goto :goto_5
+
+    :cond_a
+    iget-object v5, p0, Lcom/android/systemui/qs/tiles/SoundModeTileVolumeBar;->mContext:Landroid/content/Context;
+
+    invoke-virtual {v5}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
+
+    move-result-object v5
+
+    sget-object v6, Lcom/android/systemui/qs/tiles/SoundModeTileVolumeBar;->STREAM_ICONS_COLOR:[I
+
+    const/4 v7, 0x0
+
+    aget v6, v6, v7
+
+    invoke-virtual {v5, v6, v8}, Landroid/content/res/Resources;->getColor(ILandroid/content/res/Resources$Theme;)I
+
+    move-result v0
+
+    iget-object v6, p0, Lcom/android/systemui/qs/tiles/SoundModeTileVolumeBar;->mSeekBar:Landroid/widget/SeekBar;
+
+    if-eqz v2, :cond_b
+
+    iget-object v5, p0, Lcom/android/systemui/qs/tiles/SoundModeTileVolumeBar;->mThumbEnabledColor:Landroid/content/res/ColorStateList;
+
+    :goto_6
+    invoke-virtual {v6, v5}, Landroid/widget/SeekBar;->setThumbTintList(Landroid/content/res/ColorStateList;)V
+
+    goto :goto_4
+
+    :cond_b
+    iget-object v5, p0, Lcom/android/systemui/qs/tiles/SoundModeTileVolumeBar;->mThumbDisabledColor:Landroid/content/res/ColorStateList;
+
+    goto :goto_6
 .end method
 
 .method private handleUpdateDualColorSeekbar()V
@@ -1014,12 +1080,6 @@
 
     iget-object v0, p0, Lcom/android/systemui/qs/tiles/SoundModeTileVolumeBar;->mBarHandler:Lcom/android/systemui/qs/tiles/SoundModeTileVolumeBar$BarHandler;
 
-    const/16 v1, 0x4c9
-
-    invoke-virtual {v0, v1}, Lcom/android/systemui/qs/tiles/SoundModeTileVolumeBar$BarHandler;->sendNewMessage(I)V
-
-    iget-object v0, p0, Lcom/android/systemui/qs/tiles/SoundModeTileVolumeBar;->mBarHandler:Lcom/android/systemui/qs/tiles/SoundModeTileVolumeBar$BarHandler;
-
     const/16 v1, 0xd9c
 
     invoke-virtual {v0, v1}, Lcom/android/systemui/qs/tiles/SoundModeTileVolumeBar$BarHandler;->sendNewMessage(I)V
@@ -1322,7 +1382,7 @@
 
     mul-int/lit8 v0, v0, 0x64
 
-    add-int/lit8 v0, v0, 0xa
+    add-int/lit8 v0, v0, 0x9
 
     iput v0, p0, Lcom/android/systemui/qs/tiles/SoundModeTileVolumeBar;->mEarProtectLevel:I
 

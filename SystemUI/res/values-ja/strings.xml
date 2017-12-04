@@ -238,6 +238,8 @@
     <string name="wifi_allow_scan_with_traffic_summary">インターフェースのデータトラフィック量に基づいたWi-Fiローミングスキャンを許可するかしないかを設定できます</string>
     <string name="select_logd_size_title">ログバッファのサイズ</string>
     <string name="select_logd_size_dialog_title">各ログバッファのログサイズを選択</string>
+    <string name="dev_logpersist_clear_warning_title">常時ロガーストレージを消去しますか？</string>
+    <string name="dev_logpersist_clear_warning_message">常時ロガーをOFFにすると、ロガーデータは削除されます。</string>
     <string name="select_logpersist_title">ログデータを常に保存</string>
     <string name="select_logpersist_dialog_title">常に保存するログバッファを選択</string>
     <string name="select_usb_configuration_title">USB設定の選択</string>
@@ -752,6 +754,7 @@
     <string name="wifi_authentication_failed_kt">Wi-Fiアクセスポイントの認証に失敗しました。</string>
     <string name="wifi_authentication_no_response">Wi-Fi APへの接続に失敗しました。</string>
     <string name="wifi_authentication_invalid_value">認証に失敗しました。IDとパスワードを確認してください。</string>
+    <string name="wifi_disconnected">Wi-Fiが切断されました。</string>
     <string name="quick_settings_dnd_label">通知を非表示</string>
     <string name="quick_settings_dnd_priority_label">優先する通知のみ</string>
     <string name="quick_settings_dnd_alarms_label">アラームのみ</string>
@@ -768,7 +771,7 @@
     <string name="quick_settings_sound_mode_detail_temporary_mute_title">一時的に消音</string>
     <string name="quick_settings_sound_mode_detail_temporary_mute_summary">設定した時間が経過すると、サウンドモードは前のサウンドモード(%s)に戻ります。[詳細]をタップして、時間を変更することができます。</string>
     <string name="quick_settings_sound_mode_detail_temporary_mute_duration">消音時間</string>
-    <string name="quick_settings_sound_mode_detail_mute_remaining">消音(残り%s)</string>
+    <string name="quick_settings_sound_mode_detail_mute_remaining">サイレント(残り%s)</string>
     <string name="quick_settings_brightness_label">明るさ</string>
     <string name="quick_settings_rotation_unlocked_label">自動回転</string>
     <string name="accessibility_quick_settings_rotation">画面を自動回転します</string>
@@ -857,6 +860,7 @@ Mirroring"</string>
     <string name="quick_settings_mobile_data_label">"モバイル
 データ"</string>
     <string name="quick_settings_wificalling_label">Wi-Fi電話</string>
+    <string name="quick_settings_callingplus_label">Calling Plus</string>
     <string name="quick_settings_personal_mode_label">"ﾌﾟﾗｲﾍﾞｰﾄ
 ﾓｰﾄﾞ"</string>
     <string name="quick_settings_data_roaming_label">"ﾃﾞｰﾀ
@@ -1381,10 +1385,10 @@ VPNにも接続しているため、VPNもネットワークアクティビテ�
     <string name="keyboard_popup_help">メタキー: Windowsキー、Commandキー、またはその他のオペレーティングシステムの記号キー</string>
     <string name="keyboard_shortcut_group_system">システムのショートカット</string>
     <string name="keyboard_shortcut_group_system_home">ホーム</string>
-    <string name="keyboard_shortcut_group_system_recents">最近</string>
+    <string name="keyboard_shortcut_group_system_recents">履歴</string>
     <string name="keyboard_shortcut_group_system_back">戻る</string>
     <string name="keyboard_shortcut_group_system_notifications">通知</string>
-    <string name="keyboard_shortcut_group_system_shortcuts_helper">キーボード ショートカット</string>
+    <string name="keyboard_shortcut_group_system_shortcuts_helper">キーボードショートカット</string>
     <string name="keyboard_shortcut_group_system_switch_input">入力方法の切り替え</string>
     <string name="keyboard_shortcut_group_system_all_apps">全てのアプリ</string>
     <string name="keyboard_shortcut_group_system_running_apps">実行中のアプリ</string>
@@ -1650,7 +1654,9 @@ VPNにも接続しているため、VPNもネットワークアクティビテ�
     <string name="battery_not_fully_connected_charging_title_vzw">接続が不完全</string>
     <string name="battery_not_fully_connected_charging_text">より速く充電するには、端末に付属している充電器を使用し、充電器が正しく接続されていることを確認してください。</string>
     <string name="battery_not_fully_connected_charging_text_vzw">充電器が正しく接続されていることを確認してください。</string>
+    <string name="battery_not_fully_connected_charging_text_jpn">充電器が正しく接続されていることを確認してください。</string>
     <string name="battery_not_fully_connected_charging_popup_text">充電器が正しく接続されていることを確認してください。端末に付属している充電器を使用してください。</string>
+    <string name="battery_not_fully_connected_charging_popup_text_jpn">充電器が正しく接続されていることを確認してください。</string>
     <string name="battery_charging_level_and_time_text">"充電中: %1$d%%
 (充電完了まで約%2$s)"</string>
     <string name="battery_charging_level_text">充電中: %d%%</string>
@@ -1869,7 +1875,7 @@ Please note that in order to enable your emergency calls (e.g., such as 112 call
     <string name="sec_accessibility_navbar_show_pin">ナビゲーションバーを固定</string>
     <string name="force_immersive_guide_dialog_title">ナビゲーションバーを非表示</string>
     <string name="force_immersive_guide_dialog_message1">ナビゲーションバーを非表示にするには、このボタンをダブルタップしてください。</string>
-    <string name="force_immersive_guide_dialog_message2">ナビゲーションバーを表示するには、充電ポートの近くの画面の端から内側にスワイプします。</string>
+    <string name="force_immersive_guide_dialog_message2">ナビゲーションバーを表示するには、充電ポート付近の画面の端から内側にスワイプしてください。</string>
     <string name="force_immersive_guide_dialog_message3">ナビゲーションバーを固定するには、このボタンを再度ダブルタップしてください。</string>
     <string name="force_immersive_guide_dialog_message4">ホーム画面などの一部の画面では、ナビゲーションバーは常に表示されます。</string>
     <string name="force_immersive_guide_dialog_guide_path">このボタンを非表示にするには、[設定] > [ディスプレイ] > [ナビゲーションバー]に移動してください。</string>
@@ -1887,6 +1893,8 @@ Please note that in order to enable your emergency calls (e.g., such as 112 call
     <string name="qs_detail_palm_capture_title">スワイプキャプチャ</string>
     <string name="noti_direct_reply_exceed_text_limit_toast">これ以上テキストを入力できません。</string>
     <string name="airplane_mode_tts_text">機内モード</string>
+    <string name="all_noti_readout">1件の通知</string>
+    <string name="all_noti_readout2">%d件の通知</string>
     <string name="car_lockscreen_disclaimer_title">安全運転を心がけましょう</string>
     <string name="car_lockscreen_disclaimer_text">道路状況に十分気を配り、適用される法律を遵守してください。経路は、不正確、不完全、危険、不適切である場合や、通行が禁止されている、管理区域を通行する必要があるなどの場合があります。ビジネス情報も不正確または不完全である可能性があります。データはリアルタイムではなく、場所の正確性は保証されません。運転中はモバイル端末を手に持って操作したり、Android Auto とは無関係のアプリを使用したりしないでください。</string>
     <string name="pip_close">PIP を閉じる</string>

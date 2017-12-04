@@ -238,6 +238,8 @@
     <string name="wifi_allow_scan_with_traffic_summary">A Wi-Fi-roaming ellenőrzésének engedélyezése vagy letiltása az interfészen jelen lévő adatforgalom mennyiségétől függően</string>
     <string name="select_logd_size_title">Naplózási puffer mérete</string>
     <string name="select_logd_size_dialog_title">Naplózási pufferméret kiválasztása</string>
+    <string name="dev_logpersist_clear_warning_title">Törli a tartós naplótárolót?</string>
+    <string name="dev_logpersist_clear_warning_message">A tartós naplózó kikapcsolásakor a naplózó adatai törlődnek.</string>
     <string name="select_logpersist_title">Naplóadatok tartós tárolása</string>
     <string name="select_logpersist_dialog_title">Tartósan tárolandó naplópufferek kivál.</string>
     <string name="select_usb_configuration_title">USB-beállítás kiválasztása</string>
@@ -752,6 +754,7 @@ Ha mégis használja az adatkapcsolatot, akkor szolgáltatója többletköltség
     <string name="wifi_authentication_failed_kt">Nem sikerült hitelesíteni a Wi-Fi hozzáférési pontot.</string>
     <string name="wifi_authentication_no_response">Nem sikerült kapcsolódni a Wi-Fi hozzáférési ponthoz.</string>
     <string name="wifi_authentication_invalid_value">A hitelesítés sikertelen. Ellenőrizze a felhasználói nevet és a jelszót.</string>
+    <string name="wifi_disconnected">Wi-Fi-kapcsolat bontva.</string>
     <string name="quick_settings_dnd_label">Ne zavarjanak</string>
     <string name="quick_settings_dnd_priority_label">Csak prioritásos</string>
     <string name="quick_settings_dnd_alarms_label">Csak ébresztések</string>
@@ -1383,11 +1386,11 @@ További információért forduljon a rendszergazdához."</string>
     <string name="keyboard_key_numpad_template">Numerikus: %1$s</string>
     <string name="keyboard_popup_help">Metabillentyű: a Windows, a Command vagy más, az operációs rendszer szimbólumával ellátott billentyű.</string>
     <string name="keyboard_shortcut_group_system">A rendszer billentyűkódjai</string>
-    <string name="keyboard_shortcut_group_system_home">Otthon</string>
+    <string name="keyboard_shortcut_group_system_home">Kezdőlap</string>
     <string name="keyboard_shortcut_group_system_recents">Legutóbbiak</string>
     <string name="keyboard_shortcut_group_system_back">Vissza</string>
     <string name="keyboard_shortcut_group_system_notifications">Értesítések</string>
-    <string name="keyboard_shortcut_group_system_shortcuts_helper">Billentyűkódok</string>
+    <string name="keyboard_shortcut_group_system_shortcuts_helper">Gyorsgombok</string>
     <string name="keyboard_shortcut_group_system_switch_input">Beviteli mód váltása</string>
     <string name="keyboard_shortcut_group_system_all_apps">Összes alkalmazás</string>
     <string name="keyboard_shortcut_group_system_running_apps">Futó alkalmazások</string>
@@ -1653,7 +1656,9 @@ A túlmelegedés lehetséges okai:
     <string name="battery_not_fully_connected_charging_title_vzw">Incomplete connection</string>
     <string name="battery_not_fully_connected_charging_text">A gyorsabb töltés érdekében az eszközhöz kapott töltőt használja, és győződjön meg róla, hogy megfelelően csatlakoztatta-e a töltőt.</string>
     <string name="battery_not_fully_connected_charging_text_vzw">Make sure the charger is properly connected.</string>
+    <string name="battery_not_fully_connected_charging_text_jpn">Győződjön meg róla, hogy a töltő megfelelően van-e csatlakoztatva.</string>
     <string name="battery_not_fully_connected_charging_popup_text">Győződjön meg róla, hogy a töltő megfelelően van-e csatlakoztatva. Az eszközhöz kapott töltőt használja.</string>
+    <string name="battery_not_fully_connected_charging_popup_text_jpn">Győződjön meg róla, hogy a töltő megfelelően van-e csatlakoztatva.</string>
     <string name="battery_charging_level_and_time_text">"Töltés: %1$d%%
 (Körülbelül %2$s van hátra a teljes feltöltésig)"</string>
     <string name="battery_charging_level_text">Töltés: %d%%</string>
@@ -1878,6 +1883,8 @@ Please note that in order to enable your emergency calls (e.g., such as 112 call
     <string name="qs_detail_palm_capture_title">Felvétel tenyérhúzással</string>
     <string name="noti_direct_reply_exceed_text_limit_toast">Több szöveget nem lehet bevinni.</string>
     <string name="airplane_mode_tts_text">Repülő üzemmód</string>
+    <string name="all_noti_readout">Egy értesítés</string>
+    <string name="all_noti_readout2">%d értesítés</string>
     <string name="car_lockscreen_disclaimer_title">Vezessen óvatosan</string>
     <string name="car_lockscreen_disclaimer_text">Mindig legyen teljes mértékben tisztában a vezetési körülményekkel, és a vonatkozó törvényeket tartsa be! Az útvonaltervek pontatlanok, hiányosak, veszélyesek, nem megfelelők vagy tiltottak lehetnek, illetve a közforgalom számára nem használható utakat érinthetnek. Az üzleti információk is pontatlanok vagy hiányosak lehetnek. Az adatok nem valós idejűek, ezért nem garantálhatjuk a helyadatok pontosságát. Vezetés közben ne kezelje mobileszközét, illetve ne használjon olyan alkalmazásokat az Android Auto rendszerrel, amelyeket nem ahhoz terveztek.</string>
     <string name="pip_close">PIP bezárása</string>

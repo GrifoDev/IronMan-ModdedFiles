@@ -238,6 +238,8 @@
     <string name="wifi_allow_scan_with_traffic_summary">Atļaujiet/neatļaujiet Wi‑Fi meklēšanu, pamatojoties uz saskarnē saņemto datplūsmas apjomu.</string>
     <string name="select_logd_size_title">Reģistrētāja buferu lielumi</string>
     <string name="select_logd_size_dialog_title">Atlasīt reģistrētāja bufera liel.</string>
+    <string name="dev_logpersist_clear_warning_title">Vai notīrīt pastāvīgā reģistrēt. krātuvi?</string>
+    <string name="dev_logpersist_clear_warning_message">Reģistrētāja dati tiks izdzēsti, kad tiks izslēgts pastāvīgais reģistrētājs.</string>
     <string name="select_logpersist_title">Pastāvīgi saglab. žurnāla datus</string>
     <string name="select_logpersist_dialog_title">Izv. žurnālu buferus, ko sagl. pastāvīgi.</string>
     <string name="select_usb_configuration_title">Atlasīt USB konfigurāciju</string>
@@ -752,6 +754,7 @@ Ja atsāksiet lietot datus, iespējams, jūsu mobilo sakaru operators iekasēs m
     <string name="wifi_authentication_failed_kt">Neizdevās autentificēt Wi-Fi piekļuves punktu.</string>
     <string name="wifi_authentication_no_response">Neizdevās izveidot savienojumu ar Wi-Fi piekļuves punktu.</string>
     <string name="wifi_authentication_invalid_value">Authentication failed. Check ID and password.</string>
+    <string name="wifi_disconnected">Wi-Fi ir atvienots.</string>
     <string name="quick_settings_dnd_label">Netraucēt</string>
     <string name="quick_settings_dnd_priority_label">Tikai prioritārie</string>
     <string name="quick_settings_dnd_alarms_label">Tikai signāli</string>
@@ -1384,10 +1387,10 @@ Lai iegūtu plašāku informāciju, sazinieties ar administratoru."</string>
     <string name="keyboard_popup_help">Meta taustiņš: Windows, Command vai cits operētājsistēmas simbola taustiņš.</string>
     <string name="keyboard_shortcut_group_system">Sistēmas īsceļi</string>
     <string name="keyboard_shortcut_group_system_home">Sākums</string>
-    <string name="keyboard_shortcut_group_system_recents">Pēdējie</string>
+    <string name="keyboard_shortcut_group_system_recents">Pēdējās lietotās</string>
     <string name="keyboard_shortcut_group_system_back">Atpakaļ</string>
     <string name="keyboard_shortcut_group_system_notifications">Paziņojumi</string>
-    <string name="keyboard_shortcut_group_system_shortcuts_helper">Īsinājumtaustiņi</string>
+    <string name="keyboard_shortcut_group_system_shortcuts_helper">Tastatūras īsceļi</string>
     <string name="keyboard_shortcut_group_system_switch_input">Pārslēgt ievades metodi</string>
     <string name="keyboard_shortcut_group_system_all_apps">Visas programmas</string>
     <string name="keyboard_shortcut_group_system_running_apps">Aktīvās programmas</string>
@@ -1395,7 +1398,7 @@ Lai iegūtu plašāku informāciju, sazinieties ar administratoru."</string>
     <string name="keyboard_shortcut_group_system_switch_languages">Valodu pārslēgšana</string>
     <string name="keyboard_shortcut_group_applications">Īsceļi programmā</string>
     <string name="keyboard_shortcut_group_applications_assist">Palīgs</string>
-    <string name="keyboard_shortcut_group_applications_browser">Pārlūkprogramma</string>
+    <string name="keyboard_shortcut_group_applications_browser">Pārlūks</string>
     <string name="keyboard_shortcut_group_applications_contacts">Kontakti</string>
     <string name="keyboard_shortcut_group_applications_email">E-pasts</string>
     <string name="keyboard_shortcut_group_applications_im">Tūlītējā ziņojumapmaiņa</string>
@@ -1653,7 +1656,9 @@ Pārkaršanu var izraisīt:
     <string name="battery_not_fully_connected_charging_title_vzw">Incomplete connection</string>
     <string name="battery_not_fully_connected_charging_text">Lai nodrošinātu ātrāku uzlādi, izmantojiet ierīces komplektācijā iekļauto lādētāju un pārliecinieties, vai tas ir pareizi pievienots.</string>
     <string name="battery_not_fully_connected_charging_text_vzw">Make sure the charger is properly connected.</string>
+    <string name="battery_not_fully_connected_charging_text_jpn">Pārliecinieties, vai lādētājs ir pareizi pievienots.</string>
     <string name="battery_not_fully_connected_charging_popup_text">Pārliecinieties, vai lādētājs ir pareizi pievienots. Izmantojiet ierīces komplektācijā iekļauto lādētāju.</string>
+    <string name="battery_not_fully_connected_charging_popup_text_jpn">Pārliecinieties, vai lādētājs ir pareizi pievienots.</string>
     <string name="battery_charging_level_and_time_text">"Notiek uzlāde: %1$d%%
 (līdz pilnai uzlādei atlikuši aptuveni %2$s)"</string>
     <string name="battery_charging_level_text">Notiek uzlāde: %d%%</string>
@@ -1878,6 +1883,8 @@ Please note that in order to enable your emergency calls (e.g., such as 112 call
     <string name="qs_detail_palm_capture_title">Velciet ar plaukstu, lai fotografētu</string>
     <string name="noti_direct_reply_exceed_text_limit_toast">Nevar ievadīt vairāk teksta.</string>
     <string name="airplane_mode_tts_text">Lidmašīnas režīms</string>
+    <string name="all_noti_readout">Viens paziņojums</string>
+    <string name="all_noti_readout2">%d paziņojumi</string>
     <string name="car_lockscreen_disclaimer_title">Droša braukšana</string>
     <string name="car_lockscreen_disclaimer_text">Pievērsiet visu uzmanību braukšanas apstākļiem un vienmēr ievērojiet piemērojamos tiesību aktus. Norādes var būt neprecīzas, nepilnīgas, bīstamas, nepiemērotas, aizliegtas vai var ietvert administratīvo teritoriju šķērsošanu. Arī uzņēmumu informācija var būt neprecīza vai nepilnīga. Dati netiek nodrošināti reāllaikā, un netiek garantēta atrašanās vietu precizitāte. Vadot transportlīdzekli, nelietojiet mobilo ierīci rokās un neizmantojiet lietotnes, kas nav paredzētas pakalpojumam Android Auto.</string>
     <string name="pip_close">Aizvērt PIP</string>

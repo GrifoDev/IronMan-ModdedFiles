@@ -143,6 +143,8 @@
     <string name="tts_reset_speech_pitch_title">Tony nol et</string>
     <string name="tts_reset_speech_pitch_summary">Tekstiň sesli okalýan tonuny standart sazlama nol ediň.</string>
     <string name="choose_profile">Profil saýla</string>
+    <string name="dev_logpersist_clear_warning_title">Hemişelik logger ammaryny aýyrmalymy?</string>
+    <string name="dev_logpersist_clear_warning_message">Hemişelik logger ýapylanda, logger maglumaty öçüriler.</string>
     <string name="select_logpersist_title">Log maglumatyny hemişelik sakla</string>
     <string name="select_logpersist_dialog_title">Hemişelik saklamak üçin, log bufer saýla</string>
     <string name="no_application">Goýma ýok</string>
@@ -250,6 +252,7 @@ For example, your ringtone will not sound, you will not be able to answer phone 
     <string name="wifi_authentication_failed_kt">Wi-Fi AP hakykylygy barlanmady.</string>
     <string name="wifi_authentication_no_response">Wi-Fi AP-ä birigip bolmady.</string>
     <string name="wifi_authentication_invalid_value">Authentication failed. Check ID and password.</string>
+    <string name="wifi_disconnected">Wi-Fi kesildi.</string>
     <string name="quick_settings_bluetooth_label">Bluetooth</string>
     <string name="quick_settings_bluetooth_detail_empty_text_available">Ýakynda hiç bir Bluetooth enjamy tapylmady</string>
     <string name="quick_settings_bluetooth_detail_paired_devices_title">Jübütlenen enjamlar</string>
@@ -575,15 +578,21 @@ Islendik ulanyjy ähli beýleki ulanyjylar üçin goýmalary täzeläp bilýär.
     <string name="dialog_battery_data_warning">Mobil giriş nokady işlediler. Bu batareýanyň harç edilişini we maglumatyň ulanylyşyny artdyrar.</string>
     <string name="keyboard_popup_help">Meta-düwme: Windows, Buýruk ýa-da beýleki operasion ulgam simwol düwmesi.</string>
     <string name="keyboard_shortcut_group_system">Ulgam çykgytlary</string>
+    <string name="keyboard_shortcut_group_system_home">Öý</string>
+    <string name="keyboard_shortcut_group_system_recents">Soňkular</string>
     <string name="keyboard_shortcut_group_system_back">Yza</string>
+    <string name="keyboard_shortcut_group_system_notifications">Habarnamalar</string>
+    <string name="keyboard_shortcut_group_system_shortcuts_helper">Klawiatura çykgytlary</string>
     <string name="keyboard_shortcut_group_system_all_apps">Ähli goýmalar</string>
     <string name="keyboard_shortcut_group_system_running_apps">Işleýän goýmalar</string>
     <string name="keyboard_shortcut_group_system_lock_screen">Gulply ekran</string>
     <string name="keyboard_shortcut_group_system_switch_languages">Dilleri çalyş</string>
     <string name="keyboard_shortcut_group_applications">Goýma-içi çykgytlar</string>
+    <string name="keyboard_shortcut_group_applications_browser">Brauzer</string>
     <string name="keyboard_shortcut_group_applications_contacts">Kontaktlar</string>
     <string name="keyboard_shortcut_group_applications_email">E-poçta</string>
     <string name="keyboard_shortcut_group_applications_music">Aýdym-saz</string>
+    <string name="keyboard_shortcut_group_applications_calendar">Senenama</string>
     <string name="keyboard_shortcut_group_applications_bixby">Bixby</string>
     <string name="keyboard_shortcut_group_applications_messages">Hatlar</string>
     <string name="qs_edit">DÜZET</string>
@@ -767,7 +776,9 @@ Gaty gyzmagyň sebäbi şular bolup biler:
     <string name="battery_not_fully_connected_charging_title_vzw">Incomplete connection</string>
     <string name="battery_not_fully_connected_charging_text">Has çalt zarýad bermek üçin, enjamyň ýany bilen berilýän zarýadnigi ulanyň we ony göwnejaý dakyň.</string>
     <string name="battery_not_fully_connected_charging_text_vzw">Make sure the charger is properly connected.</string>
+    <string name="battery_not_fully_connected_charging_text_jpn">Zarýadnigi talabalaýyk dakyň.</string>
     <string name="battery_not_fully_connected_charging_popup_text">Zarýadnigi göwnejaý dakyň. Enjamyň ýany bilen berilýän zarýadnigi ulanyň.</string>
+    <string name="battery_not_fully_connected_charging_popup_text_jpn">Zarýadnigi göwnejaý dakyň.</string>
     <string name="battery_charging_level_and_time_text">"Zarýad: %1$d%%
 (dolýança takmynan %2$s)"</string>
     <string name="battery_charging_level_text">Zarýad alýar: %d%%</string>
@@ -992,6 +1003,8 @@ Please note that in order to enable your emergency calls (e.g., such as 112 call
     <string name="qs_detail_palm_capture_title">Suratyny almak üçin eliň aýasy bilen syryň</string>
     <string name="noti_direct_reply_exceed_text_limit_toast">Başga tekst girizip bolmaýar.</string>
     <string name="airplane_mode_tts_text">Uçar tertibi</string>
+    <string name="all_noti_readout">Bir habarnama</string>
+    <string name="all_noti_readout2">%d habarnama</string>
     <string name="keyguard_password_enter_pin_code">PIN kody ýaz</string>
     <string name="keyguard_password_wrong_pin_code">Nädogry PIN kod.</string>
     <string name="keyguard_charged">Doly zarýadlandy</string>

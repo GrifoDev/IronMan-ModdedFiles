@@ -227,13 +227,82 @@
 
     iget-object v0, p0, Lcom/android/systemui/qs/tiles/UHQTile;->mContext:Landroid/content/Context;
 
-    const v1, 0x7f0f07d3
+    const v1, 0x7f0f07d6
 
     invoke-virtual {v0, v1}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
     move-result-object v0
 
     return-object v0
+.end method
+
+.method private getUhqUpscalerLatestLevel()I
+    .locals 10
+
+    const/4 v9, 0x0
+
+    const/4 v3, 0x0
+
+    const-string/jumbo v8, "content://com.sec.android.app.soundalive.compatibility.SAContentProvider"
+
+    iget-object v0, p0, Lcom/android/systemui/qs/tiles/UHQTile;->mContext:Landroid/content/Context;
+
+    invoke-virtual {v0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
+
+    move-result-object v0
+
+    invoke-static {v8}, Landroid/net/Uri;->parse(Ljava/lang/String;)Landroid/net/Uri;
+
+    move-result-object v1
+
+    const/4 v2, 0x1
+
+    new-array v2, v2, [Ljava/lang/String;
+
+    const-string/jumbo v4, "UHQ_UPSCALER_LEVEL"
+
+    aput-object v4, v2, v9
+
+    move-object v4, v3
+
+    move-object v5, v3
+
+    invoke-virtual/range {v0 .. v5}, Landroid/content/ContentResolver;->query(Landroid/net/Uri;[Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Ljava/lang/String;)Landroid/database/Cursor;
+
+    move-result-object v6
+
+    const/4 v7, -0x1
+
+    if-eqz v6, :cond_1
+
+    invoke-interface {v6}, Landroid/database/Cursor;->moveToNext()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    invoke-interface {v6, v9}, Landroid/database/Cursor;->getInt(I)I
+
+    move-result v7
+
+    :cond_0
+    invoke-interface {v6}, Landroid/database/Cursor;->close()V
+
+    :cond_1
+    const/4 v0, -0x1
+
+    if-ne v7, v0, :cond_2
+
+    const-string/jumbo v0, "UHQTile"
+
+    const-string/jumbo v1, "UhqUpscaler level did not exit."
+
+    invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    const/4 v7, 0x1
+
+    :cond_2
+    return v7
 .end method
 
 .method private isBtUhqMode()Z
@@ -388,7 +457,7 @@
 .method private isUHQModeEnabled()Z
     .locals 4
 
-    const/4 v3, 0x1
+    const/4 v3, 0x0
 
     const-string/jumbo v0, "UHQTile"
 
@@ -444,14 +513,14 @@
 
     move-result v0
 
-    if-ne v0, v3, :cond_0
+    if-lez v0, :cond_0
 
-    return v3
-
-    :cond_0
-    const/4 v0, 0x0
+    const/4 v0, 0x1
 
     return v0
+
+    :cond_0
+    return v3
 .end method
 
 .method private setEnabled(Z)V
@@ -483,7 +552,9 @@
 
     if-eqz p1, :cond_0
 
-    const/4 v0, 0x1
+    invoke-direct {p0}, Lcom/android/systemui/qs/tiles/UHQTile;->getUhqUpscalerLatestLevel()I
+
+    move-result v0
 
     :goto_0
     invoke-virtual {v1, v0}, Lcom/android/systemui/qs/SystemSetting;->setValue(I)V
@@ -527,7 +598,7 @@
 
     iget-object v0, p0, Lcom/android/systemui/qs/tiles/UHQTile;->mContext:Landroid/content/Context;
 
-    const v1, 0x7f0f07d1
+    const v1, 0x7f0f07d4
 
     invoke-virtual {v0, v1}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -588,7 +659,7 @@
 
     iget-object v2, p0, Lcom/android/systemui/qs/tiles/UHQTile;->mContext:Landroid/content/Context;
 
-    const v3, 0x7f0f07d0
+    const v3, 0x7f0f07d3
 
     invoke-virtual {v2, v3}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -645,7 +716,7 @@
 
     iget-object v1, p0, Lcom/android/systemui/qs/tiles/UHQTile;->mContext:Landroid/content/Context;
 
-    const v2, 0x7f0f07d0
+    const v2, 0x7f0f07d3
 
     invoke-virtual {v1, v2}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -701,7 +772,7 @@
 
     iget-object v1, p0, Lcom/android/systemui/qs/tiles/UHQTile;->mContext:Landroid/content/Context;
 
-    const v2, 0x7f0f07d1
+    const v2, 0x7f0f07d4
 
     invoke-virtual {v1, v2}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 

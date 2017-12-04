@@ -238,6 +238,8 @@
     <string name="wifi_allow_scan_with_traffic_summary">អនុញ្ញាត/មិន​អនុញ្ញាត​ការ​វិភាគ​រ៉ូម​​វ៉ាយហ្វាយ​ផ្អែក​លើ​​​ចំនួន​ការ​បង្ហាញ​ចរាចរណ៍​ទិន្នន័យ​​នៅ​ចំណុច​ប្រទាក់</string>
     <string name="select_logd_size_title">ទំហំ buffer របស់ Logger</string>
     <string name="select_logd_size_dialog_title">ជ្រើស​ទំហំ Logger per log buffer</string>
+    <string name="dev_logpersist_clear_warning_title">ជម្រះ​ឃ្លាំងផ្ទុក​មុខងារ​ចុះ​កំណត់ហេតុ​អចិន្ត្រៃយ៍?</string>
+    <string name="dev_logpersist_clear_warning_message">ទិន្នន័យ​មុខងារ​ចុះ​កំណត់ហេតុ​នឹង​ត្រូវ​បាន​លុប នៅពេល​មុខងារ​ចុះ​កំណត់ហេតុ​អចិន្ត្រៃយ៍​ត្រូវ​បាន​បិទ។</string>
     <string name="select_logpersist_title">រក្សាទុក​ទិន្នន័យ​កំណត់ហេតុ​ជា​អចិន្ត្រៃយ៍</string>
     <string name="select_logpersist_dialog_title">ជ្រើស​ប៊ូហ្វឺ​កំណត់ហេតុ ដើម្បី​រក្សាទុក​ជា​អចិន្ត្រៃយ៍</string>
     <string name="select_usb_configuration_title">ជ្រើស​ការ​កំណត់​រចនាសម្ព័ន្ធ​យូអេសប៊ី</string>
@@ -752,6 +754,7 @@ For example, your ringtone will not sound, you will not be able to answer phone 
     <string name="wifi_authentication_failed_kt">បាន​បរាជ័យ​ក្នុង​ការ​បញ្ជាក់ AP នៃ Wi-Fi។</string>
     <string name="wifi_authentication_no_response">បាន​បរាជ័យ​ក្នុង​ការ​ភ្ជាប់​ទៅ​បណ្ដាញ AP នៃ Wi-Fi។</string>
     <string name="wifi_authentication_invalid_value">ការផ្ទៀងផ្ទាត់​ភាពពិត​បាន​បរាជ័យ។ ពិនិត្យ ID និង ពាក្យសម្ងាត់។</string>
+    <string name="wifi_disconnected">បាន​ផ្តាច់ Wi-Fi។</string>
     <string name="quick_settings_dnd_label">កុំរំខាន</string>
     <string name="quick_settings_dnd_priority_label">អាទិភាពប៉ុណ្ណោះ</string>
     <string name="quick_settings_dnd_alarms_label">សំឡេងរោទ៍ប៉ុណ្ណោះ</string>
@@ -1383,11 +1386,11 @@ Wi-Fi និង Bluetooth ក៏​នឹង​ត្រូវ​បាន​ប
     <string name="keyboard_key_numpad_template">Numpad %1$s</string>
     <string name="keyboard_popup_help">គ្រាប់ចុច​មេតា៖ គ្រាប់ចុច Windows, Command ឬ​និមិត្តសញ្ញា​ប្រព័ន្ធ​ប្រតិបត្តិការ​ផ្សេងទៀត។</string>
     <string name="keyboard_shortcut_group_system">ផ្លូវកាត់​ប្រព័ន្ធ</string>
-    <string name="keyboard_shortcut_group_system_home">ដើម</string>
+    <string name="keyboard_shortcut_group_system_home">គេហ</string>
     <string name="keyboard_shortcut_group_system_recents">ថ្មីៗ</string>
     <string name="keyboard_shortcut_group_system_back">ថយ</string>
     <string name="keyboard_shortcut_group_system_notifications">ការជូនដំណឹង</string>
-    <string name="keyboard_shortcut_group_system_shortcuts_helper">ផ្លូវកាត់ក្ដារចុច</string>
+    <string name="keyboard_shortcut_group_system_shortcuts_helper">ផ្លូវកាត់​ក្ដារចុច</string>
     <string name="keyboard_shortcut_group_system_switch_input">ប្ដូរវិធីសាស្ត្របញ្ចូល</string>
     <string name="keyboard_shortcut_group_system_all_apps">កម្មវិធី​ទាំងអស់</string>
     <string name="keyboard_shortcut_group_system_running_apps">កម្មវិធី​កំពុង​ដំណើរការ</string>
@@ -1395,7 +1398,7 @@ Wi-Fi និង Bluetooth ក៏​នឹង​ត្រូវ​បាន​ប
     <string name="keyboard_shortcut_group_system_switch_languages">ប្ដូរ​ភាសា</string>
     <string name="keyboard_shortcut_group_applications">ផ្លូវកាត់​ក្នុង​កម្មវិធី</string>
     <string name="keyboard_shortcut_group_applications_assist">ជំនួយ</string>
-    <string name="keyboard_shortcut_group_applications_browser">កម្មវិធីរុករក</string>
+    <string name="keyboard_shortcut_group_applications_browser">ប្រោវសឺ</string>
     <string name="keyboard_shortcut_group_applications_contacts">ទំនាក់ទំនង</string>
     <string name="keyboard_shortcut_group_applications_email">អ៊ីមែល</string>
     <string name="keyboard_shortcut_group_applications_im">IM</string>
@@ -1653,7 +1656,9 @@ Using your tablet in a very hot location."</string>
     <string name="battery_not_fully_connected_charging_title_vzw">Incomplete connection</string>
     <string name="battery_not_fully_connected_charging_text">ដើម្បី​ឲ្យ​សាក​កាន់​តែ​លឿន សូម​ប្រើ​គ្រឿងសាក​ដែល​អម​មក​ជាមួយ​ឧបករណ៍​របស់​អ្នក ហើយ​ត្រូវ​ប្រាកដ​ថា​វា​ត្រូវ​បាន​ភ្ជាប់​ត្រឹមត្រូវ។</string>
     <string name="battery_not_fully_connected_charging_text_vzw">Make sure the charger is properly connected.</string>
+    <string name="battery_not_fully_connected_charging_text_jpn">ត្រូវ​ប្រាកដ​ថា​គ្រឿងសាក​របស់​អ្នក​ត្រូវ​បាន​ភ្ជាប់​ត្រឹមត្រូវ។</string>
     <string name="battery_not_fully_connected_charging_popup_text">ត្រូវ​ប្រាកដ​ថា​គ្រឿងសាក​នោះ​ត្រូវ​បាន​ភ្ជាប់​ត្រឹមត្រូវ។ ប្រើ​គ្រឿងសាក​ដែល​អម​មក​ជាមួយ​ឧបករណ៍​នេះ។</string>
+    <string name="battery_not_fully_connected_charging_popup_text_jpn">ត្រូវ​ប្រាកដ​ថា​គ្រឿងសាក​នោះ​ត្រូវ​បាន​ភ្ជាប់​ត្រឹមត្រូវ។</string>
     <string name="battery_charging_level_and_time_text">"កំពុង​សាក៖ %1$d%%
 (ប្រហែល %2$s ទៀត ទើប​សាក​ពេញ)"</string>
     <string name="battery_charging_level_text">កំពុងសាក៖ %d%%</string>
@@ -1878,6 +1883,8 @@ Please note that in order to enable your emergency calls (e.g., such as 112 call
     <string name="qs_detail_palm_capture_title">អូស​បាត​ដៃ​ដើម្បី​ថត​អេក្រង់</string>
     <string name="noti_direct_reply_exceed_text_limit_toast">មិន​អាច​វាយបញ្ចូល​អត្ថបទ​ច្រើនទៀត។</string>
     <string name="airplane_mode_tts_text">ទម្រង់​យន្តហោះ</string>
+    <string name="all_noti_readout">ការជូនដំណឹង​មួយ</string>
+    <string name="all_noti_readout2">ការជូនដំណឹង %d</string>
     <string name="car_lockscreen_disclaimer_title">បើកបរដោយសុវត្ថិភាព</string>
     <string name="car_lockscreen_disclaimer_text">ត្រូវមានការគ្រប់គ្រងពេញលេញលើស្ថានភាពបើកបរ និងគោរពច្បាប់ដែលត្រូវអនុវត្តជានិច្ច។ ទិសដៅអាចនឹងមិនមានភាពសុក្រិត មិនពេញលេញ គ្រោះថ្នាក់ មិនសមស្រប ឬពាក់ព័ន្ធនឹងការឆ្លងកាត់តំបន់រដ្ឋបាល។ ព័ត៌មានផ្នែកអាជីវកម្មក៏អាចនឹងមិនមានភាពសុក្រិត ឬមិនពេញលេញផងដែរ។ ទិន្នន័យគឺមិនមែនបញ្ជូនបន្តផ្ទាល់នោះទេ ហើយភាពសុក្រិតនៃទីតាំងក៏មិនអាចធានាបានផងដែរ។ កុំកាន់ឧបករណ៍ចល័តរបស់អ្នក ឬប្រើកម្មវិធីដែលមិនមែនសម្រាប់ Android Auto ខណៈពេលកំពុងបើកបរ។</string>
     <string name="pip_close">បិទ PIP</string>

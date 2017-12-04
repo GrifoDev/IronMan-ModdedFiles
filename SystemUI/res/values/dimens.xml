@@ -13,6 +13,8 @@
     <item type="dimen" name="mw_divider_handle_touch_height">@dimen/mw_divider_handle_touch_short</item>
     <dimen name="mw_divider_handle_radius">5.0dip</dimen>
     <dimen name="mw_divider_handle_touch_radius">7.0dip</dimen>
+    <dimen name="mw_divider_handle_move_threshold_default">15.0dip</dimen>
+    <dimen name="mw_divider_handle_move_threshold_snapwindow">48.0dip</dimen>
     <dimen name="mw_focused_frame_thickness">5.0dip</dimen>
     <dimen name="mw_background_thickness">5.0dip</dimen>
     <dimen name="mw_background_lift_thickness">9.0dip</dimen>
@@ -1248,6 +1250,7 @@
     <dimen name="badge_notification_margin_top">4.0dip</dimen>
     <dimen name="badge_notification_text_size">11.0dip</dimen>
     <dimen name="badge_notification_text_size_on_desktop_mode">9.0dip</dimen>
+    <dimen name="badge_notification_background_size_for_edit">18.0dip</dimen>
     <dimen name="car_lockscreen_disclaimer_title_size">48.0sp</dimen>
     <dimen name="car_lockscreen_disclaimer_title_padding_start">96.0dip</dimen>
     <dimen name="car_lockscreen_disclaimer_title_padding_top">82.0dip</dimen>
@@ -1520,7 +1523,8 @@
     <dimen name="kg_dex_pattern_lock_pattern_view_width">215.0dip</dimen>
     <dimen name="kg_dex_pattern_lock_pattern_view_hieight">215.0dip</dimen>
     <dimen name="kg_dex_security_view_padding_top">605.0dip</dimen>
-    <dimen name="kg_dex_pattern_view_padding_top">542.0dip</dimen>
+    <dimen name="kg_dex_pattern_view_padding_bottom">83.0dip</dimen>
+    <dimen name="kg_dex_emergency_carrier_area_height">82.0dip</dimen>
     <dimen name="kg_dex_direction_view_bottom_margin">80.0dip</dimen>
     <dimen name="kg_dex_account_view_padding_bottom">150.0dip</dimen>
     <dimen name="kg_dex_account_view_padding_side">650.0dip</dimen>

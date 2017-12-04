@@ -64,7 +64,7 @@
     <string name="servicebox_event_time_all_day">Tutto il giorno</string>
     <string name="servicebox_event_my_event">Evento personale</string>
     <string name="servicebox_event_no_events">Nessun evento o attività</string>
-    <string name="servicebox_alarm_next">Sveglia successiva</string>
+    <string name="servicebox_alarm_next">Prossima sveglia</string>
     <string name="servicebox_accessibility_missing_next_alarm">Nessuna sveglia nei prossimi 7 giorni</string>
     <string name="clear_cover_servicebox_music_unknown">Sconosciuto</string>
     <string name="save">Salva</string>
@@ -238,6 +238,8 @@
     <string name="wifi_allow_scan_with_traffic_summary">Consenti/vieta scansioni roaming Wi-Fi basate sulla quantità di traffico dati presente a livello di interfaccia</string>
     <string name="select_logd_size_title">Dimensioni buffer Logger</string>
     <string name="select_logd_size_dialog_title">Seleziona dimensioni Logger per buffer log</string>
+    <string name="dev_logpersist_clear_warning_title">Cancellare memoria permanente del logger?</string>
+    <string name="dev_logpersist_clear_warning_message">Disattivando il logger permanente, i dati del logger verranno eliminati.</string>
     <string name="select_logpersist_title">Memorizza dati registro permanent.</string>
     <string name="select_logpersist_dialog_title">Selez. buffer registro da memorizz. permanent.</string>
     <string name="select_usb_configuration_title">Seleziona configurazione USB</string>
@@ -751,6 +753,7 @@ Se riprendi a utilizzare i dati, l'operatore potrebbe addebitarti costi."</strin
     <string name="wifi_authentication_failed_kt">"Impossibile autenticare l'AP Wi-Fi."</string>
     <string name="wifi_authentication_no_response">Impossibile connettersi al punto di accesso Wi-Fi.</string>
     <string name="wifi_authentication_invalid_value">Autenticazione fallita. Verificate ID e password.</string>
+    <string name="wifi_disconnected">Wi-Fi disconnesso.</string>
     <string name="quick_settings_dnd_label">Non disturbare</string>
     <string name="quick_settings_dnd_priority_label">Solo con priorità</string>
     <string name="quick_settings_dnd_alarms_label">Solo sveglie</string>
@@ -859,6 +862,8 @@ Luce blu"</string>
 dati"</string>
     <string name="quick_settings_wificalling_label">"Chiamata
 Wi-Fi"</string>
+    <string name="quick_settings_callingplus_label">"Chiamata
+Plus"</string>
     <string name="quick_settings_personal_mode_label">"Modalità
 privata"</string>
     <string name="quick_settings_data_roaming_label">"Roaming
@@ -1383,10 +1388,10 @@ Per ulteriori informazioni, contatta l'amministratore."</string>
     <string name="keyboard_popup_help">Chiave meta: Windows, Command o un tasto simbolo di un altro sistema operativo.</string>
     <string name="keyboard_shortcut_group_system">Collegamenti di sistema</string>
     <string name="keyboard_shortcut_group_system_home">Home</string>
-    <string name="keyboard_shortcut_group_system_recents">Recenti</string>
+    <string name="keyboard_shortcut_group_system_recents">Applicazioni recenti</string>
     <string name="keyboard_shortcut_group_system_back">Indietro</string>
     <string name="keyboard_shortcut_group_system_notifications">Notifiche</string>
-    <string name="keyboard_shortcut_group_system_shortcuts_helper">Scorciatoie da tastiera</string>
+    <string name="keyboard_shortcut_group_system_shortcuts_helper">Tasti di scelta rapida</string>
     <string name="keyboard_shortcut_group_system_switch_input">Cambia metodo di immissione</string>
     <string name="keyboard_shortcut_group_system_all_apps">Tutte le applicazioni</string>
     <string name="keyboard_shortcut_group_system_running_apps">Applicazioni in esecuzione</string>
@@ -1652,7 +1657,9 @@ Il surriscaldamento può essere causato da:
     <string name="battery_not_fully_connected_charging_title_vzw">Connessione non completata</string>
     <string name="battery_not_fully_connected_charging_text">Per una ricarica più rapida, utilizzate il caricabatterie fornito con il dispositivo e assicuratevi che sia collegato correttamente.</string>
     <string name="battery_not_fully_connected_charging_text_vzw">Assicuratevi che il caricabatterie sia collegato correttamente.</string>
+    <string name="battery_not_fully_connected_charging_text_jpn">Assicuratevi che il caricabatterie sia collegato correttamente.</string>
     <string name="battery_not_fully_connected_charging_popup_text">Assicuratevi che il caricabatterie sia collegato correttamente e utilizzate quello fornito con il dispositivo.</string>
+    <string name="battery_not_fully_connected_charging_popup_text_jpn">Assicuratevi che il caricabatterie sia collegato correttamente.</string>
     <string name="battery_charging_level_and_time_text">"In carica: %1$d%%
 (Circa %2$s al completamento della ricarica)"</string>
     <string name="battery_charging_level_text">In carica: %d%%</string>
@@ -1859,7 +1866,7 @@ Please note that in order to enable your emergency calls (e.g., such as 112 call
     <string name="sec_accessibility_navbar_show_pin">Blocca barra di navigazione</string>
     <string name="force_immersive_guide_dialog_title">Nascondi barra di navigazione:</string>
     <string name="force_immersive_guide_dialog_message1">Toccate due volte questo pulsante per nascondere la barra di navigazione.</string>
-    <string name="force_immersive_guide_dialog_message2">Trascinate verso l’interno dal bordo dello schermo vicino alla porta di ricarica per mostrare la barra di navigazione.</string>
+    <string name="force_immersive_guide_dialog_message2">Trascinate verso l’alto dall’estremità inferiore dello schermo per mostrare la barra di navigazione.</string>
     <string name="force_immersive_guide_dialog_message3">Toccate ancora due volte questo pulsante per bloccare la barra di navigazione in posizione.</string>
     <string name="force_immersive_guide_dialog_message4">Su alcune schermate, come la schermata Home, la barra di navigazione verrà sempre visualizzata.</string>
     <string name="force_immersive_guide_dialog_guide_path">Per nascondere questo pulsante, andate a Impostazioni > Schermo > Barra di navigazione.</string>
@@ -1877,6 +1884,8 @@ Please note that in order to enable your emergency calls (e.g., such as 112 call
     <string name="qs_detail_palm_capture_title">Acquisisci con trascinamento palmo</string>
     <string name="noti_direct_reply_exceed_text_limit_toast">Impossibile inserire altro testo.</string>
     <string name="airplane_mode_tts_text">Modalità Offline</string>
+    <string name="all_noti_readout">Una notifica</string>
+    <string name="all_noti_readout2">%d notifiche</string>
     <string name="car_lockscreen_disclaimer_title">Guida in modo sicuro</string>
     <string name="car_lockscreen_disclaimer_text">"È necessario essere sempre pienamente informati sulle condizioni della strada e rispettare la legislazione vigente. Le indicazioni stradali potrebbero essere imprecise, incomplete, pericolose, inadatte, vietate o richiedere l'attraversamento di aree amministrative. Anche le informazioni sugli esercizi commerciali potrebbero essere imprecise o incomplete. I dati forniti non sono aggiornati in tempo reale e non è possibile garantire la precisione della geolocalizzazione. Non maneggiare dispositivi mobili e app non destinate ad Android Auto durante la guida."</string>
     <string name="pip_close">Chiudi PIP</string>

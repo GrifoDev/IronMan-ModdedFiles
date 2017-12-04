@@ -55,7 +55,9 @@
 
 .field private mWallpaperChangedReceiver:Lcom/android/keyguard/wallpaper/WallpaperViewController$WallpaperChangedReceiver;
 
-.field private mWallpaperType:I
+.field protected mWallpaperOldView:Lcom/android/keyguard/wallpaper/SystemUIWallpaperBase;
+
+.field protected mWallpaperType:I
 
 .field protected mWallpaperView:Lcom/android/keyguard/wallpaper/SystemUIWallpaperBase;
 
@@ -1366,17 +1368,30 @@
 .method protected setBackground()V
     .locals 2
 
+    const/4 v1, 0x0
+
     iget-object v0, p0, Lcom/android/keyguard/wallpaper/WallpaperViewController;->mRootView:Landroid/view/ViewGroup;
+
+    if-eqz v0, :cond_1
+
+    iget-object v0, p0, Lcom/android/keyguard/wallpaper/WallpaperViewController;->mWallpaperOldView:Lcom/android/keyguard/wallpaper/SystemUIWallpaperBase;
 
     if-eqz v0, :cond_0
 
+    iget-object v0, p0, Lcom/android/keyguard/wallpaper/WallpaperViewController;->mWallpaperOldView:Lcom/android/keyguard/wallpaper/SystemUIWallpaperBase;
+
+    invoke-interface {v0}, Lcom/android/keyguard/wallpaper/SystemUIWallpaperBase;->cleanUp()V
+
+    iput-object v1, p0, Lcom/android/keyguard/wallpaper/WallpaperViewController;->mWallpaperOldView:Lcom/android/keyguard/wallpaper/SystemUIWallpaperBase;
+
+    :cond_0
     iget-object v0, p0, Lcom/android/keyguard/wallpaper/WallpaperViewController;->mRootView:Landroid/view/ViewGroup;
 
     invoke-virtual {v0}, Landroid/view/ViewGroup;->removeAllViews()V
 
     iget-object v0, p0, Lcom/android/keyguard/wallpaper/WallpaperViewController;->mWallpaperView:Lcom/android/keyguard/wallpaper/SystemUIWallpaperBase;
 
-    if-eqz v0, :cond_1
+    if-eqz v0, :cond_2
 
     iget-object v0, p0, Lcom/android/keyguard/wallpaper/WallpaperViewController;->mContext:Landroid/content/Context;
 
@@ -1396,11 +1411,11 @@
 
     invoke-virtual {v1, v0}, Landroid/view/ViewGroup;->addView(Landroid/view/View;)V
 
-    :cond_0
+    :cond_1
     :goto_0
     return-void
 
-    :cond_1
+    :cond_2
     iget-object v0, p0, Lcom/android/keyguard/wallpaper/WallpaperViewController;->mContext:Landroid/content/Context;
 
     invoke-static {v0}, Lcom/android/keyguard/KeyguardUpdateMonitor;->getInstance(Landroid/content/Context;)Lcom/android/keyguard/KeyguardUpdateMonitor;

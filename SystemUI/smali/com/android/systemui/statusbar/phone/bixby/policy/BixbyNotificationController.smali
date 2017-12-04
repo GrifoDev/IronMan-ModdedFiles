@@ -410,7 +410,7 @@
 
     move-result v21
 
-    const v22, 0x7f1304f4
+    const v22, 0x7f1304f6
 
     move/from16 v0, v21
 
@@ -502,7 +502,7 @@
 
     move-result v21
 
-    const v22, 0x7f1304f5
+    const v22, 0x7f1304f7
 
     move/from16 v0, v21
 
@@ -1227,11 +1227,7 @@
 .end method
 
 .method public readAllNotification()Ljava/lang/StringBuffer;
-    .locals 15
-
-    const/4 v14, 0x2
-
-    const/4 v13, 0x0
+    .locals 13
 
     const/4 v12, 0x1
 
@@ -1385,17 +1381,19 @@
 
     if-le v6, v12, :cond_4
 
-    new-array v9, v14, [Ljava/lang/Object;
+    invoke-virtual {v3, v2}, Ljava/lang/StringBuffer;->append(Ljava/lang/String;)Ljava/lang/StringBuffer;
 
-    aput-object v2, v9, v13
+    new-array v9, v12, [Ljava/lang/Object;
 
-    invoke-static {v6}, Ljava/lang/String;->valueOf(I)Ljava/lang/String;
+    invoke-static {v6}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v10
 
-    aput-object v10, v9, v12
+    const/4 v11, 0x0
 
-    const v10, 0x7f0f0820
+    aput-object v10, v9, v11
+
+    const v10, 0x7f0f0823
 
     invoke-virtual {v8, v10, v9}, Landroid/content/res/Resources;->getString(I[Ljava/lang/Object;)Ljava/lang/String;
 
@@ -1448,19 +1446,11 @@
     goto :goto_2
 
     :cond_4
-    new-array v9, v14, [Ljava/lang/Object;
+    invoke-virtual {v3, v2}, Ljava/lang/StringBuffer;->append(Ljava/lang/String;)Ljava/lang/StringBuffer;
 
-    aput-object v2, v9, v13
+    const v9, 0x7f0f0822
 
-    invoke-static {v6}, Ljava/lang/String;->valueOf(I)Ljava/lang/String;
-
-    move-result-object v10
-
-    aput-object v10, v9, v12
-
-    const v10, 0x7f0f081f
-
-    invoke-virtual {v8, v10, v9}, Landroid/content/res/Resources;->getString(I[Ljava/lang/Object;)Ljava/lang/String;
+    invoke-virtual {v8, v9}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
     move-result-object v9
 
@@ -1537,7 +1527,7 @@
 
     move-result v6
 
-    const v7, 0x7f1304f5
+    const v7, 0x7f1304f7
 
     if-ne v6, v7, :cond_2
 
@@ -2338,30 +2328,29 @@
 
     move-result v8
 
-    if-eqz v8, :cond_3
+    if-eqz v8, :cond_2
 
     const/4 v2, 0x1
 
     :goto_0
     const/4 v8, -0x1
 
-    if-ne v6, v8, :cond_0
+    if-ne v6, v8, :cond_4
 
-    if-eqz p3, :cond_4
+    invoke-direct {p0}, Lcom/android/systemui/statusbar/phone/bixby/policy/BixbyNotificationController;->getLatestNotification()Lcom/android/systemui/statusbar/NotificationData$Entry;
 
-    :cond_0
-    iget-object v8, p0, Lcom/android/systemui/statusbar/phone/bixby/policy/BixbyNotificationController;->mPhoneStatusBar:Lcom/android/systemui/statusbar/phone/PhoneStatusBar;
+    move-result-object v7
 
-    invoke-virtual {v8, v6}, Lcom/android/systemui/statusbar/phone/PhoneStatusBar;->getNotificationView(I)Landroid/view/View;
+    if-nez v7, :cond_3
 
-    move-result-object v1
+    const-string/jumbo v8, "BixbyNotificationController"
 
-    move-object v0, v1
+    const-string/jumbo v9, "there is no notification"
 
-    check-cast v0, Lcom/android/systemui/statusbar/ExpandableNotificationRow;
+    invoke-static {v8, v9}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
     :goto_1
-    if-eqz v0, :cond_b
+    if-eqz v0, :cond_a
 
     const-string/jumbo v8, "ClearSelectedNotifications"
 
@@ -2369,13 +2358,13 @@
 
     move-result v8
 
-    if-eqz v8, :cond_7
+    if-eqz v8, :cond_6
 
     invoke-virtual {v0}, Lcom/android/systemui/statusbar/ExpandableNotificationRow;->canViewBeDismissed()Z
 
     move-result v8
 
-    if-eqz v8, :cond_6
+    if-eqz v8, :cond_5
 
     const-string/jumbo v8, "BixbyNotificationController"
 
@@ -2383,13 +2372,13 @@
 
     invoke-static {v8, v9}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    if-eqz v2, :cond_1
+    if-eqz v2, :cond_0
 
     invoke-virtual {v0}, Lcom/android/systemui/statusbar/ExpandableNotificationRow;->canViewBeDismissed()Z
 
     move-result v8
 
-    if-eqz v8, :cond_1
+    if-eqz v8, :cond_0
 
     iget-object v8, p0, Lcom/android/systemui/statusbar/phone/bixby/policy/BixbyNotificationController;->mGroupManager:Lcom/android/systemui/statusbar/phone/NotificationGroupManager;
 
@@ -2401,7 +2390,7 @@
 
     move-result v8
 
-    if-eqz v8, :cond_1
+    if-eqz v8, :cond_0
 
     iget-object v8, p0, Lcom/android/systemui/statusbar/phone/bixby/policy/BixbyNotificationController;->mGroupManager:Lcom/android/systemui/statusbar/phone/NotificationGroupManager;
 
@@ -2413,13 +2402,13 @@
 
     move-result-object v4
 
-    if-eqz v4, :cond_1
+    if-eqz v4, :cond_0
 
     invoke-virtual {v4}, Lcom/android/systemui/statusbar/ExpandableNotificationRow;->canViewBeDismissed()Z
 
     move-result v8
 
-    if-eqz v8, :cond_1
+    if-eqz v8, :cond_0
 
     const-string/jumbo v8, "BixbyNotificationController"
 
@@ -2429,7 +2418,7 @@
 
     invoke-virtual {v4}, Lcom/android/systemui/statusbar/ExpandableNotificationRow;->performDismiss()V
 
-    :cond_1
+    :cond_0
     const/4 v5, 0x1
 
     invoke-virtual {v0}, Lcom/android/systemui/statusbar/ExpandableNotificationRow;->performDismiss()V
@@ -2446,7 +2435,7 @@
 
     invoke-static {v8, v9, v10, v11, v12}, Lcom/android/systemui/statusbar/phone/bixby/data/NotificationNlgInfo;->requestNLG(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Lcom/samsung/android/sdk/bixby/BixbyApi$NlgParamMode;)V
 
-    :cond_2
+    :cond_1
     :goto_2
     return v5
 
@@ -2463,32 +2452,30 @@
 
     return v5
 
-    :cond_3
+    :cond_2
     const/4 v2, 0x0
 
-    goto :goto_0
+    goto/16 :goto_0
 
-    :cond_4
-    invoke-direct {p0}, Lcom/android/systemui/statusbar/phone/bixby/policy/BixbyNotificationController;->getLatestNotification()Lcom/android/systemui/statusbar/NotificationData$Entry;
-
-    move-result-object v7
-
-    if-nez v7, :cond_5
-
-    const-string/jumbo v8, "BixbyNotificationController"
-
-    const-string/jumbo v9, "there is no notification"
-
-    invoke-static {v8, v9}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
-    goto/16 :goto_1
-
-    :cond_5
+    :cond_3
     iget-object v0, v7, Lcom/android/systemui/statusbar/NotificationData$Entry;->row:Lcom/android/systemui/statusbar/ExpandableNotificationRow;
 
-    goto/16 :goto_1
+    goto :goto_1
 
-    :cond_6
+    :cond_4
+    iget-object v8, p0, Lcom/android/systemui/statusbar/phone/bixby/policy/BixbyNotificationController;->mPhoneStatusBar:Lcom/android/systemui/statusbar/phone/PhoneStatusBar;
+
+    invoke-virtual {v8, v6}, Lcom/android/systemui/statusbar/phone/PhoneStatusBar;->getNotificationView(I)Landroid/view/View;
+
+    move-result-object v1
+
+    move-object v0, v1
+
+    check-cast v0, Lcom/android/systemui/statusbar/ExpandableNotificationRow;
+
+    goto :goto_1
+
+    :cond_5
     const-string/jumbo v8, "Root"
 
     const-string/jumbo v9, "Ongoing noti"
@@ -2503,14 +2490,14 @@
 
     goto :goto_2
 
-    :cond_7
+    :cond_6
     const-string/jumbo v8, "OpenSelectedNotifications"
 
     invoke-virtual {p2, v8}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v8
 
-    if-eqz v8, :cond_8
+    if-eqz v8, :cond_7
 
     const-string/jumbo v8, "BixbyNotificationController"
 
@@ -2536,28 +2523,28 @@
 
     goto :goto_2
 
-    :cond_8
+    :cond_7
     const-string/jumbo v8, "ExpandSelectedNotifications"
 
     invoke-virtual {p2, v8}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v8
 
-    if-eqz v8, :cond_2
+    if-eqz v8, :cond_1
 
     invoke-virtual {v0}, Lcom/android/systemui/statusbar/ExpandableNotificationRow;->isExpandable()Z
 
     move-result v8
 
-    if-eqz v8, :cond_9
+    if-eqz v8, :cond_8
 
     invoke-virtual {v0}, Lcom/android/systemui/statusbar/ExpandableNotificationRow;->isExpanded()Z
 
     move-result v8
 
-    if-eqz v8, :cond_a
+    if-eqz v8, :cond_9
 
-    :cond_9
+    :cond_8
     const-string/jumbo v8, "Root"
 
     const-string/jumbo v9, "Expanded Noti"
@@ -2570,9 +2557,9 @@
 
     invoke-static {v8, v9, v10, v11, v12}, Lcom/android/systemui/statusbar/phone/bixby/data/NotificationNlgInfo;->requestNLG(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Lcom/samsung/android/sdk/bixby/BixbyApi$NlgParamMode;)V
 
-    goto/16 :goto_2
+    goto :goto_2
 
-    :cond_a
+    :cond_9
     const-string/jumbo v8, "BixbyNotificationController"
 
     const-string/jumbo v9, "childRow.setUserExpanded()"
@@ -2597,7 +2584,7 @@
 
     goto/16 :goto_2
 
-    :cond_b
+    :cond_a
     const-string/jumbo v8, "NotificationPanel"
 
     const-string/jumbo v9, "ordinalNumber"

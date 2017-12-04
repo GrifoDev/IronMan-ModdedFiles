@@ -218,7 +218,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f0d0310
+    const v1, 0x7f0d0312
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -226,7 +226,7 @@
 
     iput v1, p0, Lcom/android/systemui/statusbar/phone/KeyguardStatusBarView;->mSystemIconsSwitcherHiddenExpandedMargin:I
 
-    const v1, 0x7f0d023d
+    const v1, 0x7f0d023f
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -277,7 +277,7 @@
 
     move-result-object v2
 
-    const v3, 0x7f0d04aa
+    const v3, 0x7f0d04ac
 
     invoke-virtual {v2, v3}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -289,7 +289,7 @@
 
     move-result-object v2
 
-    const v3, 0x7f0d04ab
+    const v3, 0x7f0d04ad
 
     invoke-virtual {v2, v3}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -710,7 +710,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f0d031a
+    const v2, 0x7f0d031c
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -736,7 +736,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f0d0318
+    const v2, 0x7f0d031a
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -748,7 +748,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f0d030e
+    const v2, 0x7f0d0310
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -760,7 +760,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f0d030f
+    const v2, 0x7f0d0311
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -784,7 +784,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f0d0238
+    const v2, 0x7f0d023a
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -796,7 +796,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f0d023c
+    const v2, 0x7f0d023e
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -826,7 +826,7 @@
 
     move-result-object v4
 
-    const v5, 0x7f0d0328
+    const v5, 0x7f0d032a
 
     invoke-virtual {v4, v5}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -852,7 +852,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f0d0515
+    const v2, 0x7f0d0518
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -876,7 +876,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f0d0327
+    const v2, 0x7f0d0329
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -906,7 +906,7 @@
 
     move-result-object v4
 
-    const v5, 0x7f0d0321
+    const v5, 0x7f0d0323
 
     invoke-virtual {v4, v5}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -932,7 +932,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f0d0325
+    const v2, 0x7f0d0327
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -958,7 +958,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f0d023b
+    const v2, 0x7f0d023d
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -978,7 +978,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f0d023a
+    const v2, 0x7f0d023c
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -1004,7 +1004,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f0d023b
+    const v2, 0x7f0d023d
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -1017,7 +1017,7 @@
 
     iget-object v1, p0, Lcom/android/systemui/statusbar/phone/KeyguardStatusBarView;->mCarrierLabel:Landroid/widget/TextView;
 
-    const v2, 0x7f0d043c
+    const v2, 0x7f0d043e
 
     invoke-static {v1, v2}, Lcom/android/systemui/FontSizeUtils;->updateFontSize(Landroid/widget/TextView;I)V
 
@@ -1030,7 +1030,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f0d023a
+    const v2, 0x7f0d023c
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -1185,7 +1185,7 @@
 
     move-result-object v3
 
-    const v6, 0x7f0d023b
+    const v6, 0x7f0d023d
 
     invoke-virtual {v3, v6}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -1278,7 +1278,7 @@
 
     move-result-object v6
 
-    const v7, 0x7f0d0325
+    const v7, 0x7f0d0327
 
     invoke-virtual {v6, v7}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 

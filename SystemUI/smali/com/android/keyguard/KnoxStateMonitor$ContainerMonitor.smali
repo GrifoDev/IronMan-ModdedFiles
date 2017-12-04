@@ -1556,6 +1556,14 @@
 
     if-nez v2, :cond_0
 
+    const-string/jumbo v2, "com.samsung.vvm"
+
+    invoke-virtual {v2, p2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v2
+
+    if-nez v2, :cond_0
+
     return v3
 
     :cond_5

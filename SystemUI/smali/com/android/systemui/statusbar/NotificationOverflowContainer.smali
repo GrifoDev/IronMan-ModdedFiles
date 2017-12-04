@@ -59,7 +59,7 @@
 
     invoke-super {p0}, Lcom/android/systemui/statusbar/ActivatableNotificationView;->onFinishInflate()V
 
-    const v0, 0x7f1304f0
+    const v0, 0x7f1304f2
 
     invoke-virtual {p0, v0}, Lcom/android/systemui/statusbar/NotificationOverflowContainer;->findViewById(I)Landroid/view/View;
 
@@ -71,7 +71,7 @@
 
     iget-object v1, p0, Lcom/android/systemui/statusbar/NotificationOverflowContainer;->mIconsView:Lcom/android/systemui/statusbar/NotificationOverflowIconsView;
 
-    const v0, 0x7f1304ee
+    const v0, 0x7f1304f0
 
     invoke-virtual {p0, v0}, Lcom/android/systemui/statusbar/NotificationOverflowContainer;->findViewById(I)Landroid/view/View;
 
@@ -83,7 +83,7 @@
 
     iget-object v0, p0, Lcom/android/systemui/statusbar/NotificationOverflowContainer;->mIconsView:Lcom/android/systemui/statusbar/NotificationOverflowIconsView;
 
-    const v1, 0x7f1304ef
+    const v1, 0x7f1304f1
 
     invoke-virtual {p0, v1}, Lcom/android/systemui/statusbar/NotificationOverflowContainer;->findViewById(I)Landroid/view/View;
 
@@ -91,7 +91,7 @@
 
     invoke-virtual {v0, v1}, Lcom/android/systemui/statusbar/NotificationOverflowIconsView;->setOverflowIndicator(Landroid/view/View;)V
 
-    const v0, 0x7f1304ed
+    const v0, 0x7f1304ef
 
     invoke-virtual {p0, v0}, Lcom/android/systemui/statusbar/NotificationOverflowContainer;->findViewById(I)Landroid/view/View;
 
@@ -117,7 +117,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f0d0444
+    const v1, 0x7f0d0446
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getFloat(I)F
 

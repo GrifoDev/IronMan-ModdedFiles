@@ -370,13 +370,13 @@
 
     iput-boolean v6, p0, Lcom/android/systemui/statusbar/phone/SecNavigationBarView;->mIsNaviBarDefaultKeyOrder:Z
 
-    const v1, 0x7f0f080b
+    const v1, 0x7f0f080e
 
-    const v2, 0x7f0f080c
+    const v2, 0x7f0f080f
 
-    const v3, 0x7f0f080d
+    const v3, 0x7f0f0810
 
-    const v4, 0x7f0f080e
+    const v4, 0x7f0f0811
 
     filled-new-array {v1, v2, v3, v4}, [I
 
@@ -638,7 +638,7 @@
 
     move-result-object v11
 
-    const v12, 0x7f0d04d3
+    const v12, 0x7f0d04d5
 
     invoke-virtual {v11, v12}, Landroid/content/res/Resources;->getDimensionPixelOffset(I)I
 
@@ -677,7 +677,7 @@
 
     iget-object v11, p0, Lcom/android/systemui/statusbar/phone/SecNavigationBarView;->mContext:Landroid/content/Context;
 
-    const v12, 0x7f0f080a
+    const v12, 0x7f0f080d
 
     invoke-virtual {v11, v12}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -777,7 +777,7 @@
 
     iget-object v11, p0, Lcom/android/systemui/statusbar/phone/SecNavigationBarView;->mContext:Landroid/content/Context;
 
-    const v12, 0x7f0f080f
+    const v12, 0x7f0f0812
 
     invoke-virtual {v11, v12}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -851,7 +851,7 @@
 
     invoke-direct {v1, p0}, Lcom/android/systemui/statusbar/phone/SecNavigationBarView$8;-><init>(Lcom/android/systemui/statusbar/phone/SecNavigationBarView;)V
 
-    const v2, 0x7f0f0811
+    const v2, 0x7f0f0814
 
     invoke-virtual {v0, v2, v1}, Landroid/app/AlertDialog$Builder;->setPositiveButton(ILandroid/content/DialogInterface$OnClickListener;)Landroid/app/AlertDialog$Builder;
 
@@ -859,7 +859,7 @@
 
     invoke-direct {v1, p0}, Lcom/android/systemui/statusbar/phone/SecNavigationBarView$9;-><init>(Lcom/android/systemui/statusbar/phone/SecNavigationBarView;)V
 
-    const v2, 0x7f0f0810
+    const v2, 0x7f0f0813
 
     invoke-virtual {v0, v2, v1}, Landroid/app/AlertDialog$Builder;->setNegativeButton(ILandroid/content/DialogInterface$OnClickListener;)Landroid/app/AlertDialog$Builder;
 
@@ -946,7 +946,7 @@
 
     move-result-object v4
 
-    const v5, 0x7f0d0212
+    const v5, 0x7f0d0214
 
     invoke-virtual {v4, v5}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -1806,7 +1806,7 @@
 
     iget-object v1, p0, Lcom/android/systemui/statusbar/phone/SecNavigationBarView;->mContext:Landroid/content/Context;
 
-    const v2, 0x7f0f0898
+    const v2, 0x7f0f089c
 
     invoke-virtual {v1, v2}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -1876,7 +1876,7 @@
 
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/SecNavigationBarView;->mContext:Landroid/content/Context;
 
-    const v2, 0x7f0f0809
+    const v2, 0x7f0f080c
 
     invoke-virtual {v0, v2}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -1901,7 +1901,7 @@
     :cond_2
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/SecNavigationBarView;->mContext:Landroid/content/Context;
 
-    const v2, 0x7f0f0808
+    const v2, 0x7f0f080b
 
     invoke-virtual {v0, v2}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -2129,7 +2129,7 @@
 
     if-eqz v2, :cond_0
 
-    const v2, 0x7f02083c
+    const v2, 0x7f020840
 
     :try_start_0
     invoke-virtual {p1, v2}, Landroid/content/Context;->getDrawable(I)Landroid/graphics/drawable/Drawable;
@@ -2138,7 +2138,7 @@
 
     iput-object v2, p0, Lcom/android/systemui/statusbar/phone/SecNavigationBarView;->mDockedIcon:Landroid/graphics/drawable/Drawable;
 
-    const v2, 0x7f02083a
+    const v2, 0x7f02083e
 
     invoke-virtual {p1, v2}, Landroid/content/Context;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 
@@ -2150,7 +2150,7 @@
 
     iput-object v2, p0, Lcom/android/systemui/statusbar/phone/SecNavigationBarView;->mBackLandIcon:Landroid/graphics/drawable/Drawable;
 
-    const v2, 0x7f02083d
+    const v2, 0x7f020841
 
     invoke-virtual {p1, v2}, Landroid/content/Context;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 
@@ -2162,7 +2162,7 @@
 
     iput-object v2, p0, Lcom/android/systemui/statusbar/phone/SecNavigationBarView;->mBackAltLandIcon:Landroid/graphics/drawable/Drawable;
 
-    const v2, 0x7f020839
+    const v2, 0x7f02083d
 
     invoke-virtual {p1, v2}, Landroid/content/Context;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 
@@ -2170,7 +2170,7 @@
 
     iput-object v2, p0, Lcom/android/systemui/statusbar/phone/SecNavigationBarView;->mHomeDefaultIcon:Landroid/graphics/drawable/Drawable;
 
-    const v2, 0x7f020838
+    const v2, 0x7f02083c
 
     invoke-virtual {p1, v2}, Landroid/content/Context;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 
@@ -3763,218 +3763,269 @@
 .end method
 
 .method public setPinButtonVisibility(Z)V
-    .locals 10
+    .locals 12
 
-    const/4 v6, 0x0
+    const/4 v8, 0x0
 
     invoke-virtual {p0}, Lcom/android/systemui/statusbar/phone/SecNavigationBarView;->getNavBarPinButton()Lcom/android/systemui/statusbar/phone/ButtonDispatcher;
 
-    move-result-object v7
+    move-result-object v9
 
-    if-nez v7, :cond_0
+    if-nez v9, :cond_0
 
     return-void
 
     :cond_0
-    iget-object v7, p0, Lcom/android/systemui/statusbar/phone/SecNavigationBarView;->mNavigationBarSettingsHelper:Lcom/android/systemui/statusbar/NavigationBarSettingsHelper;
+    iget-object v9, p0, Lcom/android/systemui/statusbar/phone/SecNavigationBarView;->mNavigationBarSettingsHelper:Lcom/android/systemui/statusbar/NavigationBarSettingsHelper;
 
-    invoke-virtual {v7}, Lcom/android/systemui/statusbar/NavigationBarSettingsHelper;->getNavigationBarHideSetting()Z
+    invoke-virtual {v9}, Lcom/android/systemui/statusbar/NavigationBarSettingsHelper;->getNavigationBarHideSetting()Z
 
-    move-result v4
+    move-result v6
 
-    iget-object v7, p0, Lcom/android/systemui/statusbar/phone/SecNavigationBarView;->mNaviBarRemoteViewManager:Lcom/android/systemui/statusbar/phone/NaviBarRemoteViewManager;
+    iget-object v9, p0, Lcom/android/systemui/statusbar/phone/SecNavigationBarView;->mNaviBarRemoteViewManager:Lcom/android/systemui/statusbar/phone/NaviBarRemoteViewManager;
 
-    invoke-virtual {v7}, Lcom/android/systemui/statusbar/phone/NaviBarRemoteViewManager;->getLeftRemoteView()Lcom/android/systemui/statusbar/phone/NaviBarRemoteViewManager$NaviBarRemoteView;
+    invoke-virtual {v9}, Lcom/android/systemui/statusbar/phone/NaviBarRemoteViewManager;->getLeftRemoteView()Lcom/android/systemui/statusbar/phone/NaviBarRemoteViewManager$NaviBarRemoteView;
 
-    move-result-object v7
+    move-result-object v9
 
-    if-eqz v7, :cond_1
+    if-eqz v9, :cond_2
 
-    const/4 v3, 0x1
+    const/4 v5, 0x1
 
     :goto_0
-    iget v7, p0, Lcom/android/systemui/statusbar/phone/SecNavigationBarView;->mNavigationIconHints:I
+    iget v9, p0, Lcom/android/systemui/statusbar/phone/SecNavigationBarView;->mNavigationIconHints:I
 
-    and-int/lit8 v7, v7, 0x1
+    and-int/lit8 v9, v9, 0x1
 
-    if-eqz v7, :cond_2
+    if-eqz v9, :cond_3
 
     const/4 v0, 0x1
 
     :goto_1
-    iget-object v7, p0, Lcom/android/systemui/statusbar/phone/SecNavigationBarView;->mBar:Lcom/android/systemui/statusbar/phone/PhoneStatusBar;
+    iget-object v9, p0, Lcom/android/systemui/statusbar/phone/SecNavigationBarView;->mBar:Lcom/android/systemui/statusbar/phone/PhoneStatusBar;
 
-    if-eqz v7, :cond_3
+    if-eqz v9, :cond_4
 
-    iget-object v7, p0, Lcom/android/systemui/statusbar/phone/SecNavigationBarView;->mBar:Lcom/android/systemui/statusbar/phone/PhoneStatusBar;
+    iget-object v9, p0, Lcom/android/systemui/statusbar/phone/SecNavigationBarView;->mBar:Lcom/android/systemui/statusbar/phone/PhoneStatusBar;
 
-    invoke-virtual {v7}, Lcom/android/systemui/statusbar/phone/PhoneStatusBar;->isBouncerShowing()Z
+    invoke-virtual {v9}, Lcom/android/systemui/statusbar/phone/PhoneStatusBar;->isBouncerShowing()Z
 
     move-result v1
 
     :goto_2
-    iget-object v7, p0, Lcom/android/systemui/statusbar/phone/SecNavigationBarView;->mBar:Lcom/android/systemui/statusbar/phone/PhoneStatusBar;
+    iget-object v9, p0, Lcom/android/systemui/statusbar/phone/SecNavigationBarView;->mBar:Lcom/android/systemui/statusbar/phone/PhoneStatusBar;
 
-    if-eqz v7, :cond_4
+    if-eqz v9, :cond_5
 
-    iget-object v7, p0, Lcom/android/systemui/statusbar/phone/SecNavigationBarView;->mBar:Lcom/android/systemui/statusbar/phone/PhoneStatusBar;
+    iget-object v9, p0, Lcom/android/systemui/statusbar/phone/SecNavigationBarView;->mBar:Lcom/android/systemui/statusbar/phone/PhoneStatusBar;
 
-    invoke-virtual {v7}, Lcom/android/systemui/statusbar/phone/PhoneStatusBar;->isDeviceEncrypted()Z
+    invoke-virtual {v9}, Lcom/android/systemui/statusbar/phone/PhoneStatusBar;->isDeviceEncrypted()Z
 
     move-result v2
 
     :goto_3
-    if-eqz p1, :cond_5
+    iget-object v9, p0, Lcom/android/systemui/statusbar/phone/SecNavigationBarView;->mBar:Lcom/android/systemui/statusbar/phone/PhoneStatusBar;
 
-    sget-boolean v7, Lcom/android/systemui/statusbar/phone/SecNavigationBarView;->IS_FACTORY_BINARY:Z
+    if-eqz v9, :cond_6
 
-    if-nez v7, :cond_5
+    iget-object v9, p0, Lcom/android/systemui/statusbar/phone/SecNavigationBarView;->mBar:Lcom/android/systemui/statusbar/phone/PhoneStatusBar;
 
-    if-eqz v4, :cond_5
+    invoke-virtual {v9}, Lcom/android/systemui/statusbar/phone/PhoneStatusBar;->isUltraPowerSavingMode()Z
 
-    if-nez v3, :cond_5
-
-    iget-boolean v7, p0, Lcom/android/systemui/statusbar/phone/SecNavigationBarView;->mAllKeyDisabled:Z
-
-    if-nez v7, :cond_5
-
-    if-nez v0, :cond_5
-
-    if-nez v1, :cond_5
-
-    if-nez v2, :cond_5
-
-    iget-boolean v7, p0, Lcom/android/systemui/statusbar/phone/SecNavigationBarView;->mUserSetupComplete:Z
-
-    if-eqz v7, :cond_5
-
-    const/4 v5, 0x1
+    move-result v4
 
     :goto_4
-    const-string/jumbo v7, "SecNavigationBarView"
+    iget-object v9, p0, Lcom/android/systemui/statusbar/phone/SecNavigationBarView;->mContext:Landroid/content/Context;
 
-    new-instance v8, Ljava/lang/StringBuilder;
+    invoke-static {v9}, Lcom/android/keyguard/util/SettingsHelper;->getInstance(Landroid/content/Context;)Lcom/android/keyguard/util/SettingsHelper;
 
-    invoke-direct {v8}, Ljava/lang/StringBuilder;-><init>()V
+    move-result-object v9
 
-    const-string/jumbo v9, "setPinButtonVisibility() shouldshow="
+    invoke-virtual {v9}, Lcom/android/keyguard/util/SettingsHelper;->isEmergencyMode()Z
 
-    invoke-virtual {v8, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    move-result v3
 
-    move-result-object v8
+    if-eqz p1, :cond_1
 
-    invoke-virtual {v8, v5}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+    sget-boolean v9, Lcom/android/systemui/statusbar/phone/SecNavigationBarView;->IS_FACTORY_BINARY:Z
 
-    move-result-object v8
+    if-nez v9, :cond_1
 
-    const-string/jumbo v9, ", settingsEnabled="
+    if-eqz v6, :cond_1
 
-    invoke-virtual {v8, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    if-nez v5, :cond_1
 
-    move-result-object v8
+    iget-boolean v9, p0, Lcom/android/systemui/statusbar/phone/SecNavigationBarView;->mAllKeyDisabled:Z
 
-    invoke-virtual {v8, v4}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+    if-nez v9, :cond_1
 
-    move-result-object v8
+    if-nez v0, :cond_1
 
-    const-string/jumbo v9, ", leftRemoteVisible="
+    if-nez v1, :cond_1
 
-    invoke-virtual {v8, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v8
-
-    invoke-virtual {v8, v3}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
-
-    move-result-object v8
-
-    const-string/jumbo v9, ", isBackAlt="
-
-    invoke-virtual {v8, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v8
-
-    invoke-virtual {v8, v0}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
-
-    move-result-object v8
-
-    const-string/jumbo v9, ", isBouncerShowing="
-
-    invoke-virtual {v8, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v8
-
-    invoke-virtual {v8, v1}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
-
-    move-result-object v8
-
-    const-string/jumbo v9, ", isDeviceEncrypted="
-
-    invoke-virtual {v8, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v8
-
-    invoke-virtual {v8, v2}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
-
-    move-result-object v8
-
-    const-string/jumbo v9, ", mUserSetupComplete : "
-
-    invoke-virtual {v8, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v8
+    if-nez v2, :cond_1
 
     iget-boolean v9, p0, Lcom/android/systemui/statusbar/phone/SecNavigationBarView;->mUserSetupComplete:Z
 
-    invoke-virtual {v8, v9}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+    if-eqz v9, :cond_1
 
-    move-result-object v8
+    if-nez v4, :cond_1
 
-    invoke-virtual {v8}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    if-eqz v3, :cond_7
 
-    move-result-object v8
+    :cond_1
+    const/4 v7, 0x0
 
-    invoke-static {v7, v8}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+    :goto_5
+    const-string/jumbo v9, "SecNavigationBarView"
+
+    new-instance v10, Ljava/lang/StringBuilder;
+
+    invoke-direct {v10}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string/jumbo v11, "setPinButtonVisibility() shouldshow="
+
+    invoke-virtual {v10, v11}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v10
+
+    invoke-virtual {v10, v7}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+
+    move-result-object v10
+
+    const-string/jumbo v11, ", settingsEnabled="
+
+    invoke-virtual {v10, v11}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v10
+
+    invoke-virtual {v10, v6}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+
+    move-result-object v10
+
+    const-string/jumbo v11, ", leftRemoteVisible="
+
+    invoke-virtual {v10, v11}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v10
+
+    invoke-virtual {v10, v5}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+
+    move-result-object v10
+
+    const-string/jumbo v11, ", isBackAlt="
+
+    invoke-virtual {v10, v11}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v10
+
+    invoke-virtual {v10, v0}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+
+    move-result-object v10
+
+    const-string/jumbo v11, ", isBouncerShowing="
+
+    invoke-virtual {v10, v11}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v10
+
+    invoke-virtual {v10, v1}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+
+    move-result-object v10
+
+    const-string/jumbo v11, ", isDeviceEncrypted="
+
+    invoke-virtual {v10, v11}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v10
+
+    invoke-virtual {v10, v2}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+
+    move-result-object v10
+
+    const-string/jumbo v11, ", mUserSetupComplete : "
+
+    invoke-virtual {v10, v11}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v10
+
+    iget-boolean v11, p0, Lcom/android/systemui/statusbar/phone/SecNavigationBarView;->mUserSetupComplete:Z
+
+    invoke-virtual {v10, v11}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+
+    move-result-object v10
+
+    const-string/jumbo v11, ", isUltraPowerSaving="
+
+    invoke-virtual {v10, v11}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v10
+
+    invoke-virtual {v10, v4}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+
+    move-result-object v10
+
+    const-string/jumbo v11, ", isEmergencyMode : "
+
+    invoke-virtual {v10, v11}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v10
+
+    invoke-virtual {v10, v3}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+
+    move-result-object v10
+
+    invoke-virtual {v10}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v10
+
+    invoke-static {v9, v10}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
     invoke-virtual {p0}, Lcom/android/systemui/statusbar/phone/SecNavigationBarView;->getNavBarPinButton()Lcom/android/systemui/statusbar/phone/ButtonDispatcher;
 
-    move-result-object v7
+    move-result-object v9
 
-    if-eqz v5, :cond_6
+    if-eqz v7, :cond_8
 
-    :goto_5
-    invoke-virtual {v7, v6}, Lcom/android/systemui/statusbar/phone/ButtonDispatcher;->setVisibility(I)V
+    :goto_6
+    invoke-virtual {v9, v8}, Lcom/android/systemui/statusbar/phone/ButtonDispatcher;->setVisibility(I)V
 
     return-void
 
-    :cond_1
-    const/4 v3, 0x0
+    :cond_2
+    const/4 v5, 0x0
 
     goto/16 :goto_0
 
-    :cond_2
+    :cond_3
     const/4 v0, 0x0
 
     goto/16 :goto_1
 
-    :cond_3
+    :cond_4
     const/4 v1, 0x0
 
     goto/16 :goto_2
 
-    :cond_4
+    :cond_5
     const/4 v2, 0x0
 
     goto/16 :goto_3
 
-    :cond_5
-    const/4 v5, 0x0
-
-    goto :goto_4
-
     :cond_6
-    const/4 v6, 0x4
+    const/4 v4, 0x0
 
-    goto :goto_5
+    goto/16 :goto_4
+
+    :cond_7
+    const/4 v7, 0x1
+
+    goto/16 :goto_5
+
+    :cond_8
+    const/4 v8, 0x4
+
+    goto :goto_6
 .end method
 
 .method public setUserSetupComplete(Z)V
@@ -4488,7 +4539,7 @@
 
     iget-object v1, p0, Lcom/android/systemui/statusbar/phone/SecNavigationBarView;->mContext:Landroid/content/Context;
 
-    const v3, 0x7f0f0809
+    const v3, 0x7f0f080c
 
     invoke-virtual {v1, v3}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -4507,7 +4558,7 @@
     :cond_3
     iget-object v1, p0, Lcom/android/systemui/statusbar/phone/SecNavigationBarView;->mContext:Landroid/content/Context;
 
-    const v3, 0x7f0f0808
+    const v3, 0x7f0f080b
 
     invoke-virtual {v1, v3}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 

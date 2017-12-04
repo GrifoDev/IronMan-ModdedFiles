@@ -238,6 +238,8 @@
     <string name="wifi_allow_scan_with_traffic_summary">Дозволи/Забрани Wi‑Fi скенирање во роаминг според количината на постоечкиот податочен сообраќај на интерфејсот.</string>
     <string name="select_logd_size_title">Величини на меѓумеморија на забележувач</string>
     <string name="select_logd_size_dialog_title">Величина/меѓумеморија на дневник</string>
+    <string name="dev_logpersist_clear_warning_title">Избриши го постојаниот склад на дневникот?</string>
+    <string name="dev_logpersist_clear_warning_message">Податоците на дневникот ќе се избришат кога ќе се исклучи трајниот дневник.</string>
     <string name="select_logpersist_title">Постој.чување подат. на дневник</string>
     <string name="select_logpersist_dialog_title">Постојано бирање бафери на днев.на продав.</string>
     <string name="select_usb_configuration_title">Изберете конфигурација за УСБ</string>
@@ -750,6 +752,7 @@ For example, your ringtone will not sound, you will not be able to answer phone 
     <string name="wifi_authentication_failed_kt">Неуспешно потврдување на пристапната точка за Wi-Fi.</string>
     <string name="wifi_authentication_no_response">Не можеше да се поврзе со пристапна точка за Wi-Fi.</string>
     <string name="wifi_authentication_invalid_value">Неуспешна проверка на идентитетот. Проверете ја валидноста на сертификатите.</string>
+    <string name="wifi_disconnected">Wi-Fi е прекинато.</string>
     <string name="quick_settings_dnd_label">Не вознемирувај</string>
     <string name="quick_settings_dnd_priority_label">Само приоритетно</string>
     <string name="quick_settings_dnd_alarms_label">Само аларми</string>
@@ -1381,11 +1384,11 @@ Wi-Fi и Bluetooth исто така ќе се исклучат, но може �
     <string name="keyboard_key_numpad_template">Numpad %1$s</string>
     <string name="keyboard_popup_help">Мета-копче: копчето за симбол за Windows, Команда или друг оперативен систем.</string>
     <string name="keyboard_shortcut_group_system">Системски кратенки</string>
-    <string name="keyboard_shortcut_group_system_home">Почетна страница</string>
-    <string name="keyboard_shortcut_group_system_recents">Неодамнешни</string>
+    <string name="keyboard_shortcut_group_system_home">Дома</string>
+    <string name="keyboard_shortcut_group_system_recents">Последни</string>
     <string name="keyboard_shortcut_group_system_back">Назад</string>
     <string name="keyboard_shortcut_group_system_notifications">Известувања</string>
-    <string name="keyboard_shortcut_group_system_shortcuts_helper">Кратенки на тастатурата</string>
+    <string name="keyboard_shortcut_group_system_shortcuts_helper">Кратенки на тастатура</string>
     <string name="keyboard_shortcut_group_system_switch_input">Префрли метод за внесување</string>
     <string name="keyboard_shortcut_group_system_all_apps">Сите апликации</string>
     <string name="keyboard_shortcut_group_system_running_apps">Активни апликации</string>
@@ -1393,7 +1396,7 @@ Wi-Fi и Bluetooth исто така ќе се исклучат, но може �
     <string name="keyboard_shortcut_group_system_switch_languages">Сменете јазици</string>
     <string name="keyboard_shortcut_group_applications">Кратенки во апликации</string>
     <string name="keyboard_shortcut_group_applications_assist">Помош</string>
-    <string name="keyboard_shortcut_group_applications_browser">Прелистувач</string>
+    <string name="keyboard_shortcut_group_applications_browser">Прегледник</string>
     <string name="keyboard_shortcut_group_applications_contacts">Именик</string>
     <string name="keyboard_shortcut_group_applications_email">Е-пошта</string>
     <string name="keyboard_shortcut_group_applications_im">IM</string>
@@ -1651,7 +1654,9 @@ Using your tablet in a very hot location."</string>
     <string name="battery_not_fully_connected_charging_title_vzw">Incomplete connection</string>
     <string name="battery_not_fully_connected_charging_text">За побрзо полнење, користете го полначот што е доставен со Вашиот уред и осигурете се дека е правилно поврзан.</string>
     <string name="battery_not_fully_connected_charging_text_vzw">Make sure the charger is properly connected.</string>
+    <string name="battery_not_fully_connected_charging_text_jpn">Осигурете се дека полначот е правилно поврзан.</string>
     <string name="battery_not_fully_connected_charging_popup_text">Осигурете се дека полначот е правилно поврзан. Користете го полначот што е доставен со уредот.</string>
+    <string name="battery_not_fully_connected_charging_popup_text_jpn">Осигурете се дека полначот е правилно поврзан.</string>
     <string name="battery_charging_level_and_time_text">"Се полни: %1$d%%
 (Околу %2$s до целосна наполнетост)"</string>
     <string name="battery_charging_level_text">Се полни: %d%%</string>
@@ -1876,6 +1881,8 @@ Please note that in order to enable your emergency calls (e.g., such as 112 call
     <string name="qs_detail_palm_capture_title">Поминете со дланката за доловување</string>
     <string name="noti_direct_reply_exceed_text_limit_toast">Не може да се внесе повеќе текст.</string>
     <string name="airplane_mode_tts_text">Режим за летало</string>
+    <string name="all_noti_readout">Едно известување</string>
+    <string name="all_noti_readout2">%d известувања</string>
     <string name="car_lockscreen_disclaimer_title">Возете безбедно</string>
     <string name="car_lockscreen_disclaimer_text">Секогаш бидете известени за условите за возење и почитувајте ги важечките закони. Насоките може да бидат неточни, нецелосни, опасни, несоодветни, забранети или да вклучуваат премин преку административни области. Бизнис информациите исто така може да бидат неточни или нецелосни. Податоците не се даваат во реално време и не може да се гарантира точноста на локацијата. Не ракувајте со вашиот мобилен уред и не користете апликации што не се наменети за Android Auto додека возите.</string>
     <string name="pip_close">Затвори PIP</string>

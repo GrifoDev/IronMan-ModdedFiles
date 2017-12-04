@@ -724,7 +724,7 @@
 
     aput-object v10, v9, v11
 
-    const v10, 0x7f0f05fa
+    const v10, 0x7f0f05fb
 
     invoke-virtual {v8, v10, v9}, Landroid/content/Context;->getString(I[Ljava/lang/Object;)Ljava/lang/String;
 
@@ -1143,7 +1143,7 @@
 
     iget-object v2, p0, Lcom/android/systemui/qs/QSDetail;->mContext:Landroid/content/Context;
 
-    const v3, 0x1040a32
+    const v3, 0x1040a33
 
     invoke-virtual {v2, v3}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -1213,7 +1213,7 @@
 .method protected onConfigurationChanged(Landroid/content/res/Configuration;)V
     .locals 6
 
-    const v5, 0x7f0d0280
+    const v5, 0x7f0d0282
 
     invoke-super {p0, p1}, Landroid/widget/LinearLayout;->onConfigurationChanged(Landroid/content/res/Configuration;)V
 
@@ -1227,7 +1227,7 @@
 
     iget-object v4, p0, Lcom/android/systemui/qs/QSDetail;->mQsDetailHeaderTitle:Landroid/widget/TextView;
 
-    const v5, 0x7f0d027f
+    const v5, 0x7f0d0281
 
     invoke-static {v4, v5}, Lcom/android/systemui/FontSizeUtils;->updateFontSize(Landroid/widget/TextView;I)V
 
@@ -1293,7 +1293,7 @@
 
     move-result-object v4
 
-    const v5, 0x7f0d027d
+    const v5, 0x7f0d027f
 
     invoke-virtual {v4, v5}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -1320,7 +1320,7 @@
 
     move-result-object v4
 
-    const v5, 0x7f0d027b
+    const v5, 0x7f0d027d
 
     invoke-virtual {v4, v5}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -1348,7 +1348,7 @@
 
     move-result-object v4
 
-    const v5, 0x7f0d027c
+    const v5, 0x7f0d027e
 
     invoke-virtual {v4, v5}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -1433,7 +1433,7 @@
 
     iput-object v1, p0, Lcom/android/systemui/qs/QSDetail;->mQsDetailHeaderSwitch:Landroid/widget/Switch;
 
-    const v1, 0x7f130491
+    const v1, 0x7f130493
 
     invoke-virtual {p0, v1}, Lcom/android/systemui/qs/QSDetail;->findViewById(I)Landroid/view/View;
 

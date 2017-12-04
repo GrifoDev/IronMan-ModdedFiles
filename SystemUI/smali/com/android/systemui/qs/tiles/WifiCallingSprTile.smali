@@ -826,7 +826,7 @@
 
     iget-object v0, p0, Lcom/android/systemui/qs/tiles/WifiCallingSprTile;->mContext:Landroid/content/Context;
 
-    const v1, 0x7f0f0479
+    const v1, 0x7f0f047b
 
     invoke-virtual {v0, v1}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -964,7 +964,7 @@
 
     iget-object v0, p0, Lcom/android/systemui/qs/tiles/WifiCallingSprTile;->mContext:Landroid/content/Context;
 
-    const v1, 0x7f0f0479
+    const v1, 0x7f0f047b
 
     invoke-virtual {v0, v1}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 

@@ -417,7 +417,7 @@
 
     move-result-object v0
 
-    const v2, 0x7f0d0347
+    const v2, 0x7f0d0349
 
     invoke-virtual {v0, v2}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -425,7 +425,7 @@
 
     iput v2, p0, Lcom/android/systemui/statusbar/SignalClusterView;->mMobileSignalGroupEndPadding:I
 
-    const v2, 0x7f0d0348
+    const v2, 0x7f0d034a
 
     invoke-virtual {v0, v2}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -433,7 +433,7 @@
 
     iput v2, p0, Lcom/android/systemui/statusbar/SignalClusterView;->mMobileDataIconStartPadding:I
 
-    const v2, 0x7f0d0349
+    const v2, 0x7f0d034b
 
     invoke-virtual {v0, v2}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -441,7 +441,7 @@
 
     iput v2, p0, Lcom/android/systemui/statusbar/SignalClusterView;->mWideTypeIconStartPadding:I
 
-    const v2, 0x7f0d034a
+    const v2, 0x7f0d034c
 
     invoke-virtual {v0, v2}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -449,7 +449,7 @@
 
     iput v2, p0, Lcom/android/systemui/statusbar/SignalClusterView;->mSecondaryTelephonyPadding:I
 
-    const v2, 0x7f0d0351
+    const v2, 0x7f0d0353
 
     invoke-virtual {v0, v2}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -461,7 +461,7 @@
 
     invoke-direct {v1}, Landroid/util/TypedValue;-><init>()V
 
-    const v2, 0x7f0d021c
+    const v2, 0x7f0d021e
 
     const/4 v3, 0x1
 
@@ -501,7 +501,7 @@
     return-void
 
     :cond_0
-    const v2, 0x7f0d0350
+    const v2, 0x7f0d0352
 
     invoke-virtual {v0, v2}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -780,7 +780,7 @@
 
     move-result-object v11
 
-    const v12, 0x7f0f07c8
+    const v12, 0x7f0f07cb
 
     invoke-virtual {v11, v12}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -1201,7 +1201,7 @@
 
     move-result-object v8
 
-    const v11, 0x7f0d043d
+    const v11, 0x7f0d043f
 
     invoke-virtual {v8, v11}, Landroid/content/res/Resources;->getFloat(I)F
 
@@ -1219,7 +1219,7 @@
 
     move-result-object v11
 
-    const v12, 0x7f0f07c7
+    const v12, 0x7f0f07ca
 
     invoke-virtual {v11, v12}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -1573,7 +1573,7 @@
     return v0
 
     :cond_0
-    const v0, 0x7f020774
+    const v0, 0x7f020778
 
     goto :goto_0
 .end method
@@ -2532,7 +2532,7 @@
 
     iget-object v3, p0, Lcom/android/systemui/statusbar/SignalClusterView;->mBtTether:Landroid/widget/ImageView;
 
-    const v4, 0x7f02076f
+    const v4, 0x7f020773
 
     invoke-direct {p0, v3, v4}, Lcom/android/systemui/statusbar/SignalClusterView;->setIconForView(Landroid/widget/ImageView;I)V
 
@@ -2742,7 +2742,7 @@
 .method protected onFinishInflate()V
     .locals 5
 
-    const v4, 0x7f0207c1
+    const v4, 0x7f0207c5
 
     const/4 v3, 0x1
 

@@ -238,6 +238,8 @@
     <string name="wifi_allow_scan_with_traffic_summary">ઇન્ટરફેસ પર હાજર ડેટા ટ્રાફિકના પ્રમાણનાં આધારે Wi‑Fi રોમ સ્કૅન્સને મંજૂરી આપો/નામંજૂર કરો</string>
     <string name="select_logd_size_title">લોગર બફર કદ</string>
     <string name="select_logd_size_dialog_title">લૉગ દીઠ લૉગર કદ બફર પસંદ કરો</string>
+    <string name="dev_logpersist_clear_warning_title">સતત લોગર સંગ્રહને સાફ કરીએ?</string>
+    <string name="dev_logpersist_clear_warning_message">સતત લોગર બંધ કરેલું હોય ત્યારે લોગર ડેટા હટાવવામાં આવશે.</string>
     <string name="select_logpersist_title">લોગ ડેટાને નિરંતર સ્ટોર કરો</string>
     <string name="select_logpersist_dialog_title">નિરંત્ર સ્ટોર કરવા માટે લોગ બફર્સ પસંદ કરો</string>
     <string name="select_usb_configuration_title">USB ગોઠવણી પસંદ કરો</string>
@@ -752,6 +754,7 @@ For example, your ringtone will not sound, you will not be able to answer phone 
     <string name="wifi_authentication_failed_kt">Wi-Fi AP ને પ્રમાણિત કરવામાં નિષ્ફળ થયા.</string>
     <string name="wifi_authentication_no_response">Wi-Fi AP સાથે જોડાણ કરવામાં અસમર્થ.</string>
     <string name="wifi_authentication_invalid_value">પ્રમાણીકરણ નિષ્ફળ. ID અને password તપાસો</string>
+    <string name="wifi_disconnected">Wi-Fi જોડાણ તુટેલું છે.</string>
     <string name="quick_settings_dnd_label">ખલેલ પાડશો નહીં</string>
     <string name="quick_settings_dnd_priority_label">ફક્ત પ્રાધાન્યતા</string>
     <string name="quick_settings_dnd_alarms_label">ફક્ત એલાર્મ્સ</string>
@@ -1386,7 +1389,7 @@ Wi-Fi અને બ્લ્યુટુથ પણ બંધ થશે, પર�
     <string name="keyboard_shortcut_group_system_recents">તાજેતરના</string>
     <string name="keyboard_shortcut_group_system_back">પાછળ</string>
     <string name="keyboard_shortcut_group_system_notifications">સૂચનાઓ</string>
-    <string name="keyboard_shortcut_group_system_shortcuts_helper">કીબોર્ડ શૉર્ટકટ્સ</string>
+    <string name="keyboard_shortcut_group_system_shortcuts_helper">કીબોર્ડ શોર્ટકટ્સ</string>
     <string name="keyboard_shortcut_group_system_switch_input">ઇનપુટ પદ્ધતિ સ્વિચ કરો</string>
     <string name="keyboard_shortcut_group_system_all_apps">બધી એપ્સ</string>
     <string name="keyboard_shortcut_group_system_running_apps">ચાલી રહેલી એપ્સ</string>
@@ -1652,7 +1655,9 @@ Using your tablet in a very hot location."</string>
     <string name="battery_not_fully_connected_charging_title_vzw">Incomplete connection</string>
     <string name="battery_not_fully_connected_charging_text">ઝડપી ચાર્જિંગ માટે, તમારા ઉપકરણ સાથે આવેલ ચાર્જરનો ઉપયોગ કરો અને ખાતરી કરો કે તે યોગ્ય રીતે જોડાયું છે.</string>
     <string name="battery_not_fully_connected_charging_text_vzw">Make sure the charger is properly connected.</string>
+    <string name="battery_not_fully_connected_charging_text_jpn">ખાતરી કરો કે ચાર્જર યોગ્ય રીતે જોડાયેલ છે.</string>
     <string name="battery_not_fully_connected_charging_popup_text">ખાતરી કરો કે ચાર્જર યોગ્ય રીતે જોડાયેલું છે. ઉપકરણ સાથે આવેલ ચાર્જરનો ઉપયોગ કરો.</string>
+    <string name="battery_not_fully_connected_charging_popup_text_jpn">ખાતરી કરો કે ચાર્જર યોગ્ય રીતે જોડાયેલું છે.</string>
     <string name="battery_charging_level_and_time_text">"ચાર્જ થઇ રહ્યું છે: %1$d%%
 (સંપૂર્ણ ચાર્જ થવા સુધીમાં લગભગ %2$s)"</string>
     <string name="battery_charging_level_text">ચાર્જિંગ: %d%%</string>
@@ -1877,6 +1882,8 @@ Please note that in order to enable your emergency calls (e.g., such as 112 call
     <string name="qs_detail_palm_capture_title">કેપ્ચર કરવા માટે હથેળીથી સ્વાઇપ કરો</string>
     <string name="noti_direct_reply_exceed_text_limit_toast">કોઈપણ વધુ અક્ષરો દાખલ કરી શકાતા નથી.</string>
     <string name="airplane_mode_tts_text">એરપ્લેન મોડ</string>
+    <string name="all_noti_readout">એક સૂચના</string>
+    <string name="all_noti_readout2">%d સૂચનાઓ</string>
     <string name="car_lockscreen_disclaimer_title">સુરક્ષિત રીતે વાહન ચલાવો</string>
     <string name="car_lockscreen_disclaimer_text">ડ્રાઇવિંગ સ્થિતિઓથી સંપૂર્ણપણે વાકેફ રહો અને હંમેશા લાગુ કાયદાઓનું પાલન કરો. દિશા નિર્દેશો અચોક્કસ, અપૂર્ણ, જોખમમકારક, બિન અનુકૂળ, પ્રતિબંધિત અથવા વહીવટી વિસ્તારોને ઓળંગવાનું સમાવતા હોઇ શકે છે. વ્યવસાય માહિતી પણ અચોક્કસ અથવા અપૂર્ણ હોઇ શકે છે. ડેટા રિઅલ-ટાઇમ નથી અને સ્થાન ચોકસાઈની ગેરંટી આપી શકતાં નથી. ડ્રાઇવિંગ કરતી વખતે Android Auto માટે તમારું મોબાઇલ સાધન હેન્ડલ કરવું અથવા ઍપ્લિકેશનનો ઉપયોગ કરવાનું કોઇ પ્રયોજન નથી.</string>
     <string name="pip_close">PIP બંધ કરો</string>

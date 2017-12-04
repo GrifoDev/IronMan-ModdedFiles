@@ -238,6 +238,8 @@
     <string name="wifi_allow_scan_with_traffic_summary">Permiteți/Nu permiteți scanarea traficului Wi-Fi în funcție de traficul de date din interfață</string>
     <string name="select_logd_size_title">Dimensiunile tamponului jurnalului</string>
     <string name="select_logd_size_dialog_title">Dimensiuni jurnal / tampon jurnal</string>
+    <string name="dev_logpersist_clear_warning_title">Ștergeți sp. de stoc. pt. logger persist.?</string>
+    <string name="dev_logpersist_clear_warning_message">Datele loggerului vor fi șterse atunci când loggerul persistent este oprit.</string>
     <string name="select_logpersist_title">Stocare persistentă date jurnal</string>
     <string name="select_logpersist_dialog_title">Sel. zone tampon jurn. pt. stocare persist.</string>
     <string name="select_usb_configuration_title">Selectați configurația USB</string>
@@ -751,6 +753,7 @@ Reluarea utilizării de date poate genera aplicarea de taxe de către operator."
     <string name="wifi_authentication_failed_kt">Autentificarea pentru PA Wi-Fi nu a reușit.</string>
     <string name="wifi_authentication_no_response">Nu s-a putut stabili conexiunea la PA Wi-Fi.</string>
     <string name="wifi_authentication_invalid_value">Autentificare eșuată. Verificați numele de utilizator și parola.</string>
+    <string name="wifi_disconnected">Wi-Fi deconectat</string>
     <string name="quick_settings_dnd_label">Nu deranja</string>
     <string name="quick_settings_dnd_priority_label">Numai cu prioritate</string>
     <string name="quick_settings_dnd_alarms_label">Numai alarme</string>
@@ -1382,7 +1385,7 @@ Pentru mai multe informații, contactați administratorul."</string>
     <string name="keyboard_key_numpad_template">Tasta numerică %1$s</string>
     <string name="keyboard_popup_help">Tastă meta: tasta Windows, Command sau altă tastă simbol de sistem.</string>
     <string name="keyboard_shortcut_group_system">Comenzi rapide sistem</string>
-    <string name="keyboard_shortcut_group_system_home">Ecran de pornire</string>
+    <string name="keyboard_shortcut_group_system_home">Acasă</string>
     <string name="keyboard_shortcut_group_system_recents">Recente</string>
     <string name="keyboard_shortcut_group_system_back">Înapoi</string>
     <string name="keyboard_shortcut_group_system_notifications">Notificări</string>
@@ -1652,7 +1655,9 @@ Supraîncălzirea poate fi cauzată de:
     <string name="battery_not_fully_connected_charging_title_vzw">Incomplete connection</string>
     <string name="battery_not_fully_connected_charging_text">Pentru o încărcare mai rapidă, utilizați încărcătorul furnizat împreună cu dispozitivul și asigurați-vă că este conectat corect.</string>
     <string name="battery_not_fully_connected_charging_text_vzw">Make sure the charger is properly connected.</string>
+    <string name="battery_not_fully_connected_charging_text_jpn">Asigurați-vă că încărcătorul este conectat corect.</string>
     <string name="battery_not_fully_connected_charging_popup_text">Asigurați-vă că încărcătorul este conectat corect. Utilizați încărcătorul furnizat împreună cu dispozitivul.</string>
+    <string name="battery_not_fully_connected_charging_popup_text_jpn">Asigurați-vă că încărcătorul este conectat corect.</string>
     <string name="battery_charging_level_and_time_text">"Încărcare %1$d%%
 (aproximativ %2$s până la încărcarea completă)"</string>
     <string name="battery_charging_level_text">Încărcare: %d%%</string>
@@ -1877,6 +1882,8 @@ Please note that in order to enable your emergency calls (e.g., such as 112 call
     <string name="qs_detail_palm_capture_title">Glisarea cu palma pentru capturare</string>
     <string name="noti_direct_reply_exceed_text_limit_toast">Nu se poate introduce mai mult text.</string>
     <string name="airplane_mode_tts_text">Mod Avion</string>
+    <string name="all_noti_readout">O notificare</string>
+    <string name="all_noti_readout2">%d notificări</string>
     <string name="car_lockscreen_disclaimer_title">Conduceți atent</string>
     <string name="car_lockscreen_disclaimer_text">Aflați mereu condițiile de trafic și respectați întotdeauna legislația aplicabilă. Indicațiile de orientare pot fi inexacte, incomplete, periculoase, neadecvate, interzise sau pot implica trecerea prin zone administrative. Informațiile despre companii pot fi, de asemenea, inexacte sau incomplete. Datele nu sunt în timp real și nu se poate garanta exactitatea locației. Nu manipulați dispozitivul mobil și nu folosiți aplicații neconcepute pentru Android Auto când sunteți la volan.</string>
     <string name="pip_close">Închideți PIP</string>

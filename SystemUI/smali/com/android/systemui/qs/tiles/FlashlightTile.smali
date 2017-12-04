@@ -524,7 +524,7 @@
 
     move-result-object v5
 
-    const v6, 0x7f0f04ea
+    const v6, 0x7f0f04eb
 
     invoke-virtual {v5, v6}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -568,7 +568,7 @@
 
     move-result-object v6
 
-    const v7, 0x7f0f04eb
+    const v7, 0x7f0f04ec
 
     invoke-virtual {v6, v7}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -733,7 +733,7 @@
 
     aput-object v4, v3, v2
 
-    const v2, 0x7f0f04c7
+    const v2, 0x7f0f04c8
 
     invoke-virtual {v1, v2, v3}, Landroid/content/Context;->getString(I[Ljava/lang/Object;)Ljava/lang/String;
 
@@ -750,7 +750,7 @@
 
     iget-object v1, p0, Lcom/android/systemui/qs/tiles/FlashlightTile;->mContext:Landroid/content/Context;
 
-    const v2, 0x7f0f04ec
+    const v2, 0x7f0f04ed
 
     invoke-virtual {v1, v2}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -890,7 +890,7 @@
 
     aput-object v2, v1, v3
 
-    const v2, 0x7f0f04c7
+    const v2, 0x7f0f04c8
 
     invoke-virtual {v0, v2, v1}, Landroid/content/Context;->getString(I[Ljava/lang/Object;)Ljava/lang/String;
 
@@ -908,7 +908,7 @@
 
     iget-object v0, p0, Lcom/android/systemui/qs/tiles/FlashlightTile;->mContext:Landroid/content/Context;
 
-    const v1, 0x7f0f04ec
+    const v1, 0x7f0f04ed
 
     invoke-virtual {v0, v1}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 

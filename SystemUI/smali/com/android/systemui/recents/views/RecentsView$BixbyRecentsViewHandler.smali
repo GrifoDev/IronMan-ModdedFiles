@@ -41,7 +41,7 @@
 .method private getFocusedTask()Lcom/android/systemui/recents/model/Task;
     .locals 8
 
-    const/4 v7, 0x0
+    const/4 v6, 0x0
 
     iget-object v5, p0, Lcom/android/systemui/recents/views/RecentsView$BixbyRecentsViewHandler;->this$0:Lcom/android/systemui/recents/views/RecentsView;
 
@@ -51,24 +51,33 @@
 
     move-result-object v2
 
-    if-nez v2, :cond_1
-
-    const/4 v5, -0x2
-
-    iput v5, p0, Lcom/android/systemui/recents/views/RecentsView$BixbyRecentsViewHandler;->lastErrorNo:I
+    if-nez v2, :cond_2
 
     iget-object v5, p0, Lcom/android/systemui/recents/views/RecentsView$BixbyRecentsViewHandler;->this$0:Lcom/android/systemui/recents/views/RecentsView;
 
-    invoke-virtual {v5}, Lcom/android/systemui/recents/views/RecentsView;->getStack()Lcom/android/systemui/recents/model/TaskStack;
+    iget-object v5, v5, Lcom/android/systemui/recents/views/RecentsView;->mTaskStackView:Lcom/android/systemui/recents/views/TaskStackView;
+
+    invoke-virtual {v5}, Lcom/android/systemui/recents/views/TaskStackView;->getStack()Lcom/android/systemui/recents/model/TaskStack;
 
     move-result-object v5
 
-    invoke-virtual {v5}, Lcom/android/systemui/recents/model/TaskStack;->getTaskCount()I
+    invoke-virtual {v5}, Lcom/android/systemui/recents/model/TaskStack;->getStackTasks()Ljava/util/ArrayList;
+
+    move-result-object v4
+
+    invoke-virtual {v4}, Ljava/util/ArrayList;->size()I
 
     move-result v5
 
-    if-eqz v5, :cond_1
+    if-nez v5, :cond_0
 
+    const/4 v5, -0x1
+
+    iput v5, p0, Lcom/android/systemui/recents/views/RecentsView$BixbyRecentsViewHandler;->lastErrorNo:I
+
+    return-object v6
+
+    :cond_0
     iget-object v5, p0, Lcom/android/systemui/recents/views/RecentsView$BixbyRecentsViewHandler;->this$0:Lcom/android/systemui/recents/views/RecentsView;
 
     iget-object v5, v5, Lcom/android/systemui/recents/views/RecentsView;->mTaskStackView:Lcom/android/systemui/recents/views/TaskStackView;
@@ -81,16 +90,6 @@
 
     move-result v1
 
-    iget-object v5, p0, Lcom/android/systemui/recents/views/RecentsView$BixbyRecentsViewHandler;->this$0:Lcom/android/systemui/recents/views/RecentsView;
-
-    invoke-static {v5}, Lcom/android/systemui/recents/views/RecentsView;->-get10(Lcom/android/systemui/recents/views/RecentsView;)Lcom/android/systemui/recents/model/TaskStack;
-
-    move-result-object v5
-
-    invoke-virtual {v5}, Lcom/android/systemui/recents/model/TaskStack;->getStackTasks()Ljava/util/ArrayList;
-
-    move-result-object v4
-
     invoke-virtual {v4}, Ljava/util/ArrayList;->size()I
 
     move-result v5
@@ -98,7 +97,7 @@
     add-int/lit8 v0, v5, -0x1
 
     :goto_0
-    if-ltz v0, :cond_0
+    if-ltz v0, :cond_1
 
     iget-object v5, p0, Lcom/android/systemui/recents/views/RecentsView$BixbyRecentsViewHandler;->this$0:Lcom/android/systemui/recents/views/RecentsView;
 
@@ -122,16 +121,18 @@
 
     move-result v5
 
-    if-gtz v5, :cond_2
+    if-gtz v5, :cond_3
 
-    add-int/lit8 v0, v0, 0x1
-
-    :cond_0
+    :cond_1
     iget-object v5, p0, Lcom/android/systemui/recents/views/RecentsView$BixbyRecentsViewHandler;->this$0:Lcom/android/systemui/recents/views/RecentsView;
 
     iget-object v5, v5, Lcom/android/systemui/recents/views/RecentsView;->mTaskStackView:Lcom/android/systemui/recents/views/TaskStackView;
 
-    invoke-virtual {v5, v0, v7}, Lcom/android/systemui/recents/views/TaskStackView;->setFocusedTask(IZ)Z
+    add-int/lit8 v6, v0, 0x1
+
+    const/4 v7, 0x1
+
+    invoke-virtual {v5, v6, v7}, Lcom/android/systemui/recents/views/TaskStackView;->setFocusedTask(IZ)Z
 
     iget-object v5, p0, Lcom/android/systemui/recents/views/RecentsView$BixbyRecentsViewHandler;->this$0:Lcom/android/systemui/recents/views/RecentsView;
 
@@ -141,10 +142,16 @@
 
     move-result-object v2
 
-    :cond_1
-    return-object v2
+    if-nez v2, :cond_2
+
+    const/4 v5, -0x2
+
+    iput v5, p0, Lcom/android/systemui/recents/views/RecentsView$BixbyRecentsViewHandler;->lastErrorNo:I
 
     :cond_2
+    return-object v2
+
+    :cond_3
     add-int/lit8 v0, v0, -0x1
 
     goto :goto_0
@@ -153,9 +160,7 @@
 
 # virtual methods
 .method public changeFocusedAppAspectRatio()Z
-    .locals 10
-
-    const/4 v9, -0x2
+    .locals 9
 
     const/4 v8, 0x0
 
@@ -174,7 +179,9 @@
     :cond_0
     iget-object v7, p0, Lcom/android/systemui/recents/views/RecentsView$BixbyRecentsViewHandler;->this$0:Lcom/android/systemui/recents/views/RecentsView;
 
-    invoke-static {v7}, Lcom/android/systemui/recents/views/RecentsView;->-get10(Lcom/android/systemui/recents/views/RecentsView;)Lcom/android/systemui/recents/model/TaskStack;
+    iget-object v7, v7, Lcom/android/systemui/recents/views/RecentsView;->mTaskStackView:Lcom/android/systemui/recents/views/TaskStackView;
+
+    invoke-virtual {v7}, Lcom/android/systemui/recents/views/TaskStackView;->getStack()Lcom/android/systemui/recents/model/TaskStack;
 
     move-result-object v7
 
@@ -186,7 +193,9 @@
 
     iget-object v7, p0, Lcom/android/systemui/recents/views/RecentsView$BixbyRecentsViewHandler;->this$0:Lcom/android/systemui/recents/views/RecentsView;
 
-    invoke-static {v7}, Lcom/android/systemui/recents/views/RecentsView;->-get10(Lcom/android/systemui/recents/views/RecentsView;)Lcom/android/systemui/recents/model/TaskStack;
+    iget-object v7, v7, Lcom/android/systemui/recents/views/RecentsView;->mTaskStackView:Lcom/android/systemui/recents/views/TaskStackView;
+
+    invoke-virtual {v7}, Lcom/android/systemui/recents/views/TaskStackView;->getStack()Lcom/android/systemui/recents/model/TaskStack;
 
     move-result-object v7
 
@@ -200,7 +209,9 @@
 
     if-eqz v7, :cond_1
 
-    iput v9, p0, Lcom/android/systemui/recents/views/RecentsView$BixbyRecentsViewHandler;->lastErrorNo:I
+    const/4 v7, -0x1
+
+    iput v7, p0, Lcom/android/systemui/recents/views/RecentsView$BixbyRecentsViewHandler;->lastErrorNo:I
 
     return v8
 
@@ -220,7 +231,9 @@
     :cond_2
     if-nez v2, :cond_3
 
-    iput v9, p0, Lcom/android/systemui/recents/views/RecentsView$BixbyRecentsViewHandler;->lastErrorNo:I
+    const/4 v7, -0x2
+
+    iput v7, p0, Lcom/android/systemui/recents/views/RecentsView$BixbyRecentsViewHandler;->lastErrorNo:I
 
     return v8
 
@@ -295,7 +308,9 @@
 
     iget-object v0, p0, Lcom/android/systemui/recents/views/RecentsView$BixbyRecentsViewHandler;->this$0:Lcom/android/systemui/recents/views/RecentsView;
 
-    invoke-static {v0}, Lcom/android/systemui/recents/views/RecentsView;->-get10(Lcom/android/systemui/recents/views/RecentsView;)Lcom/android/systemui/recents/model/TaskStack;
+    iget-object v0, v0, Lcom/android/systemui/recents/views/RecentsView;->mTaskStackView:Lcom/android/systemui/recents/views/TaskStackView;
+
+    invoke-virtual {v0}, Lcom/android/systemui/recents/views/TaskStackView;->getStack()Lcom/android/systemui/recents/model/TaskStack;
 
     move-result-object v0
 
@@ -324,11 +339,9 @@
 .end method
 
 .method public closeFocusedTask()Z
-    .locals 6
+    .locals 7
 
-    const/4 v5, 0x0
-
-    const/4 v4, -0x2
+    const/4 v6, 0x0
 
     invoke-direct {p0}, Lcom/android/systemui/recents/views/RecentsView$BixbyRecentsViewHandler;->getFocusedTask()Lcom/android/systemui/recents/model/Task;
 
@@ -336,9 +349,7 @@
 
     if-nez v1, :cond_0
 
-    iput v4, p0, Lcom/android/systemui/recents/views/RecentsView$BixbyRecentsViewHandler;->lastErrorNo:I
-
-    return v5
+    return v6
 
     :cond_0
     iget-object v3, p0, Lcom/android/systemui/recents/views/RecentsView$BixbyRecentsViewHandler;->this$0:Lcom/android/systemui/recents/views/RecentsView;
@@ -351,9 +362,37 @@
 
     if-nez v2, :cond_1
 
-    iput v4, p0, Lcom/android/systemui/recents/views/RecentsView$BixbyRecentsViewHandler;->lastErrorNo:I
+    const-string/jumbo v3, "RecentsView"
 
-    return v5
+    new-instance v4, Ljava/lang/StringBuilder;
+
+    invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string/jumbo v5, "Fail to get taskView. Task id: "
+
+    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v4
+
+    iget-object v5, v1, Lcom/android/systemui/recents/model/Task;->key:Lcom/android/systemui/recents/model/Task$TaskKey;
+
+    iget v5, v5, Lcom/android/systemui/recents/model/Task$TaskKey;->id:I
+
+    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v4
+
+    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v4
+
+    invoke-static {v3, v4}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    const/4 v3, -0x2
+
+    iput v3, p0, Lcom/android/systemui/recents/views/RecentsView$BixbyRecentsViewHandler;->lastErrorNo:I
+
+    return v6
 
     :cond_1
     invoke-virtual {v2}, Lcom/android/systemui/recents/views/TaskView;->getHeaderView()Lcom/android/systemui/recents/views/TaskViewHeader;
@@ -483,10 +522,10 @@
     return v9
 
     :cond_1
-    const/4 v0, 0x0
+    add-int/lit8 v0, v4, -0x1
 
     :goto_0
-    if-ge v0, v4, :cond_3
+    if-ltz v0, :cond_3
 
     invoke-interface {v5, v0}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
@@ -527,7 +566,7 @@
     return v10
 
     :cond_2
-    add-int/lit8 v0, v0, 0x1
+    add-int/lit8 v0, v0, -0x1
 
     goto :goto_0
 
@@ -563,10 +602,10 @@
 
     move-result v2
 
-    const/4 v0, 0x0
+    add-int/lit8 v0, v2, -0x1
 
     :goto_0
-    if-ge v0, v2, :cond_2
+    if-ltz v0, :cond_2
 
     invoke-interface {v3, v0}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
@@ -595,7 +634,7 @@
     return v6
 
     :cond_1
-    add-int/lit8 v0, v0, 0x1
+    add-int/lit8 v0, v0, -0x1
 
     goto :goto_0
 
@@ -630,7 +669,9 @@
 
     iget-object v0, p0, Lcom/android/systemui/recents/views/RecentsView$BixbyRecentsViewHandler;->this$0:Lcom/android/systemui/recents/views/RecentsView;
 
-    invoke-static {v0}, Lcom/android/systemui/recents/views/RecentsView;->-get10(Lcom/android/systemui/recents/views/RecentsView;)Lcom/android/systemui/recents/model/TaskStack;
+    iget-object v0, v0, Lcom/android/systemui/recents/views/RecentsView;->mTaskStackView:Lcom/android/systemui/recents/views/TaskStackView;
+
+    invoke-virtual {v0}, Lcom/android/systemui/recents/views/TaskStackView;->getStack()Lcom/android/systemui/recents/model/TaskStack;
 
     move-result-object v0
 
@@ -642,9 +683,9 @@
 .end method
 
 .method public getTitleOfFocusedTask()Ljava/lang/String;
-    .locals 3
+    .locals 2
 
-    const/4 v2, 0x0
+    const/4 v1, 0x0
 
     invoke-direct {p0}, Lcom/android/systemui/recents/views/RecentsView$BixbyRecentsViewHandler;->getFocusedTask()Lcom/android/systemui/recents/model/Task;
 
@@ -652,20 +693,12 @@
 
     if-eqz v0, :cond_0
 
-    invoke-direct {p0}, Lcom/android/systemui/recents/views/RecentsView$BixbyRecentsViewHandler;->getFocusedTask()Lcom/android/systemui/recents/model/Task;
-
-    move-result-object v1
-
-    iget-object v1, v1, Lcom/android/systemui/recents/model/Task;->title:Ljava/lang/String;
+    iget-object v1, v0, Lcom/android/systemui/recents/model/Task;->title:Ljava/lang/String;
 
     return-object v1
 
     :cond_0
-    const/4 v1, -0x2
-
-    iput v1, p0, Lcom/android/systemui/recents/views/RecentsView$BixbyRecentsViewHandler;->lastErrorNo:I
-
-    return-object v2
+    return-object v1
 .end method
 
 .method public isEmpty()Z
@@ -704,9 +737,9 @@
 
     const/4 v6, 0x1
 
-    const/4 v8, -0x3
+    const/4 v8, -0x2
 
-    const/4 v4, -0x2
+    const/4 v4, -0x3
 
     const/4 v5, 0x0
 
@@ -715,8 +748,6 @@
     move-result-object v2
 
     if-nez v2, :cond_0
-
-    iput v4, p0, Lcom/android/systemui/recents/views/RecentsView$BixbyRecentsViewHandler;->lastErrorNo:I
 
     return v5
 
@@ -731,7 +762,33 @@
 
     if-nez v1, :cond_1
 
-    iput v4, p0, Lcom/android/systemui/recents/views/RecentsView$BixbyRecentsViewHandler;->lastErrorNo:I
+    const-string/jumbo v0, "RecentsView"
+
+    new-instance v4, Ljava/lang/StringBuilder;
+
+    invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string/jumbo v6, "Fail to get taskView. Task id: "
+
+    invoke-virtual {v4, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v4
+
+    iget-object v6, v2, Lcom/android/systemui/recents/model/Task;->key:Lcom/android/systemui/recents/model/Task$TaskKey;
+
+    iget v6, v6, Lcom/android/systemui/recents/model/Task$TaskKey;->id:I
+
+    invoke-virtual {v4, v6}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v4
+
+    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v4
+
+    invoke-static {v0, v4}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    iput v8, p0, Lcom/android/systemui/recents/views/RecentsView$BixbyRecentsViewHandler;->lastErrorNo:I
 
     return v5
 
@@ -748,7 +805,7 @@
 
     if-nez v0, :cond_3
 
-    iput v8, p0, Lcom/android/systemui/recents/views/RecentsView$BixbyRecentsViewHandler;->lastErrorNo:I
+    iput v4, p0, Lcom/android/systemui/recents/views/RecentsView$BixbyRecentsViewHandler;->lastErrorNo:I
 
     return v5
 
@@ -765,7 +822,7 @@
 
     if-nez v0, :cond_4
 
-    iput v8, p0, Lcom/android/systemui/recents/views/RecentsView$BixbyRecentsViewHandler;->lastErrorNo:I
+    iput v4, p0, Lcom/android/systemui/recents/views/RecentsView$BixbyRecentsViewHandler;->lastErrorNo:I
 
     return v5
 
@@ -782,7 +839,7 @@
 
     if-nez v0, :cond_5
 
-    iput v4, p0, Lcom/android/systemui/recents/views/RecentsView$BixbyRecentsViewHandler;->lastErrorNo:I
+    iput v8, p0, Lcom/android/systemui/recents/views/RecentsView$BixbyRecentsViewHandler;->lastErrorNo:I
 
     return v5
 
@@ -832,16 +889,14 @@
 
     if-nez v1, :cond_0
 
-    const/4 v2, -0x2
-
-    iput v2, p0, Lcom/android/systemui/recents/views/RecentsView$BixbyRecentsViewHandler;->lastErrorNo:I
-
     return v5
 
     :cond_0
     iget-object v2, p0, Lcom/android/systemui/recents/views/RecentsView$BixbyRecentsViewHandler;->this$0:Lcom/android/systemui/recents/views/RecentsView;
 
-    invoke-static {v2}, Lcom/android/systemui/recents/views/RecentsView;->-get10(Lcom/android/systemui/recents/views/RecentsView;)Lcom/android/systemui/recents/model/TaskStack;
+    iget-object v2, v2, Lcom/android/systemui/recents/views/RecentsView;->mTaskStackView:Lcom/android/systemui/recents/views/TaskStackView;
+
+    invoke-virtual {v2}, Lcom/android/systemui/recents/views/TaskStackView;->getStack()Lcom/android/systemui/recents/model/TaskStack;
 
     move-result-object v2
 
@@ -871,13 +926,7 @@
 
     invoke-static {v2, v3}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    iget-object v2, p0, Lcom/android/systemui/recents/views/RecentsView$BixbyRecentsViewHandler;->this$0:Lcom/android/systemui/recents/views/RecentsView;
-
-    invoke-static {v2}, Lcom/android/systemui/recents/views/RecentsView;->-get10(Lcom/android/systemui/recents/views/RecentsView;)Lcom/android/systemui/recents/model/TaskStack;
-
-    move-result-object v2
-
-    invoke-virtual {v2}, Lcom/android/systemui/recents/model/TaskStack;->getTaskCount()I
+    invoke-virtual {p0}, Lcom/android/systemui/recents/views/RecentsView$BixbyRecentsViewHandler;->getTaskCount()I
 
     move-result v2
 
@@ -918,16 +967,14 @@
 
     if-nez v1, :cond_0
 
-    const/4 v2, -0x2
-
-    iput v2, p0, Lcom/android/systemui/recents/views/RecentsView$BixbyRecentsViewHandler;->lastErrorNo:I
-
     return v5
 
     :cond_0
     iget-object v2, p0, Lcom/android/systemui/recents/views/RecentsView$BixbyRecentsViewHandler;->this$0:Lcom/android/systemui/recents/views/RecentsView;
 
-    invoke-static {v2}, Lcom/android/systemui/recents/views/RecentsView;->-get10(Lcom/android/systemui/recents/views/RecentsView;)Lcom/android/systemui/recents/model/TaskStack;
+    iget-object v2, v2, Lcom/android/systemui/recents/views/RecentsView;->mTaskStackView:Lcom/android/systemui/recents/views/TaskStackView;
+
+    invoke-virtual {v2}, Lcom/android/systemui/recents/views/TaskStackView;->getStack()Lcom/android/systemui/recents/model/TaskStack;
 
     move-result-object v2
 
@@ -984,11 +1031,9 @@
 .method public setLockFocusedTask(Z)Z
     .locals 6
 
-    const/4 v3, -0x2
+    const/4 v4, 0x1
 
-    const/4 v5, 0x1
-
-    const/4 v4, 0x0
+    const/4 v5, 0x0
 
     sget-boolean v2, Lcom/android/systemui/recents/RecentsDebugFlags$Static;->EnableTaskLock:Z
 
@@ -998,7 +1043,7 @@
 
     iput v2, p0, Lcom/android/systemui/recents/views/RecentsView$BixbyRecentsViewHandler;->lastErrorNo:I
 
-    return v4
+    return v5
 
     :cond_0
     invoke-direct {p0}, Lcom/android/systemui/recents/views/RecentsView$BixbyRecentsViewHandler;->getFocusedTask()Lcom/android/systemui/recents/model/Task;
@@ -1007,9 +1052,7 @@
 
     if-nez v0, :cond_1
 
-    iput v3, p0, Lcom/android/systemui/recents/views/RecentsView$BixbyRecentsViewHandler;->lastErrorNo:I
-
-    return v4
+    return v5
 
     :cond_1
     iget-boolean v2, v0, Lcom/android/systemui/recents/model/Task;->isTaskLocked:Z
@@ -1020,7 +1063,7 @@
 
     iput v2, p0, Lcom/android/systemui/recents/views/RecentsView$BixbyRecentsViewHandler;->lastErrorNo:I
 
-    return v4
+    return v5
 
     :cond_2
     iget-object v2, p0, Lcom/android/systemui/recents/views/RecentsView$BixbyRecentsViewHandler;->this$0:Lcom/android/systemui/recents/views/RecentsView;
@@ -1033,9 +1076,37 @@
 
     if-nez v1, :cond_3
 
-    iput v3, p0, Lcom/android/systemui/recents/views/RecentsView$BixbyRecentsViewHandler;->lastErrorNo:I
+    const-string/jumbo v2, "RecentsView"
 
-    return v4
+    new-instance v3, Ljava/lang/StringBuilder;
+
+    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string/jumbo v4, "Fail to get taskView. Task id: "
+
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    iget-object v4, v0, Lcom/android/systemui/recents/model/Task;->key:Lcom/android/systemui/recents/model/Task$TaskKey;
+
+    iget v4, v4, Lcom/android/systemui/recents/model/Task$TaskKey;->id:I
+
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-static {v2, v3}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    const/4 v2, -0x2
+
+    iput v2, p0, Lcom/android/systemui/recents/views/RecentsView$BixbyRecentsViewHandler;->lastErrorNo:I
+
+    return v5
 
     :cond_3
     if-eqz p1, :cond_5
@@ -1057,14 +1128,14 @@
     invoke-virtual {v2}, Landroid/widget/ImageView;->performClick()Z
 
     :goto_0
-    return v5
+    return v4
 
     :cond_4
     invoke-static {}, Lcom/android/systemui/recents/Recents;->getConfiguration()Lcom/android/systemui/recents/RecentsConfiguration;
 
     move-result-object v2
 
-    iput-boolean v5, v2, Lcom/android/systemui/recents/RecentsConfiguration;->isInLockTaskEditMode:Z
+    iput-boolean v4, v2, Lcom/android/systemui/recents/RecentsConfiguration;->isInLockTaskEditMode:Z
 
     invoke-static {}, Lcom/android/systemui/recents/events/EventBus;->getDefault()Lcom/android/systemui/recents/events/EventBus;
 
@@ -1072,7 +1143,7 @@
 
     new-instance v3, Lcom/android/systemui/recents/events/activity/RecentsViewModeChangedEvent;
 
-    invoke-direct {v3, v4}, Lcom/android/systemui/recents/events/activity/RecentsViewModeChangedEvent;-><init>(Z)V
+    invoke-direct {v3, v5}, Lcom/android/systemui/recents/events/activity/RecentsViewModeChangedEvent;-><init>(Z)V
 
     invoke-virtual {v2, v3}, Lcom/android/systemui/recents/events/EventBus;->send(Lcom/android/systemui/recents/events/EventBus$Event;)V
 
@@ -1088,7 +1159,7 @@
 
     move-result-object v2
 
-    iput-boolean v4, v2, Lcom/android/systemui/recents/RecentsConfiguration;->isInLockTaskEditMode:Z
+    iput-boolean v5, v2, Lcom/android/systemui/recents/RecentsConfiguration;->isInLockTaskEditMode:Z
 
     invoke-static {}, Lcom/android/systemui/recents/events/EventBus;->getDefault()Lcom/android/systemui/recents/events/EventBus;
 
@@ -1096,7 +1167,7 @@
 
     new-instance v3, Lcom/android/systemui/recents/events/activity/RecentsViewModeChangedEvent;
 
-    invoke-direct {v3, v5}, Lcom/android/systemui/recents/events/activity/RecentsViewModeChangedEvent;-><init>(Z)V
+    invoke-direct {v3, v4}, Lcom/android/systemui/recents/events/activity/RecentsViewModeChangedEvent;-><init>(Z)V
 
     invoke-virtual {v2, v3}, Lcom/android/systemui/recents/events/EventBus;->send(Lcom/android/systemui/recents/events/EventBus$Event;)V
 

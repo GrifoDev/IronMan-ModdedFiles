@@ -66,7 +66,7 @@
 
     move-result-object v0
 
-    const v2, 0x7f0d0427
+    const v2, 0x7f0d0429
 
     invoke-virtual {v0, v2}, Landroid/content/res/Resources;->getDimension(I)F
 
@@ -127,7 +127,7 @@
 
     if-eqz v0, :cond_2
 
-    const v0, 0x7f0f079c
+    const v0, 0x7f0f079f
 
     :goto_0
     invoke-virtual {v2, v0}, Landroid/widget/TextView;->setText(I)V
@@ -158,7 +158,7 @@
     return-void
 
     :cond_2
-    const v0, 0x7f0f079b
+    const v0, 0x7f0f079e
 
     goto :goto_0
 
@@ -169,7 +169,7 @@
 
     iget-object v0, p0, Lcom/android/systemui/qs/QSSFinderView;->mSFinderEditText:Landroid/widget/TextView;
 
-    const v2, 0x7f0f079e
+    const v2, 0x7f0f07a1
 
     invoke-virtual {v0, v2}, Landroid/widget/TextView;->setText(I)V
 
@@ -392,7 +392,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f0d0428
+    const v1, 0x7f0d042a
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDimension(I)F
 
@@ -540,7 +540,7 @@
 
     if-eqz v0, :cond_0
 
-    const v0, 0x7f0f079c
+    const v0, 0x7f0f079f
 
     :goto_0
     invoke-virtual {v1, v0}, Landroid/widget/TextView;->setText(I)V
@@ -549,7 +549,7 @@
     return-void
 
     :cond_0
-    const v0, 0x7f0f079b
+    const v0, 0x7f0f079e
 
     goto :goto_0
 
@@ -560,7 +560,7 @@
 
     if-eqz v0, :cond_2
 
-    const v0, 0x7f0f079e
+    const v0, 0x7f0f07a1
 
     :goto_2
     invoke-virtual {v1, v0}, Landroid/widget/TextView;->setText(I)V
@@ -568,7 +568,7 @@
     goto :goto_1
 
     :cond_2
-    const v0, 0x7f0f079d
+    const v0, 0x7f0f07a0
 
     goto :goto_2
 .end method

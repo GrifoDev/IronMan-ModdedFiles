@@ -64,7 +64,7 @@
     <string name="servicebox_event_time_all_day">Весь день</string>
     <string name="servicebox_event_my_event">Моя подія</string>
     <string name="servicebox_event_no_events">Немає подій або завдань</string>
-    <string name="servicebox_alarm_next">Наступний сигнал</string>
+    <string name="servicebox_alarm_next">Наступний будильник</string>
     <string name="servicebox_accessibility_missing_next_alarm">Будильники на наступні 7 днів не встановлено</string>
     <string name="clear_cover_servicebox_music_unknown">Невідома</string>
     <string name="save">Зберегти</string>
@@ -238,6 +238,8 @@
     <string name="wifi_allow_scan_with_traffic_summary">Дозволити чи заборонити Wi-Fi шукати роумінг на основі обсягу трафіку даних в інтерфейсі</string>
     <string name="select_logd_size_title">Розміри буфера журналу</string>
     <string name="select_logd_size_dialog_title">Виберіть розміри буфера журналу</string>
+    <string name="dev_logpersist_clear_warning_title">Очистити сховище постійного журналу?</string>
+    <string name="dev_logpersist_clear_warning_message">Після вимкнення засобу постійного ведення журналу його дані буде видалено.</string>
     <string name="select_logpersist_title">Постійне збер. даних реєстрації</string>
     <string name="select_logpersist_dialog_title">Виберіть буфери реєстр., що пост. зберіг.</string>
     <string name="select_usb_configuration_title">Вибрати конфігурацію USB</string>
@@ -751,6 +753,7 @@ For example, your ringtone will not sound, you will not be able to answer phone 
     <string name="wifi_authentication_failed_kt">Не вдалося авторизувати ТД Wi-Fi.</string>
     <string name="wifi_authentication_no_response">Не вдалося підключитися до ТД Wi-Fi.</string>
     <string name="wifi_authentication_invalid_value">Authentication failed. Check ID and password.</string>
+    <string name="wifi_disconnected">Wi-Fi відключено.</string>
     <string name="quick_settings_dnd_label">Не турбувати</string>
     <string name="quick_settings_dnd_priority_label">Лише пріоритетні</string>
     <string name="quick_settings_dnd_alarms_label">Лише будильник</string>
@@ -1382,11 +1385,11 @@ Wi-Fi та Bluetooth також буде вимкнено, але їх можн�
     <string name="keyboard_key_numpad_template">Numpad %1$s</string>
     <string name="keyboard_popup_help">Метаклавіша: Windows, Command або клавіша із символом іншої операційної системи.</string>
     <string name="keyboard_shortcut_group_system">Системні ярлики</string>
-    <string name="keyboard_shortcut_group_system_home">Головний екран</string>
-    <string name="keyboard_shortcut_group_system_recents">Останні</string>
+    <string name="keyboard_shortcut_group_system_home">Додому</string>
+    <string name="keyboard_shortcut_group_system_recents">Нещодавні</string>
     <string name="keyboard_shortcut_group_system_back">Назад</string>
     <string name="keyboard_shortcut_group_system_notifications">Сповіщення</string>
-    <string name="keyboard_shortcut_group_system_shortcuts_helper">Комбінації клавіш</string>
+    <string name="keyboard_shortcut_group_system_shortcuts_helper">Ярлики клавіатури</string>
     <string name="keyboard_shortcut_group_system_switch_input">Змінити метод введення</string>
     <string name="keyboard_shortcut_group_system_all_apps">Усі програми</string>
     <string name="keyboard_shortcut_group_system_running_apps">Запущені програми</string>
@@ -1394,7 +1397,7 @@ Wi-Fi та Bluetooth також буде вимкнено, але їх можн�
     <string name="keyboard_shortcut_group_system_switch_languages">Перемикання мови</string>
     <string name="keyboard_shortcut_group_applications">Ярлики в програмах</string>
     <string name="keyboard_shortcut_group_applications_assist">Помічник</string>
-    <string name="keyboard_shortcut_group_applications_browser">Веб-переглядач</string>
+    <string name="keyboard_shortcut_group_applications_browser">Браузер</string>
     <string name="keyboard_shortcut_group_applications_contacts">Контакти</string>
     <string name="keyboard_shortcut_group_applications_email">Email</string>
     <string name="keyboard_shortcut_group_applications_im">Чат</string>
@@ -1652,7 +1655,9 @@ Using your tablet in a very hot location."</string>
     <string name="battery_not_fully_connected_charging_title_vzw">Incomplete connection</string>
     <string name="battery_not_fully_connected_charging_text">Для більш швидкого заряджання використовуйте зарядний пристрій, що постачається в комплекті, та переконайтеся, що його правильно підключено.</string>
     <string name="battery_not_fully_connected_charging_text_vzw">Make sure the charger is properly connected.</string>
+    <string name="battery_not_fully_connected_charging_text_jpn">Переконайтеся, що зарядний пристрій правильно підключено.</string>
     <string name="battery_not_fully_connected_charging_popup_text">Переконайтеся, що зарядний пристрій правильно підключено. Використовуйте зарядний пристрій, що постачається в комплекті.</string>
+    <string name="battery_not_fully_connected_charging_popup_text_jpn">Переконайтеся, що зарядний пристрій правильно підключено.</string>
     <string name="battery_charging_level_and_time_text">"Зарядження: %1$d%%
 (до повного заряду приблизно: %2$s)"</string>
     <string name="battery_charging_level_text">Заряджання: %d%%</string>
@@ -1877,6 +1882,8 @@ Please note that in order to enable your emergency calls (e.g., such as 112 call
     <string name="qs_detail_palm_capture_title">Проведення долонею</string>
     <string name="noti_direct_reply_exceed_text_limit_toast">Досягнуто максимальної довжини тексту.</string>
     <string name="airplane_mode_tts_text">Режим «Без зв’язку»</string>
+    <string name="all_noti_readout">Одне нагадування</string>
+    <string name="all_noti_readout2">Нагадувань: %d</string>
     <string name="car_lockscreen_disclaimer_title">Будьте уважні за кермом</string>
     <string name="car_lockscreen_disclaimer_text">Стежте умовами дорожнього руху та завжди дотримуйтеся відповідних законів. Маршрути можуть бути неточними, неповними, небезпечними, непридатними або перетинати межі адміністративних одиниць. Інформація про компанії також може бути неточною або неповною. Дані надаються не в реальному часі. Точність визначення місцезнаходжень не гарантується. Коли ви за кермом, не користуйтеся мобільним пристроєм або додатками, не призначеними для Android Auto.</string>
     <string name="pip_close">Закрити PIP</string>

@@ -21,19 +21,17 @@
 
 .field private mDesk:Z
 
-.field private mFraction:F
-
 .field private mHandler:Lcom/android/systemui/qs/QSQuickConnectView$H;
 
 .field private mHeight:I
-
-.field private mIsFullyCollapsed:Z
 
 .field private mIsFullyExpanded:Z
 
 .field private mRemoteViewsContainer:Landroid/view/ViewGroup;
 
 .field private mSizeChangeAnimator:Landroid/animation/ValueAnimator;
+
+.field private mStatusBarState:I
 
 .field private mTmpState:Lcom/android/systemui/qs/QSQuickConnectView$State;
 
@@ -101,8 +99,6 @@
     iput-boolean v1, p0, Lcom/android/systemui/qs/QSQuickConnectView;->mViewUpdateDelyed:Z
 
     iput-boolean v1, p0, Lcom/android/systemui/qs/QSQuickConnectView;->mIsFullyExpanded:Z
-
-    iput-boolean v1, p0, Lcom/android/systemui/qs/QSQuickConnectView;->mIsFullyCollapsed:Z
 
     iput-object p1, p0, Lcom/android/systemui/qs/QSQuickConnectView;->mContext:Landroid/content/Context;
 
@@ -245,81 +241,14 @@
     goto :goto_0
 .end method
 
-.method private isViewUpdateAvailable()Z
-    .locals 2
-
-    iget-boolean v0, p0, Lcom/android/systemui/qs/QSQuickConnectView;->mDesk:Z
-
-    if-nez v0, :cond_0
-
-    iget-boolean v0, p0, Lcom/android/systemui/qs/QSQuickConnectView;->mIsFullyExpanded:Z
-
-    if-eqz v0, :cond_1
-
-    iget v0, p0, Lcom/android/systemui/qs/QSQuickConnectView;->mFraction:F
-
-    const/high16 v1, 0x3f800000    # 1.0f
-
-    cmpl-float v0, v0, v1
-
-    if-eqz v0, :cond_0
-
-    iget v0, p0, Lcom/android/systemui/qs/QSQuickConnectView;->mFraction:F
-
-    const/4 v1, 0x0
-
-    cmpl-float v0, v0, v1
-
-    if-nez v0, :cond_1
-
-    :cond_0
-    const/4 v0, 0x1
-
-    :goto_0
-    return v0
-
-    :cond_1
-    iget-boolean v0, p0, Lcom/android/systemui/qs/QSQuickConnectView;->mIsFullyCollapsed:Z
-
-    if-eqz v0, :cond_2
-
-    invoke-direct {p0}, Lcom/android/systemui/qs/QSQuickConnectView;->isViewVisible()Z
-
-    move-result v0
-
-    goto :goto_0
-
-    :cond_2
-    const/4 v0, 0x0
-
-    goto :goto_0
-.end method
-
-.method private isViewVisible()Z
-    .locals 2
-
-    const/4 v0, 0x0
-
-    iget v1, p0, Lcom/android/systemui/qs/QSQuickConnectView;->mHeight:I
-
-    if-lez v1, :cond_0
-
-    const/4 v0, 0x1
-
-    :cond_0
-    return v0
-.end method
-
 .method private refresh(Lcom/android/systemui/qs/QSQuickConnectView$State;)V
     .locals 8
 
-    const/4 v7, 0x0
+    const/4 v7, 0x1
 
-    const/4 v6, 0x1
+    const/4 v6, 0x0
 
     const/4 v5, 0x0
-
-    const/4 v2, 0x0
 
     iget-object v4, p1, Lcom/android/systemui/qs/QSQuickConnectView$State;->mExpanded:Landroid/widget/RemoteViews;
 
@@ -331,9 +260,9 @@
 
     sget-object v4, Lcom/android/systemui/qs/QSQuickConnectView;->mState:Lcom/android/systemui/qs/QSQuickConnectView$State;
 
-    invoke-virtual {p1, v4, v7}, Lcom/android/systemui/qs/QSQuickConnectView$State;->copyTo(Lcom/android/systemui/qs/QSQuickConnectView$State;Z)Z
+    invoke-virtual {p1, v4, v6}, Lcom/android/systemui/qs/QSQuickConnectView$State;->copyTo(Lcom/android/systemui/qs/QSQuickConnectView$State;Z)Z
 
-    invoke-direct {p0, v5, v6}, Lcom/android/systemui/qs/QSQuickConnectView;->updateView(Landroid/view/View;Z)V
+    invoke-direct {p0, v5, v7}, Lcom/android/systemui/qs/QSQuickConnectView;->updateView(Landroid/view/View;Z)V
 
     :cond_0
     :goto_0
@@ -344,17 +273,17 @@
 
     if-eqz v4, :cond_2
 
-    iget-object v1, p1, Lcom/android/systemui/qs/QSQuickConnectView$State;->mExpanded:Landroid/widget/RemoteViews;
+    iget-object v2, p1, Lcom/android/systemui/qs/QSQuickConnectView$State;->mExpanded:Landroid/widget/RemoteViews;
 
     :goto_1
-    if-eqz v1, :cond_0
+    if-eqz v2, :cond_0
 
     :try_start_0
     iget-object v4, p0, Lcom/android/systemui/qs/QSQuickConnectView;->mContext:Landroid/content/Context;
 
     iget-object v5, p0, Lcom/android/systemui/qs/QSQuickConnectView;->mRemoteViewsContainer:Landroid/view/ViewGroup;
 
-    invoke-virtual {v1, v4, v5}, Landroid/widget/RemoteViews;->apply(Landroid/content/Context;Landroid/view/ViewGroup;)Landroid/view/View;
+    invoke-virtual {v2, v4, v5}, Landroid/widget/RemoteViews;->apply(Landroid/content/Context;Landroid/view/ViewGroup;)Landroid/view/View;
 
     move-result-object v3
 
@@ -369,6 +298,7 @@
     invoke-direct {p0, v3, v4}, Lcom/android/systemui/qs/QSQuickConnectView;->updateView(Landroid/view/View;Z)V
     :try_end_0
     .catch Landroid/content/res/Resources$NotFoundException; {:try_start_0 .. :try_end_0} :catch_0
+    .catch Landroid/view/InflateException; {:try_start_0 .. :try_end_0} :catch_1
 
     goto :goto_0
 
@@ -381,18 +311,35 @@
 
     invoke-static {v4, v5}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    invoke-direct {p0, v7}, Lcom/android/systemui/qs/QSQuickConnectView;->clearView(Z)V
+    invoke-direct {p0, v6}, Lcom/android/systemui/qs/QSQuickConnectView;->clearView(Z)V
 
     goto :goto_0
 
     :cond_2
-    iget-object v1, p1, Lcom/android/systemui/qs/QSQuickConnectView$State;->mCollapsed:Landroid/widget/RemoteViews;
+    iget-object v2, p1, Lcom/android/systemui/qs/QSQuickConnectView$State;->mCollapsed:Landroid/widget/RemoteViews;
 
     goto :goto_1
+
+    :catch_1
+    move-exception v1
+
+    const-string/jumbo v4, "QSQuickConnectView"
+
+    const-string/jumbo v5, "refresh InflateException"
+
+    invoke-static {v4, v5}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    invoke-direct {p0, v6}, Lcom/android/systemui/qs/QSQuickConnectView;->clearView(Z)V
+
+    goto :goto_0
 .end method
 
 .method private startSizeChangeAnimation(II)V
     .locals 4
+
+    const/4 v3, 0x1
+
+    const/4 v1, 0x0
 
     iget-object v0, p0, Lcom/android/systemui/qs/QSQuickConnectView;->mSizeChangeAnimator:Landroid/animation/ValueAnimator;
 
@@ -419,13 +366,9 @@
 
     new-array v0, v0, [I
 
-    const/4 v1, 0x0
-
     aput p1, v0, v1
 
-    const/4 v1, 0x1
-
-    aput p2, v0, v1
+    aput p2, v0, v3
 
     invoke-static {v0}, Landroid/animation/ValueAnimator;->ofInt([I)Landroid/animation/ValueAnimator;
 
@@ -433,11 +376,18 @@
 
     iput-object v0, p0, Lcom/android/systemui/qs/QSQuickConnectView;->mSizeChangeAnimator:Landroid/animation/ValueAnimator;
 
-    iget-object v0, p0, Lcom/android/systemui/qs/QSQuickConnectView;->mSizeChangeAnimator:Landroid/animation/ValueAnimator;
+    iget-object v2, p0, Lcom/android/systemui/qs/QSQuickConnectView;->mSizeChangeAnimator:Landroid/animation/ValueAnimator;
 
-    const-wide/16 v2, 0x12c
+    iget v0, p0, Lcom/android/systemui/qs/QSQuickConnectView;->mStatusBarState:I
 
-    invoke-virtual {v0, v2, v3}, Landroid/animation/ValueAnimator;->setDuration(J)Landroid/animation/ValueAnimator;
+    if-ne v0, v3, :cond_1
+
+    move v0, v1
+
+    :goto_0
+    int-to-long v0, v0
+
+    invoke-virtual {v2, v0, v1}, Landroid/animation/ValueAnimator;->setDuration(J)Landroid/animation/ValueAnimator;
 
     iget-object v0, p0, Lcom/android/systemui/qs/QSQuickConnectView;->mSizeChangeAnimator:Landroid/animation/ValueAnimator;
 
@@ -466,6 +416,11 @@
     invoke-virtual {v0}, Landroid/animation/ValueAnimator;->start()V
 
     return-void
+
+    :cond_1
+    const/16 v0, 0x12c
+
+    goto :goto_0
 .end method
 
 .method private updateContainerHeight(I)V
@@ -493,31 +448,20 @@
 .end method
 
 .method private updateView(Landroid/view/View;Z)V
-    .locals 5
-
-    const/4 v4, 0x1
+    .locals 4
 
     const/4 v3, 0x0
 
-    invoke-direct {p0}, Lcom/android/systemui/qs/QSQuickConnectView;->isViewUpdateAvailable()Z
-
-    move-result v2
-
-    if-nez v2, :cond_0
-
-    iput-boolean v4, p0, Lcom/android/systemui/qs/QSQuickConnectView;->mViewUpdateDelyed:Z
-
-    return-void
-
-    :cond_0
     iget-boolean v2, p0, Lcom/android/systemui/qs/QSQuickConnectView;->mDesk:Z
 
-    if-eqz v2, :cond_1
+    if-eqz v2, :cond_0
 
-    iput-boolean v4, p0, Lcom/android/systemui/qs/QSQuickConnectView;->mViewUpdateDelyed:Z
+    const/4 v2, 0x1
 
-    :cond_1
-    if-nez p1, :cond_3
+    iput-boolean v2, p0, Lcom/android/systemui/qs/QSQuickConnectView;->mViewUpdateDelyed:Z
+
+    :cond_0
+    if-nez p1, :cond_2
 
     invoke-direct {p0, v3}, Lcom/android/systemui/qs/QSQuickConnectView;->updateContainerHeight(I)V
 
@@ -526,7 +470,7 @@
     invoke-virtual {v2}, Landroid/view/ViewGroup;->removeAllViews()V
 
     :goto_0
-    if-eqz p2, :cond_5
+    if-eqz p2, :cond_4
 
     iget-object v2, p0, Lcom/android/systemui/qs/QSQuickConnectView;->mRemoteViewsContainer:Landroid/view/ViewGroup;
 
@@ -534,24 +478,24 @@
 
     move-result v0
 
-    if-nez v0, :cond_4
+    if-nez v0, :cond_3
 
     const/4 v1, 0x0
 
     :goto_1
-    if-eqz p1, :cond_2
+    if-eqz p1, :cond_1
 
     iget-object v2, p0, Lcom/android/systemui/qs/QSQuickConnectView;->mRemoteViewsContainer:Landroid/view/ViewGroup;
 
     invoke-virtual {v2, p1}, Landroid/view/ViewGroup;->addView(Landroid/view/View;)V
 
-    :cond_2
+    :cond_1
     invoke-direct {p0, p1, v1}, Lcom/android/systemui/qs/QSQuickConnectView;->animateViews(Landroid/view/View;Landroid/view/View;)V
 
     :goto_2
     return-void
 
-    :cond_3
+    :cond_2
     invoke-virtual {p1}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
 
     move-result-object v2
@@ -562,7 +506,7 @@
 
     goto :goto_0
 
-    :cond_4
+    :cond_3
     iget-object v2, p0, Lcom/android/systemui/qs/QSQuickConnectView;->mRemoteViewsContainer:Landroid/view/ViewGroup;
 
     add-int/lit8 v3, v0, -0x1
@@ -573,7 +517,7 @@
 
     goto :goto_1
 
-    :cond_5
+    :cond_4
     iget-object v2, p0, Lcom/android/systemui/qs/QSQuickConnectView;->mRemoteViewsContainer:Landroid/view/ViewGroup;
 
     invoke-virtual {v2}, Landroid/view/ViewGroup;->removeAllViews()V
@@ -761,7 +705,7 @@
 .end method
 
 .method public onExpandingFinished(F)V
-    .locals 1
+    .locals 4
 
     iget-boolean v0, p0, Lcom/android/systemui/qs/QSQuickConnectView;->mViewUpdateDelyed:Z
 
@@ -771,9 +715,19 @@
 
     iput-boolean v0, p0, Lcom/android/systemui/qs/QSQuickConnectView;->mViewUpdateDelyed:Z
 
-    sget-object v0, Lcom/android/systemui/qs/QSQuickConnectView;->mState:Lcom/android/systemui/qs/QSQuickConnectView$State;
+    iget-object v0, p0, Lcom/android/systemui/qs/QSQuickConnectView;->mHandler:Lcom/android/systemui/qs/QSQuickConnectView$H;
 
-    invoke-direct {p0, v0}, Lcom/android/systemui/qs/QSQuickConnectView;->refresh(Lcom/android/systemui/qs/QSQuickConnectView$State;)V
+    iget-object v1, p0, Lcom/android/systemui/qs/QSQuickConnectView;->mHandler:Lcom/android/systemui/qs/QSQuickConnectView$H;
+
+    iget-object v2, p0, Lcom/android/systemui/qs/QSQuickConnectView;->mTmpState:Lcom/android/systemui/qs/QSQuickConnectView$State;
+
+    const/4 v3, 0x1
+
+    invoke-virtual {v1, v3, v2}, Lcom/android/systemui/qs/QSQuickConnectView$H;->obtainMessage(ILjava/lang/Object;)Landroid/os/Message;
+
+    move-result-object v1
+
+    invoke-virtual {v0, v1}, Lcom/android/systemui/qs/QSQuickConnectView$H;->sendMessage(Landroid/os/Message;)Z
 
     :cond_0
     return-void
@@ -784,57 +738,57 @@
 
     const/4 v4, 0x1
 
-    const/4 v3, 0x0
+    const/4 v5, 0x0
 
     invoke-virtual {p1}, Landroid/content/Intent;->getAction()Ljava/lang/String;
 
     move-result-object v0
 
-    const-string/jumbo v5, "android.intent.action.PACKAGE_REMOVED"
+    const-string/jumbo v3, "android.intent.action.PACKAGE_REMOVED"
 
-    invoke-virtual {v5, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v3, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move-result v5
+    move-result v3
 
-    if-nez v5, :cond_0
+    if-nez v3, :cond_0
 
-    const-string/jumbo v5, "PKG_REPLACED"
+    const-string/jumbo v3, "PKG_REPLACED"
 
-    invoke-virtual {p1, v5, v3}, Landroid/content/Intent;->getBooleanExtra(Ljava/lang/String;Z)Z
+    invoke-virtual {p1, v3, v5}, Landroid/content/Intent;->getBooleanExtra(Ljava/lang/String;Z)Z
 
-    move-result v5
+    move-result v3
 
-    if-eqz v5, :cond_1
+    if-eqz v3, :cond_1
 
     :cond_0
-    invoke-direct {p0, v3}, Lcom/android/systemui/qs/QSQuickConnectView;->clearView(Z)V
+    invoke-direct {p0, v5}, Lcom/android/systemui/qs/QSQuickConnectView;->clearView(Z)V
 
     return-void
 
     :cond_1
-    const-string/jumbo v5, "COLLAPSED"
+    const-string/jumbo v3, "COLLAPSED"
 
-    invoke-virtual {p1, v5}, Landroid/content/Intent;->getParcelableExtra(Ljava/lang/String;)Landroid/os/Parcelable;
+    invoke-virtual {p1, v3}, Landroid/content/Intent;->getParcelableExtra(Ljava/lang/String;)Landroid/os/Parcelable;
 
     move-result-object v1
 
     check-cast v1, Landroid/widget/RemoteViews;
 
-    const-string/jumbo v5, "EXPANDED"
+    const-string/jumbo v3, "EXPANDED"
 
-    invoke-virtual {p1, v5}, Landroid/content/Intent;->getParcelableExtra(Ljava/lang/String;)Landroid/os/Parcelable;
+    invoke-virtual {p1, v3}, Landroid/content/Intent;->getParcelableExtra(Ljava/lang/String;)Landroid/os/Parcelable;
 
     move-result-object v2
 
     check-cast v2, Landroid/widget/RemoteViews;
 
-    const-string/jumbo v5, "QSQuickConnectView"
+    const-string/jumbo v3, "QSQuickConnectView"
 
     new-instance v6, Ljava/lang/StringBuilder;
 
     invoke-direct {v6}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string/jumbo v7, "collapsed ="
+    const-string/jumbo v7, "broadcast collapsed ="
 
     invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -858,25 +812,34 @@
 
     move-result-object v6
 
-    invoke-static {v5, v6}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {v3, v6}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    iget-object v5, p0, Lcom/android/systemui/qs/QSQuickConnectView;->mTmpState:Lcom/android/systemui/qs/QSQuickConnectView$State;
+    iget-object v3, p0, Lcom/android/systemui/qs/QSQuickConnectView;->mTmpState:Lcom/android/systemui/qs/QSQuickConnectView$State;
 
-    iput-object v1, v5, Lcom/android/systemui/qs/QSQuickConnectView$State;->mCollapsed:Landroid/widget/RemoteViews;
+    iput-object v1, v3, Lcom/android/systemui/qs/QSQuickConnectView$State;->mCollapsed:Landroid/widget/RemoteViews;
 
-    iget-object v5, p0, Lcom/android/systemui/qs/QSQuickConnectView;->mTmpState:Lcom/android/systemui/qs/QSQuickConnectView$State;
+    iget-object v3, p0, Lcom/android/systemui/qs/QSQuickConnectView;->mTmpState:Lcom/android/systemui/qs/QSQuickConnectView$State;
 
-    iput-object v2, v5, Lcom/android/systemui/qs/QSQuickConnectView$State;->mExpanded:Landroid/widget/RemoteViews;
+    iput-object v2, v3, Lcom/android/systemui/qs/QSQuickConnectView$State;->mExpanded:Landroid/widget/RemoteViews;
 
-    iget-object v5, p0, Lcom/android/systemui/qs/QSQuickConnectView;->mTmpState:Lcom/android/systemui/qs/QSQuickConnectView$State;
+    iget-object v6, p0, Lcom/android/systemui/qs/QSQuickConnectView;->mTmpState:Lcom/android/systemui/qs/QSQuickConnectView$State;
 
-    if-eqz v2, :cond_2
+    if-eqz v2, :cond_3
 
     move v3, v4
 
-    :cond_2
-    iput-boolean v3, v5, Lcom/android/systemui/qs/QSQuickConnectView$State;->mIsExpanded:Z
+    :goto_0
+    iput-boolean v3, v6, Lcom/android/systemui/qs/QSQuickConnectView$State;->mIsExpanded:Z
 
+    iget-boolean v3, p0, Lcom/android/systemui/qs/QSQuickConnectView;->mIsFullyExpanded:Z
+
+    if-nez v3, :cond_2
+
+    iget-boolean v3, p0, Lcom/android/systemui/qs/QSQuickConnectView;->mDesk:Z
+
+    if-eqz v3, :cond_4
+
+    :cond_2
     iget-object v3, p0, Lcom/android/systemui/qs/QSQuickConnectView;->mHandler:Lcom/android/systemui/qs/QSQuickConnectView$H;
 
     invoke-virtual {v3, v4}, Lcom/android/systemui/qs/QSQuickConnectView$H;->removeMessages(I)V
@@ -893,13 +856,47 @@
 
     invoke-virtual {v3, v4}, Lcom/android/systemui/qs/QSQuickConnectView$H;->sendMessage(Landroid/os/Message;)Z
 
+    :goto_1
     return-void
+
+    :cond_3
+    move v3, v5
+
+    goto :goto_0
+
+    :cond_4
+    iget-object v3, p0, Lcom/android/systemui/qs/QSQuickConnectView;->mTmpState:Lcom/android/systemui/qs/QSQuickConnectView$State;
+
+    iget-object v3, v3, Lcom/android/systemui/qs/QSQuickConnectView$State;->mExpanded:Landroid/widget/RemoteViews;
+
+    if-nez v3, :cond_5
+
+    iget-object v3, p0, Lcom/android/systemui/qs/QSQuickConnectView;->mTmpState:Lcom/android/systemui/qs/QSQuickConnectView$State;
+
+    iget-object v3, v3, Lcom/android/systemui/qs/QSQuickConnectView$State;->mCollapsed:Landroid/widget/RemoteViews;
+
+    if-nez v3, :cond_5
+
+    invoke-direct {p0, v5}, Lcom/android/systemui/qs/QSQuickConnectView;->clearView(Z)V
+
+    goto :goto_1
+
+    :cond_5
+    iput-boolean v4, p0, Lcom/android/systemui/qs/QSQuickConnectView;->mViewUpdateDelyed:Z
+
+    const-string/jumbo v3, "QSQuickConnectView"
+
+    const-string/jumbo v4, "update while expansion"
+
+    invoke-static {v3, v4}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    goto :goto_1
 .end method
 
-.method public setFullyCollapsed(Z)V
+.method public setBarState(I)V
     .locals 0
 
-    iput-boolean p1, p0, Lcom/android/systemui/qs/QSQuickConnectView;->mIsFullyCollapsed:Z
+    iput p1, p0, Lcom/android/systemui/qs/QSQuickConnectView;->mStatusBarState:I
 
     return-void
 .end method
@@ -913,11 +910,13 @@
 .end method
 
 .method public setPosition(F)V
-    .locals 1
+    .locals 4
 
     invoke-super {p0, p1}, Lcom/android/systemui/qs/QSBarItem;->setPosition(F)V
 
-    iput p1, p0, Lcom/android/systemui/qs/QSQuickConnectView;->mFraction:F
+    iget-boolean v0, p0, Lcom/android/systemui/qs/QSQuickConnectView;->mIsFullyExpanded:Z
+
+    if-eqz v0, :cond_1
 
     iget-boolean v0, p0, Lcom/android/systemui/qs/QSQuickConnectView;->mViewUpdateDelyed:Z
 
@@ -940,9 +939,19 @@
 
     iput-boolean v0, p0, Lcom/android/systemui/qs/QSQuickConnectView;->mViewUpdateDelyed:Z
 
-    sget-object v0, Lcom/android/systemui/qs/QSQuickConnectView;->mState:Lcom/android/systemui/qs/QSQuickConnectView$State;
+    iget-object v0, p0, Lcom/android/systemui/qs/QSQuickConnectView;->mHandler:Lcom/android/systemui/qs/QSQuickConnectView$H;
 
-    invoke-direct {p0, v0}, Lcom/android/systemui/qs/QSQuickConnectView;->refresh(Lcom/android/systemui/qs/QSQuickConnectView$State;)V
+    iget-object v1, p0, Lcom/android/systemui/qs/QSQuickConnectView;->mHandler:Lcom/android/systemui/qs/QSQuickConnectView$H;
+
+    iget-object v2, p0, Lcom/android/systemui/qs/QSQuickConnectView;->mTmpState:Lcom/android/systemui/qs/QSQuickConnectView$State;
+
+    const/4 v3, 0x1
+
+    invoke-virtual {v1, v3, v2}, Lcom/android/systemui/qs/QSQuickConnectView$H;->obtainMessage(ILjava/lang/Object;)Landroid/os/Message;
+
+    move-result-object v1
+
+    invoke-virtual {v0, v1}, Lcom/android/systemui/qs/QSQuickConnectView$H;->sendMessage(Landroid/os/Message;)Z
 
     :cond_1
     return-void

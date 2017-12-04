@@ -238,6 +238,8 @@
     <string name="wifi_allow_scan_with_traffic_summary">Wi‑Fi Axtarışlarına data trafikinə əsasən İcazə verin/Qadağan edin</string>
     <string name="select_logd_size_title">Logger bufer ölçüləri</string>
     <string name="select_logd_size_dialog_title">Hər jurnal buferinı Logger ölçüsü seçin</string>
+    <string name="dev_logpersist_clear_warning_title">Davamlı jurnal yaddaşı silinsin?</string>
+    <string name="dev_logpersist_clear_warning_message">Jurnal məlumatı davamlı jurnal söndükdə silinəcək.</string>
     <string name="select_logpersist_title">Jurnal məlumatını daima saxla</string>
     <string name="select_logpersist_dialog_title">Daima saxlamaq üçün jurnal buferlərini seç</string>
     <string name="select_usb_configuration_title">USB Sazlaması seçin</string>
@@ -751,6 +753,7 @@ Davam etmək operaturunuzdan xərclərə səbəb ola bilər."</string>
     <string name="wifi_authentication_failed_kt">Wi-Fi AP eyniləşdirmək olmadı.</string>
     <string name="wifi_authentication_no_response">Wi-Fi AP-a qoşulmaq olmadı.</string>
     <string name="wifi_authentication_invalid_value">Eyniləşdirmə baş tutmadi. Istifadəçinin adini və şifrəni yoxlayın..</string>
+    <string name="wifi_disconnected">Wi-Fi bağlantısı kəsildi.</string>
     <string name="quick_settings_dnd_label">Narahat etməyin</string>
     <string name="quick_settings_dnd_priority_label">Yalnız prioritet</string>
     <string name="quick_settings_dnd_alarms_label">Yalnız alarmlar</string>
@@ -1382,11 +1385,11 @@ Siz, həmçinin, %3$s tətbiqinə də qoşulsunuz və o, şəxsi şəbəkə fəa
     <string name="keyboard_key_numpad_template">Rəqəmli düymələr %1$s</string>
     <string name="keyboard_popup_help">Meta açar: Windows, Əmr və digər əməliyyat sistemlərinin simvol açarı.</string>
     <string name="keyboard_shortcut_group_system">Sistem qısayolları</string>
-    <string name="keyboard_shortcut_group_system_home">Əsas səhifə</string>
+    <string name="keyboard_shortcut_group_system_home">Əsas ekran</string>
     <string name="keyboard_shortcut_group_system_recents">Sonuncular</string>
     <string name="keyboard_shortcut_group_system_back">Geri</string>
     <string name="keyboard_shortcut_group_system_notifications">Bildirişlər</string>
-    <string name="keyboard_shortcut_group_system_shortcuts_helper">Klaviatura qısa yolları</string>
+    <string name="keyboard_shortcut_group_system_shortcuts_helper">Klaviatura qısayolları</string>
     <string name="keyboard_shortcut_group_system_switch_input">Daxiletmə metoduna keçin</string>
     <string name="keyboard_shortcut_group_system_all_apps">Bütün proqramlar</string>
     <string name="keyboard_shortcut_group_system_running_apps">İşlək proqramlar</string>
@@ -1652,7 +1655,9 @@ Həddindən artıq qızmaya aşağıdakılar səbəb ola bilər:
     <string name="battery_not_fully_connected_charging_title_vzw">Incomplete connection</string>
     <string name="battery_not_fully_connected_charging_text">Daha tez yükləmək üçün cihazın qutusunda olan adapterdən istifadə edin və düzgün qoşulduğundan əmin olun.</string>
     <string name="battery_not_fully_connected_charging_text_vzw">Make sure the charger is properly connected.</string>
+    <string name="battery_not_fully_connected_charging_text_jpn">Adapterin düzgün qoşulduğundan əmin olun.</string>
     <string name="battery_not_fully_connected_charging_popup_text">Adapterin düzgün qoşulduğundan əmin olun. Cihazın qutusunda olan adapterdən istifadə edin.</string>
+    <string name="battery_not_fully_connected_charging_popup_text_jpn">Adapterin düzgün qoşulduğundan əmin olun.</string>
     <string name="battery_charging_level_and_time_text">"Yüklənir: %1$d%%
 (Tam dolanadək təqribən %2$s)"</string>
     <string name="battery_charging_level_text">Doldurulur: %d%%</string>
@@ -1877,6 +1882,8 @@ Please note that in order to enable your emergency calls (e.g., such as 112 call
     <string name="qs_detail_palm_capture_title">Çəkmək üçün əllə sürüşdür</string>
     <string name="noti_direct_reply_exceed_text_limit_toast">Daha çox mətn daxil etmək olmur.</string>
     <string name="airplane_mode_tts_text">Uçuş rejimi</string>
+    <string name="all_noti_readout">Bir bildiriş</string>
+    <string name="all_noti_readout2">%d bildiriş</string>
     <string name="car_lockscreen_disclaimer_title">Təhlükəsiz sürün</string>
     <string name="car_lockscreen_disclaimer_text">Yol şəraitindən tam xəbərdar olun və hər zaman tətbiq olunan qaydalara riayət edin. İstiqamətlər qeyri-dəqiq, natamam, təhlükəli, uyğun olmayan, qadağan edilmiş və ya inzibati sahələrə keçid ilə nəticələnə bilər. Biznes məlumatı da qeyri-dəqiq və ya natamam ola bilər. Data real vaxtda deyil və məkan dəqiqliyinə zəmanət verilmir. Avtomobil idarə edərkən mobil cihazınızı elinizə almayın və ya Android Avto üçün nəzərdə tutulmamış tətbiqlərdən istifadə etməyin.</string>
     <string name="pip_close">PIP bağlayın</string>

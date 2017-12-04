@@ -81,7 +81,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f130412
+    const v1, 0x7f130414
 
     invoke-virtual {v0, v1}, Lcom/android/systemui/statusbar/phone/BaseStatusBarHeader;->findViewById(I)Landroid/view/View;
 

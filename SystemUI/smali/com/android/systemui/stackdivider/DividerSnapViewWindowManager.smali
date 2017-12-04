@@ -33,7 +33,7 @@
 
 # virtual methods
 .method public add(Landroid/view/View;II)V
-    .locals 6
+    .locals 7
 
     new-instance v0, Landroid/view/WindowManager$LayoutParams;
 
@@ -81,9 +81,22 @@
 
     iput v1, v0, Landroid/view/WindowManager$LayoutParams;->samsungFlags:I
 
-    const/16 v0, 0x700
+    const/16 v6, 0x700
 
-    invoke-virtual {p1, v0}, Landroid/view/View;->setSystemUiVisibility(I)V
+    move-object v0, p1
+
+    check-cast v0, Lcom/android/systemui/stackdivider/DividerSnapView;
+
+    invoke-virtual {v0}, Lcom/android/systemui/stackdivider/DividerSnapView;->translucentNavigationBar()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    const/16 v6, 0xf06
+
+    :cond_0
+    invoke-virtual {p1, v6}, Landroid/view/View;->setSystemUiVisibility(I)V
 
     iget-object v0, p0, Lcom/android/systemui/stackdivider/DividerSnapViewWindowManager;->mWindowManager:Landroid/view/WindowManager;
 

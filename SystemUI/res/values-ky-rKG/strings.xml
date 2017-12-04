@@ -238,6 +238,8 @@
     <string name="wifi_allow_scan_with_traffic_summary">Интерфейстеги дайындар трафигинин көлөмүнө жараша Wi-Fi Роуминг скандоо мүмкүнчүлүгүн иштетүү/өчүрүү</string>
     <string name="select_logd_size_title">Каттагыч буферлеринин өлчөмдөрү</string>
     <string name="select_logd_size_dialog_title">Каттоо буфери үчүн Каттагычтын көлөмүн тандаңыз</string>
+    <string name="dev_logpersist_clear_warning_title">Туруктуу логгер сактагычын тазалообу?</string>
+    <string name="dev_logpersist_clear_warning_message">Туруктуу логгер өчүрүлгөндө логгер маалыматтары өчүрүлөт.</string>
     <string name="select_logpersist_title">Жур. маалым. туруктуу сактоо</string>
     <string name="select_logpersist_dialog_title">Туруктуу сактоо үчүн журнал буферин тандоо</string>
     <string name="select_usb_configuration_title">USB конфигурациясын тандоо</string>
@@ -752,6 +754,7 @@ For example, your ringtone will not sound, you will not be able to answer phone 
     <string name="wifi_authentication_failed_kt">"Wi-Fi AP'син ырастоо кыйрады."</string>
     <string name="wifi_authentication_no_response">Wi-Fi APге байланышуу кыйрады.</string>
     <string name="wifi_authentication_invalid_value">Накталыкты аныктоосу ишке ашпады. ID жана сырсөздү текшериңиз.</string>
+    <string name="wifi_disconnected">Wi-Fi ажыратылды</string>
     <string name="quick_settings_dnd_label">Тынчымды алба</string>
     <string name="quick_settings_dnd_priority_label">Артыкчылык гана</string>
     <string name="quick_settings_dnd_alarms_label">Ойготкучтар гана</string>
@@ -1383,11 +1386,11 @@ Wi-Fi чалуу сүрөтчөсү, төмөндө көрсөтүлгөндөй
     <string name="keyboard_key_numpad_template">Numpad %1$s</string>
     <string name="keyboard_popup_help">Мета баскычы: Windows, Command же башка операциялык системалардын символдук баскычы.</string>
     <string name="keyboard_shortcut_group_system">Системалык тез чакырмалар</string>
-    <string name="keyboard_shortcut_group_system_home">Башкы бет</string>
-    <string name="keyboard_shortcut_group_system_recents">Акыркылар</string>
+    <string name="keyboard_shortcut_group_system_home">Үй</string>
+    <string name="keyboard_shortcut_group_system_recents">Жакынкылар</string>
     <string name="keyboard_shortcut_group_system_back">Артка</string>
-    <string name="keyboard_shortcut_group_system_notifications">Эскертмелер</string>
-    <string name="keyboard_shortcut_group_system_shortcuts_helper">Баскычтоптун кыска жолдору</string>
+    <string name="keyboard_shortcut_group_system_notifications">Эскертүүлөр</string>
+    <string name="keyboard_shortcut_group_system_shortcuts_helper">Клавиатура тез чакырмалары</string>
     <string name="keyboard_shortcut_group_system_switch_input">Киргизүү ыкмасын которуштуруу</string>
     <string name="keyboard_shortcut_group_system_all_apps">Бардык колдонмолор</string>
     <string name="keyboard_shortcut_group_system_running_apps">Аткарылып жаткан колдонмолор</string>
@@ -1395,13 +1398,13 @@ Wi-Fi чалуу сүрөтчөсү, төмөндө көрсөтүлгөндөй
     <string name="keyboard_shortcut_group_system_switch_languages">Которуу тилдери</string>
     <string name="keyboard_shortcut_group_applications">Колд. ичиндеги тез чакыр.</string>
     <string name="keyboard_shortcut_group_applications_assist">Көмөкчү</string>
-    <string name="keyboard_shortcut_group_applications_browser">Серепчи</string>
+    <string name="keyboard_shortcut_group_applications_browser">Браузер</string>
     <string name="keyboard_shortcut_group_applications_contacts">Катыштар</string>
     <string name="keyboard_shortcut_group_applications_email">Email</string>
     <string name="keyboard_shortcut_group_applications_im">IM</string>
     <string name="keyboard_shortcut_group_applications_music">Музыка</string>
     <string name="keyboard_shortcut_group_applications_youtube">YouTube</string>
-    <string name="keyboard_shortcut_group_applications_calendar">Жылнаама</string>
+    <string name="keyboard_shortcut_group_applications_calendar">Календарь</string>
     <string name="keyboard_shortcut_group_applications_bixby">Bixby</string>
     <string name="keyboard_shortcut_group_applications_messages">Билдирүүлөр</string>
     <string name="tuner_full_zen_title">Үн көзөмөлдөгүчтөрү менен көрсөтүлсүн</string>
@@ -1653,7 +1656,9 @@ Using your tablet in a very hot location."</string>
     <string name="battery_not_fully_connected_charging_title_vzw">Incomplete connection</string>
     <string name="battery_not_fully_connected_charging_text">Тезирээк заряддоо үчүн, түзмөк менен чогуу келген заряддагычты колдонуңуз жана анын тиешелүү түрдө туташылгандыгын ырастаңыз.</string>
     <string name="battery_not_fully_connected_charging_text_vzw">Make sure the charger is properly connected.</string>
+    <string name="battery_not_fully_connected_charging_text_jpn">Заряддагычыңыз туура туташылганын текшериңиз.</string>
     <string name="battery_not_fully_connected_charging_popup_text">Заряддагыч тиешелүү түрдө туташылгандыгын ырастаңыз. Түзмөк менен чогуу келген заряддагычты колдонуңуз.</string>
+    <string name="battery_not_fully_connected_charging_popup_text_jpn">Заряддагыч тиешелүү түрдө туташылгандыгын ырастаңыз.</string>
     <string name="battery_charging_level_and_time_text">"Заряддоо: %1$d%%
 (Толук дүрмөттөлгөнгө чейин, болжол менен %2$s)"</string>
     <string name="battery_charging_level_text">Заряддоодо: %d%%</string>
@@ -1878,6 +1883,8 @@ Please note that in order to enable your emergency calls (e.g., such as 112 call
     <string name="qs_detail_palm_capture_title">Экранды алакан менен тартуу</string>
     <string name="noti_direct_reply_exceed_text_limit_toast">Дагы башка текст киргизилбей койду.</string>
     <string name="airplane_mode_tts_text">Учак режими</string>
+    <string name="all_noti_readout">Бир эскертүү</string>
+    <string name="all_noti_readout2">%d эскертүү</string>
     <string name="car_lockscreen_disclaimer_title">Коопсуздук эрежелерин сактаңыз</string>
     <string name="car_lockscreen_disclaimer_text">"Унаа айдап бара жатканда жолдогу шарттар менен эрежелерге ар дайым көңүл буруңуз. Багыттар так же толук эмес берилип, кесип өтүү үчүн опурталдуу же ылайыксыз болгон административдик аймактар аркылуу өтүшү мүмкүн. Ишканалар тууралуу маалымат да так же толук эмес болушу мүмкүн. Дайындар тез-тез жаңыртылып турбагандыктан, жайгашкан жердин так аныкталгандыгына кепилдик жок. Андыктан унаа айдап бара жатканда, мобилдик түзмөгүңүздү же Android Auto'го арналбаган колдонмолорду пайдаланбаңыз."</string>
     <string name="pip_close">"PIP'ти жабуу"</string>

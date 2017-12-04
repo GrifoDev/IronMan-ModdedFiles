@@ -134,6 +134,29 @@
     return-void
 .end method
 
+.method public dismissFlightModeEnabledAlertDialog()V
+    .locals 1
+
+    iget-object v0, p0, Lcom/android/systemui/popup/PopupUINotificationsImpl;->mFlightModeEnabledAlertDialog:Landroid/app/AlertDialog;
+
+    if-eqz v0, :cond_0
+
+    iget-object v0, p0, Lcom/android/systemui/popup/PopupUINotificationsImpl;->mFlightModeEnabledAlertDialog:Landroid/app/AlertDialog;
+
+    invoke-virtual {v0}, Landroid/app/AlertDialog;->isShowing()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    iget-object v0, p0, Lcom/android/systemui/popup/PopupUINotificationsImpl;->mFlightModeEnabledAlertDialog:Landroid/app/AlertDialog;
+
+    invoke-virtual {v0}, Landroid/app/AlertDialog;->dismiss()V
+
+    :cond_0
+    return-void
+.end method
+
 .method public setDialogWindowType(Landroid/app/AlertDialog;I)V
     .locals 2
 
@@ -302,7 +325,7 @@
 
     move-object/from16 v20, v0
 
-    const v21, 0x7f0f06f0
+    const v21, 0x7f0f06f1
 
     invoke-virtual/range {v20 .. v21}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -318,7 +341,7 @@
 
     move-object/from16 v20, v0
 
-    const v21, 0x7f0f06f2
+    const v21, 0x7f0f06f3
 
     invoke-virtual/range {v20 .. v21}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -382,7 +405,7 @@
 
     move-object/from16 v20, v0
 
-    const v21, 0x7f0f06f1
+    const v21, 0x7f0f06f2
 
     invoke-virtual/range {v20 .. v21}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -397,7 +420,7 @@
 
     move-object/from16 v20, v0
 
-    const v21, 0x7f0f06f3
+    const v21, 0x7f0f06f4
 
     invoke-virtual/range {v20 .. v21}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -409,7 +432,7 @@
 
     move-object/from16 v20, v0
 
-    const v21, 0x7f0f06f4
+    const v21, 0x7f0f06f5
 
     invoke-virtual/range {v20 .. v21}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -472,7 +495,7 @@
 
     move-object/from16 v20, v0
 
-    const v21, 0x7f0f06ef
+    const v21, 0x7f0f06f0
 
     invoke-virtual/range {v20 .. v21}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -484,7 +507,7 @@
 
     move-object/from16 v20, v0
 
-    const v21, 0x7f0f06f6
+    const v21, 0x7f0f06f7
 
     invoke-virtual/range {v20 .. v21}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -496,7 +519,7 @@
 
     move-object/from16 v20, v0
 
-    const v21, 0x7f0f05cf
+    const v21, 0x7f0f05d0
 
     invoke-virtual/range {v20 .. v21}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -759,7 +782,7 @@
 
     move-object/from16 v20, v0
 
-    const v21, 0x7f0f06ef
+    const v21, 0x7f0f06f0
 
     invoke-virtual/range {v20 .. v21}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -771,7 +794,7 @@
 
     move-object/from16 v20, v0
 
-    const v21, 0x7f0f06f7
+    const v21, 0x7f0f06f8
 
     invoke-virtual/range {v20 .. v21}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -785,7 +808,7 @@
 
     move-object/from16 v20, v0
 
-    const v21, 0x7f0f06fa
+    const v21, 0x7f0f06fb
 
     invoke-virtual/range {v20 .. v21}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -818,7 +841,7 @@
 
     move-object/from16 v20, v0
 
-    const v21, 0x7f0f06fb
+    const v21, 0x7f0f06fc
 
     invoke-virtual/range {v20 .. v21}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -839,7 +862,7 @@
 
     move-object/from16 v20, v0
 
-    const v21, 0x7f0f05cf
+    const v21, 0x7f0f05d0
 
     invoke-virtual/range {v20 .. v21}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -880,7 +903,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f0f06ee
+    const v2, 0x7f0f06ef
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -927,7 +950,7 @@
 
     iget-object v2, p0, Lcom/android/systemui/popup/PopupUINotificationsImpl;->mResources:Landroid/content/res/Resources;
 
-    const v3, 0x7f0f06fd
+    const v3, 0x7f0f06fe
 
     invoke-virtual {v2, v3}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -953,7 +976,7 @@
 
     iget-object v2, p0, Lcom/android/systemui/popup/PopupUINotificationsImpl;->mResources:Landroid/content/res/Resources;
 
-    const v3, 0x7f0f06ff
+    const v3, 0x7f0f0700
 
     invoke-virtual {v2, v3}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -964,7 +987,7 @@
 
     iget-object v2, p0, Lcom/android/systemui/popup/PopupUINotificationsImpl;->mResources:Landroid/content/res/Resources;
 
-    const v3, 0x7f0f05cf
+    const v3, 0x7f0f05d0
 
     invoke-virtual {v2, v3}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -993,7 +1016,7 @@
     :cond_1
     iget-object v2, p0, Lcom/android/systemui/popup/PopupUINotificationsImpl;->mResources:Landroid/content/res/Resources;
 
-    const v3, 0x7f0f06fe
+    const v3, 0x7f0f06ff
 
     invoke-virtual {v2, v3}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -1013,7 +1036,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f0f06fc
+    const v2, 0x7f0f06fd
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -1087,7 +1110,7 @@
 
     move-result-object v4
 
-    const v7, 0x7f1304ca
+    const v7, 0x7f1304cc
 
     invoke-virtual {v4, v7}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -1120,10 +1143,10 @@
 
     if-ne p1, v11, :cond_4
 
-    const v6, 0x7f0f0706
+    const v6, 0x7f0f0707
 
     :goto_1
-    const v7, 0x7f1304cb
+    const v7, 0x7f1304cd
 
     invoke-virtual {v4, v7}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -1147,7 +1170,7 @@
 
     iget-object v7, p0, Lcom/android/systemui/popup/PopupUINotificationsImpl;->mResources:Landroid/content/res/Resources;
 
-    const v8, 0x7f0f0705
+    const v8, 0x7f0f0706
 
     invoke-virtual {v7, v8}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -1159,7 +1182,7 @@
 
     iget-object v7, p0, Lcom/android/systemui/popup/PopupUINotificationsImpl;->mResources:Landroid/content/res/Resources;
 
-    const v8, 0x7f0f05cf
+    const v8, 0x7f0f05d0
 
     invoke-virtual {v7, v8}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -1204,7 +1227,7 @@
     goto :goto_0
 
     :cond_4
-    const v6, 0x7f0f0707
+    const v6, 0x7f0f0708
 
     goto :goto_1
 .end method

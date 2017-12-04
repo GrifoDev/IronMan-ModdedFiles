@@ -283,6 +283,12 @@
 
     :cond_1
     :goto_0
+    move-object/from16 v0, p0
+
+    iget-object v3, v0, Lcom/android/systemui/multiwindow/bixby/EmMultiWindowManager$1;->this$0:Lcom/android/systemui/multiwindow/bixby/EmMultiWindowManager;
+
+    invoke-virtual {v3}, Lcom/android/systemui/multiwindow/bixby/EmMultiWindowManager;->clearInterimStateListener()V
+
     invoke-static {}, Lcom/android/systemui/multiwindow/bixby/EmMultiWindowManager;->-get0()Z
 
     move-result v3

@@ -320,149 +320,167 @@
 .end method
 
 .method public updateViewStyleOnWhiteWallpaper()V
-    .locals 8
+    .locals 10
 
-    const/4 v7, 0x0
+    const/4 v9, 0x0
 
-    iget-object v5, p0, Lcom/android/keyguard/servicebox/pages/calendar/CalendarNoEventView;->mContext:Landroid/content/Context;
+    iget-object v7, p0, Lcom/android/keyguard/servicebox/pages/calendar/CalendarNoEventView;->mContext:Landroid/content/Context;
 
-    invoke-static {v5}, Lcom/android/keyguard/util/SettingsHelper;->getInstance(Landroid/content/Context;)Lcom/android/keyguard/util/SettingsHelper;
+    invoke-static {v7}, Lcom/android/keyguard/util/SettingsHelper;->getInstance(Landroid/content/Context;)Lcom/android/keyguard/util/SettingsHelper;
 
-    move-result-object v5
+    move-result-object v7
 
-    invoke-virtual {v5}, Lcom/android/keyguard/util/SettingsHelper;->isWhiteKeyguardWallpaper()Z
+    invoke-virtual {v7}, Lcom/android/keyguard/util/SettingsHelper;->isWhiteKeyguardWallpaper()Z
 
-    move-result v3
+    move-result v4
 
-    iget-object v5, p0, Lcom/android/keyguard/servicebox/pages/calendar/CalendarNoEventView;->mContext:Landroid/content/Context;
+    iget-object v7, p0, Lcom/android/keyguard/servicebox/pages/calendar/CalendarNoEventView;->mContext:Landroid/content/Context;
 
-    invoke-static {v5}, Lcom/android/keyguard/util/ViewStyleUtils;->getInstance(Landroid/content/Context;)Lcom/android/keyguard/util/ViewStyleUtils;
+    invoke-static {v7}, Lcom/android/keyguard/util/ViewStyleUtils;->getInstance(Landroid/content/Context;)Lcom/android/keyguard/util/ViewStyleUtils;
 
-    move-result-object v4
+    move-result-object v6
 
-    iget-object v5, p0, Lcom/android/keyguard/servicebox/pages/calendar/CalendarNoEventView;->mOpenCalendarView:Landroid/widget/Button;
+    iget-object v7, p0, Lcom/android/keyguard/servicebox/pages/calendar/CalendarNoEventView;->mOpenCalendarView:Landroid/widget/Button;
 
-    if-eqz v5, :cond_0
+    if-eqz v7, :cond_0
 
-    iget-object v5, p0, Lcom/android/keyguard/servicebox/pages/calendar/CalendarNoEventView;->mOpenCalendarView:Landroid/widget/Button;
+    iget-object v7, p0, Lcom/android/keyguard/servicebox/pages/calendar/CalendarNoEventView;->mOpenCalendarView:Landroid/widget/Button;
 
-    invoke-virtual {v4, v5, v7}, Lcom/android/keyguard/util/ViewStyleUtils;->updateViewStyle(Landroid/widget/TextView;I)V
+    invoke-virtual {v6, v7, v9}, Lcom/android/keyguard/util/ViewStyleUtils;->updateViewStyle(Landroid/widget/TextView;I)V
 
-    iget-object v5, p0, Lcom/android/keyguard/servicebox/pages/calendar/CalendarNoEventView;->mContext:Landroid/content/Context;
+    iget-object v7, p0, Lcom/android/keyguard/servicebox/pages/calendar/CalendarNoEventView;->mContext:Landroid/content/Context;
 
-    invoke-static {v5}, Lcom/android/keyguard/util/ViewStyleUtils;->getInstance(Landroid/content/Context;)Lcom/android/keyguard/util/ViewStyleUtils;
+    invoke-static {v7}, Lcom/android/keyguard/util/ViewStyleUtils;->getInstance(Landroid/content/Context;)Lcom/android/keyguard/util/ViewStyleUtils;
 
-    move-result-object v5
+    move-result-object v7
 
-    iget-object v6, p0, Lcom/android/keyguard/servicebox/pages/calendar/CalendarNoEventView;->mOpenCalendarView:Landroid/widget/Button;
+    iget-object v8, p0, Lcom/android/keyguard/servicebox/pages/calendar/CalendarNoEventView;->mOpenCalendarView:Landroid/widget/Button;
 
-    invoke-virtual {v5, v6}, Lcom/android/keyguard/util/ViewStyleUtils;->updateButtonOuterlineColor(Landroid/widget/TextView;)V
+    invoke-virtual {v7, v8}, Lcom/android/keyguard/util/ViewStyleUtils;->updateButtonOuterlineColor(Landroid/widget/TextView;)V
 
     invoke-virtual {p0}, Lcom/android/keyguard/servicebox/pages/calendar/CalendarNoEventView;->getResources()Landroid/content/res/Resources;
 
-    move-result-object v5
+    move-result-object v7
 
-    sget v6, Lcom/android/keyguard/R$dimen;->keyguard_emergency_button_inner_padding:I
+    sget v8, Lcom/android/keyguard/R$dimen;->keyguard_emergency_button_inner_padding:I
 
-    invoke-virtual {v5, v6}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
+    invoke-virtual {v7, v8}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
     move-result v1
 
-    iget-object v5, p0, Lcom/android/keyguard/servicebox/pages/calendar/CalendarNoEventView;->mOpenCalendarView:Landroid/widget/Button;
+    iget-object v7, p0, Lcom/android/keyguard/servicebox/pages/calendar/CalendarNoEventView;->mOpenCalendarView:Landroid/widget/Button;
 
-    invoke-virtual {v5, v1, v7, v1, v7}, Landroid/widget/Button;->setPadding(IIII)V
+    invoke-virtual {v7, v1, v9, v1, v9}, Landroid/widget/Button;->setPadding(IIII)V
 
     :cond_0
     const/4 v2, 0x0
 
-    iget-object v5, p0, Lcom/android/keyguard/servicebox/pages/calendar/CalendarNoEventView;->mContentView:Landroid/widget/TextView;
+    iget-object v7, p0, Lcom/android/keyguard/servicebox/pages/calendar/CalendarNoEventView;->mContentView:Landroid/widget/TextView;
 
-    if-eqz v5, :cond_1
+    if-eqz v7, :cond_1
 
-    iget-object v5, p0, Lcom/android/keyguard/servicebox/pages/calendar/CalendarNoEventView;->mContentView:Landroid/widget/TextView;
+    iget-object v7, p0, Lcom/android/keyguard/servicebox/pages/calendar/CalendarNoEventView;->mContentView:Landroid/widget/TextView;
 
-    invoke-virtual {v5}, Landroid/widget/TextView;->getTag()Ljava/lang/Object;
+    invoke-virtual {v7}, Landroid/widget/TextView;->getTag()Ljava/lang/Object;
 
-    move-result-object v5
+    move-result-object v7
 
-    if-eqz v5, :cond_1
+    if-eqz v7, :cond_1
 
     const/4 v2, 0x1
 
     :cond_1
-    iget-object v5, p0, Lcom/android/keyguard/servicebox/pages/calendar/CalendarNoEventView;->mContentView:Landroid/widget/TextView;
+    iget-object v7, p0, Lcom/android/keyguard/servicebox/pages/calendar/CalendarNoEventView;->mContentView:Landroid/widget/TextView;
 
-    if-eqz v5, :cond_3
+    if-eqz v7, :cond_2
 
     if-eqz v2, :cond_5
 
+    iget-object v7, p0, Lcom/android/keyguard/servicebox/pages/calendar/CalendarNoEventView;->mContext:Landroid/content/Context;
+
+    invoke-static {v7}, Lcom/android/keyguard/util/SettingsHelper;->getInstance(Landroid/content/Context;)Lcom/android/keyguard/util/SettingsHelper;
+
+    move-result-object v7
+
+    invoke-virtual {v7}, Lcom/android/keyguard/util/SettingsHelper;->isWhiteKeyguardWallpaper()Z
+
+    move-result v5
+
+    iget-object v7, p0, Lcom/android/keyguard/servicebox/pages/calendar/CalendarNoEventView;->mContext:Landroid/content/Context;
+
+    invoke-static {v7}, Lcom/android/keyguard/util/SettingsHelper;->getInstance(Landroid/content/Context;)Lcom/android/keyguard/util/SettingsHelper;
+
+    move-result-object v7
+
+    invoke-virtual {v7}, Lcom/android/keyguard/util/SettingsHelper;->isOpenThemeLook()Z
+
+    move-result v3
+
     const/4 v0, 0x0
 
-    invoke-virtual {v4}, Lcom/android/keyguard/util/ViewStyleUtils;->getCurrentLookType()I
+    if-eqz v3, :cond_3
 
-    move-result v5
+    iget-object v7, p0, Lcom/android/keyguard/servicebox/pages/calendar/CalendarNoEventView;->mContext:Landroid/content/Context;
 
-    const/4 v6, 0x2
+    sget v8, Lcom/android/keyguard/R$color;->theme_textclock_color:I
 
-    if-eq v5, v6, :cond_2
-
-    invoke-virtual {v4}, Lcom/android/keyguard/util/ViewStyleUtils;->getCurrentLookType()I
-
-    move-result v5
-
-    const/4 v6, 0x3
-
-    if-ne v5, v6, :cond_4
-
-    :cond_2
-    iget-object v5, p0, Lcom/android/keyguard/servicebox/pages/calendar/CalendarNoEventView;->mContext:Landroid/content/Context;
-
-    sget v6, Lcom/android/keyguard/R$color;->theme_todays_no_events_text_color_big_white:I
-
-    invoke-virtual {v5, v6}, Landroid/content/Context;->getColor(I)I
+    invoke-virtual {v7, v8}, Landroid/content/Context;->getColor(I)I
 
     move-result v0
 
     :goto_0
-    iget-object v5, p0, Lcom/android/keyguard/servicebox/pages/calendar/CalendarNoEventView;->mContentView:Landroid/widget/TextView;
+    iget-object v7, p0, Lcom/android/keyguard/servicebox/pages/calendar/CalendarNoEventView;->mContentView:Landroid/widget/TextView;
 
-    invoke-virtual {v4, v5, v7}, Lcom/android/keyguard/util/ViewStyleUtils;->updateViewStyle(Landroid/widget/TextView;I)V
+    invoke-virtual {v6, v7, v9}, Lcom/android/keyguard/util/ViewStyleUtils;->updateViewStyle(Landroid/widget/TextView;I)V
 
-    iget-object v5, p0, Lcom/android/keyguard/servicebox/pages/calendar/CalendarNoEventView;->mContentView:Landroid/widget/TextView;
+    iget-object v7, p0, Lcom/android/keyguard/servicebox/pages/calendar/CalendarNoEventView;->mContentView:Landroid/widget/TextView;
 
-    invoke-virtual {v5, v0}, Landroid/widget/TextView;->setTextColor(I)V
+    invoke-virtual {v7, v0}, Landroid/widget/TextView;->setTextColor(I)V
 
-    iget-object v5, p0, Lcom/android/keyguard/servicebox/pages/calendar/CalendarNoEventView;->mIconView:Lcom/altamirasoft/path_animation/PathLineAnimationView;
+    iget-object v7, p0, Lcom/android/keyguard/servicebox/pages/calendar/CalendarNoEventView;->mIconView:Lcom/altamirasoft/path_animation/PathLineAnimationView;
 
-    if-eqz v5, :cond_3
+    if-eqz v7, :cond_2
 
-    iget-object v5, p0, Lcom/android/keyguard/servicebox/pages/calendar/CalendarNoEventView;->mIconView:Lcom/altamirasoft/path_animation/PathLineAnimationView;
+    iget-object v7, p0, Lcom/android/keyguard/servicebox/pages/calendar/CalendarNoEventView;->mIconView:Lcom/altamirasoft/path_animation/PathLineAnimationView;
 
     invoke-direct {p0, v0}, Lcom/android/keyguard/servicebox/pages/calendar/CalendarNoEventView;->getOnPathListener(I)Lcom/altamirasoft/path_animation/PathListener;
 
-    move-result-object v6
+    move-result-object v8
 
-    invoke-virtual {v5, v6}, Lcom/altamirasoft/path_animation/PathLineAnimationView;->setOnPathListener(Lcom/altamirasoft/path_animation/PathListener;)V
+    invoke-virtual {v7, v8}, Lcom/altamirasoft/path_animation/PathLineAnimationView;->setOnPathListener(Lcom/altamirasoft/path_animation/PathListener;)V
 
-    :cond_3
+    :cond_2
     :goto_1
     return-void
 
+    :cond_3
+    if-eqz v5, :cond_4
+
+    iget-object v7, p0, Lcom/android/keyguard/servicebox/pages/calendar/CalendarNoEventView;->mContext:Landroid/content/Context;
+
+    sget v8, Lcom/android/keyguard/R$color;->theme_todays_no_events_text_color_big_white:I
+
+    invoke-virtual {v7, v8}, Landroid/content/Context;->getColor(I)I
+
+    move-result v0
+
+    goto :goto_0
+
     :cond_4
-    iget-object v5, p0, Lcom/android/keyguard/servicebox/pages/calendar/CalendarNoEventView;->mContext:Landroid/content/Context;
+    iget-object v7, p0, Lcom/android/keyguard/servicebox/pages/calendar/CalendarNoEventView;->mContext:Landroid/content/Context;
 
-    sget v6, Lcom/android/keyguard/R$color;->theme_todays_no_events_text_color_big:I
+    sget v8, Lcom/android/keyguard/R$color;->theme_todays_no_events_text_color_big:I
 
-    invoke-virtual {v5, v6}, Landroid/content/Context;->getColor(I)I
+    invoke-virtual {v7, v8}, Landroid/content/Context;->getColor(I)I
 
     move-result v0
 
     goto :goto_0
 
     :cond_5
-    iget-object v5, p0, Lcom/android/keyguard/servicebox/pages/calendar/CalendarNoEventView;->mContentView:Landroid/widget/TextView;
+    iget-object v7, p0, Lcom/android/keyguard/servicebox/pages/calendar/CalendarNoEventView;->mContentView:Landroid/widget/TextView;
 
-    invoke-virtual {v4, v5, v7}, Lcom/android/keyguard/util/ViewStyleUtils;->updateViewStyle(Landroid/widget/TextView;I)V
+    invoke-virtual {v6, v7, v9}, Lcom/android/keyguard/util/ViewStyleUtils;->updateViewStyle(Landroid/widget/TextView;I)V
 
     goto :goto_1
 .end method

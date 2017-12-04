@@ -238,6 +238,8 @@
     <string name="wifi_allow_scan_with_traffic_summary">Arayüzde mevcut veri trafiği miktarına bağlı olarak Kablosuz Dolaşım Taramalarına İzin Verin/Vermeyin</string>
     <string name="select_logd_size_title">Günlük Kaydedici arabellek boyutları</string>
     <string name="select_logd_size_dialog_title">Gün. arabel. başına Gün. Kayd. boyutunu seç</string>
+    <string name="dev_logpersist_clear_warning_title">Kalıcı kayıt depolaması temizlensin mi?</string>
+    <string name="dev_logpersist_clear_warning_message">Kalıcı kayıt kapatıldığında kayıt verileri silinecek.</string>
     <string name="select_logpersist_title">Kayıt verilerini sürekli depola</string>
     <string name="select_logpersist_dialog_title">Sürekli depolmk içn kayt ara belleği seçin</string>
     <string name="select_usb_configuration_title">USB Yapılandırmasını seç</string>
@@ -752,6 +754,7 @@ Veri kullanımını devam ettirmek, operatörünüzün sizden ödeme almasına n
     <string name="wifi_authentication_failed_kt">Wi-Fi AP kimliği doğrulanamadı.</string>
     <string name="wifi_authentication_no_response">"Wi-Fi AP'ye bağlanılamadı."</string>
     <string name="wifi_authentication_invalid_value">KAyıt olma başarısız. ID ve şifrenizi kontrol edin.</string>
+    <string name="wifi_disconnected">Wi-Fi bağlantısı kesildi.</string>
     <string name="quick_settings_dnd_label">Rahatsız etmeyin</string>
     <string name="quick_settings_dnd_priority_label">Yalnızca öncelikliler</string>
     <string name="quick_settings_dnd_alarms_label">Yalnızca alarmlar</string>
@@ -1383,11 +1386,11 @@ Daha fazla bilgi edinmek için yöneticinizle iletişim kurun."</string>
     <string name="keyboard_key_numpad_template">%1$s (Sayısal Tuş Takımında)</string>
     <string name="keyboard_popup_help">Meta tuş: Windows, Command veya diğer işletim sistemi sembolü tuşu.</string>
     <string name="keyboard_shortcut_group_system">Sistem kısayolları</string>
-    <string name="keyboard_shortcut_group_system_home">Ana ekran</string>
-    <string name="keyboard_shortcut_group_system_recents">Son çağrılar</string>
+    <string name="keyboard_shortcut_group_system_home">Ana sayfa</string>
+    <string name="keyboard_shortcut_group_system_recents">Son kullanılanlar</string>
     <string name="keyboard_shortcut_group_system_back">Geri</string>
     <string name="keyboard_shortcut_group_system_notifications">Bildirimler</string>
-    <string name="keyboard_shortcut_group_system_shortcuts_helper">Klavye Kısayolları</string>
+    <string name="keyboard_shortcut_group_system_shortcuts_helper">Klavye kısayolları</string>
     <string name="keyboard_shortcut_group_system_switch_input">Giriş yöntemini değiştir</string>
     <string name="keyboard_shortcut_group_system_all_apps">Tüm uygulamalar</string>
     <string name="keyboard_shortcut_group_system_running_apps">Çalışan uygulamalar</string>
@@ -1654,7 +1657,9 @@ Aşırı ısınma şunlardan kaynaklanabilir:
     <string name="battery_not_fully_connected_charging_title_vzw">Incomplete connection</string>
     <string name="battery_not_fully_connected_charging_text">Daha hızlı şarj için cihazınızla birlikte gelen şarj cihazını kullanın ve düzgün şekilde bağlandığından emin olun.</string>
     <string name="battery_not_fully_connected_charging_text_vzw">Make sure the charger is properly connected.</string>
+    <string name="battery_not_fully_connected_charging_text_jpn">Şarj cihazınızın düzgün şekilde bağlandığından emin olun.</string>
     <string name="battery_not_fully_connected_charging_popup_text">Şarj cihazının düzgün şekilde bağlandığından emin olun. Cihazla birlikte gelen şarj cihazını kullanın.</string>
+    <string name="battery_not_fully_connected_charging_popup_text_jpn">Şarj cihazının düzgün şekilde bağlandığından emin olun.</string>
     <string name="battery_charging_level_and_time_text">"Şarj oluyor: %%%1$d
 (Şarjın tamamlanmasına yaklaşık %2$s kaldı)"</string>
     <string name="battery_charging_level_text">Şarj oluyor: %%%d</string>
@@ -1879,6 +1884,8 @@ Please note that in order to enable your emergency calls (e.g., such as 112 call
     <string name="qs_detail_palm_capture_title">Ekranı yakalamak için elinizin kenarı ile kaydırın</string>
     <string name="noti_direct_reply_exceed_text_limit_toast">Daha fazla metin girilemez.</string>
     <string name="airplane_mode_tts_text">Uçak modu</string>
+    <string name="all_noti_readout">Bir bildirim</string>
+    <string name="all_noti_readout2">%d bildirim</string>
     <string name="car_lockscreen_disclaimer_title">Güvenli bir şekilde sürün</string>
     <string name="car_lockscreen_disclaimer_text">Sürüş koşullarına karşı dikkatli olun ve geçerli yasalara her zaman uyun. Yol tarifi yanlış, eksik, tehlikeli, uygunsuz, yasak olabilir veya idari bölgelerden geçişleri içerebilir. İşletme bilgileri de yanlış veya eksik olabilir. Veriler gerçek zamanlı değildir ve konum doğruluğu garanti edilemez. Sürüş sırasında mobil cihazınızı veya Android Auto için geliştirilmemiş uygulamaları kullanmayın.</string>
     <string name="pip_close">"PIP'yi kapat"</string>

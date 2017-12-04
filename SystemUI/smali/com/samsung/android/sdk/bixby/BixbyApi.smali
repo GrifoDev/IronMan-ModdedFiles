@@ -1210,6 +1210,14 @@
     goto :goto_0
 .end method
 
+.method public isRuleRunning()Z
+    .locals 1
+
+    iget-boolean v0, p0, Lcom/samsung/android/sdk/bixby/BixbyApi;->mIsRuleRunning:Z
+
+    return v0
+.end method
+
 .method public isTestRunning()Z
     .locals 1
 

@@ -253,7 +253,7 @@
 
     const-string/jumbo v6, "com.android.systemui.statusbar.policy.quicksetting"
 
-    const-string/jumbo v7, "QS22"
+    const-string/jumbo v7, "QS28"
 
     invoke-virtual/range {v20 .. v20}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
@@ -272,7 +272,7 @@
 
     iget-object v2, v0, Lcom/android/systemui/qs/QSScreenGridDialog;->mContext:Landroid/content/Context;
 
-    const v6, 0x7f0f0688
+    const v6, 0x7f0f0689
 
     invoke-virtual {v2, v6}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -308,7 +308,7 @@
 
     move-result-object v2
 
-    const v6, 0x7f0d0432
+    const v6, 0x7f0d0434
 
     invoke-virtual {v2, v6}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -322,7 +322,7 @@
 
     move-result-object v2
 
-    const v6, 0x7f0d0433
+    const v6, 0x7f0d0435
 
     invoke-virtual {v2, v6}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -365,7 +365,7 @@
     const/4 v13, 0x0
 
     :goto_0
-    if-ge v13, v10, :cond_f
+    if-ge v13, v10, :cond_10
 
     invoke-virtual {v3, v13}, Landroid/view/ViewGroup;->getChildAt(I)Landroid/view/View;
 
@@ -381,9 +381,17 @@
 
     check-cast v9, Ljava/lang/String;
 
+    if-nez v9, :cond_4
+
+    :cond_3
+    add-int/lit8 v13, v13, 0x1
+
+    goto :goto_0
+
+    :cond_4
     sget-boolean v2, Lcom/android/systemui/SystemUIRune;->IS_TABLET:Z
 
-    if-eqz v2, :cond_3
+    if-eqz v2, :cond_5
 
     const-string/jumbo v2, "3"
 
@@ -391,7 +399,7 @@
 
     move-result v2
 
-    if-eqz v2, :cond_3
+    if-eqz v2, :cond_5
 
     const/16 v2, 0x8
 
@@ -399,12 +407,12 @@
 
     invoke-virtual {v0, v2}, Landroid/view/View;->setVisibility(I)V
 
-    :cond_3
+    :cond_5
     invoke-static {v9}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
 
     move-result v2
 
-    if-ne v11, v2, :cond_5
+    if-ne v11, v2, :cond_7
 
     const/4 v2, 0x1
 
@@ -445,7 +453,7 @@
 
     const/4 v6, 0x1
 
-    if-ne v2, v6, :cond_9
+    if-ne v2, v6, :cond_b
 
     invoke-static {}, Ljava/util/Locale;->getDefault()Ljava/util/Locale;
 
@@ -512,7 +520,7 @@
 
     move/from16 v0, v16
 
-    if-ge v0, v2, :cond_c
+    if-ge v0, v2, :cond_e
 
     move-object/from16 v2, v22
 
@@ -526,7 +534,7 @@
 
     instance-of v2, v8, Landroid/widget/ImageView;
 
-    if-eqz v2, :cond_8
+    if-eqz v2, :cond_a
 
     move-object v2, v8
 
@@ -538,7 +546,7 @@
 
     move-result v6
 
-    if-eqz v6, :cond_6
+    if-eqz v6, :cond_8
 
     const v6, 0x7f0203cc
 
@@ -549,7 +557,7 @@
 
     iget-object v2, v0, Lcom/android/systemui/qs/QSScreenGridDialog;->mContext:Landroid/content/Context;
 
-    const v6, 0x7f0f068d
+    const v6, 0x7f0f068e
 
     invoke-virtual {v2, v6}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -581,13 +589,13 @@
 
     invoke-virtual {v8, v2}, Landroid/view/View;->setContentDescription(Ljava/lang/CharSequence;)V
 
-    :cond_4
+    :cond_6
     :goto_4
     add-int/lit8 v16, v16, 0x1
 
     goto :goto_2
 
-    :cond_5
+    :cond_7
     const/4 v2, 0x0
 
     move-object/from16 v0, v22
@@ -606,28 +614,28 @@
 
     goto/16 :goto_1
 
-    :cond_6
+    :cond_8
     const-string/jumbo v6, "4"
 
     invoke-virtual {v9, v6}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v6
 
-    if-eqz v6, :cond_7
+    if-eqz v6, :cond_9
 
     const v6, 0x7f0203ce
 
     goto :goto_3
 
-    :cond_7
+    :cond_9
     const v6, 0x7f0203d0
 
     goto :goto_3
 
-    :cond_8
+    :cond_a
     instance-of v2, v8, Landroid/widget/TextView;
 
-    if-eqz v2, :cond_4
+    if-eqz v2, :cond_6
 
     check-cast v8, Landroid/widget/TextView;
 
@@ -639,7 +647,7 @@
 
     goto :goto_4
 
-    :cond_9
+    :cond_b
     invoke-static {}, Ljava/util/Locale;->getDefault()Ljava/util/Locale;
 
     move-result-object v2
@@ -705,7 +713,7 @@
 
     move/from16 v0, v16
 
-    if-ge v0, v2, :cond_c
+    if-ge v0, v2, :cond_e
 
     move-object/from16 v2, v22
 
@@ -719,13 +727,13 @@
 
     instance-of v2, v8, Landroid/widget/ImageView;
 
-    if-eqz v2, :cond_b
+    if-eqz v2, :cond_d
 
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/android/systemui/qs/QSScreenGridDialog;->mContext:Landroid/content/Context;
 
-    const v6, 0x7f0f068d
+    const v6, 0x7f0f068e
 
     invoke-virtual {v2, v6}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -757,16 +765,16 @@
 
     invoke-virtual {v8, v2}, Landroid/view/View;->setContentDescription(Ljava/lang/CharSequence;)V
 
-    :cond_a
+    :cond_c
     :goto_6
     add-int/lit8 v16, v16, 0x1
 
     goto :goto_5
 
-    :cond_b
+    :cond_d
     instance-of v2, v8, Landroid/widget/TextView;
 
-    if-eqz v2, :cond_a
+    if-eqz v2, :cond_c
 
     check-cast v8, Landroid/widget/TextView;
 
@@ -778,7 +786,7 @@
 
     goto :goto_6
 
-    :cond_c
+    :cond_e
     const/16 v16, 0x0
 
     :goto_7
@@ -792,7 +800,7 @@
 
     move/from16 v0, v16
 
-    if-ge v0, v2, :cond_e
+    if-ge v0, v2, :cond_3
 
     move-object/from16 v2, v22
 
@@ -806,7 +814,7 @@
 
     instance-of v2, v8, Landroid/widget/ImageView;
 
-    if-eqz v2, :cond_d
+    if-eqz v2, :cond_f
 
     new-instance v2, Lcom/android/systemui/qs/QSScreenGridDialog$1;
 
@@ -818,24 +826,19 @@
 
     invoke-virtual {v8, v2}, Landroid/view/View;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    :cond_d
+    :cond_f
     add-int/lit8 v16, v16, 0x1
 
     goto :goto_7
 
-    :cond_e
-    add-int/lit8 v13, v13, 0x1
-
-    goto/16 :goto_0
-
-    :cond_f
+    :cond_10
     new-instance v2, Lcom/android/systemui/qs/QSScreenGridDialog$2;
 
     move-object/from16 v0, p0
 
     invoke-direct {v2, v0}, Lcom/android/systemui/qs/QSScreenGridDialog$2;-><init>(Lcom/android/systemui/qs/QSScreenGridDialog;)V
 
-    const v6, 0x7f0f068a
+    const v6, 0x7f0f068b
 
     move-object/from16 v0, p0
 

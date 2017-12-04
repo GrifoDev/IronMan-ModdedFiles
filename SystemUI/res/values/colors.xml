@@ -449,6 +449,7 @@
     <color name="theme_ripple_effect_transparent_button_outer_black_color">#40444444</color>
     <color name="theme_textclock_color">#fffafafa</color>
     <color name="theme_clock_date_color">#fffafafa</color>
+    <color name="theme_clock_shadow_color">#66000000</color>
     <color name="theme_weather_text_color">#fffafafa</color>
     <color name="theme_pin_klondike_text_black_color">#cc444444</color>
     <color name="backup_default_theme_textclock_color">#fffafafa</color>

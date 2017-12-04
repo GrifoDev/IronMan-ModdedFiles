@@ -21,8 +21,6 @@
 
 .field private static final REFRESH_BAR_VIEWS:I = 0xd9c
 
-.field private static final REFRESH_DUAL_COLOR_SEEKBAR:I = 0x4c9
-
 .field private static final SEND_SA_LOGGING:I = 0x856
 
 
@@ -170,27 +168,25 @@
     :sswitch_0
     iget-object v0, p0, Lcom/android/systemui/qs/tiles/SoundModeTileVolumeBar$BarHandler;->this$0:Lcom/android/systemui/qs/tiles/SoundModeTileVolumeBar;
 
+    invoke-static {v0}, Lcom/android/systemui/qs/tiles/SoundModeTileVolumeBar;->-wrap1(Lcom/android/systemui/qs/tiles/SoundModeTileVolumeBar;)V
+
+    iget-object v0, p0, Lcom/android/systemui/qs/tiles/SoundModeTileVolumeBar$BarHandler;->this$0:Lcom/android/systemui/qs/tiles/SoundModeTileVolumeBar;
+
     invoke-static {v0}, Lcom/android/systemui/qs/tiles/SoundModeTileVolumeBar;->-wrap2(Lcom/android/systemui/qs/tiles/SoundModeTileVolumeBar;)V
 
     goto :goto_0
 
     :sswitch_1
-    iget-object v0, p0, Lcom/android/systemui/qs/tiles/SoundModeTileVolumeBar$BarHandler;->this$0:Lcom/android/systemui/qs/tiles/SoundModeTileVolumeBar;
-
-    invoke-static {v0}, Lcom/android/systemui/qs/tiles/SoundModeTileVolumeBar;->-wrap1(Lcom/android/systemui/qs/tiles/SoundModeTileVolumeBar;)V
-
-    goto :goto_0
-
-    :sswitch_2
     invoke-direct {p0}, Lcom/android/systemui/qs/tiles/SoundModeTileVolumeBar$BarHandler;->sendSAVolumeBarLogging()V
 
     goto :goto_0
 
+    nop
+
     :sswitch_data_0
     .sparse-switch
-        0x4c9 -> :sswitch_0
-        0x856 -> :sswitch_2
-        0xd9c -> :sswitch_1
+        0x856 -> :sswitch_1
+        0xd9c -> :sswitch_0
     .end sparse-switch
 .end method
 

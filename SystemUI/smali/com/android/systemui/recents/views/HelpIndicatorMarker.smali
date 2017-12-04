@@ -149,7 +149,7 @@
 
     invoke-super {p0}, Landroid/widget/FrameLayout;->onFinishInflate()V
 
-    const v0, 0x7f13043e
+    const v0, 0x7f130440
 
     invoke-virtual {p0, v0}, Lcom/android/systemui/recents/views/HelpIndicatorMarker;->findViewById(I)Landroid/view/View;
 
@@ -159,7 +159,7 @@
 
     iput-object v0, p0, Lcom/android/systemui/recents/views/HelpIndicatorMarker;->mActiveMarker:Landroid/widget/ImageView;
 
-    const v0, 0x7f13043f
+    const v0, 0x7f130441
 
     invoke-virtual {p0, v0}, Lcom/android/systemui/recents/views/HelpIndicatorMarker;->findViewById(I)Landroid/view/View;
 

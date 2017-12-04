@@ -47,6 +47,8 @@
 
 .field private mCurrentAnimator:Landroid/animation/ValueAnimator;
 
+.field private mDefaultHandleMoveThreshold:I
+
 .field private mDimming:Z
 
 .field private mDismissEndPosition:I
@@ -160,6 +162,8 @@
 .field mSnapModeRunning:Z
 
 .field private mSnapWindowDismissToast:Landroid/widget/Toast;
+
+.field private mSnapWindowHandleMoveThreshold:I
 
 .field private final mStableInsets:Landroid/graphics/Rect;
 
@@ -4391,7 +4395,7 @@
 
     move-result-object v2
 
-    const v3, 0x7f0d000e
+    const v3, 0x7f0d0010
 
     invoke-virtual {v2, v3}, Landroid/content/res/Resources;->getDimension(I)F
 
@@ -4401,7 +4405,7 @@
 
     move-result-object v2
 
-    const v3, 0x7f0d000f
+    const v3, 0x7f0d0011
 
     invoke-virtual {v2, v3}, Landroid/content/res/Resources;->getDimension(I)F
 
@@ -6234,7 +6238,7 @@
 
     move-result-object v2
 
-    const v3, 0x7f0d0374
+    const v3, 0x7f0d0376
 
     invoke-virtual {v2, v3}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -6340,7 +6344,7 @@
 
     move-result-object v2
 
-    const v3, 0x7f0d003d
+    const v3, 0x7f0d003f
 
     invoke-virtual {v2, v3}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -6405,6 +6409,30 @@
     const/4 v4, 0x1
 
     invoke-virtual {v2, v4, v3}, Landroid/util/SparseArray;->put(ILjava/lang/Object;)V
+
+    invoke-virtual {p0}, Lcom/android/systemui/stackdivider/DividerView;->getResources()Landroid/content/res/Resources;
+
+    move-result-object v2
+
+    const v3, 0x7f0d000d
+
+    invoke-virtual {v2, v3}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
+
+    move-result v2
+
+    iput v2, p0, Lcom/android/systemui/stackdivider/DividerView;->mDefaultHandleMoveThreshold:I
+
+    invoke-virtual {p0}, Lcom/android/systemui/stackdivider/DividerView;->getResources()Landroid/content/res/Resources;
+
+    move-result-object v2
+
+    const v3, 0x7f0d000e
+
+    invoke-virtual {v2, v3}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
+
+    move-result v2
+
+    iput v2, p0, Lcom/android/systemui/stackdivider/DividerView;->mSnapWindowHandleMoveThreshold:I
 
     const v2, 0x7f1301b4
 
@@ -6811,17 +6839,19 @@
 .end method
 
 .method public onTouch(Landroid/view/View;Landroid/view/MotionEvent;)Z
-    .locals 18
+    .locals 22
 
     move-object/from16 v0, p0
 
-    iget-boolean v14, v0, Lcom/android/systemui/stackdivider/DividerView;->mAdjustedForIme:Z
+    iget-boolean v0, v0, Lcom/android/systemui/stackdivider/DividerView;->mAdjustedForIme:Z
 
-    if-eqz v14, :cond_0
+    move/from16 v17, v0
 
-    const/4 v14, 0x1
+    if-eqz v17, :cond_0
 
-    return v14
+    const/16 v17, 0x1
+
+    return v17
 
     :cond_0
     move-object/from16 v0, p0
@@ -6832,1146 +6862,1521 @@
 
     move-object/from16 v0, p0
 
-    iget-object v14, v0, Lcom/android/systemui/stackdivider/DividerView;->mGestureDetector:Landroid/view/GestureDetector;
+    iget-object v0, v0, Lcom/android/systemui/stackdivider/DividerView;->mGestureDetector:Landroid/view/GestureDetector;
 
-    move-object/from16 v0, p2
+    move-object/from16 v17, v0
 
-    invoke-virtual {v14, v0}, Landroid/view/GestureDetector;->onTouchEvent(Landroid/view/MotionEvent;)Z
+    move-object/from16 v0, v17
+
+    move-object/from16 v1, p2
+
+    invoke-virtual {v0, v1}, Landroid/view/GestureDetector;->onTouchEvent(Landroid/view/MotionEvent;)Z
 
     invoke-virtual/range {p2 .. p2}, Landroid/view/MotionEvent;->getAction()I
 
-    move-result v14
+    move-result v17
 
-    and-int/lit16 v2, v14, 0xff
+    move/from16 v0, v17
 
-    packed-switch v2, :pswitch_data_0
+    and-int/lit16 v4, v0, 0xff
+
+    packed-switch v4, :pswitch_data_0
 
     :cond_1
     :goto_0
-    const/4 v14, 0x1
+    const/16 v17, 0x1
 
-    return v14
+    return v17
 
     :pswitch_0
     invoke-static {}, Landroid/view/VelocityTracker;->obtain()Landroid/view/VelocityTracker;
 
-    move-result-object v14
+    move-result-object v17
+
+    move-object/from16 v0, v17
+
+    move-object/from16 v1, p0
+
+    iput-object v0, v1, Lcom/android/systemui/stackdivider/DividerView;->mVelocityTracker:Landroid/view/VelocityTracker;
 
     move-object/from16 v0, p0
 
-    iput-object v14, v0, Lcom/android/systemui/stackdivider/DividerView;->mVelocityTracker:Landroid/view/VelocityTracker;
+    iget-object v0, v0, Lcom/android/systemui/stackdivider/DividerView;->mVelocityTracker:Landroid/view/VelocityTracker;
 
-    move-object/from16 v0, p0
+    move-object/from16 v17, v0
 
-    iget-object v14, v0, Lcom/android/systemui/stackdivider/DividerView;->mVelocityTracker:Landroid/view/VelocityTracker;
+    move-object/from16 v0, v17
 
-    move-object/from16 v0, p2
+    move-object/from16 v1, p2
 
-    invoke-virtual {v14, v0}, Landroid/view/VelocityTracker;->addMovement(Landroid/view/MotionEvent;)V
+    invoke-virtual {v0, v1}, Landroid/view/VelocityTracker;->addMovement(Landroid/view/MotionEvent;)V
 
     invoke-virtual/range {p2 .. p2}, Landroid/view/MotionEvent;->getX()F
 
-    move-result v14
+    move-result v17
 
-    float-to-int v14, v14
+    move/from16 v0, v17
 
-    move-object/from16 v0, p0
+    float-to-int v0, v0
 
-    iput v14, v0, Lcom/android/systemui/stackdivider/DividerView;->mStartX:I
+    move/from16 v17, v0
+
+    move/from16 v0, v17
+
+    move-object/from16 v1, p0
+
+    iput v0, v1, Lcom/android/systemui/stackdivider/DividerView;->mStartX:I
 
     invoke-virtual/range {p2 .. p2}, Landroid/view/MotionEvent;->getY()F
 
-    move-result v14
+    move-result v17
 
-    float-to-int v14, v14
+    move/from16 v0, v17
+
+    float-to-int v0, v0
+
+    move/from16 v17, v0
+
+    move/from16 v0, v17
+
+    move-object/from16 v1, p0
+
+    iput v0, v1, Lcom/android/systemui/stackdivider/DividerView;->mStartY:I
+
+    const/16 v17, 0x1
+
+    const/16 v18, 0x1
 
     move-object/from16 v0, p0
 
-    iput v14, v0, Lcom/android/systemui/stackdivider/DividerView;->mStartY:I
+    move/from16 v1, v17
 
-    const/4 v14, 0x1
+    move/from16 v2, v18
 
-    const/4 v15, 0x1
+    invoke-virtual {v0, v1, v2}, Lcom/android/systemui/stackdivider/DividerView;->startDragging(ZZ)Z
 
-    move-object/from16 v0, p0
+    move-result v10
 
-    invoke-virtual {v0, v14, v15}, Lcom/android/systemui/stackdivider/DividerView;->startDragging(ZZ)Z
-
-    move-result v8
-
-    if-nez v8, :cond_2
+    if-nez v10, :cond_2
 
     invoke-direct/range {p0 .. p0}, Lcom/android/systemui/stackdivider/DividerView;->stopDragging()V
 
     :cond_2
     invoke-virtual/range {p0 .. p0}, Lcom/android/systemui/stackdivider/DividerView;->getCurrentPosition()I
 
-    move-result v14
+    move-result v17
+
+    move/from16 v0, v17
+
+    move-object/from16 v1, p0
+
+    iput v0, v1, Lcom/android/systemui/stackdivider/DividerView;->mStartPosition:I
+
+    const/16 v17, 0x0
+
+    move/from16 v0, v17
+
+    move-object/from16 v1, p0
+
+    iput-boolean v0, v1, Lcom/android/systemui/stackdivider/DividerView;->mMaximizeGuideView:Z
 
     move-object/from16 v0, p0
 
-    iput v14, v0, Lcom/android/systemui/stackdivider/DividerView;->mStartPosition:I
+    iget-object v0, v0, Lcom/android/systemui/stackdivider/DividerView;->mSnapAlgorithm:Lcom/android/internal/policy/DividerSnapAlgorithm;
 
-    const/4 v14, 0x0
+    move-object/from16 v17, v0
 
-    move-object/from16 v0, p0
+    invoke-virtual/range {v17 .. v17}, Lcom/android/internal/policy/DividerSnapAlgorithm;->getFirstSplitTarget()Lcom/android/internal/policy/DividerSnapAlgorithm$SnapTarget;
 
-    iput-boolean v14, v0, Lcom/android/systemui/stackdivider/DividerView;->mMaximizeGuideView:Z
+    move-result-object v17
 
-    move-object/from16 v0, p0
+    move-object/from16 v0, v17
 
-    iget-object v14, v0, Lcom/android/systemui/stackdivider/DividerView;->mSnapAlgorithm:Lcom/android/internal/policy/DividerSnapAlgorithm;
+    iget v0, v0, Lcom/android/internal/policy/DividerSnapAlgorithm$SnapTarget;->position:I
 
-    invoke-virtual {v14}, Lcom/android/internal/policy/DividerSnapAlgorithm;->getFirstSplitTarget()Lcom/android/internal/policy/DividerSnapAlgorithm$SnapTarget;
+    move/from16 v17, v0
 
-    move-result-object v14
+    move/from16 v0, v17
 
-    iget v14, v14, Lcom/android/internal/policy/DividerSnapAlgorithm$SnapTarget;->position:I
+    move-object/from16 v1, p0
 
-    move-object/from16 v0, p0
-
-    iput v14, v0, Lcom/android/systemui/stackdivider/DividerView;->mFirstSplitTargetPosition:I
+    iput v0, v1, Lcom/android/systemui/stackdivider/DividerView;->mFirstSplitTargetPosition:I
 
     move-object/from16 v0, p0
 
-    iget-object v14, v0, Lcom/android/systemui/stackdivider/DividerView;->mSnapAlgorithm:Lcom/android/internal/policy/DividerSnapAlgorithm;
+    iget-object v0, v0, Lcom/android/systemui/stackdivider/DividerView;->mSnapAlgorithm:Lcom/android/internal/policy/DividerSnapAlgorithm;
 
-    invoke-virtual {v14}, Lcom/android/internal/policy/DividerSnapAlgorithm;->getLastSplitTarget()Lcom/android/internal/policy/DividerSnapAlgorithm$SnapTarget;
+    move-object/from16 v17, v0
 
-    move-result-object v14
+    invoke-virtual/range {v17 .. v17}, Lcom/android/internal/policy/DividerSnapAlgorithm;->getLastSplitTarget()Lcom/android/internal/policy/DividerSnapAlgorithm$SnapTarget;
 
-    iget v14, v14, Lcom/android/internal/policy/DividerSnapAlgorithm$SnapTarget;->position:I
+    move-result-object v17
+
+    move-object/from16 v0, v17
+
+    iget v0, v0, Lcom/android/internal/policy/DividerSnapAlgorithm$SnapTarget;->position:I
+
+    move/from16 v17, v0
+
+    move/from16 v0, v17
+
+    move-object/from16 v1, p0
+
+    iput v0, v1, Lcom/android/systemui/stackdivider/DividerView;->mLastSplitTargetPosition:I
 
     move-object/from16 v0, p0
 
-    iput v14, v0, Lcom/android/systemui/stackdivider/DividerView;->mLastSplitTargetPosition:I
+    iget v0, v0, Lcom/android/systemui/stackdivider/DividerView;->mFirstSplitTargetPosition:I
 
-    move-object/from16 v0, p0
+    move/from16 v17, v0
 
-    iget v14, v0, Lcom/android/systemui/stackdivider/DividerView;->mFirstSplitTargetPosition:I
+    div-int/lit8 v17, v17, 0x2
 
-    div-int/lit8 v14, v14, 0x2
+    move/from16 v0, v17
 
-    move-object/from16 v0, p0
+    move-object/from16 v1, p0
 
-    iput v14, v0, Lcom/android/systemui/stackdivider/DividerView;->mDismissStartPosition:I
+    iput v0, v1, Lcom/android/systemui/stackdivider/DividerView;->mDismissStartPosition:I
 
     invoke-virtual/range {p0 .. p0}, Lcom/android/systemui/stackdivider/DividerView;->isHorizontalDivision()Z
 
-    move-result v14
+    move-result v17
 
-    if-eqz v14, :cond_3
-
-    move-object/from16 v0, p0
-
-    iget v14, v0, Lcom/android/systemui/stackdivider/DividerView;->mDisplayHeight:I
+    if-eqz v17, :cond_3
 
     move-object/from16 v0, p0
 
-    iget v15, v0, Lcom/android/systemui/stackdivider/DividerView;->mLastSplitTargetPosition:I
+    iget v0, v0, Lcom/android/systemui/stackdivider/DividerView;->mDisplayHeight:I
 
-    sub-int/2addr v14, v15
-
-    div-int/lit8 v14, v14, 0x2
+    move/from16 v17, v0
 
     move-object/from16 v0, p0
 
-    iget v15, v0, Lcom/android/systemui/stackdivider/DividerView;->mLastSplitTargetPosition:I
+    iget v0, v0, Lcom/android/systemui/stackdivider/DividerView;->mLastSplitTargetPosition:I
 
-    add-int/2addr v14, v15
+    move/from16 v18, v0
+
+    sub-int v17, v17, v18
+
+    div-int/lit8 v17, v17, 0x2
 
     move-object/from16 v0, p0
 
-    iput v14, v0, Lcom/android/systemui/stackdivider/DividerView;->mDismissEndPosition:I
+    iget v0, v0, Lcom/android/systemui/stackdivider/DividerView;->mLastSplitTargetPosition:I
+
+    move/from16 v18, v0
+
+    add-int v17, v17, v18
+
+    move/from16 v0, v17
+
+    move-object/from16 v1, p0
+
+    iput v0, v1, Lcom/android/systemui/stackdivider/DividerView;->mDismissEndPosition:I
 
     :goto_1
-    const/4 v14, 0x0
+    const/16 v17, 0x0
 
-    move-object/from16 v0, p0
+    move/from16 v0, v17
 
-    iput-boolean v14, v0, Lcom/android/systemui/stackdivider/DividerView;->mMoving:Z
+    move-object/from16 v1, p0
 
-    const/4 v14, 0x0
+    iput-boolean v0, v1, Lcom/android/systemui/stackdivider/DividerView;->mMoving:Z
 
-    move-object/from16 v0, p0
+    const/16 v17, 0x0
 
-    iput-boolean v14, v0, Lcom/android/systemui/stackdivider/DividerView;->mSure:Z
+    move/from16 v0, v17
 
-    return v8
+    move-object/from16 v1, p0
+
+    iput-boolean v0, v1, Lcom/android/systemui/stackdivider/DividerView;->mSure:Z
+
+    return v10
 
     :cond_3
     move-object/from16 v0, p0
 
-    iget v14, v0, Lcom/android/systemui/stackdivider/DividerView;->mDisplayWidth:I
+    iget v0, v0, Lcom/android/systemui/stackdivider/DividerView;->mDisplayWidth:I
+
+    move/from16 v17, v0
 
     move-object/from16 v0, p0
 
-    iget v15, v0, Lcom/android/systemui/stackdivider/DividerView;->mLastSplitTargetPosition:I
+    iget v0, v0, Lcom/android/systemui/stackdivider/DividerView;->mLastSplitTargetPosition:I
 
-    sub-int/2addr v14, v15
+    move/from16 v18, v0
 
-    div-int/lit8 v14, v14, 0x2
+    sub-int v17, v17, v18
 
-    move-object/from16 v0, p0
-
-    iget v15, v0, Lcom/android/systemui/stackdivider/DividerView;->mLastSplitTargetPosition:I
-
-    add-int/2addr v14, v15
+    div-int/lit8 v17, v17, 0x2
 
     move-object/from16 v0, p0
 
-    iput v14, v0, Lcom/android/systemui/stackdivider/DividerView;->mDismissEndPosition:I
+    iget v0, v0, Lcom/android/systemui/stackdivider/DividerView;->mLastSplitTargetPosition:I
+
+    move/from16 v18, v0
+
+    add-int v17, v17, v18
+
+    move/from16 v0, v17
+
+    move-object/from16 v1, p0
+
+    iput v0, v1, Lcom/android/systemui/stackdivider/DividerView;->mDismissEndPosition:I
 
     goto :goto_1
 
     :pswitch_1
     move-object/from16 v0, p0
 
-    iget-object v14, v0, Lcom/android/systemui/stackdivider/DividerView;->mVelocityTracker:Landroid/view/VelocityTracker;
+    iget-object v0, v0, Lcom/android/systemui/stackdivider/DividerView;->mVelocityTracker:Landroid/view/VelocityTracker;
 
-    move-object/from16 v0, p2
+    move-object/from16 v17, v0
 
-    invoke-virtual {v14, v0}, Landroid/view/VelocityTracker;->addMovement(Landroid/view/MotionEvent;)V
+    move-object/from16 v0, v17
+
+    move-object/from16 v1, p2
+
+    invoke-virtual {v0, v1}, Landroid/view/VelocityTracker;->addMovement(Landroid/view/MotionEvent;)V
 
     invoke-virtual/range {p2 .. p2}, Landroid/view/MotionEvent;->getX()F
 
-    move-result v14
+    move-result v17
 
-    float-to-int v12, v14
+    move/from16 v0, v17
+
+    float-to-int v15, v0
 
     invoke-virtual/range {p2 .. p2}, Landroid/view/MotionEvent;->getY()F
 
-    move-result v14
+    move-result v17
 
-    float-to-int v13, v14
+    move/from16 v0, v17
+
+    float-to-int v0, v0
+
+    move/from16 v16, v0
 
     invoke-virtual/range {p0 .. p0}, Lcom/android/systemui/stackdivider/DividerView;->isHorizontalDivision()Z
 
-    move-result v14
+    move-result v17
 
-    if-eqz v14, :cond_7
-
-    move-object/from16 v0, p0
-
-    iget v14, v0, Lcom/android/systemui/stackdivider/DividerView;->mStartY:I
-
-    sub-int v14, v13, v14
-
-    invoke-static {v14}, Ljava/lang/Math;->abs(I)I
-
-    move-result v14
+    if-eqz v17, :cond_8
 
     move-object/from16 v0, p0
 
-    iget v15, v0, Lcom/android/systemui/stackdivider/DividerView;->mTouchSlop:I
+    iget v0, v0, Lcom/android/systemui/stackdivider/DividerView;->mStartY:I
 
-    if-le v14, v15, :cond_7
+    move/from16 v17, v0
 
-    const/4 v4, 0x1
+    sub-int v17, v16, v17
+
+    invoke-static/range {v17 .. v17}, Ljava/lang/Math;->abs(I)I
+
+    move-result v17
+
+    move-object/from16 v0, p0
+
+    iget v0, v0, Lcom/android/systemui/stackdivider/DividerView;->mTouchSlop:I
+
+    move/from16 v18, v0
+
+    move/from16 v0, v17
+
+    move/from16 v1, v18
+
+    if-le v0, v1, :cond_8
+
+    const/4 v6, 0x1
 
     :goto_2
     move-object/from16 v0, p0
 
-    iget-boolean v14, v0, Lcom/android/systemui/stackdivider/DividerView;->mMoving:Z
+    iget-boolean v0, v0, Lcom/android/systemui/stackdivider/DividerView;->mMoving:Z
 
-    if-nez v14, :cond_4
+    move/from16 v17, v0
 
-    if-eqz v4, :cond_4
+    if-nez v17, :cond_4
 
-    move-object/from16 v0, p0
-
-    iput v12, v0, Lcom/android/systemui/stackdivider/DividerView;->mStartX:I
+    if-eqz v6, :cond_4
 
     move-object/from16 v0, p0
 
-    iput v13, v0, Lcom/android/systemui/stackdivider/DividerView;->mStartY:I
+    iput v15, v0, Lcom/android/systemui/stackdivider/DividerView;->mStartX:I
 
-    const/4 v14, 0x1
+    move/from16 v0, v16
 
-    move-object/from16 v0, p0
+    move-object/from16 v1, p0
 
-    iput-boolean v14, v0, Lcom/android/systemui/stackdivider/DividerView;->mMoving:Z
+    iput v0, v1, Lcom/android/systemui/stackdivider/DividerView;->mStartY:I
+
+    const/16 v17, 0x1
+
+    move/from16 v0, v17
+
+    move-object/from16 v1, p0
+
+    iput-boolean v0, v1, Lcom/android/systemui/stackdivider/DividerView;->mMoving:Z
 
     :cond_4
     move-object/from16 v0, p0
 
-    iget-boolean v14, v0, Lcom/android/systemui/stackdivider/DividerView;->mSure:Z
+    iget-boolean v0, v0, Lcom/android/systemui/stackdivider/DividerView;->mSure:Z
 
-    if-nez v14, :cond_5
+    move/from16 v17, v0
 
-    invoke-virtual/range {p0 .. p0}, Lcom/android/systemui/stackdivider/DividerView;->isHorizontalDivision()Z
-
-    move-result v14
-
-    if-eqz v14, :cond_a
+    if-nez v17, :cond_6
 
     move-object/from16 v0, p0
 
-    iget v14, v0, Lcom/android/systemui/stackdivider/DividerView;->mStartY:I
+    iget v14, v0, Lcom/android/systemui/stackdivider/DividerView;->mDefaultHandleMoveThreshold:I
 
-    sub-int/2addr v14, v13
+    sget-boolean v17, Lcom/samsung/android/framework/feature/MultiWindowFeatures;->SNAP_WINDOW_SUPPORT:Z
 
-    invoke-static {v14}, Ljava/lang/Math;->abs(I)I
+    if-eqz v17, :cond_5
 
-    move-result v14
-
-    const/16 v15, 0x32
-
-    if-le v14, v15, :cond_9
-
-    :goto_3
-    const/4 v14, 0x1
-
-    :goto_4
     move-object/from16 v0, p0
 
-    iput-boolean v14, v0, Lcom/android/systemui/stackdivider/DividerView;->mSure:Z
+    iget-boolean v0, v0, Lcom/android/systemui/stackdivider/DividerView;->mSnapModeRunning:Z
+
+    move/from16 v17, v0
+
+    if-eqz v17, :cond_a
+
+    move-object/from16 v0, p0
+
+    iget v14, v0, Lcom/android/systemui/stackdivider/DividerView;->mSnapWindowHandleMoveThreshold:I
 
     :cond_5
-    move-object/from16 v0, p0
+    :goto_3
+    invoke-virtual/range {p0 .. p0}, Lcom/android/systemui/stackdivider/DividerView;->isHorizontalDivision()Z
 
-    iget-boolean v14, v0, Lcom/android/systemui/stackdivider/DividerView;->mMoving:Z
+    move-result v17
 
-    if-eqz v14, :cond_1
-
-    move-object/from16 v0, p0
-
-    iget v14, v0, Lcom/android/systemui/stackdivider/DividerView;->mDockSide:I
-
-    const/4 v15, -0x1
-
-    if-eq v14, v15, :cond_1
-
-    sget-boolean v14, Lcom/samsung/android/framework/feature/MultiWindowFeatures;->SNAP_WINDOW_SUPPORT:Z
-
-    if-eqz v14, :cond_6
+    if-eqz v17, :cond_c
 
     move-object/from16 v0, p0
 
-    iget-boolean v14, v0, Lcom/android/systemui/stackdivider/DividerView;->mSnapGuideVisible:Z
+    iget v0, v0, Lcom/android/systemui/stackdivider/DividerView;->mStartY:I
 
-    if-eqz v14, :cond_6
+    move/from16 v17, v0
 
-    const/4 v14, 0x0
+    sub-int v17, v17, v16
 
-    const/4 v15, 0x0
+    invoke-static/range {v17 .. v17}, Ljava/lang/Math;->abs(I)I
 
-    const/16 v16, 0x0
+    move-result v17
 
-    move-object/from16 v0, p0
+    move/from16 v0, v17
 
-    move-object/from16 v1, v16
+    if-le v0, v14, :cond_b
 
-    invoke-virtual {v0, v14, v15, v1}, Lcom/android/systemui/stackdivider/DividerView;->showSnapGuide(ZILandroid/graphics/Rect;)V
+    :goto_4
+    const/16 v17, 0x1
+
+    :goto_5
+    move/from16 v0, v17
+
+    move-object/from16 v1, p0
+
+    iput-boolean v0, v1, Lcom/android/systemui/stackdivider/DividerView;->mSure:Z
 
     :cond_6
     move-object/from16 v0, p0
 
-    iget-boolean v14, v0, Lcom/android/systemui/stackdivider/DividerView;->mDockedStackMinimized:Z
+    iget-boolean v0, v0, Lcom/android/systemui/stackdivider/DividerView;->mMoving:Z
 
-    if-eqz v14, :cond_b
+    move/from16 v17, v0
 
-    move-object/from16 v0, p0
-
-    iget-object v14, v0, Lcom/android/systemui/stackdivider/DividerView;->mSnapAlgorithm:Lcom/android/internal/policy/DividerSnapAlgorithm;
+    if-eqz v17, :cond_1
 
     move-object/from16 v0, p0
 
-    iget v15, v0, Lcom/android/systemui/stackdivider/DividerView;->mStartPosition:I
+    iget v0, v0, Lcom/android/systemui/stackdivider/DividerView;->mDockSide:I
 
-    const/16 v16, 0x0
+    move/from16 v17, v0
+
+    const/16 v18, -0x1
+
+    move/from16 v0, v17
+
+    move/from16 v1, v18
+
+    if-eq v0, v1, :cond_1
+
+    sget-boolean v17, Lcom/samsung/android/framework/feature/MultiWindowFeatures;->SNAP_WINDOW_SUPPORT:Z
+
+    if-eqz v17, :cond_7
+
+    move-object/from16 v0, p0
+
+    iget-boolean v0, v0, Lcom/android/systemui/stackdivider/DividerView;->mSnapGuideVisible:Z
+
+    move/from16 v17, v0
+
+    if-eqz v17, :cond_7
 
     const/16 v17, 0x0
 
-    invoke-virtual/range {v14 .. v17}, Lcom/android/internal/policy/DividerSnapAlgorithm;->calculateSnapTarget(IFZ)Lcom/android/internal/policy/DividerSnapAlgorithm$SnapTarget;
+    const/16 v18, 0x0
 
-    move-result-object v9
-
-    move-object/from16 v0, p0
-
-    invoke-direct {v0, v12, v13}, Lcom/android/systemui/stackdivider/DividerView;->calculatePosition(II)I
-
-    move-result v14
+    const/16 v19, 0x0
 
     move-object/from16 v0, p0
 
-    iget v15, v0, Lcom/android/systemui/stackdivider/DividerView;->mStartPosition:I
+    move/from16 v1, v17
+
+    move/from16 v2, v18
+
+    move-object/from16 v3, v19
+
+    invoke-virtual {v0, v1, v2, v3}, Lcom/android/systemui/stackdivider/DividerView;->showSnapGuide(ZILandroid/graphics/Rect;)V
+
+    :cond_7
+    move-object/from16 v0, p0
+
+    iget-boolean v0, v0, Lcom/android/systemui/stackdivider/DividerView;->mDockedStackMinimized:Z
+
+    move/from16 v17, v0
+
+    if-eqz v17, :cond_d
 
     move-object/from16 v0, p0
 
-    invoke-virtual {v0, v14, v15, v9}, Lcom/android/systemui/stackdivider/DividerView;->resizeStackDelayed(IILcom/android/internal/policy/DividerSnapAlgorithm$SnapTarget;)V
+    iget-object v0, v0, Lcom/android/systemui/stackdivider/DividerView;->mSnapAlgorithm:Lcom/android/internal/policy/DividerSnapAlgorithm;
+
+    move-object/from16 v17, v0
+
+    move-object/from16 v0, p0
+
+    iget v0, v0, Lcom/android/systemui/stackdivider/DividerView;->mStartPosition:I
+
+    move/from16 v18, v0
+
+    const/16 v19, 0x0
+
+    const/16 v20, 0x0
+
+    invoke-virtual/range {v17 .. v20}, Lcom/android/internal/policy/DividerSnapAlgorithm;->calculateSnapTarget(IFZ)Lcom/android/internal/policy/DividerSnapAlgorithm$SnapTarget;
+
+    move-result-object v11
+
+    move-object/from16 v0, p0
+
+    move/from16 v1, v16
+
+    invoke-direct {v0, v15, v1}, Lcom/android/systemui/stackdivider/DividerView;->calculatePosition(II)I
+
+    move-result v17
+
+    move-object/from16 v0, p0
+
+    iget v0, v0, Lcom/android/systemui/stackdivider/DividerView;->mStartPosition:I
+
+    move/from16 v18, v0
+
+    move-object/from16 v0, p0
+
+    move/from16 v1, v17
+
+    move/from16 v2, v18
+
+    invoke-virtual {v0, v1, v2, v11}, Lcom/android/systemui/stackdivider/DividerView;->resizeStackDelayed(IILcom/android/internal/policy/DividerSnapAlgorithm$SnapTarget;)V
 
     goto/16 :goto_0
 
-    :cond_7
+    :cond_8
     invoke-virtual/range {p0 .. p0}, Lcom/android/systemui/stackdivider/DividerView;->isHorizontalDivision()Z
 
-    move-result v14
+    move-result v17
 
-    if-nez v14, :cond_8
-
-    move-object/from16 v0, p0
-
-    iget v14, v0, Lcom/android/systemui/stackdivider/DividerView;->mStartX:I
-
-    sub-int v14, v12, v14
-
-    invoke-static {v14}, Ljava/lang/Math;->abs(I)I
-
-    move-result v14
+    if-nez v17, :cond_9
 
     move-object/from16 v0, p0
 
-    iget v15, v0, Lcom/android/systemui/stackdivider/DividerView;->mTouchSlop:I
+    iget v0, v0, Lcom/android/systemui/stackdivider/DividerView;->mStartX:I
 
-    if-le v14, v15, :cond_8
+    move/from16 v17, v0
 
-    const/4 v4, 0x1
+    sub-int v17, v15, v17
 
-    goto/16 :goto_2
+    invoke-static/range {v17 .. v17}, Ljava/lang/Math;->abs(I)I
 
-    :cond_8
-    const/4 v4, 0x0
+    move-result v17
+
+    move-object/from16 v0, p0
+
+    iget v0, v0, Lcom/android/systemui/stackdivider/DividerView;->mTouchSlop:I
+
+    move/from16 v18, v0
+
+    move/from16 v0, v17
+
+    move/from16 v1, v18
+
+    if-le v0, v1, :cond_9
+
+    const/4 v6, 0x1
 
     goto/16 :goto_2
 
     :cond_9
-    const/4 v14, 0x0
+    const/4 v6, 0x0
 
-    goto :goto_4
+    goto/16 :goto_2
 
     :cond_a
     move-object/from16 v0, p0
 
-    iget v14, v0, Lcom/android/systemui/stackdivider/DividerView;->mStartX:I
+    iget v14, v0, Lcom/android/systemui/stackdivider/DividerView;->mDefaultHandleMoveThreshold:I
 
-    sub-int/2addr v14, v12
-
-    invoke-static {v14}, Ljava/lang/Math;->abs(I)I
-
-    move-result v14
-
-    const/16 v15, 0x32
-
-    if-le v14, v15, :cond_9
-
-    goto :goto_3
+    goto/16 :goto_3
 
     :cond_b
-    invoke-virtual/range {p0 .. p0}, Lcom/android/systemui/stackdivider/DividerView;->isHorizontalDivision()Z
+    const/16 v17, 0x0
 
-    move-result v14
-
-    if-eqz v14, :cond_e
-
-    move v6, v13
-
-    :goto_5
-    move-object/from16 v0, p0
-
-    iget-boolean v14, v0, Lcom/android/systemui/stackdivider/DividerView;->mMaximizeGuideView:Z
-
-    if-nez v14, :cond_15
-
-    move-object/from16 v0, p0
-
-    iget v14, v0, Lcom/android/systemui/stackdivider/DividerView;->mDismissStartPosition:I
-
-    if-lt v6, v14, :cond_c
-
-    move-object/from16 v0, p0
-
-    iget v14, v0, Lcom/android/systemui/stackdivider/DividerView;->mDismissEndPosition:I
-
-    if-le v6, v14, :cond_10
+    goto/16 :goto_5
 
     :cond_c
-    invoke-virtual/range {p0 .. p0}, Lcom/android/systemui/stackdivider/DividerView;->isHorizontalDivision()Z
-
-    move-result v14
-
-    if-eqz v14, :cond_f
-
-    const/4 v14, 0x1
-
     move-object/from16 v0, p0
 
-    invoke-direct {v0, v14, v12, v6}, Lcom/android/systemui/stackdivider/DividerView;->scrollGuideView(ZII)V
+    iget v0, v0, Lcom/android/systemui/stackdivider/DividerView;->mStartX:I
+
+    move/from16 v17, v0
+
+    sub-int v17, v17, v15
+
+    invoke-static/range {v17 .. v17}, Ljava/lang/Math;->abs(I)I
+
+    move-result v17
+
+    move/from16 v0, v17
+
+    if-le v0, v14, :cond_b
+
+    goto/16 :goto_4
 
     :cond_d
+    invoke-virtual/range {p0 .. p0}, Lcom/android/systemui/stackdivider/DividerView;->isHorizontalDivision()Z
+
+    move-result v17
+
+    if-eqz v17, :cond_10
+
+    move/from16 v8, v16
+
     :goto_6
     move-object/from16 v0, p0
 
-    invoke-direct {v0, v6}, Lcom/android/systemui/stackdivider/DividerView;->drawGuideViewDimLayer(I)V
+    iget-boolean v0, v0, Lcom/android/systemui/stackdivider/DividerView;->mMaximizeGuideView:Z
+
+    move/from16 v17, v0
+
+    if-nez v17, :cond_17
+
+    move-object/from16 v0, p0
+
+    iget v0, v0, Lcom/android/systemui/stackdivider/DividerView;->mDismissStartPosition:I
+
+    move/from16 v17, v0
+
+    move/from16 v0, v17
+
+    if-lt v8, v0, :cond_e
+
+    move-object/from16 v0, p0
+
+    iget v0, v0, Lcom/android/systemui/stackdivider/DividerView;->mDismissEndPosition:I
+
+    move/from16 v17, v0
+
+    move/from16 v0, v17
+
+    if-le v8, v0, :cond_12
+
+    :cond_e
+    invoke-virtual/range {p0 .. p0}, Lcom/android/systemui/stackdivider/DividerView;->isHorizontalDivision()Z
+
+    move-result v17
+
+    if-eqz v17, :cond_11
+
+    const/16 v17, 0x1
+
+    move-object/from16 v0, p0
+
+    move/from16 v1, v17
+
+    invoke-direct {v0, v1, v15, v8}, Lcom/android/systemui/stackdivider/DividerView;->scrollGuideView(ZII)V
+
+    :cond_f
+    :goto_7
+    move-object/from16 v0, p0
+
+    invoke-direct {v0, v8}, Lcom/android/systemui/stackdivider/DividerView;->drawGuideViewDimLayer(I)V
 
     goto/16 :goto_0
 
-    :cond_e
-    move v6, v12
-
-    goto :goto_5
-
-    :cond_f
-    const/4 v14, 0x1
-
-    move-object/from16 v0, p0
-
-    invoke-direct {v0, v14, v6, v13}, Lcom/android/systemui/stackdivider/DividerView;->scrollGuideView(ZII)V
+    :cond_10
+    move v8, v15
 
     goto :goto_6
-
-    :cond_10
-    move v11, v6
-
-    move-object/from16 v0, p0
-
-    iget v14, v0, Lcom/android/systemui/stackdivider/DividerView;->mFirstSplitTargetPosition:I
-
-    if-ge v6, v14, :cond_12
-
-    move-object/from16 v0, p0
-
-    iget v11, v0, Lcom/android/systemui/stackdivider/DividerView;->mFirstSplitTargetPosition:I
 
     :cond_11
-    :goto_7
-    invoke-virtual/range {p0 .. p0}, Lcom/android/systemui/stackdivider/DividerView;->isHorizontalDivision()Z
-
-    move-result v14
-
-    if-eqz v14, :cond_14
+    const/16 v17, 0x1
 
     move-object/from16 v0, p0
 
-    invoke-direct {v0, v12, v11}, Lcom/android/systemui/stackdivider/DividerView;->drawGuideView(II)V
+    move/from16 v1, v17
 
-    goto :goto_6
+    move/from16 v2, v16
 
-    :cond_12
-    move-object/from16 v0, p0
-
-    iget v14, v0, Lcom/android/systemui/stackdivider/DividerView;->mLastSplitTargetPosition:I
-
-    if-le v6, v14, :cond_13
-
-    move-object/from16 v0, p0
-
-    iget v11, v0, Lcom/android/systemui/stackdivider/DividerView;->mLastSplitTargetPosition:I
+    invoke-direct {v0, v1, v8, v2}, Lcom/android/systemui/stackdivider/DividerView;->scrollGuideView(ZII)V
 
     goto :goto_7
 
+    :cond_12
+    move v13, v8
+
+    move-object/from16 v0, p0
+
+    iget v0, v0, Lcom/android/systemui/stackdivider/DividerView;->mFirstSplitTargetPosition:I
+
+    move/from16 v17, v0
+
+    move/from16 v0, v17
+
+    if-ge v8, v0, :cond_14
+
+    move-object/from16 v0, p0
+
+    iget v13, v0, Lcom/android/systemui/stackdivider/DividerView;->mFirstSplitTargetPosition:I
+
     :cond_13
-    move-object/from16 v0, p0
+    :goto_8
+    invoke-virtual/range {p0 .. p0}, Lcom/android/systemui/stackdivider/DividerView;->isHorizontalDivision()Z
 
-    iget-object v14, v0, Lcom/android/systemui/stackdivider/DividerView;->mScrollGuideViewAnimator:Landroid/animation/ValueAnimator;
+    move-result v17
 
-    if-eqz v14, :cond_11
-
-    move-object/from16 v0, p0
-
-    iget-object v14, v0, Lcom/android/systemui/stackdivider/DividerView;->mScrollGuideViewAnimator:Landroid/animation/ValueAnimator;
-
-    invoke-virtual {v14}, Landroid/animation/ValueAnimator;->isRunning()Z
-
-    move-result v14
-
-    if-eqz v14, :cond_11
+    if-eqz v17, :cond_16
 
     move-object/from16 v0, p0
 
-    iget-object v14, v0, Lcom/android/systemui/stackdivider/DividerView;->mScrollGuideViewAnimator:Landroid/animation/ValueAnimator;
-
-    invoke-virtual {v14}, Landroid/animation/ValueAnimator;->cancel()V
+    invoke-direct {v0, v15, v13}, Lcom/android/systemui/stackdivider/DividerView;->drawGuideView(II)V
 
     goto :goto_7
 
     :cond_14
     move-object/from16 v0, p0
 
-    invoke-direct {v0, v11, v13}, Lcom/android/systemui/stackdivider/DividerView;->drawGuideView(II)V
+    iget v0, v0, Lcom/android/systemui/stackdivider/DividerView;->mLastSplitTargetPosition:I
 
-    goto :goto_6
+    move/from16 v17, v0
+
+    move/from16 v0, v17
+
+    if-le v8, v0, :cond_15
+
+    move-object/from16 v0, p0
+
+    iget v13, v0, Lcom/android/systemui/stackdivider/DividerView;->mLastSplitTargetPosition:I
+
+    goto :goto_8
 
     :cond_15
     move-object/from16 v0, p0
 
-    iget v14, v0, Lcom/android/systemui/stackdivider/DividerView;->mDismissStartPosition:I
+    iget-object v0, v0, Lcom/android/systemui/stackdivider/DividerView;->mScrollGuideViewAnimator:Landroid/animation/ValueAnimator;
 
-    if-le v6, v14, :cond_d
+    move-object/from16 v17, v0
 
-    move-object/from16 v0, p0
-
-    iget v14, v0, Lcom/android/systemui/stackdivider/DividerView;->mDismissEndPosition:I
-
-    if-ge v6, v14, :cond_d
+    if-eqz v17, :cond_13
 
     move-object/from16 v0, p0
 
-    iget v14, v0, Lcom/android/systemui/stackdivider/DividerView;->mFirstSplitTargetPosition:I
+    iget-object v0, v0, Lcom/android/systemui/stackdivider/DividerView;->mScrollGuideViewAnimator:Landroid/animation/ValueAnimator;
 
-    if-lt v6, v14, :cond_16
+    move-object/from16 v17, v0
 
-    move-object/from16 v0, p0
+    invoke-virtual/range {v17 .. v17}, Landroid/animation/ValueAnimator;->isRunning()Z
 
-    iget v14, v0, Lcom/android/systemui/stackdivider/DividerView;->mLastSplitTargetPosition:I
+    move-result v17
 
-    if-le v6, v14, :cond_19
-
-    :cond_16
-    invoke-virtual/range {p0 .. p0}, Lcom/android/systemui/stackdivider/DividerView;->isHorizontalDivision()Z
-
-    move-result v14
-
-    if-eqz v14, :cond_17
-
-    const/4 v14, 0x0
+    if-eqz v17, :cond_13
 
     move-object/from16 v0, p0
 
-    invoke-direct {v0, v14, v6, v13}, Lcom/android/systemui/stackdivider/DividerView;->scrollGuideView(ZII)V
+    iget-object v0, v0, Lcom/android/systemui/stackdivider/DividerView;->mScrollGuideViewAnimator:Landroid/animation/ValueAnimator;
 
-    :goto_8
-    move-object/from16 v0, p0
+    move-object/from16 v17, v0
 
-    iget v14, v0, Lcom/android/systemui/stackdivider/DividerView;->mFirstSplitTargetPosition:I
-
-    if-ge v6, v14, :cond_18
-
-    move-object/from16 v0, p0
-
-    iget v6, v0, Lcom/android/systemui/stackdivider/DividerView;->mFirstSplitTargetPosition:I
-
-    :goto_9
-    const/4 v14, 0x0
-
-    move-object/from16 v0, p0
-
-    iput-boolean v14, v0, Lcom/android/systemui/stackdivider/DividerView;->mMaximizeGuideView:Z
-
-    goto/16 :goto_6
-
-    :cond_17
-    const/4 v14, 0x0
-
-    move-object/from16 v0, p0
-
-    invoke-direct {v0, v14, v12, v6}, Lcom/android/systemui/stackdivider/DividerView;->scrollGuideView(ZII)V
+    invoke-virtual/range {v17 .. v17}, Landroid/animation/ValueAnimator;->cancel()V
 
     goto :goto_8
 
-    :cond_18
+    :cond_16
     move-object/from16 v0, p0
 
-    iget v6, v0, Lcom/android/systemui/stackdivider/DividerView;->mLastSplitTargetPosition:I
+    move/from16 v1, v16
 
-    goto :goto_9
+    invoke-direct {v0, v13, v1}, Lcom/android/systemui/stackdivider/DividerView;->drawGuideView(II)V
 
-    :cond_19
+    goto :goto_7
+
+    :cond_17
+    move-object/from16 v0, p0
+
+    iget v0, v0, Lcom/android/systemui/stackdivider/DividerView;->mDismissStartPosition:I
+
+    move/from16 v17, v0
+
+    move/from16 v0, v17
+
+    if-le v8, v0, :cond_f
+
+    move-object/from16 v0, p0
+
+    iget v0, v0, Lcom/android/systemui/stackdivider/DividerView;->mDismissEndPosition:I
+
+    move/from16 v17, v0
+
+    move/from16 v0, v17
+
+    if-ge v8, v0, :cond_f
+
+    move-object/from16 v0, p0
+
+    iget v0, v0, Lcom/android/systemui/stackdivider/DividerView;->mFirstSplitTargetPosition:I
+
+    move/from16 v17, v0
+
+    move/from16 v0, v17
+
+    if-lt v8, v0, :cond_18
+
+    move-object/from16 v0, p0
+
+    iget v0, v0, Lcom/android/systemui/stackdivider/DividerView;->mLastSplitTargetPosition:I
+
+    move/from16 v17, v0
+
+    move/from16 v0, v17
+
+    if-le v8, v0, :cond_1b
+
+    :cond_18
     invoke-virtual/range {p0 .. p0}, Lcom/android/systemui/stackdivider/DividerView;->isHorizontalDivision()Z
 
-    move-result v14
+    move-result v17
 
-    if-eqz v14, :cond_1a
+    if-eqz v17, :cond_19
+
+    const/16 v17, 0x0
 
     move-object/from16 v0, p0
 
-    invoke-direct {v0, v12, v6}, Lcom/android/systemui/stackdivider/DividerView;->drawGuideView(II)V
+    move/from16 v1, v17
+
+    move/from16 v2, v16
+
+    invoke-direct {v0, v1, v8, v2}, Lcom/android/systemui/stackdivider/DividerView;->scrollGuideView(ZII)V
+
+    :goto_9
+    move-object/from16 v0, p0
+
+    iget v0, v0, Lcom/android/systemui/stackdivider/DividerView;->mFirstSplitTargetPosition:I
+
+    move/from16 v17, v0
+
+    move/from16 v0, v17
+
+    if-ge v8, v0, :cond_1a
+
+    move-object/from16 v0, p0
+
+    iget v8, v0, Lcom/android/systemui/stackdivider/DividerView;->mFirstSplitTargetPosition:I
+
+    :goto_a
+    const/16 v17, 0x0
+
+    move/from16 v0, v17
+
+    move-object/from16 v1, p0
+
+    iput-boolean v0, v1, Lcom/android/systemui/stackdivider/DividerView;->mMaximizeGuideView:Z
+
+    goto/16 :goto_7
+
+    :cond_19
+    const/16 v17, 0x0
+
+    move-object/from16 v0, p0
+
+    move/from16 v1, v17
+
+    invoke-direct {v0, v1, v15, v8}, Lcom/android/systemui/stackdivider/DividerView;->scrollGuideView(ZII)V
 
     goto :goto_9
 
     :cond_1a
     move-object/from16 v0, p0
 
-    invoke-direct {v0, v6, v13}, Lcom/android/systemui/stackdivider/DividerView;->drawGuideView(II)V
+    iget v8, v0, Lcom/android/systemui/stackdivider/DividerView;->mLastSplitTargetPosition:I
 
-    goto :goto_9
+    goto :goto_a
+
+    :cond_1b
+    invoke-virtual/range {p0 .. p0}, Lcom/android/systemui/stackdivider/DividerView;->isHorizontalDivision()Z
+
+    move-result v17
+
+    if-eqz v17, :cond_1c
+
+    move-object/from16 v0, p0
+
+    invoke-direct {v0, v15, v8}, Lcom/android/systemui/stackdivider/DividerView;->drawGuideView(II)V
+
+    goto :goto_a
+
+    :cond_1c
+    move-object/from16 v0, p0
+
+    move/from16 v1, v16
+
+    invoke-direct {v0, v8, v1}, Lcom/android/systemui/stackdivider/DividerView;->drawGuideView(II)V
+
+    goto :goto_a
 
     :pswitch_2
     move-object/from16 v0, p0
 
-    iget-object v14, v0, Lcom/android/systemui/stackdivider/DividerView;->mVelocityTracker:Landroid/view/VelocityTracker;
+    iget-object v0, v0, Lcom/android/systemui/stackdivider/DividerView;->mVelocityTracker:Landroid/view/VelocityTracker;
 
-    move-object/from16 v0, p2
+    move-object/from16 v17, v0
 
-    invoke-virtual {v14, v0}, Landroid/view/VelocityTracker;->addMovement(Landroid/view/MotionEvent;)V
+    move-object/from16 v0, v17
+
+    move-object/from16 v1, p2
+
+    invoke-virtual {v0, v1}, Landroid/view/VelocityTracker;->addMovement(Landroid/view/MotionEvent;)V
 
     invoke-virtual/range {p2 .. p2}, Landroid/view/MotionEvent;->getRawX()F
 
-    move-result v14
+    move-result v17
 
-    float-to-int v12, v14
+    move/from16 v0, v17
+
+    float-to-int v15, v0
 
     invoke-virtual/range {p2 .. p2}, Landroid/view/MotionEvent;->getRawY()F
 
-    move-result v14
+    move-result v17
 
-    float-to-int v13, v14
+    move/from16 v0, v17
 
-    move-object/from16 v0, p0
+    float-to-int v0, v0
 
-    iget-object v14, v0, Lcom/android/systemui/stackdivider/DividerView;->mVelocityTracker:Landroid/view/VelocityTracker;
-
-    const/16 v15, 0x3e8
-
-    invoke-virtual {v14, v15}, Landroid/view/VelocityTracker;->computeCurrentVelocity(I)V
+    move/from16 v16, v0
 
     move-object/from16 v0, p0
 
-    invoke-direct {v0, v12, v13}, Lcom/android/systemui/stackdivider/DividerView;->calculatePosition(II)I
+    iget-object v0, v0, Lcom/android/systemui/stackdivider/DividerView;->mVelocityTracker:Landroid/view/VelocityTracker;
 
-    move-result v6
+    move-object/from16 v17, v0
 
-    sget-boolean v14, Lcom/samsung/android/framework/feature/MultiWindowFeatures;->SNAP_WINDOW_SUPPORT:Z
+    const/16 v18, 0x3e8
 
-    if-eqz v14, :cond_1c
-
-    move-object/from16 v0, p0
-
-    iget-boolean v14, v0, Lcom/android/systemui/stackdivider/DividerView;->mSnapModeRunning:Z
-
-    if-eqz v14, :cond_1c
-
-    move-object/from16 v0, p0
-
-    iget-boolean v14, v0, Lcom/android/systemui/stackdivider/DividerView;->mSure:Z
-
-    if-nez v14, :cond_1b
-
-    move-object/from16 v0, p0
-
-    iget-boolean v14, v0, Lcom/android/systemui/stackdivider/DividerView;->mMaximizeGuideView:Z
-
-    if-eqz v14, :cond_1c
-
-    :cond_1b
-    move-object/from16 v0, p0
-
-    iget-boolean v14, v0, Lcom/android/systemui/stackdivider/DividerView;->mMaximizeGuideView:Z
-
-    if-nez v14, :cond_20
-
-    const/4 v7, 0x1
-
-    :goto_a
-    move-object/from16 v0, p0
-
-    iget-boolean v14, v0, Lcom/android/systemui/stackdivider/DividerView;->mMaximizeGuideView:Z
-
-    if-eqz v14, :cond_22
-
-    move-object/from16 v0, p0
-
-    iget-object v14, v0, Lcom/android/systemui/stackdivider/DividerView;->mScrollGuideViewAnimator:Landroid/animation/ValueAnimator;
-
-    if-eqz v14, :cond_22
-
-    move-object/from16 v0, p0
-
-    iget-object v14, v0, Lcom/android/systemui/stackdivider/DividerView;->mScrollGuideViewAnimator:Landroid/animation/ValueAnimator;
-
-    invoke-virtual {v14}, Landroid/animation/ValueAnimator;->isRunning()Z
-
-    move-result v14
-
-    if-eqz v14, :cond_22
-
-    new-instance v14, Landroid/os/Handler;
-
-    invoke-direct {v14}, Landroid/os/Handler;-><init>()V
-
-    new-instance v15, Lcom/android/systemui/stackdivider/DividerView$5;
-
-    move-object/from16 v0, p0
-
-    invoke-direct {v15, v0, v7}, Lcom/android/systemui/stackdivider/DividerView$5;-><init>(Lcom/android/systemui/stackdivider/DividerView;I)V
-
-    move-object/from16 v0, p0
-
-    iget-object v0, v0, Lcom/android/systemui/stackdivider/DividerView;->mScrollGuideViewAnimator:Landroid/animation/ValueAnimator;
-
-    move-object/from16 v16, v0
-
-    invoke-virtual/range {v16 .. v16}, Landroid/animation/ValueAnimator;->getDuration()J
-
-    move-result-wide v16
-
-    invoke-virtual/range {v14 .. v17}, Landroid/os/Handler;->postDelayed(Ljava/lang/Runnable;J)Z
-
-    :cond_1c
-    :goto_b
-    const/4 v14, -0x1
-
-    move-object/from16 v0, p0
-
-    iput v14, v0, Lcom/android/systemui/stackdivider/DividerView;->mPosBeforeAdjustedForIme:I
-
-    move-object/from16 v0, p0
-
-    iget-boolean v14, v0, Lcom/android/systemui/stackdivider/DividerView;->mSure:Z
-
-    if-eqz v14, :cond_24
-
-    invoke-virtual/range {p0 .. p0}, Lcom/android/systemui/stackdivider/DividerView;->isHorizontalDivision()Z
-
-    move-result v14
-
-    if-eqz v14, :cond_23
-
-    move v6, v13
-
-    :goto_c
-    move-object/from16 v0, p0
-
-    iget-boolean v14, v0, Lcom/android/systemui/stackdivider/DividerView;->mMaximizeGuideView:Z
-
-    if-nez v14, :cond_2b
-
-    const/4 v14, 0x0
-
-    const/4 v15, 0x0
-
-    const/16 v16, 0x1
+    invoke-virtual/range {v17 .. v18}, Landroid/view/VelocityTracker;->computeCurrentVelocity(I)V
 
     move-object/from16 v0, p0
 
     move/from16 v1, v16
 
-    invoke-virtual {v0, v6, v14, v15, v1}, Lcom/android/systemui/stackdivider/DividerView;->stopDragging(IFZZ)V
+    invoke-direct {v0, v15, v1}, Lcom/android/systemui/stackdivider/DividerView;->calculatePosition(II)I
+
+    move-result v8
+
+    sget-boolean v17, Lcom/samsung/android/framework/feature/MultiWindowFeatures;->SNAP_WINDOW_SUPPORT:Z
+
+    if-eqz v17, :cond_1e
 
     move-object/from16 v0, p0
 
-    iget v14, v0, Lcom/android/systemui/stackdivider/DividerView;->mFirstSplitTargetPosition:I
+    iget-boolean v0, v0, Lcom/android/systemui/stackdivider/DividerView;->mSnapModeRunning:Z
 
-    if-lt v6, v14, :cond_1d
+    move/from16 v17, v0
+
+    if-eqz v17, :cond_1e
 
     move-object/from16 v0, p0
 
-    iget v14, v0, Lcom/android/systemui/stackdivider/DividerView;->mLastSplitTargetPosition:I
+    iget-boolean v0, v0, Lcom/android/systemui/stackdivider/DividerView;->mSure:Z
 
-    if-le v6, v14, :cond_26
+    move/from16 v17, v0
+
+    if-nez v17, :cond_1d
+
+    move-object/from16 v0, p0
+
+    iget-boolean v0, v0, Lcom/android/systemui/stackdivider/DividerView;->mMaximizeGuideView:Z
+
+    move/from16 v17, v0
+
+    if-eqz v17, :cond_1e
 
     :cond_1d
     move-object/from16 v0, p0
 
-    iget v14, v0, Lcom/android/systemui/stackdivider/DividerView;->mStartPosition:I
+    iget-boolean v0, v0, Lcom/android/systemui/stackdivider/DividerView;->mMaximizeGuideView:Z
 
+    move/from16 v17, v0
+
+    if-nez v17, :cond_22
+
+    const/4 v9, 0x1
+
+    :goto_b
     move-object/from16 v0, p0
 
-    iget v15, v0, Lcom/android/systemui/stackdivider/DividerView;->mFirstSplitTargetPosition:I
+    iget-boolean v0, v0, Lcom/android/systemui/stackdivider/DividerView;->mMaximizeGuideView:Z
 
-    if-eq v14, v15, :cond_1e
+    move/from16 v17, v0
 
-    move-object/from16 v0, p0
-
-    iget v14, v0, Lcom/android/systemui/stackdivider/DividerView;->mStartPosition:I
-
-    move-object/from16 v0, p0
-
-    iget v15, v0, Lcom/android/systemui/stackdivider/DividerView;->mLastSplitTargetPosition:I
-
-    if-ne v14, v15, :cond_25
-
-    :cond_1e
-    const/4 v5, 0x1
-
-    :goto_d
-    move-object/from16 v0, p0
-
-    iget v14, v0, Lcom/android/systemui/stackdivider/DividerView;->mFirstSplitTargetPosition:I
-
-    if-ge v6, v14, :cond_27
-
-    move-object/from16 v0, p0
-
-    iget v6, v0, Lcom/android/systemui/stackdivider/DividerView;->mFirstSplitTargetPosition:I
-
-    :cond_1f
-    :goto_e
-    invoke-virtual/range {p0 .. p0}, Lcom/android/systemui/stackdivider/DividerView;->isHorizontalDivision()Z
-
-    move-result v14
-
-    if-eqz v14, :cond_29
-
-    new-instance v15, Landroid/graphics/Point;
-
-    invoke-direct {v15, v12, v6}, Landroid/graphics/Point;-><init>(II)V
-
-    if-eqz v5, :cond_28
-
-    const/4 v14, 0x0
-
-    :goto_f
-    move-object/from16 v0, p0
-
-    invoke-virtual {v0, v15, v14}, Lcom/android/systemui/stackdivider/DividerView;->hideGuideView(Landroid/graphics/Point;Z)V
-
-    :goto_10
-    const/4 v14, 0x0
-
-    move-object/from16 v0, p0
-
-    iput-boolean v14, v0, Lcom/android/systemui/stackdivider/DividerView;->mMoving:Z
-
-    const/4 v14, 0x0
-
-    move-object/from16 v0, p0
-
-    iput-boolean v14, v0, Lcom/android/systemui/stackdivider/DividerView;->mSure:Z
-
-    sget-boolean v14, Lcom/samsung/android/framework/feature/MultiWindowFeatures;->SNAP_WINDOW_SUPPORT:Z
-
-    if-eqz v14, :cond_1
-
-    const/4 v14, 0x0
-
-    move-object/from16 v0, p0
-
-    iput-boolean v14, v0, Lcom/android/systemui/stackdivider/DividerView;->adjStartPosition:Z
-
-    goto/16 :goto_0
-
-    :cond_20
-    move-object/from16 v0, p0
-
-    iget v14, v0, Lcom/android/systemui/stackdivider/DividerView;->mDismissEndPosition:I
-
-    if-le v6, v14, :cond_21
-
-    const/4 v7, 0x2
-
-    goto/16 :goto_a
-
-    :cond_21
-    const/4 v7, 0x0
-
-    goto/16 :goto_a
-
-    :cond_22
-    move-object/from16 v0, p0
-
-    iget-object v14, v0, Lcom/android/systemui/stackdivider/DividerView;->mSnapWindowDismissToast:Landroid/widget/Toast;
-
-    invoke-virtual {v14}, Landroid/widget/Toast;->show()V
-
-    invoke-static {}, Lcom/android/systemui/recents/events/EventBus;->getDefault()Lcom/android/systemui/recents/events/EventBus;
-
-    move-result-object v14
-
-    new-instance v15, Lcom/android/systemui/stackdivider/events/DividerStartSnapModeEvent;
-
-    const/16 v16, 0x0
-
-    const/16 v17, 0x1
-
-    move/from16 v0, v16
-
-    move/from16 v1, v17
-
-    invoke-direct {v15, v0, v1, v7}, Lcom/android/systemui/stackdivider/events/DividerStartSnapModeEvent;-><init>(ZZI)V
-
-    invoke-virtual {v14, v15}, Lcom/android/systemui/recents/events/EventBus;->send(Lcom/android/systemui/recents/events/EventBus$Event;)V
-
-    goto/16 :goto_b
-
-    :cond_23
-    move v6, v12
-
-    goto/16 :goto_c
-
-    :cond_24
-    invoke-virtual/range {p0 .. p0}, Lcom/android/systemui/stackdivider/DividerView;->getCurrentPosition()I
-
-    move-result v6
-
-    goto/16 :goto_c
-
-    :cond_25
-    const/4 v5, 0x0
-
-    goto :goto_d
-
-    :cond_26
-    const/4 v5, 0x0
-
-    goto :goto_d
-
-    :cond_27
-    move-object/from16 v0, p0
-
-    iget v14, v0, Lcom/android/systemui/stackdivider/DividerView;->mLastSplitTargetPosition:I
-
-    if-le v6, v14, :cond_1f
-
-    move-object/from16 v0, p0
-
-    iget v6, v0, Lcom/android/systemui/stackdivider/DividerView;->mLastSplitTargetPosition:I
-
-    goto :goto_e
-
-    :cond_28
-    const/4 v14, 0x1
-
-    goto :goto_f
-
-    :cond_29
-    new-instance v15, Landroid/graphics/Point;
-
-    invoke-direct {v15, v6, v13}, Landroid/graphics/Point;-><init>(II)V
-
-    if-eqz v5, :cond_2a
-
-    const/4 v14, 0x0
-
-    :goto_11
-    move-object/from16 v0, p0
-
-    invoke-virtual {v0, v15, v14}, Lcom/android/systemui/stackdivider/DividerView;->hideGuideView(Landroid/graphics/Point;Z)V
-
-    goto :goto_10
-
-    :cond_2a
-    const/4 v14, 0x1
-
-    goto :goto_11
-
-    :cond_2b
-    move-object/from16 v0, p0
-
-    iget-object v14, v0, Lcom/android/systemui/stackdivider/DividerView;->mSnapAlgorithm:Lcom/android/internal/policy/DividerSnapAlgorithm;
-
-    const/4 v15, 0x0
-
-    const/16 v16, 0x0
-
-    move/from16 v0, v16
-
-    invoke-virtual {v14, v6, v15, v0}, Lcom/android/internal/policy/DividerSnapAlgorithm;->calculateSnapTarget(IFZ)Lcom/android/internal/policy/DividerSnapAlgorithm$SnapTarget;
-
-    move-result-object v9
-
-    move-object/from16 v0, p0
-
-    iget v14, v0, Lcom/android/systemui/stackdivider/DividerView;->mDismissStartPosition:I
-
-    if-ge v6, v14, :cond_2d
-
-    move-object/from16 v0, p0
-
-    iget-object v14, v0, Lcom/android/systemui/stackdivider/DividerView;->mSnapAlgorithm:Lcom/android/internal/policy/DividerSnapAlgorithm;
-
-    invoke-virtual {v14}, Lcom/android/internal/policy/DividerSnapAlgorithm;->getDismissStartTarget()Lcom/android/internal/policy/DividerSnapAlgorithm$SnapTarget;
-
-    move-result-object v9
-
-    :cond_2c
-    :goto_12
-    iget v10, v9, Lcom/android/internal/policy/DividerSnapAlgorithm$SnapTarget;->position:I
-
-    new-instance v3, Landroid/graphics/Point;
-
-    invoke-direct {v3}, Landroid/graphics/Point;-><init>()V
-
-    invoke-virtual/range {p0 .. p0}, Lcom/android/systemui/stackdivider/DividerView;->isHorizontalDivision()Z
-
-    move-result v14
-
-    if-eqz v14, :cond_2e
-
-    invoke-virtual {v3, v12, v10}, Landroid/graphics/Point;->set(II)V
-
-    :goto_13
-    move-object/from16 v0, p0
-
-    iget-object v14, v0, Lcom/android/systemui/stackdivider/DividerView;->mScrollGuideViewAnimator:Landroid/animation/ValueAnimator;
-
-    if-eqz v14, :cond_2f
-
-    move-object/from16 v0, p0
-
-    iget-object v14, v0, Lcom/android/systemui/stackdivider/DividerView;->mScrollGuideViewAnimator:Landroid/animation/ValueAnimator;
-
-    invoke-virtual {v14}, Landroid/animation/ValueAnimator;->isRunning()Z
-
-    move-result v14
-
-    if-eqz v14, :cond_2f
-
-    new-instance v14, Landroid/os/Handler;
-
-    invoke-direct {v14}, Landroid/os/Handler;-><init>()V
-
-    new-instance v15, Lcom/android/systemui/stackdivider/DividerView$6;
-
-    move-object/from16 v0, p0
-
-    invoke-direct {v15, v0, v10, v3}, Lcom/android/systemui/stackdivider/DividerView$6;-><init>(Lcom/android/systemui/stackdivider/DividerView;ILandroid/graphics/Point;)V
+    if-eqz v17, :cond_24
 
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/systemui/stackdivider/DividerView;->mScrollGuideViewAnimator:Landroid/animation/ValueAnimator;
 
-    move-object/from16 v16, v0
+    move-object/from16 v17, v0
 
-    invoke-virtual/range {v16 .. v16}, Landroid/animation/ValueAnimator;->getDuration()J
-
-    move-result-wide v16
-
-    invoke-virtual/range {v14 .. v17}, Landroid/os/Handler;->postDelayed(Ljava/lang/Runnable;J)Z
-
-    :goto_14
-    const/4 v14, 0x0
+    if-eqz v17, :cond_24
 
     move-object/from16 v0, p0
 
-    iput-boolean v14, v0, Lcom/android/systemui/stackdivider/DividerView;->mMaximizeGuideView:Z
+    iget-object v0, v0, Lcom/android/systemui/stackdivider/DividerView;->mScrollGuideViewAnimator:Landroid/animation/ValueAnimator;
 
-    goto/16 :goto_10
+    move-object/from16 v17, v0
+
+    invoke-virtual/range {v17 .. v17}, Landroid/animation/ValueAnimator;->isRunning()Z
+
+    move-result v17
+
+    if-eqz v17, :cond_24
+
+    new-instance v17, Landroid/os/Handler;
+
+    invoke-direct/range {v17 .. v17}, Landroid/os/Handler;-><init>()V
+
+    new-instance v18, Lcom/android/systemui/stackdivider/DividerView$5;
+
+    move-object/from16 v0, v18
+
+    move-object/from16 v1, p0
+
+    invoke-direct {v0, v1, v9}, Lcom/android/systemui/stackdivider/DividerView$5;-><init>(Lcom/android/systemui/stackdivider/DividerView;I)V
+
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcom/android/systemui/stackdivider/DividerView;->mScrollGuideViewAnimator:Landroid/animation/ValueAnimator;
+
+    move-object/from16 v19, v0
+
+    invoke-virtual/range {v19 .. v19}, Landroid/animation/ValueAnimator;->getDuration()J
+
+    move-result-wide v20
+
+    move-object/from16 v0, v17
+
+    move-object/from16 v1, v18
+
+    move-wide/from16 v2, v20
+
+    invoke-virtual {v0, v1, v2, v3}, Landroid/os/Handler;->postDelayed(Ljava/lang/Runnable;J)Z
+
+    :cond_1e
+    :goto_c
+    const/16 v17, -0x1
+
+    move/from16 v0, v17
+
+    move-object/from16 v1, p0
+
+    iput v0, v1, Lcom/android/systemui/stackdivider/DividerView;->mPosBeforeAdjustedForIme:I
+
+    move-object/from16 v0, p0
+
+    iget-boolean v0, v0, Lcom/android/systemui/stackdivider/DividerView;->mSure:Z
+
+    move/from16 v17, v0
+
+    if-eqz v17, :cond_26
+
+    invoke-virtual/range {p0 .. p0}, Lcom/android/systemui/stackdivider/DividerView;->isHorizontalDivision()Z
+
+    move-result v17
+
+    if-eqz v17, :cond_25
+
+    move/from16 v8, v16
+
+    :goto_d
+    move-object/from16 v0, p0
+
+    iget-boolean v0, v0, Lcom/android/systemui/stackdivider/DividerView;->mMaximizeGuideView:Z
+
+    move/from16 v17, v0
+
+    if-nez v17, :cond_2d
+
+    const/16 v17, 0x0
+
+    const/16 v18, 0x0
+
+    const/16 v19, 0x1
+
+    move-object/from16 v0, p0
+
+    move/from16 v1, v17
+
+    move/from16 v2, v18
+
+    move/from16 v3, v19
+
+    invoke-virtual {v0, v8, v1, v2, v3}, Lcom/android/systemui/stackdivider/DividerView;->stopDragging(IFZZ)V
+
+    move-object/from16 v0, p0
+
+    iget v0, v0, Lcom/android/systemui/stackdivider/DividerView;->mFirstSplitTargetPosition:I
+
+    move/from16 v17, v0
+
+    move/from16 v0, v17
+
+    if-lt v8, v0, :cond_1f
+
+    move-object/from16 v0, p0
+
+    iget v0, v0, Lcom/android/systemui/stackdivider/DividerView;->mLastSplitTargetPosition:I
+
+    move/from16 v17, v0
+
+    move/from16 v0, v17
+
+    if-le v8, v0, :cond_28
+
+    :cond_1f
+    move-object/from16 v0, p0
+
+    iget v0, v0, Lcom/android/systemui/stackdivider/DividerView;->mStartPosition:I
+
+    move/from16 v17, v0
+
+    move-object/from16 v0, p0
+
+    iget v0, v0, Lcom/android/systemui/stackdivider/DividerView;->mFirstSplitTargetPosition:I
+
+    move/from16 v18, v0
+
+    move/from16 v0, v17
+
+    move/from16 v1, v18
+
+    if-eq v0, v1, :cond_20
+
+    move-object/from16 v0, p0
+
+    iget v0, v0, Lcom/android/systemui/stackdivider/DividerView;->mStartPosition:I
+
+    move/from16 v17, v0
+
+    move-object/from16 v0, p0
+
+    iget v0, v0, Lcom/android/systemui/stackdivider/DividerView;->mLastSplitTargetPosition:I
+
+    move/from16 v18, v0
+
+    move/from16 v0, v17
+
+    move/from16 v1, v18
+
+    if-ne v0, v1, :cond_27
+
+    :cond_20
+    const/4 v7, 0x1
+
+    :goto_e
+    move-object/from16 v0, p0
+
+    iget v0, v0, Lcom/android/systemui/stackdivider/DividerView;->mFirstSplitTargetPosition:I
+
+    move/from16 v17, v0
+
+    move/from16 v0, v17
+
+    if-ge v8, v0, :cond_29
+
+    move-object/from16 v0, p0
+
+    iget v8, v0, Lcom/android/systemui/stackdivider/DividerView;->mFirstSplitTargetPosition:I
+
+    :cond_21
+    :goto_f
+    invoke-virtual/range {p0 .. p0}, Lcom/android/systemui/stackdivider/DividerView;->isHorizontalDivision()Z
+
+    move-result v17
+
+    if-eqz v17, :cond_2b
+
+    new-instance v18, Landroid/graphics/Point;
+
+    move-object/from16 v0, v18
+
+    invoke-direct {v0, v15, v8}, Landroid/graphics/Point;-><init>(II)V
+
+    if-eqz v7, :cond_2a
+
+    const/16 v17, 0x0
+
+    :goto_10
+    move-object/from16 v0, p0
+
+    move-object/from16 v1, v18
+
+    move/from16 v2, v17
+
+    invoke-virtual {v0, v1, v2}, Lcom/android/systemui/stackdivider/DividerView;->hideGuideView(Landroid/graphics/Point;Z)V
+
+    :goto_11
+    const/16 v17, 0x0
+
+    move/from16 v0, v17
+
+    move-object/from16 v1, p0
+
+    iput-boolean v0, v1, Lcom/android/systemui/stackdivider/DividerView;->mMoving:Z
+
+    const/16 v17, 0x0
+
+    move/from16 v0, v17
+
+    move-object/from16 v1, p0
+
+    iput-boolean v0, v1, Lcom/android/systemui/stackdivider/DividerView;->mSure:Z
+
+    sget-boolean v17, Lcom/samsung/android/framework/feature/MultiWindowFeatures;->SNAP_WINDOW_SUPPORT:Z
+
+    if-eqz v17, :cond_1
+
+    const/16 v17, 0x0
+
+    move/from16 v0, v17
+
+    move-object/from16 v1, p0
+
+    iput-boolean v0, v1, Lcom/android/systemui/stackdivider/DividerView;->adjStartPosition:Z
+
+    goto/16 :goto_0
+
+    :cond_22
+    move-object/from16 v0, p0
+
+    iget v0, v0, Lcom/android/systemui/stackdivider/DividerView;->mDismissEndPosition:I
+
+    move/from16 v17, v0
+
+    move/from16 v0, v17
+
+    if-le v8, v0, :cond_23
+
+    const/4 v9, 0x2
+
+    goto/16 :goto_b
+
+    :cond_23
+    const/4 v9, 0x0
+
+    goto/16 :goto_b
+
+    :cond_24
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcom/android/systemui/stackdivider/DividerView;->mSnapWindowDismissToast:Landroid/widget/Toast;
+
+    move-object/from16 v17, v0
+
+    invoke-virtual/range {v17 .. v17}, Landroid/widget/Toast;->show()V
+
+    invoke-static {}, Lcom/android/systemui/recents/events/EventBus;->getDefault()Lcom/android/systemui/recents/events/EventBus;
+
+    move-result-object v17
+
+    new-instance v18, Lcom/android/systemui/stackdivider/events/DividerStartSnapModeEvent;
+
+    const/16 v19, 0x0
+
+    const/16 v20, 0x1
+
+    move-object/from16 v0, v18
+
+    move/from16 v1, v19
+
+    move/from16 v2, v20
+
+    invoke-direct {v0, v1, v2, v9}, Lcom/android/systemui/stackdivider/events/DividerStartSnapModeEvent;-><init>(ZZI)V
+
+    invoke-virtual/range {v17 .. v18}, Lcom/android/systemui/recents/events/EventBus;->send(Lcom/android/systemui/recents/events/EventBus$Event;)V
+
+    goto/16 :goto_c
+
+    :cond_25
+    move v8, v15
+
+    goto/16 :goto_d
+
+    :cond_26
+    invoke-virtual/range {p0 .. p0}, Lcom/android/systemui/stackdivider/DividerView;->getCurrentPosition()I
+
+    move-result v8
+
+    goto/16 :goto_d
+
+    :cond_27
+    const/4 v7, 0x0
+
+    goto/16 :goto_e
+
+    :cond_28
+    const/4 v7, 0x0
+
+    goto/16 :goto_e
+
+    :cond_29
+    move-object/from16 v0, p0
+
+    iget v0, v0, Lcom/android/systemui/stackdivider/DividerView;->mLastSplitTargetPosition:I
+
+    move/from16 v17, v0
+
+    move/from16 v0, v17
+
+    if-le v8, v0, :cond_21
+
+    move-object/from16 v0, p0
+
+    iget v8, v0, Lcom/android/systemui/stackdivider/DividerView;->mLastSplitTargetPosition:I
+
+    goto/16 :goto_f
+
+    :cond_2a
+    const/16 v17, 0x1
+
+    goto :goto_10
+
+    :cond_2b
+    new-instance v18, Landroid/graphics/Point;
+
+    move-object/from16 v0, v18
+
+    move/from16 v1, v16
+
+    invoke-direct {v0, v8, v1}, Landroid/graphics/Point;-><init>(II)V
+
+    if-eqz v7, :cond_2c
+
+    const/16 v17, 0x0
+
+    :goto_12
+    move-object/from16 v0, p0
+
+    move-object/from16 v1, v18
+
+    move/from16 v2, v17
+
+    invoke-virtual {v0, v1, v2}, Lcom/android/systemui/stackdivider/DividerView;->hideGuideView(Landroid/graphics/Point;Z)V
+
+    goto/16 :goto_11
+
+    :cond_2c
+    const/16 v17, 0x1
+
+    goto :goto_12
 
     :cond_2d
     move-object/from16 v0, p0
 
-    iget v14, v0, Lcom/android/systemui/stackdivider/DividerView;->mDismissEndPosition:I
+    iget-object v0, v0, Lcom/android/systemui/stackdivider/DividerView;->mSnapAlgorithm:Lcom/android/internal/policy/DividerSnapAlgorithm;
 
-    if-le v6, v14, :cond_2c
+    move-object/from16 v17, v0
+
+    const/16 v18, 0x0
+
+    const/16 v19, 0x0
+
+    move-object/from16 v0, v17
+
+    move/from16 v1, v18
+
+    move/from16 v2, v19
+
+    invoke-virtual {v0, v8, v1, v2}, Lcom/android/internal/policy/DividerSnapAlgorithm;->calculateSnapTarget(IFZ)Lcom/android/internal/policy/DividerSnapAlgorithm$SnapTarget;
+
+    move-result-object v11
 
     move-object/from16 v0, p0
 
-    iget-object v14, v0, Lcom/android/systemui/stackdivider/DividerView;->mSnapAlgorithm:Lcom/android/internal/policy/DividerSnapAlgorithm;
+    iget v0, v0, Lcom/android/systemui/stackdivider/DividerView;->mDismissStartPosition:I
 
-    invoke-virtual {v14}, Lcom/android/internal/policy/DividerSnapAlgorithm;->getDismissEndTarget()Lcom/android/internal/policy/DividerSnapAlgorithm$SnapTarget;
+    move/from16 v17, v0
 
-    move-result-object v9
+    move/from16 v0, v17
 
-    goto :goto_12
+    if-ge v8, v0, :cond_2f
+
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcom/android/systemui/stackdivider/DividerView;->mSnapAlgorithm:Lcom/android/internal/policy/DividerSnapAlgorithm;
+
+    move-object/from16 v17, v0
+
+    invoke-virtual/range {v17 .. v17}, Lcom/android/internal/policy/DividerSnapAlgorithm;->getDismissStartTarget()Lcom/android/internal/policy/DividerSnapAlgorithm$SnapTarget;
+
+    move-result-object v11
 
     :cond_2e
-    invoke-virtual {v3, v10, v13}, Landroid/graphics/Point;->set(II)V
+    :goto_13
+    iget v12, v11, Lcom/android/internal/policy/DividerSnapAlgorithm$SnapTarget;->position:I
+
+    new-instance v5, Landroid/graphics/Point;
+
+    invoke-direct {v5}, Landroid/graphics/Point;-><init>()V
+
+    invoke-virtual/range {p0 .. p0}, Lcom/android/systemui/stackdivider/DividerView;->isHorizontalDivision()Z
+
+    move-result v17
+
+    if-eqz v17, :cond_30
+
+    invoke-virtual {v5, v15, v12}, Landroid/graphics/Point;->set(II)V
+
+    :goto_14
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcom/android/systemui/stackdivider/DividerView;->mScrollGuideViewAnimator:Landroid/animation/ValueAnimator;
+
+    move-object/from16 v17, v0
+
+    if-eqz v17, :cond_31
+
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcom/android/systemui/stackdivider/DividerView;->mScrollGuideViewAnimator:Landroid/animation/ValueAnimator;
+
+    move-object/from16 v17, v0
+
+    invoke-virtual/range {v17 .. v17}, Landroid/animation/ValueAnimator;->isRunning()Z
+
+    move-result v17
+
+    if-eqz v17, :cond_31
+
+    new-instance v17, Landroid/os/Handler;
+
+    invoke-direct/range {v17 .. v17}, Landroid/os/Handler;-><init>()V
+
+    new-instance v18, Lcom/android/systemui/stackdivider/DividerView$6;
+
+    move-object/from16 v0, v18
+
+    move-object/from16 v1, p0
+
+    invoke-direct {v0, v1, v12, v5}, Lcom/android/systemui/stackdivider/DividerView$6;-><init>(Lcom/android/systemui/stackdivider/DividerView;ILandroid/graphics/Point;)V
+
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcom/android/systemui/stackdivider/DividerView;->mScrollGuideViewAnimator:Landroid/animation/ValueAnimator;
+
+    move-object/from16 v19, v0
+
+    invoke-virtual/range {v19 .. v19}, Landroid/animation/ValueAnimator;->getDuration()J
+
+    move-result-wide v20
+
+    move-object/from16 v0, v17
+
+    move-object/from16 v1, v18
+
+    move-wide/from16 v2, v20
+
+    invoke-virtual {v0, v1, v2, v3}, Landroid/os/Handler;->postDelayed(Ljava/lang/Runnable;J)Z
+
+    :goto_15
+    const/16 v17, 0x0
+
+    move/from16 v0, v17
+
+    move-object/from16 v1, p0
+
+    iput-boolean v0, v1, Lcom/android/systemui/stackdivider/DividerView;->mMaximizeGuideView:Z
+
+    goto/16 :goto_11
+
+    :cond_2f
+    move-object/from16 v0, p0
+
+    iget v0, v0, Lcom/android/systemui/stackdivider/DividerView;->mDismissEndPosition:I
+
+    move/from16 v17, v0
+
+    move/from16 v0, v17
+
+    if-le v8, v0, :cond_2e
+
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcom/android/systemui/stackdivider/DividerView;->mSnapAlgorithm:Lcom/android/internal/policy/DividerSnapAlgorithm;
+
+    move-object/from16 v17, v0
+
+    invoke-virtual/range {v17 .. v17}, Lcom/android/internal/policy/DividerSnapAlgorithm;->getDismissEndTarget()Lcom/android/internal/policy/DividerSnapAlgorithm$SnapTarget;
+
+    move-result-object v11
 
     goto :goto_13
 
-    :cond_2f
-    const/4 v14, 0x0
+    :cond_30
+    move/from16 v0, v16
 
-    const/4 v15, 0x0
-
-    const/16 v16, 0x1
-
-    move-object/from16 v0, p0
-
-    move/from16 v1, v16
-
-    invoke-virtual {v0, v10, v14, v15, v1}, Lcom/android/systemui/stackdivider/DividerView;->stopDragging(IFZZ)V
-
-    const/4 v14, 0x1
-
-    move-object/from16 v0, p0
-
-    invoke-virtual {v0, v3, v14}, Lcom/android/systemui/stackdivider/DividerView;->hideGuideView(Landroid/graphics/Point;Z)V
+    invoke-virtual {v5, v12, v0}, Landroid/graphics/Point;->set(II)V
 
     goto :goto_14
 
-    nop
+    :cond_31
+    const/16 v17, 0x0
+
+    const/16 v18, 0x0
+
+    const/16 v19, 0x1
+
+    move-object/from16 v0, p0
+
+    move/from16 v1, v17
+
+    move/from16 v2, v18
+
+    move/from16 v3, v19
+
+    invoke-virtual {v0, v12, v1, v2, v3}, Lcom/android/systemui/stackdivider/DividerView;->stopDragging(IFZZ)V
+
+    const/16 v17, 0x1
+
+    move-object/from16 v0, p0
+
+    move/from16 v1, v17
+
+    invoke-virtual {v0, v5, v1}, Lcom/android/systemui/stackdivider/DividerView;->hideGuideView(Landroid/graphics/Point;Z)V
+
+    goto :goto_15
 
     :pswitch_data_0
     .packed-switch 0x0

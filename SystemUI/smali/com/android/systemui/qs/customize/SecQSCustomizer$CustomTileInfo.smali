@@ -17,6 +17,8 @@
 # instance fields
 .field public customTileView:Lcom/android/systemui/qs/customize/CustomizeTileView;
 
+.field public isNewCustomTile:Z
+
 .field public longClickListener:Landroid/view/View$OnLongClickListener;
 
 

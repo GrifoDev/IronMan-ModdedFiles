@@ -91,7 +91,7 @@
 .method public createDetailView(Landroid/content/Context;Landroid/view/View;Landroid/view/ViewGroup;)Landroid/view/View;
     .locals 11
 
-    const v10, 0x7f0f0524
+    const v10, 0x7f0f0525
 
     const v9, 0x7f0b0140
 
@@ -293,7 +293,7 @@
 
     aput-object v6, v5, v8
 
-    const v6, 0x7f0f0526
+    const v6, 0x7f0f0527
 
     invoke-virtual {v4, v6, v5}, Landroid/content/Context;->getString(I[Ljava/lang/Object;)Ljava/lang/String;
 
@@ -385,7 +385,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f0f0487
+    const v1, 0x7f0f0488
 
     invoke-virtual {v0, v1}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -464,7 +464,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f0f04ec
+    const v2, 0x7f0f04ed
 
     invoke-virtual {v1, v2}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 

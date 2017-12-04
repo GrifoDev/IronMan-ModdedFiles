@@ -409,7 +409,7 @@
 
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;->mIndicationController:Lcom/android/systemui/statusbar/KeyguardIndicationController;
 
-    const v1, 0x7f0f05ab
+    const v1, 0x7f0f05ac
 
     invoke-virtual {v0, v1}, Lcom/android/systemui/statusbar/KeyguardIndicationController;->showTransientIndication(I)V
 
@@ -472,93 +472,6 @@
 
     :cond_1
     return-void
-.end method
-
-.method private isCameraDisabledByDpm()Z
-    .locals 8
-
-    const/4 v7, 0x0
-
-    invoke-virtual {p0}, Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;->getContext()Landroid/content/Context;
-
-    move-result-object v5
-
-    const-string/jumbo v6, "device_policy"
-
-    invoke-virtual {v5, v6}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
-
-    move-result-object v2
-
-    check-cast v2, Landroid/app/admin/DevicePolicyManager;
-
-    if-eqz v2, :cond_2
-
-    iget-object v5, p0, Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;->mPhoneStatusBar:Lcom/android/systemui/statusbar/phone/PhoneStatusBar;
-
-    if-eqz v5, :cond_2
-
-    :try_start_0
-    invoke-static {}, Landroid/app/ActivityManagerNative;->getDefault()Landroid/app/IActivityManager;
-
-    move-result-object v5
-
-    invoke-interface {v5}, Landroid/app/IActivityManager;->getCurrentUser()Landroid/content/pm/UserInfo;
-
-    move-result-object v5
-
-    iget v4, v5, Landroid/content/pm/UserInfo;->id:I
-
-    const/4 v5, 0x0
-
-    invoke-virtual {v2, v5, v4}, Landroid/app/admin/DevicePolicyManager;->getKeyguardDisabledFeatures(Landroid/content/ComponentName;I)I
-
-    move-result v1
-
-    and-int/lit8 v5, v1, 0x2
-
-    if-eqz v5, :cond_0
-
-    iget-object v5, p0, Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;->mPhoneStatusBar:Lcom/android/systemui/statusbar/phone/PhoneStatusBar;
-
-    invoke-virtual {v5}, Lcom/android/systemui/statusbar/phone/PhoneStatusBar;->isKeyguardSecure()Z
-
-    move-result v0
-
-    :goto_0
-    const/4 v5, 0x0
-
-    invoke-virtual {v2, v5}, Landroid/app/admin/DevicePolicyManager;->getCameraDisabled(Landroid/content/ComponentName;)Z
-    :try_end_0
-    .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
-
-    move-result v5
-
-    if-nez v5, :cond_1
-
-    :goto_1
-    return v0
-
-    :cond_0
-    const/4 v0, 0x0
-
-    goto :goto_0
-
-    :cond_1
-    const/4 v0, 0x1
-
-    goto :goto_1
-
-    :catch_0
-    move-exception v3
-
-    const-string/jumbo v5, "PhoneStatusBar/KeyguardBottomAreaView"
-
-    const-string/jumbo v6, "Can\'t get userId"
-
-    invoke-static {v5, v6, v3}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
-
-    :cond_2
-    return v7
 .end method
 
 .method private isPhoneVisible()Z
@@ -948,9 +861,9 @@
 .method public getBottomAreaMaxHeight()I
     .locals 6
 
-    const v5, 0x7f0d0411
+    const v5, 0x7f0d0413
 
-    const v4, 0x7f0d040a
+    const v4, 0x7f0d040c
 
     iget-object v2, p0, Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;->mContext:Landroid/content/Context;
 
@@ -966,7 +879,7 @@
 
     move-result-object v2
 
-    const v3, 0x7f0d033e
+    const v3, 0x7f0d0340
 
     invoke-virtual {v2, v3}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -978,7 +891,7 @@
 
     move-result-object v3
 
-    const v4, 0x7f0d033d
+    const v4, 0x7f0d033f
 
     invoke-virtual {v3, v4}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -1003,7 +916,7 @@
 
     move-result-object v2
 
-    const v3, 0x7f0d040d
+    const v3, 0x7f0d040f
 
     invoke-virtual {v2, v3}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -1043,7 +956,7 @@
 
     move-result-object v2
 
-    const v3, 0x7f0d0332
+    const v3, 0x7f0d0334
 
     invoke-virtual {v2, v3}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -1128,7 +1041,7 @@
 
     move-result-object v3
 
-    const v4, 0x7f0d0414
+    const v4, 0x7f0d0416
 
     invoke-virtual {v3, v4}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -2247,7 +2160,7 @@
 
     move-result-object v3
 
-    const v4, 0x7f0d041e
+    const v4, 0x7f0d0420
 
     invoke-virtual {v3, v4}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -2738,10 +2651,22 @@
 
     move-result-object v1
 
-    invoke-direct {p0}, Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;->isCameraDisabledByDpm()Z
+    iget-object v4, p0, Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;->mPhoneStatusBar:Lcom/android/systemui/statusbar/phone/PhoneStatusBar;
 
-    move-result v0
+    if-eqz v4, :cond_1
 
+    iget-object v4, p0, Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;->mPhoneStatusBar:Lcom/android/systemui/statusbar/phone/PhoneStatusBar;
+
+    invoke-virtual {v4}, Lcom/android/systemui/statusbar/phone/PhoneStatusBar;->isCameraAllowedByAdmin()Z
+
+    move-result v4
+
+    if-eqz v4, :cond_2
+
+    :cond_1
+    const/4 v0, 0x0
+
+    :goto_0
     const-string/jumbo v4, "PhoneStatusBar/KeyguardBottomAreaView"
 
     new-instance v5, Ljava/lang/StringBuilder;
@@ -2764,9 +2689,9 @@
 
     invoke-static {v4, v5}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    if-nez v0, :cond_1
+    if-nez v0, :cond_3
 
-    if-eqz v1, :cond_1
+    if-eqz v1, :cond_3
 
     invoke-virtual {p0}, Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;->getResources()Landroid/content/res/Resources;
 
@@ -2778,27 +2703,32 @@
 
     move-result v4
 
-    if-eqz v4, :cond_1
+    if-eqz v4, :cond_3
 
     iget-boolean v2, p0, Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;->mUserSetupComplete:Z
 
-    :goto_0
-    if-eqz v2, :cond_2
-
     :goto_1
+    if-eqz v2, :cond_4
+
+    :goto_2
     invoke-virtual {p1, v3}, Lcom/android/systemui/statusbar/KeyguardCircleAffordanceView;->setVisibility(I)V
 
     return-void
 
-    :cond_1
-    move v2, v3
+    :cond_2
+    const/4 v0, 0x1
 
     goto :goto_0
 
-    :cond_2
-    const/16 v3, 0x8
+    :cond_3
+    move v2, v3
 
     goto :goto_1
+
+    :cond_4
+    const/16 v3, 0x8
+
+    goto :goto_2
 .end method
 
 .method public updateChildViewsLook()V
@@ -2932,7 +2862,7 @@
 
     const v2, 0x7f0201d8
 
-    const v0, 0x7f0f06cc
+    const v0, 0x7f0f06cd
 
     iget-object v4, p0, Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;->mAffordanceViews:[Lcom/android/systemui/statusbar/KeyguardCircleAffordanceView;
 

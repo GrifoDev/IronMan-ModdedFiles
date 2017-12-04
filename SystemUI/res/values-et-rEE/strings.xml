@@ -238,6 +238,8 @@
     <string name="wifi_allow_scan_with_traffic_summary">Luba/keela WiFi-rändluse skannimine liidese andmeliikluse põhjal</string>
     <string name="select_logd_size_title">Logija puhvri suurused</string>
     <string name="select_logd_size_dialog_title">Vali logija suur. logipuhvri kohta</string>
+    <string name="dev_logpersist_clear_warning_title">Kas tühjendada püsiv logeri mälu?</string>
+    <string name="dev_logpersist_clear_warning_message">Logeri andmed kustutatakse, kui püsiv loger lülitatakse välja.</string>
     <string name="select_logpersist_title">Logiandmete täpne salvestamine</string>
     <string name="select_logpersist_dialog_title">Valige logipuhvrid, et salvestada püsivalt</string>
     <string name="select_usb_configuration_title">USB-seadistuse valimine</string>
@@ -751,6 +753,7 @@ Jätkamisel võivad lisanduda operaatoritasud."</string>
     <string name="wifi_authentication_failed_kt">Wi-Fi pääsupunkti autentimine nurjus.</string>
     <string name="wifi_authentication_no_response">Ühenduse loomine Wi-Fi pääsupunktiga nurjus.</string>
     <string name="wifi_authentication_invalid_value">Autentimine ebaõnnestus. Palun kontrollige kehtivaid sertifikaate.</string>
+    <string name="wifi_disconnected">Wi-Fi ühendus on katkestatud.</string>
     <string name="quick_settings_dnd_label">Mitte segada</string>
     <string name="quick_settings_dnd_priority_label">Ainult prioriteetsed</string>
     <string name="quick_settings_dnd_alarms_label">Ainult alarmid</string>
@@ -1382,10 +1385,10 @@ Lisateabe saamiseks võtke ühendust administraatoriga."</string>
     <string name="keyboard_key_numpad_template">Numbriklahvistik %1$s</string>
     <string name="keyboard_popup_help">Üldklahv: Windowsi-klahv, käsuklahv või mõni muu operatsioonisüsteemi sümboliga klahv.</string>
     <string name="keyboard_shortcut_group_system">Süsteemi otseteed</string>
-    <string name="keyboard_shortcut_group_system_home">Avaekraan</string>
+    <string name="keyboard_shortcut_group_system_home">Kodu</string>
     <string name="keyboard_shortcut_group_system_recents">Hiljutised</string>
     <string name="keyboard_shortcut_group_system_back">Tagasi</string>
-    <string name="keyboard_shortcut_group_system_notifications">Märguanded</string>
+    <string name="keyboard_shortcut_group_system_notifications">Teavitused</string>
     <string name="keyboard_shortcut_group_system_shortcuts_helper">Klaviatuuri otseteed</string>
     <string name="keyboard_shortcut_group_system_switch_input">Sisestusmeetodi vahetamine</string>
     <string name="keyboard_shortcut_group_system_all_apps">Kõik rakendused</string>
@@ -1652,7 +1655,9 @@ Using your tablet in a very hot location."</string>
     <string name="battery_not_fully_connected_charging_title_vzw">Incomplete connection</string>
     <string name="battery_not_fully_connected_charging_text">Kasutage kiirema laadimise jaoks seadmega kaasapandud laadijat ja veenduge, et see oleks õigesti ühendatud.</string>
     <string name="battery_not_fully_connected_charging_text_vzw">Make sure the charger is properly connected.</string>
+    <string name="battery_not_fully_connected_charging_text_jpn">Veenduge, et laadija oleks õigesti ühendatud.</string>
     <string name="battery_not_fully_connected_charging_popup_text">Kontrollige, kas laadija on õigesti ühendatud. Kasutage seadmega kaasapandud laadijat.</string>
+    <string name="battery_not_fully_connected_charging_popup_text_jpn">Kontrollige, kas laadija on õigesti ühendatud.</string>
     <string name="battery_charging_level_and_time_text">"Laadimine: %1$d%%
 (Umbes %2$s jäänud kuni täieliku laadimiseni)"</string>
     <string name="battery_charging_level_text">Laadimine: %d%%</string>
@@ -1878,6 +1883,8 @@ Please note that in order to enable your emergency calls (e.g., such as 112 call
     <string name="qs_detail_palm_capture_title">Pihuga libistamine, et jäädvustada</string>
     <string name="noti_direct_reply_exceed_text_limit_toast">Rohkem teksti ei saa sisestada.</string>
     <string name="airplane_mode_tts_text">Lennurežiim</string>
+    <string name="all_noti_readout">Üks teavitus</string>
+    <string name="all_noti_readout2">%d teavitust</string>
     <string name="car_lockscreen_disclaimer_title">Sõitke turvaliselt</string>
     <string name="car_lockscreen_disclaimer_text">Olge teadlik sõidutingimustest ja järgige alati kohaldatavaid seadusi. Juhised võivad olla ebatäpsed, mittetäielikud, ohtlikud, sobimatud, keelatud või hõlmata kattuvaid administratiivpiirkondi. Ka ettevõtteteave võib olla ebatäpne või mittetäielik. Andmed pole reaalajas ja asukoha täpsust ei saa garanteerida. Ärge kasutage auto juhtimisel mobiilseadet ega rakendusi, mis pole mõeldud teenuse Android Auto jaoks.</string>
     <string name="pip_close">Sule PIP</string>

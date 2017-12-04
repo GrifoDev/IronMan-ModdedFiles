@@ -238,6 +238,8 @@
     <string name="wifi_allow_scan_with_traffic_summary">इंटरफ़ेस पर वर्तमान में मौजूद डेटा ट्रैफ़िक के आधार पर वाई-फ़ाई रोम स्कैन करने देता/नहीं देता है</string>
     <string name="select_logd_size_title">लॉगर बफ़र आकार</string>
     <string name="select_logd_size_dialog_title">प्रति लॉग बफ़र लॉगर आकार चुनें</string>
+    <string name="dev_logpersist_clear_warning_title">स्थायी लॉगर स्टोरेज साफ करें?</string>
+    <string name="dev_logpersist_clear_warning_message">स्थायी लॉगर बंद होने पर लॉगर डाटा हटा दिया जाएगा।</string>
     <string name="select_logpersist_title">लॉग डाटा लगातार स्टोर करें</string>
     <string name="select_logpersist_dialog_title">लगातार स्टोर करने के लिए लॉग बफर्स चुनें</string>
     <string name="select_usb_configuration_title">USB कॉन्फ़िगरेशन चुनें</string>
@@ -752,6 +754,7 @@ For example, your ringtone will not sound, you will not be able to answer phone 
     <string name="wifi_authentication_failed_kt">Wi-Fi AP अधिप्रमाणित करने में विफल।</string>
     <string name="wifi_authentication_no_response">Wi-Fi AP से कनेक्‍ट करने में विफल।</string>
     <string name="wifi_authentication_invalid_value">प्रमाणीकरण विफल। ID और पासवर्ड की जाँच करें।</string>
+    <string name="wifi_disconnected">Wi-Fi डिस्कनेक्ट किया गया।</string>
     <string name="quick_settings_dnd_label">परेशान ना करें</string>
     <string name="quick_settings_dnd_priority_label">केवल प्राथमिकता</string>
     <string name="quick_settings_dnd_alarms_label">केवल अलार्म</string>
@@ -1386,8 +1389,8 @@ Wi-Fi और ब्लूटूथ भी बंद हो जाएगा, ल�
     <string name="keyboard_shortcut_group_system_home">होम</string>
     <string name="keyboard_shortcut_group_system_recents">हाल ही के</string>
     <string name="keyboard_shortcut_group_system_back">वापस जाएँ</string>
-    <string name="keyboard_shortcut_group_system_notifications">नोटिफ़िकेशन</string>
-    <string name="keyboard_shortcut_group_system_shortcuts_helper">कीबोर्ड शॉर्टकट</string>
+    <string name="keyboard_shortcut_group_system_notifications">सूचनाएँ</string>
+    <string name="keyboard_shortcut_group_system_shortcuts_helper">कीबोर्ड शॉर्टकट्स</string>
     <string name="keyboard_shortcut_group_system_switch_input">इनपुट पद्धति‍ बदलें</string>
     <string name="keyboard_shortcut_group_system_all_apps">सभी एप्स</string>
     <string name="keyboard_shortcut_group_system_running_apps">चल रहे एप्स</string>
@@ -1395,7 +1398,7 @@ Wi-Fi और ब्लूटूथ भी बंद हो जाएगा, ल�
     <string name="keyboard_shortcut_group_system_switch_languages">भाषाएँ स्विच करें</string>
     <string name="keyboard_shortcut_group_applications">इन-एप शॉर्टकट्स</string>
     <string name="keyboard_shortcut_group_applications_assist">सहायक</string>
-    <string name="keyboard_shortcut_group_applications_browser">ब्राउज़र</string>
+    <string name="keyboard_shortcut_group_applications_browser">ब्राउजर</string>
     <string name="keyboard_shortcut_group_applications_contacts">संपर्क</string>
     <string name="keyboard_shortcut_group_applications_email">ईमेल</string>
     <string name="keyboard_shortcut_group_applications_im">IM</string>
@@ -1653,7 +1656,9 @@ Using your tablet in a very hot location."</string>
     <string name="battery_not_fully_connected_charging_title_vzw">Incomplete connection</string>
     <string name="battery_not_fully_connected_charging_text">तेजी से चार्ज करने के लिए, उस चार्जर का उपयोग करें जो आपके डिवाइस के साथ मिला है और सुनिश्चित करें कि इसे सही ढंग से कनेक्ट किया गया है।</string>
     <string name="battery_not_fully_connected_charging_text_vzw">Make sure the charger is properly connected.</string>
+    <string name="battery_not_fully_connected_charging_text_jpn">सुनिश्चित करें कि आपका चार्जर सही ढंग से कनेक्ट किया गया है।</string>
     <string name="battery_not_fully_connected_charging_popup_text">सुनिश्चित करें कि चार्जर सही ढंग से कनेक्ट किया गया है। उस चार्जर का उपयोग करें, जो डिवाइस के साथ मिला है।</string>
+    <string name="battery_not_fully_connected_charging_popup_text_jpn">सुनिश्चित करें कि चार्जर सही ढंग से कनेक्ट किया गया है।</string>
     <string name="battery_charging_level_and_time_text">"चार्ज हो रहा है: %1$d%%
 (पूरी तरह चार्ज होने में लगभग %2$s है)"</string>
     <string name="battery_charging_level_text">चार्ज हो रहा है: %d%%</string>
@@ -1878,6 +1883,8 @@ Please note that in order to enable your emergency calls (e.g., such as 112 call
     <string name="qs_detail_palm_capture_title">कैप्चर करने के लिए हथेली से स्वाइप</string>
     <string name="noti_direct_reply_exceed_text_limit_toast">अब और टेक्स्ट प्रविष्ट नहीं किया जा सकता है।</string>
     <string name="airplane_mode_tts_text">विमान मोड</string>
+    <string name="all_noti_readout">एक सूचना</string>
+    <string name="all_noti_readout2">%d सूचनाएँ</string>
     <string name="car_lockscreen_disclaimer_title">सुरक्षित ढंग से गाड़ी चलाएं</string>
     <string name="car_lockscreen_disclaimer_text">गाड़ी चलाने की स्थितियों के प्रति पूरी तरह से सतर्क रहें और हमेशा लागू कानूनों का पालन करें. दिशाएं गलत, अपूर्ण, खतरनाक, निषिद्ध हो सकती हैं या उनमें प्रशासनिक क्षेत्रों को पार करना शामिल हो सकता है. व्यावसायिक जानकारी भी गलत या अपूर्ण हो सकती है. डेटा रीयल-टाइम नहीं है और स्थान सटीकता की गारंटी नहीं दी जा सकती. गाड़ी चलाते समय अपने मोबाइल डिवाइस या फ़ोन या Android Auto के लिए अभिप्रेत न किए गए ऐप्स का उपयोग ना करें.</string>
     <string name="pip_close">PIP बंद करें</string>

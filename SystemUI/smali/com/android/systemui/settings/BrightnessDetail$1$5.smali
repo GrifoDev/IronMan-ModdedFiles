@@ -43,7 +43,9 @@
 
 # virtual methods
 .method public onViewAttachedToWindow(Landroid/view/View;)V
-    .locals 5
+    .locals 6
+
+    const/4 v5, 0x0
 
     iget-object v0, p0, Lcom/android/systemui/settings/BrightnessDetail$1$5;->val$slider:Lcom/android/systemui/settings/ToggleSlider;
 
@@ -90,6 +92,46 @@
     move-result-object v0
 
     invoke-virtual {v0}, Lcom/android/systemui/settings/BrightnessController;->registerCallbacks()V
+
+    iget-object v0, p0, Lcom/android/systemui/settings/BrightnessDetail$1$5;->this$1:Lcom/android/systemui/settings/BrightnessDetail$1;
+
+    iget-object v0, v0, Lcom/android/systemui/settings/BrightnessDetail$1;->this$0:Lcom/android/systemui/settings/BrightnessDetail;
+
+    invoke-static {v0}, Lcom/android/systemui/settings/BrightnessDetail;->-get1(Lcom/android/systemui/settings/BrightnessDetail;)Lcom/android/systemui/settings/BrightnessController;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lcom/android/systemui/settings/BrightnessController;->setEnableSlider()V
+
+    iget-object v0, p0, Lcom/android/systemui/settings/BrightnessDetail$1$5;->this$1:Lcom/android/systemui/settings/BrightnessDetail$1;
+
+    iget-object v0, v0, Lcom/android/systemui/settings/BrightnessDetail$1;->this$0:Lcom/android/systemui/settings/BrightnessDetail;
+
+    invoke-static {v0}, Lcom/android/systemui/settings/BrightnessDetail;->-get1(Lcom/android/systemui/settings/BrightnessDetail;)Lcom/android/systemui/settings/BrightnessController;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lcom/android/systemui/settings/BrightnessController;->isAppControl()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    iget-object v0, p0, Lcom/android/systemui/settings/BrightnessDetail$1$5;->this$1:Lcom/android/systemui/settings/BrightnessDetail$1;
+
+    invoke-static {v0}, Lcom/android/systemui/settings/BrightnessDetail$1;->-get0(Lcom/android/systemui/settings/BrightnessDetail$1;)Landroid/widget/Switch;
+
+    move-result-object v0
+
+    invoke-virtual {v0, v5}, Landroid/widget/Switch;->setEnabled(Z)V
+
+    iget-object v0, p0, Lcom/android/systemui/settings/BrightnessDetail$1$5;->this$1:Lcom/android/systemui/settings/BrightnessDetail$1;
+
+    invoke-static {v0}, Lcom/android/systemui/settings/BrightnessDetail$1;->-get2(Lcom/android/systemui/settings/BrightnessDetail$1;)Landroid/view/View;
+
+    move-result-object v0
+
+    invoke-virtual {v0, v5}, Landroid/view/View;->setEnabled(Z)V
 
     :cond_0
     return-void

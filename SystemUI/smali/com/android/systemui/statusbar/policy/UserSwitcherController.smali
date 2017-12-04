@@ -997,7 +997,7 @@
 
     iget-object v4, p0, Lcom/android/systemui/statusbar/policy/UserSwitcherController;->mContext:Landroid/content/Context;
 
-    const v5, 0x7f0f0581
+    const v5, 0x7f0f0582
 
     invoke-virtual {v4, v5}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -1009,7 +1009,7 @@
 
     iget-object v4, p0, Lcom/android/systemui/statusbar/policy/UserSwitcherController;->mContext:Landroid/content/Context;
 
-    const v5, 0x7f0f0582
+    const v5, 0x7f0f0583
 
     invoke-virtual {v4, v5}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -1029,7 +1029,7 @@
 
     iget-object v4, p0, Lcom/android/systemui/statusbar/policy/UserSwitcherController;->mContext:Landroid/content/Context;
 
-    const v5, 0x7f0f0583
+    const v5, 0x7f0f0584
 
     invoke-virtual {v4, v5}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -1231,7 +1231,7 @@
 
     if-eqz v1, :cond_3
 
-    const v1, 0x7f0f0574
+    const v1, 0x7f0f0575
 
     invoke-virtual {p1, v1}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -1442,7 +1442,7 @@
 
     iget-object v9, p0, Lcom/android/systemui/statusbar/policy/UserSwitcherController;->mContext:Landroid/content/Context;
 
-    const v10, 0x7f0f0574
+    const v10, 0x7f0f0575
 
     invoke-virtual {v9, v10}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -1533,7 +1533,7 @@
 
     iget-object v8, p0, Lcom/android/systemui/statusbar/policy/UserSwitcherController;->mContext:Landroid/content/Context;
 
-    const v9, 0x7f0f057a
+    const v9, 0x7f0f057b
 
     invoke-virtual {v8, v9}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -1574,7 +1574,7 @@
 
     iget-object v8, p0, Lcom/android/systemui/statusbar/policy/UserSwitcherController;->mContext:Landroid/content/Context;
 
-    const v9, 0x7f0f057b
+    const v9, 0x7f0f057c
 
     invoke-virtual {v8, v9}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -1601,7 +1601,7 @@
 
     iget-object v8, p0, Lcom/android/systemui/statusbar/policy/UserSwitcherController;->mContext:Landroid/content/Context;
 
-    const v9, 0x7f0f057c
+    const v9, 0x7f0f057d
 
     invoke-virtual {v8, v9}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 

@@ -238,6 +238,8 @@
     <string name="wifi_allow_scan_with_traffic_summary">Թույլատրել/արգելել Wi‑Fi ռոումինգի որոնումը՝ կախված միջերեսում տվյալների երթևեկի ծավալից</string>
     <string name="select_logd_size_title">Տեղեկամատյանի պահնակի չափերը</string>
     <string name="select_logd_size_dialog_title">Ընտրեք տեղեկամատյանի չափը մեկ պահնակի համար</string>
+    <string name="dev_logpersist_clear_warning_title">Մաքրե՞լ մշտական գրանցիչի պահոցը:</string>
+    <string name="dev_logpersist_clear_warning_message">Գրանցիչի տվյալները կվերացվեն, երբ մշտական գրանցիչն անջատվի:</string>
     <string name="select_logpersist_title">Տևական պահել մատյանի տվյալները</string>
     <string name="select_logpersist_dialog_title">Ընտրել գրանց. բուֆերներ՝ տևական պահելու հր</string>
     <string name="select_usb_configuration_title">Ընտրեք USB կարգավորումը</string>
@@ -752,6 +754,7 @@ For example, your ringtone will not sound, you will not be able to answer phone 
     <string name="wifi_authentication_failed_kt">Չհաջողվեց վավերացնել Wi-Fi AP-ն:</string>
     <string name="wifi_authentication_no_response">Չհաջողվեց միանալ Wi-Fi մուտքի կետին:</string>
     <string name="wifi_authentication_invalid_value">Նույնականացումը ձախողվել է: Ստուգեք ID-ն և գաղտնաբառը:</string>
+    <string name="wifi_disconnected">Wi-Fi-ն անջատված է:</string>
     <string name="quick_settings_dnd_label">Չխանգարել</string>
     <string name="quick_settings_dnd_priority_label">Միայն կարևոր ծանուցումների դեպքում</string>
     <string name="quick_settings_dnd_alarms_label">Միայն զարթուցիչ</string>
@@ -1383,11 +1386,11 @@ Wi-Fi կանչի պատկերակը կհայտնվի ծանուցումների 
     <string name="keyboard_key_numpad_template">Numpad %1$s</string>
     <string name="keyboard_popup_help">Մետա ստեղն՝ Windows, Command կամ այլ գործութային համակարգի բազմագործառական սիմվոլի ստեղն:</string>
     <string name="keyboard_shortcut_group_system">Համակարգի դյուրանցումներ</string>
-    <string name="keyboard_shortcut_group_system_home">Գլխավոր էջ</string>
-    <string name="keyboard_shortcut_group_system_recents">Վերջինները</string>
+    <string name="keyboard_shortcut_group_system_home">Սկիզբ</string>
+    <string name="keyboard_shortcut_group_system_recents">Վերջերս</string>
     <string name="keyboard_shortcut_group_system_back">Հետ</string>
     <string name="keyboard_shortcut_group_system_notifications">Ծանուցումներ</string>
-    <string name="keyboard_shortcut_group_system_shortcuts_helper">Ստեղնային դյուրանցումներ</string>
+    <string name="keyboard_shortcut_group_system_shortcuts_helper">Ստեղնաշարի դյուրանցումներ</string>
     <string name="keyboard_shortcut_group_system_switch_input">Փոխարկել մուտքագրման եղանակը</string>
     <string name="keyboard_shortcut_group_system_all_apps">Բոլոր ծրագրերը</string>
     <string name="keyboard_shortcut_group_system_running_apps">Գործող ծրագրեր</string>
@@ -1395,7 +1398,7 @@ Wi-Fi կանչի պատկերակը կհայտնվի ծանուցումների 
     <string name="keyboard_shortcut_group_system_switch_languages">Փոխարկել լեզուները</string>
     <string name="keyboard_shortcut_group_applications">Ներծրագր. դյուրանցումներ</string>
     <string name="keyboard_shortcut_group_applications_assist">Օգնություն</string>
-    <string name="keyboard_shortcut_group_applications_browser">Դիտարկիչ</string>
+    <string name="keyboard_shortcut_group_applications_browser">Զննարկիչ</string>
     <string name="keyboard_shortcut_group_applications_contacts">Կոնտակտներ</string>
     <string name="keyboard_shortcut_group_applications_email">Էլ.փոստ</string>
     <string name="keyboard_shortcut_group_applications_im">IM</string>
@@ -1653,7 +1656,9 @@ Using your tablet in a very hot location."</string>
     <string name="battery_not_fully_connected_charging_title_vzw">Incomplete connection</string>
     <string name="battery_not_fully_connected_charging_text">Ավելի արագ լիցքավորման համար օգտագործեք սարքի հետ տրված լիցքավորիչը և համոզվեք, որ այն պատշաճ կերպով է միացված:</string>
     <string name="battery_not_fully_connected_charging_text_vzw">Make sure the charger is properly connected.</string>
+    <string name="battery_not_fully_connected_charging_text_jpn">Համոզվեք, որ լիցքավորիչը պատշաճ կերպով է միացված:</string>
     <string name="battery_not_fully_connected_charging_popup_text">Համոզվեք, որ լիցքավորիչը պատշաճ կերպով է միացված: Օգտագործեք սարքի հետ տրված լիցքավորիչը:</string>
+    <string name="battery_not_fully_connected_charging_popup_text_jpn">Համոզվեք, որ լիցքավորիչը պատշաճ կերպով է միացված:</string>
     <string name="battery_charging_level_and_time_text">"Լիցքավորվում է՝ %1$d%%
 (մոտավորապես %2$s մինչև լրիվ լիցքավորումը)"</string>
     <string name="battery_charging_level_text">Փոխվում է՝ %d%%</string>
@@ -1878,6 +1883,8 @@ Please note that in order to enable your emergency calls (e.g., such as 112 call
     <string name="qs_detail_palm_capture_title">Ձեռքի ափը սահեցրեք սևեռելու համար</string>
     <string name="noti_direct_reply_exceed_text_limit_toast">Հնարավոր չէ էլի տեքստ մուտքագրել:</string>
     <string name="airplane_mode_tts_text">Ինքնաթիռի ռեժիմ</string>
+    <string name="all_noti_readout">Մեկ ծանուցում</string>
+    <string name="all_noti_readout2">%d ծանուցում</string>
     <string name="car_lockscreen_disclaimer_title">Վարեք ապահով</string>
     <string name="car_lockscreen_disclaimer_text">Երթևեկության պայմաններին միշտ լավատեղյակ եղեք և կատարեք համապատասխան օրենքների պահանջները: Երթուղիները կարող են լինել սխալ, կիսատ, վտանգավոր, ոչ պատշաճ, արգելված կամ կարող են անցնել վարչական միավորների միջով: Բիզնես տվյալները նույնպես կարող են լինել սխալ կամ կիսատ: Տվյալներն իրական ժամանակում չեն թարմացվում, իսկ տեղադրության ճշգրտությունը չի կարող երաշխավորվել: Մեքենա վարելիս մի օգտագործեք ձեր շարժական սարքը, ինչպես նաև Android Auto-ի համար չնախատեսված հավելվածները:</string>
     <string name="pip_close">Փակել PIP-ն</string>

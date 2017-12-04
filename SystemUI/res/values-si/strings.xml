@@ -141,6 +141,8 @@
     <string name="tts_reset_speech_pitch_title">තාරතාව යළි සකසන්න</string>
     <string name="tts_reset_speech_pitch_summary">පෙළ පෙරනිමි සැකසුමට කියවන තාරතාව යළි සකසන්න.</string>
     <string name="choose_profile">පැතිකඩ තේරීම</string>
+    <string name="dev_logpersist_clear_warning_title">නොනැසී පවත්නා ලඝුර ගබඩාව හිස් කරන්න ද?</string>
+    <string name="dev_logpersist_clear_warning_message">නොනැසී පවත්නා ලඝුර ක්‍රියා විරහිත වූ විට ලඝුර දත්ත මැකෙනු ඇත.</string>
     <string name="select_logpersist_title">ලොග දත්ත නොනැවතී ගබඩා කරන්න</string>
     <string name="select_logpersist_dialog_title">නොනැවතී ගබඩා කිරීමට ලොග අවරෝධක තේරීම</string>
     <string name="no_application">යෙදුම් නැත</string>
@@ -248,6 +250,7 @@ For example, your ringtone will not sound, you will not be able to answer phone 
     <string name="wifi_authentication_failed_kt">Wi-Fi AP සත්‍යාපනයට අසමත් විය.</string>
     <string name="wifi_authentication_no_response">Wi-Fi AP වෙත සම්බන්ධ වීමට අසමත් විය.</string>
     <string name="wifi_authentication_invalid_value">Authentication failed. Check ID and password.</string>
+    <string name="wifi_disconnected">Wi-Fi විසන්ධි කරන ලදි.</string>
     <string name="quick_settings_bluetooth_label">බ්ලූටූත්</string>
     <string name="quick_settings_bluetooth_detail_empty_text_available">බ්ලූටූත් උපාංග හමු නොවීය</string>
     <string name="quick_settings_bluetooth_detail_paired_devices_title">යුගලිත උපාංග</string>
@@ -573,15 +576,21 @@ Wi-Fi සහ බ්ලූටූත් ද ක්‍රියා විරහි�
     <string name="dialog_battery_data_warning">ජංගම හොට්ස්පොට් සක්‍රිය කෙරෙනු ඇත. මෙය බැටරි පාරිභෝජනය සහ දත්ත භාවිතය වැඩි කරනු ඇත.</string>
     <string name="keyboard_popup_help">මෙටා යතුර: වින්ඩෝස්, විධාන, හෝ වෙනත් මෙහෙයුම් පද්ධති සංකේත යතුරක්.</string>
     <string name="keyboard_shortcut_group_system">පද්ධති කෙටිමං</string>
+    <string name="keyboard_shortcut_group_system_home">නිවස</string>
+    <string name="keyboard_shortcut_group_system_recents">මෑත</string>
     <string name="keyboard_shortcut_group_system_back">ආපසු</string>
+    <string name="keyboard_shortcut_group_system_notifications">දැනුම්දීම්</string>
+    <string name="keyboard_shortcut_group_system_shortcuts_helper">යතුරු පුවරු කෙටිමං</string>
     <string name="keyboard_shortcut_group_system_all_apps">සියලු යෙදුම්</string>
     <string name="keyboard_shortcut_group_system_running_apps">ධාවනය වන යෙදුම්</string>
     <string name="keyboard_shortcut_group_system_lock_screen">අගුළු තිරය</string>
     <string name="keyboard_shortcut_group_system_switch_languages">භාෂා මාරු කරන්න</string>
     <string name="keyboard_shortcut_group_applications">යෙදුම් තුළ කෙටිමං</string>
+    <string name="keyboard_shortcut_group_applications_browser">බ්‍රව්සරය</string>
     <string name="keyboard_shortcut_group_applications_contacts">සබඳතා</string>
     <string name="keyboard_shortcut_group_applications_email">ඊමේල්</string>
     <string name="keyboard_shortcut_group_applications_music">සංගීතය</string>
+    <string name="keyboard_shortcut_group_applications_calendar">දින දසුන</string>
     <string name="keyboard_shortcut_group_applications_bixby">Bixby</string>
     <string name="keyboard_shortcut_group_applications_messages">පණිවිඩ</string>
     <string name="qs_edit">සංස්ක.</string>
@@ -765,7 +774,9 @@ Using your tablet in a very hot location."</string>
     <string name="battery_not_fully_connected_charging_title_vzw">Incomplete connection</string>
     <string name="battery_not_fully_connected_charging_text">වේගවත් චාර්ජ් කිරීමක් සඳහා, ඔබේ උපාංගය සමග පැමිණි චාජරය භාවිතා කර එය නිසි ලෙස සම්බන්ධ බවට වග බලා ගන්න.</string>
     <string name="battery_not_fully_connected_charging_text_vzw">Make sure the charger is properly connected.</string>
+    <string name="battery_not_fully_connected_charging_text_jpn">ඔබේ චාජරය නිසි ලෙස සම්බන්ධ බවට වග බලා ගන්න.</string>
     <string name="battery_not_fully_connected_charging_popup_text">චාජරය නිසි ලෙස සම්බන්ධ බවට වග බලා ගන්න. උපාංගය සමග පැමිණි චාජරය භාවිතා කරන්න.</string>
+    <string name="battery_not_fully_connected_charging_popup_text_jpn">චාජරය නිසි ලෙස සම්බන්ධ බවට වග බලා ගන්න.</string>
     <string name="battery_charging_level_and_time_text">"චාර්ජ් වෙමින්: %1$d%%
 (පූර්ණව චාර්ජ් වීමට ආසන්න වශයෙන් %2$s)"</string>
     <string name="battery_charging_level_text">චාර්ජ් වෙමින්: %d%%</string>
@@ -990,6 +1001,8 @@ Please note that in order to enable your emergency calls (e.g., such as 112 call
     <string name="qs_detail_palm_capture_title">හසුකර ගැනීමට අත්ල පිසින්න</string>
     <string name="noti_direct_reply_exceed_text_limit_toast">තවත් පෙළ ඇතුළු කළ නොහැක.</string>
     <string name="airplane_mode_tts_text">ගුවන් යානා ප්‍රකාරය</string>
+    <string name="all_noti_readout">එක දැනුම්දීමක්</string>
+    <string name="all_noti_readout2">දැනුම්දීම් %d</string>
     <string name="keyguard_sim_locked_message">SIM කාඩ්පත අගුලු වැටිණි</string>
     <string name="keyguard_sim_puk_locked_message">SIM කාඩ්පත PUK සමග අගුලු වැටිණි</string>
     <string name="keyguard_sim_unlock_progress_dialog_message">SIM කාඩ්පත අගුළු හරිමින්</string>

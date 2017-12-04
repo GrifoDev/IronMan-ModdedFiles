@@ -376,7 +376,7 @@
 
     iput-boolean v12, v0, Lcom/android/systemui/statusbar/phone/taskbar/views/CellLayout;->mIsLayoutRTL:Z
 
-    const v12, 0x7f0d065c
+    const v12, 0x7f0d0660
 
     invoke-virtual {v9, v12}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -386,7 +386,7 @@
 
     iput v12, v0, Lcom/android/systemui/statusbar/phone/taskbar/views/CellLayout;->mCellWidth:I
 
-    const v12, 0x7f0d065d
+    const v12, 0x7f0d0661
 
     invoke-virtual {v9, v12}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -396,7 +396,7 @@
 
     iput v12, v0, Lcom/android/systemui/statusbar/phone/taskbar/views/CellLayout;->mCellHeight:I
 
-    const v12, 0x7f0d065e
+    const v12, 0x7f0d0662
 
     invoke-virtual {v9, v12}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -406,7 +406,7 @@
 
     iput v12, v0, Lcom/android/systemui/statusbar/phone/taskbar/views/CellLayout;->mGapX:I
 
-    const v12, 0x7f0d065f
+    const v12, 0x7f0d0663
 
     invoke-virtual {v9, v12}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -679,7 +679,7 @@
 
     move-result-object v12
 
-    const v13, 0x7f0d065b
+    const v13, 0x7f0d065f
 
     invoke-virtual {v12, v13}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -4991,7 +4991,7 @@
 
     move-result-object v9
 
-    const v10, 0x7f0d0657
+    const v10, 0x7f0d065b
 
     invoke-virtual {v9, v10}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 

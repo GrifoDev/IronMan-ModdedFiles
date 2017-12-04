@@ -238,6 +238,8 @@
     <string name="wifi_allow_scan_with_traffic_summary">Дозволи/забрани скенирање Wi-Fi-ја у ромингу на основу присутног протока података на интерфејсу</string>
     <string name="select_logd_size_title">Величине бафера података у програму за евидентирање</string>
     <string name="select_logd_size_dialog_title">Изаберите величине по баферу евиденције</string>
+    <string name="dev_logpersist_clear_warning_title">Obrisati trajnu memoriju sist. za evidenciju?</string>
+    <string name="dev_logpersist_clear_warning_message">Podaci sistema za evidenciju će se izbrisati kada se isključi trajni sistem za evidenciju.</string>
     <string name="select_logpersist_title">Trajno uskladišti podatke dnevnika</string>
     <string name="select_logpersist_dialog_title">Izaberite bafere dnev. za trajno skladištenje</string>
     <string name="select_usb_configuration_title">Изаберите конфигурацију USB-а</string>
@@ -752,6 +754,7 @@ For example, your ringtone will not sound, you will not be able to answer phone 
     <string name="wifi_authentication_failed_kt">Neuspešna autentifikacija za Wi-Fi pristupnu tačku.</string>
     <string name="wifi_authentication_no_response">Neuspešno povezivanje na Wi-Fi pristupnu tačku.</string>
     <string name="wifi_authentication_invalid_value">Autentifikacija neuspešna. Proverite ID i lozinku.</string>
+    <string name="wifi_disconnected">Wi-Fi otkačen.</string>
     <string name="quick_settings_dnd_label">Не узнемиравај</string>
     <string name="quick_settings_dnd_priority_label">Само приоритетни прекиди</string>
     <string name="quick_settings_dnd_alarms_label">Само аларми</string>
@@ -1383,11 +1386,11 @@ Svaki korisnik može da ažurira aplikacije za sve druge korisnike."</string>
     <string name="keyboard_key_numpad_template">Тастер %1$s на нумеричкој тастатури</string>
     <string name="keyboard_popup_help">Meta taster: taster sa simbolom Windows, Command ili drugog operacionog sistema.</string>
     <string name="keyboard_shortcut_group_system">Sistemske prečice</string>
-    <string name="keyboard_shortcut_group_system_home">Почетни</string>
-    <string name="keyboard_shortcut_group_system_recents">Недавни садржај</string>
+    <string name="keyboard_shortcut_group_system_home">Početak</string>
+    <string name="keyboard_shortcut_group_system_recents">Nedavno</string>
     <string name="keyboard_shortcut_group_system_back">Nazad</string>
-    <string name="keyboard_shortcut_group_system_notifications">Обавештења</string>
-    <string name="keyboard_shortcut_group_system_shortcuts_helper">Тастерске пречице</string>
+    <string name="keyboard_shortcut_group_system_notifications">Obaveštenja</string>
+    <string name="keyboard_shortcut_group_system_shortcuts_helper">Prečice na tastaturi</string>
     <string name="keyboard_shortcut_group_system_switch_input">Промени метод уноса</string>
     <string name="keyboard_shortcut_group_system_all_apps">Sve aplikacije</string>
     <string name="keyboard_shortcut_group_system_running_apps">Pokretanje aplikacija</string>
@@ -1395,13 +1398,13 @@ Svaki korisnik može da ažurira aplikacije za sve druge korisnike."</string>
     <string name="keyboard_shortcut_group_system_switch_languages">Promenite jezike</string>
     <string name="keyboard_shortcut_group_applications">Prečice u aplikaciji</string>
     <string name="keyboard_shortcut_group_applications_assist">Апликација за помоћ</string>
-    <string name="keyboard_shortcut_group_applications_browser">Прегледач</string>
+    <string name="keyboard_shortcut_group_applications_browser">Pretraživač</string>
     <string name="keyboard_shortcut_group_applications_contacts">Kontakti</string>
     <string name="keyboard_shortcut_group_applications_email">E-pošta</string>
     <string name="keyboard_shortcut_group_applications_im">Размена тренутних порука</string>
     <string name="keyboard_shortcut_group_applications_music">Muzika</string>
     <string name="keyboard_shortcut_group_applications_youtube">YouTube</string>
-    <string name="keyboard_shortcut_group_applications_calendar">Календар</string>
+    <string name="keyboard_shortcut_group_applications_calendar">Kalendar</string>
     <string name="keyboard_shortcut_group_applications_bixby">Bixby</string>
     <string name="keyboard_shortcut_group_applications_messages">Poruke</string>
     <string name="tuner_full_zen_title">Прикажи са контролама јачине звука</string>
@@ -1653,7 +1656,9 @@ Pregrevanje može da nastane usled:
     <string name="battery_not_fully_connected_charging_title_vzw">Incomplete connection</string>
     <string name="battery_not_fully_connected_charging_text">Za brže punjenje, koristite punjač koji ste dobili uz uređaj i uverite se da je on pravilno priključen.</string>
     <string name="battery_not_fully_connected_charging_text_vzw">Make sure the charger is properly connected.</string>
+    <string name="battery_not_fully_connected_charging_text_jpn">Uverite se da je punjač pravilno priključen.</string>
     <string name="battery_not_fully_connected_charging_popup_text">Uverite se da je punjač pravilno priključen. Koristite punjač koji ste dobili uz uređaj.</string>
+    <string name="battery_not_fully_connected_charging_popup_text_jpn">Uverite se da je punjač pravilno priključen.</string>
     <string name="battery_charging_level_and_time_text">"Punjenje: %1$d%%
 (približno %2$s do trenutka kada će se u potpunosti napuniti)"</string>
     <string name="battery_charging_level_text">Punjenje: %d%%</string>
@@ -1878,6 +1883,8 @@ Please note that in order to enable your emergency calls (e.g., such as 112 call
     <string name="qs_detail_palm_capture_title">Prevuci dlanom za snimanje</string>
     <string name="noti_direct_reply_exceed_text_limit_toast">Ne može da se unese više teksta.</string>
     <string name="airplane_mode_tts_text">Avionski režim</string>
+    <string name="all_noti_readout">Jedno obaveštenje</string>
+    <string name="all_noti_readout2">%d obaveštenja</string>
     <string name="car_lockscreen_disclaimer_title">Возите безбедно</string>
     <string name="car_lockscreen_disclaimer_text">Увек водите рачуна о условима вожње и увек поштујте примењиве законе. Упутства могу да буду нетачна, непотпуна, опасна, неприкладна или забрањена, односно да подразумевају прелазак између административних области. И подаци о предузећу могу да буду нетачни или непотпуни. Подаци не настају у реалном времену и не можемо да гарантујемо прецизност локације. Немојте да употребљавате мобилни уређај нити да користите апликације које нису намењене за Android Auto током вожње.</string>
     <string name="pip_close">Затвори PIP</string>

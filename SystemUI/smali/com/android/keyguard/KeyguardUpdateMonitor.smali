@@ -8035,7 +8035,7 @@
 
     move-result v3
 
-    invoke-virtual {p0, v3}, Lcom/android/keyguard/KeyguardUpdateMonitor;->isFingerprintDisabled(I)Z
+    invoke-virtual {p0, v3}, Lcom/android/keyguard/KeyguardUpdateMonitor;->isFaceDisabled(I)Z
 
     move-result v3
 
@@ -8043,7 +8043,7 @@
 
     const-string/jumbo v3, "KeyguardFACE"
 
-    const-string/jumbo v5, "shouldListenForFace is disabled by AFW concept"
+    const-string/jumbo v5, "shouldListenForFace (return false, because face is disabled)"
 
     invoke-static {v3, v5}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
@@ -10845,6 +10845,10 @@
     invoke-virtual {p2, v7}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
     :cond_5
+    invoke-static {}, Lcom/android/keyguard/KeyguardUpdateMonitor;->getCurrentUser()I
+
+    move-result v6
+
     new-instance v7, Ljava/lang/StringBuilder;
 
     invoke-direct {v7}, Ljava/lang/StringBuilder;-><init>()V
@@ -10855,9 +10859,7 @@
 
     move-result-object v7
 
-    sget v8, Lcom/android/keyguard/KeyguardUpdateMonitor;->sCurrentUser:I
-
-    invoke-virtual {v7, v8}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    invoke-virtual {v7, v6}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
     move-result-object v7
 
@@ -10907,11 +10909,9 @@
 
     move-result-object v7
 
-    sget v8, Lcom/android/keyguard/KeyguardUpdateMonitor;->sCurrentUser:I
+    const/16 v8, 0x10
 
-    const/16 v9, 0x10
-
-    invoke-virtual {p0, v9, v8}, Lcom/android/keyguard/KeyguardUpdateMonitor;->isBiometricLockEnabled(II)Z
+    invoke-virtual {p0, v8, v6}, Lcom/android/keyguard/KeyguardUpdateMonitor;->isBiometricLockEnabled(II)Z
 
     move-result v8
 
@@ -10935,9 +10935,7 @@
 
     move-result-object v7
 
-    sget v8, Lcom/android/keyguard/KeyguardUpdateMonitor;->sCurrentUser:I
-
-    invoke-virtual {p0, v8}, Lcom/android/keyguard/KeyguardUpdateMonitor;->isUnlockWithIrisPossible(I)Z
+    invoke-virtual {p0, v6}, Lcom/android/keyguard/KeyguardUpdateMonitor;->isUnlockWithIrisPossible(I)Z
 
     move-result v8
 
@@ -10985,11 +10983,9 @@
 
     move-result-object v7
 
-    sget v8, Lcom/android/keyguard/KeyguardUpdateMonitor;->sCurrentUser:I
+    const/16 v8, 0x100
 
-    const/16 v9, 0x100
-
-    invoke-virtual {p0, v9, v8}, Lcom/android/keyguard/KeyguardUpdateMonitor;->isBiometricLockEnabled(II)Z
+    invoke-virtual {p0, v8, v6}, Lcom/android/keyguard/KeyguardUpdateMonitor;->isBiometricLockEnabled(II)Z
 
     move-result v8
 
@@ -11079,9 +11075,7 @@
 
     move-result-object v7
 
-    sget v8, Lcom/android/keyguard/KeyguardUpdateMonitor;->sCurrentUser:I
-
-    invoke-virtual {p0, v8}, Lcom/android/keyguard/KeyguardUpdateMonitor;->getFailedBiometricUnlockAttempts(I)I
+    invoke-virtual {p0, v6}, Lcom/android/keyguard/KeyguardUpdateMonitor;->getFailedBiometricUnlockAttempts(I)I
 
     move-result v8
 
@@ -11130,6 +11124,58 @@
     move-result-object v7
 
     invoke-virtual {p0}, Lcom/android/keyguard/KeyguardUpdateMonitor;->getFingerPrintFailedUnlockAttemptShort()I
+
+    move-result v8
+
+    invoke-virtual {v7, v8}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v7
+
+    invoke-virtual {v7}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v7
+
+    invoke-virtual {p2, v7}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
+
+    new-instance v7, Ljava/lang/StringBuilder;
+
+    invoke-direct {v7}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string/jumbo v8, "    isSecure="
+
+    invoke-virtual {v7, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v7
+
+    iget-object v8, p0, Lcom/android/keyguard/KeyguardUpdateMonitor;->mLockPatternUtils:Lcom/android/internal/widget/LockPatternUtils;
+
+    invoke-virtual {v8, v6}, Lcom/android/internal/widget/LockPatternUtils;->isSecure(I)Z
+
+    move-result v8
+
+    invoke-virtual {v7, v8}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+
+    move-result-object v7
+
+    invoke-virtual {v7}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v7
+
+    invoke-virtual {p2, v7}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
+
+    new-instance v7, Ljava/lang/StringBuilder;
+
+    invoke-direct {v7}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string/jumbo v8, "    getKeyguardStoredPasswordQuality="
+
+    invoke-virtual {v7, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v7
+
+    iget-object v8, p0, Lcom/android/keyguard/KeyguardUpdateMonitor;->mLockPatternUtils:Lcom/android/internal/widget/LockPatternUtils;
+
+    invoke-virtual {v8, v6}, Lcom/android/internal/widget/LockPatternUtils;->getKeyguardStoredPasswordQuality(I)I
 
     move-result v8
 
@@ -13526,6 +13572,67 @@
     return v0
 .end method
 
+.method public isFaceDisabled(I)Z
+    .locals 6
+
+    const/4 v5, 0x0
+
+    const/4 v4, 0x0
+
+    iget-object v3, p0, Lcom/android/keyguard/KeyguardUpdateMonitor;->mDpm:Landroid/app/admin/DevicePolicyManager;
+
+    if-eqz v3, :cond_3
+
+    iget-object v3, p0, Lcom/android/keyguard/KeyguardUpdateMonitor;->mDpm:Landroid/app/admin/DevicePolicyManager;
+
+    invoke-virtual {v3, v5, p1}, Landroid/app/admin/DevicePolicyManager;->getKeyguardDisabledFeatures(Landroid/content/ComponentName;I)I
+
+    move-result v2
+
+    and-int/lit8 v3, v2, 0x20
+
+    if-eqz v3, :cond_0
+
+    const/4 v0, 0x1
+
+    :goto_0
+    and-int/lit8 v3, v2, 0x10
+
+    if-eqz v3, :cond_1
+
+    const/4 v1, 0x1
+
+    :goto_1
+    if-nez v0, :cond_2
+
+    if-nez v1, :cond_2
+
+    invoke-virtual {p0}, Lcom/android/keyguard/KeyguardUpdateMonitor;->isSimPinSecure()Z
+
+    move-result v3
+
+    :goto_2
+    return v3
+
+    :cond_0
+    const/4 v0, 0x0
+
+    goto :goto_0
+
+    :cond_1
+    const/4 v1, 0x0
+
+    goto :goto_1
+
+    :cond_2
+    const/4 v3, 0x1
+
+    goto :goto_2
+
+    :cond_3
+    return v4
+.end method
+
 .method public isFaceOptionEnabled()Z
     .locals 1
 
@@ -13922,6 +14029,7 @@
     :sswitch_data_0
     .sparse-switch
         0x1 -> :sswitch_0
+        0x4 -> :sswitch_0
         0x6 -> :sswitch_0
         0xb -> :sswitch_0
         0xc -> :sswitch_0
@@ -14102,62 +14210,78 @@
     .end packed-switch
 .end method
 
-.method public isShowingFaceRecognitionRetry()Z
+.method public isShowingDream()Z
     .locals 1
 
-    invoke-virtual {p0}, Lcom/android/keyguard/KeyguardUpdateMonitor;->isFaceRecognitionRunning()Z
+    iget-boolean v0, p0, Lcom/android/keyguard/KeyguardUpdateMonitor;->mShowingDream:Z
+
+    return v0
+.end method
+
+.method public isShowingFaceRecognitionRetry()Z
+    .locals 2
+
+    invoke-static {}, Lcom/android/keyguard/KeyguardUpdateMonitor;->getCurrentUser()I
 
     move-result v0
 
-    if-eqz v0, :cond_1
+    invoke-virtual {p0}, Lcom/android/keyguard/KeyguardUpdateMonitor;->isFaceRecognitionRunning()Z
+
+    move-result v1
+
+    if-eqz v1, :cond_1
 
     :cond_0
-    const/4 v0, 0x0
+    const/4 v1, 0x0
 
-    return v0
+    return v1
 
     :cond_1
     invoke-direct {p0}, Lcom/android/keyguard/KeyguardUpdateMonitor;->isTimerRunning()Z
 
-    move-result v0
+    move-result v1
 
-    if-nez v0, :cond_0
+    if-nez v1, :cond_0
 
     invoke-virtual {p0}, Lcom/android/keyguard/KeyguardUpdateMonitor;->getSwipeLockBeforeTimeout()Z
 
-    move-result v0
+    move-result v1
 
-    if-nez v0, :cond_0
-
-    sget v0, Lcom/android/keyguard/KeyguardUpdateMonitor;->sCurrentUser:I
+    if-nez v1, :cond_0
 
     invoke-virtual {p0, v0}, Lcom/android/keyguard/KeyguardUpdateMonitor;->isUnlockWithFacePossible(I)Z
 
-    move-result v0
+    move-result v1
 
-    if-eqz v0, :cond_0
+    if-eqz v1, :cond_0
 
     invoke-virtual {p0}, Lcom/android/keyguard/KeyguardUpdateMonitor;->isUnlockingWithBiometricAllowed()Z
 
-    move-result v0
+    move-result v1
 
-    if-eqz v0, :cond_0
+    if-eqz v1, :cond_0
 
     invoke-virtual {p0}, Lcom/android/keyguard/KeyguardUpdateMonitor;->isCameraDisabledByPolicy()Z
 
-    move-result v0
+    move-result v1
 
-    if-nez v0, :cond_0
+    if-nez v1, :cond_0
+
+    invoke-virtual {p0, v0}, Lcom/android/keyguard/KeyguardUpdateMonitor;->isFaceDisabled(I)Z
+
+    move-result v1
+
+    if-nez v1, :cond_0
 
     invoke-virtual {p0}, Lcom/android/keyguard/KeyguardUpdateMonitor;->isDesktopMode()Z
 
-    move-result v0
+    move-result v1
 
-    if-nez v0, :cond_0
+    if-nez v1, :cond_0
 
-    const/4 v0, 0x1
+    const/4 v1, 0x1
 
-    return v0
+    return v1
 .end method
 
 .method public isSimDisabledPermanently()Z

@@ -86,23 +86,43 @@
 .end method
 
 .method public onPreciseCallStateChanged(Landroid/telephony/PreciseCallState;)V
-    .locals 3
+    .locals 4
 
-    iget-object v0, p0, Lcom/android/systemui/qs/tiles/WifiCallingTile$3;->this$0:Lcom/android/systemui/qs/tiles/WifiCallingTile;
+    const/4 v0, 0x0
 
     iget-object v1, p0, Lcom/android/systemui/qs/tiles/WifiCallingTile$3;->this$0:Lcom/android/systemui/qs/tiles/WifiCallingTile;
 
-    invoke-static {v1}, Lcom/android/systemui/qs/tiles/WifiCallingTile;->-get7(Lcom/android/systemui/qs/tiles/WifiCallingTile;)Landroid/telephony/TelephonyManager;
+    iget-object v2, p0, Lcom/android/systemui/qs/tiles/WifiCallingTile$3;->this$0:Lcom/android/systemui/qs/tiles/WifiCallingTile;
 
-    move-result-object v1
+    invoke-static {v2}, Lcom/android/systemui/qs/tiles/WifiCallingTile;->-get7(Lcom/android/systemui/qs/tiles/WifiCallingTile;)Landroid/telephony/TelephonyManager;
 
-    const-string/jumbo v2, "epdg"
+    move-result-object v2
 
-    invoke-virtual {v1, v2}, Landroid/telephony/TelephonyManager;->hasCall(Ljava/lang/String;)Z
+    const-string/jumbo v3, "epdg"
 
-    move-result v1
+    invoke-virtual {v2, v3}, Landroid/telephony/TelephonyManager;->hasCall(Ljava/lang/String;)Z
 
-    invoke-static {v0, v1}, Lcom/android/systemui/qs/tiles/WifiCallingTile;->-set2(Lcom/android/systemui/qs/tiles/WifiCallingTile;Z)Z
+    move-result v2
+
+    if-eqz v2, :cond_0
+
+    iget-object v2, p0, Lcom/android/systemui/qs/tiles/WifiCallingTile$3;->this$0:Lcom/android/systemui/qs/tiles/WifiCallingTile;
+
+    invoke-static {v2}, Lcom/android/systemui/qs/tiles/WifiCallingTile;->-get7(Lcom/android/systemui/qs/tiles/WifiCallingTile;)Landroid/telephony/TelephonyManager;
+
+    move-result-object v2
+
+    const-string/jumbo v3, "video"
+
+    invoke-virtual {v2, v3}, Landroid/telephony/TelephonyManager;->hasCall(Ljava/lang/String;)Z
+
+    move-result v2
+
+    if-eqz v2, :cond_1
+
+    :cond_0
+    :goto_0
+    invoke-static {v1, v0}, Lcom/android/systemui/qs/tiles/WifiCallingTile;->-set2(Lcom/android/systemui/qs/tiles/WifiCallingTile;Z)Z
 
     iget-object v0, p0, Lcom/android/systemui/qs/tiles/WifiCallingTile$3;->this$0:Lcom/android/systemui/qs/tiles/WifiCallingTile;
 
@@ -141,4 +161,9 @@
     invoke-virtual {v0}, Lcom/android/systemui/qs/tiles/WifiCallingTile;->refreshState()V
 
     return-void
+
+    :cond_1
+    const/4 v0, 0x1
+
+    goto :goto_0
 .end method

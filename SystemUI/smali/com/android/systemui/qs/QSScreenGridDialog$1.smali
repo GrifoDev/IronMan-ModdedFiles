@@ -214,6 +214,22 @@
 
     move-result-object v7
 
+    invoke-static {v4, v5, v6, v7, v8}, Lcom/android/keyguard/util/GsimLogManager;->sendLog(Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Integer;)V
+
+    iget-object v4, p0, Lcom/android/systemui/qs/QSScreenGridDialog$1;->this$0:Lcom/android/systemui/qs/QSScreenGridDialog;
+
+    invoke-static {v4}, Lcom/android/systemui/qs/QSScreenGridDialog;->-get1(Lcom/android/systemui/qs/QSScreenGridDialog;)Landroid/content/Context;
+
+    move-result-object v4
+
+    const-string/jumbo v5, "com.android.systemui.statusbar.policy.quicksetting"
+
+    const-string/jumbo v6, "QS28"
+
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v7
+
     invoke-static {v4, v5, v6, v7, v8}, Lcom/android/keyguard/util/GsimLogManager;->sendStatusLog(Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Integer;)V
 
     :cond_1

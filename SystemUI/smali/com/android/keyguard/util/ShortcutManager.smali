@@ -184,12 +184,6 @@
 
     move-result-object v0
 
-    const/high16 v1, 0x800000
-
-    invoke-virtual {v0, v1}, Landroid/content/Intent;->addFlags(I)Landroid/content/Intent;
-
-    move-result-object v0
-
     sput-object v0, Lcom/android/keyguard/util/ShortcutManager;->SECURE_CAMERA_INTENT:Landroid/content/Intent;
 
     new-instance v0, Landroid/content/Intent;

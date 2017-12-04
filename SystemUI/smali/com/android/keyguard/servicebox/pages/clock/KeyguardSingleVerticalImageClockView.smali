@@ -207,19 +207,19 @@
 .end method
 
 .method private setHour(ZI)V
-    .locals 4
+    .locals 3
 
-    const/4 v3, 0x0
+    const/4 v2, 0x0
 
     if-nez p2, :cond_0
 
     iget-object v1, p0, Lcom/android/keyguard/servicebox/pages/clock/KeyguardSingleVerticalImageClockView;->mHour1th:Landroid/widget/ImageView;
 
-    invoke-direct {p0, v1, v3}, Lcom/android/keyguard/servicebox/pages/clock/KeyguardSingleVerticalImageClockView;->setDIGITSArrayImage(Landroid/widget/ImageView;I)V
+    invoke-direct {p0, v1, v2}, Lcom/android/keyguard/servicebox/pages/clock/KeyguardSingleVerticalImageClockView;->setDIGITSArrayImage(Landroid/widget/ImageView;I)V
 
     iget-object v1, p0, Lcom/android/keyguard/servicebox/pages/clock/KeyguardSingleVerticalImageClockView;->mHour10th:Landroid/widget/ImageView;
 
-    invoke-direct {p0, v1, v3}, Lcom/android/keyguard/servicebox/pages/clock/KeyguardSingleVerticalImageClockView;->setDIGITSArrayImage(Landroid/widget/ImageView;I)V
+    invoke-direct {p0, v1, v2}, Lcom/android/keyguard/servicebox/pages/clock/KeyguardSingleVerticalImageClockView;->setDIGITSArrayImage(Landroid/widget/ImageView;I)V
 
     :goto_0
     return-void
@@ -233,27 +233,9 @@
 
     div-int/lit8 v0, p2, 0xa
 
-    if-nez p1, :cond_1
-
-    if-eqz v0, :cond_2
-
-    :cond_1
     iget-object v1, p0, Lcom/android/keyguard/servicebox/pages/clock/KeyguardSingleVerticalImageClockView;->mHour10th:Landroid/widget/ImageView;
 
     invoke-direct {p0, v1, v0}, Lcom/android/keyguard/servicebox/pages/clock/KeyguardSingleVerticalImageClockView;->setDIGITSArrayImage(Landroid/widget/ImageView;I)V
-
-    iget-object v1, p0, Lcom/android/keyguard/servicebox/pages/clock/KeyguardSingleVerticalImageClockView;->mHour10th:Landroid/widget/ImageView;
-
-    invoke-virtual {v1, v3}, Landroid/widget/ImageView;->setVisibility(I)V
-
-    goto :goto_0
-
-    :cond_2
-    iget-object v1, p0, Lcom/android/keyguard/servicebox/pages/clock/KeyguardSingleVerticalImageClockView;->mHour10th:Landroid/widget/ImageView;
-
-    const/16 v2, 0x8
-
-    invoke-virtual {v1, v2}, Landroid/widget/ImageView;->setVisibility(I)V
 
     goto :goto_0
 .end method

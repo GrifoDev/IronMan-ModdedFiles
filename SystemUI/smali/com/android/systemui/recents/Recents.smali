@@ -908,7 +908,7 @@
 
     new-instance v3, Lcom/android/systemui/recents/events/component/ShowUserToastEvent;
 
-    const v4, 0x7f0f054a
+    const v4, 0x7f0f054b
 
     const/4 v5, 0x0
 

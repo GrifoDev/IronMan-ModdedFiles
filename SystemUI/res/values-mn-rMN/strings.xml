@@ -238,6 +238,8 @@
     <string name="wifi_allow_scan_with_traffic_summary">Интерфэйс дээрх дата трафикын хэмжээнээс хамааран Wi‑Fi Роум Скан-г зөвшөөрөх/үл зөвшөөрөх</string>
     <string name="select_logd_size_title">Логгерын буферын хэмжээ</string>
     <string name="select_logd_size_dialog_title">Лог буфер бүрт ногдох логгерын хэмжээг сонгоно уу</string>
+    <string name="dev_logpersist_clear_warning_title">Байнгын логгер санах ойг арилгах уу?</string>
+    <string name="dev_logpersist_clear_warning_message">Байнгын логгер унтарсан үед логгер өгөгдөл усгагдах болно.</string>
     <string name="select_logpersist_title">Бүртгэл.н өгөгдөл байнга хадгал</string>
     <string name="select_logpersist_dialog_title">Байнга хадгалах бүртгэлийн буферийг сонго</string>
     <string name="select_usb_configuration_title">USB Тохируулга сонгох</string>
@@ -752,6 +754,7 @@ For example, your ringtone will not sound, you will not be able to answer phone 
     <string name="wifi_authentication_failed_kt">Wi-Fi AP-г баталгаажуулж чадсангүй.</string>
     <string name="wifi_authentication_no_response">Wi-Fi AP-д холбогдож чадсангүй.</string>
     <string name="wifi_authentication_invalid_value">Баталгаажуулалт амжилтгүй. Нэр болон нууц үгийг шалга.</string>
+    <string name="wifi_disconnected">Wi-Fi салгасан</string>
     <string name="quick_settings_dnd_label">Бүү саад бол</string>
     <string name="quick_settings_dnd_priority_label">Зөвхөн чухал зүйлс</string>
     <string name="quick_settings_dnd_alarms_label">Зөвхөн сэрүүлэг</string>
@@ -1382,11 +1385,11 @@ Wi-Fi болон Bluetooth мөн унтрах боловч тэднийг То�
     <string name="keyboard_key_numpad_template">Тоо бичих товчлуур %1$s</string>
     <string name="keyboard_popup_help">Мета түлхүүр: Windows, Command, эсвэл бусад үйлдлийн системийн бэлэг тэмдэг товч.</string>
     <string name="keyboard_shortcut_group_system">Системийн холбоос</string>
-    <string name="keyboard_shortcut_group_system_home">Нүүр хуудас</string>
-    <string name="keyboard_shortcut_group_system_recents">Саяхны</string>
+    <string name="keyboard_shortcut_group_system_home">Гэр</string>
+    <string name="keyboard_shortcut_group_system_recents">Сүүлийн</string>
     <string name="keyboard_shortcut_group_system_back">Буцах</string>
-    <string name="keyboard_shortcut_group_system_notifications">Мэдэгдэл</string>
-    <string name="keyboard_shortcut_group_system_shortcuts_helper">Гарын товчлол</string>
+    <string name="keyboard_shortcut_group_system_notifications">Мэдэгдлүүд</string>
+    <string name="keyboard_shortcut_group_system_shortcuts_helper">Гарын холболт</string>
     <string name="keyboard_shortcut_group_system_switch_input">Оролтын аргыг солих</string>
     <string name="keyboard_shortcut_group_system_all_apps">Бүх хэрэглүүр</string>
     <string name="keyboard_shortcut_group_system_running_apps">Ажиллаж буй хэрэглүүр</string>
@@ -1394,13 +1397,13 @@ Wi-Fi болон Bluetooth мөн унтрах боловч тэднийг То�
     <string name="keyboard_shortcut_group_system_switch_languages">Хэл солих</string>
     <string name="keyboard_shortcut_group_applications">Хэрэг. доторх холбоосууд</string>
     <string name="keyboard_shortcut_group_applications_assist">Дэмжлэг</string>
-    <string name="keyboard_shortcut_group_applications_browser">Хөтөч</string>
+    <string name="keyboard_shortcut_group_applications_browser">Вэб хөтөч</string>
     <string name="keyboard_shortcut_group_applications_contacts">Харилцагчид</string>
     <string name="keyboard_shortcut_group_applications_email">Имэйл</string>
     <string name="keyboard_shortcut_group_applications_im">IM</string>
     <string name="keyboard_shortcut_group_applications_music">Дуу хөгжим</string>
     <string name="keyboard_shortcut_group_applications_youtube">YouTube</string>
-    <string name="keyboard_shortcut_group_applications_calendar">Хуанли</string>
+    <string name="keyboard_shortcut_group_applications_calendar">Цаглабар</string>
     <string name="keyboard_shortcut_group_applications_bixby">Bixby</string>
     <string name="keyboard_shortcut_group_applications_messages">Зурвасууд</string>
     <string name="tuner_full_zen_title">Түвшний хяналттай харуулах</string>
@@ -1652,7 +1655,9 @@ Using your tablet in a very hot location."</string>
     <string name="battery_not_fully_connected_charging_title_vzw">Incomplete connection</string>
     <string name="battery_not_fully_connected_charging_text">Хурдан цэнэглэхийн тулд төхөөрөмжид дагалдаж ирсэн цэнэглэгчийг зохих зааврын дагуу залгана уу.</string>
     <string name="battery_not_fully_connected_charging_text_vzw">Make sure the charger is properly connected.</string>
+    <string name="battery_not_fully_connected_charging_text_jpn">Цэнэглэгчийг зөв залгасан эсэхийг шалгана уу.</string>
     <string name="battery_not_fully_connected_charging_popup_text">Цэнэглэгчийг зөв залгана уу. Төхөөрөмжид дагалдаж ирсэн цэнэглэгчийг залгана уу.</string>
+    <string name="battery_not_fully_connected_charging_popup_text_jpn">Цэнэглэгчийг зөв залгана уу.</string>
     <string name="battery_charging_level_and_time_text">"Цэнэглэлт: %1$d%%
 (Ойролцоогоор %2$s хүртэл бүрэн цэнэглэгдэнэ)"</string>
     <string name="battery_charging_level_text">Цэнэглэж байна: %d%%</string>
@@ -1877,6 +1882,8 @@ Please note that in order to enable your emergency calls (e.g., such as 112 call
     <string name="qs_detail_palm_capture_title">Зураг авахад алгаар шудар</string>
     <string name="noti_direct_reply_exceed_text_limit_toast">Нэмж бичвэр оруулах боломжгүй.</string>
     <string name="airplane_mode_tts_text">Нислэгийн горим</string>
+    <string name="all_noti_readout">Нэг мэдэгдэл</string>
+    <string name="all_noti_readout2">%d мэдэгдлүүд</string>
     <string name="car_lockscreen_disclaimer_title">Жолооны аюулгүй байдал</string>
     <string name="car_lockscreen_disclaimer_text">Жолоодох нөхцөлийн талаар бүрэн ойлгож, холбогдох дүрэм журмыг мөрдөөрэй. Чиглэл нь тодорхой бус, гүйцэт бус, аюултай, тохиромжгүй, хориглосон эсвэл тусгай хамгаалалттай газар нутагт нэвтэрсэн байж болзошгүй. Бизнесийн мэдээлэл мөн адил тохиромжгүй эсвэл гүйцэт бус байна. Өгөгдөл нь тухайн цаг хугацааных биш учир байршлыг зөв тодорхойлсон эсэхийг батлах боломжгүй. Жолоодож байхдаа гар утсаа болон Android Автод зориулаагүй апп-г бүү ашиглаарай.</string>
     <string name="pip_close">PIP-г хаах</string>

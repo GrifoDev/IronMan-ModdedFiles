@@ -77,7 +77,7 @@
 
     iget-object v0, p0, Lcom/android/systemui/qs/tiles/VoLteTile$VoLteDetailAdapter;->mSummary:Landroid/widget/TextView;
 
-    const v1, 0x7f0f052b
+    const v1, 0x7f0f052c
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(I)V
 
@@ -208,7 +208,7 @@
 
     move-result-object v0
 
-    const v2, 0x7f0f04c2
+    const v2, 0x7f0f04c3
 
     invoke-static {v0, v2, v1}, Landroid/widget/Toast;->makeText(Landroid/content/Context;II)Landroid/widget/Toast;
 
@@ -233,7 +233,7 @@
 
     move-result-object v2
 
-    const v3, 0x7f0f04c4
+    const v3, 0x7f0f04c5
 
     invoke-static {v2, v3, v1}, Landroid/widget/Toast;->makeText(Landroid/content/Context;II)Landroid/widget/Toast;
 
@@ -313,7 +313,7 @@
 
     move-result-object v0
 
-    const v2, 0x7f0f04c3
+    const v2, 0x7f0f04c4
 
     invoke-static {v0, v2, v1}, Landroid/widget/Toast;->makeText(Landroid/content/Context;II)Landroid/widget/Toast;
 
@@ -348,7 +348,7 @@
 
     move-result-object v0
 
-    const v2, 0x7f0f04c5
+    const v2, 0x7f0f04c6
 
     invoke-static {v0, v2, v1}, Landroid/widget/Toast;->makeText(Landroid/content/Context;II)Landroid/widget/Toast;
 
@@ -381,7 +381,7 @@
 
     move-result-object v0
 
-    const v2, 0x7f0f04c6
+    const v2, 0x7f0f04c7
 
     invoke-static {v0, v2, v1}, Landroid/widget/Toast;->makeText(Landroid/content/Context;II)Landroid/widget/Toast;
 

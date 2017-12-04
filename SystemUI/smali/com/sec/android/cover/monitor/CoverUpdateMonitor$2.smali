@@ -48,7 +48,7 @@
     :pswitch_0
     iget-object v0, p0, Lcom/sec/android/cover/monitor/CoverUpdateMonitor$2;->this$0:Lcom/sec/android/cover/monitor/CoverUpdateMonitor;
 
-    invoke-static {v0}, Lcom/sec/android/cover/monitor/CoverUpdateMonitor;->-wrap33(Lcom/sec/android/cover/monitor/CoverUpdateMonitor;)V
+    invoke-static {v0}, Lcom/sec/android/cover/monitor/CoverUpdateMonitor;->-wrap34(Lcom/sec/android/cover/monitor/CoverUpdateMonitor;)V
 
     goto :goto_0
 
@@ -66,14 +66,14 @@
     :pswitch_2
     iget-object v0, p0, Lcom/sec/android/cover/monitor/CoverUpdateMonitor$2;->this$0:Lcom/sec/android/cover/monitor/CoverUpdateMonitor;
 
-    invoke-static {v0}, Lcom/sec/android/cover/monitor/CoverUpdateMonitor;->-wrap26(Lcom/sec/android/cover/monitor/CoverUpdateMonitor;)V
+    invoke-static {v0}, Lcom/sec/android/cover/monitor/CoverUpdateMonitor;->-wrap27(Lcom/sec/android/cover/monitor/CoverUpdateMonitor;)V
 
     goto :goto_0
 
     :pswitch_3
     iget-object v0, p0, Lcom/sec/android/cover/monitor/CoverUpdateMonitor$2;->this$0:Lcom/sec/android/cover/monitor/CoverUpdateMonitor;
 
-    invoke-static {v0}, Lcom/sec/android/cover/monitor/CoverUpdateMonitor;->-wrap27(Lcom/sec/android/cover/monitor/CoverUpdateMonitor;)V
+    invoke-static {v0}, Lcom/sec/android/cover/monitor/CoverUpdateMonitor;->-wrap28(Lcom/sec/android/cover/monitor/CoverUpdateMonitor;)V
 
     goto :goto_0
 
@@ -95,21 +95,21 @@
 
     move-result v0
 
-    invoke-static {v1, v0}, Lcom/sec/android/cover/monitor/CoverUpdateMonitor;->-wrap23(Lcom/sec/android/cover/monitor/CoverUpdateMonitor;Z)V
+    invoke-static {v1, v0}, Lcom/sec/android/cover/monitor/CoverUpdateMonitor;->-wrap24(Lcom/sec/android/cover/monitor/CoverUpdateMonitor;Z)V
 
     goto :goto_0
 
     :pswitch_6
     iget-object v0, p0, Lcom/sec/android/cover/monitor/CoverUpdateMonitor$2;->this$0:Lcom/sec/android/cover/monitor/CoverUpdateMonitor;
 
-    invoke-static {v0}, Lcom/sec/android/cover/monitor/CoverUpdateMonitor;->-wrap16(Lcom/sec/android/cover/monitor/CoverUpdateMonitor;)V
+    invoke-static {v0}, Lcom/sec/android/cover/monitor/CoverUpdateMonitor;->-wrap17(Lcom/sec/android/cover/monitor/CoverUpdateMonitor;)V
 
     goto :goto_0
 
     :pswitch_7
     iget-object v0, p0, Lcom/sec/android/cover/monitor/CoverUpdateMonitor$2;->this$0:Lcom/sec/android/cover/monitor/CoverUpdateMonitor;
 
-    invoke-static {v0}, Lcom/sec/android/cover/monitor/CoverUpdateMonitor;->-wrap4(Lcom/sec/android/cover/monitor/CoverUpdateMonitor;)V
+    invoke-static {v0}, Lcom/sec/android/cover/monitor/CoverUpdateMonitor;->-wrap5(Lcom/sec/android/cover/monitor/CoverUpdateMonitor;)V
 
     goto :goto_0
 
@@ -120,7 +120,7 @@
 
     check-cast v0, Lcom/sec/android/cover/monitor/CoverUpdateMonitor$RemoteViewInfo;
 
-    invoke-static {v1, v0}, Lcom/sec/android/cover/monitor/CoverUpdateMonitor;->-wrap25(Lcom/sec/android/cover/monitor/CoverUpdateMonitor;Lcom/sec/android/cover/monitor/CoverUpdateMonitor$RemoteViewInfo;)V
+    invoke-static {v1, v0}, Lcom/sec/android/cover/monitor/CoverUpdateMonitor;->-wrap26(Lcom/sec/android/cover/monitor/CoverUpdateMonitor;Lcom/sec/android/cover/monitor/CoverUpdateMonitor$RemoteViewInfo;)V
 
     goto :goto_0
 
@@ -131,14 +131,14 @@
 
     check-cast v0, Ljava/lang/String;
 
-    invoke-static {v1, v0}, Lcom/sec/android/cover/monitor/CoverUpdateMonitor;->-wrap10(Lcom/sec/android/cover/monitor/CoverUpdateMonitor;Ljava/lang/String;)V
+    invoke-static {v1, v0}, Lcom/sec/android/cover/monitor/CoverUpdateMonitor;->-wrap11(Lcom/sec/android/cover/monitor/CoverUpdateMonitor;Ljava/lang/String;)V
 
     goto :goto_0
 
     :pswitch_a
     iget-object v0, p0, Lcom/sec/android/cover/monitor/CoverUpdateMonitor$2;->this$0:Lcom/sec/android/cover/monitor/CoverUpdateMonitor;
 
-    invoke-static {v0}, Lcom/sec/android/cover/monitor/CoverUpdateMonitor;->-wrap24(Lcom/sec/android/cover/monitor/CoverUpdateMonitor;)V
+    invoke-static {v0}, Lcom/sec/android/cover/monitor/CoverUpdateMonitor;->-wrap25(Lcom/sec/android/cover/monitor/CoverUpdateMonitor;)V
 
     goto :goto_0
 
@@ -153,28 +153,28 @@
 
     move-result v0
 
-    invoke-static {v1, v0}, Lcom/sec/android/cover/monitor/CoverUpdateMonitor;->-wrap15(Lcom/sec/android/cover/monitor/CoverUpdateMonitor;Z)V
+    invoke-static {v1, v0}, Lcom/sec/android/cover/monitor/CoverUpdateMonitor;->-wrap16(Lcom/sec/android/cover/monitor/CoverUpdateMonitor;Z)V
 
     goto :goto_0
 
     :pswitch_c
     iget-object v0, p0, Lcom/sec/android/cover/monitor/CoverUpdateMonitor$2;->this$0:Lcom/sec/android/cover/monitor/CoverUpdateMonitor;
 
-    invoke-static {v0}, Lcom/sec/android/cover/monitor/CoverUpdateMonitor;->-wrap3(Lcom/sec/android/cover/monitor/CoverUpdateMonitor;)V
+    invoke-static {v0}, Lcom/sec/android/cover/monitor/CoverUpdateMonitor;->-wrap4(Lcom/sec/android/cover/monitor/CoverUpdateMonitor;)V
 
     goto :goto_0
 
     :pswitch_d
     iget-object v0, p0, Lcom/sec/android/cover/monitor/CoverUpdateMonitor$2;->this$0:Lcom/sec/android/cover/monitor/CoverUpdateMonitor;
 
-    invoke-static {v0}, Lcom/sec/android/cover/monitor/CoverUpdateMonitor;->-wrap13(Lcom/sec/android/cover/monitor/CoverUpdateMonitor;)V
+    invoke-static {v0}, Lcom/sec/android/cover/monitor/CoverUpdateMonitor;->-wrap14(Lcom/sec/android/cover/monitor/CoverUpdateMonitor;)V
 
     goto :goto_0
 
     :pswitch_e
     iget-object v0, p0, Lcom/sec/android/cover/monitor/CoverUpdateMonitor$2;->this$0:Lcom/sec/android/cover/monitor/CoverUpdateMonitor;
 
-    invoke-static {v0}, Lcom/sec/android/cover/monitor/CoverUpdateMonitor;->-wrap12(Lcom/sec/android/cover/monitor/CoverUpdateMonitor;)V
+    invoke-static {v0}, Lcom/sec/android/cover/monitor/CoverUpdateMonitor;->-wrap13(Lcom/sec/android/cover/monitor/CoverUpdateMonitor;)V
 
     goto :goto_0
 
@@ -185,7 +185,7 @@
 
     iget v2, p1, Landroid/os/Message;->arg2:I
 
-    invoke-static {v0, v1, v2}, Lcom/sec/android/cover/monitor/CoverUpdateMonitor;->-wrap35(Lcom/sec/android/cover/monitor/CoverUpdateMonitor;II)V
+    invoke-static {v0, v1, v2}, Lcom/sec/android/cover/monitor/CoverUpdateMonitor;->-wrap36(Lcom/sec/android/cover/monitor/CoverUpdateMonitor;II)V
 
     goto :goto_0
 
@@ -196,7 +196,7 @@
 
     iget v2, p1, Landroid/os/Message;->arg2:I
 
-    invoke-static {v0, v1, v2}, Lcom/sec/android/cover/monitor/CoverUpdateMonitor;->-wrap34(Lcom/sec/android/cover/monitor/CoverUpdateMonitor;II)V
+    invoke-static {v0, v1, v2}, Lcom/sec/android/cover/monitor/CoverUpdateMonitor;->-wrap35(Lcom/sec/android/cover/monitor/CoverUpdateMonitor;II)V
 
     goto/16 :goto_0
 
@@ -207,14 +207,14 @@
 
     check-cast v0, Lcom/samsung/android/cover/CoverState;
 
-    invoke-static {v1, v0}, Lcom/sec/android/cover/monitor/CoverUpdateMonitor;->-wrap8(Lcom/sec/android/cover/monitor/CoverUpdateMonitor;Lcom/samsung/android/cover/CoverState;)V
+    invoke-static {v1, v0}, Lcom/sec/android/cover/monitor/CoverUpdateMonitor;->-wrap9(Lcom/sec/android/cover/monitor/CoverUpdateMonitor;Lcom/samsung/android/cover/CoverState;)V
 
     goto/16 :goto_0
 
     :pswitch_12
     iget-object v0, p0, Lcom/sec/android/cover/monitor/CoverUpdateMonitor$2;->this$0:Lcom/sec/android/cover/monitor/CoverUpdateMonitor;
 
-    invoke-static {v0}, Lcom/sec/android/cover/monitor/CoverUpdateMonitor;->-wrap11(Lcom/sec/android/cover/monitor/CoverUpdateMonitor;)V
+    invoke-static {v0}, Lcom/sec/android/cover/monitor/CoverUpdateMonitor;->-wrap12(Lcom/sec/android/cover/monitor/CoverUpdateMonitor;)V
 
     goto/16 :goto_0
 
@@ -225,14 +225,14 @@
 
     check-cast v0, Landroid/net/Uri;
 
-    invoke-static {v1, v0}, Lcom/sec/android/cover/monitor/CoverUpdateMonitor;->-wrap5(Lcom/sec/android/cover/monitor/CoverUpdateMonitor;Landroid/net/Uri;)V
+    invoke-static {v1, v0}, Lcom/sec/android/cover/monitor/CoverUpdateMonitor;->-wrap6(Lcom/sec/android/cover/monitor/CoverUpdateMonitor;Landroid/net/Uri;)V
 
     goto/16 :goto_0
 
     :pswitch_14
     iget-object v0, p0, Lcom/sec/android/cover/monitor/CoverUpdateMonitor$2;->this$0:Lcom/sec/android/cover/monitor/CoverUpdateMonitor;
 
-    invoke-static {v0}, Lcom/sec/android/cover/monitor/CoverUpdateMonitor;->-wrap9(Lcom/sec/android/cover/monitor/CoverUpdateMonitor;)V
+    invoke-static {v0}, Lcom/sec/android/cover/monitor/CoverUpdateMonitor;->-wrap10(Lcom/sec/android/cover/monitor/CoverUpdateMonitor;)V
 
     goto/16 :goto_0
 
@@ -243,21 +243,21 @@
 
     check-cast v0, Ljava/lang/String;
 
-    invoke-static {v1, v0}, Lcom/sec/android/cover/monitor/CoverUpdateMonitor;->-wrap22(Lcom/sec/android/cover/monitor/CoverUpdateMonitor;Ljava/lang/String;)V
+    invoke-static {v1, v0}, Lcom/sec/android/cover/monitor/CoverUpdateMonitor;->-wrap23(Lcom/sec/android/cover/monitor/CoverUpdateMonitor;Ljava/lang/String;)V
 
     goto/16 :goto_0
 
     :pswitch_16
     iget-object v0, p0, Lcom/sec/android/cover/monitor/CoverUpdateMonitor$2;->this$0:Lcom/sec/android/cover/monitor/CoverUpdateMonitor;
 
-    invoke-static {v0}, Lcom/sec/android/cover/monitor/CoverUpdateMonitor;->-wrap21(Lcom/sec/android/cover/monitor/CoverUpdateMonitor;)V
+    invoke-static {v0}, Lcom/sec/android/cover/monitor/CoverUpdateMonitor;->-wrap22(Lcom/sec/android/cover/monitor/CoverUpdateMonitor;)V
 
     goto/16 :goto_0
 
     :pswitch_17
     iget-object v0, p0, Lcom/sec/android/cover/monitor/CoverUpdateMonitor$2;->this$0:Lcom/sec/android/cover/monitor/CoverUpdateMonitor;
 
-    invoke-static {v0}, Lcom/sec/android/cover/monitor/CoverUpdateMonitor;->-wrap14(Lcom/sec/android/cover/monitor/CoverUpdateMonitor;)V
+    invoke-static {v0}, Lcom/sec/android/cover/monitor/CoverUpdateMonitor;->-wrap15(Lcom/sec/android/cover/monitor/CoverUpdateMonitor;)V
 
     goto/16 :goto_0
 
@@ -268,7 +268,7 @@
 
     check-cast v0, Ljava/lang/String;
 
-    invoke-static {v1, v0}, Lcom/sec/android/cover/monitor/CoverUpdateMonitor;->-wrap18(Lcom/sec/android/cover/monitor/CoverUpdateMonitor;Ljava/lang/String;)V
+    invoke-static {v1, v0}, Lcom/sec/android/cover/monitor/CoverUpdateMonitor;->-wrap19(Lcom/sec/android/cover/monitor/CoverUpdateMonitor;Ljava/lang/String;)V
 
     goto/16 :goto_0
 
@@ -279,7 +279,7 @@
 
     check-cast v0, Ljava/lang/String;
 
-    invoke-static {v1, v0}, Lcom/sec/android/cover/monitor/CoverUpdateMonitor;->-wrap19(Lcom/sec/android/cover/monitor/CoverUpdateMonitor;Ljava/lang/String;)V
+    invoke-static {v1, v0}, Lcom/sec/android/cover/monitor/CoverUpdateMonitor;->-wrap20(Lcom/sec/android/cover/monitor/CoverUpdateMonitor;Ljava/lang/String;)V
 
     goto/16 :goto_0
 
@@ -290,7 +290,7 @@
 
     check-cast v0, Ljava/lang/String;
 
-    invoke-static {v1, v0}, Lcom/sec/android/cover/monitor/CoverUpdateMonitor;->-wrap20(Lcom/sec/android/cover/monitor/CoverUpdateMonitor;Ljava/lang/String;)V
+    invoke-static {v1, v0}, Lcom/sec/android/cover/monitor/CoverUpdateMonitor;->-wrap21(Lcom/sec/android/cover/monitor/CoverUpdateMonitor;Ljava/lang/String;)V
 
     goto/16 :goto_0
 
@@ -301,7 +301,7 @@
 
     check-cast v0, Ljava/lang/String;
 
-    invoke-static {v1, v0}, Lcom/sec/android/cover/monitor/CoverUpdateMonitor;->-wrap32(Lcom/sec/android/cover/monitor/CoverUpdateMonitor;Ljava/lang/String;)V
+    invoke-static {v1, v0}, Lcom/sec/android/cover/monitor/CoverUpdateMonitor;->-wrap33(Lcom/sec/android/cover/monitor/CoverUpdateMonitor;Ljava/lang/String;)V
 
     goto/16 :goto_0
 
@@ -310,7 +310,7 @@
 
     iget v1, p1, Landroid/os/Message;->arg1:I
 
-    invoke-static {v0, v1}, Lcom/sec/android/cover/monitor/CoverUpdateMonitor;->-wrap7(Lcom/sec/android/cover/monitor/CoverUpdateMonitor;I)V
+    invoke-static {v0, v1}, Lcom/sec/android/cover/monitor/CoverUpdateMonitor;->-wrap8(Lcom/sec/android/cover/monitor/CoverUpdateMonitor;I)V
 
     goto/16 :goto_0
 
@@ -321,7 +321,7 @@
 
     check-cast v0, Ljava/lang/String;
 
-    invoke-static {v1, v0}, Lcom/sec/android/cover/monitor/CoverUpdateMonitor;->-wrap17(Lcom/sec/android/cover/monitor/CoverUpdateMonitor;Ljava/lang/String;)V
+    invoke-static {v1, v0}, Lcom/sec/android/cover/monitor/CoverUpdateMonitor;->-wrap18(Lcom/sec/android/cover/monitor/CoverUpdateMonitor;Ljava/lang/String;)V
 
     goto/16 :goto_0
 
@@ -333,7 +333,7 @@
     if-ne v3, v0, :cond_0
 
     :goto_1
-    invoke-static {v2, v0}, Lcom/sec/android/cover/monitor/CoverUpdateMonitor;->-wrap6(Lcom/sec/android/cover/monitor/CoverUpdateMonitor;Z)V
+    invoke-static {v2, v0}, Lcom/sec/android/cover/monitor/CoverUpdateMonitor;->-wrap7(Lcom/sec/android/cover/monitor/CoverUpdateMonitor;Z)V
 
     goto/16 :goto_0
 
@@ -345,7 +345,7 @@
     :pswitch_1f
     iget-object v0, p0, Lcom/sec/android/cover/monitor/CoverUpdateMonitor$2;->this$0:Lcom/sec/android/cover/monitor/CoverUpdateMonitor;
 
-    invoke-static {v0}, Lcom/sec/android/cover/monitor/CoverUpdateMonitor;->-wrap30(Lcom/sec/android/cover/monitor/CoverUpdateMonitor;)V
+    invoke-static {v0}, Lcom/sec/android/cover/monitor/CoverUpdateMonitor;->-wrap31(Lcom/sec/android/cover/monitor/CoverUpdateMonitor;)V
 
     goto/16 :goto_0
 
@@ -356,7 +356,7 @@
 
     check-cast v0, Landroid/content/Intent;
 
-    invoke-static {v1, v0}, Lcom/sec/android/cover/monitor/CoverUpdateMonitor;->-wrap28(Lcom/sec/android/cover/monitor/CoverUpdateMonitor;Landroid/content/Intent;)V
+    invoke-static {v1, v0}, Lcom/sec/android/cover/monitor/CoverUpdateMonitor;->-wrap29(Lcom/sec/android/cover/monitor/CoverUpdateMonitor;Landroid/content/Intent;)V
 
     goto/16 :goto_0
 
@@ -368,7 +368,7 @@
     if-ne v3, v0, :cond_1
 
     :goto_2
-    invoke-static {v2, v0}, Lcom/sec/android/cover/monitor/CoverUpdateMonitor;->-wrap31(Lcom/sec/android/cover/monitor/CoverUpdateMonitor;Z)V
+    invoke-static {v2, v0}, Lcom/sec/android/cover/monitor/CoverUpdateMonitor;->-wrap32(Lcom/sec/android/cover/monitor/CoverUpdateMonitor;Z)V
 
     goto/16 :goto_0
 
@@ -391,9 +391,26 @@
 
     check-cast v0, Landroid/app/PendingIntent;
 
-    invoke-static {v1, v0}, Lcom/sec/android/cover/monitor/CoverUpdateMonitor;->-wrap29(Lcom/sec/android/cover/monitor/CoverUpdateMonitor;Landroid/app/PendingIntent;)V
+    invoke-static {v1, v0}, Lcom/sec/android/cover/monitor/CoverUpdateMonitor;->-wrap30(Lcom/sec/android/cover/monitor/CoverUpdateMonitor;Landroid/app/PendingIntent;)V
 
     goto/16 :goto_0
+
+    :pswitch_24
+    iget-object v1, p0, Lcom/sec/android/cover/monitor/CoverUpdateMonitor$2;->this$0:Lcom/sec/android/cover/monitor/CoverUpdateMonitor;
+
+    iget-object v0, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
+
+    check-cast v0, Ljava/lang/Boolean;
+
+    invoke-virtual {v0}, Ljava/lang/Boolean;->booleanValue()Z
+
+    move-result v0
+
+    invoke-static {v1, v0}, Lcom/sec/android/cover/monitor/CoverUpdateMonitor;->-wrap3(Lcom/sec/android/cover/monitor/CoverUpdateMonitor;Z)V
+
+    goto/16 :goto_0
+
+    nop
 
     :pswitch_data_0
     .packed-switch 0x12d
@@ -433,5 +450,6 @@
         :pswitch_21
         :pswitch_22
         :pswitch_23
+        :pswitch_24
     .end packed-switch
 .end method

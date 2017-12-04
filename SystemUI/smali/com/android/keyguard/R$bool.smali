@@ -4,7 +4,7 @@
 
 
 # static fields
-.field public static final config_disableMenuKeyInLockScreen:I = 0x7f120035
+.field public static final config_disableMenuKeyInLockScreen:I = 0x7f120036
 
 .field public static final config_enableLockScreenRotation:I = 0x7f120027
 
@@ -12,7 +12,9 @@
 
 .field public static final theme_use_clock_background_image:I = 0x7f12002c
 
-.field public static final theme_use_image_clock:I = 0x7f120037
+.field public static final theme_use_clock_shadow:I = 0x7f120034
+
+.field public static final theme_use_image_clock:I = 0x7f120038
 
 .field public static final theme_use_image_pinlock:I = 0x7f12002d
 

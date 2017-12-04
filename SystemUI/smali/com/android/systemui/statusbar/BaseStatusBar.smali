@@ -277,6 +277,8 @@
 
 .field protected mRiv:Lcom/android/systemui/statusbar/policy/RemoteInputView;
 
+.field protected mScreenTurnedOff:Z
+
 .field protected mServiceBoxMusicNotificationKey:Ljava/lang/String;
 
 .field private mServiceBoxMusicNotificationPkg:Ljava/lang/String;
@@ -1375,7 +1377,7 @@
 
     invoke-virtual {v0, v8}, Landroid/widget/TextView;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    const v8, 0x7f0f07dc
+    const v8, 0x7f0f07df
 
     move-object/from16 v0, v24
 
@@ -1421,7 +1423,7 @@
 
     if-eqz v16, :cond_6
 
-    const v8, 0x7f0f07db
+    const v8, 0x7f0f07de
 
     move-object/from16 v0, v16
 
@@ -1479,7 +1481,7 @@
 
     move-result-object v8
 
-    const v9, 0x7f0d04a3
+    const v9, 0x7f0d04a5
 
     invoke-virtual {v8, v9}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -1493,7 +1495,7 @@
 
     move-result-object v8
 
-    const v9, 0x7f0d04a4
+    const v9, 0x7f0d04a6
 
     invoke-virtual {v8, v9}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -1539,7 +1541,7 @@
 
     move-result-object v8
 
-    const v9, 0x7f0d04a3
+    const v9, 0x7f0d04a5
 
     invoke-virtual {v8, v9}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -1553,7 +1555,7 @@
 
     move-result-object v8
 
-    const v9, 0x7f0d04a4
+    const v9, 0x7f0d04a6
 
     invoke-virtual {v8, v9}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -3080,7 +3082,7 @@
 .method private updateSanitizedTextForKnox(Lcom/android/systemui/statusbar/NotificationData$Entry;Landroid/view/View;)V
     .locals 8
 
-    const v7, 0x7f0f0590
+    const v7, 0x7f0f0591
 
     const/4 v5, 0x1
 
@@ -5554,9 +5556,48 @@
     goto/16 :goto_3
 
     :cond_1c
+    move-object/from16 v0, p0
+
+    iget-boolean v5, v0, Lcom/android/systemui/statusbar/BaseStatusBar;->mScreenTurnedOff:Z
+
+    if-nez v5, :cond_15
+
     invoke-virtual/range {p0 .. p0}, Lcom/android/systemui/statusbar/BaseStatusBar;->isNotificationIconsOnlyOn()Z
 
     move-result v5
+
+    if-eqz v5, :cond_15
+
+    move-object/from16 v0, p0
+
+    iget-object v5, v0, Lcom/android/systemui/statusbar/BaseStatusBar;->mNotificationData:Lcom/android/systemui/statusbar/NotificationData;
+
+    move-object/from16 v0, p1
+
+    invoke-virtual {v5, v0}, Lcom/android/systemui/statusbar/NotificationData;->isAppGroupSummary(Lcom/android/systemui/statusbar/NotificationData$Entry;)Z
+
+    move-result v5
+
+    if-nez v5, :cond_15
+
+    move-object/from16 v0, p0
+
+    iget-object v5, v0, Lcom/android/systemui/statusbar/BaseStatusBar;->mNotificationData:Lcom/android/systemui/statusbar/NotificationData;
+
+    move-object/from16 v0, p1
+
+    invoke-virtual {v5, v0}, Lcom/android/systemui/statusbar/NotificationData;->isChildInAppGroupSummary(Lcom/android/systemui/statusbar/NotificationData$Entry;)Z
+
+    move-result v5
+
+    if-eqz v5, :cond_1d
+
+    const/4 v5, 0x0
+
+    goto/16 :goto_4
+
+    :cond_1d
+    const/4 v5, 0x1
 
     goto/16 :goto_4
 
@@ -5585,6 +5626,64 @@
 
     iget-boolean v0, p0, Lcom/android/systemui/statusbar/BaseStatusBar;->mBouncerShowing:Z
 
+    return v0
+.end method
+
+.method public isCameraAllowedByAdmin()Z
+    .locals 5
+
+    const/4 v4, 0x0
+
+    const/4 v0, 0x1
+
+    const/4 v1, 0x0
+
+    iget-object v2, p0, Lcom/android/systemui/statusbar/BaseStatusBar;->mDevicePolicyManager:Landroid/app/admin/DevicePolicyManager;
+
+    iget v3, p0, Lcom/android/systemui/statusbar/BaseStatusBar;->mCurrentUserId:I
+
+    invoke-virtual {v2, v4, v3}, Landroid/app/admin/DevicePolicyManager;->getCameraDisabled(Landroid/content/ComponentName;I)Z
+
+    move-result v2
+
+    if-eqz v2, :cond_0
+
+    return v1
+
+    :cond_0
+    invoke-virtual {p0}, Lcom/android/systemui/statusbar/BaseStatusBar;->isKeyguardShowing()Z
+
+    move-result v2
+
+    if-eqz v2, :cond_2
+
+    invoke-virtual {p0}, Lcom/android/systemui/statusbar/BaseStatusBar;->isKeyguardSecure()Z
+
+    move-result v2
+
+    if-eqz v2, :cond_2
+
+    iget-object v2, p0, Lcom/android/systemui/statusbar/BaseStatusBar;->mDevicePolicyManager:Landroid/app/admin/DevicePolicyManager;
+
+    iget v3, p0, Lcom/android/systemui/statusbar/BaseStatusBar;->mCurrentUserId:I
+
+    invoke-virtual {v2, v4, v3}, Landroid/app/admin/DevicePolicyManager;->getKeyguardDisabledFeatures(Landroid/content/ComponentName;I)I
+
+    move-result v2
+
+    and-int/lit8 v2, v2, 0x2
+
+    if-nez v2, :cond_1
+
+    :goto_0
+    return v0
+
+    :cond_1
+    move v0, v1
+
+    goto :goto_0
+
+    :cond_2
     return v0
 .end method
 
@@ -5714,6 +5813,33 @@
     iget-object v0, p0, Lcom/android/systemui/statusbar/BaseStatusBar;->mStatusBarKeyguardViewManager:Lcom/android/systemui/statusbar/phone/StatusBarKeyguardViewManager;
 
     invoke-virtual {v0}, Lcom/android/systemui/statusbar/phone/StatusBarKeyguardViewManager;->isSecure()Z
+
+    move-result v0
+
+    return v0
+.end method
+
+.method public isKeyguardShowing()Z
+    .locals 2
+
+    iget-object v0, p0, Lcom/android/systemui/statusbar/BaseStatusBar;->mStatusBarKeyguardViewManager:Lcom/android/systemui/statusbar/phone/StatusBarKeyguardViewManager;
+
+    if-nez v0, :cond_0
+
+    const-string/jumbo v0, "StatusBar"
+
+    const-string/jumbo v1, "isKeyguardShowing() called before startKeyguard(), returning true"
+
+    invoke-static {v0, v1}, Landroid/util/Slog;->i(Ljava/lang/String;Ljava/lang/String;)I
+
+    const/4 v0, 0x1
+
+    return v0
+
+    :cond_0
+    iget-object v0, p0, Lcom/android/systemui/statusbar/BaseStatusBar;->mStatusBarKeyguardViewManager:Lcom/android/systemui/statusbar/phone/StatusBarKeyguardViewManager;
+
+    invoke-virtual {v0}, Lcom/android/systemui/statusbar/phone/StatusBarKeyguardViewManager;->isShowing()Z
 
     move-result v0
 
@@ -6021,7 +6147,7 @@
 .end method
 
 .method public launchNotificationSetting(Landroid/view/View;)V
-    .locals 10
+    .locals 9
 
     move-object v5, p1
 
@@ -6031,25 +6157,25 @@
 
     move-result-object v6
 
-    iget-object v8, p0, Lcom/android/systemui/statusbar/BaseStatusBar;->mContext:Landroid/content/Context;
+    iget-object v7, p0, Lcom/android/systemui/statusbar/BaseStatusBar;->mContext:Landroid/content/Context;
 
     invoke-virtual {v6}, Landroid/service/notification/StatusBarNotification;->getUser()Landroid/os/UserHandle;
 
-    move-result-object v9
+    move-result-object v8
 
-    invoke-virtual {v9}, Landroid/os/UserHandle;->getIdentifier()I
+    invoke-virtual {v8}, Landroid/os/UserHandle;->getIdentifier()I
 
-    move-result v9
+    move-result v8
 
-    invoke-static {v8, v9}, Lcom/android/systemui/statusbar/BaseStatusBar;->getPackageManagerForUser(Landroid/content/Context;I)Landroid/content/pm/PackageManager;
+    invoke-static {v7, v8}, Lcom/android/systemui/statusbar/BaseStatusBar;->getPackageManagerForUser(Landroid/content/Context;I)Landroid/content/pm/PackageManager;
 
     move-result-object v4
 
     invoke-virtual {v6}, Landroid/service/notification/StatusBarNotification;->getPackageName()Ljava/lang/String;
 
-    move-result-object v8
+    move-result-object v7
 
-    invoke-virtual {p1, v8}, Landroid/view/View;->setTag(Ljava/lang/Object;)V
+    invoke-virtual {p1, v7}, Landroid/view/View;->setTag(Ljava/lang/Object;)V
 
     invoke-virtual {v6}, Landroid/service/notification/StatusBarNotification;->getPackageName()Ljava/lang/String;
 
@@ -6057,10 +6183,10 @@
 
     const/4 v0, -0x1
 
-    const/16 v8, 0x2200
+    const/16 v7, 0x2200
 
     :try_start_0
-    invoke-virtual {v4, v3, v8}, Landroid/content/pm/PackageManager;->getApplicationInfo(Ljava/lang/String;I)Landroid/content/pm/ApplicationInfo;
+    invoke-virtual {v4, v3, v7}, Landroid/content/pm/PackageManager;->getApplicationInfo(Ljava/lang/String;I)Landroid/content/pm/ApplicationInfo;
 
     move-result-object v2
 
@@ -6072,57 +6198,20 @@
 
     :cond_0
     :goto_0
-    invoke-static {v0}, Landroid/os/UserHandle;->getUserId(I)I
-
-    move-result v7
-
-    invoke-static {v7}, Lcom/samsung/android/knox/SemPersonaManager;->isKnoxId(I)Z
-
-    move-result v8
-
-    if-eqz v8, :cond_1
-
-    iget-object v8, p0, Lcom/android/systemui/statusbar/BaseStatusBar;->mContext:Landroid/content/Context;
-
-    invoke-static {v8}, Lcom/samsung/android/emergencymode/SemEmergencyManager;->getInstance(Landroid/content/Context;)Lcom/samsung/android/emergencymode/SemEmergencyManager;
-
-    move-result-object v8
-
-    iput-object v8, p0, Lcom/android/systemui/statusbar/BaseStatusBar;->mEmergencyManager:Lcom/samsung/android/emergencymode/SemEmergencyManager;
-
-    iget-object v8, p0, Lcom/android/systemui/statusbar/BaseStatusBar;->mEmergencyManager:Lcom/samsung/android/emergencymode/SemEmergencyManager;
-
-    iget-object v8, p0, Lcom/android/systemui/statusbar/BaseStatusBar;->mContext:Landroid/content/Context;
-
-    invoke-static {v8}, Lcom/samsung/android/emergencymode/SemEmergencyManager;->isEmergencyMode(Landroid/content/Context;)Z
-
-    move-result v8
-
-    if-eqz v8, :cond_1
-
-    const-string/jumbo v8, "StatusBar"
-
-    const-string/jumbo v9, "UPSM enabed! Ignore show from knox app notification"
-
-    invoke-static {v8, v9}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-virtual {p0, v3, v0}, Lcom/android/systemui/statusbar/BaseStatusBar;->startAppNotificationSettingsActivity(Ljava/lang/String;I)V
 
     return-void
 
     :catch_0
     move-exception v1
 
-    const-string/jumbo v8, "StatusBar"
+    const-string/jumbo v7, "StatusBar"
 
-    const-string/jumbo v9, "cannot get ApplicationInfo : launchNotificationSetting"
+    const-string/jumbo v8, "cannot get ApplicationInfo : launchNotificationSetting"
 
-    invoke-static {v8, v9}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {v7, v8}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
     goto :goto_0
-
-    :cond_1
-    invoke-virtual {p0, v3, v0}, Lcom/android/systemui/statusbar/BaseStatusBar;->startAppNotificationSettingsActivity(Ljava/lang/String;I)V
-
-    return-void
 .end method
 
 .method public logNotificationExpansion(Ljava/lang/String;ZZ)V
@@ -6298,7 +6387,7 @@
 
     iget-object v7, p0, Lcom/android/systemui/statusbar/BaseStatusBar;->mContext:Landroid/content/Context;
 
-    const v8, 0x7f0f05ac
+    const v8, 0x7f0f05ad
 
     invoke-virtual {v7, v8}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -6310,7 +6399,7 @@
 
     iget-object v7, p0, Lcom/android/systemui/statusbar/BaseStatusBar;->mContext:Landroid/content/Context;
 
-    const v8, 0x7f0f05ad
+    const v8, 0x7f0f05ae
 
     invoke-virtual {v7, v8}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -6346,7 +6435,7 @@
 
     iget-object v7, p0, Lcom/android/systemui/statusbar/BaseStatusBar;->mContext:Landroid/content/Context;
 
-    const v8, 0x7f0f05ae
+    const v8, 0x7f0f05af
 
     invoke-virtual {v7, v8}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -6360,7 +6449,7 @@
 
     iget-object v7, p0, Lcom/android/systemui/statusbar/BaseStatusBar;->mContext:Landroid/content/Context;
 
-    const v8, 0x7f0f05af
+    const v8, 0x7f0f05b0
 
     invoke-virtual {v7, v8}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -9177,21 +9266,58 @@
 .end method
 
 .method protected startAppNotificationSettingsActivity(Ljava/lang/String;I)V
-    .locals 2
+    .locals 4
 
+    invoke-static {p2}, Landroid/os/UserHandle;->getUserId(I)I
+
+    move-result v1
+
+    invoke-static {v1}, Lcom/samsung/android/knox/SemPersonaManager;->isKnoxId(I)Z
+
+    move-result v2
+
+    if-eqz v2, :cond_0
+
+    iget-object v2, p0, Lcom/android/systemui/statusbar/BaseStatusBar;->mContext:Landroid/content/Context;
+
+    invoke-static {v2}, Lcom/samsung/android/emergencymode/SemEmergencyManager;->getInstance(Landroid/content/Context;)Lcom/samsung/android/emergencymode/SemEmergencyManager;
+
+    move-result-object v2
+
+    iput-object v2, p0, Lcom/android/systemui/statusbar/BaseStatusBar;->mEmergencyManager:Lcom/samsung/android/emergencymode/SemEmergencyManager;
+
+    iget-object v2, p0, Lcom/android/systemui/statusbar/BaseStatusBar;->mEmergencyManager:Lcom/samsung/android/emergencymode/SemEmergencyManager;
+
+    iget-object v2, p0, Lcom/android/systemui/statusbar/BaseStatusBar;->mContext:Landroid/content/Context;
+
+    invoke-static {v2}, Lcom/samsung/android/emergencymode/SemEmergencyManager;->isEmergencyMode(Landroid/content/Context;)Z
+
+    move-result v2
+
+    if-eqz v2, :cond_0
+
+    const-string/jumbo v2, "StatusBar"
+
+    const-string/jumbo v3, "UPSM enabed! Ignore show from knox app notification"
+
+    invoke-static {v2, v3}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    return-void
+
+    :cond_0
     new-instance v0, Landroid/content/Intent;
 
-    const-string/jumbo v1, "android.settings.APP_NOTIFICATION_SETTINGS"
+    const-string/jumbo v2, "android.settings.APP_NOTIFICATION_SETTINGS"
 
-    invoke-direct {v0, v1}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
+    invoke-direct {v0, v2}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
 
-    const-string/jumbo v1, "app_package"
+    const-string/jumbo v2, "app_package"
 
-    invoke-virtual {v0, v1, p1}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
+    invoke-virtual {v0, v2, p1}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
-    const-string/jumbo v1, "app_uid"
+    const-string/jumbo v2, "app_uid"
 
-    invoke-virtual {v0, v1, p2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;I)Landroid/content/Intent;
+    invoke-virtual {v0, v2, p2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;I)Landroid/content/Intent;
 
     invoke-direct {p0, v0, p2}, Lcom/android/systemui/statusbar/BaseStatusBar;->startNotificationGutsIntent(Landroid/content/Intent;I)V
 

@@ -809,6 +809,36 @@
     goto :goto_0
 .end method
 
+.method public isAppControl()Z
+    .locals 4
+
+    const/4 v0, 0x1
+
+    const/4 v1, 0x0
+
+    iget-object v2, p0, Lcom/android/systemui/settings/BrightnessController;->mContext:Landroid/content/Context;
+
+    invoke-virtual {v2}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
+
+    move-result-object v2
+
+    const-string/jumbo v3, "pms_notification_panel_brightness_adjustment"
+
+    invoke-static {v2, v3, v0}, Landroid/provider/Settings$System;->getInt(Landroid/content/ContentResolver;Ljava/lang/String;I)I
+
+    move-result v2
+
+    if-nez v2, :cond_0
+
+    :goto_0
+    return v0
+
+    :cond_0
+    move v0, v1
+
+    goto :goto_0
+.end method
+
 .method public isSliderEnabled()Z
     .locals 1
 
@@ -1201,6 +1231,76 @@
     const/4 v0, 0x0
 
     goto :goto_0
+.end method
+
+.method public setEnableSlider()V
+    .locals 4
+
+    invoke-virtual {p0}, Lcom/android/systemui/settings/BrightnessController;->isAppControl()Z
+
+    move-result v1
+
+    if-eqz v1, :cond_0
+
+    const/4 v0, 0x0
+
+    :goto_0
+    iget-boolean v1, p0, Lcom/android/systemui/settings/BrightnessController;->mOutdoorMode:Z
+
+    if-eqz v1, :cond_1
+
+    if-eqz v0, :cond_1
+
+    return-void
+
+    :cond_0
+    const/4 v0, 0x1
+
+    goto :goto_0
+
+    :cond_1
+    iput-boolean v0, p0, Lcom/android/systemui/settings/BrightnessController;->mEnabled:Z
+
+    iget-boolean v1, p0, Lcom/android/systemui/settings/BrightnessController;->mListening:Z
+
+    if-eqz v1, :cond_2
+
+    iget-object v1, p0, Lcom/android/systemui/settings/BrightnessController;->mControl:Lcom/android/systemui/settings/ToggleSlider;
+
+    if-eqz v1, :cond_2
+
+    iget-object v1, p0, Lcom/android/systemui/settings/BrightnessController;->mControl:Lcom/android/systemui/settings/ToggleSlider;
+
+    invoke-virtual {v1, v0}, Lcom/android/systemui/settings/ToggleSlider;->enableToggleSlider(Z)V
+
+    iget-object v1, p0, Lcom/android/systemui/settings/BrightnessController;->mControl:Lcom/android/systemui/settings/ToggleSlider;
+
+    invoke-virtual {v1, v0}, Lcom/android/systemui/settings/ToggleSlider;->setTouchEnabled(Z)V
+
+    :cond_2
+    const-string/jumbo v1, "StatusBar.BrightnessController"
+
+    new-instance v2, Ljava/lang/StringBuilder;
+
+    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string/jumbo v3, "pms_notification_panel_brightness_adjustment = "
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-static {v1, v2}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
+
+    return-void
 .end method
 
 .method public setSliderEnabled(Z)V

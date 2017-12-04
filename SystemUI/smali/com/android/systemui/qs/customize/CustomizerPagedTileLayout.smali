@@ -1472,7 +1472,7 @@
 
     move-result-object v2
 
-    const v3, 0x7f0d02c7
+    const v3, 0x7f0d02c9
 
     invoke-virtual {v2, v3}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -1651,6 +1651,26 @@
     goto :goto_0
 
     :cond_0
+    return-void
+.end method
+
+.method public removeBadge(Lcom/android/systemui/qs/customize/SecQSCustomizer$CustomTileInfo;)V
+    .locals 2
+
+    invoke-virtual {p0}, Lcom/android/systemui/qs/customize/CustomizerPagedTileLayout;->getCurrentItem()I
+
+    move-result v0
+
+    iget-object v1, p0, Lcom/android/systemui/qs/customize/CustomizerPagedTileLayout;->mPages:Ljava/util/ArrayList;
+
+    invoke-virtual {v1, v0}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Lcom/android/systemui/qs/customize/CustomizerPagedTileLayout$CustomizerTilePage;
+
+    invoke-virtual {v1, p1}, Lcom/android/systemui/qs/customize/CustomizerPagedTileLayout$CustomizerTilePage;->removeBadge(Lcom/android/systemui/qs/customize/SecQSCustomizer$CustomTileInfo;)V
+
     return-void
 .end method
 
@@ -1900,7 +1920,7 @@
 
     move-result-object v5
 
-    const v6, 0x7f0d025c
+    const v6, 0x7f0d025e
 
     invoke-virtual {v5, v6}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -1914,7 +1934,7 @@
 
     move-result-object v5
 
-    const v6, 0x7f0d0248
+    const v6, 0x7f0d024a
 
     invoke-virtual {v5, v6}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -1922,7 +1942,7 @@
 
     iput v5, p0, Lcom/android/systemui/qs/customize/CustomizerPagedTileLayout;->mCellHeight:I
 
-    const v5, 0x7f0d0249
+    const v5, 0x7f0d024b
 
     invoke-virtual {v4, v5}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -1930,7 +1950,7 @@
 
     iput v5, p0, Lcom/android/systemui/qs/customize/CustomizerPagedTileLayout;->mCellMargin:I
 
-    const v5, 0x7f0d025d
+    const v5, 0x7f0d025f
 
     invoke-virtual {v4, v5}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -1944,7 +1964,7 @@
 
     move-result-object v5
 
-    const v6, 0x7f0d0271
+    const v6, 0x7f0d0273
 
     invoke-virtual {v5, v6}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 

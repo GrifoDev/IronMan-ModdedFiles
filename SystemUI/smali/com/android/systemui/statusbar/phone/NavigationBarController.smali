@@ -1271,61 +1271,61 @@
 .end method
 
 .method public onSystemUiVisibilityChanged(IIIZI)V
-    .locals 21
+    .locals 19
 
-    sget-boolean v16, Lcom/android/systemui/statusbar/phone/NavigationBarController;->DEBUG:Z
+    sget-boolean v14, Lcom/android/systemui/statusbar/phone/NavigationBarController;->DEBUG:Z
 
-    if-eqz v16, :cond_0
+    if-eqz v14, :cond_0
 
-    const-string/jumbo v16, "NavigationBarController"
+    const-string/jumbo v14, "NavigationBarController"
 
-    const-string/jumbo v17, "vis = %s, fullscreenVis = %s, nbModeChanged = %b navigationBarMode = %d"
+    const-string/jumbo v15, "vis = %s, fullscreenVis = %s, nbModeChanged = %b navigationBarMode = %d"
 
-    const/16 v18, 0x4
+    const/16 v16, 0x4
 
-    move/from16 v0, v18
+    move/from16 v0, v16
 
     new-array v0, v0, [Ljava/lang/Object;
 
-    move-object/from16 v18, v0
+    move-object/from16 v16, v0
 
     invoke-static/range {p1 .. p1}, Ljava/lang/Integer;->toHexString(I)Ljava/lang/String;
 
-    move-result-object v19
+    move-result-object v17
 
-    const/16 v20, 0x0
+    const/16 v18, 0x0
 
-    aput-object v19, v18, v20
+    aput-object v17, v16, v18
 
     invoke-static/range {p2 .. p2}, Ljava/lang/Integer;->toHexString(I)Ljava/lang/String;
 
-    move-result-object v19
+    move-result-object v17
 
-    const/16 v20, 0x1
+    const/16 v18, 0x1
 
-    aput-object v19, v18, v20
+    aput-object v17, v16, v18
 
     invoke-static/range {p4 .. p4}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
-    move-result-object v19
+    move-result-object v17
 
-    const/16 v20, 0x2
+    const/16 v18, 0x2
 
-    aput-object v19, v18, v20
+    aput-object v17, v16, v18
 
     invoke-static/range {p5 .. p5}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    move-result-object v19
-
-    const/16 v20, 0x3
-
-    aput-object v19, v18, v20
-
-    invoke-static/range {v17 .. v18}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
-
     move-result-object v17
 
-    invoke-static/range {v16 .. v17}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+    const/16 v18, 0x3
+
+    aput-object v17, v16, v18
+
+    invoke-static/range {v15 .. v16}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v15
+
+    invoke-static {v14, v15}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
     :cond_0
     move/from16 v0, p5
@@ -1336,304 +1336,241 @@
 
     move-object/from16 v0, p0
 
-    iget-boolean v10, v0, Lcom/android/systemui/statusbar/phone/NavigationBarController;->mDarkBar:Z
+    iget-boolean v8, v0, Lcom/android/systemui/statusbar/phone/NavigationBarController;->mDarkBar:Z
 
     move-object/from16 v0, p0
 
-    iget-boolean v12, v0, Lcom/android/systemui/statusbar/phone/NavigationBarController;->mDimmingDarkBar:Z
+    iget-boolean v10, v0, Lcom/android/systemui/statusbar/phone/NavigationBarController;->mDimmingDarkBar:Z
+
+    move-object/from16 v0, p0
+
+    iget-boolean v12, v0, Lcom/android/systemui/statusbar/phone/NavigationBarController;->mOpenThemeAppliedBar:Z
+
+    move-object/from16 v0, p0
+
+    iget-boolean v7, v0, Lcom/android/systemui/statusbar/phone/NavigationBarController;->mAlwaysWhiteBar:Z
+
+    move-object/from16 v0, p0
+
+    iget v9, v0, Lcom/android/systemui/statusbar/phone/NavigationBarController;->mDarkBarVisivility:I
+
+    move/from16 v0, p3
+
+    not-int v14, v0
+
+    and-int/2addr v14, v9
+
+    and-int/lit8 v15, p1, 0x10
+
+    and-int v15, v15, p3
+
+    or-int v5, v14, v15
+
+    xor-int v2, v5, v9
+
+    move-object/from16 v0, p0
+
+    iget v11, v0, Lcom/android/systemui/statusbar/phone/NavigationBarController;->mFullscreenVisivility:I
+
+    if-nez p2, :cond_7
+
+    const/4 v14, 0x1
+
+    move/from16 v0, p3
+
+    if-ne v0, v14, :cond_7
+
+    move-object/from16 v0, p0
+
+    iget v6, v0, Lcom/android/systemui/statusbar/phone/NavigationBarController;->mFullscreenVisivility:I
+
+    :goto_0
+    xor-int v3, v6, v11
+
+    and-int/lit16 v14, v3, 0x100
+
+    if-nez v14, :cond_1
+
+    if-eqz p4, :cond_3
+
+    :cond_1
+    and-int/lit16 v14, v6, 0x100
+
+    if-eqz v14, :cond_8
+
+    const/4 v13, 0x1
+
+    :goto_1
+    invoke-virtual/range {p0 .. p0}, Lcom/android/systemui/statusbar/phone/NavigationBarController;->getBarMode()I
+
+    move-result v14
+
+    const/4 v15, 0x7
+
+    if-ne v14, v15, :cond_9
+
+    move-object/from16 v0, p0
+
+    iget-boolean v4, v0, Lcom/android/systemui/statusbar/phone/NavigationBarController;->mDockedStackExist:Z
+
+    :goto_2
+    if-eqz v13, :cond_2
+
+    if-eqz v4, :cond_a
+
+    :cond_2
+    const/4 v14, 0x0
+
+    :goto_3
+    move-object/from16 v0, p0
+
+    iput-boolean v14, v0, Lcom/android/systemui/statusbar/phone/NavigationBarController;->mLastPinButtonShow:Z
+
+    const-string/jumbo v14, "NavigationBarController"
+
+    new-instance v15, Ljava/lang/StringBuilder;
+
+    invoke-direct {v15}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string/jumbo v16, "FLAG_NAVIGATIONBAR_SHOW_IMMERSIVE_ICON flag changed. show="
+
+    invoke-virtual/range {v15 .. v16}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v15
+
+    invoke-virtual {v15, v13}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+
+    move-result-object v15
+
+    const-string/jumbo v16, ", isDocked="
+
+    invoke-virtual/range {v15 .. v16}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v15
+
+    invoke-virtual {v15, v4}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+
+    move-result-object v15
+
+    const-string/jumbo v16, ", barMode="
+
+    invoke-virtual/range {v15 .. v16}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v15
+
+    invoke-virtual/range {p0 .. p0}, Lcom/android/systemui/statusbar/phone/NavigationBarController;->getBarMode()I
+
+    move-result v16
+
+    invoke-virtual/range {v15 .. v16}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v15
+
+    invoke-virtual {v15}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v15
+
+    invoke-static {v14, v15}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-object/from16 v0, p0
+
+    iget-object v14, v0, Lcom/android/systemui/statusbar/phone/NavigationBarController;->mNavigationBarView:Lcom/android/systemui/statusbar/phone/NavigationBarView;
+
+    move-object/from16 v0, p0
+
+    iget-boolean v15, v0, Lcom/android/systemui/statusbar/phone/NavigationBarController;->mLastPinButtonShow:Z
+
+    invoke-virtual {v14, v15}, Lcom/android/systemui/statusbar/phone/NavigationBarView;->setPinButtonVisibility(Z)V
+
+    :cond_3
+    if-nez p4, :cond_4
+
+    and-int/lit8 v14, v2, 0x10
+
+    if-eqz v14, :cond_b
+
+    :cond_4
+    :goto_4
+    move-object/from16 v0, p0
+
+    move/from16 v1, p5
+
+    invoke-direct {v0, v5, v6, v1}, Lcom/android/systemui/statusbar/phone/NavigationBarController;->isDark(III)Z
+
+    move-result v14
+
+    move-object/from16 v0, p0
+
+    iput-boolean v14, v0, Lcom/android/systemui/statusbar/phone/NavigationBarController;->mDarkNavigation:Z
+
+    if-nez p4, :cond_5
+
+    move-object/from16 v0, p0
+
+    iget-boolean v14, v0, Lcom/android/systemui/statusbar/phone/NavigationBarController;->mDarkBar:Z
+
+    if-eq v8, v14, :cond_c
+
+    :cond_5
+    :goto_5
+    invoke-direct/range {p0 .. p0}, Lcom/android/systemui/statusbar/phone/NavigationBarController;->update()V
+
+    :cond_6
+    move-object/from16 v0, p0
+
+    iput v5, v0, Lcom/android/systemui/statusbar/phone/NavigationBarController;->mDarkBarVisivility:I
+
+    move-object/from16 v0, p0
+
+    iput v6, v0, Lcom/android/systemui/statusbar/phone/NavigationBarController;->mFullscreenVisivility:I
+
+    return-void
+
+    :cond_7
+    move/from16 v6, p2
+
+    goto/16 :goto_0
+
+    :cond_8
+    const/4 v13, 0x0
+
+    goto :goto_1
+
+    :cond_9
+    const/4 v4, 0x0
+
+    goto :goto_2
+
+    :cond_a
+    const/4 v14, 0x1
+
+    goto :goto_3
+
+    :cond_b
+    and-int/lit16 v14, v3, 0xf0
+
+    if-eqz v14, :cond_6
+
+    goto :goto_4
+
+    :cond_c
+    move-object/from16 v0, p0
+
+    iget-boolean v14, v0, Lcom/android/systemui/statusbar/phone/NavigationBarController;->mDimmingDarkBar:Z
+
+    if-ne v10, v14, :cond_5
 
     move-object/from16 v0, p0
 
     iget-boolean v14, v0, Lcom/android/systemui/statusbar/phone/NavigationBarController;->mOpenThemeAppliedBar:Z
 
-    move-object/from16 v0, p0
-
-    iget-boolean v9, v0, Lcom/android/systemui/statusbar/phone/NavigationBarController;->mAlwaysWhiteBar:Z
+    if-ne v12, v14, :cond_5
 
     move-object/from16 v0, p0
 
-    iget v11, v0, Lcom/android/systemui/statusbar/phone/NavigationBarController;->mDarkBarVisivility:I
+    iget-boolean v14, v0, Lcom/android/systemui/statusbar/phone/NavigationBarController;->mAlwaysWhiteBar:Z
 
-    move/from16 v0, p3
-
-    not-int v0, v0
-
-    move/from16 v16, v0
-
-    and-int v16, v16, v11
-
-    and-int/lit8 v17, p1, 0x10
-
-    and-int v17, v17, p3
-
-    or-int v7, v16, v17
-
-    xor-int v3, v7, v11
-
-    move-object/from16 v0, p0
-
-    iget v13, v0, Lcom/android/systemui/statusbar/phone/NavigationBarController;->mFullscreenVisivility:I
-
-    move/from16 v8, p2
-
-    xor-int v4, p2, v13
-
-    and-int/lit16 v0, v4, 0x100
-
-    move/from16 v16, v0
-
-    if-nez v16, :cond_1
-
-    if-eqz p4, :cond_4
-
-    :cond_1
-    move/from16 v0, p2
-
-    and-int/lit16 v0, v0, 0x100
-
-    move/from16 v16, v0
-
-    if-eqz v16, :cond_8
-
-    const/4 v15, 0x1
-
-    :goto_0
-    invoke-virtual/range {p0 .. p0}, Lcom/android/systemui/statusbar/phone/NavigationBarController;->getBarMode()I
-
-    move-result v16
-
-    const/16 v17, 0x7
-
-    move/from16 v0, v16
-
-    move/from16 v1, v17
-
-    if-ne v0, v1, :cond_9
-
-    move-object/from16 v0, p0
-
-    iget-boolean v5, v0, Lcom/android/systemui/statusbar/phone/NavigationBarController;->mDockedStackExist:Z
-
-    :goto_1
-    if-nez p2, :cond_a
-
-    const/16 v16, 0x1
-
-    move/from16 v0, p3
-
-    move/from16 v1, v16
-
-    if-ne v0, v1, :cond_a
-
-    const/4 v6, 0x1
-
-    :goto_2
-    if-nez v15, :cond_2
-
-    if-eqz v6, :cond_3
-
-    :cond_2
-    if-eqz v5, :cond_b
-
-    :cond_3
-    const/16 v16, 0x0
-
-    :goto_3
-    move/from16 v0, v16
-
-    move-object/from16 v1, p0
-
-    iput-boolean v0, v1, Lcom/android/systemui/statusbar/phone/NavigationBarController;->mLastPinButtonShow:Z
-
-    const-string/jumbo v16, "NavigationBarController"
-
-    new-instance v17, Ljava/lang/StringBuilder;
-
-    invoke-direct/range {v17 .. v17}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string/jumbo v18, "FLAG_NAVIGATIONBAR_SHOW_IMMERSIVE_ICON flag changed. show="
-
-    invoke-virtual/range {v17 .. v18}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v17
-
-    move-object/from16 v0, v17
-
-    invoke-virtual {v0, v15}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
-
-    move-result-object v17
-
-    const-string/jumbo v18, ", isDocked="
-
-    invoke-virtual/range {v17 .. v18}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v17
-
-    move-object/from16 v0, v17
-
-    invoke-virtual {v0, v5}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
-
-    move-result-object v17
-
-    const-string/jumbo v18, ", lowProfileOnly="
-
-    invoke-virtual/range {v17 .. v18}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v17
-
-    move-object/from16 v0, v17
-
-    invoke-virtual {v0, v6}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
-
-    move-result-object v17
-
-    const-string/jumbo v18, ", barMode="
-
-    invoke-virtual/range {v17 .. v18}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v17
-
-    invoke-virtual/range {p0 .. p0}, Lcom/android/systemui/statusbar/phone/NavigationBarController;->getBarMode()I
-
-    move-result v18
-
-    invoke-virtual/range {v17 .. v18}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v17
-
-    invoke-virtual/range {v17 .. v17}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v17
-
-    invoke-static/range {v16 .. v17}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
-    move-object/from16 v0, p0
-
-    iget-object v0, v0, Lcom/android/systemui/statusbar/phone/NavigationBarController;->mNavigationBarView:Lcom/android/systemui/statusbar/phone/NavigationBarView;
-
-    move-object/from16 v16, v0
-
-    move-object/from16 v0, p0
-
-    iget-boolean v0, v0, Lcom/android/systemui/statusbar/phone/NavigationBarController;->mLastPinButtonShow:Z
-
-    move/from16 v17, v0
-
-    invoke-virtual/range {v16 .. v17}, Lcom/android/systemui/statusbar/phone/NavigationBarView;->setPinButtonVisibility(Z)V
-
-    :cond_4
-    if-nez p4, :cond_5
-
-    and-int/lit8 v16, v3, 0x10
-
-    if-eqz v16, :cond_c
-
-    :cond_5
-    :goto_4
-    move-object/from16 v0, p0
-
-    move/from16 v1, p2
-
-    move/from16 v2, p5
-
-    invoke-direct {v0, v7, v1, v2}, Lcom/android/systemui/statusbar/phone/NavigationBarController;->isDark(III)Z
-
-    move-result v16
-
-    move/from16 v0, v16
-
-    move-object/from16 v1, p0
-
-    iput-boolean v0, v1, Lcom/android/systemui/statusbar/phone/NavigationBarController;->mDarkNavigation:Z
-
-    if-nez p4, :cond_6
-
-    move-object/from16 v0, p0
-
-    iget-boolean v0, v0, Lcom/android/systemui/statusbar/phone/NavigationBarController;->mDarkBar:Z
-
-    move/from16 v16, v0
-
-    move/from16 v0, v16
-
-    if-eq v10, v0, :cond_d
-
-    :cond_6
-    :goto_5
-    invoke-direct/range {p0 .. p0}, Lcom/android/systemui/statusbar/phone/NavigationBarController;->update()V
-
-    :cond_7
-    move-object/from16 v0, p0
-
-    iput v7, v0, Lcom/android/systemui/statusbar/phone/NavigationBarController;->mDarkBarVisivility:I
-
-    move/from16 v0, p2
-
-    move-object/from16 v1, p0
-
-    iput v0, v1, Lcom/android/systemui/statusbar/phone/NavigationBarController;->mFullscreenVisivility:I
-
-    return-void
-
-    :cond_8
-    const/4 v15, 0x0
-
-    goto/16 :goto_0
-
-    :cond_9
-    const/4 v5, 0x0
-
-    goto/16 :goto_1
-
-    :cond_a
-    const/4 v6, 0x0
-
-    goto/16 :goto_2
-
-    :cond_b
-    const/16 v16, 0x1
-
-    goto/16 :goto_3
-
-    :cond_c
-    and-int/lit16 v0, v4, 0xf0
-
-    move/from16 v16, v0
-
-    if-eqz v16, :cond_7
-
-    goto :goto_4
-
-    :cond_d
-    move-object/from16 v0, p0
-
-    iget-boolean v0, v0, Lcom/android/systemui/statusbar/phone/NavigationBarController;->mDimmingDarkBar:Z
-
-    move/from16 v16, v0
-
-    move/from16 v0, v16
-
-    if-ne v12, v0, :cond_6
-
-    move-object/from16 v0, p0
-
-    iget-boolean v0, v0, Lcom/android/systemui/statusbar/phone/NavigationBarController;->mOpenThemeAppliedBar:Z
-
-    move/from16 v16, v0
-
-    move/from16 v0, v16
-
-    if-ne v14, v0, :cond_6
-
-    move-object/from16 v0, p0
-
-    iget-boolean v0, v0, Lcom/android/systemui/statusbar/phone/NavigationBarController;->mAlwaysWhiteBar:Z
-
-    move/from16 v16, v0
-
-    move/from16 v0, v16
-
-    if-eq v9, v0, :cond_7
+    if-eq v7, v14, :cond_6
 
     goto :goto_5
 .end method

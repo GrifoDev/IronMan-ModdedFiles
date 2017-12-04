@@ -125,6 +125,8 @@
     <string name="tts_reset_speech_pitch_title">Ponovno postavi glasnoću</string>
     <string name="tts_reset_speech_pitch_summary">Ponovno postavite visinu tona čitanja teksta na zadanu postavku.</string>
     <string name="choose_profile">Izaberi profil</string>
+    <string name="dev_logpersist_clear_warning_title">Očistiti pohranu perzistentnih zapisivača?</string>
+    <string name="dev_logpersist_clear_warning_message">Podaci zapisivača će biti izbrisani kada isključite perzistentni zapisivač.</string>
     <string name="select_logpersist_title">Trajna pohrana podat. dnevnika</string>
     <string name="select_logpersist_dialog_title">Izaberi privr. memor. dnev. za traj. pohr.</string>
     <string name="no_application">Nema aplikacija</string>
@@ -232,6 +234,7 @@ For example, your ringtone will not sound, you will not be able to answer phone 
     <string name="wifi_authentication_failed_kt">Failed to authenticate Wi-Fi AP.</string>
     <string name="wifi_authentication_no_response">Failed to connect to Wi-Fi AP.</string>
     <string name="wifi_authentication_invalid_value">Authentication failed. Check ID and password.</string>
+    <string name="wifi_disconnected">Wi-Fi veza je prekinuta.</string>
     <string name="quick_settings_bluetooth_label">Bluetooth</string>
     <string name="quick_settings_bluetooth_detail_empty_text_available">U blizini nema Bluetooth uređaja.</string>
     <string name="quick_settings_bluetooth_detail_paired_devices_title">Upareni uređaji</string>
@@ -557,15 +560,21 @@ Svaki korisnik može ažurirati aplikacije za sve druge korisnike."</string>
     <string name="dialog_battery_data_warning">Mobilna pristupna tačka će biti omogućena. Time će se povećati potrošnja baterije i korištenje podataka.</string>
     <string name="keyboard_popup_help">Meta tipka: tipka Windows, komandna tipka ili tipka sa simbolom nekog drugog operativnog sistema.</string>
     <string name="keyboard_shortcut_group_system">Prečice sistema</string>
+    <string name="keyboard_shortcut_group_system_home">Početak</string>
+    <string name="keyboard_shortcut_group_system_recents">Nedavno</string>
     <string name="keyboard_shortcut_group_system_back">Nazad</string>
+    <string name="keyboard_shortcut_group_system_notifications">Obavještenja</string>
+    <string name="keyboard_shortcut_group_system_shortcuts_helper">Prečice tastature</string>
     <string name="keyboard_shortcut_group_system_all_apps">Sve aplikacije</string>
     <string name="keyboard_shortcut_group_system_running_apps">Pokrenute aplikacije</string>
     <string name="keyboard_shortcut_group_system_lock_screen">Zaključani ekran</string>
     <string name="keyboard_shortcut_group_system_switch_languages">Promijeni jezik</string>
     <string name="keyboard_shortcut_group_applications">Prečice u aplikacijama</string>
+    <string name="keyboard_shortcut_group_applications_browser">Pretraživač</string>
     <string name="keyboard_shortcut_group_applications_contacts">Kontakti</string>
     <string name="keyboard_shortcut_group_applications_email">E-pošta</string>
     <string name="keyboard_shortcut_group_applications_music">Muzika</string>
+    <string name="keyboard_shortcut_group_applications_calendar">Kalendar</string>
     <string name="keyboard_shortcut_group_applications_bixby">Bixby</string>
     <string name="keyboard_shortcut_group_applications_messages">Poruke</string>
     <string name="qs_edit">UREDI</string>
@@ -749,7 +758,9 @@ Pregrijavanje može nastati usljed:
     <string name="battery_not_fully_connected_charging_title_vzw">Incomplete connection</string>
     <string name="battery_not_fully_connected_charging_text">Za brže punjenje, koristite punjač koji ste dobili uz uređaj i osigurajte da je on ispravno priključen.</string>
     <string name="battery_not_fully_connected_charging_text_vzw">Make sure the charger is properly connected.</string>
+    <string name="battery_not_fully_connected_charging_text_jpn">Osigurajte da je punjač ispravno priključen.</string>
     <string name="battery_not_fully_connected_charging_popup_text">Osigurajte da je punjač ispravno priključen. Koristite punjač koji ste dobili uz uređaj.</string>
+    <string name="battery_not_fully_connected_charging_popup_text_jpn">Osigurajte da je punjač ispravno priključen.</string>
     <string name="battery_charging_level_and_time_text">"Punjenje: %1$d%%
 (približno %2$s do trenutka kada će se u potpunosti napuniti)"</string>
     <string name="battery_charging_level_text">Punjenje: %d%%</string>
@@ -974,6 +985,8 @@ Please note that in order to enable your emergency calls (e.g., such as 112 call
     <string name="qs_detail_palm_capture_title">Prevuci dlanom za snimanje</string>
     <string name="noti_direct_reply_exceed_text_limit_toast">Ne možete unijeti više teksta.</string>
     <string name="airplane_mode_tts_text">Avionski režim</string>
+    <string name="all_noti_readout">Jedno obavještenje</string>
+    <string name="all_noti_readout2">%d obavještenja</string>
     <string name="keyguard_password_enter_pin_code">Unesite PIN kod.</string>
     <string name="keyguard_password_wrong_pin_code">Neispravan PIN kod.</string>
     <string name="keyguard_charged">Potpuno napunjeno</string>

@@ -1668,7 +1668,7 @@
 
     iget-object v3, p0, Lcom/android/keyguard/KeyguardRMMView;->mContext:Landroid/content/Context;
 
-    const v4, 0x1040a31
+    const v4, 0x1040a32
 
     invoke-virtual {v3, v4}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 

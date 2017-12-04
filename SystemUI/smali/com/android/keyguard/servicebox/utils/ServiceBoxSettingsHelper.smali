@@ -944,6 +944,10 @@
 
     iput-object v0, p0, Lcom/android/keyguard/servicebox/utils/ServiceBoxSettingsHelper;->mLastPageOrder:Ljava/lang/String;
 
+    const-string/jumbo v0, ""
+
+    iput-object v0, p0, Lcom/android/keyguard/servicebox/utils/ServiceBoxSettingsHelper;->mLastPageKeyOrder:Ljava/lang/String;
+
     return-void
 .end method
 

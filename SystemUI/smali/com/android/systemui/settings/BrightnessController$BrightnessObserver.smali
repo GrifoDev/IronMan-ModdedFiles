@@ -29,6 +29,8 @@
 
 .field private final BRIGHTNESS_URI:Landroid/net/Uri;
 
+.field private final PMS_DB_BRIGHTNESS_ENABLE:Landroid/net/Uri;
+
 .field final synthetic this$0:Lcom/android/systemui/settings/BrightnessController;
 
 
@@ -95,6 +97,14 @@
     move-result-object v0
 
     iput-object v0, p0, Lcom/android/systemui/settings/BrightnessController$BrightnessObserver;->BRIGHTNESS_OUTDOOR_MODE_URI:Landroid/net/Uri;
+
+    const-string/jumbo v0, "pms_notification_panel_brightness_adjustment"
+
+    invoke-static {v0}, Landroid/provider/Settings$System;->getUriFor(Ljava/lang/String;)Landroid/net/Uri;
+
+    move-result-object v0
+
+    iput-object v0, p0, Lcom/android/systemui/settings/BrightnessController$BrightnessObserver;->PMS_DB_BRIGHTNESS_ENABLE:Landroid/net/Uri;
 
     return-void
 .end method
@@ -168,7 +178,7 @@
 
     move-result v2
 
-    if-eqz v2, :cond_9
+    if-eqz v2, :cond_a
 
     invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -361,6 +371,21 @@
     goto :goto_2
 
     :cond_8
+    iget-object v2, p0, Lcom/android/systemui/settings/BrightnessController$BrightnessObserver;->PMS_DB_BRIGHTNESS_ENABLE:Landroid/net/Uri;
+
+    invoke-virtual {v2, p2}, Landroid/net/Uri;->equals(Ljava/lang/Object;)Z
+
+    move-result v2
+
+    if-eqz v2, :cond_9
+
+    iget-object v2, p0, Lcom/android/systemui/settings/BrightnessController$BrightnessObserver;->this$0:Lcom/android/systemui/settings/BrightnessController;
+
+    invoke-virtual {v2}, Lcom/android/systemui/settings/BrightnessController;->setEnableSlider()V
+
+    goto/16 :goto_0
+
+    :cond_9
     const-string/jumbo v2, "StatusBar.BrightnessController"
 
     new-instance v4, Ljava/lang/StringBuilder;
@@ -395,7 +420,7 @@
 
     goto/16 :goto_0
 
-    :cond_9
+    :cond_a
     iget-object v2, p0, Lcom/android/systemui/settings/BrightnessController$BrightnessObserver;->this$0:Lcom/android/systemui/settings/BrightnessController;
 
     invoke-static {v2, v3}, Lcom/android/systemui/settings/BrightnessController;->-set1(Lcom/android/systemui/settings/BrightnessController;Z)Z
@@ -431,6 +456,10 @@
     invoke-virtual {v0, v1, v3, p0, v2}, Landroid/content/ContentResolver;->registerContentObserver(Landroid/net/Uri;ZLandroid/database/ContentObserver;I)V
 
     iget-object v1, p0, Lcom/android/systemui/settings/BrightnessController$BrightnessObserver;->BRIGHTNESS_ADJ_URI:Landroid/net/Uri;
+
+    invoke-virtual {v0, v1, v3, p0, v2}, Landroid/content/ContentResolver;->registerContentObserver(Landroid/net/Uri;ZLandroid/database/ContentObserver;I)V
+
+    iget-object v1, p0, Lcom/android/systemui/settings/BrightnessController$BrightnessObserver;->PMS_DB_BRIGHTNESS_ENABLE:Landroid/net/Uri;
 
     invoke-virtual {v0, v1, v3, p0, v2}, Landroid/content/ContentResolver;->registerContentObserver(Landroid/net/Uri;ZLandroid/database/ContentObserver;I)V
 

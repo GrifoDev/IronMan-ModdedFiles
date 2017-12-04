@@ -1307,6 +1307,75 @@
     return v0
 .end method
 
+.method public isAppGroupSummary(Lcom/android/systemui/statusbar/NotificationData$Entry;)Z
+    .locals 3
+
+    const/4 v0, 0x1
+
+    const/4 v1, 0x0
+
+    iget-object v2, p1, Lcom/android/systemui/statusbar/NotificationData$Entry;->notification:Landroid/service/notification/StatusBarNotification;
+
+    invoke-virtual {v2}, Landroid/service/notification/StatusBarNotification;->getNotification()Landroid/app/Notification;
+
+    move-result-object v2
+
+    iget v2, v2, Landroid/app/Notification;->flags:I
+
+    and-int/lit16 v2, v2, 0x400
+
+    if-nez v2, :cond_0
+
+    iget-object v2, p1, Lcom/android/systemui/statusbar/NotificationData$Entry;->notification:Landroid/service/notification/StatusBarNotification;
+
+    invoke-virtual {v2}, Landroid/service/notification/StatusBarNotification;->getNotification()Landroid/app/Notification;
+
+    move-result-object v2
+
+    iget v2, v2, Landroid/app/Notification;->flags:I
+
+    and-int/lit16 v2, v2, 0x200
+
+    if-eqz v2, :cond_1
+
+    :cond_0
+    :goto_0
+    return v0
+
+    :cond_1
+    move v0, v1
+
+    goto :goto_0
+.end method
+
+.method public isChildInAppGroupSummary(Lcom/android/systemui/statusbar/NotificationData$Entry;)Z
+    .locals 3
+
+    const/4 v0, 0x0
+
+    iget-object v1, p0, Lcom/android/systemui/statusbar/NotificationData;->mGroupManager:Lcom/android/systemui/statusbar/phone/NotificationGroupManager;
+
+    if-eqz v1, :cond_1
+
+    iget-object v1, p0, Lcom/android/systemui/statusbar/NotificationData;->mGroupManager:Lcom/android/systemui/statusbar/phone/NotificationGroupManager;
+
+    iget-object v2, p1, Lcom/android/systemui/statusbar/NotificationData$Entry;->notification:Landroid/service/notification/StatusBarNotification;
+
+    invoke-virtual {v1, v2}, Lcom/android/systemui/statusbar/phone/NotificationGroupManager;->getGroupSummary(Landroid/service/notification/StatusBarNotification;)Lcom/android/systemui/statusbar/ExpandableNotificationRow;
+
+    move-result-object v1
+
+    if-eqz v1, :cond_0
+
+    const/4 v0, 0x1
+
+    :cond_0
+    return v0
+
+    :cond_1
+    return v0
+.end method
+
 .method public isCmasNotification(Lcom/android/systemui/statusbar/NotificationData$Entry;)Z
     .locals 5
 

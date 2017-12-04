@@ -238,6 +238,8 @@
     <string name="wifi_allow_scan_with_traffic_summary">Payagan/Huwag payagan ang Mga Pag-scan sa Roaming ng Wi‑Fi batay sa dami ng trapiko ng data na mayroon sa interface</string>
     <string name="select_logd_size_title">Mga laki ng buffer ng Logger</string>
     <string name="select_logd_size_dialog_title">Pumili ng mga laki ng Logger bawat log buffer</string>
+    <string name="dev_logpersist_clear_warning_title">I-clear ang storage ng persistent logger?</string>
+    <string name="dev_logpersist_clear_warning_message">Tatanggalin ang logger data kapag naka-off ang persistent logger.</string>
     <string name="select_logpersist_title">Palaging mag-imbak ng log data</string>
     <string name="select_logpersist_dialog_title">Pumili ng mga log buffer na palaging iimbak</string>
     <string name="select_usb_configuration_title">Pumili ng USB Configuration</string>
@@ -752,6 +754,7 @@ Maaaring makakuha ng mga singilin mula sa iyong carrier ang pagpapatuloy."</stri
     <string name="wifi_authentication_failed_kt">Nabigong i-authenticate ang Wi-Fi AP.</string>
     <string name="wifi_authentication_no_response">Hindi nagawang kumonekta sa Wi-Fi AP.</string>
     <string name="wifi_authentication_invalid_value">Nabigo ang pag-authenticate. Tingnan ang ID at password.</string>
+    <string name="wifi_disconnected">Nadiskonekta ang Wi-Fi.</string>
     <string name="quick_settings_dnd_label">Huwag istorbohin</string>
     <string name="quick_settings_dnd_priority_label">Priyoridad lang</string>
     <string name="quick_settings_dnd_alarms_label">Mga alarm lang</string>
@@ -1384,10 +1387,10 @@ Para sa higit pang impormasyon, makipag-ugnayan sa iyong administrator."</string
     <string name="keyboard_popup_help">Meta key: Windows, Command o iba pang symbol key ng operating system.</string>
     <string name="keyboard_shortcut_group_system">Mga shortcut ng system</string>
     <string name="keyboard_shortcut_group_system_home">Home</string>
-    <string name="keyboard_shortcut_group_system_recents">Mga Kamakailang Ginamit</string>
+    <string name="keyboard_shortcut_group_system_recents">Mga kamakailan</string>
     <string name="keyboard_shortcut_group_system_back">Likod</string>
-    <string name="keyboard_shortcut_group_system_notifications">Mga Notification</string>
-    <string name="keyboard_shortcut_group_system_shortcuts_helper">Mga Keyboard Shortcut</string>
+    <string name="keyboard_shortcut_group_system_notifications">Mga notification</string>
+    <string name="keyboard_shortcut_group_system_shortcuts_helper">Mga shorcut ng keyboard</string>
     <string name="keyboard_shortcut_group_system_switch_input">Magpalit ng pamamaraan ng pag-input</string>
     <string name="keyboard_shortcut_group_system_all_apps">Lahat ng app</string>
     <string name="keyboard_shortcut_group_system_running_apps">Mga tumatakbong app</string>
@@ -1401,7 +1404,7 @@ Para sa higit pang impormasyon, makipag-ugnayan sa iyong administrator."</string
     <string name="keyboard_shortcut_group_applications_im">IM</string>
     <string name="keyboard_shortcut_group_applications_music">Musika</string>
     <string name="keyboard_shortcut_group_applications_youtube">YouTube</string>
-    <string name="keyboard_shortcut_group_applications_calendar">Kalendaryo</string>
+    <string name="keyboard_shortcut_group_applications_calendar">Calendar</string>
     <string name="keyboard_shortcut_group_applications_bixby">Bixby</string>
     <string name="keyboard_shortcut_group_applications_messages">Mga Mensahe</string>
     <string name="tuner_full_zen_title">Ipakita nang may mga kontrol ng volume</string>
@@ -1653,7 +1656,9 @@ Ang pag-overheat ay maaaring dulot ng:
     <string name="battery_not_fully_connected_charging_title_vzw">Incomplete connection</string>
     <string name="battery_not_fully_connected_charging_text">Para sa mas mabilis na pag-charge, gamitin ang charger na kasama ng device mo at tiyakin na nakakonekta ito nang mamayos.</string>
     <string name="battery_not_fully_connected_charging_text_vzw">Make sure the charger is properly connected.</string>
+    <string name="battery_not_fully_connected_charging_text_jpn">Tiyakin na nakakonekta nang maayos ang charger mo.</string>
     <string name="battery_not_fully_connected_charging_popup_text">Tiyakin na nakakonekta nang maayos ang charger. Gamitin ang charger na kasama ng device.</string>
+    <string name="battery_not_fully_connected_charging_popup_text_jpn">Tiyakin na nakakonekta nang maayos ang charger.</string>
     <string name="battery_charging_level_and_time_text">"Nagcha-charge: %1$d%%
 (Humigit-kumulang %2$s bago maging fully charged)"</string>
     <string name="battery_charging_level_text">Nagcha-charge: %d%%</string>
@@ -1878,6 +1883,8 @@ Please note that in order to enable your emergency calls (e.g., such as 112 call
     <string name="qs_detail_palm_capture_title">Palm swipe to capture</string>
     <string name="noti_direct_reply_exceed_text_limit_toast">Hindi makapagpasok ng dagdag na teksto.</string>
     <string name="airplane_mode_tts_text">Airplane mode</string>
+    <string name="all_noti_readout">Isang notification</string>
+    <string name="all_noti_readout2">%d notification</string>
     <string name="car_lockscreen_disclaimer_title">Magmaneho nang ligtas</string>
     <string name="car_lockscreen_disclaimer_text">Manatiling lubos na nakakaalam sa mga kondisyon sa pagmamaneho at palaging sumunod sa mga naaangkop na batas. Ang mga direksyon ay maaaring hindi tumpak, hindi kumpleto, mapanganib, hindi naaangkop, ipinagbabawal o kinasasangkutan ng pagtawid sa mga administratibong lugar. Maaari ding hindi tumpak o hindi kumpleto ang impormasyon ng negosyo. Hindi real-time ang data at hindi magagarantiya ang katumpakan ng lokasyon. Huwag gamitin ang iyong mobile device o gumamit ng mga app na hindi ginawa para sa Android Auto habang nagmamaneho.</string>
     <string name="pip_close">Isara ang PIP</string>

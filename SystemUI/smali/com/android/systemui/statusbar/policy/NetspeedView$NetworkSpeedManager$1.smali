@@ -59,19 +59,23 @@
     return-void
 
     :pswitch_0
-    invoke-static {}, Lcom/android/systemui/statusbar/policy/NetspeedView;->-get6()Z
+    invoke-static {}, Lcom/android/systemui/statusbar/policy/NetspeedView;->-get7()Z
 
     move-result v4
 
     if-eqz v4, :cond_1
 
-    const-string/jumbo v4, "tun0"
+    invoke-static {}, Lcom/android/systemui/statusbar/policy/NetspeedView;->-get0()Ljava/lang/String;
+
+    move-result-object v4
 
     invoke-static {v4}, Landroid/net/TrafficStats;->getRxBytes(Ljava/lang/String;)J
 
     move-result-wide v4
 
-    const-string/jumbo v6, "tun0"
+    invoke-static {}, Lcom/android/systemui/statusbar/policy/NetspeedView;->-get0()Ljava/lang/String;
+
+    move-result-object v6
 
     invoke-static {v6}, Landroid/net/TrafficStats;->getTxBytes(Ljava/lang/String;)J
 
@@ -112,13 +116,17 @@
 
     if-eqz v4, :cond_3
 
-    const-string/jumbo v4, "tun0"
+    invoke-static {}, Lcom/android/systemui/statusbar/policy/NetspeedView;->-get0()Ljava/lang/String;
+
+    move-result-object v4
 
     invoke-static {v4}, Landroid/net/TrafficStats;->getRxBytes(Ljava/lang/String;)J
 
     move-result-wide v4
 
-    const-string/jumbo v6, "tun0"
+    invoke-static {}, Lcom/android/systemui/statusbar/policy/NetspeedView;->-get0()Ljava/lang/String;
+
+    move-result-object v6
 
     invoke-static {v6}, Landroid/net/TrafficStats;->getTxBytes(Ljava/lang/String;)J
 
@@ -132,7 +140,7 @@
 
     iput-wide v4, p0, Lcom/android/systemui/statusbar/policy/NetspeedView$NetworkSpeedManager$1;->mSpd:J
 
-    invoke-static {}, Lcom/android/systemui/statusbar/policy/NetspeedView;->-get6()Z
+    invoke-static {}, Lcom/android/systemui/statusbar/policy/NetspeedView;->-get7()Z
 
     move-result v4
 
@@ -188,19 +196,7 @@
 
     if-gtz v4, :cond_4
 
-    const-string/jumbo v4, "%.0fK/s"
-
-    new-array v5, v9, [Ljava/lang/Object;
-
-    invoke-static {v2}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
-
-    move-result-object v6
-
-    aput-object v6, v5, v8
-
-    invoke-static {v4, v5}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v3
+    const-string/jumbo v3, "0K/s"
 
     :goto_3
     iget-object v4, p0, Lcom/android/systemui/statusbar/policy/NetspeedView$NetworkSpeedManager$1;->this$1:Lcom/android/systemui/statusbar/policy/NetspeedView$NetworkSpeedManager;

@@ -143,6 +143,8 @@
     <string name="tts_reset_speech_pitch_title">Resetuj wielgoś tōnu</string>
     <string name="tts_reset_speech_pitch_summary">Zresetuj wiegość tōnu głosu, kery czytŏ tekst do nasztalowaniŏ dōmyślnego.</string>
     <string name="choose_profile">Ôbier profil</string>
+    <string name="dev_logpersist_clear_warning_title">Wyczyścić trwałą pamięć dziennika?</string>
+    <string name="dev_logpersist_clear_warning_message">Dane dziennika zostaną usunięte po wyłączeniu trwałego dziennika.</string>
     <string name="select_logpersist_title">Trwale przechowuj dane raportu</string>
     <string name="select_logpersist_dialog_title">Wybór buforów raportów do trwałego zapisu</string>
     <string name="no_application">Niy ma aplikacyj</string>
@@ -168,7 +170,7 @@
     <string name="hours">%d godz.</string>
     <string name="hour_minutes">%1$d godz. %2$d min</string>
     <string name="minutes">%d min.</string>
-    <string name="battery_discharging_duration">Szacowany czas pracy baterii: %s</string>
+    <string name="battery_discharging_duration">Ôtaksowany czas fōngowaniŏ bateryje: %s</string>
     <string name="bluetooth_tethering_cannot_connect_while_connected_to_wifi">Niy idzie używać routera Bluetooth kej żeś je pożyniōny z necem W-Fi.</string>
     <string name="video_call_title">Połōnczynie wideo</string>
     <string name="samsung_cloud_title">Samsung Cloud</string>
@@ -250,6 +252,7 @@ For example, your ringtone will not sound, you will not be able to answer phone 
     <string name="wifi_authentication_failed_kt">Autoryzowanie pōnktu dostympu Wi-Fi niy podarziło sie.</string>
     <string name="wifi_authentication_no_response">Niy idzie nawiōnzać połōnczyniŏ z pōnktym dostympowym Wi-Fi.</string>
     <string name="wifi_authentication_invalid_value">Feler autentyfikacyje. Badnij login i hasło.</string>
+    <string name="wifi_disconnected">Wi-Fi rozłōnczōne</string>
     <string name="quick_settings_bluetooth_label">Bluetooth</string>
     <string name="quick_settings_bluetooth_detail_empty_text_available">Nie znaleziono urządzeń Bluetooth w pobliżu</string>
     <string name="quick_settings_bluetooth_detail_paired_devices_title">Powiązane urządzenia</string>
@@ -574,15 +577,21 @@ Kŏżdy użytkownik może aktualizować aplikacyje do wszyjskich użytkownikōw.
     <string name="dialog_battery_data_warning">Fōnkcyjŏ Mobile hotspot bydzie załōnczono. Zwiynkszy to zużycie baterii i danych.</string>
     <string name="keyboard_popup_help">Knefel Meta: knefel symbōlu systymu Windows, kōmyndy abo inkszego systymu ôperacyjnego.</string>
     <string name="keyboard_shortcut_group_system">Skrōty systymowe</string>
+    <string name="keyboard_shortcut_group_system_home">Strona główna</string>
+    <string name="keyboard_shortcut_group_system_recents">Ostatnie</string>
     <string name="keyboard_shortcut_group_system_back">Nazŏd</string>
+    <string name="keyboard_shortcut_group_system_notifications">Nowiny</string>
+    <string name="keyboard_shortcut_group_system_shortcuts_helper">Skróty klawiaturowe</string>
     <string name="keyboard_shortcut_group_system_all_apps">Wszyjskie aplikacyje</string>
     <string name="keyboard_shortcut_group_system_running_apps">Sztartniynte aplikacyje</string>
     <string name="keyboard_shortcut_group_system_lock_screen">Ekran blokady</string>
     <string name="keyboard_shortcut_group_system_switch_languages">Przeciep gŏdki</string>
     <string name="keyboard_shortcut_group_applications">Skrōty we strzodku apikacyji</string>
+    <string name="keyboard_shortcut_group_applications_browser">Przeglądarka</string>
     <string name="keyboard_shortcut_group_applications_contacts">Kōntakty</string>
     <string name="keyboard_shortcut_group_applications_email">E-mail</string>
     <string name="keyboard_shortcut_group_applications_music">Muzyka</string>
+    <string name="keyboard_shortcut_group_applications_calendar">Kalendarz</string>
     <string name="keyboard_shortcut_group_applications_bixby">Bixby</string>
     <string name="keyboard_shortcut_group_applications_messages">Wiadōmości</string>
     <string name="qs_edit">POPRŎW</string>
@@ -625,8 +634,8 @@ Kŏżdy użytkownik może aktualizować aplikacyje do wszyjskich użytkownikōw.
     <string name="recents_task_lock_edit_task_unlock_desc">Odblokowano aplikację %s</string>
     <string name="recents_help_dlg_full_page1">Coby użyć widoku potajlowanego ekranu, tyknij ikōny %s. Ôbier aplikacyjŏ do pokŏzywaniŏ w spodnij tajli ekranu.</string>
     <string name="recents_help_dlg_full_page1_desc">Coby używać widoku potajlowanego ekranu, tyknij ikōna Ôdewrzij w widoku potajlowanego ekranu. Ôbier aplikacyjŏ do pokŏzaniŏ w spodnij tajli ekranu.</string>
-    <string name="recents_help_dlg_full_page2_hardkey">Możesz przełączyć widok aplikacji z pełnoekranowego na widok podzielonego ekranu za pomocą naciśnięcia i przytrzymania klawisza Ostatnie.</string>
-    <string name="recents_help_dlg_full_page2_softkey">Możesz przełączyć widok aplikacji z pełnoekranowego na widok podzielonego ekranu za pomocą dotknięcia i przytrzymania przycisku Ostatnie.</string>
+    <string name="recents_help_dlg_full_page2_hardkey">Poradzisz przepnōńć widok aplikacyji z fol ekranu na widok ekranu w tajlach bez tykniyńcie i trzimanie knefla Niydŏwne.</string>
+    <string name="recents_help_dlg_full_page2_softkey">Poradzisz przepnōńć widok aplikacyji z fol ekranu na widok ekranu w tajlach bez tyniyńcie i trzimanie knefla Niydŏwne.</string>
     <string name="recents_help_dlg_full_page2_softkey_snap">Coby używać fōnkcyji Przismycz ôkno, tyknij ikōna %s. Ôbier plac aplikacyji do zadokowaniŏ na wiyrchu ekranu nim pokŏżesz we widoku potajlowanego ekranu.</string>
     <string name="recents_help_dlg_full_page2_softkey_snap_desc">Coby używać fōnkcyji Przismycz ôkno, tyknij ikōna Przismysz ôkno. Ôbier plac aplikacyji do zadokowaniŏ na wiyrchu ekranu nim pokŏżesz we widoku potajlowanego ekranu.</string>
     <string name="recents_help_dlg_next_button_text">Nŏstympny</string>
@@ -766,7 +775,9 @@ Zahajcowanie może być skuli:
     <string name="battery_not_fully_connected_charging_title_vzw">Incomplete connection</string>
     <string name="battery_not_fully_connected_charging_text">Coby gibcij folować używej folowarki, kerŏ żeś dostoł z maszinōm i dej się pozōr, co je sprŏwnie podepniyntŏ.</string>
     <string name="battery_not_fully_connected_charging_text_vzw">Make sure the charger is properly connected.</string>
+    <string name="battery_not_fully_connected_charging_text_jpn">Bydź zicher, co folowarka je akuratnie przipniynto.</string>
     <string name="battery_not_fully_connected_charging_popup_text">Dej się pozōr, co folowarka je sprŏwnie podepniyntŏ. Używej folowarki, kerŏ żeś dostoł z maszinōm.</string>
+    <string name="battery_not_fully_connected_charging_popup_text_jpn">Dej się pozōr, co folowarka je sprŏwnie podepniyntŏ.</string>
     <string name="battery_charging_level_and_time_text">"Folowanie: %1$d%%
 (kole %2$s do skōńczynio folowanio baterii)"</string>
     <string name="battery_charging_level_text">Ładowaniy: %d%%</string>
@@ -973,9 +984,9 @@ Zwracamy uwagę, że aby umożliwić skierowanie Twoich połączeń na numery al
     <string name="sec_accessibility_navbar_show_pin">Bloknij pŏsek ôd kerowanio</string>
     <string name="force_immersive_guide_dialog_title">Ukryj pasek nawigacji:</string>
     <string name="force_immersive_guide_dialog_message1">Dotknij dwukrotnie tego przycisku, aby ukryć pasek nawigacji.</string>
-    <string name="force_immersive_guide_dialog_message2">Przeciągnij do wewnątrz od krawędzi ekranu w pobliżu portu ładowania, aby pokazać pasek nawigacji.</string>
-    <string name="force_immersive_guide_dialog_message3">Ponownie dotknij dwukrotnie tego przycisku, aby zablokować pasek nawigacji na miejscu.</string>
-    <string name="force_immersive_guide_dialog_message4">Na niektórych ekranach, takich jak ekran startowy, pasek nawigacji będzie zawsze widoczny.</string>
+    <string name="force_immersive_guide_dialog_message2">Szibnij rajn ôd rantu ekranu po blisku portu folowanio, coby pokŏzać pŏsek ôd kerŏwanio.</string>
+    <string name="force_immersive_guide_dialog_message3">Drugi rŏz tyknij dwa razy tyn knefel, coby bloknōńć na jednym placu pŏsek ôd kerŏwanio.</string>
+    <string name="force_immersive_guide_dialog_message4">Na niykerych ekranach, takich co ekran sztartowy, pŏsek kerowanio bydzie zŏwdy widziany.</string>
     <string name="force_immersive_guide_dialog_guide_path">Aby ukryć ten przycisk, przejdź do menu Ustawienia > Wyświetlanie > Pasek nawigacji.</string>
     <string name="force_immersive_guide_dialog_setting">Sztalowanie</string>
     <string name="force_immersive_guide_dialog_ok">OK</string>
@@ -991,6 +1002,8 @@ Zwracamy uwagę, że aby umożliwić skierowanie Twoich połączeń na numery al
     <string name="qs_detail_palm_capture_title">Przejydź rynkōm, coby chycić.</string>
     <string name="noti_direct_reply_exceed_text_limit_toast">Niy idzie wkludzić ekstra tekstu.</string>
     <string name="airplane_mode_tts_text">Tryb offline</string>
+    <string name="all_noti_readout">Jedna nowina</string>
+    <string name="all_noti_readout2">Nowin: %d</string>
     <string name="keyguard_password_enter_pin_code">Wpisz kod PIN.</string>
     <string name="keyguard_password_wrong_pin_code">Niyprawy kod PIN.</string>
     <string name="keyguard_charged">W pełni naładowana</string>

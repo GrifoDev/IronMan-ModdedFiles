@@ -239,11 +239,11 @@
 
     sget-object v4, Lcom/android/systemui/statusbar/policy/AccessibilityContentDescriptions;->WIFI_CONNECTION_STRENGTH:[I
 
-    const v5, 0x7f0207a9
+    const v5, 0x7f0207ad
 
     const v6, 0x7f020228
 
-    const v7, 0x7f0207a9
+    const v7, 0x7f0207ad
 
     const v8, 0x7f020228
 
@@ -1475,7 +1475,7 @@
 
     iget-object v1, p0, Lcom/android/systemui/statusbar/policy/WifiSignalController;->mContext:Landroid/content/Context;
 
-    const v4, 0x7f0f06ae
+    const v4, 0x7f0f06af
 
     invoke-virtual {v1, v4}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 

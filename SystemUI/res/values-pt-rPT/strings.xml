@@ -238,6 +238,8 @@
     <string name="wifi_allow_scan_with_traffic_summary">Permitir/impedir a deteção de Wi-Fi em roaming com base na quantidade de tráfego de dados presente na interface</string>
     <string name="select_logd_size_title">Tamanhos da memória intermédia do registo</string>
     <string name="select_logd_size_dialog_title">Selec. tam. reg. p/ mem. int. reg.</string>
+    <string name="dev_logpersist_clear_warning_title">Apagar armazenamento de registo persistente?</string>
+    <string name="dev_logpersist_clear_warning_message">Os dados de registo serão eliminados se o registo persistente for desligado.</string>
     <string name="select_logpersist_title">Armazenar dados registo persist.</string>
     <string name="select_logpersist_dialog_title">Selec. mem. temp. registo p/ armaz. persis.</string>
     <string name="select_usb_configuration_title">Selecionar configuração USB</string>
@@ -752,6 +754,7 @@ Se retomar a utilização, o seu operador pode efetuar cobranças."</string>
     <string name="wifi_authentication_failed_kt">Falha ao autenticar PA Wi-Fi.</string>
     <string name="wifi_authentication_no_response">Falha ao ligar ao PA Wi-Fi.</string>
     <string name="wifi_authentication_invalid_value">Autenticação falhou. Verifique o ID e a password.</string>
+    <string name="wifi_disconnected">Wi-Fi desligado.</string>
     <string name="quick_settings_dnd_label">Não incomodar</string>
     <string name="quick_settings_dnd_priority_label">Apenas prioridade</string>
     <string name="quick_settings_dnd_alarms_label">Apenas alarmes</string>
@@ -860,6 +863,8 @@ luz azul"</string>
 móveis"</string>
     <string name="quick_settings_wificalling_label">"Chamadas
 Wi-Fi"</string>
+    <string name="quick_settings_callingplus_label">"Calling
+Plus"</string>
     <string name="quick_settings_personal_mode_label">"Modo
 privado"</string>
     <string name="quick_settings_data_roaming_label">"Roaming
@@ -1383,7 +1388,7 @@ Para obter mais informações, contacte o administrador."</string>
     <string name="keyboard_key_numpad_template">Teclado numérico %1$s</string>
     <string name="keyboard_popup_help">Meta tecla: Tecla com o símbolo Windows, Comando ou qualquer outro sistema operativo.</string>
     <string name="keyboard_shortcut_group_system">Atalhos de sistema</string>
-    <string name="keyboard_shortcut_group_system_home">Página inicial</string>
+    <string name="keyboard_shortcut_group_system_home">Início</string>
     <string name="keyboard_shortcut_group_system_recents">Recentes</string>
     <string name="keyboard_shortcut_group_system_back">Anterior</string>
     <string name="keyboard_shortcut_group_system_notifications">Notificações</string>
@@ -1395,13 +1400,13 @@ Para obter mais informações, contacte o administrador."</string>
     <string name="keyboard_shortcut_group_system_switch_languages">Mudar de idioma</string>
     <string name="keyboard_shortcut_group_applications">Atalhos na aplicação</string>
     <string name="keyboard_shortcut_group_applications_assist">Assistência</string>
-    <string name="keyboard_shortcut_group_applications_browser">Navegador</string>
+    <string name="keyboard_shortcut_group_applications_browser">Browser</string>
     <string name="keyboard_shortcut_group_applications_contacts">Contactos</string>
     <string name="keyboard_shortcut_group_applications_email">E-mail</string>
     <string name="keyboard_shortcut_group_applications_im">IM</string>
     <string name="keyboard_shortcut_group_applications_music">Música</string>
     <string name="keyboard_shortcut_group_applications_youtube">YouTube</string>
-    <string name="keyboard_shortcut_group_applications_calendar">Calendário</string>
+    <string name="keyboard_shortcut_group_applications_calendar">Agenda</string>
     <string name="keyboard_shortcut_group_applications_bixby">Bixby</string>
     <string name="keyboard_shortcut_group_applications_messages">Mensagens</string>
     <string name="tuner_full_zen_title">Mostrar com controlos de volume</string>
@@ -1653,7 +1658,9 @@ O sobreaquecimento pode ser causado por:
     <string name="battery_not_fully_connected_charging_title_vzw">Incomplete connection</string>
     <string name="battery_not_fully_connected_charging_text">Para um carregamento mais rápido, utilize o carregador fornecido com o seu dispositivo e certifique-se de que está ligado correctamente.</string>
     <string name="battery_not_fully_connected_charging_text_vzw">Make sure the charger is properly connected.</string>
+    <string name="battery_not_fully_connected_charging_text_jpn">Certifique-se de que o seu carregador está ligado correctamente.</string>
     <string name="battery_not_fully_connected_charging_popup_text">Certifique-se de que o carregador está ligado correctamente. Utilize o carregador fornecido com o dispositivo.</string>
+    <string name="battery_not_fully_connected_charging_popup_text_jpn">Certifique-se de que o carregador está ligado correctamente.</string>
     <string name="battery_charging_level_and_time_text">"A carregar: %1$d %%
 (Aproximadamente %2$s até que a bateria fique totalmente carregada)"</string>
     <string name="battery_charging_level_text">A carregar: %d%%</string>
@@ -1878,6 +1885,8 @@ Please note that in order to enable your emergency calls (e.g., such as 112 call
     <string name="qs_detail_palm_capture_title">Passar a mão para capturar</string>
     <string name="noti_direct_reply_exceed_text_limit_toast">Impossível introduzir mais texto.</string>
     <string name="airplane_mode_tts_text">Modo de avião</string>
+    <string name="all_noti_readout">Uma notificação</string>
+    <string name="all_noti_readout2">%d notificações</string>
     <string name="car_lockscreen_disclaimer_title">Conduza com segurança</string>
     <string name="car_lockscreen_disclaimer_text">Mantenha-se completamente atento às condições de condução e respeite sempre as leis aplicáveis. As direções podem ser imprecisas, incompletas, perigosas, inadequadas, proibidas ou envolver a travessia de áreas administrativas. Os dados das empresas também podem ser imprecisos ou incompletos. Os dados não são fornecidos em tempo real e não é possível garantir a precisão da localização. Não manuseie o dispositivo móvel nem utilize aplicações não destinadas ao Android Auto durante a condução.</string>
     <string name="pip_close">Fechar PIP</string>

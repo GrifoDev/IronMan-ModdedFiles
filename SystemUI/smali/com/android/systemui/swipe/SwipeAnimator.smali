@@ -531,7 +531,7 @@
 
     iget-object v0, p0, Lcom/android/systemui/swipe/SwipeAnimator;->mNotiPanelView:Landroid/view/View;
 
-    const v1, 0x7f1304db
+    const v1, 0x7f1304dd
 
     invoke-virtual {v0, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -4095,7 +4095,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f0d0237
+    const v1, 0x7f0d0239
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDimension(I)F
 
@@ -4111,7 +4111,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f0d053e
+    const v1, 0x7f0d0541
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDimension(I)F
 

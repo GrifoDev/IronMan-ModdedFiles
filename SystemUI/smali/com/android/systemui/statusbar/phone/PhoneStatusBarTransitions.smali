@@ -29,7 +29,7 @@
 
     const/4 v2, 0x1
 
-    const v1, 0x7f0207b2
+    const v1, 0x7f0207b6
 
     invoke-direct {p0, p1, v1}, Lcom/android/systemui/statusbar/phone/BarTransitions;-><init>(Landroid/view/View;I)V
 
@@ -45,7 +45,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f0d0229
+    const v1, 0x7f0d022b
 
     invoke-virtual {v0, v1, v2, v2}, Landroid/content/res/Resources;->getFraction(III)F
 

@@ -3173,7 +3173,7 @@
 
     invoke-direct {v0, v1, v2}, Lcom/android/systemui/egg/MLand$Star;-><init>(Lcom/android/systemui/egg/MLand;Landroid/content/Context;)V
 
-    const v25, 0x7f0207b6
+    const v25, 0x7f0207ba
 
     move-object/from16 v0, v22
 
@@ -3185,7 +3185,7 @@
 
     move-result-object v25
 
-    const v26, 0x7f0d0527
+    const v26, 0x7f0d052a
 
     invoke-virtual/range {v25 .. v26}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -3420,7 +3420,7 @@
 
     move-result-object v25
 
-    const v26, 0x7f0d0527
+    const v26, 0x7f0d052a
 
     invoke-virtual/range {v25 .. v26}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 

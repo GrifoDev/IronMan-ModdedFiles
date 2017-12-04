@@ -2740,11 +2740,17 @@
 
 # virtual methods
 .method public cleanUp()V
-    .locals 2
+    .locals 3
 
-    const/4 v1, 0x0
+    const/4 v2, 0x0
 
     invoke-super {p0}, Lcom/android/keyguard/wallpaper/SystemUIWallpaper;->cleanUp()V
+
+    const-string/jumbo v0, "KeyguardImageWallpaper"
+
+    const-string/jumbo v1, "cleanUp"
+
+    invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
     iget-object v0, p0, Lcom/android/keyguard/wallpaper/KeyguardImageWallpaper;->mCache:Landroid/graphics/Bitmap;
 
@@ -2754,7 +2760,7 @@
 
     invoke-virtual {v0}, Landroid/graphics/Bitmap;->recycle()V
 
-    iput-object v1, p0, Lcom/android/keyguard/wallpaper/KeyguardImageWallpaper;->mCache:Landroid/graphics/Bitmap;
+    iput-object v2, p0, Lcom/android/keyguard/wallpaper/KeyguardImageWallpaper;->mCache:Landroid/graphics/Bitmap;
 
     :cond_0
     iget-object v0, p0, Lcom/android/keyguard/wallpaper/KeyguardImageWallpaper;->mOldBitmap:Landroid/graphics/Bitmap;
@@ -2765,10 +2771,10 @@
 
     invoke-virtual {v0}, Landroid/graphics/Bitmap;->recycle()V
 
-    iput-object v1, p0, Lcom/android/keyguard/wallpaper/KeyguardImageWallpaper;->mOldBitmap:Landroid/graphics/Bitmap;
+    iput-object v2, p0, Lcom/android/keyguard/wallpaper/KeyguardImageWallpaper;->mOldBitmap:Landroid/graphics/Bitmap;
 
     :cond_1
-    invoke-direct {p0, v1}, Lcom/android/keyguard/wallpaper/KeyguardImageWallpaper;->updateVignettingEffect(Landroid/graphics/Bitmap;)V
+    invoke-direct {p0, v2}, Lcom/android/keyguard/wallpaper/KeyguardImageWallpaper;->updateVignettingEffect(Landroid/graphics/Bitmap;)V
 
     return-void
 .end method

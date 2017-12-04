@@ -238,6 +238,8 @@
     <string name="wifi_allow_scan_with_traffic_summary">Dopustite ili blokirajte slobodno traženje Wi-Fi mreža na temelju količine podatkovnog prometa na sučelju.</string>
     <string name="select_logd_size_title">Veličine međuspremnika zapisnika</string>
     <string name="select_logd_size_dialog_title">Odaberite veličinu međuspremnika zapisnika</string>
+    <string name="dev_logpersist_clear_warning_title">Izbrisati memoriju trajnog zapisivača?</string>
+    <string name="dev_logpersist_clear_warning_message">Podaci zapisivača izbrisat će se kad se isključi trajni zapisivač.</string>
     <string name="select_logpersist_title">Stalno pohranjuj zapise</string>
     <string name="select_logpersist_dialog_title">Odab. međusprem. dnevn. za stalnu pohranu</string>
     <string name="select_usb_configuration_title">Odabir USB konfiguracije</string>
@@ -752,6 +754,7 @@ Mobilni operater može naplatiti daljnju upotrebu."</string>
     <string name="wifi_authentication_failed_kt">Provjera Wi-Fi pristupne točke nije uspjela.</string>
     <string name="wifi_authentication_no_response">Greška spajanja na Wi-Fi pristupnu točku.</string>
     <string name="wifi_authentication_invalid_value">Provjera nije prošla. Provjerite ID i lozinku.</string>
+    <string name="wifi_disconnected">Wi-Fi isključen.</string>
     <string name="quick_settings_dnd_label">Ne ometaj</string>
     <string name="quick_settings_dnd_priority_label">Samo prioritetno</string>
     <string name="quick_settings_dnd_alarms_label">Samo alarmi</string>
@@ -1382,8 +1385,8 @@ Obratite se svojem administratoru za više informacija."</string>
     <string name="keyboard_key_numpad_template">Brojčana tipkovnica %1$s</string>
     <string name="keyboard_popup_help">Meta tipka: tipka simbola Windows, naredbe ili drugog operacijskog sustava.</string>
     <string name="keyboard_shortcut_group_system">Prečaci sustava</string>
-    <string name="keyboard_shortcut_group_system_home">Početni zaslon</string>
-    <string name="keyboard_shortcut_group_system_recents">Najnovije</string>
+    <string name="keyboard_shortcut_group_system_home">Početna stranica</string>
+    <string name="keyboard_shortcut_group_system_recents">Nedavno</string>
     <string name="keyboard_shortcut_group_system_back">Natrag</string>
     <string name="keyboard_shortcut_group_system_notifications">Obavijesti</string>
     <string name="keyboard_shortcut_group_system_shortcuts_helper">Tipkovni prečaci</string>
@@ -1652,7 +1655,9 @@ Pregrijavanje mogu uzrokovati:
     <string name="battery_not_fully_connected_charging_title_vzw">Incomplete connection</string>
     <string name="battery_not_fully_connected_charging_text">Za brže punjenje upotrebljavajte punjač koji ste dobili uz uređaj i provjerite je li ispravno povezan.</string>
     <string name="battery_not_fully_connected_charging_text_vzw">Make sure the charger is properly connected.</string>
+    <string name="battery_not_fully_connected_charging_text_jpn">Provjerite je li vaš punjač ispravno povezan.</string>
     <string name="battery_not_fully_connected_charging_popup_text">Provjerite je li punjač ispravno povezan. Upotrebljavajte punjač koji ste dobili uz uređaj.</string>
+    <string name="battery_not_fully_connected_charging_popup_text_jpn">Provjerite je li punjač ispravno povezan.</string>
     <string name="battery_charging_level_and_time_text">"Punjenje: %1$d %%
 (Otprilike %2$s preostalo do završetka punjenja)"</string>
     <string name="battery_charging_level_text">Punjenje: %d%%</string>
@@ -1878,6 +1883,8 @@ Please note that in order to enable your emergency calls (e.g., such as 112 call
     <string name="qs_detail_palm_capture_title">Snimanje zaslona dlanom</string>
     <string name="noti_direct_reply_exceed_text_limit_toast">Nije moguće unijeti više teksta.</string>
     <string name="airplane_mode_tts_text">Zrakoplovni način</string>
+    <string name="all_noti_readout">Jedna obavijest</string>
+    <string name="all_noti_readout2">%d obavijesti</string>
     <string name="car_lockscreen_disclaimer_title">Vozite sigurno</string>
     <string name="car_lockscreen_disclaimer_text">Pažljivo pratite promet i uvijek se pridržavajte primjenjivih zakona. Upute mogu biti neprecizne, nepotpune, opasne, neprikladne, zabranjene ili mogu uključivati prelazak administrativnih granica. Podaci o tvrtkama također mogu biti neprecizni i nepotpuni. Podaci nisu u stvarnom vremenu i preciznost lokacije nije zajamčena. Tijekom vožnje ne rukujte mobilnim uređajem i ne upotrebljavajte aplikacije koje nisu namijenjene za Android Auto.</string>
     <string name="pip_close">Zatvori PIP</string>

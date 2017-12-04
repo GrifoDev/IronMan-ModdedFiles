@@ -238,6 +238,8 @@
     <string name="wifi_allow_scan_with_traffic_summary">根据接口中目前的数据流量允许/禁止WLAN漫游扫描</string>
     <string name="select_logd_size_title">日志记录器缓冲区大小</string>
     <string name="select_logd_size_dialog_title">选择每个日志缓冲区的日志记录器大小</string>
+    <string name="dev_logpersist_clear_warning_title">是否清除永久日志存储？</string>
+    <string name="dev_logpersist_clear_warning_message">在关闭永久记录时，日志数据将被删除。</string>
     <string name="select_logpersist_title">永久存储记录数据</string>
     <string name="select_logpersist_dialog_title">选择用于永久存储的记录缓冲区</string>
     <string name="select_usb_configuration_title">选择USB配置</string>
@@ -754,6 +756,7 @@
     <string name="wifi_authentication_failed_kt">验证 <cst>Wi-Fi</cst> AP 失败</string>
     <string name="wifi_authentication_no_response">连接到 <cst>Wi-Fi</cst> AP 失败</string>
     <string name="wifi_authentication_invalid_value">验证失败。请确认用户名和密码。</string>
+    <string name="wifi_disconnected"><cst>Wi-Fi</cst>已断开。</string>
     <string name="quick_settings_dnd_label">勿扰</string>
     <string name="quick_settings_dnd_priority_label">仅限优先打扰</string>
     <string name="quick_settings_dnd_alarms_label">仅限闹钟</string>
@@ -853,6 +856,7 @@ P2P"</string>
     <string name="quick_settings_mobile_data_label">移动数据</string>
     <string name="quick_settings_wificalling_label"><cst>Wi-Fi</cst>"
 呼叫"</string>
+    <string name="quick_settings_callingplus_label"><cst>通话+</cst></string>
     <string name="quick_settings_personal_mode_label">"私密
 模式"</string>
     <string name="quick_settings_data_roaming_label">"数据
@@ -1377,10 +1381,10 @@ P2P"</string>
     <string name="keyboard_popup_help">元键：Windows 键、命令键或其他操作系统符号键。</string>
     <string name="keyboard_shortcut_group_system">系统快捷方式</string>
     <string name="keyboard_shortcut_group_system_home">主屏幕</string>
-    <string name="keyboard_shortcut_group_system_recents">最近</string>
+    <string name="keyboard_shortcut_group_system_recents">最近使用</string>
     <string name="keyboard_shortcut_group_system_back">返回</string>
     <string name="keyboard_shortcut_group_system_notifications">通知</string>
-    <string name="keyboard_shortcut_group_system_shortcuts_helper">键盘快捷键</string>
+    <string name="keyboard_shortcut_group_system_shortcuts_helper">键盘快捷方式</string>
     <string name="keyboard_shortcut_group_system_switch_input">切换输入法</string>
     <string name="keyboard_shortcut_group_system_all_apps">所有应用程序</string>
     <string name="keyboard_shortcut_group_system_running_apps">正在运行的应用程序</string>
@@ -1646,7 +1650,9 @@ P2P"</string>
     <string name="battery_not_fully_connected_charging_title_vzw">连接不完全</string>
     <string name="battery_not_fully_connected_charging_text">为了更快地充电，请使用设备随附的充电器并确保其正确连接。</string>
     <string name="battery_not_fully_connected_charging_text_vzw">请确保正确连接充电器。</string>
+    <string name="battery_not_fully_connected_charging_text_jpn">请确保您的充电器正确连接</string>
     <string name="battery_not_fully_connected_charging_popup_text">请确保充电器正确连接。请使用设备随附的充电器。</string>
+    <string name="battery_not_fully_connected_charging_popup_text_jpn">请确保充电器正确连接</string>
     <string name="battery_charging_level_and_time_text">"正在充电：%1$d%%
 (离充满电还有约 %2$s)"</string>
     <string name="battery_charging_level_text">正在充电：%d%%</string>
@@ -1868,6 +1874,8 @@ Please note that in order to enable your emergency calls (e.g., such as 112 call
     <string name="qs_detail_palm_capture_title">手掌滑动截屏</string>
     <string name="noti_direct_reply_exceed_text_limit_toast">已达到输入文本的上限。</string>
     <string name="airplane_mode_tts_text">飞行模式</string>
+    <string name="all_noti_readout">一条通知</string>
+    <string name="all_noti_readout2">%d 条通知</string>
     <string name="car_lockscreen_disclaimer_title">安全驾驶</string>
     <string name="car_lockscreen_disclaimer_text">请充分了解驾驶条件并务必遵守适用的法律。路线指示可能不准确，不完整，也可能包含危险、不适合通行、禁止通行或跨越行政区域的路段。商家信息也可能不准确或不完整。数据并非实时提供，因此无法保证位置信息的精确度。请勿在驾驶过程中操作您的移动设备或使用不支持 Android Auto 的应用。</string>
     <string name="pip_close">关闭画中画</string>

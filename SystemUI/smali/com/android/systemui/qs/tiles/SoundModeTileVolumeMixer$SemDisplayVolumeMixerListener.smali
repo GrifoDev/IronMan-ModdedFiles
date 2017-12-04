@@ -83,7 +83,7 @@
     :goto_0
     iget-object v0, p0, Lcom/android/systemui/qs/tiles/SoundModeTileVolumeMixer$SemDisplayVolumeMixerListener;->this$0:Lcom/android/systemui/qs/tiles/SoundModeTileVolumeMixer;
 
-    invoke-static {v0}, Lcom/android/systemui/qs/tiles/SoundModeTileVolumeMixer;->-get3(Lcom/android/systemui/qs/tiles/SoundModeTileVolumeMixer;)Z
+    invoke-static {v0}, Lcom/android/systemui/qs/tiles/SoundModeTileVolumeMixer;->-get4(Lcom/android/systemui/qs/tiles/SoundModeTileVolumeMixer;)Z
 
     move-result v0
 

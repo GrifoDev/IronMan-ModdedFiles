@@ -26,9 +26,9 @@
 
 .field public static final lock_btn_camera_swipe:I = 0x7f020326
 
-.field public static final sview_cover_kids_wallpaper:I = 0x7f0207b8
+.field public static final sview_cover_kids_wallpaper:I = 0x7f0207bc
 
-.field public static final wallpaper_default_01:I = 0x7f020824
+.field public static final wallpaper_default_01:I = 0x7f020828
 
 
 # direct methods

@@ -26,6 +26,12 @@
     return-void
 .end method
 
+.method public onBixbyViewStateChanged(Z)V
+    .locals 0
+
+    return-void
+.end method
+
 .method public onChangeCoverBackground()V
     .locals 0
 

@@ -113,7 +113,7 @@
     <string name="bluetooth_pairing_pin_error_message">No se ha podido vincular con %s. Asegúrate de que está listo para vincularse.</string>
     <string name="bluetooth_pairing_device_down_error_message">No se puede conectar a %s.</string>
     <string name="bluetooth_pairing_device_down_black_list_error_message">No se puede conectar a %1$s. Comprueba tus ajustes en %2$s e inténtalo de nuevo.</string>
-    <string name="bluetooth_pairing_rejected_error_message">%s ha rechazado la vinculación</string>
+    <string name="bluetooth_pairing_rejected_error_message">%s ha rechazado la vinculación.</string>
     <string name="bluetooth_getting_remote_device_name">Obteniendo nombre de dispositivo…</string>
     <string name="bluetooth_display_remote_device_name_after_pair">El nombre del dispositivo aparecerá cuando este dispositivo esté conectado.</string>
     <string name="tether_settings_title_all">Conexión compartida y Módem</string>
@@ -126,7 +126,7 @@
     <string name="tts_lang_not_selected">No hay ningún idioma seleccionado</string>
     <string name="tts_default_lang_summary">Definir voz de idioma para texto pronunciado</string>
     <string name="tts_play_example_title">Escuchar un ejemplo</string>
-    <string name="tts_play_example_summary">Reproducir demostración corta de síntesis de voz</string>
+    <string name="tts_play_example_summary">Reproduce demostración corta de síntesis de voz.</string>
     <string name="tts_install_data_title">Instalar datos de voz</string>
     <string name="tts_install_data_summary">Instalar datos de voz necesarios para síntesis de voz</string>
     <string name="tts_engine_security_warning">Este motor de síntesis de voz puede recopilar todas las voces, incluidas las contraseñas, los números de tarjetas de crédito y otros datos personales. ¿Continuar?</string>
@@ -143,6 +143,8 @@
     <string name="tts_reset_speech_pitch_title">Restablecer tono</string>
     <string name="tts_reset_speech_pitch_summary">Restablece el tono en el que se lee el texto en alto al ajuste predeterminado.</string>
     <string name="choose_profile">Seleccionar perfil</string>
+    <string name="dev_logpersist_clear_warning_title">¿Borrar almacenamiento reg persistente?</string>
+    <string name="dev_logpersist_clear_warning_message">Se eliminarán los datos del registrador cuando el registrador persistente se desactive.</string>
     <string name="select_logpersist_title">Guardar datos registro continuo</string>
     <string name="select_logpersist_dialog_title">Elegir búferes para almacenamiento continuo</string>
     <string name="no_application">No hay aplicaciones</string>
@@ -250,6 +252,7 @@ For example, your ringtone will not sound, you will not be able to answer phone 
     <string name="wifi_authentication_failed_kt">Error al autenticar punto de acceso Wi-Fi.</string>
     <string name="wifi_authentication_no_response">Error al conectar a punto de acceso Wi-Fi.</string>
     <string name="wifi_authentication_invalid_value">La autenticación ha fallado. Compruebe el ID y la contraseña.</string>
+    <string name="wifi_disconnected">Wi-Fi desconectado</string>
     <string name="quick_settings_bluetooth_label">Bluetooth</string>
     <string name="quick_settings_bluetooth_detail_empty_text_available">No se han encontrado dispositivos Bluetooth cercanos.</string>
     <string name="quick_settings_bluetooth_detail_paired_devices_title">Dispositivos vinculados</string>
@@ -311,6 +314,8 @@ luz azul"</string>
 móviles"</string>
     <string name="quick_settings_wificalling_label">"Llamadas
 Wi-Fi"</string>
+    <string name="quick_settings_callingplus_label">"Llamadas
+Plus"</string>
     <string name="quick_settings_personal_mode_label">"Modo
 privado"</string>
     <string name="quick_settings_data_roaming_label">"Itine-
@@ -451,7 +456,7 @@ Se usará la red móvil para determinar su ubicación. Se aplicarán cargos por 
     <string name="sync_show_popup_message_enable">"Los cambios que haga a sus cuentas en la web se copiarán automáticamente a su dispositivo.
 
 Algunas cuentas pueden además copiar automáticamente en la web los cambios que realice en el dispositivo. Se activará la Sincronización automática."</string>
-    <string name="sync_show_popup_message_disable">Esta acción reducirá el uso de datos y conservará la batería, pero deberá sincronizar las cuentas manualmente para recopilar la información más reciente. Mientras esté activado, no recibirá notificaciones de actualizaciones.</string>
+    <string name="sync_show_popup_message_disable">Esta acción reducirá el uso de datos y conservará la batería, pero deberá sincronizar las cuentas manualmente para recopilar la información más reciente. Mientras esté activado, no recibirás notificaciones de actualizaciones.</string>
     <string name="airplane_mode">Modo Avión</string>
     <string name="airplane_mode_show_popup_title">Activar modo Avión</string>
     <string name="airplane_mode_show_popup_title_vzw">Turn on Airplane mode</string>
@@ -574,15 +579,21 @@ Cualquier usuario puede actualizar aplicaciones para los demás usuarios."</stri
     <string name="dialog_battery_data_warning">La Conexión compartida se activará. Esta conexión aumentará el consumo de batería y el uso de datos.</string>
     <string name="keyboard_popup_help">Metatecla: la tecla Windows, Comando o cualquier otra tecla de símbolo del sistema.</string>
     <string name="keyboard_shortcut_group_system">Accesos directos de sistema</string>
+    <string name="keyboard_shortcut_group_system_home">Inicio</string>
+    <string name="keyboard_shortcut_group_system_recents">Recientes</string>
     <string name="keyboard_shortcut_group_system_back">Atrás</string>
+    <string name="keyboard_shortcut_group_system_notifications">Notificaciones</string>
+    <string name="keyboard_shortcut_group_system_shortcuts_helper">Accesos directos de teclado</string>
     <string name="keyboard_shortcut_group_system_all_apps">Todas las aplicaciones</string>
     <string name="keyboard_shortcut_group_system_running_apps">Aplicaciones en ejecución</string>
     <string name="keyboard_shortcut_group_system_lock_screen">Pantalla Bloqueo</string>
     <string name="keyboard_shortcut_group_system_switch_languages">Cambiar idiomas</string>
     <string name="keyboard_shortcut_group_applications">Accesos directos en apps</string>
+    <string name="keyboard_shortcut_group_applications_browser">Navegador</string>
     <string name="keyboard_shortcut_group_applications_contacts">Contactos</string>
     <string name="keyboard_shortcut_group_applications_email">Correo electrónico</string>
     <string name="keyboard_shortcut_group_applications_music">Música</string>
+    <string name="keyboard_shortcut_group_applications_calendar">Calendario</string>
     <string name="keyboard_shortcut_group_applications_bixby">Bixby</string>
     <string name="keyboard_shortcut_group_applications_messages">Mensajes</string>
     <string name="qs_edit">EDITAR</string>
@@ -766,7 +777,9 @@ El sobrecalentamiento puede producirse por varios motivos:
     <string name="battery_not_fully_connected_charging_title_vzw">Incomplete connection</string>
     <string name="battery_not_fully_connected_charging_text">Para una carga más rápida, use el cargador proporcionado con el dispositivo y asegúrese de que esté correctamente conectado.</string>
     <string name="battery_not_fully_connected_charging_text_vzw">Make sure the charger is properly connected.</string>
+    <string name="battery_not_fully_connected_charging_text_jpn">Asegúrate de que el cargador esté correctamente conectado.</string>
     <string name="battery_not_fully_connected_charging_popup_text">Asegúrese de que el cargador esté correctamente conectado. Use el cargador proporcionado con el dispositivo.</string>
+    <string name="battery_not_fully_connected_charging_popup_text_jpn">Asegúrate de que el cargador esté correctamente conectado.</string>
     <string name="battery_charging_level_and_time_text">"Cargando: %1$d%%
 (Aproximadamente %2$s para que se complete la carga de la batería)"</string>
     <string name="battery_charging_level_text">Cargando: %d%%</string>
@@ -874,7 +887,7 @@ Solo llamadas de emergencia"</string>
 de hongbao"</string>
     <string name="hongbao_assistant_dialog_message">"Se activará el Asistente de hongbao. Esta función le permitirá recibir sobres rojos de WeChat más rápidamente y obtener notificaciones cuando se reciban.
 Se necesita una conexión de red.
-Puede activar y desactivar esta función en Ajustes rápidos."</string>
+Puedes activar y desactivar esta función en Ajustes rápidos."</string>
     <string name="hongbao_assistant_noti_title">Asistente de hongbao</string>
     <string name="hongbao_assistant_noti_text">Reciba sobres rojos de WeChat más rápidamente y obtenga notificaciones cuando los reciba. Pulse aquí para activar esta función.</string>
     <string name="no_sim_notification_title">No hay SIM</string>
@@ -991,6 +1004,8 @@ Please note that in order to enable your emergency calls (e.g., such as 112 call
     <string name="qs_detail_palm_capture_title">Desplazar palma para capturar</string>
     <string name="noti_direct_reply_exceed_text_limit_toast">No se puede introducir más texto.</string>
     <string name="airplane_mode_tts_text">Modo Avión</string>
+    <string name="all_noti_readout">Una notificación</string>
+    <string name="all_noti_readout2">%d notificaciones</string>
     <string name="keyguard_password_enter_pin_code">Escribir código PIN</string>
     <string name="keyguard_password_wrong_pin_code">Código PIN incorrecto</string>
     <string name="keyguard_charged">Carga completa</string>

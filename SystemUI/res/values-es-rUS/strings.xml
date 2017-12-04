@@ -238,6 +238,8 @@
     <string name="wifi_allow_scan_with_traffic_summary">Permitir/no permitir las búsquedas de Wi-Fi basadas la cantidad de tráfico de datos presente en la interfaz</string>
     <string name="select_logd_size_title">Tamaños de búfer de Logger</string>
     <string name="select_logd_size_dialog_title">Selecciona el tamaño del Logger por búfer</string>
+    <string name="dev_logpersist_clear_warning_title">¿Borrar almacenamiento del registrador?</string>
+    <string name="dev_logpersist_clear_warning_message">Los datos del registrador se eliminarán cuando se desactive el registrador continuo.</string>
     <string name="select_logpersist_title">Almacenar de forma persistente</string>
     <string name="select_logpersist_dialog_title">Seleccionar búfers registro para almacenar</string>
     <string name="select_usb_configuration_title">Seleccionar configuración de USB</string>
@@ -751,6 +753,7 @@ La reanudación podría tener como resultado cargos del proveedor."</string>
     <string name="wifi_authentication_failed_kt">Error al autenticar el Punto de Acceso Wi-Fi.</string>
     <string name="wifi_authentication_no_response">Error al conectar al Punto de Acceso Wi-Fi.</string>
     <string name="wifi_authentication_invalid_value">Error de autenticación. Revise ID y contraseña.</string>
+    <string name="wifi_disconnected">Wi-Fi desconectado.</string>
     <string name="quick_settings_dnd_label">No molestar</string>
     <string name="quick_settings_dnd_priority_label">Solo prioridad</string>
     <string name="quick_settings_dnd_alarms_label">Solo alarmas</string>
@@ -859,6 +862,8 @@ luz azul"</string>
 móviles"</string>
     <string name="quick_settings_wificalling_label">"Llamada
 Wi-Fi"</string>
+    <string name="quick_settings_callingplus_label">"Llamadas
+Plus"</string>
     <string name="quick_settings_personal_mode_label">"Modo
 Privado"</string>
     <string name="quick_settings_data_roaming_label">"Roaming
@@ -1382,11 +1387,11 @@ Para obtener más información, comunícate con el administrador."</string>
     <string name="keyboard_key_numpad_template">Teclado numérico %1$s</string>
     <string name="keyboard_popup_help">Tecla Meta: La tecla Windows, la tecla Comando u otra tecla operativa con el símbolo del sistema.</string>
     <string name="keyboard_shortcut_group_system">Atajos del sistema</string>
-    <string name="keyboard_shortcut_group_system_home">Pantalla principal</string>
+    <string name="keyboard_shortcut_group_system_home">Inicio</string>
     <string name="keyboard_shortcut_group_system_recents">Recientes</string>
     <string name="keyboard_shortcut_group_system_back">Atrás</string>
     <string name="keyboard_shortcut_group_system_notifications">Notificaciones</string>
-    <string name="keyboard_shortcut_group_system_shortcuts_helper">Combinación de teclas</string>
+    <string name="keyboard_shortcut_group_system_shortcuts_helper">Atajos del teclado</string>
     <string name="keyboard_shortcut_group_system_switch_input">Cambiar método de entrada</string>
     <string name="keyboard_shortcut_group_system_all_apps">Todas las aplicaciones</string>
     <string name="keyboard_shortcut_group_system_running_apps">Aplicaciones en ejecución</string>
@@ -1652,7 +1657,9 @@ El sobrecalentamiento se puede deber a:
     <string name="battery_not_fully_connected_charging_title_vzw">Conexión incompleta</string>
     <string name="battery_not_fully_connected_charging_text">Para que la carga sea más rápida, use el cargador provisto con el dispositivo y asegúrese de que esté correctamente conectado.</string>
     <string name="battery_not_fully_connected_charging_text_vzw">Asegúrese de que el cargador esté correctamente conectado.</string>
+    <string name="battery_not_fully_connected_charging_text_jpn">Asegúrese de que el cargador esté correctamente conectado.</string>
     <string name="battery_not_fully_connected_charging_popup_text">Asegúrese de que el cargador esté correctamente conectado. Use el cargador provisto con el dispositivo.</string>
+    <string name="battery_not_fully_connected_charging_popup_text_jpn">Asegúrese de que el cargador esté correctamente conectado.</string>
     <string name="battery_charging_level_and_time_text">"Cargando: %1$d %%
 (Aproximadamente %2$s para que se complete la carga de la batería)"</string>
     <string name="battery_charging_level_text">Cargando: %d%%</string>
@@ -1877,6 +1884,8 @@ Please note that in order to enable your emergency calls (e.g., such as 112 call
     <string name="qs_detail_palm_capture_title">Deslizar para capturar</string>
     <string name="noti_direct_reply_exceed_text_limit_toast">No es posible introducir más texto.</string>
     <string name="airplane_mode_tts_text">Perfil Fuera de línea</string>
+    <string name="all_noti_readout">Una notificación</string>
+    <string name="all_noti_readout2">%d notificaciones</string>
     <string name="car_lockscreen_disclaimer_title">Conducir de forma segura</string>
     <string name="car_lockscreen_disclaimer_text">Permanece atento a la situación de conducción y cumple siempre con las leyes vigentes. Es posible que las indicaciones sean imprecisas, inadecuadas o peligrosas, que estén incompletas, que sugieran maniobras prohibidas o que impliquen atravesar áreas administrativas. La información de las empresas también puede ser imprecisa o estar incompleta. Los datos no se proporcionan en tiempo real ni se puede garantizar la precisión de las ubicaciones. No uses tu dispositivo móvil ni apps no diseñadas para Android Auto mientras conduces.</string>
     <string name="pip_close">Cerrar PIP</string>

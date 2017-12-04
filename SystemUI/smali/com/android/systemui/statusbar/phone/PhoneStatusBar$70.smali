@@ -70,7 +70,7 @@
 
     const/4 v2, 0x0
 
-    const v5, 0x7f0f07ee
+    const v5, 0x7f0f07f1
 
     move v4, v3
 

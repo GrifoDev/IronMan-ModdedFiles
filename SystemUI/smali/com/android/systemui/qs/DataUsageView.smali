@@ -951,7 +951,7 @@
 
     iget-object v1, p0, Lcom/android/systemui/qs/DataUsageView;->mContext:Landroid/content/Context;
 
-    const v2, 0x7f0f07be
+    const v2, 0x7f0f07c1
 
     invoke-virtual {v1, v2}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -1368,7 +1368,7 @@
 
     const-string v4, "data_usage_text_color"
 
-    const-string v5, "#e61e4e78"
+    const-string v5, "#ff22c4ff"
 
     invoke-static {v5}, Landroid/graphics/Color;->parseColor(Ljava/lang/String;)I
 

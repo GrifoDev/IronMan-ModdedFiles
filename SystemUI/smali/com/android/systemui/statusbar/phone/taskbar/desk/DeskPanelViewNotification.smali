@@ -360,7 +360,7 @@
 .method private getDeskNotificationViewCollapseTo()F
     .locals 3
 
-    const v2, 0x7f0d06a0
+    const v2, 0x7f0d06a4
 
     const/4 v1, 0x0
 
@@ -440,7 +440,7 @@
 .method private getDeskNotificationViewExpandFrom()F
     .locals 3
 
-    const v2, 0x7f0d06a0
+    const v2, 0x7f0d06a4
 
     const/4 v1, 0x0
 
@@ -520,7 +520,7 @@
 .method private getDeskNotificationViewExpandTo()F
     .locals 3
 
-    const v2, 0x7f0d04c7
+    const v2, 0x7f0d04c9
 
     const/4 v0, 0x0
 
@@ -671,7 +671,7 @@
 
     move-result-object v2
 
-    const v3, 0x7f0d06af
+    const v3, 0x7f0d06b3
 
     invoke-virtual {v2, v3}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -683,7 +683,7 @@
 
     move-result-object v2
 
-    const v3, 0x7f0d04cb
+    const v3, 0x7f0d04cd
 
     invoke-virtual {v2, v3}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -709,7 +709,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f0d04c7
+    const v2, 0x7f0d04c9
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -1243,7 +1243,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f0d04c7
+    const v2, 0x7f0d04c9
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 

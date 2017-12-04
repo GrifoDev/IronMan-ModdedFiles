@@ -238,6 +238,8 @@
     <string name="wifi_allow_scan_with_traffic_summary">Permitir/proibir verificações de roaming de Wi-Fi com base no volume do tráfego de dados presente na interface</string>
     <string name="select_logd_size_title">Tamanhos de buffer de logger</string>
     <string name="select_logd_size_dialog_title">Sel. tam. de logger/buffer de log</string>
+    <string name="dev_logpersist_clear_warning_title">Apagar armaz. do registrador persistente?</string>
+    <string name="dev_logpersist_clear_warning_message">Os dados do registrador serão excluídos quando o registrador persistente for desativado.</string>
     <string name="select_logpersist_title">Armaz. dados regis. persistent.</string>
     <string name="select_logpersist_dialog_title">Sel. buffers registro p/ armaz. persistent.</string>
     <string name="select_usb_configuration_title">Selecionar configuração USB</string>
@@ -751,6 +753,7 @@ A retomada pode gerar cobranças por parte da sua operadora."</string>
     <string name="wifi_authentication_failed_kt">Falha ao autenticar AP Wi-Fi.</string>
     <string name="wifi_authentication_no_response">Falha ao conectar-se ao Ponto de acesso Wi-Fi.</string>
     <string name="wifi_authentication_invalid_value">Autenticação falhou. Verifique o ID e a senha.</string>
+    <string name="wifi_disconnected">Wi-Fi desativado.</string>
     <string name="quick_settings_dnd_label">Não perturbe</string>
     <string name="quick_settings_dnd_priority_label">Só prioridade</string>
     <string name="quick_settings_dnd_alarms_label">Somente alarmes</string>
@@ -859,6 +862,8 @@ luz azul"</string>
 móveis"</string>
     <string name="quick_settings_wificalling_label">"Chamadas
 Wi-Fi"</string>
+    <string name="quick_settings_callingplus_label">"Calling
+Plus"</string>
     <string name="quick_settings_personal_mode_label">"Modo
 Privado"</string>
     <string name="quick_settings_data_roaming_label">"Roaming
@@ -1400,7 +1405,7 @@ Para ver mais informações, entre em contato com seu administrador."</string>
     <string name="keyboard_shortcut_group_applications_im">Mensagens instantâneas</string>
     <string name="keyboard_shortcut_group_applications_music">Músicas</string>
     <string name="keyboard_shortcut_group_applications_youtube">YouTube</string>
-    <string name="keyboard_shortcut_group_applications_calendar">Agenda</string>
+    <string name="keyboard_shortcut_group_applications_calendar">Calendário</string>
     <string name="keyboard_shortcut_group_applications_bixby">Bixby</string>
     <string name="keyboard_shortcut_group_applications_messages">Mensagens</string>
     <string name="tuner_full_zen_title">Mostrar com controles de volume</string>
@@ -1652,7 +1657,9 @@ O aquecimento pode ter sido causado por:
     <string name="battery_not_fully_connected_charging_title_vzw">Conexão incompleta</string>
     <string name="battery_not_fully_connected_charging_text">Para um carregamento mais rápido, use o carregador fornecido com o seu aparelho e certifique-se de que ele esteja conectado corretamente.</string>
     <string name="battery_not_fully_connected_charging_text_vzw">Verifique se o carregador está conectado corretamente.</string>
+    <string name="battery_not_fully_connected_charging_text_jpn">Verifique se o seu carregador está conectado corretamente.</string>
     <string name="battery_not_fully_connected_charging_popup_text">Certifique-se de que o carregador esteja conectado corretamente. Use o carregador fornecido com o aparelho.</string>
+    <string name="battery_not_fully_connected_charging_popup_text_jpn">Certifique-se de que o carregador esteja conectado corretamente.</string>
     <string name="battery_charging_level_and_time_text">"Carregamento: %1$d%%
 (Aproximadamente %2$s até o carregamento total)"</string>
     <string name="battery_charging_level_text">Carregando: %d%%</string>
@@ -1860,7 +1867,7 @@ Please note that in order to enable your emergency calls (e.g., such as 112 call
     <string name="force_immersive_guide_dialog_title">Ocultar a barra de navegação:</string>
     <string name="force_immersive_guide_dialog_message1">Toque duas vezes neste botão para ocultar a barra de navegação.</string>
     <string name="force_immersive_guide_dialog_message2">Deslize da borda da tela para dentro, próximo à porta de carregamento, para exibir a barra de navegação.</string>
-    <string name="force_immersive_guide_dialog_message3">Toque duas vezes neste botão novamente para bloquear a barra de navegação no local.</string>
+    <string name="force_immersive_guide_dialog_message3">Toque duas vezes neste botão novamente para bloquear a barra de navegação existente.</string>
     <string name="force_immersive_guide_dialog_message4">Em algumas telas, como a Tela inicial, a barra de navegação será sempre exibida.</string>
     <string name="force_immersive_guide_dialog_guide_path">Para ocultar este botão, vá para Configurações > Visor > Barra de navegação.</string>
     <string name="force_immersive_guide_dialog_setting">Configurações</string>
@@ -1877,6 +1884,8 @@ Please note that in order to enable your emergency calls (e.g., such as 112 call
     <string name="qs_detail_palm_capture_title">Deslizar a lateral da mão para capturar</string>
     <string name="noti_direct_reply_exceed_text_limit_toast">Não é possível inserir mais texto.</string>
     <string name="airplane_mode_tts_text">Modo offline</string>
+    <string name="all_noti_readout">Uma notificação</string>
+    <string name="all_noti_readout2">%d notificações</string>
     <string name="car_lockscreen_disclaimer_title">Dirija com segurança</string>
     <string name="car_lockscreen_disclaimer_text">"Mantenha-se atento às condições da estrada  e sempre obedeça às leis aplicáveis. As instruções podem ser imprecisas, incompletas, perigosas, inadequadas, proibidas ou envolver o cruzamento de áreas administrativas. As informações comerciais também podem ser imprecisas ou incompletas. Os dados não são exibidos em tempo real, e a precisão da localização não pode ser garantida. Enquanto dirige, não manuseie seu dispositivo móvel nem use apps que não tenham sido criados para o Android Auto."</string>
     <string name="pip_close">Fechar PIP</string>

@@ -143,6 +143,8 @@
     <string name="tts_reset_speech_pitch_title">পিচ পুনঃছেট কৰক</string>
     <string name="tts_reset_speech_pitch_summary">"ডিফ'ল্ট ছেটিংছৰ বাবে পঢ়া পাঠত পিচ পুনঃছেট কৰক।"</string>
     <string name="choose_profile">"প্ৰ'ফাইল চয়ন কৰক"</string>
+    <string name="dev_logpersist_clear_warning_title">ক্ৰমাগত লগাৰ সংগ্ৰহণ পৰিষ্কাৰ কৰিবনে?</string>
+    <string name="dev_logpersist_clear_warning_message">"ক্ৰমাগত লগাৰ অফ হোৱাৰ পিছত লগাৰ ডাটা বিলোপ হ'ব।"</string>
     <string name="select_logpersist_title">লগ ডাটা ক্ৰমাগতভাৱে সংগ্ৰহ কৰক</string>
     <string name="select_logpersist_dialog_title">ক্ৰমাগতভাৱে সংগ্ৰহ কৰিবলৈ লগ বাফাৰসমূহ চয়ন কৰক</string>
     <string name="no_application">কোনো এপ্লিকেশ্বন নাই</string>
@@ -250,6 +252,7 @@ For example, your ringtone will not sound, you will not be able to answer phone 
     <string name="wifi_authentication_failed_kt">Wi-Fi AP প্ৰামাণিকৃত কৰিবলৈ বিফল হৈছে।</string>
     <string name="wifi_authentication_no_response">Wi-Fi AP-লৈ সংযোগ কৰিবলৈ বিফল হৈছে৷</string>
     <string name="wifi_authentication_invalid_value">প্ৰামাণিকৰণ বিফল৷ ID আৰু পাছৱৰ্ড পৰীক্ষা কৰক</string>
+    <string name="wifi_disconnected">Wi-Fi সংযোগহীন হৈছে৷</string>
     <string name="quick_settings_bluetooth_label">ব্লুটুথ</string>
     <string name="quick_settings_bluetooth_detail_empty_text_available">কোনো কাষৰীয়া ব্লুটুথ ডিভাইচ পোৱা নাই</string>
     <string name="quick_settings_bluetooth_detail_paired_devices_title">যোৰা কৰি থোৱা ডিভাইচসমূহ</string>
@@ -575,15 +578,21 @@ Wi-Fi আৰু ব্লুটুথো অফ হ'ব, কিন্তু আ�
     <string name="dialog_battery_data_warning">"ম'বাইল হ'টস্প'ট সক্ষম কৰা হ’ব৷ ই বেটাৰি ব্যৱহাৰ আৰু ডাটা ব্যৱহাৰ বৃদ্ধি কৰিব৷"</string>
     <string name="keyboard_popup_help">"মেটা কী: উইণ্ড'জ, আদেশ বা অন্য অপাৰেটিং ছিষ্টেমৰ চিহ্ন কী।"</string>
     <string name="keyboard_shortcut_group_system">ছিষ্টেম চৰ্টকাট</string>
+    <string name="keyboard_shortcut_group_system_home">গৃহ</string>
+    <string name="keyboard_shortcut_group_system_recents">শেহতীয়া</string>
     <string name="keyboard_shortcut_group_system_back">পিছলৈ</string>
+    <string name="keyboard_shortcut_group_system_notifications">অধিসূচনা</string>
+    <string name="keyboard_shortcut_group_system_shortcuts_helper">"কীব'ৰ্ড চৰ্টকাটসমূহ"</string>
     <string name="keyboard_shortcut_group_system_all_apps">সকলো এপ্প্‌চ</string>
     <string name="keyboard_shortcut_group_system_running_apps">এপ্প্‌চ চলি আছে</string>
     <string name="keyboard_shortcut_group_system_lock_screen">লক স্ক্ৰীণ</string>
     <string name="keyboard_shortcut_group_system_switch_languages">ভাষা সলনি কৰক</string>
     <string name="keyboard_shortcut_group_applications">ইন-এপ চৰ্টকাট</string>
+    <string name="keyboard_shortcut_group_applications_browser">ব্ৰাউজাৰ</string>
     <string name="keyboard_shortcut_group_applications_contacts">সম্পৰ্কসমূহ</string>
     <string name="keyboard_shortcut_group_applications_email">ইমেইল</string>
     <string name="keyboard_shortcut_group_applications_music">সঙ্গীত</string>
+    <string name="keyboard_shortcut_group_applications_calendar">কেলেণ্ডাৰ</string>
     <string name="keyboard_shortcut_group_applications_bixby">Bixby</string>
     <string name="keyboard_shortcut_group_applications_messages">মেচেজ</string>
     <string name="qs_edit">সম্পাদনা</string>
@@ -767,7 +776,9 @@ Using your tablet in a very hot location."</string>
     <string name="battery_not_fully_connected_charging_title_vzw">Incomplete connection</string>
     <string name="battery_not_fully_connected_charging_text">দ্ৰুতভাৱে চাৰ্জ কৰিবলৈ, আপোনাৰ ডিভাইচৰ লগত অহা চাৰ্জাৰটো ব্যৱহাৰ কৰক আৰু এইটো সঠিকভাৱে সংযোগ হৈ থকাটো নিশ্চিত কৰক।</string>
     <string name="battery_not_fully_connected_charging_text_vzw">Make sure the charger is properly connected.</string>
+    <string name="battery_not_fully_connected_charging_text_jpn">আপোনাৰ চাৰ্জাৰ সঠিকভাৱে সংযোগ হৈ থকাটো নিশ্চিত কৰক।</string>
     <string name="battery_not_fully_connected_charging_popup_text">চাৰ্জাৰটো সঠিকভাৱে সংযোগ হৈ থকাটো নিশ্চিত কৰক। ডিভাইচৰ লগত অহা চাৰ্জাৰটো ব্যৱহাৰ কৰক।</string>
+    <string name="battery_not_fully_connected_charging_popup_text_jpn">চাৰ্জাৰটো সঠিকভাৱে সংযোগ হৈ থকাটো নিশ্চিত কৰক।</string>
     <string name="battery_charging_level_and_time_text">"চাৰ্জ হৈ আছে: %1$d%%
 (সম্পূৰ্ণ চাৰ্জ হোৱালৈ প্ৰায় %2$s)"</string>
     <string name="battery_charging_level_text">চাৰ্জ হৈ আছে: %d%%</string>
@@ -992,6 +1003,8 @@ Please note that in order to enable your emergency calls (e.g., such as 112 call
     <string name="qs_detail_palm_capture_title">কেপছাৰ কৰিবলৈ হাতৰ তলুৱাৰে ঘহাঁওক</string>
     <string name="noti_direct_reply_exceed_text_limit_toast">যিকোনো অধিক পাঠ প্ৰৱিষ্ট কৰিব নোৱাৰে।</string>
     <string name="airplane_mode_tts_text">"এয়াৰপ্লেন ম'ড"</string>
+    <string name="all_noti_readout">এটা অধিসূচনা</string>
+    <string name="all_noti_readout2">%d টা অধিসূচনা</string>
     <string name="keyguard_password_enter_pin_code">"PIN ক'ড টাইপ কৰক৷"</string>
     <string name="keyguard_password_wrong_pin_code">"অশুদ্ধ PIN ক'ড৷"</string>
     <string name="keyguard_charged">সম্পূৰ্ণ চাৰ্জ হৈছে</string>

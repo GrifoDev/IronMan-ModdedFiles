@@ -974,135 +974,158 @@
     goto :goto_6
 .end method
 
-.method private updateViewStyleOnWhiteWallpaper()V
-    .locals 7
+.method private updateViewStyle()V
+    .locals 8
 
-    const/4 v6, 0x0
+    const/4 v7, 0x0
 
-    iget-object v5, p0, Lcom/android/keyguard/servicebox/pages/music/ServiceBoxMusicPage;->mContext:Landroid/content/Context;
+    iget-object v6, p0, Lcom/android/keyguard/servicebox/pages/music/ServiceBoxMusicPage;->mContext:Landroid/content/Context;
 
-    invoke-static {v5}, Lcom/android/keyguard/util/ViewStyleUtils;->getInstance(Landroid/content/Context;)Lcom/android/keyguard/util/ViewStyleUtils;
-
-    move-result-object v3
-
-    iget-object v5, p0, Lcom/android/keyguard/servicebox/pages/music/ServiceBoxMusicPage;->mMusicAppNameTextView:Landroid/widget/TextView;
-
-    invoke-virtual {v3, v5, v6}, Lcom/android/keyguard/util/ViewStyleUtils;->updateViewStyle(Landroid/widget/TextView;I)V
-
-    iget-object v5, p0, Lcom/android/keyguard/servicebox/pages/music/ServiceBoxMusicPage;->mMusicTitleTextView:Landroid/widget/TextView;
-
-    invoke-virtual {v3, v5, v6}, Lcom/android/keyguard/util/ViewStyleUtils;->updateViewStyle(Landroid/widget/TextView;I)V
-
-    iget-object v5, p0, Lcom/android/keyguard/servicebox/pages/music/ServiceBoxMusicPage;->mMusicArtistTextView:Landroid/widget/TextView;
-
-    invoke-virtual {v3, v5, v6}, Lcom/android/keyguard/util/ViewStyleUtils;->updateViewStyle(Landroid/widget/TextView;I)V
-
-    iget-object v5, p0, Lcom/android/keyguard/servicebox/pages/music/ServiceBoxMusicPage;->mMusicLyricsView:Landroid/widget/TextView;
-
-    invoke-virtual {v3, v5, v6}, Lcom/android/keyguard/util/ViewStyleUtils;->updateViewStyle(Landroid/widget/TextView;I)V
-
-    iget-object v5, p0, Lcom/android/keyguard/servicebox/pages/music/ServiceBoxMusicPage;->mMusicOOBETextView:Landroid/widget/TextView;
-
-    invoke-virtual {v3, v5, v6}, Lcom/android/keyguard/util/ViewStyleUtils;->updateViewStyle(Landroid/widget/TextView;I)V
-
-    iget-object v5, p0, Lcom/android/keyguard/servicebox/pages/music/ServiceBoxMusicPage;->mContext:Landroid/content/Context;
-
-    invoke-static {v5}, Lcom/android/keyguard/util/SettingsHelper;->getInstance(Landroid/content/Context;)Lcom/android/keyguard/util/SettingsHelper;
+    invoke-static {v6}, Lcom/android/keyguard/util/ViewStyleUtils;->getInstance(Landroid/content/Context;)Lcom/android/keyguard/util/ViewStyleUtils;
 
     move-result-object v5
 
-    invoke-virtual {v5}, Lcom/android/keyguard/util/SettingsHelper;->isWhiteKeyguardWallpaper()Z
+    iget-object v6, p0, Lcom/android/keyguard/servicebox/pages/music/ServiceBoxMusicPage;->mMusicAppNameTextView:Landroid/widget/TextView;
+
+    invoke-virtual {v5, v6, v7}, Lcom/android/keyguard/util/ViewStyleUtils;->updateViewStyle(Landroid/widget/TextView;I)V
+
+    iget-object v6, p0, Lcom/android/keyguard/servicebox/pages/music/ServiceBoxMusicPage;->mMusicTitleTextView:Landroid/widget/TextView;
+
+    invoke-virtual {v5, v6, v7}, Lcom/android/keyguard/util/ViewStyleUtils;->updateViewStyle(Landroid/widget/TextView;I)V
+
+    iget-object v6, p0, Lcom/android/keyguard/servicebox/pages/music/ServiceBoxMusicPage;->mMusicArtistTextView:Landroid/widget/TextView;
+
+    invoke-virtual {v5, v6, v7}, Lcom/android/keyguard/util/ViewStyleUtils;->updateViewStyle(Landroid/widget/TextView;I)V
+
+    iget-object v6, p0, Lcom/android/keyguard/servicebox/pages/music/ServiceBoxMusicPage;->mMusicLyricsView:Landroid/widget/TextView;
+
+    invoke-virtual {v5, v6, v7}, Lcom/android/keyguard/util/ViewStyleUtils;->updateViewStyle(Landroid/widget/TextView;I)V
+
+    iget-object v6, p0, Lcom/android/keyguard/servicebox/pages/music/ServiceBoxMusicPage;->mMusicOOBETextView:Landroid/widget/TextView;
+
+    invoke-virtual {v5, v6, v7}, Lcom/android/keyguard/util/ViewStyleUtils;->updateViewStyle(Landroid/widget/TextView;I)V
+
+    iget-object v6, p0, Lcom/android/keyguard/servicebox/pages/music/ServiceBoxMusicPage;->mContext:Landroid/content/Context;
+
+    invoke-static {v6}, Lcom/android/keyguard/util/SettingsHelper;->getInstance(Landroid/content/Context;)Lcom/android/keyguard/util/SettingsHelper;
+
+    move-result-object v6
+
+    invoke-virtual {v6}, Lcom/android/keyguard/util/SettingsHelper;->isWhiteKeyguardWallpaper()Z
+
+    move-result v1
+
+    iget-object v6, p0, Lcom/android/keyguard/servicebox/pages/music/ServiceBoxMusicPage;->mContext:Landroid/content/Context;
+
+    invoke-static {v6}, Lcom/android/keyguard/util/SettingsHelper;->getInstance(Landroid/content/Context;)Lcom/android/keyguard/util/SettingsHelper;
+
+    move-result-object v6
+
+    invoke-virtual {v6}, Lcom/android/keyguard/util/SettingsHelper;->isOpenThemeLook()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_1
+
+    iget-object v6, p0, Lcom/android/keyguard/servicebox/pages/music/ServiceBoxMusicPage;->mContext:Landroid/content/Context;
+
+    sget v7, Lcom/android/keyguard/R$color;->theme_textclock_color:I
+
+    invoke-virtual {v6, v7}, Landroid/content/Context;->getColor(I)I
 
     move-result v4
 
-    if-eqz v4, :cond_1
-
-    iget-object v5, p0, Lcom/android/keyguard/servicebox/pages/music/ServiceBoxMusicPage;->mContext:Landroid/content/Context;
-
-    sget v6, Lcom/android/keyguard/R$color;->dark_navigation_bar_icon_color_lockscreen:I
-
-    invoke-virtual {v5, v6}, Landroid/content/Context;->getColor(I)I
-
-    move-result v2
-
     :goto_0
-    iget-object v5, p0, Lcom/android/keyguard/servicebox/pages/music/ServiceBoxMusicPage;->mPrevBtn:Landroid/widget/ImageView;
+    iget-object v6, p0, Lcom/android/keyguard/servicebox/pages/music/ServiceBoxMusicPage;->mPrevBtn:Landroid/widget/ImageView;
 
-    invoke-virtual {v5, v2}, Landroid/widget/ImageView;->setColorFilter(I)V
+    invoke-virtual {v6, v4}, Landroid/widget/ImageView;->setColorFilter(I)V
 
-    iget-object v5, p0, Lcom/android/keyguard/servicebox/pages/music/ServiceBoxMusicPage;->mPlayBtn:Landroid/widget/ImageView;
+    iget-object v6, p0, Lcom/android/keyguard/servicebox/pages/music/ServiceBoxMusicPage;->mPlayBtn:Landroid/widget/ImageView;
 
-    invoke-virtual {v5, v2}, Landroid/widget/ImageView;->setColorFilter(I)V
+    invoke-virtual {v6, v4}, Landroid/widget/ImageView;->setColorFilter(I)V
 
-    iget-object v5, p0, Lcom/android/keyguard/servicebox/pages/music/ServiceBoxMusicPage;->mNextBtn:Landroid/widget/ImageView;
+    iget-object v6, p0, Lcom/android/keyguard/servicebox/pages/music/ServiceBoxMusicPage;->mNextBtn:Landroid/widget/ImageView;
 
-    invoke-virtual {v5, v2}, Landroid/widget/ImageView;->setColorFilter(I)V
+    invoke-virtual {v6, v4}, Landroid/widget/ImageView;->setColorFilter(I)V
 
-    if-eqz v4, :cond_2
+    if-eqz v1, :cond_3
 
-    sget v0, Lcom/android/keyguard/R$drawable;->ripple_drawable_dark_oval:I
+    sget v2, Lcom/android/keyguard/R$drawable;->ripple_drawable_dark_oval:I
 
     :goto_1
-    if-eqz v4, :cond_3
+    if-eqz v1, :cond_4
 
-    sget v1, Lcom/android/keyguard/R$drawable;->ripple_drawable_dark_rect:I
+    sget v3, Lcom/android/keyguard/R$drawable;->ripple_drawable_dark_rect:I
 
     :goto_2
-    iget-object v5, p0, Lcom/android/keyguard/servicebox/pages/music/ServiceBoxMusicPage;->mPrevBtn:Landroid/widget/ImageView;
+    iget-object v6, p0, Lcom/android/keyguard/servicebox/pages/music/ServiceBoxMusicPage;->mPrevBtn:Landroid/widget/ImageView;
 
-    invoke-virtual {v5, v0}, Landroid/widget/ImageView;->setBackgroundResource(I)V
+    invoke-virtual {v6, v2}, Landroid/widget/ImageView;->setBackgroundResource(I)V
 
-    iget-object v5, p0, Lcom/android/keyguard/servicebox/pages/music/ServiceBoxMusicPage;->mPlayBtn:Landroid/widget/ImageView;
+    iget-object v6, p0, Lcom/android/keyguard/servicebox/pages/music/ServiceBoxMusicPage;->mPlayBtn:Landroid/widget/ImageView;
 
-    invoke-virtual {v5, v0}, Landroid/widget/ImageView;->setBackgroundResource(I)V
+    invoke-virtual {v6, v2}, Landroid/widget/ImageView;->setBackgroundResource(I)V
 
-    iget-object v5, p0, Lcom/android/keyguard/servicebox/pages/music/ServiceBoxMusicPage;->mNextBtn:Landroid/widget/ImageView;
+    iget-object v6, p0, Lcom/android/keyguard/servicebox/pages/music/ServiceBoxMusicPage;->mNextBtn:Landroid/widget/ImageView;
 
-    invoke-virtual {v5, v0}, Landroid/widget/ImageView;->setBackgroundResource(I)V
+    invoke-virtual {v6, v2}, Landroid/widget/ImageView;->setBackgroundResource(I)V
 
-    iget-object v5, p0, Lcom/android/keyguard/servicebox/pages/music/ServiceBoxMusicPage;->mRippleArea:Landroid/view/View;
+    iget-object v6, p0, Lcom/android/keyguard/servicebox/pages/music/ServiceBoxMusicPage;->mRippleArea:Landroid/view/View;
 
-    invoke-virtual {v5, v1}, Landroid/view/View;->setBackgroundResource(I)V
+    invoke-virtual {v6, v3}, Landroid/view/View;->setBackgroundResource(I)V
 
-    iget v5, p0, Lcom/android/keyguard/servicebox/pages/music/ServiceBoxMusicPage;->mPageType:I
+    iget v6, p0, Lcom/android/keyguard/servicebox/pages/music/ServiceBoxMusicPage;->mPageType:I
 
-    const/4 v6, 0x2
+    const/4 v7, 0x2
 
-    if-ne v5, v6, :cond_0
+    if-ne v6, v7, :cond_0
 
-    iget-object v5, p0, Lcom/android/keyguard/servicebox/pages/music/ServiceBoxMusicPage;->mMusicAppNameTextView:Landroid/widget/TextView;
+    iget-object v6, p0, Lcom/android/keyguard/servicebox/pages/music/ServiceBoxMusicPage;->mMusicAppNameTextView:Landroid/widget/TextView;
 
-    invoke-virtual {v5, v1}, Landroid/widget/TextView;->setBackgroundResource(I)V
+    invoke-virtual {v6, v3}, Landroid/widget/TextView;->setBackgroundResource(I)V
 
-    iget-object v5, p0, Lcom/android/keyguard/servicebox/pages/music/ServiceBoxMusicPage;->mMusicLyricsView:Landroid/widget/TextView;
+    iget-object v6, p0, Lcom/android/keyguard/servicebox/pages/music/ServiceBoxMusicPage;->mMusicLyricsView:Landroid/widget/TextView;
 
-    invoke-virtual {v5, v1}, Landroid/widget/TextView;->setBackgroundResource(I)V
+    invoke-virtual {v6, v3}, Landroid/widget/TextView;->setBackgroundResource(I)V
 
-    iget-object v5, p0, Lcom/android/keyguard/servicebox/pages/music/ServiceBoxMusicPage;->mMusicCoverView:Landroid/widget/ImageView;
+    iget-object v6, p0, Lcom/android/keyguard/servicebox/pages/music/ServiceBoxMusicPage;->mMusicCoverView:Landroid/widget/ImageView;
 
-    invoke-virtual {v5, v1}, Landroid/widget/ImageView;->setBackgroundResource(I)V
+    invoke-virtual {v6, v3}, Landroid/widget/ImageView;->setBackgroundResource(I)V
 
     :cond_0
     return-void
 
     :cond_1
-    iget-object v5, p0, Lcom/android/keyguard/servicebox/pages/music/ServiceBoxMusicPage;->mContext:Landroid/content/Context;
+    if-eqz v1, :cond_2
 
-    sget v6, Lcom/android/keyguard/R$color;->dark_navigation_bar_white_icon_color:I
+    iget-object v6, p0, Lcom/android/keyguard/servicebox/pages/music/ServiceBoxMusicPage;->mContext:Landroid/content/Context;
 
-    invoke-virtual {v5, v6}, Landroid/content/Context;->getColor(I)I
+    sget v7, Lcom/android/keyguard/R$color;->dark_navigation_bar_icon_color_lockscreen:I
 
-    move-result v2
+    invoke-virtual {v6, v7}, Landroid/content/Context;->getColor(I)I
+
+    move-result v4
 
     goto :goto_0
 
     :cond_2
-    sget v0, Lcom/android/keyguard/R$drawable;->ripple_drawable_oval:I
+    iget-object v6, p0, Lcom/android/keyguard/servicebox/pages/music/ServiceBoxMusicPage;->mContext:Landroid/content/Context;
+
+    sget v7, Lcom/android/keyguard/R$color;->dark_navigation_bar_white_icon_color:I
+
+    invoke-virtual {v6, v7}, Landroid/content/Context;->getColor(I)I
+
+    move-result v4
+
+    goto :goto_0
+
+    :cond_3
+    sget v2, Lcom/android/keyguard/R$drawable;->ripple_drawable_oval:I
 
     goto :goto_1
 
-    :cond_3
-    sget v1, Lcom/android/keyguard/R$drawable;->ripple_drawable_rect:I
+    :cond_4
+    sget v3, Lcom/android/keyguard/R$drawable;->ripple_drawable_rect:I
 
     goto :goto_2
 .end method
@@ -1352,7 +1375,7 @@
 .end method
 
 .method protected getContentsView(I)Landroid/view/View;
-    .locals 3
+    .locals 4
 
     sget v0, Lcom/android/keyguard/R$layout;->servicebox_music_page_small:I
 
@@ -1361,9 +1384,15 @@
     :goto_0
     iget-object v1, p0, Lcom/android/keyguard/servicebox/pages/music/ServiceBoxMusicPage;->mContext:Landroid/content/Context;
 
-    const/4 v2, 0x0
+    invoke-static {v1}, Landroid/view/LayoutInflater;->from(Landroid/content/Context;)Landroid/view/LayoutInflater;
 
-    invoke-static {v1, v0, v2}, Landroid/view/View;->inflate(Landroid/content/Context;ILandroid/view/ViewGroup;)Landroid/view/View;
+    move-result-object v1
+
+    iget-object v2, p0, Lcom/android/keyguard/servicebox/pages/music/ServiceBoxMusicPage;->mMusicHolder:Landroid/widget/FrameLayout;
+
+    const/4 v3, 0x0
+
+    invoke-virtual {v1, v0, v2, v3}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;Z)Landroid/view/View;
 
     move-result-object v1
 
@@ -1715,7 +1744,7 @@
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
     :cond_3
-    invoke-direct {p0}, Lcom/android/keyguard/servicebox/pages/music/ServiceBoxMusicPage;->updateViewStyleOnWhiteWallpaper()V
+    invoke-direct {p0}, Lcom/android/keyguard/servicebox/pages/music/ServiceBoxMusicPage;->updateViewStyle()V
 
     const/4 v0, 0x0
 
@@ -2569,7 +2598,7 @@
 .method public updateChildViewsLook()V
     .locals 0
 
-    invoke-direct {p0}, Lcom/android/keyguard/servicebox/pages/music/ServiceBoxMusicPage;->updateViewStyleOnWhiteWallpaper()V
+    invoke-direct {p0}, Lcom/android/keyguard/servicebox/pages/music/ServiceBoxMusicPage;->updateViewStyle()V
 
     return-void
 .end method

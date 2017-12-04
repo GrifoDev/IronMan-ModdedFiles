@@ -240,14 +240,14 @@
             </intent-filter>
             <meta-data android:name="android.service.wallpaper" android:resource="@xml/infinity_wallpaper_gold"/>
         </service>
-        <activity android:enabled="false" android:exported="true" android:icon="@drawable/tuner" android:label="@string/system_ui_tuner" android:name=".tuner.TunerActivity" android:process=":tuner" android:theme="@style/TunerSettings">
+        <activity android:enabled="false" android:exported="true" android:icon="@drawable/taskmanager_ic_snap_split_mtrl" android:label="@string/volume_cant_change_volume_smart_view" android:name=".tuner.TunerActivity" android:process=":tuner" android:theme="@style/TunerSettings">
             <intent-filter>
                 <action android:name="com.android.settings.action.EXTRA_SETTINGS"/>
                 <category android:name="android.intent.category.DEFAULT"/>
             </intent-filter>
             <meta-data android:name="com.android.settings.category" android:value="com.android.settings.category.system"/>
         </activity>
-        <activity-alias android:exported="true" android:icon="@drawable/tuner" android:label="@string/demo_mode" android:name=".DemoMode" android:process=":tuner" android:targetActivity=".tuner.TunerActivity" android:theme="@style/TunerSettings">
+        <activity-alias android:exported="true" android:icon="@drawable/taskmanager_ic_snap_split_mtrl" android:label="@string/overview" android:name=".DemoMode" android:process=":tuner" android:targetActivity=".tuner.TunerActivity" android:theme="@style/TunerSettings">
             <intent-filter>
                 <action android:name="com.android.settings.action.DEMO_MODE"/>
                 <category android:name="android.intent.category.DEFAULT"/>
@@ -265,7 +265,7 @@
                 <action android:name="com.android.systemui.recents.TOGGLE_RECENTS"/>
             </intent-filter>
         </activity>
-        <activity android:exported="false" android:label="@string/recents_debug_title" android:launchMode="singleInstance" android:name=".recents.DebugPageActivity" android:theme="@android:style/Theme.Material.Settings"/>
+        <activity android:exported="false" android:label="@string/recents_help_setting_button_text" android:launchMode="singleInstance" android:name=".recents.DebugPageActivity" android:theme="@android:style/Theme.Material.Settings"/>
         <activity android:configChanges="orientation|screenLayout|screenSize|smallestScreenSize" android:excludeFromRecents="true" android:exported="false" android:name=".stackdivider.ForcedResizableInfoActivity" android:stateNotNeeded="true" android:theme="@style/ForcedResizableTheme"/>
         <receiver android:name=".usb.UsbToastReceiver">
             <intent-filter>

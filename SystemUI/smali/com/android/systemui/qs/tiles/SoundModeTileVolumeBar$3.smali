@@ -85,16 +85,6 @@
 
     move-result-object v1
 
-    const/16 v2, 0x4c9
-
-    invoke-virtual {v1, v2}, Lcom/android/systemui/qs/tiles/SoundModeTileVolumeBar$BarHandler;->sendNewMessage(I)V
-
-    iget-object v1, p0, Lcom/android/systemui/qs/tiles/SoundModeTileVolumeBar$3;->this$0:Lcom/android/systemui/qs/tiles/SoundModeTileVolumeBar;
-
-    invoke-static {v1}, Lcom/android/systemui/qs/tiles/SoundModeTileVolumeBar;->-get0(Lcom/android/systemui/qs/tiles/SoundModeTileVolumeBar;)Lcom/android/systemui/qs/tiles/SoundModeTileVolumeBar$BarHandler;
-
-    move-result-object v1
-
     const/16 v2, 0xd9c
 
     invoke-virtual {v1, v2}, Lcom/android/systemui/qs/tiles/SoundModeTileVolumeBar$BarHandler;->sendNewMessage(I)V

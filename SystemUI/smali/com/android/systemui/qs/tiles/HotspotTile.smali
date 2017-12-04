@@ -318,7 +318,7 @@
 
     iget-object v0, p0, Lcom/android/systemui/qs/tiles/HotspotTile;->mContext:Landroid/content/Context;
 
-    const v1, 0x7f0f04ae
+    const v1, 0x7f0f04af
 
     invoke-static {v0, v1, v2}, Landroid/widget/Toast;->makeText(Landroid/content/Context;II)Landroid/widget/Toast;
 
@@ -573,14 +573,14 @@
 
     if-eqz v2, :cond_1
 
-    const v1, 0x7f0f049e
+    const v1, 0x7f0f049f
 
     :goto_0
     sget-boolean v2, Lcom/android/systemui/SystemUIRune;->IS_CTC_POPUP:Z
 
     if-eqz v2, :cond_3
 
-    const v0, 0x7f0f04a6
+    const v0, 0x7f0f04a7
 
     :goto_1
     new-instance v2, Landroid/app/AlertDialog$Builder;
@@ -640,12 +640,12 @@
 
     if-eqz v2, :cond_2
 
-    const v1, 0x7f0f049d
+    const v1, 0x7f0f049e
 
     goto :goto_0
 
     :cond_2
-    const v1, 0x7f0f049c
+    const v1, 0x7f0f049d
 
     goto :goto_0
 
@@ -654,7 +654,7 @@
 
     if-eqz v2, :cond_4
 
-    const v0, 0x7f0f04a5
+    const v0, 0x7f0f04a6
 
     goto :goto_1
 
@@ -663,12 +663,12 @@
 
     if-eqz v2, :cond_5
 
-    const v0, 0x7f0f04a1
+    const v0, 0x7f0f04a2
 
     goto :goto_1
 
     :cond_5
-    const v0, 0x7f0f049b
+    const v0, 0x7f0f049c
 
     goto :goto_1
 .end method
@@ -735,7 +735,7 @@
 
     if-eqz v1, :cond_2
 
-    const v0, 0x7f0f05ee
+    const v0, 0x7f0f05ef
 
     :goto_0
     iget-object v1, p0, Lcom/android/systemui/qs/tiles/HotspotTile;->mWifiManager:Landroid/net/wifi/WifiManager;
@@ -756,7 +756,7 @@
 
     if-eqz v1, :cond_6
 
-    const v0, 0x7f0f05f3
+    const v0, 0x7f0f05f4
 
     :cond_1
     :goto_1
@@ -831,7 +831,7 @@
 
     if-eqz v1, :cond_3
 
-    const v0, 0x7f0f05ef
+    const v0, 0x7f0f05f0
 
     goto :goto_0
 
@@ -840,7 +840,7 @@
 
     if-eqz v1, :cond_4
 
-    const v0, 0x7f0f05ed
+    const v0, 0x7f0f05ee
 
     goto :goto_0
 
@@ -849,17 +849,17 @@
 
     if-eqz v1, :cond_5
 
-    const v0, 0x7f0f05ec
+    const v0, 0x7f0f05ed
 
     goto :goto_0
 
     :cond_5
-    const v0, 0x7f0f05eb
+    const v0, 0x7f0f05ec
 
     goto :goto_0
 
     :cond_6
-    const v0, 0x7f0f05f2
+    const v0, 0x7f0f05f3
 
     goto :goto_1
 
@@ -886,7 +886,7 @@
 
     if-eqz v1, :cond_8
 
-    const v0, 0x7f0f04ab
+    const v0, 0x7f0f04ac
 
     goto/16 :goto_1
 
@@ -895,7 +895,7 @@
 
     if-eqz v1, :cond_9
 
-    const v0, 0x7f0f04ad
+    const v0, 0x7f0f04ae
 
     goto/16 :goto_1
 
@@ -904,12 +904,12 @@
 
     if-eqz v1, :cond_a
 
-    const v0, 0x7f0f04a8
+    const v0, 0x7f0f04a9
 
     goto/16 :goto_1
 
     :cond_a
-    const v0, 0x7f0f04a7
+    const v0, 0x7f0f04a8
 
     goto/16 :goto_1
 .end method
@@ -946,7 +946,7 @@
     if-eqz v0, :cond_1
 
     :cond_0
-    const v0, 0x7f0f04af
+    const v0, 0x7f0f04b0
 
     invoke-virtual {p0, v0}, Lcom/android/systemui/qs/tiles/HotspotTile;->showItPolicyToast(I)V
 
@@ -1044,7 +1044,7 @@
     if-eqz v2, :cond_2
 
     :cond_1
-    const v2, 0x7f0f04af
+    const v2, 0x7f0f04b0
 
     invoke-virtual {p0, v2}, Lcom/android/systemui/qs/tiles/HotspotTile;->showItPolicyToast(I)V
 
@@ -1260,7 +1260,7 @@
     if-eqz v0, :cond_2
 
     :cond_1
-    const v0, 0x7f0f04af
+    const v0, 0x7f0f04b0
 
     invoke-virtual {p0, v0}, Lcom/android/systemui/qs/tiles/HotspotTile;->showItPolicyToast(I)V
 

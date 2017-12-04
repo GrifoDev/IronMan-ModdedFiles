@@ -466,7 +466,7 @@
 
     iget-object v3, p0, Lcom/android/systemui/tuner/DemoModeFragment;->mEnabledSwitch:Landroid/support/v14/preference/SwitchPreference;
 
-    const v4, 0x7f0f05e1
+    const v4, 0x7f0f05e2
 
     invoke-virtual {v3, v4}, Landroid/support/v14/preference/SwitchPreference;->setTitle(I)V
 
@@ -482,7 +482,7 @@
 
     iget-object v3, p0, Lcom/android/systemui/tuner/DemoModeFragment;->mOnSwitch:Landroid/support/v14/preference/SwitchPreference;
 
-    const v4, 0x7f0f05e2
+    const v4, 0x7f0f05e3
 
     invoke-virtual {v3, v4}, Landroid/support/v14/preference/SwitchPreference;->setTitle(I)V
 

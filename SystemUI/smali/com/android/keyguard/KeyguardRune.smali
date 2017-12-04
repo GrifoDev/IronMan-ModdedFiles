@@ -30,6 +30,8 @@
 
 .field public static final IS_VZW:Z
 
+.field public static final PLMN_INFO_BRANDING:Ljava/lang/String;
+
 .field public static final SHOW_ENTER_ANIMATION_ON_WAKE_AND_UNLOCK:Z
 
 .field public static final SUPPORT_APPLOCK:Z
@@ -145,6 +147,8 @@
 .field public static final SUPPORT_USC_USIM_TEXT:Z
 
 .field public static final SUPPORT_USE_CDMA_CARD_TEXT:Z
+
+.field public static final SUPPORT_USE_EMPTY_STRUNG_IN_NO_SERVICE:Z
 
 .field public static final SUPPORT_USE_WFCPLMN_IN_AIRPLANE_MODE:Z
 
@@ -1093,6 +1097,30 @@
 
     sput-boolean v0, Lcom/android/keyguard/KeyguardRune;->SUPPORT_NDIGITS_PIN:Z
 
+    invoke-static {}, Lcom/samsung/android/feature/SemCscFeature;->getInstance()Lcom/samsung/android/feature/SemCscFeature;
+
+    move-result-object v0
+
+    const-string/jumbo v3, "CscFeature_SystemUI_ConfigOpPlmnInfo"
+
+    const-string/jumbo v4, ""
+
+    invoke-virtual {v0, v3, v4}, Lcom/samsung/android/feature/SemCscFeature;->getString(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v0
+
+    sput-object v0, Lcom/android/keyguard/KeyguardRune;->PLMN_INFO_BRANDING:Ljava/lang/String;
+
+    const-string/jumbo v0, "ATT"
+
+    sget-object v3, Lcom/android/keyguard/KeyguardRune;->PLMN_INFO_BRANDING:Ljava/lang/String;
+
+    invoke-virtual {v0, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    sput-boolean v0, Lcom/android/keyguard/KeyguardRune;->SUPPORT_USE_EMPTY_STRUNG_IN_NO_SERVICE:Z
+
     const-string/jumbo v0, "ro.product_ship"
 
     invoke-static {v0, v2}, Landroid/os/SystemProperties;->getBoolean(Ljava/lang/String;Z)Z
@@ -1383,7 +1411,7 @@
 
     if-eqz v1, :cond_0
 
-    invoke-static {}, Lcom/android/keyguard/KeyguardRune;->isNationalRoaming()Z
+    invoke-static {p0}, Lcom/android/keyguard/KeyguardRune;->isNationalRoaming(Landroid/content/Context;)Z
 
     move-result v1
 
@@ -1517,16 +1545,6 @@
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
     sget-boolean v0, Lcom/android/keyguard/KeyguardRune;->SUPPORT_SEC_WAKE_ON_FINGERPRINT:Z
-
-    invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->println(Z)V
-
-    const-string/jumbo v0, "  isNationalRoaming: "
-
-    invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
-
-    invoke-static {}, Lcom/android/keyguard/KeyguardRune;->isNationalRoaming()Z
-
-    move-result v0
 
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->println(Z)V
 
@@ -1876,264 +1894,529 @@
     goto :goto_0
 .end method
 
-.method private static isNationalRoaming()Z
-    .locals 10
+.method public static isNationalRoaming(Landroid/content/Context;)Z
+    .locals 15
 
-    const/4 v9, 0x0
+    const/4 v13, 0x2
 
-    const/4 v6, 0x1
+    const/4 v14, 0x0
 
-    invoke-static {}, Landroid/telephony/TelephonyManager;->getDefault()Landroid/telephony/TelephonyManager;
+    const/4 v11, 0x1
 
-    move-result-object v7
+    invoke-static {p0}, Lcom/android/keyguard/KeyguardUpdateMonitor;->getInstance(Landroid/content/Context;)Lcom/android/keyguard/KeyguardUpdateMonitor;
 
-    invoke-virtual {v7}, Landroid/telephony/TelephonyManager;->getPhoneCount()I
+    move-result-object v12
 
-    move-result v7
+    invoke-virtual {v12, v11}, Lcom/android/keyguard/KeyguardUpdateMonitor;->getSubscriptionInfo(Z)Ljava/util/List;
 
-    if-le v7, v6, :cond_1
+    move-result-object v10
 
-    invoke-static {}, Landroid/telephony/TelephonyManager;->getDefault()Landroid/telephony/TelephonyManager;
-
-    const-string/jumbo v7, "gsm.sim.operator.numeric"
-
-    const-string/jumbo v8, ""
-
-    invoke-static {v9, v7, v8}, Landroid/telephony/TelephonyManager;->getTelephonyProperty(ILjava/lang/String;Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v3
-
-    invoke-static {}, Landroid/telephony/TelephonyManager;->getDefault()Landroid/telephony/TelephonyManager;
-
-    const-string/jumbo v7, "gsm.operator.numeric"
-
-    const-string/jumbo v8, ""
-
-    invoke-static {v9, v7, v8}, Landroid/telephony/TelephonyManager;->getTelephonyProperty(ILjava/lang/String;Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-static {}, Landroid/telephony/TelephonyManager;->getDefault()Landroid/telephony/TelephonyManager;
-
-    const-string/jumbo v7, "gsm.sim.operator.numeric"
-
-    const-string/jumbo v8, ""
-
-    invoke-static {v6, v7, v8}, Landroid/telephony/TelephonyManager;->getTelephonyProperty(ILjava/lang/String;Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v4
-
-    invoke-static {}, Landroid/telephony/TelephonyManager;->getDefault()Landroid/telephony/TelephonyManager;
-
-    const-string/jumbo v7, "gsm.operator.numeric"
-
-    const-string/jumbo v8, ""
-
-    invoke-static {v6, v7, v8}, Landroid/telephony/TelephonyManager;->getTelephonyProperty(ILjava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-interface {v10}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
     move-result-object v1
 
-    invoke-static {v3, v0}, Lcom/android/keyguard/KeyguardRune;->isNationalRoaming(Ljava/lang/String;Ljava/lang/String;)Z
+    :cond_0
+    invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v12
+
+    if-eqz v12, :cond_2
+
+    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Landroid/telephony/SubscriptionInfo;
+
+    invoke-virtual {v0}, Landroid/telephony/SubscriptionInfo;->getSubscriptionId()I
+
+    move-result v9
+
+    invoke-static {}, Landroid/telephony/TelephonyManager;->getDefault()Landroid/telephony/TelephonyManager;
+
+    move-result-object v12
+
+    invoke-virtual {v12, v9}, Landroid/telephony/TelephonyManager;->getServiceStateForSubscriber(I)Landroid/telephony/ServiceState;
+
+    move-result-object v8
+
+    invoke-virtual {v8}, Landroid/telephony/ServiceState;->getVoiceRoamingType()I
+
+    move-result v12
+
+    if-eq v12, v13, :cond_1
+
+    invoke-virtual {v8}, Landroid/telephony/ServiceState;->getDataRoamingType()I
+
+    move-result v12
+
+    if-ne v12, v13, :cond_0
+
+    :cond_1
+    const-string/jumbo v12, "KeyguardRune"
+
+    new-instance v13, Ljava/lang/StringBuilder;
+
+    invoke-direct {v13}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string/jumbo v14, "isNationalRoaming(): ServiceState.ROAMING_TYPE_DOMESTIC, subId="
+
+    invoke-virtual {v13, v14}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v13
+
+    invoke-virtual {v13, v9}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v13
+
+    const-string/jumbo v14, ", slotId="
+
+    invoke-virtual {v13, v14}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v13
+
+    invoke-static {v9}, Landroid/telephony/SubscriptionManager;->getSlotId(I)I
+
+    move-result v14
+
+    invoke-virtual {v13, v14}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v13
+
+    invoke-virtual {v13}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v13
+
+    invoke-static {v12, v13}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    return v11
+
+    :cond_2
+    invoke-static {}, Landroid/telephony/TelephonyManager;->getDefault()Landroid/telephony/TelephonyManager;
+
+    move-result-object v12
+
+    invoke-virtual {v12}, Landroid/telephony/TelephonyManager;->getPhoneCount()I
+
+    move-result v12
+
+    if-le v12, v11, :cond_4
+
+    invoke-static {}, Landroid/telephony/TelephonyManager;->getDefault()Landroid/telephony/TelephonyManager;
+
+    const-string/jumbo v12, "gsm.sim.operator.numeric"
+
+    const-string/jumbo v13, ""
+
+    invoke-static {v14, v12, v13}, Landroid/telephony/TelephonyManager;->getTelephonyProperty(ILjava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v5
+
+    invoke-static {}, Landroid/telephony/TelephonyManager;->getDefault()Landroid/telephony/TelephonyManager;
+
+    const-string/jumbo v12, "gsm.operator.numeric"
+
+    const-string/jumbo v13, ""
+
+    invoke-static {v14, v12, v13}, Landroid/telephony/TelephonyManager;->getTelephonyProperty(ILjava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-static {}, Landroid/telephony/TelephonyManager;->getDefault()Landroid/telephony/TelephonyManager;
+
+    const-string/jumbo v12, "gsm.sim.operator.numeric"
+
+    const-string/jumbo v13, ""
+
+    invoke-static {v11, v12, v13}, Landroid/telephony/TelephonyManager;->getTelephonyProperty(ILjava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v6
+
+    invoke-static {}, Landroid/telephony/TelephonyManager;->getDefault()Landroid/telephony/TelephonyManager;
+
+    const-string/jumbo v12, "gsm.operator.numeric"
+
+    const-string/jumbo v13, ""
+
+    invoke-static {v11, v12, v13}, Landroid/telephony/TelephonyManager;->getTelephonyProperty(ILjava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-static {v5, v2}, Lcom/android/keyguard/KeyguardRune;->isNationalRoaming(Ljava/lang/String;Ljava/lang/String;)Z
+
+    move-result v12
+
+    if-nez v12, :cond_3
+
+    invoke-static {v6, v3}, Lcom/android/keyguard/KeyguardRune;->isNationalRoaming(Ljava/lang/String;Ljava/lang/String;)Z
+
+    move-result v11
+
+    :cond_3
+    return v11
+
+    :cond_4
+    const-string/jumbo v11, "gsm.sim.operator.numeric"
+
+    const-string/jumbo v12, ""
+
+    invoke-static {v11, v12}, Landroid/os/SystemProperties;->get(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v7
+
+    const-string/jumbo v11, "gsm.operator.numeric"
+
+    const-string/jumbo v12, ""
+
+    invoke-static {v11, v12}, Landroid/os/SystemProperties;->get(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v4
+
+    invoke-static {v7, v4}, Lcom/android/keyguard/KeyguardRune;->isNationalRoaming(Ljava/lang/String;Ljava/lang/String;)Z
+
+    move-result v11
+
+    return v11
+.end method
+
+.method private static isNationalRoaming(Ljava/lang/String;Ljava/lang/String;)Z
+    .locals 11
+
+    const/4 v10, 0x1
+
+    const/4 v6, 0x0
+
+    const-string/jumbo v7, "KeyguardRune"
+
+    new-instance v8, Ljava/lang/StringBuilder;
+
+    invoke-direct {v8}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string/jumbo v9, "isNationalRoaming(): simNumeric="
+
+    invoke-virtual {v8, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v8
+
+    invoke-virtual {v8, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v8
+
+    const-string/jumbo v9, ", plmnNumeric="
+
+    invoke-virtual {v8, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v8
+
+    invoke-virtual {v8, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v8
+
+    invoke-virtual {v8}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v8
+
+    invoke-static {v7, v8}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    invoke-static {p0}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
     move-result v7
 
     if-nez v7, :cond_0
 
-    invoke-static {v4, v1}, Lcom/android/keyguard/KeyguardRune;->isNationalRoaming(Ljava/lang/String;Ljava/lang/String;)Z
+    invoke-static {p1}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
-    move-result v6
+    move-result v7
+
+    if-eqz v7, :cond_1
 
     :cond_0
     return v6
 
     :cond_1
-    const-string/jumbo v6, "gsm.sim.operator.numeric"
+    const/4 v4, 0x0
 
-    const-string/jumbo v7, ""
+    const/4 v2, 0x0
 
-    invoke-static {v6, v7}, Landroid/os/SystemProperties;->get(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    :try_start_0
+    const-string/jumbo v7, ","
 
-    move-result-object v5
+    invoke-virtual {p0, v7}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
 
-    const-string/jumbo v6, "gsm.operator.numeric"
+    move-result v7
 
-    const-string/jumbo v7, ""
-
-    invoke-static {v6, v7}, Landroid/os/SystemProperties;->get(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-static {v5, v2}, Lcom/android/keyguard/KeyguardRune;->isNationalRoaming(Ljava/lang/String;Ljava/lang/String;)Z
-
-    move-result v6
-
-    return v6
-.end method
-
-.method private static isNationalRoaming(Ljava/lang/String;Ljava/lang/String;)Z
-    .locals 8
+    if-eqz v7, :cond_3
 
     const/4 v7, 0x1
 
-    const/4 v3, 0x0
+    const/4 v8, 0x4
 
-    invoke-static {p0}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
+    invoke-virtual {p0, v7, v8}, Ljava/lang/String;->substring(II)Ljava/lang/String;
 
-    move-result v4
-
-    if-nez v4, :cond_0
-
-    invoke-static {p1}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
-
-    move-result v4
-
-    if-eqz v4, :cond_1
-
-    :cond_0
-    return v3
-
-    :cond_1
-    const/4 v2, 0x0
-
-    const/4 v1, 0x0
-
-    :try_start_0
-    const-string/jumbo v4, ","
-
-    invoke-virtual {p0, v4}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
-
-    move-result v4
-
-    if-eqz v4, :cond_2
-
-    const/4 v4, 0x1
-
-    const/4 v5, 0x4
-
-    invoke-virtual {p0, v4, v5}, Ljava/lang/String;->substring(II)Ljava/lang/String;
-
-    move-result-object v2
+    move-result-object v4
 
     :goto_0
-    const-string/jumbo v4, ","
+    const-string/jumbo v7, ","
 
-    invoke-virtual {p1, v4}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
+    invoke-virtual {p1, v7}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
 
-    move-result v4
+    move-result v7
 
-    if-eqz v4, :cond_3
+    if-eqz v7, :cond_4
 
-    const/4 v4, 0x1
+    const/4 v7, 0x1
 
-    const/4 v5, 0x4
+    const/4 v8, 0x4
 
-    invoke-virtual {p1, v4, v5}, Ljava/lang/String;->substring(II)Ljava/lang/String;
-
-    move-result-object v1
-
-    :goto_1
-    const-string/jumbo v4, "31"
-
-    invoke-virtual {v2, v4}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
-
-    move-result v4
-
-    if-eqz v4, :cond_4
-
-    const-string/jumbo v4, "31"
-
-    invoke-virtual {v1, v4}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
-
-    move-result v4
-
-    if-eqz v4, :cond_4
-
-    const-string/jumbo v4, "KeyguardRune"
-
-    new-instance v5, Ljava/lang/StringBuilder;
-
-    invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string/jumbo v6, "Keyguard National roaming USA Exception, simMCC : "
-
-    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v5
-
-    invoke-virtual {v5, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v5
-
-    const-string/jumbo v6, ", plmnMCC : "
-
-    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v5
-
-    invoke-virtual {v5, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v5
-
-    invoke-virtual {v5}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v5
-
-    invoke-static {v4, v5}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
-    return v7
-
-    :cond_2
-    const/4 v4, 0x0
-
-    const/4 v5, 0x3
-
-    invoke-virtual {p0, v4, v5}, Ljava/lang/String;->substring(II)Ljava/lang/String;
+    invoke-virtual {p1, v7, v8}, Ljava/lang/String;->substring(II)Ljava/lang/String;
 
     move-result-object v2
 
-    goto :goto_0
+    :goto_1
+    const-string/jumbo v7, "31"
+
+    invoke-virtual {v4, v7}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
+
+    move-result v7
+
+    if-eqz v7, :cond_7
+
+    const-string/jumbo v7, "31"
+
+    invoke-virtual {v2, v7}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
+
+    move-result v7
+
+    if-eqz v7, :cond_7
+
+    const-string/jumbo v7, "KeyguardRune"
+
+    new-instance v8, Ljava/lang/StringBuilder;
+
+    invoke-direct {v8}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string/jumbo v9, "Keyguard National roaming USA Exception, simMCC : "
+
+    invoke-virtual {v8, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v8
+
+    invoke-virtual {v8, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v8
+
+    const-string/jumbo v9, ", plmnMCC : "
+
+    invoke-virtual {v8, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v8
+
+    invoke-virtual {v8, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v8
+
+    invoke-virtual {v8}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v8
+
+    invoke-static {v7, v8}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    invoke-static {}, Lcom/samsung/android/feature/SemCscFeature;->getInstance()Lcom/samsung/android/feature/SemCscFeature;
+
+    move-result-object v7
+
+    const-string/jumbo v8, "SalesCode"
+
+    invoke-virtual {v7, v8}, Lcom/samsung/android/feature/SemCscFeature;->getString(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v3
+
+    const-string/jumbo v7, "TMB"
+
+    invoke-virtual {v7, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v7
+
+    if-nez v7, :cond_2
+
+    const-string/jumbo v7, "TMK"
+
+    invoke-virtual {v7, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v7
+
+    if-eqz v7, :cond_6
+
+    :cond_2
+    const/16 v7, 0xb
+
+    new-array v5, v7, [Ljava/lang/String;
+
+    const-string/jumbo v7, "310500"
+
+    const/4 v8, 0x0
+
+    aput-object v7, v5, v8
+
+    const-string/jumbo v7, "310970"
+
+    const/4 v8, 0x1
+
+    aput-object v7, v5, v8
+
+    const-string/jumbo v7, "310033"
+
+    const/4 v8, 0x2
+
+    aput-object v7, v5, v8
+
+    const-string/jumbo v7, "310470"
+
+    const/4 v8, 0x3
+
+    aput-object v7, v5, v8
+
+    const-string/jumbo v7, "310370"
+
+    const/4 v8, 0x4
+
+    aput-object v7, v5, v8
+
+    const-string/jumbo v7, "310032"
+
+    const/4 v8, 0x5
+
+    aput-object v7, v5, v8
+
+    const-string/jumbo v7, "310140"
+
+    const/4 v8, 0x6
+
+    aput-object v7, v5, v8
+
+    const-string/jumbo v7, "311250"
+
+    const/4 v8, 0x7
+
+    aput-object v7, v5, v8
+
+    const-string/jumbo v7, "310400"
+
+    const/16 v8, 0x8
+
+    aput-object v7, v5, v8
+
+    const-string/jumbo v7, "311170"
+
+    const/16 v8, 0x9
+
+    aput-object v7, v5, v8
+
+    const-string/jumbo v7, "310110"
+
+    const/16 v8, 0xa
+
+    aput-object v7, v5, v8
+
+    array-length v8, v5
+
+    move v7, v6
+
+    :goto_2
+    if-ge v7, v8, :cond_6
+
+    aget-object v1, v5, v7
+
+    invoke-virtual {v1, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v9
+
+    if-eqz v9, :cond_5
+
+    const-string/jumbo v7, "KeyguardRune"
+
+    new-instance v8, Ljava/lang/StringBuilder;
+
+    invoke-direct {v8}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string/jumbo v9, "TMO Exception : "
+
+    invoke-virtual {v8, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v8
+
+    invoke-virtual {v8, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v8
+
+    invoke-virtual {v8}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v8
+
+    invoke-static {v7, v8}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    return v6
 
     :cond_3
-    const/4 v4, 0x0
+    const/4 v7, 0x0
 
-    const/4 v5, 0x3
+    const/4 v8, 0x3
 
-    invoke-virtual {p1, v4, v5}, Ljava/lang/String;->substring(II)Ljava/lang/String;
+    invoke-virtual {p0, v7, v8}, Ljava/lang/String;->substring(II)Ljava/lang/String;
 
-    move-result-object v1
+    move-result-object v4
 
-    goto :goto_1
+    goto/16 :goto_0
 
     :cond_4
-    invoke-static {v2}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
+    const/4 v7, 0x0
 
-    move-result v4
+    const/4 v8, 0x3
 
-    if-nez v4, :cond_5
+    invoke-virtual {p1, v7, v8}, Ljava/lang/String;->substring(II)Ljava/lang/String;
 
-    invoke-static {v1}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
+    move-result-object v2
 
-    move-result v4
-
-    if-eqz v4, :cond_6
+    goto/16 :goto_1
 
     :cond_5
-    :goto_2
-    return v3
+    add-int/lit8 v7, v7, 0x1
+
+    goto :goto_2
 
     :cond_6
-    invoke-virtual {v2, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    return v10
+
+    :cond_7
+    invoke-static {v4}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
+
+    move-result v7
+
+    if-nez v7, :cond_8
+
+    invoke-static {v2}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
+
+    move-result v7
+
+    if-eqz v7, :cond_9
+
+    :cond_8
+    :goto_3
+    return v6
+
+    :cond_9
+    invoke-virtual {v4, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
     :try_end_0
     .catch Ljava/lang/StringIndexOutOfBoundsException; {:try_start_0 .. :try_end_0} :catch_0
 
-    move-result v3
+    move-result v6
 
-    goto :goto_2
+    goto :goto_3
 
     :catch_0
     move-exception v0
 
-    return v3
+    return v6
 .end method
 
 .method public static isNavigationBarExist(Landroid/content/Context;)Z

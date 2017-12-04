@@ -308,7 +308,7 @@
 
     new-instance v2, Lcom/android/systemui/recents/views/AnimateableViewBounds;
 
-    const v3, 0x7f0d03b4
+    const v3, 0x7f0d03b6
 
     invoke-virtual {v1, v3}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -343,7 +343,7 @@
     :cond_1
     new-instance v2, Lcom/android/systemui/recents/views/AnimateableViewBounds;
 
-    const v3, 0x7f0d03b2
+    const v3, 0x7f0d03b4
 
     invoke-virtual {v1, v3}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -910,7 +910,7 @@
 
     aput-object v4, v3, v5
 
-    const v4, 0x7f0f0548
+    const v4, 0x7f0f0549
 
     invoke-virtual {v13, v4, v3}, Landroid/content/Context;->getString(I[Ljava/lang/Object;)Ljava/lang/String;
 
@@ -1003,7 +1003,7 @@
 
     move-result-object v3
 
-    const v4, 0x7f0f07cf
+    const v4, 0x7f0f07d2
 
     invoke-virtual {v3, v4}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -1135,7 +1135,7 @@
 
     iget-object v3, v0, Lcom/android/systemui/recents/views/TaskView;->mScreenRatioButtonView:Landroid/view/View;
 
-    const v4, 0x7f13044d
+    const v4, 0x7f13044f
 
     invoke-virtual {v3, v4}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -1270,13 +1270,13 @@
 .method protected onFinishInflate()V
     .locals 10
 
-    const v9, 0x7f0f06bc
+    const v9, 0x7f0f06bd
 
     const/4 v8, 0x0
 
     const/4 v7, 0x1
 
-    const v4, 0x7f130452
+    const v4, 0x7f130454
 
     invoke-virtual {p0, v4}, Lcom/android/systemui/recents/views/TaskView;->findViewById(I)Landroid/view/View;
 
@@ -1286,7 +1286,7 @@
 
     iput-object v4, p0, Lcom/android/systemui/recents/views/TaskView;->mHeaderView:Lcom/android/systemui/recents/views/TaskViewHeader;
 
-    const v4, 0x7f13044b
+    const v4, 0x7f13044d
 
     invoke-virtual {p0, v4}, Lcom/android/systemui/recents/views/TaskView;->findViewById(I)Landroid/view/View;
 
@@ -1302,7 +1302,7 @@
 
     invoke-virtual {v4, v5}, Lcom/android/systemui/recents/views/TaskViewThumbnail;->updateClipToTaskBar(Landroid/view/View;)V
 
-    const v4, 0x7f13044f
+    const v4, 0x7f130451
 
     invoke-virtual {p0, v4}, Lcom/android/systemui/recents/views/TaskView;->findViewById(I)Landroid/view/View;
 
@@ -1316,7 +1316,7 @@
 
     iget-object v4, p0, Lcom/android/systemui/recents/views/TaskView;->mContext:Landroid/content/Context;
 
-    const v5, 0x7f0f06bb
+    const v5, 0x7f0f06bc
 
     invoke-virtual {v4, v5}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -1359,7 +1359,7 @@
 
     iput v4, p0, Lcom/android/systemui/recents/views/TaskView;->mActionButtonTranslationZ:F
 
-    const v4, 0x7f13044c
+    const v4, 0x7f13044e
 
     invoke-virtual {p0, v4}, Lcom/android/systemui/recents/views/TaskView;->findViewById(I)Landroid/view/View;
 
@@ -1381,7 +1381,7 @@
 
     iget-object v4, p0, Lcom/android/systemui/recents/views/TaskView;->mContext:Landroid/content/Context;
 
-    const v5, 0x7f0f06ba
+    const v5, 0x7f0f06bb
 
     invoke-virtual {v4, v5}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -1587,7 +1587,7 @@
 
     iget-object v7, p0, Lcom/android/systemui/recents/views/TaskView;->mContext:Landroid/content/Context;
 
-    const v8, 0x7f0f06ba
+    const v8, 0x7f0f06bb
 
     invoke-virtual {v7, v8}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -1652,7 +1652,7 @@
 
     iget-object v7, p0, Lcom/android/systemui/recents/views/TaskView;->mContext:Landroid/content/Context;
 
-    const v8, 0x7f0f06bb
+    const v8, 0x7f0f06bc
 
     invoke-virtual {v7, v8}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -2218,7 +2218,7 @@
 
     if-nez v2, :cond_3
 
-    const v2, 0x7f130450
+    const v2, 0x7f130452
 
     invoke-static {p0, v2}, Lcom/android/systemui/recents/misc/Utilities;->findViewStubById(Landroid/view/View;I)Landroid/view/ViewStub;
 
@@ -2238,7 +2238,7 @@
 
     check-cast v0, Landroid/widget/TextView;
 
-    const v2, 0x7f0f054a
+    const v2, 0x7f0f054b
 
     invoke-virtual {v0, v2}, Landroid/widget/TextView;->setText(I)V
 
@@ -2600,7 +2600,7 @@
 
     aput-object v2, v1, v3
 
-    const v2, 0x7f0f06ca
+    const v2, 0x7f0f06cb
 
     invoke-virtual {v0, v2, v1}, Landroid/content/Context;->getString(I[Ljava/lang/Object;)Ljava/lang/String;
 
@@ -2626,7 +2626,7 @@
 
     aput-object v2, v1, v3
 
-    const v2, 0x7f0f06cb
+    const v2, 0x7f0f06cc
 
     invoke-virtual {v0, v2, v1}, Landroid/content/Context;->getString(I[Ljava/lang/Object;)Ljava/lang/String;
 
@@ -2861,7 +2861,7 @@
 
     iget-object v1, p0, Lcom/android/systemui/recents/views/TaskView;->mScreenRatioButtonView:Landroid/view/View;
 
-    const v2, 0x7f13044e
+    const v2, 0x7f130450
 
     invoke-virtual {v1, v2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -2873,7 +2873,7 @@
 
     if-nez v1, :cond_5
 
-    const v1, 0x7f0207c7
+    const v1, 0x7f0207cb
 
     invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setImageResource(I)V
 
@@ -2934,7 +2934,7 @@
     return-void
 
     :cond_5
-    const v1, 0x7f0207c6
+    const v1, 0x7f0207ca
 
     invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setImageResource(I)V
 
@@ -3106,7 +3106,7 @@
 
     iget v0, v7, Lcom/android/systemui/recents/views/TaskViewHeader;->mHeaderBarHeight:I
 
-    const v7, 0x7f0d03b8
+    const v7, 0x7f0d03ba
 
     invoke-virtual {v6, v7}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -3126,13 +3126,13 @@
 
     if-nez v7, :cond_0
 
-    const v7, 0x7f0d03bb
+    const v7, 0x7f0d03bd
 
     invoke-virtual {v6, v7}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
     move-result v3
 
-    const v7, 0x7f0d03b6
+    const v7, 0x7f0d03b8
 
     invoke-virtual {v6, v7}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 

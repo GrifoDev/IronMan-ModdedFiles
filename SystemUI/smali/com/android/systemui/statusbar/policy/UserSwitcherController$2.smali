@@ -132,7 +132,7 @@
 
     move-result-object v3
 
-    const v4, 0x7f0f0584
+    const v4, 0x7f0f0585
 
     invoke-virtual {v3, v4}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -148,7 +148,7 @@
 
     move-result-object v3
 
-    const v4, 0x7f0f0585
+    const v4, 0x7f0f0586
 
     invoke-virtual {v3, v4}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -178,7 +178,7 @@
 
     move-result-object v3
 
-    const v4, 0x7f0f0586
+    const v4, 0x7f0f0587
 
     invoke-virtual {v3, v4}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -296,7 +296,7 @@
 
     move-result-object v14
 
-    const v15, 0x7f0f057b
+    const v15, 0x7f0f057c
 
     invoke-virtual {v14, v15}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -726,7 +726,7 @@
 
     if-ge v2, v13, :cond_18
 
-    const v13, 0x7f0f0496
+    const v13, 0x7f0f0497
 
     invoke-virtual {v9, v13}, Landroid/widget/Toast;->setText(I)V
 
@@ -781,7 +781,7 @@
     goto :goto_6
 
     :cond_18
-    const v13, 0x7f0f0495
+    const v13, 0x7f0f0496
 
     invoke-virtual {v9, v13}, Landroid/widget/Toast;->setText(I)V
 

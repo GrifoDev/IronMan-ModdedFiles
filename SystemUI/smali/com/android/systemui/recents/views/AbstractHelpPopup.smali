@@ -142,7 +142,7 @@
 
     move-result-object v2
 
-    const v3, 0x7f130438
+    const v3, 0x7f13043a
 
     invoke-virtual {v2, v3}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -152,7 +152,7 @@
 
     iput-object v3, p0, Lcom/android/systemui/recents/views/AbstractHelpPopup;->mHelpRootView:Landroid/view/ViewGroup;
 
-    const v3, 0x7f130439
+    const v3, 0x7f13043b
 
     invoke-virtual {v2, v3}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -178,7 +178,7 @@
 
     invoke-virtual {v3, v4}, Lcom/android/systemui/recents/views/HelpViewPager;->setAdapter(Landroid/support/v4/view/PagerAdapter;)V
 
-    const v3, 0x7f13043a
+    const v3, 0x7f13043c
 
     invoke-virtual {v2, v3}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -188,7 +188,7 @@
 
     iput-object v3, p0, Lcom/android/systemui/recents/views/AbstractHelpPopup;->mBottomView:Landroid/widget/FrameLayout;
 
-    const v3, 0x7f13043b
+    const v3, 0x7f13043d
 
     invoke-virtual {v2, v3}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -208,7 +208,7 @@
 
     invoke-virtual {v3, p0}, Lcom/android/systemui/recents/views/HelpViewPager;->addOnPageChangeListener(Landroid/support/v4/view/ViewPager$OnPageChangeListener;)V
 
-    const v3, 0x7f13043c
+    const v3, 0x7f13043e
 
     invoke-virtual {v2, v3}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -297,13 +297,19 @@
 
     move-result-object v2
 
-    invoke-virtual {v2}, Lcom/android/systemui/recents/bixby/EmRecentsManager;->isRecentsLaunchedByBixby()Z
-    :try_end_0
-    .catch Ljava/lang/IllegalStateException; {:try_start_0 .. :try_end_0} :catch_0
+    invoke-virtual {v2}, Lcom/android/systemui/recents/bixby/EmRecentsManager;->isBixbyRuleRunning()Z
 
     move-result v2
 
     if-eqz v2, :cond_0
+
+    const-string/jumbo v2, "AbstractHelpPopup"
+
+    const-string/jumbo v3, "Bixby is running, so skip the help popup."
+
+    invoke-static {v2, v3}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
+    :try_end_0
+    .catch Ljava/lang/IllegalStateException; {:try_start_0 .. :try_end_0} :catch_0
 
     return v1
 
@@ -425,7 +431,7 @@
 
     move-result-object v3
 
-    const v4, 0x7f0d045c
+    const v4, 0x7f0d045e
 
     invoke-virtual {v3, v4}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -508,7 +514,7 @@
 .method public initialize(Ljava/lang/String;)V
     .locals 7
 
-    const v3, 0x7f0f06cd
+    const v3, 0x7f0f06ce
 
     const v2, 0x7f0204b4
 
@@ -516,7 +522,7 @@
 
     const/4 v4, 0x0
 
-    const v5, 0x7f0f06ce
+    const v5, 0x7f0f06cf
 
     iget-object v0, p0, Lcom/android/systemui/recents/views/AbstractHelpPopup;->mContents:Ljava/util/ArrayList;
 
@@ -540,7 +546,7 @@
 
     if-eqz v0, :cond_3
 
-    const v0, 0x7f0f06d6
+    const v0, 0x7f0f06d7
 
     const v1, 0x7f0204c2
 
@@ -558,13 +564,13 @@
 
     if-eqz v0, :cond_0
 
-    const v0, 0x7f0f06b9
+    const v0, 0x7f0f06ba
 
     const v1, 0x7f0204bc
 
-    const v2, 0x7f0f06d1
+    const v2, 0x7f0f06d2
 
-    const v3, 0x7f0f06d2
+    const v3, 0x7f0f06d3
 
     invoke-virtual {p0, v0, v1, v2, v3}, Lcom/android/systemui/recents/views/AbstractHelpPopup;->addContent(IIII)Lcom/android/systemui/recents/views/AbstractHelpPopup$HelpContent;
 
@@ -579,13 +585,13 @@
     invoke-virtual {v0, v1}, Lcom/android/systemui/recents/views/AbstractHelpPopup$HelpContent;->setHelpTextIconList([I)V
 
     :cond_0
-    const v1, 0x7f0f06d7
+    const v1, 0x7f0f06d8
 
     const v2, 0x7f0204b9
 
-    const v3, 0x7f0f06d0
+    const v3, 0x7f0f06d1
 
-    const v4, 0x7f0f06db
+    const v4, 0x7f0f06dc
 
     move-object v0, p0
 
@@ -623,11 +629,11 @@
     const v0, 0x7f0204b7
 
     :goto_1
-    const v1, 0x7f0f06bf
+    const v1, 0x7f0f06c0
 
-    const v2, 0x7f0f06d4
+    const v2, 0x7f0f06d5
 
-    const v3, 0x7f0f06d5
+    const v3, 0x7f0f06d6
 
     invoke-virtual {p0, v1, v0, v2, v3}, Lcom/android/systemui/recents/views/AbstractHelpPopup;->addContent(IIII)Lcom/android/systemui/recents/views/AbstractHelpPopup$HelpContent;
 
@@ -646,7 +652,7 @@
     goto :goto_0
 
     :cond_3
-    const v0, 0x7f0f06d6
+    const v0, 0x7f0f06d7
 
     const v1, 0x7f0204bd
 
@@ -660,13 +666,13 @@
 
     invoke-virtual {v0, v1}, Lcom/android/systemui/recents/views/AbstractHelpPopup$HelpContent;->setHelpTextIconList([I)V
 
-    const v1, 0x7f0f06d7
+    const v1, 0x7f0f06d8
 
     const v2, 0x7f0204b8
 
-    const v3, 0x7f0f06cf
+    const v3, 0x7f0f06d0
 
-    const v4, 0x7f0f06db
+    const v4, 0x7f0f06dc
 
     move-object v0, p0
 
@@ -769,7 +775,7 @@
 
     iget-object v1, p0, Lcom/android/systemui/recents/views/AbstractHelpPopup;->mButton:Landroid/widget/Button;
 
-    const v2, 0x7f0f06d3
+    const v2, 0x7f0f06d4
 
     invoke-virtual {v1, v2}, Landroid/widget/Button;->setText(I)V
 
@@ -927,7 +933,7 @@
 
     iget-object v1, p0, Lcom/android/systemui/recents/views/AbstractHelpPopup;->mButton:Landroid/widget/Button;
 
-    const v2, 0x7f0f06d3
+    const v2, 0x7f0f06d4
 
     invoke-virtual {v1, v2}, Landroid/widget/Button;->setText(I)V
 

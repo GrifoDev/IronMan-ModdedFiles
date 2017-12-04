@@ -238,6 +238,8 @@
     <string name="wifi_allow_scan_with_traffic_summary">ইন্টারফেসে উপস্থিত ডেটা ট্রাফিকের পরিমাণের উপরে ভিত্তি করে Wi‑Fi রোম স্ক্যানকে অনুমোদিত/অননুমোদিত করুন</string>
     <string name="select_logd_size_title">লগার বাফারের আকারগুলি</string>
     <string name="select_logd_size_dialog_title">লগ বাফার প্রতি অপেক্ষাকৃত বড় আকারগুলির নির্বাচন করুন</string>
+    <string name="dev_logpersist_clear_warning_title">ধারাবাহিক লগার স্টোরেজ মুছবেন?</string>
+    <string name="dev_logpersist_clear_warning_message">ধারাবাহিক লগার বন্ধ করা হলে লগার ডাটা মুছে যাবে।</string>
     <string name="select_logpersist_title">লগ ডাটা ক্রমাগতভাবে সংরক্ষণ করুন</string>
     <string name="select_logpersist_dialog_title">ক্রমাগতভাবে সংরক্ষণ করতে লগ বাফার নির্বাচন করুন</string>
     <string name="select_usb_configuration_title">USB কনফিগারেশন নির্বাচন করুন</string>
@@ -752,6 +754,7 @@ For example, your ringtone will not sound, you will not be able to answer phone 
     <string name="wifi_authentication_failed_kt">Wi-Fi AP সত্যায়ন করতে ব্যর্থ।</string>
     <string name="wifi_authentication_no_response">Wi-Fi AP-এ সংযোগ করতে ব্যর্থ হয়েছে।</string>
     <string name="wifi_authentication_invalid_value">প্রমাণীকরণ ব্যর্থ হয়েছে। ID এবং পাসওয়ার্ড নিশ্চিত করুন।</string>
+    <string name="wifi_disconnected">Wi-Fi সংযোগ বিচ্ছিন্ন হয়েছে।</string>
     <string name="quick_settings_dnd_label">বিরক্ত করবেন না</string>
     <string name="quick_settings_dnd_priority_label">শুধুমাত্র অগ্রাধিকার</string>
     <string name="quick_settings_dnd_alarms_label">শুধুমাত্র অ্যালার্মগুলি</string>
@@ -1384,9 +1387,9 @@ Turn on Airplane mode?"</string>
     <string name="keyboard_popup_help">মেটা কী: Windows, Command, বা অপারেটিং সিস্টেমের অন্যান্য প্রতীকের কী৷</string>
     <string name="keyboard_shortcut_group_system">সিস্টেম শর্টকাট</string>
     <string name="keyboard_shortcut_group_system_home">হোম</string>
-    <string name="keyboard_shortcut_group_system_recents">সাম্প্রতিকগুলি</string>
+    <string name="keyboard_shortcut_group_system_recents">সাম্প্রতিক</string>
     <string name="keyboard_shortcut_group_system_back">পেছনে</string>
-    <string name="keyboard_shortcut_group_system_notifications">বিজ্ঞপ্তিগুলি</string>
+    <string name="keyboard_shortcut_group_system_notifications">বিজ্ঞপ্তি</string>
     <string name="keyboard_shortcut_group_system_shortcuts_helper">কীবোর্ড শর্টকাট</string>
     <string name="keyboard_shortcut_group_system_switch_input">ইনপুট পদ্ধতি পাল্টান</string>
     <string name="keyboard_shortcut_group_system_all_apps">সব অ্যাপ</string>
@@ -1653,7 +1656,9 @@ Using your tablet in a very hot location."</string>
     <string name="battery_not_fully_connected_charging_title_vzw">Incomplete connection</string>
     <string name="battery_not_fully_connected_charging_text">আরো দ্রুত চার্জের জন্য, আপনার ডিভাইসের সাথে আসা চার্জার ব্যবহার করুন এবং এটি যথাযথভাবে সংযুক্ত আছে তা নিশ্চিত করুন৷</string>
     <string name="battery_not_fully_connected_charging_text_vzw">Make sure the charger is properly connected.</string>
+    <string name="battery_not_fully_connected_charging_text_jpn">আপনার চার্জার যথাযথভাবে সংযুক্ত আছে তা নিশ্চিত করুন৷</string>
     <string name="battery_not_fully_connected_charging_popup_text">চার্জার যথাযথভাবে সংযুক্ত আছে তা নিশ্চিত করুন৷ ডিভাইসের সাথে আসা চার্জারটি ব্যবহার করুন৷</string>
+    <string name="battery_not_fully_connected_charging_popup_text_jpn">চার্জার যথাযথভাবে সংযুক্ত আছে তা নিশ্চিত করুন৷</string>
     <string name="battery_charging_level_and_time_text">"চার্জ হচ্ছে: %1$d%%
 (সম্পূর্ণ চার্জ না হওয়া অবধি প্রায় %2$s)"</string>
     <string name="battery_charging_level_text">চার্জ হচ্ছে: %d%%</string>
@@ -1878,6 +1883,8 @@ Please note that in order to enable your emergency calls (e.g., such as 112 call
     <string name="qs_detail_palm_capture_title">ক্যাপচার করতে হাতের তালু সোয়াইপ</string>
     <string name="noti_direct_reply_exceed_text_limit_toast">আর কোনো টেক্সট লেখা যাবে না৷</string>
     <string name="airplane_mode_tts_text">এয়ারপ্লেন মোড</string>
+    <string name="all_noti_readout">একটি বিজ্ঞপ্তি</string>
+    <string name="all_noti_readout2">%dটি বিজ্ঞপ্তি</string>
     <string name="car_lockscreen_disclaimer_title">সাবধানে চালান</string>
     <string name="car_lockscreen_disclaimer_text">গাড়ি চালানোর সময় সর্বদা সতর্ক থাকুন এবং প্রযোজ্য আইন মেনে চলুন৷ দিকনির্দেশ ভুল, অসম্পূর্ণ, বিপজ্জনক, অনুপযুক্ত, নিষিদ্ধ হতে পারে বা প্রশাসনিক এলাকাগুলি অতিক্রম করতে হতে পারে৷ বাণিজ্যিক তথ্য ভুল বা অসম্পূর্ণ হতে পারে৷ ডেটা প্রকৃত সময়ের নয় এবং অবস্থানের নির্ভুলতা নিশ্চিত করাও সম্ভব নয়৷ গাড়ি চালানোর সময় আপনার মোবাইল ডিভাইসটিকে বা Android Auto এর জন্য উপযুক্ত নয় এমন অ্যাপগুলিকে ব্যবহার করবেন না৷</string>
     <string name="pip_close">PIP বন্ধ করুন</string>

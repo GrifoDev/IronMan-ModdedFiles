@@ -303,7 +303,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f0d0446
+    const v2, 0x7f0d0448
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -427,7 +427,7 @@
 
     move-result-object v2
 
-    const v3, 0x7f0f0815
+    const v3, 0x7f0f0818
 
     invoke-virtual {v2, v3}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -525,7 +525,7 @@
 
     iput v1, p0, Lcom/android/systemui/statusbar/phone/NotificationIconAreaController;->mIconSize:I
 
-    const v1, 0x7f0d022a
+    const v1, 0x7f0d022c
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -541,7 +541,7 @@
 
     if-eqz v1, :cond_0
 
-    const v1, 0x7f0d04ae
+    const v1, 0x7f0d04b0
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 

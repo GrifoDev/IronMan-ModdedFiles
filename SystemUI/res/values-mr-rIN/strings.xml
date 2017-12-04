@@ -238,6 +238,8 @@
     <string name="wifi_allow_scan_with_traffic_summary">वाय-फाय रोम स्‍कॅनला इंटरफेसवर उपस्‍थित असलेल्‍या रहदारी डेटाच्या प्रमाणावर आधारित अनुमती द्या/अनुमती देऊ नका</string>
     <string name="select_logd_size_title">लॉगर बफर आकार</string>
     <string name="select_logd_size_dialog_title">प्रति लॉग बफर लॉगर आकार निवडा</string>
+    <string name="dev_logpersist_clear_warning_title">सक्तीचा लॉगर संग्रह साफ करायचा?</string>
+    <string name="dev_logpersist_clear_warning_message">सक्तीचे लॉगर बंद केल्या वर लॉगर डेटा हटवला जाईल.</string>
     <string name="select_logpersist_title">संग्रह लॉग डेटा सतत</string>
     <string name="select_logpersist_dialog_title">सतत संग्रहित करण्या साठी लॉग बफर्स निवडा</string>
     <string name="select_usb_configuration_title">USB कॉन्‍फिगरेशन निवडा</string>
@@ -752,6 +754,7 @@ For example, your ringtone will not sound, you will not be able to answer phone 
     <string name="wifi_authentication_failed_kt">Wi-Fi AP प्रमाणित करण्यात अयशस्वी.</string>
     <string name="wifi_authentication_no_response">Wi-Fi AP शी कनेक्ट करण्यात अयशस्वी.</string>
     <string name="wifi_authentication_invalid_value">अधिप्रमाणन अयशस्वी.ID आणि पासवर्ड तपासा.</string>
+    <string name="wifi_disconnected">Wi-Fi खंडित झाले.</string>
     <string name="quick_settings_dnd_label">व्यत्यय आणू नका</string>
     <string name="quick_settings_dnd_priority_label">केवळ प्राधान्य</string>
     <string name="quick_settings_dnd_alarms_label">केवळ अलार्म</string>
@@ -1383,11 +1386,11 @@ Wi-Fi कॉलिंग आयकॉन सेवा उपलब्ध अस�
     <string name="keyboard_key_numpad_template">Numpad %1$s</string>
     <string name="keyboard_popup_help">मेटा की: विंडोस, आज्ञा किंवा ऑपरेटिंग सिस्टम प्रतीक की.</string>
     <string name="keyboard_shortcut_group_system">सिस्टम शॉर्टकट्स</string>
-    <string name="keyboard_shortcut_group_system_home">मुख्यपृष्ठ</string>
+    <string name="keyboard_shortcut_group_system_home">होम</string>
     <string name="keyboard_shortcut_group_system_recents">अलीकडील</string>
     <string name="keyboard_shortcut_group_system_back">मागे</string>
-    <string name="keyboard_shortcut_group_system_notifications">सूचना</string>
-    <string name="keyboard_shortcut_group_system_shortcuts_helper">कीबोर्ड शॉर्टकट</string>
+    <string name="keyboard_shortcut_group_system_notifications">अधिसूचना</string>
+    <string name="keyboard_shortcut_group_system_shortcuts_helper">कीबोर्ड शॉर्टकट्स</string>
     <string name="keyboard_shortcut_group_system_switch_input">इनपुट पद्धत स्विच करा</string>
     <string name="keyboard_shortcut_group_system_all_apps">सर्व अनुप्रयोग</string>
     <string name="keyboard_shortcut_group_system_running_apps">चालू अनुप्रयोग</string>
@@ -1401,7 +1404,7 @@ Wi-Fi कॉलिंग आयकॉन सेवा उपलब्ध अस�
     <string name="keyboard_shortcut_group_applications_im">IM</string>
     <string name="keyboard_shortcut_group_applications_music">संगीत</string>
     <string name="keyboard_shortcut_group_applications_youtube">YouTube</string>
-    <string name="keyboard_shortcut_group_applications_calendar">कॅलेंडर</string>
+    <string name="keyboard_shortcut_group_applications_calendar">दिनदर्शिका</string>
     <string name="keyboard_shortcut_group_applications_bixby">Bixby</string>
     <string name="keyboard_shortcut_group_applications_messages">संदेश</string>
     <string name="tuner_full_zen_title">आवाज नियंत्रणांसह दर्शवा</string>
@@ -1653,7 +1656,9 @@ Using your tablet in a very hot location."</string>
     <string name="battery_not_fully_connected_charging_title_vzw">Incomplete connection</string>
     <string name="battery_not_fully_connected_charging_text">जलद चार्जिंग साठी, आपल्या उपकरणासह आलेला चार्जर वापरा आणि खात्री करा की तो योग्यरित्या कनेक्ट केलेला आहे.</string>
     <string name="battery_not_fully_connected_charging_text_vzw">Make sure the charger is properly connected.</string>
+    <string name="battery_not_fully_connected_charging_text_jpn">खात्री करा की आपले चार्जर योग्यरित्या कनेक्ट केले आहे.</string>
     <string name="battery_not_fully_connected_charging_popup_text">खात्री करा की चार्जर योग्यरित्या कनेक्ट केलेला आहे. उपकरणासह आलेला चार्जर वापरा.</string>
+    <string name="battery_not_fully_connected_charging_popup_text_jpn">खात्री करा की चार्जर योग्यरित्या कनेक्ट केलेला आहे.</string>
     <string name="battery_charging_level_and_time_text">"चार्जिंग: %1$d%%
 (पूर्ण चार्ज होईपर्यंत अंदाजे %2$s)"</string>
     <string name="battery_charging_level_text">चार्जिंग: %d%%</string>
@@ -1878,6 +1883,8 @@ Please note that in order to enable your emergency calls (e.g., such as 112 call
     <string name="qs_detail_palm_capture_title">कॅप्चर करण्यासाठी पंजा स्वाईप.</string>
     <string name="noti_direct_reply_exceed_text_limit_toast">अधिक मजकूर प्रविष्ट करू शकत नाही.</string>
     <string name="airplane_mode_tts_text">विमान मोड</string>
+    <string name="all_noti_readout">एक अधिसूचना</string>
+    <string name="all_noti_readout2">%d अधिसूचना</string>
     <string name="car_lockscreen_disclaimer_title">सुरक्षितपणे वाहन चालवा</string>
     <string name="car_lockscreen_disclaimer_text">वाहन चालविण्‍याच्या शर्तींची पूर्णपणे माहिती असू द्या आणि नेहमी लागू असलेल्या कायद्यांचे पालन करा. दिशानिर्देश कदाचित चुकीचे, अपूर्ण, धोकादायक, अनुकूल नसलेले, प्रतिबंधित किंवा प्रशासकीय क्षेत्रांना ओलांडणारे असू शकतात. व्यवसाय माहिती देखील चुकीची किंवा अपूर्ण असू शकते. डेटा हा रिअल-टाइम नसतो आणि स्थान अचूकतेची हमी दिली जाऊ शकत नाही. वाहन चालविताना Android Auto च्या उद्देशासाठी नसलेले आपले मोबाईल डिव्हाइस हाताळू नका किंवा अॅप्स वापरू नका.</string>
     <string name="pip_close">PIP बंद करा</string>

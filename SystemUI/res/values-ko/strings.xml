@@ -239,6 +239,8 @@
     <string name="wifi_allow_scan_with_traffic_summary">인터페이스에 표시되는 데이터 트래픽의 양을 기반으로 Wi-Fi 로밍 스캔을 허용하거나 허용하지 않습니다.</string>
     <string name="select_logd_size_title">로거 버퍼 크기</string>
     <string name="select_logd_size_dialog_title">로그 버퍼당 로거 크기 선택</string>
+    <string name="dev_logpersist_clear_warning_title">로거 영구 저장공간 삭제</string>
+    <string name="dev_logpersist_clear_warning_message">영구 로거 기능을 해제하면 로거 데이터가 모두 삭제됩니다.</string>
     <string name="select_logpersist_title">로그 데이터 항상 저장</string>
     <string name="select_logpersist_dialog_title">항상 저장할 로그 버퍼 선택</string>
     <string name="select_usb_configuration_title">USB 설정 선택</string>
@@ -752,6 +754,7 @@
     <string name="wifi_authentication_failed_kt">Wi-Fi 인증이 되지 않았습니다.</string>
     <string name="wifi_authentication_no_response">Wi-Fi AP에서 응답이 없습니다.</string>
     <string name="wifi_authentication_invalid_value">인증에 실패하였습니다. ID와 비밀번호를 확인해 주세요.</string>
+    <string name="wifi_disconnected">Wi-Fi 연결을 해제했습니다.</string>
     <string name="quick_settings_dnd_label">알림 일시중지</string>
     <string name="quick_settings_dnd_priority_label">중요 알림만</string>
     <string name="quick_settings_dnd_alarms_label">알람만</string>
@@ -855,6 +858,7 @@ Mirroring"</string>
     <string name="quick_settings_mobile_data_label">"모바일
 데이터"</string>
     <string name="quick_settings_wificalling_label">Wi-Fi 전화</string>
+    <string name="quick_settings_callingplus_label">Plus 전화</string>
     <string name="quick_settings_personal_mode_label">"프라이빗
 모드"</string>
     <string name="quick_settings_data_roaming_label">"데이터
@@ -1378,10 +1382,10 @@ VPN에 연결되어 있으므로 VPN 업체에서 이메일, 앱, 웹사이트�
     <string name="keyboard_popup_help">메타 키: Windows 키, 커맨드 키, 기타 운영체제 기호 키로 사용할 수 있습니다.</string>
     <string name="keyboard_shortcut_group_system">시스템 단축키</string>
     <string name="keyboard_shortcut_group_system_home">홈</string>
-    <string name="keyboard_shortcut_group_system_recents">최근</string>
+    <string name="keyboard_shortcut_group_system_recents">최근 앱</string>
     <string name="keyboard_shortcut_group_system_back">뒤로가기</string>
     <string name="keyboard_shortcut_group_system_notifications">알림</string>
-    <string name="keyboard_shortcut_group_system_shortcuts_helper">단축키</string>
+    <string name="keyboard_shortcut_group_system_shortcuts_helper">키보드 단축키</string>
     <string name="keyboard_shortcut_group_system_switch_input">입력 방법 전환</string>
     <string name="keyboard_shortcut_group_system_all_apps">모든 애플리케이션</string>
     <string name="keyboard_shortcut_group_system_running_apps">최근 앱</string>
@@ -1389,7 +1393,7 @@ VPN에 연결되어 있으므로 VPN 업체에서 이메일, 앱, 웹사이트�
     <string name="keyboard_shortcut_group_system_switch_languages">언어 변경</string>
     <string name="keyboard_shortcut_group_applications">인앱 단축키</string>
     <string name="keyboard_shortcut_group_applications_assist">지원</string>
-    <string name="keyboard_shortcut_group_applications_browser">브라우저</string>
+    <string name="keyboard_shortcut_group_applications_browser">인터넷</string>
     <string name="keyboard_shortcut_group_applications_contacts">연락처</string>
     <string name="keyboard_shortcut_group_applications_email">이메일</string>
     <string name="keyboard_shortcut_group_applications_im">메신저</string>
@@ -1649,7 +1653,9 @@ VPN에 연결되어 있으므로 VPN 업체에서 이메일, 앱, 웹사이트�
     <string name="battery_not_fully_connected_charging_title_vzw">충전기 연결 확인</string>
     <string name="battery_not_fully_connected_charging_text">고속으로 충전하려면 디바이스와 함께 제공된 충전기를 사용하고 디바이스와 충전기가 바르게 연결된 상태인지 확인하세요.</string>
     <string name="battery_not_fully_connected_charging_text_vzw">충전기가 바르게 연결된 상태인지 확인하세요.</string>
+    <string name="battery_not_fully_connected_charging_text_jpn">충전기가 바르게 연결된 상태인지 확인하세요.</string>
     <string name="battery_not_fully_connected_charging_popup_text">충전기가 바르게 연결된 상태인지 확인하세요. 디바이스와 함께 제공된 충전기를 사용하세요.</string>
+    <string name="battery_not_fully_connected_charging_popup_text_jpn">충전기가 바르게 연결된 상태인지 확인하세요.</string>
     <string name="battery_charging_level_and_time_text">"충전 중: %1$d%%
 (약 %2$s 후 충전 완료)"</string>
     <string name="battery_charging_level_text">충전 중: %d%%</string>
@@ -1867,7 +1873,7 @@ Please note that in order to enable your emergency calls (e.g., such as 112 call
     <string name="force_immersive_guide_dialog_title">내비게이션 바 숨기기:</string>
     <string name="force_immersive_guide_dialog_message1">내비게이션 바를 숨기려면 이 버튼을 두 번 누르세요.</string>
     <string name="force_immersive_guide_dialog_message2">충전 포트 쪽 화면 가장자리를 안쪽으로 밀면 내비게이션 바가 나타납니다.</string>
-    <string name="force_immersive_guide_dialog_message3">내비게이션 바를 고정하려면 이 버튼을 두 번 누르세요.</string>
+    <string name="force_immersive_guide_dialog_message3">내비게이션 바를 다시 고정하려면 이 버튼을 두 번 누르세요.</string>
     <string name="force_immersive_guide_dialog_message4">홈 화면 등 일부 화면에서는 내비게이션 바가 항상 표시됩니다.</string>
     <string name="force_immersive_guide_dialog_guide_path">이 버튼을 숨기려면 [설정 > 디스플레이 > 내비게이션 바]로 이동하세요.</string>
     <string name="force_immersive_guide_dialog_setting">설정</string>
@@ -1884,8 +1890,8 @@ Please note that in order to enable your emergency calls (e.g., such as 112 call
     <string name="qs_detail_palm_capture_title">손으로 밀어서 캡처</string>
     <string name="noti_direct_reply_exceed_text_limit_toast">입력 가능한 글자수를 초과했습니다.</string>
     <string name="airplane_mode_tts_text">비행기 탑승 모드</string>
-    <string name="all_noti_readout" formatted="false">%s %s개 있습니다</string>
-    <string name="all_noti_readout2" formatted="false">%s %s개 있습니다</string>
+    <string name="all_noti_readout">알림 1개</string>
+    <string name="all_noti_readout2">알림 %d개</string>
     <string name="car_lockscreen_disclaimer_title">안전 운전</string>
     <string name="car_lockscreen_disclaimer_text">도로 상황에 주의를 기울이고 관련 법규를 항상 준수하세요. 경로가 정확하지 않거나 불완전하거나 위험하거나 적합하지 않을 수 있으며 금지된 지역이나 여러 행정 구역을 통과할 수 있습니다. 비즈니스 정보 또한 부정확하거나 불완전할 수 있습니다. 데이터는 실시간이 아니며 위치의 정확도를 보증할 수 없습니다. 운전 중에 휴대기기를 조작하거나 Android Auto가 지원되지 않는 앱을 사용해서는 안 됩니다.</string>
     <string name="pip_close">PIP 닫기</string>

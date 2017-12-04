@@ -494,7 +494,7 @@
 
     iget-object v1, p0, Lcom/android/systemui/recents/desktop/views/RecentsWindowView;->mAppContext:Landroid/content/Context;
 
-    const v2, 0x7f0f0541
+    const v2, 0x7f0f0542
 
     invoke-virtual {v1, v2}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -1252,7 +1252,7 @@
 
     if-eqz p5, :cond_1
 
-    const v0, 0x7f0f0542
+    const v0, 0x7f0f0543
 
     :goto_0
     invoke-direct {v2, v0, p5}, Lcom/android/systemui/recents/events/ui/AllTaskViewsDismissedEvent;-><init>(IZ)V
@@ -1263,7 +1263,7 @@
     return-void
 
     :cond_1
-    const v0, 0x7f0f0543
+    const v0, 0x7f0f0544
 
     goto :goto_0
 .end method

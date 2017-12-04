@@ -1451,6 +1451,12 @@
 
     const/high16 v4, 0x3f800000    # 1.0f
 
+    const-string/jumbo v0, "GalaxyWallpaper"
+
+    const-string/jumbo v1, "TangramSystem hide()"
+
+    invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+
     iget-object v0, p0, Lcom/android/systemui/infinity/tangram/TangramSystem;->showAnimator:Lcom/altamirasoft/glanimationutil/GLValueAnimator;
 
     if-eqz v0, :cond_0
@@ -1633,19 +1639,25 @@
 .method public show()V
     .locals 4
 
-    const/high16 v2, 0x3f800000    # 1.0f
+    const/high16 v3, 0x3f800000    # 1.0f
 
-    const/4 v0, 0x0
+    const/4 v2, 0x0
 
-    iput v0, p0, Lcom/android/systemui/infinity/tangram/TangramSystem;->hideingProgress:F
+    const-string/jumbo v0, "GalaxyWallpaper"
 
-    iput v0, p0, Lcom/android/systemui/infinity/tangram/TangramSystem;->showingProgress:F
+    const-string/jumbo v1, "TangramSystem show()"
 
-    iput v2, p0, Lcom/android/systemui/infinity/tangram/TangramSystem;->overallScale:F
+    invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    iput v2, p0, Lcom/android/systemui/infinity/tangram/TangramSystem;->overallAlpha:F
+    iput v2, p0, Lcom/android/systemui/infinity/tangram/TangramSystem;->hideingProgress:F
 
-    iput v0, p0, Lcom/android/systemui/infinity/tangram/TangramSystem;->targetGyroValue:F
+    iput v2, p0, Lcom/android/systemui/infinity/tangram/TangramSystem;->showingProgress:F
+
+    iput v3, p0, Lcom/android/systemui/infinity/tangram/TangramSystem;->overallScale:F
+
+    iput v3, p0, Lcom/android/systemui/infinity/tangram/TangramSystem;->overallAlpha:F
+
+    iput v2, p0, Lcom/android/systemui/infinity/tangram/TangramSystem;->targetGyroValue:F
 
     iget-object v0, p0, Lcom/android/systemui/infinity/tangram/TangramSystem;->showAnimator:Lcom/altamirasoft/glanimationutil/GLValueAnimator;
 
@@ -1677,7 +1689,7 @@
 
     iget v1, p0, Lcom/android/systemui/infinity/tangram/TangramSystem;->showingProgress:F
 
-    invoke-virtual {v0, v1, v2}, Lcom/altamirasoft/glanimationutil/GLAnimatorManager;->createValueAnimator(FF)Lcom/altamirasoft/glanimationutil/GLValueAnimator;
+    invoke-virtual {v0, v1, v3}, Lcom/altamirasoft/glanimationutil/GLAnimatorManager;->createValueAnimator(FF)Lcom/altamirasoft/glanimationutil/GLValueAnimator;
 
     move-result-object v0
 

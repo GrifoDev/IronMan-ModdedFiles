@@ -208,6 +208,8 @@
     <string name="wifi_allow_scan_with_traffic_summary">"Дазволіць/забараніць роўмінгавае сканіраванне Wi‑Fi ў залежнасці ад аб'ёму трафіку даных у інтэрфейсе"</string>
     <string name="select_logd_size_title">Памеры буфера для сродку вядзення журнала</string>
     <string name="select_logd_size_dialog_title">Выберыце памеры сродку вядзення журнала для буфераў журнала</string>
+    <string name="dev_logpersist_clear_warning_title">Выд схов сродку паст вядз журнала?</string>
+    <string name="dev_logpersist_clear_warning_message">Пры выключэнні сродку вядзення журнала даныя сродку пастаяннага вядзення журнала будуць выдалены.</string>
     <string name="select_logpersist_title">Захоўваць даныя журнала</string>
     <string name="select_logpersist_dialog_title">Выберыце буферы журнала, якія трэба захоўв</string>
     <string name="select_usb_configuration_title">Выберыце канфігурацыю USB</string>
@@ -722,6 +724,7 @@ For example, your ringtone will not sound, you will not be able to answer phone 
     <string name="wifi_authentication_failed_kt">Не ўдалося праверыць сапраўднасць пункту доступу Wi-Fi.</string>
     <string name="wifi_authentication_no_response">Немагчыма падлучыцца да пункта доступу Wi-Fi.</string>
     <string name="wifi_authentication_invalid_value">Памылка праверкі сапраўднасці. Праверце ідэнтыфікатар і пароль.</string>
+    <string name="wifi_disconnected">Wi-Fi адлучаны.</string>
     <string name="quick_settings_dnd_label">Не турбаваць</string>
     <string name="quick_settings_dnd_priority_label">Толькі прыярытэтныя</string>
     <string name="quick_settings_dnd_alarms_label">Толькі будзільнікі</string>
@@ -1623,7 +1626,9 @@ Using your tablet in a very hot location."</string>
     <string name="battery_not_fully_connected_charging_title_vzw">Incomplete connection</string>
     <string name="battery_not_fully_connected_charging_text">Для хутчэйшай зарадкі карыстайцеся зараднай прыладай, якая ўваходзіла ў камплект пастаўкі вашай прылады, і упэўніцеся, што яна падлучана належным чынам.</string>
     <string name="battery_not_fully_connected_charging_text_vzw">Make sure the charger is properly connected.</string>
+    <string name="battery_not_fully_connected_charging_text_jpn">Упэўніцеся, што зарадная прылада падлучана належным чынам.</string>
     <string name="battery_not_fully_connected_charging_popup_text">Упэўніцеся, што зарадная прылада падлучана належным чынам. Карыстайцеся зараднай прыладай, якая ўваходзіла ў камплект пастаўкі вашай прылады.</string>
+    <string name="battery_not_fully_connected_charging_popup_text_jpn">Упэўніцеся, што зарадная прылада падлучана належным чынам.</string>
     <string name="battery_charging_level_and_time_text">"Зарадка: %1$d%%
 (прыкладна %2$s засталося да поўнай зарадкі)"</string>
     <string name="battery_charging_level_text">Зарадка: %d %%</string>
@@ -1848,6 +1853,8 @@ Please note that in order to enable your emergency calls (e.g., such as 112 call
     <string name="qs_detail_palm_capture_title">Каб зрабіць здымак, правядзіце далонню</string>
     <string name="noti_direct_reply_exceed_text_limit_toast">Немагчыма ўвесці больш тэксту.</string>
     <string name="airplane_mode_tts_text">Рэжым «У самалёце»</string>
+    <string name="all_noti_readout">Адно апавяшчэнне</string>
+    <string name="all_noti_readout2">Апавяшчэнняў: %d</string>
     <string name="car_lockscreen_disclaimer_title">Кіруйце аўтамабілем бяспечна</string>
     <string name="car_lockscreen_disclaimer_text">Будзьце заўсёды ў курсе дарожных умоў і заўсёды прытрымлівайцеся дзеючага заканадаўства. Указанні могуць быць недакладнымі, няпоўнымі, небяспечнымі, непадыходзячымі, забароненымі ці прадугледжваць уезд на адміністрацыйныя тэрыторыі. Інфармацыя пра кампаніі таксама можа быць недакладнай ці няпоўнай. Даныя не прадстаўляюцца ў рэжыме рэальнага часу, і дакладнасць вызначэння месцазнаходжання не можа быць гарантавана. Не выкарыстоўвайце сваю мабільную прыладу або праграмы, не прызначаныя для Android Auto, падчас кіравання.</string>
     <string name="pip_close">Закрыць PIP</string>

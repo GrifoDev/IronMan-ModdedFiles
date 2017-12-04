@@ -79,7 +79,7 @@
 
 .field protected mSecurityMode:Lcom/android/keyguard/KeyguardSecurityModel$SecurityMode;
 
-.field private mSecurityModel:Lcom/android/keyguard/KeyguardSecurityModel;
+.field protected mSecurityModel:Lcom/android/keyguard/KeyguardSecurityModel;
 
 .field private mSecurityView:Landroid/widget/LinearLayout;
 
@@ -414,7 +414,7 @@
 
     iget-object v1, p0, Lcom/android/keyguard/KeyguardAbsKeyInputView;->mContext:Landroid/content/Context;
 
-    const v2, 0x1040a31
+    const v2, 0x1040a32
 
     invoke-virtual {v1, v2}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 

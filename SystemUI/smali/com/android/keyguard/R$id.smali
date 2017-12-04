@@ -334,89 +334,89 @@
 
 .field public static final row3:I = 0x7f130236
 
-.field public static final servicebox_alarm_ampm_left:I = 0x7f1304a7
+.field public static final servicebox_alarm_ampm_left:I = 0x7f1304a9
 
-.field public static final servicebox_alarm_ampm_right:I = 0x7f1304a8
+.field public static final servicebox_alarm_ampm_right:I = 0x7f1304aa
 
-.field public static final servicebox_alarm_dow:I = 0x7f1304a6
+.field public static final servicebox_alarm_dow:I = 0x7f1304a8
 
-.field public static final servicebox_alarm_next:I = 0x7f1304a5
+.field public static final servicebox_alarm_next:I = 0x7f1304a7
 
-.field public static final servicebox_alarm_no_alarm:I = 0x7f1304a9
+.field public static final servicebox_alarm_no_alarm:I = 0x7f1304ab
 
-.field public static final servicebox_alarm_page_holder:I = 0x7f1304a4
+.field public static final servicebox_alarm_page_holder:I = 0x7f1304a6
 
 .field public static final servicebox_alarm_time:I = 0x7f130114
 
 .field public static final servicebox_alarm_time_container:I = 0x7f130112
 
-.field public static final servicebox_event_information_area:I = 0x7f1304c3
+.field public static final servicebox_event_information_area:I = 0x7f1304c5
 
 .field public static final servicebox_event_list:I = 0x7f130120
 
 .field public static final servicebox_event_list_root:I = 0x7f13011f
 
-.field public static final servicebox_music_controller_container:I = 0x7f1304bb
+.field public static final servicebox_music_controller_container:I = 0x7f1304bd
 
-.field public static final servicebox_music_page_appinfo:I = 0x7f1304af
+.field public static final servicebox_music_page_appinfo:I = 0x7f1304b1
 
-.field public static final servicebox_music_page_artist:I = 0x7f1304ba
+.field public static final servicebox_music_page_artist:I = 0x7f1304bc
 
-.field public static final servicebox_music_page_big_appinfo_bottom_space:I = 0x7f1304b0
+.field public static final servicebox_music_page_big_appinfo_bottom_space:I = 0x7f1304b2
 
-.field public static final servicebox_music_page_big_appinfo_container:I = 0x7f1304ad
+.field public static final servicebox_music_page_big_appinfo_container:I = 0x7f1304af
 
-.field public static final servicebox_music_page_big_appinfo_top_margin:I = 0x7f1304ae
+.field public static final servicebox_music_page_big_appinfo_top_margin:I = 0x7f1304b0
 
-.field public static final servicebox_music_page_big_mkkeyboard_space_1:I = 0x7f1304ab
+.field public static final servicebox_music_page_big_mkkeyboard_space_1:I = 0x7f1304ad
 
-.field public static final servicebox_music_page_big_mkkeyboard_space_2:I = 0x7f1304b1
+.field public static final servicebox_music_page_big_mkkeyboard_space_2:I = 0x7f1304b3
 
-.field public static final servicebox_music_page_big_navigation_space:I = 0x7f1304bf
+.field public static final servicebox_music_page_big_navigation_space:I = 0x7f1304c1
 
-.field public static final servicebox_music_page_big_top_margin:I = 0x7f1304ac
+.field public static final servicebox_music_page_big_top_margin:I = 0x7f1304ae
 
-.field public static final servicebox_music_page_cover:I = 0x7f1304b3
+.field public static final servicebox_music_page_cover:I = 0x7f1304b5
 
-.field public static final servicebox_music_page_cover_container:I = 0x7f1304b2
+.field public static final servicebox_music_page_cover_container:I = 0x7f1304b4
 
-.field public static final servicebox_music_page_holder:I = 0x7f1304aa
+.field public static final servicebox_music_page_holder:I = 0x7f1304ac
 
-.field public static final servicebox_music_page_lyrics:I = 0x7f1304b6
+.field public static final servicebox_music_page_lyrics:I = 0x7f1304b8
 
-.field public static final servicebox_music_page_lyrics_btn:I = 0x7f1304b4
+.field public static final servicebox_music_page_lyrics_btn:I = 0x7f1304b6
 
-.field public static final servicebox_music_page_lyrics_scroll:I = 0x7f1304b5
+.field public static final servicebox_music_page_lyrics_scroll:I = 0x7f1304b7
 
-.field public static final servicebox_music_page_next_btn:I = 0x7f1304be
+.field public static final servicebox_music_page_next_btn:I = 0x7f1304c0
 
-.field public static final servicebox_music_page_oobe:I = 0x7f1304b7
+.field public static final servicebox_music_page_oobe:I = 0x7f1304b9
 
-.field public static final servicebox_music_page_play_btn:I = 0x7f1304bd
+.field public static final servicebox_music_page_play_btn:I = 0x7f1304bf
 
-.field public static final servicebox_music_page_prev_btn:I = 0x7f1304bc
+.field public static final servicebox_music_page_prev_btn:I = 0x7f1304be
 
-.field public static final servicebox_music_page_title:I = 0x7f1304b9
+.field public static final servicebox_music_page_title:I = 0x7f1304bb
 
-.field public static final servicebox_music_ripple_area:I = 0x7f1304b8
+.field public static final servicebox_music_ripple_area:I = 0x7f1304ba
 
 .field public static final servicebox_no_events:I = 0x7f13011e
 
-.field public static final servicebox_no_events_button:I = 0x7f1304c6
+.field public static final servicebox_no_events_button:I = 0x7f1304c8
 
-.field public static final servicebox_no_events_content:I = 0x7f1304c4
+.field public static final servicebox_no_events_content:I = 0x7f1304c6
 
-.field public static final servicebox_no_events_icon:I = 0x7f1304c5
+.field public static final servicebox_no_events_icon:I = 0x7f1304c7
 
-.field public static final servicebox_remoteviews_page_holder:I = 0x7f1304c0
+.field public static final servicebox_remoteviews_page_holder:I = 0x7f1304c2
 
 .field public static final servicebox_today_clock_day:I = 0x7f130119
 
-.field public static final servicebox_today_clock_root:I = 0x7f1304c1
+.field public static final servicebox_today_clock_root:I = 0x7f1304c3
 
 .field public static final servicebox_today_clock_week_day:I = 0x7f13011a
 
-.field public static final servicebox_today_event_divider:I = 0x7f1304c2
+.field public static final servicebox_today_event_divider:I = 0x7f1304c4
 
 .field public static final servicebox_today_event_dot:I = 0x7f13011b
 
@@ -424,7 +424,7 @@
 
 .field public static final servicebox_today_event_title:I = 0x7f13011d
 
-.field public static final servicebox_today_page_holder:I = 0x7f1304c7
+.field public static final servicebox_today_page_holder:I = 0x7f1304c9
 
 .field public static final set_as_wallpaper_button_view:I = 0x7f1302b7
 

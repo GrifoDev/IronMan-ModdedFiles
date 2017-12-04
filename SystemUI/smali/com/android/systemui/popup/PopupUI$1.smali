@@ -272,6 +272,39 @@
     goto/16 :goto_0
 
     :cond_6
+    const-string/jumbo v5, "android.intent.action.AIRPLANE_MODE"
+
+    invoke-virtual {v0, v5}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v5
+
+    if-eqz v5, :cond_7
+
+    iget-object v5, p0, Lcom/android/systemui/popup/PopupUI$1;->this$0:Lcom/android/systemui/popup/PopupUI;
+
+    iget-object v5, v5, Lcom/android/systemui/popup/PopupUI;->mContext:Landroid/content/Context;
+
+    invoke-static {v5}, Lcom/android/keyguard/util/SettingsHelper;->getInstance(Landroid/content/Context;)Lcom/android/keyguard/util/SettingsHelper;
+
+    move-result-object v5
+
+    invoke-virtual {v5}, Lcom/android/keyguard/util/SettingsHelper;->isAirplaneModeOn()Z
+
+    move-result v2
+
+    if-nez v2, :cond_1
+
+    iget-object v5, p0, Lcom/android/systemui/popup/PopupUI$1;->this$0:Lcom/android/systemui/popup/PopupUI;
+
+    invoke-static {v5}, Lcom/android/systemui/popup/PopupUI;->-get2(Lcom/android/systemui/popup/PopupUI;)Lcom/android/systemui/popup/PopupUINotificationsImpl;
+
+    move-result-object v5
+
+    invoke-virtual {v5}, Lcom/android/systemui/popup/PopupUINotificationsImpl;->dismissFlightModeEnabledAlertDialog()V
+
+    goto/16 :goto_0
+
+    :cond_7
     const-string/jumbo v5, "android.intent.action.CLOSE_SYSTEM_DIALOGS"
 
     invoke-virtual {v0, v5}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z

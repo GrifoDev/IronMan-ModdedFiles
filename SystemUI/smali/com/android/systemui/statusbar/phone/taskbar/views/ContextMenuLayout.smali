@@ -168,7 +168,7 @@
 
     iget-object v3, p0, Lcom/android/systemui/statusbar/phone/taskbar/views/ContextMenuLayout;->mContextMenuView:Landroid/view/View;
 
-    const v4, 0x7f130536
+    const v4, 0x7f130538
 
     invoke-virtual {v3, v4}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -197,7 +197,7 @@
 
     iget-object v3, p0, Lcom/android/systemui/statusbar/phone/taskbar/views/ContextMenuLayout;->mContextMenuView:Landroid/view/View;
 
-    const v4, 0x7f130537
+    const v4, 0x7f130539
 
     invoke-virtual {v3, v4}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -207,7 +207,7 @@
 
     iget-object v3, p0, Lcom/android/systemui/statusbar/phone/taskbar/views/ContextMenuLayout;->mContextMenuView:Landroid/view/View;
 
-    const v4, 0x7f130538
+    const v4, 0x7f13053a
 
     invoke-virtual {v3, v4}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -223,7 +223,7 @@
 
     move-result-object v3
 
-    const v4, 0x7f0f0aaa
+    const v4, 0x7f0f0aae
 
     invoke-virtual {v3, v4}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -247,7 +247,7 @@
 
     iget-object v2, p0, Lcom/android/systemui/statusbar/phone/taskbar/views/ContextMenuLayout;->mContextMenuView:Landroid/view/View;
 
-    const v3, 0x7f13053a
+    const v3, 0x7f13053c
 
     invoke-virtual {v2, v3}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -261,7 +261,7 @@
 
     iget-object v2, p0, Lcom/android/systemui/statusbar/phone/taskbar/views/ContextMenuLayout;->mContextMenuView:Landroid/view/View;
 
-    const v3, 0x7f13053b
+    const v3, 0x7f13053d
 
     invoke-virtual {v2, v3}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -279,7 +279,7 @@
 
     iget-object v3, p0, Lcom/android/systemui/statusbar/phone/taskbar/views/ContextMenuLayout;->mContextMenuView:Landroid/view/View;
 
-    const v4, 0x7f130533
+    const v4, 0x7f130535
 
     invoke-virtual {v3, v4}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -293,7 +293,7 @@
 
     iget-object v3, p0, Lcom/android/systemui/statusbar/phone/taskbar/views/ContextMenuLayout;->mContextMenuView:Landroid/view/View;
 
-    const v4, 0x7f130534
+    const v4, 0x7f130536
 
     invoke-virtual {v3, v4}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -303,7 +303,7 @@
 
     iget-object v3, p0, Lcom/android/systemui/statusbar/phone/taskbar/views/ContextMenuLayout;->mContextMenuView:Landroid/view/View;
 
-    const v4, 0x7f130535
+    const v4, 0x7f130537
 
     invoke-virtual {v3, v4}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -627,7 +627,7 @@
 
     move-object/from16 v35, v0
 
-    const v36, 0x7f130527
+    const v36, 0x7f130529
 
     invoke-virtual/range {v35 .. v36}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -647,7 +647,7 @@
 
     move-object/from16 v35, v0
 
-    const v36, 0x7f130529
+    const v36, 0x7f13052b
 
     invoke-virtual/range {v35 .. v36}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -687,7 +687,7 @@
 
     move-object/from16 v35, v0
 
-    const v36, 0x7f13052a
+    const v36, 0x7f13052c
 
     invoke-virtual/range {v35 .. v36}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -705,7 +705,7 @@
 
     move-object/from16 v35, v0
 
-    const v36, 0x7f130528
+    const v36, 0x7f13052a
 
     invoke-virtual/range {v35 .. v36}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -873,7 +873,7 @@
 
     move-object/from16 v35, v0
 
-    const v36, 0x7f130523
+    const v36, 0x7f130525
 
     invoke-virtual/range {v35 .. v36}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -893,7 +893,7 @@
 
     move-object/from16 v35, v0
 
-    const v36, 0x7f130526
+    const v36, 0x7f130528
 
     invoke-virtual/range {v35 .. v36}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -911,7 +911,7 @@
 
     move-object/from16 v35, v0
 
-    const v36, 0x7f130525
+    const v36, 0x7f130527
 
     invoke-virtual/range {v35 .. v36}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -931,7 +931,7 @@
 
     move-object/from16 v35, v0
 
-    const v36, 0x7f130524
+    const v36, 0x7f130526
 
     invoke-virtual/range {v35 .. v36}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -1044,7 +1044,7 @@
 
     move-object/from16 v35, v0
 
-    const v36, 0x7f130520
+    const v36, 0x7f130522
 
     invoke-virtual/range {v35 .. v36}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -1064,7 +1064,7 @@
 
     move-object/from16 v35, v0
 
-    const v36, 0x7f130521
+    const v36, 0x7f130523
 
     invoke-virtual/range {v35 .. v36}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -1084,7 +1084,7 @@
 
     move-object/from16 v35, v0
 
-    const v36, 0x7f130522
+    const v36, 0x7f130524
 
     invoke-virtual/range {v35 .. v36}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -1677,6 +1677,8 @@
 .method public onClick(Landroid/view/View;)V
     .locals 9
 
+    const/4 v5, 0x0
+
     const/4 v6, 0x0
 
     const/4 v8, 0x1
@@ -1687,6 +1689,7 @@
 
     sparse-switch v3, :sswitch_data_0
 
+    :cond_0
     :goto_0
     iget-object v3, p0, Lcom/android/systemui/statusbar/phone/taskbar/views/ContextMenuLayout;->mTaskBarView:Lcom/android/systemui/statusbar/phone/taskbar/views/TaskBarView;
 
@@ -1729,7 +1732,7 @@
 
     move-result-object v4
 
-    const v5, 0x7f0f0a9a
+    const v5, 0x7f0f0a9e
 
     invoke-virtual {v4, v5}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -1836,7 +1839,7 @@
 
     move-result-object v4
 
-    const v5, 0x7f0f0a9b
+    const v5, 0x7f0f0a9f
 
     invoke-virtual {v4, v5}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -1887,7 +1890,7 @@
 
     move-result v3
 
-    if-eqz v3, :cond_0
+    if-eqz v3, :cond_1
 
     iget-object v3, p0, Lcom/android/systemui/statusbar/phone/taskbar/views/ContextMenuLayout;->mTaskBarView:Lcom/android/systemui/statusbar/phone/taskbar/views/TaskBarView;
 
@@ -1904,7 +1907,7 @@
 
     goto/16 :goto_0
 
-    :cond_0
+    :cond_1
     iget-object v3, p0, Lcom/android/systemui/statusbar/phone/taskbar/views/ContextMenuLayout;->mTaskBarView:Lcom/android/systemui/statusbar/phone/taskbar/views/TaskBarView;
 
     invoke-virtual {p0}, Lcom/android/systemui/statusbar/phone/taskbar/views/ContextMenuLayout;->makeMuseIntent()Landroid/content/Intent;
@@ -1918,9 +1921,7 @@
     :sswitch_9
     iget-object v3, p0, Lcom/android/systemui/statusbar/phone/taskbar/views/ContextMenuLayout;->mTaskBarView:Lcom/android/systemui/statusbar/phone/taskbar/views/TaskBarView;
 
-    const/4 v4, 0x0
-
-    invoke-virtual {v3, v4}, Lcom/android/systemui/statusbar/phone/taskbar/views/TaskBarView;->doScreenCapture(I)V
+    invoke-virtual {v3, v5}, Lcom/android/systemui/statusbar/phone/taskbar/views/TaskBarView;->doScreenCapture(I)V
 
     goto/16 :goto_0
 
@@ -1944,7 +1945,15 @@
 
     move-result v3
 
-    if-eqz v3, :cond_1
+    if-eqz v3, :cond_2
+
+    iget-object v3, p0, Lcom/android/systemui/statusbar/phone/taskbar/views/ContextMenuLayout;->mContext:Landroid/content/Context;
+
+    invoke-static {v3, v5}, Lcom/android/systemui/statusbar/phone/taskbar/utils/TaskBarUtilities;->isInstalledGalaxyApps(Landroid/content/Context;I)Z
+
+    move-result v3
+
+    if-eqz v3, :cond_0
 
     iget-object v3, p0, Lcom/android/systemui/statusbar/phone/taskbar/views/ContextMenuLayout;->mContext:Landroid/content/Context;
 
@@ -1954,12 +1963,37 @@
 
     goto/16 :goto_0
 
-    :cond_1
+    :cond_2
+    iget-object v3, p0, Lcom/android/systemui/statusbar/phone/taskbar/views/ContextMenuLayout;->mContext:Landroid/content/Context;
+
+    invoke-static {v3, v5}, Lcom/android/systemui/statusbar/phone/taskbar/utils/TaskBarUtilities;->isInstalledGooglePlay(Landroid/content/Context;I)Z
+
+    move-result v3
+
+    if-eqz v3, :cond_3
+
     iget-object v3, p0, Lcom/android/systemui/statusbar/phone/taskbar/views/ContextMenuLayout;->mContext:Landroid/content/Context;
 
     const-string/jumbo v4, "com.samsung.android.oneconnect"
 
     invoke-static {v3, v4}, Lcom/android/systemui/statusbar/phone/taskbar/utils/TaskBarUtilities;->launchAppInPlayStore(Landroid/content/Context;Ljava/lang/String;)V
+
+    goto/16 :goto_0
+
+    :cond_3
+    iget-object v3, p0, Lcom/android/systemui/statusbar/phone/taskbar/views/ContextMenuLayout;->mContext:Landroid/content/Context;
+
+    invoke-static {v3, v5}, Lcom/android/systemui/statusbar/phone/taskbar/utils/TaskBarUtilities;->isInstalledGalaxyApps(Landroid/content/Context;I)Z
+
+    move-result v3
+
+    if-eqz v3, :cond_0
+
+    iget-object v3, p0, Lcom/android/systemui/statusbar/phone/taskbar/views/ContextMenuLayout;->mContext:Landroid/content/Context;
+
+    const-string/jumbo v4, "com.samsung.android.oneconnect"
+
+    invoke-static {v3, v4}, Lcom/android/systemui/statusbar/phone/taskbar/utils/TaskBarUtilities;->launchAppInGalaxyApps(Landroid/content/Context;Ljava/lang/String;)V
 
     goto/16 :goto_0
 
@@ -2049,21 +2083,21 @@
         0x7f13014d -> :sswitch_10
         0x7f13014e -> :sswitch_11
         0x7f13014f -> :sswitch_12
-        0x7f130521 -> :sswitch_4
-        0x7f130522 -> :sswitch_2
-        0x7f130524 -> :sswitch_3
-        0x7f130525 -> :sswitch_5
-        0x7f130526 -> :sswitch_1
-        0x7f130528 -> :sswitch_3
-        0x7f130529 -> :sswitch_0
-        0x7f13052a -> :sswitch_1
-        0x7f130530 -> :sswitch_6
-        0x7f130531 -> :sswitch_7
-        0x7f130532 -> :sswitch_8
-        0x7f130534 -> :sswitch_9
-        0x7f130535 -> :sswitch_a
-        0x7f130538 -> :sswitch_b
-        0x7f13053b -> :sswitch_13
+        0x7f130523 -> :sswitch_4
+        0x7f130524 -> :sswitch_2
+        0x7f130526 -> :sswitch_3
+        0x7f130527 -> :sswitch_5
+        0x7f130528 -> :sswitch_1
+        0x7f13052a -> :sswitch_3
+        0x7f13052b -> :sswitch_0
+        0x7f13052c -> :sswitch_1
+        0x7f130532 -> :sswitch_6
+        0x7f130533 -> :sswitch_7
+        0x7f130534 -> :sswitch_8
+        0x7f130536 -> :sswitch_9
+        0x7f130537 -> :sswitch_a
+        0x7f13053a -> :sswitch_b
+        0x7f13053d -> :sswitch_13
     .end sparse-switch
 .end method
 

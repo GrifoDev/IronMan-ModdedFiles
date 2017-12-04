@@ -982,7 +982,9 @@
     <item type="id" name="footer_text">false</item>
     <item type="id" name="footer_icon">false</item>
     <item type="id" name="tuner_icon">false</item>
+    <item type="id" name="more_button_container">false</item>
     <item type="id" name="more_button">false</item>
+    <item type="id" name="more_button_badge">false</item>
     <item type="id" name="date_time_alarm_group">false</item>
     <item type="id" name="date_time_group">false</item>
     <item type="id" name="date_time_divider">false</item>

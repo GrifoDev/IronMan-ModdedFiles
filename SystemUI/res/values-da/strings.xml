@@ -238,6 +238,8 @@
     <string name="wifi_allow_scan_with_traffic_summary">Tillad/forbyd scanning i forbindelse med Wi-Fi-roaming afhængigt af mængden af datatrafik i grænsefladen</string>
     <string name="select_logd_size_title">Størrelser for Logger-buffer</string>
     <string name="select_logd_size_dialog_title">Vælg Logger-størrelser pr. logbuffer</string>
+    <string name="dev_logpersist_clear_warning_title">Ryd lager for vedvarende logføring?</string>
+    <string name="dev_logpersist_clear_warning_message">Logføringsdata vil blive slettet, når den vedvarende logføring er deaktiveret.</string>
     <string name="select_logpersist_title">Gem logdata permanent</string>
     <string name="select_logpersist_dialog_title">Vælg logbuffere, der skal gemmes permanent</string>
     <string name="select_usb_configuration_title">Vælg USB-konfiguration</string>
@@ -752,6 +754,7 @@ Hvis du genaktiverer dataforbruget, kan det medføre gebyrer fra dit mobilselska
     <string name="wifi_authentication_failed_kt">Kunne ikke godkende Wi-Fi-AP.</string>
     <string name="wifi_authentication_no_response">Kunne ikke oprette forbindelse til Wi-Fi-AP.</string>
     <string name="wifi_authentication_invalid_value">Godkendelse mislykkedes. Kontroller id og adgangskode.</string>
+    <string name="wifi_disconnected">Wi-Fi frakoblet.</string>
     <string name="quick_settings_dnd_label">Forstyr ikke</string>
     <string name="quick_settings_dnd_priority_label">Kun prioritet</string>
     <string name="quick_settings_dnd_alarms_label">Kun Alarmer</string>
@@ -1384,11 +1387,11 @@ Kontakt din administrator for at få flere oplysninger."</string>
     <string name="keyboard_key_numpad_template">Numerisk tastatur %1$s</string>
     <string name="keyboard_popup_help">Metatast: Symboltast for Windows, Kommando eller andre operativsystemelementer.</string>
     <string name="keyboard_shortcut_group_system">Systemgenveje</string>
-    <string name="keyboard_shortcut_group_system_home">Start</string>
+    <string name="keyboard_shortcut_group_system_home">Hjem</string>
     <string name="keyboard_shortcut_group_system_recents">Seneste</string>
     <string name="keyboard_shortcut_group_system_back">Tilbage</string>
-    <string name="keyboard_shortcut_group_system_notifications">Underretninger</string>
-    <string name="keyboard_shortcut_group_system_shortcuts_helper">Tastaturgenveje</string>
+    <string name="keyboard_shortcut_group_system_notifications">Meddelelser</string>
+    <string name="keyboard_shortcut_group_system_shortcuts_helper">Genveje på tastatur</string>
     <string name="keyboard_shortcut_group_system_switch_input">Skift indtastningsmetode</string>
     <string name="keyboard_shortcut_group_system_all_apps">Alle apps</string>
     <string name="keyboard_shortcut_group_system_running_apps">Kørende apps</string>
@@ -1654,7 +1657,9 @@ Overophedning kan skyldes:
     <string name="battery_not_fully_connected_charging_title_vzw">Incomplete connection</string>
     <string name="battery_not_fully_connected_charging_text">Du opnår hurtigere opladning ved at bruge den oplader, der fulgte med din enhed, og sørge for at den er tilsluttet ordentligt.</string>
     <string name="battery_not_fully_connected_charging_text_vzw">Make sure the charger is properly connected.</string>
+    <string name="battery_not_fully_connected_charging_text_jpn">Sørg for, at din oplader er tilsluttet ordentligt.</string>
     <string name="battery_not_fully_connected_charging_popup_text">Sørg for at opladeren er tilsluttet ordentligt. Brug den oplader, der fulgte med enheden.</string>
+    <string name="battery_not_fully_connected_charging_popup_text_jpn">Sørg for at opladeren er tilsluttet ordentligt.</string>
     <string name="battery_charging_level_and_time_text">"Opladning: %1$d %%
 (Ca. %2$s til helt opladet)"</string>
     <string name="battery_charging_level_text">Oplader: %d%%</string>
@@ -1879,6 +1884,8 @@ Please note that in order to enable your emergency calls (e.g., such as 112 call
     <string name="qs_detail_palm_capture_title">Stryg med hånden for skærmbillede</string>
     <string name="noti_direct_reply_exceed_text_limit_toast">Kan ikke indtaste mere tekst.</string>
     <string name="airplane_mode_tts_text">Flytilstand</string>
+    <string name="all_noti_readout">Én meddelelse</string>
+    <string name="all_noti_readout2">%d meddelelser</string>
     <string name="car_lockscreen_disclaimer_title">Kør forsigtigt</string>
     <string name="car_lockscreen_disclaimer_text">Vær opmærksom på køreforholdene, og overhold altid færdselsloven. Rutevejledningen kan være unøjagtig, ufuldstændig, farlig, upassende, forbudt eller involvere krydsning af forbudte områder. Virksomhedsoplysninger kan også være unøjagtige eller ufuldstændige. Data er ikke i realtid, og placeringers nøjagtighed kan ikke garanteres. Håndter ikke din mobilenhed, og brug ikke apps, der ikke er beregnet til Android Auto, mens du kører.</string>
     <string name="pip_close">Luk PIP</string>

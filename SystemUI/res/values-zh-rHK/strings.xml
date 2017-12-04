@@ -238,6 +238,8 @@
     <string name="wifi_allow_scan_with_traffic_summary">根據介面中目前的數據流量允許/禁止 WiFi 漫遊掃瞄</string>
     <string name="select_logd_size_title">記錄器緩衝區空間</string>
     <string name="select_logd_size_dialog_title">選取每個記錄緩衝區的記錄器空間</string>
+    <string name="dev_logpersist_clear_warning_title">清空持續記錄器儲存空間嗎？</string>
+    <string name="dev_logpersist_clear_warning_message">已關閉持續記錄器時將刪除記錄器數據。</string>
     <string name="select_logpersist_title">持續儲存記錄數據</string>
     <string name="select_logpersist_dialog_title">選擇記錄緩衝區以持續儲存</string>
     <string name="select_usb_configuration_title">選取 USB 設定</string>
@@ -751,6 +753,7 @@
     <string name="wifi_authentication_failed_kt">認證 Wi-Fi AP 失敗。</string>
     <string name="wifi_authentication_no_response">連接至 Wi-Fi AP 失敗。</string>
     <string name="wifi_authentication_invalid_value">認證失敗。請檢查 ID 和密碼。</string>
+    <string name="wifi_disconnected">Wi-Fi已中斷連接。</string>
     <string name="quick_settings_dnd_label">請勿騷擾</string>
     <string name="quick_settings_dnd_priority_label">僅限優先</string>
     <string name="quick_settings_dnd_alarms_label">僅限鬧鐘</string>
@@ -854,6 +857,8 @@ Mirroring"</string>
     <string name="quick_settings_mobile_data_label">流動數據</string>
     <string name="quick_settings_wificalling_label">"Wi-Fi
 通話"</string>
+    <string name="quick_settings_callingplus_label">"Calling
+Plus"</string>
     <string name="quick_settings_personal_mode_label">"私人
 模式"</string>
     <string name="quick_settings_data_roaming_label">"數據
@@ -1377,11 +1382,11 @@ Wi-Fi 與藍牙也將關閉，但您可在設定或快速設定面板中再次�
     <string name="keyboard_key_numpad_template">數字鍵盤 %1$s</string>
     <string name="keyboard_popup_help">Meta 按鍵：Windows、Command 或其他作業系統符號按鍵。</string>
     <string name="keyboard_shortcut_group_system">系統捷徑</string>
-    <string name="keyboard_shortcut_group_system_home">主畫面</string>
-    <string name="keyboard_shortcut_group_system_recents">最近的活動</string>
+    <string name="keyboard_shortcut_group_system_home">首頁</string>
+    <string name="keyboard_shortcut_group_system_recents">最近使用</string>
     <string name="keyboard_shortcut_group_system_back">返回</string>
     <string name="keyboard_shortcut_group_system_notifications">通知</string>
-    <string name="keyboard_shortcut_group_system_shortcuts_helper">鍵盤快速鍵</string>
+    <string name="keyboard_shortcut_group_system_shortcuts_helper">鍵盤捷徑</string>
     <string name="keyboard_shortcut_group_system_switch_input">切換輸入法</string>
     <string name="keyboard_shortcut_group_system_all_apps">所有應用程式</string>
     <string name="keyboard_shortcut_group_system_running_apps">執行中的應用程式</string>
@@ -1645,7 +1650,9 @@ Wi-Fi 與藍牙也將關閉，但您可在設定或快速設定面板中再次�
     <string name="battery_not_fully_connected_charging_title_vzw">未完成的連線</string>
     <string name="battery_not_fully_connected_charging_text">如需更快地充電，請使用裝置隨附的充電器並確保連接正確。</string>
     <string name="battery_not_fully_connected_charging_text_vzw">請確保充電器已正確連接。</string>
+    <string name="battery_not_fully_connected_charging_text_jpn">請確保您的充電器連接正確。</string>
     <string name="battery_not_fully_connected_charging_popup_text">確保充電器連接正確。請使用裝置隨附的充電器。</string>
+    <string name="battery_not_fully_connected_charging_popup_text_jpn">確保充電器連接正確。</string>
     <string name="battery_charging_level_and_time_text">"正在充電：%1$d%%
 (離充滿電還有約 %2$s)"</string>
     <string name="battery_charging_level_text">充電中：%d%%</string>
@@ -1867,6 +1874,8 @@ Please note that in order to enable your emergency calls (e.g., such as 112 call
     <string name="qs_detail_palm_capture_title">手掌滑動以擷取</string>
     <string name="noti_direct_reply_exceed_text_limit_toast">無法輸入更多文字。</string>
     <string name="airplane_mode_tts_text">飛行模式</string>
+    <string name="all_noti_readout">一個通知</string>
+    <string name="all_noti_readout2">%d 個通知</string>
     <string name="car_lockscreen_disclaimer_title">請安全駕駛</string>
     <string name="car_lockscreen_disclaimer_text">請隨時留意路面情況，並遵守適用的交通規則。系統提供的路線可能不準確、不完整、存在危險、不適合、禁止通行，或涉及跨越行政區域的路段。此外，商家資訊也可能不準確或不完整。路況資料並非即時更新，也無法保證定位資訊的準確性。駕駛時請勿操作流動裝置，或使用不適用於 Android Auto 的應用程式。</string>
     <string name="pip_close">關閉 PIP</string>

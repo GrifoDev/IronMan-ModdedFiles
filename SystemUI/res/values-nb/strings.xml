@@ -238,6 +238,8 @@
     <string name="wifi_allow_scan_with_traffic_summary">Tillat / ikke tillat skanning for Wi-Fi-roaming basert på mengden datatrafikk til stede i grensesnittet</string>
     <string name="select_logd_size_title">Bufferstørrelser for logg</string>
     <string name="select_logd_size_dialog_title">Velg loggstørrelse per loggbuffer</string>
+    <string name="dev_logpersist_clear_warning_title">Tømme vedvarende loggføringslagring?</string>
+    <string name="dev_logpersist_clear_warning_message">Loggføringsdata blir slettet når vedvarende loggføring er slått av.</string>
     <string name="select_logpersist_title">Lagre loggdata permanent</string>
     <string name="select_logpersist_dialog_title">Velg loggbuffere for å lagre permanent</string>
     <string name="select_usb_configuration_title">Velg USB-konfigurasjon</string>
@@ -752,6 +754,7 @@ Hvis du gjenopptar bruken, kan det føre til avgifter fra operatøren din."</str
     <string name="wifi_authentication_failed_kt">Kunne ikke godkjenne Wi-Fi-tilgangspunkt.</string>
     <string name="wifi_authentication_no_response">Kunne ikke koble til Wi-Fi-tilgangspunkt.</string>
     <string name="wifi_authentication_invalid_value">Godkjenning mislyktes. Kontroller ID og passord.</string>
+    <string name="wifi_disconnected">Wi-Fi frakoblet.</string>
     <string name="quick_settings_dnd_label">«Ikke forstyrr»</string>
     <string name="quick_settings_dnd_priority_label">Bare prioritet</string>
     <string name="quick_settings_dnd_alarms_label">Bare alarmer</string>
@@ -1387,7 +1390,7 @@ For mer informasjon, ta kontakt med administratoren."</string>
     <string name="keyboard_shortcut_group_system_recents">Nylige</string>
     <string name="keyboard_shortcut_group_system_back">Tilbake</string>
     <string name="keyboard_shortcut_group_system_notifications">Varsler</string>
-    <string name="keyboard_shortcut_group_system_shortcuts_helper">Hurtigtaster</string>
+    <string name="keyboard_shortcut_group_system_shortcuts_helper">Tastatursnarveier</string>
     <string name="keyboard_shortcut_group_system_switch_input">Bytt inndatametode</string>
     <string name="keyboard_shortcut_group_system_all_apps">Alle apper</string>
     <string name="keyboard_shortcut_group_system_running_apps">Apper som kjører</string>
@@ -1653,7 +1656,9 @@ Overoppheting kan være forårsaket av:
     <string name="battery_not_fully_connected_charging_title_vzw">Incomplete connection</string>
     <string name="battery_not_fully_connected_charging_text">For raskere lading bruker du laderen som fulgte med enheten, og sørger for at den er skikkelig tilkoblet.</string>
     <string name="battery_not_fully_connected_charging_text_vzw">Make sure the charger is properly connected.</string>
+    <string name="battery_not_fully_connected_charging_text_jpn">Sørg for at laderen er skikkelig tilkoblet.</string>
     <string name="battery_not_fully_connected_charging_popup_text">Sørg for at laderen er skikkelig tilkoblet. Bruk laderen som fulgte med enheten.</string>
+    <string name="battery_not_fully_connected_charging_popup_text_jpn">Sørg for at laderen er skikkelig tilkoblet.</string>
     <string name="battery_charging_level_and_time_text">"Lader: %1$d %%
 (Ca. %2$s frem til fulladet)"</string>
     <string name="battery_charging_level_text">Lader: %d%%</string>
@@ -1878,6 +1883,8 @@ Please note that in order to enable your emergency calls (e.g., such as 112 call
     <string name="qs_detail_palm_capture_title">Dra håndflaten over for å ta et bilde</string>
     <string name="noti_direct_reply_exceed_text_limit_toast">Kan ikke angi mer tekst.</string>
     <string name="airplane_mode_tts_text">Flymodus</string>
+    <string name="all_noti_readout">Ett varsel</string>
+    <string name="all_noti_readout2">%d varsler</string>
     <string name="car_lockscreen_disclaimer_title">Kjør forsiktig</string>
     <string name="car_lockscreen_disclaimer_text">Ha full oversikt over kjøreforhold, og følg alltid gjeldende lov og rett. Veibeskrivelser kan være unøyaktige, ufullstendige, farlige, upassende, forbudte eller de kan involvere kjøring på administrative områder. Bedriftsinformasjon kan også være unøyaktig eller ufullstendig. Data er ikke i sanntid, og posisjonsnøyaktighet kan ikke garanteres. Ikke bruk mobilenheten din eller apper som ikke er ment for Android Auto, mens du kjører.</string>
     <string name="pip_close">Lukk PIP</string>

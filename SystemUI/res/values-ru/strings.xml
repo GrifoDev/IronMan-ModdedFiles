@@ -238,6 +238,8 @@
     <string name="wifi_allow_scan_with_traffic_summary">Включать или отключать поиск сетей Wi-Fi во время передачи данных в зависимости от объема трафика</string>
     <string name="select_logd_size_title">Размер буфера журнала</string>
     <string name="select_logd_size_dialog_title">Выберите размер буфера журнала</string>
+    <string name="dev_logpersist_clear_warning_title">Очистить хранилище постоянного журнала?</string>
+    <string name="dev_logpersist_clear_warning_message">После отключения средства постоянного ведения журнала его данные будут удалены.</string>
     <string name="select_logpersist_title">Пост. хранение данных журнала</string>
     <string name="select_logpersist_dialog_title">Выбор буферов журнала для пост. хранения</string>
     <string name="select_usb_configuration_title">Конфигурация USB</string>
@@ -751,6 +753,7 @@ For example, your ringtone will not sound, you will not be able to answer phone 
     <string name="wifi_authentication_failed_kt">Не удалось проверить подлинность точки доступа Wi-Fi.</string>
     <string name="wifi_authentication_no_response">Не удалось подключиться к точке доступа Wi-Fi.</string>
     <string name="wifi_authentication_invalid_value">Ошибка авторизации. Проверьте логин и пароль.</string>
+    <string name="wifi_disconnected">Wi-Fi откл.</string>
     <string name="quick_settings_dnd_label">Не беспокоить</string>
     <string name="quick_settings_dnd_priority_label">Только важные</string>
     <string name="quick_settings_dnd_alarms_label">Только будильник</string>
@@ -1385,10 +1388,10 @@ Wi-Fi и Bluetooth также будут отключены, но их можн�
     <string name="keyboard_popup_help">Клавиша Meta: Windows, Command или клавиша с символом другой операционной системы.</string>
     <string name="keyboard_shortcut_group_system">Системные ярлыки</string>
     <string name="keyboard_shortcut_group_system_home">Главный экран</string>
-    <string name="keyboard_shortcut_group_system_recents">Недавние</string>
+    <string name="keyboard_shortcut_group_system_recents">Последние</string>
     <string name="keyboard_shortcut_group_system_back">Назад</string>
     <string name="keyboard_shortcut_group_system_notifications">Уведомления</string>
-    <string name="keyboard_shortcut_group_system_shortcuts_helper">Быстрые клавиши</string>
+    <string name="keyboard_shortcut_group_system_shortcuts_helper">Ярлыки клавиатуры</string>
     <string name="keyboard_shortcut_group_system_switch_input">Сменить способ ввода</string>
     <string name="keyboard_shortcut_group_system_all_apps">Все приложения</string>
     <string name="keyboard_shortcut_group_system_running_apps">Запущенные приложения</string>
@@ -1654,7 +1657,9 @@ Using your tablet in a very hot location."</string>
     <string name="battery_not_fully_connected_charging_title_vzw">Incomplete connection</string>
     <string name="battery_not_fully_connected_charging_text">Для более быстрой зарядки используйте зарядное устройство, поставляемое в комплекте, и убедитесь, что оно правильно подключено.</string>
     <string name="battery_not_fully_connected_charging_text_vzw">Make sure the charger is properly connected.</string>
+    <string name="battery_not_fully_connected_charging_text_jpn">Убедитесь, что зарядное устройство правильно подключено.</string>
     <string name="battery_not_fully_connected_charging_popup_text">Убедитесь, что зарядное устройство правильно подключено. Используйте зарядное устройство, поставляемое в комплекте.</string>
+    <string name="battery_not_fully_connected_charging_popup_text_jpn">Убедитесь, что зарядное устройство правильно подключено.</string>
     <string name="battery_charging_level_and_time_text">"Зарядка: %1$d%%
 (до полной зарядки приблизительно: %2$s)"</string>
     <string name="battery_charging_level_text">Зарядка: %d%%</string>
@@ -1879,6 +1884,8 @@ Please note that in order to enable your emergency calls (e.g., such as 112 call
     <string name="qs_detail_palm_capture_title">Снимок экрана ладонью</string>
     <string name="noti_direct_reply_exceed_text_limit_toast">Достигнута максимальная длина текста.</string>
     <string name="airplane_mode_tts_text">Автономный режим</string>
+    <string name="all_noti_readout">Одно уведомление</string>
+    <string name="all_noti_readout2">Уведомлений: %d</string>
     <string name="car_lockscreen_disclaimer_title">Безопасность движения</string>
     <string name="car_lockscreen_disclaimer_text">Всегда учитывайте дорожную обстановку и соблюдайте правила. Маршруты могут быть неточными, неполными, проходить по опасным, неподходящим или запрещенным для движения участкам или пересекать границы. Сведения об организациях также могут быть неточными и неполными. Данные не обновляются в режиме реального времени, и точность определения местоположения не гарантируется. Не пользуйтесь мобильным устройством и не используйте приложения, не предназначенные для Android Auto, управляя автомобилем.</string>
     <string name="pip_close">\"Кадр в кадре\" – выйти</string>

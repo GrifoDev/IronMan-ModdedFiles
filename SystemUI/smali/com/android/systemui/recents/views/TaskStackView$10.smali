@@ -39,7 +39,9 @@
 
 # virtual methods
 .method public run()V
-    .locals 7
+    .locals 8
+
+    const/4 v7, 0x1
 
     const/4 v6, 0x0
 
@@ -79,29 +81,28 @@
 
     new-instance v4, Lcom/android/systemui/recents/events/ui/ToggleRecentsCloseAllButtonEvent;
 
-    const/4 v5, 0x1
-
-    invoke-direct {v4, v5}, Lcom/android/systemui/recents/events/ui/ToggleRecentsCloseAllButtonEvent;-><init>(Z)V
+    invoke-direct {v4, v7}, Lcom/android/systemui/recents/events/ui/ToggleRecentsCloseAllButtonEvent;-><init>(Z)V
 
     invoke-virtual {v3, v4}, Lcom/android/systemui/recents/events/EventBus;->send(Lcom/android/systemui/recents/events/EventBus$Event;)V
 
     :cond_0
     sget-boolean v3, Lcom/android/systemui/recents/RecentsDebugFlags$Static;->EnableSnapView:Z
 
-    if-eqz v3, :cond_1
+    if-nez v3, :cond_1
 
+    :cond_1
     invoke-static {}, Lcom/android/systemui/recents/Recents;->getConfiguration()Lcom/android/systemui/recents/RecentsConfiguration;
 
     move-result-object v3
 
     iget-boolean v3, v3, Lcom/android/systemui/recents/RecentsConfiguration;->isInLockTaskEditMode:Z
 
-    if-eqz v3, :cond_2
-
-    :cond_1
-    return-void
+    if-eqz v3, :cond_3
 
     :cond_2
+    return-void
+
+    :cond_3
     iget-object v3, p0, Lcom/android/systemui/recents/views/TaskStackView$10;->this$0:Lcom/android/systemui/recents/views/TaskStackView;
 
     invoke-virtual {v3}, Lcom/android/systemui/recents/views/TaskStackView;->getTaskViews()Ljava/util/List;
@@ -115,7 +116,7 @@
     add-int/lit8 v0, v1, -0x1
 
     :goto_0
-    if-ltz v0, :cond_1
+    if-ltz v0, :cond_2
 
     iget-object v3, p0, Lcom/android/systemui/recents/views/TaskStackView$10;->this$0:Lcom/android/systemui/recents/views/TaskStackView;
 
@@ -131,7 +132,9 @@
 
     add-int/lit8 v3, v1, -0x1
 
-    if-ne v0, v3, :cond_3
+    if-ne v0, v3, :cond_5
+
+    iput-boolean v7, v2, Lcom/android/systemui/recents/views/TaskView;->mFrontMostTaskView:Z
 
     iget-object v3, v2, Lcom/android/systemui/recents/views/TaskView;->mHeaderView:Lcom/android/systemui/recents/views/TaskViewHeader;
 
@@ -139,12 +142,19 @@
 
     invoke-virtual {v2, v6, v6}, Lcom/android/systemui/recents/views/TaskView;->showScreenRatioButton(ZI)V
 
+    :cond_4
     :goto_1
     add-int/lit8 v0, v0, -0x1
 
     goto :goto_0
 
-    :cond_3
+    :cond_5
+    iget-boolean v3, v2, Lcom/android/systemui/recents/views/TaskView;->mFrontMostTaskView:Z
+
+    if-eqz v3, :cond_4
+
+    iput-boolean v6, v2, Lcom/android/systemui/recents/views/TaskView;->mFrontMostTaskView:Z
+
     iget-object v3, v2, Lcom/android/systemui/recents/views/TaskView;->mHeaderView:Lcom/android/systemui/recents/views/TaskViewHeader;
 
     invoke-virtual {v3}, Lcom/android/systemui/recents/views/TaskViewHeader;->hideSnapButton()V

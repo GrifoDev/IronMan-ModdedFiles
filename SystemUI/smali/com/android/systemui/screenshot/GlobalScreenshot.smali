@@ -1358,7 +1358,7 @@
 
     const/4 v3, 0x0
 
-    const v9, 0x7f0d0240
+    const v9, 0x7f0d0242
 
     :try_start_0
     invoke-virtual {v6, v9}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
@@ -1379,7 +1379,7 @@
     :cond_2
     move v5, v3
 
-    const v9, 0x7f0d0221
+    const v9, 0x7f0d0223
 
     invoke-virtual {v6, v9}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -2464,7 +2464,7 @@
 
     move-result v3
 
-    if-eqz v3, :cond_f
+    if-eqz v3, :cond_10
 
     move-object/from16 v0, p0
 
@@ -2480,7 +2480,7 @@
 
     iput-object v3, v0, Lcom/android/systemui/screenshot/GlobalScreenshot;->mWebData:Lcom/android/systemui/screenshot/SmartClipDataExtractor$WebData;
 
-    :cond_f
+    :goto_1
     move-object/from16 v0, p0
 
     iget-object v3, v0, Lcom/android/systemui/screenshot/GlobalScreenshot;->mHelper:Lcom/android/systemui/screenshot/ScreenCaptureHelper;
@@ -2497,8 +2497,8 @@
 
     const/4 v14, 0x1
 
-    :goto_1
-    if-eqz v14, :cond_10
+    :goto_2
+    if-eqz v14, :cond_f
 
     sget-object v3, Landroid/graphics/Bitmap$Config;->ARGB_8888:Landroid/graphics/Bitmap$Config;
 
@@ -2580,7 +2580,7 @@
 
     iput-object v0, v1, Lcom/android/systemui/screenshot/GlobalScreenshot;->mScreenBitmap:Landroid/graphics/Bitmap;
 
-    :cond_10
+    :cond_f
     move-object/from16 v0, p0
 
     iget-object v3, v0, Lcom/android/systemui/screenshot/GlobalScreenshot;->mHelper:Lcom/android/systemui/screenshot/ScreenCaptureHelper;
@@ -2642,15 +2642,24 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    :goto_2
+    :goto_3
     monitor-exit v4
 
     return-void
 
+    :cond_10
+    const/4 v3, 0x0
+
+    move-object/from16 v0, p0
+
+    iput-object v3, v0, Lcom/android/systemui/screenshot/GlobalScreenshot;->mWebData:Lcom/android/systemui/screenshot/SmartClipDataExtractor$WebData;
+
+    goto/16 :goto_1
+
     :cond_11
     const/4 v14, 0x0
 
-    goto/16 :goto_1
+    goto/16 :goto_2
 
     :cond_12
     :try_start_1
@@ -2668,7 +2677,7 @@
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    goto :goto_2
+    goto :goto_3
 
     :catchall_0
     move-exception v3
@@ -2676,8 +2685,6 @@
     monitor-exit v4
 
     throw v3
-
-    nop
 
     :pswitch_data_0
     .packed-switch -0x1

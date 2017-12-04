@@ -238,6 +238,8 @@
     <string name="wifi_allow_scan_with_traffic_summary">Izinkan/Larang Pemindaian Roaming Wi-Fi berdasarkan jumlah lalu lintas data yang ada di antarmuka</string>
     <string name="select_logd_size_title">Ukuran penyangga pencatat log</string>
     <string name="select_logd_size_dialog_title">Ukuran Pencatat Log per penyangga log</string>
+    <string name="dev_logpersist_clear_warning_title">Hapus penyimpanan pencatat tetap?</string>
+    <string name="dev_logpersist_clear_warning_message">Data pencatat akan dihapus saat pencatat tetap dinonaktifkan.</string>
     <string name="select_logpersist_title">Simpan data log secara tetap</string>
     <string name="select_logpersist_dialog_title">Pilih buffer log untuk terus disimpan</string>
     <string name="select_usb_configuration_title">Pilih Konfigurasi USB</string>
@@ -752,6 +754,7 @@ Melanjutkan dapat mengakibatkan tagihan dari operator."</string>
     <string name="wifi_authentication_failed_kt">Gagal mengotentikasi AP Wi-Fi.</string>
     <string name="wifi_authentication_no_response">Gagal tersambung ke jaringan AP Wi-Fi.</string>
     <string name="wifi_authentication_invalid_value">Authentication failed. Check ID and password.</string>
+    <string name="wifi_disconnected">Wi-Fi terputus.</string>
     <string name="quick_settings_dnd_label">Jangan ganggu</string>
     <string name="quick_settings_dnd_priority_label">Hanya untuk prioritas</string>
     <string name="quick_settings_dnd_alarms_label">Hanya alarm</string>
@@ -1383,11 +1386,11 @@ Untuk informasi selengkapnya, hubungi administrator."</string>
     <string name="keyboard_key_numpad_template">Numpad %1$s</string>
     <string name="keyboard_popup_help">Tombol meta: Windows, Perintah, atau tombol simbol sistem operasi lainnya.</string>
     <string name="keyboard_shortcut_group_system">Pintasan sistem</string>
-    <string name="keyboard_shortcut_group_system_home">Layar Utama</string>
+    <string name="keyboard_shortcut_group_system_home">Rumah</string>
     <string name="keyboard_shortcut_group_system_recents">Terbaru</string>
     <string name="keyboard_shortcut_group_system_back">Kembali</string>
     <string name="keyboard_shortcut_group_system_notifications">Notifikasi</string>
-    <string name="keyboard_shortcut_group_system_shortcuts_helper">Pintasan Keyboard</string>
+    <string name="keyboard_shortcut_group_system_shortcuts_helper">Pintasan keyboard</string>
     <string name="keyboard_shortcut_group_system_switch_input">Beralih metode masukan</string>
     <string name="keyboard_shortcut_group_system_all_apps">Semua aplikasi</string>
     <string name="keyboard_shortcut_group_system_running_apps">Aplikasi berjalan</string>
@@ -1653,7 +1656,9 @@ Terlalu panas dapat disebabkan oleh:
     <string name="battery_not_fully_connected_charging_title_vzw">Incomplete connection</string>
     <string name="battery_not_fully_connected_charging_text">Untuk mengisi daya lebih cepat, gunakan charger yang disertakan dengan perangkat dan pastikan charger tersambung dengan benar.</string>
     <string name="battery_not_fully_connected_charging_text_vzw">Make sure the charger is properly connected.</string>
+    <string name="battery_not_fully_connected_charging_text_jpn">Pastikan charger tersambung dengan benar.</string>
     <string name="battery_not_fully_connected_charging_popup_text">Pastikan charger tersambung dengan benar. Gunakan charger yang disertakan dengan perangkat.</string>
+    <string name="battery_not_fully_connected_charging_popup_text_jpn">Pastikan charger tersambung dengan benar.</string>
     <string name="battery_charging_level_and_time_text">"Mengisi daya: %1$d%%
 (Sekitar %2$s hingga terisi penuh)"</string>
     <string name="battery_charging_level_text">Mengisi daya: %d%%</string>
@@ -1878,6 +1883,8 @@ Please note that in order to enable your emergency calls (e.g., such as 112 call
     <string name="qs_detail_palm_capture_title">Usapkan telapak tangan untuk mengambil</string>
     <string name="noti_direct_reply_exceed_text_limit_toast">Tidak dapat memasukkan lebih banyak teks.</string>
     <string name="airplane_mode_tts_text">Mode Pesawat</string>
+    <string name="all_noti_readout">Satu notifikasi</string>
+    <string name="all_noti_readout2">%d notifikasi</string>
     <string name="car_lockscreen_disclaimer_title">Hati-hati saat berkendara</string>
     <string name="car_lockscreen_disclaimer_text">Tetap perhatikan keadaan saat mengemudi dan selalu patuhi peraturan yang berlaku. Petunjuk arah mungkin tidak akurat, tidak lengkap, berbahaya, tidak cocok, terlarang, atau dapat melewati wilayah administratif. Informasi bisnis juga mungkin tidak akurat atau tidak lengkap. Data tidak dalam waktu nyata dan keakuratan lokasi tidak dijamin. Jangan menggunakan perangkat seluler atau aplikasi yang tidak berkaitan dengan Android Auto saat mengemudi.</string>
     <string name="pip_close">Tutup PIP</string>

@@ -238,9 +238,9 @@
 .method protected updateDisplays(Z)V
     .locals 10
 
-    const/4 v6, 0x0
+    const/4 v6, 0x1
 
-    const/4 v5, 0x1
+    const/4 v5, 0x0
 
     const/4 v9, 0x0
 
@@ -270,7 +270,7 @@
 
     move-result v7
 
-    if-ne v7, v5, :cond_0
+    if-ne v7, v6, :cond_0
 
     iget-object v7, p0, Lcom/android/keyguard/KeyguardDisplayManager;->mContext:Landroid/content/Context;
 
@@ -285,7 +285,7 @@
     if-eqz v7, :cond_5
 
     :cond_0
-    move v4, v6
+    move v4, v5
 
     :goto_0
     if-eqz v4, :cond_8
@@ -414,26 +414,35 @@
 
     const v8, 0x13a74
 
-    if-lt v7, v8, :cond_7
+    if-lt v7, v8, :cond_6
 
-    :cond_6
     :goto_3
+    invoke-virtual {v0}, Landroid/hardware/display/DisplayManager;->isAuSLServiceRunning()Z
+
+    move-result v7
+
+    if-eqz v7, :cond_7
+
+    :goto_4
     move v4, v5
 
     goto/16 :goto_0
 
-    :cond_7
+    :cond_6
     invoke-virtual {v0}, Landroid/hardware/display/DisplayManager;->semGetScreenSharingStatus()I
 
     move-result v7
 
     const/4 v8, 0x7
 
-    if-ne v7, v8, :cond_6
-
-    move v5, v6
+    if-eq v7, v8, :cond_0
 
     goto :goto_3
+
+    :cond_7
+    move v5, v6
+
+    goto :goto_4
 
     :cond_8
     const/4 v2, 0x0

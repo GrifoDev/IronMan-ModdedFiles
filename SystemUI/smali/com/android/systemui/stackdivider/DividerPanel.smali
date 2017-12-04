@@ -383,7 +383,7 @@
 
     iget-object v8, p0, Lcom/android/systemui/stackdivider/DividerPanel;->mTmpResources:Landroid/content/res/Resources;
 
-    const v10, 0x7f0d001d
+    const v10, 0x7f0d001f
 
     invoke-virtual {v8, v10}, Landroid/content/res/Resources;->getDimension(I)F
 
@@ -401,7 +401,7 @@
 
     iget-object v8, p0, Lcom/android/systemui/stackdivider/DividerPanel;->mTmpResources:Landroid/content/res/Resources;
 
-    const v10, 0x7f0d001a
+    const v10, 0x7f0d001c
 
     invoke-virtual {v8, v10}, Landroid/content/res/Resources;->getDimension(I)F
 
@@ -419,7 +419,7 @@
 
     iget-object v8, p0, Lcom/android/systemui/stackdivider/DividerPanel;->mTmpResources:Landroid/content/res/Resources;
 
-    const v10, 0x7f0d0017
+    const v10, 0x7f0d0019
 
     invoke-virtual {v8, v10}, Landroid/content/res/Resources;->getDimension(I)F
 
@@ -496,7 +496,7 @@
 
     iget-object v0, p0, Lcom/android/systemui/stackdivider/DividerPanel;->mTmpResources:Landroid/content/res/Resources;
 
-    const v1, 0x7f0d0010
+    const v1, 0x7f0d0012
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 

@@ -1124,7 +1124,7 @@
 
     move-result-object v3
 
-    const v5, 0x7f0d0331
+    const v5, 0x7f0d0333
 
     invoke-virtual {v3, v5}, Landroid/content/res/Resources;->getDimension(I)F
 
@@ -1176,7 +1176,7 @@
 
     move-result-object v3
 
-    const v5, 0x7f0d040c
+    const v5, 0x7f0d040e
 
     invoke-virtual {v3, v5}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -3785,9 +3785,9 @@
 .method public onDensityOrFontScaleChanged()V
     .locals 9
 
-    const v8, 0x7f0d0330
+    const v8, 0x7f0d0332
 
-    const v7, 0x7f0d0331
+    const v7, 0x7f0d0333
 
     new-instance v1, Landroid/graphics/RectF;
 
@@ -3873,7 +3873,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f0d040c
+    const v2, 0x7f0d040e
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -3983,9 +3983,9 @@
 .method protected onLayout(ZIIII)V
     .locals 8
 
-    const v6, 0x7f0d0331
+    const v6, 0x7f0d0333
 
-    const v7, 0x7f0d0330
+    const v7, 0x7f0d0332
 
     invoke-super/range {p0 .. p5}, Landroid/widget/ImageView;->onLayout(ZIIII)V
 

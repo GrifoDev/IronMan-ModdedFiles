@@ -65,7 +65,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f0d0277
+    const v2, 0x7f0d0279
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -79,7 +79,7 @@
 
     move-result-object v2
 
-    const v3, 0x7f0d026b
+    const v3, 0x7f0d026d
 
     invoke-virtual {v2, v3}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -139,13 +139,13 @@
 
     move-result-object v3
 
-    const v4, 0x7f0d0271
+    const v4, 0x7f0d0273
 
     invoke-virtual {v3, v4}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
     move-result v2
 
-    const v4, 0x7f0d0274
+    const v4, 0x7f0d0276
 
     invoke-virtual {v3, v4}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -213,7 +213,7 @@
 
     move-result-object v5
 
-    const v6, 0x7f0d0272
+    const v6, 0x7f0d0274
 
     invoke-virtual {v5, v6}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -229,7 +229,7 @@
 
     move-result-object v5
 
-    const v6, 0x7f0d0273
+    const v6, 0x7f0d0275
 
     invoke-virtual {v5, v6}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -286,7 +286,7 @@
 
     move-result-object v2
 
-    const v3, 0x7f0d0272
+    const v3, 0x7f0d0274
 
     invoke-virtual {v2, v3}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -365,7 +365,7 @@
 
     move-result-object v2
 
-    const v3, 0x7f0d0273
+    const v3, 0x7f0d0275
 
     invoke-virtual {v2, v3}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -629,7 +629,7 @@
 
     aput-object v1, v7, v5
 
-    const v8, 0x7f0f0533
+    const v8, 0x7f0f0534
 
     invoke-virtual {v6, v8, v7}, Landroid/content/res/Resources;->getString(I[Ljava/lang/Object;)Ljava/lang/String;
 
@@ -696,7 +696,7 @@
 
     iget-object v1, p0, Lcom/android/systemui/qs/QSTileView;->mLabel:Landroid/widget/TextView;
 
-    const v2, 0x7f0d026b
+    const v2, 0x7f0d026d
 
     invoke-static {v1, v2}, Lcom/android/systemui/FontSizeUtils;->updateFontSize(Landroid/widget/TextView;I)V
 

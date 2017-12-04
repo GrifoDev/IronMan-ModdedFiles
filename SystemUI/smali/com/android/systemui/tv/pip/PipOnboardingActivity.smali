@@ -213,7 +213,7 @@
 
     aput-object v3, v2, v4
 
-    const v3, 0x7f130546
+    const v3, 0x7f130548
 
     invoke-direct {p0, v3, v5}, Lcom/android/systemui/tv/pip/PipOnboardingActivity;->loadAnimator(II)Landroid/animation/Animator;
 
@@ -223,7 +223,7 @@
 
     aput-object v3, v2, v4
 
-    const v3, 0x7f130547
+    const v3, 0x7f130549
 
     invoke-direct {p0, v3, v5}, Lcom/android/systemui/tv/pip/PipOnboardingActivity;->loadAnimator(II)Landroid/animation/Animator;
 

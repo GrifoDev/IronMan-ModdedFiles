@@ -107,28 +107,31 @@
 
     move-result v5
 
-    if-ne v5, v3, :cond_0
+    if-ne v5, v3, :cond_1
 
     iget-object v5, p0, Lcom/android/systemui/keyguard/KeyguardViewMediator$6;->this$0:Lcom/android/systemui/keyguard/KeyguardViewMediator;
 
     invoke-static {v5}, Lcom/android/systemui/keyguard/KeyguardViewMediator;->-get2(Lcom/android/systemui/keyguard/KeyguardViewMediator;)Z
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     move-result v5
 
-    if-eqz v5, :cond_2
+    if-eqz v5, :cond_0
+
+    iget-object v5, p0, Lcom/android/systemui/keyguard/KeyguardViewMediator$6;->this$0:Lcom/android/systemui/keyguard/KeyguardViewMediator;
+
+    iget-object v5, v5, Lcom/android/systemui/keyguard/KeyguardViewMediator;->mContext:Landroid/content/Context;
+
+    invoke-static {v5}, Lcom/android/keyguard/KeyguardUpdateMonitor;->getInstance(Landroid/content/Context;)Lcom/android/keyguard/KeyguardUpdateMonitor;
+
+    move-result-object v5
+
+    invoke-virtual {v5}, Lcom/android/keyguard/KeyguardUpdateMonitor;->isShowingDream()Z
+
+    move-result v5
+
+    if-eqz v5, :cond_1
 
     :cond_0
-    :goto_0
-    monitor-exit v6
-
-    :cond_1
-    :goto_1
-    return-void
-
-    :cond_2
-    :try_start_1
     sget-boolean v5, Lcom/android/keyguard/KeyguardRune;->SUPPORT_ATT_LOCK_TIMEOUT:Z
 
     if-eqz v5, :cond_4
@@ -166,6 +169,30 @@
     const/4 v7, 0x0
 
     invoke-static {v5, v7}, Lcom/android/systemui/keyguard/KeyguardViewMediator;->-wrap4(Lcom/android/systemui/keyguard/KeyguardViewMediator;Landroid/os/Bundle;)V
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    :cond_1
+    :goto_0
+    monitor-exit v6
+
+    :cond_2
+    :goto_1
+    return-void
+
+    :cond_3
+    :try_start_1
+    iget-object v5, p0, Lcom/android/systemui/keyguard/KeyguardViewMediator$6;->this$0:Lcom/android/systemui/keyguard/KeyguardViewMediator;
+
+    invoke-static {v5}, Lcom/android/systemui/keyguard/KeyguardViewMediator;->-wrap27(Lcom/android/systemui/keyguard/KeyguardViewMediator;)V
+
+    iget-object v5, p0, Lcom/android/systemui/keyguard/KeyguardViewMediator$6;->this$0:Lcom/android/systemui/keyguard/KeyguardViewMediator;
+
+    invoke-static {v5}, Lcom/android/systemui/keyguard/KeyguardViewMediator;->-wrap3(Lcom/android/systemui/keyguard/KeyguardViewMediator;)V
+
+    iget-object v5, p0, Lcom/android/systemui/keyguard/KeyguardViewMediator$6;->this$0:Lcom/android/systemui/keyguard/KeyguardViewMediator;
+
+    invoke-static {v5}, Lcom/android/systemui/keyguard/KeyguardViewMediator;->-wrap30(Lcom/android/systemui/keyguard/KeyguardViewMediator;)V
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
@@ -178,23 +205,8 @@
 
     throw v5
 
-    :cond_3
-    :try_start_2
-    iget-object v5, p0, Lcom/android/systemui/keyguard/KeyguardViewMediator$6;->this$0:Lcom/android/systemui/keyguard/KeyguardViewMediator;
-
-    invoke-static {v5}, Lcom/android/systemui/keyguard/KeyguardViewMediator;->-wrap27(Lcom/android/systemui/keyguard/KeyguardViewMediator;)V
-
-    iget-object v5, p0, Lcom/android/systemui/keyguard/KeyguardViewMediator$6;->this$0:Lcom/android/systemui/keyguard/KeyguardViewMediator;
-
-    invoke-static {v5}, Lcom/android/systemui/keyguard/KeyguardViewMediator;->-wrap3(Lcom/android/systemui/keyguard/KeyguardViewMediator;)V
-
-    iget-object v5, p0, Lcom/android/systemui/keyguard/KeyguardViewMediator$6;->this$0:Lcom/android/systemui/keyguard/KeyguardViewMediator;
-
-    invoke-static {v5}, Lcom/android/systemui/keyguard/KeyguardViewMediator;->-wrap30(Lcom/android/systemui/keyguard/KeyguardViewMediator;)V
-
-    goto :goto_0
-
     :cond_4
+    :try_start_2
     iget-object v5, p0, Lcom/android/systemui/keyguard/KeyguardViewMediator$6;->this$0:Lcom/android/systemui/keyguard/KeyguardViewMediator;
 
     const/4 v7, 0x0
@@ -230,7 +242,7 @@
 
     move-result v4
 
-    if-eqz v4, :cond_1
+    if-eqz v4, :cond_2
 
     iget-object v6, p0, Lcom/android/systemui/keyguard/KeyguardViewMediator$6;->this$0:Lcom/android/systemui/keyguard/KeyguardViewMediator;
 
@@ -243,7 +255,7 @@
 
     move-result v5
 
-    if-ne v5, v3, :cond_0
+    if-ne v5, v3, :cond_1
 
     iget-object v5, p0, Lcom/android/systemui/keyguard/KeyguardViewMediator$6;->this$0:Lcom/android/systemui/keyguard/KeyguardViewMediator;
 
@@ -309,7 +321,11 @@
 
     invoke-static {v5, v6}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    if-eqz v1, :cond_1
+    if-eqz v1, :cond_2
+
+    iget-object v5, p0, Lcom/android/systemui/keyguard/KeyguardViewMediator$6;->this$0:Lcom/android/systemui/keyguard/KeyguardViewMediator;
+
+    invoke-static {v5, v8}, Lcom/android/systemui/keyguard/KeyguardViewMediator;->-wrap32(Lcom/android/systemui/keyguard/KeyguardViewMediator;Z)V
 
     iget-object v5, p0, Lcom/android/systemui/keyguard/KeyguardViewMediator$6;->this$0:Lcom/android/systemui/keyguard/KeyguardViewMediator;
 
@@ -578,7 +594,7 @@
 
     move-result v5
 
-    if-eqz v5, :cond_1
+    if-eqz v5, :cond_2
 
     iget-object v5, p0, Lcom/android/systemui/keyguard/KeyguardViewMediator$6;->this$0:Lcom/android/systemui/keyguard/KeyguardViewMediator;
 
@@ -638,7 +654,7 @@
 
     move-result v5
 
-    if-eqz v5, :cond_1
+    if-eqz v5, :cond_2
 
     const-string/jumbo v5, "penInsert"
 
@@ -668,7 +684,7 @@
 
     invoke-static {v5, v6}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    if-nez v2, :cond_1
+    if-nez v2, :cond_2
 
     iget-object v5, p0, Lcom/android/systemui/keyguard/KeyguardViewMediator$6;->this$0:Lcom/android/systemui/keyguard/KeyguardViewMediator;
 
@@ -676,7 +692,7 @@
 
     move-result v5
 
-    if-eqz v5, :cond_1
+    if-eqz v5, :cond_2
 
     iget-object v5, p0, Lcom/android/systemui/keyguard/KeyguardViewMediator$6;->this$0:Lcom/android/systemui/keyguard/KeyguardViewMediator;
 
@@ -684,7 +700,7 @@
 
     move-result v5
 
-    if-nez v5, :cond_1
+    if-nez v5, :cond_2
 
     iget-object v5, p0, Lcom/android/systemui/keyguard/KeyguardViewMediator$6;->this$0:Lcom/android/systemui/keyguard/KeyguardViewMediator;
 
@@ -692,7 +708,7 @@
 
     move-result v5
 
-    if-eqz v5, :cond_1
+    if-eqz v5, :cond_2
 
     iget-object v5, p0, Lcom/android/systemui/keyguard/KeyguardViewMediator$6;->this$0:Lcom/android/systemui/keyguard/KeyguardViewMediator;
 

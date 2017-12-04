@@ -238,6 +238,8 @@
     <string name="wifi_allow_scan_with_traffic_summary">Permitir/Non permitir buscas de itinerancia da wifi baseadas na cantidade de tráfico de datos presente na interface</string>
     <string name="select_logd_size_title">Tamaños de búfer de rexistrador</string>
     <string name="select_logd_size_dialog_title">Seleccionar tamaños por búfer</string>
+    <string name="dev_logpersist_clear_warning_title">Borrar almacenamento rexistrador persistente?</string>
+    <string name="dev_logpersist_clear_warning_message">Os datos do rexistrador eliminaranse cando o rexistrador persistente estea desactivado.</string>
     <string name="select_logpersist_title">Almacen. datos rexistro constante.</string>
     <string name="select_logpersist_dialog_title">Selec. búfers rexistro para almac. constante.</string>
     <string name="select_usb_configuration_title">Seleccionar configuración USB</string>
@@ -751,6 +753,7 @@ Se retomas o uso, poden aplicarse cargos do operador."</string>
     <string name="wifi_authentication_failed_kt">Non se puido autenticar o PA da Wi-Fi.</string>
     <string name="wifi_authentication_no_response">Produciuse un erro ao conectar co punto de acceso á Wi-Fi.</string>
     <string name="wifi_authentication_invalid_value">.</string>
+    <string name="wifi_disconnected">Wi-Fi desconectada</string>
     <string name="quick_settings_dnd_label">Non molestar</string>
     <string name="quick_settings_dnd_priority_label">Só prioridade</string>
     <string name="quick_settings_dnd_alarms_label">Só alarmas</string>
@@ -1386,7 +1389,7 @@ Para obter máis información, contacta co teu administrador."</string>
     <string name="keyboard_shortcut_group_system_recents">Recentes</string>
     <string name="keyboard_shortcut_group_system_back">Atrás</string>
     <string name="keyboard_shortcut_group_system_notifications">Notificacións</string>
-    <string name="keyboard_shortcut_group_system_shortcuts_helper">Atallos de teclado</string>
+    <string name="keyboard_shortcut_group_system_shortcuts_helper">Atallos do teclado</string>
     <string name="keyboard_shortcut_group_system_switch_input">Cambiar de método de entrada</string>
     <string name="keyboard_shortcut_group_system_all_apps">Todas as aplicacións</string>
     <string name="keyboard_shortcut_group_system_running_apps">Aplicacións en execución</string>
@@ -1652,7 +1655,9 @@ O exceso de temperatura pode deberse a:
     <string name="battery_not_fully_connected_charging_title_vzw">Incomplete connection</string>
     <string name="battery_not_fully_connected_charging_text">Para cargar máis rapidamente, utiliza o cargador fornecido co dispositivo e asegúrate de que estea correctamente conectado.</string>
     <string name="battery_not_fully_connected_charging_text_vzw">Make sure the charger is properly connected.</string>
+    <string name="battery_not_fully_connected_charging_text_jpn">Asegúrate de que o cargador estea conectado correctamente.</string>
     <string name="battery_not_fully_connected_charging_popup_text">Asegúrate de que o cargador estea correctamente conectado. Utiliza o cargador fornecido co dispositivo.</string>
+    <string name="battery_not_fully_connected_charging_popup_text_jpn">Asegúrate de que o cargador estea correctamente conectado.</string>
     <string name="battery_charging_level_and_time_text">"Cargando: %1$d%%
 (aproximadamente %2$s ata que se cargue por completo)"</string>
     <string name="battery_charging_level_text">Cargando: %d%%</string>
@@ -1877,6 +1882,8 @@ Please note that in order to enable your emergency calls (e.g., such as 112 call
     <string name="qs_detail_palm_capture_title">Desprazar a palma para capturar</string>
     <string name="noti_direct_reply_exceed_text_limit_toast">Non se pode introducir máis texto.</string>
     <string name="airplane_mode_tts_text">Modo Avión</string>
+    <string name="all_noti_readout">Unha notificación</string>
+    <string name="all_noti_readout2">%d notificacións</string>
     <string name="car_lockscreen_disclaimer_title">Conduce de forma segura</string>
     <string name="car_lockscreen_disclaimer_text">Ten moi en conta as condicións de condución e respecta sempre as leis aplicables. É posible que as indicacións sexan imprecisas, incompletas, perigosas, inadecuadas, estean prohibidas ou que impliquen atravesar áreas administrativas. A información das empresas tamén pode ser imprecisa ou estar incompleta. Os datos non se proporcionan en tempo real e non se garante a precisión da localización. Non manipules o teu dispositivo móbil nin utilices aplicacións que non estean deseñadas para Android Auto mentres conduces.</string>
     <string name="pip_close">Pechar PIP</string>

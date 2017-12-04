@@ -576,7 +576,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f0d04a6
+    const v1, 0x7f0d04a8
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -1149,7 +1149,7 @@
 
     const v4, 0x7f02061b
 
-    const v5, 0x7f0f081e
+    const v5, 0x7f0f0821
 
     invoke-direct {v1, v2, v4, v5, v3}, Lcom/android/systemui/statusbar/policy/NetworkController$IconState;-><init>(ZIILandroid/content/Context;)V
 
@@ -2083,7 +2083,7 @@
 .method private updateNoSIMNotification()V
     .locals 14
 
-    const v11, 0x7f0f07b0
+    const v11, 0x7f0f07b3
 
     const/16 v13, 0x111
 
@@ -2153,13 +2153,13 @@
 
     if-eqz v8, :cond_2
 
-    const v8, 0x7f0f07af
+    const v8, 0x7f0f07b2
 
     invoke-virtual {v3, v8}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
     move-result-object v7
 
-    const v8, 0x7f0f07b1
+    const v8, 0x7f0f07b4
 
     invoke-virtual {v3, v8}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -2259,7 +2259,7 @@
 
     if-eqz v8, :cond_3
 
-    const v8, 0x7f0f07ae
+    const v8, 0x7f0f07b1
 
     invoke-virtual {v3, v8}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -2284,13 +2284,13 @@
 
     if-eqz v8, :cond_4
 
-    const v8, 0x7f0f07d6
+    const v8, 0x7f0f07d9
 
     invoke-virtual {v3, v8}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
     move-result-object v7
 
-    const v8, 0x7f0f07d7
+    const v8, 0x7f0f07da
 
     invoke-virtual {v3, v8}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -2301,7 +2301,7 @@
     goto/16 :goto_1
 
     :cond_4
-    const v8, 0x7f0f07ad
+    const v8, 0x7f0f07b0
 
     invoke-virtual {v3, v8}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -2406,7 +2406,7 @@
 
     const v6, 0x7f02061b
 
-    const v7, 0x7f0f081e
+    const v7, 0x7f0f0821
 
     invoke-direct {v2, v4, v6, v7, v5}, Lcom/android/systemui/statusbar/policy/NetworkController$IconState;-><init>(ZIILandroid/content/Context;)V
 
@@ -2710,7 +2710,7 @@
 
     const v29, 0x7f02061b
 
-    const v30, 0x7f0f081e
+    const v30, 0x7f0f0821
 
     move-object/from16 v0, v27
 
@@ -4583,7 +4583,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f0d04a6
+    const v2, 0x7f0d04a8
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -6341,7 +6341,7 @@
 
     iget-object v3, p0, Lcom/android/systemui/statusbar/policy/NetworkControllerImpl;->mContext:Landroid/content/Context;
 
-    const v4, 0x7f0f07b5
+    const v4, 0x7f0f07b8
 
     invoke-virtual {v3, v4}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -6632,7 +6632,7 @@
 
     iget-object v5, p0, Lcom/android/systemui/statusbar/policy/NetworkControllerImpl;->mContext:Landroid/content/Context;
 
-    const v6, 0x7f0f07b5
+    const v6, 0x7f0f07b8
 
     invoke-virtual {v5, v6}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 

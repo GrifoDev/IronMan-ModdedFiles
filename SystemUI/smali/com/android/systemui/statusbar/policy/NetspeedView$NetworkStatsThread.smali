@@ -44,7 +44,7 @@
 
     const/4 v5, 0x0
 
-    invoke-static {}, Lcom/android/systemui/statusbar/policy/NetspeedView;->-get0()Landroid/content/Context;
+    invoke-static {}, Lcom/android/systemui/statusbar/policy/NetspeedView;->-get1()Landroid/content/Context;
 
     move-result-object v3
 
@@ -112,7 +112,7 @@
 
     iget-object v0, p0, Lcom/android/systemui/statusbar/policy/NetspeedView$NetworkStatsThread;->this$0:Lcom/android/systemui/statusbar/policy/NetspeedView;
 
-    invoke-static {}, Lcom/android/systemui/statusbar/policy/NetspeedView;->-get0()Landroid/content/Context;
+    invoke-static {}, Lcom/android/systemui/statusbar/policy/NetspeedView;->-get1()Landroid/content/Context;
 
     move-result-object v1
 
@@ -120,7 +120,7 @@
 
     move-result v1
 
-    invoke-static {v0, v1}, Lcom/android/systemui/statusbar/policy/NetspeedView;->-set1(Lcom/android/systemui/statusbar/policy/NetspeedView;Z)Z
+    invoke-static {v0, v1}, Lcom/android/systemui/statusbar/policy/NetspeedView;->-set2(Lcom/android/systemui/statusbar/policy/NetspeedView;Z)Z
 
     const-string/jumbo v0, "NetworkSpeedView"
 
@@ -136,7 +136,7 @@
 
     iget-object v2, p0, Lcom/android/systemui/statusbar/policy/NetspeedView$NetworkStatsThread;->this$0:Lcom/android/systemui/statusbar/policy/NetspeedView;
 
-    invoke-static {v2}, Lcom/android/systemui/statusbar/policy/NetspeedView;->-get2(Lcom/android/systemui/statusbar/policy/NetspeedView;)Z
+    invoke-static {v2}, Lcom/android/systemui/statusbar/policy/NetspeedView;->-get3(Lcom/android/systemui/statusbar/policy/NetspeedView;)Z
 
     move-result v2
 
@@ -152,7 +152,7 @@
 
     iget-object v0, p0, Lcom/android/systemui/statusbar/policy/NetspeedView$NetworkStatsThread;->this$0:Lcom/android/systemui/statusbar/policy/NetspeedView;
 
-    invoke-static {v0}, Lcom/android/systemui/statusbar/policy/NetspeedView;->-get3(Lcom/android/systemui/statusbar/policy/NetspeedView;)Landroid/os/Handler;
+    invoke-static {v0}, Lcom/android/systemui/statusbar/policy/NetspeedView;->-get4(Lcom/android/systemui/statusbar/policy/NetspeedView;)Landroid/os/Handler;
 
     move-result-object v0
 

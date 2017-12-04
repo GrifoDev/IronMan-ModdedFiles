@@ -823,7 +823,7 @@
 
     move-result-object v2
 
-    const v3, 0x7f0d053f
+    const v3, 0x7f0d0542
 
     invoke-virtual {v2, v3}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -1669,7 +1669,7 @@
 
     move-result-object v5
 
-    const v6, 0x7f0d040d
+    const v6, 0x7f0d040f
 
     invoke-virtual {v5, v6}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -1681,7 +1681,7 @@
 
     move-result-object v5
 
-    const v6, 0x7f0d040e
+    const v6, 0x7f0d0410
 
     invoke-virtual {v5, v6}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -1693,7 +1693,7 @@
 
     move-result-object v5
 
-    const v6, 0x7f0d040e
+    const v6, 0x7f0d0410
 
     invoke-virtual {v5, v6}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -1717,7 +1717,7 @@
 
     move-result-object v5
 
-    const v6, 0x7f0d041f
+    const v6, 0x7f0d0421
 
     invoke-virtual {v5, v6}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -1729,7 +1729,7 @@
 
     move-result-object v5
 
-    const v6, 0x7f0d041e
+    const v6, 0x7f0d0420
 
     invoke-virtual {v5, v6}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -1753,7 +1753,7 @@
 
     move-result-object v5
 
-    const v6, 0x7f0d041f
+    const v6, 0x7f0d0421
 
     invoke-virtual {v5, v6}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -1765,7 +1765,7 @@
 
     move-result-object v5
 
-    const v6, 0x7f0d041e
+    const v6, 0x7f0d0420
 
     invoke-virtual {v5, v6}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -1793,7 +1793,7 @@
 
     move-result-object v5
 
-    const v6, 0x7f0d0411
+    const v6, 0x7f0d0413
 
     invoke-virtual {v5, v6}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -1822,7 +1822,7 @@
 
     move-result-object v5
 
-    const v6, 0x7f0d0333
+    const v6, 0x7f0d0335
 
     invoke-virtual {v5, v6}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -1834,7 +1834,7 @@
 
     move-result-object v5
 
-    const v6, 0x7f0d0332
+    const v6, 0x7f0d0334
 
     invoke-virtual {v5, v6}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -1846,7 +1846,7 @@
 
     move-result-object v5
 
-    const v6, 0x7f0d0420
+    const v6, 0x7f0d0422
 
     invoke-virtual {v5, v6}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -1875,7 +1875,7 @@
 
     move-result-object v5
 
-    const v6, 0x7f0d0331
+    const v6, 0x7f0d0333
 
     invoke-virtual {v5, v6}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -1887,7 +1887,7 @@
 
     move-result-object v5
 
-    const v6, 0x7f0d0330
+    const v6, 0x7f0d0332
 
     invoke-virtual {v5, v6}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -1925,7 +1925,7 @@
 
     move-result-object v5
 
-    const v6, 0x7f0d040b
+    const v6, 0x7f0d040d
 
     invoke-virtual {v5, v6}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -1937,7 +1937,7 @@
 
     move-result-object v5
 
-    const v6, 0x7f0d040a
+    const v6, 0x7f0d040c
 
     invoke-virtual {v5, v6}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -1974,7 +1974,7 @@
 
     move-result-object v5
 
-    const v6, 0x7f0d0331
+    const v6, 0x7f0d0333
 
     invoke-virtual {v5, v6}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -1986,7 +1986,7 @@
 
     move-result-object v5
 
-    const v6, 0x7f0d0330
+    const v6, 0x7f0d0332
 
     invoke-virtual {v5, v6}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -2016,7 +2016,7 @@
 
     move-result-object v5
 
-    const v6, 0x7f0d041e
+    const v6, 0x7f0d0420
 
     invoke-virtual {v5, v6}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -2044,7 +2044,7 @@
 
     move-result-object v6
 
-    const v7, 0x7f0d0419
+    const v7, 0x7f0d041b
 
     invoke-virtual {v6, v7}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -2054,7 +2054,7 @@
 
     move-result-object v7
 
-    const v8, 0x7f0d041a
+    const v8, 0x7f0d041c
 
     invoke-virtual {v7, v8}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 

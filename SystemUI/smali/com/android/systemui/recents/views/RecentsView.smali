@@ -404,7 +404,7 @@
 
     move-result-object v2
 
-    const v3, 0x7f0d03c8
+    const v3, 0x7f0d03ca
 
     invoke-virtual {v2, v3}, Landroid/content/res/Resources;->getFloat(I)F
 
@@ -416,7 +416,7 @@
 
     move-result-object v2
 
-    const v3, 0x7f0d03c9
+    const v3, 0x7f0d03cb
 
     invoke-virtual {v2, v3}, Landroid/content/res/Resources;->getFloat(I)F
 
@@ -744,7 +744,7 @@
     return-void
 
     :cond_4
-    const v2, 0x7f0f06bf
+    const v2, 0x7f0f06c0
 
     invoke-interface {v1, v2}, Landroid/view/Menu;->add(I)Landroid/view/MenuItem;
 
@@ -755,21 +755,21 @@
     goto :goto_0
 
     :cond_5
-    const v2, 0x7f0f06c0
+    const v2, 0x7f0f06c1
 
     invoke-interface {v1, v2}, Landroid/view/Menu;->add(I)Landroid/view/MenuItem;
 
     goto :goto_1
 
     :cond_6
-    const v2, 0x7f0f06c1
+    const v2, 0x7f0f06c2
 
     invoke-interface {v1, v2}, Landroid/view/Menu;->add(I)Landroid/view/MenuItem;
 
     goto :goto_2
 
     :cond_7
-    const v2, 0x7f0f06c2
+    const v2, 0x7f0f06c3
 
     invoke-interface {v1, v2}, Landroid/view/Menu;->add(I)Landroid/view/MenuItem;
 
@@ -814,7 +814,7 @@
 
     iget-object v3, p0, Lcom/android/systemui/recents/views/RecentsView;->mRecentsTooltipHelp:Lcom/android/systemui/recents/views/RecentsRatioHelpTooltip;
 
-    const v4, 0x7f130444
+    const v4, 0x7f130446
 
     invoke-virtual {v3, v4}, Lcom/android/systemui/recents/views/RecentsRatioHelpTooltip;->findViewById(I)Landroid/view/View;
 
@@ -2444,7 +2444,7 @@
 
     iget-object v4, p0, Lcom/android/systemui/recents/views/RecentsView;->mRecentsButtonsContainer:Landroid/view/ViewGroup;
 
-    const v5, 0x7f13041d
+    const v5, 0x7f13041f
 
     invoke-virtual {v4, v5}, Landroid/view/ViewGroup;->findViewById(I)Landroid/view/View;
 
@@ -2452,7 +2452,7 @@
 
     iget-object v4, p0, Lcom/android/systemui/recents/views/RecentsView;->mRecentsButtonsContainer:Landroid/view/ViewGroup;
 
-    const v5, 0x7f130420
+    const v5, 0x7f130422
 
     invoke-virtual {v4, v5}, Landroid/view/ViewGroup;->findViewById(I)Landroid/view/View;
 
@@ -2539,7 +2539,7 @@
     :cond_3
     iget-object v4, p0, Lcom/android/systemui/recents/views/RecentsView;->mRecentsButtonsContainer:Landroid/view/ViewGroup;
 
-    const v5, 0x7f130420
+    const v5, 0x7f130422
 
     invoke-virtual {v4, v5}, Landroid/view/ViewGroup;->findViewById(I)Landroid/view/View;
 
@@ -2547,7 +2547,7 @@
 
     iget-object v4, p0, Lcom/android/systemui/recents/views/RecentsView;->mRecentsButtonsContainer:Landroid/view/ViewGroup;
 
-    const v5, 0x7f13041d
+    const v5, 0x7f13041f
 
     invoke-virtual {v4, v5}, Landroid/view/ViewGroup;->findViewById(I)Landroid/view/View;
 
@@ -3209,7 +3209,7 @@
 .method public final onBusEvent(Lcom/android/systemui/recents/events/ui/ToggleRecentsCloseAllButtonEvent;)V
     .locals 9
 
-    const/16 v8, 0x8
+    const/4 v8, 0x4
 
     const/4 v7, 0x0
 
@@ -4311,7 +4311,7 @@
 
     iget-object v5, p0, Lcom/android/systemui/recents/views/RecentsView;->mRecentsTooltipHelp:Lcom/android/systemui/recents/views/RecentsRatioHelpTooltip;
 
-    const v6, 0x7f130448
+    const v6, 0x7f13044a
 
     invoke-virtual {v5, v6}, Lcom/android/systemui/recents/views/RecentsRatioHelpTooltip;->findViewById(I)Landroid/view/View;
 
@@ -4372,7 +4372,7 @@
     :cond_1
     iget-object v5, p0, Lcom/android/systemui/recents/views/RecentsView;->mRecentsTooltipHelp:Lcom/android/systemui/recents/views/RecentsRatioHelpTooltip;
 
-    const v6, 0x7f130444
+    const v6, 0x7f130446
 
     invoke-virtual {v5, v6}, Lcom/android/systemui/recents/views/RecentsRatioHelpTooltip;->findViewById(I)Landroid/view/View;
 
@@ -4890,7 +4890,7 @@
 
     iget-object v2, p0, Lcom/android/systemui/recents/views/RecentsView;->mRecentsCloseAllContainer:Landroid/view/ViewGroup;
 
-    const v3, 0x7f13041b
+    const v3, 0x7f13041d
 
     invoke-virtual {v2, v3}, Landroid/view/ViewGroup;->findViewById(I)Landroid/view/View;
 
@@ -4956,7 +4956,7 @@
 
     iget-object v2, p0, Lcom/android/systemui/recents/views/RecentsView;->mRecentsButtonsContainer:Landroid/view/ViewGroup;
 
-    const v3, 0x7f130423
+    const v3, 0x7f130425
 
     invoke-virtual {v2, v3}, Landroid/view/ViewGroup;->findViewById(I)Landroid/view/View;
 
@@ -4966,7 +4966,7 @@
 
     iget-object v2, p0, Lcom/android/systemui/recents/views/RecentsView;->mRecentsButtonsContainer:Landroid/view/ViewGroup;
 
-    const v3, 0x7f130422
+    const v3, 0x7f130424
 
     invoke-virtual {v2, v3}, Landroid/view/ViewGroup;->findViewById(I)Landroid/view/View;
 
@@ -4998,7 +4998,7 @@
 
     move-result-object v2
 
-    const v3, 0x7f0f06bd
+    const v3, 0x7f0f06be
 
     invoke-virtual {v2, v3}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -5057,7 +5057,7 @@
 
     iget-object v2, p0, Lcom/android/systemui/recents/views/RecentsView;->mRecentsButtonsContainer:Landroid/view/ViewGroup;
 
-    const v3, 0x7f13041f
+    const v3, 0x7f130421
 
     invoke-virtual {v2, v3}, Landroid/view/ViewGroup;->findViewById(I)Landroid/view/View;
 
@@ -5077,7 +5077,7 @@
 
     iget-object v2, p0, Lcom/android/systemui/recents/views/RecentsView;->mRecentsButtonsContainer:Landroid/view/ViewGroup;
 
-    const v3, 0x7f13041e
+    const v3, 0x7f130420
 
     invoke-virtual {v2, v3}, Landroid/view/ViewGroup;->findViewById(I)Landroid/view/View;
 
@@ -5106,7 +5106,7 @@
 
     iget-object v2, p0, Lcom/android/systemui/recents/views/RecentsView;->mRecentsButtonsContainer:Landroid/view/ViewGroup;
 
-    const v3, 0x7f130421
+    const v3, 0x7f130423
 
     invoke-virtual {v2, v3}, Landroid/view/ViewGroup;->findViewById(I)Landroid/view/View;
 
@@ -5369,7 +5369,7 @@
 
     move-result-object v3
 
-    const v5, 0x7f0d03d3
+    const v5, 0x7f0d03d5
 
     invoke-virtual {v3, v5}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -5538,7 +5538,7 @@
     return-void
 
     :cond_1
-    const v0, 0x7f0f0542
+    const v0, 0x7f0f0543
 
     invoke-virtual {p0, v0}, Lcom/android/systemui/recents/views/RecentsView;->showEmptyView(I)V
 

@@ -25,6 +25,8 @@
 
 .field index:I
 
+.field mPlugged:Z
+
 .field renderer:Lcom/android/systemui/infinity/GalaxyRenderer;
 
 .field showAnimator:Lcom/altamirasoft/glanimationutil/GLValueAnimator;
@@ -36,13 +38,13 @@
 
 # direct methods
 .method public constructor <init>(Landroid/content/Context;Lcom/android/systemui/infinity/GalaxyRenderer;)V
-    .locals 1
+    .locals 2
+
+    const/4 v1, 0x0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    const/4 v0, 0x0
-
-    iput v0, p0, Lcom/android/systemui/infinity/smoke/SmokeSystem;->index:I
+    iput v1, p0, Lcom/android/systemui/infinity/smoke/SmokeSystem;->index:I
 
     const/4 v0, 0x0
 
@@ -53,6 +55,8 @@
     new-array v0, v0, [Lcom/android/systemui/infinity/background/GradientBackground;
 
     iput-object v0, p0, Lcom/android/systemui/infinity/smoke/SmokeSystem;->smokeList:[Lcom/android/systemui/infinity/background/GradientBackground;
+
+    iput-boolean v1, p0, Lcom/android/systemui/infinity/smoke/SmokeSystem;->mPlugged:Z
 
     new-instance v0, Landroid/os/Handler;
 
@@ -154,7 +158,31 @@
 .method public hideSmoke()V
     .locals 4
 
-    const/4 v2, 0x0
+    const/4 v3, 0x0
+
+    const-string/jumbo v0, "GalaxyWallpaper"
+
+    new-instance v1, Ljava/lang/StringBuilder;
+
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string/jumbo v2, "SmokeSystem hideSmoke() current alpha : "
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    iget v2, p0, Lcom/android/systemui/infinity/smoke/SmokeSystem;->targetSmokeAlpha:F
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(F)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
     iget-object v0, p0, Lcom/android/systemui/infinity/smoke/SmokeSystem;->handler:Landroid/os/Handler;
 
@@ -164,7 +192,7 @@
 
     iget v0, p0, Lcom/android/systemui/infinity/smoke/SmokeSystem;->targetSmokeAlpha:F
 
-    cmpl-float v0, v0, v2
+    cmpl-float v0, v0, v3
 
     if-eqz v0, :cond_1
 
@@ -185,7 +213,7 @@
 
     const/high16 v1, 0x3f800000    # 1.0f
 
-    invoke-virtual {v0, v1, v2}, Lcom/altamirasoft/glanimationutil/GLAnimatorManager;->createValueAnimator(FF)Lcom/altamirasoft/glanimationutil/GLValueAnimator;
+    invoke-virtual {v0, v1, v3}, Lcom/altamirasoft/glanimationutil/GLAnimatorManager;->createValueAnimator(FF)Lcom/altamirasoft/glanimationutil/GLValueAnimator;
 
     move-result-object v0
 
@@ -289,16 +317,52 @@
     return-void
 .end method
 
-.method public setIndex(I)V
+.method public setIsPlugged(Z)V
     .locals 0
 
-    iput p1, p0, Lcom/android/systemui/infinity/smoke/SmokeSystem;->index:I
+    iput-boolean p1, p0, Lcom/android/systemui/infinity/smoke/SmokeSystem;->mPlugged:Z
 
     return-void
 .end method
 
 .method public showSmoke()V
     .locals 4
+
+    const-string/jumbo v0, "GalaxyWallpaper"
+
+    new-instance v1, Ljava/lang/StringBuilder;
+
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string/jumbo v2, "SmokeSystem showSmoke() current alpha : "
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    iget v2, p0, Lcom/android/systemui/infinity/smoke/SmokeSystem;->targetSmokeAlpha:F
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(F)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    const-string/jumbo v2, ", mPlugged : "
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    iget-boolean v2, p0, Lcom/android/systemui/infinity/smoke/SmokeSystem;->mPlugged:Z
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
     iget-object v0, p0, Lcom/android/systemui/infinity/smoke/SmokeSystem;->showAnimator:Lcom/altamirasoft/glanimationutil/GLValueAnimator;
 
@@ -351,6 +415,10 @@
 
     invoke-virtual {v0}, Lcom/altamirasoft/glanimationutil/GLValueAnimator;->start()V
 
+    iget-boolean v0, p0, Lcom/android/systemui/infinity/smoke/SmokeSystem;->mPlugged:Z
+
+    if-nez v0, :cond_1
+
     iget-object v0, p0, Lcom/android/systemui/infinity/smoke/SmokeSystem;->handler:Landroid/os/Handler;
 
     iget-object v1, p0, Lcom/android/systemui/infinity/smoke/SmokeSystem;->hideRunnable:Ljava/lang/Runnable;
@@ -365,5 +433,6 @@
 
     invoke-virtual {v0, v1, v2, v3}, Landroid/os/Handler;->postDelayed(Ljava/lang/Runnable;J)Z
 
+    :cond_1
     return-void
 .end method

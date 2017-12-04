@@ -143,6 +143,8 @@
     <string name="tts_reset_speech_pitch_title">Athshocraigh tuinairde</string>
     <string name="tts_reset_speech_pitch_summary">Fill an tuinairde ag a léitear téacs amach ar an réamhshocrú.</string>
     <string name="choose_profile">Roghnaigh próifíl</string>
+    <string name="dev_logpersist_clear_warning_title">Glan stóras seasmhach logálaí?</string>
+    <string name="dev_logpersist_clear_warning_message">Scriosfar sonraí logálaí nuair a chasfar as an logálaí seasta.</string>
     <string name="select_logpersist_title">Stóráil sonraí loga go seasmhach</string>
     <string name="select_logpersist_dialog_title">Rogh. maoláin loga le stóráil go seasmhach</string>
     <string name="no_application">Níl feidhmchláir ann</string>
@@ -250,6 +252,7 @@ For example, your ringtone will not sound, you will not be able to answer phone 
     <string name="wifi_authentication_failed_kt">Theip ar fhíordheimhniú AP Wi-Fi.</string>
     <string name="wifi_authentication_no_response">Theip ar nascadh le Wi-Fi AP.</string>
     <string name="wifi_authentication_invalid_value">Theip ar an bhfíordheimhniú. Seiceáil ID agus pasfhocal.</string>
+    <string name="wifi_disconnected">Wi-Fi dínasctha.</string>
     <string name="quick_settings_bluetooth_label">Bluetooth</string>
     <string name="quick_settings_bluetooth_detail_empty_text_available">Níor aimsíodh aon gharghléasanna Bluetooth</string>
     <string name="quick_settings_bluetooth_detail_paired_devices_title">Gléasanna péireáilte</string>
@@ -575,15 +578,21 @@ Is féidir le haon úsáideoir feidhmchláir a nuashonrú do na húsáideoirí a
     <string name="dialog_battery_data_warning">Cumasófar Ball Te Móibíleach. Cuirfidh sé sin méadú ar ídiú an cheallra agus ar úsáid sonraí.</string>
     <string name="keyboard_popup_help">Meiteochair: An eochair Windows, an eochair Ordaithe, nó eochair shiombaile eile den chóras oibriúcháin.</string>
     <string name="keyboard_shortcut_group_system">Aicearraí córais</string>
+    <string name="keyboard_shortcut_group_system_home">Baile</string>
+    <string name="keyboard_shortcut_group_system_recents">Le déanaí</string>
     <string name="keyboard_shortcut_group_system_back">Siar</string>
+    <string name="keyboard_shortcut_group_system_notifications">Fógraí</string>
+    <string name="keyboard_shortcut_group_system_shortcuts_helper">Aicearraí eochairchláir</string>
     <string name="keyboard_shortcut_group_system_all_apps">Gach feidhmchlár</string>
     <string name="keyboard_shortcut_group_system_running_apps">Feidhmchláir atá ar rith</string>
     <string name="keyboard_shortcut_group_system_lock_screen">Scáileán glasála</string>
     <string name="keyboard_shortcut_group_system_switch_languages">Aistrigh teangacha</string>
     <string name="keyboard_shortcut_group_applications">Aicearraí i bhfeidhmchláir</string>
+    <string name="keyboard_shortcut_group_applications_browser">Brabhsálaí</string>
     <string name="keyboard_shortcut_group_applications_contacts">Teagmhálaithe</string>
     <string name="keyboard_shortcut_group_applications_email">R-phost</string>
     <string name="keyboard_shortcut_group_applications_music">Ceol</string>
+    <string name="keyboard_shortcut_group_applications_calendar">Féilire</string>
     <string name="keyboard_shortcut_group_applications_bixby">Bixby</string>
     <string name="keyboard_shortcut_group_applications_messages">Teachtaireachtaí</string>
     <string name="qs_edit">C. IN EAG.</string>
@@ -767,7 +776,9 @@ Is féidir go n-éiríonn sé róthe ar na cúiseanna seo a leanas:
     <string name="battery_not_fully_connected_charging_title_vzw">Incomplete connection</string>
     <string name="battery_not_fully_connected_charging_text">Le luchtú níos tapa, úsáid an luchtaire arna sholáthar le do ghléas agus cinntigh go bhfuil sé ceangailte i gceart.</string>
     <string name="battery_not_fully_connected_charging_text_vzw">Make sure the charger is properly connected.</string>
+    <string name="battery_not_fully_connected_charging_text_jpn">Cinntigh go bhfuil do luchtaire ceangailte i gceart.</string>
     <string name="battery_not_fully_connected_charging_popup_text">Cinntigh go bhfuil an luchtaire ceangailte i gceart. Úsáid an luchtaire arna sholáthar leis an ngléas.</string>
+    <string name="battery_not_fully_connected_charging_popup_text_jpn">Cinntigh go bhfuil an luchtaire ceangailte i gceart.</string>
     <string name="battery_charging_level_and_time_text">"Luchtú: %1$d%%
 (Thart ar %2$s go dtí go mbeidh sé lánluchtaithe)"</string>
     <string name="battery_charging_level_text">Ag luchtú: %d%%</string>
@@ -992,6 +1003,8 @@ Please note that in order to enable your emergency calls (e.g., such as 112 call
     <string name="qs_detail_palm_capture_title">Svaidhpeáil boise le gabháil</string>
     <string name="noti_direct_reply_exceed_text_limit_toast">Ní féidir tuilleadh téacs a iontráil.</string>
     <string name="airplane_mode_tts_text">Mód eitleáin</string>
+    <string name="all_noti_readout">Fógra amháin</string>
+    <string name="all_noti_readout2">%d fógra</string>
     <string name="keyguard_password_enter_pin_code">Scríobh cód PIN</string>
     <string name="keyguard_password_wrong_pin_code">Cód PIN mícheart.</string>
     <string name="keyguard_charged">Lánluchtaithe</string>

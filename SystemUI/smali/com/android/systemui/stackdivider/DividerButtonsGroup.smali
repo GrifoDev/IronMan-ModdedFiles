@@ -10,8 +10,7 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
-        Lcom/android/systemui/stackdivider/DividerButtonsGroup$-void_onFinishInflate__LambdaImpl0;,
-        Lcom/android/systemui/stackdivider/DividerButtonsGroup$-void_onFinishInflate__LambdaImpl1;
+        Lcom/android/systemui/stackdivider/DividerButtonsGroup$-void_onFinishInflate__LambdaImpl0;
     }
 .end annotation
 
@@ -166,24 +165,15 @@
 
     move-result v6
 
-    if-eqz v6, :cond_0
+    if-nez v6, :cond_1
 
-    invoke-virtual {p2}, Landroid/view/MotionEvent;->getAction()I
-
-    move-result v6
-
-    const/16 v7, 0x9
-
-    if-ne v6, v7, :cond_2
-
-    :cond_0
     iget-object v6, p0, Lcom/android/systemui/stackdivider/DividerButtonsGroup;->mContext:Landroid/content/Context;
 
     invoke-virtual {v6}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
     move-result-object v6
 
-    const v7, 0x7f0d0014
+    const v7, 0x7f0d0016
 
     invoke-virtual {v6, v7}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -281,26 +271,18 @@
 
     invoke-virtual {v6, v7}, Landroid/view/View;->setPressed(Z)V
 
-    :cond_1
+    :cond_0
     :goto_0
     return-void
 
-    :cond_2
+    :cond_1
     invoke-virtual {p2}, Landroid/view/MotionEvent;->getAction()I
 
     move-result v6
 
     const/4 v7, 0x2
 
-    if-eq v6, v7, :cond_1
-
-    invoke-virtual {p2}, Landroid/view/MotionEvent;->getAction()I
-
-    move-result v6
-
-    const/4 v7, 0x7
-
-    if-eq v6, v7, :cond_1
+    if-eq v6, v7, :cond_0
 
     iget-object v6, p0, Lcom/android/systemui/stackdivider/DividerButtonsGroup;->mRippleView:Landroid/view/View;
 
@@ -444,16 +426,6 @@
     invoke-virtual {v0, p2}, Landroid/view/GestureDetector;->onTouchEvent(Landroid/view/MotionEvent;)Z
 
     move-result v0
-
-    return v0
-.end method
-
-.method synthetic -com_android_systemui_stackdivider_DividerButtonsGroup_lambda$2(Landroid/view/View;Landroid/view/MotionEvent;)Z
-    .locals 1
-
-    invoke-direct {p0, p1, p2}, Lcom/android/systemui/stackdivider/DividerButtonsGroup;->drawRipple(Landroid/view/View;Landroid/view/MotionEvent;)V
-
-    const/4 v0, 0x0
 
     return v0
 .end method
@@ -914,7 +886,7 @@
 
     move-result-object v6
 
-    const v8, 0x7f0d0019
+    const v8, 0x7f0d001b
 
     invoke-virtual {v6, v8}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -1007,12 +979,6 @@
     invoke-direct {v6, p0}, Lcom/android/systemui/stackdivider/DividerButtonsGroup$-void_onFinishInflate__LambdaImpl0;-><init>(Lcom/android/systemui/stackdivider/DividerButtonsGroup;)V
 
     invoke-virtual {v4, v6}, Landroid/view/View;->setOnTouchListener(Landroid/view/View$OnTouchListener;)V
-
-    new-instance v6, Lcom/android/systemui/stackdivider/DividerButtonsGroup$-void_onFinishInflate__LambdaImpl1;
-
-    invoke-direct {v6, p0}, Lcom/android/systemui/stackdivider/DividerButtonsGroup$-void_onFinishInflate__LambdaImpl1;-><init>(Lcom/android/systemui/stackdivider/DividerButtonsGroup;)V
-
-    invoke-virtual {v4, v6}, Landroid/view/View;->setOnHoverListener(Landroid/view/View$OnHoverListener;)V
 
     invoke-virtual {v4, p0}, Landroid/view/View;->setOnLongClickListener(Landroid/view/View$OnLongClickListener;)V
 

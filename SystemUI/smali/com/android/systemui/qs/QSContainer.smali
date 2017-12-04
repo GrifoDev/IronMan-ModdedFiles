@@ -893,11 +893,11 @@
 .method protected onFinishInflate()V
     .locals 11
 
-    const v4, 0x7f0d042f
+    const v4, 0x7f0d0431
 
-    const v5, 0x7f0d042e
+    const v5, 0x7f0d0430
 
-    const v10, 0x7f0d0238
+    const v10, 0x7f0d023a
 
     const/high16 v9, 0x3f800000    # 1.0f
 
@@ -1061,7 +1061,7 @@
 
     iget-object v3, p0, Lcom/android/systemui/qs/QSContainer;->mHeader:Lcom/android/systemui/statusbar/phone/BaseStatusBarHeader;
 
-    const v5, 0x7f130412
+    const v5, 0x7f130414
 
     invoke-virtual {v3, v5}, Lcom/android/systemui/statusbar/phone/BaseStatusBarHeader;->findViewById(I)Landroid/view/View;
 

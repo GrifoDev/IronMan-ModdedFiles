@@ -480,7 +480,7 @@
     :pswitch_0
     iget-object v2, p0, Lcom/android/systemui/volume/ZenModePanel;->mContext:Landroid/content/Context;
 
-    const v3, 0x7f0f0566
+    const v3, 0x7f0f0567
 
     invoke-virtual {v2, v3}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -505,7 +505,7 @@
 
     aput-object v4, v3, v5
 
-    const v4, 0x7f0f05b0
+    const v4, 0x7f0f05b1
 
     invoke-virtual {v2, v4, v3}, Landroid/content/Context;->getString(I[Ljava/lang/Object;)Ljava/lang/String;
 
@@ -518,7 +518,7 @@
     :pswitch_1
     iget-object v2, p0, Lcom/android/systemui/volume/ZenModePanel;->mContext:Landroid/content/Context;
 
-    const v3, 0x7f0f0565
+    const v3, 0x7f0f0566
 
     invoke-virtual {v2, v3}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -529,7 +529,7 @@
     :pswitch_2
     iget-object v2, p0, Lcom/android/systemui/volume/ZenModePanel;->mContext:Landroid/content/Context;
 
-    const v3, 0x7f0f0567
+    const v3, 0x7f0f0568
 
     invoke-virtual {v2, v3}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -1349,7 +1349,7 @@
     if-eqz v16, :cond_4
 
     :cond_2
-    const v13, 0x7f0f05f6
+    const v13, 0x7f0f05f7
 
     :cond_3
     :goto_0
@@ -1384,7 +1384,7 @@
 
     if-gez v16, :cond_3
 
-    const v13, 0x7f0f05f7
+    const v13, 0x7f0f05f8
 
     goto :goto_0
 
@@ -1437,7 +1437,7 @@
 
     if-eqz v10, :cond_a
 
-    const v12, 0x7f0f05f8
+    const v12, 0x7f0f05f9
 
     :goto_3
     invoke-virtual/range {p0 .. p0}, Lcom/android/systemui/volume/ZenModePanel;->getResources()Landroid/content/res/Resources;
@@ -1513,7 +1513,7 @@
     goto :goto_2
 
     :cond_a
-    const v12, 0x7f0f05f9
+    const v12, 0x7f0f05fa
 
     goto :goto_3
 .end method
@@ -3349,7 +3349,7 @@
 
     if-eqz v3, :cond_a
 
-    const v5, 0x7f0f0559
+    const v5, 0x7f0f055a
 
     :goto_5
     invoke-virtual {v8, v5}, Landroid/widget/TextView;->setText(I)V
@@ -3416,12 +3416,12 @@
 
     if-eqz v5, :cond_b
 
-    const v5, 0x7f0f055b
+    const v5, 0x7f0f055c
 
     goto :goto_5
 
     :cond_b
-    const v5, 0x7f0f055c
+    const v5, 0x7f0f055d
 
     goto :goto_5
 
@@ -3441,7 +3441,7 @@
 .method protected createZenButtons()V
     .locals 4
 
-    const v0, 0x7f13056a
+    const v0, 0x7f13056c
 
     invoke-virtual {p0, v0}, Lcom/android/systemui/volume/ZenModePanel;->findViewById(I)Landroid/view/View;
 
@@ -3459,9 +3459,9 @@
 
     move-result-object v1
 
-    const v2, 0x7f0f0568
+    const v2, 0x7f0f0569
 
-    const v3, 0x7f0f0564
+    const v3, 0x7f0f0565
 
     invoke-virtual {v0, v2, v3, v1}, Lcom/android/systemui/volume/SegmentedButtons;->addButton(IILjava/lang/Object;)V
 
@@ -3473,9 +3473,9 @@
 
     move-result-object v1
 
-    const v2, 0x7f0f056a
+    const v2, 0x7f0f056b
 
-    const v3, 0x7f0f0567
+    const v3, 0x7f0f0568
 
     invoke-virtual {v0, v2, v3, v1}, Lcom/android/systemui/volume/SegmentedButtons;->addButton(IILjava/lang/Object;)V
 
@@ -3487,9 +3487,9 @@
 
     move-result-object v1
 
-    const v2, 0x7f0f0569
+    const v2, 0x7f0f056a
 
-    const v3, 0x7f0f0566
+    const v3, 0x7f0f0567
 
     invoke-virtual {v0, v2, v3, v1}, Lcom/android/systemui/volume/SegmentedButtons;->addButton(IILjava/lang/Object;)V
 
@@ -3637,7 +3637,7 @@
 
     invoke-virtual {p0}, Lcom/android/systemui/volume/ZenModePanel;->createZenButtons()V
 
-    const v0, 0x7f13056b
+    const v0, 0x7f13056d
 
     invoke-virtual {p0, v0}, Lcom/android/systemui/volume/ZenModePanel;->findViewById(I)Landroid/view/View;
 
@@ -3645,7 +3645,7 @@
 
     iput-object v0, p0, Lcom/android/systemui/volume/ZenModePanel;->mZenIntroduction:Landroid/view/View;
 
-    const v0, 0x7f13056d
+    const v0, 0x7f13056f
 
     invoke-virtual {p0, v0}, Lcom/android/systemui/volume/ZenModePanel;->findViewById(I)Landroid/view/View;
 
@@ -3661,7 +3661,7 @@
 
     invoke-virtual {v0, v1}, Lcom/android/systemui/volume/SpTexts;->add(Landroid/widget/TextView;)I
 
-    const v0, 0x7f13056c
+    const v0, 0x7f13056e
 
     invoke-virtual {p0, v0}, Lcom/android/systemui/volume/ZenModePanel;->findViewById(I)Landroid/view/View;
 
@@ -3677,7 +3677,7 @@
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    const v0, 0x7f13056e
+    const v0, 0x7f130570
 
     invoke-virtual {p0, v0}, Lcom/android/systemui/volume/ZenModePanel;->findViewById(I)Landroid/view/View;
 
@@ -3701,7 +3701,7 @@
 
     invoke-virtual {v0, v1}, Lcom/android/systemui/volume/SpTexts;->add(Landroid/widget/TextView;)I
 
-    const v0, 0x7f13056f
+    const v0, 0x7f130571
 
     invoke-virtual {p0, v0}, Lcom/android/systemui/volume/ZenModePanel;->findViewById(I)Landroid/view/View;
 
@@ -3711,7 +3711,7 @@
 
     iput-object v0, p0, Lcom/android/systemui/volume/ZenModePanel;->mZenConditions:Landroid/widget/LinearLayout;
 
-    const v0, 0x7f130572
+    const v0, 0x7f130574
 
     invoke-virtual {p0, v0}, Lcom/android/systemui/volume/ZenModePanel;->findViewById(I)Landroid/view/View;
 
@@ -3721,7 +3721,7 @@
 
     iput-object v0, p0, Lcom/android/systemui/volume/ZenModePanel;->mZenAlarmWarning:Landroid/widget/TextView;
 
-    const v0, 0x7f130570
+    const v0, 0x7f130572
 
     invoke-virtual {p0, v0}, Lcom/android/systemui/volume/ZenModePanel;->findViewById(I)Landroid/view/View;
 
@@ -3731,7 +3731,7 @@
 
     iput-object v0, p0, Lcom/android/systemui/volume/ZenModePanel;->mZenRadioGroup:Landroid/widget/RadioGroup;
 
-    const v0, 0x7f130571
+    const v0, 0x7f130573
 
     invoke-virtual {p0, v0}, Lcom/android/systemui/volume/ZenModePanel;->findViewById(I)Landroid/view/View;
 

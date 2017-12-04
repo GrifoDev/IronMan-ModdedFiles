@@ -1004,7 +1004,7 @@
 
     move-result-object v2
 
-    const v3, 0x7f0f078b
+    const v3, 0x7f0f078e
 
     invoke-virtual {v2, v3}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -1060,7 +1060,7 @@
 
     move-result-object v5
 
-    const v6, 0x7f0f078c
+    const v6, 0x7f0f078f
 
     invoke-virtual {v5, v6}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -1119,7 +1119,7 @@
 
     aput-object v1, v7, v8
 
-    const v8, 0x7f0f0791
+    const v8, 0x7f0f0794
 
     invoke-virtual {v6, v8, v7}, Landroid/content/Context;->getString(I[Ljava/lang/Object;)Ljava/lang/String;
 
@@ -1152,7 +1152,7 @@
 
     aput-object v7, v6, v8
 
-    const v7, 0x7f0f078d
+    const v7, 0x7f0f0790
 
     invoke-virtual {v5, v7, v6}, Landroid/content/Context;->getString(I[Ljava/lang/Object;)Ljava/lang/String;
 
@@ -1173,7 +1173,7 @@
 
     aput-object v7, v6, v8
 
-    const v7, 0x7f0f078e
+    const v7, 0x7f0f0791
 
     invoke-virtual {v5, v7, v6}, Landroid/content/Context;->getString(I[Ljava/lang/Object;)Ljava/lang/String;
 
@@ -1194,7 +1194,7 @@
 
     aput-object v7, v6, v8
 
-    const v7, 0x7f0f078f
+    const v7, 0x7f0f0792
 
     invoke-virtual {v5, v7, v6}, Landroid/content/Context;->getString(I[Ljava/lang/Object;)Ljava/lang/String;
 
@@ -1215,7 +1215,7 @@
 
     aput-object v7, v6, v8
 
-    const v7, 0x7f0f0790
+    const v7, 0x7f0f0793
 
     invoke-virtual {v5, v7, v6}, Landroid/content/Context;->getString(I[Ljava/lang/Object;)Ljava/lang/String;
 
@@ -1337,7 +1337,7 @@
 
     aput-object v8, v7, v9
 
-    const v8, 0x7f0f0792
+    const v8, 0x7f0f0795
 
     invoke-virtual {v6, v8, v7}, Landroid/content/Context;->getString(I[Ljava/lang/Object;)Ljava/lang/String;
 
@@ -1363,7 +1363,7 @@
 
     aput-object v8, v7, v9
 
-    const v8, 0x7f0f0793
+    const v8, 0x7f0f0796
 
     invoke-virtual {v6, v8, v7}, Landroid/content/Context;->getString(I[Ljava/lang/Object;)Ljava/lang/String;
 
@@ -1416,7 +1416,7 @@
 
     aput-object v8, v7, v9
 
-    const v8, 0x7f0f0794
+    const v8, 0x7f0f0797
 
     invoke-virtual {v6, v8, v7}, Landroid/content/Context;->getString(I[Ljava/lang/Object;)Ljava/lang/String;
 
@@ -1462,7 +1462,7 @@
 
     aput-object v8, v7, v9
 
-    const v8, 0x7f0f0794
+    const v8, 0x7f0f0797
 
     invoke-virtual {v6, v8, v7}, Landroid/content/Context;->getString(I[Ljava/lang/Object;)Ljava/lang/String;
 
@@ -2075,11 +2075,11 @@
 
     sget-boolean v15, Lcom/android/keyguard/KeyguardRune;->SUPPORT_SEC_FINGERPRINT_SENSOR_POSITION_REAR:Z
 
-    if-eqz v15, :cond_5
+    if-eqz v15, :cond_6
 
     :cond_0
     :goto_0
-    if-nez v6, :cond_7
+    if-nez v6, :cond_8
 
     and-int/lit8 v15, v2, 0x1
 
@@ -2087,7 +2087,7 @@
 
     move/from16 v0, v16
 
-    if-ne v15, v0, :cond_7
+    if-ne v15, v0, :cond_8
 
     move-object/from16 v0, p0
 
@@ -2097,7 +2097,7 @@
 
     move-result v15
 
-    if-eqz v15, :cond_7
+    if-eqz v15, :cond_8
 
     move-object/from16 v0, p0
 
@@ -2107,14 +2107,14 @@
 
     move-result v15
 
-    if-eqz v15, :cond_7
+    if-eqz v15, :cond_8
 
-    if-eqz v12, :cond_6
+    if-eqz v12, :cond_7
 
     const/4 v9, 0x0
 
     :goto_1
-    if-nez v6, :cond_8
+    if-nez v6, :cond_9
 
     and-int/lit8 v15, v2, 0x10
 
@@ -2122,7 +2122,7 @@
 
     move/from16 v0, v16
 
-    if-ne v15, v0, :cond_8
+    if-ne v15, v0, :cond_9
 
     move-object/from16 v0, p0
 
@@ -2133,7 +2133,7 @@
     move-result v10
 
     :goto_2
-    if-nez v6, :cond_a
+    if-nez v6, :cond_1
 
     and-int/lit16 v15, v2, 0x100
 
@@ -2141,7 +2141,7 @@
 
     move/from16 v0, v16
 
-    if-ne v15, v0, :cond_a
+    if-ne v15, v0, :cond_1
 
     move-object/from16 v0, p0
 
@@ -2151,7 +2151,7 @@
 
     move-result v15
 
-    if-eqz v15, :cond_a
+    if-eqz v15, :cond_1
 
     move-object/from16 v0, p0
 
@@ -2161,8 +2161,9 @@
 
     move-result v15
 
-    if-eqz v15, :cond_9
+    if-eqz v15, :cond_a
 
+    :cond_1
     const/4 v7, 0x0
 
     :goto_3
@@ -2182,9 +2183,9 @@
 
     move-result v15
 
-    if-eqz v15, :cond_1
+    if-eqz v15, :cond_2
 
-    if-eqz v10, :cond_b
+    if-eqz v10, :cond_c
 
     move-object/from16 v0, p0
 
@@ -2197,7 +2198,7 @@
     :goto_4
     move v11, v10
 
-    :cond_1
+    :cond_2
     move-object/from16 v0, p0
 
     iget-object v15, v0, Lcom/android/systemui/statusbar/KeyguardIndicationController;->mContext:Landroid/content/Context;
@@ -2210,9 +2211,9 @@
 
     move-result v15
 
-    if-eqz v15, :cond_2
+    if-eqz v15, :cond_3
 
-    if-eqz v7, :cond_c
+    if-eqz v7, :cond_d
 
     move-object/from16 v0, p0
 
@@ -2225,7 +2226,7 @@
     :goto_5
     move v8, v7
 
-    :cond_2
+    :cond_3
     move-object/from16 v0, p0
 
     iget-object v15, v0, Lcom/android/systemui/statusbar/KeyguardIndicationController;->mKeyguardUpdateMonitor:Lcom/android/keyguard/KeyguardUpdateMonitor;
@@ -2258,27 +2259,27 @@
 
     move-result v5
 
-    if-nez v9, :cond_3
+    if-nez v9, :cond_4
 
-    if-nez v10, :cond_3
+    if-nez v10, :cond_4
 
-    if-eqz v7, :cond_4
-
-    :cond_3
-    if-eqz v3, :cond_d
+    if-eqz v7, :cond_5
 
     :cond_4
-    if-eqz v13, :cond_3a
+    if-eqz v3, :cond_e
+
+    :cond_5
+    if-eqz v13, :cond_3b
 
     const/4 v15, 0x2
 
     move/from16 v0, p1
 
-    if-ne v0, v15, :cond_38
+    if-ne v0, v15, :cond_39
 
-    if-eqz v5, :cond_37
+    if-eqz v5, :cond_38
 
-    const v14, 0x7f0f07eb
+    const v14, 0x7f0f07ee
 
     :goto_6
     move-object/from16 v0, p0
@@ -2291,7 +2292,7 @@
 
     return-object v15
 
-    :cond_5
+    :cond_6
     move-object/from16 v0, p0
 
     iget v15, v0, Lcom/android/systemui/statusbar/KeyguardIndicationController;->mIsMobileKeyboardCovered:I
@@ -2306,89 +2307,99 @@
 
     goto/16 :goto_0
 
-    :cond_6
+    :cond_7
     const/4 v9, 0x1
 
     goto/16 :goto_1
 
-    :cond_7
+    :cond_8
     const/4 v9, 0x0
 
     goto/16 :goto_1
 
-    :cond_8
+    :cond_9
     const/4 v10, 0x0
 
     goto/16 :goto_2
 
-    :cond_9
-    const/4 v7, 0x1
-
-    goto/16 :goto_3
-
     :cond_a
+    move-object/from16 v0, p0
+
+    iget-object v15, v0, Lcom/android/systemui/statusbar/KeyguardIndicationController;->mKeyguardUpdateMonitor:Lcom/android/keyguard/KeyguardUpdateMonitor;
+
+    invoke-virtual {v15, v4}, Lcom/android/keyguard/KeyguardUpdateMonitor;->isFaceDisabled(I)Z
+
+    move-result v15
+
+    if-eqz v15, :cond_b
+
     const/4 v7, 0x0
 
     goto/16 :goto_3
 
     :cond_b
+    const/4 v7, 0x1
+
+    goto/16 :goto_3
+
+    :cond_c
     const/4 v10, 0x0
 
     goto :goto_4
 
-    :cond_c
+    :cond_d
     const/4 v7, 0x0
 
     goto :goto_5
 
-    :cond_d
-    if-eqz v9, :cond_e
-
-    if-nez v10, :cond_f
-
     :cond_e
-    if-eqz v9, :cond_21
+    if-eqz v9, :cond_f
 
-    if-eqz v7, :cond_21
+    if-nez v10, :cond_10
 
     :cond_f
-    if-eqz v9, :cond_10
+    if-eqz v9, :cond_22
 
-    if-eqz v10, :cond_10
-
-    if-eqz v11, :cond_15
+    if-eqz v7, :cond_22
 
     :cond_10
     if-eqz v9, :cond_11
 
-    if-eqz v7, :cond_11
+    if-eqz v10, :cond_11
 
-    if-eqz v8, :cond_1a
+    if-eqz v11, :cond_16
 
     :cond_11
     if-eqz v9, :cond_12
 
-    if-nez v8, :cond_13
+    if-eqz v7, :cond_12
+
+    if-eqz v8, :cond_1b
 
     :cond_12
-    if-eqz v9, :cond_14
+    if-eqz v9, :cond_13
 
-    if-eqz v11, :cond_14
+    if-nez v8, :cond_14
 
     :cond_13
+    if-eqz v9, :cond_15
+
+    if-eqz v11, :cond_15
+
+    :cond_14
     const/4 v15, 0x2
 
     move/from16 v0, p1
 
-    if-ne v0, v15, :cond_1f
+    if-ne v0, v15, :cond_20
 
-    if-eqz v13, :cond_1e
+    if-eqz v13, :cond_1f
 
-    const v14, 0x7f0f077e
+    const v14, 0x7f0f0781
 
-    :cond_14
+    :cond_15
     :goto_7
-    if-eqz v14, :cond_4
+    if-eqz v14, :cond_5
 
     move-object/from16 v0, p0
 
@@ -2400,300 +2411,300 @@
 
     return-object v15
 
-    :cond_15
-    const/4 v15, 0x2
-
-    move/from16 v0, p1
-
-    if-ne v0, v15, :cond_17
-
-    if-eqz v13, :cond_16
-
-    const v14, 0x7f0f0784
-
-    goto :goto_7
-
     :cond_16
-    const v14, 0x7f0f0772
-
-    goto :goto_7
-
-    :cond_17
-    if-eqz v5, :cond_18
-
-    const v14, 0x7f0f07ea
-
-    goto :goto_7
-
-    :cond_18
-    if-eqz v13, :cond_19
-
-    const v14, 0x7f0f0785
-
-    goto :goto_7
-
-    :cond_19
-    const v14, 0x7f0f0773
-
-    goto :goto_7
-
-    :cond_1a
     const/4 v15, 0x2
 
     move/from16 v0, p1
 
-    if-ne v0, v15, :cond_1c
+    if-ne v0, v15, :cond_18
 
-    if-eqz v13, :cond_1b
-
-    const v14, 0x7f0f0782
-
-    goto :goto_7
-
-    :cond_1b
-    const v14, 0x7f0f0770
-
-    goto :goto_7
-
-    :cond_1c
-    if-eqz v13, :cond_1d
-
-    const v14, 0x7f0f0783
-
-    goto :goto_7
-
-    :cond_1d
-    const v14, 0x7f0f0771
-
-    goto :goto_7
-
-    :cond_1e
-    const v14, 0x7f0f076c
-
-    goto :goto_7
-
-    :cond_1f
-    if-eqz v13, :cond_20
-
-    const v14, 0x7f0f077d
-
-    goto :goto_7
-
-    :cond_20
-    const v14, 0x7f0f076b
-
-    goto :goto_7
-
-    :cond_21
-    if-eqz v9, :cond_26
-
-    const/4 v15, 0x2
-
-    move/from16 v0, p1
-
-    if-ne v0, v15, :cond_23
-
-    if-eqz v13, :cond_22
-
-    const v14, 0x7f0f0786
-
-    goto :goto_7
-
-    :cond_22
-    const v14, 0x7f0f0774
-
-    goto :goto_7
-
-    :cond_23
-    if-eqz v5, :cond_24
-
-    const v14, 0x7f0f07e8
-
-    goto :goto_7
-
-    :cond_24
-    if-eqz v13, :cond_25
+    if-eqz v13, :cond_17
 
     const v14, 0x7f0f0787
 
     goto :goto_7
 
-    :cond_25
+    :cond_17
     const v14, 0x7f0f0775
 
     goto :goto_7
 
-    :cond_26
-    if-eqz v10, :cond_2f
+    :cond_18
+    if-eqz v5, :cond_19
+
+    const v14, 0x7f0f07ed
+
+    goto :goto_7
+
+    :cond_19
+    if-eqz v13, :cond_1a
+
+    const v14, 0x7f0f0788
+
+    goto :goto_7
+
+    :cond_1a
+    const v14, 0x7f0f0776
+
+    goto :goto_7
+
+    :cond_1b
+    const/4 v15, 0x2
+
+    move/from16 v0, p1
+
+    if-ne v0, v15, :cond_1d
+
+    if-eqz v13, :cond_1c
+
+    const v14, 0x7f0f0785
+
+    goto :goto_7
+
+    :cond_1c
+    const v14, 0x7f0f0773
+
+    goto :goto_7
+
+    :cond_1d
+    if-eqz v13, :cond_1e
+
+    const v14, 0x7f0f0786
+
+    goto :goto_7
+
+    :cond_1e
+    const v14, 0x7f0f0774
+
+    goto :goto_7
+
+    :cond_1f
+    const v14, 0x7f0f076f
+
+    goto :goto_7
+
+    :cond_20
+    if-eqz v13, :cond_21
+
+    const v14, 0x7f0f0780
+
+    goto :goto_7
+
+    :cond_21
+    const v14, 0x7f0f076e
+
+    goto :goto_7
+
+    :cond_22
+    if-eqz v9, :cond_27
 
     const/4 v15, 0x2
 
     move/from16 v0, p1
 
-    if-ne v0, v15, :cond_2a
+    if-ne v0, v15, :cond_24
 
-    if-eqz v11, :cond_28
+    if-eqz v13, :cond_23
 
-    if-eqz v13, :cond_27
+    const v14, 0x7f0f0789
+
+    goto :goto_7
+
+    :cond_23
+    const v14, 0x7f0f0777
+
+    goto :goto_7
+
+    :cond_24
+    if-eqz v5, :cond_25
+
+    const v14, 0x7f0f07eb
+
+    goto :goto_7
+
+    :cond_25
+    if-eqz v13, :cond_26
 
     const v14, 0x7f0f078a
 
     goto :goto_7
 
-    :cond_27
+    :cond_26
     const v14, 0x7f0f0778
 
-    goto/16 :goto_7
+    goto :goto_7
+
+    :cond_27
+    if-eqz v10, :cond_30
+
+    const/4 v15, 0x2
+
+    move/from16 v0, p1
+
+    if-ne v0, v15, :cond_2b
+
+    if-eqz v11, :cond_29
+
+    if-eqz v13, :cond_28
+
+    const v14, 0x7f0f078d
+
+    goto :goto_7
 
     :cond_28
-    if-eqz v13, :cond_29
-
-    const v14, 0x7f0f0779
+    const v14, 0x7f0f077b
 
     goto/16 :goto_7
 
     :cond_29
-    const v14, 0x7f0f077b
+    if-eqz v13, :cond_2a
+
+    const v14, 0x7f0f077c
 
     goto/16 :goto_7
 
     :cond_2a
-    if-eqz v5, :cond_2b
-
-    const v14, 0x7f0f07e9
+    const v14, 0x7f0f077e
 
     goto/16 :goto_7
 
     :cond_2b
-    if-eqz v11, :cond_2d
+    if-eqz v5, :cond_2c
 
-    if-eqz v13, :cond_2c
-
-    const v14, 0x7f0f0789
+    const v14, 0x7f0f07ec
 
     goto/16 :goto_7
 
     :cond_2c
-    const v14, 0x7f0f0777
+    if-eqz v11, :cond_2e
+
+    if-eqz v13, :cond_2d
+
+    const v14, 0x7f0f078c
 
     goto/16 :goto_7
 
     :cond_2d
-    if-eqz v13, :cond_2e
-
-    const v14, 0x7f0f0788
+    const v14, 0x7f0f077a
 
     goto/16 :goto_7
 
     :cond_2e
-    const v14, 0x7f0f0776
+    if-eqz v13, :cond_2f
+
+    const v14, 0x7f0f078b
 
     goto/16 :goto_7
 
     :cond_2f
-    if-eqz v7, :cond_14
-
-    const/4 v15, 0x2
-
-    move/from16 v0, p1
-
-    if-ne v0, v15, :cond_33
-
-    if-eqz v8, :cond_31
-
-    if-eqz v13, :cond_30
-
-    const v14, 0x7f0f0780
+    const v14, 0x7f0f0779
 
     goto/16 :goto_7
 
     :cond_30
-    const v14, 0x7f0f076e
+    if-eqz v7, :cond_15
 
-    goto/16 :goto_7
-
-    :cond_31
-    if-eqz v13, :cond_32
-
-    const v14, 0x7f0f0779
-
-    goto/16 :goto_7
-
-    :cond_32
-    const v14, 0x7f0f077b
-
-    goto/16 :goto_7
-
-    :cond_33
-    if-eqz v8, :cond_35
-
-    if-eqz v13, :cond_34
-
-    const v14, 0x7f0f077f
-
-    goto/16 :goto_7
-
-    :cond_34
-    const v14, 0x7f0f076d
-
-    goto/16 :goto_7
-
-    :cond_35
-    if-eqz v13, :cond_36
-
-    const v14, 0x7f0f0781
-
-    goto/16 :goto_7
-
-    :cond_36
-    const v14, 0x7f0f076f
-
-    goto/16 :goto_7
-
-    :cond_37
-    const v14, 0x7f0f0779
-
-    goto/16 :goto_6
-
-    :cond_38
-    if-eqz v5, :cond_39
-
-    const v14, 0x7f0f07eb
-
-    goto/16 :goto_6
-
-    :cond_39
-    const v14, 0x7f0f077a
-
-    goto/16 :goto_6
-
-    :cond_3a
     const/4 v15, 0x2
 
     move/from16 v0, p1
 
-    if-ne v0, v15, :cond_3c
+    if-ne v0, v15, :cond_34
 
-    if-eqz v5, :cond_3b
+    if-eqz v8, :cond_32
 
-    const v14, 0x7f0f07ec
+    if-eqz v13, :cond_31
+
+    const v14, 0x7f0f0783
+
+    goto/16 :goto_7
+
+    :cond_31
+    const v14, 0x7f0f0771
+
+    goto/16 :goto_7
+
+    :cond_32
+    if-eqz v13, :cond_33
+
+    const v14, 0x7f0f077c
+
+    goto/16 :goto_7
+
+    :cond_33
+    const v14, 0x7f0f077e
+
+    goto/16 :goto_7
+
+    :cond_34
+    if-eqz v8, :cond_36
+
+    if-eqz v13, :cond_35
+
+    const v14, 0x7f0f0782
+
+    goto/16 :goto_7
+
+    :cond_35
+    const v14, 0x7f0f0770
+
+    goto/16 :goto_7
+
+    :cond_36
+    if-eqz v13, :cond_37
+
+    const v14, 0x7f0f0784
+
+    goto/16 :goto_7
+
+    :cond_37
+    const v14, 0x7f0f0772
+
+    goto/16 :goto_7
+
+    :cond_38
+    const v14, 0x7f0f077c
+
+    goto/16 :goto_6
+
+    :cond_39
+    if-eqz v5, :cond_3a
+
+    const v14, 0x7f0f07ee
+
+    goto/16 :goto_6
+
+    :cond_3a
+    const v14, 0x7f0f077d
 
     goto/16 :goto_6
 
     :cond_3b
-    const v14, 0x7f0f077b
+    const/4 v15, 0x2
+
+    move/from16 v0, p1
+
+    if-ne v0, v15, :cond_3d
+
+    if-eqz v5, :cond_3c
+
+    const v14, 0x7f0f07ef
 
     goto/16 :goto_6
 
     :cond_3c
-    if-eqz v5, :cond_3d
-
-    const v14, 0x7f0f07e7
+    const v14, 0x7f0f077e
 
     goto/16 :goto_6
 
     :cond_3d
-    const v14, 0x7f0f077c
+    if-eqz v5, :cond_3e
+
+    const v14, 0x7f0f07ea
+
+    goto/16 :goto_6
+
+    :cond_3e
+    const v14, 0x7f0f077f
 
     goto/16 :goto_6
 .end method

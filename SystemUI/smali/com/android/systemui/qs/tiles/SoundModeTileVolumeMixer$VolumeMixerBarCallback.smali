@@ -45,27 +45,36 @@
 
 # virtual methods
 .method public isEnableZenMode()Z
-    .locals 2
+    .locals 3
 
-    iget-object v0, p0, Lcom/android/systemui/qs/tiles/SoundModeTileVolumeMixer$VolumeMixerBarCallback;->this$0:Lcom/android/systemui/qs/tiles/SoundModeTileVolumeMixer;
+    const/4 v0, 0x0
 
-    invoke-static {v0}, Lcom/android/systemui/qs/tiles/SoundModeTileVolumeMixer;->-get5(Lcom/android/systemui/qs/tiles/SoundModeTileVolumeMixer;)I
+    iget-object v1, p0, Lcom/android/systemui/qs/tiles/SoundModeTileVolumeMixer$VolumeMixerBarCallback;->this$0:Lcom/android/systemui/qs/tiles/SoundModeTileVolumeMixer;
 
-    move-result v0
+    invoke-static {v1}, Lcom/android/systemui/qs/tiles/SoundModeTileVolumeMixer;->-get6(Lcom/android/systemui/qs/tiles/SoundModeTileVolumeMixer;)I
 
-    const/4 v1, 0x2
+    move-result v1
 
-    if-eq v0, v1, :cond_0
+    invoke-static {v1}, Landroid/provider/Settings$Global;->isValidZenMode(I)Z
+
+    move-result v1
+
+    if-eqz v1, :cond_0
+
+    iget-object v1, p0, Lcom/android/systemui/qs/tiles/SoundModeTileVolumeMixer$VolumeMixerBarCallback;->this$0:Lcom/android/systemui/qs/tiles/SoundModeTileVolumeMixer;
+
+    invoke-static {v1}, Lcom/android/systemui/qs/tiles/SoundModeTileVolumeMixer;->-get6(Lcom/android/systemui/qs/tiles/SoundModeTileVolumeMixer;)I
+
+    move-result v1
+
+    const/4 v2, 0x2
+
+    if-eq v1, v2, :cond_0
 
     const/4 v0, 0x1
 
-    :goto_0
-    return v0
-
     :cond_0
-    const/4 v0, 0x0
-
-    goto :goto_0
+    return v0
 .end method
 
 .method public isVoiceCalling()Z

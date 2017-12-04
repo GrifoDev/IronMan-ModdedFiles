@@ -160,7 +160,7 @@
 
     invoke-virtual {p0}, Lcom/android/systemui/statusbar/phone/taskbar/views/AppIconView;->setDefaultIconSize()V
 
-    const v3, 0x7f0d064c
+    const v3, 0x7f0d0650
 
     invoke-virtual {v1, v3}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -168,7 +168,7 @@
 
     sput v3, Lcom/android/systemui/statusbar/phone/taskbar/views/AppIconView;->sBadgeFontSize:I
 
-    const v3, 0x7f0d0651
+    const v3, 0x7f0d0655
 
     invoke-virtual {v1, v3}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -176,7 +176,7 @@
 
     iput v3, p0, Lcom/android/systemui/statusbar/phone/taskbar/views/AppIconView;->mRunningQueueWidth:I
 
-    const v3, 0x7f0d0652
+    const v3, 0x7f0d0656
 
     invoke-virtual {v1, v3}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -184,7 +184,7 @@
 
     iput v3, p0, Lcom/android/systemui/statusbar/phone/taskbar/views/AppIconView;->mRunningQueueHeight:I
 
-    const v3, 0x7f0d0653
+    const v3, 0x7f0d0657
 
     invoke-virtual {v1, v3}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -192,7 +192,7 @@
 
     iput v3, p0, Lcom/android/systemui/statusbar/phone/taskbar/views/AppIconView;->mRunningQueueTopMargin:I
 
-    const v3, 0x7f0d066c
+    const v3, 0x7f0d0670
 
     invoke-virtual {v1, v3}, Landroid/content/res/Resources;->getDimensionPixelOffset(I)I
 
@@ -595,7 +595,7 @@
 
     move-result-object v9
 
-    const v10, 0x7f0d0649
+    const v10, 0x7f0d064d
 
     invoke-virtual {v9, v10}, Landroid/content/res/Resources;->getDimension(I)F
 
@@ -607,7 +607,7 @@
 
     move-result-object v9
 
-    const v10, 0x7f0d0649
+    const v10, 0x7f0d064d
 
     invoke-virtual {v9, v10}, Landroid/content/res/Resources;->getDimension(I)F
 
@@ -641,7 +641,7 @@
 
     move-result-object v9
 
-    const v10, 0x7f0d064b
+    const v10, 0x7f0d064f
 
     invoke-virtual {v9, v10}, Landroid/content/res/Resources;->getDimension(I)F
 
@@ -747,7 +747,7 @@
 
     move-result-object v9
 
-    const v10, 0x7f0d064d
+    const v10, 0x7f0d0651
 
     invoke-virtual {v9, v10}, Landroid/content/res/Resources;->getDimension(I)F
 
@@ -798,7 +798,7 @@
 
     move-result-object v9
 
-    const v10, 0x7f0d064a
+    const v10, 0x7f0d064e
 
     invoke-virtual {v9, v10}, Landroid/content/res/Resources;->getDimension(I)F
 
@@ -1630,7 +1630,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f0d0644
+    const v1, 0x7f0d0648
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -1638,7 +1638,7 @@
 
     iput v1, p0, Lcom/android/systemui/statusbar/phone/taskbar/views/AppIconView;->allAppsMenuIconSize:I
 
-    const v1, 0x7f0d0646
+    const v1, 0x7f0d064a
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -1955,7 +1955,7 @@
 
     move-result-object v5
 
-    const v6, 0x7f0f0a85
+    const v6, 0x7f0f0a89
 
     invoke-virtual {v5, v6}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -2027,7 +2027,7 @@
 
     move-result-object v5
 
-    const v6, 0x7f0f0a86
+    const v6, 0x7f0f0a8a
 
     invoke-virtual {v5, v6}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 

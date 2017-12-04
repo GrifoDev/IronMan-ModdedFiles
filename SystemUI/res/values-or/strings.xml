@@ -143,6 +143,8 @@
     <string name="tts_reset_speech_pitch_title">ପିଚ୍ ପୁନଃସେଟ୍</string>
     <string name="tts_reset_speech_pitch_summary">ଡିଫଲ୍ଟ ସେଟିଂରେ ପଠନ ହୋଇଥିବା ଟେକ୍ସଟରେ ପିଚ୍ ପୁନଃସେଟ୍ କରନ୍ତୁ।</string>
     <string name="choose_profile">ପ୍ରୋଫାଇଲ୍ ଚୟନ କରନ୍ତୁ</string>
+    <string name="dev_logpersist_clear_warning_title">ଲଗାତାର ଲଗର୍ ଷ୍ଟୋରେଜ୍ ଖାଲି କରିବେ କି?</string>
+    <string name="dev_logpersist_clear_warning_message">ଲଗାତାର ଲଗର୍ ଟର୍ନ୍ ଅଫ୍ ହୋଇଥିବା ସମୟରେ ଲଗର୍ ଡାଟା ବିଲୋପ ହେବ।</string>
     <string name="select_logpersist_title">ଲଗ୍ ଡାଟା ଲଗାତାର ଷ୍ଟୋର୍ କରନ୍ତୁ</string>
     <string name="select_logpersist_dialog_title">ଲଗାତାର ଷ୍ଟୋର୍ କରିବାକୁ ଲଗ୍ ବଫର୍ ଚୟନ କରନ୍ତୁ</string>
     <string name="no_application">କୌଣସି ଆପ୍ଲିକେସନ୍‌ ନାହିଁ</string>
@@ -250,6 +252,7 @@ For example, your ringtone will not sound, you will not be able to answer phone 
     <string name="wifi_authentication_failed_kt">ପ୍ରାମାଣିକ Wi-Fi APକୁ ବିଫଳ ହୋଇଛି।</string>
     <string name="wifi_authentication_no_response">Wi-Fi APକୁ ସଂଯୋଗ କରିବାକୁ ଅସମର୍ଥ।</string>
     <string name="wifi_authentication_invalid_value">Authentication failed. Check ID and password।</string>
+    <string name="wifi_disconnected">Wi-Fi ବିଚ୍ଛିନ୍ନ ହୋଇଛି।</string>
     <string name="quick_settings_bluetooth_label">ବ୍ଲୁଟୁଥ୍</string>
     <string name="quick_settings_bluetooth_detail_empty_text_available">କୌଣସି ବ୍ଲୁଟୁଥ୍ ଡିଭାଇସ୍ ମିଳିଲା ନାହିଁ</string>
     <string name="quick_settings_bluetooth_detail_paired_devices_title">ପେୟାର୍ ହୋଇଥିବା ଡିଭାଇସଗୁଡିକ</string>
@@ -575,15 +578,21 @@ Turn on Airplane mode?"</string>
     <string name="dialog_battery_data_warning">ମୋବାଇଲ୍ ହଟ୍‌ସ୍ପଟ୍ ସକ୍ଷମ ହେବ। ଏହା ବ୍ୟାଟେରୀ ସଞ୍ଚୟ ଏବଂ ଡାଟା ବ୍ୟବହାର ବୃଦ୍ଧି କରିବ।</string>
     <string name="keyboard_popup_help">ମେଟା କୀ: ୱିଣ୍ଡୋସ୍, କମାଣ୍ଡ, କିମ୍ୱା ଅନ୍ୟ ଅପରେଟିଂ ସିଷ୍ଟମ୍ ସଙ୍କେତ କୀ।</string>
     <string name="keyboard_shortcut_group_system">ସିଷ୍ଟମ୍ ସର୍ଟକଟଗୁଡିକ</string>
+    <string name="keyboard_shortcut_group_system_home">ହୋମ୍</string>
+    <string name="keyboard_shortcut_group_system_recents">ସମ୍ପ୍ରତି</string>
     <string name="keyboard_shortcut_group_system_back">ବ୍ୟାକ୍</string>
+    <string name="keyboard_shortcut_group_system_notifications">ବିଜ୍ଞପ୍ତିଗୁଡିକ</string>
+    <string name="keyboard_shortcut_group_system_shortcuts_helper">କୀବୋର୍ଡ୍ ସର୍ଟକଟଗୁଡିକ</string>
     <string name="keyboard_shortcut_group_system_all_apps">ସମସ୍ତ ଆପ୍ଲିକେସନ୍</string>
     <string name="keyboard_shortcut_group_system_running_apps">ଚାଲୁଥିବା ଆପସ୍</string>
     <string name="keyboard_shortcut_group_system_lock_screen">ଲକ୍ ସ୍କ୍ରିନ୍</string>
     <string name="keyboard_shortcut_group_system_switch_languages">ଭାଷାଗୁଡିକ ସ୍ଵିଚ୍</string>
     <string name="keyboard_shortcut_group_applications">ଇନ-ଆପସ୍ ସର୍ଟକଟଗୁଡିକ</string>
+    <string name="keyboard_shortcut_group_applications_browser">ବ୍ରାଉଜର୍</string>
     <string name="keyboard_shortcut_group_applications_contacts">ସମ୍ପର୍କ</string>
     <string name="keyboard_shortcut_group_applications_email">ଇମେଲ୍</string>
     <string name="keyboard_shortcut_group_applications_music">ସଙ୍ଗୀତ</string>
+    <string name="keyboard_shortcut_group_applications_calendar">କ୍ୟାଲେଣ୍ଡର୍</string>
     <string name="keyboard_shortcut_group_applications_bixby">Bixby</string>
     <string name="keyboard_shortcut_group_applications_messages">ସନ୍ଦେଶଗୁଡିକ</string>
     <string name="qs_edit">ସମ୍ପାଦନ</string>
@@ -767,7 +776,9 @@ Using your tablet in a very hot location."</string>
     <string name="battery_not_fully_connected_charging_title_vzw">Incomplete connection</string>
     <string name="battery_not_fully_connected_charging_text">ଦ୍ରୁତତ୍ତର ଚାର୍ଜ କରିବା ପାଇଁ, ଆପଣଙ୍କ ଡିଭାଇସ୍ ସହ ମିଳୁଥିବା ଚାର୍ଜର୍ ବ୍ୟବହାର କରନ୍ତୁ ଏବଂ ଏହା ସଠିକ୍ ଭାବରେ ସଂଯୋଗ ହୋଇଛି ନିଶ୍ଚିତ କରନ୍ତୁ।</string>
     <string name="battery_not_fully_connected_charging_text_vzw">Make sure the charger is properly connected.</string>
+    <string name="battery_not_fully_connected_charging_text_jpn">ଆପଣଙ୍କ ଚାର୍ଜର୍ ସଠିକ୍ ଭାବରେ ସଂଯୋଗ ହୋଇଛି ନିଶ୍ଚିତ କରନ୍ତୁ।</string>
     <string name="battery_not_fully_connected_charging_popup_text">ଚାର୍ଜର୍ ସଠିକ୍ ଭାବରେ ସଂଯୋଗ ହୋଇଛି ନିଶ୍ଚିତ କରନ୍ତୁ। ଆପଣଙ୍କ ଡିଭାଇସ୍ ସହ ମିଳୁଥିବା ଚାର୍ଜର୍ ବ୍ୟବହାର କରନ୍ତୁ।</string>
+    <string name="battery_not_fully_connected_charging_popup_text_jpn">ଚାର୍ଜର୍ ସଠିକ୍ ଭାବରେ ସଂଯୋଗ ହୋଇଛି ନିଶ୍ଚିତ କରନ୍ତୁ।</string>
     <string name="battery_charging_level_and_time_text">"ଚାର୍ଜ ହେଉଛି: %1$d%%
 (ପ୍ରାୟତଃ %2$s ସମ୍ପୂର୍ଣ୍ଣ ଭାବେ ଚାର୍ଜ ହେବା ପର୍ଯ୍ୟନ୍ତ)"</string>
     <string name="battery_charging_level_text">ଚାର୍ଜ ହେଉଛି: %d%%</string>
@@ -992,6 +1003,8 @@ Please note that in order to enable your emergency calls (e.g., such as 112 call
     <string name="qs_detail_palm_capture_title">କ୍ୟାପଚର କରିବାକୁ ପାମ୍ ସ୍ଵାଇପ୍</string>
     <string name="noti_direct_reply_exceed_text_limit_toast">କୌଣସି ଅଧିକ ଟେକ୍ସଟ୍ ପ୍ରବେଶ କରିପାରିବେ ନାହିଁ।</string>
     <string name="airplane_mode_tts_text">ବିମାନ ମୋଡ୍</string>
+    <string name="all_noti_readout">ଏକ ବିଜ୍ଞପ୍ତି</string>
+    <string name="all_noti_readout2">%dଟି ବିଜ୍ଞପ୍ତି</string>
     <string name="keyguard_password_enter_pin_code">PIN କୋଡ୍ ଟାଇପ୍ କରନ୍ତୁ।</string>
     <string name="keyguard_password_wrong_pin_code">ଭୁଲ୍ PIN କୋଡ୍।</string>
     <string name="keyguard_charged">ଚାର୍ଜ୍‌ ପୂର୍ଣ୍ଣ ହେଲା</string>

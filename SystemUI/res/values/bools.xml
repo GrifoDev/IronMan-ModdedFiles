@@ -52,6 +52,7 @@
     <bool name="theme_use_pattern_normal_image">false</bool>
     <bool name="theme_use_pattern_success_image">false</bool>
     <bool name="theme_use_pattern_failed_image">false</bool>
+    <bool name="theme_use_clock_shadow">false</bool>
     <bool name="config_disableMenuKeyInLockScreen">false</bool>
     <bool name="config_showAmpm">true</bool>
     <bool name="theme_use_image_clock">false</bool>

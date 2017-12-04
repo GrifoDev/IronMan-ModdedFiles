@@ -383,6 +383,12 @@
 
     if-ge v9, v13, :cond_8
 
+    iget-object v9, p0, Lcom/android/systemui/recents/model/BackgroundTaskLoader;->mDefaultThumbnail:Landroid/graphics/Bitmap;
+
+    iget-object v10, v1, Lcom/android/systemui/recents/model/ThumbnailData;->thumbnail:Landroid/graphics/Bitmap;
+
+    if-eq v9, v10, :cond_8
+
     iget-object v9, p0, Lcom/android/systemui/recents/model/BackgroundTaskLoader;->mThumbnailCache:Lcom/android/systemui/recents/model/TaskKeyLruCache;
 
     iget-object v10, v8, Lcom/android/systemui/recents/model/Task;->key:Lcom/android/systemui/recents/model/Task$TaskKey;

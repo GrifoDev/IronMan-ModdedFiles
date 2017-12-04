@@ -353,7 +353,7 @@
 
     invoke-virtual {v10, v14, v0}, Landroid/widget/TextView;->setTextSize(IF)V
 
-    const v0, 0x7f0f062c
+    const v0, 0x7f0f062d
 
     invoke-virtual {v10, v0}, Landroid/widget/TextView;->setText(I)V
 
@@ -393,11 +393,11 @@
 
     invoke-virtual {v10, v14, v0}, Landroid/widget/TextView;->setTextSize(IF)V
 
-    const v0, 0x7f0f062d
+    const v0, 0x7f0f062e
 
     invoke-virtual {v10, v0}, Landroid/widget/TextView;->setText(I)V
 
-    const v0, 0x7f0f062e
+    const v0, 0x7f0f062f
 
     invoke-virtual {v9, v0}, Landroid/widget/TextView;->setText(I)V
 
@@ -545,7 +545,7 @@
 
     aput-object v2, v1, v3
 
-    const v2, 0x7f0f062b
+    const v2, 0x7f0f062c
 
     invoke-virtual {v0, v2, v1}, Landroid/content/Context;->getString(I[Ljava/lang/Object;)Ljava/lang/String;
 

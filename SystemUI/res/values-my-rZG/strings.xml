@@ -143,6 +143,8 @@
     <string name="tts_reset_speech_pitch_title">အသံနိမ့္ျမင့္ကို ျပန္လည္သတ္မွတ္ပါ</string>
     <string name="tts_reset_speech_pitch_summary">စာသားမ်ားကို မူရင္းပုံစံပါ သတ္မွတ္ခ်က္တြင္ ဖတ္ျပေပးမည့္ အသံအနိမ့္အျမင့္ကို ျပန္သတ္မွတ္ပါ။</string>
     <string name="choose_profile">ပရုိဖုိင္ကုိ ေရြးပါ</string>
+    <string name="dev_logpersist_clear_warning_title">ျပႆနာဆက္ျဖစ္ေနသည့္ ေလာ့ဂါ သိုေလွာင္ခန္းကို ရွင္းပစ္မလား?</string>
+    <string name="dev_logpersist_clear_warning_message">ျပႆနာဆက္ျဖစ္ေနသည့္ ေလာ့ဂါကို ပိတ္လိုက္သည့္အခါ ေလာ့ဂါေဒတာကို ဖ်က္ပစ္ပါမည္။</string>
     <string name="select_logpersist_title">မွတ္တမ္းေဒတာကုိ ဆက္တုိက္သိမ္းပါ</string>
     <string name="select_logpersist_dialog_title">ဆက္တုိက္သိမ္းမည့္ မွတ္တမ္း ၾကားခံနယ္မ်ားကုိ ေရြးပါ</string>
     <string name="no_application">အက္ပ္မ်ား မရွိပါ</string>
@@ -250,6 +252,7 @@ For example, your ringtone will not sound, you will not be able to answer phone 
     <string name="wifi_authentication_failed_kt">Wi-Fi AP ကို အေထာက္အထားျပဳစစ္ေဆးရန္ မေအာင္ျမင္ပါ။</string>
     <string name="wifi_authentication_no_response">Wi-Fi AP သို႔ ခ်ိတ္ဆက္ရန္ မေအာင္ျမင္ပါ။</string>
     <string name="wifi_authentication_invalid_value">အေထာက္အထားျပမႈ မေအာင္ျမင္ပါ။ သင့္ ID ႏွင့္ စကားဝွက္ကို စစ္ေဆးပါ္။</string>
+    <string name="wifi_disconnected">Wi-Fi အဆက္ျဖတ္ထားသည္။</string>
     <string name="quick_settings_bluetooth_label">ဘလူးတုသ္</string>
     <string name="quick_settings_bluetooth_detail_empty_text_available">အနီးအနားတြင္ ဘလူးတုသ္ ကိရိယာမ်ား မေတြ႔ပါ</string>
     <string name="quick_settings_bluetooth_detail_paired_devices_title">အတြဲခ်ိတ္ထားသည္ ကိရိယာမ်ား</string>
@@ -574,15 +577,21 @@ Wi-Fi ႏွင့္ဘလူးတုသ္ကို ပိတ္လုိက�
     <string name="dialog_battery_data_warning">မုိဘုိင္းလ္ေဟာ့စေပါ့ကုိ ဖြင့္လိမ့္မည္။ ထုိသုိ႔ေဆာင္ရြက္ျခင္းသည္ ဘတၳရီသံုးစြဲမႈႏွင့္အခ်က္အလက္သံုးစြဲမႈကုိ တုိးျမွင့္ေစလိမ့္မည္။</string>
     <string name="keyboard_popup_help">Meta ကီး : Windows၊ ညႊန္ၾကားခ်က္ သုိ႔မဟုတ္ အျခားလုပ္ေဆာင္ခ်က္ စနစ္ သေကၤတ ခလုတ္။</string>
     <string name="keyboard_shortcut_group_system">စနစ္ေရွာ့ကတ္မ်ား</string>
+    <string name="keyboard_shortcut_group_system_home">ပင္မ</string>
+    <string name="keyboard_shortcut_group_system_recents">လတ္တေလာမ်ား</string>
     <string name="keyboard_shortcut_group_system_back">ေနာက္သုိ႔</string>
+    <string name="keyboard_shortcut_group_system_notifications">အသိေပးခ်က္မ်ား</string>
+    <string name="keyboard_shortcut_group_system_shortcuts_helper">ကီးဘုတ္ေရွာ့ကတ္မ်ား</string>
     <string name="keyboard_shortcut_group_system_all_apps">အက္ပ္ အားလံုး</string>
     <string name="keyboard_shortcut_group_system_running_apps">အလုပ္လုပ္ေနသည့္ အက္ပ္မ်ား</string>
     <string name="keyboard_shortcut_group_system_lock_screen">ေလာ့ခ္မ်က္ႏွာျပင္</string>
     <string name="keyboard_shortcut_group_system_switch_languages">ဘာသာစကားမ်ားကို ေျပာင္းပါ</string>
     <string name="keyboard_shortcut_group_applications">အက္ပ္-တြင္ပါရွိေသာ ေရွာ့ကတ္မ်ား</string>
+    <string name="keyboard_shortcut_group_applications_browser">ဘေရာက္ဇာ</string>
     <string name="keyboard_shortcut_group_applications_contacts">အဆက္အသြယ္မ်ား</string>
     <string name="keyboard_shortcut_group_applications_email">အီးေမးလ္</string>
     <string name="keyboard_shortcut_group_applications_music">ဂီတ</string>
+    <string name="keyboard_shortcut_group_applications_calendar">ျပကၡဒိန္</string>
     <string name="keyboard_shortcut_group_applications_bixby">Bixby</string>
     <string name="keyboard_shortcut_group_applications_messages">မက္ေဆ့ဂ်္မ်ား</string>
     <string name="qs_edit">တည္းျဖတ္ပါ</string>
@@ -766,7 +775,9 @@ Using your tablet in a very hot location."</string>
     <string name="battery_not_fully_connected_charging_title_vzw">Incomplete connection</string>
     <string name="battery_not_fully_connected_charging_text">ပို၍ျမန္စြာ အားသြင္းရန္၊ ကိရိယာႏွင့္အတူပါလာေသာ ခ်ာဂ်ာကို အသုံးျပဳၿပီး ၎ကို ေကာင္းစြာ ခ်ိတ္ဆက္ထားေၾကာင္း ေသခ်ာေအာင္လုပ္ပါ။</string>
     <string name="battery_not_fully_connected_charging_text_vzw">Make sure the charger is properly connected.</string>
+    <string name="battery_not_fully_connected_charging_text_jpn">အားသြင္းကို ေကာင္းစြာ ခ်ိတ္ဆက္ထားေၾကာင္း ေသခ်ာေအာင္လုပ္ပါ။</string>
     <string name="battery_not_fully_connected_charging_popup_text">ခ်ာဂ်ာကို ေကာင္းစြာ ခ်ိတ္ဆက္ထားေၾကာင္း ေသခ်ာေအာင္လုပ္ပါ။ ကိရိယာႏွင့္အတူပါလာေသာ ခ်ာဂ်ာကို အသုံးျပဳပါ။</string>
+    <string name="battery_not_fully_connected_charging_popup_text_jpn">ခ်ာဂ်ာကို ေကာင္းစြာ ခ်ိတ္ဆက္ထားေၾကာင္း ေသခ်ာေအာင္လုပ္ပါ။</string>
     <string name="battery_charging_level_and_time_text">"အားသြင္းေနသည္ : %1$d%%
 (အားျပည့္သည္အထိ ခန္႔မွန္းေျခ %2$s)"</string>
     <string name="battery_charging_level_text">အားသြင္းေနပါသည္: %d%%</string>
@@ -991,6 +1002,8 @@ Please note that in order to enable your emergency calls (e.g., such as 112 call
     <string name="qs_detail_palm_capture_title">ဖမ္းယူရန္ ပြတ္ဆြဲျခင္း</string>
     <string name="noti_direct_reply_exceed_text_limit_toast">ေနာက္ထပ္စာမ်ား ထည့္သြင္း၍ မရႏိုင္ပါ။</string>
     <string name="airplane_mode_tts_text">ေလယာဥ္ပ်ံအေနအထား</string>
+    <string name="all_noti_readout">အသိေပးခ်က္တစ္ခု</string>
+    <string name="all_noti_readout2">အသိေပးခ်က္ %d ခု</string>
     <string name="keyguard_password_enter_pin_code">PIN ကုဒ္ကို ႐ိုက္ပါ</string>
     <string name="keyguard_password_wrong_pin_code">PIN ကုဒ္ မွားေနသည္။</string>
     <string name="keyguard_charged">အျပည့္ အားသြင္းၿပီးပါၿပီ</string>

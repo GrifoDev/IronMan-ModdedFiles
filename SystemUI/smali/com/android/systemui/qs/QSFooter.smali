@@ -362,7 +362,7 @@
 .method private getMessage(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;ZZ)Ljava/lang/String;
     .locals 6
 
-    const v5, 0x7f0f05a0
+    const v5, 0x7f0f05a1
 
     const/4 v4, 0x2
 
@@ -384,7 +384,7 @@
 
     aput-object p3, v1, v3
 
-    const v2, 0x7f0f05aa
+    const v2, 0x7f0f05ab
 
     invoke-virtual {v0, v2, v1}, Landroid/content/Context;->getString(I[Ljava/lang/Object;)Ljava/lang/String;
 
@@ -422,7 +422,7 @@
 
     aput-object p3, v1, v4
 
-    const v2, 0x7f0f05a9
+    const v2, 0x7f0f05aa
 
     invoke-virtual {v0, v2, v1}, Landroid/content/Context;->getString(I[Ljava/lang/Object;)Ljava/lang/String;
 
@@ -439,7 +439,7 @@
 
     aput-object p3, v1, v2
 
-    const v2, 0x7f0f05a7
+    const v2, 0x7f0f05a8
 
     invoke-virtual {v0, v2, v1}, Landroid/content/Context;->getString(I[Ljava/lang/Object;)Ljava/lang/String;
 
@@ -454,7 +454,7 @@
 
     aput-object p3, v1, v2
 
-    const v2, 0x7f0f05a6
+    const v2, 0x7f0f05a7
 
     invoke-virtual {v0, v2, v1}, Landroid/content/Context;->getString(I[Ljava/lang/Object;)Ljava/lang/String;
 
@@ -473,7 +473,7 @@
 
     aput-object p4, v1, v3
 
-    const v2, 0x7f0f05a8
+    const v2, 0x7f0f05a9
 
     invoke-virtual {v0, v2, v1}, Landroid/content/Context;->getString(I[Ljava/lang/Object;)Ljava/lang/String;
 
@@ -543,12 +543,12 @@
 
     if-eqz p1, :cond_0
 
-    const v0, 0x7f0f059b
+    const v0, 0x7f0f059c
 
     return v0
 
     :cond_0
-    const v0, 0x7f0f059d
+    const v0, 0x7f0f059e
 
     return v0
 .end method
@@ -584,7 +584,7 @@
 
     if-eqz v2, :cond_0
 
-    const v2, 0x7f0f0597
+    const v2, 0x7f0f0598
 
     iput v2, p0, Lcom/android/systemui/qs/QSFooter;->mFooterTextId:I
 
@@ -610,7 +610,7 @@
 
     if-eqz v1, :cond_2
 
-    const v2, 0x7f0f059a
+    const v2, 0x7f0f059b
 
     :goto_1
     iput v2, p0, Lcom/android/systemui/qs/QSFooter;->mFooterTextId:I
@@ -640,7 +640,7 @@
     goto :goto_0
 
     :cond_2
-    const v2, 0x7f0f0599
+    const v2, 0x7f0f059a
 
     goto :goto_1
 
@@ -690,7 +690,7 @@
 
     iget-object v0, p0, Lcom/android/systemui/qs/QSFooter;->mFooterText:Landroid/widget/TextView;
 
-    const v1, 0x7f0d026b
+    const v1, 0x7f0d026d
 
     invoke-static {v0, v1}, Lcom/android/systemui/FontSizeUtils;->updateFontSize(Landroid/widget/TextView;I)V
 

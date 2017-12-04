@@ -53,6 +53,14 @@
 
     const/4 v6, 0x0
 
+    iget-object v8, p0, Lcom/android/systemui/statusbar/BaseStatusBar$22$1;->val$guts:Lcom/android/systemui/statusbar/NotificationGuts;
+
+    invoke-virtual {v8}, Lcom/android/systemui/statusbar/NotificationGuts;->isAttachedToWindow()Z
+
+    move-result v8
+
+    if-eqz v8, :cond_2
+
     iget-object v8, p0, Lcom/android/systemui/statusbar/BaseStatusBar$22$1;->this$1:Lcom/android/systemui/statusbar/BaseStatusBar$22;
 
     iget-object v8, v8, Lcom/android/systemui/statusbar/BaseStatusBar$22;->this$0:Lcom/android/systemui/statusbar/BaseStatusBar;
@@ -171,5 +179,8 @@
 
     invoke-static {v6, v7}, Lcom/android/systemui/statusbar/BaseStatusBar;->-set1(Lcom/android/systemui/statusbar/BaseStatusBar;Lcom/android/systemui/statusbar/NotificationGuts;)Lcom/android/systemui/statusbar/NotificationGuts;
 
+    return-void
+
+    :cond_2
     return-void
 .end method

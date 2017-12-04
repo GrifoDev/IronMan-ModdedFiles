@@ -652,6 +652,18 @@
     return v0
 .end method
 
+.method public isSnapTargetTranslucentNavigationBar()Z
+    .locals 1
+
+    iget-object v0, p0, Lcom/android/systemui/stackdivider/WindowManagerProxy;->mMultiWindowManager:Lcom/samsung/android/bridge/multiwindow/MultiWindowManagerBridge;
+
+    invoke-virtual {v0}, Lcom/samsung/android/bridge/multiwindow/MultiWindowManagerBridge;->isSnapTargetTranslucentNavigationBar()Z
+
+    move-result v0
+
+    return v0
+.end method
+
 .method public maximizeDockedStack()V
     .locals 2
 

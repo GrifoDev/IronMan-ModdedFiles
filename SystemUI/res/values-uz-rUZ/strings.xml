@@ -238,6 +238,8 @@
     <string name="wifi_allow_scan_with_traffic_summary">"Ma’lumotlarni uzatish vaqtida  trafik hajmiga qarab Wi-Fi tarmoqlarni qidirish funksiyasini yoqish yoki o‘chirish"</string>
     <string name="select_logd_size_title">Jurnal buferi hajmi</string>
     <string name="select_logd_size_dialog_title">Jurnal xotirasi hajmini tanlang</string>
+    <string name="dev_logpersist_clear_warning_title">Qayd qilish qurilma xotirasi tozalansinmi?</string>
+    <string name="dev_logpersist_clear_warning_message">Qat’iy qayd qilish qurilmasi o‘chirilganda, qayd qilish qurilmasi ma’lumotlari o‘chirib tashlanadi.</string>
     <string name="select_logpersist_title">Jurnal ma’l-ni doimiy saqlash</string>
     <string name="select_logpersist_dialog_title">Doimiy saqlash u-n jrnl. buferini tanlash</string>
     <string name="select_usb_configuration_title">USB konfiguratsiyasini tanlang</string>
@@ -751,6 +753,7 @@ Agar internetdan foydalanishni davom ettirsangiz, buning uchun uyali aloqa opera
     <string name="wifi_authentication_failed_kt">Wi-Fi APni tekshirib bo‘lmadi.</string>
     <string name="wifi_authentication_no_response">Wi-Fi APga ulanib bo‘lmadi.</string>
     <string name="wifi_authentication_invalid_value">Haqiqiylik tekshiruvi bajarilmadi. ID va parolni tekshiring.</string>
+    <string name="wifi_disconnected">Wi-Fi uzilgan.</string>
     <string name="quick_settings_dnd_label">Bezovta qilinmasin</string>
     <string name="quick_settings_dnd_priority_label">Faqat muhimlari</string>
     <string name="quick_settings_dnd_alarms_label">Faqat signallar</string>
@@ -1382,11 +1385,11 @@ Batafsil ma’lumot olish uchun administrator bilan bog‘laning."</string>
     <string name="keyboard_key_numpad_template">Raqamli klaviatura (%1$s)</string>
     <string name="keyboard_popup_help">Meta tugma: Windows, Buyruq yoki operatsion tizimning boshqa simvol tugmasi.</string>
     <string name="keyboard_shortcut_group_system">Tizim yorliqlari</string>
-    <string name="keyboard_shortcut_group_system_home">Bosh ekran</string>
-    <string name="keyboard_shortcut_group_system_recents">So‘nggi ishlatilganlar</string>
+    <string name="keyboard_shortcut_group_system_home">Asosiy</string>
+    <string name="keyboard_shortcut_group_system_recents">Oxirgilar</string>
     <string name="keyboard_shortcut_group_system_back">Orqaga</string>
     <string name="keyboard_shortcut_group_system_notifications">Bildirishnomalar</string>
-    <string name="keyboard_shortcut_group_system_shortcuts_helper">Tezkor tugmalar</string>
+    <string name="keyboard_shortcut_group_system_shortcuts_helper">Klavisha birikmalari</string>
     <string name="keyboard_shortcut_group_system_switch_input">Matn kiritish usulini o‘zgartirish</string>
     <string name="keyboard_shortcut_group_system_all_apps">Barcha ilovalar</string>
     <string name="keyboard_shortcut_group_system_running_apps">Ishlayotgan ilovalar</string>
@@ -1400,7 +1403,7 @@ Batafsil ma’lumot olish uchun administrator bilan bog‘laning."</string>
     <string name="keyboard_shortcut_group_applications_im">IM</string>
     <string name="keyboard_shortcut_group_applications_music">Musiqa</string>
     <string name="keyboard_shortcut_group_applications_youtube">YouTube</string>
-    <string name="keyboard_shortcut_group_applications_calendar">Taqvim</string>
+    <string name="keyboard_shortcut_group_applications_calendar">Kalendar</string>
     <string name="keyboard_shortcut_group_applications_bixby">Bixby</string>
     <string name="keyboard_shortcut_group_applications_messages">Xabarlar</string>
     <string name="tuner_full_zen_title">Ovoz balandligini boshqarish tugmalari bilan ko‘rsatish</string>
@@ -1652,7 +1655,9 @@ Qizib ketish sababi quyidagilar bo‘lishi mumkin:
     <string name="battery_not_fully_connected_charging_title_vzw">Incomplete connection</string>
     <string name="battery_not_fully_connected_charging_text">Tezroq zaryadlash uchun qurilma bilan birga kelgan zaryadlash qurilmasidan foydalaning va u to‘g‘ri ulanganligiga ishonch hosil qiling.</string>
     <string name="battery_not_fully_connected_charging_text_vzw">Make sure the charger is properly connected.</string>
+    <string name="battery_not_fully_connected_charging_text_jpn">Zaryadlash qurilmasi to‘g‘ri ulanganligiga ishonch hosil qiling.</string>
     <string name="battery_not_fully_connected_charging_popup_text">Zaryadlash qurilmasi to‘g‘ri ulanganligiga ishonch hosil qiling. Qurilma bilan birga taqdim etilgan zaryadlash qurilmasidan foydalaning.</string>
+    <string name="battery_not_fully_connected_charging_popup_text_jpn">Zaryadlash qurilmasi to‘g‘ri ulanganligiga ishonch hosil qiling.</string>
     <string name="battery_charging_level_and_time_text">"Zaryadlanmoqda: %1$d%%
 (To‘liq zaryadlanishga taxminan %2$s qoldi)"</string>
     <string name="battery_charging_level_text">Zaryadlanmoqda: %d%%</string>
@@ -1877,6 +1882,8 @@ Please note that in order to enable your emergency calls (e.g., such as 112 call
     <string name="qs_detail_palm_capture_title">Rasm olish u-n ohista sur</string>
     <string name="noti_direct_reply_exceed_text_limit_toast">Boshqa matn kiritib bo‘lmaydi.</string>
     <string name="airplane_mode_tts_text">Samolyot rejimi</string>
+    <string name="all_noti_readout">Bitta bildirishnoma</string>
+    <string name="all_noti_readout2">%d ta bildirishnoma</string>
     <string name="car_lockscreen_disclaimer_title">Xavfsiz haydash</string>
     <string name="car_lockscreen_disclaimer_text">Harakat xavfsizligi va amaldagi qonunchilikka doim rioya qiling. Yo‘l ko‘rsatmalari noaniq, chala, xavfli, mos emas, taqiqlangan yoki ma’muriy hududlarni kesib o‘tadigan bo‘lishi mumkin. Biznes ma’lumotlari ham noaniq yoki chala bo‘lishi mumkin. Ma’lumotlar real vaqt rejimida bo‘lmasligi hamda joylashuv ma’lumotining aniqligi kafolatlanmaydi. Avtomobilni haydash mobaynida Android Auto xizmati bilan bog‘liq bo‘lmagan hollarda mobil qurilma yoki ilovalardan foydalanmang.</string>
     <string name="pip_close">Kadr ichida kadr – chiqish</string>

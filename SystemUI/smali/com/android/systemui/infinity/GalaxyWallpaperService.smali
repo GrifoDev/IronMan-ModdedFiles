@@ -722,7 +722,7 @@
     return-void
 .end method
 
-.method onScreenOff()V
+.method onScreenOff(Z)V
     .locals 2
 
     iget-object v0, p0, Lcom/android/systemui/infinity/GalaxyWallpaperService;->mRenderer:Lcom/android/systemui/infinity/GalaxyRenderer;
@@ -735,9 +735,7 @@
 
     iget-object v0, p0, Lcom/android/systemui/infinity/GalaxyWallpaperService;->mRenderer:Lcom/android/systemui/infinity/GalaxyRenderer;
 
-    const/4 v1, 0x1
-
-    invoke-virtual {v0, v1}, Lcom/android/systemui/infinity/GalaxyRenderer;->onScreenOff(Z)V
+    invoke-virtual {v0, p1}, Lcom/android/systemui/infinity/GalaxyRenderer;->onScreenOff(Z)V
 
     :cond_0
     return-void

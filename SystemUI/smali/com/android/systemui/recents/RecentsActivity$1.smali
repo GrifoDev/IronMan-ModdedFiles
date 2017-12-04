@@ -44,26 +44,35 @@
 
     move-result v9
 
-    if-eqz v9, :cond_1
+    if-nez v9, :cond_0
 
+    const-string/jumbo v9, "android.intent.action.ACTION_SCREEN_OFF_BY_PROXIMITY"
+
+    invoke-virtual {v0, v9}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v9
+
+    if-eqz v9, :cond_2
+
+    :cond_0
     iget-object v9, p0, Lcom/android/systemui/recents/RecentsActivity$1;->this$0:Lcom/android/systemui/recents/RecentsActivity;
 
     const/4 v10, 0x0
 
     invoke-virtual {v9, v10}, Lcom/android/systemui/recents/RecentsActivity;->dismissRecentsToHomeIfVisible(Z)Z
 
-    :cond_0
+    :cond_1
     :goto_0
     return-void
 
-    :cond_1
+    :cond_2
     const-string/jumbo v9, "android.intent.action.TIME_SET"
 
     invoke-virtual {v0, v9}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v9
 
-    if-eqz v9, :cond_0
+    if-eqz v9, :cond_1
 
     iget-object v9, p0, Lcom/android/systemui/recents/RecentsActivity$1;->this$0:Lcom/android/systemui/recents/RecentsActivity;
 
@@ -79,7 +88,7 @@
 
     cmp-long v9, v6, v10
 
-    if-eqz v9, :cond_0
+    if-eqz v9, :cond_1
 
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
@@ -87,7 +96,7 @@
 
     cmp-long v9, v2, v6
 
-    if-gez v9, :cond_0
+    if-gez v9, :cond_1
 
     invoke-static {}, Lcom/android/systemui/recents/Recents;->getTaskLoader()Lcom/android/systemui/recents/model/RecentsTaskLoader;
 
@@ -112,7 +121,7 @@
     add-int/lit8 v1, v9, -0x1
 
     :goto_1
-    if-ltz v1, :cond_3
+    if-ltz v1, :cond_4
 
     invoke-interface {v8, v1}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
@@ -124,13 +133,13 @@
 
     cmp-long v9, v2, v10
 
-    if-gtz v9, :cond_2
+    if-gtz v9, :cond_3
 
     iget-wide v10, v5, Landroid/app/ActivityManager$RecentTaskInfo;->lastActiveTime:J
 
     cmp-long v9, v10, v6
 
-    if-gez v9, :cond_2
+    if-gez v9, :cond_3
 
     invoke-static {}, Lcom/android/systemui/recents/Recents;->getSystemServices()Lcom/android/systemui/recents/misc/SystemServicesProxy;
 
@@ -140,12 +149,12 @@
 
     invoke-virtual {v9, v10}, Lcom/android/systemui/recents/misc/SystemServicesProxy;->removeTask(I)V
 
-    :cond_2
+    :cond_3
     add-int/lit8 v1, v1, -0x1
 
     goto :goto_1
 
-    :cond_3
+    :cond_4
     iget-object v9, p0, Lcom/android/systemui/recents/RecentsActivity$1;->this$0:Lcom/android/systemui/recents/RecentsActivity;
 
     const-string/jumbo v10, "OverviewLastStackTaskActiveTime"

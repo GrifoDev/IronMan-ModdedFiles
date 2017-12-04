@@ -569,7 +569,7 @@
 .method protected onConfigurationChanged(Landroid/content/res/Configuration;)V
     .locals 3
 
-    const v2, 0x7f0d0287
+    const v2, 0x7f0d0289
 
     invoke-super {p0, p1}, Landroid/widget/LinearLayout;->onConfigurationChanged(Landroid/content/res/Configuration;)V
 
@@ -579,7 +579,7 @@
 
     const v0, 0x7f130130
 
-    const v1, 0x7f0d0288
+    const v1, 0x7f0d028a
 
     invoke-static {p0, v0, v1}, Lcom/android/systemui/FontSizeUtils;->updateFontSize(Landroid/view/View;II)V
 

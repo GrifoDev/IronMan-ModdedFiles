@@ -460,7 +460,7 @@
 
     iget-object v0, p0, Lcom/android/systemui/statusbar/NotificationBottomBarView;->mNotiSettingButton:Landroid/widget/TextView;
 
-    const v1, 0x7f0f07a0
+    const v1, 0x7f0f07a3
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(I)V
 
@@ -471,7 +471,7 @@
 
     iget-object v0, p0, Lcom/android/systemui/statusbar/NotificationBottomBarView;->mBlockButton:Landroid/widget/TextView;
 
-    const v1, 0x7f0f07a1
+    const v1, 0x7f0f07a4
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(I)V
 
@@ -482,7 +482,7 @@
 
     iget-object v0, p0, Lcom/android/systemui/statusbar/NotificationBottomBarView;->mDoneButton:Landroid/widget/TextView;
 
-    const v1, 0x7f0f07a2
+    const v1, 0x7f0f07a5
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(I)V
 
@@ -493,7 +493,7 @@
 
     iget-object v0, p0, Lcom/android/systemui/statusbar/NotificationBottomBarView;->mBlockButtonInfoText:Landroid/widget/TextView;
 
-    const v1, 0x7f0f07a3
+    const v1, 0x7f0f07a6
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(I)V
 

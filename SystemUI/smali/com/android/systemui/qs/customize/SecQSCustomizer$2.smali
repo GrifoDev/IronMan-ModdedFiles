@@ -73,7 +73,7 @@
     :cond_0
     iget-object v0, p0, Lcom/android/systemui/qs/customize/SecQSCustomizer$2;->this$0:Lcom/android/systemui/qs/customize/SecQSCustomizer;
 
-    invoke-static {v0}, Lcom/android/systemui/qs/customize/SecQSCustomizer;->-get8(Lcom/android/systemui/qs/customize/SecQSCustomizer;)Lcom/android/systemui/statusbar/phone/NotificationsQuickSettingsContainer;
+    invoke-static {v0}, Lcom/android/systemui/qs/customize/SecQSCustomizer;->-get10(Lcom/android/systemui/qs/customize/SecQSCustomizer;)Lcom/android/systemui/statusbar/phone/NotificationsQuickSettingsContainer;
 
     move-result-object v0
 
@@ -128,7 +128,7 @@
     :cond_0
     iget-object v0, p0, Lcom/android/systemui/qs/customize/SecQSCustomizer$2;->this$0:Lcom/android/systemui/qs/customize/SecQSCustomizer;
 
-    invoke-static {v0}, Lcom/android/systemui/qs/customize/SecQSCustomizer;->-get8(Lcom/android/systemui/qs/customize/SecQSCustomizer;)Lcom/android/systemui/statusbar/phone/NotificationsQuickSettingsContainer;
+    invoke-static {v0}, Lcom/android/systemui/qs/customize/SecQSCustomizer;->-get10(Lcom/android/systemui/qs/customize/SecQSCustomizer;)Lcom/android/systemui/statusbar/phone/NotificationsQuickSettingsContainer;
 
     move-result-object v0
 

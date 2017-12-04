@@ -1603,6 +1603,13 @@
     invoke-virtual {v0, v1}, Lcom/android/keyguard/KeyguardUpdateMonitor;->removeCallback(Lcom/android/keyguard/KeyguardUpdateMonitorCallback;)V
 
     :cond_0
+    iget-boolean v0, p0, Lcom/android/keyguard/wallpaper/KeyguardMotionWallpaper;->mIsSensorRegistered:Z
+
+    if-eqz v0, :cond_1
+
+    invoke-direct {p0}, Lcom/android/keyguard/wallpaper/KeyguardMotionWallpaper;->unregisterSensor()V
+
+    :cond_1
     return-void
 .end method
 

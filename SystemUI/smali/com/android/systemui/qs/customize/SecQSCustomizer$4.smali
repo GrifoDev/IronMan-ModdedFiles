@@ -100,7 +100,7 @@
 
     iget-object v6, p0, Lcom/android/systemui/qs/customize/SecQSCustomizer$4;->this$0:Lcom/android/systemui/qs/customize/SecQSCustomizer;
 
-    invoke-static {v6}, Lcom/android/systemui/qs/customize/SecQSCustomizer;->-get10(Lcom/android/systemui/qs/customize/SecQSCustomizer;)I
+    invoke-static {v6}, Lcom/android/systemui/qs/customize/SecQSCustomizer;->-get12(Lcom/android/systemui/qs/customize/SecQSCustomizer;)I
 
     move-result v6
 
@@ -129,13 +129,13 @@
 
     move-result v4
 
-    const v5, 0x7f130490
+    const v5, 0x7f130492
 
     if-ne v4, v5, :cond_2
 
     iget-object v4, p0, Lcom/android/systemui/qs/customize/SecQSCustomizer$4;->this$0:Lcom/android/systemui/qs/customize/SecQSCustomizer;
 
-    invoke-static {v4}, Lcom/android/systemui/qs/customize/SecQSCustomizer;->-get10(Lcom/android/systemui/qs/customize/SecQSCustomizer;)I
+    invoke-static {v4}, Lcom/android/systemui/qs/customize/SecQSCustomizer;->-get12(Lcom/android/systemui/qs/customize/SecQSCustomizer;)I
 
     move-result v4
 
@@ -157,7 +157,7 @@
 
     iget-object v6, p0, Lcom/android/systemui/qs/customize/SecQSCustomizer$4;->this$0:Lcom/android/systemui/qs/customize/SecQSCustomizer;
 
-    invoke-static {v6}, Lcom/android/systemui/qs/customize/SecQSCustomizer;->-get10(Lcom/android/systemui/qs/customize/SecQSCustomizer;)I
+    invoke-static {v6}, Lcom/android/systemui/qs/customize/SecQSCustomizer;->-get12(Lcom/android/systemui/qs/customize/SecQSCustomizer;)I
 
     move-result v6
 
@@ -184,13 +184,13 @@
 
     move-result v4
 
-    const v5, 0x7f13048c
+    const v5, 0x7f13048e
 
     if-ne v4, v5, :cond_3
 
     iget-object v4, p0, Lcom/android/systemui/qs/customize/SecQSCustomizer$4;->this$0:Lcom/android/systemui/qs/customize/SecQSCustomizer;
 
-    invoke-static {v4}, Lcom/android/systemui/qs/customize/SecQSCustomizer;->-get10(Lcom/android/systemui/qs/customize/SecQSCustomizer;)I
+    invoke-static {v4}, Lcom/android/systemui/qs/customize/SecQSCustomizer;->-get12(Lcom/android/systemui/qs/customize/SecQSCustomizer;)I
 
     move-result v4
 
@@ -212,7 +212,7 @@
 
     iget-object v6, p0, Lcom/android/systemui/qs/customize/SecQSCustomizer$4;->this$0:Lcom/android/systemui/qs/customize/SecQSCustomizer;
 
-    invoke-static {v6}, Lcom/android/systemui/qs/customize/SecQSCustomizer;->-get10(Lcom/android/systemui/qs/customize/SecQSCustomizer;)I
+    invoke-static {v6}, Lcom/android/systemui/qs/customize/SecQSCustomizer;->-get12(Lcom/android/systemui/qs/customize/SecQSCustomizer;)I
 
     move-result v6
 
@@ -239,7 +239,7 @@
 
     move-result v4
 
-    const v5, 0x7f13048d
+    const v5, 0x7f13048f
 
     if-ne v4, v5, :cond_4
 
@@ -256,7 +256,7 @@
 
     move-result v4
 
-    const v5, 0x7f13048b
+    const v5, 0x7f13048d
 
     if-ne v4, v5, :cond_5
 
@@ -290,7 +290,7 @@
     :pswitch_5
     iget-object v4, p0, Lcom/android/systemui/qs/customize/SecQSCustomizer$4;->this$0:Lcom/android/systemui/qs/customize/SecQSCustomizer;
 
-    invoke-static {v4}, Lcom/android/systemui/qs/customize/SecQSCustomizer;->-get6(Lcom/android/systemui/qs/customize/SecQSCustomizer;)Z
+    invoke-static {v4}, Lcom/android/systemui/qs/customize/SecQSCustomizer;->-get7(Lcom/android/systemui/qs/customize/SecQSCustomizer;)Z
 
     move-result v4
 
@@ -310,7 +310,7 @@
 
     iget-object v6, p0, Lcom/android/systemui/qs/customize/SecQSCustomizer$4;->this$0:Lcom/android/systemui/qs/customize/SecQSCustomizer;
 
-    invoke-static {v6}, Lcom/android/systemui/qs/customize/SecQSCustomizer;->-get10(Lcom/android/systemui/qs/customize/SecQSCustomizer;)I
+    invoke-static {v6}, Lcom/android/systemui/qs/customize/SecQSCustomizer;->-get12(Lcom/android/systemui/qs/customize/SecQSCustomizer;)I
 
     move-result v6
 

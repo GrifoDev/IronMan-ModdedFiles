@@ -238,6 +238,8 @@
     <string name="wifi_allow_scan_with_traffic_summary">Povolí nebo zakáže Wi-Fi roaming na základě množství datového provozu na rozhraní.</string>
     <string name="select_logd_size_title">Vyrovnávací paměť protokol. nástroje</string>
     <string name="select_logd_size_dialog_title">Velikost vyrovnávací paměti protokol. nástroje</string>
+    <string name="dev_logpersist_clear_warning_title">Smazat úložiště trvalého protokolovače?</string>
+    <string name="dev_logpersist_clear_warning_message">Data protokolovače se při vypnutí trvalého protokolovače odstraní.</string>
     <string name="select_logpersist_title">Ukládat data protokolů trvale</string>
     <string name="select_logpersist_dialog_title">Vyberte vyr. paměti protokolů pro ukládání</string>
     <string name="select_usb_configuration_title">Výběr konfigurace USB</string>
@@ -751,6 +753,7 @@ Obnovení může vést k poplatkům od operátora."</string>
     <string name="wifi_authentication_failed_kt">Ověření přístupového bodu Wi-Fi se nezdařilo.</string>
     <string name="wifi_authentication_no_response">Připojení k přístupovému bodu Wi-Fi se nezdařilo.</string>
     <string name="wifi_authentication_invalid_value">Ověření se nezdařilo. Zkontrolujte ID a heslo.</string>
+    <string name="wifi_disconnected">Wi-Fi bylo odpojeno.</string>
     <string name="quick_settings_dnd_label">Nerušit</string>
     <string name="quick_settings_dnd_priority_label">Pouze prioritní</string>
     <string name="quick_settings_dnd_alarms_label">Pouze budíky</string>
@@ -1381,7 +1384,7 @@ O další informace požádejte svého administrátora."</string>
     <string name="keyboard_key_numpad_template">%1$s na numerické klávesnici</string>
     <string name="keyboard_popup_help">Meta klávesa: The Windows, Command nebo jiná klávesa se symbolem operačního systému.</string>
     <string name="keyboard_shortcut_group_system">Systémoví zástupci</string>
-    <string name="keyboard_shortcut_group_system_home">Plocha</string>
+    <string name="keyboard_shortcut_group_system_home">Domů</string>
     <string name="keyboard_shortcut_group_system_recents">Poslední</string>
     <string name="keyboard_shortcut_group_system_back">Zpět</string>
     <string name="keyboard_shortcut_group_system_notifications">Oznámení</string>
@@ -1651,7 +1654,9 @@ Přehřátí může být způsobeno:
     <string name="battery_not_fully_connected_charging_title_vzw">Incomplete connection</string>
     <string name="battery_not_fully_connected_charging_text">Abyste zajistili rychlejší nabíjení, použijte nabíječku dodanou se zařízením a ujistěte se, zda je správně připojená.</string>
     <string name="battery_not_fully_connected_charging_text_vzw">Make sure the charger is properly connected.</string>
+    <string name="battery_not_fully_connected_charging_text_jpn">Ujistěte se, zda je nabíječka správně připojená.</string>
     <string name="battery_not_fully_connected_charging_popup_text">Ujistěte se, zda je nabíječka správně připojená. Použijte nabíječku dodanou se zařízením.</string>
+    <string name="battery_not_fully_connected_charging_popup_text_jpn">Ujistěte se, zda je nabíječka správně připojená.</string>
     <string name="battery_charging_level_and_time_text">"Nabíjení: %1$d %%
 (Přibližně %2$s než bude baterie úplně nabitá)"</string>
     <string name="battery_charging_level_text">Nabíjení: %d %%</string>
@@ -1876,6 +1881,8 @@ Please note that in order to enable your emergency calls (e.g., such as 112 call
     <string name="qs_detail_palm_capture_title">Dlaní uložit obrazovku</string>
     <string name="noti_direct_reply_exceed_text_limit_toast">Nelze zadat žádný další text.</string>
     <string name="airplane_mode_tts_text">Režim Letadlo</string>
+    <string name="all_noti_readout">Jedno oznámení</string>
+    <string name="all_noti_readout2">%d oznámení</string>
     <string name="car_lockscreen_disclaimer_title">Řiďte bezpečně</string>
     <string name="car_lockscreen_disclaimer_text">Věnujte plnou pozornost řízení a dodržujte platné předpisy. Trasy mohou být nepřesné, neúplné, nebezpečné, nevhodné, zakázané nebo mohou zahrnovat překročení hranic. Informace o firmách mohou být také nepřesné nebo neúplné. Data se neaktualizují v reálném čase a přesnost polohy nelze zaručit. Mobilní zařízení ani aplikace určené pro Android Auto nepoužívejte za jízdy.</string>
     <string name="pip_close">Ukončit PIP</string>

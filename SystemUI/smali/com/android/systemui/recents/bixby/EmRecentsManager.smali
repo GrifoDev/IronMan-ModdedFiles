@@ -1256,103 +1256,125 @@
 .end method
 
 .method private onCloseApp(Lcom/samsung/android/sdk/bixby/data/State;)Lcom/android/systemui/recents/bixby/EmRecentsManager$Response;
-    .locals 5
+    .locals 6
+
+    invoke-virtual {p1}, Lcom/samsung/android/sdk/bixby/data/State;->getRuleId()Ljava/lang/String;
+
+    move-result-object v2
 
     invoke-virtual {p0}, Lcom/android/systemui/recents/bixby/EmRecentsManager;->getNlgBuilder()Lcom/android/systemui/recents/bixby/EmRecentsManager$NlgBuilder;
 
     move-result-object v1
 
-    iget-object v2, p0, Lcom/android/systemui/recents/bixby/EmRecentsManager;->mBixbyRecentsViewHandler:Lcom/android/systemui/recents/bixby/IBixbyRecentsViewHandler;
+    iget-object v3, p0, Lcom/android/systemui/recents/bixby/EmRecentsManager;->mBixbyRecentsViewHandler:Lcom/android/systemui/recents/bixby/IBixbyRecentsViewHandler;
 
-    const/4 v3, 0x0
+    const/4 v4, 0x0
 
-    invoke-interface {v2, v3}, Lcom/android/systemui/recents/bixby/IBixbyRecentsViewHandler;->exitLockTaskEditMode(Z)Z
+    invoke-interface {v3, v4}, Lcom/android/systemui/recents/bixby/IBixbyRecentsViewHandler;->exitLockTaskEditMode(Z)Z
 
-    iget-object v2, p0, Lcom/android/systemui/recents/bixby/EmRecentsManager;->mBixbyRecentsViewHandler:Lcom/android/systemui/recents/bixby/IBixbyRecentsViewHandler;
+    iget-object v3, p0, Lcom/android/systemui/recents/bixby/EmRecentsManager;->mBixbyRecentsViewHandler:Lcom/android/systemui/recents/bixby/IBixbyRecentsViewHandler;
 
-    invoke-interface {v2}, Lcom/android/systemui/recents/bixby/IBixbyRecentsViewHandler;->getTitleOfFocusedTask()Ljava/lang/String;
+    invoke-interface {v3}, Lcom/android/systemui/recents/bixby/IBixbyRecentsViewHandler;->getTitleOfFocusedTask()Ljava/lang/String;
 
     move-result-object v0
 
     if-nez v0, :cond_0
 
-    const-string/jumbo v2, "RecentTask"
+    const-string/jumbo v3, "RecentTask"
 
-    const-string/jumbo v3, "Exist"
+    const-string/jumbo v4, "Exist"
 
-    const-string/jumbo v4, "No"
+    const-string/jumbo v5, "No"
 
-    invoke-virtual {v1, v2, v3, v4}, Lcom/android/systemui/recents/bixby/EmRecentsManager$NlgBuilder;->addScreenParam(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Lcom/android/systemui/recents/bixby/EmRecentsManager$NlgBuilder;
+    invoke-virtual {v1, v3, v4, v5}, Lcom/android/systemui/recents/bixby/EmRecentsManager$NlgBuilder;->addScreenParam(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Lcom/android/systemui/recents/bixby/EmRecentsManager$NlgBuilder;
 
-    move-result-object v2
+    move-result-object v3
 
-    invoke-virtual {v2}, Lcom/android/systemui/recents/bixby/EmRecentsManager$NlgBuilder;->send()V
+    invoke-virtual {v3}, Lcom/android/systemui/recents/bixby/EmRecentsManager$NlgBuilder;->send()V
 
-    sget-object v2, Lcom/android/systemui/recents/bixby/EmRecentsManager$Response;->FAILURE:Lcom/android/systemui/recents/bixby/EmRecentsManager$Response;
+    sget-object v3, Lcom/android/systemui/recents/bixby/EmRecentsManager$Response;->FAILURE:Lcom/android/systemui/recents/bixby/EmRecentsManager$Response;
 
-    return-object v2
+    return-object v3
 
     :cond_0
-    iget-object v2, p0, Lcom/android/systemui/recents/bixby/EmRecentsManager;->mBixbyRecentsViewHandler:Lcom/android/systemui/recents/bixby/IBixbyRecentsViewHandler;
+    iget-object v3, p0, Lcom/android/systemui/recents/bixby/EmRecentsManager;->mBixbyRecentsViewHandler:Lcom/android/systemui/recents/bixby/IBixbyRecentsViewHandler;
 
-    invoke-interface {v2}, Lcom/android/systemui/recents/bixby/IBixbyRecentsViewHandler;->closeFocusedTask()Z
+    invoke-interface {v3}, Lcom/android/systemui/recents/bixby/IBixbyRecentsViewHandler;->closeFocusedTask()Z
 
-    move-result v2
+    move-result v3
 
-    if-nez v2, :cond_1
+    if-nez v3, :cond_1
 
-    sget-object v2, Lcom/android/systemui/recents/bixby/EmRecentsManager;->TAG:Ljava/lang/String;
+    sget-object v3, Lcom/android/systemui/recents/bixby/EmRecentsManager;->TAG:Ljava/lang/String;
 
-    const-string/jumbo v3, "Fail to close the app."
+    new-instance v4, Ljava/lang/StringBuilder;
 
-    invoke-static {v2, v3}, Landroid/util/Slog;->e(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
 
-    sget-object v2, Lcom/android/systemui/recents/bixby/EmRecentsManager$Response;->FAILURE:Lcom/android/systemui/recents/bixby/EmRecentsManager$Response;
+    const-string/jumbo v5, "Fail to close the app. "
 
-    return-object v2
+    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v4
+
+    iget-object v5, p0, Lcom/android/systemui/recents/bixby/EmRecentsManager;->mBixbyRecentsViewHandler:Lcom/android/systemui/recents/bixby/IBixbyRecentsViewHandler;
+
+    invoke-interface {v5}, Lcom/android/systemui/recents/bixby/IBixbyRecentsViewHandler;->getLastErrorNo()I
+
+    move-result v5
+
+    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v4
+
+    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v4
+
+    invoke-static {v3, v4}, Landroid/util/Slog;->e(Ljava/lang/String;Ljava/lang/String;)I
+
+    sget-object v3, Lcom/android/systemui/recents/bixby/EmRecentsManager$Response;->FAILURE:Lcom/android/systemui/recents/bixby/EmRecentsManager$Response;
+
+    return-object v3
 
     :cond_1
-    invoke-virtual {p1}, Lcom/samsung/android/sdk/bixby/data/State;->getRuleId()Ljava/lang/String;
-
-    move-result-object v2
-
     const-string/jumbo v3, "SystemUI_3003"
 
     invoke-virtual {v2, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move-result v2
+    move-result v3
 
-    if-eqz v2, :cond_2
-
-    const-string/jumbo v2, "AppName"
-
-    const-string/jumbo v3, "Match"
-
-    const-string/jumbo v4, "Yes"
-
-    invoke-virtual {v1, v2, v3, v4}, Lcom/android/systemui/recents/bixby/EmRecentsManager$NlgBuilder;->addScreenParam(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Lcom/android/systemui/recents/bixby/EmRecentsManager$NlgBuilder;
-
-    move-result-object v2
+    if-eqz v3, :cond_2
 
     const-string/jumbo v3, "AppName"
 
-    invoke-virtual {v2, v3, v0}, Lcom/android/systemui/recents/bixby/EmRecentsManager$NlgBuilder;->addResultParam(Ljava/lang/String;Ljava/lang/String;)Lcom/android/systemui/recents/bixby/EmRecentsManager$NlgBuilder;
+    const-string/jumbo v4, "Match"
+
+    const-string/jumbo v5, "Yes"
+
+    invoke-virtual {v1, v3, v4, v5}, Lcom/android/systemui/recents/bixby/EmRecentsManager$NlgBuilder;->addScreenParam(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Lcom/android/systemui/recents/bixby/EmRecentsManager$NlgBuilder;
+
+    move-result-object v3
+
+    const-string/jumbo v4, "AppName"
+
+    invoke-virtual {v3, v4, v0}, Lcom/android/systemui/recents/bixby/EmRecentsManager$NlgBuilder;->addResultParam(Ljava/lang/String;Ljava/lang/String;)Lcom/android/systemui/recents/bixby/EmRecentsManager$NlgBuilder;
 
     :goto_0
     invoke-virtual {v1}, Lcom/android/systemui/recents/bixby/EmRecentsManager$NlgBuilder;->send()V
 
-    sget-object v2, Lcom/android/systemui/recents/bixby/EmRecentsManager$Response;->SUCCESS:Lcom/android/systemui/recents/bixby/EmRecentsManager$Response;
+    sget-object v3, Lcom/android/systemui/recents/bixby/EmRecentsManager$Response;->SUCCESS:Lcom/android/systemui/recents/bixby/EmRecentsManager$Response;
 
-    return-object v2
+    return-object v3
 
     :cond_2
-    const-string/jumbo v2, "RecentTask"
+    const-string/jumbo v3, "RecentTask"
 
-    const-string/jumbo v3, "Exist"
+    const-string/jumbo v4, "Exist"
 
-    const-string/jumbo v4, "Yes"
+    const-string/jumbo v5, "Yes"
 
-    invoke-virtual {v1, v2, v3, v4}, Lcom/android/systemui/recents/bixby/EmRecentsManager$NlgBuilder;->addScreenParam(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Lcom/android/systemui/recents/bixby/EmRecentsManager$NlgBuilder;
+    invoke-virtual {v1, v3, v4, v5}, Lcom/android/systemui/recents/bixby/EmRecentsManager$NlgBuilder;->addScreenParam(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Lcom/android/systemui/recents/bixby/EmRecentsManager$NlgBuilder;
 
     goto :goto_0
 .end method
@@ -1423,47 +1445,6 @@
 .method private onLaunchApp(Lcom/samsung/android/sdk/bixby/data/State;)Lcom/android/systemui/recents/bixby/EmRecentsManager$Response;
     .locals 8
 
-    const/4 v1, 0x0
-
-    invoke-virtual {p1}, Lcom/samsung/android/sdk/bixby/data/State;->getParamMap()Ljava/util/Map;
-
-    move-result-object v5
-
-    const-string/jumbo v6, "MultiwindowMode"
-
-    invoke-interface {v5, v6}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object v2
-
-    check-cast v2, Lcom/samsung/android/sdk/bixby/data/Parameter;
-
-    if-eqz v2, :cond_0
-
-    invoke-virtual {v2}, Lcom/samsung/android/sdk/bixby/data/Parameter;->getSlotValue()Ljava/lang/String;
-
-    move-result-object v1
-
-    :cond_0
-    if-eqz v1, :cond_1
-
-    invoke-virtual {v1}, Ljava/lang/String;->isEmpty()Z
-
-    move-result v5
-
-    if-nez v5, :cond_1
-
-    const-string/jumbo v5, "modeName_value"
-
-    invoke-virtual {v5, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v5
-
-    if-eqz v5, :cond_2
-
-    :cond_1
-    const-string/jumbo v1, "normal"
-
-    :cond_2
     invoke-virtual {p1}, Lcom/samsung/android/sdk/bixby/data/State;->getRuleId()Ljava/lang/String;
 
     move-result-object v4
@@ -1484,32 +1465,92 @@
 
     invoke-interface {v5, v6}, Lcom/android/systemui/recents/bixby/IBixbyRecentsViewHandler;->exitLockTaskEditMode(Z)Z
 
-    const-string/jumbo v5, "SystemUI_3002"
-
-    invoke-virtual {v4, v5}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v5
-
-    if-eqz v5, :cond_3
-
     iget-object v5, p0, Lcom/android/systemui/recents/bixby/EmRecentsManager;->mBixbyRecentsViewHandler:Lcom/android/systemui/recents/bixby/IBixbyRecentsViewHandler;
 
     invoke-interface {v5}, Lcom/android/systemui/recents/bixby/IBixbyRecentsViewHandler;->getTitleOfFocusedTask()Ljava/lang/String;
 
     move-result-object v0
 
+    if-nez v0, :cond_0
+
+    const-string/jumbo v5, "RecentTask"
+
+    const-string/jumbo v6, "Exist"
+
+    const-string/jumbo v7, "No"
+
+    invoke-virtual {v3, v5, v6, v7}, Lcom/android/systemui/recents/bixby/EmRecentsManager$NlgBuilder;->addScreenParam(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Lcom/android/systemui/recents/bixby/EmRecentsManager$NlgBuilder;
+
+    move-result-object v5
+
+    invoke-virtual {v5}, Lcom/android/systemui/recents/bixby/EmRecentsManager$NlgBuilder;->send()V
+
+    sget-object v5, Lcom/android/systemui/recents/bixby/EmRecentsManager$Response;->FAILURE:Lcom/android/systemui/recents/bixby/EmRecentsManager$Response;
+
+    return-object v5
+
+    :cond_0
+    const/4 v1, 0x0
+
+    invoke-virtual {p1}, Lcom/samsung/android/sdk/bixby/data/State;->getParamMap()Ljava/util/Map;
+
+    move-result-object v5
+
+    const-string/jumbo v6, "MultiwindowMode"
+
+    invoke-interface {v5, v6}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v2
+
+    check-cast v2, Lcom/samsung/android/sdk/bixby/data/Parameter;
+
+    if-eqz v2, :cond_1
+
+    invoke-virtual {v2}, Lcom/samsung/android/sdk/bixby/data/Parameter;->getSlotValue()Ljava/lang/String;
+
+    move-result-object v1
+
+    :cond_1
+    if-eqz v1, :cond_2
+
+    invoke-virtual {v1}, Ljava/lang/String;->isEmpty()Z
+
+    move-result v5
+
+    if-nez v5, :cond_2
+
+    const-string/jumbo v5, "modeName_value"
+
+    invoke-virtual {v5, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v5
+
+    if-eqz v5, :cond_3
+
+    :cond_2
+    const-string/jumbo v1, "normal"
+
+    :cond_3
+    const-string/jumbo v5, "SystemUI_3002"
+
+    invoke-virtual {v4, v5}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v5
+
+    if-eqz v5, :cond_4
+
     const-string/jumbo v5, "AppName"
 
     invoke-virtual {v3, v5, v0}, Lcom/android/systemui/recents/bixby/EmRecentsManager$NlgBuilder;->addResultParam(Ljava/lang/String;Ljava/lang/String;)Lcom/android/systemui/recents/bixby/EmRecentsManager$NlgBuilder;
 
-    :cond_3
+    :cond_4
     iget-object v5, p0, Lcom/android/systemui/recents/bixby/EmRecentsManager;->mBixbyRecentsViewHandler:Lcom/android/systemui/recents/bixby/IBixbyRecentsViewHandler;
 
     invoke-interface {v5, v1}, Lcom/android/systemui/recents/bixby/IBixbyRecentsViewHandler;->launchFocusedTask(Ljava/lang/String;)Z
 
     move-result v5
 
-    if-nez v5, :cond_4
+    if-nez v5, :cond_5
 
     iget-object v5, p0, Lcom/android/systemui/recents/bixby/EmRecentsManager;->mBixbyRecentsViewHandler:Lcom/android/systemui/recents/bixby/IBixbyRecentsViewHandler;
 
@@ -1545,7 +1586,7 @@
 
     move-result-object v6
 
-    invoke-static {v5, v6}, Landroid/util/Slog;->w(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {v5, v6}, Landroid/util/Slog;->e(Ljava/lang/String;Ljava/lang/String;)I
 
     sget-object v5, Lcom/android/systemui/recents/bixby/EmRecentsManager$Response;->FAILURE:Lcom/android/systemui/recents/bixby/EmRecentsManager$Response;
 
@@ -1574,7 +1615,7 @@
 
     return-object v5
 
-    :cond_4
+    :cond_5
     const-string/jumbo v5, "Multiwindow"
 
     const-string/jumbo v6, "Available"
@@ -1590,8 +1631,6 @@
     sget-object v5, Lcom/android/systemui/recents/bixby/EmRecentsManager$Response;->SUCCESS:Lcom/android/systemui/recents/bixby/EmRecentsManager$Response;
 
     return-object v5
-
-    nop
 
     :pswitch_data_0
     .packed-switch -0x3
@@ -2374,11 +2413,31 @@
     :cond_e
     new-instance v7, Landroid/content/Intent;
 
-    invoke-direct {v7}, Landroid/content/Intent;-><init>()V
+    const-string/jumbo v20, "android.intent.action.MAIN"
+
+    move-object/from16 v0, v20
+
+    invoke-direct {v7, v0}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
+
+    const-string/jumbo v20, "android.intent.category.LAUNCHER"
+
+    move-object/from16 v0, v20
+
+    invoke-virtual {v7, v0}, Landroid/content/Intent;->addCategory(Ljava/lang/String;)Landroid/content/Intent;
 
     new-instance v9, Landroid/content/Intent;
 
-    invoke-direct {v9}, Landroid/content/Intent;-><init>()V
+    const-string/jumbo v20, "android.intent.action.MAIN"
+
+    move-object/from16 v0, v20
+
+    invoke-direct {v9, v0}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
+
+    const-string/jumbo v20, "android.intent.category.LAUNCHER"
+
+    move-object/from16 v0, v20
+
+    invoke-virtual {v9, v0}, Landroid/content/Intent;->addCategory(Ljava/lang/String;)Landroid/content/Intent;
 
     move-object/from16 v0, v18
 
@@ -2555,6 +2614,10 @@
 .method private onLockApp(Lcom/samsung/android/sdk/bixby/data/State;Z)Lcom/android/systemui/recents/bixby/EmRecentsManager$Response;
     .locals 7
 
+    invoke-virtual {p1}, Lcom/samsung/android/sdk/bixby/data/State;->getRuleId()Ljava/lang/String;
+
+    move-result-object v2
+
     invoke-virtual {p0}, Lcom/android/systemui/recents/bixby/EmRecentsManager;->getNlgBuilder()Lcom/android/systemui/recents/bixby/EmRecentsManager$NlgBuilder;
 
     move-result-object v1
@@ -2584,10 +2647,6 @@
     return-object v4
 
     :cond_0
-    invoke-virtual {p1}, Lcom/samsung/android/sdk/bixby/data/State;->getRuleId()Ljava/lang/String;
-
-    move-result-object v2
-
     const-string/jumbo v4, "SystemUI_3004"
 
     invoke-virtual {v2, v4}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -2663,7 +2722,7 @@
 
     move-result-object v5
 
-    invoke-static {v4, v5}, Landroid/util/Slog;->w(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {v4, v5}, Landroid/util/Slog;->e(Ljava/lang/String;Ljava/lang/String;)I
 
     :goto_1
     sget-object v4, Lcom/android/systemui/recents/bixby/EmRecentsManager$Response;->FAILURE:Lcom/android/systemui/recents/bixby/EmRecentsManager$Response;
@@ -4009,6 +4068,14 @@
 
     iget-object v0, p0, Lcom/android/systemui/recents/bixby/EmRecentsManager;->mBixbyApi:Lcom/samsung/android/sdk/bixby/BixbyApi;
 
+    invoke-virtual {v0}, Lcom/samsung/android/sdk/bixby/BixbyApi;->isRuleRunning()Z
+
+    move-result v0
+
+    if-nez v0, :cond_0
+
+    iget-object v0, p0, Lcom/android/systemui/recents/bixby/EmRecentsManager;->mBixbyApi:Lcom/samsung/android/sdk/bixby/BixbyApi;
+
     const-string/jumbo v1, "Recents"
 
     invoke-virtual {v0, v1}, Lcom/samsung/android/sdk/bixby/BixbyApi;->setActiveApp(Ljava/lang/String;)V
@@ -4019,6 +4086,7 @@
 
     invoke-virtual {v0, v1}, Lcom/samsung/android/sdk/bixby/BixbyApi;->setInterimStateListener(Lcom/samsung/android/sdk/bixby/BixbyApi$InterimStateListener;)V
 
+    :cond_0
     const-string/jumbo v0, "Recents"
 
     invoke-direct {p0, v0}, Lcom/android/systemui/recents/bixby/EmRecentsManager;->updateLastScreenState(Ljava/lang/String;)V
@@ -4217,10 +4285,6 @@
     const/4 v0, 0x0
 
     iput-object v0, p0, Lcom/android/systemui/recents/bixby/EmRecentsManager;->mBixbyRecentsViewHandler:Lcom/android/systemui/recents/bixby/IBixbyRecentsViewHandler;
-
-    const/4 v0, 0x0
-
-    iput-boolean v0, p0, Lcom/android/systemui/recents/bixby/EmRecentsManager;->mRecentsLaunchedByBixby:Z
 
     return-void
 .end method
@@ -4644,10 +4708,14 @@
     goto :goto_1
 .end method
 
-.method public isRecentsLaunchedByBixby()Z
+.method public isBixbyRuleRunning()Z
     .locals 1
 
-    iget-boolean v0, p0, Lcom/android/systemui/recents/bixby/EmRecentsManager;->mRecentsLaunchedByBixby:Z
+    iget-object v0, p0, Lcom/android/systemui/recents/bixby/EmRecentsManager;->mBixbyApi:Lcom/samsung/android/sdk/bixby/BixbyApi;
+
+    invoke-virtual {v0}, Lcom/samsung/android/sdk/bixby/BixbyApi;->isRuleRunning()Z
+
+    move-result v0
 
     return v0
 .end method
@@ -4671,15 +4739,20 @@
 .method public onOpenRecents(Lcom/samsung/android/sdk/bixby/data/State;Z)Lcom/android/systemui/recents/bixby/EmRecentsManager$Response;
     .locals 3
 
+    :try_start_0
+    iget-object v1, p0, Lcom/android/systemui/recents/bixby/EmRecentsManager;->mBixbyRecentsViewHandler:Lcom/android/systemui/recents/bixby/IBixbyRecentsViewHandler;
+
+    if-nez v1, :cond_1
+
     if-nez p2, :cond_0
 
-    :try_start_0
     sget-object v1, Lcom/android/systemui/recents/bixby/EmRecentsManager;->mRecents:Lcom/android/systemui/recents/Recents;
 
     const/4 v2, 0x0
 
     invoke-virtual {v1, v2}, Lcom/android/systemui/recents/Recents;->toggleRecents(Landroid/view/Display;)V
 
+    :goto_0
     iput-object p1, p0, Lcom/android/systemui/recents/bixby/EmRecentsManager;->mWaitState:Lcom/samsung/android/sdk/bixby/data/State;
 
     sget-object v1, Lcom/android/systemui/recents/bixby/EmRecentsManager$Response;->NO_RESPONSE:Lcom/android/systemui/recents/bixby/EmRecentsManager$Response;
@@ -4687,28 +4760,18 @@
     return-object v1
 
     :cond_0
-    invoke-virtual {p1}, Lcom/samsung/android/sdk/bixby/data/State;->isLastState()Ljava/lang/Boolean;
+    invoke-static {}, Landroid/app/ActivityManagerNative;->getDefault()Landroid/app/IActivityManager;
 
     move-result-object v1
 
-    invoke-virtual {v1}, Ljava/lang/Boolean;->booleanValue()Z
+    const/4 v2, 0x0
 
-    move-result v1
-
-    if-eqz v1, :cond_1
-
-    invoke-virtual {p0}, Lcom/android/systemui/recents/bixby/EmRecentsManager;->getNlgBuilder()Lcom/android/systemui/recents/bixby/EmRecentsManager$NlgBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Lcom/android/systemui/recents/bixby/EmRecentsManager$NlgBuilder;->send()V
-
-    :cond_1
-    sget-object v1, Lcom/android/systemui/recents/bixby/EmRecentsManager$Response;->SUCCESS:Lcom/android/systemui/recents/bixby/EmRecentsManager$Response;
+    invoke-interface {v1, v2}, Landroid/app/IActivityManager;->setFocusedStack(I)V
     :try_end_0
     .catch Ljava/lang/NullPointerException; {:try_start_0 .. :try_end_0} :catch_0
+    .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    return-object v1
+    goto :goto_0
 
     :catch_0
     move-exception v0
@@ -4720,6 +4783,32 @@
     invoke-static {v1, v2, v0}, Landroid/util/Slog;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
     sget-object v1, Lcom/android/systemui/recents/bixby/EmRecentsManager$Response;->FAILURE:Lcom/android/systemui/recents/bixby/EmRecentsManager$Response;
+
+    return-object v1
+
+    :cond_1
+    :try_start_1
+    invoke-virtual {p1}, Lcom/samsung/android/sdk/bixby/data/State;->isLastState()Ljava/lang/Boolean;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/lang/Boolean;->booleanValue()Z
+
+    move-result v1
+
+    if-eqz v1, :cond_2
+
+    invoke-virtual {p0}, Lcom/android/systemui/recents/bixby/EmRecentsManager;->getNlgBuilder()Lcom/android/systemui/recents/bixby/EmRecentsManager$NlgBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Lcom/android/systemui/recents/bixby/EmRecentsManager$NlgBuilder;->send()V
+
+    :cond_2
+    sget-object v1, Lcom/android/systemui/recents/bixby/EmRecentsManager$Response;->SUCCESS:Lcom/android/systemui/recents/bixby/EmRecentsManager$Response;
+    :try_end_1
+    .catch Ljava/lang/NullPointerException; {:try_start_1 .. :try_end_1} :catch_0
+    .catch Landroid/os/RemoteException; {:try_start_1 .. :try_end_1} :catch_0
 
     return-object v1
 .end method
@@ -4749,8 +4838,6 @@
 
     invoke-static {v0, v1}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    iput-boolean v2, p0, Lcom/android/systemui/recents/bixby/EmRecentsManager;->mRecentsLaunchedByBixby:Z
-
     iget-object v0, p0, Lcom/android/systemui/recents/bixby/EmRecentsManager;->mWaitState:Lcom/samsung/android/sdk/bixby/data/State;
 
     invoke-virtual {v0}, Lcom/samsung/android/sdk/bixby/data/State;->isLastState()Ljava/lang/Boolean;
@@ -4769,7 +4856,7 @@
 
     invoke-virtual {v0}, Lcom/android/systemui/recents/bixby/EmRecentsManager$NlgBuilder;->send()V
 
-    :cond_0
+    :goto_0
     iput-object v3, p0, Lcom/android/systemui/recents/bixby/EmRecentsManager;->mWaitState:Lcom/samsung/android/sdk/bixby/data/State;
 
     sget-object v0, Lcom/android/systemui/recents/bixby/EmRecentsManager$Response;->SUCCESS:Lcom/android/systemui/recents/bixby/EmRecentsManager$Response;
@@ -4777,6 +4864,11 @@
     invoke-direct {p0, v0}, Lcom/android/systemui/recents/bixby/EmRecentsManager;->sendResponseToEM(Lcom/android/systemui/recents/bixby/EmRecentsManager$Response;)V
 
     return v2
+
+    :cond_0
+    iput-boolean v2, p0, Lcom/android/systemui/recents/bixby/EmRecentsManager;->mRecentsLaunchedByBixby:Z
+
+    goto :goto_0
 
     :cond_1
     const/4 v0, 0x0
