@@ -2021,9 +2021,9 @@
 
     invoke-virtual {v0, v10, v1}, Landroid/widget/RemoteViews;->setTextColor(II)V
 
-    :cond_a
     goto :goto_5
 
+    :cond_a
     iget-object v1, p0, Landroid/app/Notification$Builder;->mN:Landroid/app/Notification;
 
     iget v1, v1, Landroid/app/Notification;->color:I
@@ -2068,9 +2068,9 @@
 
     invoke-virtual {v0, v10, v1}, Landroid/widget/RemoteViews;->setTextColor(II)V
 
-    :cond_c
     goto :goto_6
 
+    :cond_c
     iget-object v1, p0, Landroid/app/Notification$Builder;->mN:Landroid/app/Notification;
 
     iget v1, v1, Landroid/app/Notification;->color:I
