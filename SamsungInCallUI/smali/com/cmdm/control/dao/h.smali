@@ -4903,7 +4903,7 @@
     :try_start_5
     const-string v5, "CaiYinSDK"
 
-    const-string v7, "\u4e0d\u662f\u7b2c\u4e00\u9875\u6587\u672c\u7c7b\u522b"
+    const-string/jumbo v7, "\u4e0d\u662f\u7b2c\u4e00\u9875\u6587\u672c\u7c7b\u522b"
 
     invoke-static {v5, v7}, Lcom/cmdm/control/util/PrintLog;->i(Ljava/lang/String;Ljava/lang/String;)V
 
@@ -5582,7 +5582,7 @@
     :try_start_5
     const-string v5, "CaiYinSDK"
 
-    const-string v7, "\u4e0d\u662f\u7b2c\u4e00\u9875\u89c6\u9891\u7c7b\u522b"
+    const-string/jumbo v7, "\u4e0d\u662f\u7b2c\u4e00\u9875\u89c6\u9891\u7c7b\u522b"
 
     invoke-static {v5, v7}, Lcom/cmdm/control/util/PrintLog;->i(Ljava/lang/String;Ljava/lang/String;)V
 
@@ -7513,7 +7513,7 @@
     :try_start_5
     const-string v5, "CaiYinSDK"
 
-    const-string v7, "\u4e0d\u662f\u7b2c\u4e00\u9875\u6587\u672c\u7c7b\u522b"
+    const-string/jumbo v7, "\u4e0d\u662f\u7b2c\u4e00\u9875\u6587\u672c\u7c7b\u522b"
 
     invoke-static {v5, v7}, Lcom/cmdm/control/util/PrintLog;->i(Ljava/lang/String;Ljava/lang/String;)V
 
@@ -7913,7 +7913,7 @@
 
     const/4 v5, 0x1
 
-    const-string v6, "\u4e0a\u4f20\u6210\u529f\uff0c\u7acb\u5373\u8bbe\u7f6e\u5427!"
+    const-string/jumbo v6, "\u4e0a\u4f20\u6210\u529f\uff0c\u7acb\u5373\u8bbe\u7f6e\u5427!"
 
     invoke-virtual {v3}, Lcom/cmdm/control/bean/DiyResult;->getCrsProfile()Lcom/cmdm/control/bean/CRSProfile;
 
@@ -7927,7 +7927,7 @@
     return-object v3
 
     :cond_0
-    const-string v4, "\u4e0a\u4f20DIY\u5931\u8d25,\u8bf7\u7a0d\u5019\u91cd\u8bd5!"
+    const-string/jumbo v4, "\u4e0a\u4f20DIY\u5931\u8d25,\u8bf7\u7a0d\u5019\u91cd\u8bd5!"
 
     if-eqz v3, :cond_2
 
@@ -9501,7 +9501,7 @@
 
     const/4 v4, 0x1
 
-    const-string v5, "\u4e0a\u4f20\u6210\u529f!"
+    const-string/jumbo v5, "\u4e0a\u4f20\u6210\u529f!"
 
     invoke-direct {v3, v4, v5}, Lcom/cmdm/control/util/client/ResultEntity;-><init>(ILjava/lang/String;)V
 
@@ -9509,7 +9509,7 @@
     return-object v3
 
     :cond_0
-    const-string v4, "\u4e0a\u4f20DIY\u5931\u8d25,\u8bf7\u7a0d\u5019\u91cd\u8bd5!"
+    const-string/jumbo v4, "\u4e0a\u4f20DIY\u5931\u8d25,\u8bf7\u7a0d\u5019\u91cd\u8bd5!"
 
     if-eqz v3, :cond_2
 
@@ -10217,7 +10217,7 @@
 
     const/4 v6, 0x1
 
-    const-string v7, "\u4e0a\u4f20\u6210\u529f\uff0c\u7acb\u5373\u8bbe\u7f6e\u5427!"
+    const-string/jumbo v7, "\u4e0a\u4f20\u6210\u529f\uff0c\u7acb\u5373\u8bbe\u7f6e\u5427!"
 
     invoke-direct {v5, v6, v7, v4}, Lcom/cmdm/control/util/client/ResultUtil;-><init>(ILjava/lang/String;Ljava/lang/Object;)V
 
@@ -10227,7 +10227,7 @@
     return-object v4
 
     :cond_0
-    const-string v5, "\u4e0a\u4f20DIY\u5931\u8d25,\u8bf7\u7a0d\u5019\u91cd\u8bd5!"
+    const-string/jumbo v5, "\u4e0a\u4f20DIY\u5931\u8d25,\u8bf7\u7a0d\u5019\u91cd\u8bd5!"
 
     if-eqz v4, :cond_2
 
@@ -13196,7 +13196,7 @@
 
     const/4 v5, 0x1
 
-    const-string v6, "\u4e0a\u4f20\u6210\u529f!"
+    const-string/jumbo v6, "\u4e0a\u4f20\u6210\u529f!"
 
     invoke-direct {v4, v5, v6}, Lcom/cmdm/control/util/client/ResultEntity;-><init>(ILjava/lang/String;)V
 
@@ -13204,7 +13204,7 @@
     return-object v4
 
     :cond_0
-    const-string v5, "\u4e0a\u4f20DIY\u5931\u8d25!"
+    const-string/jumbo v5, "\u4e0a\u4f20DIY\u5931\u8d25!"
 
     if-eqz v4, :cond_1
 

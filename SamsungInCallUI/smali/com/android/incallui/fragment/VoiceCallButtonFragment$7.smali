@@ -2,12 +2,12 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Landroid/content/DialogInterface$OnClickListener;
+.implements Landroid/widget/CompoundButton$OnCheckedChangeListener;
 
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/android/incallui/fragment/VoiceCallButtonFragment;->updateRTTButtonFromMenu()V
+    value = Lcom/android/incallui/fragment/VoiceCallButtonFragment;->inflateInCallButtons(Landroid/view/View;)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -33,16 +33,31 @@
 
 
 # virtual methods
-.method public onClick(Landroid/content/DialogInterface;I)V
+.method public onCheckedChanged(Landroid/widget/CompoundButton;Z)V
     .locals 2
 
-    invoke-static {}, Lcom/android/incallui/InCallPresenter;->getInstance()Lcom/android/incallui/InCallPresenter;
+    invoke-static {}, Lcom/android/incallui/util/DesktopModeManager;->isDesktopDockConnected()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    iget-object v1, p0, Lcom/android/incallui/fragment/VoiceCallButtonFragment$7;->this$0:Lcom/android/incallui/fragment/VoiceCallButtonFragment;
+
+    iget-object v0, p0, Lcom/android/incallui/fragment/VoiceCallButtonFragment$7;->this$0:Lcom/android/incallui/fragment/VoiceCallButtonFragment;
+
+    invoke-virtual {v0}, Lcom/android/incallui/fragment/VoiceCallButtonFragment;->getPresenter()Lcom/android/incallui/Presenter;
 
     move-result-object v0
 
-    const/4 v1, 0x0
+    check-cast v0, Lcom/android/incallui/CallButtonPresenter;
 
-    invoke-virtual {v0, v1}, Lcom/android/incallui/InCallPresenter;->setTempRTT(Z)V
+    invoke-virtual {v0}, Lcom/android/incallui/CallButtonPresenter;->getSupportedAudio()I
 
+    move-result v0
+
+    invoke-static {v1, v0}, Lcom/android/incallui/fragment/VoiceCallButtonFragment;->access$700(Lcom/android/incallui/fragment/VoiceCallButtonFragment;I)V
+
+    :cond_0
     return-void
 .end method

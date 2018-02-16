@@ -2,7 +2,7 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Landroid/widget/CompoundButton$OnCheckedChangeListener;
+.implements Landroid/view/View$OnClickListener;
 
 
 # annotations
@@ -33,16 +33,10 @@
 
 
 # virtual methods
-.method public onCheckedChanged(Landroid/widget/CompoundButton;Z)V
+.method public onClick(Landroid/view/View;)V
     .locals 2
 
-    invoke-static {}, Lcom/android/incallui/util/DesktopModeManager;->isDesktopDockConnected()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    iget-object v1, p0, Lcom/android/incallui/fragment/VoiceCallButtonFragment$6;->this$0:Lcom/android/incallui/fragment/VoiceCallButtonFragment;
+    check-cast p1, Landroid/widget/Button;
 
     iget-object v0, p0, Lcom/android/incallui/fragment/VoiceCallButtonFragment$6;->this$0:Lcom/android/incallui/fragment/VoiceCallButtonFragment;
 
@@ -52,12 +46,21 @@
 
     check-cast v0, Lcom/android/incallui/CallButtonPresenter;
 
-    invoke-virtual {v0}, Lcom/android/incallui/CallButtonPresenter;->getSupportedAudio()I
+    invoke-virtual {p1}, Landroid/widget/Button;->isSelected()Z
 
-    move-result v0
+    move-result v1
 
-    invoke-static {v1, v0}, Lcom/android/incallui/fragment/VoiceCallButtonFragment;->access$700(Lcom/android/incallui/fragment/VoiceCallButtonFragment;I)V
+    if-nez v1, :cond_0
+
+    const/4 v1, 0x1
+
+    :goto_0
+    invoke-virtual {v0, v1}, Lcom/android/incallui/CallButtonPresenter;->shareClicked(Z)V
+
+    return-void
 
     :cond_0
-    return-void
+    const/4 v1, 0x0
+
+    goto :goto_0
 .end method

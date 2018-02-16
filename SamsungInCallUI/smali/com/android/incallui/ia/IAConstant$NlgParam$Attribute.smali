@@ -14,7 +14,7 @@
 
 
 # static fields
-.field public static final ALREADYSET:Ljava/lang/String; = "AlreadySet"
+.field public static final ALREADY_SET:Ljava/lang/String; = "AlreadySet"
 
 .field public static final EXIST:Ljava/lang/String; = "Exist"
 

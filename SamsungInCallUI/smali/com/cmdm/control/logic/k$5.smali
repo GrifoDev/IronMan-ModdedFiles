@@ -61,7 +61,7 @@
 
     move-result-object v0
 
-    const-string v1, "\u4e0b\u8f7d\u66f4\u65b0\u5f52\u5c5e\u5730\u6570\u636e\u6210\u529f"
+    const-string/jumbo v1, "\u4e0b\u8f7d\u66f4\u65b0\u5f52\u5c5e\u5730\u6570\u636e\u6210\u529f"
 
     invoke-static {v0, v1}, Lcom/cmdm/control/util/PrintLog;->i(Ljava/lang/String;Ljava/lang/String;)V
 
@@ -189,7 +189,7 @@
 
     move-result-object v0
 
-    const-string v1, "\u4e0b\u8f7d\u66f4\u65b0\u5f52\u5c5e\u5730\u6570\u636e\u5f02\u5e38\u5931\u8d25"
+    const-string/jumbo v1, "\u4e0b\u8f7d\u66f4\u65b0\u5f52\u5c5e\u5730\u6570\u636e\u5f02\u5e38\u5931\u8d25"
 
     invoke-static {v0, v1}, Lcom/cmdm/control/util/PrintLog;->i(Ljava/lang/String;Ljava/lang/String;)V
 
@@ -201,7 +201,7 @@
 
     move-result-object v0
 
-    const-string v1, "\u4e0b\u8f7d\u66f4\u65b0\u5f52\u5c5e\u5730\u6570\u636e\u5931\u8d25"
+    const-string/jumbo v1, "\u4e0b\u8f7d\u66f4\u65b0\u5f52\u5c5e\u5730\u6570\u636e\u5931\u8d25"
 
     invoke-static {v0, v1}, Lcom/cmdm/control/util/PrintLog;->i(Ljava/lang/String;Ljava/lang/String;)V
     :try_end_1

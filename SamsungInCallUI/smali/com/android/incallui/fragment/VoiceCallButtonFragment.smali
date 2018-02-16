@@ -180,9 +180,9 @@
 
     iput-object v0, p0, Lcom/android/incallui/fragment/VoiceCallButtonFragment;->mClickListener:Landroid/view/View$OnClickListener;
 
-    new-instance v0, Lcom/android/incallui/fragment/VoiceCallButtonFragment$13;
+    new-instance v0, Lcom/android/incallui/fragment/VoiceCallButtonFragment$14;
 
-    invoke-direct {v0, p0}, Lcom/android/incallui/fragment/VoiceCallButtonFragment$13;-><init>(Lcom/android/incallui/fragment/VoiceCallButtonFragment;)V
+    invoke-direct {v0, p0}, Lcom/android/incallui/fragment/VoiceCallButtonFragment$14;-><init>(Lcom/android/incallui/fragment/VoiceCallButtonFragment;)V
 
     iput-object v0, p0, Lcom/android/incallui/fragment/VoiceCallButtonFragment;->mHandler:Landroid/os/Handler;
 
@@ -471,9 +471,9 @@
 
     move-result-object v0
 
-    new-instance v1, Lcom/android/incallui/fragment/VoiceCallButtonFragment$15;
+    new-instance v1, Lcom/android/incallui/fragment/VoiceCallButtonFragment$16;
 
-    invoke-direct {v1, p0, v2, v3, v4}, Lcom/android/incallui/fragment/VoiceCallButtonFragment$15;-><init>(Lcom/android/incallui/fragment/VoiceCallButtonFragment;IILandroid/view/View;)V
+    invoke-direct {v1, p0, v2, v3, v4}, Lcom/android/incallui/fragment/VoiceCallButtonFragment$16;-><init>(Lcom/android/incallui/fragment/VoiceCallButtonFragment;IILandroid/view/View;)V
 
     invoke-virtual {v0, v1}, Landroid/view/ViewTreeObserver;->addOnGlobalLayoutListener(Landroid/view/ViewTreeObserver$OnGlobalLayoutListener;)V
 
@@ -1116,9 +1116,9 @@
 
     const v1, 0x104000a
 
-    new-instance v2, Lcom/android/incallui/fragment/VoiceCallButtonFragment$11;
+    new-instance v2, Lcom/android/incallui/fragment/VoiceCallButtonFragment$12;
 
-    invoke-direct {v2, p0}, Lcom/android/incallui/fragment/VoiceCallButtonFragment$11;-><init>(Lcom/android/incallui/fragment/VoiceCallButtonFragment;)V
+    invoke-direct {v2, p0}, Lcom/android/incallui/fragment/VoiceCallButtonFragment$12;-><init>(Lcom/android/incallui/fragment/VoiceCallButtonFragment;)V
 
     invoke-virtual {v0, v1, v2}, Landroid/app/AlertDialog$Builder;->setPositiveButton(ILandroid/content/DialogInterface$OnClickListener;)Landroid/app/AlertDialog$Builder;
 
@@ -1159,9 +1159,9 @@
 
     const v1, 0x104000a
 
-    new-instance v2, Lcom/android/incallui/fragment/VoiceCallButtonFragment$14;
+    new-instance v2, Lcom/android/incallui/fragment/VoiceCallButtonFragment$15;
 
-    invoke-direct {v2, p0}, Lcom/android/incallui/fragment/VoiceCallButtonFragment$14;-><init>(Lcom/android/incallui/fragment/VoiceCallButtonFragment;)V
+    invoke-direct {v2, p0}, Lcom/android/incallui/fragment/VoiceCallButtonFragment$15;-><init>(Lcom/android/incallui/fragment/VoiceCallButtonFragment;)V
 
     invoke-virtual {v0, v1, v2}, Landroid/app/AlertDialog$Builder;->setPositiveButton(ILandroid/content/DialogInterface$OnClickListener;)Landroid/app/AlertDialog$Builder;
 
@@ -3043,9 +3043,9 @@
 
     iget-object v0, p0, Lcom/android/incallui/fragment/VoiceCallButtonFragment;->mMoveButtonsAnimatorSetForManager:Landroid/animation/AnimatorSet;
 
-    new-instance v2, Lcom/android/incallui/fragment/VoiceCallButtonFragment$9;
+    new-instance v2, Lcom/android/incallui/fragment/VoiceCallButtonFragment$10;
 
-    invoke-direct {v2, p0}, Lcom/android/incallui/fragment/VoiceCallButtonFragment$9;-><init>(Lcom/android/incallui/fragment/VoiceCallButtonFragment;)V
+    invoke-direct {v2, p0}, Lcom/android/incallui/fragment/VoiceCallButtonFragment$10;-><init>(Lcom/android/incallui/fragment/VoiceCallButtonFragment;)V
 
     invoke-virtual {v0, v2}, Landroid/animation/AnimatorSet;->addListener(Landroid/animation/Animator$AnimatorListener;)V
 
@@ -3705,9 +3705,9 @@
 
     invoke-virtual {v3, v0, v1}, Landroid/animation/AnimatorSet;->setDuration(J)Landroid/animation/AnimatorSet;
 
-    new-instance v0, Lcom/android/incallui/fragment/VoiceCallButtonFragment$10;
+    new-instance v0, Lcom/android/incallui/fragment/VoiceCallButtonFragment$11;
 
-    invoke-direct {v0, p0}, Lcom/android/incallui/fragment/VoiceCallButtonFragment$10;-><init>(Lcom/android/incallui/fragment/VoiceCallButtonFragment;)V
+    invoke-direct {v0, p0}, Lcom/android/incallui/fragment/VoiceCallButtonFragment$11;-><init>(Lcom/android/incallui/fragment/VoiceCallButtonFragment;)V
 
     invoke-virtual {v3, v0}, Landroid/animation/AnimatorSet;->addListener(Landroid/animation/Animator$AnimatorListener;)V
 
@@ -5495,9 +5495,9 @@
 
     iget-object v0, p0, Lcom/android/incallui/fragment/VoiceCallButtonFragment;->mPromotedButton:Landroid/widget/Button;
 
-    new-instance v4, Lcom/android/incallui/fragment/VoiceCallButtonFragment$4;
+    new-instance v4, Lcom/android/incallui/fragment/VoiceCallButtonFragment$5;
 
-    invoke-direct {v4, p0}, Lcom/android/incallui/fragment/VoiceCallButtonFragment$4;-><init>(Lcom/android/incallui/fragment/VoiceCallButtonFragment;)V
+    invoke-direct {v4, p0}, Lcom/android/incallui/fragment/VoiceCallButtonFragment$5;-><init>(Lcom/android/incallui/fragment/VoiceCallButtonFragment;)V
 
     invoke-virtual {v0, v4}, Landroid/widget/Button;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
@@ -5648,9 +5648,9 @@
 
     iget-object v0, p0, Lcom/android/incallui/fragment/VoiceCallButtonFragment;->mShareButton:Landroid/widget/Button;
 
-    new-instance v4, Lcom/android/incallui/fragment/VoiceCallButtonFragment$5;
+    new-instance v4, Lcom/android/incallui/fragment/VoiceCallButtonFragment$6;
 
-    invoke-direct {v4, p0}, Lcom/android/incallui/fragment/VoiceCallButtonFragment$5;-><init>(Lcom/android/incallui/fragment/VoiceCallButtonFragment;)V
+    invoke-direct {v4, p0}, Lcom/android/incallui/fragment/VoiceCallButtonFragment$6;-><init>(Lcom/android/incallui/fragment/VoiceCallButtonFragment;)V
 
     invoke-virtual {v0, v4}, Landroid/widget/Button;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
@@ -5704,9 +5704,9 @@
 
     iget-object v0, p0, Lcom/android/incallui/fragment/VoiceCallButtonFragment;->mSpeakerButton:Landroid/widget/ToggleButton;
 
-    new-instance v4, Lcom/android/incallui/fragment/VoiceCallButtonFragment$6;
+    new-instance v4, Lcom/android/incallui/fragment/VoiceCallButtonFragment$7;
 
-    invoke-direct {v4, p0}, Lcom/android/incallui/fragment/VoiceCallButtonFragment$6;-><init>(Lcom/android/incallui/fragment/VoiceCallButtonFragment;)V
+    invoke-direct {v4, p0}, Lcom/android/incallui/fragment/VoiceCallButtonFragment$7;-><init>(Lcom/android/incallui/fragment/VoiceCallButtonFragment;)V
 
     invoke-virtual {v0, v4}, Landroid/widget/ToggleButton;->setOnCheckedChangeListener(Landroid/widget/CompoundButton$OnCheckedChangeListener;)V
 
@@ -8174,9 +8174,9 @@
 
     const v1, 0x104000a
 
-    new-instance v2, Lcom/android/incallui/fragment/VoiceCallButtonFragment$12;
+    new-instance v2, Lcom/android/incallui/fragment/VoiceCallButtonFragment$13;
 
-    invoke-direct {v2, p0}, Lcom/android/incallui/fragment/VoiceCallButtonFragment$12;-><init>(Lcom/android/incallui/fragment/VoiceCallButtonFragment;)V
+    invoke-direct {v2, p0}, Lcom/android/incallui/fragment/VoiceCallButtonFragment$13;-><init>(Lcom/android/incallui/fragment/VoiceCallButtonFragment;)V
 
     invoke-virtual {v0, v1, v2}, Landroid/app/AlertDialog$Builder;->setPositiveButton(ILandroid/content/DialogInterface$OnClickListener;)Landroid/app/AlertDialog$Builder;
 
@@ -8221,25 +8221,19 @@
 .end method
 
 .method public showSwitchCallButton(Z)V
-    .locals 7
-
-    const/4 v2, 0x1
-
-    const/4 v1, 0x0
-
-    const/16 v3, 0x8
+    .locals 3
 
     invoke-static {}, Lcom/android/incallui/util/ImsCommonUtils;->isAvailablePSVT()Z
 
     move-result v0
 
-    const-string v4, "usa_gsm_volte_ui"
+    const-string v1, "usa_gsm_volte_ui"
 
-    invoke-static {v4}, Lcom/android/incallui/InCallUIFeature;->hasFeature(Ljava/lang/String;)Z
+    invoke-static {v1}, Lcom/android/incallui/InCallUIFeature;->hasFeature(Ljava/lang/String;)Z
 
-    move-result v4
+    move-result v1
 
-    if-eqz v4, :cond_5
+    if-eqz v1, :cond_3
 
     const-string v0, "mmtel-video"
 
@@ -8247,79 +8241,62 @@
 
     move-result v0
 
-    :cond_0
+    move v1, v0
+
     :goto_0
-    const-string v4, "show_switch_icon_in_button"
+    invoke-static {}, Lcom/android/incallui/bike/BikeModeUtils;->isBikeModeOn()Z
 
-    invoke-static {v4}, Lcom/android/incallui/InCallUIFeature;->hasFeature(Ljava/lang/String;)Z
+    move-result v0
 
-    move-result v4
+    if-nez v0, :cond_0
 
-    if-eqz v4, :cond_1
+    invoke-static {}, Lcom/android/incallui/bike/BikeModeUtils;->isBikeModeOutgoingCall()Z
 
-    if-nez v0, :cond_6
+    move-result v0
+
+    if-nez v0, :cond_0
+
+    invoke-static {}, Lcom/android/incallui/bike/BikeModeUtils;->isBikeCall()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_1
+
+    :cond_0
+    const/4 p1, 0x0
 
     :cond_1
-    const-string v4, "VoiceCallButtonFragment"
-
-    new-instance v5, Ljava/lang/StringBuilder;
-
-    invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v6, "Code returning = "
-
-    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v5
-
-    invoke-virtual {v5, v0}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+    invoke-virtual {p0}, Lcom/android/incallui/fragment/VoiceCallButtonFragment;->getActivity()Landroid/app/Activity;
 
     move-result-object v0
 
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-static {v4, v0, v2}, Lcom/android/incallui/Log;->d(Ljava/lang/String;Ljava/lang/String;Z)V
-
-    iget-object v0, p0, Lcom/android/incallui/fragment/VoiceCallButtonFragment;->mSwitchCallButtonStub:Landroid/view/ViewStub;
+    check-cast v0, Lcom/android/incallui/InCallActivity;
 
     if-eqz v0, :cond_2
 
-    iget-object v0, p0, Lcom/android/incallui/fragment/VoiceCallButtonFragment;->mSwitchCallButtonStub:Landroid/view/ViewStub;
+    invoke-virtual {p0}, Lcom/android/incallui/fragment/VoiceCallButtonFragment;->getActivity()Landroid/app/Activity;
 
-    invoke-virtual {v0, v3}, Landroid/view/ViewStub;->setVisibility(I)V
+    move-result-object v0
+
+    check-cast v0, Lcom/android/incallui/InCallActivity;
+
+    new-instance v2, Lcom/android/incallui/fragment/VoiceCallButtonFragment$4;
+
+    invoke-direct {v2, p0, v1, p1}, Lcom/android/incallui/fragment/VoiceCallButtonFragment$4;-><init>(Lcom/android/incallui/fragment/VoiceCallButtonFragment;ZZ)V
+
+    invoke-virtual {v0, v2}, Lcom/android/incallui/InCallActivity;->runOnUiThread(Ljava/lang/Runnable;)V
 
     :cond_2
-    iget-object v0, p0, Lcom/android/incallui/fragment/VoiceCallButtonFragment;->mSwitchCallButton:Lcom/android/incallui/widget/SecVoiceButton;
-
-    if-eqz v0, :cond_3
-
-    iget-object v0, p0, Lcom/android/incallui/fragment/VoiceCallButtonFragment;->mSwitchCallButton:Lcom/android/incallui/widget/SecVoiceButton;
-
-    invoke-virtual {v0, v3}, Lcom/android/incallui/widget/SecVoiceButton;->setVisibility(I)V
-
-    :cond_3
-    iget-object v0, p0, Lcom/android/incallui/fragment/VoiceCallButtonFragment;->mExtraVolumeButton:Landroid/widget/ToggleButton;
-
-    if-eqz v0, :cond_4
-
-    iget-object v0, p0, Lcom/android/incallui/fragment/VoiceCallButtonFragment;->mExtraVolumeButton:Landroid/widget/ToggleButton;
-
-    invoke-virtual {v0, v1}, Landroid/widget/ToggleButton;->setVisibility(I)V
-
-    :cond_4
-    :goto_1
     return-void
 
-    :cond_5
-    const-string v4, "feature_multisim"
+    :cond_3
+    const-string v1, "feature_multisim"
 
-    invoke-static {v4}, Lcom/android/incallui/InCallUIFeature;->hasFeature(Ljava/lang/String;)Z
+    invoke-static {v1}, Lcom/android/incallui/InCallUIFeature;->hasFeature(Ljava/lang/String;)Z
 
-    move-result v4
+    move-result v1
 
-    if-eqz v4, :cond_0
+    if-eqz v1, :cond_4
 
     invoke-static {}, Lcom/android/incallui/util/InCallUtilsMultiSIM;->getDefaultVoiceSubscriptionId()I
 
@@ -8329,184 +8306,14 @@
 
     move-result v0
 
+    move v1, v0
+
     goto :goto_0
 
-    :cond_6
-    invoke-static {}, Lcom/android/incallui/bike/BikeModeUtils;->isBikeModeOn()Z
+    :cond_4
+    move v1, v0
 
-    move-result v0
-
-    if-nez v0, :cond_7
-
-    invoke-static {}, Lcom/android/incallui/bike/BikeModeUtils;->isBikeModeOutgoingCall()Z
-
-    move-result v0
-
-    if-nez v0, :cond_7
-
-    invoke-static {}, Lcom/android/incallui/bike/BikeModeUtils;->isBikeCall()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_8
-
-    :cond_7
-    move p1, v1
-
-    :cond_8
-    const-string v0, "VoiceCallButtonFragment"
-
-    new-instance v4, Ljava/lang/StringBuilder;
-
-    invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v5, "showSwitchCallButton show = "
-
-    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v4
-
-    invoke-virtual {v4, p1}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
-
-    move-result-object v4
-
-    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v4
-
-    invoke-static {v0, v4, v2}, Lcom/android/incallui/Log;->d(Ljava/lang/String;Ljava/lang/String;Z)V
-
-    invoke-static {}, Lcom/android/incallui/secrcs/RcsShareUI;->getInstance()Lcom/android/incallui/secrcs/RcsShareUI;
-
-    move-result-object v4
-
-    if-nez p1, :cond_9
-
-    move v0, v2
-
-    :goto_2
-    invoke-virtual {v4, v0}, Lcom/android/incallui/secrcs/RcsShareUI;->setNoShowVolumeAvailable(Z)V
-
-    invoke-static {}, Lcom/android/incallui/secrcs/RcsShareUI;->getInstance()Lcom/android/incallui/secrcs/RcsShareUI;
-
-    sget-boolean v0, Lcom/android/incallui/secrcs/RcsShareUI;->mIsSelfCapable:Z
-
-    if-eqz v0, :cond_a
-
-    invoke-static {}, Lcom/android/incallui/secrcs/RcsShareUI;->getInstance()Lcom/android/incallui/secrcs/RcsShareUI;
-
-    sget-boolean v0, Lcom/android/incallui/secrcs/RcsShareUI;->mIsActiveCall:Z
-
-    if-eqz v0, :cond_a
-
-    const-string v0, "VoiceCallButtonFragment"
-
-    const-string v1, "extraVolume removed because RCS CALL"
-
-    invoke-static {v0, v1, v2}, Lcom/android/incallui/Log;->d(Ljava/lang/String;Ljava/lang/String;Z)V
-
-    iget-object v0, p0, Lcom/android/incallui/fragment/VoiceCallButtonFragment;->mExtraVolumeButton:Landroid/widget/ToggleButton;
-
-    invoke-virtual {v0, v3}, Landroid/widget/ToggleButton;->setVisibility(I)V
-
-    goto :goto_1
-
-    :cond_9
-    move v0, v1
-
-    goto :goto_2
-
-    :cond_a
-    invoke-static {}, Lcom/android/incallui/secrcs/RcsShareUI;->getInstance()Lcom/android/incallui/secrcs/RcsShareUI;
-
-    sget-boolean v0, Lcom/android/incallui/secrcs/RcsShareUI;->mIsSelfCapable:Z
-
-    if-nez v0, :cond_10
-
-    iget-object v0, p0, Lcom/android/incallui/fragment/VoiceCallButtonFragment;->mSwitchCallButtonStub:Landroid/view/ViewStub;
-
-    if-eqz v0, :cond_b
-
-    iget-object v2, p0, Lcom/android/incallui/fragment/VoiceCallButtonFragment;->mSwitchCallButtonStub:Landroid/view/ViewStub;
-
-    if-eqz p1, :cond_d
-
-    move v0, v1
-
-    :goto_3
-    invoke-virtual {v2, v0}, Landroid/view/ViewStub;->setVisibility(I)V
-
-    :cond_b
-    iget-object v0, p0, Lcom/android/incallui/fragment/VoiceCallButtonFragment;->mSwitchCallButton:Lcom/android/incallui/widget/SecVoiceButton;
-
-    if-eqz v0, :cond_c
-
-    iget-object v2, p0, Lcom/android/incallui/fragment/VoiceCallButtonFragment;->mSwitchCallButton:Lcom/android/incallui/widget/SecVoiceButton;
-
-    if-eqz p1, :cond_e
-
-    move v0, v1
-
-    :goto_4
-    invoke-virtual {v2, v0}, Lcom/android/incallui/widget/SecVoiceButton;->setVisibility(I)V
-
-    :cond_c
-    iget-object v0, p0, Lcom/android/incallui/fragment/VoiceCallButtonFragment;->mExtraVolumeButton:Landroid/widget/ToggleButton;
-
-    if-eqz v0, :cond_4
-
-    iget-object v0, p0, Lcom/android/incallui/fragment/VoiceCallButtonFragment;->mExtraVolumeButton:Landroid/widget/ToggleButton;
-
-    if-eqz p1, :cond_f
-
-    :goto_5
-    invoke-virtual {v0, v3}, Landroid/widget/ToggleButton;->setVisibility(I)V
-
-    goto/16 :goto_1
-
-    :cond_d
-    move v0, v3
-
-    goto :goto_3
-
-    :cond_e
-    move v0, v3
-
-    goto :goto_4
-
-    :cond_f
-    move v3, v1
-
-    goto :goto_5
-
-    :cond_10
-    iget-object v0, p0, Lcom/android/incallui/fragment/VoiceCallButtonFragment;->mSwitchCallButtonStub:Landroid/view/ViewStub;
-
-    if-eqz v0, :cond_11
-
-    iget-object v0, p0, Lcom/android/incallui/fragment/VoiceCallButtonFragment;->mSwitchCallButtonStub:Landroid/view/ViewStub;
-
-    invoke-virtual {v0, v3}, Landroid/view/ViewStub;->setVisibility(I)V
-
-    :cond_11
-    iget-object v0, p0, Lcom/android/incallui/fragment/VoiceCallButtonFragment;->mSwitchCallButton:Lcom/android/incallui/widget/SecVoiceButton;
-
-    if-eqz v0, :cond_12
-
-    iget-object v0, p0, Lcom/android/incallui/fragment/VoiceCallButtonFragment;->mSwitchCallButton:Lcom/android/incallui/widget/SecVoiceButton;
-
-    invoke-virtual {v0, v3}, Lcom/android/incallui/widget/SecVoiceButton;->setVisibility(I)V
-
-    :cond_12
-    iget-object v0, p0, Lcom/android/incallui/fragment/VoiceCallButtonFragment;->mExtraVolumeButton:Landroid/widget/ToggleButton;
-
-    if-eqz v0, :cond_4
-
-    iget-object v0, p0, Lcom/android/incallui/fragment/VoiceCallButtonFragment;->mExtraVolumeButton:Landroid/widget/ToggleButton;
-
-    invoke-virtual {v0, v1}, Landroid/widget/ToggleButton;->setVisibility(I)V
-
-    goto/16 :goto_1
+    goto :goto_0
 .end method
 
 .method public showSwitchCallButtonForRCS()V
@@ -9541,9 +9348,9 @@
 
     const v2, 0x104000a
 
-    new-instance v3, Lcom/android/incallui/fragment/VoiceCallButtonFragment$8;
+    new-instance v3, Lcom/android/incallui/fragment/VoiceCallButtonFragment$9;
 
-    invoke-direct {v3, p0, v0}, Lcom/android/incallui/fragment/VoiceCallButtonFragment$8;-><init>(Lcom/android/incallui/fragment/VoiceCallButtonFragment;Lcom/android/incallui/Call;)V
+    invoke-direct {v3, p0, v0}, Lcom/android/incallui/fragment/VoiceCallButtonFragment$9;-><init>(Lcom/android/incallui/fragment/VoiceCallButtonFragment;Lcom/android/incallui/Call;)V
 
     invoke-virtual {v1, v2, v3}, Landroid/app/AlertDialog$Builder;->setPositiveButton(ILandroid/content/DialogInterface$OnClickListener;)Landroid/app/AlertDialog$Builder;
 
@@ -9551,9 +9358,9 @@
 
     const/high16 v1, 0x1040000
 
-    new-instance v2, Lcom/android/incallui/fragment/VoiceCallButtonFragment$7;
+    new-instance v2, Lcom/android/incallui/fragment/VoiceCallButtonFragment$8;
 
-    invoke-direct {v2, p0}, Lcom/android/incallui/fragment/VoiceCallButtonFragment$7;-><init>(Lcom/android/incallui/fragment/VoiceCallButtonFragment;)V
+    invoke-direct {v2, p0}, Lcom/android/incallui/fragment/VoiceCallButtonFragment$8;-><init>(Lcom/android/incallui/fragment/VoiceCallButtonFragment;)V
 
     invoke-virtual {v0, v1, v2}, Landroid/app/AlertDialog$Builder;->setNegativeButton(ILandroid/content/DialogInterface$OnClickListener;)Landroid/app/AlertDialog$Builder;
 

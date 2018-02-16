@@ -1,10 +1,13 @@
 .class Lcom/android/incallui/fragment/VoiceCallButtonFragment$9;
-.super Landroid/animation/AnimatorListenerAdapter;
+.super Ljava/lang/Object;
+
+# interfaces
+.implements Landroid/content/DialogInterface$OnClickListener;
 
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/android/incallui/fragment/VoiceCallButtonFragment;->animateForManager(ZZ)V
+    value = Lcom/android/incallui/fragment/VoiceCallButtonFragment;->updateRTTButtonFromMenu()V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -16,112 +19,46 @@
 # instance fields
 .field final synthetic this$0:Lcom/android/incallui/fragment/VoiceCallButtonFragment;
 
+.field final synthetic val$call:Lcom/android/incallui/Call;
+
 
 # direct methods
-.method constructor <init>(Lcom/android/incallui/fragment/VoiceCallButtonFragment;)V
+.method constructor <init>(Lcom/android/incallui/fragment/VoiceCallButtonFragment;Lcom/android/incallui/Call;)V
     .locals 0
 
     iput-object p1, p0, Lcom/android/incallui/fragment/VoiceCallButtonFragment$9;->this$0:Lcom/android/incallui/fragment/VoiceCallButtonFragment;
 
-    invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
+    iput-object p2, p0, Lcom/android/incallui/fragment/VoiceCallButtonFragment$9;->val$call:Lcom/android/incallui/Call;
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public onAnimationEnd(Landroid/animation/Animator;)V
+.method public onClick(Landroid/content/DialogInterface;I)V
     .locals 2
-
-    iget-object v0, p0, Lcom/android/incallui/fragment/VoiceCallButtonFragment$9;->this$0:Lcom/android/incallui/fragment/VoiceCallButtonFragment;
-
-    iget-object v0, v0, Lcom/android/incallui/fragment/VoiceCallButtonFragment;->mDialpadButton:Landroid/widget/Button;
-
-    invoke-virtual {v0}, Landroid/widget/Button;->getAlpha()F
-
-    move-result v0
-
-    const/high16 v1, 0x3f800000    # 1.0f
-
-    cmpl-float v0, v0, v1
-
-    if-nez v0, :cond_0
-
-    iget-object v0, p0, Lcom/android/incallui/fragment/VoiceCallButtonFragment$9;->this$0:Lcom/android/incallui/fragment/VoiceCallButtonFragment;
-
-    iget-object v0, v0, Lcom/android/incallui/fragment/VoiceCallButtonFragment;->mSpeakerButton:Landroid/widget/ToggleButton;
-
-    iget-object v1, p0, Lcom/android/incallui/fragment/VoiceCallButtonFragment$9;->this$0:Lcom/android/incallui/fragment/VoiceCallButtonFragment;
-
-    iget-object v1, v1, Lcom/android/incallui/fragment/VoiceCallButtonFragment;->mDialpadButton:Landroid/widget/Button;
-
-    invoke-virtual {v1}, Landroid/widget/Button;->getId()I
-
-    move-result v1
-
-    invoke-virtual {v0, v1}, Landroid/widget/ToggleButton;->setNextFocusRightId(I)V
-
-    iget-object v0, p0, Lcom/android/incallui/fragment/VoiceCallButtonFragment$9;->this$0:Lcom/android/incallui/fragment/VoiceCallButtonFragment;
-
-    iget-object v0, v0, Lcom/android/incallui/fragment/VoiceCallButtonFragment;->mMuteButton:Landroid/widget/ToggleButton;
-
-    iget-object v1, p0, Lcom/android/incallui/fragment/VoiceCallButtonFragment$9;->this$0:Lcom/android/incallui/fragment/VoiceCallButtonFragment;
-
-    iget-object v1, v1, Lcom/android/incallui/fragment/VoiceCallButtonFragment;->mDialpadButton:Landroid/widget/Button;
-
-    invoke-virtual {v1}, Landroid/widget/Button;->getId()I
-
-    move-result v1
-
-    invoke-virtual {v0, v1}, Landroid/widget/ToggleButton;->setNextFocusLeftId(I)V
-
-    iget-object v0, p0, Lcom/android/incallui/fragment/VoiceCallButtonFragment$9;->this$0:Lcom/android/incallui/fragment/VoiceCallButtonFragment;
-
-    iget-object v0, v0, Lcom/android/incallui/fragment/VoiceCallButtonFragment;->mDialpadButton:Landroid/widget/Button;
 
     const/4 v1, 0x1
 
-    invoke-virtual {v0, v1}, Landroid/widget/Button;->setFocusable(Z)V
+    invoke-static {}, Lcom/android/incallui/InCallPresenter;->getInstance()Lcom/android/incallui/InCallPresenter;
 
-    :goto_0
+    move-result-object v0
+
+    invoke-virtual {v0, v1}, Lcom/android/incallui/InCallPresenter;->setRttCapability(Z)V
+
+    invoke-static {}, Lcom/android/incallui/InCallPresenter;->getInstance()Lcom/android/incallui/InCallPresenter;
+
+    move-result-object v0
+
+    invoke-virtual {v0, v1}, Lcom/android/incallui/InCallPresenter;->setTempRTT(Z)V
+
+    iget-object v0, p0, Lcom/android/incallui/fragment/VoiceCallButtonFragment$9;->this$0:Lcom/android/incallui/fragment/VoiceCallButtonFragment;
+
+    iget-object v1, p0, Lcom/android/incallui/fragment/VoiceCallButtonFragment$9;->val$call:Lcom/android/incallui/Call;
+
+    invoke-virtual {v0, v1}, Lcom/android/incallui/fragment/VoiceCallButtonFragment;->updateRTTButton(Lcom/android/incallui/Call;)V
+
     return-void
-
-    :cond_0
-    iget-object v0, p0, Lcom/android/incallui/fragment/VoiceCallButtonFragment$9;->this$0:Lcom/android/incallui/fragment/VoiceCallButtonFragment;
-
-    iget-object v0, v0, Lcom/android/incallui/fragment/VoiceCallButtonFragment;->mSpeakerButton:Landroid/widget/ToggleButton;
-
-    iget-object v1, p0, Lcom/android/incallui/fragment/VoiceCallButtonFragment$9;->this$0:Lcom/android/incallui/fragment/VoiceCallButtonFragment;
-
-    iget-object v1, v1, Lcom/android/incallui/fragment/VoiceCallButtonFragment;->mEndCallButton:Landroid/widget/ImageButton;
-
-    invoke-virtual {v1}, Landroid/widget/ImageButton;->getId()I
-
-    move-result v1
-
-    invoke-virtual {v0, v1}, Landroid/widget/ToggleButton;->setNextFocusRightId(I)V
-
-    iget-object v0, p0, Lcom/android/incallui/fragment/VoiceCallButtonFragment$9;->this$0:Lcom/android/incallui/fragment/VoiceCallButtonFragment;
-
-    iget-object v0, v0, Lcom/android/incallui/fragment/VoiceCallButtonFragment;->mMuteButton:Landroid/widget/ToggleButton;
-
-    iget-object v1, p0, Lcom/android/incallui/fragment/VoiceCallButtonFragment$9;->this$0:Lcom/android/incallui/fragment/VoiceCallButtonFragment;
-
-    iget-object v1, v1, Lcom/android/incallui/fragment/VoiceCallButtonFragment;->mEndCallButton:Landroid/widget/ImageButton;
-
-    invoke-virtual {v1}, Landroid/widget/ImageButton;->getId()I
-
-    move-result v1
-
-    invoke-virtual {v0, v1}, Landroid/widget/ToggleButton;->setNextFocusLeftId(I)V
-
-    iget-object v0, p0, Lcom/android/incallui/fragment/VoiceCallButtonFragment$9;->this$0:Lcom/android/incallui/fragment/VoiceCallButtonFragment;
-
-    iget-object v0, v0, Lcom/android/incallui/fragment/VoiceCallButtonFragment;->mDialpadButton:Landroid/widget/Button;
-
-    const/4 v1, 0x0
-
-    invoke-virtual {v0, v1}, Landroid/widget/Button;->setFocusable(Z)V
-
-    goto :goto_0
 .end method

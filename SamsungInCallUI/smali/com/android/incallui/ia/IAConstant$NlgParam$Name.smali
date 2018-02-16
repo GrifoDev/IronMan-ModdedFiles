@@ -14,21 +14,21 @@
 
 
 # static fields
-.field public static final DECLINECALLWITHRECENTAGIF:Ljava/lang/String; = "DeclinceCallWithRecentAGIF"
+.field public static final DECLINE_CALL_WITH_RECENT_AGIF:Ljava/lang/String; = "DeclinceCallWithRecentAGIF"
 
-.field public static final INCOMINGCALL:Ljava/lang/String; = "IncomingCall"
+.field public static final INCOMING_CALL:Ljava/lang/String; = "IncomingCall"
 
-.field public static final MORESPAMSCORE2:Ljava/lang/String; = "MoreSpamScore2"
+.field public static final MORE_SPAM_SCORE2:Ljava/lang/String; = "MoreSpamScore2"
 
-.field public static final REMINDEROFF:Ljava/lang/String; = "ReminderOff"
+.field public static final REMINDER_OFF:Ljava/lang/String; = "ReminderOff"
 
-.field public static final REMINDERON:Ljava/lang/String; = "ReminderOn"
+.field public static final REMINDER_ON:Ljava/lang/String; = "ReminderOn"
 
-.field public static final SMARTCALL:Ljava/lang/String; = "SmartCall"
+.field public static final SMART_CALL:Ljava/lang/String; = "SmartCall"
 
-.field public static final THIRDPARTYCALLAPP:Ljava/lang/String; = "3rdPartyCallApp"
+.field public static final THIRD_PARTY_CALL_APP:Ljava/lang/String; = "3rdPartyCallApp"
 
-.field public static final UNSAVEDNUMBER:Ljava/lang/String; = "UnsavedNumber"
+.field public static final UNSAVED_NUMBER:Ljava/lang/String; = "UnsavedNumber"
 
 
 # direct methods

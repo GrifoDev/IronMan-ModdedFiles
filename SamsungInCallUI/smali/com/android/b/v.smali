@@ -220,7 +220,7 @@
 
     const-string/jumbo v1, "\ue6ec"
 
-    const-string v2, "\u2764"
+    const-string/jumbo v2, "\u2764"
 
     invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
@@ -252,7 +252,7 @@
 
     const-string/jumbo v1, "\ue6fa"
 
-    const-string v2, "\u2728"
+    const-string/jumbo v2, "\u2728"
 
     invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
@@ -348,7 +348,7 @@
 
     const-string/jumbo v1, "\ue693"
 
-    const-string v2, "\u270a"
+    const-string/jumbo v2, "\u270a"
 
     invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
@@ -356,7 +356,7 @@
 
     const-string/jumbo v1, "\ue694"
 
-    const-string v2, "\u270c"
+    const-string/jumbo v2, "\u270c"
 
     invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
@@ -364,7 +364,7 @@
 
     const-string/jumbo v1, "\ue695"
 
-    const-string v2, "\u270b"
+    const-string/jumbo v2, "\u270b"
 
     invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
@@ -420,7 +420,7 @@
 
     const-string/jumbo v1, "\ue702"
 
-    const-string v2, "\u2757"
+    const-string/jumbo v2, "\u2757"
 
     invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
@@ -1372,7 +1372,7 @@
 
     const-string/jumbo v1, "\ue719"
 
-    const-string v2, "\u270f"
+    const-string/jumbo v2, "\u270f"
 
     invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
@@ -1380,7 +1380,7 @@
 
     const-string/jumbo v1, "\ue6ae"
 
-    const-string v2, "\u2712"
+    const-string/jumbo v2, "\u2712"
 
     invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
@@ -1476,7 +1476,7 @@
 
     const-string/jumbo v1, "\ue6d3"
 
-    const-string v2, "\u2709"
+    const-string/jumbo v2, "\u2709"
 
     invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
@@ -1580,7 +1580,7 @@
 
     const-string/jumbo v1, "\ue734"
 
-    const-string v2, "\u3299"
+    const-string/jumbo v2, "\u3299"
 
     invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
@@ -1652,7 +1652,7 @@
 
     const-string/jumbo v1, "\ue6df"
 
-    const-string v2, "\u27bf"
+    const-string/jumbo v2, "\u27bf"
 
     invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
@@ -1668,7 +1668,7 @@
 
     const-string/jumbo v1, "\ue709"
 
-    const-string v2, "\u3030"
+    const-string/jumbo v2, "\u3030"
 
     invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
@@ -1676,7 +1676,7 @@
 
     const-string/jumbo v1, "\ue70a"
 
-    const-string v2, "\u27b0"
+    const-string/jumbo v2, "\u27b0"
 
     invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
@@ -1684,7 +1684,7 @@
 
     const-string/jumbo v1, "\ue6f5"
 
-    const-string v2, "\u2934"
+    const-string/jumbo v2, "\u2934"
 
     invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
@@ -1692,7 +1692,7 @@
 
     const-string/jumbo v1, "\ue700"
 
-    const-string v2, "\u2935"
+    const-string/jumbo v2, "\u2935"
 
     invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 

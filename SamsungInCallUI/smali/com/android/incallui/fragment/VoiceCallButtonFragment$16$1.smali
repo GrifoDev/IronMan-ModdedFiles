@@ -1,4 +1,4 @@
-.class Lcom/android/incallui/fragment/VoiceCallButtonFragment$15$1;
+.class Lcom/android/incallui/fragment/VoiceCallButtonFragment$16$1;
 .super Ljava/lang/Object;
 
 # interfaces
@@ -7,7 +7,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/android/incallui/fragment/VoiceCallButtonFragment$15;->onGlobalLayout()V
+    value = Lcom/android/incallui/fragment/VoiceCallButtonFragment$16;->onGlobalLayout()V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -17,14 +17,14 @@
 
 
 # instance fields
-.field final synthetic this$1:Lcom/android/incallui/fragment/VoiceCallButtonFragment$15;
+.field final synthetic this$1:Lcom/android/incallui/fragment/VoiceCallButtonFragment$16;
 
 
 # direct methods
-.method constructor <init>(Lcom/android/incallui/fragment/VoiceCallButtonFragment$15;)V
+.method constructor <init>(Lcom/android/incallui/fragment/VoiceCallButtonFragment$16;)V
     .locals 0
 
-    iput-object p1, p0, Lcom/android/incallui/fragment/VoiceCallButtonFragment$15$1;->this$1:Lcom/android/incallui/fragment/VoiceCallButtonFragment$15;
+    iput-object p1, p0, Lcom/android/incallui/fragment/VoiceCallButtonFragment$16$1;->this$1:Lcom/android/incallui/fragment/VoiceCallButtonFragment$16;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -46,9 +46,9 @@
 
     move-result v1
 
-    iget-object v0, p0, Lcom/android/incallui/fragment/VoiceCallButtonFragment$15$1;->this$1:Lcom/android/incallui/fragment/VoiceCallButtonFragment$15;
+    iget-object v0, p0, Lcom/android/incallui/fragment/VoiceCallButtonFragment$16$1;->this$1:Lcom/android/incallui/fragment/VoiceCallButtonFragment$16;
 
-    iget-object v0, v0, Lcom/android/incallui/fragment/VoiceCallButtonFragment$15;->this$0:Lcom/android/incallui/fragment/VoiceCallButtonFragment;
+    iget-object v0, v0, Lcom/android/incallui/fragment/VoiceCallButtonFragment$16;->this$0:Lcom/android/incallui/fragment/VoiceCallButtonFragment;
 
     iget-object v0, v0, Lcom/android/incallui/fragment/VoiceCallButtonFragment;->mEndCallButtonContainer:Landroid/view/View;
 
@@ -60,9 +60,9 @@
 
     iput v1, v0, Landroid/view/ViewGroup$MarginLayoutParams;->bottomMargin:I
 
-    iget-object v1, p0, Lcom/android/incallui/fragment/VoiceCallButtonFragment$15$1;->this$1:Lcom/android/incallui/fragment/VoiceCallButtonFragment$15;
+    iget-object v1, p0, Lcom/android/incallui/fragment/VoiceCallButtonFragment$16$1;->this$1:Lcom/android/incallui/fragment/VoiceCallButtonFragment$16;
 
-    iget-object v1, v1, Lcom/android/incallui/fragment/VoiceCallButtonFragment$15;->this$0:Lcom/android/incallui/fragment/VoiceCallButtonFragment;
+    iget-object v1, v1, Lcom/android/incallui/fragment/VoiceCallButtonFragment$16;->this$0:Lcom/android/incallui/fragment/VoiceCallButtonFragment;
 
     iget-object v1, v1, Lcom/android/incallui/fragment/VoiceCallButtonFragment;->mEndCallButtonContainer:Landroid/view/View;
 

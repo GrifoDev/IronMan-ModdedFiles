@@ -1,6 +1,6 @@
 Signature-Version: 1.0
 X-Android-APK-Signed: 2
-SHA-256-Digest-Manifest: xS9wt6LHFSqAqzaQLpzlH+OZG1QopVIds4lI1T+L6O0=
+SHA-256-Digest-Manifest: 55ujpOwJ3uliyU/X+ETeGmRgJG7Nc7Gb4zidgcxeHAw=
 Created-By: 1.0 (Android SignApk)
 
 Name: res/drawable-xxhdpi-v4/ic_call_24dp.qmg
@@ -302,7 +302,7 @@ Name: res/color-v23/abc_tint_switch_thumb.xml
 SHA-256-Digest: 27cLVNOt/FWzjts4QP/KUPCRIJ4xYEFxzQiBckbPx28=
 
 Name: res/layout/abc_alert_dialog_material.xml
-SHA-256-Digest: E9oqGtdW0Ma8IhUUgXWMM9/eRmLR+eK7w7nRjFpvoso=
+SHA-256-Digest: EHXnYi0lDR4vMHRMPhr2KKqwkwduE6F7CWY4SVLaSgE=
 
 Name: res/drawable/sim_icon_gsm_01_l.spr
 SHA-256-Digest: g5PIMYcuhf7XoNsP3Nru4/ams0PhthKVAHck73H3dyI=
@@ -654,7 +654,7 @@ Name: res/drawable/help_ic_volume.spr
 SHA-256-Digest: zOQZNk0bH5/nlQ8QSX58NRWsqqx5eqLMmHl2euucjcE=
 
 Name: AndroidManifest.xml
-SHA-256-Digest: oAGVCPzAMy8CSexTJnmUlceJ7ju7vADLXLQ7RsNLg/A=
+SHA-256-Digest: 68ao680RrnpYM8ozL+8QbRlao2nGV70CNwmeTJxOS7E=
 
 Name: res/color/device_default_light_list_text.xml
 SHA-256-Digest: y1k8hPckVPUZ2lswr/f099EUhzevlzfM8n8N9zfCk8M=
@@ -892,7 +892,7 @@ Name: res/drawable/incall_button_multisim_sms_icon.xml
 SHA-256-Digest: J+EcINTmU70Tb5LMKB3Ngais8hR0/O53i1XV7/m8/J0=
 
 Name: res/layout/sec_softphone_dialog_devicelist.xml
-SHA-256-Digest: xGtDoTRurcNBcvVY38w6fuGWV4trUVjzwP+JporWRhY=
+SHA-256-Digest: aG6tWH+zPi75D225TKrAZgFPHRnDvaz21+o8siOI5kQ=
 
 Name: res/drawable-xxhdpi-v4/sim_icon_gsm_02_quickpanel.png
 SHA-256-Digest: xUkZ4oxqvJmefN16v2RmArSHByNXFBTZ3CBOw/cq+g4=
@@ -1679,7 +1679,7 @@ Name: res/color/reject_call_with_message_handler_background.xml
 SHA-256-Digest: IGLirMryYXFNsrl3eUVeQo311XGogftDpAagW8LFLak=
 
 Name: res/layout/activity_country.xml
-SHA-256-Digest: ViBDpSWSBCRjujev8qRd/4q/gZXMU6WqtCLUJ7ddID4=
+SHA-256-Digest: 2kFZiUQ5a1GnVhkgFPiL+myJm5eGBOVgRbTo77EV2wI=
 
 Name: res/layout/sec_video_call_incoming_hide_show_layout.xml
 SHA-256-Digest: 2qk2aephyJqgHdFialaz5vaHfvX7k/b4cUVePvCyIKY=
@@ -1786,7 +1786,7 @@ Name: res/layout/sec_clear_cover_answer_layout.xml
 SHA-256-Digest: K+1hMWsdvlioYBRTJkqdWt7wmDWSX/wmX+7S3sjMwjU=
 
 Name: res/layout/abc_select_dialog_material.xml
-SHA-256-Digest: U4E4aIVGso0ObIObz/VikaMV74Hup/VlUsCRpFzq49A=
+SHA-256-Digest: 6ZIq4L96aixtfw9+f6tNsAWAKgWUdr4xgA93qeyhaAw=
 
 Name: res/layout/sec_caller_in_ims_conference.xml
 SHA-256-Digest: aeXNkzJdGE69Pvra5+rrcCIDloWi5MkChqlpq8xk9U0=
@@ -2839,7 +2839,7 @@ Name: res/drawable/voicecall_popup_message.bmp
 SHA-256-Digest: kOqzc7GlyI68uvAud5s1RTQq762z+vEY6bAlpcp2WV8=
 
 Name: res/drawable/voicecall_hd_common_video.bmp
-SHA-256-Digest: HoKU3V8+N22soKLgIw18WCl8JRxHJkEYw68bXF1NmwU=
+SHA-256-Digest: pB711jxFO9Uu8zzOgwaEf4GjE1zwSJbb7tqUcerl6Xk=
 
 Name: res/drawable-xxhdpi-v4/tw_scroll_popup_bg_mtrl.9.png
 SHA-256-Digest: YpHkBeklJpgV/1sInIjVlG4QdStxDlFCx7VCff8ZU7w=
@@ -2864,7 +2864,7 @@ Name: res/layout/sticker_setting_list_item.xml
 SHA-256-Digest: 4jquax5S9hD3EsOLaZ7L8WMjSOCMhvXiBCHT0C/FrEA=
 
 Name: res/layout/layout_permission_notification.xml
-SHA-256-Digest: l5+mcqfhKtCAO/mxgUJewXX+Ln/j1gLB1gYUpmK5DUs=
+SHA-256-Digest: e/ANPShHmKuPxYQOtoqC+xAoek74zVMnfFrzNgKMJq0=
 
 Name: res/drawable-xxhdpi-v4/sim_icon_call_quickpanel.png
 SHA-256-Digest: aOmj25ekS2+JNGAnF/OD8Y85Q4hYIHfZyCjByBTwuNI=
@@ -3188,7 +3188,7 @@ Name: com/google/i18n/phonenumbers/geocoding/data/352_de
 SHA-256-Digest: 3BH+JRF02paTpIpc0oOUyClfsXa8hVYAXcgEKsvGthU=
 
 Name: resources.arsc
-SHA-256-Digest: C/XCwHbNBwWXQ1clTtRlPbNj2hGcptFA6uLLc76p1MU=
+SHA-256-Digest: sJprp1xW0oqf5b0oKUXxSMIYrCtzTieEy5yr6q5kgJk=
 
 Name: res/drawable-xxhdpi-v4/fab_ic_message.png
 SHA-256-Digest: L8Cv/HdX8KUX3ubSWfpuzcjOsqxTix7kH6vHV4GNG/E=
@@ -3326,7 +3326,7 @@ Name: res/drawable-v21/ripple_bottom_button.xml
 SHA-256-Digest: 8pKnplbnbPhUmNA1eax1DCU5Nn0uyqIOw/5wWKu2gqU=
 
 Name: SEC-INF/buildinfo.xml
-SHA-256-Digest: zehyKWuE2jsrOQxmxX861a76Y+4bT8TfAExipuFlobU=
+SHA-256-Digest: e8ZBE2WW0YIej4dWKXGuHODsOPfIfmPMff9RukJ//7A=
 
 Name: com/google/i18n/phonenumbers/geocoding/data/1936_en
 SHA-256-Digest: JUv9Y0BAZQ46KgU6C8OZvLTSdl9+rHZ15GAU+zmPl6U=
@@ -3976,7 +3976,7 @@ Name: res/drawable-xxxhdpi-v4/efsdk_account_help_pressed.png
 SHA-256-Digest: AVDi1rW91E69Bja6FaniC82DtIwnvj5Q+LQS/k0CDac=
 
 Name: res/layout/cmcc_video_crbt_layout.xml
-SHA-256-Digest: MvBUrcwH2pMVexKiTPkrImO0cggMaIZxYJ1/RGPwWQI=
+SHA-256-Digest: R+KxfJpb9IykpQuKc/3cTh8bQYKc758yqSXnmXo9+5Y=
 
 Name: com/google/i18n/phonenumbers/geocoding/data/1514_en
 SHA-256-Digest: kW/1xHfM8SkJXaJyay13Gr0T7i3+WSiqJZGBAfFR0fY=
@@ -4139,7 +4139,7 @@ Name: res/drawable/sec_video_border_shape.xml
 SHA-256-Digest: qq8S5c0SHq8ftvF102jLjut1+IPAjsq2YJTKqomWlls=
 
 Name: res/layout/sec_am_reject_layout.xml
-SHA-256-Digest: HIFep3PXsKRexPD05YLdVce3Uajq77dMZgX3gFMBdg8=
+SHA-256-Digest: frd/20CJlrUDcXYeq1YmTvtAuGuFxFghqIzLN1ck1mo=
 
 Name: res/layout/sticker_setting_activity.xml
 SHA-256-Digest: 01QmWL2Hk5lzUF9lE680SoVDxETUKuxEMKqIQshr7bs=
@@ -4424,7 +4424,7 @@ Name: res/drawable/abc_item_background_holo_light.xml
 SHA-256-Digest: ddrfAG429k7aAK9nLyWtKWS5WsGCiL9mhmpNLf55xRc=
 
 Name: res/layout/layout_sms_authenticator.xml
-SHA-256-Digest: dkPw4aPoiFHQO+klzkDaWUdoaoX3DScvkXHjWHq8syM=
+SHA-256-Digest: M/bcSlLCRtgG8li8GIqF/zOTWOTeIYE64QDWYsYzZKM=
 
 Name: res/layout/sec_conference_state_info_banner_layout.xml
 SHA-256-Digest: /nq0TCd+Za8jXrQ1lmY7HbbXE/MNAMFt7Dg5oZ2gM84=
@@ -4539,7 +4539,7 @@ Name: res/drawable-xxxhdpi-v4/efsdk_account_help_disabled.png
 SHA-256-Digest: aPN06nHSnZyl+cxPUGI6RUtOy6LiQjlXMoJZ84nKVqY=
 
 Name: res/layout/vcc_user_agreement_dialog.xml
-SHA-256-Digest: 0WonxTsSPbc6dvZA/qO2hrsypuq8Adxsz7VmqHgZd5I=
+SHA-256-Digest: PzpJoyIxn9y2wP/IMMr8QQ/HcLFqxDxpkFtSh7jYRwA=
 
 Name: res/interpolator/sine_ease_in.xml
 SHA-256-Digest: pC9q5eEZmnAMsqLzs23juVxBepSftYOuNQGNLDmlt48=
@@ -4587,7 +4587,7 @@ Name: res/drawable-xxhdpi-v4/answering_msg_popup_ic_playing.png
 SHA-256-Digest: qoISm4zsCctDE4wYooYR83FdMOEnzaNi5HbuGvXvnIA=
 
 Name: res/layout/video_call_pip_layout.xml
-SHA-256-Digest: KKkxvls6ZB3t6XOq2Be2hp15BMyTZhh/KvyWrECyDiM=
+SHA-256-Digest: gPsKEnCb/grTKJjjPlfs88JpKtt6pXFh86Ijo5h0fgw=
 
 Name: com/google/i18n/phonenumbers/geocoding/data/1312_en
 SHA-256-Digest: 6rujEiDiZWMO7BNd6fodKNmvSZxicA7W+dX8WqrPhj4=
@@ -4645,7 +4645,7 @@ Name: res/drawable/compose_message.spr
 SHA-256-Digest: M8rBqLMr6gOZ8iiIf9QPzJn04M/gZuKhUjN3wi9RFmU=
 
 Name: res/layout/sec_callplus_mapview_layout.xml
-SHA-256-Digest: DEcYgU6w4ZXcmdOvOG1e/mzFuLhwqT8Dj0r1I1y3h7c=
+SHA-256-Digest: rkr/0FLt8q18Lj4OVuEkC7rrAzUjxob+6ZBdjV04zP4=
 
 Name: com/google/i18n/phonenumbers/geocoding/data/1417_en
 SHA-256-Digest: vfv6LE9MTdBwPjqEVOv7IYFuFWrsarq1tr20rB41koM=
@@ -6396,7 +6396,7 @@ Name: res/mipmap-tvdpi-v4/ic_contacts_clr_48cv_44dp.qmg
 SHA-256-Digest: Fz6LWDToa8/Ki5NirkiQglC6crl+pyQAE9ToZqNCezI=
 
 Name: res/layout/notification_action_button.xml
-SHA-256-Digest: z8K4p78vgVruQwQ1UOaew2KPhrz9kRZzlM94qlqS6Zc=
+SHA-256-Digest: v4/mk+9uG/seBp54M/sq8clrbokg44Xj3oslOwb+q0Y=
 
 Name: res/drawable/sec_quick_panel_photo_background_round_rect_theme.x
  ml

@@ -221,7 +221,7 @@
     <string name="app_update_dialog_message">Hi ha una nova versió de %s disponible.</string>
     <string name="app_update_dialog_negative">Després</string>
     <string name="app_update_dialog_positive">Actualitzar</string>
-    <string name="app_update_dialog_title">Vol actualitzar %s?</string>
+    <string name="app_update_dialog_title">Vols actualitzar %s?</string>
     <string name="application_not_found">"No s'ha trobat l'aplicació"</string>
     <string name="auto_update_database_via_wlan">Auto update database via WLAN</string>
     <string name="banner_calls_have_been_merged">"S'han fusionat les trucades."</string>

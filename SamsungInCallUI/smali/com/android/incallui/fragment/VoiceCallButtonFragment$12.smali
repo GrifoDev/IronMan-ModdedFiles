@@ -7,7 +7,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/android/incallui/fragment/VoiceCallButtonFragment;->showRTTErrorDialog()V
+    value = Lcom/android/incallui/fragment/VoiceCallButtonFragment;->showModifyErrorDialog()V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -34,15 +34,9 @@
 
 # virtual methods
 .method public onClick(Landroid/content/DialogInterface;I)V
-    .locals 2
+    .locals 0
 
     invoke-interface {p1}, Landroid/content/DialogInterface;->dismiss()V
-
-    iget-object v0, p0, Lcom/android/incallui/fragment/VoiceCallButtonFragment$12;->this$0:Lcom/android/incallui/fragment/VoiceCallButtonFragment;
-
-    const/4 v1, 0x0
-
-    invoke-static {v0, v1}, Lcom/android/incallui/fragment/VoiceCallButtonFragment;->access$802(Lcom/android/incallui/fragment/VoiceCallButtonFragment;Landroid/app/AlertDialog;)Landroid/app/AlertDialog;
 
     return-void
 .end method

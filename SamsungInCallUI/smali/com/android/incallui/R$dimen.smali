@@ -516,7 +516,7 @@
 
 .field public static final crbt_caller_into_margin:I = 0x7f0a0344
 
-.field public static final crbt_caller_into_margin_top:I = 0x7f0a0345
+.field public static final crbt_caller_name_margin_top_bottom:I = 0x7f0a0345
 
 .field public static final crbt_caller_photo_diameter:I = 0x7f0a0346
 

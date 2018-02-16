@@ -695,7 +695,7 @@
     :try_start_6
     const-string v1, "downloadUrl\uff08\uff09"
 
-    const-string v3, "\u4e0d\u5b58\u5728\u4e0b\u8f7d\u6587\u4ef6"
+    const-string/jumbo v3, "\u4e0d\u5b58\u5728\u4e0b\u8f7d\u6587\u4ef6"
 
     invoke-static {v1, v3}, Lcom/cmdm/control/util/PrintLog;->i(Ljava/lang/String;Ljava/lang/String;)V
 
@@ -1260,7 +1260,7 @@
 
     new-instance v3, Ljava/lang/StringBuilder;
 
-    const-string v4, "\u4e0b\u8f7d\u7ed3\u675f"
+    const-string/jumbo v4, "\u4e0b\u8f7d\u7ed3\u675f"
 
     invoke-direct {v3, v4}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
@@ -1285,7 +1285,7 @@
 
     new-instance v2, Ljava/lang/StringBuilder;
 
-    const-string v3, "\u4e0b\u8f7d\u6587\u4ef6\u662f\u5426\u5b58\u5728\u672c\u5730\uff1a==="
+    const-string/jumbo v3, "\u4e0b\u8f7d\u6587\u4ef6\u662f\u5426\u5b58\u5728\u672c\u5730\uff1a==="
 
     invoke-direct {v2, v3}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
@@ -1317,7 +1317,7 @@
 
     new-instance v2, Ljava/lang/StringBuilder;
 
-    const-string v3, "\u4e0b\u8f7d\u6587\u4ef6\u662f\u5426\u5b58\u5728\u672c\u5730\uff1a==="
+    const-string/jumbo v3, "\u4e0b\u8f7d\u6587\u4ef6\u662f\u5426\u5b58\u5728\u672c\u5730\uff1a==="
 
     invoke-direct {v2, v3}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 

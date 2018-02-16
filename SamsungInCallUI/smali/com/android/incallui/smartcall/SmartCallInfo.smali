@@ -3,6 +3,8 @@
 
 
 # static fields
+.field public static final DEFAULT_CONTENT_PROVIDER_URI:Ljava/lang/String; = "https://hiya.com/oemredirect/samsung"
+
 .field private static final TAG:Ljava/lang/String; = "SmartCallInfo"
 
 

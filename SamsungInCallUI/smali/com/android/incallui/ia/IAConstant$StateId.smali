@@ -14,9 +14,9 @@
 
 
 # static fields
-.field public static final SMARTCALLREPORT:Ljava/lang/String; = "SmartCallReport"
+.field public static final SMART_CALL_REPORT:Ljava/lang/String; = "SmartCallReport"
 
-.field public static final SMARTCALLSPAM:Ljava/lang/String; = "SmartCallSpam"
+.field public static final SMART_CALL_SPAM:Ljava/lang/String; = "SmartCallSpam"
 
 
 # direct methods

@@ -461,7 +461,7 @@
 
     aput-object v2, v1, v4
 
-    const-string v2, "\u30b1\u30a4\u30bf\u30a4"
+    const-string/jumbo v2, "\u30b1\u30a4\u30bf\u30a4"
 
     aput-object v2, v1, v6
 
@@ -564,8 +564,6 @@
     sput-object v0, Lcom/android/b/u;->h:[I
 
     return-void
-
-    nop
 
     :array_0
     .array-data 4

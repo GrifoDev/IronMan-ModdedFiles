@@ -738,7 +738,7 @@
 
     if-eqz v0, :cond_0
 
-    const-string v0, "\u4e2d\u56fd\u79fb\u52a8\u5ba2\u670d"
+    const-string/jumbo v0, "\u4e2d\u56fd\u79fb\u52a8\u5ba2\u670d"
 
     :goto_0
     return-object v0
@@ -752,7 +752,7 @@
 
     if-eqz v0, :cond_1
 
-    const-string v0, "\u4e2d\u56fd\u8054\u901a\u5ba2\u670d"
+    const-string/jumbo v0, "\u4e2d\u56fd\u8054\u901a\u5ba2\u670d"
 
     goto :goto_0
 
@@ -765,7 +765,7 @@
 
     if-eqz v0, :cond_2
 
-    const-string v0, "\u4e2d\u56fd\u7535\u4fe1\u5ba2\u670d"
+    const-string/jumbo v0, "\u4e2d\u56fd\u7535\u4fe1\u5ba2\u670d"
 
     goto :goto_0
 
@@ -829,7 +829,7 @@
 
     new-instance v1, Ljava/lang/StringBuilder;
 
-    const-string v2, "\u4e2d\u56fd"
+    const-string/jumbo v2, "\u4e2d\u56fd"
 
     invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 

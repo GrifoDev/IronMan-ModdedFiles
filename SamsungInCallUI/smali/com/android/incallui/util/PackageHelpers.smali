@@ -3096,14 +3096,23 @@
     invoke-virtual {v2, v3, v4}, Landroid/content/Intent;->putExtra(Ljava/lang/String;I)Landroid/content/Intent;
 
     :cond_3
+    iget-object v3, p1, Lcom/android/incallui/smartcall/SmartCallInfo;->contentProviderUrl:Ljava/lang/String;
+
+    invoke-static {v3}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
+
+    move-result v3
+
+    if-eqz v3, :cond_5
+
     const-string v3, "cpUrl"
 
-    iget-object v4, p1, Lcom/android/incallui/smartcall/SmartCallInfo;->contentProviderUrl:Ljava/lang/String;
+    const-string v4, "https://hiya.com/oemredirect/samsung"
 
     invoke-virtual {v2, v3, v4}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
     :cond_4
-    if-eqz v0, :cond_5
+    :goto_1
+    if-eqz v0, :cond_6
 
     :try_start_0
     invoke-virtual {v0, v2}, Lcom/android/incallui/InCallActivity;->startActivity(Landroid/content/Intent;)V
@@ -3140,6 +3149,15 @@
     goto :goto_0
 
     :cond_5
+    const-string v3, "cpUrl"
+
+    iget-object v4, p1, Lcom/android/incallui/smartcall/SmartCallInfo;->contentProviderUrl:Ljava/lang/String;
+
+    invoke-virtual {v2, v3, v4}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
+
+    goto :goto_1
+
+    :cond_6
     :try_start_1
     invoke-virtual {v1, v2}, Lcom/android/incallui/service/SecCallPopupService;->startActivity(Landroid/content/Intent;)V
     :try_end_1

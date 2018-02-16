@@ -1,10 +1,13 @@
 .class Lcom/android/incallui/fragment/VoiceCallButtonFragment$13;
-.super Landroid/os/Handler;
+.super Ljava/lang/Object;
+
+# interfaces
+.implements Landroid/content/DialogInterface$OnClickListener;
 
 
 # annotations
-.annotation system Ldalvik/annotation/EnclosingClass;
-    value = Lcom/android/incallui/fragment/VoiceCallButtonFragment;
+.annotation system Ldalvik/annotation/EnclosingMethod;
+    value = Lcom/android/incallui/fragment/VoiceCallButtonFragment;->showRTTErrorDialog()V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -23,62 +26,23 @@
 
     iput-object p1, p0, Lcom/android/incallui/fragment/VoiceCallButtonFragment$13;->this$0:Lcom/android/incallui/fragment/VoiceCallButtonFragment;
 
-    invoke-direct {p0}, Landroid/os/Handler;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public handleMessage(Landroid/os/Message;)V
-    .locals 1
+.method public onClick(Landroid/content/DialogInterface;I)V
+    .locals 2
 
-    iget v0, p1, Landroid/os/Message;->what:I
+    invoke-interface {p1}, Landroid/content/DialogInterface;->dismiss()V
 
-    packed-switch v0, :pswitch_data_0
+    iget-object v0, p0, Lcom/android/incallui/fragment/VoiceCallButtonFragment$13;->this$0:Lcom/android/incallui/fragment/VoiceCallButtonFragment;
 
-    :goto_0
+    const/4 v1, 0x0
+
+    invoke-static {v0, v1}, Lcom/android/incallui/fragment/VoiceCallButtonFragment;->access$802(Lcom/android/incallui/fragment/VoiceCallButtonFragment;Landroid/app/AlertDialog;)Landroid/app/AlertDialog;
+
     return-void
-
-    :pswitch_0
-    const-string v0, "EVENT_DISPLAY_RTT"
-
-    invoke-static {p0, v0}, Lcom/android/incallui/Log;->d(Ljava/lang/Object;Ljava/lang/String;)V
-
-    iget-object v0, p0, Lcom/android/incallui/fragment/VoiceCallButtonFragment$13;->this$0:Lcom/android/incallui/fragment/VoiceCallButtonFragment;
-
-    invoke-static {v0}, Lcom/android/incallui/fragment/VoiceCallButtonFragment;->access$900(Lcom/android/incallui/fragment/VoiceCallButtonFragment;)V
-
-    goto :goto_0
-
-    :pswitch_1
-    const-string v0, "EVENT_RTT_EMERGENCY"
-
-    invoke-static {p0, v0}, Lcom/android/incallui/Log;->d(Ljava/lang/Object;Ljava/lang/String;)V
-
-    iget-object v0, p0, Lcom/android/incallui/fragment/VoiceCallButtonFragment$13;->this$0:Lcom/android/incallui/fragment/VoiceCallButtonFragment;
-
-    invoke-static {v0}, Lcom/android/incallui/fragment/VoiceCallButtonFragment;->access$1000(Lcom/android/incallui/fragment/VoiceCallButtonFragment;)V
-
-    goto :goto_0
-
-    :pswitch_2
-    const-string v0, "RECORD_BUTTON_REQUEST_FOCUS"
-
-    invoke-static {p0, v0}, Lcom/android/incallui/Log;->d(Ljava/lang/Object;Ljava/lang/String;)V
-
-    iget-object v0, p0, Lcom/android/incallui/fragment/VoiceCallButtonFragment$13;->this$0:Lcom/android/incallui/fragment/VoiceCallButtonFragment;
-
-    invoke-virtual {v0}, Lcom/android/incallui/fragment/VoiceCallButtonFragment;->setFocusOnRecordBtn()V
-
-    goto :goto_0
-
-    nop
-
-    :pswitch_data_0
-    .packed-switch 0x3e9
-        :pswitch_0
-        :pswitch_1
-        :pswitch_2
-    .end packed-switch
 .end method

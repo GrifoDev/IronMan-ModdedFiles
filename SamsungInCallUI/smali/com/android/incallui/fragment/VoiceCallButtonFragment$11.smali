@@ -1,13 +1,10 @@
 .class Lcom/android/incallui/fragment/VoiceCallButtonFragment$11;
-.super Ljava/lang/Object;
-
-# interfaces
-.implements Landroid/content/DialogInterface$OnClickListener;
+.super Landroid/animation/AnimatorListenerAdapter;
 
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/android/incallui/fragment/VoiceCallButtonFragment;->showModifyErrorDialog()V
+    value = Lcom/android/incallui/fragment/VoiceCallButtonFragment;->animateForRevealEndCallButton()V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -26,17 +23,57 @@
 
     iput-object p1, p0, Lcom/android/incallui/fragment/VoiceCallButtonFragment$11;->this$0:Lcom/android/incallui/fragment/VoiceCallButtonFragment;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public onClick(Landroid/content/DialogInterface;I)V
-    .locals 0
+.method public onAnimationEnd(Landroid/animation/Animator;)V
+    .locals 2
 
-    invoke-interface {p1}, Landroid/content/DialogInterface;->dismiss()V
+    const/high16 v1, 0x3f800000    # 1.0f
 
+    iget-object v0, p0, Lcom/android/incallui/fragment/VoiceCallButtonFragment$11;->this$0:Lcom/android/incallui/fragment/VoiceCallButtonFragment;
+
+    iget-object v0, v0, Lcom/android/incallui/fragment/VoiceCallButtonFragment;->mEndCallButtonContainer:Landroid/view/View;
+
+    if-eqz v0, :cond_0
+
+    iget-object v0, p0, Lcom/android/incallui/fragment/VoiceCallButtonFragment$11;->this$0:Lcom/android/incallui/fragment/VoiceCallButtonFragment;
+
+    iget-object v0, v0, Lcom/android/incallui/fragment/VoiceCallButtonFragment;->mEndCallButtonContainer:Landroid/view/View;
+
+    invoke-virtual {v0, v1}, Landroid/view/View;->setAlpha(F)V
+
+    iget-object v0, p0, Lcom/android/incallui/fragment/VoiceCallButtonFragment$11;->this$0:Lcom/android/incallui/fragment/VoiceCallButtonFragment;
+
+    iget-object v0, v0, Lcom/android/incallui/fragment/VoiceCallButtonFragment;->mEndCallButtonContainer:Landroid/view/View;
+
+    invoke-virtual {v0, v1}, Landroid/view/View;->setScaleX(F)V
+
+    iget-object v0, p0, Lcom/android/incallui/fragment/VoiceCallButtonFragment$11;->this$0:Lcom/android/incallui/fragment/VoiceCallButtonFragment;
+
+    iget-object v0, v0, Lcom/android/incallui/fragment/VoiceCallButtonFragment;->mEndCallButtonContainer:Landroid/view/View;
+
+    invoke-virtual {v0, v1}, Landroid/view/View;->setScaleY(F)V
+
+    :cond_0
+    iget-object v0, p0, Lcom/android/incallui/fragment/VoiceCallButtonFragment$11;->this$0:Lcom/android/incallui/fragment/VoiceCallButtonFragment;
+
+    iget-object v0, v0, Lcom/android/incallui/fragment/VoiceCallButtonFragment;->mEndCallButton:Landroid/widget/ImageButton;
+
+    if-eqz v0, :cond_1
+
+    iget-object v0, p0, Lcom/android/incallui/fragment/VoiceCallButtonFragment$11;->this$0:Lcom/android/incallui/fragment/VoiceCallButtonFragment;
+
+    iget-object v0, v0, Lcom/android/incallui/fragment/VoiceCallButtonFragment;->mEndCallButton:Landroid/widget/ImageButton;
+
+    const v1, 0x7f020301
+
+    invoke-virtual {v0, v1}, Landroid/widget/ImageButton;->setImageResource(I)V
+
+    :cond_1
     return-void
 .end method

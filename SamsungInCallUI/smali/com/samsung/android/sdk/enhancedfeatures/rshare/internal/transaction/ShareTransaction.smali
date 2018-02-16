@@ -1122,7 +1122,7 @@
 .end method
 
 .method private startWithoutDBQuery()V
-    .locals 10
+    .locals 11
 
     const/4 v0, 0x0
 
@@ -1302,9 +1302,13 @@
 
     invoke-virtual {v0}, Lcom/samsung/android/sdk/enhancedfeatures/rshare/apis/response/data/ContentItem;->getContentType()Ljava/lang/String;
 
-    move-result-object v0
+    move-result-object v10
 
-    invoke-direct {v8, v9, v0}, Lcom/samsung/android/sdk/ssf/share/io/ContentForShare;-><init>(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-virtual {v0}, Lcom/samsung/android/sdk/enhancedfeatures/rshare/apis/response/data/ContentItem;->getExtraAttr()I
+
+    move-result v0
+
+    invoke-direct {v8, v9, v10, v0}, Lcom/samsung/android/sdk/ssf/share/io/ContentForShare;-><init>(Ljava/lang/String;Ljava/lang/String;I)V
 
     invoke-virtual {v3, v8}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 

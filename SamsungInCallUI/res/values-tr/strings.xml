@@ -212,7 +212,7 @@
     <string name="agif_write_permission_label">AGIF içeriğini değiştir</string>
     <string name="agree">Onayla</string>
     <string name="am_cover_toggle_string">Aramyı yanıtlmk veya reddtmk içn kapağı açn.</string>
-    <string name="am_device_memory_full_warning">Mesajla otomatik yanıtla özelliği kullanılamıyor. Sesli mesajları kaydetmek için cihazınızın hafızasında yeterli alan yok. Bazı öğeleri silip tekrar deneyin.</string>
+    <string name="am_device_memory_full_warning">Mesajla otomatik yanıtla özelliği kullanılamıyor. Sesli mesajları kaydetmek için cihazınızın hafızasında yeterli alan yok. Bazı ögeleri silip tekrar deneyin.</string>
     <string name="another_device_pickup_message">Bu arama başka bir cihazda yanıtlandı.</string>
     <string name="answering_memo_Playing_text">Cevaplama mesajı çalınıyor…</string>
     <string name="answering_memo_Recording_text">Mesaj kaydediliyor…</string>

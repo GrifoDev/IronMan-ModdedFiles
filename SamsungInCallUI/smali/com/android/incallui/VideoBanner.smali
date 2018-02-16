@@ -137,6 +137,32 @@
 
     aput-object v0, v2, v1
 
+    const-string v0, "VideoBanner"
+
+    new-instance v1, Ljava/lang/StringBuilder;
+
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v3, "getMessageForModify - return : "
+
+    invoke-virtual {v1, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-static {v2}, Ljava/util/Arrays;->toString([Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-virtual {v1, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-static {v0, v1}, Lcom/android/incallui/Log;->d(Ljava/lang/String;Ljava/lang/String;)V
+
     return-object v2
 
     :pswitch_1
@@ -146,7 +172,7 @@
 
     move-result-object v0
 
-    const-string v1, "%s"
+    const-string v1, "%s "
 
     const-string v3, ""
 
@@ -165,7 +191,7 @@
 
     move-result-object v0
 
-    const-string v1, "%s"
+    const-string v1, "%s "
 
     const-string v3, ""
 
@@ -184,7 +210,7 @@
 
     move-result-object v0
 
-    const-string v1, "%s"
+    const-string v1, "%s "
 
     const-string v3, ""
 
@@ -301,6 +327,28 @@
     packed-switch p0, :pswitch_data_0
 
     :goto_0
+    const-string v1, "VideoBanner"
+
+    new-instance v2, Ljava/lang/StringBuilder;
+
+    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v3, "getMessageForVideoState - return : "
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-static {v1, v2}, Lcom/android/incallui/Log;->d(Ljava/lang/String;Ljava/lang/String;)V
+
     return-object v0
 
     :pswitch_0
@@ -439,7 +487,7 @@
 
     move-result-object v0
 
-    goto :goto_0
+    goto/16 :goto_0
 
     :cond_8
     invoke-static {}, Lcom/android/incallui/service/vt/VideoCallConfig;->CONCEPT_USA_ATT()Z
@@ -772,8 +820,6 @@
     move-result-object v0
 
     goto/16 :goto_0
-
-    nop
 
     :pswitch_data_0
     .packed-switch 0x1

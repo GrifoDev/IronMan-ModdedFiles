@@ -248,7 +248,7 @@
 
     invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    const-string v2, "\u4e0d\u5b58\u5728\u4e2a\u4eba\u7fa4\u7ec4\u81ea\u5c55\u793a"
+    const-string/jumbo v2, "\u4e0d\u5b58\u5728\u4e2a\u4eba\u7fa4\u7ec4\u81ea\u5c55\u793a"
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -2092,7 +2092,7 @@
 
     invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    const-string v2, "\u4e0d\u5b58\u5728\u4e2a\u4eba\u7fa4\u7ec4\u81ea\u5c55\u793a"
+    const-string/jumbo v2, "\u4e0d\u5b58\u5728\u4e2a\u4eba\u7fa4\u7ec4\u81ea\u5c55\u793a"
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 

@@ -2274,9 +2274,6 @@
         <item name="android:textAllCaps">true</item>
         <item name="android:fontFamily">sans-serif-medium</item>
     </style>
-    <style name="SettingActivityActionBarStyle" parent="@android:style/Widget.DeviceDefault.Light.ActionBar">
-        <item name="android:homeAsUpIndicator">@drawable/action_bar_back_button_callsetting</item>
-    </style>
     <style name="SoftPhoneDialogRadioButton">
         <item name="android:textSize">20.0sp</item>
         <item name="android:textStyle">normal</item>
@@ -2531,7 +2528,6 @@
         <item name="android:windowLightStatusBar">true</item>
     </style>
     <style name="Theme.SettingActivity" parent="@android:style/Theme.DeviceDefault.Light">
-        <item name="android:actionBarStyle">@style/SettingActivityActionBarStyle</item>
         <item name="android:actionMenuTextColor">@color/action_menu_item_color</item>
         <item name="android:colorControlActivated">@color/sec_incall_color_primary_dark</item>
         <item name="android:colorPrimary">@color/sec_incall_color_primary</item>

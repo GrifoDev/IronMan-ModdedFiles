@@ -151,6 +151,7 @@
     return v0
 
     :cond_1
+    :try_start_0
     invoke-static {p0}, Landroid/provider/BlockedNumberContract;->canCurrentUserBlockNumbers(Landroid/content/Context;)Z
 
     move-result v1
@@ -158,8 +159,19 @@
     if-eqz v1, :cond_0
 
     invoke-static {p0, p1}, Landroid/provider/BlockedNumberContract;->isBlocked(Landroid/content/Context;Ljava/lang/String;)Z
+    :try_end_0
+    .catch Ljava/lang/IllegalArgumentException; {:try_start_0 .. :try_end_0} :catch_0
 
     move-result v0
+
+    goto :goto_0
+
+    :catch_0
+    move-exception v1
+
+    const-string v1, "IllegalArgumentException "
+
+    invoke-static {v1}, Lcom/android/incallui/smartcall/SmartCallUtil;->log(Ljava/lang/String;)V
 
     goto :goto_0
 .end method

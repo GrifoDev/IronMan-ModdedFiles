@@ -3968,7 +3968,7 @@
 
     const/4 v6, 0x0
 
-    const-string v7, "\u4e1a\u52a1\u64cd\u4f5c\u5931\u8d25\uff0c\u8bf7\u7a0d\u5019\u91cd\u8bd5!"
+    const-string/jumbo v7, "\u4e1a\u52a1\u64cd\u4f5c\u5931\u8d25\uff0c\u8bf7\u7a0d\u5019\u91cd\u8bd5!"
 
     invoke-direct {v5, v6, v7}, Lcom/cmdm/control/util/client/ResultEntity;-><init>(ILjava/lang/String;)V
     :try_end_1

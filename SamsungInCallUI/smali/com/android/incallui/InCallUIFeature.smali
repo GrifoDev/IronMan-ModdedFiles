@@ -9132,9 +9132,9 @@
 
     move-result-object v0
 
-    const-string v1, "CscFeature_Common_Sprint_Vowifi"
+    const-string v4, "CscFeature_Common_Sprint_Vowifi"
 
-    invoke-virtual {v0, v1}, Lcom/samsung/android/feature/SemCscFeature;->getBoolean(Ljava/lang/String;)Z
+    invoke-virtual {v0, v4}, Lcom/samsung/android/feature/SemCscFeature;->getBoolean(Ljava/lang/String;)Z
 
     move-result v0
 
@@ -9158,9 +9158,11 @@
 
     invoke-virtual {v2, v3, v0}, Ljava/util/concurrent/ConcurrentHashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    sget-object v1, Lcom/android/incallui/InCallUIFeature;->mFeatureList:Ljava/util/concurrent/ConcurrentHashMap;
+    invoke-virtual {v1}, Ljava/lang/Boolean;->booleanValue()Z
 
-    const-string v2, "show_vowifi_endcall_button"
+    move-result v0
+
+    if-eqz v0, :cond_1b
 
     const-string v0, "spr_vowifi_ui"
 
@@ -9170,32 +9172,19 @@
 
     if-nez v0, :cond_1b
 
-    const-string v0, "att_volte_ui"
+    sget-object v0, Lcom/android/incallui/InCallUIFeature;->mFeatureList:Ljava/util/concurrent/ConcurrentHashMap;
 
-    invoke-static {v0}, Lcom/android/incallui/InCallUIFeature;->hasFeature(Ljava/lang/String;)Z
+    const-string v1, "show_vowifi_endcall_button"
 
-    move-result v0
+    const/4 v2, 0x0
 
-    if-nez v0, :cond_1b
+    invoke-static {v2}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
-    const-string v0, "show_vowifi_endcall_button"
+    move-result-object v2
 
-    invoke-static {v0}, Lcom/android/incallui/InCallUIFeature;->hasFeature(Ljava/lang/String;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_26
+    invoke-virtual {v0, v1, v2}, Ljava/util/concurrent/ConcurrentHashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     :cond_1b
-    const/4 v0, 0x1
-
-    :goto_13
-    invoke-static {v0}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
-
-    move-result-object v0
-
-    invoke-virtual {v1, v2, v0}, Ljava/util/concurrent/ConcurrentHashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
     sget-object v0, Lcom/android/incallui/InCallUIFeature;->mFeatureList:Ljava/util/concurrent/ConcurrentHashMap;
 
     const-string v1, "show_vowifi_incomingcall_button"
@@ -9218,7 +9207,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_27
+    if-eqz v0, :cond_26
 
     const-string v0, "att_volte_ui"
 
@@ -9226,11 +9215,11 @@
 
     move-result v0
 
-    if-nez v0, :cond_27
+    if-nez v0, :cond_26
 
     const/4 v0, 0x1
 
-    :goto_14
+    :goto_13
     invoke-static {v0}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
     move-result-object v0
@@ -9374,12 +9363,7 @@
     :cond_26
     const/4 v0, 0x0
 
-    goto/16 :goto_13
-
-    :cond_27
-    const/4 v0, 0x0
-
-    goto/16 :goto_14
+    goto :goto_13
 .end method
 
 .method public static makeFeatureForVT()V

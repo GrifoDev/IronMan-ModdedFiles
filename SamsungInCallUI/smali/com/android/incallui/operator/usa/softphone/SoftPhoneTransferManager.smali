@@ -289,7 +289,7 @@
 
     new-instance v5, Landroid/view/ContextThemeWrapper;
 
-    const v6, 0x7f0b0161
+    const v6, 0x7f0b0160
 
     invoke-direct {v5, p1, v6}, Landroid/view/ContextThemeWrapper;-><init>(Landroid/content/Context;I)V
 

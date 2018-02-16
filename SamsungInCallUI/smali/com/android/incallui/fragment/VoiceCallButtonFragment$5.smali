@@ -55,7 +55,7 @@
     const/4 v1, 0x1
 
     :goto_0
-    invoke-virtual {v0, v1}, Lcom/android/incallui/CallButtonPresenter;->shareClicked(Z)V
+    invoke-virtual {v0, v1}, Lcom/android/incallui/CallButtonPresenter;->promotedClicked(Z)V
 
     return-void
 

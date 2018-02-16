@@ -413,7 +413,7 @@
         </receiver>
         <activity android:exported="false" android:name="com.google.android.gms.common.api.GoogleApiActivity" android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
         <provider android:authorities="com.samsung.android.incallui.firebaseinitprovider" android:exported="false" android:initOrder="100" android:name="com.google.firebase.provider.FirebaseInitProvider"/>
-        <meta-data android:name="SPDE.build.signature" android:value="4730670/18053215/release/SamsungInCallUI-217019-2.3.03"/>
+        <meta-data android:name="SPDE.build.signature" android:value="4767468/18346093/release/SamsungInCallUI-217027-2.3.03"/>
         <meta-data android:name="SPDE.env.version" android:value="2.3.3/L25.1.4/25.1.4"/>
     </application>
 </manifest>

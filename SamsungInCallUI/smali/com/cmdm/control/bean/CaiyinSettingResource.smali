@@ -355,7 +355,7 @@
 
     move-result-object v0
 
-    const-string v1, "\u4eba\u8d5e\u4e86\u6211"
+    const-string/jumbo v1, "\u4eba\u8d5e\u4e86\u6211"
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 

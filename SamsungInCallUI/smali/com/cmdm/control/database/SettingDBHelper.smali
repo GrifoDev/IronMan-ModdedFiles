@@ -684,7 +684,7 @@
 
     const-string v0, "SettingDBHelper"
 
-    const-string v1, "\u4e2a\u4eba\u8bbe\u7f6e\u4e2d\u6570\u636e\u5e93\u5347\u7ea7\u4e86"
+    const-string/jumbo v1, "\u4e2a\u4eba\u8bbe\u7f6e\u4e2d\u6570\u636e\u5e93\u5347\u7ea7\u4e86"
 
     invoke-static {v0, v1}, Lcom/cmdm/control/util/PrintLog;->i(Ljava/lang/String;Ljava/lang/String;)V
 
@@ -702,8 +702,6 @@
     invoke-virtual {p0, p1}, Lcom/cmdm/control/database/SettingDBHelper;->clearDataBase(Landroid/database/sqlite/SQLiteDatabase;)Z
 
     goto :goto_0
-
-    nop
 
     :pswitch_data_0
     .packed-switch 0x1

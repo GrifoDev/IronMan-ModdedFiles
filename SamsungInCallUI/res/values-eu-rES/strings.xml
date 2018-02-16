@@ -147,7 +147,7 @@
     <string name="agif_read_permission_label">Irakurri AGIF edukia</string>
     <string name="agif_receive_no_id">Ezin da erakutsi pegatina. Deia amaitzean, eguneratu %s.</string>
     <string name="agif_receive_no_id_upsupport_update">Ezin da erakutsi pegatina. Pegatina gehiago izango dira eskuragarri hurrengo sistema eguneraketan.</string>
-    <string name="agif_receive_toast">%s deitzailearen sticker-a.</string>
+    <string name="agif_receive_toast">%s deitzailearen pegatina.</string>
     <string name="agif_sent_fail_message">Ezin da bidali GIF animatua. Saiatu berriz geroago.</string>
     <string name="agif_sent_toast">Bidali da pegatina.</string>
     <string name="agif_write_permission_description">AGIF edukia aldatzea baimentzen dio Telefonoari.</string>

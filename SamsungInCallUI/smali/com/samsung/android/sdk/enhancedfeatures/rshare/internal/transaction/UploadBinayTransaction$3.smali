@@ -43,7 +43,7 @@
 .end method
 
 .method public onResponse(ILjava/lang/Object;Lcom/samsung/android/sdk/ssf/SsfResult;Ljava/lang/Object;)V
-    .locals 4
+    .locals 3
 
     const-string v0, "FileInformation  response received "
 
@@ -132,37 +132,6 @@
 
     if-ne p1, v0, :cond_0
 
-    invoke-static {}, Lcom/samsung/android/sdk/enhancedfeatures/rshare/internal/RQuota;->get()Landroid/os/Bundle;
-
-    move-result-object v0
-
-    if-eqz v0, :cond_2
-
-    const-string v1, "byte_usage"
-
-    invoke-virtual {v0, v1}, Landroid/os/Bundle;->getLong(Ljava/lang/String;)J
-
-    move-result-wide v0
-
-    check-cast p4, Landroid/os/Bundle;
-
-    const-string v2, "content_total_size"
-
-    invoke-virtual {p4, v2}, Landroid/os/Bundle;->getLong(Ljava/lang/String;)J
-
-    move-result-wide v2
-
-    add-long/2addr v0, v2
-
-    invoke-static {v0, v1}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
-
-    move-result-object v0
-
-    const/4 v1, 0x0
-
-    invoke-static {v0, v1}, Lcom/samsung/android/sdk/enhancedfeatures/rshare/internal/RQuota;->putQuota(Ljava/lang/Long;Ljava/lang/Long;)Z
-
-    :cond_2
     check-cast p2, Lcom/samsung/android/sdk/ssf/file/io/UploadFileUsingTokenResponse;
 
     new-instance v0, Lcom/samsung/android/sdk/enhancedfeatures/rshare/apis/response/UploadBinaryResponse;
