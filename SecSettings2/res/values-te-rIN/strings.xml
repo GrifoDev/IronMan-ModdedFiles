@@ -1662,6 +1662,7 @@ Where Can I Find More Information About the 3rd Party's Policies? Separately, if
 డేటా మొత్తం ఆధారంగా డీక్రిప్షన్‌కు కొంత ఎక్కువ సమయం పట్టవచ్చు. మీరు ప్రారంభించడానికి ముందు, బ్యాటరీ ఛార్జ్ చేయబడిందని మరియు డీక్రిప్షన్ పూర్తి అయ్యే వరకు పరికరాన్ని ప్లగ్ ఇన్ చేసి ఉంచారని నిర్ధారించుకోండి.
 
 డీక్రిప్షన్ సమయంలో, SD కార్డ్‌ని ఉపయోగించలేరు."</string>
+    <string name="sdcard_decrypt_description_reset_device">మీ ఫోన్‌ను రీసెట్ చేయడానికి ముందు, మీ SD కార్డ్‌ను డీక్రిప్ట్ చేయాలి.</string>
     <string name="sdcard_encrypt_button">SD కార్డ్‌ని ఎన్‌క్రిప్ట్ చేయి</string>
     <string name="sdcard_decrypt_button">SD కార్డ్‌ని డీక్రిప్ట్ చేయి</string>
     <string name="sdcard_encrypt_checking">SD కార్డును తనిఖీ చేస్తోంది…</string>

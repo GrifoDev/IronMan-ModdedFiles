@@ -526,7 +526,7 @@
 
     iget-object v9, p0, Lcom/samsung/android/settings/datausage/networkconnect/FirewallAdapter;->mContext:Landroid/content/Context;
 
-    const v10, 0x7f0b0ee2
+    const v10, 0x7f0b0ee3
 
     invoke-virtual {v9, v10}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -589,7 +589,7 @@
 
     iget-object v9, p0, Lcom/samsung/android/settings/datausage/networkconnect/FirewallAdapter;->mContext:Landroid/content/Context;
 
-    const v10, 0x7f0b0ee3
+    const v10, 0x7f0b0ee4
 
     invoke-virtual {v9, v10}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -725,7 +725,7 @@
 
     iget-object v9, p0, Lcom/samsung/android/settings/datausage/networkconnect/FirewallAdapter;->mContext:Landroid/content/Context;
 
-    const v10, 0x7f0b0ee2
+    const v10, 0x7f0b0ee3
 
     invoke-virtual {v9, v10}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -764,7 +764,7 @@
 
     iget-object v9, p0, Lcom/samsung/android/settings/datausage/networkconnect/FirewallAdapter;->mContext:Landroid/content/Context;
 
-    const v10, 0x7f0b0ee3
+    const v10, 0x7f0b0ee4
 
     invoke-virtual {v9, v10}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 

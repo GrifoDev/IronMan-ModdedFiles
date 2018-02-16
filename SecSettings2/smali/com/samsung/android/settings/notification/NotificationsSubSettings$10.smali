@@ -386,7 +386,7 @@
 
     const v11, 0x7f0b053f
 
-    const v10, 0x7f0b0bc9
+    const v10, 0x7f0b0bca
 
     const/4 v9, 0x1
 
@@ -441,7 +441,7 @@
 
     iput-object v6, v0, Lcom/android/settings/search/SearchIndexableRaw;->title:Ljava/lang/String;
 
-    const v6, 0x7f0b0bcb
+    const v6, 0x7f0b0bcc
 
     invoke-virtual {v4, v6}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 

@@ -239,18 +239,18 @@
 
     if-eqz v0, :cond_0
 
-    const v0, 0x7f0b1b4e
+    const v0, 0x7f0b1b4f
 
     :goto_0
     return v0
 
     :cond_0
-    const v0, 0x7f0b1b4d
+    const v0, 0x7f0b1b4e
 
     goto :goto_0
 
     :cond_1
-    const v0, 0x7f0b1b4f
+    const v0, 0x7f0b1b50
 
     goto :goto_0
 .end method
@@ -848,7 +848,7 @@
 
     if-eqz v3, :cond_3
 
-    const v3, 0x7f0b1b50
+    const v3, 0x7f0b1b51
 
     :goto_2
     invoke-virtual {v4, v3}, Landroid/app/Activity;->getText(I)Ljava/lang/CharSequence;

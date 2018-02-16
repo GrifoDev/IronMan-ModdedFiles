@@ -75,7 +75,7 @@
 
     check-cast v6, Lcom/android/settings/SettingsActivity;
 
-    const v7, 0x7f0b10f0
+    const v7, 0x7f0b10f1
 
     invoke-static {v6, v7, v8}, Landroid/widget/Toast;->makeText(Landroid/content/Context;II)Landroid/widget/Toast;
 

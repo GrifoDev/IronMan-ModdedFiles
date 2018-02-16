@@ -123,7 +123,7 @@
 
     iget v5, p0, Lcom/android/settings/datausage/ChartDataUsagePreference;->mLimitColor:I
 
-    const v8, 0x7f0b1b10
+    const v8, 0x7f0b1b11
 
     invoke-direct {p0, v6, v7, v8, v5}, Lcom/android/settings/datausage/ChartDataUsagePreference;->getLabel(JII)Ljava/lang/CharSequence;
 
@@ -170,7 +170,7 @@
 
     iget v5, p0, Lcom/android/settings/datausage/ChartDataUsagePreference;->mWarningColor:I
 
-    const v8, 0x7f0b1b0f
+    const v8, 0x7f0b1b10
 
     invoke-direct {p0, v6, v7, v8, v5}, Lcom/android/settings/datausage/ChartDataUsagePreference;->getLabel(JII)Ljava/lang/CharSequence;
 

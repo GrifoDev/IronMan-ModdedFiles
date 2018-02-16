@@ -253,7 +253,7 @@
 
     iput-boolean v0, p0, Lcom/samsung/android/settings/face/FaceEntry;->mIsWaitingResult:Z
 
-    const v0, 0x7f0b142e
+    const v0, 0x7f0b142f
 
     invoke-virtual {p0, v0}, Lcom/samsung/android/settings/face/FaceEntry;->getString(I)Ljava/lang/String;
 
@@ -330,7 +330,7 @@
 
     aput-object v4, v3, v5
 
-    const v4, 0x7f0b07d2
+    const v4, 0x7f0b07d3
 
     invoke-virtual {v2, v4, v3}, Landroid/content/res/Resources;->getString(I[Ljava/lang/Object;)Ljava/lang/String;
 
@@ -344,7 +344,7 @@
     :cond_0
     const-string/jumbo v2, "FcstFaceEntry"
 
-    const v3, 0x7f0b0982
+    const v3, 0x7f0b0983
 
     invoke-static {p0, v3, v2}, Lcom/android/settings/Utils;->isNotAvailableBiometricsWithDexAndMultiWindow(Landroid/app/Activity;ILjava/lang/String;)Z
 
@@ -480,7 +480,7 @@
 .method private startFragment(Landroid/content/Context;)V
     .locals 14
 
-    const v5, 0x7f0b0982
+    const v5, 0x7f0b0983
 
     const/4 v4, 0x0
 
@@ -874,7 +874,7 @@
 
     const-string/jumbo v2, "FcstFaceEntry"
 
-    const v3, 0x7f0b0982
+    const v3, 0x7f0b0983
 
     invoke-static {p0, v3, v2}, Lcom/android/settings/Utils;->isNotAvailableBiometricsWithDexAndMultiWindow(Landroid/app/Activity;ILjava/lang/String;)Z
 
@@ -1093,7 +1093,7 @@
 
     if-nez v2, :cond_5
 
-    const v2, 0x7f0b08f0
+    const v2, 0x7f0b08f1
 
     invoke-virtual {p0, v2}, Lcom/samsung/android/settings/face/FaceEntry;->getString(I)Ljava/lang/String;
 

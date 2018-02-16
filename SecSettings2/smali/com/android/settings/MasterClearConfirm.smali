@@ -123,13 +123,13 @@
 
     if-eqz v0, :cond_0
 
-    const v1, 0x7f0b0d94
+    const v1, 0x7f0b0d95
 
     invoke-virtual {p0, v1}, Lcom/android/settings/MasterClearConfirm;->getString(I)Ljava/lang/String;
 
     move-result-object v1
 
-    const v2, 0x7f0b0d96
+    const v2, 0x7f0b0d97
 
     invoke-virtual {p0, v2}, Lcom/android/settings/MasterClearConfirm;->getString(I)Ljava/lang/String;
 
@@ -304,6 +304,75 @@
     return v2
 .end method
 
+.method private checkSDCardEncryptionEnabled()Z
+    .locals 6
+
+    const/4 v0, 0x0
+
+    new-instance v1, Lcom/samsung/android/security/SemSdCardEncryption;
+
+    invoke-virtual {p0}, Lcom/android/settings/MasterClearConfirm;->getActivity()Landroid/app/Activity;
+
+    move-result-object v3
+
+    invoke-virtual {v3}, Landroid/app/Activity;->getApplicationContext()Landroid/content/Context;
+
+    move-result-object v3
+
+    invoke-direct {v1, v3}, Lcom/samsung/android/security/SemSdCardEncryption;-><init>(Landroid/content/Context;)V
+
+    invoke-virtual {v1}, Lcom/samsung/android/security/SemSdCardEncryption;->getVolumeState()Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-virtual {v1}, Lcom/samsung/android/security/SemSdCardEncryption;->isEncryptionSupported()Z
+
+    move-result v3
+
+    if-eqz v3, :cond_0
+
+    const-string/jumbo v3, "mounted"
+
+    invoke-virtual {v3, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v3
+
+    if-eqz v3, :cond_0
+
+    invoke-virtual {v1}, Lcom/samsung/android/security/SemSdCardEncryption;->isEncryptionAppliedSDCard()Z
+
+    move-result v3
+
+    if-eqz v3, :cond_0
+
+    const/4 v0, 0x1
+
+    :cond_0
+    const-string/jumbo v3, "MasterClearConfirm"
+
+    new-instance v4, Ljava/lang/StringBuilder;
+
+    invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string/jumbo v5, "checkSDCardEncryptionEnabled : "
+
+    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v4
+
+    invoke-virtual {v4, v0}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+
+    move-result-object v4
+
+    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v4
+
+    invoke-static {v3, v4}, Landroid/util/secutil/Log;->secD(Ljava/lang/String;Ljava/lang/String;)I
+
+    return v0
+.end method
+
 .method private clearRemovedPreloadApp()V
     .locals 2
 
@@ -323,6 +392,45 @@
 
     :cond_0
     return-void
+.end method
+
+.method private decryptSDCardBeforeFactoryReset()V
+    .locals 4
+
+    :try_start_0
+    new-instance v1, Landroid/content/Intent;
+
+    const-string/jumbo v2, "com.sec.app.action.START_SDCARD_ENCRYPTION"
+
+    invoke-direct {v1, v2}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
+
+    const-string/jumbo v2, "fromWhere"
+
+    const-string/jumbo v3, "MasterClearConfirm"
+
+    invoke-virtual {v1, v2, v3}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
+
+    const-string/jumbo v2, "MasterClearConfirm"
+
+    const-string/jumbo v3, "doMasterClear() startActivity SDCard Decryption"
+
+    invoke-static {v2, v3}, Landroid/util/secutil/Log;->secI(Ljava/lang/String;Ljava/lang/String;)I
+
+    const/16 v2, 0x3f2
+
+    invoke-virtual {p0, v1, v2}, Lcom/android/settings/MasterClearConfirm;->startActivityForResult(Landroid/content/Intent;I)V
+    :try_end_0
+    .catch Landroid/content/ActivityNotFoundException; {:try_start_0 .. :try_end_0} :catch_0
+
+    :goto_0
+    return-void
+
+    :catch_0
+    move-exception v0
+
+    invoke-virtual {v0}, Landroid/content/ActivityNotFoundException;->printStackTrace()V
+
+    goto :goto_0
 .end method
 
 .method private doMasterClear()V
@@ -615,6 +723,17 @@
 
     if-nez v5, :cond_4
 
+    invoke-direct {p0}, Lcom/android/settings/MasterClearConfirm;->checkSDCardEncryptionEnabled()Z
+
+    move-result v5
+
+    if-eqz v5, :cond_8
+
+    invoke-direct {p0}, Lcom/android/settings/MasterClearConfirm;->decryptSDCardBeforeFactoryReset()V
+
+    goto :goto_1
+
+    :cond_8
     const-string/jumbo v5, "MasterClearConfirm"
 
     const-string/jumbo v6, "doMasterClear() startActivity MasterClearModemReset"
@@ -656,12 +775,14 @@
     :pswitch_0
     invoke-direct {p0}, Lcom/android/settings/MasterClearConfirm;->clearRemovedPreloadApp()V
 
-    goto :goto_2
+    goto/16 :goto_2
 
     :pswitch_1
     invoke-direct {p0}, Lcom/android/settings/MasterClearConfirm;->saveRemovedPreloadApps()V
 
     goto/16 :goto_2
+
+    nop
 
     :pswitch_data_0
     .packed-switch 0x0
@@ -1547,9 +1668,9 @@
 .method public onActivityResult(IILandroid/content/Intent;)V
     .locals 8
 
-    const/4 v7, 0x1
+    const/4 v7, 0x0
 
-    const/4 v6, 0x0
+    const/4 v6, 0x1
 
     const/4 v5, -0x1
 
@@ -1592,11 +1713,11 @@
 
     move-result v3
 
-    if-eqz v3, :cond_3
+    if-eqz v3, :cond_4
 
     const/16 v3, 0x3e8
 
-    if-ne p1, v3, :cond_3
+    if-ne p1, v3, :cond_4
 
     if-ne p2, v5, :cond_0
 
@@ -1638,7 +1759,7 @@
 
     const-string/jumbo v4, "lock_my_mobile"
 
-    invoke-static {v3, v4, v6}, Landroid/provider/Settings$System;->putInt(Landroid/content/ContentResolver;Ljava/lang/String;I)Z
+    invoke-static {v3, v4, v7}, Landroid/provider/Settings$System;->putInt(Landroid/content/ContentResolver;Ljava/lang/String;I)Z
 
     new-instance v1, Landroid/content/Intent;
 
@@ -1659,57 +1780,17 @@
     invoke-virtual {v3, v1}, Landroid/app/Activity;->sendBroadcast(Landroid/content/Intent;)V
 
     :cond_2
-    const-string/jumbo v3, "MasterClearConfirm"
-
-    const-string/jumbo v4, "onActivityResult() startActivity MasterClearModemReset"
-
-    invoke-static {v3, v4}, Landroid/util/secutil/Log;->secI(Ljava/lang/String;Ljava/lang/String;)I
-
-    invoke-virtual {p0}, Lcom/android/settings/MasterClearConfirm;->getActivity()Landroid/app/Activity;
-
-    move-result-object v3
-
-    invoke-virtual {v3}, Landroid/app/Activity;->getApplicationContext()Landroid/content/Context;
-
-    move-result-object v0
-
-    new-instance v1, Landroid/content/Intent;
-
-    const-class v3, Lcom/samsung/android/settings/MasterClearModemReset;
-
-    invoke-direct {v1, v0, v3}, Landroid/content/Intent;-><init>(Landroid/content/Context;Ljava/lang/Class;)V
-
-    const-string/jumbo v3, "FACTORY"
-
-    invoke-virtual {v1, v3, v7}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Z)Landroid/content/Intent;
-
-    const-string/jumbo v3, "WIPE_EXTERNAL_STORAGE"
-
-    iget-boolean v4, p0, Lcom/android/settings/MasterClearConfirm;->mEraseSdCard:Z
-
-    invoke-virtual {v1, v3, v4}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Z)Landroid/content/Intent;
-
-    invoke-virtual {p0}, Lcom/android/settings/MasterClearConfirm;->getActivity()Landroid/app/Activity;
-
-    move-result-object v3
-
-    invoke-virtual {v3, v1}, Landroid/app/Activity;->startService(Landroid/content/Intent;)Landroid/content/ComponentName;
-
-    goto/16 :goto_0
-
-    :cond_3
-    invoke-direct {p0}, Lcom/android/settings/MasterClearConfirm;->checkFmmRemoteControlOn()Z
+    invoke-direct {p0}, Lcom/android/settings/MasterClearConfirm;->checkSDCardEncryptionEnabled()Z
 
     move-result v3
 
-    if-eqz v3, :cond_4
+    if-eqz v3, :cond_3
 
-    const/16 v3, 0x3e9
+    invoke-direct {p0}, Lcom/android/settings/MasterClearConfirm;->decryptSDCardBeforeFactoryReset()V
 
-    if-ne p1, v3, :cond_4
+    goto :goto_0
 
-    if-ne p2, v5, :cond_0
-
+    :cond_3
     const-string/jumbo v3, "MasterClearConfirm"
 
     const-string/jumbo v4, "onActivityResult() startActivity MasterClearModemReset"
@@ -1732,7 +1813,7 @@
 
     const-string/jumbo v3, "FACTORY"
 
-    invoke-virtual {v1, v3, v7}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Z)Landroid/content/Intent;
+    invoke-virtual {v1, v3, v6}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Z)Landroid/content/Intent;
 
     const-string/jumbo v3, "WIPE_EXTERNAL_STORAGE"
 
@@ -1749,9 +1830,71 @@
     goto/16 :goto_0
 
     :cond_4
+    invoke-direct {p0}, Lcom/android/settings/MasterClearConfirm;->checkFmmRemoteControlOn()Z
+
+    move-result v3
+
+    if-eqz v3, :cond_6
+
+    const/16 v3, 0x3e9
+
+    if-ne p1, v3, :cond_6
+
+    if-ne p2, v5, :cond_0
+
+    invoke-direct {p0}, Lcom/android/settings/MasterClearConfirm;->checkSDCardEncryptionEnabled()Z
+
+    move-result v3
+
+    if-eqz v3, :cond_5
+
+    invoke-direct {p0}, Lcom/android/settings/MasterClearConfirm;->decryptSDCardBeforeFactoryReset()V
+
+    goto/16 :goto_0
+
+    :cond_5
+    const-string/jumbo v3, "MasterClearConfirm"
+
+    const-string/jumbo v4, "onActivityResult() startActivity MasterClearModemReset"
+
+    invoke-static {v3, v4}, Landroid/util/secutil/Log;->secI(Ljava/lang/String;Ljava/lang/String;)I
+
+    invoke-virtual {p0}, Lcom/android/settings/MasterClearConfirm;->getActivity()Landroid/app/Activity;
+
+    move-result-object v3
+
+    invoke-virtual {v3}, Landroid/app/Activity;->getApplicationContext()Landroid/content/Context;
+
+    move-result-object v0
+
+    new-instance v1, Landroid/content/Intent;
+
+    const-class v3, Lcom/samsung/android/settings/MasterClearModemReset;
+
+    invoke-direct {v1, v0, v3}, Landroid/content/Intent;-><init>(Landroid/content/Context;Ljava/lang/Class;)V
+
+    const-string/jumbo v3, "FACTORY"
+
+    invoke-virtual {v1, v3, v6}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Z)Landroid/content/Intent;
+
+    const-string/jumbo v3, "WIPE_EXTERNAL_STORAGE"
+
+    iget-boolean v4, p0, Lcom/android/settings/MasterClearConfirm;->mEraseSdCard:Z
+
+    invoke-virtual {v1, v3, v4}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Z)Landroid/content/Intent;
+
+    invoke-virtual {p0}, Lcom/android/settings/MasterClearConfirm;->getActivity()Landroid/app/Activity;
+
+    move-result-object v3
+
+    invoke-virtual {v3, v1}, Landroid/app/Activity;->startService(Landroid/content/Intent;)Landroid/content/ComponentName;
+
+    goto/16 :goto_0
+
+    :cond_6
     const/16 v3, 0x6f
 
-    if-ne p1, v3, :cond_0
+    if-ne p1, v3, :cond_7
 
     if-ne p2, v5, :cond_0
 
@@ -1761,9 +1904,60 @@
 
     invoke-static {v3, v4}, Landroid/util/secutil/Log;->secD(Ljava/lang/String;Ljava/lang/String;)I
 
-    iput-boolean v6, p0, Lcom/android/settings/MasterClearConfirm;->mEraseSdCard:Z
+    iput-boolean v7, p0, Lcom/android/settings/MasterClearConfirm;->mEraseSdCard:Z
 
     invoke-direct {p0}, Lcom/android/settings/MasterClearConfirm;->doMasterClear()V
+
+    goto/16 :goto_0
+
+    :cond_7
+    const/16 v3, 0x3f2
+
+    if-ne p1, v3, :cond_0
+
+    if-ne p2, v5, :cond_0
+
+    const-string/jumbo v3, "MasterClearConfirm"
+
+    const-string/jumbo v4, "Success to Decrypt the SD Card."
+
+    invoke-static {v3, v4}, Landroid/util/secutil/Log;->secD(Ljava/lang/String;Ljava/lang/String;)I
+
+    const-string/jumbo v3, "MasterClearConfirm"
+
+    const-string/jumbo v4, "onActivityResult() startActivity MasterClearModemReset"
+
+    invoke-static {v3, v4}, Landroid/util/secutil/Log;->secI(Ljava/lang/String;Ljava/lang/String;)I
+
+    invoke-virtual {p0}, Lcom/android/settings/MasterClearConfirm;->getActivity()Landroid/app/Activity;
+
+    move-result-object v3
+
+    invoke-virtual {v3}, Landroid/app/Activity;->getApplicationContext()Landroid/content/Context;
+
+    move-result-object v0
+
+    new-instance v1, Landroid/content/Intent;
+
+    const-class v3, Lcom/samsung/android/settings/MasterClearModemReset;
+
+    invoke-direct {v1, v0, v3}, Landroid/content/Intent;-><init>(Landroid/content/Context;Ljava/lang/Class;)V
+
+    const-string/jumbo v3, "FACTORY"
+
+    invoke-virtual {v1, v3, v6}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Z)Landroid/content/Intent;
+
+    const-string/jumbo v3, "WIPE_EXTERNAL_STORAGE"
+
+    iget-boolean v4, p0, Lcom/android/settings/MasterClearConfirm;->mEraseSdCard:Z
+
+    invoke-virtual {v1, v3, v4}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Z)Landroid/content/Intent;
+
+    invoke-virtual {p0}, Lcom/android/settings/MasterClearConfirm;->getActivity()Landroid/app/Activity;
+
+    move-result-object v3
+
+    invoke-virtual {v3, v1}, Landroid/app/Activity;->startService(Landroid/content/Intent;)Landroid/content/ComponentName;
 
     goto/16 :goto_0
 .end method

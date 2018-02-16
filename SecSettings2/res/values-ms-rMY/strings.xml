@@ -1662,6 +1662,7 @@ Penyulitan boleh mengambil masa satu jam atau lebih. Sebelum anda bermula, pasti
 Penyahsulitan mungkin mengambil masa yang lebih lama bergantung pada jumlah data. Sebelum anda bermula, pastikan bateri dicas dan biarkan peranti dipalam sehingga penyahsulitan selesai.
 
 Semasa proses penyahsulitan, kad SD tidak boleh digunakan."</string>
+    <string name="sdcard_decrypt_description_reset_device">Sebelum menetapkan semula telefon anda, kad SD anda perlu dinyahsulitkan.</string>
     <string name="sdcard_encrypt_button">Sulitkan kad SD</string>
     <string name="sdcard_decrypt_button">Nyahsulit kad SD</string>
     <string name="sdcard_encrypt_checking">Menyemak kad SD…</string>

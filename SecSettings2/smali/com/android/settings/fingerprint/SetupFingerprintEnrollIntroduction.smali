@@ -53,7 +53,7 @@
 
     check-cast v1, Landroid/widget/TextView;
 
-    const v3, 0x7f0b1438
+    const v3, 0x7f0b1439
 
     invoke-virtual {v1, v3}, Landroid/widget/TextView;->setText(I)V
 
@@ -61,7 +61,7 @@
 
     move-result-object v2
 
-    const v3, 0x7f0b143c
+    const v3, 0x7f0b143d
 
     invoke-virtual {v2, v3}, Landroid/widget/Button;->setText(I)V
 
@@ -73,7 +73,7 @@
 
     check-cast v0, Landroid/widget/Button;
 
-    const v3, 0x7f0b143b
+    const v3, 0x7f0b143c
 
     invoke-virtual {v0, v3}, Landroid/widget/Button;->setText(I)V
 

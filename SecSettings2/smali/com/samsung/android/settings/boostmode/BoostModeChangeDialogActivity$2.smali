@@ -39,7 +39,7 @@
 
     const/4 v6, 0x1
 
-    const v7, 0x7f0b0ca3
+    const v7, 0x7f0b0ca4
 
     const/4 v5, 0x0
 

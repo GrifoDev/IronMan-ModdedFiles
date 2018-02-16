@@ -45,9 +45,9 @@
 .method static constructor <clinit>()V
     .locals 12
 
-    const v11, 0x7f0b0878
+    const v11, 0x7f0b0879
 
-    const v6, 0x7f0b0877
+    const v6, 0x7f0b0878
 
     const/4 v10, 0x2
 
@@ -59,11 +59,11 @@
 
     const-string/jumbo v1, "Introduction"
 
-    const v3, 0x7f0b07f0
+    const v3, 0x7f0b07f1
 
-    const v4, 0x7f0b14aa
+    const v4, 0x7f0b14ab    # 1.8487E38f
 
-    const v5, 0x7f0b087e
+    const v5, 0x7f0b087f
 
     invoke-direct/range {v0 .. v5}, Lcom/samsung/android/settings/biometrics/BiometricsBackupPassword$BiometricsBackupPasswordFragment$Stage;-><init>(Ljava/lang/String;IIII)V
 
@@ -73,7 +73,7 @@
 
     const-string/jumbo v4, "NeedToConfirm"
 
-    const v7, 0x7f0b14b5
+    const v7, 0x7f0b14b6
 
     move v5, v9
 
@@ -87,7 +87,7 @@
 
     const-string/jumbo v4, "ConfirmWrong"
 
-    const v7, 0x7f0b14aa
+    const v7, 0x7f0b14ab    # 1.8487E38f
 
     move v5, v10
 

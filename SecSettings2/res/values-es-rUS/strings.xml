@@ -1664,6 +1664,7 @@ Este proceso puede tardar más de una hora. Antes de comenzar, asegúrese de que
 El proceso de desencriptado puede tardar mucho tiempo, según la cantidad de datos para procesar. Antes de comenzar, asegúrese de que la batería esté cargada y mantenga el dispositivo conectado a una fuente de alimentación hasta que finalice el proceso de desencriptado.
 
 No es posible usar la tarjeta de memoria durante este proceso."</string>
+    <string name="sdcard_decrypt_description_reset_device">Antes de restablecer el teléfono, debe desencriptar su tarjeta de memoria.</string>
     <string name="sdcard_encrypt_button">Encriptar tarjeta memoria</string>
     <string name="sdcard_decrypt_button">Desencriptar tarjeta</string>
     <string name="sdcard_encrypt_checking">Comprobando tarjeta de memoria…</string>

@@ -1662,6 +1662,7 @@ Where Can I Find More Information About the 3rd Party's Policies? Separately, if
 ഡീക്രിപ്ഷന് ഡാറ്റയുടെ തോതിന് അനുസൃതമായി ദീര്‍ഘ സമയമെടുക്കാം. നിങ്ങൾ ആരംഭിക്കുന്നതിന് മുമ്പ്, ബാറ്ററി ചാർജ്ജ് ചെയ്തിട്ടുണ്ടെന്ന്‍ ഉറപ്പാക്കി ഡീക്രിപ്ഷൻ പൂർത്തിയാവുന്നതുവരെ ഉപകരണം പ്ലഗ്ഗിൽ ബന്ധിപ്പിച്ചു നിർത്തുക.
 
 ഡീക്രിപ്ഷൻ പ്രക്രിയാ വേളയിൽ, SD കാർഡ് ഉപയോഗിക്കാനാവില്ല."</string>
+    <string name="sdcard_decrypt_description_reset_device">നിങ്ങളുടെ ഫോൺ പുനഃക്രമീകരിക്കുന്നതിന് മുമ്പ്, SD ഡീക്രിപ്റ്റ് ചെയ്യേണ്ടതാവശ്യമാണ്.</string>
     <string name="sdcard_encrypt_button">SD കാർഡ് എൻക്രിപ്റ്റ് ചെയ്യുക</string>
     <string name="sdcard_decrypt_button">SD കാർഡ് ഡീക്രിപ്റ്റ് ചെയ്യുക</string>
     <string name="sdcard_encrypt_checking">SD കാര്‍ഡ് പരിശോധിക്കുന്നു…</string>

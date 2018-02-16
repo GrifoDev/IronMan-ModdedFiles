@@ -1630,7 +1630,7 @@
 
     iget-object v8, p0, Lcom/samsung/android/settings/datausage/networkconnect/DataWarningLimitActivity;->mMobileText:Landroid/widget/TextView;
 
-    const v9, 0x7f0b0ee2
+    const v9, 0x7f0b0ee3
 
     invoke-virtual {p0, v9}, Lcom/samsung/android/settings/datausage/networkconnect/DataWarningLimitActivity;->getString(I)Ljava/lang/String;
 
@@ -1646,7 +1646,7 @@
 
     if-eqz v0, :cond_5
 
-    const v8, 0x7f0b1d08
+    const v8, 0x7f0b1d09
 
     :goto_3
     invoke-virtual {v9, v8}, Landroid/widget/TextView;->setText(I)V
@@ -1683,7 +1683,7 @@
 
     iget-object v8, p0, Lcom/samsung/android/settings/datausage/networkconnect/DataWarningLimitActivity;->mMobileText:Landroid/widget/TextView;
 
-    const v9, 0x7f0b0ee2
+    const v9, 0x7f0b0ee3
 
     invoke-virtual {p0, v9}, Lcom/samsung/android/settings/datausage/networkconnect/DataWarningLimitActivity;->getString(I)Ljava/lang/String;
 
@@ -1788,7 +1788,7 @@
     throw v8
 
     :cond_5
-    const v8, 0x7f0b1d09
+    const v8, 0x7f0b1d0a
 
     goto/16 :goto_3
 

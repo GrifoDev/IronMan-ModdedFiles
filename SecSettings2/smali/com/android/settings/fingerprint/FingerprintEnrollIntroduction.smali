@@ -195,7 +195,7 @@
 
     if-eqz v1, :cond_0
 
-    const v1, 0x7f0b1437
+    const v1, 0x7f0b1438
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(I)V
 
@@ -368,7 +368,7 @@
 
     if-eqz v3, :cond_1
 
-    const v3, 0x7f0b1bd9
+    const v3, 0x7f0b1bda
 
     invoke-virtual {p0, v3}, Lcom/android/settings/fingerprint/FingerprintEnrollIntroduction;->getString(I)Ljava/lang/String;
 
@@ -464,7 +464,7 @@
 
     if-eqz v1, :cond_1
 
-    const v1, 0x7f0b1435
+    const v1, 0x7f0b1436
 
     invoke-virtual {p0, v1}, Lcom/android/settings/fingerprint/FingerprintEnrollIntroduction;->setHeaderText(I)V
 
@@ -495,7 +495,7 @@
     goto :goto_0
 
     :cond_1
-    const v1, 0x7f0b1434
+    const v1, 0x7f0b1435
 
     invoke-virtual {p0, v1}, Lcom/android/settings/fingerprint/FingerprintEnrollIntroduction;->setHeaderText(I)V
 

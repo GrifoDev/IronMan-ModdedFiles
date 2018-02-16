@@ -178,7 +178,7 @@
 
     move-result-object v4
 
-    const v5, 0x7f0b1398
+    const v5, 0x7f0b1399
 
     invoke-virtual {v4, v5}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -272,7 +272,7 @@
 
     invoke-static {v4, v5}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    const v4, 0x7f0b1121
+    const v4, 0x7f0b1122
 
     invoke-virtual {v2, v4}, Landroid/widget/TextView;->setText(I)V
 
@@ -284,7 +284,7 @@
 
     move-result-object v4
 
-    const v5, 0x7f0b0c17
+    const v5, 0x7f0b0c18
 
     invoke-virtual {v4, v5}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -292,7 +292,7 @@
 
     iput-object v4, v0, Lcom/android/internal/app/AlertController$AlertParams;->mTitle:Ljava/lang/CharSequence;
 
-    const v4, 0x7f0b0c18
+    const v4, 0x7f0b0c19
 
     invoke-virtual {v2, v4}, Landroid/widget/TextView;->setText(I)V
 

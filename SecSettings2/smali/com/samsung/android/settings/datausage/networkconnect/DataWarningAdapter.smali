@@ -435,7 +435,7 @@
 
     iget-object v8, p0, Lcom/samsung/android/settings/datausage/networkconnect/DataWarningAdapter;->mContext:Landroid/content/Context;
 
-    const v9, 0x7f0b0ee2
+    const v9, 0x7f0b0ee3
 
     invoke-virtual {v8, v9}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -611,7 +611,7 @@
 
     iget-object v8, p0, Lcom/samsung/android/settings/datausage/networkconnect/DataWarningAdapter;->mContext:Landroid/content/Context;
 
-    const v9, 0x7f0b0ee2
+    const v9, 0x7f0b0ee3
 
     invoke-virtual {v8, v9}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 

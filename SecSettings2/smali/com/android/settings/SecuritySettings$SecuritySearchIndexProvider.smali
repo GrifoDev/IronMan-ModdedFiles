@@ -179,7 +179,7 @@
 
     move-result-object v9
 
-    const v15, 0x7f0b1429
+    const v15, 0x7f0b142a
 
     invoke-virtual {v9, v15}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -193,7 +193,7 @@
 
     iput-object v12, v3, Lcom/android/settings/search/SearchIndexableRaw;->title:Ljava/lang/String;
 
-    const v15, 0x7f0b1429
+    const v15, 0x7f0b142a
 
     move-object/from16 v0, p1
 
@@ -223,7 +223,7 @@
 
     if-eqz v15, :cond_4
 
-    const v10, 0x7f0b1425
+    const v10, 0x7f0b1426
 
     :goto_0
     new-instance v3, Lcom/android/settings/search/SearchIndexableRaw;
@@ -275,7 +275,7 @@
 
     invoke-direct {v3, v0}, Lcom/android/settings/search/SearchIndexableRaw;-><init>(Landroid/content/Context;)V
 
-    const v15, 0x7f0b142e
+    const v15, 0x7f0b142f
 
     invoke-virtual {v9, v15}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -283,7 +283,7 @@
 
     iput-object v15, v3, Lcom/android/settings/search/SearchIndexableRaw;->title:Ljava/lang/String;
 
-    const v15, 0x7f0b142e
+    const v15, 0x7f0b142f
 
     move-object/from16 v0, p1
 
@@ -303,7 +303,7 @@
 
     invoke-direct {v3, v0}, Lcom/android/settings/search/SearchIndexableRaw;-><init>(Landroid/content/Context;)V
 
-    const v15, 0x7f0b142f
+    const v15, 0x7f0b1430
 
     invoke-virtual {v9, v15}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -311,7 +311,7 @@
 
     iput-object v15, v3, Lcom/android/settings/search/SearchIndexableRaw;->title:Ljava/lang/String;
 
-    const v15, 0x7f0b142f
+    const v15, 0x7f0b1430
 
     move-object/from16 v0, p1
 
@@ -372,7 +372,7 @@
 
     invoke-direct {v3, v0}, Lcom/android/settings/search/SearchIndexableRaw;-><init>(Landroid/content/Context;)V
 
-    const v15, 0x7f0b1816
+    const v15, 0x7f0b1817
 
     invoke-virtual {v9, v15}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -380,7 +380,7 @@
 
     iput-object v15, v3, Lcom/android/settings/search/SearchIndexableRaw;->title:Ljava/lang/String;
 
-    const v15, 0x7f0b1816
+    const v15, 0x7f0b1817
 
     move-object/from16 v0, p1
 
@@ -413,7 +413,7 @@
 
     if-eqz v15, :cond_5
 
-    const v13, 0x7f0b1a3e
+    const v13, 0x7f0b1a3f
 
     :goto_1
     new-instance v3, Lcom/android/settings/search/SearchIndexableRaw;
@@ -501,12 +501,12 @@
     goto :goto_2
 
     :cond_4
-    const v10, 0x7f0b1423
+    const v10, 0x7f0b1424
 
     goto/16 :goto_0
 
     :cond_5
-    const v13, 0x7f0b1a3f
+    const v13, 0x7f0b1a40
 
     goto :goto_1
 

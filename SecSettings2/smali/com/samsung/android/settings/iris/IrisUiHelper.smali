@@ -210,7 +210,7 @@
 
     iget-object v0, p0, Lcom/samsung/android/settings/iris/IrisUiHelper;->mIrisMessage:Landroid/widget/TextView;
 
-    const v1, 0x7f0b095e
+    const v1, 0x7f0b095f
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(I)V
 
@@ -359,7 +359,7 @@
 
     iget-object v0, p0, Lcom/samsung/android/settings/iris/IrisUiHelper;->mIrisMessage:Landroid/widget/TextView;
 
-    const v1, 0x7f0b098f
+    const v1, 0x7f0b0990
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(I)V
 
@@ -397,7 +397,7 @@
 
     iget-object v0, p0, Lcom/samsung/android/settings/iris/IrisUiHelper;->mIrisMessage:Landroid/widget/TextView;
 
-    const v1, 0x7f0b098d
+    const v1, 0x7f0b098e
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(I)V
 
@@ -438,7 +438,7 @@
 
     iget-object v0, p0, Lcom/samsung/android/settings/iris/IrisUiHelper;->mIrisMessage:Landroid/widget/TextView;
 
-    const v1, 0x7f0b098e
+    const v1, 0x7f0b098f
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(I)V
 

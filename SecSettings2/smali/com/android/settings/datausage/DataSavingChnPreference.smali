@@ -97,7 +97,7 @@
 
     iput-object v0, p0, Lcom/android/settings/datausage/DataSavingChnPreference;->mSavingServiceConnection:Landroid/content/ServiceConnection;
 
-    const v0, 0x7f0b11e8
+    const v0, 0x7f0b11e9
 
     invoke-virtual {p0, v0}, Lcom/android/settings/datausage/DataSavingChnPreference;->setSummary(I)V
 
@@ -167,7 +167,7 @@
 
     move-result-object v12
 
-    const v13, 0x7f0b11e6
+    const v13, 0x7f0b11e7
 
     invoke-virtual {v12, v13}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -380,7 +380,7 @@
 
     move-result-object v13
 
-    const v14, 0x7f0b17d0
+    const v14, 0x7f0b17d1
 
     invoke-virtual {v13, v14}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 

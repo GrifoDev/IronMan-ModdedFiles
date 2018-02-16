@@ -225,7 +225,7 @@
     return-void
 
     :cond_0
-    const v1, 0x7f0b07cc
+    const v1, 0x7f0b07cd
 
     invoke-virtual {p0, v1}, Landroid/app/Activity;->getString(I)Ljava/lang/String;
 
@@ -249,7 +249,7 @@
 
     if-eqz v1, :cond_1
 
-    const v1, 0x7f0b07cd
+    const v1, 0x7f0b07ce
 
     invoke-virtual {p0, v1}, Landroid/app/Activity;->getString(I)Ljava/lang/String;
 
@@ -260,7 +260,7 @@
 
     invoke-direct {v1, p0}, Landroid/app/AlertDialog$Builder;-><init>(Landroid/content/Context;)V
 
-    const v2, 0x7f0b07c9
+    const v2, 0x7f0b07ca
 
     invoke-virtual {v1, v2}, Landroid/app/AlertDialog$Builder;->setTitle(I)Landroid/app/AlertDialog$Builder;
 

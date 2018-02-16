@@ -1663,6 +1663,7 @@ Dulkóðunin gæti tekið klukkustund eða lengri tíma. Áður en hafist er han
 Afkóðunin gæti tekið langan tíma, allt eftir gagnamagninu. Áður en hafist er handa skaltu ganga úr skugga um að rafhlaðan sé fullhlaðin og hafa tækið í sambandi þar til afkóðun er lokið.
 
 Ekki er hægt að nota SD-kortið meðan á afkóðunarferlinu stendur."</string>
+    <string name="sdcard_decrypt_description_reset_device">Áður en þú endurstillir símann þinn þarf að afkóða SD-kortið.</string>
     <string name="sdcard_encrypt_button">Dulkóða SD-kort</string>
     <string name="sdcard_decrypt_button">Afkóða SD-kort</string>
     <string name="sdcard_encrypt_checking">Kanna SD-kort…</string>

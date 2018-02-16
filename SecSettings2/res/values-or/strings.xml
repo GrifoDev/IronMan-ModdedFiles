@@ -1535,6 +1535,7 @@ Where Can I Find More Information About the 3rd Party's Policies? Separately, if
 ଡିକ୍ରିପସନ୍ ଡାଟାର ମାତ୍ରା ଉପରେ ନିର୍ଭର କରି ହୁଏତ ଅଧିକ ସମୟ ନେଇପାରେ। ଆପଣ ଆରମ୍ଭ କରିବା ପୂର୍ବରୁ, ନିଶ୍ଚିତ କରନ୍ତୁ ଯେ ବ୍ୟାଟେରୀ ଚାର୍ଜ ହୋଇଛି ଏବଂ ଏନକ୍ରିପସନ୍ ସମ୍ପୂର୍ଣ୍ଣ ନହେବା ପର୍ଯ୍ୟନ୍ତ ଡିଭାଇସ୍‌ ପ୍ଲଗ୍ କରି ରଖନ୍ତୁ।
 
 ଡିକ୍ରିପସନ୍ ପ୍ରକ୍ରିୟା ସମୟରେ, SD କାର୍ଡ୍ ବ୍ୟବହାର ହୋଇପାରିବ ନାହିଁ।"</string>
+    <string name="sdcard_decrypt_description_reset_device">ଆପଣଙ୍କ ଫୋନ୍ ପୁନଃସେଟ୍ କରିବା ପୂର୍ବରୁ, ଆପଣଙ୍କ SD କାର୍ଡ ଡିକ୍ରିପ୍ଟ ହେବା ଆବଶ୍ୟକ।</string>
     <string name="sdcard_encrypt_button">SD କାର୍ଡ୍ ଏନକ୍ରିପ୍ଟ</string>
     <string name="sdcard_decrypt_button">SD କାର୍ଡ୍ ଡିକ୍ରିପ୍ଟ</string>
     <string name="sdcard_encrypt_checking">SD କାର୍ଡ୍ ଯାଞ୍ଚ କରୁଛି…</string>

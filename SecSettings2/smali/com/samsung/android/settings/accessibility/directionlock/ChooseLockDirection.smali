@@ -2431,7 +2431,7 @@
 
     aput-object v7, v6, v9
 
-    const v7, 0x7f0b0af0
+    const v7, 0x7f0b0af1
 
     invoke-virtual {v5, v7, v6}, Landroid/content/Context;->getString(I[Ljava/lang/Object;)Ljava/lang/String;
 
@@ -3424,7 +3424,7 @@
 
     if-eqz p1, :cond_0
 
-    const v0, 0x7f0b085a
+    const v0, 0x7f0b085b
 
     invoke-virtual {p0, v0}, Lcom/samsung/android/settings/accessibility/directionlock/ChooseLockDirection;->getString(I)Ljava/lang/String;
 

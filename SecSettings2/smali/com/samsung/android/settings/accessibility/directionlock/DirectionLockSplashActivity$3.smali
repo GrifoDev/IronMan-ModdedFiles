@@ -37,11 +37,11 @@
 .method public onStateReceived()V
     .locals 11
 
-    const v10, 0x7f0b0ad6
+    const v10, 0x7f0b0ad7
 
-    const v9, 0x7f0b0ad5
+    const v9, 0x7f0b0ad6
 
-    const v7, 0x7f0b0ad4
+    const v7, 0x7f0b0ad5
 
     const/4 v8, 0x1
 
@@ -593,7 +593,7 @@
 
     move-result-object v4
 
-    const v5, 0x7f0b0ad7
+    const v5, 0x7f0b0ad8
 
     invoke-virtual {v4, v5}, Landroid/app/Activity;->getString(I)Ljava/lang/String;
 
@@ -1076,7 +1076,7 @@
 
     move-result-object v4
 
-    const v5, 0x7f0b0ad7
+    const v5, 0x7f0b0ad8
 
     invoke-virtual {v4, v5}, Landroid/app/Activity;->getString(I)Ljava/lang/String;
 

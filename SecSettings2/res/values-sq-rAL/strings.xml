@@ -1661,6 +1661,7 @@ Enkriptimi mund të zgjatë një orë ose më shumë. Para se të fillosh, sigur
 Dekriptimi mund të zgjatë shumë, në varësi të sasisë së të dhënave. Para se të fillosh, sigurohu që bateria është e karikuar dhe mbaje pajisjen të lidhur me rrjetin derisa të përfundojë dekriptimi.
 
 Gjatë procesit të dekriptimit, karta SD nuk mund të përdoret."</string>
+    <string name="sdcard_decrypt_description_reset_device">Para se të resetosh telefonin, duhet dekriptuar karta jote SD.</string>
     <string name="sdcard_encrypt_button">Enkripto kartën SD</string>
     <string name="sdcard_decrypt_button">Dekripto kartën SD</string>
     <string name="sdcard_encrypt_checking">Duke kontrolluar kartën SD…</string>

@@ -59,7 +59,7 @@
 
     iget-object v3, p0, Lcom/android/settings/DeviceAdminAdd$1;->this$0:Lcom/android/settings/DeviceAdminAdd;
 
-    const v4, 0x7f0b1a69
+    const v4, 0x7f0b1a6a
 
     invoke-virtual {v3, v4}, Lcom/android/settings/DeviceAdminAdd;->getString(I)Ljava/lang/String;
 

@@ -975,7 +975,7 @@
 .method private initUI()V
     .locals 14
 
-    const v13, 0x7f0b0a88
+    const v13, 0x7f0b0a89
 
     const/4 v9, 0x1
 
@@ -1121,7 +1121,7 @@
 
     iget-object v8, p0, Lcom/samsung/android/settings/DateTimeSettings;->mAutoTimePref:Lcom/android/settingslib/SecRestrictedSwitchPreference;
 
-    const v11, 0x7f0b1407
+    const v11, 0x7f0b1408
 
     invoke-virtual {v8, v11}, Lcom/android/settingslib/SecRestrictedSwitchPreference;->setSummary(I)V
 
@@ -1296,7 +1296,7 @@
 
     iget-object v8, p0, Lcom/samsung/android/settings/DateTimeSettings;->mDualclock:Landroid/preference/PreferenceScreen;
 
-    const v11, 0x7f0b0a87
+    const v11, 0x7f0b0a88
 
     invoke-virtual {v8, v11}, Landroid/preference/PreferenceScreen;->setTitle(I)V
 
@@ -1494,7 +1494,7 @@
 
     move-result-object v11
 
-    const v12, 0x7f0b0d50
+    const v12, 0x7f0b0d51
 
     invoke-virtual {v11, v12}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -3211,7 +3211,7 @@
 .method showTimeDisplaySchemeDialog()V
     .locals 3
 
-    const v1, 0x7f0b0d11
+    const v1, 0x7f0b0d12
 
     invoke-static {v1}, Lcom/samsung/android/settings/TimeDisplaySchemeSettings;->newInstance(I)Lcom/samsung/android/settings/TimeDisplaySchemeSettings;
 

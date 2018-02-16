@@ -389,7 +389,7 @@
 
     invoke-virtual {v0, v2}, Landroid/app/AlertDialog$Builder;->setCancelable(Z)Landroid/app/AlertDialog$Builder;
 
-    const v2, 0x7f0b1d2a
+    const v2, 0x7f0b1d2b
 
     invoke-virtual {v1, v2}, Landroid/content/Context;->getText(I)Ljava/lang/CharSequence;
 
@@ -484,7 +484,7 @@
 
     aput-object v2, v3, v4
 
-    const v4, 0x7f0b18cc
+    const v4, 0x7f0b18cd
 
     invoke-virtual {v1, v4, v3}, Landroid/content/Context;->getString(I[Ljava/lang/Object;)Ljava/lang/String;
 
@@ -764,7 +764,7 @@
 
     aput-object v5, v4, v6
 
-    const v5, 0x7f0b18d0
+    const v5, 0x7f0b18d1
 
     invoke-virtual {v0, v5, v4}, Landroid/content/Context;->getString(I[Ljava/lang/Object;)Ljava/lang/String;
 

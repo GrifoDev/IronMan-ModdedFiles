@@ -643,7 +643,7 @@
 
     aput-object v3, v6, v9
 
-    const v3, 0x7f0b1e3a
+    const v3, 0x7f0b1e3b
 
     invoke-virtual {p0, v3, v6}, Lcom/android/settings/datausage/BillingCycleSettings;->getString(I[Ljava/lang/Object;)Ljava/lang/String;
 

@@ -147,7 +147,7 @@
 
     invoke-virtual {v0, v1}, Landroid/service/quicksettings/Tile;->setIcon(Landroid/graphics/drawable/Icon;)V
 
-    const v1, 0x7f0b166e
+    const v1, 0x7f0b166f
 
     invoke-virtual {p0, v1}, Lcom/samsung/android/settings/qstile/ScreensaverTile;->getString(I)Ljava/lang/String;
 
@@ -654,7 +654,7 @@
 .method public semGetDetailViewTitle()Ljava/lang/CharSequence;
     .locals 1
 
-    const v0, 0x7f0b166e
+    const v0, 0x7f0b166f
 
     invoke-virtual {p0, v0}, Lcom/samsung/android/settings/qstile/ScreensaverTile;->getString(I)Ljava/lang/String;
 

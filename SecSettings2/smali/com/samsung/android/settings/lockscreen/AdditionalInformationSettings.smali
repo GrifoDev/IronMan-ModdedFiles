@@ -321,7 +321,7 @@
 
     move-result-object v2
 
-    const v3, 0x7f0b0a51
+    const v3, 0x7f0b0a52
 
     invoke-virtual {v2, v3}, Landroid/app/Activity;->setTitle(I)V
 
@@ -333,7 +333,7 @@
 
     move-result-object v2
 
-    const v3, 0x7f0b0a48
+    const v3, 0x7f0b0a49
 
     invoke-virtual {v2, v3}, Landroid/app/Activity;->setTitle(I)V
 
@@ -495,7 +495,7 @@
 
     const/4 v1, 0x1
 
-    const v2, 0x7f0b0a51
+    const v2, 0x7f0b0a52
 
     invoke-interface {p1, v3, v1, v3, v2}, Landroid/view/Menu;->add(IIII)Landroid/view/MenuItem;
 
@@ -618,7 +618,7 @@
 
     iget-object v5, p0, Lcom/samsung/android/settings/lockscreen/AdditionalInformationSettings;->textView:Landroid/widget/TextView;
 
-    const v6, 0x7f0b0a4a
+    const v6, 0x7f0b0a4b
 
     invoke-virtual {v5, v6}, Landroid/widget/TextView;->setText(I)V
 
@@ -653,7 +653,7 @@
     :cond_3
     iget-object v5, p0, Lcom/samsung/android/settings/lockscreen/AdditionalInformationSettings;->textView:Landroid/widget/TextView;
 
-    const v6, 0x7f0b0a4c
+    const v6, 0x7f0b0a4d
 
     invoke-virtual {v5, v6}, Landroid/widget/TextView;->setText(I)V
 

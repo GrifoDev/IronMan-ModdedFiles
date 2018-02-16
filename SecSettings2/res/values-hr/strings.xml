@@ -1662,6 +1662,7 @@ Dodirnite U REDU kako biste dopustili povećanje svjetline iznad sigurnosne razi
 Dešifriranje može potrajati ovisno o količini podataka. Prije nego što započnete, provjerite je li baterija napunjena i držite uređaj uključenim u struju dok se dešifriranje ne završi.
 
 Nije moguće upotrebljavati SD karticu tijekom procesa dešifriranja."</string>
+    <string name="sdcard_decrypt_description_reset_device">Prije nego što ponovno postavite telefon, trebate dešifrirati SD karticu.</string>
     <string name="sdcard_encrypt_button">Šifriraj SD karticu</string>
     <string name="sdcard_decrypt_button">Dešifriraj SD karticu</string>
     <string name="sdcard_encrypt_checking">Provjera SD kartice…</string>

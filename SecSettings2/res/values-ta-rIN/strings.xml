@@ -1662,6 +1662,7 @@ Where Can I Find More Information About the 3rd Party's Policies? Separately, if
 தரவு அளவைப் பொறுத்து மறைகுறிநீக்கம் நீண்ட நேரத்தை எடுக்கும். நீங்கள் துவங்கும் முன்பு, மின்கலம் சார்ஜ் செய்யப்பட்டிருப்பதை உறுதி செய்து கொள்ளவும் மேலும் மறைகுறிநீக்கம் நிறைவு பெறும் வரை சாதனத்தை ப்ளக் செய்து வைத்திருக்கவும்.
 
 மறைகுறிநீக்கம் செயல்முறையின் போது, SD அட்டையை பயன்படுத்த இயலாது."</string>
+    <string name="sdcard_decrypt_description_reset_device">உங்கள் ஃபோனை ரீசெட் செய்வதற்கு முன்பு, உங்கள் SD அட்டையை மறைகுறிநீக்கம் செய்ய வேண்டும்.</string>
     <string name="sdcard_encrypt_button">SD அட்டை ம.குறியாக்கு</string>
     <string name="sdcard_decrypt_button">SD அட்டையை மறைகுறிநீக்குக</string>
     <string name="sdcard_encrypt_checking">SD அட்டை சரிபார்க்கிறது…</string>

@@ -1663,6 +1663,7 @@ Die Verschlüsselung kann eine Stunde oder länger dauern. Stellen Sie vor Begin
 Die Entschlüsselung kann je nach Datenmenge länger dauern. Stellen Sie vor Beginn sicher, dass der Akku geladen ist, und lassen Sie das Gerät an der Stromversorgung angeschlossen, bis die Entschlüsselung abgeschlossen ist.
 
 Die SD-Karte kann während des Entschlüsselungsprozesses nicht verwendet werden."</string>
+    <string name="sdcard_decrypt_description_reset_device">Bevor Sie Ihr Telefon zurücksetzen, muss Ihre SD-Karte entschlüsselt werden.</string>
     <string name="sdcard_encrypt_button">SD-Karte verschlüsseln</string>
     <string name="sdcard_decrypt_button">SD-Karte entschlüsseln</string>
     <string name="sdcard_encrypt_checking">SD-Karte wird überprüft…</string>

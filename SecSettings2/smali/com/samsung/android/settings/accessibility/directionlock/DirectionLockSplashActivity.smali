@@ -823,7 +823,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f0b085a
+    const v1, 0x7f0b085b
 
     const/4 v2, 0x0
 
@@ -838,7 +838,7 @@
     :cond_0
     const-string/jumbo v2, "com.android.settings.ChooseLockGeneric$ChooseLockGenericFragment"
 
-    const v3, 0x7f0b1470
+    const v3, 0x7f0b1471
 
     const/16 v4, 0x7b
 

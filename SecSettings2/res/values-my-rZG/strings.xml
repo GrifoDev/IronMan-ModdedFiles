@@ -1535,6 +1535,7 @@ Where Can I Find More Information About the 3rd Party's Policies? Separately, if
 ကုဒ္ေျပာင္းေဖာ္ျခင္းသည္ ေဒတာပမာဏေပၚတြင္မူတည္၍ အခ်ိန္ၾကာျမင့္ႏိုင္သည္။ မစတင္မီ ကုဒ္ေျပာင္းေဖာ္ျခင္း ၿပီးေျမာက္သည္အထိ ဘက္ထရီကို အားသြင္းထားမႈႏွင့္ ကိရိယာ ပလပ္ထိုးထားေၾကာင္း ေသခ်ာေစပါ။
 
 ကုဒ္ေျပာင္းေဖာ္မႈလုပ္ေဆာင္ေနစဥ္ SD ကဒ္ကို အသုံးျပဳ၍ မရႏိုင္ပါ။"</string>
+    <string name="sdcard_decrypt_description_reset_device">သင့္ဖုန္းကုိ ျပန္မသတ္မွတ္မီ SD ကတ္ကုိ ကုဒ္ေဖာ္ရန္ လုိသည္။</string>
     <string name="sdcard_encrypt_button">SD ကဒ္ ကုဒ္ေျပာင္းျမႇဳပ္ပါ</string>
     <string name="sdcard_decrypt_button">SD ကဒ္ ကုဒ္ေျပာင္းေဖာ္ပါ</string>
     <string name="sdcard_encrypt_checking">SD ကဒ္ကို စစ္ေနပါသည္။</string>

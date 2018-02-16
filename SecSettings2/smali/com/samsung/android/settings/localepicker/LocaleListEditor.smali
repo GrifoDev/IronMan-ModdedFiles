@@ -923,7 +923,7 @@
 
     invoke-direct {v0, p1}, Landroid/app/AlertDialog$Builder;-><init>(Landroid/content/Context;)V
 
-    const v1, 0x7f0b1159
+    const v1, 0x7f0b115a
 
     invoke-virtual {v0, v1}, Landroid/app/AlertDialog$Builder;->setTitle(I)Landroid/app/AlertDialog$Builder;
 
@@ -939,7 +939,7 @@
 
     invoke-direct {v1, p0}, Lcom/samsung/android/settings/localepicker/LocaleListEditor$13;-><init>(Lcom/samsung/android/settings/localepicker/LocaleListEditor;)V
 
-    const v2, 0x7f0b1864
+    const v2, 0x7f0b1865
 
     invoke-virtual {v0, v2, v1}, Landroid/app/AlertDialog$Builder;->setPositiveButton(ILandroid/content/DialogInterface$OnClickListener;)Landroid/app/AlertDialog$Builder;
 
@@ -1008,13 +1008,13 @@
 
     invoke-direct {v2, v3}, Landroid/app/AlertDialog$Builder;-><init>(Landroid/content/Context;)V
 
-    const v3, 0x7f0b13d8
+    const v3, 0x7f0b13d9
 
     invoke-virtual {v2, v3}, Landroid/app/AlertDialog$Builder;->setTitle(I)Landroid/app/AlertDialog$Builder;
 
     move-result-object v2
 
-    const v3, 0x7f0b13d9
+    const v3, 0x7f0b13da
 
     invoke-virtual {v2, v3}, Landroid/app/AlertDialog$Builder;->setMessage(I)Landroid/app/AlertDialog$Builder;
 
@@ -1069,7 +1069,7 @@
 
     move-result-object v2
 
-    const v3, 0x7f0b13d7
+    const v3, 0x7f0b13d8
 
     invoke-virtual {v2, v3}, Landroid/app/AlertDialog$Builder;->setMessage(I)Landroid/app/AlertDialog$Builder;
 
@@ -1188,7 +1188,7 @@
 
     if-eqz v0, :cond_2
 
-    const v4, 0x7f0b1ac5
+    const v4, 0x7f0b1ac6
 
     invoke-interface {v0, v4}, Landroid/view/MenuItem;->setTitle(I)Landroid/view/MenuItem;
 
@@ -1447,7 +1447,7 @@
 
     move-result-object v3
 
-    const v4, 0x7f0b18c1
+    const v4, 0x7f0b18c2
 
     invoke-virtual {v3, v4}, Landroid/app/Activity;->setTitle(I)V
 

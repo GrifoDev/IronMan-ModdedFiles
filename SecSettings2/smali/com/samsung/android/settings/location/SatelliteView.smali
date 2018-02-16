@@ -801,7 +801,7 @@
 
     aput-object v4, v3, v5
 
-    const v4, 0x7f0b0d8e
+    const v4, 0x7f0b0d8f
 
     invoke-virtual {p0, v4, v3}, Lcom/samsung/android/settings/location/SatelliteView;->getString(I[Ljava/lang/Object;)Ljava/lang/String;
 

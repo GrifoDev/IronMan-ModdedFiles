@@ -199,7 +199,7 @@
 
     iget-object v2, p0, Lcom/android/settings/fuelgauge/BatteryHistoryDetail;->mChargingParser:Lcom/android/settings/fuelgauge/BatteryFlagParser;
 
-    const v3, 0x7f0b1995
+    const v3, 0x7f0b1996
 
     const v4, 0x7f110185
 
@@ -207,7 +207,7 @@
 
     iget-object v2, p0, Lcom/android/settings/fuelgauge/BatteryHistoryDetail;->mScreenOn:Lcom/android/settings/fuelgauge/BatteryFlagParser;
 
-    const v3, 0x7f0b1996
+    const v3, 0x7f0b1997
 
     const v4, 0x7f110184
 
@@ -215,7 +215,7 @@
 
     iget-object v2, p0, Lcom/android/settings/fuelgauge/BatteryHistoryDetail;->mGpsParser:Lcom/android/settings/fuelgauge/BatteryFlagParser;
 
-    const v3, 0x7f0b1997
+    const v3, 0x7f0b1998
 
     const v4, 0x7f110181
 
@@ -223,7 +223,7 @@
 
     iget-object v2, p0, Lcom/android/settings/fuelgauge/BatteryHistoryDetail;->mFlashlightParser:Lcom/android/settings/fuelgauge/BatteryFlagParser;
 
-    const v3, 0x7f0b1999
+    const v3, 0x7f0b199a
 
     const v4, 0x7f110180
 
@@ -231,7 +231,7 @@
 
     iget-object v2, p0, Lcom/android/settings/fuelgauge/BatteryHistoryDetail;->mCameraParser:Lcom/android/settings/fuelgauge/BatteryFlagParser;
 
-    const v3, 0x7f0b1998
+    const v3, 0x7f0b1999
 
     const v4, 0x7f11017f
 
@@ -239,7 +239,7 @@
 
     iget-object v2, p0, Lcom/android/settings/fuelgauge/BatteryHistoryDetail;->mWifiParser:Lcom/android/settings/fuelgauge/BatteryWifiParser;
 
-    const v3, 0x7f0b199a
+    const v3, 0x7f0b199b
 
     const v4, 0x7f110182
 
@@ -247,7 +247,7 @@
 
     iget-object v2, p0, Lcom/android/settings/fuelgauge/BatteryHistoryDetail;->mCpuParser:Lcom/android/settings/fuelgauge/BatteryFlagParser;
 
-    const v3, 0x7f0b199b
+    const v3, 0x7f0b199c
 
     const v4, 0x7f110183
 
@@ -255,7 +255,7 @@
 
     iget-object v2, p0, Lcom/android/settings/fuelgauge/BatteryHistoryDetail;->mPhoneParser:Lcom/android/settings/fuelgauge/BatteryCellParser;
 
-    const v3, 0x7f0b199c
+    const v3, 0x7f0b199d
 
     const v4, 0x7f11017e
 

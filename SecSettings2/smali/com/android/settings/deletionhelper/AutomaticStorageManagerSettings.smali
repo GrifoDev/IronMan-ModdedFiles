@@ -95,7 +95,7 @@
 .method protected getHelpResource()I
     .locals 1
 
-    const v0, 0x7f0b1bc2
+    const v0, 0x7f0b1bc3
 
     return v0
 .end method
@@ -260,7 +260,7 @@
 
     aput-object v10, v9, v11
 
-    const v10, 0x7f0b1ec7
+    const v10, 0x7f0b1ec8
 
     invoke-virtual {v0, v10, v9}, Landroid/app/Activity;->getString(I[Ljava/lang/Object;)Ljava/lang/String;
 

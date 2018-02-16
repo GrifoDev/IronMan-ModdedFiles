@@ -1535,6 +1535,7 @@ Where Can I Find More Information About the 3rd Party's Policies? Separately, if
 ডাটাৰ পৰিমাণৰ ওপৰত ভিত্তি কৰি ডিক্ৰিপশ্বনত বহুত সময় লাগিব। আপুনি আৰম্ভ কৰাৰ পূৰ্বে, বেটাৰী চাৰ্জ হোৱাটো আৰু ডিক্ৰিপশ্বন সম্পূৰ্ণ নোহোৱালৈকে ডিভাইচ প্লাগ ইন হৈ থকাটো নিশ্চিত কৰক।
 
 ডিক্ৰিপশ্বনৰ প্ৰক্ৰিয়াৰ সময়ত, SD কাৰ্ড ব্যৱহাৰ কৰিব নোৱাৰি।"</string>
+    <string name="sdcard_decrypt_description_reset_device">আপোনাৰ ফোন পুনঃছেট কৰাৰ পূৰ্বে, আপোনাৰ SD কাৰ্ড ডিক্ৰিপ্ট কৰাৰ প্ৰয়োজন।</string>
     <string name="sdcard_encrypt_button">SD কাৰ্ড এনক্ৰিপ্ট কৰক</string>
     <string name="sdcard_decrypt_button">SD কাৰ্ড ডিক্ৰিপ্ট কৰক</string>
     <string name="sdcard_encrypt_checking">SD কাৰ্ড পৰীক্ষা কৰি আছে…</string>

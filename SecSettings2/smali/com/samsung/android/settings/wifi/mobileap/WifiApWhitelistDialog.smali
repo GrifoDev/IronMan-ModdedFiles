@@ -665,7 +665,7 @@
 
     iget-object v6, p0, Lcom/samsung/android/settings/wifi/mobileap/WifiApWhitelistDialog;->context:Landroid/content/Context;
 
-    const v7, 0x7f0b1020
+    const v7, 0x7f0b1021
 
     invoke-virtual {v6, v7}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -836,7 +836,7 @@
 
     iget-object v5, p0, Lcom/samsung/android/settings/wifi/mobileap/WifiApWhitelistDialog;->context:Landroid/content/Context;
 
-    const v6, 0x7f0b1020
+    const v6, 0x7f0b1021
 
     invoke-virtual {v5, v6}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -864,7 +864,7 @@
 
     if-nez v4, :cond_4
 
-    const v4, 0x7f0b0fb7
+    const v4, 0x7f0b0fb8
 
     invoke-virtual {p0, v4}, Lcom/samsung/android/settings/wifi/mobileap/WifiApWhitelistDialog;->setTitle(I)V
 
@@ -903,7 +903,7 @@
 
     move-result-object v4
 
-    const v5, 0x7f0b13e7
+    const v5, 0x7f0b13e8
 
     invoke-virtual {v4, v5}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -966,7 +966,7 @@
 
     if-ne v4, v11, :cond_5
 
-    const v4, 0x7f0b0fb7
+    const v4, 0x7f0b0fb8
 
     invoke-virtual {p0, v4}, Lcom/samsung/android/settings/wifi/mobileap/WifiApWhitelistDialog;->setTitle(I)V
 
@@ -1013,7 +1013,7 @@
 
     if-ne v4, v5, :cond_6
 
-    const v4, 0x7f0b0fdf
+    const v4, 0x7f0b0fe0
 
     invoke-virtual {p0, v4}, Lcom/samsung/android/settings/wifi/mobileap/WifiApWhitelistDialog;->setTitle(I)V
 
@@ -1051,7 +1051,7 @@
 
     move-result-object v5
 
-    const v6, 0x7f0b1083
+    const v6, 0x7f0b1084
 
     invoke-static {v5, v6}, Lcom/samsung/android/settings/WifiApUtils;->getString(Landroid/content/Context;I)Ljava/lang/String;
 

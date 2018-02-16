@@ -1662,6 +1662,7 @@ Where Can I Find More Information About the 3rd Party's Policies? Separately, if
 ડેટાની માત્રાના આધારે ડિક્રિપ્શન લાંબો સમય લઈ શકે છે. તમે પ્રારંભ કરો તે પહેલાં, બેટરી ચાર્જ કરેલ છે તેની ખાતરી કરો અને ડિક્રિપ્શન પૂર્ણ થાય ત્યાં સુધી ઉપકરણને પ્લગ્ડ ઇન રાખો.
 
 ડિક્રિપ્શન પ્રક્રિયા દરમ્યાન, SD કાર્ડનો ઉપયોગ કરી શકાતો નથી."</string>
+    <string name="sdcard_decrypt_description_reset_device">તમારા ફોનને રીસેટ કરતા પહેલા, તમારા SD કાર્ડને ડિક્રિપ્ટ કરવાની જરૂર છે.</string>
     <string name="sdcard_encrypt_button">SD કાર્ડ એન્ક્રિપ્ટ કરો</string>
     <string name="sdcard_decrypt_button">SD કાર્ડ ડિક્રિપ્ટ કરો</string>
     <string name="sdcard_encrypt_checking">SD કાર્ડ તપાસે છે…</string>

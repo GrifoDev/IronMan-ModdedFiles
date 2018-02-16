@@ -1662,6 +1662,7 @@ Dokončilo sa %d %%."</string>
 Dešifrovanie môže trvať dlho v závislosti od množstva údajov. Pred začatím skontrolujte, či je nabitá batéria a nechajte zariadenie pripojené, kým sa nedokončí dešifrovanie.
 
 Počas procesu dešifrovania sa karta SD nedá používať."</string>
+    <string name="sdcard_decrypt_description_reset_device">Pred resetovaním telefónu sa musí dešifrovať karta SD.</string>
     <string name="sdcard_encrypt_button">Šifrovať kartu SD</string>
     <string name="sdcard_decrypt_button">Dešifrovať kartu SD</string>
     <string name="sdcard_encrypt_checking">Kontroluje sa karta SD…</string>

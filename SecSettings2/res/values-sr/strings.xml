@@ -1662,6 +1662,7 @@ Završeno %d%%."</string>
 Dešifrovanje može dugo da traje, što zavisi od količine podataka. Pre nego što počnete, proverite da li je baterija napunjena i neka uređaj bude povezan na napajanje dok se proces dešifrovanja ne završi.
 
 Tokom procesa dešifrovanja, SD kartica ne može da se koristi."</string>
+    <string name="sdcard_decrypt_description_reset_device">Pre nego što resetujete telefon, SD kartica mora da se dešifruje.</string>
     <string name="sdcard_encrypt_button">Šifruj SD karticu</string>
     <string name="sdcard_decrypt_button">Dešifruj SD karticu</string>
     <string name="sdcard_encrypt_checking">Provera SD kartice…</string>

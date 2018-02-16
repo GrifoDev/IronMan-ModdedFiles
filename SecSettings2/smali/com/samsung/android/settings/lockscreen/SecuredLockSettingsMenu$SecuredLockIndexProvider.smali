@@ -203,9 +203,9 @@
         }
     .end annotation
 
-    const v12, 0x7f0b1418
+    const v12, 0x7f0b1419
 
-    const v11, 0x7f0b0a92
+    const v11, 0x7f0b0a93
 
     new-instance v7, Ljava/util/ArrayList;
 
@@ -217,7 +217,7 @@
 
     const v5, 0x7f0b0573
 
-    const v9, 0x7f0b0a75
+    const v9, 0x7f0b0a76
 
     invoke-virtual {v6, v9}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 

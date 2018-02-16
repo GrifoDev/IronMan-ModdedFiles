@@ -2524,7 +2524,7 @@
 
     invoke-direct {v0, p0}, Landroid/app/AlertDialog$Builder;-><init>(Landroid/content/Context;)V
 
-    const v1, 0x7f0b11fa
+    const v1, 0x7f0b11fb
 
     invoke-virtual {v0, v1}, Landroid/app/AlertDialog$Builder;->setMessage(I)Landroid/app/AlertDialog$Builder;
 
@@ -2532,11 +2532,11 @@
 
     invoke-direct {v1, p0}, Lcom/android/settings/SettingsActivity$6;-><init>(Lcom/android/settings/SettingsActivity;)V
 
-    const v2, 0x7f0b08df
+    const v2, 0x7f0b08e0
 
     invoke-virtual {v0, v2, v1}, Landroid/app/AlertDialog$Builder;->setPositiveButton(ILandroid/content/DialogInterface$OnClickListener;)Landroid/app/AlertDialog$Builder;
 
-    const v1, 0x7f0b13e7
+    const v1, 0x7f0b13e8
 
     invoke-virtual {p0, v1}, Lcom/android/settings/SettingsActivity;->getString(I)Ljava/lang/String;
 
@@ -5104,7 +5104,7 @@
 
     if-eqz v1, :cond_0
 
-    const v2, 0x7f0b0ae1
+    const v2, 0x7f0b0ae2
 
     :goto_0
     return v2
@@ -5112,12 +5112,12 @@
     :cond_0
     if-eqz v0, :cond_1
 
-    const v2, 0x7f0b0add
+    const v2, 0x7f0b0ade
 
     goto :goto_0
 
     :cond_1
-    const v2, 0x7f0b0ade
+    const v2, 0x7f0b0adf
 
     goto :goto_0
 .end method
@@ -5143,13 +5143,13 @@
 
     if-eqz v0, :cond_0
 
-    const v1, 0x7f0b148c
+    const v1, 0x7f0b148d
 
     :goto_0
     return v1
 
     :cond_0
-    const v1, 0x7f0b148b
+    const v1, 0x7f0b148c
 
     goto :goto_0
 .end method
@@ -6512,7 +6512,7 @@
     move v7, v4
 
     :goto_1
-    const v5, 0x7f0b13eb
+    const v5, 0x7f0b13ec
 
     move-object v0, p0
 
@@ -6923,7 +6923,7 @@
 
     iget v0, p0, Lcom/android/settings/SettingsActivity;->mInitialTitleResId:I
 
-    const v1, 0x7f0b092d
+    const v1, 0x7f0b092e
 
     if-ne v1, v0, :cond_0
 
@@ -7741,7 +7741,7 @@
 
     if-eqz v2, :cond_5
 
-    const v2, 0x7f0b11eb
+    const v2, 0x7f0b11ec
 
     move-object/from16 v0, v16
 
@@ -7815,7 +7815,7 @@
 
     if-eqz v2, :cond_3
 
-    const v2, 0x7f0b11ec
+    const v2, 0x7f0b11ed
 
     move-object/from16 v0, v16
 
@@ -9106,7 +9106,7 @@
 
     iget-object v2, v0, Lcom/android/settings/SettingsActivity;->mLeftPaneToolbar:Landroid/widget/Toolbar;
 
-    const v5, 0x7f0b13eb
+    const v5, 0x7f0b13ec
 
     invoke-virtual {v2, v5}, Landroid/widget/Toolbar;->setTitle(I)V
 
@@ -9164,7 +9164,7 @@
 
     const/4 v6, 0x0
 
-    const v8, 0x7f0b11eb
+    const v8, 0x7f0b11ec
 
     move-object/from16 v0, v41
 
@@ -10107,7 +10107,7 @@
 
     const/4 v6, 0x0
 
-    const v8, 0x7f0b11ec
+    const v8, 0x7f0b11ed
 
     move-object/from16 v0, v41
 
@@ -10405,7 +10405,7 @@
 
     if-eqz v2, :cond_2d
 
-    const v2, 0x7f0b13eb
+    const v2, 0x7f0b13ec
 
     move-object/from16 v0, p0
 
@@ -10635,7 +10635,7 @@
 
     const/4 v9, 0x0
 
-    const v10, 0x7f0b1c2e
+    const v10, 0x7f0b1c2f
 
     const/4 v11, 0x0
 
@@ -11226,7 +11226,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f0b11eb
+    const v1, 0x7f0b11ec
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -11236,7 +11236,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f0b11ec
+    const v1, 0x7f0b11ed
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -13331,7 +13331,7 @@
 
     const/4 v13, 0x0
 
-    const v14, 0x7f0b11eb
+    const v14, 0x7f0b11ec
 
     move-object/from16 v0, p1
 
@@ -13366,7 +13366,7 @@
 
     const/4 v13, 0x0
 
-    const v14, 0x7f0b11ec
+    const v14, 0x7f0b11ed
 
     move-object/from16 v0, p1
 

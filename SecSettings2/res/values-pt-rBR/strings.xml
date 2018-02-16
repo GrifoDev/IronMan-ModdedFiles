@@ -1664,6 +1664,7 @@ A codificação pode demorar uma hora ou mais. Antes de começar, verifique se a
 A decodificação poderá demorar dependendo da quantidade de dados. Antes de começar, certifique-se de que a bateria esteja carregada e mantenha o aparelho conectado até que a decodificação esteja concluída.
 
 Durante o processo de decodificação, o cartão de memória não poderá ser usado."</string>
+    <string name="sdcard_decrypt_description_reset_device">Antes de restaurar seu telefone, seu cartão de memória precisará ser decodificado.</string>
     <string name="sdcard_encrypt_button">Codif. cartão de memória</string>
     <string name="sdcard_decrypt_button">Decod. cartão de memória</string>
     <string name="sdcard_encrypt_checking">Verificando cartão SD…</string>

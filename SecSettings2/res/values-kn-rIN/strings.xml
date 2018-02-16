@@ -1662,6 +1662,7 @@ Where Can I Find More Information About the 3rd Party's Policies? Separately, if
 ಡೇಟಾ ಮೊತ್ತದ ಆಧಾರದ ಮೇಲೆ ಡೀಕ್ರಿಪ್ಶನ್ ಹೆಚ್ಚಿನ ಸಮಯವನ್ನು ತೆಗೆದುಕೊಳ್ಳಬಹುದು. ನೀವು ಪ್ರಾರಂಭಿಸುವ ಮೊದಲು, ಬ್ಯಾಟರಿ ಚಾರ್ಜ್ ಆಗಿದೆಯೇ ಮತ್ತು ಡೀಕ್ರಿಪ್ಶನ್ ಪೂರ್ಣಗೊಳ್ಳುವ ತನಕ ಸಾಧನವನ್ನು ಪ್ಲಗ್ ಇನ್ ಮಾಡಲಾಗಿದೆ ಎಂದು ಖಚಿತಪಡಿಸಿಕೊಳ್ಳಿ.
 
 ಡೀಕ್ರಿಪ್ಶನ್ ಪ್ರಕ್ರಿಯೆ ಸಮಯದಲ್ಲಿ, SD ಕಾರ್ಡ್ ಬಳಸಲು ಸಾಧ್ಯವಿರುವುದಿಲ್ಲ."</string>
+    <string name="sdcard_decrypt_description_reset_device">ನಿಮ್ಮ ಫೋನ್ ಮರುಹೊಂದಿಸುವುದಕ್ಕೂ ಮೊದಲಿಗೆ, ನಿಮ್ಮ SD ಕಾರ್ಡ್ ಅನ್ನು ಡೀಕ್ರಿಪ್ಟ್ ಮಾಡಬೇಕಿದೆ.</string>
     <string name="sdcard_encrypt_button">SD ಕಾರ್ಡ್ ಎನ್‌ಕ್ರಿಪ್ಟ್ ಮಾಡಿ</string>
     <string name="sdcard_decrypt_button">SD ಕಾರ್ಡ್ ಡೀಕ್ರಿಪ್ಟ್ ಮಾಡಿ</string>
     <string name="sdcard_encrypt_checking">SD ಕಾರ್ಡ್ ಪರೀಕ್ಷಿಸುತ್ತಿದೆ…</string>

@@ -193,12 +193,12 @@
 
     if-eqz v2, :cond_2
 
-    const v5, 0x7f0b1d1d
+    const v5, 0x7f0b1d1e
 
     :goto_0
-    const v1, 0x7f0b1d20
+    const v1, 0x7f0b1d21
 
-    const v0, 0x7f0b1d23
+    const v0, 0x7f0b1d24
 
     :goto_1
     invoke-virtual {p0}, Lcom/android/settings/EncryptionInterstitial$EncryptionInterstitialFragment;->getActivity()Landroid/app/Activity;
@@ -252,39 +252,39 @@
     :sswitch_0
     if-eqz v2, :cond_0
 
-    const v5, 0x7f0b1d1c
+    const v5, 0x7f0b1d1d
 
     :goto_2
-    const v1, 0x7f0b1d1f
+    const v1, 0x7f0b1d20
 
-    const v0, 0x7f0b1d22
+    const v0, 0x7f0b1d23
 
     goto :goto_1
 
     :cond_0
-    const v5, 0x7f0b1d19
+    const v5, 0x7f0b1d1a
 
     goto :goto_2
 
     :sswitch_1
     if-eqz v2, :cond_1
 
-    const v5, 0x7f0b1d1b
+    const v5, 0x7f0b1d1c
 
     :goto_3
-    const v1, 0x7f0b1d1e
+    const v1, 0x7f0b1d1f
 
-    const v0, 0x7f0b1d21
+    const v0, 0x7f0b1d22
 
     goto :goto_1
 
     :cond_1
-    const v5, 0x7f0b1d18
+    const v5, 0x7f0b1d19
 
     goto :goto_3
 
     :cond_2
-    const v5, 0x7f0b1d1a
+    const v5, 0x7f0b1d1b
 
     goto :goto_0
 
@@ -318,9 +318,9 @@
 
     sparse-switch v4, :sswitch_data_0
 
-    const v3, 0x7f0b1d26
+    const v3, 0x7f0b1d27
 
-    const v2, 0x7f0b1d29
+    const v2, 0x7f0b1d2a
 
     :goto_0
     invoke-virtual {p0}, Lcom/android/settings/EncryptionInterstitial$EncryptionInterstitialFragment;->getActivity()Landroid/app/Activity;
@@ -393,16 +393,16 @@
     return-object v4
 
     :sswitch_0
-    const v3, 0x7f0b1d25
+    const v3, 0x7f0b1d26
 
-    const v2, 0x7f0b1d28
+    const v2, 0x7f0b1d29
 
     goto :goto_0
 
     :sswitch_1
-    const v3, 0x7f0b1d24
+    const v3, 0x7f0b1d25
 
-    const v2, 0x7f0b1d27
+    const v2, 0x7f0b1d28
 
     goto :goto_0
 

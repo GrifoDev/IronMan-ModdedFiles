@@ -793,7 +793,7 @@
 .method private showFaceErrorDialog()V
     .locals 6
 
-    const v5, 0x7f0b08f0
+    const v5, 0x7f0b08f1
 
     invoke-virtual {p0}, Lcom/samsung/android/settings/face/bixbysetupwizard/FaceSetupwizardBixby;->isScriptPlaying()Z
 
@@ -812,7 +812,7 @@
 
     move-result-object v3
 
-    const v4, 0x7f0b08f1
+    const v4, 0x7f0b08f2
 
     invoke-virtual {v3, v4}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -883,7 +883,7 @@
 
     move-result-object v2
 
-    const v3, 0x7f0b08c7
+    const v3, 0x7f0b08c8
 
     invoke-virtual {v2, v3}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -961,7 +961,7 @@
 
     move-result-object v2
 
-    const v3, 0x7f0b08c7
+    const v3, 0x7f0b08c8
 
     invoke-virtual {v2, v3}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -979,7 +979,7 @@
 
     move-result-object v3
 
-    const v4, 0x7f0b08c8
+    const v4, 0x7f0b08c9
 
     invoke-virtual {v3, v4}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -993,13 +993,13 @@
 
     invoke-direct {v3, p0}, Lcom/samsung/android/settings/face/bixbysetupwizard/FaceSetupwizardBixby$10;-><init>(Lcom/samsung/android/settings/face/bixbysetupwizard/FaceSetupwizardBixby;)V
 
-    const v4, 0x7f0b08c9
+    const v4, 0x7f0b08ca
 
     invoke-virtual {v2, v4, v3}, Landroid/app/AlertDialog$Builder;->setPositiveButton(ILandroid/content/DialogInterface$OnClickListener;)Landroid/app/AlertDialog$Builder;
 
     move-result-object v2
 
-    const v3, 0x7f0b1232
+    const v3, 0x7f0b1233
 
     invoke-virtual {v2, v3, v5}, Landroid/app/AlertDialog$Builder;->setNegativeButton(ILandroid/content/DialogInterface$OnClickListener;)Landroid/app/AlertDialog$Builder;
 
@@ -1389,7 +1389,7 @@
 
     iget-object v0, p0, Lcom/samsung/android/settings/face/bixbysetupwizard/FaceSetupwizardBixby;->mFaceGuideMsg:Landroid/widget/TextView;
 
-    const v1, 0x7f0b08ef
+    const v1, 0x7f0b08f0
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(I)V
 
@@ -2420,7 +2420,7 @@
 
     aput-object v3, v2, v4
 
-    const v3, 0x7f0b08e8
+    const v3, 0x7f0b08e9
 
     invoke-virtual {v1, v3, v2}, Landroid/content/res/Resources;->getString(I[Ljava/lang/Object;)Ljava/lang/String;
 
@@ -2437,7 +2437,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f0b08ec
+    const v2, 0x7f0b08ed
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -2464,7 +2464,7 @@
 
     iget-object v1, p0, Lcom/samsung/android/settings/face/bixbysetupwizard/FaceSetupwizardBixby;->mNextButton:Landroid/widget/TextView;
 
-    const v2, 0x7f0b0f22
+    const v2, 0x7f0b0f23
 
     invoke-virtual {v1, v2}, Landroid/widget/TextView;->setText(I)V
 
@@ -2480,7 +2480,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f0b08eb
+    const v2, 0x7f0b08ec
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -3305,7 +3305,7 @@
 
     aput-object v2, v1, v3
 
-    const v2, 0x7f0b0815
+    const v2, 0x7f0b0816
 
     invoke-virtual {p0, v2, v1}, Lcom/samsung/android/settings/face/bixbysetupwizard/FaceSetupwizardBixby;->getString(I[Ljava/lang/Object;)Ljava/lang/String;
 

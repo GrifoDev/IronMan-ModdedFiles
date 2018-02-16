@@ -282,7 +282,7 @@
 
     if-ne v2, v3, :cond_f
 
-    const v2, 0x7f0b0cc2
+    const v2, 0x7f0b0cc3
 
     move-object/from16 v0, p0
 
@@ -307,7 +307,7 @@
 
     move-result-object v2
 
-    const v3, 0x7f0b0cc5
+    const v3, 0x7f0b0cc6
 
     move-object/from16 v0, p0
 
@@ -519,7 +519,7 @@
 
     if-nez v19, :cond_11
 
-    const v2, 0x7f0b0a63
+    const v2, 0x7f0b0a64
 
     move-object/from16 v0, p0
 
@@ -669,7 +669,7 @@
     move-result-object v23
 
     :cond_5
-    const v2, 0x7f0b0cd1
+    const v2, 0x7f0b0cd2
 
     move-object/from16 v0, p0
 
@@ -717,7 +717,7 @@
 
     move-result-object v2
 
-    const v3, 0x7f0b0cd2
+    const v3, 0x7f0b0cd3
 
     move-object/from16 v0, p0
 
@@ -830,7 +830,7 @@
 
     if-ne v0, v2, :cond_12
 
-    const v2, 0x7f0b0c86
+    const v2, 0x7f0b0c87
 
     :goto_3
     move-object/from16 v0, p0
@@ -888,7 +888,7 @@
 
     move-result v28
 
-    const v2, 0x7f0b0bbd
+    const v2, 0x7f0b0bbe
 
     move-object/from16 v0, p0
 
@@ -908,7 +908,7 @@
 
     if-ne v0, v2, :cond_13
 
-    const v2, 0x7f0b0cd5
+    const v2, 0x7f0b0cd6
 
     move-object/from16 v0, p0
 
@@ -920,7 +920,7 @@
     :goto_4
     new-instance v3, Lcom/samsung/android/settings/boostmode/BoostModeChangeDialogActivity$DetailedItem;
 
-    const v2, 0x7f0b0bbc
+    const v2, 0x7f0b0bbd
 
     move-object/from16 v0, p0
 
@@ -930,7 +930,7 @@
 
     if-eqz v28, :cond_14
 
-    const v2, 0x7f0b0c86
+    const v2, 0x7f0b0c87
 
     :goto_5
     move-object/from16 v0, p0
@@ -1011,7 +1011,7 @@
 
     new-instance v3, Lcom/samsung/android/settings/boostmode/BoostModeChangeDialogActivity$DetailedItem;
 
-    const v2, 0x7f0b0cd7
+    const v2, 0x7f0b0cd8
 
     move-object/from16 v0, p0
 
@@ -1019,7 +1019,7 @@
 
     move-result-object v4
 
-    const v2, 0x7f0b0cd8
+    const v2, 0x7f0b0cd9
 
     move-object/from16 v0, p0
 
@@ -1031,7 +1031,7 @@
 
     if-ne v12, v2, :cond_15
 
-    const v2, 0x7f0b0c86
+    const v2, 0x7f0b0c87
 
     move-object/from16 v0, p0
 
@@ -1104,7 +1104,7 @@
 
     new-instance v3, Lcom/samsung/android/settings/boostmode/BoostModeChangeDialogActivity$DetailedItem;
 
-    const v2, 0x7f0b0cd9
+    const v2, 0x7f0b0cda
 
     move-object/from16 v0, p0
 
@@ -1112,7 +1112,7 @@
 
     move-result-object v4
 
-    const v2, 0x7f0b0cda
+    const v2, 0x7f0b0cdb
 
     move-object/from16 v0, p0
 
@@ -1124,7 +1124,7 @@
 
     if-ne v13, v2, :cond_18
 
-    const v2, 0x7f0b0c86
+    const v2, 0x7f0b0c87
 
     move-object/from16 v0, p0
 
@@ -1335,7 +1335,7 @@
 
     if-ne v2, v3, :cond_10
 
-    const v2, 0x7f0b0cc4
+    const v2, 0x7f0b0cc5
 
     move-object/from16 v0, p0
 
@@ -1346,7 +1346,7 @@
     goto/16 :goto_0
 
     :cond_10
-    const v2, 0x7f0b0cc0
+    const v2, 0x7f0b0cc1
 
     move-object/from16 v0, p0
 
@@ -1386,7 +1386,7 @@
     goto/16 :goto_2
 
     :cond_12
-    const v2, 0x7f0b0c87
+    const v2, 0x7f0b0c88
 
     goto/16 :goto_3
 
@@ -1397,7 +1397,7 @@
 
     if-ne v0, v2, :cond_a
 
-    const v2, 0x7f0b0cd6
+    const v2, 0x7f0b0cd7
 
     move-object/from16 v0, p0
 
@@ -1408,12 +1408,12 @@
     goto/16 :goto_4
 
     :cond_14
-    const v2, 0x7f0b0c87
+    const v2, 0x7f0b0c88
 
     goto/16 :goto_5
 
     :cond_15
-    const v2, 0x7f0b0c87
+    const v2, 0x7f0b0c88
 
     move-object/from16 v0, p0
 
@@ -1426,7 +1426,7 @@
     :cond_16
     new-instance v3, Lcom/samsung/android/settings/boostmode/BoostModeChangeDialogActivity$DetailedItem;
 
-    const v2, 0x7f0b0cd7
+    const v2, 0x7f0b0cd8
 
     move-object/from16 v0, p0
 
@@ -1434,7 +1434,7 @@
 
     move-result-object v4
 
-    const v2, 0x7f0b0cd8
+    const v2, 0x7f0b0cd9
 
     move-object/from16 v0, p0
 
@@ -1446,7 +1446,7 @@
 
     if-ne v12, v2, :cond_17
 
-    const v2, 0x7f0b0c86
+    const v2, 0x7f0b0c87
 
     move-object/from16 v0, p0
 
@@ -1462,7 +1462,7 @@
     goto/16 :goto_7
 
     :cond_17
-    const v2, 0x7f0b0c87
+    const v2, 0x7f0b0c88
 
     move-object/from16 v0, p0
 
@@ -1473,7 +1473,7 @@
     goto :goto_b
 
     :cond_18
-    const v2, 0x7f0b0c87
+    const v2, 0x7f0b0c88
 
     move-object/from16 v0, p0
 
@@ -1545,7 +1545,7 @@
 
     iget-object v2, v0, Lcom/samsung/android/settings/boostmode/BoostModeChangeDialogActivity;->mCancel:Lcom/samsung/android/settings/widget/RoundButtonView;
 
-    const v3, 0x7f0b13e7
+    const v3, 0x7f0b13e8
 
     move-object/from16 v0, p0
 
@@ -1615,7 +1615,7 @@
 
     new-array v3, v6, [Ljava/lang/Object;
 
-    const v4, 0x7f0b11f1
+    const v4, 0x7f0b11f2
 
     invoke-virtual {p0, v4}, Lcom/samsung/android/settings/boostmode/BoostModeChangeDialogActivity;->getString(I)Ljava/lang/String;
 
@@ -1623,7 +1623,7 @@
 
     aput-object v4, v3, v5
 
-    const v4, 0x7f0b0cb9
+    const v4, 0x7f0b0cba
 
     invoke-virtual {p0, v4, v3}, Lcom/samsung/android/settings/boostmode/BoostModeChangeDialogActivity;->getString(I[Ljava/lang/Object;)Ljava/lang/String;
 
@@ -2215,7 +2215,7 @@
 
     new-array v1, v4, [Ljava/lang/Object;
 
-    const v2, 0x7f0b11f1
+    const v2, 0x7f0b11f2
 
     invoke-virtual {p0, v2}, Lcom/samsung/android/settings/boostmode/BoostModeChangeDialogActivity;->getString(I)Ljava/lang/String;
 
@@ -2225,7 +2225,7 @@
 
     aput-object v2, v1, v3
 
-    const v2, 0x7f0b0cb9
+    const v2, 0x7f0b0cba
 
     invoke-virtual {p0, v2, v1}, Lcom/samsung/android/settings/boostmode/BoostModeChangeDialogActivity;->getString(I[Ljava/lang/Object;)Ljava/lang/String;
 

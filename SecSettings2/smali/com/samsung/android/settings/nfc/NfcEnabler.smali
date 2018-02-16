@@ -629,7 +629,7 @@
     :cond_1
     iget-object v0, p0, Lcom/samsung/android/settings/nfc/NfcEnabler;->mAndroidBeam:Lcom/android/settingslib/SecRestrictedSettingsSwitchPreference;
 
-    const v1, 0x7f0b1d09
+    const v1, 0x7f0b1d0a
 
     invoke-virtual {v0, v1}, Lcom/android/settingslib/SecRestrictedSettingsSwitchPreference;->setSummary(I)V
 
@@ -646,7 +646,7 @@
     :cond_3
     iget-object v0, p0, Lcom/samsung/android/settings/nfc/NfcEnabler;->mAndroidBeam:Lcom/android/settingslib/SecRestrictedSettingsSwitchPreference;
 
-    const v1, 0x7f0b1d08
+    const v1, 0x7f0b1d09
 
     invoke-virtual {v0, v1}, Lcom/android/settingslib/SecRestrictedSettingsSwitchPreference;->setSummary(I)V
 
@@ -662,9 +662,9 @@
 .method private handleNfcStateChanged(I)V
     .locals 6
 
-    const v5, 0x7f0b1d09
+    const v5, 0x7f0b1d0a
 
-    const v4, 0x7f0b1d08
+    const v4, 0x7f0b1d09
 
     const/4 v3, 0x1
 
@@ -791,7 +791,7 @@
 
     iget-object v0, p0, Lcom/samsung/android/settings/nfc/NfcEnabler;->mNfcSwitchPref:Landroid/preference/SwitchPreference;
 
-    const v1, 0x7f0b0b7d
+    const v1, 0x7f0b0b7e
 
     invoke-virtual {v0, v1}, Landroid/preference/SwitchPreference;->setSummary(I)V
 
@@ -957,7 +957,7 @@
 
     iget-object v0, p0, Lcom/samsung/android/settings/nfc/NfcEnabler;->mNfcSwitchPref:Landroid/preference/SwitchPreference;
 
-    const v1, 0x7f0b0b83
+    const v1, 0x7f0b0b84
 
     invoke-virtual {v0, v1}, Landroid/preference/SwitchPreference;->setSummary(I)V
 
@@ -1093,7 +1093,7 @@
 
     iget-object v0, p0, Lcom/samsung/android/settings/nfc/NfcEnabler;->mNfcSwitchPref:Landroid/preference/SwitchPreference;
 
-    const v1, 0x7f0b0b7d
+    const v1, 0x7f0b0b7e
 
     invoke-virtual {v0, v1}, Landroid/preference/SwitchPreference;->setSummary(I)V
 
@@ -1199,7 +1199,7 @@
 
     iget-object v0, p0, Lcom/samsung/android/settings/nfc/NfcEnabler;->mNfcSwitchPref:Landroid/preference/SwitchPreference;
 
-    const v1, 0x7f0b0b83
+    const v1, 0x7f0b0b84
 
     invoke-virtual {v0, v1}, Landroid/preference/SwitchPreference;->setSummary(I)V
 
@@ -1316,7 +1316,7 @@
 
     iget-object v0, p0, Lcom/samsung/android/settings/nfc/NfcEnabler;->mNfcSwitchPref:Landroid/preference/SwitchPreference;
 
-    const v1, 0x7f0b0b81
+    const v1, 0x7f0b0b82
 
     invoke-virtual {v0, v1}, Landroid/preference/SwitchPreference;->setSummary(I)V
 
@@ -1434,11 +1434,11 @@
 
     if-eqz v2, :cond_1
 
-    const v2, 0x7f0b0baa
+    const v2, 0x7f0b0bab
 
     invoke-virtual {v1, v2}, Landroid/app/AlertDialog$Builder;->setTitle(I)Landroid/app/AlertDialog$Builder;
 
-    const v2, 0x7f0b0bac
+    const v2, 0x7f0b0bad
 
     invoke-virtual {v1, v2}, Landroid/app/AlertDialog$Builder;->setMessage(I)Landroid/app/AlertDialog$Builder;
 
@@ -1487,11 +1487,11 @@
 
     if-eqz v2, :cond_2
 
-    const v2, 0x7f0b0bab
+    const v2, 0x7f0b0bac
 
     invoke-virtual {v1, v2}, Landroid/app/AlertDialog$Builder;->setTitle(I)Landroid/app/AlertDialog$Builder;
 
-    const v2, 0x7f0b0bad
+    const v2, 0x7f0b0bae
 
     invoke-virtual {v1, v2}, Landroid/app/AlertDialog$Builder;->setMessage(I)Landroid/app/AlertDialog$Builder;
 
@@ -1506,11 +1506,11 @@
 
     if-eqz v2, :cond_0
 
-    const v2, 0x7f0b0ba9
+    const v2, 0x7f0b0baa
 
     invoke-virtual {v1, v2}, Landroid/app/AlertDialog$Builder;->setTitle(I)Landroid/app/AlertDialog$Builder;
 
-    const v2, 0x7f0b0ba3
+    const v2, 0x7f0b0ba4
 
     invoke-virtual {v1, v2}, Landroid/app/AlertDialog$Builder;->setMessage(I)Landroid/app/AlertDialog$Builder;
 
@@ -1819,7 +1819,7 @@
 
     iget-object v2, p0, Lcom/samsung/android/settings/nfc/NfcEnabler;->mAndroidBeam:Lcom/android/settingslib/SecRestrictedSettingsSwitchPreference;
 
-    const v3, 0x7f0b1d08
+    const v3, 0x7f0b1d09
 
     invoke-virtual {v2, v3}, Lcom/android/settingslib/SecRestrictedSettingsSwitchPreference;->setSummary(I)V
 
@@ -1872,7 +1872,7 @@
 
     iget-object v2, p0, Lcom/samsung/android/settings/nfc/NfcEnabler;->mAndroidBeam:Lcom/android/settingslib/SecRestrictedSettingsSwitchPreference;
 
-    const v3, 0x7f0b1d09
+    const v3, 0x7f0b1d0a
 
     invoke-virtual {v2, v3}, Lcom/android/settingslib/SecRestrictedSettingsSwitchPreference;->setSummary(I)V
 

@@ -1662,6 +1662,7 @@ Upoštevajte, da Samsung lahko še vedno zbira podatke o vaši uporabi mobilne n
 Dešifriranje lahko traja dalj časa, odvisno od količine podatkov. Pred začetkom preverite, ali je baterija napolnjena, napravo pa pustite priključeno na napajanje, dokler dešifriranje ni končano.
 
 Med postopkom dešifriranja kartice SD ni mogoče uporabljati."</string>
+    <string name="sdcard_decrypt_description_reset_device">Pred ponastavitvijo telefona morate dešifrirati kartico SD.</string>
     <string name="sdcard_encrypt_button">Šifriraj kartico SD</string>
     <string name="sdcard_decrypt_button">Dešifriraj kartico SD</string>
     <string name="sdcard_encrypt_checking">Preverjanje kartice SD …</string>

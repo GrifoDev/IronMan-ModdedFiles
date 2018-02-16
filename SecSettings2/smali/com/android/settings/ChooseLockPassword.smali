@@ -1126,7 +1126,7 @@
 
     if-eqz v3, :cond_7
 
-    const v3, 0x7f0b0c53
+    const v3, 0x7f0b0c54
 
     invoke-virtual {p0, v3}, Lcom/android/settings/ChooseLockPassword;->getText(I)Ljava/lang/CharSequence;
 
@@ -1153,7 +1153,7 @@
     goto :goto_1
 
     :cond_7
-    const v3, 0x7f0b0c55
+    const v3, 0x7f0b0c56
 
     invoke-virtual {p0, v3}, Lcom/android/settings/ChooseLockPassword;->getText(I)Ljava/lang/CharSequence;
 
@@ -1166,7 +1166,7 @@
 
     if-eqz v3, :cond_9
 
-    const v3, 0x7f0b17df
+    const v3, 0x7f0b17e0
 
     invoke-virtual {p0, v3}, Lcom/android/settings/ChooseLockPassword;->getText(I)Ljava/lang/CharSequence;
 
@@ -1175,7 +1175,7 @@
     goto :goto_2
 
     :cond_9
-    const v3, 0x7f0b17dd
+    const v3, 0x7f0b17de
 
     invoke-virtual {p0, v3}, Lcom/android/settings/ChooseLockPassword;->getText(I)Ljava/lang/CharSequence;
 

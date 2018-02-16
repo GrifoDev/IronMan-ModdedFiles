@@ -414,9 +414,9 @@
 .method private setActionBarTitle()V
     .locals 8
 
-    const v7, 0x7f0b0f2e
+    const v7, 0x7f0b0f2f
 
-    const v6, 0x7f0b15b1
+    const v6, 0x7f0b15b2
 
     invoke-virtual {p0, v6}, Lcom/android/settings/wifi/SmartNetworkSwitchSettings;->getString(I)Ljava/lang/String;
 
@@ -709,7 +709,7 @@
 
     move-result-object v6
 
-    const v7, 0x7f0b15d7
+    const v7, 0x7f0b15d8
 
     invoke-virtual {v6, v7}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -962,11 +962,11 @@
 .method public onCreate(Landroid/os/Bundle;)V
     .locals 13
 
-    const v12, 0x7f0b0f1c
+    const v12, 0x7f0b0f1d
 
-    const v11, 0x7f0b0f1b
+    const v11, 0x7f0b0f1c
 
-    const v10, 0x7f0b0f1a
+    const v10, 0x7f0b0f1b
 
     const/4 v7, 0x1
 
@@ -1132,7 +1132,7 @@
 
     move-result-object v7
 
-    const v9, 0x7f0b0f1e
+    const v9, 0x7f0b0f1f
 
     invoke-virtual {v7, v9}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 

@@ -93,7 +93,7 @@
 .method private updateUi()V
     .locals 12
 
-    const v5, 0x7f0b1984
+    const v5, 0x7f0b1985
 
     const/4 v4, 0x3
 
@@ -170,7 +170,7 @@
 
     aput-object v0, v10, v11
 
-    const v0, 0x7f0b1982
+    const v0, 0x7f0b1983
 
     invoke-virtual {p0, v0, v10}, Lcom/android/settings/print/PrintJobSettingsFragment;->getString(I[Ljava/lang/Object;)Ljava/lang/String;
 
@@ -255,7 +255,7 @@
 
     aput-object v2, v1, v3
 
-    const v2, 0x7f0b1983
+    const v2, 0x7f0b1984
 
     invoke-virtual {p0, v2, v1}, Lcom/android/settings/print/PrintJobSettingsFragment;->getString(I[Ljava/lang/Object;)Ljava/lang/String;
 
@@ -295,7 +295,7 @@
 
     aput-object v2, v1, v3
 
-    const v2, 0x7f0b1985
+    const v2, 0x7f0b1986
 
     invoke-virtual {p0, v2, v1}, Lcom/android/settings/print/PrintJobSettingsFragment;->getString(I[Ljava/lang/Object;)Ljava/lang/String;
 
@@ -326,7 +326,7 @@
 
     aput-object v2, v1, v3
 
-    const v2, 0x7f0b1986
+    const v2, 0x7f0b1987
 
     invoke-virtual {p0, v2, v1}, Lcom/android/settings/print/PrintJobSettingsFragment;->getString(I[Ljava/lang/Object;)Ljava/lang/String;
 
@@ -443,7 +443,7 @@
 
     if-nez v3, :cond_1
 
-    const v3, 0x7f0b1981
+    const v3, 0x7f0b1982
 
     invoke-virtual {p0, v3}, Lcom/android/settings/print/PrintJobSettingsFragment;->getString(I)Ljava/lang/String;
 
@@ -462,7 +462,7 @@
 
     if-eqz v3, :cond_2
 
-    const v3, 0x7f0b1980
+    const v3, 0x7f0b1981
 
     invoke-virtual {p0, v3}, Lcom/android/settings/print/PrintJobSettingsFragment;->getString(I)Ljava/lang/String;
 
@@ -541,7 +541,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f0b197f
+    const v2, 0x7f0b1980
 
     invoke-virtual {v1, v2}, Landroid/app/ActionBar;->setTitle(I)V
 

@@ -408,7 +408,7 @@
 
     move-result-object v6
 
-    const v7, 0x7f0b0b86
+    const v7, 0x7f0b0b87
 
     invoke-virtual {p0, v7}, Lcom/samsung/android/settings/nfc/TapAndPaySettings;->getString(I)Ljava/lang/String;
 
@@ -434,7 +434,7 @@
 
     move-result-object v6
 
-    const v7, 0x7f0b0b87
+    const v7, 0x7f0b0b88
 
     invoke-virtual {p0, v7}, Lcom/samsung/android/settings/nfc/TapAndPaySettings;->getString(I)Ljava/lang/String;
 
@@ -538,7 +538,7 @@
 
     aput-object v7, v6, v8
 
-    const v7, 0x7f0b0b8d
+    const v7, 0x7f0b0b8e
 
     invoke-virtual {p0, v7, v6}, Lcom/samsung/android/settings/nfc/TapAndPaySettings;->getString(I[Ljava/lang/Object;)Ljava/lang/String;
 
@@ -833,13 +833,13 @@
 
     invoke-direct {v1, v2, v3}, Landroid/app/AlertDialog$Builder;-><init>(Landroid/content/Context;I)V
 
-    const v2, 0x7f0b0b90
+    const v2, 0x7f0b0b91
 
     invoke-virtual {v1, v2}, Landroid/app/AlertDialog$Builder;->setTitle(I)Landroid/app/AlertDialog$Builder;
 
     move-result-object v1
 
-    const v2, 0x7f0b0b91
+    const v2, 0x7f0b0b92
 
     invoke-virtual {v1, v2}, Landroid/app/AlertDialog$Builder;->setMessage(I)Landroid/app/AlertDialog$Builder;
 
@@ -849,7 +849,7 @@
 
     invoke-direct {v2, p0}, Lcom/samsung/android/settings/nfc/TapAndPaySettings$2;-><init>(Lcom/samsung/android/settings/nfc/TapAndPaySettings;)V
 
-    const v3, 0x7f0b0b92
+    const v3, 0x7f0b0b93
 
     invoke-virtual {v1, v3, v2}, Landroid/app/AlertDialog$Builder;->setPositiveButton(ILandroid/content/DialogInterface$OnClickListener;)Landroid/app/AlertDialog$Builder;
 

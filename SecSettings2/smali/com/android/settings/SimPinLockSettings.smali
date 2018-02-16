@@ -263,7 +263,7 @@
 
     iget-object v1, p0, Lcom/android/settings/SimPinLockSettings;->mRes:Landroid/content/res/Resources;
 
-    const v2, 0x7f0b09fe
+    const v2, 0x7f0b09ff
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -284,7 +284,7 @@
     :cond_0
     iget-object v1, p0, Lcom/android/settings/SimPinLockSettings;->mRes:Landroid/content/res/Resources;
 
-    const v2, 0x7f0b09ff
+    const v2, 0x7f0b0a00
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -345,7 +345,7 @@
 
     iget-object v2, p0, Lcom/android/settings/SimPinLockSettings;->mRes:Landroid/content/res/Resources;
 
-    const v3, 0x7f0b0a02
+    const v3, 0x7f0b0a03
 
     invoke-virtual {v2, v3}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -385,7 +385,7 @@
 
     aput-object v4, v3, v5
 
-    const v4, 0x7f0b0a04
+    const v4, 0x7f0b0a05
 
     invoke-virtual {v2, v4, v3}, Landroid/content/res/Resources;->getString(I[Ljava/lang/Object;)Ljava/lang/String;
 
@@ -424,7 +424,7 @@
 
     iget-object v2, p0, Lcom/android/settings/SimPinLockSettings;->mRes:Landroid/content/res/Resources;
 
-    const v3, 0x7f0b116f
+    const v3, 0x7f0b1170
 
     invoke-virtual {v2, v3}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -464,7 +464,7 @@
 
     aput-object v4, v3, v5
 
-    const v4, 0x7f0b1170
+    const v4, 0x7f0b1171
 
     invoke-virtual {v2, v4, v3}, Landroid/content/res/Resources;->getString(I[Ljava/lang/Object;)Ljava/lang/String;
 
@@ -493,7 +493,7 @@
 
     iget-object v2, p0, Lcom/android/settings/SimPinLockSettings;->mRes:Landroid/content/res/Resources;
 
-    const v3, 0x7f0b1692
+    const v3, 0x7f0b1693
 
     invoke-virtual {v2, v3}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -533,7 +533,7 @@
 
     aput-object v4, v3, v5
 
-    const v4, 0x7f0b09fd
+    const v4, 0x7f0b09fe
 
     invoke-virtual {v2, v4, v3}, Landroid/content/res/Resources;->getString(I[Ljava/lang/Object;)Ljava/lang/String;
 
@@ -613,7 +613,7 @@
 
     iget-object v2, p0, Lcom/android/settings/SimPinLockSettings;->mRes:Landroid/content/res/Resources;
 
-    const v3, 0x7f0b0a03
+    const v3, 0x7f0b0a04
 
     invoke-virtual {v2, v3}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -653,7 +653,7 @@
 
     aput-object v4, v3, v5
 
-    const v4, 0x7f0b0a04
+    const v4, 0x7f0b0a05
 
     invoke-virtual {v2, v4, v3}, Landroid/content/res/Resources;->getString(I[Ljava/lang/Object;)Ljava/lang/String;
 
@@ -693,7 +693,7 @@
 
     iget-object v2, p0, Lcom/android/settings/SimPinLockSettings;->mRes:Landroid/content/res/Resources;
 
-    const v3, 0x7f0b116f
+    const v3, 0x7f0b1170
 
     invoke-virtual {v2, v3}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -733,7 +733,7 @@
 
     aput-object v4, v3, v5
 
-    const v4, 0x7f0b1170
+    const v4, 0x7f0b1171
 
     invoke-virtual {v2, v4, v3}, Landroid/content/res/Resources;->getString(I[Ljava/lang/Object;)Ljava/lang/String;
 
@@ -762,7 +762,7 @@
 
     iget-object v2, p0, Lcom/android/settings/SimPinLockSettings;->mRes:Landroid/content/res/Resources;
 
-    const v3, 0x7f0b1690
+    const v3, 0x7f0b1691
 
     invoke-virtual {v2, v3}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -802,7 +802,7 @@
 
     aput-object v4, v3, v5
 
-    const v4, 0x7f0b09fd
+    const v4, 0x7f0b09fe
 
     invoke-virtual {v2, v4, v3}, Landroid/content/res/Resources;->getString(I[Ljava/lang/Object;)Ljava/lang/String;
 
@@ -827,7 +827,7 @@
     :cond_3
     iget-object v1, p0, Lcom/android/settings/SimPinLockSettings;->mRes:Landroid/content/res/Resources;
 
-    const v2, 0x7f0b1691
+    const v2, 0x7f0b1692
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -965,7 +965,7 @@
 
     iget-object v0, p0, Lcom/android/settings/SimPinLockSettings;->mHeaderText:Landroid/widget/TextView;
 
-    const v1, 0x7f0b0a09
+    const v1, 0x7f0b0a0a
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(I)V
 
@@ -975,7 +975,7 @@
     :cond_0
     iget-object v0, p0, Lcom/android/settings/SimPinLockSettings;->mHeaderText:Landroid/widget/TextView;
 
-    const v1, 0x7f0b168a
+    const v1, 0x7f0b168b
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(I)V
 
@@ -990,7 +990,7 @@
 
     iget-object v0, p0, Lcom/android/settings/SimPinLockSettings;->mHeaderText:Landroid/widget/TextView;
 
-    const v1, 0x7f0b0a0a
+    const v1, 0x7f0b0a0b
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(I)V
 
@@ -999,7 +999,7 @@
     :cond_1
     iget-object v0, p0, Lcom/android/settings/SimPinLockSettings;->mHeaderText:Landroid/widget/TextView;
 
-    const v1, 0x7f0b168b
+    const v1, 0x7f0b168c
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(I)V
 
@@ -1044,7 +1044,7 @@
 
     aput-object v2, v1, v3
 
-    const v2, 0x7f0b0a0b
+    const v2, 0x7f0b0a0c
 
     invoke-virtual {p0, v2, v1}, Lcom/android/settings/SimPinLockSettings;->getString(I[Ljava/lang/Object;)Ljava/lang/String;
 
@@ -1057,7 +1057,7 @@
     :cond_2
     iget-object v0, p0, Lcom/android/settings/SimPinLockSettings;->mHeaderText:Landroid/widget/TextView;
 
-    const v1, 0x7f0b1687
+    const v1, 0x7f0b1688
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(I)V
 
@@ -1082,7 +1082,7 @@
 
     aput-object v2, v1, v3
 
-    const v2, 0x7f0b0a0c
+    const v2, 0x7f0b0a0d
 
     invoke-virtual {p0, v2, v1}, Lcom/android/settings/SimPinLockSettings;->getString(I[Ljava/lang/Object;)Ljava/lang/String;
 
@@ -1095,7 +1095,7 @@
     :cond_4
     iget-object v0, p0, Lcom/android/settings/SimPinLockSettings;->mHeaderText:Landroid/widget/TextView;
 
-    const v1, 0x7f0b1688
+    const v1, 0x7f0b1689
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(I)V
 
@@ -1136,7 +1136,7 @@
 
     aput-object v2, v1, v3
 
-    const v2, 0x7f0b0a08
+    const v2, 0x7f0b0a09
 
     invoke-virtual {p0, v2, v1}, Lcom/android/settings/SimPinLockSettings;->getString(I[Ljava/lang/Object;)Ljava/lang/String;
 
@@ -1149,7 +1149,7 @@
     :cond_5
     iget-object v0, p0, Lcom/android/settings/SimPinLockSettings;->mHeaderText:Landroid/widget/TextView;
 
-    const v1, 0x7f0b1689
+    const v1, 0x7f0b168a
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(I)V
 
@@ -1219,9 +1219,9 @@
 .method public onClickConfirm()V
     .locals 7
 
-    const v6, 0x7f0b0a06
+    const v6, 0x7f0b0a07
 
-    const v4, 0x7f0b09fc
+    const v4, 0x7f0b09fd
 
     const/4 v5, 0x0
 
@@ -1247,7 +1247,7 @@
 
     if-eqz v3, :cond_0
 
-    const v3, 0x7f0b0a05
+    const v3, 0x7f0b0a06
 
     invoke-static {p0, v3, v5}, Landroid/widget/Toast;->makeText(Landroid/content/Context;II)Landroid/widget/Toast;
 
@@ -1259,7 +1259,7 @@
     return-void
 
     :cond_0
-    const v3, 0x7f0b09fb
+    const v3, 0x7f0b09fc
 
     invoke-static {p0, v3, v5}, Landroid/widget/Toast;->makeText(Landroid/content/Context;II)Landroid/widget/Toast;
 
@@ -1416,7 +1416,7 @@
 
     if-eqz v3, :cond_7
 
-    const v3, 0x7f0b0a07
+    const v3, 0x7f0b0a08
 
     invoke-static {p0, v3, v5}, Landroid/widget/Toast;->makeText(Landroid/content/Context;II)Landroid/widget/Toast;
 
@@ -1432,7 +1432,7 @@
     goto :goto_3
 
     :cond_7
-    const v3, 0x7f0b168e
+    const v3, 0x7f0b168f
 
     invoke-static {p0, v3, v5}, Landroid/widget/Toast;->makeText(Landroid/content/Context;II)Landroid/widget/Toast;
 
@@ -1577,7 +1577,7 @@
 
     iget-object v0, p0, Lcom/android/settings/SimPinLockSettings;->mActionBar:Landroid/app/ActionBar;
 
-    const v1, 0x7f0b1682
+    const v1, 0x7f0b1683
 
     invoke-virtual {v0, v1}, Landroid/app/ActionBar;->setTitle(I)V
 
@@ -1603,7 +1603,7 @@
 
     iget-object v0, p0, Lcom/android/settings/SimPinLockSettings;->mActionBar:Landroid/app/ActionBar;
 
-    const v1, 0x7f0b1685
+    const v1, 0x7f0b1686
 
     invoke-virtual {v0, v1}, Landroid/app/ActionBar;->setTitle(I)V
 

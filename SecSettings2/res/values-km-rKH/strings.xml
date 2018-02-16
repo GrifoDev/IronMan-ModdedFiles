@@ -1662,6 +1662,7 @@ Where Can I Find More Information About the 3rd Party's Policies? Separately, if
 ឌីគ្រីបសិន​អាច​ត្រូវការ​ពេល​វែង អាស្រ័យ​លើ​បរិមាណ​នៃ​ទិន្នន័យ។ មុនពេល​អ្នក​ចាប់ផ្ដើម ត្រូវ​ប្រាកដ​ថា ថ្ម​មាន​បន្ទុក ហើយ​បាន​ដោត​សាក​ឧបករណ៍ រហូត​ទាល់​តែ​ឌីគ្រីបសិន​បាន​បញ្ចប់។
 
 ក្នុង​អំឡុង​ដំណើរការ​ឌីគ្រីបសិន កាត SD មិន​អាច​ប្រើ​បាន​ឡើយ។"</string>
+    <string name="sdcard_decrypt_description_reset_device">មុនពេល​កំណត់​ទូរសព្ទ​របស់​អ្នក​ឡើងវិញ កាត SD របស់​អ្នក​ត្រូវការ​ឌីគ្រីប។</string>
     <string name="sdcard_encrypt_button">អ៊ិនគ្រីប​កាត SD</string>
     <string name="sdcard_decrypt_button">ឌីគ្រីប​កាត SD</string>
     <string name="sdcard_encrypt_checking">កំពុង​ពិនិត្យ​កាត SD…</string>

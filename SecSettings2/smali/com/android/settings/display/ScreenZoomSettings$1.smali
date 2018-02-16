@@ -39,7 +39,7 @@
         }
     .end annotation
 
-    const v4, 0x7f0b1ded
+    const v4, 0x7f0b1dee
 
     invoke-virtual {p1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 

@@ -164,7 +164,7 @@
 
     if-eqz v5, :cond_5
 
-    const v1, 0x7f0b1d08
+    const v1, 0x7f0b1d09
 
     :cond_5
     invoke-virtual {v4, v1}, Lcom/samsung/android/settings/SettingsSwitchPreference;->setSummary(I)V

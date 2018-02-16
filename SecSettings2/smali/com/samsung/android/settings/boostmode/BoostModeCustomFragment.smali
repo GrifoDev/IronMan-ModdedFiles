@@ -1495,7 +1495,7 @@
 
     iget-object v0, p0, Lcom/samsung/android/settings/boostmode/BoostModeCustomFragment;->mUHQscalerPref:Landroid/preference/SwitchPreference;
 
-    const v1, 0x7f0b0cd5
+    const v1, 0x7f0b0cd6
 
     invoke-virtual {p0, v1}, Lcom/samsung/android/settings/boostmode/BoostModeCustomFragment;->getString(I)Ljava/lang/String;
 
@@ -1514,7 +1514,7 @@
 
     iget-object v0, p0, Lcom/samsung/android/settings/boostmode/BoostModeCustomFragment;->mUHQscalerPref:Landroid/preference/SwitchPreference;
 
-    const v1, 0x7f0b0cd6
+    const v1, 0x7f0b0cd7
 
     invoke-virtual {p0, v1}, Lcom/samsung/android/settings/boostmode/BoostModeCustomFragment;->getString(I)Ljava/lang/String;
 
@@ -1531,7 +1531,7 @@
 
     iget-object v0, p0, Lcom/samsung/android/settings/boostmode/BoostModeCustomFragment;->mUHQscalerPref:Landroid/preference/SwitchPreference;
 
-    const v1, 0x7f0b0bbd
+    const v1, 0x7f0b0bbe
 
     invoke-virtual {v0, v1}, Landroid/preference/SwitchPreference;->setSummary(I)V
 
@@ -1619,7 +1619,7 @@
     :goto_0
     iget-object v9, p0, Lcom/samsung/android/settings/boostmode/BoostModeCustomFragment;->mSecBrightness:Lcom/android/settings/widget/SecIntervalSeekbarPreference;
 
-    const v10, 0x7f0b0a63
+    const v10, 0x7f0b0a64
 
     invoke-virtual {p0, v10}, Lcom/samsung/android/settings/boostmode/BoostModeCustomFragment;->getString(I)Ljava/lang/String;
 
@@ -2090,7 +2090,7 @@
 
     iget-object v9, p0, Lcom/samsung/android/settings/boostmode/BoostModeCustomFragment;->mScreenSeekBar:Lcom/android/settings/widget/SecIntervalSeekbarPreference;
 
-    const v10, 0x7f0b0c8e
+    const v10, 0x7f0b0c8f
 
     invoke-virtual {v9, v10}, Lcom/android/settings/widget/SecIntervalSeekbarPreference;->setSummary(I)V
 
@@ -3259,7 +3259,7 @@
 
     new-array v4, v1, [Ljava/lang/Object;
 
-    const v5, 0x7f0b11f1
+    const v5, 0x7f0b11f2
 
     invoke-virtual {p0, v5}, Lcom/samsung/android/settings/boostmode/BoostModeCustomFragment;->getString(I)Ljava/lang/String;
 
@@ -3267,7 +3267,7 @@
 
     aput-object v5, v4, v2
 
-    const v5, 0x7f0b0cb9
+    const v5, 0x7f0b0cba
 
     invoke-virtual {p0, v5, v4}, Lcom/samsung/android/settings/boostmode/BoostModeCustomFragment;->getString(I[Ljava/lang/Object;)Ljava/lang/String;
 

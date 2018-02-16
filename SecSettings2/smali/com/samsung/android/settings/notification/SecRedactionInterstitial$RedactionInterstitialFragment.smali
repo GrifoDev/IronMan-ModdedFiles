@@ -109,7 +109,7 @@
 
     iget-object v1, p0, Lcom/samsung/android/settings/notification/SecRedactionInterstitial$RedactionInterstitialFragment;->headerTextView:Landroid/widget/TextView;
 
-    const v2, 0x7f0b1c91
+    const v2, 0x7f0b1c92
 
     invoke-virtual {v1, v2}, Landroid/widget/TextView;->setText(I)V
 
@@ -1020,7 +1020,7 @@
 
     iget-object v6, p0, Lcom/samsung/android/settings/notification/SecRedactionInterstitial$RedactionInterstitialFragment;->mSUWNextText:Landroid/widget/TextView;
 
-    const v7, 0x7f0b1cbe
+    const v7, 0x7f0b1cbf
 
     invoke-virtual {v6, v7}, Landroid/widget/TextView;->setText(I)V
 

@@ -754,7 +754,7 @@
     :cond_9
     if-eqz v34, :cond_a
 
-    const v53, 0x7f0b127d
+    const v53, 0x7f0b127e
 
     move-object/from16 v0, v34
 
@@ -765,7 +765,7 @@
     :cond_a
     if-eqz v17, :cond_b
 
-    const v53, 0x7f0b12a1
+    const v53, 0x7f0b12a2
 
     move-object/from16 v0, v17
 
@@ -776,7 +776,7 @@
     :cond_b
     if-eqz v19, :cond_c
 
-    const v53, 0x7f0b12a3
+    const v53, 0x7f0b12a4
 
     move-object/from16 v0, v19
 
@@ -787,7 +787,7 @@
     :cond_c
     if-eqz v18, :cond_d
 
-    const v53, 0x7f0b12a5
+    const v53, 0x7f0b12a6
 
     move-object/from16 v0, v18
 
@@ -1175,7 +1175,7 @@
 
     if-eqz v49, :cond_26
 
-    const v53, 0x7f0b12bd
+    const v53, 0x7f0b12be    # 1.8486E38f
 
     move-object/from16 v0, v49
 

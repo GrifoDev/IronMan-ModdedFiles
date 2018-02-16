@@ -417,7 +417,7 @@
 
     iget-object v1, p0, Lcom/samsung/android/settings/lockscreen/SecLockscreenNotificationApplist;->headerTextView:Landroid/widget/TextView;
 
-    const v2, 0x7f0b0aae
+    const v2, 0x7f0b0aaf
 
     invoke-virtual {v1, v2}, Landroid/widget/TextView;->setText(I)V
 
@@ -437,7 +437,7 @@
     :cond_0
     iget-object v1, p0, Lcom/samsung/android/settings/lockscreen/SecLockscreenNotificationApplist;->headerTextView:Landroid/widget/TextView;
 
-    const v2, 0x7f0b0aaf
+    const v2, 0x7f0b0ab0
 
     invoke-virtual {v1, v2}, Landroid/widget/TextView;->setText(I)V
 
@@ -1153,7 +1153,7 @@
 
     move-result-object v9
 
-    const v10, 0x7f0b0ab4
+    const v10, 0x7f0b0ab5
 
     invoke-virtual {v9, v10}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -2785,7 +2785,7 @@
 
     iget-object v1, p0, Lcom/samsung/android/settings/lockscreen/SecLockscreenNotificationApplist;->descTextView:Landroid/widget/TextView;
 
-    const v2, 0x7f0b0ab0
+    const v2, 0x7f0b0ab1
 
     invoke-virtual {v1, v2}, Landroid/widget/TextView;->setText(I)V
 
@@ -2795,7 +2795,7 @@
     :cond_0
     iget-object v1, p0, Lcom/samsung/android/settings/lockscreen/SecLockscreenNotificationApplist;->descTextView:Landroid/widget/TextView;
 
-    const v2, 0x7f0b0ab1
+    const v2, 0x7f0b0ab2
 
     invoke-virtual {v1, v2}, Landroid/widget/TextView;->setText(I)V
 

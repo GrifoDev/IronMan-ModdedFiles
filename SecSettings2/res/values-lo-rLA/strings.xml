@@ -1661,6 +1661,7 @@ Where Can I Find More Information About the 3rd Party's Policies? Separately, if
 ການຖອດລະຫັດອາດຈະໃຊ້ເວລາດົນຂຶ້ນຢູ່ກັບປະລິມານຂໍ້ມູນ. ກ່ອນທ່ານເລີ່ມຕົ້ນ, ໃຫ້ແນ່ໃຈວ່າແບັດເຕີຣີຂອງທ່ານສາກເຕັມແລ້ວແລະຮັກສາໃຫ້ອຸປະກອນຂອງທ່ານສຽບໄຟໄວ້ຈົນກວ່າການຖອດລະຫັດສຳເລັດ.
 
 ໃນລະຫວ່າງຂັ້ນຕອນການຖອດລະຫັດ, ແຜ່ນ SD ຈະບໍ່ສາມາດໃຊ້ໄດ້."</string>
+    <string name="sdcard_decrypt_description_reset_device">ກ່ອນຕັ້ງໂທລະສັບຂອງທ່ານຄືນໃໝ່, ຈຳເປັນຕ້ອງມີການຖອດລະຫັດແຜ່ນ SD ຂອງທ່ານ.</string>
     <string name="sdcard_encrypt_button">ໃສ່ລະຫັດແຜ່ນ SD</string>
     <string name="sdcard_decrypt_button">ຖອດລະຫັດແຜ່ນ SD</string>
     <string name="sdcard_encrypt_checking">ກໍາລັງກວດສອບແຜ່ນ SD…</string>

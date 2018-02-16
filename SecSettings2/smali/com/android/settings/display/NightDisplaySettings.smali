@@ -291,7 +291,7 @@
 
     new-array v1, v6, [Ljava/lang/CharSequence;
 
-    const v2, 0x7f0b165a
+    const v2, 0x7f0b165b
 
     invoke-virtual {p0, v2}, Lcom/android/settings/display/NightDisplaySettings;->getString(I)Ljava/lang/String;
 
@@ -299,7 +299,7 @@
 
     aput-object v2, v1, v3
 
-    const v2, 0x7f0b165b
+    const v2, 0x7f0b165c
 
     invoke-virtual {p0, v2}, Lcom/android/settings/display/NightDisplaySettings;->getString(I)Ljava/lang/String;
 
@@ -307,7 +307,7 @@
 
     aput-object v2, v1, v4
 
-    const v2, 0x7f0b165c
+    const v2, 0x7f0b165d
 
     invoke-virtual {p0, v2}, Lcom/android/settings/display/NightDisplaySettings;->getString(I)Ljava/lang/String;
 

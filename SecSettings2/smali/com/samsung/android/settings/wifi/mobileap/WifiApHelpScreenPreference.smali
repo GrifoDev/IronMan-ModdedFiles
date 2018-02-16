@@ -29,7 +29,7 @@
 .method public onBindView(Landroid/view/View;)V
     .locals 10
 
-    const v9, 0x7f0b0fbe
+    const v9, 0x7f0b0fbf
 
     const/4 v7, 0x1
 
@@ -182,7 +182,7 @@
 
     if-eqz v4, :cond_5
 
-    const v4, 0x7f0b0fbf
+    const v4, 0x7f0b0fc0
 
     invoke-virtual {v3, v4}, Landroid/widget/TextView;->setText(I)V
 
@@ -225,7 +225,7 @@
 
     if-nez v4, :cond_7
 
-    const v4, 0x7f0b10cc
+    const v4, 0x7f0b10cd
 
     invoke-static {v4}, Lcom/samsung/android/settings/WifiApUtils;->getStringID(I)I
 
@@ -280,7 +280,7 @@
     goto/16 :goto_1
 
     :cond_7
-    const v4, 0x7f0b10ca
+    const v4, 0x7f0b10cb
 
     invoke-static {v4}, Lcom/samsung/android/settings/WifiApUtils;->getStringID(I)I
 
@@ -295,7 +295,7 @@
 
     move-result-object v4
 
-    const v5, 0x7f0b10c7
+    const v5, 0x7f0b10c8
 
     invoke-virtual {v4, v5}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 

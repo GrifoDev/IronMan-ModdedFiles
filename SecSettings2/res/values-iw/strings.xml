@@ -1662,6 +1662,7 @@ Where Can I Find More Information About the 3rd Party's Policies? Separately, if
 הפענוח עשוי להימשך זמן רב ותלוי בכמות הנתונים. לפני שאתה מתחיל, ודא שהסוללה טעונה והשאר את המכשיר מחובר למטען עד סיום תהליך הפענוח.
 
 לא תוכל להשתמש בכרטיס ה-SD עד סיום תהליך הפענוח."</string>
+    <string name="sdcard_decrypt_description_reset_device">לפני שאתה מבצע איפוס בטלפון, חובה לפענח את כרטיס ה-SD.</string>
     <string name="sdcard_encrypt_button">הצפן כרטיס SD</string>
     <string name="sdcard_decrypt_button">פענח כרטיס SD</string>
     <string name="sdcard_encrypt_checking">בודק כרטיס SD…</string>

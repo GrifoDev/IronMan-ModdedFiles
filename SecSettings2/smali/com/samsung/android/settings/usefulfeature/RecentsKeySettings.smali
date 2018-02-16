@@ -408,7 +408,7 @@
 
     check-cast v16, Landroid/widget/ImageView;
 
-    const v2, 0x7f0b0b53
+    const v2, 0x7f0b0b54
 
     move-object/from16 v0, p0
 

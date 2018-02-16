@@ -764,7 +764,7 @@
 
     move-result-object v2
 
-    const v3, 0x7f0b0ee7
+    const v3, 0x7f0b0ee8
 
     invoke-virtual {p0, v3}, Lcom/samsung/android/settings/datausage/networkconnect/NetworkManagerActivity;->getString(I)Ljava/lang/String;
 
@@ -818,7 +818,7 @@
 
     move-result-object v2
 
-    const v3, 0x7f0b0ee8
+    const v3, 0x7f0b0ee9
 
     invoke-virtual {p0, v3}, Lcom/samsung/android/settings/datausage/networkconnect/NetworkManagerActivity;->getString(I)Ljava/lang/String;
 

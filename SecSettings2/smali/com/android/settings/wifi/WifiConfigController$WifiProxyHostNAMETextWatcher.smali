@@ -147,7 +147,7 @@
 
     iget-object v1, p0, Lcom/android/settings/wifi/WifiConfigController$WifiProxyHostNAMETextWatcher;->mErrorText:Landroid/widget/TextView;
 
-    const v2, 0x7f0b0f11
+    const v2, 0x7f0b0f12
 
     invoke-virtual {v1, v2}, Landroid/widget/TextView;->setText(I)V
 

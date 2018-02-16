@@ -507,7 +507,7 @@
 
     move-result-object v3
 
-    const v7, 0x7f0b1579
+    const v7, 0x7f0b157a
 
     invoke-virtual {v3, v7}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -2771,7 +2771,7 @@
 
     move-object/from16 v29, v0
 
-    const v30, 0x7f0b1b2c
+    const v30, 0x7f0b1b2d
 
     move-object/from16 v0, p0
 
@@ -2805,7 +2805,7 @@
 
     move-object/from16 v29, v0
 
-    const v30, 0x7f0b1b2d
+    const v30, 0x7f0b1b2e
 
     move-object/from16 v0, p0
 
@@ -3130,7 +3130,7 @@
 
     if-eqz v27, :cond_12
 
-    const v27, 0x7f0b1b33
+    const v27, 0x7f0b1b34
 
     :goto_6
     move-object/from16 v0, p0
@@ -3247,7 +3247,7 @@
 
     if-eqz v27, :cond_4
 
-    const v27, 0x7f0b1b34
+    const v27, 0x7f0b1b35
 
     move/from16 v0, v27
 
@@ -3340,7 +3340,7 @@
 
     invoke-virtual/range {v17 .. v17}, Landroid/widget/EditText;->requestFocus()Z
 
-    const v27, 0x7f0b1b30
+    const v27, 0x7f0b1b31
 
     move/from16 v0, v27
 
@@ -3367,7 +3367,7 @@
     invoke-virtual {v0, v1, v2, v3}, Lcom/android/settings/vpn2/ConfigDialog;->setButton(ILjava/lang/CharSequence;Landroid/content/DialogInterface$OnClickListener;)V
 
     :goto_8
-    const v27, 0x7f0b1b2e
+    const v27, 0x7f0b1b2f
 
     move/from16 v0, v27
 
@@ -4124,7 +4124,7 @@
     goto/16 :goto_5
 
     :cond_12
-    const v27, 0x7f0b0eb7
+    const v27, 0x7f0b0eb8
 
     goto/16 :goto_6
 
@@ -4226,7 +4226,7 @@
 
     aput-object v28, v27, v29
 
-    const v28, 0x7f0b1b35
+    const v28, 0x7f0b1b36
 
     move/from16 v0, v28
 
@@ -4274,7 +4274,7 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/EditText;->setSelection(I)V
 
-    const v27, 0x7f0b1b31
+    const v27, 0x7f0b1b32
 
     move/from16 v0, v27
 
@@ -4431,7 +4431,7 @@
 
     iget-object v3, v3, Lcom/android/internal/net/VpnProfile;->ipsecCaCert:Ljava/lang/String;
 
-    const v4, 0x7f0b1b2c
+    const v4, 0x7f0b1b2d
 
     invoke-direct {p0, v1, v2, v4, v3}, Lcom/android/settings/vpn2/ConfigDialog;->loadCertificates(Landroid/widget/Spinner;Ljava/lang/String;ILjava/lang/String;)V
 

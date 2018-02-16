@@ -2109,7 +2109,7 @@
 
     move-result-object v4
 
-    const v5, 0x7f0b14f8
+    const v5, 0x7f0b14f9
 
     invoke-virtual {v4, v5}, Landroid/app/Activity;->getString(I)Ljava/lang/String;
 
@@ -2121,7 +2121,7 @@
 
     iget-object v4, p0, Lcom/android/settings/bluetooth/DeviceProfilesSettings;->mDialogClickListener:Landroid/content/DialogInterface$OnClickListener;
 
-    const v5, 0x7f0b1358
+    const v5, 0x7f0b1359
 
     invoke-virtual {v3, v5, v4}, Landroid/app/AlertDialog$Builder;->setPositiveButton(ILandroid/content/DialogInterface$OnClickListener;)Landroid/app/AlertDialog$Builder;
 

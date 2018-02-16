@@ -2957,7 +2957,7 @@
 
     iget-object v1, p0, Lcom/android/settings/deviceinfo/Status;->mRes:Landroid/content/res/Resources;
 
-    const v2, 0x7f0b1310
+    const v2, 0x7f0b1311
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -2967,7 +2967,7 @@
 
     iget-object v1, p0, Lcom/android/settings/deviceinfo/Status;->mRes:Landroid/content/res/Resources;
 
-    const v2, 0x7f0b16c6
+    const v2, 0x7f0b16c7
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -3526,7 +3526,7 @@
 
     if-eqz p1, :cond_0
 
-    const v0, 0x7f0b0f4a
+    const v0, 0x7f0b0f4b
 
     :goto_0
     const-string/jumbo v1, "ims_reg"
@@ -3542,7 +3542,7 @@
     return-void
 
     :cond_0
-    const v0, 0x7f0b0f4b
+    const v0, 0x7f0b0f4c
 
     goto :goto_0
 

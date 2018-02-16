@@ -642,7 +642,7 @@
 .method public onCreate(Landroid/os/Bundle;)V
     .locals 6
 
-    const v5, 0x7f0b0e33
+    const v5, 0x7f0b0e34
 
     const/4 v4, 0x1
 
@@ -688,7 +688,7 @@
 
     move-result-object v2
 
-    const v3, 0x7f0b0e2f
+    const v3, 0x7f0b0e30
 
     invoke-static {v2, v3, v4}, Landroid/widget/Toast;->makeText(Landroid/content/Context;II)Landroid/widget/Toast;
 
@@ -711,7 +711,7 @@
 
     move-result-object v2
 
-    const v3, 0x7f0b0e30
+    const v3, 0x7f0b0e31
 
     invoke-static {v2, v3, v4}, Landroid/widget/Toast;->makeText(Landroid/content/Context;II)Landroid/widget/Toast;
 
@@ -734,7 +734,7 @@
 
     move-result-object v2
 
-    const v3, 0x7f0b0e2e
+    const v3, 0x7f0b0e2f
 
     invoke-static {v2, v3, v4}, Landroid/widget/Toast;->makeText(Landroid/content/Context;II)Landroid/widget/Toast;
 
@@ -757,7 +757,7 @@
 
     move-result-object v2
 
-    const v3, 0x7f0b0e31
+    const v3, 0x7f0b0e32
 
     invoke-static {v2, v3, v4}, Landroid/widget/Toast;->makeText(Landroid/content/Context;II)Landroid/widget/Toast;
 
@@ -786,7 +786,7 @@
 
     move-result-object v2
 
-    const v3, 0x7f0b0e32
+    const v3, 0x7f0b0e33
 
     invoke-static {v2, v3, v4}, Landroid/widget/Toast;->makeText(Landroid/content/Context;II)Landroid/widget/Toast;
 
@@ -811,7 +811,7 @@
 
     iget-object v2, p0, Lcom/samsung/android/settings/GigaMultiPath;->mContext:Landroid/content/Context;
 
-    const v3, 0x7f0b14c2
+    const v3, 0x7f0b14c3
 
     invoke-virtual {v2, v3}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -878,7 +878,7 @@
 
     check-cast v0, Landroid/widget/TextView;
 
-    const v1, 0x7f0b0e28
+    const v1, 0x7f0b0e29
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(I)V
 
@@ -1065,7 +1065,7 @@
 
     const/4 v1, 0x1
 
-    const v7, 0x7f0b0e27
+    const v7, 0x7f0b0e28
 
     const v6, 0x104000a
 
@@ -1132,7 +1132,7 @@
 
     iget-object v1, p0, Lcom/samsung/android/settings/GigaMultiPath;->mAlertDialog:Landroid/app/AlertDialog$Builder;
 
-    const v3, 0x7f0b0e2c
+    const v3, 0x7f0b0e2d
 
     invoke-virtual {v1, v3}, Landroid/app/AlertDialog$Builder;->setMessage(I)Landroid/app/AlertDialog$Builder;
 
@@ -1210,7 +1210,7 @@
 
     iget-object v1, p0, Lcom/samsung/android/settings/GigaMultiPath;->mAlertDialog:Landroid/app/AlertDialog$Builder;
 
-    const v3, 0x7f0b0e29
+    const v3, 0x7f0b0e2a
 
     invoke-virtual {v1, v3}, Landroid/app/AlertDialog$Builder;->setMessage(I)Landroid/app/AlertDialog$Builder;
 
@@ -1249,7 +1249,7 @@
 
     move-result-object v2
 
-    const v3, 0x7f0b0e2b
+    const v3, 0x7f0b0e2c
 
     invoke-static {v2, v3, v1}, Landroid/widget/Toast;->makeText(Landroid/content/Context;II)Landroid/widget/Toast;
 
@@ -1286,7 +1286,7 @@
 
     iget-object v1, p0, Lcom/samsung/android/settings/GigaMultiPath;->mAlertDialog:Landroid/app/AlertDialog$Builder;
 
-    const v3, 0x7f0b0e2a
+    const v3, 0x7f0b0e2b
 
     invoke-virtual {v1, v3}, Landroid/app/AlertDialog$Builder;->setMessage(I)Landroid/app/AlertDialog$Builder;
 
@@ -1375,7 +1375,7 @@
 
     iget-object v0, p0, Lcom/samsung/android/settings/GigaMultiPath;->mProgressDialog:Landroid/app/ProgressDialog;
 
-    const v1, 0x7f0b132d
+    const v1, 0x7f0b132e
 
     invoke-virtual {p0, v1}, Lcom/samsung/android/settings/GigaMultiPath;->getText(I)Ljava/lang/CharSequence;
 

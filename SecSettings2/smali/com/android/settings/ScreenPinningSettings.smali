@@ -152,7 +152,7 @@
 .method private getCurrentSecurityTitle()Ljava/lang/String;
     .locals 6
 
-    const v5, 0x7f0b0abd
+    const v5, 0x7f0b0abe
 
     const/4 v4, 0x1
 
@@ -171,7 +171,7 @@
     sparse-switch v0, :sswitch_data_0
 
     :cond_0
-    const v1, 0x7f0b0abc
+    const v1, 0x7f0b0abd
 
     invoke-virtual {p0, v1}, Lcom/android/settings/ScreenPinningSettings;->getString(I)Ljava/lang/String;
 
@@ -182,7 +182,7 @@
     :sswitch_0
     new-array v1, v4, [Ljava/lang/Object;
 
-    const v2, 0x7f0b1479
+    const v2, 0x7f0b147a
 
     invoke-virtual {p0, v2}, Lcom/android/settings/ScreenPinningSettings;->getString(I)Ljava/lang/String;
 
@@ -199,7 +199,7 @@
     :sswitch_1
     new-array v1, v4, [Ljava/lang/Object;
 
-    const v2, 0x7f0b147b
+    const v2, 0x7f0b147c
 
     invoke-virtual {p0, v2}, Lcom/android/settings/ScreenPinningSettings;->getString(I)Ljava/lang/String;
 
@@ -228,7 +228,7 @@
 
     new-array v1, v4, [Ljava/lang/Object;
 
-    const v2, 0x7f0b1477
+    const v2, 0x7f0b1478
 
     invoke-virtual {p0, v2}, Lcom/android/settings/ScreenPinningSettings;->getString(I)Ljava/lang/String;
 
@@ -281,7 +281,7 @@
 
     const/4 v1, 0x0
 
-    const v2, 0x7f0b0abc
+    const v2, 0x7f0b0abd
 
     invoke-virtual {p0, v2}, Lcom/android/settings/ScreenPinningSettings;->getString(I)Ljava/lang/String;
 
@@ -334,7 +334,7 @@
 
     move-result-object v8
 
-    const v9, 0x7f0b0aba
+    const v9, 0x7f0b0abb
 
     invoke-virtual {v8, v9}, Landroid/app/Activity;->getString(I)Ljava/lang/String;
 
@@ -760,7 +760,7 @@
 
     move-result-object v10
 
-    const v11, 0x7f0b0aba
+    const v11, 0x7f0b0abb
 
     invoke-virtual {v10, v11}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -822,7 +822,7 @@
 
     if-eqz v10, :cond_0
 
-    const v10, 0x7f0b0abe
+    const v10, 0x7f0b0abf
 
     :goto_0
     invoke-virtual {v12, v10}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
@@ -843,7 +843,7 @@
 
     move-result-object v11
 
-    const v12, 0x7f0b0ac0
+    const v12, 0x7f0b0ac1
 
     invoke-virtual {v11, v12}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -875,7 +875,7 @@
 
     move-result-object v10
 
-    const v11, 0x7f0b0ac4
+    const v11, 0x7f0b0ac5
 
     invoke-virtual {v10, v11}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -941,7 +941,7 @@
 
     aput-object v7, v12, v13
 
-    const v13, 0x7f0b0ac1
+    const v13, 0x7f0b0ac2
 
     invoke-virtual {v11, v13, v12}, Landroid/content/res/Resources;->getString(I[Ljava/lang/Object;)Ljava/lang/String;
 
@@ -991,7 +991,7 @@
 
     move-result-object v11
 
-    const v12, 0x7f0b0ac2
+    const v12, 0x7f0b0ac3
 
     invoke-virtual {v11, v12}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -1094,7 +1094,7 @@
 
     move-result-object v11
 
-    const v12, 0x7f0b0ac5
+    const v12, 0x7f0b0ac6
 
     invoke-virtual {v11, v12}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -1167,7 +1167,7 @@
     return-void
 
     :cond_0
-    const v10, 0x7f0b0abf
+    const v10, 0x7f0b0ac0
 
     goto/16 :goto_0
 
@@ -1176,7 +1176,7 @@
 
     move-result-object v10
 
-    const v11, 0x7f0b0ac3
+    const v11, 0x7f0b0ac4
 
     invoke-virtual {v10, v11}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 

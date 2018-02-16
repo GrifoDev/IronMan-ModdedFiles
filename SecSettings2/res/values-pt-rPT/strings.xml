@@ -1662,6 +1662,7 @@ A encriptação pode demorar uma hora ou mais. Antes de começar, certifique-se 
 A desencriptação pode demorar muito tempo dependendo da quantidade de dados. Antes de começar, certifique-se de que a bateria está carregada e mantenha o dispositivo ligado até a desencriptação estar concluída.
 
 Não é possível utilizar o cartão SD durante o processo de encriptação."</string>
+    <string name="sdcard_decrypt_description_reset_device">Antes de repor o telefone, tem de desencriptar o seu cartão SD.</string>
     <string name="sdcard_encrypt_button">Encriptar cartão SD</string>
     <string name="sdcard_decrypt_button">Desencriptar cartão SD</string>
     <string name="sdcard_encrypt_checking">A verificar cartão SD…</string>

@@ -1535,6 +1535,7 @@ Is féidir go dtógfaidh an criptiú uair an chloig nó níos mó. Cinntigh go b
 D'fhéadfadh sé go dtógfadh an díchriptiú tamall fada ag brath ar an méid sonraí atá i gceist. Cinntigh go bhfuil an ceallra luchtaithe roimh duit tosú air agus fág an gléas plugáilte istigh go dtí go mbeidh an díchriptiú curtha i gcrích.
 
 Ní féidir an cárta SD a úsáid le linn an phróisis díchriptithe."</string>
+    <string name="sdcard_decrypt_description_reset_device">"Roimh d'fhón a athshocrú, ní foláir do chárta SD a dhíchriptiú."</string>
     <string name="sdcard_encrypt_button">Criptigh cárta SD</string>
     <string name="sdcard_decrypt_button">Díchriptigh cárta SD</string>
     <string name="sdcard_encrypt_checking">Cárta SD á sheiceáil…</string>

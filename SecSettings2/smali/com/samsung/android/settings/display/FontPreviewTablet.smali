@@ -1620,7 +1620,7 @@
 
     iput-object p0, v0, Lcom/android/internal/app/AlertController$AlertParams;->mPositiveButtonListener:Landroid/content/DialogInterface$OnClickListener;
 
-    const v5, 0x7f0b13e7
+    const v5, 0x7f0b13e8
 
     invoke-virtual {p0, v5}, Lcom/samsung/android/settings/display/FontPreviewTablet;->getString(I)Ljava/lang/String;
 
@@ -1628,7 +1628,7 @@
 
     iput-object v5, v0, Lcom/android/internal/app/AlertController$AlertParams;->mNegativeButtonText:Ljava/lang/CharSequence;
 
-    const v5, 0x7f0b1864
+    const v5, 0x7f0b1865
 
     invoke-virtual {p0, v5}, Lcom/samsung/android/settings/display/FontPreviewTablet;->getString(I)Ljava/lang/String;
 
@@ -4271,7 +4271,7 @@
 
     check-cast v19, Landroid/widget/ImageView;
 
-    const v24, 0x7f0b0b53
+    const v24, 0x7f0b0b54
 
     move-object/from16 v0, p0
 
@@ -5984,7 +5984,7 @@
 
     move-result-object v2
 
-    const v6, 0x7f0b16e7
+    const v6, 0x7f0b16e8
 
     invoke-virtual {v2, v6}, Landroid/content/res/Resources;->getText(I)Ljava/lang/CharSequence;
 

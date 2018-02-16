@@ -650,7 +650,7 @@
 
     if-eqz v4, :cond_0
 
-    const v5, 0x7f0b1b09
+    const v5, 0x7f0b1b0a
 
     :goto_0
     invoke-virtual {v6, v5}, Landroid/app/AlertDialog$Builder;->setTitle(I)Landroid/app/AlertDialog$Builder;
@@ -663,7 +663,7 @@
 
     move-result-object v5
 
-    const v6, 0x7f0b1b07
+    const v6, 0x7f0b1b08
 
     invoke-virtual {v5, v6, p0}, Landroid/app/AlertDialog$Builder;->setPositiveButton(ILandroid/content/DialogInterface$OnClickListener;)Landroid/app/AlertDialog$Builder;
 
@@ -690,7 +690,7 @@
     return-object v1
 
     :cond_0
-    const v5, 0x7f0b1b08
+    const v5, 0x7f0b1b09
 
     goto :goto_0
 .end method

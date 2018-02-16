@@ -489,9 +489,9 @@
 .method private addMyDeviceCenterText(Z)V
     .locals 3
 
-    const v0, 0x7f0b0efc
+    const v0, 0x7f0b0efd
 
-    const v1, 0x7f0b0eff
+    const v1, 0x7f0b0f00
 
     const/4 v2, 0x0
 
@@ -669,7 +669,7 @@
 
     move-result-object v2
 
-    const v3, 0x7f0b0f6a
+    const v3, 0x7f0b0f6b
 
     invoke-virtual {v2, v3}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -1301,7 +1301,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f0b0f6b
+    const v2, 0x7f0b0f6c
 
     invoke-virtual {v1, v2}, Landroid/app/Activity;->getString(I)Ljava/lang/String;
 
@@ -1680,7 +1680,7 @@
 
     move-result-object v7
 
-    const v8, 0x7f0b0efd
+    const v8, 0x7f0b0efe
 
     invoke-static {v7, v8, v9}, Landroid/widget/Toast;->makeText(Landroid/content/Context;II)Landroid/widget/Toast;
 
@@ -2018,7 +2018,7 @@
 
     iget-object v1, p0, Lcom/samsung/android/settings/wifi/p2p/WifiP2pDevicePicker;->mTextToSpeech:Landroid/speech/tts/TextToSpeech;
 
-    const v2, 0x7f0b0ef5
+    const v2, 0x7f0b0ef6
 
     invoke-virtual {p0, v2}, Lcom/samsung/android/settings/wifi/p2p/WifiP2pDevicePicker;->getString(I)Ljava/lang/String;
 
@@ -2567,7 +2567,7 @@
 
     const/4 v3, 0x0
 
-    const v1, 0x7f0b0efa
+    const v1, 0x7f0b0efb
 
     invoke-interface {p1, v3, v2, v3, v1}, Landroid/view/Menu;->add(IIII)Landroid/view/MenuItem;
 
@@ -2729,7 +2729,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f0b0f6b
+    const v2, 0x7f0b0f6c
 
     invoke-virtual {v1, v2}, Landroid/app/ActionBar;->setTitle(I)V
 
@@ -2770,7 +2770,7 @@
 
     move-result-object v1
 
-    const v4, 0x7f0b0f6b
+    const v4, 0x7f0b0f6c
 
     invoke-virtual {v1, v4}, Landroid/app/ActionBar;->setTitle(I)V
 
@@ -2796,7 +2796,7 @@
 .method public onCreateView(Landroid/view/LayoutInflater;Landroid/view/ViewGroup;Landroid/os/Bundle;)Landroid/view/View;
     .locals 11
 
-    const v10, 0x7f0b0f6b
+    const v10, 0x7f0b0f6c
 
     const/4 v7, 0x0
 
@@ -4145,7 +4145,7 @@
 
     move-result-object v3
 
-    const v4, 0x7f0b0efb
+    const v4, 0x7f0b0efc
 
     invoke-static {v3, v4, v6}, Landroid/widget/Toast;->makeText(Landroid/content/Context;II)Landroid/widget/Toast;
 
@@ -4240,7 +4240,7 @@
 
     move-result-object v3
 
-    const v4, 0x7f0b0f6b
+    const v4, 0x7f0b0f6c
 
     invoke-virtual {v3, v4}, Landroid/app/Activity;->getString(I)Ljava/lang/String;
 

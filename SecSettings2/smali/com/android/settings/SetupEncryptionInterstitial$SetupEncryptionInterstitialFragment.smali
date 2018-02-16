@@ -72,7 +72,7 @@
 
     invoke-virtual {v0, v1}, Lcom/android/setupwizardlib/GlifPreferenceLayout;->setIcon(Landroid/graphics/drawable/Drawable;)V
 
-    const v1, 0x7f0b1d16
+    const v1, 0x7f0b1d17
 
     invoke-virtual {v0, v1}, Lcom/android/setupwizardlib/GlifPreferenceLayout;->setHeaderText(I)V
 

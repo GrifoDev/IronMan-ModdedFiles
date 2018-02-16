@@ -437,7 +437,7 @@
 
     move-result-object v4
 
-    const v5, 0x7f0b1865
+    const v5, 0x7f0b1866
 
     invoke-virtual {p0, v5}, Lcom/samsung/android/settings/ModePreviewTablet;->getString(I)Ljava/lang/String;
 
@@ -451,7 +451,7 @@
 
     move-result-object v4
 
-    const v5, 0x7f0b1864
+    const v5, 0x7f0b1865
 
     invoke-virtual {p0, v5}, Lcom/samsung/android/settings/ModePreviewTablet;->getString(I)Ljava/lang/String;
 
@@ -871,7 +871,7 @@
 
     iput-object p0, v11, Lcom/android/internal/app/AlertController$AlertParams;->mPositiveButtonListener:Landroid/content/DialogInterface$OnClickListener;
 
-    const v1, 0x7f0b13e7
+    const v1, 0x7f0b13e8
 
     invoke-virtual {p0, v1}, Lcom/samsung/android/settings/ModePreviewTablet;->getString(I)Ljava/lang/String;
 
@@ -879,7 +879,7 @@
 
     iput-object v1, v11, Lcom/android/internal/app/AlertController$AlertParams;->mNegativeButtonText:Ljava/lang/CharSequence;
 
-    const v1, 0x7f0b1864
+    const v1, 0x7f0b1865
 
     invoke-virtual {p0, v1}, Lcom/samsung/android/settings/ModePreviewTablet;->getString(I)Ljava/lang/String;
 

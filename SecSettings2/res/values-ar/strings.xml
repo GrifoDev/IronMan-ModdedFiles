@@ -1662,6 +1662,7 @@ Where Can I Find More Information About the 3rd Party's Policies? Separately, if
 قد تستغرق عملية فك التشفير وقتاً طويلاً حسب كمية البيانات. قبل أن تبدأ، تأكد من أن البطارية مشحونة وابقِ الجهاز موصولاً إلى حين اكتمال فك التشفير.
 
 أثناء عملية فك التشفير، يتعذر استخدام بطاقة SD."</string>
+    <string name="sdcard_decrypt_description_reset_device">قبل إعادة ضبط هاتفك، يجب فك تشفير بطاقة SD الخاصة بك.</string>
     <string name="sdcard_encrypt_button">تشفير بطاقة SD</string>
     <string name="sdcard_decrypt_button">فك تشفير بطاقة SD</string>
     <string name="sdcard_encrypt_checking">جار فحص بطاقة SD…</string>

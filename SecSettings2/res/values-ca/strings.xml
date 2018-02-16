@@ -1662,6 +1662,7 @@ El xifratge pot trigar una hora o més. Abans de començar, asseguri's que la ba
 El desxifratge pot trigar molt temps segons la quantitat de dades. Abans de començar, asseguri's que la bateria estigui carregada i mantingui el dispositiu endollat fins que s'hagi completat el desxifratge.
 
 Durant el procés de desxifratge, la targeta SD no es podrà utilitzar."</string>
+    <string name="sdcard_decrypt_description_reset_device">Abans de restablir el telèfon, necessites desxifrar la targeta SD.</string>
     <string name="sdcard_encrypt_button">Xifrar targeta SD</string>
     <string name="sdcard_decrypt_button">Desxifrar targeta SD</string>
     <string name="sdcard_encrypt_checking">"S'està comprovant la targeta SD…"</string>

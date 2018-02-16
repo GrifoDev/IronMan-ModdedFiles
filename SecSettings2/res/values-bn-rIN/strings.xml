@@ -1535,6 +1535,7 @@ Where Can I Find More Information About the 3rd Party's Policies? Separately, if
 তথ্যের রাশির উপর ভিত্তি করে ডিক্রিপশন কিছুক্ষণ সময় নিতে পারে। শুরু করার আগে, ব্যাটারিটি চার্জ দেওয়া আছে এবং ডিক্রিপশন সম্পূর্ণ হওয়া অবধি ডিভাইসটি প্লাগ ইন করে রাখুন।
 
 ডিক্রিপশন প্রক্রিয়া চলাকালীন, SD কার্ডটি ব্যবহার করা যায় না।"</string>
+    <string name="sdcard_decrypt_description_reset_device">আপনার ফোন রিসেট করার আগে, আপনার SD কার্ড ডিক্রিপ্ট করতে হবে।</string>
     <string name="sdcard_encrypt_button">SD কার্ড এনক্রিপ্ট করুন</string>
     <string name="sdcard_decrypt_button">SD কার্ড ডিক্রিপ্ট করুন</string>
     <string name="sdcard_encrypt_checking">SD কার্ড পরীক্ষা করা হচ্ছে…</string>

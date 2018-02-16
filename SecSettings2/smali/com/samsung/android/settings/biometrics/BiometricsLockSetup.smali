@@ -550,7 +550,7 @@
 
     invoke-direct {v6}, Ljava/lang/StringBuilder;-><init>()V
 
-    const v7, 0x7f0b08f4
+    const v7, 0x7f0b08f5
 
     invoke-virtual {p0, v7}, Lcom/samsung/android/settings/biometrics/BiometricsLockSetup;->getString(I)Ljava/lang/String;
 
@@ -579,7 +579,7 @@
 
     invoke-direct {v6}, Ljava/lang/StringBuilder;-><init>()V
 
-    const v7, 0x7f0b08f5
+    const v7, 0x7f0b08f6
 
     invoke-virtual {p0, v7}, Lcom/samsung/android/settings/biometrics/BiometricsLockSetup;->getString(I)Ljava/lang/String;
 
@@ -608,21 +608,21 @@
 
     if-eqz v5, :cond_2
 
-    const v6, 0x7f0b08be
+    const v6, 0x7f0b08bf
 
     invoke-virtual {v5, v6}, Landroid/widget/TextView;->setText(I)V
 
     :cond_2
     if-eqz v0, :cond_3
 
-    const v6, 0x7f0b08bf
+    const v6, 0x7f0b08c0
 
     invoke-virtual {v0, v6}, Landroid/widget/TextView;->setText(I)V
 
     :cond_3
     if-eqz v2, :cond_4
 
-    const v6, 0x7f0b08c0
+    const v6, 0x7f0b08c1
 
     invoke-virtual {v2, v6}, Landroid/widget/TextView;->setText(I)V
 
@@ -630,7 +630,7 @@
     :goto_0
     if-eqz v1, :cond_5
 
-    const v6, 0x7f0b08f6
+    const v6, 0x7f0b08f7
 
     invoke-virtual {v1, v6}, Landroid/widget/TextView;->setText(I)V
 
@@ -644,7 +644,7 @@
 
     if-eqz v5, :cond_7
 
-    const v6, 0x7f0b07dd
+    const v6, 0x7f0b07de
 
     invoke-virtual {v5, v6}, Landroid/widget/TextView;->setText(I)V
 
@@ -657,7 +657,7 @@
 
     if-eqz v6, :cond_9
 
-    const v6, 0x7f0b07df
+    const v6, 0x7f0b07e0
 
     invoke-virtual {v0, v6}, Landroid/widget/TextView;->setText(I)V
 
@@ -665,14 +665,14 @@
     :goto_1
     if-eqz v2, :cond_4
 
-    const v6, 0x7f0b07e0
+    const v6, 0x7f0b07e1
 
     invoke-virtual {v2, v6}, Landroid/widget/TextView;->setText(I)V
 
     goto :goto_0
 
     :cond_9
-    const v6, 0x7f0b07de
+    const v6, 0x7f0b07df
 
     invoke-virtual {v0, v6}, Landroid/widget/TextView;->setText(I)V
 
@@ -685,21 +685,21 @@
 
     if-eqz v5, :cond_b
 
-    const v6, 0x7f0b094d
+    const v6, 0x7f0b094e
 
     invoke-virtual {v5, v6}, Landroid/widget/TextView;->setText(I)V
 
     :cond_b
     if-eqz v0, :cond_c
 
-    const v6, 0x7f0b0950
+    const v6, 0x7f0b0951
 
     invoke-virtual {v0, v6}, Landroid/widget/TextView;->setText(I)V
 
     :cond_c
     if-eqz v2, :cond_4
 
-    const v6, 0x7f0b094e
+    const v6, 0x7f0b094f
 
     invoke-virtual {v2, v6}, Landroid/widget/TextView;->setText(I)V
 
@@ -1111,21 +1111,21 @@
 
     if-eqz v2, :cond_0
 
-    const v0, 0x7f0b0982
+    const v0, 0x7f0b0983
 
     :cond_0
     iget-boolean v2, p0, Lcom/samsung/android/settings/biometrics/BiometricsLockSetup;->mForFingerprint:Z
 
     if-eqz v2, :cond_1
 
-    const v0, 0x7f0b0983
+    const v0, 0x7f0b0984
 
     :cond_1
     iget-boolean v2, p0, Lcom/samsung/android/settings/biometrics/BiometricsLockSetup;->mForIris:Z
 
     if-eqz v2, :cond_2
 
-    const v0, 0x7f0b0984
+    const v0, 0x7f0b0985
 
     :cond_2
     iget-boolean v2, p0, Lcom/samsung/android/settings/biometrics/BiometricsLockSetup;->mForFace:Z

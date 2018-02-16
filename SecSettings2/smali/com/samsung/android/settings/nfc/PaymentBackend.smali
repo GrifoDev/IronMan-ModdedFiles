@@ -209,7 +209,7 @@
     if-ne v1, v2, :cond_4
 
     :cond_3
-    const v2, 0x7f0b124c
+    const v2, 0x7f0b124d
 
     invoke-direct {p0, v2, p2}, Lcom/samsung/android/settings/nfc/PaymentBackend;->showErrorDialog(IZ)Z
 
@@ -218,7 +218,7 @@
     goto :goto_0
 
     :cond_4
-    const v2, 0x7f0b124d
+    const v2, 0x7f0b124e
 
     invoke-direct {p0, v2, p2}, Lcom/samsung/android/settings/nfc/PaymentBackend;->showErrorDialog(IZ)Z
 
@@ -352,14 +352,14 @@
     if-ne v0, v1, :cond_4
 
     :cond_3
-    const v1, 0x7f0b124c
+    const v1, 0x7f0b124d
 
     invoke-direct {p0, v1, v4}, Lcom/samsung/android/settings/nfc/PaymentBackend;->showErrorDialog(IZ)Z
 
     goto :goto_0
 
     :cond_4
-    const v1, 0x7f0b124d
+    const v1, 0x7f0b124e
 
     invoke-direct {p0, v1, v4}, Lcom/samsung/android/settings/nfc/PaymentBackend;->showErrorDialog(IZ)Z
 

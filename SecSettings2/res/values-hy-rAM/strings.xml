@@ -1662,6 +1662,7 @@ Where Can I Find More Information About the 3rd Party's Policies? Separately, if
 Վերծանումը կարող է երկար տևել՝ տվյալների քանակից կախված: Նախքան սկսելը համոզվեք, որ մարտկոցը լիցքավորված է, և սարքը պահեք վարդակից միացված, մինչև վերծանումն ավարտվի:
 
 Վերծանման ընթացքում հնարավոր չի լինի օգտագործել SD քարտը:"</string>
+    <string name="sdcard_decrypt_description_reset_device">Նախքան հեռախոսը հետադարձելը հարկավոր է վերծանել Ձեր SD քարտը:</string>
     <string name="sdcard_encrypt_button">Ծածկագրել SD քարտը</string>
     <string name="sdcard_decrypt_button">Վերծանել SD քարտը</string>
     <string name="sdcard_encrypt_checking">SD քարտը ստուգվում է…</string>

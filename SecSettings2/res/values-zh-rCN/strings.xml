@@ -1661,6 +1661,7 @@
 根据数据量，解密可能需要较长时间。在您开始之前，请确保电池已充满电并保持充电状态，直到解密完成。
 
 解密期间，将无法使用 SD 卡。"</string>
+    <string name="sdcard_decrypt_description_reset_device">在重置手机之前，需要解密您的 SD 卡。</string>
     <string name="sdcard_encrypt_button">加密 SD 卡</string>
     <string name="sdcard_decrypt_button">解密 SD 卡</string>
     <string name="sdcard_encrypt_checking">正在检查SD卡…</string>

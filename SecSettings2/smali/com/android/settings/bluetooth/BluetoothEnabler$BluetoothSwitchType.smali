@@ -200,7 +200,7 @@
 .method public setBluetoothSummary()V
     .locals 10
 
-    const v6, 0x7f0b1d08
+    const v6, 0x7f0b1d09
 
     const/4 v9, 0x0
 
@@ -360,7 +360,7 @@
 
     move-result-object v5
 
-    const v6, 0x7f0b137a
+    const v6, 0x7f0b137b
 
     invoke-virtual {v5, v6}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 

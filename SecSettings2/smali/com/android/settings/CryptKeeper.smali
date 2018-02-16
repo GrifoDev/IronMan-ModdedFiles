@@ -565,11 +565,11 @@
 
     iput v2, p0, Lcom/android/settings/CryptKeeper;->mReleaseWakeLockCountdown:I
 
-    const v0, 0x7f0b079c
+    const v0, 0x7f0b079d
 
     iput v0, p0, Lcom/android/settings/CryptKeeper;->mDefaultString:I
 
-    const v0, 0x7f0b079d
+    const v0, 0x7f0b079e
 
     iput v0, p0, Lcom/android/settings/CryptKeeper;->mStatusString:I
 
@@ -661,7 +661,7 @@
 
     check-cast v0, Landroid/widget/TextView;
 
-    const v1, 0x7f0b07a5
+    const v1, 0x7f0b07a6
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(I)V
 
@@ -1337,7 +1337,7 @@
 
     if-ne v0, v8, :cond_7
 
-    const v8, 0x7f0b07a6
+    const v8, 0x7f0b07a7
 
     invoke-virtual {v4, v8}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -1347,7 +1347,7 @@
 
     new-array v9, v9, [Ljava/lang/Object;
 
-    const v10, 0x7f0b0791
+    const v10, 0x7f0b0792
 
     invoke-virtual {v4, v10}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -1430,7 +1430,7 @@
     goto/16 :goto_0
 
     :cond_7
-    const v8, 0x7f0b07a6
+    const v8, 0x7f0b07a7
 
     invoke-virtual {v4, v8}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -1440,7 +1440,7 @@
 
     new-array v9, v9, [Ljava/lang/Object;
 
-    const v10, 0x7f0b0792
+    const v10, 0x7f0b0793
 
     invoke-virtual {v4, v10}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -1471,7 +1471,7 @@
 
     if-ne v0, v8, :cond_9
 
-    const v8, 0x7f0b0790
+    const v8, 0x7f0b0791
 
     invoke-virtual {v4, v8}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -1489,7 +1489,7 @@
 
     aput-object v10, v9, v11
 
-    const v10, 0x7f0b0791
+    const v10, 0x7f0b0792
 
     invoke-virtual {v4, v10}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -1515,7 +1515,7 @@
     goto/16 :goto_2
 
     :cond_9
-    const v8, 0x7f0b0790
+    const v8, 0x7f0b0791
 
     invoke-virtual {v4, v8}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -1533,7 +1533,7 @@
 
     aput-object v10, v9, v11
 
-    const v10, 0x7f0b0792
+    const v10, 0x7f0b0793
 
     invoke-virtual {v4, v10}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -1570,7 +1570,7 @@
 
     if-ne v8, v9, :cond_b
 
-    const v8, 0x7f0b07a3
+    const v8, 0x7f0b07a4
 
     invoke-virtual {v6, v8}, Landroid/widget/TextView;->setText(I)V
 
@@ -1610,7 +1610,7 @@
 
     if-ne v8, v9, :cond_c
 
-    const v8, 0x7f0b07a1
+    const v8, 0x7f0b07a2
 
     invoke-virtual {v6, v8}, Landroid/widget/TextView;->setText(I)V
 
@@ -1623,14 +1623,14 @@
 
     if-ne v8, v9, :cond_d
 
-    const v8, 0x7f0b07a4
+    const v8, 0x7f0b07a5
 
     invoke-virtual {v6, v8}, Landroid/widget/TextView;->setText(I)V
 
     goto/16 :goto_2
 
     :cond_d
-    const v8, 0x7f0b07a2
+    const v8, 0x7f0b07a3
 
     invoke-virtual {v6, v8}, Landroid/widget/TextView;->setText(I)V
 
@@ -3290,7 +3290,7 @@
 .method private showFactoryReset()V
     .locals 7
 
-    const v6, 0x7f0b0794
+    const v6, 0x7f0b0795
 
     const/4 v5, 0x0
 
@@ -3358,7 +3358,7 @@
 
     check-cast v1, Landroid/widget/TextView;
 
-    const v2, 0x7f0b07a7
+    const v2, 0x7f0b07a8
 
     invoke-virtual {v1, v2}, Landroid/widget/TextView;->setText(I)V
 
@@ -3368,7 +3368,7 @@
 
     check-cast v1, Landroid/widget/TextView;
 
-    const v2, 0x7f0b07a8
+    const v2, 0x7f0b07a9
 
     invoke-virtual {v1, v2}, Landroid/widget/TextView;->setText(I)V
 
@@ -3401,7 +3401,7 @@
 
     check-cast v1, Landroid/widget/TextView;
 
-    const v2, 0x7f0b0793
+    const v2, 0x7f0b0794
 
     invoke-virtual {v1, v2}, Landroid/widget/TextView;->setText(I)V
 
@@ -3479,7 +3479,7 @@
 
     check-cast v1, Landroid/widget/TextView;
 
-    const v2, 0x7f0b0797
+    const v2, 0x7f0b0798
 
     invoke-virtual {v1, v2}, Landroid/widget/TextView;->setText(I)V
 
@@ -3489,7 +3489,7 @@
 
     check-cast v1, Landroid/widget/TextView;
 
-    const v2, 0x7f0b0798
+    const v2, 0x7f0b0799
 
     invoke-virtual {v1, v2}, Landroid/widget/TextView;->setText(I)V
 
@@ -3502,7 +3502,7 @@
 
     check-cast v1, Landroid/widget/TextView;
 
-    const v2, 0x7f0b0795
+    const v2, 0x7f0b0796
 
     invoke-virtual {v1, v2}, Landroid/widget/TextView;->setText(I)V
 
@@ -3512,7 +3512,7 @@
 
     check-cast v1, Landroid/widget/TextView;
 
-    const v2, 0x7f0b0796
+    const v2, 0x7f0b0797
 
     invoke-virtual {v1, v2}, Landroid/widget/TextView;->setText(I)V
 
@@ -3619,7 +3619,7 @@
 
     if-eqz v2, :cond_3
 
-    const v1, 0x7f0b079b
+    const v1, 0x7f0b079c
 
     :goto_0
     invoke-virtual {v0, v1}, Landroid/widget/Button;->setText(I)V
@@ -3627,7 +3627,7 @@
     return-void
 
     :cond_3
-    const v1, 0x7f0b079a
+    const v1, 0x7f0b079b
 
     goto :goto_0
 .end method

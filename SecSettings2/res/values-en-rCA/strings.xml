@@ -1535,6 +1535,7 @@ Encryption could take an hour or more. Before you start, make sure that the batt
 Decryption could take a long time depending on the amount of data. Before you start, make sure that the battery is charged and keep the device plugged in until decryption is complete.
 
 During the decryption process, the SD card cannot be used."</string>
+    <string name="sdcard_decrypt_description_reset_device">Before resetting your phone, your SD card needs to be decrypted.</string>
     <string name="sdcard_encrypt_button">Encrypt SD card</string>
     <string name="sdcard_decrypt_button">Decrypt SD card</string>
     <string name="sdcard_encrypt_checking">Checking SD card…</string>

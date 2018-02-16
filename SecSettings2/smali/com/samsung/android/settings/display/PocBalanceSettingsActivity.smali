@@ -714,7 +714,7 @@
 
     move-result-object v3
 
-    const v4, 0x7f0b1865
+    const v4, 0x7f0b1866
 
     invoke-virtual {p0, v4}, Lcom/samsung/android/settings/display/PocBalanceSettingsActivity;->getString(I)Ljava/lang/String;
 

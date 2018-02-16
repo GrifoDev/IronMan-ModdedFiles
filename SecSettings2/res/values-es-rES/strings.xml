@@ -1535,6 +1535,7 @@ El cifrado puede tardar una hora o más. Antes de comenzar, asegúrate de que la
 El descifrado puede tardar bastante tiempo en función de la cantidad de datos. Antes de comenzar, asegúrate de que la batería esté cargada y mantén el dispositivo conectado a una toma de corriente hasta que se complete el descifrado.
 
 La tarjeta SD no se puede utilizar durante del proceso de descifrado."</string>
+    <string name="sdcard_decrypt_description_reset_device">Antes de restablecer el teléfono, tienes que descifrar la tarjeta SD.</string>
     <string name="sdcard_encrypt_button">Cifrar tarjeta SD</string>
     <string name="sdcard_decrypt_button">Descifrar tarjeta SD</string>
     <string name="sdcard_encrypt_checking">Comprobando tarjeta SD…</string>

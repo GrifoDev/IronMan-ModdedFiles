@@ -1661,6 +1661,7 @@ Parlaqlığın təhlükəsizlik ssəviyyələrindən artmasına icazə vermək �
 Şifrdən açma məlumatın miqdarından asılı olaraq uzun zaman ala bilər. Başlamazdan öncə batareyanın yüklənmiş və şifrdən açılma bitənə qədər cihazın taxılı olmasından əmin olun.
 
 Şifrdən açma prosesi zamanı SD kartdan istifadə etmək olmaz."</string>
+    <string name="sdcard_decrypt_description_reset_device">Telefonu sıfırlamazdan öncə SD kartınız şifrdən açılmalıdır.</string>
     <string name="sdcard_encrypt_button">SD kartı şifrlə</string>
     <string name="sdcard_decrypt_button">SD kartın şifrini aç</string>
     <string name="sdcard_encrypt_checking">SD kart yoxlanır…</string>

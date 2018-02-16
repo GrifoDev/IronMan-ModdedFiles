@@ -1662,6 +1662,7 @@ Where Can I Find More Information About the 3rd Party's Policies? Separately, if
 Расшыфроўка можа быць доўгай, гэта залежыць ад колькасці даных. Перш чым пачаць, зарадзіце акумулятар і не адлучайце прыладу ад сілкавання да завяршэння расшыфроўкі.
 
 Падчас расшыфроўкі нельга выкарыстоўваць SD-карту."</string>
+    <string name="sdcard_decrypt_description_reset_device">Перад скідам вашага тэленфона неабходна расшыфраваць вашу SD-карту.</string>
     <string name="sdcard_encrypt_button">Шыфраваць SD-карту</string>
     <string name="sdcard_decrypt_button">Расшыфраваць SD-карту</string>
     <string name="sdcard_encrypt_checking">Праверка SD-карты…</string>

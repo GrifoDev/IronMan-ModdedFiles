@@ -1662,6 +1662,7 @@ Samsungは本プライバシー規約の本文に記載されているとおり�
 データ量によっては、復号に時間がかかる可能性があります。開始する前に、バッテリーが十分に充電された状態であることを確認し、復号が完了するまで端末の充電を継続してください。
 
 復号中は、外部SDカードを使用できません。"</string>
+    <string name="sdcard_decrypt_description_reset_device">端末をリセットする前に、外部SDカードを復号する必要があります。</string>
     <string name="sdcard_encrypt_button">外部SDカードを暗号化</string>
     <string name="sdcard_decrypt_button">外部SDカードを復号</string>
     <string name="sdcard_encrypt_checking">外部SDカードを確認しています…</string>

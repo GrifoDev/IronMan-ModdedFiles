@@ -1535,6 +1535,7 @@ Where Can I Find More Information About the 3rd Party's Policies? Separately, if
 දත්ත ප්‍රමාණය මත පදනම්ව ගුප්ත විකේතනයට දිගු වේලාවක් ගත විය හැක. ඔබ විසින් ඇරඹීමට පෙර, බැටරිය චාර්ජ් වී ඇති බව සහතික කරගන්න සහ ගුප්ත විකේතනය සම්පූර්ණ වන තෙක් උපාංගය පේනුගත කොට තබා ගන්න.
 
 ගුප්ත විකේතන ක්‍රියාදාමය අතරතුර, SD කාඩ්පත භාවිතා කළ නොහැක."</string>
+    <string name="sdcard_decrypt_description_reset_device">ඔබේ දුරකථනය යළි සැකසීමට පෙර, ඔබේ SD කාඩ්පත ගුප්ත විකේතනයට අවශ්‍ය වේ.</string>
     <string name="sdcard_encrypt_button">SD කාඩ්පත ගුප්ත කේතනය</string>
     <string name="sdcard_decrypt_button">SD කාඩ්පත ගුප්ත විකේතනය</string>
     <string name="sdcard_encrypt_checking">SD කාඩ්පත පරීක්ෂා කෙරෙමින්…</string>

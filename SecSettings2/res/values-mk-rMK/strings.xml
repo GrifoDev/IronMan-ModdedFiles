@@ -1660,6 +1660,7 @@ Where Can I Find More Information About the 3rd Party's Policies? Separately, if
 Дешифрирањето може да потрае долго време во зависност од количината на податоци. Пред да започнете, проверете дали батеријата е наполнета и држете го уредот приклучен во струја сѐ додека не заврши дешифрирањето.
 
 За време на процесот на дешифрирање, SD-картичката не може да се користи."</string>
+    <string name="sdcard_decrypt_description_reset_device">Пред да го ресетирате телефонот, треба да се дешифрира SD-картичката.</string>
     <string name="sdcard_encrypt_button">Шифрирај SD-картичка</string>
     <string name="sdcard_decrypt_button">Дешифрирај SD-картичка</string>
     <string name="sdcard_encrypt_checking">Проверка на SD-картичката…</string>

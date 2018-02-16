@@ -41,7 +41,7 @@
 .method public setListening(Z)V
     .locals 7
 
-    const v6, 0x7f0b0d87
+    const v6, 0x7f0b0d88
 
     if-eqz p1, :cond_6
 
@@ -194,7 +194,7 @@
 
     iget-object v3, p0, Lcom/samsung/android/settings/CloudAccountSettings$SummaryProvider;->mContext:Landroid/content/Context;
 
-    const v4, 0x7f0b1428
+    const v4, 0x7f0b1429
 
     invoke-virtual {v3, v4}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -219,7 +219,7 @@
 
     iget-object v3, p0, Lcom/samsung/android/settings/CloudAccountSettings$SummaryProvider;->mContext:Landroid/content/Context;
 
-    const v4, 0x7f0b1b66
+    const v4, 0x7f0b1b67
 
     invoke-virtual {v3, v4}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -250,7 +250,7 @@
 
     iget-object v4, p0, Lcom/samsung/android/settings/CloudAccountSettings$SummaryProvider;->mContext:Landroid/content/Context;
 
-    const v5, 0x7f0b0cee
+    const v5, 0x7f0b0cef
 
     invoke-virtual {v4, v5}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 

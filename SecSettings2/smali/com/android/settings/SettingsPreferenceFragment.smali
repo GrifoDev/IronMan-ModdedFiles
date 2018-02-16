@@ -452,9 +452,34 @@
 .method protected getHelpResource()I
     .locals 1
 
-    const v0, 0x7f0b1bba
+    const v0, 0x7f0b1bbb
 
     return v0
+.end method
+
+.method protected getIntent()Landroid/content/Intent;
+    .locals 2
+
+    const/4 v1, 0x0
+
+    invoke-virtual {p0}, Lcom/android/settings/SettingsPreferenceFragment;->getActivity()Landroid/app/Activity;
+
+    move-result-object v0
+
+    if-nez v0, :cond_0
+
+    return-object v1
+
+    :cond_0
+    invoke-virtual {p0}, Lcom/android/settings/SettingsPreferenceFragment;->getActivity()Landroid/app/Activity;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Landroid/app/Activity;->getIntent()Landroid/content/Intent;
+
+    move-result-object v0
+
+    return-object v0
 .end method
 
 .method protected getPackageManager()Landroid/content/pm/PackageManager;

@@ -1265,7 +1265,7 @@
 
     const/4 v3, 0x0
 
-    const v5, 0x7f0b0a89
+    const v5, 0x7f0b0a8a
 
     move-object v0, p0
 

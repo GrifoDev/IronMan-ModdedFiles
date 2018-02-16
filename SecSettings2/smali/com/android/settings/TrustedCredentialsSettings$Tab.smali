@@ -220,7 +220,7 @@
 
     const/4 v2, 0x0
 
-    const v4, 0x7f0b1b4b
+    const v4, 0x7f0b1b4c
 
     const v5, 0x7f11081b
 
@@ -248,7 +248,7 @@
 
     const/4 v2, 0x1
 
-    const v4, 0x7f0b1b4c
+    const v4, 0x7f0b1b4d
 
     const v5, 0x7f110821
 

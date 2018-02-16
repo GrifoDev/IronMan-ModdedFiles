@@ -289,7 +289,7 @@
     :cond_2
     iget-object v1, p0, Lcom/samsung/android/settings/HongBaoAssistantPreferenceFragment;->mNotificationSound:Landroid/preference/SwitchPreference;
 
-    const v2, 0x7f0b1d09
+    const v2, 0x7f0b1d0a
 
     invoke-virtual {v1, v2}, Landroid/preference/SwitchPreference;->setSummary(I)V
 
@@ -353,7 +353,7 @@
     :cond_0
     iget-object v2, p0, Lcom/samsung/android/settings/HongBaoAssistantPreferenceFragment;->mNotificationSound:Landroid/preference/SwitchPreference;
 
-    const v3, 0x7f0b1d09
+    const v3, 0x7f0b1d0a
 
     invoke-virtual {v2, v3}, Landroid/preference/SwitchPreference;->setSummary(I)V
 
@@ -377,7 +377,7 @@
     :cond_2
     iget-object v2, p0, Lcom/samsung/android/settings/HongBaoAssistantPreferenceFragment;->mNotificationSound:Landroid/preference/SwitchPreference;
 
-    const v3, 0x7f0b0ea5
+    const v3, 0x7f0b0ea6
 
     invoke-virtual {v2, v3}, Landroid/preference/SwitchPreference;->setSummary(I)V
 
@@ -421,7 +421,7 @@
 
     const/4 v8, 0x3
 
-    const v7, 0x7f0b0ea1
+    const v7, 0x7f0b0ea2
 
     const/4 v6, 0x2
 
@@ -479,7 +479,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f0b0ea2
+    const v2, 0x7f0b0ea3
 
     invoke-virtual {v1, v2}, Landroid/app/Activity;->getString(I)Ljava/lang/String;
 
@@ -491,7 +491,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f0b0ea3
+    const v2, 0x7f0b0ea4
 
     invoke-virtual {v1, v2}, Landroid/app/Activity;->getString(I)Ljava/lang/String;
 
@@ -503,7 +503,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f0b0ea4
+    const v2, 0x7f0b0ea5
 
     invoke-virtual {v1, v2}, Landroid/app/Activity;->getString(I)Ljava/lang/String;
 
@@ -524,7 +524,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f0b0ea5
+    const v2, 0x7f0b0ea6
 
     invoke-virtual {v1, v2}, Landroid/app/Activity;->getString(I)Ljava/lang/String;
 
@@ -572,7 +572,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f0b0ea2
+    const v2, 0x7f0b0ea3
 
     invoke-virtual {v1, v2}, Landroid/app/Activity;->getString(I)Ljava/lang/String;
 
@@ -584,7 +584,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f0b0ea3
+    const v2, 0x7f0b0ea4
 
     invoke-virtual {v1, v2}, Landroid/app/Activity;->getString(I)Ljava/lang/String;
 
@@ -598,7 +598,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f0b0ea4
+    const v2, 0x7f0b0ea5
 
     invoke-virtual {v1, v2}, Landroid/app/Activity;->getString(I)Ljava/lang/String;
 

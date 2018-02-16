@@ -500,7 +500,7 @@
     return v0
 
     :pswitch_1
-    const v0, 0x7f0b1da0
+    const v0, 0x7f0b1da1
 
     return v0
 
@@ -546,7 +546,7 @@
     return v0
 
     :pswitch_2
-    const v0, 0x7f0b1d98
+    const v0, 0x7f0b1d99
 
     return v0
 
@@ -556,7 +556,7 @@
     return v0
 
     :pswitch_4
-    const v0, 0x7f0b1d9f
+    const v0, 0x7f0b1da0
 
     return v0
 
@@ -597,27 +597,27 @@
     return v0
 
     :pswitch_1
-    const v0, 0x7f0b1d95
+    const v0, 0x7f0b1d96
 
     return v0
 
     :pswitch_2
-    const v0, 0x7f0b1d97
+    const v0, 0x7f0b1d98
 
     return v0
 
     :pswitch_3
-    const v0, 0x7f0b1d9a
+    const v0, 0x7f0b1d9b
 
     return v0
 
     :pswitch_4
-    const v0, 0x7f0b1d9d
+    const v0, 0x7f0b1d9e
 
     return v0
 
     :pswitch_5
-    const v0, 0x7f0b1da2
+    const v0, 0x7f0b1da3
 
     return v0
 
@@ -659,32 +659,32 @@
 
     if-eqz v0, :cond_0
 
-    const v0, 0x7f0b1d65
+    const v0, 0x7f0b1d66
 
     return v0
 
     :cond_0
-    const v0, 0x7f0b1d95
+    const v0, 0x7f0b1d96
 
     return v0
 
     :pswitch_2
-    const v0, 0x7f0b1d97
+    const v0, 0x7f0b1d98
 
     return v0
 
     :pswitch_3
-    const v0, 0x7f0b1d99
+    const v0, 0x7f0b1d9a
 
     return v0
 
     :pswitch_4
-    const v0, 0x7f0b1d9c
+    const v0, 0x7f0b1d9d
 
     return v0
 
     :pswitch_5
-    const v0, 0x7f0b1da1
+    const v0, 0x7f0b1da2
 
     return v0
 
@@ -983,7 +983,7 @@
 
     invoke-direct {v1, p0}, Landroid/app/AlertDialog$Builder;-><init>(Landroid/content/Context;)V
 
-    const v4, 0x7f0b1da4
+    const v4, 0x7f0b1da5
 
     invoke-virtual {v1, v4}, Landroid/app/AlertDialog$Builder;->setTitle(I)Landroid/app/AlertDialog$Builder;
 
@@ -1007,7 +1007,7 @@
 
     invoke-direct {v4, p0}, Lcom/android/settings/deviceinfo/UsbModeChooserActivity$6;-><init>(Lcom/android/settings/deviceinfo/UsbModeChooserActivity;)V
 
-    const v5, 0x7f0b13e7
+    const v5, 0x7f0b13e8
 
     invoke-virtual {v1, v5, v4}, Landroid/app/AlertDialog$Builder;->setNegativeButton(ILandroid/content/DialogInterface$OnClickListener;)Landroid/app/AlertDialog$Builder;
 

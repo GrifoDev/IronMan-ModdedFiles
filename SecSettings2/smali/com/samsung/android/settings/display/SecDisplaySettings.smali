@@ -1229,7 +1229,7 @@
 
     aput-object v21, v20, v22
 
-    const v21, 0x7f0b0a96
+    const v21, 0x7f0b0a97
 
     move-object/from16 v0, p0
 
@@ -1816,7 +1816,7 @@
 
     aput-object v7, v6, v8
 
-    const v7, 0x7f0b1669
+    const v7, 0x7f0b166a
 
     invoke-virtual {p0, v7, v6}, Lcom/samsung/android/settings/display/SecDisplaySettings;->getString(I[Ljava/lang/Object;)Ljava/lang/String;
 
@@ -2880,7 +2880,7 @@
     :cond_1
     iget-object v4, p0, Lcom/samsung/android/settings/display/SecDisplaySettings;->mContext:Landroid/content/Context;
 
-    const v5, 0x7f0b1928
+    const v5, 0x7f0b1929
 
     invoke-virtual {v4, v5}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -3345,7 +3345,7 @@
 
     if-eqz v4, :cond_8
 
-    const v4, 0x7f0b1d08
+    const v4, 0x7f0b1d09
 
     :goto_5
     invoke-virtual {v5, v4}, Lcom/samsung/android/settings/SettingsSwitchPreference;->setSummary(I)V
@@ -3353,7 +3353,7 @@
     goto :goto_4
 
     :cond_8
-    const v4, 0x7f0b1d09
+    const v4, 0x7f0b1d0a
 
     goto :goto_5
 .end method
@@ -4347,7 +4347,7 @@
 
     iget-object v1, p0, Lcom/samsung/android/settings/display/SecDisplaySettings;->mScreenSaverPreference:Lcom/samsung/android/settings/SettingsSwitchPreference;
 
-    const v2, 0x7f0b0d2d
+    const v2, 0x7f0b0d2e
 
     invoke-virtual {v1, v2}, Lcom/samsung/android/settings/SettingsSwitchPreference;->setSummary(I)V
 
@@ -4356,7 +4356,7 @@
     :cond_2
     iget-object v1, p0, Lcom/samsung/android/settings/display/SecDisplaySettings;->mScreenSaverPreference:Lcom/samsung/android/settings/SettingsSwitchPreference;
 
-    const v2, 0x7f0b0d2e
+    const v2, 0x7f0b0d2f
 
     invoke-virtual {v1, v2}, Lcom/samsung/android/settings/SettingsSwitchPreference;->setSummary(I)V
 
@@ -4946,7 +4946,7 @@
 
     if-eqz v10, :cond_1
 
-    const v10, 0x7f0b1e0f
+    const v10, 0x7f0b1e10
 
     invoke-virtual {p0, v10}, Lcom/samsung/android/settings/display/SecDisplaySettings;->getString(I)Ljava/lang/String;
 
@@ -4977,7 +4977,7 @@
 
     if-lez v10, :cond_7
 
-    const v10, 0x7f0b0a98
+    const v10, 0x7f0b0a99
 
     invoke-virtual {v5, v10}, Lcom/android/settings/TimeoutListPreference;->setSummary(I)V
 
@@ -5066,7 +5066,7 @@
 
     aput-object v11, v10, v12
 
-    const v11, 0x7f0b1669
+    const v11, 0x7f0b166a
 
     invoke-virtual {p0, v11, v10}, Lcom/samsung/android/settings/display/SecDisplaySettings;->getString(I[Ljava/lang/Object;)Ljava/lang/String;
 
@@ -5138,7 +5138,7 @@
 .method protected getHelpResource()I
     .locals 1
 
-    const v0, 0x7f0b1bbc
+    const v0, 0x7f0b1bbd
 
     return v0
 .end method
@@ -5289,7 +5289,7 @@
 
     iget-object v6, p0, Lcom/samsung/android/settings/display/SecDisplaySettings;->mLinkedData3:Lcom/samsung/android/settings/SettingsPreferenceFragmentLinkData;
 
-    const v7, 0x7f0b18be
+    const v7, 0x7f0b18bf
 
     iput v7, v6, Lcom/samsung/android/settings/SettingsPreferenceFragmentLinkData;->titleRes:I
 
@@ -5497,7 +5497,7 @@
 
     if-eqz v27, :cond_16
 
-    const v27, 0x7f0b1651
+    const v27, 0x7f0b1652
 
     move/from16 v0, v27
 
@@ -6862,7 +6862,7 @@
     goto/16 :goto_2
 
     :cond_16
-    const v27, 0x7f0b161c
+    const v27, 0x7f0b161d
 
     move/from16 v0, v27
 
@@ -10932,7 +10932,7 @@
 
     if-eqz v33, :cond_32
 
-    const v33, 0x7f0b1d08
+    const v33, 0x7f0b1d09
 
     :goto_22
     move-object/from16 v0, v34
@@ -11365,7 +11365,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f0b085a
+    const v2, 0x7f0b085b
 
     const/4 v3, 0x0
 
@@ -12463,7 +12463,7 @@
 
     if-eqz v23, :cond_21
 
-    const v26, 0x7f0b1d08
+    const v26, 0x7f0b1d09
 
     :goto_2
     move-object/from16 v0, v27
@@ -12696,7 +12696,7 @@
 
     if-eqz v17, :cond_24
 
-    const v26, 0x7f0b1d08
+    const v26, 0x7f0b1d09
 
     :goto_5
     move-object/from16 v0, v27
@@ -13271,7 +13271,7 @@
 
     move-object/from16 v27, v0
 
-    const v28, 0x7f0b0c75
+    const v28, 0x7f0b0c76
 
     move-object/from16 v0, p0
 
@@ -13668,7 +13668,7 @@
 
     move-object/from16 v27, v0
 
-    const v28, 0x7f0b0cc3
+    const v28, 0x7f0b0cc4
 
     move-object/from16 v0, p0
 
@@ -13760,7 +13760,7 @@
     goto/16 :goto_4
 
     :cond_24
-    const v26, 0x7f0b1d09
+    const v26, 0x7f0b1d0a
 
     goto/16 :goto_5
 
@@ -13892,7 +13892,7 @@
 
     if-eqz v26, :cond_2b
 
-    const v26, 0x7f0b1d08
+    const v26, 0x7f0b1d09
 
     :goto_13
     move-object/from16 v0, v27
@@ -14064,7 +14064,7 @@
 
     move-object/from16 v27, v0
 
-    const v28, 0x7f0b0cc3
+    const v28, 0x7f0b0cc4
 
     move-object/from16 v0, p0
 
@@ -14109,7 +14109,7 @@
 
     move-object/from16 v27, v0
 
-    const v28, 0x7f0b0cc1
+    const v28, 0x7f0b0cc2
 
     move-object/from16 v0, p0
 
@@ -14154,7 +14154,7 @@
 
     move-object/from16 v27, v0
 
-    const v28, 0x7f0b0cbf
+    const v28, 0x7f0b0cc0
 
     move-object/from16 v0, p0
 
@@ -14266,7 +14266,7 @@
 
     move-object/from16 v27, v0
 
-    const v28, 0x7f0b11f1
+    const v28, 0x7f0b11f2
 
     move-object/from16 v0, p0
 
@@ -14500,7 +14500,7 @@
 
     invoke-virtual {v0, v5}, Landroid/app/AlertDialog$Builder;->setView(Landroid/view/View;)Landroid/app/AlertDialog$Builder;
 
-    const v9, 0x7f0b1667
+    const v9, 0x7f0b1668
 
     invoke-virtual {v0, v9}, Landroid/app/AlertDialog$Builder;->setTitle(I)Landroid/app/AlertDialog$Builder;
 

@@ -1662,6 +1662,7 @@ Hotovo %d %%."</string>
 Dešifrování může v závislosti na objemu dat trvat dlouho. Než začnete, ujistěte se, že je baterie nabitá a zařízení nechte zapojené do napájení až do dokončení dešifrování.
 
 Během procesu dešifrování není možné SD kartu používat."</string>
+    <string name="sdcard_decrypt_description_reset_device">Před obnovením nastavení telefonu se SD karta musí dešifrovat.</string>
     <string name="sdcard_encrypt_button">Šifrovat SD kartu</string>
     <string name="sdcard_decrypt_button">Dešifrovat SD kartu</string>
     <string name="sdcard_encrypt_checking">Probíhá kontrola SD karty…</string>

@@ -141,7 +141,7 @@
 
     invoke-direct {v3}, Ljava/util/ArrayList;-><init>()V
 
-    const v9, 0x7f0b18bf
+    const v9, 0x7f0b18c0
 
     invoke-virtual {p1, v9}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -173,7 +173,7 @@
 
     iput-object v9, v2, Lcom/android/settings/search/SearchIndexableRaw;->key:Ljava/lang/String;
 
-    const v9, 0x7f0b18c1
+    const v9, 0x7f0b18c2
 
     invoke-virtual {p1, v9}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -181,7 +181,7 @@
 
     iput-object v9, v2, Lcom/android/settings/search/SearchIndexableRaw;->title:Ljava/lang/String;
 
-    const v9, 0x7f0b18c1
+    const v9, 0x7f0b18c2
 
     invoke-static {p1, v9}, Lcom/android/settings/Utils;->getKeywordForSearch(Landroid/content/Context;I)Ljava/lang/String;
 
@@ -216,7 +216,7 @@
 
     iput-object v9, v2, Lcom/android/settings/search/SearchIndexableRaw;->key:Ljava/lang/String;
 
-    const v9, 0x7f0b1b59
+    const v9, 0x7f0b1b5a
 
     invoke-virtual {p1, v9}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -224,7 +224,7 @@
 
     iput-object v9, v2, Lcom/android/settings/search/SearchIndexableRaw;->title:Ljava/lang/String;
 
-    const v9, 0x7f0b1b59
+    const v9, 0x7f0b1b5a
 
     invoke-static {p1, v9}, Lcom/android/settings/Utils;->getKeywordForSearch(Landroid/content/Context;I)Ljava/lang/String;
 
@@ -250,7 +250,7 @@
 
     iput-object v9, v2, Lcom/android/settings/search/SearchIndexableRaw;->key:Ljava/lang/String;
 
-    const v9, 0x7f0b18e7
+    const v9, 0x7f0b18e8
 
     invoke-virtual {p1, v9}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -258,7 +258,7 @@
 
     iput-object v9, v2, Lcom/android/settings/search/SearchIndexableRaw;->title:Ljava/lang/String;
 
-    const v9, 0x7f0b18e7
+    const v9, 0x7f0b18e8
 
     invoke-static {p1, v9}, Lcom/android/settings/Utils;->getKeywordForSearch(Landroid/content/Context;I)Ljava/lang/String;
 
@@ -293,7 +293,7 @@
 
     iput-object v9, v2, Lcom/android/settings/search/SearchIndexableRaw;->key:Ljava/lang/String;
 
-    const v9, 0x7f0b18ff
+    const v9, 0x7f0b1900
 
     invoke-virtual {p1, v9}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -301,7 +301,7 @@
 
     iput-object v9, v2, Lcom/android/settings/search/SearchIndexableRaw;->title:Ljava/lang/String;
 
-    const v9, 0x7f0b18ff
+    const v9, 0x7f0b1900
 
     invoke-static {p1, v9}, Lcom/android/settings/Utils;->getKeywordForSearch(Landroid/content/Context;I)Ljava/lang/String;
 
@@ -380,7 +380,7 @@
 
     iput-object v9, v2, Lcom/android/settings/search/SearchIndexableRaw;->key:Ljava/lang/String;
 
-    const v9, 0x7f0b18dd
+    const v9, 0x7f0b18de
 
     invoke-virtual {p1, v9}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -388,7 +388,7 @@
 
     iput-object v9, v2, Lcom/android/settings/search/SearchIndexableRaw;->title:Ljava/lang/String;
 
-    const v9, 0x7f0b18dd
+    const v9, 0x7f0b18de
 
     invoke-static {p1, v9}, Lcom/android/settings/Utils;->getKeywordForSearch(Landroid/content/Context;I)Ljava/lang/String;
 
@@ -408,7 +408,7 @@
 
     iput-object v9, v2, Lcom/android/settings/search/SearchIndexableRaw;->key:Ljava/lang/String;
 
-    const v9, 0x7f0b18de
+    const v9, 0x7f0b18df
 
     invoke-virtual {p1, v9}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -416,7 +416,7 @@
 
     iput-object v9, v2, Lcom/android/settings/search/SearchIndexableRaw;->title:Ljava/lang/String;
 
-    const v9, 0x7f0b18de
+    const v9, 0x7f0b18df
 
     invoke-static {p1, v9}, Lcom/android/settings/Utils;->getKeywordForSearch(Landroid/content/Context;I)Ljava/lang/String;
 
@@ -442,7 +442,7 @@
 
     iput-object v9, v2, Lcom/android/settings/search/SearchIndexableRaw;->key:Ljava/lang/String;
 
-    const v9, 0x7f0b18e0
+    const v9, 0x7f0b18e1
 
     invoke-virtual {p1, v9}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -450,7 +450,7 @@
 
     iput-object v9, v2, Lcom/android/settings/search/SearchIndexableRaw;->title:Ljava/lang/String;
 
-    const v9, 0x7f0b18e0
+    const v9, 0x7f0b18e1
 
     invoke-static {p1, v9}, Lcom/android/settings/Utils;->getKeywordForSearch(Landroid/content/Context;I)Ljava/lang/String;
 
@@ -458,7 +458,7 @@
 
     iput-object v9, v2, Lcom/android/settings/search/SearchIndexableRaw;->keywords:Ljava/lang/String;
 
-    const v9, 0x7f0b18e1
+    const v9, 0x7f0b18e2
 
     invoke-virtual {p1, v9}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -466,7 +466,7 @@
 
     iput-object v9, v2, Lcom/android/settings/search/SearchIndexableRaw;->summaryOn:Ljava/lang/String;
 
-    const v9, 0x7f0b18e1
+    const v9, 0x7f0b18e2
 
     invoke-virtual {p1, v9}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -487,7 +487,7 @@
 
     iput-object v9, v2, Lcom/android/settings/search/SearchIndexableRaw;->key:Ljava/lang/String;
 
-    const v9, 0x7f0b18d2
+    const v9, 0x7f0b18d3
 
     invoke-virtual {p1, v9}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -495,7 +495,7 @@
 
     iput-object v9, v2, Lcom/android/settings/search/SearchIndexableRaw;->title:Ljava/lang/String;
 
-    const v9, 0x7f0b18d2
+    const v9, 0x7f0b18d3
 
     invoke-static {p1, v9}, Lcom/android/settings/Utils;->getKeywordForSearch(Landroid/content/Context;I)Ljava/lang/String;
 
@@ -519,7 +519,7 @@
 
     iput-object v9, v2, Lcom/android/settings/search/SearchIndexableRaw;->key:Ljava/lang/String;
 
-    const v9, 0x7f0b18d6
+    const v9, 0x7f0b18d7
 
     invoke-virtual {p1, v9}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -527,7 +527,7 @@
 
     iput-object v9, v2, Lcom/android/settings/search/SearchIndexableRaw;->title:Ljava/lang/String;
 
-    const v9, 0x7f0b18d6
+    const v9, 0x7f0b18d7
 
     invoke-static {p1, v9}, Lcom/android/settings/Utils;->getKeywordForSearch(Landroid/content/Context;I)Ljava/lang/String;
 
@@ -565,7 +565,7 @@
 
     iput-object v9, v2, Lcom/android/settings/search/SearchIndexableRaw;->key:Ljava/lang/String;
 
-    const v9, 0x7f0b0d52
+    const v9, 0x7f0b0d53
 
     invoke-virtual {p1, v9}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -573,7 +573,7 @@
 
     iput-object v9, v2, Lcom/android/settings/search/SearchIndexableRaw;->title:Ljava/lang/String;
 
-    const v9, 0x7f0b0d52
+    const v9, 0x7f0b0d53
 
     invoke-static {p1, v9}, Lcom/android/settings/Utils;->getKeywordForSearch(Landroid/content/Context;I)Ljava/lang/String;
 

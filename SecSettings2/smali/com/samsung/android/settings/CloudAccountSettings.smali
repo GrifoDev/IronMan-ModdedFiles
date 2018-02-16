@@ -183,7 +183,7 @@
 
     iput-object v0, v1, Lcom/samsung/android/settings/SettingsPreferenceFragmentLinkData;->intent:Landroid/content/Intent;
 
-    const v2, 0x7f0b1427
+    const v2, 0x7f0b1428
 
     iput v2, v1, Lcom/samsung/android/settings/SettingsPreferenceFragmentLinkData;->titleRes:I
 
@@ -236,7 +236,7 @@
 
     move-result-object v4
 
-    const v5, 0x7f0b0d22
+    const v5, 0x7f0b0d23
 
     invoke-virtual {v4, v5}, Landroid/preference/Preference;->setSummary(I)V
 
@@ -509,7 +509,7 @@
 
     move-result-object v5
 
-    const v6, 0x7f0b1217
+    const v6, 0x7f0b1218
 
     invoke-virtual {v5, v6}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -601,7 +601,7 @@
 
     const/4 v10, 0x0
 
-    const v12, 0x7f0b0d87
+    const v12, 0x7f0b0d88
 
     invoke-virtual {p0, v12}, Lcom/samsung/android/settings/CloudAccountSettings;->getString(I)Ljava/lang/String;
 

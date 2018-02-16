@@ -2822,7 +2822,7 @@
 
     if-eqz p1, :cond_0
 
-    const v0, 0x7f0b085a
+    const v0, 0x7f0b085b
 
     invoke-virtual {p0, v0}, Lcom/samsung/android/settings/accessibility/directionlock/ConfirmLockDirection;->getString(I)Ljava/lang/String;
 

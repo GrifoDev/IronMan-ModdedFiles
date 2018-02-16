@@ -542,7 +542,7 @@
 .method private WifiAdvancetts(Z)V
     .locals 5
 
-    const v4, 0x7f0b0f25
+    const v4, 0x7f0b0f26
 
     const v3, 0x7f0b02c8
 
@@ -654,7 +654,7 @@
 
     move-result-object v2
 
-    const v3, 0x7f0b0f00
+    const v3, 0x7f0b0f01
 
     invoke-virtual {v2, v3}, Landroid/app/Activity;->getString(I)Ljava/lang/String;
 
@@ -674,7 +674,7 @@
 .method private WifiDirectTts(Z)V
     .locals 5
 
-    const v3, 0x7f0b1543
+    const v3, 0x7f0b1544
 
     const v4, 0x7f0b02c8
 
@@ -769,7 +769,7 @@
 
     move-result-object v2
 
-    const v3, 0x7f0b0f00
+    const v3, 0x7f0b0f01
 
     invoke-virtual {v0, v3}, Landroid/app/Activity;->getString(I)Ljava/lang/String;
 
@@ -1559,7 +1559,7 @@
 
     move-result-object v4
 
-    const v5, 0x7f0b0ed3
+    const v5, 0x7f0b0ed4
 
     invoke-static {v4, v5, v6}, Landroid/widget/Toast;->makeText(Landroid/content/Context;II)Landroid/widget/Toast;
 
@@ -1582,7 +1582,7 @@
 
     move-result-object v4
 
-    const v5, 0x7f0b0ed5
+    const v5, 0x7f0b0ed6
 
     invoke-static {v4, v5, v6}, Landroid/widget/Toast;->makeText(Landroid/content/Context;II)Landroid/widget/Toast;
 
@@ -1629,7 +1629,7 @@
 
     move-result-object v4
 
-    const v5, 0x7f0b0ed4
+    const v5, 0x7f0b0ed5
 
     invoke-static {v4, v5, v6}, Landroid/widget/Toast;->makeText(Landroid/content/Context;II)Landroid/widget/Toast;
 
@@ -1871,7 +1871,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f0b12ca
+    const v2, 0x7f0b12cb
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -1896,7 +1896,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f0b0922
+    const v2, 0x7f0b0923
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -1934,7 +1934,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f0b0ebb
+    const v2, 0x7f0b0ebc
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -2023,7 +2023,7 @@
 
     move-result v0
 
-    const v1, 0x7f0b1545
+    const v1, 0x7f0b1546
 
     invoke-interface {p1, v3, v5, v3, v1}, Landroid/view/Menu;->add(IIII)Landroid/view/MenuItem;
 
@@ -2054,7 +2054,7 @@
     if-eqz v1, :cond_1
 
     :cond_0
-    const v1, 0x7f0b1bb9
+    const v1, 0x7f0b1bba
 
     invoke-interface {p1, v3, v7, v3, v1}, Landroid/view/Menu;->add(IIII)Landroid/view/MenuItem;
 
@@ -2291,7 +2291,7 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    const v0, 0x7f0b154d
+    const v0, 0x7f0b154e
 
     invoke-virtual {p0, v0}, Lcom/samsung/android/settings/wifi/WifiSettingsBase;->addMessagePreference(I)V
 
@@ -2421,7 +2421,7 @@
 
     iget-object v0, p0, Lcom/samsung/android/settings/wifi/WifiSettingsBase;->mAddPreference:Landroid/preference/Preference;
 
-    const v1, 0x7f0b153c
+    const v1, 0x7f0b153d
 
     invoke-virtual {v0, v1}, Landroid/preference/Preference;->setTitle(I)V
 
@@ -3366,7 +3366,7 @@
 
     if-eqz v5, :cond_12
 
-    const v5, 0x7f0b0ed1
+    const v5, 0x7f0b0ed2
 
     move-object/from16 v0, v18
 
@@ -3444,7 +3444,7 @@
     goto :goto_5
 
     :cond_12
-    const v5, 0x7f0b0ebf
+    const v5, 0x7f0b0ec0
 
     move-object/from16 v0, v18
 
@@ -3626,7 +3626,7 @@
     goto :goto_b
 
     :pswitch_2
-    const v5, 0x7f0b1523
+    const v5, 0x7f0b1524
 
     move-object/from16 v0, p0
 
@@ -4244,7 +4244,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f0b0f48
+    const v2, 0x7f0b0f49
 
     invoke-static {v1, v2, v5}, Landroid/widget/Toast;->makeText(Landroid/content/Context;II)Landroid/widget/Toast;
 
@@ -5269,7 +5269,7 @@
 
     const/4 v6, 0x0
 
-    const v3, 0x7f0b1543
+    const v3, 0x7f0b1544
 
     const/4 v2, 0x0
 
@@ -5567,7 +5567,7 @@
 
     if-nez v5, :cond_3
 
-    const v5, 0x7f0b151e
+    const v5, 0x7f0b151f
 
     invoke-virtual {v0, v5}, Landroid/app/ActionBar;->setTitle(I)V
 
@@ -5757,7 +5757,7 @@
     return-void
 
     :cond_b
-    const v5, 0x7f0b0f38
+    const v5, 0x7f0b0f39
 
     invoke-virtual {v0, v5}, Landroid/app/ActionBar;->setTitle(I)V
 
@@ -5905,7 +5905,7 @@
     return-void
 
     :pswitch_0
-    const v0, 0x7f0b1522
+    const v0, 0x7f0b1523
 
     invoke-virtual {p0, v0}, Lcom/samsung/android/settings/wifi/WifiSettingsBase;->addMessagePreference(I)V
 
@@ -6008,7 +6008,7 @@
     return-void
 
     :cond_6
-    const v0, 0x7f0b1523
+    const v0, 0x7f0b1524
 
     invoke-virtual {p0, v0}, Lcom/samsung/android/settings/wifi/WifiSettingsBase;->addMessagePreference(I)V
 
@@ -6299,7 +6299,7 @@
     return-void
 
     :cond_2
-    const v6, 0x7f0b154c
+    const v6, 0x7f0b154d
 
     invoke-virtual {p0, v6}, Lcom/samsung/android/settings/wifi/WifiSettingsBase;->getText(I)Ljava/lang/CharSequence;
 
@@ -6379,7 +6379,7 @@
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
 
-    const v6, 0x7f0b1530
+    const v6, 0x7f0b1531
 
     invoke-virtual {p0, v6}, Lcom/samsung/android/settings/wifi/WifiSettingsBase;->getText(I)Ljava/lang/CharSequence;
 
@@ -6442,7 +6442,7 @@
 .method protected startScanningSettings()V
     .locals 10
 
-    const v3, 0x7f0b09c2
+    const v3, 0x7f0b09c3
 
     const/4 v2, 0x0
 
@@ -6502,7 +6502,7 @@
 .method protected startWifiAdvancedScreen()V
     .locals 10
 
-    const v3, 0x7f0b0f25
+    const v3, 0x7f0b0f26
 
     const/4 v2, 0x0
 
@@ -6562,7 +6562,7 @@
 .method protected startWifiConfigSettings()V
     .locals 10
 
-    const v3, 0x7f0b15a1
+    const v3, 0x7f0b15a2
 
     const/4 v2, 0x0
 
@@ -6758,7 +6758,7 @@
 
     move-result-object v2
 
-    const v3, 0x7f0b0f7b
+    const v3, 0x7f0b0f7c
 
     const/4 v4, -0x1
 

@@ -1663,6 +1663,7 @@ Het coderen kan een uur of langer duren. Zorg dat de batterij is opgeladen voord
 Het decoderen kan afhankelijk van de hoeveelheid gegevens lang duren. Zorg dat de batterij is opgeladen voordat u begint en laat het apparaat aangesloten totdat het decoderen is voltooid.
 
 Tijdens het decodeerproces kan de SD-kaart niet worden gebruikt."</string>
+    <string name="sdcard_decrypt_description_reset_device">Uw SD-kaart moet worden gedecodeerd voordat u uw telefoon reset.</string>
     <string name="sdcard_encrypt_button">SD-kaart coderen</string>
     <string name="sdcard_decrypt_button">SD-kaart decoderen</string>
     <string name="sdcard_encrypt_checking">SD-kaart controleren…</string>

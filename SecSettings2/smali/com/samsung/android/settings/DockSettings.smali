@@ -851,7 +851,7 @@
 
     iget-object v1, p0, Lcom/samsung/android/settings/DockSettings;->mCoverInfomation:Landroid/preference/PreferenceScreen;
 
-    const v2, 0x7f0b0a71
+    const v2, 0x7f0b0a72
 
     invoke-virtual {v1, v2}, Landroid/preference/PreferenceScreen;->setSummary(I)V
 
@@ -860,7 +860,7 @@
     :cond_1c
     iget-object v1, p0, Lcom/samsung/android/settings/DockSettings;->mCoverInfomation:Landroid/preference/PreferenceScreen;
 
-    const v2, 0x7f0b0a70
+    const v2, 0x7f0b0a71
 
     invoke-virtual {v1, v2}, Landroid/preference/PreferenceScreen;->setSummary(I)V
 
@@ -1082,7 +1082,7 @@
 
     iget-object v1, p0, Lcom/samsung/android/settings/DockSettings;->mFastWirelessCharging:Landroid/preference/SwitchPreference;
 
-    const v2, 0x7f0b0d98
+    const v2, 0x7f0b0d99
 
     invoke-virtual {v1, v2}, Landroid/preference/SwitchPreference;->setSummary(I)V
 
@@ -1096,7 +1096,7 @@
 
     iget-object v1, p0, Lcom/samsung/android/settings/DockSettings;->mFastWirelessCharging:Landroid/preference/SwitchPreference;
 
-    const v2, 0x7f0b0d9b
+    const v2, 0x7f0b0d9c
 
     invoke-virtual {v1, v2}, Landroid/preference/SwitchPreference;->setSummary(I)V
 
@@ -1363,7 +1363,7 @@
 
     if-eqz v0, :cond_a
 
-    const v6, 0x7f0b1d08
+    const v6, 0x7f0b1d09
 
     :goto_1
     invoke-virtual {v7, v6}, Lcom/android/settingslib/SecRestrictedSettingsSwitchPreference;->setSummary(I)V
@@ -1388,7 +1388,7 @@
     goto/16 :goto_0
 
     :cond_a
-    const v6, 0x7f0b0a73
+    const v6, 0x7f0b0a74
 
     goto :goto_1
 .end method
@@ -1726,7 +1726,7 @@
 
     move-result-object v10
 
-    const v11, 0x7f0b0a88
+    const v11, 0x7f0b0a89
 
     invoke-virtual {v10, v11}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -1746,7 +1746,7 @@
 
     move-result-object v10
 
-    const v11, 0x7f0b0d50
+    const v11, 0x7f0b0d51
 
     invoke-virtual {v10, v11}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -1787,7 +1787,7 @@
 
     iget-object v7, p0, Lcom/samsung/android/settings/DockSettings;->mDualclock:Landroid/preference/PreferenceScreen;
 
-    const v10, 0x7f0b0a87
+    const v10, 0x7f0b0a88
 
     invoke-virtual {v7, v10}, Landroid/preference/PreferenceScreen;->setTitle(I)V
 
@@ -1836,7 +1836,7 @@
 
     if-eqz v0, :cond_e
 
-    const v7, 0x7f0b1d08
+    const v7, 0x7f0b1d09
 
     :goto_4
     invoke-virtual {v10, v7}, Lcom/android/settingslib/SecRestrictedSettingsSwitchPreference;->setSummary(I)V
@@ -2018,7 +2018,7 @@
     goto/16 :goto_3
 
     :cond_e
-    const v7, 0x7f0b0a73
+    const v7, 0x7f0b0a74
 
     goto/16 :goto_4
 

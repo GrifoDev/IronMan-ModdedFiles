@@ -1661,6 +1661,7 @@ Wi-Fi 與藍牙也將關閉，但您可在設定或快速設定面板中再次�
 視乎數據量，解密可能需要較長時間。開始之前，請確保電池已充滿電且裝置已接上電源，直到解密完成。
 
 解密過程中無法使用 SD 卡。"</string>
+    <string name="sdcard_decrypt_description_reset_device">重設手機前，需要解密您的 SD 卡。</string>
     <string name="sdcard_encrypt_button">加密 SD 卡</string>
     <string name="sdcard_decrypt_button">解密 SD 卡</string>
     <string name="sdcard_encrypt_checking">正在檢查 SD 卡…</string>

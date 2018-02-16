@@ -1535,6 +1535,7 @@ Emma, ýöriteleşdirilen marketingi almakdan çyksaňyz hem, ol mobil enjamlary
 Maglumatyň möçberine baglylykda, deşifrlemek uzaga çekip biler. Başlamankaňyz, deşifrlenip bolýança ýetjek zarýadyň bardygyny anyklaň ýa-da enjamyň zarýadnige dakylgy durmagyny üpjün ediň.
 
 Deşifrlemek dowam edýärkä, SD karty ulanyp bolmaýar."</string>
+    <string name="sdcard_decrypt_description_reset_device">Telefony nol etmezden öň, SD kartyňyzy deşifrlemeli.</string>
     <string name="sdcard_encrypt_button">SD karty şifrle</string>
     <string name="sdcard_decrypt_button">SD karty deşifrle</string>
     <string name="sdcard_encrypt_checking">SD kart barlanýar…</string>

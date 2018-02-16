@@ -674,7 +674,7 @@
 
     iget-object v0, p0, Lcom/android/settings/vpn2/AppManagementFragment;->mPreferenceAlwaysOn:Lcom/android/settingslib/SecRestrictedSwitchPreference;
 
-    const v1, 0x7f0b1b45
+    const v1, 0x7f0b1b46
 
     invoke-virtual {v0, v1}, Lcom/android/settingslib/SecRestrictedSwitchPreference;->setSummary(I)V
 
@@ -937,7 +937,7 @@
 
     aput-object v4, v3, v5
 
-    const v4, 0x7f0b1b38
+    const v4, 0x7f0b1b39
 
     invoke-virtual {v2, v4, v3}, Landroid/content/Context;->getString(I[Ljava/lang/Object;)Ljava/lang/String;
 

@@ -1052,7 +1052,7 @@
 
     move-result-object v14
 
-    const v15, 0x7f0b0ebd
+    const v15, 0x7f0b0ebe
 
     invoke-virtual {v14, v15}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -1068,7 +1068,7 @@
 
     move-result-object v14
 
-    const v15, 0x7f0b0ebe
+    const v15, 0x7f0b0ebf
 
     invoke-virtual {v14, v15}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -1645,7 +1645,7 @@
 
     move-result-object v14
 
-    const v15, 0x7f0b0f3d
+    const v15, 0x7f0b0f3e
 
     invoke-static {v14, v15}, Lcom/samsung/android/settings/WifiApUtils;->getString(Landroid/content/Context;I)Ljava/lang/String;
 
@@ -2094,7 +2094,7 @@
 
     iget-object v1, p0, Lcom/android/settings/wifi/AdvancedWifiSettings;->mContext:Landroid/content/Context;
 
-    const v2, 0x7f0b15b1
+    const v2, 0x7f0b15b2
 
     invoke-virtual {v1, v2}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -2594,7 +2594,7 @@
 
     iget-object v2, p0, Lcom/android/settings/wifi/AdvancedWifiSettings;->mContext:Landroid/content/Context;
 
-    const v3, 0x7f0b1ee6
+    const v3, 0x7f0b1ee7
 
     invoke-virtual {v2, v3}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -2727,7 +2727,7 @@
 
     iget-object v2, p0, Lcom/android/settings/wifi/AdvancedWifiSettings;->mContext:Landroid/content/Context;
 
-    const v3, 0x7f0b1ee5
+    const v3, 0x7f0b1ee6
 
     invoke-virtual {v2, v3}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -2746,7 +2746,7 @@
 
     iget-object v2, p0, Lcom/android/settings/wifi/AdvancedWifiSettings;->mContext:Landroid/content/Context;
 
-    const v3, 0x7f0b1ee4
+    const v3, 0x7f0b1ee5
 
     invoke-virtual {v2, v3}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -2760,9 +2760,9 @@
 .method private refreshWifiInfo()V
     .locals 13
 
-    const v11, 0x7f0b15a2
+    const v11, 0x7f0b15a3
 
-    const v12, 0x7f0b0ec0
+    const v12, 0x7f0b0ec1
 
     const/4 v8, 0x1
 
@@ -2846,7 +2846,7 @@
 
     invoke-direct {v10}, Ljava/lang/StringBuilder;-><init>()V
 
-    const v11, 0x7f0b15a3
+    const v11, 0x7f0b15a4
 
     invoke-virtual {v0, v11}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -2940,7 +2940,7 @@
     goto/16 :goto_0
 
     :cond_3
-    const v11, 0x7f0b16c6
+    const v11, 0x7f0b16c7
 
     invoke-virtual {v0, v11}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -2986,7 +2986,7 @@
 
     invoke-direct {v10}, Ljava/lang/StringBuilder;-><init>()V
 
-    const v11, 0x7f0b15a3
+    const v11, 0x7f0b15a4
 
     invoke-virtual {v0, v11}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -3042,7 +3042,7 @@
     goto/16 :goto_2
 
     :cond_6
-    const v11, 0x7f0b16c6
+    const v11, 0x7f0b16c7
 
     invoke-virtual {v0, v11}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -3435,7 +3435,7 @@
 
     if-eqz v0, :cond_1
 
-    const v3, 0x7f0b0f2e
+    const v3, 0x7f0b0f2f
 
     invoke-static {}, Lcom/samsung/android/feature/SemFloatingFeature;->getInstance()Lcom/samsung/android/feature/SemFloatingFeature;
 
@@ -3510,7 +3510,7 @@
     return-void
 
     :cond_2
-    const v3, 0x7f0b15b1
+    const v3, 0x7f0b15b2
 
     goto :goto_0
 
@@ -3851,7 +3851,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f0b0f43
+    const v2, 0x7f0b0f44
 
     invoke-virtual {v1, v2}, Landroid/app/Activity;->getString(I)Ljava/lang/String;
 
@@ -3877,7 +3877,7 @@
 
     move-result-object v0
 
-    const v2, 0x7f0b0f45
+    const v2, 0x7f0b0f46
 
     invoke-virtual {v0, v2}, Landroid/app/Activity;->getString(I)Ljava/lang/String;
 
@@ -3893,7 +3893,7 @@
 
     move-result-object v0
 
-    const v2, 0x7f0b0f44
+    const v2, 0x7f0b0f45
 
     invoke-virtual {v0, v2}, Landroid/app/Activity;->getString(I)Ljava/lang/String;
 
@@ -4336,7 +4336,7 @@
 .method public onManageNetworkMenuPressed()V
     .locals 10
 
-    const v3, 0x7f0b0f38
+    const v3, 0x7f0b0f39
 
     new-instance v2, Landroid/os/Bundle;
 
@@ -4843,7 +4843,7 @@
     :catch_0
     move-exception v4
 
-    const v15, 0x7f0b0f03
+    const v15, 0x7f0b0f04
 
     const/16 v16, 0x0
 
@@ -5010,7 +5010,7 @@
     :catch_1
     move-exception v4
 
-    const v15, 0x7f0b1534
+    const v15, 0x7f0b1535
 
     const/16 v16, 0x0
 
@@ -5148,7 +5148,7 @@
 
     iget-object v15, v0, Lcom/android/settings/wifi/AdvancedWifiSettings;->mContext:Landroid/content/Context;
 
-    const v16, 0x7f0b0f01
+    const v16, 0x7f0b0f02
 
     const/16 v17, 0x1
 
@@ -5169,7 +5169,7 @@
 
     iget-object v15, v0, Lcom/android/settings/wifi/AdvancedWifiSettings;->mContext:Landroid/content/Context;
 
-    const v16, 0x7f0b1524
+    const v16, 0x7f0b1525
 
     const/16 v17, 0x0
 
@@ -5823,7 +5823,7 @@
 
     move-result-object v1
 
-    const v3, 0x7f0b0f5a
+    const v3, 0x7f0b0f5b
 
     const/4 v4, 0x0
 
@@ -5849,7 +5849,7 @@
 
     move-result-object v5
 
-    const v6, 0x7f0b0f38
+    const v6, 0x7f0b0f39
 
     const/4 v7, -0x1
 

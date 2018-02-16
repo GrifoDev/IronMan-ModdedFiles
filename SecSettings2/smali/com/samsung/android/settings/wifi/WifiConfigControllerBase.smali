@@ -3598,9 +3598,9 @@
 
     const v14, 0x7f1105e7
 
-    const v11, 0x7f0b1567
+    const v11, 0x7f0b1568
 
-    const v13, 0x7f0b0ef4
+    const v13, 0x7f0b0ef5
 
     const/4 v12, 0x0
 
@@ -3663,7 +3663,7 @@
 
     move-result-object v6
 
-    const v9, 0x7f0b1563
+    const v9, 0x7f0b1564
 
     invoke-virtual {p0, v3, v9, v6}, Lcom/samsung/android/settings/wifi/WifiConfigControllerBase;->addRow(Landroid/view/ViewGroup;ILjava/lang/String;)V
 
@@ -3689,7 +3689,7 @@
 
     move-result-object v9
 
-    const v10, 0x7f0b1562
+    const v10, 0x7f0b1563
 
     invoke-virtual {p0, v4, v10, v9}, Lcom/samsung/android/settings/wifi/WifiConfigControllerBase;->addRow(Landroid/view/ViewGroup;ILjava/lang/String;)V
 
@@ -3747,7 +3747,7 @@
 
     iget-object v9, p0, Lcom/samsung/android/settings/wifi/WifiConfigControllerBase;->mContext:Landroid/content/Context;
 
-    const v10, 0x7f0b1569
+    const v10, 0x7f0b156a
 
     invoke-virtual {v9, v10}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -3765,7 +3765,7 @@
 
     move-result-object v9
 
-    const v10, 0x7f0b1568
+    const v10, 0x7f0b1569
 
     invoke-virtual {p0, v3, v10, v9}, Lcom/samsung/android/settings/wifi/WifiConfigControllerBase;->addRow(Landroid/view/ViewGroup;ILjava/lang/String;)V
 
@@ -3895,7 +3895,7 @@
 
     move-result-object v9
 
-    const v10, 0x7f0b0ec3
+    const v10, 0x7f0b0ec4
 
     invoke-virtual {p0, v3, v10, v9}, Lcom/samsung/android/settings/wifi/WifiConfigControllerBase;->addRow(Landroid/view/ViewGroup;ILjava/lang/String;)V
 
@@ -3910,7 +3910,7 @@
 
     move-result-object v9
 
-    const v10, 0x7f0b15af
+    const v10, 0x7f0b15b0
 
     invoke-virtual {p0, v3, v10, v9}, Lcom/samsung/android/settings/wifi/WifiConfigControllerBase;->addRow(Landroid/view/ViewGroup;ILjava/lang/String;)V
 
@@ -3925,7 +3925,7 @@
 
     move-result-object v9
 
-    const v10, 0x7f0b15ad
+    const v10, 0x7f0b15ae
 
     invoke-virtual {p0, v3, v10, v9}, Lcom/samsung/android/settings/wifi/WifiConfigControllerBase;->addRow(Landroid/view/ViewGroup;ILjava/lang/String;)V
 
@@ -3940,7 +3940,7 @@
 
     move-result-object v9
 
-    const v10, 0x7f0b15ae
+    const v10, 0x7f0b15af
 
     invoke-virtual {p0, v3, v10, v9}, Lcom/samsung/android/settings/wifi/WifiConfigControllerBase;->addRow(Landroid/view/ViewGroup;ILjava/lang/String;)V
 
@@ -3963,7 +3963,7 @@
 
     move-result-object v9
 
-    const v10, 0x7f0b0ec4
+    const v10, 0x7f0b0ec5
 
     invoke-virtual {p0, v3, v10, v9}, Lcom/samsung/android/settings/wifi/WifiConfigControllerBase;->addRow(Landroid/view/ViewGroup;ILjava/lang/String;)V
 
@@ -4021,7 +4021,7 @@
 
     aput-object v1, v3, v5
 
-    const v4, 0x7f0b0ec1
+    const v4, 0x7f0b0ec2
 
     invoke-virtual {v2, v4, v3}, Landroid/content/res/Resources;->getString(I[Ljava/lang/Object;)Ljava/lang/String;
 
@@ -4248,7 +4248,7 @@
 
     iget-object v0, p0, Lcom/samsung/android/settings/wifi/WifiConfigControllerBase;->mPasswordView:Landroid/widget/EditText;
 
-    const v1, 0x7f0b0f6f
+    const v1, 0x7f0b0f70
 
     invoke-virtual {v0, v1}, Landroid/widget/EditText;->setHint(I)V
 
@@ -4346,7 +4346,7 @@
 
     iget-object v1, p0, Lcom/samsung/android/settings/wifi/WifiConfigControllerBase;->mContext:Landroid/content/Context;
 
-    const v2, 0x7f0b1a46
+    const v2, 0x7f0b1a47
 
     invoke-virtual {v1, v2}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -4377,7 +4377,7 @@
     :cond_0
     iget-object v0, p0, Lcom/samsung/android/settings/wifi/WifiConfigControllerBase;->mPasswordView:Landroid/widget/EditText;
 
-    const v1, 0x7f0b1578
+    const v1, 0x7f0b1579
 
     invoke-virtual {v0, v1}, Landroid/widget/EditText;->setHint(I)V
 
@@ -4476,7 +4476,7 @@
 
     iget-object v0, p0, Lcom/samsung/android/settings/wifi/WifiConfigControllerBase;->mSsidView:Landroid/widget/EditText;
 
-    const v1, 0x7f0b1561
+    const v1, 0x7f0b1562
 
     invoke-virtual {v0, v1}, Landroid/widget/EditText;->setHint(I)V
 
@@ -5793,7 +5793,7 @@
 
     if-eqz v11, :cond_1
 
-    const v11, 0x7f0b15a9
+    const v11, 0x7f0b15aa
 
     return v11
 
@@ -5804,7 +5804,7 @@
 
     if-nez v7, :cond_2
 
-    const v11, 0x7f0b15a9
+    const v11, 0x7f0b15aa
 
     return v11
 
@@ -5874,19 +5874,19 @@
     if-le v10, v11, :cond_7
 
     :cond_5
-    const v11, 0x7f0b15ac
+    const v11, 0x7f0b15ad
 
     return v11
 
     :catch_0
     move-exception v3
 
-    const v11, 0x7f0b15a9
+    const v11, 0x7f0b15aa
 
     return v11
 
     :cond_6
-    const v11, 0x7f0b15ac
+    const v11, 0x7f0b15ad
 
     return v11
 
@@ -5915,14 +5915,14 @@
 
     if-eqz v11, :cond_8
 
-    const v11, 0x7f0b15aa
+    const v11, 0x7f0b15ab
 
     return v11
 
     :catch_1
     move-exception v4
 
-    const v11, 0x7f0b15ac
+    const v11, 0x7f0b15ad
 
     return v11
 
@@ -5970,14 +5970,14 @@
 
     if-eqz v11, :cond_9
 
-    const v11, 0x7f0b15ab
+    const v11, 0x7f0b15ac
 
     return v11
 
     :catch_2
     move-exception v3
 
-    const v11, 0x7f0b15aa
+    const v11, 0x7f0b15ab
 
     return v11
 
@@ -6027,7 +6027,7 @@
     :catch_3
     move-exception v3
 
-    const v11, 0x7f0b15ab
+    const v11, 0x7f0b15ac
 
     return v11
 
@@ -6045,7 +6045,7 @@
     :catch_4
     move-exception v3
 
-    const v11, 0x7f0b15ab
+    const v11, 0x7f0b15ac
 
     return v11
 .end method

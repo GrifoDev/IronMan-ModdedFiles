@@ -141,7 +141,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f0b116c
+    const v2, 0x7f0b116d
 
     invoke-virtual {v1, v2}, Lcom/android/settingslib/SecRestrictedSwitchPreference;->setSummary(I)V
 
@@ -156,7 +156,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f0b116b
+    const v2, 0x7f0b116c
 
     invoke-virtual {v1, v2}, Lcom/android/settingslib/SecRestrictedSwitchPreference;->setSummary(I)V
 

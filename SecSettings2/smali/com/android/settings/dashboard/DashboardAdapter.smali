@@ -1592,7 +1592,7 @@
 
     if-eqz v0, :cond_0
 
-    const v0, 0x7f0b1dff
+    const v0, 0x7f0b1e00
 
     :goto_0
     invoke-virtual {v1, v0}, Landroid/widget/TextView;->setText(I)V
@@ -1608,7 +1608,7 @@
     return-void
 
     :cond_0
-    const v0, 0x7f0b1dfe
+    const v0, 0x7f0b1dff
 
     goto :goto_0
 .end method
@@ -1873,7 +1873,7 @@
     :cond_3
     iget-object v3, p0, Lcom/android/settings/dashboard/DashboardAdapter;->mContext:Landroid/content/Context;
 
-    const v4, 0x7f0b1e18
+    const v4, 0x7f0b1e19
 
     invoke-virtual {v3, v4}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -2800,9 +2800,9 @@
 .method private setRoamingTile(Lcom/android/settingslib/drawer/Tile;)Lcom/android/settingslib/drawer/Tile;
     .locals 3
 
-    const v2, 0x7f0b0d1b
+    const v2, 0x7f0b0d1c
 
-    const v1, 0x7f0b0cfc
+    const v1, 0x7f0b0cfd
 
     invoke-static {}, Lcom/android/settings/Utils;->isDomesticKTTModel()Z
 
@@ -2847,7 +2847,7 @@
 .method private setSoftwareUpdateTile(Lcom/android/settingslib/drawer/Tile;)Lcom/android/settingslib/drawer/Tile;
     .locals 6
 
-    const v5, 0x7f0b169e
+    const v5, 0x7f0b169f
 
     invoke-static {}, Lcom/samsung/android/feature/SemCscFeature;->getInstance()Lcom/samsung/android/feature/SemCscFeature;
 
@@ -2948,7 +2948,7 @@
 
     check-cast v3, Landroid/widget/TextView;
 
-    const v4, 0x7f0b11f8
+    const v4, 0x7f0b11f9
 
     invoke-virtual {v3, v4}, Landroid/widget/TextView;->setText(I)V
 
@@ -3010,7 +3010,7 @@
 
     const v2, 0x7f0b0564
 
-    const v1, 0x7f0b161d
+    const v1, 0x7f0b161e
 
     iget-object v0, p0, Lcom/android/settings/dashboard/DashboardAdapter;->mContext:Landroid/content/Context;
 
@@ -3885,7 +3885,7 @@
 
     invoke-direct {v8, p0}, Lcom/android/settings/dashboard/DashboardAdapter$13;-><init>(Lcom/android/settings/dashboard/DashboardAdapter;)V
 
-    const v9, 0x7f0b13e7
+    const v9, 0x7f0b13e8
 
     invoke-virtual {v7, v9, v8}, Landroid/app/AlertDialog$Builder;->setNegativeButton(ILandroid/content/DialogInterface$OnClickListener;)Landroid/app/AlertDialog$Builder;
 
@@ -4226,13 +4226,13 @@
 
     if-eqz v4, :cond_1
 
-    const v10, 0x7f0b1651
+    const v10, 0x7f0b1652
 
     iput v10, v8, Lcom/android/settingslib/drawer/Tile;->titleRes:I
 
     iget-object v10, p0, Lcom/android/settings/dashboard/DashboardAdapter;->mContext:Landroid/content/Context;
 
-    const v11, 0x7f0b1651
+    const v11, 0x7f0b1652
 
     invoke-virtual {v10, v11}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -4259,13 +4259,13 @@
 
     if-nez v10, :cond_1
 
-    const v10, 0x7f0b1428
+    const v10, 0x7f0b1429
 
     iput v10, v8, Lcom/android/settingslib/drawer/Tile;->titleRes:I
 
     iget-object v10, p0, Lcom/android/settings/dashboard/DashboardAdapter;->mContext:Landroid/content/Context;
 
-    const v11, 0x7f0b1428
+    const v11, 0x7f0b1429
 
     invoke-virtual {v10, v11}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 

@@ -490,7 +490,7 @@
 
     if-nez v2, :cond_1
 
-    const v2, 0x7f0b0b8c
+    const v2, 0x7f0b0b8d
 
     invoke-interface {p1, v2}, Landroid/view/Menu;->add(I)Landroid/view/MenuItem;
 
@@ -914,7 +914,7 @@
 
     invoke-virtual {v9, v2}, Landroid/preference/Preference;->setLayoutResource(I)V
 
-    const v2, 0x7f0b0b85
+    const v2, 0x7f0b0b86
 
     move-object/from16 v0, p0
 

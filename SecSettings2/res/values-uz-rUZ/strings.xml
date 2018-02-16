@@ -1662,6 +1662,7 @@ Shifrlash bir soat yoki undan ko‘proq vaqtni olishi mumkin. Boshlashdan oldin 
 Ma’lumot hajmiga qarab shifrdan chiqarish ko‘proq vaqtni olishi mumkin. Boshlashdan oldin batareya zaryadlanganligiga ishonch hosil qiling hamda shifrdan chiqarish vaqtida qurilmani quvvat manbaidan uzmang.
 
 Shifrdan chiqarish jarayonida SD-kartadan foydalanib bo‘lmaydi."</string>
+    <string name="sdcard_decrypt_description_reset_device">Telefoningizni birlamchi holatiga tashlashdan oldin, SD-kartangiz shifrdan chiqarilishi lozim.</string>
     <string name="sdcard_encrypt_button">SD-kartani shifrlash</string>
     <string name="sdcard_decrypt_button">SD-kartani shifr/chiqar</string>
     <string name="sdcard_encrypt_checking">SD-karta tekshirilmoqda…</string>

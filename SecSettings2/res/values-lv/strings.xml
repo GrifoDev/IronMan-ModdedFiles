@@ -1662,6 +1662,7 @@ Pieskarieties pie Labi, lai atļautu palielināt spilgtumu virs drošā līmeņa
 Atšifrēšana var aizņemt ilgu laiku atkarībā no datu apjoma. Pirms sākat atšifrēšanu, pārliecinieties, vai akumulators ir uzlādēts, un turiet ierīci pievienotu lādētājam, līdz atšifrēšana ir pabeigta.
 
 Atšifrēšanas laikā SD karti nevar izmantot."</string>
+    <string name="sdcard_decrypt_description_reset_device">Pirms tālruņa atiestatīšanas ir jāatšifrē SD karte.</string>
     <string name="sdcard_encrypt_button">Šifrēt SD karti</string>
     <string name="sdcard_decrypt_button">Atšifrēt SD karti</string>
     <string name="sdcard_encrypt_checking">Pārbauda karti SD…</string>

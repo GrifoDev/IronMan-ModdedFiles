@@ -120,7 +120,7 @@
 
     move-result-object v1
 
-    const v3, 0x7f0b084a
+    const v3, 0x7f0b084b
 
     invoke-virtual {p0, v3}, Lcom/android/settings/fingerprint/FingerPrintRenameDialog;->getString(I)Ljava/lang/String;
 
@@ -178,7 +178,7 @@
 
     move-result-object v3
 
-    const v4, 0x7f0b07f4
+    const v4, 0x7f0b07f5
 
     invoke-virtual {v3, v4}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -455,7 +455,7 @@
 
     const-string/jumbo v1, "FpstFingerPrintRenameDialog"
 
-    const v2, 0x7f0b0983
+    const v2, 0x7f0b0984
 
     invoke-static {v0, v2, v1}, Lcom/android/settings/Utils;->isNotAvailableBiometricsWithDexAndMultiWindow(Landroid/app/Activity;ILjava/lang/String;)Z
 
@@ -533,13 +533,13 @@
 
     move-result-object v0
 
-    const v1, 0x7f0b07ca
+    const v1, 0x7f0b07cb
 
     invoke-virtual {v0, v1}, Landroid/app/AlertDialog$Builder;->setTitle(I)Landroid/app/AlertDialog$Builder;
 
     move-result-object v0
 
-    const v1, 0x7f0b084b
+    const v1, 0x7f0b084c
 
     invoke-virtual {v0, v1, p0}, Landroid/app/AlertDialog$Builder;->setPositiveButton(ILandroid/content/DialogInterface$OnClickListener;)Landroid/app/AlertDialog$Builder;
 

@@ -1410,13 +1410,13 @@
 
     invoke-direct {v1, v2}, Landroid/app/AlertDialog$Builder;-><init>(Landroid/content/Context;)V
 
-    const v2, 0x7f0b07c9
+    const v2, 0x7f0b07ca
 
     invoke-virtual {v1, v2}, Landroid/app/AlertDialog$Builder;->setTitle(I)Landroid/app/AlertDialog$Builder;
 
     move-result-object v1
 
-    const v2, 0x7f0b07cc
+    const v2, 0x7f0b07cd
 
     invoke-virtual {v1, v2}, Landroid/app/AlertDialog$Builder;->setMessage(I)Landroid/app/AlertDialog$Builder;
 
@@ -1813,7 +1813,7 @@
 .method public onCreate(Landroid/os/Bundle;)V
     .locals 11
 
-    const v10, 0x7f0b0999
+    const v10, 0x7f0b099a
 
     const/4 v9, -0x1
 
@@ -2092,7 +2092,7 @@
 
     aput-object v0, v6, v4
 
-    const v7, 0x7f0b0992
+    const v7, 0x7f0b0993
 
     invoke-virtual {v5, v7, v6}, Landroid/content/res/Resources;->getString(I[Ljava/lang/Object;)Ljava/lang/String;
 
@@ -2259,7 +2259,7 @@
 
     new-array v6, v3, [Ljava/lang/Object;
 
-    const v7, 0x7f0b092d
+    const v7, 0x7f0b092e
 
     invoke-virtual {p0, v7}, Lcom/samsung/android/settings/KnoxChooseLockTwoFactor$KnoxChooseLockTwoFactorFragment;->getString(I)Ljava/lang/String;
 
@@ -2288,7 +2288,7 @@
 
     new-array v6, v3, [Ljava/lang/Object;
 
-    const v7, 0x7f0b07c4
+    const v7, 0x7f0b07c5
 
     invoke-virtual {p0, v7}, Lcom/samsung/android/settings/KnoxChooseLockTwoFactor$KnoxChooseLockTwoFactorFragment;->getString(I)Ljava/lang/String;
 
@@ -2374,7 +2374,7 @@
 
     move-result-object v3
 
-    const v5, 0x7f0b1484
+    const v5, 0x7f0b1485
 
     invoke-virtual {v3, v5}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -2402,7 +2402,7 @@
 
     move-result-object v3
 
-    const v4, 0x7f0b1484
+    const v4, 0x7f0b1485
 
     invoke-virtual {v3, v4}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -2436,7 +2436,7 @@
 
     aput-object v0, v6, v4
 
-    const v7, 0x7f0b0993
+    const v7, 0x7f0b0994
 
     invoke-virtual {v5, v7, v6}, Landroid/content/res/Resources;->getString(I[Ljava/lang/Object;)Ljava/lang/String;
 
@@ -2533,7 +2533,7 @@
 
     new-array v6, v3, [Ljava/lang/Object;
 
-    const v7, 0x7f0b07c4
+    const v7, 0x7f0b07c5
 
     invoke-virtual {p0, v7}, Lcom/samsung/android/settings/KnoxChooseLockTwoFactor$KnoxChooseLockTwoFactorFragment;->getString(I)Ljava/lang/String;
 

@@ -74,9 +74,9 @@
 
     const/4 v8, 0x0
 
-    const v10, 0x7f0b15d0
+    const v10, 0x7f0b15d1
 
-    const v9, 0x7f0b15cd
+    const v9, 0x7f0b15ce
 
     const/4 v6, 0x1
 
@@ -149,7 +149,7 @@
 
     iget-object v7, p0, Lcom/android/settings/wifi/WifiSnsPoorConnectionVzwActivity;->mContext:Landroid/content/Context;
 
-    const v8, 0x7f0b15ca
+    const v8, 0x7f0b15cb
 
     invoke-virtual {v7, v8}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -167,7 +167,7 @@
 
     iget-object v7, p0, Lcom/android/settings/wifi/WifiSnsPoorConnectionVzwActivity;->mContext:Landroid/content/Context;
 
-    const v8, 0x7f0b15cb
+    const v8, 0x7f0b15cc
 
     invoke-virtual {v7, v8}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -201,13 +201,13 @@
 
     if-nez v4, :cond_7
 
-    const v4, 0x7f0b15cc
+    const v4, 0x7f0b15cd
 
     invoke-virtual {v1, v4}, Landroid/app/AlertDialog$Builder;->setTitle(I)Landroid/app/AlertDialog$Builder;
 
     iget-object v4, p0, Lcom/android/settings/wifi/WifiSnsPoorConnectionVzwActivity;->mContext:Landroid/content/Context;
 
-    const v7, 0x7f0b08df
+    const v7, 0x7f0b08e0
 
     invoke-virtual {v4, v7}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -333,7 +333,7 @@
 
     iget-object v7, p0, Lcom/android/settings/wifi/WifiSnsPoorConnectionVzwActivity;->mContext:Landroid/content/Context;
 
-    const v8, 0x7f0b15ce
+    const v8, 0x7f0b15cf
 
     invoke-virtual {v7, v8}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -382,7 +382,7 @@
 
     iget-object v7, p0, Lcom/android/settings/wifi/WifiSnsPoorConnectionVzwActivity;->mContext:Landroid/content/Context;
 
-    const v8, 0x7f0b15cf
+    const v8, 0x7f0b15d0
 
     invoke-virtual {v7, v8}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -401,13 +401,13 @@
     goto/16 :goto_1
 
     :cond_7
-    const v4, 0x7f0b15b5
+    const v4, 0x7f0b15b6
 
     invoke-virtual {v1, v4}, Landroid/app/AlertDialog$Builder;->setTitle(I)Landroid/app/AlertDialog$Builder;
 
     iget-object v4, p0, Lcom/android/settings/wifi/WifiSnsPoorConnectionVzwActivity;->mContext:Landroid/content/Context;
 
-    const v7, 0x7f0b15d1
+    const v7, 0x7f0b15d2
 
     invoke-virtual {v4, v7}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 

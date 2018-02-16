@@ -1664,6 +1664,7 @@ Where Can I Find More Information About the 3rd Party's Policies? Separately, if
 В зависимости от объема данных расшифровка может затянуться. Перед началом расшифровки убедитесь, что аккумулятор заряжен, и не выключайте питание устройства до ее окончания.
 
 Использование SD-карты во время расшифровки невозможно."</string>
+    <string name="sdcard_decrypt_description_reset_device">Перед сбросом настроек телефона необходимо зашифровать SD-карту.</string>
     <string name="sdcard_encrypt_button">Зашифровать карту SD</string>
     <string name="sdcard_decrypt_button">Расшифровать карту SD</string>
     <string name="sdcard_encrypt_checking">Проверка карты памяти SD…</string>

@@ -1662,6 +1662,7 @@ Where Can I Find More Information About the 3rd Party's Policies? Separately, if
 ကုဒ်ပြောင်းဖော်ခြင်းသည် ဒေတာပမာဏပေါ်တွင်မူတည်၍ အချိန်ကြာမြင့်နိုင်သည်။ မစတင်မီ ကုဒ်ပြောင်းဖော်ခြင်း ပြီးမြောက်သည်အထိ ဘက်ထရီကို အားသွင်းထားမှုနှင့် ကိရိယာ ပလပ်ထိုးထားကြောင်း သေချာစေပါ။
 
 ကုဒ်ပြောင်းဖော်မှုလုပ်ဆောင်နေစဉ် SD ကဒ်ကို အသုံးပြု၍ မရနိုင်ပါ။"</string>
+    <string name="sdcard_decrypt_description_reset_device">သင့်ဖုန်းကို ပြန်မသတ်မှတ်မီ SD ကတ်ကို ကုဒ်ဖော်ရန် လိုသည်။</string>
     <string name="sdcard_encrypt_button">SD ကဒ် ကုဒ်ပြောင်းမြှုပ်ပါ</string>
     <string name="sdcard_decrypt_button">SD ကဒ် ကုဒ်ပြောင်းဖော်ပါ</string>
     <string name="sdcard_encrypt_checking">SD ကဒ်ကို စစ်နေပါသည်။</string>

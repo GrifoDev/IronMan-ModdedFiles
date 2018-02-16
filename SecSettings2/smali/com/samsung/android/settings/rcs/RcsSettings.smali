@@ -325,7 +325,7 @@
 
     invoke-virtual {p1, v3}, Lcom/android/settings/SecSettingsSwitchPreference;->semSetSummaryColorToColorPrimaryDark(Z)V
 
-    const v1, 0x7f0b1d08
+    const v1, 0x7f0b1d09
 
     invoke-virtual {p1, v1}, Lcom/android/settings/SecSettingsSwitchPreference;->setSummary(I)V
 
@@ -340,7 +340,7 @@
 
     invoke-virtual {p1, v4}, Lcom/android/settings/SecSettingsSwitchPreference;->semSetSummaryColorToColorPrimaryDark(Z)V
 
-    const v1, 0x7f0b0d62
+    const v1, 0x7f0b0d63
 
     invoke-virtual {p1, v1}, Lcom/android/settings/SecSettingsSwitchPreference;->setSummary(I)V
 
@@ -348,7 +348,7 @@
 
     if-nez v1, :cond_1
 
-    const v1, 0x7f0b0d67
+    const v1, 0x7f0b0d68
 
     invoke-virtual {p1, v1}, Lcom/android/settings/SecSettingsSwitchPreference;->setSummary(I)V
 

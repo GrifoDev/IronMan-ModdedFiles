@@ -169,7 +169,7 @@
 
     iput-object v5, v0, Lcom/android/settings/search/SearchIndexableRaw;->key:Ljava/lang/String;
 
-    const v5, 0x7f0b1407
+    const v5, 0x7f0b1408
 
     invoke-virtual {v3, v5}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -235,7 +235,7 @@
 
     if-eqz v5, :cond_3
 
-    const v5, 0x7f0b0a87
+    const v5, 0x7f0b0a88
 
     invoke-virtual {v3, v5}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -249,7 +249,7 @@
     goto :goto_0
 
     :cond_3
-    const v5, 0x7f0b0a86
+    const v5, 0x7f0b0a87
 
     invoke-virtual {v3, v5}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 

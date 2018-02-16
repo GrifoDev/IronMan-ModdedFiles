@@ -1535,6 +1535,7 @@ Where Can I Find More Information About the 3rd Party's Policies? Separately, if
 Вобаста аз миқдори иттилоот, иҷрои рамзкушоӣ метавонад вақти зиёд гирад. Пеш аз оғоз кардан, мутмаин шавед, ки батарея барқ дорад ва то анҷом ёфтани рамзкушоӣ барқдиҳакро пайваст нигоҳ доред.
 
 Дар рафти иҷрои рамзбандӣ, истифодаи корти SD ғайриимкон аст."</string>
+    <string name="sdcard_decrypt_description_reset_device">Қабл аз телефонро барқарор кардан, корти SD-ро рамзкушоӣ кардан лозим аст.</string>
     <string name="sdcard_encrypt_button">Рамзгузории корти SD</string>
     <string name="sdcard_decrypt_button">Рамзкушоии корти SD</string>
     <string name="sdcard_encrypt_checking">Корти SD тафтиш карда мешавад…</string>

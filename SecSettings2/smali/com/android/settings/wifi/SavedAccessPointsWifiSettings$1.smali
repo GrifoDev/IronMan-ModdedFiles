@@ -39,7 +39,7 @@
         }
     .end annotation
 
-    const v7, 0x7f0b159f
+    const v7, 0x7f0b15a0
 
     const/4 v8, 0x1
 

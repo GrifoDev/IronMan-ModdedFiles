@@ -294,7 +294,7 @@
 
     if-eqz p1, :cond_1
 
-    const v1, 0x7f0b1b01
+    const v1, 0x7f0b1b02
 
     :goto_0
     invoke-virtual {v2, v1}, Landroid/app/AlertDialog$Builder;->setTitle(I)Landroid/app/AlertDialog$Builder;
@@ -303,7 +303,7 @@
 
     if-eqz p1, :cond_2
 
-    const v1, 0x7f0b1b02
+    const v1, 0x7f0b1b03
 
     :goto_1
     invoke-virtual {v2, v1}, Landroid/app/AlertDialog$Builder;->setMessage(I)Landroid/app/AlertDialog$Builder;
@@ -353,12 +353,12 @@
     return-void
 
     :cond_1
-    const v1, 0x7f0b1b03
+    const v1, 0x7f0b1b04
 
     goto :goto_0
 
     :cond_2
-    const v1, 0x7f0b1b04
+    const v1, 0x7f0b1b05
 
     goto :goto_1
 .end method
@@ -378,7 +378,7 @@
 
     iget-object v4, p0, Lcom/samsung/android/settings/qstile/SecAccountTiles;->mContext:Landroid/content/Context;
 
-    const v5, 0x7f0b1a2a
+    const v5, 0x7f0b1a2b
 
     invoke-virtual {v4, v5}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -386,7 +386,7 @@
 
     aput-object v4, v3, v6
 
-    const v4, 0x7f0b11fb
+    const v4, 0x7f0b11fc
 
     invoke-virtual {v2, v4, v3}, Landroid/content/Context;->getString(I[Ljava/lang/Object;)Ljava/lang/String;
 
@@ -461,7 +461,7 @@
 
     invoke-virtual {v1, v2}, Landroid/service/quicksettings/Tile;->setIcon(Landroid/graphics/drawable/Icon;)V
 
-    const v2, 0x7f0b1a2a
+    const v2, 0x7f0b1a2b
 
     invoke-virtual {v0, v2}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -743,7 +743,7 @@
 
     if-eqz v0, :cond_1
 
-    const v2, 0x7f0b1b02
+    const v2, 0x7f0b1b03
 
     invoke-virtual {p0, v2}, Lcom/samsung/android/settings/qstile/SecAccountTiles;->getText(I)Ljava/lang/CharSequence;
 
@@ -775,7 +775,7 @@
     return-object v1
 
     :cond_1
-    const v2, 0x7f0b1b04
+    const v2, 0x7f0b1b05
 
     invoke-virtual {p0, v2}, Lcom/samsung/android/settings/qstile/SecAccountTiles;->getText(I)Ljava/lang/CharSequence;
 
@@ -791,7 +791,7 @@
 
     iget-object v0, p0, Lcom/samsung/android/settings/qstile/SecAccountTiles;->mContext:Landroid/content/Context;
 
-    const v1, 0x7f0b11fc
+    const v1, 0x7f0b11fd
 
     invoke-virtual {v0, v1}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 

@@ -404,7 +404,7 @@
 .method private getCurrentSecurityTitle()Ljava/lang/String;
     .locals 6
 
-    const v5, 0x7f0b0abd
+    const v5, 0x7f0b0abe
 
     const/4 v4, 0x1
 
@@ -434,7 +434,7 @@
     :sswitch_0
     new-array v1, v4, [Ljava/lang/Object;
 
-    const v2, 0x7f0b1479
+    const v2, 0x7f0b147a
 
     invoke-virtual {p0, v2}, Lcom/samsung/android/settings/accessibility/AccessibilitySettingsMobility;->getString(I)Ljava/lang/String;
 
@@ -451,7 +451,7 @@
     :sswitch_1
     new-array v1, v4, [Ljava/lang/Object;
 
-    const v2, 0x7f0b147b
+    const v2, 0x7f0b147c
 
     invoke-virtual {p0, v2}, Lcom/samsung/android/settings/accessibility/AccessibilitySettingsMobility;->getString(I)Ljava/lang/String;
 
@@ -480,7 +480,7 @@
 
     new-array v1, v4, [Ljava/lang/Object;
 
-    const v2, 0x7f0b1477
+    const v2, 0x7f0b1478
 
     invoke-virtual {p0, v2}, Lcom/samsung/android/settings/accessibility/AccessibilitySettingsMobility;->getString(I)Ljava/lang/String;
 
@@ -508,7 +508,7 @@
 .method private initializeAllPreferences()V
     .locals 10
 
-    const v9, 0x7f0b1939
+    const v9, 0x7f0b193a
 
     const/4 v8, 0x0
 
@@ -1047,7 +1047,7 @@
 
     invoke-direct {v1, p0}, Lcom/samsung/android/settings/accessibility/AccessibilitySettingsMobility$18;-><init>(Lcom/samsung/android/settings/accessibility/AccessibilitySettingsMobility;)V
 
-    const v2, 0x7f0b13e7
+    const v2, 0x7f0b13e8
 
     invoke-virtual {v0, v2, v1}, Landroid/app/AlertDialog$Builder;->setNegativeButton(ILandroid/content/DialogInterface$OnClickListener;)Landroid/app/AlertDialog$Builder;
 
@@ -1079,7 +1079,7 @@
 .method private showAutoClickExclusivePopup()V
     .locals 13
 
-    const v12, 0x7f0b193c
+    const v12, 0x7f0b193d
 
     const/4 v11, 0x0
 
@@ -1127,7 +1127,7 @@
 
     move-result-object v9
 
-    const v10, 0x7f0b0ddc
+    const v10, 0x7f0b0ddd
 
     invoke-virtual {v9, v10}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -1262,7 +1262,7 @@
 
     invoke-direct {v9, p0}, Lcom/samsung/android/settings/accessibility/AccessibilitySettingsMobility$12;-><init>(Lcom/samsung/android/settings/accessibility/AccessibilitySettingsMobility;)V
 
-    const v10, 0x7f0b13e7
+    const v10, 0x7f0b13e8
 
     invoke-virtual {v8, v10, v9}, Landroid/app/AlertDialog$Builder;->setNegativeButton(ILandroid/content/DialogInterface$OnClickListener;)Landroid/app/AlertDialog$Builder;
 
@@ -1468,7 +1468,7 @@
 
     if-nez v1, :cond_1
 
-    const v2, 0x7f0b1942
+    const v2, 0x7f0b1943
 
     invoke-virtual {p1, v2}, Landroid/preference/Preference;->setSummary(I)V
 
@@ -2178,7 +2178,7 @@
 
     if-eqz v20, :cond_4
 
-    const v20, 0x7f0b196f
+    const v20, 0x7f0b1970
 
     move-object/from16 v0, p0
 
@@ -2207,7 +2207,7 @@
 
     const-string/jumbo v20, "settings_title"
 
-    const v21, 0x7f0b1940
+    const v21, 0x7f0b1941
 
     move-object/from16 v0, p0
 
@@ -2878,7 +2878,7 @@
 
     move-result-object v19
 
-    const v20, 0x7f0b0dff
+    const v20, 0x7f0b0e00
 
     invoke-virtual/range {v19 .. v20}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -3015,7 +3015,7 @@
 
     move-result-object v19
 
-    const v20, 0x7f0b0ddc
+    const v20, 0x7f0b0ddd
 
     invoke-virtual/range {v19 .. v20}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -3274,7 +3274,7 @@
 
     invoke-direct {v0, v1}, Lcom/samsung/android/settings/accessibility/AccessibilitySettingsMobility$21;-><init>(Lcom/samsung/android/settings/accessibility/AccessibilitySettingsMobility;)V
 
-    const v20, 0x7f0b13e7
+    const v20, 0x7f0b13e8
 
     move-object/from16 v0, v18
 
@@ -3494,7 +3494,7 @@
 
     invoke-direct {v0, v1}, Lcom/samsung/android/settings/accessibility/AccessibilitySettingsMobility$24;-><init>(Lcom/samsung/android/settings/accessibility/AccessibilitySettingsMobility;)V
 
-    const v20, 0x7f0b13e7
+    const v20, 0x7f0b13e8
 
     move-object/from16 v0, v18
 
@@ -4286,7 +4286,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f0b1938
+    const v2, 0x7f0b1939
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -4308,7 +4308,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f0b1939
+    const v2, 0x7f0b193a
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 

@@ -1372,7 +1372,7 @@
 .method protected getHelpResource()I
     .locals 1
 
-    const v0, 0x7f0b1bcb    # 1.84907E38f
+    const v0, 0x7f0b1bcc
 
     return v0
 .end method
@@ -1785,7 +1785,7 @@
 
     move-object/from16 v35, v0
 
-    const v36, 0x7f0b1d09
+    const v36, 0x7f0b1d0a
 
     invoke-virtual/range {v35 .. v36}, Landroid/preference/PreferenceScreen;->setSummary(I)V
 
@@ -1795,7 +1795,7 @@
 
     move-object/from16 v35, v0
 
-    const v36, 0x7f0b1d09
+    const v36, 0x7f0b1d0a
 
     invoke-virtual/range {v35 .. v36}, Landroid/preference/PreferenceScreen;->setSummary(I)V
 
@@ -2523,7 +2523,7 @@
 
     move-object/from16 v35, v0
 
-    const v36, 0x7f0b0dc9
+    const v36, 0x7f0b0dca
 
     invoke-virtual/range {v35 .. v36}, Landroid/preference/Preference;->setSummary(I)V
 
@@ -4028,7 +4028,7 @@
 
     check-cast v20, Landroid/preference/PreferenceScreen;
 
-    const v35, 0x7f0b0e1e
+    const v35, 0x7f0b0e1f
 
     move-object/from16 v0, v20
 
@@ -4244,7 +4244,7 @@
 .method public onPreferenceChange(Landroid/preference/Preference;Ljava/lang/Object;)Z
     .locals 7
 
-    const v6, 0x7f0b11f2
+    const v6, 0x7f0b11f3
 
     const/4 v5, 0x1
 
@@ -4344,7 +4344,7 @@
 
     aput-object v3, v2, v4
 
-    const v3, 0x7f0b11f3
+    const v3, 0x7f0b11f4
 
     invoke-virtual {v1, v3, v2}, Landroid/content/res/Resources;->getString(I[Ljava/lang/Object;)Ljava/lang/String;
 
@@ -4715,7 +4715,7 @@
 
     move-object/from16 v19, v0
 
-    const v20, 0x7f0b10da
+    const v20, 0x7f0b10db
 
     invoke-virtual/range {v19 .. v20}, Landroid/preference/PreferenceScreen;->setSummary(I)V
 
@@ -5079,7 +5079,7 @@
 
     move-object/from16 v19, v0
 
-    const v20, 0x7f0b1d09
+    const v20, 0x7f0b1d0a
 
     invoke-virtual/range {v19 .. v20}, Landroid/preference/PreferenceScreen;->setSummary(I)V
 
@@ -5115,7 +5115,7 @@
 
     if-eqz v19, :cond_16
 
-    const v19, 0x7f0b1d08
+    const v19, 0x7f0b1d09
 
     :goto_6
     move/from16 v0, v19
@@ -5229,7 +5229,7 @@
 
     move-object/from16 v19, v0
 
-    const v20, 0x7f0b10db
+    const v20, 0x7f0b10dc
 
     invoke-virtual/range {v19 .. v20}, Landroid/preference/PreferenceScreen;->setSummary(I)V
 
@@ -5325,7 +5325,7 @@
     goto :goto_8
 
     :cond_16
-    const v19, 0x7f0b1d09
+    const v19, 0x7f0b1d0a
 
     goto/16 :goto_6
 

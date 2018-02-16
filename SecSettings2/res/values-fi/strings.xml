@@ -1662,6 +1662,7 @@ Salaaminen voi kestää yli tunnin. Varmista ennen aloittamista, että akku on l
 Salauksen purkaminen voi tietomäärän mukaan kestää pitkään. Varmista ennen aloittamista, että akku on latautunut, ja pidä laitetta kytkettynä pistorasiaan, kunnes salauksen purkaminen on suoritettu loppuun.
 
 SD-korttia ei voi käyttää salauksen purkuprosessin aikana."</string>
+    <string name="sdcard_decrypt_description_reset_device">SD-kortin salaus on purettava ennen puhelimen nollaamista.</string>
     <string name="sdcard_encrypt_button">Salaa SD-kortti</string>
     <string name="sdcard_decrypt_button">Pura SD-kortin salaus</string>
     <string name="sdcard_encrypt_checking">Tarkistetaan SD-korttia…</string>

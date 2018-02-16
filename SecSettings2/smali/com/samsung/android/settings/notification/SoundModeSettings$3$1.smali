@@ -142,7 +142,7 @@
 
     iget-object v5, v5, Lcom/samsung/android/settings/notification/SoundModeSettings$3;->this$0:Lcom/samsung/android/settings/notification/SoundModeSettings;
 
-    const v6, 0x7f0b0c32
+    const v6, 0x7f0b0c33
 
     invoke-virtual {v5, v6}, Lcom/samsung/android/settings/notification/SoundModeSettings;->getString(I)Ljava/lang/String;
 

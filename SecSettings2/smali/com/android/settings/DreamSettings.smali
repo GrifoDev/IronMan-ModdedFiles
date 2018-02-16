@@ -242,7 +242,7 @@
 
     iget-object v2, p0, Lcom/android/settings/DreamSettings;->mContext:Landroid/content/Context;
 
-    const v3, 0x7f0b1672
+    const v3, 0x7f0b1673
 
     invoke-virtual {v2, v3}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -254,7 +254,7 @@
 
     iget-object v2, p0, Lcom/android/settings/DreamSettings;->mContext:Landroid/content/Context;
 
-    const v3, 0x7f0b1671
+    const v3, 0x7f0b1672
 
     invoke-virtual {v2, v3}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -266,7 +266,7 @@
 
     iget-object v2, p0, Lcom/android/settings/DreamSettings;->mContext:Landroid/content/Context;
 
-    const v3, 0x7f0b1670
+    const v3, 0x7f0b1671
 
     invoke-virtual {v2, v3}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -301,7 +301,7 @@
 
     invoke-direct {v2, v3}, Landroid/app/AlertDialog$Builder;-><init>(Landroid/content/Context;)V
 
-    const v3, 0x7f0b1675
+    const v3, 0x7f0b1676
 
     invoke-virtual {v2, v3}, Landroid/app/AlertDialog$Builder;->setTitle(I)Landroid/app/AlertDialog$Builder;
 
@@ -376,7 +376,7 @@
 
     if-nez v1, :cond_0
 
-    const v2, 0x7f0b1673
+    const v2, 0x7f0b1674
 
     invoke-virtual {p0, v2}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -533,7 +533,7 @@
 .method public getHelpResource()I
     .locals 1
 
-    const v0, 0x7f0b1bd3
+    const v0, 0x7f0b1bd4
 
     return v0
 .end method
@@ -647,7 +647,7 @@
 
     if-nez v8, :cond_1
 
-    const v8, 0x7f0b0d2d
+    const v8, 0x7f0b0d2e
 
     invoke-virtual {v0, v8}, Landroid/widget/TextView;->setText(I)V
 
@@ -702,7 +702,7 @@
     return-void
 
     :cond_1
-    const v8, 0x7f0b0d2e
+    const v8, 0x7f0b0d2f
 
     invoke-virtual {v0, v8}, Landroid/widget/TextView;->setText(I)V
 
@@ -850,7 +850,7 @@
 
     invoke-direct {v5, p0}, Lcom/android/settings/DreamSettings$2;-><init>(Lcom/android/settings/DreamSettings;)V
 
-    const v2, 0x7f0b1676
+    const v2, 0x7f0b1677
 
     move-object v0, p0
 
@@ -892,7 +892,7 @@
 
     invoke-direct {v10, p0}, Lcom/android/settings/DreamSettings$3;-><init>(Lcom/android/settings/DreamSettings;)V
 
-    const v7, 0x7f0b1675
+    const v7, 0x7f0b1676
 
     const/4 v8, 0x0
 

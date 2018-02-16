@@ -866,7 +866,7 @@
 
     move-result-object v2
 
-    const v3, 0x7f0b175c
+    const v3, 0x7f0b175d    # 1.84884E38f
 
     invoke-virtual {v2, v3, p0}, Landroid/app/AlertDialog$Builder;->setPositiveButton(ILandroid/content/DialogInterface$OnClickListener;)Landroid/app/AlertDialog$Builder;
 
@@ -878,7 +878,7 @@
 
     move-result-object v2
 
-    const v3, 0x7f0b175d    # 1.84884E38f
+    const v3, 0x7f0b175e
 
     invoke-virtual {v2, v3, p0}, Landroid/app/AlertDialog$Builder;->setNegativeButton(ILandroid/content/DialogInterface$OnClickListener;)Landroid/app/AlertDialog$Builder;
 
@@ -1137,7 +1137,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f0b1938
+    const v2, 0x7f0b1939
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -1159,7 +1159,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f0b1939
+    const v2, 0x7f0b193a
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 

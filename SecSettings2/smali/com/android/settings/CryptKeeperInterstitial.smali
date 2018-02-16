@@ -392,7 +392,7 @@
     return v4
 
     :cond_0
-    const v2, 0x7f0b077f
+    const v2, 0x7f0b0780
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getText(I)Ljava/lang/CharSequence;
 
@@ -571,9 +571,9 @@
     iget v13, v0, Lcom/android/settings/CryptKeeperInterstitial;->mRequestedPasswordQuality:I
 
     :cond_1
-    const v4, 0x7f0b07bc
+    const v4, 0x7f0b07bd
 
-    const v3, 0x7f0b1d17
+    const v3, 0x7f0b1d18
 
     const v15, 0x7f0b0751
 
@@ -589,12 +589,12 @@
 
     if-eqz v17, :cond_b
 
-    const v11, 0x7f0b07ac
+    const v11, 0x7f0b07ad
 
     :goto_0
     const v15, 0x7f0b0751
 
-    const v6, 0x7f0b1d20
+    const v6, 0x7f0b1d21
 
     :goto_1
     move-object/from16 v0, p0
@@ -655,7 +655,7 @@
 
     move-object/from16 v17, v0
 
-    const v18, 0x7f0b1d17
+    const v18, 0x7f0b1d18
 
     invoke-virtual/range {v17 .. v18}, Landroid/widget/Button;->setText(I)V
 
@@ -673,7 +673,7 @@
 
     move-object/from16 v17, v0
 
-    const v18, 0x7f0b1d17
+    const v18, 0x7f0b1d18
 
     invoke-virtual/range {v17 .. v18}, Landroid/widget/TextView;->setText(I)V
 
@@ -719,7 +719,7 @@
 
     move-object/from16 v17, v0
 
-    const v18, 0x7f0b07bc
+    const v18, 0x7f0b07bd
 
     invoke-virtual/range {v17 .. v18}, Landroid/widget/CheckedTextView;->setText(I)V
 
@@ -893,7 +893,7 @@
 
     if-eqz v17, :cond_5
 
-    const v11, 0x7f0b07b6
+    const v11, 0x7f0b07b7
 
     :goto_6
     move-object/from16 v0, p0
@@ -922,14 +922,14 @@
 
     move-object/from16 v17, v0
 
-    const v18, 0x7f0b07a9
+    const v18, 0x7f0b07aa
 
     invoke-virtual/range {v17 .. v18}, Landroid/widget/Button;->setText(I)V
 
     return-void
 
     :cond_5
-    const v11, 0x7f0b07b8
+    const v11, 0x7f0b07b9
 
     goto :goto_6
 
@@ -944,17 +944,17 @@
 
     if-eqz v17, :cond_6
 
-    const v11, 0x7f0b07ac
+    const v11, 0x7f0b07ad
 
     :goto_7
     const v15, 0x7f0b0750
 
-    const v6, 0x7f0b1d1f
+    const v6, 0x7f0b1d20
 
     goto/16 :goto_1
 
     :cond_6
-    const v11, 0x7f0b07ab
+    const v11, 0x7f0b07ac
 
     goto :goto_7
 
@@ -969,17 +969,17 @@
 
     if-eqz v17, :cond_7
 
-    const v11, 0x7f0b07ac
+    const v11, 0x7f0b07ad
 
     :goto_8
     const v15, 0x7f0b0752
 
-    const v6, 0x7f0b07bb
+    const v6, 0x7f0b07bc
 
     goto/16 :goto_1
 
     :cond_7
-    const v11, 0x7f0b07ab
+    const v11, 0x7f0b07ac
 
     goto :goto_8
 
@@ -994,17 +994,17 @@
 
     if-eqz v17, :cond_8
 
-    const v11, 0x7f0b07ac
+    const v11, 0x7f0b07ad
 
     :goto_9
     const v15, 0x7f0b074f
 
-    const v6, 0x7f0b1d1e
+    const v6, 0x7f0b1d1f
 
     goto/16 :goto_1
 
     :cond_8
-    const v11, 0x7f0b07ab
+    const v11, 0x7f0b07ac
 
     goto :goto_9
 
@@ -1025,22 +1025,22 @@
 
     if-eqz v17, :cond_9
 
-    const v11, 0x7f0b07ac
+    const v11, 0x7f0b07ad
 
     :goto_a
     const v15, 0x7f0b074f
 
-    const v6, 0x7f0b1d20
+    const v6, 0x7f0b1d21
 
     goto/16 :goto_1
 
     :cond_9
-    const v11, 0x7f0b07ab
+    const v11, 0x7f0b07ac
 
     goto :goto_a
 
     :cond_a
-    const v11, 0x7f0b07b4
+    const v11, 0x7f0b07b5
 
     move-object/from16 v0, p0
 
@@ -1075,7 +1075,7 @@
     return-void
 
     :cond_b
-    const v11, 0x7f0b07ab
+    const v11, 0x7f0b07ac
 
     goto/16 :goto_0
 
@@ -1086,7 +1086,7 @@
 
     move-object/from16 v17, v0
 
-    const v18, 0x7f0b08df
+    const v18, 0x7f0b08e0
 
     invoke-virtual/range {v17 .. v18}, Landroid/widget/Button;->setText(I)V
 
@@ -1513,7 +1513,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f0b07b9
+    const v1, 0x7f0b07ba
 
     invoke-static {v0, v1, v3}, Landroid/widget/Toast;->makeText(Landroid/content/Context;II)Landroid/widget/Toast;
 
@@ -1551,7 +1551,7 @@
 
     const-string/jumbo v2, "com.android.settings.ChooseLockGeneric$ChooseLockGenericFragment"
 
-    const v3, 0x7f0b1470
+    const v3, 0x7f0b1471
 
     const/16 v4, 0x7b
 
@@ -1660,7 +1660,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f0b07aa
+    const v1, 0x7f0b07ab
 
     invoke-static {v0, v1, v3}, Landroid/widget/Toast;->makeText(Landroid/content/Context;II)Landroid/widget/Toast;
 
@@ -1728,9 +1728,9 @@
     :cond_0
     sparse-switch v1, :sswitch_data_0
 
-    const v2, 0x7f0b1d26
+    const v2, 0x7f0b1d27
 
-    const v0, 0x7f0b1d29
+    const v0, 0x7f0b1d2a
 
     :goto_0
     new-instance v3, Landroid/app/AlertDialog$Builder;
@@ -1772,23 +1772,23 @@
     return-object v3
 
     :sswitch_0
-    const v2, 0x7f0b1d25
+    const v2, 0x7f0b1d26
 
-    const v0, 0x7f0b1d28
+    const v0, 0x7f0b1d29
 
     goto :goto_0
 
     :sswitch_1
-    const v2, 0x7f0b07bd
+    const v2, 0x7f0b07be
 
-    const v0, 0x7f0b07be
+    const v0, 0x7f0b07bf
 
     goto :goto_0
 
     :sswitch_2
-    const v2, 0x7f0b1d24
+    const v2, 0x7f0b1d25
 
-    const v0, 0x7f0b1d27
+    const v0, 0x7f0b1d28
 
     goto :goto_0
 
@@ -1801,7 +1801,7 @@
 
     invoke-direct {v3, v4}, Landroid/app/AlertDialog$Builder;-><init>(Landroid/content/Context;)V
 
-    const v4, 0x7f0b07ba
+    const v4, 0x7f0b07bb
 
     invoke-virtual {p0, v4}, Lcom/android/settings/CryptKeeperInterstitial;->getString(I)Ljava/lang/String;
 

@@ -1662,6 +1662,7 @@ Where Can I Find More Information About the 3rd Party's Policies? Separately, if
 ਡੈਟਾ ਦੀ ਮਾਤਰਾ ਤੇ ਨਿਰਭਰ ਕਰਦੇ ਹੋਏ ਡੀਕ੍ਰਿਪਸ਼ਨ ਵਿੱਚ ਜ਼ਿਆਦਾ ਸਮਾਂ ਲੱਗ ਸਕਦਾ ਹੈ। ਅਰੰਭ ਕਰਨ ਤੋਂ ਪਹਿਲਾਂ, ਸੁਨਿਸ਼ਚਿਤ ਕਰੋ ਕਿ ਬੈਟਰੀ ਚਾਰਜ ਹੈ ਅਤੇ ਡੀਕ੍ਰਿਪਸ਼ਨ ਪੂਰੀ ਹੋਣ ਤੱਕ ਡਿਵਾਈਸ ਨੂੰ ਪਲੱਗ ਇਨ ਕਰਕੇ ਰੱਖੋ।
 
 ਡੀਕ੍ਰਿਪਸ਼ਨ ਪ੍ਰਕਿਰਿਆ ਦੇ ਦੌਰਾਨ, SD ਕਾਰਡ ਦੀ ਵਰਤੋਂ ਨਹੀਂ ਕੀਤੀ ਜਾ ਸਕਦੀ।"</string>
+    <string name="sdcard_decrypt_description_reset_device">ਤੁਹਾਡੇ ਫ਼ੋਨ ਨੂੰ ਰੀਸੈੱਟ ਕਰਨ ਤੋਂ ਪਹਿਲਾਂ, ਤੁਹਾਡੇ SD ਕਾਰਡ ਨੂੰ ਡੀਕ੍ਰਿਪਟ ਕਰਨ ਦੀ ਲੋੜ ਹੈ।</string>
     <string name="sdcard_encrypt_button">SD ਕਾਰਡ ਏਨਕ੍ਰਿਪਟ ਕਰੋ</string>
     <string name="sdcard_decrypt_button">SD ਕਾਰਡ ਡੀਕ੍ਰਿਪਟ ਕਰੋ</string>
     <string name="sdcard_encrypt_checking">SD ਕਾਰਡ ਜਾਂਚ ਰਿਹਾ ਹੈ…</string>

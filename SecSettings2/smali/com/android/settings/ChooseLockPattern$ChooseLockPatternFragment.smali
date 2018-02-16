@@ -2635,7 +2635,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f0b085a
+    const v2, 0x7f0b085b
 
     invoke-virtual {p0, v2}, Lcom/android/settings/ChooseLockPattern$ChooseLockPatternFragment;->getString(I)Ljava/lang/String;
 
@@ -3342,7 +3342,7 @@
 
     iget-object v12, v0, Lcom/android/settings/ChooseLockPattern$ChooseLockPatternFragment;->mChooseLockSettingsHelper:Lcom/android/settings/ChooseLockSettingsHelper;
 
-    const v13, 0x7f0b1470
+    const v13, 0x7f0b1471
 
     move-object/from16 v0, p0
 
@@ -3463,7 +3463,7 @@
 
     move-result-object v13
 
-    const v14, 0x7f0b0af0
+    const v14, 0x7f0b0af1
 
     invoke-virtual {v13, v14}, Landroid/app/Activity;->getString(I)Ljava/lang/String;
 
@@ -3473,7 +3473,7 @@
 
     new-array v14, v14, [Ljava/lang/Object;
 
-    const v15, 0x7f0b1477
+    const v15, 0x7f0b1478
 
     move-object/from16 v0, p0
 
@@ -3632,7 +3632,7 @@
 
     aput-object v13, v12, v14
 
-    const v13, 0x7f0b09b1
+    const v13, 0x7f0b09b2
 
     move-object/from16 v0, p0
 
@@ -3892,7 +3892,7 @@
 
     iget-object v2, p0, Lcom/android/settings/ChooseLockPattern$ChooseLockPatternFragment;->mHeaderText:Landroid/widget/TextView;
 
-    const v3, 0x7f0b17fc
+    const v3, 0x7f0b17fd
 
     invoke-virtual {p0, v3}, Lcom/android/settings/ChooseLockPattern$ChooseLockPatternFragment;->getString(I)Ljava/lang/String;
 

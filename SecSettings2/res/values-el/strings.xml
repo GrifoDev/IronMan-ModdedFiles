@@ -1662,6 +1662,7 @@ Where Can I Find More Information About the 3rd Party's Policies? Separately, if
 Η αποκρυπτογράφηση ενδέχεται να διαρκέσει πολλή ώρα, ανάλογα με τον όγκο των δεδομένων. Πριν ξεκινήσετε, βεβαιωθείτε ότι η μπαταρία είναι φορτισμένη και διατηρήστε τη συσκευή συνδεδεμένη σε πρίζα έως ότου ολοκληρωθεί η αποκρυπτογράφηση.
 
 Κατά τη διάρκεια της διαδικασίας αποκρυπτογράφησης, δεν είναι δυνατή η χρήση της κάρτας SD."</string>
+    <string name="sdcard_decrypt_description_reset_device">Προτού επαναφέρετε το τηλέφωνό σας, θα πρέπει να αποκρυπτογραφήσετε την κάρτα SD.</string>
     <string name="sdcard_encrypt_button">Κρυπτογράφηση κάρτας SD</string>
     <string name="sdcard_decrypt_button">Αποκρυπτογράφ. κάρτας SD</string>
     <string name="sdcard_encrypt_checking">Έλεγχος κάρτας SD…</string>

@@ -307,7 +307,7 @@
 
     const/4 v2, 0x0
 
-    const v3, 0x7f0b11e0
+    const v3, 0x7f0b11e1
 
     const/4 v4, 0x0
 
@@ -341,7 +341,7 @@
 
     const/4 v3, 0x0
 
-    const v4, 0x7f0b11e0
+    const v4, 0x7f0b11e1
 
     const/4 v5, 0x0
 

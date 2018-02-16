@@ -277,7 +277,7 @@
 .method protected getHelpResource()I
     .locals 1
 
-    const v0, 0x7f0b1bda
+    const v0, 0x7f0b1bdb
 
     return v0
 .end method

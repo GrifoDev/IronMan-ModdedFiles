@@ -1662,6 +1662,7 @@ Szyfrowanie może trwać godzinę lub dłużej. Należy je rozpocząć przy w pe
 Deszyfrowanie może zająć długi czas w zależności od ilości danych. Należy je rozpocząć przy w pełni naładowanej baterii, a do momentu ukończenia deszyfrowania urządzenie musi mieć podłączone zasilanie.
 
 Podczas procesu deszyfrowania nie można używać karty pamięci."</string>
+    <string name="sdcard_decrypt_description_reset_device">Przed zresetowaniem telefonu trzeba odszyfrować kartę pamięci.</string>
     <string name="sdcard_encrypt_button">Szyfruj kartę pamięci</string>
     <string name="sdcard_decrypt_button">Odszyfruj kartę pamięci</string>
     <string name="sdcard_encrypt_checking">Sprawdzanie karty pamięci…</string>

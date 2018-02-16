@@ -1534,6 +1534,7 @@ Szyfrowanie poradzi iś godzina abo wiyncyj. Zdo sie coby je napocznōńć przi 
 Deszyfrowanie poradzi zetrwać dugi czas podug wielości danych. Zdo sie coby je napocznōńć przi cołkym nafolowanyj baterji, a do czasu skōńczynio deszyfrowanio maszina musi mieć podepniynte zasilanie.
 
 Bez czas procesu deszyfrowanio niy idzie używać karty pamiyńci."</string>
+    <string name="sdcard_decrypt_description_reset_device">Przed wynulowaniym mobilniŏka trza ôdszyfrować karta pamiyńci.</string>
     <string name="sdcard_encrypt_button">Szyfruj karta pamiyńci</string>
     <string name="sdcard_decrypt_button">Ôdszyfruj karta pamiyńci</string>
     <string name="sdcard_encrypt_checking">Badŏ karty pamiyńci…</string>

@@ -75,13 +75,13 @@
 
     invoke-direct {v1, p0}, Landroid/app/AlertDialog$Builder;-><init>(Landroid/content/Context;)V
 
-    const v2, 0x7f0b07c9
+    const v2, 0x7f0b07ca
 
     invoke-virtual {v1, v2}, Landroid/app/AlertDialog$Builder;->setTitle(I)Landroid/app/AlertDialog$Builder;
 
     move-result-object v1
 
-    const v2, 0x7f0b0817
+    const v2, 0x7f0b0818
 
     invoke-virtual {v1, v2}, Landroid/app/AlertDialog$Builder;->setMessage(I)Landroid/app/AlertDialog$Builder;
 
@@ -157,7 +157,7 @@
 
     invoke-static {v5, v6}, Landroid/util/secutil/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    const v5, 0x7f0b07cc
+    const v5, 0x7f0b07cd
 
     invoke-virtual {p0, v5}, Lcom/android/settings/fingerprint/FingerprintConfirm;->getString(I)Ljava/lang/String;
 

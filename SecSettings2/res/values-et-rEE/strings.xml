@@ -1662,6 +1662,7 @@ Krüptimiseks võib kuluda tund või rohkem. Enne alustamist veenduge, et aku ol
 Olenevalt andmemahust võib dekrüptimine kesta kaua. Enne alustamist veenduge, et aku oleks täielikult laetud, ja hoidke seade vooluvõrku ühendatuna, kuni dekrüptimine on lõpule viidud.
 
 Dekrüptimise ajal ei saa SD-kaarti kasutada."</string>
+    <string name="sdcard_decrypt_description_reset_device">Enne telefoni lähtestamist tuleb SD-kaart dekrüptida.</string>
     <string name="sdcard_encrypt_button">Krüpti SD-kaart</string>
     <string name="sdcard_decrypt_button">Dekrüpti SD-kaart</string>
     <string name="sdcard_encrypt_checking">SD-kaardi kontrollimine…</string>

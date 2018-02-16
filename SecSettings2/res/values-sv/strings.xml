@@ -1663,6 +1663,7 @@ Krypteringen kan ta en timme eller mer. Se till att batteriet är laddat innan d
 Avkrypteringen kan ta lång tid beroende på datamängden. Se till att batteriet är laddat innan du börjar. Låt enheten vara inkopplad tills avkrypteringen är klar.
 
 Under avkrypteringen går SD-kortet inte att använda."</string>
+    <string name="sdcard_decrypt_description_reset_device">Innan du kan återställa telefonen måste SD-kortet dekrypteras.</string>
     <string name="sdcard_encrypt_button">Kryptera SD-kort</string>
     <string name="sdcard_decrypt_button">Avkryptera SD-kortet</string>
     <string name="sdcard_encrypt_checking">Kontrollerar SD-kortet…</string>

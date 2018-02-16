@@ -334,7 +334,7 @@
 
     const-string/jumbo v4, ""
 
-    const v15, 0x7f0b0df8
+    const v15, 0x7f0b0df9
 
     move-object/from16 v0, p0
 
@@ -376,7 +376,7 @@
 
     if-eqz v15, :cond_3
 
-    const v15, 0x7f0b0df9
+    const v15, 0x7f0b0dfa
 
     move-object/from16 v0, p0
 
@@ -722,7 +722,7 @@
 
     iget-object v15, v0, Lcom/samsung/android/settings/lockscreen/SecuredLockSettingsMenu;->mLockAfter:Lcom/android/settings/TimeoutListPreference;
 
-    const v16, 0x7f0b0a92
+    const v16, 0x7f0b0a93
 
     invoke-virtual/range {v15 .. v16}, Lcom/android/settings/TimeoutListPreference;->setTitle(I)V
 
@@ -730,7 +730,7 @@
 
     iget-object v15, v0, Lcom/samsung/android/settings/lockscreen/SecuredLockSettingsMenu;->mLockAfter:Lcom/android/settings/TimeoutListPreference;
 
-    const v16, 0x7f0b0a92
+    const v16, 0x7f0b0a93
 
     invoke-virtual/range {v15 .. v16}, Lcom/android/settings/TimeoutListPreference;->setDialogTitle(I)V
 
@@ -921,7 +921,7 @@
 
     iget-object v15, v0, Lcom/samsung/android/settings/lockscreen/SecuredLockSettingsMenu;->mLockAfter:Lcom/android/settings/TimeoutListPreference;
 
-    const v16, 0x7f0b1418
+    const v16, 0x7f0b1419
 
     invoke-virtual/range {v15 .. v16}, Lcom/android/settings/TimeoutListPreference;->setTitle(I)V
 
@@ -929,7 +929,7 @@
 
     iget-object v15, v0, Lcom/samsung/android/settings/lockscreen/SecuredLockSettingsMenu;->mLockAfter:Lcom/android/settings/TimeoutListPreference;
 
-    const v16, 0x7f0b1418
+    const v16, 0x7f0b1419
 
     invoke-virtual/range {v15 .. v16}, Lcom/android/settings/TimeoutListPreference;->setDialogTitle(I)V
 
@@ -1764,7 +1764,7 @@
 
     aput-object v13, v12, v14
 
-    const v13, 0x7f0b0a96
+    const v13, 0x7f0b0a97
 
     invoke-virtual {p0, v13, v12}, Lcom/samsung/android/settings/lockscreen/SecuredLockSettingsMenu;->getString(I[Ljava/lang/Object;)Ljava/lang/String;
 
@@ -4008,7 +4008,7 @@
 
     check-cast v3, Landroid/widget/TextView;
 
-    const v4, 0x7f0b11f9
+    const v4, 0x7f0b11fa
 
     invoke-virtual {v3, v4}, Landroid/widget/TextView;->setText(I)V
 
@@ -4234,7 +4234,7 @@
 
     if-eqz v18, :cond_4
 
-    const v14, 0x7f0b0a93
+    const v14, 0x7f0b0a94
 
     :goto_3
     move-object/from16 v0, p0
@@ -4245,7 +4245,7 @@
 
     if-eqz v18, :cond_5
 
-    const v11, 0x7f0b0a94
+    const v11, 0x7f0b0a95
 
     :goto_4
     aget-object v18, v15, v4
@@ -4332,12 +4332,12 @@
     goto :goto_2
 
     :cond_4
-    const v14, 0x7f0b1419
+    const v14, 0x7f0b141a
 
     goto :goto_3
 
     :cond_5
-    const v11, 0x7f0b0a95
+    const v11, 0x7f0b0a96
 
     goto :goto_4
 
@@ -4537,7 +4537,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f0b1470
+    const v2, 0x7f0b1471
 
     invoke-virtual {v1, v2}, Landroid/app/Activity;->getString(I)Ljava/lang/String;
 
@@ -4706,7 +4706,7 @@
 
     invoke-direct {p0}, Lcom/samsung/android/settings/lockscreen/SecuredLockSettingsMenu;->verifyCurrentLock()V
 
-    const v0, 0x7f0b0a77
+    const v0, 0x7f0b0a78
 
     invoke-virtual {p0, v0}, Lcom/samsung/android/settings/lockscreen/SecuredLockSettingsMenu;->getString(I)Ljava/lang/String;
 
@@ -4720,7 +4720,7 @@
 
     if-eqz v0, :cond_0
 
-    const v0, 0x7f0b0a78
+    const v0, 0x7f0b0a79
 
     invoke-virtual {p0, v0}, Lcom/samsung/android/settings/lockscreen/SecuredLockSettingsMenu;->getString(I)Ljava/lang/String;
 
@@ -5906,13 +5906,13 @@
 
     check-cast v3, Landroid/widget/TextView;
 
-    const v4, 0x7f0b0a98
+    const v4, 0x7f0b0a99
 
     invoke-virtual {v3, v4}, Landroid/widget/TextView;->setText(I)V
 
     invoke-virtual {v0, v2}, Landroid/app/AlertDialog$Builder;->setView(Landroid/view/View;)Landroid/app/AlertDialog$Builder;
 
-    const v4, 0x7f0b1667
+    const v4, 0x7f0b1668
 
     invoke-virtual {v0, v4}, Landroid/app/AlertDialog$Builder;->setTitle(I)Landroid/app/AlertDialog$Builder;
 

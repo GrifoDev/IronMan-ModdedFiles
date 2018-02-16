@@ -685,7 +685,7 @@
 
     invoke-virtual {v8, v1}, Landroid/preference/Preference;->setLayoutResource(I)V
 
-    const v1, 0x7f0b1246
+    const v1, 0x7f0b1247
 
     invoke-virtual {p0, v1}, Lcom/samsung/android/settings/nfc/OtherSettings;->getString(I)Ljava/lang/String;
 

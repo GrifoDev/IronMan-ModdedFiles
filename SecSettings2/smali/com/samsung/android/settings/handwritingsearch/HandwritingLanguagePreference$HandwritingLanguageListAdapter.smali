@@ -182,7 +182,7 @@
     return-object v2
 
     :cond_1
-    const v5, 0x7f0b0d55
+    const v5, 0x7f0b0d56
 
     invoke-virtual {v3, v5}, Landroid/widget/TextView;->setText(I)V
 

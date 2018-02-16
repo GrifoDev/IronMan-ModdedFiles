@@ -1663,6 +1663,7 @@ Việc mã hóa có thể mất một giờ hoặc lâu hơn. Trước khi bă�
 Việc giải mã có thể mất nhiều thời gian tùy vào số lượng dữ liệu. Trước khi bắt đầu, hãy đảm bảo pin đã được sạc và để thiết bị kết nối với nguồn điện cho đến khi quá trình giải mã hoàn tất.
 
 Trong khi diễn ra quá trình giải mã, bạn không thể sử dụng thẻ SD."</string>
+    <string name="sdcard_decrypt_description_reset_device">Trước khi đặt lại điện thoại của bạn, thẻ SD cần được giải mã.</string>
     <string name="sdcard_encrypt_button">Mã hóa thẻ SD</string>
     <string name="sdcard_decrypt_button">Giải mã thẻ SD</string>
     <string name="sdcard_encrypt_checking">Đang kiểm tra thẻ SD…</string>

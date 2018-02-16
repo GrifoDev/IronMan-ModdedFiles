@@ -904,7 +904,7 @@
 
     if-ne v4, v10, :cond_17
 
-    const v6, 0x7f0b1d08
+    const v6, 0x7f0b1d09
 
     invoke-virtual {p0, v6}, Lcom/android/settings/datausage/DataUsageSummary;->getString(I)Ljava/lang/String;
 
@@ -1072,7 +1072,7 @@
     goto/16 :goto_7
 
     :cond_17
-    const v6, 0x7f0b1d09
+    const v6, 0x7f0b1d0a
 
     invoke-virtual {p0, v6}, Lcom/android/settings/datausage/DataUsageSummary;->getString(I)Ljava/lang/String;
 
@@ -1702,7 +1702,7 @@
 
     aput-object v7, v6, v5
 
-    const v7, 0x7f0b11ee
+    const v7, 0x7f0b11ef
 
     invoke-virtual {p0, v7, v6}, Lcom/android/settings/datausage/DataUsageSummary;->getString(I[Ljava/lang/Object;)Ljava/lang/String;
 
@@ -2164,7 +2164,7 @@
 
     if-gtz v14, :cond_c
 
-    const v14, 0x7f0b1e37
+    const v14, 0x7f0b1e38
 
     :goto_3
     const/16 v16, 0x2
@@ -2364,7 +2364,7 @@
     goto/16 :goto_2
 
     :cond_c
-    const v14, 0x7f0b1e38
+    const v14, 0x7f0b1e39
 
     goto/16 :goto_3
 
@@ -3593,7 +3593,7 @@
     :cond_f
     if-eqz v6, :cond_25
 
-    const v17, 0x7f0b1e34
+    const v17, 0x7f0b1e35
 
     :goto_8
     move/from16 v0, v17
@@ -4067,12 +4067,12 @@
     :cond_25
     if-eqz v7, :cond_26
 
-    const v17, 0x7f0b1e35
+    const v17, 0x7f0b1e36
 
     goto/16 :goto_8
 
     :cond_26
-    const v17, 0x7f0b1e36
+    const v17, 0x7f0b1e37
 
     goto/16 :goto_8
 .end method
@@ -4353,7 +4353,7 @@
     :pswitch_1
     const-string/jumbo v2, "com.android.settings.datausage.DataUsageHelp"
 
-    const v3, 0x7f0b1bb9
+    const v3, 0x7f0b1bba
 
     const/4 v5, 0x0
 
@@ -4701,7 +4701,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f0b11e3
+    const v2, 0x7f0b11e4
 
     invoke-virtual {v1, v2}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -4818,7 +4818,7 @@
 
     const/4 v2, 0x0
 
-    const v3, 0x7f0b11e0
+    const v3, 0x7f0b11e1
 
     const/4 v4, 0x0
 
@@ -5455,7 +5455,7 @@
 
     if-ne v4, v9, :cond_5
 
-    const v5, 0x7f0b1d08
+    const v5, 0x7f0b1d09
 
     invoke-virtual {p0, v5}, Lcom/android/settings/datausage/DataUsageSummary;->getString(I)Ljava/lang/String;
 
@@ -5607,7 +5607,7 @@
     return-void
 
     :cond_5
-    const v5, 0x7f0b1d09
+    const v5, 0x7f0b1d0a
 
     invoke-virtual {p0, v5}, Lcom/android/settings/datausage/DataUsageSummary;->getString(I)Ljava/lang/String;
 

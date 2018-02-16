@@ -159,7 +159,7 @@
 
     aput-object v0, v2, v4
 
-    const v3, 0x7f0b1cd9
+    const v3, 0x7f0b1cda
 
     invoke-virtual {p0, v3, v2}, Lcom/samsung/android/settings/notification/ZenModeDNDAutomationSettings;->getString(I[Ljava/lang/Object;)Ljava/lang/String;
 
@@ -172,7 +172,7 @@
     return-object v1
 
     :cond_0
-    const v2, 0x7f0b1d09
+    const v2, 0x7f0b1d0a
 
     invoke-virtual {p0, v2}, Lcom/samsung/android/settings/notification/ZenModeDNDAutomationSettings;->getString(I)Ljava/lang/String;
 
@@ -189,7 +189,7 @@
 
     aput-object v1, v2, v5
 
-    const v3, 0x7f0b1cda
+    const v3, 0x7f0b1cdb
 
     invoke-virtual {p0, v3, v2}, Lcom/samsung/android/settings/notification/ZenModeDNDAutomationSettings;->getString(I[Ljava/lang/Object;)Ljava/lang/String;
 
@@ -208,7 +208,7 @@
     return-object v0
 
     :pswitch_0
-    const v0, 0x7f0b1c85
+    const v0, 0x7f0b1c86
 
     invoke-virtual {p0, v0}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -217,7 +217,7 @@
     return-object v0
 
     :pswitch_1
-    const v0, 0x7f0b1c84
+    const v0, 0x7f0b1c85
 
     invoke-virtual {p0, v0}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -226,7 +226,7 @@
     return-object v0
 
     :pswitch_2
-    const v0, 0x7f0b1c86
+    const v0, 0x7f0b1c87
 
     invoke-virtual {p0, v0}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -346,7 +346,7 @@
 
     aput-object p2, v1, v2
 
-    const v2, 0x7f0b1cc6
+    const v2, 0x7f0b1cc7
 
     invoke-virtual {p0, v2, v1}, Lcom/samsung/android/settings/notification/ZenModeDNDAutomationSettings;->getString(I[Ljava/lang/Object;)Ljava/lang/String;
 
@@ -356,7 +356,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f0b13e7
+    const v1, 0x7f0b13e8
 
     const/4 v2, 0x0
 
@@ -368,7 +368,7 @@
 
     invoke-direct {v1, p0, p1}, Lcom/samsung/android/settings/notification/ZenModeDNDAutomationSettings$2;-><init>(Lcom/samsung/android/settings/notification/ZenModeDNDAutomationSettings;Ljava/lang/String;)V
 
-    const v2, 0x7f0b1cc7
+    const v2, 0x7f0b1cc8
 
     invoke-virtual {v0, v2, v1}, Landroid/app/AlertDialog$Builder;->setPositiveButton(ILandroid/content/DialogInterface$OnClickListener;)Landroid/app/AlertDialog$Builder;
 
@@ -706,7 +706,7 @@
 
     invoke-virtual {v8, v0}, Landroid/preference/Preference;->setIcon(I)V
 
-    const v17, 0x7f0b1cc3
+    const v17, 0x7f0b1cc4
 
     move/from16 v0, v17
 
@@ -784,7 +784,7 @@
 
     check-cast v16, Landroid/widget/TextView;
 
-    const v17, 0x7f0b0c16
+    const v17, 0x7f0b0c17
 
     invoke-virtual/range {v16 .. v17}, Landroid/widget/TextView;->setText(I)V
 
@@ -911,7 +911,7 @@
 
     const/4 v0, 0x2
 
-    const v1, 0x7f0b1ac5
+    const v1, 0x7f0b1ac6
 
     invoke-interface {p1, v2, v0, v2, v1}, Landroid/view/Menu;->add(IIII)Landroid/view/MenuItem;
 

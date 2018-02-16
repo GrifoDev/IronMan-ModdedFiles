@@ -1662,6 +1662,7 @@ Where Can I Find More Information About the 3rd Party's Policies? Separately, if
 Шифр тайлахад өгөгдлийн хэмжээнээс хамааран их хугацаа зарцуулж болно. Эхлэхээсээ өмнө таны зай цэнэглэгдсэн эсэхийг шалгаад төхөөрөмжийн шифрийг тайлж дуустал залгаатай чигээр нь орхино уу.
 
 Шифр тайлах явцад SD карт ашиглах боломжгүй."</string>
+    <string name="sdcard_decrypt_description_reset_device">Утсаа дахин тохируулахаас өмнө SD картынхаа шифрийг тайлах хэрэгтэй.</string>
     <string name="sdcard_encrypt_button">SD карт шифрлэх</string>
     <string name="sdcard_decrypt_button">SD картын шифр тайлах</string>
     <string name="sdcard_encrypt_checking">SD карт шалгаж байна…</string>

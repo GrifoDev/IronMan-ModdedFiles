@@ -238,7 +238,7 @@
 .method public setTemplate(Landroid/net/NetworkTemplate;ILcom/android/settings/datausage/TemplatePreference$NetworkServices;)V
     .locals 11
 
-    const v10, 0x7f0b1e43
+    const v10, 0x7f0b1e44
 
     const/4 v4, 0x2
 
@@ -373,7 +373,7 @@
 
     aput-object v4, v3, v8
 
-    const v4, 0x7f0b1e44
+    const v4, 0x7f0b1e45
 
     invoke-virtual {v2, v4, v3}, Landroid/content/Context;->getString(I[Ljava/lang/Object;)Ljava/lang/String;
 
@@ -418,7 +418,7 @@
 .method public updateSummary()V
     .locals 11
 
-    const v10, 0x7f0b1e43
+    const v10, 0x7f0b1e44
 
     const/4 v4, 0x2
 
@@ -559,7 +559,7 @@
 
     aput-object v4, v3, v8
 
-    const v4, 0x7f0b1e44
+    const v4, 0x7f0b1e45
 
     invoke-virtual {v2, v4, v3}, Landroid/content/Context;->getString(I[Ljava/lang/Object;)Ljava/lang/String;
 

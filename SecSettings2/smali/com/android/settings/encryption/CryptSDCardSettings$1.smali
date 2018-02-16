@@ -36,7 +36,7 @@
 
     iget-object v0, p0, Lcom/android/settings/encryption/CryptSDCardSettings$1;->this$0:Lcom/android/settings/encryption/CryptSDCardSettings;
 
-    invoke-static {v0}, Lcom/android/settings/encryption/CryptSDCardSettings;->-get6(Lcom/android/settings/encryption/CryptSDCardSettings;)Ljava/lang/Object;
+    invoke-static {v0}, Lcom/android/settings/encryption/CryptSDCardSettings;->-get7(Lcom/android/settings/encryption/CryptSDCardSettings;)Ljava/lang/Object;
 
     move-result-object v1
 
@@ -91,7 +91,7 @@
     :pswitch_4
     iget-object v0, p0, Lcom/android/settings/encryption/CryptSDCardSettings$1;->this$0:Lcom/android/settings/encryption/CryptSDCardSettings;
 
-    invoke-static {v0}, Lcom/android/settings/encryption/CryptSDCardSettings;->-get3(Lcom/android/settings/encryption/CryptSDCardSettings;)Z
+    invoke-static {v0}, Lcom/android/settings/encryption/CryptSDCardSettings;->-get4(Lcom/android/settings/encryption/CryptSDCardSettings;)Z
 
     move-result v0
 
@@ -99,7 +99,7 @@
 
     iget-object v0, p0, Lcom/android/settings/encryption/CryptSDCardSettings$1;->this$0:Lcom/android/settings/encryption/CryptSDCardSettings;
 
-    invoke-static {v0}, Lcom/android/settings/encryption/CryptSDCardSettings;->-get4(Lcom/android/settings/encryption/CryptSDCardSettings;)Landroid/app/Activity;
+    invoke-static {v0}, Lcom/android/settings/encryption/CryptSDCardSettings;->-get5(Lcom/android/settings/encryption/CryptSDCardSettings;)Landroid/app/Activity;
 
     move-result-object v0
 

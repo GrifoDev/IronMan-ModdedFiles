@@ -944,9 +944,9 @@
 .method private updateDefaultPreferences()V
     .locals 8
 
-    const v7, 0x7f0b1d09
+    const v7, 0x7f0b1d0a
 
-    const v6, 0x7f0b1d08
+    const v6, 0x7f0b1d09
 
     const/4 v2, 0x1
 
@@ -1407,7 +1407,7 @@
 
     invoke-direct {v11, p0, v2, v8}, Lcom/samsung/android/settings/accessibility/AccessibilitySettingsHearing$6;-><init>(Lcom/samsung/android/settings/accessibility/AccessibilitySettingsHearing;Landroid/content/SharedPreferences$Editor;Landroid/widget/CheckBox;)V
 
-    const v12, 0x7f0b1840
+    const v12, 0x7f0b1841
 
     invoke-virtual {v10, v12, v11}, Landroid/app/AlertDialog$Builder;->setPositiveButton(ILandroid/content/DialogInterface$OnClickListener;)Landroid/app/AlertDialog$Builder;
 
@@ -1624,7 +1624,7 @@
 .method public onPreferenceChange(Landroid/preference/Preference;Ljava/lang/Object;)Z
     .locals 12
 
-    const v11, 0x7f0b1d08
+    const v11, 0x7f0b1d09
 
     const/4 v10, 0x2
 
@@ -2135,7 +2135,7 @@
 
     iget-object v5, p0, Lcom/samsung/android/settings/accessibility/AccessibilitySettingsHearing;->mCaptioningPreferenceScreen:Lcom/samsung/android/settings/SettingsSwitchPreference;
 
-    const v9, 0x7f0b1d09
+    const v9, 0x7f0b1d0a
 
     invoke-virtual {v5, v9}, Lcom/samsung/android/settings/SettingsSwitchPreference;->setSummary(I)V
 
@@ -2227,7 +2227,7 @@
 
     iget-object v5, p0, Lcom/samsung/android/settings/accessibility/AccessibilitySettingsHearing;->mSamsungCaptioningPreferenceScreen:Lcom/samsung/android/settings/SettingsSwitchPreference;
 
-    const v9, 0x7f0b1d09
+    const v9, 0x7f0b1d0a
 
     invoke-virtual {v5, v9}, Lcom/samsung/android/settings/SettingsSwitchPreference;->setSummary(I)V
 

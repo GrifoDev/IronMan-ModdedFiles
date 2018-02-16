@@ -149,7 +149,7 @@
 
     iget-object v1, v1, Lcom/samsung/android/settings/biometrics/BiometricsAuthenticationActivity$7;->this$0:Lcom/samsung/android/settings/biometrics/BiometricsAuthenticationActivity;
 
-    const v2, 0x7f0b07cc
+    const v2, 0x7f0b07cd
 
     invoke-static {v1, v2}, Lcom/samsung/android/settings/biometrics/BiometricsAuthenticationActivity;->-wrap6(Lcom/samsung/android/settings/biometrics/BiometricsAuthenticationActivity;I)V
 
@@ -196,7 +196,7 @@
 
     iget-object v1, v1, Lcom/samsung/android/settings/biometrics/BiometricsAuthenticationActivity$7;->this$0:Lcom/samsung/android/settings/biometrics/BiometricsAuthenticationActivity;
 
-    const v2, 0x7f0b07cf
+    const v2, 0x7f0b07d0
 
     invoke-static {v1, v2}, Lcom/samsung/android/settings/biometrics/BiometricsAuthenticationActivity;->-wrap6(Lcom/samsung/android/settings/biometrics/BiometricsAuthenticationActivity;I)V
 

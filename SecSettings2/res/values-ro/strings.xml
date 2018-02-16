@@ -1662,6 +1662,7 @@ Acesta poate dura o oră sau mai mult. Înainte de a începe, asigurați-vă că
 Acest proces poate dura mai mult timp, în funcție de cantitatea de date. Înainte de a începe, asigurați-vă că bateria este încărcată și mențineți dispozitivul conectat până la finalizarea decriptării.
 
 În timpul procesului de decriptare, cardul SD nu poate fi utilizat."</string>
+    <string name="sdcard_decrypt_description_reset_device">Înainte de resetarea telefonului, cardul SD trebuie să fie decriptat.</string>
     <string name="sdcard_encrypt_button">Criptare card SD</string>
     <string name="sdcard_decrypt_button">Decriptare card SD</string>
     <string name="sdcard_encrypt_checking">Verificare cartelă SD…</string>

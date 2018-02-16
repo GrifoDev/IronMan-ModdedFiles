@@ -34,7 +34,7 @@
 .method public onChange(Z)V
     .locals 5
 
-    const v0, 0x7f0b1d09
+    const v0, 0x7f0b1d0a
 
     const/4 v3, 0x0
 
@@ -95,7 +95,7 @@
 
     if-eqz v2, :cond_2
 
-    const v0, 0x7f0b1d08
+    const v0, 0x7f0b1d09
 
     :cond_2
     invoke-virtual {v1, v0}, Landroid/preference/Preference;->setSummary(I)V

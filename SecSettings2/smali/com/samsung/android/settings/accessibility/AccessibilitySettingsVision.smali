@@ -2368,9 +2368,9 @@
 .method private updateDefaultPreferences()V
     .locals 11
 
-    const v7, 0x7f0b1d09
+    const v7, 0x7f0b1d0a
 
-    const v6, 0x7f0b1d08
+    const v6, 0x7f0b1d09
 
     const/4 v4, 0x1
 
@@ -3371,7 +3371,7 @@
 
     if-eqz v16, :cond_a
 
-    const v20, 0x7f0b1d08
+    const v20, 0x7f0b1d09
 
     move-object/from16 v0, p0
 
@@ -3462,7 +3462,7 @@
 
     if-eqz v20, :cond_6
 
-    const v20, 0x7f0b196f
+    const v20, 0x7f0b1970
 
     move-object/from16 v0, p0
 
@@ -3529,7 +3529,7 @@
 
     const-string/jumbo v20, "settings_title"
 
-    const v21, 0x7f0b1940
+    const v21, 0x7f0b1941
 
     move-object/from16 v0, p0
 
@@ -3651,7 +3651,7 @@
     goto/16 :goto_3
 
     :cond_a
-    const v20, 0x7f0b1d09
+    const v20, 0x7f0b1d0a
 
     move-object/from16 v0, p0
 
@@ -4827,7 +4827,7 @@
 
     move-result-object v23
 
-    const v24, 0x7f0b1928
+    const v24, 0x7f0b1929
 
     invoke-virtual/range {v23 .. v24}, Landroid/app/Activity;->getString(I)Ljava/lang/String;
 
@@ -6995,7 +6995,7 @@
 
     if-eqz v18, :cond_2a
 
-    const v19, 0x7f0b1d08
+    const v19, 0x7f0b1d09
 
     :goto_12
     move-object/from16 v0, v20
@@ -7066,7 +7066,7 @@
     goto :goto_11
 
     :cond_2a
-    const v19, 0x7f0b1d09
+    const v19, 0x7f0b1d0a
 
     goto :goto_12
 
@@ -7796,7 +7796,7 @@
 
     move-result-object v3
 
-    const v8, 0x7f0b192e
+    const v8, 0x7f0b192f
 
     invoke-virtual {p0, v8}, Lcom/samsung/android/settings/accessibility/AccessibilitySettingsVision;->getString(I)Ljava/lang/String;
 
@@ -7814,7 +7814,7 @@
 
     if-eqz v8, :cond_8
 
-    const v8, 0x7f0b192f
+    const v8, 0x7f0b1930
 
     invoke-virtual {p0, v8}, Lcom/samsung/android/settings/accessibility/AccessibilitySettingsVision;->getString(I)Ljava/lang/String;
 
@@ -7823,7 +7823,7 @@
     :cond_8
     const-string/jumbo v8, "title"
 
-    const v9, 0x7f0b192b
+    const v9, 0x7f0b192c
 
     invoke-virtual {p0, v9}, Lcom/samsung/android/settings/accessibility/AccessibilitySettingsVision;->getString(I)Ljava/lang/String;
 
@@ -7882,7 +7882,7 @@
 
     const-string/jumbo v8, "title"
 
-    const v9, 0x7f0b1928
+    const v9, 0x7f0b1929
 
     invoke-virtual {p0, v9}, Lcom/samsung/android/settings/accessibility/AccessibilitySettingsVision;->getString(I)Ljava/lang/String;
 

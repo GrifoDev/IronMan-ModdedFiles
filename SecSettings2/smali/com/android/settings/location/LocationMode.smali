@@ -157,31 +157,31 @@
 
     iget-object v1, p0, Lcom/android/settings/location/LocationMode;->mHighAccuracy:Lcom/android/settings/location/RadioButtonPreference;
 
-    const v2, 0x7f0b09d5
+    const v2, 0x7f0b09d6
 
     invoke-virtual {v1, v2}, Lcom/android/settings/location/RadioButtonPreference;->setTitle(I)V
 
     iget-object v1, p0, Lcom/android/settings/location/LocationMode;->mBatterySaving:Lcom/android/settings/location/RadioButtonPreference;
 
-    const v2, 0x7f0b09d8
+    const v2, 0x7f0b09d9
 
     invoke-virtual {v1, v2}, Lcom/android/settings/location/RadioButtonPreference;->setTitle(I)V
 
     iget-object v1, p0, Lcom/android/settings/location/LocationMode;->mHighAccuracy:Lcom/android/settings/location/RadioButtonPreference;
 
-    const v2, 0x7f0b09e0
+    const v2, 0x7f0b09e1
 
     invoke-virtual {v1, v2}, Lcom/android/settings/location/RadioButtonPreference;->setSummary(I)V
 
     iget-object v1, p0, Lcom/android/settings/location/LocationMode;->mBatterySaving:Lcom/android/settings/location/RadioButtonPreference;
 
-    const v2, 0x7f0b09e1
+    const v2, 0x7f0b09e2
 
     invoke-virtual {v1, v2}, Lcom/android/settings/location/RadioButtonPreference;->setSummary(I)V
 
     iget-object v1, p0, Lcom/android/settings/location/LocationMode;->mSensorsOnly:Lcom/android/settings/location/RadioButtonPreference;
 
-    const v2, 0x7f0b09e2
+    const v2, 0x7f0b09e3
 
     invoke-virtual {v1, v2}, Lcom/android/settings/location/RadioButtonPreference;->setSummary(I)V
 
@@ -194,7 +194,7 @@
 
     iget-object v1, p0, Lcom/android/settings/location/LocationMode;->mSensorsOnly:Lcom/android/settings/location/RadioButtonPreference;
 
-    const v2, 0x7f0b09df
+    const v2, 0x7f0b09e0
 
     invoke-virtual {v1, v2}, Lcom/android/settings/location/RadioButtonPreference;->setTitle(I)V
 
@@ -308,7 +308,7 @@
 .method public getHelpResource()I
     .locals 1
 
-    const v0, 0x7f0b1bd5
+    const v0, 0x7f0b1bd6
 
     return v0
 .end method
@@ -738,7 +738,7 @@
 
     move-result-object v4
 
-    const v5, 0x7f0b09b6
+    const v5, 0x7f0b09b7
 
     invoke-virtual {v4, v5}, Landroid/content/res/Resources;->getText(I)Ljava/lang/CharSequence;
 
@@ -750,7 +750,7 @@
 
     move-result-object v4
 
-    const v5, 0x7f0b09b7
+    const v5, 0x7f0b09b8
 
     invoke-virtual {v4, v5}, Landroid/content/res/Resources;->getText(I)Ljava/lang/CharSequence;
 
@@ -911,7 +911,7 @@
 
     move-result-object v4
 
-    const v5, 0x7f0b09b6
+    const v5, 0x7f0b09b7
 
     invoke-virtual {v4, v5}, Landroid/content/res/Resources;->getText(I)Ljava/lang/CharSequence;
 
@@ -923,7 +923,7 @@
 
     move-result-object v4
 
-    const v5, 0x7f0b09b7
+    const v5, 0x7f0b09b8
 
     invoke-virtual {v4, v5}, Landroid/content/res/Resources;->getText(I)Ljava/lang/CharSequence;
 

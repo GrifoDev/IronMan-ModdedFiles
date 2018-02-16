@@ -1666,6 +1666,7 @@ Where Can I Find More Information About the 3rd Party's Policies? Separately, if
 การถอดรหัสอาจใช้เวลานาน ทั้งนี้ขึ้นอยู่กับปริมาณข้อมูล ก่อนเริ่มต้นถอดรหัส โปรดตรวจสอบให้แน่ใจว่าชาร์จแบตเตอรี่แล้วและเสียบปลั๊กอุปกรณ์ไว้จนการถอดรหัสเสร็จสมบูรณ์
 
 ระหว่างขั้นตอนการถอดรหัส คุณจะไม่สามารถใช้งาน SD การ์ดได้"</string>
+    <string name="sdcard_decrypt_description_reset_device">ก่อนการรีเซ็ทโทรศัพท์ คุณต้องถอดรหัส SD การ์ดก่อน</string>
     <string name="sdcard_encrypt_button">เข้ารหัส SD การ์ด</string>
     <string name="sdcard_decrypt_button">ถอดรหัส SD การ์ด</string>
     <string name="sdcard_encrypt_checking">กำลัง​ตรวจ​สอบ SD ​การ์ด…</string>

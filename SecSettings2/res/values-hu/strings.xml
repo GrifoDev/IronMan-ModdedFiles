@@ -1662,6 +1662,7 @@ A titkosítás egy óránál is tovább tarthat. A titkosítás megkezdése elő
 A dekódolás az adatok mennyiségétől függően sokáig tarthat. A dekódolás megkezdése előtt töltse fel az akkumulátort, és mindaddig ne válassza le az eszközt a töltőről, amíg a dekódolás be nem fejeződik.
 
 A dekódolás közben az SD-kártya nem használható."</string>
+    <string name="sdcard_decrypt_description_reset_device">A telefon gyári beállításainak visszaállítása előtt dekódolni kell az SD-kártyát.</string>
     <string name="sdcard_encrypt_button">SD-kártya titkosítása</string>
     <string name="sdcard_decrypt_button">SD-kártya dekódolása</string>
     <string name="sdcard_encrypt_checking">SD-kártya ellenőrzése…</string>

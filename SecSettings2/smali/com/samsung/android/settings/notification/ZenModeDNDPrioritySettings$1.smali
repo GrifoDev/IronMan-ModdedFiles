@@ -180,7 +180,7 @@
 
     iget-object v12, p0, Lcom/samsung/android/settings/notification/ZenModeDNDPrioritySettings$1;->this$0:Lcom/samsung/android/settings/notification/ZenModeDNDPrioritySettings;
 
-    const v13, 0x7f0b0bfd
+    const v13, 0x7f0b0bfe
 
     invoke-virtual {v12, v13}, Lcom/samsung/android/settings/notification/ZenModeDNDPrioritySettings;->getString(I)Ljava/lang/String;
 
@@ -242,7 +242,7 @@
 
     iget-object v12, p0, Lcom/samsung/android/settings/notification/ZenModeDNDPrioritySettings$1;->this$0:Lcom/samsung/android/settings/notification/ZenModeDNDPrioritySettings;
 
-    const v13, 0x7f0b0bfd
+    const v13, 0x7f0b0bfe
 
     invoke-virtual {v12, v13}, Lcom/samsung/android/settings/notification/ZenModeDNDPrioritySettings;->getString(I)Ljava/lang/String;
 
@@ -343,7 +343,7 @@
 
     iget-object v12, p0, Lcom/samsung/android/settings/notification/ZenModeDNDPrioritySettings$1;->this$0:Lcom/samsung/android/settings/notification/ZenModeDNDPrioritySettings;
 
-    const v13, 0x7f0b1c85
+    const v13, 0x7f0b1c86
 
     invoke-virtual {v12, v13}, Lcom/samsung/android/settings/notification/ZenModeDNDPrioritySettings;->getString(I)Ljava/lang/String;
 
@@ -398,7 +398,7 @@
 
     iget-object v12, p0, Lcom/samsung/android/settings/notification/ZenModeDNDPrioritySettings$1;->this$0:Lcom/samsung/android/settings/notification/ZenModeDNDPrioritySettings;
 
-    const v13, 0x7f0b1c85
+    const v13, 0x7f0b1c86
 
     invoke-virtual {v12, v13}, Lcom/samsung/android/settings/notification/ZenModeDNDPrioritySettings;->getString(I)Ljava/lang/String;
 

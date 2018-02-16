@@ -132,7 +132,7 @@
 .method private refreshConnectionState()V
     .locals 4
 
-    const v1, 0x7f0b13d1
+    const v1, 0x7f0b13d2
 
     const/4 v3, 0x1
 
@@ -436,7 +436,7 @@
 
     if-eqz v1, :cond_1
 
-    const v0, 0x7f0b159c
+    const v0, 0x7f0b159d
 
     :goto_1
     invoke-static {v0}, Lcom/android/settings/wifi/WifiSetupActivity$WifiSkipDialog;->newInstance(I)Lcom/android/settings/wifi/WifiSetupActivity$WifiSkipDialog;
@@ -454,7 +454,7 @@
     goto :goto_0
 
     :cond_1
-    const v0, 0x7f0b159d
+    const v0, 0x7f0b159e
 
     goto :goto_1
 .end method

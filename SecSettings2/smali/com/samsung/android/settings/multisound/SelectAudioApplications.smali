@@ -141,7 +141,7 @@
 
     check-cast v0, Landroid/widget/TextView;
 
-    const v1, 0x7f0b0c2b
+    const v1, 0x7f0b0c2c
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(I)V
 
@@ -559,7 +559,7 @@
 
     iget-object v0, p0, Lcom/samsung/android/settings/multisound/SelectAudioApplications;->mDescryptionPreference:Lcom/samsung/android/settings/UnclickablePreference;
 
-    const v1, 0x7f0b0c23
+    const v1, 0x7f0b0c24
 
     invoke-virtual {v0, v1}, Lcom/samsung/android/settings/UnclickablePreference;->setTitle(I)V
 
