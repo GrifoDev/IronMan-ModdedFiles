@@ -14366,17 +14366,22 @@
 .end method
 
 .method public noteUidProcessStateLocked(II)V
-    .locals 1
+    .locals 2
 
     invoke-virtual {p0, p1}, Lcom/android/internal/os/BatteryStatsImpl;->mapUid(I)I
 
-    move-result p1
+    move-result v0
 
+    if-eq p1, v0, :cond_0
+
+    return-void
+
+    :cond_0
     invoke-virtual {p0, p1}, Lcom/android/internal/os/BatteryStatsImpl;->getUidStatsLocked(I)Lcom/android/internal/os/BatteryStatsImpl$Uid;
 
-    move-result-object v0
+    move-result-object v1
 
-    invoke-virtual {v0, p2}, Lcom/android/internal/os/BatteryStatsImpl$Uid;->updateUidProcessStateLocked(I)V
+    invoke-virtual {v1, p2}, Lcom/android/internal/os/BatteryStatsImpl$Uid;->updateUidProcessStateLocked(I)V
 
     return-void
 .end method

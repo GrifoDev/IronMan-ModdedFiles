@@ -21,7 +21,7 @@
 
 .field public static final SWEEP_ANIMATION_WAVE:I = 0x1
 
-.field private static final TAG:Ljava/lang/String; = "SweepAnimator"
+.field private static final TAG:Ljava/lang/String; = "SemSweepListAnimator"
 
 .field private static mPreviousDeltaX:F
 
@@ -741,7 +741,7 @@
 
     if-eqz v1, :cond_2
 
-    const-string/jumbo v1, "SweepAnimator"
+    const-string/jumbo v1, "SemSweepListAnimator"
 
     new-instance v2, Ljava/lang/StringBuilder;
 
@@ -763,7 +763,7 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    const-string/jumbo v1, "SweepAnimator"
+    const-string/jumbo v1, "SemSweepListAnimator"
 
     const-string/jumbo v2, "**** End onActionUp *****, return #1"
 
@@ -795,7 +795,7 @@
 
     if-eqz v1, :cond_4
 
-    const-string/jumbo v1, "SweepAnimator"
+    const-string/jumbo v1, "SemSweepListAnimator"
 
     new-instance v2, Ljava/lang/StringBuilder;
 
@@ -817,7 +817,7 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    const-string/jumbo v1, "SweepAnimator"
+    const-string/jumbo v1, "SemSweepListAnimator"
 
     new-instance v2, Ljava/lang/StringBuilder;
 
@@ -839,7 +839,7 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    const-string/jumbo v1, "SweepAnimator"
+    const-string/jumbo v1, "SemSweepListAnimator"
 
     new-instance v2, Ljava/lang/StringBuilder;
 
@@ -863,7 +863,7 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    const-string/jumbo v1, "SweepAnimator"
+    const-string/jumbo v1, "SemSweepListAnimator"
 
     new-instance v2, Ljava/lang/StringBuilder;
 
@@ -885,7 +885,7 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    const-string/jumbo v1, "SweepAnimator"
+    const-string/jumbo v1, "SemSweepListAnimator"
 
     new-instance v2, Ljava/lang/StringBuilder;
 
@@ -909,7 +909,7 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    const-string/jumbo v1, "SweepAnimator"
+    const-string/jumbo v1, "SemSweepListAnimator"
 
     new-instance v2, Ljava/lang/StringBuilder;
 
@@ -942,13 +942,13 @@
 
     if-eqz v1, :cond_5
 
-    const-string/jumbo v1, "SweepAnimator"
+    const-string/jumbo v1, "SemSweepListAnimator"
 
     const-string/jumbo v2, "onActionUp : mSweepAnimationFilter is null"
 
     invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    const-string/jumbo v1, "SweepAnimator"
+    const-string/jumbo v1, "SemSweepListAnimator"
 
     const-string/jumbo v2, "**** End onActionUp *****, return #2"
 
@@ -962,7 +962,7 @@
 
     if-eqz v1, :cond_7
 
-    const-string/jumbo v1, "SweepAnimator"
+    const-string/jumbo v1, "SemSweepListAnimator"
 
     const-string/jumbo v2, "onActionUp : create sweepAnimation.. #1"
 
@@ -1012,7 +1012,7 @@
 
     if-eqz v1, :cond_9
 
-    const-string/jumbo v1, "SweepAnimator"
+    const-string/jumbo v1, "SemSweepListAnimator"
 
     const-string/jumbo v2, "onActionUp : call animator.start()"
 

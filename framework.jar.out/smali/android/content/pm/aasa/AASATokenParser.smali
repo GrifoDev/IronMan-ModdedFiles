@@ -4,6 +4,10 @@
 
 
 # instance fields
+.field private DEBUG:Z
+
+.field private TAG:Ljava/lang/String;
+
 .field private mArchiveSourcePath:Ljava/lang/String;
 
 .field private mCACertName:Ljava/lang/String;
@@ -42,6 +46,8 @@
 .field private misAppSystem:Z
 
 .field private misDeviceMode:Z
+
+.field private secureTimePath:Ljava/lang/String;
 
 
 # direct methods
@@ -103,6 +109,16 @@
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Landroid/content/pm/aasa/AASATokenParser;->mIsSigned512:Z
+
+    const-string/jumbo v0, "/data/system/.aasa/trustedTime"
+
+    iput-object v0, p0, Landroid/content/pm/aasa/AASATokenParser;->secureTimePath:Ljava/lang/String;
+
+    iput-boolean v1, p0, Landroid/content/pm/aasa/AASATokenParser;->DEBUG:Z
+
+    const-string/jumbo v0, "AASATokenParser"
+
+    iput-object v0, p0, Landroid/content/pm/aasa/AASATokenParser;->TAG:Ljava/lang/String;
 
     return-void
 .end method
@@ -834,7 +850,7 @@
     if-eqz v4, :cond_0
 
     :try_start_1
-    invoke-direct {p0, v4}, Landroid/content/pm/aasa/AASATokenParser;->SetRestrictedInfoToXML(Landroid/content/pm/aasa/RestrictList;)V
+    invoke-virtual {p0, v4}, Landroid/content/pm/aasa/AASATokenParser;->SetRestrictedInfoToXML(Landroid/content/pm/aasa/RestrictList;)V
     :try_end_1
     .catch Ljavax/xml/transform/TransformerException; {:try_start_1 .. :try_end_1} :catch_3
     .catch Ljavax/xml/parsers/ParserConfigurationException; {:try_start_1 .. :try_end_1} :catch_2
@@ -1054,183 +1070,6 @@
     move-result-object v2
 
     return-object v2
-.end method
-
-.method private SetRestrictedInfoToXML(Landroid/content/pm/aasa/RestrictList;)V
-    .locals 16
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljavax/xml/transform/TransformerException;,
-            Ljavax/xml/parsers/ParserConfigurationException;
-        }
-    .end annotation
-
-    const-string/jumbo v8, "/data/system/.aasa/RestrictedPackages.xml"
-
-    if-nez p1, :cond_0
-
-    return-void
-
-    :cond_0
-    const/4 v6, 0x0
-
-    :try_start_0
-    new-instance v7, Ljava/io/File;
-
-    invoke-direct {v7, v8}, Ljava/io/File;-><init>(Ljava/lang/String;)V
-    :try_end_0
-    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
-
-    :try_start_1
-    invoke-virtual {v7}, Ljava/io/File;->exists()Z
-
-    move-result v14
-
-    if-nez v14, :cond_1
-
-    const-string/jumbo v14, "SOULSY"
-
-    const-string/jumbo v15, "file does not exist"
-
-    invoke-static {v14, v15}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
-
-    invoke-virtual {v7}, Ljava/io/File;->createNewFile()Z
-    :try_end_1
-    .catch Ljava/io/IOException; {:try_start_1 .. :try_end_1} :catch_1
-
-    move-result v14
-
-    if-nez v14, :cond_1
-
-    return-void
-
-    :cond_1
-    move-object v6, v7
-
-    :goto_0
-    invoke-static {}, Ljavax/xml/parsers/DocumentBuilderFactory;->newInstance()Ljavax/xml/parsers/DocumentBuilderFactory;
-
-    move-result-object v3
-
-    invoke-virtual {v3}, Ljavax/xml/parsers/DocumentBuilderFactory;->newDocumentBuilder()Ljavax/xml/parsers/DocumentBuilder;
-
-    move-result-object v2
-
-    invoke-virtual {v2}, Ljavax/xml/parsers/DocumentBuilder;->newDocument()Lorg/w3c/dom/Document;
-
-    move-result-object v1
-
-    const/4 v14, 0x1
-
-    invoke-interface {v1, v14}, Lorg/w3c/dom/Document;->setXmlStandalone(Z)V
-
-    const-string/jumbo v14, "RESTRICTED"
-
-    const/4 v15, 0x0
-
-    move-object/from16 v0, p1
-
-    invoke-virtual {v0, v15, v14}, Landroid/content/pm/aasa/RestrictList;->findNode(Landroid/content/pm/aasa/RestrictList$RestrictNode;Ljava/lang/String;)Landroid/content/pm/aasa/RestrictList$RestrictNode;
-
-    move-result-object v10
-
-    if-nez v10, :cond_2
-
-    const-string/jumbo v14, "SOULSY"
-
-    const-string/jumbo v15, "error to find RESTRICTED tag in xml"
-
-    invoke-static {v14, v15}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
-
-    return-void
-
-    :catch_0
-    move-exception v5
-
-    :goto_1
-    invoke-virtual {v5}, Ljava/lang/Throwable;->printStackTrace()V
-
-    goto :goto_0
-
-    :cond_2
-    invoke-virtual {v10}, Landroid/content/pm/aasa/RestrictList$RestrictNode;->getName()Ljava/lang/String;
-
-    move-result-object v14
-
-    invoke-interface {v1, v14}, Lorg/w3c/dom/Document;->createElement(Ljava/lang/String;)Lorg/w3c/dom/Element;
-
-    move-result-object v11
-
-    invoke-interface {v1, v11}, Lorg/w3c/dom/Document;->appendChild(Lorg/w3c/dom/Node;)Lorg/w3c/dom/Node;
-
-    new-instance v13, Landroid/content/pm/aasa/RestrictXMLList;
-
-    invoke-direct {v13, v10}, Landroid/content/pm/aasa/RestrictXMLList;-><init>(Landroid/content/pm/aasa/RestrictList$RestrictNode;)V
-
-    invoke-virtual {v13}, Landroid/content/pm/aasa/RestrictList;->getHead()Landroid/content/pm/aasa/RestrictList$RestrictNode;
-
-    move-result-object v14
-
-    invoke-virtual {v13, v1, v11, v14}, Landroid/content/pm/aasa/RestrictXMLList;->SetRestrictedInfoToDocument(Lorg/w3c/dom/Document;Lorg/w3c/dom/Element;Landroid/content/pm/aasa/RestrictList$RestrictNode;)V
-
-    new-instance v4, Ljavax/xml/transform/dom/DOMSource;
-
-    invoke-interface {v1}, Lorg/w3c/dom/Document;->getDocumentElement()Lorg/w3c/dom/Element;
-
-    move-result-object v14
-
-    invoke-direct {v4, v14}, Ljavax/xml/transform/dom/DOMSource;-><init>(Lorg/w3c/dom/Node;)V
-
-    new-instance v9, Ljavax/xml/transform/stream/StreamResult;
-
-    new-instance v14, Ljava/io/File;
-
-    invoke-direct {v14, v8}, Ljava/io/File;-><init>(Ljava/lang/String;)V
-
-    invoke-direct {v9, v14}, Ljavax/xml/transform/stream/StreamResult;-><init>(Ljava/io/File;)V
-
-    invoke-static {}, Ljavax/xml/transform/TransformerFactory;->newInstance()Ljavax/xml/transform/TransformerFactory;
-
-    move-result-object v14
-
-    invoke-virtual {v14}, Ljavax/xml/transform/TransformerFactory;->newTransformer()Ljavax/xml/transform/Transformer;
-
-    move-result-object v12
-
-    const-string/jumbo v14, "encoding"
-
-    const-string/jumbo v15, "UTF-8"
-
-    invoke-virtual {v12, v14, v15}, Ljavax/xml/transform/Transformer;->setOutputProperty(Ljava/lang/String;Ljava/lang/String;)V
-
-    const-string/jumbo v14, "omit-xml-declaration"
-
-    const-string/jumbo v15, "yes"
-
-    invoke-virtual {v12, v14, v15}, Ljavax/xml/transform/Transformer;->setOutputProperty(Ljava/lang/String;Ljava/lang/String;)V
-
-    const-string/jumbo v14, "indent"
-
-    const-string/jumbo v15, "yes"
-
-    invoke-virtual {v12, v14, v15}, Ljavax/xml/transform/Transformer;->setOutputProperty(Ljava/lang/String;Ljava/lang/String;)V
-
-    const-string/jumbo v14, "{http://xml.apache.org/xslt}indent-amount"
-
-    const-string/jumbo v15, "4"
-
-    invoke-virtual {v12, v14, v15}, Ljavax/xml/transform/Transformer;->setOutputProperty(Ljava/lang/String;Ljava/lang/String;)V
-
-    invoke-virtual {v12, v4, v9}, Ljavax/xml/transform/Transformer;->transform(Ljavax/xml/transform/Source;Ljavax/xml/transform/Result;)V
-
-    return-void
-
-    :catch_1
-    move-exception v5
-
-    move-object v6, v7
-
-    goto :goto_1
 .end method
 
 .method private static StringToByteArray(Ljava/lang/String;Ljava/util/List;)V
@@ -1819,6 +1658,338 @@
     move-result-object v3
 
     return-object v3
+.end method
+
+.method private calculateHashValueFromXml(Ljava/lang/String;)Ljava/lang/String;
+    .locals 24
+
+    const/4 v9, 0x0
+
+    const/4 v7, 0x0
+
+    const/16 v2, 0x2000
+
+    :try_start_0
+    new-instance v8, Ljava/io/RandomAccessFile;
+
+    const-string/jumbo v19, "/data/system/.aasa/RestrictedPackages.xml"
+
+    const-string/jumbo v20, "r"
+
+    move-object/from16 v0, v19
+
+    move-object/from16 v1, v20
+
+    invoke-direct {v8, v0, v1}, Ljava/io/RandomAccessFile;-><init>(Ljava/lang/String;Ljava/lang/String;)V
+    :try_end_0
+    .catch Ljava/security/NoSuchAlgorithmException; {:try_start_0 .. :try_end_0} :catch_5
+    .catch Ljava/io/FileNotFoundException; {:try_start_0 .. :try_end_0} :catch_3
+    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_1
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    :try_start_1
+    const-string/jumbo v19, "SHA-256"
+
+    invoke-static/range {v19 .. v19}, Ljava/security/MessageDigest;->getInstance(Ljava/lang/String;)Ljava/security/MessageDigest;
+
+    move-result-object v11
+
+    const-string/jumbo v19, "showmethemoney"
+
+    invoke-virtual/range {v19 .. v19}, Ljava/lang/String;->getBytes()[B
+
+    move-result-object v19
+
+    move-object/from16 v0, v19
+
+    invoke-virtual {v11, v0}, Ljava/security/MessageDigest;->update([B)V
+
+    new-array v3, v2, [B
+
+    const/4 v14, 0x0
+
+    const-wide/16 v16, 0x0
+
+    invoke-virtual {v8}, Ljava/io/RandomAccessFile;->length()J
+
+    move-result-wide v12
+
+    :goto_0
+    cmp-long v19, v16, v12
+
+    if-gez v19, :cond_1
+
+    sub-long v20, v12, v16
+
+    const-wide/16 v22, 0x2000
+
+    cmp-long v19, v20, v22
+
+    if-ltz v19, :cond_0
+
+    const-wide/16 v20, 0x2000
+
+    :goto_1
+    move-wide/from16 v0, v20
+
+    long-to-int v0, v0
+
+    move/from16 v18, v0
+
+    const/16 v19, 0x0
+
+    move/from16 v0, v19
+
+    move/from16 v1, v18
+
+    invoke-virtual {v8, v3, v0, v1}, Ljava/io/RandomAccessFile;->read([BII)I
+
+    const/16 v19, 0x0
+
+    move/from16 v0, v19
+
+    move/from16 v1, v18
+
+    invoke-virtual {v11, v3, v0, v1}, Ljava/security/MessageDigest;->update([BII)V
+
+    move/from16 v0, v18
+
+    int-to-long v0, v0
+
+    move-wide/from16 v20, v0
+
+    add-long v16, v16, v20
+
+    goto :goto_0
+
+    :cond_0
+    sub-long v20, v12, v16
+
+    goto :goto_1
+
+    :cond_1
+    invoke-virtual {v11}, Ljava/security/MessageDigest;->getDigestLength()I
+
+    move-result v19
+
+    move/from16 v0, v19
+
+    new-array v14, v0, [B
+
+    invoke-virtual {v11}, Ljava/security/MessageDigest;->digest()[B
+
+    move-result-object v14
+
+    new-instance v15, Ljava/lang/StringBuffer;
+
+    invoke-direct {v15}, Ljava/lang/StringBuffer;-><init>()V
+
+    const/4 v10, 0x0
+
+    :goto_2
+    array-length v0, v14
+
+    move/from16 v19, v0
+
+    move/from16 v0, v19
+
+    if-ge v10, v0, :cond_2
+
+    aget-byte v19, v14, v10
+
+    move/from16 v0, v19
+
+    and-int/lit16 v0, v0, 0xff
+
+    move/from16 v19, v0
+
+    move/from16 v0, v19
+
+    add-int/lit16 v0, v0, 0x100
+
+    move/from16 v19, v0
+
+    const/16 v20, 0x10
+
+    invoke-static/range {v19 .. v20}, Ljava/lang/Integer;->toString(II)Ljava/lang/String;
+
+    move-result-object v19
+
+    const/16 v20, 0x1
+
+    invoke-virtual/range {v19 .. v20}, Ljava/lang/String;->substring(I)Ljava/lang/String;
+
+    move-result-object v19
+
+    move-object/from16 v0, v19
+
+    invoke-virtual {v15, v0}, Ljava/lang/StringBuffer;->append(Ljava/lang/String;)Ljava/lang/StringBuffer;
+
+    add-int/lit8 v10, v10, 0x1
+
+    goto :goto_2
+
+    :cond_2
+    invoke-virtual {v15}, Ljava/lang/StringBuffer;->toString()Ljava/lang/String;
+    :try_end_1
+    .catch Ljava/security/NoSuchAlgorithmException; {:try_start_1 .. :try_end_1} :catch_8
+    .catch Ljava/io/FileNotFoundException; {:try_start_1 .. :try_end_1} :catch_9
+    .catch Ljava/io/IOException; {:try_start_1 .. :try_end_1} :catch_a
+    .catchall {:try_start_1 .. :try_end_1} :catchall_1
+
+    move-result-object v9
+
+    if-eqz v8, :cond_3
+
+    :try_start_2
+    invoke-virtual {v8}, Ljava/io/RandomAccessFile;->close()V
+    :try_end_2
+    .catch Ljava/io/IOException; {:try_start_2 .. :try_end_2} :catch_0
+
+    :cond_3
+    :goto_3
+    move-object v7, v8
+
+    :cond_4
+    :goto_4
+    if-nez v9, :cond_5
+
+    const-string/jumbo v9, ""
+
+    :cond_5
+    return-object v9
+
+    :catch_0
+    move-exception v5
+
+    invoke-virtual {v5}, Ljava/lang/Throwable;->printStackTrace()V
+
+    goto :goto_3
+
+    :catch_1
+    move-exception v5
+
+    :goto_5
+    :try_start_3
+    invoke-virtual {v5}, Ljava/lang/Throwable;->printStackTrace()V
+    :try_end_3
+    .catchall {:try_start_3 .. :try_end_3} :catchall_0
+
+    if-eqz v7, :cond_4
+
+    :try_start_4
+    invoke-virtual {v7}, Ljava/io/RandomAccessFile;->close()V
+    :try_end_4
+    .catch Ljava/io/IOException; {:try_start_4 .. :try_end_4} :catch_2
+
+    goto :goto_4
+
+    :catch_2
+    move-exception v5
+
+    invoke-virtual {v5}, Ljava/lang/Throwable;->printStackTrace()V
+
+    goto :goto_4
+
+    :catch_3
+    move-exception v4
+
+    :goto_6
+    :try_start_5
+    invoke-virtual {v4}, Ljava/lang/Throwable;->printStackTrace()V
+    :try_end_5
+    .catchall {:try_start_5 .. :try_end_5} :catchall_0
+
+    if-eqz v7, :cond_4
+
+    :try_start_6
+    invoke-virtual {v7}, Ljava/io/RandomAccessFile;->close()V
+    :try_end_6
+    .catch Ljava/io/IOException; {:try_start_6 .. :try_end_6} :catch_4
+
+    goto :goto_4
+
+    :catch_4
+    move-exception v5
+
+    invoke-virtual {v5}, Ljava/lang/Throwable;->printStackTrace()V
+
+    goto :goto_4
+
+    :catch_5
+    move-exception v6
+
+    :goto_7
+    :try_start_7
+    invoke-virtual {v6}, Ljava/lang/Throwable;->printStackTrace()V
+    :try_end_7
+    .catchall {:try_start_7 .. :try_end_7} :catchall_0
+
+    if-eqz v7, :cond_4
+
+    :try_start_8
+    invoke-virtual {v7}, Ljava/io/RandomAccessFile;->close()V
+    :try_end_8
+    .catch Ljava/io/IOException; {:try_start_8 .. :try_end_8} :catch_6
+
+    goto :goto_4
+
+    :catch_6
+    move-exception v5
+
+    invoke-virtual {v5}, Ljava/lang/Throwable;->printStackTrace()V
+
+    goto :goto_4
+
+    :catchall_0
+    move-exception v19
+
+    :goto_8
+    if-eqz v7, :cond_6
+
+    :try_start_9
+    invoke-virtual {v7}, Ljava/io/RandomAccessFile;->close()V
+    :try_end_9
+    .catch Ljava/io/IOException; {:try_start_9 .. :try_end_9} :catch_7
+
+    :cond_6
+    :goto_9
+    throw v19
+
+    :catch_7
+    move-exception v5
+
+    invoke-virtual {v5}, Ljava/lang/Throwable;->printStackTrace()V
+
+    goto :goto_9
+
+    :catchall_1
+    move-exception v19
+
+    move-object v7, v8
+
+    goto :goto_8
+
+    :catch_8
+    move-exception v6
+
+    move-object v7, v8
+
+    goto :goto_7
+
+    :catch_9
+    move-exception v4
+
+    move-object v7, v8
+
+    goto :goto_6
+
+    :catch_a
+    move-exception v5
+
+    move-object v7, v8
+
+    goto :goto_5
 .end method
 
 .method private checkExistTAG(Lorg/xmlpull/v1/XmlPullParser;Ljava/lang/String;)Z
@@ -2490,6 +2661,50 @@
     goto/16 :goto_1
 .end method
 
+.method private checkRestrictIntegrity()Z
+    .locals 3
+
+    const-string/jumbo v2, "/data/system/.aasa/RestrictedPackages.xml"
+
+    invoke-direct {p0, v2}, Landroid/content/pm/aasa/AASATokenParser;->calculateHashValueFromXml(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v0
+
+    const-string/jumbo v2, "/data/system/.aasa/rTicket"
+
+    invoke-direct {p0, v2}, Landroid/content/pm/aasa/AASATokenParser;->getCalculatedHashValueFromFile(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v1
+
+    const-string/jumbo v2, ""
+
+    invoke-virtual {v2, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v2
+
+    if-nez v2, :cond_0
+
+    const-string/jumbo v2, ""
+
+    invoke-virtual {v2, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v2
+
+    if-eqz v2, :cond_1
+
+    :cond_0
+    const/4 v2, 0x0
+
+    return v2
+
+    :cond_1
+    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v2
+
+    return v2
+.end method
+
 .method private checkTokentarget(Ljava/lang/String;Ljava/lang/String;)Z
     .locals 11
 
@@ -2945,6 +3160,78 @@
     return-object v4
 .end method
 
+.method private convertMillsToString(J)Ljava/lang/String;
+    .locals 3
+
+    new-instance v1, Ljava/text/SimpleDateFormat;
+
+    const-string/jumbo v2, "yyyyMMdd"
+
+    invoke-direct {v1, v2}, Ljava/text/SimpleDateFormat;-><init>(Ljava/lang/String;)V
+
+    invoke-static {}, Ljava/util/Calendar;->getInstance()Ljava/util/Calendar;
+
+    move-result-object v0
+
+    invoke-virtual {v0, p1, p2}, Ljava/util/Calendar;->setTimeInMillis(J)V
+
+    invoke-virtual {v0}, Ljava/util/Calendar;->getTime()Ljava/util/Date;
+
+    move-result-object v2
+
+    invoke-virtual {v1, v2}, Ljava/text/DateFormat;->format(Ljava/util/Date;)Ljava/lang/String;
+
+    move-result-object v2
+
+    return-object v2
+.end method
+
+.method private convertStringToMills(Ljava/lang/String;)J
+    .locals 7
+
+    iget-boolean v3, p0, Landroid/content/pm/aasa/AASATokenParser;->DEBUG:Z
+
+    if-eqz v3, :cond_0
+
+    iget-object v3, p0, Landroid/content/pm/aasa/AASATokenParser;->TAG:Ljava/lang/String;
+
+    const-string/jumbo v6, "convertStringToMills : "
+
+    invoke-static {v3, v6}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    :cond_0
+    new-instance v2, Ljava/text/SimpleDateFormat;
+
+    const-string/jumbo v3, "yyyyMMdd"
+
+    invoke-direct {v2, v3}, Ljava/text/SimpleDateFormat;-><init>(Ljava/lang/String;)V
+
+    const-wide/16 v4, 0x0
+
+    :try_start_0
+    invoke-virtual {v2, p1}, Ljava/text/DateFormat;->parse(Ljava/lang/String;)Ljava/util/Date;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/util/Date;->getTime()J
+    :try_end_0
+    .catch Ljava/text/ParseException; {:try_start_0 .. :try_end_0} :catch_0
+
+    move-result-wide v4
+
+    :goto_0
+    return-wide v4
+
+    :catch_0
+    move-exception v1
+
+    invoke-virtual {v1}, Ljava/lang/Throwable;->printStackTrace()V
+
+    const-wide/16 v4, -0x1
+
+    goto :goto_0
+.end method
+
 .method private static convertToHex([B)Ljava/lang/String;
     .locals 8
 
@@ -3019,6 +3306,360 @@
     move-result-object v5
 
     return-object v5
+.end method
+
+.method private getCalculatedHashValueFromFile(Ljava/lang/String;)Ljava/lang/String;
+    .locals 7
+
+    const/4 v5, 0x0
+
+    new-instance v4, Ljava/io/File;
+
+    invoke-direct {v4, p1}, Ljava/io/File;-><init>(Ljava/lang/String;)V
+
+    const/4 v0, 0x0
+
+    :try_start_0
+    new-instance v1, Ljava/io/BufferedReader;
+
+    new-instance v6, Ljava/io/FileReader;
+
+    invoke-direct {v6, v4}, Ljava/io/FileReader;-><init>(Ljava/io/File;)V
+
+    invoke-direct {v1, v6}, Ljava/io/BufferedReader;-><init>(Ljava/io/Reader;)V
+    :try_end_0
+    .catch Ljava/io/FileNotFoundException; {:try_start_0 .. :try_end_0} :catch_3
+    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_1
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    :try_start_1
+    invoke-virtual {v1}, Ljava/io/BufferedReader;->readLine()Ljava/lang/String;
+    :try_end_1
+    .catch Ljava/io/FileNotFoundException; {:try_start_1 .. :try_end_1} :catch_6
+    .catch Ljava/io/IOException; {:try_start_1 .. :try_end_1} :catch_7
+    .catchall {:try_start_1 .. :try_end_1} :catchall_1
+
+    move-result-object v5
+
+    if-eqz v1, :cond_0
+
+    :try_start_2
+    invoke-virtual {v1}, Ljava/io/BufferedReader;->close()V
+    :try_end_2
+    .catch Ljava/io/IOException; {:try_start_2 .. :try_end_2} :catch_0
+
+    :cond_0
+    :goto_0
+    move-object v0, v1
+
+    :cond_1
+    :goto_1
+    if-nez v5, :cond_2
+
+    const-string/jumbo v5, ""
+
+    :cond_2
+    return-object v5
+
+    :catch_0
+    move-exception v3
+
+    invoke-virtual {v3}, Ljava/lang/Throwable;->printStackTrace()V
+
+    goto :goto_0
+
+    :catch_1
+    move-exception v3
+
+    :goto_2
+    :try_start_3
+    invoke-virtual {v3}, Ljava/lang/Throwable;->printStackTrace()V
+    :try_end_3
+    .catchall {:try_start_3 .. :try_end_3} :catchall_0
+
+    if-eqz v0, :cond_1
+
+    :try_start_4
+    invoke-virtual {v0}, Ljava/io/BufferedReader;->close()V
+    :try_end_4
+    .catch Ljava/io/IOException; {:try_start_4 .. :try_end_4} :catch_2
+
+    goto :goto_1
+
+    :catch_2
+    move-exception v3
+
+    invoke-virtual {v3}, Ljava/lang/Throwable;->printStackTrace()V
+
+    goto :goto_1
+
+    :catch_3
+    move-exception v2
+
+    :goto_3
+    :try_start_5
+    invoke-virtual {v2}, Ljava/lang/Throwable;->printStackTrace()V
+    :try_end_5
+    .catchall {:try_start_5 .. :try_end_5} :catchall_0
+
+    if-eqz v0, :cond_1
+
+    :try_start_6
+    invoke-virtual {v0}, Ljava/io/BufferedReader;->close()V
+    :try_end_6
+    .catch Ljava/io/IOException; {:try_start_6 .. :try_end_6} :catch_4
+
+    goto :goto_1
+
+    :catch_4
+    move-exception v3
+
+    invoke-virtual {v3}, Ljava/lang/Throwable;->printStackTrace()V
+
+    goto :goto_1
+
+    :catchall_0
+    move-exception v6
+
+    :goto_4
+    if-eqz v0, :cond_3
+
+    :try_start_7
+    invoke-virtual {v0}, Ljava/io/BufferedReader;->close()V
+    :try_end_7
+    .catch Ljava/io/IOException; {:try_start_7 .. :try_end_7} :catch_5
+
+    :cond_3
+    :goto_5
+    throw v6
+
+    :catch_5
+    move-exception v3
+
+    invoke-virtual {v3}, Ljava/lang/Throwable;->printStackTrace()V
+
+    goto :goto_5
+
+    :catchall_1
+    move-exception v6
+
+    move-object v0, v1
+
+    goto :goto_4
+
+    :catch_6
+    move-exception v2
+
+    move-object v0, v1
+
+    goto :goto_3
+
+    :catch_7
+    move-exception v3
+
+    move-object v0, v1
+
+    goto :goto_2
+.end method
+
+.method private getTrustedFile()[Ljava/lang/String;
+    .locals 10
+
+    const/4 v9, 0x3
+
+    const/4 v8, 0x0
+
+    const/4 v5, 0x0
+
+    const/4 v3, 0x0
+
+    const/4 v0, 0x0
+
+    :try_start_0
+    new-instance v4, Ljava/io/FileReader;
+
+    iget-object v7, p0, Landroid/content/pm/aasa/AASATokenParser;->secureTimePath:Ljava/lang/String;
+
+    invoke-direct {v4, v7}, Ljava/io/FileReader;-><init>(Ljava/lang/String;)V
+    :try_end_0
+    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_1
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    if-eqz v4, :cond_2
+
+    :try_start_1
+    new-instance v1, Ljava/io/BufferedReader;
+
+    invoke-direct {v1, v4}, Ljava/io/BufferedReader;-><init>(Ljava/io/Reader;)V
+    :try_end_1
+    .catch Ljava/io/IOException; {:try_start_1 .. :try_end_1} :catch_4
+    .catchall {:try_start_1 .. :try_end_1} :catchall_1
+
+    if-eqz v1, :cond_7
+
+    :cond_0
+    :try_start_2
+    invoke-virtual {v1}, Ljava/io/BufferedReader;->readLine()Ljava/lang/String;
+
+    move-result-object v6
+
+    if-eqz v6, :cond_1
+
+    const-string/jumbo v7, ","
+
+    invoke-virtual {v6, v7}, Ljava/lang/String;->split(Ljava/lang/String;)[Ljava/lang/String;
+
+    move-result-object v5
+
+    if-eqz v5, :cond_0
+
+    array-length v7, v5
+
+    if-ne v7, v9, :cond_0
+
+    :cond_1
+    invoke-virtual {v4}, Ljava/io/InputStreamReader;->close()V
+    :try_end_2
+    .catch Ljava/io/IOException; {:try_start_2 .. :try_end_2} :catch_5
+    .catchall {:try_start_2 .. :try_end_2} :catchall_2
+
+    move-object v0, v1
+
+    :cond_2
+    :goto_0
+    if-eqz v0, :cond_3
+
+    :try_start_3
+    invoke-virtual {v0}, Ljava/io/BufferedReader;->close()V
+    :try_end_3
+    .catch Ljava/io/IOException; {:try_start_3 .. :try_end_3} :catch_0
+
+    :cond_3
+    :goto_1
+    move-object v3, v4
+
+    :cond_4
+    :goto_2
+    if-eqz v5, :cond_6
+
+    array-length v7, v5
+
+    if-ne v7, v9, :cond_6
+
+    return-object v5
+
+    :catch_0
+    move-exception v2
+
+    goto :goto_1
+
+    :catch_1
+    move-exception v2
+
+    :goto_3
+    :try_start_4
+    invoke-virtual {v2}, Ljava/lang/Throwable;->printStackTrace()V
+    :try_end_4
+    .catchall {:try_start_4 .. :try_end_4} :catchall_0
+
+    if-eqz v0, :cond_4
+
+    :try_start_5
+    invoke-virtual {v0}, Ljava/io/BufferedReader;->close()V
+    :try_end_5
+    .catch Ljava/io/IOException; {:try_start_5 .. :try_end_5} :catch_2
+
+    goto :goto_2
+
+    :catch_2
+    move-exception v2
+
+    goto :goto_2
+
+    :catchall_0
+    move-exception v7
+
+    :goto_4
+    if-eqz v0, :cond_5
+
+    :try_start_6
+    invoke-virtual {v0}, Ljava/io/BufferedReader;->close()V
+    :try_end_6
+    .catch Ljava/io/IOException; {:try_start_6 .. :try_end_6} :catch_3
+
+    :cond_5
+    :goto_5
+    throw v7
+
+    :catch_3
+    move-exception v2
+
+    goto :goto_5
+
+    :cond_6
+    return-object v8
+
+    :catchall_1
+    move-exception v7
+
+    move-object v3, v4
+
+    goto :goto_4
+
+    :catchall_2
+    move-exception v7
+
+    move-object v0, v1
+
+    move-object v3, v4
+
+    goto :goto_4
+
+    :catch_4
+    move-exception v2
+
+    move-object v3, v4
+
+    goto :goto_3
+
+    :catch_5
+    move-exception v2
+
+    move-object v0, v1
+
+    move-object v3, v4
+
+    goto :goto_3
+
+    :cond_7
+    move-object v0, v1
+
+    goto :goto_0
+.end method
+
+.method private hasTrustedTime()Z
+    .locals 2
+
+    new-instance v0, Ljava/io/File;
+
+    iget-object v1, p0, Landroid/content/pm/aasa/AASATokenParser;->secureTimePath:Ljava/lang/String;
+
+    invoke-direct {v0, v1}, Ljava/io/File;-><init>(Ljava/lang/String;)V
+
+    invoke-virtual {v0}, Ljava/io/File;->exists()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    const/4 v0, 0x1
+
+    return v0
+
+    :cond_0
+    const/4 v0, 0x0
+
+    return v0
 .end method
 
 .method public static isInteger(Ljava/lang/String;)Z
@@ -3491,7 +4132,7 @@
 .end method
 
 .method private parseRestrictList(Lorg/xmlpull/v1/XmlPullParser;Ljava/lang/String;Ljava/util/HashMap;)I
-    .locals 7
+    .locals 3
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -3514,125 +4155,49 @@
         }
     .end annotation
 
-    const-string/jumbo v4, "AASATokenParser"
-
-    const-string/jumbo v5, "parseRestrictList()"
-
-    invoke-static {v4, v5}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
-
-    const-string/jumbo v4, "AASATokenParser"
-
-    new-instance v5, Ljava/lang/StringBuilder;
-
-    invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string/jumbo v6, "\ttarget = "
-
-    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v5
-
-    invoke-virtual {v5, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v5
-
-    invoke-virtual {v5}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v5
-
-    invoke-static {v4, v5}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
-
     const/4 v0, 0x0
 
-    new-instance v3, Ljava/util/ArrayList;
+    new-instance v1, Ljava/util/ArrayList;
 
-    invoke-direct {v3}, Ljava/util/ArrayList;-><init>()V
+    invoke-direct {v1}, Ljava/util/ArrayList;-><init>()V
 
-    invoke-direct {p0, p1, p2, v3}, Landroid/content/pm/aasa/AASATokenParser;->parseXML(Lorg/xmlpull/v1/XmlPullParser;Ljava/lang/String;Ljava/util/ArrayList;)Z
+    invoke-direct {p0, p1, p2, v1}, Landroid/content/pm/aasa/AASATokenParser;->parseXML(Lorg/xmlpull/v1/XmlPullParser;Ljava/lang/String;Ljava/util/ArrayList;)Z
 
-    move-result v4
+    move-result v2
 
-    if-nez v4, :cond_0
+    if-nez v2, :cond_0
 
     return v0
 
     :cond_0
-    invoke-virtual {v3}, Ljava/util/ArrayList;->size()I
+    invoke-virtual {p3, p2, v1}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    move-result v4
+    const-string/jumbo v2, "DATE"
 
-    if-eqz v4, :cond_1
+    invoke-virtual {v1, v2}, Ljava/util/ArrayList;->contains(Ljava/lang/Object;)Z
 
-    invoke-interface {v3}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
+    move-result v2
 
-    move-result-object v2
+    if-nez v2, :cond_1
 
-    :goto_0
-    invoke-interface {v2}, Ljava/util/Iterator;->hasNext()Z
+    const-string/jumbo v2, "REVOCATE"
 
-    move-result v4
+    invoke-virtual {v1, v2}, Ljava/util/ArrayList;->contains(Ljava/lang/Object;)Z
 
-    if-eqz v4, :cond_1
+    move-result v2
 
-    invoke-interface {v2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v1
-
-    check-cast v1, Ljava/lang/String;
-
-    const-string/jumbo v4, "AASATokenParser"
-
-    new-instance v5, Ljava/lang/StringBuilder;
-
-    invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string/jumbo v6, "\t "
-
-    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v5
-
-    invoke-virtual {v5, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v5
-
-    invoke-virtual {v5}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v5
-
-    invoke-static {v4, v5}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
-
-    goto :goto_0
+    if-eqz v2, :cond_2
 
     :cond_1
-    invoke-virtual {p3, p2, v3}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
-    const-string/jumbo v4, "DATE"
-
-    invoke-virtual {v3, v4}, Ljava/util/ArrayList;->contains(Ljava/lang/Object;)Z
-
-    move-result v4
-
-    if-nez v4, :cond_2
-
-    const-string/jumbo v4, "REVOCATE"
-
-    invoke-virtual {v3, v4}, Ljava/util/ArrayList;->contains(Ljava/lang/Object;)Z
-
-    move-result v4
-
-    if-eqz v4, :cond_3
-
-    :cond_2
     const/4 v0, 0x1
 
-    :goto_1
+    :goto_0
     return v0
 
-    :cond_3
+    :cond_2
     const/4 v0, 0x2
 
-    goto :goto_1
+    goto :goto_0
 .end method
 
 .method private parseXML(Lorg/xmlpull/v1/XmlPullParser;Ljava/lang/String;Ljava/util/ArrayList;)Z
@@ -3729,6 +4294,247 @@
         :pswitch_1
         :pswitch_0
     .end packed-switch
+.end method
+
+.method private removeRestrictFile()V
+    .locals 7
+
+    const/4 v4, 0x0
+
+    const-string/jumbo v3, "/data/system/.aasa/"
+
+    const/4 v5, 0x2
+
+    new-array v1, v5, [Ljava/lang/String;
+
+    const-string/jumbo v5, "RestrictedPackages.xml"
+
+    aput-object v5, v1, v4
+
+    const-string/jumbo v5, "rTicket"
+
+    const/4 v6, 0x1
+
+    aput-object v5, v1, v6
+
+    array-length v5, v1
+
+    :goto_0
+    if-ge v4, v5, :cond_1
+
+    aget-object v2, v1, v4
+
+    new-instance v0, Ljava/io/File;
+
+    new-instance v6, Ljava/lang/StringBuilder;
+
+    invoke-direct {v6}, Ljava/lang/StringBuilder;-><init>()V
+
+    invoke-virtual {v6, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v6
+
+    invoke-virtual {v6, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v6
+
+    invoke-virtual {v6}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v6
+
+    invoke-direct {v0, v6}, Ljava/io/File;-><init>(Ljava/lang/String;)V
+
+    invoke-virtual {v0}, Ljava/io/File;->exists()Z
+
+    move-result v6
+
+    if-eqz v6, :cond_0
+
+    invoke-virtual {v0}, Ljava/io/File;->delete()Z
+
+    :cond_0
+    add-int/lit8 v4, v4, 0x1
+
+    goto :goto_0
+
+    :cond_1
+    return-void
+.end method
+
+.method private setIntegrityValueTofile(Ljava/lang/String;)Z
+    .locals 6
+
+    const-string/jumbo v4, "/data/system/.aasa/RestrictedPackages.xml"
+
+    invoke-direct {p0, v4}, Landroid/content/pm/aasa/AASATokenParser;->calculateHashValueFromXml(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v2
+
+    new-instance v1, Ljava/io/File;
+
+    invoke-direct {v1, p1}, Ljava/io/File;-><init>(Ljava/lang/String;)V
+
+    :try_start_0
+    invoke-virtual {v1}, Ljava/io/File;->exists()Z
+
+    move-result v4
+
+    if-nez v4, :cond_0
+
+    invoke-virtual {v1}, Ljava/io/File;->createNewFile()Z
+
+    :cond_0
+    new-instance v3, Ljava/io/PrintWriter;
+
+    new-instance v4, Ljava/io/File;
+
+    invoke-direct {v4, p1}, Ljava/io/File;-><init>(Ljava/lang/String;)V
+
+    invoke-direct {v3, v4}, Ljava/io/PrintWriter;-><init>(Ljava/io/File;)V
+
+    invoke-virtual {v3, v2}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
+
+    invoke-virtual {v3}, Ljava/io/PrintWriter;->close()V
+    :try_end_0
+    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
+
+    :goto_0
+    invoke-direct {p0, p1}, Landroid/content/pm/aasa/AASATokenParser;->getCalculatedHashValueFromFile(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v4
+
+    invoke-virtual {v2, v4}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v4
+
+    return v4
+
+    :catch_0
+    move-exception v0
+
+    const-string/jumbo v4, "AASATokenParser"
+
+    const-string/jumbo v5, "fail to set integrity value"
+
+    invoke-static {v4, v5}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
+
+    invoke-virtual {v0}, Ljava/lang/Throwable;->printStackTrace()V
+
+    goto :goto_0
+.end method
+
+.method private setTrustTimeByToken(Ljava/lang/String;)V
+    .locals 6
+
+    invoke-direct {p0, p1}, Landroid/content/pm/aasa/AASATokenParser;->convertStringToMills(Ljava/lang/String;)J
+
+    move-result-wide v2
+
+    invoke-static {}, Landroid/os/SystemClock;->elapsedRealtime()J
+
+    move-result-wide v4
+
+    const/4 v1, 0x3
+
+    move-object v0, p0
+
+    invoke-direct/range {v0 .. v5}, Landroid/content/pm/aasa/AASATokenParser;->setTrustedFile(IJJ)V
+
+    return-void
+.end method
+
+.method private setTrustedFile(IJJ)V
+    .locals 6
+
+    :try_start_0
+    new-instance v1, Ljava/io/PrintWriter;
+
+    iget-object v2, p0, Landroid/content/pm/aasa/AASATokenParser;->secureTimePath:Ljava/lang/String;
+
+    invoke-direct {v1, v2}, Ljava/io/PrintWriter;-><init>(Ljava/lang/String;)V
+
+    new-instance v2, Ljava/lang/StringBuilder;
+
+    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string/jumbo v3, ""
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    invoke-virtual {v2, p1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    const-string/jumbo v3, ","
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    invoke-virtual {v2, p2, p3}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    const-string/jumbo v3, ","
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    invoke-virtual {v2, p4, p5}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-virtual {v1, v2}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
+
+    invoke-virtual {v1}, Ljava/io/PrintWriter;->flush()V
+
+    invoke-virtual {v1}, Ljava/io/PrintWriter;->close()V
+    :try_end_0
+    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
+
+    :cond_0
+    :goto_0
+    invoke-virtual {p0}, Landroid/content/pm/aasa/AASATokenParser;->getTrustedToday()Ljava/lang/String;
+
+    return-void
+
+    :catch_0
+    move-exception v0
+
+    iget-boolean v2, p0, Landroid/content/pm/aasa/AASATokenParser;->DEBUG:Z
+
+    if-eqz v2, :cond_0
+
+    iget-object v2, p0, Landroid/content/pm/aasa/AASATokenParser;->TAG:Ljava/lang/String;
+
+    new-instance v3, Ljava/lang/StringBuilder;
+
+    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string/jumbo v4, "setTrustedTime() "
+
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    invoke-virtual {v3, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-static {v2, v3}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    goto :goto_0
 .end method
 
 .method private static toChars([B)[C
@@ -4437,7 +5243,7 @@
 
     iput-object v0, v1, Landroid/content/pm/aasa/AASATokenParser;->mTokenContents:[B
     :try_end_1
-    .catch Ljava/io/IOException; {:try_start_1 .. :try_end_1} :catch_5
+    .catch Ljava/io/IOException; {:try_start_1 .. :try_end_1} :catch_6
     .catchall {:try_start_1 .. :try_end_1} :catchall_1
 
     :cond_1
@@ -4754,6 +5560,12 @@
     invoke-static/range {v38 .. v39}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
     const-string/jumbo v38, "PACKAGE"
+
+    move-object/from16 v0, v38
+
+    invoke-virtual {v6, v0}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+
+    const-string/jumbo v38, "CREATE"
 
     move-object/from16 v0, v38
 
@@ -5617,7 +6429,7 @@
 
     move/from16 v0, v38
 
-    if-ge v12, v0, :cond_37
+    if-ge v12, v0, :cond_39
 
     invoke-virtual {v6, v12}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
@@ -6196,7 +7008,7 @@
 
     move-result v38
 
-    if-eqz v38, :cond_2d
+    if-eqz v38, :cond_2f
 
     const-string/jumbo v39, "AASATokenParser"
 
@@ -6243,7 +7055,7 @@
     .catch Ljava/io/IOException; {:try_start_7 .. :try_end_7} :catch_1
     .catch Lorg/xmlpull/v1/XmlPullParserException; {:try_start_7 .. :try_end_7} :catch_2
 
-    if-eqz v15, :cond_2c
+    if-eqz v15, :cond_2d
 
     :try_start_8
     move-object/from16 v0, v36
@@ -6283,17 +7095,7 @@
     return v38
 
     :cond_2a
-    new-instance v38, Ljava/text/SimpleDateFormat;
-
-    const-string/jumbo v39, "yyyyMMdd"
-
-    invoke-direct/range {v38 .. v39}, Ljava/text/SimpleDateFormat;-><init>(Ljava/lang/String;)V
-
-    new-instance v39, Ljava/util/Date;
-
-    invoke-direct/range {v39 .. v39}, Ljava/util/Date;-><init>()V
-
-    invoke-virtual/range {v38 .. v39}, Ljava/text/DateFormat;->format(Ljava/util/Date;)Ljava/lang/String;
+    invoke-virtual/range {p0 .. p0}, Landroid/content/pm/aasa/AASATokenParser;->getTrustedToday()Ljava/lang/String;
 
     move-result-object v38
 
@@ -6301,6 +7103,31 @@
 
     move-result-object v34
 
+    invoke-virtual/range {v34 .. v34}, Ljava/lang/Integer;->intValue()I
+
+    move-result v38
+
+    invoke-static {v7}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
+
+    move-result v39
+
+    move/from16 v0, v38
+
+    move/from16 v1, v39
+
+    if-ge v0, v1, :cond_2b
+
+    const-string/jumbo v38, "AASATokenParser"
+
+    const-string/jumbo v39, "createDate is bigger than today."
+
+    invoke-static/range {v38 .. v39}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-object/from16 v0, p0
+
+    invoke-direct {v0, v7}, Landroid/content/pm/aasa/AASATokenParser;->setTrustTimeByToken(Ljava/lang/String;)V
+
+    :cond_2b
     invoke-virtual/range {v34 .. v34}, Ljava/lang/Integer;->intValue()I
 
     move-result v38
@@ -6313,7 +7140,7 @@
 
     move/from16 v1, v39
 
-    if-le v0, v1, :cond_2b
+    if-le v0, v1, :cond_2c
 
     const-string/jumbo v38, "AASATokenParser"
 
@@ -6329,7 +7156,7 @@
 
     return v38
 
-    :cond_2b
+    :cond_2c
     add-int/lit8 v33, v33, 0x1
 
     add-int/lit8 v33, v33, 0x1
@@ -6345,27 +7172,86 @@
     const-string/jumbo v39, "CREATE : NumberFormatException"
 
     invoke-static/range {v38 .. v39}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+    :try_end_9
+    .catch Ljava/io/IOException; {:try_start_9 .. :try_end_9} :catch_1
+    .catch Lorg/xmlpull/v1/XmlPullParserException; {:try_start_9 .. :try_end_9} :catch_2
 
     const/16 v38, 0x1
 
     return v38
 
-    :cond_2c
+    :cond_2d
     const/4 v15, 0x1
 
+    :try_start_a
     move-object/from16 v0, v36
 
     invoke-virtual {v0, v12}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
-    move-result-object v7
+    move-result-object v38
 
-    check-cast v7, Ljava/lang/String;
+    move-object/from16 v0, v38
 
+    check-cast v0, Ljava/lang/String;
+
+    move-object v7, v0
+
+    invoke-virtual/range {p0 .. p0}, Landroid/content/pm/aasa/AASATokenParser;->getTrustedToday()Ljava/lang/String;
+
+    move-result-object v38
+
+    invoke-static/range {v38 .. v38}, Ljava/lang/Integer;->valueOf(Ljava/lang/String;)Ljava/lang/Integer;
+
+    move-result-object v34
+
+    invoke-virtual/range {v34 .. v34}, Ljava/lang/Integer;->intValue()I
+
+    move-result v38
+
+    invoke-static {v7}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
+
+    move-result v39
+
+    move/from16 v0, v38
+
+    move/from16 v1, v39
+
+    if-ge v0, v1, :cond_2e
+
+    const-string/jumbo v38, "AASATokenParser"
+
+    const-string/jumbo v39, "createDate is bigger than today."
+
+    invoke-static/range {v38 .. v39}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-object/from16 v0, p0
+
+    invoke-direct {v0, v7}, Landroid/content/pm/aasa/AASATokenParser;->setTrustTimeByToken(Ljava/lang/String;)V
+    :try_end_a
+    .catch Ljava/lang/NumberFormatException; {:try_start_a .. :try_end_a} :catch_4
+    .catch Ljava/io/IOException; {:try_start_a .. :try_end_a} :catch_1
+    .catch Lorg/xmlpull/v1/XmlPullParserException; {:try_start_a .. :try_end_a} :catch_2
+
+    :cond_2e
     add-int/lit8 v33, v33, 0x1
 
     goto/16 :goto_8
 
-    :cond_2d
+    :catch_4
+    move-exception v27
+
+    :try_start_b
+    const-string/jumbo v38, "AASATokenParser"
+
+    const-string/jumbo v39, "CREATE : NumberFormatException"
+
+    invoke-static/range {v38 .. v39}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    const/16 v38, 0x1
+
+    return v38
+
+    :cond_2f
     invoke-virtual {v6, v12}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v38
@@ -6378,7 +7264,7 @@
 
     move-result v38
 
-    if-eqz v38, :cond_31
+    if-eqz v38, :cond_33
 
     const-string/jumbo v39, "AASATokenParser"
 
@@ -6421,13 +7307,13 @@
     move-object/from16 v1, v38
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-    :try_end_9
-    .catch Ljava/io/IOException; {:try_start_9 .. :try_end_9} :catch_1
-    .catch Lorg/xmlpull/v1/XmlPullParserException; {:try_start_9 .. :try_end_9} :catch_2
+    :try_end_b
+    .catch Ljava/io/IOException; {:try_start_b .. :try_end_b} :catch_1
+    .catch Lorg/xmlpull/v1/XmlPullParserException; {:try_start_b .. :try_end_b} :catch_2
 
-    if-eqz v15, :cond_30
+    if-eqz v15, :cond_32
 
-    :try_start_a
+    :try_start_c
     move-object/from16 v0, v36
 
     invoke-virtual {v0, v12}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -6452,7 +7338,7 @@
 
     move/from16 v1, v39
 
-    if-le v0, v1, :cond_2e
+    if-le v0, v1, :cond_30
 
     const-string/jumbo v38, "AASATokenParser"
 
@@ -6464,18 +7350,8 @@
 
     return v38
 
-    :cond_2e
-    new-instance v38, Ljava/text/SimpleDateFormat;
-
-    const-string/jumbo v39, "yyyyMMdd"
-
-    invoke-direct/range {v38 .. v39}, Ljava/text/SimpleDateFormat;-><init>(Ljava/lang/String;)V
-
-    new-instance v39, Ljava/util/Date;
-
-    invoke-direct/range {v39 .. v39}, Ljava/util/Date;-><init>()V
-
-    invoke-virtual/range {v38 .. v39}, Ljava/text/DateFormat;->format(Ljava/util/Date;)Ljava/lang/String;
+    :cond_30
+    invoke-virtual/range {p0 .. p0}, Landroid/content/pm/aasa/AASATokenParser;->getTrustedToday()Ljava/lang/String;
 
     move-result-object v38
 
@@ -6495,31 +7371,31 @@
 
     move/from16 v1, v39
 
-    if-le v0, v1, :cond_2f
+    if-le v0, v1, :cond_31
 
     const-string/jumbo v38, "AASATokenParser"
 
     const-string/jumbo v39, "today Date is bigger than expiredDate."
 
     invoke-static/range {v38 .. v39}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-    :try_end_a
-    .catch Ljava/lang/NumberFormatException; {:try_start_a .. :try_end_a} :catch_4
-    .catch Ljava/io/IOException; {:try_start_a .. :try_end_a} :catch_1
-    .catch Lorg/xmlpull/v1/XmlPullParserException; {:try_start_a .. :try_end_a} :catch_2
+    :try_end_c
+    .catch Ljava/lang/NumberFormatException; {:try_start_c .. :try_end_c} :catch_5
+    .catch Ljava/io/IOException; {:try_start_c .. :try_end_c} :catch_1
+    .catch Lorg/xmlpull/v1/XmlPullParserException; {:try_start_c .. :try_end_c} :catch_2
 
     const/16 v38, 0x4
 
     return v38
 
-    :cond_2f
+    :cond_31
     add-int/lit8 v33, v33, 0x1
 
     goto/16 :goto_8
 
-    :catch_4
+    :catch_5
     move-exception v27
 
-    :try_start_b
+    :try_start_d
     const-string/jumbo v38, "AASATokenParser"
 
     const-string/jumbo v39, "EXPIRED : NumberFormatException"
@@ -6530,7 +7406,7 @@
 
     return v38
 
-    :cond_30
+    :cond_32
     const/4 v15, 0x1
 
     move-object/from16 v0, v36
@@ -6543,7 +7419,7 @@
 
     goto/16 :goto_8
 
-    :cond_31
+    :cond_33
     invoke-virtual {v6, v12}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v38
@@ -6556,7 +7432,7 @@
 
     move-result v38
 
-    if-eqz v38, :cond_32
+    if-eqz v38, :cond_34
 
     const-string/jumbo v39, "AASATokenParser"
 
@@ -6604,7 +7480,7 @@
 
     goto/16 :goto_8
 
-    :cond_32
+    :cond_34
     invoke-virtual {v6, v12}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v38
@@ -6617,7 +7493,7 @@
 
     move-result v38
 
-    if-eqz v38, :cond_33
+    if-eqz v38, :cond_35
 
     move-object/from16 v0, v36
 
@@ -6657,7 +7533,7 @@
 
     goto/16 :goto_8
 
-    :cond_33
+    :cond_35
     invoke-virtual {v6, v12}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v38
@@ -6670,7 +7546,7 @@
 
     move-result v38
 
-    if-eqz v38, :cond_34
+    if-eqz v38, :cond_36
 
     const-string/jumbo v39, "AASATokenParser"
 
@@ -6720,7 +7596,7 @@
 
     goto/16 :goto_8
 
-    :cond_34
+    :cond_36
     invoke-virtual {v6, v12}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v38
@@ -6757,7 +7633,7 @@
 
     invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    if-eqz v11, :cond_35
+    if-eqz v11, :cond_37
 
     const-string/jumbo v38, "RESTRICT"
 
@@ -6773,9 +7649,9 @@
 
     move-result v38
 
-    if-eqz v38, :cond_35
+    if-eqz v38, :cond_37
 
-    const-string/jumbo v38, "SOULSY"
+    const-string/jumbo v38, "AASATokenParser"
 
     const-string/jumbo v39, "find RESTRICT tag in XML"
 
@@ -6823,15 +7699,15 @@
 
     move-result v38
 
-    if-nez v38, :cond_35
+    if-nez v38, :cond_37
 
-    const-string/jumbo v38, "SOULSY"
+    const-string/jumbo v38, "AASATokenParser"
 
     const-string/jumbo v39, "cannot find PERMISSION tag in XML"
 
     invoke-static/range {v38 .. v39}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    :cond_35
+    :cond_37
     invoke-static {}, Lorg/xmlpull/v1/XmlPullParserFactory;->newInstance()Lorg/xmlpull/v1/XmlPullParserFactory;
 
     move-result-object v30
@@ -6860,7 +7736,7 @@
 
     invoke-interface {v0, v1, v2}, Lorg/xmlpull/v1/XmlPullParser;->setInput(Ljava/io/InputStream;Ljava/lang/String;)V
 
-    if-eqz v11, :cond_36
+    if-eqz v11, :cond_38
 
     const-string/jumbo v38, "CONDITION"
 
@@ -6876,9 +7752,9 @@
 
     move-result v38
 
-    if-eqz v38, :cond_36
+    if-eqz v38, :cond_38
 
-    const-string/jumbo v38, "SOULSY"
+    const-string/jumbo v38, "AASATokenParser"
 
     const-string/jumbo v39, "find CONDITION tag in XML"
 
@@ -6926,15 +7802,15 @@
 
     move-result v38
 
-    if-nez v38, :cond_36
+    if-nez v38, :cond_38
 
-    const-string/jumbo v38, "SOULSY"
+    const-string/jumbo v38, "AASATokenParser"
 
     const-string/jumbo v39, "cannot find DATELIMIT tag in XML"
 
     invoke-static/range {v38 .. v39}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    :cond_36
+    :cond_38
     invoke-static {}, Lorg/xmlpull/v1/XmlPullParserFactory;->newInstance()Lorg/xmlpull/v1/XmlPullParserFactory;
 
     move-result-object v30
@@ -6967,7 +7843,7 @@
 
     goto/16 :goto_8
 
-    :cond_37
+    :cond_39
     invoke-virtual {v6}, Ljava/util/ArrayList;->size()I
 
     move-result v38
@@ -6976,9 +7852,9 @@
 
     move/from16 v1, v33
 
-    if-ne v0, v1, :cond_3d
+    if-ne v0, v1, :cond_3f
 
-    if-nez v13, :cond_39
+    if-nez v13, :cond_3b
 
     const-string/jumbo v38, "AASATokenParser"
 
@@ -6986,7 +7862,7 @@
 
     invoke-static/range {v38 .. v39}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    if-eqz v11, :cond_38
+    if-eqz v11, :cond_3a
 
     move-object/from16 v0, p0
 
@@ -6994,12 +7870,12 @@
 
     invoke-direct {v0, v1}, Landroid/content/pm/aasa/AASATokenParser;->AddRestrictedInfoToXML(Ljava/util/HashMap;)V
 
-    :cond_38
+    :cond_3a
     const/16 v38, 0x0
 
     return v38
 
-    :cond_39
+    :cond_3b
     new-instance v35, Ljava/util/ArrayList;
 
     invoke-direct/range {v35 .. v35}, Ljava/util/ArrayList;-><init>()V
@@ -7018,7 +7894,7 @@
 
     move-result v38
 
-    if-eqz v38, :cond_3a
+    if-eqz v38, :cond_3c
 
     invoke-static {}, Lorg/xmlpull/v1/XmlPullParserFactory;->newInstance()Lorg/xmlpull/v1/XmlPullParserFactory;
 
@@ -7048,12 +7924,12 @@
 
     invoke-interface {v0, v1, v2}, Lorg/xmlpull/v1/XmlPullParser;->setInput(Ljava/io/InputStream;Ljava/lang/String;)V
 
-    :cond_3a
+    :cond_3c
     invoke-virtual/range {v35 .. v35}, Ljava/util/ArrayList;->size()I
 
     move-result v38
 
-    if-nez v38, :cond_3b
+    if-nez v38, :cond_3d
 
     const-string/jumbo v38, "AASATokenParser"
 
@@ -7065,7 +7941,7 @@
 
     return v38
 
-    :cond_3b
+    :cond_3d
     move-object/from16 v0, v35
 
     move-object/from16 v1, p2
@@ -7074,7 +7950,7 @@
 
     move-result v38
 
-    if-eqz v38, :cond_3c
+    if-eqz v38, :cond_3e
 
     const-string/jumbo v38, "AASATokenParser"
 
@@ -7106,7 +7982,7 @@
 
     return v38
 
-    :cond_3c
+    :cond_3e
     const-string/jumbo v38, "AASATokenParser"
 
     new-instance v39, Ljava/lang/StringBuilder;
@@ -7137,15 +8013,15 @@
 
     return v38
 
-    :cond_3d
+    :cond_3f
     const-string/jumbo v38, "AASATokenParser"
 
     const-string/jumbo v39, " Fail: auth"
 
     invoke-static/range {v38 .. v39}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
-    :try_end_b
-    .catch Ljava/io/IOException; {:try_start_b .. :try_end_b} :catch_1
-    .catch Lorg/xmlpull/v1/XmlPullParserException; {:try_start_b .. :try_end_b} :catch_2
+    :try_end_d
+    .catch Ljava/io/IOException; {:try_start_d .. :try_end_d} :catch_1
+    .catch Lorg/xmlpull/v1/XmlPullParserException; {:try_start_d .. :try_end_d} :catch_2
 
     const/16 v38, 0x1
 
@@ -7158,7 +8034,7 @@
 
     goto/16 :goto_2
 
-    :catch_5
+    :catch_6
     move-exception v18
 
     move-object/from16 v22, v23
@@ -8126,9 +9002,9 @@
 
     if-nez v14, :cond_0
 
-    const-string/jumbo v14, "SOULSY"
+    const-string/jumbo v14, "AASATokenParser"
 
-    const-string/jumbo v15, "file does not exist"
+    const-string/jumbo v15, "set xml file does not exist"
 
     invoke-static {v14, v15}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
@@ -8147,6 +9023,25 @@
     return-object v8
 
     :cond_0
+    invoke-direct/range {p0 .. p0}, Landroid/content/pm/aasa/AASATokenParser;->checkRestrictIntegrity()Z
+
+    move-result v14
+
+    if-nez v14, :cond_1
+
+    const-string/jumbo v14, "AASATokenParser"
+
+    const-string/jumbo v15, "fail to check integrity"
+
+    invoke-static {v14, v15}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
+
+    invoke-direct/range {p0 .. p0}, Landroid/content/pm/aasa/AASATokenParser;->removeRestrictFile()V
+
+    const/4 v14, 0x0
+
+    return-object v14
+
+    :cond_1
     new-instance v8, Landroid/content/pm/aasa/RestrictList;
 
     const-string/jumbo v14, "root"
@@ -8180,17 +9075,17 @@
     :goto_0
     const/4 v14, 0x1
 
-    if-eq v4, v14, :cond_6
+    if-eq v4, v14, :cond_7
 
     invoke-interface {v11}, Lorg/xmlpull/v1/XmlPullParser;->getName()Ljava/lang/String;
 
     move-result-object v9
 
-    if-eqz v9, :cond_1
+    if-eqz v9, :cond_2
 
     packed-switch v4, :pswitch_data_0
 
-    :cond_1
+    :cond_2
     :goto_1
     :pswitch_0
     invoke-interface {v11}, Lorg/xmlpull/v1/XmlPullParser;->next()I
@@ -8210,7 +9105,7 @@
 
     move-result v10
 
-    if-eqz v10, :cond_2
+    if-eqz v10, :cond_3
 
     const/4 v14, 0x0
 
@@ -8218,7 +9113,7 @@
 
     move-result-object v13
 
-    :cond_2
+    :cond_3
     invoke-virtual {v8, v9, v13, v3}, Landroid/content/pm/aasa/RestrictList;->makeNode(Ljava/lang/String;Ljava/lang/String;I)Landroid/content/pm/aasa/RestrictList$RestrictNode;
 
     move-result-object v7
@@ -8231,26 +9126,26 @@
 
     move-result v1
 
-    if-le v3, v1, :cond_3
+    if-le v3, v1, :cond_4
 
     invoke-virtual {v8, v7}, Landroid/content/pm/aasa/RestrictList;->addChild(Landroid/content/pm/aasa/RestrictList$RestrictNode;)V
 
     goto :goto_1
 
-    :cond_3
-    if-ne v3, v1, :cond_4
+    :cond_4
+    if-ne v3, v1, :cond_5
 
     invoke-virtual {v8, v7}, Landroid/content/pm/aasa/RestrictList;->addSibling(Landroid/content/pm/aasa/RestrictList$RestrictNode;)V
 
     goto :goto_1
 
-    :cond_4
+    :cond_5
     :goto_2
     invoke-virtual {v2}, Landroid/content/pm/aasa/RestrictList$RestrictNode;->getDepth()I
 
     move-result v14
 
-    if-le v14, v3, :cond_5
+    if-le v14, v3, :cond_6
 
     invoke-virtual {v8}, Landroid/content/pm/aasa/RestrictList;->moveParent()V
 
@@ -8260,27 +9155,27 @@
 
     goto :goto_2
 
-    :cond_5
+    :cond_6
     invoke-virtual {v8, v7}, Landroid/content/pm/aasa/RestrictList;->addSibling(Landroid/content/pm/aasa/RestrictList$RestrictNode;)V
 
     goto :goto_1
 
-    :cond_6
-    if-eqz v6, :cond_7
+    :cond_7
+    if-eqz v6, :cond_8
 
     invoke-virtual {v6}, Ljava/io/FileInputStream;->close()V
 
-    :cond_7
+    :cond_8
     invoke-virtual {v8}, Landroid/content/pm/aasa/RestrictList;->pruneDummyHead()I
 
     move-result v12
 
-    if-nez v12, :cond_8
+    if-nez v12, :cond_9
 
     :goto_3
     return-object v8
 
-    :cond_8
+    :cond_9
     const/4 v8, 0x0
 
     goto :goto_3
@@ -8310,6 +9205,12 @@
     .end annotation
 
     if-nez p1, :cond_0
+
+    const-string/jumbo v9, "AASATokenParser"
+
+    const-string/jumbo v10, "list is null"
+
+    invoke-static {v9, v10}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
     new-instance p1, Landroid/content/pm/aasa/RestrictList;
 
@@ -8640,6 +9541,67 @@
     return-object p1
 .end method
 
+.method public InsertRestrictedInfo(Landroid/content/pm/aasa/RestrictList;Landroid/content/pm/aasa/RestrictList$RestrictNode;)V
+    .locals 4
+
+    const/4 v3, 0x0
+
+    new-instance v1, Ljava/util/HashMap;
+
+    invoke-direct {v1}, Ljava/util/HashMap;-><init>()V
+
+    :goto_0
+    if-eqz p2, :cond_1
+
+    new-instance v0, Ljava/util/ArrayList;
+
+    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
+
+    invoke-virtual {p2}, Landroid/content/pm/aasa/RestrictList$RestrictNode;->getType()Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-virtual {v0, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+
+    invoke-virtual {p2}, Landroid/content/pm/aasa/RestrictList$RestrictNode;->getName()Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-virtual {v1, v2, v0}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    invoke-virtual {p2}, Landroid/content/pm/aasa/RestrictList$RestrictNode;->getChildList()Ljava/util/ArrayList;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Ljava/util/ArrayList;->size()I
+
+    move-result v2
+
+    if-eqz v2, :cond_0
+
+    invoke-virtual {p2}, Landroid/content/pm/aasa/RestrictList$RestrictNode;->getChildList()Ljava/util/ArrayList;
+
+    move-result-object v2
+
+    invoke-virtual {v2, v3}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+
+    move-result-object p2
+
+    check-cast p2, Landroid/content/pm/aasa/RestrictList$RestrictNode;
+
+    goto :goto_0
+
+    :cond_0
+    const/4 p2, 0x0
+
+    goto :goto_0
+
+    :cond_1
+    invoke-virtual {p0, p1, v1}, Landroid/content/pm/aasa/AASATokenParser;->InsertRestrictedInfo(Landroid/content/pm/aasa/RestrictList;Ljava/util/HashMap;)Landroid/content/pm/aasa/RestrictList;
+
+    return-void
+.end method
+
 .method public RemoveRestrictedInfoToXML(Ljava/lang/String;)V
     .locals 7
 
@@ -8660,10 +9622,10 @@
     :goto_0
     if-eqz v4, :cond_0
 
-    invoke-virtual {v4, v6, p1}, Landroid/content/pm/aasa/RestrictList;->removeNodeByType(Landroid/content/pm/aasa/RestrictList$RestrictNode;Ljava/lang/String;)V
+    invoke-virtual {v4, v6, p1}, Landroid/content/pm/aasa/RestrictList;->removeNodeAllByType(Landroid/content/pm/aasa/RestrictList$RestrictNode;Ljava/lang/String;)V
 
     :try_start_1
-    invoke-direct {p0, v4}, Landroid/content/pm/aasa/AASATokenParser;->SetRestrictedInfoToXML(Landroid/content/pm/aasa/RestrictList;)V
+    invoke-virtual {p0, v4}, Landroid/content/pm/aasa/AASATokenParser;->SetRestrictedInfoToXML(Landroid/content/pm/aasa/RestrictList;)V
     :try_end_1
     .catch Ljavax/xml/transform/TransformerException; {:try_start_1 .. :try_end_1} :catch_3
     .catch Ljavax/xml/parsers/ParserConfigurationException; {:try_start_1 .. :try_end_1} :catch_2
@@ -8701,216 +9663,194 @@
     goto :goto_1
 .end method
 
-.method public aasaDevToken(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Z
-    .locals 12
+.method public SetRestrictedInfoToXML(Landroid/content/pm/aasa/RestrictList;)V
+    .locals 16
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljavax/xml/transform/TransformerException;,
+            Ljavax/xml/parsers/ParserConfigurationException;
+        }
+    .end annotation
 
-    const/4 v10, 0x0
+    const-string/jumbo v8, "/data/system/.aasa/RestrictedPackages.xml"
 
-    const/4 v8, 0x0
+    if-nez p1, :cond_0
 
-    const/4 v5, 0x0
-
-    new-instance v5, Ljava/io/File;
-
-    invoke-direct {v5, p1}, Ljava/io/File;-><init>(Ljava/lang/String;)V
-
-    if-eqz v5, :cond_2
-
-    invoke-virtual {v5}, Ljava/io/File;->exists()Z
-
-    move-result v9
-
-    if-nez v9, :cond_0
-
-    return v10
+    return-void
 
     :cond_0
     const/4 v6, 0x0
 
-    const/4 v2, 0x0
-
     :try_start_0
-    new-instance v7, Ljava/io/FileInputStream;
+    new-instance v7, Ljava/io/File;
 
-    invoke-direct {v7, v5}, Ljava/io/FileInputStream;-><init>(Ljava/io/File;)V
+    invoke-direct {v7, v8}, Ljava/io/File;-><init>(Ljava/lang/String;)V
     :try_end_0
-    .catch Ljava/io/FileNotFoundException; {:try_start_0 .. :try_end_0} :catch_1
     .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
 
     :try_start_1
-    invoke-virtual {v7}, Ljava/io/FileInputStream;->available()I
+    invoke-virtual {v7}, Ljava/io/File;->exists()Z
+
+    move-result v14
+
+    if-nez v14, :cond_1
+
+    const-string/jumbo v14, "AASATokenParser"
+
+    const-string/jumbo v15, "set xml file does not exist"
+
+    invoke-static {v14, v15}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
+
+    invoke-virtual {v7}, Ljava/io/File;->createNewFile()Z
     :try_end_1
-    .catch Ljava/io/FileNotFoundException; {:try_start_1 .. :try_end_1} :catch_4
-    .catch Ljava/io/IOException; {:try_start_1 .. :try_end_1} :catch_5
+    .catch Ljava/io/IOException; {:try_start_1 .. :try_end_1} :catch_1
 
-    move-result v2
+    move-result v14
 
+    if-nez v14, :cond_1
+
+    return-void
+
+    :cond_1
     move-object v6, v7
 
     :goto_0
-    if-eqz v2, :cond_1
+    invoke-static {}, Ljavax/xml/parsers/DocumentBuilderFactory;->newInstance()Ljavax/xml/parsers/DocumentBuilderFactory;
 
-    new-array v0, v2, [B
+    move-result-object v3
 
-    :try_start_2
-    invoke-virtual {v6, v0}, Ljava/io/FileInputStream;->read([B)I
+    invoke-virtual {v3}, Ljavax/xml/parsers/DocumentBuilderFactory;->newDocumentBuilder()Ljavax/xml/parsers/DocumentBuilder;
 
-    invoke-virtual {p0, v0}, Landroid/content/pm/aasa/AASATokenParser;->AASA_VerifyFile([B)[B
+    move-result-object v2
+
+    invoke-virtual {v2}, Ljavax/xml/parsers/DocumentBuilder;->newDocument()Lorg/w3c/dom/Document;
 
     move-result-object v1
 
-    if-eqz v1, :cond_1
+    const/4 v14, 0x1
 
-    invoke-virtual {v1}, Ljava/lang/Object;->clone()Ljava/lang/Object;
+    invoke-interface {v1, v14}, Lorg/w3c/dom/Document;->setXmlStandalone(Z)V
 
-    move-result-object v9
+    const-string/jumbo v14, "RESTRICTED"
 
-    check-cast v9, [B
+    const/4 v15, 0x0
 
-    iput-object v9, p0, Landroid/content/pm/aasa/AASATokenParser;->mTokenContents:[B
+    move-object/from16 v0, p1
 
-    const-string/jumbo v9, "AASATokenParser"
-
-    new-instance v10, Ljava/lang/StringBuilder;
-
-    invoke-direct {v10}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string/jumbo v11, " targetPackage:"
-
-    invoke-virtual {v10, v11}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, v15, v14}, Landroid/content/pm/aasa/RestrictList;->findNode(Landroid/content/pm/aasa/RestrictList$RestrictNode;Ljava/lang/String;)Landroid/content/pm/aasa/RestrictList$RestrictNode;
 
     move-result-object v10
 
-    invoke-virtual {v10, p3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    if-nez v10, :cond_2
 
-    move-result-object v10
+    const-string/jumbo v14, "AASATokenParser"
 
-    invoke-virtual {v10}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    const-string/jumbo v15, "error to find RESTRICTED tag in xml"
 
-    move-result-object v10
+    invoke-static {v14, v15}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    invoke-static {v9, v10}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
-
-    invoke-direct {p0, p3, p2}, Landroid/content/pm/aasa/AASATokenParser;->AASA_isTargetPackage(Ljava/lang/String;Ljava/lang/String;)Z
-
-    move-result v9
-
-    if-eqz v9, :cond_3
-
-    const-string/jumbo v9, "AASATokenParser"
-
-    new-instance v10, Ljava/lang/StringBuilder;
-
-    invoke-direct {v10}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string/jumbo v11, " targetPackage: ok: "
-
-    invoke-virtual {v10, v11}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v10
-
-    invoke-virtual {v10, p3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v10
-
-    invoke-virtual {v10}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v10
-
-    invoke-static {v9, v10}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
-    :try_end_2
-    .catch Ljava/io/IOException; {:try_start_2 .. :try_end_2} :catch_2
-
-    const/4 v8, 0x1
-
-    :cond_1
-    :goto_1
-    if-eqz v6, :cond_2
-
-    :try_start_3
-    invoke-virtual {v6}, Ljava/io/FileInputStream;->close()V
-    :try_end_3
-    .catch Ljava/io/IOException; {:try_start_3 .. :try_end_3} :catch_3
-
-    :cond_2
-    :goto_2
-    return v8
+    return-void
 
     :catch_0
-    move-exception v3
+    move-exception v5
 
-    :goto_3
-    const/4 v2, 0x0
-
-    goto :goto_0
-
-    :catch_1
-    move-exception v4
-
-    :goto_4
-    const/4 v2, 0x0
+    :goto_1
+    invoke-virtual {v5}, Ljava/lang/Throwable;->printStackTrace()V
 
     goto :goto_0
+
+    :cond_2
+    invoke-virtual {v10}, Landroid/content/pm/aasa/RestrictList$RestrictNode;->getName()Ljava/lang/String;
+
+    move-result-object v14
+
+    invoke-interface {v1, v14}, Lorg/w3c/dom/Document;->createElement(Ljava/lang/String;)Lorg/w3c/dom/Element;
+
+    move-result-object v11
+
+    invoke-interface {v1, v11}, Lorg/w3c/dom/Document;->appendChild(Lorg/w3c/dom/Node;)Lorg/w3c/dom/Node;
+
+    new-instance v13, Landroid/content/pm/aasa/RestrictXMLList;
+
+    invoke-direct {v13, v10}, Landroid/content/pm/aasa/RestrictXMLList;-><init>(Landroid/content/pm/aasa/RestrictList$RestrictNode;)V
+
+    invoke-virtual {v13}, Landroid/content/pm/aasa/RestrictList;->getHead()Landroid/content/pm/aasa/RestrictList$RestrictNode;
+
+    move-result-object v14
+
+    invoke-virtual {v13, v1, v11, v14}, Landroid/content/pm/aasa/RestrictXMLList;->SetRestrictedInfoToDocument(Lorg/w3c/dom/Document;Lorg/w3c/dom/Element;Landroid/content/pm/aasa/RestrictList$RestrictNode;)V
+
+    new-instance v4, Ljavax/xml/transform/dom/DOMSource;
+
+    invoke-interface {v1}, Lorg/w3c/dom/Document;->getDocumentElement()Lorg/w3c/dom/Element;
+
+    move-result-object v14
+
+    invoke-direct {v4, v14}, Ljavax/xml/transform/dom/DOMSource;-><init>(Lorg/w3c/dom/Node;)V
+
+    new-instance v9, Ljavax/xml/transform/stream/StreamResult;
+
+    new-instance v14, Ljava/io/File;
+
+    invoke-direct {v14, v8}, Ljava/io/File;-><init>(Ljava/lang/String;)V
+
+    invoke-direct {v9, v14}, Ljavax/xml/transform/stream/StreamResult;-><init>(Ljava/io/File;)V
+
+    invoke-static {}, Ljavax/xml/transform/TransformerFactory;->newInstance()Ljavax/xml/transform/TransformerFactory;
+
+    move-result-object v14
+
+    invoke-virtual {v14}, Ljavax/xml/transform/TransformerFactory;->newTransformer()Ljavax/xml/transform/Transformer;
+
+    move-result-object v12
+
+    const-string/jumbo v14, "encoding"
+
+    const-string/jumbo v15, "UTF-8"
+
+    invoke-virtual {v12, v14, v15}, Ljavax/xml/transform/Transformer;->setOutputProperty(Ljava/lang/String;Ljava/lang/String;)V
+
+    const-string/jumbo v14, "omit-xml-declaration"
+
+    const-string/jumbo v15, "yes"
+
+    invoke-virtual {v12, v14, v15}, Ljavax/xml/transform/Transformer;->setOutputProperty(Ljava/lang/String;Ljava/lang/String;)V
+
+    const-string/jumbo v14, "indent"
+
+    const-string/jumbo v15, "yes"
+
+    invoke-virtual {v12, v14, v15}, Ljavax/xml/transform/Transformer;->setOutputProperty(Ljava/lang/String;Ljava/lang/String;)V
+
+    const-string/jumbo v14, "{http://xml.apache.org/xslt}indent-amount"
+
+    const-string/jumbo v15, "4"
+
+    invoke-virtual {v12, v14, v15}, Ljavax/xml/transform/Transformer;->setOutputProperty(Ljava/lang/String;Ljava/lang/String;)V
+
+    invoke-virtual {v12, v4, v9}, Ljavax/xml/transform/Transformer;->transform(Ljavax/xml/transform/Source;Ljavax/xml/transform/Result;)V
+
+    const-string/jumbo v14, "/data/system/.aasa/rTicket"
+
+    move-object/from16 v0, p0
+
+    invoke-direct {v0, v14}, Landroid/content/pm/aasa/AASATokenParser;->setIntegrityValueTofile(Ljava/lang/String;)Z
+
+    move-result v14
+
+    if-nez v14, :cond_3
+
+    invoke-direct/range {p0 .. p0}, Landroid/content/pm/aasa/AASATokenParser;->removeRestrictFile()V
 
     :cond_3
-    :try_start_4
-    const-string/jumbo v9, "AASATokenParser"
+    return-void
 
-    new-instance v10, Ljava/lang/StringBuilder;
-
-    invoke-direct {v10}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string/jumbo v11, " targetPackage:"
-
-    invoke-virtual {v10, v11}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v10
-
-    invoke-virtual {v10, p3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v10
-
-    const-string/jumbo v11, " is not DevTargert"
-
-    invoke-virtual {v10, v11}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v10
-
-    invoke-virtual {v10}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v10
-
-    invoke-static {v9, v10}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
-    :try_end_4
-    .catch Ljava/io/IOException; {:try_start_4 .. :try_end_4} :catch_2
-
-    goto :goto_1
-
-    :catch_2
-    move-exception v3
-
-    goto :goto_1
-
-    :catch_3
-    move-exception v3
-
-    invoke-virtual {v3}, Ljava/lang/Throwable;->printStackTrace()V
-
-    goto :goto_2
-
-    :catch_4
-    move-exception v4
+    :catch_1
+    move-exception v5
 
     move-object v6, v7
 
-    goto :goto_4
-
-    :catch_5
-    move-exception v3
-
-    move-object v6, v7
-
-    goto :goto_3
+    goto :goto_1
 .end method
 
 .method checkIntegrity([B)[B
@@ -10635,6 +11575,103 @@
     move-object v10, v9
 
     goto/16 :goto_4
+.end method
+
+.method public getTrustedToday()Ljava/lang/String;
+    .locals 12
+
+    invoke-direct {p0}, Landroid/content/pm/aasa/AASATokenParser;->hasTrustedTime()Z
+
+    move-result v8
+
+    if-nez v8, :cond_0
+
+    invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
+
+    move-result-wide v8
+
+    invoke-direct {p0, v8, v9}, Landroid/content/pm/aasa/AASATokenParser;->convertMillsToString(J)Ljava/lang/String;
+
+    move-result-object v8
+
+    return-object v8
+
+    :cond_0
+    invoke-direct {p0}, Landroid/content/pm/aasa/AASATokenParser;->getTrustedFile()[Ljava/lang/String;
+
+    move-result-object v2
+
+    if-eqz v2, :cond_1
+
+    array-length v8, v2
+
+    const/4 v9, 0x3
+
+    if-eq v8, v9, :cond_2
+
+    :cond_1
+    invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
+
+    move-result-wide v8
+
+    invoke-direct {p0, v8, v9}, Landroid/content/pm/aasa/AASATokenParser;->convertMillsToString(J)Ljava/lang/String;
+
+    move-result-object v8
+
+    return-object v8
+
+    :cond_2
+    const/4 v8, 0x1
+
+    aget-object v8, v2, v8
+
+    invoke-static {v8}, Ljava/lang/Long;->parseLong(Ljava/lang/String;)J
+
+    move-result-wide v4
+
+    const/4 v8, 0x2
+
+    aget-object v8, v2, v8
+
+    invoke-static {v8}, Ljava/lang/Long;->parseLong(Ljava/lang/String;)J
+
+    move-result-wide v0
+
+    sub-long v8, v4, v0
+
+    invoke-static {}, Landroid/os/SystemClock;->elapsedRealtime()J
+
+    move-result-wide v10
+
+    add-long v6, v8, v10
+
+    invoke-direct {p0, v6, v7}, Landroid/content/pm/aasa/AASATokenParser;->convertMillsToString(J)Ljava/lang/String;
+
+    move-result-object v3
+
+    iget-object v8, p0, Landroid/content/pm/aasa/AASATokenParser;->TAG:Ljava/lang/String;
+
+    new-instance v9, Ljava/lang/StringBuilder;
+
+    invoke-direct {v9}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string/jumbo v10, "getElapsedToday : "
+
+    invoke-virtual {v9, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v9
+
+    invoke-virtual {v9, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v9
+
+    invoke-virtual {v9}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v9
+
+    invoke-static {v8, v9}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    return-object v3
 .end method
 
 .method public getValue()Ljava/util/ArrayList;

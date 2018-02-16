@@ -474,11 +474,11 @@
 .end method
 
 .method public constructor <init>()V
-    .locals 10
+    .locals 9
 
-    const-wide/16 v8, 0x0
+    const/4 v8, 0x1
 
-    const/4 v7, 0x1
+    const/16 v7, 0x40
 
     const/4 v6, -0x1
 
@@ -526,31 +526,31 @@
 
     new-instance v1, Ljava/util/BitSet;
 
-    invoke-direct {v1}, Ljava/util/BitSet;-><init>()V
+    invoke-direct {v1, v7}, Ljava/util/BitSet;-><init>(I)V
 
     iput-object v1, p0, Landroid/net/wifi/WifiConfiguration;->allowedKeyManagement:Ljava/util/BitSet;
 
     new-instance v1, Ljava/util/BitSet;
 
-    invoke-direct {v1}, Ljava/util/BitSet;-><init>()V
+    invoke-direct {v1, v7}, Ljava/util/BitSet;-><init>(I)V
 
     iput-object v1, p0, Landroid/net/wifi/WifiConfiguration;->allowedProtocols:Ljava/util/BitSet;
 
     new-instance v1, Ljava/util/BitSet;
 
-    invoke-direct {v1}, Ljava/util/BitSet;-><init>()V
+    invoke-direct {v1, v7}, Ljava/util/BitSet;-><init>(I)V
 
     iput-object v1, p0, Landroid/net/wifi/WifiConfiguration;->allowedAuthAlgorithms:Ljava/util/BitSet;
 
     new-instance v1, Ljava/util/BitSet;
 
-    invoke-direct {v1}, Ljava/util/BitSet;-><init>()V
+    invoke-direct {v1, v7}, Ljava/util/BitSet;-><init>(I)V
 
     iput-object v1, p0, Landroid/net/wifi/WifiConfiguration;->allowedPairwiseCiphers:Ljava/util/BitSet;
 
     new-instance v1, Ljava/util/BitSet;
 
-    invoke-direct {v1}, Ljava/util/BitSet;-><init>()V
+    invoke-direct {v1, v7}, Ljava/util/BitSet;-><init>(I)V
 
     iput-object v1, p0, Landroid/net/wifi/WifiConfiguration;->allowedGroupCiphers:Ljava/util/BitSet;
 
@@ -606,13 +606,13 @@
 
     iput v6, p0, Landroid/net/wifi/WifiConfiguration;->creatorUid:I
 
-    iput-boolean v7, p0, Landroid/net/wifi/WifiConfiguration;->shared:Z
+    iput-boolean v8, p0, Landroid/net/wifi/WifiConfiguration;->shared:Z
 
     iput v4, p0, Landroid/net/wifi/WifiConfiguration;->dtimInterval:I
 
     new-instance v1, Ljava/util/BitSet;
 
-    invoke-direct {v1}, Ljava/util/BitSet;-><init>()V
+    invoke-direct {v1, v7}, Ljava/util/BitSet;-><init>(I)V
 
     iput-object v1, p0, Landroid/net/wifi/WifiConfiguration;->samsungSpecificFlags:Ljava/util/BitSet;
 
@@ -636,7 +636,7 @@
 
     iput v4, p0, Landroid/net/wifi/WifiConfiguration;->apIsolate:I
 
-    iput v7, p0, Landroid/net/wifi/WifiConfiguration;->wpsStatus:I
+    iput v8, p0, Landroid/net/wifi/WifiConfiguration;->wpsStatus:I
 
     iput v4, p0, Landroid/net/wifi/WifiConfiguration;->txPowerMode:I
 
@@ -670,9 +670,13 @@
 
     iput-boolean v4, p0, Landroid/net/wifi/WifiConfiguration;->inRecoverArea:Z
 
-    iput-wide v8, p0, Landroid/net/wifi/WifiConfiguration;->disabledTime:J
+    const-wide/16 v2, 0x0
 
-    iput-wide v8, p0, Landroid/net/wifi/WifiConfiguration;->notInRangeTime:J
+    iput-wide v2, p0, Landroid/net/wifi/WifiConfiguration;->disabledTime:J
+
+    const-wide/16 v2, 0x0
+
+    iput-wide v2, p0, Landroid/net/wifi/WifiConfiguration;->notInRangeTime:J
 
     iput-object v5, p0, Landroid/net/wifi/WifiConfiguration;->poorBSSID:Ljava/lang/String;
 
@@ -698,7 +702,7 @@
 
     iput-boolean v4, p0, Landroid/net/wifi/WifiConfiguration;->isVendorSpecificSsid:Z
 
-    iput v7, p0, Landroid/net/wifi/WifiConfiguration;->autoReconnect:I
+    iput v8, p0, Landroid/net/wifi/WifiConfiguration;->autoReconnect:I
 
     iput-boolean v4, p0, Landroid/net/wifi/WifiConfiguration;->isWeChatAp:Z
 

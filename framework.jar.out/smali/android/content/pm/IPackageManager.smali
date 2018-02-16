@@ -140,6 +140,14 @@
     .end annotation
 .end method
 
+.method public abstract AASA_updateRestrictList()V
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+.end method
+
 .method public abstract ASKS_checkDevice(I)[Ljava/lang/String;
     .annotation system Ldalvik/annotation/Throws;
         value = {

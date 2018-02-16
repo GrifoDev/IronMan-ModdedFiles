@@ -54,33 +54,35 @@
 
 .field static final TRANSACTION_AASA_updatePackage:I = 0x19
 
+.field static final TRANSACTION_AASA_updateRestrictList:I = 0x25
+
 .field static final TRANSACTION_ASKS_checkDevice:I = 0x21
 
 .field static final TRANSACTION_ASKS_setMode:I = 0x23
 
 .field static final TRANSACTION_activitySupportsIntent:I = 0xf
 
-.field static final TRANSACTION_addCrossProfileIntentFilter:I = 0x60
+.field static final TRANSACTION_addCrossProfileIntentFilter:I = 0x61
 
-.field static final TRANSACTION_addOnPermissionsChangeListener:I = 0xba
+.field static final TRANSACTION_addOnPermissionsChangeListener:I = 0xbb
 
-.field static final TRANSACTION_addPermission:I = 0x26
+.field static final TRANSACTION_addPermission:I = 0x27
 
-.field static final TRANSACTION_addPermissionAsync:I = 0x96
+.field static final TRANSACTION_addPermissionAsync:I = 0x97
 
-.field static final TRANSACTION_addPersistentPreferredActivity:I = 0x5e
+.field static final TRANSACTION_addPersistentPreferredActivity:I = 0x5f
 
-.field static final TRANSACTION_addPreferredActivity:I = 0x5a
+.field static final TRANSACTION_addPreferredActivity:I = 0x5b
 
-.field static final TRANSACTION_applyOverlays:I = 0xca
+.field static final TRANSACTION_applyOverlays:I = 0xcb
 
-.field static final TRANSACTION_applyRuntimePermissions:I = 0x28
+.field static final TRANSACTION_applyRuntimePermissions:I = 0x29
 
-.field static final TRANSACTION_applyRuntimePermissionsForAllApplications:I = 0x29
+.field static final TRANSACTION_applyRuntimePermissionsForAllApplications:I = 0x2a
 
-.field static final TRANSACTION_canForwardTo:I = 0x41
+.field static final TRANSACTION_canForwardTo:I = 0x42
 
-.field static final TRANSACTION_cancelEMPHandlerSendPendingBroadcast:I = 0xcd
+.field static final TRANSACTION_cancelEMPHandlerSendPendingBroadcast:I = 0xce
 
 .field static final TRANSACTION_canonicalToCurrentPackageNames:I = 0x7
 
@@ -88,355 +90,355 @@
 
 .field static final TRANSACTION_checkPermission:I = 0x13
 
-.field static final TRANSACTION_checkSignatures:I = 0x36
+.field static final TRANSACTION_checkSignatures:I = 0x37
 
-.field static final TRANSACTION_checkUidPermission:I = 0x25
+.field static final TRANSACTION_checkUidPermission:I = 0x26
 
-.field static final TRANSACTION_checkUidSignatures:I = 0x37
+.field static final TRANSACTION_checkUidSignatures:I = 0x38
 
-.field static final TRANSACTION_clearApplicationProfileData:I = 0x7a
+.field static final TRANSACTION_clearApplicationProfileData:I = 0x7b
 
-.field static final TRANSACTION_clearApplicationUserData:I = 0x79
+.field static final TRANSACTION_clearApplicationUserData:I = 0x7a
 
-.field static final TRANSACTION_clearCrossProfileIntentFilters:I = 0x61
+.field static final TRANSACTION_clearCrossProfileIntentFilters:I = 0x62
 
-.field static final TRANSACTION_clearPackagePersistentPreferredActivities:I = 0x5f
+.field static final TRANSACTION_clearPackagePersistentPreferredActivities:I = 0x60
 
-.field static final TRANSACTION_clearPackagePreferredActivities:I = 0x5c
+.field static final TRANSACTION_clearPackagePreferredActivities:I = 0x5d
 
-.field static final TRANSACTION_clearPackagePreferredActivitiesAsUser:I = 0xaf
+.field static final TRANSACTION_clearPackagePreferredActivitiesAsUser:I = 0xb0
 
 .field static final TRANSACTION_currentToCanonicalPackageNames:I = 0x6
 
-.field static final TRANSACTION_deleteApplicationCacheFiles:I = 0x77
+.field static final TRANSACTION_deleteApplicationCacheFiles:I = 0x78
 
-.field static final TRANSACTION_deleteApplicationCacheFilesAsUser:I = 0x78
+.field static final TRANSACTION_deleteApplicationCacheFilesAsUser:I = 0x79
 
-.field static final TRANSACTION_deletePackage:I = 0x55
+.field static final TRANSACTION_deletePackage:I = 0x56
 
-.field static final TRANSACTION_deletePackageAsUser:I = 0x54
+.field static final TRANSACTION_deletePackageAsUser:I = 0x55
 
-.field static final TRANSACTION_dumpProfiles:I = 0x8d
+.field static final TRANSACTION_dumpProfiles:I = 0x8e
 
-.field static final TRANSACTION_enterSafeMode:I = 0x80
+.field static final TRANSACTION_enterSafeMode:I = 0x81
 
-.field static final TRANSACTION_extendVerificationTimeout:I = 0x9b
+.field static final TRANSACTION_extendVerificationTimeout:I = 0x9c
 
-.field static final TRANSACTION_finishPackageInstall:I = 0x52
+.field static final TRANSACTION_finishPackageInstall:I = 0x53
 
-.field static final TRANSACTION_flushPackageRestrictionsAsUser:I = 0x73
+.field static final TRANSACTION_flushPackageRestrictionsAsUser:I = 0x74
 
-.field static final TRANSACTION_forceDexOpt:I = 0x8e
+.field static final TRANSACTION_forceDexOpt:I = 0x8f
 
-.field static final TRANSACTION_freeStorage:I = 0x76
+.field static final TRANSACTION_freeStorage:I = 0x77
 
-.field static final TRANSACTION_freeStorageAndNotify:I = 0x75
+.field static final TRANSACTION_freeStorageAndNotify:I = 0x76
 
 .field static final TRANSACTION_getActivityInfo:I = 0xd
 
-.field static final TRANSACTION_getAllIntentFilters:I = 0xa0
+.field static final TRANSACTION_getAllIntentFilters:I = 0xa1
 
-.field static final TRANSACTION_getAllPackages:I = 0x38
+.field static final TRANSACTION_getAllPackages:I = 0x39
 
 .field static final TRANSACTION_getAllPermissionGroups:I = 0xb
 
-.field static final TRANSACTION_getAppOpPermissionPackages:I = 0x3f
+.field static final TRANSACTION_getAppOpPermissionPackages:I = 0x40
 
-.field static final TRANSACTION_getApplicationEnabledSetting:I = 0x71
+.field static final TRANSACTION_getApplicationEnabledSetting:I = 0x72
 
-.field static final TRANSACTION_getApplicationHiddenSettingAsUser:I = 0xb2
+.field static final TRANSACTION_getApplicationHiddenSettingAsUser:I = 0xb3
 
 .field static final TRANSACTION_getApplicationInfo:I = 0xc
 
-.field static final TRANSACTION_getBlockUninstallForUser:I = 0xb5
+.field static final TRANSACTION_getBlockUninstallForUser:I = 0xb6
 
-.field static final TRANSACTION_getComponentEnabledSetting:I = 0x6f
+.field static final TRANSACTION_getComponentEnabledSetting:I = 0x70
 
-.field static final TRANSACTION_getComponentMetadataForIconTray:I = 0x85
+.field static final TRANSACTION_getComponentMetadataForIconTray:I = 0x86
 
-.field static final TRANSACTION_getDefaultAppsBackup:I = 0x66
+.field static final TRANSACTION_getDefaultAppsBackup:I = 0x67
 
-.field static final TRANSACTION_getDefaultBrowserPackageName:I = 0xa2
+.field static final TRANSACTION_getDefaultBrowserPackageName:I = 0xa3
 
-.field static final TRANSACTION_getDexoptState:I = 0xce
+.field static final TRANSACTION_getDexoptState:I = 0xcf
 
 .field static final TRANSACTION_getDisplayChooserResolveInfo:I = 0xe
 
-.field static final TRANSACTION_getEphemeralApplicationCookie:I = 0xc1
+.field static final TRANSACTION_getEphemeralApplicationCookie:I = 0xc2
 
-.field static final TRANSACTION_getEphemeralApplicationIcon:I = 0xc3
+.field static final TRANSACTION_getEphemeralApplicationIcon:I = 0xc4
 
-.field static final TRANSACTION_getEphemeralApplications:I = 0xc0
+.field static final TRANSACTION_getEphemeralApplications:I = 0xc1
 
-.field static final TRANSACTION_getFlagsForUid:I = 0x3c
+.field static final TRANSACTION_getFlagsForUid:I = 0x3d
 
-.field static final TRANSACTION_getGrantedPermissions:I = 0xad
+.field static final TRANSACTION_getGrantedPermissions:I = 0xae
 
-.field static final TRANSACTION_getHomeActivities:I = 0x6c
+.field static final TRANSACTION_getHomeActivities:I = 0x6d
 
-.field static final TRANSACTION_getInstallLocation:I = 0x98
+.field static final TRANSACTION_getInstallLocation:I = 0x99
 
-.field static final TRANSACTION_getInstalledApplications:I = 0x4a
+.field static final TRANSACTION_getInstalledApplications:I = 0x4b
 
-.field static final TRANSACTION_getInstalledPackages:I = 0x48
+.field static final TRANSACTION_getInstalledPackages:I = 0x49
 
-.field static final TRANSACTION_getInstallerPackageName:I = 0x56
+.field static final TRANSACTION_getInstallerPackageName:I = 0x57
 
-.field static final TRANSACTION_getInstrumentationInfo:I = 0x4f
+.field static final TRANSACTION_getInstrumentationInfo:I = 0x50
 
-.field static final TRANSACTION_getIntentFilterVerificationBackup:I = 0x68
+.field static final TRANSACTION_getIntentFilterVerificationBackup:I = 0x69
 
-.field static final TRANSACTION_getIntentFilterVerifications:I = 0x9f
+.field static final TRANSACTION_getIntentFilterVerifications:I = 0xa0
 
-.field static final TRANSACTION_getIntentVerificationStatus:I = 0x9d
+.field static final TRANSACTION_getIntentVerificationStatus:I = 0x9e
 
-.field static final TRANSACTION_getKeySetByAlias:I = 0xb6
+.field static final TRANSACTION_getKeySetByAlias:I = 0xb7
 
-.field static final TRANSACTION_getLastChosenActivity:I = 0x58
+.field static final TRANSACTION_getLastChosenActivity:I = 0x59
 
-.field static final TRANSACTION_getMetadataForIconTray:I = 0x84
+.field static final TRANSACTION_getMetadataForIconTray:I = 0x85
 
-.field static final TRANSACTION_getMoveStatus:I = 0x91
+.field static final TRANSACTION_getMoveStatus:I = 0x92
 
-.field static final TRANSACTION_getNameForUid:I = 0x3a
+.field static final TRANSACTION_getNameForUid:I = 0x3b
 
 .field static final TRANSACTION_getPackageGids:I = 0x5
 
 .field static final TRANSACTION_getPackageInfo:I = 0x3
 
-.field static final TRANSACTION_getPackageInstaller:I = 0xb3
+.field static final TRANSACTION_getPackageInstaller:I = 0xb4
 
-.field static final TRANSACTION_getPackageSizeInfo:I = 0x7b
+.field static final TRANSACTION_getPackageSizeInfo:I = 0x7c
 
 .field static final TRANSACTION_getPackageUid:I = 0x4
 
-.field static final TRANSACTION_getPackagesForUid:I = 0x39
+.field static final TRANSACTION_getPackagesForUid:I = 0x3a
 
-.field static final TRANSACTION_getPackagesHoldingPermissions:I = 0x49
+.field static final TRANSACTION_getPackagesHoldingPermissions:I = 0x4a
 
-.field static final TRANSACTION_getPermissionControllerPackageName:I = 0xbf
+.field static final TRANSACTION_getPermissionControllerPackageName:I = 0xc0
 
-.field static final TRANSACTION_getPermissionFlags:I = 0x31
+.field static final TRANSACTION_getPermissionFlags:I = 0x32
 
-.field static final TRANSACTION_getPermissionGrantBackup:I = 0x6a
+.field static final TRANSACTION_getPermissionGrantBackup:I = 0x6b
 
 .field static final TRANSACTION_getPermissionGroupInfo:I = 0xa
 
 .field static final TRANSACTION_getPermissionInfo:I = 0x8
 
-.field static final TRANSACTION_getPersistentApplications:I = 0x4b
+.field static final TRANSACTION_getPersistentApplications:I = 0x4c
 
-.field static final TRANSACTION_getPreferredActivities:I = 0x5d
+.field static final TRANSACTION_getPreferredActivities:I = 0x5e
 
-.field static final TRANSACTION_getPreferredActivityBackup:I = 0x64
+.field static final TRANSACTION_getPreferredActivityBackup:I = 0x65
 
-.field static final TRANSACTION_getPreviousCodePaths:I = 0xc9
+.field static final TRANSACTION_getPreviousCodePaths:I = 0xca
 
-.field static final TRANSACTION_getPrivateFlagsForUid:I = 0x3d
+.field static final TRANSACTION_getPrivateFlagsForUid:I = 0x3e
 
-.field static final TRANSACTION_getProgressionOfPackageChanged:I = 0xcc
+.field static final TRANSACTION_getProgressionOfPackageChanged:I = 0xcd
 
 .field static final TRANSACTION_getProviderInfo:I = 0x12
 
 .field static final TRANSACTION_getReceiverInfo:I = 0x10
 
-.field static final TRANSACTION_getRequestedRuntimePermissions:I = 0x2d
+.field static final TRANSACTION_getRequestedRuntimePermissions:I = 0x2e
 
-.field static final TRANSACTION_getRuntimePermissionGroups:I = 0x2c
+.field static final TRANSACTION_getRuntimePermissionGroups:I = 0x2d
 
-.field static final TRANSACTION_getSelectedComponentMetadataForIconTray:I = 0x87
+.field static final TRANSACTION_getSelectedComponentMetadataForIconTray:I = 0x88
 
-.field static final TRANSACTION_getSelectedMetadataForIconTray:I = 0x86
+.field static final TRANSACTION_getSelectedMetadataForIconTray:I = 0x87
 
 .field static final TRANSACTION_getServiceInfo:I = 0x11
 
-.field static final TRANSACTION_getServicesSystemSharedLibraryPackageName:I = 0xc6
+.field static final TRANSACTION_getServicesSystemSharedLibraryPackageName:I = 0xc7
 
-.field static final TRANSACTION_getSharedSystemSharedLibraryPackageName:I = 0xc7
+.field static final TRANSACTION_getSharedSystemSharedLibraryPackageName:I = 0xc8
 
 .field static final TRANSACTION_getSignatureInfo:I = 0x16
 
-.field static final TRANSACTION_getSigningKeySet:I = 0xb7
+.field static final TRANSACTION_getSigningKeySet:I = 0xb8
 
-.field static final TRANSACTION_getSystemAvailableFeatures:I = 0x7d
+.field static final TRANSACTION_getSystemAvailableFeatures:I = 0x7e
 
-.field static final TRANSACTION_getSystemFeatureLevel:I = 0x7f
+.field static final TRANSACTION_getSystemFeatureLevel:I = 0x80
 
-.field static final TRANSACTION_getSystemSharedLibraryNames:I = 0x7c
+.field static final TRANSACTION_getSystemSharedLibraryNames:I = 0x7d
 
-.field static final TRANSACTION_getUidForSharedUser:I = 0x3b
+.field static final TRANSACTION_getUidForSharedUser:I = 0x3c
 
-.field static final TRANSACTION_getVerifierDeviceIdentity:I = 0xa3
+.field static final TRANSACTION_getVerifierDeviceIdentity:I = 0xa4
 
-.field static final TRANSACTION_grantDefaultPermissionsToEnabledCarrierApps:I = 0xbc
+.field static final TRANSACTION_grantDefaultPermissionsToEnabledCarrierApps:I = 0xbd
 
-.field static final TRANSACTION_grantRuntimePermission:I = 0x2e
+.field static final TRANSACTION_grantRuntimePermission:I = 0x2f
 
-.field static final TRANSACTION_hasSystemFeature:I = 0x7e
+.field static final TRANSACTION_hasSystemFeature:I = 0x7f
 
-.field static final TRANSACTION_hasSystemUidErrors:I = 0x83
+.field static final TRANSACTION_hasSystemUidErrors:I = 0x84
 
-.field static final TRANSACTION_installExistingPackageAsUser:I = 0x99
+.field static final TRANSACTION_installExistingPackageAsUser:I = 0x9a
 
-.field static final TRANSACTION_installExistingPackageAsUserForMDM:I = 0xae
+.field static final TRANSACTION_installExistingPackageAsUserForMDM:I = 0xaf
 
-.field static final TRANSACTION_installPackageAsUser:I = 0x51
+.field static final TRANSACTION_installPackageAsUser:I = 0x52
 
-.field static final TRANSACTION_isEphemeralApplication:I = 0xc4
+.field static final TRANSACTION_isEphemeralApplication:I = 0xc5
 
-.field static final TRANSACTION_isFirstBoot:I = 0xa4
+.field static final TRANSACTION_isFirstBoot:I = 0xa5
 
-.field static final TRANSACTION_isOnlyCoreApps:I = 0xa5
+.field static final TRANSACTION_isOnlyCoreApps:I = 0xa6
 
 .field static final TRANSACTION_isPackageAvailable:I = 0x2
 
-.field static final TRANSACTION_isPackageDeviceAdminOnAnyUser:I = 0xc8
+.field static final TRANSACTION_isPackageDeviceAdminOnAnyUser:I = 0xc9
 
-.field static final TRANSACTION_isPackageSignedByKeySet:I = 0xb8
+.field static final TRANSACTION_isPackageSignedByKeySet:I = 0xb9
 
-.field static final TRANSACTION_isPackageSignedByKeySetExactly:I = 0xb9
+.field static final TRANSACTION_isPackageSignedByKeySetExactly:I = 0xba
 
-.field static final TRANSACTION_isPackageSuspendedForUser:I = 0x63
+.field static final TRANSACTION_isPackageSuspendedForUser:I = 0x64
 
-.field static final TRANSACTION_isPermissionEnforced:I = 0xa8
+.field static final TRANSACTION_isPermissionEnforced:I = 0xa9
 
-.field static final TRANSACTION_isPermissionRevokedByPolicy:I = 0xbd
+.field static final TRANSACTION_isPermissionRevokedByPolicy:I = 0xbe
 
-.field static final TRANSACTION_isPermissionRevokedByUserFixed:I = 0xbe
+.field static final TRANSACTION_isPermissionRevokedByUserFixed:I = 0xbf
 
-.field static final TRANSACTION_isProtectedBroadcast:I = 0x35
+.field static final TRANSACTION_isProtectedBroadcast:I = 0x36
 
-.field static final TRANSACTION_isSafeMode:I = 0x81
+.field static final TRANSACTION_isSafeMode:I = 0x82
 
-.field static final TRANSACTION_isStorageLow:I = 0xb0
+.field static final TRANSACTION_isStorageLow:I = 0xb1
 
-.field static final TRANSACTION_isUidPrivileged:I = 0x3e
+.field static final TRANSACTION_isUidPrivileged:I = 0x3f
 
-.field static final TRANSACTION_isUpgrade:I = 0xa6
+.field static final TRANSACTION_isUpgrade:I = 0xa7
 
-.field static final TRANSACTION_logAppProcessStartIfNeeded:I = 0x72
+.field static final TRANSACTION_logAppProcessStartIfNeeded:I = 0x73
 
-.field static final TRANSACTION_movePackage:I = 0x94
+.field static final TRANSACTION_movePackage:I = 0x95
 
-.field static final TRANSACTION_movePrimaryStorage:I = 0x95
+.field static final TRANSACTION_movePrimaryStorage:I = 0x96
 
-.field static final TRANSACTION_nextPackageToClean:I = 0x90
+.field static final TRANSACTION_nextPackageToClean:I = 0x91
 
-.field static final TRANSACTION_notifyPackageUse:I = 0x89
+.field static final TRANSACTION_notifyPackageUse:I = 0x8a
 
-.field static final TRANSACTION_performDexOpt:I = 0x8b
+.field static final TRANSACTION_performDexOpt:I = 0x8c
 
-.field static final TRANSACTION_performDexOptIfNeeded:I = 0x8a
+.field static final TRANSACTION_performDexOptIfNeeded:I = 0x8b
 
-.field static final TRANSACTION_performDexOptMode:I = 0x8c
+.field static final TRANSACTION_performDexOptMode:I = 0x8d
 
-.field static final TRANSACTION_queryContentProviders:I = 0x4e
+.field static final TRANSACTION_queryContentProviders:I = 0x4f
 
-.field static final TRANSACTION_queryInstrumentation:I = 0x50
+.field static final TRANSACTION_queryInstrumentation:I = 0x51
 
-.field static final TRANSACTION_queryIntentActivities:I = 0x42
+.field static final TRANSACTION_queryIntentActivities:I = 0x43
 
-.field static final TRANSACTION_queryIntentActivityOptions:I = 0x43
+.field static final TRANSACTION_queryIntentActivityOptions:I = 0x44
 
-.field static final TRANSACTION_queryIntentContentProviders:I = 0x47
+.field static final TRANSACTION_queryIntentContentProviders:I = 0x48
 
-.field static final TRANSACTION_queryIntentReceivers:I = 0x44
+.field static final TRANSACTION_queryIntentReceivers:I = 0x45
 
-.field static final TRANSACTION_queryIntentServices:I = 0x46
+.field static final TRANSACTION_queryIntentServices:I = 0x47
 
 .field static final TRANSACTION_queryPermissionsByGroup:I = 0x9
 
-.field static final TRANSACTION_queryRuntimePermissionGroupByPermission:I = 0x2a
+.field static final TRANSACTION_queryRuntimePermissionGroupByPermission:I = 0x2b
 
-.field static final TRANSACTION_queryRuntimePermissionsByPermissionGroup:I = 0x2b
+.field static final TRANSACTION_queryRuntimePermissionsByPermissionGroup:I = 0x2c
 
-.field static final TRANSACTION_querySyncProviders:I = 0x4d
+.field static final TRANSACTION_querySyncProviders:I = 0x4e
 
-.field static final TRANSACTION_registerMoveCallback:I = 0x92
+.field static final TRANSACTION_registerMoveCallback:I = 0x93
 
-.field static final TRANSACTION_removeOnPermissionsChangeListener:I = 0xbb
+.field static final TRANSACTION_removeOnPermissionsChangeListener:I = 0xbc
 
-.field static final TRANSACTION_removePermission:I = 0x27
+.field static final TRANSACTION_removePermission:I = 0x28
 
-.field static final TRANSACTION_replacePreferredActivity:I = 0x5b
+.field static final TRANSACTION_replacePreferredActivity:I = 0x5c
 
-.field static final TRANSACTION_resetApplicationPreferences:I = 0x57
+.field static final TRANSACTION_resetApplicationPreferences:I = 0x58
 
-.field static final TRANSACTION_resetRuntimePermissions:I = 0x30
+.field static final TRANSACTION_resetRuntimePermissions:I = 0x31
 
-.field static final TRANSACTION_resolveContentProvider:I = 0x4c
+.field static final TRANSACTION_resolveContentProvider:I = 0x4d
 
-.field static final TRANSACTION_resolveIntent:I = 0x40
+.field static final TRANSACTION_resolveIntent:I = 0x41
 
-.field static final TRANSACTION_resolveService:I = 0x45
+.field static final TRANSACTION_resolveService:I = 0x46
 
-.field static final TRANSACTION_restoreDefaultApps:I = 0x67
+.field static final TRANSACTION_restoreDefaultApps:I = 0x68
 
-.field static final TRANSACTION_restoreIntentFilterVerification:I = 0x69
+.field static final TRANSACTION_restoreIntentFilterVerification:I = 0x6a
 
-.field static final TRANSACTION_restorePermissionGrants:I = 0x6b
+.field static final TRANSACTION_restorePermissionGrants:I = 0x6c
 
-.field static final TRANSACTION_restorePreferredActivities:I = 0x65
+.field static final TRANSACTION_restorePreferredActivities:I = 0x66
 
-.field static final TRANSACTION_revokeExternalPermissions:I = 0xa9
+.field static final TRANSACTION_revokeExternalPermissions:I = 0xaa
 
-.field static final TRANSACTION_revokePermissionEDM:I = 0xab
+.field static final TRANSACTION_revokePermissionEDM:I = 0xac
 
-.field static final TRANSACTION_revokeRuntimePermission:I = 0x2f
+.field static final TRANSACTION_revokeRuntimePermission:I = 0x30
 
-.field static final TRANSACTION_rollbackPermission:I = 0xac
+.field static final TRANSACTION_rollbackPermission:I = 0xad
 
-.field static final TRANSACTION_setApplicationEnabledSetting:I = 0x70
+.field static final TRANSACTION_setApplicationEnabledSetting:I = 0x71
 
-.field static final TRANSACTION_setApplicationEnabledSettingWithList:I = 0xcb
+.field static final TRANSACTION_setApplicationEnabledSettingWithList:I = 0xcc
 
-.field static final TRANSACTION_setApplicationHiddenSettingAsUser:I = 0xb1
+.field static final TRANSACTION_setApplicationHiddenSettingAsUser:I = 0xb2
 
-.field static final TRANSACTION_setBlockUninstallForUser:I = 0xb4
+.field static final TRANSACTION_setBlockUninstallForUser:I = 0xb5
 
-.field static final TRANSACTION_setComponentEnabledSetting:I = 0x6e
+.field static final TRANSACTION_setComponentEnabledSetting:I = 0x6f
 
-.field static final TRANSACTION_setDefaultBrowserPackageName:I = 0xa1
+.field static final TRANSACTION_setDefaultBrowserPackageName:I = 0xa2
 
-.field static final TRANSACTION_setEphemeralApplicationCookie:I = 0xc2
+.field static final TRANSACTION_setEphemeralApplicationCookie:I = 0xc3
 
-.field static final TRANSACTION_setHomeActivity:I = 0x6d
+.field static final TRANSACTION_setHomeActivity:I = 0x6e
 
-.field static final TRANSACTION_setInstallLocation:I = 0x97
+.field static final TRANSACTION_setInstallLocation:I = 0x98
 
-.field static final TRANSACTION_setInstallerPackageName:I = 0x53
+.field static final TRANSACTION_setInstallerPackageName:I = 0x54
 
-.field static final TRANSACTION_setLastChosenActivity:I = 0x59
+.field static final TRANSACTION_setLastChosenActivity:I = 0x5a
 
-.field static final TRANSACTION_setLicensePermissions:I = 0xaa
+.field static final TRANSACTION_setLicensePermissions:I = 0xab
 
-.field static final TRANSACTION_setPackageStoppedState:I = 0x74
+.field static final TRANSACTION_setPackageStoppedState:I = 0x75
 
-.field static final TRANSACTION_setPackagesSuspendedAsUser:I = 0x62
+.field static final TRANSACTION_setPackagesSuspendedAsUser:I = 0x63
 
-.field static final TRANSACTION_setPermissionEnforced:I = 0xa7
+.field static final TRANSACTION_setPermissionEnforced:I = 0xa8
 
-.field static final TRANSACTION_setRequiredForSystemUser:I = 0xc5
+.field static final TRANSACTION_setRequiredForSystemUser:I = 0xc6
 
-.field static final TRANSACTION_shouldShowRequestPermissionRationale:I = 0x34
+.field static final TRANSACTION_shouldShowRequestPermissionRationale:I = 0x35
 
-.field static final TRANSACTION_systemReady:I = 0x82
+.field static final TRANSACTION_systemReady:I = 0x83
 
-.field static final TRANSACTION_unregisterMoveCallback:I = 0x93
+.field static final TRANSACTION_unregisterMoveCallback:I = 0x94
 
-.field static final TRANSACTION_updateExternalMediaStatus:I = 0x8f
+.field static final TRANSACTION_updateExternalMediaStatus:I = 0x90
 
-.field static final TRANSACTION_updateIntentVerificationStatus:I = 0x9e
+.field static final TRANSACTION_updateIntentVerificationStatus:I = 0x9f
 
-.field static final TRANSACTION_updatePackagesIfNeeded:I = 0x88
+.field static final TRANSACTION_updatePackagesIfNeeded:I = 0x89
 
-.field static final TRANSACTION_updatePermissionFlags:I = 0x32
+.field static final TRANSACTION_updatePermissionFlags:I = 0x33
 
-.field static final TRANSACTION_updatePermissionFlagsForAllApps:I = 0x33
+.field static final TRANSACTION_updatePermissionFlagsForAllApps:I = 0x34
 
-.field static final TRANSACTION_verifyIntentFilter:I = 0x9c
+.field static final TRANSACTION_verifyIntentFilter:I = 0x9d
 
-.field static final TRANSACTION_verifyPendingInstall:I = 0x9a
+.field static final TRANSACTION_verifyPendingInstall:I = 0x9b
 
 
 # direct methods
@@ -2122,6 +2124,21 @@
 
     invoke-virtual {v0, v6}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
+    invoke-virtual/range {p0 .. p0}, Landroid/content/pm/IPackageManager$Stub;->AASA_updateRestrictList()V
+
+    invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
+
+    const/4 v6, 0x1
+
+    return v6
+
+    :sswitch_26
+    const-string/jumbo v6, "android.content.pm.IPackageManager"
+
+    move-object/from16 v0, p2
+
+    invoke-virtual {v0, v6}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
+
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
     move-result-object v13
@@ -2150,7 +2167,7 @@
 
     return v6
 
-    :sswitch_26
+    :sswitch_27
     const-string/jumbo v6, "android.content.pm.IPackageManager"
 
     move-object/from16 v0, p2
@@ -2207,7 +2224,7 @@
 
     goto :goto_1a
 
-    :sswitch_27
+    :sswitch_28
     const-string/jumbo v6, "android.content.pm.IPackageManager"
 
     move-object/from16 v0, p2
@@ -2228,7 +2245,7 @@
 
     return v6
 
-    :sswitch_28
+    :sswitch_29
     const-string/jumbo v6, "android.content.pm.IPackageManager"
 
     move-object/from16 v0, p2
@@ -2281,7 +2298,7 @@
 
     goto :goto_1b
 
-    :sswitch_29
+    :sswitch_2a
     const-string/jumbo v6, "android.content.pm.IPackageManager"
 
     move-object/from16 v0, p2
@@ -2326,7 +2343,7 @@
 
     goto :goto_1c
 
-    :sswitch_2a
+    :sswitch_2b
     const-string/jumbo v6, "android.content.pm.IPackageManager"
 
     move-object/from16 v0, p2
@@ -2361,7 +2378,7 @@
 
     return v6
 
-    :sswitch_2b
+    :sswitch_2c
     const-string/jumbo v6, "android.content.pm.IPackageManager"
 
     move-object/from16 v0, p2
@@ -2390,7 +2407,7 @@
 
     return v6
 
-    :sswitch_2c
+    :sswitch_2d
     const-string/jumbo v6, "android.content.pm.IPackageManager"
 
     move-object/from16 v0, p2
@@ -2413,7 +2430,7 @@
 
     return v6
 
-    :sswitch_2d
+    :sswitch_2e
     const-string/jumbo v6, "android.content.pm.IPackageManager"
 
     move-object/from16 v0, p2
@@ -2442,7 +2459,7 @@
 
     return v6
 
-    :sswitch_2e
+    :sswitch_2f
     const-string/jumbo v6, "android.content.pm.IPackageManager"
 
     move-object/from16 v0, p2
@@ -2471,7 +2488,7 @@
 
     return v6
 
-    :sswitch_2f
+    :sswitch_30
     const-string/jumbo v6, "android.content.pm.IPackageManager"
 
     move-object/from16 v0, p2
@@ -2500,7 +2517,7 @@
 
     return v6
 
-    :sswitch_30
+    :sswitch_31
     const-string/jumbo v6, "android.content.pm.IPackageManager"
 
     move-object/from16 v0, p2
@@ -2515,7 +2532,7 @@
 
     return v6
 
-    :sswitch_31
+    :sswitch_32
     const-string/jumbo v6, "android.content.pm.IPackageManager"
 
     move-object/from16 v0, p2
@@ -2552,7 +2569,7 @@
 
     return v6
 
-    :sswitch_32
+    :sswitch_33
     const-string/jumbo v6, "android.content.pm.IPackageManager"
 
     move-object/from16 v0, p2
@@ -2591,7 +2608,7 @@
 
     return v6
 
-    :sswitch_33
+    :sswitch_34
     const-string/jumbo v6, "android.content.pm.IPackageManager"
 
     move-object/from16 v0, p2
@@ -2624,7 +2641,7 @@
 
     return v6
 
-    :sswitch_34
+    :sswitch_35
     const-string/jumbo v6, "android.content.pm.IPackageManager"
 
     move-object/from16 v0, p2
@@ -2669,7 +2686,7 @@
 
     goto :goto_1d
 
-    :sswitch_35
+    :sswitch_36
     const-string/jumbo v6, "android.content.pm.IPackageManager"
 
     move-object/from16 v0, p2
@@ -2706,7 +2723,7 @@
 
     goto :goto_1e
 
-    :sswitch_36
+    :sswitch_37
     const-string/jumbo v6, "android.content.pm.IPackageManager"
 
     move-object/from16 v0, p2
@@ -2739,7 +2756,7 @@
 
     return v6
 
-    :sswitch_37
+    :sswitch_38
     const-string/jumbo v6, "android.content.pm.IPackageManager"
 
     move-object/from16 v0, p2
@@ -2776,7 +2793,7 @@
 
     return v6
 
-    :sswitch_38
+    :sswitch_39
     const-string/jumbo v6, "android.content.pm.IPackageManager"
 
     move-object/from16 v0, p2
@@ -2799,7 +2816,7 @@
 
     return v6
 
-    :sswitch_39
+    :sswitch_3a
     const-string/jumbo v6, "android.content.pm.IPackageManager"
 
     move-object/from16 v0, p2
@@ -2830,7 +2847,7 @@
 
     return v6
 
-    :sswitch_3a
+    :sswitch_3b
     const-string/jumbo v6, "android.content.pm.IPackageManager"
 
     move-object/from16 v0, p2
@@ -2861,7 +2878,7 @@
 
     return v6
 
-    :sswitch_3b
+    :sswitch_3c
     const-string/jumbo v6, "android.content.pm.IPackageManager"
 
     move-object/from16 v0, p2
@@ -2875,37 +2892,6 @@
     move-object/from16 v0, p0
 
     invoke-virtual {v0, v13}, Landroid/content/pm/IPackageManager$Stub;->getUidForSharedUser(Ljava/lang/String;)I
-
-    move-result v86
-
-    invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
-
-    move-object/from16 v0, p3
-
-    move/from16 v1, v86
-
-    invoke-virtual {v0, v1}, Landroid/os/Parcel;->writeInt(I)V
-
-    const/4 v6, 0x1
-
-    return v6
-
-    :sswitch_3c
-    const-string/jumbo v6, "android.content.pm.IPackageManager"
-
-    move-object/from16 v0, p2
-
-    invoke-virtual {v0, v6}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
-
-    invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
-
-    move-result v55
-
-    move-object/from16 v0, p0
-
-    move/from16 v1, v55
-
-    invoke-virtual {v0, v1}, Landroid/content/pm/IPackageManager$Stub;->getFlagsForUid(I)I
 
     move-result v86
 
@@ -2936,7 +2922,7 @@
 
     move/from16 v1, v55
 
-    invoke-virtual {v0, v1}, Landroid/content/pm/IPackageManager$Stub;->getPrivateFlagsForUid(I)I
+    invoke-virtual {v0, v1}, Landroid/content/pm/IPackageManager$Stub;->getFlagsForUid(I)I
 
     move-result v86
 
@@ -2953,6 +2939,37 @@
     return v6
 
     :sswitch_3e
+    const-string/jumbo v6, "android.content.pm.IPackageManager"
+
+    move-object/from16 v0, p2
+
+    invoke-virtual {v0, v6}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
+
+    invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
+
+    move-result v55
+
+    move-object/from16 v0, p0
+
+    move/from16 v1, v55
+
+    invoke-virtual {v0, v1}, Landroid/content/pm/IPackageManager$Stub;->getPrivateFlagsForUid(I)I
+
+    move-result v86
+
+    invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
+
+    move-object/from16 v0, p3
+
+    move/from16 v1, v86
+
+    invoke-virtual {v0, v1}, Landroid/os/Parcel;->writeInt(I)V
+
+    const/4 v6, 0x1
+
+    return v6
+
+    :sswitch_3f
     const-string/jumbo v6, "android.content.pm.IPackageManager"
 
     move-object/from16 v0, p2
@@ -2991,7 +3008,7 @@
 
     goto :goto_1f
 
-    :sswitch_3f
+    :sswitch_40
     const-string/jumbo v6, "android.content.pm.IPackageManager"
 
     move-object/from16 v0, p2
@@ -3020,7 +3037,7 @@
 
     return v6
 
-    :sswitch_40
+    :sswitch_41
     const-string/jumbo v6, "android.content.pm.IPackageManager"
 
     move-object/from16 v0, p2
@@ -3103,7 +3120,7 @@
 
     goto :goto_21
 
-    :sswitch_41
+    :sswitch_42
     const-string/jumbo v6, "android.content.pm.IPackageManager"
 
     move-object/from16 v0, p2
@@ -3174,7 +3191,7 @@
 
     goto :goto_23
 
-    :sswitch_42
+    :sswitch_43
     const-string/jumbo v6, "android.content.pm.IPackageManager"
 
     move-object/from16 v0, p2
@@ -3257,7 +3274,7 @@
 
     goto :goto_25
 
-    :sswitch_43
+    :sswitch_44
     const-string/jumbo v6, "android.content.pm.IPackageManager"
 
     move-object/from16 v0, p2
@@ -3374,7 +3391,7 @@
 
     goto :goto_28
 
-    :sswitch_44
+    :sswitch_45
     const-string/jumbo v6, "android.content.pm.IPackageManager"
 
     move-object/from16 v0, p2
@@ -3457,7 +3474,7 @@
 
     goto :goto_2a
 
-    :sswitch_45
+    :sswitch_46
     const-string/jumbo v6, "android.content.pm.IPackageManager"
 
     move-object/from16 v0, p2
@@ -3540,7 +3557,7 @@
 
     goto :goto_2c
 
-    :sswitch_46
+    :sswitch_47
     const-string/jumbo v6, "android.content.pm.IPackageManager"
 
     move-object/from16 v0, p2
@@ -3623,7 +3640,7 @@
 
     goto :goto_2e
 
-    :sswitch_47
+    :sswitch_48
     const-string/jumbo v6, "android.content.pm.IPackageManager"
 
     move-object/from16 v0, p2
@@ -3706,7 +3723,7 @@
 
     goto :goto_30
 
-    :sswitch_48
+    :sswitch_49
     const-string/jumbo v6, "android.content.pm.IPackageManager"
 
     move-object/from16 v0, p2
@@ -3763,7 +3780,7 @@
 
     goto :goto_31
 
-    :sswitch_49
+    :sswitch_4a
     const-string/jumbo v6, "android.content.pm.IPackageManager"
 
     move-object/from16 v0, p2
@@ -3824,7 +3841,7 @@
 
     goto :goto_32
 
-    :sswitch_4a
+    :sswitch_4b
     const-string/jumbo v6, "android.content.pm.IPackageManager"
 
     move-object/from16 v0, p2
@@ -3881,7 +3898,7 @@
 
     goto :goto_33
 
-    :sswitch_4b
+    :sswitch_4c
     const-string/jumbo v6, "android.content.pm.IPackageManager"
 
     move-object/from16 v0, p2
@@ -3932,7 +3949,7 @@
 
     goto :goto_34
 
-    :sswitch_4c
+    :sswitch_4d
     const-string/jumbo v6, "android.content.pm.IPackageManager"
 
     move-object/from16 v0, p2
@@ -3991,7 +4008,7 @@
 
     goto :goto_35
 
-    :sswitch_4d
+    :sswitch_4e
     const-string/jumbo v6, "android.content.pm.IPackageManager"
 
     move-object/from16 v0, p2
@@ -4036,7 +4053,7 @@
 
     return v6
 
-    :sswitch_4e
+    :sswitch_4f
     const-string/jumbo v6, "android.content.pm.IPackageManager"
 
     move-object/from16 v0, p2
@@ -4095,7 +4112,7 @@
 
     goto :goto_36
 
-    :sswitch_4f
+    :sswitch_50
     const-string/jumbo v6, "android.content.pm.IPackageManager"
 
     move-object/from16 v0, p2
@@ -4170,7 +4187,7 @@
 
     goto :goto_38
 
-    :sswitch_50
+    :sswitch_51
     const-string/jumbo v6, "android.content.pm.IPackageManager"
 
     move-object/from16 v0, p2
@@ -4225,7 +4242,7 @@
 
     goto :goto_39
 
-    :sswitch_51
+    :sswitch_52
     const-string/jumbo v6, "android.content.pm.IPackageManager"
 
     move-object/from16 v0, p2
@@ -4272,7 +4289,7 @@
 
     return v6
 
-    :sswitch_52
+    :sswitch_53
     const-string/jumbo v6, "android.content.pm.IPackageManager"
 
     move-object/from16 v0, p2
@@ -4309,7 +4326,7 @@
 
     goto :goto_3a
 
-    :sswitch_53
+    :sswitch_54
     const-string/jumbo v6, "android.content.pm.IPackageManager"
 
     move-object/from16 v0, p2
@@ -4334,7 +4351,7 @@
 
     return v6
 
-    :sswitch_54
+    :sswitch_55
     const-string/jumbo v6, "android.content.pm.IPackageManager"
 
     move-object/from16 v0, p2
@@ -4375,7 +4392,7 @@
 
     return v6
 
-    :sswitch_55
+    :sswitch_56
     const-string/jumbo v6, "android.content.pm.IPackageManager"
 
     move-object/from16 v0, p2
@@ -4416,7 +4433,7 @@
 
     return v6
 
-    :sswitch_56
+    :sswitch_57
     const-string/jumbo v6, "android.content.pm.IPackageManager"
 
     move-object/from16 v0, p2
@@ -4445,7 +4462,7 @@
 
     return v6
 
-    :sswitch_57
+    :sswitch_58
     const-string/jumbo v6, "android.content.pm.IPackageManager"
 
     move-object/from16 v0, p2
@@ -4468,7 +4485,7 @@
 
     return v6
 
-    :sswitch_58
+    :sswitch_59
     const-string/jumbo v6, "android.content.pm.IPackageManager"
 
     move-object/from16 v0, p2
@@ -4545,7 +4562,7 @@
 
     goto :goto_3c
 
-    :sswitch_59
+    :sswitch_5a
     const-string/jumbo v6, "android.content.pm.IPackageManager"
 
     move-object/from16 v0, p2
@@ -4646,7 +4663,7 @@
 
     goto :goto_3f
 
-    :sswitch_5a
+    :sswitch_5b
     const-string/jumbo v6, "android.content.pm.IPackageManager"
 
     move-object/from16 v0, p2
@@ -4727,7 +4744,7 @@
 
     goto :goto_41
 
-    :sswitch_5b
+    :sswitch_5c
     const-string/jumbo v6, "android.content.pm.IPackageManager"
 
     move-object/from16 v0, p2
@@ -4808,7 +4825,7 @@
 
     goto :goto_43
 
-    :sswitch_5c
+    :sswitch_5d
     const-string/jumbo v6, "android.content.pm.IPackageManager"
 
     move-object/from16 v0, p2
@@ -4829,7 +4846,7 @@
 
     return v6
 
-    :sswitch_5d
+    :sswitch_5e
     const-string/jumbo v6, "android.content.pm.IPackageManager"
 
     move-object/from16 v0, p2
@@ -4884,7 +4901,7 @@
 
     return v6
 
-    :sswitch_5e
+    :sswitch_5f
     const-string/jumbo v6, "android.content.pm.IPackageManager"
 
     move-object/from16 v0, p2
@@ -4953,7 +4970,7 @@
 
     goto :goto_45
 
-    :sswitch_5f
+    :sswitch_60
     const-string/jumbo v6, "android.content.pm.IPackageManager"
 
     move-object/from16 v0, p2
@@ -4980,7 +4997,7 @@
 
     return v6
 
-    :sswitch_60
+    :sswitch_61
     const-string/jumbo v6, "android.content.pm.IPackageManager"
 
     move-object/from16 v0, p2
@@ -5045,7 +5062,7 @@
 
     goto :goto_46
 
-    :sswitch_61
+    :sswitch_62
     const-string/jumbo v6, "android.content.pm.IPackageManager"
 
     move-object/from16 v0, p2
@@ -5072,7 +5089,7 @@
 
     return v6
 
-    :sswitch_62
+    :sswitch_63
     const-string/jumbo v6, "android.content.pm.IPackageManager"
 
     move-object/from16 v0, p2
@@ -5121,7 +5138,7 @@
 
     goto :goto_47
 
-    :sswitch_63
+    :sswitch_64
     const-string/jumbo v6, "android.content.pm.IPackageManager"
 
     move-object/from16 v0, p2
@@ -5164,7 +5181,7 @@
 
     goto :goto_48
 
-    :sswitch_64
+    :sswitch_65
     const-string/jumbo v6, "android.content.pm.IPackageManager"
 
     move-object/from16 v0, p2
@@ -5195,7 +5212,7 @@
 
     return v6
 
-    :sswitch_65
+    :sswitch_66
     const-string/jumbo v6, "android.content.pm.IPackageManager"
 
     move-object/from16 v0, p2
@@ -5224,7 +5241,7 @@
 
     return v6
 
-    :sswitch_66
+    :sswitch_67
     const-string/jumbo v6, "android.content.pm.IPackageManager"
 
     move-object/from16 v0, p2
@@ -5255,7 +5272,7 @@
 
     return v6
 
-    :sswitch_67
+    :sswitch_68
     const-string/jumbo v6, "android.content.pm.IPackageManager"
 
     move-object/from16 v0, p2
@@ -5284,7 +5301,7 @@
 
     return v6
 
-    :sswitch_68
+    :sswitch_69
     const-string/jumbo v6, "android.content.pm.IPackageManager"
 
     move-object/from16 v0, p2
@@ -5315,7 +5332,7 @@
 
     return v6
 
-    :sswitch_69
+    :sswitch_6a
     const-string/jumbo v6, "android.content.pm.IPackageManager"
 
     move-object/from16 v0, p2
@@ -5344,7 +5361,7 @@
 
     return v6
 
-    :sswitch_6a
+    :sswitch_6b
     const-string/jumbo v6, "android.content.pm.IPackageManager"
 
     move-object/from16 v0, p2
@@ -5375,7 +5392,7 @@
 
     return v6
 
-    :sswitch_6b
+    :sswitch_6c
     const-string/jumbo v6, "android.content.pm.IPackageManager"
 
     move-object/from16 v0, p2
@@ -5404,7 +5421,7 @@
 
     return v6
 
-    :sswitch_6c
+    :sswitch_6d
     const-string/jumbo v6, "android.content.pm.IPackageManager"
 
     move-object/from16 v0, p2
@@ -5461,7 +5478,7 @@
 
     goto :goto_49
 
-    :sswitch_6d
+    :sswitch_6e
     const-string/jumbo v6, "android.content.pm.IPackageManager"
 
     move-object/from16 v0, p2
@@ -5508,7 +5525,7 @@
 
     goto :goto_4a
 
-    :sswitch_6e
+    :sswitch_6f
     const-string/jumbo v6, "android.content.pm.IPackageManager"
 
     move-object/from16 v0, p2
@@ -5565,7 +5582,7 @@
 
     goto :goto_4b
 
-    :sswitch_6f
+    :sswitch_70
     const-string/jumbo v6, "android.content.pm.IPackageManager"
 
     move-object/from16 v0, p2
@@ -5620,7 +5637,7 @@
 
     goto :goto_4c
 
-    :sswitch_70
+    :sswitch_71
     const-string/jumbo v6, "android.content.pm.IPackageManager"
 
     move-object/from16 v0, p2
@@ -5667,7 +5684,7 @@
 
     return v6
 
-    :sswitch_71
+    :sswitch_72
     const-string/jumbo v6, "android.content.pm.IPackageManager"
 
     move-object/from16 v0, p2
@@ -5702,7 +5719,7 @@
 
     return v6
 
-    :sswitch_72
+    :sswitch_73
     const-string/jumbo v6, "android.content.pm.IPackageManager"
 
     move-object/from16 v0, p2
@@ -5747,7 +5764,7 @@
 
     return v6
 
-    :sswitch_73
+    :sswitch_74
     const-string/jumbo v6, "android.content.pm.IPackageManager"
 
     move-object/from16 v0, p2
@@ -5770,7 +5787,7 @@
 
     return v6
 
-    :sswitch_74
+    :sswitch_75
     const-string/jumbo v6, "android.content.pm.IPackageManager"
 
     move-object/from16 v0, p2
@@ -5809,7 +5826,7 @@
 
     goto :goto_4d
 
-    :sswitch_75
+    :sswitch_76
     const-string/jumbo v6, "android.content.pm.IPackageManager"
 
     move-object/from16 v0, p2
@@ -5846,7 +5863,7 @@
 
     return v6
 
-    :sswitch_76
+    :sswitch_77
     const-string/jumbo v6, "android.content.pm.IPackageManager"
 
     move-object/from16 v0, p2
@@ -5897,7 +5914,7 @@
 
     goto :goto_4e
 
-    :sswitch_77
+    :sswitch_78
     const-string/jumbo v6, "android.content.pm.IPackageManager"
 
     move-object/from16 v0, p2
@@ -5928,7 +5945,7 @@
 
     return v6
 
-    :sswitch_78
+    :sswitch_79
     const-string/jumbo v6, "android.content.pm.IPackageManager"
 
     move-object/from16 v0, p2
@@ -5965,7 +5982,7 @@
 
     return v6
 
-    :sswitch_79
+    :sswitch_7a
     const-string/jumbo v6, "android.content.pm.IPackageManager"
 
     move-object/from16 v0, p2
@@ -6000,7 +6017,7 @@
 
     return v6
 
-    :sswitch_7a
+    :sswitch_7b
     const-string/jumbo v6, "android.content.pm.IPackageManager"
 
     move-object/from16 v0, p2
@@ -6021,7 +6038,7 @@
 
     return v6
 
-    :sswitch_7b
+    :sswitch_7c
     const-string/jumbo v6, "android.content.pm.IPackageManager"
 
     move-object/from16 v0, p2
@@ -6058,7 +6075,7 @@
 
     return v6
 
-    :sswitch_7c
+    :sswitch_7d
     const-string/jumbo v6, "android.content.pm.IPackageManager"
 
     move-object/from16 v0, p2
@@ -6081,7 +6098,7 @@
 
     return v6
 
-    :sswitch_7d
+    :sswitch_7e
     const-string/jumbo v6, "android.content.pm.IPackageManager"
 
     move-object/from16 v0, p2
@@ -6124,7 +6141,7 @@
 
     goto :goto_4f
 
-    :sswitch_7e
+    :sswitch_7f
     const-string/jumbo v6, "android.content.pm.IPackageManager"
 
     move-object/from16 v0, p2
@@ -6167,7 +6184,7 @@
 
     goto :goto_50
 
-    :sswitch_7f
+    :sswitch_80
     const-string/jumbo v6, "android.content.pm.IPackageManager"
 
     move-object/from16 v0, p2
@@ -6196,7 +6213,7 @@
 
     return v6
 
-    :sswitch_80
+    :sswitch_81
     const-string/jumbo v6, "android.content.pm.IPackageManager"
 
     move-object/from16 v0, p2
@@ -6211,7 +6228,7 @@
 
     return v6
 
-    :sswitch_81
+    :sswitch_82
     const-string/jumbo v6, "android.content.pm.IPackageManager"
 
     move-object/from16 v0, p2
@@ -6242,7 +6259,7 @@
 
     goto :goto_51
 
-    :sswitch_82
+    :sswitch_83
     const-string/jumbo v6, "android.content.pm.IPackageManager"
 
     move-object/from16 v0, p2
@@ -6257,7 +6274,7 @@
 
     return v6
 
-    :sswitch_83
+    :sswitch_84
     const-string/jumbo v6, "android.content.pm.IPackageManager"
 
     move-object/from16 v0, p2
@@ -6288,7 +6305,7 @@
 
     goto :goto_52
 
-    :sswitch_84
+    :sswitch_85
     const-string/jumbo v6, "android.content.pm.IPackageManager"
 
     move-object/from16 v0, p2
@@ -6333,7 +6350,7 @@
 
     goto :goto_53
 
-    :sswitch_85
+    :sswitch_86
     const-string/jumbo v6, "android.content.pm.IPackageManager"
 
     move-object/from16 v0, p2
@@ -6386,7 +6403,7 @@
 
     goto :goto_54
 
-    :sswitch_86
+    :sswitch_87
     const-string/jumbo v6, "android.content.pm.IPackageManager"
 
     move-object/from16 v0, p2
@@ -6445,7 +6462,7 @@
 
     goto :goto_55
 
-    :sswitch_87
+    :sswitch_88
     const-string/jumbo v6, "android.content.pm.IPackageManager"
 
     move-object/from16 v0, p2
@@ -6510,7 +6527,7 @@
 
     goto :goto_56
 
-    :sswitch_88
+    :sswitch_89
     const-string/jumbo v6, "android.content.pm.IPackageManager"
 
     move-object/from16 v0, p2
@@ -6525,7 +6542,7 @@
 
     return v6
 
-    :sswitch_89
+    :sswitch_8a
     const-string/jumbo v6, "android.content.pm.IPackageManager"
 
     move-object/from16 v0, p2
@@ -6552,7 +6569,7 @@
 
     return v6
 
-    :sswitch_8a
+    :sswitch_8b
     const-string/jumbo v6, "android.content.pm.IPackageManager"
 
     move-object/from16 v0, p2
@@ -6589,7 +6606,7 @@
 
     goto :goto_57
 
-    :sswitch_8b
+    :sswitch_8c
     const-string/jumbo v6, "android.content.pm.IPackageManager"
 
     move-object/from16 v0, p2
@@ -6660,7 +6677,7 @@
 
     goto :goto_5a
 
-    :sswitch_8c
+    :sswitch_8d
     const-string/jumbo v6, "android.content.pm.IPackageManager"
 
     move-object/from16 v0, p2
@@ -6733,7 +6750,7 @@
 
     goto :goto_5d
 
-    :sswitch_8d
+    :sswitch_8e
     const-string/jumbo v6, "android.content.pm.IPackageManager"
 
     move-object/from16 v0, p2
@@ -6754,7 +6771,7 @@
 
     return v6
 
-    :sswitch_8e
+    :sswitch_8f
     const-string/jumbo v6, "android.content.pm.IPackageManager"
 
     move-object/from16 v0, p2
@@ -6775,7 +6792,7 @@
 
     return v6
 
-    :sswitch_8f
+    :sswitch_90
     const-string/jumbo v6, "android.content.pm.IPackageManager"
 
     move-object/from16 v0, p2
@@ -6820,7 +6837,7 @@
 
     goto :goto_5f
 
-    :sswitch_90
+    :sswitch_91
     const-string/jumbo v6, "android.content.pm.IPackageManager"
 
     move-object/from16 v0, p2
@@ -6889,7 +6906,7 @@
 
     goto :goto_61
 
-    :sswitch_91
+    :sswitch_92
     const-string/jumbo v6, "android.content.pm.IPackageManager"
 
     move-object/from16 v0, p2
@@ -6920,7 +6937,7 @@
 
     return v6
 
-    :sswitch_92
+    :sswitch_93
     const-string/jumbo v6, "android.content.pm.IPackageManager"
 
     move-object/from16 v0, p2
@@ -6947,7 +6964,7 @@
 
     return v6
 
-    :sswitch_93
+    :sswitch_94
     const-string/jumbo v6, "android.content.pm.IPackageManager"
 
     move-object/from16 v0, p2
@@ -6974,7 +6991,7 @@
 
     return v6
 
-    :sswitch_94
+    :sswitch_95
     const-string/jumbo v6, "android.content.pm.IPackageManager"
 
     move-object/from16 v0, p2
@@ -7007,7 +7024,7 @@
 
     return v6
 
-    :sswitch_95
+    :sswitch_96
     const-string/jumbo v6, "android.content.pm.IPackageManager"
 
     move-object/from16 v0, p2
@@ -7036,7 +7053,7 @@
 
     return v6
 
-    :sswitch_96
+    :sswitch_97
     const-string/jumbo v6, "android.content.pm.IPackageManager"
 
     move-object/from16 v0, p2
@@ -7093,7 +7110,7 @@
 
     goto :goto_63
 
-    :sswitch_97
+    :sswitch_98
     const-string/jumbo v6, "android.content.pm.IPackageManager"
 
     move-object/from16 v0, p2
@@ -7132,7 +7149,7 @@
 
     goto :goto_64
 
-    :sswitch_98
+    :sswitch_99
     const-string/jumbo v6, "android.content.pm.IPackageManager"
 
     move-object/from16 v0, p2
@@ -7155,7 +7172,7 @@
 
     return v6
 
-    :sswitch_99
+    :sswitch_9a
     const-string/jumbo v6, "android.content.pm.IPackageManager"
 
     move-object/from16 v0, p2
@@ -7190,7 +7207,7 @@
 
     return v6
 
-    :sswitch_9a
+    :sswitch_9b
     const-string/jumbo v6, "android.content.pm.IPackageManager"
 
     move-object/from16 v0, p2
@@ -7219,7 +7236,7 @@
 
     return v6
 
-    :sswitch_9b
+    :sswitch_9c
     const-string/jumbo v6, "android.content.pm.IPackageManager"
 
     move-object/from16 v0, p2
@@ -7254,7 +7271,7 @@
 
     return v6
 
-    :sswitch_9c
+    :sswitch_9d
     const-string/jumbo v6, "android.content.pm.IPackageManager"
 
     move-object/from16 v0, p2
@@ -7289,7 +7306,7 @@
 
     return v6
 
-    :sswitch_9d
+    :sswitch_9e
     const-string/jumbo v6, "android.content.pm.IPackageManager"
 
     move-object/from16 v0, p2
@@ -7324,7 +7341,7 @@
 
     return v6
 
-    :sswitch_9e
+    :sswitch_9f
     const-string/jumbo v6, "android.content.pm.IPackageManager"
 
     move-object/from16 v0, p2
@@ -7371,7 +7388,7 @@
 
     goto :goto_65
 
-    :sswitch_9f
+    :sswitch_a0
     const-string/jumbo v6, "android.content.pm.IPackageManager"
 
     move-object/from16 v0, p2
@@ -7420,7 +7437,7 @@
 
     goto :goto_66
 
-    :sswitch_a0
+    :sswitch_a1
     const-string/jumbo v6, "android.content.pm.IPackageManager"
 
     move-object/from16 v0, p2
@@ -7469,7 +7486,7 @@
 
     goto :goto_67
 
-    :sswitch_a1
+    :sswitch_a2
     const-string/jumbo v6, "android.content.pm.IPackageManager"
 
     move-object/from16 v0, p2
@@ -7512,7 +7529,7 @@
 
     goto :goto_68
 
-    :sswitch_a2
+    :sswitch_a3
     const-string/jumbo v6, "android.content.pm.IPackageManager"
 
     move-object/from16 v0, p2
@@ -7543,7 +7560,7 @@
 
     return v6
 
-    :sswitch_a3
+    :sswitch_a4
     const-string/jumbo v6, "android.content.pm.IPackageManager"
 
     move-object/from16 v0, p2
@@ -7586,7 +7603,7 @@
 
     goto :goto_69
 
-    :sswitch_a4
+    :sswitch_a5
     const-string/jumbo v6, "android.content.pm.IPackageManager"
 
     move-object/from16 v0, p2
@@ -7617,7 +7634,7 @@
 
     goto :goto_6a
 
-    :sswitch_a5
+    :sswitch_a6
     const-string/jumbo v6, "android.content.pm.IPackageManager"
 
     move-object/from16 v0, p2
@@ -7648,7 +7665,7 @@
 
     goto :goto_6b
 
-    :sswitch_a6
+    :sswitch_a7
     const-string/jumbo v6, "android.content.pm.IPackageManager"
 
     move-object/from16 v0, p2
@@ -7679,7 +7696,7 @@
 
     goto :goto_6c
 
-    :sswitch_a7
+    :sswitch_a8
     const-string/jumbo v6, "android.content.pm.IPackageManager"
 
     move-object/from16 v0, p2
@@ -7714,7 +7731,7 @@
 
     goto :goto_6d
 
-    :sswitch_a8
+    :sswitch_a9
     const-string/jumbo v6, "android.content.pm.IPackageManager"
 
     move-object/from16 v0, p2
@@ -7751,7 +7768,7 @@
 
     goto :goto_6e
 
-    :sswitch_a9
+    :sswitch_aa
     const-string/jumbo v6, "android.content.pm.IPackageManager"
 
     move-object/from16 v0, p2
@@ -7806,7 +7823,7 @@
 
     goto :goto_6f
 
-    :sswitch_aa
+    :sswitch_ab
     const-string/jumbo v6, "android.content.pm.IPackageManager"
 
     move-object/from16 v0, p2
@@ -7835,7 +7852,7 @@
 
     return v6
 
-    :sswitch_ab
+    :sswitch_ac
     const-string/jumbo v6, "android.content.pm.IPackageManager"
 
     move-object/from16 v0, p2
@@ -7886,7 +7903,7 @@
 
     goto :goto_70
 
-    :sswitch_ac
+    :sswitch_ad
     const-string/jumbo v6, "android.content.pm.IPackageManager"
 
     move-object/from16 v0, p2
@@ -7937,7 +7954,7 @@
 
     goto :goto_71
 
-    :sswitch_ad
+    :sswitch_ae
     const-string/jumbo v6, "android.content.pm.IPackageManager"
 
     move-object/from16 v0, p2
@@ -7966,7 +7983,7 @@
 
     return v6
 
-    :sswitch_ae
+    :sswitch_af
     const-string/jumbo v6, "android.content.pm.IPackageManager"
 
     move-object/from16 v0, p2
@@ -8001,7 +8018,7 @@
 
     return v6
 
-    :sswitch_af
+    :sswitch_b0
     const-string/jumbo v6, "android.content.pm.IPackageManager"
 
     move-object/from16 v0, p2
@@ -8028,7 +8045,7 @@
 
     return v6
 
-    :sswitch_b0
+    :sswitch_b1
     const-string/jumbo v6, "android.content.pm.IPackageManager"
 
     move-object/from16 v0, p2
@@ -8059,7 +8076,7 @@
 
     goto :goto_72
 
-    :sswitch_b1
+    :sswitch_b2
     const-string/jumbo v6, "android.content.pm.IPackageManager"
 
     move-object/from16 v0, p2
@@ -8114,7 +8131,7 @@
 
     goto :goto_74
 
-    :sswitch_b2
+    :sswitch_b3
     const-string/jumbo v6, "android.content.pm.IPackageManager"
 
     move-object/from16 v0, p2
@@ -8157,7 +8174,7 @@
 
     goto :goto_75
 
-    :sswitch_b3
+    :sswitch_b4
     const-string/jumbo v6, "android.content.pm.IPackageManager"
 
     move-object/from16 v0, p2
@@ -8190,7 +8207,7 @@
 
     goto :goto_76
 
-    :sswitch_b4
+    :sswitch_b5
     const-string/jumbo v6, "android.content.pm.IPackageManager"
 
     move-object/from16 v0, p2
@@ -8245,7 +8262,7 @@
 
     goto :goto_78
 
-    :sswitch_b5
+    :sswitch_b6
     const-string/jumbo v6, "android.content.pm.IPackageManager"
 
     move-object/from16 v0, p2
@@ -8288,7 +8305,7 @@
 
     goto :goto_79
 
-    :sswitch_b6
+    :sswitch_b7
     const-string/jumbo v6, "android.content.pm.IPackageManager"
 
     move-object/from16 v0, p2
@@ -8341,7 +8358,7 @@
 
     goto :goto_7a
 
-    :sswitch_b7
+    :sswitch_b8
     const-string/jumbo v6, "android.content.pm.IPackageManager"
 
     move-object/from16 v0, p2
@@ -8390,7 +8407,7 @@
 
     goto :goto_7b
 
-    :sswitch_b8
+    :sswitch_b9
     const-string/jumbo v6, "android.content.pm.IPackageManager"
 
     move-object/from16 v0, p2
@@ -8451,7 +8468,7 @@
 
     goto :goto_7d
 
-    :sswitch_b9
+    :sswitch_ba
     const-string/jumbo v6, "android.content.pm.IPackageManager"
 
     move-object/from16 v0, p2
@@ -8512,7 +8529,7 @@
 
     goto :goto_7f
 
-    :sswitch_ba
+    :sswitch_bb
     const-string/jumbo v6, "android.content.pm.IPackageManager"
 
     move-object/from16 v0, p2
@@ -8539,7 +8556,7 @@
 
     return v6
 
-    :sswitch_bb
+    :sswitch_bc
     const-string/jumbo v6, "android.content.pm.IPackageManager"
 
     move-object/from16 v0, p2
@@ -8566,7 +8583,7 @@
 
     return v6
 
-    :sswitch_bc
+    :sswitch_bd
     const-string/jumbo v6, "android.content.pm.IPackageManager"
 
     move-object/from16 v0, p2
@@ -8595,7 +8612,7 @@
 
     return v6
 
-    :sswitch_bd
+    :sswitch_be
     const-string/jumbo v6, "android.content.pm.IPackageManager"
 
     move-object/from16 v0, p2
@@ -8640,7 +8657,7 @@
 
     goto :goto_80
 
-    :sswitch_be
+    :sswitch_bf
     const-string/jumbo v6, "android.content.pm.IPackageManager"
 
     move-object/from16 v0, p2
@@ -8685,7 +8702,7 @@
 
     goto :goto_81
 
-    :sswitch_bf
+    :sswitch_c0
     const-string/jumbo v6, "android.content.pm.IPackageManager"
 
     move-object/from16 v0, p2
@@ -8708,7 +8725,7 @@
 
     return v6
 
-    :sswitch_c0
+    :sswitch_c1
     const-string/jumbo v6, "android.content.pm.IPackageManager"
 
     move-object/from16 v0, p2
@@ -8759,7 +8776,7 @@
 
     goto :goto_82
 
-    :sswitch_c1
+    :sswitch_c2
     const-string/jumbo v6, "android.content.pm.IPackageManager"
 
     move-object/from16 v0, p2
@@ -8794,7 +8811,7 @@
 
     return v6
 
-    :sswitch_c2
+    :sswitch_c3
     const-string/jumbo v6, "android.content.pm.IPackageManager"
 
     move-object/from16 v0, p2
@@ -8841,7 +8858,7 @@
 
     goto :goto_83
 
-    :sswitch_c3
+    :sswitch_c4
     const-string/jumbo v6, "android.content.pm.IPackageManager"
 
     move-object/from16 v0, p2
@@ -8896,7 +8913,7 @@
 
     goto :goto_84
 
-    :sswitch_c4
+    :sswitch_c5
     const-string/jumbo v6, "android.content.pm.IPackageManager"
 
     move-object/from16 v0, p2
@@ -8939,7 +8956,7 @@
 
     goto :goto_85
 
-    :sswitch_c5
+    :sswitch_c6
     const-string/jumbo v6, "android.content.pm.IPackageManager"
 
     move-object/from16 v0, p2
@@ -8990,7 +9007,7 @@
 
     goto :goto_87
 
-    :sswitch_c6
+    :sswitch_c7
     const-string/jumbo v6, "android.content.pm.IPackageManager"
 
     move-object/from16 v0, p2
@@ -9013,7 +9030,7 @@
 
     return v6
 
-    :sswitch_c7
+    :sswitch_c8
     const-string/jumbo v6, "android.content.pm.IPackageManager"
 
     move-object/from16 v0, p2
@@ -9036,7 +9053,7 @@
 
     return v6
 
-    :sswitch_c8
+    :sswitch_c9
     const-string/jumbo v6, "android.content.pm.IPackageManager"
 
     move-object/from16 v0, p2
@@ -9073,7 +9090,7 @@
 
     goto :goto_88
 
-    :sswitch_c9
+    :sswitch_ca
     const-string/jumbo v6, "android.content.pm.IPackageManager"
 
     move-object/from16 v0, p2
@@ -9102,7 +9119,7 @@
 
     return v6
 
-    :sswitch_ca
+    :sswitch_cb
     const-string/jumbo v6, "android.content.pm.IPackageManager"
 
     move-object/from16 v0, p2
@@ -9157,7 +9174,7 @@
 
     goto :goto_89
 
-    :sswitch_cb
+    :sswitch_cc
     const-string/jumbo v6, "android.content.pm.IPackageManager"
 
     move-object/from16 v0, p2
@@ -9228,7 +9245,7 @@
 
     goto :goto_8b
 
-    :sswitch_cc
+    :sswitch_cd
     const-string/jumbo v6, "android.content.pm.IPackageManager"
 
     move-object/from16 v0, p2
@@ -9251,7 +9268,7 @@
 
     return v6
 
-    :sswitch_cd
+    :sswitch_ce
     const-string/jumbo v6, "android.content.pm.IPackageManager"
 
     move-object/from16 v0, p2
@@ -9266,7 +9283,7 @@
 
     return v6
 
-    :sswitch_ce
+    :sswitch_cf
     const-string/jumbo v6, "android.content.pm.IPackageManager"
 
     move-object/from16 v0, p2
@@ -9505,6 +9522,7 @@
         0xcc -> :sswitch_cc
         0xcd -> :sswitch_cd
         0xce -> :sswitch_ce
+        0xcf -> :sswitch_cf
         0x5f4e5446 -> :sswitch_0
     .end sparse-switch
 .end method

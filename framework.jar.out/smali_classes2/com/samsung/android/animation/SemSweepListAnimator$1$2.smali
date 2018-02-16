@@ -50,7 +50,7 @@
 
     if-eqz v1, :cond_0
 
-    const-string/jumbo v1, "SweepAnimator"
+    const-string/jumbo v1, "SemSweepListAnimator"
 
     const-string/jumbo v2, "fadeOutAnimator : onAnimationEnd"
 
@@ -79,9 +79,9 @@
 
     if-eqz v1, :cond_1
 
-    const-string/jumbo v1, "SweepAnimator"
+    const-string/jumbo v1, "SemSweepListAnimator"
 
-    const-string/jumbo v2, "fadeOutAnimator : onAnimationEnd : send onSweepEnd"
+    const-string/jumbo v2, "fadeOutAnimator : onAnimationEnd : send onSweepEnd #2"
 
     invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
@@ -145,7 +145,7 @@
 
     if-eqz v1, :cond_3
 
-    const-string/jumbo v1, "SweepAnimator"
+    const-string/jumbo v1, "SemSweepListAnimator"
 
     const-string/jumbo v2, "fadeOutAnimator : onAnimationEnd : recycle mSweepBdToFade"
 
@@ -172,7 +172,7 @@
 
     if-eqz v1, :cond_6
 
-    const-string/jumbo v1, "SweepAnimator"
+    const-string/jumbo v1, "SemSweepListAnimator"
 
     const-string/jumbo v2, "fadeOutAnimator : onAnimationEnd : recycle copiedBitmap"
 
@@ -196,7 +196,7 @@
 
     if-eqz v0, :cond_0
 
-    const-string/jumbo v0, "SweepAnimator"
+    const-string/jumbo v0, "SemSweepListAnimator"
 
     const-string/jumbo v1, "fadeOutAnimator : onAnimationStart"
 
