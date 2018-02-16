@@ -8926,8 +8926,8 @@
     <public type="string" name="taskbar_context_menu_close_desk_notification_view" id="0x7f0f0ab6" />
     <public type="string" name="APKTOOL_DUMMY_828" id="0x7f0f0828" />
     <public type="string" name="APKTOOL_DUMMY_829" id="0x7f0f0829" />
-    <public type="string" name="service_background_processes" id="0x7f0f0ab7" />
-    <public type="string" name="service_foreground_processes" id="0x7f0f0ab8" />
+    <public type="string" name="service_background_processes" id="0x7f0f0ab8" />
+    <public type="string" name="service_foreground_processes" id="0x7f0f0ab9" />
     <public type="string" name="status_bar_date_formatter" id="0x7f0f02da" />
     <public type="string" name="toast_rotation_locked" id="0x7f0f0827" />
     <public type="string" name="clear_cover_wday_day" id="0x7f0f0017" />

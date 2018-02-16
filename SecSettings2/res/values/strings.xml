@@ -8474,9 +8474,9 @@ To ensure the most up-to-date protection, enable automatic updates by accepting 
     <string name="rom_name">Rom Name</string>
     <string name="rom_name_details">IronMan-Rom</string>
     <string name="rom_ver">Rom Version</string>
-    <string name="rom_ver_details">V1.1.0</string>
+    <string name="rom_ver_details">V1.2.0</string>
     <string name="rom_date">Rom Date</string>
-    <string name="rom_date_details">06.12.17</string>
+    <string name="rom_date_details">19.02.18</string>
     <string name="rom_developer">Rom Developer</string>
     <string name="rom_developer_name">Tkkg1994</string>
     <string name="notification_reminder_led_toast">LED indicator for Accessibility and Sounds and notifications cannot be enabled at same time. Go to Settings > Accessibility > Notification reminder, then disable LED indicator first.</string>

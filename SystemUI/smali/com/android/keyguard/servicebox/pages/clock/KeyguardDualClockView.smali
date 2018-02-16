@@ -482,7 +482,48 @@
 
     invoke-virtual {p0}, Lcom/android/keyguard/servicebox/pages/clock/KeyguardDualClockView;->setClockDateColors()V
 
+    goto :goto_0
+
     :cond_3
+    const-string v0, "kg_clock_hours_color"
+
+    invoke-virtual {v0, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_4
+
+    invoke-virtual {p0}, Lcom/android/keyguard/servicebox/pages/clock/KeyguardDualClockView;->setClockDateColors()V
+
+    goto :goto_0
+
+    :cond_4
+    const-string v0, "kg_clock_minutes_color"
+
+    invoke-virtual {v0, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_5
+
+    invoke-virtual {p0}, Lcom/android/keyguard/servicebox/pages/clock/KeyguardDualClockView;->setClockDateColors()V
+
+    goto :goto_0
+
+    :cond_5
+    const-string v0, "kg_clock_date_color"
+
+    invoke-virtual {v0, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_6
+
+    invoke-virtual {p0}, Lcom/android/keyguard/servicebox/pages/clock/KeyguardDualClockView;->setClockDateColors()V
+
+    goto :goto_0
+
+    :cond_6
     :goto_0
     return-void
 .end method
@@ -860,7 +901,7 @@
 
     if-eqz v0, :cond_1
 
-    const-string v0, "kg_clock_hours_color"
+    const-string v0, "kg_clock_minutes_color"
 
     const v1, -0x50506
 
@@ -886,7 +927,7 @@
     invoke-virtual {v0, v1}, Lcom/android/keyguard/KeyguardTextClock;->setTextColor(I)V
 
     :cond_2
-    iget-object v0, p0, Lcom/android/keyguard/servicebox/pages/clock/KeyguardDualClockView;->mRoamingTimeView:Landroid/widget/TextClock;
+    iget-object v0, p0, Lcom/android/keyguard/servicebox/pages/clock/KeyguardDualClockView;->mHomecityLocaleView:Lcom/android/keyguard/KeyguardTextView;
 
     if-eqz v0, :cond_3
 
@@ -905,7 +946,7 @@
 
     if-eqz v0, :cond_4
 
-    const-string v0, "kg_clock_hours_color"
+    const-string v0, "kg_clock_minutes_color"
 
     const v1, -0x50506
 

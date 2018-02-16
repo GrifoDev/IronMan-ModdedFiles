@@ -2459,9 +2459,9 @@
 
     invoke-direct {p0, p2, v0}, Lcom/android/incallui/CallButtonPresenter;->updateUi(Lcom/android/incallui/InCallPresenter$InCallState;Lcom/android/incallui/Call;)V
 
-    iget-object v1, p0, Lcom/android/incallui/CallButtonPresenter;->mCall:Lcom/android/incallui/Call;
+    iget-object v2, p0, Lcom/android/incallui/CallButtonPresenter;->mCall:Lcom/android/incallui/Call;
 
-    invoke-direct {p0, p2, v1}, Lcom/android/incallui/CallButtonPresenter;->autoRecord(Lcom/android/incallui/InCallPresenter$InCallState;Lcom/android/incallui/Call;)V
+    invoke-direct {p0, p2, v2}, Lcom/android/incallui/CallButtonPresenter;->autoRecord(Lcom/android/incallui/InCallPresenter$InCallState;Lcom/android/incallui/Call;)V
 
     iput-object p2, p0, Lcom/android/incallui/CallButtonPresenter;->mPreviousState:Lcom/android/incallui/InCallPresenter$InCallState;
 
