@@ -1785,6 +1785,7 @@ For more information, contact your administrator."</string>
     <string name="accessibility_quick_settings_edit">Edit order of settings.</string>
     <string name="accessibility_quick_settings_page">Page %1$d of %2$d</string>
     <string name="cant_silence_or_block">"Notifications can't be silenced or blocked"</string>
+    <string name="touch_filtered_warning">Because an app is obscuring a permission request, Settings can’t verify your response.</string>
     <string name="accessibility_quick_settings_more_option">More option.</string>
     <string name="accessibility_quick_settings_voice_search">Voice search.</string>
     <string name="recents_close_all_button_text">Close All</string>
@@ -2032,6 +2033,7 @@ Disconnecting and reconnecting the charger may allow charging to continue normal
     <string name="kg_voice_assistant_unlock_instructions">Swipe with two fingers to unlock the screen.</string>
     <string name="kg_swipe_active_instructions" />
     <string name="kg_swipe_unlock_instructions">Swipe screen to unlock</string>
+    <string name="kg_swipe_unlock_smart_lock_instructions">Phone unlocked by Smart Lock</string>
     <string name="kg_biometrics_swipe_unlock_voice_assistant_instructions">Use biometrics or swipe screen with two fingers to unlock.</string>
     <string name="kg_biometrics_swipe_active_voice_assistant_instructions">Use biometrics or swipe screen with two fingers to open.</string>
     <string name="kg_face_or_swipe_unlock_voice_assistant_instructions">Use face recognition or swipe screen with two fingers to unlock.</string>
@@ -2974,6 +2976,8 @@ Try again in 1 second"</string>
     <string name="taskbar_context_menu_clear_notification">Clear</string>
     <string name="taskbar_context_menu_open_desk_notification_view">Show notifications</string>
     <string name="taskbar_context_menu_close_desk_notification_view">Hide notifications</string>
+    <item type="string" name="APKTOOL_DUMMY_828">false</item>
+    <item type="string" name="APKTOOL_DUMMY_829">false</item>
     <string name="service_background_processes">%1$s free</string>
     <string name="service_foreground_processes">%1$s used</string>
 </resources>

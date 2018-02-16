@@ -514,7 +514,7 @@
 .method public initialize(Ljava/lang/String;)V
     .locals 7
 
-    const v3, 0x7f0f06ce
+    const v3, 0x7f0f06cf
 
     const v2, 0x7f0204b4
 
@@ -522,7 +522,7 @@
 
     const/4 v4, 0x0
 
-    const v5, 0x7f0f06cf
+    const v5, 0x7f0f06d0
 
     iget-object v0, p0, Lcom/android/systemui/recents/views/AbstractHelpPopup;->mContents:Ljava/util/ArrayList;
 
@@ -546,7 +546,7 @@
 
     if-eqz v0, :cond_3
 
-    const v0, 0x7f0f06d7
+    const v0, 0x7f0f06d8
 
     const v1, 0x7f0204c2
 
@@ -564,13 +564,13 @@
 
     if-eqz v0, :cond_0
 
-    const v0, 0x7f0f06ba
+    const v0, 0x7f0f06bb
 
     const v1, 0x7f0204bc
 
-    const v2, 0x7f0f06d2
+    const v2, 0x7f0f06d3
 
-    const v3, 0x7f0f06d3
+    const v3, 0x7f0f06d4
 
     invoke-virtual {p0, v0, v1, v2, v3}, Lcom/android/systemui/recents/views/AbstractHelpPopup;->addContent(IIII)Lcom/android/systemui/recents/views/AbstractHelpPopup$HelpContent;
 
@@ -585,13 +585,13 @@
     invoke-virtual {v0, v1}, Lcom/android/systemui/recents/views/AbstractHelpPopup$HelpContent;->setHelpTextIconList([I)V
 
     :cond_0
-    const v1, 0x7f0f06d8
+    const v1, 0x7f0f06d9
 
     const v2, 0x7f0204b9
 
-    const v3, 0x7f0f06d1
+    const v3, 0x7f0f06d2
 
-    const v4, 0x7f0f06dc
+    const v4, 0x7f0f06dd
 
     move-object v0, p0
 
@@ -629,11 +629,11 @@
     const v0, 0x7f0204b7
 
     :goto_1
-    const v1, 0x7f0f06c0
+    const v1, 0x7f0f06c1
 
-    const v2, 0x7f0f06d5
+    const v2, 0x7f0f06d6
 
-    const v3, 0x7f0f06d6
+    const v3, 0x7f0f06d7
 
     invoke-virtual {p0, v1, v0, v2, v3}, Lcom/android/systemui/recents/views/AbstractHelpPopup;->addContent(IIII)Lcom/android/systemui/recents/views/AbstractHelpPopup$HelpContent;
 
@@ -652,7 +652,7 @@
     goto :goto_0
 
     :cond_3
-    const v0, 0x7f0f06d7
+    const v0, 0x7f0f06d8
 
     const v1, 0x7f0204bd
 
@@ -666,13 +666,13 @@
 
     invoke-virtual {v0, v1}, Lcom/android/systemui/recents/views/AbstractHelpPopup$HelpContent;->setHelpTextIconList([I)V
 
-    const v1, 0x7f0f06d8
+    const v1, 0x7f0f06d9
 
     const v2, 0x7f0204b8
 
-    const v3, 0x7f0f06d0
+    const v3, 0x7f0f06d1
 
-    const v4, 0x7f0f06dc
+    const v4, 0x7f0f06dd
 
     move-object v0, p0
 
@@ -775,7 +775,7 @@
 
     iget-object v1, p0, Lcom/android/systemui/recents/views/AbstractHelpPopup;->mButton:Landroid/widget/Button;
 
-    const v2, 0x7f0f06d4
+    const v2, 0x7f0f06d5
 
     invoke-virtual {v1, v2}, Landroid/widget/Button;->setText(I)V
 
@@ -933,7 +933,7 @@
 
     iget-object v1, p0, Lcom/android/systemui/recents/views/AbstractHelpPopup;->mButton:Landroid/widget/Button;
 
-    const v2, 0x7f0f06d4
+    const v2, 0x7f0f06d5
 
     invoke-virtual {v1, v2}, Landroid/widget/Button;->setText(I)V
 

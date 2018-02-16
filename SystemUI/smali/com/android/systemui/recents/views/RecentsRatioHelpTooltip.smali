@@ -57,7 +57,7 @@
 
     iget-object v0, p0, Lcom/android/systemui/recents/views/RecentsRatioHelpTooltip;->mHelpHubText:Lcom/android/systemui/recents/misc/HelpHubTextView;
 
-    const v1, 0x7f0f06da
+    const v1, 0x7f0f06db
 
     invoke-virtual {v0, v1}, Lcom/android/systemui/recents/misc/HelpHubTextView;->changeText(I)V
 

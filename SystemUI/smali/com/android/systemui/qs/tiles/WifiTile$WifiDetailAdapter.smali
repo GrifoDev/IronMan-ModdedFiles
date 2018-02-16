@@ -261,7 +261,7 @@
 
     iget-object v0, p0, Lcom/android/systemui/qs/tiles/WifiTile$WifiDetailAdapter;->mSecureWifiContent:Landroid/widget/TextView;
 
-    const v1, 0x7f0f081b
+    const v1, 0x7f0f081d
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(I)V
 
@@ -282,7 +282,7 @@
 
     iget-object v0, p0, Lcom/android/systemui/qs/tiles/WifiTile$WifiDetailAdapter;->mSecureWifiContent:Landroid/widget/TextView;
 
-    const v1, 0x7f0f081a
+    const v1, 0x7f0f081c
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(I)V
 

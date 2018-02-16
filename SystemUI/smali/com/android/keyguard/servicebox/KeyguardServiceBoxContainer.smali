@@ -3184,14 +3184,6 @@
 
     invoke-static {v0}, Lcom/android/keyguard/servicebox/utils/GuideArrowAnimator;->finishGuideArrow(Landroid/content/Context;)V
 
-    iget-object v0, p0, Lcom/android/keyguard/servicebox/KeyguardServiceBoxContainer;->mLeftArrowAnimator:Lcom/android/keyguard/servicebox/utils/GuideArrowAnimator;
-
-    invoke-virtual {v0}, Lcom/android/keyguard/servicebox/utils/GuideArrowAnimator;->hide()V
-
-    iget-object v0, p0, Lcom/android/keyguard/servicebox/KeyguardServiceBoxContainer;->mRightArrowAnimator:Lcom/android/keyguard/servicebox/utils/GuideArrowAnimator;
-
-    invoke-virtual {v0}, Lcom/android/keyguard/servicebox/utils/GuideArrowAnimator;->hide()V
-
     return-void
 .end method
 

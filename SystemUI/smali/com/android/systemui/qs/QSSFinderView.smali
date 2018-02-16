@@ -127,7 +127,7 @@
 
     if-eqz v0, :cond_2
 
-    const v0, 0x7f0f079f
+    const v0, 0x7f0f07a1
 
     :goto_0
     invoke-virtual {v2, v0}, Landroid/widget/TextView;->setText(I)V
@@ -158,7 +158,7 @@
     return-void
 
     :cond_2
-    const v0, 0x7f0f079e
+    const v0, 0x7f0f07a0
 
     goto :goto_0
 
@@ -169,7 +169,7 @@
 
     iget-object v0, p0, Lcom/android/systemui/qs/QSSFinderView;->mSFinderEditText:Landroid/widget/TextView;
 
-    const v2, 0x7f0f07a1
+    const v2, 0x7f0f07a3
 
     invoke-virtual {v0, v2}, Landroid/widget/TextView;->setText(I)V
 
@@ -540,7 +540,7 @@
 
     if-eqz v0, :cond_0
 
-    const v0, 0x7f0f079f
+    const v0, 0x7f0f07a1
 
     :goto_0
     invoke-virtual {v1, v0}, Landroid/widget/TextView;->setText(I)V
@@ -549,7 +549,7 @@
     return-void
 
     :cond_0
-    const v0, 0x7f0f079e
+    const v0, 0x7f0f07a0
 
     goto :goto_0
 
@@ -560,7 +560,7 @@
 
     if-eqz v0, :cond_2
 
-    const v0, 0x7f0f07a1
+    const v0, 0x7f0f07a3
 
     :goto_2
     invoke-virtual {v1, v0}, Landroid/widget/TextView;->setText(I)V
@@ -568,7 +568,7 @@
     goto :goto_1
 
     :cond_2
-    const v0, 0x7f0f07a0
+    const v0, 0x7f0f07a2
 
     goto :goto_2
 .end method

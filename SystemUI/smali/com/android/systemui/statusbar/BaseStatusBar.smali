@@ -1377,7 +1377,7 @@
 
     invoke-virtual {v0, v8}, Landroid/widget/TextView;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    const v8, 0x7f0f07df
+    const v8, 0x7f0f07e1
 
     move-object/from16 v0, v24
 
@@ -1423,7 +1423,7 @@
 
     if-eqz v16, :cond_6
 
-    const v8, 0x7f0f07de
+    const v8, 0x7f0f07e0
 
     move-object/from16 v0, v16
 

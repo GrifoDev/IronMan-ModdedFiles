@@ -341,13 +341,13 @@
 
     invoke-direct {v0, v1}, Landroid/app/AlertDialog$Builder;-><init>(Landroid/content/Context;)V
 
-    const v1, 0x7f0f07fe
+    const v1, 0x7f0f0800
 
     invoke-virtual {v0, v1}, Landroid/app/AlertDialog$Builder;->setTitle(I)Landroid/app/AlertDialog$Builder;
 
     move-result-object v0
 
-    const v1, 0x7f0f07ff
+    const v1, 0x7f0f0801
 
     invoke-virtual {v0, v1}, Landroid/app/AlertDialog$Builder;->setMessage(I)Landroid/app/AlertDialog$Builder;
 
@@ -431,7 +431,7 @@
 
     iget-object v0, p0, Lcom/android/systemui/qs/tiles/PowerPlanningTile;->mContext:Landroid/content/Context;
 
-    const v1, 0x7f0f07f4
+    const v1, 0x7f0f07f6
 
     invoke-virtual {v0, v1}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -570,7 +570,7 @@
 
     iget-object v7, p0, Lcom/android/systemui/qs/tiles/PowerPlanningTile;->mContext:Landroid/content/Context;
 
-    const v8, 0x7f0f0801
+    const v8, 0x7f0f0803
 
     invoke-virtual {v7, v8}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -692,7 +692,7 @@
 
     iget-object v7, p0, Lcom/android/systemui/qs/tiles/PowerPlanningTile;->mContext:Landroid/content/Context;
 
-    const v8, 0x7f0f0800
+    const v8, 0x7f0f0802
 
     invoke-virtual {v7, v8}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 

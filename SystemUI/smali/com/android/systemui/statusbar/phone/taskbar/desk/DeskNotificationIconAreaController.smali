@@ -330,7 +330,7 @@
 
     iget-object v1, p0, Lcom/android/systemui/statusbar/phone/taskbar/desk/DeskNotificationIconAreaController;->mContext:Landroid/content/Context;
 
-    const v2, 0x7f0f07cf
+    const v2, 0x7f0f07d1
 
     invoke-virtual {v1, v2}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 

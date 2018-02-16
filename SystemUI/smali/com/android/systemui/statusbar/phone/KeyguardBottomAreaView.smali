@@ -2862,7 +2862,7 @@
 
     const v2, 0x7f0201d8
 
-    const v0, 0x7f0f06cd
+    const v0, 0x7f0f06ce
 
     iget-object v4, p0, Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;->mAffordanceViews:[Lcom/android/systemui/statusbar/KeyguardCircleAffordanceView;
 

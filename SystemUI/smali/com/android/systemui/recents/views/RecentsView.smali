@@ -744,7 +744,7 @@
     return-void
 
     :cond_4
-    const v2, 0x7f0f06c0
+    const v2, 0x7f0f06c1
 
     invoke-interface {v1, v2}, Landroid/view/Menu;->add(I)Landroid/view/MenuItem;
 
@@ -755,21 +755,21 @@
     goto :goto_0
 
     :cond_5
-    const v2, 0x7f0f06c1
+    const v2, 0x7f0f06c2
 
     invoke-interface {v1, v2}, Landroid/view/Menu;->add(I)Landroid/view/MenuItem;
 
     goto :goto_1
 
     :cond_6
-    const v2, 0x7f0f06c2
+    const v2, 0x7f0f06c3
 
     invoke-interface {v1, v2}, Landroid/view/Menu;->add(I)Landroid/view/MenuItem;
 
     goto :goto_2
 
     :cond_7
-    const v2, 0x7f0f06c3
+    const v2, 0x7f0f06c4
 
     invoke-interface {v1, v2}, Landroid/view/Menu;->add(I)Landroid/view/MenuItem;
 
@@ -4998,7 +4998,7 @@
 
     move-result-object v2
 
-    const v3, 0x7f0f06be
+    const v3, 0x7f0f06bf
 
     invoke-virtual {v2, v3}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 

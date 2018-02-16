@@ -60,7 +60,7 @@
 
     const v2, 0x1040023
 
-    const v3, 0x7f0f07c9
+    const v3, 0x7f0f07cb
 
     filled-new-array {v2, v3}, [I
 
@@ -72,7 +72,7 @@
 
     const v2, 0x1040030
 
-    const v3, 0x7f0f07c8
+    const v3, 0x7f0f07ca
 
     filled-new-array {v2, v3}, [I
 
@@ -176,7 +176,7 @@
 
     iget-object v2, p0, Lcom/android/systemui/statusbar/phone/taskbar/desk/DeskStatusBarIconController;->mContext:Landroid/content/Context;
 
-    const v3, 0x7f0f07ce
+    const v3, 0x7f0f07d0
 
     invoke-virtual {v2, v3}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -994,7 +994,7 @@
 
     iget-object v4, p0, Lcom/android/systemui/statusbar/phone/taskbar/desk/DeskStatusBarIconController;->mContext:Landroid/content/Context;
 
-    const v5, 0x7f0f07ce
+    const v5, 0x7f0f07d0
 
     invoke-virtual {v4, v5}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 

@@ -1003,7 +1003,7 @@
 
     move-result-object v3
 
-    const v4, 0x7f0f07d2
+    const v4, 0x7f0f07d4
 
     invoke-virtual {v3, v4}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -1270,7 +1270,7 @@
 .method protected onFinishInflate()V
     .locals 10
 
-    const v9, 0x7f0f06bd
+    const v9, 0x7f0f06be
 
     const/4 v8, 0x0
 
@@ -1316,7 +1316,7 @@
 
     iget-object v4, p0, Lcom/android/systemui/recents/views/TaskView;->mContext:Landroid/content/Context;
 
-    const v5, 0x7f0f06bc
+    const v5, 0x7f0f06bd
 
     invoke-virtual {v4, v5}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -1381,7 +1381,7 @@
 
     iget-object v4, p0, Lcom/android/systemui/recents/views/TaskView;->mContext:Landroid/content/Context;
 
-    const v5, 0x7f0f06bb
+    const v5, 0x7f0f06bc
 
     invoke-virtual {v4, v5}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -1587,7 +1587,7 @@
 
     iget-object v7, p0, Lcom/android/systemui/recents/views/TaskView;->mContext:Landroid/content/Context;
 
-    const v8, 0x7f0f06bb
+    const v8, 0x7f0f06bc
 
     invoke-virtual {v7, v8}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -1652,7 +1652,7 @@
 
     iget-object v7, p0, Lcom/android/systemui/recents/views/TaskView;->mContext:Landroid/content/Context;
 
-    const v8, 0x7f0f06bc
+    const v8, 0x7f0f06bd
 
     invoke-virtual {v7, v8}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -2600,7 +2600,7 @@
 
     aput-object v2, v1, v3
 
-    const v2, 0x7f0f06cb
+    const v2, 0x7f0f06cc
 
     invoke-virtual {v0, v2, v1}, Landroid/content/Context;->getString(I[Ljava/lang/Object;)Ljava/lang/String;
 
@@ -2626,7 +2626,7 @@
 
     aput-object v2, v1, v3
 
-    const v2, 0x7f0f06cc
+    const v2, 0x7f0f06cd
 
     invoke-virtual {v0, v2, v1}, Landroid/content/Context;->getString(I[Ljava/lang/Object;)Ljava/lang/String;
 

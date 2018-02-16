@@ -2765,7 +2765,7 @@
 
     iget-object v1, p0, Lcom/android/systemui/recents/views/TaskViewHeader;->mContext:Landroid/content/Context;
 
-    const v2, 0x7f0f06b8
+    const v2, 0x7f0f06b9
 
     invoke-virtual {v1, v2}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -2782,7 +2782,7 @@
 
     iget-object v1, p0, Lcom/android/systemui/recents/views/TaskViewHeader;->mContext:Landroid/content/Context;
 
-    const v2, 0x7f0f06ba
+    const v2, 0x7f0f06bb
 
     invoke-virtual {v1, v2}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -2819,7 +2819,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f0f06c8
+    const v2, 0x7f0f06c9
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -2835,7 +2835,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f0f06ca
+    const v2, 0x7f0f06cb
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -2848,7 +2848,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f0f06c7
+    const v2, 0x7f0f06c8
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -3934,7 +3934,7 @@
 
     move-result-object v1
 
-    const v4, 0x7f0f06c8
+    const v4, 0x7f0f06c9
 
     invoke-virtual {v1, v4}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -4014,7 +4014,7 @@
 
     move-result-object v1
 
-    const v4, 0x7f0f06ca
+    const v4, 0x7f0f06cb
 
     invoke-virtual {v1, v4}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -4044,7 +4044,7 @@
 
     move-result-object v1
 
-    const v4, 0x7f0f06c7
+    const v4, 0x7f0f06c8
 
     invoke-virtual {v1, v4}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 

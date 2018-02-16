@@ -370,13 +370,13 @@
 
     iput-boolean v6, p0, Lcom/android/systemui/statusbar/phone/SecNavigationBarView;->mIsNaviBarDefaultKeyOrder:Z
 
-    const v1, 0x7f0f080e
+    const v1, 0x7f0f0810
 
-    const v2, 0x7f0f080f
+    const v2, 0x7f0f0811
 
-    const v3, 0x7f0f0810
+    const v3, 0x7f0f0812
 
-    const v4, 0x7f0f0811
+    const v4, 0x7f0f0813
 
     filled-new-array {v1, v2, v3, v4}, [I
 
@@ -677,7 +677,7 @@
 
     iget-object v11, p0, Lcom/android/systemui/statusbar/phone/SecNavigationBarView;->mContext:Landroid/content/Context;
 
-    const v12, 0x7f0f080d
+    const v12, 0x7f0f080f
 
     invoke-virtual {v11, v12}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -777,7 +777,7 @@
 
     iget-object v11, p0, Lcom/android/systemui/statusbar/phone/SecNavigationBarView;->mContext:Landroid/content/Context;
 
-    const v12, 0x7f0f0812
+    const v12, 0x7f0f0814
 
     invoke-virtual {v11, v12}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -851,7 +851,7 @@
 
     invoke-direct {v1, p0}, Lcom/android/systemui/statusbar/phone/SecNavigationBarView$8;-><init>(Lcom/android/systemui/statusbar/phone/SecNavigationBarView;)V
 
-    const v2, 0x7f0f0814
+    const v2, 0x7f0f0816
 
     invoke-virtual {v0, v2, v1}, Landroid/app/AlertDialog$Builder;->setPositiveButton(ILandroid/content/DialogInterface$OnClickListener;)Landroid/app/AlertDialog$Builder;
 
@@ -859,7 +859,7 @@
 
     invoke-direct {v1, p0}, Lcom/android/systemui/statusbar/phone/SecNavigationBarView$9;-><init>(Lcom/android/systemui/statusbar/phone/SecNavigationBarView;)V
 
-    const v2, 0x7f0f0813
+    const v2, 0x7f0f0815
 
     invoke-virtual {v0, v2, v1}, Landroid/app/AlertDialog$Builder;->setNegativeButton(ILandroid/content/DialogInterface$OnClickListener;)Landroid/app/AlertDialog$Builder;
 
@@ -1806,7 +1806,7 @@
 
     iget-object v1, p0, Lcom/android/systemui/statusbar/phone/SecNavigationBarView;->mContext:Landroid/content/Context;
 
-    const v2, 0x7f0f089c
+    const v2, 0x7f0f089e
 
     invoke-virtual {v1, v2}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -1876,7 +1876,7 @@
 
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/SecNavigationBarView;->mContext:Landroid/content/Context;
 
-    const v2, 0x7f0f080c
+    const v2, 0x7f0f080e
 
     invoke-virtual {v0, v2}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -1901,7 +1901,7 @@
     :cond_2
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/SecNavigationBarView;->mContext:Landroid/content/Context;
 
-    const v2, 0x7f0f080b
+    const v2, 0x7f0f080d
 
     invoke-virtual {v0, v2}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -4539,7 +4539,7 @@
 
     iget-object v1, p0, Lcom/android/systemui/statusbar/phone/SecNavigationBarView;->mContext:Landroid/content/Context;
 
-    const v3, 0x7f0f080c
+    const v3, 0x7f0f080e
 
     invoke-virtual {v1, v3}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -4558,7 +4558,7 @@
     :cond_3
     iget-object v1, p0, Lcom/android/systemui/statusbar/phone/SecNavigationBarView;->mContext:Landroid/content/Context;
 
-    const v3, 0x7f0f080b
+    const v3, 0x7f0f080d
 
     invoke-virtual {v1, v3}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 

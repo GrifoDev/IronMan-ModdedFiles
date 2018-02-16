@@ -8676,7 +8676,7 @@
 
     iget-object v1, p0, Lcom/android/systemui/volume/SecVolumeDialog;->mContext:Landroid/content/Context;
 
-    const v2, 0x7f0f07a8
+    const v2, 0x7f0f07aa
 
     invoke-virtual {v1, v2}, Landroid/content/Context;->getText(I)Ljava/lang/CharSequence;
 
@@ -11422,7 +11422,7 @@
 
     move-object/from16 v29, v0
 
-    const v30, 0x7f0f07a8
+    const v30, 0x7f0f07aa
 
     invoke-virtual/range {v29 .. v30}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 

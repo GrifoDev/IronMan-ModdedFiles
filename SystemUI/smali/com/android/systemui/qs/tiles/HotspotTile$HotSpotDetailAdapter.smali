@@ -1503,7 +1503,7 @@
     :cond_2
     iget-object v3, p0, Lcom/android/systemui/qs/tiles/HotspotTile$HotSpotDetailAdapter;->mPassword:Landroid/widget/TextView;
 
-    const v4, 0x7f0f07d8
+    const v4, 0x7f0f07da
 
     invoke-virtual {v3, v4}, Landroid/widget/TextView;->setText(I)V
 

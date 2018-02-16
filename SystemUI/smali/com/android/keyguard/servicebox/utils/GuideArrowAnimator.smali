@@ -3,14 +3,6 @@
 .source "GuideArrowAnimator.java"
 
 
-# annotations
-.annotation system Ldalvik/annotation/MemberClasses;
-    value = {
-        Lcom/android/keyguard/servicebox/utils/GuideArrowAnimator$1;
-    }
-.end annotation
-
-
 # static fields
 .field private static sIsLoadCompleted:Z
 
@@ -21,8 +13,6 @@
 .field private mAnimationDistance:F
 
 .field private mAnimator:Landroid/animation/AnimatorSet;
-
-.field private mAnimatorListener:Landroid/animation/Animator$AnimatorListener;
 
 .field private mIsLeftArrow:Z
 
@@ -51,12 +41,6 @@
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    new-instance v0, Lcom/android/keyguard/servicebox/utils/GuideArrowAnimator$1;
-
-    invoke-direct {v0, p0}, Lcom/android/keyguard/servicebox/utils/GuideArrowAnimator$1;-><init>(Lcom/android/keyguard/servicebox/utils/GuideArrowAnimator;)V
-
-    iput-object v0, p0, Lcom/android/keyguard/servicebox/utils/GuideArrowAnimator;->mAnimatorListener:Landroid/animation/Animator$AnimatorListener;
-
     if-nez p2, :cond_0
 
     new-instance v0, Ljava/lang/IllegalArgumentException;
@@ -73,12 +57,6 @@
     iput-object p2, p0, Lcom/android/keyguard/servicebox/utils/GuideArrowAnimator;->mTargetView:Landroid/view/View;
 
     iput-boolean p3, p0, Lcom/android/keyguard/servicebox/utils/GuideArrowAnimator;->mIsLeftArrow:Z
-
-    new-instance v0, Landroid/animation/AnimatorSet;
-
-    invoke-direct {v0}, Landroid/animation/AnimatorSet;-><init>()V
-
-    iput-object v0, p0, Lcom/android/keyguard/servicebox/utils/GuideArrowAnimator;->mAnimator:Landroid/animation/AnimatorSet;
 
     invoke-virtual {p0, p4}, Lcom/android/keyguard/servicebox/utils/GuideArrowAnimator;->init(I)V
 
@@ -293,46 +271,6 @@
 
 
 # virtual methods
-.method public hide()V
-    .locals 5
-
-    iget-object v0, p0, Lcom/android/keyguard/servicebox/utils/GuideArrowAnimator;->mAnimator:Landroid/animation/AnimatorSet;
-
-    invoke-virtual {v0}, Landroid/animation/AnimatorSet;->removeAllListeners()V
-
-    iget-object v0, p0, Lcom/android/keyguard/servicebox/utils/GuideArrowAnimator;->mAnimator:Landroid/animation/AnimatorSet;
-
-    invoke-virtual {v0}, Landroid/animation/AnimatorSet;->cancel()V
-
-    iget-object v0, p0, Lcom/android/keyguard/servicebox/utils/GuideArrowAnimator;->mTargetView:Landroid/view/View;
-
-    sget-object v1, Landroid/view/View;->ALPHA:Landroid/util/Property;
-
-    const/4 v2, 0x1
-
-    new-array v2, v2, [F
-
-    const/4 v3, 0x0
-
-    const/4 v4, 0x0
-
-    aput v3, v2, v4
-
-    invoke-static {v0, v1, v2}, Landroid/animation/ObjectAnimator;->ofFloat(Ljava/lang/Object;Landroid/util/Property;[F)Landroid/animation/ObjectAnimator;
-
-    move-result-object v0
-
-    const-wide/16 v2, 0x43
-
-    invoke-virtual {v0, v2, v3}, Landroid/animation/ObjectAnimator;->setDuration(J)Landroid/animation/ObjectAnimator;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Landroid/animation/ObjectAnimator;->start()V
-
-    return-void
-.end method
-
 .method public init(I)V
     .locals 8
 
@@ -379,18 +317,33 @@
     :cond_0
     iget-boolean v4, p0, Lcom/android/keyguard/servicebox/utils/GuideArrowAnimator;->mIsLeftArrow:Z
 
-    if-eqz v4, :cond_1
+    if-eqz v4, :cond_2
 
     iget v2, p0, Lcom/android/keyguard/servicebox/utils/GuideArrowAnimator;->mAnimationDistance:F
 
     :goto_0
     iget-boolean v4, p0, Lcom/android/keyguard/servicebox/utils/GuideArrowAnimator;->mIsLeftArrow:Z
 
-    if-eqz v4, :cond_2
+    if-eqz v4, :cond_3
 
     sub-float v1, v2, v0
 
     :goto_1
+    iget-object v4, p0, Lcom/android/keyguard/servicebox/utils/GuideArrowAnimator;->mAnimator:Landroid/animation/AnimatorSet;
+
+    if-eqz v4, :cond_1
+
+    iget-object v4, p0, Lcom/android/keyguard/servicebox/utils/GuideArrowAnimator;->mAnimator:Landroid/animation/AnimatorSet;
+
+    invoke-virtual {v4}, Landroid/animation/AnimatorSet;->cancel()V
+
+    :cond_1
+    new-instance v4, Landroid/animation/AnimatorSet;
+
+    invoke-direct {v4}, Landroid/animation/AnimatorSet;-><init>()V
+
+    iput-object v4, p0, Lcom/android/keyguard/servicebox/utils/GuideArrowAnimator;->mAnimator:Landroid/animation/AnimatorSet;
+
     iget-object v4, p0, Lcom/android/keyguard/servicebox/utils/GuideArrowAnimator;->mAnimator:Landroid/animation/AnimatorSet;
 
     const-wide/16 v6, 0x1f4
@@ -447,7 +400,7 @@
 
     return-void
 
-    :cond_1
+    :cond_2
     int-to-float v4, p1
 
     iget v5, p0, Lcom/android/keyguard/servicebox/utils/GuideArrowAnimator;->mAnimationDistance:F
@@ -458,7 +411,7 @@
 
     goto :goto_0
 
-    :cond_2
+    :cond_3
     add-float v1, v2, v0
 
     goto :goto_1
@@ -469,28 +422,31 @@
 
     iget-object v0, p0, Lcom/android/keyguard/servicebox/utils/GuideArrowAnimator;->mAnimator:Landroid/animation/AnimatorSet;
 
+    if-nez v0, :cond_0
+
+    return-void
+
+    :cond_0
+    iget-object v0, p0, Lcom/android/keyguard/servicebox/utils/GuideArrowAnimator;->mAnimator:Landroid/animation/AnimatorSet;
+
     invoke-virtual {v0}, Landroid/animation/AnimatorSet;->isRunning()Z
 
     move-result v0
 
-    if-eqz v0, :cond_0
-
-    iget-object v0, p0, Lcom/android/keyguard/servicebox/utils/GuideArrowAnimator;->mAnimator:Landroid/animation/AnimatorSet;
-
-    invoke-virtual {v0}, Landroid/animation/AnimatorSet;->removeAllListeners()V
+    if-eqz v0, :cond_1
 
     iget-object v0, p0, Lcom/android/keyguard/servicebox/utils/GuideArrowAnimator;->mAnimator:Landroid/animation/AnimatorSet;
 
     invoke-virtual {v0}, Landroid/animation/AnimatorSet;->cancel()V
 
-    :cond_0
+    :cond_1
     sget-boolean v0, Lcom/android/keyguard/servicebox/utils/GuideArrowAnimator;->sIsShowEnabled:Z
 
-    if-nez v0, :cond_1
+    if-nez v0, :cond_2
 
     return-void
 
-    :cond_1
+    :cond_2
     iget-object v0, p0, Lcom/android/keyguard/servicebox/utils/GuideArrowAnimator;->mTargetView:Landroid/view/View;
 
     const/4 v1, 0x0
@@ -499,14 +455,17 @@
 
     iget-object v0, p0, Lcom/android/keyguard/servicebox/utils/GuideArrowAnimator;->mAnimator:Landroid/animation/AnimatorSet;
 
-    iget-object v1, p0, Lcom/android/keyguard/servicebox/utils/GuideArrowAnimator;->mAnimatorListener:Landroid/animation/Animator$AnimatorListener;
+    invoke-virtual {v0}, Landroid/animation/AnimatorSet;->isStarted()Z
 
-    invoke-virtual {v0, v1}, Landroid/animation/AnimatorSet;->addListener(Landroid/animation/Animator$AnimatorListener;)V
+    move-result v0
+
+    if-nez v0, :cond_3
 
     iget-object v0, p0, Lcom/android/keyguard/servicebox/utils/GuideArrowAnimator;->mAnimator:Landroid/animation/AnimatorSet;
 
     invoke-virtual {v0}, Landroid/animation/AnimatorSet;->start()V
 
+    :cond_3
     return-void
 .end method
 

@@ -156,7 +156,7 @@
 
     if-eqz v1, :cond_1
 
-    const v1, 0x7f0f06c3
+    const v1, 0x7f0f06c4
 
     invoke-interface {v0, v1}, Landroid/view/Menu;->add(I)Landroid/view/MenuItem;
 
@@ -177,7 +177,7 @@
     return-void
 
     :cond_2
-    const v1, 0x7f0f06c0
+    const v1, 0x7f0f06c1
 
     invoke-interface {v0, v1}, Landroid/view/Menu;->add(I)Landroid/view/MenuItem;
 
