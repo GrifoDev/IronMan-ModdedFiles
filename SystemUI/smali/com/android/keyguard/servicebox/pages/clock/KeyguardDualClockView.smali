@@ -4,15 +4,12 @@
 
 # interfaces
 .implements Lcom/android/keyguard/servicebox/pages/clock/KeyguardClockBase;
-.implements Lcom/android/wubydax/GearContentObserver$OnContentChangedListener;
 
 
 # instance fields
 .field private mCacheKey:Ljava/lang/String;
 
 .field private mFontScale:F
-
-.field private mGearContentObserver:Lcom/android/wubydax/GearContentObserver;
 
 .field private mHomecityAmpmView:Lcom/android/keyguard/KeyguardTextClockForUser;
 
@@ -61,78 +58,6 @@
 
     iput v0, p0, Lcom/android/keyguard/servicebox/pages/clock/KeyguardDualClockView;->mFontScale:F
 
-    return-void
-.end method
-
-.method private registerGearObserver()V
-    .locals 7
-
-    new-instance v3, Lcom/android/wubydax/GearContentObserver;
-
-    new-instance v4, Landroid/os/Handler;
-
-    invoke-direct {v4}, Landroid/os/Handler;-><init>()V
-
-    invoke-direct {v3, v4, p0}, Lcom/android/wubydax/GearContentObserver;-><init>(Landroid/os/Handler;Lcom/android/wubydax/GearContentObserver$OnContentChangedListener;)V
-
-    iput-object v3, p0, Lcom/android/keyguard/servicebox/pages/clock/KeyguardDualClockView;->mGearContentObserver:Lcom/android/wubydax/GearContentObserver;
-
-    iget-object v3, p0, Lcom/android/keyguard/servicebox/pages/clock/KeyguardDualClockView;->mContext:Landroid/content/Context;
-
-    invoke-virtual {v3}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
-
-    move-result-object v1
-
-    new-instance v0, Ljava/util/ArrayList;
-
-    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
-
-    const-string v3, "kg_enable_lockscreen_color"
-
-    invoke-virtual {v0, v3}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
-
-    const-string v3, "kg_clock_hours_color"
-
-    invoke-virtual {v0, v3}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
-
-    const-string v3, "kg_clock_minutes_color"
-
-    invoke-virtual {v0, v3}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
-
-    const-string v3, "kg_clock_date_color"
-
-    invoke-virtual {v0, v3}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
-
-    invoke-virtual {v0}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
-
-    move-result-object v3
-
-    :goto_0
-    invoke-interface {v3}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v4
-
-    if-eqz v4, :cond_0
-
-    invoke-interface {v3}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v2
-
-    check-cast v2, Ljava/lang/String;
-
-    invoke-static {v2}, Landroid/provider/Settings$System;->getUriFor(Ljava/lang/String;)Landroid/net/Uri;
-
-    move-result-object v4
-
-    const/4 v5, 0x0
-
-    iget-object v6, p0, Lcom/android/keyguard/servicebox/pages/clock/KeyguardDualClockView;->mGearContentObserver:Lcom/android/wubydax/GearContentObserver;
-
-    invoke-virtual {v1, v4, v5, v6}, Landroid/content/ContentResolver;->registerContentObserver(Landroid/net/Uri;ZLandroid/database/ContentObserver;)V
-
-    goto :goto_0
-
-    :cond_0
     return-void
 .end method
 
@@ -430,104 +355,6 @@
     return-void
 .end method
 
-.method public onContentChanged(Ljava/lang/String;)V
-    .locals 1
-
-    const-string v0, "kg_enable_lockscreen_color"
-
-    invoke-virtual {v0, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    invoke-virtual {p0}, Lcom/android/keyguard/servicebox/pages/clock/KeyguardDualClockView;->updateChildViewsLook()V
-
-    goto :goto_0
-
-    :cond_0
-    const-string v0, "kg_clock_hours_color"
-
-    invoke-virtual {v0, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_1
-
-    invoke-virtual {p0}, Lcom/android/keyguard/servicebox/pages/clock/KeyguardDualClockView;->setClockDateColors()V
-
-    goto :goto_0
-
-    :cond_1
-    const-string v0, "kg_clock_minutes_color"
-
-    invoke-virtual {v0, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_2
-
-    invoke-virtual {p0}, Lcom/android/keyguard/servicebox/pages/clock/KeyguardDualClockView;->setClockDateColors()V
-
-    goto :goto_0
-
-    :cond_2
-    const-string v0, "kg_clock_date_color"
-
-    invoke-virtual {v0, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_3
-
-    invoke-virtual {p0}, Lcom/android/keyguard/servicebox/pages/clock/KeyguardDualClockView;->setClockDateColors()V
-
-    goto :goto_0
-
-    :cond_3
-    const-string v0, "kg_clock_hours_color"
-
-    invoke-virtual {v0, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_4
-
-    invoke-virtual {p0}, Lcom/android/keyguard/servicebox/pages/clock/KeyguardDualClockView;->setClockDateColors()V
-
-    goto :goto_0
-
-    :cond_4
-    const-string v0, "kg_clock_minutes_color"
-
-    invoke-virtual {v0, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_5
-
-    invoke-virtual {p0}, Lcom/android/keyguard/servicebox/pages/clock/KeyguardDualClockView;->setClockDateColors()V
-
-    goto :goto_0
-
-    :cond_5
-    const-string v0, "kg_clock_date_color"
-
-    invoke-virtual {v0, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_6
-
-    invoke-virtual {p0}, Lcom/android/keyguard/servicebox/pages/clock/KeyguardDualClockView;->setClockDateColors()V
-
-    goto :goto_0
-
-    :cond_6
-    :goto_0
-    return-void
-.end method
-
 .method protected onFinishInflate()V
     .locals 4
 
@@ -756,10 +583,6 @@
 
     invoke-direct {p0, v1}, Lcom/android/keyguard/servicebox/pages/clock/KeyguardDualClockView;->setHomeIcon(F)V
 
-    invoke-virtual {p0}, Lcom/android/keyguard/servicebox/pages/clock/KeyguardDualClockView;->setClockDateColors()V
-
-    invoke-direct {p0}, Lcom/android/keyguard/servicebox/pages/clock/KeyguardDualClockView;->registerGearObserver()V
-
     sget-boolean v1, Lcom/android/keyguard/KeyguardRune;->SUPPORT_SERVICEBOX:Z
 
     if-nez v1, :cond_3
@@ -865,114 +688,6 @@
     .locals 0
 
     iput-object p1, p0, Lcom/android/keyguard/servicebox/pages/clock/KeyguardDualClockView;->mCacheKey:Ljava/lang/String;
-
-    return-void
-.end method
-
-.method setClockDateColors()V
-    .locals 3
-
-    const-string v0, "kg_enable_lockscreen_color"
-
-    const v1, 0x0
-
-    invoke-static {v0, v1}, Lcom/android/wubydax/GearUtils;->getDbIntForKey(Ljava/lang/String;I)I
-
-    move-result v0
-
-    if-eqz v0, :cond_5
-
-    iget-object v0, p0, Lcom/android/keyguard/servicebox/pages/clock/KeyguardDualClockView;->mHomecityTimeView:Landroid/widget/TextClock;
-
-    if-eqz v0, :cond_0
-
-    const-string v1, "kg_clock_hours_color"
-
-    const v2, -0x50506
-
-    invoke-static {v1, v2}, Lcom/android/wubydax/GearUtils;->getDbIntForKey(Ljava/lang/String;I)I
-
-    move-result v1
-
-    invoke-virtual {v0, v1}, Landroid/widget/TextClock;->setTextColor(I)V
-
-    :cond_0
-    iget-object v0, p0, Lcom/android/keyguard/servicebox/pages/clock/KeyguardDualClockView;->mHomecityAmpmView:Landroid/widget/TextClock;
-
-    if-eqz v0, :cond_1
-
-    const-string v0, "kg_clock_minutes_color"
-
-    const v1, -0x50506
-
-    invoke-static {v0, v1}, Lcom/android/wubydax/GearUtils;->getDbIntForKey(Ljava/lang/String;I)I
-
-    move-result v0
-
-    invoke-virtual {v0, v1}, Landroid/widget/TextClock;->setTextColor(I)V
-
-    :cond_1
-    iget-object v0, p0, Lcom/android/keyguard/servicebox/pages/clock/KeyguardDualClockView;->mHomecityDateView:Lcom/android/keyguard/KeyguardTextClock;
-
-    if-eqz v0, :cond_2
-
-    const-string v1, "kg_clock_date_color"
-
-    const v2, -0x50506
-
-    invoke-static {v1, v2}, Lcom/android/wubydax/GearUtils;->getDbIntForKey(Ljava/lang/String;I)I
-
-    move-result v1
-
-    invoke-virtual {v0, v1}, Lcom/android/keyguard/KeyguardTextClock;->setTextColor(I)V
-
-    :cond_2
-    iget-object v0, p0, Lcom/android/keyguard/servicebox/pages/clock/KeyguardDualClockView;->mHomecityLocaleView:Lcom/android/keyguard/KeyguardTextView;
-
-    if-eqz v0, :cond_3
-
-    const-string v1, "kg_clock_hours_color"
-
-    const v2, -0x50506
-
-    invoke-static {v1, v2}, Lcom/android/wubydax/GearUtils;->getDbIntForKey(Ljava/lang/String;I)I
-
-    move-result v1
-
-    invoke-virtual {v0, v1}, Landroid/widget/TextClock;->setTextColor(I)V
-
-    :cond_3
-    iget-object v0, p0, Lcom/android/keyguard/servicebox/pages/clock/KeyguardDualClockView;->mRoamingAmpmView:Landroid/widget/TextClock;
-
-    if-eqz v0, :cond_4
-
-    const-string v0, "kg_clock_minutes_color"
-
-    const v1, -0x50506
-
-    invoke-static {v0, v1}, Lcom/android/wubydax/GearUtils;->getDbIntForKey(Ljava/lang/String;I)I
-
-    move-result v0
-
-    invoke-virtual {v0, v1}, Landroid/widget/TextClock;->setTextColor(I)V
-
-    :cond_4
-    iget-object v0, p0, Lcom/android/keyguard/servicebox/pages/clock/KeyguardDualClockView;->mRoamingDateView:Lcom/android/keyguard/KeyguardTextClock;
-
-    if-eqz v0, :cond_5
-
-    const-string v1, "kg_clock_date_color"
-
-    const v2, -0x50506
-
-    invoke-static {v1, v2}, Lcom/android/wubydax/GearUtils;->getDbIntForKey(Ljava/lang/String;I)I
-
-    move-result v1
-
-    invoke-virtual {v0, v1}, Lcom/android/keyguard/KeyguardTextClock;->setTextColor(I)V
-
-    :cond_5
-    iget-object v0, p0, Lcom/android/keyguard/servicebox/pages/clock/KeyguardDualClockView;->mRoamingLocaleView:Lcom/android/keyguard/KeyguardTextView;
 
     return-void
 .end method
@@ -1139,8 +854,6 @@
     iget v0, p0, Lcom/android/keyguard/servicebox/pages/clock/KeyguardDualClockView;->mFontScale:F
 
     invoke-direct {p0, v0}, Lcom/android/keyguard/servicebox/pages/clock/KeyguardDualClockView;->setHomeIcon(F)V
-
-    invoke-virtual {p0}, Lcom/android/keyguard/servicebox/pages/clock/KeyguardDualClockView;->setClockDateColors()V
 
     return-void
 .end method
