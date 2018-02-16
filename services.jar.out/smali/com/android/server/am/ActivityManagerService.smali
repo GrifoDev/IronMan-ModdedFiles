@@ -709,6 +709,8 @@
 
 .field mController:Landroid/app/IActivityController;
 
+.field mControllerDescription:Ljava/lang/String;
+
 .field mControllerIsAMonkey:Z
 
 .field mCoreSettingsObserver:Lcom/android/server/am/CoreSettingsObserver;
@@ -3206,6 +3208,10 @@
     const/4 v0, 0x0
 
     iput-object v0, p0, Lcom/android/server/am/ActivityManagerService;->mController:Landroid/app/IActivityController;
+
+    const/4 v0, 0x0
+
+    iput-object v0, p0, Lcom/android/server/am/ActivityManagerService;->mControllerDescription:Ljava/lang/String;
 
     const/4 v0, 0x0
 
@@ -24441,9 +24447,13 @@
 
     move-result-object v3
 
-    const-string/jumbo v4, "android.intent.action.CALL_EMERGENCY"
+    invoke-virtual {v3}, Ljava/lang/String;->toLowerCase()Ljava/lang/String;
 
-    invoke-virtual {v3, v4}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    move-result-object v3
+
+    const-string/jumbo v4, "emergency"
+
+    invoke-virtual {v3, v4}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
 
     move-result v3
 
@@ -24453,19 +24463,7 @@
 
     move-result-object v3
 
-    const-string/jumbo v4, "com.android.phone.EmergencyDialer.DIAL"
-
-    invoke-virtual {v3, v4}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v3
-
-    if-nez v3, :cond_2
-
-    invoke-virtual {p1}, Landroid/content/Intent;->getAction()Ljava/lang/String;
-
-    move-result-object v3
-
-    const-string/jumbo v4, "com.android.phone.EmergencyDialer"
+    const-string/jumbo v4, "intent.action.INTERACTION_ICE"
 
     invoke-virtual {v3, v4}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
@@ -60775,7 +60773,7 @@
 
     iget-object v4, v0, Lcom/android/server/am/ActivityManagerService;->mProfileProc:Lcom/android/server/am/ProcessRecord;
 
-    if-eqz v4, :cond_4f
+    if-eqz v4, :cond_50
 
     :cond_43
     :goto_a
@@ -61003,7 +61001,7 @@
     invoke-virtual {v0, v4}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
     :cond_49
-    if-nez p6, :cond_4d
+    if-nez p6, :cond_4e
 
     move-object/from16 v0, p0
 
@@ -61106,7 +61104,40 @@
     invoke-virtual {v0, v4}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
     :cond_4c
-    if-eqz p5, :cond_4d
+    move-object/from16 v0, p0
+
+    iget-object v4, v0, Lcom/android/server/am/ActivityManagerService;->mControllerDescription:Ljava/lang/String;
+
+    if-eqz v4, :cond_4d
+
+    new-instance v4, Ljava/lang/StringBuilder;
+
+    invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string/jumbo v5, "  mControllerDescription: "
+
+    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v4
+
+    move-object/from16 v0, p0
+
+    iget-object v5, v0, Lcom/android/server/am/ActivityManagerService;->mControllerDescription:Ljava/lang/String;
+
+    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v4
+
+    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v4
+
+    move-object/from16 v0, p2
+
+    invoke-virtual {v0, v4}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
+
+    :cond_4d
+    if-eqz p5, :cond_4e
 
     new-instance v4, Ljava/lang/StringBuilder;
 
@@ -61576,7 +61607,7 @@
 
     invoke-virtual/range {p2 .. p2}, Ljava/io/PrintWriter;->println()V
 
-    :cond_4d
+    :cond_4e
     new-instance v4, Ljava/lang/StringBuilder;
 
     invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
@@ -61673,7 +61704,7 @@
 
     invoke-virtual {v0, v4}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    if-nez v32, :cond_4e
+    if-nez v32, :cond_4f
 
     const-string/jumbo v4, "  (nothing)"
 
@@ -61681,10 +61712,10 @@
 
     invoke-virtual {v0, v4}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    :cond_4e
+    :cond_4f
     return-void
 
-    :cond_4f
+    :cond_50
     move-object/from16 v0, p0
 
     iget-object v4, v0, Lcom/android/server/am/ActivityManagerService;->mProfileFile:Ljava/lang/String;
@@ -91386,13 +91417,21 @@
 .end method
 
 .method public setActivityController(Landroid/app/IActivityController;Z)V
-    .locals 2
+    .locals 4
 
-    const-string/jumbo v0, "android.permission.SET_ACTIVITY_WATCHER"
+    const-string/jumbo v2, "android.permission.SET_ACTIVITY_WATCHER"
 
-    const-string/jumbo v1, "setActivityController()"
+    const-string/jumbo v3, "setActivityController()"
 
-    invoke-virtual {p0, v0, v1}, Lcom/android/server/am/ActivityManagerService;->enforceCallingPermission(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-virtual {p0, v2, v3}, Lcom/android/server/am/ActivityManagerService;->enforceCallingPermission(Ljava/lang/String;Ljava/lang/String;)V
+
+    invoke-static {}, Landroid/os/Binder;->getCallingPid()I
+
+    move-result v0
+
+    invoke-static {}, Landroid/os/Binder;->getCallingUid()I
+
+    move-result v1
 
     monitor-enter p0
 
@@ -91405,9 +91444,47 @@
 
     invoke-static {}, Lcom/android/server/Watchdog;->getInstance()Lcom/android/server/Watchdog;
 
-    move-result-object v0
+    move-result-object v2
 
-    invoke-virtual {v0, p1}, Lcom/android/server/Watchdog;->setActivityController(Landroid/app/IActivityController;)V
+    invoke-virtual {v2, p1}, Lcom/android/server/Watchdog;->setActivityController(Landroid/app/IActivityController;)V
+
+    new-instance v2, Ljava/lang/StringBuilder;
+
+    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string/jumbo v3, "pid = "
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    const-string/jumbo v3, " uid = "
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v2
+
+    iput-object v2, p0, Lcom/android/server/am/ActivityManagerService;->mControllerDescription:Ljava/lang/String;
+
+    invoke-static {}, Lcom/android/server/Watchdog;->getInstance()Lcom/android/server/Watchdog;
+
+    move-result-object v2
+
+    iget-object v3, p0, Lcom/android/server/am/ActivityManagerService;->mControllerDescription:Ljava/lang/String;
+
+    invoke-virtual {v2, v3}, Lcom/android/server/Watchdog;->setActivityControllerDescription(Ljava/lang/String;)V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
@@ -91418,13 +91495,13 @@
     return-void
 
     :catchall_0
-    move-exception v0
+    move-exception v2
 
     monitor-exit p0
 
     invoke-static {}, Lcom/android/server/am/ActivityManagerService;->resetPriorityAfterLockedSection()V
 
-    throw v0
+    throw v2
 .end method
 
 .method public setAlwaysFinish(Z)V

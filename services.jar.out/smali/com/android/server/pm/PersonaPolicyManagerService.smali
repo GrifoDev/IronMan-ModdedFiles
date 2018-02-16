@@ -4823,6 +4823,14 @@
     :cond_3
     if-nez v4, :cond_4
 
+    if-eqz v6, :cond_4
+
+    invoke-virtual {v6}, Lcom/sec/enterprise/knox/container/KnoxContainerManager;->getApplicationPolicy()Landroid/app/enterprise/ApplicationPolicy;
+
+    move-result-object v10
+
+    if-eqz v10, :cond_4
+
     invoke-virtual {v6}, Lcom/sec/enterprise/knox/container/KnoxContainerManager;->getApplicationPolicy()Landroid/app/enterprise/ApplicationPolicy;
 
     move-result-object v11

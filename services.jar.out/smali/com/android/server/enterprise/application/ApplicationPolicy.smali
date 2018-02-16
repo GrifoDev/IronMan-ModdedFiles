@@ -6605,6 +6605,82 @@
     return v7
 .end method
 
+.method private convertDrawableToBitmap(Landroid/graphics/drawable/Drawable;)Landroid/graphics/Bitmap;
+    .locals 7
+
+    :try_start_0
+    invoke-virtual {p1}, Landroid/graphics/drawable/Drawable;->getIntrinsicWidth()I
+
+    move-result v3
+
+    invoke-virtual {p1}, Landroid/graphics/drawable/Drawable;->getIntrinsicHeight()I
+
+    move-result v4
+
+    sget-object v5, Landroid/graphics/Bitmap$Config;->ARGB_8888:Landroid/graphics/Bitmap$Config;
+
+    invoke-static {v3, v4, v5}, Landroid/graphics/Bitmap;->createBitmap(IILandroid/graphics/Bitmap$Config;)Landroid/graphics/Bitmap;
+
+    move-result-object v0
+
+    new-instance v1, Landroid/graphics/Canvas;
+
+    invoke-direct {v1, v0}, Landroid/graphics/Canvas;-><init>(Landroid/graphics/Bitmap;)V
+
+    invoke-virtual {v1}, Landroid/graphics/Canvas;->getWidth()I
+
+    move-result v3
+
+    invoke-virtual {v1}, Landroid/graphics/Canvas;->getHeight()I
+
+    move-result v4
+
+    const/4 v5, 0x0
+
+    const/4 v6, 0x0
+
+    invoke-virtual {p1, v5, v6, v3, v4}, Landroid/graphics/drawable/Drawable;->setBounds(IIII)V
+
+    invoke-virtual {p1, v1}, Landroid/graphics/drawable/Drawable;->draw(Landroid/graphics/Canvas;)V
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
+
+    return-object v0
+
+    :catch_0
+    move-exception v2
+
+    const-string/jumbo v3, "ApplicationPolicy"
+
+    new-instance v4, Ljava/lang/StringBuilder;
+
+    invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string/jumbo v5, "Failed to convert drawable to bitmap "
+
+    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v4
+
+    invoke-virtual {v2}, Ljava/lang/Exception;->getMessage()Ljava/lang/String;
+
+    move-result-object v5
+
+    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v4
+
+    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v4
+
+    invoke-static {v3, v4}, Lcom/android/server/enterprise/log/Log;->e(Ljava/lang/String;Ljava/lang/String;)V
+
+    const/4 v3, 0x0
+
+    return-object v3
+.end method
+
 .method private createAdminMap(J)V
     .locals 5
 
@@ -16428,7 +16504,7 @@
     invoke-static/range {v30 .. v31}, Lcom/android/server/enterprise/log/Log;->e(Ljava/lang/String;Ljava/lang/String;)V
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_1
 
     const/16 v30, 0x0
 
@@ -16467,7 +16543,7 @@
     invoke-static/range {v30 .. v31}, Lcom/android/server/enterprise/log/Log;->e(Ljava/lang/String;Ljava/lang/String;)V
     :try_end_1
     .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_0
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+    .catchall {:try_start_1 .. :try_end_1} :catchall_1
 
     const/16 v30, 0x0
 
@@ -16538,7 +16614,7 @@
     invoke-static/range {v30 .. v31}, Lcom/android/server/enterprise/log/Log;->e(Ljava/lang/String;Ljava/lang/String;)V
     :try_end_2
     .catch Ljava/lang/Exception; {:try_start_2 .. :try_end_2} :catch_0
-    .catchall {:try_start_2 .. :try_end_2} :catchall_0
+    .catchall {:try_start_2 .. :try_end_2} :catchall_1
 
     const/16 v30, 0x0
 
@@ -16650,7 +16726,7 @@
     invoke-interface/range {v23 .. v24}, Ljava/util/List;->add(Ljava/lang/Object;)Z
     :try_end_3
     .catch Ljava/lang/Exception; {:try_start_3 .. :try_end_3} :catch_0
-    .catchall {:try_start_3 .. :try_end_3} :catchall_0
+    .catchall {:try_start_3 .. :try_end_3} :catchall_1
 
     goto :goto_0
 
@@ -16684,7 +16760,7 @@
 
     invoke-static/range {v30 .. v31}, Lcom/android/server/enterprise/log/Log;->e(Ljava/lang/String;Ljava/lang/String;)V
     :try_end_4
-    .catchall {:try_start_4 .. :try_end_4} :catchall_0
+    .catchall {:try_start_4 .. :try_end_4} :catchall_1
 
     const/16 v30, 0x0
 
@@ -16707,7 +16783,7 @@
     invoke-static/range {v30 .. v31}, Lcom/android/server/enterprise/log/Log;->e(Ljava/lang/String;Ljava/lang/String;)V
     :try_end_5
     .catch Ljava/lang/Exception; {:try_start_5 .. :try_end_5} :catch_0
-    .catchall {:try_start_5 .. :try_end_5} :catchall_0
+    .catchall {:try_start_5 .. :try_end_5} :catchall_1
 
     const/16 v30, 0x0
 
@@ -16726,7 +16802,7 @@
 
     move-result v30
 
-    if-eqz v30, :cond_d
+    if-eqz v30, :cond_e
 
     invoke-interface {v13}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -16744,7 +16820,7 @@
 
     move-result v30
 
-    if-eqz v30, :cond_c
+    if-eqz v30, :cond_d
 
     const/4 v6, 0x0
 
@@ -16757,7 +16833,7 @@
     monitor-enter v31
     :try_end_6
     .catch Ljava/lang/Exception; {:try_start_6 .. :try_end_6} :catch_0
-    .catchall {:try_start_6 .. :try_end_6} :catchall_0
+    .catchall {:try_start_6 .. :try_end_6} :catchall_1
 
     const/16 v30, 0x1
 
@@ -16787,21 +16863,52 @@
 
     sput-boolean v30, Lcom/android/server/enterprise/application/ApplicationPolicy;->addHomeShorcutRequested:Z
     :try_end_7
-    .catchall {:try_start_7 .. :try_end_7} :catchall_1
+    .catchall {:try_start_7 .. :try_end_7} :catchall_0
 
     :try_start_8
     monitor-exit v31
 
     const/4 v5, 0x0
 
-    if-eqz v6, :cond_c
+    if-eqz v6, :cond_d
 
-    check-cast v6, Landroid/graphics/drawable/BitmapDrawable;
+    move-object/from16 v0, p0
 
-    invoke-virtual {v6}, Landroid/graphics/drawable/BitmapDrawable;->getBitmap()Landroid/graphics/Bitmap;
+    invoke-direct {v0, v6}, Lcom/android/server/enterprise/application/ApplicationPolicy;->convertDrawableToBitmap(Landroid/graphics/drawable/Drawable;)Landroid/graphics/Bitmap;
+    :try_end_8
+    .catch Ljava/lang/Exception; {:try_start_8 .. :try_end_8} :catch_0
+    .catchall {:try_start_8 .. :try_end_8} :catchall_1
 
     move-result-object v5
 
+    if-nez v5, :cond_a
+
+    const/16 v30, 0x0
+
+    invoke-static/range {v26 .. v27}, Landroid/os/Binder;->restoreCallingIdentity(J)V
+
+    return v30
+
+    :catchall_0
+    move-exception v30
+
+    :try_start_9
+    monitor-exit v31
+
+    throw v30
+    :try_end_9
+    .catch Ljava/lang/Exception; {:try_start_9 .. :try_end_9} :catch_0
+    .catchall {:try_start_9 .. :try_end_9} :catchall_1
+
+    :catchall_1
+    move-exception v30
+
+    invoke-static/range {v26 .. v27}, Landroid/os/Binder;->restoreCallingIdentity(J)V
+
+    throw v30
+
+    :cond_a
+    :try_start_a
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/server/enterprise/application/ApplicationPolicy;->mContext:Landroid/content/Context;
@@ -16826,7 +16933,7 @@
 
     move/from16 v1, v22
 
-    if-gt v0, v1, :cond_a
+    if-gt v0, v1, :cond_b
 
     invoke-virtual {v5}, Landroid/graphics/Bitmap;->getWidth()I
 
@@ -16836,9 +16943,9 @@
 
     move/from16 v1, v22
 
-    if-le v0, v1, :cond_b
+    if-le v0, v1, :cond_c
 
-    :cond_a
+    :cond_b
     move-object/from16 v0, p0
 
     move/from16 v1, v22
@@ -16847,14 +16954,14 @@
 
     move-result-object v5
 
-    :cond_b
+    :cond_c
     const-string/jumbo v30, "android.intent.extra.shortcut.ICON"
 
     move-object/from16 v0, v30
 
     invoke-virtual {v11, v0, v5}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Landroid/os/Parcelable;)Landroid/content/Intent;
 
-    :cond_c
+    :cond_d
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/server/enterprise/application/ApplicationPolicy;->mContext:Landroid/content/Context;
@@ -16874,31 +16981,13 @@
     move-object/from16 v1, v31
 
     invoke-virtual {v0, v11, v1}, Landroid/content/Context;->sendBroadcastAsUser(Landroid/content/Intent;Landroid/os/UserHandle;)V
-    :try_end_8
-    .catch Ljava/lang/Exception; {:try_start_8 .. :try_end_8} :catch_0
-    .catchall {:try_start_8 .. :try_end_8} :catchall_0
+    :try_end_a
+    .catch Ljava/lang/Exception; {:try_start_a .. :try_end_a} :catch_0
+    .catchall {:try_start_a .. :try_end_a} :catchall_1
 
     goto/16 :goto_1
 
-    :catchall_0
-    move-exception v30
-
-    invoke-static/range {v26 .. v27}, Landroid/os/Binder;->restoreCallingIdentity(J)V
-
-    throw v30
-
-    :catchall_1
-    move-exception v30
-
-    :try_start_9
-    monitor-exit v31
-
-    throw v30
-    :try_end_9
-    .catch Ljava/lang/Exception; {:try_start_9 .. :try_end_9} :catch_0
-    .catchall {:try_start_9 .. :try_end_9} :catchall_0
-
-    :cond_d
+    :cond_e
     invoke-static/range {v26 .. v27}, Landroid/os/Binder;->restoreCallingIdentity(J)V
 
     const/16 v30, 0x1
@@ -36399,7 +36488,7 @@
     goto/16 :goto_0
 
     :cond_b
-    if-nez p3, :cond_c
+    if-nez p3, :cond_11
 
     new-instance v6, Ljava/lang/StringBuilder;
 
@@ -36447,7 +36536,7 @@
 
     move-result-object v6
 
-    const-string/jumbo v7, "!=-101"
+    const-string/jumbo v7, "=-100"
 
     invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -36522,6 +36611,7 @@
     move-result-object v5
 
     :cond_c
+    :goto_1
     invoke-static {}, Landroid/os/Binder;->clearCallingIdentity()J
 
     move-result-wide v24
@@ -36541,13 +36631,13 @@
 
     move-result-object v17
 
-    if-eqz v17, :cond_12
+    if-eqz v17, :cond_13
 
     invoke-interface/range {v17 .. v17}, Landroid/database/Cursor;->moveToFirst()Z
 
     move-result v6
 
-    if-eqz v6, :cond_12
+    if-eqz v6, :cond_13
 
     move-object/from16 v0, v17
 
@@ -36590,7 +36680,7 @@
 
     move-result-object v14
 
-    :goto_1
+    :goto_2
     if-eqz v14, :cond_e
 
     :try_start_2
@@ -36612,7 +36702,7 @@
 
     if-nez v6, :cond_d
 
-    :goto_2
+    :goto_3
     if-eqz v17, :cond_f
 
     invoke-interface/range {v17 .. v17}, Landroid/database/Cursor;->close()V
@@ -36621,7 +36711,7 @@
     invoke-static/range {v24 .. v25}, Landroid/os/Binder;->restoreCallingIdentity(J)V
 
     :cond_10
-    :goto_3
+    :goto_4
     const-string/jumbo v6, "ApplicationPolicy"
 
     new-instance v7, Ljava/lang/StringBuilder;
@@ -36672,6 +36762,87 @@
 
     return-object v20
 
+    :cond_11
+    new-instance v6, Ljava/lang/StringBuilder;
+
+    invoke-direct {v6}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string/jumbo v7, "("
+
+    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v6
+
+    invoke-virtual {v6, v11}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v6
+
+    const-string/jumbo v7, "=0"
+
+    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v6
+
+    const-string/jumbo v7, " OR "
+
+    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v6
+
+    invoke-virtual {v6, v11}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v6
+
+    const-string/jumbo v7, "=1)"
+
+    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v6
+
+    const-string/jumbo v7, " AND "
+
+    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v6
+
+    const-string/jumbo v7, "("
+
+    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v6
+
+    invoke-virtual {v6, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v6
+
+    const-string/jumbo v7, "=-100"
+
+    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v6
+
+    const-string/jumbo v7, " OR "
+
+    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v6
+
+    invoke-virtual {v6, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v6
+
+    const-string/jumbo v7, "=-101)"
+
+    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v6
+
+    invoke-virtual {v6}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v5
+
+    goto/16 :goto_1
+
     :catch_0
     move-exception v18
 
@@ -36681,7 +36852,7 @@
     .catch Landroid/database/SQLException; {:try_start_3 .. :try_end_3} :catch_1
     .catchall {:try_start_3 .. :try_end_3} :catchall_0
 
-    goto :goto_1
+    goto/16 :goto_2
 
     :catch_1
     move-exception v21
@@ -36719,16 +36890,16 @@
     :try_end_4
     .catchall {:try_start_4 .. :try_end_4} :catchall_0
 
-    if-eqz v17, :cond_11
+    if-eqz v17, :cond_12
 
     invoke-interface/range {v17 .. v17}, Landroid/database/Cursor;->close()V
 
-    :cond_11
+    :cond_12
     invoke-static/range {v24 .. v25}, Landroid/os/Binder;->restoreCallingIdentity(J)V
 
-    goto :goto_3
+    goto/16 :goto_4
 
-    :cond_12
+    :cond_13
     :try_start_5
     const-string/jumbo v6, "ApplicationPolicy"
 
@@ -36739,16 +36910,16 @@
     .catch Landroid/database/SQLException; {:try_start_5 .. :try_end_5} :catch_1
     .catchall {:try_start_5 .. :try_end_5} :catchall_0
 
-    goto :goto_2
+    goto/16 :goto_3
 
     :catchall_0
     move-exception v6
 
-    if-eqz v17, :cond_13
+    if-eqz v17, :cond_14
 
     invoke-interface/range {v17 .. v17}, Landroid/database/Cursor;->close()V
 
-    :cond_13
+    :cond_14
     invoke-static/range {v24 .. v25}, Landroid/os/Binder;->restoreCallingIdentity(J)V
 
     throw v6

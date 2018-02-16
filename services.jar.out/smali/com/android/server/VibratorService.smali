@@ -4606,7 +4606,7 @@
     move-result v11
 
     :cond_1
-    if-nez v11, :cond_3
+    if-nez v11, :cond_4
 
     iput-object p1, p0, Lcom/android/server/VibratorService;->mCurrentVibration:Lcom/android/server/VibratorService$Vibration;
     :try_end_0
@@ -4621,13 +4621,13 @@
 
     cmp-long v1, v2, v4
 
-    if-eqz v1, :cond_9
+    if-eqz v1, :cond_c
 
     invoke-static {p1}, Lcom/android/server/VibratorService$Vibration;->-get1(Lcom/android/server/VibratorService$Vibration;)[I
 
     move-result-object v1
 
-    if-nez v1, :cond_7
+    if-nez v1, :cond_a
 
     invoke-static {p1}, Lcom/android/server/VibratorService$Vibration;->-get9(Lcom/android/server/VibratorService$Vibration;)J
 
@@ -4645,7 +4645,7 @@
 
     move-result v1
 
-    if-eqz v1, :cond_6
+    if-eqz v1, :cond_9
 
     invoke-static {p1}, Lcom/android/server/VibratorService$Vibration;->-get3(Lcom/android/server/VibratorService$Vibration;)I
 
@@ -4735,12 +4735,21 @@
 
     invoke-static {v1, v2}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    return-void
+    invoke-static {p1}, Lcom/android/server/VibratorService$Vibration;->-get7(Lcom/android/server/VibratorService$Vibration;)I
+
+    move-result v1
+
+    if-gez v1, :cond_3
+
+    invoke-direct {p0, p1}, Lcom/android/server/VibratorService;->unlinkVibration(Lcom/android/server/VibratorService$Vibration;)V
 
     :cond_3
+    return-void
+
+    :cond_4
     const/4 v1, 0x2
 
-    if-ne v11, v1, :cond_4
+    if-ne v11, v1, :cond_6
 
     const-string/jumbo v1, "VibratorService"
 
@@ -4768,6 +4777,15 @@
 
     invoke-static {v1, v2}, Landroid/util/Slog;->w(Ljava/lang/String;Ljava/lang/String;)I
 
+    invoke-static {p1}, Lcom/android/server/VibratorService$Vibration;->-get7(Lcom/android/server/VibratorService$Vibration;)I
+
+    move-result v1
+
+    if-gez v1, :cond_5
+
+    invoke-direct {p0, p1}, Lcom/android/server/VibratorService;->unlinkVibration(Lcom/android/server/VibratorService$Vibration;)V
+
+    :cond_5
     iget-object v1, p0, Lcom/android/server/VibratorService;->mH:Landroid/os/Handler;
 
     iget-object v2, p0, Lcom/android/server/VibratorService;->mVibrationRunnable:Ljava/lang/Runnable;
@@ -4778,7 +4796,7 @@
 
     return-void
 
-    :cond_4
+    :cond_6
     sget-object v1, Landroid/os/Vibrator$SemMagnitudeTypes;->TYPE_FORCE:Landroid/os/Vibrator$SemMagnitudeTypes;
 
     invoke-virtual {v1}, Landroid/os/Vibrator$SemMagnitudeTypes;->toString()Ljava/lang/String;
@@ -4793,7 +4811,7 @@
 
     move-result v1
 
-    if-eqz v1, :cond_5
+    if-eqz v1, :cond_7
 
     iput-object p1, p0, Lcom/android/server/VibratorService;->mCurrentVibration:Lcom/android/server/VibratorService$Vibration;
 
@@ -4804,7 +4822,7 @@
 
     goto/16 :goto_0
 
-    :cond_5
+    :cond_7
     const-string/jumbo v1, "VibratorService"
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -4831,6 +4849,15 @@
 
     invoke-static {v1, v2}, Landroid/util/Slog;->v(Ljava/lang/String;Ljava/lang/String;)I
 
+    invoke-static {p1}, Lcom/android/server/VibratorService$Vibration;->-get7(Lcom/android/server/VibratorService$Vibration;)I
+
+    move-result v1
+
+    if-gez v1, :cond_8
+
+    invoke-direct {p0, p1}, Lcom/android/server/VibratorService;->unlinkVibration(Lcom/android/server/VibratorService$Vibration;)V
+
+    :cond_8
     iget-object v1, p0, Lcom/android/server/VibratorService;->mH:Landroid/os/Handler;
 
     iget-object v2, p0, Lcom/android/server/VibratorService;->mVibrationRunnable:Ljava/lang/Runnable;
@@ -4843,12 +4870,12 @@
 
     return-void
 
-    :cond_6
+    :cond_9
     iget v6, p0, Lcom/android/server/VibratorService;->mNotiMagnitude:I
 
     goto/16 :goto_1
 
-    :cond_7
+    :cond_a
     invoke-static {p1}, Lcom/android/server/VibratorService$Vibration;->-get9(Lcom/android/server/VibratorService$Vibration;)J
 
     move-result-wide v2
@@ -4869,7 +4896,7 @@
 
     move-result v1
 
-    if-eqz v1, :cond_8
+    if-eqz v1, :cond_b
 
     invoke-static {p1}, Lcom/android/server/VibratorService$Vibration;->-get3(Lcom/android/server/VibratorService$Vibration;)I
 
@@ -4904,12 +4931,12 @@
 
     goto/16 :goto_2
 
-    :cond_8
+    :cond_b
     iget v7, p0, Lcom/android/server/VibratorService;->mNotiMagnitude:I
 
     goto :goto_3
 
-    :cond_9
+    :cond_c
     new-instance v1, Lcom/android/server/VibratorService$VibrateThread;
 
     invoke-direct {v1, p0, p1}, Lcom/android/server/VibratorService$VibrateThread;-><init>(Lcom/android/server/VibratorService;Lcom/android/server/VibratorService$Vibration;)V

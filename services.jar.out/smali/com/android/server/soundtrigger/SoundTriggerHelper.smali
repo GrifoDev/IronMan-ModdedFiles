@@ -87,14 +87,6 @@
     return-object v0
 .end method
 
-.method static synthetic -get1(Lcom/android/server/soundtrigger/SoundTriggerHelper;)Landroid/os/PowerManager;
-    .locals 1
-
-    iget-object v0, p0, Lcom/android/server/soundtrigger/SoundTriggerHelper;->mPowerManager:Landroid/os/PowerManager;
-
-    return-object v0
-.end method
-
 .method static synthetic -wrap0(Lcom/android/server/soundtrigger/SoundTriggerHelper;Z)V
     .locals 0
 
@@ -612,34 +604,34 @@
 .end method
 
 .method private initializeTelephonyAndPowerStateListeners()V
-    .locals 4
+    .locals 5
 
-    const/4 v0, 0x0
+    const/4 v1, 0x0
 
-    iget-object v1, p0, Lcom/android/server/soundtrigger/SoundTriggerHelper;->mTelephonyManager:Landroid/telephony/TelephonyManager;
+    iget-object v0, p0, Lcom/android/server/soundtrigger/SoundTriggerHelper;->mTelephonyManager:Landroid/telephony/TelephonyManager;
 
-    invoke-virtual {v1}, Landroid/telephony/TelephonyManager;->getCallState()I
+    invoke-virtual {v0}, Landroid/telephony/TelephonyManager;->getCallState()I
 
-    move-result v1
+    move-result v0
 
-    if-eqz v1, :cond_0
+    if-eqz v0, :cond_1
 
     const/4 v0, 0x1
 
-    :cond_0
+    :goto_0
     iput-boolean v0, p0, Lcom/android/server/soundtrigger/SoundTriggerHelper;->mCallActive:Z
 
     iget-object v0, p0, Lcom/android/server/soundtrigger/SoundTriggerHelper;->mTelephonyManager:Landroid/telephony/TelephonyManager;
 
-    iget-object v1, p0, Lcom/android/server/soundtrigger/SoundTriggerHelper;->mPhoneStateListener:Landroid/telephony/PhoneStateListener;
+    iget-object v2, p0, Lcom/android/server/soundtrigger/SoundTriggerHelper;->mPhoneStateListener:Landroid/telephony/PhoneStateListener;
 
-    const/16 v2, 0x20
+    const/16 v3, 0x20
 
-    invoke-virtual {v0, v1, v2}, Landroid/telephony/TelephonyManager;->listen(Landroid/telephony/PhoneStateListener;I)V
+    invoke-virtual {v0, v2, v3}, Landroid/telephony/TelephonyManager;->listen(Landroid/telephony/PhoneStateListener;I)V
 
     iget-object v0, p0, Lcom/android/server/soundtrigger/SoundTriggerHelper;->mPowerSaveModeListener:Lcom/android/server/soundtrigger/SoundTriggerHelper$PowerSaveModeListener;
 
-    if-nez v0, :cond_1
+    if-nez v0, :cond_0
 
     new-instance v0, Lcom/android/server/soundtrigger/SoundTriggerHelper$PowerSaveModeListener;
 
@@ -649,26 +641,25 @@
 
     iget-object v0, p0, Lcom/android/server/soundtrigger/SoundTriggerHelper;->mContext:Landroid/content/Context;
 
-    iget-object v1, p0, Lcom/android/server/soundtrigger/SoundTriggerHelper;->mPowerSaveModeListener:Lcom/android/server/soundtrigger/SoundTriggerHelper$PowerSaveModeListener;
+    iget-object v2, p0, Lcom/android/server/soundtrigger/SoundTriggerHelper;->mPowerSaveModeListener:Lcom/android/server/soundtrigger/SoundTriggerHelper$PowerSaveModeListener;
 
-    new-instance v2, Landroid/content/IntentFilter;
+    new-instance v3, Landroid/content/IntentFilter;
 
-    const-string/jumbo v3, "android.os.action.POWER_SAVE_MODE_CHANGED"
+    const-string/jumbo v4, "android.os.action.POWER_SAVE_MODE_CHANGED"
 
-    invoke-direct {v2, v3}, Landroid/content/IntentFilter;-><init>(Ljava/lang/String;)V
+    invoke-direct {v3, v4}, Landroid/content/IntentFilter;-><init>(Ljava/lang/String;)V
 
-    invoke-virtual {v0, v1, v2}, Landroid/content/Context;->registerReceiver(Landroid/content/BroadcastReceiver;Landroid/content/IntentFilter;)Landroid/content/Intent;
+    invoke-virtual {v0, v2, v3}, Landroid/content/Context;->registerReceiver(Landroid/content/BroadcastReceiver;Landroid/content/IntentFilter;)Landroid/content/Intent;
 
-    :cond_1
-    iget-object v0, p0, Lcom/android/server/soundtrigger/SoundTriggerHelper;->mPowerManager:Landroid/os/PowerManager;
-
-    invoke-virtual {v0}, Landroid/os/PowerManager;->isPowerSaveMode()Z
-
-    move-result v0
-
-    iput-boolean v0, p0, Lcom/android/server/soundtrigger/SoundTriggerHelper;->mIsPowerSaveMode:Z
+    :cond_0
+    iput-boolean v1, p0, Lcom/android/server/soundtrigger/SoundTriggerHelper;->mIsPowerSaveMode:Z
 
     return-void
+
+    :cond_1
+    move v0, v1
+
+    goto :goto_0
 .end method
 
 .method private internalClearGlobalStateLocked()V
