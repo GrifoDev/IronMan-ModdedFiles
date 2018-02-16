@@ -1,6 +1,6 @@
 Signature-Version: 1.0
 X-Android-APK-Signed: 2
-SHA-256-Digest-Manifest: 0WvRGRIKx52sFAtivrXx1yzSZ7nzXd7b6gwHFVlcYos=
+SHA-256-Digest-Manifest: XNsF+ii0XfXDnSoXC6jLsDBcdTDrxWovJH8tBQJ3M08=
 Created-By: 1.0 (Android SignApk)
 
 Name: res/drawable-xxhdpi-v4/btn_radio_on_holo.png
@@ -5276,7 +5276,7 @@ Name: res/drawable/ic_knox_badge2.png
 SHA-256-Digest: AEu/230fatYaCzU0hEZWrzzG/GRPkk+KpFdbbLmmOQs=
 
 Name: SEC-INF/buildinfo.xml
-SHA-256-Digest: OIbkvWFu7EUgZNgEaJirLdiY41uKG8ART1+4Hs+aVq0=
+SHA-256-Digest: QFjiNvHBbv/uzYPAjDAeIDgQFO6i5VCAEQN9ZKt5SR0=
 
 Name: res/drawable-xxhdpi-v4/rate_star_med_off_holo_dark.png
 SHA-256-Digest: iSgH0YilDyWilLB+ihq83xPOoDG63dnHSP2ef9035vs=

@@ -5274,7 +5274,7 @@ Name: res/drawable/ic_knox_badge2.png
 SHA-256-Digest: FE+TdkK9JK8kDo6YDHdyc9AfFLWSXc8deVlfkWdjuc0=
 
 Name: SEC-INF/buildinfo.xml
-SHA-256-Digest: ye+OJjNWM+7kHEEjgg0f/333XbR7ZTxNG6CLDOvNFWU=
+SHA-256-Digest: ijjMmGsMQyt6NZFe8xme7M8p0B00AN37brfzyzZBz4g=
 
 Name: res/drawable-xxhdpi-v4/rate_star_med_off_holo_dark.png
 SHA-256-Digest: v0HP8RDV428fRAodZ69n96SG8qb0k1bb8bhoUHQOhG8=
