@@ -8558,7 +8558,7 @@
 .end method
 
 .method private readForcedDisplayPropertiesLocked(Lcom/android/server/wm/DisplayContent;)V
-    .locals 13
+    .locals 12
 
     const/16 v11, 0x2c
 
@@ -8699,38 +8699,28 @@
 
     invoke-interface {v7, p1}, Lcom/android/server/wm/IWindowManagerServiceBridge;->restoreSizeDensityIfNeeded(Lcom/android/server/wm/DisplayContent;)V
 
-    sget-boolean v12, Landroid/os/Build;->renovateHeroSeries:Z
-
-    if-nez v12, :cond_5
-
     const-string/jumbo v7, "WQHD,FHD,HD"
 
-    goto :goto_1
-
-    :cond_5
-    const-string/jumbo v7, ""
-
-    :goto_1
     invoke-virtual {v7}, Ljava/lang/String;->isEmpty()Z
 
     move-result v7
 
-    if-nez v7, :cond_7
+    if-nez v7, :cond_6
 
-    if-eqz v5, :cond_6
+    if-eqz v5, :cond_5
 
     invoke-virtual {v5}, Ljava/lang/String;->length()I
 
     move-result v7
 
-    if-nez v7, :cond_7
+    if-nez v7, :cond_6
 
-    :cond_6
+    :cond_5
     iget-object v7, p0, Lcom/android/server/wm/WindowManagerService;->mBridge:Lcom/android/server/wm/IWindowManagerServiceBridge;
 
     invoke-interface {v7, p1}, Lcom/android/server/wm/IWindowManagerServiceBridge;->readForcedDisplayPropertiesLocked(Lcom/android/server/wm/DisplayContent;)V
 
-    :cond_7
+    :cond_6
     iget-object v7, p0, Lcom/android/server/wm/WindowManagerService;->mContext:Landroid/content/Context;
 
     invoke-virtual {v7}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
@@ -8743,7 +8733,7 @@
 
     move-result v3
 
-    if-eqz v3, :cond_8
+    if-eqz v3, :cond_7
 
     const-string/jumbo v7, "WindowManager"
 
@@ -8755,7 +8745,7 @@
 
     iput-boolean v7, p1, Lcom/android/server/wm/DisplayContent;->mDisplayScalingDisabled:Z
 
-    :cond_8
+    :cond_7
     return-void
 
     :catch_0
