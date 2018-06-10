@@ -1,0 +1,18 @@
+!!brut.androlib.meta.MetaInfo
+apkFileName: framework.jar
+compressionType: false
+doNotCompress: null
+isFrameworkApk: false
+packageInfo: null
+sdkInfo: null
+sharedLibrary: false
+sparseResources: false
+unknownFiles:
+  fragmentshadernv12.glsl: '8'
+  fragmentshadernv21.glsl: '8'
+  vertexshader2d.glsl: '8'
+  vertexshader3d.glsl: '8'
+  vertexshader.glsl: '8'
+usesFramework: null
+version: 2.3.3
+versionInfo: null
