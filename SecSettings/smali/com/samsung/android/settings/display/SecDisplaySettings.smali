@@ -8213,7 +8213,7 @@
     goto/16 :goto_11
 
     :cond_27
-    const/16 v25, 0x0
+    const/16 v25, 0x1
 
     goto/16 :goto_12
 

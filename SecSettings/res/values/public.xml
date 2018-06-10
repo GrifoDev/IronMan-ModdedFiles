@@ -5107,6 +5107,7 @@
     <public type="drawable" name="wifidirect_list_ic_washing_machine" id="0x7f0807aa" />
     <public type="drawable" name="wifidirect_list_ic_wearable" id="0x7f0807ab" />
     <public type="drawable" name="zzz_null" id="0x7f0807b3" />
+    <public type="drawable" name="logo" id="0x7f0807b4" />
     <public type="drawable" name="fingerprint_h_01" id="0x7f080173" />
     <public type="drawable" name="fingerprint_v_01" id="0x7f08017d" />
     <public type="drawable" name="setupwizard_header_bg01" id="0x7f080618" />
@@ -8675,6 +8676,8 @@
     <public type="id" name="zoom_minus" id="0x7f0a09ef" />
     <public type="id" name="zoom_plus" id="0x7f0a09f0" />
     <public type="id" name="zoom_seekbar" id="0x7f0a09f1" />
+    <public type="id" name="dev_settings" id="0x7f0a09f2" />
+    <public type="id" name="led_indicator_settings" id="0x7f0a09f3" />
     <public type="integer" name="Increase_touch_sensitivity_master_on_off" id="0x7f0b0000" />
     <public type="integer" name="Quick_dial_master_on_off" id="0x7f0b0001" />
     <public type="integer" name="Ringtone" id="0x7f0b0002" />
@@ -10933,6 +10936,7 @@
     <public type="layout" name="zen_schedule_repeat_button" id="0x7f0d03d0" />
     <public type="layout" name="zen_schedule_repeat_button_and_description" id="0x7f0d03d1" />
     <public type="layout" name="zen_schedule_rule_day" id="0x7f0d03d2" />
+    <public type="layout" name="logo" id="0x7f0d03d3" />
     <public type="layout" name="choose_lock_additional_pin" id="0x7f0d0065" />
     <public type="layout" name="fingerprint_disclaimer_dialog" id="0x7f0d0108" />
     <public type="layout" name="preference_wifi_ap_allowed_list" id="0x7f0d0244" />
@@ -19789,6 +19793,27 @@
     <public type="string" name="zoom_percentage" id="0x7f122236" />
     <public type="string" name="zzz_lgt_password_wrong_pin_code1" id="0x7f122237" />
     <public type="string" name="zzz_lgt_password_wrong_pin_code2" id="0x7f122238" />
+    <public type="string" name="device_info" id="0x7f122239" />
+    <public type="string" name="rom_info" id="0x7f12223a" />
+    <public type="string" name="rom_name" id="0x7f12223b" />
+    <public type="string" name="rom_name_details" id="0x7f12223c" />
+    <public type="string" name="rom_ver" id="0x7f12223d" />
+    <public type="string" name="rom_ver_details" id="0x7f12223e" />
+    <public type="string" name="rom_date" id="0x7f12223f" />
+    <public type="string" name="rom_date_details" id="0x7f122240" />
+    <public type="string" name="rom_developer" id="0x7f122241" />
+    <public type="string" name="rom_developer_name" id="0x7f122242" />
+    <public type="string" name="led_indicator_charging" id="0x7f122243" />
+    <public type="string" name="led_indicator_charging_summary" id="0x7f122244" />
+    <public type="string" name="led_indicator_notifications" id="0x7f122245" />
+    <public type="string" name="led_indicator_notifications_summary" id="0x7f122246" />
+    <public type="string" name="led_indicator_voice_recording" id="0x7f122247" />
+    <public type="string" name="led_indicator_voice_recording_summary" id="0x7f122248" />
+    <public type="string" name="led_indicator_incoming_notification" id="0x7f122249" />
+    <public type="string" name="led_indicator_incoming_notification_summary" id="0x7f12224a" />
+    <public type="string" name="led_indicator_low_battery" id="0x7f12224b" />
+    <public type="string" name="led_indicator_low_battery_summary" id="0x7f12224c" />
+    <public type="string" name="notification_reminder_led_toast" id="0x7f12224d" />
     <public type="string" name="screen_locktype_change_nonsecure_biometric_remove_pass" id="0x7f1216f3" />
     <public type="string" name="screen_locktype_change_nonsecure_biometric_remove_pay" id="0x7f1216f4" />
     <public type="string" name="screen_locktype_change_nonsecure_biometric_remove_pay_pass" id="0x7f1216f5" />
@@ -21033,4 +21058,5 @@
     <public type="xml" name="zen_mode_schedule_rule_settings" id="0x7f15014d" />
     <public type="xml" name="zen_mode_settings" id="0x7f15014e" />
     <public type="xml" name="zen_mode_visual_interruptions_settings" id="0x7f15014f" />
+    <public type="xml" name="led_indicator_settings" id="0x7f150150" />
 </resources>
