@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<resources>
-    <dimen name="sec_call_popup_primary_name_max_width">250.0dip</dimen>
-    <dimen name="sec_dialpad_key_star_size">26.0dip</dimen>
-    <dimen name="sec_dialpad_digits_margin_bottom">0.0dip</dimen>
-    <dimen name="sec_dialpad_key_numbers_size">33.0dip</dimen>
-    <dimen name="sec_video_endcall_upper_buttons_margin_top">246.0dip</dimen>
-    <dimen name="sec_primary_incoming_call_photo_size">360.0dip</dimen>
-</resources>

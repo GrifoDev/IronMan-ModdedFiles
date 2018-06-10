@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout android:layout_width="fill_parent" android:layout_height="wrap_content" android:minHeight="@dimen/sec_incall_ivritem_height" android:paddingStart="@dimen/sec_incall_buttons_padding_start" android:paddingEnd="@dimen/sec_incall_buttons_padding_four"
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <TextView android:textSize="16.0sp" android:id="@id/yulore_ivr_text" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="10.0dip" android:text="@string/vcc_press" android:layout_centerVertical="true" />
-    <ImageView android:id="@id/yulore_ivr_iv_right_icon" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/yulore_superyellowpage_icon_arrow" android:scaleType="centerInside" android:layout_alignParentRight="true" android:layout_centerVertical="true" />
-</RelativeLayout>
