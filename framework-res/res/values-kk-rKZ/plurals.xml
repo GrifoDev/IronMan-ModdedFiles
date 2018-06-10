@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <plurals name="autofill_picker_some_suggestions">
+        <item quantity="other">%d автоматты толтыру ұсынысы</item>
+        <item quantity="one">Бір автоматты толтыру ұсынысы</item>
+    </plurals>
+    <plurals name="last_num_days">
+        <item quantity="other">Соңғы %d күн</item>
+        <item quantity="one">Last %d day</item>
+    </plurals>
+    <plurals name="matches_found">
+        <item quantity="other">%1$d -дан %2$d</item>
+        <item quantity="one">1 сәйкестік.</item>
+    </plurals>
+    <plurals name="restr_pin_countdown">
+        <item quantity="other">Try again in %d seconds</item>
+        <item quantity="one">Әрекетті 1 секундтан кейін қайталап көріңіз.</item>
+    </plurals>
+    <plurals name="ssl_ca_cert_warning">
+        <item quantity="other">Мүмкін желі бақылауы</item>
+        <item quantity="one">Certificate authority installed</item>
+    </plurals>
+    <plurals name="tw_clipboard_files">
+        <item quantity="other">%d файлдары</item>
+        <item quantity="one">1 файл</item>
+    </plurals>
+    <plurals name="wifi_available">
+        <item quantity="other">Wi-Fi желілер қол жетімді</item>
+        <item quantity="one">Wi-Fi желісі қолжетімді</item>
+    </plurals>
+    <plurals name="wifi_available_detailed">
+        <item quantity="other">Қолжетімді Wi-Fi желілерін ашу</item>
+        <item quantity="one">Ашық Wi-Fi желісі қолжетімді</item>
+    </plurals>
+</resources>

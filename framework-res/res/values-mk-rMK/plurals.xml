@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <plurals name="autofill_picker_some_suggestions">
+        <item quantity="other">%d предлози за автоматско пополнување</item>
+        <item quantity="one">Еден предлог за автоматско пополнување</item>
+    </plurals>
+    <plurals name="last_num_days">
+        <item quantity="other">Последните %d дена</item>
+        <item quantity="one">Last %d day</item>
+    </plurals>
+    <plurals name="matches_found">
+        <item quantity="other">%1$d од %2$d</item>
+        <item quantity="one">1 совпаѓање.</item>
+    </plurals>
+    <plurals name="restr_pin_countdown">
+        <item quantity="other">Try again in %d seconds</item>
+        <item quantity="one">Обидете се повторно за 1 секунда.</item>
+    </plurals>
+    <plurals name="ssl_ca_cert_warning">
+        <item quantity="other">Можно следење на мрежата</item>
+        <item quantity="one">Certificate authority installed</item>
+    </plurals>
+    <plurals name="tw_clipboard_files">
+        <item quantity="other">%d фајлови</item>
+        <item quantity="one">1 фајл</item>
+    </plurals>
+    <plurals name="wifi_available">
+        <item quantity="other">Достапни се мрежи Wi-Fi</item>
+        <item quantity="one">Достапна е мрежа Wi-Fi</item>
+    </plurals>
+    <plurals name="wifi_available_detailed">
+        <item quantity="other">Отвори ги достапните мрежи Wi-Fi</item>
+        <item quantity="one">Достапна е отворена мрежа Wi-Fi</item>
+    </plurals>
+</resources>

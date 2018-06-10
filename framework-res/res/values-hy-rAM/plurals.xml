@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <plurals name="autofill_picker_some_suggestions">
+        <item quantity="other">Ինքնալրացման %d առաջարկ</item>
+        <item quantity="one">Ինքնալրացման մեկ առաջարկ</item>
+    </plurals>
+    <plurals name="last_num_days">
+        <item quantity="other">Վերջին %d օրերին</item>
+        <item quantity="one">Last %d day</item>
+    </plurals>
+    <plurals name="matches_found">
+        <item quantity="other">%1$d-ը %2$d-ից</item>
+        <item quantity="one">1 համընկնում:</item>
+    </plurals>
+    <plurals name="restr_pin_countdown">
+        <item quantity="other">Try again in %d seconds</item>
+        <item quantity="one">Նորից փորձեք 1 վայրկյանից:</item>
+    </plurals>
+    <plurals name="ssl_ca_cert_warning">
+        <item quantity="other">Ցանցի հնարավոր մշտադիտարկում</item>
+        <item quantity="one">Certificate authority installed</item>
+    </plurals>
+    <plurals name="tw_clipboard_files">
+        <item quantity="other">%d ֆայլ</item>
+        <item quantity="one">1 ֆայլ</item>
+    </plurals>
+    <plurals name="wifi_available">
+        <item quantity="other">Wi-Fi ցանցեր են հասանելի</item>
+        <item quantity="one">Wi-Fi ցանց է հասանելի</item>
+    </plurals>
+    <plurals name="wifi_available_detailed">
+        <item quantity="other">Բաց Wi-Fi ցանցեր են հասանելի</item>
+        <item quantity="one">Բաց Wi-Fi ցանց է հասանելի</item>
+    </plurals>
+</resources>

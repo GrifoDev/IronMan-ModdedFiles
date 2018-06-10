@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <plurals name="autofill_picker_some_suggestions">
+        <item quantity="other">%d suxestións de encher automaticamente</item>
+        <item quantity="one">Unha suxestión de encher automaticamente</item>
+    </plurals>
+    <plurals name="last_num_days">
+        <item quantity="other">Últimos %d días</item>
+        <item quantity="one">Last %d day</item>
+    </plurals>
+    <plurals name="matches_found">
+        <item quantity="other">%1$d de %2$d</item>
+        <item quantity="one">1 coincidencia</item>
+    </plurals>
+    <plurals name="restr_pin_countdown">
+        <item quantity="other">Try again in %d seconds</item>
+        <item quantity="one">Téntao de novo dentro de 1 segundo</item>
+    </plurals>
+    <plurals name="ssl_ca_cert_warning">
+        <item quantity="other">Posible supervisión de rede</item>
+        <item quantity="one">Certificate authority installed</item>
+    </plurals>
+    <plurals name="tw_clipboard_files">
+        <item quantity="other">%d arquivos</item>
+        <item quantity="one">1 arquivo</item>
+    </plurals>
+    <plurals name="wifi_available">
+        <item quantity="other">Redes Wi-Fi dispoñibles</item>
+        <item quantity="one">Rede Wi-Fi dispoñible</item>
+    </plurals>
+    <plurals name="wifi_available_detailed">
+        <item quantity="other">Existen redes Wi-Fi abertas dispoñibles</item>
+        <item quantity="one">Existe unha rede Wi-Fi aberta dispoñible</item>
+    </plurals>
+</resources>

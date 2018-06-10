@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <plurals name="autofill_picker_some_suggestions">
+        <item quantity="other">%d స్వీయ పూరింపు సూచనలు</item>
+        <item quantity="one">ఒక స్వీయ పూరింపు సూచన</item>
+    </plurals>
+    <plurals name="last_num_days">
+        <item quantity="other">గత %d రోజులు</item>
+        <item quantity="one">Last %d day</item>
+    </plurals>
+    <plurals name="matches_found">
+        <item quantity="other">%1$d / %2$d</item>
+        <item quantity="one">1 మ్యాచ్.</item>
+    </plurals>
+    <plurals name="restr_pin_countdown">
+        <item quantity="other">Try again in %d seconds</item>
+        <item quantity="one">1 సెకనులో మళ్లీ ప్రయత్నించండి.</item>
+    </plurals>
+    <plurals name="ssl_ca_cert_warning">
+        <item quantity="other">నెట్‌వర్క్ పర్యవేక్షణకు వీలుండవచ్చు</item>
+        <item quantity="one">Certificate authority installed</item>
+    </plurals>
+    <plurals name="tw_clipboard_files">
+        <item quantity="other">%d ఫైళ్లు</item>
+        <item quantity="one">1 ఫైల్</item>
+    </plurals>
+    <plurals name="wifi_available">
+        <item quantity="other">Wi-Fi నెట్‌వర్క్‌లు అందుబాటులో ఉన్నాయి</item>
+        <item quantity="one">Wi-Fi నెట్‌వర్క్ అందుబాటులో ఉంది</item>
+    </plurals>
+    <plurals name="wifi_available_detailed">
+        <item quantity="other">ఓపెన్ Wi-Fi నెట్‌వర్క్‌లు అందుబాటులో ఉన్నాయి</item>
+        <item quantity="one">ఓపెన్ Wi-Fi నెట్‌వర్క్ అందుబాటులో ఉంది</item>
+    </plurals>
+</resources>

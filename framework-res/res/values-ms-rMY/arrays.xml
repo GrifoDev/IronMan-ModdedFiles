@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="emailAddressTypes">
+        <item>Utama</item>
+        <item>Kerja</item>
+        <item>Lain</item>
+        <item>Langganan</item>
+    </string-array>
+    <string-array name="imProtocols">
+        <item>AIM</item>
+        <item>Windows Live</item>
+        <item>Yahoo</item>
+        <item>Skype</item>
+        <item>QQ</item>
+        <item>Google Talk</item>
+        <item>ICQ</item>
+        <item>Jabber</item>
+    </string-array>
+    <string-array name="organizationTypes">
+        <item>Kerja</item>
+        <item>Lain</item>
+        <item>Langganan</item>
+    </string-array>
+    <string-array name="phoneTypes">
+        <item>Utama</item>
+        <item>Mudah alih</item>
+        <item>Kerja</item>
+        <item>Faks kerja</item>
+        <item>Faks Rumah</item>
+        <item>Alat kelui</item>
+        <item>Lain</item>
+        <item>Langganan</item>
+    </string-array>
+    <string-array name="postalAddressTypes">
+        <item>Utama</item>
+        <item>Kerja</item>
+        <item>Lain</item>
+        <item>Langganan</item>
+    </string-array>
+    <string-array name="imAddressTypes">
+        <item>Utama</item>
+        <item>Kerja</item>
+        <item>Lain</item>
+        <item>Langganan</item>
+    </string-array>
+    <integer-array name="maps_starting_lat_lng">
+        <item>4210484</item>
+        <item>101975766</item>
+    </integer-array>
+    <integer-array name="maps_starting_zoom">
+        <item>4</item>
+    </integer-array>
+</resources>

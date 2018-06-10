@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <plurals name="autofill_picker_some_suggestions">
+        <item quantity="other">Автоматаар бөглөх %d санал</item>
+        <item quantity="one">Автоматаар бөглөх нэг санал</item>
+    </plurals>
+    <plurals name="last_num_days">
+        <item quantity="other">Сүүлийн %d хоног</item>
+        <item quantity="one">Last %d day</item>
+    </plurals>
+    <plurals name="matches_found">
+        <item quantity="other">%1$d-ийн %2$d</item>
+        <item quantity="one">1 таарсан зүйл</item>
+    </plurals>
+    <plurals name="restr_pin_countdown">
+        <item quantity="other">Try again in %d seconds</item>
+        <item quantity="one">1 секундын дараа дахин оролд.</item>
+    </plurals>
+    <plurals name="ssl_ca_cert_warning">
+        <item quantity="other">Боломжтой сүлжээний хяналт</item>
+        <item quantity="one">Certificate authority installed</item>
+    </plurals>
+    <plurals name="tw_clipboard_files">
+        <item quantity="other">%d файл</item>
+        <item quantity="one">1 файл</item>
+    </plurals>
+    <plurals name="wifi_available">
+        <item quantity="other">Wi-Fi сүлжээг боломжтой</item>
+        <item quantity="one">Wi-Fi сүлжээ боломжтой</item>
+    </plurals>
+    <plurals name="wifi_available_detailed">
+        <item quantity="other">Боломжтой Wi-Fi сүлжээнүүдийг нээ</item>
+        <item quantity="one">Боломжтой Wi-Fi сүлжээг нээх</item>
+    </plurals>
+</resources>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <plurals name="autofill_picker_some_suggestions">
+        <item quantity="other">%d ຄຳແນະນຳຕື່ມໃສ່ອັດຕະໂນມັດ</item>
+        <item quantity="one">ໜຶ່ງຄຳແນະນຳຕື່ມໃສ່ອັດຕະໂນມັດ</item>
+    </plurals>
+    <plurals name="last_num_days">
+        <item quantity="other">%d ວັນສຸດທ້າຍ</item>
+        <item quantity="one">Last %d day</item>
+    </plurals>
+    <plurals name="matches_found">
+        <item quantity="other">%1$d ຈາກ %2$d</item>
+        <item quantity="one">1 ອັນເຂົ້າກັນໄດ້.</item>
+    </plurals>
+    <plurals name="restr_pin_countdown">
+        <item quantity="other">Try again in %d seconds</item>
+        <item quantity="one">ລອງໃໝ່ອີກໃນ 1 ວິນາທີ.</item>
+    </plurals>
+    <plurals name="ssl_ca_cert_warning">
+        <item quantity="other">ຕິດຕາມເຄືອຂ່າຍທີ່ເປັນໄປໄດ້</item>
+        <item quantity="one">Certificate authority installed</item>
+    </plurals>
+    <plurals name="tw_clipboard_files">
+        <item quantity="other">%d ໄຟລ໌</item>
+        <item quantity="one">1 ໄຟລ໌</item>
+    </plurals>
+    <plurals name="wifi_available">
+        <item quantity="other">ມີເຄືອຂ່າຍ Wi-Fi ຢູ່</item>
+        <item quantity="one">ມີເຄືອຂ່າຍ Wi-Fi ຢູ່</item>
+    </plurals>
+    <plurals name="wifi_available_detailed">
+        <item quantity="other">ເປີດເຄືອຂ່າຍ Wi-Fi ທີ່ມີຢູ່</item>
+        <item quantity="one">ເປີດເຄືອຂ່າຍ Wi-Fi ທີ່ມີຢູ່</item>
+    </plurals>
+</resources>

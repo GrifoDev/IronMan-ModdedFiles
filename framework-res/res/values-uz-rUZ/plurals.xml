@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <plurals name="autofill_picker_some_suggestions">
+        <item quantity="other">%d ta avtomatik to‘ldirish tavsiyasi</item>
+        <item quantity="one">Bitta avtomatik to‘ldirish tavsiyasi</item>
+    </plurals>
+    <plurals name="last_num_days">
+        <item quantity="other">Oxirgi %d kun</item>
+        <item quantity="one">Last %d day</item>
+    </plurals>
+    <plurals name="matches_found">
+        <item quantity="other">%1$d/%2$d</item>
+        <item quantity="one">1 moslik.</item>
+    </plurals>
+    <plurals name="restr_pin_countdown">
+        <item quantity="other">Try again in %d seconds</item>
+        <item quantity="one">1 soniyadan keyin qayta urinib ko‘ring.</item>
+    </plurals>
+    <plurals name="ssl_ca_cert_warning">
+        <item quantity="other">Mavjud tarmoq monitoringi</item>
+        <item quantity="one">Certificate authority installed</item>
+    </plurals>
+    <plurals name="tw_clipboard_files">
+        <item quantity="other">%d fayllar</item>
+        <item quantity="one">1 fayl</item>
+    </plurals>
+    <plurals name="wifi_available">
+        <item quantity="other">Wi-Fi tarmoqlar mavjud</item>
+        <item quantity="one">Wi-Fi tarmoq mavjud</item>
+    </plurals>
+    <plurals name="wifi_available_detailed">
+        <item quantity="other">Mavjud ochiq Wi-Fi tarmoqlar</item>
+        <item quantity="one">Mavjud Wi-Fi tarmoqni ochish</item>
+    </plurals>
+</resources>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <plurals name="autofill_picker_some_suggestions">
+        <item quantity="other">%d தானியங்கு நிரப்பல் பரிந்துரைகள்</item>
+        <item quantity="one">ஒரு தானியங்கு நிரப்பல் பரிந்துரை</item>
+    </plurals>
+    <plurals name="last_num_days">
+        <item quantity="other">கடைசி %d நாட்கள்</item>
+        <item quantity="one">Last %d day</item>
+    </plurals>
+    <plurals name="matches_found">
+        <item quantity="other">%1$d-ல் %2$d</item>
+        <item quantity="one">1 பொருத்தம்.</item>
+    </plurals>
+    <plurals name="restr_pin_countdown">
+        <item quantity="other">Try again in %d seconds</item>
+        <item quantity="one">1 வினாடியில் மீண்டும் முயற்சிக்கவும்.</item>
+    </plurals>
+    <plurals name="ssl_ca_cert_warning">
+        <item quantity="other">சாத்தியமான நெட்வொர்க் கண்காணிப்பு</item>
+        <item quantity="one">Certificate authority installed</item>
+    </plurals>
+    <plurals name="tw_clipboard_files">
+        <item quantity="other">%d கோப்புகள்</item>
+        <item quantity="one">1 கோப்பு</item>
+    </plurals>
+    <plurals name="wifi_available">
+        <item quantity="other">Wi-Fi நெட்வொர்க். உள்ளன</item>
+        <item quantity="one">Wi-Fi நெட்வொர்க் உள்ளது</item>
+    </plurals>
+    <plurals name="wifi_available_detailed">
+        <item quantity="other">பாதுகாக்கப்படாத Wi-Fi நெட்வொர்க்குகள் உள்ளன</item>
+        <item quantity="one">பாதுகாக்கப்படாத Wi-Fi நெட்வொர்க் உள்ளது</item>
+    </plurals>
+</resources>

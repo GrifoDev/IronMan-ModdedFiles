@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <plurals name="autofill_picker_some_suggestions">
+        <item quantity="other">%d ഓട്ടോഫിൽ നിർദ്ദേശങ്ങൾ</item>
+        <item quantity="one">ഒരു ഓട്ടോഫിൽ നിർദ്ദേശം</item>
+    </plurals>
+    <plurals name="last_num_days">
+        <item quantity="other">അവസാന %d ദിവസങ്ങൾ</item>
+        <item quantity="one">Last %d day</item>
+    </plurals>
+    <plurals name="matches_found">
+        <item quantity="other">%1$d ന്‍റെ %2$d</item>
+        <item quantity="one">1 ചേര്‍ച്ച.</item>
+    </plurals>
+    <plurals name="restr_pin_countdown">
+        <item quantity="other">Try again in %d seconds</item>
+        <item quantity="one">1 സെക്കന്‍റില്‍ വീണ്ടും ശ്രമിക്കുക.</item>
+    </plurals>
+    <plurals name="ssl_ca_cert_warning">
+        <item quantity="other">നെറ്റ്‌വർക്ക് നിരീക്ഷണം സാധ്യമാണ്</item>
+        <item quantity="one">Certificate authority installed</item>
+    </plurals>
+    <plurals name="tw_clipboard_files">
+        <item quantity="other">%d ഫയലുകള്‍</item>
+        <item quantity="one">1 ഫയല്‍</item>
+    </plurals>
+    <plurals name="wifi_available">
+        <item quantity="other">Wi-Fi നെറ്റ്‌വര്‍ക്കുകള്‍ ലഭ്യം</item>
+        <item quantity="one">Wi-Fi നെറ്റ്‌വർക്ക് ലഭ്യം</item>
+    </plurals>
+    <plurals name="wifi_available_detailed">
+        <item quantity="other">ലഭ്യമായ Wi-Fi നെറ്റ്‌വർക്കുകൾ തുറക്കുക</item>
+        <item quantity="one">ലഭ്യമായ Wi-Fi നെറ്റ്‌വർക്ക് തുറക്കുക</item>
+    </plurals>
+</resources>

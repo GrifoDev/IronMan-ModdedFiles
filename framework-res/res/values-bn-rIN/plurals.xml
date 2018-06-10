@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <plurals name="autofill_picker_some_suggestions">
+        <item quantity="other">%dটি স্বতঃপূরণের পরামর্শ</item>
+        <item quantity="one">একটি স্বতঃপূরণের পরামর্শ</item>
+    </plurals>
+    <plurals name="last_num_days">
+        <item quantity="other">শেষ %d দিন</item>
+        <item quantity="one">Last %d day</item>
+    </plurals>
+    <plurals name="matches_found">
+        <item quantity="other">%1$d এর %2$d</item>
+        <item quantity="one">1টি অনুরূপ।</item>
+    </plurals>
+    <plurals name="restr_pin_countdown">
+        <item quantity="other">Try again in %d seconds</item>
+        <item quantity="one">1 সেকেন্ডের মধ্যে আবার চেষ্টা করুন।</item>
+    </plurals>
+    <plurals name="ssl_ca_cert_warning">
+        <item quantity="other">সম্ভাব্য নেটওয়ার্ক নজরদারি</item>
+        <item quantity="one">Certificate authority installed</item>
+    </plurals>
+    <plurals name="tw_clipboard_files">
+        <item quantity="other">%dটি ফাইল</item>
+        <item quantity="one">1টি ফাইল</item>
+    </plurals>
+    <plurals name="wifi_available">
+        <item quantity="other">Wi-Fi নেটওয়ার্কগুলি সুলভ</item>
+        <item quantity="one">Wi-Fi নেটওয়ার্ক সুলভ</item>
+    </plurals>
+    <plurals name="wifi_available_detailed">
+        <item quantity="other">খোলা Wi-Fi নেটওয়ার্কগুলি সুলভ</item>
+        <item quantity="one">খোলা Wi-Fi নেটওয়ার্ক সুলভ</item>
+    </plurals>
+</resources>

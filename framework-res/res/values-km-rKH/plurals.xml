@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <plurals name="autofill_picker_some_suggestions">
+        <item quantity="other">សំណើ​ស្វ័យបំពេញ %d</item>
+        <item quantity="one">សំណើ​ស្វ័យបំពេញ​មួយ</item>
+    </plurals>
+    <plurals name="last_num_days">
+        <item quantity="other">%d ថ្ងៃ​ចុងក្រោយ</item>
+        <item quantity="one">Last %d day</item>
+    </plurals>
+    <plurals name="matches_found">
+        <item quantity="other">%1$d នៃ %2$d</item>
+        <item quantity="one">1 ផ្គូផ្គង។</item>
+    </plurals>
+    <plurals name="restr_pin_countdown">
+        <item quantity="other">Try again in %d seconds</item>
+        <item quantity="one">សាកល្បង​ម្ដងទៀត​ក្នុង​ពេល 1 វិនាទី។</item>
+    </plurals>
+    <plurals name="ssl_ca_cert_warning">
+        <item quantity="other">ការត្រួតពិនិត្យ​បណ្ដាញ​ដែល​មាន</item>
+        <item quantity="one">Certificate authority installed</item>
+    </plurals>
+    <plurals name="tw_clipboard_files">
+        <item quantity="other">%d ឯកសារ</item>
+        <item quantity="one">ឯកសារ 1</item>
+    </plurals>
+    <plurals name="wifi_available">
+        <item quantity="other">មាន​បណ្ដាញ Wi-Fi</item>
+        <item quantity="one">មាន​បណ្ដាញ Wi-Fi</item>
+    </plurals>
+    <plurals name="wifi_available_detailed">
+        <item quantity="other">បើក​បណ្ដាញ Wi-Fi ដែល​មាន</item>
+        <item quantity="one">មាន​បណ្ដាញ Wi-Fi បើក​ចំហ</item>
+    </plurals>
+</resources>
