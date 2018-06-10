@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <plurals name="kg_attempt_left">
+        <item quantity="other">Մնացել է %d փորձ</item>
+        <item quantity="one">%d փորձ է մնացել</item>
+    </plurals>
+    <plurals name="kg_attempt_remaining">
+        <item quantity="other">(%d փորձ է մնացել)</item>
+        <item quantity="one">(1 փորձ է մնացել)</item>
+    </plurals>
+    <plurals name="kg_too_many_failed_attempts_countdown_min">
+        <item quantity="other">Նորից փորձեք %d րոպեից</item>
+        <item quantity="one">Նորից փորձեք %d րոպեից</item>
+    </plurals>
+    <plurals name="kg_too_many_failed_attempts_countdown_sec">
+        <item quantity="other">Նորից փորձեք %d վայրկյանից</item>
+        <item quantity="one">Նորից փորձեք %d վայրկյանից</item>
+    </plurals>
+    <plurals name="kg_too_many_failed_countdown_by_biometrics">
+        <item quantity="other">Կենսաչափական տվյալները ստուգելու %1$d սխալ փորձ: Նորից փորձեք %2$d վայրկյանից:</item>
+        <item quantity="one">Կենսաչափական տվյալները ստուգելու %1$d սխալ փորձ: Նորից փորձեք %2$d վայրկյանից:</item>
+    </plurals>
+    <plurals name="kg_too_many_failed_countdown_by_fingerprint">
+        <item quantity="other">Մատնահետքերը ստուգելու %1$d սխալ փորձ: Նորից փորձեք %2$d վայրկյանից:</item>
+        <item quantity="one">Մատնահետքերը ստուգելու %1$d սխալ փորձ: Նորից փորձեք %2$d վայրկյանից:</item>
+    </plurals>
+</resources>

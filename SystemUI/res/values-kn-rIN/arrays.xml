@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="bluetooth_ss_a2dp_codec_titles">
+        <item>SBC</item>
+        <item>AAC</item>
+        <item>aptX</item>
+        <item>LDAC</item>
+        <item>Samsung HD</item>
+        <item>Scalable Codec</item>
+        <item>ಎಲ್ಲಾ ಕೊಡೆಕ್‍ಗಳು</item>
+        <item>ಡಿಫಾಲ್ಟ್ ಕೊಡೆಕ್</item>
+    </string-array>
+    <string-array name="wifi_ap_wifi_sharing">
+        <item>Wi-Fi ಹಂಚಿಕೆ ಶಕ್ತಗೊಳಿಸಿ</item>
+        <item>Wi-Fi ಹಂಚಿಕೆ ನಿಶಕ್ತಗೊಳಿಸಿ</item>
+    </string-array>
+    <string-array name="wifi_status">
+        <item></item>
+        <item>ಸ್ಕ್ಯಾನ್ ಮಾಡಲಾಗುತ್ತಿದೆ…</item>
+        <item>ಸಂಪರ್ಕಿಸುತ್ತಿದೆ…</item>
+        <item>ದೃಢೀಕರಿಸುತ್ತಿದೆ…</item>
+        <item>IP ವಿಳಾಸವನ್ನು ಪಡೆಯುತ್ತಿದೆ…</item>
+        <item>ಸಂಪರ್ಕಿಸಲಾಗಿದೆ</item>
+        <item>ಸ್ಥಗಿತಗೊಳಿಸಲಾಗಿದೆ</item>
+        <item>ಸಂಪರ್ಕ ಕಡಿತವಾಗುತ್ತಿದೆ…</item>
+        <item>ಸಂಪರ್ಕ ಕಡಿತಗೊಳಿಸಲಾಗಿದೆ</item>
+        <item>ಅಸಫಲ</item>
+        <item>ನಿರ್ಬಂಧಿಸಲಾಗಿದೆ</item>
+        <item>ನಿಮ್ಮ ಇಂಟರ್ನೆಟ್ ಸಂಪರ್ಕದ ಗುಣಮಟ್ಟವನ್ನು ಪರಿಶೀಲಿಸಲಾಗುತ್ತಿದೆ…</item>
+    </string-array>
+</resources>

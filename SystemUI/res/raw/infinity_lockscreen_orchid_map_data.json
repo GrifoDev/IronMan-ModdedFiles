@@ -1,0 +1,147 @@
+{"frames": [
+
+{
+	"filename": "oc_layer_a.png",
+	"frame": {"x":2978,"y":2057,"w":1085,"h":1085},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":1085,"h":1085},
+	"sourceSize": {"w":1085,"h":1085},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "oc_layer_a_color_l.png",
+	"frame": {"x":1531,"y":3493,"w":380,"h":380},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":380,"h":380},
+	"sourceSize": {"w":380,"h":380},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "oc_layer_a_color_r.png",
+	"frame": {"x":1918,"y":3493,"w":380,"h":380},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":380,"h":380},
+	"sourceSize": {"w":380,"h":380},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "oc_layer_a_mask.png",
+	"frame": {"x":1531,"y":2046,"w":1440,"h":1440},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":1440,"h":1440},
+	"sourceSize": {"w":1440,"h":1440},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "oc_layer_b.png",
+	"frame": {"x":1,"y":2228,"w":1523,"h":1569},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":1523,"h":1569},
+	"sourceSize": {"w":1523,"h":1569},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "oc_layer_b_mask.png",
+	"frame": {"x":2978,"y":3149,"w":300,"h":300},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":300,"h":300},
+	"sourceSize": {"w":300,"h":300},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "oc_layer_c.png",
+	"frame": {"x":1088,"y":1,"w":2038,"h":2031},
+	"rotated": true,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":2038,"h":2031},
+	"sourceSize": {"w":2038,"h":2031},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "oc_layer_c_mask.png",
+	"frame": {"x":3386,"y":3456,"w":256,"h":256},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":256,"h":256},
+	"sourceSize": {"w":256,"h":256},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "oc_layer_d.png",
+	"frame": {"x":3126,"y":1,"w":910,"h":910},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":910,"h":910},
+	"sourceSize": {"w":910,"h":910},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "oc_layer_d_color_l.png",
+	"frame": {"x":2305,"y":3493,"w":380,"h":380},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":380,"h":380},
+	"sourceSize": {"w":380,"h":380},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "oc_layer_d_color_r.png",
+	"frame": {"x":2692,"y":3493,"w":380,"h":380},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":380,"h":380},
+	"sourceSize": {"w":380,"h":380},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "oc_layer_d_mask.png",
+	"frame": {"x":3079,"y":3456,"w":300,"h":300},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":300,"h":300},
+	"sourceSize": {"w":300,"h":300},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "oc_layer_e.png",
+	"frame": {"x":3126,"y":918,"w":1132,"h":892},
+	"rotated": true,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":1132,"h":892},
+	"sourceSize": {"w":1132,"h":892},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "oc_layer_e_mask.png",
+	"frame": {"x":3285,"y":3149,"w":300,"h":300},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":300,"h":300},
+	"sourceSize": {"w":300,"h":300},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "oc_lock_bg.png",
+	"frame": {"x":1,"y":1,"w":1080,"h":2220},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":1080,"h":2220},
+	"sourceSize": {"w":1080,"h":2220},
+	"pivot": {"x":0.5,"y":0.5}
+}],
+"meta": {
+	"app": "http://www.codeandweb.com/texturepacker",
+	"version": "1.0",
+	"image": "infinity_lockscreen_orchid_map.png",
+	"format": "RGBA8888",
+	"size": {"w":4064,"h":3874},
+	"scale": "1",
+	"smartupdate": "$TexturePacker:SmartUpdate:9bd5a0b043db327b81f1581148be128d:323069a4509c1dbb98ddbaf483dc3f38:24e34a799e99b2098f138253f4fb9402$"
+}
+}

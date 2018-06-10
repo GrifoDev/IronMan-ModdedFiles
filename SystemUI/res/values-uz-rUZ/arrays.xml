@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="bluetooth_ss_a2dp_codec_titles">
+        <item>SBC</item>
+        <item>AAC</item>
+        <item>aptX</item>
+        <item>LDAC</item>
+        <item>Samsung HD</item>
+        <item>Scalable Codec</item>
+        <item>Barcha kodeklar</item>
+        <item>Birlamchi kodek</item>
+    </string-array>
+    <string-array name="wifi_ap_wifi_sharing">
+        <item>Wi-Fi ulashishni yoq</item>
+        <item>Wi-Fi ulashish. o‘ch</item>
+    </string-array>
+    <string-array name="wifi_status">
+        <item></item>
+        <item>Qidirish</item>
+        <item>Ulanmoqda…</item>
+        <item>Haqiqiylik tekshirilmoqda…</item>
+        <item>IP-manzillar olinmoqda…</item>
+        <item>Ulangan</item>
+        <item>To‘xtatildi</item>
+        <item>Uzilmoqda…</item>
+        <item>Uzilgan</item>
+        <item>Muvaffaqiyatsiz</item>
+        <item>Bloklangan</item>
+        <item>Internet ulanishingiz sifati tekshirilmoqda…</item>
+    </string-array>
+</resources>

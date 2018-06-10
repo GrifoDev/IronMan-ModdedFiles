@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="bluetooth_ss_a2dp_codec_titles">
+        <item>SBC</item>
+        <item>AAC</item>
+        <item>aptX</item>
+        <item>LDAC</item>
+        <item>Samsung HD</item>
+        <item>Scalable Codec</item>
+        <item>எல்லா கோடெக்குகளும்</item>
+        <item>டீஃபால்ட் கோடெக்</item>
+    </string-array>
+    <string-array name="wifi_ap_wifi_sharing">
+        <item>Wi-Fi பகிர்வு செ.படுத்துக</item>
+        <item>Wi-Fi பகிர்வு செ.நீக்குக</item>
+    </string-array>
+    <string-array name="wifi_status">
+        <item></item>
+        <item>ஸ்கேனிங்…</item>
+        <item>இணைக்கிறது…</item>
+        <item>அங்கீகரிக்கிறது…</item>
+        <item>IP முகவரி எடுக்கிறது…</item>
+        <item>இணைக்கபட்டது</item>
+        <item>இடைநீக்கப்பட்டது</item>
+        <item>துண்டிக்கிறது…</item>
+        <item>துண்டிக்கபட்டது</item>
+        <item>தோல்வி</item>
+        <item>தடை செய்யப்பட்டது</item>
+        <item>உங்கள் இணைய இணைப்பின் தரத்தைச் சரிபார்க்கிறது…</item>
+    </string-array>
+</resources>

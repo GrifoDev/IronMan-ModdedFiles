@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="bluetooth_ss_a2dp_codec_titles">
+        <item>SBC</item>
+        <item>AAC</item>
+        <item>aptX</item>
+        <item>LDAC</item>
+        <item>Samsung HD</item>
+        <item>Scalable Codec</item>
+        <item>Kõik koodekid</item>
+        <item>Vaikimisi koodek</item>
+    </string-array>
+    <string-array name="wifi_ap_wifi_sharing">
+        <item>Aktiv. Wi-Fi jagamine</item>
+        <item>Inakt. Wi-Fi jagamine</item>
+    </string-array>
+    <string-array name="wifi_status">
+        <item></item>
+        <item>Skaneerimine…</item>
+        <item>Ühendamine…</item>
+        <item>Autentimine…</item>
+        <item>IP-aadressi hankimine…</item>
+        <item>Ühendatud</item>
+        <item>Peatatud</item>
+        <item>Ühenduse katkestamine…</item>
+        <item>Ühendus katkestatud</item>
+        <item>Nurjunud</item>
+        <item>Blokeeritud</item>
+        <item>Internetiühenduse kvaliteedi kontrollimine…</item>
+    </string-array>
+</resources>

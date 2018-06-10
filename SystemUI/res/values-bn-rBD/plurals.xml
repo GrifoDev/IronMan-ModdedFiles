@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <plurals name="kg_attempt_left">
+        <item quantity="other">%d বার প্রচেষ্টা বাকি আছে</item>
+        <item quantity="one">%dটি প্রচেষ্টা বাকি আছে</item>
+    </plurals>
+    <plurals name="kg_attempt_remaining">
+        <item quantity="other">(%dটি প্রচেষ্টা বাকি আছে)</item>
+        <item quantity="one">(1টি প্রচেষ্টা বাকি আছে)</item>
+    </plurals>
+    <plurals name="kg_too_many_failed_attempts_countdown_min">
+        <item quantity="other">%d মিনিট পর আবার চেষ্টা করুন</item>
+        <item quantity="one">%d মিনিট পর আবার চেষ্টা করুন</item>
+    </plurals>
+    <plurals name="kg_too_many_failed_attempts_countdown_sec">
+        <item quantity="other">%d সেকেন্ড পর আবার চেষ্টা করুন</item>
+        <item quantity="one">%d সেকেন্ড পর আবার চেষ্টা করুন</item>
+    </plurals>
+    <plurals name="kg_too_many_failed_countdown_by_biometrics">
+        <item quantity="other">বায়োমেট্রিক্স যাচাই করতে %1$d বার ভুলভাবে চেষ্টা করা হয়েছে৷ %2$d সেকেন্ড পর আবার চেষ্টা করুন৷</item>
+        <item quantity="one">বায়োমেট্রিক্স যাচাই করতে %1$d বার ভুলভাবে চেষ্টা করা হয়েছে৷ %2$d সেকেন্ড পর আবার চেষ্টা করুন৷</item>
+    </plurals>
+    <plurals name="kg_too_many_failed_countdown_by_fingerprint">
+        <item quantity="other">আঙুলের ছাপ যাচাই করার জন্য %1$d বার ভুলভাবে চেষ্টা করা হয়েছে৷ %2$d সেকেন্ড পর আবার চেষ্টা করুন৷</item>
+        <item quantity="one">আঙুলের ছাপ যাচাই করার জন্য %1$d বার ভুলভাবে চেষ্টা করা হয়েছে৷ %2$d সেকেন্ড পর আবার চেষ্টা করুন৷</item>
+    </plurals>
+</resources>

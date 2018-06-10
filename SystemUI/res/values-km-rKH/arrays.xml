@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="bluetooth_ss_a2dp_codec_titles">
+        <item>SBC</item>
+        <item>AAC</item>
+        <item>aptX</item>
+        <item>LDAC</item>
+        <item>Samsung HD</item>
+        <item>Scalable Codec</item>
+        <item>កូឌិក​ទាំងអស់</item>
+        <item>កូឌិក​លំនាំដើម</item>
+    </string-array>
+    <string-array name="wifi_ap_wifi_sharing">
+        <item>បើកប្រើ​ចែករំលែក Wi-Fi</item>
+        <item>បិទ​ការចែករំលែក Wi-Fi</item>
+    </string-array>
+    <string-array name="wifi_status">
+        <item></item>
+        <item>កំពុង​ស្កេន…</item>
+        <item>កំពុង​ភ្ជាប់…</item>
+        <item>កំពុង​ផ្ទៀង​ផ្ទាត់​ភាពពិត…</item>
+        <item>កំពុងទទួលអាសយដ្ឋាន IP…</item>
+        <item>បាន​ភ្ជាប់</item>
+        <item>បាន​ព្យួរ</item>
+        <item>កំពុង​ផ្តាច់…</item>
+        <item>បាន​ផ្តាច់</item>
+        <item>មិន​ជោគជ័យ</item>
+        <item>បាន​ខ្ទប់</item>
+        <item>កំពុង​ពិនិត្យ​គុណភាព​នៃ​ការភ្ជាប់​អ៊ីនធើណិត​របស់​អ្នក…</item>
+    </string-array>
+</resources>

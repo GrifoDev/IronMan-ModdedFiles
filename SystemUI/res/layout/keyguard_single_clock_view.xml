@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.android.systemui.servicebox.pages.clock.KeyguardSingleClockView android:gravity="center_horizontal" android:orientation="vertical" android:id="@id/keyguard_single_clock_view" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:androidprv="http://schemas.android.com/apk/res-auto">
+    <LinearLayout android:orientation="horizontal" android:id="@id/keyguard_single_time_set" android:layout_width="wrap_content" android:layout_height="wrap_content" android:minHeight="@dimen/keyguard_single_time_view_min_height" android:layoutDirection="ltr">
+        <include layout="@layout/keyguard_clock" />
+    </LinearLayout>
+    <include layout="@layout/keyguard_date" />
+</com.android.systemui.servicebox.pages.clock.KeyguardSingleClockView>

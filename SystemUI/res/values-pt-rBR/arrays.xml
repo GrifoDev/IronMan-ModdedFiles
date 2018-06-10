@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="battery_options">
+        <item>Sempre mostrar porcentagem</item>
+        <item>Mostrar porcentagem durante o carregamento (padrão)</item>
+        <item>Não mostrar este ícone</item>
+    </string-array>
+    <string-array name="bluetooth_ss_a2dp_codec_titles">
+        <item>SBC</item>
+        <item>AAC</item>
+        <item>aptX</item>
+        <item>LDAC</item>
+        <item>Samsung HD</item>
+        <item>Scalable Codec</item>
+        <item>Todos os codecs</item>
+        <item>Codec padrão</item>
+    </string-array>
+    <string-array name="clock_options">
+        <item>Mostrar horas, minutos e segundos</item>
+        <item>Mostrar horas e minutos (padrão)</item>
+        <item>Não mostrar este ícone</item>
+    </string-array>
+    <string-array name="nav_bar_buttons">
+        <item>Área de transferência</item>
+        <item>Código de tecla</item>
+        <item>Alternador de teclado</item>
+        <item>Nenhum</item>
+    </string-array>
+    <string-array name="nav_bar_layouts">
+        <item>Normal</item>
+        <item>Compacto</item>
+        <item>Inclinação à esquerda</item>
+        <item>Inclinação à direita</item>
+    </string-array>
+    <array name="recents_blacklist_array" />
+    <string-array name="wifi_ap_wifi_sharing">
+        <item>Ativar compart. Wi-Fi</item>
+        <item>Desat. compart. Wi-Fi</item>
+    </string-array>
+    <string-array name="wifi_status">
+        <item></item>
+        <item>Procurando…</item>
+        <item>Conectando…</item>
+        <item>Autenticando…</item>
+        <item>Obtendo endereço IP…</item>
+        <item>Conectado</item>
+        <item>Suspenso</item>
+        <item>Desconectando…</item>
+        <item>Desconectado</item>
+        <item>Malsucedido</item>
+        <item>Bloqueado</item>
+        <item>Verificando a qualidade da sua conexão com a Internet…</item>
+    </string-array>
+</resources>

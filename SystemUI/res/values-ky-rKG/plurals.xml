@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <plurals name="kg_attempt_left">
+        <item quantity="other">%d аракет калды</item>
+        <item quantity="one">%d аракет калды</item>
+    </plurals>
+    <plurals name="kg_attempt_remaining">
+        <item quantity="other">(%d аракет калды)</item>
+        <item quantity="one">(1 аракет калды)</item>
+    </plurals>
+    <plurals name="kg_too_many_failed_attempts_countdown_min">
+        <item quantity="other">%d мүнөттөн кийин дагы аракеттениңиз</item>
+        <item quantity="one">%d мүнөттөн кийин дагы аракеттениңиз</item>
+    </plurals>
+    <plurals name="kg_too_many_failed_attempts_countdown_sec">
+        <item quantity="other">%d секундадан кийин дагы аракеттениңиз</item>
+        <item quantity="one">%d секундадан кийин дагы аракеттениңиз</item>
+    </plurals>
+    <plurals name="kg_too_many_failed_countdown_by_biometrics">
+        <item quantity="other">Биометрикалык маалыматтарды ырастоо үчүн, %1$d туура эмес аракет жасалды. %2$d секундадан кийин дагы аракеттериңиз.</item>
+        <item quantity="one">Биометрикаларыңызды ырастоо үчүн %1$d туура эмес аракет жасалды. %2$d сааттан кийин дагы аракеттениңиз.</item>
+    </plurals>
+    <plurals name="kg_too_many_failed_countdown_by_fingerprint">
+        <item quantity="other">Бармак издерин ырастоо үчүн, %1$d туура эмес аракет жасалды. %2$d секундадан кийин дагы аракеттериңиз.</item>
+        <item quantity="one">Бармак издериңизди ырастоо үчүн %1$d туура эмес аракет жасалды. %2$d сааттан кийин дагы аракеттениңиз.</item>
+    </plurals>
+</resources>

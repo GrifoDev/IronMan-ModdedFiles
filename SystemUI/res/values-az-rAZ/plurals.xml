@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <plurals name="kg_attempt_left">
+        <item quantity="other">%d cəhd qaldı</item>
+        <item quantity="one">%d cəhd qalıb</item>
+    </plurals>
+    <plurals name="kg_attempt_remaining">
+        <item quantity="other">(%d cəhd qalır)</item>
+        <item quantity="one">(1 cəhd qalır)</item>
+    </plurals>
+    <plurals name="kg_too_many_failed_attempts_countdown_min">
+        <item quantity="other">%d dəqiqə sonra yenidən cəhd et</item>
+        <item quantity="one">%d dəqiqə sonra yenidən cəhd et</item>
+    </plurals>
+    <plurals name="kg_too_many_failed_attempts_countdown_sec">
+        <item quantity="other">%d saniyə sonra yenidən cəhd et</item>
+        <item quantity="one">%d saniyə sonra yenidən cəhd et</item>
+    </plurals>
+    <plurals name="kg_too_many_failed_countdown_by_biometrics">
+        <item quantity="other">Bioölçünü təsdiq etmək üçün %1$d yanlış cəhd. %2$d saniyə sonra yenidən cəhd edin.</item>
+        <item quantity="one">Bioölçünü təsdiq etmək üçün %1$d yanlış cəhd. %2$d dəqiqə sonra yenidən cəhd edin.</item>
+    </plurals>
+    <plurals name="kg_too_many_failed_countdown_by_fingerprint">
+        <item quantity="other">Barmaq izini təsdiq etmək üçün %1$d yanlış cəhd. %2$d saniyə sonra yenidən cəhd edin.</item>
+        <item quantity="one">Barmaq izini təsdiq etmək üçün %1$d yanlış cəhd. %2$d dəqiqə sonra yenidən cəhd edin.</item>
+    </plurals>
+</resources>

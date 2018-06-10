@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <plurals name="kg_attempt_left">
+        <item quantity="other">ຍັງເຫຼືອຄວາມພະຍາຍາມອີກ %d ຄັ້ງ</item>
+        <item quantity="one">ຍັງເຫຼືອຄວາມພະຍາຍາມ %d ຄັ້ງ</item>
+    </plurals>
+    <plurals name="kg_attempt_remaining">
+        <item quantity="other">(%d ຍັງເຫລືອຄວາມພະຍາຍາມ)</item>
+        <item quantity="one">(ຍັງເຫລືອຄວາມພະຍາຍາມ 1 ຄັ້ງ)</item>
+    </plurals>
+    <plurals name="kg_too_many_failed_attempts_countdown_min">
+        <item quantity="other">ລອງໃໝ່ອີກໃນ %d ນາທີ</item>
+        <item quantity="one">ລອງໃໝ່ອີກໃນ %d ນາທີ</item>
+    </plurals>
+    <plurals name="kg_too_many_failed_attempts_countdown_sec">
+        <item quantity="other">ລອງໃໝ່ອີກໃນ %d ວິນາທີ</item>
+        <item quantity="one">ລອງໃໝ່ອີກໃນ %d ວິນາທີ</item>
+    </plurals>
+    <plurals name="kg_too_many_failed_countdown_by_biometrics">
+        <item quantity="other">ຄວາມພະຍາຍາມກວດສອບໄບ​ໂອ​ແມັດ​ທ​ຣິກ​ບໍ່​ຖືກ​ຕ້ອງ %1$d ຄັ້ງແລ້ວ. ລອງໃໝ່ອີກໃນ %2$d ວິນາທີ.</item>
+        <item quantity="one">ຄວາມພະຍາຍາມກວດສອບໄບ​ໂອ​ແມັດ​ທ​ຣິກ​ບໍ່​ຖືກ​ຕ້ອງ %1$d ຄັ້ງແລ້ວ. ລອງໃໝ່ອີກໃນ %2$d ວິນາທີ.</item>
+    </plurals>
+    <plurals name="kg_too_many_failed_countdown_by_fingerprint">
+        <item quantity="other">ຄວາມພະຍາຍາມກວດສອບລາຍນິ້ວມືບໍ່ຖືກຕ້ອງ %1$d ຄັ້ງແລ້ວ. ລອງໃໝ່ອີກໃນ %2$d ວິນາທີ.</item>
+        <item quantity="one">ຄວາມພະຍາຍາມກວດສອບລາຍນິ້ວມືບໍ່ຖືກຕ້ອງ %1$d ຄັ້ງແລ້ວ. ລອງໃໝ່ອີກໃນ %2$d ວິນາທີ.</item>
+    </plurals>
+</resources>

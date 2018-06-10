@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="bluetooth_ss_a2dp_codec_titles">
+        <item>SBC</item>
+        <item>AAC</item>
+        <item>aptX</item>
+        <item>LDAC</item>
+        <item>Samsung HD</item>
+        <item>Scalable Codec</item>
+        <item>Բոլոր կոդեկները</item>
+        <item>Կանխադրված կոդեկ</item>
+    </string-array>
+    <string-array name="wifi_ap_wifi_sharing">
+        <item>Ընձեռել Wi-Fi համօգտ.</item>
+        <item>Կասեց. Wi-Fi համօգտ.</item>
+    </string-array>
+    <string-array name="wifi_status">
+        <item></item>
+        <item>Սկանավորում է…</item>
+        <item>Միացում…</item>
+        <item>Վավերականացում…</item>
+        <item>Ստացվում է IP հասցե…</item>
+        <item>Միացված</item>
+        <item>Դադարեցնել</item>
+        <item>Անջատվում է…</item>
+        <item>Անջատված է</item>
+        <item>Անհաջող</item>
+        <item>Արգելափակված</item>
+        <item>Ստուգվում է Ձեր ինտերնետի միացման որակը…</item>
+    </string-array>
+</resources>

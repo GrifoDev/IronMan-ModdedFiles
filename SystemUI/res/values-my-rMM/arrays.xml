@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="battery_labels">
+        <item>၀%</item>
+        <item>၅၀ %</item>
+        <item>100%</item>
+    </string-array>
+    <string-array name="bluetooth_ss_a2dp_codec_titles">
+        <item>SBC</item>
+        <item>AAC</item>
+        <item>aptX</item>
+        <item>LDAC</item>
+        <item>Samsung HD</item>
+        <item>Scalable Codec</item>
+        <item>ကုဒ်အားလုံး</item>
+        <item>မူရင်းကုဒ်</item>
+    </string-array>
+    <string-array name="wifi_ap_wifi_sharing">
+        <item>Wi-Fi မျှဝေမှု ဖွင့်ပါ</item>
+        <item>Wi-Fi မျှဝေမှု ပိတ်ပါ</item>
+    </string-array>
+    <string-array name="wifi_status">
+        <item></item>
+        <item>ရှာဖွေနေပါသည်…</item>
+        <item>ဆက်သွယ်နေပါသည်……</item>
+        <item>စစ်မှန်ကြောင်းအထောက်အထားစစ်ဆေးနေခြင်း..</item>
+        <item>IP လိပ်စာ ရယူနေပါသည်…</item>
+        <item>ချိတ်ဆက်ထား</item>
+        <item>ဆိုင်းငံ့ထားပြီး</item>
+        <item>ဆက်သွယ်ထားမှုကို ဖြတ်တောက်နေပါသည်..</item>
+        <item>ဆက်သွယ်ထားမှုကို ဖြတ်တောက်ပြီးပါပြီ</item>
+        <item>မအောင်မြင်ပါ</item>
+        <item>ပိတ်ဆီးထားပါသည်</item>
+        <item>သင့် အင်တာနက် ချိတ်ဆက်မှု အရည်အသွေး စစ်ဆေးနေသည်…</item>
+    </string-array>
+</resources>

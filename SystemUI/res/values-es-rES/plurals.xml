@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <plurals name="kg_attempt_left">
+        <item quantity="other">Quedan %d intentos</item>
+        <item quantity="one">Quedan %d intentos</item>
+    </plurals>
+    <plurals name="kg_attempt_remaining">
+        <item quantity="other">(quedan %d intentos)</item>
+        <item quantity="one">(queda 1 intento)</item>
+    </plurals>
+    <plurals name="kg_too_many_failed_attempts_countdown_min">
+        <item quantity="other">Intentar de nuevo en %d minutos</item>
+        <item quantity="one">Inténtalo de nuevo en %d minuto</item>
+    </plurals>
+    <plurals name="kg_too_many_failed_attempts_countdown_sec">
+        <item quantity="other">Intentar de nuevo en %d segundos</item>
+        <item quantity="one">Inténtalo de nuevo en %d segundo</item>
+    </plurals>
+    <plurals name="kg_too_many_failed_countdown_by_biometrics">
+        <item quantity="other">%1$d intentos incorrectos de verificación de los datos biométricos. Inténtalo de nuevo en %2$d segundos.</item>
+        <item quantity="one">%1$d intentos incorrectos de verificación de los datos biométricos. Inténtalo de nuevo en %2$d segundo.</item>
+    </plurals>
+    <plurals name="kg_too_many_failed_countdown_by_fingerprint">
+        <item quantity="other">%1$d intentos incorrectos de verificación de las huellas digitales. Inténtalo de nuevo en %2$d segundos.</item>
+        <item quantity="one">%1$d intentos incorrectos de verificación de las huellas digitales. Inténtalo de nuevo en %2$d segundo.</item>
+    </plurals>
+</resources>

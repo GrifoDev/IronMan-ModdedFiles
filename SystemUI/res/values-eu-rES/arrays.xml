@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="battery_labels">
+        <item>%0</item>
+        <item>50%</item>
+        <item>100%</item>
+    </string-array>
+    <string-array name="bluetooth_ss_a2dp_codec_titles">
+        <item>SBC</item>
+        <item>AAC</item>
+        <item>aptX</item>
+        <item>LDAC</item>
+        <item>Samsung HD</item>
+        <item>Scalable Codec</item>
+        <item>Kodek guztiak</item>
+        <item>Kodek lehenetsia</item>
+    </string-array>
+    <string-array name="wifi_ap_wifi_sharing">
+        <item>Gaitu Wi-Fi partek.</item>
+        <item>Desg. Wi-Fi partek.</item>
+    </string-array>
+    <string-array name="wifi_status">
+        <item></item>
+        <item>Eskaneatzen…</item>
+        <item>Konektatzen…</item>
+        <item>Egiaztatzen…</item>
+        <item>IP helbidea lortzen…</item>
+        <item>Konektatuta</item>
+        <item>Egonean</item>
+        <item>Deskonektatzen</item>
+        <item>Deskonketatuta</item>
+        <item>Okerra</item>
+        <item>Blokeatuta</item>
+        <item>Zure Internet konexioaren kalitatea egiaztatzen…</item>
+    </string-array>
+</resources>

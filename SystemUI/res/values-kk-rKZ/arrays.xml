@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="bluetooth_ss_a2dp_codec_titles">
+        <item>SBC</item>
+        <item>AAC</item>
+        <item>aptX</item>
+        <item>LDAC</item>
+        <item>Samsung HD</item>
+        <item>Scalable Codec</item>
+        <item>Барлық кодектер</item>
+        <item>Әдепкі кодек</item>
+    </string-array>
+    <string-array name="wifi_ap_wifi_sharing">
+        <item>Wi-Fi бөлісуді қосу</item>
+        <item>Wi-Fi бөлісуді өшіру</item>
+    </string-array>
+    <string-array name="wifi_status">
+        <item></item>
+        <item>Көшірілуде…</item>
+        <item>Байланысуда…</item>
+        <item>Расталуда…</item>
+        <item>IP мекенжайы алынуда…</item>
+        <item>Қосылды</item>
+        <item>Ұстаулы</item>
+        <item>Ажырату</item>
+        <item>Ажыратылды</item>
+        <item>Сәтсіз</item>
+        <item>Бұғатталған</item>
+        <item>Интернет қосылымыңыздың сапасы тексерілуде…</item>
+    </string-array>
+</resources>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <plurals name="kg_attempt_left">
+        <item quantity="other">%d katset jäänud</item>
+        <item quantity="one">%d katset jäänud</item>
+    </plurals>
+    <plurals name="kg_attempt_remaining">
+        <item quantity="other">(%d katset on jäänud)</item>
+        <item quantity="one">(1 katse on jäänud)</item>
+    </plurals>
+    <plurals name="kg_too_many_failed_attempts_countdown_min">
+        <item quantity="other">Proovige uuesti %d min pärast</item>
+        <item quantity="one">Proovige uuesti %d minuti pärast</item>
+    </plurals>
+    <plurals name="kg_too_many_failed_attempts_countdown_sec">
+        <item quantity="other">Proovige uuesti %d s pärast</item>
+        <item quantity="one">Proovige uuesti %d sekundi pärast</item>
+    </plurals>
+    <plurals name="kg_too_many_failed_countdown_by_biometrics">
+        <item quantity="other">Tehti %1$d vale katset biomeetria kinnitamiseks. Proovige %2$d sekundi pärast uuesti.</item>
+        <item quantity="one">Tehti %1$d vale katset biomeetria kinnitamiseks. Proovige %2$d sekundi pärast uuesti.</item>
+    </plurals>
+    <plurals name="kg_too_many_failed_countdown_by_fingerprint">
+        <item quantity="other">Tehti %1$d vale katset sõrmejälgede kinnitamiseks. Proovige %2$d sekundi pärast uuesti.</item>
+        <item quantity="one">Tehti %1$d vale katset sõrmejälgede kinnitamiseks. Proovige %2$d sekundi pärast uuesti.</item>
+    </plurals>
+</resources>

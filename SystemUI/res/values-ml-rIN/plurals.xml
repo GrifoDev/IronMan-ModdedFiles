@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <plurals name="kg_attempt_left">
+        <item quantity="other">%d ശ്രമങ്ങൾ ശേഷിക്കുന്നു</item>
+        <item quantity="one">%d ശ്രമം ശേഷിക്കുന്നു</item>
+    </plurals>
+    <plurals name="kg_attempt_remaining">
+        <item quantity="other">(%d ശ്രമങ്ങൾ ശേഷിക്കുന്നു)</item>
+        <item quantity="one">(1 ശ്രമം ശേഷിക്കുന്നു)</item>
+    </plurals>
+    <plurals name="kg_too_many_failed_attempts_countdown_min">
+        <item quantity="other">%d മിനിറ്റിന് ശേഷം വീണ്ടും ശ്രമിക്കുക</item>
+        <item quantity="one">%d മിനിറ്റിന് ശേഷം വീണ്ടും ശ്രമിക്കുക</item>
+    </plurals>
+    <plurals name="kg_too_many_failed_attempts_countdown_sec">
+        <item quantity="other">%d സെക്കന്‍റിന് ശേഷം വീണ്ടും ശ്രമിക്കുക</item>
+        <item quantity="one">%d സെക്കന്‍റിന് ശേഷം വീണ്ടും ശ്രമിക്കുക</item>
+    </plurals>
+    <plurals name="kg_too_many_failed_countdown_by_biometrics">
+        <item quantity="other">ബയോമെട്രിക്ക്സ് പരിശോധിച്ചുറപ്പിക്കാനുള്ള %1$d തെറ്റായ ശ്രമങ്ങൾ. %2$d സെക്കന്‍റ് കഴിഞ്ഞ് വീണ്ടും ശ്രമിക്കുക.</item>
+        <item quantity="one">ബയോമെട്രിക്ക്സ് പരിശോധിച്ചുറപ്പിക്കാനുള്ള %1$d തെറ്റായ ശ്രമങ്ങൾ. %2$d സെക്കന്‍റ് കഴിഞ്ഞ് വീണ്ടും ശ്രമിക്കുക.</item>
+    </plurals>
+    <plurals name="kg_too_many_failed_countdown_by_fingerprint">
+        <item quantity="other">വിരലടയാളങ്ങൾ പരിശോധിച്ചുറപ്പിക്കാനുള്ള %1$d തെറ്റായ ശ്രമങ്ങൾ. %2$d സെക്കന്‍റ് കഴിഞ്ഞ് വീണ്ടും ശ്രമിക്കുക.</item>
+        <item quantity="one">വിരലടയാളങ്ങൾ പരിശോധിച്ചുറപ്പിക്കാനുള്ള %1$d തെറ്റായ ശ്രമങ്ങൾ. %2$d സെക്കന്‍റ് കഴിഞ്ഞ് വീണ്ടും ശ്രമിക്കുക.</item>
+    </plurals>
+</resources>

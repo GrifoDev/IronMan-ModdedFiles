@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="bluetooth_ss_a2dp_codec_titles">
+        <item>SBC</item>
+        <item>AAC</item>
+        <item>aptX</item>
+        <item>LDAC</item>
+        <item>Samsung HD</item>
+        <item>Scalable Codec</item>
+        <item>ຕົວແປງສັນຍານທັງໝົດ</item>
+        <item>ຕົວແປງສັນຍານມາດຕະຖານ</item>
+    </string-array>
+    <string-array name="wifi_ap_wifi_sharing">
+        <item>ເປີດໃຊ້ງານການແຊຣ໌ Wi-Fi</item>
+        <item>ປິດໃຊ້ງານການແຊຣ໌ Wi-Fi</item>
+    </string-array>
+    <string-array name="wifi_status">
+        <item></item>
+        <item>ກໍາລັງສະແກນ…</item>
+        <item>ກໍາລັງເຊື່ອມຕໍ່…</item>
+        <item>ກຳລັງກວດສອບ…</item>
+        <item>ກໍາລັງຮັບເອົາທີ່ຢູ່ IP…</item>
+        <item>ເຊື່ອມຕໍ່ແລ້ວ</item>
+        <item>ລະງັບໄວ້</item>
+        <item>ກຳລັງຕັດການເຊື່ອມຕໍ່…</item>
+        <item>ປິດເຊື່ອມຕໍ່ແລ້ວ</item>
+        <item>ບໍ່ສໍາເລັດ</item>
+        <item>ບລັອກແລ້ວ</item>
+        <item>ກໍາລັງກວດສອບຄຸນນະພາບການເຊື່ອມຕໍ່ອິນເຕີເນັດຂອງທ່ານ…</item>
+    </string-array>
+</resources>

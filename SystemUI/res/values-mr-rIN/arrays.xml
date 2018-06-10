@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="bluetooth_ss_a2dp_codec_titles">
+        <item>SBC</item>
+        <item>AAC</item>
+        <item>aptX</item>
+        <item>LDAC</item>
+        <item>Samsung HD</item>
+        <item>Scalable Codec</item>
+        <item>सर्व कोडेक</item>
+        <item>डिफॉल्ट कोडेक</item>
+    </string-array>
+    <string-array name="wifi_ap_wifi_sharing">
+        <item>Wi-Fi सामायिक करणे सक्षम करा</item>
+        <item>Wi-Fi सामायिक करणे अक्षम करा</item>
+    </string-array>
+    <string-array name="wifi_status">
+        <item></item>
+        <item>स्कॅन करीत आहे…</item>
+        <item>जोडला जात आहे…</item>
+        <item>प्रमाणीकरण चालू…</item>
+        <item>IP पत्ते मिळवत आहे…</item>
+        <item>जोडले</item>
+        <item>निलंबित</item>
+        <item>खंडीत करत आहे…</item>
+        <item>खंडित केले</item>
+        <item>अयशस्वी</item>
+        <item>अवरोधित केलेले</item>
+        <item>आपल्‍या इंटरनेट कनेक्‍शनची गुणवत्‍ता तपासत आहे…</item>
+    </string-array>
+</resources>

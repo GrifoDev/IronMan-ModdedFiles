@@ -1,0 +1,1475 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="accessibility_battery_level_charging">Bateria kargatzen, ehuneko %d</string>
+    <string name="accessibility_brightness_detail_button">Argitasun ezarpenen panela</string>
+    <string name="accessibility_button">Botoia</string>
+    <string name="accessibility_phone_four_bars">Lau telefono seinale barra</string>
+    <string name="accessibility_quick_settings_more_option">Aukera gehiago</string>
+    <string name="accessibility_recent">Azkenak</string>
+    <string name="activate">Activate</string>
+    <string name="agree">Ados</string>
+    <string name="airplane_mode_plmn">Hegaldi modua</string>
+    <string name="airplane_mode_show_popup_disabled_on_demo_devices">Hegaldi modua desgaituta dago probako gailuetan.</string>
+    <string name="airplane_mode_show_popup_message">Hegaldi moduak deiak, mezularitza eta datu sareen eginbideak itzaltzeko aukera ematen dizu. Konektibitate eginbideak ere itzaltzen ditu, Wi-Fia eta Bluetootha kasu. Wi-Fia eta Bluetootha erabiltzeko, piztu itzazu Ezarpenetan edo jakinarazpenen panelean.</string>
+    <string name="airplane_mode_show_popup_message_cmcc">Hegaldi moduak deiak, mezularitza eta datu sareen eginbideak itzaltzeko aukera ematen dizu. Konektibitate eginbideak ere itzaltzen ditu, Wi-Fia eta Bluetootha kasu. Wi-Fia eta Bluetootha erabiltzeko, piztu itzazu Ezarpenetan edo jakinarazpenen panelean.</string>
+    <string name="airplane_mode_show_popup_message_vzw">"Unless you use Wi-Fi, you will not be able to use the Internet, Email, or other apps that require a data connection.
+Turn on Airplane mode?"</string>
+    <string name="airplane_mode_show_popup_message_vzw_volte">"Unless you use Wi-Fi, you will not be able to use Internet, Email, Wi-Fi Calling or other apps that require a data connection.
+Turn on Airplane mode?"</string>
+    <string name="airplane_mode_show_popup_message_wifi">"Desaktibatu Wi-Fi eta Bluetooth.
+
+Berriz aktiba ditzakezu Ezarpenak atalean edo ezarpen azkarrak panelean."</string>
+    <string name="airplane_mode_show_popup_message_wifi_without_bluetooth">Hegaldi moduak sareko eginbideak itzaltzea ahalbidetzen dizu, baita Wi-Fia ere. Wi-Fia erabiltzeko, piztu Ezarpenetan edo jakinarazpen panelean.</string>
+    <string name="airplane_mode_show_popup_message_without_bluetooth">Hegaldi moduak deiak, mezularitza eta sare mugikorren funtzionamendua ezgaitzea ahalbidetzen dizu</string>
+    <string name="airplane_mode_show_popup_safelock">Ezin da gaitu Hegaldi modua “Eragotzi itzaltzea blokeatuta badago” aukera gaituta dagoenean. Saiatu berriz pantaila desblokeatu ondoren.</string>
+    <string name="airplane_mode_show_popup_summary">Ezingo duzu deitu, mezuak bidali edo mugikorreko datuak erabili.</string>
+    <string name="airplane_mode_show_popup_summary_q">Hegaldi modua aktibatu?</string>
+    <string name="airplane_mode_show_popup_title">Hegaldi modua aktibatu?</string>
+    <string name="airplane_mode_show_popup_title_vzw">Turn on Airplane mode</string>
+    <string name="airplane_mode_show_toast_turn_on_wifi_for_wificalling">Aktibatu Wi-Fi eginbidea Wi-Fi deiak erabiltzeko.</string>
+    <string name="allow_notifications_guide_text">Baimendu kategoria honetako jakinarazpenak.</string>
+    <string name="app_icon_badge_guide_notification_text">Aplikazio bateko jakinarazpen guztiak baztertzen dituzunean, aplikazio ikonoan ikusgai dagoen bereizgarria desagertu egingo da.</string>
+    <string name="app_icon_badge_guide_notification_title">Aplik. ikonoaren bereizgarriak</string>
+    <string name="app_locked">App locked</string>
+    <string name="appicon_badge_new_item">Elementu berri 1</string>
+    <string name="appicon_badge_new_items">%d elementu berri</string>
+    <string name="applocked_pinning_window_disable">Ezin da aplikazioa ainguratu, babestuta dagoelako.</string>
+    <string name="assistance_app_setting_alert_dialog_title">Select an app to open when you press and hold the Home key. To change the selected app later, go to Device assistance app in Settings.</string>
+    <string name="assistance_app_setting_item_none">Bat ere ez</string>
+    <string name="battery_cable_charging_from_wireless_to_cable_text">Hari gabeko kargatzetik kable kargatzera igarotzen</string>
+    <string name="battery_cable_charging_title">Kable bidez kargatu</string>
+    <string name="battery_charging_level_and_time_text">"Kargatzen: %%%1$d
+(%2$s inguru geratzen dira bateria erabat kargatu arte)"</string>
+    <string name="battery_charging_level_text">Kargatzen: %%%d</string>
+    <string name="battery_charging_time_text">(%s erabat kargatu arte)</string>
+    <string name="battery_charging_title">Kargatzea</string>
+    <string name="battery_discharging_duration">Bateria iraupen estimatua: %s</string>
+    <string name="battery_fast_charging_title">Azkar kargatzea</string>
+    <string name="battery_fast_charging_title_chn">Kargatze aurreratua</string>
+    <string name="battery_fast_wireless_charging_title">Hari gab. karg. bizkorra</string>
+    <string name="battery_fast_wireless_charging_title_chn">Hari gabeko kargatze aurreratua</string>
+    <string name="battery_health_interruption_by_limit_high_temperature_text_phone">"Kargatzeari utzi zaio. Telefonoaren tenperatura altuegia da. Kontuz kargagailua deskonektatzean. Baliteke oso bero egotea.
+
+Kargagailua deskonektatzen eta berriz konektatzen baduzu, baliteke kargak behar bezala jarraitzea. Gehiegi berotzen jarraitzen badu, jarri harremanetan Bezero zerbitzuarekin, balitekeelako sute edo kalte arriskua egotea."</string>
+    <string name="battery_health_interruption_by_limit_high_temperature_text_tablet">"Kargatzeari utzi zaio. Tabletaren tenperatura altuegia da. Kontuz kargagailua deskonektatzean. Baliteke oso bero egotea.
+
+Kargagailua deskonektatzen eta berriz konektatzen baduzu, baliteke kargak behar bezala jarraitzea. Gehiegi berotzen jarraitzen badu, jarri harremanetan Bezero zerbitzuarekin, balitekeelako sute edo kalte arriskua egotea."</string>
+    <string name="battery_health_interruption_by_limit_high_temperature_title">Desentxufatu kargagailua</string>
+    <string name="battery_health_interruption_by_terminal_open_galaxy_text">Unable to charge your device. Make sure you are using a Galaxy compatible battery and charger and that your device is properly connected to the charger.</string>
+    <string name="battery_health_interruption_by_terminal_open_text">Ezin da zure gailua kargatu. Ziurtatu Samsung-ekin bateragarria den bateria eta kargadorea erabiltzen ari zarela, eta zure gailuak behar bezala konektatuta dagoela kargadorera.</string>
+    <string name="battery_health_interruption_by_too_high_temperature_text_phone">Telefonoaren tenperatura altuegia da. Tenperatura ohiko mailara jaisten denean berrekingo zaio kargatze prozesuari.</string>
+    <string name="battery_health_interruption_by_too_high_temperature_text_tablet">Tabletaren tenperatura altuegia da. Tenperatura ohiko mailara jaisten denean berrekingo zaio kargatze prozesuari.</string>
+    <string name="battery_health_interruption_by_too_low_temperature_text_phone">Telefonoaren tenperatura baxuegia da. Tenperatura ohiko mailara igotzen denean berrekingo zaio kargatze prozesuari.</string>
+    <string name="battery_health_interruption_by_too_low_temperature_text_tablet">Tabletaren tenperatura baxuegia da. Tenperatura ohiko mailara jaisten denean berrekingo zaio kargatze prozesuari.</string>
+    <string name="battery_health_interruption_title">Utzi zaio kargatzeari</string>
+    <string name="battery_info_power_wireless">Hari gabea</string>
+    <string name="battery_info_status_charging">Kargatzen</string>
+    <string name="battery_low_sec_body_phone">Kargatu telefonoa edo ukitu hau Bateria aurrezteko modua aktibatzeko.</string>
+    <string name="battery_low_sec_body_phone_psm">Kargatu telefonoa.</string>
+    <string name="battery_low_sec_body_tablet">Kargatu tableta edo ukitu hau Bateria aurrezteko modua aktibatzeko.</string>
+    <string name="battery_low_sec_body_tablet_psm">Kargatu tableta.</string>
+    <string name="battery_low_sec_noti_channel">Bateria gutxi</string>
+    <string name="battery_low_sec_title">Bateria: %%%d</string>
+    <string name="battery_not_fully_connected_charging_popup_text">Ziurtatu kargagailua ongi konektatu duzula. Erabili gailuarekin batera eman zitzaizun kargagailua.</string>
+    <string name="battery_not_fully_connected_charging_popup_text_jpn">Ziurtatu kargagailua ongi konektatu duzula.</string>
+    <string name="battery_not_fully_connected_charging_text">Azkarrago kargatzeko, erabili gailuarekin batera eman zitzaizun kargagailua, eta ziurtatu ongi konektatu duzula.</string>
+    <string name="battery_not_fully_connected_charging_text_chn">Azkarrago kargatzeko, erabili telefonoarekin batera eman zitzaizun kargagailua, eta ziurtatu ongi konektatu duzula.</string>
+    <string name="battery_not_fully_connected_charging_text_jpn">Ziurtatu kargagailua behar bezala konektatuta dagoela.</string>
+    <string name="battery_not_fully_connected_charging_text_tablet_chn">Azkarrago kargatzeko, erabili tabletarekin batera eman zitzaizun kargagailua, eta ziurtatu ongi konektatu duzula.</string>
+    <string name="battery_not_fully_connected_charging_text_vzw">Make sure the charger is properly connected.</string>
+    <string name="battery_not_fully_connected_charging_title">Motel kargatzen</string>
+    <string name="battery_not_fully_connected_charging_title_vzw">Incomplete connection</string>
+    <string name="battery_saver_recommend_notification_text_phone">Kargatu telefonoa edo ukitu hau Bateria aurrezteko modua aktibatzeko.</string>
+    <string name="battery_saver_recommend_notification_text_phone_psm">Kargatu telefonoa.</string>
+    <string name="battery_saver_recommend_notification_text_tablet">Kargatu tableta edo ukitu hau Bateria aurrezteko modua aktibatzeko.</string>
+    <string name="battery_saver_recommend_notification_text_tablet_psm">Kargatu tableta.</string>
+    <string name="battery_saver_recommend_notification_title">Bateria: %%%d</string>
+    <string name="battery_slow_charging_text">Azkarrago kargatzeko, erabili jatorrizko kargadorea.</string>
+    <string name="battery_slow_charging_title">Mantso kargatzen ari da</string>
+    <string name="battery_slow_charging_toast_text">To charge faster, use the charger and cable that were provided with this phone</string>
+    <string name="battery_slow_charging_toast_text_for_tablet">To charge faster, use the charger and cable that were provided with this tablet.</string>
+    <string name="battery_wireless_charging_disconnect_text">Hari gabeko karga pausatu da.</string>
+    <string name="battery_wireless_charging_from_cable_to_wireless_text">Klabe kargatzetik hari gabeko kargatzera igarotzen</string>
+    <string name="battery_wireless_charging_title">Hari gabeko karga</string>
+    <string name="blue_light_disable_reason">%2$s erabiltzeko, desaktibatu %1$s.</string>
+    <string name="bluetooth_a2dp_profile_summary_connected">Multimedia audiorako konektatuta</string>
+    <string name="bluetooth_disconnect_message">%s-(r)ekin zenuen Bluetooth konexioa amaitu da.</string>
+    <string name="bluetooth_display_remote_device_name_after_pair">Gailuaren izena gailu hau konektatzean agertuko da.</string>
+    <string name="bluetooth_getting_remote_device_name">Gailuaren izena lortzen…</string>
+    <string name="bluetooth_headset_profile_summary_connected">Deietako audiorako konektatuta</string>
+    <string name="bluetooth_hid_profile_summary_connected">Sarrera gailu gisa konektatuta</string>
+    <string name="bluetooth_pairing_device_down_black_list_error_message">Ezin izan da konektatu %1$s aplikaziora. Egiaztatu %2$s aplikazioko ezarpenak eta saiatu berriz.</string>
+    <string name="bluetooth_pairing_device_down_error_message">Ezin da konektatu %s gailura.</string>
+    <string name="bluetooth_pairing_error_message">Ezin izan da parekatu %s gailuarekin. Ziurtatu parekatzeko prest dagoela.</string>
+    <string name="bluetooth_pairing_pin_error_message">Ezin izan da parekatu %s gailuarekin. Ziurtatu parekatzeko prest dagoela.</string>
+    <string name="bluetooth_pairing_rejected_error_message">%s-k parekatzea ukatu du</string>
+    <string name="bluetooth_pan_nap_connected">Internet konexioa eskaintzeko konektatuta</string>
+    <string name="bluetooth_pan_nap_profile_summary_connected">Internet konexio lokala partekatuta gailuarekin</string>
+    <string name="bluetooth_pan_panu_connected">Internet konexioa atzitzeko konektatuta</string>
+    <string name="bluetooth_pan_profile_summary_use_for">Parekatutako gailuan, aktibatu Bluetooth bidezko konexio partekatzea telefono honetan Internet erabili ahal izateko.</string>
+    <string name="bluetooth_pan_user_profile_summary_connected">Gailura konektatuta Internet sarbiderako</string>
+    <string name="bluetooth_profile_a2dp">Multimedia audioa</string>
+    <string name="bluetooth_profile_headset">Deien audioa</string>
+    <string name="bluetooth_profile_hid">Sarrera gailua</string>
+    <string name="bluetooth_profile_map">Mezu sarbidea</string>
+    <string name="bluetooth_profile_pan">Internetera sarbidea</string>
+    <string name="bluetooth_profile_pan_nap">Interneteko konexioa partekatzen</string>
+    <string name="bluetooth_profile_pbap">Kontaktuetarako sarbidea</string>
+    <string name="bluetooth_profile_pbap_tts">Kontaktuak eta Telefonoko erregistroa</string>
+    <string name="bluetooth_profile_textinput">Testu idazketa</string>
+    <string name="bluetooth_spp_profile_summary_connected">Serie atakaren profil bidez konekt.</string>
+    <string name="bluetooth_summary_connected_to_a2dp_headset">Dei eta multim. audiorako konektatuta</string>
+    <string name="bluetooth_tethering_cannot_connect_while_connected_to_wifi">Ezin da erabili Bluetooth bidezko konexio partekatzea Wi-Fi sarera konektatuta bazaude.</string>
+    <string name="brightness_control_on_top">Argitasun kontrola goian</string>
+    <string name="brightness_slider_hbm_text">Maximizatu da, egun argiz hobeto ikus dadin</string>
+    <string name="button_close">Itxi</string>
+    <string name="cant_open_image_viewer_app">Ezin da ireki irudi bisorearen aplikazioa.</string>
+    <string name="cant_open_image_viewer_app_in_emergency_mode">Ezin da ireki irudi bisorearen aplikazioa Larrialdi moduan.</string>
+    <string name="cant_open_image_viewer_app_in_mpsm">Ezin da ireki irudi bisorearen aplikazioa Bateria aurrezteko gehienezko moduan.</string>
+    <string name="cant_open_image_viewer_app_in_ps">Ezin da ireki irudi bisorearen aplikazioa %s gaituta dagoenean.</string>
+    <string name="cant_open_photo_editor_in_ps">Ezin da ireki Argazki editorea %s gaituta badago.</string>
+    <string name="cant_open_ps">Ezin da ireki %s.</string>
+    <string name="cant_screenshot_in_ps">Ezin da atera pantaila kaptura %s ezarrita dagoenean.</string>
+    <string name="card_crash">SIM txartela gaizki dabil</string>
+    <string name="clear_all_notifications_text">Garbitu guzt.</string>
+    <string name="clear_all_text">Garbitu</string>
+    <string name="colour_adjustment_title">Kolorea egokitzea</string>
+    <string name="colour_lens_title">Koloretako lenteak</string>
+    <string name="cooling_body">"Gailua gehiegi berotzen ari da. Hozteko neurriak hartuko dira.
+
+Gailua erabiltzen jarrai dezakezu, baina baliteke:
+- Pantaila iluntzea.
+- Gailua motelago aritzea.
+- Kargatze prozesua pausatzea.
+
+Gailua hoztu ondoren, funtzionamendua ohikoa izango da berriz automatikoki."</string>
+    <string name="cooling_body_tablet_vzw">"Your tablet is getting too hot, so it’s taking steps to cool itself down.
+
+You can still use your tablet, but you may notice:
+The screen might dim.
+The tablet might slow down.
+Charging might pause.
+
+After the tablet cools down, performance willAutomatically go back to normal."</string>
+    <string name="cooling_body_vzw">"Your phone is getting hot, so it's taking steps to cool itself down.
+
+You can still use it, but you may notice:
+- The screen might dim.
+- The phone might slow down.
+- Charging might pause.
+
+Your phone will return to normal once it cools down."</string>
+    <string name="cooling_high_level_noti_text">Ezin dira aplikazioak ireki. Telefono eta Kontaktu aplikazioak soilik erabil ditzakezu.</string>
+    <string name="cooling_noti_text">Ukitu hemen xehetasunak ikusteko</string>
+    <string name="cooling_noti_text_vzw">Ukitu hemen gehiago jakiteko.</string>
+    <string name="cooling_popup_title">Gailua hozten</string>
+    <string name="cooling_title">Gailua gainberotua</string>
+    <string name="cooling_title_vzw">Cooling down</string>
+    <string name="data_connection_error_data_roaming_off_body">Konektatu Wi-Fi sare batera edo aktibatu Datu ibiltaritza.</string>
+    <string name="data_connection_error_flight_mode_on_body">Telefonoa ez dago konektatuta Wi-Fi sare batera. Sare mugikorra erabiltzeko, desaktibatu Hegaldi modua Ezarpenak atalean.</string>
+    <string name="data_connection_error_flight_mode_on_body_tablet">Tableta ez dago konektatuta Wi-Fi sare batera. Sare mugikorra erabiltzeko, desaktibatu Hegaldi modua Ezarpenak atalean.</string>
+    <string name="data_connection_error_flight_mode_on_title">Desaktibatu Hegaldi modua</string>
+    <string name="data_connection_error_mobile_data_off">Datu mugikorrak ezgaituta daude. Konektatu Wi-Fi sarera bestela, edo gaitu datu mugikorrak eta saiatu berriz.</string>
+    <string name="data_connection_error_mobile_data_off_body">Konektatu Wi-Fi sare batera edo aktibatu Datu mugikorrak.</string>
+    <string name="data_connection_error_mobile_data_off_title">Datu mugikorrak aktibatu?</string>
+    <string name="data_connection_error_no_network_connection">Ez dago sare konexiorik</string>
+    <string name="data_connection_error_no_signal_body">Ezin izan da aurkitu sarerik erabilgarri.</string>
+    <string name="data_connection_error_toast_notification">Wi-Fi konexioa behar da. Konektatu Wi-Fi sarera eta saiatu berriz.</string>
+    <string name="dcm_lockscreen_unlock_help_text_fingerprints_iris">Use fingerprint to unlock device or tap Lock icon to use irises instead</string>
+    <string name="dcm_lockscreen_unlock_help_text_iris">Tap Lock icon to use irises to unlock device</string>
+    <string name="dcm_lockscreen_voice_assistant_active_instructions">Telefonoa desblokeatzeko, ukitu bi aldiz Blokeatu botoia</string>
+    <string name="default_carrier_text_searching">Bilatzen</string>
+    <string name="default_volume_control_summary">Kontrolatu multimedia bolumena modu lehenetsian Bolumen teklak sakatzean.</string>
+    <string name="default_volume_control_title">Bolumen teklak multim. edukirako</string>
+    <string name="direct_boot_unaware_dialog_message">Telefonoa berrabiarazi ondoren, telefonoa desblokeatu behar duzu aplikazio hau erabili ahal izateko.</string>
+    <string name="direction_lock_too_many_failed_attempts_countdown">Saiatu berriz %d segunduren ondoren</string>
+    <string name="disable">Ezgaitu</string>
+    <string name="disable_cancel">Utzi</string>
+    <string name="disable_confirm">Desgaitu</string>
+    <string name="disable_message">%1$s eta hari lotutako funtzio guztiak desgaituko dira. Datuak ere ezabatu egingo dira. Aplikazioa berriz gaitzeko, zoaz Ezarpenak > Aplikazioak atalera, eta hautatu %2$s.</string>
+    <string name="disagree">Ez nago ados</string>
+    <string name="dnd_noti_action_disable">Desaktibatu</string>
+    <string name="dnd_noti_message">Alarmak mututu dira</string>
+    <string name="dnd_noti_title">Ez molestatu modua aktibatuta</string>
+    <string name="dock_minimized_notification_content_text">Ukitu hau %s irekitzeko.</string>
+    <string name="dock_minimized_notification_dimiss_text">Itxi</string>
+    <string name="dock_minimized_notification_text">Bereizitako pant. ikuspegia abian</string>
+    <string name="dock_minimized_toast_text">%s minimizatu da.</string>
+    <string name="download_popup_button_cancel">Utzi</string>
+    <string name="download_popup_button_download">Deskargatu</string>
+    <string name="download_ps">%s deskargatu?</string>
+    <string name="emergency_mode">Larrialdi modua</string>
+    <string name="flash_light_disabled_by_low_battery">Ezin da Linterna erabili. Bateria gutxi gelditzen da.</string>
+    <string name="flash_light_notification_button">Desaktibatu</string>
+    <string name="flash_light_notification_title">Linterna piztuta</string>
+    <string name="flash_light_turn_off_by_low_battery">Bateria baxu. Linternaren argia itzaliko da.</string>
+    <string name="flight_mode_enabled_dialog_body">"Your mobile data connection is turned off. Unless you use Wi-Fi, you won't be able to use the Internet, Email or other apps that require a data connection."</string>
+    <string name="flight_mode_enabled_dialog_body_volte_and_vowifi">"Your mobile data connection is turned off. Your phone's Video Calling function won't work when mobile data is off. Also, you won't be able to use the Internet, Email or other apps that need a data connection unless you use Wi-Fi."</string>
+    <string name="flight_mode_enabled_dialog_title">Airplane mode turned on</string>
+    <string name="force_immersive_guide_dialog_guide_path">Botoi hau ezkutatzeko, joan Ezarpenak > Bistaratzea > Nabigazio barra aukerara.</string>
+    <string name="force_immersive_guide_dialog_message1">Ukitu botoi hau bi aldiz nabigazio barra ezkutatzeko.</string>
+    <string name="force_immersive_guide_dialog_message2">Nabigazio barra erakusteko, irristatu kargatzeko atakaren ondoan dagoen pantailaren ertzetik erdira.</string>
+    <string name="force_immersive_guide_dialog_message3">Ukitu botoi hau berriz bi aldiz nabigazio barra blokeatzeko.</string>
+    <string name="force_immersive_guide_dialog_message4">Pantaila batzuetan, hala nola Pantaila nagusian, nabigazio barra beti egongo da ikusgai.</string>
+    <string name="force_immersive_guide_dialog_ok">ADOS</string>
+    <string name="force_immersive_guide_dialog_setting">Ezarpenak</string>
+    <string name="force_immersive_guide_dialog_title">Ezkutatu nabigazio barra:</string>
+    <string name="force_immersive_guide_toast_hide">Ukitu bi aldiz nabigazio barra ezkutatzeko.</string>
+    <string name="force_immersive_guide_toast_show">Ukitu bi aldiz nabigazio barra blokeatzeko.</string>
+    <string name="freeform_forced_resizable">Baliteke aplikazio honek behar bezala ez funtzionatzea Multiwindow ikuspegian.</string>
+    <string name="freeform_forced_resizable_samsung_dex">Baliteke aplikazio honen funtzio batzuk Samsung DeX-ekin bateragarriak ez izatea.</string>
+    <string name="full_battery_noti_channel">Bateria beteta</string>
+    <string name="full_battery_noti_text">Bateria guztiz kargatuta</string>
+    <string name="full_battery_title">Informazioa</string>
+    <string name="greyscale_mode_title">Gris eskala</string>
+    <string name="hotspot_warning_dialog_msg_smartview_off">Konexioa partekatzea eta Smart View ezin dira aldi berean gaitu. Smart View desgaituko da.</string>
+    <string name="hotspot_warning_dialog_msg_smartview_off_chn">WLAN konexioa partekatzea eta Smart View ezin dira aldi berean gaitu. Smart View desgaituko da.</string>
+    <string name="hotspot_warning_dialog_msg_smartview_off_spr">Konexioa partekatzea erabiltzeko, Smart View desaktibatu behar da.</string>
+    <string name="hotspot_warning_dialog_msg_smartview_off_tmo">Konexioa partekatzea erabiltzeko, Smart View desaktibatu behar da.</string>
+    <string name="hotspot_warning_dialog_msg_smartview_off_vzw">Konexioa partekatzea eta Smart View ezin dira aldi berean gaitu. Smart View desgaituko da.</string>
+    <string name="hotspot_warning_dialog_msg_wifi_off">Konexioa partekatzea erabiltzeko, Wi-Fi eginbidea desaktibatu behar da.</string>
+    <string name="hotspot_warning_dialog_msg_wifi_off_att">Wi-Fi konexio partekatze eramangarria aktibatuz gero, Wi-Fi eginbidea desaktibatuko da.</string>
+    <string name="hotspot_warning_dialog_msg_wifi_off_chn">Konexioa partekatzea gaituz gero, WLAN desaktibatuko da.</string>
+    <string name="hotspot_warning_dialog_msg_wifi_off_jpn">Enabling Wi-Fi tethering will turn off Wi-Fi.</string>
+    <string name="hotspot_warning_dialog_msg_wifi_off_mtr">Konexioa partekatzea erabiltzeko, Wi-Fi eginbidea desaktibatu behar da.</string>
+    <string name="hotspot_warning_dialog_msg_wifi_off_spr">Konexioa partekatzea erabiltzeko, Wi-Fi eginbidea desaktibatu behar da.</string>
+    <string name="hotspot_warning_dialog_msg_wifi_off_tmo">Wi-Fi eginbidea desaktibatzen da USB kable bidezko konexio partekatzea eginbidea aktibo dagoenean. Wi-Fi eginbidea aktibatzeko, desaktibatu USB kable bidezko konexio partekatzea edo Konexioa partekatzea.</string>
+    <string name="hotspot_warning_dialog_msg_wifi_off_vzw">Mobile Hotspot eginbideak datu mugikorren konexioa darabil. Wi-Fi konexioa desaktibatuko da.</string>
+    <string name="hotspot_warning_dialog_msg_wifidirect_off">Konexioa partekatzea erabiltzeko, Wi-Fi Direct bidez konektatuta dauden gailuak deskonektatu behar dira.</string>
+    <string name="hotspot_warning_dialog_msg_wifidirect_off_chn">WLAN konexio partekatze eramangarria gaituz gero, WLAN Direct bidez konektatutako gailua deskonektatuko da.</string>
+    <string name="hotspot_warning_dialog_msg_wifidirect_off_spr">Konexioa partekatzea erabiltzeko, Wi-Fi Direct bidez konektatuta dauden gailuak deskonektatu behar dira.</string>
+    <string name="hotspot_warning_dialog_msg_wifidirect_off_tmo">Konexioa partekatzea erabiltzeko, Wi-Fi Direct bidez konektatuta dauden gailuak deskonektatu behar dira.</string>
+    <string name="hotspot_warning_dialog_msg_wifidirect_off_vzw">Konexioa partekatzea erabiltzeko, Wi-Fi Direct bidez konektatuta dauden gailuak deskonektatu behar dira.</string>
+    <string name="hotspot_warning_dialog_title_smartview_off">Konexioa partekatzea aktibatu?</string>
+    <string name="hotspot_warning_dialog_title_wifi_off">Wi-Fi eginbidea desaktibatu?</string>
+    <string name="hotspot_warning_dialog_title_wifi_off_tmo">Oharra</string>
+    <string name="hotspot_warning_dialog_title_wifi_off_vzw">Mobile Hotspot eta Wi-Fi</string>
+    <string name="hotspot_warning_dialog_title_wifidirect_off">Konexioa partekatzea aktibatu?</string>
+    <string name="hotspot_warning_dialog_title_wifidirect_off_tmo">Oharra</string>
+    <string name="hotspot_warning_dialog_title_wifidirect_off_vzw">Mobile Hotspot eta Wi-Fi</string>
+    <string name="ime_security_warning">Idazten duzun testu guztia biltzeko gai izango da %s, datu pertsonalak barne (hala nola pasahitzak eta kreditu txartelen zenbakiak).</string>
+    <string name="incompatible_charger_dialog_text">The connected charger is incompatible with this phone. To prevent damage to your phone, charging has been stopped. To continue charging, use the original charger and cable that were provided with this phone.</string>
+    <string name="incompatible_charger_notification_text">Unable to charge. Use the original charger.</string>
+    <string name="incompatible_charger_ticker">Ez dago kargatzen</string>
+    <string name="incompatible_charger_title">Ez dabil kargatzen</string>
+    <string name="insert_sim_card">Sartu SIM txartela</string>
+    <string name="insert_sim_card_message">Sartu SIM txartela sare zerbitzuetan sartzeko.</string>
+    <string name="iris_guide_str_enable_toggle">Ukitu hau irisak erabiltzeko</string>
+    <string name="iris_guide_str_for_text_preview">Beg. irisak erabiltzeko</string>
+    <string name="it_policy_not_allow_wifi">Segurtasun politikak Wi-Fi konexioa erabiltzea galarazten du.</string>
+    <string name="it_policy_not_allow_wifiap">Segurtasun politikak Internet partekatzearen erabilera mugatzen du</string>
+    <string name="keyboard_shortcut_group_applications">Aplikazio lasterbideak</string>
+    <string name="keyboard_shortcut_group_applications_bixby">Bixby</string>
+    <string name="keyboard_shortcut_group_applications_browser">Nabigatzailea</string>
+    <string name="keyboard_shortcut_group_applications_calendar">Egutegia</string>
+    <string name="keyboard_shortcut_group_applications_contacts">Kontaktuak</string>
+    <string name="keyboard_shortcut_group_applications_email">Helbide elektronikoa</string>
+    <string name="keyboard_shortcut_group_applications_messages">Mezuak</string>
+    <string name="keyboard_shortcut_group_applications_music">Musika</string>
+    <string name="keyboard_shortcut_group_system">Sistemaren lasterbideak</string>
+    <string name="keyboard_shortcut_group_system_all_apps">Aplikazio guztiak</string>
+    <string name="keyboard_shortcut_group_system_back">Atzera</string>
+    <string name="keyboard_shortcut_group_system_home">Etxea</string>
+    <string name="keyboard_shortcut_group_system_lock_screen">Blokeo pantaila</string>
+    <string name="keyboard_shortcut_group_system_notifications">Jakinarazpenak</string>
+    <string name="keyboard_shortcut_group_system_recents">Azkenak</string>
+    <string name="keyboard_shortcut_group_system_running_apps">Abian diren aplikazioak</string>
+    <string name="keyboard_shortcut_group_system_shortcuts_helper">Teklatuko lasterbideak</string>
+    <string name="keyboard_shortcut_group_system_switch_languages">Aldatu hizkuntzak</string>
+    <string name="keyboard_shortcut_popup_help">Meta gakoa: Windows tekla, cmd tekla, edo sistema eragileari dagokion sinboloaren tekla bat.</string>
+    <string name="keyguard_accessibility_call">Deitu</string>
+    <string name="keyguard_accessibility_direction_lock_unlock">Keinu bidezko blokeoa</string>
+    <string name="keyguard_accessibility_dot">Puntua</string>
+    <string name="keyguard_accessibility_pattern_area">Patroiaren eremua</string>
+    <string name="keyguard_accessibility_pattern_unlock">Patroidun desblokeoa</string>
+    <string name="keyguard_cmas_text">Larrialdi alerta</string>
+    <string name="keyguard_dualclock_locale_view_home">Etxea</string>
+    <string name="keyguard_dualclock_locale_view_home_skt">Seul</string>
+    <string name="keyguard_dualclock_locale_view_roaming">Nazionala</string>
+    <string name="keyguard_dualclock_locale_view_roaming_skt">Ibiltaritza</string>
+    <string name="keyguard_fmm_owner_phone">Jabearen zenbakia</string>
+    <string name="keyguard_fmm_phone_locked_title">Telefonoa blokeatuta</string>
+    <string name="keyguard_missing_sim_message">Sartu USIM txartela eta berrabiarazi gailua</string>
+    <string name="keyguard_progress_erasing_all">Datu guztiak ezabatzen…</string>
+    <string name="keyguard_skt_usim_unregistered">Ezin da USIM txartela erabili. Deskargatu USIM txartelaren informazioa.</string>
+    <string name="keyguard_usim_not_used">Ezin da USIM txartela erabili. PINa desblokeatzeko (PUK) kodea oker idatzi duzu %d aldiz. Erosi USIM txartel berria.</string>
+    <string name="kg_1_attempt_remaining">(1 saiakera geratzen da)</string>
+    <string name="kg_accessibility_password_unlock">Pasahitz bidezko desblokeoa</string>
+    <string name="kg_accessibility_pin_edit_box">Editatzeko koadroa</string>
+    <string name="kg_accessibility_pin_unlock">PIN bidezko desblokeoa</string>
+    <string name="kg_background_auth_face_instruction_text">Desblok. aurpegi bidezko hautematea erabiliz.</string>
+    <string name="kg_background_auth_fingerprint_unlock_successed_text">Hatz aztarna erabiliz desblokeatu da telefonoa.</string>
+    <string name="kg_background_auth_iris_instruction_text">Desblokeatu irisekin.</string>
+    <string name="kg_background_auth_tablet_fingerprint_unlock_successed_text">Hatz aztarna erabiliz desblokeatu da tableta.</string>
+    <string name="kg_background_auth_tablet_unlock_successed_text">Tableta desblokeatuta.</string>
+    <string name="kg_background_auth_unlock_failed_text">Ezin izan da desblokeatu telefonoa.</string>
+    <string name="kg_background_auth_unlock_instruction_text">Desblokeatu datu biometrikoak erabilita.</string>
+    <string name="kg_background_auth_unlock_successed_text">Telefonoa desblokeatuta.</string>
+    <string name="kg_biometric_temporary_error_text">Ezin da erabili aurpegi edo iris bidezko hautematea. Arazoak badirau, berrabiarazi telefonoa.</string>
+    <string name="kg_biometrics_swipe_active_instructions">Irekitzeko, erabili datu biometrikoak edo irristatu pantailan zehar</string>
+    <string name="kg_biometrics_swipe_active_voice_assistant_instructions">Irekitzeko, erabili datu biometrikoak edo irristatu pantailan zehar bi hatzez</string>
+    <string name="kg_biometrics_swipe_unlock_instructions">Desblokeatzeko, erabili datu biometrikoak edo irristatu pantailan zehar</string>
+    <string name="kg_biometrics_swipe_unlock_voice_assistant_instructions">Desblokeatzeko, erabili datu biometrikoak edo irristatu pantailan zehar bi hatzez</string>
+    <string name="kg_carrier_lock_call_owner">Dei iezadazu, mesedez</string>
+    <string name="kg_carrier_lock_findlostphone">Telefono hau galdu da edo lapurtu dute.</string>
+    <string name="kg_carrier_lock_too_many_failed_attempts">Pasahitz okerra idatzi duzu 5 aldiz. Saiatu berriz 10 minutu barru.</string>
+    <string name="kg_carrier_lock_unlock">Idatzi pasahitza</string>
+    <string name="kg_carrier_lock_wrong_password">Pasahitz okerra idatzi duzu.</string>
+    <string name="kg_ctc_enter_confirm_pin_hint">Enter new UIM/SIM card unlock PIN again to confirm it</string>
+    <string name="kg_ctc_password_wrong_pin_code_one">Incorrect UIM/SIM card PIN entered. 1 attempt left.</string>
+    <string name="kg_ctc_password_wrong_pin_code_other">Incorrect UIM/SIM card PIN entered. %d attempts left.</string>
+    <string name="kg_ctc_puk_enter_pin_hint">Enter new UIM/SIM card unlock PIN</string>
+    <string name="kg_ctc_sim_puk_instructions">UIM/SIM card locked. Enter PUK. Contact service provider for details.</string>
+    <string name="kg_ctc_sim_puk_remaining_1_attempt">Incorrect PUK entered. If incorrect PUK is entered 1 more time, UIM/SIM card will be locked.</string>
+    <string name="kg_ctc_sim_puk_remaining_attempts">Incorrect PUK entered. If incorrect PUK is entered %d more times, UIM/SIM card will be permanently locked.</string>
+    <string name="kg_ctc_sim_unlock_progress_dialog_message">Unlocking UIM/SIM card…</string>
+    <string name="kg_ctc_unlock_sim_pin_instructions">Enter UIM/SIM card unlock PIN</string>
+    <string name="kg_dcm_sim_puk_instructions">PINa blokeatu da. Adierazi PUKa jarraitzeko.</string>
+    <string name="kg_default_carrier_text_searching">Bilatzen</string>
+    <string name="kg_dex_emergency_text">LARRIALDI DEIAK egiteko, kendu telefonoa DeX Station-etik.</string>
+    <string name="kg_direction_lock_instructions_normal_mode">Marraztu keinuak pantaila desblokeatzeko</string>
+    <string name="kg_empty_sim_perso_hint">Ez da pasahitzik adierazi. Adierazi pasahitza (PINa).</string>
+    <string name="kg_face_authentication_error_camera_unavailable_retry_text">Arazo bat izan da aurpegi hautematearekin. Ukitu berriz saiatzeko</string>
+    <string name="kg_face_authentication_error_camera_unavailable_video_call_text">Ezin da erabili aurpegi hautematea bideo deietan</string>
+    <string name="kg_face_authentication_error_retry_text">Ez da aurpegirik hauteman. Ukitu ikonoa aurpegia berriz hautematen saiatzeko</string>
+    <string name="kg_face_authentication_failed_retry_text">Ez dago bat etortzerik. Ukitu ikonoa aurpegi bidezko hautematea erabiltzeko</string>
+    <string name="kg_face_cancel_for_dex">Utzi aurpegi bidezko hautematea</string>
+    <string name="kg_face_cover_clear_view_toast_for_dex">Aurpegi bidezko hautematea ez dago erabilgarri Clear View Cover erantsita dagoenean.</string>
+    <string name="kg_face_cover_led_view_toast_for_dex">Aurpegi bidezko hautematea ez dago erabilgarri LED View Cover erantsita dagoenean.</string>
+    <string name="kg_face_cover_s_view_toast_for_dex">Aurpegi bidezko hautematea ez dago erabilgarri S View Cover erantsita dagoenean.</string>
+    <string name="kg_face_cover_toast_for_dex">Aurpegi bidezko hautematea ez dago erabilgarri azala erantsita dagoenean.</string>
+    <string name="kg_face_direction_active_instructions">Irekitzeko, erabili aurpegi bidezko hautematea edo marraztu keinu segida</string>
+    <string name="kg_face_direction_none_instructions">Erabili aurpegi bidezko hautematea edo marraztu keinu segida</string>
+    <string name="kg_face_guide_text_for_enable_toggle">Aurp. hautem. erabiltz., ukitu hau</string>
+    <string name="kg_face_or_fingerprint_active_instructions">Irekitzeko, erabili hatz aztarnak; aurpegi bidezko hautematea erabiltzeko, berriz, irristatu pantailan zehar</string>
+    <string name="kg_face_or_fingerprint_active_voice_assistant_instructions">Irekitzeko, erabili hatz aztarna; aurpegi bidezko hautematea erabiltzeko, berriz, irristatu pantailan zehar bi hatzez.</string>
+    <string name="kg_face_or_fingerprint_unlock_instructions">Desblokeatzeko, erabili hatz aztarna; aurpegi bidezko hautematea erabiltzeko, berriz, irristatu pantailan zehar</string>
+    <string name="kg_face_or_fingerprint_unlock_voice_assistant_instructions">Desblokeatzeko, erabili hatz aztarna; aurpegi bidezko hautematea erabiltzeko, berriz, irristatu pantailan zehar bi hatzez.</string>
+    <string name="kg_face_or_swipe_active_instructions">Irekitzeko, erabili aurpegi bidezko hautematea edo irristatu pantailan zehar</string>
+    <string name="kg_face_or_swipe_active_voice_assistant_instructions">Irekitzeko, erabili aurpegi bidezko hautematea edo irristatu pantailan zehar bi hatzez</string>
+    <string name="kg_face_or_swipe_unlock_instructions">Desblokeatzeko, erabili aurpegi bidezko hautematea edo irristatu pantailan zehar</string>
+    <string name="kg_face_or_swipe_unlock_voice_assistant_instructions">Desblokeatzeko, erabili aurpegi bidezko hautematea edo irristatu pantailan zehar bi hatzez</string>
+    <string name="kg_face_password_active_instructions">Irekitzeko, erabili aurpegi bidezko hautematea edo idatzi pasahitza</string>
+    <string name="kg_face_password_none_instructions">Erabili aurpegi bidezko hautematea edo idatzi pasahitza</string>
+    <string name="kg_face_pattern_active_instructions">Irekitzeko, erabili aurpegi bidezko hautematea edo marraztu patroia</string>
+    <string name="kg_face_pattern_none_instructions">Erabili aurpegi bidezko hautematea edo marraztu patroia</string>
+    <string name="kg_face_pin_active_instructions">Irekitzeko, erabili aurpegi bidezko hautematea edo idatzi PINa</string>
+    <string name="kg_face_pin_none_instructions">Erabili aurpegi bidezko hautematea edo idatzi PINa</string>
+    <string name="kg_face_retry_content_description">Aurpegi hautematea erabiltzeko, ukitu bi aldiz.</string>
+    <string name="kg_face_retry_text">Ukitu ikonoa aurpegia berriz hautematen saiatzeko</string>
+    <string name="kg_face_start_for_dex">Erabili aurpegi hautem. telefonoan</string>
+    <string name="kg_face_stop">Utzi aurpegi bidezko hautematea</string>
+    <string name="kg_face_toast_preview_for_dex">Zure nortasuna egiaztatzeko, erabili aurpegi bidezko hautematea telefonoan.</string>
+    <string name="kg_face_unlock_instructions">Aurpegi bidezko hautematearekin desblokeatzeko, irristatu pantaila</string>
+    <string name="kg_face_unlock_voice_assistant_instructions">Aurpegi bidezko hautematearekin desblokeatzeko, irristatu pantailan zehar bi hatzez</string>
+    <string name="kg_finger_print_bad_quality_error_message">Hatz aztarnen sentsorea zikina dago agian. Garbitu ezazu eta saiatu berriz.</string>
+    <string name="kg_finger_print_database_error_message">Hatz aztarnen datuak hondatuta daude. Berrezarri Hatz aztarna pantaila blokeatzeko metodo gisa eta, ondoren, gehitu zure hatz aztarnak berriz, edo aldatu pantaila blokeatzeko metodoa.</string>
+    <string name="kg_finger_print_not_responding_error_message">Hatz aztarnen sentsoreak ez du erantzuten. Saiatu berriz geroago.</string>
+    <string name="kg_finger_print_sensor_changed_error_message">Hatz aztarnen sentsorea ez da behar bezala aldatu. Jarri bezeroentzako zerbitzuekin harremanetan.</string>
+    <string name="kg_finger_print_sensor_error_message">Errore bat gertatu da hatz aztarna sentsorearekin. Mezu hau behin eta berriz agertzen bada, berrabiarazi zure gailua.</string>
+    <string name="kg_finger_print_sensor_with_recalibration_error_message">Ziurtatu tekla nagusia garbi eta lehor dagoela eta saiatu berriz.</string>
+    <string name="kg_fingerprint_direction_active_instructions">Irekitzeko, erabili hatz aztarna edo marraztu keinu segida</string>
+    <string name="kg_fingerprint_direction_none_instructions">Erabili hatz aztarna edo marraztu mugimendua</string>
+    <string name="kg_fingerprint_no_match">Emaitzarik ez</string>
+    <string name="kg_fingerprint_or_swipe_active_instructions">Erabili hatz marka edo irristatu pantailan irekitzeko</string>
+    <string name="kg_fingerprint_or_swipe_active_voice_assistant_instructions">Irekitzeko, erabili hatz aztarna edo irristatu pantailan zehar bi hatzez</string>
+    <string name="kg_fingerprint_or_swipe_unlock_instructions">Erabili hatz marka edo irristatu pantailan desblokeatzeko</string>
+    <string name="kg_fingerprint_or_swipe_unlock_voice_assistant_instructions">Desblokeatzeko, erabili hatz aztarna edo irristatu pantailan zehar bi hatzez</string>
+    <string name="kg_fingerprint_password_active_instructions">Irekitzeko, erabili hatz aztarna edo idatzi pasahitza</string>
+    <string name="kg_fingerprint_password_none_instructions">Erabili hatz aztarna edo adierazi pasahitza</string>
+    <string name="kg_fingerprint_pattern_active_instructions">Irekitzeko, erabili hatz aztarna edo marraztu patroia</string>
+    <string name="kg_fingerprint_pattern_none_instructions">Erabili hatz aztarna edo marraztu desblokeatze patroia</string>
+    <string name="kg_fingerprint_pin_active_instructions">Irekitzeko, erabili hatz aztarna edo idatzi PINa</string>
+    <string name="kg_fingerprint_pin_none_instructions">Erabili hatz aztarna edo adierazi PINa</string>
+    <string name="kg_fingerprints_direction_bouncer_instructions">Irekitzeko, erabili hatz aztarna edo marraztu keinu segida</string>
+    <string name="kg_fingerprints_direction_instructions">Erabili hatz aztarna edo marraztu mugimendua</string>
+    <string name="kg_fingerprints_direction_unabled_instructions">Gailua berrabiarazi da eta keinu segida erabiliz desblokeatu behar da. Hurrengo aldian, hatz aztarnak erabil ditzakezu gailua desblokeatzeko.</string>
+    <string name="kg_fingerprints_password_bouncer_instructions">Irekitzeko, erabili hatz aztarna edo idatzi pasahitza</string>
+    <string name="kg_fingerprints_password_instructions">Erabili hatz aztarna edo adierazi pasahitza</string>
+    <string name="kg_fingerprints_password_unabled_instructions">Gailua berrabiarazi da eta pasahitza erabiliz desblokeatu behar da. Hurrengo aldian, hatz aztarnak erabil ditzakezu gailua desblokeatzeko.</string>
+    <string name="kg_fingerprints_pattern_bouncer_instructions">Irekitzeko, erabili hatz aztarna edo marraztu patroia</string>
+    <string name="kg_fingerprints_pattern_instructions">Erabili hatz aztarna edo marraztu desblokeatze patroia</string>
+    <string name="kg_fingerprints_pattern_unabled_instructions">Gailua berrabiarazi da eta patroia erabiliz desblokeatu behar da. Hurrengo aldian, hatz aztarnak erabil ditzakezu gailua desblokeatzeko.</string>
+    <string name="kg_fingerprints_pin_bouncer_instructions">Irekitzeko, erabili hatz aztarna edo idatzi PINa</string>
+    <string name="kg_fingerprints_pin_instructions">Erabili hatz aztarna edo adierazi PINa</string>
+    <string name="kg_fingerprints_pin_unabled_instructions">Gailua berrabiarazi da eta PINa erabiliz desblokeatu behar da. Hurrengo aldian, hatz aztarnak erabil ditzakezu gailua desblokeatzeko.</string>
+    <string name="kg_flight_mode">Hegaldi modua</string>
+    <string name="kg_forgot_spass_button_text">Samsung account</string>
+    <string name="kg_hide_password_accessibility">Ezkutatu pasahitza</string>
+    <string name="kg_ib_cancel_for_dex">Utzi bertan behera Eskaneatze adimenduna</string>
+    <string name="kg_ib_cancel_text">Utzi bertan behera Eskaneatze adimenduna</string>
+    <string name="kg_ib_cover_toast_for_dex">Aurpegi bidezko hautematea ez dago erabilgarri azala erantsita dagoenean.</string>
+    <string name="kg_ib_retry_text">Ukitu ikonoa Eskaneatze adimenduna berriz probatzeko</string>
+    <string name="kg_ib_start_for_dex">Erabili Eskaneatze adimenduna telefonoan</string>
+    <string name="kg_ib_stop">Gelditu Eskaneatze adimenduna</string>
+    <string name="kg_ib_toast_preview_for_dex">Erabili Eskaneatze adimenduna telefonoan</string>
+    <string name="kg_incorrect_password">Pasahitz okerra idatzi duzu</string>
+    <string name="kg_incorrect_pattern">Patroi okerra marraztu duzu</string>
+    <string name="kg_incorrect_pin">PIN okerra adierazi duzu</string>
+    <string name="kg_infinity_wallpaper_description">Horma paper amaigabea Always On Display, Pantaila nagusian eta Blokeo pantailan aplikatuko da aldi berean.</string>
+    <string name="kg_infinity_wallpaper_description_without_aod">Horma paper amaigabea Pantaila nagusian eta Blokeo pantailan aplikatuko da aldi berean.</string>
+    <string name="kg_intelligent_direction_active_instructions">Irekitzeko, erabili Eskaneatze adimenduna edo marraztu keinu segida</string>
+    <string name="kg_intelligent_direction_none_instructions">Erabili Eskaneatze adimenduna edo marraztu keinu segida</string>
+    <string name="kg_intelligent_or_fingerprint_active_instructions">Irekitzeko, erabili hatz aztarna; Eskaneatze adimenduna erabiltzeko, berriz, irristatu pantaila</string>
+    <string name="kg_intelligent_or_fingerprint_active_voice_assistant_instructions">Irekitzeko, erabili hatz aztarna; Eskaneatze adimenduna erabiltzeko, berriz, irristatu pantaila 2 hatzez</string>
+    <string name="kg_intelligent_or_fingerprint_unlock_instructions">Desblokeatzeko, erabili hatz aztarna; Eskaneatze adimenduna erabiltzeko, berriz, irristatu pantaila</string>
+    <string name="kg_intelligent_or_fingerprint_unlock_voice_assistant_instructions">Desblokeatzeko, erabili Eskaneatze adimenduna edo irristatu pantaila 2 hatzez</string>
+    <string name="kg_intelligent_or_swipe_active_instructions">Irekitzeko, erabili Eskaneatze adimenduna edo irristatu pantaila</string>
+    <string name="kg_intelligent_or_swipe_active_voice_assistant_instructions">Desblokeatzeko, erabili Eskaneatze adimenduna edo irristatu pantaila 2 hatzez</string>
+    <string name="kg_intelligent_or_swipe_unlock_instructions">Desblokeatzeko, erabili Eskaneatze adimenduna edo irristatu pantaila</string>
+    <string name="kg_intelligent_or_swipe_unlock_voice_assistant_instructions">Desblokeatzeko, erabili Eskaneatze adimenduna edo irristatu pantaila 2 hatzez</string>
+    <string name="kg_intelligent_password_active_instructions">Irekitzeko, erabili Eskaneatze adimenduna edo idatzi pasahitza</string>
+    <string name="kg_intelligent_password_none_instructions">Erabili Eskaneatze adimenduna edo idatzi pasahitza</string>
+    <string name="kg_intelligent_pattern_active_instructions">Irekitzeko, erabili Eskaneatze adimenduna edo marraztu patroia</string>
+    <string name="kg_intelligent_pattern_none_instructions">Erabili Eskaneatze adimenduna edo marraztu patroia</string>
+    <string name="kg_intelligent_pin_active_instructions">Irekitzeko, erabili Eskaneatze adimenduna edo idatzi PINa</string>
+    <string name="kg_intelligent_pin_none_instructions">Erabili Eskaneatze adimenduna edo idatzi PINa</string>
+    <string name="kg_intelligent_retry_content_description">Ukitu bi aldiz Eskaneatze adimenduna erabiltzeko.</string>
+    <string name="kg_intelligent_unlock_instructions">Eskaneatze adimendunarekin desblokeatzeko, irristatu pantaila</string>
+    <string name="kg_intelligent_unlock_voice_assistant_instructions">Desblokeatzeko, erabili Eskaneatze adimenduna edo irristatu pantaila 2 hatzez</string>
+    <string name="kg_iris_1st_active_instructions">Irekitzeko, erabili irisak edo irristatu pantailan zehar</string>
+    <string name="kg_iris_1st_active_voice_assistant_instructions">Irekitzeko, erabili irisak edo irristatu pantailan zehar bi hatzez</string>
+    <string name="kg_iris_1st_unlock_instructions">Desblokeatzeko, erabili irisak edo irristatu pantailan</string>
+    <string name="kg_iris_1st_unlock_voice_assistant_instructions">Desblokeatzeko, erabili irisak edo irristatu pantailan zehar bi hatzez.</string>
+    <string name="kg_iris_cancel">Utzi irisen hautematea</string>
+    <string name="kg_iris_cancel_for_dex">Utzi iris bidezko hautematea</string>
+    <string name="kg_iris_cover_clear_view_toast_for_dex">Iris bidezko hautematea ez dago erabilgarri Clear View Cover erantsita dagoenean.</string>
+    <string name="kg_iris_cover_led_view_toast_for_dex">Iris bidezko hautematea ez dago erabilgarri LED View Cover erantsita dagoenean.</string>
+    <string name="kg_iris_cover_s_view_toast_for_dex">Iris bidezko hautematea ez dago erabilgarri S View Cover erantsita dagoenean.</string>
+    <string name="kg_iris_cover_toast_for_dex">Iris bidezko hautematea ez dago erabilgarri azala erantsita dagoenean.</string>
+    <string name="kg_iris_direction_active_instructions">Irekitzeko, erabili irisak edo marraztu keinu segidak</string>
+    <string name="kg_iris_direction_instructions">Erabili irisak edo marraztu keinu segida</string>
+    <string name="kg_iris_direction_none_instructions">Erabili irisak edo marraztu keinu segida</string>
+    <string name="kg_iris_no_match">Ez dago emaitzarik</string>
+    <string name="kg_iris_or_fingerprint_active_instructions">Irekitzeko, erabili hatz aztarna, edo irristatu pantaila irisak erabiltzeko</string>
+    <string name="kg_iris_or_fingerprint_active_voice_assistant_instructions">Irekitzeko, erabili hatz aztarna; irisak erabiltzeko, berriz, irristatu pantailan zehar bi hatzez</string>
+    <string name="kg_iris_or_fingerprint_unlock_instructions">Desblok., erabili hatz aztarna edo irrist. pant. irisak erabiltzeko</string>
+    <string name="kg_iris_or_fingerprint_unlock_voice_assistant_instructions">Desblokeatzeko, erabili hatz aztarna; irisak erabiltzeko, berriz, irristatu pantailan zehar bi hatzez</string>
+    <string name="kg_iris_password_active_instructions">Irekitzeko, erabili irisak edo idatzi pasahitza</string>
+    <string name="kg_iris_password_none_instructions">Erabili irisak edo idatzi pasahitza</string>
+    <string name="kg_iris_pattern_active_instructions">Irekitzeko, erabili irisak edo marraztu patroia</string>
+    <string name="kg_iris_pattern_none_instructions">Erabili irisak edo marraztu patroia</string>
+    <string name="kg_iris_pattern_text_for_mkeyboard">Sakatu hau, patroia marrazteko</string>
+    <string name="kg_iris_pin_active_instructions">Irekitzeko, erabili irisak edo idatzi PINa</string>
+    <string name="kg_iris_pin_none_instructions">Erabili irisak edo idatzi PINa</string>
+    <string name="kg_iris_retry_content_description">Ukitu bi aldiz irisak eskaneatzeko.</string>
+    <string name="kg_iris_retry_text">Ukitu ikonoa iris bidezko hautematea berriz probatzeko</string>
+    <string name="kg_iris_start_for_dex">Erabili irisak telefonoan</string>
+    <string name="kg_iris_stop">Utzi iris eskaneatzea</string>
+    <string name="kg_iris_strong_auth_prompt_reason_24_timeout_universal_lock">Zure segurtasuna bermatzeko, erabili keinu segida telefonoa desblokeatzeko. Hurrengo aldian erabili ahal izango dituzu datu biometrikoak.</string>
+    <string name="kg_iris_strong_auth_prompt_reason_restarting_universal_lock">Gailua berrabiarazi da eta keinu segida erabiliz desblokeatu behar da. Hurrengo aldian, irisak erabil ditzakezu gailua desblokeatzeko.</string>
+    <string name="kg_iris_strong_auth_prompt_reason_universal_lock_security_policy">Segurtasun politika dela eta, marraztu keinu segida irisaren hautematea erabili beharrean</string>
+    <string name="kg_iris_toast_preview_for_dex">Zure nortasuna egiaztatzeko, erabili irisak telefonoan.</string>
+    <string name="kg_iris_too_many_timeout_error_text">Tenperatura altuegia da iris bidezko hautematea erabiltzeko. Itxaron telefonoa hoztu arte, eta saiatu berriz.</string>
+    <string name="kg_iris_too_many_timeout_error_toast_text">Irisen bidezko hautematearen LED adierazlea beroegi dago. Saiatu berriz geroago.</string>
+    <string name="kg_iris_unlock_instructions">Desblokeatzeko, irristatu pantaila irisak erabiltzeko</string>
+    <string name="kg_iris_unlock_voice_assistant_instructions">Irisekin desblokeatzeko, irristatu pantailan zehar bi hatzez</string>
+    <string name="kg_keycode_delete">EZABATU</string>
+    <string name="kg_keycode_ok">Ados</string>
+    <string name="kg_kor_empty_sim_puk_hint">Ez da PINa desblokeatzeko koderik (PUK) idatzi. Saiatu berriz.</string>
+    <string name="kg_kor_enter_confirm_pin_hint">Idatzi berriz USIM txartelaren PINa hura berresteko.</string>
+    <string name="kg_kor_invalid_confirm_pin_hint">PIN berriak ez datoz bat.</string>
+    <string name="kg_kor_invalid_sim_puk_hint">Sartu 8 digituko PINa desblokeatzeko kodea (PUKa)</string>
+    <string name="kg_kor_password_wrong_pin_code">PIN okerra idatzi duzu. %d saiakera geratzen zaizkizu. Jarri bezeroentzako zerbitzuekin harremanetan.</string>
+    <string name="kg_kor_puk_enter_pin_hint">"Sortu USIM txartelaren PIN berria.
+PINak 4 eta 8 digitu artean izan behar ditu."</string>
+    <string name="kg_kor_sim_pin_instructions">Idatzi USIM txartela desblokeatzeko PINa (4-8 digitu)</string>
+    <string name="kg_kor_sim_puk_instructions">Idatzi PUKa.</string>
+    <string name="kg_kor_sim_puk_remaining_attempts">"%1$d aldiz idatzi duzu PUK okerra. PUK okerra beste %2$d aldiz idatziz gero, USIM txartela behin betiko blokeatuko da.
+
+PUK kodea ez badakizu, zoaz bezeroen arretarako zerbitzura."</string>
+    <string name="kg_kor_sim_unlock_progress_dialog_message">SIM txartela desblokeatzen</string>
+    <string name="kg_kor_success_pin_message">Pasahitz berria (PINa) ondo gorde da</string>
+    <string name="kg_kor_wrong_puk_code">Desb. kodearen sarrera errorea</string>
+    <string name="kg_ktt_sim_perso_instructions">Adierazi 4 eta 8 digitu arteko pasahitza (PINa)</string>
+    <string name="kg_lockscreen_emergency_call_button_text">Larrialdi deia</string>
+    <string name="kg_login_checking_password">Kontua egiaztatzen…</string>
+    <string name="kg_login_invalid_input">Erabiltzaile edo pasahitz baliogabea</string>
+    <string name="kg_login_password_hint">Pasahitza</string>
+    <string name="kg_login_submit_button">Saioa hasi</string>
+    <string name="kg_login_username_hint">Erabiltzaile izena (helbide elektronikoa)</string>
+    <string name="kg_missing_sim_message_short">Ez dago SIM txartelik</string>
+    <string name="kg_multi_biometrics_direction_instructions">Erabili datu biometrikoak edo marraztu keinu segida</string>
+    <string name="kg_multi_biometrics_prompt_reason_timeout_universal_lock_strong_auth">Segurtasun politikak eskatzen duen bezala, marraztu keinu segida datu biometrikoak erabili beharrean</string>
+    <string name="kg_multi_biometrics_strong_auth_prompt_reason_24_timeout_universal_lock">Zure segurtasuna bermatzeko, erabili keinu segida telefonoa desblokeatzeko. Hurrengo aldian erabili ahal izango dituzu datu biometrikoak.</string>
+    <string name="kg_multi_biometrics_strong_auth_prompt_reason_restarting_universal_lock">Gailua berrabiarazi da eta keinu segida erabiliz desblokeatu behar da. Hurrengo aldian, datu biometrikoak erabil ditzakezu gailua desblokeatzeko.</string>
+    <string name="kg_multi_direction_active_instructions">Irekitzeko, erabili datu biometrikoak edo marraztu keinu segida</string>
+    <string name="kg_multi_direction_none_instructions">Erabili datu biometrikoak edo marraztu keinu segida</string>
+    <string name="kg_multi_password_active_instructions">Irekitzeko, erabili datu biometrikoak edo idatzi pasahitza</string>
+    <string name="kg_multi_password_none_instructions">Erabili datu biometrikoak edo idatzi pasahitza</string>
+    <string name="kg_multi_pattern_active_instructions">Irekitzeko, erabili datu biometrikoak edo marraztu patroia</string>
+    <string name="kg_multi_pattern_none_instructions">Erabili datu biometrikoak edo marraztu patroia</string>
+    <string name="kg_multi_pin_active_instructions">Irekitzeko, erabili datu biometrikoak edo idatzi PINa</string>
+    <string name="kg_multi_pin_none_instructions">Erabili datu biometrikoak edo idatzi PINa</string>
+    <string name="kg_n_attempts_remaining">(%d saio geratzen dira)</string>
+    <string name="kg_no_match">Ez dago emaitzarik</string>
+    <string name="kg_none_direction_1_frp">"If you do not draw the correct series of directions in the next attempt, your phone will automatically be reset to factory settings and all information on the phone will be erased.
+
+If your phone is reset, you may need to enter the Google account information (email address and password) associated with this phone to be able to use it again."</string>
+    <string name="kg_none_direction_1_reactivation">"Hurrengo saiakeran keinu segida zuzena marrazten ez baduzu, telefonoan automatikoki berrezarriko dira fabrikako ezarpenak, eta telefonoko informazio guztia ezabatu egingo da.
+
+Telefonoa berrezarri ondoren berriz erabili nahi izanez gero, telefono honekin erlazionatutako Samsung account-en informazioa idatzi beharko duzu (helbide elektronikoa eta pasahitza)."</string>
+    <string name="kg_none_direction_active_instructions">Marraztu keinuak pantaila irekitzeko</string>
+    <string name="kg_none_direction_none_frp">"If you do not draw the correct series of directions within the next %d attempts, your phone will automatically be reset to factory settings and all information on the phone will be erased.
+
+If your phone is reset, you may need to enter the Google account information (email address and password) associated with this phone to be able to use it again."</string>
+    <string name="kg_none_direction_none_instructions">Marraztu keinuak pantaila desblokeatzeko</string>
+    <string name="kg_none_direction_none_reactivation">"Hurrengo %d saiakeretan keinu segida zuzena marrazten ez baduzu, telefonoan automatikoki berrezarriko dira fabrikako ezarpenak, eta telefonoko informazio guztia ezabatu egingo da.
+
+Telefonoa berrezarri ondoren berriz erabili nahi izanez gero, telefono honekin erlazionatutako Samsung account-en informazioa idatzi beharko duzu (helbide elektronikoa eta pasahitza)."</string>
+    <string name="kg_none_face_direction_deviceadmin_instructions">Segurtasun politikak eskatzen duen bezala, marraztu keinu segida aurpegi bidezko hautematea erabili beharrean</string>
+    <string name="kg_none_face_direction_restart_instructions">Telefonoa berrabiarazi da eta keinu segida erabiliz desblokeatu behar da. Hurrengo aldian, aurpegi bidezko hautematea erabil dezakezu telefonoa desblokeatzeko.</string>
+    <string name="kg_none_face_direction_shutdown_instructions">Telefonoa itzaltzeko, erabili aurpegi bidezko hautematea edo marraztu keinu segida</string>
+    <string name="kg_none_face_direction_timeout_instructions">Zure segurtasuna bermatzeko, erabili keinu segida telefonoa desblokeatzeko. Hurrengo aldian erabili ahal izango dituzu datu biometrikoak.</string>
+    <string name="kg_none_face_password_deviceadmin_instructions">Segurtasun politikak eskatzen duen bezala, idatzi pasahitza aurpegi bidezko hautematea erabili beharrean</string>
+    <string name="kg_none_face_password_restart_instructions">Telefonoa berrabiarazi da eta pasahitza erabiliz desblokeatu behar da. Hurrengo aldian, aurpegi bidezko hautematea erabil dezakezu telefonoa desblokeatzeko.</string>
+    <string name="kg_none_face_password_shutdown_instructions">Telefonoa itzaltzeko, erabili aurpegi bidezko hautematea edo idatzi pasahitza</string>
+    <string name="kg_none_face_password_timeout_instructions">Zure segurtasuna bermatzeko, erabili pasahitza telefonoa desblokeatzeko. Hurrengo aldian erabili ahal izango dituzu datu biometrikoak.</string>
+    <string name="kg_none_face_pattern_deviceadmin_instructions">Segurtasun politikak eskatzen duen bezala, marraztu patroia aurpegi bidezko hautematea erabili beharrean</string>
+    <string name="kg_none_face_pattern_restart_instructions">Telefonoa berrabiarazi da eta patroia erabiliz desblokeatu behar da. Hurrengo aldian, aurpegi bidezko hautematea erabil dezakezu telefonoa desblokeatzeko.</string>
+    <string name="kg_none_face_pattern_shutdown_instructions">Telefonoa itzaltzeko, erabili aurpegi bidezko hautematea edo marraztu patroia</string>
+    <string name="kg_none_face_pattern_timeout_instructions">Zure segurtasuna bermatzeko, erabili patroia telefonoa desblokeatzeko. Hurrengo aldian erabili ahal izango dituzu datu biometrikoak.</string>
+    <string name="kg_none_face_pin_deviceadmin_instructions">Segurtasun politikak eskatzen duen bezala, idatzi PINa aurpegi bidezko hautematea erabili beharrean</string>
+    <string name="kg_none_face_pin_restart_instructions">Telefonoa berrabiarazi da eta PINa erabiliz desblokeatu behar da. Hurrengo aldian, aurpegi bidezko hautematea erabil dezakezu telefonoa desblokeatzeko.</string>
+    <string name="kg_none_face_pin_shutdown_instructions">Telefonoa itzaltzeko, erabili aurpegi bidezko hautematea edo idatzi PINa</string>
+    <string name="kg_none_face_pin_timeout_instructions">Zure segurtasuna bermatzeko, erabili PINa telefonoa desblokeatzeko. Hurrengo aldian erabili ahal izango dituzu datu biometrikoak.</string>
+    <string name="kg_none_facefingerprint_direction_itpolicy_instructions">Segurtasun politikak eskatzen duen bezala, erabili hatz aztarna edo marraztu keinu segida aurpegi bidezko hautematea erabili beharrean</string>
+    <string name="kg_none_facefingerprint_password_itpolicy_instructions">Segurtasun politikak eskatzen duen bezala, erabili hatz aztarna edo idatzi pasahitza aurpegi bidezko hautematea erabili beharrean</string>
+    <string name="kg_none_facefingerprint_pattern_itpolicy_instructions">Segurtasun politikak eskatzen duen bezala, erabili hatz aztarna edo marraztu patroia aurpegi bidezko hautematea erabili beharrean</string>
+    <string name="kg_none_facefingerprint_pin_itpolicy_instructions">Segurtasun politikak eskatzen duen bezala, erabili hatz aztarna edo idatzi PINa aurpegi bidezko hautematea erabili beharrean</string>
+    <string name="kg_none_fingerprint_direction_deviceadmin_instructions">Segurtasun politikak eskatzen duen bezala, marraztu keinu segida hatz aztarnak erabili beharrean</string>
+    <string name="kg_none_fingerprint_direction_restart_instructions">Telefonoa berrabiarazi da eta keinu segida erabiliz desblokeatu behar da. Hurrengo aldian, hatz aztarnak erabil ditzakezu telefonoa desblokeatzeko.</string>
+    <string name="kg_none_fingerprint_direction_shutdown_instructions">Telefonoa itzaltzeko, erabili hatz aztarna edo marraztu keinu segida</string>
+    <string name="kg_none_fingerprint_direction_timeout_instructions">Zure segurtasuna bermatzeko, erabili keinu segida telefonoa desblokeatzeko. Hurrengo aldian erabili ahal izango dituzu datu biometrikoak.</string>
+    <string name="kg_none_fingerprint_password_deviceadmin_instructions">Segurtasun politikak eskatzen duen bezala, idatzi pasahitza hatz aztarnak erabili beharrean</string>
+    <string name="kg_none_fingerprint_password_restart_instructions">Telefonoa berrabiarazi da eta pasahitza erabiliz desblokeatu behar da. Hurrengo aldian, hatz aztarnak erabil ditzakezu telefonoa desblokeatzeko.</string>
+    <string name="kg_none_fingerprint_password_shutdown_instructions">Telefonoa itzaltzeko, erabili hatz aztarna edo idatzi pasahitza</string>
+    <string name="kg_none_fingerprint_password_timeout_instructions">Zure segurtasuna bermatzeko, erabili pasahitza telefonoa desblokeatzeko. Hurrengo aldian erabili ahal izango dituzu datu biometrikoak.</string>
+    <string name="kg_none_fingerprint_pattern_deviceadmin_instructions">Segurtasun politikak eskatzen duen bezala, marraztu patroia hatz aztarnak erabili beharrean</string>
+    <string name="kg_none_fingerprint_pattern_restart_instructions">Telefonoa berrabiarazi da eta patroia erabiliz desblokeatu behar da. Hurrengo aldian, hatz aztarnak erabil ditzakezu telefonoa desblokeatzeko.</string>
+    <string name="kg_none_fingerprint_pattern_shutdown_instructions">Telefonoa itzaltzeko, erabili hatz aztarna edo marraztu patroia</string>
+    <string name="kg_none_fingerprint_pattern_timeout_instructions">Zure segurtasuna bermatzeko, erabili patroia telefonoa desblokeatzeko. Hurrengo aldian erabili ahal izango dituzu datu biometrikoak.</string>
+    <string name="kg_none_fingerprint_pin_deviceadmin_instructions">Segurtasun politikak eskatzen duen bezala, idatzi PINa hatz aztarnak erabili beharrean</string>
+    <string name="kg_none_fingerprint_pin_restart_instructions">Telefonoa berrabiarazi da eta PINa erabiliz desblokeatu behar da. Hurrengo aldian, hatz aztarnak erabil ditzakezu telefonoa desblokeatzeko.</string>
+    <string name="kg_none_fingerprint_pin_shutdown_instructions">Telefonoa itzaltzeko, erabili hatz aztarna edo idatzi PINa</string>
+    <string name="kg_none_fingerprint_pin_timeout_instructions">Zure segurtasuna bermatzeko, erabili PINa telefonoa desblokeatzeko. Hurrengo aldian erabili ahal izango dituzu datu biometrikoak.</string>
+    <string name="kg_none_intelligent_direction_deviceadmin_instructions">Segurtasun politikak eskatzen duen bezala, marraztu keinu segida Eskaneatze adimenduna erabili beharrean</string>
+    <string name="kg_none_intelligent_direction_restart_instructions">Telefonoa berrabiarazi da eta keinu segida erabiliz desblokeatu behar da. Hurrengo aldian, datu biometrikoak erabil ditzakezu telefonoa desblokeatzeko.</string>
+    <string name="kg_none_intelligent_direction_timeout_instructions">Zure segurtasuna bermatzeko, erabili keinu segida telefonoa desblokeatzeko. Hurrengo aldian erabili ahal izango dituzu datu biometrikoak.</string>
+    <string name="kg_none_intelligent_password_deviceadmin_instructions">Segurtasun politikak eskatzen duen bezala, idatzi pasahitza Eskaneatze adimenduna erabili beharrean</string>
+    <string name="kg_none_intelligent_password_restart_instructions">Telefonoa berrabiarazi da eta pasahitza erabiliz desblokeatu behar da. Hurrengo aldian, datu biometrikoak erabil ditzakezu telefonoa desblokeatzeko.</string>
+    <string name="kg_none_intelligent_password_shutdown_instructions">Telefonoa itzaltzeko, erabili Eskaneatze adimenduna edo idatzi pasahitza</string>
+    <string name="kg_none_intelligent_password_timeout_instructions">Zure segurtasuna bermatzeko, erabili patroia telefonoa desblokeatzeko. Hurrengo aldian erabili ahal izango dituzu datu biometrikoak.</string>
+    <string name="kg_none_intelligent_pattern_deviceadmin_instructions">Segurtasun politikak eskatzen duen bezala, marraztu patroia Eskaneatze adimenduna erabili beharrean</string>
+    <string name="kg_none_intelligent_pattern_restart_instructions">Telefonoa berrabiarazi da eta patroia erabiliz desblokeatu behar da. Hurrengo aldian, datu biometrikoak erabil ditzakezu telefonoa desblokeatzeko.</string>
+    <string name="kg_none_intelligent_pattern_shutdown_instructions">Telefonoa itzaltzeko, erabili Eskaneatze adimenduna edo marraztu patroia</string>
+    <string name="kg_none_intelligent_pattern_timeout_instructions">Zure segurtasuna bermatzeko, erabili patroia telefonoa desblokeatzeko. Hurrengo aldian erabili ahal izango dituzu datu biometrikoak.</string>
+    <string name="kg_none_intelligent_pin_deviceadmin_instructions">Segurtasun politikak eskatzen duen bezala, idatzi PINa Eskaneatze adimenduna erabili beharrean</string>
+    <string name="kg_none_intelligent_pin_restart_instructions">Telefonoa berrabiarazi da eta PINa erabiliz desblokeatu behar da. Hurrengo aldian, datu biometrikoak erabil ditzakezu telefonoa desblokeatzeko.</string>
+    <string name="kg_none_intelligent_pin_shutdown_instructions">Telefonoa itzaltzeko, erabili Eskaneatze adimenduna edo idatzi PINa</string>
+    <string name="kg_none_intelligent_pin_timeout_instructions">Zure segurtasuna bermatzeko, erabili PINa telefonoa desblokeatzeko. Hurrengo aldian erabili ahal izango dituzu datu biometrikoak.</string>
+    <string name="kg_none_iris_direction_deviceadmin_instructions">Segurtasun politikak eskatzen duen bezala, marraztu keinu segida irisak erabili beharrean</string>
+    <string name="kg_none_iris_direction_restart_instructions">Telefonoa berrabiarazi da eta keinu segida erabiliz desblokeatu behar da. Hurrengo aldian, irisak erabil ditzakezu telefonoa desblokeatzeko.</string>
+    <string name="kg_none_iris_direction_shutdown_instructions">Telefonoa itzaltzeko, erabili irisak edo marraztu keinu segida</string>
+    <string name="kg_none_iris_direction_timeout_instructions">Zure segurtasuna bermatzeko, erabili keinu segida telefonoa desblokeatzeko. Hurrengo aldian erabili ahal izango dituzu datu biometrikoak.</string>
+    <string name="kg_none_iris_password_deviceadmin_instructions">Segurtasun politikak eskatzen duen bezala, idatzi pasahitza irisak erabili beharrean</string>
+    <string name="kg_none_iris_password_restart_instructions">Telefonoa berrabiarazi da eta pasahitza erabiliz desblokeatu behar da. Hurrengo aldian, irisak erabil ditzakezu telefonoa desblokeatzeko.</string>
+    <string name="kg_none_iris_password_shutdown_instructions">Telefonoa itzaltzeko, erabili irisak edo idatzi pasahitza</string>
+    <string name="kg_none_iris_password_timeout_instructions">Zure segurtasuna bermatzeko, erabili pasahitza telefonoa desblokeatzeko. Hurrengo aldian erabili ahal izango dituzu datu biometrikoak.</string>
+    <string name="kg_none_iris_pattern_deviceadmin_instructions">Segurtasun politikak eskatzen duen bezala, marraztu patroia irisak erabili beharrean</string>
+    <string name="kg_none_iris_pattern_restart_instructions">Telefonoa berrabiarazi da eta patroia erabiliz desblokeatu behar da. Hurrengo aldian, irisak erabil ditzakezu telefonoa desblokeatzeko.</string>
+    <string name="kg_none_iris_pattern_shutdown_instructions">Telefonoa itzaltzeko, erabili irisak edo marraztu patroia</string>
+    <string name="kg_none_iris_pattern_timeout_instructions">Zure segurtasuna bermatzeko, erabili patroia telefonoa desblokeatzeko. Hurrengo aldian erabili ahal izango dituzu datu biometrikoak.</string>
+    <string name="kg_none_iris_pin_deviceadmin_instructions">Segurtasun politikak eskatzen duen bezala, idatzi PINa irisak erabili beharrean</string>
+    <string name="kg_none_iris_pin_restart_instructions">Telefonoa berrabiarazi da eta PINa erabiliz desblokeatu behar da. Hurrengo aldian, irisak erabil ditzakezu telefonoa desblokeatzeko.</string>
+    <string name="kg_none_iris_pin_shutdown_instructions">Telefonoa itzaltzeko, erabili irisak edo idatzi PINa</string>
+    <string name="kg_none_iris_pin_timeout_instructions">Zure segurtasuna bermatzeko, erabili PINa telefonoa desblokeatzeko. Hurrengo aldian erabili ahal izango dituzu datu biometrikoak.</string>
+    <string name="kg_none_multi_direction_deviceadmin_instructions">Segurtasun politikak eskatzen duen bezala, marraztu keinu segida datu biometrikoak erabili beharrean</string>
+    <string name="kg_none_multi_direction_restart_instructions">Telefonoa berrabiarazi da eta keinu segida erabiliz desblokeatu behar da. Hurrengo aldian, datu biometrikoak erabil ditzakezu telefonoa desblokeatzeko.</string>
+    <string name="kg_none_multi_direction_shutdown_instructions">Telefonoa itzaltzeko, erabili datu biometrikoak edo marraztu keinu segida</string>
+    <string name="kg_none_multi_direction_timeout_instructions">Zure segurtasuna bermatzeko, erabili keinu segida telefonoa desblokeatzeko. Hurrengo aldian erabili ahal izango dituzu datu biometrikoak.</string>
+    <string name="kg_none_multi_password_deviceadmin_instructions">Segurtasun politikak eskatzen duen bezala, idatzi pasahitza datu biometrikoak erabili beharrean</string>
+    <string name="kg_none_multi_password_restart_instructions">Telefonoa berrabiarazi da eta pasahitza erabiliz desblokeatu behar da. Hurrengo aldian, datu biometrikoak erabil ditzakezu telefonoa desblokeatzeko.</string>
+    <string name="kg_none_multi_password_shutdown_instructions">Telefonoa itzaltzeko, erabili datu biometrikoak edo idatzi pasahitza</string>
+    <string name="kg_none_multi_password_timeout_instructions">Zure segurtasuna bermatzeko, erabili pasahitza telefonoa desblokeatzeko. Hurrengo aldian erabili ahal izango dituzu datu biometrikoak.</string>
+    <string name="kg_none_multi_pattern_deviceadmin_instructions">Segurtasun politikak eskatzen duen bezala, marraztu patroia datu biometrikoak erabili beharrean</string>
+    <string name="kg_none_multi_pattern_restart_instructions">Telefonoa berrabiarazi da eta patroia erabiliz desblokeatu behar da. Hurrengo aldian, datu biometrikoak erabil ditzakezu telefonoa desblokeatzeko.</string>
+    <string name="kg_none_multi_pattern_shutdown_instructions">Telefonoa itzaltzeko, erabili datu biometrikoak edo marraztu patroia</string>
+    <string name="kg_none_multi_pattern_timeout_instructions">Zure segurtasuna bermatzeko, erabili patroia telefonoa desblokeatzeko. Hurrengo aldian erabili ahal izango dituzu datu biometrikoak.</string>
+    <string name="kg_none_multi_pin_deviceadmin_instructions">Segurtasun politikak eskatzen duen bezala, idatzi PINa datu biometrikoak erabili beharrean</string>
+    <string name="kg_none_multi_pin_restart_instructions">Telefonoa berrabiarazi da eta PINa erabiliz desblokeatu behar da. Hurrengo aldian, datu biometrikoak erabil ditzakezu telefonoa desblokeatzeko.</string>
+    <string name="kg_none_multi_pin_shutdown_instructions">Telefonoa itzaltzeko, erabili datu biometrikoak edo idatzi PINa</string>
+    <string name="kg_none_multi_pin_timeout_instructions">Zure segurtasuna bermatzeko, erabili PINa telefonoa desblokeatzeko. Hurrengo aldian erabili ahal izango dituzu datu biometrikoak.</string>
+    <string name="kg_none_none_direction_shutdown_instructions">Telefonoa itzaltzeko, marraztu keinu segida</string>
+    <string name="kg_none_none_password_shutdown_instructions">Telefonoa itzaltzeko, idatzi pasahitza</string>
+    <string name="kg_none_none_pattern_shutdown_instructions">Telefonoa itzaltzeko, marraztu patroia</string>
+    <string name="kg_none_none_pin_shutdown_instructions">Telefonoa itzaltzeko, idatzi PINa</string>
+    <string name="kg_none_password_1_frp">"If you do not enter the correct password in the next attempt, your phone will automatically be reset to factory settings and all information on the phone will be erased.
+
+If your phone is reset, you may need to enter the Google account information (email address and password) associated with this phone to be able to use it again."</string>
+    <string name="kg_none_password_1_reactivation">"Hurrengo %d saiakeretan pasahitz zuzena idazten ez baduzu, tabletan automatikoki berrezarriko dira fabrikako ezarpenak, eta tabletako informazio guztia ezabatu egingo da.
+
+Tableta berrezarri ondoren berriz erabili nahi izanez gero, tableta honekin erlazionatutako Samsung account-en informazioa idatzi beharko duzu (helbide elektronikoa eta pasahitza)."</string>
+    <string name="kg_none_password_active_instructions">Irekitzeko, idatzi pasahitza</string>
+    <string name="kg_none_password_none_frp">"If you do not enter the correct password within the next %d attempts, your phone will automatically be reset to factory settings and all information on the phone will be erased.
+
+If your phone is reset, you may need to enter the Google account information (email address and password) associated with this phone to be able to use it again."</string>
+    <string name="kg_none_password_none_instructions">Adierazi pasahitza</string>
+    <string name="kg_none_password_none_reactivation">"Hurrengo saiakeran pasahitz zuzena idazten ez baduzu, tabletan automatikoki berrezarriko dira fabrikako ezarpenak, eta tabletako informazio guztia ezabatu egingo da.
+
+Tableta berrezarri ondoren berriz erabili nahi izanez gero, tableta honekin erlazionatutako Samsung account-en informazioa idatzi beharko duzu (helbide elektronikoa eta pasahitza)."</string>
+    <string name="kg_none_pattern_1_frp">"If you do not enter the correct pattern in the next attempt, your phone will automatically be reset to factory settings and all information on the phone will be erased.
+
+If your phone is reset, you may need to enter the Google account information (email address and password) associated with this phone to be able to use it again."</string>
+    <string name="kg_none_pattern_1_reactivation">"Hurrengo saiakeran patroi zuzena marrazten ez baduzu, telefonoan automatikoki berrezarriko dira fabrikako ezarpenak, eta telefonoko informazio guztia ezabatu egingo da.
+
+Telefonoa berrezarri ondoren berriz erabili nahi izanez gero, telefono honekin erlazionatutako Samsung account-en informazioa idatzi beharko duzu (helbide elektronikoa eta pasahitza)."</string>
+    <string name="kg_none_pattern_active_instructions">Irekitzeko, marraztu desblokeatze patroia</string>
+    <string name="kg_none_pattern_none_frp">"If you do not enter the correct pattern within the next %d attempts, your phone will automatically be reset to factory settings and all information on the phone will be erased.
+
+If your phone is reset, you may need to enter the Google account information (email address and password) associated with this phone to be able to use it again."</string>
+    <string name="kg_none_pattern_none_instructions">Marraztu desblokeatzeko eredua</string>
+    <string name="kg_none_pattern_none_reactivation">"Hurrengo %d saiakeretan patroi zuzena marrazten ez baduzu, telefonoan automatikoki berrezarriko dira fabrikako ezarpenak, eta telefonoko informazio guztia ezabatu egingo da.
+
+Telefonoa berrezarri ondoren berriz erabili nahi izanez gero, telefono honekin erlazionatutako Samsung account-en informazioa idatzi beharko duzu (helbide elektronikoa eta pasahitza)."</string>
+    <string name="kg_none_pin_1_frp">"If you do not enter the correct PIN in the next attempt, your phone will automatically be reset to factory settings and all information on the phone will be erased.
+
+If your phone is reset, you may need to enter the Google account information (email address and password) associated with this phone to be able to use it again."</string>
+    <string name="kg_none_pin_1_reactivation">"Hurrengo saiakeran PIN zuzena idazten ez baduzu, telefonoan automatikoki berrezarriko dira fabrikako ezarpenak, eta telefonoko informazio guztia ezabatu egingo da.
+
+Telefonoa berrezarri ondoren berriz erabili nahi izanez gero, telefono honekin erlazionatutako Samsung account-en informazioa idatzi beharko duzu (helbide elektronikoa eta pasahitza)."</string>
+    <string name="kg_none_pin_active_instructions">Irekitzeko, idatzi PINa</string>
+    <string name="kg_none_pin_none_frp">"If you do not enter the correct PIN within the next %d attempts, your phone will automatically be reset to factory settings and all information on the phone will be erased.
+
+If your phone is reset, you may need to enter the Google account information (email address and password) associated with this phone to be able to use it again."</string>
+    <string name="kg_none_pin_none_instructions">Idatzi PINa</string>
+    <string name="kg_none_pin_none_reactivation">"Hurrengo %d saiakeretan PIN zuzena idazten ez baduzu, telefonoan automatikoki berrezarriko dira fabrikako ezarpenak, eta telefonoko informazio guztia ezabatu egingo da.
+
+Telefonoa berrezarri ondoren berriz erabili nahi izanez gero, telefono honekin erlazionatutako Samsung account-en informazioa idatzi beharko duzu (helbide elektronikoa eta pasahitza)."</string>
+    <string name="kg_none_recovery_none_instructions">Sartu berreskuratze pasahitza desblokeatzeko</string>
+    <string name="kg_password_hint">Arrastoa</string>
+    <string name="kg_password_hint_show">Argibidea: %s</string>
+    <string name="kg_password_perso_failed">Incorrect PIN. Check PIN and try again.</string>
+    <string name="kg_password_perso_max_failed">Incorrect PIN entered for USIM card lock. Maximum number of retries reached. Restart device or visit CS centre.</string>
+    <string name="kg_password_sub_instructions">Pasahitzak %d karaktere ditu gutxienez, 1 letra barne gutxienez.</string>
+    <string name="kg_password_sub_instructions_vzw">Pasahitzak hizkiak eta gutxienez %d karaktere izan behar ditu.</string>
+    <string name="kg_password_wrong_pin_code_one">SIM txartelaren PIN okerra idatzi duzu. 1 saiakera geratzen zaizu.</string>
+    <string name="kg_password_wrong_pin_code_other">SIM txartelaren PIN okerra idatzi duzu. %d saiakera geratzen zaizkizu.</string>
+    <string name="kg_perso_locked_message">Block other USIM</string>
+    <string name="kg_pin_locked_message">Idatzi PINa</string>
+    <string name="kg_pin_sub_instructions">PINak 4 zenbaki ditu gutxienez.</string>
+    <string name="kg_pin_sub_instructions_vzw">PINak %d zenbaki edo gehiago izan behar ditu.</string>
+    <string name="kg_power_charging">Kargatzen: %%%d</string>
+    <string name="kg_power_charging_remaining_time">%s inguru erabat kargatu arte</string>
+    <string name="kg_power_charging_wirelessly">Hari gabe kargatzen: %% %d</string>
+    <string name="kg_power_connect_charger">Konektatu kargagailua</string>
+    <string name="kg_power_fast_charging">Azkar kargatzea: %%%d</string>
+    <string name="kg_power_fast_charging_chn">Kargatze aurreratua: %%%d</string>
+    <string name="kg_power_fast_charging_wirelessly">Hari gabeko kargatze azk.: %%%d</string>
+    <string name="kg_power_fast_charging_wirelessly_chn">Hari gabe kargatzen ari da: %%%d</string>
+    <string name="kg_power_fully_charged">Osorik kargatuta</string>
+    <string name="kg_power_time_format_hour">%d h</string>
+    <string name="kg_power_time_format_hour_minute">%1$d h %2$d m</string>
+    <string name="kg_power_time_format_minute">%d min</string>
+    <string name="kg_prompt_reason_timeout_password_strong_auth">Segurtasun politika dela eta, idatzi pasahitza hatz aztarnen hautematea erabili beharrean</string>
+    <string name="kg_prompt_reason_timeout_pattern_strong_auth">Segurtasun politika dela eta, marraztu patroia hatz aztarnen hautematea erabili beharrean</string>
+    <string name="kg_prompt_reason_timeout_pin_strong_auth">Segurtasun politika dela eta, idatzi PINa hatz aztarnen hautematea erabili beharrean</string>
+    <string name="kg_prompt_reason_timeout_universal_lock_strong_auth">Segurtasun politika dela eta, marraztu keinu segida hatz aztarnen hautematea erabili beharrean</string>
+    <string name="kg_puk_locked_message">Idatzi PUKa</string>
+    <string name="kg_remained_1_attempt_countdown_1_min_with_auto_wipe">"Gailua desblokeatzeko %d saiakera izan dira. 1 saiakera geratzen zaizu gailuan fabrikako hobespen lehenetsiak berrezarri eta datu guztiak ezabatu aurretik.
+
+Saiatu berriz 1 minutu barru"</string>
+    <string name="kg_remained_1_attempt_countdown_1_sec_with_auto_wipe">"Gailua desblokeatzeko %d saiakera izan dira. 1 saiakera geratzen zaizu gailuan fabrikako ezarpen lehenetsiak berrezarri eta datu guztiak ezabatu aurretik.
+
+Saiatu berriz 1 segundo barru"</string>
+    <string name="kg_remained_1_attempt_countdown_mins_with_auto_wipe">"Gailua desblokeatzeko %1$d saiakera izan dira. 1 saiakera geratzen zaizu gailuan fabrikako hobespen lehenetsiak berrezarri eta datu guztiak ezabatu aurretik.
+
+Saiatu berriz %2$d minutu barru"</string>
+    <string name="kg_remained_1_attempt_countdown_secs_with_auto_wipe">"Gailua desblokeatzeko %1$d saiakera izan dira. 1 saiakera geratzen zaizu gailuan fabrikako ezarpen lehenetsiak berrezarri eta datu guztiak ezabatu aurretik.
+
+Saiatu berriz %2$d segundo barru"</string>
+    <string name="kg_rmm_lock_instructions">Idatzi %s zerbitzuko PINa</string>
+    <string name="kg_samsung_account_button_text">Samsung account</string>
+    <string name="kg_sec_1_failed_attempt_almost_at_wipe">Gailua desblokeatzeko saiakera bat izan da. %d saiakera geratzen zaizkizu gailuan fabrikako ezarpen lehenetsiak berrezarri eta datu guztiak ezabatu aurretik, fitxategiak eta deskargatutako aplikazioak barne.</string>
+    <string name="kg_sec_1_remaining_count_almost_at_wipe">Gailua desblokeatzeko %d saiakera izan dira. 1 saiakera geratzen zaizu gailuan fabrikako ezarpen lehenetsiak berrezarri eta datu guztiak ezabatu aurretik, fitxategiak eta deskargatutako aplikazioak barne.</string>
+    <string name="kg_sec_failed_attempts_almost_at_wipe">Gailua desblokeatzeko %1$d saiakera izan dira. %2$d saiakera geratzen zaizkizu gailuan fabrikako ezarpen lehenetsiak berrezarri eta datu guztiak ezabatu aurretik, fitxategiak eta deskargatutako aplikazioak barne.</string>
+    <string name="kg_sec_puk_enter_confirm_pin_hint">Idatzi SIM txartel berriaren PINa berriro hura berresteko.</string>
+    <string name="kg_sec_puk_enter_pin_hint">Adierazi SIM txartelaren PIN berria.</string>
+    <string name="kg_sec_sim_unlock_progress_dialog_message">SIM txartela desblokeatzen…</string>
+    <string name="kg_show_password_accessibility">Erakutsi pasahitza</string>
+    <string name="kg_sim_lock_accepted">Kodea onartuta</string>
+    <string name="kg_sim_locked_message">SIM txartela blokeatuta</string>
+    <string name="kg_sim_pin_remaining_1_attempt">1 saiakera geratzen zaizu.</string>
+    <string name="kg_sim_pin_remaining_attempts">Beste %d saio dituzu.</string>
+    <string name="kg_sim_puk_instructions">SIM txartela blokeatu da. Idatzi PUKa. Informazio gehiago lortzeko, jarri harremanetan zerbitzu hornitzailearekin.</string>
+    <string name="kg_sim_puk_remaining_1_attempt">PUK okerra beste behin idazten baduzu, SIMa blokeatuko da.</string>
+    <string name="kg_sim_puk_remaining_attempts">PUK okerra beste %d aldiz idazten baduzu, SIMa blokeatuko da.</string>
+    <string name="kg_sim_puk_tmo_help_contact_service_provider">Your PIN has been blocked. To unlock your device, contact your service provider.</string>
+    <string name="kg_sim_puk_tmo_sos_call">SOS</string>
+    <string name="kg_skt_sim_perso_instructions">Adierazi USIM txartela desblokeatzeko PINa (4 digitu)</string>
+    <string name="kg_smart_lock_content_description">Ukitu bi aldiz eta arrastatu gailua blokeatzeko.</string>
+    <string name="kg_strong_auth_prompt_reason_timeout_direction_lock">Gailua ez da erabili 24 ordutik gorako epean, eta keinu segida erabiliz desblokeatu behar da. Hurrengo aldian, hatz aztarnak erabil ditzakezu gailua desblokeatzeko.</string>
+    <string name="kg_strong_auth_prompt_reason_timeout_password">Gailua ez da erabili 24 ordutik gorako epean, eta pasahitza erabiliz desblokeatu behar da. Hurrengo aldian, hatz aztarnak erabil ditzakezu gailua desblokeatzeko.</string>
+    <string name="kg_strong_auth_prompt_reason_timeout_pattern">Gailua ez da erabili 24 ordutik gorako epean, eta patroia erabiliz desblokeatu behar da. Hurrengo aldian, hatz aztarnak erabil ditzakezu gailua desblokeatzeko.</string>
+    <string name="kg_strong_auth_prompt_reason_timeout_pin">Gailua ez da erabili 24 ordutik gorako epean, eta PINa erabiliz desblokeatu behar da. Hurrengo aldian, hatz aztarnak erabil ditzakezu gailua desblokeatzeko.</string>
+    <string name="kg_swipe_active_instructions">Irekitzeko, irristatu pantaila</string>
+    <string name="kg_swipe_unlock_instructions">Irristatu pantaila desblokeatzeko</string>
+    <string name="kg_swipe_unlock_smart_lock_instructions">Smart Lock-ek telefonoa desblokeatu du</string>
+    <string name="kg_swipe_unlock_strong_auth_instructions">Segurtasuna bermatzeko, irristatu pantailan zehar desblokeatzeko</string>
+    <string name="kg_tablet_direction_1_frp">"If you do not draw the correct series of directions in the next attempt, your tablet will automatically be reset to factory settings and all information on the tablet will be erased.
+
+If your tablet is reset, you may need to enter the Google account information (email address and password) associated with this tablet to be able to use it again."</string>
+    <string name="kg_tablet_direction_1_reactivation">"Hurrengo saiakeran keinu segida zuzena idazten ez baduzu, tabletan automatikoki berrezarriko dira fabrikako ezarpenak, eta tabletako informazio guztia ezabatu egingo da.
+
+Tableta berrezarri ondoren berriz erabili nahi izanez gero, tableta honekin erlazionatutako Samsung account-en informazioa idatzi beharko duzu (helbide elektronikoa eta pasahitza)."</string>
+    <string name="kg_tablet_direction_none_frp">"If you do not draw the correct series of directions within the next %d attempts, your tablet will automatically be reset to factory settings and all information on the tablet will be erased.
+
+If your tablet is reset, you may need to enter the Google account information (email address and password) associated with this tablet to be able to use it again."</string>
+    <string name="kg_tablet_direction_none_reactivation">"Hurrengo %d saiakeretan keinu segida zuzena idazten ez baduzu, tabletan automatikoki berrezarriko dira fabrikako ezarpenak, eta tabletako informazio guztia ezabatu egingo da.
+
+Tableta berrezarri ondoren berriz erabili nahi izanez gero, tableta honekin erlazionatutako Samsung account-en informazioa idatzi beharko duzu (helbide elektronikoa eta pasahitza)."</string>
+    <string name="kg_tablet_face_direction_restart_instructions">Tableta berrabiarazi da eta keinu segida erabiliz desblokeatu behar da. Hurrengo aldian, aurpegi bidezko hautematea erabil dezakezu tableta desblokeatzeko.</string>
+    <string name="kg_tablet_face_direction_shutdown_instructions">Tableta berrabiarazi da eta keinu segida erabiliz desblokeatu behar da. Hurrengo aldian, hatz aztarnak erabil ditzakezu tableta desblokeatzeko.</string>
+    <string name="kg_tablet_face_direction_timeout_instructions">Zure segurtasuna bermatzeko, erabili keinu segida tableta desblokeatzeko. Hurrengo aldian erabili ahal izango dituzu datu biometrikoak.</string>
+    <string name="kg_tablet_face_password_restart_instructions">Tableta berrabiarazi da eta pasahitza erabiliz desblokeatu behar da. Hurrengo aldian, aurpegi bidezko hautematea erabil dezakezu tableta desblokeatzeko.</string>
+    <string name="kg_tablet_face_password_timeout_instructions">Zure segurtasuna bermatzeko, erabili pasahitza tableta desblokeatzeko. Hurrengo aldian erabili ahal izango dituzu datu biometrikoak.</string>
+    <string name="kg_tablet_face_pattern_restart_instructions">Tableta berrabiarazi da eta patroia erabiliz desblokeatu behar da. Hurrengo aldian, aurpegi bidezko hautematea erabil dezakezu tableta desblokeatzeko.</string>
+    <string name="kg_tablet_face_pattern_timeout_instructions">Zure segurtasuna bermatzeko, erabili patroia tableta desblokeatzeko. Hurrengo aldian erabili ahal izango dituzu datu biometrikoak.</string>
+    <string name="kg_tablet_face_pin_restart_instructions">Tableta berrabiarazi da eta PINa erabiliz desblokeatu behar da. Hurrengo aldian, aurpegi bidezko hautematea erabil dezakezu tableta desblokeatzeko.</string>
+    <string name="kg_tablet_face_pin_timeout_instructions">Zure segurtasuna bermatzeko, erabili PINa tableta desblokeatzeko. Hurrengo aldian erabili ahal izango dituzu datu biometrikoak.</string>
+    <string name="kg_tablet_fingerprint_direction_restart_instructions">Tableta berrabiarazi da eta keinu segida erabiliz desblokeatu behar da. Hurrengo aldian, hatz aztarnak erabil ditzakezu tableta desblokeatzeko.</string>
+    <string name="kg_tablet_fingerprint_direction_shutdown_instructions">Tableta itzaltzeko, erabili hatz aztarna edo marraztu keinu segida</string>
+    <string name="kg_tablet_fingerprint_direction_timeout_instructions">Zure segurtasuna bermatzeko, erabili keinu segida tableta desblokeatzeko. Hurrengo aldian erabili ahal izango dituzu datu biometrikoak.</string>
+    <string name="kg_tablet_fingerprint_password_restart_instructions">Tableta berrabiarazi da eta pasahitza erabiliz desblokeatu behar da. Hurrengo aldian, hatz aztarnak erabil ditzakezu tableta desblokeatzeko.</string>
+    <string name="kg_tablet_fingerprint_password_shutdown_instructions">Tableta itzaltzeko, erabili hatz aztarna edo idatzi pasahitza</string>
+    <string name="kg_tablet_fingerprint_password_timeout_instructions">Zure segurtasuna bermatzeko, erabili pasahitza tableta desblokeatzeko. Hurrengo aldian erabili ahal izango dituzu datu biometrikoak.</string>
+    <string name="kg_tablet_fingerprint_pattern_restart_instructions">Tableta berrabiarazi da eta patroia erabiliz desblokeatu behar da. Hurrengo aldian, hatz aztarnak erabil ditzakezu tableta desblokeatzeko.</string>
+    <string name="kg_tablet_fingerprint_pattern_shutdown_instructions">Tableta itzaltzeko, erabili hatz aztarna edo marraztu patroia</string>
+    <string name="kg_tablet_fingerprint_pattern_timeout_instructions">Zure segurtasuna bermatzeko, erabili patroia tableta desblokeatzeko. Hurrengo aldian erabili ahal izango dituzu datu biometrikoak.</string>
+    <string name="kg_tablet_fingerprint_pin_restart_instructions">Tableta berrabiarazi da eta PINa erabiliz desblokeatu behar da. Hurrengo aldian, hatz aztarnak erabil ditzakezu tableta desblokeatzeko.</string>
+    <string name="kg_tablet_fingerprint_pin_shutdown_instructions">Tableta itzaltzeko, erabili hatz aztarna edo idatzi PINa</string>
+    <string name="kg_tablet_fingerprint_pin_timeout_instructions">Zure segurtasuna bermatzeko, erabili PINa tableta desblokeatzeko. Hurrengo aldian erabili ahal izango dituzu datu biometrikoak.</string>
+    <string name="kg_tablet_fingerprints_direction_unabled_instructions">Gailua berrabiarazi da eta keinu segida erabiliz desblokeatu behar da. Hurrengo aldian, hatz aztarnak erabil ditzakezu gailua desblokeatzeko.</string>
+    <string name="kg_tablet_fingerprints_password_unabled_instructions">Gailua berrabiarazi da eta pasahitza erabiliz desblokeatu behar da. Hurrengo aldian, hatz aztarnak erabil ditzakezu gailua desblokeatzeko.</string>
+    <string name="kg_tablet_fingerprints_pattern_unabled_instructions">Gailua berrabiarazi da eta patroia erabiliz desblokeatu behar da. Hurrengo aldian, hatz aztarnak erabil ditzakezu gailua desblokeatzeko.</string>
+    <string name="kg_tablet_fingerprints_pin_unabled_instructions">Gailua berrabiarazi da eta PINa erabiliz desblokeatu behar da. Hurrengo aldian, hatz aztarnak erabil ditzakezu gailua desblokeatzeko.</string>
+    <string name="kg_tablet_intelligent_password_restart_instructions">Segurtasuna bermatzeko, irristatu pantailan zehar desblokeatzeko</string>
+    <string name="kg_tablet_intelligent_password_timeout_instructions">Zure segurtasuna bermatzeko, erabili patroia tableta desblokeatzeko. Hurrengo aldian erabili ahal izango dituzu datu biometrikoak.</string>
+    <string name="kg_tablet_intelligent_pattern_restart_instructions">Segurtasuna bermatzeko, irristatu pantailan zehar desblokeatzeko</string>
+    <string name="kg_tablet_intelligent_pattern_timeout_instructions">Zure segurtasuna bermatzeko, erabili patroia tableta desblokeatzeko. Hurrengo aldian erabili ahal izango dituzu datu biometrikoak.</string>
+    <string name="kg_tablet_intelligent_pin_restart_instructions">Segurtasuna bermatzeko, irristatu pantailan zehar desblokeatzeko</string>
+    <string name="kg_tablet_intelligent_pin_timeout_instructions">Zure segurtasuna bermatzeko, erabili PINa tableta desblokeatzeko. Hurrengo aldian erabili ahal izango dituzu datu biometrikoak.</string>
+    <string name="kg_tablet_iris_direction_restart_instructions">Tableta berrabiarazi da eta keinu segida erabiliz desblokeatu behar da. Hurrengo aldian, irisak erabil ditzakezu tableta desblokeatzeko.</string>
+    <string name="kg_tablet_iris_direction_shutdown_instructions">Tableta itzaltzeko, erabili irisak edo marraztu keinu segida</string>
+    <string name="kg_tablet_iris_direction_timeout_instructions">Zure segurtasuna bermatzeko, erabili keinu segida tableta desblokeatzeko. Hurrengo aldian erabili ahal izango dituzu datu biometrikoak.</string>
+    <string name="kg_tablet_iris_password_restart_instructions">Tableta berrabiarazi da eta pasahitza erabiliz desblokeatu behar da. Hurrengo aldian, irisak erabil ditzakezu tableta desblokeatzeko.</string>
+    <string name="kg_tablet_iris_password_shutdown_instructions">Tableta itzaltzeko, erabili irisak edo idatzi pasahitza</string>
+    <string name="kg_tablet_iris_password_timeout_instructions">Zure segurtasuna bermatzeko, erabili pasahitza tableta desblokeatzeko. Hurrengo aldian erabili ahal izango dituzu datu biometrikoak.</string>
+    <string name="kg_tablet_iris_pattern_restart_instructions">Tableta berrabiarazi da eta patroia erabiliz desblokeatu behar da. Hurrengo aldian, irisak erabil ditzakezu tableta desblokeatzeko.</string>
+    <string name="kg_tablet_iris_pattern_shutdown_instructions">Tableta itzaltzeko, erabili irisak edo marraztu patroia</string>
+    <string name="kg_tablet_iris_pattern_timeout_instructions">Zure segurtasuna bermatzeko, erabili patroia tableta desblokeatzeko. Hurrengo aldian erabili ahal izango dituzu datu biometrikoak.</string>
+    <string name="kg_tablet_iris_pin_restart_instructions">Tableta berrabiarazi da eta PINa erabiliz desblokeatu behar da. Hurrengo aldian, irisak erabil ditzakezu tableta desblokeatzeko.</string>
+    <string name="kg_tablet_iris_pin_shutdown_instructions">Tableta itzaltzeko, erabili irisak edo idatzi PINa</string>
+    <string name="kg_tablet_iris_pin_timeout_instructions">Zure segurtasuna bermatzeko, erabili PINa tableta desblokeatzeko. Hurrengo aldian erabili ahal izango dituzu datu biometrikoak.</string>
+    <string name="kg_tablet_multi_direction_restart_instructions">Tableta berrabiarazi da eta keinu segida erabiliz desblokeatu behar da. Hurrengo aldian, datu biometrikoak erabil ditzakezu tableta desblokeatzeko.</string>
+    <string name="kg_tablet_multi_direction_shutdown_instructions">Tableta itzaltzeko, erabili datu biometrikoak edo marraztu keinu segida</string>
+    <string name="kg_tablet_multi_direction_timeout_instructions">Zure segurtasuna bermatzeko, erabili keinu segida tableta desblokeatzeko. Hurrengo aldian erabili ahal izango dituzu datu biometrikoak.</string>
+    <string name="kg_tablet_multi_password_restart_instructions">Tableta berrabiarazi da eta pasahitza erabiliz desblokeatu behar da. Hurrengo aldian, datu biometrikoak erabil ditzakezu tableta desblokeatzeko.</string>
+    <string name="kg_tablet_multi_password_shutdown_instructions">Tableta itzaltzeko, erabili datu biometrikoak edo idatzi pasahitza</string>
+    <string name="kg_tablet_multi_password_timeout_instructions">Zure segurtasuna bermatzeko, erabili pasahitza tableta desblokeatzeko. Hurrengo aldian erabili ahal izango dituzu datu biometrikoak.</string>
+    <string name="kg_tablet_multi_pattern_restart_instructions">Tableta berrabiarazi da eta patroia erabiliz desblokeatu behar da. Hurrengo aldian, datu biometrikoak erabil ditzakezu tableta desblokeatzeko.</string>
+    <string name="kg_tablet_multi_pattern_shutdown_instructions">Tableta itzaltzeko, erabili datu biometrikoak edo marraztu patroia</string>
+    <string name="kg_tablet_multi_pattern_timeout_instructions">Zure segurtasuna bermatzeko, erabili patroia tableta desblokeatzeko. Hurrengo aldian erabili ahal izango dituzu datu biometrikoak.</string>
+    <string name="kg_tablet_multi_pin_restart_instructions">Tableta berrabiarazi da eta PINa erabiliz desblokeatu behar da. Hurrengo aldian, datu biometrikoak erabil ditzakezu tableta desblokeatzeko.</string>
+    <string name="kg_tablet_multi_pin_shutdown_instructions">Tableta itzaltzeko, erabili datu biometrikoak edo idatzi PINa</string>
+    <string name="kg_tablet_multi_pin_timeout_instructions">Zure segurtasuna bermatzeko, erabili PINa tableta desblokeatzeko. Hurrengo aldian erabili ahal izango dituzu datu biometrikoak.</string>
+    <string name="kg_tablet_none_direction_shutdown_instructions">Tableta itzaltzeko, marraztu keinu segida</string>
+    <string name="kg_tablet_none_password_shutdown_instructions">Tableta itzaltzeko, idatzi pasahitza</string>
+    <string name="kg_tablet_none_pattern_shutdown_instructions">Tableta itzaltzeko, marraztu patroia</string>
+    <string name="kg_tablet_none_pin_shutdown_instructions">Tableta itzaltzeko, idatzi PINa</string>
+    <string name="kg_tablet_password_1_frp">"If you do not enter the correct password in the next attempt, your tablet will automatically be reset to factory settings and all information on the tablet will be erased.
+
+If your tablet is reset, you may need to enter the Google account information (email address and password) associated with this tablet to be able to use it again."</string>
+    <string name="kg_tablet_password_1_reactivation">"Hurrengo %d saiakeretan pasahitz zuzena idazten ez baduzu, telefonoan automatikoki berrezarriko dira fabrikako ezarpenak, eta telefonoko informazio guztia ezabatu egingo da.
+
+Telefonoa berrezarri ondoren berriz erabili nahi izanez gero, telefono honekin erlazionatutako Samsung account-en informazioa idatzi beharko duzu (helbide elektronikoa eta pasahitza)."</string>
+    <string name="kg_tablet_password_none_frp">"If you do not enter the correct password within the next %d attempts, your tablet will automatically be reset to factory settings and all information on the tablet will be erased.
+
+If your tablet is reset, you may need to enter the Google account information (email address and password) associated with this tablet to be able to use it again."</string>
+    <string name="kg_tablet_password_none_reactivation">"Hurrengo saiakeran pasahitz zuzena idazten ez baduzu, telefonoan automatikoki berrezarriko dira fabrikako ezarpenak, eta telefonoko informazio guztia ezabatu egingo da.
+
+Telefonoa berrezarri ondoren berriz erabili nahi izanez gero, telefono honekin erlazionatutako Samsung account-en informazioa idatzi beharko duzu (helbide elektronikoa eta pasahitza)."</string>
+    <string name="kg_tablet_pattern_1_frp">"If you do not draw the correct pattern in the next attempt, your tablet will automatically be reset to factory settings and all information on the tablet will be erased.
+
+If your tablet is reset, you may need to enter the Google account information (email address and password) associated with this tablet to be able to use it again."</string>
+    <string name="kg_tablet_pattern_1_reactivation">"Hurrengo saiakeran patroi zuzena idazten ez baduzu, tabletan automatikoki berrezarriko dira fabrikako ezarpenak, eta tabletako informazio guztia ezabatu egingo da.
+
+Tableta berrezarri ondoren berriz erabili nahi izanez gero, tableta honekin erlazionatutako Samsung account-en informazioa idatzi beharko duzu (helbide elektronikoa eta pasahitza)."</string>
+    <string name="kg_tablet_pattern_none_frp">"If you do not draw the correct pattern within the next %d attempts, your tablet will automatically be reset to factory settings and all information on the tablet will be erased.
+
+If your tablet is reset, you may need to enter the Google account information (email address and password) associated with this tablet to be able to use it again."</string>
+    <string name="kg_tablet_pattern_none_reactivation">"Hurrengo %d saiakeretan patroi zuzena idazten ez baduzu, tabletan automatikoki berrezarriko dira fabrikako ezarpenak, eta tabletako informazio guztia ezabatu egingo da.
+
+Tableta berrezarri ondoren berriz erabili nahi izanez gero, tableta honekin erlazionatutako Samsung account-en informazioa idatzi beharko duzu (helbide elektronikoa eta pasahitza)."</string>
+    <string name="kg_tablet_pin_1_frp">"If you do not enter the correct PIN in the next attempt, your tablet will automatically be reset to factory settings and all information on the tablet will be erased.
+
+If your tablet is reset, you may need to enter the Google account information (email address and password) associated with this tablet to be able to use it again."</string>
+    <string name="kg_tablet_pin_1_reactivation">"Hurrengo saiakeran PIN zuzena idazten ez baduzu, tabletan automatikoki berrezarriko dira fabrikako ezarpenak, eta tabletako informazio guztia ezabatu egingo da.
+
+Tableta berrezarri ondoren berriz erabili nahi izanez gero, tableta honekin erlazionatutako Samsung account-en informazioa idatzi beharko duzu (helbide elektronikoa eta pasahitza)."</string>
+    <string name="kg_tablet_pin_none_frp">"If you do not enter the correct PIN within the next %d attempts, your tablet will automatically be reset to factory settings and all information on the tablet will be erased.
+
+If your tablet is reset, you may need to enter the Google account information (email address and password) associated with this tablet to be able to use it again."</string>
+    <string name="kg_tablet_pin_none_reactivation">"Hurrengo %d saiakeretan PIN zuzena idazten ez baduzu, tabletan automatikoki berrezarriko dira fabrikako ezarpenak, eta tabletako informazio guztia ezabatu egingo da.
+
+Tableta berrezarri ondoren berriz erabili nahi izanez gero, tableta honekin erlazionatutako Samsung account-en informazioa idatzi beharko duzu (helbide elektronikoa eta pasahitza)."</string>
+    <string name="kg_tablet_strong_auth_prompt_reason_timeout_direction_lock">Gailua ez da erabili 24 ordutik gorako epean, eta keinu segida erabiliz desblokeatu behar da. Hurrengo aldian, hatz aztarnak erabil ditzakezu gailua desblokeatzeko.</string>
+    <string name="kg_tablet_strong_auth_prompt_reason_timeout_password">Gailua ez da erabili 24 ordutik gorako epean, eta pasahitza erabiliz desblokeatu behar da. Hurrengo aldian, hatz aztarnak erabil ditzakezu gailua desblokeatzeko.</string>
+    <string name="kg_tablet_strong_auth_prompt_reason_timeout_pattern">Gailua ez da erabili 24 ordutik gorako epean, eta patroia erabiliz desblokeatu behar da. Hurrengo aldian, hatz aztarnak erabil ditzakezu gailua desblokeatzeko.</string>
+    <string name="kg_tablet_strong_auth_prompt_reason_timeout_pin">Gailua ez da erabili 24 ordutik gorako epean, eta PINa erabiliz desblokeatu behar da. Hurrengo aldian, hatz aztarnak erabil ditzakezu gailua desblokeatzeko.</string>
+    <string name="kg_too_many_failed_attempt_countdown">Saiatu berriz 1 segundo barru</string>
+    <string name="kg_too_many_failed_attempts_countdown_1_min_with_auto_wipe">"Gailua desblokeatzeko %1$d saiakera izan dira. %2$d saiakera geratzen zaizkizu gailuan fabrikako hobespen lehenetsiak berrezarri eta datu guztiak ezabatu aurretik.
+
+Saiatu berriz 1 minutu barru"</string>
+    <string name="kg_too_many_failed_attempts_countdown_1_sec_with_auto_wipe">"Gailua desblokeatzeko %1$d saiakera izan dira. %2$d saiakera geratzen zaizkizu gailuan fabrikako ezarpen lehenetsiak berrezarri eta datu guztiak ezabatu aurretik.
+
+Saiatu berriz 1 segundo barru"</string>
+    <string name="kg_too_many_failed_attempts_countdown_mins_with_auto_wipe">"Gailua desblokeatzeko %1$d saiakera izan dira. %2$d saiakera geratzen zaizkizu gailuan fabrikako hobespen lehenetsiak berrezarri eta datu guztiak ezabatu aurretik.
+
+Saiatu berriz %3$d minutu barru"</string>
+    <string name="kg_too_many_failed_attempts_countdown_secs_with_auto_wipe">"Gailua desblokeatzeko %1$d saiakera izan dira. %2$d saiakera geratzen zaizkizu gailuan fabrikako ezarpen lehenetsiak berrezarri eta datu guztiak ezabatu aurretik.
+
+Saiatu berriz %3$d segundo barru"</string>
+    <string name="kg_too_many_failed_countdown_1_sec_with_auto_wipe">Saiatu berriz 1 segundo barru</string>
+    <string name="kg_tts_shortcut_app">Ukitu bi aldiz eta mugitu %s irekitzeko.</string>
+    <string name="kg_ucm_enter_confirm_pin_hint">Berresteko, idatzi PINa berriz</string>
+    <string name="kg_ucm_invalid_confirm_pin_hint">PINak ez datoz bat</string>
+    <string name="kg_ucm_loading">Kargatzen…</string>
+    <string name="kg_ucm_password_not_matching">Txartel adimendunaren pasahitza ez dator bat telefonoan gordetako pasahitzarekin</string>
+    <string name="kg_ucm_password_wrong_puk_code">PUK okerra idatzi duzu</string>
+    <string name="kg_ucm_puk_enter_pin_hint">Idatzi PIN berria</string>
+    <string name="kg_ucm_unknown_error_occurred">Errore ezezaguna gertatu da</string>
+    <string name="kg_ucm_unlocking">Desblokeatzen…</string>
+    <string name="kg_unlock_progress">Desblokeatzen…</string>
+    <string name="kg_unlock_sim_pin_instructions">Sartu SIM txartela PINa desblokeatzeko</string>
+    <string name="kg_unlock_sim_pin_remaining_1_attempt">Adierazi SIM txartela desblokeatzeko PINa. Saiakera bakarra geratzen da.</string>
+    <string name="kg_unlock_sim_pin_remaining_attempts">Adierazi SIM txartela desblokeatzeko PINa. %d saiakera geratzen dira.</string>
+    <string name="kg_use_biometrics_first">Aurrena, erabili datu biometrikoak</string>
+    <string name="kg_use_fingerprint_first">Aurrena, erabili hatz aztarna</string>
+    <string name="kg_use_irises_first">Aurrena, erabili irisak</string>
+    <string name="kg_voice_assistant_active_instructions">Irekitzeko, irristatu pantaila bi hatzez.</string>
+    <string name="kg_voice_assistant_unlock_instructions">Irristatu bi hatzekin pantaila desblokeatzeko</string>
+    <string name="kg_voice_assistant_unlock_strong_auth_instructions">Irristatu bi hatz, pantailan desblokeatzeko</string>
+    <string name="kg_wallpaper_applied_toast">Horma papera aplikatu da blokeo pantailan.</string>
+    <string name="kg_wallpaper_applied_toast_infinity">Horma paper amaigabea Always On Display, Pantaila nagusian eta Blokeo pantailan aplikatu da.</string>
+    <string name="kg_wallpaper_applied_toast_infinity_without_aod">Horma paper amaigabea Pantaila nagusian eta Blokeo pantailan aplikatu da.</string>
+    <string name="kg_wallpaper_change_wallpaper_when_infinity_applied">Horma paper hau erabiltzen baduzu, efektu amaigabeak desaktibatuko dira.</string>
+    <string name="kg_wallpaper_changes_restrict_toast">Segurtasun politikak horma papera aldaketa mugatzen du</string>
+    <string name="kg_wallpaper_confirm_dialog_apply">Aplikatu</string>
+    <string name="kg_wallpaper_confirm_dialog_message">Horma paper hau erabiltzen baduzu, efektu amaigabeak desaktibatuko dira.</string>
+    <string name="kg_wallpaper_preview_button">Ezarri horma paper gisa</string>
+    <string name="kg_wallpaper_preview_title">Blokeo pantaila</string>
+    <string name="kg_wallpaper_preview_title_infinity">Horma paper amaigabea</string>
+    <string name="kg_wallpaper_preview_video_info">Bideoaren 15 segundo horma paper gisa erakutsiko da Blokeo pantailan.</string>
+    <string name="kg_wallpaper_preview_video_long_info">Hautatu duzun bideoa luzeegia da. Ukitu beheko botoia bideoa mozteko eta gehienez 15 segundoko luzera izan dezan.</string>
+    <string name="kg_wallpaper_preview_video_wallpaper">Bideo horma papera</string>
+    <string name="kg_warning_none_1_none_auto_wipe">Telefonoa desblokeatzeko 1 saiakera egin da. %d saiakera geratzen zaizkizu telefonoan fabrikako ezarpen lehenetsiak berrezarri eta datu guztiak ezabatu aurretik, baita fitxategiak eta deskargatutako aplikazioak ere.</string>
+    <string name="kg_warning_none_none_1_auto_wipe">Telefonoa desblokeatzeko %d saiakera egin dira. 1 saiakera geratzen zaizu telefonoan fabrikako ezarpen lehenetsiak berrezarri eta datu guztiak ezabatu aurretik, baita fitxategiak eta deskargatutako aplikazioak ere.</string>
+    <string name="kg_warning_none_none_none_auto_wipe">Telefonoa desblokeatzeko %1$d saiakera egin dira. %2$d saiakera geratzen zaizkizu telefonoan fabrikako ezarpen lehenetsiak berrezarri eta datu guztiak ezabatu aurretik, baita fitxategiak eta deskargatutako aplikazioak ere.</string>
+    <string name="kg_warning_tablet_1_none_auto_wipe">Tableta desblokeatzeko 1 saiakera egin da. %d saiakera geratzen zaizkizu tabletan fabrikako ezarpen lehenetsiak berrezarri eta datu guztiak ezabatu aurretik, baita fitxategiak eta deskargatutako aplikazioak ere.</string>
+    <string name="kg_warning_tablet_none_1_auto_wipe">Tableta desblokeatzeko %d saiakera egin dira. 1 saiakera geratzen zaizu tabletan fabrikako ezarpen lehenetsiak berrezarri eta datu guztiak ezabatu aurretik, baita fitxategiak eta deskargatutako aplikazioak ere.</string>
+    <string name="kg_warning_tablet_none_none_auto_wipe">Tableta desblokeatzeko %1$d saiakera egin dira. %2$d saiakera geratzen zaizkizu tabletan fabrikako ezarpen lehenetsiak berrezarri eta datu guztiak ezabatu aurretik, baita fitxategiak eta deskargatutako aplikazioak ere.</string>
+    <string name="kg_wrong_direction_lock">Keinu okerra marraztu da</string>
+    <string name="kg_wrong_direction_lock_vzw">Incorrect directions (%d attempts remaining)</string>
+    <string name="later">Geroago</string>
+    <string name="lock_to_app_desc">Aplikazioak ikusgai jarraituko du, aingura kentzen diozun arte.</string>
+    <string name="lock_to_app_dex_desc">Funtzio hori ez dago erabilgarri Samsung DeX moduan.</string>
+    <string name="lock_to_app_dex_title">Ezin dira ainguratu leihoak</string>
+    <string name="lock_to_app_negative">Utzi</string>
+    <string name="lock_to_app_positive">ADOS</string>
+    <string name="lock_to_app_recent_and_back">Aplikazioa desainguratzeko, sakatu eta eutsi Azkenak eta Atzera teklak aldi berean.</string>
+    <string name="lock_to_app_recent_and_back_accessibility">Aplikazio hau kentzeko, sakatu eta eutsi berriki erabilitakoen tekla.</string>
+    <string name="lock_to_app_recent_and_back_softkey">Aplikazioa desainguratzeko, ukitu eta eutsi Azkenak eta Atzera botoiei aldi berean.</string>
+    <string name="lock_to_app_recent_and_back_softkey_accessibility">Aplikazioak desainguratzeko, ukitu eta eutsi Azkenak teklari.</string>
+    <string name="lock_to_app_title">Aktibatu Ainguratu leihoak</string>
+    <string name="lock_to_app_unable_to_pin_desc">Aplikazio honek ez du onartzen Ainguratu leihoak aukera.</string>
+    <string name="lock_to_app_unable_to_pin_title">Ezin da %s ainguratu</string>
+    <string name="lock_to_app_unable_to_pin_toast">Ezin da aplikazioa ainguratu. %s itxi da. Errore ezezagun bat gertatu da.</string>
+    <string name="lockscreen_click_unlock_text">Desblokeatzeko, ukitu edozein toki</string>
+    <string name="lockscreen_nosim_text_kor_only">"Ez da hauteman USIM txartela
+Larrialdi deiak soilik"</string>
+    <string name="maximum_power_saving_mode">Bateria aurrezteko gehienezko modua</string>
+    <string name="memory_full_dialog_msg">Ez dago behar adina memoria barneko biltegian. Ezabatu fitxategi batzuk eta saiatu berriz.</string>
+    <string name="memory_full_dialog_title">Ezin da pantaila argazkia atera</string>
+    <string name="minimized_notification_talkback_description_open">Ukitu bi aldiz %s jakinarazpena irekitzeko.</string>
+    <string name="minimized_notification_talkback_desctiprion_close">Ukitu bi aldiz %s jakinarazpena ixteko.</string>
+    <string name="mobile_data_enable_toast_text">Ezin da sare mugikorretara konektatu Hegaldi modua gaituta dagoen bitartean. Ezgaitu Hegaldi modua eta saiatu berriz.</string>
+    <string name="mobile_data_roaming_disable_toast_lgt">Datu ibiltaritza ezgaitu da.</string>
+    <string name="mobile_data_roaming_title">Datu roaminga</string>
+    <string name="mobile_data_show_popup_disable">Wi-Fi sare batera konektatzen ez bazara, ezingo dituzu erabili Internet, Posta elektronikoa edo sare konexioa behar duten bestelako aplikazioak.</string>
+    <string name="mobile_data_show_popup_disable_att">AT&amp;T Video Call won’t work if mobile data is off. Also, you won’t be able to use the internet, email or other apps that need a data connection unless you use Wi-Fi.</string>
+    <string name="mobile_data_show_popup_disable_dcm">"If Mobile data is turned off, your device must be connected to a Wi-Fi network to use services that require a network connection.
+
+Mobile data will be turned off."</string>
+    <string name="mobile_data_show_popup_disable_kor_kt">Datu mugikorrak (WCDMA/LTE) desaktibatuko dira. Wi-Fi erabili ezean, ezingo dituzu erabili datu konexioa behar duten aplikazioak. Halere, multimedia mezuak bidali eta jaso ahal izango dituzu.</string>
+    <string name="mobile_data_show_popup_disable_kor_lgt">"Wi-Fi erabili ezean, aurrerantzean ezingo dituzu Internet, Posta elektronikoa edo datu konexioa behar duten bestelako aplikazioak erabili.
+
+Datu mugikorrak desaktibatuko dira."</string>
+    <string name="mobile_data_show_popup_disable_kor_skt">"Wi-Fi erabili ezean, aurrerantzean ezingo dituzu Internet, Posta elektronikoa edo datu konexioa behar duten bestelako aplikazioak erabili.
+
+Datu mugikorrak desaktibatuko dira."</string>
+    <string name="mobile_data_show_popup_disable_vzw">"Unless you use Wi-Fi, you won't be able to use the Internet, Email or other apps that require a data connection. Turn off the mobile data connection?"</string>
+    <string name="mobile_data_show_popup_disable_vzw_volte">"Your phone's Video Calling function won't work when mobile data is off. Also, you won't be able to use the Internet, Email or other apps that need a data connection unless you use Wi-Fi. Turn off the mobile data connection?"</string>
+    <string name="mobile_data_show_popup_disable_vzw_volte_tablet">Tabletaren Bideo deien funtzioak ez du funtzionatuko datu mugikorrak desaktibatuta badaude. Era berean, ezingo duzu erabili Internet, Posta elektronikoa edo datu konexioa behar duten bestelako aplikazioak Wi-Fi konexioa erabili ezean. Datu mugikorren konexioa desaktibatu?</string>
+    <string name="mobile_data_show_popup_enable_kor_kt">Datu mugikorrak aktibatuko dira. Baliteke sare mugikorretara konektatzeak kostu osagarriak eragitea zure tarifaren arabera.</string>
+    <string name="mobile_data_show_popup_enable_kor_lgt">Datu mugikorrak aktibatuko dira. Baliteke sare mugikorretara konektatzeak kostu osagarriak eragitea zure tarifaren arabera.</string>
+    <string name="mobile_data_show_popup_enable_kor_skt">Datu mugikorrak aktibatuko dira. Baliteke sare mugikorretara konektatzeak kostu osagarriak eragitea zure tarifaren arabera.</string>
+    <string name="mobile_data_show_popup_enable_kor_skt_kt">Datu mugikorrak aktibatuko dira. Baliteke sare mugikorretara konektatzeak kostu osagarriak eragitea zure tarifaren arabera.</string>
+    <string name="mobile_data_show_popup_roaming_enable">Data roaming may incur additional charges in addition to your domestic flat rate plan. Automatic updates for email or applications may also incur additional charges. Using large-data services such as video or email may incur charges over 20,000 won per minute.</string>
+    <string name="mobile_data_show_toast_airplane_mode">Ezin da sare mugikorretara konektatu Hegaldi modua gaituta dagoen bitartean. Ezgaitu Hegaldi modua eta saiatu berriz.</string>
+    <string name="mobile_data_show_toast_not_disable_during_voltecall">Unable to turn Mobile data on or off while Advanced calling enabled.</string>
+    <string name="mobile_data_title">"Datu
+mugikor."</string>
+    <string name="mobile_device_warning_toast_notification">Ibiltzen edo gidatzen ari zarela gailu mugikorra erabiltzeak istripuak sorraraz ditzake.</string>
+    <string name="mobile_hotspot_detail_connected_devices">Konektatutako gailuak</string>
+    <string name="mobile_hotspot_detail_connection_mode_allow_all">Baimendu gailu bat konektatzea</string>
+    <string name="mobile_hotspot_detail_connection_mode_allowed_device">Baimendutako gailuak bakarrik</string>
+    <string name="mobile_hotspot_detail_password">Pasahitza</string>
+    <string name="mobile_hotspot_detail_title">Partekatutako konexioa</string>
+    <string name="mobile_hotspot_detail_title_jpn">Wi-Fi ainguraketa</string>
+    <string name="mobile_hotspot_dialog_nosim_warning_message">Sartu SIM txartel bat Konexioa partekatzea eta kable bidez konektatzeko beste aukera batzuk erabiltzeko.</string>
+    <string name="mobile_hotspot_dialog_nosim_warning_message_jpn">Insert a SIM card to use Wi-Fi tethering.</string>
+    <string name="mobile_hotspot_dialog_nosim_warning_title">SIM txartelik ez</string>
+    <string name="mobile_hotspot_dialog_nosim_warning_title_jpn">Unable to enable Wi-Fi tethering</string>
+    <string name="mobile_hotspot_dialog_nousim_or_nosim_warning">Sartu UIM/SIM txartel bat, Konexio partekatzea eta kable bidez konexioa partektatzeko beste funtzio batzuk erabiltzeko.</string>
+    <string name="mobile_hotspot_dialog_smartview_off_warn_chn">WLAN konexioa partekatzea eta Smart View ezin dira aldi berean gaitu. Smart View desgaituko da.</string>
+    <string name="mobile_hotspot_dialog_smartview_off_warn_jpn">Wi-Fi bidezko konexioa partekatzea eta Smart View ezin dira aktibatu aldi berean. Smart View desaktibatu egingo da.</string>
+    <string name="mobile_hotspot_dialog_wifi_sharing_enable_text">Baliteke Wi-Fi sarea beste gailu batzuekin partekatu behar izatea. Kontuan izan zure gailua gordetako Wi-Fi sare batetik bestera alda daitekeela abisatu gabe. Zure ardura da Wi-Fi hornitzailearen baldintza guztiak betetzea.</string>
+    <string name="mobile_hotspot_dialog_wifi_sharing_enable_title">Gaitu Wi-Fi partek.</string>
+    <string name="mobile_hotspot_toast_disable_airplne_mode">Ezin da sare mugikorretara konektatu Hegaldi modua gaituta dagoen bitartean. Ezgaitu Hegaldi modua eta saiatu berriz.</string>
+    <string name="mobile_hotspot_toast_internet_sharing">Internet partekatzea</string>
+    <string name="mobile_hotspot_wifi_sharing">Wi-Fi partekatzea</string>
+    <string name="mobile_hotspot_wifi_sharing_Status_disabled">Ezgaituta</string>
+    <string name="mobile_hotspot_wifi_sharing_Status_enabled">Gaituta</string>
+    <string name="mobileap">Partekatutako konexioa</string>
+    <string name="multi_window">Multiwindow</string>
+    <string name="multi_window_title_text">Multiwindow</string>
+    <string name="mw_divider_button_add_app_pair">Gehitu Aplikazio parekatzea Pantaila nagusian</string>
+    <string name="mw_divider_button_add_app_pair_body">Bereizitako pantaila ikuspegian irekitako aplikazioak Pantaila nagusian gehi ditzakezu, hala nola Aplikazio parea.</string>
+    <string name="mw_divider_button_close">Itxi aplikazioa</string>
+    <string name="mw_divider_button_freeform">Ireki ikuspegi gainerakorrean</string>
+    <string name="mw_divider_button_snap">Ainguratu leihoa</string>
+    <string name="mw_divider_button_switch">Aldatu leihoak</string>
+    <string name="negative_color_title">Kolore negatiboak</string>
+    <string name="no">Ezeztatu</string>
+    <string name="no_network_connection">Ez dago sare konexiorik</string>
+    <string name="no_sim_notification_text">SIM txartela sartu</string>
+    <string name="no_sim_notification_text_cct">Insert an XFINITY Mobile SIM. To learn more, visit xfinitymobile.com/activate or call 888-936-4968.</string>
+    <string name="no_sim_notification_text_vzw">Tap for more information.</string>
+    <string name="no_sim_notification_title">Ez dago SIM txartelik</string>
+    <string name="no_sim_notification_title_cct">No SIM card detected</string>
+    <string name="no_sim_notification_title_tmo">Ez dago SIM txartelik</string>
+    <string name="no_sim_notification_title_vzw">No SIM found</string>
+    <string name="no_such_item">Ezin da bilatu irudia.</string>
+    <string name="not_support_snap_window">Ezin da erabili aplikazio hau Ainguratu leihoa ikuspegian.</string>
+    <string name="noti_direct_reply_exceed_text_limit_toast">Ezin da idatzi testu gehiago.</string>
+    <string name="noti_setting_text">Jakinarazpen ezarpenak</string>
+    <string name="noti_toast_wifi_is_not_available">WLAN ez dago erabilgarri. Baliteke sare mugikorretara konektatzeak kostu osagarriak eragitea kontratatuta duzun tarifaren arabera.</string>
+    <string name="notification_all_categories">Xehetasunak</string>
+    <string name="notification_channel_blocked">Blokeatuta</string>
+    <string name="notification_channel_ongoing">Abian</string>
+    <string name="notification_done">Eginda</string>
+    <string name="notification_group_overflow_description">%d jakinarazpen guztira</string>
+    <string name="notification_info_details">Xehetasunak</string>
+    <string name="notification_more_settings">Xehetasunak</string>
+    <string name="notification_save">Gorde</string>
+    <string name="notification_settings_icon_description">Aplikazioen jakinarazpen ezarpenak</string>
+    <string name="one_item_will_be_deleted">Pantaila argazki hau ezabatu?</string>
+    <string name="overheat_poweroff_notice_text">"Zure gailua gehiegi berotu da. Itzali egingo da kalteak saihesteko.
+
+Gehiegi berotzearen arrazoiak:
+- Denbora luzez grafikoki intentsiboak diren aplikazioak erabiltzeagatik, adibidez, jokoak eta nabigatzeko aplikazioak.
+- Fitxategi handiak transferitzeagatik.
+- Gailua ingurune bero batean erabiltzeagatik."</string>
+    <string name="overheat_poweroff_notice_title">Gailua automatikoki itzalita</string>
+    <string name="overheat_poweroff_warning_button_text">Ez itzali</string>
+    <string name="overheat_poweroff_warning_text">Zure gailua gehiegi berotzen ari da. Orain itzali egingo da, hozteko.</string>
+    <string name="overheat_poweroff_warning_text_append">Ezingo duzu gailua piztu, hozten den arte.</string>
+    <string name="overheat_poweroff_warning_text_new">Zure gailua gehiegi berotzen ari da. Hozteko, itzali egingo da %d segundo barru.</string>
+    <string name="overheat_poweroff_warning_title">Itzali gailua</string>
+    <string name="overheat_shutdown_notice_text">"Your phone got hot. It turned off to prevent damage to the phone.
+
+This can be caused by:
+Using graphics-intensive apps, like video games and navigation apps, for long periods of time.
+Downloading or uploading large files.
+Using your phone in a very hot location."</string>
+    <string name="overheat_shutdown_notice_text_tablet">"Your tablet got too hot. It turned off to prevent damage to the tablet.
+
+Overheating can be caused by:
+Using graphics intensive apps like video games and navigation apps for long periods of time.
+Downloading or uploading large files.
+Using your tablet in a very hot location."</string>
+    <string name="overheat_shutdown_notice_title">Why did my phone turn off by itself?</string>
+    <string name="overheat_shutdown_notice_title_tablet">Why did my tablet turn off by itself?</string>
+    <string name="overheat_shutdown_warning_button_text">"Don't turn off"</string>
+    <string name="overheat_shutdown_warning_text">"Your phone is getting hot.
+It will now turn off to cool down."</string>
+    <string name="overheat_shutdown_warning_text_tablet">Your tablet is getting too hot. It will now turn off to cool down.</string>
+    <string name="overheat_shutdown_warning_title">Turning off</string>
+    <string name="photo_editor">Argazki Editorea</string>
+    <string name="popupui_dialog_turn_on_button">Aktibatu</string>
+    <string name="power_supplying_low_battery_alert_body">Telefonoaren bateria kontsumituko da USB OTG kablea konektatuta dagoen bitartean. Bateria aurrezteko, deskonektatu USB OTG kablea.</string>
+    <string name="power_supplying_low_battery_alert_body_tablet">Tabletaren bateria kontsumituko da USB OTG kablea konektatuta dagoen bitartean. Bateria aurrezteko, deskonektatu USB OTG kablea.</string>
+    <string name="power_supplying_low_battery_alert_title">Bateria gutxi</string>
+    <string name="powerui_power_sharing_alert_dialog_body">"You must download the app in order to control the amount of power shared. If you connect your device to another device with the Samsung's Power Sharing Cable EP-SG900 without the app, the entire battery amount will be transferred to the other device. 
+Connect to Samsung Apps and download the application."</string>
+    <string name="qs_brightness_auto_brightness_summary">Egin argitasun doikuntzen jarraipena eta aplika itzazu automatikoki antzeko argiztapen egoeratan.</string>
+    <string name="qs_brightness_auto_brightness_summary_nopac">Egokitu automatikoki pantailaren argitasuna uneko argiztapen baldintzetan oinarrituta.</string>
+    <string name="qs_brightness_auto_brightness_title">Argitasun automatikoa</string>
+    <string name="qs_brightness_control_on_the_top_summary">Erakutsi argitasun kontrolak jakinarazpen panelaren gainean.</string>
+    <string name="qs_brightness_control_on_the_top_title">Erakutsi kontrolak goian</string>
+    <string name="qs_brightness_detail_level">Maila</string>
+    <string name="qs_brightness_detail_title">Argitasuna</string>
+    <string name="qs_brightness_eye_strain_dialog_body">"Argitasun maila handiak luzaroan erabiliz gero, begiak neka daitezke eta bateria kontsumoa areagotu.
+Argitasuna segurtasun mailatik gora ezartzeko, ukitu ADOS."</string>
+    <string name="qs_brightness_outdoor_mode_summary">Egin pantaila distiratsuago kanpoaldean ikusi ahal izateko. 15 minutu igaro ondoren, Kanpoan modua desaktibatuko da, pantaila erabiltzen ari ez bazara.</string>
+    <string name="qs_brightness_outdoor_mode_title">Kanpoan modua</string>
+    <string name="qs_contact_us">Jarri gurekin harremanetan</string>
+    <string name="qs_detail_capture_mode">Screen capture mode</string>
+    <string name="qs_detail_capture_mode_text">Select the function you want to add to the quick settings panel.</string>
+    <string name="qs_detail_capture_screen">Kapturatu pantaila</string>
+    <string name="qs_detail_flashlight_title">Linterna</string>
+    <string name="qs_detail_palm_capture_title">Irristatu esku-azpia kapturatzeko</string>
+    <string name="qs_detail_please_wait">Mesedez, itxaron…</string>
+    <string name="qs_detail_recorder_screen">Record screen</string>
+    <string name="qs_detail_secure_wifi_not_connected_toast">Wi-Fi segurua eginbideak Wi-Fi aktibatzea eskatzen du. Aktibatu Wi-Fi Ezarpenak atalean eta saiatu berriz.</string>
+    <string name="qs_detail_secure_wifi_title">Wi-Fi segurua</string>
+    <string name="qs_detail_secured_wifi_summary_off">Babestu zure pribatutasuna Interneten aritzean, eta blokeatu edo enkriptatu seguruak ez diren eskaerak.</string>
+    <string name="qs_detail_secured_wifi_summary_on">Aktibatu</string>
+    <string name="qs_detail_smart_capture_title">Kaptura osoa</string>
+    <string name="qs_edit_panel_badge_text">B</string>
+    <string name="qs_edit_setting_active_area_tapped">Ezarpen azkarrak panelean.</string>
+    <string name="qs_edit_setting_available_area_tapped">Ez dago Ezarpen azkarrak panelean.</string>
+    <string name="qs_edit_summary">Mugitu botoiak goiko eremura haiek ezarpen azkarren panelean gehitzeko.</string>
+    <string name="qs_location_consent_dialog_body_message_dcm">GPS kokapena eta zure kokapen datuen erabilera zuk erabiltzen duzun aplikazioak kontrolatzen ditu</string>
+    <string name="qs_location_consent_dialog_body_message_vzw">"Telefonoak gutxi gorabeherako kokapena parteka dezake aplikazioekin eta zerbitzuekin (adibidez, mapak, erosketa eta eguraldia).
+
+Kokapena erabiltzen duten aplikazio eta zerbitzuek horren berri emango dizute. Halakorik erabili aurretik, irakurri instalatzeko asmoa duzun aplikazioen edo zerbitzu hornitzaileen pribatutasun politikak, zure kokapenari buruzko informazioa nola biltzen, erabiltzen eta partekatzen duten ulertzeko.
+
+Zure kokapena zehazteko sare mugikorra erabiliko da. Datu erabileragatiko kostuak aplikatuko dira."</string>
+    <string name="qs_location_consent_dialog_body_message_vzw_tablet">"Tabletak gutxi gorabeherako kokapena parteka dezake aplikazioekin eta zerbitzuekin (adibidez, mapak, erosketa eta eguraldia).
+
+Kokapena erabiltzen duten aplikazio eta zerbitzuek horren berri emango dizute. Halakorik erabili aurretik, irakurri instalatzeko asmoa duzun aplikazioen edo zerbitzu hornitzaileen pribatutasun politikak, zure kokapenari buruzko informazioa nola biltzen, erabiltzen eta partekatzen duten ulertzeko.
+
+Zure kokapena zehazteko sare mugikorra erabiliko da. Datu erabileragatiko kostuak aplikatuko dira."</string>
+    <string name="qs_location_consent_dialog_title_dcm">Erabiltzaile baimena</string>
+    <string name="qs_location_consent_dialog_title_vzw">Kokapen baimena</string>
+    <string name="qs_location_detail_default_title">Kokalekua</string>
+    <string name="qs_location_detail_gps_title">GPS</string>
+    <string name="qs_location_detail_mode_battery_saving">Bateria aurreztea</string>
+    <string name="qs_location_detail_mode_battery_saving_description">Wi-Fia eta sare mugikorrak erabiltzen ditu, zure kokapena estimatzeko</string>
+    <string name="qs_location_detail_mode_high_accuracy">Zehaztasun altua</string>
+    <string name="qs_location_detail_mode_high_accuracy_description">GPSa, Wi-Fia eta sare mugikorrak erabiltzen ditu, zure kokapena estimatzeko</string>
+    <string name="qs_location_detail_mode_sensors_only_description">GPSa erabiltzen du zure kokapena estimatzeko</string>
+    <string name="qs_location_detail_mode_sensors_only_phone">Telefonoa soilik</string>
+    <string name="qs_location_detail_mode_sensors_only_tablet">Tableta soilik</string>
+    <string name="qs_location_detail_mode_summary_title">Kokapen metodoa</string>
+    <string name="qs_location_detail_summary_default">GPSa, Wi-Fia eta sare mugikorrak erabiltzen ditu, zure kokapena estimatzeko</string>
+    <string name="qs_multisim_data_preffered_btn_title">Datu mugikorrak</string>
+    <string name="qs_multisim_data_switching">"SIM txartela aldatzen…
+Saiatu berriz geroago."</string>
+    <string name="qs_multisim_data_turned_off">Desaktibatuta</string>
+    <string name="qs_multisim_sms_preffered_btn_title">Testu mezuak</string>
+    <string name="qs_multisim_voice_ask_always">Galdetu beti</string>
+    <string name="qs_multisim_voice_preffered_btn_title">Deiak</string>
+    <string name="quick_panel_data_usage">Data usage</string>
+    <string name="quick_settings_airplane_mode_label">"Hegaldia
+modua"</string>
+    <string name="quick_settings_blf_detail_seekbar">Opakutasuna</string>
+    <string name="quick_settings_blf_detail_summary">Eragotzi begiak nekatzea pantailak igortzen duen argi urdin kopurua mugatuta.</string>
+    <string name="quick_settings_bluelightfilter_detail_title">Argi urdinaren iragazkia</string>
+    <string name="quick_settings_bluelightfilter_label">"Argi urd.
+iragazkia"</string>
+    <string name="quick_settings_bluetooth_connected_devices">"%d gailu
+konektatuta"</string>
+    <string name="quick_settings_bluetooth_detail_available_devices_title">Gailu eskuragarriak</string>
+    <string name="quick_settings_bluetooth_detail_empty_text_available">Ez da Bluetooth gailurik aurkitu gertu</string>
+    <string name="quick_settings_bluetooth_detail_off_text">Piztu Bluetooth parekatzeko dauden edo parekatu dituzun gailuen zerrenda ikusteko.</string>
+    <string name="quick_settings_bluetooth_detail_paired_devices_title">Parekatutako gailuak</string>
+    <string name="quick_settings_bluetooth_label">Bluetooth</string>
+    <string name="quick_settings_data_roaming_detail_title">Datu ibiltaritza</string>
+    <string name="quick_settings_data_roaming_label">"Datu
+ibiltarit."</string>
+    <string name="quick_settings_dnd_detail_title">Ez molestatu</string>
+    <string name="quick_settings_dnd_summary">Isilarazi deiak, alertak eta multimedia edukia, hautatutako salbuespenak izan ezik.</string>
+    <string name="quick_settings_done">Eginda</string>
+    <string name="quick_settings_dual_label_content_description">%s, Botoiaren etiketa, Ukitu bi aldiz ezarpen azkarrak ikusteko.</string>
+    <string name="quick_settings_enable">Gaitu</string>
+    <string name="quick_settings_flashlight_detail_level">Maila</string>
+    <string name="quick_settings_flashlight_detail_title">Argitasuna</string>
+    <string name="quick_settings_flashlight_detail_warning">Kameraren argiak luzaroan jotzen badu azala, erredura txikiak eragin litzake. Ez utzi %s piztuta denbora luzez.</string>
+    <string name="quick_settings_flight_mode_detail_off_summary_non_volte_vzw">Airplane mode turns off all network connections, including mobile data and Wi-Fi. Turn on Wi-Fi to use apps that require a data connection.</string>
+    <string name="quick_settings_flight_mode_detail_off_summary_volte_vzw">Airplane mode turns off all network connections, including mobile data and Wi-Fi. Your phone will not be able to use Video Calling while Airplane mode is on. Turn on Wi-Fi to use apps that require a data connection.</string>
+    <string name="quick_settings_flight_mode_detail_on_summary_non_volte_vzw">Unless you use Wi-Fi, you will not be able to use the Internet, Email, or other apps that require a data connection.</string>
+    <string name="quick_settings_flight_mode_detail_on_summary_volte_vzw">Unless you use Wi-Fi, you will not be able to use Internet, Email, or other apps that require a data connection. Your phone will not be able to use Video Calling while Airplane mode is on.</string>
+    <string name="quick_settings_flight_mode_detail_summary">"Desaktibatu deiak, mezularitza eta datu mugikorrak.
+
+Wi-Fi eta Bluetooth ere desaktibatuko dira, baina berriz aktiba ditzakezu ezarpenetan edo ezarpen azkarren panelean."</string>
+    <string name="quick_settings_flight_mode_detail_title">Hegaldi modua</string>
+    <string name="quick_settings_it_policy_prevents">Segurtasun politikak %s erabiltzea galarazten du.</string>
+    <string name="quick_settings_mobile_data_detail_summary">Sartu Interneten sare mugikorraren bidez.</string>
+    <string name="quick_settings_mobile_data_detail_title">Datu mugikorrak</string>
+    <string name="quick_settings_mobile_data_label">"Datu
+mugik."</string>
+    <string name="quick_settings_mobile_hotspot_label">"Konexioa
+partekatzea"</string>
+    <string name="quick_settings_mobile_hotspot_label_jpn">"Wi-Fi
+aingur."</string>
+    <string name="quick_settings_phone_visibility_label">Telefonoaren ikusgaitasuna</string>
+    <string name="quick_settings_reading_mode_detail_title">Irakurketa modua</string>
+    <string name="quick_settings_reading_mode_label">"Irakur.
+modua"</string>
+    <string name="quick_settings_reading_mode_summary">Pantaila irakurtzeko optimizatu da. Modu hau hautatutako aplikazioetan soilik dago erabilgarri.</string>
+    <string name="quick_settings_reset">Berrezarri</string>
+    <string name="quick_settings_rotation_lock_auto_rotate">Biratu automatikoki</string>
+    <string name="quick_settings_rotation_lock_two_toggle_detail_summary">Biratu pantaila automatikoki telefonoaren orientazioa aldatzen denean.</string>
+    <string name="quick_settings_rotation_lock_two_toggle_detail_summary_for_tablet">Biratu pantaila automatikoki tabletaren orientazioa aldatzen denean.</string>
+    <string name="quick_settings_rotation_locked_landscape_label">Horizont.</string>
+    <string name="quick_settings_rotation_locked_portrait_label">Bertik.</string>
+    <string name="quick_settings_rotation_unlocked_label">"Biratu
+autom."</string>
+    <string name="quick_settings_screen_capture_label">"Capture
+screen"</string>
+    <string name="quick_settings_screen_recorder_label">"Record
+screen"</string>
+    <string name="quick_settings_sec_dnd_label">"Ez
+molestatu"</string>
+    <string name="quick_settings_settings">EZARPENAK</string>
+    <string name="quick_settings_sound_mode_detail_label">Soinu modua</string>
+    <string name="quick_settings_sound_mode_detail_mixer_dnd_turned_on">Ez molestatu modua aktibatuta</string>
+    <string name="quick_settings_sound_mode_detail_mixer_title">Bolumena</string>
+    <string name="quick_settings_sound_mode_detail_mute_remaining">Isilarazi (%s ger. dira)</string>
+    <string name="quick_settings_sound_mode_detail_temporary_mute_duration">Audio desaktib. iraupena</string>
+    <string name="quick_settings_sound_mode_detail_temporary_mute_summary">Ezartzen duzun denbora tartea igarotakoan, aurreko soinu modura aldatuko da berriz (%s). Denbora tarte hori aldatzeko, ukitu XEHETASUNAK.</string>
+    <string name="quick_settings_sound_mode_detail_temporary_mute_title">Desakt. audioa aldi batez</string>
+    <string name="quick_settings_sound_mode_mute_label">Isilarazi</string>
+    <string name="quick_settings_sound_mode_sound_label">Soinua</string>
+    <string name="quick_settings_sound_mode_vibrate_label">Bibrazioa</string>
+    <string name="quick_settings_tablet_visibility_label">"Tableta
+ikusgait."</string>
+    <string name="quick_settings_uhq_mode_label">"UHQ
+upscaler"</string>
+    <string name="quick_settings_volte_label_ZVV">4G Ahotsa</string>
+    <string name="quick_settings_volte_summary">Erabili VoLTE erabilgarri dagoenean</string>
+    <string name="quick_settings_volte_summary_zvv">Gaitu komunikazio hobetua 4G datuak erabiliz.</string>
+    <string name="quick_settings_wifi_detail_available_networks_title">Sare eskuragarriak</string>
+    <string name="quick_settings_wifi_detail_current_network_title">Sare hau</string>
+    <string name="quick_settings_wifi_detail_off_text">Sare erabilg. ikusteko, piztu Wi-Fia</string>
+    <string name="quick_settings_wifi_detail_scanning_text">Wi-Fi sareak bilatzen…</string>
+    <string name="quick_settings_wifi_label">Wi-Fi</string>
+    <string name="quick_settings_wificalling_cs_preferred">Sare mugikor hobetsia</string>
+    <string name="quick_settings_wificalling_label">"Wi-Fi
+deiak"</string>
+    <string name="quick_settings_wificalling_label_ZVV">Wi-Fi Ahotsa</string>
+    <string name="quick_settings_wificalling_summary">Erabili Wi-Fi sareak deiak edonon jasotzeko eta egiteko, sare mugikorretara konektatu behar izan gabe.</string>
+    <string name="quick_settings_wificalling_summary_with_help_noti">"Erabili Wi-Fi sareak deiak edonon egin eta jasotzeko, inongo sare mugikorretara konektatzeko beharrik gabe.
+
+Zerbitzua erabilgarri badago, Wi-Fi deien ikonoa agertuko da jakinarazpen panelean, behean erakusten den bezala."</string>
+    <string name="quick_settings_wificalling_summary_zvv">Gaitu komunikazio hobetua Wi-Fi sareak erabiliz.</string>
+    <string name="quick_settings_wificalling_wifi_only">Wi-Fi bakarrik</string>
+    <string name="quick_settings_wificalling_wifi_preferred">Wi-Fi hobetsia</string>
+    <string name="quick_settings_workmode_detail_summary">"Desgaitu %s, laneko aplikazioak, jakinarazpenak eta atzealdeko sinkronizazioa barne.
+
+Laneko etenaldirik gabe erabili ahal izango duzu telefonoa."</string>
+    <string name="recents_accessibility_message">Azkenak</string>
+    <string name="recents_app_list_more_apps">Aplikazioak</string>
+    <string name="recents_app_list_multi_window_apps">Multiwindow aplik.</string>
+    <string name="recents_app_list_recommendations">Ohiko aplikazioak</string>
+    <string name="recents_aspect_ratio_button_description">Aldatu aplikazioaren aspektu erlazioa</string>
+    <string name="recents_close_all_button_text">Itxi denak</string>
+    <string name="recents_close_button_description">Itxi</string>
+    <string name="recents_drag_freeform_hint_message">Utzi hemen ikuspegi gainerakorra izateko</string>
+    <string name="recents_drag_incompatible_app_message">Ezin da erabili aplikazio hau Multiwindow ikuspegian.</string>
+    <string name="recents_drag_split_hint_message">Utzi hemen bereizitako pantailaren ikuspegia izateko</string>
+    <string name="recents_empty_message">Ez dago berriki erabili den aplikaziorik</string>
+    <string name="recents_floating_action_button_desc">%1$s botoia</string>
+    <string name="recents_help_dlg_full_page1">Bereizitako pantailaren ikuspegia erabiltzeko, ukitu %s. Hautatu aplikazio bat pantailaren behealdean erakusteko.</string>
+    <string name="recents_help_dlg_full_page1_desc">Bereizitako pantailaren ikuspegia erabiltzeko, ukitu Ireki bereizitako pantailaren ikuspegian ikonoa. Hautatu aplikazio bat pantailaren behealdean erakusteko.</string>
+    <string name="recents_help_dlg_full_page2_hardkey">Aplikazioa pantaila osotik bereizitako pantailara aldatzeko, sakatu eta eutsi Azkenak teklari.</string>
+    <string name="recents_help_dlg_full_page2_softkey">Aplikazioa pantaila osotik bereizitako pantailara aldatzeko, ukitu eta eutsi Azkenak botoiari.</string>
+    <string name="recents_help_dlg_full_page2_softkey_snap">Ainguratu leihoa erabiltzeko, ukitu %s. Hautatu pantailaren goialdean ainguratu beharreko aplikazioaren eremu bat bereizitako pantaila ikuspegian ikusi aurretik.</string>
+    <string name="recents_help_dlg_full_page2_softkey_snap_desc">Ainguratu leihoa erabiltzeko, ukitu Ainguratu leihoa eginbidearen ikonoa. Hautatu pantailaren goialdean ainguratu beharreko aplikazioaren eremu bat bereizitako pantaila ikuspegian ikusi aurretik.</string>
+    <string name="recents_help_dlg_lock_task_page1">Aplikazioak blokeatzeko, ukitu %1$s aplikazio leihoaren izenburu barran. ITXI GUZTIAK ukituta ere ez dira kenduko aplikazio blokeatuak. Desblokeatzeko, ukitu %2$s.</string>
+    <string name="recents_help_dlg_lock_task_page1_desc">Aplikazioak blokeatzeko, ukitu Blokeo ikonoa aplikazio leihoaren izenburu barran. ITXI GUZTIAK ukituta ere ez dira kenduko aplikazio blokeatuak. Desblokeatzeko, ukitu Desblokeo ikonoa.</string>
+    <string name="recents_help_dlg_next_button_text">Hurrengoa</string>
+    <string name="recents_help_setting_button_text">Ezarpenak</string>
+    <string name="recents_help_title_split_screen_view">Zatitutako pantailaren ikuspegia</string>
+    <string name="recents_help_title_split_screen_view_action">Bereizitako pantailaren ekintza</string>
+    <string name="recents_launch_error_toast">Ezin da ireki %s.</string>
+    <string name="recents_lock_to_app_button_description">Finkatu leihoak</string>
+    <string name="recents_menu_contact_us">Jarri harremanetan</string>
+    <string name="recents_menu_help">Laguntza</string>
+    <string name="recents_menu_lock_app">Blokeatu aplikazioak</string>
+    <string name="recents_menu_more">Gehiago</string>
+    <string name="recents_menu_more_desc">Aukera gehiago</string>
+    <string name="recents_menu_settings">Ezarpenak</string>
+    <string name="recents_menu_view_type_list">Zerrenda ikuspegia</string>
+    <string name="recents_menu_view_type_thumbnail">Miniatura ikuspegia</string>
+    <string name="recents_scroll_down">Egin behera</string>
+    <string name="recents_scroll_up">Egin gora</string>
+    <string name="recents_snap_button_description">Ainguratu leihoa</string>
+    <string name="recents_split_button_description">Ireki bereizitako pantaila ikuspegian</string>
+    <string name="recents_task_lock_cancel">Utzi</string>
+    <string name="recents_task_lock_done">Eginda</string>
+    <string name="recents_task_lock_edit_lock_label">Blokeatuta</string>
+    <string name="recents_task_lock_edit_task_lock_desc">%s blokeatu da</string>
+    <string name="recents_task_lock_edit_task_unlock_desc">Desblokeatu da %s</string>
+    <string name="recents_task_lock_edit_unlock_desc">Desblokeatu %s</string>
+    <string name="recents_task_lock_edit_unlock_label">Desblokeatuta</string>
+    <string name="recents_task_lock_normal_lock_desc">Blokeatu %s</string>
+    <string name="recents_task_lock_normal_lock_label">Desblok.</string>
+    <string name="recents_task_lock_normal_unlock_toast">%s desblokeatu da.</string>
+    <string name="remote_input_send_text">Bidali</string>
+    <string name="reserve_battery_mode">Erreserbatu bateria modua</string>
+    <string name="retry">Berriro saiatu</string>
+    <string name="rotation_lock_auto_rotate">Biratu automatikoki</string>
+    <string name="rotation_lock_show_toast_mobile_keyboard_message">%s gaitzeko, askatu teklatuaren estalkia gailutik.</string>
+    <string name="safe_mode_alert_body">Telefonoa berrabiaraziko da eta aplikazio guztiak erabilgarri egongo dira berriz.</string>
+    <string name="safe_mode_alert_body_tablet">Tableta berrabiaraziko da eta aplikazio guztiak erabilgarri egongo dira berriz.</string>
+    <string name="safe_mode_alert_body_vzw">Do you want to restart your phone to turn off Safe Mode? All of your apps will be restored.</string>
+    <string name="safe_mode_alert_positive_button">Desaktibatu</string>
+    <string name="safe_mode_alert_positive_button_vzw">Turn Off Safe Mode</string>
+    <string name="safe_mode_alert_title">Modu segurua desaktibatu?</string>
+    <string name="safe_mode_alert_title_vzw">Turn Off Safe Mode</string>
+    <string name="safe_mode_noti_body">Ukitu hau Modu segurua desaktibatzeko.</string>
+    <string name="safe_mode_noti_body_vzw">Tap to turn off Safe Mode.</string>
+    <string name="safe_mode_noti_title">Modu segurua aktibatuta dago</string>
+    <string name="safe_mode_noti_title_vzw">Safe Mode Is On</string>
+    <string name="sanitized_content_text">Ukitu hemen %s-(e)ra sartzeko.</string>
+    <string name="screen_capture_delete">Ezabatu</string>
+    <string name="screen_capture_edit">Editatu</string>
+    <string name="screen_capture_fail_for_security_policy">Segurtasun politikek ez dute uzten pantaila argazkirik ateratzen.</string>
+    <string name="screen_capture_share">Partekatu</string>
+    <string name="screen_grid">Botoi sareta</string>
+    <string name="screen_grid_content_description">%1$d %2$d-ren eskutik</string>
+    <string name="screen_grid_popup_apply">Aplikatu</string>
+    <string name="screen_grid_popup_ok">ADOS</string>
+    <string name="screen_grid_popup_title">Botoi sareta</string>
+    <string name="screenshot_cancel">Utzi</string>
+    <string name="screenshot_guide_dialog_msg">Pantaila kapturak ateratzeko, sakatu eta eutsi Piztu teklari eta Bolumen teklari aldi berean.</string>
+    <string name="screenshot_guide_dialog_title">Pantailak kapturatzea</string>
+    <string name="screenshot_saved_text">Ukitu hau ikusteko.</string>
+    <string name="screenshot_saved_title">Pantaila kapturatuta</string>
+    <string name="search_more_menu_contact_us">Jarri harremanetan</string>
+    <string name="search_more_menu_for_dex">Samsung DeX-erako apl.</string>
+    <string name="search_more_menu_settings">Samsung DeX ezarpenak</string>
+    <string name="sec_accessibility_back">Atzera</string>
+    <string name="sec_accessibility_desc_recent_apps">Azkenak</string>
+    <string name="sec_accessibility_home">Hasiera</string>
+    <string name="sec_accessibility_navbar_hide_pin">Ezkutatu nabigazio barra</string>
+    <string name="sec_accessibility_navbar_show_pin">Blokeatu nabigazio barra</string>
+    <string name="sec_accessibility_recent">Azkenak</string>
+    <string name="sec_accessibility_recents_all_items_closed">Aplikazio guztiak itxi dira</string>
+    <string name="sec_accessibility_recents_all_unlocked_items_closed">Desblokeatutako aplikazio guztiak itxi dira</string>
+    <string name="sec_accessibility_recents_item_dismissed">%s itxi da.</string>
+    <string name="sec_accessibility_recents_item_open_app_info">Ireki %s informazioa</string>
+    <string name="sec_accessibility_recents_item_will_be_dismissed">Itxi %s</string>
+    <string name="sec_block_this_notification_text">Blokeatu jakinarazpena</string>
+    <string name="sec_data_usage_disabled_dialog_body">Ezarri duzun datu muga gainditu da. Datu mugikorrak berriz aktibatuz gero, baliteke kostu osagarriak sortzea.</string>
+    <string name="sec_data_usage_disabled_dialog_body_vzw">"You've reached your specified data usage limit, so mobile data has been turned off.
+
+If you turn mobile data back on, you may be charged for data usage by your carrier."</string>
+    <string name="sec_data_usage_disabled_dialog_enable">Aktibatu datu mugik.</string>
+    <string name="sec_data_usage_disabled_dialog_enable_vzw">Turn on data</string>
+    <string name="sec_data_usage_disabled_dialog_keep_off">Utzi desakt.</string>
+    <string name="sec_data_usage_disabled_dialog_mobile_title">Datu mugikorrak itzalita</string>
+    <string name="sec_data_usage_disabled_dialog_mobile_title_vzw">Mobile data is now off</string>
+    <string name="sec_data_usage_disabled_dialog_turn_off">Desaktib.</string>
+    <string name="sec_dock_non_resizeble_failed_to_dock_text">Ezin da erabili aplikazio hau Multiwindow ikuspegian.</string>
+    <string name="sec_qs_edit">Editatu</string>
+    <string name="sec_qs_unable_remove_minimum">Ezin da botoia kendu. Botoien gutxieneko kopurura (%d) iritsi zara.</string>
+    <string name="sec_quick_settings_details">Xehetasunak</string>
+    <string name="sec_quick_settings_flashlight_label">Linterna</string>
+    <string name="sec_reorder_buttons">Botoien ordena</string>
+    <string name="sec_running_foreground_services_msg">Ukitu aplikazioa zenbat bateria eta datu erabiltzen duen jakiteko.</string>
+    <string name="sec_running_foreground_services_title">Bateria erabiltzen duten aplikazioak</string>
+    <string name="servicebox_alarm_next">Hurrengo alarma</string>
+    <string name="servicebox_alarm_no_alarm">Ez dago alarmarik hurrengo 7 egunetan</string>
+    <string name="servicebox_event_calendar">Egutegia</string>
+    <string name="servicebox_event_my_event">Nire gertaera</string>
+    <string name="servicebox_event_no_events">Ez dago gertaerarik ez atazarik</string>
+    <string name="servicebox_event_open_ss">Ireki %s</string>
+    <string name="servicebox_event_task">Ataza</string>
+    <string name="servicebox_event_time_all_day">Egun osoa</string>
+    <string name="servicebox_music_closed">Musika kontrolagailua musika behar du. Desblokeatu telefonoa eta erreproduzitu musika kontrolagailua ager dadin.</string>
+    <string name="servicebox_music_description_album_cover">Albumaren azala</string>
+    <string name="servicebox_music_description_next">Hurrengoa</string>
+    <string name="servicebox_music_description_pause">Pausatu</string>
+    <string name="servicebox_music_description_play">Erreproduzitu</string>
+    <string name="servicebox_music_description_prev">Aurrekoa</string>
+    <string name="servicebox_music_lyrics">Hitzak</string>
+    <string name="servicebox_music_play_first">Musika erreproduzigailua erabili ostean, musika kontrolatu ahal izango duzu Blokeo pantailatik.</string>
+    <string name="servicebox_music_unknown">Ezezaguna</string>
+    <string name="servicebox_noti_btn">Ezarpenak</string>
+    <string name="servicebox_noti_exp">Erabili FaceWidget-ak Blokeo pantailan eta Always On Display-n musika azkar atzitzeko.</string>
+    <string name="servicebox_noti_title">FaceWidget-ak erabiltzea</string>
+    <string name="show_notification_channel_warnings">Erakutsi jakinarazpen kanalen abisuak</string>
+    <string name="show_notification_channel_warnings_summary">Erakutsi abisu bat pantailan aplikazioren batek balio duen kanalik gabeko jakinarazpenak bidaltzen dituenean.</string>
+    <string name="sim_card_tray_empty_water_protection_dialog_body">Uraren kalteak ekiditeko, ziurtatu SIM/SD txartelaren erretilua hermetikoki itxita dagoela.</string>
+    <string name="sim_card_tray_water_protection_dialog_body">"Ezin da SIM txartela hauteman. Gailuak ezingo du ekintzarik gauzatu, hala nola deiak egin eta sare mugikorretara konektatu.
+
+Uraren kalteengandik babesteko, ziurtatu SIM/SD txartelaren erretilua hermetikoki itxita dagoela."</string>
+    <string name="sim_card_tray_water_protection_dialog_title">Egiaztatu SIM/SD txartelaren erretilua</string>
+    <string name="snap_window_already_used">Ainguratu leihoa abian da jada.</string>
+    <string name="snap_window_cant_use">Ezin da erabili Ainguratu leihoa eginbidea.</string>
+    <string name="snap_window_open_app_to_used">Ainguratu leihoa erabiltzeko, ireki aplikazioa.</string>
+    <string name="snapview_cancel">Ezeztatu</string>
+    <string name="snapview_dismiss_landscape">Ainguratu leihoa baztertu da. Ezin da erabili Ainguratu leihoa ikuspegi horizontalean.</string>
+    <string name="snapview_dismiss_resize">Ainguratu leihoa baztertu da.</string>
+    <string name="snapview_done">Amaituta</string>
+    <string name="snapview_guide_text">Hautatu eremu bat pantailaren goialdean atrakatzeko.</string>
+    <string name="snapview_not_support_landscape">Ezin da erabili Ainguratu leihoa ikuspegi horizontalean.</string>
+    <string name="snapview_not_support_multiwindow">Ezin da erabili aplikazio hau Multiwindow ikuspegian.</string>
+    <string name="snooze_icon_description">Atzeratze jakinarazpena</string>
+    <string name="snooze_notification_guide_text">Behean adierazten duzun denbora igarotakoan, jakinarazpen hau agertuko da berriz.</string>
+    <string name="snooze_title">Atzerapen jakinarazpena</string>
+    <string name="status_bar_sec_airplane_mode_text">Hegaldi modua</string>
+    <string name="status_icon_alarm">Alarma</string>
+    <string name="status_icon_battery">Bateria</string>
+    <string name="status_icon_bluetooth">Bluetooth</string>
+    <string name="status_icon_data_network">Datu sarea</string>
+    <string name="status_icon_network_booster">Sare zabaltzailea</string>
+    <string name="status_icon_rssi">Seinalearen indarra</string>
+    <string name="status_icon_wifi">Wi-Fi</string>
+    <string name="statusbar_maximum_power_saving_description">Bat. aurrezt. gehi. modua aktib.</string>
+    <string name="statusbar_power_saving_description">Bateria aurrezteko modua aktibatuta</string>
+    <string name="str_not_support_multi_drop">Ezin dira gehitu elementu ugari ataza barran. Mugitu eta jaregin elementuak banaka.</string>
+    <string name="switched_to_onephone_mode">Zenbaki bakar modura aldatu da modua.</string>
+    <string name="switched_to_twophone_mode">Bi zenbaki modura aldatu da modua.</string>
+    <string name="taskbar_context_menu_app_notification_settings">Aplikazio jakinarazpenak</string>
+    <string name="taskbar_context_menu_capture_fullscreen">Pantaila kaptura osoa</string>
+    <string name="taskbar_context_menu_capture_region">Pantaila kaptura partziala</string>
+    <string name="taskbar_context_menu_clear_notification">Garbitu</string>
+    <string name="taskbar_context_menu_close">Itxi</string>
+    <string name="taskbar_context_menu_close_desk_notification_view">Ezkutatu jakinarazpenak</string>
+    <string name="taskbar_context_menu_disable">Desgaitu</string>
+    <string name="taskbar_context_menu_on_screen_keyboard">Teklatua pantailan</string>
+    <string name="taskbar_context_menu_open">Ireki</string>
+    <string name="taskbar_context_menu_open_desk_notification_view">Erakutsi jakinarazpenak</string>
+    <string name="taskbar_context_menu_open_in_new_browser">Ireki leiho berri batean</string>
+    <string name="taskbar_context_menu_physical_keyboard">Teklatu fisikoa</string>
+    <string name="taskbar_context_menu_pin">Ainguratu lasterbidea ataza barran</string>
+    <string name="taskbar_context_menu_secure_add">Gehitu Karpeta seguruan</string>
+    <string name="taskbar_context_menu_uninstall">Desinstalatu</string>
+    <string name="taskbar_context_menu_unpin">Kendu lasterb. aing. ataza barratik</string>
+    <string name="taskbar_keyboard_guided_tour_action">Ezarpenak</string>
+    <string name="taskbar_keyboard_guided_tour_message">Teklatuaren hizkuntza eta diseinua ezartzeko, sakatu EZARPENAK, edo egin klik eskuineko botoiarekin beheko ikonoan eta egin klik Teklatu fisikoan.</string>
+    <string name="taskbar_keyboard_guided_tour_title">Aldatu teklatuaren ezarpenak</string>
+    <string name="taskbar_shortcut_pinned_toast">Ainguratu da lasterbidea ataza barran.</string>
+    <string name="taskbar_shortcut_unpinned_toast">Kendu da lasterbidearen aingura ataza barratik.</string>
+    <string name="taskbar_volume_connect_audio_device">Audio irteeraren ezarpenak aldatzeko, konektatu audio gailua.</string>
+    <string name="taskbar_volume_context_menu_change_audio_path_smart_things">Audio irteera aldatzeko, %s deskargatu eta instalatu behar da.</string>
+    <string name="taskbar_volume_context_menu_download">Deskargatu</string>
+    <string name="taskbar_volume_context_menu_install_smart_things">%s instalatu?</string>
+    <string name="taskbar_volume_context_menu_smart_things">SmartThings</string>
+    <string name="tethering_attention_title">Oharra</string>
+    <string name="time_format_hour">%d h</string>
+    <string name="time_format_hour_minute">%1$d h %2$d m</string>
+    <string name="time_format_minute">%d min</string>
+    <string name="to_use_this_function_download_ps">Funtzio hau erabiltzeko, deskargatu %s.</string>
+    <string name="toast_remove_keyboard">%s erabiltzeko, kendu teklatuaren osagarria.</string>
+    <string name="tooltip_all_apps">Aplikazioak</string>
+    <string name="tooltip_close">Itxi aplikazioa</string>
+    <string name="tooltip_collapse">Tolestu</string>
+    <string name="tooltip_expand">Zabaldu</string>
+    <string name="tooltip_finder">Bilatu</string>
+    <string name="tooltip_homescreen">Etxea</string>
+    <string name="tooltip_keyboard">Teklatua</string>
+    <string name="tooltip_labs">Samsung DeX Labs</string>
+    <string name="tooltip_next_app">Hurrengo aplikazioa</string>
+    <string name="tooltip_previous_app">Aurreko aplikazioa</string>
+    <string name="tooltip_recents">Azkenak</string>
+    <string name="tooltip_screen_capture">Pantaila kaptura</string>
+    <string name="tooltip_volume">Bolumena</string>
+    <string name="tts_settings_title">Testutik hizketara</string>
+    <string name="tw_cover_volume_warning_message">Denbora luzean bolumen altuak entzuteak zure entzumena kaltetu dezake. Bolumena igotzeko, ireki azala.</string>
+    <string name="tw_safe_media_volume_warning">Bolumen altuegiko entzunaldi luzeek entzumena kaltetu dezakete. Ukitu Ados bolumena maila seguruetatik gora jartzea onartzeko.</string>
+    <string name="tw_safe_media_volume_warning_kids_mode">Bolumenak ezin du segurtasunezko muga (%s) gainditu, aurikularrak Haur moduan konektatuta dauden bitartean.</string>
+    <string name="uhq_mode_noti_text">Hobetu musika eta bideoen soinu bereizmena, soinuaren kalitatea hobea izan dadin.</string>
+    <string name="uhq_mode_noti_title">UHQ upscaler</string>
+    <string name="uhq_toast_earphone_connect_request">Konektatu aurikularrak UHQ upscaler erabiltzeko.</string>
+    <string name="unable_to_capture_screen_emergencymode">Ezin da pantaila kapturatu Larrialdi moduan bazaude.</string>
+    <string name="unable_to_capture_screen_ultrapowersaving_mode">Ezin izan da pantaila kapturatu</string>
+    <string name="unable_to_turn_on_being_used_by_camera">Ezin da aktibatu %s. Beste aplikazio bat kameraren argia erabiltzen ari da.</string>
+    <string name="uninstall_1_app_message">Aplikazioa desinstalatu nahi duzu?</string>
+    <string name="uninstall_apps_message">Hurrengo aplikazioak desinstalatuko dira:</string>
+    <string name="uninstall_cancel">Utzi</string>
+    <string name="uninstall_confirm">Ados</string>
+    <string name="uninstall_title">Aplikazioak desinstalatu?</string>
+    <string name="unintentional_lcd_on_alert_body">Halakorik berriz gerta ez dadin, egiaztatu hurbiltasun sentsorea blokeatuta ez dagoela.</string>
+    <string name="unintentional_lcd_on_alert_body2">Telefonoa erabiltzen jarraitzeko, ukitu %s.</string>
+    <string name="unintentional_lcd_on_alert_title">Ukipena blokeatu da</string>
+    <string name="volte_show_toast_airplane_mode">Ezin da VoLTE erabili, Hegaldi modua gaituta badago. Ezgaitu Hegaldi modua eta saiatu berriz.</string>
+    <string name="volte_show_toast_disable_not_allowed">Zerbitzu hornitzaileak ez du VoLTE desgaitzeko baimenik.</string>
+    <string name="volte_show_toast_enable_message">VoLTE zerbitzua erabiltzeko, harpidetu VoLTE-ra. Jarri harremanetan zerbitzu-hornitzailearekin informazio gehiago izateko.</string>
+    <string name="volte_show_toast_impossible_during_volte_call">Ezin da Erabili VoLTE eskuragarri dagoenean ezgaitu, VoLTE deietan.</string>
+    <string name="volte_show_toast_not_support_operator">Oraingo software bertsioak ez du VoLTE onartzen. Jarri harremanetan bezeroen zerbitzuekin, xehetasun gehiago izateko.</string>
+    <string name="volume_cant_change_volume_smart_view">Ezin da aldatu %s gailuaren bolumena, multimediaren bolumena isilarazita dagoen bitartean.</string>
+    <string name="volume_limiter_notice_toast">Bolumena igotzeko, joan ezarpenetara eta desaktibatu Multimedia edukiaren bolumen mugatzailea edo aldatu bolumenaren muga.</string>
+    <string name="volume_limiter_open_cover_toast">Aurrera egiteko, ireki azala.</string>
+    <string name="volume_limiter_toast_title">Bolumena mugara iritsi da</string>
+    <string name="volume_mute_all_sounds_on">Isilarazi soinu guztiak aktibatuta</string>
+    <string name="volume_stream_dual_audio">Audio duala</string>
+    <string name="volume_use_your_phone_volume_smart_view">Erabili telefonoaren Bolumen teklak %s gailuko bolumena kontrolatzeko.</string>
+    <string name="warning_alert_check">Ez erakutsi berriz</string>
+    <string name="water_protection_notification_body">Hezetasuna hauteman da. Deskonektatu kargagailua, eta itxaron kargagailua eta USB ataka lehortu arte.</string>
+    <string name="water_protection_notification_title">Desentxufatu kargadorea</string>
+    <string name="wfc_enable_dialog_opv_body0">"Wi-Fi Calling is a service of your mobile operator, Orange Polska S.A.
+Please read the description of the service provided by your operator:"</string>
+    <string name="wfc_enable_dialog_opv_body1">Wi-Fi Calling service enables you to make and receive voice calls over any Wi-Fi internet connection, even in a situation where you are outside any mobile network’s coverage. Once the service is active for your mobile number, every time you connect to a Wi-Fi network, your voice calls will be performed using Wi-Fi Calling. This will be indicated to you by a dedicated icon on the notification bar.</string>
+    <string name="wfc_enable_dialog_opv_body2">"If your Wi-Fi connection is of poor quality or your device is outside a Wi-Fi network’s coverage, your phone will make calls using an available mobile network.
+
+Calls you make with Wi-Fi Calling in Poland are charged in the same way as your regular mobile calls in your mobile tariff plan. Incoming calls in Poland are free of charge. If you make Wi-Fi Calling calls outside Poland your calls may be charged a price specified in your mobile tariff plan’s price list.
+
+Notwithstanding, your Wi-Fi connections may be charged independently by the provider of your Wi-Fi connection."</string>
+    <string name="wfc_enable_dialog_opv_body3">"Once you press the [I ACCEPT] button and your phone connects to a Wi-Fi network, your Wi-Fi Calling service will be activated. You can disable Wi-Fi Calling at any time using the phone menu.
+
+Detailed information about your Wi-Fi Calling service can be found at www.orange.pl/wificalling.
+
+Please note that in order to enable your emergency calls (e.g., such as 112 calls) to be routed to the closest emergency centre suitable for your actual location, your emergency calls made while the Wi-Fi Calling service is enabled will be carried by your device through any mobile network available at a given moment. Only in cases where no mobile network is available will an emergency call be routed via the Wi-Fi Calling service. Unfortunately, in such cases we will not know your precise location and therefore your emergency call may not be routed to the emergency centre closest to your actual location."</string>
+    <string name="wfc_enable_dialog_opv_body4">In regard to your use of Wi-Fi Calling, we – as your personal data controller – will process your data based on the number and model of the device on which you use Wi-Fi Calling, the software used on the device, the endpoint of the network used to connect with Wi-Fi Calling (including the IP address and the country to which this IP address is attributed), and the time and duration of each call, in order to perform and settle the service, answer any complaints, and to perform any statutory obligations. We will process this data for the duration of the agreement on providing telecommunication services between you and us, and after its termination – for the period of recovery of claims and of performing other tasks defined in the provisions of law. Providing the data is voluntary, but it is necessary to use the service. You have the right to access and to rectify your data.</string>
+    <string name="wfc_enable_dialog_opv_body5">Please find our data: Orange Polska S.A., address: Aleje Jerozolimskie 160, 02-326 Warsaw, Poland, registered in the Register of the Entrepreneurs of District Court for the Capital City of Warsaw in Warsaw, XII Commercial Division of the National Court Register (KRS), under entry number 0000010681, NIP (tax ID) 526-02-50-995; with share capital (fully paid up) of PLN 3,937,072,437.00.</string>
+    <string name="wfc_enable_dialog_opv_btn">Onartzen dut</string>
+    <string name="wfc_enable_dialog_opv_title">WELCOME TO WI-FI CALLING SERVICE</string>
+    <string name="wifi_ap_wifi_p2p_off_warn">Konexioa partekatzea gaitzen baduzu, Wi-Fi Direct bidez konektatuta dauden gailuak deskonektatu egingo dira.</string>
+    <string name="wifi_ap_wifi_p2p_off_warn_china">WLAN konexio partekatze eramangarria gaituz gero, WLAN Direct bidez konektatutako gailua deskonektatuko da.</string>
+    <string name="wifi_authentication_failed_kt">Ez da Wi-Fi SPa autentifikatu.</string>
+    <string name="wifi_authentication_invalid_value">Autentifikazioak huts egin du. Egiaztatu ID eta pasahitza.</string>
+    <string name="wifi_authentication_no_response">Ezin izan da Wi-Fi SPra konektatu.</string>
+    <string name="wifi_authentication_succeed_kt">Wi-Fi SPa autentifikatu da.</string>
+    <string name="wifi_auto_reconnect_disabled">Konexio automatikoa desgaituta</string>
+    <string name="wifi_connected_checking_quality">Zure Internet konexioaren kalitatea egiaztatzen…</string>
+    <string name="wifi_disabled_captive_portal">Saioa hasi behar da</string>
+    <string name="wifi_disabled_no_internet">Internet ez dago eskuragarri</string>
+    <string name="wifi_disabled_password_failure">Autentifikazio errorea gertatu da</string>
+    <string name="wifi_disconnected">Wi-Fia deskonektatuta</string>
+    <string name="wifi_empty_list_user_restricted">Ez duzu Wi-Fi ezarpenak aldatzeko baimenik.</string>
+    <string name="wifi_failed_to_obtain_IP">Ezin izan da IP helbidea lortu</string>
+    <string name="wifi_in_airplane_mode">Hegaldi moduan</string>
+    <string name="wifi_internet_may_not_be_available">Baliteke Internet erabilgarri ez egotea</string>
+    <string name="wifi_not_found_hidden_ap">Ezin da sarera konektatu. Ez da aurkitu %s izeneko sarerik.</string>
+    <string name="wifi_reconnecting">Sare kalitatea hobetzen denean konektatzeko prest</string>
+    <string name="wifi_sign_in_to_the_network">Hasi saioa sarean.</string>
+    <string name="wifi_unknown_security_type">Segurtasun mota ezezaguna</string>
+    <string name="wificalling_popup_rogers_activation_text">Wi-Fi Calling lets you call and text while on a Wi-Fi Network. Usage will be deducted from the minute and text message buckets in your Wireless plan. Click below to Activate.</string>
+    <string name="wificalling_popup_rogers_activation_title">Wi-Fi Calling Activation</string>
+    <string name="wificalling_popup_rogers_wifi_enable_text">Please connect to a Wi-Fi network to register for Wi-Fi Calling.</string>
+    <string name="wificalling_show_popup_enable_location_message">Wi-Fi deiek kokapen informazioa erabili behar dute. Kokapena gaituko da. Kokapen datu anonimoak bilduko dira eta Google-ri eta zerbitzu hornitzaileari bidaliko zaizkie. Xehetasunak lortzeko, jarri harremanetan zerbitzu hornitzailearekin.</string>
+    <string name="wificalling_show_popup_enable_location_title">Gaitu kokapena</string>
+    <string name="wificalling_show_popup_use_location_inform">Wi-Fi deiak erabiltzean, baliteke kokapen informazioa zerbitzu hornitzaileari bidaltzea. Xehetasunak lortzeko, jarri harremanetan zerbitzu hornitzailearekin.</string>
+    <string name="wificalling_show_popup_use_location_inform_ftm">Kokapenarekin erlazionatutako informazioa Google-ri eta zure operadoreari bidaliko zaie agian, Wi-Fi bidezko deiak egiteko (kokapen eginbidea aktibatu duzun ala ez kontuan hartu gabe).</string>
+    <string name="yes">Ados</string>
+    <string name="mobile_hotspot_wifi_off_warning">Konexioa partekatzea gaituz gero, Wi-Fi eginbidea desaktibatuko da.</string>
+    <string name="mobile_hotspot_wifi_off_warning_china">Konexioa partekatzea gaituz gero, WLAN desaktibatuko da.</string>
+    <string name="mobile_hotspot_wifi_off_warning_jpn">Enabling Wi-Fi tethering will turn off Wi-Fi.</string>
+</resources>

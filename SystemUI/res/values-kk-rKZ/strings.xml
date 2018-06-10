@@ -1,0 +1,1479 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="accessibility_battery_level_charging">Батарея зарядталуда, %d пайыз</string>
+    <string name="accessibility_brightness_detail_button">Жарықтық параметрлерінің панелі</string>
+    <string name="accessibility_button">Түйме</string>
+    <string name="accessibility_phone_four_bars">Телефон сигналының төрт жолағы</string>
+    <string name="accessibility_quick_settings_more_option">Қосымша опциялар</string>
+    <string name="accessibility_recent">Соңғылар</string>
+    <string name="activate">Activate</string>
+    <string name="agree">Келісемін</string>
+    <string name="airplane_mode_plmn">Ұшу режимі</string>
+    <string name="airplane_mode_show_popup_disabled_on_demo_devices">Ұшу режимі демо құрылғыларда өшірілген.</string>
+    <string name="airplane_mode_show_popup_message">Ұшу режимі қоңырау шалу, хабар алмасу және деректер желісі мүмкіндіктерін өшіруге рұқсат береді. Сондай-ақ, Wi-Fi және Bluetooth секілді қосылу мүмкіндіктерін өшіруге рұқсат береді. Wi-Fi және Bluetooth пайдалану үшін оларды “Параметрлер” ішінде немесе хабарландыру тақтасында қосыңыз.</string>
+    <string name="airplane_mode_show_popup_message_cmcc">Ұшу режимі қоңырау шалу, хабар алмасу және деректер желісі мүмкіндіктерін өшіруге рұқсат береді. Сондай-ақ, Wi-Fi және Bluetooth секілді қосылу мүмкіндіктерін өшіруге рұқсат береді. Wi-Fi және Bluetooth пайдалану үшін оларды “Параметрлер” ішінде немесе хабарландыру тақтасында қосыңыз.</string>
+    <string name="airplane_mode_show_popup_message_vzw">"Unless you use Wi-Fi, you will not be able to use the Internet, Email, or other apps that require a data connection.
+Turn on Airplane mode?"</string>
+    <string name="airplane_mode_show_popup_message_vzw_volte">"Unless you use Wi-Fi, you will not be able to use Internet, Email, Wi-Fi Calling or other apps that require a data connection.
+Turn on Airplane mode?"</string>
+    <string name="airplane_mode_show_popup_message_wifi">"Wi-Fi және Bluetooth опцияларын өшіріңіз.
+
+Оларды “Параметрлер” бөлімінде немесе жылдам параметрлер панелінде қайтадан қосуға болады."</string>
+    <string name="airplane_mode_show_popup_message_wifi_without_bluetooth">Ұшу режимі Wi-Fi қоса, желі мүмкіндіктерін өшіруге рұқсат етеді. Wi-Fi желісін пайдалану үшін оны параметрде немесе хабарландыру тақтасында қосыңыз</string>
+    <string name="airplane_mode_show_popup_message_without_bluetooth">Ұшу режимі қоңырау шалу, хабар алмасу және ұялы байланыс желілерінің функцияларын өшіруге мүмкіндік береді.</string>
+    <string name="airplane_mode_show_popup_safelock">“Құлыпталғанда өшіруді бұғаттау” қызметі қосылған кезде ұшу режимін қосу мүмкін емес. Экран құлпын ашқаннан кейін әрекетті қайталаңыз.</string>
+    <string name="airplane_mode_show_popup_summary">Қоңырау шалу, хабар алмасу мүмкіндіктерін немесе ұялы деректерді пайдалана алмайсыз.</string>
+    <string name="airplane_mode_show_popup_summary_q">Ұшақ режимін қосу керек пе?</string>
+    <string name="airplane_mode_show_popup_title">Ұшақ режимін қосу керек пе?</string>
+    <string name="airplane_mode_show_popup_title_vzw">Turn on Airplane mode</string>
+    <string name="airplane_mode_show_toast_turn_on_wifi_for_wificalling">Wi-Fi арқылы қоңырау шалуды пайдалану үшін, Wi-Fi опциясын қосыңыз.</string>
+    <string name="allow_notifications_guide_text">Осы санаттағы хабарландыруларға рұқсат беріңіз.</string>
+    <string name="app_icon_badge_guide_notification_text">Қолданбадан келген барлық хабарландыруларды босатып жіберген кезде, қолданбаның белгішесінде көрсетілген белгі де жоқ болып кетеді.</string>
+    <string name="app_icon_badge_guide_notification_title">Қолданба белгішесінің белгілері</string>
+    <string name="app_locked">App locked</string>
+    <string name="appicon_badge_new_item">1 жаңа элемент</string>
+    <string name="appicon_badge_new_items">%d жаңа элемент</string>
+    <string name="applocked_pinning_window_disable">Қолданбаны бекіту мүмкін емес. Қолданба құлыпталған.</string>
+    <string name="assistance_app_setting_alert_dialog_title">Select an app to open when you press and hold the Home key. To change the selected app later, go to Device assistance app in Settings.</string>
+    <string name="assistance_app_setting_item_none">Жоқ</string>
+    <string name="battery_cable_charging_from_wireless_to_cable_text">Сымсыз зарядтаудан кабель арқылы зарядтауға ауыстырылуда</string>
+    <string name="battery_cable_charging_title">Кабель зарядталуда</string>
+    <string name="battery_charging_level_and_time_text">"Зарядтауда: %1$d%%
+(Толық зарядталғанға дейін шамамен %2$s)"</string>
+    <string name="battery_charging_level_text">Зарядталуда: %d%%</string>
+    <string name="battery_charging_time_text">(толықтай зарядталғанға дейін %s бар)</string>
+    <string name="battery_charging_title">Зарядтау</string>
+    <string name="battery_discharging_duration">Батареяның болжалды жұмыс уақыты: %s</string>
+    <string name="battery_fast_charging_title">Жылдам зарядтау</string>
+    <string name="battery_fast_charging_title_chn">Жақсартылған зарядтау</string>
+    <string name="battery_fast_wireless_charging_title">Жылдам сымсыз зарядтау</string>
+    <string name="battery_fast_wireless_charging_title_chn">Жақсартылған сымсыз зарядтау</string>
+    <string name="battery_health_interruption_by_limit_high_temperature_text_phone">"Зарядтау тоқтатылды. Телефоныңыздың температурасы өте жоғары. Зарядтағышты ажырату кезінде абай болыңыз. Ол өте ыстық болуы мүмкін.
+
+Зарядтағышты ажыратып, оны қайтадан қосу әрекеті қалыпты жағдайда зарядтауды жалғастыруға мүмкіндік береді. Егер қызып кету қайталанса, онда Тұтынушыларға қызмет көрсету орталығына хабарласыңыз, себебі бұл өрт немесе жарақат алу қаупіне әкелуі мүмкін."</string>
+    <string name="battery_health_interruption_by_limit_high_temperature_text_tablet">"Зарядтау тоқтатылды. Планшетіңіздің температурасы өте жоғары. Зарядтағышты ажырату кезінде абай болыңыз. Ол өте ыстық болуы мүмкін.
+
+Зарядтағышты ажыратып, оны қайтадан қосу әрекеті қалыпты жағдайда зарядтауды жалғастыруға мүмкіндік береді. Егер қызып кету қайталанса, онда Тұтынушыларға қызмет көрсету орталығына хабарласыңыз, себебі бұл өрт немесе жарақат алу қаупіне әкелуі мүмкін."</string>
+    <string name="battery_health_interruption_by_limit_high_temperature_title">Зарядтағышты розеткадан суырыңыз</string>
+    <string name="battery_health_interruption_by_terminal_open_galaxy_text">Unable to charge your device. Make sure you are using a Galaxy compatible battery and charger and that your device is properly connected to the charger.</string>
+    <string name="battery_health_interruption_by_terminal_open_text">Құрылғыны зарядтау мүмкін емес. Samsung үйлесімді батарея мен зарядтағышты пайдаланыңыз және құрылғыңыздың зарядтағышқа дұрыс қосылғанын тексеріңіз.</string>
+    <string name="battery_health_interruption_by_too_high_temperature_text_phone">Телефоныңыздың температурасы өте жоғары. Температура қалыпты күйіне қайта келген кезде зарядтау жалғасады.</string>
+    <string name="battery_health_interruption_by_too_high_temperature_text_tablet">Планшетіңіздің температурасы өте жоғары. Температура қалыпты күйіне қайта келген кезде зарядтау жалғасады.</string>
+    <string name="battery_health_interruption_by_too_low_temperature_text_phone">Телефоныңыздың температурасы өте төмен. Температура қалыпты күйіне қайта келген кезде зарядтау жалғасады.</string>
+    <string name="battery_health_interruption_by_too_low_temperature_text_tablet">Планшетіңіздің температурасы өте төмен. Температура қалыпты күйіне қайта келген кезде зарядтау жалғасады.</string>
+    <string name="battery_health_interruption_title">Зарядтау тоқтатылды</string>
+    <string name="battery_info_power_wireless">Сымсыз</string>
+    <string name="battery_info_status_discharging">Зарядтамау</string>
+    <string name="battery_info_status_full">Толы</string>
+    <string name="battery_info_status_not_charging">Зарядтамау</string>
+    <string name="battery_low_sec_body_phone">Телефоныңызды зарядтаңыз немесе “Қуатты үнемдеу режимін” қосу үшін осы жерді түртіңіз.</string>
+    <string name="battery_low_sec_body_phone_psm">Телефонды зарядтаңыз.</string>
+    <string name="battery_low_sec_body_tablet">Планшетіңізді зарядтаңыз немесе “Қуатты үнемдеу режимін” қосу үшін осы жерді түртіңіз.</string>
+    <string name="battery_low_sec_body_tablet_psm">Планшетті зарядтаңыз.</string>
+    <string name="battery_low_sec_noti_channel">Батарея қуаты төмен</string>
+    <string name="battery_low_sec_title">Батарея қуаты: %d%%</string>
+    <string name="battery_not_fully_connected_charging_popup_text">Зарядтағыштың дұрыс қосылғанына көз жеткізіңіз. Құрылғымен бірге берілген зарядтағышты пайдаланыңыз.</string>
+    <string name="battery_not_fully_connected_charging_popup_text_jpn">Зарядтағыштың дұрыс қосылғанына көз жеткізіңіз.</string>
+    <string name="battery_not_fully_connected_charging_text">Жылдамырақ зарядтау үшін, құрылғыңызбен бірге берілген зарядтағышты пайдаланыңыз және оның дұрыс қосылғанына көз жеткізіңіз.</string>
+    <string name="battery_not_fully_connected_charging_text_chn">Жылдамырақ зарядтау үшін, телефоныңызбен бірге берілген зарядтағышты пайдаланыңыз және оның дұрыс қосылғанына көз жеткізіңіз.</string>
+    <string name="battery_not_fully_connected_charging_text_jpn">Зарядтағыштың дұрыс қосылғанына көз жеткізіңіз.</string>
+    <string name="battery_not_fully_connected_charging_text_tablet_chn">Жылдамырақ зарядтау үшін, планшетіңізбен бірге берілген зарядтағышты пайдаланыңыз және оның дұрыс қосылғанына көз жеткізіңіз.</string>
+    <string name="battery_not_fully_connected_charging_text_vzw">Make sure the charger is properly connected.</string>
+    <string name="battery_not_fully_connected_charging_title">Баяу зарядталу</string>
+    <string name="battery_not_fully_connected_charging_title_vzw">Incomplete connection</string>
+    <string name="battery_saver_recommend_notification_text_phone">Телефоныңызды зарядтаңыз немесе “Қуатты үнемдеу режимін” қосу үшін осы жерді түртіңіз.</string>
+    <string name="battery_saver_recommend_notification_text_phone_psm">Телефонды зарядтаңыз.</string>
+    <string name="battery_saver_recommend_notification_text_tablet">Планшетіңізді зарядтаңыз немесе “Қуатты үнемдеу режимін” қосу үшін осы жерді түртіңіз.</string>
+    <string name="battery_saver_recommend_notification_text_tablet_psm">Планшетті зарядтаңыз.</string>
+    <string name="battery_saver_recommend_notification_title">Батарея қуаты: %d%%</string>
+    <string name="battery_slow_charging_text">Жылдам зарядтау үшін, түпнұсқа зарядтағышты пайдаланыңыз.</string>
+    <string name="battery_slow_charging_title">Құрылғы баяу зарядталуда</string>
+    <string name="battery_slow_charging_toast_text">To charge faster, use the charger and cable that were provided with this phone</string>
+    <string name="battery_slow_charging_toast_text_for_tablet">To charge faster, use the charger and cable that were provided with this tablet.</string>
+    <string name="battery_wireless_charging_disconnect_text">Сымсыз зарядтау кідіртілді.</string>
+    <string name="battery_wireless_charging_from_cable_to_wireless_text">Кабель арқылы зарядтаудан сымсыз зарядтауға ауыстырылуда</string>
+    <string name="battery_wireless_charging_title">Сымсыз зарядтау</string>
+    <string name="blue_light_disable_reason">%2$s пайдалану үшін %1$s өшіріңіз.</string>
+    <string name="bluetooth_a2dp_profile_summary_connected">Мультимедиа аудиосына қосылған</string>
+    <string name="bluetooth_connected">Қосылды</string>
+    <string name="bluetooth_disconnect_message">%s Bluetooth қосылымы аяқталды.</string>
+    <string name="bluetooth_display_remote_device_name_after_pair">Құрылғы атауы осы құрылғы қосылған кезде пайда болады.</string>
+    <string name="bluetooth_getting_remote_device_name">Құрылғы атауы алынуда…</string>
+    <string name="bluetooth_headset_profile_summary_connected">Қоңырау аудиосына қосылған</string>
+    <string name="bluetooth_hid_profile_summary_connected">Құрылғыны енгізу ретінде қосылды</string>
+    <string name="bluetooth_pairing">Жұптасуда…</string>
+    <string name="bluetooth_pairing_device_down_black_list_error_message">%1$s құрылғысына қосылу мүмкін емес. %2$s параметрлерін тексеріп, әрекетті қайталаңыз.</string>
+    <string name="bluetooth_pairing_device_down_error_message">%s құрылғысына қосылу мүмкін емес.</string>
+    <string name="bluetooth_pairing_error_message">%s жұптастыру мүмкін болмады. Оның жұптастырылуға дайын екеніне көз жеткізіңіз.</string>
+    <string name="bluetooth_pairing_pin_error_message">%s жұптастыру мүмкін болмады. Оның жұптастырылуға дайын екеніне көз жеткізіңіз.</string>
+    <string name="bluetooth_pairing_rejected_error_message">Жұптастыруды %s қабылдамады.</string>
+    <string name="bluetooth_pan_nap_connected">Интернет қосылымын қамтамасыз ету үшін қосылған</string>
+    <string name="bluetooth_pan_nap_profile_summary_connected">Жергілікті интернет байланысын құрылғыда бөлісті</string>
+    <string name="bluetooth_pan_panu_connected">Интернет қосылымына қатынасу үшін қосылған</string>
+    <string name="bluetooth_pan_profile_summary_use_for">Осы телефоннан Интернетке кіру үшін жұптастырылған құрылғыда Bluetooth модем режимін қосыңыз.</string>
+    <string name="bluetooth_pan_user_profile_summary_connected">Интернетке кіру үшін құрылғыға қосылды.</string>
+    <string name="bluetooth_profile_a2dp">Мультимедиа дыбысы</string>
+    <string name="bluetooth_profile_headset">Қоңырау дыбысы</string>
+    <string name="bluetooth_profile_hid">Құрылғы енгізу</string>
+    <string name="bluetooth_profile_map">Хабарға өту</string>
+    <string name="bluetooth_profile_pan">Интернетке кіру</string>
+    <string name="bluetooth_profile_pan_nap">Интернет қосылымын бөлісуі</string>
+    <string name="bluetooth_profile_pbap">Байланыс қатынасы</string>
+    <string name="bluetooth_profile_pbap_tts">Контактілер және телефон журналы</string>
+    <string name="bluetooth_profile_textinput">Мәтін енгізу</string>
+    <string name="bluetooth_spp_profile_summary_connected">Бірізді порт профилі арқылы қосылды</string>
+    <string name="bluetooth_summary_connected_to_a2dp_headset">Қоңырау мен медиа аудиосына қосылған</string>
+    <string name="bluetooth_tethering_cannot_connect_while_connected_to_wifi">Wi-Fi желісіне қосулы кезде Bluetooth модем режимін пайдалану мүмкін емес.</string>
+    <string name="brightness_control_on_top">Жарықтықты жоғарыда басқ.</string>
+    <string name="brightness_slider_hbm_text">Күн сәулесінде ыңғайлы көру үшін үлкейтілді</string>
+    <string name="button_close">Жабу</string>
+    <string name="cant_open_image_viewer_app">Сурет көру құралы қолданбасын ашу мүмкін емес.</string>
+    <string name="cant_open_image_viewer_app_in_emergency_mode">Суретті көру құралы қолданбасын “Төтенше жағдай” режимінде ашу мүмкін емес.</string>
+    <string name="cant_open_image_viewer_app_in_mpsm">Суретті көру құралы қолданбасын “Қуатты барынша үнемдеу” режимінде ашу мүмкін емес.</string>
+    <string name="cant_open_image_viewer_app_in_ps">Суретті көру құралы қолданбасын %s режимінде ашу мүмкін емес.</string>
+    <string name="cant_open_photo_editor_in_ps">Фотосуреттерді өңдеу құралын %s ішінде ашу мүмкін емес.</string>
+    <string name="cant_open_ps">%s тапсырмасын ашу мүмкін емес.</string>
+    <string name="cant_screenshot_in_ps">%s режимінде скриншотқа түсіру мүмкін емес.</string>
+    <string name="card_crash">SIM картасының ақауы</string>
+    <string name="clear_all_notifications_text">Бәрін жою</string>
+    <string name="clear_all_text">Тазалау</string>
+    <string name="colour_adjustment_title">Түсті реттеу</string>
+    <string name="colour_lens_title">Түс сүзгісі</string>
+    <string name="cooling_body">"Құрылғыңыз қызып кетті. Оны салқындату үшін әрекеттер орындалады.
+
+Құрылғыны әрі қарай пайдалануға болады, бірақ:
+- Экран жарығы төмендеуі мүмкін.
+- Құрылғы баяу жұмыс істеуі мүмкін.
+- Зарядтау уақытша тоқтатылуы мүмкін.
+
+Құрылғы салқындағаннан кейін, құрылғы қалыпты жұмысына автоматты түрде оралады."</string>
+    <string name="cooling_body_tablet_vzw">"Your tablet is getting too hot, so it’s taking steps to cool itself down.
+
+You can still use your tablet, but you may notice:
+The screen might dim.
+The tablet might slow down.
+Charging might pause.
+
+After the tablet cools down, performance willAutomatically go back to normal."</string>
+    <string name="cooling_body_vzw">"Your phone is getting hot, so it's taking steps to cool itself down.
+
+You can still use it, but you may notice:
+- The screen might dim.
+- The phone might slow down.
+- Charging might pause.
+
+Your phone will return to normal once it cools down."</string>
+    <string name="cooling_high_level_noti_text">Бағдарламаларды ашу мүмкін емес. Тек телефон және контактілер бағдарламаларын пайдалана аласыз.</string>
+    <string name="cooling_noti_text">Мәліметтерді қарау үшін мына жерді түртіңіз.</string>
+    <string name="cooling_noti_text_vzw">Қосымша ақпарат үшін осы жерді түртіңіз.</string>
+    <string name="cooling_popup_title">Құрылғы салқындатылуда</string>
+    <string name="cooling_title">Құрылғы қызып кетті</string>
+    <string name="cooling_title_vzw">Cooling down</string>
+    <string name="data_connection_error_data_roaming_off_body">Wi-Fi желісіне қосылыңыз немесе Деректер роумингін қосыңыз.</string>
+    <string name="data_connection_error_flight_mode_on_body">Телефоныңыз Wi-Fi желісіне қосылмаған. Орнына ұялы байланыс желісін пайдалану үшін, “Параметрлер” бөліміндегі ұшу режимін өшіріңіз.</string>
+    <string name="data_connection_error_flight_mode_on_body_tablet">Планшетіңіз Wi-Fi желісіне қосылмаған. Орнына ұялы байланыс желісін пайдалану үшін, “Параметрлер” бөліміндегі ұшу режимін өшіріңіз.</string>
+    <string name="data_connection_error_flight_mode_on_title">Ұшу режимін өшіру</string>
+    <string name="data_connection_error_mobile_data_off">Ұялы деректер өшірілді. Оның орнына Wi-Fi желісіне қосылыңыз немесе ұялы деректерді қосыңыз, сосын әрекетті қайталап көріңіз</string>
+    <string name="data_connection_error_mobile_data_off_body">Wi-Fi желісіне қосылыңыз немесе Ұялы деректерді қосыңыз.</string>
+    <string name="data_connection_error_mobile_data_off_title">Ұялы деректерді қосу керек пе?</string>
+    <string name="data_connection_error_no_network_connection">Желі қосылымы жоқ</string>
+    <string name="data_connection_error_no_signal_body">Қолжетімді желілерді табу мүмкін болмады.</string>
+    <string name="data_connection_error_toast_notification">Wi-Fi желісіне қосылу қажет етіледі. Wi-Fi желісіне қосылып, қайталап көріңіз</string>
+    <string name="dcm_lockscreen_unlock_help_text_fingerprints_iris">Use fingerprint to unlock device or tap Lock icon to use irises instead</string>
+    <string name="dcm_lockscreen_unlock_help_text_iris">Tap Lock icon to use irises to unlock device</string>
+    <string name="dcm_lockscreen_voice_assistant_active_instructions">Телефон құлпын ашу үшін “Құлыптау” түймесін екі рет түртіңіз</string>
+    <string name="default_carrier_text_searching">Іздеу</string>
+    <string name="default_volume_control_summary">“Дыбыс деңгейі” пернелерін басқан кезіңізде мультимедианың дыбыс деңгейі әдепкі бойынша басқарылады.</string>
+    <string name="default_volume_control_title">Медиа үшін Дыбыс пернесін пайд.</string>
+    <string name="direct_boot_unaware_dialog_message">Телефоныңыз өшіп қайта қосылғаннан кейін, осы қолданбаны пайдаланбас бұрын телефоныңыздың құлпын ашуыңыз қажет.</string>
+    <string name="direction_lock_too_many_failed_attempts_countdown">%d сек кейін қайталаңыз</string>
+    <string name="disable">Өшіру</string>
+    <string name="disable_cancel">Бас тарту</string>
+    <string name="disable_confirm">Өшіру</string>
+    <string name="disable_message">%1$s қолданбасы мен оған қатысты барлық функциялар өшіріледі. Сонымен қоса, деректеріңіз де жойылады. Қолданбаны қайта қосу үшін, Параметрлер > Қолданбалар бөліміне өтіп, %2$s тармағын таңдаңыз.</string>
+    <string name="disagree">Келіспеу</string>
+    <string name="dnd_noti_action_disable">Өшіру</string>
+    <string name="dnd_noti_message">Оятарлар дыбысы өшірілді</string>
+    <string name="dnd_noti_title">“Мазаламау” режимі қосулы</string>
+    <string name="dock_minimized_notification_content_text">%s қолданбасын ашу үшін осы жерді түртіңіз.</string>
+    <string name="dock_minimized_notification_dimiss_text">Жабу</string>
+    <string name="dock_minimized_notification_text">Бөлік экр. көрінісі қолданыста</string>
+    <string name="dock_minimized_toast_text">%s қолданбасы кішірейтілді.</string>
+    <string name="download_popup_button_cancel">Бас тарту</string>
+    <string name="download_popup_button_download">Жүктеу</string>
+    <string name="download_ps">%s қолданбасын жүктеу керек пе?</string>
+    <string name="emergency_mode">Төт.жағдай режимі</string>
+    <string name="flash_light_disabled_by_low_battery">Шамды қосу мүмкін емес. Батарея қуаты төмен.</string>
+    <string name="flash_light_notification_button">Өшіру</string>
+    <string name="flash_light_notification_title">Шам қосылды</string>
+    <string name="flash_light_turn_off_by_low_battery">Батарея қуаты төмен. Шам өшіріледі.</string>
+    <string name="flight_mode_enabled_dialog_body">"Your mobile data connection is turned off. Unless you use Wi-Fi, you won't be able to use the Internet, Email or other apps that require a data connection."</string>
+    <string name="flight_mode_enabled_dialog_body_volte_and_vowifi">"Your mobile data connection is turned off. Your phone's Video Calling function won't work when mobile data is off. Also, you won't be able to use the Internet, Email or other apps that need a data connection unless you use Wi-Fi."</string>
+    <string name="flight_mode_enabled_dialog_title">Airplane mode turned on</string>
+    <string name="force_immersive_guide_dialog_guide_path">Осы түймені жасыру үшін Параметрлер > Дисплей > Шарлау жолағы бөліміне өтіңіз.</string>
+    <string name="force_immersive_guide_dialog_message1">Шарлау жолағын жасыру үшін осы түймені екі рет түртіңіз.</string>
+    <string name="force_immersive_guide_dialog_message2">Шарлау жолағын көрсету үшін зарядтау портының жанындағы экранның қырынан ішке қарай жүргізіп өтіңіз.</string>
+    <string name="force_immersive_guide_dialog_message3">Шарлау жолағын орнында құлыптау үшін осы түймені қайтадан екі рет түртіңіз.</string>
+    <string name="force_immersive_guide_dialog_message4">“Бастапқы экран” сияқты кейбір экрандарда шарлау жолағы үнемі көрсетіліп тұрады.</string>
+    <string name="force_immersive_guide_dialog_ok">OK</string>
+    <string name="force_immersive_guide_dialog_setting">Параметрлер</string>
+    <string name="force_immersive_guide_dialog_title">Шарлау жолағын жасыру:</string>
+    <string name="force_immersive_guide_toast_hide">Шарлау жолағын жасыру үшін екі рет түртіңіз.</string>
+    <string name="force_immersive_guide_toast_show">Шарлау жолағын құлыптау үшін екі рет түртіңіз.</string>
+    <string name="freeform_forced_resizable">Осы қолданба бірнеше терезе көрінісінде дұрыс істемеуі мүмкін.</string>
+    <string name="freeform_forced_resizable_samsung_dex">Осы қолданбаның кейбір функцияларына Samsung DeX қолдау көрсетпеуі мүмкін.</string>
+    <string name="full_battery_noti_channel">Батарея толық</string>
+    <string name="full_battery_noti_text">Батарея толық зарядталған.</string>
+    <string name="full_battery_title">Ақпарат</string>
+    <string name="greyscale_mode_title">Жартылай өңдік</string>
+    <string name="hotspot_warning_dialog_msg_smartview_off">Ұялы жедел нүкте опциясы мен Smart View функциясын бір уақытта қосу мүмкін емес. Smart View функциясы өшіріледі.</string>
+    <string name="hotspot_warning_dialog_msg_smartview_off_chn">Smart View функциясы мен WLAN жедел нүктесі опциясын бір уақытта қосу мүмкін емес. Smart View функциясы өшіріледі.</string>
+    <string name="hotspot_warning_dialog_msg_smartview_off_spr">Ұялы жедел нүктені пайдалану үшін Smart View функциясын өшіру қажет.</string>
+    <string name="hotspot_warning_dialog_msg_smartview_off_tmo">Ұялы жедел нүктені пайдалану үшін Smart View функциясын өшіру қажет.</string>
+    <string name="hotspot_warning_dialog_msg_smartview_off_vzw">Ұялы жедел нүкте опциясы мен Smart View функциясын бір уақытта қосу мүмкін емес. Smart View функциясы өшіріледі.</string>
+    <string name="hotspot_warning_dialog_msg_wifi_off">Ұялы жедел нүктені пайдалану үшін Wi-Fi желісін өшіру қажет.</string>
+    <string name="hotspot_warning_dialog_msg_wifi_off_att">Жылжымалы Wi-Fi жедел нүктесін қосу Wi-Fi желісін өшіреді.</string>
+    <string name="hotspot_warning_dialog_msg_wifi_off_chn">Ұялы жедел нүктесін қосу WLAN желісін өшіреді.</string>
+    <string name="hotspot_warning_dialog_msg_wifi_off_jpn">Enabling Wi-Fi tethering will turn off Wi-Fi.</string>
+    <string name="hotspot_warning_dialog_msg_wifi_off_mtr">Ұялы жедел нүктені пайдалану үшін Wi-Fi желісін өшіру қажет.</string>
+    <string name="hotspot_warning_dialog_msg_wifi_off_spr">Ұялы жедел нүктені пайдалану үшін Wi-Fi желісін өшіру қажет.</string>
+    <string name="hotspot_warning_dialog_msg_wifi_off_tmo">USB модем режимі немесе Ұялы жедел нүкте қосылған кезде Wi-Fi өшіріледі. Wi-Fi опциясын қосу үшін USB модем режимін немесе Ұялы жедел нүктені өшіріңіз.</string>
+    <string name="hotspot_warning_dialog_msg_wifi_off_vzw">Ұялы жедел нүкте ұялы деректер қосылымын пайдаланады. Wi-Fi қосылымы өшіріледі.</string>
+    <string name="hotspot_warning_dialog_msg_wifidirect_off">Ұялы жедел нүктені пайдалану үшін ағымдағы Wi-Fi Direct арқылы қосылған кез келген құрылғыларды ажырату қажет.</string>
+    <string name="hotspot_warning_dialog_msg_wifidirect_off_chn">Жылжымалы WLAN жедел нүктесі қосылғанда WLAN Direct арқылы қосылған құрылғы ажыратылады.</string>
+    <string name="hotspot_warning_dialog_msg_wifidirect_off_spr">Ұялы жедел нүктені пайдалану үшін ағымдағы Wi-Fi Direct арқылы қосылған кез келген құрылғыларды ажырату қажет.</string>
+    <string name="hotspot_warning_dialog_msg_wifidirect_off_tmo">Ұялы жедел нүктені пайдалану үшін ағымдағы Wi-Fi Direct арқылы қосылған кез келген құрылғыларды ажырату қажет.</string>
+    <string name="hotspot_warning_dialog_msg_wifidirect_off_vzw">Ұялы жедел нүктені пайдалану үшін ағымдағы Wi-Fi Direct арқылы қосылған кез келген құрылғыларды ажырату қажет.</string>
+    <string name="hotspot_warning_dialog_title_smartview_off">Ұялы жедел нүктені қосу керек пе?</string>
+    <string name="hotspot_warning_dialog_title_wifi_off">Wi-Fi желісін өшіру керек пе?</string>
+    <string name="hotspot_warning_dialog_title_wifi_off_tmo">Назар аударыңыз</string>
+    <string name="hotspot_warning_dialog_title_wifi_off_vzw">Ұялы жедел нүкте және Wi-Fi</string>
+    <string name="hotspot_warning_dialog_title_wifidirect_off">Ұялы жедел нүктені қосу керек пе?</string>
+    <string name="hotspot_warning_dialog_title_wifidirect_off_tmo">Назар аударыңыз</string>
+    <string name="hotspot_warning_dialog_title_wifidirect_off_vzw">Ұялы жедел нүкте және Wi-Fi</string>
+    <string name="ime_security_warning">%s терілетін барлық мәтінді, оның ішінде, құпиясөздер мен несие картасы нөмірлері сияқты жеке деректерді жинай алады.</string>
+    <string name="incompatible_charger_dialog_text">The connected charger is incompatible with this phone. To prevent damage to your phone, charging has been stopped. To continue charging, use the original charger and cable that were provided with this phone.</string>
+    <string name="incompatible_charger_notification_text">Unable to charge. Use the original charger.</string>
+    <string name="incompatible_charger_ticker">Зарядтамау.</string>
+    <string name="incompatible_charger_title">Зарядтамау.</string>
+    <string name="insert_sim_card">SIM картасын салыңыз</string>
+    <string name="insert_sim_card_message">Желі қызметтеріне өту үшін SIM картасына салу.</string>
+    <string name="iris_guide_str_enable_toggle">Көз қабықтарын қолдануға түрту</string>
+    <string name="iris_guide_str_for_text_preview">Көз қабығы үшін қарау</string>
+    <string name="it_policy_not_allow_wifi">Қауіпсіздік саясаты Wi-Fi желісін пайдалануға жол бермейді.</string>
+    <string name="it_policy_not_allow_wifiap">Қауіпсіздік саясаты интернет бөлінуінің пайдаланылуын шектейді.</string>
+    <string name="keyboard_shortcut_group_applications">Қолданба жедел пернелері</string>
+    <string name="keyboard_shortcut_group_applications_bixby">Bixby</string>
+    <string name="keyboard_shortcut_group_applications_browser">Браузер</string>
+    <string name="keyboard_shortcut_group_applications_calendar">Күнтізбе</string>
+    <string name="keyboard_shortcut_group_applications_contacts">Контактілер</string>
+    <string name="keyboard_shortcut_group_applications_email">Электрондық пошта</string>
+    <string name="keyboard_shortcut_group_applications_messages">Хабарлар</string>
+    <string name="keyboard_shortcut_group_applications_music">Музыка</string>
+    <string name="keyboard_shortcut_group_system">Жүйе жедел пернелері</string>
+    <string name="keyboard_shortcut_group_system_all_apps">Барлық қолданбалар</string>
+    <string name="keyboard_shortcut_group_system_back">Артқа</string>
+    <string name="keyboard_shortcut_group_system_home">Бастапқы</string>
+    <string name="keyboard_shortcut_group_system_lock_screen">Құлыптау экраны</string>
+    <string name="keyboard_shortcut_group_system_notifications">Хабарландырулар</string>
+    <string name="keyboard_shortcut_group_system_recents">Соңғылар</string>
+    <string name="keyboard_shortcut_group_system_running_apps">Іске қосылған қолданбалар</string>
+    <string name="keyboard_shortcut_group_system_shortcuts_helper">Пернетақта таңбашалары</string>
+    <string name="keyboard_shortcut_group_system_switch_languages">Тілдерді ауыстыру</string>
+    <string name="keyboard_shortcut_popup_help">Meta пернесі: Windows, команда немесе басқа да операциялық жүйе белгісінің пернесі.</string>
+    <string name="keyguard_accessibility_call">Қоңырау</string>
+    <string name="keyguard_accessibility_direction_lock_unlock">Бағыт құлпы</string>
+    <string name="keyguard_accessibility_dot">Нүкте</string>
+    <string name="keyguard_accessibility_pattern_area">Үлгі аумағы</string>
+    <string name="keyguard_accessibility_pattern_unlock">Үлгіні құлыптан шығару</string>
+    <string name="keyguard_cmas_text">Төтенше ескерту</string>
+    <string name="keyguard_dualclock_locale_view_home">Үй парағы</string>
+    <string name="keyguard_dualclock_locale_view_home_skt">Сеул уақыты</string>
+    <string name="keyguard_dualclock_locale_view_roaming">Жергілікті</string>
+    <string name="keyguard_dualclock_locale_view_roaming_skt">Роуминг уақыты</string>
+    <string name="keyguard_fmm_owner_phone">Иеленуші нөмірі</string>
+    <string name="keyguard_fmm_phone_locked_title">Телефон блоктаулы.</string>
+    <string name="keyguard_missing_sim_message">USIM картасын кірістіріп, құрылғыны қайта іске қосу</string>
+    <string name="keyguard_progress_erasing_all">Барлық деректер жойылуда…</string>
+    <string name="keyguard_skt_usim_unregistered">USIM картасын пайдалану мүмкін емес. USIM картасы туралы ақпаратты жүктеңіз.</string>
+    <string name="keyguard_usim_not_used">USIM картасын пайдалану мүмкін емес. PIN құлпын ашу (PUK) коды %d рет қате енгізілді. Жаңа USIM картасын сатып алыңыз.</string>
+    <string name="kg_1_attempt_remaining">(1 әрекет қалды)</string>
+    <string name="kg_accessibility_password_unlock">Құпиясөзбен құлпын ашу</string>
+    <string name="kg_accessibility_pin_edit_box">Өңдеу терезесі</string>
+    <string name="kg_accessibility_pin_unlock">PIN кодпен құлпын ашу</string>
+    <string name="kg_background_auth_face_instruction_text">Бетті тану арқылы құлпын ашу.</string>
+    <string name="kg_background_auth_fingerprint_unlock_successed_text">Телефон саусақ ізі арқылы құлыпталды.</string>
+    <string name="kg_background_auth_iris_instruction_text">Көз қабықтары арқылы құлпын ашу.</string>
+    <string name="kg_background_auth_tablet_fingerprint_unlock_successed_text">Планшет құлпы саусақ ізі арқылы ашылды.</string>
+    <string name="kg_background_auth_tablet_unlock_successed_text">Планшет құлпы ашылды.</string>
+    <string name="kg_background_auth_unlock_failed_text">Телефонның құлпын ашу мүмкін болмады.</string>
+    <string name="kg_background_auth_unlock_instruction_text">Биометрия арқылы құлпын ашу.</string>
+    <string name="kg_background_auth_unlock_successed_text">Телефон құлпы ашылды.</string>
+    <string name="kg_biometric_temporary_error_text">Бет не көз қабықтарын қолдану мүмкін емес. Егер бұл үнемі қайталанса, онда телефоныңызды өшіріп, қайта қосыңыз.</string>
+    <string name="kg_biometrics_swipe_active_instructions">Ашу үшін биометриялық деректерді пайдаланыңыз не экранда жүргізіп өтіңіз</string>
+    <string name="kg_biometrics_swipe_active_voice_assistant_instructions">Ашу үшін биометриялық деректерді пайдаланыңыз немесе экранды екі саусақпен жүргізіп өтіңіз</string>
+    <string name="kg_biometrics_swipe_unlock_instructions">Құлпын ашу үшін биометриялық деректерді пайдаланыңыз не экранда жүргізіп өтіңіз</string>
+    <string name="kg_biometrics_swipe_unlock_voice_assistant_instructions">Құлпын ашу үшін биометриялық деректерді пайдаланыңыз немесе экранды екі саусақпен жүргізіп өтіңіз</string>
+    <string name="kg_carrier_lock_call_owner">Маған қоңырау шалыңыз</string>
+    <string name="kg_carrier_lock_findlostphone">Бұл телефон жоғалған не ұрланған.</string>
+    <string name="kg_carrier_lock_too_many_failed_attempts">Құпиясөз 5 рет қате енгізілді. Әрекетті 10 минуттан кейін қайталаңыз.</string>
+    <string name="kg_carrier_lock_unlock">Құпиясөзді енгізу</string>
+    <string name="kg_carrier_lock_wrong_password">Құпиясөз қате енгізілді.</string>
+    <string name="kg_ctc_enter_confirm_pin_hint">Enter new UIM/SIM card unlock PIN again to confirm it</string>
+    <string name="kg_ctc_password_wrong_pin_code_one">Incorrect UIM/SIM card PIN entered. 1 attempt left.</string>
+    <string name="kg_ctc_password_wrong_pin_code_other">Incorrect UIM/SIM card PIN entered. %d attempts left.</string>
+    <string name="kg_ctc_puk_enter_pin_hint">Enter new UIM/SIM card unlock PIN</string>
+    <string name="kg_ctc_sim_puk_instructions">UIM/SIM card locked. Enter PUK. Contact service provider for details.</string>
+    <string name="kg_ctc_sim_puk_remaining_1_attempt">Incorrect PUK entered. If incorrect PUK is entered 1 more time, UIM/SIM card will be locked.</string>
+    <string name="kg_ctc_sim_puk_remaining_attempts">Incorrect PUK entered. If incorrect PUK is entered %d more times, UIM/SIM card will be permanently locked.</string>
+    <string name="kg_ctc_sim_unlock_progress_dialog_message">Unlocking UIM/SIM card…</string>
+    <string name="kg_ctc_unlock_sim_pin_instructions">Enter UIM/SIM card unlock PIN</string>
+    <string name="kg_dcm_sim_puk_instructions">PIN бұғатталды. Жалғастыру үшін PUK кодын енгізіңіз.</string>
+    <string name="kg_default_carrier_text_searching">Іздеу</string>
+    <string name="kg_dex_emergency_text">ТӨТЕНШЕ ҚОҢЫРАУ шалу үшін телефонды DeX Станциясынан алып тастаңыз.</string>
+    <string name="kg_direction_lock_instructions_normal_mode">Экран құлпын ашу үшін бағыттар сериясын сызыңыз</string>
+    <string name="kg_empty_sim_perso_hint">No password entered. Enter password (PIN).</string>
+    <string name="kg_face_authentication_error_camera_unavailable_retry_text">Бетті тану әдісі бойынша қиындық туындады. Әрекетті қайталау үшін түртіңіз</string>
+    <string name="kg_face_authentication_error_camera_unavailable_video_call_text">Бейне қоңыраулар кезінде бетті тануды пайдалану мүмкін емес</string>
+    <string name="kg_face_authentication_error_retry_text">Бет анықталмады. Бетті тануды қайта байқап көру үшін белгішені түртіңіз</string>
+    <string name="kg_face_authentication_failed_retry_text">Сәйкес келмейді. Бетті тану әдісін пайдалану үшін белгішені түртіңіз</string>
+    <string name="kg_face_cancel_for_dex">Бетті танудан бас тарту</string>
+    <string name="kg_face_cover_clear_view_toast_for_dex">Clear View Cover тысы бекітулі кезде “Бетті тану” функциясы қолжетімсіз.</string>
+    <string name="kg_face_cover_led_view_toast_for_dex">LED View Cover тысы бекітулі кезде “Бетті тану” функциясы қолжетімсіз.</string>
+    <string name="kg_face_cover_s_view_toast_for_dex">S View Cover тысы бекітулі кезде “Бетті тану” функциясы қолжетімсіз.</string>
+    <string name="kg_face_cover_toast_for_dex">Мұқаба тіркелген кезде бетті тану қолжетімсіз.</string>
+    <string name="kg_face_direction_active_instructions">Ашу үшін бетті тануды пайдаланыңыз немесе бағыттардың бірдей тізбекті қосылысын сызыңыз</string>
+    <string name="kg_face_direction_none_instructions">Бетті тануды пайдаланыңыз немесе бағыттардың бірдей тізбекті қосылысын сызыңыз</string>
+    <string name="kg_face_guide_text_for_enable_toggle">Бет тануды қолдану үшін түртіңіз</string>
+    <string name="kg_face_or_fingerprint_active_instructions">Ашу үшін саусақ ізін пайдаланыңыз не оның орнына бетті тануды пайдалану үшін экранда жүргізіп өтіңіз</string>
+    <string name="kg_face_or_fingerprint_active_voice_assistant_instructions">Ашу үшін саусақ ізін пайдаланыңыз немесе бетті тану әдісін пайдалану үшін экранды екі саусақпен жүргізіп өтіңіз.</string>
+    <string name="kg_face_or_fingerprint_unlock_instructions">Құлпын ашу үшін саусақ ізін пайдаланыңыз не оның орнына бетті тануды пайдалану үшін экранда жүргізіп өтіңіз</string>
+    <string name="kg_face_or_fingerprint_unlock_voice_assistant_instructions">Құлпын ашу үшін саусақ ізін пайдаланыңыз немесе бетті тану әдісін пайдалану үшін экранды екі саусақпен жүргізіп өтіңіз.</string>
+    <string name="kg_face_or_swipe_active_instructions">Ашу үшін бетті тануды пайдаланыңыз немесе экран бойымен саусақпен жүргізіп өтіңіз</string>
+    <string name="kg_face_or_swipe_active_voice_assistant_instructions">Ашу үшін бетті тану әдісін пайдаланыңыз немесе экранды екі саусақпен жүргізіп өтіңіз</string>
+    <string name="kg_face_or_swipe_unlock_instructions">Құлпын ашу үшін бетті тануды пайдаланыңыз немесе экран бойымен саусақпен жүргізіп өтіңіз</string>
+    <string name="kg_face_or_swipe_unlock_voice_assistant_instructions">Құлпын ашу үшін бетті тану әдісін пайдаланыңыз немесе экранды екі саусақпен жүргізіп өтіңіз</string>
+    <string name="kg_face_password_active_instructions">Ашу үшін бетті тануды пайдаланыңыз немесе құпиясөзді енгізіңіз</string>
+    <string name="kg_face_password_none_instructions">Бетті тануды пайдаланыңыз немесе құпиясөзді енгізіңіз</string>
+    <string name="kg_face_pattern_active_instructions">Ашу үшін бетті тануды пайдаланыңыз немесе үлгіні сызыңыз</string>
+    <string name="kg_face_pattern_none_instructions">Бетті тануды пайдаланыңыз немесе үлгіні сызыңыз</string>
+    <string name="kg_face_pin_active_instructions">Ашу үшін бетті тануды пайдаланыңыз немесе PIN кодты енгізіңіз</string>
+    <string name="kg_face_pin_none_instructions">Бетті тануды пайдаланыңыз немесе PIN кодты енгізіңіз</string>
+    <string name="kg_face_retry_content_description">Бетті тану әдісін пайдалану үшін екі рет түртіңіз.</string>
+    <string name="kg_face_retry_text">Бетті тануды қайта пайдалану үшін белгішені түртіңіз</string>
+    <string name="kg_face_start_for_dex">Телефоныңызда бетті тануды қолдану</string>
+    <string name="kg_face_stop">Бет тануды тоқтату</string>
+    <string name="kg_face_toast_preview_for_dex">Өзіңізді куәландыру үшін телефоныңызда бетті тануды пайдаланыңыз.</string>
+    <string name="kg_face_unlock_instructions">Бетті тану арқылы құлпын ашу үшін экранды сипаңыз</string>
+    <string name="kg_face_unlock_voice_assistant_instructions">Бетті тану әдісі арқылы құлпын ашу үшін экранды екі саусақпен жүргізіп өтіңіз</string>
+    <string name="kg_finger_print_bad_quality_error_message">Саусақ ізін сканерлеу сенсоры лас болуы мүмкін. Оны тазалап, әрекетті қайталаңыз.</string>
+    <string name="kg_finger_print_database_error_message">Саусақ ізі деректері зақымдалды. Саусақ ізін экранды құлыптау түрі ретінде қайта орнатып, саусақ іздеріңізді қайта қосыңыз немесе экранды құлыптау түрін өзгертіңіз.</string>
+    <string name="kg_finger_print_not_responding_error_message">Саусақ ізі сенсоры жауап бермейді. Әрекетті кейінірек қайталаңыз.</string>
+    <string name="kg_finger_print_sensor_changed_error_message">Саусақ ізінің сенсоры дұрыс өзгертілмеген. Тұтынушыларға қызмет көрсету орталығына хабарласыңыз.</string>
+    <string name="kg_finger_print_sensor_error_message">Саусақ ізінің сенсорында қате орын алды. Бұл хабар қайта шықса, құрылғыны қайта іске қосыңыз.</string>
+    <string name="kg_finger_print_sensor_with_recalibration_error_message">Бастапқы пернесі таза әрі құрғақ екеніне көз жеткізіп, әрекетті қайталаңыз.</string>
+    <string name="kg_fingerprint_direction_active_instructions">Ашу үшін саусақ ізін пайдаланыңыз немесе бағыттардың бірдей тізбекті қосылысын сызыңыз</string>
+    <string name="kg_fingerprint_direction_none_instructions">Саусақ ізін пайдалану немесе бірнеше бағытты сызу</string>
+    <string name="kg_fingerprint_no_match">Сәйкестік жоқ</string>
+    <string name="kg_fingerprint_or_swipe_active_instructions">Ашу үшін саусақ ізін пайдалану немесе экранды сипау</string>
+    <string name="kg_fingerprint_or_swipe_active_voice_assistant_instructions">Ашу үшін саусақ ізін пайдаланыңыз немесе экранды екі саусақпен жүргізіп өтіңіз</string>
+    <string name="kg_fingerprint_or_swipe_unlock_instructions">Құлпын ашу үшін саусақ ізін пайдалану немесе экранды сипау</string>
+    <string name="kg_fingerprint_or_swipe_unlock_voice_assistant_instructions">Құлпын ашу үшін саусақ ізін пайдаланыңыз немесе экранды екі саусақпен жүргізіп өтіңіз</string>
+    <string name="kg_fingerprint_password_active_instructions">Ашу үшін саусақ ізін пайдалану немесе құпиясөзді енгізу</string>
+    <string name="kg_fingerprint_password_none_instructions">Саусақ ізін пайдалану немесе құпия сөзді енгізу</string>
+    <string name="kg_fingerprint_pattern_active_instructions">Ашу үшін саусақ ізін пайдалану немесе үлгіні сызу</string>
+    <string name="kg_fingerprint_pattern_none_instructions">Саусақ ізін пайдалану немесе құлпын ашу үлгісін салу</string>
+    <string name="kg_fingerprint_pin_active_instructions">Ашу үшін саусақ ізін пайдалану немесе PIN кодты енгізу</string>
+    <string name="kg_fingerprint_pin_none_instructions">Саусақ ізін пайдалану немесе PIN кодты енгізу</string>
+    <string name="kg_fingerprints_direction_bouncer_instructions">Ашу үшін саусақ ізін пайдаланыңыз немесе бағыттардың бірдей тізбекті қосылысын сызыңыз</string>
+    <string name="kg_fingerprints_direction_instructions">Саусақ ізін пайдалану немесе бірнеше бағытты сызу</string>
+    <string name="kg_fingerprints_direction_unabled_instructions">Құрылғыңыз қайта іске қосылды және бағыттардың бірдей тізбекті қосылысын пайдалану арқылы құлпын ашуды қажет етеді. Келесі жолы құрылғыңыздың құлпын ашқан кезде саусақ іздеріңізді пайдалана аласыз.</string>
+    <string name="kg_fingerprints_password_bouncer_instructions">Ашу үшін саусақ ізін пайдалану немесе құпиясөзді енгізу</string>
+    <string name="kg_fingerprints_password_instructions">Саусақ ізін пайдалану немесе құпия сөзді енгізу</string>
+    <string name="kg_fingerprints_password_unabled_instructions">Құрылғыңыз қайта іске қосылды және құпиясөз арқылы құлпын ашуды қажет етеді. Келесі жолы құрылғыңыздың құлпын ашқан кезде саусақ іздеріңізді пайдалана аласыз.</string>
+    <string name="kg_fingerprints_pattern_bouncer_instructions">Ашу үшін саусақ ізін пайдалану немесе үлгіні сызу</string>
+    <string name="kg_fingerprints_pattern_instructions">Саусақ ізін пайдалану немесе құлпын ашу үлгісін салу</string>
+    <string name="kg_fingerprints_pattern_unabled_instructions">Құрылғыңыз қайта іске қосылды және үлгі арқылы құлпын ашуды қажет етеді. Келесі жолы құрылғыңыздың құлпын ашқан кезде саусақ іздеріңізді пайдалана аласыз.</string>
+    <string name="kg_fingerprints_pin_bouncer_instructions">Ашу үшін саусақ ізін пайдалану немесе PIN кодты енгізу</string>
+    <string name="kg_fingerprints_pin_instructions">Саусақ ізін пайдалану немесе PIN кодты енгізу</string>
+    <string name="kg_fingerprints_pin_unabled_instructions">Құрылғыңыз қайта іске қосылды және PIN код арқылы құлпын ашуды қажет етеді. Келесі жолы құрылғыңыздың құлпын ашқан кезде саусақ іздеріңізді пайдалана аласыз.</string>
+    <string name="kg_flight_mode">Ұшу режимі</string>
+    <string name="kg_forgot_spass_button_text">Samsung account</string>
+    <string name="kg_hide_password_accessibility">Құпиясөзді жасыру</string>
+    <string name="kg_ib_cancel_for_dex">Intelligent Scan-нан бас тарту</string>
+    <string name="kg_ib_cancel_text">Intelligent Scan-нан бас тарту</string>
+    <string name="kg_ib_cover_toast_for_dex">Мұқаба тіркелген кезде бетті тану қолжетімсіз.</string>
+    <string name="kg_ib_retry_text">Intelligent Scan функциясын қайта қолданып көру үшін белгішені түртіңіз</string>
+    <string name="kg_ib_start_for_dex">Телефонда Intelligent Scan функциясын пайдалану</string>
+    <string name="kg_ib_stop">Intelligent Scan қызметін тоқтату</string>
+    <string name="kg_ib_toast_preview_for_dex">Телефонда Intelligent Scan функциясын пайдалану</string>
+    <string name="kg_incorrect_password">Қате құпия сөз енгізілді</string>
+    <string name="kg_incorrect_pattern">Қате үлгі салынды</string>
+    <string name="kg_incorrect_pin">Қате PIN енгізілді</string>
+    <string name="kg_infinity_wallpaper_description">Шексіздік түсқағазы Always On Display экранына, бастапқы экран мен құлыптау экранына бір уақытта қолданылады.</string>
+    <string name="kg_infinity_wallpaper_description_without_aod">Шексіздік түсқағазы бастапқы және құлыптау экрандарына бір уақытта қолданылады.</string>
+    <string name="kg_intelligent_direction_active_instructions">Ашу үшін Intelligent Scan функциясын пайдаланыңыз немесе бағыттардың бірдей тізбекті қосылысын сызыңыз</string>
+    <string name="kg_intelligent_direction_none_instructions">Intelligent Scan функциясын пайдаланыңыз немесе бағыттардың бірдей тізбекті қосылысын сызыңыз</string>
+    <string name="kg_intelligent_or_fingerprint_active_instructions">Ашу үшін саусақ ізін пайдаланыңыз немесе оның орнына Intelligent Scan функциясын пайдалану үшін экранда жүргізіп өтіңіз</string>
+    <string name="kg_intelligent_or_fingerprint_active_voice_assistant_instructions">Ашу үшін саусақ ізін пайдаланыңыз немесе Intelligent Scan функциясын пайдалану үшін экранда 2 саусақпен жүргізіп өтіңіз</string>
+    <string name="kg_intelligent_or_fingerprint_unlock_instructions">Құлпын ашу үшін саусақ ізін пайдаланыңыз немесе оның орнына Intelligent Scan функциясын пайдалану үшін экранда жүргізіп өтіңіз</string>
+    <string name="kg_intelligent_or_fingerprint_unlock_voice_assistant_instructions">Құлпын ашу үшін Intelligent Scan функциясын пайдаланыңыз немесе экранда 2 саусақпен жүргізіп өтіңіз</string>
+    <string name="kg_intelligent_or_swipe_active_instructions">Ашу үшін Intelligent Scan функциясын пайдаланыңыз немесе экранда жүргізіп өтіңіз</string>
+    <string name="kg_intelligent_or_swipe_active_voice_assistant_instructions">Құлпын ашу үшін Intelligent Scan функциясын пайдаланыңыз немесе экранда 2 саусақпен жүргізіп өтіңіз</string>
+    <string name="kg_intelligent_or_swipe_unlock_instructions">Құлпын ашу үшін Intelligent Scan функциясын пайдаланыңыз немесе экранда жүргізіп өтіңіз</string>
+    <string name="kg_intelligent_or_swipe_unlock_voice_assistant_instructions">Құлпын ашу үшін Intelligent Scan функциясын пайдаланыңыз немесе экранда 2 саусақпен жүргізіп өтіңіз</string>
+    <string name="kg_intelligent_password_active_instructions">Ашу үшін Intelligent Scan функциясын пайдаланыңыз немесе құпиясөзді енгізіңіз</string>
+    <string name="kg_intelligent_password_none_instructions">Intelligent Scan функциясын пайдаланыңыз немесе құпиясөзді енгізіңіз</string>
+    <string name="kg_intelligent_pattern_active_instructions">Ашу үшін Intelligent Scan функциясын пайдаланыңыз немесе үлгіні сызыңыз</string>
+    <string name="kg_intelligent_pattern_none_instructions">Intelligent Scan функциясын пайдаланыңыз немесе үлгіні сызыңыз</string>
+    <string name="kg_intelligent_pin_active_instructions">Ашу үшін Intelligent Scan функциясын пайдаланыңыз немесе PIN кодты енгізіңіз</string>
+    <string name="kg_intelligent_pin_none_instructions">Intelligent Scan функциясын пайдаланыңыз не PIN кодты енгізіңіз</string>
+    <string name="kg_intelligent_retry_content_description">Intelligent Scan функциясын пайдалану үшін екі рет түртіңіз.</string>
+    <string name="kg_intelligent_unlock_instructions">Intelligent Scan көмегімен құлпын ашу үшін экранда жүргізіп өтіңіз</string>
+    <string name="kg_intelligent_unlock_voice_assistant_instructions">Құлпын ашу үшін Intelligent Scan функциясын пайдаланыңыз немесе экранда 2 саусақпен жүргізіп өтіңіз</string>
+    <string name="kg_iris_1st_active_instructions">Ашу үшін көздің қабықтарын пайдаланыңыз не экранда жүргізіп өтіңіз</string>
+    <string name="kg_iris_1st_active_voice_assistant_instructions">Ашу үшін көздің қабықтарын пайдаланыңыз немесе экранды екі саусақпен жүргізіп өтіңіз</string>
+    <string name="kg_iris_1st_unlock_instructions">Құлпын ашу мақсатында көз қабықтарын пайдалану немесе экранды сипау</string>
+    <string name="kg_iris_1st_unlock_voice_assistant_instructions">Құлпын ашу үшін көз қабықтарын пайдаланыңыз немесе экранды екі саусақпен жүргізіп өтіңіз.</string>
+    <string name="kg_iris_cancel">Көз қабығын танудан бас тарту</string>
+    <string name="kg_iris_cancel_for_dex">Көз қабығын танудан бас тарту</string>
+    <string name="kg_iris_cover_clear_view_toast_for_dex">Clear View Cover тысы бекітулі кезде “Көздің қабығын тану” функциясы қолжетімсіз.</string>
+    <string name="kg_iris_cover_led_view_toast_for_dex">LED View Cover тысы бекітулі кезде “Көздің қабығын тану” функциясы қолжетімсіз.</string>
+    <string name="kg_iris_cover_s_view_toast_for_dex">S View Cover тысы бекітулі кезде “Көздің қабығын тану” функциясы қолжетімсіз.</string>
+    <string name="kg_iris_cover_toast_for_dex">Мұқаба тіркелген кезде көз қабығын тану қолжетімсіз.</string>
+    <string name="kg_iris_direction_active_instructions">Ашу үшін көздің қабықтарын пайдаланыңыз немесе бағыттардың бірдей тізбекті қосылысын сызыңыз</string>
+    <string name="kg_iris_direction_instructions">Көздің қабықтарын пайдалану не бағыттардың бірдей тізбекті қосылысын сызу</string>
+    <string name="kg_iris_direction_none_instructions">Көздің қабықтарын пайдалану не бағыттардың бірдей тізбекті қосылысын сызу</string>
+    <string name="kg_iris_no_match">Сәйкес емес</string>
+    <string name="kg_iris_or_fingerprint_active_instructions">Ашу үшін саусақ ізін пайдалану немесе оның орнына көздің қабықтарын пайдалану үшін экранды сипау</string>
+    <string name="kg_iris_or_fingerprint_active_voice_assistant_instructions">Ашу үшін саусақ ізін пайдаланыңыз немесе көздің қабықтарын пайдалану үшін экранды екі саусақпен жүргізіп өтіңіз</string>
+    <string name="kg_iris_or_fingerprint_unlock_instructions">Ашуға саусақ ізін қолд. не орнына көз қабықтары қолд. үшін экр.сипау</string>
+    <string name="kg_iris_or_fingerprint_unlock_voice_assistant_instructions">Құлпын ашу үшін саусақ ізін пайдаланыңыз немесе көздің қабықтарын пайдалану үшін экранды екі саусақпен жүргізіп өтіңіз</string>
+    <string name="kg_iris_password_active_instructions">Ашу мақсатында көз қабықтарын пайдалану немесе құпиясөзді енгізу</string>
+    <string name="kg_iris_password_none_instructions">Көз қабықтарын пайдалану немесе құпиясөзді енгізу</string>
+    <string name="kg_iris_pattern_active_instructions">Ашу мақсатында көз қабықтарын пайдалану немесе үлгіні сызу</string>
+    <string name="kg_iris_pattern_none_instructions">Көз қабықтарын пайдалану немесе үлгіні сызу</string>
+    <string name="kg_iris_pattern_text_for_mkeyboard">Үлгіні сызу үшін осы жерді түртіңіз</string>
+    <string name="kg_iris_pin_active_instructions">Ашу мақсатында көз қабықтарын пайдалану немесе PIN код енгізу</string>
+    <string name="kg_iris_pin_none_instructions">Көз қабықтарын пайдалану немесе PIN кодты енгізу</string>
+    <string name="kg_iris_retry_content_description">Көздің қабықтарын сканерлеу үшін екі рет түртіңіз.</string>
+    <string name="kg_iris_retry_text">Көздің қабығын тануды қайта пайдалану үшін белгішені түртіңіз</string>
+    <string name="kg_iris_start_for_dex">Телефоныңызда көз қабығын пайдалану</string>
+    <string name="kg_iris_stop">Көз қабықтарын сканерлеуді тоқтату</string>
+    <string name="kg_iris_strong_auth_prompt_reason_24_timeout_universal_lock">Сіздің қауіпсіздігіңіз үшін, телефоныңыздың құлпын ашуға бағыттардың бірдей тізбекті қосылысын қолданыңыз. Биометриялық деректеріңізді келесі жолы пайдалана аласыз.</string>
+    <string name="kg_iris_strong_auth_prompt_reason_restarting_universal_lock">Құрылғыңыз қайта іске қосылды және бағыттардың бірдей тізбекті қосылысын пайдалану арқылы құлпын ашуды қажет етеді. Келесі жолы құрылғыңыздың құлпын ашқан кезде көзіңіздің қабықтарын пайдалана аласыз.</string>
+    <string name="kg_iris_strong_auth_prompt_reason_universal_lock_security_policy">Қауіпсіздік саясатына байланысты көздің қабығын тану әдісін пайдаланудың орнына бағыттардың бірдей тізбекті қосылысын сызыңыз</string>
+    <string name="kg_iris_toast_preview_for_dex">Өзіңізді куәландыру үшін телефоныңызда көзіңіздің қабықтарын пайдаланыңыз.</string>
+    <string name="kg_iris_too_many_timeout_error_text">Көздің қабығын тануды пайдалану үшін температура өте жоғары. Әрекетті қайталамас бұрын телефонның салқындауын күтіңіз.</string>
+    <string name="kg_iris_too_many_timeout_error_toast_text">Көз қабығын танудың жарық диоды қызып кетті. Әрекетті кейінірек қайталаңыз.</string>
+    <string name="kg_iris_unlock_instructions">Құлпын ашу мақсатында көз қабықтарын пайдалану үшін экранды сипаңыз</string>
+    <string name="kg_iris_unlock_voice_assistant_instructions">Құлпын ашу мақсатында көздің қабықтарын пайдалану үшін экранды екі саусақпен жүргізіп өтіңіз</string>
+    <string name="kg_keycode_delete">ЖОЮ</string>
+    <string name="kg_keycode_ok">OK</string>
+    <string name="kg_kor_empty_sim_puk_hint">PIN құлпын ашу (PUK) коды енгізілмеген. Әрекетті қайталаңыз.</string>
+    <string name="kg_kor_enter_confirm_pin_hint">USIM картасының PIN кодын растау үшін, оны қайта енгізіңіз.</string>
+    <string name="kg_kor_invalid_confirm_pin_hint">Жаңа PIN кодтар сәйкес келмейді.</string>
+    <string name="kg_kor_invalid_sim_puk_hint">Enter 8-digit PIN unlock (PUK) code</string>
+    <string name="kg_kor_password_wrong_pin_code">Қате PIN код енгізілді. %d әрекет қалды. Тұтынушыларға қызмет көрсету орталығына хабарласыңыз.</string>
+    <string name="kg_kor_puk_enter_pin_hint">"USIM картасының жаңа PIN кодын жасаңыз.
+PIN код 4 пен 8 таңба аралығында болуы қажет."</string>
+    <string name="kg_kor_sim_pin_instructions">USIM карта құлпын ашу PIN кодын енгізу (4-8 сан)</string>
+    <string name="kg_kor_sim_puk_instructions">PUK кодты енгізіңіз.</string>
+    <string name="kg_kor_sim_puk_remaining_attempts">"PUK код %1$d рет қате енгізілді. Егер PUK кодты тағы %2$d рет қате енгізсеңіз, USIM картасы толықтай бұғатталады.
+
+Егер PUK кодты білмесеңіз, тұтынушыларға қызмет көрсету орталығына хабарласыңыз."</string>
+    <string name="kg_kor_sim_unlock_progress_dialog_message">SIM картасының құлпын ашу</string>
+    <string name="kg_kor_success_pin_message">New password (PIN) saved successfully.</string>
+    <string name="kg_kor_wrong_puk_code">Unlock code input error</string>
+    <string name="kg_ktt_sim_perso_instructions">Enter 4- to 8-digit password (PIN)</string>
+    <string name="kg_lockscreen_emergency_call_button_text">Төтенше қоңырау</string>
+    <string name="kg_login_checking_password">Есептік жазба тексерілуде…</string>
+    <string name="kg_login_invalid_input">Қате пайдаланушы аты немесе құпиясөз.</string>
+    <string name="kg_login_password_hint">Кілтсөз</string>
+    <string name="kg_login_submit_button">Кіру</string>
+    <string name="kg_login_username_hint">Пайдаланушы аты (электрондық пошта)</string>
+    <string name="kg_missing_sim_message_short">SIM карта жоқ</string>
+    <string name="kg_multi_biometrics_direction_instructions">Биометриялық деректерді пайдалан не бағыттардың бірдей тізбекті қосылысын сыз</string>
+    <string name="kg_multi_biometrics_prompt_reason_timeout_universal_lock_strong_auth">Қауіпсіздік саясатының талабына сәйкес, биометриялық деректеріңізді пайдаланудың орнына бағыттардың бірдей тізбекті қосылысын сызыңыз</string>
+    <string name="kg_multi_biometrics_strong_auth_prompt_reason_24_timeout_universal_lock">Сіздің қауіпсіздігіңіз үшін, телефоныңыздың құлпын ашуға бағыттардың бірдей тізбекті қосылысын қолданыңыз. Биометриялық деректеріңізді келесі жолы пайдалана аласыз.</string>
+    <string name="kg_multi_biometrics_strong_auth_prompt_reason_restarting_universal_lock">Құрылғыңыз қайта іске қосылды және бағыттардың бірдей тізбекті қосылысын пайдалану арқылы құлпын ашуды қажет етеді. Келесі жолы құрылғы құлпын ашқан кезде, биометрлік деректеріңізді пайдалана аласыз.</string>
+    <string name="kg_multi_direction_active_instructions">Ашу үшін биометриялық деректерді пайдаланыңыз немесе бағыттардың бірдей тізбекті қосылысын сызыңыз</string>
+    <string name="kg_multi_direction_none_instructions">Биометриялық деректерді пайдалан не бағыттардың бірдей тізбекті қосылысын сыз</string>
+    <string name="kg_multi_password_active_instructions">Ашу үшін биометриялық деректерді пайдаланыңыз немесе құпиясөзді енгізіңіз</string>
+    <string name="kg_multi_password_none_instructions">Биометриялық деректерді пайдаланыңыз немесе құпиясөзді енгізіңіз</string>
+    <string name="kg_multi_pattern_active_instructions">Ашу үшін биометриялық деректерді пайдаланыңыз немесе үлгіні сызыңыз</string>
+    <string name="kg_multi_pattern_none_instructions">Биометриялық деректерді пайдаланыңыз немесе үлгіні сызыңыз</string>
+    <string name="kg_multi_pin_active_instructions">Ашу үшін биометриялық деректерді пайдаланыңыз не PIN кодты енгізіңіз</string>
+    <string name="kg_multi_pin_none_instructions">Биометриялық деректерді пайдаланыңыз немесе PIN кодты енгізіңіз</string>
+    <string name="kg_n_attempts_remaining">(%d әрекет қалды)</string>
+    <string name="kg_no_match">Сәйкес емес</string>
+    <string name="kg_none_direction_1_frp">"If you do not draw the correct series of directions in the next attempt, your phone will automatically be reset to factory settings and all information on the phone will be erased.
+
+If your phone is reset, you may need to enter the Google account information (email address and password) associated with this phone to be able to use it again."</string>
+    <string name="kg_none_direction_1_reactivation">"Егер келесі әрекетте бағыттардың бірдей тізбекті қосылысын дұрыс енгізбесеңіз, онда телефоныңыз зауыттық параметрлеріне автоматты түрде қалпына келтіріліп, телефондағы барлық ақпарат өшіріледі.
+
+Телефоныңыз бастапқы қалпына келтірілген жағдайда, осы телефонды қайта пайдалана алу үшін онымен байланыстырылған Samsung account есептік жазбасының ақпаратын (электрондық пошта мекенжайы мен құпиясөз) енгізу қажет болуы мүмкін."</string>
+    <string name="kg_none_direction_active_instructions">Ашу үшін бағыттар топтамасын сызу</string>
+    <string name="kg_none_direction_none_frp">"If you do not draw the correct series of directions within the next %d attempts, your phone will automatically be reset to factory settings and all information on the phone will be erased.
+
+If your phone is reset, you may need to enter the Google account information (email address and password) associated with this phone to be able to use it again."</string>
+    <string name="kg_none_direction_none_instructions">Экран құлпын ашу үшін бағыттар сериясын сызыңыз</string>
+    <string name="kg_none_direction_none_reactivation">"Егер келесі %d әрекет бойы бағыттардың бірдей тізбекті қосылысын дұрыс енгізбесеңіз, онда телефоныңыз зауыттық параметрлеріне автоматты түрде қалпына келтіріліп, телефондағы барлық ақпарат өшіріледі.
+
+Телефоныңыз бастапқы қалпына келтірілген жағдайда, осы телефонды қайта пайдалана алу үшін онымен байланыстырылған Samsung account есептік жазбасының ақпаратын (электрондық пошта мекенжайы мен құпиясөз) енгізу қажет болуы мүмкін."</string>
+    <string name="kg_none_face_direction_deviceadmin_instructions">Қауіпсіздік саясатының талабына сәйкес, бетті тануды пайдаланудың орнына бағыттардың бірдей тізбекті қосылысын сызыңыз</string>
+    <string name="kg_none_face_direction_restart_instructions">Телефоныңыз өшіріліп, қайта қосылды және бағыттардың бірдей тізбекті қосылысы арқылы құлпын ашуды қажет етеді. Келесі жолы телефоныңыздың құлпын ашқан кезіңізде бетті тануды пайдалана аласыз.</string>
+    <string name="kg_none_face_direction_shutdown_instructions">Телефонды өшіру үшін бетті тануды пайдаланыңыз немесе бағыттардың бірдей тізбекті қосылысын сызыңыз</string>
+    <string name="kg_none_face_direction_timeout_instructions">Сіздің қауіпсіздігіңіз үшін, телефоныңыздың құлпын ашуға бағыттардың бірдей тізбекті қосылысын қолданыңыз. Биометриялық деректеріңізді келесі жолы пайдалана аласыз.</string>
+    <string name="kg_none_face_password_deviceadmin_instructions">Қауіпсіздік саясатының талабына сәйкес, бетті тануды пайдаланудың орнына құпиясөзді енгізіңіз</string>
+    <string name="kg_none_face_password_restart_instructions">Телефоныңыз өшіріліп, қайта қосылды және құпиясөз арқылы құлпын ашуды қажет етеді. Келесі жолы телефоныңыздың құлпын ашқан кезіңізде бетті тануды пайдалана аласыз.</string>
+    <string name="kg_none_face_password_shutdown_instructions">Телефонды өшіру үшін бетті тануды пайдаланыңыз немесе құпиясөзді енгізіңіз</string>
+    <string name="kg_none_face_password_timeout_instructions">Сіздің қауіпсіздігіңіз үшін, телефоныңыздың құлпын ашуға құпиясөзді қолданыңыз. Биометриялық деректеріңізді келесі жолы пайдалана аласыз.</string>
+    <string name="kg_none_face_pattern_deviceadmin_instructions">Қауіпсіздік саясатының талабына сәйкес, бетті тануды пайдаланудың орнына үлгіні сызыңыз</string>
+    <string name="kg_none_face_pattern_restart_instructions">Телефоныңыз өшіріліп, қайта қосылды және үлгі арқылы құлпын ашуды қажет етеді. Келесі жолы телефоныңыздың құлпын ашқан кезіңізде бетті тануды пайдалана аласыз.</string>
+    <string name="kg_none_face_pattern_shutdown_instructions">Телефонды өшіру үшін бетті тануды пайдаланыңыз немесе үлгіні сызыңыз</string>
+    <string name="kg_none_face_pattern_timeout_instructions">Сіздің қауіпсіздігіңіз үшін, телефоныңыздың құлпын ашуға үлгіні қолданыңыз. Биометриялық деректеріңізді келесі жолы пайдалана аласыз.</string>
+    <string name="kg_none_face_pin_deviceadmin_instructions">Қауіпсіздік саясатының талабына сәйкес, бетті тануды пайдаланудың орнына PIN кодты енгізіңіз</string>
+    <string name="kg_none_face_pin_restart_instructions">Телефоныңыз өшіріліп, қайта қосылды және PIN код арқылы құлпын ашуды қажет етеді. Келесі жолы телефоныңыздың құлпын ашқан кезіңізде бетті тануды пайдалана аласыз.</string>
+    <string name="kg_none_face_pin_shutdown_instructions">Телефонды өшіру үшін бетті тануды пайдаланыңыз немесе PIN кодты енгізіңіз</string>
+    <string name="kg_none_face_pin_timeout_instructions">Сіздің қауіпсіздігіңіз үшін, телефоныңыздың құлпын ашуға PIN кодты қолданыңыз. Биометриялық деректеріңізді келесі жолы пайдалана аласыз.</string>
+    <string name="kg_none_facefingerprint_direction_itpolicy_instructions">Қауіпсіздік саясатының талабына сәйкес, бетті тануды пайдаланудың орнына саусақ ізіңізді пайдаланыңыз немесе бағыттардың бірдей тізбекті қосылысын сызыңыз</string>
+    <string name="kg_none_facefingerprint_password_itpolicy_instructions">Қауіпсіздік саясатының талабына сәйкес, бетті тануды пайдаланудың орнына саусақ ізіңізді пайдаланыңыз немесе құпиясөзді енгізіңіз</string>
+    <string name="kg_none_facefingerprint_pattern_itpolicy_instructions">Қауіпсіздік саясатының талабына сәйкес, бетті тануды пайдаланудың орнына саусақ ізіңізді пайдаланыңыз немесе үлгіні сызыңыз</string>
+    <string name="kg_none_facefingerprint_pin_itpolicy_instructions">Қауіпсіздік саясатының талабына сәйкес, бетті тануды пайдаланудың орнына саусақ ізіңізді пайдаланыңыз немесе PIN кодты енгізіңіз</string>
+    <string name="kg_none_fingerprint_direction_deviceadmin_instructions">Қауіпсіздік саясатының талабына сәйкес, саусақ іздеріңізді пайдаланудың орнына бағыттардың бірдей тізбекті қосылысын сызыңыз</string>
+    <string name="kg_none_fingerprint_direction_restart_instructions">Телефоныңыз қайта қосылды және оның құлпын бірнеше бағытты сызу арқылы ашу қажет. Келесі жолы телефон құлпын ашқан кезде саусақ іздерін пайдалануға болады.</string>
+    <string name="kg_none_fingerprint_direction_shutdown_instructions">Телефонды өшіру үшін саусақ ізін пайдаланыңыз немесе бағыттардың бірдей тізбекті қосылысын сызыңыз</string>
+    <string name="kg_none_fingerprint_direction_timeout_instructions">Сіздің қауіпсіздігіңіз үшін, телефоныңыздың құлпын ашуға бағыттардың бірдей тізбекті қосылысын қолданыңыз. Биометриялық деректеріңізді келесі жолы пайдалана аласыз.</string>
+    <string name="kg_none_fingerprint_password_deviceadmin_instructions">Қауіпсіздік саясатының талабына сәйкес, саусақ іздеріңізді пайдаланудың орнына құпиясөзді енгізіңіз</string>
+    <string name="kg_none_fingerprint_password_restart_instructions">Телефоныңыз қайта қосылды және оның құлпын құпиясөз арқылы ашу қажет. Келесі жолы телефон құлпын ашқан кезде саусақ іздерін пайдалануға болады.</string>
+    <string name="kg_none_fingerprint_password_shutdown_instructions">Телефонды өшіру үшін саусақ ізін пайдаланыңыз немесе құпиясөзді енгізіңіз</string>
+    <string name="kg_none_fingerprint_password_timeout_instructions">Сіздің қауіпсіздігіңіз үшін, телефоныңыздың құлпын ашуға құпиясөзді қолданыңыз. Биометриялық деректеріңізді келесі жолы пайдалана аласыз.</string>
+    <string name="kg_none_fingerprint_pattern_deviceadmin_instructions">Қауіпсіздік саясатының талабына сәйкес, саусақ іздеріңізді пайдаланудың орнына үлгіні сызыңыз</string>
+    <string name="kg_none_fingerprint_pattern_restart_instructions">Телефоныңыз қайта қосылды және оның құлпын үлгі арқылы ашу қажет. Келесі жолы телефон құлпын ашқан кезде саусақ іздерін пайдалануға болады.</string>
+    <string name="kg_none_fingerprint_pattern_shutdown_instructions">Телефонды өшіру үшін саусақ ізін пайдаланыңыз немесе үлгіні сызыңыз</string>
+    <string name="kg_none_fingerprint_pattern_timeout_instructions">Сіздің қауіпсіздігіңіз үшін, телефоныңыздың құлпын ашуға үлгіні қолданыңыз. Биометриялық деректеріңізді келесі жолы пайдалана аласыз.</string>
+    <string name="kg_none_fingerprint_pin_deviceadmin_instructions">Қауіпсіздік саясатының талабына сәйкес, саусақ іздеріңізді пайдаланудың орнына PIN кодты енгізіңіз</string>
+    <string name="kg_none_fingerprint_pin_restart_instructions">Телефоныңыз қайта қосылды және оның құлпын PIN коды арқылы ашу қажет. Келесі жолы телефон құлпын ашқан кезде саусақ іздерін пайдалануға болады.</string>
+    <string name="kg_none_fingerprint_pin_shutdown_instructions">Телефонды өшіру үшін саусақ ізін пайдаланыңыз немесе PIN кодты енгізіңіз</string>
+    <string name="kg_none_fingerprint_pin_timeout_instructions">Сіздің қауіпсіздігіңіз үшін, телефоныңыздың құлпын ашуға PIN кодты қолданыңыз. Биометриялық деректеріңізді келесі жолы пайдалана аласыз.</string>
+    <string name="kg_none_intelligent_direction_deviceadmin_instructions">Қауіпсіздік саясатының талабына сәйкес, Intelligent Scan функциясын пайдаланудың орнына бағыттардың бірдей тізбекті қосылысын сызыңыз</string>
+    <string name="kg_none_intelligent_direction_restart_instructions">Телефоныңыз өшіріліп, қайта қосылды және бағыттардың бірдей тізбекті қосылысы арқылы құлпын ашуды қажет етеді. Келесі жолы телефоныңыздың құлпын ашқан кезіңізде биометриялық деректеріңізді пайдалана аласыз.</string>
+    <string name="kg_none_intelligent_direction_timeout_instructions">Сіздің қауіпсіздігіңіз үшін, телефоныңыздың құлпын ашуға бағыттардың бірдей тізбекті қосылысын қолданыңыз. Биометриялық деректеріңізді келесі жолы пайдалана аласыз.</string>
+    <string name="kg_none_intelligent_password_deviceadmin_instructions">Қауіпсіздік саясатының талабына сәйкес, Intelligent Scan функциясын пайдаланудың орнына құпиясөзді енгізіңіз</string>
+    <string name="kg_none_intelligent_password_restart_instructions">Телефоныңыз өшіріліп, қайта қосылды және құпиясөз арқылы құлпын ашуды қажет етеді. Келесі жолы телефоныңыздың құлпын ашқан кезіңізде биометриялық деректеріңізді пайдалана аласыз.</string>
+    <string name="kg_none_intelligent_password_shutdown_instructions">Телефонды өшіру үшін Intelligent Scan функциясын пайдаланыңыз немесе құпиясөзді енгізіңіз</string>
+    <string name="kg_none_intelligent_password_timeout_instructions">Сіздің қауіпсіздігіңіз үшін, телефоныңыздың құлпын ашуға үлгіні қолданыңыз. Биометриялық деректеріңізді келесі жолы пайдалана аласыз.</string>
+    <string name="kg_none_intelligent_pattern_deviceadmin_instructions">Қауіпсіздік саясатының талабына сәйкес, Intelligent Scan функциясын пайдаланудың орнына үлгіні сызыңыз</string>
+    <string name="kg_none_intelligent_pattern_restart_instructions">Телефоныңыз өшіріліп, қайта қосылды және үлгі арқылы құлпын ашуды қажет етеді. Келесі жолы телефоныңыздың құлпын ашқан кезіңізде биометриялық деректеріңізді пайдалана аласыз.</string>
+    <string name="kg_none_intelligent_pattern_shutdown_instructions">Телефонды өшіру үшін Intelligent Scan функциясын пайдаланыңыз немесе үлгіні сызыңыз</string>
+    <string name="kg_none_intelligent_pattern_timeout_instructions">Сіздің қауіпсіздігіңіз үшін, телефоныңыздың құлпын ашуға үлгіні қолданыңыз. Биометриялық деректеріңізді келесі жолы пайдалана аласыз.</string>
+    <string name="kg_none_intelligent_pin_deviceadmin_instructions">Қауіпсіздік саясатының талабына сәйкес, Intelligent Scan функциясын пайдаланудың орнына PIN кодты енгізіңіз</string>
+    <string name="kg_none_intelligent_pin_restart_instructions">Телефоныңыз өшіріліп, қайта қосылды және PIN код арқылы құлпын ашуды қажет етеді. Келесі жолы телефоныңыздың құлпын ашқан кезіңізде биометриялық деректеріңізді пайдалана аласыз.</string>
+    <string name="kg_none_intelligent_pin_shutdown_instructions">Телефонды өшіру үшін Intelligent Scan функциясын пайдаланыңыз немесе PIN кодты енгізіңіз</string>
+    <string name="kg_none_intelligent_pin_timeout_instructions">Сіздің қауіпсіздігіңіз үшін, телефоныңыздың құлпын ашуға PIN кодты қолданыңыз. Биометриялық деректеріңізді келесі жолы пайдалана аласыз.</string>
+    <string name="kg_none_iris_direction_deviceadmin_instructions">Қауіпсіздік саясатының талабына сәйкес, көзіңіздің қабықтарын пайдаланудың орнына бағыттардың бірдей тізбекті қосылысын сызыңыз</string>
+    <string name="kg_none_iris_direction_restart_instructions">Телефоныңыз қайта іске қосылды және бірнеше бағытты сызу арқылы құлпын ашуды қажет етеді. Келесі жолы телефон құлпын ашқан кезде, көз қабықтарын пайдалануға болады.</string>
+    <string name="kg_none_iris_direction_shutdown_instructions">Телефонды өшіру үшін көздің қабықтарын пайдаланыңыз немесе бағыттардың бірдей тізбекті қосылысын сызыңыз</string>
+    <string name="kg_none_iris_direction_timeout_instructions">Сіздің қауіпсіздігіңіз үшін, телефоныңыздың құлпын ашуға бағыттардың бірдей тізбекті қосылысын қолданыңыз. Биометриялық деректеріңізді келесі жолы пайдалана аласыз.</string>
+    <string name="kg_none_iris_password_deviceadmin_instructions">Қауіпсіздік саясатының талабына сәйкес, көзіңіздің қабықтарын пайдаланудың орнына құпиясөзді енгізіңіз</string>
+    <string name="kg_none_iris_password_restart_instructions">Телефоныңыз қайта іске қосылды және құпиясөз арқылы құлпын ашуды қажет етеді. Келесі жолы телефон құлпын ашқан кезде, көз қабықтарын пайдалануға болады.</string>
+    <string name="kg_none_iris_password_shutdown_instructions">Телефонды өшіру үшін көздің қабықтарын пайдаланыңыз немесе құпиясөзді енгізіңіз</string>
+    <string name="kg_none_iris_password_timeout_instructions">Сіздің қауіпсіздігіңіз үшін, телефоныңыздың құлпын ашуға құпиясөзді қолданыңыз. Биометриялық деректеріңізді келесі жолы пайдалана аласыз.</string>
+    <string name="kg_none_iris_pattern_deviceadmin_instructions">Қауіпсіздік саясатының талабына сәйкес, көзіңіздің қабықтарын пайдаланудың орнына үлгіні сызыңыз</string>
+    <string name="kg_none_iris_pattern_restart_instructions">Телефоныңыз қайта іске қосылды және үлгі арқылы құлпын ашуды қажет етеді. Келесі жолы телефон құлпын ашқан кезде, көз қабықтарын пайдалануға болады.</string>
+    <string name="kg_none_iris_pattern_shutdown_instructions">Телефонды өшіру үшін көздің қабықтарын пайдаланыңыз немесе үлгіні сызыңыз</string>
+    <string name="kg_none_iris_pattern_timeout_instructions">Сіздің қауіпсіздігіңіз үшін, телефоныңыздың құлпын ашуға үлгіні қолданыңыз. Биометриялық деректеріңізді келесі жолы пайдалана аласыз.</string>
+    <string name="kg_none_iris_pin_deviceadmin_instructions">Қауіпсіздік саясатының талабына сәйкес, көзіңіздің қабықтарын пайдаланудың орнына PIN кодты енгізіңіз</string>
+    <string name="kg_none_iris_pin_restart_instructions">Телефоныңыз қайта іске қосылды және PIN коды арқылы құлпын ашуды қажет етеді. Келесі жолы телефон құлпын ашқан кезде, көз қабықтарын пайдалануға болады.</string>
+    <string name="kg_none_iris_pin_shutdown_instructions">Телефонды өшіру үшін көздің қабықтарын пайдаланыңыз немесе PIN кодты енгізіңіз</string>
+    <string name="kg_none_iris_pin_timeout_instructions">Сіздің қауіпсіздігіңіз үшін, телефоныңыздың құлпын ашуға PIN кодты қолданыңыз. Биометриялық деректеріңізді келесі жолы пайдалана аласыз.</string>
+    <string name="kg_none_multi_direction_deviceadmin_instructions">Қауіпсіздік саясатының талабына сәйкес, биометриялық деректеріңізді пайдаланудың орнына бағыттардың бірдей тізбекті қосылысын сызыңыз</string>
+    <string name="kg_none_multi_direction_restart_instructions">Телефоныңыз өшіріліп, қайта қосылды және бағыттардың бірдей тізбекті қосылысы арқылы құлпын ашуды қажет етеді. Келесі жолы телефоныңыздың құлпын ашқан кезіңізде биометриялық деректеріңізді пайдалана аласыз.</string>
+    <string name="kg_none_multi_direction_shutdown_instructions">Телефонды өшіру үшін биометриялық деректерді пайдаланыңыз немесе бағыттардың бірдей тізбекті қосылысын сызыңыз</string>
+    <string name="kg_none_multi_direction_timeout_instructions">Сіздің қауіпсіздігіңіз үшін, телефоныңыздың құлпын ашуға бағыттардың бірдей тізбекті қосылысын қолданыңыз. Биометриялық деректеріңізді келесі жолы пайдалана аласыз.</string>
+    <string name="kg_none_multi_password_deviceadmin_instructions">Қауіпсіздік саясатының талабына сәйкес, биометриялық деректеріңізді пайдаланудың орнына құпиясөзді енгізіңіз</string>
+    <string name="kg_none_multi_password_restart_instructions">Телефоныңыз өшіріліп, қайта қосылды және құпиясөз арқылы құлпын ашуды қажет етеді. Келесі жолы телефоныңыздың құлпын ашқан кезіңізде биометриялық деректеріңізді пайдалана аласыз.</string>
+    <string name="kg_none_multi_password_shutdown_instructions">Телефонды өшіру үшін биометриялық деректерді пайдаланыңыз немесе құпиясөзді енгізіңіз</string>
+    <string name="kg_none_multi_password_timeout_instructions">Сіздің қауіпсіздігіңіз үшін, телефоныңыздың құлпын ашуға құпиясөзді қолданыңыз. Биометриялық деректеріңізді келесі жолы пайдалана аласыз.</string>
+    <string name="kg_none_multi_pattern_deviceadmin_instructions">Қауіпсіздік саясатының талабына сәйкес, биометриялық деректеріңізді пайдаланудың орнына үлгіні сызыңыз</string>
+    <string name="kg_none_multi_pattern_restart_instructions">Телефоныңыз өшіріліп, қайта қосылды және үлгі арқылы құлпын ашуды қажет етеді. Келесі жолы телефоныңыздың құлпын ашқан кезіңізде биометриялық деректеріңізді пайдалана аласыз.</string>
+    <string name="kg_none_multi_pattern_shutdown_instructions">Телефонды өшіру үшін биометриялық деректерді пайдаланыңыз немесе үлгіні сызыңыз</string>
+    <string name="kg_none_multi_pattern_timeout_instructions">Сіздің қауіпсіздігіңіз үшін, телефоныңыздың құлпын ашуға үлгіні қолданыңыз. Биометриялық деректеріңізді келесі жолы пайдалана аласыз.</string>
+    <string name="kg_none_multi_pin_deviceadmin_instructions">Қауіпсіздік саясатының талабына сәйкес, биометриялық деректеріңізді пайдаланудың орнына PIN кодты енгізіңіз</string>
+    <string name="kg_none_multi_pin_restart_instructions">Телефоныңыз өшіріліп, қайта қосылды және PIN код арқылы құлпын ашуды қажет етеді. Келесі жолы телефоныңыздың құлпын ашқан кезіңізде биометриялық деректеріңізді пайдалана аласыз.</string>
+    <string name="kg_none_multi_pin_shutdown_instructions">Телефонды өшіру үшін биометриялық деректерді пайдаланыңыз немесе PIN кодты енгізіңіз</string>
+    <string name="kg_none_multi_pin_timeout_instructions">Сіздің қауіпсіздігіңіз үшін, телефоныңыздың құлпын ашуға PIN кодты қолданыңыз. Биометриялық деректеріңізді келесі жолы пайдалана аласыз.</string>
+    <string name="kg_none_none_direction_shutdown_instructions">Телефонды өшіру үшін бағыттардың бірдей тізбекті қосылысын сызыңыз</string>
+    <string name="kg_none_none_password_shutdown_instructions">Телефонды өшіру үшін құпиясөзді енгізіңіз</string>
+    <string name="kg_none_none_pattern_shutdown_instructions">Телефонды өшіру үшін үлгіні сызыңыз</string>
+    <string name="kg_none_none_pin_shutdown_instructions">Телефонды өшіру үшін PIN кодты енгізіңіз</string>
+    <string name="kg_none_password_1_frp">"If you do not enter the correct password in the next attempt, your phone will automatically be reset to factory settings and all information on the phone will be erased.
+
+If your phone is reset, you may need to enter the Google account information (email address and password) associated with this phone to be able to use it again."</string>
+    <string name="kg_none_password_1_reactivation">"Егер келесі %d әрекет бойы құпиясөзді дұрыс енгізбесеңіз, онда планшетіңіз зауыттық параметрлеріне автоматты түрде қалпына келтіріліп, планшеттегі барлық ақпарат өшіріледі.
+
+Планшетіңіз бастапқы қалпына келтірілген жағдайда, осы планшетті қайта пайдалана алу үшін онымен байланыстырылған Samsung account есептік жазбасының ақпаратын (электрондық пошта мекенжайы мен құпиясөз) енгізу қажет болуы мүмкін."</string>
+    <string name="kg_none_password_active_instructions">Ашу үшін құпия сөз енгізіңіз</string>
+    <string name="kg_none_password_none_frp">"If you do not enter the correct password within the next %d attempts, your phone will automatically be reset to factory settings and all information on the phone will be erased.
+
+If your phone is reset, you may need to enter the Google account information (email address and password) associated with this phone to be able to use it again."</string>
+    <string name="kg_none_password_none_instructions">Құписөзді енгізу</string>
+    <string name="kg_none_password_none_reactivation">"Егер келесі әрекетте құпиясөзді дұрыс енгізбесеңіз, онда планшетіңіз зауыттық параметрлеріне автоматты түрде қалпына келтіріліп, планшеттегі барлық ақпарат өшіріледі.
+
+Планшетіңіз бастапқы қалпына келтірілген жағдайда, осы планшетті қайта пайдалана алу үшін онымен байланыстырылған Samsung account есептік жазбасының ақпаратын (электрондық пошта мекенжайы мен құпиясөз) енгізу қажет болуы мүмкін."</string>
+    <string name="kg_none_pattern_1_frp">"If you do not enter the correct pattern in the next attempt, your phone will automatically be reset to factory settings and all information on the phone will be erased.
+
+If your phone is reset, you may need to enter the Google account information (email address and password) associated with this phone to be able to use it again."</string>
+    <string name="kg_none_pattern_1_reactivation">"Егер келесі әрекетте үлгіні дұрыс енгізбесеңіз, онда телефоныңыз зауыттық параметрлеріне автоматты түрде қалпына келтіріліп, телефондағы барлық ақпарат өшіріледі.
+
+Егер телефоныңыз бастапқы қалпына келтірілсе, онда осы телефонды қайта пайдалана алу үшін онымен байланыстырылған Samsung account есептік жазбасының ақпаратын (электрондық пошта мекенжайы мен құпиясөз) енгізу қажет болуы мүмкін."</string>
+    <string name="kg_none_pattern_active_instructions">Ашу үшін құлыптан шығару үлгісін салу</string>
+    <string name="kg_none_pattern_none_frp">"If you do not enter the correct pattern within the next %d attempts, your phone will automatically be reset to factory settings and all information on the phone will be erased.
+
+If your phone is reset, you may need to enter the Google account information (email address and password) associated with this phone to be able to use it again."</string>
+    <string name="kg_none_pattern_none_instructions">Құлыптан шығару үлгісін салу</string>
+    <string name="kg_none_pattern_none_reactivation">"Егер келесі %d әрекет бойы үлгіні дұрыс енгізбесеңіз, онда телефоныңыз зауыттық параметрлеріне автоматты түрде қалпына келтіріліп, телефондағы барлық ақпарат өшіріледі.
+
+Егер телефоныңыз бастапқы қалпына келтірілсе, онда осы телефонды қайта пайдалана алу үшін онымен байланыстырылған Samsung account есептік жазбасының ақпаратын (электрондық пошта мекенжайы мен құпиясөз) енгізу қажет болуы мүмкін."</string>
+    <string name="kg_none_pin_1_frp">"If you do not enter the correct PIN in the next attempt, your phone will automatically be reset to factory settings and all information on the phone will be erased.
+
+If your phone is reset, you may need to enter the Google account information (email address and password) associated with this phone to be able to use it again."</string>
+    <string name="kg_none_pin_1_reactivation">"Егер келесі әрекетте PIN кодты дұрыс енгізбесеңіз, онда телефоныңыз зауыттық параметрлеріне автоматты түрде қалпына келтіріліп, телефондағы барлық ақпарат өшіріледі.
+
+Егер телефоныңыз бастапқы қалпына келтірілсе, онда осы телефонды қайта пайдалана алу үшін онымен байланыстырылған Samsung account есептік жазбасының ақпаратын (электрондық пошта мекенжайы мен құпиясөз) енгізу қажет болуы мүмкін."</string>
+    <string name="kg_none_pin_active_instructions">Ашу үшін PIN код енгізіңіз</string>
+    <string name="kg_none_pin_none_frp">"If you do not enter the correct PIN within the next %d attempts, your phone will automatically be reset to factory settings and all information on the phone will be erased.
+
+If your phone is reset, you may need to enter the Google account information (email address and password) associated with this phone to be able to use it again."</string>
+    <string name="kg_none_pin_none_instructions">PIN кодын енгізіңіз</string>
+    <string name="kg_none_pin_none_reactivation">"Егер келесі %d әрекет бойы PIN кодты дұрыс енгізбесеңіз, онда телефоныңыз зауыттық параметрлеріне автоматты түрде қалпына келтіріліп, телефондағы барлық ақпарат өшіріледі.
+
+Егер телефоныңыз бастапқы қалпына келтірілсе, онда осы телефонды қайта пайдалана алу үшін онымен байланыстырылған Samsung account есептік жазбасының ақпаратын (электрондық пошта мекенжайы мен құпиясөз) енгізу қажет болуы мүмкін."</string>
+    <string name="kg_none_recovery_none_instructions">Құлпын ашу үшін қалпына келтіру құпиясөзін енгізіңіз.</string>
+    <string name="kg_password_hint">Кеңес</string>
+    <string name="kg_password_hint_show">Тұспал: %s</string>
+    <string name="kg_password_perso_failed">Incorrect PIN. Check PIN and try again.</string>
+    <string name="kg_password_perso_max_failed">Incorrect PIN entered for USIM card lock. Maximum number of retries reached. Restart device or visit CS centre.</string>
+    <string name="kg_password_sub_instructions">Құпиясөз кем дегенде %d таңбадан тұрып, кем дегенде құрамында 1 әріп болуы керек.</string>
+    <string name="kg_password_sub_instructions_vzw">Құпиясөз әріптерден және кем дегенде %d таңбадан тұрады.</string>
+    <string name="kg_password_wrong_pin_code_one">SIM картасының PIN коды қате енгізілді. 1 талпыныс қалды.</string>
+    <string name="kg_password_wrong_pin_code_other">SIM картасының PIN коды қате енгізілді. %d әрекет қалды.</string>
+    <string name="kg_perso_locked_message">Block other USIM</string>
+    <string name="kg_pin_locked_message">PIN кодты енгізу</string>
+    <string name="kg_pin_sub_instructions">PIN код кем дегенде 4 саннан тұрады.</string>
+    <string name="kg_pin_sub_instructions_vzw">PIN код %d немесе одан да көп саннан тұрады.</string>
+    <string name="kg_power_charging">Зарядталуда: %d%%</string>
+    <string name="kg_power_charging_remaining_time">Толықтай зарядталғанға дейін шамамен %s қалды</string>
+    <string name="kg_power_charging_wirelessly">Сымсыз зарядтау: %d%%</string>
+    <string name="kg_power_connect_charger">Зарядтағышты қосу</string>
+    <string name="kg_power_fast_charging">Жылдам зарядтау: %d%%</string>
+    <string name="kg_power_fast_charging_chn">Жақсартылған зарядтау: %d%%</string>
+    <string name="kg_power_fast_charging_wirelessly">Сымсыз жылдам зарядтау: %d%%</string>
+    <string name="kg_power_fast_charging_wirelessly_chn">Жақсартылған сымсыз зарядтау: %d %%</string>
+    <string name="kg_power_fully_charged">Толық зарядталды</string>
+    <string name="kg_power_time_format_hour">%d сағ</string>
+    <string name="kg_power_time_format_hour_minute">%1$dсағ %2$dмин</string>
+    <string name="kg_power_time_format_minute">%d мин</string>
+    <string name="kg_prompt_reason_timeout_password_strong_auth">Қауіпсіздік саясатына байланысты саусақ ізін тану әдісін пайдаланудың орнына құпиясөзді енгізіңіз</string>
+    <string name="kg_prompt_reason_timeout_pattern_strong_auth">Қауіпсіздік саясатына байланысты саусақ ізін тану әдісін пайдаланудың орнына үлгіні сызыңыз</string>
+    <string name="kg_prompt_reason_timeout_pin_strong_auth">Қауіпсіздік саясатына байланысты саусақ ізін тану әдісін пайдаланудың орнына PIN кодты енгізіңіз</string>
+    <string name="kg_prompt_reason_timeout_universal_lock_strong_auth">Қауіпсіздік саясатына байланысты саусақ ізін тану әдісін пайдаланудың орнына бағыттардың бірдей тізбекті қосылысын сызыңыз</string>
+    <string name="kg_puk_locked_message">PUK кодты енгізу</string>
+    <string name="kg_remained_1_attempt_countdown_1_min_with_auto_wipe">"Құрылғының құлпын ашу әрекеті %d рет жасалды. Сізде құрылғы өзінің зауыттық әдепкі параметрлеріне қалпына келтіріліп, барлық деректер өшірілгенге дейін 1 әрекет қалды.
+
+Әрекетті 1 минуттан кейін қайталаңыз"</string>
+    <string name="kg_remained_1_attempt_countdown_1_sec_with_auto_wipe">"Құрылғының құлпын ашу әрекеті %d рет жасалды. Сізде құрылғы өзінің зауыттық әдепкі параметрлеріне қалпына келтіріліп, барлық деректер өшірілгенге дейін 1 әрекет қалды.
+
+Әрекетті 1 секундтан кейін қайталаңыз"</string>
+    <string name="kg_remained_1_attempt_countdown_mins_with_auto_wipe">"Құрылғының құлпын ашу әрекеті %1$d рет жасалды. Сізде құрылғы өзінің зауыттық әдепкі параметрлеріне қалпына келтіріліп, барлық деректер өшірілгенге дейін 1 әрекет қалды.
+
+Әрекетті %2$d минуттан кейін қайталаңыз"</string>
+    <string name="kg_remained_1_attempt_countdown_secs_with_auto_wipe">"Құрылғының құлпын ашу әрекеті %1$d рет жасалды. Сізде құрылғы өзінің зауыттық әдепкі параметрлеріне қалпына келтіріліп, барлық деректер өшірілгенге дейін 1 әрекет қалды.
+
+Әрекетті %2$d секундтан кейін қайталаңыз"</string>
+    <string name="kg_rmm_lock_instructions">%s PIN кодын енгізу</string>
+    <string name="kg_samsung_account_button_text">Samsung account</string>
+    <string name="kg_sec_1_failed_attempt_almost_at_wipe">Құрылғы құлпын ашу әрекеті жасалды. Файлдар мен жүктелген қолданбаларды қоса алғанда, құрылғы әдепкі зауыттық параметрлерге дейін қалпына келтіріліп, барлық деректер өшірілмегенше, сізде %d әрекет қалды.</string>
+    <string name="kg_sec_1_remaining_count_almost_at_wipe">Құрылғы құлпын ашу әрекеті %d рет жасалды. Файлдар мен жүктелген қолданбаларды қоса алғанда, құрылғы әдепкі зауыттық параметрлерге дейін қалпына келтіріліп, барлық деректер өшірілмегенше, сізде 1 әрекет қалды.</string>
+    <string name="kg_sec_failed_attempts_almost_at_wipe">Құрылғы құлпын ашу әрекеті %1$d рет жасалды. Файлдар мен жүктелген қолданбаларды қоса алғанда, құрылғы әдепкі зауыттық параметрлерге дейін қалпына келтіріліп, барлық деректер өшірілмегенше, сізде %2$d әрекет қалды.</string>
+    <string name="kg_sec_puk_enter_confirm_pin_hint">Оны растау үшін жаңа SIM картаның PIN кодын қайтадан енгізіңіз.</string>
+    <string name="kg_sec_puk_enter_pin_hint">Жаңа SIM картаның PIN кодын енгізіңіз.</string>
+    <string name="kg_sec_sim_unlock_progress_dialog_message">SIM картасының құлпы ашылуда…</string>
+    <string name="kg_show_password_accessibility">Құпиясөзді көрсету</string>
+    <string name="kg_sim_lock_accepted">Код қабылданды.</string>
+    <string name="kg_sim_locked_message">SIM карта құлыпталған</string>
+    <string name="kg_sim_pin_remaining_1_attempt">1 талпыныс қалды.</string>
+    <string name="kg_sim_pin_remaining_attempts">%d талпыныс қалды.</string>
+    <string name="kg_sim_puk_instructions">SIM карта құлыпталды. PUK кодын енгізіңіз. Мәліметтерді алу үшін, қызмет жеткізушісіне хабарласыңыз.</string>
+    <string name="kg_sim_puk_remaining_1_attempt">Егер PUK кодын тағы 1 рет қате енгізсеңіз, SIM құлыпталады.</string>
+    <string name="kg_sim_puk_remaining_attempts">Егер PUK кодын %d рет қате енгізсеңіз, SIM құлыпталады.</string>
+    <string name="kg_sim_puk_tmo_help_contact_service_provider">Your PIN has been blocked. To unlock your device, contact your service provider.</string>
+    <string name="kg_sim_puk_tmo_sos_call">SOS</string>
+    <string name="kg_skt_sim_perso_instructions">USIM картасының құлпын ашу PIN кодын енгізу (4 таңбалы)</string>
+    <string name="kg_smart_lock_content_description">Құрылғыны құлыптау үшін, екі рет түртіп, сүйреңіз.</string>
+    <string name="kg_strong_auth_prompt_reason_timeout_direction_lock">Құрылғыңыз 24 сағаттан көп уақыт бойы пайдаланылмады және бағыттардың бірдей тізбекті қосылысын пайдалану арқылы құлпын ашуды қажет етеді. Келесі жолы құрылғыңыздың құлпын ашқан кезде саусақ іздеріңізді пайдалана аласыз.</string>
+    <string name="kg_strong_auth_prompt_reason_timeout_password">Құрылғыңыз 24 сағаттан көп уақыт бойы пайдаланылмады және құпиясөз арқылы құлпын ашуды қажет етеді. Келесі жолы құрылғыңыздың құлпын ашқан кезде саусақ іздеріңізді пайдалана аласыз.</string>
+    <string name="kg_strong_auth_prompt_reason_timeout_pattern">Құрылғыңыз 24 сағаттан көп уақыт бойы пайдаланылмады және үлгі арқылы құлпын ашуды қажет етеді. Келесі жолы құрылғыңыздың құлпын ашқан кезде саусақ іздеріңізді пайдалана аласыз.</string>
+    <string name="kg_strong_auth_prompt_reason_timeout_pin">Құрылғыңыз 24 сағаттан көп уақыт бойы пайдаланылмады және PIN код арқылы құлпын ашуды қажет етеді. Келесі жолы құрылғыңыздың құлпын ашқан кезде саусақ іздеріңізді пайдалана аласыз.</string>
+    <string name="kg_swipe_active_instructions">Ашу үшін экранды сипаңыз</string>
+    <string name="kg_swipe_unlock_instructions">Құлпын ашу үшін, экранды сипаңыз</string>
+    <string name="kg_swipe_unlock_smart_lock_instructions">Телефонның құлпы Smart Lock арқылы ашылды</string>
+    <string name="kg_swipe_unlock_strong_auth_instructions">Сіздің қауіпсіздігіңіз үшін, құлпын ашу мақсатында экранды жүргізіп өтіңіз</string>
+    <string name="kg_tablet_direction_1_frp">"If you do not draw the correct series of directions in the next attempt, your tablet will automatically be reset to factory settings and all information on the tablet will be erased.
+
+If your tablet is reset, you may need to enter the Google account information (email address and password) associated with this tablet to be able to use it again."</string>
+    <string name="kg_tablet_direction_1_reactivation">"Егер келесі әрекетте бағыттардың бірдей тізбекті қосылысын дұрыс енгізбесеңіз, онда планшетіңіз зауыттық параметрлеріне автоматты түрде қалпына келтіріліп, планшеттегі барлық ақпарат өшіріледі.
+
+Планшетіңіз бастапқы қалпына келтірілген жағдайда, осы планшетті қайта пайдалана алу үшін онымен байланыстырылған Samsung account есептік жазбасының ақпаратын (электрондық пошта мекенжайы мен құпиясөз) енгізу қажет болуы мүмкін."</string>
+    <string name="kg_tablet_direction_none_frp">"If you do not draw the correct series of directions within the next %d attempts, your tablet will automatically be reset to factory settings and all information on the tablet will be erased.
+
+If your tablet is reset, you may need to enter the Google account information (email address and password) associated with this tablet to be able to use it again."</string>
+    <string name="kg_tablet_direction_none_reactivation">"Егер келесі %d әрекет бойы бағыттардың бірдей тізбекті қосылысын дұрыс енгізбесеңіз, онда планшетіңіз зауыттық параметрлеріне автоматты түрде қалпына келтіріліп, планшеттегі барлық ақпарат өшіріледі.
+
+Планшетіңіз бастапқы қалпына келтірілген жағдайда, осы планшетті қайта пайдалана алу үшін онымен байланыстырылған Samsung account есептік жазбасының ақпаратын (электрондық пошта мекенжайы мен құпиясөз) енгізу қажет болуы мүмкін."</string>
+    <string name="kg_tablet_face_direction_restart_instructions">Планшетіңіз өшіріліп, қайта қосылды және бағыттардың бірдей тізбекті қосылысы арқылы құлпын ашуды қажет етеді. Келесі жолы планшетіңіздің құлпын ашқан кезіңізде бетті тануды пайдалана аласыз.</string>
+    <string name="kg_tablet_face_direction_shutdown_instructions">Планшетіңіз қайта қосылды және оның құлпын бірнеше бағытты сызу арқылы ашу қажет. Келесі жолы планшет құлпын ашқан кезде саусақ іздерін пайдалануға болады.</string>
+    <string name="kg_tablet_face_direction_timeout_instructions">Сіздің қауіпсіздігіңіз үшін, планшетіңіздің құлпын ашуға бағыттардың бірдей тізбекті қосылысын қолданыңыз. Биометриялық деректеріңізді келесі жолы пайдалана аласыз.</string>
+    <string name="kg_tablet_face_password_restart_instructions">Планшетіңіз өшіріліп, қайта қосылды және құпиясөз арқылы құлпын ашуды қажет етеді. Келесі жолы планшетіңіздің құлпын ашқан кезіңізде бетті тануды пайдалана аласыз.</string>
+    <string name="kg_tablet_face_password_timeout_instructions">Сіздің қауіпсіздігіңіз үшін, планшетіңіздің құлпын ашуға құпиясөзді қолданыңыз. Биометриялық деректеріңізді келесі жолы пайдалана аласыз.</string>
+    <string name="kg_tablet_face_pattern_restart_instructions">Планшетіңіз өшіріліп, қайта қосылды және үлгі арқылы құлпын ашуды қажет етеді. Келесі жолы планшетіңіздің құлпын ашқан кезіңізде бетті тануды пайдалана аласыз.</string>
+    <string name="kg_tablet_face_pattern_timeout_instructions">Сіздің қауіпсіздігіңіз үшін, планшетіңіздің құлпын ашуға үлгіні қолданыңыз. Биометриялық деректеріңізді келесі жолы пайдалана аласыз.</string>
+    <string name="kg_tablet_face_pin_restart_instructions">Планшетіңіз өшіріліп, қайта қосылды және PIN код арқылы құлпын ашуды қажет етеді. Келесі жолы планшетіңіздің құлпын ашқан кезіңізде бетті тануды пайдалана аласыз.</string>
+    <string name="kg_tablet_face_pin_timeout_instructions">Сіздің қауіпсіздігіңіз үшін, планшетіңіздің құлпын ашуға PIN кодты қолданыңыз. Биометриялық деректеріңізді келесі жолы пайдалана аласыз.</string>
+    <string name="kg_tablet_fingerprint_direction_restart_instructions">Планшетіңіз қайта қосылды және оның құлпын бірнеше бағытты сызу арқылы ашу қажет. Келесі жолы планшет құлпын ашқан кезде саусақ іздерін пайдалануға болады.</string>
+    <string name="kg_tablet_fingerprint_direction_shutdown_instructions">Планшетті өшіру үшін саусақ ізін пайдаланыңыз немесе бағыттардың бірдей тізбекті қосылысын сызыңыз</string>
+    <string name="kg_tablet_fingerprint_direction_timeout_instructions">Сіздің қауіпсіздігіңіз үшін, планшетіңіздің құлпын ашуға бағыттардың бірдей тізбекті қосылысын қолданыңыз. Биометриялық деректеріңізді келесі жолы пайдалана аласыз.</string>
+    <string name="kg_tablet_fingerprint_password_restart_instructions">Планшетіңіз қайта қосылды және оның құлпын құпиясөз арқылы ашу қажет. Келесі жолы планшет құлпын ашқан кезде саусақ іздерін пайдалануға болады.</string>
+    <string name="kg_tablet_fingerprint_password_shutdown_instructions">Планшетті өшіру үшін саусақ ізін пайдаланыңыз немесе құпиясөзді енгізіңіз</string>
+    <string name="kg_tablet_fingerprint_password_timeout_instructions">Сіздің қауіпсіздігіңіз үшін, планшетіңіздің құлпын ашуға құпиясөзді қолданыңыз. Биометриялық деректеріңізді келесі жолы пайдалана аласыз.</string>
+    <string name="kg_tablet_fingerprint_pattern_restart_instructions">Планшетіңіз қайта қосылды және оның құлпын үлгі арқылы ашу қажет. Келесі жолы планшет құлпын ашқан кезде саусақ іздерін пайдалануға болады.</string>
+    <string name="kg_tablet_fingerprint_pattern_shutdown_instructions">Планшетті өшіру үшін саусақ ізін пайдаланыңыз немесе үлгіні сызыңыз</string>
+    <string name="kg_tablet_fingerprint_pattern_timeout_instructions">Сіздің қауіпсіздігіңіз үшін, планшетіңіздің құлпын ашуға үлгіні қолданыңыз. Биометриялық деректеріңізді келесі жолы пайдалана аласыз.</string>
+    <string name="kg_tablet_fingerprint_pin_restart_instructions">Планшетіңіз қайта қосылды және оның құлпын PIN коды арқылы ашу қажет. Келесі жолы планшет құлпын ашқан кезде саусақ іздерін пайдалануға болады.</string>
+    <string name="kg_tablet_fingerprint_pin_shutdown_instructions">Планшетті өшіру үшін саусақ ізін пайдаланыңыз немесе PIN кодты енгізіңіз</string>
+    <string name="kg_tablet_fingerprint_pin_timeout_instructions">Сіздің қауіпсіздігіңіз үшін, планшетіңіздің құлпын ашуға PIN кодты қолданыңыз. Биометриялық деректеріңізді келесі жолы пайдалана аласыз.</string>
+    <string name="kg_tablet_fingerprints_direction_unabled_instructions">Құрылғыңыз қайта іске қосылды және бағыттардың бірдей тізбекті қосылысын пайдалану арқылы құлпын ашуды қажет етеді. Келесі жолы құрылғыңыздың құлпын ашқан кезде саусақ іздеріңізді пайдалана аласыз.</string>
+    <string name="kg_tablet_fingerprints_password_unabled_instructions">Құрылғыңыз қайта іске қосылды және құпиясөз арқылы құлпын ашуды қажет етеді. Келесі жолы құрылғыңыздың құлпын ашқан кезде саусақ іздеріңізді пайдалана аласыз.</string>
+    <string name="kg_tablet_fingerprints_pattern_unabled_instructions">Құрылғыңыз қайта іске қосылды және үлгі арқылы құлпын ашуды қажет етеді. Келесі жолы құрылғыңыздың құлпын ашқан кезде саусақ іздеріңізді пайдалана аласыз.</string>
+    <string name="kg_tablet_fingerprints_pin_unabled_instructions">Құрылғыңыз қайта іске қосылды және PIN код арқылы құлпын ашуды қажет етеді. Келесі жолы құрылғыңыздың құлпын ашқан кезде саусақ іздеріңізді пайдалана аласыз.</string>
+    <string name="kg_tablet_intelligent_password_restart_instructions">Сіздің қауіпсіздігіңіз үшін, құлпын ашу мақсатында экранды жүргізіп өтіңіз</string>
+    <string name="kg_tablet_intelligent_password_timeout_instructions">Сіздің қауіпсіздігіңіз үшін, планшетіңіздің құлпын ашуға үлгіні қолданыңыз. Биометриялық деректеріңізді келесі жолы пайдалана аласыз.</string>
+    <string name="kg_tablet_intelligent_pattern_restart_instructions">Сіздің қауіпсіздігіңіз үшін, құлпын ашу мақсатында экранды жүргізіп өтіңіз</string>
+    <string name="kg_tablet_intelligent_pattern_timeout_instructions">Сіздің қауіпсіздігіңіз үшін, планшетіңіздің құлпын ашуға үлгіні қолданыңыз. Биометриялық деректеріңізді келесі жолы пайдалана аласыз.</string>
+    <string name="kg_tablet_intelligent_pin_restart_instructions">Сіздің қауіпсіздігіңіз үшін, құлпын ашу мақсатында экранды жүргізіп өтіңіз</string>
+    <string name="kg_tablet_intelligent_pin_timeout_instructions">Сіздің қауіпсіздігіңіз үшін, планшетіңіздің құлпын ашуға PIN кодты қолданыңыз. Биометриялық деректеріңізді келесі жолы пайдалана аласыз.</string>
+    <string name="kg_tablet_iris_direction_restart_instructions">Планшетіңіз қайта іске қосылды және бірнеше бағытты сызу арқылы құлпын ашуды қажет етеді. Келесі жолы планшет құлпын ашқан кезде, көз қабықтарын пайдалануға болады.</string>
+    <string name="kg_tablet_iris_direction_shutdown_instructions">Планшетті өшіру үшін көздің қабықтарын пайдаланыңыз немесе бағыттардың бірдей тізбекті қосылысын сызыңыз</string>
+    <string name="kg_tablet_iris_direction_timeout_instructions">Сіздің қауіпсіздігіңіз үшін, планшетіңіздің құлпын ашуға бағыттардың бірдей тізбекті қосылысын қолданыңыз. Биометриялық деректеріңізді келесі жолы пайдалана аласыз.</string>
+    <string name="kg_tablet_iris_password_restart_instructions">Планшетіңіз қайта іске қосылды және құпиясөз арқылы құлпын ашуды қажет етеді. Келесі жолы планшет құлпын ашқан кезде, көз қабықтарын пайдалануға болады.</string>
+    <string name="kg_tablet_iris_password_shutdown_instructions">Планшетті өшіру үшін көздің қабықтарын пайдаланыңыз немесе құпиясөзді енгізіңіз</string>
+    <string name="kg_tablet_iris_password_timeout_instructions">Сіздің қауіпсіздігіңіз үшін, планшетіңіздің құлпын ашуға құпиясөзді қолданыңыз. Биометриялық деректеріңізді келесі жолы пайдалана аласыз.</string>
+    <string name="kg_tablet_iris_pattern_restart_instructions">Планшетіңіз қайта іске қосылды және үлгі арқылы құлпын ашуды қажет етеді. Келесі жолы планшет құлпын ашқан кезде, көз қабықтарын пайдалануға болады.</string>
+    <string name="kg_tablet_iris_pattern_shutdown_instructions">Планшетті өшіру үшін көздің қабықтарын пайдаланыңыз немесе үлгіні сызыңыз</string>
+    <string name="kg_tablet_iris_pattern_timeout_instructions">Сіздің қауіпсіздігіңіз үшін, планшетіңіздің құлпын ашуға үлгіні қолданыңыз. Биометриялық деректеріңізді келесі жолы пайдалана аласыз.</string>
+    <string name="kg_tablet_iris_pin_restart_instructions">Планшетіңіз қайта іске қосылды және PIN коды арқылы құлпын ашуды қажет етеді. Келесі жолы планшет құлпын ашқан кезде, көз қабықтарын пайдалануға болады.</string>
+    <string name="kg_tablet_iris_pin_shutdown_instructions">Планшетті өшіру үшін көздің қабықтарын пайдаланыңыз немесе PIN кодты енгізіңіз</string>
+    <string name="kg_tablet_iris_pin_timeout_instructions">Сіздің қауіпсіздігіңіз үшін, планшетіңіздің құлпын ашуға PIN кодты қолданыңыз. Биометриялық деректеріңізді келесі жолы пайдалана аласыз.</string>
+    <string name="kg_tablet_multi_direction_restart_instructions">Планшетіңіз өшіріліп, қайта қосылды және бағыттардың бірдей тізбекті қосылысы арқылы құлпын ашуды қажет етеді. Келесі жолы планшетіңіздің құлпын ашқан кезіңізде биометриялық деректеріңізді пайдалана аласыз.</string>
+    <string name="kg_tablet_multi_direction_shutdown_instructions">Планшетті өшіру үшін биометриялық деректерді пайдаланыңыз немесе бағыттардың бірдей тізбекті қосылысын сызыңыз</string>
+    <string name="kg_tablet_multi_direction_timeout_instructions">Сіздің қауіпсіздігіңіз үшін, планшетіңіздің құлпын ашуға бағыттардың бірдей тізбекті қосылысын қолданыңыз. Биометриялық деректеріңізді келесі жолы пайдалана аласыз.</string>
+    <string name="kg_tablet_multi_password_restart_instructions">Планшетіңіз өшіріліп, қайта қосылды және құпиясөз арқылы құлпын ашуды қажет етеді. Келесі жолы планшетіңіздің құлпын ашқан кезіңізде биометриялық деректеріңізді пайдалана аласыз.</string>
+    <string name="kg_tablet_multi_password_shutdown_instructions">Планшетті өшіру үшін биометриялық деректерді пайдаланыңыз немесе құпиясөзді енгізіңіз</string>
+    <string name="kg_tablet_multi_password_timeout_instructions">Сіздің қауіпсіздігіңіз үшін, планшетіңіздің құлпын ашуға құпиясөзді қолданыңыз. Биометриялық деректеріңізді келесі жолы пайдалана аласыз.</string>
+    <string name="kg_tablet_multi_pattern_restart_instructions">Планшетіңіз өшіріліп, қайта қосылды және үлгі арқылы құлпын ашуды қажет етеді. Келесі жолы планшетіңіздің құлпын ашқан кезіңізде биометриялық деректеріңізді пайдалана аласыз.</string>
+    <string name="kg_tablet_multi_pattern_shutdown_instructions">Планшетті өшіру үшін биометриялық деректерді пайдаланыңыз немесе үлгіні сызыңыз</string>
+    <string name="kg_tablet_multi_pattern_timeout_instructions">Сіздің қауіпсіздігіңіз үшін, планшетіңіздің құлпын ашуға үлгіні қолданыңыз. Биометриялық деректеріңізді келесі жолы пайдалана аласыз.</string>
+    <string name="kg_tablet_multi_pin_restart_instructions">Планшетіңіз өшіріліп, қайта қосылды және PIN код арқылы құлпын ашуды қажет етеді. Келесі жолы планшетіңіздің құлпын ашқан кезіңізде биометриялық деректеріңізді пайдалана аласыз.</string>
+    <string name="kg_tablet_multi_pin_shutdown_instructions">Планшетті өшіру үшін биометриялық деректерді пайдаланыңыз немесе PIN кодты енгізіңіз</string>
+    <string name="kg_tablet_multi_pin_timeout_instructions">Сіздің қауіпсіздігіңіз үшін, планшетіңіздің құлпын ашуға PIN кодты қолданыңыз. Биометриялық деректеріңізді келесі жолы пайдалана аласыз.</string>
+    <string name="kg_tablet_none_direction_shutdown_instructions">Планшетті өшіру үшін бағыттардың бірдей тізбекті қосылысын сызыңыз</string>
+    <string name="kg_tablet_none_password_shutdown_instructions">Планшетті өшіру үшін құпиясөзді енгізіңіз</string>
+    <string name="kg_tablet_none_pattern_shutdown_instructions">Планшетті өшіру үшін үлгіні сызыңыз</string>
+    <string name="kg_tablet_none_pin_shutdown_instructions">Планшетті өшіру үшін PIN кодты енгізіңіз</string>
+    <string name="kg_tablet_password_1_frp">"If you do not enter the correct password in the next attempt, your tablet will automatically be reset to factory settings and all information on the tablet will be erased.
+
+If your tablet is reset, you may need to enter the Google account information (email address and password) associated with this tablet to be able to use it again."</string>
+    <string name="kg_tablet_password_1_reactivation">"Егер келесі %d әрекет бойы құпиясөзді дұрыс енгізбесеңіз, онда телефоныңыз зауыттық параметрлеріне автоматты түрде қалпына келтіріліп, телефондағы барлық ақпарат өшіріледі.
+
+Егер телефоныңыз бастапқы қалпына келтірілсе, онда осы телефонды қайта пайдалана алу үшін онымен байланыстырылған Samsung account есептік жазбасының ақпаратын (электрондық пошта мекенжайы мен құпиясөз) енгізу қажет болуы мүмкін."</string>
+    <string name="kg_tablet_password_none_frp">"If you do not enter the correct password within the next %d attempts, your tablet will automatically be reset to factory settings and all information on the tablet will be erased.
+
+If your tablet is reset, you may need to enter the Google account information (email address and password) associated with this tablet to be able to use it again."</string>
+    <string name="kg_tablet_password_none_reactivation">"Егер келесі әрекетте құпиясөзді дұрыс енгізбесеңіз, онда телефоныңыз зауыттық параметрлеріне автоматты түрде қалпына келтіріліп, телефондағы барлық ақпарат өшіріледі.
+
+Егер телефоныңыз бастапқы қалпына келтірілсе, онда осы телефонды қайта пайдалана алу үшін онымен байланыстырылған Samsung account есептік жазбасының ақпаратын (электрондық пошта мекенжайы мен құпиясөз) енгізу қажет болуы мүмкін."</string>
+    <string name="kg_tablet_pattern_1_frp">"If you do not draw the correct pattern in the next attempt, your tablet will automatically be reset to factory settings and all information on the tablet will be erased.
+
+If your tablet is reset, you may need to enter the Google account information (email address and password) associated with this tablet to be able to use it again."</string>
+    <string name="kg_tablet_pattern_1_reactivation">"Егер келесі әрекетте үлгіні дұрыс енгізбесеңіз, онда планшетіңіз зауыттық параметрлеріне автоматты түрде қалпына келтіріліп, планшеттегі барлық ақпарат өшіріледі.
+
+Планшетіңіз бастапқы қалпына келтірілген жағдайда, осы планшетті қайта пайдалана алу үшін онымен байланыстырылған Samsung account есептік жазбасының ақпаратын (электрондық пошта мекенжайы мен құпиясөз) енгізу қажет болуы мүмкін."</string>
+    <string name="kg_tablet_pattern_none_frp">"If you do not draw the correct pattern within the next %d attempts, your tablet will automatically be reset to factory settings and all information on the tablet will be erased.
+
+If your tablet is reset, you may need to enter the Google account information (email address and password) associated with this tablet to be able to use it again."</string>
+    <string name="kg_tablet_pattern_none_reactivation">"Егер келесі %d әрекет бойы үлгіні дұрыс енгізбесеңіз, онда планшетіңіз зауыттық параметрлеріне автоматты түрде қалпына келтіріліп, планшеттегі барлық ақпарат өшіріледі.
+
+Планшетіңіз бастапқы қалпына келтірілген жағдайда, осы планшетті қайта пайдалана алу үшін онымен байланыстырылған Samsung account есептік жазбасының ақпаратын (электрондық пошта мекенжайы мен құпиясөз) енгізу қажет болуы мүмкін."</string>
+    <string name="kg_tablet_pin_1_frp">"If you do not enter the correct PIN in the next attempt, your tablet will automatically be reset to factory settings and all information on the tablet will be erased.
+
+If your tablet is reset, you may need to enter the Google account information (email address and password) associated with this tablet to be able to use it again."</string>
+    <string name="kg_tablet_pin_1_reactivation">"Егер келесі әрекетте PIN кодты дұрыс енгізбесеңіз, онда планшетіңіз зауыттық параметрлеріне автоматты түрде қалпына келтіріліп, планшеттегі барлық ақпарат өшіріледі.
+
+Планшетіңіз бастапқы қалпына келтірілген жағдайда, осы планшетті қайта пайдалана алу үшін онымен байланыстырылған Samsung account есептік жазбасының ақпаратын (электрондық пошта мекенжайы мен құпиясөз) енгізу қажет болуы мүмкін."</string>
+    <string name="kg_tablet_pin_none_frp">"If you do not enter the correct PIN within the next %d attempts, your tablet will automatically be reset to factory settings and all information on the tablet will be erased.
+
+If your tablet is reset, you may need to enter the Google account information (email address and password) associated with this tablet to be able to use it again."</string>
+    <string name="kg_tablet_pin_none_reactivation">"Егер келесі %d әрекет бойы PIN кодты дұрыс енгізбесеңіз, онда планшетіңіз зауыттық параметрлеріне автоматты түрде қалпына келтіріліп, планшеттегі барлық ақпарат өшіріледі.
+
+Планшетіңіз бастапқы қалпына келтірілген жағдайда, осы планшетті қайта пайдалана алу үшін онымен байланыстырылған Samsung account есептік жазбасының ақпаратын (электрондық пошта мекенжайы мен құпиясөз) енгізу қажет болуы мүмкін."</string>
+    <string name="kg_tablet_strong_auth_prompt_reason_timeout_direction_lock">Құрылғыңыз 24 сағаттан көп уақыт бойы пайдаланылмады және бағыттардың бірдей тізбекті қосылысын пайдалану арқылы құлпын ашуды қажет етеді. Келесі жолы құрылғыңыздың құлпын ашқан кезде саусақ іздеріңізді пайдалана аласыз.</string>
+    <string name="kg_tablet_strong_auth_prompt_reason_timeout_password">Құрылғыңыз 24 сағаттан көп уақыт бойы пайдаланылмады және құпиясөз арқылы құлпын ашуды қажет етеді. Келесі жолы құрылғыңыздың құлпын ашқан кезде саусақ іздеріңізді пайдалана аласыз.</string>
+    <string name="kg_tablet_strong_auth_prompt_reason_timeout_pattern">Құрылғыңыз 24 сағаттан көп уақыт бойы пайдаланылмады және үлгі арқылы құлпын ашуды қажет етеді. Келесі жолы құрылғыңыздың құлпын ашқан кезде саусақ іздеріңізді пайдалана аласыз.</string>
+    <string name="kg_tablet_strong_auth_prompt_reason_timeout_pin">Құрылғыңыз 24 сағаттан көп уақыт бойы пайдаланылмады және PIN код арқылы құлпын ашуды қажет етеді. Келесі жолы құрылғыңыздың құлпын ашқан кезде саусақ іздеріңізді пайдалана аласыз.</string>
+    <string name="kg_too_many_failed_attempt_countdown">Әрекетті 1 секундтан кейін қайталау</string>
+    <string name="kg_too_many_failed_attempts_countdown_1_min_with_auto_wipe">"Құрылғының құлпын ашу әрекеті %1$d рет жасалды. Сізде құрылғы өзінің зауыттық әдепкі параметрлеріне қалпына келтіріліп, барлық деректер өшірілгенге дейін %2$d әрекет қалды.
+
+Әрекетті 1 минуттан кейін қайталаңыз"</string>
+    <string name="kg_too_many_failed_attempts_countdown_1_sec_with_auto_wipe">"Құрылғының құлпын ашу әрекеті %1$d рет жасалды. Құрылғы өзінің зауыттық әдепкі параметрлеріне қалпына келтіріліп, барлық деректер өшірілгенге дейін сізде %2$d әрекет қалды.
+
+Әрекетті 1 секундтан кейін қайталаңыз"</string>
+    <string name="kg_too_many_failed_attempts_countdown_mins_with_auto_wipe">"Құрылғының құлпын ашу әрекеті %1$d рет жасалды. Сізде құрылғы өзінің зауыттық әдепкі параметрлеріне қалпына келтіріліп, барлық деректер өшірілгенге дейін %2$d әрекет қалды.
+
+Әрекетті %3$d минуттан кейін қайталаңыз"</string>
+    <string name="kg_too_many_failed_attempts_countdown_secs_with_auto_wipe">"Құрылғының құлпын ашу әрекеті %1$d рет жасалды. Құрылғы өзінің зауыттық әдепкі параметрлеріне қалпына келтіріліп, барлық деректер өшірілгенге дейін сізде %2$d әрекет қалды.
+
+Әрекетті %3$d секундтан кейін қайталаңыз"</string>
+    <string name="kg_too_many_failed_countdown_1_sec_with_auto_wipe">Әрекетті 1 секундтан кейін қайталау</string>
+    <string name="kg_tts_shortcut_app">%s қолданбасын ашу үшін, екі рет түртіп сүйреңіз.</string>
+    <string name="kg_ucm_enter_confirm_pin_hint">Оны растау мақсатында PIN кодты қайта енгізу</string>
+    <string name="kg_ucm_invalid_confirm_pin_hint">PIN кодтар сәйкес келмейді</string>
+    <string name="kg_ucm_loading">Жүктелуде…</string>
+    <string name="kg_ucm_password_not_matching">Смарт картадағы құпиясөз телефонда сақталған құпиясөзбен сәйкес келмейді</string>
+    <string name="kg_ucm_password_wrong_puk_code">Қате PUK коды енгізілді</string>
+    <string name="kg_ucm_puk_enter_pin_hint">Жаңа PIN кодты енгізу</string>
+    <string name="kg_ucm_unknown_error_occurred">Белгісіз қате пайда болды.</string>
+    <string name="kg_ucm_unlocking">Құлпы ашылуда…</string>
+    <string name="kg_unlock_progress">Құлпы ашылуда…</string>
+    <string name="kg_unlock_sim_pin_instructions">SIM картасының құлпын ашатын PIN кодын енгізіңіз.</string>
+    <string name="kg_unlock_sim_pin_remaining_1_attempt">SIM картаның құлпын ашу PIN кодын енгізіңіз. 1 әрекет қалды.</string>
+    <string name="kg_unlock_sim_pin_remaining_attempts">SIM картаның құлпын ашу PIN кодын енгізіңіз. %d әрекет қалды.</string>
+    <string name="kg_use_biometrics_first">Алдымен биометриялық деректерді пайдалану</string>
+    <string name="kg_use_fingerprint_first">Алдымен саусақ ізін пайдалану</string>
+    <string name="kg_use_irises_first">Алдымен көздің қабықтарын пайдалану</string>
+    <string name="kg_voice_assistant_active_instructions">Ашу үшін, экранды екі саусақпен сипаңыз.</string>
+    <string name="kg_voice_assistant_unlock_instructions">Экранның құлпын ашу үшін екі саусақпен жүргізіп өтіңіз</string>
+    <string name="kg_voice_assistant_unlock_strong_auth_instructions">Экранның құлпын ашу үшін екі саусақпен сипаңыз.</string>
+    <string name="kg_wallpaper_applied_toast">Түсқағаз құлыптау экранына қолданылды.</string>
+    <string name="kg_wallpaper_applied_toast_infinity">Шексіздік түсқағазы Always On Display экранына, бастапқы экран мен құлыптау экранына қолданылды.</string>
+    <string name="kg_wallpaper_applied_toast_infinity_without_aod">Шексіздік түсқағазы бастапқы және құлыптау экрандарына қолданылды.</string>
+    <string name="kg_wallpaper_change_wallpaper_when_infinity_applied">Егер осы түсқағазды пайдалансаңыз, онда шексіздік әсерлері өшіріледі.</string>
+    <string name="kg_wallpaper_changes_restrict_toast">Қауіпсіздік саясаты түсқағазды өзгертуді шектейді.</string>
+    <string name="kg_wallpaper_confirm_dialog_apply">Қолдану</string>
+    <string name="kg_wallpaper_confirm_dialog_message">Егер осы түсқағазды пайдалансаңыз, онда шексіздік әсерлері өшіріледі.</string>
+    <string name="kg_wallpaper_preview_button">Түсқағаз ретінде орнату</string>
+    <string name="kg_wallpaper_preview_title">Экранды құлыптау</string>
+    <string name="kg_wallpaper_preview_title_infinity">Шексіздік түсқағазы</string>
+    <string name="kg_wallpaper_preview_video_info">15 секундқа дейінгі бейне Құлыптау экранында түсқағаз ретінде көрсетіледі.</string>
+    <string name="kg_wallpaper_preview_video_long_info">Таңдалған бейне өте ұзақ. Оны ең көбі 15 секундқа дейін қысқарту үшін төмендегі түймені түртіңіз.</string>
+    <string name="kg_wallpaper_preview_video_wallpaper">Бейненің түсқағазы</string>
+    <string name="kg_warning_none_1_none_auto_wipe">Осы телефонның құлпын ашу үшін 1 әрекет жасалған. Телефон өзінің зауыттық әдепкі параметрлеріне қалпына келтіріліп, барлық деректер, оның ішінде файлдар мен жүктелген қолданбаларды қоса алғанда, өшірілгенге дейін сізде енді %d әрекет қалды.</string>
+    <string name="kg_warning_none_none_1_auto_wipe">Осы телефонның құлпын ашуға %d рет әрекет жасалды. Телефон өзінің зауыттық әдепкі параметрлеріне қалпына келтіріліп, барлық деректер, оның ішінде файлдар мен жүктелген қолданбаларды қоса алғанда, өшірілгенге дейін сізде енді 1 әрекет қалды.</string>
+    <string name="kg_warning_none_none_none_auto_wipe">Осы телефонның құлпын ашу үшін %1$d әрекет жасалған. Телефон өзінің зауыттық әдепкі параметрлеріне қалпына келтіріліп, барлық деректер, оның ішінде файлдар мен жүктелген қолданбаларды қоса алғанда, өшірілгенге дейін сізде енді %2$d әрекет қалды.</string>
+    <string name="kg_warning_tablet_1_none_auto_wipe">Осы планшеттің құлпын ашу үшін 1 әрекет жасалған. Планшет өзінің зауыттық әдепкі параметрлеріне қалпына келтіріліп, барлық деректер, оның ішінде файлдар мен жүктелген қолданбаларды қоса алғанда, өшірілгенге дейін сізде енді %d әрекет қалды.</string>
+    <string name="kg_warning_tablet_none_1_auto_wipe">Осы планшеттің құлпын ашуға %d рет әрекет жасалды. Планшет өзінің зауыттық әдепкі параметрлеріне қалпына келтіріліп, барлық деректер, оның ішінде файлдар мен жүктелген қолданбаларды қоса алғанда, өшірілгенге дейін сізде енді 1 әрекет қалды.</string>
+    <string name="kg_warning_tablet_none_none_auto_wipe">Осы планшеттің құлпын ашу үшін %1$d әрекет жасалған. Планшет өзінің зауыттық әдепкі параметрлеріне қалпына келтіріліп, барлық деректер, оның ішінде файлдар мен жүктелген қолданбаларды қоса алғанда, өшірілгенге дейін сізде енді %2$d әрекет қалды.</string>
+    <string name="kg_wrong_direction_lock">Қате бағыт сызылды</string>
+    <string name="kg_wrong_direction_lock_vzw">Incorrect directions (%d attempts remaining)</string>
+    <string name="later">Кейінірек</string>
+    <string name="lock_to_app_desc">Бұл қолданбаны сіз оны бекітуден алып тастағанша көрінетіндей етіп тұрады.</string>
+    <string name="lock_to_app_dex_desc">Бұл функция Samsung DeX режимінде болған кезде қолжетімді емес.</string>
+    <string name="lock_to_app_dex_title">Терезелерді бекіту мүмкін емес</string>
+    <string name="lock_to_app_negative">Бас тарту</string>
+    <string name="lock_to_app_positive">OK</string>
+    <string name="lock_to_app_recent_and_back">Қолданба бекітуін алып тастау үшін, “Соңғылар” және “Артқа” пернесін бір уақытта басып, ұстап тұрыңыз.</string>
+    <string name="lock_to_app_recent_and_back_accessibility">Бағдарлама бекітуін алып тастау үшін, “Соңғылар” пернесін басып ұстап тұрыңыз.</string>
+    <string name="lock_to_app_recent_and_back_softkey">Қолданбаны бекітуден алып тастау үшін бір уақытта “Соңғылар” және “Артқа” пернелерін түртіп ұстап тұрыңыз.</string>
+    <string name="lock_to_app_recent_and_back_softkey_accessibility">Қолданбаны бекітуден алып тастау үшін “Соңғылар” түймесін түртіп ұстап тұрыңыз.</string>
+    <string name="lock_to_app_title">Бекіту терезелерін қосу</string>
+    <string name="lock_to_app_unable_to_pin_desc">Бұл қолданба “Бекіту” терезелеріне қолдау көрсетпейді.</string>
+    <string name="lock_to_app_unable_to_pin_title">%s қолданбасын бекіту мүмкін емес</string>
+    <string name="lock_to_app_unable_to_pin_toast">Қолданбаны бекіту мүмкін емес. %s қолданбасы жабылды. Белгісіз қате орын алды.</string>
+    <string name="lockscreen_click_unlock_text">Құлпын ашу үшін кез келген жерді түртіңіз</string>
+    <string name="lockscreen_nosim_text_kor_only">"USIM картасы анықталмады
+Тек төтенше қоңыраулар"</string>
+    <string name="maximum_power_saving_mode">Қуатты барынша үнемдеу режимі</string>
+    <string name="memory_full_dialog_msg">Ішкі жадта бос орын жеткіліксіз. Кейбір файлдарды жойып, әрекетті қайталаңыз.</string>
+    <string name="memory_full_dialog_title">Скриншотқа түсіру мүмкін емес</string>
+    <string name="minimized_notification_talkback_description_open">%s қолданбасының хабарландыруын ашу үшін, екі рет түртіңіз.</string>
+    <string name="minimized_notification_talkback_desctiprion_close">%s қолданбасының хабарландыруын жабу үшін, екі рет түртіңіз.</string>
+    <string name="mobile_data_enable_toast_text">Ұшу режимі қосылғанда ұялы байланыс желілеріне қосылу мүмкін емес. Ұшу режимін өшіріп, әрекетті қайталаңыз.</string>
+    <string name="mobile_data_roaming_disable_toast_lgt">Деректер роумингі өшірілді</string>
+    <string name="mobile_data_roaming_title">Деректер роумингі</string>
+    <string name="mobile_data_show_popup_disable">Wi-Fi желісіне қосылмағанша, Интернетті, электрондық поштаны не желіге қосылымды қажет ететін басқа қолданбаларды пайдалануға болмайды.</string>
+    <string name="mobile_data_show_popup_disable_att">AT&amp;T Video Call won’t work if mobile data is off. Also, you won’t be able to use the internet, email or other apps that need a data connection unless you use Wi-Fi.</string>
+    <string name="mobile_data_show_popup_disable_dcm">"If Mobile data is turned off, your device must be connected to a Wi-Fi network to use services that require a network connection.
+
+Mobile data will be turned off."</string>
+    <string name="mobile_data_show_popup_disable_kor_kt">Ұялы деректер (WCDMA/LTE) өшіріледі. Wi-Fi желісін қолданбаған жағдайда, онда бұдан былай деректер қосылымын қажет ететін қолданбаларды пайдалана алмайсыз. Мультимедиалық хабарларды әлі де жіберуге және алуға болады.</string>
+    <string name="mobile_data_show_popup_disable_kor_lgt">"Wi-Fi желісіне қосылмағанша, сіз Интернетті, электрондық поштаны не деректер қосылымын талап ететін басқа қолданбаларды пайдалана алмайсыз.
+
+Ұялы деректер өшіріледі."</string>
+    <string name="mobile_data_show_popup_disable_kor_skt">"Wi-Fi желісіне қосылмағанша, сіз Интернетті, электрондық поштаны не деректер қосылымын талап ететін басқа қолданбаларды пайдалана алмайсыз.
+
+Ұялы деректер өшіріледі."</string>
+    <string name="mobile_data_show_popup_disable_vzw">"Unless you use Wi-Fi, you won't be able to use the Internet, Email or other apps that require a data connection. Turn off the mobile data connection?"</string>
+    <string name="mobile_data_show_popup_disable_vzw_volte">"Your phone's Video Calling function won't work when mobile data is off. Also, you won't be able to use the Internet, Email or other apps that need a data connection unless you use Wi-Fi. Turn off the mobile data connection?"</string>
+    <string name="mobile_data_show_popup_disable_vzw_volte_tablet">Ұялы деректер өшірулі кезде планшетіңіздің Бейне қоңырауын шалу функциясы жұмыс істемейді. Сонымен қатар, Wi-Fi желісін пайдаланбайынша, деректер қосылымын қажет ететін “Интернет”, “Электрондық пошта” немесе басқа да қолданбаларды пайдалана алмайсыз. Ұялы деректер қосылымын өшіру керек пе?</string>
+    <string name="mobile_data_show_popup_enable_kor_kt">Ұялы деректер қосылады. Ұялы желіге қосылу төлем жоспарыңызға байланысты қосымша ақыларға әкелуі мүмкін.</string>
+    <string name="mobile_data_show_popup_enable_kor_lgt">Ұялы деректер қосылады. Ұялы желіге қосылу төлем жоспарыңызға байланысты қосымша ақыларға әкелуі мүмкін.</string>
+    <string name="mobile_data_show_popup_enable_kor_skt">Ұялы деректер қосылады. Ұялы желіге қосылу төлем жоспарыңызға байланысты қосымша ақыларға әкелуі мүмкін.</string>
+    <string name="mobile_data_show_popup_enable_kor_skt_kt">Ұялы деректер қосылады. Ұялы желіге қосылу төлем жоспарыңызға байланысты қосымша ақыларға әкелуі мүмкін.</string>
+    <string name="mobile_data_show_popup_roaming_enable">Data roaming may incur additional charges in addition to your domestic flat rate plan. Automatic updates for email or applications may also incur additional charges. Using large-data services such as video or email may incur charges over 20,000 won per minute.</string>
+    <string name="mobile_data_show_toast_airplane_mode">Ұшу режимі қосылғанда ұялы байланыс желілеріне қосылу мүмкін емес. Ұшу режимін өшіріп, әрекетті қайталаңыз.</string>
+    <string name="mobile_data_show_toast_not_disable_during_voltecall">Unable to turn Mobile data on or off while Advanced calling enabled.</string>
+    <string name="mobile_data_title">Ұялы деректер</string>
+    <string name="mobile_device_warning_toast_notification">Мобильдік құрылғыны жаяу жүріс немесе көлік жүргізу кезінде қолдану апатқа ұшырау қаупін төндіреді.</string>
+    <string name="mobile_hotspot_detail_connected_devices">Қосылған құрылғылар</string>
+    <string name="mobile_hotspot_detail_connection_mode_allow_all">Барлық құрылғыларға қосылуға рұқсат ету</string>
+    <string name="mobile_hotspot_detail_connection_mode_allowed_device">Тек рұқсат етілген құрылғылар</string>
+    <string name="mobile_hotspot_detail_password">Құпиясөз</string>
+    <string name="mobile_hotspot_detail_title">Ұялы жедел нүктесі</string>
+    <string name="mobile_hotspot_detail_title_jpn">Wi-Fi байланыстыру</string>
+    <string name="mobile_hotspot_dialog_nosim_warning_message">Ұялы жедел нүктені және модем режимінің басқа да опцияларын пайдалану үшін SIM картаны салыңыз.</string>
+    <string name="mobile_hotspot_dialog_nosim_warning_message_jpn">Insert a SIM card to use Wi-Fi tethering.</string>
+    <string name="mobile_hotspot_dialog_nosim_warning_title">SIM карта жоқ</string>
+    <string name="mobile_hotspot_dialog_nosim_warning_title_jpn">Unable to enable Wi-Fi tethering</string>
+    <string name="mobile_hotspot_dialog_nousim_or_nosim_warning">Ұялы жедел нүкте мен модем режимінің басқа да функцияларын пайдалану үшін UIM/SIM картаны салыңыз.</string>
+    <string name="mobile_hotspot_dialog_smartview_off_warn_chn">Smart View функциясы мен WLAN жедел нүктесі опциясын бір уақытта қосу мүмкін емес. Smart View функциясы өшіріледі.</string>
+    <string name="mobile_hotspot_dialog_smartview_off_warn_jpn">Wi-Fi модем режимі мен Smart View опцияларын бір уақытта қосу мүмкін емес. Smart View өшіріледі.</string>
+    <string name="mobile_hotspot_dialog_wifi_sharing_enable_text">Wi-Fi желіңіз басқа құрылғылармен бөлісілуі мүмкін. Құрылғыңыздың сақталған Wi-Fi желілері арасында ескертусіз ауысуы мүмкін екенін ескеріңіз. Сіз Wi-Fi провайдерінің барлық талаптары мен шарттарының сақталуына жауаптысыз.</string>
+    <string name="mobile_hotspot_dialog_wifi_sharing_enable_title">Wi-Fi бөлісуді қосу</string>
+    <string name="mobile_hotspot_toast_disable_airplne_mode">Ұшу режимі қосылғанда ұялы байланыс желілеріне қосылу мүмкін емес. Ұшу режимін өшіріп, әрекетті қайталаңыз.</string>
+    <string name="mobile_hotspot_toast_internet_sharing">Интернет бөлісу</string>
+    <string name="mobile_hotspot_wifi_sharing">Wi-Fi бөлісу</string>
+    <string name="mobile_hotspot_wifi_sharing_Status_disabled">Өшірілді</string>
+    <string name="mobile_hotspot_wifi_sharing_Status_enabled">Қосылған</string>
+    <string name="mobileap">Ұялы жедел нүктесі</string>
+    <string name="multi_window">Көп терезе</string>
+    <string name="multi_window_title_text">Көп терезе</string>
+    <string name="mw_divider_button_add_app_pair">Қолданба жұбын Бастапқы экранға қосу</string>
+    <string name="mw_divider_button_add_app_pair_body">Бөлінген экран көрінісінде ашылған қолданбаларды Басты экранда “Қолданба жұбы” ретінде орнатуға болады.</string>
+    <string name="mw_divider_button_close">Бағдарламаны жабу</string>
+    <string name="mw_divider_button_freeform">Қалқымалы терезе көрінісінде ашу</string>
+    <string name="mw_divider_button_snap">Терезені суретке түсіру</string>
+    <string name="mw_divider_button_switch">Терезелерді ауыстыру</string>
+    <string name="negative_color_title">Теріс түстер</string>
+    <string name="no">Тоқтату</string>
+    <string name="no_network_connection">Желі байланысы жоқ</string>
+    <string name="no_sim_notification_text">SIM картын енгізу.</string>
+    <string name="no_sim_notification_text_cct">Insert an XFINITY Mobile SIM. To learn more, visit xfinitymobile.com/activate or call 888-936-4968.</string>
+    <string name="no_sim_notification_text_vzw">Tap for more information.</string>
+    <string name="no_sim_notification_title">SIM жоқ</string>
+    <string name="no_sim_notification_title_cct">No SIM card detected</string>
+    <string name="no_sim_notification_title_tmo">Енгізілген SIM карта жоқ</string>
+    <string name="no_sim_notification_title_vzw">No SIM found</string>
+    <string name="no_such_item">Суретті табу мүмкін емес.</string>
+    <string name="not_support_snap_window">Осы қолданбаны терезені суретке түсіру көрінісінде пайдалану мүмкін емес.</string>
+    <string name="noti_direct_reply_exceed_text_limit_toast">Мәтінді бұдан артық енгізу мүмкін емес.</string>
+    <string name="noti_setting_text">Хабарландыру парам-і</string>
+    <string name="noti_toast_wifi_is_not_available">WLAN қолжетімді емес. Ұялы байланыс желілеріне қосылу төлем жоспарыңызға байланысты қосымша ақыларға әкелуі мүмкін.</string>
+    <string name="notification_all_categories">Мәліметтер</string>
+    <string name="notification_channel_blocked">Бұғатталған</string>
+    <string name="notification_channel_ongoing">Жалғасуда</string>
+    <string name="notification_done">Дайын</string>
+    <string name="notification_group_overflow_description">Барлығы %d хабарландыру</string>
+    <string name="notification_info_details">Мәліметтер</string>
+    <string name="notification_more_settings">Мәліметтер</string>
+    <string name="notification_save">Сақтау</string>
+    <string name="notification_settings_icon_description">Қолданба хабарландыруының параметрлері</string>
+    <string name="one_item_will_be_deleted">Осы скриншотты жою керек пе?</string>
+    <string name="overheat_poweroff_notice_text">"Құрылғыңыз қызып кетті. Зақымдалуды алдын алу үшін ол өшіріледі.
+
+Қызып кетудің себептері:
+- Ойындар және навигация бағдарламалары сияқты графикасы жоғары бағдарламаларды ұзақ уақыт пайдалану.
+- Үлкен файлдарды тасымалдау.
+- Құрылғыңызды ыстық ортада пайдалану."</string>
+    <string name="overheat_poweroff_notice_title">Құрылғының қуаты автоматты түрде өшіріледі</string>
+    <string name="overheat_poweroff_warning_button_text">Қуатты өшірмеу</string>
+    <string name="overheat_poweroff_warning_text">Құрылғыңыз қызып кетті. Оны салқындату үшін оның қуаты өшіріледі.</string>
+    <string name="overheat_poweroff_warning_text_append">Құрылғы салқындамайынша оны қайта қоса алмайсыз.</string>
+    <string name="overheat_poweroff_warning_text_new">Құрылғыңыз қызып кетті. Салқындауы үшін, ол %d секундқа өшіріледі.</string>
+    <string name="overheat_poweroff_warning_title">Құрылғыны өшіру</string>
+    <string name="overheat_shutdown_notice_text">"Your phone got hot. It turned off to prevent damage to the phone.
+
+This can be caused by:
+Using graphics-intensive apps, like video games and navigation apps, for long periods of time.
+Downloading or uploading large files.
+Using your phone in a very hot location."</string>
+    <string name="overheat_shutdown_notice_text_tablet">"Your tablet got too hot. It turned off to prevent damage to the tablet.
+
+Overheating can be caused by:
+Using graphics intensive apps like video games and navigation apps for long periods of time.
+Downloading or uploading large files.
+Using your tablet in a very hot location."</string>
+    <string name="overheat_shutdown_notice_title">Why did my phone turn off by itself?</string>
+    <string name="overheat_shutdown_notice_title_tablet">Why did my tablet turn off by itself?</string>
+    <string name="overheat_shutdown_warning_button_text">"Don't turn off"</string>
+    <string name="overheat_shutdown_warning_text">"Your phone is getting hot.
+It will now turn off to cool down."</string>
+    <string name="overheat_shutdown_warning_text_tablet">Your tablet is getting too hot. It will now turn off to cool down.</string>
+    <string name="overheat_shutdown_warning_title">Turning off</string>
+    <string name="photo_editor">Фото редактор</string>
+    <string name="popupui_dialog_turn_on_button">Қосу</string>
+    <string name="power_supplying_low_battery_alert_body">USB OTG кабелі қосулы кезде телефоныңыздың батарея қуаты тұтынылады. Батарея қуатын үнемдеу үшін USB OTG кабелін ажыратыңыз.</string>
+    <string name="power_supplying_low_battery_alert_body_tablet">USB OTG кабелі қосулы кезде планшетіңіздің батарея қуаты тұтынылады. Батарея қуатын үнемдеу үшін USB OTG кабелін ажыратыңыз.</string>
+    <string name="power_supplying_low_battery_alert_title">Батарея қуаты аз</string>
+    <string name="powerui_power_sharing_alert_dialog_body">"Бөлінетін қуат мөлшерін бақылау үшін сізге қосымшаны жүктеу қажет. Егер сіз өз құрылғыңызды Samsung компаниясының Power Sharing EP-SG900 қуат тарату кабелі бар басқа құрылғыға қосымщасыз қосатын болсаңыз, батареяның барлық қуаты басқа құрылғыға тасымалданады.
+Samsung Apps хабарласып, қосымшаны жүктеңіз.
+"</string>
+    <string name="qs_brightness_auto_brightness_summary">Жарықтық реттеулерін бақылап отырыңыз және оларды сәйкес жарық беру жағдайларында қолданыңыз.</string>
+    <string name="qs_brightness_auto_brightness_summary_nopac">Экранның жарықтығы ағымдағы жарық түсу жағдайларының негізінде автоматты түрде реттеледі.</string>
+    <string name="qs_brightness_auto_brightness_title">Автоматты жарықтық</string>
+    <string name="qs_brightness_control_on_the_top_summary">Жарықтықты басқару элементі хабарландыру тақтасының жоғарғы жағында көрсетіледі.</string>
+    <string name="qs_brightness_control_on_the_top_title">Басқару элем. жоғарыда көрсету</string>
+    <string name="qs_brightness_detail_level">Деңгей</string>
+    <string name="qs_brightness_detail_title">Ашықтық</string>
+    <string name="qs_brightness_eye_strain_dialog_body">"Жоғарғы жарықтық деңгейлерін ұзақ бойы пайдалану көздің шамадан тыс шаршауына әкелуі және батарея қуатын тұтынуды арттыруы мүмкін.
+Жарықтықты қауіпсіз деңгейлерден жоғары көбейтуге рұқсат беру үшін ОК түймесін түртіңіз."</string>
+    <string name="qs_brightness_outdoor_mode_summary">Сыртта қарау үшін экранды жарығырақ етіңіз. Егер экранды әлі де пайдаланып жатпасаңыз, онда “Сыртқы режим” 15 минуттан кейін өшеді.</string>
+    <string name="qs_brightness_outdoor_mode_title">Сыртқы режим</string>
+    <string name="qs_contact_us">Бізге хабарласыңыз</string>
+    <string name="qs_detail_capture_mode">Screen capture mode</string>
+    <string name="qs_detail_capture_mode_text">Select the function you want to add to the quick settings panel.</string>
+    <string name="qs_detail_capture_screen">Экранды суретке түсіру</string>
+    <string name="qs_detail_flashlight_title">Шам</string>
+    <string name="qs_detail_palm_capture_title">Сур түс үшін алақан сипаңыз</string>
+    <string name="qs_detail_please_wait">Күтіңіз…</string>
+    <string name="qs_detail_recorder_screen">Record screen</string>
+    <string name="qs_detail_secure_wifi_not_connected_toast">“Қауіпсіз Wi-Fi” функциясы Wi-Fi опциясының қосулы болуын сұрайды. “Параметрлер” бөлімінде Wi-Fi опциясын қосып, әрекетті қайталаңыз.</string>
+    <string name="qs_detail_secure_wifi_title">Қауіпсіз Wi-Fi</string>
+    <string name="qs_detail_secured_wifi_summary_off">Шолу кезінде құпиялылығыңызды қорғап, кез келген қауіпті сұрауларды бұғаттаңыз немесе шифрлаңыз.</string>
+    <string name="qs_detail_secured_wifi_summary_on">Қосылған</string>
+    <string name="qs_detail_smart_capture_title">Смарт түсіру</string>
+    <string name="qs_edit_panel_badge_text">Ж</string>
+    <string name="qs_edit_setting_active_area_tapped">Жылдам параметрлер панелінде.</string>
+    <string name="qs_edit_setting_available_area_tapped">Жылдам параметрлер панелінде емес.</string>
+    <string name="qs_edit_summary">Түймелерді жылдам параметрлер панеліне қосу үшін, оларды жоғарыдағы аумаққа сүйреңіз.</string>
+    <string name="qs_location_consent_dialog_body_message_dcm">GPS орны және орын деректерін пайдалану қолданыстағы бағдарламалармен бақыланады.</string>
+    <string name="qs_location_consent_dialog_body_message_vzw">"Телефон өзінің болжалды орнын карталар, сатып алу және ауа райы сияқты қолданбалармен және қызметтермен бөлісе алады.
+
+Сіздің орныңызды пайдаланатын қолданбалар мен қызметтер ол туралы сізге хабарлауға тиісті. Кез келген қолданбаның немесе қызмет жеткізушісінің орын ақпаратын жинау, пайдалану және бөлісу жолын түсіну үшін пайдаланудан алдын олардың құпиялылық саясатын оқып шығыңыз.
+
+Орныңызды анықтау үшін ұялы байланыс желісі пайдаланылады. Деректер пайдаланылады."</string>
+    <string name="qs_location_consent_dialog_body_message_vzw_tablet">"Планшет өзінің болжалды орнын карталар, сатып алу және ауа райы сияқты қолданбалармен және қызметтермен бөлісе алады.
+
+Сіздің орныңызды пайдаланатын қолданбалар мен қызметтер ол туралы сізге хабарлауға тиісті. Кез келген қолданбаның немесе қызмет жеткізушісінің орын ақпаратын жинау, пайдалану және бөлісу жолын түсіну үшін пайдаланудан алдын олардың құпиялылық саясатын оқып шығыңыз.
+
+Орныңызды анықтау үшін ұялы байланыс желісі пайдаланылады. Деректер пайдаланылады."</string>
+    <string name="qs_location_consent_dialog_title_dcm">Пайдаланушы келісімі</string>
+    <string name="qs_location_consent_dialog_title_vzw">Орын келісімі</string>
+    <string name="qs_location_detail_default_title">Орны</string>
+    <string name="qs_location_detail_gps_title">GPS</string>
+    <string name="qs_location_detail_mode_battery_saving">Батарея қуатын сақтау</string>
+    <string name="qs_location_detail_mode_battery_saving_description">Орныңызды анықтау үшін, Wi-Fi және ұялы желілерді пайдаланады</string>
+    <string name="qs_location_detail_mode_high_accuracy">Жоғары дәлдік</string>
+    <string name="qs_location_detail_mode_high_accuracy_description">Орныңызды анықтау үшін, GPS, Wi-Fi және ұялы желілерді пайдаланады</string>
+    <string name="qs_location_detail_mode_sensors_only_description">Орныңызды анықтау үшін, GPS пайдаланады</string>
+    <string name="qs_location_detail_mode_sensors_only_phone">Тек қана телефон</string>
+    <string name="qs_location_detail_mode_sensors_only_tablet">Тек қана планшет</string>
+    <string name="qs_location_detail_mode_summary_title">Орналасу әдісі</string>
+    <string name="qs_location_detail_summary_default">Орныңызды анықтау үшін, GPS, Wi-Fi және ұялы желілерді пайдаланады</string>
+    <string name="qs_multisim_data_preffered_btn_title">Ұялы деректер</string>
+    <string name="qs_multisim_data_switching">"SIM карта әлі ауыстырылып жатыр…
+Әрекетті кейінірек қайталаңыз."</string>
+    <string name="qs_multisim_data_turned_off">Өшірілді</string>
+    <string name="qs_multisim_sms_preffered_btn_title">Мәтінді хабарламалар</string>
+    <string name="qs_multisim_voice_ask_always">Әрқашан сұрау</string>
+    <string name="qs_multisim_voice_preffered_btn_title">Қоңыраулар</string>
+    <string name="quick_panel_data_usage">Data usage</string>
+    <string name="quick_settings_airplane_mode_label">"Ұшу
+режимі"</string>
+    <string name="quick_settings_blf_detail_seekbar">Бұлыңғырлық</string>
+    <string name="quick_settings_blf_detail_summary">Экран арқылы таралатын ультракүлгін сәулелердің мөлшерін шектеу арқылы көзге түсетін қысым азайтылады.</string>
+    <string name="quick_settings_bluelightfilter_detail_title">Ультракүлгін сәулені сүзу</string>
+    <string name="quick_settings_bluelightfilter_label">"Көк жарық
+сүзгісі"</string>
+    <string name="quick_settings_bluetooth_connected_devices">"%d құрылғы
+қосылды"</string>
+    <string name="quick_settings_bluetooth_detail_available_devices_title">Қол жетімді құр-лар</string>
+    <string name="quick_settings_bluetooth_detail_empty_text_available">Маңайдағы Bluetooth құрылғылары табылмады</string>
+    <string name="quick_settings_bluetooth_detail_off_text">Жұптастыруға болатын немесе жұптастырылып қойған құрылғылар тізімін көру үшін Bluetooth қосыңыз.</string>
+    <string name="quick_settings_bluetooth_detail_paired_devices_title">Жұптастырылған құрылғылар</string>
+    <string name="quick_settings_bluetooth_label">Bluetooth</string>
+    <string name="quick_settings_data_roaming_detail_title">Деректер роумингі</string>
+    <string name="quick_settings_data_roaming_label">"Дерек-р
+роумингі"</string>
+    <string name="quick_settings_dnd_detail_title">Мазаламаңыз</string>
+    <string name="quick_settings_dnd_summary">Таңдалған ерекшеліктерден басқа барлық қоңыраулардың, ескертулер мен мультимедианың дыбысын өшіру.</string>
+    <string name="quick_settings_done">Дайын</string>
+    <string name="quick_settings_dual_label_content_description">%s, түйме белгісі, сәйкес жылдам параметрлерді көру үшін, екі рет түртіңіз.</string>
+    <string name="quick_settings_enable">Қосу</string>
+    <string name="quick_settings_flashlight_detail_level">Деңгей</string>
+    <string name="quick_settings_flashlight_detail_title">Ашықтық</string>
+    <string name="quick_settings_flashlight_detail_warning">Камераның терімен ұзақ уақыт бойы әрекеттестікте болуы төмен температуралы күюге әкелуі мүмкін. %s құралын ұзақ уақыт бойы қосылған күйінде қалдырмаңыз.</string>
+    <string name="quick_settings_flight_mode_detail_off_summary_non_volte_vzw">Airplane mode turns off all network connections, including mobile data and Wi-Fi. Turn on Wi-Fi to use apps that require a data connection.</string>
+    <string name="quick_settings_flight_mode_detail_off_summary_volte_vzw">Airplane mode turns off all network connections, including mobile data and Wi-Fi. Your phone will not be able to use Video Calling while Airplane mode is on. Turn on Wi-Fi to use apps that require a data connection.</string>
+    <string name="quick_settings_flight_mode_detail_on_summary_non_volte_vzw">Unless you use Wi-Fi, you will not be able to use the Internet, Email, or other apps that require a data connection.</string>
+    <string name="quick_settings_flight_mode_detail_on_summary_volte_vzw">Unless you use Wi-Fi, you will not be able to use Internet, Email, or other apps that require a data connection. Your phone will not be able to use Video Calling while Airplane mode is on.</string>
+    <string name="quick_settings_flight_mode_detail_summary">"Қоңырау шалу, хабар алмасу және “Ұялы деректер” опциялары өшіріледі.
+
+Wi-Fi және Bluetooth опциялары да өшеді, бірақ оларды “Параметрлер” бөлімінен немесе жылдам параметрлер панелінен қайта қосуға болады."</string>
+    <string name="quick_settings_flight_mode_detail_title">Ұшу режимі</string>
+    <string name="quick_settings_it_policy_prevents">Қауіпсіздік саясаты %s мүмкіндігін пайдалануға жол бермейді.</string>
+    <string name="quick_settings_mobile_data_detail_summary">Ұялы желі арқылы Интернетке қатынасыңыз.</string>
+    <string name="quick_settings_mobile_data_detail_title">Ұялы деректер</string>
+    <string name="quick_settings_mobile_data_label">"Ұялы
+деректер"</string>
+    <string name="quick_settings_mobile_hotspot_label">"Ұялы
+Жедел нүкте"</string>
+    <string name="quick_settings_mobile_hotspot_label_jpn">"Wi-Fi
+байланыстыру"</string>
+    <string name="quick_settings_phone_visibility_label">Телефонның көрінуі</string>
+    <string name="quick_settings_reading_mode_detail_title">Оқу режимі</string>
+    <string name="quick_settings_reading_mode_label">"Оқу
+режим"</string>
+    <string name="quick_settings_reading_mode_summary">Экран оқу үшін оңтайландырылған. Бұл режим тек таңдалған бағдарламалар үшін қол жетімді.</string>
+    <string name="quick_settings_reset">Қалпына келтіру</string>
+    <string name="quick_settings_rotation_lock_auto_rotate">Автоматты бұру</string>
+    <string name="quick_settings_rotation_lock_two_toggle_detail_summary">Телефоныңыздың бағыты өзгерген кезде экран автоматты түрде бұрылады.</string>
+    <string name="quick_settings_rotation_lock_two_toggle_detail_summary_for_tablet">Планшетіңіздің бағыты өзгерген кезде экран автоматты түрде бұрылады.</string>
+    <string name="quick_settings_rotation_locked_landscape_label">Альбомдық</string>
+    <string name="quick_settings_rotation_locked_portrait_label">Кітаптық</string>
+    <string name="quick_settings_rotation_unlocked_label">"Авто
+бұру"</string>
+    <string name="quick_settings_screen_capture_label">"Capture
+screen"</string>
+    <string name="quick_settings_screen_recorder_label">"Record
+screen"</string>
+    <string name="quick_settings_sec_dnd_label">Мазаламау</string>
+    <string name="quick_settings_settings">ПАРАМЕТРЛЕР</string>
+    <string name="quick_settings_sound_mode_detail_label">Дыбыстық режим</string>
+    <string name="quick_settings_sound_mode_detail_mixer_dnd_turned_on">“Мазаламау” режимі қосулы</string>
+    <string name="quick_settings_sound_mode_detail_mixer_title">Дауыстың күші</string>
+    <string name="quick_settings_sound_mode_detail_mute_remaining">Дыбыс өшіру (%s қалды)</string>
+    <string name="quick_settings_sound_mode_detail_temporary_mute_duration">Дыбысты өшіру ұзақтығы</string>
+    <string name="quick_settings_sound_mode_detail_temporary_mute_summary">Орнатылған уақыт өтіп кеткеннен кейін, дыбыстық режим алдыңғы дыбыстық режимге (%s) қайтадан өзгертіледі. МӘЛІМЕТТЕР түймесін түрту арқылы уақытты өзгертуге болады.</string>
+    <string name="quick_settings_sound_mode_detail_temporary_mute_title">Уақытша дыбысты өшіру</string>
+    <string name="quick_settings_sound_mode_mute_label">Дыбыссыз</string>
+    <string name="quick_settings_sound_mode_sound_label">Дыбыс</string>
+    <string name="quick_settings_sound_mode_vibrate_label">Дірілдеу</string>
+    <string name="quick_settings_tablet_visibility_label">"Планшеттің
+көрінуі"</string>
+    <string name="quick_settings_uhq_mode_label">"UHQ
+upscaler"</string>
+    <string name="quick_settings_volte_label_ZVV">4G Дауыстық</string>
+    <string name="quick_settings_volte_summary">Қолжетімді болған кезде VoLTE желісін пайдалану</string>
+    <string name="quick_settings_volte_summary_zvv">4G деректерін пайдалану арқылы кеңейтілген байланысты қосыңыз.</string>
+    <string name="quick_settings_wifi_detail_available_networks_title">Байланыстағы желілер</string>
+    <string name="quick_settings_wifi_detail_current_network_title">Ағымдағы желі</string>
+    <string name="quick_settings_wifi_detail_off_text">Қол жетімді желілер көру үшін Wi-Fi функ. қосыңыз.</string>
+    <string name="quick_settings_wifi_detail_scanning_text">Wi-Fi желілері тексерілуде…</string>
+    <string name="quick_settings_wifi_label">Wi-Fi</string>
+    <string name="quick_settings_wificalling_cs_preferred">Ұялы желі пайд. ұсынылады</string>
+    <string name="quick_settings_wificalling_label">"Wi-Fi
+қоңырауы"</string>
+    <string name="quick_settings_wificalling_label_ZVV">Wi-Fi Дауыстық</string>
+    <string name="quick_settings_wificalling_summary">Ұялы байланыс желісіне қосылмай, Wi-Fi желісі арқылы кез келген жерде қоңырау шалыңыз және қабылдаңыз.</string>
+    <string name="quick_settings_wificalling_summary_with_help_noti">"Кез келген жерде ұялы байланыс желісіне қосылмай-ақ қоңырау шалу және қоңырауды қабылдау үшін, Wi-Fi желілерін пайдаланыңыз.
+
+Wi-Fi қоңырау шалу белгішесі қызмет қолжетімді кезде төменде көрсетілгендей хабарландыру тақтасында пайда болады."</string>
+    <string name="quick_settings_wificalling_summary_zvv">Wi-Fi желілерін пайдалану арқылы кеңейтілген байланысты қосыңыз.</string>
+    <string name="quick_settings_wificalling_wifi_only">Тек Wi-Fi</string>
+    <string name="quick_settings_wificalling_wifi_preferred">Wi-Fi қаланған</string>
+    <string name="quick_settings_workmode_detail_summary">"Жұмыстық қолданбаларды, хабарландырулар мен фондық синхрондауды қоса, %s жұмыс орнын өшіріңіз.
+
+Телефоныңызды ешқандай жұмыстың тоқтауынсыз пайдалана аласыз."</string>
+    <string name="recents_accessibility_message">Соңғылар</string>
+    <string name="recents_app_list_more_apps">Қолд. тіз</string>
+    <string name="recents_app_list_multi_window_apps">Көп терез. бағдарлама.</string>
+    <string name="recents_app_list_recommendations">Жиі пайдаланылатын қолданбалар</string>
+    <string name="recents_aspect_ratio_button_description">Қолданбаның өлшемдер арақатынасын өзгерту</string>
+    <string name="recents_close_all_button_text">Барлығын жабу</string>
+    <string name="recents_close_button_description">Жабу</string>
+    <string name="recents_drag_freeform_hint_message">Қалқымалы терезе көрінісі үшін осы жерге сүйреңіз</string>
+    <string name="recents_drag_incompatible_app_message">Осы қолданбаны “Бірнеше терезе көрінісінде” пайдалану мүмкін емес.</string>
+    <string name="recents_drag_split_hint_message">Бөлінген экран көрінісі үшін осы жерге сүйреңіз</string>
+    <string name="recents_empty_message">Соңғы пайдаланылған бағдарламалар жоқ</string>
+    <string name="recents_floating_action_button_desc">%1$s түймесі</string>
+    <string name="recents_help_dlg_full_page1">Бөлінген экран көрінісін пайдалану үшін %s түймесін түртіңіз. Экранның төменгі жартысында көрсетілетін қолданбаны таңдаңыз.</string>
+    <string name="recents_help_dlg_full_page1_desc">Бөлінген экран көрінісін пайдалану үшін “Бөлінген экран көрінісінде ашу” белгішесін түртіңіз. Экранның төменгі жартысында көрсетілетін қолданбаны таңдаңыз.</string>
+    <string name="recents_help_dlg_full_page2_hardkey">“Соңғылар” пернесін басып тұру арқылы қолданбаны толық экран көрінісінен бөлінген экран көрінісіне ауыстыруға болады.</string>
+    <string name="recents_help_dlg_full_page2_softkey">“Соңғылар” түймесін түртіп ұстап тұру арқылы қолданбаны толық экран көрінісінен бөлінген экран көрінісіне ауыстыруға болады.</string>
+    <string name="recents_help_dlg_full_page2_softkey_snap">“Терезені бекіту” функциясын пайдалану үшін %s түймесін түртіңіз. Бөлінген экран көрінісінде көрсетпес бұрын, экранның жоғарғы жағына бекітілетін қолданбаның аймағын таңдаңыз.</string>
+    <string name="recents_help_dlg_full_page2_softkey_snap_desc">“Терезені бекіту” функциясын пайдалану үшін “Терезені бекіту” белгішесін түртіңіз. Бөлінген экран көрінісінде көрсетпес бұрын, экранның жоғарғы жағына бекітілетін қолданбаның аймағын таңдаңыз.</string>
+    <string name="recents_help_dlg_lock_task_page1">Қолданбаларды құлыптау үшін қолданба терезесінің тақырып жолағындағы %1$s түймесін түртіңіз. Құлыпталған қолданбалар тіпті БАРЛЫҒЫН ЖАБУ түймесін түрткен кезіңізде де жойылмайды. Құлпын ашу үшін %2$s түймесін түртіңіз.</string>
+    <string name="recents_help_dlg_lock_task_page1_desc">Қолданбаларды құлыптау үшін қолданба терезесінің тақырып жолағындағы “Құлыптау” белгішесін түртіңіз. Құлыпталған қолданбалар тіпті БАРЛЫҒЫН ЖАБУ түймесін түрткен кезіңізде де жойылмайды. Құлпын ашу үшін “Құлпын ашу” белгішесін түртіңіз.</string>
+    <string name="recents_help_dlg_next_button_text">Келесі</string>
+    <string name="recents_help_setting_button_text">Параметрлер</string>
+    <string name="recents_help_title_split_screen_view">Бөлінген экран көрінісі</string>
+    <string name="recents_help_title_split_screen_view_action">Бөлінген экран көрінісінің әрекеті</string>
+    <string name="recents_launch_error_toast">%s тапсырмасын ашу мүмкін емес.</string>
+    <string name="recents_lock_to_app_button_description">Бекіту терезелері</string>
+    <string name="recents_menu_contact_us">Бізге хабарласыңыз</string>
+    <string name="recents_menu_help">Көмек</string>
+    <string name="recents_menu_lock_app">Қолданбаларды құлыптау</string>
+    <string name="recents_menu_more">Қосымша</string>
+    <string name="recents_menu_more_desc">Қосымша опциялар</string>
+    <string name="recents_menu_settings">Параметрлер</string>
+    <string name="recents_menu_view_type_list">Тізім көрінісі</string>
+    <string name="recents_menu_view_type_thumbnail">Нобай көрінісі</string>
+    <string name="recents_scroll_down">Төменге қарай жылжыту</string>
+    <string name="recents_scroll_up">Жоғарыға қарай жылжыту</string>
+    <string name="recents_snap_button_description">Терезені суретке түсіру</string>
+    <string name="recents_split_button_description">Бөлінген экран көрінісінде ашу</string>
+    <string name="recents_task_lock_cancel">Бас тарту</string>
+    <string name="recents_task_lock_done">Дайын</string>
+    <string name="recents_task_lock_edit_lock_label">Құлыпталған</string>
+    <string name="recents_task_lock_edit_task_lock_desc">%s қолданбасы құлыпталды</string>
+    <string name="recents_task_lock_edit_task_unlock_desc">%s қолданбасының құлпы ашылды</string>
+    <string name="recents_task_lock_edit_unlock_desc">%s құлпын ашу</string>
+    <string name="recents_task_lock_edit_unlock_label">Құлпы ашылған</string>
+    <string name="recents_task_lock_normal_lock_desc">%s қолданбасын құлыптау</string>
+    <string name="recents_task_lock_normal_lock_label">Құлып ашу</string>
+    <string name="recents_task_lock_normal_unlock_toast">%s құлпы ашылды.</string>
+    <string name="remote_input_send_text">Жіберу</string>
+    <string name="reserve_battery_mode">“Батарея қуатын үнемдеу” режимі</string>
+    <string name="retry">Қайталау</string>
+    <string name="rotation_lock_auto_rotate">Автоматты бұру</string>
+    <string name="rotation_lock_show_toast_mobile_keyboard_message">%s қосу үшін, пернетақта жаппасын құрылғыдан ажыратыңыз.</string>
+    <string name="safe_mode_alert_body">Телефон қайта іске қосылады және барлық қолданбалар қайта қолжетімді болады.</string>
+    <string name="safe_mode_alert_body_tablet">Планшетіңіз өшіріліп, қайта қосылады және барлық қолданбалар қайта қолжетімді болады.</string>
+    <string name="safe_mode_alert_body_vzw">Do you want to restart your phone to turn off Safe Mode? All of your apps will be restored.</string>
+    <string name="safe_mode_alert_positive_button">Өшіру</string>
+    <string name="safe_mode_alert_positive_button_vzw">Turn Off Safe Mode</string>
+    <string name="safe_mode_alert_title">Қауіпсіз режимді өшіру керек пе?</string>
+    <string name="safe_mode_alert_title_vzw">Turn Off Safe Mode</string>
+    <string name="safe_mode_noti_body">Қауіпсіз режимді өшіру үшін осында түртіңіз.</string>
+    <string name="safe_mode_noti_body_vzw">Tap to turn off Safe Mode.</string>
+    <string name="safe_mode_noti_title">Қауіпсіз режим қосулы</string>
+    <string name="safe_mode_noti_title_vzw">Safe Mode Is On</string>
+    <string name="sanitized_content_text">%s енгізу үшін, осында түртіңіз.</string>
+    <string name="screen_capture_delete">Жою</string>
+    <string name="screen_capture_edit">Өзг.</string>
+    <string name="screen_capture_fail_for_security_policy">Скриншотқа түсіру қауіпсіздік саясатына байланысты мүмкін емес.</string>
+    <string name="screen_capture_share">Бөлісу</string>
+    <string name="screen_grid">Түйме торы</string>
+    <string name="screen_grid_content_description">%2$d арқылы %1$d</string>
+    <string name="screen_grid_popup_apply">Қолдану</string>
+    <string name="screen_grid_popup_ok">OK</string>
+    <string name="screen_grid_popup_title">Түйме торы</string>
+    <string name="screenshot_cancel">Бас тарту</string>
+    <string name="screenshot_guide_dialog_msg">Скриншот жасау үшін, “Қуат” пернесі мен дыбысты төмендету пернесін бірге басып, ұстап тұрыңыз.</string>
+    <string name="screenshot_guide_dialog_title">Скриншоттар жасау</string>
+    <string name="screenshot_saved_text">Көру үшін осы жерді түртіңіз.</string>
+    <string name="screenshot_saved_title">Суретке түсірілді</string>
+    <string name="search_more_menu_contact_us">Бізге хабарласыңыз</string>
+    <string name="search_more_menu_for_dex">Samsung DeX қолданбасы</string>
+    <string name="search_more_menu_settings">Samsung DeX параметрі</string>
+    <string name="sec_accessibility_back">Артқа</string>
+    <string name="sec_accessibility_desc_recent_apps">Соңғылар</string>
+    <string name="sec_accessibility_home">Бастапқы</string>
+    <string name="sec_accessibility_navbar_hide_pin">Шарлау жолағын жасыру</string>
+    <string name="sec_accessibility_navbar_show_pin">Шарлау жолағын құлыптау</string>
+    <string name="sec_accessibility_recent">Соңғылар</string>
+    <string name="sec_accessibility_recents_all_items_closed">Барлық қолданбалар жабылды</string>
+    <string name="sec_accessibility_recents_all_unlocked_items_closed">Барлық құлпы ашық қолданбалар жабылды</string>
+    <string name="sec_accessibility_recents_item_dismissed">%s жабық.</string>
+    <string name="sec_accessibility_recents_item_open_app_info">%s туралы ақпаратты ашу</string>
+    <string name="sec_accessibility_recents_item_will_be_dismissed">%s қолданбасын жабу</string>
+    <string name="sec_block_this_notification_text">Осы хабарланд. бұғаттау</string>
+    <string name="sec_data_usage_disabled_dialog_body">Сіз орнатқан деректер шегіне жетті. Ұялы деректерді қайта қосу қосымша ақыларға әкелуі мүмкін.</string>
+    <string name="sec_data_usage_disabled_dialog_body_vzw">"You've reached your specified data usage limit, so mobile data has been turned off.
+
+If you turn mobile data back on, you may be charged for data usage by your carrier."</string>
+    <string name="sec_data_usage_disabled_dialog_enable">Ұялы деректер қосу</string>
+    <string name="sec_data_usage_disabled_dialog_enable_vzw">Turn on data</string>
+    <string name="sec_data_usage_disabled_dialog_keep_off">Өшірулі</string>
+    <string name="sec_data_usage_disabled_dialog_mobile_title">Ұялы деректер өшірілді</string>
+    <string name="sec_data_usage_disabled_dialog_mobile_title_vzw">Mobile data is now off</string>
+    <string name="sec_data_usage_disabled_dialog_turn_off">Өшіру</string>
+    <string name="sec_dock_non_resizeble_failed_to_dock_text">Осы қолданбаны “Бірнеше терезе көрінісінде” пайдалану мүмкін емес.</string>
+    <string name="sec_qs_edit">Өзгерту</string>
+    <string name="sec_qs_unable_remove_minimum">Түймені жою мүмкін емес. Түймелердің ең аз санына (%d) жетті.</string>
+    <string name="sec_quick_settings_details">Мәліметтер</string>
+    <string name="sec_quick_settings_flashlight_label">Шам</string>
+    <string name="sec_reorder_buttons">Түйме реті</string>
+    <string name="sec_running_foreground_services_msg">Қолданбаның қанша батарея қуаты мен деректерді пайдаланып жатқандығы туралы білу үшін сол қолданбаны түртіңіз.</string>
+    <string name="sec_running_foreground_services_title">Батареяны пайдаланып жатқан қолданбалар</string>
+    <string name="servicebox_alarm_next">Келесі оятар</string>
+    <string name="servicebox_alarm_no_alarm">Келесі 7 күнге оятарлар жоқ</string>
+    <string name="servicebox_event_calendar">Күнтізбе</string>
+    <string name="servicebox_event_my_event">Менің оқиғам</string>
+    <string name="servicebox_event_no_events">Оқиғалар немесе тапсырмалар жоқ</string>
+    <string name="servicebox_event_open_ss">%s қолданбасын ашу</string>
+    <string name="servicebox_event_task">Тапсырма</string>
+    <string name="servicebox_event_time_all_day">Күні бойы</string>
+    <string name="servicebox_music_closed">Музыкалық контроллеріңізге біраз музыка қажет. Контроллерді көрсету үшін телефоныңыздың құлпын ашып, кейбір музыканы ойнатыңыз.</string>
+    <string name="servicebox_music_description_album_cover">Альбом жапқышы</string>
+    <string name="servicebox_music_description_next">Келесі</string>
+    <string name="servicebox_music_description_pause">Уақытша тоқтату</string>
+    <string name="servicebox_music_description_play">Ойнату</string>
+    <string name="servicebox_music_description_prev">Алдыңғы</string>
+    <string name="servicebox_music_lyrics">Лирика</string>
+    <string name="servicebox_music_play_first">Музыкалық ойнатқышты пайдаланғаннан кейін музыканы құлыптау экранынан басқара аласыз.</string>
+    <string name="servicebox_music_unknown">Белгісіз</string>
+    <string name="servicebox_noti_btn">Параметрлер</string>
+    <string name="servicebox_noti_exp">Музыкаға жылдам қатынасу үшін FaceWidget құралдарын құлыптау экраны мен Always On Display экранында пайдаланыңыз.</string>
+    <string name="servicebox_noti_title">FaceWidgets пайдалану</string>
+    <string name="show_notification_channel_warnings">Хаб. арнасы ескертулерін көрсету</string>
+    <string name="show_notification_channel_warnings_summary">Қолданба хабарландыруды жарамды арнасыз жіберген кезде экранда ескертуді көрсету.</string>
+    <string name="sim_card_tray_empty_water_protection_dialog_body">Судың әсерінен зақымдалудан қорғау үшін, SIM/SD карта науасының мықтап бекітілгеніне көз жеткізіңіз.</string>
+    <string name="sim_card_tray_water_protection_dialog_body">"SIM картаны анықтау мүмкін емес. Құрылғыңыз қоңырау шалу мен ұялы байланыс желілеріне қосылу сияқты әрекеттерді орындай алмайды.
+
+Судың әсерінен зақымдалудан қорғау үшін, SIM/SD карта науасының мықтап бекітілгеніне көз жеткізіңіз."</string>
+    <string name="sim_card_tray_water_protection_dialog_title">SIM/SD картасының науасын тексеру</string>
+    <string name="snap_window_already_used">Терезені суретке түсіру бұрыннан пайдаланылуда.</string>
+    <string name="snap_window_cant_use">“Терезені бекіту” функциясын пайдалану мүмкін емес.</string>
+    <string name="snap_window_open_app_to_used">“Терезені бекіту” мүмкіндігін пайдалану үшін қолданбаны ашыңыз.</string>
+    <string name="snapview_cancel">Тоқтату</string>
+    <string name="snapview_dismiss_landscape">Терезені суретке түсіру алынып тасталды. Терезені суретке түсіруді альбомдық көріністе пайдалану мүмкін емес.</string>
+    <string name="snapview_dismiss_resize">Терезені суретке түсіру алынып тасталды.</string>
+    <string name="snapview_done">Аяқталды</string>
+    <string name="snapview_guide_text">Экранның жоғарғы жағына бекітілетін аймақты таңдаңыз.</string>
+    <string name="snapview_not_support_landscape">Терезені суретке түсіруді альбомдық көріністе пайдалану мүмкін емес.</string>
+    <string name="snapview_not_support_multiwindow">Осы қолданбаны “Бірнеше терезе көрінісінде” пайдалану мүмкін емес.</string>
+    <string name="snooze_icon_description">Хабарландыруды қалғыту</string>
+    <string name="snooze_notification_guide_text">Бұл хабарландыру төменде таңдалған уақыт өткеннен кейін қайтадан пайда болады.</string>
+    <string name="snooze_title">Хабарландыруды қалғыту</string>
+    <string name="status_bar_sec_airplane_mode_text">Ұшақ режимі</string>
+    <string name="status_icon_alarm">Дабыл</string>
+    <string name="status_icon_battery">Батарея</string>
+    <string name="status_icon_bluetooth">Bluetooth</string>
+    <string name="status_icon_data_network">Деректер желісі</string>
+    <string name="status_icon_network_booster">Желі жиілігін күшейту</string>
+    <string name="status_icon_rssi">Сигнал деңгейі</string>
+    <string name="status_icon_wifi">Wi-Fi</string>
+    <string name="statusbar_maximum_power_saving_description">Қуатты барынша үнемдеу режимі</string>
+    <string name="statusbar_power_saving_description">Қуатты үнемдеу режимі қосулы</string>
+    <string name="str_not_support_multi_drop">Тапсырма жолағына бірнеше элементті қосу мүмкін емес. Бір уақытта тек 1 элементті ғана сүйреп апарыңыз.</string>
+    <string name="switched_to_onephone_mode">Режим бір нөмірлі режимге ауыстырылды.</string>
+    <string name="switched_to_twophone_mode">Режим “Екі нөмір режиміне” ауыстырылды.</string>
+    <string name="taskbar_context_menu_app_notification_settings">Қолданба хабарландырулары</string>
+    <string name="taskbar_context_menu_capture_fullscreen">Толық скриншот</string>
+    <string name="taskbar_context_menu_capture_region">Жартылай скриншот</string>
+    <string name="taskbar_context_menu_clear_notification">Тазалау</string>
+    <string name="taskbar_context_menu_close">Жабу</string>
+    <string name="taskbar_context_menu_close_desk_notification_view">Хабарландыруларды жасыру</string>
+    <string name="taskbar_context_menu_disable">Өшіру</string>
+    <string name="taskbar_context_menu_on_screen_keyboard">Экрандық пернетақта</string>
+    <string name="taskbar_context_menu_open">Ашу</string>
+    <string name="taskbar_context_menu_open_desk_notification_view">Хабарландыруларды көрсету</string>
+    <string name="taskbar_context_menu_open_in_new_browser">Жаңа терезеде ашу</string>
+    <string name="taskbar_context_menu_physical_keyboard">Физикалық пернетақта</string>
+    <string name="taskbar_context_menu_pin">Жедел перне тапсырма жолаққа бекіту</string>
+    <string name="taskbar_context_menu_secure_add">Қауіпсіз қалтаға қосу</string>
+    <string name="taskbar_context_menu_uninstall">Жою</string>
+    <string name="taskbar_context_menu_unpin">Жедел перне тапсырма жолаққа бекітпеу</string>
+    <string name="taskbar_keyboard_guided_tour_action">Параметрлер</string>
+    <string name="taskbar_keyboard_guided_tour_message">Тілді және пернетақтаның орналасуын орнату үшін ПАРАМЕТРЛЕР түймесін басып немесе төмендегі белгішеде тінтуірдің оң жақ пернесін басып, “Физикалық пернетақта” түймесін басыңыз.</string>
+    <string name="taskbar_keyboard_guided_tour_title">Пернетақта параметрлерін өзгерту</string>
+    <string name="taskbar_shortcut_pinned_toast">Жедел перне тапсырмалар жолағына бекітілді.</string>
+    <string name="taskbar_shortcut_unpinned_toast">Жедел перне тапсырмалар жолағынан бекітуден алынып тасталды.</string>
+    <string name="taskbar_volume_connect_audio_device">Дыбыс шығару параметрлерін өзгерту үшін аудио құрылғыны қосыңыз.</string>
+    <string name="taskbar_volume_context_menu_change_audio_path_smart_things">Дыбыс шығару құрылғысын өзгерту үшін %s қолданбасын жүктеп орнату қажет.</string>
+    <string name="taskbar_volume_context_menu_download">Жүктеу</string>
+    <string name="taskbar_volume_context_menu_install_smart_things">%s қызметін орнату керек пе?</string>
+    <string name="taskbar_volume_context_menu_smart_things">SmartThings</string>
+    <string name="tethering_attention_title">Назар аударыңыз</string>
+    <string name="time_format_hour">%d сағ</string>
+    <string name="time_format_hour_minute">%1$dсағ %2$dмин</string>
+    <string name="time_format_minute">%d мин</string>
+    <string name="to_use_this_function_download_ps">Осы функцияны пайдалану үшін, %s жүктеңіз.</string>
+    <string name="toast_remove_keyboard">%s пайдалану үшін пернетақта жаппасын алып тастаңыз.</string>
+    <string name="tooltip_all_apps">Қолданбалар</string>
+    <string name="tooltip_close">Бағдарламаны жабу</string>
+    <string name="tooltip_collapse">Қайыру</string>
+    <string name="tooltip_expand">Кеңейту</string>
+    <string name="tooltip_finder">Іздеу</string>
+    <string name="tooltip_homescreen">Бастапқы</string>
+    <string name="tooltip_keyboard">Пернетақта</string>
+    <string name="tooltip_labs">Samsung DeX Labs</string>
+    <string name="tooltip_next_app">Келесі қолданба</string>
+    <string name="tooltip_previous_app">Алдыңғы қолданба</string>
+    <string name="tooltip_recents">Соңғылар</string>
+    <string name="tooltip_screen_capture">Скриншот</string>
+    <string name="tooltip_volume">Дыбыс деңгейі</string>
+    <string name="tts_default_pitch_title">Деңгей</string>
+    <string name="tts_settings_title">Мәтіннен сөйлеуге</string>
+    <string name="tw_cover_volume_warning_message">Жоғары дыбыспен ұзақ уақыт тыңдау есіту қабілетіне зақым келтіруі мүмкін. Дыбысты көбейту үшін жабынды ашыңыз</string>
+    <string name="tw_safe_media_volume_warning">Жоғары дыбыс деңгейінде ұзақ уақыт тыңдау есту қабілетіңізді зақымдауы мүмкін. Дыбыс деңгейінің қауіпсіз деңгейлерден жоғары көтерілуіне мүмкіндік беру үшін OK түймесін түртіңіз.</string>
+    <string name="tw_safe_media_volume_warning_kids_mode">Құлаққаптар балалар режиміне қосулы болғанда, дыбыс деңгейін ұсынылған сақтық шегінен (%s) асыру мүмкін емес.</string>
+    <string name="uhq_mode_noti_text">Анық тыңдау тәжірибесі үшін музыка мен бейнелердің дыбыс ажыратымдылығын жақсартыңыз.</string>
+    <string name="uhq_mode_noti_title">UHQ жоғары сапалылығы</string>
+    <string name="uhq_toast_earphone_connect_request">UHQ upscaler пайдалану үшін құлаққаптарды қосыңыз.</string>
+    <string name="unable_to_capture_screen_emergencymode">Төтенше режим кезінде экранды суретке түсіру мүмкін емес.</string>
+    <string name="unable_to_capture_screen_ultrapowersaving_mode">Скриншотқа түсіру мүмкін емес.</string>
+    <string name="unable_to_turn_on_being_used_by_camera">%s қолданбасын қосу мүмкін емес. Камера жарығы басқа қолданбада пайдаланылып жатыр.</string>
+    <string name="uninstall_1_app_message">Осы қолданбаны жойғыңыз келе ме?</string>
+    <string name="uninstall_apps_message">Келесі қолданбалар жойылады:</string>
+    <string name="uninstall_cancel">Бас тарту</string>
+    <string name="uninstall_confirm">OK</string>
+    <string name="uninstall_title">Қолданбаларды жою керек пе?</string>
+    <string name="unintentional_lcd_on_alert_body">Бұның қайтадан орындалуына жол бермеу үшін жақындық сенсорының бұғаттаулы екенін тексеріңіз.</string>
+    <string name="unintentional_lcd_on_alert_body2">Телефоныңызды пайдалануды жалғастыру үшін %s түймесін түртіңіз.</string>
+    <string name="unintentional_lcd_on_alert_title">Сенсорлық енгізу бұғатталды</string>
+    <string name="volte_show_toast_airplane_mode">Ұшу режимі қосылғанда VoLTE пайдалану мүмкін емес. Ұшу режимін өшіріп, әрекетті қайталаңыз.</string>
+    <string name="volte_show_toast_disable_not_allowed">Қызмет жеткізушіге VoLTE функциясын өшіруге рұқсат берілмеген.</string>
+    <string name="volte_show_toast_enable_message">VoLTE қызметін пайдалану үшін VoLTE қызметіне жазылыңыз. Мәліметтер алу үшін қызмет көрсетуші провайдерге хабарласыңыз.</string>
+    <string name="volte_show_toast_impossible_during_volte_call">VoLTE қоңырауы кезінде қолжетімді болғанда, VoLTE пайдалану функциясын өшіру мүмкін емес.</string>
+    <string name="volte_show_toast_not_support_operator">VoLTE ағымдағы бағдарлама нұсқасы тарапынан қолдау көрсетілмеген. Қосымша ақпарат алу үшін тұтынушыларды қолдау қызметіне хабарласыңыз.</string>
+    <string name="volume_cant_change_volume_smart_view">Медиа дыбысы өшірілген кезде %s дыбыс деңгейін өзгерту мүмкін емес.</string>
+    <string name="volume_limiter_notice_toast">Дыбыс деңгейін арттыру үшін “Параметрлер” бөліміне өтіп, “Мультимедианың дыбыс деңгейін шектеуші” функциясын өшіріңіз немесе дыбыс деңгейінің шегін өзгертіңіз.</string>
+    <string name="volume_limiter_open_cover_toast">Жалғастыру үшін, тысты ашыңыз.</string>
+    <string name="volume_limiter_toast_title">Дыбыс деңгейі шегіне жетті</string>
+    <string name="volume_mute_all_sounds_on">“Барлық дыбыстарды өшіру” функциясы қосулы</string>
+    <string name="volume_stream_dual_audio">Қос аудио</string>
+    <string name="volume_use_your_phone_volume_smart_view">%s дыбыс деңгейін басқару үшін телефонның дыбыс деңгейі пернелерін пайдаланыңыз.</string>
+    <string name="warning_alert_check">Қайтадан көрсетпеңіз</string>
+    <string name="water_protection_notification_body">Ылғал табылды. Зарядтағышты розеткадан суырып, зарядтағыштың да, USB портының да құрғақ екеніне көз жеткізіңіз.</string>
+    <string name="water_protection_notification_title">Зарядтағышты ажырату</string>
+    <string name="wfc_enable_dialog_opv_body0">"Wi-Fi Calling is a service of your mobile operator, Orange Polska S.A.
+Please read the description of the service provided by your operator:"</string>
+    <string name="wfc_enable_dialog_opv_body1">Wi-Fi Calling service enables you to make and receive voice calls over any Wi-Fi internet connection, even in a situation where you are outside any mobile network’s coverage. Once the service is active for your mobile number, every time you connect to a Wi-Fi network, your voice calls will be performed using Wi-Fi Calling. This will be indicated to you by a dedicated icon on the notification bar.</string>
+    <string name="wfc_enable_dialog_opv_body2">"If your Wi-Fi connection is of poor quality or your device is outside a Wi-Fi network’s coverage, your phone will make calls using an available mobile network.
+
+Calls you make with Wi-Fi Calling in Poland are charged in the same way as your regular mobile calls in your mobile tariff plan. Incoming calls in Poland are free of charge. If you make Wi-Fi Calling calls outside Poland your calls may be charged a price specified in your mobile tariff plan’s price list.
+
+Notwithstanding, your Wi-Fi connections may be charged independently by the provider of your Wi-Fi connection."</string>
+    <string name="wfc_enable_dialog_opv_body3">"Once you press the [I ACCEPT] button and your phone connects to a Wi-Fi network, your Wi-Fi Calling service will be activated. You can disable Wi-Fi Calling at any time using the phone menu.
+
+Detailed information about your Wi-Fi Calling service can be found at www.orange.pl/wificalling.
+
+Please note that in order to enable your emergency calls (e.g., such as 112 calls) to be routed to the closest emergency centre suitable for your actual location, your emergency calls made while the Wi-Fi Calling service is enabled will be carried by your device through any mobile network available at a given moment. Only in cases where no mobile network is available will an emergency call be routed via the Wi-Fi Calling service. Unfortunately, in such cases we will not know your precise location and therefore your emergency call may not be routed to the emergency centre closest to your actual location."</string>
+    <string name="wfc_enable_dialog_opv_body4">In regard to your use of Wi-Fi Calling, we – as your personal data controller – will process your data based on the number and model of the device on which you use Wi-Fi Calling, the software used on the device, the endpoint of the network used to connect with Wi-Fi Calling (including the IP address and the country to which this IP address is attributed), and the time and duration of each call, in order to perform and settle the service, answer any complaints, and to perform any statutory obligations. We will process this data for the duration of the agreement on providing telecommunication services between you and us, and after its termination – for the period of recovery of claims and of performing other tasks defined in the provisions of law. Providing the data is voluntary, but it is necessary to use the service. You have the right to access and to rectify your data.</string>
+    <string name="wfc_enable_dialog_opv_body5">Please find our data: Orange Polska S.A., address: Aleje Jerozolimskie 160, 02-326 Warsaw, Poland, registered in the Register of the Entrepreneurs of District Court for the Capital City of Warsaw in Warsaw, XII Commercial Division of the National Court Register (KRS), under entry number 0000010681, NIP (tax ID) 526-02-50-995; with share capital (fully paid up) of PLN 3,937,072,437.00.</string>
+    <string name="wfc_enable_dialog_opv_btn">Мен қабылдаймын</string>
+    <string name="wfc_enable_dialog_opv_title">WELCOME TO WI-FI CALLING SERVICE</string>
+    <string name="wifi_ap_wifi_p2p_off_warn">Ұялы жедел нүктені қосу Wi-Fi Direct арқылы қосылған ағымдағы кез келген құрылғыны ажыратады.</string>
+    <string name="wifi_ap_wifi_p2p_off_warn_china">Жылжымалы WLAN жедел нүктесі қосылғанда WLAN Direct арқылы қосылған құрылғы ажыратылады.</string>
+    <string name="wifi_authentication_failed_kt">Wi-Fi AP түпнұсқалығын растау сәтсіз болды.</string>
+    <string name="wifi_authentication_invalid_value">Authentication failed. Check ID and password.</string>
+    <string name="wifi_authentication_no_response">Wi-Fi AP қосылымы сәтсіз аяқталды.</string>
+    <string name="wifi_authentication_succeed_kt">Wi-Fi AP түпнұсқалығы расталды.</string>
+    <string name="wifi_auto_reconnect_disabled">“Автоматты түрде қайта қосылу” функциясы өшірілді</string>
+    <string name="wifi_connected_checking_quality">Интернет қосылымыңыздың сапасы тексерілуде…</string>
+    <string name="wifi_disabled_captive_portal">Кіру қажет.</string>
+    <string name="wifi_disabled_no_internet">Интернет қолжетімсіз</string>
+    <string name="wifi_disabled_password_failure">Түпнұсқалық растама қатесі орын алды</string>
+    <string name="wifi_disconnected">Wi-Fi ажыратылған.</string>
+    <string name="wifi_empty_list_user_restricted">Сізде Wi-Fi параметрлерін өзгерту рұқсатыңыз жоқ.</string>
+    <string name="wifi_failed_to_obtain_IP">IP мекенжайын алу сәтсіз аяқталды.</string>
+    <string name="wifi_in_airplane_mode">Ұшу режимінде.</string>
+    <string name="wifi_internet_may_not_be_available">Инт.қол жетімсіз болуы мүмкін</string>
+    <string name="wifi_not_found_hidden_ap">Желіге қосылу мүмкін емес. %s деп аталатын желі табылмады.</string>
+    <string name="wifi_reconnecting">Желі сапасы жақсарғанда қосылуға дайын</string>
+    <string name="wifi_sign_in_to_the_network">Желіге кіріңіз.</string>
+    <string name="wifi_unknown_security_type">Қауіпсіздік түрі белгісіз.</string>
+    <string name="wificalling_popup_rogers_activation_text">Wi-Fi Calling lets you call and text while on a Wi-Fi Network. Usage will be deducted from the minute and text message buckets in your Wireless plan. Click below to Activate.</string>
+    <string name="wificalling_popup_rogers_activation_title">Wi-Fi Calling Activation</string>
+    <string name="wificalling_popup_rogers_wifi_enable_text">Please connect to a Wi-Fi network to register for Wi-Fi Calling.</string>
+    <string name="wificalling_show_popup_enable_location_message">Wi-Fi қоңырау шалу функциясы орныңыз туралы ақпаратты пайдалануды қажет етеді. Геодеректер опциясы қосылады. Анонимді орын деректері жиналып, Google компаниясы мен қызмет жеткізушіңізге жіберіледі. Мәліметтер алу үшін, қызмет жеткізушіңізге хабарласыңыз.</string>
+    <string name="wificalling_show_popup_enable_location_title">Орынды қосу</string>
+    <string name="wificalling_show_popup_use_location_inform">“Wi-Fi арқылы қоңырау шалу” функциясын пайдалану кезінде сіздің орныңыз туралы ақпарат қызмет көрсетуші мекемеге жіберілуі мүмкін. Мәліметтер алу үшін қызмет көрсетуші мекемеге хабарласыңыз.</string>
+    <string name="wificalling_show_popup_use_location_inform_ftm">Орын функциясының қосылғанына не қосылмағанына қарамастан, Wi-Fi қоңырауларын орнату мақсатында сіздің орныңызға қатысты ақпарат Google компаниясына және операторға жіберілуі мүмкін.</string>
+    <string name="yes">OK</string>
+    <string name="mobile_hotspot_wifi_off_warning">Ұялы жедел нүктені қосу Wi-Fi желісін өшіреді.</string>
+    <string name="mobile_hotspot_wifi_off_warning_china">Ұялы жедел нүктесін қосу WLAN желісін өшіреді.</string>
+    <string name="mobile_hotspot_wifi_off_warning_jpn">Enabling Wi-Fi tethering will turn off Wi-Fi.</string>
+</resources>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <plurals name="kg_attempt_left">
+        <item quantity="other">Beste %d saiakera geratzen dira</item>
+        <item quantity="one">%d saiakera geratzen zaizu</item>
+    </plurals>
+    <plurals name="kg_attempt_remaining">
+        <item quantity="other">(%d saio geratzen dira)</item>
+        <item quantity="one">(1 saiakera geratzen da)</item>
+    </plurals>
+    <plurals name="kg_too_many_failed_attempts_countdown_min">
+        <item quantity="other">Saiatu berriz %d minutu barru</item>
+        <item quantity="one">Saiatu berriz %d minutu barru</item>
+    </plurals>
+    <plurals name="kg_too_many_failed_attempts_countdown_sec">
+        <item quantity="other">Saiatu berriz %d segundo barru</item>
+        <item quantity="one">Saiatu berriz %d segundo barru</item>
+    </plurals>
+    <plurals name="kg_too_many_failed_countdown_by_biometrics">
+        <item quantity="other">Datu biometrikoak egiaztatzeko %1$d saiakera oker egin dira. Saiatu berriz %2$d segundo barru.</item>
+        <item quantity="one">Datu biometrikoak egiaztatzeko %1$d saiakera oker egin dira. Saiatu berriz %2$d segundo barru.</item>
+    </plurals>
+    <plurals name="kg_too_many_failed_countdown_by_fingerprint">
+        <item quantity="other">Hatz aztarnak egiaztatzeko %1$d saiakera oker egin dira. Saiatu berriz %2$d segundo barru.</item>
+        <item quantity="one">Hatz aztarnak egiaztatzeko %1$d saiakera oker egin dira. Saiatu berriz %2$d segundo barru.</item>
+    </plurals>
+</resources>

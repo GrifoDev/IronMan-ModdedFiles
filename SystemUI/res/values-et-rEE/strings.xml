@@ -1,0 +1,1478 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="accessibility_battery_level_charging">Aku laadimine, %d protsenti</string>
+    <string name="accessibility_brightness_detail_button">Heleduse seadete paneel</string>
+    <string name="accessibility_button">Nupp</string>
+    <string name="accessibility_phone_four_bars">Telefoni signaali tugevus on neli tulpa</string>
+    <string name="accessibility_quick_settings_more_option">Veel valikuid</string>
+    <string name="accessibility_recent">Hiljutised</string>
+    <string name="activate">Activate</string>
+    <string name="agree">Nõustu</string>
+    <string name="airplane_mode_plmn">Lennurežiim</string>
+    <string name="airplane_mode_show_popup_disabled_on_demo_devices">Demoseadmetes on lennurežiim inaktiveeritud.</string>
+    <string name="airplane_mode_show_popup_message">Lennurežiim võimaldab teil lülitada välja helistamise, sõnumite ja andmevõrgu funktsioonid. See lülitab välja ka ühenduvuse funktsioonid, nagu Wi-Fi ja Bluetoothi. Wi-Fi ja Bluetooth-ühenduse kasutamiseks lülitage need menüüs Seaded või teavituste paneelil sisse.</string>
+    <string name="airplane_mode_show_popup_message_cmcc">Lennurežiim võimaldab teil lülitada välja helistamise, sõnumite ja andmevõrgu funktsioonid. See lülitab välja ka ühenduvuse funktsioonid, nagu Wi-Fi ja Bluetoothi. Wi-Fi ja Bluetooth-ühenduse kasutamiseks lülitage need menüüs Seaded või teavituste paneelil sisse.</string>
+    <string name="airplane_mode_show_popup_message_vzw">"Unless you use Wi-Fi, you will not be able to use the Internet, Email, or other apps that require a data connection.
+Turn on Airplane mode?"</string>
+    <string name="airplane_mode_show_popup_message_vzw_volte">"Unless you use Wi-Fi, you will not be able to use Internet, Email, Wi-Fi Calling or other apps that require a data connection.
+Turn on Airplane mode?"</string>
+    <string name="airplane_mode_show_popup_message_wifi">"Lülitage Wi-Fi ja Bluetooth välja.
+
+Saate need uuesti sisse lülitada menüüs Seaded või kiirseadete paneelil."</string>
+    <string name="airplane_mode_show_popup_message_wifi_without_bluetooth">Lennurežiim võimaldab teil lülitada välja võrgufunktsioonid, sealhulgas Wi-Fi. Wi-Fi kasutamiseks lülitage see sisse menüüs Seaded või teavituste paneelil.</string>
+    <string name="airplane_mode_show_popup_message_without_bluetooth">Lennurežiim võimaldab desaktiveerida helistamise, sõnumite ja mobiilsidevõrkude funktsioonid.</string>
+    <string name="airplane_mode_show_popup_safelock">Lennurežiimi ei saa aktiveerida, kui funktsioon Blokeeri lukustatult väljalülitamine on aktiivne. Proovige uuesti pärast ekraani avamist.</string>
+    <string name="airplane_mode_show_popup_summary">Te ei saa kasutada helistamist, sõnumsidet ega mobiilset andmesidet.</string>
+    <string name="airplane_mode_show_popup_summary_q">Kas lülitada lennurežiim sisse?</string>
+    <string name="airplane_mode_show_popup_title">Kas lülitada lennurežiim sisse?</string>
+    <string name="airplane_mode_show_popup_title_vzw">Turn on Airplane mode</string>
+    <string name="airplane_mode_show_toast_turn_on_wifi_for_wificalling">Lülitage Wi-Fi sisse, et kasutada Wi-Fi helistamist.</string>
+    <string name="allow_notifications_guide_text">Saate lubada selle kategooria teavitused.</string>
+    <string name="app_icon_badge_guide_notification_text">Kui eirate kõiki rakenduse teavitusi, kaob ka rakenduse ikoonil kuvatav märk.</string>
+    <string name="app_icon_badge_guide_notification_title">Rakenduste ikoonimärgid</string>
+    <string name="app_locked">App locked</string>
+    <string name="appicon_badge_new_item">1 uus üksus</string>
+    <string name="appicon_badge_new_items">%d uut üksust</string>
+    <string name="applocked_pinning_window_disable">Rakendust ei saa kinnitada. Rakendus on lukustatud.</string>
+    <string name="assistance_app_setting_alert_dialog_title">Select an app to open when you press and hold the Home key. To change the selected app later, go to Device assistance app in Settings.</string>
+    <string name="assistance_app_setting_item_none">Puudub</string>
+    <string name="battery_cable_charging_from_wireless_to_cable_text">Juhtmevabalt laadimiselt kaabli kaudu laadimisele ümberlülitumine</string>
+    <string name="battery_cable_charging_title">Kaabliga laadimine</string>
+    <string name="battery_charging_level_and_time_text">"Laadimine: %1$d%%
+(Umbes %2$s jäänud kuni täieliku laadimiseni)"</string>
+    <string name="battery_charging_level_text">Laadimine: %d%%</string>
+    <string name="battery_charging_time_text">(%s kuni täis laetud)</string>
+    <string name="battery_charging_title">Laadimine</string>
+    <string name="battery_discharging_duration">Aku hinnanguline kasutusaeg: %s</string>
+    <string name="battery_fast_charging_title">Kiirlaadimine</string>
+    <string name="battery_fast_charging_title_chn">Tõhusam laadimine</string>
+    <string name="battery_fast_wireless_charging_title">Kiire juhtmevaba laad.</string>
+    <string name="battery_fast_wireless_charging_title_chn">Täpsem juhtmevaba laadimine</string>
+    <string name="battery_health_interruption_by_limit_high_temperature_text_phone">"Laadimine peatati. Teie telefoni temperatuur on liiga kõrge. Olge laadija eraldamisel ettevaatlik. See võib olla väga kuum.
+
+Laadija eraldamisel ja uuesti ühendamisel võib laadimine jätkuda tavapäraselt. Kui ülekuumenemine püsib, võtke ühendust klienditeenindusega, kuna võib tekkida tulekahju või vigastuste oht."</string>
+    <string name="battery_health_interruption_by_limit_high_temperature_text_tablet">"Laadimine peatati. Teie tahvelseadme temperatuur on liiga kõrge. Olge laadija eraldamisel ettevaatlik. See võib olla väga kuum.
+
+Laadija eraldamisel ja uuesti ühendamisel võib laadimine jätkuda tavapäraselt. Kui ülekuumenemine püsib, võtke ühendust klienditeenindusega, kuna võib tekkida tulekahju või vigastuste oht."</string>
+    <string name="battery_health_interruption_by_limit_high_temperature_title">Eraldage laadija</string>
+    <string name="battery_health_interruption_by_terminal_open_galaxy_text">Unable to charge your device. Make sure you are using a Galaxy compatible battery and charger and that your device is properly connected to the charger.</string>
+    <string name="battery_health_interruption_by_terminal_open_text">Seadet ei saa laadida, Veenduge, et kasutate Samsungi ühilduvusega akut ja laadijat ning teie seade on laadijaga korralikult ühendatud.</string>
+    <string name="battery_health_interruption_by_too_high_temperature_text_phone">Teie telefoni temperatuur on liiga kõrge. Laadimine jätkub, kui temperatuur on taas tavatasemel.</string>
+    <string name="battery_health_interruption_by_too_high_temperature_text_tablet">Teie tahvelseadme temperatuur on liiga kõrge. Laadimine jätkub, kui temperatuur on taas tavatasemel.</string>
+    <string name="battery_health_interruption_by_too_low_temperature_text_phone">Teie telefoni temperatuur on liiga madal. Laadimine jätkub, kui temperatuur on taas tavatasemel.</string>
+    <string name="battery_health_interruption_by_too_low_temperature_text_tablet">Teie tahvelseadme temperatuur on liiga madal. Laadimine jätkub, kui temperatuur on taas tavatasemel.</string>
+    <string name="battery_health_interruption_title">Laadimine peatati</string>
+    <string name="battery_info_power_wireless">Traadita</string>
+    <string name="battery_low_sec_body_phone">Laadige oma telefoni või toksake siin, et lülitada sisse energiasäästurežiim.</string>
+    <string name="battery_low_sec_body_phone_psm">Laadige oma telefoni.</string>
+    <string name="battery_low_sec_body_tablet">Laadige oma tahvelarvutit või toksake siin, et lülitada sisse energiasäästurežiim.</string>
+    <string name="battery_low_sec_body_tablet_psm">Laadige tahvelarvutit.</string>
+    <string name="battery_low_sec_noti_channel">Aku on tühi</string>
+    <string name="battery_low_sec_title">Akutoide %d%%</string>
+    <string name="battery_not_fully_connected_charging_popup_text">Kontrollige, kas laadija on õigesti ühendatud. Kasutage seadmega kaasapandud laadijat.</string>
+    <string name="battery_not_fully_connected_charging_popup_text_jpn">Kontrollige, kas laadija on õigesti ühendatud.</string>
+    <string name="battery_not_fully_connected_charging_text">Kasutage kiirema laadimise jaoks seadmega kaasapandud laadijat ja veenduge, et see oleks õigesti ühendatud.</string>
+    <string name="battery_not_fully_connected_charging_text_chn">Kasutage kiirema laadimise jaoks telefoniga kaasapandud laadijat ja veenduge, et see oleks õigesti ühendatud.</string>
+    <string name="battery_not_fully_connected_charging_text_jpn">Veenduge, et laadija oleks õigesti ühendatud.</string>
+    <string name="battery_not_fully_connected_charging_text_tablet_chn">Kasutage kiirema laadimise jaoks tahvelseadmega kaasapandud laadijat ja veenduge, et see oleks õigesti ühendatud.</string>
+    <string name="battery_not_fully_connected_charging_text_vzw">Make sure the charger is properly connected.</string>
+    <string name="battery_not_fully_connected_charging_title">Aeglane laadimine</string>
+    <string name="battery_not_fully_connected_charging_title_vzw">Incomplete connection</string>
+    <string name="battery_saver_recommend_notification_text_phone">Laadige oma telefoni või toksake siin, et lülitada sisse energiasäästurežiim.</string>
+    <string name="battery_saver_recommend_notification_text_phone_psm">Laadige oma telefoni.</string>
+    <string name="battery_saver_recommend_notification_text_tablet">Laadige oma tahvelarvutit või toksake siin, et lülitada sisse energiasäästurežiim.</string>
+    <string name="battery_saver_recommend_notification_text_tablet_psm">Laadige tahvelarvutit.</string>
+    <string name="battery_saver_recommend_notification_title">Akutoide %d%%</string>
+    <string name="battery_slow_charging_text">Kiiremaks laadimiseks kasutage originaallaadijat.</string>
+    <string name="battery_slow_charging_title">Seadme laadimine aeglane</string>
+    <string name="battery_slow_charging_toast_text">To charge faster, use the charger and cable that were provided with this phone</string>
+    <string name="battery_slow_charging_toast_text_for_tablet">To charge faster, use the charger and cable that were provided with this tablet.</string>
+    <string name="battery_wireless_charging_disconnect_text">Juhtmevaba laadimine on peatatud.</string>
+    <string name="battery_wireless_charging_from_cable_to_wireless_text">Kaabli kaudu laadimiselt juhtmevabale laadimisele ümberlülitumine</string>
+    <string name="battery_wireless_charging_title">Juhtmevaba laadimine</string>
+    <string name="blue_light_disable_reason">Lülitage %1$s välja, et kasutada funktsiooni %2$s.</string>
+    <string name="bluetooth_a2dp_profile_summary_connected">Ühendatud meediumi heli jaoks</string>
+    <string name="bluetooth_disconnect_message">Bluetooth-ühendus seadmega %s on lõppenud.</string>
+    <string name="bluetooth_display_remote_device_name_after_pair">Seadme nimi kuvatakse, kui see seade on ühendatud.</string>
+    <string name="bluetooth_getting_remote_device_name">Seadme nime hankimine…</string>
+    <string name="bluetooth_headset_profile_summary_connected">Ühendatud kõne heli jaoks</string>
+    <string name="bluetooth_hid_profile_summary_connected">Ühendatud sisestusseadmena</string>
+    <string name="bluetooth_pairing">Ühildamine…</string>
+    <string name="bluetooth_pairing_device_down_black_list_error_message">Seadmega %1$s ei saa ühendust luua. Kontrollige seadeid seadmes %2$s ja proovige uuesti.</string>
+    <string name="bluetooth_pairing_device_down_error_message">Ei saa luua ühendust seadmega %s.</string>
+    <string name="bluetooth_pairing_error_message">Ei õnnestunud siduda seadmega %s. Veenduge, et see oleks sidumiseks valmis.</string>
+    <string name="bluetooth_pairing_pin_error_message">Ei õnnestunud siduda seadmega %s. Veenduge, et see oleks sidumiseks valmis.</string>
+    <string name="bluetooth_pairing_rejected_error_message">%s keeldus sidumisest.</string>
+    <string name="bluetooth_pan_nap_connected">Ühendatud internetiühenduse pakkumiseks</string>
+    <string name="bluetooth_pan_nap_profile_summary_connected">Kohalikku internetiühendust jagatakse seadmega</string>
+    <string name="bluetooth_pan_panu_connected">Ühendatud internetiühenduse kasutamiseks</string>
+    <string name="bluetooth_pan_profile_summary_use_for">Lülitage Bluetooth-modem seotud seadmes sisse, et kasutada selles telefonis internetti.</string>
+    <string name="bluetooth_pan_user_profile_summary_connected">Ühendatud seadmega internetile juurdepääsuks.</string>
+    <string name="bluetooth_profile_a2dp">Meediumi heli</string>
+    <string name="bluetooth_profile_headset">Kõne heli</string>
+    <string name="bluetooth_profile_map">Ligipääs sõnumile</string>
+    <string name="bluetooth_profile_pan">Juurdepääs internetile</string>
+    <string name="bluetooth_profile_pan_nap">Internetiühenduse jagamine</string>
+    <string name="bluetooth_profile_pbap">Kontakti juurdepääs</string>
+    <string name="bluetooth_profile_pbap_tts">Kontaktid ja telefoni logi</string>
+    <string name="bluetooth_profile_textinput">Teksti sisestamine</string>
+    <string name="bluetooth_spp_profile_summary_connected">Ühendatud jadapordi profiili kaudu</string>
+    <string name="bluetooth_summary_connected_to_a2dp_headset">Ühendatud kõne ja meediumi heli jaoks</string>
+    <string name="bluetooth_tethering_cannot_connect_while_connected_to_wifi">Bluetooth-modemit ei saa kasutada, kui olete ühendatud Wi-Fi-võrguga.</string>
+    <string name="brightness_control_on_top">Heleduse juhtimine peal</string>
+    <string name="brightness_slider_hbm_text">Maksim.-tud par. näht. jaoks päikesevalguses</string>
+    <string name="button_close">Sulge</string>
+    <string name="cant_open_image_viewer_app">Ei saa avada pildivaaturi rakendust.</string>
+    <string name="cant_open_image_viewer_app_in_emergency_mode">Pildivaaturi rakendust ei saa avada hädaabirežiimis.</string>
+    <string name="cant_open_image_viewer_app_in_mpsm">Pildivaaturi rakendust ei saa avada maksimaalses energiasäästurežiimis.</string>
+    <string name="cant_open_image_viewer_app_in_ps">Pildivaaturi rakendust ei saa režiimis %s avada.</string>
+    <string name="cant_open_photo_editor_in_ps">Fotoredaktorit ei saa avada režiimis %s.</string>
+    <string name="cant_open_ps">Ei saa avada rakendust %s.</string>
+    <string name="cant_screenshot_in_ps">Ekraanipilti ei saa režiimis %s jäädvustada.</string>
+    <string name="card_crash">SIM-kaardi tõrge</string>
+    <string name="clear_all_notifications_text">Tühj. kõik</string>
+    <string name="clear_all_text">Tühjenda</string>
+    <string name="colour_adjustment_title">Värvi reguleerimine</string>
+    <string name="colour_lens_title">Värviline kuva</string>
+    <string name="cooling_body">"Teie seade on ülekuumenemas. Seadme jahutamiseks viiakse läbi järgmised sammud.
+
+Saate ikkagi kasutada oma seadet, kuid:
+- ekraan võib muutuda tuhmimaks;
+- seade võib muutuda aeglasemaks;
+- laadimine võib peatuda.
+
+Kui seade on jahtunud, taastub seadme tavaline jõudlus automaatselt."</string>
+    <string name="cooling_body_tablet_vzw">"Your tablet is getting too hot, so it’s taking steps to cool itself down.
+
+You can still use your tablet, but you may notice:
+The screen might dim.
+The tablet might slow down.
+Charging might pause.
+
+After the tablet cools down, performance willAutomatically go back to normal."</string>
+    <string name="cooling_body_vzw">"Your phone is getting hot, so it's taking steps to cool itself down.
+
+You can still use it, but you may notice:
+- The screen might dim.
+- The phone might slow down.
+- Charging might pause.
+
+Your phone will return to normal once it cools down."</string>
+    <string name="cooling_high_level_noti_text">Rakendusi ei saa avada. Saate kasutada ainult rakendusi Telefon ja Kontaktid.</string>
+    <string name="cooling_noti_text">Toksake siia, et naha uksikasju.</string>
+    <string name="cooling_noti_text_vzw">Toksake siia, et saada lisateavet.</string>
+    <string name="cooling_popup_title">Seade jahtub</string>
+    <string name="cooling_title">Seade on ülekuumenemas</string>
+    <string name="cooling_title_vzw">Cooling down</string>
+    <string name="data_connection_error_data_roaming_off_body">Looge ühendus Wi-Fi-võrguga või lülitage andmesiderändlus sisse.</string>
+    <string name="data_connection_error_flight_mode_on_body">Teie telefon ei ole ühendatud Wi-Fi-võrguga. Lülitage menüüs Seaded lennurežiim välja, et kasutada selle asemel mobiilsidevõrku.</string>
+    <string name="data_connection_error_flight_mode_on_body_tablet">Teie tahvelseade ei ole ühendatud Wi-Fi-võrguga. Lülitage menüüs Seaded lennurežiim välja, et kasutada selle asemel mobiilsidevõrku.</string>
+    <string name="data_connection_error_flight_mode_on_title">Lülitage lennurežiim välja</string>
+    <string name="data_connection_error_mobile_data_off">Mobiilne andmeside on desaktiveeritud. Looge selle asemel ühendus Wi-Fi võrguga või aktiveerige mobiilne andmeside ja proovige uuesti</string>
+    <string name="data_connection_error_mobile_data_off_body">Looge ühendus Wi-Fi-võrguga või lülitage mobiilne andmeside sisse.</string>
+    <string name="data_connection_error_mobile_data_off_title">Kas lülitada mobiilne andmeside sisse?</string>
+    <string name="data_connection_error_no_network_connection">Võrguühendus puudub</string>
+    <string name="data_connection_error_no_signal_body">Ühtki saadaolevat võrku ei leitud.</string>
+    <string name="data_connection_error_toast_notification">Wi-Fi ühendus on nõutud. Looge ühendus Wi-Fi võrguga ja proovige uuesti</string>
+    <string name="dcm_lockscreen_unlock_help_text_fingerprints_iris">Use fingerprint to unlock device or tap Lock icon to use irises instead</string>
+    <string name="dcm_lockscreen_unlock_help_text_iris">Tap Lock icon to use irises to unlock device</string>
+    <string name="dcm_lockscreen_voice_assistant_active_instructions">Topelttoksake telefoni avamiseks luku nuppu</string>
+    <string name="default_carrier_text_searching">Otsimine</string>
+    <string name="default_volume_control_summary">Saate juhtida meediumi helitugevust vaikimisi, kui vajutate helitugevuse klahve.</string>
+    <string name="default_volume_control_title">Helitugevusnupud meediumi jaoks</string>
+    <string name="direct_boot_unaware_dialog_message">Pärast telefoni taaskäivitamist peate avama oma telefoni, enne kui saate seda rakendust kasutada.</string>
+    <string name="direction_lock_too_many_failed_attempts_countdown">Proovige %d sek pärast</string>
+    <string name="disable">Desaktiv.</string>
+    <string name="disable_cancel">Tühista</string>
+    <string name="disable_confirm">Desaktiveeri</string>
+    <string name="disable_message">%1$s ja kõik sellega seotud funktsioonid desaktiveeritakse. Ka teie andmed kustutatakse. Rakenduse uuesti aktiveerimiseks avage Seaded > Rakendused ja valige %2$s.</string>
+    <string name="disagree">Ei nõustu</string>
+    <string name="dnd_noti_action_disable">Lülita välja</string>
+    <string name="dnd_noti_message">Märguanded vaigistatud</string>
+    <string name="dnd_noti_title">Valik Mitte segada on sisse lülitatud</string>
+    <string name="dock_minimized_notification_content_text">Toksake siia, et avada rakendus %s.</string>
+    <string name="dock_minimized_notification_dimiss_text">Sulge</string>
+    <string name="dock_minimized_notification_text">Poolit. ekraani vaade kasutusel</string>
+    <string name="dock_minimized_toast_text">%s on minimeeritud.</string>
+    <string name="download_popup_button_cancel">Tühista</string>
+    <string name="download_popup_button_download">Laadi al.</string>
+    <string name="download_ps">Kas laadida rakendus %s alla?</string>
+    <string name="emergency_mode">Hädaabirežiim</string>
+    <string name="flash_light_disabled_by_low_battery">Taskulampi ei saa sisse lülitada. Aku hakkab tühjaks saama.</string>
+    <string name="flash_light_notification_button">Lülita välja</string>
+    <string name="flash_light_notification_title">Taskulamp lülitatud sisse</string>
+    <string name="flash_light_turn_off_by_low_battery">Aku on tühi. Taskulamp lülitatakse välja.</string>
+    <string name="flight_mode_enabled_dialog_body">"Your mobile data connection is turned off. Unless you use Wi-Fi, you won't be able to use the Internet, Email or other apps that require a data connection."</string>
+    <string name="flight_mode_enabled_dialog_body_volte_and_vowifi">"Your mobile data connection is turned off. Your phone's Video Calling function won't work when mobile data is off. Also, you won't be able to use the Internet, Email or other apps that need a data connection unless you use Wi-Fi."</string>
+    <string name="flight_mode_enabled_dialog_title">Airplane mode turned on</string>
+    <string name="force_immersive_guide_dialog_guide_path">Selle nupu peitmiseks avage menüü Seaded > Ekraan > Navigatsiooniriba.</string>
+    <string name="force_immersive_guide_dialog_message1">Topelttoksake seda nuppu, et peita navigatsiooniriba.</string>
+    <string name="force_immersive_guide_dialog_message2">Libistage laadimispordi lähedal ekraani servast sissepoole, et kuvada navigatsiooniriba.</string>
+    <string name="force_immersive_guide_dialog_message3">Topelttoksake seda nuppu uuesti, et lukustada navigatsiooniriba oma kohale.</string>
+    <string name="force_immersive_guide_dialog_message4">Mõnel ekraanil, nt avaekraan, kuvatakse navigatsiooniriba alati.</string>
+    <string name="force_immersive_guide_dialog_ok">OK</string>
+    <string name="force_immersive_guide_dialog_setting">Seaded</string>
+    <string name="force_immersive_guide_dialog_title">Navigatsiooniriba peitmine:</string>
+    <string name="force_immersive_guide_toast_hide">Topelttoksake, et peita navigatsiooniriba.</string>
+    <string name="force_immersive_guide_toast_show">Topelttoksake, et lukustada navigatsiooniriba.</string>
+    <string name="freeform_forced_resizable">See rakendus ei tööta mitmikakna vaates korralikult.</string>
+    <string name="freeform_forced_resizable_samsung_dex">Samsung DeX ei pruugi mõningaid selle rakenduse funktsioone toetada.</string>
+    <string name="full_battery_noti_channel">Aku on laetud</string>
+    <string name="full_battery_noti_text">Aku on laetud.</string>
+    <string name="full_battery_title">Teave</string>
+    <string name="greyscale_mode_title">Hallskaala</string>
+    <string name="hotspot_warning_dialog_msg_smartview_off">Mobiilne kuumkoht ja Smart View ei saa olla korraga aktiivsed. Smart View inaktiveeritakse.</string>
+    <string name="hotspot_warning_dialog_msg_smartview_off_chn">WLAN kuumkoht ja Smart View ei saa olla korraga aktiivsed. Smart View inaktiveeritakse.</string>
+    <string name="hotspot_warning_dialog_msg_smartview_off_spr">Mobiilse kuumkoha kasutamiseks peab Smart View olema välja lülitatud.</string>
+    <string name="hotspot_warning_dialog_msg_smartview_off_tmo">Mobiilse kuumkoha kasutamiseks peab Smart View olema välja lülitatud.</string>
+    <string name="hotspot_warning_dialog_msg_smartview_off_vzw">Mobiilne kuumkoht ja Smart View ei saa olla korraga aktiivsed. Smart View inaktiveeritakse.</string>
+    <string name="hotspot_warning_dialog_msg_wifi_off">Mobiilse kuumkoha kasutamiseks tuleb Wi-Fi välja lülitada.</string>
+    <string name="hotspot_warning_dialog_msg_wifi_off_att">Wi-Fi lülitub välja, kui kaasaskantav Wi-Fi kuumkoht lülitatakse sisse.</string>
+    <string name="hotspot_warning_dialog_msg_wifi_off_chn">Mobiilse kuumkoha aktiveerimisel lülitatakse WLAN välja.</string>
+    <string name="hotspot_warning_dialog_msg_wifi_off_jpn">Enabling Wi-Fi tethering will turn off Wi-Fi.</string>
+    <string name="hotspot_warning_dialog_msg_wifi_off_mtr">Mobiilse kuumkoha kasutamiseks tuleb Wi-Fi välja lülitada.</string>
+    <string name="hotspot_warning_dialog_msg_wifi_off_spr">Mobiilse kuumkoha kasutamiseks tuleb Wi-Fi välja lülitada.</string>
+    <string name="hotspot_warning_dialog_msg_wifi_off_tmo">Wi-Fi on välja lülitatud, kui USB-modem või mobiilne kuumkoht on aktiivne. Wi-Fi väljalülitamiseks lülitage USB-modem või mobiilne kuumkoht välja.</string>
+    <string name="hotspot_warning_dialog_msg_wifi_off_vzw">Mobiilne kuumkoht kasutab mobiilset andmesideühendust. Wi-Fi ühendus lülitatakse välja.</string>
+    <string name="hotspot_warning_dialog_msg_wifidirect_off">Mobiilse kuumkoha kasutamiseks tuleb kõik seadmed lahutada, mis on praegu ühendatud Wi-Fi Directi kaudu.</string>
+    <string name="hotspot_warning_dialog_msg_wifidirect_off_chn">Kaasaskantava WLAN kuumkoha aktiveerimisel katkestatakse ühendus WLAN Directi kaudu ühendatud seadmega.</string>
+    <string name="hotspot_warning_dialog_msg_wifidirect_off_spr">Mobiilse kuumkoha kasutamiseks tuleb kõik seadmed lahutada, mis on praegu ühendatud Wi-Fi Directi kaudu.</string>
+    <string name="hotspot_warning_dialog_msg_wifidirect_off_tmo">Mobiilse kuumkoha kasutamiseks tuleb kõik seadmed lahutada, mis on praegu ühendatud Wi-Fi Directi kaudu.</string>
+    <string name="hotspot_warning_dialog_msg_wifidirect_off_vzw">Mobiilse kuumkoha kasutamiseks tuleb kõik seadmed lahutada, mis on praegu ühendatud Wi-Fi Directi kaudu.</string>
+    <string name="hotspot_warning_dialog_title_smartview_off">Kas lülitada mobiilne kuumkoht sisse?</string>
+    <string name="hotspot_warning_dialog_title_wifi_off">Kas lülitada Wi-Fi välja?</string>
+    <string name="hotspot_warning_dialog_title_wifi_off_tmo">Tähelepanu!</string>
+    <string name="hotspot_warning_dialog_title_wifi_off_vzw">Mobiilne kuumkoht ja Wi-Fi ühendus</string>
+    <string name="hotspot_warning_dialog_title_wifidirect_off">Kas lülitada mobiilne kuumkoht sisse?</string>
+    <string name="hotspot_warning_dialog_title_wifidirect_off_tmo">Tähelepanu!</string>
+    <string name="hotspot_warning_dialog_title_wifidirect_off_vzw">Mobiilne kuumkoht ja Wi-Fi ühendus</string>
+    <string name="ime_security_warning">%s võib koguda teie sisestatud teksti, sh isiklikke andmeid, nagu paroolid ja krediitkaardi numbrid.</string>
+    <string name="incompatible_charger_dialog_text">The connected charger is incompatible with this phone. To prevent damage to your phone, charging has been stopped. To continue charging, use the original charger and cable that were provided with this phone.</string>
+    <string name="incompatible_charger_notification_text">Unable to charge. Use the original charger.</string>
+    <string name="incompatible_charger_ticker">Ei lae.</string>
+    <string name="incompatible_charger_title">Ei lae.</string>
+    <string name="insert_sim_card">Sisesta SIM-kaart</string>
+    <string name="insert_sim_card_message">Sisestage SIM-kaart, et paaseda ligi vorguteenustele.</string>
+    <string name="iris_guide_str_enable_toggle">Toks. siia, et kasut. iiriseid</string>
+    <string name="iris_guide_str_for_text_preview">Vaadake iiriste kasut.</string>
+    <string name="it_policy_not_allow_wifi">Turvalisuse poliis takistab Wi-Fi kasutamist.</string>
+    <string name="it_policy_not_allow_wifiap">Turvalisuse poliis piirab internetijagamise kasutuse.</string>
+    <string name="keyboard_shortcut_group_applications">Rakenduse otseteed</string>
+    <string name="keyboard_shortcut_group_applications_bixby">Bixby</string>
+    <string name="keyboard_shortcut_group_applications_browser">Brauser</string>
+    <string name="keyboard_shortcut_group_applications_calendar">Kalender</string>
+    <string name="keyboard_shortcut_group_applications_contacts">Kontaktid</string>
+    <string name="keyboard_shortcut_group_applications_email">E-post</string>
+    <string name="keyboard_shortcut_group_applications_messages">Sõnumid</string>
+    <string name="keyboard_shortcut_group_applications_music">Muusika</string>
+    <string name="keyboard_shortcut_group_system">Süsteemi otseteed</string>
+    <string name="keyboard_shortcut_group_system_all_apps">Kõik rakendused</string>
+    <string name="keyboard_shortcut_group_system_back">Tagasi</string>
+    <string name="keyboard_shortcut_group_system_home">Kodu</string>
+    <string name="keyboard_shortcut_group_system_lock_screen">Ekraani lukustamine</string>
+    <string name="keyboard_shortcut_group_system_notifications">Teavitused</string>
+    <string name="keyboard_shortcut_group_system_recents">Hiljutised</string>
+    <string name="keyboard_shortcut_group_system_running_apps">Töötavad rakendused</string>
+    <string name="keyboard_shortcut_group_system_shortcuts_helper">Klaviatuuri otseteed</string>
+    <string name="keyboard_shortcut_group_system_switch_languages">Keelte vahetamine</string>
+    <string name="keyboard_shortcut_popup_help">Meta-klahv: Windowsi-klahv, käsuklahv või mõni muu operatsioonisüsteemi sümboliga klahv.</string>
+    <string name="keyguard_accessibility_call">Helista</string>
+    <string name="keyguard_accessibility_direction_lock_unlock">Suunalukk</string>
+    <string name="keyguard_accessibility_dot">Täpp</string>
+    <string name="keyguard_accessibility_pattern_area">Mustriala</string>
+    <string name="keyguard_accessibility_pattern_unlock">Mustriga avamine</string>
+    <string name="keyguard_cmas_text">Hädaabi märguanne</string>
+    <string name="keyguard_dualclock_locale_view_home">Kodu</string>
+    <string name="keyguard_dualclock_locale_view_home_skt">Sŏul</string>
+    <string name="keyguard_dualclock_locale_view_roaming">Kohalik</string>
+    <string name="keyguard_dualclock_locale_view_roaming_skt">Rändlusvõrk</string>
+    <string name="keyguard_fmm_owner_phone">Omaniku number</string>
+    <string name="keyguard_fmm_phone_locked_title">Telefon on lukus.</string>
+    <string name="keyguard_missing_sim_message">Sisestage USIM-kaart ja taaskäivitage seade</string>
+    <string name="keyguard_progress_erasing_all">Kõikide andmete kustutamine…</string>
+    <string name="keyguard_skt_usim_unregistered">USIM-kaarti ei saa kasutada. Laadige alla USIM-kaardi teave.</string>
+    <string name="keyguard_usim_not_used">USIM-kaarti ei saa kasutada. PIN-i avamiskood (PUK-kood) sisestati %d korda valesti. Ostke uus USIM-kaart.</string>
+    <string name="kg_1_attempt_remaining">(1 katse on jäänud)</string>
+    <string name="kg_accessibility_password_unlock">Parooliga luku avamine</string>
+    <string name="kg_accessibility_pin_edit_box">Redigeerimiskast</string>
+    <string name="kg_accessibility_pin_unlock">PIN-koodiga luku avamine</string>
+    <string name="kg_background_auth_face_instruction_text">Avage näotuvastusega.</string>
+    <string name="kg_background_auth_fingerprint_unlock_successed_text">Telefon avati sõrmejäljega.</string>
+    <string name="kg_background_auth_iris_instruction_text">Avage iiristega.</string>
+    <string name="kg_background_auth_tablet_fingerprint_unlock_successed_text">Tahvelseade avati sõrmejäljega.</string>
+    <string name="kg_background_auth_tablet_unlock_successed_text">Tahvelseade avatud.</string>
+    <string name="kg_background_auth_unlock_failed_text">Telefoni avamine nurjus.</string>
+    <string name="kg_background_auth_unlock_instruction_text">Avamine biomeetriaga.</string>
+    <string name="kg_background_auth_unlock_successed_text">Telefon avatud.</string>
+    <string name="kg_biometric_temporary_error_text">Iirise- või näotuvastust ei saa kasutada. Taaskäivitage oma telefon, kui see kordub.</string>
+    <string name="kg_biometrics_swipe_active_instructions">Kasutage avamiseks biomeetriat või libistage sõrme ekraanil</string>
+    <string name="kg_biometrics_swipe_active_voice_assistant_instructions">Kasutage avamiseks biomeetriat või libistage kahe sõrmega üle ekraani</string>
+    <string name="kg_biometrics_swipe_unlock_instructions">Kasutage luku avamiseks biomeetriat või libistage sõrme ekraanil</string>
+    <string name="kg_biometrics_swipe_unlock_voice_assistant_instructions">Kasutage luku avamiseks biomeetriat või libistage kahe sõrmega üle ekraani</string>
+    <string name="kg_carrier_lock_call_owner">Palun helista mulle</string>
+    <string name="kg_carrier_lock_findlostphone">See telefon on kaotatud või varastatud.</string>
+    <string name="kg_carrier_lock_too_many_failed_attempts">Vale parool sisestati 5 korda. Proovige 10 minuti pärast uuesti.</string>
+    <string name="kg_carrier_lock_unlock">Sisesta parool</string>
+    <string name="kg_carrier_lock_wrong_password">Sisestati vale parool.</string>
+    <string name="kg_ctc_enter_confirm_pin_hint">Enter new UIM/SIM card unlock PIN again to confirm it</string>
+    <string name="kg_ctc_password_wrong_pin_code_one">Incorrect UIM/SIM card PIN entered. 1 attempt left.</string>
+    <string name="kg_ctc_password_wrong_pin_code_other">Incorrect UIM/SIM card PIN entered. %d attempts left.</string>
+    <string name="kg_ctc_puk_enter_pin_hint">Enter new UIM/SIM card unlock PIN</string>
+    <string name="kg_ctc_sim_puk_instructions">UIM/SIM card locked. Enter PUK. Contact service provider for details.</string>
+    <string name="kg_ctc_sim_puk_remaining_1_attempt">Incorrect PUK entered. If incorrect PUK is entered 1 more time, UIM/SIM card will be locked.</string>
+    <string name="kg_ctc_sim_puk_remaining_attempts">Incorrect PUK entered. If incorrect PUK is entered %d more times, UIM/SIM card will be permanently locked.</string>
+    <string name="kg_ctc_sim_unlock_progress_dialog_message">Unlocking UIM/SIM card…</string>
+    <string name="kg_ctc_unlock_sim_pin_instructions">Enter UIM/SIM card unlock PIN</string>
+    <string name="kg_dcm_sim_puk_instructions">PIN-kood on blokeeritud. Jätkamiseks sisestage PUK-kood.</string>
+    <string name="kg_default_carrier_text_searching">Otsimine</string>
+    <string name="kg_dex_emergency_text">HÄDAABIKÕNE tegemiseks eemaldage telefon DeX-i jaamast.</string>
+    <string name="kg_direction_lock_instructions_normal_mode">Joonistage ekraani avamiseks suunad</string>
+    <string name="kg_empty_sim_perso_hint">No password entered. Enter password (PIN).</string>
+    <string name="kg_face_authentication_error_camera_unavailable_retry_text">Näotuvastusega tekkis probleem. Toksake, et proovida uuesti</string>
+    <string name="kg_face_authentication_error_camera_unavailable_video_call_text">Videokõnede ajal ei saa kasutada näotuvastust</string>
+    <string name="kg_face_authentication_error_retry_text">Nägusid ei tuvastatud. Toksake ikooni, et üritada uuesti nägu tuvastada</string>
+    <string name="kg_face_authentication_failed_retry_text">Vasteid pole. Toksake ikooni, et kasutada näotuvastust</string>
+    <string name="kg_face_cancel_for_dex">Tühista näo tuvastamine</string>
+    <string name="kg_face_cover_clear_view_toast_for_dex">Näotuvastus pole saadaval, kui Clear View kaas on kinnitatud.</string>
+    <string name="kg_face_cover_led_view_toast_for_dex">Näotuvastus pole saadaval, kui LED-vaate kaas on kinnitatud.</string>
+    <string name="kg_face_cover_s_view_toast_for_dex">Näotuvastus pole saadaval, kui S View kaas on kinnitatud.</string>
+    <string name="kg_face_cover_toast_for_dex">Näotuvastus pole saadaval, kui kate on ühendatud.</string>
+    <string name="kg_face_direction_active_instructions">Kasutage avamiseks näotuvastust või joonistage mitmes suunas</string>
+    <string name="kg_face_direction_none_instructions">Kasutage näotuvastust või joonistage mitmes suunas</string>
+    <string name="kg_face_guide_text_for_enable_toggle">Toks. siia, et kas. näotuvastust</string>
+    <string name="kg_face_or_fingerprint_active_instructions">Kasutage avamiseks sõrmejälge või libistage sõrme üle ekraani, et kasutada selle asemel näotuvastust</string>
+    <string name="kg_face_or_fingerprint_active_voice_assistant_instructions">Kasutage avamiseks sõrmejälge või libistage kahe sõrmega üle ekraani, et kasutada näotuvastust.</string>
+    <string name="kg_face_or_fingerprint_unlock_instructions">Kasutage luku avamiseks sõrmejälge või libistage sõrme üle ekraani, et kasutada selle asemel näotuvastust</string>
+    <string name="kg_face_or_fingerprint_unlock_voice_assistant_instructions">Kasutage luku avamiseks sõrmejälge või libistage kahe sõrmega üle ekraani, et kasutada näotuvastust.</string>
+    <string name="kg_face_or_swipe_active_instructions">Kasutage avamiseks näotuvastust või libistage sõrme ekraanil</string>
+    <string name="kg_face_or_swipe_active_voice_assistant_instructions">Kasutage avamiseks näotuvastust või libistage kahe sõrmega üle ekraani</string>
+    <string name="kg_face_or_swipe_unlock_instructions">Kasutage luku avamiseks näotuvastust või libistage sõrme ekraanil</string>
+    <string name="kg_face_or_swipe_unlock_voice_assistant_instructions">Kasutage luku avamiseks näotuvastust või libistage kahe sõrmega üle ekraani</string>
+    <string name="kg_face_password_active_instructions">Kasutage avamiseks näotuvastust või sisestage parool</string>
+    <string name="kg_face_password_none_instructions">Kasutage näotuvastust või sisestage parool</string>
+    <string name="kg_face_pattern_active_instructions">Kasutage avamiseks näotuvastust või joonistage muster</string>
+    <string name="kg_face_pattern_none_instructions">Kasutage näotuvastust või joonistage muster</string>
+    <string name="kg_face_pin_active_instructions">Kasutage avamiseks näotuvastust või sisestage PIN-kood</string>
+    <string name="kg_face_pin_none_instructions">Kasutage näotuvastust või sisestage PIN-kood</string>
+    <string name="kg_face_retry_content_description">Topelttoksake, et kasutada näotuvastust.</string>
+    <string name="kg_face_retry_text">Toksake ikooni, et uuesti näotuvastust proovida</string>
+    <string name="kg_face_start_for_dex">Kasutage oma telefonis näotuvastust</string>
+    <string name="kg_face_stop">Näotuvastuse peatamine</string>
+    <string name="kg_face_toast_preview_for_dex">Kasutage oma telefonis näotuvastust, et kinnitada oma identiteet.</string>
+    <string name="kg_face_unlock_instructions">Libistage sõrmega ekraanil, et avada näotuvastusega</string>
+    <string name="kg_face_unlock_voice_assistant_instructions">Libistage kahte sõrme ekraanil, et avada lukk näotuvastusega</string>
+    <string name="kg_finger_print_bad_quality_error_message">Sõrmejälje sensor võib olla määrdunud. Puhastage seda ja proovige uuesti.</string>
+    <string name="kg_finger_print_database_error_message">Sõrmejälje andmed on rikutud. Määrake sõrmejälg uuesti ekraaniluku tüübiks ja lisage oma sõrmejäljed uuesti või muutke ekraaniluku tüüpi.</string>
+    <string name="kg_finger_print_not_responding_error_message">Sõrmejälje sensor ei vasta. Proovige hiljem uuesti.</string>
+    <string name="kg_finger_print_sensor_changed_error_message">Sõrmejälge sensorit pole õigesti vahetatud. Võtke ühendust klienditeenindusega.</string>
+    <string name="kg_finger_print_sensor_error_message">Sõrmejälje sensoriga ilmnes tõrge. Kui see teade kuvatakse korduvalt, taaskäivitage seade.</string>
+    <string name="kg_finger_print_sensor_with_recalibration_error_message">Veenduge, et avaekraani klahv on puhas ja kuiv ning seejärel proovige uuesti.</string>
+    <string name="kg_fingerprint_direction_active_instructions">Kasutage sõrmejälge või joonistage mitmes suunas, et avada</string>
+    <string name="kg_fingerprint_direction_none_instructions">Kasutage sõrmejälge või joonistage mitmes suunas</string>
+    <string name="kg_fingerprint_no_match">Vasteid pole</string>
+    <string name="kg_fingerprint_or_swipe_active_instructions">Kasutage avamiseks sõrmejälge või libistage sõrme ekraanil</string>
+    <string name="kg_fingerprint_or_swipe_active_voice_assistant_instructions">Kasutage avamiseks sõrmejälge või libistage kahe sõrmega üle ekraani</string>
+    <string name="kg_fingerprint_or_swipe_unlock_instructions">Kasutage avamiseks sõrmejälge või libistage sõrme ekraanil.</string>
+    <string name="kg_fingerprint_or_swipe_unlock_voice_assistant_instructions">Kasutage luku avamiseks sõrmejälge või libistage kahe sõrmega üle ekraani</string>
+    <string name="kg_fingerprint_password_active_instructions">Kasutage avamiseks sõrmejälge või parooli sisestamist</string>
+    <string name="kg_fingerprint_password_none_instructions">Kasutage sõrmejälge või sisestage parool</string>
+    <string name="kg_fingerprint_pattern_active_instructions">Kasutage avamiseks sõrmejälge või mustri joonistamist</string>
+    <string name="kg_fingerprint_pattern_none_instructions">Kasutage sõrmejälge või joonistage avamise muster</string>
+    <string name="kg_fingerprint_pin_active_instructions">Kasutage avamiseks sõrmejälge või PIN-koodi sisestamist</string>
+    <string name="kg_fingerprint_pin_none_instructions">Kasutage sõrmejälge või sisestage PIN-kood</string>
+    <string name="kg_fingerprints_direction_bouncer_instructions">Kasutage sõrmejälge või joonistage mitmes suunas, et avada</string>
+    <string name="kg_fingerprints_direction_instructions">Kasutage sõrmejälge või joonistage mitmes suunas</string>
+    <string name="kg_fingerprints_direction_unabled_instructions">Teie seade taaskäivitati ning teil tuleb see oma suundade abil lukust avada. Järgmisel seadme lukust avamisel saate kasutada sõrmejälgi.</string>
+    <string name="kg_fingerprints_password_bouncer_instructions">Kasutage avamiseks sõrmejälge või parooli sisestamist</string>
+    <string name="kg_fingerprints_password_instructions">Kasutage sõrmejälge või sisestage parool</string>
+    <string name="kg_fingerprints_password_unabled_instructions">Teie seade taaskäivitati ning teil tuleb see oma parooli abil lukust avada. Järgmisel seadme lukust avamisel saate kasutada sõrmejälgi.</string>
+    <string name="kg_fingerprints_pattern_bouncer_instructions">Kasutage avamiseks sõrmejälge või mustri joonistamist</string>
+    <string name="kg_fingerprints_pattern_instructions">Kasutage sõrmejälge või joonistage avamise muster</string>
+    <string name="kg_fingerprints_pattern_unabled_instructions">Teie seade taaskäivitati ning teil tuleb see oma mustri abil lukust avada. Järgmisel seadme lukust avamisel saate kasutada sõrmejälgi.</string>
+    <string name="kg_fingerprints_pin_bouncer_instructions">Kasutage avamiseks sõrmejälge või PIN-koodi sisestamist</string>
+    <string name="kg_fingerprints_pin_instructions">Kasutage sõrmejälge või sisestage PIN-kood</string>
+    <string name="kg_fingerprints_pin_unabled_instructions">Teie seade taaskäivitati ning teil tuleb see oma PIN-koodi abil lukust avada. Järgmisel seadme lukust avamisel saate kasutada sõrmejälgi.</string>
+    <string name="kg_flight_mode">Lennurežiim</string>
+    <string name="kg_forgot_spass_button_text">Samsung Account</string>
+    <string name="kg_hide_password_accessibility">Peida parool</string>
+    <string name="kg_ib_cancel_for_dex">Tühista funktsioon Intelligent Scan</string>
+    <string name="kg_ib_cancel_text">Tühista funktsioon Intelligent Scan</string>
+    <string name="kg_ib_cover_toast_for_dex">Näotuvastus pole saadaval, kui kate on ühendatud.</string>
+    <string name="kg_ib_retry_text">Toksake ikooni, et proovida funktsiooni Intelligent Scan uuesti</string>
+    <string name="kg_ib_start_for_dex">Kasuta funktsiooni Intelligent Scan telefonis</string>
+    <string name="kg_ib_stop">Peatage funktsioon Intelligent Scan</string>
+    <string name="kg_ib_toast_preview_for_dex">Kasuta funktsiooni Intelligent Scan telefonis</string>
+    <string name="kg_incorrect_password">Sisestati vale parool</string>
+    <string name="kg_incorrect_pattern">Joonistati vale muster</string>
+    <string name="kg_incorrect_pin">Sisestatud on vale PIN-kood</string>
+    <string name="kg_infinity_wallpaper_description">Lõputu taustpilt rakendatakse samaaegselt teie Always On Displayle, avaekraanile ja lukustusekraanile.</string>
+    <string name="kg_infinity_wallpaper_description_without_aod">Lõputu taustpilt rakendatakse samaaegselt teie ava- ja lukustusekraanidele.</string>
+    <string name="kg_intelligent_direction_active_instructions">Kasutage funktsiooni Intelligent Scan või joonistage mitmes suunas, et avada</string>
+    <string name="kg_intelligent_direction_none_instructions">Kasutage funktsiooni Intelligent Scan või joonistage mitmes suunas</string>
+    <string name="kg_intelligent_or_fingerprint_active_instructions">Kasutage avamiseks sõrmejälge või libistage sõrme üle ekraani, et kasutada selle asemel funktsiooni Intelligent Scan</string>
+    <string name="kg_intelligent_or_fingerprint_active_voice_assistant_instructions">Kasutage avamiseks sõrmejälge või libistage ekraanil 2 sõrmega, et kasutada funktsiooni Intelligent Scan</string>
+    <string name="kg_intelligent_or_fingerprint_unlock_instructions">Kasutage luku avamiseks sõrmejälge või libistage sõrme üle ekraani, et kasutada selle asemel funktsiooni Intelligent Scan</string>
+    <string name="kg_intelligent_or_fingerprint_unlock_voice_assistant_instructions">Kasutage luku avamiseks funktsiooni Intelligent Scan või libistage 2 sõrmega üle ekraani</string>
+    <string name="kg_intelligent_or_swipe_active_instructions">Kasutage avamiseks funktsiooni Intelligent Scan või libistage ekraanil</string>
+    <string name="kg_intelligent_or_swipe_active_voice_assistant_instructions">Kasutage luku avamiseks funktsiooni Intelligent Scan või libistage 2 sõrmega üle ekraani</string>
+    <string name="kg_intelligent_or_swipe_unlock_instructions">Kasutage luku avamiseks funktsiooni Intelligent Scan või libistage ekraanil</string>
+    <string name="kg_intelligent_or_swipe_unlock_voice_assistant_instructions">Kasutage luku avamiseks funktsiooni Intelligent Scan või libistage 2 sõrmega üle ekraani</string>
+    <string name="kg_intelligent_password_active_instructions">Kasutage avamiseks funktsiooni Intelligent Scan või sisestage parool</string>
+    <string name="kg_intelligent_password_none_instructions">Kasutage funktsiooni Intelligent Scan või sisestage parool</string>
+    <string name="kg_intelligent_pattern_active_instructions">Kasutage avamiseks funktsiooni Intelligent Scan või joonistage muster</string>
+    <string name="kg_intelligent_pattern_none_instructions">Kasutage funktsiooni Intelligent Scan või joonistage muster</string>
+    <string name="kg_intelligent_pin_active_instructions">Kasutage avamiseks funktsiooni Intelligent Scan või sisestage PIN-kood</string>
+    <string name="kg_intelligent_pin_none_instructions">Kasutage funktsiooni Intelligent Scan või sisestage PIN-kood</string>
+    <string name="kg_intelligent_retry_content_description">Topelttoksake, et kasutada funktsiooni Intelligent Scan.</string>
+    <string name="kg_intelligent_unlock_instructions">Libistage ekraani, et avada funktsiooniga Intelligent Scan</string>
+    <string name="kg_intelligent_unlock_voice_assistant_instructions">Kasutage luku avamiseks funktsiooni Intelligent Scan või libistage 2 sõrmega üle ekraani</string>
+    <string name="kg_iris_1st_active_instructions">Kasutage avamiseks iiriseid või libistage sõrme ekraanil</string>
+    <string name="kg_iris_1st_active_voice_assistant_instructions">Kasutage avamiseks iiriseid või libistage kahe sõrmega üle ekraani</string>
+    <string name="kg_iris_1st_unlock_instructions">Kasutage avamiseks iiriseid või libistage sõrme üle ekraani</string>
+    <string name="kg_iris_1st_unlock_voice_assistant_instructions">Kasutage luku avamiseks iiriseid või libistage kahe sõrmega üle ekraani.</string>
+    <string name="kg_iris_cancel">Tühista iirise tuvastamine</string>
+    <string name="kg_iris_cancel_for_dex">Tühista iirise tuvastamine</string>
+    <string name="kg_iris_cover_clear_view_toast_for_dex">Iirisetuvastus pole saadaval, kui Clear View kaas on kinnitatud.</string>
+    <string name="kg_iris_cover_led_view_toast_for_dex">Iirisetuvastus pole saadaval, kui LED-vaate kaas on kinnitatud.</string>
+    <string name="kg_iris_cover_s_view_toast_for_dex">Iirisetuvastus pole saadaval, kui S View kaas on kinnitatud.</string>
+    <string name="kg_iris_cover_toast_for_dex">Iirisetuvastus pole saadaval, kui kate on ühendatud.</string>
+    <string name="kg_iris_direction_active_instructions">Kasutage iiriseid või joonistage avamiseks suunad</string>
+    <string name="kg_iris_direction_instructions">Kasutage iiriseid või joonistage mitmes suunas</string>
+    <string name="kg_iris_direction_none_instructions">Kasutage iiriseid või joonistage mitmes suunas</string>
+    <string name="kg_iris_no_match">Vasteid pole</string>
+    <string name="kg_iris_or_fingerprint_active_instructions">Avage sõrmejäljega või libistage sõrme üle ekraani, et kasutada iiriseid</string>
+    <string name="kg_iris_or_fingerprint_active_voice_assistant_instructions">Kasutage avamiseks sõrmejälge või libistage kahe sõrmega üle ekraani, et kasutada iiriseid</string>
+    <string name="kg_iris_or_fingerprint_unlock_instructions">Avage sõrmejäljega, või lib. sõrme üle ekraani, et kasutada iiriseid</string>
+    <string name="kg_iris_or_fingerprint_unlock_voice_assistant_instructions">Kasutage luku avamiseks sõrmejälge või libistage kahe sõrmega üle ekraani, et kasutada iiriseid</string>
+    <string name="kg_iris_password_active_instructions">Kasutage avamiseks iiriseid või sisestage parool</string>
+    <string name="kg_iris_password_none_instructions">Kasutage iiriseid või sisestage parool</string>
+    <string name="kg_iris_pattern_active_instructions">Kasutage avamiseks iiriseid või joonistage muster</string>
+    <string name="kg_iris_pattern_none_instructions">Kasutage iiriseid või joonistage muster</string>
+    <string name="kg_iris_pattern_text_for_mkeyboard">Toksake mustri joonistamiseks siia</string>
+    <string name="kg_iris_pin_active_instructions">Kasutage avamiseks iiriseid või sisestage PIN-kood</string>
+    <string name="kg_iris_pin_none_instructions">Kasutage iiriseid või sisestage PIN-kood</string>
+    <string name="kg_iris_retry_content_description">Topelttoksake, et skannida iiriseid.</string>
+    <string name="kg_iris_retry_text">Toksake ikooni, et üritada uuesti iirist tuvastada</string>
+    <string name="kg_iris_start_for_dex">Kasutage oma telefonis iiriseid</string>
+    <string name="kg_iris_stop">Iirise skannimise peatamine</string>
+    <string name="kg_iris_strong_auth_prompt_reason_24_timeout_universal_lock">Turvalisuse tagamiseks kasutage telefoni luku avamiseks suundade järjestust. Järgmine kord saate kasutada biomeetriat.</string>
+    <string name="kg_iris_strong_auth_prompt_reason_restarting_universal_lock">Teie seade taaskäivitati ning teil tuleb see oma suundade abil lukust avada. Järgmisel korral seadme avamisel võid kasutada oma iiriseid.</string>
+    <string name="kg_iris_strong_auth_prompt_reason_universal_lock_security_policy">Iirisetuvastuse kasutamise asemel joonistage mitmes suunas turvalisuse poliisi tõttu</string>
+    <string name="kg_iris_toast_preview_for_dex">Kasutage telefonis oma iiriseid, et kinnitada oma identiteet.</string>
+    <string name="kg_iris_too_many_timeout_error_text">Temperatuur on iirisetuvastuse jaoks liiga kõrge. Laske telefonil enne uuesti üritamist jahtuda.</string>
+    <string name="kg_iris_too_many_timeout_error_toast_text">Iirisetuvastuse LED kuumenes üle. Proovige hiljem uuesti.</string>
+    <string name="kg_iris_unlock_instructions">Iiristega avamiseks libistage sõrme üle ekraani</string>
+    <string name="kg_iris_unlock_voice_assistant_instructions">Libistage kahte sõrme ekraanil, et avada lukk iiristega</string>
+    <string name="kg_keycode_delete">KUSTUTA</string>
+    <string name="kg_keycode_ok">OK</string>
+    <string name="kg_kor_empty_sim_puk_hint">PIN-i avamiskoodi (PUK-kood) ei ole sisestatud. Proovige uuesti.</string>
+    <string name="kg_kor_enter_confirm_pin_hint">Kinnitamiseks sisestage USIM-kaardi PIN-kood uuesti.</string>
+    <string name="kg_kor_invalid_confirm_pin_hint">Uued PIN-koodid ei kattu.</string>
+    <string name="kg_kor_invalid_sim_puk_hint">Enter 8-digit PIN unlock (PUK) code</string>
+    <string name="kg_kor_password_wrong_pin_code">Sisestatud on vale PIN-kood. Jäänud on %d katset. Võtke ühendust klienditeenindusega.</string>
+    <string name="kg_kor_puk_enter_pin_hint">"Looge uus PIN-kood USIM-kaardi jaoks.
+PIN-kood peab koosnema 4–8 numbrist."</string>
+    <string name="kg_kor_sim_pin_instructions">Sisestage USIM-kaardi avamise PIN-kood (4 kuni 8 numbrit)</string>
+    <string name="kg_kor_sim_puk_instructions">Sisestage PUK-kood.</string>
+    <string name="kg_kor_sim_puk_remaining_attempts">"Vale PUK-kood on sisestatud %1$d korda. Kui vale PUK-kood sisestatakse veel %2$d korda, lukustub USIM-kaart jäädavalt.
+
+Kui te ei tea oma PUK-koodi, külastage klienditeenindust."</string>
+    <string name="kg_kor_sim_unlock_progress_dialog_message">SIM-kaardi avamine</string>
+    <string name="kg_kor_success_pin_message">New password (PIN) saved successfully.</string>
+    <string name="kg_kor_wrong_puk_code">Unlock code input error</string>
+    <string name="kg_ktt_sim_perso_instructions">Enter 4- to 8-digit password (PIN)</string>
+    <string name="kg_lockscreen_emergency_call_button_text">Hädaabikõne</string>
+    <string name="kg_login_checking_password">Konto kontrollimine…</string>
+    <string name="kg_login_invalid_input">Vale kasutajanimi või parool.</string>
+    <string name="kg_login_password_hint">Parool</string>
+    <string name="kg_login_submit_button">Logi sisse</string>
+    <string name="kg_login_username_hint">Kasutajanimi (e-kiri)</string>
+    <string name="kg_missing_sim_message_short">SIM-kaarti pole</string>
+    <string name="kg_multi_biometrics_direction_instructions">Kasutage biomeetriat või joonistage mitmes suunas</string>
+    <string name="kg_multi_biometrics_prompt_reason_timeout_universal_lock_strong_auth">Oma biomeetria kasutamise asemel joonistage mitmes suunas, nagu seda nõuab turvalisuse poliis</string>
+    <string name="kg_multi_biometrics_strong_auth_prompt_reason_24_timeout_universal_lock">Turvalisuse tagamiseks kasutage telefoni luku avamiseks suundade järjestust. Järgmine kord saate kasutada biomeetriat.</string>
+    <string name="kg_multi_biometrics_strong_auth_prompt_reason_restarting_universal_lock">Teie seade taaskäivitati ning teil tuleb see oma suundade abil lukust avada. Järgmisel seadme lukust avamisel saate kasutada biomeetriat.</string>
+    <string name="kg_multi_direction_active_instructions">Kasutage avamiseks biomeetriat või joonistage mitmes suunas</string>
+    <string name="kg_multi_direction_none_instructions">Kasutage biomeetriat või joonistage mitmes suunas</string>
+    <string name="kg_multi_password_active_instructions">Kasutage avamiseks biomeetriat või sisestage parool</string>
+    <string name="kg_multi_password_none_instructions">Kasutage biomeetriat või sisestage parool</string>
+    <string name="kg_multi_pattern_active_instructions">Kasutage avamiseks biomeetriat või joonistage muster</string>
+    <string name="kg_multi_pattern_none_instructions">Kasutage biomeetriat või joonistage muster</string>
+    <string name="kg_multi_pin_active_instructions">Kasutage avamiseks biomeetriat või sisestage PIN-kood</string>
+    <string name="kg_multi_pin_none_instructions">Kasutage biomeetriat või sisestage PIN-kood</string>
+    <string name="kg_n_attempts_remaining">(%d katset on jäänud)</string>
+    <string name="kg_no_match">Vasteid pole</string>
+    <string name="kg_none_direction_1_frp">"If you do not draw the correct series of directions in the next attempt, your phone will automatically be reset to factory settings and all information on the phone will be erased.
+
+If your phone is reset, you may need to enter the Google account information (email address and password) associated with this phone to be able to use it again."</string>
+    <string name="kg_none_direction_1_reactivation">"Kui te ei sisesta järgmise katsega õigeid suundi, siis teie telefon lähtestatakse automaatselt tehaseseadetele ja kogu telefonis olev teave kustutatakse.
+
+Kui teie telefon lähtestatakse, võib teil olla vaja sisestada selle telefoniga seotud Samsung Accounti teave (e-posti aadress ja parool), et seda uuesti kasutada."</string>
+    <string name="kg_none_direction_active_instructions">Joonistage avamiseks mitmes suunas</string>
+    <string name="kg_none_direction_none_frp">"If you do not draw the correct series of directions within the next %d attempts, your phone will automatically be reset to factory settings and all information on the phone will be erased.
+
+If your phone is reset, you may need to enter the Google account information (email address and password) associated with this phone to be able to use it again."</string>
+    <string name="kg_none_direction_none_instructions">Joonistage ekraani avamiseks suunad</string>
+    <string name="kg_none_direction_none_reactivation">"Kui te ei sisesta järgmise %d katsega õigeid suundi, siis teie telefon lähtestatakse automaatselt tehaseseadetele ja kogu telefonis olev teave kustutatakse.
+
+Kui teie telefon lähtestatakse, võib teil olla vaja sisestada selle telefoniga seotud Samsung Accounti teave (e-posti aadress ja parool), et seda uuesti kasutada."</string>
+    <string name="kg_none_face_direction_deviceadmin_instructions">Näotuvastuse kasutamise asemel joonistage mitmes suunas, nagu seda nõuab turvalisuse poliis</string>
+    <string name="kg_none_face_direction_restart_instructions">Teie telefon taaskäivitati ja tuleb mitmes suunas joonistamise abil lukust avada. Järgmine kord saate telefoni avamisel kasutada näotuvastust.</string>
+    <string name="kg_none_face_direction_shutdown_instructions">Kasutage telefoni väljalülitamiseks näotuvastust või joonistage mitmes suunas</string>
+    <string name="kg_none_face_direction_timeout_instructions">Turvalisuse tagamiseks kasutage telefoni luku avamiseks suundade järjestust. Järgmine kord saate kasutada biomeetriat.</string>
+    <string name="kg_none_face_password_deviceadmin_instructions">Näotuvastuse kasutamise asemel sisestage oma parool, nagu seda nõuab turvalisuse poliis</string>
+    <string name="kg_none_face_password_restart_instructions">Teie telefon taaskäivitati ja tuleb parooli abil lukust avada. Järgmine kord saate telefoni avamisel kasutada näotuvastust.</string>
+    <string name="kg_none_face_password_shutdown_instructions">Kasutage telefoni väljalülitamiseks näotuvastust või sisestage parool</string>
+    <string name="kg_none_face_password_timeout_instructions">Turvalisuse tagamiseks kasutage telefoni luku avamiseks oma parooli. Järgmine kord saate kasutada biomeetriat.</string>
+    <string name="kg_none_face_pattern_deviceadmin_instructions">Näotuvastuse kasutamise asemel joonistage oma muster, nagu seda nõuab turvalisuse poliis</string>
+    <string name="kg_none_face_pattern_restart_instructions">Teie telefon taaskäivitati ja tuleb mustri abil lukust avada. Järgmine kord saate telefoni avamisel kasutada näotuvastust.</string>
+    <string name="kg_none_face_pattern_shutdown_instructions">Kasutage telefoni väljalülitamiseks näotuvastust või joonistage muster</string>
+    <string name="kg_none_face_pattern_timeout_instructions">Turvalisuse tagamiseks kasutage telefoni luku avamiseks oma mustrit. Järgmine kord saate kasutada biomeetriat.</string>
+    <string name="kg_none_face_pin_deviceadmin_instructions">Näotuvastuse kasutamise asemel sisestage oma PIN-kood, nagu seda nõuab turvalisuse poliis</string>
+    <string name="kg_none_face_pin_restart_instructions">Teie telefon taaskäivitati ja tuleb PIN-koodi abil lukust avada. Järgmine kord saate telefoni avamisel kasutada näotuvastust.</string>
+    <string name="kg_none_face_pin_shutdown_instructions">Kasutage telefoni väljalülitamiseks näotuvastust või sisestage PIN-kood</string>
+    <string name="kg_none_face_pin_timeout_instructions">Turvalisuse tagamiseks kasutage telefoni luku avamiseks oma PIN-koodi. Järgmine kord saate kasutada biomeetriat.</string>
+    <string name="kg_none_facefingerprint_direction_itpolicy_instructions">Näotuvastuse asemel kasutage oma sõrmejälge või joonistage mitmes suunas, nagu seda nõuab turvalisuse poliis</string>
+    <string name="kg_none_facefingerprint_password_itpolicy_instructions">Näotuvastuse asemel kasutage oma sõrmejälge või sisestage parool, nagu seda nõuab turvalisuse poliis</string>
+    <string name="kg_none_facefingerprint_pattern_itpolicy_instructions">Näotuvastuse asemel kasutage oma sõrmejälge või joonistage muster, nagu seda nõuab turvalisuse poliis</string>
+    <string name="kg_none_facefingerprint_pin_itpolicy_instructions">Näotuvastuse asemel kasutage oma sõrmejälge või sisestage PIN-kood, nagu seda nõuab turvalisuse poliis</string>
+    <string name="kg_none_fingerprint_direction_deviceadmin_instructions">Oma sõrmejälgede kasutamise asemel joonistage mitmes suunas, nagu seda nõuab turvalisuse poliis</string>
+    <string name="kg_none_fingerprint_direction_restart_instructions">Teie telefon taaskäivitus ja tuleb suundade abil lukust avada. Telefoni järgmisel avamisel saate kasutada oma sõrmejälgi.</string>
+    <string name="kg_none_fingerprint_direction_shutdown_instructions">Kasutage telefoni väljalülitamiseks sõrmejälge või joonistage mitmes suunas</string>
+    <string name="kg_none_fingerprint_direction_timeout_instructions">Turvalisuse tagamiseks kasutage telefoni luku avamiseks suundade järjestust. Järgmine kord saate kasutada biomeetriat.</string>
+    <string name="kg_none_fingerprint_password_deviceadmin_instructions">Sisestage oma parool, nagu on turvalisuse poliisiga nõutud, selle asemel et kasutada sõrmejälgi</string>
+    <string name="kg_none_fingerprint_password_restart_instructions">Teie telefon taaskäivitus ja tuleb parooli abil lukust avada. Telefoni järgmisel avamisel saate kasutada oma sõrmejälgi.</string>
+    <string name="kg_none_fingerprint_password_shutdown_instructions">Kasutage telefoni väljalülitamiseks sõrmejälge või sisestage parool</string>
+    <string name="kg_none_fingerprint_password_timeout_instructions">Turvalisuse tagamiseks kasutage telefoni luku avamiseks oma parooli. Järgmine kord saate kasutada biomeetriat.</string>
+    <string name="kg_none_fingerprint_pattern_deviceadmin_instructions">Joonistage oma muster, nagu on turvalisuse poliisiga nõutud, selle asemel et kasutada sõrmejälgi</string>
+    <string name="kg_none_fingerprint_pattern_restart_instructions">Teie telefon taaskäivitus ja tuleb mustri abil lukust avada. Telefoni järgmisel avamisel saate kasutada oma sõrmejälgi.</string>
+    <string name="kg_none_fingerprint_pattern_shutdown_instructions">Kasutage telefoni väljalülitamiseks sõrmejälge või joonistage muster</string>
+    <string name="kg_none_fingerprint_pattern_timeout_instructions">Turvalisuse tagamiseks kasutage telefoni luku avamiseks oma mustrit. Järgmine kord saate kasutada biomeetriat.</string>
+    <string name="kg_none_fingerprint_pin_deviceadmin_instructions">Sisestage oma PIN-kood, nagu on turvalisuse poliisiga nõutud, selle asemel et kasutada sõrmejälgi</string>
+    <string name="kg_none_fingerprint_pin_restart_instructions">Teie telefon taaskäivitus ja tuleb PIN-koodi abil lukust avada. Telefoni järgmisel avamisel saate kasutada oma sõrmejälgi.</string>
+    <string name="kg_none_fingerprint_pin_shutdown_instructions">Kasutage telefoni väljalülitamiseks sõrmejälge või sisestage PIN-kood</string>
+    <string name="kg_none_fingerprint_pin_timeout_instructions">Turvalisuse tagamiseks kasutage telefoni luku avamiseks oma PIN-koodi. Järgmine kord saate kasutada biomeetriat.</string>
+    <string name="kg_none_intelligent_direction_deviceadmin_instructions">Funktsiooni Intelligent Scan kasutamise asemel joonistage mitmes suunas, nagu seda nõuab turvalisuse poliis</string>
+    <string name="kg_none_intelligent_direction_restart_instructions">Teie telefon taaskäivitati ja tuleb mitmes suunas joonistamise abil lukust avada. Telefoni järgmisel avamisel saate kasutada oma biomeetriat.</string>
+    <string name="kg_none_intelligent_direction_timeout_instructions">Turvalisuse tagamiseks kasutage telefoni luku avamiseks suundade järjestust. Järgmine kord saate kasutada biomeetriat.</string>
+    <string name="kg_none_intelligent_password_deviceadmin_instructions">Funktsiooni Intelligent Scan kasutamise asemel sisestage oma parool, nagu seda nõuab turvalisuse poliis</string>
+    <string name="kg_none_intelligent_password_restart_instructions">Teie telefon taaskäivitati ja tuleb parooli abil lukust avada. Telefoni järgmisel avamisel saate kasutada oma biomeetriat.</string>
+    <string name="kg_none_intelligent_password_shutdown_instructions">Kasutage telefoni väljalülitamiseks funktsiooni Intelligent Scan või sisestage parool</string>
+    <string name="kg_none_intelligent_password_timeout_instructions">Turvalisuse tagamiseks kasutage telefoni luku avamiseks oma mustrit. Järgmine kord saate kasutada biomeetriat.</string>
+    <string name="kg_none_intelligent_pattern_deviceadmin_instructions">Funktsiooni Intelligent Scan kasutamise asemel joonistage oma muster, nagu seda nõuab turvalisuse poliis</string>
+    <string name="kg_none_intelligent_pattern_restart_instructions">Teie telefon taaskäivitati ja tuleb mustri abil lukust avada. Telefoni järgmisel avamisel saate kasutada oma biomeetriat.</string>
+    <string name="kg_none_intelligent_pattern_shutdown_instructions">Kasutage telefoni väljalülitamiseks funktsiooni Intelligent Scan või joonistage muster</string>
+    <string name="kg_none_intelligent_pattern_timeout_instructions">Turvalisuse tagamiseks kasutage telefoni luku avamiseks oma mustrit. Järgmine kord saate kasutada biomeetriat.</string>
+    <string name="kg_none_intelligent_pin_deviceadmin_instructions">Funktsiooni Intelligent Scan kasutamise asemel sisestage oma PIN-kood, nagu seda nõuab turvalisuse poliis</string>
+    <string name="kg_none_intelligent_pin_restart_instructions">Teie telefon taaskäivitati ja tuleb PIN-koodi abil lukust avada. Telefoni järgmisel avamisel saate kasutada oma biomeetriat.</string>
+    <string name="kg_none_intelligent_pin_shutdown_instructions">Kasutage telefoni väljalülitamiseks funktsiooni Intelligent Scan või sisestage PIN-kood</string>
+    <string name="kg_none_intelligent_pin_timeout_instructions">Turvalisuse tagamiseks kasutage telefoni luku avamiseks oma PIN-koodi. Järgmine kord saate kasutada biomeetriat.</string>
+    <string name="kg_none_iris_direction_deviceadmin_instructions">Oma iiriste kasutamise asemel joonistage mitmes suunas, nagu seda nõuab turvalisuse poliis</string>
+    <string name="kg_none_iris_direction_restart_instructions">Teie telefon taaskäivitus ja tuleb suundade abil lukust avada. Telefoni järgmisel avamisel saate kasutada oma iiriseid.</string>
+    <string name="kg_none_iris_direction_shutdown_instructions">Kasutage telefoni väljalülitamiseks iiriseid või joonistage mitmes suunas</string>
+    <string name="kg_none_iris_direction_timeout_instructions">Turvalisuse tagamiseks kasutage telefoni luku avamiseks suundade järjestust. Järgmine kord saate kasutada biomeetriat.</string>
+    <string name="kg_none_iris_password_deviceadmin_instructions">Sisestage oma parool, nagu on turvalisuse poliisiga nõutud, selle asemel et kasutada iiriseid</string>
+    <string name="kg_none_iris_password_restart_instructions">Teie telefon taaskäivitus ja tuleb parooli abil lukust avada. Telefoni järgmisel avamisel saate kasutada oma iiriseid.</string>
+    <string name="kg_none_iris_password_shutdown_instructions">Kasutage telefoni väljalülitamiseks iiriseid või sisestage parool</string>
+    <string name="kg_none_iris_password_timeout_instructions">Turvalisuse tagamiseks kasutage telefoni luku avamiseks oma parooli. Järgmine kord saate kasutada biomeetriat.</string>
+    <string name="kg_none_iris_pattern_deviceadmin_instructions">Joonistage oma muster, nagu on turvalisuse poliisiga nõutud, selle asemel et kasutada iiriseid</string>
+    <string name="kg_none_iris_pattern_restart_instructions">Teie telefon taaskäivitus ja tuleb mustri abil lukust avada. Telefoni järgmisel avamisel saate kasutada oma iiriseid.</string>
+    <string name="kg_none_iris_pattern_shutdown_instructions">Kasutage telefoni väljalülitamiseks iiriseid või joonistage muster</string>
+    <string name="kg_none_iris_pattern_timeout_instructions">Turvalisuse tagamiseks kasutage telefoni luku avamiseks oma mustrit. Järgmine kord saate kasutada biomeetriat.</string>
+    <string name="kg_none_iris_pin_deviceadmin_instructions">Sisestage oma PIN-kood, nagu on turvalisuse poliisiga nõutud, selle asemel et kasutada iiriseid</string>
+    <string name="kg_none_iris_pin_restart_instructions">Teie telefon taaskäivitus ja tuleb PIN-koodi abil lukust avada. Telefoni järgmisel avamisel saate kasutada oma iiriseid.</string>
+    <string name="kg_none_iris_pin_shutdown_instructions">Kasutage telefoni väljalülitamiseks iiriseid või sisestage PIN-kood</string>
+    <string name="kg_none_iris_pin_timeout_instructions">Turvalisuse tagamiseks kasutage telefoni luku avamiseks oma PIN-koodi. Järgmine kord saate kasutada biomeetriat.</string>
+    <string name="kg_none_multi_direction_deviceadmin_instructions">Oma biomeetria kasutamise asemel joonistage mitmes suunas, nagu seda nõuab turvalisuse poliis</string>
+    <string name="kg_none_multi_direction_restart_instructions">Teie telefon taaskäivitati ja tuleb mitmes suunas joonistamise abil lukust avada. Telefoni järgmisel avamisel saate kasutada oma biomeetriat.</string>
+    <string name="kg_none_multi_direction_shutdown_instructions">Kasutage telefoni väljalülitamiseks biomeetriat või joonistage mitmes suunas</string>
+    <string name="kg_none_multi_direction_timeout_instructions">Turvalisuse tagamiseks kasutage telefoni luku avamiseks suundade järjestust. Järgmine kord saate kasutada biomeetriat.</string>
+    <string name="kg_none_multi_password_deviceadmin_instructions">Biomeetria kasutamise asemel sisestage oma parool, nagu seda nõuab turvalisuse poliis</string>
+    <string name="kg_none_multi_password_restart_instructions">Teie telefon taaskäivitati ja tuleb parooli abil lukust avada. Telefoni järgmisel avamisel saate kasutada oma biomeetriat.</string>
+    <string name="kg_none_multi_password_shutdown_instructions">Kasutage telefoni väljalülitamiseks biomeetriat või sisestage parool</string>
+    <string name="kg_none_multi_password_timeout_instructions">Turvalisuse tagamiseks kasutage telefoni luku avamiseks oma parooli. Järgmine kord saate kasutada biomeetriat.</string>
+    <string name="kg_none_multi_pattern_deviceadmin_instructions">Biomeetria kasutamise asemel joonistage oma muster, nagu seda nõuab turvalisuse poliis</string>
+    <string name="kg_none_multi_pattern_restart_instructions">Teie telefon taaskäivitati ja tuleb mustri abil lukust avada. Telefoni järgmisel avamisel saate kasutada oma biomeetriat.</string>
+    <string name="kg_none_multi_pattern_shutdown_instructions">Kasutage telefoni väljalülitamiseks biomeetriat või joonistage muster</string>
+    <string name="kg_none_multi_pattern_timeout_instructions">Turvalisuse tagamiseks kasutage telefoni luku avamiseks oma mustrit. Järgmine kord saate kasutada biomeetriat.</string>
+    <string name="kg_none_multi_pin_deviceadmin_instructions">Biomeetria kasutamise asemel sisestage oma PIN-kood, nagu seda nõuab turvalisuse poliis</string>
+    <string name="kg_none_multi_pin_restart_instructions">Teie telefon taaskäivitati ja tuleb PIN-koodi abil lukust avada. Telefoni järgmisel avamisel saate kasutada oma biomeetriat.</string>
+    <string name="kg_none_multi_pin_shutdown_instructions">Kasutage telefoni väljalülitamiseks biomeetriat või sisestage PIN-kood</string>
+    <string name="kg_none_multi_pin_timeout_instructions">Turvalisuse tagamiseks kasutage telefoni luku avamiseks oma PIN-koodi. Järgmine kord saate kasutada biomeetriat.</string>
+    <string name="kg_none_none_direction_shutdown_instructions">Joonistage mitmes suunas, et telefon välja lülitada</string>
+    <string name="kg_none_none_password_shutdown_instructions">Sisestage parool, et telefon välja lülitada</string>
+    <string name="kg_none_none_pattern_shutdown_instructions">Joonistage muster, et telefon välja lülitada</string>
+    <string name="kg_none_none_pin_shutdown_instructions">Sisestage PIN-kood, et telefon välja lülitada</string>
+    <string name="kg_none_password_1_frp">"If you do not enter the correct password in the next attempt, your phone will automatically be reset to factory settings and all information on the phone will be erased.
+
+If your phone is reset, you may need to enter the Google account information (email address and password) associated with this phone to be able to use it again."</string>
+    <string name="kg_none_password_1_reactivation">"Kui te ei sisesta järgmise %d katsega õiget parooli, siis teie tahvelarvuti lähtestatakse automaatselt tehaseseadetele ja kogu tahvelarvutis olev teave kustutatakse.
+
+Kui teie tahvelarvuti lähtestatakse, võib teil olla vaja sisestada selle tahvelarvutiga seotud Samsung Accounti teave (e-posti aadress ja parool), et seda uuesti kasutada."</string>
+    <string name="kg_none_password_active_instructions">Sisestage avamiseks parool</string>
+    <string name="kg_none_password_none_frp">"If you do not enter the correct password within the next %d attempts, your phone will automatically be reset to factory settings and all information on the phone will be erased.
+
+If your phone is reset, you may need to enter the Google account information (email address and password) associated with this phone to be able to use it again."</string>
+    <string name="kg_none_password_none_instructions">Sisestage parool</string>
+    <string name="kg_none_password_none_reactivation">"Kui te ei sisesta järgmise katsega õiget parooli, siis teie tahvelarvuti lähtestatakse automaatselt tehaseseadetele ja kogu tahvelarvutis olev teave kustutatakse.
+
+Kui teie tahvelarvuti lähtestatakse, võib teil olla vaja sisestada selle tahvelarvutiga seotud Samsung Accounti teave (e-posti aadress ja parool), et seda uuesti kasutada."</string>
+    <string name="kg_none_pattern_1_frp">"If you do not enter the correct pattern in the next attempt, your phone will automatically be reset to factory settings and all information on the phone will be erased.
+
+If your phone is reset, you may need to enter the Google account information (email address and password) associated with this phone to be able to use it again."</string>
+    <string name="kg_none_pattern_1_reactivation">"Kui te ei sisesta järgmise katsega õiget mustrit, siis teie telefon lähtestatakse automaatselt tehaseseadetele ja kogu telefonis olev teave kustutatakse.
+
+Kui teie telefon lähtestatakse, võib teil olla vaja sisestada selle telefoniga seotud Samsung Accounti teave (e-posti aadress ja parool), et saaksite seda uuesti kasutada."</string>
+    <string name="kg_none_pattern_active_instructions">Joonistage avamiseks avamise muster</string>
+    <string name="kg_none_pattern_none_frp">"If you do not enter the correct pattern within the next %d attempts, your phone will automatically be reset to factory settings and all information on the phone will be erased.
+
+If your phone is reset, you may need to enter the Google account information (email address and password) associated with this phone to be able to use it again."</string>
+    <string name="kg_none_pattern_none_instructions">Joonistage avamise muster</string>
+    <string name="kg_none_pattern_none_reactivation">"Kui te ei sisesta järgmise %d katsega õiget mustrit, siis teie telefon lähtestatakse automaatselt tehaseseadetele ja kogu telefonis olev teave kustutatakse.
+
+Kui teie telefon lähtestatakse, võib teil olla vaja sisestada selle telefoniga seotud Samsung Accounti teave (e-posti aadress ja parool), et saaksite seda uuesti kasutada."</string>
+    <string name="kg_none_pin_1_frp">"If you do not enter the correct PIN in the next attempt, your phone will automatically be reset to factory settings and all information on the phone will be erased.
+
+If your phone is reset, you may need to enter the Google account information (email address and password) associated with this phone to be able to use it again."</string>
+    <string name="kg_none_pin_1_reactivation">"Kui te ei sisesta järgmise katsega õiget PIN-koodi, siis teie telefon lähtestatakse automaatselt tehaseseadetele ja kogu telefonis olev teave kustutatakse.
+
+Kui teie telefon lähtestatakse, võib teil olla vaja sisestada selle telefoniga seotud Samsung Accounti teave (e-posti aadress ja parool), et saaksite seda uuesti kasutada."</string>
+    <string name="kg_none_pin_active_instructions">Sisestage avamiseks PIN-kood</string>
+    <string name="kg_none_pin_none_frp">"If you do not enter the correct PIN within the next %d attempts, your phone will automatically be reset to factory settings and all information on the phone will be erased.
+
+If your phone is reset, you may need to enter the Google account information (email address and password) associated with this phone to be able to use it again."</string>
+    <string name="kg_none_pin_none_instructions">Sisestage PIN-kood</string>
+    <string name="kg_none_pin_none_reactivation">"Kui te ei sisesta järgmise %d katsega õiget PIN-koodi, siis teie telefon lähtestatakse automaatselt tehaseseadetele ja kogu telefonis olev teave kustutatakse.
+
+Kui teie telefon lähtestatakse, võib teil olla vaja sisestada selle telefoniga seotud Samsung Accounti teave (e-posti aadress ja parool), et saaksite seda uuesti kasutada."</string>
+    <string name="kg_none_recovery_none_instructions">Avamiseks sisestage taastamise parool.</string>
+    <string name="kg_password_hint">Vihje</string>
+    <string name="kg_password_hint_show">Vihje: %s</string>
+    <string name="kg_password_perso_failed">Incorrect PIN. Check PIN and try again.</string>
+    <string name="kg_password_perso_max_failed">Incorrect PIN entered for USIM card lock. Maximum number of retries reached. Restart device or visit CS centre.</string>
+    <string name="kg_password_sub_instructions">Teie parool sisaldab vähemalt %d tähemärki, seejuures vähemalt 1 tähte.</string>
+    <string name="kg_password_sub_instructions_vzw">Teie parool sisaldab tähti ja on vähemalt %d tähemärki pikk.</string>
+    <string name="kg_password_wrong_pin_code_one">Sisestati vale SIM-kaardi PIN-kood. Teil on jäänud 1 katse.</string>
+    <string name="kg_password_wrong_pin_code_other">Sisestati vale SIM-kaardi PIN-kood. Teil on jäänud veel %d katset.</string>
+    <string name="kg_perso_locked_message">Block other USIM</string>
+    <string name="kg_pin_locked_message">Sisestage PIN-kood</string>
+    <string name="kg_pin_sub_instructions">Teie PIN-kood sisaldab vähemalt 4 numbrit.</string>
+    <string name="kg_pin_sub_instructions_vzw">Teie PIN-kood koosneb vähemalt %d numbrist.</string>
+    <string name="kg_power_charging">Laadimine: %d%%</string>
+    <string name="kg_power_charging_remaining_time">Umbes %s jäänud, kuni aku on täis laetud</string>
+    <string name="kg_power_charging_wirelessly">Laadimine juhtmevabalt: %d%%</string>
+    <string name="kg_power_connect_charger">Ühendage laadija</string>
+    <string name="kg_power_fast_charging">Kiirlaadimine: %d%%</string>
+    <string name="kg_power_fast_charging_chn">Tõhusam laadimine: %d%%</string>
+    <string name="kg_power_fast_charging_wirelessly">Kiire juhtmev. laadimine: %d%%</string>
+    <string name="kg_power_fast_charging_wirelessly_chn">Täpsem juhtmevaba laadimine: %d%%</string>
+    <string name="kg_power_fully_charged">Laetud</string>
+    <string name="kg_power_time_format_hour">%d h</string>
+    <string name="kg_power_time_format_hour_minute">%1$dh %2$dmin</string>
+    <string name="kg_power_time_format_minute">%d min</string>
+    <string name="kg_prompt_reason_timeout_password_strong_auth">Sõrmejäljetuvastuse kasutamise asemel sisestage parool turvalisuse poliisi tõttu</string>
+    <string name="kg_prompt_reason_timeout_pattern_strong_auth">Sõrmejäljetuvastuse kasutamise asemel joonistage muster turvalisuse poliisi tõttu</string>
+    <string name="kg_prompt_reason_timeout_pin_strong_auth">Sõrmejäljetuvastuse kasutamise asemel sisestage PIN-kood turvalisuse poliisi tõttu</string>
+    <string name="kg_prompt_reason_timeout_universal_lock_strong_auth">Sõrmejäljetuvastuse kasutamise asemel joonistage mitmes suunas turvalisuse poliisi tõttu</string>
+    <string name="kg_puk_locked_message">Sisestage PUK-kood</string>
+    <string name="kg_remained_1_attempt_countdown_1_min_with_auto_wipe">"Seadet on proovitud avada %d korda. Teil on jäänud 1 katse, enne kui seade lähtestatakse tehase vaikeseadetele ja kõik andmed kustutatakse.
+
+Proovige uuesti 1 minuti pärast"</string>
+    <string name="kg_remained_1_attempt_countdown_1_sec_with_auto_wipe">"Seadet on proovitud avada %d korda. Teil on jäänud 1 katse, enne kui seade lähtestatakse tehase vaikeseadetele ja kõik andmed kustutatakse.
+
+Proovige uuesti 1 sekundi pärast"</string>
+    <string name="kg_remained_1_attempt_countdown_mins_with_auto_wipe">"Seadet on proovitud avada %1$d korda. Teil on jäänud 1 katse, enne kui seade lähtestatakse tehase vaikeseadetele ja kõik andmed kustutatakse.
+
+Proovige uuesti %2$d minuti pärast"</string>
+    <string name="kg_remained_1_attempt_countdown_secs_with_auto_wipe">"Seadet on proovitud avada %1$d korda. Teil on jäänud 1 katse, enne kui seade lähtestatakse tehase vaikeseadetele ja kõik andmed kustutatakse.
+
+Proovige uuesti %2$d sekundi pärast"</string>
+    <string name="kg_rmm_lock_instructions">Sisestage kaardi %s PIN-kood</string>
+    <string name="kg_samsung_account_button_text">Samsung Account</string>
+    <string name="kg_sec_1_failed_attempt_almost_at_wipe">Seadet on proovitud avada. Teil on jäänud %d katset, enne kui seade lähtestatakse tehase vaikeseadetele ja kõik andmed kustutatakse, sealhulgas failid ja allalaaditud rakendused.</string>
+    <string name="kg_sec_1_remaining_count_almost_at_wipe">Seadet on proovitud avada %d korda. Teil on jäänud 1 katse, enne kui seade lähtestatakse tehase vaikeseadetele ja kõik andmed kustutatakse, kaasa arvatud failid ja allalaaditud rakendused.</string>
+    <string name="kg_sec_failed_attempts_almost_at_wipe">Seadet on proovitud avada %1$d korda. Teil on jäänud %2$d katset, enne kui seade lähtestatakse tehase vaikeseadetele ja kõik andmed kustutatakse, sealhulgas failid ja allalaaditud rakendused.</string>
+    <string name="kg_sec_puk_enter_confirm_pin_hint">Kinnitamiseks sisestage SIM-kaardi uus PIN-kood uuesti.</string>
+    <string name="kg_sec_puk_enter_pin_hint">Sisestage SIM-kaardi uus PIN-kood.</string>
+    <string name="kg_sec_sim_unlock_progress_dialog_message">SIM-kaardi avamine…</string>
+    <string name="kg_show_password_accessibility">Kuva parool</string>
+    <string name="kg_sim_lock_accepted">Kood on aktsepteeritud.</string>
+    <string name="kg_sim_locked_message">SIM-kaart on lukustatud</string>
+    <string name="kg_sim_pin_remaining_1_attempt">Teil on jäänud 1 katse.</string>
+    <string name="kg_sim_pin_remaining_attempts">%d katset on jäänud.</string>
+    <string name="kg_sim_puk_instructions">SIM-kaart on lukustatud. Sisestage PUK-kood. Küsige lisateavet teenusepakkujalt.</string>
+    <string name="kg_sim_puk_remaining_1_attempt">SIM lukustatakse, kui sisestate vale PUK-i veel 1 korra.</string>
+    <string name="kg_sim_puk_remaining_attempts">SIM lukustatakse, kui sisestate vale PUK-i veel %d korda.</string>
+    <string name="kg_sim_puk_tmo_help_contact_service_provider">Your PIN has been blocked. To unlock your device, contact your service provider.</string>
+    <string name="kg_sim_puk_tmo_sos_call">Hädaabi</string>
+    <string name="kg_skt_sim_perso_instructions">Sisestage USIM-kaardi avamise PIN-kood (4 numbrit)</string>
+    <string name="kg_smart_lock_content_description">Toksake kaks korda ja lohistage, et seadet lukustada.</string>
+    <string name="kg_strong_auth_prompt_reason_timeout_direction_lock">Seadet ei ole rohkem kui 24 tundi kasutatud ja see tuleb sinu juhiste abil avada. Järgmisel seadme lukust avamisel saate kasutada sõrmejälgi.</string>
+    <string name="kg_strong_auth_prompt_reason_timeout_password">Seadet ei ole rohkem kui 24 tundi kasutatud ja see tuleb salasõna abil avada. Järgmisel seadme lukust avamisel saate kasutada sõrmejälgi.</string>
+    <string name="kg_strong_auth_prompt_reason_timeout_pattern">Seadet ei ole rohkem kui 24 tundi kasutatud ja see tuleb mustri abil avada. Järgmisel seadme lukust avamisel saate kasutada sõrmejälgi.</string>
+    <string name="kg_strong_auth_prompt_reason_timeout_pin">Seadet ei ole rohkem kui 24 tundi kasutatud ja see tuleb PINi abil avada. Järgmisel seadme lukust avamisel saate kasutada sõrmejälgi.</string>
+    <string name="kg_swipe_active_instructions">Avamiseks libistage sõrme üle ekraani</string>
+    <string name="kg_swipe_unlock_instructions">Avamiseks libistage sõrme üle ekraani</string>
+    <string name="kg_swipe_unlock_smart_lock_instructions">Smart Lock avas telefoni lukustuse</string>
+    <string name="kg_swipe_unlock_strong_auth_instructions">Turvalisuse tagamiseks libistage sõrme üle ekraani, et lukust avada</string>
+    <string name="kg_tablet_direction_1_frp">"If you do not draw the correct series of directions in the next attempt, your tablet will automatically be reset to factory settings and all information on the tablet will be erased.
+
+If your tablet is reset, you may need to enter the Google account information (email address and password) associated with this tablet to be able to use it again."</string>
+    <string name="kg_tablet_direction_1_reactivation">"Kui te ei sisesta järgmise katsega õigeid suundi, siis teie tahvelarvuti lähtestatakse automaatselt tehaseseadetele ja kogu tahvelarvutis olev teave kustutatakse.
+
+Kui teie tahvelarvuti lähtestatakse, võib teil olla vaja sisestada selle tahvelarvutiga seotud Samsung Accounti teave (e-posti aadress ja parool), et seda uuesti kasutada."</string>
+    <string name="kg_tablet_direction_none_frp">"If you do not draw the correct series of directions within the next %d attempts, your tablet will automatically be reset to factory settings and all information on the tablet will be erased.
+
+If your tablet is reset, you may need to enter the Google account information (email address and password) associated with this tablet to be able to use it again."</string>
+    <string name="kg_tablet_direction_none_reactivation">"Kui te ei sisesta järgmise %d katsega õigeid suundi, siis teie tahvelarvuti lähtestatakse automaatselt tehaseseadetele ja kogu tahvelarvutis olev teave kustutatakse.
+
+Kui teie tahvelarvuti lähtestatakse, võib teil olla vaja sisestada selle tahvelarvutiga seotud Samsung Accounti teave (e-posti aadress ja parool), et seda uuesti kasutada."</string>
+    <string name="kg_tablet_face_direction_restart_instructions">Teie tahvelseade taaskäivitati ja tuleb mitmes suunas joonistamise abil lukust avada. Järgmine kord saate tahvelseadme avamisel kasutada näotuvastust.</string>
+    <string name="kg_tablet_face_direction_shutdown_instructions">Teie tahvelseade taaskäivitus ja tuleb suundade abil lukust avada. Tahvelseadme järgmisel avamisel saate kasutada oma sõrmejälgi.</string>
+    <string name="kg_tablet_face_direction_timeout_instructions">Turvalisuse tagamiseks kasutage tahvelseadme luku avamiseks suundade järjestust. Järgmine kord saate kasutada biomeetriat.</string>
+    <string name="kg_tablet_face_password_restart_instructions">Teie tahvelseade taaskäivitati ja tuleb parooli abil lukust avada. Järgmine kord saate tahvelseadme avamisel kasutada näotuvastust.</string>
+    <string name="kg_tablet_face_password_timeout_instructions">Turvalisuse tagamiseks kasutage tahvelseadme luku avamiseks oma parooli. Järgmine kord saate kasutada biomeetriat.</string>
+    <string name="kg_tablet_face_pattern_restart_instructions">Teie tahvelseade taaskäivitati ja tuleb mustri abil lukust avada. Järgmine kord saate tahvelseadme avamisel kasutada näotuvastust.</string>
+    <string name="kg_tablet_face_pattern_timeout_instructions">Turvalisuse tagamiseks kasutage tahvelseadme luku avamiseks oma mustrit. Järgmine kord saate kasutada biomeetriat.</string>
+    <string name="kg_tablet_face_pin_restart_instructions">Teie tahvelseade taaskäivitati ja tuleb PIN-koodi abil lukust avada. Järgmine kord saate tahvelseadme avamisel kasutada näotuvastust.</string>
+    <string name="kg_tablet_face_pin_timeout_instructions">Turvalisuse tagamiseks kasutage tahvelseadme luku avamiseks oma PIN-koodi. Järgmine kord saate kasutada biomeetriat.</string>
+    <string name="kg_tablet_fingerprint_direction_restart_instructions">Teie tahvelseade taaskäivitus ja tuleb suundade abil lukust avada. Tahvelseadme järgmisel avamisel saate kasutada oma sõrmejälgi.</string>
+    <string name="kg_tablet_fingerprint_direction_shutdown_instructions">Kasutage tahvelseadme väljalülitamiseks sõrmejälge või joonistage mitmes suunas</string>
+    <string name="kg_tablet_fingerprint_direction_timeout_instructions">Turvalisuse tagamiseks kasutage tahvelseadme luku avamiseks suundade järjestust. Järgmine kord saate kasutada biomeetriat.</string>
+    <string name="kg_tablet_fingerprint_password_restart_instructions">Teie tahvelseade taaskäivitus ja tuleb parooli abil lukust avada. Tahvelseadme järgmisel avamisel saate kasutada oma sõrmejälgi.</string>
+    <string name="kg_tablet_fingerprint_password_shutdown_instructions">Kasutage tahvelseadme väljalülitamiseks sõrmejälge või sisestage parool</string>
+    <string name="kg_tablet_fingerprint_password_timeout_instructions">Turvalisuse tagamiseks kasutage tahvelseadme luku avamiseks oma parooli. Järgmine kord saate kasutada biomeetriat.</string>
+    <string name="kg_tablet_fingerprint_pattern_restart_instructions">Teie tahvelseade taaskäivitus ja tuleb mustri abil lukust avada. Tahvelseadme järgmisel avamisel saate kasutada oma sõrmejälgi.</string>
+    <string name="kg_tablet_fingerprint_pattern_shutdown_instructions">Kasutage tahvelseadme väljalülitamiseks sõrmejälge või joonistage muster</string>
+    <string name="kg_tablet_fingerprint_pattern_timeout_instructions">Turvalisuse tagamiseks kasutage tahvelseadme luku avamiseks oma mustrit. Järgmine kord saate kasutada biomeetriat.</string>
+    <string name="kg_tablet_fingerprint_pin_restart_instructions">Teie tahvelseade taaskäivitus ja tuleb PIN-koodi abil lukust avada. Tahvelseadme järgmisel avamisel saate kasutada oma sõrmejälgi.</string>
+    <string name="kg_tablet_fingerprint_pin_shutdown_instructions">Kasutage tahvelseadme väljalülitamiseks sõrmejälge või sisestage PIN-kood</string>
+    <string name="kg_tablet_fingerprint_pin_timeout_instructions">Turvalisuse tagamiseks kasutage tahvelseadme luku avamiseks oma PIN-koodi. Järgmine kord saate kasutada biomeetriat.</string>
+    <string name="kg_tablet_fingerprints_direction_unabled_instructions">Teie seade taaskäivitati ning teil tuleb see oma suundade abil lukust avada. Järgmisel seadme lukust avamisel saate kasutada sõrmejälgi.</string>
+    <string name="kg_tablet_fingerprints_password_unabled_instructions">Teie seade taaskäivitati ning teil tuleb see oma parooli abil lukust avada. Järgmisel seadme lukust avamisel saate kasutada sõrmejälgi.</string>
+    <string name="kg_tablet_fingerprints_pattern_unabled_instructions">Teie seade taaskäivitati ning teil tuleb see oma mustri abil lukust avada. Järgmisel seadme lukust avamisel saate kasutada sõrmejälgi.</string>
+    <string name="kg_tablet_fingerprints_pin_unabled_instructions">Teie seade taaskäivitati ning teil tuleb see oma PIN-koodi abil lukust avada. Järgmisel seadme lukust avamisel saate kasutada sõrmejälgi.</string>
+    <string name="kg_tablet_intelligent_password_restart_instructions">Turvalisuse tagamiseks libistage sõrme üle ekraani, et lukust avada</string>
+    <string name="kg_tablet_intelligent_password_timeout_instructions">Turvalisuse tagamiseks kasutage tahvelseadme luku avamiseks oma mustrit. Järgmine kord saate kasutada biomeetriat.</string>
+    <string name="kg_tablet_intelligent_pattern_restart_instructions">Turvalisuse tagamiseks libistage sõrme üle ekraani, et lukust avada</string>
+    <string name="kg_tablet_intelligent_pattern_timeout_instructions">Turvalisuse tagamiseks kasutage tahvelseadme luku avamiseks oma mustrit. Järgmine kord saate kasutada biomeetriat.</string>
+    <string name="kg_tablet_intelligent_pin_restart_instructions">Turvalisuse tagamiseks libistage sõrme üle ekraani, et lukust avada</string>
+    <string name="kg_tablet_intelligent_pin_timeout_instructions">Turvalisuse tagamiseks kasutage tahvelseadme luku avamiseks oma PIN-koodi. Järgmine kord saate kasutada biomeetriat.</string>
+    <string name="kg_tablet_iris_direction_restart_instructions">Teie tahvelseade taaskäivitus ja tuleb suundade abil lukust avada. Tahvelseadme järgmisel avamisel saate kasutada oma iiriseid.</string>
+    <string name="kg_tablet_iris_direction_shutdown_instructions">Kasutage tahvelseadme väljalülitamiseks iiriseid või joonistage mitmes suunas</string>
+    <string name="kg_tablet_iris_direction_timeout_instructions">Turvalisuse tagamiseks kasutage tahvelseadme luku avamiseks suundade järjestust. Järgmine kord saate kasutada biomeetriat.</string>
+    <string name="kg_tablet_iris_password_restart_instructions">Teie tahvelseade taaskäivitus ja tuleb parooli abil lukust avada. Tahvelseadme järgmisel avamisel saate kasutada oma iiriseid.</string>
+    <string name="kg_tablet_iris_password_shutdown_instructions">Kasutage tahvelseadme väljalülitamiseks iiriseid või sisestage parool</string>
+    <string name="kg_tablet_iris_password_timeout_instructions">Turvalisuse tagamiseks kasutage tahvelseadme luku avamiseks oma parooli. Järgmine kord saate kasutada biomeetriat.</string>
+    <string name="kg_tablet_iris_pattern_restart_instructions">Teie tahvelseade taaskäivitus ja tuleb mustri abil lukust avada. Tahvelseadme järgmisel avamisel saate kasutada oma iiriseid.</string>
+    <string name="kg_tablet_iris_pattern_shutdown_instructions">Kasutage tahvelseadme väljalülitamiseks iiriseid või joonistage muster</string>
+    <string name="kg_tablet_iris_pattern_timeout_instructions">Turvalisuse tagamiseks kasutage tahvelseadme luku avamiseks oma mustrit. Järgmine kord saate kasutada biomeetriat.</string>
+    <string name="kg_tablet_iris_pin_restart_instructions">Teie tahvelseade taaskäivitus ja tuleb PIN-koodi abil lukust avada. Tahvelseadme järgmisel avamisel saate kasutada oma iiriseid.</string>
+    <string name="kg_tablet_iris_pin_shutdown_instructions">Kasutage tahvelseadme väljalülitamiseks iiriseid või sisestage PIN-kood</string>
+    <string name="kg_tablet_iris_pin_timeout_instructions">Turvalisuse tagamiseks kasutage tahvelseadme luku avamiseks oma PIN-koodi. Järgmine kord saate kasutada biomeetriat.</string>
+    <string name="kg_tablet_multi_direction_restart_instructions">Teie tahvelseadet taaskäivitati ja tuleb mitmes suunas joonistamise abil lukust avada. Tahvelseadme järgmisel avamisel saate kasutada oma biomeetriat.</string>
+    <string name="kg_tablet_multi_direction_shutdown_instructions">Kasutage tahvelseadme väljalülitamiseks biomeetriat või joonistage mitmes suunas</string>
+    <string name="kg_tablet_multi_direction_timeout_instructions">Turvalisuse tagamiseks kasutage tahvelseadme luku avamiseks suundade järjestust. Järgmine kord saate kasutada biomeetriat.</string>
+    <string name="kg_tablet_multi_password_restart_instructions">Teie tahvelseade taaskäivitati ja tuleb parooli abil lukust avada. Tahvelseadme järgmisel avamisel saate kasutada oma biomeetriat.</string>
+    <string name="kg_tablet_multi_password_shutdown_instructions">Kasutage tahvelseadme väljalülitamiseks biomeetriat või sisestage parool</string>
+    <string name="kg_tablet_multi_password_timeout_instructions">Turvalisuse tagamiseks kasutage tahvelseadme luku avamiseks oma parooli. Järgmine kord saate kasutada biomeetriat.</string>
+    <string name="kg_tablet_multi_pattern_restart_instructions">Teie tahvelseade taaskäivitati ja tuleb mustri abil lukust avada. Tahvelseadme järgmisel avamisel saate kasutada oma biomeetriat.</string>
+    <string name="kg_tablet_multi_pattern_shutdown_instructions">Kasutage tahvelseadme väljalülitamiseks biomeetriat või joonistage muster</string>
+    <string name="kg_tablet_multi_pattern_timeout_instructions">Turvalisuse tagamiseks kasutage tahvelseadme luku avamiseks oma mustrit. Järgmine kord saate kasutada biomeetriat.</string>
+    <string name="kg_tablet_multi_pin_restart_instructions">Teie tahvelseade taaskäivitati ja tuleb PIN-koodi abil lukust avada. Tahvelseadme järgmisel avamisel saate kasutada oma biomeetriat.</string>
+    <string name="kg_tablet_multi_pin_shutdown_instructions">Kasutage tahvelseadme väljalülitamiseks biomeetriat või sisestage PIN-kood</string>
+    <string name="kg_tablet_multi_pin_timeout_instructions">Turvalisuse tagamiseks kasutage tahvelseadme luku avamiseks oma PIN-koodi. Järgmine kord saate kasutada biomeetriat.</string>
+    <string name="kg_tablet_none_direction_shutdown_instructions">Joonistage mitmes suunas, et tahvelseade välja lülitada</string>
+    <string name="kg_tablet_none_password_shutdown_instructions">Sisestage parool, et tahvelseade välja lülitada</string>
+    <string name="kg_tablet_none_pattern_shutdown_instructions">Joonistage muster, et tahvelseade välja lülitada</string>
+    <string name="kg_tablet_none_pin_shutdown_instructions">Sisestage PIN-kood, et tahvelseade välja lülitada</string>
+    <string name="kg_tablet_password_1_frp">"If you do not enter the correct password in the next attempt, your tablet will automatically be reset to factory settings and all information on the tablet will be erased.
+
+If your tablet is reset, you may need to enter the Google account information (email address and password) associated with this tablet to be able to use it again."</string>
+    <string name="kg_tablet_password_1_reactivation">"Kui te ei sisesta järgmise %d katsega õiget parooli, siis teie telefon lähtestatakse automaatselt tehaseseadetele ja kogu telefonis olev teave kustutatakse.
+
+Kui teie telefon lähtestatakse, võib teil olla vaja sisestada selle telefoniga seotud Samsung Accounti teave (e-posti aadress ja parool), et saaksite seda uuesti kasutada."</string>
+    <string name="kg_tablet_password_none_frp">"If you do not enter the correct password within the next %d attempts, your tablet will automatically be reset to factory settings and all information on the tablet will be erased.
+
+If your tablet is reset, you may need to enter the Google account information (email address and password) associated with this tablet to be able to use it again."</string>
+    <string name="kg_tablet_password_none_reactivation">"Kui te ei sisesta järgmise katsega õiget parooli, siis teie telefon lähtestatakse automaatselt tehaseseadetele ja kogu telefonis olev teave kustutatakse.
+
+Kui teie telefon lähtestatakse, võib teil olla vaja sisestada selle telefoniga seotud Samsung Accounti teave (e-posti aadress ja parool), et saaksite seda uuesti kasutada."</string>
+    <string name="kg_tablet_pattern_1_frp">"If you do not draw the correct pattern in the next attempt, your tablet will automatically be reset to factory settings and all information on the tablet will be erased.
+
+If your tablet is reset, you may need to enter the Google account information (email address and password) associated with this tablet to be able to use it again."</string>
+    <string name="kg_tablet_pattern_1_reactivation">"Kui te ei sisesta järgmise katsega õiget mustrit, siis teie tahvelarvuti lähtestatakse automaatselt tehaseseadetele ja kogu tahvelarvutis olev teave kustutatakse.
+
+Kui teie tahvelarvuti lähtestatakse, võib teil olla vaja sisestada selle tahvelarvutiga seotud Samsung Accounti teave (e-posti aadress ja parool), et seda uuesti kasutada."</string>
+    <string name="kg_tablet_pattern_none_frp">"If you do not draw the correct pattern within the next %d attempts, your tablet will automatically be reset to factory settings and all information on the tablet will be erased.
+
+If your tablet is reset, you may need to enter the Google account information (email address and password) associated with this tablet to be able to use it again."</string>
+    <string name="kg_tablet_pattern_none_reactivation">"Kui te ei sisesta järgmise %d katsega õiget mustrit, siis teie tahvelarvuti lähtestatakse automaatselt tehaseseadetele ja kogu tahvelarvutis olev teave kustutatakse.
+
+Kui teie tahvelarvuti lähtestatakse, võib teil olla vaja sisestada selle tahvelarvutiga seotud Samsung Accounti teave (e-posti aadress ja parool), et seda uuesti kasutada."</string>
+    <string name="kg_tablet_pin_1_frp">"If you do not enter the correct PIN in the next attempt, your tablet will automatically be reset to factory settings and all information on the tablet will be erased.
+
+If your tablet is reset, you may need to enter the Google account information (email address and password) associated with this tablet to be able to use it again."</string>
+    <string name="kg_tablet_pin_1_reactivation">"Kui te ei sisesta järgmise katsega õiget PIN-koodi, siis teie tahvelarvuti lähtestatakse automaatselt tehaseseadetele ja kogu tahvelarvutis olev teave kustutatakse.
+
+Kui teie tahvelarvuti lähtestatakse, võib teil olla vaja sisestada selle tahvelarvutiga seotud Samsung Accounti teave (e-posti aadress ja parool), et seda uuesti kasutada."</string>
+    <string name="kg_tablet_pin_none_frp">"If you do not enter the correct PIN within the next %d attempts, your tablet will automatically be reset to factory settings and all information on the tablet will be erased.
+
+If your tablet is reset, you may need to enter the Google account information (email address and password) associated with this tablet to be able to use it again."</string>
+    <string name="kg_tablet_pin_none_reactivation">"Kui te ei sisesta järgmise %d katsega õiget PIN-koodi, siis teie tahvelarvuti lähtestatakse automaatselt tehaseseadetele ja kogu tahvelarvutis olev teave kustutatakse.
+
+Kui teie tahvelarvuti lähtestatakse, võib teil olla vaja sisestada selle tahvelarvutiga seotud Samsung Accounti teave (e-posti aadress ja parool), et seda uuesti kasutada."</string>
+    <string name="kg_tablet_strong_auth_prompt_reason_timeout_direction_lock">Seadet ei ole rohkem kui 24 tundi kasutatud ja see tuleb sinu juhiste abil avada. Järgmisel seadme lukust avamisel saate kasutada sõrmejälgi.</string>
+    <string name="kg_tablet_strong_auth_prompt_reason_timeout_password">Seadet ei ole rohkem kui 24 tundi kasutatud ja see tuleb salasõna abil avada. Järgmisel seadme lukust avamisel saate kasutada sõrmejälgi.</string>
+    <string name="kg_tablet_strong_auth_prompt_reason_timeout_pattern">Seadet ei ole rohkem kui 24 tundi kasutatud ja see tuleb mustri abil avada. Järgmisel seadme lukust avamisel saate kasutada sõrmejälgi.</string>
+    <string name="kg_tablet_strong_auth_prompt_reason_timeout_pin">Seadet ei ole rohkem kui 24 tundi kasutatud ja see tuleb PINi abil avada. Järgmisel seadme lukust avamisel saate kasutada sõrmejälgi.</string>
+    <string name="kg_too_many_failed_attempt_countdown">Proovige 1 sekundi pärast uuesti</string>
+    <string name="kg_too_many_failed_attempts_countdown_1_min_with_auto_wipe">"Seadet on proovitud avada %1$d korda. Teil on jäänud %2$d katset, enne kui seade lähtestatakse tehase vaikeseadetele ja kõik andmed kustutatakse.
+
+Proovige uuesti 1 minuti pärast"</string>
+    <string name="kg_too_many_failed_attempts_countdown_1_sec_with_auto_wipe">"Seadet on proovitud avada %1$d korda. Teil on jäänud %2$d katset, enne kui seade lähtestatakse tehase vaikeseadetele ja kõik andmed kustutatakse.
+
+Proovige uuesti 1 sekundi pärast"</string>
+    <string name="kg_too_many_failed_attempts_countdown_mins_with_auto_wipe">"Seadet on proovitud avada %1$d korda. Teil on jäänud %2$d katset, enne kui seade lähtestatakse tehase vaikeseadetele ja kõik andmed kustutatakse.
+
+Proovige uuesti %3$d minuti pärast"</string>
+    <string name="kg_too_many_failed_attempts_countdown_secs_with_auto_wipe">"Seadet on proovitud avada %1$d korda. Teil on jäänud %2$d katset, enne kui seade lähtestatakse tehase vaikeseadetele ja kõik andmed kustutatakse.
+
+Proovige uuesti %3$d sekundi pärast"</string>
+    <string name="kg_too_many_failed_countdown_1_sec_with_auto_wipe">Proovige 1 sekundi pärast uuesti</string>
+    <string name="kg_tts_shortcut_app">Toksake kaks korda ja lohistage, et avada rakendust %s.</string>
+    <string name="kg_ucm_enter_confirm_pin_hint">Sisestage PIN-kood uuesti, et seda kinnitada</string>
+    <string name="kg_ucm_invalid_confirm_pin_hint">PIN-koodid ei kattu</string>
+    <string name="kg_ucm_loading">Laadimine…</string>
+    <string name="kg_ucm_password_not_matching">Nutikaardi parool ei ühti telefoni salvestatud parooliga</string>
+    <string name="kg_ucm_password_wrong_puk_code">Sisestati vale PUK</string>
+    <string name="kg_ucm_puk_enter_pin_hint">Sisestage uus PIN</string>
+    <string name="kg_ucm_unknown_error_occurred">Ilmnes tundmatu torge.</string>
+    <string name="kg_ucm_unlocking">Avamine…</string>
+    <string name="kg_unlock_progress">Avamine…</string>
+    <string name="kg_unlock_sim_pin_instructions">Sisestage SIM-kaardi avamiseks PIN.</string>
+    <string name="kg_unlock_sim_pin_remaining_1_attempt">Sisestage SIM-kaardi avamise PIN-kood. 1 katse on jäänud.</string>
+    <string name="kg_unlock_sim_pin_remaining_attempts">Sisestage SIM-kaardi avamise PIN-kood. %d katset on jäänud.</string>
+    <string name="kg_use_biometrics_first">Kasutage esmalt biomeetriat</string>
+    <string name="kg_use_fingerprint_first">Kasutage esmalt sõrmejälgi</string>
+    <string name="kg_use_irises_first">Kasutage esmalt iiriseid</string>
+    <string name="kg_voice_assistant_active_instructions">Avamiseks libistage ekraanil kahe sõrmega.</string>
+    <string name="kg_voice_assistant_unlock_instructions">Ekraani avamiseks liigutage ekraanil kahte sõrme</string>
+    <string name="kg_voice_assistant_unlock_strong_auth_instructions">Ekraani avamiseks liigutage ekraanil kahte sorme.</string>
+    <string name="kg_wallpaper_applied_toast">Taustpilt rakendati lukustusekraanile.</string>
+    <string name="kg_wallpaper_applied_toast_infinity">Lõputu taustpilt rakendati Always On Displayle, avaekraanile ja lukustusekraanile.</string>
+    <string name="kg_wallpaper_applied_toast_infinity_without_aod">Lõputu taustpilt rakendati ava- ja lukustusekraanidele.</string>
+    <string name="kg_wallpaper_change_wallpaper_when_infinity_applied">Lõpmatuse efektid lülitatakse välja, kui kasutate seda taustpilti.</string>
+    <string name="kg_wallpaper_changes_restrict_toast">Turvalisuse poliis piirab taustpildi muutmist.</string>
+    <string name="kg_wallpaper_confirm_dialog_apply">Rakenda</string>
+    <string name="kg_wallpaper_confirm_dialog_message">Lõpmatuse efektid lülitatakse välja, kui kasutate seda taustpilti.</string>
+    <string name="kg_wallpaper_preview_button">Määra taustpildiks</string>
+    <string name="kg_wallpaper_preview_title">Lukustusekraan</string>
+    <string name="kg_wallpaper_preview_title_infinity">Lõputu taustpilt</string>
+    <string name="kg_wallpaper_preview_video_info">Videot kuvatakse kuni 15 sekundi jagu lukustusekraani taustpildina.</string>
+    <string name="kg_wallpaper_preview_video_long_info">Valitud video on liiga pikk. Toksake allolevat nuppu, et kärpida see maksimaalselt 15 sekundi peale.</string>
+    <string name="kg_wallpaper_preview_video_wallpaper">Video taustpilt</string>
+    <string name="kg_warning_none_1_none_auto_wipe">Selle telefoni avamiseks on tehtud 1 katse. Teil on jäänud %d katset, enne kui telefon lähtestatakse tehase vaikeseadetele ja kõik andmed kustutatakse, sealhulgas failid ja allalaaditud rakendused.</string>
+    <string name="kg_warning_none_none_1_auto_wipe">Selle telefoni avamiseks on tehtud %d katset. Teil on jäänud 1 katse, enne kui telefon lähtestatakse tehase vaikeseadetele ja kõik andmed kustutatakse, kaasa arvatud failid ja allalaaditud rakendused.</string>
+    <string name="kg_warning_none_none_none_auto_wipe">Selle telefoni avamiseks on tehtud %1$d katset. Teil on jäänud %2$d katset, enne kui telefon lähtestatakse tehase vaikeseadetele ja kõik andmed kustutatakse, sealhulgas failid ja allalaaditud rakendused.</string>
+    <string name="kg_warning_tablet_1_none_auto_wipe">Selle tahvelseadme avamiseks on tehtud 1 katse. Teil on jäänud %d katset, enne kui tahvelseade lähtestatakse tehase vaikeseadetele ja kõik andmed kustutatakse, sealhulgas failid ja allalaaditud rakendused.</string>
+    <string name="kg_warning_tablet_none_1_auto_wipe">Selle tahvelseadme avamiseks on tehtud %d katset. Teil on jäänud 1 katse, enne kui tahvelseade lähtestatakse tehase vaikeseadetele ja kõik andmed kustutatakse, kaasa arvatud failid ja allalaaditud rakendused.</string>
+    <string name="kg_warning_tablet_none_none_auto_wipe">Selle tahvelseadme avamiseks on tehtud %1$d katset. Teil on jäänud %2$d katset, enne kui tahvelseade lähtestatakse tehase vaikeseadetele ja kõik andmed kustutatakse, sealhulgas failid ja allalaaditud rakendused.</string>
+    <string name="kg_wrong_direction_lock">Joonistati vale suund</string>
+    <string name="kg_wrong_direction_lock_vzw">Incorrect directions (%d attempts remaining)</string>
+    <string name="later">Hiljem</string>
+    <string name="lock_to_app_desc">See hoiab rakenduse vaates, kuni selle eemaldate.</string>
+    <string name="lock_to_app_dex_desc">See funktsioon pole režiimis Samsung DeX saadaval.</string>
+    <string name="lock_to_app_dex_title">Aknaid ei saa kinnitada</string>
+    <string name="lock_to_app_negative">Tühista</string>
+    <string name="lock_to_app_positive">OK</string>
+    <string name="lock_to_app_recent_and_back">Rakenduse eemaldamiseks vajutage ja hoidke samaaegselt hiljutise ja tagasiliikumise klahve.</string>
+    <string name="lock_to_app_recent_and_back_accessibility">Rakenduse eemaldamiseks vajutage ja hoidke klahvi Tagasiliikumine.</string>
+    <string name="lock_to_app_recent_and_back_softkey">Rakenduse eemaldamiseks puudutage korraga pikalt hiljutiste ja tagasiliikumise nuppu.</string>
+    <string name="lock_to_app_recent_and_back_softkey_accessibility">Rakenduse eemaldamiseks puudutage ja hoidke hiljutise nuppu.</string>
+    <string name="lock_to_app_title">Lülitage akende kinnitamine sisse</string>
+    <string name="lock_to_app_unable_to_pin_desc">See rakendus ei toeta akende kinnitamist.</string>
+    <string name="lock_to_app_unable_to_pin_title">Rakendust %s ei saa kinnitada</string>
+    <string name="lock_to_app_unable_to_pin_toast">Rakendust ei saa kinnitada. %s on suletud. Ilmnes tundmatu tõrge.</string>
+    <string name="lockscreen_click_unlock_text">Avamiseks toksake ükskõik kuhu</string>
+    <string name="lockscreen_nosim_text_kor_only">"USIM-kaarti ei tuvastatud
+Ainult hädaabikõned"</string>
+    <string name="maximum_power_saving_mode">Maksimaalne energiasäästurežiim</string>
+    <string name="memory_full_dialog_msg">Teie sisemälus on liiga vähe ruumi. Kustutage mõned failid ja proovige uuesti.</string>
+    <string name="memory_full_dialog_title">Ekraanipilti ei saa teha</string>
+    <string name="minimized_notification_talkback_description_open">Topelttoksake, et avada rakenduse %s teavitus.</string>
+    <string name="minimized_notification_talkback_desctiprion_close">Topelttoksake, et sulgeda rakenduse %s teavitus.</string>
+    <string name="mobile_data_enable_toast_text">Mobiilsidevõrkudega ei saa ühendust luua, kui lennurežiim on aktiveeritud. Desaktiveerige lennurežiim ja proovige uuesti.</string>
+    <string name="mobile_data_roaming_disable_toast_lgt">Andmerändlus on desaktiveeritud</string>
+    <string name="mobile_data_roaming_title">Andmesiderändlus</string>
+    <string name="mobile_data_show_popup_disable">Ilma Wi-Fi-võrguühenduseta ei saa te kasutada internetti, e-posti ega teisi rakendusi, mis nõuavad võrguühendust.</string>
+    <string name="mobile_data_show_popup_disable_att">AT&amp;T Video Call won’t work if mobile data is off. Also, you won’t be able to use the internet, email or other apps that need a data connection unless you use Wi-Fi.</string>
+    <string name="mobile_data_show_popup_disable_dcm">"If Mobile data is turned off, your device must be connected to a Wi-Fi network to use services that require a network connection.
+
+Mobile data will be turned off."</string>
+    <string name="mobile_data_show_popup_disable_kor_kt">Mobiilne andmeside (WCDMA/LTE) lülitatakse välja. Ilma Wi-Fi võrguühenduseta ei saa te kasutada rakendusi, mis nõuavad andmesideühendust. Saate endiselt multimeediumsõnumeid saata ja vastu võtta.</string>
+    <string name="mobile_data_show_popup_disable_kor_lgt">"Ilma Wi-Fi-ta ei saa te enam kasutada internetti, e-posti ega teisi rakendusi, mis nõuavad andmesideühendust.
+
+Mobiilne andmeside lülitatakse välja."</string>
+    <string name="mobile_data_show_popup_disable_kor_skt">"Ilma Wi-Fi-ta ei saa te enam kasutada internetti, e-posti ega teisi rakendusi, mis nõuavad andmesideühendust.
+
+Mobiilne andmeside lülitatakse välja."</string>
+    <string name="mobile_data_show_popup_disable_vzw">"Unless you use Wi-Fi, you won't be able to use the Internet, Email or other apps that require a data connection. Turn off the mobile data connection?"</string>
+    <string name="mobile_data_show_popup_disable_vzw_volte">"Your phone's Video Calling function won't work when mobile data is off. Also, you won't be able to use the Internet, Email or other apps that need a data connection unless you use Wi-Fi. Turn off the mobile data connection?"</string>
+    <string name="mobile_data_show_popup_disable_vzw_volte_tablet">Teie tahvelseadme videokõne funktsioon ei tööta, kui mobiilne andmeside on välja lülitatud. Samuti ei saa te kasutada internetti, e-posti ega teisi rakendusi, mis vajavad andmesideühendust, kui te ei kasuta Wi-Fi-võrku. Kas lülitada mobiilne andmeside välja?</string>
+    <string name="mobile_data_show_popup_enable_kor_kt">Mobiilne andmeside lülitatakse sisse. Sõltuvalt teie paketist võivad mobiilsidevõrguga ühenduse loomisel rakenduda lisatasud.</string>
+    <string name="mobile_data_show_popup_enable_kor_lgt">Mobiilne andmeside lülitatakse sisse. Sõltuvalt teie paketist võivad mobiilsidevõrguga ühenduse loomisel rakenduda lisatasud.</string>
+    <string name="mobile_data_show_popup_enable_kor_skt">Mobiilne andmeside lülitatakse sisse. Sõltuvalt teie paketist võivad mobiilsidevõrguga ühenduse loomisel rakenduda lisatasud.</string>
+    <string name="mobile_data_show_popup_enable_kor_skt_kt">Mobiilne andmeside lülitatakse sisse. Sõltuvalt teie paketist võivad mobiilsidevõrguga ühenduse loomisel rakenduda lisatasud.</string>
+    <string name="mobile_data_show_popup_roaming_enable">Data roaming may incur additional charges in addition to your domestic flat rate plan. Automatic updates for email or applications may also incur additional charges. Using large-data services such as video or email may incur charges over 20,000 won per minute.</string>
+    <string name="mobile_data_show_toast_airplane_mode">Mobiilsidevõrkudega ei saa ühendust luua, kui lennurežiim on aktiveeritud. Desaktiveerige lennurežiim ja proovige uuesti.</string>
+    <string name="mobile_data_show_toast_not_disable_during_voltecall">Unable to turn Mobile data on or off while Advanced calling enabled.</string>
+    <string name="mobile_data_title">Mobiilne andmeside</string>
+    <string name="mobile_device_warning_toast_notification">Mobiilseadme kasutamine jalutamise või autojuhtimise ajal võib põhjustada õnnetuse.</string>
+    <string name="mobile_hotspot_detail_connected_devices">Ühendatud seadmed</string>
+    <string name="mobile_hotspot_detail_connection_mode_allow_all">Luba kõikidel seadmetel luua ühendus</string>
+    <string name="mobile_hotspot_detail_connection_mode_allowed_device">Ainult lubatud seadmed</string>
+    <string name="mobile_hotspot_detail_password">Parool</string>
+    <string name="mobile_hotspot_detail_title">Mobiilne kuumkoht</string>
+    <string name="mobile_hotspot_detail_title_jpn">Wi-Fi kaudu vahendamine</string>
+    <string name="mobile_hotspot_dialog_nosim_warning_message">Sisestage SIM-kaart, et kasutada mobiilset kuumkohta ja teisi modemivalikuid.</string>
+    <string name="mobile_hotspot_dialog_nosim_warning_message_jpn">Insert a SIM card to use Wi-Fi tethering.</string>
+    <string name="mobile_hotspot_dialog_nosim_warning_title">SIM-kaarti pole</string>
+    <string name="mobile_hotspot_dialog_nosim_warning_title_jpn">Unable to enable Wi-Fi tethering</string>
+    <string name="mobile_hotspot_dialog_nousim_or_nosim_warning">Sisestage UIM/SIM-kaart, et kasutada mobiilset kuumkohta ja teisi edasijagamise funktsioone.</string>
+    <string name="mobile_hotspot_dialog_smartview_off_warn_chn">WLAN kuumkoht ja Smart View ei saa olla korraga aktiivsed. Smart View inaktiveeritakse.</string>
+    <string name="mobile_hotspot_dialog_smartview_off_warn_jpn">Wi-Fi modem ja Smart View ei saa olla korraga sisse lülitatud. Smart View lülitatakse välja.</string>
+    <string name="mobile_hotspot_dialog_wifi_sharing_enable_text">Teie Wi-Fi võrku võidakse jagada teiste seadmetega. Pange tähele, et teie seade võib ümber lülituda teie salvestatud Wi-Fi võrkude vahel ilma ette hoiatamata. Teie vastutate kõigi oma Wi-Fi pakkuja tingimuste täitmise eest.</string>
+    <string name="mobile_hotspot_dialog_wifi_sharing_enable_title">Aktiv. Wi-Fi jagamine</string>
+    <string name="mobile_hotspot_toast_disable_airplne_mode">Mobiilsidevõrkudega ei saa ühendust luua, kui lennurežiim on aktiveeritud. Desaktiveerige lennurežiim ja proovige uuesti.</string>
+    <string name="mobile_hotspot_toast_internet_sharing">Interneti jagamine</string>
+    <string name="mobile_hotspot_wifi_sharing">Wi-Fi jagamine</string>
+    <string name="mobile_hotspot_wifi_sharing_Status_disabled">Desaktiveeritud</string>
+    <string name="mobile_hotspot_wifi_sharing_Status_enabled">Aktiveeritud</string>
+    <string name="mobileap">Mobiilne kuumkoht</string>
+    <string name="multi_window">Mitmikaken</string>
+    <string name="multi_window_title_text">Mitmikaken</string>
+    <string name="mw_divider_button_add_app_pair">Lisa rakenduste paar avaekraanile</string>
+    <string name="mw_divider_button_add_app_pair_body">Te saate lisada poolitatud ekraani vaates avatud rakendused avaekraanile rakenduste paarina.</string>
+    <string name="mw_divider_button_close">Sulge rakendus</string>
+    <string name="mw_divider_button_freeform">Ava hüpikvaates</string>
+    <string name="mw_divider_button_snap">Akna tõmbamine</string>
+    <string name="mw_divider_button_switch">Vaheta aknaid</string>
+    <string name="negative_color_title">Negatiivivärvid</string>
+    <string name="no">Tühista</string>
+    <string name="no_network_connection">Võrguühendus puudub</string>
+    <string name="no_sim_notification_text">Sisestage SIM-kaart.</string>
+    <string name="no_sim_notification_text_cct">Insert an XFINITY Mobile SIM. To learn more, visit xfinitymobile.com/activate or call 888-936-4968.</string>
+    <string name="no_sim_notification_text_vzw">Tap for more information.</string>
+    <string name="no_sim_notification_title">SIM-i pole</string>
+    <string name="no_sim_notification_title_cct">No SIM card detected</string>
+    <string name="no_sim_notification_title_tmo">SIM-kaart pole sisestatud</string>
+    <string name="no_sim_notification_title_vzw">No SIM found</string>
+    <string name="no_such_item">Ei suuda pilti leida.</string>
+    <string name="not_support_snap_window">Seda rakendust ei saa kasutada akna tõmbamise vaates.</string>
+    <string name="noti_direct_reply_exceed_text_limit_toast">Rohkem teksti ei saa sisestada.</string>
+    <string name="noti_setting_text">Teavituse seaded</string>
+    <string name="noti_toast_wifi_is_not_available">WLAN pole saadaval. Olenevalt teie paketist võivad mobiilsidevõrguga ühenduse loomisel rakenduda lisatasud.</string>
+    <string name="notification_all_categories">Üksikasjad</string>
+    <string name="notification_channel_blocked">Blokeeritud</string>
+    <string name="notification_channel_ongoing">Pooleli</string>
+    <string name="notification_done">Valmis</string>
+    <string name="notification_group_overflow_description">Kokku %d teavitust</string>
+    <string name="notification_info_details">Üksikasjad</string>
+    <string name="notification_more_settings">Üksikasjad</string>
+    <string name="notification_save">Salvesta</string>
+    <string name="notification_settings_icon_description">Rakenduse teavituse seaded</string>
+    <string name="one_item_will_be_deleted">Kas kustutada see meeldetuletus?</string>
+    <string name="overheat_poweroff_notice_text">"Teie seade kuumenes üle. See lülitus kahjustuste vältimiseks välja.
+
+Ülekuumenemist võivad põhjustada järgmised tegurid.
+- Graafikatundlike rakenduste, nt mängud ja navigatsioonirakendused, kasutamine pika aja jooksul.
+- Suurte failide edastamine.
+- Seadme kasutamine kuumas keskkonnas."</string>
+    <string name="overheat_poweroff_notice_title">Seade lülitatakse automaatselt välja</string>
+    <string name="overheat_poweroff_warning_button_text">Ära lülita välja</string>
+    <string name="overheat_poweroff_warning_text">Teie seade on kuumenemas üle. See lülitub nüüd jahtumiseks välja.</string>
+    <string name="overheat_poweroff_warning_text_append">Te ei saa seadet uuesti sisse lülitada enne, kui see on maha jahtunud.</string>
+    <string name="overheat_poweroff_warning_text_new">Teie seade on ülekuumenemas. Jahutmiseks lülitub see %d sekundi pärast välja.</string>
+    <string name="overheat_poweroff_warning_title">Lülitage seade välja</string>
+    <string name="overheat_shutdown_notice_text">"Your phone got hot. It turned off to prevent damage to the phone.
+
+This can be caused by:
+Using graphics-intensive apps, like video games and navigation apps, for long periods of time.
+Downloading or uploading large files.
+Using your phone in a very hot location."</string>
+    <string name="overheat_shutdown_notice_text_tablet">"Your tablet got too hot. It turned off to prevent damage to the tablet.
+
+Overheating can be caused by:
+Using graphics intensive apps like video games and navigation apps for long periods of time.
+Downloading or uploading large files.
+Using your tablet in a very hot location."</string>
+    <string name="overheat_shutdown_notice_title">Why did my phone turn off by itself?</string>
+    <string name="overheat_shutdown_notice_title_tablet">Why did my tablet turn off by itself?</string>
+    <string name="overheat_shutdown_warning_button_text">"Don't turn off"</string>
+    <string name="overheat_shutdown_warning_text">"Your phone is getting hot.
+It will now turn off to cool down."</string>
+    <string name="overheat_shutdown_warning_text_tablet">Your tablet is getting too hot. It will now turn off to cool down.</string>
+    <string name="overheat_shutdown_warning_title">Turning off</string>
+    <string name="photo_editor">Fotoredaktor</string>
+    <string name="popupui_dialog_turn_on_button">Lül. sis.</string>
+    <string name="power_supplying_low_battery_alert_body">Teie telefoni aku tühjeneb, kui USB OTG-kaabel on ühendatud. Lahutage USB OTG-kaabel, et akut säästa.</string>
+    <string name="power_supplying_low_battery_alert_body_tablet">Teie tahvelseadme aku tühjeneb, kui USB OTG-kaabel on ühendatud. Lahutage USB OTG-kaabel, et akut säästa.</string>
+    <string name="power_supplying_low_battery_alert_title">Aku on tühi</string>
+    <string name="powerui_power_sharing_alert_dialog_body">"Jagatava toite koguse kontrollimiseks tuleb rakendus alla laadida.Kui ühendate oma seadme teise seadmega Samsungi Power Sharing kaabliga EP-SG900 ilma rakendust kasutamata, kantakse kogu akutoide teise seadmesse üle.
+Looge ühendus Samsung Apps'iga ja laadige rakendus alla.
+"</string>
+    <string name="qs_brightness_auto_brightness_summary">Saate jälgida heleduse kohandamist ja rakendada neid seadistusi sarnastes valgusoludes automaatselt.</string>
+    <string name="qs_brightness_auto_brightness_summary_nopac">Saate muuta ekraani heledust automaatselt, võttes aluseks praegused valgustingimused.</string>
+    <string name="qs_brightness_auto_brightness_title">Automaatne heledus</string>
+    <string name="qs_brightness_control_on_the_top_summary">Saate kuvada heleduse juhtnuppu teavituste paneeli kohal.</string>
+    <string name="qs_brightness_control_on_the_top_title">Juhtnupu kuvamine üleval</string>
+    <string name="qs_brightness_detail_level">Tase</string>
+    <string name="qs_brightness_detail_title">Heledus</string>
+    <string name="qs_brightness_eye_strain_dialog_body">"Kõrge heleduse kasutamine pika aja jooksul võib väsitada silmi ja suurendab akukasutust.
+Toksake valikut OK, et lubada heleduse tõstmine üle ohutu taseme."</string>
+    <string name="qs_brightness_outdoor_mode_summary">Saate tõsta ekraani heledust välitingimuste jaoks. 15 minuti möödudes lülitub välitingimuste režiim välja, kui te just ekraani ikka veel ei kasuta.</string>
+    <string name="qs_brightness_outdoor_mode_title">Välitingimuste režiim</string>
+    <string name="qs_contact_us">Võtke meiega ühendust</string>
+    <string name="qs_detail_capture_mode">Screen capture mode</string>
+    <string name="qs_detail_capture_mode_text">Select the function you want to add to the quick settings panel.</string>
+    <string name="qs_detail_capture_screen">Jäädvusta kuva</string>
+    <string name="qs_detail_flashlight_title">Taskulamp</string>
+    <string name="qs_detail_palm_capture_title">Pihuga libistamine, et jäädvustada</string>
+    <string name="qs_detail_please_wait">Palun oodake…</string>
+    <string name="qs_detail_recorder_screen">Record screen</string>
+    <string name="qs_detail_secure_wifi_not_connected_toast">Turvalise Wi-Fi jaoks peab Wi-Fi olema sisse lülitatud. Lülitage Wi-Fi menüüs Seaded sisse ja proovige uuesti.</string>
+    <string name="qs_detail_secure_wifi_title">Turvaline Wi-Fi</string>
+    <string name="qs_detail_secured_wifi_summary_off">Saate kaitsta oma privaatsust sirvimisel ja blokeerida või krüptida kõik ebaturvalised taotlused.</string>
+    <string name="qs_detail_secured_wifi_summary_on">Sees</string>
+    <string name="qs_detail_smart_capture_title">Nutikas jäädvustamine</string>
+    <string name="qs_edit_panel_badge_text">U</string>
+    <string name="qs_edit_setting_active_area_tapped">Kiirseadete paneelis.</string>
+    <string name="qs_edit_setting_available_area_tapped">Pole kiirseadete paneelis.</string>
+    <string name="qs_edit_summary">Lohistage nuppusid üleval olevale alale, et lisada neid kiirseadete paneelile.</string>
+    <string name="qs_location_consent_dialog_body_message_dcm">GPS-asukohta ja teie asukohaandmete kasutamist kontrollib rakendus, mida te kasutate.</string>
+    <string name="qs_location_consent_dialog_body_message_vzw">"Teie telefon saab jagada oma ligikaudset asukohta rakenduste ja teenustega (nt Kaardid, Šoppamine ja Ilm).
+
+Teie asukohta kasutavad rakendused ja teenused peaksid teid sellest teavitama. Enne mis tahes rakenduse või teenuse kasutamist lugege läbi nende privaatsuspoliitika, et saada aru, kuidas nad teie asukohateavet koguvad, kasutavad ja jagavad.
+
+Teie asukoha määramine kasutab mobiilsidevõrku. Rakenduvad andmesidekasutustasud."</string>
+    <string name="qs_location_consent_dialog_body_message_vzw_tablet">"Teie tahvelarvuti saab jagada oma ligikaudset asukohta rakenduste ja teenustega (nt Kaardid, Šoppamine ja Ilm).
+
+Teie asukohta kasutavad rakendused ja teenused peaksid teid sellest teavitama. Enne mis tahes rakenduse või teenuse kasutamist lugege läbi nende privaatsuspoliitika, et saada aru, kuidas nad teie asukohateavet koguvad, kasutavad ja jagavad.
+
+Teie asukoha määramine kasutab mobiilsidevõrku. Rakenduvad andmesidekasutustasud."</string>
+    <string name="qs_location_consent_dialog_title_dcm">Kasutaja nõusolek</string>
+    <string name="qs_location_consent_dialog_title_vzw">Asukoha nõusolek</string>
+    <string name="qs_location_detail_default_title">Asukoht</string>
+    <string name="qs_location_detail_gps_title">GPS</string>
+    <string name="qs_location_detail_mode_battery_saving">Aku säästmine</string>
+    <string name="qs_location_detail_mode_battery_saving_description">Asukoha määramine Wi-Fi ja mobiilsidevõrgu kaudu</string>
+    <string name="qs_location_detail_mode_high_accuracy">Kõrge täpsus</string>
+    <string name="qs_location_detail_mode_high_accuracy_description">Asukoha määramine GPS-i, Wi-Fi ja mobiilsidevõrgu kaudu</string>
+    <string name="qs_location_detail_mode_sensors_only_description">Kasutab GPS-i, et leida teie asukohta</string>
+    <string name="qs_location_detail_mode_sensors_only_phone">Ainult telefon</string>
+    <string name="qs_location_detail_mode_sensors_only_tablet">Ainult tahvelseade</string>
+    <string name="qs_location_detail_mode_summary_title">Asukoha määramise viis</string>
+    <string name="qs_location_detail_summary_default">Asukoha määramine GPS-i, Wi-Fi ja mobiilsidevõrgu kaudu</string>
+    <string name="qs_multisim_data_preffered_btn_title">Mobiilne andmeside</string>
+    <string name="qs_multisim_data_switching">"SIM-kaarti vahetatakse ikka veel…
+Proovige hiljem uuesti."</string>
+    <string name="qs_multisim_data_turned_off">Välja lülitatud</string>
+    <string name="qs_multisim_sms_preffered_btn_title">Tekstsõnumid</string>
+    <string name="qs_multisim_voice_ask_always">Küsi alati</string>
+    <string name="qs_multisim_voice_preffered_btn_title">Kõned</string>
+    <string name="quick_panel_data_usage">Data usage</string>
+    <string name="quick_settings_airplane_mode_label">"Lennu-
+režiim"</string>
+    <string name="quick_settings_blf_detail_seekbar">Läbipaistmatus</string>
+    <string name="quick_settings_blf_detail_summary">Vähendage silmade väsimist, piirates ekraanilt kiirgava sinise valguse kogust.</string>
+    <string name="quick_settings_bluelightfilter_detail_title">Sinise valguse filter</string>
+    <string name="quick_settings_bluelightfilter_label">"Sin. valg.
+filter"</string>
+    <string name="quick_settings_bluetooth_connected_devices">"%d seadet
+on ühendatud"</string>
+    <string name="quick_settings_bluetooth_detail_available_devices_title">Saadaolevad seadmed</string>
+    <string name="quick_settings_bluetooth_detail_empty_text_available">Lähedusest ei leitud Bluetooth-seadmeid</string>
+    <string name="quick_settings_bluetooth_detail_off_text">Sidumiseks saadaolevate seadmete või juba seotud seadmete loendi nägemiseks lülitage Bluetooth-ühendus sisse.</string>
+    <string name="quick_settings_bluetooth_detail_paired_devices_title">Seotud seadmed</string>
+    <string name="quick_settings_bluetooth_label">Bluetooth</string>
+    <string name="quick_settings_data_roaming_detail_title">Andmerändlus</string>
+    <string name="quick_settings_data_roaming_label">"Andme-
+rändlus"</string>
+    <string name="quick_settings_dnd_detail_title">Mitte segada</string>
+    <string name="quick_settings_dnd_summary">Saate vaigistada kõik kõned, märguanded ja meediumisisu, v.a valitud erandid.</string>
+    <string name="quick_settings_done">Valmis</string>
+    <string name="quick_settings_dual_label_content_description">%s, nupu silt, topelttoksake, et kuvada asjakohased kiirseaded.</string>
+    <string name="quick_settings_enable">Luba</string>
+    <string name="quick_settings_flashlight_detail_level">Tase</string>
+    <string name="quick_settings_flashlight_detail_title">Heledus</string>
+    <string name="quick_settings_flashlight_detail_warning">Kaameratuli võib põhjustada madaltemperatuuri põletusi, kui see puutub pikka aega nahaga kokku. Ärge hoidke tuld %s pikka aega sees.</string>
+    <string name="quick_settings_flight_mode_detail_off_summary_non_volte_vzw">Airplane mode turns off all network connections, including mobile data and Wi-Fi. Turn on Wi-Fi to use apps that require a data connection.</string>
+    <string name="quick_settings_flight_mode_detail_off_summary_volte_vzw">Airplane mode turns off all network connections, including mobile data and Wi-Fi. Your phone will not be able to use Video Calling while Airplane mode is on. Turn on Wi-Fi to use apps that require a data connection.</string>
+    <string name="quick_settings_flight_mode_detail_on_summary_non_volte_vzw">Unless you use Wi-Fi, you will not be able to use the Internet, Email, or other apps that require a data connection.</string>
+    <string name="quick_settings_flight_mode_detail_on_summary_volte_vzw">Unless you use Wi-Fi, you will not be able to use Internet, Email, or other apps that require a data connection. Your phone will not be able to use Video Calling while Airplane mode is on.</string>
+    <string name="quick_settings_flight_mode_detail_summary">"Lülitage helistamine, sõnumside ja mobiilne andmeside välja.
+
+Wi-Fi ja Bluetooth lülitatakse samuti välja, kuid need saate menüüs Seaded või kiirseadete paneelil uuesti sisse lülitada."</string>
+    <string name="quick_settings_flight_mode_detail_title">Lennurežiim</string>
+    <string name="quick_settings_it_policy_prevents">Turvalisuse poliis takistab funktsiooni %s kasutamist.</string>
+    <string name="quick_settings_mobile_data_detail_summary">Saate kasutada internetti oma mobiilsidevõrgu kaudu.</string>
+    <string name="quick_settings_mobile_data_detail_title">Mobiilne andmeside</string>
+    <string name="quick_settings_mobile_data_label">"Mob.-
+andmes."</string>
+    <string name="quick_settings_mobile_hotspot_label">"Mobiilne
+kuumkoht"</string>
+    <string name="quick_settings_mobile_hotspot_label_jpn">"Wi-Fi
+modem"</string>
+    <string name="quick_settings_phone_visibility_label">Telefoni nähtavus</string>
+    <string name="quick_settings_reading_mode_detail_title">Lugemisrežiim</string>
+    <string name="quick_settings_reading_mode_label">"Lug.-
+režiim"</string>
+    <string name="quick_settings_reading_mode_summary">Ekraan on optimeeritud lugemise jaoks. See režiim on saadaval ainult valitud rakendustes.</string>
+    <string name="quick_settings_reset">Lähtesta</string>
+    <string name="quick_settings_rotation_lock_auto_rotate">Pööra automaatselt</string>
+    <string name="quick_settings_rotation_lock_two_toggle_detail_summary">Pöörab ekraani automaatselt, kui teie telefoni suund muutub.</string>
+    <string name="quick_settings_rotation_lock_two_toggle_detail_summary_for_tablet">Pöörab ekraani automaatselt, kui teie tahvelseadme suund muutub.</string>
+    <string name="quick_settings_rotation_locked_landscape_label">"Rõht-
+paigutus"</string>
+    <string name="quick_settings_rotation_locked_portrait_label">"Püst-
+paigutus"</string>
+    <string name="quick_settings_rotation_unlocked_label">"Autom.
+pööram."</string>
+    <string name="quick_settings_screen_capture_label">"Capture
+screen"</string>
+    <string name="quick_settings_screen_recorder_label">"Record
+screen"</string>
+    <string name="quick_settings_sec_dnd_label">"Mitte
+segada"</string>
+    <string name="quick_settings_settings">SEADED</string>
+    <string name="quick_settings_sound_mode_detail_label">Helirežiim</string>
+    <string name="quick_settings_sound_mode_detail_mixer_dnd_turned_on">Valik Mitte segada on sisse lülitatud</string>
+    <string name="quick_settings_sound_mode_detail_mixer_title">Helitugevus</string>
+    <string name="quick_settings_sound_mode_detail_mute_remaining">Vaigista (jäänud %s)</string>
+    <string name="quick_settings_sound_mode_detail_temporary_mute_duration">Vaigistuse kestus</string>
+    <string name="quick_settings_sound_mode_detail_temporary_mute_summary">Kui teie määratud aeg on möödunud, lülitub helirežiim tagasi eelmisele helirežiimile (%s). Aega saate muuta, kui toksate valikut ÜKSIKASJAD.</string>
+    <string name="quick_settings_sound_mode_detail_temporary_mute_title">Ajutine vaigistamine</string>
+    <string name="quick_settings_sound_mode_mute_label">Vaigista</string>
+    <string name="quick_settings_sound_mode_sound_label">Heli</string>
+    <string name="quick_settings_sound_mode_vibrate_label">Värin</string>
+    <string name="quick_settings_tablet_visibility_label">"Tahvels.
+nähtavus"</string>
+    <string name="quick_settings_uhq_mode_label">"UHQ
+upscaler"</string>
+    <string name="quick_settings_volte_label_ZVV">4G hääl</string>
+    <string name="quick_settings_volte_summary">Kasuta saadavusel VoLTE-d</string>
+    <string name="quick_settings_volte_summary_zvv">Saate aktiveerida täiustatud kommunikatsiooni 4G-andmeside abil.</string>
+    <string name="quick_settings_wifi_detail_available_networks_title">Kättesaadavad võrgud</string>
+    <string name="quick_settings_wifi_detail_current_network_title">Aktiivne võrk</string>
+    <string name="quick_settings_wifi_detail_off_text">Saadaolev. vorkude nagemiseks lulitage Wi-Fi sisse.</string>
+    <string name="quick_settings_wifi_detail_scanning_text">Wi-Fi võrkude skannimine…</string>
+    <string name="quick_settings_wifi_label">Wi-Fi</string>
+    <string name="quick_settings_wificalling_cs_preferred">Mobiilsidevõrgu eelist.</string>
+    <string name="quick_settings_wificalling_label">"Wi-Figa
+helistam."</string>
+    <string name="quick_settings_wificalling_label_ZVV">Wi-Fi hääl</string>
+    <string name="quick_settings_wificalling_summary">Kasutage Wi-Fi võrkusid, et helistada kõikjale ja võtta kõikjalt kõnesid vastu, ilma et peaksite looma ühendust mobiilsidevõrguga.</string>
+    <string name="quick_settings_wificalling_summary_with_help_noti">"Saate kasutada Wi-Fi võrke, et kõikjal ilma mobiilsidevõrku kasutamata helistada ja kõnesid vastu võtta.
+
+Kui teenus on saadaval, ilmub teavituste paneelile Wi-Fi helistamise ikoon, nagu allpool näidatud."</string>
+    <string name="quick_settings_wificalling_summary_zvv">Saate aktiveerida täiustatud kommunikatsiooni Wi-Fi-võrkude abil.</string>
+    <string name="quick_settings_wificalling_wifi_only">Ainult Wi-Fi</string>
+    <string name="quick_settings_wificalling_wifi_preferred">Wi-Fi eelistamine</string>
+    <string name="quick_settings_workmode_detail_summary">"Inaktiveerige %s, sh töörakendused, teavitused ja tausta sünkroonimine.
+
+Te saate kasutada oma telefoni, ilma et töö teid segaks."</string>
+    <string name="recents_accessibility_message">Hiljut.-d</string>
+    <string name="recents_app_list_more_apps">Rak. loe.</string>
+    <string name="recents_app_list_multi_window_apps">Mitmikakna rakendused</string>
+    <string name="recents_app_list_recommendations">Sageli kasutatud rakendused</string>
+    <string name="recents_aspect_ratio_button_description">Rakenduse kuvasuhte muutmine</string>
+    <string name="recents_close_all_button_text">Sulge kõik</string>
+    <string name="recents_close_button_description">Sulge</string>
+    <string name="recents_drag_freeform_hint_message">Lohistage siia hüpikvaate jaoks</string>
+    <string name="recents_drag_incompatible_app_message">Seda rakendust ei saa kasutada mitmikakna vaates.</string>
+    <string name="recents_drag_split_hint_message">Lohistage siia poolitatud ekraani vaate jaoks</string>
+    <string name="recents_empty_message">Hiljuti kasutatud rakendusi pole</string>
+    <string name="recents_floating_action_button_desc">Nupp %1$s</string>
+    <string name="recents_help_dlg_full_page1">Poolitatud ekraani vaate kasutamiseks toksake valikul %s. Valige ekraani alumises pooles kuvatav rakendus.</string>
+    <string name="recents_help_dlg_full_page1_desc">Poolitatud ekraani vaate kasutamiseks toksake poolitatud ekraani vaates avamise ikooni. Valige rakendus, mis kuvatakse ekraani alumises pooles.</string>
+    <string name="recents_help_dlg_full_page2_hardkey">Saate lülitada rakenduse täisekraanilt poolitatud ekraani vaatesse, kui vajutate ja hoiate hiljutiste klahvi.</string>
+    <string name="recents_help_dlg_full_page2_softkey">Saate lülitada rakenduse täisekraanilt poolitatud ekraani vaatesse, kui puudutate ja hoiate hiljutiste nuppu.</string>
+    <string name="recents_help_dlg_full_page2_softkey_snap">Akna tõmbamise kasutamiseks toksake ikooni %s. Valige ekraani ülaosas dokkimiseks rakenduse ala, enne kui see kuvatakse poolitatud ekraani vaates.</string>
+    <string name="recents_help_dlg_full_page2_softkey_snap_desc">Akna tõmbamise kasutamiseks toksake akna tõmbamise ikooni. Valige ekraani ülaosas dokkimiseks rakenduse ala, enne kui see kuvatakse poolitatud ekraani vaates.</string>
+    <string name="recents_help_dlg_lock_task_page1">Toksake rakenduse akna pealkirjaribal ikooni %1$s, et rakendused lukustada. Lukustatud rakendusi ei eemaldata isegi siis, kui toksate käsku SULGE KÕIK. Avamiseks toksake ikooni %2$s.</string>
+    <string name="recents_help_dlg_lock_task_page1_desc">Toksake rakenduse akna pealkirjaribal lukuikooni, et rakendused lukustada. Lukustatud rakendusi ei eemaldata isegi siis, kui toksate käsku SULGE KÕIK. Avamiseks toksake avamise ikooni.</string>
+    <string name="recents_help_dlg_next_button_text">Järgmine</string>
+    <string name="recents_help_setting_button_text">Seaded</string>
+    <string name="recents_help_title_split_screen_view">Poolitatud ekraani vaade</string>
+    <string name="recents_help_title_split_screen_view_action">Poolitatud ekraani vaate toiming</string>
+    <string name="recents_launch_error_toast">Ei saa avada rakendust %s.</string>
+    <string name="recents_lock_to_app_button_description">Kinnita aknad</string>
+    <string name="recents_menu_contact_us">Võtke meiega ühendust</string>
+    <string name="recents_menu_help">Spikker</string>
+    <string name="recents_menu_lock_app">Lukusta rakendused</string>
+    <string name="recents_menu_more">Veel</string>
+    <string name="recents_menu_more_desc">Veel valikuid</string>
+    <string name="recents_menu_settings">Seaded</string>
+    <string name="recents_menu_view_type_list">Loendivaade</string>
+    <string name="recents_menu_view_type_thumbnail">Pisipildivaade</string>
+    <string name="recents_scroll_down">Keri alla</string>
+    <string name="recents_scroll_up">Keri üles</string>
+    <string name="recents_snap_button_description">Akna tõmbamine</string>
+    <string name="recents_split_button_description">Poolitatud ekraani vaates avamine</string>
+    <string name="recents_task_lock_cancel">Tühista</string>
+    <string name="recents_task_lock_done">Valmis</string>
+    <string name="recents_task_lock_edit_lock_label">Lukus</string>
+    <string name="recents_task_lock_edit_task_lock_desc">%s on lukustatud</string>
+    <string name="recents_task_lock_edit_task_unlock_desc">%s on avatud</string>
+    <string name="recents_task_lock_edit_unlock_desc">Ava %s</string>
+    <string name="recents_task_lock_edit_unlock_label">Avatud</string>
+    <string name="recents_task_lock_normal_lock_desc">Lukusta %s</string>
+    <string name="recents_task_lock_normal_lock_label">Ava luk.</string>
+    <string name="recents_task_lock_normal_unlock_toast">%s on avatud.</string>
+    <string name="remote_input_send_text">Saada</string>
+    <string name="reserve_battery_mode">Aku reserveerimise režiim</string>
+    <string name="retry">Uuesti</string>
+    <string name="rotation_lock_auto_rotate">Pööra automaatselt</string>
+    <string name="rotation_lock_show_toast_mobile_keyboard_message">Eemaldage klaviatuuri kate seadmelt, et aktiveerida %s.</string>
+    <string name="safe_mode_alert_body">Teie telefon taaskäivitub ja kõik rakendused on jälle saadaval.</string>
+    <string name="safe_mode_alert_body_tablet">Teie tahvelarvuti taaskäivitub ja kõik teie rakendused on jälle saadaval.</string>
+    <string name="safe_mode_alert_body_vzw">Do you want to restart your phone to turn off Safe Mode? All of your apps will be restored.</string>
+    <string name="safe_mode_alert_positive_button">Lülita välja</string>
+    <string name="safe_mode_alert_positive_button_vzw">Turn Off Safe Mode</string>
+    <string name="safe_mode_alert_title">Kas lülitada turvaline režiim välja?</string>
+    <string name="safe_mode_alert_title_vzw">Turn Off Safe Mode</string>
+    <string name="safe_mode_noti_body">Toksake siia, et lülitada turvaline režiim välja.</string>
+    <string name="safe_mode_noti_body_vzw">Tap to turn off Safe Mode.</string>
+    <string name="safe_mode_noti_title">Turv. režiim on sisse lülitatud</string>
+    <string name="safe_mode_noti_title_vzw">Safe Mode Is On</string>
+    <string name="sanitized_content_text">Toksake siia, et siseneda rakendusse %s.</string>
+    <string name="screen_capture_delete">Kustuta</string>
+    <string name="screen_capture_edit">Muuda</string>
+    <string name="screen_capture_fail_for_security_policy">Ekraanipilti ei saa turvalisuse poliisi tõttu jäädvustada.</string>
+    <string name="screen_capture_share">Jaga</string>
+    <string name="screen_grid">Nuppude ruudustik</string>
+    <string name="screen_grid_content_description">%1$d korda %2$d</string>
+    <string name="screen_grid_popup_apply">Rakenda</string>
+    <string name="screen_grid_popup_ok">OK</string>
+    <string name="screen_grid_popup_title">Nuppude ruudustik</string>
+    <string name="screenshot_cancel">Tühista</string>
+    <string name="screenshot_guide_dialog_msg">Vajutage ja hoidke toitenuppu ja helitugevuse vähendamise nuppu samaaegselt, et jäädvustada ekraanipilt.</string>
+    <string name="screenshot_guide_dialog_title">Ekraanipiltide jäädvustamine</string>
+    <string name="screenshot_saved_text">Toksake kuvamiseks siia.</string>
+    <string name="screenshot_saved_title">Ekraanipilt jäädvustatud</string>
+    <string name="search_more_menu_contact_us">Võtke meiega ühendust</string>
+    <string name="search_more_menu_for_dex">Samsung DeX-i rak.-d</string>
+    <string name="search_more_menu_settings">Samsung DeX-i seaded</string>
+    <string name="sec_accessibility_back">Tagasi</string>
+    <string name="sec_accessibility_desc_recent_apps">Hiljut.-d</string>
+    <string name="sec_accessibility_home">Kodu</string>
+    <string name="sec_accessibility_navbar_hide_pin">Navigatsiooniriba peitmine</string>
+    <string name="sec_accessibility_navbar_show_pin">Lukusta navigatsiooniriba</string>
+    <string name="sec_accessibility_recent">Hiljutised</string>
+    <string name="sec_accessibility_recents_all_items_closed">Kõik rakendused on suletud</string>
+    <string name="sec_accessibility_recents_all_unlocked_items_closed">Kõik mittelukustatud rakendused on suletud</string>
+    <string name="sec_accessibility_recents_item_dismissed">%s on suletud.</string>
+    <string name="sec_accessibility_recents_item_open_app_info">Ava rakenduse %s teave</string>
+    <string name="sec_accessibility_recents_item_will_be_dismissed">Sulge rakendus %s</string>
+    <string name="sec_block_this_notification_text">Blokeeri see teavitus</string>
+    <string name="sec_data_usage_disabled_dialog_body">Andmesidekasutus jõudis teie poolt määratud piirini. Mobiilse andmeside uuesti sisselülitamisel võivad rakenduda lisatasud.</string>
+    <string name="sec_data_usage_disabled_dialog_body_vzw">"You've reached your specified data usage limit, so mobile data has been turned off.
+
+If you turn mobile data back on, you may be charged for data usage by your carrier."</string>
+    <string name="sec_data_usage_disabled_dialog_enable">Lül. mob.side sisse</string>
+    <string name="sec_data_usage_disabled_dialog_enable_vzw">Turn on data</string>
+    <string name="sec_data_usage_disabled_dialog_keep_off">Hoia välj.</string>
+    <string name="sec_data_usage_disabled_dialog_mobile_title">Mobiilne andmeside on välja lülitatud</string>
+    <string name="sec_data_usage_disabled_dialog_mobile_title_vzw">Mobile data is now off</string>
+    <string name="sec_data_usage_disabled_dialog_turn_off">Lül. välja</string>
+    <string name="sec_dock_non_resizeble_failed_to_dock_text">Seda rakendust ei saa kasutada mitmikakna vaates.</string>
+    <string name="sec_qs_edit">Muuda</string>
+    <string name="sec_qs_unable_remove_minimum">Nuppu ei saa eemaldada. Nuppude minimaalne arv (%d) on saavutatud.</string>
+    <string name="sec_quick_settings_details">Üksikasjad</string>
+    <string name="sec_quick_settings_flashlight_label">Taskulamp</string>
+    <string name="sec_reorder_buttons">Nuppude järjestus</string>
+    <string name="sec_running_foreground_services_msg">Toksake rakendust, et saada teada, kui palju akut ja andmesidet see kasutab.</string>
+    <string name="sec_running_foreground_services_title">Akut kasutavad rakendused</string>
+    <string name="servicebox_alarm_next">Järgmine märguanne</string>
+    <string name="servicebox_alarm_no_alarm">Järgmise 7 päeva jooksul pole ühtki märguannet</string>
+    <string name="servicebox_event_calendar">Kalender</string>
+    <string name="servicebox_event_my_event">Minu sündmus</string>
+    <string name="servicebox_event_no_events">Sündmusi või ülesandeid pole</string>
+    <string name="servicebox_event_open_ss">Ava %s</string>
+    <string name="servicebox_event_task">Ülesanne</string>
+    <string name="servicebox_event_time_all_day">Kogu päev</string>
+    <string name="servicebox_music_closed">Teie muusika kontroller vajab muusikat. Avage oma telefon ja esitage muusikat, et kuvada kontroller.</string>
+    <string name="servicebox_music_description_album_cover">Albumi kaas</string>
+    <string name="servicebox_music_description_next">Järgmine</string>
+    <string name="servicebox_music_description_pause">Peata</string>
+    <string name="servicebox_music_description_play">Esita</string>
+    <string name="servicebox_music_description_prev">Eelmine</string>
+    <string name="servicebox_music_lyrics">Sõnad</string>
+    <string name="servicebox_music_play_first">Pärast muusikamängija kasutamist saate juhtida oma muusikat lukustusekraanilt.</string>
+    <string name="servicebox_music_unknown">Tundmatu</string>
+    <string name="servicebox_noti_btn">Seaded</string>
+    <string name="servicebox_noti_exp">Kasutage lukustusekraanil ja Always On Displayl FaceWidgetsit, et saada kiire juurdepääs oma muusikale.</string>
+    <string name="servicebox_noti_title">FaceWidgetsi kasutamine</string>
+    <string name="show_notification_channel_warnings">Teavit. kanali hoiatuste kuvamine</string>
+    <string name="show_notification_channel_warnings_summary">Saate kuvada ekraanil hoiatuse, kui rakendus saadab teavituse ilma kehtiva kanalita.</string>
+    <string name="sim_card_tray_empty_water_protection_dialog_body">Veekahjustuse vältimiseks veenduge, et SIM-/SD-kaardi hoidik oleks korralikult suletud.</string>
+    <string name="sim_card_tray_water_protection_dialog_body">"SIM-kaarti ei saa tuvastada. Teie seade ei saa teha selliseid toiminguid nagu helistamine ja mobiilsidevõrkudega ühendamine.
+
+Veekahjustuste vältimiseks veenduge, et SIM-/SD-kaardi hoidik oleks korralikult suletud."</string>
+    <string name="sim_card_tray_water_protection_dialog_title">SIM-/SD-kaardi hoidiku kontrollimine</string>
+    <string name="snap_window_already_used">Akna tõmbamist kasutatakse juba.</string>
+    <string name="snap_window_cant_use">Ei saa kasutada akna tõmbamist.</string>
+    <string name="snap_window_open_app_to_used">Avage rakendus, et kasutada funktsiooni Akna tõmbamine.</string>
+    <string name="snapview_cancel">Tühista</string>
+    <string name="snapview_dismiss_landscape">Akna tõmbamist eirati. Rõhtpaigutusvaates ei saa kasutada akna tõmbamist.</string>
+    <string name="snapview_dismiss_resize">Akna tõmbamist eirati.</string>
+    <string name="snapview_done">Valmis</string>
+    <string name="snapview_guide_text">Valige ekraani ülaosas dokkimiseks ala.</string>
+    <string name="snapview_not_support_landscape">Rõhtpaigutusvaates ei saa kasutada akna tõmbamist.</string>
+    <string name="snapview_not_support_multiwindow">Seda rakendust ei saa kasutada mitmikakna vaates.</string>
+    <string name="snooze_icon_description">Korduse teavitus</string>
+    <string name="snooze_notification_guide_text">See teavitus ilmub taas, kui möödunud on aeg, mille saate valida allpool.</string>
+    <string name="snooze_title">Korduse teavitus</string>
+    <string name="status_bar_sec_airplane_mode_text">Lennurežiim</string>
+    <string name="status_icon_alarm">Märguanne</string>
+    <string name="status_icon_battery">Aku</string>
+    <string name="status_icon_bluetooth">Bluetooth</string>
+    <string name="status_icon_data_network">Andmevõrk</string>
+    <string name="status_icon_network_booster">Võrguvõimendi</string>
+    <string name="status_icon_rssi">Signaali tugevus</string>
+    <string name="status_icon_wifi">Wi-Fi</string>
+    <string name="statusbar_maximum_power_saving_description">Maks. energiasäästurežiim sees</string>
+    <string name="statusbar_power_saving_description">Energiasäästurežiim sees</string>
+    <string name="str_not_support_multi_drop">Tegumiribale ei saa lisada mitut üksust. Lohistage korraga 1 üksus.</string>
+    <string name="switched_to_onephone_mode">Režiim lülitati ühe numbri režiimi peale.</string>
+    <string name="switched_to_twophone_mode">Lülitatud kahe numbri režiimile.</string>
+    <string name="taskbar_context_menu_app_notification_settings">Rakenduse teavitused</string>
+    <string name="taskbar_context_menu_capture_fullscreen">Täis ekraanipilt</string>
+    <string name="taskbar_context_menu_capture_region">Osaline ekraanipilt</string>
+    <string name="taskbar_context_menu_clear_notification">Tühjenda</string>
+    <string name="taskbar_context_menu_close">Sulge</string>
+    <string name="taskbar_context_menu_close_desk_notification_view">Peida teavitused</string>
+    <string name="taskbar_context_menu_disable">Desaktiveeri</string>
+    <string name="taskbar_context_menu_on_screen_keyboard">Ekraanil kuvatav klaviatuur</string>
+    <string name="taskbar_context_menu_open">Ava</string>
+    <string name="taskbar_context_menu_open_desk_notification_view">Kuva teavitused</string>
+    <string name="taskbar_context_menu_open_in_new_browser">Ava uues aknas</string>
+    <string name="taskbar_context_menu_physical_keyboard">Füüsiline klaviatuur</string>
+    <string name="taskbar_context_menu_pin">Kinnita otsetee tegumiribale</string>
+    <string name="taskbar_context_menu_secure_add">Lisa turvalisse kausta</string>
+    <string name="taskbar_context_menu_uninstall">Desinstalli</string>
+    <string name="taskbar_context_menu_unpin">Eemalda otsetee tegumiribalt</string>
+    <string name="taskbar_keyboard_guided_tour_action">Seaded</string>
+    <string name="taskbar_keyboard_guided_tour_message">Klaviatuuri keele ja paigutuse määramiseks klõpsake valikul SEADED või paremklõpsake alloleval ikoonil ja seejärel klõpsake valikul Füüsiline klaviatuur.</string>
+    <string name="taskbar_keyboard_guided_tour_title">Klaviatuuri seadete muutmine</string>
+    <string name="taskbar_shortcut_pinned_toast">Otsetee on kinnitatud tegumiribale.</string>
+    <string name="taskbar_shortcut_unpinned_toast">Otsetee on tegumiribalt eemaldatud.</string>
+    <string name="taskbar_volume_connect_audio_device">Ühendage heliseade, et muuta helisisendi seadeid.</string>
+    <string name="taskbar_volume_context_menu_change_audio_path_smart_things">Heliväljundi muutmiseks tuleb alla laadida ja installida %s.</string>
+    <string name="taskbar_volume_context_menu_download">Laadi al.</string>
+    <string name="taskbar_volume_context_menu_install_smart_things">Kas installida %s?</string>
+    <string name="taskbar_volume_context_menu_smart_things">SmartThings</string>
+    <string name="tethering_attention_title">Tähelepanu!</string>
+    <string name="time_format_hour">%d h</string>
+    <string name="time_format_hour_minute">%1$dh %2$dmin</string>
+    <string name="time_format_minute">%d min</string>
+    <string name="to_use_this_function_download_ps">Laadige %s alla, et kasutada seda funktsiooni.</string>
+    <string name="toast_remove_keyboard">Eemaldage klaviatuuri kate, et kasutada funktsiooni %s.</string>
+    <string name="tooltip_all_apps">Rakendused</string>
+    <string name="tooltip_close">Sulge rakendus</string>
+    <string name="tooltip_collapse">Ahenda</string>
+    <string name="tooltip_expand">Laienda</string>
+    <string name="tooltip_finder">Finder</string>
+    <string name="tooltip_homescreen">Kodu</string>
+    <string name="tooltip_keyboard">Klaviatuur</string>
+    <string name="tooltip_labs">Samsung DeX-i laborid</string>
+    <string name="tooltip_next_app">Järgmine rakendus</string>
+    <string name="tooltip_previous_app">Eelmine rakendus</string>
+    <string name="tooltip_recents">Hiljutised</string>
+    <string name="tooltip_screen_capture">Ekraanipilt</string>
+    <string name="tooltip_volume">Helitugevus</string>
+    <string name="tts_default_rate_title">Kõne kiirus</string>
+    <string name="tts_lang_use_system">Kasuta süsteemi keelt</string>
+    <string name="tts_settings_title">Tekst kõneks</string>
+    <string name="tw_cover_volume_warning_message">Kõrgel helitugevusel kuulamine pika aja jooksul võib kahjustada kuulmist. Helitugevuse suurendamiseks avage kaas.</string>
+    <string name="tw_safe_media_volume_warning">Kõrgel helitugevusel kuulamine pika aja jooksul võib kahjustada teie kuulmist. Toksake valikut OK, et lubada helitugevuse suurendamist üle ohutu taseme.</string>
+    <string name="tw_safe_media_volume_warning_kids_mode">Helitugevus ei tohi ületada soovituslikku ohutuspiirangut (%s), kui lasterežiimis on ühendatud kõrvaklapid.</string>
+    <string name="uhq_mode_noti_text">Täiustage muusika ja videote heli eraldusvõimet, et pakkuda puhtamat kuulamiselamust.</string>
+    <string name="uhq_mode_noti_title">UHQ ülesskaleerija</string>
+    <string name="uhq_toast_earphone_connect_request">Ühendage UHQ upscaleri kasutamiseks kuularid.</string>
+    <string name="unable_to_capture_screen_emergencymode">Hädaabirežiimis ei saa ekraani jäädvustada.</string>
+    <string name="unable_to_capture_screen_ultrapowersaving_mode">Ekraanipilti ei saa jäädvustada.</string>
+    <string name="unable_to_turn_on_being_used_by_camera">Rakendust %s ei saa sisse lülitada. Mõni muu rakendus kasutab kaameratuld.</string>
+    <string name="uninstall_1_app_message">Kas soovite desinstallida selle rakenduse?</string>
+    <string name="uninstall_apps_message">Järgmised rakendused desinstallitakse:</string>
+    <string name="uninstall_cancel">Tühista</string>
+    <string name="uninstall_confirm">OK</string>
+    <string name="uninstall_title">Kas desinstallida rakendused?</string>
+    <string name="unintentional_lcd_on_alert_body">Selleks, et see rohkem ei juhtuks, kontrollige, kas lähedussensor on blokeeritud.</string>
+    <string name="unintentional_lcd_on_alert_body2">Toksake nuppu %s, et jätkata oma telefoni kasutamist.</string>
+    <string name="unintentional_lcd_on_alert_title">Puutesisend on blokeeritud</string>
+    <string name="volte_show_toast_airplane_mode">VoLTE-d ei saa kasutada, kui lennurežiim on aktiveerutud. Desaktiveerige lennurežiim ja proovige uuesti.</string>
+    <string name="volte_show_toast_disable_not_allowed">Teenusepakkuja ei tohi VoLTE-t inaktiveerida.</string>
+    <string name="volte_show_toast_enable_message">VoLTE-teenuse kasutamiseks tellige VoLTE. Lisateabe saamiseks võtke ühendust oma teenusepakkujaga.</string>
+    <string name="volte_show_toast_impossible_during_volte_call">VoLTE kasutamist saadavusel ei saa desaktiveerida poolelioleva VoLTE-kõne ajal.</string>
+    <string name="volte_show_toast_not_support_operator">Teie praegune tarkvaraversioon ei toeta VoLTE-d. Lisateabe saamiseks võtke ühendust klienditeenindusega.</string>
+    <string name="volume_cant_change_volume_smart_view">Seadmes %s ei saa muuta helitugevust, kui meediumi heli on vaigistatud.</string>
+    <string name="volume_limiter_notice_toast">Helitugevuse suurendamiseks avage menüü Seaded ning lülitage meediumi helitugevuse piiraja välja või muutke helitugevuse piirangut.</string>
+    <string name="volume_limiter_open_cover_toast">Jätkamiseks avage kaas.</string>
+    <string name="volume_limiter_toast_title">Helitugevuse piirang on saavutatud</string>
+    <string name="volume_mute_all_sounds_on">Kõikide helide vaigistamine sisse lülitatud</string>
+    <string name="volume_stream_dual_audio">Kahekordne heli</string>
+    <string name="volume_use_your_phone_volume_smart_view">Kasutage telefoni helitugevusnuppe, et reguleerida seadme %s helitugevust.</string>
+    <string name="warning_alert_check">Ära enam kuva</string>
+    <string name="water_protection_notification_body">Tuvastati niiskus. Lahutage laadija ja oodake, kuni nii laadija kui ka USB-port on kuivad.</string>
+    <string name="water_protection_notification_title">Eraldage laadija</string>
+    <string name="wfc_enable_dialog_opv_body0">"Wi-Fi Calling is a service of your mobile operator, Orange Polska S.A.
+Please read the description of the service provided by your operator:"</string>
+    <string name="wfc_enable_dialog_opv_body1">Wi-Fi Calling service enables you to make and receive voice calls over any Wi-Fi internet connection, even in a situation where you are outside any mobile network’s coverage. Once the service is active for your mobile number, every time you connect to a Wi-Fi network, your voice calls will be performed using Wi-Fi Calling. This will be indicated to you by a dedicated icon on the notification bar.</string>
+    <string name="wfc_enable_dialog_opv_body2">"If your Wi-Fi connection is of poor quality or your device is outside a Wi-Fi network’s coverage, your phone will make calls using an available mobile network.
+
+Calls you make with Wi-Fi Calling in Poland are charged in the same way as your regular mobile calls in your mobile tariff plan. Incoming calls in Poland are free of charge. If you make Wi-Fi Calling calls outside Poland your calls may be charged a price specified in your mobile tariff plan’s price list.
+
+Notwithstanding, your Wi-Fi connections may be charged independently by the provider of your Wi-Fi connection."</string>
+    <string name="wfc_enable_dialog_opv_body3">"Once you press the [I ACCEPT] button and your phone connects to a Wi-Fi network, your Wi-Fi Calling service will be activated. You can disable Wi-Fi Calling at any time using the phone menu.
+
+Detailed information about your Wi-Fi Calling service can be found at www.orange.pl/wificalling.
+
+Please note that in order to enable your emergency calls (e.g., such as 112 calls) to be routed to the closest emergency centre suitable for your actual location, your emergency calls made while the Wi-Fi Calling service is enabled will be carried by your device through any mobile network available at a given moment. Only in cases where no mobile network is available will an emergency call be routed via the Wi-Fi Calling service. Unfortunately, in such cases we will not know your precise location and therefore your emergency call may not be routed to the emergency centre closest to your actual location."</string>
+    <string name="wfc_enable_dialog_opv_body4">In regard to your use of Wi-Fi Calling, we – as your personal data controller – will process your data based on the number and model of the device on which you use Wi-Fi Calling, the software used on the device, the endpoint of the network used to connect with Wi-Fi Calling (including the IP address and the country to which this IP address is attributed), and the time and duration of each call, in order to perform and settle the service, answer any complaints, and to perform any statutory obligations. We will process this data for the duration of the agreement on providing telecommunication services between you and us, and after its termination – for the period of recovery of claims and of performing other tasks defined in the provisions of law. Providing the data is voluntary, but it is necessary to use the service. You have the right to access and to rectify your data.</string>
+    <string name="wfc_enable_dialog_opv_body5">Please find our data: Orange Polska S.A., address: Aleje Jerozolimskie 160, 02-326 Warsaw, Poland, registered in the Register of the Entrepreneurs of District Court for the Capital City of Warsaw in Warsaw, XII Commercial Division of the National Court Register (KRS), under entry number 0000010681, NIP (tax ID) 526-02-50-995; with share capital (fully paid up) of PLN 3,937,072,437.00.</string>
+    <string name="wfc_enable_dialog_opv_btn">Nõustun</string>
+    <string name="wfc_enable_dialog_opv_title">WELCOME TO WI-FI CALLING SERVICE</string>
+    <string name="wifi_ap_wifi_p2p_off_warn">Mobiilse kuumkoha aktiveerimisel katkestatakse ühendus Wi-Fi Directi kaudu ühendatud seadmetega.</string>
+    <string name="wifi_ap_wifi_p2p_off_warn_china">Kaasaskantava WLAN kuumkoha aktiveerimisel katkestatakse ühendus WLAN Directi kaudu ühendatud seadmega.</string>
+    <string name="wifi_authentication_failed_kt">Wi-Fi pääsupunkti autentimine nurjus.</string>
+    <string name="wifi_authentication_invalid_value">Autentimine ebaõnnestus. Palun kontrollige kehtivaid sertifikaate.</string>
+    <string name="wifi_authentication_no_response">Ühenduse loomine Wi-Fi pääsupunktiga nurjus.</string>
+    <string name="wifi_authentication_succeed_kt">Wi-Fi pääsupunkt on autenditud.</string>
+    <string name="wifi_auto_reconnect_disabled">Automaatne uuesti ühendamine on inaktiveeritud</string>
+    <string name="wifi_connected_checking_quality">Internetiühenduse kvaliteedi kontrollimine…</string>
+    <string name="wifi_disabled_captive_portal">Sisselogimine on nõutud.</string>
+    <string name="wifi_disabled_no_internet">Internet pole saadaval</string>
+    <string name="wifi_disabled_password_failure">Ilmnes autentimistõrge</string>
+    <string name="wifi_disconnected">Wi-Fi ühendus on katkestatud.</string>
+    <string name="wifi_empty_list_user_restricted">Teil pole õigusi, et muuta Wi-Fi seadeid.</string>
+    <string name="wifi_failed_to_obtain_IP">IP-aadressi hankimine nurjus.</string>
+    <string name="wifi_in_airplane_mode">Lennurežiimis</string>
+    <string name="wifi_internet_may_not_be_available">Internet ei pruugi olla saad.</string>
+    <string name="wifi_not_found_hidden_ap">Võrguga ei saa ühendust luua. Võrku nimega %s ei leitud.</string>
+    <string name="wifi_reconnecting">Valmis ühenduse loomiseks, kui võrgukvaliteet paraneb</string>
+    <string name="wifi_sign_in_to_the_network">Saate võrku sisse logida.</string>
+    <string name="wifi_unknown_security_type">Tundmatu turbetüüp.</string>
+    <string name="wificalling_popup_rogers_activation_text">Wi-Fi Calling lets you call and text while on a Wi-Fi Network. Usage will be deducted from the minute and text message buckets in your Wireless plan. Click below to Activate.</string>
+    <string name="wificalling_popup_rogers_activation_title">Wi-Fi Calling Activation</string>
+    <string name="wificalling_popup_rogers_wifi_enable_text">Please connect to a Wi-Fi network to register for Wi-Fi Calling.</string>
+    <string name="wificalling_show_popup_enable_location_message">Wi-Fi helistamine vajab teie asukohateavet. Asukoht aktiveeritakse. Kogutakse anonüümseid asukohaandmeid ning need saadetake Google’ile ja teie teenusepakkujale. Lisateabe saamiseks võtke ühendust oma teenusepakkujaga.</string>
+    <string name="wificalling_show_popup_enable_location_title">Aktiveerige Asukoht</string>
+    <string name="wificalling_show_popup_use_location_inform">Teie asukohateave võidakse saata teie teenusepakkujale, kui kasutate Wi-Fi helistamist. Lisateabe saamiseks võtke ühendust oma teenusepakkujaga.</string>
+    <string name="wificalling_show_popup_use_location_inform_ftm">Teie asukohaga seotud teave võidakse saata Google’ile ja teie operaatorile, et teha Wi-Fi kõnesid olenemata sellest, kas olete asukohafunktsiooni aktiveerinud või mitte.</string>
+    <string name="yes">OK</string>
+    <string name="mobile_hotspot_wifi_off_warning">Mobiilse kuumkoha aktiveerimisel lülitatakse Wi-Fi välja.</string>
+    <string name="mobile_hotspot_wifi_off_warning_china">Mobiilse kuumkoha aktiveerimisel lülitatakse WLAN välja.</string>
+    <string name="mobile_hotspot_wifi_off_warning_jpn">Enabling Wi-Fi tethering will turn off Wi-Fi.</string>
+</resources>

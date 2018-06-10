@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <plurals name="kg_attempt_left">
+        <item quantity="other">%d кӯшиш мондааст</item>
+        <item quantity="one">%d кӯшиш монд</item>
+    </plurals>
+    <plurals name="kg_attempt_remaining">
+        <item quantity="other">%d (кӯшиш боқӣ мондааст)</item>
+        <item quantity="one">(1 кӯшиш боқӣ монд)</item>
+    </plurals>
+    <plurals name="kg_too_many_failed_attempts_countdown_min">
+        <item quantity="other">Пас аз %d дақиқа аз нав кӯшиш кунед</item>
+        <item quantity="one">Кӯшишро баъди %d дақиқа такрор кунед</item>
+    </plurals>
+    <plurals name="kg_too_many_failed_attempts_countdown_sec">
+        <item quantity="other">Пас аз %d сония аз нав кӯшиш кунед</item>
+        <item quantity="one">Кӯшишро баъди %d сония такрор кунед</item>
+    </plurals>
+    <plurals name="kg_too_many_failed_countdown_by_biometrics">
+        <item quantity="other">%1$d кӯшиши нодурусти тайид кардани иттилооти биометрӣ иҷро шуд. Кӯшишро баъди %2$d сония такрор кунед.</item>
+        <item quantity="one">%1$d кӯшиши нодурусти санҷидани иттилооти биометрӣ. Пас аз %2$d сония аз нав кӯшиш кунед.</item>
+    </plurals>
+    <plurals name="kg_too_many_failed_countdown_by_fingerprint">
+        <item quantity="other">%1$d кӯшиши нодурусти тайид кардани изҳои ангуштон иҷро шуд. Кӯшишро баъди %2$d сония такрор кунед.</item>
+        <item quantity="one">%1$d кӯшиши нодурусти санҷидани изи ангуштон. Пас аз %2$d сония аз нав кӯшиш кунед.</item>
+    </plurals>
+</resources>

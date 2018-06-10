@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="bluetooth_ss_a2dp_codec_titles">
+        <item>SBC</item>
+        <item>AAC</item>
+        <item>aptX</item>
+        <item>LDAC</item>
+        <item>Samsung HD</item>
+        <item>Scalable Codec</item>
+        <item>Сите кодеци</item>
+        <item>Основен кодек</item>
+    </string-array>
+    <string-array name="wifi_ap_wifi_sharing">
+        <item>Овозможи Сподел.Wi-Fi</item>
+        <item>Оневоз. Сподел. Wi-Fi</item>
+    </string-array>
+    <string-array name="wifi_status">
+        <item></item>
+        <item>Пребарување…</item>
+        <item>Поврзување…</item>
+        <item>Се потврдува…</item>
+        <item>Се добива IP-адреса…</item>
+        <item>Поврзано</item>
+        <item>Суспендирано</item>
+        <item>Врската се прекинува…</item>
+        <item>Врската е прекината</item>
+        <item>Неуспешно</item>
+        <item>Блокирано</item>
+        <item>Се проверува квалитетот на поврзувањето со интернет…</item>
+    </string-array>
+</resources>

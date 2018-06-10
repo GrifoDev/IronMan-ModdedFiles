@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="battery_options">
+        <item>ਹਮੇਸ਼ਾਂ ਪ੍ਰਤੀਸ਼ਤਤਾ ਵਿਖਾਓ</item>
+        <item>ਚਾਰਜਿੰਗ ਦੌਰਾਨ ਪ੍ਰਤੀਸ਼ਤਤਾ ਵਿਖਾਓ (ਪੂਰਵ-ਨਿਰਧਾਰਤ)</item>
+        <item>ਇਸ ਚਿੰਨ੍ਹ ਨੂੰ ਨਾ ਵਿਖਾਓ</item>
+    </string-array>
+    <string-array name="bluetooth_ss_a2dp_codec_titles">
+        <item>SBC</item>
+        <item>AAC</item>
+        <item>aptX</item>
+        <item>LDAC</item>
+        <item>Samsung HD</item>
+        <item>Scalable Codec</item>
+        <item>ਸਾਰੇ ਕੋਡੇਕਸ</item>
+        <item>ਡਿਫਾੱਲਟ ਕੋਡੇਕ</item>
+    </string-array>
+    <string-array name="clock_options">
+        <item>ਘੰਟੇ, ਮਿੰਟ, ਅਤੇ ਸਕਿੰਟ ਵਿਖਾਓ</item>
+        <item>ਘੰਟੇ ਅਤੇ ਮਿੰਟ ਵਿਖਾਓ (ਪੂਰਵ-ਨਿਰਧਾਰਤ)</item>
+        <item>ਇਸ ਚਿੰਨ੍ਹ ਨੂੰ ਨਾ ਵਿਖਾਓ</item>
+    </string-array>
+    <string-array name="nav_bar_buttons">
+        <item>ਕਲਿੱਪਬੋਰਡ</item>
+        <item>ਕੀ-ਕੋਡ</item>
+        <item>ਕੀ-ਬੋਰਡ ਸਵਿੱਚਰ</item>
+        <item>ਕੋਈ ਨਹੀਂ</item>
+    </string-array>
+    <string-array name="nav_bar_layouts">
+        <item>ਸਧਾਰਨ</item>
+        <item>ਸੰਖੇਪ</item>
+        <item>ਖੱਬੇ-ਉਲਾਰ</item>
+        <item>ਸੱਜੇ-ਉਲਾਰ</item>
+    </string-array>
+    <array name="recents_blacklist_array" />
+    <string-array name="wifi_ap_wifi_sharing">
+        <item>Wi-Fi ਸਾਂਝਾਕਰਨ ਸਮਰੱਥ ਕਰੋ</item>
+        <item>Wi-Fi ਸਾਂਝਾਕਰਨ ਅਸਮਰੱਥ ਕਰੋ</item>
+    </string-array>
+    <string-array name="wifi_status">
+        <item></item>
+        <item>ਸਕੈਨ ਹੋ ਰਿਹਾ ਹੈ…</item>
+        <item>ਕਨੈਕਟ ਹੋ ਰਿਹਾ ਹੈ…</item>
+        <item>ਪ੍ਰਮਾਣਿਤ ਕਰ ਰਿਹਾ ਹੈ…</item>
+        <item>IP ਪਤਾ ਪ੍ਰਾਪਤ ਕੀਤਾ ਜਾ ਰਿਹਾ ਹੈ…</item>
+        <item>ਕਨੈਕਟ ਕੀਤਾ ਗਿਆ</item>
+        <item>ਸਥਗਿਤ</item>
+        <item>ਡਿਸਕਨੈਕਟ ਹੋ ਰਿਹਾ ਹੈ…</item>
+        <item>ਡਿਸਕਨੈਕਟ ਹੋਇਆ</item>
+        <item>ਅਸਫਲ</item>
+        <item>ਬਲੌਕ ਕੀਤਾ</item>
+        <item>ਤੁਹਾਡੇ ਇੰਟਰਨੈੱਟ ਕਨੈਕਸ਼ਨ ਦੀ ਗੁਣਵੱਤਾ ਦੀ ਜਾਂਚ ਕਰ ਰਿਹਾ ਹੈ…</item>
+    </string-array>
+</resources>

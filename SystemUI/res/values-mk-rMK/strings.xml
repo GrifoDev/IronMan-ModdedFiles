@@ -1,0 +1,1477 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="accessibility_battery_level_charging">Батеријата се полни, %d проценти</string>
+    <string name="accessibility_brightness_detail_button">Плоча за поставувања на осветленоста</string>
+    <string name="accessibility_button">Копче</string>
+    <string name="accessibility_phone_four_bars">Четир ленти телефонски сигнал</string>
+    <string name="accessibility_quick_settings_more_option">Повеќе опции</string>
+    <string name="accessibility_recent">Последно</string>
+    <string name="activate">Activate</string>
+    <string name="agree">Добро</string>
+    <string name="airplane_mode_plmn">Режим за летало</string>
+    <string name="airplane_mode_show_popup_disabled_on_demo_devices">Авионскиот режим е исклучен кај демо-уредите.</string>
+    <string name="airplane_mode_show_popup_message">Режимот за летало овозможува да исклучите повикување, праќање пораки и податочни мрежи. Ги исклучува и функциите за поврзување како Wi-Fi и Bluetooth. За да ги користите Wi-Fi и Bluetooth, вклучете ги во Поставувања или во таблата за известувања.</string>
+    <string name="airplane_mode_show_popup_message_cmcc">Режимот за летало овозможува да исклучите повикување, праќање пораки и податочни мрежи. Ги исклучува и функциите за поврзување како Wi-Fi и Bluetooth. За да ги користите Wi-Fi и Bluetooth, вклучете ги во Поставувања или во таблата за известувања.</string>
+    <string name="airplane_mode_show_popup_message_vzw">"Unless you use Wi-Fi, you will not be able to use the Internet, Email, or other apps that require a data connection.
+Turn on Airplane mode?"</string>
+    <string name="airplane_mode_show_popup_message_vzw_volte">"Unless you use Wi-Fi, you will not be able to use Internet, Email, Wi-Fi Calling or other apps that require a data connection.
+Turn on Airplane mode?"</string>
+    <string name="airplane_mode_show_popup_message_wifi">"Исклучете Wi-Fi и Bluetooth.
+
+Можете повторно да ги вклучите во Поставувања или во плочата за брзи поставувања."</string>
+    <string name="airplane_mode_show_popup_message_wifi_without_bluetooth">Режимот за летало овозможува да исклучувате мрежни функции, меѓу кои и Wi-Fi. За да користите Wi-Fi, вклучете го во Поставувања или во таблата за известувања.</string>
+    <string name="airplane_mode_show_popup_message_without_bluetooth">Режимот за летање овозможува да ги исклучите функциите за повикување, размена на пораки и мобилни мрежи.</string>
+    <string name="airplane_mode_show_popup_safelock">Не може да се вклучи Авионскиот режим додека е вклучено Блокирај исклучување при заклучување. Обидете се повторно откако ќе го отклучите екранот.</string>
+    <string name="airplane_mode_show_popup_summary">Нема да можете да користите повикување, размена на пораки или мобилни податоци.</string>
+    <string name="airplane_mode_show_popup_summary_q">Да се исклучи Режимот за летало?</string>
+    <string name="airplane_mode_show_popup_title">Да се исклучи Режимот за летало?</string>
+    <string name="airplane_mode_show_popup_title_vzw">Turn on Airplane mode</string>
+    <string name="airplane_mode_show_toast_turn_on_wifi_for_wificalling">Вклучете Wi-Fi за да користите повикување преку Wi-Fi.</string>
+    <string name="allow_notifications_guide_text">Дозволете известувања од оваа категорија.</string>
+    <string name="app_icon_badge_guide_notification_text">Кога ќе ги отфрлите сите известувања од некоја апликација, значката прикажана на иконата на апликацијата исто така ќе исчезне.</string>
+    <string name="app_icon_badge_guide_notification_title">Значки за икона на апликација</string>
+    <string name="app_locked">App locked</string>
+    <string name="appicon_badge_new_item">1 нов запис</string>
+    <string name="appicon_badge_new_items">%d нови записи</string>
+    <string name="applocked_pinning_window_disable">Не може да се прикачи апликацијата. Аплик. е заклучена.</string>
+    <string name="assistance_app_setting_alert_dialog_title">Select an app to open when you press and hold the Home key. To change the selected app later, go to Device assistance app in Settings.</string>
+    <string name="assistance_app_setting_item_none">Ништо</string>
+    <string name="battery_cable_charging_from_wireless_to_cable_text">Се префрлува од безжично во полнење со кабел</string>
+    <string name="battery_cable_charging_title">Полнење со кабел</string>
+    <string name="battery_charging_level_and_time_text">"Се полни: %1$d%%
+(Околу %2$s до целосна наполнетост)"</string>
+    <string name="battery_charging_level_text">Се полни: %d%%</string>
+    <string name="battery_charging_time_text">(%s до полна батерија)</string>
+    <string name="battery_charging_title">Полнење</string>
+    <string name="battery_discharging_duration">Проценето траење на батеријата: %s</string>
+    <string name="battery_fast_charging_title">Брзо полнење</string>
+    <string name="battery_fast_charging_title_chn">Напредно полнење</string>
+    <string name="battery_fast_wireless_charging_title">Брзо безжично полнење</string>
+    <string name="battery_fast_wireless_charging_title_chn">Напредно безжично полнење</string>
+    <string name="battery_health_interruption_by_limit_high_temperature_text_phone">"Полнењето сопре. Температурата на Вашиот телефон е превисока. Внимавајте при откачувањето на полначот. Може да е многу жежок.
+
+Откачување, па повторно приклучување на полначот може да овозможи полнењето да продолжи нормално. Ако опстои прегревањето, контактирајте со Службата за корисници затоа што може да има опасност од пожар или повреда."</string>
+    <string name="battery_health_interruption_by_limit_high_temperature_text_tablet">"Полнењето сопре. Температурата на Вашиот таблет е превисока. Внимавајте при откачувањето на полначот. Може да е многу жежок.
+
+Откачување, па повторно приклучување на полначот може да овозможи полнењето да продолжи нормално. Ако опстои прегревањето, контактирајте со Службата за корисници затоа што може да има опасност од пожар или повреда."</string>
+    <string name="battery_health_interruption_by_limit_high_temperature_title">Откачување на полначот</string>
+    <string name="battery_health_interruption_by_terminal_open_galaxy_text">Unable to charge your device. Make sure you are using a Galaxy compatible battery and charger and that your device is properly connected to the charger.</string>
+    <string name="battery_health_interruption_by_terminal_open_text">Не може да се полни уредот. Проверете дали користите батерија и полнач компатибилни со Samsung и дали уредот е правилно поврзан со полначот.</string>
+    <string name="battery_health_interruption_by_too_high_temperature_text_phone">Температурата на телефонот е превисока. Полнењето ќе продолжи кога температурата ќе се врати во нормала.</string>
+    <string name="battery_health_interruption_by_too_high_temperature_text_tablet">Температурата на таблетот е превисока. Полнењето ќе продолжи кога температурата ќе се врати во нормала.</string>
+    <string name="battery_health_interruption_by_too_low_temperature_text_phone">Температурата на телефонот е прениска. Полнењето ќе продолжи кога температурата ќе се врати во нормала.</string>
+    <string name="battery_health_interruption_by_too_low_temperature_text_tablet">Температурата на таблетот е прениска. Полнењето ќе продолжи кога температурата ќе се врати во нормала.</string>
+    <string name="battery_health_interruption_title">Полнењето сопре</string>
+    <string name="battery_info_power_wireless">Безжично</string>
+    <string name="battery_info_status_charging">Полнење</string>
+    <string name="battery_info_status_full">Полно</string>
+    <string name="battery_low_sec_body_phone">Полнете го телефонот или допрете тука за да вклучите Режим за штедење енергија.</string>
+    <string name="battery_low_sec_body_phone_psm">Полнете го телефонот.</string>
+    <string name="battery_low_sec_body_tablet">Полнете го таблетот или допрете тука за да вклучите Режим за штедење енергија.</string>
+    <string name="battery_low_sec_body_tablet_psm">Полнете го таблетот.</string>
+    <string name="battery_low_sec_noti_channel">Батеријата е празна</string>
+    <string name="battery_low_sec_title">Преостаната батерија %d%%</string>
+    <string name="battery_not_fully_connected_charging_popup_text">Осигурете се дека полначот е правилно поврзан. Користете го полначот што е доставен со уредот.</string>
+    <string name="battery_not_fully_connected_charging_popup_text_jpn">Осигурете се дека полначот е правилно поврзан.</string>
+    <string name="battery_not_fully_connected_charging_text">За побрзо полнење, користете го полначот што е доставен со Вашиот уред и осигурете се дека е правилно поврзан.</string>
+    <string name="battery_not_fully_connected_charging_text_chn">За побрзо полнење, користете го полначот што е доставен со Вашиот телефон и осигурете се дека е правилно поврзан.</string>
+    <string name="battery_not_fully_connected_charging_text_jpn">Осигурете се дека полначот е правилно поврзан.</string>
+    <string name="battery_not_fully_connected_charging_text_tablet_chn">За побрзо полнење, користете го полначот што е доставен со Вашиот таблет и осигурете се дека е правилно поврзан.</string>
+    <string name="battery_not_fully_connected_charging_text_vzw">Make sure the charger is properly connected.</string>
+    <string name="battery_not_fully_connected_charging_title">Бавно полнење</string>
+    <string name="battery_not_fully_connected_charging_title_vzw">Incomplete connection</string>
+    <string name="battery_saver_recommend_notification_text_phone">Полнете го телефонот или допрете тука за да вклучите Режим за штедење енергија.</string>
+    <string name="battery_saver_recommend_notification_text_phone_psm">Полнете го телефонот.</string>
+    <string name="battery_saver_recommend_notification_text_tablet">Полнете го таблетот или допрете тука за да вклучите Режим за штедење енергија.</string>
+    <string name="battery_saver_recommend_notification_text_tablet_psm">Полнете го таблетот.</string>
+    <string name="battery_saver_recommend_notification_title">Преостаната батерија %d%%</string>
+    <string name="battery_slow_charging_text">За побрзо полнење, користете го оригиналниот полнач.</string>
+    <string name="battery_slow_charging_title">Уредот се полни бавно</string>
+    <string name="battery_slow_charging_toast_text">To charge faster, use the charger and cable that were provided with this phone</string>
+    <string name="battery_slow_charging_toast_text_for_tablet">To charge faster, use the charger and cable that were provided with this tablet.</string>
+    <string name="battery_wireless_charging_disconnect_text">Безжичното полнење е паузирано.</string>
+    <string name="battery_wireless_charging_from_cable_to_wireless_text">Се префрлува од полнење со кабел во безжично</string>
+    <string name="battery_wireless_charging_title">Безжично полнење</string>
+    <string name="blue_light_disable_reason">Исклучете %1$s за да користите %2$s.</string>
+    <string name="bluetooth_a2dp_profile_summary_connected">Поврзано со аудио на медиуми</string>
+    <string name="bluetooth_connected">Поврзано</string>
+    <string name="bluetooth_disconnect_message">Поврзувањето Bluetooth со %s заврши.</string>
+    <string name="bluetooth_display_remote_device_name_after_pair">Името на уредот ќе се појави кога е поврзан уредов.</string>
+    <string name="bluetooth_getting_remote_device_name">Се добива името на уредот…</string>
+    <string name="bluetooth_headset_profile_summary_connected">Поврзано за аудио на повици</string>
+    <string name="bluetooth_hid_profile_summary_connected">Поврзано како влезен уред</string>
+    <string name="bluetooth_pairing">Поврзување…</string>
+    <string name="bluetooth_pairing_device_down_black_list_error_message">Не може да се воспостави врска со %1$s. Проверете ги поставувањата во %2$s и обидете се пак.</string>
+    <string name="bluetooth_pairing_device_down_error_message">Не може да се воспостави врска со %s.</string>
+    <string name="bluetooth_pairing_error_message">Не може да се спои со %s. Осигурете се дека е подготвено за спојување.</string>
+    <string name="bluetooth_pairing_pin_error_message">Не може да се спои со %s. Осигурете се дека е подготвено за спојување.</string>
+    <string name="bluetooth_pairing_rejected_error_message">%s го избра поврзувањето.</string>
+    <string name="bluetooth_pan_nap_connected">Поврзано за обезбедување пристап на интернет</string>
+    <string name="bluetooth_pan_nap_profile_summary_connected">Локалното поврзување на интернет се споделува со уредот</string>
+    <string name="bluetooth_pan_panu_connected">Поврзано за пристап на интернет</string>
+    <string name="bluetooth_pan_profile_summary_use_for">Вклучете Споделување врска преку Bluetooth на споениот уред за да пристапувате на интернет од овој телефон.</string>
+    <string name="bluetooth_pan_user_profile_summary_connected">Поврзан со уредот за пристап на интернет.</string>
+    <string name="bluetooth_profile_a2dp">Медиумско аудио</string>
+    <string name="bluetooth_profile_headset">Звук на повик</string>
+    <string name="bluetooth_profile_map">Пристап до пораката</string>
+    <string name="bluetooth_profile_pan_nap">Делење на врската со интернет</string>
+    <string name="bluetooth_profile_pbap">Пристап кон Контакти</string>
+    <string name="bluetooth_profile_pbap_tts">Контакти и Телефонски дневник</string>
+    <string name="bluetooth_profile_textinput">Внесување текст</string>
+    <string name="bluetooth_spp_profile_summary_connected">Поврз. преку проф. на серис. порта</string>
+    <string name="bluetooth_summary_connected_to_a2dp_headset">Поврзано за аудио на повици и медиуми</string>
+    <string name="bluetooth_tethering_cannot_connect_while_connected_to_wifi">Не може да се користи Споделување врска преку Bluetooth додека сте поврзани со мрежа Wi-Fi.</string>
+    <string name="brightness_control_on_top">Контр.на осветлен. одгоре</string>
+    <string name="brightness_slider_hbm_text">Максимиз. за најдобро глед. на сонч. светлина</string>
+    <string name="button_close">Затвори</string>
+    <string name="cant_open_image_viewer_app">Не може да се отвори апликац. прегледник на слики.</string>
+    <string name="cant_open_image_viewer_app_in_emergency_mode">Не може да се отвори апликацијата прегледник на слики во Итниот режим.</string>
+    <string name="cant_open_image_viewer_app_in_mpsm">Не може да се отвори апликацијата прегледник на слики во Режим за максимално штедење енергија.</string>
+    <string name="cant_open_image_viewer_app_in_ps">Не може да се отвори апликацијата прегледник на слики во %s.</string>
+    <string name="cant_open_photo_editor_in_ps">Не може да се отвори Уредување фотографии во %s.</string>
+    <string name="cant_open_ps">Не може да се отвори %s.</string>
+    <string name="cant_screenshot_in_ps">Не може да се направи екранска снимка во %s.</string>
+    <string name="card_crash">Пад на SIM-картичката</string>
+    <string name="clear_all_notifications_text">Избриши сѐ</string>
+    <string name="clear_all_text">Избриши</string>
+    <string name="colour_adjustment_title">Прилагодување бои</string>
+    <string name="colour_lens_title">Леќи за боја</string>
+    <string name="cooling_body">"Уредот се прегрева. Ќе се преземат чекори за ладење.
+
+Сè уште може да го користите уредот, но:
+- екранот може да се затемни.
+- уредот може да биде побавен.
+- полнењето може да се паузира.
+
+Откако ќе се излади уредот, перформансите автоматски ќе се вратат во нормала."</string>
+    <string name="cooling_body_tablet_vzw">"Your tablet is getting too hot, so it’s taking steps to cool itself down.
+
+You can still use your tablet, but you may notice:
+The screen might dim.
+The tablet might slow down.
+Charging might pause.
+
+After the tablet cools down, performance willAutomatically go back to normal."</string>
+    <string name="cooling_body_vzw">"Your phone is getting hot, so it's taking steps to cool itself down.
+
+You can still use it, but you may notice:
+- The screen might dim.
+- The phone might slow down.
+- Charging might pause.
+
+Your phone will return to normal once it cools down."</string>
+    <string name="cooling_high_level_noti_text">Не може да се отвораат апликации. Можете да ги користите само апликациите Телефон и Контакти.</string>
+    <string name="cooling_noti_text">Допрете тука за да ги видите деталите.</string>
+    <string name="cooling_noti_text_vzw">Допрете тука за да дознаете повеќе.</string>
+    <string name="cooling_popup_title">Уредот се лади</string>
+    <string name="cooling_title">Уредот се прегрева</string>
+    <string name="cooling_title_vzw">Cooling down</string>
+    <string name="data_connection_error_data_roaming_off_body">Поврзете се со мрежа Wi-Fi или вклучете Податочен роаминг.</string>
+    <string name="data_connection_error_flight_mode_on_body">Вашиот телефон не е поврзан со мрежа Wi-Fi. За да користите мобилна мрежа, исклучете Режим за летало во Поставувања.</string>
+    <string name="data_connection_error_flight_mode_on_body_tablet">Вашиот таблет не е поврзан со мрежа Wi-Fi. За да користите мобилна мрежа, исклучете Режим за летало во Поставувања.</string>
+    <string name="data_connection_error_flight_mode_on_title">Исклучи Режим за летало</string>
+    <string name="data_connection_error_mobile_data_off">Мобилните податоци се исклучени. Поврзете се со мрежа Wi-Fi или вклучете мобилни податоци и обидете се повторно</string>
+    <string name="data_connection_error_mobile_data_off_body">Поврзете се со мрежа Wi-Fi или вклучете Мобилни податоци.</string>
+    <string name="data_connection_error_mobile_data_off_title">Да се вклучи Мобилни податоци?</string>
+    <string name="data_connection_error_no_network_connection">Нема мрежно поврзување</string>
+    <string name="data_connection_error_no_signal_body">Не може да се најдат достапни мрежи.</string>
+    <string name="data_connection_error_toast_notification">Потребна е врска Wi-Fi. Поврзете со мрежа Wi-Fi и обидете се повторно</string>
+    <string name="dcm_lockscreen_unlock_help_text_fingerprints_iris">Use fingerprint to unlock device or tap Lock icon to use irises instead</string>
+    <string name="dcm_lockscreen_unlock_help_text_iris">Tap Lock icon to use irises to unlock device</string>
+    <string name="dcm_lockscreen_voice_assistant_active_instructions">Допрете двапати на копчето Заклучи за да го отклучите телефонот</string>
+    <string name="default_carrier_text_searching">Се пребарува</string>
+    <string name="default_volume_control_summary">Контролирајте ја јачината на звукот на медиумите стандардно кога ги притискате копчињата за Јачина на звук.</string>
+    <string name="default_volume_control_title">Корист. Коп. јач. звук на мед.</string>
+    <string name="direct_boot_unaware_dialog_message">Откако телефонот ќе се рестартира, треба да го отклучите телефонот пред да можете да ја користите оваа апликација.</string>
+    <string name="direction_lock_too_many_failed_attempts_countdown">Повт. обид за %d секунди</string>
+    <string name="disable">Исклучи</string>
+    <string name="disable_cancel">Откажи</string>
+    <string name="disable_confirm">Исклучи</string>
+    <string name="disable_message">Апликацијата %1$s и сите функции поврзани со неа ќе се оневозможат. Податоците исто ќе се избришат. За да ја овозможите апликацијата повторно, одете во Поставувања > Апликации и изберете %2$s.</string>
+    <string name="disagree">Не се согласувам</string>
+    <string name="dnd_noti_action_disable">Исклучи</string>
+    <string name="dnd_noti_message">Звукот на алармите е исклучен</string>
+    <string name="dnd_noti_title">Не вознемирувај е вклучено</string>
+    <string name="dock_minimized_notification_content_text">Допрете тука за да се отвори %s.</string>
+    <string name="dock_minimized_notification_dimiss_text">Затвори</string>
+    <string name="dock_minimized_notification_text">Се користи екр.на поделен екран</string>
+    <string name="dock_minimized_toast_text">%s смалено.</string>
+    <string name="download_popup_button_cancel">Откажи</string>
+    <string name="download_popup_button_download">Преземи</string>
+    <string name="download_ps">Да се преземе %s?</string>
+    <string name="emergency_mode">Итен режим</string>
+    <string name="flash_light_disabled_by_low_battery">Не може да се вклучи Светилката. Батеријата е слаба.</string>
+    <string name="flash_light_notification_button">Исклучи</string>
+    <string name="flash_light_notification_title">Светилката е вклучена</string>
+    <string name="flash_light_turn_off_by_low_battery">Батеријата е слаба. Батериската светилка ќе се исклучи.</string>
+    <string name="flight_mode_enabled_dialog_body">"Your mobile data connection is turned off. Unless you use Wi-Fi, you won't be able to use the Internet, Email or other apps that require a data connection."</string>
+    <string name="flight_mode_enabled_dialog_body_volte_and_vowifi">"Your mobile data connection is turned off. Your phone's Video Calling function won't work when mobile data is off. Also, you won't be able to use the Internet, Email or other apps that need a data connection unless you use Wi-Fi."</string>
+    <string name="flight_mode_enabled_dialog_title">Airplane mode turned on</string>
+    <string name="force_immersive_guide_dialog_guide_path">За да го скриете ова копче, одете во Поставувања > Екран > Навигациска лента.</string>
+    <string name="force_immersive_guide_dialog_message1">Допрете двапати на ова копче за да ја скриете навигациската лента.</string>
+    <string name="force_immersive_guide_dialog_message2">Поминете навнатре од работ на екранот во близина на приклучокот за полнење за да се прикаже навигациската лента.</string>
+    <string name="force_immersive_guide_dialog_message3">Допрете го двапати ова копче повторно за да ја заклучите навигациската лента во позиција.</string>
+    <string name="force_immersive_guide_dialog_message4">На некои екрани, како што е Почетниот екран, навигациската лента секогаш ќе биде прикажана.</string>
+    <string name="force_immersive_guide_dialog_ok">OK</string>
+    <string name="force_immersive_guide_dialog_setting">Поставувања</string>
+    <string name="force_immersive_guide_dialog_title">Сокријте ја навигациската лента:</string>
+    <string name="force_immersive_guide_toast_hide">Допрете двапати за да ја скриете навигациската лента.</string>
+    <string name="force_immersive_guide_toast_show">Допрете двапати за да ја заклучите навигациската лента.</string>
+    <string name="freeform_forced_resizable">Оваа апликација може да не функционира правилно во преглед на Повеќе прозорци.</string>
+    <string name="freeform_forced_resizable_samsung_dex">Некои функции на оваа апликација можеби не се поддржани во Samsung DeX.</string>
+    <string name="full_battery_noti_channel">Батеријата е полна</string>
+    <string name="full_battery_noti_text">Батеријата е наполнета.</string>
+    <string name="full_battery_title">Информации</string>
+    <string name="greyscale_mode_title">Сиви тонови</string>
+    <string name="hotspot_warning_dialog_msg_smartview_off">Мобилен хотспот и Smart View не може да се овозможат истовремено. Smart View ќе се оневозможи.</string>
+    <string name="hotspot_warning_dialog_msg_smartview_off_chn">Хотспотот на WLAN и Smart View не може да се овозможат истовремено. Smart View ќе се оневозможи.</string>
+    <string name="hotspot_warning_dialog_msg_smartview_off_spr">За да користите Мобилен хотспот, Smart View треба да се исклучи.</string>
+    <string name="hotspot_warning_dialog_msg_smartview_off_tmo">За да користите Мобилен хотспот, Smart View треба да се исклучи.</string>
+    <string name="hotspot_warning_dialog_msg_smartview_off_vzw">Мобилен хотспот и Smart View не може да се овозможат истовремено. Smart View ќе се оневозможи.</string>
+    <string name="hotspot_warning_dialog_msg_wifi_off">За да користите Мобилен хотспот, Wi-Fi треба да се исклучи.</string>
+    <string name="hotspot_warning_dialog_msg_wifi_off_att">Вклучувањето на преносен хотспот Wi-Fi ќе го исклучи Wi-Fi.</string>
+    <string name="hotspot_warning_dialog_msg_wifi_off_chn">Овозможувањето на Мобилен хотспот ќе го исклучи WLAN.</string>
+    <string name="hotspot_warning_dialog_msg_wifi_off_jpn">Enabling Wi-Fi tethering will turn off Wi-Fi.</string>
+    <string name="hotspot_warning_dialog_msg_wifi_off_mtr">За да користите Мобилен хотспот, Wi-Fi треба да се исклучи.</string>
+    <string name="hotspot_warning_dialog_msg_wifi_off_spr">За да користите Мобилен хотспот, Wi-Fi треба да се исклучи.</string>
+    <string name="hotspot_warning_dialog_msg_wifi_off_tmo">Wi-Fi е исклучен кога е активно Споделување врска преку USB или Мобилен хотспот. За да вклучите Wi-Fi, исклучете Споделување врска преку USB или Мобилен хотспот.</string>
+    <string name="hotspot_warning_dialog_msg_wifi_off_vzw">Mobile Hotspot го користи Вашето поврзување на мобилни податоци. Поврзувањето на Wi-Fi ќе се исклучи.</string>
+    <string name="hotspot_warning_dialog_msg_wifidirect_off">За да користите Мобилен хотспот, сите уреди што моментално се поврзани со Wi-Fi Direct треба да се исклучат.</string>
+    <string name="hotspot_warning_dialog_msg_wifidirect_off_chn">Овозможувањето на хотспот за Преносен WLAN ќе го прекине поврзувањето на уредот поврзан преку WLAN Direct.</string>
+    <string name="hotspot_warning_dialog_msg_wifidirect_off_spr">За да користите Мобилен хотспот, сите уреди што моментално се поврзани со Wi-Fi Direct треба да се исклучат.</string>
+    <string name="hotspot_warning_dialog_msg_wifidirect_off_tmo">За да користите Мобилен хотспот, сите уреди што моментално се поврзани со Wi-Fi Direct треба да се исклучат.</string>
+    <string name="hotspot_warning_dialog_msg_wifidirect_off_vzw">За да користите Мобилен хотспот, сите уреди што моментално се поврзани со Wi-Fi Direct треба да се исклучат.</string>
+    <string name="hotspot_warning_dialog_title_smartview_off">Да се вклучи Мобилен хотспот?</string>
+    <string name="hotspot_warning_dialog_title_wifi_off">Да се исклучи Wi-Fi?</string>
+    <string name="hotspot_warning_dialog_title_wifi_off_tmo">Внимание</string>
+    <string name="hotspot_warning_dialog_title_wifi_off_vzw">Mobile Hotspot и Wi-Fi</string>
+    <string name="hotspot_warning_dialog_title_wifidirect_off">Да се вклучи Мобилен хотспот?</string>
+    <string name="hotspot_warning_dialog_title_wifidirect_off_tmo">Внимание</string>
+    <string name="hotspot_warning_dialog_title_wifidirect_off_vzw">Mobile Hotspot и Wi-Fi</string>
+    <string name="ime_security_warning">%s можеби може да го собере сиот текст што го пишувате, вклучително и личните податоци како што се лозинките и броевите на кредитни картички.</string>
+    <string name="incompatible_charger_dialog_text">The connected charger is incompatible with this phone. To prevent damage to your phone, charging has been stopped. To continue charging, use the original charger and cable that were provided with this phone.</string>
+    <string name="incompatible_charger_notification_text">Unable to charge. Use the original charger.</string>
+    <string name="incompatible_charger_ticker">Не се полни.</string>
+    <string name="incompatible_charger_title">Не се полни.</string>
+    <string name="insert_sim_card">Вметнете SIM-карт.</string>
+    <string name="insert_sim_card_message">Вметнете SIM-картичка за да пристапите кон мрежните услуги.</string>
+    <string name="iris_guide_str_enable_toggle">Доп. тука за да корис. зеници</string>
+    <string name="iris_guide_str_for_text_preview">Пог.тука за да кор.зен.</string>
+    <string name="it_policy_not_allow_wifi">Политиката за безбедност спречува користење Wi-Fi.</string>
+    <string name="it_policy_not_allow_wifiap">Политиката на безбедност го ограничува користењето делење преку интернет.</string>
+    <string name="keyboard_shortcut_group_applications">Кратенки за апликации</string>
+    <string name="keyboard_shortcut_group_applications_bixby">Bixby</string>
+    <string name="keyboard_shortcut_group_applications_browser">Прегледник</string>
+    <string name="keyboard_shortcut_group_applications_calendar">Календар</string>
+    <string name="keyboard_shortcut_group_applications_contacts">Контакти</string>
+    <string name="keyboard_shortcut_group_applications_email">Е-пошта</string>
+    <string name="keyboard_shortcut_group_applications_messages">Пораки</string>
+    <string name="keyboard_shortcut_group_applications_music">Музика</string>
+    <string name="keyboard_shortcut_group_system">Системски кратенки</string>
+    <string name="keyboard_shortcut_group_system_all_apps">Сите апликации</string>
+    <string name="keyboard_shortcut_group_system_back">Назад</string>
+    <string name="keyboard_shortcut_group_system_home">Дома</string>
+    <string name="keyboard_shortcut_group_system_lock_screen">Екран за заклучување</string>
+    <string name="keyboard_shortcut_group_system_notifications">Известувања</string>
+    <string name="keyboard_shortcut_group_system_recents">Последни</string>
+    <string name="keyboard_shortcut_group_system_running_apps">Активни апликации</string>
+    <string name="keyboard_shortcut_group_system_shortcuts_helper">Кратенки на тастатура</string>
+    <string name="keyboard_shortcut_group_system_switch_languages">Сменете јазици</string>
+    <string name="keyboard_shortcut_popup_help">Meta копче: копчето за симбол за Windows, Команда или друг оперативен систем.</string>
+    <string name="keyguard_accessibility_call">Повик</string>
+    <string name="keyguard_accessibility_direction_lock_unlock">Заклучување со насока</string>
+    <string name="keyguard_accessibility_dot">Точка</string>
+    <string name="keyguard_accessibility_pattern_area">Област на шара</string>
+    <string name="keyguard_accessibility_pattern_unlock">Отклучување со шара</string>
+    <string name="keyguard_cmas_text">Итно предупредување</string>
+    <string name="keyguard_dualclock_locale_view_home">Дома</string>
+    <string name="keyguard_dualclock_locale_view_home_skt">Сеул</string>
+    <string name="keyguard_dualclock_locale_view_roaming">Локално</string>
+    <string name="keyguard_dualclock_locale_view_roaming_skt">Роаминг</string>
+    <string name="keyguard_fmm_owner_phone">Број на сопственикот</string>
+    <string name="keyguard_fmm_phone_locked_title">Телефонот е заклучен.</string>
+    <string name="keyguard_missing_sim_message">Внесете USIM-картичка, а потоа рестартирајте го уредот</string>
+    <string name="keyguard_progress_erasing_all">Се бришат сите податоци…</string>
+    <string name="keyguard_skt_usim_unregistered">Не може да се користи USIM-картичката. Преземете ги информациите на USIM-картичката.</string>
+    <string name="keyguard_usim_not_used">Не може да се користи USIM-картичката. %d пати е внесен неточен код за отклучување PIN (PUK). Купете нова USIM-картичка.</string>
+    <string name="kg_1_attempt_remaining">(Има уште 1 обид)</string>
+    <string name="kg_accessibility_password_unlock">Отклучување со лозинка</string>
+    <string name="kg_accessibility_pin_edit_box">Уреди поле</string>
+    <string name="kg_accessibility_pin_unlock">Отклучување со PIN</string>
+    <string name="kg_background_auth_face_instruction_text">Отклучи со препознавање лице.</string>
+    <string name="kg_background_auth_fingerprint_unlock_successed_text">Телефонот е отклучен со отпечаток од прст.</string>
+    <string name="kg_background_auth_iris_instruction_text">Отклучете со зеници.</string>
+    <string name="kg_background_auth_tablet_fingerprint_unlock_successed_text">Таблетот е отклучен со отпечаток од прст.</string>
+    <string name="kg_background_auth_tablet_unlock_successed_text">Таблетот е отклучен.</string>
+    <string name="kg_background_auth_unlock_failed_text">Не може да се отклучи телефонот.</string>
+    <string name="kg_background_auth_unlock_instruction_text">Отклучете со биометрија.</string>
+    <string name="kg_background_auth_unlock_successed_text">Телефонот е отклучен.</string>
+    <string name="kg_biometric_temporary_error_text">Не може да се користи препознавање лице или зеници. Ако ова продолжи да се случува, рестартирајте го телефонот.</string>
+    <string name="kg_biometrics_swipe_active_instructions">Користете биометрија или поминете на екранот за да се отвори</string>
+    <string name="kg_biometrics_swipe_active_voice_assistant_instructions">Користете биометрија или поминете на екранот со два прста за да отворите</string>
+    <string name="kg_biometrics_swipe_unlock_instructions">Користете биометрија или поминете на екранот за да се отклучи</string>
+    <string name="kg_biometrics_swipe_unlock_voice_assistant_instructions">Користете биометрија или поминете на екранот со два прста за да отклучите</string>
+    <string name="kg_carrier_lock_call_owner">Јави ми се</string>
+    <string name="kg_carrier_lock_findlostphone">Овој телефон е изгубен или украден.</string>
+    <string name="kg_carrier_lock_too_many_failed_attempts">Внесена е неточна лозинка 5 пати. Обидете се повторно за 10 минути.</string>
+    <string name="kg_carrier_lock_unlock">Внеси лозинка</string>
+    <string name="kg_carrier_lock_wrong_password">Внесена е неточна лозинка.</string>
+    <string name="kg_ctc_enter_confirm_pin_hint">Enter new UIM/SIM card unlock PIN again to confirm it</string>
+    <string name="kg_ctc_password_wrong_pin_code_one">Incorrect UIM/SIM card PIN entered. 1 attempt left.</string>
+    <string name="kg_ctc_password_wrong_pin_code_other">Incorrect UIM/SIM card PIN entered. %d attempts left.</string>
+    <string name="kg_ctc_puk_enter_pin_hint">Enter new UIM/SIM card unlock PIN</string>
+    <string name="kg_ctc_sim_puk_instructions">UIM/SIM card locked. Enter PUK. Contact service provider for details.</string>
+    <string name="kg_ctc_sim_puk_remaining_1_attempt">Incorrect PUK entered. If incorrect PUK is entered 1 more time, UIM/SIM card will be locked.</string>
+    <string name="kg_ctc_sim_puk_remaining_attempts">Incorrect PUK entered. If incorrect PUK is entered %d more times, UIM/SIM card will be permanently locked.</string>
+    <string name="kg_ctc_sim_unlock_progress_dialog_message">Unlocking UIM/SIM card…</string>
+    <string name="kg_ctc_unlock_sim_pin_instructions">Enter UIM/SIM card unlock PIN</string>
+    <string name="kg_dcm_sim_puk_instructions">PIN е блокиран. Внесете PUK за да продолжите.</string>
+    <string name="kg_default_carrier_text_searching">Се пребарува</string>
+    <string name="kg_dex_emergency_text">За да упатите ИТЕН ПОВИК, отстранете го телефонот од DeX Station.</string>
+    <string name="kg_direction_lock_instructions_normal_mode">Нацртајте низа насоки за да го отклучите екранот</string>
+    <string name="kg_empty_sim_perso_hint">Не е внесена лозинка. Внесете лозинка (PIN).</string>
+    <string name="kg_face_authentication_error_camera_unavailable_retry_text">Имаше проблем во препознавањето лице. Допрете за да се обидете повторно</string>
+    <string name="kg_face_authentication_error_camera_unavailable_video_call_text">Не може да се користи препознавање на лице при видео повици</string>
+    <string name="kg_face_authentication_error_retry_text">Не е откриено лице. Допрете на иконата за повторно да се обидете со препознавање лице</string>
+    <string name="kg_face_authentication_failed_retry_text">Нема совпаѓање. Допрете на иконата за да користите препознавање лице</string>
+    <string name="kg_face_cancel_for_dex">Откажи препознавање лице</string>
+    <string name="kg_face_cover_clear_view_toast_for_dex">Препознавањето лице е недостапно кога е прикачен Clear View Cover.</string>
+    <string name="kg_face_cover_led_view_toast_for_dex">Препознавањето лице е недостапно кога е прикачен LED View Cover.</string>
+    <string name="kg_face_cover_s_view_toast_for_dex">Препознавањето лице е недостапно кога е прикачен S View Cover.</string>
+    <string name="kg_face_cover_toast_for_dex">Препознавањето лице не е недостапно додека е прикачен капак.</string>
+    <string name="kg_face_direction_active_instructions">Користете препознавање лице или нацртајте низа насоки за да отворите</string>
+    <string name="kg_face_direction_none_instructions">Користете препознавање лице или нацртајте серија насоки</string>
+    <string name="kg_face_guide_text_for_enable_toggle">Доп. тука за да кор.препоз. лице</string>
+    <string name="kg_face_or_fingerprint_active_instructions">Користете отпечатоци од прст за да отворите или поминете на екранот за да користите препознавање на лице</string>
+    <string name="kg_face_or_fingerprint_active_voice_assistant_instructions">Користете отпечаток од прст за да отворите или поминете на екранот со два прста за да користите препознавање лице.</string>
+    <string name="kg_face_or_fingerprint_unlock_instructions">Користете отпечатоци од прст за да отклучите или поминете на екранот за да користите препознавање на лице</string>
+    <string name="kg_face_or_fingerprint_unlock_voice_assistant_instructions">Користете отпечаток од прст за да отклучите или поминете на екранот со два прста за да користите препознавање лице.</string>
+    <string name="kg_face_or_swipe_active_instructions">Користете препознавање лице или поминете на екранот за да се отвори</string>
+    <string name="kg_face_or_swipe_active_voice_assistant_instructions">Користете препознавање лице или поминете на екранот со два прста за да отворите</string>
+    <string name="kg_face_or_swipe_unlock_instructions">Користете препознавање лице или поминете на екранот за да се отклучи</string>
+    <string name="kg_face_or_swipe_unlock_voice_assistant_instructions">Користете препознавање лице или поминете на екранот со два прста за да отклучите</string>
+    <string name="kg_face_password_active_instructions">Користете препознавање лице или внесете лозинка за да отворите</string>
+    <string name="kg_face_password_none_instructions">Користете препознавање лице или внесете лозинка</string>
+    <string name="kg_face_pattern_active_instructions">Користете препознавање лице или нацртајте шара за да отворите</string>
+    <string name="kg_face_pattern_none_instructions">Користете препознавање лице или нацртајте шара</string>
+    <string name="kg_face_pin_active_instructions">Користете препознавање лице или внесете PIN за да отворите</string>
+    <string name="kg_face_pin_none_instructions">Користете препознавање лице или внесете PIN</string>
+    <string name="kg_face_retry_content_description">Допрете двапати за да користите препознавање лице.</string>
+    <string name="kg_face_retry_text">Допрете на иконата за повторно да се обидете со препознавањето лице</string>
+    <string name="kg_face_start_for_dex">Корис. преп. лице на Вашиот телефон</string>
+    <string name="kg_face_stop">Сопри препознавање лице</string>
+    <string name="kg_face_toast_preview_for_dex">Користете препознавање лице на телефонот за да го потврдите Вашиот идентитет.</string>
+    <string name="kg_face_unlock_instructions">Поминете на екранот за да отклучите со препознавање лице</string>
+    <string name="kg_face_unlock_voice_assistant_instructions">Поминете на екранот со два прста за да отклучите со препознавање лице</string>
+    <string name="kg_finger_print_bad_quality_error_message">Сензорот за отпечаток од прст можеби е валкан. Исчистете го и обидете се повторно.</string>
+    <string name="kg_finger_print_database_error_message">Податоците за отпечатокот се неисправни. Ресетирајте го Отпечаток како тип заклучување на екранот, а потоа пак додадете ги своите отпечатоци или сменете го типот заклучување на екранот.</string>
+    <string name="kg_finger_print_not_responding_error_message">Сензорот за отпечатоци не реагира. Обидете се повторно подоцна.</string>
+    <string name="kg_finger_print_sensor_changed_error_message">Сензорот за отпечатоци од прст не е соодветно променет. Контактирајте со службата за корисници.</string>
+    <string name="kg_finger_print_sensor_error_message">Дојде до грешка со сензорот за отпечатоци. Ако поракава се појавува почесто, рестартирајте го уредот.</string>
+    <string name="kg_finger_print_sensor_with_recalibration_error_message">Внимавајте копчето Дома да е чисто и суво, па обидете се повторно.</string>
+    <string name="kg_fingerprint_direction_active_instructions">Користете отпечаток од прст или нацртајте низа насоки за да отворите</string>
+    <string name="kg_fingerprint_direction_none_instructions">Користете отпечаток од прст или нацртајте низа насоки</string>
+    <string name="kg_fingerprint_no_match">Нема совпаѓање</string>
+    <string name="kg_fingerprint_or_swipe_active_instructions">Корист. отпеч. од прст или помин. на екранот за да отворите</string>
+    <string name="kg_fingerprint_or_swipe_active_voice_assistant_instructions">Користете отпечаток од прст или поминете на екранот со два прста за да отворите</string>
+    <string name="kg_fingerprint_or_swipe_unlock_instructions">Корист. отпеч. од прст или помин. на екранот за да отклучите</string>
+    <string name="kg_fingerprint_or_swipe_unlock_voice_assistant_instructions">Користете отпечаток од прст или поминете на екранот со два прста за да отклучите</string>
+    <string name="kg_fingerprint_password_active_instructions">Користи отпечаток од прст или внеси лозинка за да се отвори</string>
+    <string name="kg_fingerprint_password_none_instructions">Користи отпечаток од прст или внеси лозинка</string>
+    <string name="kg_fingerprint_pattern_active_instructions">Користи отпечаток од прст или нацртај шара за да се отвори</string>
+    <string name="kg_fingerprint_pattern_none_instructions">Користи отпечаток од прст или нацртај шара за отклучување</string>
+    <string name="kg_fingerprint_pin_active_instructions">Користи отпечаток од прст или внеси PIN за да се отвори</string>
+    <string name="kg_fingerprint_pin_none_instructions">Користи отпечаток од прст или внеси PIN</string>
+    <string name="kg_fingerprints_direction_bouncer_instructions">Користете отпечаток од прст или нацртајте низа насоки за да отворите</string>
+    <string name="kg_fingerprints_direction_instructions">Користете отпечаток од прст или нацртајте низа насоки</string>
+    <string name="kg_fingerprints_direction_unabled_instructions">Уредот се рестартираше и треба да се отклучи со користење серија насоки. Отпечатоците од прсти може да ги користите следниот пат кога ќе го отклучувате телефонот.</string>
+    <string name="kg_fingerprints_password_bouncer_instructions">Користи отпечаток од прст или внеси лозинка за да се отвори</string>
+    <string name="kg_fingerprints_password_instructions">Користи отпечаток од прст или внеси лозинка</string>
+    <string name="kg_fingerprints_password_unabled_instructions">Уредот се рестартираше и треба да се отклучи со користење на лозинката. Отпечатоците од прсти може да ги користите следниот пат кога ќе го отклучувате телефонот.</string>
+    <string name="kg_fingerprints_pattern_bouncer_instructions">Користи отпечаток од прст или нацртај шара за да се отвори</string>
+    <string name="kg_fingerprints_pattern_instructions">Користи отпечаток од прст или нацртај шара за отклучување</string>
+    <string name="kg_fingerprints_pattern_unabled_instructions">Уредот се рестартираше и треба да се отклучи со користење на шемата. Отпечатоците од прсти може да ги користите следниот пат кога ќе го отклучувате телефонот.</string>
+    <string name="kg_fingerprints_pin_bouncer_instructions">Користи отпечаток од прст или внеси PIN за да се отвори</string>
+    <string name="kg_fingerprints_pin_instructions">Користи отпечаток од прст или внеси PIN</string>
+    <string name="kg_fingerprints_pin_unabled_instructions">Уредот се рестартираше и треба да се отклучи со користење PIN. Отпечатоците од прсти може да ги користите следниот пат кога ќе го отклучувате телефонот.</string>
+    <string name="kg_flight_mode">Режим за летало</string>
+    <string name="kg_forgot_spass_button_text">Samsung account</string>
+    <string name="kg_hide_password_accessibility">Сокриј ја лозинката</string>
+    <string name="kg_ib_cancel_for_dex">Откажи Интелигентно скенирање</string>
+    <string name="kg_ib_cancel_text">Откажи Интелигентно скенирање</string>
+    <string name="kg_ib_cover_toast_for_dex">Препознавањето лице не е недостапно додека е прикачен капак.</string>
+    <string name="kg_ib_retry_text">Допрете на иконата за повторно да се обидете со Интелигентно скенирање</string>
+    <string name="kg_ib_start_for_dex">Користете Интелигентно скенирање на телефон</string>
+    <string name="kg_ib_stop">Сопри Интелигентно скенирање</string>
+    <string name="kg_ib_toast_preview_for_dex">Користете Интелигентно скенирање на телефон</string>
+    <string name="kg_incorrect_password">Внесена е неточна лозинка</string>
+    <string name="kg_incorrect_pattern">Нацртана е неправилна шара</string>
+    <string name="kg_incorrect_pin">Внесен е неточен PIN</string>
+    <string name="kg_infinity_wallpaper_description">Бесконечната заднина ќе се примени на Always On Display, на Почетниот екран и на Екранот за заклучување истовремено.</string>
+    <string name="kg_infinity_wallpaper_description_without_aod">Бесконечната заднина ќе се примени на Почетниот екран и на Екранот за заклучување истовремено.</string>
+    <string name="kg_intelligent_direction_active_instructions">Користете Интелигентно скенирање или нацртајте низа насоки за да отворите</string>
+    <string name="kg_intelligent_direction_none_instructions">Користете Интелигентно скенирање или нацртајте низа насоки</string>
+    <string name="kg_intelligent_or_fingerprint_active_instructions">Користете отпечаток од прст за да отворите или поминете на екранот за да користите Интелигентно скенирање</string>
+    <string name="kg_intelligent_or_fingerprint_active_voice_assistant_instructions">Користете отпечаток од прст за да отворите или поминете на екранот со 2 прста за да користите Интелигентно скенирање</string>
+    <string name="kg_intelligent_or_fingerprint_unlock_instructions">Користете отпечаток од прст за да отклучите или поминете на екранот за да користите Интелигентно скенирање</string>
+    <string name="kg_intelligent_or_fingerprint_unlock_voice_assistant_instructions">Користете Интелигентно скенирање или поминете на екранот со 2 прста за да отклучите</string>
+    <string name="kg_intelligent_or_swipe_active_instructions">Користете Интелигентно скенирање или поминете на екранот за да се отвори</string>
+    <string name="kg_intelligent_or_swipe_active_voice_assistant_instructions">Користете Интелигентно скенирање или поминете на екранот со 2 прста за да отклучите</string>
+    <string name="kg_intelligent_or_swipe_unlock_instructions">Користете Интелигентно скенирање или поминете на екранот за да се отклучи</string>
+    <string name="kg_intelligent_or_swipe_unlock_voice_assistant_instructions">Користете Интелигентно скенирање или поминете на екранот со 2 прста за да отклучите</string>
+    <string name="kg_intelligent_password_active_instructions">Користете Интелигентно скенирање или внесете лозинка за да отворите</string>
+    <string name="kg_intelligent_password_none_instructions">Користете Интелигентно скенирање или внесете лозинка</string>
+    <string name="kg_intelligent_pattern_active_instructions">Користете Интелигентно скенирање или нацртајте шара за да отворите</string>
+    <string name="kg_intelligent_pattern_none_instructions">Користете Интелигентно скенирање или нацртајте шара</string>
+    <string name="kg_intelligent_pin_active_instructions">Користете Интелигентно скенирање или внесете PIN за да отворите</string>
+    <string name="kg_intelligent_pin_none_instructions">Користете Интелигентно скенирање или внесете PIN</string>
+    <string name="kg_intelligent_retry_content_description">Допрете двапати за да користите Интелигентно скенирање.</string>
+    <string name="kg_intelligent_unlock_instructions">Поминете на екранот за да отклучите со Интелигентно скенирање</string>
+    <string name="kg_intelligent_unlock_voice_assistant_instructions">Користете Интелигентно скенирање или поминете на екранот со 2 прста за да отклучите</string>
+    <string name="kg_iris_1st_active_instructions">Користете зеници или поминете на екранот за да се отвори</string>
+    <string name="kg_iris_1st_active_voice_assistant_instructions">Користете зеници или поминете на екранот со два прста за да отворите</string>
+    <string name="kg_iris_1st_unlock_instructions">Користете зеници или поминете на екранот за да отклучите</string>
+    <string name="kg_iris_1st_unlock_voice_assistant_instructions">Користете зеници или поминете на екранот со два прста за да отклучите.</string>
+    <string name="kg_iris_cancel">Откажи препознавање зеница</string>
+    <string name="kg_iris_cancel_for_dex">Откажи препознавање зеница</string>
+    <string name="kg_iris_cover_clear_view_toast_for_dex">Препознавањето зеници е недостапно кога е прикачен Clear View Cover.</string>
+    <string name="kg_iris_cover_led_view_toast_for_dex">Препознавањето зеници е недостапно кога е прикачен LED View Cover.</string>
+    <string name="kg_iris_cover_s_view_toast_for_dex">Препознавањето зеници е недостапно кога е прикачен S View Cover.</string>
+    <string name="kg_iris_cover_toast_for_dex">Препознавањето зеници не е недостапно додека е прикачен капак.</string>
+    <string name="kg_iris_direction_active_instructions">Користете зеници или нацртајте серија насоки за да отворите</string>
+    <string name="kg_iris_direction_instructions">Користете зеници или нацртајте низа насоки</string>
+    <string name="kg_iris_direction_none_instructions">Користете зеници или нацртајте низа насоки</string>
+    <string name="kg_iris_no_match">Нема совпаѓање</string>
+    <string name="kg_iris_or_fingerprint_active_instructions">Користете отпечаток од прст за да отворите или поминете на екранот за да користите зеници</string>
+    <string name="kg_iris_or_fingerprint_active_voice_assistant_instructions">Користете отпечаток од прст за да отворите или поминете на екранот со два прста за да користите зеници</string>
+    <string name="kg_iris_or_fingerprint_unlock_instructions">Корис. отпеч. од прст за отклуч. или пом. на екр. за да корис.зеници</string>
+    <string name="kg_iris_or_fingerprint_unlock_voice_assistant_instructions">Користете отпечаток од прст за да отклучите или поминете на екранот со два прста за да користите зеници</string>
+    <string name="kg_iris_password_active_instructions">Користете зеници или внесете лозинка за да отворите</string>
+    <string name="kg_iris_password_none_instructions">Користете зеници или внесете лозинка</string>
+    <string name="kg_iris_pattern_active_instructions">Користете зеници или нацртајте шара за да отворите</string>
+    <string name="kg_iris_pattern_none_instructions">Користете зеници или нацртајте шара</string>
+    <string name="kg_iris_pattern_text_for_mkeyboard">Допрете тука за да нацртате шара</string>
+    <string name="kg_iris_pin_active_instructions">Користете зеници или внесете PIN за да отворите</string>
+    <string name="kg_iris_pin_none_instructions">Користете зеници или внесете PIN</string>
+    <string name="kg_iris_retry_content_description">Допрете двапати за да ги скенирате зениците.</string>
+    <string name="kg_iris_retry_text">Допрете на иконата за повторно да се обидете со препознавање зеници</string>
+    <string name="kg_iris_start_for_dex">Користи зеници на Вашиот телефон</string>
+    <string name="kg_iris_stop">Сопри скенирање зеници</string>
+    <string name="kg_iris_strong_auth_prompt_reason_24_timeout_universal_lock">За Ваша безбедност, користете ја Вашата низа насоки за отклучување на телефонот. Можете да ја користите Вашата биометрија следниот пат.</string>
+    <string name="kg_iris_strong_auth_prompt_reason_restarting_universal_lock">Уредот се рестартираше и треба да се отклучи со користење серија насоки. Зениците може да ги користите следниот пат кога ќе го отклучувате телефонот.</string>
+    <string name="kg_iris_strong_auth_prompt_reason_universal_lock_security_policy">Нацртајте низа насоки наместо да користите препознавање зеници поради безбедносната политика</string>
+    <string name="kg_iris_toast_preview_for_dex">Користете ги Вашите зеници на телефонот за да го потврдите Вашиот идентитет.</string>
+    <string name="kg_iris_too_many_timeout_error_text">Температурата е превисока за да користи препознавање зеници. Почекајте телефонот да се излади пред да се обидете повторно.</string>
+    <string name="kg_iris_too_many_timeout_error_toast_text">LED-от за препознавање зеници е прегреан. Обидете се повторно подоцна.</string>
+    <string name="kg_iris_unlock_instructions">Поминете на екранот за да ги користите зениците за отклучување</string>
+    <string name="kg_iris_unlock_voice_assistant_instructions">Поминете со два прста на екранот за да ги користите зениците за отклучување</string>
+    <string name="kg_keycode_delete">ИЗБРИШИ</string>
+    <string name="kg_keycode_ok">OK</string>
+    <string name="kg_kor_empty_sim_puk_hint">Не е внесен PIN код за одблокирање (PUK). Обидете се повторно.</string>
+    <string name="kg_kor_enter_confirm_pin_hint">Внесете го PIN-от за USIM-картичката повторно за потврда.</string>
+    <string name="kg_kor_invalid_confirm_pin_hint">Новите PIN-ови не се совпаѓаат.</string>
+    <string name="kg_kor_invalid_sim_puk_hint">Внесете 8-цифрен PIN код за одблокирање (PUK)</string>
+    <string name="kg_kor_password_wrong_pin_code">Внесен е неточен PIN. Преостануваат %d обиди. Контактирајте со службата за корисниците.</string>
+    <string name="kg_kor_puk_enter_pin_hint">"Создајте нов PIN за USIM-картичката.
+PIN-от мора да содржи од 4 до 8 цифри."</string>
+    <string name="kg_kor_sim_pin_instructions">Внесете PIN за отклучување на USIM-картичката (4 до 8 цифри)</string>
+    <string name="kg_kor_sim_puk_instructions">Внесете го PUK-от.</string>
+    <string name="kg_kor_sim_puk_remaining_attempts">"Внесен е неточен PUK %1$d пати. Ако се внесе неточен PUK уште %2$d пати, USIM-картичката ќе биде трајно блокирана.
+
+Ако не си го знаете PUK-от, посетете центар за услуги за корисниците."</string>
+    <string name="kg_kor_sim_unlock_progress_dialog_message">SIM-картичката се отклучува</string>
+    <string name="kg_kor_success_pin_message">Новата лозинка (PIN) е успешно сочувана.</string>
+    <string name="kg_kor_wrong_puk_code">Грешка во внес. код за одблок.</string>
+    <string name="kg_ktt_sim_perso_instructions">Внесете лозинка од 4 до 8 бројки (PIN)</string>
+    <string name="kg_lockscreen_emergency_call_button_text">Итен повик</string>
+    <string name="kg_login_checking_password">Се проверува сметката…</string>
+    <string name="kg_login_invalid_input">Погрешно корисничко име или лозинка.</string>
+    <string name="kg_login_password_hint">Лозинка</string>
+    <string name="kg_login_submit_button">Најава</string>
+    <string name="kg_login_username_hint">Корисничко име (email)</string>
+    <string name="kg_missing_sim_message_short">Нема SIM-картичка</string>
+    <string name="kg_multi_biometrics_direction_instructions">Користете биометрија или нацртајте низа насоки</string>
+    <string name="kg_multi_biometrics_prompt_reason_timeout_universal_lock_strong_auth">Нацртајте низа насоки, како што се бара со безбедносната политика, наместо да ја користите Вашата биометрија</string>
+    <string name="kg_multi_biometrics_strong_auth_prompt_reason_24_timeout_universal_lock">За Ваша безбедност, користете ја Вашата низа насоки за отклучување на телефонот. Можете да ја користите Вашата биометрија следниот пат.</string>
+    <string name="kg_multi_biometrics_strong_auth_prompt_reason_restarting_universal_lock">Уредот се рестартираше и треба да се отклучи со користење серија насоки. Биометријата може да ја користите следниот пат кога ќе го отклучувате уредот.</string>
+    <string name="kg_multi_direction_active_instructions">Користете биометрија или нацртајте низа насоки за да отворите</string>
+    <string name="kg_multi_direction_none_instructions">Користете биометрија или нацртајте низа насоки</string>
+    <string name="kg_multi_password_active_instructions">Користете биометрија или внесете лозинка за да се отвори</string>
+    <string name="kg_multi_password_none_instructions">Користете биометрија или внесете лозинка</string>
+    <string name="kg_multi_pattern_active_instructions">Користете биометрија или нацртајте шара за да отворите</string>
+    <string name="kg_multi_pattern_none_instructions">Користете биометрија или нацртајте шара</string>
+    <string name="kg_multi_pin_active_instructions">Користете биометрија или внесете PIN за да се отвори</string>
+    <string name="kg_multi_pin_none_instructions">Користете биометрија или внесете PIN</string>
+    <string name="kg_n_attempts_remaining">(Има уште %d обиди)</string>
+    <string name="kg_no_match">Нема совпаѓање</string>
+    <string name="kg_none_direction_1_frp">"If you do not draw the correct series of directions in the next attempt, your phone will automatically be reset to factory settings and all information on the phone will be erased.
+
+If your phone is reset, you may need to enter the Google account information (email address and password) associated with this phone to be able to use it again."</string>
+    <string name="kg_none_direction_1_reactivation">"Ако не ја внесете правилната низа насоки во следниот обид, телефонот автоматски ќе се ресетира на фабричките поставувања и сите информации на телефонот ќе се избришат.
+
+Ако телефонот се ресетира, можеби ќе треба да ги внесете информациите за Samsung account (адреса за е-пошта и лозинка) поврзани со овој телефон за да можете повторно да го користите."</string>
+    <string name="kg_none_direction_active_instructions">Нацртајте низа насоки за да отворите</string>
+    <string name="kg_none_direction_none_frp">"If you do not draw the correct series of directions within the next %d attempts, your phone will automatically be reset to factory settings and all information on the phone will be erased.
+
+If your phone is reset, you may need to enter the Google account information (email address and password) associated with this phone to be able to use it again."</string>
+    <string name="kg_none_direction_none_instructions">Нацртајте низа насоки за да го отклучите екранот</string>
+    <string name="kg_none_direction_none_reactivation">"Ако не ја внесете правилната низа насоки во следните %d обиди, телефонот автоматски ќе се ресетира на фабричките поставувања и сите информации на телефонот ќе се избришат.
+
+Ако телефонот се ресетира, можеби ќе треба да ги внесете информациите за Samsung account (адреса за е-пошта и лозинка) поврзани со овој телефон за да можете повторно да го користите."</string>
+    <string name="kg_none_face_direction_deviceadmin_instructions">Нацртајте низа насоки, како што се бара во безбедносната политика, наместо да го користите препознавањето лице</string>
+    <string name="kg_none_face_direction_restart_instructions">Телефонот се рестартираше и треба да се отклучи со користење на низа насоки. Можете да користите препознавање лице следниот пат кога ќе го отклучувате телефонот.</string>
+    <string name="kg_none_face_direction_shutdown_instructions">Користете препознавање лице или нацртајте низа насоки за да го исклучите телефонот</string>
+    <string name="kg_none_face_direction_timeout_instructions">За Ваша безбедност, користете ја Вашата низа насоки за отклучување на телефонот. Можете да ја користите Вашата биометрија следниот пат.</string>
+    <string name="kg_none_face_password_deviceadmin_instructions">Внесете ја Вашата лозинка, како што се бара со безбедносната политика, наместо да користите препознавање лице</string>
+    <string name="kg_none_face_password_restart_instructions">Телефонот се рестартираше и треба да се отклучи со користење на лозинката. Можете да користите препознавање лице следниот пат кога ќе го отклучувате телефонот.</string>
+    <string name="kg_none_face_password_shutdown_instructions">Користете препознавање лице или внесете лозинка за да го исклучите телефонот</string>
+    <string name="kg_none_face_password_timeout_instructions">За Ваша безбедност, користете ја Вашата лозинка за отклучување на телефонот. Можете да ја користите Вашата биометрија следниот пат.</string>
+    <string name="kg_none_face_pattern_deviceadmin_instructions">Нацртајте ја шарата, како што се бара со безбедносната политика, наместо да користите препознавање лице</string>
+    <string name="kg_none_face_pattern_restart_instructions">Телефонот се рестартираше и треба да се отклучи со користење на шарата. Можете да користите препознавање лице следниот пат кога ќе го отклучувате телефонот.</string>
+    <string name="kg_none_face_pattern_shutdown_instructions">Користете препознавање лице или нацртајте шара за да го исклучите телефонот</string>
+    <string name="kg_none_face_pattern_timeout_instructions">За Ваша безбедност, користете ја Вашата шара за отклучување на телефонот. Можете да ја користите Вашата биометрија следниот пат.</string>
+    <string name="kg_none_face_pin_deviceadmin_instructions">Внесете го Вашиот PIN, како што се бара со безбедносната политика, наместо да користите препознавање лице</string>
+    <string name="kg_none_face_pin_restart_instructions">Телефонот се рестартираше и треба да се отклучи со користење PIN. Можете да користите препознавање лице следниот пат кога ќе го отклучувате телефонот.</string>
+    <string name="kg_none_face_pin_shutdown_instructions">Користете препознавање лице или внесете PIN за да го исклучите телефонот</string>
+    <string name="kg_none_face_pin_timeout_instructions">За Ваша безбедност, користете го Вашиот PIN за отклучување на телефонот. Можете да ја користите Вашата биометрија следниот пат.</string>
+    <string name="kg_none_facefingerprint_direction_itpolicy_instructions">Користете отпечаток од прст или нацртајте низа насоки, како што се бара со безбедносната политика, наместо да користите препознавање на лице</string>
+    <string name="kg_none_facefingerprint_password_itpolicy_instructions">Користете отпечаток од прст или внесете лозинка, како што се бара со безбедносната политика, наместо да користите препознавање на лице</string>
+    <string name="kg_none_facefingerprint_pattern_itpolicy_instructions">Користете отпечаток од прст или нацртајте шара, како што се бара со безбедносната политика, наместо да користите препознавање на лице</string>
+    <string name="kg_none_facefingerprint_pin_itpolicy_instructions">Користете отпечаток од прст или внесете PIN, како што се бара со безбедносната политика, наместо да користите препознавање на лице</string>
+    <string name="kg_none_fingerprint_direction_deviceadmin_instructions">Нацртајте низа насоки, како што се бара со безбедносната политика, наместо да ги користите Вашите отпечатоци од прст</string>
+    <string name="kg_none_fingerprint_direction_restart_instructions">Телефонот се рестартираше и треба да се отклучи со користење на низа насоки. Отпечатоците од прст може да ги користите следниот пат кога ќе го отклучувате телефонот.</string>
+    <string name="kg_none_fingerprint_direction_shutdown_instructions">Користете отпечаток од прст или нацртајте низа насоки за да го исклучите телефонот</string>
+    <string name="kg_none_fingerprint_direction_timeout_instructions">За Ваша безбедност, користете ја Вашата низа насоки за отклучување на телефонот. Можете да ја користите Вашата биометрија следниот пат.</string>
+    <string name="kg_none_fingerprint_password_deviceadmin_instructions">Внесете ја Вашата лозинка, како што се бара со безбедносната политика, наместо да ги користите Вашите отпечатоци од прст</string>
+    <string name="kg_none_fingerprint_password_restart_instructions">Телефонот се рестартираше и треба да се отклучи со користење на лозинката. Отпечатоците од прст може да ги користите следниот пат кога ќе го отклучувате телефонот.</string>
+    <string name="kg_none_fingerprint_password_shutdown_instructions">Користете отпечаток од прст или внесете лозинка за да го исклучите телефонот</string>
+    <string name="kg_none_fingerprint_password_timeout_instructions">За Ваша безбедност, користете ја Вашата лозинка за отклучување на телефонот. Можете да ја користите Вашата биометрија следниот пат.</string>
+    <string name="kg_none_fingerprint_pattern_deviceadmin_instructions">Нацртајте ја шарата, како што се бара со безбедносната политика, наместо да ги користите Вашите отпечатоци од прст</string>
+    <string name="kg_none_fingerprint_pattern_restart_instructions">Телефонот се рестартираше и треба да се отклучи со користење на шарата. Отпечатоците од прст може да ги користите следниот пат кога ќе го отклучувате телефонот.</string>
+    <string name="kg_none_fingerprint_pattern_shutdown_instructions">Користете отпечаток од прст или нацртајте шара за да го исклучите телефонот</string>
+    <string name="kg_none_fingerprint_pattern_timeout_instructions">За Ваша безбедност, користете ја Вашата шара за отклучување на телефонот. Можете да ја користите Вашата биометрија следниот пат.</string>
+    <string name="kg_none_fingerprint_pin_deviceadmin_instructions">Внесете го Вашиот PIN, како што се бара со безбедносната политика, наместо да ги користите Вашите отпечатоци од прст</string>
+    <string name="kg_none_fingerprint_pin_restart_instructions">Телефонот се рестартираше и треба да се отклучи со користење PIN. Отпечатоците од прст може да ги користите следниот пат кога ќе го отклучувате телефонот.</string>
+    <string name="kg_none_fingerprint_pin_shutdown_instructions">Користете отпечаток од прст или внесете PIN за да го исклучите телефонот</string>
+    <string name="kg_none_fingerprint_pin_timeout_instructions">За Ваша безбедност, користете го Вашиот PIN за отклучување на телефонот. Можете да ја користите Вашата биометрија следниот пат.</string>
+    <string name="kg_none_intelligent_direction_deviceadmin_instructions">Нацртајте низа насоки, како што се бара во безбедносната политика, наместо да користите Интелигентно скенирање</string>
+    <string name="kg_none_intelligent_direction_restart_instructions">Телефонот се рестартираше и треба да се отклучи со користење на низа насоки. Биометријата можете да ја користите следниот пат кога ќе го отклучувате телефонот.</string>
+    <string name="kg_none_intelligent_direction_timeout_instructions">За Ваша безбедност, користете ја Вашата низа насоки за отклучување на телефонот. Можете да ја користите Вашата биометрија следниот пат.</string>
+    <string name="kg_none_intelligent_password_deviceadmin_instructions">Внесете ја Вашата лозинка, како што се бара со безбедносната политика, наместо да користите Интелигентно скенирање</string>
+    <string name="kg_none_intelligent_password_restart_instructions">Телефонот се рестартираше и треба да се отклучи со користење на лозинката. Биометријата можете да ја користите следниот пат кога ќе го отклучувате телефонот.</string>
+    <string name="kg_none_intelligent_password_shutdown_instructions">Користете Интелигентно скенирање или внесете лозинка за да го исклучите телефонот</string>
+    <string name="kg_none_intelligent_password_timeout_instructions">За Ваша безбедност, користете ја Вашата шара за отклучување на телефонот. Можете да ја користите Вашата биометрија следниот пат.</string>
+    <string name="kg_none_intelligent_pattern_deviceadmin_instructions">Нацртајте ја шарата, како што се бара со безбедносната политика, наместо да користите Интелигентно скенирање</string>
+    <string name="kg_none_intelligent_pattern_restart_instructions">Телефонот се рестартираше и треба да се отклучи со користење на шарата. Биометријата можете да ја користите следниот пат кога ќе го отклучувате телефонот.</string>
+    <string name="kg_none_intelligent_pattern_shutdown_instructions">Користете Интелигентно скенирање или нацртајте шара за да го исклучите телефонот</string>
+    <string name="kg_none_intelligent_pattern_timeout_instructions">За Ваша безбедност, користете ја Вашата шара за отклучување на телефонот. Можете да ја користите Вашата биометрија следниот пат.</string>
+    <string name="kg_none_intelligent_pin_deviceadmin_instructions">Внесете го Вашиот PIN, како што се бара со безбедносната политика, наместо да користите Интелигентно скенирање</string>
+    <string name="kg_none_intelligent_pin_restart_instructions">Телефонот се рестартираше и треба да се отклучи со користење PIN. Биометријата можете да ја користите следниот пат кога ќе го отклучувате телефонот.</string>
+    <string name="kg_none_intelligent_pin_shutdown_instructions">Користете Интелигентно скенирање или внесете PIN за да го исклучите телефонот</string>
+    <string name="kg_none_intelligent_pin_timeout_instructions">За Ваша безбедност, користете го Вашиот PIN за отклучување на телефонот. Можете да ја користите Вашата биометрија следниот пат.</string>
+    <string name="kg_none_iris_direction_deviceadmin_instructions">Нацртајте низа насоки, како што се бара со безбедносната политика, наместо да ги користите Вашите зеници</string>
+    <string name="kg_none_iris_direction_restart_instructions">Телефонот се рестартираше и треба да се отклучи со користење низа насоки. Зениците може да ги користите следниот пат кога ќе го отклучувате телефонот.</string>
+    <string name="kg_none_iris_direction_shutdown_instructions">Користете зеници или нацртајте низа насоки за да го исклучите телефонот</string>
+    <string name="kg_none_iris_direction_timeout_instructions">За Ваша безбедност, користете ја Вашата низа насоки за отклучување на телефонот. Можете да ја користите Вашата биометрија следниот пат.</string>
+    <string name="kg_none_iris_password_deviceadmin_instructions">Внесете ја Вашата лозинка, како што се бара со безбедносната политика, наместо да ги користите Вашите зеници</string>
+    <string name="kg_none_iris_password_restart_instructions">Телефонот се рестартираше и треба да се отклучи со користење на лозинката. Зениците може да ги користите следниот пат кога ќе го отклучувате телефонот.</string>
+    <string name="kg_none_iris_password_shutdown_instructions">Користете зеници или внесете лозинка за да го исклучите телефонот</string>
+    <string name="kg_none_iris_password_timeout_instructions">За Ваша безбедност, користете ја Вашата лозинка за отклучување на телефонот. Можете да ја користите Вашата биометрија следниот пат.</string>
+    <string name="kg_none_iris_pattern_deviceadmin_instructions">Нацртајте ја шарата, како што се бара со безбедносната политика, наместо да ги користите Вашите зеници</string>
+    <string name="kg_none_iris_pattern_restart_instructions">Телефонот се рестартираше и треба да се отклучи со користење на шарата. Зениците може да ги користите следниот пат кога ќе го отклучувате телефонот.</string>
+    <string name="kg_none_iris_pattern_shutdown_instructions">Користете зеници или нацртајте шара за да го исклучите телефонот</string>
+    <string name="kg_none_iris_pattern_timeout_instructions">За Ваша безбедност, користете ја Вашата шара за отклучување на телефонот. Можете да ја користите Вашата биометрија следниот пат.</string>
+    <string name="kg_none_iris_pin_deviceadmin_instructions">Внесете го Вашиот PIN, како што се бара со безбедносната политика, наместо да ги користите Вашите зеници</string>
+    <string name="kg_none_iris_pin_restart_instructions">Телефонот се рестартираше и треба да се отклучи со користење PIN. Зениците може да ги користите следниот пат кога ќе го отклучувате телефонот.</string>
+    <string name="kg_none_iris_pin_shutdown_instructions">Користете зеници или внесете PIN за да го исклучите телефонот</string>
+    <string name="kg_none_iris_pin_timeout_instructions">За Ваша безбедност, користете го Вашиот PIN за отклучување на телефонот. Можете да ја користите Вашата биометрија следниот пат.</string>
+    <string name="kg_none_multi_direction_deviceadmin_instructions">Нацртајте низа насоки, како што се бара со безбедносната политика, наместо да ја користите Вашата биометрија</string>
+    <string name="kg_none_multi_direction_restart_instructions">Телефонот се рестартираше и треба да се отклучи со користење на низа насоки. Биометријата можете да ја користите следниот пат кога ќе го отклучувате телефонот.</string>
+    <string name="kg_none_multi_direction_shutdown_instructions">Користете биометрија или нацртајте низа насоки за да го исклучите телефонот</string>
+    <string name="kg_none_multi_direction_timeout_instructions">За Ваша безбедност, користете ја Вашата низа насоки за отклучување на телефонот. Можете да ја користите Вашата биометрија следниот пат.</string>
+    <string name="kg_none_multi_password_deviceadmin_instructions">Внесете ја Вашата лозинка, како што се бара со безбедносната политика, наместо да ја користите Вашата биометрија</string>
+    <string name="kg_none_multi_password_restart_instructions">Телефонот се рестартираше и треба да се отклучи со користење на лозинката. Биометријата можете да ја користите следниот пат кога ќе го отклучувате телефонот.</string>
+    <string name="kg_none_multi_password_shutdown_instructions">Користете биометрија или внесете лозинка за да го исклучите телефонот</string>
+    <string name="kg_none_multi_password_timeout_instructions">За Ваша безбедност, користете ја Вашата лозинка за отклучување на телефонот. Можете да ја користите Вашата биометрија следниот пат.</string>
+    <string name="kg_none_multi_pattern_deviceadmin_instructions">Нацртајте ја шарата, како што се бара со безбедносната политика, наместо да ја користите Вашата биометрија</string>
+    <string name="kg_none_multi_pattern_restart_instructions">Телефонот се рестартираше и треба да се отклучи со користење на шарата. Биометријата можете да ја користите следниот пат кога ќе го отклучувате телефонот.</string>
+    <string name="kg_none_multi_pattern_shutdown_instructions">Користете биометрија или нацртајте шара за да го исклучите телефонот</string>
+    <string name="kg_none_multi_pattern_timeout_instructions">За Ваша безбедност, користете ја Вашата шара за отклучување на телефонот. Можете да ја користите Вашата биометрија следниот пат.</string>
+    <string name="kg_none_multi_pin_deviceadmin_instructions">Внесете го Вашиот PIN, како што се бара со безбедносната политика, наместо да ја користите Вашата биометрија</string>
+    <string name="kg_none_multi_pin_restart_instructions">Телефонот се рестартираше и треба да се отклучи со користење PIN. Биометријата можете да ја користите следниот пат кога ќе го отклучувате телефонот.</string>
+    <string name="kg_none_multi_pin_shutdown_instructions">Користете биометрија или внесете PIN за да го исклучите телефонот</string>
+    <string name="kg_none_multi_pin_timeout_instructions">За Ваша безбедност, користете го Вашиот PIN за отклучување на телефонот. Можете да ја користите Вашата биометрија следниот пат.</string>
+    <string name="kg_none_none_direction_shutdown_instructions">Нацртајте низа насоки за да го исклучите телефонот</string>
+    <string name="kg_none_none_password_shutdown_instructions">Внесете лозинка за да го исклучите телефонот</string>
+    <string name="kg_none_none_pattern_shutdown_instructions">Нацртајте шара за да го исклучите телефонот</string>
+    <string name="kg_none_none_pin_shutdown_instructions">Внесете PIN за да го исклучите телефонот</string>
+    <string name="kg_none_password_1_frp">"If you do not enter the correct password in the next attempt, your phone will automatically be reset to factory settings and all information on the phone will be erased.
+
+If your phone is reset, you may need to enter the Google account information (email address and password) associated with this phone to be able to use it again."</string>
+    <string name="kg_none_password_1_reactivation">"Ако не ја внесете правилната лозинка во следните %d обиди, таблетот автоматски ќе се ресетира на фабричките поставувања и сите информации на таблетот ќе се избришат.
+
+Ако таблетот се ресетира, можеби ќе треба да ги внесете информациите за Samsung account (адреса за е-пошта и лозинка) поврзани со овој таблет за да можете повторно да го користите."</string>
+    <string name="kg_none_password_active_instructions">Внесете лозинка за да отворите</string>
+    <string name="kg_none_password_none_frp">"If you do not enter the correct password within the next %d attempts, your phone will automatically be reset to factory settings and all information on the phone will be erased.
+
+If your phone is reset, you may need to enter the Google account information (email address and password) associated with this phone to be able to use it again."</string>
+    <string name="kg_none_password_none_instructions">Внесете лозинка</string>
+    <string name="kg_none_password_none_reactivation">"Ако не ја внесете правилната лозинка во следниот обид, таблетот автоматски ќе се ресетира на фабричките поставувања и сите информации на таблетот ќе се избришат.
+
+Ако таблетот се ресетира, можеби ќе треба да ги внесете информациите за Samsung account (адреса за е-пошта и лозинка) поврзани со овој таблет за да можете повторно да го користите."</string>
+    <string name="kg_none_pattern_1_frp">"If you do not enter the correct pattern in the next attempt, your phone will automatically be reset to factory settings and all information on the phone will be erased.
+
+If your phone is reset, you may need to enter the Google account information (email address and password) associated with this phone to be able to use it again."</string>
+    <string name="kg_none_pattern_1_reactivation">"Ако не ја внесете правилната шара во следниот обид, телефонот автоматски ќе се ресетира на фабричките поставувања и сите информации на телефонот ќе се избришат.
+
+Ако телефонот се ресетира, можеби ќе треба да ги внесете информациите за Samsung account (адреса за е-пошта и лозинка) поврзани со овој телефон за да можете повторно да го користите."</string>
+    <string name="kg_none_pattern_active_instructions">Нацртајте ја шарата за отклучување за да отворите</string>
+    <string name="kg_none_pattern_none_frp">"If you do not enter the correct pattern within the next %d attempts, your phone will automatically be reset to factory settings and all information on the phone will be erased.
+
+If your phone is reset, you may need to enter the Google account information (email address and password) associated with this phone to be able to use it again."</string>
+    <string name="kg_none_pattern_none_instructions">Нацртајте шара за отклучување</string>
+    <string name="kg_none_pattern_none_reactivation">"Ако не ја внесете правилната шара во следните %d обиди, Вашиот телефон автоматски ќе се ресетира на фабричките поставувања и сите информации на телефонот ќе се избришат.
+
+Ако телефонот се ресетира, можеби ќе треба да ги внесете информациите за Samsung account (адреса за е-пошта и лозинка) поврзани со овој телефон за да можете повторно да го користите."</string>
+    <string name="kg_none_pin_1_frp">"If you do not enter the correct PIN in the next attempt, your phone will automatically be reset to factory settings and all information on the phone will be erased.
+
+If your phone is reset, you may need to enter the Google account information (email address and password) associated with this phone to be able to use it again."</string>
+    <string name="kg_none_pin_1_reactivation">"Ако не го внесете правилниот PIN во следниот обид, телефонот автоматски ќе се ресетира на фабричките поставувања и сите информации на телефонот ќе се избришат.
+
+Ако телефонот се ресетира, можеби ќе треба да ги внесете информациите за Samsung account (адреса за е-пошта и лозинка) поврзани со овој телефон за да можете повторно да го користите."</string>
+    <string name="kg_none_pin_active_instructions">Внесете PIN за да отворите</string>
+    <string name="kg_none_pin_none_frp">"If you do not enter the correct PIN within the next %d attempts, your phone will automatically be reset to factory settings and all information on the phone will be erased.
+
+If your phone is reset, you may need to enter the Google account information (email address and password) associated with this phone to be able to use it again."</string>
+    <string name="kg_none_pin_none_instructions">Внесете PIN</string>
+    <string name="kg_none_pin_none_reactivation">"Ако не го внесете правилниот PIN во следните %d обиди, телефонот автоматски ќе се ресетира на фабричките поставувања и сите информации на телефонот ќе се избришат.
+
+Ако телефонот се ресетира, можеби ќе треба да ги внесете информациите за Samsung account (адреса за е-пошта и лозинка) поврзани со овој телефон за да можете повторно да го користите."</string>
+    <string name="kg_none_recovery_none_instructions">Внесете ја лозинка за обновување за да отклучите.</string>
+    <string name="kg_password_hint">Совет</string>
+    <string name="kg_password_hint_show">Потсетник: %s</string>
+    <string name="kg_password_perso_failed">Incorrect PIN. Check PIN and try again.</string>
+    <string name="kg_password_perso_max_failed">Incorrect PIN entered for USIM card lock. Maximum number of retries reached. Restart device or visit CS centre.</string>
+    <string name="kg_password_sub_instructions">Вашата лозинка содржи барем %d знаци, меѓу кои барем една 1 буква.</string>
+    <string name="kg_password_sub_instructions_vzw">Лозинката вклучува букви и е долга најмалку %d знаци.</string>
+    <string name="kg_password_wrong_pin_code_one">Внесен е неточен PIN за SIM-картичката. Имате уште 1 обид.</string>
+    <string name="kg_password_wrong_pin_code_other">Внесен е неточен PIN за SIM-картичката. Имате уште %d обиди.</string>
+    <string name="kg_perso_locked_message">Block other USIM</string>
+    <string name="kg_pin_locked_message">Внеси PIN</string>
+    <string name="kg_pin_sub_instructions">PIN-от содржи барем 4 бројки.</string>
+    <string name="kg_pin_sub_instructions_vzw">Вашиот PIN е составен од %d или повеќе бројки.</string>
+    <string name="kg_power_charging">Се полни: %d%%</string>
+    <string name="kg_power_charging_remaining_time">За %s до полна батерија</string>
+    <string name="kg_power_charging_wirelessly">Безжично полнење: %d%%</string>
+    <string name="kg_power_connect_charger">Поврзи полнач</string>
+    <string name="kg_power_fast_charging">Брзо полнење: %d%%</string>
+    <string name="kg_power_fast_charging_chn">Напредно полнење: %d%%</string>
+    <string name="kg_power_fast_charging_wirelessly">Безжично брзо полнење: %d%%</string>
+    <string name="kg_power_fast_charging_wirelessly_chn">Напредно безжично полнење: %d%%</string>
+    <string name="kg_power_fully_charged">Целосно наполнето</string>
+    <string name="kg_power_time_format_hour">%d ч</string>
+    <string name="kg_power_time_format_hour_minute">%1$d ч. %2$d м.</string>
+    <string name="kg_power_time_format_minute">%d m</string>
+    <string name="kg_prompt_reason_timeout_password_strong_auth">Внесете лозинка наместо да користите препознавање отпечатоци од прст поради безбедносната политика</string>
+    <string name="kg_prompt_reason_timeout_pattern_strong_auth">Нацртајте шара наместо да користите препознавање отпечатоци од прст поради безбедносната политика</string>
+    <string name="kg_prompt_reason_timeout_pin_strong_auth">Внесете PIN наместо да користите препознавање отпечатоци од прст поради безбедносната политика</string>
+    <string name="kg_prompt_reason_timeout_universal_lock_strong_auth">Нацртајте низа насоки наместо да користите препознавање на отпечаток од прст поради безбедносната политика</string>
+    <string name="kg_puk_locked_message">Внеси PUK</string>
+    <string name="kg_remained_1_attempt_countdown_1_min_with_auto_wipe">"Направен е обид да се отклучи уредот %d пати. Имате уште 1 обид пред уредот да се ресетира на фабричките поставувања и сите податоци да се избришат.
+
+Обидете се повторно за 1 минута"</string>
+    <string name="kg_remained_1_attempt_countdown_1_sec_with_auto_wipe">"Направен е обид да се отклучи уредот %d пати. Имате уште 1 обид пред уредот да се ресетира на фабричките поставувања и сите податоци да се избришат.
+
+Обидете се повторно за 1 секунда"</string>
+    <string name="kg_remained_1_attempt_countdown_mins_with_auto_wipe">"Направен е обид да се отклучи уредот %1$d пати. Имате уште 1 обид пред уредот да се ресетира на фабричките поставувања и сите податоци да се избришат.
+
+Обидете се повторно за %2$d минути"</string>
+    <string name="kg_remained_1_attempt_countdown_secs_with_auto_wipe">"Направен е обид да се отклучи уредот %1$d пати. Имате уште 1 обид пред уредот да се ресетира на фабричките поставувања и сите податоци да се избришат.
+
+Обидете се повторно за %2$d секунди"</string>
+    <string name="kg_rmm_lock_instructions">Внесете PIN од %s</string>
+    <string name="kg_samsung_account_button_text">Samsung account</string>
+    <string name="kg_sec_1_failed_attempt_almost_at_wipe">Направен е обид да се отклучи уредот. Имате уште %d обиди пред уредот да се ресетира на фабричките поставувања и да се избришат сите податоци, вклучувајќи ги датотеките и преземените апликации.</string>
+    <string name="kg_sec_1_remaining_count_almost_at_wipe">Направен е обид да се отклучи уредот %d пати. Имате уште 1 обид пред уредот да се ресетира на фабричките поставувања и да се избришат сите податоци, вклучувајќи ги датотеките и преземените апликации.</string>
+    <string name="kg_sec_failed_attempts_almost_at_wipe">Направен е обид да се отклучи уредот %1$d пати. Имате уште %2$d обиди пред уредот да се ресетира на фабричките поставувања и да се избришат сите податоци, вклучувајќи ги датотеките и преземените апликации.</string>
+    <string name="kg_sec_puk_enter_confirm_pin_hint">Внесете го новиот PIN за SIM-картичката повторно за потврда.</string>
+    <string name="kg_sec_puk_enter_pin_hint">Внесете нов PIN на SIM-картичката.</string>
+    <string name="kg_sec_sim_unlock_progress_dialog_message">Се отклучува SIM-картичката…</string>
+    <string name="kg_show_password_accessibility">Прикажи лозинка</string>
+    <string name="kg_sim_lock_accepted">Кодот е прифатен.</string>
+    <string name="kg_sim_locked_message">SIM-картичката е заклучена</string>
+    <string name="kg_sim_pin_remaining_1_attempt">Имате уште 1 обид.</string>
+    <string name="kg_sim_pin_remaining_attempts">Имате уште %d обиди.</string>
+    <string name="kg_sim_puk_instructions">SIM-картичката е заклучена. Внесете PUK. Контактирајте со операторот за детали.</string>
+    <string name="kg_sim_puk_remaining_1_attempt">Ако внесете неточен PUK 1 уште еднаш, SIM-от ќе се блокира.</string>
+    <string name="kg_sim_puk_remaining_attempts">Ако внесете неточен PUK уште %d пати, SIM-от ќе се блокира.</string>
+    <string name="kg_sim_puk_tmo_help_contact_service_provider">Your PIN has been blocked. To unlock your device, contact your service provider.</string>
+    <string name="kg_sim_puk_tmo_sos_call">SOS</string>
+    <string name="kg_skt_sim_perso_instructions">Внесете PIN за отклучување на USIM-картичката (4 цифри)</string>
+    <string name="kg_smart_lock_content_description">Допрете двапати и повлечете за да го отклучите уредот.</string>
+    <string name="kg_strong_auth_prompt_reason_timeout_direction_lock">Уредот не се користел повеќе од 24 часа и треба да се отклучи со користење серија насоки. Отпечатоците од прсти може да ги користите следниот пат кога ќе го отклучувате телефонот.</string>
+    <string name="kg_strong_auth_prompt_reason_timeout_password">Уредот не се користел повеќе од 24 часа и треба да се отклучи со користење на лозинката. Отпечатоците од прсти може да ги користите следниот пат кога ќе го отклучувате телефонот.</string>
+    <string name="kg_strong_auth_prompt_reason_timeout_pattern">Уредот не се користел повеќе од 24 часа и треба да се отклучи со користење на шемата. Отпечатоците од прсти може да ги користите следниот пат кога ќе го отклучувате телефонот.</string>
+    <string name="kg_strong_auth_prompt_reason_timeout_pin">Уредот не се користел повеќе од 24 часа и треба да се отклучи со користење PIN. Отпечатоците од прсти може да ги користите следниот пат кога ќе го отклучувате телефонот.</string>
+    <string name="kg_swipe_active_instructions">Поминете преку екранот за да отворите</string>
+    <string name="kg_swipe_unlock_instructions">Поминете преку екранот за да отклучите</string>
+    <string name="kg_swipe_unlock_smart_lock_instructions">Телефонот е отклучен од Smart Lock</string>
+    <string name="kg_swipe_unlock_strong_auth_instructions">За Ваша безбедност, поминете на екранот за да го отклучите</string>
+    <string name="kg_tablet_direction_1_frp">"If you do not draw the correct series of directions in the next attempt, your tablet will automatically be reset to factory settings and all information on the tablet will be erased.
+
+If your tablet is reset, you may need to enter the Google account information (email address and password) associated with this tablet to be able to use it again."</string>
+    <string name="kg_tablet_direction_1_reactivation">"Ако не ја внесете правилната низа насоки во следниот обид, таблетот автоматски ќе се ресетира на фабричките поставувања и сите информации на таблетот ќе се избришат.
+
+Ако таблетот се ресетира, можеби ќе треба да ги внесете информациите за Samsung account (адреса за е-пошта и лозинка) поврзани со овој таблет за да можете повторно да го користите."</string>
+    <string name="kg_tablet_direction_none_frp">"If you do not draw the correct series of directions within the next %d attempts, your tablet will automatically be reset to factory settings and all information on the tablet will be erased.
+
+If your tablet is reset, you may need to enter the Google account information (email address and password) associated with this tablet to be able to use it again."</string>
+    <string name="kg_tablet_direction_none_reactivation">"Ако не ја внесете правилната низа насоки во следните %d обиди, таблетот автоматски ќе се ресетира на фабричките поставувања и сите информации на таблетот ќе се избришат.
+
+Ако таблетот се ресетира, можеби ќе треба да ги внесете информациите за Samsung account (адреса за е-пошта и лозинка) поврзани со овој таблет за да можете повторно да го користите."</string>
+    <string name="kg_tablet_face_direction_restart_instructions">Таблетот се рестартираше и треба да се отклучи со користење на низа насоки. Можете да користите препознавање лице следниот пат кога ќе го отклучувате таблетот.</string>
+    <string name="kg_tablet_face_direction_shutdown_instructions">Таблетот се рестартираше и треба да се отклучи со користење на низа насоки. Отпечатоците од прст може да ги користите следниот пат кога ќе го отклучувате таблетот.</string>
+    <string name="kg_tablet_face_direction_timeout_instructions">За Ваша безбедност, користете ја Вашата низа насоки за отклучување на таблетот. Можете да ја користите Вашата биометрија следниот пат.</string>
+    <string name="kg_tablet_face_password_restart_instructions">Таблетот се рестартираше и треба да се отклучи со користење на лозинката. Можете да користите препознавање лице следниот пат кога ќе го отклучувате таблетот.</string>
+    <string name="kg_tablet_face_password_timeout_instructions">За Ваша безбедност, користете ја Вашата лозинка за отклучување на таблетот. Можете да ја користите Вашата биометрија следниот пат.</string>
+    <string name="kg_tablet_face_pattern_restart_instructions">Таблетот се рестартираше и треба да се отклучи со користење на шара. Можете да користите препознавање лице следниот пат кога ќе го отклучувате таблетот.</string>
+    <string name="kg_tablet_face_pattern_timeout_instructions">За Ваша безбедност, користете ја Вашата шара за отклучување на таблетот. Можете да ја користите Вашата биометрија следниот пат.</string>
+    <string name="kg_tablet_face_pin_restart_instructions">Таблетот се рестартираше и треба да се отклучи со користење на PIN-от. Можете да користите препознавање лице следниот пат кога ќе го отклучувате таблетот.</string>
+    <string name="kg_tablet_face_pin_timeout_instructions">За Ваша безбедност, користете го Вашиот PIN за отклучување на таблетот. Можете да ја користите Вашата биометрија следниот пат.</string>
+    <string name="kg_tablet_fingerprint_direction_restart_instructions">Таблетот се рестартираше и треба да се отклучи со користење на низа насоки. Отпечатоците од прст може да ги користите следниот пат кога ќе го отклучувате таблетот.</string>
+    <string name="kg_tablet_fingerprint_direction_shutdown_instructions">Користете отпечаток од прст или нацртајте низа насоки за да го исклучите таблетот</string>
+    <string name="kg_tablet_fingerprint_direction_timeout_instructions">За Ваша безбедност, користете ја Вашата низа насоки за отклучување на таблетот. Можете да ја користите Вашата биометрија следниот пат.</string>
+    <string name="kg_tablet_fingerprint_password_restart_instructions">Таблетот се рестартираше и треба да се отклучи со користење на лозинката. Отпечатоците од прст може да ги користите следниот пат кога ќе го отклучувате таблетот.</string>
+    <string name="kg_tablet_fingerprint_password_shutdown_instructions">Користете отпечаток од прст или внесете лозинка за да го исклучите таблетот</string>
+    <string name="kg_tablet_fingerprint_password_timeout_instructions">За Ваша безбедност, користете ја Вашата лозинка за отклучување на таблетот. Можете да ја користите Вашата биометрија следниот пат.</string>
+    <string name="kg_tablet_fingerprint_pattern_restart_instructions">Таблетот се рестартираше и треба да се отклучи со користење на шара. Отпечатоците од прст може да ги користите следниот пат кога ќе го отклучувате таблетот.</string>
+    <string name="kg_tablet_fingerprint_pattern_shutdown_instructions">Користете отпечаток од прст или нацртајте шара за да го исклучите таблетот</string>
+    <string name="kg_tablet_fingerprint_pattern_timeout_instructions">За Ваша безбедност, користете ја Вашата шара за отклучување на таблетот. Можете да ја користите Вашата биометрија следниот пат.</string>
+    <string name="kg_tablet_fingerprint_pin_restart_instructions">Таблетот се рестартираше и треба да се отклучи со користење на PIN-от. Отпечатоците од прст може да ги користите следниот пат кога ќе го отклучувате таблетот.</string>
+    <string name="kg_tablet_fingerprint_pin_shutdown_instructions">Користете отпечаток од прст или внесете PIN за да го исклучите таблетот</string>
+    <string name="kg_tablet_fingerprint_pin_timeout_instructions">За Ваша безбедност, користете го Вашиот PIN за отклучување на таблетот. Можете да ја користите Вашата биометрија следниот пат.</string>
+    <string name="kg_tablet_fingerprints_direction_unabled_instructions">Уредот се рестартираше и треба да се отклучи со користење серија насоки. Отпечатоците од прсти може да ги користите следниот пат кога ќе го отклучувате телефонот.</string>
+    <string name="kg_tablet_fingerprints_password_unabled_instructions">Уредот се рестартираше и треба да се отклучи со користење на лозинката. Отпечатоците од прсти може да ги користите следниот пат кога ќе го отклучувате телефонот.</string>
+    <string name="kg_tablet_fingerprints_pattern_unabled_instructions">Уредот се рестартираше и треба да се отклучи со користење на шемата. Отпечатоците од прсти може да ги користите следниот пат кога ќе го отклучувате телефонот.</string>
+    <string name="kg_tablet_fingerprints_pin_unabled_instructions">Уредот се рестартираше и треба да се отклучи со користење PIN. Отпечатоците од прсти може да ги користите следниот пат кога ќе го отклучувате телефонот.</string>
+    <string name="kg_tablet_intelligent_password_restart_instructions">За Ваша безбедност, поминете на екранот за да го отклучите</string>
+    <string name="kg_tablet_intelligent_password_timeout_instructions">За Ваша безбедност, користете ја Вашата шара за отклучување на таблетот. Можете да ја користите Вашата биометрија следниот пат.</string>
+    <string name="kg_tablet_intelligent_pattern_restart_instructions">За Ваша безбедност, поминете на екранот за да го отклучите</string>
+    <string name="kg_tablet_intelligent_pattern_timeout_instructions">За Ваша безбедност, користете ја Вашата шара за отклучување на таблетот. Можете да ја користите Вашата биометрија следниот пат.</string>
+    <string name="kg_tablet_intelligent_pin_restart_instructions">За Ваша безбедност, поминете на екранот за да го отклучите</string>
+    <string name="kg_tablet_intelligent_pin_timeout_instructions">За Ваша безбедност, користете го Вашиот PIN за отклучување на таблетот. Можете да ја користите Вашата биометрија следниот пат.</string>
+    <string name="kg_tablet_iris_direction_restart_instructions">Таблетот се рестартираше и треба да се отклучи со користење низа насоки. Зениците може да ги користите следниот пат кога ќе го отклучувате таблетот.</string>
+    <string name="kg_tablet_iris_direction_shutdown_instructions">Користете зеници или нацртајте низа насоки за да го исклучите таблетот</string>
+    <string name="kg_tablet_iris_direction_timeout_instructions">За Ваша безбедност, користете ја Вашата низа насоки за отклучување на таблетот. Можете да ја користите Вашата биометрија следниот пат.</string>
+    <string name="kg_tablet_iris_password_restart_instructions">Таблетот се рестартираше и треба да се отклучи со користење на лозинката. Зениците може да ги користите следниот пат кога ќе го отклучувате таблетот.</string>
+    <string name="kg_tablet_iris_password_shutdown_instructions">Користете зеници или внесете лозинка за да го исклучите таблетот</string>
+    <string name="kg_tablet_iris_password_timeout_instructions">За Ваша безбедност, користете ја Вашата лозинка за отклучување на таблетот. Можете да ја користите Вашата биометрија следниот пат.</string>
+    <string name="kg_tablet_iris_pattern_restart_instructions">Таблетот се рестартираше и треба да се отклучи со користење на шарата. Зениците може да ги користите следниот пат кога ќе го отклучувате таблетот.</string>
+    <string name="kg_tablet_iris_pattern_shutdown_instructions">Користете зеници или нацртајте шара за да го исклучите таблетот</string>
+    <string name="kg_tablet_iris_pattern_timeout_instructions">За Ваша безбедност, користете ја Вашата шара за отклучување на таблетот. Можете да ја користите Вашата биометрија следниот пат.</string>
+    <string name="kg_tablet_iris_pin_restart_instructions">Таблетот се рестартираше и треба да се отклучи со користење на PIN-от. Зениците може да ги користите следниот пат кога ќе го отклучувате таблетот.</string>
+    <string name="kg_tablet_iris_pin_shutdown_instructions">Користете зеници или внесете PIN за да го исклучите таблетот</string>
+    <string name="kg_tablet_iris_pin_timeout_instructions">За Ваша безбедност, користете го Вашиот PIN за отклучување на таблетот. Можете да ја користите Вашата биометрија следниот пат.</string>
+    <string name="kg_tablet_multi_direction_restart_instructions">Таблетот се рестартираше и треба да се отклучи со користење на низа насоки. Биометријата можете да ја користите следниот пат кога ќе го отклучувате таблетот.</string>
+    <string name="kg_tablet_multi_direction_shutdown_instructions">Користете биометрија или нацртајте низа насоки за да го исклучите таблетот</string>
+    <string name="kg_tablet_multi_direction_timeout_instructions">За Ваша безбедност, користете ја Вашата низа насоки за отклучување на таблетот. Можете да ја користите Вашата биометрија следниот пат.</string>
+    <string name="kg_tablet_multi_password_restart_instructions">Таблетот се рестартираше и треба да се отклучи со користење на лозинката. Биометријата можете да ја користите следниот пат кога ќе го отклучувате таблетот.</string>
+    <string name="kg_tablet_multi_password_shutdown_instructions">Користете биометрија или внесете лозинка за да го исклучите таблетот</string>
+    <string name="kg_tablet_multi_password_timeout_instructions">За Ваша безбедност, користете ја Вашата лозинка за отклучување на таблетот. Можете да ја користите Вашата биометрија следниот пат.</string>
+    <string name="kg_tablet_multi_pattern_restart_instructions">Таблетот се рестартираше и треба да се отклучи со користење на шара. Биометријата можете да ја користите следниот пат кога ќе го отклучувате таблетот.</string>
+    <string name="kg_tablet_multi_pattern_shutdown_instructions">Користете биометрија или нацртајте шара за да го исклучите таблетот</string>
+    <string name="kg_tablet_multi_pattern_timeout_instructions">За Ваша безбедност, користете ја Вашата шара за отклучување на таблетот. Можете да ја користите Вашата биометрија следниот пат.</string>
+    <string name="kg_tablet_multi_pin_restart_instructions">Таблетот се рестартираше и треба да се отклучи со користење на PIN-от. Биометријата можете да ја користите следниот пат кога ќе го отклучувате таблетот.</string>
+    <string name="kg_tablet_multi_pin_shutdown_instructions">Користете биометрија или внесете PIN за да го исклучите таблетот</string>
+    <string name="kg_tablet_multi_pin_timeout_instructions">За Ваша безбедност, користете го Вашиот PIN за отклучување на таблетот. Можете да ја користите Вашата биометрија следниот пат.</string>
+    <string name="kg_tablet_none_direction_shutdown_instructions">Нацртајте низа насоки за да го исклучите таблетот</string>
+    <string name="kg_tablet_none_password_shutdown_instructions">Внесете лозинка за да го исклучите таблетот</string>
+    <string name="kg_tablet_none_pattern_shutdown_instructions">Нацртајте шара за да го исклучите таблетот</string>
+    <string name="kg_tablet_none_pin_shutdown_instructions">Внесете PIN за да го исклучите таблетот</string>
+    <string name="kg_tablet_password_1_frp">"If you do not enter the correct password in the next attempt, your tablet will automatically be reset to factory settings and all information on the tablet will be erased.
+
+If your tablet is reset, you may need to enter the Google account information (email address and password) associated with this tablet to be able to use it again."</string>
+    <string name="kg_tablet_password_1_reactivation">"Ако не ја внесете правилната лозинка во следните %d обиди, Вашиот телефон автоматски ќе се ресетира на фабричките поставувања и сите информации на телефонот ќе се избришат.
+
+Ако телефонот се ресетира, можеби ќе треба да ги внесете информациите за Samsung account (адреса за е-пошта и лозинка) поврзани со овој телефон за да можете повторно да го користите."</string>
+    <string name="kg_tablet_password_none_frp">"If you do not enter the correct password within the next %d attempts, your tablet will automatically be reset to factory settings and all information on the tablet will be erased.
+
+If your tablet is reset, you may need to enter the Google account information (email address and password) associated with this tablet to be able to use it again."</string>
+    <string name="kg_tablet_password_none_reactivation">"Ако не ја внесете правилната лозинка во следниот обид, телефонот автоматски ќе се ресетира на фабричките поставувања и сите информации на телефонот ќе се избришат.
+
+Ако телефонот се ресетира, можеби ќе треба да ги внесете информациите за Samsung account (адреса за е-пошта и лозинка) поврзани со овој телефон за да можете повторно да го користите."</string>
+    <string name="kg_tablet_pattern_1_frp">"If you do not draw the correct pattern in the next attempt, your tablet will automatically be reset to factory settings and all information on the tablet will be erased.
+
+If your tablet is reset, you may need to enter the Google account information (email address and password) associated with this tablet to be able to use it again."</string>
+    <string name="kg_tablet_pattern_1_reactivation">"Ако не ја внесете правилната шара во следниот обид, таблетот автоматски ќе се ресетира на фабричките поставувања и сите информации на таблетот ќе се избришат.
+
+Ако таблетот се ресетира, можеби ќе треба да ги внесете информациите за Samsung account (адреса за е-пошта и лозинка) поврзани со овој таблет за да можете повторно да го користите."</string>
+    <string name="kg_tablet_pattern_none_frp">"If you do not draw the correct pattern within the next %d attempts, your tablet will automatically be reset to factory settings and all information on the tablet will be erased.
+
+If your tablet is reset, you may need to enter the Google account information (email address and password) associated with this tablet to be able to use it again."</string>
+    <string name="kg_tablet_pattern_none_reactivation">"Ако не ја внесете правилната шара во следните %d обиди, таблетот автоматски ќе се ресетира на фабричките поставувања и сите информации на таблетот ќе се избришат.
+
+Ако таблетот се ресетира, можеби ќе треба да ги внесете информациите за Samsung account (адреса за е-пошта и лозинка) поврзани со овој таблет за да можете повторно да го користите."</string>
+    <string name="kg_tablet_pin_1_frp">"If you do not enter the correct PIN in the next attempt, your tablet will automatically be reset to factory settings and all information on the tablet will be erased.
+
+If your tablet is reset, you may need to enter the Google account information (email address and password) associated with this tablet to be able to use it again."</string>
+    <string name="kg_tablet_pin_1_reactivation">"Ако не го внесете правилниот PIN во следниот обид, таблетот автоматски ќе се ресетира на фабричките поставувања и сите информации на таблетот ќе се избришат.
+
+Ако таблетот се ресетира, можеби ќе треба да ги внесете информациите за Samsung account (адреса за е-пошта и лозинка) поврзани со овој таблет за да можете повторно да го користите."</string>
+    <string name="kg_tablet_pin_none_frp">"If you do not enter the correct PIN within the next %d attempts, your tablet will automatically be reset to factory settings and all information on the tablet will be erased.
+
+If your tablet is reset, you may need to enter the Google account information (email address and password) associated with this tablet to be able to use it again."</string>
+    <string name="kg_tablet_pin_none_reactivation">"Ако не го внесете правилниот PIN во следните %d обиди, таблетот автоматски ќе се ресетира на фабричките поставувања и сите информации на таблетот ќе се избришат.
+
+Ако таблетот се ресетира, можеби ќе треба да ги внесете информациите за Samsung account (адреса за е-пошта и лозинка) поврзани со овој таблет за да можете повторно да го користите."</string>
+    <string name="kg_tablet_strong_auth_prompt_reason_timeout_direction_lock">Уредот не се користел повеќе од 24 часа и треба да се отклучи со користење серија насоки. Отпечатоците од прсти може да ги користите следниот пат кога ќе го отклучувате телефонот.</string>
+    <string name="kg_tablet_strong_auth_prompt_reason_timeout_password">Уредот не се користел повеќе од 24 часа и треба да се отклучи со користење на лозинката. Отпечатоците од прсти може да ги користите следниот пат кога ќе го отклучувате телефонот.</string>
+    <string name="kg_tablet_strong_auth_prompt_reason_timeout_pattern">Уредот не се користел повеќе од 24 часа и треба да се отклучи со користење на шемата. Отпечатоците од прсти може да ги користите следниот пат кога ќе го отклучувате телефонот.</string>
+    <string name="kg_tablet_strong_auth_prompt_reason_timeout_pin">Уредот не се користел повеќе од 24 часа и треба да се отклучи со користење PIN. Отпечатоците од прсти може да ги користите следниот пат кога ќе го отклучувате телефонот.</string>
+    <string name="kg_too_many_failed_attempt_countdown">Обидете се повторно за 1 секунда</string>
+    <string name="kg_too_many_failed_attempts_countdown_1_min_with_auto_wipe">"Направен е обид да се отклучи уредот %1$d пати. Имате уште %2$d обиди пред уредот да се ресетира на фабричките поставувања и сите податоци да се избришат.
+
+Обидете се повторно за 1 минута"</string>
+    <string name="kg_too_many_failed_attempts_countdown_1_sec_with_auto_wipe">"Направен е обид да се отклучи уредот %1$d пати. Имате уште %2$d обиди пред уредот да се ресетира на фабричките поставувања и сите податоци да се избришат.
+
+Обидете се повторно за 1 секунда"</string>
+    <string name="kg_too_many_failed_attempts_countdown_mins_with_auto_wipe">"Направен е обид да се отклучи уредот %1$d пати. Имате уште %2$d обиди пред уредот да се ресетира на фабричките поставувања и сите податоци да се избришат.
+
+Обидете се повторно за %3$d минути"</string>
+    <string name="kg_too_many_failed_attempts_countdown_secs_with_auto_wipe">"Направен е обид да се отклучи уредот %1$d пати. Имате уште %2$d обиди пред уредот да се ресетира на фабричките поставувања и сите податоци да се избришат.
+
+Обидете се повторно за %3$d секунди"</string>
+    <string name="kg_too_many_failed_countdown_1_sec_with_auto_wipe">Обидете се повторно за 1 секунда</string>
+    <string name="kg_tts_shortcut_app">Допрете двапати и повлечете за да се отвори %s.</string>
+    <string name="kg_ucm_enter_confirm_pin_hint">Внесете го PIN-от повторно за потврда</string>
+    <string name="kg_ucm_invalid_confirm_pin_hint">PIN-овите не се совпаѓаат</string>
+    <string name="kg_ucm_loading">Се вчитува…</string>
+    <string name="kg_ucm_password_not_matching">Лозинката на Smartcard не се совпаѓа со лозинката зачувана на телефонот</string>
+    <string name="kg_ucm_password_wrong_puk_code">Внесен е неточен PUK</string>
+    <string name="kg_ucm_puk_enter_pin_hint">Внесете нов PIN</string>
+    <string name="kg_ucm_unknown_error_occurred">Дојде до непозната грешка.</string>
+    <string name="kg_ucm_unlocking">Се отклучува…</string>
+    <string name="kg_unlock_progress">Се отклучува…</string>
+    <string name="kg_unlock_sim_pin_instructions">Внесете го PIN-от за отклучување на SIM-картичката.</string>
+    <string name="kg_unlock_sim_pin_remaining_1_attempt">Внесете PIN за отклучување на SIM-картичка. Имате уште 1 обид.</string>
+    <string name="kg_unlock_sim_pin_remaining_attempts">Внесете PIN за отклучување на SIM-картичка. Имате уште %d обиди.</string>
+    <string name="kg_use_biometrics_first">Прво користете биометрија</string>
+    <string name="kg_use_fingerprint_first">Прво користете отпечаток од прст</string>
+    <string name="kg_use_irises_first">Прво користете зеници</string>
+    <string name="kg_voice_assistant_active_instructions">Поминете на екранот со два прста за да се отвори.</string>
+    <string name="kg_voice_assistant_unlock_instructions">Поминете со два прста за да го отклучите екранот</string>
+    <string name="kg_voice_assistant_unlock_strong_auth_instructions">Поминете со два прста за да го отклучите екранот.</string>
+    <string name="kg_wallpaper_applied_toast">Заднината е применета на екранот за заклучување.</string>
+    <string name="kg_wallpaper_applied_toast_infinity">Бесконечната заднина е применета на Always On Display, на Почетниот екран и на Екранот за заклучување.</string>
+    <string name="kg_wallpaper_applied_toast_infinity_without_aod">Бесконечната заднина е применета на Почетниот екран и на Екранот за заклучување.</string>
+    <string name="kg_wallpaper_change_wallpaper_when_infinity_applied">Бесконечните ефекти ќе се исклучат ако ја користите заднинава.</string>
+    <string name="kg_wallpaper_changes_restrict_toast">Политиката на безбедност ве ограничува да ја менувате заднината.</string>
+    <string name="kg_wallpaper_confirm_dialog_apply">Примени</string>
+    <string name="kg_wallpaper_confirm_dialog_message">Бесконечните ефекти ќе се исклучат ако ја користите заднинава.</string>
+    <string name="kg_wallpaper_preview_button">Постави како заднина</string>
+    <string name="kg_wallpaper_preview_title">Заклучување на екранот</string>
+    <string name="kg_wallpaper_preview_title_infinity">Бесконечна заднина</string>
+    <string name="kg_wallpaper_preview_video_info">Ќе се прикажуваат најмногу 15 секунди видео како заднина на екранот за заклучување.</string>
+    <string name="kg_wallpaper_preview_video_long_info">Видеото што сте го избрале е предолго. Допрете на копчето подолу за да го скратите на најмногу 15 секунди.</string>
+    <string name="kg_wallpaper_preview_video_wallpaper">Видео заднина</string>
+    <string name="kg_warning_none_1_none_auto_wipe">Имаше 1 обид за отклучување на телефонов. Имате уште %d обиди пред телефонот да се ресетира на фабричките поставувања и да се избришат сите податоци, вклучувајќи ги датотеките и преземените апликации.</string>
+    <string name="kg_warning_none_none_1_auto_wipe">Имаше %d обиди за отклучување на телефонов. Имате уште 1 обид пред телефонот да се ресетира на основните фабрички поставувања и да се избришат сите податоци, вклучувајќи ги датотеките и преземените апликации.</string>
+    <string name="kg_warning_none_none_none_auto_wipe">Имаше %1$d обиди за отклучување на телефонов. Имате уште %2$d обиди пред телефонот да се ресетира на фабричките поставувања и да се избришат сите податоци, вклучувајќи ги датотеките и преземените апликации.</string>
+    <string name="kg_warning_tablet_1_none_auto_wipe">Имаше 1 обид за отклучување на таблетов. Имате уште %d обиди пред таблетов да се ресетира на фабричките поставувања и да се избришат сите податоци, вклучувајќи ги датотеките и преземените апликации.</string>
+    <string name="kg_warning_tablet_none_1_auto_wipe">Имаше %d обиди за отклучување на таблетов. Имате уште 1 обид пред таблетот да се ресетира на основните фабрички поставувања и да се избришат сите податоци, вклучувајќи ги датотеките и преземените апликации.</string>
+    <string name="kg_warning_tablet_none_none_auto_wipe">Имаше %1$d обиди за отклучување на таблетов. Имате уште %2$d обиди пред таблетот да се ресетира на фабричките поставувања и да се избришат сите податоци, вклучувајќи ги датотеките и преземените апликации.</string>
+    <string name="kg_wrong_direction_lock">Нацртаната е неисправна насока</string>
+    <string name="kg_wrong_direction_lock_vzw">Incorrect directions (%d attempts remaining)</string>
+    <string name="later">Подоцна</string>
+    <string name="lock_to_app_desc">Ова ја држи апликацијата во преглед додека не ја откачите.</string>
+    <string name="lock_to_app_dex_desc">Оваа функција не е достапна додека сте во режимот Samsung DeX.</string>
+    <string name="lock_to_app_dex_title">Не може да се закачат прозорци</string>
+    <string name="lock_to_app_negative">Откажи</string>
+    <string name="lock_to_app_positive">OK</string>
+    <string name="lock_to_app_recent_and_back">За да откачите апликација, притиснете ги и држете ги копчињата Последни и Назад истовремено.</string>
+    <string name="lock_to_app_recent_and_back_accessibility">За да откачите апликација, притиснете го и држете го копчето последни.</string>
+    <string name="lock_to_app_recent_and_back_softkey">За да откачите апликација, допрете и држете ги копчињата Последни и Назад истовремено.</string>
+    <string name="lock_to_app_recent_and_back_softkey_accessibility">За да откачите апликација, допрете и држете го копчето Последни.</string>
+    <string name="lock_to_app_title">Вклучување Закачи прозорци</string>
+    <string name="lock_to_app_unable_to_pin_desc">Оваа апликација не поддржува Закачувај прозорци.</string>
+    <string name="lock_to_app_unable_to_pin_title">Не може да се закачи %s</string>
+    <string name="lock_to_app_unable_to_pin_toast">Не може да се закачи апликацијата. %s се затвори. Дојде до непозната грешка.</string>
+    <string name="lockscreen_click_unlock_text">Допрете каде било за отклучување</string>
+    <string name="lockscreen_nosim_text_kor_only">"USIM-картичката не е препознаена
+Само итни повици"</string>
+    <string name="maximum_power_saving_mode">Режим за максимално штедење енергија</string>
+    <string name="memory_full_dialog_msg">Нема доволно простор во внатрешната меморија. Избришете некои датотеки и обидете се повторно.</string>
+    <string name="memory_full_dialog_title">Не може да се направи екранска снимка</string>
+    <string name="minimized_notification_talkback_description_open">Допрете двапати за да се отвори известувањето од %s.</string>
+    <string name="minimized_notification_talkback_desctiprion_close">Допрете двапати за да го затворите известувањето од %s.</string>
+    <string name="mobile_data_enable_toast_text">Не може да се поврзе со мобилни мрежи додека е вклучен режим за летало. Исклучете го режимот за летало и обидете се повторно.</string>
+    <string name="mobile_data_roaming_disable_toast_lgt">Податочниот роаминг е исклучен.</string>
+    <string name="mobile_data_roaming_title">Роаминг за податоци</string>
+    <string name="mobile_data_show_popup_disable">Ако не се поврзете со мрежа Wi-Fi нема да можете да користите Интернет, Е-пошта или други апликации што бараат мрежно поврзување.</string>
+    <string name="mobile_data_show_popup_disable_att">AT&amp;T Video Call won’t work if mobile data is off. Also, you won’t be able to use the internet, email or other apps that need a data connection unless you use Wi-Fi.</string>
+    <string name="mobile_data_show_popup_disable_dcm">"If Mobile data is turned off, your device must be connected to a Wi-Fi network to use services that require a network connection.
+
+Mobile data will be turned off."</string>
+    <string name="mobile_data_show_popup_disable_kor_kt">Мобилните податоци (WCDMA/LTE) ќе се исклучат. Освен ако не користите Wi-Fi, повеќе нема да може да користите апликации што бараат податочно поврзување. Сепак можете да праќате и примате мултимедијални пораки.</string>
+    <string name="mobile_data_show_popup_disable_kor_lgt">"Ако не користите Wi-Fi, веќе нема да може да користите Интернет, Е-пошта или други апликации што бараат податочно поврзување.
+
+Мобилните податоци ќе се исклучат."</string>
+    <string name="mobile_data_show_popup_disable_kor_skt">"Ако не користите Wi-Fi, веќе нема да може да користите Интернет, Е-пошта или други апликации што бараат податочно поврзување.
+
+Мобилните податоци ќе се исклучат."</string>
+    <string name="mobile_data_show_popup_disable_vzw">"Unless you use Wi-Fi, you won't be able to use the Internet, Email or other apps that require a data connection. Turn off the mobile data connection?"</string>
+    <string name="mobile_data_show_popup_disable_vzw_volte">"Your phone's Video Calling function won't work when mobile data is off. Also, you won't be able to use the Internet, Email or other apps that need a data connection unless you use Wi-Fi. Turn off the mobile data connection?"</string>
+    <string name="mobile_data_show_popup_disable_vzw_volte_tablet">Функцијата за Видео повикување на таблетот нема да функционира кога е исклучено мобилни податоци. Исто така, нема да можете да користите Интернет, Е-пошта или други апликации на коишто им треба податочно поврзување, освен ако не користите Wi-Fi. Да се исклучи поврзувањето на мобилни податоци?</string>
+    <string name="mobile_data_show_popup_enable_kor_kt">Мобилните податоци ќе се вклучат. Поврзувањето со мобилни мрежи може да подразбира дополнителни трошоци, зависно од Вашата претплата.</string>
+    <string name="mobile_data_show_popup_enable_kor_lgt">Мобилните податоци ќе се вклучат. Поврзувањето со мобилни мрежи може да подразбира дополнителни трошоци, зависно од Вашата претплата.</string>
+    <string name="mobile_data_show_popup_enable_kor_skt">Мобилните податоци ќе се вклучат. Поврзувањето со мобилни мрежи може да подразбира дополнителни трошоци, зависно од Вашата претплата.</string>
+    <string name="mobile_data_show_popup_enable_kor_skt_kt">Мобилните податоци ќе се вклучат. Поврзувањето со мобилни мрежи може да подразбира дополнителни трошоци, зависно од Вашата претплата.</string>
+    <string name="mobile_data_show_popup_roaming_enable">Data roaming may incur additional charges in addition to your domestic flat rate plan. Automatic updates for email or applications may also incur additional charges. Using large-data services such as video or email may incur charges over 20,000 won per minute.</string>
+    <string name="mobile_data_show_toast_airplane_mode">Не може да се поврзе со мобилни мрежи додека е вклучен режим за летало. Исклучете го режимот за летало и обидете се повторно.</string>
+    <string name="mobile_data_show_toast_not_disable_during_voltecall">Unable to turn Mobile data on or off while Advanced calling enabled.</string>
+    <string name="mobile_data_title">Мобилни податоци</string>
+    <string name="mobile_device_warning_toast_notification">Користењето мобилни уреди додека пешачите или возите претставува ризик од несреќа.</string>
+    <string name="mobile_hotspot_detail_connected_devices">Поврзани уреди</string>
+    <string name="mobile_hotspot_detail_connection_mode_allow_all">Дозволувај сите уреди да се поврзат</string>
+    <string name="mobile_hotspot_detail_connection_mode_allowed_device">Само дозволени уреди</string>
+    <string name="mobile_hotspot_detail_password">Лозинка</string>
+    <string name="mobile_hotspot_detail_title">Mobile Hotspot</string>
+    <string name="mobile_hotspot_detail_title_jpn">Делење Wi-Fi</string>
+    <string name="mobile_hotspot_dialog_nosim_warning_message">Вметнете SIM-картичка за да користите Мобилен хотспот и други опции за споделување.</string>
+    <string name="mobile_hotspot_dialog_nosim_warning_message_jpn">Insert a SIM card to use Wi-Fi tethering.</string>
+    <string name="mobile_hotspot_dialog_nosim_warning_title">Нема SIM-картичка</string>
+    <string name="mobile_hotspot_dialog_nosim_warning_title_jpn">Unable to enable Wi-Fi tethering</string>
+    <string name="mobile_hotspot_dialog_nousim_or_nosim_warning">Вметнете UIM/SIM-картичка за да користите Мобилен хотспот и други функции за поврзување.</string>
+    <string name="mobile_hotspot_dialog_smartview_off_warn_chn">Хотспотот на WLAN и Smart View не може да се овозможат истовремено. Smart View ќе се оневозможи.</string>
+    <string name="mobile_hotspot_dialog_smartview_off_warn_jpn">Споделување Wi-Fi и Smart View не може да се вклучат истовремено. Smart View ќе се исклучи.</string>
+    <string name="mobile_hotspot_dialog_wifi_sharing_enable_text">Вашата мрежа Wi-Fi може да биде поделена со други уреди. Бидете свесни дека Вашиот уред може да се префрла помеѓу Вашите зачувани мрежи Wi-Fi без напомена. Вие сте одговорни за следење на сите одредби и услови на Вашиот оператор на Wi-Fi.</string>
+    <string name="mobile_hotspot_dialog_wifi_sharing_enable_title">Овозможи Сподел.Wi-Fi</string>
+    <string name="mobile_hotspot_toast_disable_airplne_mode">Не може да се поврзе со мобилни мрежи додека е вклучен режим за летало. Исклучете го режимот за летало и обидете се повторно.</string>
+    <string name="mobile_hotspot_toast_internet_sharing">Споделување преку интернет</string>
+    <string name="mobile_hotspot_wifi_sharing">Споделување Wi-Fi</string>
+    <string name="mobile_hotspot_wifi_sharing_Status_disabled">Исклучено</string>
+    <string name="mobile_hotspot_wifi_sharing_Status_enabled">Вклучено</string>
+    <string name="mobileap">Мобилен хотспот</string>
+    <string name="multi_window">Повеќе прозорци</string>
+    <string name="multi_window_title_text">Повеќе прозорци</string>
+    <string name="mw_divider_button_add_app_pair">Додај Спарување апликации на Почетниот екран</string>
+    <string name="mw_divider_button_add_app_pair_body">Можете да ги додадете апликациите што сте отворени во преглед на поделен екран како Спарување апликации на Почетниот екран.</string>
+    <string name="mw_divider_button_close">Затвори апликација</string>
+    <string name="mw_divider_button_freeform">Отвори во појавен преглед</string>
+    <string name="mw_divider_button_snap">Прозорец за закотвување</string>
+    <string name="mw_divider_button_switch">Замени прозорци</string>
+    <string name="negative_color_title">Негативни бои</string>
+    <string name="no">Откажи</string>
+    <string name="no_network_connection">Нема мрежно поврзување</string>
+    <string name="no_sim_notification_text">Вметнете SIM-картичка.</string>
+    <string name="no_sim_notification_text_cct">Insert an XFINITY Mobile SIM. To learn more, visit xfinitymobile.com/activate or call 888-936-4968.</string>
+    <string name="no_sim_notification_text_vzw">Tap for more information.</string>
+    <string name="no_sim_notification_title">Нема SIM</string>
+    <string name="no_sim_notification_title_cct">No SIM card detected</string>
+    <string name="no_sim_notification_title_tmo">Не е вмет. SIM-картичка</string>
+    <string name="no_sim_notification_title_vzw">No SIM found</string>
+    <string name="no_such_item">Не може да се најде сликата.</string>
+    <string name="not_support_snap_window">Не може да се користи апликацијава во преглед на Прозорец за закотвување.</string>
+    <string name="noti_direct_reply_exceed_text_limit_toast">Не може да се внесе повеќе текст.</string>
+    <string name="noti_setting_text">Поставув. за извест.</string>
+    <string name="noti_toast_wifi_is_not_available">Не е достапно WLAN. Поврзувањето со мобилни мрежи може да подразбира дополнителни трошоци, зависно од Вашиот пакет.</string>
+    <string name="notification_all_categories">Детали</string>
+    <string name="notification_channel_blocked">Блокирано</string>
+    <string name="notification_channel_ongoing">Во тек</string>
+    <string name="notification_done">Готово</string>
+    <string name="notification_group_overflow_description">%d известувања вкупно</string>
+    <string name="notification_info_details">Детали</string>
+    <string name="notification_more_settings">Детали</string>
+    <string name="notification_save">Зачувај</string>
+    <string name="notification_settings_icon_description">Поставувања за известување на апликацијата</string>
+    <string name="one_item_will_be_deleted">Да се избрише оваа екранска снимка?</string>
+    <string name="overheat_poweroff_notice_text">"Уредот се прегреа. Се исклучи за да се спречи оштетување.
+
+Прегревање може да предизвика:
+- Користење апликации што користат многу графика, како игри и апликации за навигација подолго време.
+- Пренесување големи датотеки.
+- Користење на уредот во жешка средина."</string>
+    <string name="overheat_poweroff_notice_title">Уредот се исклучува автоматски</string>
+    <string name="overheat_poweroff_warning_button_text">Не исклучувај</string>
+    <string name="overheat_poweroff_warning_text">Уредот се прегрева. Сега ќе се исклучи за да се излади.</string>
+    <string name="overheat_poweroff_warning_text_append">Нема да можете да го вклучите уредот повторно сѐ додека не се излади.</string>
+    <string name="overheat_poweroff_warning_text_new">Уредот се прегрева. За да се излади, ќе се исклучи за %d секунди.</string>
+    <string name="overheat_poweroff_warning_title">Исклучување уред</string>
+    <string name="overheat_shutdown_notice_text">"Your phone got hot. It turned off to prevent damage to the phone.
+
+This can be caused by:
+Using graphics-intensive apps, like video games and navigation apps, for long periods of time.
+Downloading or uploading large files.
+Using your phone in a very hot location."</string>
+    <string name="overheat_shutdown_notice_text_tablet">"Your tablet got too hot. It turned off to prevent damage to the tablet.
+
+Overheating can be caused by:
+Using graphics intensive apps like video games and navigation apps for long periods of time.
+Downloading or uploading large files.
+Using your tablet in a very hot location."</string>
+    <string name="overheat_shutdown_notice_title">Why did my phone turn off by itself?</string>
+    <string name="overheat_shutdown_notice_title_tablet">Why did my tablet turn off by itself?</string>
+    <string name="overheat_shutdown_warning_button_text">"Don't turn off"</string>
+    <string name="overheat_shutdown_warning_text">"Your phone is getting hot.
+It will now turn off to cool down."</string>
+    <string name="overheat_shutdown_warning_text_tablet">Your tablet is getting too hot. It will now turn off to cool down.</string>
+    <string name="overheat_shutdown_warning_title">Turning off</string>
+    <string name="photo_editor">Уредување фотографии</string>
+    <string name="popupui_dialog_turn_on_button">Вклучи</string>
+    <string name="power_supplying_low_battery_alert_body">Батеријата на Вашиот телефон ќе се троши додека е поврзан кабелот USB OTG. Исклучете го кабелот USB OTG за да ја заштедите батеријата.</string>
+    <string name="power_supplying_low_battery_alert_body_tablet">Батеријата на Вашиот таблет ќе се троши додека е поврзан кабелот USB OTG. Исклучете го кабелот USB OTG за да ја заштедите батеријата.</string>
+    <string name="power_supplying_low_battery_alert_title">Слаба батерија</string>
+    <string name="powerui_power_sharing_alert_dialog_body">"You must download the app in order to control the amount of power shared. If you connect your device to another device with the Samsung's Power Sharing Cable EP-SG900 without the app, the entire battery amount will be transferred to the other device. 
+Connect to Samsung Apps and download the application."</string>
+    <string name="qs_brightness_auto_brightness_summary">Следете ги Вашите прилагодувања за осветленоста и применете ги автоматски во слични состојби на осветленоста.</string>
+    <string name="qs_brightness_auto_brightness_summary_nopac">Прилагодете ја осветленоста на екранот автоматски врз основа на моменталните услови на осветлување.</string>
+    <string name="qs_brightness_auto_brightness_title">Автоматска осветленост</string>
+    <string name="qs_brightness_control_on_the_top_summary">Покажи ја контролата за осветленост над таблата за известувања.</string>
+    <string name="qs_brightness_control_on_the_top_title">Прикажи контрола одгоре</string>
+    <string name="qs_brightness_detail_level">Ниво</string>
+    <string name="qs_brightness_detail_title">Осветленост</string>
+    <string name="qs_brightness_eye_strain_dialog_body">"Користењето на високи нивоа на осветленост во долги периоди може да предизвика замор на очите и да го зголеми трошењето на батеријата.
+Допрете OK за да дозволите осветленоста да се зголеми над безбедните нивоа."</string>
+    <string name="qs_brightness_outdoor_mode_summary">Направете го екранот посветол за прегледување на отворено. По 15 минути, Режимот за надвор ќе се исклучи, освен ако сѐ уште не го користите екранот.</string>
+    <string name="qs_brightness_outdoor_mode_title">Режим за надвор</string>
+    <string name="qs_contact_us">Контактирајте нѐ</string>
+    <string name="qs_detail_capture_mode">Screen capture mode</string>
+    <string name="qs_detail_capture_mode_text">Select the function you want to add to the quick settings panel.</string>
+    <string name="qs_detail_capture_screen">Сними од екран</string>
+    <string name="qs_detail_flashlight_title">Светилка</string>
+    <string name="qs_detail_palm_capture_title">Поминете со дланката за доловување</string>
+    <string name="qs_detail_please_wait">Почекајте…</string>
+    <string name="qs_detail_recorder_screen">Record screen</string>
+    <string name="qs_detail_secure_wifi_not_connected_toast">Безбеден Wi-Fi бара Wi-Fi да биде вклучено. Вклучете Wi-Fi во Поставувања и обидете се повторно.</string>
+    <string name="qs_detail_secure_wifi_title">Безбеден Wi-Fi</string>
+    <string name="qs_detail_secured_wifi_summary_off">Заштитете ја Вашата приватност додека пребарување и блокирате или шифрирате какви било небезбедни прашања.</string>
+    <string name="qs_detail_secured_wifi_summary_on">Вклучено</string>
+    <string name="qs_detail_smart_capture_title">Паметно снимање</string>
+    <string name="qs_edit_panel_badge_text">Н</string>
+    <string name="qs_edit_setting_active_area_tapped">Во плочата за брзи поставувања.</string>
+    <string name="qs_edit_setting_available_area_tapped">Не во плочата за брзи поставувања.</string>
+    <string name="qs_edit_summary">Влечете ги копчињата во горната област за да ги додадете во плочата за Брзо поставување.</string>
+    <string name="qs_location_consent_dialog_body_message_dcm">Локацијата GPS и користењето на податоците за вашата локација ги контролираат апликациите што ги користите.</string>
+    <string name="qs_location_consent_dialog_body_message_vzw">"Вашиот телефон може да ја сподели неговата приближна локација со апликации и услуги како што се карти, купување и време.
+
+Апликациите и услугите што ја користат Вашата локација треба да Ве информираат. Прочитајте ја полисата за приватност на која било апликација или оператор што го разгледувате за да разберете како тие ги собираат, користат и споделуваат Вашите информации за локацијата пред да ги користите.
+
+Определувањето на Вашата локација ќе ја користи мобилната мрежа. Ќе се применува користење податоци."</string>
+    <string name="qs_location_consent_dialog_body_message_vzw_tablet">"Вашиот таблет може да ја сподели неговата приближна локација со апликации и услуги како што се карти, купување и време.
+
+Апликациите и услугите што ја користат Вашата локација треба да Ве информираат. Прочитајте ја полисата за приватност на која било апликација или оператор што го разгледувате за да разберете како тие ги собираат, користат и споделуваат Вашите информации за локацијата пред да ги користите.
+
+Определувањето на Вашата локација ќе ја користи мобилната мрежа. Ќе се применува користење податоци."</string>
+    <string name="qs_location_consent_dialog_title_dcm">Согласност на корисникот</string>
+    <string name="qs_location_consent_dialog_title_vzw">Согласност за локација</string>
+    <string name="qs_location_detail_default_title">Локација</string>
+    <string name="qs_location_detail_gps_title">GPS</string>
+    <string name="qs_location_detail_mode_battery_saving">Штедење на батеријата</string>
+    <string name="qs_location_detail_mode_battery_saving_description">Користи Wi-Fi и мобилни мрежи за проценка на локацијата</string>
+    <string name="qs_location_detail_mode_high_accuracy">Голема прецизност</string>
+    <string name="qs_location_detail_mode_high_accuracy_description">Користи GPS, Wi-Fi и мобилни мрежи за проценка на локацијата</string>
+    <string name="qs_location_detail_mode_sensors_only_description">Користи GPS за проценка на локацијата</string>
+    <string name="qs_location_detail_mode_sensors_only_phone">Само телефон</string>
+    <string name="qs_location_detail_mode_sensors_only_tablet">Само таблет</string>
+    <string name="qs_location_detail_mode_summary_title">Начин за лоцирање</string>
+    <string name="qs_location_detail_summary_default">Користи GPS, Wi-Fi и мобилни мрежи за проценка на локацијата</string>
+    <string name="qs_multisim_data_preffered_btn_title">Мобилни податоци</string>
+    <string name="qs_multisim_data_switching">"Сѐ уште се префрла SIM-картичка…
+Обидете се повторно подоцна."</string>
+    <string name="qs_multisim_data_turned_off">Исклучено</string>
+    <string name="qs_multisim_sms_preffered_btn_title">Текст пораки</string>
+    <string name="qs_multisim_voice_ask_always">Прашувај секогаш</string>
+    <string name="qs_multisim_voice_preffered_btn_title">Повици</string>
+    <string name="quick_panel_data_usage">Data usage</string>
+    <string name="quick_settings_airplane_mode_label">"Режим
+за летало"</string>
+    <string name="quick_settings_blf_detail_seekbar">Проѕирност</string>
+    <string name="quick_settings_blf_detail_summary">Намалете ја напнатоста на очите ограничувајќи го количеството на сина светлина што се емитува од екранот.</string>
+    <string name="quick_settings_bluelightfilter_detail_title">Филтер за сина светлина</string>
+    <string name="quick_settings_bluelightfilter_label">"Филт. за
+сина свет."</string>
+    <string name="quick_settings_bluetooth_connected_devices">"%d уреди
+се поврзани"</string>
+    <string name="quick_settings_bluetooth_detail_available_devices_title">Достапни уреди</string>
+    <string name="quick_settings_bluetooth_detail_empty_text_available">Не се најдени уреди со Bluetooth во близина</string>
+    <string name="quick_settings_bluetooth_detail_off_text">Вклучете Bluetooth за да видите листа уреди со коишто можете да се споите или сте веќе споени.</string>
+    <string name="quick_settings_bluetooth_detail_paired_devices_title">Споени уреди</string>
+    <string name="quick_settings_bluetooth_label">Bluetooth</string>
+    <string name="quick_settings_data_roaming_detail_title">Роаминг за податоци</string>
+    <string name="quick_settings_data_roaming_label">"Подат.
+роаминг"</string>
+    <string name="quick_settings_dnd_detail_title">Не вознемирувај</string>
+    <string name="quick_settings_dnd_summary">Исклучете ги сите повици, предупредувања и медиуми, освен за избраните исклучоци.</string>
+    <string name="quick_settings_done">Готово</string>
+    <string name="quick_settings_dual_label_content_description">%s, етикета Копче, Допрете двапати за да ги видите релевантните брзи поставувања.</string>
+    <string name="quick_settings_enable">Вклучи</string>
+    <string name="quick_settings_flashlight_detail_level">Ниво</string>
+    <string name="quick_settings_flashlight_detail_title">Осветленост</string>
+    <string name="quick_settings_flashlight_detail_warning">Светлото на камерата може да предизвика изгореници од ниска температура кога се наоѓа во долг контакт со кожата. Избегнувајте да оставате %s да биде вклучено подолг период.</string>
+    <string name="quick_settings_flight_mode_detail_off_summary_non_volte_vzw">Airplane mode turns off all network connections, including mobile data and Wi-Fi. Turn on Wi-Fi to use apps that require a data connection.</string>
+    <string name="quick_settings_flight_mode_detail_off_summary_volte_vzw">Airplane mode turns off all network connections, including mobile data and Wi-Fi. Your phone will not be able to use Video Calling while Airplane mode is on. Turn on Wi-Fi to use apps that require a data connection.</string>
+    <string name="quick_settings_flight_mode_detail_on_summary_non_volte_vzw">Unless you use Wi-Fi, you will not be able to use the Internet, Email, or other apps that require a data connection.</string>
+    <string name="quick_settings_flight_mode_detail_on_summary_volte_vzw">Unless you use Wi-Fi, you will not be able to use Internet, Email, or other apps that require a data connection. Your phone will not be able to use Video Calling while Airplane mode is on.</string>
+    <string name="quick_settings_flight_mode_detail_summary">"Исклучете повици, размена на пораки и Мобилни податоци.
+
+Wi-Fi и Bluetooth исто така ќе се исклучат, но може повторно да ги вклучите во Поставувања или во плочата за брзи поставувања."</string>
+    <string name="quick_settings_flight_mode_detail_title">Режим за летало</string>
+    <string name="quick_settings_it_policy_prevents">Политиката за безбедност спречува користење %s.</string>
+    <string name="quick_settings_mobile_data_detail_summary">Пристапете до интернет преку мобилната мрежа.</string>
+    <string name="quick_settings_mobile_data_detail_title">Мобилни податоци</string>
+    <string name="quick_settings_mobile_data_label">"Мобилни
+податоци"</string>
+    <string name="quick_settings_mobile_hotspot_label">"Мобилен
+хотспот"</string>
+    <string name="quick_settings_mobile_hotspot_label_jpn">"Сподел.
+Wi-Fi"</string>
+    <string name="quick_settings_phone_visibility_label">Видливост на телефон</string>
+    <string name="quick_settings_reading_mode_detail_title">Режим за читање</string>
+    <string name="quick_settings_reading_mode_label">"Реж. за
+читање"</string>
+    <string name="quick_settings_reading_mode_summary">Екранот е оптимизиран за читање. Овој режим е достапен само за одбрани апликации.</string>
+    <string name="quick_settings_reset">Ресетирај</string>
+    <string name="quick_settings_rotation_lock_auto_rotate">Автоматско вртење</string>
+    <string name="quick_settings_rotation_lock_two_toggle_detail_summary">Вртете го екранот автоматски кога се менува ориентацијата на телефонот.</string>
+    <string name="quick_settings_rotation_lock_two_toggle_detail_summary_for_tablet">Вртете го екранот автоматски кога се менува ориентацијата на таблетот.</string>
+    <string name="quick_settings_rotation_locked_landscape_label">Пејзаж</string>
+    <string name="quick_settings_rotation_locked_portrait_label">Портрет</string>
+    <string name="quick_settings_rotation_unlocked_label">"Автом.
+вртење"</string>
+    <string name="quick_settings_screen_capture_label">"Capture
+screen"</string>
+    <string name="quick_settings_screen_recorder_label">"Record
+screen"</string>
+    <string name="quick_settings_sec_dnd_label">"Не возне-
+мирувај"</string>
+    <string name="quick_settings_settings">ПОСТАВУВАЊА</string>
+    <string name="quick_settings_sound_mode_detail_label">Режим за звук</string>
+    <string name="quick_settings_sound_mode_detail_mixer_dnd_turned_on">Не вознемирувај е вклучено</string>
+    <string name="quick_settings_sound_mode_detail_mixer_title">Јачина на тон</string>
+    <string name="quick_settings_sound_mode_detail_mute_remaining">Искл. звук (%s преост.)</string>
+    <string name="quick_settings_sound_mode_detail_temporary_mute_duration">Траење на исклучен звук</string>
+    <string name="quick_settings_sound_mode_detail_temporary_mute_summary">Откако ќе помине времето што сте го поставиле, звучниот режим ќе се врати на претходниот звучен режим (%s). Можете да го смените времето допирајќи на ДЕТАЛИ.</string>
+    <string name="quick_settings_sound_mode_detail_temporary_mute_title">Привремено исклуч. звук</string>
+    <string name="quick_settings_sound_mode_mute_label">Исклучи звук</string>
+    <string name="quick_settings_sound_mode_sound_label">Звук</string>
+    <string name="quick_settings_sound_mode_vibrate_label">Вибрации</string>
+    <string name="quick_settings_tablet_visibility_label">"Видливост
+на таблет"</string>
+    <string name="quick_settings_uhq_mode_label">"UHQ
+засилувач"</string>
+    <string name="quick_settings_volte_label_ZVV">4G Voice</string>
+    <string name="quick_settings_volte_summary">Користете VoLTE кога е достапно</string>
+    <string name="quick_settings_volte_summary_zvv">Овозможете подобрена комуникација користејќи податоци 4G.</string>
+    <string name="quick_settings_wifi_detail_available_networks_title">Достапни мрежи</string>
+    <string name="quick_settings_wifi_detail_current_network_title">Моментална мрежа</string>
+    <string name="quick_settings_wifi_detail_off_text">За да ги видите достапните мрежи, вкл. го Wi-Fi.</string>
+    <string name="quick_settings_wifi_detail_scanning_text">Се скенира за мрежи Wi-Fi…</string>
+    <string name="quick_settings_wifi_label">Wi-Fi</string>
+    <string name="quick_settings_wificalling_cs_preferred">Претпоч. е мобилна мрежа</string>
+    <string name="quick_settings_wificalling_label">"Повикување
+Wi-Fi"</string>
+    <string name="quick_settings_wificalling_label_ZVV">Wi-Fi Voice</string>
+    <string name="quick_settings_wificalling_summary">Користете мрежи Wi-Fi за да остварувате и примате повици насекаде, без да се поврзете со мобилна мрежа.</string>
+    <string name="quick_settings_wificalling_summary_with_help_noti">"Користете мрежи Wi-Fi за да упатувате и примате повици каде било, без да се поврзувате на мобилна мрежа.
+
+Иконата за Повикување Wi-Fi ќе се појави во таблата за известувања како што е прикажано подолу додека услугата е достапна."</string>
+    <string name="quick_settings_wificalling_summary_zvv">Овозможете подобрена комуникација користејќи мрежи Wi-Fi.</string>
+    <string name="quick_settings_wificalling_wifi_only">Само Wi-Fi</string>
+    <string name="quick_settings_wificalling_wifi_preferred">Претпочитано е Wi-Fi</string>
+    <string name="quick_settings_workmode_detail_summary">"Оневозможете %s, вклучително и работни апликации, известување и синхронизирање на заднината.
+
+Ќе можете да го користите Вашиот телефон без никакви прекини во работата."</string>
+    <string name="recents_accessibility_message">Последно</string>
+    <string name="recents_app_list_more_apps">Лист.апл.</string>
+    <string name="recents_app_list_multi_window_apps">Апл. за повеќе прозорци</string>
+    <string name="recents_app_list_recommendations">Често користени апликации</string>
+    <string name="recents_aspect_ratio_button_description">Смени размер на апликација</string>
+    <string name="recents_close_all_button_text">Затвори сѐ</string>
+    <string name="recents_close_button_description">Затвори</string>
+    <string name="recents_drag_freeform_hint_message">Испуштете тука за преглед на појавен екран</string>
+    <string name="recents_drag_incompatible_app_message">Не може да се користи апликацијава во Прегледот за повеќе прозорци.</string>
+    <string name="recents_drag_split_hint_message">Испуштете тука за преглед на поделен екран</string>
+    <string name="recents_empty_message">Нема последни апликации</string>
+    <string name="recents_floating_action_button_desc">Копче %1$s</string>
+    <string name="recents_help_dlg_full_page1">За да користите преглед на поделен екран, допрете %s. Изберете апликација што треба да се прикаже на долната половина од екранот.</string>
+    <string name="recents_help_dlg_full_page1_desc">За да користите преглед на поделен екран, допрете на иконата Отвори во преглед на поделен екран. Изберете апликација за прикажување на долната половина од екранот.</string>
+    <string name="recents_help_dlg_full_page2_hardkey">Можете да префрлите апликација од преглед на цел екран во преглед на поделен екран притискајќи и држејќи го копчето Последни.</string>
+    <string name="recents_help_dlg_full_page2_softkey">Можете да префрлите апликација од преглед на цел екран во преглед на поделен екран допирајќи и држејќи го копчето Последни.</string>
+    <string name="recents_help_dlg_full_page2_softkey_snap">За да користите Прозорец за закотвување, допрете %s. Изберете област од апликацијата за да ја закачите на горниот дел на екранот пред да ја прикажете во преглед на поделен екран.</string>
+    <string name="recents_help_dlg_full_page2_softkey_snap_desc">За да користите Прозорец за закотвување, допрете на иконата на Прозорецот за закотвување. Изберете област од апликацијата за да ја закачите на горниот дел на екранот пред да ја прикажете во преглед на поделен екран.</string>
+    <string name="recents_help_dlg_lock_task_page1">Допрете %1$s на насловната лента на прозорецот на апликацијата за да ги заклучите апликациите. Заклучените апликации нема да се отстранат дури и кога ќе допрете ЗАТВОРИ СЀ. За да отклучите, допрете %2$s.</string>
+    <string name="recents_help_dlg_lock_task_page1_desc">Допрете Заклучи икона на насловната лента на прозорецот на апликацијата за да ги заклучите апликациите. Заклучените апликации нема да се отстранат дури и кога ќе допрете ЗАТВОРИ СЀ. За да отклучите, допрете Отклучи икона.</string>
+    <string name="recents_help_dlg_next_button_text">Следно</string>
+    <string name="recents_help_setting_button_text">Поставувања</string>
+    <string name="recents_help_title_split_screen_view">Поглед на поделен екран</string>
+    <string name="recents_help_title_split_screen_view_action">Дејство за преглед на поделен екран</string>
+    <string name="recents_launch_error_toast">Не може да се отвори %s.</string>
+    <string name="recents_lock_to_app_button_description">Закачувај прозорци</string>
+    <string name="recents_menu_contact_us">Контактирајте со нас</string>
+    <string name="recents_menu_help">Помош</string>
+    <string name="recents_menu_lock_app">Заклучи апликации</string>
+    <string name="recents_menu_more">Повеќе</string>
+    <string name="recents_menu_more_desc">Повеќе опции</string>
+    <string name="recents_menu_settings">Поставувања</string>
+    <string name="recents_menu_view_type_list">Преглед на листа</string>
+    <string name="recents_menu_view_type_thumbnail">Преглед со сликички</string>
+    <string name="recents_scroll_down">Листај надолу</string>
+    <string name="recents_scroll_up">Листај нагоре</string>
+    <string name="recents_snap_button_description">Прозорец за закотвување</string>
+    <string name="recents_split_button_description">Отвори во преглед на поделен екран</string>
+    <string name="recents_task_lock_cancel">Откажи</string>
+    <string name="recents_task_lock_done">Готово</string>
+    <string name="recents_task_lock_edit_lock_label">Заклучено</string>
+    <string name="recents_task_lock_edit_task_lock_desc">%s е заклучено</string>
+    <string name="recents_task_lock_edit_task_unlock_desc">%s е отклучено</string>
+    <string name="recents_task_lock_edit_unlock_desc">Отклучи %s</string>
+    <string name="recents_task_lock_edit_unlock_label">Отклучено</string>
+    <string name="recents_task_lock_normal_lock_desc">Заклучи %s</string>
+    <string name="recents_task_lock_normal_lock_label">Отклучи</string>
+    <string name="recents_task_lock_normal_unlock_toast">%s е отклучена.</string>
+    <string name="remote_input_send_text">Прати</string>
+    <string name="reserve_battery_mode">Режим Резервирај батерија</string>
+    <string name="retry">Повторно</string>
+    <string name="rotation_lock_auto_rotate">Автоматско вртење</string>
+    <string name="rotation_lock_show_toast_mobile_keyboard_message">За да вклучите %s, откачете ја футролата за тастатурата од уредот.</string>
+    <string name="safe_mode_alert_body">Вашиот телефон ќе се рестартира и сите Ваши апликации повторно ќе бидат достапни.</string>
+    <string name="safe_mode_alert_body_tablet">Вашиот таблет ќе се рестартира и сите Ваши апликации повторно ќе бидат достапни.</string>
+    <string name="safe_mode_alert_body_vzw">Do you want to restart your phone to turn off Safe Mode? All of your apps will be restored.</string>
+    <string name="safe_mode_alert_positive_button">Исклучи</string>
+    <string name="safe_mode_alert_positive_button_vzw">Turn Off Safe Mode</string>
+    <string name="safe_mode_alert_title">Да се исклучи Безбеден режим?</string>
+    <string name="safe_mode_alert_title_vzw">Turn Off Safe Mode</string>
+    <string name="safe_mode_noti_body">Допрете тука за да го исклучите Безбедниот режим.</string>
+    <string name="safe_mode_noti_body_vzw">Tap to turn off Safe Mode.</string>
+    <string name="safe_mode_noti_title">Безбедниот режим е вклучен</string>
+    <string name="safe_mode_noti_title_vzw">Safe Mode Is On</string>
+    <string name="sanitized_content_text">Допрете тука за да влезете во %s.</string>
+    <string name="screen_capture_delete">Избриши</string>
+    <string name="screen_capture_edit">Смени</string>
+    <string name="screen_capture_fail_for_security_policy">Не може да се направи екранска снимка поради безбедносната политика.</string>
+    <string name="screen_capture_share">Сподели</string>
+    <string name="screen_grid">Мрежа на копче</string>
+    <string name="screen_grid_content_description">%1$d преку %2$d</string>
+    <string name="screen_grid_popup_apply">Примени</string>
+    <string name="screen_grid_popup_ok">OK</string>
+    <string name="screen_grid_popup_title">Мрежа на копче</string>
+    <string name="screenshot_cancel">Откажи</string>
+    <string name="screenshot_guide_dialog_msg">Притиснете ги и држете ги Копчето за вклучување и копчето за Намалување на звукот заедно за да направите екранска снимка.</string>
+    <string name="screenshot_guide_dialog_title">Се прават екрански снимки</string>
+    <string name="screenshot_saved_text">Допрете тука за да видите.</string>
+    <string name="screenshot_saved_title">Екранот е снимен</string>
+    <string name="search_more_menu_contact_us">Контактирајте со нас</string>
+    <string name="search_more_menu_for_dex">Апликац. за Samsung DeX</string>
+    <string name="search_more_menu_settings">Поставув.за Samsung DeX</string>
+    <string name="sec_accessibility_back">Назад</string>
+    <string name="sec_accessibility_desc_recent_apps">Последно</string>
+    <string name="sec_accessibility_home">Дома</string>
+    <string name="sec_accessibility_navbar_hide_pin">Сокриј навигациската лента</string>
+    <string name="sec_accessibility_navbar_show_pin">Заклучи ја навигациската лента</string>
+    <string name="sec_accessibility_recent">Последни</string>
+    <string name="sec_accessibility_recents_all_items_closed">Сите апликации се затворени</string>
+    <string name="sec_accessibility_recents_all_unlocked_items_closed">Сите отклучени апликации се затворени</string>
+    <string name="sec_accessibility_recents_item_dismissed">%s се затвори.</string>
+    <string name="sec_accessibility_recents_item_open_app_info">Отворете информации на %s</string>
+    <string name="sec_accessibility_recents_item_will_be_dismissed">Затвори %s</string>
+    <string name="sec_block_this_notification_text">Блокирај известување</string>
+    <string name="sec_data_usage_disabled_dialog_body">Достигнато е поставеното ограничување за податоци. Вклучувањето Мобилни податоци повторно може да предизвика дополнителни трошоци.</string>
+    <string name="sec_data_usage_disabled_dialog_body_vzw">"You've reached your specified data usage limit, so mobile data has been turned off.
+
+If you turn mobile data back on, you may be charged for data usage by your carrier."</string>
+    <string name="sec_data_usage_disabled_dialog_enable">Вкл. Моб. податоци</string>
+    <string name="sec_data_usage_disabled_dialog_enable_vzw">Turn on data</string>
+    <string name="sec_data_usage_disabled_dialog_keep_off">Држи искл.</string>
+    <string name="sec_data_usage_disabled_dialog_mobile_title">Мобилните податоци се исклучени</string>
+    <string name="sec_data_usage_disabled_dialog_mobile_title_vzw">Mobile data is now off</string>
+    <string name="sec_data_usage_disabled_dialog_turn_off">Исклучи</string>
+    <string name="sec_dock_non_resizeble_failed_to_dock_text">Не може да се користи апликацијава во Прегледот за повеќе прозорци.</string>
+    <string name="sec_qs_edit">Измени</string>
+    <string name="sec_qs_unable_remove_minimum">Не може да се отстрани копчето. Достигнат е минималниот број копчиња (%d).</string>
+    <string name="sec_quick_settings_details">Детали</string>
+    <string name="sec_quick_settings_flashlight_label">Светилка</string>
+    <string name="sec_reorder_buttons">Редослед на копчиња</string>
+    <string name="sec_running_foreground_services_msg">Допрете некоја апликација за да дознаете колку батерија и податоци користи.</string>
+    <string name="sec_running_foreground_services_title">Апликации што ја користат батеријата</string>
+    <string name="servicebox_alarm_next">Следен аларм</string>
+    <string name="servicebox_alarm_no_alarm">Нема аларми во следните 7 дена</string>
+    <string name="servicebox_event_calendar">Календар</string>
+    <string name="servicebox_event_my_event">Мој настан</string>
+    <string name="servicebox_event_no_events">Нема настани или задачи</string>
+    <string name="servicebox_event_open_ss">Отворете %s</string>
+    <string name="servicebox_event_task">Задача</string>
+    <string name="servicebox_event_time_all_day">Цел ден</string>
+    <string name="servicebox_music_closed">На Вашиот контролер за музика му треба малку музика. Отклучете го телефонот и пуштете музика за да го прикажете контролерот.</string>
+    <string name="servicebox_music_description_album_cover">Обвивка на албумот</string>
+    <string name="servicebox_music_description_next">Следно</string>
+    <string name="servicebox_music_description_pause">Пауза</string>
+    <string name="servicebox_music_description_play">Пушти</string>
+    <string name="servicebox_music_description_prev">Претходно</string>
+    <string name="servicebox_music_lyrics">Текстови</string>
+    <string name="servicebox_music_play_first">Откако сте користеле плеер за музика, ќе можете да ја контролирате Вашата музика од Екранот за заклучување.</string>
+    <string name="servicebox_music_unknown">Непозната</string>
+    <string name="servicebox_noti_btn">Поставувања</string>
+    <string name="servicebox_noti_exp">Користете FaceWidgets на Екранот за заклучување и Always On Display за да добиете брз пристап до Вашата музика.</string>
+    <string name="servicebox_noti_title">Користење FaceWidgets</string>
+    <string name="show_notification_channel_warnings">Прикаж.предуп.за извест. на каналот</string>
+    <string name="show_notification_channel_warnings_summary">Прикажете предупредување на екранот кога некоја апликација испраќа известување без важечки канал.</string>
+    <string name="sim_card_tray_empty_water_protection_dialog_body">За заштита од оштетување од вода, осигурете се дека местото за внесување на SIM/SD картичката е добро затворено.</string>
+    <string name="sim_card_tray_water_protection_dialog_body">"Не може да се најде SIM-картичка. Вашиот уред нема да може да извршува активности како упатување повици и поврзување со мобилни мрежи.
+
+За заштита од оштетување од вода, осигурете се дека местото за внесување на SIM/SD картичката е добро затворено."</string>
+    <string name="sim_card_tray_water_protection_dialog_title">Провери место за SIM/SD картичка</string>
+    <string name="snap_window_already_used">Прозорецот за закотвување веќе се користи.</string>
+    <string name="snap_window_cant_use">Не може да се користи Прозорец за закотвување.</string>
+    <string name="snap_window_open_app_to_used">Отворете ја апликацијата за да користите Прозорец за закотвување.</string>
+    <string name="snapview_cancel">Откажи</string>
+    <string name="snapview_dismiss_landscape">Прозорецот за закотвување е отфрлен. Не може да се користи Прозорец за закотвување во преглед на широк екран.</string>
+    <string name="snapview_dismiss_resize">Прозорецот за закотвување е отфрлен.</string>
+    <string name="snapview_done">Извршено</string>
+    <string name="snapview_guide_text">Изберете област за закачување на горниот дел на екранот.</string>
+    <string name="snapview_not_support_landscape">Не може да се користи Прозорец за закотвување во преглед на широк екран.</string>
+    <string name="snapview_not_support_multiwindow">Не може да се користи апликацијава во Прегледот за повеќе прозорци.</string>
+    <string name="snooze_icon_description">Паузирај известување</string>
+    <string name="snooze_notification_guide_text">Ова известување ќе се појави повторно откако ќе помине времето што сте го избрале подолу.</string>
+    <string name="snooze_title">Паузирај известување</string>
+    <string name="status_bar_sec_airplane_mode_text">Режим за летало</string>
+    <string name="status_icon_alarm">Аларм</string>
+    <string name="status_icon_battery">Батерија</string>
+    <string name="status_icon_bluetooth">Bluetooth</string>
+    <string name="status_icon_data_network">Мрежа на податоци</string>
+    <string name="status_icon_network_booster">Засилувач на мрежата</string>
+    <string name="status_icon_rssi">Јачина на сигнал</string>
+    <string name="status_icon_wifi">Wi-Fi</string>
+    <string name="statusbar_maximum_power_saving_description">Реж.макс. штед. енер. е вклучен</string>
+    <string name="statusbar_power_saving_description">Вклучување на режимот за штедење енергија</string>
+    <string name="str_not_support_multi_drop">Не може да се додадат повеќе ставки во лентата со задачи. Повлекувајте и испуштајте 1 ставка одеднаш.</string>
+    <string name="switched_to_onephone_mode">Режимот е префрлен на режим за Еден број.</string>
+    <string name="switched_to_twophone_mode">Режимот е префрлен на режим за Два броја.</string>
+    <string name="taskbar_context_menu_app_notification_settings">Известувања за апликации</string>
+    <string name="taskbar_context_menu_capture_fullscreen">Снимка на цел екран</string>
+    <string name="taskbar_context_menu_capture_region">Делумна екранска снимка</string>
+    <string name="taskbar_context_menu_clear_notification">Избриши</string>
+    <string name="taskbar_context_menu_close">Затвори</string>
+    <string name="taskbar_context_menu_close_desk_notification_view">Сокриј известувања</string>
+    <string name="taskbar_context_menu_disable">Исклучи</string>
+    <string name="taskbar_context_menu_on_screen_keyboard">Тастатура на екранот</string>
+    <string name="taskbar_context_menu_open">Отвори</string>
+    <string name="taskbar_context_menu_open_desk_notification_view">Прикажи известувања</string>
+    <string name="taskbar_context_menu_open_in_new_browser">Отвори во нов прозорец</string>
+    <string name="taskbar_context_menu_physical_keyboard">Физичка тастатура</string>
+    <string name="taskbar_context_menu_pin">Кратен. на Pin во лентата со задачи</string>
+    <string name="taskbar_context_menu_secure_add">Додај во Безбедна папка</string>
+    <string name="taskbar_context_menu_uninstall">Деинсталирај</string>
+    <string name="taskbar_context_menu_unpin">Откачи кратен. од лентата со задачи</string>
+    <string name="taskbar_keyboard_guided_tour_action">Поставувања</string>
+    <string name="taskbar_keyboard_guided_tour_message">За да ги поставите јазикот и распоредот на тастатурата, кликнете ПОСТАВУВАЊА или кликнете со десното копче на иконата подолу и кликнете на Физичка тастатура.</string>
+    <string name="taskbar_keyboard_guided_tour_title">Менување на поставувањата за тастатура</string>
+    <string name="taskbar_shortcut_pinned_toast">Кратенката е закачена на лентата со задачи.</string>
+    <string name="taskbar_shortcut_unpinned_toast">Кратенката е откачена од лентата со задачи.</string>
+    <string name="taskbar_volume_connect_audio_device">Поврзете го аудио уредот за да ги смените поставувањата за аудио излез.</string>
+    <string name="taskbar_volume_context_menu_change_audio_path_smart_things">За да го смените аудио излезот, %s треба да се преземе и инсталира.</string>
+    <string name="taskbar_volume_context_menu_download">Преземи</string>
+    <string name="taskbar_volume_context_menu_install_smart_things">Да се инсталира %s?</string>
+    <string name="taskbar_volume_context_menu_smart_things">SmartThings</string>
+    <string name="tethering_attention_title">Внимание</string>
+    <string name="time_format_hour">%d ч</string>
+    <string name="time_format_hour_minute">%1$d ч. %2$d м.</string>
+    <string name="time_format_minute">%d m</string>
+    <string name="to_use_this_function_download_ps">За да ја користите оваа функција, преземете %s.</string>
+    <string name="toast_remove_keyboard">Отстранете го капакот на тастатурата за да користите %s.</string>
+    <string name="tooltip_all_apps">Апликации</string>
+    <string name="tooltip_close">Затвори апликација</string>
+    <string name="tooltip_collapse">Собери</string>
+    <string name="tooltip_expand">Рашири</string>
+    <string name="tooltip_finder">Finder</string>
+    <string name="tooltip_homescreen">Дома</string>
+    <string name="tooltip_keyboard">Тастатура</string>
+    <string name="tooltip_labs">Samsung DeX Labs</string>
+    <string name="tooltip_next_app">Следна апликација</string>
+    <string name="tooltip_previous_app">Претходна апликација</string>
+    <string name="tooltip_recents">Последни</string>
+    <string name="tooltip_screen_capture">Екранска снимка</string>
+    <string name="tooltip_volume">Јачина на звук</string>
+    <string name="tts_default_pitch_title">Висина на гласот</string>
+    <string name="tts_lang_use_system">Користи системски јазик</string>
+    <string name="tts_settings_title">Текст во говор</string>
+    <string name="tw_cover_volume_warning_message">Слушањето со голема јачина подолго време може да го оштети слухот. За да ја зголемите јачината, отворете го капакот.</string>
+    <string name="tw_safe_media_volume_warning">Слушањето со голема јачина подолго време може да Ви го оштети слухот. Допрете OK за да овозможите јачината да се зголеми над безбедните нивоа.</string>
+    <string name="tw_safe_media_volume_warning_kids_mode">Гласноста не може да го надминува препорачаното безбедносно ниво (%s) додека се вклучени слушалки во Детскиот режим.</string>
+    <string name="uhq_mode_noti_text">Подобрете ја звучната резолуција на музиката и видеата за почисто доживување при слушањето.</string>
+    <string name="uhq_mode_noti_title">UHQ-засилувач</string>
+    <string name="uhq_toast_earphone_connect_request">Приклучете слушалки за да користите UHQ-засилувач.</string>
+    <string name="unable_to_capture_screen_emergencymode">Не може да се слика екранот во Итниот режим.</string>
+    <string name="unable_to_capture_screen_ultrapowersaving_mode">Не може да се долови екранска снимка.</string>
+    <string name="unable_to_turn_on_being_used_by_camera">Не може да се вклучи %s. Светлото на камерата се користи од друга апликација.</string>
+    <string name="uninstall_1_app_message">Дали сакате да ја одинсталирате оваа апликација?</string>
+    <string name="uninstall_apps_message">Следниве апликации ќе се одинсталираат:</string>
+    <string name="uninstall_cancel">Откажи</string>
+    <string name="uninstall_confirm">OK</string>
+    <string name="uninstall_title">Да се одинсталираат апликации?</string>
+    <string name="unintentional_lcd_on_alert_body">За да не се повтори ова, проверете дали сензорот за близина е блокиран.</string>
+    <string name="unintentional_lcd_on_alert_body2">Допрете %s за да продолжите со користење на телефонот.</string>
+    <string name="unintentional_lcd_on_alert_title">Допирното внесување е блокирано</string>
+    <string name="volte_show_toast_airplane_mode">Не може да се користи VoLTE додека е вклучен режимот за летало. Исклучете го режимот за летало и обидете се повторно.</string>
+    <string name="volte_show_toast_disable_not_allowed">На операторот не му е дозволено да го оневозможи VoLTE.</string>
+    <string name="volte_show_toast_enable_message">За да ја користите услугата VoLTE, претплатете се на VoLTE. Контактирајте со својот оператор за детали.</string>
+    <string name="volte_show_toast_impossible_during_volte_call">Не може да се исклучи Користи VoLTE кога е достапно при повик VoLTE.</string>
+    <string name="volte_show_toast_not_support_operator">VoLTE не е поддржано од моменталната верзија на софтверот. Контактирајте со поддршката за купувачите за повеќе детали.</string>
+    <string name="volume_cant_change_volume_smart_view">Не може да се смени јачината на звукот на %s додека звукот на медиумите е исклучен.</string>
+    <string name="volume_limiter_notice_toast">За да ја зголемите јачината на звукот, одете во Поставувања и исклучете го Ограничувачот на јачина на звук на медиуми или сменете го ограничувањето на јачина на звукот.</string>
+    <string name="volume_limiter_open_cover_toast">Отворете ја футролата за да продолжите.</string>
+    <string name="volume_limiter_toast_title">Достигнато е ограничув.за јачина на звукот</string>
+    <string name="volume_mute_all_sounds_on">Вклучено е Исклучи ги сите звуци</string>
+    <string name="volume_stream_dual_audio">Двојно аудио</string>
+    <string name="volume_use_your_phone_volume_smart_view">Користете ги копчињата за Јачина на звук на телефонот за ја контролирате јачината на звукот на %s.</string>
+    <string name="warning_alert_check">Не прикажувај веќе</string>
+    <string name="water_protection_notification_body">Откриена е влага. Исклучете го полначот и почекајте додека и полначот и портата USB се суви.</string>
+    <string name="water_protection_notification_title">Откачете го полначот</string>
+    <string name="wfc_enable_dialog_opv_body0">"Wi-Fi Calling is a service of your mobile operator, Orange Polska S.A.
+Please read the description of the service provided by your operator:"</string>
+    <string name="wfc_enable_dialog_opv_body1">Wi-Fi Calling service enables you to make and receive voice calls over any Wi-Fi internet connection, even in a situation where you are outside any mobile network’s coverage. Once the service is active for your mobile number, every time you connect to a Wi-Fi network, your voice calls will be performed using Wi-Fi Calling. This will be indicated to you by a dedicated icon on the notification bar.</string>
+    <string name="wfc_enable_dialog_opv_body2">"If your Wi-Fi connection is of poor quality or your device is outside a Wi-Fi network’s coverage, your phone will make calls using an available mobile network.
+
+Calls you make with Wi-Fi Calling in Poland are charged in the same way as your regular mobile calls in your mobile tariff plan. Incoming calls in Poland are free of charge. If you make Wi-Fi Calling calls outside Poland your calls may be charged a price specified in your mobile tariff plan’s price list.
+
+Notwithstanding, your Wi-Fi connections may be charged independently by the provider of your Wi-Fi connection."</string>
+    <string name="wfc_enable_dialog_opv_body3">"Once you press the [I ACCEPT] button and your phone connects to a Wi-Fi network, your Wi-Fi Calling service will be activated. You can disable Wi-Fi Calling at any time using the phone menu.
+
+Detailed information about your Wi-Fi Calling service can be found at www.orange.pl/wificalling.
+
+Please note that in order to enable your emergency calls (e.g., such as 112 calls) to be routed to the closest emergency centre suitable for your actual location, your emergency calls made while the Wi-Fi Calling service is enabled will be carried by your device through any mobile network available at a given moment. Only in cases where no mobile network is available will an emergency call be routed via the Wi-Fi Calling service. Unfortunately, in such cases we will not know your precise location and therefore your emergency call may not be routed to the emergency centre closest to your actual location."</string>
+    <string name="wfc_enable_dialog_opv_body4">In regard to your use of Wi-Fi Calling, we – as your personal data controller – will process your data based on the number and model of the device on which you use Wi-Fi Calling, the software used on the device, the endpoint of the network used to connect with Wi-Fi Calling (including the IP address and the country to which this IP address is attributed), and the time and duration of each call, in order to perform and settle the service, answer any complaints, and to perform any statutory obligations. We will process this data for the duration of the agreement on providing telecommunication services between you and us, and after its termination – for the period of recovery of claims and of performing other tasks defined in the provisions of law. Providing the data is voluntary, but it is necessary to use the service. You have the right to access and to rectify your data.</string>
+    <string name="wfc_enable_dialog_opv_body5">Please find our data: Orange Polska S.A., address: Aleje Jerozolimskie 160, 02-326 Warsaw, Poland, registered in the Register of the Entrepreneurs of District Court for the Capital City of Warsaw in Warsaw, XII Commercial Division of the National Court Register (KRS), under entry number 0000010681, NIP (tax ID) 526-02-50-995; with share capital (fully paid up) of PLN 3,937,072,437.00.</string>
+    <string name="wfc_enable_dialog_opv_btn">Прифаќам</string>
+    <string name="wfc_enable_dialog_opv_title">WELCOME TO WI-FI CALLING SERVICE</string>
+    <string name="wifi_ap_wifi_p2p_off_warn">Со вклучување на Мобилен хотспот ќе се прекине врската на уредите моментално поврзани преку Wi-Fi Direct.</string>
+    <string name="wifi_ap_wifi_p2p_off_warn_china">Овозможувањето на хотспот за Преносен WLAN ќе го прекине поврзувањето на уредот поврзан преку WLAN Direct.</string>
+    <string name="wifi_authentication_failed_kt">Неуспешно потврдување на пристапната точка за Wi-Fi.</string>
+    <string name="wifi_authentication_invalid_value">Неуспешна проверка на идентитетот. Проверете ја валидноста на сертификатите.</string>
+    <string name="wifi_authentication_no_response">Не можеше да се поврзе со пристапна точка за Wi-Fi.</string>
+    <string name="wifi_authentication_succeed_kt">Пристапната точка за Wi-Fi е потврдена.</string>
+    <string name="wifi_auto_reconnect_disabled">Aвтоматското повторно поврзување е оневозможено</string>
+    <string name="wifi_connected_checking_quality">Се проверува квалитетот на поврзувањето со интернет…</string>
+    <string name="wifi_disabled_captive_portal">Потребна е најава.</string>
+    <string name="wifi_disabled_no_internet">Не е достапен интернет</string>
+    <string name="wifi_disabled_password_failure">Дојде до грешка при потврдувањето</string>
+    <string name="wifi_disconnected">Wi-Fi е прекинато.</string>
+    <string name="wifi_empty_list_user_restricted">Немате дозвола да ги менуваат поставувањата за Wi-Fi.</string>
+    <string name="wifi_failed_to_obtain_IP">Не можеше да се добие IP-адреса.</string>
+    <string name="wifi_in_airplane_mode">Во режим за летање.</string>
+    <string name="wifi_internet_may_not_be_available">Интернет може да не е достапен</string>
+    <string name="wifi_not_found_hidden_ap">Не може да се воспостави поврзување со мрежата. Не е пронајдена мрежа со името %s.</string>
+    <string name="wifi_reconnecting">Подготвено за поврзување кога ќе се подобри квалитетот на мрежата</string>
+    <string name="wifi_sign_in_to_the_network">Најави се на мрежата.</string>
+    <string name="wifi_unknown_security_type">Непознат тип на безбедност.</string>
+    <string name="wificalling_popup_rogers_activation_text">Wi-Fi Calling lets you call and text while on a Wi-Fi Network. Usage will be deducted from the minute and text message buckets in your Wireless plan. Click below to Activate.</string>
+    <string name="wificalling_popup_rogers_activation_title">Wi-Fi Calling Activation</string>
+    <string name="wificalling_popup_rogers_wifi_enable_text">Please connect to a Wi-Fi network to register for Wi-Fi Calling.</string>
+    <string name="wificalling_show_popup_enable_location_message">На Повикувањето Wi-Fi му треба да ги користи Вашите информации за локацијата. Ќе се овозможи Локација. Ќе се собираат и праќаат анонимни податоци за локацијата до Google и до Вашиот оператор. Контактирајте со својот оператор за детали.</string>
+    <string name="wificalling_show_popup_enable_location_title">Овозможи Локација</string>
+    <string name="wificalling_show_popup_use_location_inform">Вашите информации за локацијата може да се пратат до операторот додека користите Повикување Wi-Fi. Контактирајте со Вашиот оператор за детали.</string>
+    <string name="wificalling_show_popup_use_location_inform_ftm">Вашите информации поврзани со локацијата може да се пратат до Google и до Вашиот оператор за да воспоставите Wi-Fi повици, без разлика дали сте ја активирале локалната функција или не.</string>
+    <string name="yes">OK</string>
+    <string name="mobile_hotspot_wifi_off_warning">Вклучувањето на Мобилен хотспот ќе го исклучи Wi-Fi.</string>
+    <string name="mobile_hotspot_wifi_off_warning_china">Овозможувањето на Мобилен хотспот ќе го исклучи WLAN.</string>
+    <string name="mobile_hotspot_wifi_off_warning_jpn">Enabling Wi-Fi tethering will turn off Wi-Fi.</string>
+</resources>

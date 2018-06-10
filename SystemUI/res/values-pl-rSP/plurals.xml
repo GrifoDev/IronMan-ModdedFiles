@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <plurals name="kg_attempt_left">
+        <item quantity="other">Ôstało prōb: %d</item>
+        <item quantity="one">Ôstała %d prōba</item>
+    </plurals>
+    <plurals name="kg_attempt_remaining">
+        <item quantity="other">(ôzostałych prōb: %d)</item>
+        <item quantity="one">(ôstała 1 prōba)</item>
+    </plurals>
+    <plurals name="kg_too_many_failed_attempts_countdown_min">
+        <item quantity="other">Nabadej jeszcze rŏz za %d min</item>
+        <item quantity="one">Wybadej drugi rŏz za %d minuta</item>
+    </plurals>
+    <plurals name="kg_too_many_failed_attempts_countdown_sec">
+        <item quantity="other">Nabadej jeszcze rŏz za %d s</item>
+        <item quantity="one">Wybadej drugi rŏz za %d sekunda</item>
+    </plurals>
+    <plurals name="kg_too_many_failed_countdown_by_biometrics">
+        <item quantity="other">Felernych prōb kōntroli biometrji: %1$d. Wybadej drugi rŏz za %2$d s.</item>
+        <item quantity="one">Felernych prōb kōntroli biometrji: %1$d. Wybadej drugi rŏz za %2$d s.</item>
+    </plurals>
+    <plurals name="kg_too_many_failed_countdown_by_fingerprint">
+        <item quantity="other">Felernych prōb kōntroli ôdciskōw palcōw: %1$d. Wybadej drugi rŏz za %2$d s.</item>
+        <item quantity="one">Felernych prōb kōntroli ôdciskōw palcōw: %1$d. Wybadej drugi rŏz za %2$d s.</item>
+    </plurals>
+</resources>

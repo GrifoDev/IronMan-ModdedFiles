@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <plurals name="kg_attempt_left">
+        <item quantity="other">Засталося спроб: %d</item>
+        <item quantity="one">Засталося спроб: %d</item>
+    </plurals>
+    <plurals name="kg_attempt_remaining">
+        <item quantity="other">(Засталося спроб: %d)</item>
+        <item quantity="one">(Засталася 1 спроба)</item>
+    </plurals>
+    <plurals name="kg_too_many_failed_attempts_countdown_min">
+        <item quantity="other">Паўтарыце спробу праз %d хвілін(-ы)</item>
+        <item quantity="one">Паўтарыце спробу праз %d хвіліну(ы)</item>
+    </plurals>
+    <plurals name="kg_too_many_failed_attempts_countdown_sec">
+        <item quantity="other">Паўтарыце спробу праз %d секунд(-ы)</item>
+        <item quantity="one">Паўтарыце спробу праз %d секунду(ы)</item>
+    </plurals>
+    <plurals name="kg_too_many_failed_countdown_by_biometrics">
+        <item quantity="other">Колькасць няўдалых спроб праверыць біяметрычную інфармацыю: %1$d. Паўтарыце спробу праз %2$d секунд(ы).</item>
+        <item quantity="one">Колькасць няўдалых спроб праверыць біяметрычную інфармацыю: %1$d. Паўтарыце спробу праз %2$d с.</item>
+    </plurals>
+    <plurals name="kg_too_many_failed_countdown_by_fingerprint">
+        <item quantity="other">Колькасць няўдалых спроб праверыць адбіткі пальцаў: %1$d. Паўтарыце спробу праз %2$d секунд(ы).</item>
+        <item quantity="one">Колькасць няўдалых спроб праверыць адбіткі пальцаў: %1$d. Паўтарыце спробу праз %2$d с.</item>
+    </plurals>
+</resources>

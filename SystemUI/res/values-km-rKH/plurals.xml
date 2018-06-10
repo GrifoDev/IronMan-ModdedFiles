@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <plurals name="kg_attempt_left">
+        <item quantity="other">សល់​ការប៉ុនប៉ង %d ដង</item>
+        <item quantity="one">សល់​ការប៉ុនប៉ង %d ដង</item>
+    </plurals>
+    <plurals name="kg_attempt_remaining">
+        <item quantity="other">(នៅសល់​ការប៉ុនប៉ង %d)</item>
+        <item quantity="one">(សល់​ការប៉ុនប៉ង 1)</item>
+    </plurals>
+    <plurals name="kg_too_many_failed_attempts_countdown_min">
+        <item quantity="other">សាកល្បង​ម្ដងទៀត​ក្នុង​ពេល %d នាទី</item>
+        <item quantity="one">សាកល្បង​ម្ដងទៀត​ក្នុង​ពេល %d នាទី</item>
+    </plurals>
+    <plurals name="kg_too_many_failed_attempts_countdown_sec">
+        <item quantity="other">សាកល្បង​ម្ដងទៀត​ក្នុង​ពេល %d វិនាទី</item>
+        <item quantity="one">សាកល្បង​ម្ដងទៀត​ក្នុង​ពេល %d វិនាទី</item>
+    </plurals>
+    <plurals name="kg_too_many_failed_countdown_by_biometrics">
+        <item quantity="other">ការប៉ុនប៉ង​មិន​ត្រឹមត្រូវ %1$d ដង ដើម្បី​ផ្ទៀងផ្ទាត់​ជីវមាត្រ។ សាកល្បង​ម្ដងទៀត​ក្នុង​ពេល %2$d វិនាទី។</item>
+        <item quantity="one">ការប៉ុនប៉ង​មិន​ត្រឹមត្រូវ %1$d ដង ដើម្បី​ផ្ទៀងផ្ទាត់​ជីវមាត្រ។ សាកល្បង​ម្ដងទៀត​ក្នុង​ពេល %2$d វិនាទី។</item>
+    </plurals>
+    <plurals name="kg_too_many_failed_countdown_by_fingerprint">
+        <item quantity="other">ការប៉ុនប៉ង​មិន​ត្រឹមត្រូវ %1$d ដង ដើម្បី​ផ្ទៀងផ្ទាត់​ខ្ចៅដៃ។ សាកល្បង​ម្ដងទៀត​ក្នុង​ពេល %2$d វិនាទី។</item>
+        <item quantity="one">ការប៉ុនប៉ង​មិន​ត្រឹមត្រូវ %1$d ដង ដើម្បី​ផ្ទៀងផ្ទាត់​ខ្ចៅដៃ។ សាកល្បង​ម្ដងទៀត​ក្នុង​ពេល %2$d វិនាទី។</item>
+    </plurals>
+</resources>

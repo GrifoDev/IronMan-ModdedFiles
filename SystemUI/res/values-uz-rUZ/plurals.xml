@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <plurals name="kg_attempt_left">
+        <item quantity="other">%d ta urinish qoldi</item>
+        <item quantity="one">%d urinish qoldi</item>
+    </plurals>
+    <plurals name="kg_attempt_remaining">
+        <item quantity="other">(%d ta urinish qoldi)</item>
+        <item quantity="one">(1 ta urinish qoldi)</item>
+    </plurals>
+    <plurals name="kg_too_many_failed_attempts_countdown_min">
+        <item quantity="other">%d daqiqada qayta urining</item>
+        <item quantity="one">%d daqiqada qayta urinib ko‘ring</item>
+    </plurals>
+    <plurals name="kg_too_many_failed_attempts_countdown_sec">
+        <item quantity="other">%d soniyada qayta urining</item>
+        <item quantity="one">%d soniyada qayta urinib ko‘ring</item>
+    </plurals>
+    <plurals name="kg_too_many_failed_countdown_by_biometrics">
+        <item quantity="other">Biometrik ma’lumotlarni tasdiqlash uchun %1$d ta noto‘g‘ri urinish amalga oshirildi. %2$d soniyadan keyin qayta urinib ko‘ring.</item>
+        <item quantity="one">Biometrik ma’lumotlarni tasdiqlash uchun %1$d ta noto‘g‘ri urinish amalga oshirildi. %2$d soniyadan keyin qayta urinib ko‘ring.</item>
+    </plurals>
+    <plurals name="kg_too_many_failed_countdown_by_fingerprint">
+        <item quantity="other">Barmoq izlarini tasdiqlash uchun %1$d ta noto‘g‘ri urinish amalga oshirildi. %2$d soniyadan keyin qayta urinib ko‘ring.</item>
+        <item quantity="one">Barmoq izlarini tasdiqlash uchun %1$d ta noto‘g‘ri urinish amalga oshirildi. %2$d soniyadan keyin qayta urinib ko‘ring.</item>
+    </plurals>
+</resources>

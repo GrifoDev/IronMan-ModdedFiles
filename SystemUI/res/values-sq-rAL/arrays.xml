@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="battery_options">
+        <item>Shfaq gjithmonë përqindjen</item>
+        <item>Shfaq përqindjen gjatë ngarkimit (e parazgjedhur)</item>
+        <item>Mos e shfaq këtë ikonë</item>
+    </string-array>
+    <string-array name="bluetooth_ss_a2dp_codec_titles">
+        <item>SBC</item>
+        <item>AAC</item>
+        <item>aptX</item>
+        <item>LDAC</item>
+        <item>Samsung HD</item>
+        <item>Scalable Codec</item>
+        <item>Gjithë kodekët</item>
+        <item>Kodeku i parazgjedhur</item>
+    </string-array>
+    <string-array name="clock_options">
+        <item>Shfaq orët, minutat dhe sekondat</item>
+        <item>Shfaq orët dhe minutat (e parazgjedhur)</item>
+        <item>Mos e shfaq këtë ikonë</item>
+    </string-array>
+    <string-array name="nav_bar_buttons">
+        <item>Kujtesa e fragmenteve</item>
+        <item>Kodi i tasteve</item>
+        <item>Ndërruesi i tastierës</item>
+        <item>Asnjë</item>
+    </string-array>
+    <string-array name="nav_bar_layouts">
+        <item>Normale</item>
+        <item>Kompakte</item>
+        <item>Me prirje majtas</item>
+        <item>Me prirje djathtas</item>
+    </string-array>
+    <array name="recents_blacklist_array" />
+    <string-array name="wifi_ap_wifi_sharing">
+        <item>Aft. përbashk. Wi-Fi</item>
+        <item>Paaft. përbash. Wi-Fi</item>
+    </string-array>
+    <string-array name="wifi_status">
+        <item></item>
+        <item>Duke skanuar…</item>
+        <item>Po lidhem…</item>
+        <item>Duke autentikuar…</item>
+        <item>Po merret adresa IP…</item>
+        <item>Lidhur</item>
+        <item>Pezulluar</item>
+        <item>Duke u shkëputur…</item>
+        <item>Shkëputur</item>
+        <item>Pa sukses</item>
+        <item>Bllokuar</item>
+        <item>Duke kontrolluar cilësinë e lidhjes tënde në Internet…</item>
+    </string-array>
+</resources>
