@@ -7714,7 +7714,11 @@
 .end method
 
 .method private updateBackgroundDimming()V
-    .locals 9
+    .locals 11
+
+    sget-boolean v9, Lcom/android/mwilky/Renovate;->mUnlockNotificationColors:Z
+
+    sget-boolean v10, Lcom/android/mwilky/Renovate;->mAllowTransparentNotifications:Z
 
     const/high16 v6, 0x3f800000    # 1.0f
 
@@ -7755,7 +7759,7 @@
 
     move-result v4
 
-    if-eqz v4, :cond_3
+    if-eqz v4, :cond_4
 
     invoke-static {}, Lcom/android/systemui/util/SettingsHelper;->getInstance()Lcom/android/systemui/util/SettingsHelper;
 
@@ -7765,14 +7769,15 @@
 
     move-result v4
 
-    if-eqz v4, :cond_2
+    if-eqz v4, :cond_3
 
     iget v2, p0, Lcom/android/systemui/statusbar/stack/NotificationStackScrollLayout;->mStackScrollerBGOnWhiteKeyguard:I
 
+    :cond_1
     :goto_0
     iget v4, p0, Lcom/android/systemui/statusbar/stack/NotificationStackScrollLayout;->mCachedBackgroundColor:I
 
-    if-eq v4, v2, :cond_1
+    if-eq v4, v2, :cond_2
 
     iput v2, p0, Lcom/android/systemui/statusbar/stack/NotificationStackScrollLayout;->mCachedBackgroundColor:I
 
@@ -7784,15 +7789,15 @@
 
     invoke-virtual {p0}, Lcom/android/systemui/statusbar/stack/NotificationStackScrollLayout;->invalidate()V
 
-    :cond_1
+    :cond_2
     return-void
 
-    :cond_2
+    :cond_3
     iget v2, p0, Lcom/android/systemui/statusbar/stack/NotificationStackScrollLayout;->mStackScrollerBGOnKeyguard:I
 
     goto :goto_0
 
-    :cond_3
+    :cond_4
     const/high16 v4, 0x437f0000    # 255.0f
 
     mul-float/2addr v4, v0
@@ -7885,7 +7890,18 @@
 
     move-result v2
 
-    goto :goto_0
+    if-eqz v9, :cond_1
+
+    if-eqz v10, :cond_5
+
+    const v2, 0x0
+
+    goto/16 :goto_0
+
+    :cond_5
+    sget v2, Lcom/android/mwilky/Renovate;->mNotificationbackgroundColor:I
+
+    goto/16 :goto_0
 .end method
 
 .method private updateChildren()V
@@ -14843,7 +14859,9 @@
 .end method
 
 .method public updateBackgroundAlpha()V
-    .locals 4
+    .locals 5
+
+    sget-boolean v4, Lcom/android/mwilky/Renovate;->mUnlockNotificationColors:Z
 
     iget-object v1, p0, Lcom/android/systemui/statusbar/stack/NotificationStackScrollLayout;->mStatusBar:Lcom/android/systemui/statusbar/phone/StatusBar;
 
@@ -14851,7 +14869,7 @@
 
     move-result v1
 
-    if-eqz v1, :cond_0
+    if-eqz v1, :cond_1
 
     invoke-static {}, Lcom/android/systemui/util/SettingsHelper;->getInstance()Lcom/android/systemui/util/SettingsHelper;
 
@@ -14889,9 +14907,14 @@
 
     float-to-int v2, v2
 
-    invoke-virtual {v1, v2}, Landroid/graphics/Paint;->setAlpha(I)V
+    if-eqz v4, :cond_0
+
+    const/4 v2, 0x0
 
     :cond_0
+    invoke-virtual {v1, v2}, Landroid/graphics/Paint;->setAlpha(I)V
+
+    :cond_1
     return-void
 .end method
 
