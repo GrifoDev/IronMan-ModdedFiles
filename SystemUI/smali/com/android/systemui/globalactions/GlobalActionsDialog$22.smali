@@ -302,7 +302,7 @@
 
     iget-object v2, p0, Lcom/android/systemui/globalactions/GlobalActionsDialog$22;->this$0:Lcom/android/systemui/globalactions/GlobalActionsDialog;
 
-    invoke-static {v2}, Lcom/android/systemui/globalactions/GlobalActionsDialog;->-get12(Lcom/android/systemui/globalactions/GlobalActionsDialog;)Landroid/content/Context;
+    invoke-static {v2}, Lcom/android/systemui/globalactions/GlobalActionsDialog;->-get11(Lcom/android/systemui/globalactions/GlobalActionsDialog;)Landroid/content/Context;
 
     move-result-object v2
 

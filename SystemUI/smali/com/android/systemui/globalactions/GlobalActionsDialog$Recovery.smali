@@ -56,7 +56,7 @@
 
     iget-object v1, p0, Lcom/android/systemui/globalactions/GlobalActionsDialog$Recovery;->this$0:Lcom/android/systemui/globalactions/GlobalActionsDialog;
 
-    invoke-static {v1}, Lcom/android/systemui/globalactions/GlobalActionsDialog;->-get12(Lcom/android/systemui/globalactions/GlobalActionsDialog;)Landroid/content/Context;
+    invoke-static {v1}, Lcom/android/systemui/globalactions/GlobalActionsDialog;->-get11(Lcom/android/systemui/globalactions/GlobalActionsDialog;)Landroid/content/Context;
 
     move-result-object v1
 
@@ -82,7 +82,7 @@
 
     iget-object v2, p0, Lcom/android/systemui/globalactions/GlobalActionsDialog$Recovery;->this$0:Lcom/android/systemui/globalactions/GlobalActionsDialog;
 
-    invoke-static {v2}, Lcom/android/systemui/globalactions/GlobalActionsDialog;->-get12(Lcom/android/systemui/globalactions/GlobalActionsDialog;)Landroid/content/Context;
+    invoke-static {v2}, Lcom/android/systemui/globalactions/GlobalActionsDialog;->-get11(Lcom/android/systemui/globalactions/GlobalActionsDialog;)Landroid/content/Context;
 
     move-result-object v2
 

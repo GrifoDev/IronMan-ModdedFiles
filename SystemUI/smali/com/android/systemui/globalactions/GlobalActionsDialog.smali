@@ -12773,7 +12773,7 @@
 
     sget-object v1, Lcom/android/systemui/globalactions/GlobalActionsDialog;->sResource:Landroid/content/res/Resources;
 
-    const v6, 0x7f120b77
+    const v6, 0x7f120b86
 
     invoke-direct {v4, p0, v5, v6}, Lcom/android/systemui/globalactions/GlobalActionsDialog$Recovery;-><init>(Lcom/android/systemui/globalactions/GlobalActionsDialog;II)V
 

@@ -579,7 +579,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .locals 7
+    .locals 9
 
     const v6, 0x15f90
 
@@ -795,19 +795,19 @@
 
     sput v0, Lcom/android/systemui/Rune;->STATBAR_MAX_SIGNAL_LEVEL:I
 
-    const-string/jumbo p0, "LTEIcon"
+    const-string/jumbo v7, "LTEIcon"
 
-    const/4 p1, 0x1
+    const/4 v8, 0x1
 
-    invoke-static {p0, p1}, Lcom/android/wubydax/GearUtils;->getDbIntForKey(Ljava/lang/String;I)I
+    invoke-static {v7, v8}, Lcom/android/wubydax/GearUtils;->getDbIntForKey(Ljava/lang/String;I)I
 
-    move-result p0
+    move-result v7
 
-    if-eqz p0, :cond_0
+    if-eqz v7, :cond_0
 
-    const/4 p0, 0x1
+    const/4 v7, 0x1
 
-    sput-boolean p0, Lcom/android/systemui/Rune;->STATBAR_DISPLAY_LTE_INSTEAD_OF_4G_ICON:Z
+    sput-boolean v7, Lcom/android/systemui/Rune;->STATBAR_DISPLAY_LTE_INSTEAD_OF_4G_ICON:Z
 
     :cond_0
     const-string/jumbo v0, "DCM"
@@ -3264,15 +3264,15 @@
     :goto_2d
     sput-boolean v0, Lcom/android/systemui/Rune;->QPANEL_SUPPORT_ALWAYS_ON_DISPLAY:Z
 
-    const/4 p0, 0x0
+    const/4 v7, 0x0
 
-    const-string/jumbo p1, "data_usage_visibility"
+    const-string/jumbo v8, "data_usage_visibility"
 
-    invoke-static {p1, p0}, Lcom/android/wubydax/GearUtils;->getDbIntForKey(Ljava/lang/String;I)I
+    invoke-static {v8, v7}, Lcom/android/wubydax/GearUtils;->getDbIntForKey(Ljava/lang/String;I)I
 
-    move-result p1
+    move-result v8
 
-    if-nez p1, :cond_3
+    if-nez v8, :cond_3
 
     const/4 v0, 0x0
 
